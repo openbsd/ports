@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/08 09:51:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/05/26 10:39:49 ajacoutot Exp $
 bin/pokerth
 bin/pokerth_server
 share/applications/pokerth.desktop
@@ -251,3 +251,5 @@ share/pokerth/data/translations/qt_es.qm
 share/pokerth/data/translations/qt_fr.qm
 share/pokerth/data/translations/qt_nl.qm
 share/pokerth/data/translations/qt_ru.qm
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

@@ -1,12 +1,12 @@
-$OpenBSD: patch-pokerth_server_pro,v 1.1.1.1 2008/04/08 09:51:15 ajacoutot Exp $
---- pokerth_server.pro.orig	Wed Mar 12 10:38:32 2008
-+++ pokerth_server.pro	Mon Apr  7 19:39:43 2008
-@@ -217,6 +217,8 @@ unix : !mac {
- 		}
- 	}
+$OpenBSD: patch-pokerth_server_pro,v 1.2 2008/05/26 10:39:49 ajacoutot Exp $
+--- pokerth_server.pro.orig	Sun May 25 14:34:23 2008
++++ pokerth_server.pro	Sun May 25 14:35:30 2008
+@@ -205,7 +205,7 @@ unix : !mac {
  
-+	LIBS += -lboost_filesystem-mt -lboost_thread-mt
-+	LIBS += -lboost_program_options-mt -liconv
- 	LIBS += -lcrypto
+ 	LIBS += -lpokerth_lib
+ 	LIBS += $$BOOST_LIBS
+-	LIBS += -lgnutls-openssl -lgcrypt -lcurl
++	LIBS += -liconv -lcrypto -lcurl
+ 
  	TARGETDEPS += ./lib/libpokerth_lib.a
  
