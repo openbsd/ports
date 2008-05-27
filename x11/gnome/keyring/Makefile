@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2008/05/27 15:30:42 ajacoutot Exp $
 
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
-GNOME_VERSION=		2.21.5
-SHARED_LIBS +=	gnome-keyring        3.0      # .1.1
-PKGNAME=		${DISTNAME}p4
+GNOME_VERSION=		2.22.2
+SHARED_LIBS +=	gnome-keyring        3.1      # .1.1
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +17,7 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 gpg-error gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre png pthread z
+		pcre pixman-1 png pthread z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -31,9 +30,11 @@ LIB_DEPENDS=		gconf-2::devel/gconf2 \
 MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-keyring \
+			--with-root-certs=/etc/ssl \
 			--disable-schemas-install \
 			--disable-hal \
-			--disable-tests
+			--disable-tests \
+			--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
