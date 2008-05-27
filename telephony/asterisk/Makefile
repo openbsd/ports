@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2008/05/22 19:29:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2008/05/27 20:56:12 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -72,12 +72,12 @@ FLAVOR?=
 FLAVORS=		h323
 
 # odbc
-PSEUDO_FLAVORS+=        no_odbc
+PSEUDO_FLAVORS+=	no_odbc
 .if ${FLAVOR:L:Mno_odbc}
-CONFIGURE_ARGS+=        --with-odbc=no \
+CONFIGURE_ARGS+=	--with-odbc=no \
 			--with-ltdl=no
 .else
-MULTI_PACKAGES+=        -odbc
+MULTI_PACKAGES+=	-odbc
 COMMENT-odbc=		ODBC support for Asterisk
 LIB_DEPENDS-odbc=	iodbc.>=3::databases/iodbc
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE} \
@@ -85,11 +85,11 @@ CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE} \
 .endif
 
 # snmp
-PSEUDO_FLAVORS+=        no_snmp
+PSEUDO_FLAVORS+=	no_snmp
 .if ${FLAVOR:L:Mno_snmp}
-CONFIGURE_ARGS+=        --with-snmp=no
+CONFIGURE_ARGS+=	--with-snmp=no
 .else
-MULTI_PACKAGES+=        -snmp
+MULTI_PACKAGES+=	-snmp
 COMMENT-snmp=		Net-SNMP support for Asterisk
 WANTLIB-snmp=		c crypto kvm m perl util wrap
 LIB_DEPENDS-snmp=	netsnmp.>=7::net/net-snmp \
@@ -100,39 +100,39 @@ CONFIGURE_ARGS+=	--with-netsnmp=${LOCALBASE}
 .endif
 
 # speex
-PSEUDO_FLAVORS+=        no_speex
+PSEUDO_FLAVORS+=	no_speex
 .if ${FLAVOR:L:Mno_speex}
-CONFIGURE_ARGS+=        --with-speex=no
+CONFIGURE_ARGS+=	--with-speex=no
 .else
-MULTI_PACKAGES+=        -speex
+MULTI_PACKAGES+=	-speex
 COMMENT-speex=		Speex codec for Asterisk
 WANTLIB-speex=		m
 LIB_DEPENDS-speex=	speex.>=6::audio/speex
-CONFIGURE_ARGS+=        --with-speex=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-speex=${LOCALBASE}
 .endif
 
 # ogg
-PSEUDO_FLAVORS+=        no_ogg
+PSEUDO_FLAVORS+=	no_ogg
 .if ${FLAVOR:L:Mno_ogg}
-CONFIGURE_ARGS+=        --with-ogg=no \
+CONFIGURE_ARGS+=	--with-ogg=no \
 			--with-vorbis=no
 .else
-MULTI_PACKAGES+=        -ogg
+MULTI_PACKAGES+=	-ogg
 COMMENT-ogg=		Ogg Vorbis format translator for Asterisk
 WANTLIB-ogg=		m
 LIB_DEPENDS-ogg=	ogg.>=5::audio/libogg \
 			vorbis.>=5::audio/libvorbis \
 			vorbisenc.>=2::audio/libvorbis
-CONFIGURE_ARGS+=        --with-ogg=${LOCALBASE} \
+CONFIGURE_ARGS+=	--with-ogg=${LOCALBASE} \
 			--with-vorbis=${LOCALBASE}
 .endif
 
 # curl
-PSEUDO_FLAVORS+=        no_curl
+PSEUDO_FLAVORS+=	no_curl
 .if ${FLAVOR:L:Mno_curl}
-CONFIGURE_ARGS+=        --with-curl=no
+CONFIGURE_ARGS+=	--with-curl=no
 .else
-MULTI_PACKAGES+=        -curl
+MULTI_PACKAGES+=	-curl
 COMMENT-curl=		libCURL support for Asterisk
 WANTLIB-curl=		crypto idn ssl z
 LIB_DEPENDS-curl=	curl.>=6::net/curl
@@ -140,11 +140,11 @@ CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 .endif
 
 # postgresql
-PSEUDO_FLAVORS+=        no_pgsql
+PSEUDO_FLAVORS+=	no_pgsql
 .if ${FLAVOR:L:Mno_pgsql}
-CONFIGURE_ARGS+=        --with-postgres=no
+CONFIGURE_ARGS+=	--with-postgres=no
 .else
-MULTI_PACKAGES+=        -pgsql
+MULTI_PACKAGES+=	-pgsql
 COMMENT-pgsql=		PostgreSQL support for Asterisk
 WANTLIB-pgsql=		z
 LIB_DEPENDS-pgsql=	pq.>=5::databases/postgresql
@@ -152,16 +152,16 @@ CONFIGURE_ARGS+=	--with-postgres=${LOCALBASE}
 .endif
 
 # jabber
-PSEUDO_FLAVORS+=        no_jabber
+PSEUDO_FLAVORS+=	no_jabber
 .if ${FLAVOR:L:Mno_jabber}
-CONFIGURE_ARGS+=        --with-gnutls=no \
+CONFIGURE_ARGS+=	--with-gnutls=no \
 			--with-iksemel=no
 .else
-MULTI_PACKAGES+=        -jabber
+MULTI_PACKAGES+=	-jabber
 COMMENT-jabber=		Jabber support for Asterisk
 WANTLIB-jabber=		gcrypt gnutls gpg-error z
 LIB_DEPENDS-jabber=	iksemel::textproc/iksemel
-CONFIGURE_ARGS+=        --with-gnutls=${LOCALBASE} \
+CONFIGURE_ARGS+=	--with-gnutls=${LOCALBASE} \
 			--with-iksemel=${LOCALBASE}
 .endif
 
