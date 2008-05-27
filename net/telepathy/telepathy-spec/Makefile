@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/05/27 11:49:17 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, specifications
 
 DISTNAME=		telepathy-spec-0.17.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES+=		books net
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-spec/}
 
 BUILD_DEPENDS=		::lang/python/2.5 \
 			::textproc/libxslt
-RUN_DEPENDS=		:devhelp-*:x11/gnome/devhelp
 
 USE_GMAKE=		Yes
 
