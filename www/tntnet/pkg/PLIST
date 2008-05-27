@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/02/03 17:16:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/05/27 21:49:31 jasper Exp $
 %%SHARED%%
 bin/ecppc
 bin/ecppl
@@ -37,10 +37,7 @@ include/tnt/messageheaderparser.h
 include/tnt/mimedb.h
 include/tnt/multipart.h
 include/tnt/object.h
-include/tnt/objectptr.h
-include/tnt/objecttemplate.h
 include/tnt/parser.h
-include/tnt/pointer.h
 include/tnt/poller.h
 include/tnt/query_params.h
 include/tnt/regex.h

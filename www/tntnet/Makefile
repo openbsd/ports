@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/03 17:16:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/05/27 21:49:31 jasper Exp $
 
 COMMENT=		modular webapplication server for C++
 
-DISTNAME=		tntnet-1.6.1
+DISTNAME=		tntnet-1.6.2
 CATEGORIES=		www devel
 
 HOMEPAGE=		http://www.tntnet.org/
@@ -16,12 +16,12 @@ tntnet_sdk upload
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
-# GPL
+# LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB= c crypto m pthread ssl stdc++ z
+WANTLIB=		c crypto m pthread ssl stdc++ z
 
 MASTER_SITES=		${HOMEPAGE}download/
 
@@ -32,7 +32,7 @@ MODGCC3_ARCHES= 	sparc
 MODGCC3_LANGS=		c++
 
 BUILD_DEPENDS=		::archivers/zip
-LIB_DEPENDS= 		cxxtools::devel/cxxtools
+LIB_DEPENDS= 		cxxtools.>=2::devel/cxxtools
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
