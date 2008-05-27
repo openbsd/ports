@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2008/05/21 06:36:58 bernd Exp $
+# $OpenBSD: Makefile,v 1.75 2008/05/27 03:15:08 bernd Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -189,7 +189,7 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/openoffice
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/openoffice
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/48x48/apps
 
 	cd ${WRKDIR}/ooo-desktop && \
 		for DFILE in `ls -1 *.desktop`; do \
