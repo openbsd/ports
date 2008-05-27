@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/12/16 00:04:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/05/27 14:39:00 ajacoutot Exp $
 bin/amarok
 bin/amarok_daapserver.rb
 bin/amarok_proxy.rb
@@ -14,6 +14,8 @@ ${KDE}/libamarok_ipod-mediadevice.la
 ${KDE}/libamarok_ipod-mediadevice.so
 ${KDE}/libamarok_massstorage-device.la
 ${KDE}/libamarok_massstorage-device.so
+${KDE}/libamarok_mtp-mediadevice.la
+${KDE}/libamarok_mtp-mediadevice.so
 ${KDE}/libamarok_nfs-device.la
 ${KDE}/libamarok_nfs-device.so
 ${KDE}/libamarok_njb-mediadevice.la
@@ -699,6 +701,7 @@ share/doc/HTML/es/amarok/analyzer.png
 share/doc/HTML/es/amarok/browser_choice.png
 share/doc/HTML/es/amarok/buttons.png
 share/doc/HTML/es/amarok/collection.png
+share/doc/HTML/es/amarok/common
 share/doc/HTML/es/amarok/config.docbook
 share/doc/HTML/es/amarok/config_appearance.png
 share/doc/HTML/es/amarok/config_collection.png
@@ -716,6 +719,8 @@ share/doc/HTML/es/amarok/dynamic_settings.png
 share/doc/HTML/es/amarok/equalizer.png
 share/doc/HTML/es/amarok/faq.docbook
 share/doc/HTML/es/amarok/file_browser.png
+share/doc/HTML/es/amarok/index.cache.bz2
+share/doc/HTML/es/amarok/index.docbook
 share/doc/HTML/es/amarok/logo.png
 share/doc/HTML/es/amarok/media_device.png
 share/doc/HTML/es/amarok/menubar.png
@@ -1110,6 +1115,7 @@ share/services/amarok_daap-mediadevice.desktop
 share/services/amarok_generic-mediadevice.desktop
 share/services/amarok_ipod-mediadevice.desktop
 share/services/amarok_massstorage-device.desktop
+share/services/amarok_mtp-mediadevice.desktop
 share/services/amarok_nfs-device.desktop
 share/services/amarok_njb-mediadevice.desktop
 share/services/amarok_smb-device.desktop
