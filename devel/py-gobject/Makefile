@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/05/25 21:44:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2008/05/27 11:54:20 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Python bindings for glib2 gobject
 
 V=		2.14.2
 DISTNAME=	pygobject-${V}
-PKGNAME=	py-gobject-${V}
+PKGNAME=	py-gobject-${V}p0
 CATEGORIES=	devel x11
 
 HOMEPAGE=	http://www.pygtk.org/
@@ -24,7 +24,6 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext lang/python
 LIB_DEPENDS=	glib-2.0.>=1200.0,gobject-2.0.>=1200.0,gthread-2.0.>=1200.0::devel/glib2
-RUN_DEPENDS=	:devhelp-*:x11/gnome/devhelp
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
