@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2008/05/27 20:56:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2008/05/27 22:14:34 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-V=			1.4.19.2
+V=			1.4.20.1
 DISTNAME=		asterisk-$V
 FULLPKGNAME-main=	asterisk-$V
 
@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=	--with-snmp=no
 .else
 MULTI_PACKAGES+=	-snmp
 COMMENT-snmp=		Net-SNMP support for Asterisk
-WANTLIB-snmp=		c crypto kvm m perl util wrap
+WANTLIB-snmp=		c m perl util
 LIB_DEPENDS-snmp=	netsnmp.>=7::net/net-snmp \
 			netsnmpagent.>=7::net/net-snmp \
 			netsnmphelpers.>=7::net/net-snmp \
@@ -107,8 +107,10 @@ CONFIGURE_ARGS+=	--with-speex=no
 MULTI_PACKAGES+=	-speex
 COMMENT-speex=		Speex codec for Asterisk
 WANTLIB-speex=		m
-LIB_DEPENDS-speex=	speex.>=6::audio/speex
-CONFIGURE_ARGS+=	--with-speex=${LOCALBASE}
+LIB_DEPENDS-speex=	speex.>=6::audio/speex \
+			speexdsp::audio/speex
+CONFIGURE_ARGS+=	--with-speex=${LOCALBASE} \
+			--with-speexdsp=${LOCALBASE}
 .endif
 
 # ogg
