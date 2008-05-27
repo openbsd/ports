@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2008/04/22 14:50:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2008/05/27 08:02:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GTK+2 Python bindings
 
 GNOME_PROJECT=	pygtk
 GNOME_VERSION=	2.12.1
-PKGNAME=	py-gtk2-${VERSION}
+PKGNAME=	py-gtk2-${VERSION}p0
 
 CATEGORIES=	x11
 
@@ -35,7 +35,6 @@ RUN_DEPENDS=	:py-cairo->=1.2:graphics/py-cairo \
 		:py-gobject-*:devel/py-gobject \
 		:py-Numeric-*:math/py-Numeric
 
-MODGNOME_DEVHELP_FILES=Yes
 USE_GMAKE=	No
 
 USE_X11=	Yes

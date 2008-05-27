@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2008/05/27 08:02:51 ajacoutot Exp $
 
 COMMENT=		text widget that extends GTK2's GtkTextView widget
 
 MAJOR_VERSION=		2.0
 GNOME_PROJECT=		gtksourceview
 GNOME_VERSION=		2.2.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=	gtksourceview-2.0    1.0      # .0.0
 CATEGORIES=		x11
 
@@ -32,7 +32,6 @@ BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		xml2:libxml-*:textproc/libxml \
 			gtk-x11-2.0,gdk_pixbuf-2.0,gdk-x11-2.0::x11/gtk+2
 
-MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

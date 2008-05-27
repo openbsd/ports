@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2008/05/27 08:02:51 ajacoutot Exp $
 
 COMMENT=	glib bindings for dbus message system
 
 DISTNAME=	dbus-glib-0.74
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=	dbus-glib-1          3.0      # .3.0
 CATEGORIES=	x11
 
@@ -22,7 +22,6 @@ MASTER_SITES=	${HOMEPAGE}releases/dbus-glib/
 MODULES=	devel/gettext
 LIB_DEPENDS=	dbus-1.>=5::x11/dbus \
 		glib-2.0,gobject-2.0::devel/glib2
-RUN_DEPENDS=	:devhelp-*:x11/gnome/devhelp
 
 SEPARATE_BUILD=	simple
 USE_GMAKE=	Yes

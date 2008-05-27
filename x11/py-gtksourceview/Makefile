@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/05/27 08:02:52 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		python bindings for the GtkSourceView library
 
 GNOME_PROJECT=		pygtksourceview
 GNOME_VERSION=		2.2.0
-PKGNAME=		py-gtksourceview-${GNOME_VERSION}p0
+PKGNAME=		py-gtksourceview-${GNOME_VERSION}p1
 CATEGORIES=		x11
 
 # GPLv2
@@ -28,8 +28,6 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::textproc/libxslt \
 			::textproc/docbook-xsl
 RUN_DEPENDS=		::x11/py-gtk2
-
-MODGNOME_DEVHELP_FILES=	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		PYTHON="${MODPY_BIN}"

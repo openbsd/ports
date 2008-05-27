@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/05/27 08:02:51 ajacoutot Exp $
 
 COMMENT=		desktop presence framework
 
 DISTNAME=		libgalago-0.5.2
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS +=	galago               0.0      # .3.0
 CATEGORIES=		net devel
 
@@ -23,7 +23,6 @@ MODULES=		devel/gettext
 
 LIB_DEPENDS=		dbus-glib-1::x11/dbus-glib
 BUILD_DEPENDS=		:check->=0.9.5:devel/check
-RUN_DEPENDS=		:devhelp-*:x11/gnome/devhelp
 REGRESS_DEPENDS=	${BUILD_DEPENDS}
 
 USE_LIBTOOL=		Yes

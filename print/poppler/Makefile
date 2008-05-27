@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2008/05/27 08:02:51 ajacoutot Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -7,7 +7,7 @@ COMMENT-qt4=	qt4 interface to PDF rendering library
 V=		0.6.2
 DISTNAME=	poppler-$V
 CATEGORIES=	print
-PKGNAME-main=	poppler-$Vp2
+PKGNAME-main=	poppler-$Vp3
 FULLPKGNAME-qt=	poppler-qt-$Vp0
 FULLPKGNAME-qt4=poppler-qt4-$Vp1
 
@@ -70,9 +70,6 @@ LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
 		xml2::textproc/libxml
 LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} poppler::print/poppler
 LIB_DEPENDS-qt4=QtCore,QtGui,QtXml::x11/qt4 poppler::print/poppler
-
-RUN_DEPENDS-main=${RUN_DEPENDS} \
-		:devhelp-*:x11/gnome/devhelp
 
 WANTLIB-main=	${WANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr \
 		glib-2.0 gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0 \
