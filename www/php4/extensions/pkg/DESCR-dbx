@@ -1,3 +1,0 @@
-Database abstraction layer, allowing database-independent PHP code
-with some semblance of efficiency.
-

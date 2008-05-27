@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-mhash,v 1.2 2004/12/21 12:15:02 espie Exp $
-@conflict php5-mhash-*
-lib/php/modules/mhash.so

@@ -1,2 +1,0 @@
-The bzip2 functions are used to transparently read and write bzip2
-(.bz2) compressed files within PHP4.
