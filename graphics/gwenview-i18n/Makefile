@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2008/05/27 09:11:59 ajacoutot Exp $
 
 COMMENT=	image viewer for KDE, translations
 
-DISTNAME=	gwenview-i18n-1.4.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	gwenview-i18n-1.4.2
 CATEGORIES=	graphics x11 x11/kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gwenview/}
 EXTRACT_SUFX=	.tar.bz2
@@ -20,7 +19,7 @@ BUILD_DEPENDS = ::x11/kde/libs3
 RUN_DEPENDS = ::x11/kde/libs3
 
 MODULES=	x11/kde
-MODKDE_VERSION= 3.5.3
+MODKDE_VERSION= 3.5.7
 
 PORTHOME=	${WRKDIR}
 
