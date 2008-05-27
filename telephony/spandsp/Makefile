@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/29 11:55:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2008/05/27 20:46:54 sthen Exp $
 
 COMMENT=	DSP library for telephony
 
-DISTNAME=	spandsp-0.0.4pre18
+DISTNAME=	spandsp-0.0.5pre3
 CATEGORIES=	telephony
 MASTER_SITES=	${HOMEPAGE}downloads/spandsp/
 EXTRACT_SUFX=	.tgz
 
-SHARED_LIBS=	spandsp	0.0
+SHARED_LIBS=	spandsp	1.0
 
-WRKDIST=	${WRKDIR}/spandsp-0.0.4
+WRKDIST=	${WRKDIR}/spandsp-0.0.5
 
 HOMEPAGE=	http://www.soft-switch.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
-# GPLv2
+# LGPLv2/GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
