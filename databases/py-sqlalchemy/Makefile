@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/05/19 23:58:49 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.10 2008/05/28 01:59:13 fgsch Exp $
 
 COMMENT=		database toolkit for Python
 
@@ -28,15 +28,13 @@ REGRESS_DEPENDS=	::databases/py-sqlite2
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-sqlalchemy
-	cd ${WRKSRC}/doc && \
-		find . -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-sqlalchemy/{} \; && \
-		find . ! -type d -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/py-sqlalchemy/{} \;
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-sqlalchemy
+	cd ${WRKSRC}/doc && pax -rw * $ ${PREFIX}/share/doc/py-sqlalchemy
 	cd ${WRKSRC}/examples && \
-		find . -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-sqlalchemy/{} \; && \
-		find . ! -type d -exec ${INSTALL_DATA} {} ${PREFIX}/share/examples/py-sqlalchemy/{} \;
+	    pax -rw * $ ${PREFIX}/share/examples/py-sqlalchemy
 
 do-regress:
-	@cd ${WRKSRC} && PYTHONPATH=./test/ ${MODPY_BIN} test/alltests.py --db sqlite
+	@cd ${WRKSRC} && ${MAKE_ENV} \
+	    PYTHONPATH=test ${MODPY_BIN} test/alltests.py --db sqlite
 
 .include <bsd.port.mk>
