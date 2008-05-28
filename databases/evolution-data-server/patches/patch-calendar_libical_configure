@@ -1,0 +1,29 @@
+$OpenBSD: patch-calendar_libical_configure,v 1.1 2008/05/28 13:25:53 ajacoutot Exp $
+--- calendar/libical/configure.orig	Wed May 28 11:02:30 2008
++++ calendar/libical/configure	Wed May 28 11:03:09 2008
+@@ -20294,13 +20294,13 @@ _ACEOF
+ 		PTHREAD_LIBS=-pthread;;
+ 
+ 	*)
+-	{ echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
++	{ echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -20365,7 +20365,7 @@ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_PTHREAD
+ _ACEOF
+ 
+-	   PTHREAD_LIBS=-lpthread
++	   PTHREAD_LIBS=-pthread
+ 	fi;;
+ esac
+ 

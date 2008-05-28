@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2008/05/27 20:32:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2008/05/28 13:25:53 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		1.12.1
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 CATEGORIES=		databases
 SHARED_LIBS +=	edataserver-1.2      10.0     # .10.0
 SHARED_LIBS +=	egroupwise-1.2       13.1     # .13.1
@@ -34,7 +34,7 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
 		glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gssapi gthread-2.0 \
 		gtk-x11-2.0 krb5 m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre plc4 plds4 png popt pthread sasl2 ssl util xml2 z
+		pcre pixman-1 plc4 plds4 png popt pthread sasl2 ssl util xml2 z
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -47,16 +47,16 @@ LIB_DEPENDS= 		db:db-4.*:databases/db/v4 \
 			glade-2.0::devel/libglade2 \
 			soup-2.2.>=0::devel/libsoup \
 			nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss \
-			gnome-2::x11/gnome/libgnome
+			gnome-2::x11/gnome/libgnome \
+			gnome-keyring.>=3::x11/gnome/keyring
 			
-
 MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 YACC=			bison
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/evolution-data-server \
-			--enable-gnome-keyring=no \
+			--enable-gnome-keyring=yes \
 			--enable-nss=yes \
 			--enable-smime=yes \
 			--with-broken-spool=no \
