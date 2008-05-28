@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.39 2008/03/16 18:46:14 brad Exp $
+$OpenBSD: patch-dovecot-example_conf,v 1.40 2008/05/28 23:08:03 sthen Exp $
 --- dovecot-example.conf.orig	Tue Mar  4 00:48:12 2008
-+++ dovecot-example.conf	Tue Mar  4 01:43:48 2008
++++ dovecot-example.conf	Tue May 27 19:46:09 2008
 @@ -10,13 +10,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -55,6 +55,15 @@ $OpenBSD: patch-dovecot-example_conf,v 1.39 2008/03/16 18:46:14 brad Exp $
  
  # Set max. process size in megabytes. If you don't use
  # login_process_per_connection you might need to grow this.
+@@ -253,7 +252,7 @@
+ #}
+ 
+ # Group to enable temporarily for privileged operations. Currently this is
+-# used only for creating mbox dotlock files when creation fails for INBOX.
++# used only with INBOX when either its initial creation or dotlocking fails.
+ # Typically this is set to "mail" to give access to /var/mail.
+ #mail_privileged_group =
+ 
 @@ -293,7 +292,7 @@
  
  # Don't write() to mmaped files. This is required for some operating systems
