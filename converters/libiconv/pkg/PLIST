@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/04/23 14:40:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/05/28 20:03:14 naddy Exp $
 %%SHARED%%
 bin/iconv
 include/iconv.h
@@ -14,8 +14,10 @@ lib/libiconv.la
 @man man/man3/iconv.3
 @man man/man3/iconv_close.3
 @man man/man3/iconv_open.3
+@man man/man3/iconvctl.3
 share/doc/libiconv/
 share/doc/libiconv/iconv.1.html
 share/doc/libiconv/iconv.3.html
 share/doc/libiconv/iconv_close.3.html
 share/doc/libiconv/iconv_open.3.html
+share/doc/libiconv/iconvctl.3.html

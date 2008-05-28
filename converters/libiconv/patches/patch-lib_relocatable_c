@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_relocatable_c,v 1.1 2007/08/25 13:51:08 naddy Exp $
---- lib/relocatable.c.orig	Fri Aug  1 18:24:10 2003
-+++ lib/relocatable.c	Wed Aug  1 19:31:16 2007
-@@ -429,15 +429,19 @@ relocate (const char *pathname)
+$OpenBSD: patch-lib_relocatable_c,v 1.2 2008/05/28 20:03:13 naddy Exp $
+--- lib/relocatable.c.orig	Tue Oct 31 14:48:27 2006
++++ lib/relocatable.c	Wed May 21 17:55:51 2008
+@@ -448,15 +448,19 @@ relocate (const char *pathname)
  	{
  	  /* pathname starts with orig_prefix.  */
  	  const char *pathname_tail = &pathname[orig_prefix_len];
