@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/05/26 16:29:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2008/05/28 16:12:18 jasper Exp $
 
 PKG_ARCH=		*
 
@@ -6,7 +6,7 @@ COMMENT=		general GNOME User Documentation
 
 GNOME_PROJECT=		gnome-user-docs
 GNOME_VERSION=		2.18.1
-PKGNAME=		gnome2-user-docs-${VERSION}p1
+PKGNAME=		gnome2-user-docs-${VERSION}p2
 
 # GNU FDL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +20,6 @@ RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			:gnome-doc-utils-*:x11/gnome/doc-utils
 
-MODGNOME_HELP_FILES=	Yes
 USE_LIBTOOL=		No
 CONFIGURE_ARGS= 	--disable-scrollkeeper
 
