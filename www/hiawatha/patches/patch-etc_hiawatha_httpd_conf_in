@@ -1,11 +1,11 @@
-$OpenBSD: patch-etc_hiawatha_httpd_conf_in,v 1.2 2007/03/26 06:57:56 ajacoutot Exp $
---- etc/hiawatha/httpd.conf.in.orig	Sat Feb 17 19:25:56 2007
-+++ etc/hiawatha/httpd.conf.in	Sat Feb 17 19:29:43 2007
+$OpenBSD: patch-etc_hiawatha_httpd_conf_in,v 1.3 2008/05/29 07:53:03 ajacoutot Exp $
+--- etc/hiawatha/httpd.conf.in.orig	Thu May 29 09:41:45 2008
++++ etc/hiawatha/httpd.conf.in	Thu May 29 09:43:19 2008
 @@ -4,7 +4,7 @@
  
  # GENERAL SETTINGS
  #
--ServerId = 33:33
+-#ServerId = www-data
 +ServerId = _hiawatha:_hiawatha
  ConnectionsTotal = 150
  ConnectionsPerIP = 10
@@ -15,10 +15,10 @@ $OpenBSD: patch-etc_hiawatha_httpd_conf_in,v 1.2 2007/03/26 06:57:56 ajacoutot E
  # tool to start PHP as a FastCGI daemon.
  #
 -#CGIhandler = /usr/bin/php-cgi:php
-+#CGIhandler = !!LOCALBASE!!/bin/php:php
++#CGIhandler = ${LOCALBASE}/bin/php-cgi:php
  #CGIhandler = /usr/bin/perl:pl
 -#CGIhandler = /usr/bin/python:py
-+#CGIhandler = !!LOCALBASE!!/bin/python:py
++#CGIhandler = ${LOCALBASE}/bin/python:py
  #CGIextension = cgi
  #
  #TimeForCGI = 5

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2008/04/29 08:47:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2008/05/29 07:53:03 ajacoutot Exp $
 
 COMMENT=	secure webserver
 
-DISTNAME=	hiawatha-6.6
+DISTNAME=	hiawatha-6.7
 CATEGORIES=	www net
 
 HOMEPAGE=	http://hiawatha.leisink.org
@@ -32,10 +32,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--enable-xslt
 
 pre-configure:
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
-		-e 's,!!PREFIX!!,${PREFIX},g;' \
-		-e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' \
-		${WRKSRC}/etc/hiawatha/httpd.conf.in \
+	${SUBST_CMD} ${WRKSRC}/etc/hiawatha/httpd.conf.in \
 		${WRKSRC}/etc/hiawatha/cgi-wrapper.conf \
 		${WRKSRC}/doc/hiawatha.1.in
 

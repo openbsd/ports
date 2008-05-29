@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_hiawatha_1_in,v 1.1 2008/04/29 08:47:43 ajacoutot Exp $
---- doc/hiawatha.1.in.orig	Tue Apr 29 10:19:44 2008
-+++ doc/hiawatha.1.in	Tue Apr 29 10:24:00 2008
+$OpenBSD: patch-doc_hiawatha_1_in,v 1.2 2008/05/29 07:53:03 ajacoutot Exp $
+--- doc/hiawatha.1.in.orig	Fri May 23 13:31:17 2008
++++ doc/hiawatha.1.in	Thu May 29 09:46:30 2008
 @@ -23,7 +23,7 @@ hiawatha \- Advanced and secure webserver
  Hiawatha is a secure webserver for Unix. It has been written with 'being secure' as its main goal. Hiawatha has lots of features that no other webserver has. This and the fact that Hiawatha's source code is free of security-bugs, makes Hiawatha the most secure webserver available.
  .br
@@ -10,31 +10,31 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.1 2008/04/29 08:47:43 ajacoutot Exp $
  
  .\" ==========[ Configuration files ]==========================================
  .SH CONFIGURATION FILES
-@@ -145,12 +145,12 @@ Example: CGIextension = cgi
+@@ -150,12 +150,12 @@ Example: CGIextension = cgi
  .B CGIhandler = <CGI handler>:<extension>[, <extension>, ...]
  Specify the handler for a CGI extension. A handler is an executable which will 'run' the CGI script.
  .br
 -Example: CGIhandler = /usr/bin/php4-cgi:php,php4
-+Example: CGIhandler = !!LOCALBASE!!/bin/php-fastcgi:php,php5
++Example: CGIhandler = ${LOCALBASE}/bin/php-fastcgi:php,php5
  .TP
  .B CGIwrapper = <CGI wrapper>
  Specify the wrapper for CGI processes. A secure CGI wrapper is included in the Hiawatha package (see cgi-wrapper(1) for more information).
  .br
 -Example: CGIwrapper = /usr/sbin/cgi-wrapper
-+Example: CGIwrapper = !!PREFIX!!/sbin/cgi-wrapper
++Example: CGIwrapper = ${PREFIX}/sbin/cgi-wrapper
  .TP
  .B CommandChannel = <portnumber>,<MD5 hash of password>
  The port and the password for the CommandChannel. You can use telnet to connect to the CommandChannel (localhost:<portnumber>). Type 'help' in the CommandChannel for more information.
-@@ -183,7 +183,7 @@ Example: GarbageLogfile = @logdir@/garbage.log
+@@ -188,7 +188,7 @@ Example: GarbageLogfile = @logdir@/garbage.log
  .B Include <filename>
  Include another configurationfile.
  .br
 -Example: Include /etc/hiawatha/hosts.conf
-+Example: Include !!SYSCONFDIR!!/hiawatha/hosts.conf
++Example: Include ${SYSCONFDIR}/hiawatha/hosts.conf
  .TP
  .B KickOnBan = yes|no
  Close all other connections that originate from the same IP in case of a ban.
-@@ -235,7 +235,7 @@ Default = @pidfiledir@/hiawatha.pid, example: PIDfile 
+@@ -240,7 +240,7 @@ Default = @pidfiledir@/hiawatha.pid, example: PIDfile 
  .B ServerId = <userid>|<userid>:<groupid>[,<groupid>, ...]
  The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group. The userid en groupid of user root are not allowed here.
  .br
@@ -43,33 +43,33 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.1 2008/04/29 08:47:43 ajacoutot Exp $
  .TP
  .B ServerKey = <SSL certificate file>
  The file containing the SSL private key and certificate. These will be used for all SSL bindings that don't have their own certificate file (see ServerKey and UseSSL in BINDING CONFIGURATION).
-@@ -785,7 +785,7 @@ and
+@@ -790,7 +790,7 @@ and
  .B UseGZfile
  
  .SH MIMETYPES
 -Specify the mimetypes of files in /etc/hiawatha/mimetypes.conf.
-+Specify the mimetypes of files in !!SYSCONFDIR!!/hiawatha/mimetypes.conf.
++Specify the mimetypes of files in ${SYSCONFDIR}/hiawatha/mimetypes.conf.
  .TP
  .B <mimetype> <extension> [<extension> ...]
  Example: image/jpeg jpg jpeg jpe
-@@ -809,15 +809,15 @@ Will unban all clients.
+@@ -814,15 +814,15 @@ Will unban all clients.
  Will close all open logfiles
  
  .SH FILES
 -.B /usr/sbin/hiawatha
-+.B !!PREFIX!!/sbin/hiawatha
++.B ${PREFIX}/sbin/hiawatha
  .br
 -.B /etc/hiawatha/httpd.conf
-+.B !!SYSCONFDIR!!/hiawatha/httpd.conf
++.B ${SYSCONFDIR}/hiawatha/httpd.conf
  .br
 -.B /etc/hiawatha/mime.types
-+.B !!SYSCONFDIR!!/hiawatha/mime.types
++.B ${SYSCONFDIR}/hiawatha/mime.types
  .br
 -.B /etc/hiawatha/cgi-wrapper.conf
-+.B !!SYSCONFDIR!!/hiawatha/cgi-wrapper.conf
++.B ${SYSCONFDIR}/hiawatha/cgi-wrapper.conf
  .br
 -.B /etc/hiawatha/php-fcgi.conf
-+.B !!SYSCONFDIR!!/hiawatha/php-fcgi.conf
++.B ${SYSCONFDIR}/hiawatha/php-fcgi.conf
  
  
  .SH SEE ALSO
