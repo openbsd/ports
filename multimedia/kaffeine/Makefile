@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/04/17 08:10:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2008/05/29 07:30:12 ajacoutot Exp $
 
 CATEGORIES=	multimedia x11 x11/kde
 COMMENT=	video player for KDE
@@ -6,7 +6,7 @@ COMMENT=	video player for KDE
 HOMEPAGE=	http://kaffeine.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kaffeine/}
 DISTNAME=	kaffeine-0.8.6
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS +=	kaffeinepart         0.0      # .0.1
@@ -18,8 +18,8 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--disable-libsuffix \
-			--without-gstreamer \
 			--without-arts \
+			--without-gstreamer \
 			--without-lame
 
 USE_GMAKE=		Yes

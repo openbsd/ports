@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_in,v 1.5 2008/05/29 07:30:12 ajacoutot Exp $
+--- configure.in.orig	Sun May 18 02:44:04 2008
++++ configure.in	Sun May 18 02:44:52 2008
+@@ -327,8 +327,8 @@ if test "$with_oggvorbis" != "no" ; then
+ 
+ 	if "$PKG_CONFIG" --exists vorbisenc ; then
+ 		with_oggvorbis=yes
+-		CFLAGS_OGGVORBIS=`"$PKG_CONFIG" --cflags vorbisenc`
+-		LIB_OGGVORBIS=`"$PKG_CONFIG" --libs vorbisenc`
++		CFLAGS_OGGVORBIS=`"$PKG_CONFIG" --cflags vorbisenc vorbis ogg`
++		LIB_OGGVORBIS=`"$PKG_CONFIG" --libs vorbisenc vorbis ogg`
+ 		AC_MSG_RESULT([yes])
+ 	else
+ 		with_oggvorbis=no
