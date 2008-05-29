@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2008/05/15 21:21:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.197 2008/05/29 18:36:06 simon Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -86,6 +86,7 @@
      SUBDIR += p5-Authen-Krb5-Simple
      SUBDIR += p5-Authen-Radius
      SUBDIR += p5-Authen-SASL
+     SUBDIR += p5-Catalyst-Authentication-Store-DBIx-Class
      SUBDIR += p5-Catalyst-Plugin-Authentication
      SUBDIR += p5-Catalyst-Plugin-Authentication-Store-DBIC
      SUBDIR += p5-Catalyst-Plugin-Authentication-Store-Htpasswd
