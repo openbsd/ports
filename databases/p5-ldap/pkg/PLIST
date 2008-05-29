@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/02/07 10:23:18 msf Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/05/29 11:17:59 landry Exp $
 ${P5SITE}/Bundle/
 ${P5SITE}/Bundle/Net/
 ${P5SITE}/Bundle/Net/LDAP.pm
@@ -17,7 +17,10 @@ ${P5SITE}/Net/LDAP/Control.pm
 ${P5SITE}/Net/LDAP/Control/EntryChange.pm
 ${P5SITE}/Net/LDAP/Control/ManageDsaIT.pm
 ${P5SITE}/Net/LDAP/Control/Paged.pm
+${P5SITE}/Net/LDAP/Control/PasswordPolicy.pm
 ${P5SITE}/Net/LDAP/Control/PersistentSearch.pm
+${P5SITE}/Net/LDAP/Control/PostRead.pm
+${P5SITE}/Net/LDAP/Control/PreRead.pm
 ${P5SITE}/Net/LDAP/Control/ProxyAuth.pm
 ${P5SITE}/Net/LDAP/Control/Sort.pm
 ${P5SITE}/Net/LDAP/Control/SortResult.pm
@@ -35,6 +38,7 @@ ${P5SITE}/Net/LDAP/Extra.pm
 ${P5SITE}/Net/LDAP/FAQ.pod
 ${P5SITE}/Net/LDAP/Filter.pm
 ${P5SITE}/Net/LDAP/Filter.pod
+${P5SITE}/Net/LDAP/FilterMatch.pm
 ${P5SITE}/Net/LDAP/LDIF.pm
 ${P5SITE}/Net/LDAP/LDIF.pod
 ${P5SITE}/Net/LDAP/Message.pm
@@ -57,7 +61,10 @@ ${P5SITE}/Net/LDAPS.pm
 @man man/man3p/Net::LDAP::Control::EntryChange.3p
 @man man/man3p/Net::LDAP::Control::ManageDsaIT.3p
 @man man/man3p/Net::LDAP::Control::Paged.3p
+@man man/man3p/Net::LDAP::Control::PasswordPolicy.3p
 @man man/man3p/Net::LDAP::Control::PersistentSearch.3p
+@man man/man3p/Net::LDAP::Control::PostRead.3p
+@man man/man3p/Net::LDAP::Control::PreRead.3p
 @man man/man3p/Net::LDAP::Control::ProxyAuth.3p
 @man man/man3p/Net::LDAP::Control::Sort.3p
 @man man/man3p/Net::LDAP::Control::SortResult.3p
@@ -71,6 +78,7 @@ ${P5SITE}/Net/LDAPS.pm
 @man man/man3p/Net::LDAP::Extra.3p
 @man man/man3p/Net::LDAP::FAQ.3p
 @man man/man3p/Net::LDAP::Filter.3p
+@man man/man3p/Net::LDAP::FilterMatch.3p
 @man man/man3p/Net::LDAP::LDIF.3p
 @man man/man3p/Net::LDAP::Message.3p
 @man man/man3p/Net::LDAP::RFC.3p
