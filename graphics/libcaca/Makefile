@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2008/05/29 09:41:21 robert Exp $
 
 COMMENT=		color ascii art library
 DISTNAME=		libcaca-0.9
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c ncurses m z
 
 HOMEPAGE=		http://libcaca.zoy.org/
-MASTER_SITES=		${HOMEPAGE}files/
+MASTER_SITES=		${HOMEPAGE}files/libcaca/
 
 FLAVORS=		no_x11
 FLAVOR?=
