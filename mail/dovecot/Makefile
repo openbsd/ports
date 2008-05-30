@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2008/05/28 23:08:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2008/05/30 23:25:09 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,11 +7,11 @@ COMMENT-sieve=	sieve mail filtering for Dovecot
 
 V_MAJOR=	1.0
 V_DOVECOT=	1.0.13
-V_SIEVE=	1.0.2
+V_SIEVE=	1.0.3
 
 PKGNAME=	dovecot-${V_DOVECOT}
 PKGNAME-server=	dovecot-${V_DOVECOT}p3
-PKGNAME-sieve=	dovecot-sieve-${V_SIEVE}p8
+PKGNAME-sieve=	dovecot-sieve-${V_SIEVE}
 
 DISTNAME=	dovecot-${V_DOVECOT}
 CATEGORIES=	mail
