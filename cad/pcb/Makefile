@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2007/11/13 12:55:46 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2008/05/30 14:08:40 ajacoutot Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-20070912
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	cad
 
 HOMEPAGE=	http://pcb.sourceforge.net/
 
 MAINTAINER=	Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xau Xdmcp Xrender \
 		Xcomposite Xdamage c m z expat fontconfig freetype jpeg png \
 		cairo glitz atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		pango-1.0 pangoft2-1.0 pangocairo-1.0
+		pango-1.0 pangoft2-1.0 pangocairo-1.0 pixman-1
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pcb/}
 

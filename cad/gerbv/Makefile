@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/13 12:55:46 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2008/05/30 14:08:40 ajacoutot Exp $
 
 COMMENT=		viewer for Gerber (RS-274X) files
 DISTNAME=		gerbv-1.0.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		cad graphics
 
 HOMEPAGE=		http://gerbv.sourceforge.net/
 
 MAINTAINER=		Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,7 +19,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xcomposite Xdamage cairo \
 		Xrender atk-1.0 c expat fontconfig freetype glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png z
+		pangoft2-1.0 pixman-1 png z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gerbv/}
 
