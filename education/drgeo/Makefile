@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2007/12/15 20:37:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2008/05/30 02:41:12 fgsch Exp $
 
 COMMENT=	interactive geometry program
 
 DISTNAME=	drgeo-1.1.0
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	education math
 
 HOMEPAGE=	http://www.ofset.org/drgeo/	
@@ -16,11 +16,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ofset/}
 
-WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
-		Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
+WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png pcre stdc++ xml2 z
+		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png stdc++ xml2 z
 
 MODULES=	devel/gettext
 
