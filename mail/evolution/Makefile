@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2008/05/26 16:29:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2008/05/30 08:23:49 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.12.1
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=    		mail
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
@@ -33,7 +33,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomeui-2 gnomevfs-2 gobject-2.0 gssapi gthread-2.0 \
 		gtk-x11-2.0 jpeg krb5 m nspr4 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre plc4 plds4 png popt pthread sasl2 \
+		pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread sasl2 \
 		soup-2.2 ssl util xml2 z
 
 MODULES=		devel/gettext \
@@ -81,23 +81,6 @@ SUBST_VARS=		R
 
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
-
-pre-configure:
-	@if pkg dependencies check evolution-\*; then \
-		if pkg dependencies check ${DISTNAME}; then \
-			:; \
-		else \
-			echo 1>&2 "+-------------------"; \
-			echo 1>&2 "| Error: you must remove your existing evolution installation"; \
-			echo 1>&2 "| before compiling this version.  To fully remove run"; \
-			echo 1>&2 "| these commands as user root"; \
-			echo 1>&2 "|"; \
-			echo 1>&2 "|	  pkg_delete -f `pkg_info -e 'evolution-*'`"; \
-			echo 1>&2 "|"; \
-			echo 1>&2 "+-------------------"; \
-			exit 1; \
-		fi; \
-	fi
 
 post-install:
 	find ${PREFIX}/share/evolution/${R}/default -perm 444 -exec chmod 644 {} \;

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2007/11/21 16:18:15 jasper Exp $
+$OpenBSD: patch-configure,v 1.5 2008/05/30 08:23:49 ajacoutot Exp $
 --- configure.orig	Mon Oct 15 08:31:10 2007
-+++ configure	Wed Oct 31 18:37:20 2007
++++ configure	Wed May 28 15:49:58 2008
 @@ -27347,9 +27347,6 @@ LIBS=$ac_check_lib_save_LIBS
  fi
  { echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_res_query" >&5
@@ -11,6 +11,32 @@ $OpenBSD: patch-configure,v 1.4 2007/11/21 16:18:15 jasper Exp $
  
                  { echo "$as_me:$LINENO: checking for bind in -lsocket" >&5
  echo $ECHO_N "checking for bind in -lsocket... $ECHO_C" >&6; }
+@@ -27790,13 +27787,13 @@ fi
+ 
+ 
+ 	PTHREAD_LIB=""
+-	{ echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
++	{ echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -27852,7 +27849,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
+ if test $ac_cv_lib_pthread_pthread_create = yes; then
+-  PTHREAD_LIB="-lpthread"
++  PTHREAD_LIB="-pthread"
+ else
+   { echo "$as_me:$LINENO: checking for pthread_create in -lpthreads" >&5
+ echo $ECHO_N "checking for pthread_create in -lpthreads... $ECHO_C" >&6; }
 @@ -29382,7 +29379,7 @@ if test "x${with_krb5}" != "xno"; then
  	LDFLAGS_save="$LDFLAGS"
  
