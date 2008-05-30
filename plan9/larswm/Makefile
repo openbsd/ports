@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/08/30 07:03:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2008/05/30 09:41:21 fgsch Exp $
 
 COMMENT=	9wm with automatic window tiling and virtual desktops
 
 DISTNAME=	larswm-7.5.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	plan9
 
 HOMEPAGE=	http://www.lab1702.net/fnurt/larswm/
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext Xmu Xt c
+
+WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xmu Xt c
 
 CONFIGURE_STYLE=imake
 USE_X11=	Yes

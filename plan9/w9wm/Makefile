@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 19:00:55 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2008/05/30 09:41:21 fgsch Exp $
 
 COMMENT=	hacked 9wm, with support for virtual screens
 
 DISTNAME=	w9wm-0.4.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	plan9
 
 HOMEPAGE=	http://www.grassouille.org/code/w9wm.en.html
@@ -13,7 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext c
+
+WANTLIB =	X11 Xau Xdmcp Xext c
 
 MASTER_SITES=	http://www.grassouille.org/code/w9wm/src/
 
