@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.24 2008/05/17 23:10:51 steven Exp $
+# $OpenBSD: OpenBSD,v 1.25 2008/05/31 05:12:30 phessler Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -15,6 +15,7 @@
 35.67		139.75		"itojun"	# Jun-ichiro Itojun
 36.134		-86.70		"david"		# David Krause
 37.515049	-122.339528	"marc"		# Marco S. Hyman
+37.765205	-122.471109	"phessler"	# Peter Hessler
 38.9693		-77.3863	"jason"		# Jason L. Wright
 39.179910	-77.058420	"merdely"	# Michael Erdely
 39.5565		-77.0300	"jdixon"	# Jason Dixon
