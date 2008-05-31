@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2008/01/04 17:48:36 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2008/05/31 23:04:38 jasper Exp $
 
 COMMENT-main=	graph drawing software
 
 DISTNAME=	graphviz-2.12
-PKGNAME-main=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 CATEGORIES=	math devel graphics
 MULTI_PACKAGES=	-main
 
@@ -62,7 +62,7 @@ WANTLIB=	ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp \
 		c dbus-1 dbus-glib-1 expat fontconfig freetype m pcre \
 		util z
 
-MODULES=	converters/libiconv devel/gettext
+MODULES=	devel/gettext
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=2::graphics/png \
 		ltdl::devel/libtool,-ltdl \
