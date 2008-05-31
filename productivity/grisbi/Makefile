@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/02 09:35:42 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/05/31 23:11:54 sthen Exp $
 
 COMMENT=	personal accounting application
 
 DISTNAME=	grisbi-0.5.9
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	productivity x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -23,7 +23,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender c fontconfig freetype m stdc++ z \
 		atk-1.0 cairo glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 png expat
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png expat
 
 MODULES=	devel/gettext
 
