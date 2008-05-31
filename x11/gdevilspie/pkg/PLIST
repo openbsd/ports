@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/31 09:03:20 jasper Exp $
+bin/gdevilspie
+lib/python${MODPY_VERSION}/site-packages/gDevilspie/
+lib/python${MODPY_VERSION}/site-packages/gDevilspie/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gDevilspie/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gDevilspie/filler.py
+lib/python${MODPY_VERSION}/site-packages/gDevilspie/filler.pyc
+lib/python${MODPY_VERSION}/site-packages/gDevilspie/reader.py
+lib/python${MODPY_VERSION}/site-packages/gDevilspie/reader.pyc
+lib/python${MODPY_VERSION}/site-packages/gDevilspie/sparser.py
+lib/python${MODPY_VERSION}/site-packages/gDevilspie/sparser.pyc
+lib/python${MODPY_VERSION}/site-packages/gdevilspie-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+share/applications/gdevilspie.desktop
+share/doc/gdevilspie/
+share/doc/gdevilspie/README
+share/gdevilspie/
+share/gdevilspie/gdevilspie.glade
+share/gdevilspie/gdevilspie.png
+share/pixmaps/gdevilspie.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
