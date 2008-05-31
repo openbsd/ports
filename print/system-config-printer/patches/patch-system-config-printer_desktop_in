@@ -1,4 +1,4 @@
-$OpenBSD: patch-system-config-printer_desktop_in,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
+$OpenBSD: patch-system-config-printer_desktop_in,v 1.2 2008/05/31 22:24:50 jasper Exp $
 --- system-config-printer.desktop.in.orig	Thu Mar 27 18:24:56 2008
 +++ system-config-printer.desktop.in	Thu Mar 27 18:25:09 2008
 @@ -2,7 +2,7 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-system-config-printer_desktop_in,v 1.1.1.1 2008/04/10 10:23:04 j
  _Name=Printing
  _Comment=Configure printers
 -Exec=/usr/bin/system-config-printer
-+Exec=!!PREFIX!!/bin/system-config-printer
++Exec=!!PREFIX!!/sbin/system-config-printer
  Terminal=false
  Type=Application
  Icon=printer
