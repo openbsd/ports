@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_tools_qglobal_h,v 1.1 2008/05/31 09:50:34 espie Exp $
+--- src/tools/qglobal.h.orig	Fri May 30 18:23:00 2008
++++ src/tools/qglobal.h	Fri May 30 18:23:16 2008
+@@ -699,12 +699,12 @@ inline int qRound( double d )
+ 
+ #if !defined(QT_CLEAN_NAMESPACE)
+ // source compatibility with Qt 1.x
+-typedef signed char		INT8;		// 8 bit signed
+-typedef unsigned char		UINT8;		// 8 bit unsigned
+-typedef short			INT16;		// 16 bit signed
+-typedef unsigned short		UINT16;		// 16 bit unsigned
+-typedef int			INT32;		// 32 bit signed
+-typedef unsigned int		UINT32;		// 32 bit unsigned
++//typedef signed char		INT8;		// 8 bit signed
++//typedef unsigned char		UINT8;		// 8 bit unsigned
++//typedef short			INT16;		// 16 bit signed
++//typedef unsigned short		UINT16;		// 16 bit unsigned
++//typedef int			INT32;		// 32 bit signed
++//typedef unsigned int		UINT32;		// 32 bit unsigned
+ #endif
+ 
+ typedef signed char		Q_INT8;		// 8 bit signed
