@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.27 2008/02/20 09:18:01 landry Exp $
+@comment $OpenBSD: PLIST,v 1.28 2008/05/31 10:07:45 jasper Exp $
+@pkgpath www/squid,transparent
+@pkgpath www/squid,snmp,transparent
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 bin/RunCache
@@ -8,6 +10,7 @@ libexec/digest_pw_auth
 libexec/diskd-daemon
 libexec/ip_user_check
 libexec/ncsa_auth
+libexec/squid_kerb_auth
 libexec/squid_unix_group
 libexec/unlinkd
 libexec/yp_auth
@@ -15,6 +18,7 @@ libexec/yp_auth
 @man man/man8/ncsa_auth.8
 @man man/man8/squid.8
 @man man/man8/squid_unix_group.8
+%%ldap%%
 sbin/squid
 share/examples/squid/
 @sample ${SYSCONFDIR}/squid/
@@ -1942,6 +1946,192 @@ share/examples/squid/errors/Turkish/ERR_WRITE_ERROR
 @sample share/squid/errors/Turkish/ERR_WRITE_ERROR
 share/examples/squid/errors/Turkish/ERR_ZERO_SIZE_OBJECT
 @sample share/squid/errors/Turkish/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Ukrainian-1251/
+@sample share/squid/errors/Ukrainian-1251/
+share/examples/squid/errors/Ukrainian-1251/ERR_ACCESS_DENIED
+@sample share/squid/errors/Ukrainian-1251/ERR_ACCESS_DENIED
+share/examples/squid/errors/Ukrainian-1251/ERR_CACHE_ACCESS_DENIED
+@sample share/squid/errors/Ukrainian-1251/ERR_CACHE_ACCESS_DENIED
+share/examples/squid/errors/Ukrainian-1251/ERR_CACHE_MGR_ACCESS_DENIED
+@sample share/squid/errors/Ukrainian-1251/ERR_CACHE_MGR_ACCESS_DENIED
+share/examples/squid/errors/Ukrainian-1251/ERR_CANNOT_FORWARD
+@sample share/squid/errors/Ukrainian-1251/ERR_CANNOT_FORWARD
+share/examples/squid/errors/Ukrainian-1251/ERR_CONNECT_FAIL
+@sample share/squid/errors/Ukrainian-1251/ERR_CONNECT_FAIL
+share/examples/squid/errors/Ukrainian-1251/ERR_DNS_FAIL
+@sample share/squid/errors/Ukrainian-1251/ERR_DNS_FAIL
+share/examples/squid/errors/Ukrainian-1251/ERR_FORWARDING_DENIED
+@sample share/squid/errors/Ukrainian-1251/ERR_FORWARDING_DENIED
+share/examples/squid/errors/Ukrainian-1251/ERR_FTP_DISABLED
+@sample share/squid/errors/Ukrainian-1251/ERR_FTP_DISABLED
+share/examples/squid/errors/Ukrainian-1251/ERR_FTP_FAILURE
+@sample share/squid/errors/Ukrainian-1251/ERR_FTP_FAILURE
+share/examples/squid/errors/Ukrainian-1251/ERR_FTP_FORBIDDEN
+@sample share/squid/errors/Ukrainian-1251/ERR_FTP_FORBIDDEN
+share/examples/squid/errors/Ukrainian-1251/ERR_FTP_NOT_FOUND
+@sample share/squid/errors/Ukrainian-1251/ERR_FTP_NOT_FOUND
+share/examples/squid/errors/Ukrainian-1251/ERR_FTP_PUT_CREATED
+@sample share/squid/errors/Ukrainian-1251/ERR_FTP_PUT_CREATED
+share/examples/squid/errors/Ukrainian-1251/ERR_FTP_PUT_ERROR
+@sample share/squid/errors/Ukrainian-1251/ERR_FTP_PUT_ERROR
+share/examples/squid/errors/Ukrainian-1251/ERR_FTP_PUT_MODIFIED
+@sample share/squid/errors/Ukrainian-1251/ERR_FTP_PUT_MODIFIED
+share/examples/squid/errors/Ukrainian-1251/ERR_FTP_UNAVAILABLE
+@sample share/squid/errors/Ukrainian-1251/ERR_FTP_UNAVAILABLE
+share/examples/squid/errors/Ukrainian-1251/ERR_INVALID_REQ
+@sample share/squid/errors/Ukrainian-1251/ERR_INVALID_REQ
+share/examples/squid/errors/Ukrainian-1251/ERR_INVALID_RESP
+@sample share/squid/errors/Ukrainian-1251/ERR_INVALID_RESP
+share/examples/squid/errors/Ukrainian-1251/ERR_INVALID_URL
+@sample share/squid/errors/Ukrainian-1251/ERR_INVALID_URL
+share/examples/squid/errors/Ukrainian-1251/ERR_LIFETIME_EXP
+@sample share/squid/errors/Ukrainian-1251/ERR_LIFETIME_EXP
+share/examples/squid/errors/Ukrainian-1251/ERR_NO_RELAY
+@sample share/squid/errors/Ukrainian-1251/ERR_NO_RELAY
+share/examples/squid/errors/Ukrainian-1251/ERR_ONLY_IF_CACHED_MISS
+@sample share/squid/errors/Ukrainian-1251/ERR_ONLY_IF_CACHED_MISS
+share/examples/squid/errors/Ukrainian-1251/ERR_READ_ERROR
+@sample share/squid/errors/Ukrainian-1251/ERR_READ_ERROR
+share/examples/squid/errors/Ukrainian-1251/ERR_READ_TIMEOUT
+@sample share/squid/errors/Ukrainian-1251/ERR_READ_TIMEOUT
+share/examples/squid/errors/Ukrainian-1251/ERR_SHUTTING_DOWN
+@sample share/squid/errors/Ukrainian-1251/ERR_SHUTTING_DOWN
+share/examples/squid/errors/Ukrainian-1251/ERR_SOCKET_FAILURE
+@sample share/squid/errors/Ukrainian-1251/ERR_SOCKET_FAILURE
+share/examples/squid/errors/Ukrainian-1251/ERR_TOO_BIG
+@sample share/squid/errors/Ukrainian-1251/ERR_TOO_BIG
+share/examples/squid/errors/Ukrainian-1251/ERR_UNSUP_REQ
+@sample share/squid/errors/Ukrainian-1251/ERR_UNSUP_REQ
+share/examples/squid/errors/Ukrainian-1251/ERR_URN_RESOLVE
+@sample share/squid/errors/Ukrainian-1251/ERR_URN_RESOLVE
+share/examples/squid/errors/Ukrainian-1251/ERR_WRITE_ERROR
+@sample share/squid/errors/Ukrainian-1251/ERR_WRITE_ERROR
+share/examples/squid/errors/Ukrainian-1251/ERR_ZERO_SIZE_OBJECT
+@sample share/squid/errors/Ukrainian-1251/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Ukrainian-koi8-u/
+@sample share/squid/errors/Ukrainian-koi8-u/
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_ACCESS_DENIED
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_ACCESS_DENIED
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_CACHE_ACCESS_DENIED
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_CACHE_ACCESS_DENIED
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_CACHE_MGR_ACCESS_DENIED
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_CACHE_MGR_ACCESS_DENIED
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_CANNOT_FORWARD
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_CANNOT_FORWARD
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_CONNECT_FAIL
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_CONNECT_FAIL
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_DNS_FAIL
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_DNS_FAIL
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_FORWARDING_DENIED
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_FORWARDING_DENIED
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_FTP_DISABLED
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_FTP_DISABLED
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_FTP_FAILURE
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_FTP_FAILURE
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_FTP_FORBIDDEN
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_FTP_FORBIDDEN
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_FTP_NOT_FOUND
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_FTP_NOT_FOUND
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_FTP_PUT_CREATED
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_FTP_PUT_CREATED
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_FTP_PUT_ERROR
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_FTP_PUT_ERROR
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_FTP_PUT_MODIFIED
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_FTP_PUT_MODIFIED
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_FTP_UNAVAILABLE
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_FTP_UNAVAILABLE
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_INVALID_REQ
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_INVALID_REQ
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_INVALID_RESP
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_INVALID_RESP
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_INVALID_URL
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_INVALID_URL
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_LIFETIME_EXP
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_LIFETIME_EXP
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_NO_RELAY
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_NO_RELAY
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_ONLY_IF_CACHED_MISS
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_ONLY_IF_CACHED_MISS
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_READ_ERROR
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_READ_ERROR
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_READ_TIMEOUT
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_READ_TIMEOUT
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_SHUTTING_DOWN
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_SHUTTING_DOWN
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_SOCKET_FAILURE
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_SOCKET_FAILURE
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_TOO_BIG
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_TOO_BIG
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_UNSUP_REQ
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_UNSUP_REQ
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_URN_RESOLVE
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_URN_RESOLVE
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_WRITE_ERROR
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_WRITE_ERROR
+share/examples/squid/errors/Ukrainian-koi8-u/ERR_ZERO_SIZE_OBJECT
+@sample share/squid/errors/Ukrainian-koi8-u/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Ukrainian-utf8/
+@sample share/squid/errors/Ukrainian-utf8/
+share/examples/squid/errors/Ukrainian-utf8/ERR_ACCESS_DENIED
+@sample share/squid/errors/Ukrainian-utf8/ERR_ACCESS_DENIED
+share/examples/squid/errors/Ukrainian-utf8/ERR_CACHE_ACCESS_DENIED
+@sample share/squid/errors/Ukrainian-utf8/ERR_CACHE_ACCESS_DENIED
+share/examples/squid/errors/Ukrainian-utf8/ERR_CACHE_MGR_ACCESS_DENIED
+@sample share/squid/errors/Ukrainian-utf8/ERR_CACHE_MGR_ACCESS_DENIED
+share/examples/squid/errors/Ukrainian-utf8/ERR_CANNOT_FORWARD
+@sample share/squid/errors/Ukrainian-utf8/ERR_CANNOT_FORWARD
+share/examples/squid/errors/Ukrainian-utf8/ERR_CONNECT_FAIL
+@sample share/squid/errors/Ukrainian-utf8/ERR_CONNECT_FAIL
+share/examples/squid/errors/Ukrainian-utf8/ERR_DNS_FAIL
+@sample share/squid/errors/Ukrainian-utf8/ERR_DNS_FAIL
+share/examples/squid/errors/Ukrainian-utf8/ERR_FORWARDING_DENIED
+@sample share/squid/errors/Ukrainian-utf8/ERR_FORWARDING_DENIED
+share/examples/squid/errors/Ukrainian-utf8/ERR_FTP_DISABLED
+@sample share/squid/errors/Ukrainian-utf8/ERR_FTP_DISABLED
+share/examples/squid/errors/Ukrainian-utf8/ERR_FTP_FAILURE
+@sample share/squid/errors/Ukrainian-utf8/ERR_FTP_FAILURE
+share/examples/squid/errors/Ukrainian-utf8/ERR_FTP_FORBIDDEN
+@sample share/squid/errors/Ukrainian-utf8/ERR_FTP_FORBIDDEN
+share/examples/squid/errors/Ukrainian-utf8/ERR_FTP_NOT_FOUND
+@sample share/squid/errors/Ukrainian-utf8/ERR_FTP_NOT_FOUND
+share/examples/squid/errors/Ukrainian-utf8/ERR_FTP_PUT_CREATED
+@sample share/squid/errors/Ukrainian-utf8/ERR_FTP_PUT_CREATED
+share/examples/squid/errors/Ukrainian-utf8/ERR_FTP_PUT_ERROR
+@sample share/squid/errors/Ukrainian-utf8/ERR_FTP_PUT_ERROR
+share/examples/squid/errors/Ukrainian-utf8/ERR_FTP_PUT_MODIFIED
+@sample share/squid/errors/Ukrainian-utf8/ERR_FTP_PUT_MODIFIED
+share/examples/squid/errors/Ukrainian-utf8/ERR_FTP_UNAVAILABLE
+@sample share/squid/errors/Ukrainian-utf8/ERR_FTP_UNAVAILABLE
+share/examples/squid/errors/Ukrainian-utf8/ERR_INVALID_REQ
+@sample share/squid/errors/Ukrainian-utf8/ERR_INVALID_REQ
+share/examples/squid/errors/Ukrainian-utf8/ERR_INVALID_RESP
+@sample share/squid/errors/Ukrainian-utf8/ERR_INVALID_RESP
+share/examples/squid/errors/Ukrainian-utf8/ERR_INVALID_URL
+@sample share/squid/errors/Ukrainian-utf8/ERR_INVALID_URL
+share/examples/squid/errors/Ukrainian-utf8/ERR_LIFETIME_EXP
+@sample share/squid/errors/Ukrainian-utf8/ERR_LIFETIME_EXP
+share/examples/squid/errors/Ukrainian-utf8/ERR_NO_RELAY
+@sample share/squid/errors/Ukrainian-utf8/ERR_NO_RELAY
+share/examples/squid/errors/Ukrainian-utf8/ERR_ONLY_IF_CACHED_MISS
+@sample share/squid/errors/Ukrainian-utf8/ERR_ONLY_IF_CACHED_MISS
+share/examples/squid/errors/Ukrainian-utf8/ERR_READ_ERROR
+@sample share/squid/errors/Ukrainian-utf8/ERR_READ_ERROR
+share/examples/squid/errors/Ukrainian-utf8/ERR_READ_TIMEOUT
+@sample share/squid/errors/Ukrainian-utf8/ERR_READ_TIMEOUT
+share/examples/squid/errors/Ukrainian-utf8/ERR_SHUTTING_DOWN
+@sample share/squid/errors/Ukrainian-utf8/ERR_SHUTTING_DOWN
+share/examples/squid/errors/Ukrainian-utf8/ERR_SOCKET_FAILURE
+@sample share/squid/errors/Ukrainian-utf8/ERR_SOCKET_FAILURE
+share/examples/squid/errors/Ukrainian-utf8/ERR_TOO_BIG
+@sample share/squid/errors/Ukrainian-utf8/ERR_TOO_BIG
+share/examples/squid/errors/Ukrainian-utf8/ERR_UNSUP_REQ
+@sample share/squid/errors/Ukrainian-utf8/ERR_UNSUP_REQ
+share/examples/squid/errors/Ukrainian-utf8/ERR_URN_RESOLVE
+@sample share/squid/errors/Ukrainian-utf8/ERR_URN_RESOLVE
+share/examples/squid/errors/Ukrainian-utf8/ERR_WRITE_ERROR
+@sample share/squid/errors/Ukrainian-utf8/ERR_WRITE_ERROR
+share/examples/squid/errors/Ukrainian-utf8/ERR_ZERO_SIZE_OBJECT
+@sample share/squid/errors/Ukrainian-utf8/ERR_ZERO_SIZE_OBJECT
 share/examples/squid/icons/
 @sample share/squid/icons/
 share/examples/squid/icons/anthony-binhex.gif

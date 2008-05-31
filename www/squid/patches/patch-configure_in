@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.25 2007/09/10 17:49:23 merdely Exp $
---- configure.in.orig	Wed Sep  5 18:25:42 2007
-+++ configure.in	Wed Sep  5 21:01:07 2007
+$OpenBSD: patch-configure_in,v 1.26 2008/05/31 10:07:45 jasper Exp $
+--- configure.in.orig	Thu Jan 10 07:34:23 2008
++++ configure.in	Wed Apr  9 17:00:51 2008
 @@ -2248,18 +2248,6 @@ dnl during compile.
  		;;
  esac
@@ -20,3 +20,19 @@ $OpenBSD: patch-configure_in,v 1.25 2007/09/10 17:49:23 merdely Exp $
  # Recommended by Balint Nagy Endre <bne@CareNet.hu>
  case "$host" in
  	*-univel-sysv4.2MP)
+@@ -2790,12 +2778,14 @@ AC_ARG_WITH(maxfd,
+     ;;
+   esac
+ ])
++
++TLDFLAGS="$LDFLAGS"
++
+ if test -z "$SQUID_MAXFD"; then
+ 
+ dnl Not cached since people are likely to tune this
+ AC_MSG_CHECKING(Maximum number of filedescriptors we can open)
+ dnl damn! FreeBSD's pthreads breaks dup2().
+-TLDFLAGS="$LDFLAGS"
+ case $host in
+ i386-unknown-freebsd*)
+     if echo "$LDFLAGS" | grep -q pthread; then
