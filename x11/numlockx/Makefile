@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/05/31 21:06:32 steven Exp $
 
 COMMENT=		start X11 with NumLock turned on
 
-DISTNAME=		numlockx-1.0
+DISTNAME=		numlockx-1.1
 CATEGORIES=		x11	
 
 HOMEPAGE=		http://ktown.kde.org/~seli/numlockx/	
@@ -16,8 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c
 
-MASTER_SITES=	http://caraldi.com/jbq/numlockx/ \
-		${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE}
 
 SEPARATE_BUILD=		simple
 CONFIGURE_STYLE=	gnu
