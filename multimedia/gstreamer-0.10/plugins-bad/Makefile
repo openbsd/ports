@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/13 15:11:51 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/01 07:19:05 sturm Exp $
 
 COMMENT-main =		multimedia framework - plugins bad
 COMMENT-tremor =	multimedia framework - tremor plugin
@@ -14,10 +14,11 @@ COMMENT-neon =		multimedia framework - neon plugin
 COMMENT-swf =		multimedia framework - flash plugin
 COMMENT-meta =		multimedia framework - metadata plugin
 COMMENT-sndfile =	multimedia framework - sndfile plugin
+COMMENT-real =		multimedia framework - real plugin
 
 V =			0.10.7
 DISTNAME =		gst-plugins-bad-$V
-PKGNAME-main =		gstreamer-plugins-bad-$V
+PKGNAME-main =		gstreamer-plugins-bad-${V}p0
 PKGNAME-tremor =	gstreamer-tremor-$V
 PKGNAME-musepack =	gstreamer-musepack-$V
 PKGNAME-faac =		gstreamer-faac-$V
@@ -31,6 +32,7 @@ PKGNAME-neon =		gstreamer-neon-$V
 PKGNAME-swf =		gstreamer-flash-$V
 PKGNAME-meta =		gstreamer-meta-$V
 PKGNAME-sndfile =	gstreamer-sndfile-$V
+PKGNAME-real =		gstreamer-real-$V
 MULTI_PACKAGES =	-main -tremor -musepack -faac -faad -xvid -sdl -bz2 \
 			-gsm -ladspa -meta -neon -sndfile
 
@@ -52,7 +54,7 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			gstaudio-0.10,gstinterfaces-0.10,gstvideo-0.10,gstriff-0.10,gstnetbuffer-0.10,gstpbutils-0.10,gstrtp-0.10,gstsdp-0.10,gsttag-0.10::$P/plugins-base
 
 RUN_DEPENDS-main =
-			
+
 WANTLIB-tremor =	${WANTLIB} \
 			gstbase-0.10
 
@@ -128,6 +130,15 @@ WANTLIB-sndfile =	${WANTLIB} \
 			gstbase-0.10
 LIB_DEPENDS-sndfile =	${LIB_DEPENDS} \
 			sndfile::audio/libsndfile
+
+.if ${MACHINE_ARCH} == i386 || ${MACHINE_ARCH} == amd64
+MULTI_PACKAGES +=	-real
+
+WANTLIB-real =		${WANTLIB} \
+			gstbase-0.10
+LIB_DEPENDS-real =	${LIB_DEPENDS} \
+			gstaudio-0.10,gstinterfaces-0.10::$P/plugins-base
+.endif
 
 CONFIGURE_ARGS =	--disable-cdaudio \
 			--disable-alsa \

@@ -26,6 +26,7 @@ The following plugins are in specific packages because of dependencies:
 * ladspa
 * musepack 
 * neon
+* real
 * sdl
 * xvid
 
