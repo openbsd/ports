@@ -1,0 +1,12 @@
+$OpenBSD: patch-perl_FCGI_PL,v 1.1 2008/06/01 20:39:26 simon Exp $
+--- perl/FCGI.PL.orig	Fri May 23 07:12:42 2008
++++ perl/FCGI.PL	Fri May 23 07:13:06 2008
+@@ -393,7 +393,7 @@ sub OPEN {
+ # Apparently some use fileno to determine if a filehandle is open,
+ # so we might want to return a defined, but meaningless value.
+ # An alternative would be to return the fcgi stream fd.
+-# sub FILENO { -2 }
++sub FILENO { -2 }
+ 
+ 1;
+ 

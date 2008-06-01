@@ -1,7 +1,7 @@
-$OpenBSD: patch-libfcgi_os_unix_c,v 1.1.1.1 2004/02/11 20:13:35 sturm Exp $
---- libfcgi/os_unix.c.orig	2004-02-11 20:40:53.000000000 +0100
-+++ libfcgi/os_unix.c	2004-02-11 20:41:05.000000000 +0100
-@@ -536,7 +536,7 @@ int OS_SpawnChild(char *appPath, int lis
+$OpenBSD: patch-libfcgi_os_unix_c,v 1.2 2008/06/01 20:39:26 simon Exp $
+--- libfcgi/os_unix.c.orig	Tue Mar  5 20:14:49 2002
++++ libfcgi/os_unix.c	Fri May 23 07:12:26 2008
+@@ -536,7 +536,7 @@ int OS_SpawnChild(char *appPath, int listenFd)
           *
           * XXX: entire environment passes through
  	 */
