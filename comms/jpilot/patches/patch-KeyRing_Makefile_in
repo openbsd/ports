@@ -1,10 +1,10 @@
-$OpenBSD: patch-KeyRing_Makefile_in,v 1.4 2006/10/20 11:49:42 ajacoutot Exp $
---- KeyRing/Makefile.in.orig	Thu Aug 24 01:22:09 2006
-+++ KeyRing/Makefile.in	Mon Aug 28 11:19:49 2006
-@@ -249,7 +249,7 @@ EXTRA_DIST = README.txt
+$OpenBSD: patch-KeyRing_Makefile_in,v 1.5 2008/06/01 15:27:46 ajacoutot Exp $
+--- KeyRing/Makefile.in.orig	Sun Jun  1 16:01:22 2008
++++ KeyRing/Makefile.in	Sun Jun  1 16:01:42 2008
+@@ -245,7 +245,7 @@ EXTRA_DIST = README.txt
  @MAKE_KEYRING_TRUE@lib_LTLIBRARIES = libkeyring.la
  @MAKE_KEYRING_TRUE@libkeyring_la_SOURCES = keyring.c
- @MAKE_KEYRING_TRUE@libkeyring_la_CFLAGS = -Wall @PILOT_FLAGS@ @GTK_CFLAGS@ -I$(top_srcdir)
+ @MAKE_KEYRING_TRUE@libkeyring_la_CFLAGS = @PILOT_FLAGS@ @GTK_CFLAGS@ -I$(top_srcdir)
 -@MAKE_KEYRING_TRUE@libkeyring_la_LDFLAGS = -lcrypto @GTK_LIBS@
 +@MAKE_KEYRING_TRUE@libkeyring_la_LDFLAGS = -lcrypto @GTK_LIBS@ -module -avoid-version
  all: all-am

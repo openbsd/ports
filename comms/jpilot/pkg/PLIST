@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2007/07/13 08:54:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2008/06/01 15:27:46 ajacoutot Exp $
 %%SHARED%%
 bin/jpilot
 bin/jpilot-dump
@@ -15,7 +15,6 @@ lib/jpilot/plugins/
 @man man/man1/jpilot-dump.1
 @man man/man1/jpilot-sync.1
 @man man/man1/jpilot.1
-share/applications/
 share/applications/jpilot.desktop
 share/doc/jpilot/
 share/doc/jpilot/AUTHORS
@@ -53,10 +52,14 @@ share/doc/jpilot/manual/manual.html
 share/doc/jpilot/manual/plugin.html
 share/jpilot/
 share/jpilot/AddressDB.pdb
+share/jpilot/CalendarDB-PDat.pdb
+share/jpilot/ContactsDB-PAdd.pdb
 share/jpilot/DatebookDB.pdb
 share/jpilot/ExpenseDB.pdb
 share/jpilot/Memo32DB.pdb
 share/jpilot/MemoDB.pdb
+share/jpilot/MemosDB-PMem.pdb
+share/jpilot/TasksDB-PTod.pdb
 share/jpilot/ToDoDB.pdb
 share/jpilot/jpilotrc.blue
 share/jpilot/jpilotrc.default
@@ -72,8 +75,9 @@ share/locale/fr/LC_MESSAGES/jpilot.mo
 share/locale/it/LC_MESSAGES/jpilot.mo
 share/locale/ja/LC_MESSAGES/jpilot.mo
 share/locale/ko/LC_MESSAGES/jpilot.mo
+share/locale/nb/LC_MESSAGES/jpilot.mo
 share/locale/nl/LC_MESSAGES/jpilot.mo
-share/locale/no/LC_MESSAGES/jpilot.mo
+share/locale/pt_BR/LC_MESSAGES/jpilot.mo
 share/locale/ru/LC_MESSAGES/jpilot.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/

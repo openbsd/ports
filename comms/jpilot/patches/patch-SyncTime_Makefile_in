@@ -1,10 +1,10 @@
-$OpenBSD: patch-SyncTime_Makefile_in,v 1.8 2006/10/20 11:49:42 ajacoutot Exp $
---- SyncTime/Makefile.in.orig	Thu Aug 24 01:22:10 2006
-+++ SyncTime/Makefile.in	Mon Aug 28 11:19:49 2006
-@@ -248,7 +248,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-SyncTime_Makefile_in,v 1.9 2008/06/01 15:27:46 ajacoutot Exp $
+--- SyncTime/Makefile.in.orig	Sun Jun  1 16:01:52 2008
++++ SyncTime/Makefile.in	Sun Jun  1 16:02:10 2008
+@@ -244,7 +244,7 @@ target_alias = @target_alias@
  @MAKE_SYNCTIME_TRUE@lib_LTLIBRARIES = libsynctime.la
  @MAKE_SYNCTIME_TRUE@libsynctime_la_SOURCES = synctime.c
- @MAKE_SYNCTIME_TRUE@libsynctime_la_CFLAGS = -Wall @PILOT_FLAGS@ @GTK_CFLAGS@ -I$(top_srcdir)
+ @MAKE_SYNCTIME_TRUE@libsynctime_la_CFLAGS = @PILOT_FLAGS@ @GTK_CFLAGS@ -I$(top_srcdir)
 -@MAKE_SYNCTIME_TRUE@libsynctime_la_LDFLAGS = @GTK_LIBS@
 +@MAKE_SYNCTIME_TRUE@libsynctime_la_LDFLAGS = @GTK_LIBS@ -module -avoid-version
  all: all-am
