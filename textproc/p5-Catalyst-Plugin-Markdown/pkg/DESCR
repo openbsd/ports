@@ -1,0 +1,2 @@
+This module adds a method to Catalyst for accessing a persistent and
+ready to use Text::Markdown object.
