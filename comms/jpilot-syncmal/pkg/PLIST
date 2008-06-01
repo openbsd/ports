@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/23 13:36:28 ajacoutot Exp $
-%%SHARED%%
-lib/jpilot/plugins/libsyncmal.a
-lib/jpilot/plugins/libsyncmal.la
+@comment $OpenBSD: PLIST,v 1.2 2008/06/01 15:34:48 ajacoutot Exp $
+@comment lib/jpilot/plugins/libsyncmal.a
+@comment lib/jpilot/plugins/libsyncmal.la
+lib/jpilot/plugins/libsyncmal.so
