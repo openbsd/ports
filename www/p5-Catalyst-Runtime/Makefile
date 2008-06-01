@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2008/04/14 21:42:55 simon Exp $
+# $OpenBSD: Makefile,v 1.13 2008/06/01 20:42:19 simon Exp $
 
 COMMENT= 	MVC Web Application Framework
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Runtime-5.7012
+DISTNAME=	Catalyst-Runtime-5.7014
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.catalystframework.org/
