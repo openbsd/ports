@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2007/11/13 12:55:46 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2008/06/01 17:33:36 ajacoutot Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
 DISTNAME=	gnokii-0.6.14
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	comms x11
 SHARED_LIBS +=	gnokii               2.7      # .3.0
 
@@ -12,7 +12,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 HOMEPAGE=	http://www.gnokii.org/
 MASTER_SITES=	${HOMEPAGE}download/gnokii/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -41,13 +41,14 @@ CONFIGURE_ARGS+=	--without-x
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-x
 WANTLIB+=		X11 Xau Xdmcp Xpm Xrender fontconfig freetype z \
-			Xcomposite Xdamage \
+			Xcomposite Xdamage pixman-1 \
 			m pthread pcre atk-1.0.>=800.0 glib-2.0.>=400.8 \
 			gmodule-2.0.>=400.8 gobject-2.0.>=400.8 \
 			pango-1.0.>=600.0 pangoft2-1.0.>=600.0 \
 			pangocairo-1.0 cairo glitz png expat \
 			Xcursor Xext Xfixes Xi Xinerama Xrandr
-LIB_DEPENDS=		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
+LIB_DEPENDS=		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2 \
+			ical::textproc/libical
 RUN_DEPENDS+=		:desktop-file-utils-*:devel/desktop-file-utils
 .endif
 
