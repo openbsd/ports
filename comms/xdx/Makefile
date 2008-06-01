@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/15 19:12:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/01 17:17:25 ajacoutot Exp $
 
 COMMENT=	X DX cluster watcher
 
 VERSION=	2.2
 DISTNAME=	xdx-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://www.qsl.net/pg4i/linux/xdx.html
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
 		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png z
+		pangocairo-1.0 pangoft2-1.0 pixman-1 png z
 
 MASTER_SITES=		http://www.qsl.net/pg4i/download/
 

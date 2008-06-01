@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/26 16:13:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/01 17:17:25 ajacoutot Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
 DISTNAME=	gmfsk-0.6
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://gmfsk.connect.fi/
@@ -18,12 +18,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama	Xcomposite \
-	Xdamage Xrandr Xrender c expat fontconfig freetype pthread stdc++ \
-	m z atk-1.0 cairo glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-	gthread-2.0 iconv intl pango-1.0 pangocairo-1.0 pangoft2-1.0	\
-	png ORBit-2 art_lgpl_2 bonobo-2 bonobo-activation bonoboui-2	\
-	gconf-2 gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 popt xml2
+WANTLIB +=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
+		Xcomposite Xdamage Xrandr Xrender audiofile c esd \
+		expat fontconfig freetype pthread stdc++ m z atk-1.0 \
+		cairo gailutil glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+		gthread-2.0 iconv intl pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 png ORBit-2 art_lgpl_2 bonobo-2 \
+		bonobo-activation bonoboui-2 gconf-2 gnome-2 \
+		gnome-keyring gnomecanvas-2 gnomevfs-2 pixman-1 popt xml2
 
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:yelp-*:x11/gnome/yelp
