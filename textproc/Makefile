@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.234 2008/05/05 09:34:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.235 2008/06/01 16:32:34 simon Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -64,6 +64,7 @@
      SUBDIR += ots
      SUBDIR += p5-Blatte
      SUBDIR += p5-CGI-FastTemplate
+     SUBDIR += p5-Catalyst-Plugin-Markdown
      SUBDIR += p5-Catalyst-Plugin-Textile
      SUBDIR += p5-Catalyst-Plugin-Unicode
      SUBDIR += p5-Catalyst-View-TT
