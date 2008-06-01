@@ -1,0 +1,2 @@
+This module extends the Catalyst base class with a distributed cache to
+allow arbitrary data caching using memcached.

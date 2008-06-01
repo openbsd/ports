@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/01 13:53:05 simon Exp $
+${P5SITE}/Catalyst/Plugin/
+${P5SITE}/Catalyst/Plugin/Cache/
+${P5SITE}/Catalyst/Plugin/Cache/Memcached.pm
+@man man/man3p/Catalyst::Plugin::Cache::Memcached.3p
