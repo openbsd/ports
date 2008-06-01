@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.113 2008/05/06 18:53:01 steven Exp $
+# $OpenBSD: Makefile,v 1.114 2008/06/01 14:56:06 ajacoutot Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
 
 VERSION=		2.6.32
 DISTNAME=		libxml2-${VERSION}
-PKGNAME-main=		libxml-${VERSION}
+PKGNAME-main=		libxml-${VERSION}p0
 PKGNAME-python=		py-libxml-${VERSION}
 SHARED_LIBS=		xml2	9.8
 CATEGORIES=		textproc
@@ -45,8 +45,7 @@ MODULES+=		lang/python
 LIB_DEPENDS-python=	xml2.>=9::textproc/libxml,-main \
 			${MODLIBICONV_LIB_DEPENDS}
 CONFIGURE_ENV=		PYTHON=${MODPY_BIN}
-FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxml2/ \
-			DEVHELP_DIR=${PREFIX}/share/doc/libxml2/html/devhelp
+FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxml2/
 .endif
 
 CONFIGURE_ARGS+=	--without-threads
