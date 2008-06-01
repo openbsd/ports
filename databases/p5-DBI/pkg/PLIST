@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2007/09/16 10:01:03 simon Exp $
+@comment $OpenBSD: PLIST,v 1.30 2008/06/01 20:25:50 simon Exp $
 bin/dbilogstrip
 bin/dbiprof
 bin/dbiproxy
@@ -41,6 +41,10 @@ ${P5ARCH}/DBI/Gofer/
 ${P5ARCH}/DBI/Gofer/Execute.pm
 ${P5ARCH}/DBI/Gofer/Request.pm
 ${P5ARCH}/DBI/Gofer/Response.pm
+${P5ARCH}/DBI/Gofer/Serializer/
+${P5ARCH}/DBI/Gofer/Serializer/Base.pm
+${P5ARCH}/DBI/Gofer/Serializer/DataDumper.pm
+${P5ARCH}/DBI/Gofer/Serializer/Storable.pm
 ${P5ARCH}/DBI/Gofer/Transport/
 ${P5ARCH}/DBI/Gofer/Transport/Base.pm
 ${P5ARCH}/DBI/Gofer/Transport/pipeone.pm
@@ -57,6 +61,7 @@ ${P5ARCH}/DBI/Roadmap.pm
 ${P5ARCH}/DBI/SQL/
 ${P5ARCH}/DBI/SQL/Nano.pm
 ${P5ARCH}/DBI/Util/
+${P5ARCH}/DBI/Util/CacheMemory.pm
 ${P5ARCH}/DBI/Util/_accessor.pm
 ${P5ARCH}/DBI/W32ODBC.pm
 @comment ${P5ARCH}/Roadmap.pod
@@ -104,6 +109,9 @@ ${P5ARCH}/dbixs_rev.pl
 @man man/man3p/DBI::Gofer::Execute.3p
 @man man/man3p/DBI::Gofer::Request.3p
 @man man/man3p/DBI::Gofer::Response.3p
+@man man/man3p/DBI::Gofer::Serializer::Base.3p
+@man man/man3p/DBI::Gofer::Serializer::DataDumper.3p
+@man man/man3p/DBI::Gofer::Serializer::Storable.3p
 @man man/man3p/DBI::Gofer::Transport::Base.3p
 @man man/man3p/DBI::Gofer::Transport::pipeone.3p
 @man man/man3p/DBI::Gofer::Transport::stream.3p
@@ -115,6 +123,7 @@ ${P5ARCH}/dbixs_rev.pl
 @man man/man3p/DBI::ProxyServer.3p
 @man man/man3p/DBI::PurePerl.3p
 @man man/man3p/DBI::SQL::Nano.3p
+@man man/man3p/DBI::Util::CacheMemory.3p
 @man man/man3p/DBI::W32ODBC.3p
 @comment @man man/man3p/Roadmap.3p
 @comment @man man/man3p/TASKS.3p
