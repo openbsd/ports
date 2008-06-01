@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/20 19:12:12 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.3 2008/06/01 08:21:15 sthen Exp $
 
 COMMENT=	Video converter for the Playstation Portable
 
 V=		0.3
 DISTNAME=	pspvc-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 DISTFILES=	pspvc-install-${V}.tar.gz
 CATEGORIES=	multimedia
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes freetype
-WANTLIB += Xi Xinerama Xrandr Xrender expat fontconfig
-WANTLIB += m z c png iconv intl
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes freetype
+WANTLIB += Xi Xinerama Xrandr Xrender expat fontconfig pixman-1
+WANTLIB += m z c png iconv intl pcre
 WANTLIB += atk-1.0 cairo glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0
 

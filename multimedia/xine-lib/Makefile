@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2008/04/15 11:24:14 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.34 2008/06/01 08:21:15 sthen Exp $
 
 COMMENT-main=		multimedia decoding library
 COMMENT-esd=		esound audio output module for xine-lib
@@ -8,9 +8,9 @@ COMMENT-jack=		jackd audio output module for xine-lib
 V=			1.1.12
 DISTNAME=		xine-lib-${V}
 PKGNAME-main=		${DISTNAME}
-PKGNAME-esd=		xine-lib-esd-${V}
-PKGNAME-arts=		xine-lib-arts-${V}
-PKGNAME-jack=		xine-lib-jack-${V}
+PKGNAME-esd=		xine-lib-esd-${V}p0
+PKGNAME-arts=		xine-lib-arts-${V}p0
+PKGNAME-jack=		xine-lib-jack-${V}p0
 
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
@@ -60,15 +60,15 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 LIB_DEPENDS-esd=	${LIB_DEPENDS} \
 			esd.>=2::audio/esound \
 			audiofile.>=0::devel/libaudiofile \
-			::${BUILD_PKGPATH}
+			xine::${BUILD_PKGPATH}
 RUN_DEPENDS-esd=	${RUN_DEPENDS}
 LIB_DEPENDS-arts=	${LIB_DEPENDS} \
 			artsc.>=1::x11/kde/arts3 \
-			::${BUILD_PKGPATH}
+			xine::${BUILD_PKGPATH}
 RUN_DEPENDS-arts=	${RUN_DEPENDS}
 LIB_DEPENDS-jack=	${LIB_DEPENDS} \
 			jack::audio/jack \
-			::${BUILD_PKGPATH}
+			xine::${BUILD_PKGPATH}
 RUN_DEPENDS-jack=	${RUN_DEPENDS}
 
 SHARED_ONLY=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2008/05/18 13:37:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2008/06/01 08:21:15 sthen Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -19,7 +19,7 @@ V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
 PKGNAME-main =		gstreamer-plugins-good-$Vp1
 PKGNAME-aalib =		gstreamer-aalib-$V
-PKGNAME-cairo =		gstreamer-cairo-$V
+PKGNAME-cairo =		gstreamer-cairo-$Vp0
 PKGNAME-gconf =		gstreamer-confelements-$V
 PKGNAME-esd =		gstreamer-esd-$V
 PKGNAME-flac =		gstreamer-flac-$V
@@ -28,7 +28,7 @@ PKGNAME-taglib =	gstreamer-taglib-$V
 PKGNAME-dv =		gstreamer-dv-$V
 PKGNAME-jpeg =		gstreamer-jpeg-$V
 PKGNAME-png =		gstreamer-png-$V
-PKGNAME-gdk =		gstreamer-gdk-pixbuf-$V
+PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp0
 PKGNAME-caca =		gstreamer-libcaca-$V
 PKGNAME-shout =		gstreamer-shoutcast-$V
 
@@ -62,7 +62,7 @@ LIB_DEPENDS-aalib =	${LIB_DEPENDS} \
 
 WANTLIB-cairo =		${WANTLIB} \
 			X11 Xau Xdmcp Xrender fontconfig freetype \
-			glitz png gstbase-0.10 expat
+			pixman-1 glitz png gstbase-0.10 expat
 LIB_DEPENDS-cairo =	${LIB_DEPENDS} \
 			cairo::graphics/cairo
 
@@ -119,7 +119,7 @@ LIB_DEPENDS-png =	${LIB_DEPENDS} \
 WANTLIB-gdk =		${WANTLIB} \
 			X11 Xcomposite Xdamage Xext Xrender atk-1.0 \
 			cairo fontconfig freetype glitz pango-1.0 \
-			pangocairo-1.0 pangoft2-1.0 png gstbase-0.10 \
+			pangocairo-1.0 pangoft2-1.0 pixman-1 png gstbase-0.10 \
 			Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat
 
 LIB_DEPENDS-gdk =	${LIB_DEPENDS} \

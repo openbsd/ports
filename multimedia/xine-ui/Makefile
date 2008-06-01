@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/10/02 19:09:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2008/06/01 08:21:15 sthen Exp $
 
 COMMENT=		multimedia player
 
 DISTNAME=		xine-ui-0.99.5
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://xinehq.de/
@@ -22,7 +23,7 @@ LIB_DEPENDS=		xine.>=14::multimedia/xine-lib \
 			png.>=4::graphics/png
 
 WANTLIB=		X11 Xau Xdmcp Xext Xinerama Xtst Xv Xxf86vm \
-			c crypto m ncurses pthread readline ssl z
+			c m ncurses pthread readline z
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/17 17:18:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/01 08:21:15 sthen Exp $
 
 COMMENT=		DVD authoring application
 
 DISTNAME=		DVDStyler-1.6.2
-PKGNAME=		${DISTNAME:L}
+PKGNAME=		${DISTNAME:L}p0
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.dvdstyler.de/
@@ -25,8 +25,8 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 \
 		gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png popt pthread stdc++ wx_base wx_gtk2_adv \
-		wx_gtk2_core wx_gtk2_html xml2 z
+		pangoft2-1.0 pixman-1 png popt pthread stdc++ wx_base \
+		wx_gtk2_adv wx_gtk2_core wx_gtk2_html xml2 z
 
 BUILD_DEPENDS=		::multimedia/dvdauthor \
 			::multimedia/mjpegtools \

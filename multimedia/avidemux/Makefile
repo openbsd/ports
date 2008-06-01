@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2008/04/03 10:21:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2008/06/01 08:21:15 sthen Exp $
 
 COMMENT=	free video editor
 
 V=		2.4.1
 DISTNAME=	avidemux_${V}
-PKGNAME=	avidemux-${V}p0
+PKGNAME=	avidemux-${V}p1
 
 CATEGORIES=	multimedia
 
@@ -25,7 +25,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender Xv atk-1.0 c cairo expat fontconfig \
 		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 m ogg pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png pthread stdc++ z ossaudio
+		pangoft2-1.0 pixman-1 png pthread stdc++ z ossaudio
 
 MODULES=	devel/gettext
 
