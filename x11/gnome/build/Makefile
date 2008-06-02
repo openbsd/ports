@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/18 18:47:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/02 17:58:23 jasper Exp $
 
 COMMENT=	Gnome Build Framework (GBF)
 
 GNOME_PROJECT=	gnome-build
 GNOME_VERSION=	0.2.2
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=  gbf-1                0.0      # .1.0
 SHARED_LIBS +=  gbf-widgets-1        0.0      # .1.0
 CATEGORIES=	devel
@@ -25,7 +26,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre png popt ssl util xml2 z
+		pcre pixman-1 png popt ssl util xml2 z
 
 LIB_DEPENDS=	gdl-1,gdl-gnome-1::x11/gnome/gdl
 RUN_DEPENDS=	::devel/p5-Locale-gettext

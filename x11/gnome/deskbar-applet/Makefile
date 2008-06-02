@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/02 14:10:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/02 17:58:23 jasper Exp $
 
 COMMENT=		universal search and navigation for GNOME
 
 GNOME_VERSION=		2.20.3
 GNOME_PROJECT=		deskbar-applet
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://raphael.slinckx.net/deskbar/
@@ -28,7 +28,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gnome-2 gnome-desktop-2 gnome-keyring gnomecanvas-2 \
 		gnomeui-2 gnomevfs-2 gobject-2.0 gssapi gthread-2.0 \
 		gtk-x11-2.0 jpeg krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre plc4 plds4 png popt pthread smime3 \
+		pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread smime3 \
 		softokn3 ssl ssl3 startup-notification-1 util xml2 z
 
 BUILD_DEPENDS=		::x11/dbus-python \

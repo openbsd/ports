@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2008/05/26 16:29:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2008/06/02 17:58:23 jasper Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.20.3
-PKGNAME=		control-center2-${VERSION}p4
+PKGNAME=		control-center2-${VERSION}p5
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
 
@@ -24,7 +24,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gnome-keyring gnome-menu gnomecanvas-2 gnomeui-2 gnomevfs-2 \
 		gobject-2.0 gsf-1 gssapi gstbase-0.10 gstreamer-0.10 \
 		gthread-2.0 gtk-x11-2.0 jpeg krb5 m nspr4 nss3 pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pcre plc4 \
+		pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pcre pixman-1 plc4 \
 		plds4 png popt pthread rpcsvc smime3 softokn3 ssl ssl3 \
 		startup-notification-1 stdc++ util xkbfile xml2 z
 

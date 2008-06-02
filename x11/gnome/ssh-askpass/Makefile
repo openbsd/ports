@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/02 14:07:46 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/02 17:58:24 jasper Exp $
 
 COMMENT=	simple GNOME SSH passphrase grabber
 
 DISTNAME=	openssh-5.0p1
-PKGNAME=	gnome-ssh-askpass-5.0
+PKGNAME=	gnome-ssh-askpass-5.0p0
 CATEGORIES=	x11
 
 # BSD
@@ -21,7 +21,7 @@ MODULES=	devel/gettext
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
 		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png z
+		pangocairo-1.0 pangoft2-1.0 pixman-1 png z
 
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 

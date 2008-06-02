@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/02 17:58:23 jasper Exp $
 
 COMMENT=		C++ interface for libgnome
 
 GNOME_PROJECT=		libgnomemm
 GNOME_VERSION=		2.20.0
 SHARED_LIBS +=	gnomemm-2.6          0.0      # .1.5
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://gtkmm.sourceforge.net/
 
@@ -22,7 +22,8 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
 		glibmm-2.4 glitz gmodule-2.0 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre png popt sigc-2.0 ssl util xml2 z
+		pangoft2-1.0 pcre pixman-1 png popt sigc-2.0 ssl util \
+		xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/13 11:00:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/02 17:58:24 jasper Exp $
 
 COMMENT=	simple media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.22.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia
 
 HOMEPAGE=	http://www.gnome.org/projects/totem/
@@ -24,8 +25,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0 \
 		jpeg krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre plc4 plds4 png popt pthread smime3 \
-		softokn3 ssl ssl3 util xml2 z
+		pangoft2-1.0 pcre pixman-1  plc4 plds4 png popt pthread \
+		smime3 softokn3 ssl ssl3 util xml2 z
 
 MODULES=	devel/gettext \
 		lang/python \

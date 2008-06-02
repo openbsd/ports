@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2008/04/16 20:31:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2008/06/02 17:58:24 jasper Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		2.18.1
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,7 +19,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gpg-error gthread-2.0 \
 		gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		plc4 plds4 png popt pthread ssl stdc++ util xml2 z
+		pixman-1 plc4 plds4 png popt pthread ssl stdc++ util xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome

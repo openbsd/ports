@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2008/06/02 14:10:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2008/06/02 17:58:24 jasper Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=	librsvg
 GNOME_VERSION=	2.20.0
 SHARED_LIBS +=	rsvg-2         20.0           # .22.0
 CATEGORIES=	devel
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +18,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 bz2 c cairo expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre png pthread xml2 z
+		pangoft2-1.0 pcre pixman-1 png pthread xml2 z
 
 MODULES=	devel/gettext x11/gnome
 

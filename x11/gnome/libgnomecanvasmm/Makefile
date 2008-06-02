@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2008/06/02 17:58:23 jasper Exp $
 
 COMMENT=		C++ interface to the graphics library for GNOME
 
 GNOME_PROJECT=		libgnomecanvasmm
 GNOME_VERSION=		2.20.0
 SHARED_LIBS=		gnomecanvasmm-2.6	0.0	# .1.6
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +18,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		cairomm-1.0 expat fontconfig freetype gailutil gdk-x11-2.0 \
 		gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre png z
+		pcre pixman-1 png z
 
 MODULES=		devel/gettext \
 			x11/gnome

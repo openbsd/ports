@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/02/04 17:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2008/06/02 17:58:23 jasper Exp $
 
 COMMENT=		keyboard configuration library
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		2.20.0
 SHARED_LIBS +=	gnomekbd             2.0      # .1.0
 SHARED_LIBS +=	gnomekbdui           2.0      # .1.0
 CATEGORIES=		devel
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,8 +22,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre png popt pthread \
-		ssl util xkbfile xml2 z
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
+		pthread ssl util xkbfile xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome

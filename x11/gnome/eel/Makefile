@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2008/04/09 13:24:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2008/06/02 17:58:23 jasper Exp $
 
 COMMENT=		Eazel Extensions Library
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		eel
 GNOME_VERSION=		2.20.0
 SHARED_LIBS +=	eel-2                21.0     # .22.0
 CATEGORIES=		devel
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,8 +21,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		fam fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
-		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre png popt \
-		rpcsvc ssl stdc++ util xml2 z
+		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
+		popt rpcsvc ssl stdc++ util xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome

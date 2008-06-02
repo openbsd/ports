@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2008/04/17 08:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2008/06/02 17:58:23 jasper Exp $
 
 COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
 GNOME_VERSION=		0.19
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=	devhelp-1             0.0        # .0.0
 CATEGORIES=		textproc
 
@@ -20,7 +20,7 @@ WANTLIB=	ICE ORBit-2 SM X11 XRes Xau Xcomposite Xcursor Xdamage \
 		c cairo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre plc4 plds4 png pthread xml2 z
+		pcre pixman-1 plc4 plds4 png pthread xml2 z
 
 # XXX: To be fixed
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION}/}

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2008/06/02 14:10:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2008/06/02 17:58:24 jasper Exp $
 
 COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		2.20.0.1
 SHARED_LIBS +=  gdict-1.0      5.13      # .5.15
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,7 +21,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-desktop-2 \
 		gnome-keyring gnomecanvas-2 gnomeprint-2-2 gnomevfs-2 \
 		gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg kvm m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre png popt pthread ssl \
+		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt pthread ssl \
 		startup-notification-1 util xml2 z
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/2.20/}

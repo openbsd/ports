@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2008/06/02 14:10:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2008/06/02 17:58:24 jasper Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.20.3
-PKGNAME=		${DISTNAME}p9
+PKGNAME=		${DISTNAME}p10
 CATEGORIES=		x11
 
 # GPLv2/LGPL
@@ -20,8 +20,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre png popt pthread \
-		ssl util wrap xml2 z
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
+		pthread ssl util wrap xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome

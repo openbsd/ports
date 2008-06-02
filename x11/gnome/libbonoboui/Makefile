@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2008/06/02 14:10:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2008/06/02 17:58:23 jasper Exp $
 
 COMMENT=		user interface components for bonobo
 
 GNOME_PROJECT=		libbonoboui
 GNOME_VERSION=		2.20.0
 SHARED_LIBS +=	bonoboui-2         2.0        # .0.0
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +20,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre png pthread ssl util xml2 z
+		pangoft2-1.0 pcre pixman-1 png pthread ssl util xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome

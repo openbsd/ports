@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2008/04/17 08:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/06/02 17:58:23 jasper Exp $
 
 COMMENT=		Jabber client for the GNOME desktop
 
 GNOME_PROJECT=		gossip
 GNOME_VERSION=		0.28
 CATEGORIES=		net
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 HOMEPAGE=		http://developer.imendio.com/projects/gossip/
 
@@ -21,7 +21,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
-		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png popt \
+		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png popt \
 		pthread ssl util xml2 z
 
 # XXX: To be fixed

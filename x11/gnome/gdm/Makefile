@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2008/05/26 16:29:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2008/06/02 17:58:23 jasper Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.2
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
@@ -21,7 +21,7 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gdk_pixbuf-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gsf-1 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre png pthread ssl util xml2 z
+		pcre pixman-1 png pthread ssl util xml2 z
 
 BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
