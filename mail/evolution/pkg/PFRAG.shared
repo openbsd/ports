@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.11 2007/11/21 16:18:15 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.12 2008/06/02 16:49:56 jasper Exp $
 lib/evolution/${R}/components/libevolution-addressbook.so
 lib/evolution/${R}/components/libevolution-calendar.so
 lib/evolution/${R}/components/libevolution-mail.so
@@ -32,6 +32,7 @@ lib/evolution/${R}/plugins/liborg-gnome-calendar-http.so
 lib/evolution/${R}/plugins/liborg-gnome-calendar-weather.so
 lib/evolution/${R}/plugins/liborg-gnome-default-source.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.so
+lib/evolution/${R}/plugins/liborg-gnome-evolution-google.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-hula-account-setup.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.so
 lib/evolution/${R}/plugins/liborg-gnome-exchange-operations.so

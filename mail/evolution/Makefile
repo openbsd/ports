@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.42 2008/05/30 08:23:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2008/06/02 16:49:56 jasper Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		2.12.1
-PKGNAME=		${DISTNAME}p5
+GNOME_VERSION=		2.22.2
 CATEGORIES=    		mail
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
 
-SO_VERSION=		2.0
+SO_VERSION=		3.0
 .for _lib in eutil econduit evolution-a11y evolution-calendar-a11y \
 evolution-widgets-a11y evolution-addressbook-a11y etable etext emiscwidgets \
 efilterbar etimezonedialog menus eshell filter essmime evolution-smime eabutil \
@@ -18,7 +17,7 @@ evolution-calendar-importers evolution-mail-importers
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -29,12 +28,12 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xrender art_lgpl_2 asn1 atk-1.0 audiofile bonobo-2 \
 		bonobo-activation bonoboui-2 c cairo com_err crypto \
 		db dbus-1 dbus-glib-1 esd expat fontconfig freetype \
-		gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 \
-		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
-		gnomeui-2 gnomevfs-2 gobject-2.0 gssapi gthread-2.0 \
-		gtk-x11-2.0 jpeg krb5 m nspr4 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread sasl2 \
-		soup-2.2 ssl util xml2 z
+		gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
+		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
+		gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gssapi \
+		gthread-2.0 gtk-x11-2.0 jpeg krb5 m nspr4 pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4 \
+		png popt pthread sasl2 ssl util xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -46,11 +45,12 @@ RUN_DEPENDS=		::devel/desktop-file-utils \
 			::textproc/scrollkeeper \
 			::x11/gnome/controlcenter2 \
 			::x11/hicolor-icon-theme
-LIB_DEPENDS=		camel-1.2,camel-provider-1.2.>=4.1,ebook-1.2.>=4.1,ecal-1.2.>=2.1,edataserver-1.2.>=4.0,edataserverui-1.2.>=5.1,exchange-storage-1.2.>=3.0::databases/evolution-data-server \
-			gtkhtml-3.14.>=1.0::www/gtkhtml3 \
+LIB_DEPENDS=		camel-1.2,camel-provider-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2,egroupwise-1.2,exchange-storage-1.2::databases/evolution-data-server \
 			lber.>=7,ldap.>=7::databases/openldap \
+			notify.>=2::devel/libnotify \
+			soup-2.4::devel/libsoup \
 			nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss \
-			notify.>=2::devel/libnotify
+			gtkhtml-3.14.>=1.0::www/gtkhtml3
 
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
