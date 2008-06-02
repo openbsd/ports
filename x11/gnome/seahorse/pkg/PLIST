@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/04/17 08:46:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/06/02 16:43:58 jasper Exp $
 %%SHARED%%
 bin/seahorse
 @mode 4555
@@ -62,6 +62,8 @@ share/gnome/help/seahorse-applet/it/
 share/gnome/help/seahorse-applet/it/seahorse-applet.xml
 share/gnome/help/seahorse-applet/oc/
 share/gnome/help/seahorse-applet/oc/seahorse-applet.xml
+share/gnome/help/seahorse-applet/ru/
+share/gnome/help/seahorse-applet/ru/seahorse-applet.xml
 share/gnome/help/seahorse-applet/sv/
 share/gnome/help/seahorse-applet/sv/seahorse-applet.xml
 share/gnome/help/seahorse-applet/vi/
@@ -157,6 +159,21 @@ share/gnome/help/seahorse/oc/figures/seahorse-window.png
 share/gnome/help/seahorse/oc/figures/signature.png
 share/gnome/help/seahorse/oc/figures/text-editor.png
 share/gnome/help/seahorse/oc/seahorse.xml
+share/gnome/help/seahorse/ru/
+share/gnome/help/seahorse/ru/figures/
+share/gnome/help/seahorse/ru/figures/export.png
+share/gnome/help/seahorse/ru/figures/file-manager.png
+share/gnome/help/seahorse/ru/figures/generate.png
+share/gnome/help/seahorse/ru/figures/import.png
+share/gnome/help/seahorse/ru/figures/key-manager.png
+share/gnome/help/seahorse/ru/figures/key-properties.png
+share/gnome/help/seahorse/ru/figures/passphrase.png
+share/gnome/help/seahorse/ru/figures/preferences.png
+share/gnome/help/seahorse/ru/figures/recipients.png
+share/gnome/help/seahorse/ru/figures/seahorse-window.png
+share/gnome/help/seahorse/ru/figures/signature.png
+share/gnome/help/seahorse/ru/figures/text-editor.png
+share/gnome/help/seahorse/ru/seahorse.xml
 share/gnome/help/seahorse/sv/
 share/gnome/help/seahorse/sv/figures/
 share/gnome/help/seahorse/sv/figures/export.png
@@ -214,6 +231,7 @@ share/locale/et/LC_MESSAGES/seahorse.mo
 share/locale/eu/LC_MESSAGES/seahorse.mo
 share/locale/fi/LC_MESSAGES/seahorse.mo
 share/locale/fr/LC_MESSAGES/seahorse.mo
+share/locale/ga/LC_MESSAGES/seahorse.mo
 share/locale/gl/LC_MESSAGES/seahorse.mo
 share/locale/gu/LC_MESSAGES/seahorse.mo
 share/locale/he/LC_MESSAGES/seahorse.mo
@@ -222,15 +240,18 @@ share/locale/hr/LC_MESSAGES/seahorse.mo
 share/locale/hu/LC_MESSAGES/seahorse.mo
 share/locale/it/LC_MESSAGES/seahorse.mo
 share/locale/ja/LC_MESSAGES/seahorse.mo
+share/locale/kn/LC_MESSAGES/seahorse.mo
 share/locale/ko/LC_MESSAGES/seahorse.mo
 share/locale/lt/LC_MESSAGES/seahorse.mo
 share/locale/lv/LC_MESSAGES/seahorse.mo
 share/locale/mk/LC_MESSAGES/seahorse.mo
 share/locale/ml/LC_MESSAGES/seahorse.mo
+share/locale/mr/LC_MESSAGES/seahorse.mo
 share/locale/ms/LC_MESSAGES/seahorse.mo
 share/locale/nb/LC_MESSAGES/seahorse.mo
 share/locale/ne/LC_MESSAGES/seahorse.mo
 share/locale/nl/LC_MESSAGES/seahorse.mo
+share/locale/nn/LC_MESSAGES/seahorse.mo
 share/locale/oc/LC_MESSAGES/seahorse.mo
 share/locale/or/LC_MESSAGES/seahorse.mo
 share/locale/pa/LC_MESSAGES/seahorse.mo
@@ -239,6 +260,8 @@ share/locale/pt/LC_MESSAGES/seahorse.mo
 share/locale/pt_BR/LC_MESSAGES/seahorse.mo
 share/locale/ru/LC_MESSAGES/seahorse.mo
 share/locale/rw/LC_MESSAGES/seahorse.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/seahorse.mo
 share/locale/sk/LC_MESSAGES/seahorse.mo
 share/locale/sl/LC_MESSAGES/seahorse.mo
@@ -247,6 +270,8 @@ share/locale/sr/LC_MESSAGES/seahorse.mo
 share/locale/sr@Latn/LC_MESSAGES/seahorse.mo
 share/locale/sv/LC_MESSAGES/seahorse.mo
 share/locale/ta/LC_MESSAGES/seahorse.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/seahorse.mo
 share/locale/th/LC_MESSAGES/seahorse.mo
 share/locale/tr/LC_MESSAGES/seahorse.mo
@@ -263,6 +288,7 @@ share/omf/seahorse-applet/seahorse-applet-es.omf
 share/omf/seahorse-applet/seahorse-applet-fr.omf
 share/omf/seahorse-applet/seahorse-applet-it.omf
 share/omf/seahorse-applet/seahorse-applet-oc.omf
+share/omf/seahorse-applet/seahorse-applet-ru.omf
 share/omf/seahorse-applet/seahorse-applet-sv.omf
 share/omf/seahorse-applet/seahorse-applet-vi.omf
 share/omf/seahorse/seahorse-C.omf
@@ -271,6 +297,7 @@ share/omf/seahorse/seahorse-es.omf
 share/omf/seahorse/seahorse-fr.omf
 share/omf/seahorse/seahorse-it.omf
 share/omf/seahorse/seahorse-oc.omf
+share/omf/seahorse/seahorse-ru.omf
 share/omf/seahorse/seahorse-sv.omf
 share/omf/seahorse/seahorse-vi.omf
 share/pixmaps/
@@ -337,6 +364,7 @@ share/schemas/seahorse/seahorse.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/seahorse/*.schemas > /dev/null
 share/seahorse/
 share/seahorse/glade/
+share/seahorse/glade/seahorse-add-keyring.glade
 share/seahorse/glade/seahorse-add-keyserver.glade
 share/seahorse/glade/seahorse-add-subkey.glade
 share/seahorse/glade/seahorse-add-uid.glade
