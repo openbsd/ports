@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/02 20:09:01 kili Exp $
 
 COMMENT=	online Image GALlery generator
 
-DISTNAME=	igal-1.4
-PKGNAME=	${DISTNAME}p0
+V=		1.4.7
+DISTNAME=	igal-$V-wt
+PKGNAME=	igal-$V
 CATEGORIES=	www graphics
 
-HOMEPAGE=	http://nanoheat.stanford.edu/epop/igal/
+HOMEPAGE=	http://trexler.at/igal/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
