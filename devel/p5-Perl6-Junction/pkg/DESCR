@@ -1,0 +1,5 @@
+This is a lightweight module which provides 'Junction' operators, the
+most commonly used being any and all.  Inspired by the Perl6 design docs.
+
+Provides a limited subset of the functionality of
+Quantum::Superpositions.
