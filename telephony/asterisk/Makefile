@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2008/05/27 22:14:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2008/06/02 23:33:51 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -6,6 +6,7 @@ COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 V=			1.4.20.1
 DISTNAME=		asterisk-$V
 FULLPKGNAME-main=	asterisk-$V
+FULLPKGNAME-speex=	asterisk-speex-$Vp0
 
 CATEGORIES=		telephony
 
@@ -107,8 +108,8 @@ CONFIGURE_ARGS+=	--with-speex=no
 MULTI_PACKAGES+=	-speex
 COMMENT-speex=		Speex codec for Asterisk
 WANTLIB-speex=		m
-LIB_DEPENDS-speex=	speex.>=6::audio/speex \
-			speexdsp::audio/speex
+LIB_DEPENDS-speex=	speex.>=7:speex->=1.2beta3:audio/speex \
+			speexdsp:speex->=1.2beta3:audio/speex
 CONFIGURE_ARGS+=	--with-speex=${LOCALBASE} \
 			--with-speexdsp=${LOCALBASE}
 .endif
@@ -186,8 +187,8 @@ CONFIGURE_ARGS+=	--with-pwlib=no \
 .endif
 
 .for i in ${MULTI_PACKAGES:S/-main//}
-FULLPKGNAME$i=		asterisk$i-$V
-RUN_DEPENDS$i=		:asterisk-$V:telephony/asterisk
+FULLPKGNAME$i ?=	asterisk$i-$V
+RUN_DEPENDS$i +=	:asterisk-$V:telephony/asterisk
 .endfor
 
 MAKE_ENV=		ASTCFLAGS="${CFLAGS}" \
