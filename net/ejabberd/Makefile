@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2008/04/21 09:33:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/06/02 18:13:15 martynas Exp $
 
 COMMENT=		jabber server written in Erlang
 
-V=			1.1.4
+V=			2.0.1
 DISTNAME=		ejabberd-$V
-PKGNAME=		${DISTNAME}p3
+DISTFILES=		ejabberd-2.0.1_2.tar.gz
 
 CATEGORIES=		net
 
-HOMEPAGE=		http://ejabberd.jabber.ru/
+HOMEPAGE=		http://www.ejabberd.im/
 
 MAINTAINER=		Wiktor Izdebski <vicviq@gmail.com>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -36,7 +36,8 @@ FAKE_FLAGS+=		EJABBERDDIR=${WRKINST}/${PREFIX}/lib/ejabberd \
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 SHARED_ONLY=		Yes
-CONFIGURE_ARGS+=	--enable-mod_pubsub \
+CONFIGURE_ARGS+=	--disable-pam \
+			--enable-mod_pubsub \
 			--enable-mod_irc \
 			--enable-mod_muc \
 			--enable-eldap \
@@ -57,29 +58,21 @@ WRKSRC=			${WRKDIST}/src
 
 NO_REGRESS=		Yes
 
+SUBST_VARS=		TRUEPREFIX LOCALBASE EJDBDIR EJLOGDIR JABBERDUSER
+
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/ejabberd ${PREFIX}/sbin/
-	${INSTALL_SCRIPT} ${FILESDIR}/ejabberdctl ${PREFIX}/bin/
-	${INSTALL_DATA} ${FILESDIR}/ejabberd.inetrc ${PREFIX}/share/examples/ejabberd/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ejabberd
 	cd ${WRKDIST}/examples && \
 		find . -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ejabberd/{} \; && \
-		find . ! -type d -exec ${INSTALL_DATA} {} ${PREFIX}/share/examples/ejabberd/{} \;
+		find . ! -type d -exec ${SUBST_CMD} -c {} ${PREFIX}/share/examples/ejabberd/{} \;
 	${INSTALL_DATA} ${WRKSRC}/odbc/pg.sql ${PREFIX}/share/examples/ejabberd/
 	${INSTALL_DATA} ${WRKSRC}/odbc/mysql.sql ${PREFIX}/share/examples/ejabberd/
 	cd ${WRKDIST}/doc && \
 		find . -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ejabberd/{} \; && \
 		find . -name '*.html' -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/ejabberd/{} \; && \
 		find . -name '*.png' -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/ejabberd/{} \;
-	perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g;" \
-		-e "s,!!SYSCONFDIR!!,${SYSCONFDIR},g;" \
-		-e "s,!!EJDBDIR!!,${EJDBDIR},g;" \
-		-e "s,!!EJLOGDIR!!,${EJLOGDIR},g;" \
-		-e "s,!!JABBERDUSER!!,${JABBERDUSER},g;" \
-		${PREFIX}/sbin/ejabberd
-	perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g;" \
-		-e "s,!!EJDBDIR!!,${EJDBDIR},g;" \
-		-e "s,!!JABBERDUSER!!,${JABBERDUSER},g;" \
-		${PREFIX}/bin/ejabberdctl
+	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/ejabberd/README.OpenBSD
+	${SUBST_CMD} ${PREFIX}/sbin/ejabberdctl
 
 .include <bsd.port.mk>
+

@@ -1,0 +1,54 @@
+$OpenBSD: patch-src_ejabberd_cfg_example,v 1.1 2008/06/02 18:13:15 martynas Exp $
+--- src/ejabberd.cfg.example.orig	Thu Feb 21 11:02:12 2008
++++ src/ejabberd.cfg.example	Sun Mar 30 23:11:59 2008
+@@ -113,7 +113,7 @@
+ 			%% certificate, put the correct path to the 
+ 			%% file and uncomment this line:
+ 			%%
+-			%%{certfile, "/path/to/ssl.pem"}, starttls,
++			{certfile, "${SYSCONFDIR}/ejabberd/myserver.pem"}, starttls,
+ 
+ 			{access, c2s},
+ 			{shaper, c2s_shaper},
+@@ -123,12 +123,12 @@
+   %%
+   %% To enable the old SSL connection method in port 5223:
+   %%
+-  %%{5223, ejabberd_c2s, [
+-  %%			{access, c2s},
+-  %%			{shaper, c2s_shaper},
+-  %%			{certfile, "/path/to/ssl.pem"}, tls,
+-  %%			{max_stanza_size, 65536}
+-  %%		       ]},
++{5223, ejabberd_c2s, [
++			{access, c2s},
++			{shaper, c2s_shaper},
++			{certfile, "${SYSCONFDIR}/ejabberd/myserver.pem"}, tls,
++			{max_stanza_size, 65536}
++		       ]},
+ 
+   {5269, ejabberd_s2s_in, [
+ 			   {shaper, s2s_shaper},
+@@ -159,18 +159,18 @@
+ %% Allowed values are: true or false.
+ %% You must specify a certificate file.
+ %%
+-%%{s2s_use_starttls, true}.
++{s2s_use_starttls, true}.
+ 
+ %%
+ %% s2s_certfile: Specify a certificate file.
+ %%
+-%%{s2s_certfile, "/path/to/ssl.pem"}.
++{s2s_certfile, "${SYSCONFDIR}/ejabberd/myserver.pem"}.
+ 
+ %%
+ %% domain_certfile: Specify a different certificate for each served hostname.
+ %%
+-%%{domain_certfile, "example.org", "/path/to/example_org.pem"}.
+-%%{domain_certfile, "example.com", "/path/to/example_com.pem"}.
++%%{domain_certfile, "example.org", "${SYSCONFDIR}/ejabberd/example_org.pem"}.
++%%{domain_certfile, "example.com", "${SYSCONFDIR}/ejabberd/example_com.pem"}.
+ 
+ %%
+ %% S2S whitelist or blacklist
