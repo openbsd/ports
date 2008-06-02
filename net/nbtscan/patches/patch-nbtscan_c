@@ -1,0 +1,21 @@
+$OpenBSD: patch-nbtscan_c,v 1.1 2008/06/02 17:02:44 sthen Exp $
+--- nbtscan.c.orig	Mon Jun  2 16:05:48 2008
++++ nbtscan.c	Mon Jun  2 16:07:01 2008
+@@ -111,7 +111,7 @@ int d_print_hostinfo(struct in_addr addr, const struct
+     for(i=0; i< hostinfo->header->number_of_names; i++) {
+       service = hostinfo->names[i].ascii_name[15];
+       strncpy(name, hostinfo->names[i].ascii_name, 15);
+-      name[16]=0; 
++      name[15]=0; 
+       printf("%-17s Service: 0x%02x Flags: 0x%04x\n", name, service, hostinfo->names[i].rr_flags);
+     }
+   };
+@@ -164,7 +164,7 @@ int v_print_hostinfo(struct in_addr addr, const struct
+     for(i=0; i< hostinfo->header->number_of_names; i++) {
+       service = hostinfo->names[i].ascii_name[15];
+       strncpy(name, hostinfo->names[i].ascii_name, 15);
+-      name[16]=0;
++      name[15]=0;
+       unique = !(hostinfo->names[i].rr_flags & 0x0080);
+       if(sf) {
+ 	printf("%s%s%s%s", inet_ntoa(addr), sf, name, sf);
