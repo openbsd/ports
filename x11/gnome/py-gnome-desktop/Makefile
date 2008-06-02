@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/13 22:15:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/02 14:10:06 ajacoutot Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
 GNOME_VERSION=		2.20.0
-PKGNAME=		py-gnome-desktop-${VERSION}
+PKGNAME=		py-gnome-desktop-${VERSION}p0
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -44,7 +44,6 @@ LIB_DEPENDS=		gnome-media-profiles::x11/gnome/media \
 			rsvg-2:librsvg-*-!no_gnome:x11/gnome/librsvg
 
 USE_X11=		Yes
-MODGNOME_DEVHELP_FILES=	Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \

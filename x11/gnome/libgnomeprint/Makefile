@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2008/06/02 14:10:06 ajacoutot Exp $
 
 COMMENT=		printing framework for GNOME
 
 GNOME_PROJECT=		libgnomeprint
 GNOME_VERSION=		2.18.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=	gnomeprint-2-2 2.1            # .1.0
 CATEGORIES=		devel
 
@@ -26,7 +26,6 @@ LIB_DEPENDS=		pango-1.0.>=1300.0,pangoft2-1.0.>=1300.0::devel/pango \
 			art_lgpl_2.>=5::graphics/libart \
 			xml2.>=9::textproc/libxml
 
-MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-cups

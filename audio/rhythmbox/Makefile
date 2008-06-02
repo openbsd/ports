@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2008/05/14 09:41:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2008/06/02 14:10:06 ajacoutot Exp $
 
 COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.10.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 CATEGORIES=		audio
 
@@ -50,7 +51,6 @@ REGRESS_DEPENDS=	::devel/check
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
-MODGNOME_DEVHELP_FILES= Yes
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

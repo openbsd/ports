@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/05/26 09:53:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2008/06/02 14:10:06 ajacoutot Exp $
 
 COMMENT-main=	C++ bindings for libglade
 COMMENT-docs=	C++ bindings for libglade documentation
@@ -6,7 +6,7 @@ COMMENT-docs=	C++ bindings for libglade documentation
 GNOME_PROJECT=	libglademm
 GNOME_VERSION=	2.6.6
 PKGNAME-main=	${DISTNAME}
-PKGNAME-docs=	libglademm-docs-${GNOME_VERSION}p0
+PKGNAME-docs=	libglademm-docs-${GNOME_VERSION}p1
 SHARED_LIBS +=	glademm-2.4          1.7      # .1.5
 CATEGORIES=	devel
 
@@ -22,7 +22,7 @@ MULTI_PACKAGES=	-main -docs
 
 PKG_ARCH-docs=	*
 LIB_DEPENDS-docs=
-RUN_DEPENDS-docs=:devhelp-*:x11/gnome/devhelp
+RUN_DEPENDS-docs=
 
 WANTLIB-main=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo cairomm-1.0 \

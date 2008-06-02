@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/05/13 10:06:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/06/02 14:10:06 ajacoutot Exp $
 
 COMMENT=		compiler for the GObject type system
 
 GNOME_PROJECT=		vala
 GNOME_VERSION=		0.3.2
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	vala                 0.1      # .0.0
 CATEGORIES=		lang
 
@@ -28,8 +29,6 @@ RUN_DEPENDS=		::textproc/libxslt \
 			::textproc/p5-XML-LibXML
 LIB_DEPENDS=		gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 REGRESS_DEPENDS=	::shells/bash	
-
-MODGNOME_DEVHELP_FILES= Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-gen-project \

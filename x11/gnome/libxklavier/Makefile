@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2008/06/02 14:10:06 ajacoutot Exp $
 
 COMMENT=		utility library for XKB
 
 GNOME_PROJECT=		libxklavier
 GNOME_VERSION=		3.2
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS +=  xklavier             12.0     # .11.0
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/LibXklavier
@@ -25,7 +25,6 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		glib-2.0.>=1200.0,gobject-2.0.>=1200.0::devel/glib2 \
 			xml2::textproc/libxml
 
-MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-x

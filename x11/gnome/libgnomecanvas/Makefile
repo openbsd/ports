@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2008/06/02 14:10:06 ajacoutot Exp $
 
 COMMENT=		graphics library for GNOME
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		libgnomecanvas
 GNOME_VERSION=		2.20.1.1
 SHARED_LIBS +=	gnomecanvas-2        2001.0   # .2001.0
 CATEGORIES=		x11
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,7 +29,6 @@ LIB_DEPENDS=		glade-2.0.>=0::devel/libglade2 \
 			art_lgpl_2.>=5::graphics/libart \
 			gailutil.>=20::x11/gnome/gail
 
-MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 
 CONFIGURE_ARGS= 	${CONFIGURE_SHARED}

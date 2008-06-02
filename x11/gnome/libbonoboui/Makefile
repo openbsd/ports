@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2008/06/02 14:10:06 ajacoutot Exp $
 
 COMMENT=		user interface components for bonobo
 
 GNOME_PROJECT=		libbonoboui
 GNOME_VERSION=		2.20.0
 SHARED_LIBS +=	bonoboui-2         2.0        # .0.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,7 +29,6 @@ LIB_DEPENDS=		popt::devel/popt \
 			gnome-2.>=1800::x11/gnome/libgnome \
 			gnomecanvas-2.>=1400::x11/gnome/libgnomecanvas
 
-MODGNOME_DEVHELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 USE_X11=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

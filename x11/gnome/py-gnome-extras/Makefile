@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/13 22:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/02 14:10:06 ajacoutot Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
 GNOME_PROJECT=	gnome-python-extras
 GNOME_VERSION=	2.19.1
-PKGNAME=	py-gnome-extras-${VERSION}
+PKGNAME=	py-gnome-extras-${VERSION}p0
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -41,7 +41,6 @@ RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome
 REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
 
 USE_X11=		Yes
-MODGNOME_DEVHELP_FILES=	Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \

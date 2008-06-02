@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2008/05/26 10:28:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2008/06/02 14:10:06 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		2.20.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		editors
 
 HOMEPAGE=		http://www.gnome.org/projects/gedit/
@@ -48,7 +48,6 @@ RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			::x11/gnome/py-gnome
 
 MODGNOME_HELP_FILES=	Yes
-MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2008/05/28 13:25:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2008/06/02 14:10:06 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		1.12.1
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 CATEGORIES=		databases
 SHARED_LIBS +=	edataserver-1.2      10.0     # .10.0
 SHARED_LIBS +=	egroupwise-1.2       13.1     # .13.1
@@ -50,7 +50,6 @@ LIB_DEPENDS= 		db:db-4.*:databases/db/v4 \
 			gnome-2::x11/gnome/libgnome \
 			gnome-keyring.>=3::x11/gnome/keyring
 			
-MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 YACC=			bison
 CONFIGURE_STYLE= 	gnu

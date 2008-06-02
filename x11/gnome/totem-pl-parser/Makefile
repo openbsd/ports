@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/12 15:08:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/02 14:10:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GObject-based parsing library
 
 GNOME_PROJECT=	totem-pl-parser
 GNOME_VERSION=	2.22.3
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	totem-plparser		0.0 # .11.1
 SHARED_LIBS +=	totem-plparser-mini	0.0 # .11.1
 
@@ -31,8 +32,6 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 
 MODULES=	devel/gettext \
 		x11/gnome
-
-MODGNOME_DEVHELP_FILES=yes
 
 LIB_DEPENDS=	camel-1.2.>=10,edataserver-1.2::databases/evolution-data-server
 

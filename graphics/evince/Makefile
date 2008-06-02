@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/05/21 22:13:35 bernd Exp $
+# $OpenBSD: Makefile,v 1.13 2008/06/02 14:10:07 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ V=		2.22.1.1
 DISTNAME=	evince-${V}
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-djvu=	evince-djvu-${V}
 PKGNAME-dvi=	evince-dvi-${V}
 
@@ -54,7 +54,6 @@ RUN_DEPENDS-main=	:scrollkeeper-*:textproc/scrollkeeper \
 			:shared-mime-info-*:misc/shared-mime-info \
 			:ghostscript-*:print/ghostscript/gnu \
 			::x11/gnome/icon-theme \
-			:devhelp-*:x11/gnome/devhelp \
 			:yelp-*:x11/gnome/yelp
 
 WANTLIB-djvu=		${WANTLIB} jpeg

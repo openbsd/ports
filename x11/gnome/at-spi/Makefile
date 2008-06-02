@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/02 14:10:06 ajacoutot Exp $
 
 COMMENT=		GNOME accessibility interface
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		1.20.1
 SHARED_LIBS +=	spi                  0.0      # .10.11
 SHARED_LIBS +=	loginhelper          0.0      # .0.0
 SHARED_LIBS +=	cspi                 0.0      # .10.11
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 HOMEPAGE=	http://developer.gnome.org/projects/gap/
 
@@ -30,7 +30,6 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		bonobo-2.>=1,bonobo-activation.>=5::x11/gnome/libbonobo \
 			gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
-MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--enable-xevie
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

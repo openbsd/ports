@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.17 2008/05/26 13:23:34 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.18 2008/06/02 14:10:07 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
@@ -16,11 +16,6 @@ MODULES+=		textproc/intltool
 # Set to 'yes' if there are .desktop files in the package list.
 .if defined(DESKTOP_FILES) && ${DESKTOP_FILES:L} == "yes"
 MODGNOME_RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
-.endif
-
-# Set to 'yes' if there are .devhelp files in the package list.
-.if defined(MODGNOME_DEVHELP_FILES) && ${MODGNOME_DEVHELP_FILES:L} == "yes"
-MODGNOME_RUN_DEPENDS+=	:devhelp-*:x11/gnome/devhelp
 .endif
 
 # Set to 'yes' if there are .xml GNOME help files under

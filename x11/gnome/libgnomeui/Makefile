@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2008/05/26 08:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2008/06/02 14:10:06 ajacoutot Exp $
 
 COMMENT=		user interface components for GNOME
 
 GNOME_PROJECT=		libgnomeui
 GNOME_VERSION=		2.20.1.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS +=	gnomeui-2      2000.0         # .1800.1
 
 # LGPL
@@ -32,7 +32,6 @@ LIB_DEPENDS=		gnome-keyring.>=1::x11/gnome/keyring \
 			gnomecanvas-2.>=1400::x11/gnome/libgnomecanvas \
 			bonoboui-2.>=1::x11/gnome/libbonoboui
 
-MODGNOME_DEVHELP_FILES=	Yes
 USE_X11=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
