@@ -1,14 +1,32 @@
-$OpenBSD: patch-Makefile,v 1.1 2008/01/26 18:48:19 matthieu Exp $
---- Makefile.orig	Sat Nov 24 21:18:01 2007
-+++ Makefile	Fri Jan 25 21:46:27 2008
-@@ -41,9 +41,7 @@
+$OpenBSD: patch-Makefile,v 1.2 2008/06/02 20:09:53 wcmaier Exp $
+--- Makefile.orig	Thu Mar 13 11:58:47 2008
++++ Makefile	Mon Jun  2 14:55:45 2008
+@@ -16,14 +16,12 @@ options:
+ 	@echo "LD       = ${LD}"
+ 
+ .c.o:
+-	@echo CC $<
+-	@${CC} -c ${CFLAGS} $<
++	${CC} -c ${CFLAGS} $<
+ 
+ ${OBJ}: config.mk
+ 
+ slock: ${OBJ}
+-	@echo LD $@
+-	@${LD} -o $@ ${OBJ} ${LDFLAGS}
++	${LD} -o $@ ${OBJ} ${LDFLAGS}
+ 	@strip $@
+ 
+ clean:
+@@ -40,10 +38,7 @@ dist: clean
+ 
  install: all
  	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
- 	@mkdir -p ${DESTDIR}${PREFIX}/bin
+-	@mkdir -p ${DESTDIR}${PREFIX}/bin
 -	@cp -f slock ${DESTDIR}${PREFIX}/bin
 -	@chmod 755 ${DESTDIR}${PREFIX}/bin/slock
 -	@chmod u+s ${DESTDIR}${PREFIX}/bin/slock
-+	@install -c -m ${MODE} -o root -g ${GROUP} slock ${DESTDIR}${PREFIX}/bin
++	@${BSD_INSTALL_PROGRAM} slock ${DESTDIR}${PREFIX}/bin
  
  uninstall:
  	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
