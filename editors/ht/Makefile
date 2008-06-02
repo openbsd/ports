@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2008/05/04 20:43:55 okan Exp $
+# $OpenBSD: Makefile,v 1.11 2008/06/02 19:38:09 okan Exp $
 
 COMMENT=		file editor/viewer/analyzer for executables
 
-DISTNAME=		ht-2.0.13
+DISTNAME=		ht-2.0.14
 CATEGORIES=		editors
 
 HOMEPAGE=		http://hte.sourceforge.net/
@@ -36,9 +36,7 @@ CONFIGURE_ARGS+=	--disable-x11-textmode
 USE_X11=		Yes
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			X11BASE=${X11BASE}
-CONFIGURE_ARGS+=	--enable-x11-textmode \
-			--x-includes=${X11BASE}/include \
-			--x-libraries=${X11BASE}/lib
+CONFIGURE_ARGS+=	--enable-x11-textmode
 WANTLIB+=		X11
 .endif
 

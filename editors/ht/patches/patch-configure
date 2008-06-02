@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2008/05/04 20:43:55 okan Exp $
---- configure.orig	Wed Mar  5 16:43:50 2008
-+++ configure	Fri Apr 11 23:11:49 2008
+$OpenBSD: patch-configure,v 1.5 2008/06/02 19:38:09 okan Exp $
+--- configure.orig	Sun May 18 17:13:16 2008
++++ configure	Sun May 18 17:13:35 2008
 @@ -1979,7 +1979,7 @@ fi
  
  if test "x$enable_maintainermode" = "xno"; then
@@ -10,35 +10,3 @@ $OpenBSD: patch-configure,v 1.4 2008/05/04 20:43:55 okan Exp $
  else
      FLAGS_ALL="-ggdb -g3 -O0 -Wall -fsigned-char"
  fi
-@@ -2447,6 +2447,13 @@ linux*)
- 	HAVE_PIPE=1
- 	FLAGS_ALL="$FLAGS_ALL -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64"
- ;;
-+*openbsd*)
-+	IO_DIR=posix
-+	echo "*** OpenBSD, building native OpenBSD version. we need (n)curses." 1>&2
-+	NEED_CURSES=1
-+	HAVE_PIPE=1
-+	FLAGS_ALL="$FLAGS_ALL -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64"
-+;;
- cygwin*)
- 	IO_DIR=win32
- 	echo "*** CYGWIN, building native Win32 version (no cygwin.dll)" 1>&2
-@@ -5728,7 +5735,7 @@ HAVE_X11=0
- 
- if test "x$enable_x11_textmode" = "xyes"; then
- 	TEMP_LDFLAGS=$LDFLAGS
--	LDFLAGS="$HT_LDFLAGS -L/usr/X11/lib -L/usr/X11R6/lib"
-+	LDFLAGS="$HT_LDFLAGS -L${X11BASE}/lib"
- 	{ echo "$as_me:$LINENO: checking for XOpenDisplay in -lX11" >&5
- echo $ECHO_N "checking for XOpenDisplay in -lX11... $ECHO_C" >&6; }
- if test "${ac_cv_lib_X11_XOpenDisplay+set}" = set; then
-@@ -5802,7 +5809,7 @@ cat >>confdefs.h <<\_ACEOF
- _ACEOF
- 
- 		HT_LIBS="$HT_LIBS -lX11"
--		HT_LDFLAGS="$HT_LDFLAGS -L/usr/X11/lib -L/usr/X11R6/lib"
-+		HT_LDFLAGS="$HT_LDFLAGS -L${X11BASE}/lib"
- 	fi
- fi
- 
