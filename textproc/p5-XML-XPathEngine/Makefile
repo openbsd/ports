@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/22 11:04:40 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/02 22:56:26 simon Exp $
 
 COMMENT=	re-usable XPath engine for DOM-like trees
 
 MODULES=	cpan
-DISTNAME=	XML-XPathEngine-0.08
+DISTNAME=	XML-XPathEngine-0.11
 CATEGORIES=	textproc
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
