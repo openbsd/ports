@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2008/05/28 16:09:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2008/06/02 14:10:54 naddy Exp $
 
 COMMENT=	interactive typing tutor
 
-DISTNAME=	gtypist-2.8
+DISTNAME=	gtypist-2.8.1
 CATEGORIES=	education
 HOMEPAGE=	http://www.gnu.org/software/gtypist/
 
@@ -23,7 +23,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	EMACS=no
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/typefortune ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/tools/gtypist-mode.el \
 		${PREFIX}/share/emacs/site-lisp
