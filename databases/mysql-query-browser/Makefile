@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/12/15 19:18:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2008/06/02 14:34:41 sthen Exp $
 
 COMMENT=	visual query tool for MySQL
 
 DISTNAME=	mysql-gui-tools-5.0r12
-PKGNAME=	mysql-query-browser-1.2.12p3
+PKGNAME=	mysql-query-browser-1.2.12p4
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/query-browser/
@@ -20,13 +20,13 @@ MASTER_SITES=	http://mysql.serenitynet.com/Downloads/MySQLGUITools/
 
 WANTLIB=	ICE ORBit-2 SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 		Xcomposite Xdamage \
-		Xrandr Xrender art_lgpl_2 atk-1.0 atkmm-1.6 bonobo-2 \
-		bonobo-activation bonoboui-2 c cairo cairomm-1.0 crypto expat \
-		fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gdkmm-2.4 glibmm-2.4 glitz gnome-2 gnomecanvas-2 \
-		gnomeui-2 gnome-keyring \
+		Xrandr Xrender art_lgpl_2 atk-1.0 atkmm-1.6 audiofile \
+		bonobo-2 bonobo-activation bonoboui-2 c cairo cairomm-1.0 \
+		crypto esd expat fontconfig freetype gailutil gconf-2 \
+		gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 glibmm-2.4 glitz \
+		gnome-2 gnomecanvas-2 gnomeui-2 gnome-keyring \
 		gnomevfs-2 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pangomm-1.4 png popt pthread sigc-2.0 ssl stdc++ z
+		pangomm-1.4 pixman-1 png popt pthread sigc-2.0 ssl stdc++ z
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	::textproc/p5-XML-Parser \
