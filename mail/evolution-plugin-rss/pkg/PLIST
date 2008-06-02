@@ -1,14 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/13 14:17:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/06/02 16:50:58 jasper Exp $
 bin/evolution-import-rss
-lib/bonobo/servers/GNOME_Evolution_RSS_2.12.server
-lib/evolution/2.12/plugins/liborg-gnome-evolution-rss.a
-lib/evolution/2.12/plugins/liborg-gnome-evolution-rss.la
-lib/evolution/2.12/plugins/liborg-gnome-evolution-rss.so
-lib/evolution/2.12/plugins/org-gnome-evolution-rss.eplug
-lib/evolution/2.12/plugins/org-gnome-evolution-rss.xml
-share/evolution/2.12/errors/org-gnome-evolution-rss.error
-share/evolution/2.12/glade/rss-ui.glade
-share/evolution/2.12/images/rss.png
+lib/bonobo/servers/GNOME_Evolution_RSS_${EVO_VERSION}.server
+lib/evolution/${EVO_VERSION}/
+lib/evolution/${EVO_VERSION}/plugins/
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.a
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.la
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.so
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-evolution-rss.eplug
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-evolution-rss.xml
+share/evolution/${EVO_VERSION}/
+share/evolution/${EVO_VERSION}/errors/
+share/evolution/${EVO_VERSION}/errors/org-gnome-evolution-rss.error
+share/evolution/${EVO_VERSION}/glade/
+share/evolution/${EVO_VERSION}/glade/rss-ui.glade
+share/evolution/${EVO_VERSION}/images/
+share/evolution/${EVO_VERSION}/images/rss.png
 share/locale/en_AU/LC_MESSAGES/evolution-rss.mo
 share/locale/ro/LC_MESSAGES/evolution-rss.mo
 share/locale/sv/LC_MESSAGES/evolution-rss.mo
