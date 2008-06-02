@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/01 12:52:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/02 11:39:39 sthen Exp $
 
 COMMENT=	tiny download accelerator
-DISTNAME=	axel-1.0b
+DISTNAME=	axel-1.1
 CATEGORIES=	net
 
-HOMEPAGE=	http://wilmer.gaast.net/main.php/axel.html
+HOMEPAGE=	http://axel.alioth.debian.org/
 
 MAINTAINER=	Girish Venkatachalam <girish1729@gmail.com>
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes 
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://wilmer.gaast.net/downloads/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/2287/
 
 WANTLIB=	c pthread
 
