@@ -1,5 +1,5 @@
 #!/usr/local/bin/lua
--- $OpenBSD: yt.lua,v 1.11 2008/06/02 17:29:56 martynas Exp $
+-- $OpenBSD: yt.lua,v 1.12 2008/06/02 17:43:10 martynas Exp $
 -- Fetch videos from YouTube.com and convert them to MPEG.
 -- Written by Pedro Martelletto in August 2006. Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -23,12 +23,12 @@ print(string.format("Getting %s ...", url))
 body = assert(http.request(url))
 
 -- Look for the video title.
-pattern = "<meta name=\"title\" content=\"(.-)\""
+pattern = "<title>(.-)</title>"
 title = assert(string.match(body, pattern))
 
 -- Build a name for the files the video will be stored in.
 file = string.gsub(title, "[^%w-]", "_")
-file = "youtube-" .. string.lower(file)
+file = string.lower(file)
 flv = file .. ".flv"
 mp4 = file .. ".mp4"
 
@@ -38,14 +38,26 @@ e_mp4 = string.format("%q", mp4)
 
 -- Look for the video ID.
 pattern = "/watch_fullscreen%?.*video_id=(.-)&"
-video_id = assert(string.match(body, pattern))
+video_id = string.match(body, pattern)
 
--- Look for the additional video ID.
-pattern = "/watch_fullscreen%?.*&t=(.-)&"
-t = assert(string.match(body, pattern))
+if video_id then
+	--- Look for the additional video ID.
+	pattern = "/watch_fullscreen%?.*&t=(.-)&"
+	t = assert(string.match(body, pattern))
+	url = string.format("%q", base_url .. "?video_id=" .. video_id
+		.. "&t=" .. t)
+else
+	-- We assume it's Google Video URL.
+	pattern = "'/googleplayer.swf%?videoUrl(.-)'"
+	url = assert(string.match(body, pattern))
+	url = string.gsub (url, "\\x", "%%")
+	url = string.gsub (url, "%%(%x%x)", function(h)
+		return string.char(tonumber(h,16)) end)
+	url = string.gsub (url, "^=", "")
+	url = string.format("%q", url)
+end
 
 -- Fetch the video.
-url = string.format("%q", base_url .. "?video_id=" .. video_id .. "&t=" .. t)
 cmd = string.gsub(fetch, "<(%w+)>", { url = url, file = e_flv })
 assert(os.execute(cmd) == 0, "Failed")
 
