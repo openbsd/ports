@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/05/01 10:15:04 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/06/02 16:46:26 jasper Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/broken-date-parser.h
@@ -152,6 +152,13 @@ include/evolution-data-server-${R}/exchange/exchange-hierarchy.h
 include/evolution-data-server-${R}/exchange/exchange-oof.h
 include/evolution-data-server-${R}/exchange/exchange-types.h
 include/evolution-data-server-${R}/exchange/mapi.h
+include/evolution-data-server-${R}/google/
+include/evolution-data-server-${R}/google/gdata/
+include/evolution-data-server-${R}/google/gdata-google/
+include/evolution-data-server-${R}/google/gdata-google/gdata-google-service.h
+include/evolution-data-server-${R}/google/gdata/gdata-entry.h
+include/evolution-data-server-${R}/google/gdata/gdata-feed.h
+include/evolution-data-server-${R}/google/gdata/gdata-service-iface.h
 include/evolution-data-server-${R}/groupwise/
 include/evolution-data-server-${R}/groupwise/e-gw-connection.h
 include/evolution-data-server-${R}/groupwise/e-gw-container.h
@@ -161,6 +168,8 @@ include/evolution-data-server-${R}/groupwise/e-gw-message.h
 include/evolution-data-server-${R}/groupwise/e-gw-proxy.h
 include/evolution-data-server-${R}/groupwise/e-gw-recur-utils.h
 include/evolution-data-server-${R}/groupwise/e-gw-sendoptions.h
+include/evolution-data-server-${R}/groupwise/soup-soap-message.h
+include/evolution-data-server-${R}/groupwise/soup-soap-response.h
 include/evolution-data-server-${R}/libebook/
 include/evolution-data-server-${R}/libebook/e-address-western.h
 include/evolution-data-server-${R}/libebook/e-book-query.h
@@ -235,6 +244,7 @@ include/evolution-data-server-${R}/libedataserver/md5-utils.h
 include/evolution-data-server-${R}/libedataserverui/
 include/evolution-data-server-${R}/libedataserverui/e-book-auth-util.h
 include/evolution-data-server-${R}/libedataserverui/e-categories-dialog.h
+include/evolution-data-server-${R}/libedataserverui/e-cell-renderer-color.h
 include/evolution-data-server-${R}/libedataserverui/e-contact-store.h
 include/evolution-data-server-${R}/libedataserverui/e-destination-store.h
 include/evolution-data-server-${R}/libedataserverui/e-name-selector-dialog.h
@@ -243,6 +253,7 @@ include/evolution-data-server-${R}/libedataserverui/e-name-selector-list.h
 include/evolution-data-server-${R}/libedataserverui/e-name-selector-model.h
 include/evolution-data-server-${R}/libedataserverui/e-name-selector.h
 include/evolution-data-server-${R}/libedataserverui/e-passwords.h
+include/evolution-data-server-${R}/libedataserverui/e-source-combo-box.h
 include/evolution-data-server-${R}/libedataserverui/e-source-option-menu.h
 include/evolution-data-server-${R}/libedataserverui/e-source-selector-dialog.h
 include/evolution-data-server-${R}/libedataserverui/e-source-selector.h
@@ -350,6 +361,9 @@ lib/evolution-data-server-1.2/extensions/libecalbackendcontacts.so
 lib/evolution-data-server-1.2/extensions/libecalbackendfile.a
 lib/evolution-data-server-1.2/extensions/libecalbackendfile.la
 lib/evolution-data-server-1.2/extensions/libecalbackendfile.so
+lib/evolution-data-server-1.2/extensions/libecalbackendgoogle.a
+lib/evolution-data-server-1.2/extensions/libecalbackendgoogle.la
+lib/evolution-data-server-1.2/extensions/libecalbackendgoogle.so
 lib/evolution-data-server-1.2/extensions/libecalbackendgroupwise.a
 lib/evolution-data-server-1.2/extensions/libecalbackendgroupwise.la
 lib/evolution-data-server-1.2/extensions/libecalbackendgroupwise.so
@@ -389,6 +403,12 @@ lib/libegroupwise-1.2.la
 lib/libexchange-storage-1.2.a
 lib/libexchange-storage-1.2.la
 @lib lib/libexchange-storage-1.2.so.${LIBexchange-storage-1.2_VERSION}
+lib/libgdata-1.2.a
+lib/libgdata-1.2.la
+@lib lib/libgdata-1.2.so.${LIBgdata-1.2_VERSION}
+lib/libgdata-google-1.2.a
+lib/libgdata-google-1.2.la
+@lib lib/libgdata-google-1.2.so.${LIBgdata-google-1.2_VERSION}
 lib/pkgconfig/camel-1.2.pc
 lib/pkgconfig/camel-provider-1.2.pc
 lib/pkgconfig/evolution-data-server-1.2.pc
@@ -400,6 +420,8 @@ lib/pkgconfig/libedataserver-1.2.pc
 lib/pkgconfig/libedataserverui-1.2.pc
 lib/pkgconfig/libegroupwise-1.2.pc
 lib/pkgconfig/libexchange-storage-1.2.pc
+lib/pkgconfig/libgdata-1.2.pc
+lib/pkgconfig/libgdata-google-1.2.pc
 libexec/camel-index-control-1.2
 @mode 4555
 libexec/camel-lock-helper-1.2
@@ -633,6 +655,7 @@ share/gtk-doc/html/libedataserverui/ENameSelectorDialog.html
 share/gtk-doc/html/libedataserverui/ENameSelectorEntry.html
 share/gtk-doc/html/libedataserverui/ENameSelectorList.html
 share/gtk-doc/html/libedataserverui/ENameSelectorModel.html
+share/gtk-doc/html/libedataserverui/ESourceComboBox.html
 share/gtk-doc/html/libedataserverui/ESourceOptionMenu.html
 share/gtk-doc/html/libedataserverui/ESourceSelector.html
 share/gtk-doc/html/libedataserverui/ESourceSelectorDialog.html
@@ -643,6 +666,7 @@ share/gtk-doc/html/libedataserverui/index.html
 share/gtk-doc/html/libedataserverui/index.sgml
 share/gtk-doc/html/libedataserverui/ix01.html
 share/gtk-doc/html/libedataserverui/left.png
+share/gtk-doc/html/libedataserverui/libedataserverui-ECellRendererColor.html
 share/gtk-doc/html/libedataserverui/libedataserverui-e-book-auth-util.html
 share/gtk-doc/html/libedataserverui/libedataserverui-e-data-server-ui-marshal.html
 share/gtk-doc/html/libedataserverui/libedataserverui-e-passwords.html
@@ -694,6 +718,7 @@ share/locale/is/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/it/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ja/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ka/LC_MESSAGES/evolution-data-server-${R}.mo
+share/locale/kn/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ko/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ku/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/lt/LC_MESSAGES/evolution-data-server-${R}.mo
@@ -716,6 +741,7 @@ share/locale/pt_BR/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ro/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ru/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/rw/LC_MESSAGES/evolution-data-server-${R}.mo
+share/locale/si/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/sk/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/sl/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/sq/LC_MESSAGES/evolution-data-server-${R}.mo
