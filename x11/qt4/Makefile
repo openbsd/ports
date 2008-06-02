@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2008/03/15 09:44:12 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2008/06/02 10:33:33 espie Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
 COMMENT-examples=	examples for qt4
@@ -34,7 +34,7 @@ SHARED_LIBS=	Qt3Support 8.0 \
 		QtScript 0.0
 
 
-VERSION=	4.3.4
+VERSION=	4.3.5
 DISTNAME=	qt-x11-opensource-src-${VERSION}
 
 
@@ -218,10 +218,6 @@ MAKE_FLAGS+=LIB$l_VERSION=$v
 .endfor
 
 DESTDIRNAME=	INSTALL_ROOT
-
-post-patch:
-	perl -pi -e "s#!!CUPS_LIBS!!#`cups-config --libs`#" \
-		${WRKSRC}/config.tests/unix/cups/cups.pro
 
 post-install:
 	# extra doc
