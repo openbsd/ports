@@ -1,4 +1,4 @@
-# $OpenBSD: qt3.port.mk,v 1.9 2007/03/28 23:18:09 espie Exp $
+# $OpenBSD: qt3.port.mk,v 1.10 2008/06/02 17:54:35 naddy Exp $
 
 MODULES+=	gcc3
 MODGCC3_ARCHES+=sparc64
@@ -36,7 +36,7 @@ MODQT3_UIC =	${LOCALBASE}/bin/uic3-mt
 MODQT_UIC ?=	${MODQT3_UIC}
 MODQT3_QTDIR =	${LOCALBASE}/lib/qt3
 MODQT_QTDIR ?=	${MODQT3_QTDIR}
-MODQT3_PLUGINS =lib/qt3/plugins-31
+MODQT3_PLUGINS =lib/qt3/plugins-32
 MODQT_PLUGINS ?=${MODQT3_PLUGINS}
 
 CONFIGURE_ENV += ${_MODQT3_SETUP}
