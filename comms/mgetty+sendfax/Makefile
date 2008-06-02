@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.39 2008/01/04 18:38:51 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2008/06/02 10:46:04 ajacoutot Exp $
 
 COMMENT=	handle external logins, send and receive faxes
 
 VERSION=	1.1.36
 RELEASE=	Jun15
 DISTNAME=	mgetty${VERSION}-${RELEASE}
-PKGNAME=	mgetty+sendfax-${VERSION}
+PKGNAME=	mgetty+sendfax-${VERSION}p0
 CATEGORIES=	comms
 
 HOMEPAGE=	http://mgetty.greenie.net/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
-WANTLIB=		c m util
+
+WANTLIB=	c m util
 
 MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/1.1/
 
