@@ -1,0 +1,12 @@
+$OpenBSD: patch-programs_Makefile_in,v 1.1.1.1 2008/06/03 07:44:08 jasper Exp $
+--- programs/Makefile.in.orig	Tue May 27 01:06:09 2008
++++ programs/Makefile.in	Mon Jun  2 21:41:50 2008
+@@ -334,7 +334,7 @@ bin_SCRIPTS = \
+ 	gvfs-less				\
+ 	$(NULL)
+ 
+-profiledir = $(sysconfdir)/profile.d
++profiledir = $(datadir)/gvfs
+ profile_SCRIPTS = gvfs-bash-completion.sh
+ gvfs_cat_SOURCES = gvfs-cat.c
+ gvfs_cat_LDADD = $(libraries)

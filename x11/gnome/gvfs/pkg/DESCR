@@ -1,0 +1,7 @@
+GVFS is a replacement for GnomeVFS, the GNOME Virtual File System.
+
+GVFS consists of two parts: a shared library which is loaded by
+applications supporting GIO and GVFS itself, a collection of daemons
+which communicate with each other and the GIO module over D-Bus. This
+moves the virtual file systems out of client processes, contrary to
+GnomeVFS, but somewhat similar to KIO.
