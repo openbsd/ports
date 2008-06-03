@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/05/12 16:43:57 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/06/03 16:34:43 jasper Exp $
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
 %%SHARED%%
@@ -6,9 +6,9 @@ bin/gsf
 bin/gsf-vba-dump
 include/libgsf-1/
 include/libgsf-1/gsf/
-@comment include/libgsf-1/gsf-win32/
-@comment include/libgsf-1/gsf-win32/gsf-input-win32.h
-@comment include/libgsf-1/gsf-win32/gsf-output-win32.h
+include/libgsf-1/gsf-gvfs/
+include/libgsf-1/gsf-gvfs/gsf-input-gvfs.h
+include/libgsf-1/gsf-gvfs/gsf-output-gvfs.h
 include/libgsf-1/gsf/gsf-blob.h
 include/libgsf-1/gsf/gsf-clip-data.h
 include/libgsf-1/gsf/gsf-doc-meta-data.h
@@ -65,6 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/gsf/__init__.pyo
 @comment lib/python${MODPY_VERSION}/site-packages/gsf/gnomemodule.a
 @comment lib/python${MODPY_VERSION}/site-packages/gsf/gnomemodule.la
 @man man/man1/gsf-office-thumbnailer.1
+@man man/man1/gsf.1
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gsf/
@@ -107,4 +108,7 @@ share/gtk-doc/html/gsf/sources.html
 share/gtk-doc/html/gsf/style.css
 share/gtk-doc/html/gsf/up.png
 share/locale/es/LC_MESSAGES/libgsf.mo
+share/locale/oc/LC_MESSAGES/libgsf.mo
 share/locale/sv/LC_MESSAGES/libgsf.mo
+share/locale/zh_HK/LC_MESSAGES/libgsf.mo
+share/locale/zh_TW/LC_MESSAGES/libgsf.mo

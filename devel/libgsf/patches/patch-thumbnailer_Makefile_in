@@ -1,0 +1,15 @@
+$OpenBSD: patch-thumbnailer_Makefile_in,v 1.1 2008/06/03 16:34:43 jasper Exp $
+--- thumbnailer/Makefile.in.orig	Mon Jun  2 00:01:38 2008
++++ thumbnailer/Makefile.in	Mon Jun  2 00:02:10 2008
+@@ -277,8 +277,9 @@ schema_files = \
+ 	gsf-office-thumbnailer.schemas.in
+ 
+ schemas = gsf-office-thumbnailer.schemas
+-schemadir = $(GCONF_SCHEMA_FILE_DIR)
+-@GCONF_SCHEMAS_INSTALL_TRUE@schema_DATA = $(schemas)
++# XXX workaround for missing substitution in configure
++schemadir = ${GCONF2_SCHEMAS_DIR}
++schema_DATA = $(schemas)
+ EXTRA_DIST = \
+ 	$(schema_files)  
+ 
