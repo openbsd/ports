@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/04/17 08:10:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2008/06/03 14:56:09 ajacoutot Exp $
 
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
@@ -24,9 +24,8 @@ WANTLIB=	X11 Xau Xdmcp Xrender Xcursor Xext Xfixes Xi Xinerama Xrandr \
 		freetype expat glib-2.0 gmodule-2.0 glitz png \
 		gobject-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
 
-MODULES=	devel/gettext
-
-BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
+MODULES=	devel/gettext \
+		textproc/intltool
 
 LIB_DEPENDS=	id3.>=3.8::audio/id3lib \
 		vorbis.>=5.0::audio/libvorbis \

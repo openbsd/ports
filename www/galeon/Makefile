@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2008/01/23 16:37:16 martynas Exp $
+# $OpenBSD: Makefile,v 1.40 2008/06/03 14:56:09 ajacoutot Exp $
 
 COMMENT=	GNOME web browser based on gecko
 
@@ -29,10 +29,10 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galeon/}
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		textproc/intltool
 
 BUILD_DEPENDS=	:xulrunner-devel->=1.8.1:devel/xulrunner,-devel \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
 		:gnome-icon-theme-*:x11/gnome/icon-theme \

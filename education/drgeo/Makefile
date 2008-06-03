@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2008/05/30 02:41:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2008/06/03 14:56:09 ajacoutot Exp $
 
 COMMENT=	interactive geometry program
 
@@ -22,10 +22,10 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png stdc++ xml2 z
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		textproc/intltool
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=	glade-2.0::devel/libglade2 \
 		guile,guile-ltdl::lang/guile
 

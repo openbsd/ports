@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2008/03/22 22:46:12 merdely Exp $
+# $OpenBSD: Makefile,v 1.32 2008/06/03 14:56:09 ajacoutot Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -24,7 +24,6 @@ HOMEPAGE=	http://www.gimp.org/
 
 EXTRACT_SUFX=	.tar.bz2
 
-BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=    :wget-*:net/wget
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		aa.>=1.3::graphics/aalib \
@@ -50,7 +49,8 @@ WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
 		Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr \
 		expat Xcomposite Xdamage gthread-2.0 pcre
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		textproc/intltool
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

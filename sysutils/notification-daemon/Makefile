@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/23 14:06:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/03 14:56:09 ajacoutot Exp $
 
 COMMENT=		send small notifications to your desktop
 
@@ -23,9 +23,8 @@ WANTLIB=	ICE ORBit-2 SM X11 XRes Xau Xcursor Xdmcp Xext Xfixes \
 MASTER_SITES=		${HOMEPAGE}/files/releases/source/notification-daemon/
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		devel/gettext
-
-BUILD_DEPENDS=		::textproc/p5-XML-Parser
+MODULES=		devel/gettext \
+			textproc/intltool
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

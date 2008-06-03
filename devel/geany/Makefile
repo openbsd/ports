@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2008/04/17 08:10:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2008/06/03 14:56:09 ajacoutot Exp $
 
 COMMENT=	small and lightweight IDE
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=geany/}
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		textproc/intltool
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -32,7 +33,6 @@ WANTLIB=	X11 Xext Xrender Xau Xcursor Xdmcp Xfixes Xi \
 		fontconfig freetype atk-1.0 cairo \
 		pango-1.0 pangoft2-1.0 pangocairo-1.0
 
-BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2008/05/26 16:29:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2008/06/03 14:56:09 ajacoutot Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-4.0
@@ -28,9 +28,10 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 
 MASTER_SITES=		http://savannah.nongnu.org/download/mailnotify/
 
-MODULES=		devel/gettext 
-BUILD_DEPENDS=         :scrollkeeper-*:textproc/scrollkeeper \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+MODULES=		devel/gettext \
+			textproc/intltool
+
+BUILD_DEPENDS=         :scrollkeeper-*:textproc/scrollkeeper
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-icon-theme-*:x11/gnome/icon-theme \
 			:desktop-file-utils-*:devel/desktop-file-utils \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/05/31 23:11:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/03 14:56:09 ajacoutot Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
@@ -30,12 +30,12 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=workrave/}
 
-BUILD_DEPENDS=		::textproc/p5-XML-Parser
 LIB_DEPENDS=		gnet-2.0::net/gnet \
 			gnomeuimm-2.6::x11/gnome/libgnomeuimm \
 			panel-applet-2::x11/gnome/panel
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			textproc/intltool
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
