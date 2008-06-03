@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/11/19 09:18:18 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/03 23:37:35 okan Exp $
 
 COMMENT=	greylist milter
 
 DISTNAME=	milter-greylist-4.0
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 HOMEPAGE=	http://hcpnet.free.fr/milter-greylist/
 
@@ -20,6 +20,8 @@ PERMIT_DISTFILES_FTP=		Yes
 
 WANTLIB=	c pthread milter
 
+LIB_DEPENDS=	spf2::mail/libspf2
+
 BUILD_DEPENDS=	::devel/bison
 
 USERNAME=	_milter-greylist:_milter-greylist
@@ -30,7 +32,10 @@ SUBST_VARS=	GREYLISTDIR
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-user=${USERNAME} \
-			--with-dumpfile=${GREYLISTDIR}/greylist.db
+			--with-dumpfile=${GREYLISTDIR}/greylist.db \
+			--with-libspf2=${LOCALBASE}
+
+NO_REGRESS=	Yes
 
 pre-configure:
 	@perl -pi -e 's,!!USERNAME!!,${USERNAME},; \
