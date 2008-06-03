@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/12/17 20:33:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2008/06/03 13:56:56 ajacoutot Exp $
 
 COMMENT=		Scrollkeeper Open Documentation Cataloging System
 
@@ -12,17 +12,23 @@ HOMEPAGE=		http://scrollkeeper.sourceforge.net
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/scrollkeeper/0.3/}
 EXTRACT_SUFX=		.tar.bz2
 
-# LGPL
+# LGPLv2 - GFPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c m z 
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:docbook->=4.2p1:textproc/docbook \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+BUILD_DEPENDS=		:docbook->=4.2p1:textproc/docbook
+
+# we don't use textproc/intltool MODULE because scrollkeeper needs a
+# very old intltool-merge ; it is unmaintained software anyway and will
+# be deprecated when rarian (scrollkeeper replacement) hits the tree
+BUILD_DEPENDS+=		:p5-XML-Parser-*:textproc/p5-XML-Parser
+
 RUN_DEPENDS=		:docbook->=4.2p1:textproc/docbook
 LIB_DEPENDS=		xml2.>=7:libxml->=2.6.16p6:textproc/libxml \
 			xslt.>=1::textproc/libxslt
