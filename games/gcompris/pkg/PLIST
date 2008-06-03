@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/02/15 12:29:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/06/03 07:41:58 ajacoutot Exp $
 bin/gcompris
 @info info/gcompris.info
 lib/gcompris/
@@ -7029,8 +7029,6 @@ share/gcompris/python/writing_tutor_image_match.py
 share/gcompris/python/writing_tutor_missing_match.py
 share/gcompris/python/writing_tutor_pattern_admin.py
 share/gcompris/python/writing_tutor_template_match.py
-share/gnome/
-share/gnome/help/
 share/gnome/help/gcompris/
 share/gnome/help/gcompris/eu/
 share/gnome/help/gcompris/eu/gcompris.html

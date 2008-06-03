@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2008/06/01 13:29:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2008/06/03 07:41:58 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	educational game for children
 
 DISTNAME=	gcompris-8.4.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games education
 
 HOMEPAGE=	http://gcompris.net/
@@ -24,10 +24,12 @@ WANTLIB=	Xau Xdmcp X11 Xext Xrender Xcomposite atk-1.0 c cairo z \
 		Xdamage fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 xml2 \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 util pcre \
-		pangoft2-1.0 png pthread Xxf86vm expat Xcursor Xfixes \
-		Xi Xinerama Xrandr art_lgpl_2 gailutil gnomecanvas-2
+		pangoft2-1.0 pixman-1 png pthread Xxf86vm expat Xcursor \
+		Xfixes Xi Xinerama Xrandr art_lgpl_2 gailutil
 
-MODULES=	devel/gettext lang/python textproc/intltool
+MODULES=	devel/gettext \
+		lang/python \
+		textproc/intltool
 
 BUILD_DEPENDS=	::textproc/texi2html \
 		::x11/py-gtk2 \
@@ -36,6 +38,7 @@ BUILD_DEPENDS=	::textproc/texi2html \
 LIB_DEPENDS=	python${MODPY_VERSION}::lang/python/${MODPY_VERSION} \
 		gnet-2.0::net/gnet \
 		sqlite3::databases/sqlite3 \
+		gnomecanvas-2::x11/gnome/libgnomecanvas \
 		gstreamer-0.10:gstreamer-0.10.*:multimedia/gstreamer-0.10/core
 RUN_DEPENDS=	::games/gnuchess \
 		::databases/py-sqlite2 \
