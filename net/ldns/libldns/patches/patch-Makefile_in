@@ -1,25 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2008/02/03 19:08:30 jakob Exp $
---- Makefile.in.orig	Thu Aug  9 10:52:04 2007
-+++ Makefile.in	Tue Oct 23 16:28:50 2007
-@@ -12,7 +12,7 @@ datarootdir	= @datarootdir@
+$OpenBSD: patch-Makefile_in,v 1.2 2008/06/03 15:03:10 jakob Exp $
+--- Makefile.in.orig	Wed May 28 08:12:29 2008
++++ Makefile.in	Tue Jun  3 16:38:20 2008
+@@ -13,7 +13,7 @@ datarootdir	= @datarootdir@
  datadir		= @datadir@
  libdir		= @libdir@
  includedir	= @includedir@
 -doxygen		= @doxygen@
 +#doxygen		= @doxygen@
  glibtool	= @glibtool@
- libtool		= @libtool@
+ libtool		= ./libtool
  ifdef glibtool
-@@ -68,7 +68,7 @@ ALL_SOURCES	=	$(LIBDNS_SOURCES)
- COMPILE		= $(CC) $(CPPFLAGS) $(CFLAGS)
- COMP_LIB	= $(LIBTOOL) --mode=compile $(CC) $(CPPFLAGS) $(CFLAGS)
- LINK		= $(CC) $(CFLAGS) $(LDFLAGS)
--LINK_LIB	= $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -release $(VERSION)
-+LINK_LIB	= $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS)
- 
- %.o:    $(srcdir)/%.c $(LIBDNS_HEADERS) ldns/util.h ldns/config.h
- 	$(COMP_LIB) -c $> $<
-@@ -133,7 +133,6 @@ uninstall-h:
+@@ -149,7 +149,6 @@ uninstall-h:
  install-lib:	lib
  		$(INSTALL) -m 755 -d $(DESTDIR)$(libdir)
  		$(LIBTOOL) --mode=install cp libldns.la $(DESTDIR)$(libdir)

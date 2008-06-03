@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2008/06/03 15:03:10 jakob Exp $
+--- configure.orig	Mon Jun  2 14:46:14 2008
++++ configure	Tue Jun  3 16:39:00 2008
+@@ -9538,7 +9538,7 @@ openbsd*)
+   need_lib_prefix=no
+   need_version=yes
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in

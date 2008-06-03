@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/02/25 00:54:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/06/03 15:03:10 jakob Exp $
 @conflict ldns-*
 %%SHARED%%
 include/ldns/
@@ -6,6 +6,9 @@ include/ldns/buffer.h
 include/ldns/common.h
 include/ldns/dname.h
 include/ldns/dnssec.h
+include/ldns/dnssec_sign.h
+include/ldns/dnssec_verify.h
+include/ldns/dnssec_zone.h
 include/ldns/error.h
 include/ldns/higher.h
 include/ldns/host2str.h
@@ -15,6 +18,7 @@ include/ldns/ldns.h
 include/ldns/net.h
 include/ldns/packet.h
 include/ldns/parse.h
+include/ldns/rbtree.h
 include/ldns/rdata.h
 include/ldns/resolver.h
 include/ldns/rr.h
@@ -90,6 +94,66 @@ lib/libldns.la
 @man man/man3/ldns_dname_new_frm_data.3
 @man man/man3/ldns_dname_new_frm_str.3
 @man man/man3/ldns_dname_str_absolute.3
+@man man/man3/ldns_dnssec_build_data_chain.3
+@man man/man3/ldns_dnssec_data_chain.3
+@man man/man3/ldns_dnssec_data_chain_deep_free.3
+@man man/man3/ldns_dnssec_data_chain_free.3
+@man man/man3/ldns_dnssec_data_chain_new.3
+@man man/man3/ldns_dnssec_data_chain_print.3
+@man man/man3/ldns_dnssec_data_chain_struct.3
+@man man/man3/ldns_dnssec_derive_trust_tree.3
+@man man/man3/ldns_dnssec_derive_trust_tree_dnskey_rrset.3
+@man man/man3/ldns_dnssec_derive_trust_tree_ds_rrset.3
+@man man/man3/ldns_dnssec_derive_trust_tree_no_sig.3
+@man man/man3/ldns_dnssec_derive_trust_tree_normal_rrset.3
+@man man/man3/ldns_dnssec_name.3
+@man man/man3/ldns_dnssec_name_add_rr.3
+@man man/man3/ldns_dnssec_name_cmp.3
+@man man/man3/ldns_dnssec_name_find_rrset.3
+@man man/man3/ldns_dnssec_name_free.3
+@man man/man3/ldns_dnssec_name_name.3
+@man man/man3/ldns_dnssec_name_new.3
+@man man/man3/ldns_dnssec_name_new_frm_rr.3
+@man man/man3/ldns_dnssec_name_node_next_nonglue.3
+@man man/man3/ldns_dnssec_name_print.3
+@man man/man3/ldns_dnssec_name_set_name.3
+@man man/man3/ldns_dnssec_name_set_nsec.3
+@man man/man3/ldns_dnssec_remove_signatures.3
+@man man/man3/ldns_dnssec_rrs.3
+@man man/man3/ldns_dnssec_rrs_add_rr.3
+@man man/man3/ldns_dnssec_rrs_free.3
+@man man/man3/ldns_dnssec_rrs_new.3
+@man man/man3/ldns_dnssec_rrs_print.3
+@man man/man3/ldns_dnssec_rrsets.3
+@man man/man3/ldns_dnssec_rrsets_add_rr.3
+@man man/man3/ldns_dnssec_rrsets_free.3
+@man man/man3/ldns_dnssec_rrsets_new.3
+@man man/man3/ldns_dnssec_rrsets_print.3
+@man man/man3/ldns_dnssec_rrsets_set_type.3
+@man man/man3/ldns_dnssec_rrsets_type.3
+@man man/man3/ldns_dnssec_trust_tree.3
+@man man/man3/ldns_dnssec_trust_tree_add_parent.3
+@man man/man3/ldns_dnssec_trust_tree_contains_keys.3
+@man man/man3/ldns_dnssec_trust_tree_depth.3
+@man man/man3/ldns_dnssec_trust_tree_free.3
+@man man/man3/ldns_dnssec_trust_tree_new.3
+@man man/man3/ldns_dnssec_trust_tree_print.3
+@man man/man3/ldns_dnssec_trust_tree_print_sm.3
+@man man/man3/ldns_dnssec_verify_denial.3
+@man man/man3/ldns_dnssec_verify_denial_nsec3.3
+@man man/man3/ldns_dnssec_zone.3
+@man man/man3/ldns_dnssec_zone_add_empty_nonterminals.3
+@man man/man3/ldns_dnssec_zone_add_rr.3
+@man man/man3/ldns_dnssec_zone_create_nsecs.3
+@man man/man3/ldns_dnssec_zone_create_rrsigs.3
+@man man/man3/ldns_dnssec_zone_find_rrset.3
+@man man/man3/ldns_dnssec_zone_free.3
+@man man/man3/ldns_dnssec_zone_mark_glue.3
+@man man/man3/ldns_dnssec_zone_names_print.3
+@man man/man3/ldns_dnssec_zone_new.3
+@man man/man3/ldns_dnssec_zone_print.3
+@man man/man3/ldns_dnssec_zone_sign.3
+@man man/man3/ldns_dnssec_zone_sign_nsec3.3
 @man man/man3/ldns_fget_token.3
 @man man/man3/ldns_fskipcs.3
 @man man/man3/ldns_get_errorstr_by_id.3
@@ -401,6 +465,5 @@ lib/libldns.la
 @man man/man3/ldns_zone_rrs.3
 @man man/man3/ldns_zone_set_rrs.3
 @man man/man3/ldns_zone_set_soa.3
-@man man/man3/ldns_zone_sign.3
 @man man/man3/ldns_zone_soa.3
 @man man/man3/ldns_zone_sort.3
