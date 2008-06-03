@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2008/03/15 09:15:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2008/06/03 07:54:51 ajacoutot Exp $
 
 COMMENT=		shared mime database for desktops
 
@@ -7,7 +7,7 @@ CATEGORIES=		misc
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/shared-mime-info
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -21,7 +21,6 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext \
 			textproc/intltool
 
-BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		glib-2.0::devel/glib2 \
 			xml2::textproc/libxml
 
