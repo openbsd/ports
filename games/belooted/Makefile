@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/11/13 14:54:31 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/03 10:54:04 ajacoutot Exp $
 
 COMMENT=	32-card trick-taking game
 
@@ -24,8 +24,9 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png z
 
-MODULES=	devel/gettext
-BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
+MODULES=	devel/gettext \
+		textproc/intltool
+
 LIB_DEPENDS=	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 

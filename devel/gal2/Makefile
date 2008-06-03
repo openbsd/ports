@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2008/06/03 10:54:04 ajacoutot Exp $
 
 COMMENT=		GNOME Application Libs
 
@@ -32,9 +32,9 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gal/2.5/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			textproc/intltool
 
-BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui
 

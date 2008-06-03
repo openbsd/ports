@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/04/17 08:10:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/03 10:54:04 ajacoutot Exp $
 
 COMMENT=	genealogical research and analysis management program system
 
@@ -16,10 +16,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gramps/}
 
-MODULES=	lang/python
+MODULES=	lang/python \
+		textproc/intltool
+
 BUILD_DEPENDS=	:py-gnome-*:x11/gnome/py-gnome \
-		:gnome-doc-utils-*:x11/gnome/doc-utils \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser
+		:gnome-doc-utils-*:x11/gnome/doc-utils
 RUN_DEPENDS=	:py-gnome-*:x11/gnome/py-gnome \
 		:python-bsddb-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-bsddb \
 		:py-reportlab-*:print/py-reportlab/reportlab \
