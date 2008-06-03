@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2007/12/16 13:08:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2008/06/03 06:59:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.gajim.org/
 
 MAINTAINER=	Simon Kuhnle <simon@blarzwurst.de>
 
-# GPL
+# GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,10 +31,10 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 MODULES=	devel/gettext \
-		lang/python
+		lang/python \
+		textproc/intltool
 
-BUILD_DEPENDS=	::textproc/intltool \
-		${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	gtkspell::textproc/gtkspell
 RUN_DEPENDS=	${MODPY_EXPAT_DEPENDS} \
 		::databases/py-sqlite2 \

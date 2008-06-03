@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/03/23 02:41:06 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/03 06:59:25 ajacoutot Exp $
 
 COMMENT=	allows deniable private conversations using Pidgin
 
@@ -20,7 +20,8 @@ RUN_DEPENDS=	:pidgin->=2.0.0:net/pidgin
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	otr.>=3.1:libotr->=3.1.0:security/libotr
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		textproc/intltool
 WANTLIB=	gpg-error gcrypt
 
 USE_X11=	Yes
@@ -36,8 +37,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 AUTOCONF_VERSION=2.59
 AUTOMAKE_VERSION=1.9
 BUILD_DEPENDS+=	:autoconf-${AUTOCONF_VERSION}*:devel/autoconf/${AUTOCONF_VERSION} \
-		:automake-${AUTOMAKE_VERSION}*:devel/automake/${AUTOMAKE_VERSION} \
-		::textproc/intltool
+		:automake-${AUTOMAKE_VERSION}*:devel/automake/${AUTOMAKE_VERSION}
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \

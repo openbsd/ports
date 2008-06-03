@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/14 23:21:04 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/03 06:59:25 ajacoutot Exp $
 
 COMMENT=	build molecules out of single atoms
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://ftp.gnome.org/pub/GNOME/sources/atomix/2.14/
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -25,10 +25,11 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		png popt pthread xml2 z
 
+MODULES=	textproc/intltool
+
 LIB_DEPENDS=	gnome-2::x11/gnome/libgnome \
 		gnomeui-2::x11/gnome/libgnomeui
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-BUILD_DEPENDS=	::textproc/intltool
 
 CONFIGURE_ARGS+=--localstatedir=/var
 
