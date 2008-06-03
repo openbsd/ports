@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2007/12/01 13:35:20 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2008/06/03 23:30:28 wcmaier Exp $
 
-COMMENT=	enhanced interactive Python shell
+COMMENT=		enhanced interactive Python shell
 
-DISTNAME=	ipython-0.8.2
-CATEGORIES=	devel
+MODPY_EGG_VERSION=	0.8.4
+DISTNAME=		ipython-${MODPY_EGG_VERSION}
+CATEGORIES=		devel
 
-HOMEPAGE=	http://ipython.scipy.org/
+HOMEPAGE=		http://ipython.scipy.org/
 
-MAINTAINER=	Will Maier <willmaier@ml1.net>
+MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 
-MODULES=	lang/python
+MODULES=		lang/python
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,7 +34,8 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${DOC_DIR}
 	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/manual/* ${DOC_DIR}
+	@cd ${WRKSRC}/doc/manual && pax -rw . ${DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/* ${EXAMPLE_DIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/ipython.el ${EXAMPLE_DIR}
 
 .include <bsd.port.mk>
