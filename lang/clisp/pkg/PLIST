@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/11/25 22:16:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/06/03 13:54:18 okan Exp $
 bin/clisp
 lib/clisp/
 lib/clisp/base/
@@ -70,39 +70,22 @@ share/doc/clisp/editors.txt
 share/doc/clisp/impnotes.css
 share/doc/clisp/impnotes.html
 share/doc/clisp/lisp.vim
-share/emacs/
-share/emacs/site-lisp/
 share/emacs/site-lisp/clhs.el
 share/emacs/site-lisp/clisp-coding.el
 share/emacs/site-lisp/clisp-ffi.el
 share/emacs/site-lisp/clisp-indent.el
 share/emacs/site-lisp/clisp-indent.lisp
-share/locale/
-share/locale/da/
-share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/clisp.mo
 share/locale/da/LC_MESSAGES/clisplow.mo
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/clisp.mo
 share/locale/de/LC_MESSAGES/clisplow.mo
-share/locale/en/
-share/locale/en/LC_MESSAGES/
 share/locale/en/LC_MESSAGES/clisp.mo
 share/locale/en/LC_MESSAGES/clisplow.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/clisp.mo
 share/locale/es/LC_MESSAGES/clisplow.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/clisp.mo
 share/locale/fr/LC_MESSAGES/clisplow.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/clisp.mo
 share/locale/nl/LC_MESSAGES/clisplow.mo
-share/locale/ru/
-share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/clisp.mo
 share/locale/ru/LC_MESSAGES/clisplow.mo
