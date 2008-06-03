@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2007/09/13 21:58:58 martynas Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2008/06/03 16:36:54 jasper Exp $
 lib/gnumeric/${VERSION}/plugins/applix/applix.so
 lib/gnumeric/${VERSION}/plugins/corba/corba.so
 lib/gnumeric/${VERSION}/plugins/derivatives/derivatives.so
@@ -18,6 +18,7 @@ lib/gnumeric/${VERSION}/plugins/fn-r/rstat.so
 lib/gnumeric/${VERSION}/plugins/fn-random/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-stat/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-string/plugin.so
+lib/gnumeric/${VERSION}/plugins/fn-tsa/plugin.so
 lib/gnumeric/${VERSION}/plugins/html/html.so
 lib/gnumeric/${VERSION}/plugins/lotus/lotus.so
 lib/gnumeric/${VERSION}/plugins/mps/mps.so
