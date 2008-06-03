@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/04/21 15:23:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2008/06/03 12:11:43 sthen Exp $
 
 COMMENT=		Media Transfer Protocol (MTP) implementation
 
 DISTNAME=		libmtp-0.2.6.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		mtp	3.0	# .8.0
 CATEGORIES=		devel
 
@@ -19,11 +20,10 @@ WANTLIB=		c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libmtp/}
 
-LIB_DEPENDS=		iconv.>=4::converters/libiconv \
-			usb.>=8::devel/libusb
+MODULES=		converters/libiconv
+LIB_DEPENDS=		usb.>=8::devel/libusb
 
 USE_LIBTOOL=		Yes
-
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include"
