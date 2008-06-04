@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2008/04/08 09:51:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.169 2008/06/04 06:52:46 phessler Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -76,6 +76,7 @@
      SUBDIR += lincity
      SUBDIR += lincity-ng
      SUBDIR += londonlaw
+     SUBDIR += maelstrom
      SUBDIR += micropolis
      SUBDIR += mirrormagic
      SUBDIR += mnemosyne
