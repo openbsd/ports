@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/06/04 06:50:20 phessler Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2008/06/04 16:23:33 phessler Exp $
 --- Makefile.in.orig	Sat Oct 19 21:19:42 2002
-+++ Makefile.in	Tue Jun  3 22:56:03 2008
++++ Makefile.in	Wed Jun  4 00:41:59 2008
 @@ -30,7 +30,7 @@ libdir = @libdir@
  infodir = @infodir@
  mandir = @mandir@
@@ -39,7 +39,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/06/04 06:50:20 phessler Exp $
  install:
 -	make install_gamedata target=@GAME_INSTALLDIR@
 +	make install_gamedata target=$(PREFIX)/share/maelstrom
-+	make install_gamedocs target=$(PREFIX)/share/doc/Maelstrom
++	make install_gamedocs target=$(PREFIX)/share/doc/maelstrom
  
  install_gamedata:
  	sh mkinstalldirs $(target)/
