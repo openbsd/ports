@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/08/27 17:45:39 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/06/04 09:37:38 ajacoutot Exp $
 @newgroup _prelude:564
 @newuser _prelude:564:564:daemon:Prelude IDS:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -54,6 +54,7 @@ include/libprelude/variable.h
 @comment lib/charset.alias
 lib/libprelude.a
 lib/libprelude.la
+lib/python${MODPY_VERSION}/site-packages/prelude-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/prelude.py
 lib/python${MODPY_VERSION}/site-packages/prelude.pyc
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
@@ -63,57 +64,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Prelude/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Prelude/Prelude.bs
 @man man/man1/prelude-admin.1
 share/aclocal/libprelude.m4
-share/doc/libprelude/
-share/doc/libprelude/ch01.html
-share/doc/libprelude/ch02.html
-share/doc/libprelude/ch03.html
-share/doc/libprelude/ch04.html
-share/doc/libprelude/home.png
-share/doc/libprelude/index.html
-share/doc/libprelude/index.sgml
-share/doc/libprelude/left.png
-share/doc/libprelude/libprelude-idmef-additional-data.html
-share/doc/libprelude/libprelude-idmef-criteria.html
-share/doc/libprelude/libprelude-idmef-criterion-value.html
-share/doc/libprelude/libprelude-idmef-data.html
-share/doc/libprelude/libprelude-idmef-message-print.html
-share/doc/libprelude/libprelude-idmef-message-read.html
-share/doc/libprelude/libprelude-idmef-message-write.html
-share/doc/libprelude/libprelude-idmef-path.html
-share/doc/libprelude/libprelude-idmef-time.html
-share/doc/libprelude/libprelude-idmef-tree-wrap.html
-share/doc/libprelude/libprelude-idmef-value.html
-share/doc/libprelude/libprelude-prelude-async.html
-share/doc/libprelude/libprelude-prelude-client-profile.html
-share/doc/libprelude/libprelude-prelude-client.html
-share/doc/libprelude/libprelude-prelude-connection-pool.html
-share/doc/libprelude/libprelude-prelude-connection.html
-share/doc/libprelude/libprelude-prelude-error.html
-share/doc/libprelude/libprelude-prelude-failover.html
-share/doc/libprelude/libprelude-prelude-hash.html
-share/doc/libprelude/libprelude-prelude-ident.html
-share/doc/libprelude/libprelude-prelude-inttypes.html
-share/doc/libprelude/libprelude-prelude-io.html
-share/doc/libprelude/libprelude-prelude-linked-object.html
-share/doc/libprelude/libprelude-prelude-list.html
-share/doc/libprelude/libprelude-prelude-log.html
-share/doc/libprelude/libprelude-prelude-msg.html
-share/doc/libprelude/libprelude-prelude-msgbuf.html
-share/doc/libprelude/libprelude-prelude-option-wide.html
-share/doc/libprelude/libprelude-prelude-option.html
-share/doc/libprelude/libprelude-prelude-plugin.html
-share/doc/libprelude/libprelude-prelude-string.html
-share/doc/libprelude/libprelude-prelude-timer.html
-share/doc/libprelude/libprelude-prelude.html
-share/doc/libprelude/libprelude.devhelp
-share/doc/libprelude/libprelude.devhelp2
-share/doc/libprelude/pt01.html
-share/doc/libprelude/pt02.html
-share/doc/libprelude/pt03.html
-share/doc/libprelude/pt04.html
-share/doc/libprelude/right.png
-share/doc/libprelude/style.css
-share/doc/libprelude/up.png
 share/examples/libprelude/
 share/examples/libprelude/default/
 @sample ${SYSCONFDIR}/prelude/
@@ -134,6 +84,62 @@ share/examples/libprelude/profile/
 @sample /var/prelude/
 @mode 700
 @sample /var/spool/prelude/
+@mode
+@owner
+@group
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/libprelude/
+share/gtk-doc/html/libprelude/ch01.html
+share/gtk-doc/html/libprelude/ch02.html
+share/gtk-doc/html/libprelude/ch03.html
+share/gtk-doc/html/libprelude/ch04.html
+share/gtk-doc/html/libprelude/home.png
+share/gtk-doc/html/libprelude/index.html
+share/gtk-doc/html/libprelude/index.sgml
+share/gtk-doc/html/libprelude/left.png
+share/gtk-doc/html/libprelude/libprelude-idmef-additional-data.html
+share/gtk-doc/html/libprelude/libprelude-idmef-criteria.html
+share/gtk-doc/html/libprelude/libprelude-idmef-criterion-value.html
+share/gtk-doc/html/libprelude/libprelude-idmef-data.html
+share/gtk-doc/html/libprelude/libprelude-idmef-message-print.html
+share/gtk-doc/html/libprelude/libprelude-idmef-message-read.html
+share/gtk-doc/html/libprelude/libprelude-idmef-message-write.html
+share/gtk-doc/html/libprelude/libprelude-idmef-path.html
+share/gtk-doc/html/libprelude/libprelude-idmef-time.html
+share/gtk-doc/html/libprelude/libprelude-idmef-tree-wrap.html
+share/gtk-doc/html/libprelude/libprelude-idmef-value.html
+share/gtk-doc/html/libprelude/libprelude-prelude-async.html
+share/gtk-doc/html/libprelude/libprelude-prelude-client-profile.html
+share/gtk-doc/html/libprelude/libprelude-prelude-client.html
+share/gtk-doc/html/libprelude/libprelude-prelude-connection-pool.html
+share/gtk-doc/html/libprelude/libprelude-prelude-connection.html
+share/gtk-doc/html/libprelude/libprelude-prelude-error.html
+share/gtk-doc/html/libprelude/libprelude-prelude-failover.html
+share/gtk-doc/html/libprelude/libprelude-prelude-hash.html
+share/gtk-doc/html/libprelude/libprelude-prelude-ident.html
+share/gtk-doc/html/libprelude/libprelude-prelude-inttypes.html
+share/gtk-doc/html/libprelude/libprelude-prelude-io.html
+share/gtk-doc/html/libprelude/libprelude-prelude-linked-object.html
+share/gtk-doc/html/libprelude/libprelude-prelude-list.html
+share/gtk-doc/html/libprelude/libprelude-prelude-log.html
+share/gtk-doc/html/libprelude/libprelude-prelude-msg.html
+share/gtk-doc/html/libprelude/libprelude-prelude-msgbuf.html
+share/gtk-doc/html/libprelude/libprelude-prelude-option-wide.html
+share/gtk-doc/html/libprelude/libprelude-prelude-option.html
+share/gtk-doc/html/libprelude/libprelude-prelude-plugin.html
+share/gtk-doc/html/libprelude/libprelude-prelude-string.html
+share/gtk-doc/html/libprelude/libprelude-prelude-timer.html
+share/gtk-doc/html/libprelude/libprelude-prelude.html
+share/gtk-doc/html/libprelude/libprelude.devhelp
+share/gtk-doc/html/libprelude/libprelude.devhelp2
+share/gtk-doc/html/libprelude/pt01.html
+share/gtk-doc/html/libprelude/pt02.html
+share/gtk-doc/html/libprelude/pt03.html
+share/gtk-doc/html/libprelude/pt04.html
+share/gtk-doc/html/libprelude/right.png
+share/gtk-doc/html/libprelude/style.css
+share/gtk-doc/html/libprelude/up.png
 @extraunexec rm -rf ${SYSCONFDIR}/prelude/*
 @extraunexec rm -rf /var/prelude/*
 @extraunexec rm -rf /var/spool/prelude/*

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/08/27 17:46:47 aanriot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/06/04 09:37:38 ajacoutot Exp $
 @pkgpath security/prelude/libpreludedb
 bin/libpreludedb-config
 bin/preludedb-admin
@@ -22,6 +22,7 @@ lib/libpreludedb/plugins/formats/classic.la
 lib/libpreludedb/plugins/formats/classic.so
 lib/libpreludedb/plugins/sql/
 lib/python${MODPY_VERSION}/site-packages/_preludedb.so
+lib/python${MODPY_VERSION}/site-packages/preludedb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/preludedb.py
 lib/python${MODPY_VERSION}/site-packages/preludedb.pyc
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PreludeDB.pm
@@ -32,24 +33,25 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PreludeDB/PreludeDB.so
 share/aclocal/libpreludedb.m4
 share/doc/libpreludedb/
 share/doc/libpreludedb/README.OpenBSD
-share/doc/libpreludedb/ch01.html
-share/doc/libpreludedb/home.png
-share/doc/libpreludedb/index.html
-share/doc/libpreludedb/index.sgml
-share/doc/libpreludedb/left.png
-share/doc/libpreludedb/libpreludedb-preludedb-error.html
-share/doc/libpreludedb/libpreludedb-preludedb-path-selection.html
-share/doc/libpreludedb/libpreludedb-preludedb-plugin-format.html
-share/doc/libpreludedb/libpreludedb-preludedb-plugin-sql.html
-share/doc/libpreludedb/libpreludedb-preludedb-sql-settings.html
-share/doc/libpreludedb/libpreludedb-preludedb-sql.html
-share/doc/libpreludedb/libpreludedb-preludedb-version.html
-share/doc/libpreludedb/libpreludedb-preludedb.html
-share/doc/libpreludedb/libpreludedb.devhelp
-share/doc/libpreludedb/libpreludedb.devhelp2
-share/doc/libpreludedb/right.png
-share/doc/libpreludedb/style.css
-share/doc/libpreludedb/up.png
+share/gtk-doc/html/libpreludedb/
+share/gtk-doc/html/libpreludedb/ch01.html
+share/gtk-doc/html/libpreludedb/home.png
+share/gtk-doc/html/libpreludedb/index.html
+share/gtk-doc/html/libpreludedb/index.sgml
+share/gtk-doc/html/libpreludedb/left.png
+share/gtk-doc/html/libpreludedb/libpreludedb-preludedb-error.html
+share/gtk-doc/html/libpreludedb/libpreludedb-preludedb-path-selection.html
+share/gtk-doc/html/libpreludedb/libpreludedb-preludedb-plugin-format.html
+share/gtk-doc/html/libpreludedb/libpreludedb-preludedb-plugin-sql.html
+share/gtk-doc/html/libpreludedb/libpreludedb-preludedb-sql-settings.html
+share/gtk-doc/html/libpreludedb/libpreludedb-preludedb-sql.html
+share/gtk-doc/html/libpreludedb/libpreludedb-preludedb-version.html
+share/gtk-doc/html/libpreludedb/libpreludedb-preludedb.html
+share/gtk-doc/html/libpreludedb/libpreludedb.devhelp
+share/gtk-doc/html/libpreludedb/libpreludedb.devhelp2
+share/gtk-doc/html/libpreludedb/right.png
+share/gtk-doc/html/libpreludedb/style.css
+share/gtk-doc/html/libpreludedb/up.png
 share/libpreludedb/
 share/libpreludedb/classic/
 share/libpreludedb/classic/mysql-update-14-1.sql

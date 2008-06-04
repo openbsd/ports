@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/10/08 08:22:42 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2008/06/04 09:37:38 ajacoutot Exp $
 
 COMMENT-main=	Prelude framework database-access library
 COMMENT-pgsql=	PostgreSQL module for libpreludedb
@@ -8,7 +8,9 @@ COMMENT-sqlite=	SQLite3 module for libpreludedb
 VERSION=	0.9.13
 DISTNAME=	libpreludedb-${VERSION}
 
-PKGNAME-main=	prelude-libpreludedb-${VERSION}p0
+MODPY_EGG_VERSION=0.0.0
+
+PKGNAME-main=	prelude-libpreludedb-${VERSION}p1
 PKGNAME-pgsql=	prelude-libpreludedb-pgsql-${VERSION}p0
 PKGNAME-mysql=	prelude-libpreludedb-mysql-${VERSION}p0
 PKGNAME-sqlite=	prelude-libpreludedb-sqlite-${VERSION}p0
@@ -40,7 +42,6 @@ LIB_DEPENDS-sqlite=	${LIB_DEPENDS} \
 			sqlite3.>=8::databases/sqlite3
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
 
 PSEUDO_FLAVORS=	no_pgsql no_mysql no_sqlite
@@ -70,7 +71,7 @@ CONFIGURE_ARGS+=--without-sqlite3
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/libpreludedb/plugins/sql/
-
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libpreludedb/
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
 		${PREFIX}/share/doc/libpreludedb/
 
