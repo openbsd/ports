@@ -1,0 +1,21 @@
+$OpenBSD: patch-load_h,v 1.1.1.1 2008/06/04 06:50:20 phessler Exp $
+--- load.h.orig	Sat Jul 21 13:46:17 2001
++++ load.h	Tue Jun  3 19:05:51 2008
+@@ -21,7 +21,7 @@ static inline char *strdup(const char *str)
+ 	return(newstr);
+ }
+ #endif
+-#if defined(unix) || defined(__MACH__) || defined(__BEOS__)
++#if defined(unix) || defined(__MACH__) || defined(__BEOS__) || defined(__OpenBSD__)
+ #include <unistd.h>
+ #endif
+ #endif /* WIN32 */
+@@ -29,7 +29,7 @@ static inline char *strdup(const char *str)
+ #include "SDL_FrameBuf.h"
+ 
+ /* Pathing stuff for the different operating systems */
+-#if defined(unix) || defined(__MACH__)
++#if defined(unix) || defined(__MACH__) || defined(__OpenBSD__)
+ #define DIR_SEP	"/"
+ #define CUR_DIR	"."
+ #elif defined(WIN32)

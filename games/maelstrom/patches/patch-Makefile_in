@@ -1,0 +1,61 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/06/04 06:50:20 phessler Exp $
+--- Makefile.in.orig	Sat Oct 19 21:19:42 2002
++++ Makefile.in	Tue Jun  3 22:56:03 2008
+@@ -30,7 +30,7 @@ libdir = @libdir@
+ infodir = @infodir@
+ mandir = @mandir@
+ includedir = @includedir@
+-oldincludedir = /usr/include
++oldincludedir = ${PREFIX}
+ 
+ DESTDIR =
+ 
+@@ -73,7 +73,7 @@ SDL_CONFIG = @SDL_CONFIG@
+ SDL_LIBS = @SDL_LIBS@
+ VERSION = @VERSION@
+ 
+-bin_PROGRAMS = Maelstrom Maelstrom-netd
++bin_PROGRAMS = maelstrom maelstrom-netd
+ 
+ Maelstrom_SOURCES =  	Maelstrom.h			Maelstrom_Globals.h		buttonlist.h			checksum.cpp			checksum.h			colortable.h			controls.cpp			controls.h			dialog.cpp			dialog.h			fastrand.cpp			fastrand.h			init.cpp			load.cpp			load.h				logic.h				main.cpp			myerror.cpp			myerror.h			netscore.cpp			netscore.h			public_key.h			rect.cpp			rect.h				scores.cpp			scores.h
+ 
+@@ -193,11 +193,11 @@ distclean-compile:
+ 
+ maintainer-clean-compile:
+ 
+-Maelstrom: $(Maelstrom_OBJECTS) $(Maelstrom_DEPENDENCIES)
++maelstrom: $(Maelstrom_OBJECTS) $(Maelstrom_DEPENDENCIES)
+ 	@rm -f Maelstrom
+ 	$(CXXLINK) $(Maelstrom_LDFLAGS) $(Maelstrom_OBJECTS) $(Maelstrom_LDADD) $(LIBS)
+ 
+-Maelstrom-netd: $(Maelstrom_netd_OBJECTS) $(Maelstrom_netd_DEPENDENCIES)
++maelstrom-netd: $(Maelstrom_netd_OBJECTS) $(Maelstrom_netd_DEPENDENCIES)
+ 	@rm -f Maelstrom-netd
+ 	$(LINK) $(Maelstrom_netd_LDFLAGS) $(Maelstrom_netd_OBJECTS) $(Maelstrom_netd_LDADD) $(LIBS)
+ .cpp.o:
+@@ -431,21 +431,21 @@ maintainer-clean-generic clean mostlyclean distclean m
+ 
+ # Special install rule for the game
+ install:
+-	make install_gamedata target=@GAME_INSTALLDIR@
++	make install_gamedata target=$(PREFIX)/share/maelstrom
++	make install_gamedocs target=$(PREFIX)/share/doc/Maelstrom
+ 
+ install_gamedata:
+ 	sh mkinstalldirs $(target)/
+-	cp -rv Images			\
++	cp -R Images			\
+ 	       Maelstrom_Fonts		\
+ 	       Maelstrom_Sounds		\
+ 	       Maelstrom_Sprites	\
+ 	       Maelstrom-Scores		\
+ 	       icon.bmp icon.xpm	$(target)/
+-	chmod 666 $(target)/Maelstrom-Scores
+ 
+ install_gamedocs:
+ 	sh mkinstalldirs $(target)/
+-	cp -rv README* COPYING* Docs*	$(target)/
++	cp -R README* COPYING* Docs*	$(target)/
+ 
+ # Rule to build tar-gzipped distribution package
+ $(PACKAGE)-$(VERSION).tar.gz: dist
