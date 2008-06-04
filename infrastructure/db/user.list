@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.87 2008/05/20 19:34:37 jakob Exp $
+$OpenBSD: user.list,v 1.88 2008/06/04 10:57:41 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -110,3 +110,4 @@ id  user		group		port options
 599 _bacula-sd				sysutils/bacula
 600 _ntlmaps		_ntlmaps	www/ntlmaps
 601 _unbound		_unbound	net/unbound
+602 _havp		_havp		www/havp
