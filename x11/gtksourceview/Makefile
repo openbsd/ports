@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2008/06/03 09:48:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2008/06/04 18:15:42 sthen Exp $
 
 COMMENT=		text widget that extends GTK2's GtkTextView widget
 
 MAJOR_VERSION=		2.0
 GNOME_PROJECT=		gtksourceview
 GNOME_VERSION=		2.2.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS +=	gtksourceview-2.0    1.0      # .0.0
 CATEGORIES=		x11
 
@@ -13,7 +13,7 @@ SUBST_VARS=		MAJOR_VERSION
 
 HOMEPAGE=		http://gtksourceview.sourceforge.net/
 
-MAINTAINER=		Thomas Delaet <thomas@delaet.org>
+MAINTAINER=		Giovanni Bechis <g.bechis@snb.it>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
 		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre png z
+		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png z
 
 MODULES=		devel/gettext \
 			x11/gnome
