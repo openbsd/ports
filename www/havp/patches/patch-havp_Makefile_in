@@ -1,0 +1,23 @@
+$OpenBSD: patch-havp_Makefile_in,v 1.1.1.1 2008/06/04 10:56:15 sthen Exp $
+--- havp/Makefile.in.orig	Tue Sep 11 20:42:44 2007
++++ havp/Makefile.in	Mon May 19 08:32:52 2008
+@@ -7,7 +7,7 @@ INSTALL = ../install-sh
+ prefix = @prefix@
+ exec_prefix = $(prefix)
+ sbindir = @sbindir@
+-sysconfdir = @sysconfdir@
++sysconfdir = ${LOCALBASE}/share/examples
+ localstatedir = @localstatedir@
+ 
+ OBJECTS = helper.o logfile.o scannerhandler.o connectiontobrowser.o \
+@@ -26,10 +26,6 @@ havp: $(OBJECTS)
+ install: all
+ 	$(INSTALL) -d $(DESTDIR)$(sbindir)
+ 	$(INSTALL) -m 755 havp $(DESTDIR)$(sbindir)/havp
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/log/havp
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/tmp/havp
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/run/havp
+-	$(INSTALL) -d $(DESTDIR)/etc/init.d
+ 	$(INSTALL) -m 644 ../etc/havp/havp.config $(DESTDIR)$(sysconfdir)/havp/havp.config.default
+ 	@if [ ! -f $(DESTDIR)$(sysconfdir)/havp/havp.config ]; then \
+ 		echo "$(INSTALL) -m 644 ../etc/havp/havp.config $(DESTDIR)$(sysconfdir)/havp/havp.config"; \

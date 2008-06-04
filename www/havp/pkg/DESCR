@@ -1,0 +1,4 @@
+HAVP (HTTP AntiVirus proxy) is an easily-configured non-caching
+HTTP proxy which interfaces to an anti-virus scanner (ClamAV and
+others) to prevent transfer of infected content (including HTML
+and image files).
