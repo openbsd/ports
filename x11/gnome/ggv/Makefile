@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2008/06/02 17:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2008/06/04 13:47:38 ajacoutot Exp $
 
 COMMENT=		GNOME frontend for GhostScript
 
 GNOME_PROJECT=		ggv
 GNOME_VERSION=		2.12.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		print
-
-MAINTAINER=		Thomas Delaet <thomas@delaet.org>	
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

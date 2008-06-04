@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2008/06/02 17:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2008/06/04 13:47:38 ajacoutot Exp $
 
-COMMENT=		Eye of GNOME: an image viewing and cataloging program
+COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		2.20.4
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		graphics
-
-MAINTAINER=		Thomas Delaet <thomas@delaet.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
