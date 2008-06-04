@@ -1,0 +1,9 @@
+The script scans the given directories for media files with known file
+name extensions and writes the names into a playlist file in M3U,
+extended M3U or PLS format. Those very simple formats are used or at
+least understood by the vast majority of media players on different
+platforms.
+
+For huge collections which have to be rescanned after adding or
+modifying some files, the program can cache the meta data to speed up
+subsequent runs.

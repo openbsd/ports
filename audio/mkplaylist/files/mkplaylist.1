@@ -1,0 +1,67 @@
+.\" Copyright (c) 2007, Girish Venkatachalam, <girish1729@gmail.com>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd 
+.Dt MKPLAYLIST 1
+.Os
+.Sh NAME
+.Nm mkplaylist
+.Nd create a playlist from directories
+.Sh SYNOPSIS
+.Nm 
+.Bk -words
+.Op Fl chqrv
+.Op Fl f Ar playlist_format
+.Op Fl o Ar playlist_file 
+.Ek
+.Sh DESCRIPTION
+.Nm
+is a small python script that creates m3u, extended m3u or PLS playlists
+from ac3, flac, it, mod, mp3, ogg, s3m and wav files.
+.Pp
+.Sh OPTIONS
+Here are the command line options.
+.Bl -tag -width Ds
+.It Fl c 
+use a cache file. Default is not to use one.
+.It Fl h 
+help message
+.It Fl q
+be really quiet
+.It Fl r
+write relative paths. Default is absolute paths.
+.It Fl v
+be verbose
+.It Fl -shuffle
+shuffle the playlist before saving it
+.It Fl o
+output playlist filename
+.El
+.Pp
+.Sh EXAMPLES
+.Bd -literal
+
+Create the playlist  playlist.m3u from the audio files in 
+/data/music directory.
+
+	mkplaylist --cache -o playlist.m3u /data/music
+
+Create a playlist in m3u format with relative paths from 
+two directories /data/music/Various and  /data/music/Soundtracks.
+
+	mkplaylist -r -f m3u --shuffle /data/music/Various    \
+                                    /data/music/Soundtracks
+
+.Ed
+
