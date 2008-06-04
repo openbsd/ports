@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/05/22 19:29:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/06/04 13:05:13 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 IP telephony endpoint
 
 DISTNAME=	ohphone-1.4.5
-PKGNAME=	${DISTNAME}v0p0
+PKGNAME=	${DISTNAME}p0v0
 CATEGORIES=	telephony net
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
