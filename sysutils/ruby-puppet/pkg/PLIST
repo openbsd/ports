@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/04/08 01:58:39 mcbride Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/06/05 07:22:59 bernd Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 bin/filebucket
@@ -435,5 +435,3 @@ share/examples/ruby-puppet/tagmail.conf
 @sample /var/puppet/reports/
 @extraunexec rm -rf ${SYSCONFDIR}/puppet/
 @extraunexec rm -rf /var/puppet/
-@comment man/cat3f/
-@comment man/man3f/

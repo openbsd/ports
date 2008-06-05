@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/04/08 01:58:39 mcbride Exp $
+# $OpenBSD: Makefile,v 1.7 2008/06/05 07:22:59 bernd Exp $
 
 COMMENT=	centralised configuration management for networks
 
 VERSION=	0.24.4
 DISTNAME=	puppet-${VERSION}
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	sysutils net
 EXTRACT_SUFX=	.tgz
 
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
-LIB_DEPENDS=	::sysutils/ruby-facter
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::sysutils/ruby-facter
 
 NO_REGRESS=	Yes
 NO_BUILD=	Yes
