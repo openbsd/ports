@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/02/14 21:36:27 rui Exp $
+# $OpenBSD: Makefile,v 1.9 2008/06/05 19:43:57 rui Exp $
 
 COMMENT=	tool for extracting and gluing pcap (tcpdump) files
 
-DISTNAME=	tcpslice-2007.07.09
-PKGNAME=        ${DISTNAME:S/.//g}p0
+DISTNAME=	tcpslice-2008.05.19
+PKGNAME=        ${DISTNAME:S/.//g}
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.tcpdump.org/weekly/
