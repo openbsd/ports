@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/26 20:18:35 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/05 08:33:55 sturm Exp $
 
 COMMENT=	collecting and processing thoughts according to GTD
 
-V=		2.0.epsilon
+V=		2.0.1
 DISTNAME=	tr-$V
 PKGNAME=	thinkingrock-${V}
 CATEGORIES=	productivity java
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_CDROM=	CDDL
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=thinkingrock/}
-EXTRACT_SUFX=	.zip
 
 MODULES=	java
 MODJAVA_VER=	1.5+
@@ -31,16 +30,19 @@ NO_REGRESS=	Yes
 
 PKG_ARCH=	*
 
+post-extract:
+	@rm ${WRKSRC}/etc/tr.conf~
+
 do-configure:
-	@perl -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/bin/thinkingrock
+	@perl -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/bin/tr
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/thinkingrock
-	for d in etc ide7 platform6 thinkingrock; do \
+	for d in etc ide9 platform8 tr; do \
 		cp -R ${WRKSRC}/$$d ${PREFIX}/share/thinkingrock; \
 	done
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/thinkingrock
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/thinkingrock ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/tr ${PREFIX}/bin/thinkingrock
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/xdg-email ${PREFIX}/bin
 	# NetBeans shipped with TR doesn't know about OpenBSD and thus uses
 	# different names than on linux
