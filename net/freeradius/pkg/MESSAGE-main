@@ -8,4 +8,4 @@ fi
 
 This will start radiusd and use ${SYSCONFDIR}/raddb/radiusd.conf for the
 configuration. Example configuration files can be found in
-${PREFIX}/examples/freeradius.
+${PREFIX}/share/examples/freeradius.

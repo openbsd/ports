@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2008/05/05 19:32:02 rui Exp $
+# $OpenBSD: Makefile,v 1.17 2008/06/05 19:49:17 rui Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,7 @@ COMMENT-ldap=		freeradius ldap rlm addon
 
 V=			2.0.4
 DISTNAME=		freeradius-server-$V
-PKGNAME-main=		freeradius-$V
+PKGNAME-main=		freeradius-$Vp0
 PKGNAME-iodbc=		freeradius-iodbc-$V
 PKGNAME-mysql=		freeradius-mysql-$V
 PKGNAME-pgsql=		freeradius-pgsql-$V
