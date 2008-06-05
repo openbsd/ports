@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/02 17:58:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/06/05 18:39:29 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.22.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	multimedia
 
 HOMEPAGE=	http://www.gnome.org/projects/totem/
@@ -102,7 +102,8 @@ RUN_DEPENDS+=	:gstreamer-vorbis-*:multimedia/gstreamer-0.10/plugins-base,-vorbis
 		:gstreamer-a52-*:multimedia/gstreamer-0.10/plugins-ugly,-a52 \
 		:gstreamer-mpeg2-*:multimedia/gstreamer-0.10/plugins-ugly,-mpeg2 \
 		:gstreamer-dvdread-*:multimedia/gstreamer-0.10/plugins-ugly,-dvdread \
-		:gstreamer-mad-*:multimedia/gstreamer-0.10/plugins-ugly,-mad
+		:gstreamer-mad-*:multimedia/gstreamer-0.10/plugins-ugly,-mad \
+		:gst-ffmpeg-*:multimedia/gstreamer-0.10/plugins-ffmpeg
 CONFIGURE_ARGS+=--enable-gstreamer \
 		--disable-xine
 .endif
