@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/13 15:34:02 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/05 02:38:56 deanna Exp $
 
 COMMENT =		multimedia framework - ffmpeg plugin
 
-V =			0.10.3
+V =			0.10.4
 DISTNAME =		gst-ffmpeg-$V
 PKGNAME-main =		gstreamer-ffmpeg-$V
 
