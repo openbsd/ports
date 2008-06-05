@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2008/06/03 07:54:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2008/06/05 10:47:48 ajacoutot Exp $
 
 COMMENT=		shared mime database for desktops
 
-DISTNAME=		shared-mime-info-0.23
+DISTNAME=		shared-mime-info-0.30
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/shared-mime-info
@@ -30,7 +30,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
-	@perl -pi -e 's|/usr/local|${LOCALBASE}|g' \
+	@perl -pi -e 's|/usr/local|${PREFIX}|g' \
 		${WRKSRC}/update-mime-database.c \
 		${WRKSRC}/shared-mime-info-spec.xml
 

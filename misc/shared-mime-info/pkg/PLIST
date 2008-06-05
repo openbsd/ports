@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/01/25 18:56:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2008/06/05 10:47:48 ajacoutot Exp $
 bin/update-mime-database
 lib/pkgconfig/
 lib/pkgconfig/shared-mime-info.pc
@@ -63,11 +63,14 @@ share/mime/application/atom+xml.xml
 share/mime/application/dicom.xml
 share/mime/application/docbook+xml.xml
 share/mime/application/ecmascript.xml
+share/mime/application/epub+zip.xml
+share/mime/application/gnunet-directory.xml
 share/mime/application/illustrator.xml
 share/mime/application/javascript.xml
 share/mime/application/mac-binhex40.xml
 share/mime/application/mathematica.xml
 share/mime/application/mbox.xml
+share/mime/application/msword-template.xml
 share/mime/application/msword.xml
 share/mime/application/octet-stream.xml
 share/mime/application/oda.xml
@@ -87,7 +90,6 @@ share/mime/application/rtf.xml
 share/mime/application/sdp.xml
 share/mime/application/sieve.xml
 share/mime/application/smil.xml
-share/mime/application/stuffit.xml
 share/mime/application/vnd.corel-draw.xml
 share/mime/application/vnd.emusic-emusic_package.xml
 share/mime/application/vnd.hp-hpgl.xml
@@ -98,6 +100,7 @@ share/mime/application/vnd.ms-access.xml
 share/mime/application/vnd.ms-excel.xml
 share/mime/application/vnd.ms-powerpoint.xml
 share/mime/application/vnd.ms-tnef.xml
+share/mime/application/vnd.ms-works.xml
 share/mime/application/vnd.ms-xpsdocument.xml
 share/mime/application/vnd.oasis.opendocument.chart.xml
 share/mime/application/vnd.oasis.opendocument.database.xml
@@ -136,6 +139,7 @@ share/mime/application/vnd.wordperfect.xml
 share/mime/application/x-7z-compressed.xml
 share/mime/application/x-abiword.xml
 share/mime/application/x-ace.xml
+share/mime/application/x-alz.xml
 share/mime/application/x-amipro.xml
 share/mime/application/x-applix-spreadsheet.xml
 share/mime/application/x-applix-word.xml
@@ -155,9 +159,10 @@ share/mime/application/x-bzpostscript.xml
 share/mime/application/x-cbr.xml
 share/mime/application/x-cbz.xml
 share/mime/application/x-cd-image.xml
-share/mime/application/x-cgi.xml
+share/mime/application/x-cdrdao-toc.xml
 share/mime/application/x-chess-pgn.xml
 share/mime/application/x-chm.xml
+share/mime/application/x-cisco-vpn-settings.xml
 share/mime/application/x-class-file.xml
 share/mime/application/x-compress.xml
 share/mime/application/x-compressed-tar.xml
@@ -168,7 +173,6 @@ share/mime/application/x-csh.xml
 share/mime/application/x-cue.xml
 share/mime/application/x-dar.xml
 share/mime/application/x-dbf.xml
-share/mime/application/x-dbm.xml
 share/mime/application/x-dc-rom.xml
 share/mime/application/x-deb.xml
 share/mime/application/x-designer.xml
@@ -178,7 +182,7 @@ share/mime/application/x-dvi.xml
 share/mime/application/x-e-theme.xml
 share/mime/application/x-egon.xml
 share/mime/application/x-executable.xml
-share/mime/application/x-flash-video.xml
+share/mime/application/x-fluid.xml
 share/mime/application/x-font-afm.xml
 share/mime/application/x-font-bdf.xml
 share/mime/application/x-font-dos.xml
@@ -192,6 +196,7 @@ share/mime/application/x-font-sunos-news.xml
 share/mime/application/x-font-tex-tfm.xml
 share/mime/application/x-font-tex.xml
 share/mime/application/x-font-ttf.xml
+share/mime/application/x-font-ttx.xml
 share/mime/application/x-font-type1.xml
 share/mime/application/x-font-vfont.xml
 share/mime/application/x-frame.xml
@@ -221,6 +226,7 @@ share/mime/application/x-ica.xml
 share/mime/application/x-ipod-firmware.xml
 share/mime/application/x-java-archive.xml
 share/mime/application/x-java-jnlp-file.xml
+share/mime/application/x-java-pack200.xml
 share/mime/application/x-java.xml
 share/mime/application/x-jbuilder-project.xml
 share/mime/application/x-karbon.xml
@@ -242,6 +248,8 @@ share/mime/application/x-lha.xml
 share/mime/application/x-lhz.xml
 share/mime/application/x-linguist.xml
 share/mime/application/x-lyx.xml
+share/mime/application/x-lzma-compressed-tar.xml
+share/mime/application/x-lzma.xml
 share/mime/application/x-lzop.xml
 share/mime/application/x-m4.xml
 share/mime/application/x-macbinary.xml
@@ -290,6 +298,7 @@ share/mime/application/x-shockwave-flash.xml
 share/mime/application/x-shorten.xml
 share/mime/application/x-siag.xml
 share/mime/application/x-slp.xml
+share/mime/application/x-smaf.xml
 share/mime/application/x-sms-rom.xml
 share/mime/application/x-snes-rom.xml
 share/mime/application/x-sqlite2.xml
@@ -320,6 +329,8 @@ share/mime/application/x-xliff.xml
 share/mime/application/x-zerosize.xml
 share/mime/application/x-zoo.xml
 share/mime/application/xhtml+xml.xml
+share/mime/application/xml-dtd.xml
+share/mime/application/xml-external-parsed-entity.xml
 share/mime/application/xml.xml
 share/mime/application/xslt+xml.xml
 share/mime/application/xspf+xml.xml
@@ -349,7 +360,6 @@ share/mime/audio/x-m4b.xml
 share/mime/audio/x-matroska.xml
 share/mime/audio/x-minipsf.xml
 share/mime/audio/x-mod.xml
-share/mime/audio/x-mp3-playlist.xml
 share/mime/audio/x-mpegurl.xml
 share/mime/audio/x-ms-asx.xml
 share/mime/audio/x-ms-wma.xml
@@ -370,6 +380,7 @@ share/mime/audio/x-wavpack-correction.xml
 share/mime/audio/x-wavpack.xml
 share/mime/audio/x-xi.xml
 share/mime/audio/x-xm.xml
+share/mime/audio/x-xmf.xml
 @comment no checksum
 share/mime/globs
 share/mime/image/
@@ -405,6 +416,7 @@ share/mime/image/x-dds.xml
 share/mime/image/x-dib.xml
 share/mime/image/x-emf.xml
 share/mime/image/x-eps.xml
+share/mime/image/x-exr.xml
 share/mime/image/x-fits.xml
 share/mime/image/x-fpx.xml
 share/mime/image/x-fuji-raf.xml
@@ -516,6 +528,7 @@ share/mime/text/x-c++hdr.xml
 share/mime/text/x-c++src.xml
 share/mime/text/x-changelog.xml
 share/mime/text/x-chdr.xml
+share/mime/text/x-cmake.xml
 share/mime/text/x-copying.xml
 share/mime/text/x-credits.xml
 share/mime/text/x-csharp.xml
@@ -523,7 +536,7 @@ share/mime/text/x-csrc.xml
 share/mime/text/x-dcl.xml
 share/mime/text/x-dsl.xml
 share/mime/text/x-dsrc.xml
-share/mime/text/x-dtd.xml
+share/mime/text/x-eiffel.xml
 share/mime/text/x-emacs-lisp.xml
 share/mime/text/x-erlang.xml
 share/mime/text/x-fortran.xml
@@ -532,10 +545,11 @@ share/mime/text/x-gettext-translation.xml
 share/mime/text/x-google-video-pointer.xml
 share/mime/text/x-gtkrc.xml
 share/mime/text/x-haskell.xml
+share/mime/text/x-iMelody.xml
 share/mime/text/x-idl.xml
 share/mime/text/x-install.xml
+share/mime/text/x-iptables.xml
 share/mime/text/x-java.xml
-share/mime/text/x-ksysv-log.xml
 share/mime/text/x-ldif.xml
 share/mime/text/x-literate-haskell.xml
 share/mime/text/x-log.xml
@@ -544,8 +558,12 @@ share/mime/text/x-makefile.xml
 share/mime/text/x-matlab.xml
 share/mime/text/x-microdvd.xml
 share/mime/text/x-moc.xml
+share/mime/text/x-mof.xml
 share/mime/text/x-mpsub.xml
+share/mime/text/x-mrml.xml
+share/mime/text/x-ms-regedit.xml
 share/mime/text/x-mup.xml
+share/mime/text/x-nfo.xml
 share/mime/text/x-objcsrc.xml
 share/mime/text/x-ocaml.xml
 share/mime/text/x-ocl.xml
@@ -560,6 +578,7 @@ share/mime/text/x-setext.xml
 share/mime/text/x-speech.xml
 share/mime/text/x-sql.xml
 share/mime/text/x-ssa.xml
+share/mime/text/x-subviewer.xml
 share/mime/text/x-tcl.xml
 share/mime/text/x-tex.xml
 share/mime/text/x-texinfo.xml
@@ -587,6 +606,7 @@ share/mime/video/vnd.rn-realvideo.xml
 share/mime/video/wavelet.xml
 share/mime/video/x-anim.xml
 share/mime/video/x-flic.xml
+share/mime/video/x-flv.xml
 share/mime/video/x-matroska.xml
 share/mime/video/x-mng.xml
 share/mime/video/x-ms-asf.xml
