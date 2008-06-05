@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2007/11/14 09:43:40 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2008/06/05 00:53:22 sthen Exp $
 
 COMMENT=	gtk livejournal client
 
 VERSION=	4.0.1
 DISTNAME=	logjam-${VERSION}
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 CATEGORIES=	misc x11
 
 HOMEPAGE=	http://logjam.danga.com/
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xcomposite \
 		Xdamage Xrandr Xrender atk-1.0 c cairo crypto expat \
 		fontconfig freetype glitz idn m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png ssl z
+		pangocairo-1.0 pangoft2-1.0 pixman-1 png ssl z
 
 MASTER_SITES=	http://logjam.danga.com/download/
 
