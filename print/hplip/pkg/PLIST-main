@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/03/15 10:18:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/06/05 19:10:43 ajacoutot Exp $
 bin/hp-align
 bin/hp-check
 bin/hp-clean
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/scanext.la
 lib/python${MODPY_VERSION}/site-packages/scanext.so
 lib/sane/
 lib/sane/libsane-hpaio.la
-@lib lib/sane/libsane-hpaio.so.${LIBsane-hpaio_VERSION}
+lib/sane/libsane-hpaio.so
 libexec/cups/
 libexec/cups/backend/
 libexec/cups/backend/hp
