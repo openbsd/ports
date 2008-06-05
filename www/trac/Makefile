@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/10/08 08:22:43 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2008/06/05 06:09:37 fkr Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
 DISTNAME=	trac-0.10.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www devel
 
 MAINTAINER=	Ben Lovett <ben@tilderoot.com>
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	lang/python
 
-MY_DEPENDS=	::databases/py-sqlite \
+MY_DEPENDS=	::databases/py-sqlite2 \
 		::devel/subversion,-python \
 		::textproc/py-docutils \
 		::www/clearsilver,python
