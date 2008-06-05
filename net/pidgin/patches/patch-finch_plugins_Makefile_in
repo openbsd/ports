@@ -1,6 +1,6 @@
-$OpenBSD: patch-finch_plugins_Makefile_in,v 1.7 2008/03/24 08:23:22 steven Exp $
---- finch/plugins/Makefile.in.orig	Fri Feb 29 13:11:08 2008
-+++ finch/plugins/Makefile.in	Mon Mar 24 08:19:27 2008
+$OpenBSD: patch-finch_plugins_Makefile_in,v 1.8 2008/06/05 10:24:15 ajacoutot Exp $
+--- finch/plugins/Makefile.in.orig	Fri May 16 14:53:39 2008
++++ finch/plugins/Makefile.in	Mon May 19 00:40:56 2008
 @@ -81,7 +81,8 @@ gnthistory_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLF
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(gnthistory_la_LDFLAGS) $(LDFLAGS) -o $@
@@ -11,7 +11,7 @@ $OpenBSD: patch-finch_plugins_Makefile_in,v 1.7 2008/03/24 08:23:22 steven Exp $
  am__gntlastlog_la_SOURCES_DIST = lastlog.c
  @PLUGINS_TRUE@am_gntlastlog_la_OBJECTS = lastlog.lo
  gntlastlog_la_OBJECTS = $(am_gntlastlog_la_OBJECTS)
-@@ -397,7 +398,7 @@ grouping_la_LDFLAGS = -module -avoid-version
+@@ -394,7 +395,7 @@ grouping_la_LDFLAGS = -module -avoid-version
  @PLUGINS_TRUE@gntclipboard_la_LIBADD = $(GLIB_LIBS) $(X11_LIBS)
  @PLUGINS_TRUE@gntgf_la_LIBADD = $(GLIB_LIBS) $(X11_LIBS) $(top_builddir)/finch/libgnt/libgnt.la
  @PLUGINS_TRUE@gnthistory_la_LIBADD = $(GLIB_LIBS)

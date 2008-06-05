@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/04/17 08:10:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2008/06/05 10:24:15 ajacoutot Exp $
 @conflict gaim-*
 bin/finch
 bin/pidgin
@@ -207,6 +207,8 @@ lib/pidgin/pidginrc.la
 lib/pidgin/pidginrc.so
 lib/pidgin/relnot.la
 lib/pidgin/relnot.so
+lib/pidgin/sendbutton.la
+lib/pidgin/sendbutton.so
 lib/pidgin/spellchk.la
 lib/pidgin/spellchk.so
 lib/pidgin/ticker.la
@@ -342,6 +344,7 @@ share/locale/nb/LC_MESSAGES/pidgin.mo
 share/locale/ne/LC_MESSAGES/pidgin.mo
 share/locale/nl/LC_MESSAGES/pidgin.mo
 share/locale/nn/LC_MESSAGES/pidgin.mo
+share/locale/oc/LC_MESSAGES/pidgin.mo
 share/locale/pa/LC_MESSAGES/pidgin.mo
 share/locale/pl/LC_MESSAGES/pidgin.mo
 share/locale/ps/
@@ -756,6 +759,8 @@ share/pixmaps/pidgin/status/48/offline.png
 share/pixmaps/pidgin/status/48/person.png
 share/pixmaps/pidgin/status/48/rtl/
 share/pixmaps/pidgin/status/48/rtl/extended-away.png
+share/pixmaps/pidgin/status/48/rtl/login.png
+share/pixmaps/pidgin/status/48/rtl/logout.png
 share/pixmaps/pidgin/toolbar/
 share/pixmaps/pidgin/toolbar/16/
 share/pixmaps/pidgin/toolbar/16/change-bgcolor.png
@@ -923,6 +928,11 @@ share/purple/ca-certs/Microsoft_Secure_Server_Authority.pem
 share/purple/ca-certs/StartCom_Free_SSL_CA.pem
 share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
 share/purple/ca-certs/Verisign_RSA_Secure_Server_CA.pem
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/pidgin/*.schemas > /dev/null
+share/schemas/
+share/schemas/pidgin/
+share/schemas/pidgin/purple.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/pidgin/*.schemas > /dev/null
 share/sounds/
 share/sounds/purple/
 share/sounds/purple/alert.wav

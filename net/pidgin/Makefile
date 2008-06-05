@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.21 2008/04/25 04:15:33 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.22 2008/06/05 10:24:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-protocol instant messaging client
 
-DISTNAME=	pidgin-2.4.1
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	pidgin-2.4.2
 SHARED_LIBS += jabber               0.0      # .0.0
 SHARED_LIBS += oscar                0.0      # .0.0
-SHARED_LIBS += purple               3.1      # .4.1
-SHARED_LIBS += purple-client        3.1      # .4.1
-SHARED_LIBS += gnt                  3.0      # .0.0
+SHARED_LIBS += purple               3.2      # .4.2
+SHARED_LIBS += purple-client        3.2      # .4.2
+SHARED_LIBS += gnt                  3.1      # .0.0
 CATEGORIES=	net
 
 HOMEPAGE=	http://pidgin.im/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -27,13 +26,12 @@ WANTLIB=		ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 			c cairo crypto dbus-1 expat fontconfig freetype \
 			glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 			m ncurses panel pango-1.0 pangocairo-1.0 \
-			pangoft2-1.0 pcre png pthread ssl stdc++ z
+			pangoft2-1.0 pcre pixman-1 png pthread ssl stdc++ z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 
-MODULES=	devel/gettext lang/python
+MODULES=	devel/gettext lang/python textproc/intltool
 
-BUILD_DEPENDS+=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS+=	:dbus-python-*:x11/dbus-python \
 		:py-gtk2-*:x11/py-gtk2 \
 		:desktop-file-utils-*:devel/desktop-file-utils
@@ -52,16 +50,17 @@ USE_GMAKE=	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61
-CONFIGURE_ARGS+= --disable-gevolution \
+CONFIGURE_ARGS+= --with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/pidgin \
+		 --disable-avahi \
+		 --disable-gevolution \
 		 --disable-gnutls \
+		 --disable-nm \
 		 --disable-nss \
 		 --disable-perl \
 		 --disable-tcl \
 		 --disable-tk \
 		 --disable-cap \
 		 --disable-schemas-install \
-		 --enable-openssl \
-		 --enable-consoleui \
 		 --with-python=${MODPY_BIN}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -104,7 +103,7 @@ post-install:
 	perl -pi -e 's#%python%#${MODPY_BIN}#g' ${PREFIX}/bin/${f}
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dbus-1/services/
-	sed -e "s,!!LOCALBASE!!,${LOCALBASE}," \
+	sed -e "s,!!PREFIX!!,${TRUEPREFIX}," \
 		< ${FILESDIR}/purple.service \
 		> ${PREFIX}/share/dbus-1/services/purple.service
 	mv ${PREFIX}/lib/purple-2/libjabber.* ${PREFIX}/lib
