@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/14 15:32:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/06/05 11:26:32 ajacoutot Exp $
 bin/bulk_loader
 bin/cube_dispatcher
 bin/londiste
@@ -49,7 +49,7 @@ lib/python${MODPY_VERSION}/site-packages/pgq/status.pyc
 lib/python${MODPY_VERSION}/site-packages/pgq/ticker.py
 lib/python${MODPY_VERSION}/site-packages/pgq/ticker.pyc
 lib/python${MODPY_VERSION}/site-packages/skytools/
-lib/python${MODPY_VERSION}/site-packages/skytools-2.1.6-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/skytools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/skytools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skytools/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/skytools/_cquoting.so
@@ -118,3 +118,12 @@ share/skytools/logtriga.sql
 share/skytools/londiste.sql
 share/skytools/pgq.sql
 share/skytools/pgq_ext.sql
+share/skytools/upgrade/
+share/skytools/upgrade/final/
+share/skytools/upgrade/final/v2.1.5_londiste.sql
+share/skytools/upgrade/final/v2.1.5_pgq_core.sql
+share/skytools/upgrade/final/v2.1.5_pgq_ext.sql
+share/skytools/upgrade/final/v2.1.6_londiste.sql
+share/skytools/upgrade/final/v2.1.6_pgq_ext.sql
+share/skytools/upgrade/final/v${MODPY_EGG_VERSION}_londiste.sql
+share/skytools/upgrade/final/v${MODPY_EGG_VERSION}_pgq_core.sql
