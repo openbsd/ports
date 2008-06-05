@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2008/05/04 08:20:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2008/06/05 19:57:29 ajacoutot Exp $
 
 COMMENT=	elegant music player for MPD
 
-MODPY_EGG_VERSION=1.5.1
+MODPY_EGG_VERSION=1.5.2
 DISTNAME=	sonata-${MODPY_EGG_VERSION}
 CATEGORIES=	audio
 
@@ -20,7 +20,8 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xcomposite Xdamage \
 		Xrender atk-1.0 cairo expat fontconfig freetype gdk-x11-2.0 \
 		gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
+		png z
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=sonata/}
 
