@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.940 2008/05/18 11:22:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.941 2008/06/05 08:14:00 fgsch Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1704,13 +1704,13 @@ _internal-fetch-all:
 .endif
 
 .if defined(IGNORE) && !defined(NO_IGNORE)
-_internal-fetch _internal-checksum _internal-extract _internal-patch \
-	_internal-configure _internal-all _internal-build _internal-install \
-	_internal-regress _internal-uninstall _internal-deinstall _internal-fake \
-	_internal-update _internal-plist _internal-package _internal-install-all \
-	_internal-update-plist update-patches _internal-subupdate \
-	dump-vars describe _internal-subpackage \
-	_internal-manpages-check:
+_internal-all _internal-build _internal-checksum _internal-configure \
+	_internal-deinstall _internal-extract _internal-fake _internal-fetch \
+	_internal-install _internal-install-all _internal-manpages-check \
+	_internal-package _internal-patch _internal-plist _internal-regress \
+	_internal-subpackage _internal-subupdate _internal-uninstall \
+	_internal-update _internal-update-plist describe dump-vars \
+	port-lib-depends-check update-patches:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
 .  endif
