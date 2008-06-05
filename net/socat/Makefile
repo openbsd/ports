@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2008/02/14 21:36:27 rui Exp $
+# $OpenBSD: Makefile,v 1.7 2008/06/05 19:46:34 rui Exp $
 
 COMMENT=	socat is a relay for bidirectional data transfer 
 
-DISTNAME=	socat-1.6.0.0
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	socat-1.6.0.1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.dest-unreach.org/socat/
 
 MAINTAINER=	Rui Reis <rui@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -25,7 +24,7 @@ NO_REGRESS=	Yes
 CONFIGURE_STYLE=gnu
 
 pre-build:
-	perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g" ${WRKSRC}/doc/socat.1
+	${SUBST_CMD} ${WRKSRC}/doc/socat.1
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/socat
