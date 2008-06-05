@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2007/10/02 19:09:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2008/06/05 15:57:40 ajacoutot Exp $
 
 COMMENT=		noninteractive ftp client
 DISTNAME=		weex-2.6.1.5
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		net	
 
 HOMEPAGE=		http://weex.sourceforge.net	
-
-MAINTAINER=		Thomas Delaet <thomas@delaet.org>	
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
