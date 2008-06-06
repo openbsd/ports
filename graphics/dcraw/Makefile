@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2008/02/14 23:06:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2008/06/06 13:20:19 sthen Exp $
 
 COMMENT =	digital camera RAW format conversion tool
 
-DISTNAME =	dcraw-8.81
+DISTNAME =	dcraw-8.86
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://www.cybercom.net/~dcoffin/dcraw/
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =	c m
 
 NO_REGRESS =	Yes
-SEPARATE_BUILD =simple
+SEPARATE_BUILD = simple
 
 WRKDIST =	${WRKDIR}/dcraw
 
