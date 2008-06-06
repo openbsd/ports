@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/17 18:47:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/06 10:27:56 sthen Exp $
 
 COMMENT=		graphical frontend to su (library to the interface)
 
 V=			1.0.7
 DISTNAME=		libgksuui1.0-$V
-PKGNAME=		libgksuui-$V
+PKGNAME=		libgksuui-$Vp0
 SHARED_LIBS=		gksuui1.0         0.0            # .1.0
 CATEGORIES=		sysutils
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
 		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre png z
+		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png z
 
 MASTER_SITES=		http://people.debian.org/~kov/gksu/old_stuff/libgksuui1.0/
 

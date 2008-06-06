@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/02 20:42:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/06 10:27:56 sthen Exp $
 
 COMMENT=		library providing su and sudo functionality
 
 DISTNAME=		libgksu-2.0.5
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS=		gksu2		0.0	# .0.1
 CATEGORIES=             sysutils
 
@@ -20,7 +20,7 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		dbus-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 kvm m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre png pthread util xml2 z
+		pcre png pixman-1 pthread util xml2 z
 
 MASTER_SITES=		http://people.debian.org/~kov/gksu/
 

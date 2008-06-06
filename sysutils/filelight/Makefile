@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/16 00:04:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/06 10:27:55 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	concentric segmented-rings disk usage visualisation
 
 DISTNAME=	filelight-1.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	sysutils x11/kde
 
 EXTRACT_SUFX=	.tar.bz2
@@ -22,8 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.methylblue.com/filelight/packages/
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c iconv \
-		idn jpeg m png pthread stdc++ util z
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam \
+		iconv idn intl jpeg m png pthread rpcsvc stdc++ util z
 
 MODULES=	x11/kde
 
