@@ -1,7 +1,7 @@
-$OpenBSD: patch-nikon_curve_c,v 1.3 2007/10/24 22:44:22 jasper Exp $
---- nikon_curve.c.orig	Mon Jul 23 14:01:40 2007
-+++ nikon_curve.c	Tue Oct 16 12:57:56 2007
-@@ -76,8 +76,8 @@ static const unsigned char *FileTypeHeaders[NUM_FILE_T
+$OpenBSD: patch-nikon_curve_c,v 1.4 2008/06/07 05:31:41 phessler Exp $
+--- nikon_curve.c.orig	Sun Nov 11 03:10:38 2007
++++ nikon_curve.c	Sat Dec 29 12:19:46 2007
+@@ -77,8 +77,8 @@ static const unsigned char *FileTypeHeaders[NUM_FILE_T
  #ifdef _STAND_ALONE_
  
  //filenames
@@ -12,7 +12,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.3 2007/10/24 22:44:22 jasper Exp $
  
  unsigned int standalone_samplingRes = 65536;
  unsigned int standalone_outputRes = 256;
-@@ -118,8 +118,7 @@ int ProcessArgs(int num_args, char *args[])
+@@ -119,8 +119,7 @@ int ProcessArgs(int num_args, char *args[])
  	else if (strcmp(args[i],"-o") == 0 || strcmp(args[i],"-O") == 0)
  	{
  	    i++;
@@ -22,7 +22,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.3 2007/10/24 22:44:22 jasper Exp $
  	}
  	else if (strcmp(args[i],"-sr") == 0)
  	{
-@@ -147,24 +146,21 @@ int ProcessArgs(int num_args, char *args[])
+@@ -148,24 +147,21 @@ int ProcessArgs(int num_args, char *args[])
  	{
  	    i++;
  	    program_mode = NEF_MODE;
@@ -51,18 +51,18 @@ $OpenBSD: patch-nikon_curve_c,v 1.3 2007/10/24 22:44:22 jasper Exp $
      }
  
      return NC_SUCCESS;
-@@ -1722,7 +1718,7 @@ int ConvertNikonCurveData(char *inFileName, char *outF
+@@ -1723,7 +1719,7 @@ int ConvertNikonCurveData(char *inFileName, char *outF
  {
      //Load the curve data from the ncv/ntc file
      NikonData data;
 -    char tmpstr[1024];
 +    char tmpstr[FILENAME_MAX];
-     
+ 
      if ( samplingRes <= 1 || outputRes <= 1 || samplingRes > MAX_RESOLUTION
  	    || outputRes > MAX_RESOLUTION )
-@@ -1752,8 +1748,7 @@ int ConvertNikonCurveData(char *inFileName, char *outF
+@@ -1753,8 +1749,7 @@ int ConvertNikonCurveData(char *inFileName, char *outF
  	}
- 	
+ 
  	//rename output files
 -	strncpy(tmpstr, outFileName, 1023);
 -	tmpstr[1023] = '\0';
@@ -70,7 +70,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.3 2007/10/24 22:44:22 jasper Exp $
  	//if the name has an extension, attempt to remove it
  	if (tmpstr[strlen(tmpstr)-4] == '.')
  	{
-@@ -1763,19 +1758,19 @@ int ConvertNikonCurveData(char *inFileName, char *outF
+@@ -1764,19 +1759,19 @@ int ConvertNikonCurveData(char *inFileName, char *outF
  	switch(i)
  	{
  	    case TONE_CURVE:
