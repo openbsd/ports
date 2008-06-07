@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2008/04/05 04:14:30 okan Exp $
+# $OpenBSD: Makefile,v 1.11 2008/06/07 23:31:45 ckuethe Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 
      SUBDIR += geos
      SUBDIR += globe
+     SUBDIR += gpstk
      SUBDIR += gpsbabel
      SUBDIR += jeoip
      SUBDIR += openbsd-developers
