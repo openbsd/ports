@@ -1,0 +1,78 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/06/07 23:27:17 ckuethe Exp $
+%%SHARED%%
+bin/DDBase
+bin/DiscFix
+bin/EditRinex
+bin/IonoBias
+bin/NavMerge
+bin/PRSolve
+bin/ResCor
+bin/RinSum
+bin/RinexDump
+bin/TECMaps
+bin/ash2mdp
+bin/ash2xyz
+bin/ats2mdp
+bin/bc2sp3
+bin/calgps
+bin/codeDump
+bin/compSatVis
+bin/compStaVis
+bin/corltr
+bin/daa
+bin/ddGen
+bin/ddmerge
+bin/ephdiff
+@comment bin/example1
+@comment bin/example2
+@comment bin/example3
+@comment bin/example4
+@comment bin/example5
+@comment bin/example6
+@comment bin/example7
+bin/fic2rin
+bin/ficacheck
+bin/ficafic
+bin/ficcheck
+bin/ficdiff
+bin/ficfica
+bin/findMoreThan12
+bin/gpsSim
+bin/iqdump
+bin/mdp2rinex
+bin/mdpEdit
+bin/mdpscreenx
+bin/mdptool
+bin/mergeFIC
+bin/mergeRinMet
+bin/mergeRinNav
+bin/mergeRinObs
+bin/mergeSRI
+bin/mpsolve
+bin/navdmp
+bin/novaRinex
+bin/ordClock
+bin/ordEdit
+bin/ordGen
+bin/ordLinEst
+bin/ordStats
+bin/posInterp
+bin/poscvt
+bin/rfw
+bin/rinexpvt
+bin/rinexthin
+bin/rmwcheck
+bin/rmwdiff
+bin/rnwcheck
+bin/rnwdiff
+bin/rowcheck
+bin/rowdiff
+bin/rstats
+bin/simpleNav
+bin/sp3version
+bin/svvis
+bin/tcptest
+bin/timeconvert
+bin/tracker
+bin/vecsol
+bin/wheresat

@@ -1,0 +1,7 @@
+The GPSTk suite consists of a core library and a set of applications. The
+library provides a wide array of functions that solve processing problems
+associated with GPS such as processing or using standard formats such as
+RINEX. The library is the basis for the more advanced applications
+distributed as part of the GPSTk suite.
+
+The -devel package provides static libraries and headers.

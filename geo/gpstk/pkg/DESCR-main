@@ -1,0 +1,53 @@
+The goal of the GPSTk project is to provide a open source library and suite
+of applications to the satellite navigation community - to free researchers
+to focus on research, not lower level coding.
+
+The GPSTk suite consists of a core library and a set of applications. The
+library provides a wide array of functions that solve processing problems
+associated with GPS such as processing or using standard formats such as
+RINEX. The library is the basis for the more advanced applications
+distributed as part of the GPSTk suite.
+
+
+The GPSTk library provides the base functionality for the GPSTk
+applications and for a number of other independent projects. There are
+several categories of functions in the GPSTk library:
+
+   1. GPS time. Conversion among time representations such as MJD, GPS
+   week and seconds of week, and many others.
+
+   2. Ephemeris calculations. Position and clock interpolation for both
+   broadcast and precise ephemerides.
+
+   3. Atmospheric delay models. Includes ionosphere and troposphere models.
+
+   4. Position solution. Includes an implementation of a Receiver
+   Autonomous Integrity Monitoring algorithm.
+
+   5. Mathematics. Includes Matrix and Vector implementations, as well as
+   interpolation and numerical integration.
+
+   6. Application framework. Includes processing command lines options,
+   providing interactive help and working with file systems.
+
+
+The GPSTk applications support greater depth of functionality to support
+research and development. The applications are almost entirely console
+based (i.e., without a graphical user interface). They can be grouped
+functionally into a number of categories.
+
+   1. Basic transformations. Conversions of time and coordinate systems.
+
+   2. Observation data collection and conversion. Translating receiver
+   specific data formats to RINEX.
+
+   3. File comparison and validation. Differing observations files against
+   a truth source.
+
+   4. Data editing. Systematic removal of observations by satellite, type
+   or time.
+
+   5. Ionosphere modeling. Basic models of the ionosphere.
+
+   6. Autonomous and relative positioning. Navigation and surveying
+   applications.

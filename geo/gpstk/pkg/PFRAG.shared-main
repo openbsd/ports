@@ -1,0 +1,11 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1.1.1 2008/06/07 23:27:17 ckuethe Exp $
+@lib lib/libbase.so.${LIBbase_VERSION}
+@lib lib/libgeomatics.so.${LIBgeomatics_VERSION}
+@lib lib/libgpstk.so.${LIBgpstk_VERSION}
+@lib lib/libmdplib.so.${LIBmdplib_VERSION}
+@lib lib/libprocframe.so.${LIBprocframe_VERSION}
+@lib lib/librlib.so.${LIBrlib_VERSION}
+@lib lib/librxio.so.${LIBrxio_VERSION}
+@lib lib/libsimlib.so.${LIBsimlib_VERSION}
+@lib lib/libtoolslib.so.${LIBtoolslib_VERSION}
+@lib lib/libvplot.so.${LIBvplot_VERSION}
