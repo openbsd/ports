@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.17 2008/06/07 10:38:21 bernd Exp $
 
 COMMENT=	tools and library routines for working with GIF images
 
@@ -7,7 +7,7 @@ PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	gif	5.4 \
 		ungif	5.4
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libungif/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=giflib/}
 
 HOMEPAGE=	http://sourceforge.net/projects/libungif/
 
