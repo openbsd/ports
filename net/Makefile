@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.525 2008/05/23 06:54:53 jakob Exp $
+# $OpenBSD: Makefile,v 1.526 2008/06/07 22:50:18 simon Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -249,6 +249,7 @@
      SUBDIR += p5-Net-SNMP
      SUBDIR += p5-Net-SNPP
      SUBDIR += p5-Net-SSH-Perl
+     SUBDIR += p5-Net-SSH2
      SUBDIR += p5-Net-Snort-Parser
      SUBDIR += p5-Net-Subnets
      SUBDIR += p5-Net-TFTP
