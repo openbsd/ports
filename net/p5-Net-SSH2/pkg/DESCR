@@ -1,0 +1,3 @@
+Net::SSH2 is a Perl interface to the libssh2 library.  It supports the
+SSH2 protocol (there is no support for SSH1) with all of the key
+exchanges, ciphers, and compression of libssh2.
