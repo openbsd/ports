@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.342 2008/06/04 11:01:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.343 2008/06/08 17:15:05 landry Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -272,6 +272,7 @@
      SUBDIR += py-turbogears
      SUBDIR += py-webpy
      SUBDIR += pyblosxom
+     SUBDIR += raggle
      SUBDIR += rawdog
      SUBDIR += reportmagic
      SUBDIR += rt
