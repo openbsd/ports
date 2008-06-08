@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2008/06/04 07:35:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.200 2008/06/08 11:15:03 simon Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -84,6 +84,7 @@
      SUBDIR += morseplayer
      SUBDIR += mp3blaster
      SUBDIR += mp3cddb
+     SUBDIR += mp3cut
      SUBDIR += mp3encode
      SUBDIR += mp3gain
      SUBDIR += mp3info
@@ -115,6 +116,7 @@
      SUBDIR += p5-Audio-Musepack
      SUBDIR += p5-Audio-Scrobbler
      SUBDIR += p5-Audio-WMA
+     SUBDIR += p5-CDDB-File
      SUBDIR += p5-CDDB_get
      SUBDIR += p5-MP3-ID3v1Tag
      SUBDIR += p5-MP3-Info
