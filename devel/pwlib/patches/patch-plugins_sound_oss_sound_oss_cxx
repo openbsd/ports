@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_sound_oss_sound_oss_cxx,v 1.3 2008/04/29 15:28:44 ajacoutot Exp $
---- plugins/sound_oss/sound_oss.cxx.orig	Tue Apr 29 17:17:16 2008
-+++ plugins/sound_oss/sound_oss.cxx	Tue Apr 29 17:17:22 2008
-@@ -429,6 +432,10 @@ static void CollectSoundDevices(PDirectory devdir, POr
+$OpenBSD: patch-plugins_sound_oss_sound_oss_cxx,v 1.4 2008/06/08 02:49:00 robert Exp $
+--- plugins/sound_oss/sound_oss.cxx.orig	Fri Oct 19 08:22:33 2007
++++ plugins/sound_oss/sound_oss.cxx	Sun Jun  8 04:39:26 2008
+@@ -429,6 +429,10 @@ static void CollectSoundDevices(PDirectory devdir, POr
              mixer.SetAt(cardnum+1, devname);
            }
          }
