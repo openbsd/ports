@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/16 01:37:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2008/06/08 21:41:13 jasper Exp $
 
 COMMENT=	small & simple FAX send/receive program
 
@@ -16,7 +16,12 @@ WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/serialcomm/fax/}
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+# gcc 3.3.5 internal compiler error
+.if ${MACHINE_ARCH} == "mips64"
+EXTRA_CFLAGS=	-O0
+.endif
+
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" EXTRA_CFLAGS="${EXTRA_CFLAGS}"
 
 NO_REGRESS=	Yes
 

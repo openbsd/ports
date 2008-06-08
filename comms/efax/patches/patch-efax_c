@@ -1,7 +1,7 @@
-$OpenBSD: patch-efax_c,v 1.1 2002/07/17 22:45:09 lebel Exp $
---- efax.c.orig	Sat Mar 27 09:24:10 1999
-+++ efax.c	Wed Jul 17 18:25:19 2002
-@@ -606,7 +606,7 @@ int send_data ( TFILE *mf, IFILE *f, int
+$OpenBSD: patch-efax_c,v 1.2 2008/06/08 21:41:13 jasper Exp $
+--- efax.c.orig	Sat Mar 27 15:24:10 1999
++++ efax.c	Wed Jan 30 15:38:17 2008
+@@ -606,7 +606,7 @@ int send_data ( TFILE *mf, IFILE *f, int page, int pag
    if ( ckfmt ( header, 6 ) )
      msg ( "W too many %%d escapes in header format string \"%s\"", header ) ;
    else
@@ -20,7 +20,7 @@ $OpenBSD: patch-efax_c,v 1.1 2002/07/17 22:45:09 lebel Exp $
  	       local[0], local[1], local[2], local[3] ) ;
        ckcmd ( mf, 0, buf, TO_FT, OK ) ;
        if ( gethsc ( &hsc, &err ) ) {
-@@ -1816,7 +1817,7 @@ int dial ( TFILE *f, char *s, int nowait
+@@ -1816,7 +1817,7 @@ int dial ( TFILE *f, char *s, int nowait )
    int err=0, hsc=-1 ;
    char c, dsbuf [ 128 ], *p ;
  
@@ -47,7 +47,7 @@ $OpenBSD: patch-efax_c,v 1.1 2002/07/17 22:45:09 lebel Exp $
  	  msg ( "Iexec'ing /bin/sh -c \"%s\"" , buf ) ;
  	  execl ( "/bin/sh" , "sh" , "-c" , buf , (void*) 0 ) ; 
  	  err = msg ( "ES2exec failed:" ) ;
-@@ -2090,13 +2091,13 @@ int modem_init ( TFILE *mf, cap c, char 
+@@ -2090,13 +2091,13 @@ int modem_init ( TFILE *mf, cap c, char *id, 
      }
  
      if ( capsset ) {
@@ -63,7 +63,7 @@ $OpenBSD: patch-efax_c,v 1.1 2002/07/17 22:45:09 lebel Exp $
  	     CMDBUFSIZE-9, id ) ;
      ckcmd ( mf, 0, buf, -t, OK ) ;
  
-@@ -2104,7 +2105,7 @@ int modem_init ( TFILE *mf, cap c, char 
+@@ -2104,7 +2105,7 @@ int modem_init ( TFILE *mf, cap c, char *id, 
  
        ckcmd ( mf, 0, c20 ? "+FSP=1" : "+FSPL=1", -t, OK ) ;
  

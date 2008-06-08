@@ -1,6 +1,6 @@
-$OpenBSD: patch-fax,v 1.1 2002/07/17 22:45:09 lebel Exp $
---- fax.orig	Wed Mar 24 03:07:28 1999
-+++ fax	Wed Jul 17 18:25:19 2002
+$OpenBSD: patch-fax,v 1.2 2008/06/08 21:41:13 jasper Exp $
+--- fax.orig	Wed Mar 24 09:07:28 1999
++++ fax	Wed Jan 30 15:38:17 2008
 @@ -28,16 +28,17 @@ EFIX=efix
  # /dev/modem is a link to /dev/cua1, then getty, uucp, kermit,
  # pppd, dip, etc. must *all* use either /dev/modem or /dev/cua1.
@@ -32,7 +32,7 @@ $OpenBSD: patch-fax,v 1.1 2002/07/17 22:45:09 lebel Exp $
  # LOCK='-x /usr/spool/uucp/LCK..$DEV'		# older systems
  # LOCK='-x /var/lock/LCK..$DEV -x /var/spool/uucp/LCK..$DEV' # both
  # LOCK='-x #/usr/spool/uucp/LCK..$DEV'		# binary format
-@@ -101,6 +103,7 @@ LOCK='-x /var/lock/LCK..$DEV' 			# moder
+@@ -101,6 +103,7 @@ LOCK='-x /var/lock/LCK..$DEV' 			# modern systems
  # The remaining options probably won't need to be changed.
  # ****************************************************************
  
@@ -40,7 +40,7 @@ $OpenBSD: patch-fax,v 1.1 2002/07/17 22:45:09 lebel Exp $
  # Configuration files that are sourced if they exist.  Comment
  # out if you don't need to use config files. Warning: any type of
  # shell command in these files will be executed.
-@@ -404,7 +407,11 @@ NOLOG='[145]'
+@@ -404,8 +407,12 @@ NOLOG='[145]'
  # --- End of user configuration section ---
  # ****************************************************************
  
@@ -49,10 +49,11 @@ $OpenBSD: patch-fax,v 1.1 2002/07/17 22:45:09 lebel Exp $
 +# --- source configuration files, which contain
 +# --- settings in the same format.
 +# ****************************************************************
-+
  
++
  for f in $CONFIGFILES
  do
+ 	if [ -r $f ]
 @@ -413,6 +420,15 @@ do
  		eval "`cat $f`"
  	fi
