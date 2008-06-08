@@ -1,0 +1,7 @@
+This package provides a couple of tools to cut and cat MP3 audio files
+at the frame level.
+
+ * mp3cut uses a so called 'cue sheet' to cut an MP3 audio file into
+   individual pieces (usually tracks)
+ * mp3cat concatenates the audio data from one or more MP3 files
+ * cddb2cue generates a cue file from a CDDB file

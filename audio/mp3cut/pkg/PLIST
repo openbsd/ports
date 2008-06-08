@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/08 11:14:59 simon Exp $
+bin/cddb2cue
+bin/mp3cat
+bin/mp3cut
+@man man/man1/cddb2cue.1
+@man man/man1/mp3cat.1
+@man man/man1/mp3cut.1
