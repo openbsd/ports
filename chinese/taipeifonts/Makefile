@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 21:40:01 simon Exp $
+# $OpenBSD: Makefile,v 1.25 2008/06/08 14:21:21 ajacoutot Exp $
 
 COMMENT=	extra chinese fonts
 
@@ -7,7 +7,7 @@ CATEGORIES=     chinese x11
 
 DIST_SUBDIR=    zh-fonts
 
-MASTER_SITES=	ftp://ftp.tku.edu.tw/OS/Linux/packages/chinese/fonts/taipeifont/
+MASTER_SITES=	http://cle.linux.org.tw/fonts/bitmap/taipeifont/
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 

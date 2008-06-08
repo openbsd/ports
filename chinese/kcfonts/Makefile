@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 21:40:00 simon Exp $
+# $OpenBSD: Makefile,v 1.13 2008/06/08 14:21:21 ajacoutot Exp $
 
 COMMENT=	extra chinese fonts
 
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_FTP=   Yes
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 
-MASTER_SITES=	ftp://ftp.tku.edu.tw/OS/Linux/packages/chinese/fonts/KCFONTS/
+MASTER_SITES=	http://cle.linux.org.tw/fonts/bitmap/KCFONTS/
 DIST_SUBDIR=    zh-kcfonts
 DISTFILES=	${FONTS}
 
