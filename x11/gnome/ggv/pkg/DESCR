@@ -1,9 +1,0 @@
-GGv is the Gnome Postscript and PDF viewer program.  The name comes from
-GhostView, a non-gnome GNU postscript viewer application on which GGv is
-based.
-
-GGv is a frontend for GhostScript, an interpreter of PostScript that is
-able to properly render PostScript documents in a display or a printer.
-GGv serves as a layer that isolates the user from the cumbersome options
-and interface of GhostScript, and, at the same time, gives extra
-features such as panning and persistent user settings.
