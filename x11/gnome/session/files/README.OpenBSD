@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.8 2008/05/21 17:51:33 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.9 2008/06/08 09:37:00 jasper Exp $
 The OpenBSD/GNOME desktop
 
 * Introduction
@@ -45,7 +45,6 @@ you can install. The most important ones will be mentioned by category:
    * evince - document viewer for multiple document formats
    * file-roller - archive manager
    * gcalctool - desktop calculator
-   * ggv - frontend for GhostScript
    * gnome-scan - scanning application
    * gnomebaker - CD/DVD burning application
    * gucharmap - Unicode character map
