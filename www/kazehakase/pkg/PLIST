@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/18 19:25:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/06/08 16:05:23 landry Exp $
 %%SHARED%%
 bin/kazehakase
 lib/kazehakase/
@@ -80,6 +80,7 @@ share/kazehakase/icons/kz-view-source.png
 share/kazehakase/icons/kz-yellow.png
 share/kazehakase/kz-no-thumbnail.png
 share/kazehakase/search-result.css
+share/kazehakase/search-result.js
 share/pixmaps/
 share/pixmaps/kazehakase-icon.png
 @exec %D/bin/update-desktop-database
