@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 21:40:00 simon Exp $
+# $OpenBSD: Makefile,v 1.19 2008/06/08 14:27:03 phessler Exp $
 
 COMMENT=	convert Big5/GB encoded files to postscript
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		c m
 
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 PYTHON_VER=	2.4
 RUN_DEPENDS=	::chinese/arphicttf \
