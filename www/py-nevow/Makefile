@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/21 19:15:50 eric Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/08 21:24:47 eric Exp $
 
 COMMENT=	web application construction kit
 
 VERSION=	0.9.31
 DISTNAME=	Nevow-${VERSION}
-PKGNAME=	py-nevow-${VERSION}
+PKGNAME=	py-nevow-${VERSION}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://divmod.org/trac/wiki/DivmodNevow

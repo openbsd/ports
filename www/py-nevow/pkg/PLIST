@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/21 19:15:50 eric Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/06/08 21:24:48 eric Exp $
 bin/nevow-xmlgettext
 bin/nit
 lib/python${MODPY_VERSION}/site-packages/Nevow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -534,5 +534,6 @@ share/examples/py-nevow/xul/
 share/examples/py-nevow/xul/__init__.py
 share/examples/py-nevow/xul/xul_example.xul
 share/examples/py-nevow/xul/xul_nevow.py
-@exec %D/sbin/twisted-regen-dropin.cache
+@exec %D/sbin/twisted-regen-dropin.cache twisted.plugins nevow.plugins
+@unexec /bin/rm %D/lib/python${MODPY_VERSION}/site-packages/nevow/plugins/dropin.cache
 @unexec %D/sbin/twisted-regen-dropin.cache
