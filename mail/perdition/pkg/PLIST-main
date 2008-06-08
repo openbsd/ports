@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2006/11/25 11:00:38 msf Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/06/08 10:55:25 simon Exp $
 @pkgpath mail/perdition
 @newgroup _perdition:573
 @newuser _perdition:573:573:daemon:Perdition proxy:/var/empty:/sbin/nologin
@@ -11,6 +11,8 @@ lib/libperditiondb_bdb.a
 lib/libperditiondb_bdb.la
 lib/libperditiondb_daemon.a
 lib/libperditiondb_daemon.la
+lib/libperditiondb_daemon_base.a
+lib/libperditiondb_daemon_base.la
 lib/libperditiondb_nis.a
 lib/libperditiondb_nis.la
 lib/libperditiondb_posix_regex.a

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/06/08 10:55:25 simon Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
 COMMENT-mysql=  MySQL backend for perdition mail proxy
 COMMENT-pgsql=	PostgreSQL backend for perdition mail proxy
 
-DISTVER=	1.17
+DISTVER=	1.17.1
 DISTNAME=	perdition-${DISTVER}
-PKGNAME-main=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}
 PKGNAME-ldap=	perdition-ldap-${DISTVER}
 PKGNAME-mysql=  perdition-mysql-${DISTVER}
 PKGNAME-pgsql=  perdition-pgsql-${DISTVER}
@@ -19,6 +19,7 @@ SHARED_LIBS +=  perditiondb_bdb              0.0  # .0.0
 SHARED_LIBS +=  perditiondb_nis              0.0  # .0.0
 SHARED_LIBS +=  perditiondb_posix_regex      0.0  # .0.0
 SHARED_LIBS +=  perditiondb_daemon           0.0  # .0.0
+SHARED_LIBS +=  perditiondb_daemon_base      0.0  # .0.0
 
 HOMEPAGE=	http://www.vergenet.net/linux/perdition/
 
