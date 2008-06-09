@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.526 2008/06/07 22:50:18 simon Exp $
+# $OpenBSD: Makefile,v 1.527 2008/06/09 18:21:13 okan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -321,6 +321,7 @@
      SUBDIR += putty
      SUBDIR += py-IP
      SUBDIR += py-adns
+     SUBDIR += py-boto
      SUBDIR += py-curl
      SUBDIR += py-dns
      SUBDIR += py-dnspython
