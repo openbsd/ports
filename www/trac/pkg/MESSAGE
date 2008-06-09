@@ -18,3 +18,11 @@ the link, you should see trac in action.
 
 You can find the Trac Installation Guide here:
   http://projects.edgewall.com/trac/wiki/TracInstall
+
+If updating from trac-0.10.4p1 or older, you must update trac's 
+database from sqlite2 to sqlite3. You do this by going to the 
+db-directory of trac and running the following commands:
+
+mv trac.db trac.db.old
+${LOCALBASE}/bin/sqlite trac.db.old .dump | ${LOCALBASE}/bin/sqlite3 trac.db
+
