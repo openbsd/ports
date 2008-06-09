@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2008/05/18 21:09:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.156 2008/06/09 18:28:15 okan Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -22,6 +22,7 @@
      SUBDIR += contool
      SUBDIR += dmassage
      SUBDIR += dmidecode
+     SUBDIR += duplicity
      SUBDIR += dvd+rw-tools
      SUBDIR += dwdiff
      SUBDIR += e2fsprogs
