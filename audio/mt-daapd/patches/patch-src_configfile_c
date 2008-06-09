@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_configfile_c,v 1.1 2005/10/07 20:15:13 alek Exp $
---- src/configfile.c.orig	Sun Jan 30 05:32:35 2005
-+++ src/configfile.c	Fri Oct  7 21:50:05 2005
-@@ -377,7 +377,7 @@ int config_read(char *file) {
+$OpenBSD: patch-src_configfile_c,v 1.2 2008/06/09 23:46:20 okan Exp $
+--- src/configfile.c.orig	Sat Apr 19 15:17:23 2008
++++ src/configfile.c	Sat May 31 14:29:04 2008
+@@ -379,7 +379,7 @@ int config_read(char *file) {
      
  
      /* sanity check the paths */
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_configfile_c,v 1.1 2005/10/07 20:15:13 alek Exp $
      if((fin=fopen(path_buffer,"r")) == NULL) {
  	err=-1;
  	DPRINTF(E_LOG,L_CONF,"Invalid web_root\n");
-@@ -737,6 +737,7 @@ void config_emit_service_status(WS_CONNI
+@@ -739,6 +739,7 @@ void config_emit_service_status(WS_CONNINFO *pwsc, voi
      int mdns_running;
      char *html;
      char buf[256];
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_configfile_c,v 1.1 2005/10/07 20:15:13 alek Exp $
      int r_days, r_hours, r_mins, r_secs;
      int scanning;
  
-@@ -795,21 +796,28 @@ void config_emit_service_status(WS_CONNI
+@@ -797,21 +798,28 @@ void config_emit_service_status(WS_CONNINFO *pwsc, voi
      r_mins=r_secs/60;
      r_secs -= 60 * r_mins;
  

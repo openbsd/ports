@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_mDNSUNP_c,v 1.1 2007/01/09 10:15:15 millert Exp $
---- src/mDNSUNP.c.orig	Sun Jan  7 18:10:01 2007
-+++ src/mDNSUNP.c	Sun Jan  7 18:12:28 2007
-@@ -159,22 +159,8 @@
+$OpenBSD: patch-src_mDNSUNP_c,v 1.2 2008/06/09 23:46:20 okan Exp $
+--- src/mDNSUNP.c.orig	Sat Apr 19 15:17:23 2008
++++ src/mDNSUNP.c	Sat May 31 14:29:04 2008
+@@ -159,22 +159,8 @@ struct ifi_info *get_ifi_info(int family, int doaliase
  /* include get_ifi_info2 */
      for (ptr = buf; ptr < buf + ifc.ifc_len; ) {
          ifr = (struct ifreq *) ptr;

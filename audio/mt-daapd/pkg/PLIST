@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/10/07 20:15:13 alek Exp $
-sbin/mt-daapd
+@comment $OpenBSD: PLIST,v 1.3 2008/06/09 23:46:20 okan Exp $
+@bin sbin/mt-daapd
 share/examples/mt-daapd/
 share/examples/mt-daapd/mt-daapd.conf
 @sample ${SYSCONFDIR}/mt-daapd.conf
