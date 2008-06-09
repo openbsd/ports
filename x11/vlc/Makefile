@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.70 2008/05/16 05:54:09 bernd Exp $
+# $OpenBSD: Makefile,v 1.71 2008/06/09 22:55:43 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	videolan client; multimedia player
 
-V=		0.8.6f
+V=		0.8.6h
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -179,7 +179,7 @@ CONFIGURE_ENV+=	MOZILLA_CONFIG="${LOCALBASE}/bin/xulrunner-config" \
 PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/xulrunner
 LIB_DEPENDS-web=${LIB_DEPENDS}
 RUN_DEPENDS-web=::${BUILD_PKGPATH}
-WANTLIB-web=	ICE SM X11 Xau Xdmcp Xext Xinerama Xt Xv Xxf86vm dvbpsi m ogg theora
+WANTLIB-web=	ICE SM X11 Xau Xdmcp Xext Xinerama Xv Xxf86vm dvbpsi m ogg theora
 .else
 CONFIGURE_ARGS+=--disable-mozilla
 .endif
@@ -238,6 +238,7 @@ PKG_ARGS+=-Dwin32=0
 .endif
 
 .if ${FLAVOR:L:Maltivec}
+BROKEN=altivec-enabled binary does not start
 ONLY_FOR_ARCHS=	powerpc
 CONFIGURE_ARGS+=--enable-altivec
 PKG_ARGS+=-Daltivec=1

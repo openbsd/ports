@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_demux_Makefile_in,v 1.4 2007/12/11 11:07:54 jakemsr Exp $
---- modules/demux/Makefile.in.orig	Tue Nov 27 14:23:24 2007
-+++ modules/demux/Makefile.in	Sat Dec  1 22:36:40 2007
+$OpenBSD: patch-modules_demux_Makefile_in,v 1.5 2008/06/09 22:55:43 sthen Exp $
+--- modules/demux/Makefile.in.orig	Tue Jun  3 10:03:31 2008
++++ modules/demux/Makefile.in	Sat Jun  7 23:56:56 2008
 @@ -626,7 +626,7 @@ LTCXXCOMPILE = $(LIBTOOL) --tag=CXX --mode=compile $(C
  	$(AM_CXXFLAGS) $(CXXFLAGS)
  CXXLD = $(CXX)

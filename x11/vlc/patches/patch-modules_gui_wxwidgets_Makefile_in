@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_gui_wxwidgets_Makefile_in,v 1.4 2007/12/11 11:07:54 jakemsr Exp $
---- modules/gui/wxwidgets/Makefile.in.orig	Tue Nov 27 14:23:36 2007
-+++ modules/gui/wxwidgets/Makefile.in	Sat Dec  1 22:37:33 2007
+$OpenBSD: patch-modules_gui_wxwidgets_Makefile_in,v 1.5 2008/06/09 22:55:43 sthen Exp $
+--- modules/gui/wxwidgets/Makefile.in.orig	Tue Jun  3 10:03:49 2008
++++ modules/gui/wxwidgets/Makefile.in	Sat Jun  7 23:57:26 2008
 @@ -213,7 +213,7 @@ LTCXXCOMPILE = $(LIBTOOL) --tag=CXX --mode=compile $(C
  	$(AM_CXXFLAGS) $(CXXFLAGS)
  CXXLD = $(CXX)

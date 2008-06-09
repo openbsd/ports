@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/05/16 05:54:09 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2008/06/09 22:55:43 sthen Exp $
 @pkgpath x11/vlc
 %%altivec%%
 %%win32%%
 %%x86opt%%
-bin/vlc
+@bin bin/vlc
 bin/vlc-config
-bin/wxvlc
+@bin bin/wxvlc
 include/vlc/
 include/vlc/aout.h
 include/vlc/decoder.h
@@ -282,6 +282,7 @@ share/locale/ru/LC_MESSAGES/vlc.mo
 share/locale/sk/LC_MESSAGES/vlc.mo
 share/locale/sl/LC_MESSAGES/vlc.mo
 share/locale/sq/LC_MESSAGES/vlc.mo
+share/locale/sr/LC_MESSAGES/vlc.mo
 share/locale/sv/LC_MESSAGES/vlc.mo
 share/locale/th/LC_MESSAGES/vlc.mo
 share/locale/tr/LC_MESSAGES/vlc.mo
