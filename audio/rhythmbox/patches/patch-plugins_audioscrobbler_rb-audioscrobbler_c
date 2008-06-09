@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_audioscrobbler_rb-audioscrobbler_c,v 1.1 2008/05/14 09:41:56 jasper Exp $
---- plugins/audioscrobbler/rb-audioscrobbler.c.orig	Mon May 28 07:23:44 2007
-+++ plugins/audioscrobbler/rb-audioscrobbler.c	Tue May 13 12:22:47 2008
-@@ -689,7 +689,7 @@ rb_audioscrobbler_do_handshake (RBAudioscrobbler *audi
+$OpenBSD: patch-plugins_audioscrobbler_rb-audioscrobbler_c,v 1.2 2008/06/09 22:59:42 ajacoutot Exp $
+--- plugins/audioscrobbler/rb-audioscrobbler.c.orig	Thu Feb 28 12:16:39 2008
++++ plugins/audioscrobbler/rb-audioscrobbler.c	Sun Jun  8 19:59:11 2008
+@@ -865,7 +865,7 @@ rb_audioscrobbler_should_handshake (RBAudioscrobbler *
  	}
  
  	if (time (NULL) < audioscrobbler->priv->handshake_next) {
@@ -9,13 +9,13 @@ $OpenBSD: patch-plugins_audioscrobbler_rb-audioscrobbler_c,v 1.1 2008/05/14 09:4
 +		rb_debug ("Too soon; time=%d, handshake_next=%d",
  			  time (NULL),
  			  audioscrobbler->priv->handshake_next);
- 		return;
-@@ -788,7 +788,7 @@ rb_audioscrobbler_submit_queue (RBAudioscrobbler *audi
+ 		return FALSE;
+@@ -980,7 +980,7 @@ rb_audioscrobbler_build_authentication_data (RBAudiosc
  
  	time(&now);
  	if (now < audioscrobbler->priv->submit_next) {
 -		rb_debug ("Too soon (next submission in %ld seconds)",
 +		rb_debug ("Too soon (next submission in %d seconds)",
  			  audioscrobbler->priv->submit_next - now);
- 		return;
+ 		return NULL;
  	}

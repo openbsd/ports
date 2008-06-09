@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_daap_rb-daap-src_c,v 1.1 2008/05/14 09:41:56 jasper Exp $
---- plugins/daap/rb-daap-src.c.orig	Fri Mar  2 01:16:17 2007
-+++ plugins/daap/rb-daap-src.c	Tue May 13 12:22:48 2008
-@@ -455,7 +455,7 @@ rb_daap_src_write (RBDAAPSrc *src, const guchar *buf, 
+$OpenBSD: patch-plugins_daap_rb-daap-src_c,v 1.2 2008/06/09 22:59:42 ajacoutot Exp $
+--- plugins/daap/rb-daap-src.c.orig	Thu Feb 28 12:16:39 2008
++++ plugins/daap/rb-daap-src.c	Sun Jun  8 19:59:11 2008
+@@ -290,7 +290,7 @@ rb_daap_src_write (RBDAAPSrc *src, const guchar *buf, 
  		bytes_written += wrote;
  	}
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-plugins_daap_rb-daap-src_c,v 1.1 2008/05/14 09:41:56 jasper Exp 
  	return bytes_written;
  }
  
-@@ -469,7 +469,7 @@ rb_daap_src_read (RBDAAPSrc *src, guchar *buf, size_t 
+@@ -304,7 +304,7 @@ rb_daap_src_read (RBDAAPSrc *src, guchar *buf, size_t 
  		if (bytes_read > src->buffer_size)
  			bytes_read = src->buffer_size;
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-plugins_daap_rb-daap-src_c,v 1.1 2008/05/14 09:41:56 jasper Exp 
  		memcpy (buf, src->buffer, bytes_read);
  		src->buffer += bytes_read;
  		src->buffer_size -= bytes_read;
-@@ -493,7 +493,7 @@ rb_daap_src_read (RBDAAPSrc *src, guchar *buf, size_t 
+@@ -328,7 +328,7 @@ rb_daap_src_read (RBDAAPSrc *src, guchar *buf, size_t 
  		bytes_read += ret;
  	}
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-plugins_daap_rb-daap-src_c,v 1.1 2008/05/14 09:41:56 jasper Exp 
  	return bytes_read;
  }
  
-@@ -545,7 +545,7 @@ rb_daap_src_read_chunk_size (RBDAAPSrc *src, gboolean 
+@@ -380,7 +380,7 @@ rb_daap_src_read_chunk_size (RBDAAPSrc *src, gboolean 
  				return FALSE;
  			}
  
@@ -37,9 +37,9 @@ $OpenBSD: patch-plugins_daap_rb-daap-src_c,v 1.1 2008/05/14 09:41:56 jasper Exp 
  			return TRUE;
  		} else if (isxdigit (ch)) {
  			chunk_buf[i++] = ch;
-@@ -953,7 +953,7 @@ rb_daap_src_create (GstPushSrc *psrc, GstBuffer **outb
+@@ -725,7 +725,7 @@ rb_daap_src_create (GstPushSrc *psrc, GstBuffer **outb
+ 
  	buf = gst_buffer_new_and_alloc (readsize);
- #endif
  
 -	GST_LOG_OBJECT (src, "Reading %d bytes", readsize);
 +	GST_LOG_OBJECT (src, "Reading %zu bytes", readsize);
