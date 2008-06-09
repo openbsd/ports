@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_examples_Makefile_in,v 1.1 2008/06/09 21:00:57 naddy Exp $
+--- docs/examples/Makefile.in.orig	Mon Jun  9 11:04:37 2008
++++ docs/examples/Makefile.in	Mon Jun  9 11:05:09 2008
+@@ -174,7 +174,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(L
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+-	$(LDFLAGS) -o $@
++	-L../../lib/.libs $(LDFLAGS) -o $@
+ SOURCES = 10-at-a-time.c anyauthput.c cookie_interface.c debug.c \
+ 	fileupload.c fopen.c ftpget.c ftpgetresp.c ftpupload.c \
+ 	getinfo.c getinmemory.c http-post.c httpput.c https.c \

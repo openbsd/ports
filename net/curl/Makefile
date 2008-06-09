@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2008/05/13 17:56:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2008/06/09 21:00:57 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
 DISTNAME=	curl-7.18.1
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=  curl                 9.0      # .4.1
 CATEGORIES=	net
 MASTER_SITES=	http://curl.haxx.se/download/ \
@@ -35,8 +36,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-random="/dev/arandom" \
 		--with-libidn=${LOCALBASE} \
 		--without-libssh2
-# don't link against ${LOCALBASE}/lib/libcurl
-CONFIGURE_ENV=	LDFLAGS="-L${WRKBUILD}/lib/.libs"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
