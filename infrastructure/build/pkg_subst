@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_subst,v 1.2 2008/05/06 16:13:15 espie Exp $
+# $OpenBSD: pkg_subst,v 1.3 2008/06/09 12:01:39 espie Exp $
 #
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
@@ -28,7 +28,7 @@ my $subst = OpenBSD::Subst->new;
 
 our $opt_c;
 set_usage(
-'pkg_subst [-c] [-Dvar=value ...] file ...');
+'pkg_subst [-c] [-Dvar=value ...] [file ...]');
 try { 
 	getopts('D:ch',
 	    {'D' =>
@@ -47,7 +47,7 @@ if (!defined $bak) {
 }
 
 if (@ARGV == 0) {
-	Usage();
+	$subst->copy_fh2(\*STDIN, \*STDOUT);
 }
 
 while (my $src = shift) {
