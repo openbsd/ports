@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/05/10 17:10:24 deanna Exp $
+# $OpenBSD: Makefile,v 1.20 2008/06/09 12:34:55 espie Exp $
 
 VERSION=		2.5
 PATCHLEVEL=		.2
@@ -16,7 +16,7 @@ CFLAGS+=		-mieee
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS+=	--with-cxx_main
-ALL_TARGET?=		all ./Lib/plat-openbsd4
+ALL_TARGET =		everything
 
 post-extract:
 	rm -r ${WRKDIST}/Modules/expat
