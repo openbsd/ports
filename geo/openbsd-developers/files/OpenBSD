@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.25 2008/05/31 05:12:30 phessler Exp $
+# $OpenBSD: OpenBSD,v 1.26 2008/06/09 20:10:37 av Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -43,6 +43,7 @@
 47.50		7.60		"dhartmei"	# Daniel Hartmeier
 47.532		7.648		"winiger"	# Marc Winiger
 47.581		7.589		"mbalmer"	# Marc Balmer
+47.837768	35.211241	"av"		# Alexey Vatchenko
 48.0718		11.9582		"grunk"		# Alexander von Gernler
 48.08		11.31		"sturm"		# Nikolay Sturm
 48.111761	-1.680265	"landry"	# Landry Breuil
