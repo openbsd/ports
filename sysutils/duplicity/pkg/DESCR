@@ -1,0 +1,13 @@
+Duplicity incrementally backs up files and directory by encrypting
+tar-format volumes with GnuPG and uploading them to a remote (or local)
+file server.  Currently local, ftp, ssh/scp, rsync, WebDAV, WebDAVs, HSi
+and Amazon S3 backends are available.  Because duplicity uses librsync,
+the incremental archives are space efficient and only record the parts
+of files that have changed since the last backup.  Currently duplicity
+supports deleted files, full unix permissions, directories, symbolic
+links, fifos, etc., but not hard links.
+
+The duplicity package also includes the rdiffdir utility.  Rdiffdir is
+an extension of librsync's rdiff to directories - it can be used to
+produce signatures and deltas of directories as well as regular files.
+These signatures and deltas are in GNU tar format.
