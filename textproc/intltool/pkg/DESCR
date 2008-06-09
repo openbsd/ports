@@ -1,2 +1,11 @@
 The intltool package is a set of tools for translating the contents of
 data files using the gettext translation framework.
+
+The intltool collection can be used to do these things:
+ * Extract translatable strings from various source files (.xml.in,
+   .glade, .desktop.in, .server.in, .oaf.in).
+ * Collect the extracted strings together with messages from traditional
+   source files (.c, .h) in po/$(PACKAGE).pot.
+ * Merge back the translations from .po files into .xml, .desktop and
+   .oaf files.  This merge step will happen at build resp. installation
+   time.
