@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/12/30 01:07:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/06/09 15:59:17 eric Exp $
 @conflict asmail-*
-bin/xfaces
+@bin bin/xfaces
 include/X11/pixmaps/
 include/X11/pixmaps/andrew-shape.xpm
 include/X11/pixmaps/andrew.xpm
