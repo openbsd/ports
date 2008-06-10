@@ -1,31 +1,31 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/06/05 15:52:21 okan Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/06/10 18:00:35 sthen Exp $
 @pkgpath net/net-snmp
 %%SHARED%%
-bin/encode_keychange
+@bin bin/encode_keychange
 bin/fixproc
 @comment bin/ipf-mod.pl
 bin/mib2c
 bin/mib2c-update
 bin/net-snmp-config
-bin/snmpbulkget
-bin/snmpbulkwalk
+@bin bin/snmpbulkget
+@bin bin/snmpbulkwalk
 bin/snmpcheck
 bin/snmpconf
-bin/snmpdelta
-bin/snmpdf
-bin/snmpget
-bin/snmpgetnext
-bin/snmpinform
-bin/snmpnetstat
-bin/snmpset
-bin/snmpstatus
-bin/snmptable
-bin/snmptest
-bin/snmptranslate
-bin/snmptrap
-bin/snmpusm
-bin/snmpvacm
-bin/snmpwalk
+@bin bin/snmpdelta
+@bin bin/snmpdf
+@bin bin/snmpget
+@bin bin/snmpgetnext
+@bin bin/snmpinform
+@bin bin/snmpnetstat
+@bin bin/snmpset
+@bin bin/snmpstatus
+@bin bin/snmptable
+@bin bin/snmptest
+@bin bin/snmptranslate
+@bin bin/snmptrap
+@bin bin/snmpusm
+@bin bin/snmpvacm
+@bin bin/snmpwalk
 bin/tkmib
 bin/traptoemail
 include/net-snmp/
@@ -344,8 +344,8 @@ lib/libnetsnmptrapd.la
 @man man/man5/variables.5
 @man man/man8/snmpd.8
 @man man/man8/snmptrapd.8
-sbin/snmpd
-sbin/snmptrapd
+@bin sbin/snmpd
+@bin sbin/snmptrapd
 share/doc/net-snmp/
 share/doc/net-snmp/AGENT.txt
 share/doc/net-snmp/FAQ
