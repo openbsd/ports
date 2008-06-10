@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2008/05/16 20:50:55 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.78 2008/06/10 05:11:27 pvalchev Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
@@ -28,10 +28,6 @@ WANTLIB-main=	c crypto m pcap ssl stdc++
 
 USE_GMAKE=	yes
 MODULES=	lang/python
-
-.if ${MACHINE_ARCH} == "alpha"
-CFLAGS+=	-mieee
-.endif
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

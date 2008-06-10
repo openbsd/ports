@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/05/08 15:10:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2008/06/10 05:11:21 pvalchev Exp $
 
 COMMENT=	library of optimized inner loops
 
@@ -27,9 +27,5 @@ USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-glib
-
-.if ${MACHINE_ARCH} == "alpha"
-CFLAGS+=-mieee
-.endif
 
 .include <bsd.port.mk>

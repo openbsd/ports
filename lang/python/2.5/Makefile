@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2008/06/09 12:34:55 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2008/06/10 05:11:27 pvalchev Exp $
 
 VERSION=		2.5
 PATCHLEVEL=		.2
@@ -9,9 +9,6 @@ SHARED_LIBS=		python2.5 0.0
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=		patch-* sup64-*
-.endif
-.if ${MACHINE_ARCH} == "alpha"
-CFLAGS+=		-mieee
 .endif
 
 AUTOCONF_VERSION=	2.61
