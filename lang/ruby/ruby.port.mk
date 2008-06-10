@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.17 2008/02/08 17:13:15 bernd Exp $
+# $OpenBSD: ruby.port.mk,v 1.18 2008/06/10 15:40:44 jcs Exp $
 
 # ruby module
 
@@ -36,7 +36,7 @@ SUBST_VARS+=	DISTNAME
 
 GEM=		${LOCALBASE}/bin/gem
 GEM_BASE=	${PREFIX}/lib/ruby/gems/${MODRUBY_REV}
-GEM_FLAGS=	--local --rdoc --no-force
+GEM_FLAGS=	--local --rdoc --no-force --verbose
 _GEM_CONTENT=	${WRKDIR}/gem-content
 _GEM_DATAFILE=	${_GEM_CONTENT}/data.tar.gz
 _GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
