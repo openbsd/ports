@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/03/16 11:03:07 espie Exp $
-bin/icc2ps
-bin/icclink
-bin/icctrans
-bin/jpegicc
-bin/tiffdiff
-bin/tifficc
-bin/wtpt
+@comment $OpenBSD: PLIST,v 1.5 2008/06/10 00:42:40 okan Exp $
+@bin bin/icc2ps
+@bin bin/icclink
+@bin bin/icctrans
+@bin bin/jpegicc
+@bin bin/tiffdiff
+@bin bin/tifficc
+@bin bin/wtpt
 include/icc34.h
 include/lcms.h
 lib/liblcms.a

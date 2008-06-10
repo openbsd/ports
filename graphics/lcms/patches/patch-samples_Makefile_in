@@ -1,7 +1,7 @@
-$OpenBSD: patch-samples_Makefile_in,v 1.4 2007/08/05 19:04:52 espie Exp $
---- samples/Makefile.in.orig	Tue Nov  1 01:13:40 2005
-+++ samples/Makefile.in	Tue Mar  7 22:42:42 2006
-@@ -243,17 +243,17 @@ target_vendor = @target_vendor@
+$OpenBSD: patch-samples_Makefile_in,v 1.5 2008/06/10 00:42:40 okan Exp $
+--- samples/Makefile.in.orig	Fri Jul 27 06:10:45 2007
++++ samples/Makefile.in	Sun Jun  1 03:22:48 2008
+@@ -250,17 +250,17 @@ top_srcdir = @top_srcdir@
  # Don't require all the GNU mandated files
  AUTOMAKE_OPTIONS = 1.7 foreign
  AM_CPPFLAGS = -I$(top_builddir)/include -I$(top_srcdir)/include

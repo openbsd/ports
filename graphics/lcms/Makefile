@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.16 2008/06/10 00:42:40 okan Exp $
 
 COMMENT=	color management library
 
-DISTNAME=	lcms-1.15
-PKGNAME=	${DISTNAME}
-SHARED_LIBS=	lcms	1.15
+DISTNAME=	lcms-1.17
+SHARED_LIBS=	lcms	2.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lcms/}
 
