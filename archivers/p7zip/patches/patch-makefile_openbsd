@@ -1,8 +1,8 @@
-$OpenBSD: patch-makefile_openbsd,v 1.1.1.1 2007/04/20 17:50:05 steven Exp $
---- makefile.openbsd.orig	Fri May 19 19:52:42 2006
-+++ makefile.openbsd	Mon Apr 16 09:52:33 2007
-@@ -3,17 +3,17 @@
- # LITTLE_ENDIAN and BIG_ENDIAN are already defined by the system headers
+$OpenBSD: patch-makefile_openbsd,v 1.2 2008/06/10 03:24:38 sthen Exp $
+--- makefile.openbsd.orig	Wed Aug  8 05:15:29 2007
++++ makefile.openbsd	Sun Jun  8 11:50:18 2008
+@@ -2,17 +2,17 @@
+ # makefile for OpenBSD (x86, PPC, alpha ...)
  #
  
 -OPTFLAGS=-O

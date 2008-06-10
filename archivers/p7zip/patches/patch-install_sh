@@ -1,6 +1,6 @@
-$OpenBSD: patch-install_sh,v 1.1.1.1 2007/04/20 17:50:05 steven Exp $
---- install.sh.orig	Tue Jun 27 23:09:12 2006
-+++ install.sh	Wed Jan 10 19:27:47 2007
+$OpenBSD: patch-install_sh,v 1.2 2008/06/10 03:24:38 sthen Exp $
+--- install.sh.orig	Sun Mar  2 13:35:05 2008
++++ install.sh	Mon Jun  9 20:27:58 2008
 @@ -1,14 +1,14 @@
  #! /bin/sh
  
@@ -11,25 +11,25 @@ $OpenBSD: patch-install_sh,v 1.1.1.1 2007/04/20 17:50:05 steven Exp $
  # DEST_HOME=${HOME}/INSTALL/usr/local
  DEST_BIN=${DEST_HOME}/bin
  DEST_SHARE=${DEST_HOME}/lib/p7zip
- DEST_SHARE_DOC=${DEST_HOME}/share/doc/p7zip
  DEST_MAN=${DEST_HOME}/man
+ DEST_SHARE_DOC=${DEST_HOME}/share/doc/p7zip
 -DEST_DIR=
 +DEST_DIR=${DESTDIR}
- [ "$1" ] && DEST_BIN=$1
- [ "$2" ] && DEST_SHARE=$2
- [ "$3" ] && DEST_MAN=$3
+ [ "$1" ] && DEST_BIN="$1"
+ [ "$2" ] && DEST_SHARE="$2"
+ [ "$3" ] && DEST_MAN="$3"
 @@ -163,10 +163,10 @@ fi
  
  if [ -d DOCS ]
  then
 -  echo "- installing HTML help in ${DEST_DIR}${DEST_SHARE_DOC}/DOCS"
 +  echo "- installing HTML help in ${DEST_DIR}${DEST_SHARE_DOC}"
-   mkdir -p ${DEST_DIR}${DEST_SHARE_DOC}
--  cp -r DOCS ${DEST_DIR}${DEST_SHARE_DOC}/DOCS
--  find ${DEST_DIR}${DEST_SHARE_DOC}/DOCS -type d -exec chmod 555 {} \;
--  find ${DEST_DIR}${DEST_SHARE_DOC}/DOCS -type f -exec chmod 444 {} \;
-+  cp -r DOCS/* ${DEST_DIR}${DEST_SHARE_DOC}
-+  find ${DEST_DIR}${DEST_SHARE_DOC} -type d -exec chmod 555 {} \;
-+  find ${DEST_DIR}${DEST_SHARE_DOC} -type f -exec chmod 444 {} \;
+   mkdir -p "${DEST_DIR}${DEST_SHARE_DOC}"
+-  cp -r DOCS "${DEST_DIR}${DEST_SHARE_DOC}/DOCS"
+-  find "${DEST_DIR}${DEST_SHARE_DOC}/DOCS" -type d -exec chmod 555 {} \;
+-  find "${DEST_DIR}${DEST_SHARE_DOC}/DOCS" -type f -exec chmod 444 {} \;
++  cp -r DOCS/* "${DEST_DIR}${DEST_SHARE_DOC}"
++  find "${DEST_DIR}${DEST_SHARE_DOC}" -type d -exec chmod 555 {} \;
++  find "${DEST_DIR}${DEST_SHARE_DOC}" -type f -exec chmod 444 {} \;
  fi
  
