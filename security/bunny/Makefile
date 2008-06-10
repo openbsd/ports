@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/13 18:33:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/10 05:48:55 pvalchev Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 			
 COMMENT=	general-purpose protocol-blind fuzzer for C programs
 
-DISTNAME=	bunny-0.92
+DISTNAME=	bunny-0.93
 CATEGORIES=    	security net
 EXTRACT_SUFX=	.tgz
 
