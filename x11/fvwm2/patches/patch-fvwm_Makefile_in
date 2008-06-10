@@ -1,7 +1,7 @@
-$OpenBSD: patch-fvwm_Makefile_in,v 1.4 2005/07/29 05:01:49 pvalchev Exp $
---- fvwm/Makefile.in.orig	Sun Jun  5 14:04:22 2005
-+++ fvwm/Makefile.in	Sun Jun  5 14:04:32 2005
-@@ -557,9 +557,9 @@ info: info-am
+$OpenBSD: patch-fvwm_Makefile_in,v 1.5 2008/06/10 05:39:38 pvalchev Exp $
+--- fvwm/Makefile.in.orig	Sat Dec  9 05:11:00 2006
++++ fvwm/Makefile.in	Mon Jun  9 23:00:18 2008
+@@ -565,9 +565,9 @@ info: info-am
  
  info-am:
  

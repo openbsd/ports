@@ -1,7 +1,7 @@
-$OpenBSD: patch-utils_Makefile_in,v 1.4 2005/07/29 05:01:49 pvalchev Exp $
---- utils/Makefile.in.orig	Sun Jun  5 14:05:26 2005
-+++ utils/Makefile.in	Sun Jun  5 14:05:46 2005
-@@ -511,10 +511,9 @@ info: info-am
+$OpenBSD: patch-utils_Makefile_in,v 1.5 2008/06/10 05:39:38 pvalchev Exp $
+--- utils/Makefile.in.orig	Sat Dec  9 05:11:12 2006
++++ utils/Makefile.in	Mon Jun  9 23:00:18 2008
+@@ -534,10 +534,9 @@ info: info-am
  
  info-am:
  

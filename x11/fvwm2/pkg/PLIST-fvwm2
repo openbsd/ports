@@ -1,53 +1,53 @@
-@comment $OpenBSD: PLIST-fvwm2,v 1.7 2004/12/30 01:20:39 espie Exp $
+@comment $OpenBSD: PLIST-fvwm2,v 1.8 2008/06/10 05:39:38 pvalchev Exp $
 @conflict fvwm2+fvicons-*
 @conflict fvwm95-*
-bin/FvwmCommand
+@bin bin/FvwmCommand
 bin/fvwm-config
 bin/fvwm-menu-desktop
 bin/fvwm-menu-directory
 bin/fvwm-menu-headlines
 bin/fvwm-menu-xlock
-bin/fvwm2
+@bin bin/fvwm2
 bin/fvwm24_convert
 bin/fvwmbug
-bin/xpmroot
+@bin bin/xpmroot
 libexec/fvwm/
 libexec/fvwm/${VERSION}/
-libexec/fvwm/${VERSION}/FvwmAnimate
-libexec/fvwm/${VERSION}/FvwmAudio
-libexec/fvwm/${VERSION}/FvwmAuto
-libexec/fvwm/${VERSION}/FvwmBacker
-libexec/fvwm/${VERSION}/FvwmBanner
-libexec/fvwm/${VERSION}/FvwmButtons
+@bin libexec/fvwm/${VERSION}/FvwmAnimate
+@bin libexec/fvwm/${VERSION}/FvwmAudio
+@bin libexec/fvwm/${VERSION}/FvwmAuto
+@bin libexec/fvwm/${VERSION}/FvwmBacker
+@bin libexec/fvwm/${VERSION}/FvwmBanner
+@bin libexec/fvwm/${VERSION}/FvwmButtons
 libexec/fvwm/${VERSION}/FvwmCascade
 libexec/fvwm/${VERSION}/FvwmCommand.pm
 libexec/fvwm/${VERSION}/FvwmCommand.sh
-libexec/fvwm/${VERSION}/FvwmCommandS
-libexec/fvwm/${VERSION}/FvwmConsole
-libexec/fvwm/${VERSION}/FvwmConsoleC
+@bin libexec/fvwm/${VERSION}/FvwmCommandS
+@bin libexec/fvwm/${VERSION}/FvwmConsole
+@bin libexec/fvwm/${VERSION}/FvwmConsoleC
 libexec/fvwm/${VERSION}/FvwmConsoleC.pl
-libexec/fvwm/${VERSION}/FvwmCpp
-libexec/fvwm/${VERSION}/FvwmDebug
-libexec/fvwm/${VERSION}/FvwmDragWell
-libexec/fvwm/${VERSION}/FvwmEvent
-libexec/fvwm/${VERSION}/FvwmForm
-libexec/fvwm/${VERSION}/FvwmGtk
-libexec/fvwm/${VERSION}/FvwmIconBox
-libexec/fvwm/${VERSION}/FvwmIconMan
-libexec/fvwm/${VERSION}/FvwmIdent
-libexec/fvwm/${VERSION}/FvwmM4
-libexec/fvwm/${VERSION}/FvwmPager
-libexec/fvwm/${VERSION}/FvwmRearrange
-libexec/fvwm/${VERSION}/FvwmSave
-libexec/fvwm/${VERSION}/FvwmSaveDesk
-libexec/fvwm/${VERSION}/FvwmScript
-libexec/fvwm/${VERSION}/FvwmScroll
+@bin libexec/fvwm/${VERSION}/FvwmCpp
+@bin libexec/fvwm/${VERSION}/FvwmDebug
+@bin libexec/fvwm/${VERSION}/FvwmDragWell
+@bin libexec/fvwm/${VERSION}/FvwmEvent
+@bin libexec/fvwm/${VERSION}/FvwmForm
+@bin libexec/fvwm/${VERSION}/FvwmGtk
+@bin libexec/fvwm/${VERSION}/FvwmIconBox
+@bin libexec/fvwm/${VERSION}/FvwmIconMan
+@bin libexec/fvwm/${VERSION}/FvwmIdent
+@bin libexec/fvwm/${VERSION}/FvwmM4
+@bin libexec/fvwm/${VERSION}/FvwmPager
+@bin libexec/fvwm/${VERSION}/FvwmRearrange
+@bin libexec/fvwm/${VERSION}/FvwmSave
+@bin libexec/fvwm/${VERSION}/FvwmSaveDesk
+@bin libexec/fvwm/${VERSION}/FvwmScript
+@bin libexec/fvwm/${VERSION}/FvwmScroll
 libexec/fvwm/${VERSION}/FvwmTalk
-libexec/fvwm/${VERSION}/FvwmTaskBar
-libexec/fvwm/${VERSION}/FvwmTheme
+@bin libexec/fvwm/${VERSION}/FvwmTaskBar
+@bin libexec/fvwm/${VERSION}/FvwmTheme
 libexec/fvwm/${VERSION}/FvwmTile
-libexec/fvwm/${VERSION}/FvwmWharf
-libexec/fvwm/${VERSION}/FvwmWinList
+@bin libexec/fvwm/${VERSION}/FvwmWharf
+@bin libexec/fvwm/${VERSION}/FvwmWinList
 @man man/man1/FvwmAnimate.1
 @man man/man1/FvwmAuto.1
 @man man/man1/FvwmBacker.1
