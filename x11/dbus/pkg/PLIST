@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/03/23 10:53:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/06/10 03:09:39 sturm Exp $
 @newgroup _dbus:572
 @newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -52,3 +52,4 @@ share/examples/dbus/dbus-1/system.conf
 share/examples/dbus/dbus-1/system.d/
 @sample ${SYSCONFDIR}/dbus-1/system.d/
 @exec ${PREFIX}/bin/dbus-uuidgen --ensure
+@extra ${SYSCONFDIR}/dbus-1/machine-id

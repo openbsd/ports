@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2008/04/20 21:00:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2008/06/10 03:09:39 sturm Exp $
 
 COMMENT=		message bus system
 
 DISTNAME=		dbus-1.0.2
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 SHARED_LIBS +=  dbus-1               6.0      # .5.0
 CATEGORIES=		x11
 
