@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/06/11 21:55:36 laurent Exp $
+--- Makefile.orig	Tue May 27 19:29:59 2008
++++ Makefile	Tue May 27 19:30:03 2008
+@@ -1,9 +1,8 @@
+-CC=gcc
+ PREFIX=/usr
+ DOCDIR=${PREFIX}/share/doc/rarcrack
+ 
+ all:
+-	${CC} -pthread rarcrack.c `xml2-config --libs --cflags` -O2 -o rarcrack
++	${CC} ${CFLAGS} -pthread rarcrack.c `xml2-config --libs --cflags` -o rarcrack
+ clean:
+ 	-rm *.o rarcrack
+ install:

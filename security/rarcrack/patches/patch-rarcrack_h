@@ -1,0 +1,16 @@
+$OpenBSD: patch-rarcrack_h,v 1.1.1.1 2008/06/11 21:55:36 laurent Exp $
+--- rarcrack.h.orig	Sat May  3 22:45:31 2008
++++ rarcrack.h	Sat May  3 22:57:08 2008
+@@ -31,10 +31,10 @@
+ 
+ char default_ABC[] = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ 
+-const char CMD_DETECT[] = "file -i -b %s"; //this command return what is the file mime type
++const char CMD_DETECT[] = "file -b %s"; //this command return what is the file mime type
+ 
+ const char* TYPE[] = {"rar",		"7z",		"zip", ""}; //the last "" signing this is end of the list
+-const char* MIME[] = {"application/x-rar", "application/octet-stream", "application/x-zip", ""};
++const char* MIME[] = {"RAR", "7z", "Zip", ""};
+ const char* CMD[] = {"unrar t -y -p%s %s 2>&1", "7z t -y -p%s %s 2>&1", "unzip -P%s -t %s 2>&1", ""};
+ 
+ #define PWD_LEN 100
