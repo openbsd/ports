@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/11 18:17:02 okan Exp $
 
 COMMENT=	optimized module loading
 
 MODULES=	cpan
-DISTNAME=	prefork-1.01
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	prefork-1.02
 CATEGORIES=	devel
 
 CPAN_AUTHOR=	ADAMK
