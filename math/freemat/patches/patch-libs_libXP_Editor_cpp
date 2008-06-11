@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_libXP_Editor_cpp,v 1.1 2008/06/11 21:09:07 martynas Exp $
+--- libs/libXP/Editor.cpp.orig	Sun Mar 16 21:33:55 2008
++++ libs/libXP/Editor.cpp	Thu Mar 20 14:25:22 2008
+@@ -16,6 +16,8 @@
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  *
+  */
++
++#include <unistd.h>
+ #include "Editor.hpp"
+ #include "Interpreter.hpp"
+ #include "highlighter.hpp"

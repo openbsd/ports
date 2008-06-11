@@ -1,0 +1,23 @@
+$OpenBSD: patch-acinclude_m4,v 1.3 2008/06/11 21:09:06 martynas Exp $
+--- acinclude.m4.orig	Fri Mar 14 17:43:34 2008
++++ acinclude.m4	Thu Mar 20 14:05:42 2008
+@@ -304,13 +304,18 @@ extern_flags=""
+ need_extern="no"
+ LIBS="$LIBS $FLIBS"
+ 
++save_LIBS="$LIBS"
++LIBS="-lossaudio -lm -pthread $LIBS"
++
+ AC_CHECK_LIB(portaudio,Pa_GetDefaultInputDevice,found_portaudio19="yes",found_portaudio19="no")
+ AC_CHECK_HEADER(portaudio.h,[],found_portaudio19="no")
+ 
+ if test x"$found_portaudio19" == xyes; then
+   LIBS="-lportaudio $LIBS"
+-  CFLAGS="$CFLAGS"
++  CFLAGS="-pthread $CFLAGS"
+   AC_DEFINE(HAVE_PORTAUDIO19, 1, [Set to 1 if you have libportaudio (v19 API)])
++else
++  LIBS="$save_LIBS"
+ fi
+ 
+ if test x"$found_portaudio19" != xyes; then

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/29 06:53:39 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2008/06/11 21:09:06 martynas Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 
-V=		3.5
+V=		3.6
 DISTNAME=	FreeMat-${V}
 PKGNAME=	freemat-${V}
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	GL GLU ICE SM X11 Xcursor Xext Xfixes Xi Xinerama Xrandr \
 		Xrender c curses fontconfig freetype g2c glib-2.0 \
-		m png pthread stdc++ z amd gthread-2.0 ssl crypto
+		m ossaudio png pthread stdc++ z amd gthread-2.0 ssl crypto
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freemat/}
 
@@ -31,14 +31,16 @@ LIB_DEPENDS=	avcall::devel/ffcall \
 		fftw3f.>=4::math/fftw3,float \
 		lapack.>=1::math/lapack \
 		pcre::devel/pcre \
+		portaudio::audio/portaudio-svn \
 		umfpack::math/umfpack \
-		QtGui,QtNetwork,QtOpenGL,QtXml::x11/qt4
+		QtGui,QtNetwork,QtOpenGL,QtSvg,QtXml::x11/qt4
 
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=  gnu
+AUTOCONF_VERSION= 2.61
+CONFIGURE_STYLE=  autoconf no-autoheader
 
 CONFIGURE_ENV=	F77=${FC} \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/amd -I${LOCALBASE}/include/umfpack -I${X11BASE}/include" \
