@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.9 2007/10/08 08:22:42 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2008/06/11 02:59:32 wcmaier Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT=	cryptographic tools for Python
+COMMENT=		cryptographic tools for Python
 
-VERSION=	2.0.1
-DISTNAME=	pycrypto-${VERSION}
-PKGNAME=	py-crypto-${VERSION}p3
-CATEGORIES=    	security devel
+MODPY_EGG_VERSION=	2.0.1
+DISTNAME=		pycrypto-${MODPY_EGG_VERSION}
+PKGNAME=		py-crypto-${MODPY_EGG_VERSION}p4
+CATEGORIES=    		security devel
 
-HOMEPAGE=	http://www.amk.ca/python/code/crypto.html
+HOMEPAGE=		http://www.amk.ca/python/code/crypto.html
 
-MAINTAINER=	Jason Ish <ish@openbsd.org>
+MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 
-# Public domain (patented algoritms removed by patch)
+# Public domain (patented algorithms removed by patch)
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -26,8 +26,10 @@ LIB_DEPENDS=	gmp.>=6::devel/gmp
 
 DOCSDIR=	${PREFIX}/share/doc/py-crypto
 
-pre-build:
-	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' ${WRKSRC}/setup.py
+SUBST_VARS+=	LOCALBASE
+
+pre-configure:
+	@${SUBST_CMD} ${WRKSRC}/setup.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}

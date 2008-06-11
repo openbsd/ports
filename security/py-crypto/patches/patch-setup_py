@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.2 2006/01/23 08:52:55 alek Exp $
---- setup.py.orig	Sat May 28 14:24:30 2005
-+++ setup.py	Sat May 28 14:24:33 2005
+$OpenBSD: patch-setup_py,v 1.3 2008/06/11 02:59:32 wcmaier Exp $
+--- setup.py.orig	Mon Jun 13 20:20:22 2005
++++ setup.py	Wed May 28 20:56:03 2008
 @@ -64,9 +64,10 @@ class PCTBuildExt (build_ext):
      def build_extensions(self):
          self.extensions += [
@@ -51,7 +51,7 @@ $OpenBSD: patch-setup_py,v 1.2 2006/01/23 08:52:55 alek Exp $
  
              # Stream ciphers
              Extension("Crypto.Cipher.ARC4",
-@@ -116,14 +122,12 @@ class PCTBuildExt (build_ext):
+@@ -116,14 +119,12 @@ class PCTBuildExt (build_ext):
          build_ext.build_extensions(self)
  
      def detect_modules (self):
@@ -64,14 +64,14 @@ $OpenBSD: patch-setup_py,v 1.2 2006/01/23 08:52:55 alek Exp $
 -                                  libraries=['gmp'],
 -                                  sources=["src/_fastmath.c"]))
 +        exts.append(Extension("Crypto.PublicKey._fastmath",
-+                              include_dirs=['src/', '!!LOCALBASE!!/include'],
-+                              library_dirs=['!!LOCALBASE!!/lib'],
++                              include_dirs=['src/', '${LOCALBASE}/include'],
++                              library_dirs=['${LOCALBASE}/lib'],
 +                              libraries=['gmp'],
 +                              sources=["src/_fastmath.c"]))
          self.extensions += exts
  
  kw = {'name':"pycrypto",
-@@ -139,9 +142,9 @@ kw = {'name':"pycrypto",
+@@ -139,9 +140,9 @@ kw = {'name':"pycrypto",
        'package_dir' : { "Crypto":"." },
        # One module is defined here, because build_ext won't be
        # called unless there's at least one extension module defined.

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Cipher___init___py,v 1.1 2005/05/28 05:39:45 djm Exp $
---- Cipher/__init__.py.orig	Sat May 28 14:35:36 2005
-+++ Cipher/__init__.py	Sat May 28 14:35:49 2005
-@@ -11,7 +11,6 @@ If you don't know which algorithm to cho
+$OpenBSD: patch-Cipher___init___py,v 1.2 2008/06/11 02:59:32 wcmaier Exp $
+--- Cipher/__init__.py.orig	Fri Feb 28 09:28:35 2003
++++ Cipher/__init__.py	Wed May 28 20:55:20 2008
+@@ -11,7 +11,6 @@ If you don't know which algorithm to choose, use AES b
  standard and has undergone a fair bit of examination.
  
  Crypto.Cipher.AES         Advanced Encryption Standard
@@ -9,7 +9,7 @@ $OpenBSD: patch-Cipher___init___py,v 1.1 2005/05/28 05:39:45 djm Exp $
  Crypto.Cipher.ARC4        Alleged RC4
  Crypto.Cipher.Blowfish
  Crypto.Cipher.CAST
-@@ -19,12 +18,11 @@ Crypto.Cipher.DES         The Data Encry
+@@ -19,12 +18,11 @@ Crypto.Cipher.DES         The Data Encryption Standard
                            in the past, but today its 56-bit keys are too small.
  Crypto.Cipher.DES3        Triple DES.
  Crypto.Cipher.IDEA

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Util_test_py,v 1.1 2005/05/28 05:39:45 djm Exp $
---- Util/test.py.orig	Sat May 28 14:35:00 2005
-+++ Util/test.py	Sat May 28 14:36:49 2005
-@@ -223,8 +223,7 @@ def TestStreamModules(args=['arc4', 'XOR
+$OpenBSD: patch-Util_test_py,v 1.2 2008/06/11 02:59:32 wcmaier Exp $
+--- Util/test.py.orig	Fri Aug 13 17:24:18 2004
++++ Util/test.py	Wed May 28 20:55:21 2008
+@@ -223,8 +223,7 @@ def TestStreamModules(args=['arc4', 'XOR'], verbose=1)
                          die('XOR failed on entry '+`entry`)
  
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-Util_test_py,v 1.1 2005/05/28 05:39:45 djm Exp $
                       verbose=1):
      import string
      args=map(string.lower, args)
-@@ -267,23 +266,6 @@ def TestBlockModules(args=['aes', 'arc2'
+@@ -267,23 +266,6 @@ def TestBlockModules(args=['aes', 'arc2', 'des', 'blow
                          if verbose: print
  
  
@@ -35,7 +35,7 @@ $OpenBSD: patch-Util_test_py,v 1.1 2005/05/28 05:39:45 djm Exp $
      if 'blowfish' in args:
          ciph=exerciseBlockCipher('Blowfish',verbose)# Bruce Schneier's Blowfish cipher
          if (ciph!=None):
-@@ -413,41 +395,5 @@ def TestBlockModules(args=['aes', 'arc2'
+@@ -413,41 +395,5 @@ def TestBlockModules(args=['aes', 'arc2', 'des', 'blow
                      ciphertext=obj1.encrypt(plain)
                      if (ciphertext!=cipher):
                          die('DES3 CBC mode failed on entry '+`entry`)

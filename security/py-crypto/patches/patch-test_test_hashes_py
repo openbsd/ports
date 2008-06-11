@@ -1,7 +1,7 @@
-$OpenBSD: patch-test_test_hashes_py,v 1.1 2005/05/28 05:39:45 djm Exp $
---- test/test_hashes.py.orig	Sat May 28 14:37:59 2005
-+++ test/test_hashes.py	Sat May 28 14:38:15 2005
-@@ -10,7 +10,7 @@ from sancho.unittest import TestScenario
+$OpenBSD: patch-test_test_hashes_py,v 1.2 2008/06/11 02:59:32 wcmaier Exp $
+--- test/test_hashes.py.orig	Fri Aug 13 17:23:12 2004
++++ test/test_hashes.py	Wed May 28 20:55:21 2008
+@@ -10,7 +10,7 @@ from sancho.unittest import TestScenario, parse_args, 
  from Crypto.Hash import *
  import testdata
  
