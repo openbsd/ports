@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/04/23 20:48:33 okan Exp $
-bin/ldrdf
-bin/nasm
-bin/ndisasm
-bin/rdf2bin
-bin/rdf2com
-bin/rdf2ihx
-bin/rdfdump
-bin/rdflib
-bin/rdx
+@comment $OpenBSD: PLIST,v 1.10 2008/06/11 19:35:46 okan Exp $
+@bin bin/ldrdf
+@bin bin/nasm
+@bin bin/ndisasm
+@bin bin/rdf2bin
+@bin bin/rdf2com
+@bin bin/rdf2ihx
+@bin bin/rdfdump
+@bin bin/rdflib
+@bin bin/rdx
 @info info/nasm.info
 @man man/man1/ldrdf.1
 @man man/man1/nasm.1
