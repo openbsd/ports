@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/11 05:04:37 landry Exp $
 
 COMMENT=	multiple states library for the lua language
 SHARED_ONLY=	Yes
 
 DISTNAME=	rings-1.1
-PKGNAME=	lua${DISTNAME}
+PKGNAME=	lua${DISTNAME}p0
 CATEGORIES=	devel
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/2476/
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::lang/lua
-BUILD_DEPENDS=	${RUN_DEPENDS}
+MODULES=	lang/lua
 
 CFLAGS+=	-I${LOCALBASE}/include
 COMPILE=	${CC} ${CFLAGS} -fPIC -I${LOCALBASE}/include -c

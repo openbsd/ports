@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/11 05:04:37 landry Exp $
 
 COMMENT=	lua binding of libevent
 SHARED_ONLY=	Yes
 
 DISTNAME=	luaevent-0.1.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/2479/
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::lang/lua
-BUILD_DEPENDS=	${RUN_DEPENDS}
+MODULES=	lang/lua
 NO_REGRESS=	Yes
 WANTLIB=	event
 

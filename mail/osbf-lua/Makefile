@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/06/11 05:04:37 landry Exp $
 
 COMMENT=	lua text classification module and anti-spam solution
 
 DISTNAME=	osbf-lua-2.0.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	mail
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/2094/
@@ -15,10 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MODULES=	lang/lua
 SHARED_ONLY=	Yes
 NO_REGRESS=	Yes
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:lua->=5.1:lang/lua
 
 do-build:
 .for f in losbflib osbf_bayes osbf_aux

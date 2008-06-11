@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/16 02:53:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2008/06/11 05:04:37 landry Exp $
 
 COMMENT=	alarm library for the lua language
 SHARED_ONLY=	Yes
 
 DISTNAME=	lalarm
 DATE=		20061011
-PKGNAME=	luaalarm-${DATE}p1
+PKGNAME=	luaalarm-${DATE}p2
 # don't use PKGNAME
 DIST_SUBDIR=	luaalarm-${DATE}
 WRKDIST=	${WRKDIR}/alarm
@@ -20,8 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::lang/lua
-BUILD_DEPENDS=	${RUN_DEPENDS}
+MODULES=	lang/lua
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1

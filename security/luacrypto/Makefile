@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/06/11 05:04:37 landry Exp $
 
 COMMENT=	Lua binding for the OpenSSL crypto libraries
 SHARED_ONLY=	Yes
 
 DISTNAME=	luacrypto-0.1.1
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	security
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/1395/
@@ -21,7 +21,6 @@ WANTLIB=	crypto
 REGRESS_TARGET=	tests
 CFLAGS+=	-fPIC -DPIC
 
-RUN_DEPENDS=		::lang/lua
-BUILD_DEPENDS=		${RUN_DEPENDS}
+MODULES=	lang/lua
 
 .include <bsd.port.mk>
