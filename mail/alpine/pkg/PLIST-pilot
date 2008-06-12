@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pilot,v 1.1.1.1 2007/11/22 13:49:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST-pilot,v 1.2 2008/06/12 21:47:20 ajacoutot Exp $
 @pkgpath mail/pine,pilot
-bin/pilot
+@bin bin/pilot
 @man man/man1/pilot.1
