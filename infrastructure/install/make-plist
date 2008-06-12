@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.98 2008/06/06 15:03:30 espie Exp $
+# $OpenBSD: make-plist,v 1.99 2008/06/12 09:06:52 bernd Exp $
 # Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -593,7 +593,7 @@ sub is_binary
 	return 0 unless -x $filename;
 	my $check=`/usr/bin/file $filename`;
 	chomp $check;
-	if ($check =~m/\: ELF (32|64)-bit (MSB|LSB) executable\,/) {
+	if ($check =~m/\: ELF (32|64)-bit (MSB|LSB) executable\,.+ for OpenBSD\,/) {
 	    	return 1;
 	} else {
 		return 0;
