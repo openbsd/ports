@@ -1,7 +1,7 @@
 set_program_name(domain) requires newer py-gtk2, but is kept back
 due to implied py-Nummeric update.
 
-$OpenBSD: patch-system-config-printer_py,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
+$OpenBSD: patch-system-config-printer_py,v 1.2 2008/06/12 21:51:43 ajacoutot Exp $
 --- system-config-printer.py.orig	Thu Apr  3 17:54:02 2008
 +++ system-config-printer.py	Tue Apr  8 15:36:56 2008
 @@ -77,7 +77,7 @@ from gettext import gettext as _
@@ -9,7 +9,7 @@ $OpenBSD: patch-system-config-printer_py,v 1.1.1.1 2008/04/10 10:23:04 jasper Ex
  gettext.textdomain (domain)
  gtk.glade.bindtextdomain (domain)
 -pkgdata = '/usr/share/' + domain
-+pkgdata = '!!PREFIX!!/share/' + domain
++pkgdata = '${PREFIX}/share/' + domain
  iconpath = pkgdata + '/icons/'
  glade_file = pkgdata + '/' + domain + '.glade'
  sys.path.append (pkgdata)
@@ -36,7 +36,7 @@ $OpenBSD: patch-system-config-printer_py,v 1.1.1.1 2008/04/10 10:23:04 jasper Ex
          if host:
              os.environ["HOST"] = host
 -            cmd = '/usr/lib/cups/backend/snmp "${HOST}" 2>/dev/null'
-+            cmd = '!!LOCALBASE!!/libexec/cups/backend/snmp "${HOST}" 2>/dev/null'
++            cmd = '${LOCALBASE}/libexec/cups/backend/snmp "${HOST}" 2>/dev/null'
              debugprint (host + ": " + cmd)
              p = os.popen(cmd, 'r')
              output = p.read ().strip ()
@@ -45,7 +45,7 @@ $OpenBSD: patch-system-config-printer_py,v 1.1.1.1 2008/04/10 10:23:04 jasper Ex
                  # We want this to be in the current natural language,
                  # so we intentionally don't set LC_ALL=C here.
 -                p = os.popen ('/usr/bin/cupstestppd -rvv "$PPD"', 'r')
-+                p = os.popen ('!!LOCALBASE!!/bin/cupstestppd -rvv "$PPD"', 'r')
++                p = os.popen ('${LOCALBASE}/bin/cupstestppd -rvv "$PPD"', 'r')
                  output = p.readlines ()
                  p.close ()
                  err += reduce (lambda x, y: x + y, output)

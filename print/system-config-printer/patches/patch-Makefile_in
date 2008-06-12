@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2008/06/12 21:51:43 ajacoutot Exp $
 --- Makefile.in.orig	Thu Apr  3 17:54:22 2008
-+++ Makefile.in	Tue Apr  8 15:23:20 2008
++++ Makefile.in	Thu Jun 12 19:57:58 2008
 @@ -290,7 +290,7 @@ man_MANS = \
  dbus_DATA = \
  	newprinternotification.conf
@@ -10,7 +10,27 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
  desktop_DATA = \
  	system-config-printer.desktop \
  	print-applet.desktop \
-@@ -933,13 +933,6 @@ install-desktopDATA: $(desktop_DATA)
+@@ -912,7 +912,6 @@ install-desktopDATA: $(desktop_DATA)
+ 	mkdir -p $(DESTDIR)$(desktopdir)
+ 	desktop-file-install --vendor redhat	\
+ 	  --dir $(DESTDIR)$(desktopdir)		\
+-	  --add-category X-Red-Hat-Base		\
+ 	  --add-category System			\
+ 	  --add-category Settings		\
+ 	  --add-category HardwareSettings	\
+@@ -921,25 +920,16 @@ install-desktopDATA: $(desktop_DATA)
+ 	  system-config-printer.desktop
+ 	desktop-file-install --vendor redhat	\
+ 	  --dir $(DESTDIR)$(desktopdir)		\
+-	  --add-category X-Red-Hat-Base		\
+ 	  --add-category System			\
+ 	  --add-category Monitor		\
+ 	  --add-category GTK			\
+ 	  manage-print-jobs.desktop
+ 	desktop-file-install --vendor redhat	\
+ 	  --dir $(DESTDIR)$(desktopdir)		\
+-	  --add-category X-Red-Hat-Base		\
+ 	  --add-category Settings		\
  	  --add-category HardwareSettings	\
  	  --add-category GTK			\
  	  my-default-printer.desktop

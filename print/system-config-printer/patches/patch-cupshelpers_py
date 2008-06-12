@@ -1,4 +1,4 @@
-$OpenBSD: patch-cupshelpers_py,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
+$OpenBSD: patch-cupshelpers_py,v 1.2 2008/06/12 21:51:43 ajacoutot Exp $
 --- cupshelpers.py.orig	Thu Apr  3 17:54:02 2008
 +++ cupshelpers.py	Tue Apr  8 15:23:21 2008
 @@ -19,7 +19,7 @@
@@ -15,7 +15,7 @@ $OpenBSD: patch-cupshelpers_py,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
      # First, a local function.  How to check that something exists
      # in a path:
 -    def pathcheck (name, path="/usr/bin:/bin"):
-+    def pathcheck (name, path="/usr/bin:/bin:!!PREFIX!!/bin:!!LOCALBASE!!/bin"):
++    def pathcheck (name, path="/usr/bin:/bin:${PREFIX}/bin:${LOCALBASE}/bin"):
          # Strip out foomatic '%'-style place-holders.
          p = name.find ('%')
          if p != -1:
@@ -24,7 +24,7 @@ $OpenBSD: patch-cupshelpers_py,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
  
                  exepath = pathcheck (exe,
 -                                     "/usr/lib/cups/filter:"
-+                                     "!!PREFIX!!/libexec/cups/filter:"
++                                     "${PREFIX}/libexec/cups/filter:"
                                       "/usr/lib64/cups/filter")
  
      if exe and not exepath:

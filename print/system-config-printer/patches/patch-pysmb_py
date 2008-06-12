@@ -1,4 +1,4 @@
-$OpenBSD: patch-pysmb_py,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
+$OpenBSD: patch-pysmb_py,v 1.2 2008/06/12 21:51:43 ajacoutot Exp $
 --- pysmb.py.orig	Thu Mar 27 18:08:43 2008
 +++ pysmb.py	Thu Mar 27 18:17:37 2008
 @@ -24,13 +24,13 @@ import os
@@ -7,14 +7,14 @@ $OpenBSD: patch-pysmb_py,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
  
 -nmblookup = "/usr/bin/nmblookup"
 -smbclient = "/usr/bin/smbclient"
-+nmblookup = "!!LOCALBASE!!/bin/nmblookup"
-+smbclient = "!!LOCALBASE!!/bin/smbclient"
++nmblookup = "${LOCALBASE}/bin/nmblookup"
++smbclient = "${LOCALBASE}/bin/smbclient"
  
  wins = None
  
  def get_wins_server():
 -        smbconf = "/etc/samba/smb.conf"
-+        smbconf = "!!SYSCONFDIR!!/samba/smb.conf"
++        smbconf = "${SYSCONFDIR}/samba/smb.conf"
          wsregex = re.compile("\s*wins\s*server.*",re.IGNORECASE)
  	
  	global wins	

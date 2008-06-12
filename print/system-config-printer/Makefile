@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/05/31 22:24:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/06/12 21:51:42 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
 DISTNAME=		system-config-printer-0.9.90
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		print sysutils
 
 HOMEPAGE=		http://cyberelk.net/tim/software/system-config-printer/
@@ -49,10 +49,7 @@ pre-configure:
 		xargs perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g;' \
 			-e 's,/usr/bin/python,${MODPY_BIN},g'
 .for f in ${SUBST_FILES}
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
-		-e 's,!!PREFIX!!,${PREFIX},g;' \
-		-e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' \
-			${WRKSRC}/$f
+	${SUBST_CMD} ${WRKSRC}/$f
 .endfor
 
 .include <bsd.port.mk>

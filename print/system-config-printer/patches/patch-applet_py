@@ -1,4 +1,4 @@
-$OpenBSD: patch-applet_py,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
+$OpenBSD: patch-applet_py,v 1.2 2008/06/12 21:51:43 ajacoutot Exp $
 --- applet.py.orig	Thu Apr  3 17:54:02 2008
 +++ applet.py	Tue Apr  8 15:23:21 2008
 @@ -31,7 +31,7 @@ import gobject
@@ -6,7 +6,7 @@ $OpenBSD: patch-applet_py,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
  import time
  
 -APPDIR="/usr/share/system-config-printer"
-+APPDIR="!!PREFIX!!/share/system-config-printer"
++APPDIR="${PREFIX}/share/system-config-printer"
  DOMAIN="system-config-printer"
  GLADE="applet.glade"
  ICON="printer"
@@ -15,7 +15,7 @@ $OpenBSD: patch-applet_py,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
          if pid == 0:
              # Child.
 -            cmd = "/usr/bin/system-config-printer"
-+            cmd = "!!PREFIX!!/system-config-printer"
++            cmd = "${PREFIX}/sbin/system-config-printer"
              argv.insert (0, cmd)
              os.execvp (cmd, argv)
              sys.exit (1)
