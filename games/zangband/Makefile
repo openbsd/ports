@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2008/01/08 10:50:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2008/06/12 17:06:45 naddy Exp $
 
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
@@ -22,7 +22,7 @@ HOMEPAGE=		http://www.zangband.org/
 USE_GMAKE=		Yes
 MAKE_ENV=		CC="${CC}" CFLAGS="${CFLAGS}"
 
-AUTOCONF_VERSION=	2.52
+AUTOCONF_VERSION=	2.54
 AUTOMAKE_VERSION=	1.4
 CONFIGURE_STYLE=	autoconf automake
 CONFIGURE_ENV=		TRUEPREFIX="${TRUEPREFIX}"
