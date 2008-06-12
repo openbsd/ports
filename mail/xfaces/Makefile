@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2008/06/09 15:59:17 eric Exp $
+# $OpenBSD: Makefile,v 1.29 2008/06/12 16:53:35 eric Exp $
 
 COMMENT=	mail image display for X11
 
 DISTNAME=	xfaces-3.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	mail
 
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
