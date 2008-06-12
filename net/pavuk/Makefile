@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2008/01/22 20:12:48 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2008/06/12 21:58:12 sthen Exp $
 
 COMMENT=	tool to mirror contents of HTTP and FTP servers
 
 DISTNAME=	pavuk-0.9.35
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pavuk.org/
@@ -34,7 +35,7 @@ LIB_DEPENDS+=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2
 WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xmu Xrandr Xrender atk-1.0 cairo expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 png
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 .else
 CONFIGURE_ARGS+= --disable-gtk
 .endif

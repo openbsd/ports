@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/11/10 21:10:42 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2008/06/12 21:58:12 sthen Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -11,7 +11,7 @@ NOT_FOR_ARCHS=m68k m88k vax
 V=		2007-10-R1
 DISTNAME=	kismet-${V}
 PKGNAME-main=	kismet-${V:S,-,,g}
-PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}
+PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}p0
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.kismetwireless.net/
@@ -57,7 +57,7 @@ USE_X11=		Yes
 MULTI_PACKAGES+=	-gpsmap
 WANTLIB-gpsmap=		c ICE SM X11 Xext Xt bz2 expat fontconfig freetype \
 			jasper jbig jpeg lcms m png pthread stdc++ \
-			tiff xml2 z
+			tiff wmflite xml2 z
 WANTLIB-main+=		z
 LIB_DEPENDS-gpsmap=	Magick.>=11,Wand.>=11::graphics/ImageMagick \
 			gmp.>=6::devel/gmp

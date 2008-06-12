@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2008/06/03 06:59:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2008/06/12 21:58:11 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	jabber client written in pygtk
 DISTNAME=	gajim-0.11.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net x11
 
 MASTER_SITES=	${HOMEPAGE}/downloads/
@@ -47,6 +48,6 @@ WANTLIB=	X11 Xcomposite Xdamage Xext Xss Xrender fontconfig freetype \
 		gdk_pixbuf-2.0.>=600.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
 		gobject-2.0.>=600.0 gtk-x11-2.0.>=600.0 pango-1.0.>=800.0 \
 		pangocairo-1.0 pangoft2-1.0 png glitz Xau Xdmcp expat \
-		Xcursor Xfixes Xi Xinerama Xrandr
+		Xcursor Xfixes Xi Xinerama Xrandr enchant pixman-1 stdc++
 
 .include <bsd.port.mk>
