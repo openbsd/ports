@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_make_texi,v 1.1 2002/10/04 18:06:28 brad Exp $
---- doc/make.texi.orig	Fri Oct  4 10:18:02 2002
-+++ doc/make.texi	Fri Oct  4 10:19:00 2002
-@@ -25,9 +25,9 @@
- @c Combine the program and concept indices:
- @syncodeindex pg cp
+$OpenBSD: patch-doc_make_texi,v 1.2 2008/06/12 21:04:16 brad Exp $
+--- doc/make.texi.orig	Sat Apr  1 01:36:40 2006
++++ doc/make.texi	Wed May 28 19:29:23 2008
+@@ -50,9 +50,9 @@ Software Foundation raise funds for GNU development.''
+ @c ISPELL CHECK: done, 2000-06-25 --Martin Buchholz
+ 
  
 -@dircategory GNU Packages
 +@dircategory Programming & development tools
@@ -12,4 +12,4 @@ $OpenBSD: patch-doc_make_texi,v 1.1 2002/10/04 18:06:28 brad Exp $
 +* GNU Make: (make).             The GNU make utility.
  @end direntry
  
- @ifinfo
+ @iftex

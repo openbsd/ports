@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.37 2008/06/12 21:04:16 brad Exp $
 
 COMMENT=	GNU make
 
-DISTNAME=	make-3.80
-PKGNAME=	g${DISTNAME}p1
+DISTNAME=	make-3.81
+PKGNAME=	g${DISTNAME}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=make/}
 
@@ -11,8 +11,7 @@ HOMEPAGE=	http://www.gnu.org/software/make/
 
 MODULES=	devel/gettext
 
-MAINTAINER=	Todd T. Fries <todd@openbsd.org>
-
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -24,7 +23,8 @@ SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --program-prefix="g"
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
-		LDFLAGS="-L${DEPBASE}/lib"
+		LDFLAGS="-L${DEPBASE}/lib" \
+		MAKEINFO="makeinfo --no-split"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/config
 
 post-install:
