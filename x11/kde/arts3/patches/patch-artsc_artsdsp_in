@@ -1,0 +1,24 @@
+$OpenBSD: patch-artsc_artsdsp_in,v 1.1 2008/06/12 19:18:00 tobias Exp $
+--- artsc/artsdsp.in.orig	Sat Sep 10 11:13:34 2005
++++ artsc/artsdsp.in	Tue Jun 10 01:44:32 2008
+@@ -109,7 +109,7 @@ case $3 in
+        arch_libdir=lib
+        ;;
+     64-bit)
+-       arch_libdir=lib64
++       arch_libdir=lib
+        ;;
+     *)
+        exit 1
+@@ -122,9 +122,9 @@ exec_prefix=@exec_prefix@
+ libdir=${prefix}/${arch_libdir}
+ 
+ if test "$single_thread" = 1; then
+-  LD_PRELOAD=${libdir}/libartsdsp_st.so.0
++  LD_PRELOAD=${libdir}/libartsdsp_st.so
+ else
+-  LD_PRELOAD=${libdir}/libartsdsp.so.0:${libdir}/libartsc.so.0
++  LD_PRELOAD=${libdir}/libartsdsp.so:${libdir}/libartsc.so
+ fi
+ if test -f ${libdir}/libdl.so.2; then
+   LD_PRELOAD=$LD_PRELOAD:${libdir}/libdl.so.2
