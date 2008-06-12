@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/04 17:21:29 ajacoutot Exp $
-
-# Bus Error on startup
-NOT_FOR_ARCHS=	sparc64
+# $OpenBSD: Makefile,v 1.3 2008/06/12 22:10:38 ajacoutot Exp $
 
 COMMENT=	isometric RPG game
 
@@ -32,6 +29,10 @@ LIB_DEPENDS=	gdk.>=3,gtk.>=3::x11/gtk+ \
 		SDL_image.>=2::devel/sdl-image \
 		SDL_mixer.>=3::devel/sdl-mixer \
 		SDL_net.>=1::devel/sdl-net
+
+.if ${MACHINE_ARCH} == "sparc64"
+BROKEN=		SIGBUS on startup under sparc64
+.endif
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
