@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.49 2008/04/03 14:47:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.50 2008/06/12 19:04:10 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	fast and customizable WWW browser
 
-DISTNAME=	opera-9.27-20080331.1-static-qt.i386-en
-PKGNAME=	opera-9.27
+V=		9.50
+OPERA_BUILD=	2042
+DISTNAME=	opera-$V.gcc295-static-qt3.i386
+PKGNAME=	opera-${V}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.opera.com/
@@ -29,7 +31,7 @@ MASTER_SITES_OPERA=	ftp://ftp.opera.com/pub/opera/ \
 			ftp://ftp.rge.com/pub/infosystems/opera/ \
 			http://www.rge.com/pub/infosystems/opera/
 
-MASTER_SITES=	${MASTER_SITES_OPERA:=linux/927/final/en/i386/static/}
+MASTER_SITES=	${MASTER_SITES_OPERA:=linux/${V:S/.//}/final/en/i386/static/}
 EXTRACT_SUFX=	.tar.bz2
 
 RUN_DEPENDS=	::emulators/fedora/base
@@ -37,20 +39,21 @@ RUN_DEPENDS=	::emulators/fedora/base
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/${DISTNAME}-709
+WRKDIST=	${WRKDIR}/opera-$V-${OPERA_BUILD}.gcc295-static-qt3.i386
 
 do-install:
 	cd ${WRKBUILD} && ./install.sh \
-	    --prefix=${PREFIX} \
-	    --exec_prefix=${PREFIX}/libexec \
-	    --plugindir=${PREFIX}/lib/opera/plugins
+	    --DESTDIR=${DESTDIR} \
+	    --docdir=${TRUEPREFIX}/share/doc/opera \
+	    --exec_prefix=${TRUEPREFIX}/libexec \
+	    --mandir=${TRUEPREFIX}/man \
+	    --plugindir=${TRUEPREFIX}/lib/opera/plugins \
+	    --sharedir=${TRUEPREFIX}/share/opera \
+	    --wrapperdir=${TRUEPREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opera
 	${INSTALL_DATA} ${FILESDIR}/operarc \
 	    ${PREFIX}/share/examples/opera/opera6rc
 	${INSTALL_DATA} ${FILESDIR}/operarc.fixed \
 	    ${PREFIX}/share/examples/opera/opera6rc.fixed
-	sed -e 's:@PREFIX@:${TRUEPREFIX}:g' \
-	    -e 's:@LOCALBASE@:${LOCALBASE}:g' \
-	    ${FILESDIR}/opera.sh >${PREFIX}/bin/opera
 
 .include <bsd.port.mk>
