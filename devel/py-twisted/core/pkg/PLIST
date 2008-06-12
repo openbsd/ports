@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/04/15 11:04:27 eric Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/06/12 06:46:40 eric Exp $
 bin/manhole
 bin/mktap
 bin/pyhtmlizer
@@ -514,6 +514,11 @@ lib/python${MODPY_VERSION}/site-packages/twisted/scripts/tap2rpm.py
 lib/python${MODPY_VERSION}/site-packages/twisted/scripts/tap2rpm.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/scripts/tapconvert.py
 lib/python${MODPY_VERSION}/site-packages/twisted/scripts/tapconvert.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/scripts/test/
+lib/python${MODPY_VERSION}/site-packages/twisted/scripts/test/__init__.py
+lib/python${MODPY_VERSION}/site-packages/twisted/scripts/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/scripts/test/test_mktap.py
+lib/python${MODPY_VERSION}/site-packages/twisted/scripts/test/test_mktap.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/scripts/tkunzip.py
 lib/python${MODPY_VERSION}/site-packages/twisted/scripts/tkunzip.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/scripts/trial.py
@@ -575,6 +580,8 @@ lib/python${MODPY_VERSION}/site-packages/twisted/test/generator_failure_tests.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/generator_failure_tests.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/iosim.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/iosim.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/test/mock_win32process.py
+lib/python${MODPY_VERSION}/site-packages/twisted/test/mock_win32process.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/myrebuilder1.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/myrebuilder1.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/myrebuilder2.py
@@ -607,6 +614,9 @@ lib/python${MODPY_VERSION}/site-packages/twisted/test/process_twisted.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/process_twisted.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/proto_helpers.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/proto_helpers.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/test/raiser.c
+lib/python${MODPY_VERSION}/site-packages/twisted/test/raiser.pyx
+lib/python${MODPY_VERSION}/site-packages/twisted/test/raiser.so
 lib/python${MODPY_VERSION}/site-packages/twisted/test/reflect_helper_IE.py
 lib/python${MODPY_VERSION}/site-packages/twisted/test/reflect_helper_IE.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/test/reflect_helper_VE.py

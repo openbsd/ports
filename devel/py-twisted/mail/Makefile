@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/04/15 11:04:27 eric Exp $
+# $OpenBSD: Makefile,v 1.7 2008/06/12 06:46:40 eric Exp $
 
 COMMENT=	MTP, IMAP and POP protocol implementation
 
 CATEGORIES=	mail
 
-VERSION=	8.0.0
+VERSION=	8.1.0
 DISTNAME=	TwistedMail-${VERSION}
 PKGNAME=	py-twisted-mail-${VERSION}
 

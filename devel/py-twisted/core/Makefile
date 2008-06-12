@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2008/05/06 16:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2008/06/12 06:46:40 eric Exp $
 
 COMMENT=	event-based Python framework (core module)
 
-VERSION=	8.0.1
+VERSION=	8.1.0
 DISTNAME=	TwistedCore-${VERSION}
 PKGNAME=	py-twisted-core-${VERSION}p0
 

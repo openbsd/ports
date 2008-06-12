@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/04/15 11:04:27 eric Exp $
+# $OpenBSD: Makefile,v 1.7 2008/06/12 06:46:40 eric Exp $
 
 COMMENT=	documentation generator
 
-VERSION=	8.0.0
+VERSION=	8.1.0
 DISTNAME=	TwistedLore-${VERSION}
 PKGNAME=	py-twisted-lore-${VERSION}
 
