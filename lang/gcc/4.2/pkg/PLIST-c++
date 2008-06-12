@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.5 2007/03/20 10:48:52 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.6 2008/06/12 01:14:06 kurt Exp $
 bin/ec++
 bin/eg++
 bin/${CONFIG}-ec++
@@ -505,6 +505,13 @@ include/c++/${V}/${CONFIG}/bits/gthr-tpf.h
 include/c++/${V}/${CONFIG}/bits/gthr.h
 include/c++/${V}/${CONFIG}/bits/messages_members.h
 include/c++/${V}/${CONFIG}/bits/os_defines.h
+include/c++/${V}/${CONFIG}/bits/stdc++.h
+include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/
+include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/O0g.gch
+include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/O2g.gch
+include/c++/${V}/${CONFIG}/bits/stdtr1c++.h
+include/c++/${V}/${CONFIG}/bits/stdtr1c++.h.gch/
+include/c++/${V}/${CONFIG}/bits/stdtr1c++.h.gch/O2g.gch
 include/c++/${V}/${CONFIG}/bits/time_members.h
 include/c++/${V}/iomanip
 include/c++/${V}/ios
@@ -574,10 +581,10 @@ include/c++/${V}/tr1/stdio.h
 include/c++/${V}/tr1/stdlib.h
 include/c++/${V}/tr1/tgmath.h
 include/c++/${V}/tr1/tuple
+include/c++/${V}/tr1/tuple_defs.h
 include/c++/${V}/tr1/tuple_iterate.h
 include/c++/${V}/tr1/type_traits
 include/c++/${V}/tr1/type_traits_fwd.h
-include/c++/${V}/tr1/tuple_defs.h
 include/c++/${V}/tr1/unordered_map
 include/c++/${V}/tr1/unordered_set
 include/c++/${V}/tr1/utility
