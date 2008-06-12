@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2007/09/16 00:45:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.29 2008/06/12 16:33:23 miod Exp $
 
 COMMENT=	Linux compatibility package based on RedHat 8.0
 
-PKGNAME=	redhat_base-8.0p9
+PKGNAME=	redhat_base-8.0p10
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
@@ -81,18 +81,13 @@ do-install:
 # copy in ld.so.conf
 	${INSTALL_DATA} ${FILESDIR}/ld.so.conf ${PREFIX}/etc
 
-# run elf2olf on a few binaries known not to run as elf
-	@elf2olf -o linux ${PREFIX}/sbin/ldconfig
-	@elf2olf -o linux ${PREFIX}/bin/rpm
-
 # rename ldconfig and install wrapper
 	@cp -p ${PREFIX}/sbin/ldconfig ${PREFIX}/sbin/ldconfig.bin
 	${INSTALL_SCRIPT} ${FILESDIR}/ldconfig ${PREFIX}/sbin
 
-# make a copy of ld.so, convert to olf and then patch
-	@cp -p ${PREFIX}/lib/ld-2.3.2.so ${PREFIX}/usr/bin/ld-2.3.2-olf.so
-	@elf2olf -o linux ${PREFIX}/usr/bin/ld-2.3.2-olf.so
-	@perl ${FILESDIR}/fix-ldd.pl ${PREFIX}/usr/bin/ld-2.3.2-olf.so
+# make a copy of ld.so and patch
+	@cp -p ${PREFIX}/lib/ld-2.3.2.so ${PREFIX}/usr/bin/ld-2.3.2-elf.so
+	@perl ${FILESDIR}/fix-ldd.pl ${PREFIX}/usr/bin/ld-2.3.2-elf.so
 
 post-install:
 # remove setuid root bits

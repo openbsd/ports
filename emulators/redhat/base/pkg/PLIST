@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2006/10/17 23:00:32 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.15 2008/06/12 16:33:23 miod Exp $
 @conflict linux_lib-*
 @sample /emul/
 @sample ${PREFIX}/
@@ -481,7 +481,7 @@ usr/bin/install
 usr/bin/jpegtran
 usr/bin/kill
 usr/bin/ld
-usr/bin/ld-2.3.2-olf.so
+usr/bin/ld-2.3.2-elf.so
 usr/bin/ldd
 @comment usr/bin/ldd.orig
 usr/bin/lddlibc4

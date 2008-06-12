@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/03/30 14:27:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/06/12 16:33:23 miod Exp $
 @conflict redhat_base-*
 emul/
 emul/fedora/
@@ -492,7 +492,7 @@ emul/fedora/usr/bin/infocmp
 emul/fedora/usr/bin/infotocap
 emul/fedora/usr/bin/jpegtran
 emul/fedora/usr/bin/ld
-emul/fedora/usr/bin/ld-2.3.6-olf.so
+emul/fedora/usr/bin/ld-2.3.6-elf.so
 emul/fedora/usr/bin/ldd
 @comment emul/fedora/usr/bin/ldd.orig
 emul/fedora/usr/bin/lddlibc4

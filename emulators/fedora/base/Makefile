@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 00:45:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/06/12 16:33:21 miod Exp $
 
 COMMENT=	Linux compatibility package based on Fedora Core 4
 
-PKGNAME=	fedora_base-4.0p3
+PKGNAME=	fedora_base-4.0p4
 # clean up after make plist:
 #	- perl -pi -e "s,^\@lib ,," pkg/PLIST
 #	- change the 2nd LIBXaw_version to LIBXaw7_version in pkg/PLIST
@@ -136,12 +136,10 @@ do-install:
 	cd ${FEDORADIR} && ${PATCH} -p0 --forward --quiet -E < \
 		${PATCHDIR}/patch-ldd
 	${INSTALL_DATA} ${FILESDIR}/ld.so.conf ${FEDORADIR}/etc
-	elf2olf -o linux ${FEDORADIR}/sbin/ldconfig
 	mv ${FEDORADIR}/sbin/ldconfig ${FEDORADIR}/sbin/ldconfig.bin
 	${INSTALL_SCRIPT} ${FILESDIR}/ldconfig ${FEDORADIR}/sbin
-	cp -p ${FEDORADIR}/lib/ld-2.3.6.so ${FEDORADIR}/usr/bin/ld-2.3.6-olf.so
-	elf2olf -o linux ${FEDORADIR}/usr/bin/ld-2.3.6-olf.so
-	perl ${FILESDIR}/fix-ldd.pl ${FEDORADIR}/usr/bin/ld-2.3.6-olf.so
+	cp -p ${FEDORADIR}/lib/ld-2.3.6.so ${FEDORADIR}/usr/bin/ld-2.3.6-elf.so
+	perl ${FILESDIR}/fix-ldd.pl ${FEDORADIR}/usr/bin/ld-2.3.6-elf.so
 
 # need old linuxthreads libraries
 	rm ${FEDORADIR}/lib/libpthread*

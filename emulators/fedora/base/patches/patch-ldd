@@ -5,7 +5,7 @@
  TEXTDOMAINDIR=/usr/share/locale
  
 -RTLDLIST=/lib/ld-linux.so.2
-+RTLDLIST=/emul/linux/usr/bin/ld-2.3.6-olf.so
++RTLDLIST=/emul/linux/usr/bin/ld-2.3.6-elf.so
  warn=
  bind_now=
  verbose=
