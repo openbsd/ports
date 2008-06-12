@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 00:45:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/06/12 20:36:34 sthen Exp $
 # XXX hardcoded endian list
 
 COMMENT=	sega genesis emulator
 DISTNAME=	generator-0.35-cbiere-r2
-PKGNAME=	generator-0.35r2
+PKGNAME=	generator-0.35r2p0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	emulators
 MASTER_SITES=	${HOMEPAGE}
@@ -20,7 +20,7 @@ LIB_DEPENDS+=	bz2.>=10::archivers/bzip2 \
 		SDL.>=6::devel/sdl \
 		jpeg.>=62::graphics/jpeg
 
-WANTLIB=	ICE SM X11 Xext c m pthread usbhid z
+WANTLIB=	ICE SM c m pthread z
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
