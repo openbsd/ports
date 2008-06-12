@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/06/07 23:27:17 ckuethe Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/06/12 17:28:15 ckuethe Exp $
 %%SHARED%%
 bin/DDBase
 bin/DiscFix
@@ -38,6 +38,7 @@ bin/ficdiff
 bin/ficfica
 bin/findMoreThan12
 bin/gpsSim
+bin/gpstracker
 bin/iqdump
 bin/mdp2rinex
 bin/mdpEdit
@@ -73,6 +74,5 @@ bin/sp3version
 bin/svvis
 bin/tcptest
 bin/timeconvert
-bin/tracker
 bin/vecsol
 bin/wheresat

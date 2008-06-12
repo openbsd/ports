@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/07 23:27:17 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/12 17:28:15 ckuethe Exp $
 
 COMMENT-main=		"GPS processing toolkit"
 COMMENT-devel=		"GPStk development libraries and headers"
 
 V=			1.5
 DISTNAME=		gpstk${V}
-PKGNAME-main=		gpstk-${V}
-PKGNAME-devel=		gpstk-devel-${V}
+PKGNAME-main=		gpstk-${V}p0
+PKGNAME-devel=		gpstk-devel-${V}p0
 CATEGORIES=		geo devel
 SHARED_LIBS=		base 15.0 \
 			geomatics 15.0 \
@@ -43,16 +43,19 @@ VMEM_WARNING=		Yes
 CFLAGS+=		-O1 -g
 CXXFLAGS+=		-O1 -g
 
-BUILD_DEPENDS=		:automake-1.9*:devel/automake \
-			:autoconf-2.60:devel/autoconf
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 MULTI_PACKAGES=		-main -devel
 WANTLIB-main=		m c stdc++ curses
 WANTLIB-devel=
-RUN_DEPENDS-devel=	:gpstk-main-*:geo/gpstk
+RUN_DEPENDS-devel=	:gpstk-main-$V:geo/gpstk
 
 WRKDIST=		${WRKDIR}/${DISTNAME}
 
 pre-configure:
 	cd ${WRKDIST} && sh autogen.sh
+
+post-install:
+	@mv ${PREFIX}/bin/tracker ${PREFIX}/bin/gpstracker
 
 .include <bsd.port.mk>
