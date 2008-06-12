@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/06/05 12:28:48 ajacoutot Exp $
-bin/xfe
-bin/xfi
-bin/xfp
-bin/xfv
-bin/xfw
+@comment $OpenBSD: PLIST,v 1.7 2008/06/12 16:59:21 ajacoutot Exp $
+@bin bin/xfe
+@bin bin/xfi
+@bin bin/xfp
+@bin bin/xfv
+@bin bin/xfw
 @man man/man1/xfe.1
 @man man/man1/xfi.1
 @man man/man1/xfp.1
