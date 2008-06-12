@@ -1,0 +1,8 @@
+Spectrum-Tools is a set of utilities for using the Wi-Spy USB spectrum
+analyzer tools from Metageek LLC (http://www.metageek.net). They include
+userspace drivers for the hardware (implemented via libusb), a graphing 
+UI built on GTK/Cairo, network servers for remote devices, and simple 
+utilities for developing additional tools.
+
+This package contains the GTK user interface, spectool_gtk.
+Non-GUI tools can be found in the spectrum-tools-utils package.
