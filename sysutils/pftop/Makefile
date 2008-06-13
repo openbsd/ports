@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/13 18:18:31 canacar Exp $
+# $OpenBSD: Makefile,v 1.10 2008/06/13 00:38:12 canacar Exp $
 #
 
 COMMENT=	curses-based real time state and rule display for pf
 
 DISTNAME=	pftop-0.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.eee.metu.edu.tr/~canacar/pftop/
@@ -18,5 +19,4 @@ WANTLIB=		c curses
 
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 
-MAKE_ENV=	OSLEVEL=42
 .include <bsd.port.mk>
