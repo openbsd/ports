@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2007/11/10 14:39:26 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/06/13 21:37:37 ajacoutot Exp $
 @pkgpath x11/gnome/vfs2
-bin/gnomevfs-cat
-bin/gnomevfs-copy
-bin/gnomevfs-df
-bin/gnomevfs-info
-bin/gnomevfs-ls
-bin/gnomevfs-mkdir
-bin/gnomevfs-monitor
-bin/gnomevfs-mv
-bin/gnomevfs-rm
+@bin bin/gnomevfs-cat
+@bin bin/gnomevfs-copy
+@bin bin/gnomevfs-df
+@bin bin/gnomevfs-info
+@bin bin/gnomevfs-ls
+@bin bin/gnomevfs-mkdir
+@bin bin/gnomevfs-monitor
+@bin bin/gnomevfs-mv
+@bin bin/gnomevfs-rm
 include/gnome-vfs-2.0/
 include/gnome-vfs-2.0/libgnomevfs/
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-ace.h
@@ -111,7 +111,7 @@ lib/libgnomevfs-2.la
 @lib lib/libgnomevfs-2.so.${LIBgnomevfs-2_VERSION}
 lib/pkgconfig/gnome-vfs-2.0.pc
 lib/pkgconfig/gnome-vfs-module-2.0.pc
-libexec/gnome-vfs-daemon
+@bin libexec/gnome-vfs-daemon
 share/dbus-1/services/gnome-vfs-daemon.service
 share/examples/gnome-vfs2/
 @sample ${SYSCONFDIR}/gnome/

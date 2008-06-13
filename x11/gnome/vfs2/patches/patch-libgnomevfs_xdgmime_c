@@ -1,4 +1,4 @@
-$OpenBSD: patch-libgnomevfs_xdgmime_c,v 1.4 2008/05/04 14:36:44 ajacoutot Exp $
+$OpenBSD: patch-libgnomevfs_xdgmime_c,v 1.5 2008/06/13 21:37:37 ajacoutot Exp $
 --- libgnomevfs/xdgmime.c.orig	Thu Apr 24 12:18:17 2008
 +++ libgnomevfs/xdgmime.c	Thu Apr 24 12:19:02 2008
 @@ -236,7 +236,7 @@ xdg_run_command_on_dirs (XdgDirectoryFunc  func,
@@ -6,7 +6,7 @@ $OpenBSD: patch-libgnomevfs_xdgmime_c,v 1.4 2008/05/04 14:36:44 ajacoutot Exp $
    xdg_data_dirs = getenv ("XDG_DATA_DIRS");
    if (xdg_data_dirs == NULL)
 -    xdg_data_dirs = "/usr/local/share/:/usr/share/";
-+    xdg_data_dirs = "!!LOCALBASE!!/share/:/usr/share/";
++    xdg_data_dirs = "${LOCALBASE}/share/:/usr/share/";
  
    ptr = xdg_data_dirs;
  

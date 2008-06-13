@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2008/06/02 14:10:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2008/06/13 21:37:37 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ COMMENT-smb=		samba module for gnome-vfs2
 GNOME_PROJECT=		gnome-vfs
 GNOME_VERSION=		2.20.1
 PKGNAME=		gnome-vfs2-${VERSION}
-PKGNAME-main=		gnome-vfs2-${VERSION}p6
+PKGNAME-main=		gnome-vfs2-${VERSION}p7
 PKGNAME-smb=		gnome-vfs2-smb-${VERSION}p2
 MULTI_PACKAGES=		-main -smb
 
@@ -59,8 +59,8 @@ FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-vfs2
 post-extract:
 	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
 
-pre-build:
-	@perl -pi -e "s,/usr/local,${LOCALBASE},g" ${WRKSRC}/libgnomevfs/xdgmime.c
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/libgnomevfs/xdgmime.c
 
 .include <bsd.port.mk>
 
