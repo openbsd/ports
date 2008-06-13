@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:03:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/06/13 03:33:06 brad Exp $
 
 COMMENT=	GNU oSIP library
 
-DISTNAME=	libosip2-2.2.0
-PKGNAME=	${DISTNAME}p1
-SHARED_LIBS=	osip2		3.0 \
-		osipparser2	3.0
+DISTNAME=	libosip2-2.2.2
+SHARED_LIBS=	osip2		3.1 \
+		osipparser2	3.1
 
 CATEGORIES=	telephony devel
 
@@ -13,7 +12,7 @@ HOMEPAGE=	http://www.gnu.org/software/osip/
 
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
-# GPL
+# LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
