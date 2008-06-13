@@ -1,0 +1,7 @@
+This module provide an object interface to tempdir() from File::Temp.
+This allows to destroy the temporary directory as soon you don't need it
+anymore using the magic DESTROY() function automatically call be perl
+when the object is no longer reference.
+
+If a value is passed to at object creation, it become only a container
+allowing to keep same code in your function.
