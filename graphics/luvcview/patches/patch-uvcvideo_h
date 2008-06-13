@@ -1,0 +1,13 @@
+$OpenBSD: patch-uvcvideo_h,v 1.1.1.1 2008/06/13 16:45:01 robert Exp $
+--- uvcvideo.h.orig	Fri Jun 13 00:35:58 2008
++++ uvcvideo.h	Fri Jun 13 00:36:25 2008
+@@ -1,8 +1,7 @@
+ #ifndef _USB_VIDEO_H_
+ #define _USB_VIDEO_H_
+ 
+-#include <linux/kernel.h>
+-#include <linux/videodev.h>
++#include <sys/videoio.h>
+ 
+ /* Compatibility */
+ #include "uvc_compat.h"

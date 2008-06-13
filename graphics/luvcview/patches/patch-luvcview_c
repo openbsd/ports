@@ -1,0 +1,21 @@
+$OpenBSD: patch-luvcview_c,v 1.1.1.1 2008/06/13 16:45:01 robert Exp $
+--- luvcview.c.orig	Fri Jun 13 00:33:54 2008
++++ luvcview.c	Fri Jun 13 00:38:32 2008
+@@ -33,7 +33,7 @@
+ #include <SDL/SDL_thread.h>
+ #include <SDL/SDL_audio.h>
+ #include <SDL/SDL_timer.h>
+-#include <linux/videodev.h>
++#include <sys/videoio.h>
+ #include <sys/ioctl.h>
+ #include <sys/mman.h>
+ #include <errno.h>
+@@ -178,7 +178,7 @@ act_title title_act[A_LAST] ={
+    { A_SAVE, "Saved Configuration" },
+    { A_LOAD, "Restored Configuration" }
+ };
+-static const char version[] = VERSION;
++static const char version[] = "2.0";
+ struct vdIn *videoIn;
+ 
+ /* Translates screen coordinates into buttons */

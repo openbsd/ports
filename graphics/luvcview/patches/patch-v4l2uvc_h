@@ -1,0 +1,12 @@
+$OpenBSD: patch-v4l2uvc_h,v 1.1.1.1 2008/06/13 16:45:01 robert Exp $
+--- v4l2uvc.h.orig	Fri Jun 13 00:35:33 2008
++++ v4l2uvc.h	Fri Jun 13 00:35:42 2008
+@@ -29,7 +29,7 @@
+ #include <sys/ioctl.h>
+ #include <sys/mman.h>
+ #include <sys/select.h>
+-#include <linux/videodev.h>
++#include <sys/videoio.h>
+ #include "avilib.h"
+ 
+ #include "uvcvideo.h"

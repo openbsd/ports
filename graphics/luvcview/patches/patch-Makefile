@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/06/13 16:45:01 robert Exp $
+--- Makefile.orig	Sat May 12 11:57:17 2007
++++ Makefile	Fri Jun 13 18:40:06 2008
+@@ -9,8 +9,8 @@ CPP=g++
+ INSTALL=install
+ APP_BINARY=luvcview
+ BIN=/usr/local/bin
+-SDLLIBS = $(shell sdl-config --libs) 
+-SDLFLAGS = $(shell sdl-config --cflags)
++SDLLIBS = `sdl-config --libs`
++SDLFLAGS = `sdl-config --cflags`
+ #LIBX11FLAGS= -I/usr/X11R6/include -L/usr/X11R6/lib
+ VERSION = 0.2.1
+ 

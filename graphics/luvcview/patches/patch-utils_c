@@ -1,0 +1,16 @@
+$OpenBSD: patch-utils_c,v 1.1.1.1 2008/06/13 16:45:01 robert Exp $
+--- utils.c.orig	Fri Jun 13 00:38:44 2008
++++ utils.c	Fri Jun 13 00:39:24 2008
+@@ -26,10 +26,10 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+-#include <linux/types.h>
++#include <sys/types.h>
+ #include <string.h>
+ #include <fcntl.h>
+-#include <wait.h>
++#include <sys/wait.h>
+ #include <time.h>
+ #include <limits.h>
+ #include "huffman.h"
