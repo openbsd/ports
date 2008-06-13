@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2008/02/01 21:55:23 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2008/06/13 05:11:35 matthieu Exp $
 
 COMMENT=	display all (ok, most of) the colors in the universe
 
 DISTNAME=	xcolors
-PKGNAME=	xcolors-1.3p0
+PKGNAME=	xcolors-1.3p1
 CATEGORIES=	x11
 
 MASTER_SITES=	ftp://ftp.tut.ac.jp/X11/X11R6/contrib/programs/ \
@@ -20,7 +20,6 @@ WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xp Xpm Xt c m
 USE_X11=	Yes
 WRKDIST=	${WRKDIR}/xcolors
 CONFIGURE_STYLE=imake
-MAKE_FLAGS=	RGBDBFILE=${X11BASE}/lib/X11/rgb
 
 NO_REGRESS=	Yes
 
