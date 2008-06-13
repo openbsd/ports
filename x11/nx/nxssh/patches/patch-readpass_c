@@ -1,0 +1,24 @@
+$OpenBSD: patch-readpass_c,v 1.1.1.1 2008/06/13 17:13:42 jasper Exp $
+--- readpass.c.orig	Tue Jun  3 13:48:22 2008
++++ readpass.c	Tue Jun  3 13:49:38 2008
+@@ -176,6 +176,11 @@ read_passphrase(const char *prompt, int flags)
+                 fprintf(stdout, prompt);
+                 fflush(stdout);
+ 
++#ifdef __OpenBSD__
++	 memset(buf, 0, sizeof(buf));
++	 retr = fgets(buf, sizeof(buf) - 2, stdin);
++	 len = strlen(buf);
++#else
+                 len = retr = 0;
+                 do
+                 {
+@@ -186,7 +191,7 @@ read_passphrase(const char *prompt, int flags)
+                                 break;
+                         len += retr;
+                 } while (sizeof(buf) - 1 - len > 0 && buf[len] == '\n');
+-
++#endif /* __OpenBSD__ */
+                 buf[len-1] = '\0';
+ 
+                 fprintf(stdout, "\n");

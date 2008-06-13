@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/06/13 17:13:42 jasper Exp $
+--- configure.orig	Tue Oct  2 19:02:53 2007
++++ configure	Fri Jun 13 10:12:54 2008
+@@ -4668,10 +4668,10 @@ TEST_SHELL=sh
+ 
+ 
+ 
+-CFLAGS="-g -O3"
++#CFLAGS="-g -O3"
+ 
+ NXCOMPINC="-I../nxcomp"
+-NXCOMPLIBS="-L../nxcomp -lXcomp -lstdc++ -lpng -ljpeg -lz"
++NXCOMPLIBS="-L../nxcomp -lXcomp -lstdc++ -lm -lpng -ljpeg -lz"
+ 
+ # Extract the first word of "groupadd", so it can be a program name with args.
+ set dummy groupadd; ac_word=$2

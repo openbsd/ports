@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/13 17:13:42 jasper Exp $
+@bin bin/nxssh
+@bin bin/nxssh-keygen
+@bin sbin/nxsshd
