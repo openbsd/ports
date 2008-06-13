@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.604 2008/06/02 22:02:29 simon Exp $
+# $OpenBSD: Makefile,v 1.605 2008/06/13 14:35:33 merdely Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -359,6 +359,7 @@
      SUBDIR += p5-File-Slurp
      SUBDIR += p5-File-Sync
      SUBDIR += p5-File-Tail
+     SUBDIR += p5-File-Tempdir
      SUBDIR += p5-File-Type
      SUBDIR += p5-File-chdir
      SUBDIR += p5-FileHandle-Unget
