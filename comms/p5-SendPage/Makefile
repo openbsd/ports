@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2007/08/05 22:25:09 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2008/06/13 14:21:13 merdely Exp $
 
 
 COMMENT=		SNPP, TAP, email notification application
 
-V=1.000002
+V=1.000003
 DISTNAME=		sendpage-${V}
-PKGNAME=		p5-SendPage-${V}p0
+PKGNAME=		p5-SendPage-${V}
 CATEGORIES=		comms
 
 HOMEPAGE=		http://sendpage.org/
@@ -31,7 +31,7 @@ CONFIGURE_STYLE=	perl
 SAMPLES=	email2page.conf sendpage.cf snpp.conf
 DOCS=		Changes FEATURES README THANKS
 DOCS2=		PagingCentrals.txt README pc-testing.txt postfix.txt \
-		rfc1861.txt sendmail.txt sendpage.php
+		sendmail.txt sendpage.php
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sendpage

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/07/30 18:11:06 simon Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/06/13 14:21:13 merdely Exp $
 @conflict hylafax-*
 bin/email2page
 bin/sendmail2snpp
@@ -38,7 +38,6 @@ share/doc/sendpage/docs/PagingCentrals.txt
 share/doc/sendpage/docs/README
 share/doc/sendpage/docs/pc-testing.txt
 share/doc/sendpage/docs/postfix.txt
-share/doc/sendpage/docs/rfc1861.txt
 share/doc/sendpage/docs/sendmail.txt
 share/doc/sendpage/docs/sendpage.php
 share/examples/sendpage/
