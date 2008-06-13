@@ -1,5 +1,5 @@
---- config_office/configure.in.orig.port	Thu May  1 13:10:51 2008
-+++ config_office/configure.in	Thu May  1 13:19:08 2008
+--- config_office/configure.in.orig.port	Thu Jun 12 11:08:28 2008
++++ config_office/configure.in	Thu Jun 12 11:08:29 2008
 @@ -931,6 +931,16 @@ case "$build_os" in
  		echo "AIX is an alpha port --- Use at own risk" >> warn
  		_os=AIX
@@ -94,7 +94,7 @@
     if test -z "$SYSTEM_GENCMN"; then
        AC_MSG_ERROR([\"gencmn\" not found in \$PATH, install the icu development tool \"gencmn"\])
     fi
-@@ -4176,7 +4189,7 @@ elif test "$_os" != "WINNT" ; then
+@@ -4162,7 +4175,7 @@ elif test "$_os" != "WINNT" ; then
        AC_MSG_ERROR([No X includes found]) # Exit
     fi
     CFLAGS=$X_CFLAGS
@@ -103,7 +103,7 @@
     AC_CHECK_LIB(X11, XOpenDisplay, x_libs="-lX11 $X_EXTRA_LIBS", [AC_MSG_ERROR([X Development libraries not found])])
     dnl Check if the XauDisposeAuth symbol is provided by libXau.
     AC_CHECK_LIB(Xau, XauDisposeAuth, XAU_LIBS="-lXau", [])
-@@ -4393,7 +4406,7 @@ if test -n "$with_system_openssl" -o -n "$with_system_
+@@ -4379,7 +4392,7 @@ if test -n "$with_system_openssl" -o -n "$with_system_
      AC_MSG_RESULT([external])
      # Mac OS builds should get out without extra stuff is the Mac porters'
      # wish. And pkg-config is although Xcode ships a .pc for openssl
@@ -112,7 +112,7 @@
          OPENSSL_CFLAGS=
          OPENSSL_LIBS="-lssl -lcrypto"
      else
-@@ -5275,42 +5288,23 @@ KDE_LIBS=""
+@@ -5261,42 +5274,23 @@ KDE_LIBS=""
  MOC="moc"
  if test "$test_kde" = "yes" -a "$ENABLE_KDE" = "TRUE" ; then
      dnl Search paths for Qt and KDE
@@ -163,7 +163,7 @@
  
      dnl Check for Qt headers
      AC_MSG_CHECKING([for Qt headers])
-@@ -5331,7 +5325,7 @@ your Qt installation by exporting QTDIR before running
+@@ -5317,7 +5311,7 @@ your Qt installation by exporting QTDIR before running
      AC_MSG_CHECKING([for Qt libraries])
      qt_libdir="no"
      for qt_check in $qt_libdirs ; do
@@ -172,7 +172,7 @@
              qt_libdir="$qt_check"
              break
          fi
-@@ -5367,7 +5361,7 @@ your KDE installation by exporting KDEDIR before runni
+@@ -5353,7 +5347,7 @@ your KDE installation by exporting KDEDIR before runni
      AC_MSG_CHECKING([for KDE libraries])
      kde_libdir="no"
      for kde_check in $kde_libdirs ; do

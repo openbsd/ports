@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2008/05/27 03:15:08 bernd Exp $
+# $OpenBSD: Makefile,v 1.76 2008/06/13 17:04:57 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,11 +6,11 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of OpenOffice to the KDE environment
 COMMENT-java=	optional integration of OpenOffice java features
 
-VERSION=	2.4.0
+VERSION=	2.4.1
 DISTNAME=	OOo_${VERSION}
-WRKDIST=	${WRKDIR}/OOH680_m12
-PKGNAME=	openoffice-${VERSION}p2
-PKGNAME-main=	openoffice-${VERSION}p2
+WRKDIST=	${WRKDIR}/OOH680_m17
+PKGNAME=	openoffice-${VERSION}
+PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
