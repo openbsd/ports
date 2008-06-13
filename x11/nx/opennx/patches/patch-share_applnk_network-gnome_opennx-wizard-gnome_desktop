@@ -1,0 +1,15 @@
+$OpenBSD: patch-share_applnk_network-gnome_opennx-wizard-gnome_desktop,v 1.1.1.1 2008/06/13 17:14:42 jasper Exp $
+--- share/applnk/network-gnome/opennx-wizard-gnome.desktop.orig	Fri May 23 12:00:07 2008
++++ share/applnk/network-gnome/opennx-wizard-gnome.desktop	Fri May 23 12:00:50 2008
+@@ -1,9 +1,8 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+ Comment=Launch connection wizard
+-Exec=/usr/NX/bin/opennx --wizard
+-Icon=/usr/NX/share/icons/opennx-wizard.png
++Exec=${PREFIX}/bin/opennx --wizard
++Icon=${PREFIX}/share/icons/opennx-wizard.png
+ Name=OpenNX Connection Wizard
+ Type=Application
+ Categories=Application;Network
+-OnlyShowIn=GNOME;

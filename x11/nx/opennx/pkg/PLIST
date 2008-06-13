@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/13 17:14:42 jasper Exp $
+@bin bin/opennx
+share/applications/opennx-admin-gnome.desktop
+share/applications/opennx-gnome.desktop
+share/applications/opennx-wizard-gnome.desktop
+share/cups/mime.convs
+share/cups/mime.types
+share/icons/nx-desktop.png
+share/icons/nx.png
+share/icons/opennx-admin.png
+share/icons/opennx-wizard.png
+share/keyboards
+share/keys/
+share/keys/server.id_dsa.key
+share/locale/de/LC_MESSAGES/opennx.mo
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

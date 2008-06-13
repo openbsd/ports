@@ -1,0 +1,6 @@
+NX is an exciting new technology for remote display. It provides near
+local speed application responsiveness over high latency, low bandwidth
+links. The core libraries for NX are provided by NoMachine under the
+GPL.
+
+opennx is a LPGL implementation of the NX Client.

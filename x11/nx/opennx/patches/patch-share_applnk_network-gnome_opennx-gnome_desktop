@@ -1,0 +1,16 @@
+$OpenBSD: patch-share_applnk_network-gnome_opennx-gnome_desktop,v 1.1.1.1 2008/06/13 17:14:42 jasper Exp $
+--- share/applnk/network-gnome/opennx-gnome.desktop.orig	Fri May 23 12:00:07 2008
++++ share/applnk/network-gnome/opennx-gnome.desktop	Fri May 23 12:00:43 2008
+@@ -1,10 +1,9 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+ Comment=Connect to a remote NX server
+-Exec=/usr/NX/bin/opennx
+-Icon=/usr/NX/share/icons/nx.png
++Exec=${PREFIX}/bin/opennx
++Icon=${PREFIX}/share/icons/nx.png
+ Name=OpenNX client
+ Type=Application
+ MimeType=application/nx-session
+ Categories=Application;Network
+-OnlyShowIn=GNOME;
