@@ -1,0 +1,21 @@
+$OpenBSD: patch-Socket_cpp,v 1.1.1.1 2008/06/13 17:12:42 jasper Exp $
+--- Socket.cpp.orig	Thu Sep  6 23:53:26 2007
++++ Socket.cpp	Thu Sep  6 23:53:47 2007
+@@ -18,7 +18,7 @@
+ #include <sys/types.h>
+ #include <sys/utsname.h>
+ 
+-#if defined(__CYGWIN32__) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__sun)
++#if defined(__CYGWIN32__) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__sun) || defined(__OpenBSD__)
+ #include <netinet/in_systm.h>
+ #endif
+ 
+@@ -39,7 +39,7 @@
+ // System specific defines.
+ //
+ 
+-#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__sun)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__sun) || defined(__OpenBSD__)
+ #define SOL_IP  IPPROTO_IP
+ #endif
+ 

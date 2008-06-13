@@ -1,0 +1,12 @@
+$OpenBSD: patch-Children_cpp,v 1.1.1.1 2008/06/13 17:12:42 jasper Exp $
+--- Children.cpp.orig	Wed Apr 16 15:18:00 2008
++++ Children.cpp	Wed Apr 16 15:18:00 2008
+@@ -1016,7 +1016,7 @@ int UnsetEnv(char *name)
+ 
+   #else
+ 
+-  #ifdef __APPLE__
++  #if defined(__APPLE__) || defined(__OpenBSD__)
+ 
+   unsetenv(name);
+   result = 0;

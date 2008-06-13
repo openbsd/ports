@@ -1,0 +1,73 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2008/06/13 17:12:42 jasper Exp $
+--- configure.in.orig	Fri Dec 29 16:13:34 2006
++++ configure.in	Fri Jun 13 10:02:31 2008
+@@ -7,9 +7,6 @@ AC_PREREQ(2.13)
+ 
+ dnl Set our default compilation flags.
+ 
+-CXXFLAGS="-O3 -fno-rtti -fno-exceptions"
+-CFLAGS="-O3"
+-
+ dnl Reset default linking directives.
+ 
+ LIBSTATIC=""
+@@ -77,7 +74,7 @@ case "${gcc_version}" in
+ 
+      *)
+         AC_MSG_RESULT([yes])
+-        CXXFLAGS="$CXXFLAGS -Wmissing-declarations -Wnested-externs"
++        CXXFLAGS="$CXXFLAGS"
+         ;;
+ esac
+ 
+@@ -157,6 +154,17 @@ FreeBSD=
+ test "$nxconf_cv_freebsd" = yes && FreeBSD=yes])
+ nxconf_FreeBSD
+ 
++dnl Check to see if we're running under OpenBSD.
++
++AC_DEFUN(nxconf_OpenBSD,
++[AC_CACHE_CHECK(for OpenBSD environment, nxconf_cv_openbsd,
++[AC_TRY_COMPILE(,[return __OpenBSD__;],
++nxconf_cv_openbsd=yes, nxconf_cv_openbsd=no)
++rm -f conftest*])
++OpenBSD=
++test "$nxconf_cv_openbsd" = yes && OpenBSD=yes])
++nxconf_OpenBSD
++
+ dnl Build PIC libraries.
+ 
+ if test "$CYGWIN32" != yes -a "$DARWIN" != yes; then
+@@ -182,6 +190,14 @@ if test "$FreeBSD" = yes; then
+   CFLAGS="$CFLAGS -I/usr/local/include"
+ fi
+ 
++dnl On OpenBSD search libraries and includes under /usr/local.
++
++if test "$OpenBSD" = yes; then
++  LIBS="$LIBS -L/usr/local/lib"
++  CXXFLAGS="$CXXFLAGS -Wno-deprecated -I/usr/local/include -I/usr/local/include/libpng"
++  CFLAGS="$CFLAGS -I/usr/local/include"
++fi
++
+ dnl Under Darwin we don't have support for -soname option and
+ dnl we need the -bundle flag. Under Solaris, instead, we need
+ dnl the options -G -h.
+@@ -228,7 +244,7 @@ else
+ fi
+ echo -e "compiling version ${VERSION}"
+ 
+-LIBVERSION=`echo ${VERSION} | cut -d '.' -f 1`
++LIBVERSION=${LIBXcomp_VERSION}
+ 
+ CXXFLAGS="$CXXFLAGS -DVERSION=\\\"${VERSION}\\\""
+ CFLAGS="$CFLAGS -DVERSION=\\\"${VERSION}\\\""
+@@ -387,7 +403,7 @@ if test "$CYGWIN32" = yes; then
+     ALL="\$(LIBCYGARCHIVE) \$(LIBCYGSHARED) \$(LIBARCHIVE)"
+     LIBS="-lstdc++ -lpng -ljpeg -lz"
+ else
+-    ALL="\$(LIBFULL) \$(LIBLOAD) \$(LIBSHARED) \$(LIBARCHIVE)"
++    ALL="\$(LIBSHARED) \$(LIBARCHIVE)"
+ fi
+ 
+ AC_OUTPUT(Makefile)

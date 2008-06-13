@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/13 17:12:42 jasper Exp $
+include/nx/
+include/nx/MD5.h
+include/nx/NX.h
+include/nx/NXalert.h
+include/nx/NXmitshm.h
+include/nx/NXpack.h
+include/nx/NXproto.h
+include/nx/NXrender.h
+include/nx/NXvars.h
+lib/libXcomp.a
+@lib lib/libXcomp.so.${LIBXcomp_VERSION}
