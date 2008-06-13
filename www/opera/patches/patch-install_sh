@@ -1,0 +1,32 @@
+$OpenBSD: patch-install_sh,v 1.21 2008/06/13 23:01:36 sturm Exp $
+--- install.sh.orig	Wed Jun 11 23:11:27 2008
++++ install.sh	Sat Jun 14 00:54:10 2008
+@@ -870,7 +870,7 @@ generate_wrapper()
+     wrapper_contain="#!/bin/sh
+ 
+ # Required for Session Management
+-case \$0 in /*) OPERA_SCRIPT_PATH=\$0;; *) OPERA_SCRIPT_PATH=`/bin/pwd`/\$0;; esac
++case \$0 in /*) OPERA_SCRIPT_PATH=\$0;; *) OPERA_SCRIPT_PATH=${str_paramwrapper}/\$0;; esac
+ export OPERA_SCRIPT_PATH
+ 
+ # Location of the Opera binaries
+@@ -925,9 +925,6 @@ if test \"\${OPERA_DIR}\" = '' ; then
+   fi
+ fi
+ 
+-OPERA_LD_PRELOAD=\"\${LD_PRELOAD}\"
+-export OPERA_LD_PRELOAD
+-
+ # Native Java enviroment
+ for d in \"\$OPERA_PERSONALDIR\" \"\$HOME/.opera\"
+ do if test -f \"\$d/javapath.txt\"
+@@ -1060,9 +1057,6 @@ if test \"\${OPERA_JAVA_DIR}\"; then
+     export LD_LIBRARY_PATH OPERA_JAVA_DIR
+ fi
+ 
+-# Workarounds for the \"preloaded libXt\" problem.
+-LD_PRELOAD=\"libjvm.so:libawt.so:\${OPERA_LD_PRELOAD}\"
+-export LD_PRELOAD
+ # To disable the first workaround, comment the next line.
+ JAVA_WORKAROUND=\`\${OPERA_BINARYDIR}/works 2>/dev/null\`
+ 
