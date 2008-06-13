@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2008/06/13 16:45:51 robert Exp $
+# $OpenBSD: Makefile,v 1.215 2008/06/13 16:56:59 mglocker Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -40,6 +40,7 @@
      SUBDIR += ffmpegthumbnailer
      SUBDIR += flash
      SUBDIR += fnlib
+     SUBDIR += fswebcam
      SUBDIR += fxtv
      SUBDIR += fyre
      SUBDIR += gd
