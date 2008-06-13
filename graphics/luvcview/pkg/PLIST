@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/13 16:45:01 robert Exp $
-bin/luvcview
+@comment $OpenBSD: PLIST,v 1.2 2008/06/13 17:11:01 robert Exp $
+@bin bin/luvcview
