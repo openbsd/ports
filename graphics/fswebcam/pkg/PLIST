@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1 2008/06/13 16:39:44 mglocker Exp $
+bin/fswebcam
+@man man/man1/fswebcam.1

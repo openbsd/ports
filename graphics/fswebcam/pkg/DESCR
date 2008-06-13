@@ -1,0 +1,4 @@
+fswebcam is a small and simple webcam app.  It can capture images from
+a number of different sources and perform simple manipulation on the
+captured image.  The image can be saved as one or more PNG or JPEG
+files.
