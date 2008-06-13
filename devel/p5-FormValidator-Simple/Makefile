@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/13 17:45:08 merdely Exp $
 
 COMMENT=        validate user input through a chain of constraints
 
 MODULES=	cpan
-DISTNAME=	FormValidator-Simple-0.19
+DISTNAME=	FormValidator-Simple-0.23
 CATEGORIES=     devel
 
 # perl
@@ -27,7 +27,5 @@ RUN_DEPENDS=	::devel/p5-Class-Accessor \
 		::devel/p5-YAML
 	
 MAKE_ENV=	TEST_POD=Yes
-
-CPAN_AUTHOR=	LYOKATO
 
 .include <bsd.port.mk>
