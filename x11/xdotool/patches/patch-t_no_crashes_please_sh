@@ -1,0 +1,18 @@
+$OpenBSD: patch-t_no_crashes_please_sh,v 1.1.1.1 2008/06/13 05:33:52 landry Exp $
+--- t/no_crashes_please.sh.orig	Tue Jun  3 23:43:52 2008
++++ t/no_crashes_please.sh	Thu Jun 12 22:58:20 2008
+@@ -10,13 +10,7 @@ try () {
+   fi
+ }
+ 
+-make -C ../ clean xdotool
+-if [ $?  -ne 0 ] ; then
+-  echo "Failure building xdotool."
+-  exit 1
+-fi
+-
+-xdotool="../xdotool"
++xdotool="./xdotool"
+ 
+ xterm -T xdotool_test_window -e 'sleep 300' &
+ xterm_pid="$!"

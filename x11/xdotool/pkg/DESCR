@@ -1,0 +1,4 @@
+xdotool lets you programatically (or manually) simulate keyboard input
+and mouse activity, move and resize windows, etc. It does this using
+X11's XTEST extension and other Xlib functions. It is a nice more
+powerful alternative to wmctrl and devilspie.
