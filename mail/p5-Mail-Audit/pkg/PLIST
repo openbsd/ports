@@ -1,18 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 09:09:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/06/13 19:44:27 merdely Exp $
 ${P5SITE}/Mail/Audit/
 ${P5SITE}/Mail/Audit.pm
 ${P5SITE}/Mail/Audit/KillDups.pm
-${P5SITE}/Mail/Audit/List.pm
 ${P5SITE}/Mail/Audit/MAPS.pm
 ${P5SITE}/Mail/Audit/MailInternet.pm
 ${P5SITE}/Mail/Audit/MimeEntity.pm
-${P5SITE}/Mail/Audit/PGP.pm
-${P5SITE}/Mail/Audit/Razor.pm
+${P5SITE}/Mail/Audit/Util/
+${P5SITE}/Mail/Audit/Util/Tempdir.pm
+${P5SITE}/Mail/Audit/Vacation.pm
 @man man/man3p/Mail::Audit.3p
 @man man/man3p/Mail::Audit::KillDups.3p
-@man man/man3p/Mail::Audit::List.3p
 @man man/man3p/Mail::Audit::MAPS.3p
-@man man/man3p/Mail::Audit::PGP.3p
-@man man/man3p/Mail::Audit::Razor.3p
+@man man/man3p/Mail::Audit::MailInternet.3p
+@man man/man3p/Mail::Audit::MimeEntity.3p
+@man man/man3p/Mail::Audit::Util::Tempdir.3p
+@man man/man3p/Mail::Audit::Vacation.3p
 share/doc/Mail-Audit/
 share/doc/Mail-Audit/FAQ
