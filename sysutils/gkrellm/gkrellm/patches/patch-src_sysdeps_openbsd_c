@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.7 2007/10/26 22:56:57 ajacoutot Exp $
+$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.8 2008/06/13 17:38:39 ajacoutot Exp $
 --- src/sysdeps/openbsd.c.orig	Sat Jul  7 01:54:22 2007
-+++ src/sysdeps/openbsd.c	Fri Oct 26 15:48:30 2007
++++ src/sysdeps/openbsd.c	Fri Jun 13 01:30:34 2008
 @@ -53,41 +53,71 @@ gkrellm_sys_main_cleanup(void)
  #include <sys/dkstat.h>
  #include <kvm.h>
@@ -93,6 +93,15 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.7 2007/10/26 22:56:57 ajacoutot Exp $
  /* ===================================================================== */
  /* Proc monitor interface */
  
+@@ -293,7 +323,7 @@ gkrellm_sys_sensors_init(void)
+ /* Battery monitor interface */
+ #include <sys/ioctl.h>
+ 
+-#if defined(__i386__) || defined(__powerpc__)
++#if defined(__i386__) || defined(__powerpc__) || defined(__amd64__) || defined(__arm__) || defined(__sparc__)
+ 
+ #include <machine/apmvar.h>
+ #define	APMDEV		"/dev/apm"
 @@ -405,7 +435,7 @@ gkrellm_sys_disk_read_data(void)
  		/* Separate read/write stats were implemented in NetBSD 1.6K.
  		*/
