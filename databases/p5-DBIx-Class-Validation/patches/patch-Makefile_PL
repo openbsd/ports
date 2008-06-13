@@ -1,0 +1,10 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2008/06/13 18:36:01 merdely Exp $
+--- Makefile.PL.orig	Thu Jun 12 18:36:47 2008
++++ Makefile.PL	Thu Jun 12 18:36:51 2008
+@@ -25,6 +25,4 @@ eval {
+     system 'pod2text lib/DBIx/Class/Validation.pm > README';
+ };
+ 
+-auto_install;
+-
+ WriteMakefile;
