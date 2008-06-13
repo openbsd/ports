@@ -1,12 +1,12 @@
-$OpenBSD: patch-gettext-tools_tests_Makefile_in,v 1.2 2007/08/25 13:48:24 naddy Exp $
---- gettext-tools/tests/Makefile.in.orig	Mon May 28 23:59:26 2007
-+++ gettext-tools/tests/Makefile.in	Tue May 29 00:00:47 2007
-@@ -673,7 +673,7 @@ AM_CPPFLAGS = \
+$OpenBSD: patch-gettext-tools_tests_Makefile_in,v 1.3 2008/06/13 04:56:34 naddy Exp $
+--- gettext-tools/tests/Makefile.in.orig	Wed Nov  7 00:40:18 2007
++++ gettext-tools/tests/Makefile.in	Mon Jun  2 22:58:10 2008
+@@ -919,7 +919,7 @@ AM_CPPFLAGS = \
  # INTL_MACOSX_LIBS is needed because the programs depend on libintl.la
  # but libtool doesn't put -Wl,-framework options into .la files.
  LDADD = $(LDADD_@USE_INCLUDED_LIBINTL@) @INTL_MACOSX_LIBS@
 -LDADD_yes = ../intl/libintl.la @LTLIBTHREAD@
-+LDADD_yes = ../intl/libintl.la @LTLIBICONV@ @LTLIBTHREAD@
++LDADD_yes = ../intl/libintl.la @LTLIBICONV@ -lncurses @LTLIBTHREAD@
  LDADD_no = ../intl/libgnuintl.la @LTLIBTHREAD@ @LTLIBINTL@
  tstgettext_SOURCES = tstgettext.c setlocale.c
  tstgettext_CFLAGS = -DINSTALLDIR=\".\"

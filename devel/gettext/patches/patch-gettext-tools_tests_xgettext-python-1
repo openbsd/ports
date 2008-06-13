@@ -1,12 +1,12 @@
-$OpenBSD: patch-gettext-tools_tests_xgettext-python-1,v 1.2 2007/08/25 13:48:24 naddy Exp $
---- gettext-tools/tests/xgettext-python-1.orig	Mon Nov 27 18:02:11 2006
-+++ gettext-tools/tests/xgettext-python-1	Tue May 29 06:53:47 2007
+$OpenBSD: patch-gettext-tools_tests_xgettext-python-1,v 1.3 2008/06/13 04:56:34 naddy Exp $
+--- gettext-tools/tests/xgettext-python-1.orig	Sat Oct 20 22:01:32 2007
++++ gettext-tools/tests/xgettext-python-1	Mon Jun  2 22:58:10 2008
 @@ -28,7 +28,7 @@ tmpfiles="$tmpfiles xg-py-1.err xg-py-1.tmp xg-py-1.po
  : ${XGETTEXT=xgettext}
  ${XGETTEXT} --add-comments --no-location -o xg-py-1.tmp xg-py-1.py 2>xg-py-1.err
  test $? = 0 || { cat xg-py-1.err; rm -fr $tmpfiles; exit 1; }
--grep -v 'POT-Creation-Date' < xg-py-1.tmp > xg-py-1.pot
-+grep -av 'POT-Creation-Date' < xg-py-1.tmp > xg-py-1.pot
+-grep -v 'POT-Creation-Date' < xg-py-1.tmp | tr -d '\r' > xg-py-1.pot
++grep -av 'POT-Creation-Date' < xg-py-1.tmp | tr -d '\r' > xg-py-1.pot
  
  tmpfiles="$tmpfiles xg-py-1.ok"
  cat <<\EOF > xg-py-1.ok

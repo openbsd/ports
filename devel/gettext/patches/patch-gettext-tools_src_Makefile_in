@@ -1,7 +1,16 @@
-$OpenBSD: patch-gettext-tools_src_Makefile_in,v 1.2 2007/08/25 13:48:24 naddy Exp $
---- gettext-tools/src/Makefile.in.orig	Mon Nov 27 18:34:56 2006
-+++ gettext-tools/src/Makefile.in	Tue May 29 07:32:41 2007
-@@ -858,8 +858,7 @@ urlget_SOURCES = urlget.c
+$OpenBSD: patch-gettext-tools_src_Makefile_in,v 1.3 2008/06/13 04:56:34 naddy Exp $
+--- gettext-tools/src/Makefile.in.orig	Wed Nov  7 00:40:15 2007
++++ gettext-tools/src/Makefile.in	Mon Jun  2 22:58:10 2008
+@@ -999,7 +999,7 @@ AM_CPPFLAGS = \
+ 
+ # Ensure that <stdint.h> defines SIZE_MAX in C++ mode, like it does in C mode.
+ AM_CXXFLAGS = -D__STDC_LIMIT_MACROS
+-LDADD = ../gnulib-lib/libgettextlib.la @LTLIBINTL@ $(WOE32_LDADD)
++LDADD = ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses $(WOE32_LDADD)
+ JAVACOMP = $(SHELL) ../javacomp.sh
+ CSHARPCOMP = $(SHELL) ../csharpcomp.sh
+ 
+@@ -1102,8 +1102,7 @@ urlget_SOURCES = urlget.c
  # Need @LTLIBINTL@ because many source files use gettext().
  # Need @LTLIBICONV@ because po-charset.c, po-lex.c, msgl-iconv.c, write-po.c
  # use iconv().
@@ -11,44 +20,42 @@ $OpenBSD: patch-gettext-tools_src_Makefile_in,v 1.2 2007/08/25 13:48:24 naddy Ex
  	@LTNOUNDEF@ $(am__append_2)
  
  # Compile-time flags for particular source files.
-@@ -870,24 +869,24 @@ msgmerge_CXXFLAGS = $(AM_CXXFLAGS) $(OPENMP_CFLAGS)
+@@ -1114,22 +1113,22 @@ msgmerge_CXXFLAGS = $(AM_CXXFLAGS) $(OPENMP_CFLAGS)
  # INTL_MACOSX_LIBS is needed because the programs depend on libintl.la
  # but libtool doesn't put -Wl,-framework options into .la files.
  # For msginit, it is also needed because of localename.c.
--msgcmp_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
--msgfmt_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
--msgmerge_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ @MSGMERGE_LIBM@ $(OPENMP_CFLAGS)
--msgunfmt_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
--xgettext_LDADD = $(LIBUNINAME) libgettextsrc.la @INTL_MACOSX_LIBS@ @LTLIBEXPAT@
--msgattrib_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
--msgcat_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
--msgcomm_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
--msgconv_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
--msgen_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
--msgexec_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
--msgfilter_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
--msggrep_LDADD = $(LIBGREP) libgettextsrc.la @INTL_MACOSX_LIBS@
-+msgcmp_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgfmt_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgmerge_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@ @MSGMERGE_LIBM@ $(OPENMP_CFLAGS)
-+msgunfmt_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+xgettext_LDADD = $(LIBUNINAME) libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@ @LTLIBEXPAT@
-+msgattrib_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgcat_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgcomm_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgconv_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgen_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgexec_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msgfilter_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+msggrep_LDADD = $(LIBGREP) libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
- msginit_LDADD = ../intl/localename.@INTL_LIBTOOL_SUFFIX_PREFIX@o \
--                libgettextsrc.la @INTL_MACOSX_LIBS@
-+                libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
- 
--msguniq_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
--recode_sr_latin_LDADD = ../gnulib-lib/libgettextlib.la @INTL_MACOSX_LIBS@
-+msguniq_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
-+recode_sr_latin_LDADD = ../gnulib-lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
+-msgcmp_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
+-msgfmt_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
+-msgmerge_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ @MSGMERGE_LIBM@ $(WOE32_LDADD) $(OPENMP_CFLAGS)
+-msgunfmt_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
+-xgettext_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ @LTLIBEXPAT@ $(WOE32_LDADD)
+-msgattrib_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
+-msgcat_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
+-msgcomm_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
+-msgconv_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
+-msgen_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
+-msgexec_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
+-msgfilter_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
+-msggrep_LDADD = $(LIBGREP) libgettextsrc.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
+-msginit_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
+-msguniq_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
+-recode_sr_latin_LDADD = ../gnulib-lib/libgettextlib.la @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++msgcmp_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++msgfmt_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++msgmerge_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ @MSGMERGE_LIBM@ $(WOE32_LDADD) $(OPENMP_CFLAGS)
++msgunfmt_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++xgettext_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ @LTLIBEXPAT@ $(WOE32_LDADD)
++msgattrib_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++msgcat_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++msgcomm_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++msgconv_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++msgen_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++msgexec_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++msgfilter_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++msggrep_LDADD = $(LIBGREP) libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++msginit_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++msguniq_LDADD = libgettextsrc.la ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
++recode_sr_latin_LDADD = ../gnulib-lib/libgettextlib.la @LTLIBINTL@ -lncurses @INTL_MACOSX_LIBS@ $(WOE32_LDADD)
  
  # Specify installation directory, for --enable-relocatable.
  msgcmp_CPPFLAGS = $(AM_CPPFLAGS) -DINSTALLDIR=\"$(bindir)\"

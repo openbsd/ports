@@ -1,12 +1,12 @@
-$OpenBSD: patch-gettext-tools_tests_xgettext-java-2,v 1.2 2007/08/25 13:48:24 naddy Exp $
---- gettext-tools/tests/xgettext-java-2.orig	Mon Nov 27 18:02:11 2006
-+++ gettext-tools/tests/xgettext-java-2	Tue May 29 06:53:47 2007
+$OpenBSD: patch-gettext-tools_tests_xgettext-java-2,v 1.3 2008/06/13 04:56:34 naddy Exp $
+--- gettext-tools/tests/xgettext-java-2.orig	Sat Oct 20 22:01:32 2007
++++ gettext-tools/tests/xgettext-java-2	Mon Jun  2 22:58:10 2008
 @@ -62,7 +62,7 @@ tmpfiles="$tmpfiles xg-j-2.tmp xg-j-2.pot"
  : ${XGETTEXT=xgettext}
  ${XGETTEXT} --from-code=ISO-8859-1 -c -o xg-j-2.tmp xg-j-2.java 2>/dev/null
  test $? = 0 || { rm -fr $tmpfiles; exit 1; }
--grep -v 'POT-Creation-Date' < xg-j-2.tmp > xg-j-2.pot
-+grep -av 'POT-Creation-Date' < xg-j-2.tmp > xg-j-2.pot
+-grep -v 'POT-Creation-Date' < xg-j-2.tmp | tr -d '\r' > xg-j-2.pot
++grep -av 'POT-Creation-Date' < xg-j-2.tmp | tr -d '\r' > xg-j-2.pot
  
  tmpfiles="$tmpfiles xg-j-2.ok"
  cat <<\EOF > xg-j-2.ok

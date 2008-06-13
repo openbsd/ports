@@ -1,0 +1,12 @@
+$OpenBSD: patch-gettext-tools_tests_lang-c,v 1.1 2008/06/13 04:56:34 naddy Exp $
+--- gettext-tools/tests/lang-c.orig	Tue May 15 00:47:14 2007
++++ gettext-tools/tests/lang-c	Mon Jun  2 22:58:10 2008
+@@ -49,7 +49,7 @@ tmpfiles="$tmpfiles prog.${OBJEXT} prog${EXEEXT}"
+ # Put the -I flags before ${CFLAGS} ${CPPFLAGS}, to make sure that libintl.h
+ # is found in the build directory, regardless of -I options present in
+ # ${CFLAGS} or ${CPPFLAGS}.
+-${LIBTOOL} --quiet --mode=link ${CC} -I.. -I$top_srcdir/gnulib-lib ../gnulib-lib/libgettextlib.la -I../intl ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -o prog prog.c ${LTLIBINTL} \
++${LIBTOOL} --quiet --mode=link ${CC} -I.. -I$top_srcdir/gnulib-lib ../gnulib-lib/libgettextlib.la -I../intl ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -o prog prog.c ${LTLIBINTL} -lncurses \
+   || exit 1
+ 
+ tmpfiles="$tmpfiles prog.tmp prog.pot"
