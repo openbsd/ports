@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2008/06/13 16:39:44 mglocker Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/13 17:10:30 robert Exp $
 
 COMMENT=		fswebcam is a small and simple webcam app
 
@@ -22,8 +22,8 @@ LIB_DEPENDS=		gd::graphics/gd
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--disable-v4l1
-CONFIGURE_ENV=		CFLAGS="-I/usr/local/include" \
-			LDFLAGS="-L/usr/local/lib -L/usr/X11R6/lib"
+CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_REGRESS=		Yes
 
