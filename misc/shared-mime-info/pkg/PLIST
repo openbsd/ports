@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.12 2008/06/05 10:47:48 ajacoutot Exp $
-bin/update-mime-database
+@comment $OpenBSD: PLIST,v 1.13 2008/06/13 17:43:24 ajacoutot Exp $
+@bin bin/update-mime-database
 lib/pkgconfig/
 lib/pkgconfig/shared-mime-info.pc
 @man man/man1/update-mime-database.1
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/shared-mime-info.mo
+share/locale/be@latin/
+share/locale/be@latin/LC_MESSAGES/
+share/locale/be@latin/LC_MESSAGES/shared-mime-info.mo
 share/locale/bg/LC_MESSAGES/shared-mime-info.mo
 share/locale/ca/LC_MESSAGES/shared-mime-info.mo
 share/locale/cs/LC_MESSAGES/shared-mime-info.mo
@@ -25,6 +28,7 @@ share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/shared-mime-info.mo
 share/locale/fi/LC_MESSAGES/shared-mime-info.mo
 share/locale/fr/LC_MESSAGES/shared-mime-info.mo
+share/locale/ga/LC_MESSAGES/shared-mime-info.mo
 share/locale/hu/LC_MESSAGES/shared-mime-info.mo
 share/locale/it/LC_MESSAGES/shared-mime-info.mo
 share/locale/ja/LC_MESSAGES/shared-mime-info.mo
@@ -55,7 +59,9 @@ share/locale/vi/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_CN/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_TW/LC_MESSAGES/shared-mime-info.mo
 share/mime/
+@comment no checksum
 share/mime/XMLnamespaces
+@comment no checksum
 share/mime/aliases
 share/mime/application/
 share/mime/application/andrew-inset.xml
@@ -116,6 +122,7 @@ share/mime/application/vnd.oasis.opendocument.text-master.xml
 share/mime/application/vnd.oasis.opendocument.text-template.xml
 share/mime/application/vnd.oasis.opendocument.text-web.xml
 share/mime/application/vnd.oasis.opendocument.text.xml
+share/mime/application/vnd.openofficeorg.extension.xml
 share/mime/application/vnd.rn-realmedia.xml
 share/mime/application/vnd.stardivision.calc.xml
 share/mime/application/vnd.stardivision.chart.xml
@@ -255,6 +262,7 @@ share/mime/application/x-m4.xml
 share/mime/application/x-macbinary.xml
 share/mime/application/x-magicpoint.xml
 share/mime/application/x-markaby.xml
+share/mime/application/x-matroska.xml
 share/mime/application/x-mif.xml
 share/mime/application/x-mozilla-bookmarks.xml
 share/mime/application/x-ms-dos-executable.xml
@@ -359,6 +367,7 @@ share/mime/audio/x-it.xml
 share/mime/audio/x-m4b.xml
 share/mime/audio/x-matroska.xml
 share/mime/audio/x-minipsf.xml
+share/mime/audio/x-mo3.xml
 share/mime/audio/x-mod.xml
 share/mime/audio/x-mpegurl.xml
 share/mime/audio/x-ms-asx.xml
@@ -381,8 +390,11 @@ share/mime/audio/x-wavpack.xml
 share/mime/audio/x-xi.xml
 share/mime/audio/x-xm.xml
 share/mime/audio/x-xmf.xml
+share/mime/generic-icons
 @comment no checksum
 share/mime/globs
+share/mime/globs2
+share/mime/icons
 share/mime/image/
 share/mime/image/bmp.xml
 share/mime/image/cgm.xml
@@ -451,6 +463,7 @@ share/mime/image/x-quicktime.xml
 share/mime/image/x-rgb.xml
 share/mime/image/x-sgi.xml
 share/mime/image/x-sigma-x3f.xml
+share/mime/image/x-skencil.xml
 share/mime/image/x-sony-arw.xml
 share/mime/image/x-sony-sr2.xml
 share/mime/image/x-sony-srf.xml
@@ -543,7 +556,6 @@ share/mime/text/x-fortran.xml
 share/mime/text/x-gettext-translation-template.xml
 share/mime/text/x-gettext-translation.xml
 share/mime/text/x-google-video-pointer.xml
-share/mime/text/x-gtkrc.xml
 share/mime/text/x-haskell.xml
 share/mime/text/x-iMelody.xml
 share/mime/text/x-idl.xml
@@ -551,6 +563,7 @@ share/mime/text/x-install.xml
 share/mime/text/x-iptables.xml
 share/mime/text/x-java.xml
 share/mime/text/x-ldif.xml
+share/mime/text/x-lilypond.xml
 share/mime/text/x-literate-haskell.xml
 share/mime/text/x-log.xml
 share/mime/text/x-lua.xml
