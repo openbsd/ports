@@ -1,0 +1,22 @@
+--- src/if/gnet_property.c.orig	Fri May 30 22:23:54 2008
++++ src/if/gnet_property.c	Fri May 30 22:24:51 2008
+@@ -416,8 +416,8 @@
+ static const gboolean gnet_property_variable_download_require_urn_default = FALSE;
+ gboolean gnet_property_variable_download_require_server_name     = TRUE;
+ static const gboolean gnet_property_variable_download_require_server_name_default = TRUE;
+-guint32  gnet_property_variable_max_ultrapeers     = 3;
+-static const guint32  gnet_property_variable_max_ultrapeers_default = 3;
++guint32  gnet_property_variable_max_ultrapeers     = 4;
++static const guint32  gnet_property_variable_max_ultrapeers_default = 4;
+ guint32  gnet_property_variable_quick_connect_pool_size     = 10;
+ static const guint32  gnet_property_variable_quick_connect_pool_size_default = 10;
+ guint32  gnet_property_variable_max_leaves     = 150;
+@@ -4196,7 +4196,7 @@
+     gnet_property->props[182].data.guint32.def   = (void *) &gnet_property_variable_max_ultrapeers_default;
+     gnet_property->props[182].data.guint32.value = (void *) &gnet_property_variable_max_ultrapeers;
+     gnet_property->props[182].data.guint32.choices = NULL;
+-    gnet_property->props[182].data.guint32.max   = 4;
++    gnet_property->props[182].data.guint32.max   = 64;
+     gnet_property->props[182].data.guint32.min   = 0;
+ 
+ 

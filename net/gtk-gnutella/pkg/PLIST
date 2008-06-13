@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.17 2007/09/02 17:02:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2008/06/13 19:12:44 ckuethe Exp $
 bin/gtk-gnutella
 @man man/man1/gtk-gnutella.1
-share/applications/
 share/applications/gtk-gnutella.desktop
 share/gtk-gnutella/
 share/gtk-gnutella/bogons.txt
