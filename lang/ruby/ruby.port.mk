@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.18 2008/06/10 15:40:44 jcs Exp $
+# $OpenBSD: ruby.port.mk,v 1.19 2008/06/14 23:40:35 landry Exp $
 
 # ruby module
 
@@ -10,6 +10,8 @@ MODRUBY_RUN_DEPENDS+=	::lang/ruby
 
 BUILD_DEPENDS+=		::lang/ruby
 RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
+
+CATEGORIES+=		lang/ruby
 
 # location of ruby libraries
 MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
