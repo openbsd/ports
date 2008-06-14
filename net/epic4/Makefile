@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.63 2008/05/16 21:06:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2008/06/14 02:01:10 pvalchev Exp $
 
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
-VERSION=	2.8
+VERSION=	2.10
 HELP_DATE=	20050315
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
@@ -23,7 +23,7 @@ FAKE_FLAGS=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
 SEPARATE_BUILD=	simple
-CONFIGURE_STYLE=gnu 
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=	--without-perl \
 		--without-tcl
 
