@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.12 2007/12/18 20:17:12 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2008/06/14 18:15:26 landry Exp $
 
 COMMENT=	settings management library used by most xfce4 modules
 
-V=		4.4.2
-DISTNAME=	libxfce4mcs-${V}
+XFCE_PROJECT=	libxfce4mcs
+PKGNAME=	${DISTNAME}p0
+
 SHARED_LIBS=	xfce4mcs-manager	3.5 \
 		xfce4mcs-client		3.5 # .3.5
 
-HOMEPAGE=	http://www.xfce.org/
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
+HOMEPAGE=	http://www.xfce.org/projects/libraries/
 
-# LGPL
+# LGPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
-EXTRACT_SUFX=	.tar.bz2
+MODULES=	x11/xfce4
 
 LIB_DEPENDS=	startup-notification-1::devel/startup-notification \
 		xfce4util.>=1::x11/xfce4/libxfce4util

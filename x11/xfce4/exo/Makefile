@@ -1,27 +1,24 @@
-# $OpenBSD: Makefile,v 1.7 2008/05/24 01:24:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2008/06/14 18:15:26 landry Exp $
 
 COMMENT=	extension library for xfce4
 
-V=		0.3.4
-DISTNAME=	exo-${V}
-PKGNAME=	${DISTNAME}p1
+XFCE_VERSION=	0.3.4
+XFCE_PROJECT=	exo
+PKGNAME=	${DISTNAME}p2
 
 SHARED_LIBS=	exo-0.3		5.0 \
 		exo-hal-0.3	5.0
 
-HOMEPAGE=	http://www.xfce.org/
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
+HOMEPAGE=	http://www.xfce.org/projects
 
-# GPL
+# GPLv2/LGPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://thunar.xfce.org/download/sources/exo/${V}/
-EXTRACT_SUFX=	.tar.bz2
-
-USE_GMAKE=	Yes
+MODULES=	x11/xfce4
+DESKTOP_FILES=	Yes
 
 CONFIGURE_ARGS=	--enable-mcs-plugin --disable-python
 
@@ -29,7 +26,6 @@ BUILD_DEPENDS=	:p5-URI-*:www/p5-URI
 LIB_DEPENDS=	xfce4mcs-client.>=3,xfce4mcs-manager.>=3::x11/xfce4/xfce-mcs-manager \
 		notify.>=2::devel/libnotify \
 		xfcegui4.>=4::x11/xfce4/libxfcegui4
-RUN_DEPENDS=	::devel/desktop-file-utils
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
@@ -39,4 +35,3 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		png pthread startup-notification-1 xfce4util z
 
 .include <bsd.port.mk>
-
