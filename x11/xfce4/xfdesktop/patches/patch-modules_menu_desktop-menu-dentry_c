@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_menu_desktop-menu-dentry_c,v 1.1 2008/06/14 16:35:36 landry Exp $
+--- modules/menu/desktop-menu-dentry.c.orig	Thu Jun 12 18:24:40 2008
++++ modules/menu/desktop-menu-dentry.c	Thu Jun 12 18:25:02 2008
+@@ -173,7 +173,7 @@ _menu_shell_insert_sorted(GtkMenuShell *menu_shell, Gt
+         if(cmpname && g_ascii_strcasecmp(name, cmpname) < 0)
+             break;
+     }
+-    
++    g_list_free(items);
+     gtk_menu_shell_insert(menu_shell, mi, i);
+     
+     return i;
