@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_tr,v 1.1 2008/06/05 08:33:55 sturm Exp $
+$OpenBSD: patch-bin_tr,v 1.2 2008/06/14 16:48:22 sturm Exp $
 --- bin/tr.orig	Sat May 31 03:33:36 2008
 +++ bin/tr	Sun Jun  1 22:04:29 2008
 @@ -16,8 +16,14 @@ while [ -h "$PRG" ]; do
@@ -8,7 +8,7 @@ $OpenBSD: patch-bin_tr,v 1.1 2008/06/05 08:33:55 sturm Exp $
 -progdir=`dirname "$PRG"`
 -APPNAME=`basename "$0"`
 +# progdir is always used as $progdir/..
-+progdir=%%LOCALBASE%%/share/thinkingrock/etc
++progdir=${LOCALBASE}/share/thinkingrock/etc
 +
 +JAVA_HOME=`javaPathHelper -h thinkingrock`
 +jdkhome=$JAVA_HOME
