@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.528 2008/06/12 21:35:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.529 2008/06/14 19:02:58 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -371,7 +371,6 @@
      SUBDIR += sirc
      SUBDIR += slirp
      SUBDIR += smokeping
-     SUBDIR += sniffit
      SUBDIR += snort
      SUBDIR += snort,mysql
      SUBDIR += snort,postgresql
