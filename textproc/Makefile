@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2008/06/05 11:45:19 okan Exp $
+# $OpenBSD: Makefile,v 1.237 2008/06/14 21:54:58 eric Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -204,6 +204,7 @@
      SUBDIR += py-HappyDoc
      SUBDIR += py-cElementTree
      SUBDIR += py-docutils
+     SUBDIR += py-epydoc
      SUBDIR += py-feedparser
      SUBDIR += py-jaxml
      SUBDIR += py-lxml
