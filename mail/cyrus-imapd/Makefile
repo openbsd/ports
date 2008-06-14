@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2008/04/23 13:33:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2008/06/14 17:22:39 ajacoutot Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
 
 V=		2.3.12
 DISTNAME=	cyrus-imapd-${V}
-PKGNAME-main=	${DISTNAME}
-FULLPKGNAME-perl=cyrus-imapd-perl-${V}
+PKGNAME-main=	${DISTNAME}p0
+FULLPKGNAME-perl=cyrus-imapd-perl-${V}p0
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
 CATEGORIES=	mail
 HOMEPAGE=	http://cyrusimap.web.cmu.edu
@@ -28,6 +28,7 @@ LIB_DEPENDS=	sasl2.>=2::security/cyrus-sasl2 \
 		lib/db4/db.>=4:db-4.*:databases/db/v4
 LIB_DEPENDS-main=${LIB_DEPENDS} \
 		pcre.>=2,pcreposix.>=1::devel/pcre
+RUN_DEPENDS-main=${RUN_DEPENDS}
 
 PATCH_LIST=	patch-*
 
@@ -69,7 +70,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mdrac}
 BUILD_DEPENDS+=	::mail/drac
-RUN_DEPENDS+=	::mail/drac
+RUN_DEPENDS-main+=::mail/drac
 PATCH_LIST+=	${WRKSRC}/contrib/drac_auth.patch \
 		drac-patch-imap_Makefile.in
 .endif
