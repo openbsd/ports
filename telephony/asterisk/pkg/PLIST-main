@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2008/04/02 23:18:11 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2008/06/14 16:00:11 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict app_conference-<=20070710
 @newgroup _asterisk:545
@@ -229,20 +229,20 @@ lib/asterisk/modules/res_speech.so
 @man man/man8/astgenkey.8
 @man man/man8/autosupport.8
 @man man/man8/safe_asterisk.8
-sbin/aelparse
-sbin/asterisk
+@bin sbin/aelparse
+@bin sbin/asterisk
 sbin/astgenkey
 sbin/autosupport
-sbin/rasterisk
+@bin sbin/rasterisk
 sbin/safe_asterisk
-sbin/smsq
-sbin/stereorize
-sbin/streamplayer
+@bin sbin/smsq
+@bin sbin/stereorize
+@bin sbin/streamplayer
 share/asterisk/
 share/asterisk/agi-bin/
 share/asterisk/agi-bin/agi-test.agi
-share/asterisk/agi-bin/eagi-sphinx-test
-share/asterisk/agi-bin/eagi-test
+@bin share/asterisk/agi-bin/eagi-sphinx-test
+@bin share/asterisk/agi-bin/eagi-test
 share/asterisk/agi-bin/jukebox.agi
 share/asterisk/firmware/
 share/asterisk/firmware/iax/
@@ -720,6 +720,7 @@ share/doc/asterisk/cdrdriver.txt
 share/doc/asterisk/chaniax.txt
 share/doc/asterisk/channels.txt
 share/doc/asterisk/channelvariables.txt
+share/doc/asterisk/cli.txt
 share/doc/asterisk/cliprompt.txt
 share/doc/asterisk/configuration.txt
 share/doc/asterisk/cygwin.txt

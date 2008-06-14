@@ -1,9 +1,7 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.7 2008/05/27 22:14:34 sthen Exp $
---- contrib/scripts/safe_asterisk.orig	Mon May  5 04:22:25 2008
-+++ contrib/scripts/safe_asterisk	Wed May 21 12:36:13 2008
-@@ -1,20 +1,21 @@
--#!/bin/bash
-+#!/bin/sh
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.8 2008/06/14 16:00:10 sthen Exp $
+--- contrib/scripts/safe_asterisk.orig	Fri May 30 17:44:39 2008
++++ contrib/scripts/safe_asterisk	Thu Jun 12 19:49:36 2008
+@@ -2,19 +2,20 @@
  # vim:textwidth=80:tabstop=4:shiftwidth=4:smartindent:autoindent
  
  CLIARGS="$*"				# Grab any args passed to safe_asterisk
@@ -29,15 +27,6 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.7 2008/05/27 22:14:34 sthen Ex
  
  # run asterisk with this priority
  PRIORITY=0
-@@ -29,7 +30,7 @@ PRIORITY=0
- # Check if Asterisk is already running.  If it is, then bug out, because
- # starting safe_asterisk when Asterisk is running is very bad.
- VERSION=`${ASTSBINDIR}/asterisk -rx 'core show version'`
--if [ "${VERSION:0:8}" = "Asterisk" ]; then # otherwise "Unable t"
-+if [ "`echo $VERSION | cut -c 1-8`" = "Asterisk" ]; then
- 	echo "Asterisk is already running.  $0 will exit now."
- 	exit 1
- fi
 @@ -74,6 +75,12 @@ else
  	# set the process's filemax to whatever set above
  	ulimit -n $MAXFILES
