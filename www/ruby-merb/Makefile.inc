@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.2 2008/05/09 17:33:16 bernd Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2008/06/14 23:59:36 landry Exp $
 
 VERSION?=	0.9.3
 PKGNAME?=	ruby-${DISTNAME}
-CATEGORIES?=	www lang/ruby
+CATEGORIES?=	www
 
 HOMEPAGE?=	http://www.merbivore.com/
 

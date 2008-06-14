@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/09 17:29:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/14 23:59:37 landry Exp $
 
 COMMENT=	freeze Merb
 
 DISTNAME=	merb-freezer-${VERSION}
+PKGNAME=	ruby-${DISTNAME}p0
 
 .include <bsd.port.mk>
