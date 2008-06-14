@@ -1,26 +1,20 @@
-# $OpenBSD: Makefile,v 1.8 2008/05/24 01:24:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2008/06/14 16:24:00 landry Exp $
 
 COMMENT=	lightweight image-viewer for xfce4
 
-V=		0.0.17
-DISTNAME=	ristretto-${V}
-PKGNAME=	${DISTNAME}p1
+XFCE_VERSION=	0.0.20
+XFCE_GOODIE=	ristretto
+EXTRACT_SUFX=	.tar.gz
 
-HOMEPAGE=	http://goodies.xfce.org/projects/applications/ristretto
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
-
-# GPL v2
+# GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://goodies.xfce.org/releases/ristretto/
-
-USE_GMAKE=	Yes
-
-RUN_DEPENDS=	::misc/shared-mime-info \
-		:desktop-file-utils-*:devel/desktop-file-utils
+MODULES=	x11/xfce4
+DESKTOP_FILES=	Yes
+RUN_DEPENDS=	::misc/shared-mime-info
 
 LIB_DEPENDS=	thunar-vfs-1.>=4.2::x11/xfce4/thunar \
 
