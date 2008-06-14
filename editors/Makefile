@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2008/01/23 17:03:44 okan Exp $
+# $OpenBSD: Makefile,v 1.69 2008/06/14 18:32:29 eric Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -14,6 +14,9 @@
      SUBDIR += elvis,no_x11
      SUBDIR += emacs21
      SUBDIR += emacs21,no_x11
+     SUBDIR += emacs22
+     SUBDIR += emacs22,no_x11
+     SUBDIR += emacs22,gtk
      SUBDIR += fte
      SUBDIR += hexcurse
      SUBDIR += hexedit
