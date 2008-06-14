@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.2 2008/06/14 16:58:48 ajacoutot Exp $
 
 COMMENT =	simple PostgreSQL GUI front end
 
