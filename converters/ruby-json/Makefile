@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/19 18:24:07 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/14 23:41:32 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		JSON implementation for Ruby
 
 DISTNAME=		json-1.1.2
-PKGNAME=		ruby-${DISTNAME}
+PKGNAME=		ruby-${DISTNAME}p0
 CATEGORIES=		converters
 
 HOMEPAGE=		http://json.rubyforge.org/

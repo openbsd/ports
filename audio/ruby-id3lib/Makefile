@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/09 11:33:14 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2008/06/14 23:41:31 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Ruby interface to the id3lib C++ library
 
 VERSION=	0.5.0
-PKGNAME=	ruby-id3lib-${VERSION}
+PKGNAME=	ruby-id3lib-${VERSION}p0
 DISTNAME=	id3lib-ruby-${VERSION}
 CATEGORIES=	audio
 
