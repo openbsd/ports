@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/20 11:26:53 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2008/06/14 23:54:16 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	ruby bindings for RRDtool
 
 V=		0.6.0
 DISTNAME=	RubyRRDtool-$V
-PKGNAME=	ruby-rrdtool-$V
+PKGNAME=	ruby-rrdtool-$Vp0
 CATEGORIES=	net
 
 HOMEPAGE=	http://rubyrrdtool.rubyforge.org/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/20 12:50:48 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/14 23:55:02 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		Ruby interface to openssl
 
 VERSION=		0.7
 DISTNAME=		ezcrypto-${VERSION}
-PKGNAME=		ruby-ezcrypto-${VERSION}
+PKGNAME=		ruby-ezcrypto-${VERSION}p0
 CATEGORIES=		security
 
 HOMEPAGE=		http://rubyforge.org/projects/ezcrypto/

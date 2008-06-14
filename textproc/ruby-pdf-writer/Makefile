@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:41 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/14 23:57:19 landry Exp $
 
 COMMENT=	ruby extension for working with PDF documents
 
 DISTNAME=	pdf-writer-1.1.3
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	textproc
 
 # mit

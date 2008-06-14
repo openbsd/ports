@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/09 18:58:01 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/14 23:54:16 landry Exp $
 
 COMMENT=	pure-ruby implementation of the SSH2 client protocol
 
 DISTNAME=	net-ssh-2.0.1
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	net
 
 # bsd/ruby

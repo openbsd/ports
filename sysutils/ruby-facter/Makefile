@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2008/06/14 23:55:46 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Ruby library for retrieving facts from operating systems
 
 VERSION=	1.3.7
 DISTNAME=	facter-${VERSION}
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	sysutils
 EXTRACT_SUFX=	.tgz
 
