@@ -1,7 +1,18 @@
-$OpenBSD: patch-agent_mibgroup_hardware_memory_memory_netbsd_c,v 1.1 2008/02/28 18:26:28 okan Exp $
---- agent/mibgroup/hardware/memory/memory_netbsd.c.orig	Mon Mar  6 11:23:52 2006
-+++ agent/mibgroup/hardware/memory/memory_netbsd.c	Thu Feb 28 11:22:10 2008
-@@ -37,11 +37,11 @@ int netsnmp_mem_arch_load( netsnmp_cache *cache, void 
+$OpenBSD: patch-agent_mibgroup_hardware_memory_memory_netbsd_c,v 1.2 2008/06/14 07:48:23 sthen Exp $
+--- agent/mibgroup/hardware/memory/memory_netbsd.c.orig	Mon Mar  6 16:23:52 2006
++++ agent/mibgroup/hardware/memory/memory_netbsd.c	Fri Jun 13 22:07:29 2008
+@@ -30,18 +30,22 @@ int netsnmp_mem_arch_load( netsnmp_cache *cache, void 
+     long           pagesize;
+ 
+     struct uvmexp  uvmexp;
++#ifdef __OpenBSD__
++    size_t            uvmexp_size  = sizeof(uvmexp);
++#else
+     int            uvmexp_size  = sizeof(uvmexp);
++#endif
+     int            uvmexp_mib[] = { CTL_VM, VM_UVMEXP };
+ 
+     struct vmtotal total;
      size_t         total_size  = sizeof(total);
      int            total_mib[] = { CTL_VM, VM_METER };
  
@@ -17,3 +28,15 @@ $OpenBSD: patch-agent_mibgroup_hardware_memory_memory_netbsd_c,v 1.1 2008/02/28 
  
      /*
       * Retrieve the memory information from the underlying O/S...
+@@ -50,7 +54,11 @@ int netsnmp_mem_arch_load( netsnmp_cache *cache, void 
+     sysctl(total_mib,    2, &total,    &total_size,    NULL, 0);
+     sysctl(phys_mem_mib, 2, &phys_mem, &mem_size,      NULL, 0);
+     sysctl(user_mem_mib, 2, &user_mem, &mem_size,      NULL, 0);
++#ifdef __OpenBSD__
++    pagesize = getpagesize();
++#else
+     pagesize = uvmexp.pagesize;
++#endif
+ 
+     /*
+      * ... and save this in a standard form.
