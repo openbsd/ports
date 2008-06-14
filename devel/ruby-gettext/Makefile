@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/05/09 17:26:59 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2008/06/14 23:46:38 landry Exp $
 
 COMMENT=		Ruby interface to gettext
 
 VERSION=		1.90.0
 DISTNAME=		gettext-${VERSION}
-PKGNAME=		ruby-gettext-${VERSION}
+PKGNAME=		ruby-gettext-${VERSION}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.yotabanana.com/hiki/ruby-gettext.html

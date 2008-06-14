@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/05/09 17:22:44 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/14 23:46:38 landry Exp $
 
 COMMENT=	simple library for generating UUIDs
 
 DISTNAME=	uuidtools-1.0.3
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	devel
 
 # MIT

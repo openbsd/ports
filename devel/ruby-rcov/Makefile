@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/11 18:16:19 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2008/06/14 23:46:38 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	code coverage tool for Ruby
 
 DISTNAME=	rcov-0.8.1.2.0
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	devel
 
 MAINTAINER=	Markus Friedl <markus@openbsd.org>

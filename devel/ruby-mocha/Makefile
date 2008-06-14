@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/02 11:08:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/14 23:46:38 landry Exp $
 
 COMMENT=	ruby library for mocking and stubbing
 
 DISTNAME=	mocha-0.5.6
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=     devel
 
 HOMEPAGE=	http://mocha.rubyforge.org/

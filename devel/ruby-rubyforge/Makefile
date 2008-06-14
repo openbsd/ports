@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/04/01 22:12:16 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2008/06/14 23:46:38 landry Exp $
 
 COMMENT=	script which automates a limited set of rubyforge operations
 
 DISTNAME=	rubyforge-0.4.5
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	devel net
 
 # ?

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/07 21:04:40 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/14 23:46:38 landry Exp $
 
 COMMENT=	open processes with handles on pid, stdin, stdout, stderr
 
 DISTNAME=	open4-0.9.6
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	devel
 
 # Ruby license

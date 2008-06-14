@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/12/27 19:42:04 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2008/06/14 23:46:37 landry Exp $
 
 COMMENT=	eases web-request routing, handling, and response
 
 DISTNAME=       actionpack-2.0.2
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=     devel
 
 # MIT License
