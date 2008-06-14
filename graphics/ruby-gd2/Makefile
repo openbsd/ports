@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/03 01:09:59 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/14 23:51:46 landry Exp $
 
 COMMENT=	ruby interface to the gd2 graphics library
 
 DISTNAME=	gd2-1.1.1
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	graphics devel
 
 # gpl

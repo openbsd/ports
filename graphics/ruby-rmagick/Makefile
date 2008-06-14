@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/07 22:00:59 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/14 23:51:46 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Ruby interface to ImageMagick
 
 DISTNAME=	rmagick-2.2.0
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://rmagick.rubyforge.org/
