@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/11/19 17:18:41 okan Exp $
+# $OpenBSD: Makefile,v 1.8 2008/06/14 16:40:39 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		circuit drawing and schematic capture
 
 BASEVER=		3.4
 DISTNAME=		xcircuit-${BASEVER}.27
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		cad
 
 HOMEPAGE=		http://opencircuitdesign.com/xcircuit/
@@ -29,7 +30,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 			--with-tk=${LOCALBASE}/lib/tk8.4
 
-LIB_DEPENDS+=		tk84:tk->=8.4:x11/tk/8.4
+LIB_DEPENDS+=		tk84:tk-8.4.*:x11/tk/8.4
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
