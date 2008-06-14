@@ -1,0 +1,21 @@
+$OpenBSD: patch-londonlaw_server_Game_py,v 1.1 2008/06/14 06:17:14 eric Exp $
+--- londonlaw/server/Game.py.orig	Sat Jun 14 07:15:06 2008
++++ londonlaw/server/Game.py	Sat Jun 14 07:14:50 2008
+@@ -18,7 +18,7 @@
+ import re, random
+ import sets
+ 
+-from twisted.python import components
++from zope import interface
+ from twisted.python import log
+ 
+ from londonlaw.common.protocol import *
+@@ -32,7 +32,7 @@ class GameError(Exception):
+    pass
+ 
+ 
+-class IGameListener(components.Interface):
++class IGameListener(interface.Interface):
+    def announceHistory(self, history):
+       pass
+ 

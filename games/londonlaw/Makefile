@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2008/06/14 06:17:14 eric Exp $
 
 COMMENT=		online multiplayer version of the Scotland Yard game
 
-DISTNAME=		londonlaw-0.2.1
-PKGNAME=		${DISTNAME}p0
+MODPY_EGG_VERSION=	0.2.1
+DISTNAME=		londonlaw-${MODPY_EGG_VERSION}
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		games
 
 HOMEPAGE=		http://www.eecs.umich.edu/~pelzlpj/londonlaw/
@@ -22,5 +23,8 @@ RUN_DEPENDS=		::devel/py-twisted/core \
 			::x11/py-wxPython
 
 NO_REGRESS=		Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

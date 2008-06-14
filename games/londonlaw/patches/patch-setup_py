@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2008/06/14 06:17:14 eric Exp $
+--- setup.py.orig	Sat Jun 14 07:53:11 2008
++++ setup.py	Sat Jun 14 07:54:19 2008
+@@ -23,7 +23,7 @@ if 'sdist' not in sys.argv and 'clean' not in sys.argv
+          ROOT = os.path.normpath(arg[(index+len("--root=")):])
+ 
+    config = open("londonlaw/common/config.py", "w")
+-   config.write("MEDIAROOT = \"" + os.path.join(PREFIX,"share/londonlaw/guiclient") + "\"\n")
++   config.write("MEDIAROOT = \"" + "${PREFIX}/share/londonlaw/guiclient" + "\"\n")
+    config.close()
+ 
+ 
