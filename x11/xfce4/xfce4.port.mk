@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.1 2008/06/14 16:15:16 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.2 2008/06/14 17:21:35 landry Exp $
 
 # Module for Xfce related ports, divided into three categories:
 # core, goodies, plugins.
@@ -37,12 +37,12 @@ PKGNAME?=	${DISTNAME:S/-plugin//}
 
 MODXFCE_LIB_DEPENDS=	xfce4panel.>=2::x11/xfce4/xfce4-panel
 .elif defined(XFCE_GOODIE)
-HOMEPAGE=?	http://goodies.xfce.org/projects/applications/${XFCE_GOODIE}
+HOMEPAGE?=	http://goodies.xfce.org/projects/applications/${XFCE_GOODIE}
 
 MASTER_SITES?=	http://goodies.xfce.org/releases/${XFCE_GOODIE}/
 DISTNAME=	${XFCE_GOODIE}-${XFCE_VERSION}
 .elif defined(XFCE_PROJECT)
-HOMEPAGE=?	http://www.xfce.org/projects/${XFCE_PROJECT}
+HOMEPAGE?=	http://www.xfce.org/projects/${XFCE_PROJECT}
 
 MASTER_SITES?=	http://www.xfce.org/archive/xfce-${XFCE_DESKTOP_VERSION}/src/
 DISTNAME=	${XFCE_PROJECT}-${XFCE_VERSION}
