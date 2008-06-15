@@ -1,0 +1,12 @@
+$OpenBSD: patch-lbdb_lib_sh_in,v 1.1.1.1 2008/06/15 07:22:57 sthen Exp $
+--- lbdb_lib.sh.in.orig	Tue Mar 11 22:51:11 2008
++++ lbdb_lib.sh.in	Tue Mar 11 22:51:37 2008
+@@ -67,7 +67,7 @@ lbdb_hostname()
+ 		if test "x$hn" = "x" ; then
+ 			hn=`lbdb_hn_sendmail`
+ 			if test "x$hn" = "xNONE" ; then
+-				for i in /etc/HOSTNAME /etc/hostname ; do
++				for i in /etc/myname /etc/HOSTNAME /etc/hostname ; do
+ 					if test -f $i ; then
+ 						hn="`cat $i`"
+ 						break;

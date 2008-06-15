@@ -1,0 +1,5 @@
+Little Brother Database is a simple email address database,
+originally designed for Mutt, but working with other software.
+It can query multiple backends, including local files of many
+formats, and some network sources, including finger and
+YP/NIS. LDAP support is available in the lbdb-ldap package.

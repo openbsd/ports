@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/06/15 07:22:57 sthen Exp $
+bin/lbdb-fetchaddr
+@bin bin/lbdb_dotlock
+bin/lbdbq
+bin/nodelist2lbdb
+lib/lbdb/
+@bin lib/lbdb/fetchaddr
+lib/lbdb/lbdb-munge
+lib/lbdb/lbdb_bbdb_query.el
+lib/lbdb/lbdb_lib
+lib/lbdb/m_bbdb
+lib/lbdb/m_fido
+lib/lbdb/m_finger
+lib/lbdb/m_getent
+lib/lbdb/m_gnomecard
+lib/lbdb/m_inmail
+lib/lbdb/m_muttalias
+lib/lbdb/m_palm
+lib/lbdb/m_passwd
+lib/lbdb/m_pine
+lib/lbdb/m_wanderlust
+lib/lbdb/m_yppasswd
+lib/lbdb/munge
+lib/lbdb/munge-keeporder
+lib/lbdb/palm_lsaddr
+@bin lib/lbdb/qpto8bit
+lib/lbdb/tac
+@man man/man1/lbdb-fetchaddr.1
+@man man/man1/lbdb_dotlock.1
+@man man/man1/lbdbq.1
+@man man/man1/nodelist2lbdb.1
+share/examples/lbdb/
+share/examples/lbdb/lbdb.rc
+@sample ${SYSCONFDIR}/lbdb.rc

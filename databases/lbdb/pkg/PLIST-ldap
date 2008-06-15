@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-ldap,v 1.1.1.1 2008/06/15 07:22:57 sthen Exp $
+lib/lbdb/m_ldap
+lib/lbdb/mutt_ldap_query
+@man man/man1/mutt_ldap_query.1
+share/examples/lbdb/lbdb_ldap.rc
+@sample ${SYSCONFDIR}/lbdb_ldap.rc
