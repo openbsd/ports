@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.19 2008/06/05 15:57:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2008/06/15 01:44:16 sthen Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-4.0
 PKGNAME=		${DISTNAME}p4
-CATEGORIES=		mail	
+CATEGORIES=		mail
 
 HOMEPAGE=		http://www.nongnu.org/mailnotify/
-	
+
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes 
-PERMIT_DISTFILES_CDROM=	Yes 
-PERMIT_DISTFILES_FTP=	Yes 
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		Xcomposite Xdamage pcre \
@@ -25,18 +25,18 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		pangocairo-1.0 pangoft2-1.0 png popt pthread rpcsvc \
 		ssl startup-notification-1 stdc++ util xml2 z
 
-MASTER_SITES=		http://savannah.nongnu.org/download/mailnotify/
+MASTER_SITES=	http://savannah.nongnu.org/download/mailnotify/
 
-MODULES=		devel/gettext \
-			textproc/intltool
+MODULES=	devel/gettext \
+		textproc/intltool
 
-BUILD_DEPENDS=         :scrollkeeper-*:textproc/scrollkeeper
-RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
-			:gnome-icon-theme-*:x11/gnome/icon-theme \
-			:desktop-file-utils-*:devel/desktop-file-utils \
-			:yelp-*:x11/gnome/yelp
-LIB_DEPENDS=		notify::devel/libnotify \
-			eel-2::x11/gnome/eel
+BUILD_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
+		:gnome-icon-theme-*:x11/gnome/icon-theme \
+		:desktop-file-utils-*:devel/desktop-file-utils \
+		:yelp-*:x11/gnome/yelp
+LIB_DEPENDS=	notify::devel/libnotify \
+		eel-2::x11/gnome/eel
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/mail-no
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch: 
+post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 post-install:
