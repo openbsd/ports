@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.12 2007/12/20 22:54:28 kili Exp $
+@comment $OpenBSD: PLIST,v 1.13 2008/06/15 17:08:01 okan Exp $
 %%SHARED%%
-bin/gimp
-bin/gimp-2.4
-bin/gimp-console
-bin/gimp-console-2.4
-bin/gimp-remote
-bin/gimp-remote-2.4
+@bin bin/gimp
+@bin bin/gimp-2.4
+@bin bin/gimp-console
+@bin bin/gimp-console-2.4
+@bin bin/gimp-remote
+@bin bin/gimp-remote-2.4
 bin/gimptool-2.0
 include/gimp-2.0/
 include/gimp-2.0/libgimp/
@@ -245,177 +245,177 @@ lib/gimp/2.0/modules/libcolorsel_water.la
 lib/gimp/2.0/modules/libcontroller_midi.a
 lib/gimp/2.0/modules/libcontroller_midi.la
 lib/gimp/2.0/plug-ins/
-lib/gimp/2.0/plug-ins/AlienMap2
-lib/gimp/2.0/plug-ins/CEL
-lib/gimp/2.0/plug-ins/CML_explorer
-lib/gimp/2.0/plug-ins/FractalExplorer
-lib/gimp/2.0/plug-ins/Lighting
-lib/gimp/2.0/plug-ins/MapObject
-lib/gimp/2.0/plug-ins/aa
-lib/gimp/2.0/plug-ins/align_layers
-lib/gimp/2.0/plug-ins/animationplay
-lib/gimp/2.0/plug-ins/animoptimize
-lib/gimp/2.0/plug-ins/antialias
-lib/gimp/2.0/plug-ins/apply_lens
-lib/gimp/2.0/plug-ins/autocrop
-lib/gimp/2.0/plug-ins/autostretch_hsv
-lib/gimp/2.0/plug-ins/blinds
-lib/gimp/2.0/plug-ins/blur
-lib/gimp/2.0/plug-ins/bmp
-lib/gimp/2.0/plug-ins/borderaverage
-lib/gimp/2.0/plug-ins/bumpmap
-lib/gimp/2.0/plug-ins/c_astretch
-lib/gimp/2.0/plug-ins/cartoon
-lib/gimp/2.0/plug-ins/ccanalyze
-lib/gimp/2.0/plug-ins/channel_mixer
-lib/gimp/2.0/plug-ins/checkerboard
-lib/gimp/2.0/plug-ins/color_enhance
-lib/gimp/2.0/plug-ins/colorify
-lib/gimp/2.0/plug-ins/colormap-remap
-lib/gimp/2.0/plug-ins/colortoalpha
-lib/gimp/2.0/plug-ins/compose
-lib/gimp/2.0/plug-ins/compressor
-lib/gimp/2.0/plug-ins/convmatrix
-lib/gimp/2.0/plug-ins/csource
-lib/gimp/2.0/plug-ins/cubism
-lib/gimp/2.0/plug-ins/curve_bend
-lib/gimp/2.0/plug-ins/decompose
-lib/gimp/2.0/plug-ins/deinterlace
-lib/gimp/2.0/plug-ins/depthmerge
-lib/gimp/2.0/plug-ins/desktop-link
-lib/gimp/2.0/plug-ins/despeckle
-lib/gimp/2.0/plug-ins/destripe
-lib/gimp/2.0/plug-ins/dicom
-lib/gimp/2.0/plug-ins/diffraction
-lib/gimp/2.0/plug-ins/displace
-lib/gimp/2.0/plug-ins/dog
-lib/gimp/2.0/plug-ins/edge
-lib/gimp/2.0/plug-ins/emboss
-lib/gimp/2.0/plug-ins/engrave
-lib/gimp/2.0/plug-ins/exchange
-lib/gimp/2.0/plug-ins/faxg3
-lib/gimp/2.0/plug-ins/film
-lib/gimp/2.0/plug-ins/fits
-lib/gimp/2.0/plug-ins/flame
-lib/gimp/2.0/plug-ins/flarefx
-lib/gimp/2.0/plug-ins/fp
-lib/gimp/2.0/plug-ins/fractaltrace
-lib/gimp/2.0/plug-ins/gauss
-lib/gimp/2.0/plug-ins/gbr
-lib/gimp/2.0/plug-ins/gee
-lib/gimp/2.0/plug-ins/gee_zoom
-lib/gimp/2.0/plug-ins/gfig
-lib/gimp/2.0/plug-ins/gflare
-lib/gimp/2.0/plug-ins/gfli
-lib/gimp/2.0/plug-ins/gif-load
-lib/gimp/2.0/plug-ins/gif-save
-lib/gimp/2.0/plug-ins/gih
-lib/gimp/2.0/plug-ins/gimpressionist
-lib/gimp/2.0/plug-ins/glasstile
-lib/gimp/2.0/plug-ins/glob
-lib/gimp/2.0/plug-ins/gqbist
-lib/gimp/2.0/plug-ins/gradmap
-lib/gimp/2.0/plug-ins/grid
-lib/gimp/2.0/plug-ins/gtm
-lib/gimp/2.0/plug-ins/guillotine
-lib/gimp/2.0/plug-ins/header
-lib/gimp/2.0/plug-ins/help
-lib/gimp/2.0/plug-ins/hot
-lib/gimp/2.0/plug-ins/ifscompose
-lib/gimp/2.0/plug-ins/illusion
-lib/gimp/2.0/plug-ins/imagemap
-lib/gimp/2.0/plug-ins/iwarp
-lib/gimp/2.0/plug-ins/jigsaw
-lib/gimp/2.0/plug-ins/jpeg
-lib/gimp/2.0/plug-ins/laplace
-lib/gimp/2.0/plug-ins/lcms
-lib/gimp/2.0/plug-ins/lens
-lib/gimp/2.0/plug-ins/lic
-lib/gimp/2.0/plug-ins/mail
-lib/gimp/2.0/plug-ins/mapcolor
-lib/gimp/2.0/plug-ins/max_rgb
-lib/gimp/2.0/plug-ins/maze
-lib/gimp/2.0/plug-ins/mblur
-lib/gimp/2.0/plug-ins/metadata
-lib/gimp/2.0/plug-ins/mng
-lib/gimp/2.0/plug-ins/mosaic
-lib/gimp/2.0/plug-ins/neon
-lib/gimp/2.0/plug-ins/newsprint
-lib/gimp/2.0/plug-ins/nlfilt
-lib/gimp/2.0/plug-ins/noisify
-lib/gimp/2.0/plug-ins/normalize
-lib/gimp/2.0/plug-ins/nova
-lib/gimp/2.0/plug-ins/oilify
-lib/gimp/2.0/plug-ins/pagecurl
-lib/gimp/2.0/plug-ins/papertile
-lib/gimp/2.0/plug-ins/pat
-lib/gimp/2.0/plug-ins/pcx
-lib/gimp/2.0/plug-ins/photocopy
-lib/gimp/2.0/plug-ins/pix
-lib/gimp/2.0/plug-ins/pixelize
-lib/gimp/2.0/plug-ins/plasma
-lib/gimp/2.0/plug-ins/plugin-browser
-lib/gimp/2.0/plug-ins/png
-lib/gimp/2.0/plug-ins/pnm
-lib/gimp/2.0/plug-ins/polar
-lib/gimp/2.0/plug-ins/poppler
-lib/gimp/2.0/plug-ins/postscript
-lib/gimp/2.0/plug-ins/procedure-browser
-lib/gimp/2.0/plug-ins/psd-load
-lib/gimp/2.0/plug-ins/psd-save
-lib/gimp/2.0/plug-ins/psp
-lib/gimp/2.0/plug-ins/randomize
-lib/gimp/2.0/plug-ins/raw
-lib/gimp/2.0/plug-ins/rcm
-lib/gimp/2.0/plug-ins/redeye
-lib/gimp/2.0/plug-ins/retinex
-lib/gimp/2.0/plug-ins/ripple
-lib/gimp/2.0/plug-ins/rotate
-lib/gimp/2.0/plug-ins/sample_colorize
-lib/gimp/2.0/plug-ins/scatter_hsv
-lib/gimp/2.0/plug-ins/screenshot
-lib/gimp/2.0/plug-ins/script-fu
-lib/gimp/2.0/plug-ins/sel2path
-lib/gimp/2.0/plug-ins/sel_gauss
-lib/gimp/2.0/plug-ins/semiflatten
-lib/gimp/2.0/plug-ins/sgi
-lib/gimp/2.0/plug-ins/sharpen
-lib/gimp/2.0/plug-ins/shift
-lib/gimp/2.0/plug-ins/sinus
-lib/gimp/2.0/plug-ins/smooth_palette
-lib/gimp/2.0/plug-ins/snoise
-lib/gimp/2.0/plug-ins/sobel
-lib/gimp/2.0/plug-ins/softglow
-lib/gimp/2.0/plug-ins/sparkle
-lib/gimp/2.0/plug-ins/spheredesigner
-lib/gimp/2.0/plug-ins/spread
-lib/gimp/2.0/plug-ins/struc
-lib/gimp/2.0/plug-ins/sunras
-lib/gimp/2.0/plug-ins/tga
-lib/gimp/2.0/plug-ins/threshold_alpha
-lib/gimp/2.0/plug-ins/tiff-load
-lib/gimp/2.0/plug-ins/tiff-save
-lib/gimp/2.0/plug-ins/tile
-lib/gimp/2.0/plug-ins/tileit
-lib/gimp/2.0/plug-ins/tiler
-lib/gimp/2.0/plug-ins/uniteditor
-lib/gimp/2.0/plug-ins/unsharp
-lib/gimp/2.0/plug-ins/uri
-lib/gimp/2.0/plug-ins/video
-lib/gimp/2.0/plug-ins/vinvert
-lib/gimp/2.0/plug-ins/vpropagate
-lib/gimp/2.0/plug-ins/warp
-lib/gimp/2.0/plug-ins/waves
-lib/gimp/2.0/plug-ins/webbrowser
-lib/gimp/2.0/plug-ins/whirlpinch
-lib/gimp/2.0/plug-ins/wind
-lib/gimp/2.0/plug-ins/winicon
-lib/gimp/2.0/plug-ins/wmf
-lib/gimp/2.0/plug-ins/xbm
-lib/gimp/2.0/plug-ins/xjt
-lib/gimp/2.0/plug-ins/xpm
-lib/gimp/2.0/plug-ins/xwd
-lib/gimp/2.0/plug-ins/zealouscrop
+@bin lib/gimp/2.0/plug-ins/AlienMap2
+@bin lib/gimp/2.0/plug-ins/CEL
+@bin lib/gimp/2.0/plug-ins/CML_explorer
+@bin lib/gimp/2.0/plug-ins/FractalExplorer
+@bin lib/gimp/2.0/plug-ins/Lighting
+@bin lib/gimp/2.0/plug-ins/MapObject
+@bin lib/gimp/2.0/plug-ins/aa
+@bin lib/gimp/2.0/plug-ins/align_layers
+@bin lib/gimp/2.0/plug-ins/animationplay
+@bin lib/gimp/2.0/plug-ins/animoptimize
+@bin lib/gimp/2.0/plug-ins/antialias
+@bin lib/gimp/2.0/plug-ins/apply_lens
+@bin lib/gimp/2.0/plug-ins/autocrop
+@bin lib/gimp/2.0/plug-ins/autostretch_hsv
+@bin lib/gimp/2.0/plug-ins/blinds
+@bin lib/gimp/2.0/plug-ins/blur
+@bin lib/gimp/2.0/plug-ins/bmp
+@bin lib/gimp/2.0/plug-ins/borderaverage
+@bin lib/gimp/2.0/plug-ins/bumpmap
+@bin lib/gimp/2.0/plug-ins/c_astretch
+@bin lib/gimp/2.0/plug-ins/cartoon
+@bin lib/gimp/2.0/plug-ins/ccanalyze
+@bin lib/gimp/2.0/plug-ins/channel_mixer
+@bin lib/gimp/2.0/plug-ins/checkerboard
+@bin lib/gimp/2.0/plug-ins/color_enhance
+@bin lib/gimp/2.0/plug-ins/colorify
+@bin lib/gimp/2.0/plug-ins/colormap-remap
+@bin lib/gimp/2.0/plug-ins/colortoalpha
+@bin lib/gimp/2.0/plug-ins/compose
+@bin lib/gimp/2.0/plug-ins/compressor
+@bin lib/gimp/2.0/plug-ins/convmatrix
+@bin lib/gimp/2.0/plug-ins/csource
+@bin lib/gimp/2.0/plug-ins/cubism
+@bin lib/gimp/2.0/plug-ins/curve_bend
+@bin lib/gimp/2.0/plug-ins/decompose
+@bin lib/gimp/2.0/plug-ins/deinterlace
+@bin lib/gimp/2.0/plug-ins/depthmerge
+@bin lib/gimp/2.0/plug-ins/desktop-link
+@bin lib/gimp/2.0/plug-ins/despeckle
+@bin lib/gimp/2.0/plug-ins/destripe
+@bin lib/gimp/2.0/plug-ins/dicom
+@bin lib/gimp/2.0/plug-ins/diffraction
+@bin lib/gimp/2.0/plug-ins/displace
+@bin lib/gimp/2.0/plug-ins/dog
+@bin lib/gimp/2.0/plug-ins/edge
+@bin lib/gimp/2.0/plug-ins/emboss
+@bin lib/gimp/2.0/plug-ins/engrave
+@bin lib/gimp/2.0/plug-ins/exchange
+@bin lib/gimp/2.0/plug-ins/faxg3
+@bin lib/gimp/2.0/plug-ins/film
+@bin lib/gimp/2.0/plug-ins/fits
+@bin lib/gimp/2.0/plug-ins/flame
+@bin lib/gimp/2.0/plug-ins/flarefx
+@bin lib/gimp/2.0/plug-ins/fp
+@bin lib/gimp/2.0/plug-ins/fractaltrace
+@bin lib/gimp/2.0/plug-ins/gauss
+@bin lib/gimp/2.0/plug-ins/gbr
+@bin lib/gimp/2.0/plug-ins/gee
+@bin lib/gimp/2.0/plug-ins/gee_zoom
+@bin lib/gimp/2.0/plug-ins/gfig
+@bin lib/gimp/2.0/plug-ins/gflare
+@bin lib/gimp/2.0/plug-ins/gfli
+@bin lib/gimp/2.0/plug-ins/gif-load
+@bin lib/gimp/2.0/plug-ins/gif-save
+@bin lib/gimp/2.0/plug-ins/gih
+@bin lib/gimp/2.0/plug-ins/gimpressionist
+@bin lib/gimp/2.0/plug-ins/glasstile
+@bin lib/gimp/2.0/plug-ins/glob
+@bin lib/gimp/2.0/plug-ins/gqbist
+@bin lib/gimp/2.0/plug-ins/gradmap
+@bin lib/gimp/2.0/plug-ins/grid
+@bin lib/gimp/2.0/plug-ins/gtm
+@bin lib/gimp/2.0/plug-ins/guillotine
+@bin lib/gimp/2.0/plug-ins/header
+@bin lib/gimp/2.0/plug-ins/help
+@bin lib/gimp/2.0/plug-ins/hot
+@bin lib/gimp/2.0/plug-ins/ifscompose
+@bin lib/gimp/2.0/plug-ins/illusion
+@bin lib/gimp/2.0/plug-ins/imagemap
+@bin lib/gimp/2.0/plug-ins/iwarp
+@bin lib/gimp/2.0/plug-ins/jigsaw
+@bin lib/gimp/2.0/plug-ins/jpeg
+@bin lib/gimp/2.0/plug-ins/laplace
+@bin lib/gimp/2.0/plug-ins/lcms
+@bin lib/gimp/2.0/plug-ins/lens
+@bin lib/gimp/2.0/plug-ins/lic
+@bin lib/gimp/2.0/plug-ins/mail
+@bin lib/gimp/2.0/plug-ins/mapcolor
+@bin lib/gimp/2.0/plug-ins/max_rgb
+@bin lib/gimp/2.0/plug-ins/maze
+@bin lib/gimp/2.0/plug-ins/mblur
+@bin lib/gimp/2.0/plug-ins/metadata
+@bin lib/gimp/2.0/plug-ins/mng
+@bin lib/gimp/2.0/plug-ins/mosaic
+@bin lib/gimp/2.0/plug-ins/neon
+@bin lib/gimp/2.0/plug-ins/newsprint
+@bin lib/gimp/2.0/plug-ins/nlfilt
+@bin lib/gimp/2.0/plug-ins/noisify
+@bin lib/gimp/2.0/plug-ins/normalize
+@bin lib/gimp/2.0/plug-ins/nova
+@bin lib/gimp/2.0/plug-ins/oilify
+@bin lib/gimp/2.0/plug-ins/pagecurl
+@bin lib/gimp/2.0/plug-ins/papertile
+@bin lib/gimp/2.0/plug-ins/pat
+@bin lib/gimp/2.0/plug-ins/pcx
+@bin lib/gimp/2.0/plug-ins/photocopy
+@bin lib/gimp/2.0/plug-ins/pix
+@bin lib/gimp/2.0/plug-ins/pixelize
+@bin lib/gimp/2.0/plug-ins/plasma
+@bin lib/gimp/2.0/plug-ins/plugin-browser
+@bin lib/gimp/2.0/plug-ins/png
+@bin lib/gimp/2.0/plug-ins/pnm
+@bin lib/gimp/2.0/plug-ins/polar
+@bin lib/gimp/2.0/plug-ins/poppler
+@bin lib/gimp/2.0/plug-ins/postscript
+@bin lib/gimp/2.0/plug-ins/procedure-browser
+@bin lib/gimp/2.0/plug-ins/psd-load
+@bin lib/gimp/2.0/plug-ins/psd-save
+@bin lib/gimp/2.0/plug-ins/psp
+@bin lib/gimp/2.0/plug-ins/randomize
+@bin lib/gimp/2.0/plug-ins/raw
+@bin lib/gimp/2.0/plug-ins/rcm
+@bin lib/gimp/2.0/plug-ins/redeye
+@bin lib/gimp/2.0/plug-ins/retinex
+@bin lib/gimp/2.0/plug-ins/ripple
+@bin lib/gimp/2.0/plug-ins/rotate
+@bin lib/gimp/2.0/plug-ins/sample_colorize
+@bin lib/gimp/2.0/plug-ins/scatter_hsv
+@bin lib/gimp/2.0/plug-ins/screenshot
+@bin lib/gimp/2.0/plug-ins/script-fu
+@bin lib/gimp/2.0/plug-ins/sel2path
+@bin lib/gimp/2.0/plug-ins/sel_gauss
+@bin lib/gimp/2.0/plug-ins/semiflatten
+@bin lib/gimp/2.0/plug-ins/sgi
+@bin lib/gimp/2.0/plug-ins/sharpen
+@bin lib/gimp/2.0/plug-ins/shift
+@bin lib/gimp/2.0/plug-ins/sinus
+@bin lib/gimp/2.0/plug-ins/smooth_palette
+@bin lib/gimp/2.0/plug-ins/snoise
+@bin lib/gimp/2.0/plug-ins/sobel
+@bin lib/gimp/2.0/plug-ins/softglow
+@bin lib/gimp/2.0/plug-ins/sparkle
+@bin lib/gimp/2.0/plug-ins/spheredesigner
+@bin lib/gimp/2.0/plug-ins/spread
+@bin lib/gimp/2.0/plug-ins/struc
+@bin lib/gimp/2.0/plug-ins/sunras
+@bin lib/gimp/2.0/plug-ins/tga
+@bin lib/gimp/2.0/plug-ins/threshold_alpha
+@bin lib/gimp/2.0/plug-ins/tiff-load
+@bin lib/gimp/2.0/plug-ins/tiff-save
+@bin lib/gimp/2.0/plug-ins/tile
+@bin lib/gimp/2.0/plug-ins/tileit
+@bin lib/gimp/2.0/plug-ins/tiler
+@bin lib/gimp/2.0/plug-ins/uniteditor
+@bin lib/gimp/2.0/plug-ins/unsharp
+@bin lib/gimp/2.0/plug-ins/uri
+@bin lib/gimp/2.0/plug-ins/video
+@bin lib/gimp/2.0/plug-ins/vinvert
+@bin lib/gimp/2.0/plug-ins/vpropagate
+@bin lib/gimp/2.0/plug-ins/warp
+@bin lib/gimp/2.0/plug-ins/waves
+@bin lib/gimp/2.0/plug-ins/webbrowser
+@bin lib/gimp/2.0/plug-ins/whirlpinch
+@bin lib/gimp/2.0/plug-ins/wind
+@bin lib/gimp/2.0/plug-ins/winicon
+@bin lib/gimp/2.0/plug-ins/wmf
+@bin lib/gimp/2.0/plug-ins/xbm
+@bin lib/gimp/2.0/plug-ins/xjt
+@bin lib/gimp/2.0/plug-ins/xpm
+@bin lib/gimp/2.0/plug-ins/xwd
+@bin lib/gimp/2.0/plug-ins/zealouscrop
 lib/libgimp-2.0.a
 lib/libgimp-2.0.la
 lib/libgimpbase-2.0.a
@@ -1729,6 +1729,12 @@ share/locale/ar/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ar/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ar/LC_MESSAGES/gimp20-tips.mo
 share/locale/ar/LC_MESSAGES/gimp20.mo
+share/locale/be/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/be/LC_MESSAGES/gimp20-python.mo
+share/locale/be/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/be/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/be/LC_MESSAGES/gimp20-tips.mo
+share/locale/be/LC_MESSAGES/gimp20.mo
 share/locale/bg/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/bg/LC_MESSAGES/gimp20-python.mo
 share/locale/bg/LC_MESSAGES/gimp20-script-fu.mo
@@ -1741,6 +1747,14 @@ share/locale/ca/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ca/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ca/LC_MESSAGES/gimp20-tips.mo
 share/locale/ca/LC_MESSAGES/gimp20.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
+share/locale/ca@valencia/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/ca@valencia/LC_MESSAGES/gimp20-python.mo
+share/locale/ca@valencia/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/ca@valencia/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/ca@valencia/LC_MESSAGES/gimp20-tips.mo
+share/locale/ca@valencia/LC_MESSAGES/gimp20.mo
 share/locale/cs/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/cs/LC_MESSAGES/gimp20-python.mo
 share/locale/cs/LC_MESSAGES/gimp20-script-fu.mo
@@ -1945,6 +1959,12 @@ share/locale/nl/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/nl/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/nl/LC_MESSAGES/gimp20-tips.mo
 share/locale/nl/LC_MESSAGES/gimp20.mo
+share/locale/nn/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/nn/LC_MESSAGES/gimp20-python.mo
+share/locale/nn/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/nn/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/nn/LC_MESSAGES/gimp20-tips.mo
+share/locale/nn/LC_MESSAGES/gimp20.mo
 share/locale/oc/
 share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/gimp20-libgimp.mo

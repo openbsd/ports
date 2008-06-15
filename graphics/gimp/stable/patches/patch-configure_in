@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.4 2007/12/20 22:54:28 kili Exp $
---- configure.in.orig	Wed Oct 31 09:06:02 2007
-+++ configure.in	Sat Nov  3 11:09:13 2007
-@@ -1102,10 +1102,10 @@ AC_ARG_WITH(libmng,  [  --without-libmng        build 
+$OpenBSD: patch-configure_in,v 1.5 2008/06/15 17:08:01 okan Exp $
+--- configure.in.orig	Fri May 23 05:41:20 2008
++++ configure.in	Fri Jun 13 22:05:04 2008
+@@ -1103,10 +1103,10 @@ AC_ARG_WITH(libmng,  [  --without-libmng        build 
    if test "x$with_libmng" != xno && test -z "$LIBMNG" &&
       test -n "$LIBPNG" && test -n "$LIBJPEG" && test -n "$LIBZ"; then
      AC_CHECK_LIB(mng, mng_create,
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure_in,v 1.4 2007/12/20 22:54:28 kili Exp $
      else
        have_libmng="no (MNG header file not found)"
      fi
-@@ -1374,11 +1374,11 @@ if test "x$with_lcms" != xno; then
+@@ -1375,11 +1375,11 @@ if test "x$with_lcms" != xno; then
          have_lcms=yes
          AC_DEFINE(HAVE_LCMS_LCMS_H, 1,
            [Define to 1 if the lcms header must be included as lcms/lcms.h]))

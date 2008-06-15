@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.32 2008/06/03 14:56:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2008/06/15 17:08:01 okan Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME=	gimp-2.4.5
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	gimp-2.0	245.00	\
-		gimpbase-2.0	245.00	\
-		gimpcolor-2.0	245.00	\
-		gimpconfig-2.0	245.00	\
-		gimpmath-2.0	245.00	\
-		gimpmodule-2.0	245.00	\
-		gimpthumb-2.0	245.00	\
-		gimpui-2.0	245.00	\
-		gimpwidgets-2.0	245.00
+DISTNAME=	gimp-2.4.6
+SHARED_LIBS=	gimp-2.0	246.00	\
+		gimpbase-2.0	246.00	\
+		gimpcolor-2.0	246.00	\
+		gimpconfig-2.0	246.00	\
+		gimpmath-2.0	246.00	\
+		gimpmodule-2.0	246.00	\
+		gimpthumb-2.0	246.00	\
+		gimpui-2.0	246.00	\
+		gimpwidgets-2.0	246.00
 
 CATEGORIES=	graphics
 DIR=		gimp/v2.4
@@ -47,7 +46,7 @@ WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
 		pangocairo-1.0 pangoft2-1.0 png.>=4 \
 		pthread ncurses xml2 z cairo glitz \
 		Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr \
-		expat Xcomposite Xdamage gthread-2.0 pcre
+		expat Xcomposite Xdamage gthread-2.0 pcre pixman-1
 
 MODULES=	devel/gettext \
 		textproc/intltool
