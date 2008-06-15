@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/06/12 21:47:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/06/15 00:08:44 ajacoutot Exp $
 
 COMMENT-main=	UW e-mail client
 COMMENT-pico=	UW text editor
@@ -51,7 +51,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-system-fixed-pinerc=${SYSCONFDIR}/pine.conf.fixed \
 		--with-system-mail-directory=/var/mail \
 		--with-ssl-certs-dir=/etc/ssl \
-		--with-kerberos \
+		--with-supplied-regex=no \
 		--without-tcl \
 		--enable-quotas
 
@@ -70,9 +70,9 @@ CONFIGURE_ARGS+=--without-ldap
 
 pre-configure:
 	@cd ${WRKSRC} && ln -sf ${LOCALBASE}/include/c-client c-client
-	@cd ${WRKSRC}/imap/src && rm -rf c-client && ln -sf ${LOCALBASE}/include/c-client c-client
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
-		${WRKSRC}/alpine/Makefile.in \
+	@cd ${WRKSRC}/imap/src && rm -rf c-client \
+		&& ln -sf ${LOCALBASE}/include/c-client c-client
+	${SUBST_CMD} ${WRKSRC}/alpine/Makefile.in \
 		${WRKSRC}/pico/Makefile.in
 
 post-install:
