@@ -1,0 +1,13 @@
+$OpenBSD: patch-source_Makefile_in,v 1.1 2008/06/15 07:01:36 eric Exp $
+--- source/Makefile.in.orig	Fri Dec 21 19:16:09 2007
++++ source/Makefile.in	Sun Jun 15 05:05:49 2008
+@@ -248,8 +248,7 @@ EXTRA_DIST = Makefile.vc
+ INCLUDES = -I$(top_srcdir)/source/headers
+ lib_LTLIBRARIES = libgeos.la
+ libgeos_la_LDFLAGS = \
+-	-release @VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@ \
+-	-no-undefined
++	-no-undefined -lstdc++ -lm
+ 
+ libgeos_la_SOURCES = \
+ 	inlines.cpp
