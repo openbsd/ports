@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/05/02 10:28:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/06/15 00:08:09 sthen Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
@@ -10,6 +10,8 @@ CATEGORIES=	games
 EXTRACT_SUFX=	.tar.gz
 
 HOMEPAGE=	http://pio.sourceforge.net/
+
+PKGNAME=	${DISTNAME}p0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,7 +26,7 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
 		glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre png popt pthread ssl util xml2 z
+		pcre pixman-1 png popt pthread ssl util xml2 z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pio/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2008/04/15 09:28:13 martynas Exp $
+# $OpenBSD: Makefile,v 1.21 2008/06/15 00:06:25 sthen Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
@@ -8,7 +8,7 @@ COMMENT-devel=	devel files for Gecko
 VER=		1.8.1.13
 DISTNAME=	mozilla
 PKGNAME=	xulrunner-${VER}
-PKGNAME-main=	xulrunner-${VER}
+PKGNAME-main=	xulrunner-${VER}p0
 PKGNAME-devel=	xulrunner-devel-${VER}
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -45,7 +45,7 @@ WANTLIB=	c glib-2.0 m pthread stdc++
 WANTLIB-main=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo expat \
 		fontconfig freetype glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
-		jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
+		jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png z
 
 LIB_DEPENDS-devel= ${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
 		xulrunner/mozjs,xulrunner/xpcom,xulrunner/xul:${PKGNAME-main}:devel/xulrunner,-main

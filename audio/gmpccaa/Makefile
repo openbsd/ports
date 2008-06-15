@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/12/15 13:18:16 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2008/06/15 00:04:50 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	Amazon cover art provider for gmpc
 
 VERSION=	0.15.5.0
 DISTNAME=	gmpc-coveramazon-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
@@ -25,7 +26,7 @@ WANTLIB=		X11 Xau Xdmcp Xrender Xrandr atk-1.0 expat fontconfig \
 			Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 			freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 			gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-			cairo pcre png z
+			cairo pcre pixman-1 png z
 
 MODULES=		devel/gettext
 RUN_DEPENDS=		:gmpc->=${VERSION}:audio/gmpc

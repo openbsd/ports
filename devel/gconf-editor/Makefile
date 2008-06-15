@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2008/05/26 16:29:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2008/06/15 00:06:25 sthen Exp $
 
 COMMENT=		editor for the GConf configuration system
 
 GNOME_PROJECT=		gconf-editor
 GNOME_VERSION=		2.22.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/projects/gconf/
@@ -22,8 +22,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gailutil gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz \
 		gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 \
 		gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre png popt pthread ssl \
-		util xml2 z
+		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
+		pthread ssl util xml2 z
 
 BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils

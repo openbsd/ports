@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/12/30 19:58:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2008/06/15 00:04:50 sthen Exp $
 
 COMMENT=		GTK+ tool for managing Creative and Dell audio players
 
 DISTNAME=		gnomad2-2.9.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -20,7 +21,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		png pthread usb z
+		pixman-1 png pthread usb z
 
 MODULES=		devel/gettext \
 			textproc/intltool

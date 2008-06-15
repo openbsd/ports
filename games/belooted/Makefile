@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/03 10:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/06/15 00:08:09 sthen Exp $
 
 COMMENT=	32-card trick-taking game
 
 DISTNAME=	belooted-0.1.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.gnomefiles.org/app.php/Belooted
@@ -22,7 +22,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xcomposite Xdamage \
 		Xrender atk-1.0 c cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png z
+		pangocairo-1.0 pangoft2-1.0 pixman-1 png z
 
 MODULES=	devel/gettext \
 		textproc/intltool

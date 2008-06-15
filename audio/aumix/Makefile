@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2007/11/05 21:44:57 simon Exp $
+# $OpenBSD: Makefile,v 1.25 2008/06/15 00:04:49 sthen Exp $
 
 COMMENT=	full-screen ncurses or GTK-based audio mixer
 
 DISTNAME=	aumix-2.8
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	audio
 
 HOMEPAGE=	http://jpj.net/~trevor/aumix.html
@@ -39,7 +39,7 @@ USE_X11=	Yes
 WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
 		freetype.>=13 glib-2.0 glitz gmodule-2.0 gobject-2.0 pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png z
+		pangocairo-1.0 pangoft2-1.0 pixman-1 png z
 .endif
 
 .if ${FLAVOR:L:Mno_curses} 

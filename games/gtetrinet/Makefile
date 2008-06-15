@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/04/07 20:31:23 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2008/06/15 00:08:09 sthen Exp $
 
 MULTI_PACKAGES=	-main -themes
 
 COMMENT-main=	tetrinet client
 COMMENT-themes=	collection of gtetrinet themes
 DISTNAME=	gtetrinet-0.7.11
-PKGNAME-main=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 PKGNAME-themes=	gtetrinet-themes-20070623p0
 CATEGORIES=	x11 games
 
@@ -50,7 +50,7 @@ WANTLIB-main=	ICE ORBit-2 SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi \
 		glib-2.0 glitz gmodule-2.0 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv \
 		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 png popt \
-		pthread xml2 z
+		pthread xml2 z gailutil pixman-1
 WANTLIB-themes=
 
 CONFIGURE_STYLE=gnu

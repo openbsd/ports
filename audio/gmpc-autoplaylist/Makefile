@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/15 13:12:29 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/15 00:04:49 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		auto-generated playlists, for gmpc
 
 VERSION=		0.15.5.0
 DISTNAME=		gmpc-autoplaylist-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -22,7 +23,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender atk-1.0 cairo expat fontconfig freetype gdk-x11-2.0 \
 		gdk_pixbuf-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gtk-x11-2.0 m mpd pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png xml2 z
+		pangoft2-1.0 pixman-1 png xml2 z
 
 MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION:S/.0//}/ \
 			http://humppa.nl/distfiles/gmpc/

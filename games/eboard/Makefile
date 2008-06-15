@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2007/12/19 09:01:25 fgsch Exp $
+# $OpenBSD: Makefile,v 1.34 2008/06/15 00:08:09 sthen Exp $
 
 COMMENT=	gtk+2 chess board interface
 
 DISTNAME=	eboard-1.0.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.bergo.eng.br/eboard/
@@ -16,15 +16,17 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB= 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
-		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 iconv \
-		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread \
-		stdc++ z
+		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
+		png pthread stdc++ z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eboard/}
 
 EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+
+MODULES=	devel/gettext
 
 USE_X11=	Yes
 CONFIGURE_STYLE=simple

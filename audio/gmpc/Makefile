@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2008/01/26 12:13:51 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2008/06/15 00:04:49 sthen Exp $
 
 COMMENT=		gnome music player client
 
 VERSION=		0.15.5.0
 DISTNAME=		gmpc-${VERSION}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		audio
 
 MAINTAINER=		Landry Breuil <gaston@gcu.info>
@@ -21,7 +21,7 @@ WANTLIB=		ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 			expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 			glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 			gtk-x11-2.0 idn m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-			pcre png pthread ssl xml2 z
+			pcre pixman-1 png pthread ssl xml2 z
 
 MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION:S/.0//}/ \
 			http://humppa.nl/distfiles/gmpc/

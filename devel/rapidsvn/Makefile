@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/02 09:51:05 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/15 00:06:25 sthen Exp $
 
 COMMENT=	graphical subversion client
 
 VERSION=	0.9.4
 DISTNAME=	rapidsvn-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.rapidsvn.org/
@@ -25,7 +25,7 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
-WANTLIB=	c m z pthread crypto ssl stdc++ db expat neon xml2 \
+WANTLIB=	c m z pthread crypto ssl stdc++ db expat neon \
 		apr-1 aprutil-1
 
 LIB_DEPENDS=	wx_base_xml,wx_gtk2_html,wx_gtk2_dbgrid,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_gtk2_qa,wx_base,wx_base_odbc,wx_gtk2_core,wx_gtk2_aui,wx_gtk2_richtext:wxWidgets-gtk2->=2.6.3:x11/wxWidgets \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2007/11/13 14:54:31 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2008/06/15 00:08:09 sthen Exp $
 
 COMMENT=	gtk+ clone of the lines ball logic game
 
 DISTNAME=	gtkballs-3.1.5
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}dist/ \
 		${MASTER_SITE_SUNSITE:=games/strategy/}
@@ -21,7 +21,7 @@ WANTLIB=	c fontconfig freetype m z X11 Xext Xrender Xrandr expat \
 		Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
 		gobject-2.0 glib-2.0 gmodule-2.0 glitz png \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		atk-1.0 cairo
+		atk-1.0 cairo pixman-1
 
 MODULES=	devel/gettext
 

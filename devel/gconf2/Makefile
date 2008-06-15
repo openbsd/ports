@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2008/04/29 18:23:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2008/06/15 00:06:25 sthen Exp $
 
 COMMENT=	configuration database system for GNOME
 
 GNOME_PROJECT=	GConf
 GNOME_VERSION=	2.22.0
 PKGNAME=	gconf2-${GNOME_VERSION}
+DISTNAME=	${PKGNAME}p0
 SHARED_LIBS +=	gconf-2              6.1      # .5.5
 CATEGORIES=	devel
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
 		freetype glitz m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre png pthread z
+		pcre pixman-1 png pthread z
 
 MODULES=	devel/gettext \
 		x11/gnome

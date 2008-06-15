@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2008/06/03 10:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2008/06/15 00:06:25 sthen Exp $
 
 COMMENT=		GNOME Application Libs
 
 VERSION=		2.5.3
 API_VERSION=		2.6
 DISTNAME=		gal-${VERSION}
-PKGNAME=		gal2-${VERSION}p1
+PKGNAME=		gal2-${VERSION}p2
 SHARED_LIBS +=	gal-a11y-2.4         1.0      # .1.0
 SHARED_LIBS +=	gal-2.4              1.0      # .1.0
 
@@ -27,7 +27,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomeprint-2-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png popt \
-		ssl util xml2 z
+		ssl util xml2 z gailutil pixman-1
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gal/2.5/}
 EXTRACT_SUFX=		.tar.bz2

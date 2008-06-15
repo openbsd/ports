@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/12/15 13:13:13 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2008/06/15 00:04:49 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		lyrics fetcher, for gmpc
 
 VERSION=		0.15.5.0
 DISTNAME=		gmpc-lyrics-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 MAINTAINER=		Landry Breuil <gaston@gcu.info>
@@ -21,7 +22,7 @@ WANTLIB=	X11 Xau Xdmcp Xrender atk-1.0 cairo expat fontconfig \
 		Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m mpd pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre png xml2 z \
+		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png xml2 z \
 		crypto curl idn ssl
 
 MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION:S/.0//}/ \

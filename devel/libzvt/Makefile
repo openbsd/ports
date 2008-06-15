@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2008/06/15 00:06:25 sthen Exp $
 
 COMMENT=		library for handling pseudo terminals
 
 DISTNAME=		libzvt-2.0.1
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 SHARED_LIBS=		zvt-2.0 0.1
 
 CATEGORIES=		devel
@@ -20,7 +20,7 @@ WANTLIB=		X11 Xau Xdmcp Xrender c expat fontconfig freetype m \
 			Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 			Xrandr pcre glib-2.0 gmodule-2.0 gobject-2.0 \
 			atk-1.0 pango-1.0 pangoft2-1.0 \
-			pangocairo-1.0 util cairo glitz png z
+			pangocairo-1.0 util cairo glitz pixman-1 png z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libzvt/2.0/}
 EXTRACT_SUFX=		.tar.bz2
