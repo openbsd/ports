@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/12/27 19:43:46 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2008/06/15 00:01:25 landry Exp $
 
 COMMENT=	ruby MVC web application framework
 
 DISTNAME=	rails-2.0.2
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	www 
 
 # MIT License

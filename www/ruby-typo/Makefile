@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/19 12:20:31 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/15 00:01:25 landry Exp $
 
 COMMENT=	weblog system written in Ruby using Ruby on Rails
 
 DISTNAME=	typo-5.0.2
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 
 CATEGORIES=	www
 
