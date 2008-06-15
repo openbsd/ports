@@ -1,33 +1,33 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/04/13 07:31:15 steven Exp $
+@comment $OpenBSD: PLIST,v 1.15 2008/06/15 06:39:34 sthen Exp $
 %%SHARED%%
-bin/dialyzer
+@bin bin/dialyzer
 bin/epmd
 bin/erl
-bin/erlc
-bin/escript
-bin/run_erl
-bin/to_erl
-bin/typer
+@bin bin/erlc
+@bin bin/escript
+@bin bin/run_erl
+@bin bin/to_erl
+@bin bin/typer
 lib/erlang/
 lib/erlang/COPYRIGHT
 lib/erlang/Install
 lib/erlang/PR.template
 lib/erlang/README
 lib/erlang/bin/
-lib/erlang/bin/dialyzer
-lib/erlang/bin/epmd
+@bin lib/erlang/bin/dialyzer
+@bin lib/erlang/bin/epmd
 lib/erlang/bin/erl
-lib/erlang/bin/erlc
-lib/erlang/bin/escript
-lib/erlang/bin/run_erl
+@bin lib/erlang/bin/erlc
+@bin lib/erlang/bin/escript
+@bin lib/erlang/bin/run_erl
 lib/erlang/bin/start
 lib/erlang/bin/start.boot
 lib/erlang/bin/start.script
 lib/erlang/bin/start_clean.boot
 lib/erlang/bin/start_erl
 lib/erlang/bin/start_sasl.boot
-lib/erlang/bin/to_erl
-lib/erlang/bin/typer
+@bin lib/erlang/bin/to_erl
+@bin lib/erlang/bin/typer
 lib/erlang/doc/
 lib/erlang/doc/applications.html
 lib/erlang/doc/design_principles/
@@ -262,23 +262,23 @@ lib/erlang/doc/tutorial/port_driver.gif
 lib/erlang/doc/tutorial/warning.gif
 lib/erlang/${ERTS}/
 lib/erlang/${ERTS}/bin/
-lib/erlang/${ERTS}/bin/beam
-lib/erlang/${ERTS}/bin/child_setup
-lib/erlang/${ERTS}/bin/dialyzer
-lib/erlang/${ERTS}/bin/epmd
+@bin lib/erlang/${ERTS}/bin/beam
+@bin lib/erlang/${ERTS}/bin/child_setup
+@bin lib/erlang/${ERTS}/bin/dialyzer
+@bin lib/erlang/${ERTS}/bin/epmd
 lib/erlang/${ERTS}/bin/erl
 lib/erlang/${ERTS}/bin/erl.src
-lib/erlang/${ERTS}/bin/erlc
-lib/erlang/${ERTS}/bin/erlexec
-lib/erlang/${ERTS}/bin/escript
-lib/erlang/${ERTS}/bin/heart
-lib/erlang/${ERTS}/bin/inet_gethost
-lib/erlang/${ERTS}/bin/run_erl
+@bin lib/erlang/${ERTS}/bin/erlc
+@bin lib/erlang/${ERTS}/bin/erlexec
+@bin lib/erlang/${ERTS}/bin/escript
+@bin lib/erlang/${ERTS}/bin/heart
+@bin lib/erlang/${ERTS}/bin/inet_gethost
+@bin lib/erlang/${ERTS}/bin/run_erl
 lib/erlang/${ERTS}/bin/start
 lib/erlang/${ERTS}/bin/start.src
 lib/erlang/${ERTS}/bin/start_erl.src
-lib/erlang/${ERTS}/bin/to_erl
-lib/erlang/${ERTS}/bin/typer
+@bin lib/erlang/${ERTS}/bin/to_erl
+@bin lib/erlang/${ERTS}/bin/typer
 lib/erlang/${ERTS}/doc/
 lib/erlang/${ERTS}/doc/html/
 lib/erlang/${ERTS}/doc/html/absform.html
@@ -2036,7 +2036,6 @@ lib/erlang/lib/${DIALYZER}/ebin/dialyzer_succ_typings.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_typesig.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_utils.beam
 lib/erlang/lib/${DIALYZER}/info
-lib/erlang/lib/${DIALYZER}/plt/
 lib/erlang/lib/${DIALYZER}/src/
 lib/erlang/lib/${DIALYZER}/src/dialyzer.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer.hrl
@@ -2151,9 +2150,9 @@ lib/erlang/lib/${DOCBUILDER}/ebin/docb_xmerl_xml_cb.beam
 lib/erlang/lib/${DOCBUILDER}/ebin/docb_xml_check.beam
 lib/erlang/lib/${DOCBUILDER}/ebin/docbuilder.app
 lib/erlang/lib/${DOCBUILDER}/ebin/docbuilder.appup
-lib/erlang/lib/${DOCBUILDER}/etc/
-lib/erlang/lib/${DOCBUILDER}/etc/note.gif
-lib/erlang/lib/${DOCBUILDER}/etc/warning.gif
+lib/erlang/lib/${DOCBUILDER}${SYSCONFDIR}/
+lib/erlang/lib/${DOCBUILDER}${SYSCONFDIR}/note.gif
+lib/erlang/lib/${DOCBUILDER}${SYSCONFDIR}/warning.gif
 lib/erlang/lib/${DOCBUILDER}/info
 lib/erlang/lib/${DOCBUILDER}/src/
 lib/erlang/lib/${DOCBUILDER}/src/docb_edoc_xml_cb.erl
@@ -2264,18 +2263,18 @@ lib/erlang/lib/${EDOC}/src/edoc_wiki.erl
 lib/erlang/lib/${EDOC}/src/otpsgml_layout.erl
 lib/erlang/lib/${EI}/
 lib/erlang/lib/${EI}/bin/
-lib/erlang/lib/${EI}/bin/erl_call
+@bin lib/erlang/lib/${EI}/bin/erl_call
 lib/erlang/lib/${EI}/doc/
 lib/erlang/lib/${EI}/doc/html/
 lib/erlang/lib/${EI}/doc/html/ei.html
 lib/erlang/lib/${EI}/doc/html/ei_connect.html
+lib/erlang/lib/${EI}/doc/html/ei_users_guide.html
 lib/erlang/lib/${EI}/doc/html/erl_call.html
 lib/erlang/lib/${EI}/doc/html/erl_connect.html
 lib/erlang/lib/${EI}/doc/html/erl_error.html
 lib/erlang/lib/${EI}/doc/html/erl_eterm.html
 lib/erlang/lib/${EI}/doc/html/erl_format.html
 lib/erlang/lib/${EI}/doc/html/erl_global.html
-lib/erlang/lib/${EI}/doc/html/erl_interface.html
 lib/erlang/lib/${EI}/doc/html/erl_malloc.html
 lib/erlang/lib/${EI}/doc/html/erl_marshal.html
 lib/erlang/lib/${EI}/doc/html/index.html
@@ -2283,11 +2282,11 @@ lib/erlang/lib/${EI}/doc/html/min_head.gif
 lib/erlang/lib/${EI}/doc/html/note.gif
 lib/erlang/lib/${EI}/doc/html/notes.html
 lib/erlang/lib/${EI}/doc/html/notes_history.html
-lib/erlang/lib/${EI}/doc/html/part_erl_interface.html
-lib/erlang/lib/${EI}/doc/html/part_erl_interface_cite.html
-lib/erlang/lib/${EI}/doc/html/part_erl_interface_first.html
-lib/erlang/lib/${EI}/doc/html/part_erl_interface_frame.html
-lib/erlang/lib/${EI}/doc/html/part_erl_interface_term.html
+lib/erlang/lib/${EI}/doc/html/part_ei.html
+lib/erlang/lib/${EI}/doc/html/part_ei_cite.html
+lib/erlang/lib/${EI}/doc/html/part_ei_first.html
+lib/erlang/lib/${EI}/doc/html/part_ei_frame.html
+lib/erlang/lib/${EI}/doc/html/part_ei_term.html
 lib/erlang/lib/${EI}/doc/html/part_notes.html
 lib/erlang/lib/${EI}/doc/html/part_notes_cite.html
 lib/erlang/lib/${EI}/doc/html/part_notes_first.html
@@ -3293,6 +3292,7 @@ lib/erlang/lib/${INETS}/ebin/tftp_binary.beam
 lib/erlang/lib/${INETS}/ebin/tftp_engine.beam
 lib/erlang/lib/${INETS}/ebin/tftp_file.beam
 lib/erlang/lib/${INETS}/ebin/tftp_lib.beam
+lib/erlang/lib/${INETS}/ebin/tftp_logger.beam
 lib/erlang/lib/${INETS}/ebin/tftp_sup.beam
 lib/erlang/lib/${INETS}/examples/
 lib/erlang/lib/${INETS}/examples/server_root/
@@ -3506,6 +3506,7 @@ lib/erlang/lib/${INETS}/src/tftp_binary.erl
 lib/erlang/lib/${INETS}/src/tftp_engine.erl
 lib/erlang/lib/${INETS}/src/tftp_file.erl
 lib/erlang/lib/${INETS}/src/tftp_lib.erl
+lib/erlang/lib/${INETS}/src/tftp_logger.erl
 lib/erlang/lib/${INETS}/src/tftp_sup.erl
 lib/erlang/lib/${INVISO}/
 lib/erlang/lib/${INVISO}/doc/
@@ -4769,7 +4770,7 @@ lib/erlang/lib/${OS_MON}/mibs/v1/
 lib/erlang/lib/${OS_MON}/mibs/v1/OTP-OS-MON-MIB.mib.v1
 lib/erlang/lib/${OS_MON}/priv/
 lib/erlang/lib/${OS_MON}/priv/bin/
-lib/erlang/lib/${OS_MON}/priv/bin/memsup
+@bin lib/erlang/lib/${OS_MON}/priv/bin/memsup
 lib/erlang/lib/${OS_MON}/priv/mibs/
 lib/erlang/lib/${OS_MON}/priv/mibs/OTP-OS-MON-MIB.bin
 lib/erlang/lib/${OS_MON}/src/
@@ -5256,6 +5257,7 @@ lib/erlang/lib/${SNMP}/doc/html/snmpa_local_db.html
 lib/erlang/lib/${SNMP}/doc/html/snmpa_mpd.html
 lib/erlang/lib/${SNMP}/doc/html/snmpa_network_interface.html
 lib/erlang/lib/${SNMP}/doc/html/snmpa_network_interface_filter.html
+lib/erlang/lib/${SNMP}/doc/html/snmpa_notification_delivery_info_receiver.html
 lib/erlang/lib/${SNMP}/doc/html/snmpa_notification_filter.html
 lib/erlang/lib/${SNMP}/doc/html/snmpa_supervisor.html
 lib/erlang/lib/${SNMP}/doc/html/snmpc.html
@@ -5316,6 +5318,7 @@ lib/erlang/lib/${SNMP}/ebin/snmpa_net_if.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_net_if_filter.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_network_interface.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_network_interface_filter.beam
+lib/erlang/lib/${SNMP}/ebin/snmpa_notification_delivery_info_receiver.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_notification_filter.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_set.beam
 lib/erlang/lib/${SNMP}/ebin/snmpa_set_lib.beam
@@ -5472,6 +5475,7 @@ lib/erlang/lib/${SNMP}/src/agent/snmpa_net_if.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_net_if_filter.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_network_interface.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_network_interface_filter.erl
+lib/erlang/lib/${SNMP}/src/agent/snmpa_notification_delivery_info_receiver.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_notification_filter.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_set.erl
 lib/erlang/lib/${SNMP}/src/agent/snmpa_set_lib.erl
@@ -5682,54 +5686,54 @@ lib/erlang/lib/${SSL}/examples/certs/
 lib/erlang/lib/${SSL}/examples/certs/Makefile
 lib/erlang/lib/${SSL}/examples/certs/ebin/
 lib/erlang/lib/${SSL}/examples/certs/ebin/make_certs.beam
-lib/erlang/lib/${SSL}/examples/certs/etc/
-lib/erlang/lib/${SSL}/examples/certs/etc/client/
-lib/erlang/lib/${SSL}/examples/certs/etc/client/cacerts.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/client/cert.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/client/key.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/client/req.cnf
-lib/erlang/lib/${SSL}/examples/certs/etc/client/req.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/ca.cnf
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/cert.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/certs/
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/crl/
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/index.txt
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/index.txt.attr
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/index.txt.old
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/newcerts/
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/newcerts/01.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/private/
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/private/RAND
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/private/key.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/req.cnf
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/serial
-lib/erlang/lib/${SSL}/examples/certs/etc/erlangCA/serial.old
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/ca.cnf
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/cert.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/certs/
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/crl/
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/index.txt
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/index.txt.attr
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/index.txt.attr.old
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/index.txt.old
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/newcerts/
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/newcerts/01.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/newcerts/02.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/private/
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/private/RAND
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/private/key.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/req.cnf
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/req.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/serial
-lib/erlang/lib/${SSL}/examples/certs/etc/otpCA/serial.old
-lib/erlang/lib/${SSL}/examples/certs/etc/server/
-lib/erlang/lib/${SSL}/examples/certs/etc/server/cacerts.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/server/cert.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/server/key.pem
-lib/erlang/lib/${SSL}/examples/certs/etc/server/req.cnf
-lib/erlang/lib/${SSL}/examples/certs/etc/server/req.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/client/
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/client/cacerts.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/client/cert.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/client/key.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/client/req.cnf
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/client/req.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/ca.cnf
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/cert.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/certs/
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/crl/
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/index.txt
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/index.txt.attr
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/index.txt.old
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/newcerts/
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/newcerts/01.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/private/
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/private/RAND
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/private/key.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/req.cnf
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/serial
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/erlangCA/serial.old
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/ca.cnf
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/cert.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/certs/
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/crl/
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/index.txt
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/index.txt.attr
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/index.txt.attr.old
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/index.txt.old
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/newcerts/
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/newcerts/01.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/newcerts/02.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/private/
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/private/RAND
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/private/key.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/req.cnf
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/req.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/serial
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/otpCA/serial.old
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/server/
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/server/cacerts.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/server/cert.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/server/key.pem
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/server/req.cnf
+lib/erlang/lib/${SSL}/examples/certs${SYSCONFDIR}/server/req.pem
 lib/erlang/lib/${SSL}/examples/certs/rnd/
 lib/erlang/lib/${SSL}/examples/certs/rnd/RAND
 lib/erlang/lib/${SSL}/examples/certs/src/
@@ -5760,7 +5764,7 @@ lib/erlang/lib/${SSL}/pkix/mk_ssl_pkix_oid.erl
 lib/erlang/lib/${SSL}/pkix/ssl_pkix_oid.erl
 lib/erlang/lib/${SSL}/priv/
 lib/erlang/lib/${SSL}/priv/bin/
-lib/erlang/lib/${SSL}/priv/bin/ssl_esock
+@bin lib/erlang/lib/${SSL}/priv/bin/ssl_esock
 lib/erlang/lib/${SSL}/priv/obj/
 lib/erlang/lib/${SSL}/priv/obj/Makefile
 lib/erlang/lib/${SSL}/priv/obj/debuglog.o
@@ -5865,6 +5869,7 @@ lib/erlang/lib/${STDLIB}/doc/html/proplists.html
 lib/erlang/lib/${STDLIB}/doc/html/qlc.html
 lib/erlang/lib/${STDLIB}/doc/html/queue.html
 lib/erlang/lib/${STDLIB}/doc/html/random.html
+lib/erlang/lib/${STDLIB}/doc/html/re.html
 lib/erlang/lib/${STDLIB}/doc/html/ref_man.html
 lib/erlang/lib/${STDLIB}/doc/html/ref_man.kwc
 lib/erlang/lib/${STDLIB}/doc/html/ref_man_cite.html
@@ -5951,6 +5956,7 @@ lib/erlang/lib/${STDLIB}/ebin/qlc.beam
 lib/erlang/lib/${STDLIB}/ebin/qlc_pt.beam
 lib/erlang/lib/${STDLIB}/ebin/queue.beam
 lib/erlang/lib/${STDLIB}/ebin/random.beam
+lib/erlang/lib/${STDLIB}/ebin/re.beam
 lib/erlang/lib/${STDLIB}/ebin/regexp.beam
 lib/erlang/lib/${STDLIB}/ebin/sets.beam
 lib/erlang/lib/${STDLIB}/ebin/shell.beam
@@ -6041,6 +6047,7 @@ lib/erlang/lib/${STDLIB}/src/qlc.erl
 lib/erlang/lib/${STDLIB}/src/qlc_pt.erl
 lib/erlang/lib/${STDLIB}/src/queue.erl
 lib/erlang/lib/${STDLIB}/src/random.erl
+lib/erlang/lib/${STDLIB}/src/re.erl
 lib/erlang/lib/${STDLIB}/src/regexp.erl
 lib/erlang/lib/${STDLIB}/src/sets.erl
 lib/erlang/lib/${STDLIB}/src/shell.erl
@@ -6219,7 +6226,7 @@ lib/erlang/lib/${TOOLBAR}/src/toolbar_lib.erl
 lib/erlang/lib/${TOOLBAR}/src/toolbar_toolconfig.erl
 lib/erlang/lib/${TOOLS}/
 lib/erlang/lib/${TOOLS}/bin/
-lib/erlang/lib/${TOOLS}/bin/emem
+@bin lib/erlang/lib/${TOOLS}/bin/emem
 lib/erlang/lib/${TOOLS}/c_src/
 lib/erlang/lib/${TOOLS}/c_src/erl_memory.c
 lib/erlang/lib/${TOOLS}/c_src/erl_memory_trace_block_table.c
@@ -6909,6 +6916,7 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/queue.3
 @man lib/erlang/man/man3/random.3
 @man lib/erlang/man/man3/rb.3
+@man lib/erlang/man/man3/re.3
 @man lib/erlang/man/man3/regexp.3
 @man lib/erlang/man/man3/registry.3
 @man lib/erlang/man/man3/release_handler.3
@@ -6939,6 +6947,7 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/snmpa_mpd.3
 @man lib/erlang/man/man3/snmpa_network_interface.3
 @man lib/erlang/man/man3/snmpa_network_interface_filter.3
+@man lib/erlang/man/man3/snmpa_notification_delivery_info_receiver.3
 @man lib/erlang/man/man3/snmpa_notification_filter.3
 @man lib/erlang/man/man3/snmpa_supervisor.3
 @man lib/erlang/man/man3/snmpc.3
