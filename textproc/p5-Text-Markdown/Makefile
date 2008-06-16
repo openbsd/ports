@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/05 11:41:44 okan Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/16 20:24:56 simon Exp $
 
 COMMENT=	convert Markdown / MultiMarkdown syntax to (X)HTML
 
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 REGRESS_FLAGS=	TEST_POD=Yes \
 		TEST_SPELLING=Yes
 REGRESS_DEPENDS=::devel/p5-Test-Spelling \
-		::textproc/aspell/core \
 		::textproc/p5-Text-Diff \
 		::www/p5-HTML-Tidy
 
