@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_org_jruby_runtime_load_LoadService_java,v 1.1.1.1 2008/06/17 22:27:56 bernd Exp $
+
+Add the JRUBY_LIBDIR to the library search path so we can run jruby from
+anywhere.
+
+--- src/org/jruby/runtime/load/LoadService.java.orig	Wed May 28 01:24:20 2008
++++ src/org/jruby/runtime/load/LoadService.java	Sat May 31 11:11:58 2008
+@@ -160,6 +160,15 @@ public class LoadService {
+            }
+        }
+ 
++        // add localbase
++        char psep = '/';
++        String jrubyLibdir = "${JRUBY_LIBDIR}" + psep + "ruby" + psep;
++
++        addPath(jrubyLibdir + "site_ruby" + psep + Constants.RUBY_MAJOR_VERSION);
++        addPath(jrubyLibdir + "site_ruby");
++        addPath(jrubyLibdir + Constants.RUBY_MAJOR_VERSION);
++        addPath(jrubyLibdir + Constants.RUBY_MAJOR_VERSION + psep + "java");
++
+         // wrap in try/catch for security exceptions in an applet
+         if (!Ruby.isSecurityRestricted()) {
+           String jrubyHome = runtime.getJRubyHome();

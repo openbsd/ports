@@ -1,0 +1,173 @@
+$OpenBSD: patch-bin_jruby,v 1.1.1.1 2008/06/17 22:27:56 bernd Exp $
+--- bin/jruby.orig	Wed May 28 01:29:24 2008
++++ bin/jruby	Sat May 31 11:28:46 2008
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # -----------------------------------------------------------------------------
+ # jruby.sh - Start Script for the JRuby interpreter
+ #
+@@ -11,15 +11,11 @@
+ #
+ # -----------------------------------------------------------------------------
+ 
+-cygwin=false
+-
+-# ----- Identify OS we are running under --------------------------------------
+-case "`uname`" in
+-CYGWIN*) cygwin=true
+-esac
+-
+ # ----- Verify and Set Required Environment Variables -------------------------
+ 
++JAVA_HOME=$(javaPathHelper -h jruby)
++JRUBY_LIBDIR=${JRUBY_LIBDIR}
++
+ ## resolve links - $0 may be a link to  home
+ PRG=$0
+ progname=`basename "$0"`
+@@ -34,9 +30,6 @@ while [ -h "$PRG" ] ; do
+   fi
+ done
+ 
+-JRUBY_HOME_1=`dirname "$PRG"`           # the ./bin dir
+-JRUBY_HOME=`dirname "$JRUBY_HOME_1"`  # the . dir
+-
+ if [ -z "$JRUBY_OPTS" ] ; then
+   JRUBY_OPTS=""
+ fi
+@@ -44,9 +37,6 @@ fi
+ if [ -z "$JAVA_HOME" ] ; then
+   JAVA_CMD='java'
+ else
+-  if $cygwin; then
+-    JAVA_HOME=`cygpath -u "$JAVA_HOME"`
+-  fi
+   JAVA_CMD="$JAVA_HOME/bin/java"
+ fi
+ 
+@@ -61,17 +51,13 @@ else
+     CP_DELIMETER=":"
+ 
+     # add necessary jars for command-line execution
+-    for j in "$JRUBY_HOME"/lib/*.jar; do
++    for j in "$JRUBY_LIBDIR"/*.jar; do
+         if [ "$CP" ]; then
+             CP="$CP$CP_DELIMETER$j"
+             else
+             CP="$j"
+         fi
+     done
+-
+-    if $cygwin; then
+-	CP=`cygpath -p -w "$CP"`
+-    fi
+ fi
+ 
+ # ----- Execute The Requested Command -----------------------------------------
+@@ -86,42 +72,37 @@ fi
+ 
+ # Split out any -J argument for passing to the JVM.
+ # Scanning for args is aborted by '--'.
+-declare -a java_args
+-declare -a ruby_args
++java_args=""
++ruby_args=""
+     while [ $# -gt 0 ]
+ do
+     case "$1" in
+     # Stuff after '-J' in this argument goes to JVM
+     -J*)
+-        val=${1:2}
+-        if [ "${val:0:4}" = "-Xmx" ]; then
+-            JAVA_MEM=$val
+-        elif [ "${val:0:4}" = "-Xss" ]; then
+-            JAVA_STACK=$val
+-        else
+-            java_args=("${java_args[@]}" "${1:2}")
+-        fi
++        val=${1#-J}
++        case "$val" in
++            -Xmx*) JAVA_MEM="$val" ;;
++            -Xss*) JAVA_STACK="$val" ;;
++            *) java_args="$java_args $val" ;;
++        esac
+         ;;
+      # Match switches that take an argument
+-     -e|-I|-S) ruby_args=("${ruby_args[@]}" "$1" "$2"); shift ;;
++     -e|-I|-S) ruby_args="$ruby_args $1 $2"; shift ;;
+      # Match same switches with argument stuck together
+-     -e*|-I*|-S*) ruby_args=("${ruby_args[@]}" "$1" ) ;;
++     -e*|-I*|-S*) ruby_args="$ruby_args $1" ;;
+      # Run with the instrumented profiler: http://jiprof.sourceforge.net/
+-     --profile) PROFILE_ARGS="-javaagent:$JRUBY_HOME/lib/profile.jar -Dprofile.properties=$JRUBY_HOME/lib/profile.properties" ;;
++     --profile) PROFILE_ARGS="-javaagent:$JRUBY_LIBDIR/profile.jar -Dprofile.properties=$JRUBY_LIBDIR/profile.properties" ;;
+      # Run under JDB
+      --jdb)
+         if [ -z "$JAVA_HOME" ] ; then
+           JAVA_CMD='jdb'
+         else
+-          if $cygwin; then
+-            JAVA_HOME=`cygpath -u "$JAVA_HOME"`
+-          fi
+           JAVA_CMD="$JAVA_HOME/bin/jdb"
+         fi ;;
+      # Abort processing on the double dash
+      --) break ;;
+      # Other opts go to ruby
+-     -*) ruby_args=("${ruby_args[@]}" "$1") ;;
++     -*) ruby_args="$ruby_args $1" ;;
+      # Abort processing on first non-opt arg
+      *) break ;;
+     esac
+@@ -129,32 +110,19 @@ do
+ done
+ 
+ # Append the rest of the arguments
+-ruby_args=("${ruby_args[@]}" "$@")
++ruby_args="$ruby_args $@"
+ 
+ # Put the ruby_args back into the position arguments $1, $2 etc
+-set -- "${ruby_args[@]}"
++set -- "$ruby_args"
+ 
+ JAVA_OPTS="$JAVA_OPTS $JAVA_MEM $JAVA_STACK"
+ 
+-if $cygwin; then
+-  JAVA_HOME=`cygpath --mixed "$JAVA_HOME"`
+-  JRUBY_HOME=`cygpath --mixed "$JRUBY_HOME"`
+-  JRUBY_SHELL=`cygpath --mixed "$JRUBY_SHELL"`
+-  
+-  if [[ ( "${1:0:1}" = "/" ) && ( ( -f "$1" ) || ( -d "$1" )) ]]; then
+-    win_arg=`cygpath -w "$1"`
+-    shift
+-    win_args=("$win_arg" "$@")
+-    set -- "${win_args[@]}"
+-  fi
+-fi
+-
+ if [ "$PROFILE_ARGS" != "" ]; then
+   echo "Running with instrumented profiler"
+ 
+-  $JAVA_CMD $PROFILE_ARGS $JAVA_OPTS "${java_args[@]}" -classpath "$CP$CP_SEPARATOR$CLASSPATH" \
+-    "-Djruby.home=$JRUBY_HOME" \
+-    "-Djruby.lib=$JRUBY_HOME/lib" -Djruby.script=jruby \
++  eval $JAVA_CMD $PROFILE_ARGS $JAVA_OPTS "$java_args" -classpath "$CP$CP_SEPARATOR$CLASSPATH" \
++    "-Djruby.home=$JRUBY_LIBDIR" \
++    "-Djruby.lib=$JRUBY_LIBDIR" -Djruby.script=jruby \
+     "-Djruby.shell=$JRUBY_SHELL" \
+     org.jruby.Main $JRUBY_OPTS "$@"
+ 
+@@ -162,9 +130,9 @@ if [ "$PROFILE_ARGS" != "" ]; then
+ 
+   cat profile.txt
+ else
+-  exec "$JAVA_CMD" $JAVA_OPTS "${java_args[@]}" -Xbootclasspath/a:"$CP" -classpath "$CLASSPATH" \
+-    "-Djruby.home=$JRUBY_HOME" \
+-    "-Djruby.lib=$JRUBY_HOME/lib" -Djruby.script=jruby \
++  eval exec "$JAVA_CMD" $JAVA_OPTS "$java_args" -Xbootclasspath/a:"$CP" -classpath "$CLASSPATH" \
++    "-Djruby.home=$JRUBY_LIBDIR" \
++    "-Djruby.lib=$JRUBY_LIBDIR" -Djruby.script=jruby \
+     "-Djruby.shell=$JRUBY_SHELL" \
+     org.jruby.Main $JRUBY_OPTS "$@"
+ fi

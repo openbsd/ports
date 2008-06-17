@@ -1,0 +1,5 @@
+JRuby is an 100% pure-Java implementation of the Ruby programming language.
+
+JRuby is tightly integrated with Java to allow the embedding of the
+interpreter into any Java application with full two-way access between the
+Java and the Ruby code.
