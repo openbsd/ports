@@ -1,18 +1,18 @@
-$OpenBSD: patch-setup_rb,v 1.1 2008/01/12 14:51:15 bernd Exp $
---- setup.rb.orig	Fri Dec 21 02:15:55 2007
-+++ setup.rb	Fri Dec 21 16:46:28 2007
-@@ -72,7 +72,7 @@ else
+$OpenBSD: patch-setup_rb,v 1.2 2008/06/17 22:42:59 bernd Exp $
+--- setup.rb.orig	Sat Apr 19 14:46:21 2008
++++ setup.rb	Sat Apr 19 14:47:22 2008
+@@ -94,7 +94,7 @@ else
+     lib_dir = Gem::ConfigMap[:sitelibdir]
+     bin_dir = Gem::ConfigMap[:bindir]
+   else
+-    lib_dir = File.join prefix, 'lib'
++    lib_dir = ENV['RUBYLIB']
+     bin_dir = File.join prefix, 'bin'
  
-   raise "invalid --prefix #{prefix.inspect}" if prefix.nil?
- 
--  lib_dir = File.join prefix, 'lib'
-+  lib_dir = ENV['RUBYLIB']
-   bin_dir = File.join prefix, 'bin'
- 
-   mkdir_p lib_dir
-@@ -235,8 +235,9 @@ puts <<-EOF.gsub(/^ */, '')
-   Searching $LOAD_PATH for stubs to optionally delete (may take a while)...
-   EOF
+     mkdir_p lib_dir
+@@ -261,8 +261,9 @@ end
+ puts "As of RubyGems 0.8.0, library stubs are no longer needed."
+ puts "Searching $LOAD_PATH for stubs to optionally delete (may take a while)"
  
 -gemfiles = Dir[File.join("{#{($LOAD_PATH).join(',')}}", '**', '*.rb')]
 -gemfiles = gemfiles.map { |file| File.expand_path file }.uniq

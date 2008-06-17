@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2008/06/14 23:46:38 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2008/06/17 22:42:59 bernd Exp $
 
 COMMENT=	package management framework for the Ruby language
 
-V=		1.0.1
+V=		1.1.1
 DISTNAME=	rubygems-$V
-PKGNAME= 	ruby-gems-$Vp0
+PKGNAME= 	ruby-gems-$V
 CATEGORIES=	devel
 
 HOMEPAGE=	http://docs.rubygems.org/
@@ -24,6 +24,8 @@ CONFIGURE_STYLE=ruby setup
 
 MAKE_ENV=	GEM_HOME=${PREFIX}/lib/ruby/gems/${MODRUBY_REV} \
 		RUBYLIB=${PREFIX}/lib/ruby/site_ruby/${MODRUBY_REV}
+
+SUBST_VARS=	DISTNAME
 
 REGRESS_DEPENDS=::devel/ruby-rake
 
