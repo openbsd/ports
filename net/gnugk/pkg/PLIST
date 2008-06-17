@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/04/03 07:18:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/06/17 14:45:40 ajacoutot Exp $
 @newgroup ${GNUGK_ID}:586
 @newuser ${GNUGK_ID}:586:586:daemon:Gatekeeper Daemon:/var/empty:/sbin/nologin
-bin/addpasswd
-bin/gnugk
+@bin bin/addpasswd
+@bin bin/gnugk
 @man man/man1/gnugk.1
 share/doc/gnugk/
 share/doc/gnugk/identifiers.txt
