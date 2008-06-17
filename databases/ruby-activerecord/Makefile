@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2008/06/14 23:43:05 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2008/06/17 22:54:19 bernd Exp $
 
 COMMENT=	object relation model implementation for ruby
 
-DISTNAME=	activerecord-2.0.2
-PKGNAME=	ruby-${DISTNAME}p0
+DISTNAME=	activerecord-2.1.0
+PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	databases
 
 # MIT License
@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=activerecord/}
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS= 	:ruby-activesupport-2.0.2:devel/ruby-activesupport
+RUN_DEPENDS= 	:ruby-activesupport-2.1.0:devel/ruby-activesupport
 
 CONFIGURE_STYLE=ruby gem
 

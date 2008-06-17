@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/12/27 19:43:46 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/06/17 22:54:19 bernd Exp $
 bin/rails
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -10,6 +10,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Rakefile
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/about
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/console
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/dbconsole
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/destroy
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/generate
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/performance/
@@ -44,6 +45,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/empty.log
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/initializers/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/initializers/inflections.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/initializers/mime_types.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/initializers/new_rails_defaults.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/lighttpd.conf
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/routes.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/dispatches/
@@ -84,6 +86,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/about.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/console.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/dbconsole.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/destroy.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/generate.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/ncgi/
@@ -105,6 +108,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/servers/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/servers/base.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/servers/lighttpd.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/servers/mongrel.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/servers/new_mongrel.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/servers/webrick.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/commands/update.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/console_app.rb
@@ -114,6 +118,11 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/dispatcher.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/fcgi_handler.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/initializer.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails/gem_builder.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails/gem_dependency.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails/mongrel_server/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails/mongrel_server/commands.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails/mongrel_server/handler.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails/plugin/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails/plugin.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rails/plugin/loader.rb
@@ -232,6 +241,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/annotations.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/databases.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/documentation.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/framework.rake
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/gems.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/log.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/misc.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tasks/rails.rb
