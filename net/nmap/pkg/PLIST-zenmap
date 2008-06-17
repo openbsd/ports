@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zenmap,v 1.3 2008/05/16 20:50:56 wcmaier Exp $
+@comment $OpenBSD: PLIST-zenmap,v 1.4 2008/06/17 21:18:03 steven Exp $
 bin/nmapfe
 bin/xnmap
 bin/zenmap
@@ -169,11 +169,6 @@ lib/python${MODPY_VERSION}/site-packages/zenmapGUI/__init__.pyc
 @man man/man1/zenmap.1
 @comment share/icons/
 share/icons/nmap-eye.ico
-share/icons/umit_128.ico
-share/icons/umit_16.ico
-share/icons/umit_24.ico
-share/icons/umit_32.ico
-share/icons/umit_48.ico
 share/pixmaps/
 share/pixmaps/default.svg
 share/pixmaps/default_32.png
@@ -187,7 +182,6 @@ share/pixmaps/irix_75.png
 share/pixmaps/linux.svg
 share/pixmaps/linux_32.png
 share/pixmaps/linux_75.png
-share/pixmaps/logo.png
 share/pixmaps/macosx.svg
 share/pixmaps/macosx_32.png
 share/pixmaps/macosx_75.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.3 2008/05/15 18:30:14 okan Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.4 2008/06/17 21:18:03 steven Exp $
 libexec/nmap/
 libexec/nmap/nselib-bin/
 libexec/nmap/nselib-bin/bit.so
@@ -41,8 +41,6 @@ share/nmap/scripts/ftpbounce.nse
 share/nmap/scripts/iax2Detect.nse
 share/nmap/scripts/ircServerInfo.nse
 share/nmap/scripts/ircZombieTest.nse
-share/nmap/scripts/kibuvDetection.nse
-share/nmap/scripts/mswindowsShell.nse
 share/nmap/scripts/nbstat.nse
 share/nmap/scripts/netbios-smb-os-discovery.nse
 share/nmap/scripts/promiscuous.nse

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/01/25 01:21:17 okan Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/06/17 21:18:03 steven Exp $
 @pkgpath net/nmap
 @pkgpath net/nmap,no_x11
-bin/nmap
+@bin bin/nmap
 @man man/man1/nmap.1
 share/nmap/
 share/nmap/nmap-mac-prefixes

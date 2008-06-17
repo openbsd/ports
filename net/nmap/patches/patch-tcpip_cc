@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcpip_cc,v 1.6 2008/01/25 01:21:17 okan Exp $
---- tcpip.cc.orig	Tue Nov 27 00:44:20 2007
-+++ tcpip.cc	Tue Dec 18 14:22:41 2007
-@@ -2081,7 +2081,7 @@ bool pcap_selectable_fd_valid() {
+$OpenBSD: patch-tcpip_cc,v 1.7 2008/06/17 21:18:03 steven Exp $
+--- tcpip.cc.orig	Thu May 22 22:45:32 2008
++++ tcpip.cc	Sat Jun 14 14:52:55 2008
+@@ -2079,7 +2079,7 @@ bool pcap_selectable_fd_valid() {
     results.  If you just want to test whether the function is supported,
     use pcap_selectable_fd_valid() instead. */
  int my_pcap_get_selectable_fd(pcap_t *p) {
