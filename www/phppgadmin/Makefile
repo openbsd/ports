@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2008/06/17 09:19:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/17 14:57:22 mbalmer Exp $
 
 COMMENT=	tool to handle the administration of PostgreSQL over the web
 
 DISTNAME=	phpPgAdmin-4.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www databases
 HOMEPAGE=	http://phppgadmin.sourceforge.net/	
 
-MAINTAINER= 	Denis Chatelain <denis.chatelain@octopodus.com>	
+MAINTAINER= 	Marc Balmer <mbalmer@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
