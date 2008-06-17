@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/20 12:09:52 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/06/17 19:30:20 steven Exp $
 %%SHARED%%
-bin/cln-config
 include/cln/
 include/cln/GV.h
 include/cln/GV_complex.h
@@ -17,7 +16,6 @@ include/cln/SV_rational.h
 include/cln/SV_real.h
 include/cln/SV_ringelt.h
 include/cln/V.h
-include/cln/abort.h
 include/cln/cln.h
 include/cln/complex.h
 include/cln/complex_class.h
@@ -28,6 +26,7 @@ include/cln/config.h
 include/cln/dfloat.h
 include/cln/dfloat_class.h
 include/cln/dfloat_io.h
+include/cln/exception.h
 include/cln/ffloat.h
 include/cln/ffloat_class.h
 include/cln/ffloat_io.h
@@ -80,16 +79,15 @@ include/cln/univpoly_modint.h
 include/cln/univpoly_rational.h
 include/cln/univpoly_real.h
 include/cln/version.h
-info/cln.info
+@info info/cln.info
 lib/libcln.a
 lib/libcln.la
 lib/pkgconfig/
 lib/pkgconfig/cln.pc
-@man man/man1/cln-config.1
 share/aclocal/
-share/aclocal/cln.m4
 share/doc/cln/
 share/doc/cln/cln.dvi
+share/doc/cln/cln.html
 share/doc/cln/cln_1.html
 share/doc/cln/cln_10.html
 share/doc/cln/cln_11.html
@@ -107,5 +105,4 @@ share/doc/cln/cln_7.html
 share/doc/cln/cln_8.html
 share/doc/cln/cln_9.html
 share/doc/cln/cln_abt.html
-share/doc/cln/cln_ovr.html
-share/doc/cln/cln_toc.html
+share/doc/cln/cln_fot.html

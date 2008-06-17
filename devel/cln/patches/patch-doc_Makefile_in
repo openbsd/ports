@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2007/11/20 12:09:52 steven Exp $
---- doc/Makefile.in.orig	Tue Nov 20 11:54:26 2007
-+++ doc/Makefile.in	Tue Nov 20 11:55:01 2007
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2008/06/17 19:30:19 steven Exp $
+--- doc/Makefile.in.orig	Mon Jun 16 03:23:28 2008
++++ doc/Makefile.in	Mon Jun 16 03:23:01 2008
 @@ -11,10 +11,11 @@ local_prefix = /usr/local
  exec_prefix = @exec_prefix@
  datarootdir = @datarootdir@
@@ -8,8 +8,8 @@ $OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2007/11/20 12:09:52 steven Exp $
 +docdir = @docdir@
  infodir = @infodir@
  mandir = @mandir@
--htmldir = $(datadir)/html
--dvidir = $(datadir)/dvi
+-htmldir = ${datadir}/html
+-dvidir = ${datadir}/dvi
 +htmldir = $(docdir)
 +dvidir = $(docdir)
  DESTDIR =
