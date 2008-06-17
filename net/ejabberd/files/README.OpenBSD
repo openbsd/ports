@@ -9,7 +9,7 @@
   * DNS
     SRV records for your server can make your life easier. Example
     records:
-      _jabber._tcp.example.org. 	SRV 5 0 5269 host.example.org.
+      _jabber._tcp.example.org.		SRV 5 0 5269 host.example.org.
       _xmpp-server._tcp.example.org.	SRV 5 0 5269 host.example.org.
       _xmpp-client._tcp.example.org.	SRV 5 0 5222 host.example.org.
 
@@ -32,15 +32,15 @@
   To start ejabberd at boot time, you may insert the following
   into ${SYSCONFDIR}/rc.local:
 
-    if [ -x ${LOCALBASE}/sbin/ejabberd ]; then
-    	echo -n ' ejabberd';   ${LOCALBASE}/sbin/ejabberd
+    if [ -x ${LOCALBASE}/sbin/ejabberdctl ]; then
+	echo -n ' ejabberd';   ${LOCALBASE}/sbin/ejabberdctl start
     fi
 
 
 
 * Administration
   ejabberdctl has some commands for administration of the server. After
-  starting ejabberd run ejabberdctl again for list of options.
+  starting ejabberd run ejabberdctl again for the list of options.
   Another possibility, giving you more options, is the web interface,
   available at http://your.server:5280/admin/ where you need to log in
   as a user added to admin acl group, give your full jid and your
@@ -57,4 +57,4 @@
     # chmod 640 ${SYSCONFDIR}/ejabberd/myserver.pem
 
   To disable SSL comment out (prepend with %%) lines containing
-  'certfile' and the whole block pertaining port 5223
+  'certfile' and the whole block pertaining to port 5223
