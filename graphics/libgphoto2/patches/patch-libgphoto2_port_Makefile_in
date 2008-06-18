@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgphoto2_port_Makefile_in,v 1.1 2007/10/19 12:57:52 ajacoutot Exp $
---- libgphoto2_port/Makefile.in.orig	Thu Oct 11 13:24:02 2007
-+++ libgphoto2_port/Makefile.in	Thu Oct 11 13:25:14 2007
-@@ -759,7 +759,7 @@ info: info-recursive
+$OpenBSD: patch-libgphoto2_port_Makefile_in,v 1.2 2008/06/18 11:43:39 ajacoutot Exp $
+--- libgphoto2_port/Makefile.in.orig	Mon Mar 24 14:14:13 2008
++++ libgphoto2_port/Makefile.in	Sat Jun 14 18:43:46 2008
+@@ -760,7 +760,7 @@ info: info-recursive
  
  info-am:
  
