@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2008/04/29 20:38:03 todd Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/18 00:40:50 todd Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=		QEMU accelerator module
 
 DISTNAME=		kqemu-1.3.0pre11
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		emulators
 
-HOMEPAGE=		http://fabrice.bellard.free.fr/qemu/
+HOMEPAGE=		http://bellard.org/qemu/
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
