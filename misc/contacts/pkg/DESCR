@@ -1,0 +1,4 @@
+Contacts is a small, lightweight addressbook that uses libebook, part of
+EDS. This is the same library that GNOME Evolution uses, so all contact
+data that exists in your Evolution addressbook is accessible via
+Contacts. Contacts features advanced vCard field type handling.
