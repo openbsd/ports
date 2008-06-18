@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/02/02 09:30:09 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/06/18 00:36:11 bernd Exp $
 bin/spec
 bin/spec_translator
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
@@ -26,6 +26,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Example/ExampleGr
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Example/ExampleMatcher.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Example/ExampleMethods.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Example/ExamplePendingError.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Example/ModuleInclusionWarnings/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Example/ModuleInclusionWarnings.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Example/ModuleInclusionWarnings/MethodDispatcher.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Example/ModuleReopeningFix.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Example/Pending.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Example/PendingExampleFixedError.html
@@ -52,6 +55,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Matchers/Exist.ht
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Matchers/MatcherError.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Matchers/ModuleMethods.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Matchers/SimpleMatcher.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/MetaClass.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Mocks/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Mocks.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Mocks/AmbiguousReturnError.html
@@ -64,6 +68,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Mocks/BooleanArgC
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Mocks/DuckTypeArgConstraint.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Mocks/ErrorGenerator.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Mocks/ExampleMethods.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Mocks/HashIncludingConstraint.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Mocks/LiteralArgConstraint.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Mocks/MatcherConstraint.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Mocks/MessageExpectation.html
@@ -95,6 +100,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Runner/Formatter/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Runner/Formatter/FailingExampleGroupsFormatter.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Runner/Formatter/FailingExamplesFormatter.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Runner/Formatter/HtmlFormatter.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Runner/Formatter/NestedTextFormatter.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Runner/Formatter/ProfileFormatter.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Runner/Formatter/ProgressBarFormatter.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Spec/Runner/Formatter/SnippetExtractor/
@@ -187,6 +193,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/example/example
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/example/example_group_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/example/example_matcher_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/example/example_methods_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/example/module_inclusion_warnings_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/example/module_reopening_fix_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/example/pending_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/example/shared_example_group_rb.html
@@ -204,6 +211,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/expectations_rb
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/extensions/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/extensions/class_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/extensions/main_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/extensions/metaclass_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/extensions/object_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/extensions_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/interop/
@@ -242,6 +250,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/mocks/error_gen
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/mocks/errors_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/mocks/extensions/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/mocks/extensions/object_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/mocks/extensions_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/mocks/framework_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/mocks/message_expectation_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/mocks/methods_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/mocks/mock_rb.html
@@ -265,6 +275,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/runner/formatte
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/runner/formatter/failing_example_groups_formatter_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/runner/formatter/failing_examples_formatter_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/runner/formatter/html_formatter_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/runner/formatter/nested_text_formatter_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/runner/formatter/profile_formatter_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/runner/formatter/progress_bar_formatter_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/spec/runner/formatter/snippet_extractor_rb.html
@@ -313,7 +324,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/rdoc-style.css
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Autotest/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Autotest/Rspec/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Autotest/Rspec/add_options_if_present-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Autotest/Rspec/cdesc-Rspec.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Autotest/Rspec/consolidate_failures-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Autotest/Rspec/make_test_cmd-i.yaml
@@ -327,7 +337,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Class/subclass-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Object/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Object/args_and_options-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Object/cdesc-Object.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Object/metaclass-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RCov/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RCov/VerifyTask/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RCov/VerifyTask/cdesc-VerifyTask.yaml
@@ -370,6 +379,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleGroupMethods
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleGroupMethods/append_before-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleGroupMethods/before-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleGroupMethods/cdesc-ExampleGroupMethods.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleGroupMethods/context-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleGroupMethods/describe-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleGroupMethods/described_type-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleGroupMethods/description-i.yaml
@@ -391,6 +401,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleGroupMethods
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleGroupMethods/specify-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleGroupMethods/teardown-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleGroupMethods/xit-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleGroupMethods/xspecify-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleMatcher/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleMatcher/cdesc-ExampleMatcher.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleMatcher/example_group_regex-i.yaml
@@ -402,6 +413,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleMatcher/matc
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleMatcher/matches_literal_example%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleMatcher/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleMethods/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleMethods/__full_description-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleMethods/after_example-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleMethods/before_example-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleMethods/cdesc-ExampleMethods.yaml
@@ -414,6 +426,14 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleMethods/set_
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExampleMethods/violated-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExamplePendingError/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ExamplePendingError/cdesc-ExamplePendingError.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ModuleInclusionWarnings/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ModuleInclusionWarnings/MethodDispatcher/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ModuleInclusionWarnings/MethodDispatcher/call-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ModuleInclusionWarnings/MethodDispatcher/cdesc-MethodDispatcher.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ModuleInclusionWarnings/MethodDispatcher/new-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ModuleInclusionWarnings/MethodDispatcher/respond_to%3f-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ModuleInclusionWarnings/cdesc-ModuleInclusionWarnings.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ModuleInclusionWarnings/respond_to%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ModuleReopeningFix/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ModuleReopeningFix/cdesc-ModuleReopeningFix.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Example/ModuleReopeningFix/child_modules-i.yaml
@@ -548,6 +568,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Matchers/respond_to-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Matchers/satisfy-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Matchers/simple_matcher-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Matchers/throw_symbol-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/MetaClass/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/MetaClass/cdesc-MetaClass.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/MetaClass/metaclass-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/AmbiguousReturnError/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/AmbiguousReturnError/cdesc-AmbiguousReturnError.yaml
@@ -565,6 +588,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/ArgumentConstraintMat
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/ArgumentConstraintMatchers/boolean-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/ArgumentConstraintMatchers/cdesc-ArgumentConstraintMatchers.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/ArgumentConstraintMatchers/duck_type-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/ArgumentConstraintMatchers/hash_including-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/ArgumentConstraintMatchers/no_args-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/ArgumentExpectation/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/ArgumentExpectation/cdesc-ArgumentExpectation.yaml
@@ -615,6 +639,12 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/ExampleMethods/cdesc-
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/ExampleMethods/mock-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/ExampleMethods/stub-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/ExampleMethods/stub_everything-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/HashIncludingConstraint/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/HashIncludingConstraint/%3d%3d-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/HashIncludingConstraint/cdesc-HashIncludingConstraint.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/HashIncludingConstraint/description-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/HashIncludingConstraint/matches%3f-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/HashIncludingConstraint/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/LiteralArgConstraint/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/LiteralArgConstraint/cdesc-LiteralArgConstraint.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/LiteralArgConstraint/matches%3f-i.yaml
@@ -624,11 +654,13 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MatcherConstraint/cde
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MatcherConstraint/matches%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MatcherConstraint/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/advise-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/any_number_of_times-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/at_least-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/at_most-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/cdesc-MessageExpectation.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/exactly-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/expected_messages_received%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/generate_error-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/ignoring_args%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/matches_at_least_count%3f-i.yaml
@@ -640,6 +672,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/ne
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/once-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/ordered-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/set_expected_received_count-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/similar_messages-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/times-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/twice-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Mocks/MessageExpectation/verify_messages_received-i.yaml
@@ -769,7 +802,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/BaseTextFo
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/BaseTextFormatter/red-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/BaseTextFormatter/yellow-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/FailingExampleGroupsFormatter/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/FailingExampleGroupsFormatter/add_example_group-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/FailingExampleGroupsFormatter/cdesc-FailingExampleGroupsFormatter.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/FailingExampleGroupsFormatter/dump_failure-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/FailingExampleGroupsFormatter/dump_summary-i.yaml
@@ -782,11 +814,11 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/FailingExa
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/add_example_group-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/cdesc-HtmlFormatter.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/current_example_group_number-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/current_example_number-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/dump_failure-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/dump_summary-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/example_failed-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/example_group_number-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/example_number-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/example_passed-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/example_pending-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/example_started-i.yaml
@@ -794,16 +826,27 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormat
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/global_scripts-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/global_styles-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/html_header-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/method_missing-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/move_progress-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/percent_done-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/report_header-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/start-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/HtmlFormatter/start_dump-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/NestedTextFormatter/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/NestedTextFormatter/add_example_group-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/NestedTextFormatter/cdesc-NestedTextFormatter.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/NestedTextFormatter/current_indentation-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/NestedTextFormatter/described_example_group_chain-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/NestedTextFormatter/example_failed-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/NestedTextFormatter/example_passed-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/NestedTextFormatter/example_pending-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/NestedTextFormatter/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProfileFormatter/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProfileFormatter/cdesc-ProfileFormatter.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProfileFormatter/example_passed-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProfileFormatter/example_started-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProfileFormatter/method_missing-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProfileFormatter/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProfileFormatter/start-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProfileFormatter/start_dump-i.yaml
@@ -812,6 +855,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProgressBa
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProgressBarFormatter/example_failed-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProgressBarFormatter/example_passed-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProgressBarFormatter/example_pending-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProgressBarFormatter/method_missing-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/ProgressBarFormatter/start_dump-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/SnippetExtractor/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Formatter/SnippetExtractor/NullConverter/
@@ -926,6 +970,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/QuietBacktraceTweake
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Reporter/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Reporter/Failure/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Reporter/Failure/cdesc-Failure.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Reporter/Failure/example_name-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Reporter/Failure/expectation_not_met%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Reporter/Failure/header-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Runner/Reporter/Failure/new-c.yaml
@@ -1077,6 +1122,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/Runner/StoryRunner/ru
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/Runner/StoryRunner/scenario_from_current_story-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/Runner/StoryRunner/scenario_from_current_story-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/Runner/cdesc-Runner.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/Runner/create_story_runner-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/Runner/dry_run-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/Runner/register_listener-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Spec/Story/Scenario/
@@ -1311,6 +1357,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/example/example_group_fac
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/example/example_group_methods.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/example/example_matcher.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/example/example_methods.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/example/module_inclusion_warnings.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/example/module_reopening_fix.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/example/pending.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/example/shared_example_group.rb
@@ -1328,6 +1375,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/extensions/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/extensions.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/extensions/class.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/extensions/main.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/extensions/metaclass.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/extensions/object.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/interop/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/interop/test/
@@ -1365,7 +1413,9 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/mocks/argument_expectatio
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/mocks/error_generator.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/mocks/errors.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/mocks/extensions/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/mocks/extensions.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/mocks/extensions/object.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/mocks/framework.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/mocks/message_expectation.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/mocks/methods.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/mocks/mock.rb
@@ -1389,6 +1439,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/runner/formatter/base_tex
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/runner/formatter/failing_example_groups_formatter.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/runner/formatter/failing_examples_formatter.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/runner/formatter/html_formatter.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/runner/formatter/nested_text_formatter.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/runner/formatter/profile_formatter.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/runner/formatter/progress_bar_formatter.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/spec/runner/formatter/snippet_extractor.rb
@@ -1433,20 +1484,6 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/plugins/mock_frameworks/flexmock.r
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/plugins/mock_frameworks/mocha.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/plugins/mock_frameworks/rr.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/plugins/mock_frameworks/rspec.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/lib/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/lib/pre_commit/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/lib/pre_commit.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/lib/pre_commit/core.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/lib/pre_commit/pre_commit.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/lib/pre_commit/rspec.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/lib/pre_commit/rspec_on_rails.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/spec/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/spec/pre_commit/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/spec/pre_commit/pre_commit_spec.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/spec/pre_commit/rspec_on_rails_spec.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/spec/spec_helper.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre_commit/spec/spec_suite.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rake_tasks/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rake_tasks/examples.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/rake_tasks/examples_with_rcov.rake
@@ -1465,6 +1502,9 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec.opts
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/example/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/example/configuration_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/example/example_group/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/example/example_group/described_module_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/example/example_group/warning_messages_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/example/example_group_class_definition_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/example/example_group_factory_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/example/example_group_methods_spec.rb
@@ -1528,7 +1568,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/argument_expectati
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/at_least_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/at_most_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/bug_report_10260_spec.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/bug_report_10263.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/bug_report_10263_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/bug_report_11545_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/bug_report_15719_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/bug_report_7611_spec.rb
@@ -1536,6 +1576,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/bug_report_7805_sp
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/bug_report_8165_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/bug_report_8302_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/failing_mock_argument_constraints_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/hash_including_matcher_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/mock_ordering_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/mock_space_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/mocks/mock_spec.rb
@@ -1569,6 +1610,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/formatter/html_fo
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/formatter/html_formatted-${MODRUBY_REV}.6-jruby.html
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/formatter/html_formatted-${MODRUBY_REV}.6.html
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/formatter/html_formatter_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/formatter/nested_text_formatter_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/formatter/profile_formatter_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/formatter/progress_bar_formatter_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/formatter/snippet_extractor_spec.rb
@@ -1594,6 +1636,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/resources/a_bar.r
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/resources/a_foo.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/resources/a_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/spec.opts
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/spec_drb.opts
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/spec_parser/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/spec_parser/spec_parser_fixture.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec/runner/spec_parser_spec.rb
@@ -1636,6 +1679,9 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/interop/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/interop/examples_and_tests_together
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/interop/stories.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/interop/test_case_with_should_methods
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/mock_framework_integration/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/mock_framework_integration/stories.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/mock_framework_integration/use_flexmock.story
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/pending_stories/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/pending_stories/README
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/
@@ -1647,6 +1693,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/matchers/smart_m
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/spec/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/spec/example_group_with_should_methods.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/spec/simple_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/spec/spec_with_flexmock.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/steps/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/steps/running_rspec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/stories/resources/stories/
