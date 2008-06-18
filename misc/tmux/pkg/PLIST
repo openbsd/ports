@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/31 20:51:28 steven Exp $
-bin/tmux
+@comment $OpenBSD: PLIST,v 1.2 2008/06/18 15:07:11 wcmaier Exp $
+@bin bin/tmux
 @man man/man1/tmux.1
+share/examples/tmux/
+share/examples/tmux/n-marriott.conf
+share/examples/tmux/n-marriott.sh
