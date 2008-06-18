@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2008/04/15 11:24:14 jakemsr Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2008/06/18 01:26:41 brad Exp $
 @pkgpath multimedia/xine-lib
 %%i386%%
 bin/xine-config
-bin/xine-list-1.1
+@bin bin/xine-list-1.1
 include/xine/
 include/xine.h
 include/xine/alphablend.h

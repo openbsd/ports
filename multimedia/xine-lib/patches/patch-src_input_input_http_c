@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_input_input_http_c,v 1.3 2008/01/15 00:36:46 jakemsr Exp $
---- src/input/input_http.c.orig	Tue Jan  1 08:30:08 2008
-+++ src/input/input_http.c	Wed Jan  9 01:50:22 2008
-@@ -417,7 +417,7 @@ static off_t http_plugin_read_int (http_input_plugin_t
+$OpenBSD: patch-src_input_input_http_c,v 1.4 2008/06/18 01:26:41 brad Exp $
+--- src/input/input_http.c.orig	Sat Jun 14 19:15:00 2008
++++ src/input/input_http.c	Mon Jun 16 02:30:50 2008
+@@ -407,7 +407,7 @@ static off_t http_plugin_read_int (http_input_plugin_t
    
  error:
    if (!_x_action_pending(this->stream)) 
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.3 2008/01/15 00:36:46 jakemsr Exp $
    xine_log (this->stream->xine, XINE_LOG_MSG, _("input_http: read error %d\n"), errno);
    return read_bytes;
  }
-@@ -673,7 +673,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -663,7 +663,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
        if (http_plugin_basicauth (this_class->proxyuser,
  			         this_class->proxypassword,
  				 this->proxyauth, BUFSIZE)) {
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.3 2008/01/15 00:36:46 jakemsr Exp $
  	return 0;
        }
      }
-@@ -682,7 +682,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -672,7 +672,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
    
    if (!_x_parse_url(this->mrl, &this->proto, &this->host, &this->port,
                      &this->user, &this->password, &this->uri)) {
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.3 2008/01/15 00:36:46 jakemsr Exp $
      return 0;
    }
    use_proxy = use_proxy && _x_use_proxy(this_class, this->host);
-@@ -692,7 +692,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -682,7 +682,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
    
    if (this->user && strlen(this->user)) {
      if (http_plugin_basicauth (this->user, this->password, this->auth, BUFSIZE)) {
@@ -37,7 +37,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.3 2008/01/15 00:36:46 jakemsr Exp $
        return -1;
      }
    }
-@@ -746,7 +746,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -736,7 +736,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
      } while ((res == XIO_TIMEOUT) && (progress <= 100000));
  
      if (res != XIO_READY) {
@@ -46,16 +46,16 @@ $OpenBSD: patch-src_input_input_http_c,v 1.3 2008/01/15 00:36:46 jakemsr Exp $
        return -3;
      }
    }
-@@ -791,7 +791,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
-            VERSION);
-   buflen = strlen(this->buf);
+@@ -776,7 +776,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+ 		     "\015\012",
+ 		     VERSION);
    if (_x_io_tcp_write (this->stream, this->fh, this->buf, buflen) != buflen) {
 -    _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "couldn't send request", NULL);
 +    _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "couldn't send request", (char *)NULL);
      xprintf(this_class->xine, XINE_VERBOSITY_DEBUG, "input_http: couldn't send request\n");
      return -4;
    }
-@@ -835,7 +835,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -820,7 +820,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
  	    (sscanf(this->buf, "ICY %d %50[^\015\012]", /* icecast 1 ? */
  		    &httpcode, httpstatus) != 2)
  	   ) {
@@ -64,7 +64,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.3 2008/01/15 00:36:46 jakemsr Exp $
  	    xine_log (this->stream->xine, XINE_LOG_MSG, 
  		      _("input_http: invalid http answer\n"));
  	    return -6;
-@@ -846,20 +846,20 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -831,20 +831,20 @@ static int http_plugin_open (input_plugin_t *this_gen 
  		    _("input_http: 3xx redirection: >%d %s<\n"),
  		    httpcode, httpstatus);
  	} else if (httpcode == 404) {
@@ -88,7 +88,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.3 2008/01/15 00:36:46 jakemsr Exp $
        	  xine_log (this->stream->xine, XINE_LOG_MSG,
  		    _("input_http: http status not 2xx: >%d %s<\n"),
  		    httpcode, httpstatus);
-@@ -952,7 +952,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -940,7 +940,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
      } else
        len ++;
      if ( len >= BUFSIZE ) {

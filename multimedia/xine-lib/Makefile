@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.34 2008/06/01 08:21:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2008/06/18 01:26:40 brad Exp $
 
 COMMENT-main=		multimedia decoding library
 COMMENT-esd=		esound audio output module for xine-lib
 COMMENT-arts=		artsd audio output module for xine-lib
 COMMENT-jack=		jackd audio output module for xine-lib
 
-V=			1.1.12
+V=			1.1.13
 DISTNAME=		xine-lib-${V}
 PKGNAME-main=		${DISTNAME}
-PKGNAME-esd=		xine-lib-esd-${V}p0
-PKGNAME-arts=		xine-lib-arts-${V}p0
-PKGNAME-jack=		xine-lib-jack-${V}p0
+PKGNAME-esd=		xine-lib-esd-${V}
+PKGNAME-arts=		xine-lib-arts-${V}
+PKGNAME-jack=		xine-lib-jack-${V}
 
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
-SHARED_LIBS=		xine	20.2
+SHARED_LIBS=		xine	21.0
 
 HOMEPAGE=		http://xinehq.de/
 
@@ -77,7 +77,7 @@ USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static
 
-XINEAPI_REV=		1.21
+XINEAPI_REV=		1.22
 SUBST_VARS+=		XINEAPI_REV
 
 .if ${MACHINE_ARCH} == "i386"

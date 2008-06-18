@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_input_mms_c,v 1.5 2008/01/15 00:36:46 jakemsr Exp $
---- src/input/mms.c.orig	Tue Jan  1 08:30:08 2008
-+++ src/input/mms.c	Wed Jan  9 01:50:22 2008
+$OpenBSD: patch-src_input_mms_c,v 1.6 2008/06/18 01:26:41 brad Exp $
+--- src/input/mms.c.orig	Sat Jun 14 19:15:00 2008
++++ src/input/mms.c	Mon Jun 16 02:30:50 2008
 @@ -48,6 +48,7 @@
  #include <iconv.h>
  #include <locale.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_input_mms_c,v 1.5 2008/01/15 00:36:46 jakemsr Exp $
  #endif
  
  /********** logging **********/
-@@ -288,7 +289,7 @@ static int send_command (mms_t *this, int command,
+@@ -290,7 +291,7 @@ static int send_command (mms_t *this, int command,
  
  #ifdef USE_ICONV
  static iconv_t string_utf16_open() {

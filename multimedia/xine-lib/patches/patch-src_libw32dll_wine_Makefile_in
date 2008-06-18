@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libw32dll_wine_Makefile_in,v 1.9 2008/04/15 11:24:14 jakemsr Exp $
---- src/libw32dll/wine/Makefile.in.orig	Mon Apr 14 16:55:41 2008
-+++ src/libw32dll/wine/Makefile.in	Mon Apr 14 20:28:43 2008
+$OpenBSD: patch-src_libw32dll_wine_Makefile_in,v 1.10 2008/06/18 01:26:41 brad Exp $
+--- src/libw32dll/wine/Makefile.in.orig	Sat Jun 14 19:15:56 2008
++++ src/libw32dll/wine/Makefile.in	Mon Jun 16 02:30:50 2008
 @@ -61,7 +61,7 @@ LTLIBRARIES = $(noinst_LTLIBRARIES)
  libwine_la_LIBADD =
  am_libwine_la_OBJECTS = afl.lo driver.lo elfdll.lo ext.lo \
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_libw32dll_wine_Makefile_in,v 1.9 2008/04/15 11:24:14 jakemsr
  libwine_la_OBJECTS = $(am_libwine_la_OBJECTS)
  @HAVE_W32DLL_TRUE@am_libwine_la_rpath =
  DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/include
-@@ -420,6 +420,7 @@ libwine_la_SOURCES = \
+@@ -423,6 +423,7 @@ libwine_la_SOURCES = \
  	registry.c \
  	vfl.c \
  	win32.c \
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_libw32dll_wine_Makefile_in,v 1.9 2008/04/15 11:24:14 jakemsr
  	stubs.s \
  	wrapper.S 
  
-@@ -525,6 +526,7 @@ distclean-compile:
+@@ -528,6 +529,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vfl.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/win32.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wrapper.Plo@am__quote@
