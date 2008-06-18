@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2007/09/15 21:26:04 simon Exp $
+# $OpenBSD: Makefile,v 1.30 2008/06/18 18:08:06 miod Exp $
 
 COMMENT-main=	extended module player
 COMMENT-xmms=	extended module player plugin for XMMS
@@ -25,7 +25,7 @@ FLAVOR?=
 .endif
 
 MULTI_PACKAGES=		-main
-.if !{FLAVOR:L:Mno_xmms}
+.if !${FLAVOR:L:Mno_xmms}
 MULTI_PACKAGES+=	-xmms
 LIB_DEPENDS=		xmms.>=3::audio/xmms
 .else
