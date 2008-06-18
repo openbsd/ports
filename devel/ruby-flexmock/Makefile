@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/06/14 23:46:38 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/18 00:29:39 bernd Exp $
 
 COMMENT=	simple mock object for unit testing
 
-DISTNAME=	flexmock-0.8.0
-PKGNAME=	ruby-${DISTNAME}p0
+DISTNAME=	flexmock-0.8.2
+PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	devel
 
 # BSD-like
@@ -19,5 +19,10 @@ MODULES=	lang/ruby
 CONFIGURE_STYLE=ruby gem
 
 PKG_ARCH=	*
+
+REGRESS_DEPENDS=::devel/ruby-rake
+
+do-regress:
+	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test_all
 
 .include <bsd.port.mk>
