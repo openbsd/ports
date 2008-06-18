@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/11/06 02:50:28 deanna Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/18 21:41:42 todd Exp $
 
 COMMENT=		lightweight sip client
 
 DISTNAME=		pjproject-0.7.0
-PKGNAME=		pjsua-0.7.0p1
+PKGNAME=		pjsua-0.7.0p2
 CATEGORIES=		telephony
 
 HOMEPAGE=		http://www.pjsip.org
