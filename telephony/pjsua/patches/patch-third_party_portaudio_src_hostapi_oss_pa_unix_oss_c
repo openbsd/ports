@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.2 2007/10/27 16:33:02 sthen Exp $
---- third_party/portaudio/src/hostapi/oss/pa_unix_oss.c.orig	Sun Mar 25 22:20:31 2007
-+++ third_party/portaudio/src/hostapi/oss/pa_unix_oss.c	Sat Oct 27 14:30:30 2007
+$OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.3 2008/06/18 21:16:39 todd Exp $
+--- third_party/portaudio/src/hostapi/oss/pa_unix_oss.c.orig	Sun Mar 25 15:20:31 2007
++++ third_party/portaudio/src/hostapi/oss/pa_unix_oss.c	Wed Jun 18 14:37:03 2008
 @@ -8,6 +8,8 @@
   *   Dominic Mazzoni
   *   Arve Knudsen
@@ -131,6 +131,22 @@ $OpenBSD: patch-third_party_portaudio_src_hostapi_oss_pa_unix_oss_c,v 1.2 2007/1
          }
          else
          {
+@@ -848,6 +849,7 @@ static PaError PaOssStream_Initialize( PaOssStream *st
+     memset( stream, 0, sizeof (PaOssStream) );
+     stream->isStopped = 1;
+ 
++    ENSURE_( sem_init( &stream->semaphore, 0, 0 ), paInternalError );
+     PA_ENSURE( PaUtil_InitializeThreading( &stream->threading ) );
+ 
+     if( inputParameters && outputParameters )
+@@ -884,7 +886,6 @@ static PaError PaOssStream_Initialize( PaOssStream *st
+                                                &ossApi->blockingStreamInterface, callback, userData );
+     }    
+ 
+-    ENSURE_( sem_init( &stream->semaphore, 0, 0 ), paInternalError );
+ 
+ error:
+     return result;
 @@ -975,8 +976,8 @@ static int CalcHigherLogTwo( int n )
      return log2;
  }
