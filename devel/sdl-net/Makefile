@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.24 2007/10/14 08:22:17 winiger Exp $
+# $OpenBSD: Makefile,v 1.25 2008/06/18 11:18:44 ajacoutot Exp $
 
 COMMENT=	SDL cross-platform networking library
 
-DISTNAME=	SDL_net-1.2.5
-PKGNAME=	${DISTNAME:L:S/_/-/}p5
-SHARED_LIBS=	SDL_net 1.0
+V=		1.2.7
+DISTNAME=	SDL_net-${V}
+PKGNAME=	sdl-net-${V}
+SHARED_LIBS=	SDL_net 1.1 # .0.7
 CATEGORIES=	devel net
+
 MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
 		http://www.libsdl.org/projects/SDL_net/release/
 
 HOMEPAGE=	http://www.libsdl.org/projects/SDL_net/
 
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
-
-# GPL
+# LGPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xau Xdmcp Xext Xrandr Xrender iconv usbhid m
+
+WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender iconv usbhid m
 
 LIB_DEPENDS=	SDL::devel/sdl
 
