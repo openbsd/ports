@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.10 2008/04/28 22:52:38 todd Exp $
---- configure.orig	Sun Jan  6 14:38:42 2008
-+++ configure	Thu Apr 10 01:34:20 2008
+$OpenBSD: patch-configure,v 1.11 2008/06/19 05:51:17 todd Exp $
+--- configure.orig	Sun Jan  6 13:38:42 2008
++++ configure	Tue Jun 17 19:36:42 2008
 @@ -21,10 +21,10 @@ prefix=""
  interp_prefix="/usr/gnemul/qemu-%M"
  static="no"
@@ -45,7 +45,22 @@ $OpenBSD: patch-configure,v 1.10 2008/04/28 22:52:38 todd Exp $
  ;;
  Darwin)
  bsd="yes"
-@@ -329,7 +336,7 @@ else
+@@ -191,12 +198,14 @@ linux_user="yes"
+ if [ "$cpu" = "i386" -o "$cpu" = "x86_64" ] ; then
+     kqemu="yes"
+ fi
++usb="linux"
+ ;;
+ esac
+ 
+ if [ "$bsd" = "yes" ] ; then
+   if [ "$darwin" != "yes" ] ; then
+     make="gmake"
++    usb="bsd"
+   fi
+ fi
+ 
+@@ -329,7 +338,7 @@ else
  fi
  
  # default flags for all hosts
@@ -54,7 +69,7 @@ $OpenBSD: patch-configure,v 1.10 2008/04/28 22:52:38 todd Exp $
  LDFLAGS="$LDFLAGS -g"
  if test "$werror" = "yes" ; then
  CFLAGS="$CFLAGS -Werror"
-@@ -680,7 +687,7 @@ else
+@@ -680,7 +689,7 @@ else
    if test -z "$prefix" ; then
        prefix="/usr/local"
    fi
@@ -63,7 +78,7 @@ $OpenBSD: patch-configure,v 1.10 2008/04/28 22:52:38 todd Exp $
    datasuffix="/share/qemu"
    docsuffix="/share/doc/qemu"
    binsuffix="/bin"
-@@ -709,9 +716,7 @@ if test "$darwin" = "yes" ; then
+@@ -709,9 +718,7 @@ if test "$darwin" = "yes" ; then
      echo "Cocoa support     $cocoa"
  fi
  echo "SDL support       $sdl"
@@ -74,7 +89,7 @@ $OpenBSD: patch-configure,v 1.10 2008/04/28 22:52:38 todd Exp $
  echo "mingw32 support   $mingw32"
  echo "Adlib support     $adlib"
  echo "CoreAudio support $coreaudio"
-@@ -772,6 +777,7 @@ echo "mandir=\${prefix}$mansuffix" >> $config_mak
+@@ -772,6 +779,7 @@ echo "mandir=\${prefix}$mansuffix" >> $config_mak
  echo "datadir=\${prefix}$datasuffix" >> $config_mak
  echo "docdir=\${prefix}$docsuffix" >> $config_mak
  echo "#define CONFIG_QEMU_SHAREDIR \"$prefix$datasuffix\"" >> $config_h
@@ -82,7 +97,7 @@ $OpenBSD: patch-configure,v 1.10 2008/04/28 22:52:38 todd Exp $
  echo "MAKE=$make" >> $config_mak
  echo "INSTALL=$install" >> $config_mak
  echo "CC=$cc" >> $config_mak
-@@ -793,6 +799,9 @@ if test "$cpu" = "i386" ; then
+@@ -793,6 +801,9 @@ if test "$cpu" = "i386" ; then
  elif test "$cpu" = "x86_64" ; then
    echo "ARCH=x86_64" >> $config_mak
    echo "#define HOST_X86_64 1" >> $config_h
@@ -92,7 +107,7 @@ $OpenBSD: patch-configure,v 1.10 2008/04/28 22:52:38 todd Exp $
  elif test "$cpu" = "armv4b" ; then
    echo "ARCH=arm" >> $config_mak
    echo "#define HOST_ARM 1" >> $config_h
-@@ -892,6 +901,9 @@ fi
+@@ -892,6 +903,9 @@ fi
  if test "$oss" = "yes" ; then
    echo "CONFIG_OSS=yes" >> $config_mak
    echo "#define CONFIG_OSS 1" >> $config_h
@@ -102,17 +117,37 @@ $OpenBSD: patch-configure,v 1.10 2008/04/28 22:52:38 todd Exp $
  fi
  if test "$coreaudio" = "yes" ; then
    echo "CONFIG_COREAUDIO=yes" >> $config_mak
-@@ -952,6 +964,13 @@ if test "$cocoa" = "yes" ; then
-     echo "#define CONFIG_COCOA 1" >> $config_h
+@@ -953,6 +967,13 @@ if test "$cocoa" = "yes" ; then
      echo "CONFIG_COCOA=yes" >> $config_mak
  fi
-+
+ 
 +if [ "$openbsd" = "yes" ] ; then
 +  echo "#define ENOTSUP 4096" >> $config_h
 +  echo "#define qemu_siginfo siginfo_t" >> $config_h
 +else
 +  echo "#define qemu_siginfo struct siginfo" >> $config_h
 +fi     
- 
++
  # XXX: suppress that
  if [ "$bsd" = "yes" ] ; then
+   echo "#define O_LARGEFILE 0" >> $config_h
+@@ -961,6 +982,19 @@ if [ "$bsd" = "yes" ] ; then
+ fi
+ 
+ echo "#define CONFIG_UNAME_RELEASE \"$uname_release\"" >> $config_h
++
++# USB host support
++case "$usb" in
++linux)
++  echo "HOST_USB=linux" >> $config_mak
++;;
++bsd)
++  echo "HOST_USB=bsd" >> $config_mak
++;;
++*)
++  echo "HOST_USB=stub" >> $config_mak
++;;
++esac
+ 
+ tools=
+ if test `expr "$target_list" : ".*softmmu.*"` != 0 ; then

@@ -1,0 +1,15 @@
+$OpenBSD: patch-usb-stub_c,v 1.1 2008/06/19 05:51:17 todd Exp $
+--- usb-stub.c.orig	Tue Jun 17 19:33:23 2008
++++ usb-stub.c	Tue Jun 17 19:33:23 2008
+@@ -0,0 +1,11 @@
++#include "vl.h"
++
++void usb_host_info(void)
++{
++	term_printf("USB host devices not supported\n");
++}
++
++USBDevice *usb_host_device_open(const char *devname)
++{
++	return NULL;
++}

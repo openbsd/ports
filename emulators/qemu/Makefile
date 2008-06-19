@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2008/06/18 00:44:19 todd Exp $
+# $OpenBSD: Makefile,v 1.35 2008/06/19 05:51:17 todd Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=		amd64 i386 powerpc
 COMMENT=		multi system emulator
 
 DISTNAME=		qemu-0.9.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://bellard.org/qemu/
