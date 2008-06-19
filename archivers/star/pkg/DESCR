@@ -1,24 +1,24 @@
-star is the fastest known implementation of a tar archiver. star
-development started 1982, development is still in progress. The
-current version is stable.
+star is the fastest known implementation of a tar archiver.
 
-Main advantages over other tar implementations:
-    fifo			- Keeps the tape streaming.
-    pattern matcher		- For a convenient user interface.
-    sophisticated diff		- User-tailorable interface for comparing tar 
-				  archives against file trees.
-    no namelen limitation	- Pathnames up to 1024 Bytes may be archived.
-    deals with all three times	- Stores/restores all three times of a file.
-    does not clobber files	- More recent copies on disk will not be 
-				  clobbered from tape.
-    automatic byte swap		- star automatically detects swapped archives.
-    automatic format detect	- Automatically detects archive formats:
-				  old tar, GNU tar, ANSI tar, star,
-				  POSIX.1-2001 pax, Sun's Solaris tar.
-    automatic compression detect- star automatically detects whether the
-				  archive is compressed.
-    support for file flags	- star supports extended file flags.
-    fully ansi compatible	- star is fully ANSI/POSIX 1003.1 compatible.
+Its main advantages over other tar implementations are:
+* fifo
+* remote tape support
+* accurate sparse files
+* pattern matcher
+* sophisticated diff
+* no namelen limitation
+* deals with all 3 times
+* does not clobber files
+* automatic byte swap
+* automatic format detect
+* automatic compression detect
+* fully ansi compatible
+* support for ACLs and file flags
+* support for all inode metadata
+* sophisticated error control
+* ed(1)-like filename substitution
+* a fast built in -copy mode
+* integrated find(1) code
 
 Available flavors:
 	static  - link statically
