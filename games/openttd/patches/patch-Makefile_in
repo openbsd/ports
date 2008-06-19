@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2008/06/19 20:40:04 mk Exp $
+--- Makefile.in.orig	Sat Jun 14 17:04:56 2008
++++ Makefile.in	Sat Jun 14 17:06:01 2008
+@@ -264,11 +264,9 @@ install: bundle
+ 	$(Q)install -d "$(INSTALL_DATA_DIR)/gm"
+ 	$(Q)install -d "$(INSTALL_DATA_DIR)/data"
+ 	$(Q)install -d "$(INSTALL_DATA_DIR)/lang"
+-	$(Q)install -d "$(INSTALL_DATA_DIR)/docs"
+ 	$(Q)install -m 755 "$(BUNDLE_DIR)/$(TTD)" "$(INSTALL_BINARY_DIR)"
+ 	$(Q)install -m 644 "$(BUNDLE_DIR)/lang/"* "$(INSTALL_DATA_DIR)/lang"
+ 	$(Q)install -m 644 "$(BUNDLE_DIR)/data/"* "$(INSTALL_DATA_DIR)/data"
+-	$(Q)install -m 644 "$(BUNDLE_DIR)/docs/"* "$(INSTALL_DATA_DIR)/docs"
+ 	$(Q)install -m 644 "$(BUNDLE_DIR)/media/"* "$(INSTALL_ICON_DIR)"
+ 	$(Q)cp -R "$(BUNDLE_DIR)/scenario" "$(INSTALL_DATA_DIR)"
+ endif # OSXAPP

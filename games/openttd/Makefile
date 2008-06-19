@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2008/01/26 16:32:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2008/06/19 20:40:04 mk Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
-DISTNAME=	openttd-0.5.3-source
-PKGNAME=	${DISTNAME:S/-source//}p0
+DISTNAME=	openttd-0.6.1-source
+PKGNAME=	${DISTNAME:S/-source//}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	X11 Xext c expat fontconfig freetype m pthread stdc++ usbhid z
+WANTLIB=	c expat fontconfig freetype m pthread stdc++ z
 
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openttd/}
@@ -23,7 +23,12 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openttd/}
 LIB_DEPENDS=		SDL::devel/sdl \
 			png.>=2::graphics/png
 
-MAKE_ENV+=		INSTALL=1 USE_HOMEDIR=1 VERBOSE=1 WITH_PNG=1 \
+CONFIGURE_STYLE=	simple
+
+CONFIGURE_ARGS+=	--prefix-dir=${PREFIX} \
+			--install-dir=${WRKINST}
+
+MAKE_ENV+=		VERBOSE=1 WITH_PNG=1 \
 			WITH_ZLIB=1 \
 			DATA_DIR=share/openttd \
 			ICON_DIR=share/pixmaps \
@@ -41,12 +46,11 @@ EXAMPLESDIR=		${PREFIX}/share/examples/openttd
 GAMEDIR=		${PREFIX}/share/openttd
 
 post-install:
-	${INSTALL_DATA_DIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
-	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/scripts/* ${EXAMPLESDIR}
-	${INSTALL_DATA_DIR} ${GAMEDIR}
 	${INSTALL_DATA_DIR} ${GAMEDIR}/media
 	${INSTALL_DATA} ${WRKSRC}/media/* ${GAMEDIR}/media
-	
+	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/bin/scripts/* ${EXAMPLESDIR}
+	${INSTALL_DATA_DIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
+
 .include <bsd.port.mk>

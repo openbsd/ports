@@ -1,7 +1,7 @@
-$OpenBSD: patch-settings_c,v 1.2 2007/06/11 10:56:28 mk Exp $
---- settings.c.orig	Tue Apr 10 11:57:35 2007
-+++ settings.c	Tue May 29 15:00:57 2007
-@@ -1163,7 +1163,7 @@ static int32 EngineRenewMoneyUpdate(int32 p1)
+$OpenBSD: patch-src_settings_cpp,v 1.1 2008/06/19 20:40:04 mk Exp $
+--- src/settings.cpp.orig	Fri Jun 13 20:09:13 2008
++++ src/settings.cpp	Fri Jun 13 20:10:45 2008
+@@ -1253,7 +1253,7 @@ static int32 ConvertLandscape(const char *value)
  /* End - Callback Functions */
  
  #ifndef EXTERNAL_PLAYER
@@ -10,7 +10,7 @@ $OpenBSD: patch-settings_c,v 1.2 2007/06/11 10:56:28 mk Exp $
  #endif
  
  static const SettingDesc _music_settings[] = {
-@@ -1172,7 +1172,7 @@ static const SettingDesc _music_settings[] = {
+@@ -1262,7 +1262,7 @@ static const SettingDesc _music_settings[] = {
  	 SDT_VAR(MusicFileSettings, effect_vol, SLE_UINT8, S, 0, 128, 0, 100, 1,  STR_NULL, NULL),
  	SDT_LIST(MusicFileSettings, custom_1,   SLE_UINT8, S, 0, NULL,            STR_NULL, NULL),
  	SDT_LIST(MusicFileSettings, custom_2,   SLE_UINT8, S, 0, NULL,            STR_NULL, NULL),

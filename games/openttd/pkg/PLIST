@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/06/11 10:56:28 mk Exp $
-bin/openttd
+@comment $OpenBSD: PLIST,v 1.4 2008/06/19 20:40:04 mk Exp $
+@bin bin/openttd
 share/doc/openttd/
+share/doc/openttd/32bpp.txt
 share/doc/openttd/HOWTO_compile_lang_files.txt
-share/doc/openttd/Howto_compile_lng_files_from_CLI.txt
 share/doc/openttd/Manual.txt
 share/doc/openttd/OSX_install_instructions.txt
 share/doc/openttd/Readme_OS2.txt
@@ -11,6 +11,7 @@ share/doc/openttd/elrail.svg
 share/doc/openttd/elrail_tile.png
 share/doc/openttd/elrail_track.png
 share/doc/openttd/landscape.html
+share/doc/openttd/landscape_externals.html
 share/doc/openttd/landscape_grid.html
 share/doc/openttd/multiplayer.txt
 share/doc/openttd/openttd.6
@@ -27,26 +28,22 @@ share/examples/openttd/pre_server.scr.example
 share/examples/openttd/readme.txt
 share/openttd/
 share/openttd/data/
-share/openttd/data/2ccmap.grf
-share/openttd/data/airports.grf
-share/openttd/data/autorail.grf
-share/openttd/data/canalsw.grf
-share/openttd/data/dosdummy.grf
-share/openttd/data/elrailsw.grf
-share/openttd/data/nsignalsw.grf
-share/openttd/data/openttd.grf
+share/openttd/data/generictrams_v0.4.grf
+share/openttd/data/openttdd.grf
+share/openttd/data/openttdw.grf
 share/openttd/data/opntitle.dat
-share/openttd/data/trkfoundw.grf
 share/openttd/gm/
 share/openttd/lang/
-share/openttd/lang/american.lng
+share/openttd/lang/afrikaans.lng
 share/openttd/lang/brazilian_portuguese.lng
 share/openttd/lang/bulgarian.lng
 share/openttd/lang/catalan.lng
+share/openttd/lang/croatian.lng
 share/openttd/lang/czech.lng
 share/openttd/lang/danish.lng
 share/openttd/lang/dutch.lng
 share/openttd/lang/english.lng
+share/openttd/lang/english_US.lng
 share/openttd/lang/esperanto.lng
 share/openttd/lang/estonian.lng
 share/openttd/lang/finnish.lng
@@ -62,6 +59,7 @@ share/openttd/lang/lithuanian.lng
 share/openttd/lang/norwegian_bokmal.lng
 share/openttd/lang/norwegian_nynorsk.lng
 share/openttd/lang/origveh.lng
+share/openttd/lang/piglatin.lng
 share/openttd/lang/polish.lng
 share/openttd/lang/portuguese.lng
 share/openttd/lang/romanian.lng
@@ -75,6 +73,7 @@ share/openttd/lang/traditional_chinese.lng
 share/openttd/lang/turkish.lng
 share/openttd/lang/ukrainian.lng
 share/openttd/media/
+share/openttd/media/mainicon.ico
 share/openttd/media/openttd.128.png
 share/openttd/media/openttd.16.png
 share/openttd/media/openttd.256.png
@@ -84,6 +83,7 @@ share/openttd/media/openttd.32.xpm
 share/openttd/media/openttd.48.png
 share/openttd/media/openttd.64.png
 share/openttd/media/openttd.64.xpm
+share/openttd/media/openttd.ico
 share/openttd/media/palette.act
 share/openttd/scenario/
 share/openttd/scenario/heightmap/
