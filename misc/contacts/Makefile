@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/18 19:44:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/19 16:46:06 jasper Exp $
 
 COMMENT=		lightweight addressbook
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://pimlico-project.org/sources/contacts/
+EXTRACT_SUFX=		.tar.gz
 
 WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
