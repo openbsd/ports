@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/15 00:01:25 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2008/06/19 09:09:42 steven Exp $
 
 COMMENT=	weblog system written in Ruby using Ruby on Rails
 
 DISTNAME=	typo-5.0.2
-PKGNAME=	ruby-${DISTNAME}p0
+PKGNAME=	ruby-${DISTNAME}p1
 
 CATEGORIES=	www
 
-MAINTAINER=	Paul Irofti <bulibuta@gmail.com>
+MAINTAINER=	Paul Irofti <bulibuta@sdf.lonestar.org>
 
 # MIT/X Consortium
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/03 18:19:47 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/19 09:09:42 steven Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		binary compatible alternative to Apache mod_fastcgi
 DISTNAME=		mod_fcgid.2.2
-PKGNAME=		ap2-mod_fcgid-2.2
+PKGNAME=		ap2-mod_fcgid-2.2p0
 
 CATEGORIES=		www
 
 HOMEPAGE=		http://fastcgi.coremail.cn/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mod-fcgid/}
 
-MAINTAINER=		Paul Irofti <bulibuta@gmail.com>
+MAINTAINER=		Paul Irofti <bulibuta@sdf.lonestar.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
