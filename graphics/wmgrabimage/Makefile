@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:09:43 simon Exp $
+# $OpenBSD: Makefile,v 1.16 2008/06/20 10:49:42 martynas Exp $
 
 COMMENT=		wm-dockapp; WWW image monitor
 
 DISTNAME=		wmGrabImage-0.72
-PKGNAME=		${DISTNAME:L}p0
+PKGNAME=		${DISTNAME:L}p1
 CATEGORIES=		graphics x11 x11/windowmaker
 EXTRACT_SUFX=		.tgz
 
@@ -20,8 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
 
 RUN_DEPENDS=		:ImageMagick-*:graphics/ImageMagick \
-			:xv-*:graphics/xv \
-			:wget-*:net/wget
+			:xv-*:graphics/xv
 
 WANTLIB=		X11 c Xext Xpm
 USE_X11=		Yes

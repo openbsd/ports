@@ -1,0 +1,18 @@
+$OpenBSD: patch-wmGrabImage_GrabImage,v 1.1 2008/06/20 10:49:42 martynas Exp $
+--- wmGrabImage/GrabImage.orig	Sun May 27 21:02:18 2001
++++ wmGrabImage/GrabImage	Thu Jun 19 21:08:20 2008
+@@ -47,13 +47,7 @@
+ 	system("cp $ImagePath $home/.wmGrabImage/$ImageName");
+ 
+     } else {
+-
+-
+-        #
+-        #  I think some of these wget command line options may cause problems
+-        #  for some people? Dont know why...
+-        #
+-        $GrabCmd = "wget --proxy=off --passive-ftp --tries 0 -q -O $home/.wmGrabImage/$ImageName $URL";
++        $GrabCmd = "ftp -V -o $home/.wmGrabImage/$ImageName $URL";
+         system "$GrabCmd";
+ 
+     }

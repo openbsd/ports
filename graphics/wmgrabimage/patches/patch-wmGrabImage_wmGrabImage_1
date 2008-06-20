@@ -1,6 +1,6 @@
-$OpenBSD: patch-wmGrabImage_wmGrabImage_1,v 1.1 2001/06/15 09:29:02 wilfried Exp $
+$OpenBSD: patch-wmGrabImage_wmGrabImage_1,v 1.2 2008/06/20 10:49:42 martynas Exp $
 --- wmGrabImage/wmGrabImage.1.orig	Sun May 27 21:02:18 2001
-+++ wmGrabImage/wmGrabImage.1	Fri Jun 15 11:23:27 2001
++++ wmGrabImage/wmGrabImage.1	Thu Jun 19 20:44:48 2008
 @@ -1,6 +1,6 @@
 -.TH WMGRABIMGAE 1 "16 December 1998" 
 +.TH WMGRABIMAGE 1 "16 December 1998" 
@@ -10,7 +10,7 @@ $OpenBSD: patch-wmGrabImage_wmGrabImage_1,v 1.1 2001/06/15 09:29:02 wilfried Exp
  .SH SYNOPSIS
  .B wmGrabImage
  [-h] [-display <Display>] -url <Image URL> [-http <URL>] [-c] [-delay <Time>]
-@@ -43,6 +43,9 @@ Center the image vertically within the i
+@@ -43,11 +43,14 @@ Center the image vertically within the icon. 
  .TP
  .B \-delay <Time>
  The time between updates. The default is about 5 minutes.
@@ -20,3 +20,9 @@ $OpenBSD: patch-wmGrabImage_wmGrabImage_1,v 1.1 2001/06/15 09:29:02 wilfried Exp
  .SH FILES
  The original sized image and the thumbnail XPM image are both stored in
  ~/.wmGrabImage/ which gets created if it doesnt already exist.
+ .SH SEE ALSO
+-wget and the ImageMagick convert utility.
++ftp and the ImageMagick convert utility.
+ .SH BUGS
+ Who knows? -- its still Beta though. (Let me know if you find any). Oldish
+ versions of the ImageMagick convert utility have a memory leak -- if you have

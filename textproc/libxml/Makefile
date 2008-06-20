@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2008/06/01 14:56:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.115 2008/06/20 10:49:42 martynas Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -30,6 +30,8 @@ CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--with-html-dir="${PREFIX}/share/doc"
 CONFIGURE_ARGS+=	--with-html-subdir="libxml2/html"
 CONFIGURE_ARGS+=	--with-iconv="${DEPBASE}"
+# only used to fetch data during regression test
+CONFIGURE_ENV=		WGET=/usr/bin/ftp
 
 PSEUDO_FLAVORS=		no_python
 FLAVOR?=
@@ -44,12 +46,11 @@ MULTI_PACKAGES+=	-python
 MODULES+=		lang/python
 LIB_DEPENDS-python=	xml2.>=9::textproc/libxml,-main \
 			${MODLIBICONV_LIB_DEPENDS}
-CONFIGURE_ENV=		PYTHON=${MODPY_BIN}
+CONFIGURE_ENV+=		PYTHON=${MODPY_BIN}
 FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxml2/
 .endif
 
 CONFIGURE_ARGS+=	--without-threads
-BUILD_DEPENDS+= 	::net/wget
 REGRESS_DEPENDS=	::devel/gmake
 
 post-configure:

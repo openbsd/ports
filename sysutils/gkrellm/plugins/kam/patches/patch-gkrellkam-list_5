@@ -1,0 +1,18 @@
+$OpenBSD: patch-gkrellkam-list_5,v 1.1 2008/06/20 10:49:42 martynas Exp $
+--- gkrellkam-list.5.orig	Wed Oct 23 17:32:10 2002
++++ gkrellkam-list.5	Thu Jun 19 21:00:11 2008
+@@ -55,7 +55,7 @@ If set, this sets the minimum length of time that must
+ image is re-loaded. If the image cycles up before that time, the old
+ image will be used. For \fBscript\fP types, this means that the script
+ will not be re-run. For \fBurl\fP types, the image will not be fetched
+-using wget. When this property is not set, \fBurl\fP images will be
++using ftp. When this property is not set, \fBurl\fP images will be
+ downloaded every time they are displayed, and \fBscript\fPs will be run
+ every time.
+ .PP
+@@ -94,4 +94,4 @@ GKrellKam panel
+ This manual page was written by the same author for inclusion in the
+ GKrellKam distribution, and may be used by others.
+ .SH "SEE ALSO"
+-.BR wget (8)
++.BR ftp (1)

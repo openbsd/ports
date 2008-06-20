@@ -1,5 +1,5 @@
---- wmGrabImage/Makefile.orig	Mon Feb  1 22:55:30 1999
-+++ wmGrabImage/Makefile	Fri Dec 22 14:03:33 2000
+--- wmGrabImage/Makefile.orig	Sun May 27 21:02:18 2001
++++ wmGrabImage/Makefile	Wed Jun 18 22:55:56 2008
 @@ -1,8 +1,5 @@
 -CC     = gcc
 -CFLAGS = -O2 -Wall
@@ -16,9 +16,9 @@
  
  .c.o:
 -	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
--
 +	$(CC) $(CFLAGS) -c $< -o $*.o $(INCDIR)
  
+-
  all:	wmGrabImage.o wmGrabImage
  
  wmGrabImage.o: wmGrabImage_master.xpm wmGrabImage_mask.xbm

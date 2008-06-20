@@ -1,5 +1,5 @@
 --- wmGrabImage/wmGrabImage.c.orig	Sun May 27 21:45:28 2001
-+++ wmGrabImage/wmGrabImage.c	Fri Jun 15 10:55:38 2001
++++ wmGrabImage/wmGrabImage.c	Wed Jun 18 22:55:56 2008
 @@ -158,7 +158,7 @@ int		n, s, m, dt1, dt2, dt3, len;
  int 		Year, Month, Day;
  int		Hours, Mins, Secs;
@@ -34,7 +34,7 @@
  	    system(command);
  
  	    ForceUpdate = 1;
-@@ -470,7 +470,7 @@ void ParseCMDLine(int argc, char *argv[]
+@@ -470,7 +470,7 @@ void ParseCMDLine(int argc, char *argv[]) {
  
          } else if ((!strcmp(argv[i], "-url"))||(!strcmp(argv[i], "-u"))){
  
@@ -43,7 +43,7 @@
  
          } else if (!strcmp(argv[i], "-delay")){
  
-@@ -482,7 +482,7 @@ void ParseCMDLine(int argc, char *argv[]
+@@ -482,7 +482,7 @@ void ParseCMDLine(int argc, char *argv[]) {
  
          } else if (!strcmp(argv[i], "-http")){
  
