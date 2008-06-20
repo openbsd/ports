@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2008/01/04 17:48:33 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2008/06/20 18:33:45 naddy Exp $
 
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
@@ -37,9 +37,6 @@ do-install:
 	@cd ${WRKSRC}/GUI/xephem && \
 	 ${SETENV} ${MAKE_ENV} \
 	 ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${INSTALL_TARGET}
-	@cd ${WRKSRC}/GUI/xephem && \
-	 ${SETENV} ${MAKE_ENV} \
-	 ${MAKE} ${FAKE_FLAGS} -f ${MAKE_FILE} install.man
 	@cd ${WRKSRC}/GUI/xephem && \
 	 sed -e 's,ShareDir: \.$$,ShareDir: ${TRUEPREFIX}/lib/X11/xephem,' XEphem.ad > XEphem && \
 	 ${INSTALL_DATA} XEphem ${PREFIX}/lib/X11/app-defaults
