@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2008/06/09 18:28:15 okan Exp $
+# $OpenBSD: Makefile,v 1.157 2008/06/20 06:04:24 ckuethe Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -28,6 +28,7 @@
      SUBDIR += e2fsprogs
      SUBDIR += expiretable
      SUBDIR += fam
+     SUBDIR += fdupes
      SUBDIR += filelight
      SUBDIR += findlib
      SUBDIR += flyback
