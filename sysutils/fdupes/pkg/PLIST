@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
+bin/fdupes
+@man man/man1/fdupes.1
+share/doc/fdupes/
+share/doc/fdupes/README

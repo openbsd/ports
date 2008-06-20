@@ -1,0 +1,53 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
+--- Makefile.orig	Thu Mar 15 04:49:11 2001
++++ Makefile	Fri May 30 13:50:55 2008
+@@ -20,22 +20,45 @@ VERSION = "1.40"
+ # built in MD5 message digest routines) uncomment the following
+ # line (try this if you're having trouble with built in code).
+ #
+-#EXTERNAL_MD5 = -DEXTERNAL_MD5=\"md5sum\"
++#EXTERNAL_MD5 = 1
+ 
+ #
++# Uncomment to enable system built-in MD5 functions
++SYSTEM_MD5 = 1
++
++#
+ # This version of fdupes can use a red-black tree structure to
+ # store file information. This is disabled by default, as it
+ # hasn't been optimized or verified correct. If you wish to
+ # enable this untested option, uncomment the following line.
+ #
+-#EXPERIMENTAL_RBTREE = -DEXPERIMENTAL_RBTREE
++#EXPERIMENTAL_RBTREE = 1
+ 
+ #####################################################################
+ # no need to modify anything beyond this point                      #
+ #####################################################################
+ 
+-fdupes: fdupes.c md5/md5.c	
+-	gcc fdupes.c md5/md5.c -Wall -o fdupes -DVERSION=\"$(VERSION)\" $(EXTERNAL_MD5) $(EXPERIMENTAL_RBTREE)
++CFLAGS = -Wall -DVERSION=\"$(VERSION)\"
++LDFLAGS =
++SRC_FILES = fdupes.c
++
++.ifdef SYSTEM_MD5
++CFLAGS += -DHAVE_MD5
++#LDFLAGS += -lssl -lcrypto
++.else
++SRC_FILES += md5/md5.c
++.endif
++
++.ifdef EXTERNAL_MD5
++CFLAGS += -DEXTERNAL_MD5=\"md5sum\"
++.endif
++
++.ifdef EXPERIMENTAL_RBTREE
++CFLAGS += -DEXPERIMENTAL_RBTREE
++.endif
++
++fdupes: $(SRC_FILES)
++	gcc $(CFLAGS) $(SRC_FILES) $(LDFLAGS) -o fdupes
+ 
+ install: fdupes
+ 	cp fdupes $(INSTALLDIR)

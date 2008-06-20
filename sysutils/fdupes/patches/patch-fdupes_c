@@ -1,0 +1,178 @@
+$OpenBSD: patch-fdupes_c,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
+--- fdupes.c.orig	Thu Mar 15 04:16:09 2001
++++ fdupes.c	Fri May 30 13:49:42 2008
+@@ -34,6 +34,11 @@
+ #include "md5/md5.h"
+ #endif
+ 
++#ifdef HAVE_MD5
++#include <sys/types.h>
++#include <md5.h>
++#endif
++
+ #define ISFLAG(a,b) ((a & b) == b)
+ #define SETFLAG(a,b) (a |= b)
+ 
+@@ -94,11 +99,13 @@ void escapefilename(char *escape_list, char **filename
+ {
+   int x;
+   int tx;
++  size_t l;
+   char *tmp;
+   char *filename;
+ 
+   filename = *filename_ptr;
+ 
++  l = strlen(filename) * 2 + 1;
+   tmp = (char*) malloc(strlen(filename) * 2 + 1);
+   if (tmp == NULL) {
+     errormsg("out of memory!\n");
+@@ -118,7 +125,7 @@ void escapefilename(char *escape_list, char **filename
+       errormsg("out of memory!\n");
+       exit(1);
+     }
+-    strcpy(*filename_ptr, tmp);
++    strlcpy(*filename_ptr, tmp, l);
+   }
+ }
+ 
+@@ -145,6 +152,7 @@ int grokdir(char *dir, file_t **filelistp)
+   struct dirent *dirinfo;
+   int lastchar;
+   int filecount = 0;
++  size_t l;
+   struct stat info;
+   struct stat linfo;
+   static int progress = 0;
+@@ -177,7 +185,8 @@ int grokdir(char *dir, file_t **filelistp)
+       newfile->duplicates = NULL;
+       newfile->hasdupes = 0;
+ 
+-      newfile->d_name = (char*)malloc(strlen(dir)+strlen(dirinfo->d_name)+2);
++      l = strlen(dir)+strlen(dirinfo->d_name)+2;
++      newfile->d_name = (char*)malloc(l);
+ 
+       if (!newfile->d_name) {
+ 	errormsg("out of memory!\n");
+@@ -186,11 +195,11 @@ int grokdir(char *dir, file_t **filelistp)
+ 	exit(1);
+       }
+ 
+-      strcpy(newfile->d_name, dir);
++      strlcpy(newfile->d_name, dir, l);
+       lastchar = strlen(dir) - 1;
+       if (lastchar >= 0 && dir[lastchar] != '/')
+-	strcat(newfile->d_name, "/");
+-      strcat(newfile->d_name, dirinfo->d_name);
++	strlcat(newfile->d_name, "/", l);
++      strlcat(newfile->d_name, dirinfo->d_name, l);
+       
+       if (filesize(newfile->d_name) == 0 && ISFLAG(flags, F_EXCLUDEEMPTY)) {
+ 	free(newfile->d_name);
+@@ -241,14 +250,22 @@ char *getcrcsignature(char *filename)
+   int x;
+   off_t fsize;
+   off_t toread;
++#ifdef HAVE_MD5
++  MD5_CTX state;
++#else
+   md5_state_t state;
++#endif
+   md5_byte_t digest[16];  
+   static md5_byte_t chunk[CHUNK_SIZE];
+   static char signature[16*2 + 1]; 
+   char *sigp;
+   FILE *file;
+-   
++
++#ifdef HAVE_MD5
++  MD5Init(&state);
++#else
+   md5_init(&state);
++#endif
+ 
+   fsize = filesize(filename);
+ 
+@@ -264,16 +281,24 @@ char *getcrcsignature(char *filename)
+       errormsg("error reading from file %s\n", filename);
+       return NULL;
+     }
++#ifdef HAVE_MD5
++    MD5Update(&state, chunk, toread);
++#else
+     md5_append(&state, chunk, toread);
++#endif
+     fsize -= toread;
+   }
+ 
++#ifdef HAVE_MD5
++  MD5Final(digest, &state);
++#else
+   md5_finish(&state, digest);
++#endif
+ 
+   sigp = signature;
+ 
+   for (x = 0; x < 16; x++) {
+-    sprintf(sigp, "%02x", digest[x]);
++    snprintf(sigp, 2, "%02x", digest[x]);
+     sigp = strchr(sigp, '\0');
+   }
+ 
+@@ -488,6 +513,7 @@ file_t *checkmatch(filetree_t **root, filetree_t *chec
+ {
+   int cmpresult;
+   char *crcsignature;
++  size_t l;
+   off_t fsize;
+ 
+   /* If inodes are equal one of the files is a hard link, which
+@@ -508,24 +534,26 @@ file_t *checkmatch(filetree_t **root, filetree_t *chec
+       crcsignature = getcrcsignature(checktree->file->d_name);
+       if (crcsignature == NULL) return NULL;
+ 
+-      checktree->file->crcsignature = (char*) malloc(strlen(crcsignature)+1);
++      l = strlen(crcsignature)+1;
++      checktree->file->crcsignature = (char*) malloc(l);
+       if (checktree->file->crcsignature == NULL) {
+ 	errormsg("out of memory\n");
+ 	exit(1);
+       }
+-      strcpy(checktree->file->crcsignature, crcsignature);
++      strlcpy(checktree->file->crcsignature, crcsignature, l);
+     }
+ 
+     if (file->crcsignature == NULL) {
+       crcsignature = getcrcsignature(file->d_name);
+       if (crcsignature == NULL) return NULL;
+ 
+-      file->crcsignature = (char*) malloc(strlen(crcsignature)+1);
++      l = strlen(crcsignature)+1;
++      file->crcsignature = (char*) malloc(l);
+       if (file->crcsignature == NULL) {
+ 	errormsg("out of memory\n");
+ 	exit(1);
+       }
+-      strcpy(file->crcsignature, crcsignature);
++      strlcpy(file->crcsignature, crcsignature, l);
+     }
+ 
+     cmpresult = strcmp(file->crcsignature, checktree->file->crcsignature);
+@@ -588,7 +616,7 @@ void printmatches(file_t *files)
+   while (files != NULL) {
+     if (files->hasdupes) {
+       if (!ISFLAG(flags, F_OMITFIRST)) {
+-	if (ISFLAG(flags, F_SHOWSIZE)) printf("%ld byte%seach:\n", files->size,
++	if (ISFLAG(flags, F_SHOWSIZE)) printf("%lld byte%seach:\n", files->size,
+ 	 (files->size != 1) ? "s " : " ");
+ 	if (ISFLAG(flags, F_DSAMELINE)) escapefilename("\\ ", &files->d_name);
+ 	printf("%s%c", files->d_name, ISFLAG(flags, F_DSAMELINE)?' ':'\n');
+@@ -676,7 +704,7 @@ void autodelete(file_t *files)
+       do {
+ 	printf("Set %d of %d, preserve files [1 - %d, all]", 
+           curgroup, groups, counter);
+-	if (ISFLAG(flags, F_SHOWSIZE)) printf(" (%ld byte%seach)", files->size,
++	if (ISFLAG(flags, F_SHOWSIZE)) printf(" (%lld byte%seach)", files->size,
+ 	  (files->size != 1) ? "s " : " ");
+ 	printf(": ");
+ 	fflush(stdout);
