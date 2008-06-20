@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.93 2008/06/15 00:06:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2008/06/20 05:24:39 ckuethe Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 DISTNAME=	vim-7.1
-REVISION=	281
+REVISION=	315
 VERSION=	7.1.${REVISION}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
-PKGNAME-main=	vim-${VERSION}p2
+PKGNAME-main=	vim-${VERSION}
 PKGNAME-lang=	vim-lang-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
@@ -26,7 +26,7 @@ MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 PATCHFILES=	#
 _patches!=	jot -w%03d - 1 ${REVISION} 1 | \
-	egrep -v '003|007|041|065|070|072|080|088|091|092|122|123|124|126|128|129|134|146|158|168|176|178|186|187|191|196|197|204|275|278|280'
+	egrep -v '003|007|041|065|070|072|080|088|091|092|122|123|124|126|128|129|134|146|158|168|176|178|186|187|191|196|197|204|275|278|280|282|283|285|302|303|309'
 .for p in ${_patches}
 PATCHFILES+=	7.1.${p}:0
 .endfor
