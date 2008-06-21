@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/05 02:38:56 deanna Exp $
+# $OpenBSD: Makefile,v 1.3 2008/06/21 21:03:55 deanna Exp $
 
 COMMENT =		multimedia framework - ffmpeg plugin
 
 V =			0.10.4
 DISTNAME =		gst-ffmpeg-$V
-PKGNAME-main =		gstreamer-ffmpeg-$V
+PKGNAME-main =		gstreamer-ffmpeg-$Vp0
 
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-ffmpeg/}

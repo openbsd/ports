@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2008/06/14 17:17:26 deanna Exp $
+# $OpenBSD: Makefile,v 1.21 2008/06/21 21:03:56 deanna Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -17,20 +17,20 @@ COMMENT-shout =		multimedia framework - shoutcast plugin
 
 V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
-PKGNAME-main =		gstreamer-plugins-good-$Vp2
-PKGNAME-aalib =		gstreamer-aalib-$V
-PKGNAME-cairo =		gstreamer-cairo-$Vp0
-PKGNAME-gconf =		gstreamer-confelements-$V
-PKGNAME-esd =		gstreamer-esd-$V
-PKGNAME-flac =		gstreamer-flac-$V
-PKGNAME-speex =		gstreamer-speex-$V
-PKGNAME-taglib =	gstreamer-taglib-$V
-PKGNAME-dv =		gstreamer-dv-$V
-PKGNAME-jpeg =		gstreamer-jpeg-$V
-PKGNAME-png =		gstreamer-png-$V
-PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp0
-PKGNAME-caca =		gstreamer-libcaca-$V
-PKGNAME-shout =		gstreamer-shoutcast-$V
+PKGNAME-main =		gstreamer-plugins-good-$Vp3
+PKGNAME-aalib =		gstreamer-aalib-$Vp0
+PKGNAME-cairo =		gstreamer-cairo-$Vp1
+PKGNAME-gconf =		gstreamer-confelements-$Vp0
+PKGNAME-esd =		gstreamer-esd-$Vp0
+PKGNAME-flac =		gstreamer-flac-$Vp0
+PKGNAME-speex =		gstreamer-speex-$Vp0
+PKGNAME-taglib =	gstreamer-taglib-$Vp0
+PKGNAME-dv =		gstreamer-dv-$Vp0
+PKGNAME-jpeg =		gstreamer-jpeg-$Vp0
+PKGNAME-png =		gstreamer-png-$Vp0
+PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp1
+PKGNAME-caca =		gstreamer-libcaca-$Vp0
+PKGNAME-shout =		gstreamer-shoutcast-$Vp0
 
 
 MULTI_PACKAGES =	-main -aalib -cairo -gconf -esd -flac -speex \
@@ -132,10 +132,10 @@ WANTLIB-caca =		${WANTLIB} \
 			X11 gstbase-0.10 ncurses Xau Xdmcp
 
 LIB_DEPENDS-caca =	${LIB_DEPENDS}
-			
+
 WANTLIB-shout =		${WANTLIB} \
 			gstbase-0.10 ogg speex vorbis theora
-			
+
 LIB_DEPENDS-shout =	${LIB_DEPENDS} \
 			speex::audio/speex \
 			shout::net/libshout

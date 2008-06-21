@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2008/05/13 15:11:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2008/06/21 21:03:55 deanna Exp $
 
 COMMENT-main =		streaming media framework - core
 COMMENT-frontend =	streaming media framework - frontend commands
 
 V =			0.10.19
 
-PKGNAME-main =		gstreamer-$V
-PKGNAME-frontend =	gstreamer-frontend-$V
+PKGNAME-main =		gstreamer-$Vp0
+PKGNAME-frontend =	gstreamer-frontend-$Vp0
 
 DISTNAME =		gstreamer-$V
 
@@ -33,6 +33,6 @@ WANTLIB-main =		${WANTLIB} \
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			xml2.>=6::textproc/libxml
 
-CONFIGURE_ARGS =	--disable-gst-debug --without-check
+CONFIGURE_ARGS =	--without-check
 
 .include <bsd.port.mk>
