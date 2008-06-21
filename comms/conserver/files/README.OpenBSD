@@ -2,7 +2,7 @@ Using conserver in an OpenBSD environment:
 
 1. Customize the configuration for your needs, see /etc/conserver.cf
 
-2. Edit /etc/rc.conf file:
+2. Edit /etc/rc.conf.local file:
    ...
    conserver=YES
 

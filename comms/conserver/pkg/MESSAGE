@@ -1,2 +1,0 @@
-You need to add a line similar to this in /etc/services
-conserver	782/tcp		# console server

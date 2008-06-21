@@ -1,7 +1,27 @@
-$OpenBSD: patch-conserver_Makefile_in,v 1.2 2005/08/02 07:25:47 pvalchev Exp $
---- conserver/Makefile.in.orig	Tue Feb 10 01:32:28 2004
-+++ conserver/Makefile.in	Sat Jul 30 11:57:23 2005
-@@ -57,11 +57,8 @@ distclean: clean
+$OpenBSD: patch-conserver_Makefile_in,v 1.3 2008/06/21 11:29:25 sthen Exp $
+--- conserver/Makefile.in.orig	Mon Jun  6 16:03:06 2005
++++ conserver/Makefile.in	Fri Oct 12 12:11:24 2007
+@@ -36,7 +36,7 @@ CONSERVER_HDRS = ../config.h $(top_srcdir)/compat.h $(
+ 		 $(srcdir)/group.h $(srcdir)/main.h $(srcdir)/master.h \
+ 		 $(srcdir)/readcfg.h $(srcdir)/version.h
+ 
+-ALL = conserver convert
++ALL = conserver conserver-convert
+ 
+ 
+ all: $(ALL)
+@@ -46,8 +46,8 @@ $(CONSERVER_OBJS): $(CONSERVER_HDRS)
+ conserver: $(CONSERVER_OBJS)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o conserver $(CONSERVER_OBJS) $(LIBS)
+ 
+-convert: convert.o cutil.o
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o convert convert.o cutil.o $(LIBS)
++conserver-convert: convert.o cutil.o
++	$(CC) $(CFLAGS) $(LDFLAGS) -o conserver-convert convert.o cutil.o $(LIBS)
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
+@@ -59,13 +59,9 @@ distclean: clean
  	rm -f Makefile conserver.rc
  
  install: conserver
@@ -11,8 +31,11 @@ $OpenBSD: patch-conserver_Makefile_in,v 1.2 2005/08/02 07:25:47 pvalchev Exp $
 -	$(INSTALL) conserver.man $(DESTDIR)$(mandir)/man8/conserver.8
 -	$(MKDIR) $(DESTDIR)$(exampledir)
 -	$(INSTALL) conserver.rc $(DESTDIR)$(exampledir)
+-	$(MKDIR) $(DESTDIR)$(pkglibdir)
+-	$(INSTALL) convert $(DESTDIR)$(pkglibdir)/convert
 +	$(BSD_INSTALL_PROGRAM) conserver $(DESTDIR)$(sbindir)
 +	$(BSD_INSTALL_MAN) conserver.man $(DESTDIR)$(mandir)/man8/conserver.8
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(exampledir)
++	$(BSD_INSTALL_PROGRAM) conserver-convert $(DESTDIR)$(sbindir)
  
  .PHONY: clean distclean install

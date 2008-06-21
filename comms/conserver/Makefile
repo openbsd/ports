@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2007/09/16 01:37:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.31 2008/06/21 11:29:25 sthen Exp $
 
 COMMENT=	manage remote serial consoles via TCP/IP
 
-DISTNAME=	conserver-8.1.11
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	conserver-8.1.16
 CATEGORIES=	comms
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
@@ -28,6 +27,7 @@ CONFIGURE_ARGS=	--with-64bit 		\
 REGRESS_TARGET=	test
 
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/examples/conserver
+	@${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/examples/conserver
 
 .include <bsd.port.mk>
