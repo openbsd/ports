@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/04/28 09:17:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/06/22 21:28:14 ajacoutot Exp $
 @conflict gnocatan-*
 @pkgpath games/gnocatan
-bin/pioneers
-bin/pioneers-editor
-bin/pioneers-meta-server
-bin/pioneers-server-console
-bin/pioneers-server-gtk
-bin/pioneersai
+@bin bin/pioneers
+@bin bin/pioneers-editor
+@bin bin/pioneers-meta-server
+@bin bin/pioneers-server-console
+@bin bin/pioneers-server-gtk
+@bin bin/pioneersai
 @man man/man6/pioneers-meta-server.6
 @man man/man6/pioneers-server-console.6
 @man man/man6/pioneers-server-gtk.6

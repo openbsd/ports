@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2008/06/15 00:08:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/22 21:28:14 ajacoutot Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
 GNOME_PROJECT=	pioneers
 GNOME_VERSION=	0.12.2
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	games
 
 EXTRACT_SUFX=	.tar.gz
 
 HOMEPAGE=	http://pio.sourceforge.net/
-
-PKGNAME=	${DISTNAME}p0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
