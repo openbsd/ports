@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.9 2007/11/30 09:52:39 jakob Exp $
+@comment $OpenBSD: PLIST-server,v 1.10 2008/06/22 18:36:46 brad Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _dovecot:518
 @newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
@@ -46,22 +46,22 @@ lib/dovecot/pop3/lib10_quota_plugin.so
 lib/dovecot/pop3/lib20_convert_plugin.so
 lib/dovecot/pop3/lib20_mail_log_plugin.so
 libexec/dovecot/
-libexec/dovecot/checkpassword-reply
-libexec/dovecot/deliver
-libexec/dovecot/dict
-libexec/dovecot/dovecot-auth
-libexec/dovecot/gdbhelper
-libexec/dovecot/idxview
-libexec/dovecot/imap
-libexec/dovecot/imap-login
-libexec/dovecot/logview
-libexec/dovecot/pop3
-libexec/dovecot/pop3-login
-libexec/dovecot/rawlog
-libexec/dovecot/ssl-build-param
-sbin/dovecot
+@bin libexec/dovecot/checkpassword-reply
+@bin libexec/dovecot/deliver
+@bin libexec/dovecot/dict
+@bin libexec/dovecot/dovecot-auth
+@bin libexec/dovecot/gdbhelper
+@bin libexec/dovecot/idxview
+@bin libexec/dovecot/imap
+@bin libexec/dovecot/imap-login
+@bin libexec/dovecot/logview
+@bin libexec/dovecot/pop3
+@bin libexec/dovecot/pop3-login
+@bin libexec/dovecot/rawlog
+@bin libexec/dovecot/ssl-build-param
+@bin sbin/dovecot
 sbin/dovecot-mkcert.sh
-sbin/dovecotpw
+@bin sbin/dovecotpw
 share/doc/dovecot/
 share/doc/dovecot/auth-protocol.txt
 share/doc/dovecot/documentation.txt
