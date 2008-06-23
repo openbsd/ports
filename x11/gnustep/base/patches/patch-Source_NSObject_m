@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_NSObject_m,v 1.1.1.1 2007/05/29 03:01:35 ajacoutot Exp $
---- Source/NSObject.m.orig	Mon May 28 17:25:27 2007
-+++ Source/NSObject.m	Mon May 28 17:26:02 2007
-@@ -1092,7 +1092,7 @@ GSDescriptionForClassMethod(pcl self, SEL aSel)
+$OpenBSD: patch-Source_NSObject_m,v 1.2 2008/06/23 10:59:37 ajacoutot Exp $
+--- Source/NSObject.m.orig	Thu Jun 12 12:44:00 2008
++++ Source/NSObject.m	Mon Jun 23 11:26:24 2008
+@@ -1125,7 +1125,7 @@ GSDescriptionForClassMethod(pcl self, SEL aSel)
  #endif
  #endif
  

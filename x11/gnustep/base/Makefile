@@ -1,25 +1,31 @@
-# $OpenBSD: Makefile,v 1.12 2008/05/06 12:26:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2008/06/23 10:59:37 ajacoutot Exp $
 
 COMMENT=	GNUstep base library
 
-DISTNAME=	gnustep-base-1.14.3
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	gnustep-base 1.14	# .1.14.2
+DISTNAME=	gnustep-base-1.16.1
+SHARED_LIBS=	gnustep-base 1.16	# .1.16.1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnustep.org/
 
-WANTLIB=	c crypto iberty iconv m objc pthread ssl xml2 z
+WANTLIB=	c crypto gcrypt gpg-error m objc pthread ssl xml2 z
+
+.if ${MACHINE_ARCH} != "amd64"
+WANTLIB+=	iberty
+.endif
 
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 
-MODULES=	x11/gnustep
+MODULES=	x11/gnustep \
+		devel/gettext
 LIB_DEPENDS=	avcall.>=1,callback.>=1::devel/ffcall \
 		gmp.>=7::devel/gmp \
-		xslt.>=3::textproc/libxslt
+		xslt.>=3::textproc/libxslt \
+		gnutls.>=13::security/gnutls
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-procfs
+CONFIGURE_ARGS=	--disable-procfs \
+		--disable-procfs-psinfo
 
 pre-configure:
 	@perl -pi -e 's,^MAJOR_VERSION=.*,MAJOR_VERSION=${LIBgnustep-base_VERSION:R},g;' \
@@ -27,6 +33,6 @@ pre-configure:
 		${WRKSRC}/Version
 
 post-install:
-	@rm ${PREFIX}/lib/GNUstep/Libraries/gnustep-base/Versions/1.14/Resources/NSTimeZones/.README.swp
+	@rm ${PREFIX}/lib/GNUstep/Libraries/gnustep-base/Versions/${LIBgnustep-base_VERSION}/Resources/NSTimeZones/.README.swp
 
 .include <bsd.port.mk>
