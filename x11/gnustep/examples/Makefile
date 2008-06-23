@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/16 17:35:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/23 11:00:46 ajacoutot Exp $
 
 COMMENT=	GNUstep example applications
 
 DISTNAME=	gnustep-examples-1.2.0
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.gnustep.org/experience/examples.html

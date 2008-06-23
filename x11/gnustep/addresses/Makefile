@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/05/16 17:35:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/23 11:00:46 ajacoutot Exp $
 
 COMMENT=	GNUstep address book
 
 DISTNAME=	Addresses-0.4.7
-PKGNAME=	${DISTNAME:L}p1
+PKGNAME=	${DISTNAME:L}p2
 SHARED_LIBS+=	Addresses 0.1	# .0.1
 SHARED_LIBS+=	AddressView 0.1	# .0.1
 CATEGORIES=	mail
@@ -20,8 +20,6 @@ MODULES=	x11/gnustep
 LIB_DEPENDS=	gnustep-base.>=1::x11/gnustep/base \
 		gnustep-gui::x11/gnustep/gui
 RUN_DEPENDS=	:gnustep-back-*:x11/gnustep/back
-
-NO_REGRESS=	Yes
 
 MAKE_ENV+=	Addresses_VERSION=${LIBAddresses_VERSION} \
 		Addresses_INTERFACE_VERSION=${LIBAddresses_VERSION} \

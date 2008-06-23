@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/12/10 16:23:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/06/23 11:00:46 ajacoutot Exp $
 bin/Calculator
 bin/CurrencyConverter
 bin/Finger
@@ -118,23 +118,23 @@ lib/GNUstep/ApplicationSupport/GSTest/StringDrawing-test.bundle/stamp.make
 lib/GNUstep/Services/example.service/
 lib/GNUstep/Services/example.service/Resources/
 lib/GNUstep/Services/example.service/Resources/Info-gnustep.plist
-lib/GNUstep/Services/example.service/example
+@bin lib/GNUstep/Services/example.service/example
 libexec/GNUstep/
 libexec/GNUstep/Calculator.app/
-libexec/GNUstep/Calculator.app/Calculator
+@bin libexec/GNUstep/Calculator.app/Calculator
 libexec/GNUstep/Calculator.app/Resources/
 libexec/GNUstep/Calculator.app/Resources/Calculator.app.tiff
 libexec/GNUstep/Calculator.app/Resources/Calculator.desktop
 libexec/GNUstep/Calculator.app/Resources/Info-gnustep.plist
 libexec/GNUstep/Calculator.app/stamp.make
 libexec/GNUstep/CurrencyConverter.app/
-libexec/GNUstep/CurrencyConverter.app/CurrencyConverter
+@bin libexec/GNUstep/CurrencyConverter.app/CurrencyConverter
 libexec/GNUstep/CurrencyConverter.app/Resources/
 libexec/GNUstep/CurrencyConverter.app/Resources/CurrencyConverter.desktop
 libexec/GNUstep/CurrencyConverter.app/Resources/Info-gnustep.plist
 libexec/GNUstep/CurrencyConverter.app/stamp.make
 libexec/GNUstep/Finger.app/
-libexec/GNUstep/Finger.app/Finger
+@bin libexec/GNUstep/Finger.app/Finger
 libexec/GNUstep/Finger.app/Resources/
 libexec/GNUstep/Finger.app/Resources/Finger.desktop
 libexec/GNUstep/Finger.app/Resources/Info-gnustep.plist
@@ -150,13 +150,13 @@ libexec/GNUstep/Finger.app/Resources/whois.tiff
 libexec/GNUstep/Finger.app/Resources/whois32.tiff
 libexec/GNUstep/Finger.app/stamp.make
 libexec/GNUstep/GFractal.app/
-libexec/GNUstep/GFractal.app/GFractal
+@bin libexec/GNUstep/GFractal.app/GFractal
 libexec/GNUstep/GFractal.app/Resources/
 libexec/GNUstep/GFractal.app/Resources/GFractal.desktop
 libexec/GNUstep/GFractal.app/Resources/Info-gnustep.plist
 libexec/GNUstep/GFractal.app/stamp.make
 libexec/GNUstep/GSTest.app/
-libexec/GNUstep/GSTest.app/GSTest
+@bin libexec/GNUstep/GSTest.app/GSTest
 libexec/GNUstep/GSTest.app/Resources/
 libexec/GNUstep/GSTest.app/Resources/GSTest.desktop
 libexec/GNUstep/GSTest.app/Resources/Info-gnustep.plist
@@ -165,13 +165,13 @@ libexec/GNUstep/GSTest.app/Resources/MainMenu.gorm/data.classes
 libexec/GNUstep/GSTest.app/Resources/MainMenu.gorm/objects.gorm
 libexec/GNUstep/GSTest.app/stamp.make
 libexec/GNUstep/HostAddress.app/
-libexec/GNUstep/HostAddress.app/HostAddress
+@bin libexec/GNUstep/HostAddress.app/HostAddress
 libexec/GNUstep/HostAddress.app/Resources/
 libexec/GNUstep/HostAddress.app/Resources/HostAddress.desktop
 libexec/GNUstep/HostAddress.app/Resources/Info-gnustep.plist
 libexec/GNUstep/HostAddress.app/stamp.make
 libexec/GNUstep/Ink.app/
-libexec/GNUstep/Ink.app/Ink
+@bin libexec/GNUstep/Ink.app/Ink
 libexec/GNUstep/Ink.app/Resources/
 libexec/GNUstep/Ink.app/Resources/Document.gorm/
 libexec/GNUstep/Ink.app/Resources/Document.gorm/data.classes
@@ -189,7 +189,7 @@ libexec/GNUstep/Ink.app/Resources/Ink.desktop
 libexec/GNUstep/Ink.app/Resources/Ink_app.tiff
 libexec/GNUstep/Ink.app/stamp.make
 libexec/GNUstep/MyGL.app/
-libexec/GNUstep/MyGL.app/MyGL
+@bin libexec/GNUstep/MyGL.app/MyGL
 libexec/GNUstep/MyGL.app/Resources/
 libexec/GNUstep/MyGL.app/Resources/Info-gnustep.plist
 libexec/GNUstep/MyGL.app/Resources/MyGL.desktop
@@ -200,19 +200,19 @@ libexec/GNUstep/MyGL.app/Resources/MyGL.gorm/objects.gorm
 libexec/GNUstep/MyGL.app/Resources/girl.dae
 libexec/GNUstep/MyGL.app/stamp.make
 libexec/GNUstep/NSBrowserTest.app/
-libexec/GNUstep/NSBrowserTest.app/NSBrowserTest
+@bin libexec/GNUstep/NSBrowserTest.app/NSBrowserTest
 libexec/GNUstep/NSBrowserTest.app/Resources/
 libexec/GNUstep/NSBrowserTest.app/Resources/Info-gnustep.plist
 libexec/GNUstep/NSBrowserTest.app/Resources/NSBrowserTest.desktop
 libexec/GNUstep/NSBrowserTest.app/stamp.make
 libexec/GNUstep/NSImageTest.app/
-libexec/GNUstep/NSImageTest.app/NSImageTest
+@bin libexec/GNUstep/NSImageTest.app/NSImageTest
 libexec/GNUstep/NSImageTest.app/Resources/
 libexec/GNUstep/NSImageTest.app/Resources/Info-gnustep.plist
 libexec/GNUstep/NSImageTest.app/Resources/NSImageTest.desktop
 libexec/GNUstep/NSImageTest.app/stamp.make
 libexec/GNUstep/NSPanelTest.app/
-libexec/GNUstep/NSPanelTest.app/NSPanelTest
+@bin libexec/GNUstep/NSPanelTest.app/NSPanelTest
 libexec/GNUstep/NSPanelTest.app/Resources/
 libexec/GNUstep/NSPanelTest.app/Resources/Info-gnustep.plist
 libexec/GNUstep/NSPanelTest.app/Resources/NSPanelTest.desktop
@@ -220,7 +220,7 @@ libexec/GNUstep/NSPanelTest.app/Resources/Test.strings
 libexec/GNUstep/NSPanelTest.app/Resources/icon.tiff
 libexec/GNUstep/NSPanelTest.app/stamp.make
 libexec/GNUstep/NSScreenTest.app/
-libexec/GNUstep/NSScreenTest.app/NSScreenTest
+@bin libexec/GNUstep/NSScreenTest.app/NSScreenTest
 libexec/GNUstep/NSScreenTest.app/Resources/
 libexec/GNUstep/NSScreenTest.app/Resources/Info-gnustep.plist
 libexec/GNUstep/NSScreenTest.app/Resources/NSScreenTest.desktop
@@ -245,11 +245,11 @@ libexec/GNUstep/ToolbarExample.app/Resources/ToolbarExample.gorm/data.classes
 libexec/GNUstep/ToolbarExample.app/Resources/ToolbarExample.gorm/data.info
 libexec/GNUstep/ToolbarExample.app/Resources/ToolbarExample.gorm/objects.gorm
 libexec/GNUstep/ToolbarExample.app/Resources/ToolbarExampleInfo.plist
-libexec/GNUstep/ToolbarExample.app/ToolbarExample
+@bin libexec/GNUstep/ToolbarExample.app/ToolbarExample
 libexec/GNUstep/ToolbarExample.app/stamp.make
 libexec/GNUstep/md5Digest.app/
 libexec/GNUstep/md5Digest.app/Resources/
 libexec/GNUstep/md5Digest.app/Resources/Info-gnustep.plist
 libexec/GNUstep/md5Digest.app/Resources/md5Digest.desktop
-libexec/GNUstep/md5Digest.app/md5Digest
+@bin libexec/GNUstep/md5Digest.app/md5Digest
 libexec/GNUstep/md5Digest.app/stamp.make
