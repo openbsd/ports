@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_http-neon-method_c,v 1.1 2008/05/04 14:36:44 ajacoutot Exp $
---- modules/http-neon-method.c.orig	Mon Nov 12 09:36:43 2007
-+++ modules/http-neon-method.c	Mon Apr 28 09:33:03 2008
+$OpenBSD: patch-modules_http-neon-method_c,v 1.2 2008/06/23 12:20:16 deanna Exp $
+--- modules/http-neon-method.c.orig	Mon Nov 12 03:36:43 2007
++++ modules/http-neon-method.c	Sat Jun 21 17:58:39 2008
 @@ -1188,7 +1188,7 @@ propfind_result (void *userdata, const char *href, con
  	time_t	time;
  	gulong  size;
@@ -32,13 +32,60 @@ $OpenBSD: patch-modules_http-neon-method_c,v 1.1 2008/05/04 14:36:44 ajacoutot E
  	ne_uri_free (&uri);
  
  	/* getlastmodified */
-@@ -2400,19 +2402,12 @@ do_open (GnomeVFSMethod 	*method,
+@@ -1771,6 +1773,25 @@ http_context_open (GnomeVFSURI *uri, HttpContext **con
+ 	return GNOME_VFS_OK;
+ }
+ 
++static gboolean
++http_context_host_matches (HttpContext *context, const char *glob)
++{
++	GnomeVFSToplevelURI *uri;
++	GPatternSpec *spec;
++	gboolean res;
++
++	uri = gnome_vfs_uri_get_toplevel (context->uri);
++
++	if (uri == NULL ||  uri->host_name == NULL || glob == NULL)
++		return FALSE;
++
++	spec = g_pattern_spec_new (glob);
++	res = g_pattern_match_string (spec, uri->host_name);
++	g_pattern_spec_free (spec);
++
++	return res;
++}
++
+ static GnomeVFSResult
+ http_follow_redirect (HttpContext *context)
+ {
+@@ -2345,6 +2366,20 @@ http_transfer_start (HttpFileHandle *handle)
+ 	return GNOME_VFS_ERROR_INTERNAL;
+ }
+ 
++/* TRUE means we can range, ie server is sane, FALSE means FAIL */
++static gboolean
++i_can_haz_range_cause_serverz_not_br0ken (HttpContext *hctx)
++{
++	gboolean br0ken = FALSE;
++
++	if (http_context_host_matches (hctx, "*youtube.*")) {
++		DEBUG_HTTP ("Youtube detected! Cannot use ranged gets");
++		br0ken = TRUE;
++	}
++
++	return br0ken == FALSE;
++}
++
+ /* ************************************************************************** */
+ 
+ static GnomeVFSResult
+@@ -2400,19 +2435,12 @@ do_open (GnomeVFSMethod 	*method,
  			return result;
  		} 
  	} else {
 -		handle->use_range = (mode & GNOME_VFS_OPEN_RANDOM);
-+                /* Always try to make Ranged puts */
-+		handle->use_range = TRUE;
++		handle->use_range = i_can_haz_range_cause_serverz_not_br0ken (hctx);
++		DEBUG_HTTP ("Use range: %s\n", handle->use_range ? "on" : "off");
  	}
  
  	result = http_transfer_start (handle);	
