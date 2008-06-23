@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/29 03:03:08 ajacoutot Exp $
-bin/font_cacher
-bin/gpbs
-lib/GNUstep/Bundles/libgnustep-back-012.bundle/
-lib/GNUstep/Bundles/libgnustep-back-012.bundle/Resources/
-lib/GNUstep/Bundles/libgnustep-back-012.bundle/Resources/English.lproj/
-lib/GNUstep/Bundles/libgnustep-back-012.bundle/Resources/English.lproj/nfontFaceNames.strings
-lib/GNUstep/Bundles/libgnustep-back-012.bundle/Resources/Info-gnustep.plist
-lib/GNUstep/Bundles/libgnustep-back-012.bundle/Resources/Swedish.lproj/
-lib/GNUstep/Bundles/libgnustep-back-012.bundle/Resources/Swedish.lproj/nfontFaceNames.strings
-lib/GNUstep/Bundles/libgnustep-back-012.bundle/libgnustep-back-012.so
-lib/GNUstep/Bundles/libgnustep-back-012.bundle/stamp.make
+@comment $OpenBSD: PLIST,v 1.2 2008/06/23 11:00:18 ajacoutot Exp $
+@bin bin/font_cacher
+@bin bin/gpbs
+lib/GNUstep/Bundles/libgnustep-back-014.bundle/
+lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/
+lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/English.lproj/
+lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/English.lproj/nfontFaceNames.strings
+lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/Swedish.lproj/
+lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/Swedish.lproj/nfontFaceNames.strings
+lib/GNUstep/Bundles/libgnustep-back-014.bundle/libgnustep-back-014.so
+lib/GNUstep/Bundles/libgnustep-back-014.bundle/stamp.make
 lib/GNUstep/Fonts/
 lib/GNUstep/Fonts/Helvetica.nfont/
 lib/GNUstep/Fonts/Helvetica.nfont/FontInfo.plist
