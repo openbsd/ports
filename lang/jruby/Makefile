@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/17 22:27:41 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/23 20:33:19 bernd Exp $
 
 COMMENT =	pure-Java implementation of the Ruby language
 
@@ -27,7 +27,7 @@ MODJAVA_JRERUN = Yes
 BUILD_DEPENDS =	::devel/apache-ant
 RUN_DEPENDS =	::java/javaPathHelper
 
-MAKE_ENV =	PATH="\$PATH:${JAVA_HOME}/bin"
+MAKE_ENV =	JAVA_HOME=${JAVA_HOME} 
 JRUBY_LIBDIR =	${PREFIX}/lib/jruby
 
 WRKDIST =	${WRKDIR}/jruby-${V}
