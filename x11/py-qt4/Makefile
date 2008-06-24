@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/15 13:25:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/24 18:44:42 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-docs=	py-qt4 documentation
 V=		4.3.3
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
-PKGNAME-main=	py-qt4-${V}
+PKGNAME-main=	py-qt4-${V}p0
 PKGNAME-docs=	py-qt4-docs-${V}
 
 CATEGORIES=	x11 devel
@@ -65,6 +65,7 @@ CONFIGURE_ARGS=	--qmake=${LOCALBASE}/bin/qmake4 \
 		CXX=${CXX} \
 		CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}"
+FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 
 PYQTMODS=	QtCore QtGui QtNetwork QtOpenGL QtScript QtSql QtSvg \
 		QtTest QtXml QtAssistant QtDesigner

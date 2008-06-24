@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/01/15 13:25:23 ajacoutot Exp $
-bin/pylupdate4
-bin/pyrcc4
+@comment $OpenBSD: PLIST-main,v 1.2 2008/06/24 18:44:42 naddy Exp $
+@bin bin/pylupdate4
+@bin bin/pyrcc4
 bin/pyuic4
 lib/python${MODPY_VERSION}/site-packages/PyQt4/
 lib/python${MODPY_VERSION}/site-packages/PyQt4/Qt.so
@@ -38,9 +38,9 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qaxcontainer.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qscintilla.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qwt.py
-lib/python${MODPY_VERSION}/site-packages/dbus/
-lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/
 lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/qt.so
+lib/qt4/plugins/designer/libpythonplugin.so
+@comment lib/qt4/plugins/designer/python/
 share/sip/
 share/sip/Qt/
 share/sip/Qt/Qtmod.sip
