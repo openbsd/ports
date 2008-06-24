@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2008/06/05 07:19:14 bernd Exp $
+# $OpenBSD: Makefile,v 1.30 2008/06/24 20:28:00 bernd Exp $
 
 COMMENT-main=		GIT - Tree History Storage Tool
 COMMENT-svn=		GIT - subversion interoperability tools
 COMMENT-x11=		GIT - graphical tools
 
-V=			1.5.5.3
+V=			1.5.6
 DISTNAME=		git-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-svn=		git-svn-${V}
@@ -66,7 +66,8 @@ USE_X11=		Yes
 USE_GMAKE=		Yes
 
 REGRESS_DEPENDS=	:zip-*:archivers/zip \
-			:cvsps-*:devel/cvsps
+			:cvsps-*:devel/cvsps \
+			::devel/subversion,-perl
 
 post-extract:
 	@mkdir -p ${WRKSRC}/doc
@@ -90,7 +91,7 @@ post-install:
 		${PREFIX}/share/git-core/templates/hooks
 
 do-regress:
-	cd ${WRKSRC} && ${MAKE_ENV} NO_SVN_TESTS=Yes ${MAKE_PROGRAM} \
+	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} \
 		HOME=${WRKDIST}/t/trash TAR=${TAR} test
 
 .include <bsd.port.mk>
