@@ -1,16 +1,23 @@
-$OpenBSD: patch-devede_py,v 1.3 2008/05/26 13:49:59 ajacoutot Exp $
---- devede.py.orig	Sun May 25 02:14:15 2008
-+++ devede.py	Mon May 26 15:44:06 2008
-@@ -55,7 +55,7 @@ except:
+$OpenBSD: patch-devede_py,v 1.4 2008/06/24 10:43:21 ajacoutot Exp $
+--- devede.py.orig	Tue Jun 24 00:25:56 2008
++++ devede.py	Tue Jun 24 12:40:40 2008
+@@ -42,13 +42,13 @@ except ImportError:
+ 	print 'Psyco not installed, the program will just run slower'
  
- if found==False:
- 	try:
--		fichero=open("/usr/local/share/devede/devede.glade","r")
-+		fichero=open("${PREFIX}/share/devede/devede.glade","r")
- 		fichero.close()
- 		tipo=1
- 		found=True
-@@ -94,12 +94,12 @@ elif tipo==1:
+ print "DeVeDe 3.9"
+-if sys.platform!="win32":
++if sys.platform!="win32" and not sys.platform.startswith('openbsd'):
+ 	print "Locale: "+str(os.environ["LANG"])
+ 
+ # append the directories where we install the devede's own modules
+ tipo=-1
+ try:
+-	fichero=open("/usr/local/share/devede/devede.glade","r")
++	fichero=open("${PREFIX}/share/devede/devede.glade","r")
+ 	fichero.close()
+ 	tipo=1
+ 	found=True
+@@ -96,12 +96,12 @@ elif tipo==1:
  	#gtk.glade.bindtextdomain("devede","/usr/share/locale")
  	#arbol=gtk.glade.XML("/usr/local/share/devede/devede.glade",domain="devede")
  
