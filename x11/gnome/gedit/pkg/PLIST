@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/11/26 21:31:54 bernd Exp $
-bin/gedit
-bin/gnome-text-editor
+@comment $OpenBSD: PLIST,v 1.9 2008/06/24 20:34:07 bernd Exp $
+@bin bin/gedit
+@bin bin/gnome-text-editor
 include/gedit-2.20/
 include/gedit-2.20/gedit/
 include/gedit-2.20/gedit/gedit-app.h
@@ -25,7 +25,6 @@ include/gedit-2.20/gedit/gedit-utils.h
 include/gedit-2.20/gedit/gedit-view.h
 include/gedit-2.20/gedit/gedit-window.h
 lib/gedit-2/
-lib/gedit-2/gedit-bugreport.sh
 lib/gedit-2/plugins/
 lib/gedit-2/plugins/changecase.gedit-plugin
 lib/gedit-2/plugins/docinfo.gedit-plugin
@@ -135,6 +134,8 @@ lib/gedit-2/plugins/spell.gedit-plugin
 lib/gedit-2/plugins/taglist.gedit-plugin
 lib/gedit-2/plugins/time.gedit-plugin
 lib/pkgconfig/gedit-2.20.pc
+libexec/gedit-2/
+libexec/gedit-2/gedit-bugreport.sh
 @man man/man1/gedit.1
 share/applications/gedit.desktop
 share/gedit-2/
@@ -142,8 +143,8 @@ share/gedit-2/glade/
 share/gedit-2/glade/docinfo.glade2
 share/gedit-2/glade/gedit-encodings-dialog.glade
 share/gedit-2/glade/gedit-open-location-dialog.glade
-share/gedit-2/glade/gedit-page-setup-dialog.glade
 share/gedit-2/glade/gedit-preferences-dialog.glade
+share/gedit-2/glade/gedit-print-preferences.glade
 share/gedit-2/glade/gedit-search-dialog.glade
 share/gedit-2/glade/languages-dialog.glade2
 share/gedit-2/glade/sort.glade2
@@ -297,6 +298,16 @@ share/gnome/help/gedit/oc/figures/gedit_recent_files_menu_icon.png
 share/gnome/help/gedit/oc/figures/gedit_window.png
 share/gnome/help/gedit/oc/gedit.xml
 share/gnome/help/gedit/oc/legal.xml
+share/gnome/help/gedit/pt_BR/
+share/gnome/help/gedit/pt_BR/figures/
+share/gnome/help/gedit/pt_BR/figures/gedit_format_bold.png
+share/gnome/help/gedit/pt_BR/figures/gedit_format_italic.png
+share/gnome/help/gedit/pt_BR/figures/gedit_format_strikethrough.png
+share/gnome/help/gedit/pt_BR/figures/gedit_format_underline.png
+share/gnome/help/gedit/pt_BR/figures/gedit_recent_files_menu_icon.png
+share/gnome/help/gedit/pt_BR/figures/gedit_window.png
+share/gnome/help/gedit/pt_BR/gedit.xml
+share/gnome/help/gedit/pt_BR/legal.xml
 share/gnome/help/gedit/ro/
 share/gnome/help/gedit/ro/figures/
 share/gnome/help/gedit/ro/figures/gedit_window.png
@@ -371,14 +382,14 @@ share/gtk-doc/html/gedit/GeditMessageArea.html
 share/gtk-doc/html/gedit/GeditNotebook.html
 share/gtk-doc/html/gedit/GeditPanel.html
 share/gtk-doc/html/gedit/GeditPlugin.html
-share/gtk-doc/html/gedit/GeditPrintJob.html
-share/gtk-doc/html/gedit/GeditPrintJobPreview.html
 share/gtk-doc/html/gedit/GeditProgressMessageArea.html
 share/gtk-doc/html/gedit/GeditStatusbar.html
 share/gtk-doc/html/gedit/GeditTab.html
 share/gtk-doc/html/gedit/GeditView.html
 share/gtk-doc/html/gedit/GeditWindow.html
 share/gtk-doc/html/gedit/ch01.html
+share/gtk-doc/html/gedit/gedit-GeditPrintJob.html
+share/gtk-doc/html/gedit/gedit-GeditPrintJobPreview.html
 share/gtk-doc/html/gedit/gedit-gedit-convert.html
 share/gtk-doc/html/gedit/gedit-gedit-debug.html
 share/gtk-doc/html/gedit/gedit-gedit-encodings.html
@@ -399,6 +410,7 @@ share/gtk-doc/html/gedit/up.png
 share/locale/af/LC_MESSAGES/gedit.mo
 share/locale/am/LC_MESSAGES/gedit.mo
 share/locale/ar/LC_MESSAGES/gedit.mo
+share/locale/as/LC_MESSAGES/gedit.mo
 share/locale/az/LC_MESSAGES/gedit.mo
 share/locale/be/LC_MESSAGES/gedit.mo
 share/locale/be@latin/LC_MESSAGES/gedit.mo
@@ -491,6 +503,7 @@ share/omf/gedit/gedit-it.omf
 share/omf/gedit/gedit-ja.omf
 share/omf/gedit/gedit-ko.omf
 share/omf/gedit/gedit-oc.omf
+share/omf/gedit/gedit-pt_BR.omf
 share/omf/gedit/gedit-ro.omf
 share/omf/gedit/gedit-ru.omf
 share/omf/gedit/gedit-sv.omf

@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.25 2008/06/04 13:47:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2008/06/24 20:34:07 bernd Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		2.20.4
-PKGNAME=		${DISTNAME}p3
+GNOME_VERSION=		2.22.3
 CATEGORIES=		editors
 
 HOMEPAGE=		http://www.gnome.org/projects/gedit/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,7 +21,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xcomposite \
 		bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 esd expat \
 		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 \
 		gdk_pixbuf-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
-		gnome-2 gnome-keyring gnomecanvas-2 gnomeprint-2-2 \
+		gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
 		pthread ssl stdc++ util xml2 z
@@ -36,7 +35,6 @@ BUILD_DEPENDS=		:iso-codes-*:devel/iso-codes \
 			:gnome-doc-utils-*:x11/gnome/doc-utils \
 			::x11/py-gtksourceview
 LIB_DEPENDS=		enchant::textproc/enchant \
-			gnomeprintui-2-2.>=2.0::x11/gnome/libgnomeprintui \
 			gnomeui-2::x11/gnome/libgnomeui \
 			gtksourceview-2.0::x11/gtksourceview \
 			${MODPY_LIB_DEPENDS}
