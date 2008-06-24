@@ -1,12 +1,12 @@
-$OpenBSD: patch-tests_libtest_Makefile_in,v 1.1 2008/06/09 21:00:57 naddy Exp $
---- tests/libtest/Makefile.in.orig	Mon Jun  9 11:16:08 2008
-+++ tests/libtest/Makefile.in	Mon Jun  9 11:16:28 2008
-@@ -282,7 +282,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(L
+$OpenBSD: patch-tests_libtest_Makefile_in,v 1.2 2008/06/24 18:37:25 naddy Exp $
+--- tests/libtest/Makefile.in.orig	Sat Jun 14 18:39:32 2008
++++ tests/libtest/Makefile.in	Sat Jun 14 18:39:43 2008
+@@ -277,7 +277,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $
+ 	$(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
- LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
- 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
--	$(LDFLAGS) -o $@
-+	-L../../lib/.libs $(LDFLAGS) -o $@
+ LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(AM_LDFLAGS) -L../../lib/.libs $(LDFLAGS) -o $@
  SOURCES = $(lib500_SOURCES) $(lib501_SOURCES) $(lib502_SOURCES) \
  	$(lib503_SOURCES) $(lib504_SOURCES) $(lib505_SOURCES) \
  	$(lib506_SOURCES) $(lib507_SOURCES) $(lib508_SOURCES) \

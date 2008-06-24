@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.19 2008/05/13 17:56:29 naddy Exp $
-bin/curl
+@comment $OpenBSD: PLIST,v 1.20 2008/06/24 18:37:25 naddy Exp $
+@bin bin/curl
 bin/curl-config
 include/curl/
 include/curl/curl.h
@@ -23,7 +23,9 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/curl_easy_init.3
 @man man/man3/curl_easy_pause.3
 @man man/man3/curl_easy_perform.3
+@man man/man3/curl_easy_recv.3
 @man man/man3/curl_easy_reset.3
+@man man/man3/curl_easy_send.3
 @man man/man3/curl_easy_setopt.3
 @man man/man3/curl_easy_strerror.3
 @man man/man3/curl_easy_unescape.3

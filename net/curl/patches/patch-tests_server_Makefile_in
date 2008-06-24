@@ -1,12 +1,12 @@
-$OpenBSD: patch-tests_server_Makefile_in,v 1.1 2008/06/09 21:00:57 naddy Exp $
---- tests/server/Makefile.in.orig	Mon Jun  9 11:15:06 2008
-+++ tests/server/Makefile.in	Mon Jun  9 11:15:36 2008
-@@ -98,7 +98,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(L
+$OpenBSD: patch-tests_server_Makefile_in,v 1.2 2008/06/24 18:37:25 naddy Exp $
+--- tests/server/Makefile.in.orig	Sat Jun 14 18:40:00 2008
++++ tests/server/Makefile.in	Sat Jun 14 18:40:10 2008
+@@ -101,7 +101,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $
+ 	$(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
- LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
- 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
--	$(LDFLAGS) -o $@
-+	-L../../lib/.libs $(LDFLAGS) -o $@
+ LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(AM_LDFLAGS) -L../../lib/.libs $(LDFLAGS) -o $@
  SOURCES = $(getpart_SOURCES) $(resolve_SOURCES) $(sockfilt_SOURCES) \
  	$(sws_SOURCES) $(tftpd_SOURCES)
  DIST_SOURCES = $(getpart_SOURCES) $(resolve_SOURCES) \
