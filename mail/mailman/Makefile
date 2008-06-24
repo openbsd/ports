@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.47 2008/06/24 13:18:02 jakob Exp $
 
 COMMENT=	mailing list manager with web interface
 
@@ -8,7 +8,7 @@ CATEGORIES=	mail www
 
 HOMEPAGE=	http://www.gnu.org/software/mailman/
 
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
