@@ -1,2 +1,0 @@
-The conserver line should be removed from /etc/services
-to completely deinstall the package.
