@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2008/03/26 13:07:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2008/06/24 02:46:21 kurt Exp $
 
 COMMENT=	regression testing utility for use with the Java language
 
 VERSION=	3.8.2
 DISTNAME=	junit${VERSION}
-PKGNAME=	junit-${VERSION}p1
+PKGNAME=	junit-${VERSION}p2
 INSTALLDIR=	${PKGNAME}
 SUBST_VARS+=	INSTALLDIR
 CATEGORIES=	java devel
