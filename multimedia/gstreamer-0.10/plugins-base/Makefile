@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/06/21 21:03:55 deanna Exp $
+# $OpenBSD: Makefile,v 1.12 2008/06/25 13:05:56 deanna Exp $
 
 COMMENT-main =		multimedia framework - plugins base
 COMMENT-gnome =		multimedia framework - gnome vfs plugin
@@ -11,7 +11,7 @@ COMMENT-pango =		multimedia framework - pango renderer
 V =			0.10.19
 DISTNAME =		gst-plugins-base-$V
 PKGNAME-main =		gstreamer-plugins-base-$Vp0
-PKGNAME-gnome =		gstreamer-gnome-$Vp0
+PKGNAME-gnome =		gstreamer-gnome-$Vp1
 PKGNAME-cdda =		gstreamer-cdda-$Vp0
 PKGNAME-ogg =		gstreamer-ogg-$Vp0
 PKGNAME-theora =	gstreamer-theora-$Vp0
@@ -52,7 +52,7 @@ WANTLIB-gnome =		${WANTLIB} \
 			gstbase-0.10 util dbus-1 dbus-glib-1
 LIB_DEPENDS-gnome = 	${LIB_DEPENDS} \
 			gsttag-0.10::${BUILD_PKGPATH} \
-			gnomevfs-2::x11/gnome/vfs2
+			gnomevfs-2:gnome-vfs2->=2.20.1p8:x11/gnome/vfs2
 
 WANTLIB-cdda =		${WANTLIB} \
 			gstbase-0.10
