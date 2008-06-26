@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.2 2007/12/30 22:42:36 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2008/06/26 08:49:37 ajacoutot Exp $
 
-CATEGORIES?=	net
+CATEGORIES +=	net/telepathy
 
 HOMEPAGE?=	http://telepathy.freedesktop.org/wiki/
 
