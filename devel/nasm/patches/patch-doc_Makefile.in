@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Mon Jun  9 19:29:26 2008
-+++ doc/Makefile.in	Tue Jun 10 20:30:52 2008
+--- doc/Makefile.in.orig	Tue Jun 17 06:31:16 2008
++++ doc/Makefile.in	Tue Jun 17 15:12:31 2008
 @@ -8,7 +8,7 @@
  exec_prefix	= @exec_prefix@
  bindir		= @bindir@
@@ -13,8 +13,8 @@
  PS2PDF          = ps2pdf		# Part of GhostScript
  
  SRCS		= nasmdoc.src
--OUT		= nasm.info nasmdoc.ps nasmdoc.pdf
-+OUT		= nasm.info # nasmdoc.ps nasmdoc.pdf # don't build ps and pdf
+-OUT		= info html nasmdoc.txt nasmdoc.ps nasmdoc.pdf
++OUT		= info html nasmdoc.txt # nasmdoc.ps nasmdoc.pdf
  
 -# exports
 -export srcdir
@@ -22,16 +22,29 @@
  
  all: $(OUT)
  
-@@ -38,7 +35,7 @@
- # Consider html, txt and ps output a side effect
- nasmdoc.dip: nasmdoc.src rdsrc.pl inslist.src
+@@ -40,17 +37,17 @@
+ 
+ html/nasmdoc0.html: nasmdoc.src rdsrc.pl inslist.src
  	mkdir -p html
--	$(PERL) $(srcdir)/rdsrc.pl < $<
-+	$(PERL) $(srcdir)/rdsrc.pl < $(srcdir)/nasmdoc.src
+-	$(PERL) $(srcdir)/rdsrc.pl html < $<
++	$(PERL) $(srcdir)/rdsrc.pl html < $(srcdir)/nasmdoc.src
  	mv -f *.html html
  
- nasmdoc.texi: nasmdoc.dip
-@@ -55,7 +52,7 @@
+ nasmdoc.dip: nasmdoc.src rdsrc.pl inslist.src
+-	$(PERL) $(srcdir)/rdsrc.pl dip < $<
++	$(PERL) $(srcdir)/rdsrc.pl dip < $(srcdir)/nasmdoc.src
+ 
+ nasmdoc.texi: nasmdoc.src rdsrc.pl inslist.src
+-	$(PERL) $(srcdir)/rdsrc.pl texi < $<
++	$(PERL) $(srcdir)/rdsrc.pl texi < $(srcdir)/nasmdoc.src
+ 
+ nasmdoc.txt: nasmdoc.src rdsrc.pl inslist.src
+-	$(PERL) $(srcdir)/rdsrc.pl txt < $<
++	$(PERL) $(srcdir)/rdsrc.pl txt < $(srcdir)/nasmdoc.src
+ 
+ nasmdoc.ps: nasmdoc.dip nasmlogo.eps $(srcdir)/../version genpsdriver.pl \
+ 	    genps.pl psfonts.ph pswidth.ph head.ps
+@@ -64,7 +61,7 @@
  
  info/nasm.info: nasmdoc.texi
  	mkdir -p info
@@ -40,7 +53,7 @@
  	mv -f *.info *.info-* info
  
  # DVI output from texinfo (optional)
-@@ -64,13 +61,12 @@
+@@ -73,13 +70,12 @@
  
  # Rules for building an OS/2 book
  nasmdoc.ipf: nasmdoc.texi
@@ -56,7 +69,7 @@
  	-rm -f *.aux *.cp *.fn *.ky *.pg *.log *.toc *.tp *.vr
  
  spotless: clean
-@@ -82,4 +78,4 @@
+@@ -91,4 +87,4 @@
  	$(INSTALL_DATA) info/* $(INSTALLROOT)$(infodir)
  	mkdir -p $(INSTALLROOT)$(docdir)/html
  	$(INSTALL_DATA) html/* $(INSTALLROOT)$(docdir)/html
