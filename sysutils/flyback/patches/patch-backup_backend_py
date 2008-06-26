@@ -1,4 +1,4 @@
-$OpenBSD: patch-backup_backend_py,v 1.1.1.1 2008/04/14 13:39:51 jasper Exp $
+$OpenBSD: patch-backup_backend_py,v 1.2 2008/06/26 13:14:06 ajacoutot Exp $
 --- backup_backend.py.orig	Thu Nov 15 07:22:16 2007
 +++ backup_backend.py	Mon Apr 14 13:08:35 2008
 @@ -229,7 +229,7 @@ class backup:
@@ -6,7 +6,7 @@ $OpenBSD: patch-backup_backend_py,v 1.1.1.1 2008/04/14 13:39:51 jasper Exp $
          if latest_backup_dir:
              last_backup = self.parent_backup_dir +'/'+ latest_backup_dir.strftime(BACKUP_DIR_DATE_FORMAT)
 -            self.run_cmd_output_gui("cp -al '%s' '%s'" % (last_backup, new_backup))
-+            self.run_cmd_output_gui("cp -RPp '%s' '%s'" % (last_backup, new_backup))
++            self.run_cmd_output_gui("gcp -al '%s' '%s'" % (last_backup, new_backup))
              self.run_cmd_output_gui("chmod u+w '%s'" % new_backup)
          
          for dir in self.included_dirs:

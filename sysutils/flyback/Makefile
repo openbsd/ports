@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/26 10:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/06/26 13:14:06 ajacoutot Exp $
 
 COMMENT=		Time Machine-like backup tool
 
 DISTNAME=		flyback_0.4.0
-PKGNAME=		${DISTNAME:S/_/-/}p0
+PKGNAME=		${DISTNAME:S/_/-/}p1
 CATEGORIES=		sysutils x11
 
 HOMEPAGE=		http://flyback-project.org/
@@ -24,6 +24,9 @@ RUN_DEPENDS=		::databases/py-sqlite \
 			::net/rsync \
 			::x11/gnome/py-gnome \
 			:desktop-file-utils-*:devel/desktop-file-utils
+
+# needs the "--link" option from gcp(1) for incremental backups
+RUN_DEPENDS+=		::misc/fileutils
 
 NO_REGRESS=		Yes
 NO_BUILD=		Yes
