@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Backup Tool
+GenericName=Flyback
+Comment=Backup Your Files
+Exec=flyback
+Icon=!!PREFIX!!/share/icons/gnome/32x32/actions/gtk-copy.png
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Application;System;

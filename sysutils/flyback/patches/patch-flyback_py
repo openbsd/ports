@@ -1,6 +1,6 @@
-$OpenBSD: patch-flyback_py,v 1.1.1.1 2008/04/14 13:39:51 jasper Exp $
+$OpenBSD: patch-flyback_py,v 1.2 2008/06/26 10:21:03 ajacoutot Exp $
 --- flyback.py.orig	Thu Nov 15 07:22:16 2007
-+++ flyback.py	Mon Apr 14 14:09:38 2008
++++ flyback.py	Thu Jun 26 11:26:38 2008
 @@ -21,7 +21,7 @@ import os, sys, traceback, math
  
  RUN_FROM_DIR = os.path.abspath(os.path.dirname(sys.argv[0])) + '/'
@@ -10,7 +10,19 @@ $OpenBSD: patch-flyback_py,v 1.1.1.1 2008/04/14 13:39:51 jasper Exp $
  
  DEFAULT_EXCLUDES = [
      '/**/.thumbnails/',
-@@ -327,7 +327,7 @@ class main_gui:
+@@ -243,7 +243,10 @@ class main_gui:
+                 files.extend(not_dirs)
+             for file in files:
+                 full_file_name = os.path.join( focus_dir, file )
+-                file_stats = os.stat(full_file_name)
++                try:
++                   file_stats = os.stat(full_file_name)
++                except os.error:
++                   pass
+                 color = False
+ #                print 'full_file_name', full_file_name
+ #                print 'file_stats', file_stats
+@@ -327,7 +330,7 @@ class main_gui:
      def __init__(self):
          
          gnome.init("programname", "version")
@@ -19,7 +31,7 @@ $OpenBSD: patch-flyback_py,v 1.1.1.1 2008/04/14 13:39:51 jasper Exp $
          o = self
          self.backup = backup(o)
          
-@@ -589,13 +589,13 @@ class prefs_gui:
+@@ -589,13 +592,13 @@ class prefs_gui:
      def install_crontab(self, c):
          existing_crons = []
          
@@ -35,7 +47,7 @@ $OpenBSD: patch-flyback_py,v 1.1.1.1 2008/04/14 13:39:51 jasper Exp $
          stdin.close()
          stdout.close()
  
-@@ -631,7 +631,7 @@ class prefs_gui:
+@@ -631,7 +634,7 @@ class prefs_gui:
          # init external_storage_location
          external_storage_location = client.get_string("/apps/flyback/external_storage_location")
          if not external_storage_location:

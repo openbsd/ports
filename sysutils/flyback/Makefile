@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/14 13:39:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/06/26 10:21:03 ajacoutot Exp $
 
 COMMENT=		Time Machine-like backup tool
 
 DISTNAME=		flyback_0.4.0
-PKGNAME=		${DISTNAME:S/_/-/}
+PKGNAME=		${DISTNAME:S/_/-/}p0
 CATEGORIES=		sysutils x11
 
 HOMEPAGE=		http://flyback-project.org/
@@ -22,7 +22,8 @@ MODULES=		lang/python
 
 RUN_DEPENDS=		::databases/py-sqlite \
 			::net/rsync \
-			::x11/gnome/py-gnome
+			::x11/gnome/py-gnome \
+			:desktop-file-utils-*:devel/desktop-file-utils
 
 NO_REGRESS=		Yes
 NO_BUILD=		Yes
@@ -41,10 +42,14 @@ pre-configure:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/flyback
 	${INSTALL_DATA_DIR} ${WRKINST}/${MODPY_SITEPKG}/flyback
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_SCRIPT} ${WRKSRC}/flyback ${PREFIX}/bin/flyback
 	${INSTALL_DATA} ${WRKSRC}/GPL.txt ${WRKSRC}/viewer.glade \
 		${PREFIX}/share/flyback
 	find ${WRKSRC} -name \*.py -exec \
 		${INSTALL_DATA} {} ${WRKINST}/${MODPY_SITEPKG}/flyback \;
+	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
+		< ${FILESDIR}/flyback.desktop > \
+			${PREFIX}/share/applications/flyback.desktop
 
 .include <bsd.port.mk>
