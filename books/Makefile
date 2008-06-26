@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/11/25 22:12:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2008/06/26 08:50:22 sthen Exp $
 
      SUBDIR += AsteriskTFOT
      SUBDIR += JLS
@@ -12,6 +12,7 @@
      SUBDIR += mason-book
      SUBDIR += vol3ol
      SUBDIR += vol6a
+     SUBDIR += wndw
      SUBDIR += zopebook
 
 .include <bsd.port.subdir.mk>
