@@ -1,0 +1,21 @@
+$OpenBSD: patch-conf_hatchet_conf,v 1.1.1.1 2008/06/27 15:16:01 jdixon Exp $
+--- conf/hatchet.conf.orig	Mon Jun 23 21:37:32 2008
++++ conf/hatchet.conf	Mon Jun 23 21:38:15 2008
+@@ -18,7 +18,7 @@ $log = '/var/log/pflog';
+ ### Where to send notices to
+ $admin_email = 'root@localhost';
+ ### Non-chrooted SQLite database location
+-$db_file = '/var/www/hatchet/db/pflog.db';
++$db_file = '${PREFIX}/hatchet/db/pflog.db';
+ 
+ ##########################################
+ # HATCHART
+@@ -30,7 +30,7 @@ $width = 500;
+ ### Height of pie chart
+ $height = 400;
+ ### Where to write charts
+-$graphs_dir = '/var/www/hatchet/graphs';
++$graphs_dir = '${PREFIX}/hatchet/graphs';
+ 
+ ##########################################
+ # CGI

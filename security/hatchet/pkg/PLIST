@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/27 15:16:01 jdixon Exp $
+@owner root
+@group daemon
+hatchet/
+hatchet/cgi/
+@group bin
+hatchet/cgi/events.pl
+hatchet/cgi/rule.pl
+hatchet/cgi/startup.pl
+@group daemon
+hatchet/cgi/templates/
+@group bin
+hatchet/cgi/templates/output.tmpl
+hatchet/cgi/templates/rule.tmpl
+@group daemon
+hatchet/conf/
+@group bin
+hatchet/conf/hatchet.conf
+@group daemon
+hatchet/css/
+@group bin
+hatchet/css/default.css
+@group daemon
+hatchet/db/
+hatchet/docs/
+@group bin
+hatchet/docs/CHANGELOG
+hatchet/docs/INSTALL
+hatchet/docs/LICENSE
+hatchet/docs/README
+hatchet/docs/README.OpenBSD
+@group daemon
+hatchet/graphs/
+hatchet/sbin/
+@group bin
+hatchet/sbin/hatchart
+hatchet/sbin/hatchet
+hatchet/sbin/hatchet_mkdb
+@mode 1777
+@group daemon
+hatchet/tmp/

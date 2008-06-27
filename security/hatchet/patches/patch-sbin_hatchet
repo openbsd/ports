@@ -1,0 +1,12 @@
+$OpenBSD: patch-sbin_hatchet,v 1.1.1.1 2008/06/27 15:16:01 jdixon Exp $
+--- sbin/hatchet.orig	Thu Jun 26 17:21:36 2008
++++ sbin/hatchet	Thu Jun 26 17:22:20 2008
+@@ -11,7 +11,7 @@ use DBI;
+ use Time::Local qw( timelocal_nocheck );
+ 
+ our ($db_file, $stale, $log, $tcpdump, $admin_email);
+-require "/var/www/hatchet/conf/hatchet.conf";
++require "${PREFIX}/hatchet/conf/hatchet.conf";
+ 
+ my $dbh = DBI->connect("DBI:SQLite:dbname=$db_file", "", "") || die $DBI::errstr;
+ $dbh->{AutoCommit} = 0;

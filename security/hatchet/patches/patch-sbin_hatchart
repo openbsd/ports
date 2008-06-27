@@ -1,0 +1,12 @@
+$OpenBSD: patch-sbin_hatchart,v 1.1.1.1 2008/06/27 15:16:01 jdixon Exp $
+--- sbin/hatchart.orig	Thu Jun 26 17:21:31 2008
++++ sbin/hatchart	Thu Jun 26 17:22:09 2008
+@@ -12,7 +12,7 @@ use DBD::Chart;
+ use Time::Local qw( timelocal );
+ 
+ our ($db_file, $ipv6, $max_wedges, $width, $height, $graphs_dir);
+-require "/var/www/hatchet/conf/hatchet.conf";
++require "${PREFIX}/hatchet/conf/hatchet.conf";
+ 
+ my $dbh = DBI->connect("DBI:SQLite:dbname=$db_file", "", "") || die $DBI::errstr;
+ my $date = get_date();
