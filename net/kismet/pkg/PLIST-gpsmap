@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gpsmap,v 1.1 2005/10/07 14:13:57 bernd Exp $
-bin/gpsmap
+@comment $OpenBSD: PLIST-gpsmap,v 1.2 2008/06/27 22:10:14 kili Exp $
+@bin bin/gpsmap
 @comment bin/gpsmap-helper-earthamaps
 @man man/man1/gpsmap.1

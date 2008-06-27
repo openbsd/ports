@@ -1,13 +1,38 @@
-$OpenBSD: patch-gpsmap_cc,v 1.4 2007/06/28 12:43:32 kili Exp $
+$OpenBSD: patch-gpsmap_cc,v 1.5 2008/06/27 22:10:14 kili Exp $
 
+# Disable map sources known to be broken.
 # Use our ftp(1) instead of wget.
-# Unbreak on 64bit archs (and just simplify).
+# Fix OSM map source (OSM already provides PNGs, not GIFs).
+# If the first attempt to load the image fails, reset the exception,
+# because ImageMagick would bail out on the second attempt (after the
+# download).
 
---- gpsmap.cc.orig	Sat May 20 21:41:16 2006
-+++ gpsmap.cc	Mon Jun 25 13:36:14 2007
-@@ -99,8 +99,8 @@ const char url_template_em[] = "gpsmap-helper-earthama
+--- gpsmap.cc.orig	Thu May  8 23:48:35 2008
++++ gpsmap.cc	Sat Jun 21 18:36:19 2008
+@@ -90,24 +90,24 @@ const char *config_base = "kismet.conf";
+ // Broken map sources...  Damn vendors changing.
+ // Mappoint
+ // const char url_template_mp[] = "http://msrvmaps.mappoint.net/isapi/MSMap.dll?ID=3XNsF.&C=%f,%f&L=USA&CV=1&A=%ld&S=%d,%d&O=0.000000,0.000000&MS=0&P=|5748|";
++// Terraserver photo-maps and topo maps
++// const char url_template_ts[] = "http://terraservice.net/GetImageArea.ashx?t=1&lat=%f&lon=%f&s=%ld&w=%d&h=%d";
++// const char url_template_tt[] = "http://terraservice.net/GetImageArea.ashx?t=2&lat=%f&lon=%f&s=%ld&w=%d&h=%d";
+ 
++// Earthamaps need a perl helper script to get data because of cookies
++// const char url_template_em[] = "gpsmap-helper-earthamaps %s %f %f %d %d %ld";
+ // Mapblast
+ const char url_template_mb[] = "http://go.vicinity.com/homedepotvd/MakeMap.d?&CT=%f:%f:%ld&IC=&W=%d&H=%d&FAM=mblast&LB=%s";
+ 
+-// Terraserver photo-maps and topo maps
+-const char url_template_ts[] = "http://terraservice.net/GetImageArea.ashx?t=1&lat=%f&lon=%f&s=%ld&w=%d&h=%d";
+-const char url_template_tt[] = "http://terraservice.net/GetImageArea.ashx?t=2&lat=%f&lon=%f&s=%ld&w=%d&h=%d";
+ // Tiger census vector maps
+ const char url_template_ti[] = "http://tiger.census.gov/cgi-bin/mapper/map.gif?lat=%f&lon=%f&wid=0.001&ht=%f&iwd=%d&iht=%d&on=majroads&on=places&on=shorelin&on=streets&on=interstate&on=statehwy&on=ushwy&on=water&tlevel=-&tvar=-&tmeth=i";
+-// Earthamaps need a perl helper script to get data because of cookies
+-const char url_template_em[] = "gpsmap-helper-earthamaps %s %f %f %d %d %ld";
  
  const char url_template_euex[] = "http://www.expedia.de/pub/agent.dll?qscr=mrdt&ID=3XNsF.&CenP=%f,%f&Lang=%s&Alti=%ld&Size=%d,%d&Offs=0.000000,0.000000&BCheck=1";
+ 
+ const char url_template_osm[] = "http://tah.openstreetmap.org/MapOf/?lat=%f&long=%f&z=%d&w=%d&h=%d&format=png";
  
 -// Download template for sources that we fetch using wget
 -const char download_template[] = "wget \"%s\" -O %s";
@@ -16,25 +41,175 @@ $OpenBSD: patch-gpsmap_cc,v 1.4 2007/06/28 12:43:32 kili Exp $
  
  // Image scales we try to autofetch
  long int scales[] = { 1000, 2000, 5000, 10000, 20000, 30000, 50000, 60000, 
-@@ -2242,11 +2242,8 @@ void DrawNetPower(vector<gps_network *> in_nets, Image
-     pthread_attr_destroy(&attr);
+@@ -1512,29 +1512,6 @@ int BestMapScale(long int *in_mapscale, long int *in_f
+     double mapx, mapy;
+     double map2x, map2y;
  
-     // Now wait for the threads to complete and come back
--    int thread_status;
-     for (int t = 0; t < numthreads; t++) {
--        void *tmp;
--        pthread_join(mapthread[t], &tmp);
--	thread_status = reinterpret_cast<int>(tmp);
-+        pthread_join(mapthread[t], NULL);
+-    if ((mapsource == MAPSOURCE_TERRA) || (mapsource == MAPSOURCE_TERRATOPO)) {
+-        for (int x = 0; terrascales[x] != -1; x++) {
+-            calcxy(&mapx, &mapy, tlat, tlon, 
+-                    (double) terrascales[x]/PIXELFACT, 
+-                    map_avg_lat, map_avg_lon);
+-            calcxy(&map2x, &map2y, blat, blon, 
+-                    (double) terrascales[x]/PIXELFACT, 
+-                    map_avg_lat, map_avg_lon);
+-
+-            if ((mapx < 0 || mapx > map_width || mapy < 0 || 
+-                        mapy > map_height) ||
+-                    (map2x < 0 || map2x > map_width || 
+-                     map2y < 0 || map2y > map_height)) {
+-                continue;
+-            } else {
+-                (*in_mapscale) = terrascales[x];
+-                (*in_fetchscale) = x + 10;
+-                return 1;
+-            }
+-        }
+-        return -1;
+-    }
+-
+     if (mapsource == MAPSOURCE_EUEX) {
+         for (int x = 0; euexscales[x] != -1; x++) {
+             calcxy(&mapx, &mapy, tlat, tlon, 
+@@ -1581,35 +1558,6 @@ int BestMapScale(long int *in_mapscale, long int *in_f
+         return -1;
      }
- #else
-     // Run one instance of our "thread".  thread number 0, it should just crunch it all
-@@ -4219,7 +4216,7 @@ int main(int argc, char *argv[]) {
-             }
-         } else {
-             char geturl[1024];
+ 
+-    if (mapsource == MAPSOURCE_EARTHAMAPS) {
+-        // Find how many scales we have
+-        int nscales;
+-        for (nscales = 0; earthamapscales[nscales] != -1; nscales++) 
+-            ; // Nothing
+-
+-        for (int x = (nscales - 1); x > 1; x--) {
+-            calcxy(&mapx, &mapy, tlat, tlon, 
+-                    (double) earthamapscales[x]/PIXELFACT, 
+-                    map_avg_lat, map_avg_lon);
+-            calcxy(&map2x, &map2y, blat, blon, 
+-                    (double) earthamapscales[x]/PIXELFACT, 
+-                    map_avg_lat, map_avg_lon);
+-
+-            if ((mapx < 0 || mapx > map_width || mapy < 0 || 
+-                        mapy > map_height) ||
+-                    (map2x < 0 || map2x > map_width || 
+-                     map2y < 0 || map2y > map_height)) {
+-                continue;
+-            } else {
+-                (*in_mapscale) = earthamapscales[x];
+-                (*in_fetchscale) = x;
+-                return 1;
+-            }
+-        }
+-
+-        return -1;
+-    }
+-
+     // Mapblast style scale finding
+     for (int x = 0; scales[x] != -1; x++) {
+         calcxy(&mapx, &mapy, tlat, tlon, (double) scales[x]/PIXELFACT, 
+@@ -4016,30 +3964,6 @@ int main(int argc, char *argv[]) {
+     // Some day this needs to get rewritten to not be using a source that doesn't
+     // work anymore as the internal reference point.
+     
+-    if (((mapsource == MAPSOURCE_TERRA) || 
+-         (mapsource == MAPSOURCE_TERRATOPO)) && user_scale != 0) {
+-        // It's way too much of a kludge to muck with munging the scale around
+-        if ((user_scale < 10) || (user_scale > 16)) {
+-            fprintf(stderr, "FATAL: You must provide a scale with the -s "
+-                    "option that is from 10 to 16\n");
+-            exit(0);
+-        }
+-        fetch_scale = user_scale;
+-        map_scale = user_scale = terrascales[(user_scale - 10)];
+-    }
+-
+-    // Require the user to specify a scale between 2 and 15, then set
+-    // {map,user}_scale to the cooresponding element in earthamapscales[].
+-    if (mapsource == MAPSOURCE_EARTHAMAPS && user_scale != 0) {
+-        if ((user_scale < 2) || (user_scale > 15)) {
+-            fprintf(stderr, "FATAL: You must provide a scale with the -s "
+-                    "option that is from 2 to 15\n");
+-            exit(0);
+-        }
+-        fetch_scale = user_scale;
+-        map_scale   = user_scale = earthamapscales[user_scale];
+-    }
+-
+     if (ap_manuf_name != NULL) {
+         char pathname[1024];
+ 
+@@ -4181,8 +4105,9 @@ int main(int argc, char *argv[]) {
+     }
+ 
+     if (!usermap) {
+-        snprintf(mapname, 1024, "map_%f_%f_%ld_%d_%d.gif", map_avg_lat, 
+-                 map_avg_lon, map_scale, map_width, map_height);
++        snprintf(mapname, 1024, "map_%f_%f_%ld_%d_%d.%s", map_avg_lat, 
++                 map_avg_lon, map_scale, map_width, map_height,
++		 mapsource == MAPSOURCE_OSM ? "png" : "gif");
+     }
+ 
+     if (useroutmap == false)
+@@ -4227,7 +4152,10 @@ int main(int argc, char *argv[]) {
+             exit(1);
+         }
+ 
+-        if (mapsource == MAPSOURCE_MAPPOINT) {
++        if (mapsource == MAPSOURCE_MAPPOINT
++		|| mapsource == MAPSOURCE_TERRA
++		|| mapsource == MAPSOURCE_EARTHAMAPS
++		|| mapsource == MAPSOURCE_TERRATOPO) {
+             fprintf(stderr, "The source you selected is known to be broken.  "
+                     "Support remains for this source only if previously "
+                     "downloaded maps are available, because the map vendor has "
+@@ -4242,18 +4170,9 @@ int main(int argc, char *argv[]) {
+             snprintf(url, 1024, url_template_mb, map_avg_lat, map_avg_lon, 
+                      map_scale, map_width, map_height, 
+                      metric ? "&DU=KM" : "");
+-        } else if (mapsource == MAPSOURCE_TERRA) {
+-            snprintf(url, 1024, url_template_ts, map_avg_lat, map_avg_lon, 
+-                     fetch_scale, map_width, map_height);
+-        } else if (mapsource == MAPSOURCE_TERRATOPO) {
+-            snprintf(url, 1024, url_template_tt, map_avg_lat, map_avg_lon, 
+-                     fetch_scale, map_width, map_height);
+         } else if (mapsource == MAPSOURCE_TIGER) {
+             snprintf(url, 1024, url_template_ti, map_avg_lat, map_avg_lon, 
+                      (map_scale / 300000.0), map_width, map_height);
+-        } else if (mapsource == MAPSOURCE_EARTHAMAPS) {
+-            snprintf(url, 1024, url_template_em, mapname, map_avg_lat, 
+-                     map_avg_lon, map_width, map_height, fetch_scale);
+         } else if (mapsource == MAPSOURCE_EUEX) {
+ 	    fetch_scale = (long) (map_scale / 3950);
+ 	    char loc[8] = "USA0409";
+@@ -4294,24 +4213,16 @@ int main(int argc, char *argv[]) {
+ 		printf("Map url: %s\n", url);
+         printf("Fetching map...\n");
+ 
+-        if (mapsource == MAPSOURCE_EARTHAMAPS) {
+-            int retval	= system(url);
++        char geturl[1024];
++        snprintf(geturl, 1024, download_template, mapname, url);
++        if (system(geturl)!=0) {
++	    fprintf(stderr, "WARNING: failed to execute '%s'\n", geturl);
++	    exit(1);
++	}
+ 
+-            if (retval != 0) {
+-                fprintf(stderr, "Could not run %s: %s\n", url, strerror(retval));
+-                exit(1);
+-            }
+-        } else {
+-            char geturl[1024];
 -            snprintf(geturl, 1024, download_template, url, mapname);
-+            snprintf(geturl, 1024, download_template, mapname, url);
-             if (system(geturl)!=0) {
- 	      fprintf(stderr, "WARNING: failed to execute '%s'\n", geturl);
- 	      exit(1);
+-            if (system(geturl)!=0) {
+-	      fprintf(stderr, "WARNING: failed to execute '%s'\n", geturl);
+-	      exit(1);
+-	    }
+-        }
+-
+         printf("Loading map into Imagemagick structures.\n");
+         strcpy(img_info->filename, mapname);
++	ClearMagickException(&im_exception);
+         img = ReadImage(img_info, &im_exception);
+ 
+         if (img == (Image *) NULL) {

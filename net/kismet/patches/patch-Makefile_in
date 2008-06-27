@@ -1,22 +1,20 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2007/11/10 21:10:42 kili Exp $
+$OpenBSD: patch-Makefile_in,v 1.6 2008/06/27 22:10:14 kili Exp $
 
 # Don't hard code -O2 -Wall.
 # Use BSD_INSTALL_* macros for installation.
 
---- Makefile.in.orig	Sun Sep  9 23:01:20 2007
-+++ Makefile.in	Wed Sep 12 22:02:32 2007
-@@ -21,8 +21,8 @@ LD	= @CXX@
- LDFLAGS	= @LDFLAGS@
+--- Makefile.in.orig	Thu May 29 21:18:26 2008
++++ Makefile.in	Sun Jun  1 13:16:18 2008
+@@ -22,7 +22,7 @@ LDFLAGS	= @LDFLAGS@
  LIBS	= @LIBS@
  CLIBS   = @CLIBS@
--CFLAGS	= @CPPFLAGS@
+ CFLAGS	= @CFLAGS@
 -CXXFLAGS = -O2 -Wall -DVERSION_MAJOR=\"$(VERSION_MAJOR)\" -DVERSION_MINOR=\"$(VERSION_MINOR)\" -DVERSION_TINY=\"$(VERSION_TINY)\" -DTIMESTAMP=\"`cat TIMESTAMP`\" @CXXFLAGS@
-+CFLAGS	= @CFLAGS@
 +CXXFLAGS = -DVERSION_MAJOR=\"$(VERSION_MAJOR)\" -DVERSION_MINOR=\"$(VERSION_MINOR)\" -DVERSION_TINY=\"$(VERSION_TINY)\" -DTIMESTAMP=\"`cat TIMESTAMP`\" @CXXFLAGS@
  CPPFLAGS = @CPPFLAGS@
  SUID	= @suid@
  
-@@ -137,53 +137,55 @@ checkuiconfig:
+@@ -138,53 +138,55 @@ checkuiconfig:
  		echo "latest version is `grep version= conf/kismet_ui.conf | cut -f 2 -d=`"; \
  	fi
  
@@ -107,7 +105,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/11/10 21:10:42 kili Exp $
  
  	@if test -f $(BIN)/kismet_curses; then \
  		echo "Removing old kismet_curses binary.  The panels frontend is now kismet_client."; \
-@@ -196,22 +198,22 @@ suidinstall: $(PS) $(DRONE) $(NC) $(GPSLBUILD) $(ZAURU
+@@ -197,22 +199,22 @@ suidinstall: $(PS) $(DRONE) $(WRAP) $(NC) $(GPSLBUILD)
  	@if test -f $(ETC)/kismet.conf; then \
  		$(MAKE) -e checkconfig; \
      else \
@@ -136,7 +134,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/11/10 21:10:42 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; \
  	fi
  	@echo "Installed kismet into $(BIN)/."
-@@ -229,22 +231,22 @@ install: $(PS) $(DRONE) $(NC) $(GPSLBUILD) $(ZAURUSBUI
+@@ -230,22 +232,22 @@ install: $(PS) $(DRONE) $(NC) $(WRAP) $(GPSLBUILD) $(Z
  	@if test -f $(ETC)/kismet.conf; then \
  		$(MAKE) -e checkconfig; \
      else \
@@ -165,7 +163,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/11/10 21:10:42 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; \
  	fi
  	@echo "Installed kismet into $(BIN)/."
-@@ -260,11 +262,11 @@ install: $(PS) $(DRONE) $(NC) $(GPSLBUILD) $(ZAURUSBUI
+@@ -261,11 +263,11 @@ install: $(PS) $(DRONE) $(NC) $(WRAP) $(GPSLBUILD) $(Z
  forceinstall: $(PS)
  	$(MAKE) -e commoninstall
  	$(MAKE) -e binuserinstall
@@ -180,7 +178,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/11/10 21:10:42 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; 
  	@echo "Installed kismet into $(BIN)/."
  	@echo "If you have not done so already, read the README file and the FAQ file.  Additional"
-@@ -279,11 +281,11 @@ forceinstall: $(PS)
+@@ -280,11 +282,11 @@ forceinstall: $(PS)
  suidforceinstall: $(PS)
  	$(MAKE) -e commoninstall
  	$(MAKE) -e binsuidinstall
@@ -195,7 +193,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/11/10 21:10:42 kili Exp $
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; 
  	@echo "Installed kismet into $(BIN)/."
  	@echo "If you have not done so already, read the README file and the FAQ file.  Additional"
-@@ -367,13 +369,11 @@ depend:
+@@ -371,13 +373,11 @@ depend:
  	@$(MAKE) $(DEPEND)
  
  $(DEPEND):

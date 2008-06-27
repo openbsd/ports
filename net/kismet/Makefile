@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2008/06/12 21:58:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2008/06/27 22:10:14 kili Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -8,10 +8,10 @@ COMMENT-gpsmap=	reads GPS and Network XML datafiles and plots networks
 # No wireless capabilities
 NOT_FOR_ARCHS=m68k m88k vax
 
-V=		2007-10-R1
+V=		2008-05-R1
 DISTNAME=	kismet-${V}
 PKGNAME-main=	kismet-${V:S,-,,g}
-PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}p0
+PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.kismetwireless.net/
@@ -32,7 +32,8 @@ CONFDIR=		${SYSCONFDIR}/kismet
 SUBST_VARS+=		CONFDIR
 
 CONFIGURE_ARGS=		--sysconfdir=${CONFDIR} \
-			--mandir=${PREFIX}/man
+			--mandir=${PREFIX}/man \
+			--disable-dbus
 
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
