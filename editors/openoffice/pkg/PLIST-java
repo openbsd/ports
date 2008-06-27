@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.4 2007/11/13 09:46:28 robert Exp $
+@comment $OpenBSD: PLIST-java,v 1.5 2008/06/27 13:11:11 kurt Exp $
 %%SHARED%%
 openoffice/program/JREProperties.class
 openoffice/program/classes/
@@ -42,7 +42,7 @@ openoffice/program/classes/xalan.jar
 openoffice/program/classes/xercesImpl.jar
 openoffice/program/classes/xmerge.jar
 openoffice/program/classes/xml-apis.jar
-openoffice/program/javaldx
+@bin openoffice/program/javaldx
 openoffice/share/Scripts/java/
 openoffice/share/Scripts/java/HelloWorld/
 openoffice/share/Scripts/java/HelloWorld/HelloWorld.jar

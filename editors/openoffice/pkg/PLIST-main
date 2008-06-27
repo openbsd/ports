@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2008/05/21 06:36:58 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2008/06/27 13:11:11 kurt Exp $
 @pkgpath editors/openoffice
 %%SHARED%%
 bin/sbase
@@ -204,12 +204,12 @@ openoffice/program/bootstrap.uno.so
 openoffice/program/bootstraprc
 openoffice/program/cde-open-url
 openoffice/program/configimport
-openoffice/program/configimport.bin
+@bin openoffice/program/configimport.bin
 openoffice/program/configmgrrc
 openoffice/program/gengal
-openoffice/program/gengal.bin
+@bin openoffice/program/gengal.bin
 openoffice/program/gnome-open-url
-openoffice/program/gnome-open-url.bin
+@bin openoffice/program/gnome-open-url.bin
 openoffice/program/hid.lst
 openoffice/program/intro.bmp
 openoffice/program/jvmfwk3rc
@@ -232,17 +232,17 @@ openoffice/program/libuno_purpenvhelpergcc3.so.3
 openoffice/program/libuno_sal.so.3
 openoffice/program/libuno_salhelpergcc3.so.3
 openoffice/program/mailmerge.py
-openoffice/program/msfontextract
+@bin openoffice/program/msfontextract
 openoffice/program/officehelper.py
 openoffice/program/open-url
-openoffice/program/pagein
+@bin openoffice/program/pagein
 openoffice/program/pagein-calc
 openoffice/program/pagein-common
 openoffice/program/pagein-draw
 openoffice/program/pagein-impress
 openoffice/program/pagein-writer
 openoffice/program/pkgchk
-openoffice/program/pkgchk.bin
+@bin openoffice/program/pkgchk.bin
 openoffice/program/pythonloader.py
 openoffice/program/pythonloader.unorc
 openoffice/program/pythonscript.py
@@ -323,28 +323,28 @@ openoffice/program/sdraw
 openoffice/program/senddoc
 openoffice/program/services.rdb
 openoffice/program/setofficelang
-openoffice/program/setofficelang.bin
+@bin openoffice/program/setofficelang.bin
 openoffice/program/setuprc
 openoffice/program/simpress
 openoffice/program/smath
 openoffice/program/soffice
-openoffice/program/soffice.bin
+@bin openoffice/program/soffice.bin
 openoffice/program/sofficerc
 openoffice/program/spadmin
-openoffice/program/spadmin.bin
+@bin openoffice/program/spadmin.bin
 openoffice/program/stocservices.uno.so
 openoffice/program/swriter
-openoffice/program/testtool.bin
+@bin openoffice/program/testtool.bin
 openoffice/program/testtoolrc
 openoffice/program/types.rdb
 openoffice/program/uno
-openoffice/program/uno.bin
+@bin openoffice/program/uno.bin
 openoffice/program/uno.py
 openoffice/program/unohelper.py
 openoffice/program/unopkg
-openoffice/program/unopkg.bin
+@bin openoffice/program/unopkg.bin
 openoffice/program/unorc
-openoffice/program/uri-encode
+@bin openoffice/program/uri-encode
 openoffice/program/vbaapi.oxt
 openoffice/program/versionrc
 openoffice/program/viewdoc
@@ -2975,7 +2975,6 @@ share/applications/openoffice/draw.desktop
 share/applications/openoffice/impress.desktop
 share/applications/openoffice/math.desktop
 share/applications/openoffice/writer.desktop
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/ooo-base.png
 share/icons/hicolor/48x48/apps/ooo-calc.png
 share/icons/hicolor/48x48/apps/ooo-draw.png
