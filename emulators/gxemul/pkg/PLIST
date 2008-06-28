@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/01/31 20:44:55 okan Exp $
-bin/gxemul
+@comment $OpenBSD: PLIST,v 1.12 2008/06/28 13:05:39 brad Exp $
+@bin bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
 share/doc/gxemul/20040504-ultrix45-boot1.png
