@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2008/01/18 15:52:55 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2008/06/28 12:34:58 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.5,<1.6
 @pkgpath devel/jdk/1.5,native_bootstrap
@@ -8,76 +8,76 @@ ${JDKHOME}/COPYRIGHT
 ${JDKHOME}/LICENSE
 ${JDKHOME}/README.html
 ${JDKHOME}/bin/
-${JDKHOME}/bin/appletviewer
-${JDKHOME}/bin/appletviewer_g
-${JDKHOME}/bin/apt
-${JDKHOME}/bin/apt_g
-${JDKHOME}/bin/extcheck
-${JDKHOME}/bin/extcheck_g
-${JDKHOME}/bin/idlj
-${JDKHOME}/bin/idlj_g
-${JDKHOME}/bin/jar
-${JDKHOME}/bin/jar_g
-${JDKHOME}/bin/jarsigner
-${JDKHOME}/bin/jarsigner_g
-${JDKHOME}/bin/java
-${JDKHOME}/bin/java_g
-${JDKHOME}/bin/javac
-${JDKHOME}/bin/javac_g
-${JDKHOME}/bin/javadoc
-${JDKHOME}/bin/javadoc_g
-${JDKHOME}/bin/javah
-${JDKHOME}/bin/javah_g
-${JDKHOME}/bin/javap
-${JDKHOME}/bin/javap_g
-${JDKHOME}/bin/jconsole
-${JDKHOME}/bin/jconsole_g
-${JDKHOME}/bin/jdb
-${JDKHOME}/bin/jdb_g
-${JDKHOME}/bin/jinfo
-${JDKHOME}/bin/jinfo_g
-${JDKHOME}/bin/jmap
-${JDKHOME}/bin/jmap_g
-${JDKHOME}/bin/jps
-${JDKHOME}/bin/jps_g
-${JDKHOME}/bin/jsadebugd
-${JDKHOME}/bin/jsadebugd_g
-${JDKHOME}/bin/jstack
-${JDKHOME}/bin/jstack_g
-${JDKHOME}/bin/jstat
-${JDKHOME}/bin/jstat_g
-${JDKHOME}/bin/jstatd
-${JDKHOME}/bin/jstatd_g
-${JDKHOME}/bin/keytool
-${JDKHOME}/bin/keytool_g
-${JDKHOME}/bin/kinit
-${JDKHOME}/bin/kinit_g
-${JDKHOME}/bin/klist
-${JDKHOME}/bin/klist_g
-${JDKHOME}/bin/ktab
-${JDKHOME}/bin/ktab_g
-${JDKHOME}/bin/native2ascii
-${JDKHOME}/bin/native2ascii_g
-${JDKHOME}/bin/orbd
-${JDKHOME}/bin/orbd_g
-${JDKHOME}/bin/pack200
-${JDKHOME}/bin/pack200_g
-${JDKHOME}/bin/policytool
-${JDKHOME}/bin/policytool_g
-${JDKHOME}/bin/rmic
-${JDKHOME}/bin/rmic_g
-${JDKHOME}/bin/rmid
-${JDKHOME}/bin/rmid_g
-${JDKHOME}/bin/rmiregistry
-${JDKHOME}/bin/rmiregistry_g
-${JDKHOME}/bin/serialver
-${JDKHOME}/bin/serialver_g
-${JDKHOME}/bin/servertool
-${JDKHOME}/bin/servertool_g
-${JDKHOME}/bin/tnameserv
-${JDKHOME}/bin/tnameserv_g
-${JDKHOME}/bin/unpack200
-${JDKHOME}/bin/unpack200_g
+@bin ${JDKHOME}/bin/appletviewer
+@bin ${JDKHOME}/bin/appletviewer_g
+@bin ${JDKHOME}/bin/apt
+@bin ${JDKHOME}/bin/apt_g
+@bin ${JDKHOME}/bin/extcheck
+@bin ${JDKHOME}/bin/extcheck_g
+@bin ${JDKHOME}/bin/idlj
+@bin ${JDKHOME}/bin/idlj_g
+@bin ${JDKHOME}/bin/jar
+@bin ${JDKHOME}/bin/jar_g
+@bin ${JDKHOME}/bin/jarsigner
+@bin ${JDKHOME}/bin/jarsigner_g
+@bin ${JDKHOME}/bin/java
+@bin ${JDKHOME}/bin/java_g
+@bin ${JDKHOME}/bin/javac
+@bin ${JDKHOME}/bin/javac_g
+@bin ${JDKHOME}/bin/javadoc
+@bin ${JDKHOME}/bin/javadoc_g
+@bin ${JDKHOME}/bin/javah
+@bin ${JDKHOME}/bin/javah_g
+@bin ${JDKHOME}/bin/javap
+@bin ${JDKHOME}/bin/javap_g
+@bin ${JDKHOME}/bin/jconsole
+@bin ${JDKHOME}/bin/jconsole_g
+@bin ${JDKHOME}/bin/jdb
+@bin ${JDKHOME}/bin/jdb_g
+@bin ${JDKHOME}/bin/jinfo
+@bin ${JDKHOME}/bin/jinfo_g
+@bin ${JDKHOME}/bin/jmap
+@bin ${JDKHOME}/bin/jmap_g
+@bin ${JDKHOME}/bin/jps
+@bin ${JDKHOME}/bin/jps_g
+@bin ${JDKHOME}/bin/jsadebugd
+@bin ${JDKHOME}/bin/jsadebugd_g
+@bin ${JDKHOME}/bin/jstack
+@bin ${JDKHOME}/bin/jstack_g
+@bin ${JDKHOME}/bin/jstat
+@bin ${JDKHOME}/bin/jstat_g
+@bin ${JDKHOME}/bin/jstatd
+@bin ${JDKHOME}/bin/jstatd_g
+@bin ${JDKHOME}/bin/keytool
+@bin ${JDKHOME}/bin/keytool_g
+@bin ${JDKHOME}/bin/kinit
+@bin ${JDKHOME}/bin/kinit_g
+@bin ${JDKHOME}/bin/klist
+@bin ${JDKHOME}/bin/klist_g
+@bin ${JDKHOME}/bin/ktab
+@bin ${JDKHOME}/bin/ktab_g
+@bin ${JDKHOME}/bin/native2ascii
+@bin ${JDKHOME}/bin/native2ascii_g
+@bin ${JDKHOME}/bin/orbd
+@bin ${JDKHOME}/bin/orbd_g
+@bin ${JDKHOME}/bin/pack200
+@bin ${JDKHOME}/bin/pack200_g
+@bin ${JDKHOME}/bin/policytool
+@bin ${JDKHOME}/bin/policytool_g
+@bin ${JDKHOME}/bin/rmic
+@bin ${JDKHOME}/bin/rmic_g
+@bin ${JDKHOME}/bin/rmid
+@bin ${JDKHOME}/bin/rmid_g
+@bin ${JDKHOME}/bin/rmiregistry
+@bin ${JDKHOME}/bin/rmiregistry_g
+@bin ${JDKHOME}/bin/serialver
+@bin ${JDKHOME}/bin/serialver_g
+@bin ${JDKHOME}/bin/servertool
+@bin ${JDKHOME}/bin/servertool_g
+@bin ${JDKHOME}/bin/tnameserv
+@bin ${JDKHOME}/bin/tnameserv_g
+@bin ${JDKHOME}/bin/unpack200
+@bin ${JDKHOME}/bin/unpack200_g
 ${JDKHOME}/demo/
 ${JDKHOME}/demo/applets/
 ${JDKHOME}/demo/applets/Animator/
@@ -1004,32 +1004,32 @@ ${JDKHOME}/jre/LICENSE
 ${JDKHOME}/jre/README
 ${JDKHOME}/jre/Welcome.html
 ${JDKHOME}/jre/bin/
-${JDKHOME}/jre/bin/java
-${JDKHOME}/jre/bin/java_g
-${JDKHOME}/jre/bin/keytool
-${JDKHOME}/jre/bin/keytool_g
-${JDKHOME}/jre/bin/kinit
-${JDKHOME}/jre/bin/kinit_g
-${JDKHOME}/jre/bin/klist
-${JDKHOME}/jre/bin/klist_g
-${JDKHOME}/jre/bin/ktab
-${JDKHOME}/jre/bin/ktab_g
-${JDKHOME}/jre/bin/orbd
-${JDKHOME}/jre/bin/orbd_g
-${JDKHOME}/jre/bin/pack200
-${JDKHOME}/jre/bin/pack200_g
-${JDKHOME}/jre/bin/policytool
-${JDKHOME}/jre/bin/policytool_g
-${JDKHOME}/jre/bin/rmid
-${JDKHOME}/jre/bin/rmid_g
-${JDKHOME}/jre/bin/rmiregistry
-${JDKHOME}/jre/bin/rmiregistry_g
-${JDKHOME}/jre/bin/servertool
-${JDKHOME}/jre/bin/servertool_g
-${JDKHOME}/jre/bin/tnameserv
-${JDKHOME}/jre/bin/tnameserv_g
-${JDKHOME}/jre/bin/unpack200
-${JDKHOME}/jre/bin/unpack200_g
+@bin ${JDKHOME}/jre/bin/java
+@bin ${JDKHOME}/jre/bin/java_g
+@bin ${JDKHOME}/jre/bin/keytool
+@bin ${JDKHOME}/jre/bin/keytool_g
+@bin ${JDKHOME}/jre/bin/kinit
+@bin ${JDKHOME}/jre/bin/kinit_g
+@bin ${JDKHOME}/jre/bin/klist
+@bin ${JDKHOME}/jre/bin/klist_g
+@bin ${JDKHOME}/jre/bin/ktab
+@bin ${JDKHOME}/jre/bin/ktab_g
+@bin ${JDKHOME}/jre/bin/orbd
+@bin ${JDKHOME}/jre/bin/orbd_g
+@bin ${JDKHOME}/jre/bin/pack200
+@bin ${JDKHOME}/jre/bin/pack200_g
+@bin ${JDKHOME}/jre/bin/policytool
+@bin ${JDKHOME}/jre/bin/policytool_g
+@bin ${JDKHOME}/jre/bin/rmid
+@bin ${JDKHOME}/jre/bin/rmid_g
+@bin ${JDKHOME}/jre/bin/rmiregistry
+@bin ${JDKHOME}/jre/bin/rmiregistry_g
+@bin ${JDKHOME}/jre/bin/servertool
+@bin ${JDKHOME}/jre/bin/servertool_g
+@bin ${JDKHOME}/jre/bin/tnameserv
+@bin ${JDKHOME}/jre/bin/tnameserv_g
+@bin ${JDKHOME}/jre/bin/unpack200
+@bin ${JDKHOME}/jre/bin/unpack200_g
 ${JDKHOME}/jre/lib/
 ${JDKHOME}/jre/lib/applet/
 ${JDKHOME}/jre/lib/audio/
@@ -1061,9 +1061,9 @@ ${JDKHOME}/jre/lib/fonts/LucidaTypewriterBold.ttf
 ${JDKHOME}/jre/lib/fonts/LucidaTypewriterRegular.ttf
 ${JDKHOME}/jre/lib/fonts/fonts.dir
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/awt_robot
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/awt_robot_g
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/gtkhelper
+@bin ${JDKHOME}/jre/lib/${MACHINE_ARCH}/awt_robot
+@bin ${JDKHOME}/jre/lib/${MACHINE_ARCH}/awt_robot_g
+@bin ${JDKHOME}/jre/lib/${MACHINE_ARCH}/gtkhelper
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/libmawt.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/libmawt_g.so

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.2 2008/01/18 16:08:05 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.3 2008/06/28 12:34:58 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.6,<1.7
 @pkgpath devel/jdk/1.6,-jre,native_bootstrap
@@ -8,16 +8,16 @@ ${JREHOME}/LICENSE
 ${JREHOME}/README
 ${JREHOME}/Welcome.html
 ${JREHOME}/bin/
-${JREHOME}/bin/java
-${JREHOME}/bin/keytool
-${JREHOME}/bin/orbd
-${JREHOME}/bin/pack200
-${JREHOME}/bin/policytool
-${JREHOME}/bin/rmid
-${JREHOME}/bin/rmiregistry
-${JREHOME}/bin/servertool
-${JREHOME}/bin/tnameserv
-${JREHOME}/bin/unpack200
+@bin ${JREHOME}/bin/java
+@bin ${JREHOME}/bin/keytool
+@bin ${JREHOME}/bin/orbd
+@bin ${JREHOME}/bin/pack200
+@bin ${JREHOME}/bin/policytool
+@bin ${JREHOME}/bin/rmid
+@bin ${JREHOME}/bin/rmiregistry
+@bin ${JREHOME}/bin/servertool
+@bin ${JREHOME}/bin/tnameserv
+@bin ${JREHOME}/bin/unpack200
 ${JREHOME}/lib/
 ${JREHOME}/lib/applet/
 ${JREHOME}/lib/audio/
@@ -54,7 +54,7 @@ ${JREHOME}/lib/fonts/fonts.dir
 ${JREHOME}/lib/${MACHINE_ARCH}/
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/libmawt.so
-${JREHOME}/lib/${MACHINE_ARCH}/jexec
+@bin ${JREHOME}/lib/${MACHINE_ARCH}/jexec
 ${JREHOME}/lib/${MACHINE_ARCH}/jli/
 ${JREHOME}/lib/${MACHINE_ARCH}/jli/libjli.so
 ${JREHOME}/lib/${MACHINE_ARCH}/jvm.cfg

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/03/19 18:05:46 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/06/28 12:34:58 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.7,<1.8
 ${JDKHOME}/
@@ -7,44 +7,44 @@ ${JDKHOME}/LICENSE
 ${JDKHOME}/README.html
 ${JDKHOME}/THIRD_PARTY_README
 ${JDKHOME}/bin/
-${JDKHOME}/bin/appletviewer
-${JDKHOME}/bin/apt
-${JDKHOME}/bin/extcheck
-${JDKHOME}/bin/idlj
-${JDKHOME}/bin/jar
-${JDKHOME}/bin/jarsigner
-${JDKHOME}/bin/java
-${JDKHOME}/bin/javac
-${JDKHOME}/bin/javadoc
-${JDKHOME}/bin/javah
-${JDKHOME}/bin/javap
-${JDKHOME}/bin/jconsole
-${JDKHOME}/bin/jdb
-${JDKHOME}/bin/jhat
-${JDKHOME}/bin/jinfo
-${JDKHOME}/bin/jmap
-${JDKHOME}/bin/jps
-${JDKHOME}/bin/jrunscript
-${JDKHOME}/bin/jsadebugd
-${JDKHOME}/bin/jstack
-${JDKHOME}/bin/jstat
-${JDKHOME}/bin/jstatd
-${JDKHOME}/bin/keytool
-${JDKHOME}/bin/native2ascii
-${JDKHOME}/bin/orbd
-${JDKHOME}/bin/pack200
-${JDKHOME}/bin/policytool
-${JDKHOME}/bin/rmic
-${JDKHOME}/bin/rmid
-${JDKHOME}/bin/rmiregistry
-${JDKHOME}/bin/schemagen
-${JDKHOME}/bin/serialver
-${JDKHOME}/bin/servertool
-${JDKHOME}/bin/tnameserv
-${JDKHOME}/bin/unpack200
-${JDKHOME}/bin/wsgen
-${JDKHOME}/bin/wsimport
-${JDKHOME}/bin/xjc
+@bin ${JDKHOME}/bin/appletviewer
+@bin ${JDKHOME}/bin/apt
+@bin ${JDKHOME}/bin/extcheck
+@bin ${JDKHOME}/bin/idlj
+@bin ${JDKHOME}/bin/jar
+@bin ${JDKHOME}/bin/jarsigner
+@bin ${JDKHOME}/bin/java
+@bin ${JDKHOME}/bin/javac
+@bin ${JDKHOME}/bin/javadoc
+@bin ${JDKHOME}/bin/javah
+@bin ${JDKHOME}/bin/javap
+@bin ${JDKHOME}/bin/jconsole
+@bin ${JDKHOME}/bin/jdb
+@bin ${JDKHOME}/bin/jhat
+@bin ${JDKHOME}/bin/jinfo
+@bin ${JDKHOME}/bin/jmap
+@bin ${JDKHOME}/bin/jps
+@bin ${JDKHOME}/bin/jrunscript
+@bin ${JDKHOME}/bin/jsadebugd
+@bin ${JDKHOME}/bin/jstack
+@bin ${JDKHOME}/bin/jstat
+@bin ${JDKHOME}/bin/jstatd
+@bin ${JDKHOME}/bin/keytool
+@bin ${JDKHOME}/bin/native2ascii
+@bin ${JDKHOME}/bin/orbd
+@bin ${JDKHOME}/bin/pack200
+@bin ${JDKHOME}/bin/policytool
+@bin ${JDKHOME}/bin/rmic
+@bin ${JDKHOME}/bin/rmid
+@bin ${JDKHOME}/bin/rmiregistry
+@bin ${JDKHOME}/bin/schemagen
+@bin ${JDKHOME}/bin/serialver
+@bin ${JDKHOME}/bin/servertool
+@bin ${JDKHOME}/bin/tnameserv
+@bin ${JDKHOME}/bin/unpack200
+@bin ${JDKHOME}/bin/wsgen
+@bin ${JDKHOME}/bin/wsimport
+@bin ${JDKHOME}/bin/xjc
 ${JDKHOME}/demo/
 ${JDKHOME}/demo/applets/
 ${JDKHOME}/demo/applets/ArcTest/
@@ -402,21 +402,42 @@ ${JDKHOME}/jre/LICENSE
 ${JDKHOME}/jre/README.html
 ${JDKHOME}/jre/THIRD_PARTY_README
 ${JDKHOME}/jre/bin/
-${JDKHOME}/jre/bin/java
-${JDKHOME}/jre/bin/keytool
-${JDKHOME}/jre/bin/orbd
-${JDKHOME}/jre/bin/pack200
-${JDKHOME}/jre/bin/policytool
-${JDKHOME}/jre/bin/rmid
-${JDKHOME}/jre/bin/rmiregistry
-${JDKHOME}/jre/bin/servertool
-${JDKHOME}/jre/bin/tnameserv
-${JDKHOME}/jre/bin/unpack200
+@bin ${JDKHOME}/jre/bin/java
+@bin ${JDKHOME}/jre/bin/keytool
+@bin ${JDKHOME}/jre/bin/orbd
+@bin ${JDKHOME}/jre/bin/pack200
+@bin ${JDKHOME}/jre/bin/policytool
+@bin ${JDKHOME}/jre/bin/rmid
+@bin ${JDKHOME}/jre/bin/rmiregistry
+@bin ${JDKHOME}/jre/bin/servertool
+@bin ${JDKHOME}/jre/bin/tnameserv
+@bin ${JDKHOME}/jre/bin/unpack200
 ${JDKHOME}/jre/lib/
+${JDKHOME}/jre/lib/applet/
+${JDKHOME}/jre/lib/audio/
+${JDKHOME}/jre/lib/audio/soundbank.gm
+${JDKHOME}/jre/lib/calendars.properties
+${JDKHOME}/jre/lib/charsets.jar
+${JDKHOME}/jre/lib/classlist
+${JDKHOME}/jre/lib/cmm/
+${JDKHOME}/jre/lib/cmm/CIEXYZ.pf
+${JDKHOME}/jre/lib/cmm/GRAY.pf
+${JDKHOME}/jre/lib/cmm/sRGB.pf
+${JDKHOME}/jre/lib/content-types.properties
+${JDKHOME}/jre/lib/currency.data
+${JDKHOME}/jre/lib/ext/
+${JDKHOME}/jre/lib/ext/dnsns.jar
+${JDKHOME}/jre/lib/ext/localedata.jar
+${JDKHOME}/jre/lib/ext/meta-index
+${JDKHOME}/jre/lib/ext/sunjce_provider.jar
+${JDKHOME}/jre/lib/ext/sunpkcs11.jar
+${JDKHOME}/jre/lib/flavormap.properties
+${JDKHOME}/jre/lib/fontconfig.bfc
+${JDKHOME}/jre/lib/fontconfig.properties.src
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/libmawt.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/jexec
+@bin ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jexec
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jli/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jli/libjli.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jvm.cfg
@@ -456,27 +477,6 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/libmawt.so
-${JDKHOME}/jre/lib/applet/
-${JDKHOME}/jre/lib/audio/
-${JDKHOME}/jre/lib/audio/soundbank.gm
-${JDKHOME}/jre/lib/calendars.properties
-${JDKHOME}/jre/lib/charsets.jar
-${JDKHOME}/jre/lib/classlist
-${JDKHOME}/jre/lib/cmm/
-${JDKHOME}/jre/lib/cmm/CIEXYZ.pf
-${JDKHOME}/jre/lib/cmm/GRAY.pf
-${JDKHOME}/jre/lib/cmm/sRGB.pf
-${JDKHOME}/jre/lib/content-types.properties
-${JDKHOME}/jre/lib/currency.data
-${JDKHOME}/jre/lib/ext/
-${JDKHOME}/jre/lib/ext/dnsns.jar
-${JDKHOME}/jre/lib/ext/localedata.jar
-${JDKHOME}/jre/lib/ext/meta-index
-${JDKHOME}/jre/lib/ext/sunjce_provider.jar
-${JDKHOME}/jre/lib/ext/sunpkcs11.jar
-${JDKHOME}/jre/lib/flavormap.properties
-${JDKHOME}/jre/lib/fontconfig.bfc
-${JDKHOME}/jre/lib/fontconfig.properties.src
 ${JDKHOME}/jre/lib/im/
 ${JDKHOME}/jre/lib/im/indicim.jar
 ${JDKHOME}/jre/lib/im/thaiim.jar

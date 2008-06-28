@@ -1,7 +1,7 @@
-@comment $OpenBSD: PFRAG.no-no_web-jre,v 1.1.1.1 2007/11/19 03:19:44 kurt Exp $
+@comment $OpenBSD: PFRAG.no-no_web-jre,v 1.2 2008/06/28 12:34:58 kurt Exp $
 ${JREHOME}/bin/ControlPanel
-${JREHOME}/bin/java_vm
-${JREHOME}/bin/javaws
+@bin ${JREHOME}/bin/java_vm
+@bin ${JREHOME}/bin/javaws
 ${JREHOME}/bin/jcontrol
 ${JREHOME}/javaws/
 ${JREHOME}/javaws/javaws

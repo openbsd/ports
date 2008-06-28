@@ -1,7 +1,7 @@
-@comment $OpenBSD: PFRAG.no-no_web-main,v 1.1.1.1 2007/11/19 03:19:44 kurt Exp $
+@comment $OpenBSD: PFRAG.no-no_web-main,v 1.2 2008/06/28 12:34:58 kurt Exp $
 ${JDKHOME}/bin/ControlPanel
 ${JDKHOME}/bin/HtmlConverter
-${JDKHOME}/bin/javaws
+@bin ${JDKHOME}/bin/javaws
 ${JDKHOME}/bin/jcontrol
 ${JDKHOME}/demo/applets.html
 ${JDKHOME}/demo/plugin/
@@ -752,8 +752,8 @@ ${JDKHOME}/demo/plugin/jfc/TableExample/src/TableExample4.java
 ${JDKHOME}/demo/plugin/jfc/TableExample/src/TableMap.java
 ${JDKHOME}/demo/plugin/jfc/TableExample/src/TableSorter.java
 ${JDKHOME}/jre/bin/ControlPanel
-${JDKHOME}/jre/bin/java_vm
-${JDKHOME}/jre/bin/javaws
+@bin ${JDKHOME}/jre/bin/java_vm
+@bin ${JDKHOME}/jre/bin/javaws
 ${JDKHOME}/jre/bin/jcontrol
 ${JDKHOME}/jre/javaws/
 ${JDKHOME}/jre/javaws/javaws

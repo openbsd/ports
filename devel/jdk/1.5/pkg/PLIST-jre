@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.13 2008/01/18 15:52:55 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.14 2008/06/28 12:34:58 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.5,<1.6
 @pkgpath devel/jdk/1.5,-jre,native_bootstrap
@@ -9,19 +9,19 @@ ${JREHOME}/LICENSE
 ${JREHOME}/README
 ${JREHOME}/Welcome.html
 ${JREHOME}/bin/
-${JREHOME}/bin/java
-${JREHOME}/bin/keytool
-${JREHOME}/bin/kinit
-${JREHOME}/bin/klist
-${JREHOME}/bin/ktab
-${JREHOME}/bin/orbd
-${JREHOME}/bin/pack200
-${JREHOME}/bin/policytool
-${JREHOME}/bin/rmid
-${JREHOME}/bin/rmiregistry
-${JREHOME}/bin/servertool
-${JREHOME}/bin/tnameserv
-${JREHOME}/bin/unpack200
+@bin ${JREHOME}/bin/java
+@bin ${JREHOME}/bin/keytool
+@bin ${JREHOME}/bin/kinit
+@bin ${JREHOME}/bin/klist
+@bin ${JREHOME}/bin/ktab
+@bin ${JREHOME}/bin/orbd
+@bin ${JREHOME}/bin/pack200
+@bin ${JREHOME}/bin/policytool
+@bin ${JREHOME}/bin/rmid
+@bin ${JREHOME}/bin/rmiregistry
+@bin ${JREHOME}/bin/servertool
+@bin ${JREHOME}/bin/tnameserv
+@bin ${JREHOME}/bin/unpack200
 ${JREHOME}/lib/
 ${JREHOME}/lib/applet/
 ${JREHOME}/lib/audio/
@@ -53,8 +53,8 @@ ${JREHOME}/lib/fonts/LucidaTypewriterBold.ttf
 ${JREHOME}/lib/fonts/LucidaTypewriterRegular.ttf
 ${JREHOME}/lib/fonts/fonts.dir
 ${JREHOME}/lib/${MACHINE_ARCH}/
-${JREHOME}/lib/${MACHINE_ARCH}/awt_robot
-${JREHOME}/lib/${MACHINE_ARCH}/gtkhelper
+@bin ${JREHOME}/lib/${MACHINE_ARCH}/awt_robot
+@bin ${JREHOME}/lib/${MACHINE_ARCH}/gtkhelper
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/libmawt.so
 ${JREHOME}/lib/${MACHINE_ARCH}/jvm.cfg
