@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/05/25 02:54:58 jsg Exp $
-bin/quake2
+@comment $OpenBSD: PLIST,v 1.4 2008/06/28 02:50:59 jakemsr Exp $
+@bin bin/quake2
 lib/quake2/
 lib/quake2/baseq2/
 lib/quake2/baseq2/game.la
@@ -19,8 +19,6 @@ lib/quake2/snd_oss.la
 lib/quake2/snd_oss.so
 lib/quake2/snd_sdl.la
 lib/quake2/snd_sdl.so
-lib/quake2/snd_solaris.la
-lib/quake2/snd_solaris.so
 share/quake2/
 share/quake2/baseq2/
 share/quake2/baseq2/config.cfg

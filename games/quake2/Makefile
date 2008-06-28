@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/05/25 03:43:06 jsg Exp $
+# $OpenBSD: Makefile,v 1.12 2008/06/28 02:50:59 jakemsr Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 SHARED_ONLY=		Yes
@@ -6,7 +6,7 @@ SHARED_ONLY=		Yes
 COMMENT=		first person shooter
 
 DISTNAME=		quake2-0.3
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 CATEGORIES=		games
 
 HOMEPAGE=		http://www.quakeforge.net/
