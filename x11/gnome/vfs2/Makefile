@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2008/06/23 12:20:16 deanna Exp $
+# $OpenBSD: Makefile,v 1.36 2008/06/28 11:42:27 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,8 +8,8 @@ COMMENT-smb=		samba module for gnome-vfs2
 GNOME_PROJECT=		gnome-vfs
 GNOME_VERSION=		2.20.1
 PKGNAME=		gnome-vfs2-${VERSION}
-PKGNAME-main=		gnome-vfs2-${VERSION}p8
-PKGNAME-smb=		gnome-vfs2-smb-${VERSION}p2
+PKGNAME-main=		gnome-vfs2-${VERSION}p9
+PKGNAME-smb=		gnome-vfs2-smb-${VERSION}p9
 MULTI_PACKAGES=		-main -smb
 
 SHARED_LIBS +=	gnomevfs-2       2000.0       # .2000.0
