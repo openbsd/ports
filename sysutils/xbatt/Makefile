@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2008/06/06 10:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2008/06/28 16:36:21 naddy Exp $
 # $FreeBSD: Makefile,v 1.4 1997/03/10 12:07:35 asami Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS= amd64 arm i386 macppc sparc
 COMMENT=	laptop battery status display for X11
 
 DISTNAME=	xbatt-1.2.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	sysutils x11
 
 MASTER_SITES=	http://www.clave.gr.jp/~eto/xbatt/

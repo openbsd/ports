@@ -1,7 +1,23 @@
-$OpenBSD: patch-xbatt_c,v 1.1 2007/10/26 23:54:56 ajacoutot Exp $
+$OpenBSD: patch-xbatt_c,v 1.2 2008/06/28 16:36:21 naddy Exp $
 --- xbatt.c.orig	Fri Sep 11 10:47:12 1998
-+++ xbatt.c	Sat Oct 27 01:47:34 2007
-@@ -65,6 +65,11 @@
++++ xbatt.c	Sat Jun 28 14:51:49 2008
+@@ -43,12 +43,14 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <errno.h>
+ #include <time.h>
++#include <unistd.h>
+ #include <sys/file.h>
+ #include <sys/ioctl.h>
+ #include <X11/StringDefs.h>
+-#include <X11/Intrinsic.h>
++#include <X11/IntrinsicP.h>
+ #include <X11/Shell.h>
+ #include <X11/extensions/shape.h>
+ #include <X11/Xaw/Cardinals.h>
+@@ -65,6 +67,11 @@
  # define APMDEV22	"/dev/apm"
  #endif
  
@@ -13,20 +29,22 @@ $OpenBSD: patch-xbatt_c,v 1.1 2007/10/26 23:54:56 ajacoutot Exp $
  #include "pixmaps/battery.xpm"
  #include "pixmaps/unknown.xpm"
  #include "bitmaps/full.xbm"
-@@ -195,6 +200,12 @@ main(
+@@ -195,6 +202,14 @@ main(
      }
  #endif
  
 +#ifdef __OpenBSD__
 +     /* initialize APM Interface */
-+     if ((apmfd = open(APMDEV, O_RDONLY)) == -1)
-+	err(1, "cannot open apm device");
++     if ((apmfd = open(APMDEV, O_RDONLY)) == -1) {
++	fprintf(stderr, "xbatt: cannot open apm device\n");
++	exit(1);
++     }
 +#endif /* __OpenBSD__ */
 +
      /* start X-Window session */
      XtSetLanguageProc( NULL, NULL, NULL );
      toplevel = XtOpenApplication(&appContext, "XBatt",
-@@ -371,6 +382,50 @@ struct status getBatteryStatus()
+@@ -371,6 +386,52 @@ struct status getBatteryStatus()
  						/* chrging or not.	*/
      }
  #endif	/* FreeBSD */
@@ -34,8 +52,10 @@ $OpenBSD: patch-xbatt_c,v 1.1 2007/10/26 23:54:56 ajacoutot Exp $
 +#ifdef __OpenBSD__
 +    struct apm_power_info info;
 +
-+    if (ioctl(apmfd, APM_IOC_GETPOWER, &info) == -1)
-+      err(1, "ioctl APM_IOC_GETPOWER failed");
++    if (ioctl(apmfd, APM_IOC_GETPOWER, &info) == -1) {
++	fprintf(stderr, "xbatt: ioctl APM_IOC_GETPOWER failed\n");
++	exit(1);
++    }
 +
 +    /* get current status */
 +    if (info.battery_life == APM_BATT_LIFE_UNKNOWN) {
