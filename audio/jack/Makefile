@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/04/22 09:34:58 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.5 2008/06/28 05:49:30 jakemsr Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		low latency sound server
 
-DISTNAME =		jack-0.111.2.1169
+DISTNAME =		jack-0.112.0.2524
 
 SHARED_LIBS +=		jack		0.0	# 0.28
 SHARED_LIBS +=		jackserver	0.0	# 0.28

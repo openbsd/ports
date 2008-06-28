@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_sysdeps_cycles_h,v 1.1 2008/06/28 05:49:30 jakemsr Exp $
+--- config/sysdeps/cycles.h.orig	Tue Jun 17 11:36:41 2008
++++ config/sysdeps/cycles.h	Tue Jun 17 11:37:11 2008
+@@ -19,6 +19,10 @@
+ 
+ #include <config/cpu/powerpc/cycles.h>
+ 
++#elif defined(__alpha__)
++
++#include <config/cpu/alpha/cycles.h>
++
+ #else
+ 
+ #include <config/cpu/generic/cycles.h>

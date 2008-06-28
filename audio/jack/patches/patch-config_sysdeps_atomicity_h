@@ -1,13 +1,17 @@
-$OpenBSD: patch-config_sysdeps_atomicity_h,v 1.1.1.1 2008/03/24 03:01:28 jakemsr Exp $
---- config/sysdeps/atomicity.h.orig	Sun Mar 16 21:46:02 2008
-+++ config/sysdeps/atomicity.h	Sun Mar 16 21:47:43 2008
-@@ -15,6 +15,10 @@
+$OpenBSD: patch-config_sysdeps_atomicity_h,v 1.2 2008/06/28 05:49:30 jakemsr Exp $
+--- config/sysdeps/atomicity.h.orig	Thu Mar 13 16:39:46 2008
++++ config/sysdeps/atomicity.h	Mon Jun 16 21:00:28 2008
+@@ -15,6 +15,14 @@
  
  #include <config/cpu/powerpc/atomicity.h>
  
 +#elif defined(__mips__) || defined(__mips64__)
 +
 +#include <config/cpu/mips/atomicity.h>
++
++#elif defined(__alpha__)
++
++#include <config/cpu/alpha/atomicity.h>
 +
  #else
  

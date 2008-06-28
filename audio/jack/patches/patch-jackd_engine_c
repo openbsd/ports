@@ -1,25 +1,12 @@
-$OpenBSD: patch-jackd_engine_c,v 1.3 2008/04/22 09:34:58 jakemsr Exp $
---- jackd/engine.c.orig	Mon Apr 21 21:53:02 2008
-+++ jackd/engine.c	Mon Apr 21 21:56:34 2008
-@@ -1471,10 +1471,8 @@ jack_server_thread (void *arg)
- 				    (engine, pfd[i].fd)) {
- 					jack_error ("could not handle external"
- 						    " client request");
+$OpenBSD: patch-jackd_engine_c,v 1.4 2008/06/28 05:49:30 jakemsr Exp $
+--- jackd/engine.c.orig	Sun Jun 15 12:49:49 2008
++++ jackd/engine.c	Sun Jun 15 12:55:19 2008
+@@ -1383,7 +1383,7 @@ handle_external_client_request (jack_engine_t *engine,
+ 	if ((r = read (client->request_fd, &req, sizeof (req)))
+ 	    < (ssize_t) sizeof (req)) {
+ 		if (r == 0) {
 -#ifdef JACK_USE_MACH_THREADS
--                                    /* poll is implemented using
--				       select (see the macosx/fakepoll
--				       code). When the socket is closed
-+#ifdef JACK_HOST_HAS_BSD_POLL
-+                                    /* When the socket is closed
- 				       select does not return any error,
- 				       POLLIN is true and the next read
- 				       will return 0 bytes. This
-@@ -1484,7 +1482,7 @@ jack_server_thread (void *arg)
- 				       and remove the client.
-                                     */
-                                     jack_client_disconnect(engine, pfd[i].fd);
--#endif /* JACK_USE_MACH_THREADS */
-+#endif /* JACK_HOST_HAS_BSD_POLL */
- 				}
- 			}
- 		}
++#if defined(JACK_USE_MACH_THREADS) || defined __OpenBSD__
+ 			/* poll is implemented using
+ 			   select (see the macosx/fakepoll
+ 			   code). When the socket is closed

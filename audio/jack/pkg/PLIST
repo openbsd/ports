@@ -1,23 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/04/22 09:34:58 jakemsr Exp $
-bin/jack_alias
-bin/jack_connect
-bin/jack_disconnect
-bin/jack_evmon
-bin/jack_freewheel
-bin/jack_impulse_grabber
-bin/jack_load
-bin/jack_lsp
-bin/jack_metro
-bin/jack_midiseq
-bin/jack_midisine
-bin/jack_monitor_client
-bin/jack_netsource
-bin/jack_showtime
-bin/jack_simple_client
-bin/jack_transport
-bin/jack_unload
-bin/jackd
-bin/jackrec
+@comment $OpenBSD: PLIST,v 1.3 2008/06/28 05:49:31 jakemsr Exp $
+@bin bin/jack_alias
+@bin bin/jack_connect
+@bin bin/jack_disconnect
+@bin bin/jack_evmon
+@bin bin/jack_freewheel
+@bin bin/jack_impulse_grabber
+@bin bin/jack_load
+@bin bin/jack_lsp
+@bin bin/jack_metro
+@bin bin/jack_midiseq
+@bin bin/jack_midisine
+@bin bin/jack_monitor_client
+@bin bin/jack_netsource
+@bin bin/jack_showtime
+@bin bin/jack_simple_client
+@bin bin/jack_transport
+@bin bin/jack_unload
+@bin bin/jackd
+@bin bin/jackrec
 include/jack/
 include/jack/intclient.h
 include/jack/jack.h
