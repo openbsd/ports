@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure,v 1.1 2008/06/28 02:54:30 jakemsr Exp $
+--- configure.orig	Tue Mar 16 02:38:24 2004
++++ configure	Fri May 30 05:15:37 2008
+@@ -22854,12 +22854,11 @@ fi
+ 
+ HAVE_SOLARIS="$ac_cv_header_sys_audioio_h"
+ 
+-
+ if test "x$HAVE_SOLARIS" = xyes ; then
+-	SNDDRIVERS="$SNDDRIVERS snd_solaris.la"
+-	BUILD_SNDSOLARIS="yes"
++	# unmaintained/broken/solaris specific
++	# SNDDRIVERS="$SNDDRIVERS snd_solaris.la"
++	BUILD_SNDSOLARIS="no"
+ fi
+-
+ 
+ if test "x$BUILD_SNDSOLARIS" = xyes; then
+   BUILD_SNDSOLARIS_TRUE=
