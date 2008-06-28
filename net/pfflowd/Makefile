@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 22:36:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/06/28 08:30:00 ajacoutot Exp $
+
+BROKEN=		needs to cope with recent network changes
 
 COMMENT=	PF to NetFlow converter
 
