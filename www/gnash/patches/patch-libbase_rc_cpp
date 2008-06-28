@@ -1,0 +1,11 @@
+$OpenBSD: patch-libbase_rc_cpp,v 1.1 2008/06/28 15:46:33 deanna Exp $
+--- libbase/rc.cpp.orig	Tue Jun  3 17:34:10 2008
++++ libbase/rc.cpp	Tue Jun  3 17:35:48 2008
+@@ -128,6 +128,7 @@ RcInitFile::loadFiles()
+ 
+     // Check the default system location
+     std::string loadfile = SYSCONFDIR;
++    loadfile.append("/gnash");
+     loadfile.append("/gnashrc");
+     parseFile(loadfile);
+     

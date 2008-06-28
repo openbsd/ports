@@ -1,0 +1,19 @@
+$OpenBSD: patch-gui_gtk_cpp,v 1.1 2008/06/28 15:46:33 deanna Exp $
+--- gui/gtk.cpp.orig	Sat Jun 21 19:04:24 2008
++++ gui/gtk.cpp	Sat Jun 21 19:05:06 2008
+@@ -2098,6 +2098,7 @@ GtkGui::createControlMenu(GtkWidget *obj)
+     gtk_widget_show (separator1);
+     gtk_container_add (GTK_CONTAINER (menu), separator1);
+ 
++#if 0 // Presently disabled, see gnash bug #23612
+ // Restart
+ // 
+     GtkImageMenuItem *menuitem_restart =
+@@ -2108,6 +2109,7 @@ GtkGui::createControlMenu(GtkWidget *obj)
+     gtk_widget_show(GTK_WIDGET(menuitem_restart));
+     g_signal_connect ((gpointer) menuitem_restart, "activate",
+         G_CALLBACK (&menuitem_restart_callback), this);
++#endif
+ 
+ #if 0 // Presently disabled
+ 

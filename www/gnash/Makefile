@@ -1,83 +1,75 @@
-# $OpenBSD: Makefile,v 1.19 2007/12/18 22:04:32 deanna Exp $
+# $OpenBSD: Makefile,v 1.20 2008/06/28 15:46:33 deanna Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	flash player with firefox browser plugin
-DISTNAME=	gnash-0.8.0
-PKGNAME=	${DISTNAME}p3
-SHARED_LIBS +=	gnashbase 2.0
-SHARED_LIBS +=	gnashgeo 2.0
-SHARED_LIBS +=	gnashamf 2.0
-SHARED_LIBS +=	gnashserver 2.0
-SHARED_LIBS +=	gnashbackend 2.0
-SHARED_LIBS +=	gnashgui 2.0
-SHARED_LIBS +=	gnashplayer 2.0
+
+VER=		0.8.3
+DISTNAME=	gnash-${VER}
 
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_GNU:=/gnash/0.8.0/}
+MASTER_SITES=	http://getgnash.org/packages/releases/
 
-HOMEPAGE=	http://gnash.lulu.com
+HOMEPAGE=	http://gnashdev.org
 
 MAINTAINER=	Deanna Phillips <deanna@openbsd.org>
 
-# patented codecs
-PERMIT_PACKAGE_CDROM=	No
+# GPLv3
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIBTOOL_FLAGS+=	--tag=disable-static
+WANTLIB=	c crypto expat freetype fontconfig \
+		glib-2.0 gobject-2.0 gthread-2.0 gmodule-2.0\
+		idn pcre jpeg m pthread ssl stdc++ z \
+		gstbase-0.10 gstreamer-0.10
+
 MODULES=	devel/gettext
-NO_REGRESS=	testsuite available at http://www.gnashdev.org/testcases/
-USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
-USE_X11=	Yes
-
-BUILD_DEPENDS+=	::devel/boost
-
 
 LIB_DEPENDS+=	curl.>=5::net/curl \
 		xml2.>=9.0::textproc/libxml \
-		theora.>=2::multimedia/libtheora \
 		agg.>=2::graphics/agg \
 		gdk_pixbuf-2.0,gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2 \
-		boost_thread-mt,boost_date_time::devel/boost \
+		boost_thread-mt.>=1,boost_date_time-mt.>=1:boost->=1.34.1p2:devel/boost \
 		ltdl::devel/libtool,-ltdl \
-		SDL.>=7::devel/sdl \
-		vorbis,vorbisenc::audio/libvorbis \
-		avcodec.>=9,avutil.>=2,avformat.>=9::graphics/ffmpeg
+		gstpbutils-0.10::multimedia/gstreamer-0.10/plugins-base
 
-WANTLIB=	Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat \
-		freetype fontconfig Xrender usbhid Xext X11 ICE SM \
-		stdc++ m pthread c ssl crypto z ogg cairo \
-		glib-2.0 pango-1.0 pangoft2-1.0 pangocairo-1.0 pangox-1.0 \
-		gobject-2.0 gmodule-2.0 atk-1.0 png jpeg glitz idn
+RUN_DEPENDS+=	:gst-ffmpeg->=0.10.4:multimedia/gstreamer-0.10/plugins-ffmpeg \
+		:gstreamer-mad-*:multimedia/gstreamer-0.10/plugins-ugly,-mad \
+		::multimedia/gstreamer-0.10/plugins-bad \
+		:gstreamer-plugins-good->=0.10.8p3:multimedia/gstreamer-0.10/plugins-good \
+		:gstreamer-confelements-*:multimedia/gstreamer-0.10/plugins-good,-gconf \
+		:gstreamer-gnome->=0.10.19p1:multimedia/gstreamer-0.10/plugins-base,-gnome
 
-CONFIGURE_STYLE=gnu
+USE_X11=	Yes
+USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS+=	--tag=disable-static
 
-.for dir in libamf backend libbase libgeometry gui server
- LINKDIRS+=-L${WRKSRC}/${dir}/.libs
-.endfor
+CONFIGURE_STYLE= gnu
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="${LINKDIRS} \
-		-L${LOCALBASE}/lib"
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnash
+	${INSTALL_DATA} ${WRKSRC}/libbase/{gnashpluginrc,gnashrc} \
+	${PREFIX}/share/examples/gnash
 
-CONFIGURE_ARGS+=--enable-media=ffmpeg \
-		--with-plugindir=${LOCALBASE}/lib/mozilla-plugins \
-		--disable-klash \
+CONFIGURE_ARGS+=--with-npapi-plugindir=${LOCALBASE}/lib/mozilla-plugins \
 		--disable-cygnal \
 		--disable-debugger \
 		--enable-renderer=agg \
 		--enable-gui=gtk \
-		--without-gcc-arch \
 		--with-libintl-prefix=${LOCALBASE}
 
-MAKE_FLAGS+=	libgnashbase_la_LDFLAGS= \
-		libgnashgeo_la_LDFLAGS= \
-		libgnashamf_la_LDFLAGS= \
-		libgnashserver_la_LDFLAGS= \
-		libgnashbackend_la_LDFLAGS= \
-		libgnashgui_la_LDFLAGS= \
-		libgnashplayer_la_LDFLAGS=
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+INSTALL_TARGET=	install install-plugins
+
+NO_REGRESS=	testsuite available at http://www.gnashdev.org/testcases/
+
+SHARED_LIBS=	gnashnet 0.0 \
+		mozsdk 0.0
+
+SUBST_VARS=	VER
 
 .include <bsd.port.mk>

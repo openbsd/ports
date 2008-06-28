@@ -1,0 +1,18 @@
+$OpenBSD: patch-libbase_Makefile_in,v 1.1 2008/06/28 15:46:33 deanna Exp $
+--- libbase/Makefile.in.orig	Fri Jun 13 12:12:59 2008
++++ libbase/Makefile.in	Fri Jun 13 12:14:16 2008
+@@ -948,14 +948,6 @@ mostlyclean-libtool:
+ clean-libtool:
+ 	-rm -rf .libs _libs
+ install-sysconfDATA: $(sysconf_DATA)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(sysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
+-	@list='$(sysconf_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
+-	  $(sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
+-	done
+ 
+ uninstall-sysconfDATA:
+ 	@$(NORMAL_UNINSTALL)

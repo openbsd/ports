@@ -1,27 +1,53 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/07/07 10:47:04 deanna Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/06/28 15:46:33 deanna Exp $
+@bin bin/dumpshm
 bin/gnash
-bin/gparser
-bin/gprocessor
-lib/libgnashamf.la
-@lib lib/libgnashamf.so.${LIBgnashamf_VERSION}
-lib/libgnashbackend.la
-@lib lib/libgnashbackend.so.${LIBgnashbackend_VERSION}
-lib/libgnashbase.la
-@lib lib/libgnashbase.so.${LIBgnashbase_VERSION}
-lib/libgnashgeo.la
-@lib lib/libgnashgeo.so.${LIBgnashgeo_VERSION}
-lib/libgnashgui.la
-@lib lib/libgnashgui.so.${LIBgnashgui_VERSION}
-lib/libgnashplayer.la
-@lib lib/libgnashplayer.so.${LIBgnashplayer_VERSION}
-lib/libgnashserver.la
-@lib lib/libgnashserver.so.${LIBgnashserver_VERSION}
+@bin bin/gprocessor
+@bin bin/gtk-gnash
+@bin bin/soldumper
+lib/gnash/
+lib/gnash/libgnashamf-${VER}.so
+lib/gnash/libgnashamf.la
+lib/gnash/libgnashamf.so
+lib/gnash/libgnashbase-${VER}.so
+lib/gnash/libgnashbase.la
+lib/gnash/libgnashbase.so
+lib/gnash/libgnashmedia-${VER}.so
+lib/gnash/libgnashmedia.la
+lib/gnash/libgnashmedia.so
+lib/gnash/libgnashnet.la
+@lib lib/gnash/libgnashnet.so.${LIBgnashnet_VERSION}
+lib/gnash/libgnashserver-${VER}.so
+lib/gnash/libgnashserver.la
+lib/gnash/libgnashserver.so
+lib/gnash/libmozsdk.la
+@lib lib/gnash/libmozsdk.so.${LIBmozsdk_VERSION}
 lib/mozilla-plugins/
 lib/mozilla-plugins/libgnashplugin.so
+@man man/man1/cygnal.1
+@man man/man1/dumpshm.1
 @man man/man1/gnash.1
+@man man/man1/gprocessor.1
+@man man/man1/soldumper.1
+share/doc/gnash/
+share/doc/gnash/gnashref.html
+share/doc/gnash/gnashuser.html
+share/doc/gnash/images/
+share/doc/gnash/images/car_crash.png
+share/doc/gnash/images/rtmp.png
+share/examples/gnash/
+@sample ${SYSCONFDIR}/gnash/
+share/examples/gnash/gnashpluginrc
+@sample ${SYSCONFDIR}/gnash/gnashpluginrc
+share/examples/gnash/gnashrc
+@sample ${SYSCONFDIR}/gnash/gnashrc
 share/gnash/
 share/gnash/GnashG.png
 share/gnash/gnash_128_96.ico
+share/locale/cs/LC_MESSAGES/gnash.mo
 share/locale/de/LC_MESSAGES/gnash.mo
 share/locale/es/LC_MESSAGES/gnash.mo
+share/locale/fi/LC_MESSAGES/gnash.mo
 share/locale/fr/LC_MESSAGES/gnash.mo
+share/locale/it/LC_MESSAGES/gnash.mo
+share/locale/ja/LC_MESSAGES/gnash.mo
+share/locale/sv/LC_MESSAGES/gnash.mo
