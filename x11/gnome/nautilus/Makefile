@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2008/04/17 08:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2008/06/28 14:50:20 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -10,7 +10,7 @@ PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://www.gnome.org/projects/nautilus/
 
-# LGPL
+# GPLv2 - LGPLv2 - FPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
