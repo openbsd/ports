@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2008/06/28 08:23:19 sthen Exp $
 
 COMMENT=	interactive X11 proxy with selective X request replacement
 
-DISTNAME=	mxconns-3.1.4
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	mxconns-3.1.8
 CATEGORIES=	x11 security
 
-MASTER_SITES=	http://c.home.cern.ch/c/cons/www/mxconns/
+HOMEPAGE=	http://cern.ch/mxconns/
+MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
 # Restrictive
@@ -19,7 +19,7 @@ WANTLIB=		X11 Xau Xext Xpm Xt c
 USE_X11=	Yes
 USE_MOTIF=	any
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS=	-optim "${CFLAGS}"
+CONFIGURE_ARGS=	-optim "${CFLAGS}" -debug
 
 NO_REGRESS=	Yes
 
