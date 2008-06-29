@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/11/23 09:07:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2008/06/29 20:44:52 sthen Exp $
 
 COMMENT=	scanner frontend for SANE
 
 DISTNAME=	xsane-0.995
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/xsane/ \
@@ -26,7 +27,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo exif expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gphoto2 gphoto2_port jpeg m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png pthread tiff usb z
+		pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread tiff usb z
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \

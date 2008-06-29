@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2008/06/29 20:44:52 sthen Exp $
 
 COMMENT=	flash rendering library
 DISTNAME=	swfdec-0.2.2
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 SHARED_LIBS=	swfdec	0.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=swfdec/}
@@ -20,7 +20,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xcomposite Xdamage pcre \
 		Xrender atk-1.0 c cairo expat fontconfig freetype glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png pthread usbhid z
+		pangoft2-1.0 pixman-1 png pthread usbhid z
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	SDL::devel/sdl \

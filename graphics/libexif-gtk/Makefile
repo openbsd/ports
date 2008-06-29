@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2008/06/29 20:44:51 sthen Exp $
 
 COMMENT=	GTK2 interface to libexif
 
 DISTNAME=	libexif-gtk-0.3.5
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS +=	exif-gtk 0.0	# .5.0
 CATEGORIES=	graphics
 
@@ -20,7 +20,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libexif/}
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender atk-1.0 cairo expat fontconfig freetype pcre \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 z png Xcomposite Xdamage
+		pangocairo-1.0 pangoft2-1.0 pixman-1 z png Xcomposite \
+		Xdamage
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2 \

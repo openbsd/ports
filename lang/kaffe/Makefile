@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2007/11/14 09:43:39 steven Exp $
+# $OpenBSD: Makefile,v 1.37 2008/06/29 20:44:52 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 COMMENT-main=	kaffe.org's Java JDK1.4 compiler, runtime and libs
 
 DISTNAME=	kaffe-1.1.7
-PKGNAME-main=	${DISTNAME}p4
+PKGNAME-main=	${DISTNAME}p5
 
 CATEGORIES=	lang
 
@@ -42,7 +42,7 @@ WANTLIB=	ICE SM X11 Xext Xrender Xtst Xrandr expat atk-1.0 c z \
 		Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
 		fontconfig freetype glib-2.0 gmodule-2.0 pcre \
 		gobject-2.0 gthread-2.0 m pango-1.0 \
-		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
+		pangoft2-1.0 pangocairo-1.0 cairo glitz png pixman-1 \
 		pthread
 
 SEPARATE_BUILD=	concurrent

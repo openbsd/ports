@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/02 14:10:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/29 20:44:52 sthen Exp $
 
 COMMENT=		compiler for the GObject type system
 
 GNOME_PROJECT=		vala
 GNOME_VERSION=		0.3.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=	vala                 0.1      # .0.0
 CATEGORIES=		lang
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
 		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre png pthread z
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
+		pthread z
 
 MODULES=		devel/gettext \
 			x11/gnome

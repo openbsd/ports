@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/06/02 14:10:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2008/06/29 20:44:51 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,9 +10,9 @@ V=		2.22.1.1
 DISTNAME=	evince-${V}
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p0
-PKGNAME-djvu=	evince-djvu-${V}
-PKGNAME-dvi=	evince-dvi-${V}
+PKGNAME-main=	${DISTNAME}p1
+PKGNAME-djvu=	evince-djvu-${V}p0
+PKGNAME-dvi=	evince-dvi-${V}p0
 
 SHARED_LIBS=	evbackend	0.0 # .0.0
 
@@ -42,7 +42,7 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gnome-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre png popt ssl util xml2 z
+		pangoft2-1.0 pcre pixman-1 png popt ssl util xml2 z
 
 WANTLIB-main=		${WANTLIB} ICE SM art_lgpl_2 bonoboui-2 c gailutil \
 			glade-2.0 gnome-keyring gnomecanvas-2 jpeg pthread \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2008/06/29 20:44:52 sthen Exp $
 
 COMMENT=	API for accessing scanners, frontends
 
 DISTNAME=	sane-frontends-1.0.14
-PKGNAME=	${DISTNAME}p9
+PKGNAME=	${DISTNAME}p10
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sane-project.org/
@@ -26,7 +26,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender atk-1.0 c cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gphoto2 \
 		gphoto2_port jpeg m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png pthread tiff usb z
+		pangoft2-1.0 pixman-1 png pthread tiff usb z
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \

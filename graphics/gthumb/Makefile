@@ -1,10 +1,10 @@
-#$OpenBSD: Makefile,v 1.16 2008/04/17 08:10:10 ajacoutot Exp $
+#$OpenBSD: Makefile,v 1.17 2008/06/29 20:44:51 sthen Exp $
 
 COMMENT=	Image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	2.10.8
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS=	gthumb	0.0	# .0.0
 
@@ -29,8 +29,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 jpeg ltdl m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre png popt pthread ssl tiff usb util \
-		xml2 z
+		pangoft2-1.0 pcre pixman-1 png popt pthread ssl tiff \
+		usb util xml2 z
 
 MODULES=	x11/gnome devel/gettext
 

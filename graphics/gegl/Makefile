@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/04/11 20:38:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/29 20:44:51 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ V=		0.0.16
 DISTNAME=	gegl-${V}
 CATEGORIES=	graphics devel
 
-PKGNAME-main=	gegl-${V}
+PKGNAME-main=	gegl-${V}p0
 PKGNAME-plugins=gegl-plugins-${V}p1
 
 SHARED_LIBS=	gegl-0.0	0.0 # .16.0
@@ -44,7 +44,7 @@ WANTLIB-main=	${WANTLIB} ORBit-2 Xcomposite Xcursor Xdamage Xfixes \
 		dbus-1 dbus-glib-1 expat fontconfig freetype gconf-2 \
 		gdk-x11-2.0 gdk_pixbuf-2.0 glitz gnomevfs-2 gsf-1 \
 		gtk-x11-2.0 jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		png pthread ssl util xml2
+		pixman-1 png pthread ssl util xml2
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		rsvg-2:librsvg-*-!no_gnome:x11/gnome/librsvg \
 		babl-0.0::graphics/babl

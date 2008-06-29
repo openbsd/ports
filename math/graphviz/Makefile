@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2008/05/31 23:04:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2008/06/29 20:44:52 sthen Exp $
 
 COMMENT-main=	graph drawing software
 
 DISTNAME=	graphviz-2.12
-PKGNAME-main=	${DISTNAME}p3
+PKGNAME-main=	${DISTNAME}p4
 CATEGORIES=	math devel graphics
 MULTI_PACKAGES=	-main
 
@@ -73,7 +73,7 @@ LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 LIB_DEPENDS+= 	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 WANTLIB+=	cairo.>=5 glitz pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		gmodule-2.0 glib-2.0 gobject-2.0
+		gmodule-2.0 glib-2.0 gobject-2.0 pixman-1
 
 # gnome stuff
 LIB_DEPENDS+=	gnomeui-2::x11/gnome/libgnomeui
@@ -81,7 +81,7 @@ LIB_DEPENDS+=	gnomeui-2::x11/gnome/libgnomeui
 WANTLIB+=	atk-1.0 crypto gthread-2.0 ssl \
 		ORBit-2 ORBitCosNaming-2 art_lgpl_2 audiofile bonobo-2 \
 		bonobo-activation bonoboui-2 esd gconf-2 gnome-2 \
-		gnome-keyring gnomecanvas-2 gnomevfs-2 popt xml2
+		gnome-keyring gnomecanvas-2 gnomevfs-2 popt xml2 gailutil
 
 RUN_DEPENDS=	:tk-8.4.*:x11/tk/8.4 \
 		:tcl->=8.4.7p5:lang/tcl/8.4 \

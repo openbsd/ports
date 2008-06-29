@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/04/17 08:10:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/06/29 20:44:51 sthen Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://fyre.navi.cx/
@@ -18,7 +18,7 @@ WANTLIB=	Half Iex IlmThread Imath X11 Xau Xcomposite Xcursor \
 		atk-1.0 c cairo expat fontconfig freetype gdk-x11-2.0 \
 		gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png pthread stdc++ xml2 z
+		pangoft2-1.0 pixman-1 png pthread stdc++ xml2 z
 
 MASTER_SITES=		http://releases.navi.cx/fyre/ \
 			http://humppa.nl/distfiles/

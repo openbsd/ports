@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2007/11/14 09:43:40 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2008/06/29 20:44:52 sthen Exp $
 
 COMMENT=	RPN and algebraic scientific calculator
 
 DISTNAME=	calcoo-1.3.18
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	math
 HOMEPAGE=	http://calcoo.sourceforge.net/
 
@@ -23,7 +23,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xcomposite Xdamage \
 		Xrender atk-1.0 c cairo expat fontconfig freetype glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png z
+		pangoft2-1.0 pixman-1 png z
 
 USE_X11=	Yes
 SEPARATE_BUILD=	simple

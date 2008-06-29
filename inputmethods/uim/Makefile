@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/06/07 09:58:40 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2008/06/29 20:44:52 sthen Exp $
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for gtk
 COMMENT-qt=	uim for qt
@@ -13,10 +13,10 @@ DISTNAME=	uim-$V
 MASTER_SITES=	http://uim.freedesktop.org/releases/uim/stable/
 HOMEPAGE=	http://uim.freedesktop.org/wiki/
 PKGNAME-main=	uim-$Vp0
-PKGNAME-gtk=	uim-gtk-$Vp0
+PKGNAME-gtk=	uim-gtk-$Vp1
 PKGNAME-qt=	uim-qt-$Vp0
 PKGNAME-kde=	uim-kde-$V
-PKGNAME-gnome=	uim-gnome-$V
+PKGNAME-gnome=	uim-gnome-$Vp0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -67,7 +67,9 @@ LIB_DEPENDS-gtk=${LIB_DEPENDS-main} ${uim_LIB_DEPENDS} \
 		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2
 WANTLIB-gtk=	${WANTLIB} glib-2.0 gmodule-2.0 pangoft2-1.0 \
 		gobject-2.0 pango-1.0 atk-1.0 \
-		pangocairo-1.0 cairo glitz png z expat
+		pangocairo-1.0 cairo glitz png z expat \
+		Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
+		pcre pixman-1
 
 
 
@@ -76,7 +78,9 @@ LIB_DEPENDS-gnome=${LIB_DEPENDS-gtk} \
 WANTLIB-gnome=	${WANTLIB-gtk} ICE SM crypto gthread-2.0 jpeg pthread ssl \
 		ORBit-2 ORBitCosNaming-2 art_lgpl_2 audiofile bonobo-2 \
 		bonobo-activation esd gconf-2 glade-2.0 gnome-2 gnomecanvas-2 \
-		popt xml2 bonoboui-2 gnome-keyring gnomeui-2 gnomevfs-2
+		popt xml2 bonoboui-2 gnome-keyring gnomeui-2 gnomevfs-2 \
+		Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
+		dbus-1 dbus-glib-1 gailutil pcre pixman-1 util
 
 
 
