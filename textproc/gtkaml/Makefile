@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/05/31 17:37:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2008/06/29 22:05:24 jasper Exp $
 
 COMMENT=		application markup language for GTK+Vala
 
-DISTNAME=		gtkaml-0.2.1.0
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		gtkaml-0.2.1.1
 CATEGORIES=		textproc
 
-HOMEPAGE=		http://gtkaml.googlecode.com
+HOMEPAGE=		http://gtkaml.googlecode.com/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

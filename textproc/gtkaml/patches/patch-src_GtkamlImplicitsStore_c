@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.1 2008/05/31 17:37:53 sturm Exp $
---- src/GtkamlImplicitsStore.c.orig	Tue May 27 13:16:24 2008
-+++ src/GtkamlImplicitsStore.c	Tue May 27 13:18:01 2008
+$OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.2 2008/06/29 22:05:24 jasper Exp $
+--- src/GtkamlImplicitsStore.c.orig	Sun Jun 29 23:58:07 2008
++++ src/GtkamlImplicitsStore.c	Mon Jun 30 00:03:26 2008
 @@ -67,7 +67,7 @@ enum  {
  	GTKAML_KEY_FILE_WRAPPER_DUMMY_PROPERTY
  };
@@ -10,19 +10,24 @@ $OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.1 2008/05/31 17:37:53 sturm Exp $
  static GtkamlKeyFileWrapper* gtkaml_key_file_wrapper_new (void);
  static GObject * gtkaml_key_file_wrapper_constructor (GType type, guint n_construct_properties, GObjectConstructParam * construct_properties);
  static gpointer gtkaml_key_file_wrapper_parent_class = NULL;
-@@ -136,9 +136,9 @@ static gboolean gtkaml_key_file_wrapper_has_key (Gtkam
+@@ -150,14 +150,14 @@ static gboolean gtkaml_key_file_wrapper_has_key (Gtkam
  }
  
  
 -static char** gtkaml_key_file_wrapper_get_string_list (GtkamlKeyFileWrapper* self, const char* group, const char* key, int* result_length1) {
 +static char** gtkaml_key_file_wrapper_get_string_list (GtkamlKeyFileWrapper* self, const char* group, const char* key, gsize* result_length1) {
  	GError * inner_error;
--	gint _tmp0;
-+	gsize _tmp0;
- 	char** _tmp1;
  	g_return_val_if_fail (GTKAML_IS_KEY_FILE_WRAPPER (self), NULL);
  	g_return_val_if_fail (group != NULL, NULL);
-@@ -304,14 +304,14 @@ GeeList* gtkaml_implicits_store_get_adds (GtkamlImplic
+ 	g_return_val_if_fail (key != NULL, NULL);
+ 	inner_error = NULL;
+ 	{
+-		gint _tmp0;
++		gsize _tmp0;
+ 		char** _tmp1;
+ 		_tmp1 = NULL;
+ 		return (_tmp1 = g_key_file_get_string_list (self->key_file, group, key, &_tmp0, &inner_error), (*result_length1) = _tmp0, _tmp1);
+@@ -331,15 +331,15 @@ GeeList* gtkaml_implicits_store_get_adds (GtkamlImplic
  			{
  				if (gtkaml_key_file_wrapper_has_key (kfw, class_name, "adds")) {
  					char** _tmp1;
@@ -35,12 +40,13 @@ $OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.1 2008/05/31 17:37:53 sturm Exp $
  					kf_adds = (_tmp1 = gtkaml_key_file_wrapper_get_string_list (kfw, class_name, "adds", &_tmp0), kf_adds_length1 = _tmp0, _tmp1);
  					{
  						char** add_collection;
+ 						int add_collection_length1;
 -						int add_it;
 +						gsize add_it;
  						add_collection = kf_adds;
+ 						add_collection_length1 = kf_adds_length1;
  						for (add_it = 0; (kf_adds_length1 != -1 && add_it < kf_adds_length1) || (kf_adds_length1 == -1 && add_collection[add_it] != NULL); add_it = add_it + 1) {
- 							const char* _tmp2;
-@@ -355,15 +355,15 @@ GeeList* gtkaml_implicits_store_get_method_parameters 
+@@ -382,8 +382,8 @@ GeeList* gtkaml_implicits_store_get_method_parameters 
  			{
  				if (gtkaml_key_file_wrapper_has_key (kfw, class_name, method_name)) {
  					char** _tmp1;
@@ -51,11 +57,12 @@ $OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.1 2008/05/31 17:37:53 sturm Exp $
  					char** kf_parameters;
  					GeeList* _tmp8;
  					_tmp1 = NULL;
- 					kf_parameters = (_tmp1 = gtkaml_key_file_wrapper_get_string_list (kfw, class_name, method_name, &_tmp0), kf_parameters_length1 = _tmp0, _tmp1);
+@@ -391,7 +391,7 @@ GeeList* gtkaml_implicits_store_get_method_parameters 
  					{
  						char** parameter_collection;
+ 						int parameter_collection_length1;
 -						int parameter_it;
 +						gsize parameter_it;
  						parameter_collection = kf_parameters;
+ 						parameter_collection_length1 = kf_parameters_length1;
  						for (parameter_it = 0; (kf_parameters_length1 != -1 && parameter_it < kf_parameters_length1) || (kf_parameters_length1 == -1 && parameter_collection[parameter_it] != NULL); parameter_it = parameter_it + 1) {
- 							const char* _tmp7;
