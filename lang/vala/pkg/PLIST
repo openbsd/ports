@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/05/13 10:06:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/06/29 22:04:56 jasper Exp $
 %%SHARED%%
 bin/vala-gen-introspect
-bin/vala-gen-project
-bin/valac
-bin/vapicheck
-bin/vapigen
+@bin bin/vala-gen-project
+@bin bin/valac
+@bin bin/vapicheck
+@bin bin/vapigen
 include/vala-1.0/
 include/vala-1.0/ccode/
 include/vala-1.0/ccode/valaccodeassignment.h
@@ -78,6 +78,7 @@ include/vala-1.0/gobject/valaccodeclassbinding.h
 include/vala-1.0/gobject/valaccodecompiler.h
 include/vala-1.0/gobject/valaccodecreationmethodbinding.h
 include/vala-1.0/gobject/valaccodedynamicmethodbinding.h
+include/vala-1.0/gobject/valaccodedynamicpropertybinding.h
 include/vala-1.0/gobject/valaccodedynamicsignalbinding.h
 include/vala-1.0/gobject/valaccodeelementaccessbinding.h
 include/vala-1.0/gobject/valaccodeexpressionbinding.h
@@ -89,6 +90,7 @@ include/vala-1.0/gobject/valaccodeinterfacebinding.h
 include/vala-1.0/gobject/valaccodeinvocationexpressionbinding.h
 include/vala-1.0/gobject/valaccodememberaccessbinding.h
 include/vala-1.0/gobject/valaccodemethodbinding.h
+include/vala-1.0/gobject/valaccodeobjecttypesymbolbinding.h
 include/vala-1.0/gobject/valaccodetypesymbolbinding.h
 include/vala-1.0/gobject/valaclassregisterfunction.h
 include/vala-1.0/gobject/valagidlwriter.h
@@ -116,7 +118,6 @@ include/vala-1.0/vala/valacatchclause.h
 include/vala-1.0/vala/valacfgbuilder.h
 include/vala-1.0/vala/valacharacterliteral.h
 include/vala-1.0/vala/valaclass.h
-include/vala-1.0/vala/valaclassinstancetype.h
 include/vala-1.0/vala/valaclasstype.h
 include/vala-1.0/vala/valacodebinding.h
 include/vala-1.0/vala/valacodecontext.h
@@ -136,6 +137,7 @@ include/vala-1.0/vala/valadeletestatement.h
 include/vala-1.0/vala/valadestructor.h
 include/vala-1.0/vala/valadostatement.h
 include/vala-1.0/vala/valadynamicmethod.h
+include/vala-1.0/vala/valadynamicproperty.h
 include/vala-1.0/vala/valadynamicsignal.h
 include/vala-1.0/vala/valaelementaccess.h
 include/vala-1.0/vala/valaemptystatement.h
@@ -151,13 +153,15 @@ include/vala-1.0/vala/valafieldprototype.h
 include/vala-1.0/vala/valaforeachstatement.h
 include/vala-1.0/vala/valaformalparameter.h
 include/vala-1.0/vala/valaforstatement.h
+include/vala-1.0/vala/valagenieparser.h
+include/vala-1.0/vala/valageniescanner.h
+include/vala-1.0/vala/valagenietokentype.h
 include/vala-1.0/vala/valaifstatement.h
 include/vala-1.0/vala/valainitializerlist.h
 include/vala-1.0/vala/valainstancecast.h
 include/vala-1.0/vala/valaintegerliteral.h
 include/vala-1.0/vala/valaintegertype.h
 include/vala-1.0/vala/valainterface.h
-include/vala-1.0/vala/valainterfaceinstancetype.h
 include/vala-1.0/vala/valainterfacetype.h
 include/vala-1.0/vala/valainterfacewriter.h
 include/vala-1.0/vala/valainvalidtype.h
@@ -170,7 +174,6 @@ include/vala-1.0/vala/valalockstatement.h
 include/vala-1.0/vala/valamember.h
 include/vala-1.0/vala/valamemberaccess.h
 include/vala-1.0/vala/valamemberinitializer.h
-include/vala-1.0/vala/valamemorymanager.h
 include/vala-1.0/vala/valamethod.h
 include/vala-1.0/vala/valamethodtype.h
 include/vala-1.0/vala/valanamedargument.h
@@ -180,6 +183,8 @@ include/vala-1.0/vala/valanullchecker.h
 include/vala-1.0/vala/valanullliteral.h
 include/vala-1.0/vala/valanulltype.h
 include/vala-1.0/vala/valaobjectcreationexpression.h
+include/vala-1.0/vala/valaobjecttype.h
+include/vala-1.0/vala/valaobjecttypesymbol.h
 include/vala-1.0/vala/valaparenthesizedexpression.h
 include/vala-1.0/vala/valaparser.h
 include/vala-1.0/vala/valapointerindirection.h
@@ -229,10 +234,11 @@ lib/libvala.a
 lib/libvala.la
 lib/pkgconfig/vala-1.0.pc
 lib/vala/
-lib/vala/gen-introspect
+@bin lib/vala/gen-introspect
 @man man/man1/vala-gen-introspect.1
 @man man/man1/valac.1
 @man man/man1/vapigen.1
+share/devhelp/
 share/devhelp/books/
 share/devhelp/books/vala/
 share/devhelp/books/vala/attributes.html
@@ -267,6 +273,7 @@ share/vala/vapi/enchant.vapi
 share/vala/vapi/gconf-2.0.vapi
 share/vala/vapi/gdk-2.0.deps
 share/vala/vapi/gdk-2.0.vapi
+share/vala/vapi/gdk-pixbuf-2.0.deps
 share/vala/vapi/gdk-pixbuf-2.0.vapi
 share/vala/vapi/gdk-x11-2.0.deps
 share/vala/vapi/gdk-x11-2.0.vapi
@@ -329,6 +336,7 @@ share/vala/vapi/hildon-fm-2.deps
 share/vala/vapi/hildon-fm-2.vapi
 share/vala/vapi/json-glib-1.0.vapi
 share/vala/vapi/libbonoboui-2.0.vapi
+share/vala/vapi/libepc-1.0.vapi
 share/vala/vapi/libftdi.deps
 share/vala/vapi/libftdi.vapi
 share/vala/vapi/libglade-2.0.deps
@@ -337,6 +345,8 @@ share/vala/vapi/libgnome-2.0.vapi
 share/vala/vapi/libgnome-menu.vapi
 share/vala/vapi/libgnomeui-2.0.deps
 share/vala/vapi/libgnomeui-2.0.vapi
+share/vala/vapi/libgsf-1.deps
+share/vala/vapi/libgsf-1.vapi
 share/vala/vapi/libnotify.deps
 share/vala/vapi/libnotify.vapi
 share/vala/vapi/liboobs-1.vapi
@@ -351,6 +361,7 @@ share/vala/vapi/libusb.vapi
 share/vala/vapi/libwnck-1.0.deps
 share/vala/vapi/libwnck-1.0.vapi
 share/vala/vapi/libxml-2.0.vapi
+share/vala/vapi/loudmouth-1.0.vapi
 share/vala/vapi/pango.deps
 share/vala/vapi/pango.vapi
 share/vala/vapi/pangocairo.deps
@@ -360,10 +371,12 @@ share/vala/vapi/poppler-glib.vapi
 share/vala/vapi/sdl-gfx.vapi
 share/vala/vapi/sdl-image.vapi
 share/vala/vapi/sdl-mixer.vapi
+share/vala/vapi/sdl-net.vapi
 share/vala/vapi/sdl-ttf.vapi
 share/vala/vapi/sdl.vapi
 share/vala/vapi/sqlite3.vapi
 share/vala/vapi/taglib_c.vapi
+share/vala/vapi/tiff.vapi
 share/vala/vapi/vala-1.0.vapi
 share/vala/vapi/vte.deps
 share/vala/vapi/vte.vapi
