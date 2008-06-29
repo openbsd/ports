@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2008/06/15 01:44:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2008/06/29 20:31:14 sthen Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-4.0
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.nongnu.org/mailnotify/
@@ -22,8 +22,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-desktop-2 \
 		gnome-keyring gnome-menu gnomecanvas-2 gnomeui-2 gnomevfs-2 \
 		gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png popt pthread rpcsvc \
-		ssl startup-notification-1 stdc++ util xml2 z
+		pangocairo-1.0 pangoft2-1.0 pixman-1 png popt pthread \
+		rpcsvc ssl startup-notification-1 stdc++ util xml2 z
 
 MASTER_SITES=	http://savannah.nongnu.org/download/mailnotify/
 
@@ -36,7 +36,9 @@ RUN_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
 		:desktop-file-utils-*:devel/desktop-file-utils \
 		:yelp-*:x11/gnome/yelp
 LIB_DEPENDS=	notify::devel/libnotify \
-		eel-2::x11/gnome/eel
+		eel-2::x11/gnome/eel \
+		sasl2::security/cyrus-sasl2 \
+		gmime-2.0::mail/gmime
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
