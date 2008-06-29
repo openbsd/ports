@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/04/05 10:23:01 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2008/06/29 20:29:53 sthen Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.46
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics
 
 MAINTAINER=	Benoit Chesneau <benoitc@metavers.net>
@@ -22,8 +22,8 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 bz2 c cairo \
 		cairomm-1.0 expat fontconfig freetype glib-2.0 glibmm-2.4 \
 		glitz gmodule-2.0 gobject-2.0 gthread-2.0 jasper jbig jpeg m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread sigc-2.0 stdc++ \
-		tiff wmflite xml2 z
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread \
+		sigc-2.0 stdc++ tiff wmflite xml2 z
 
 MODULES=	devel/gettext \
 		textproc/intltool
@@ -38,7 +38,8 @@ LIB_DEPENDS=	gc.>=3::devel/boehm-gc \
 		xslt::textproc/libxslt \
 		poppler,poppler-glib::print/poppler \
 		atkmm-1.6,gdkmm-2.4,gtkmm-2.4,pangomm-1.4::x11/gtk2mm \
-		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+		gtkspell::textproc/gtkspell
 
 RUN_DEPENDS=	::devel/desktop-file-utils \
 		::textproc/py-lxml
