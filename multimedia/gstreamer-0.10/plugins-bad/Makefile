@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/06/21 21:03:55 deanna Exp $
+# $OpenBSD: Makefile,v 1.8 2008/06/30 22:43:16 sthen Exp $
 
 COMMENT-main =		multimedia framework - plugins bad
 COMMENT-tremor =	multimedia framework - tremor plugin
@@ -18,21 +18,21 @@ COMMENT-real =		multimedia framework - real plugin
 
 V =			0.10.7
 DISTNAME =		gst-plugins-bad-$V
-PKGNAME-main =		gstreamer-plugins-bad-${V}p1
-PKGNAME-tremor =	gstreamer-tremor-$Vp0
-PKGNAME-musepack =	gstreamer-musepack-$Vp0
-PKGNAME-faac =		gstreamer-faac-$Vp0
-PKGNAME-faad =		gstreamer-faad-$Vp0
-PKGNAME-xvid =		gstreamer-xvid-$Vp0
-PKGNAME-sdl =		gstreamer-sdl-$Vp0
-PKGNAME-bz2 =		gstreamer-bz2-$Vp0
-PKGNAME-gsm =		gstreamer-gsm-$Vp0
-PKGNAME-ladspa =	gstreamer-ladspa-$Vp0
-PKGNAME-neon =		gstreamer-neon-$Vp0
-PKGNAME-swf =		gstreamer-flash-$Vp0
-PKGNAME-meta =		gstreamer-meta-$Vp0
-PKGNAME-sndfile =	gstreamer-sndfile-$Vp0
-PKGNAME-real =		gstreamer-real-$Vp0
+PKGNAME-main =		gstreamer-plugins-bad-${V}p2
+PKGNAME-tremor =	gstreamer-tremor-$Vp1
+PKGNAME-musepack =	gstreamer-musepack-$Vp1
+PKGNAME-faac =		gstreamer-faac-$Vp1
+PKGNAME-faad =		gstreamer-faad-$Vp1
+PKGNAME-xvid =		gstreamer-xvid-$Vp1
+PKGNAME-sdl =		gstreamer-sdl-$Vp1
+PKGNAME-bz2 =		gstreamer-bz2-$Vp1
+PKGNAME-gsm =		gstreamer-gsm-$Vp1
+PKGNAME-ladspa =	gstreamer-ladspa-$Vp1
+PKGNAME-neon =		gstreamer-neon-$Vp1
+PKGNAME-swf =		gstreamer-flash-$Vp1
+PKGNAME-meta =		gstreamer-meta-$Vp1
+PKGNAME-sndfile =	gstreamer-sndfile-$Vp1
+PKGNAME-real =		gstreamer-real-$Vp1
 MULTI_PACKAGES =	-main -tremor -musepack -faac -faad -xvid -sdl -bz2 \
 			-gsm -ladspa -meta -neon -sndfile
 
@@ -140,21 +140,38 @@ LIB_DEPENDS-real =	${LIB_DEPENDS} \
 			gstaudio-0.10,gstinterfaces-0.10::$P/plugins-base
 .endif
 
-CONFIGURE_ARGS =	--disable-cdaudio \
-			--disable-alsa \
+CONFIGURE_ARGS =	--disable-alsa \
 			--disable-amrwb \
+			--disable-cdaudio \
+			--disable-dc1394 \
+			--disable-dfbvideosink \
+			--disable-dirac \
 			--disable-directfb \
 			--disable-divx \
 			--disable-dts \
+			--disable-dtsdec \
+			--disable-dvb \
+			--disable-fbdevsink \
+			--disable-gstalsa \
 			--disable-jack \
 			--disable-libmms \
+			--disable-mpeg2enc \
 			--disable-musicbrainz \
+			--disable-mythtvsrc \
+			--disable-nassink \
+			--disable-ofa \
+			--disable-oss4 \
+			--disable-qtwrapper \
 			--disable-soundtouch \
 			--disable-spc \
+			--disable-swfdec   \
 			--disable-theoradec \
+			--disable-theoraexpdec \
+			--disable-timidity \
+			--disable-vcdsrc   \
 			--disable-wavpack \
-			--disable-dvb \
-			--disable-oss4
-
+			--disable-wildmidi \
+			--disable-wininet \
+			--disable-x264
 
 .include <bsd.port.mk>
