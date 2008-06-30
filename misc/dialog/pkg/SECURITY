@@ -1,5 +1,0 @@
-fixed some trivial buffer overflows in guage.c
-
-other boundary checking errors abound, not just in string manipulation -
-e.g. draw_* routines, etc. nothing security-critical, just not robust.
-

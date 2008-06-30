@@ -1,3 +1,3 @@
-Dialog is typically invoked from a shell script and puts nice
-yes-no/checklist/radio-button - menus on your screen.
-(Text is just passed on as arguments to dialog.)
+Dialog is typically invoked from a shell script to provide a set of
+curses widgets, e.g. yes/no, checklists, input boxes, menus, progress
+boxes, text boxes, etc.
