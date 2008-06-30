@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2008/06/14 16:00:11 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2008/06/30 20:03:49 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict app_conference-<=20070710
 @newgroup _asterisk:545
@@ -233,7 +233,7 @@ lib/asterisk/modules/res_speech.so
 @bin sbin/asterisk
 sbin/astgenkey
 sbin/autosupport
-@bin sbin/rasterisk
+sbin/rasterisk
 sbin/safe_asterisk
 @bin sbin/smsq
 @bin sbin/stereorize
