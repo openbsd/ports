@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.4 2008/02/27 00:30:47 djm Exp $
---- configure.in.orig	Thu Feb 14 06:17:17 2008
-+++ configure.in	Fri Feb 15 11:57:39 2008
+$OpenBSD: patch-configure_in,v 1.5 2008/06/30 00:29:32 djm Exp $
+--- configure.in.orig	Wed Feb 13 20:17:17 2008
++++ configure.in	Wed Jun 18 17:59:12 2008
 @@ -201,7 +201,7 @@ case $ac_sys_system/$ac_sys_release in
    # On OpenBSD, select(2) is not available if _XOPEN_SOURCE is defined,
    # even though select is a POSIX function. Reported by J. Ribbens.
@@ -43,3 +43,27 @@ $OpenBSD: patch-configure_in,v 1.4 2008/02/27 00:30:47 djm Exp $
  fi
  
  # check if we need libintl for locale functions
+@@ -3104,7 +3093,7 @@ fi
+ # check for readline 2.1
+ AC_CHECK_LIB(readline, rl_callback_handler_install,
+ 	AC_DEFINE(HAVE_RL_CALLBACK, 1,
+-        [Define if you have readline 2.1]), , )
++        [Define if you have readline 2.1]), ,curses)
+ 
+ # check for readline 2.2
+ AC_TRY_CPP([#include <readline/readline.h>],
+@@ -3120,12 +3109,12 @@ fi
+ # check for readline 4.0
+ AC_CHECK_LIB(readline, rl_pre_input_hook,
+ 	AC_DEFINE(HAVE_RL_PRE_INPUT_HOOK, 1,
+-        [Define if you have readline 4.0]), , )
++        [Define if you have readline 4.0]), ,curses)
+ 
+ # check for readline 4.2
+ AC_CHECK_LIB(readline, rl_completion_matches,
+ 	AC_DEFINE(HAVE_RL_COMPLETION_MATCHES, 1,
+-        [Define if you have readline 4.2]), , )
++        [Define if you have readline 4.2]), ,curses)
+ 
+ # also in readline 4.2
+ AC_TRY_CPP([#include <readline/readline.h>],
