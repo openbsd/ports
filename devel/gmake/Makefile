@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2008/06/12 21:04:16 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2008/06/30 09:22:46 brad Exp $
 
 COMMENT=	GNU make
 
 DISTNAME=	make-3.81
-PKGNAME=	g${DISTNAME}
+PKGNAME=	g${DISTNAME}p0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=make/}
 
@@ -23,8 +23,7 @@ SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --program-prefix="g"
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
-		LDFLAGS="-L${DEPBASE}/lib" \
-		MAKEINFO="makeinfo --no-split"
+		LDFLAGS="-L${DEPBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/config
 
 post-install:
