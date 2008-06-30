@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2008/05/04 20:45:30 okan Exp $
+# $OpenBSD: Makefile,v 1.10 2008/06/30 21:38:28 ajacoutot Exp $
 
 COMMENT=		base TeXLive LaTeX distribution
 
 V=			2007
 DISTNAME=		texlive_base-${V}-src
-PKGNAME=		texlive_base-${V}p5
+PKGNAME=		texlive_base-${V}p6
 SHARED_LIBS=		kpathsea	0.0
 
 WANTLIB=		m X11 ICE freetype Xt pthread c Xext fontconfig \
@@ -41,12 +41,12 @@ CONFIGURE_ARGS+=	--with-fontconfig=${X11BASE} \
 			--with-freetype2-include=${X11BASE}/include \
 			--with-system-ncurses \
 			--with-system-pnglib \
-			--with-pnglib-libdir=${TRUEPREFIX}/lib \
-			--with-pnglib-include=${TRUEPREFIX}/include/libpng \
+			--with-pnglib-libdir=${LOCALBASE}/lib \
+			--with-pnglib-include=${LOCALBASE}/include/libpng \
 			--with-system-zlib \
 			--with-system-t1lib \
-			--with-t1lib-libdir=${TRUEPREFIX}/lib \
-			--with-t1lib-include=${TRUEPREFIX}/include \
+			--with-t1lib-libdir=${LOCALBASE}/lib \
+			--with-t1lib-include=${LOCALBASE}/include \
 			--without-texinfo \
 			--with-xdvi-x-toolkit=xaw \
 			--without-texi2html \
