@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2008/06/18 06:49:31 brad Exp $
+@comment $OpenBSD: PLIST,v 1.48 2008/06/30 07:39:10 brad Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -99,8 +99,8 @@ libexec/postfix/postfix-script
 @man man/man8/trivial-rewrite.8
 @man man/man8/verify.8
 @man man/man8/virtual.8
-@bin sbin/mailq
-@bin sbin/newaliases
+sbin/mailq
+sbin/newaliases
 @bin sbin/postalias
 @bin sbin/postcat
 @bin sbin/postconf
