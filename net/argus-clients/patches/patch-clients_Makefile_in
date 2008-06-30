@@ -1,0 +1,20 @@
+$OpenBSD: patch-clients_Makefile_in,v 1.1.1.1 2008/06/30 05:20:42 steven Exp $
+--- clients/Makefile.in.orig	Wed Jun 25 23:35:01 2008
++++ clients/Makefile.in	Wed Jun 25 23:38:04 2008
+@@ -141,13 +141,13 @@ all: $(PROGS)
+ 	$(CC) $(CCOPT) -o $@ ratree.o $(LIB) $(COMPATLIB)
+ 
+ @INSTALL_BIN@/raports: raports.pl
+-	$(INSTALL) raports.pl $@
++	cp raports.pl $@
+ 
+ @INSTALL_BIN@/rahosts: rahosts.pl
+-	$(INSTALL) rahosts.pl $@
++	cp rahosts.pl $@
+ 
+ @INSTALL_BIN@/radark: radark.pl
+-	$(INSTALL) radark.pl $@
++	cp radark.pl $@
+ 
+ @INSTALL_BIN@/ratemplate: ratemplate.o $(LIB)
+ 	$(CC) $(CCOPT) -o $@ ratemplate.o $(LIB) $(COMPATLIB)

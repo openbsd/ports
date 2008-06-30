@@ -1,0 +1,65 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/30 05:20:42 steven Exp $
+@comment argus/
+@comment bin/argusbug
+@bin bin/ra
+@bin bin/rabins
+@bin bin/racluster
+@bin bin/racount
+bin/radark
+@bin bin/radump
+@bin bin/rafilteraddr
+bin/ragraph
+@bin bin/ragrep
+@bin bin/rahisto
+bin/rahosts
+@bin bin/ralabel
+@bin bin/ranonymize
+@bin bin/rapath
+@bin bin/rapolicy
+bin/raports
+@bin bin/rasort
+@bin bin/rasplit
+@bin bin/rastream
+@bin bin/rastrip
+@bin bin/ratemplate
+@bin bin/ratimerange
+@bin bin/ratop
+@bin bin/ratree
+@man man/man1/ra.1
+@man man/man1/rabins.1
+@man man/man1/racluster.1
+@man man/man1/racount.1
+@man man/man1/ragraph.1
+@man man/man1/ragrep.1
+@man man/man1/rahisto.1
+@man man/man1/rasort.1
+@man man/man1/rasplit.1
+@man man/man1/rastream.1
+@man man/man1/rastrip.1
+@man man/man5/racluster.5
+@man man/man5/radium.conf.5
+@man man/man5/rarc.5
+@man man/man8/radium.8
+@bin sbin/radium
+share/argus/
+@comment share/argus/archive/
+share/argus/delegated-ipv4-latest
+@comment share/argus/lib/
+@comment share/argus/rarc
+share/examples/argus-clients/
+share/examples/argus-clients/Config/
+share/examples/argus-clients/Config/delegated-ipv4-latest
+share/examples/argus-clients/Config/excel.rc
+share/examples/argus-clients/Config/ra.print.all.conf
+share/examples/argus-clients/Config/racluster.conf
+share/examples/argus-clients/Config/radium.conf
+share/examples/argus-clients/Config/ragetcountrycodes.sh
+share/examples/argus-clients/Config/ranonymize.conf
+share/examples/argus-clients/Config/rarc
+share/examples/argus-clients/Config/rastream.sh
+share/examples/argus-clients/Startup/
+share/examples/argus-clients/Startup/radium
+share/examples/argus-clients/System/
+share/examples/argus-clients/System/magic
+share/examples/argus-clients/System/protocols
+share/examples/argus-clients/Xml/

@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_argus_util_c,v 1.1.1.1 2008/06/30 05:20:42 steven Exp $
+--- common/argus_util.c.orig	Wed Jun 25 23:43:02 2008
++++ common/argus_util.c	Wed Jun 25 23:43:26 2008
+@@ -15424,8 +15424,8 @@ ArgusLog (int priority, char *fmt, ...)
+             *tptr++ = buf[i];
+          }
+ 
+-         memset(buf, 0, MAXSTRLEN);
+-         strncpy(buf, tbuf, MAXSTRLEN);
++         memset(buf, 0, sizeof(buf));
++         strncpy(buf, tbuf, sizeof(buf));
+       }
+ 
+       syslog (priority, buf);

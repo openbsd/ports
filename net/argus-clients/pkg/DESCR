@@ -1,0 +1,2 @@
+Argus data clients support a range of operations on binary flow data
+from Argus, such as sorting, aggregation, archival and reporting.
