@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2008/06/28 12:34:58 kurt Exp $
+# $OpenBSD: Makefile,v 1.17 2008/06/30 20:16:37 naddy Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -63,7 +63,7 @@ MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		CC="${CC}" \
 		CXX="${CXX}" \
 		USERNAME=${USER} \
-		HOTSPOT_BUILD_JOBS=`sysctl -n hw.ncpu`
+		HOTSPOT_BUILD_JOBS=${MAKE_JOBS}
 
 #ALL_TARGET=	debug_build
 

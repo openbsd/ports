@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/02/28 14:54:56 kurt Exp $
+# $OpenBSD: Makefile,v 1.26 2008/06/30 20:16:37 naddy Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
@@ -57,7 +57,7 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 			CXX="${CXX}" \
 			USER="${USER}" \
 			DEFAULT_LD_LIBRARY_PATH="/usr/lib:/usr/X11R6/lib:${LOCALBASE}/lib" \
-			HOTSPOT_BUILD_JOBS=`sysctl -n hw.ncpu`
+			HOTSPOT_BUILD_JOBS=${MAKE_JOBS}
 
 # Error message for distfile.
 FETCH_MANUALLY=		"You must manually fetch the distribution files, place"
