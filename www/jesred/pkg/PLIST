@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/24 10:51:03 espie Exp $
-libexec/jesred
+@comment $OpenBSD: PLIST,v 1.5 2008/06/30 12:28:46 sthen Exp $
+@bin libexec/jesred
 share/doc/jesred/
 share/doc/jesred/README
 share/examples/jesred/
