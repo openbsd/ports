@@ -1,0 +1,16 @@
+Argus is a fixed-model real time flow monitor designed to track and
+report on the status and performance of all network transactions seen in
+a data network traffic stream. Argus provides a common data format for
+reporting flow metrics such as connectivity, capacity, demand, loss,
+delay, and jitter on a per transaction basis. The record format that
+Argus uses is flexible and extensible, supporting generic flow
+identifiers and metrics, as well as application/protocol specific
+information.
+
+Argus can be used to analyze and report on the contents of packet
+capture files or it can run as a continuous monitor, examining data from
+a live interface; generating an audit log of all the network activity
+seen in the packet stream. Argus can be deployed to monitor individual
+end-systems, or an entire enterprises network activity. As a continuous
+monitor, Argus provides both push and pull data handling models, to
+allow flexible strategies for collecting network audit data.

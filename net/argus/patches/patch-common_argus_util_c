@@ -1,0 +1,20 @@
+$OpenBSD: patch-common_argus_util_c,v 1.1.1.1 2008/06/30 05:19:33 steven Exp $
+
+work around reading the wrong piece of memory on sparc64.
+
+--- common/argus_util.c.orig	Wed Jun 25 07:05:41 2008
++++ common/argus_util.c	Wed Jun 25 07:07:37 2008
+@@ -1911,11 +1911,12 @@ print_time(struct timeval *tvp)
+    char timeZoneBuf[32];
+    char *retn = ArgusPrintTimeBuf, *ptr;
+    struct tm *tm, tmbuf;
++   time_t sec = (time_t) tvp->tv_sec;
+ 
+    bzero (timeZoneBuf, sizeof(timeZoneBuf));
+    bzero (ArgusPrintTimeBuf, sizeof(ArgusPrintTimeBuf));
+ 
+-   if ((tm = localtime_r ((time_t *)&tvp->tv_sec, &tmbuf)) != NULL) {
++   if ((tm = localtime_r (&sec, &tmbuf)) != NULL) {
+       if (uflag)
+          snprintf (retn, 32, "%9d", (int) tvp->tv_sec);
+       else

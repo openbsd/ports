@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/30 05:19:33 steven Exp $
+bin/argusbug
+@man man/man5/argus.conf.5
+@man man/man8/argus.8
+@bin sbin/argus
+share/doc/argus/
+share/doc/argus/FAQ
+share/doc/argus/HOW-TO
+share/doc/argus/README
+share/examples/argus/
+share/examples/argus/Archive/
+share/examples/argus/Archive/argusarchive
+share/examples/argus/Config/
+share/examples/argus/Config/argus.conf
+share/examples/argus/Deployment/
+share/examples/argus/Deployment/sample
+share/examples/argus/README
+share/examples/argus/Startup/
+share/examples/argus/Startup/README
+share/examples/argus/Startup/argus
+share/examples/argus/System/
+share/examples/argus/System/crontab
+share/examples/argus/System/magic
+@sample /var/argus/
