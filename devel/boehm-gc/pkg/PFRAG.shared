@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2007/07/14 22:16:17 kili Exp $
-@lib lib/libcord.so.${LIBcord_VERSION}
-@lib lib/libgc.so.${LIBgc_VERSION}

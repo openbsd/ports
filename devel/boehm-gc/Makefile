@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.36 2008/04/01 17:41:13 kurt Exp $
+# $OpenBSD: Makefile,v 1.37 2008/07/01 09:43:19 landry Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
-COMMENT=	garbage collection and memory leak detection for C and C++
+COMMENT-main=	garbage collection and memory leak detection for C and C++
+COMMENT-atomic=	access to hardware provided atomic memory operations
 
 VERSION=	7.0
 DISTNAME=	gc-${VERSION}
-PKGNAME=	boehm-gc-${VERSION}p0
+PKGNAME-atomic=	libatomic_ops-1.2
+PKGNAME-main=	boehm-gc-${VERSION}p1
+
+MULTI_PACKAGES=	-main -atomic
 
 SHARED_LIBS +=	gc	3.0	# .1.2
 SHARED_LIBS +=  cord	2.3	# .1.3
@@ -41,11 +45,18 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 pre-configure:
 	@perl -pi -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/doc/gc.man
 
+# clean distributed objects and libs and rebuild
+pre-build:
+	@cd ${WRKBUILD}/libatomic_ops && ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${MAKE_FLAGS} clean all
+
 aliases=	malloc malloc_atomic free realloc enable_incremental \
 		register_finalizer malloc_ignore_off_page \
 		malloc_atomic_ignore_off_page set_warn_proc
 
 post-install:
+	@cd ${WRKBUILD}/libatomic_ops && ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} install
 	${INSTALL_DATA} ${WRKSRC}/doc/gc.man ${PREFIX}/man/man3/gc.3
 .for i in ${aliases}
 	ln -s gc.3 ${PREFIX}/man/man3/GC_$i.3

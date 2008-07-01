@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.11 2007/07/14 22:16:17 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2008/07/01 09:43:19 landry Exp $
+@pkgpath devel/boehm-gc
 %%SHARED%%
 include/gc/
 include/gc/gc.h
