@@ -1,14 +1,12 @@
-#   $OpenBSD: Makefile,v 1.3 2007/09/16 00:17:06 merdely Exp $
+#   $OpenBSD: Makefile,v 1.4 2008/07/01 16:41:19 ajacoutot Exp $
 
 COMMENT=	implements a complete, RFC compliant SMTP server
 
 DISTNAME=	SMTP-Server-1.1
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/} \
 		http://www.macgyver.org/software/perl/
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 HOMEPAGE=	http://www.macgyver.org/software/perl/
 

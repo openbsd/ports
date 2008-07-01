@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.34 2008/05/23 21:06:46 steven Exp $
+# $OpenBSD: Makefile,v 1.35 2008/07/01 16:41:19 ajacoutot Exp $
 
 COMMENT=	command-driven interactive function plotting program
 
 V=		4.2
 PATCHLEVEL=	3
 DISTNAME=	gnuplot-${V}.${PATCHLEVEL}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
 
 HOMEPAGE=	http://www.gnuplot.info/
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

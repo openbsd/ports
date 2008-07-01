@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/29 05:52:17 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2008/07/01 16:41:19 ajacoutot Exp $
 
 COMMENT=	cryptographic cipher block chaining mode
 
 MODULES=	cpan
 DISTNAME=	Crypt-CBC-2.24
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	security
 
 RUN_DEPENDS=	:p5-Crypt-DES-*:security/p5-Crypt-DES \
 		:p5-Crypt-Blowfish-*:security/p5-Crypt-Blowfish
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/07/01 16:41:19 ajacoutot Exp $
 
 COMMENT=	send ICMP nasty garbage
 
 DISTNAME=	SING-1.1
-PKGNAME=	${DISTNAME:L}p1
+PKGNAME=	${DISTNAME:L}p2
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sing/}
 EXTRACT_SUFX=	.tgz
@@ -11,8 +11,6 @@ EXTRACT_SUFX=	.tgz
 HOMEPAGE=	http://sourceforge.net/projects/sing/
 
 LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

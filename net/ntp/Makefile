@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.35 2007/09/17 17:20:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2008/07/01 16:41:19 ajacoutot Exp $
 
 COMMENT-main=	network time protocol implementation
 COMMENT-doc=	network time protocol documentation
 
 NTP_VERSION=	4.2.0a
 DISTNAME=	ntp-stable-${NTP_VERSION}-20050303
-PKGNAME-main=	ntp-${NTP_VERSION}p4
-PKGNAME-doc=	ntp-doc-${NTP_VERSION}p1
+PKGNAME-main=	ntp-${NTP_VERSION}p5
+PKGNAME-doc=	ntp-doc-${NTP_VERSION}p2
 CATEGORIES=	net
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/snapshots/ntp-stable/2005/03/ \
 		ftp://ftp.udel.edu/pub/ntp/ntp4/snapshots/ntp-stable/2005/03/ \
 		ftp://ftp.cs.umn.edu/ftp00/ftp.udel.edu/pub/ntp/ntp4/snapshots/ntp-stable/2005/03/
 
 HOMEPAGE=	http://www.ntp.org/
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 # modified ISC license.  However, some files include different
 # copyrights.

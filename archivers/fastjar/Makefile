@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/16 11:14:46 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2008/07/01 16:41:19 ajacoutot Exp $
 # $FreeBSD: ports/archivers/fastjar/Makefile,v 1.4 2000/04/24 15:51:08 knu Exp $
 
 COMMENT=	Sun JDK's jar command written entirely in C #
 
 DISTNAME=	fastjar-0.93
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=     archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fastjar/}
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://fastjar.sourceforge.net/
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 

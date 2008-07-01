@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2008/07/01 16:41:19 ajacoutot Exp $
 
 COMMENT=	Windows 95/98/NT like window manager
 
 DISTNAME=	qvwm-1.1.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=     x11
 MASTER_SITES=	ftp://ftp.qvwm.org/pub/qvwm/
 
 HOMEPAGE=	http://www.qvwm.org/
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 

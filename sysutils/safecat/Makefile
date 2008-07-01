@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/07/01 16:41:19 ajacoutot Exp $
 
 COMMENT=	copy stdin to a qmail-style maildir
 
 DISTNAME=	safecat-1.12
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jeenyus.net/~budney/linux/software/safecat/ \
 		http://sunsite.unc.edu/pub/Linux/utils/file/
 
 HOMEPAGE=	http://jeenyus.net/~budney/linux/software/safecat.html
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

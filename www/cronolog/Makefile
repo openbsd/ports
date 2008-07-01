@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/01 16:41:19 ajacoutot Exp $
 
 COMMENT=	web log rotation program
 
 DISTNAME=	cronolog-1.6.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 MASTER_SITES=	http://www.cronolog.org/download/
 
 HOMEPAGE=	http://www.cronolog.org/
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

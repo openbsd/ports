@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2008/07/01 16:41:19 ajacoutot Exp $
 
 COMMENT=	RADIUS log file analysis tool
 
 DISTNAME=	radiusreport-0.3b6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pgregg.com/projects/radiusreport/
 EXTRACT_SUFX=	.tar
 
 HOMEPAGE=	http://www.pgregg.com/projects/radiusreport/
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

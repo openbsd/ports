@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2008/05/14 08:24:14 pyr Exp $
+# $OpenBSD: Makefile,v 1.13 2008/07/01 16:41:19 ajacoutot Exp $
 
 COMMENT= 	synchronize IMAP4 and maildir mailboxes
 
 DISTNAME=	isync-1.0.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isync/}
 
 HOMEPAGE=	http://isync.sourceforge.net/
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

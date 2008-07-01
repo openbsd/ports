@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2008/07/01 16:41:19 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,9 +6,8 @@ COMMENT= 	interface to the DES encryption algorithm
 
 MODULES=	cpan
 DISTNAME=	Crypt-DES-2.05
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	security
-
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
