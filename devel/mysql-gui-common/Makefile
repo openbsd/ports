@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2008/04/16 20:29:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2008/07/01 08:27:18 wilfried Exp $
 
 COMMENT=	common libraries and data for the MySQL GUI Suites
 
 DISTNAME=	mysql-gui-tools-5.0r12
-PKGNAME=	mysql-gui-common-5.0.6.1r12p1
+PKGNAME=	mysql-gui-common-5.0.6.1r12p2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.mysql.com/products/tools/administrator/

@@ -1,0 +1,14 @@
+$OpenBSD: patch-source_linux_MDispatcher_cc,v 1.1 2008/07/01 08:27:18 wilfried Exp $
+--- source/linux/MDispatcher.cc.orig	Fri Oct  7 13:31:36 2005
++++ source/linux/MDispatcher.cc	Mon Jun 30 15:25:26 2008
+@@ -21,8 +21,8 @@
+ #include <unistd.h>
+ #include <mysql.h>
+ 
+-#define MX_LOCK(mx) { if (0) g_message("[%i]:%s: LOCK %s", (int)pthread_self(), __FUNCTION__, #mx); pthread_mutex_lock(mx); }
+-#define MX_UNLOCK(mx) { if (0) g_message("[%i]:%s: UNLOCK %s", (int)pthread_self(), __FUNCTION__, #mx); pthread_mutex_unlock(mx); }
++#define MX_LOCK(mx) { if (0) g_message("[%p]:%s: LOCK %s", pthread_self(), __FUNCTION__, #mx); pthread_mutex_lock(mx); }
++#define MX_UNLOCK(mx) { if (0) g_message("[%p]:%s: UNLOCK %s", pthread_self(), __FUNCTION__, #mx); pthread_mutex_unlock(mx); }
+ 
+ 
+ void *MDispatcher::thread_func(Fetcher *self)
