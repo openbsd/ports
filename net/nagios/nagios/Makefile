@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2008/05/22 11:49:34 sturm Exp $
+# $OpenBSD: Makefile,v 1.30 2008/07/01 06:03:58 sturm Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
-V=		3.0.2
+V=		3.0.3
 DISTNAME=	nagios-${V}
 PKGNAME-main=	nagios-${V}
 PKGNAME-web=	nagios-web-${V}
@@ -67,8 +67,9 @@ WANTLIB-web=
 LIB_DEPENDS-web=
 RUN_DEPENDS-web=:nagios-${V}-chroot:net/nagios/nagios,chroot
 .else
-WANTLIB-web=	${WANTLIB} fontconfig freetype iconv intl jpeg z
-LIB_DEPENDS-web=glib-2.0::devel/glib2 \
+WANTLIB-web=	${WANTLIB} fontconfig freetype jpeg z
+LIB_DEPENDS-web=${MODGETTEXT_LIB_DEPENDS} \
+		glib-2.0::devel/glib2 \
 		gd::graphics/gd \
 		png::graphics/png
 RUN_DEPENDS-web=:nagios-${V}-!chroot:net/nagios/nagios

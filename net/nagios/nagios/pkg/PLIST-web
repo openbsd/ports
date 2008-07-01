@@ -1,22 +1,21 @@
-@comment $OpenBSD: PLIST-web,v 1.2 2008/03/18 20:25:11 sturm Exp $
+@comment $OpenBSD: PLIST-web,v 1.3 2008/07/01 06:03:58 sturm Exp $
 cgi-bin/nagios/
-cgi-bin/nagios/avail.cgi
-cgi-bin/nagios/cmd.cgi
-cgi-bin/nagios/config.cgi
-cgi-bin/nagios/extinfo.cgi
-cgi-bin/nagios/histogram.cgi
-cgi-bin/nagios/history.cgi
-cgi-bin/nagios/notifications.cgi
-cgi-bin/nagios/outages.cgi
-cgi-bin/nagios/showlog.cgi
-cgi-bin/nagios/status.cgi
-cgi-bin/nagios/statusmap.cgi
-cgi-bin/nagios/statuswml.cgi
-cgi-bin/nagios/statuswrl.cgi
-cgi-bin/nagios/summary.cgi
-cgi-bin/nagios/tac.cgi
-cgi-bin/nagios/trends.cgi
-nagios/
+@bin cgi-bin/nagios/avail.cgi
+@bin cgi-bin/nagios/cmd.cgi
+@bin cgi-bin/nagios/config.cgi
+@bin cgi-bin/nagios/extinfo.cgi
+@bin cgi-bin/nagios/histogram.cgi
+@bin cgi-bin/nagios/history.cgi
+@bin cgi-bin/nagios/notifications.cgi
+@bin cgi-bin/nagios/outages.cgi
+@bin cgi-bin/nagios/showlog.cgi
+@bin cgi-bin/nagios/status.cgi
+@bin cgi-bin/nagios/statusmap.cgi
+@bin cgi-bin/nagios/statuswml.cgi
+@bin cgi-bin/nagios/statuswrl.cgi
+@bin cgi-bin/nagios/summary.cgi
+@bin cgi-bin/nagios/tac.cgi
+@bin cgi-bin/nagios/trends.cgi
 nagios/contexthelp/
 nagios/contexthelp/A1.html
 nagios/contexthelp/A2.html
