@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/06/08 02:49:00 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2008/07/01 08:22:12 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	portable Windows library
 
 V=		1_12_0
 DISTNAME=	ptlib-v${V}
-PKGNAME=	pwlib-${V:S/_/./g}p3
+PKGNAME=	pwlib-${V:S/_/./g}p4
 CATEGORIES=	devel
 
 EXTRACT_SUFX=	-src.tar.gz
