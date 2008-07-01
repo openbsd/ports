@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_Comms_c,v 1.1 2008/07/01 08:27:52 wilfried Exp $
+--- src/Comms.c.orig	Fri Jan  3 13:16:06 1997
++++ src/Comms.c	Mon Jun 30 17:05:56 2008
+@@ -10,6 +10,7 @@
+ #include <X11/Intrinsic.h>
+ #include <X11/Shell.h>
+ 
++#include <stdlib.h>
+ #include "Files.h"
+ #include "Comms.h"
+ 
+@@ -90,11 +91,11 @@ void openRemoteDirs(Display *dpy, Window files, int ar
+     }
+     /* get working dir */
+     bufsize = MAXPATHLEN;		
+-    if (!(buf = (char*)malloc(bufsize))) exit(1);
++    if (!(buf = malloc(bufsize))) exit(1);
+     while(!getcwd(buf, bufsize))
+     {	
+ 	bufsize += MAXPATHLEN;  
+-  	if (!(buf = (char*)realloc(buf, bufsize))) exit(1);
++  	if (!(buf = realloc(buf, bufsize))) exit(1);
+     }
+     strcat(buf, "/");	
+     s = buf+strlen(buf);
+@@ -106,7 +107,7 @@ void openRemoteDirs(Display *dpy, Window files, int ar
+ 	    if (bufsize>strlen(buf)+strlen(*argv))
+ 		strcat(buf, *argv++);  
+ 	    else
+-		if (!(buf = (char*)realloc(buf,strlen(buf)+strlen(*argv)+1))) 
++		if (!(buf = realloc(buf,strlen(buf)+strlen(*argv)+1))) 
+ 		    exit(1);
+ 		else
+ 		    strcat(buf, *argv++);
