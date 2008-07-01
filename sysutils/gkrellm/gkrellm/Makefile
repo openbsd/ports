@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2008/06/13 17:38:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2008/07/01 10:17:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,8 +7,8 @@ COMMENT-client=	single process stack of system monitors for GTK+2
 
 V=		2.3.1
 DISTNAME=	gkrellm-${V}
-PKGNAME-main=	gkrellm-server-${V}p0
-PKGNAME-client=	gkrellm-${V}p1
+PKGNAME-main=	gkrellm-server-${V}p1
+PKGNAME-client=	gkrellm-${V}p2
 CATEGORIES=	sysutils sysutils/gkrellm
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -57,7 +57,6 @@ INSTALL_TARGET=	install_openbsd
 MAKE_ENV+=	without_gnutls=yes
 
 pre-configure:
-	@perl -pi -e "s|%%SYSCONFDIR%%|${SYSCONFDIR}|g" \
-		${WRKSRC}/server/gkrellmd.h
+	${SUBST_CMD} ${WRKSRC}/server/gkrellmd.h
 
 .include <bsd.port.mk>
