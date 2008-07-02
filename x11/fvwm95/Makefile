@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 20:04:20 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/07/02 18:16:19 ajacoutot Exp $
 
 COMMENT=	win95-like window manager based on fvwm 2.x
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
-PKGNAME=	fvwm95-2.0.43ap1
+PKGNAME=	fvwm95-2.0.43ap2
 CATEGORIES=     x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fvwm95/} \
 		ftp://ftp.plig.org/pub/fvwm95/ \
@@ -14,12 +14,11 @@ HOMEPAGE=	http://fvwm95.sourceforge.net/
 
 LIB_DEPENDS=	rplay::audio/rplay
 
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
-
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
+
 WANTLIB=		X11 Xext Xpm c
 
 USE_X11=	Yes

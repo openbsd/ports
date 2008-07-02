@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/12/30 01:20:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/07/02 18:16:19 ajacoutot Exp $
 @conflict fvwm2-*
 @conflict fvwm2+fvicons-*
-bin/fvwm95
-bin/xpmroot
+@bin bin/fvwm95
+@bin bin/xpmroot
 icons/
 icons/Mosaic.xpm
 icons/Xfm.xpm
@@ -221,26 +221,26 @@ icons/xterm.xpm
 icons/xv.xpm
 icons/xview.xpm
 lib/X11/fvwm95/
-lib/X11/fvwm95/FvwmAudio
-lib/X11/fvwm95/FvwmAuto
-lib/X11/fvwm95/FvwmBacker
-lib/X11/fvwm95/FvwmBanner
-lib/X11/fvwm95/FvwmButtons
-lib/X11/fvwm95/FvwmConsole
-lib/X11/fvwm95/FvwmCpp
-lib/X11/fvwm95/FvwmDebug
-lib/X11/fvwm95/FvwmForm
-lib/X11/fvwm95/FvwmIconBox
-lib/X11/fvwm95/FvwmIconMan
-lib/X11/fvwm95/FvwmIdent
-lib/X11/fvwm95/FvwmM4
-lib/X11/fvwm95/FvwmPager
-lib/X11/fvwm95/FvwmSave
-lib/X11/fvwm95/FvwmSaveDesk
-lib/X11/fvwm95/FvwmScroll
-lib/X11/fvwm95/FvwmTalk
-lib/X11/fvwm95/FvwmTaskBar
-lib/X11/fvwm95/FvwmWinList
+@bin lib/X11/fvwm95/FvwmAudio
+@bin lib/X11/fvwm95/FvwmAuto
+@bin lib/X11/fvwm95/FvwmBacker
+@bin lib/X11/fvwm95/FvwmBanner
+@bin lib/X11/fvwm95/FvwmButtons
+@bin lib/X11/fvwm95/FvwmConsole
+@bin lib/X11/fvwm95/FvwmCpp
+@bin lib/X11/fvwm95/FvwmDebug
+@bin lib/X11/fvwm95/FvwmForm
+@bin lib/X11/fvwm95/FvwmIconBox
+@bin lib/X11/fvwm95/FvwmIconMan
+@bin lib/X11/fvwm95/FvwmIdent
+@bin lib/X11/fvwm95/FvwmM4
+@bin lib/X11/fvwm95/FvwmPager
+@bin lib/X11/fvwm95/FvwmSave
+@bin lib/X11/fvwm95/FvwmSaveDesk
+@bin lib/X11/fvwm95/FvwmScroll
+@bin lib/X11/fvwm95/FvwmTalk
+@bin lib/X11/fvwm95/FvwmTaskBar
+@bin lib/X11/fvwm95/FvwmWinList
 lib/X11/fvwm95/fvwmrc_convert
 lib/X11/fvwm95/quantize_pixmaps
 lib/X11/fvwm95/system.fvwm95rc

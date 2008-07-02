@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_FvwmForm_FvwmForm_c,v 1.1 2008/07/02 18:16:19 ajacoutot Exp $
+--- modules/FvwmForm/FvwmForm.c.orig	Tue Dec 10 11:41:43 1996
++++ modules/FvwmForm/FvwmForm.c	Tue Jul  1 11:14:16 2008
+@@ -180,6 +180,8 @@ int rel_cursor;
+ static char *buf;
+ static int N = 8;
+ 
++XFontStruct *GetFontOrFixed(Display *, char *);
++
+ /* copy a string until '\0', or up to n chars, and delete trailing spaces */
+ char *CopyString (char *cp, int n)
+ {
