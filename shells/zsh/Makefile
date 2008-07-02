@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2008/04/04 07:46:03 landry Exp $
+# $OpenBSD: Makefile,v 1.48 2008/07/02 15:02:54 okan Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
 V=		4.3.6
 DISTNAME=	zsh-$V
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	shells
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
@@ -28,6 +29,8 @@ WANTLIB=	c m termcap
 
 MODULES=	converters/libiconv
 
+LIB_DEPENDS=	pcre::devel/pcre
+
 AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
@@ -37,7 +40,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED:S/shared/dynamic/} \
 		--enable-zsh-secure-free \
 		--enable-maildir-support \
 		--with-tcsetpgrp \
-		--enable-multibyte
+		--enable-multibyte \
+		--enable-pcre
 
 SUBST_VARS=	V
 

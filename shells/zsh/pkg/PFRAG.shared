@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2008/02/08 04:55:08 okan Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2008/07/02 15:02:54 okan Exp $
 lib/zsh/
 lib/zsh/${V}/
 lib/zsh/${V}/zsh/
@@ -21,6 +21,7 @@ lib/zsh/${V}/zsh/net/socket.so
 lib/zsh/${V}/zsh/net/tcp.so
 lib/zsh/${V}/zsh/newuser.so
 lib/zsh/${V}/zsh/parameter.so
+lib/zsh/${V}/zsh/pcre.so
 lib/zsh/${V}/zsh/regex.so
 lib/zsh/${V}/zsh/rlimits.so
 lib/zsh/${V}/zsh/sched.so
