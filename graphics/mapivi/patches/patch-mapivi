@@ -1,25 +1,39 @@
-$OpenBSD: patch-mapivi,v 1.3 2007/12/27 22:49:14 kili Exp $
---- mapivi.orig	Tue Oct 31 04:21:59 2006
-+++ mapivi	Fri Dec 21 22:35:08 2007
-@@ -341,7 +341,7 @@ my $nrToConvert     = 0;
+$OpenBSD: patch-mapivi,v 1.4 2008/07/02 14:26:22 landry Exp $
+--- mapivi.orig	Thu Feb 21 21:53:44 2008
++++ mapivi	Thu Mar 13 20:25:24 2008
+@@ -148,11 +148,11 @@ if (($EvilOS) and (defined $ENV{APPDATA}) and ($maprog
+ # for windows we use this path
+ $maprogsdir     = $ENV{APPDATA}."/maprogs" if defined $ENV{APPDATA};
+ my $configdir   = "$maprogsdir/mapivi";   # the configuration dir
+-my $icon_path   = "$configdir/icons";     # the icon dir
++my $icon_path   = "${PREFIX}/share/mapivi/icons";     # the icon dir
+ 
+ my $splashAvail = (eval "require Tk::Splash")  ? 1 : 0 ;
+ my $splash;
+-my $logo = "$configdir/logo.jpg";
++my $logo = "${PREFIX}/share/mapivi/pics/logo.jpg";
+ if ($splashAvail and -f $logo) {
+   # Splash->Show parameters: $image, $width, $height, $title, $overrideredirect
+   $splash = Tk::Splash->Show($logo, 844, 259, "", 1);
+@@ -360,7 +360,7 @@ my $nrToConvert     = 0;
  my $maxCommentLength = 2**16 - 3; # a comment block may have max 64kB
  
  my $trashdir        = "$configdir/trash";     # the trashcan
 -my $plugindir       = "$configdir/PlugIns";   # the mapivi plugin dir
-+my $plugindir       = "!!PREFIX!!/share/mapivi/PlugIns";   # the mapivi plugin dir
- my $iptcdir         = "$configdir/IPTC_templates";  # the IPTC templates directory
++my $plugindir       = "${PREFIX}/share/mapivi/PlugIns";   # the mapivi plugin dir
+ my $iptcdir         = "$configdir/IPTC_templates";  # the IPTC templates folder
  my $configFile      = "$configdir/mapivirc";  # the configuration file
  my $file_Entry_values = "$configdir/Entry_values";
-@@ -422,7 +422,7 @@ my %new_keywords;
+@@ -445,7 +445,7 @@ my %new_keywords;
  my %ignore_keywords;
  
  # external programs used by mapivi
--my %exprogs = qw/convert 0 composite 0 jhead 0 jpegtran 0 jpegpixi 0 mogrify 0 gimp-remote 0 gimp-win-remote 0 montage 0 xwd 0 identify 0 thunderbird 0 exiftool 0/;
+-my %exprogs = qw/convert 0 composite 0 jhead 0 jpegtran 0 jpegpixi 0 mogrify 0 gimp-remote 0 gimp-win-remote 0 montage 0 xwd 0 identify 0 thunderbird 0 mozilla-thunderbird 0 exiftool 0/;
 +my %exprogs = qw/convert 0 composite 0 jhead 0 jpegtran 0 jpegpixi 0 mogrify 0 gimp-remote 0 montage 0 identify 0 exiftool 0/;
  # short comment about the usage of the external programs
  my %exprogscom = (
  		   "convert"        => "build thumbnails",
-@@ -433,10 +433,7 @@ my %exprogscom = (
+@@ -456,10 +456,7 @@ my %exprogscom = (
  		   "mogrify"        => "change the size/quality of pictures",
  		   "montage"        => "combine pictures to e.g. index prints",
  		   "gimp-remote"    => "edit pictures with The GIMP (only UNIX)",
@@ -27,73 +41,64 @@ $OpenBSD: patch-mapivi,v 1.3 2007/12/27 22:49:14 kili Exp $
 -		   "xwd"            => "make a screenshot of a window or desktop",
  		   "identify"       => "describe the format and characteristics of a picture",
 -		   "thunderbird"    => "send pictures via email",
+ 		   "mozilla-thunderbird" => "send pictures via email",
  		   "exiftool"       => "Read/write meta information in image files",
  		  );
- # where to find the external programs (resources)
-@@ -449,9 +446,7 @@ my %exprogsres = (
+@@ -473,9 +470,7 @@ my %exprogsres = (
  		   "mogrify"        => "Image Magick http://www.imagemagick.org",
  		   "montage"        => "Image Magick http://www.imagemagick.org",
  		   "gimp-remote"    => "The GIMP http://www.gimp.org",
 -		   "gimp-win-remote"=> "gimp-win-remote http://sourceforge.net/projects/gimp-win-remote/",
  		   "identify"       => "Image Magick http://www.imagemagick.org",
 -		   "thunderbird"    => "http://www.mozilla.org/projects/thunderbird/",
+ 		   "mozilla-thunderbird" => "http://www.mozilla.org/projects/thunderbird/",
  		   "exiftool"       => "http://owl.phy.queensu.ca/~phil/exiftool/",	
  		  );
- 
-@@ -505,7 +500,7 @@ my %config = (
+@@ -544,7 +539,7 @@ my %config = (
  			  "ColorThumbBG"    => "azure3",
  			  "ColorProgress"   => "#106dba",
- 			  "ColorPicker"     => "red", # last color selected with color picker
+ 			  "ColorPicker"     => "#efefef", # last color selected with color picker
 -			  "DefaultThumb"    => "$configdir/EmptyThumb.jpg",
-+			  "DefaultThumb"    => "!!PREFIX!!/share/mapivi/EmptyThumb.jpg",
++		          "DefaultThumb"    => "${PREFIX}/share/mapivi/pics/EmptyThumb.jpg",
  			  "Copyright"       => "copyright (c) $copyright_year Herrmann",
  			  "Comment"         => "This picture was taken in south africa ...",
  			  "MaxProcs"        => 1,
-@@ -1854,9 +1849,7 @@ sub startup {
-   if ($config{NrOfRuns} == 0) {
- 	#whereIsPerl();
- 	makeConfigDir();
--	copyConfigPics();
- 	copyOtherStuff();
--	copyPlugIns();
-   }
-   $config{NrOfRuns}++;
-   gratulation() if (($config{NrOfRuns} % 1000 == 0) and ($config{NrOfRuns} > 0)); # modulo
-@@ -13073,8 +13066,6 @@ sub createMenubar {
+@@ -739,7 +734,6 @@ my %config = (
+ 			  "LineLength"      => 30,  # length of one line in the thumbnail table e.g. for comments
+ 			  "ExtViewer"       => 'display', # name of external picture viewer
+ 			  "ExtViewerMulti"  => 0,   # bool
+-			  "ExtBGApp"        => "wmsetbg -a", # name of external app to set desktop background (with options) 
+ 			  "ConvertUmlaut"   => 1,   # convert german umlaute (e.g. ä -> ae etc.)
+ 			  "DeadPixelStr"    => "1300,846,3 85,411,3 7,365,3 1529,185,3 1593,201,3 1387,1003,3 1957,1057,3 50,1043,2 615,935,3", # info about the dead pixels of your camera see: http://www.zero-based.org/software/jpegpixi/
+ 			  "DeadPixelMethod" => "linear",
+@@ -1083,7 +1077,7 @@ ENIIJZtY4oUFGKCwQgw13KBDDz8UcUQTPlBc0cUSAhEEwAANVLBBCC
+ dKyyLnF00kjQlkTSR9GqxBKzyS6bEbY0EestAAEBADs=
+ EOF
+ my $mapiviicon = $top->Photo(-data => $icon_data);
+-my $mapiviiconfile = "$configdir/MapiviIcon.gif";
++my $mapiviiconfile = "$icon_path/MapiviIcon.gif";
+ $mapiviiconfile    = "$configdir/MapiviIcon32.gif" if $EvilOS;
+ #my $mapiviicon = $top->Photo(-file => $mapiviiconfile) if (-f $mapiviiconfile);
+ $top->idletasks if $EvilOS; # this line is crucial (at least on windows)
+@@ -13567,8 +13561,6 @@ sub createMenubar {
  						}
  						slideshow();
  					  }, -accelerator => "<s>");
-- $view_menu->command(-label => "use actual picture as desktop background",
+-  $view_menu->command(-label => "use actual picture as desktop background",
 -					  -command => \&setBackground);
-  $view_menu->command(-label => "smart update",
- 					  -command => sub { smart_update(); });
- 
-@@ -13217,7 +13208,6 @@ sub addFileActionsMenu {
-   $fop_menu->command(-label => "copy to ...",    -command => sub { copyPicsDialog(COPY, $lb); } );
-   $fop_menu->command(-label => "link to ...",    -command => \&linkPicsDialog) if (!$EvilOS);
-   $fop_menu->command(-label => "move to ...",    -command => sub { movePicsDialog($lb); } );
--  $fop_menu->command(-label => "send to ...",    -command => sub { sendTo($lb); } );
-   $fop_menu->command(-label => "convert ...",    -command => sub { convertPics($lb); } );
-   $fop_menu->command(-label => "copy to print ...", -command => sub { copyToPrint($lb); }, -accelerator => "<Ctrl-p>");
-   $fop_menu->command(-label => "rename ...",     -command => sub { renamePic($lb); }, -accelerator => "<r>");
-@@ -15630,7 +15620,7 @@ sub makeButton {
+  
+   $view_menu->separator;
+   my $layout_menu = $view_menu->cascade(-label => "Window layout ...");
+@@ -16381,7 +16373,7 @@ sub makeButton {
  	my $picName      = shift;
  	my $func         = shift;
  
 -	my $pic   = "$configdir/$picName";
-+	my $pic   = "!!PREFIX!!/share/mapivi/$picName";
++	my $pic   = "${PREFIX}/share/mapivi/$picName";
  	my $image = $parentWidget->Photo(-file => $pic) if -f $pic;
  
  	if ($image) {
-@@ -17178,7 +17168,6 @@ If this option is enabled one viewer will be started l
- "viewer pic1.jpg pic2.jpg pic3.jpg",
- if not 3 viewers will be started like this:
- "viewer pic1.jpg" "viewer pic2.jpg" "viewer pic3.jpg".');
--  labeledEntry($dF, 'top', $w, "Tool to set the desktop background",\$tmpconf{ExtBGApp});
- 
-   # ###############  button frame  ########################
- 
-@@ -24417,7 +24406,7 @@ sub GIMPedit {
+@@ -25698,7 +25690,7 @@ sub GIMPedit {
  	# check if file is a link and get the real target
  	next if (!getRealFile(\$dpic));
  
