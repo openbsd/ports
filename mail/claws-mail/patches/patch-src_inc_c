@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_inc_c,v 1.4 2008/01/08 23:13:23 landry Exp $
---- src/inc.c.orig	Mon Dec 17 06:37:00 2007
-+++ src/inc.c	Tue Dec 18 19:35:55 2007
+$OpenBSD: patch-src_inc_c,v 1.5 2008/07/02 09:28:09 landry Exp $
+--- src/inc.c.orig	Fri Jun 27 09:40:19 2008
++++ src/inc.c	Tue Jul  1 13:44:40 2008
 @@ -88,7 +88,7 @@ static GdkPixbuf *currentpix;
  static GdkPixbuf *errorpix;
  static GdkPixbuf *okpix;
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_inc_c,v 1.4 2008/01/08 23:13:23 landry Exp $
  
  static void inc_finished		(MainWindow		*mainwin,
  					 gboolean		 new_messages,
-@@ -954,7 +954,7 @@ static void inc_progress_dialog_set_label(IncProgressD
+@@ -955,7 +955,7 @@ static void inc_progress_dialog_set_label(IncProgressD
  static void inc_progress_dialog_set_progress(IncProgressDialog *inc_dialog,
  					     IncSession *inc_session)
  {

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2008/04/17 08:10:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2008/07/02 09:28:09 landry Exp $
 @pkgpath mail/sylpheed-claws,-main${FLAVOR_STRING}
 @pkgpath mail/sylpheed-claws${FLAVOR_STRING}
-bin/claws-mail
+@bin bin/claws-mail
 @comment bin/sylpheed-claws
 include/claws-mail/
 include/claws-mail/account.h
@@ -25,6 +25,7 @@ include/claws-mail/addritem.h
 include/claws-mail/addrquery.h
 include/claws-mail/addrselect.h
 include/claws-mail/alertpanel.h
+include/claws-mail/autofaces.h
 include/claws-mail/browseldap.h
 include/claws-mail/codeconv.h
 include/claws-mail/common/
@@ -291,33 +292,21 @@ share/icons/hicolor/48x48/apps/claws-mail.png
 share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/claws-mail.png
-share/locale/bg/LC_MESSAGES/claws-mail.mo
 share/locale/ca/LC_MESSAGES/claws-mail.mo
-share/locale/cs/LC_MESSAGES/claws-mail.mo
 share/locale/de/LC_MESSAGES/claws-mail.mo
-share/locale/el/LC_MESSAGES/claws-mail.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/claws-mail.mo
 share/locale/es/LC_MESSAGES/claws-mail.mo
 share/locale/fi/LC_MESSAGES/claws-mail.mo
 share/locale/fr/LC_MESSAGES/claws-mail.mo
-share/locale/he/LC_MESSAGES/claws-mail.mo
-share/locale/hr/LC_MESSAGES/claws-mail.mo
 share/locale/hu/LC_MESSAGES/claws-mail.mo
 share/locale/it/LC_MESSAGES/claws-mail.mo
-share/locale/ja/LC_MESSAGES/claws-mail.mo
-share/locale/ko/LC_MESSAGES/claws-mail.mo
-share/locale/nb/LC_MESSAGES/claws-mail.mo
-share/locale/nl/LC_MESSAGES/claws-mail.mo
 share/locale/pl/LC_MESSAGES/claws-mail.mo
 share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
-share/locale/ru/LC_MESSAGES/claws-mail.mo
 share/locale/sk/LC_MESSAGES/claws-mail.mo
 share/locale/sr/LC_MESSAGES/claws-mail.mo
-share/locale/sv/LC_MESSAGES/claws-mail.mo
 share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
-share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
