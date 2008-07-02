@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnats_misc_c,v 1.1 2003/08/25 23:35:06 brad Exp $
---- gnats/misc.c.orig	Wed Nov 25 07:15:04 1998
-+++ gnats/misc.c	Wed Jul  2 13:23:13 2003
-@@ -71,9 +71,9 @@ log_msg (severity, has_arg, va_alist)
+$OpenBSD: patch-gnats_misc_c,v 1.2 2008/07/02 18:16:40 brad Exp $
+--- gnats/misc.c.orig	Wed Nov 25 09:15:04 1998
++++ gnats/misc.c	Tue Jul  1 20:24:07 2008
+@@ -71,15 +71,15 @@ log_msg (severity, has_arg, va_alist)
      message2 = va_arg (args, char *);
  
    if (has_arg)
@@ -13,6 +13,13 @@ $OpenBSD: patch-gnats_misc_c,v 1.1 2003/08/25 23:35:06 brad Exp $
  
    if (debug_level >= severity)
      {
+ #ifdef HAVE_SYSLOG_H
+       if (log_method == SYSLOG)
+-	syslog (severity, buf);
++	syslog (severity, "%s", buf);
+       else
+ #endif
+       if (gnats_logfile != (FILE *) NULL)
 @@ -170,14 +170,14 @@ get_next_field (line, token, delim)
    *t = '\0';
  

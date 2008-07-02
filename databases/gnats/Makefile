@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 20:34:00 simon Exp $
+# $OpenBSD: Makefile,v 1.21 2008/07/02 18:16:40 brad Exp $
 
 COMMENT=	GNU Problem Report Management System
 
 DISTNAME=	gnats-3.113.1
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_GNU:=gnats/}
 
 HOMEPAGE=	http://www.gnu.org/software/gnats/
 
-# GPL
+# GPLv2+
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
