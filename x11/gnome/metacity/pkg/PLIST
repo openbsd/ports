@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.15 2007/11/10 15:46:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2008/07/02 17:42:55 ajacoutot Exp $
 %%SHARED%%
-bin/metacity
-bin/metacity-message
-bin/metacity-theme-viewer
-bin/metacity-window-demo
+@bin bin/metacity
+@bin bin/metacity-message
+@bin bin/metacity-theme-viewer
+@bin bin/metacity-window-demo
 include/metacity-1/
 include/metacity-1/metacity-private/
 include/metacity-1/metacity-private/boxes.h
@@ -17,7 +17,7 @@ lib/libmetacity-private.a
 lib/libmetacity-private.la
 lib/pkgconfig/
 lib/pkgconfig/libmetacity-private.pc
-libexec/metacity-dialog
+@bin libexec/metacity-dialog
 @man man/man1/metacity-theme-viewer.1
 @man man/man1/metacity-window-demo.1
 @man man/man1/metacity.1
@@ -74,8 +74,6 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/metacity.mo
 share/locale/es/LC_MESSAGES/metacity.mo
 share/locale/et/LC_MESSAGES/metacity.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/metacity.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/
