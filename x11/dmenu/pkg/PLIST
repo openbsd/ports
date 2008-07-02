@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/04/08 18:04:10 merdely Exp $
-bin/dmenu
+@comment $OpenBSD: PLIST,v 1.4 2008/07/02 20:44:46 merdely Exp $
+@bin bin/dmenu
 bin/dmenu_path
 bin/dmenu_run
 @man man/man1/dmenu.1
