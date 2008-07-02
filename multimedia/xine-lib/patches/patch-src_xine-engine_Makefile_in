@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_xine-engine_Makefile_in,v 1.6 2008/06/18 01:26:41 brad Exp $
---- src/xine-engine/Makefile.in.orig	Sat Jun 14 19:16:00 2008
-+++ src/xine-engine/Makefile.in	Mon Jun 16 02:30:50 2008
-@@ -428,7 +428,7 @@ libxine_la_DEPENDENCIES = $(XINEUTILS_LIB) \
+$OpenBSD: patch-src_xine-engine_Makefile_in,v 1.7 2008/07/02 01:02:42 brad Exp $
+--- src/xine-engine/Makefile.in.orig	Sun Jun 29 13:13:17 2008
++++ src/xine-engine/Makefile.in	Sun Jun 29 20:54:14 2008
+@@ -434,7 +434,7 @@ libxine_la_DEPENDENCIES = $(XINEUTILS_LIB) \
  
  libxine_la_LIBADD = $(PTHREAD_LIBS) $(DYNAMIC_LD_LIBS) $(LTLIBINTL) $(ZLIB_LIBS) \
  		    -lm $(XINEUTILS_LIB) $(LTLIBICONV) $(FT2_LIBS) $(FONTCONFIG_LIBS) \
