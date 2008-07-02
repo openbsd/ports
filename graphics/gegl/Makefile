@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/29 20:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/02 14:03:40 merdely Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ V=		0.0.16
 DISTNAME=	gegl-${V}
 CATEGORIES=	graphics devel
 
-PKGNAME-main=	gegl-${V}p0
+PKGNAME-main=	gegl-${V}p1
 PKGNAME-plugins=gegl-plugins-${V}p1
 
 SHARED_LIBS=	gegl-0.0	0.0 # .16.0
