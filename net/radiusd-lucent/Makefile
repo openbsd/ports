@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/15 22:36:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.23 2008/07/02 18:07:41 ajacoutot Exp $
 
 COMMENT=	Lucent remote access RADIUS server
 
 DISTNAME=	radius21
-PKGNAME=	radiusd-lucent-2.1p7
+PKGNAME=	radiusd-lucent-2.1p8
 CATEGORIES=	net
 MASTER_SITES=	http://www.vergenet.net/linux/radius/download/
 PATCHFILES=	radius-2.1.comprehensive.6.patch.gz
@@ -11,12 +11,12 @@ EXTRACT_SUFX=	.tar.Z
 
 HOMEPAGE=	http://www.vergenet.net/linux/radius/
 
-MAINTAINER=	Dan Harnett <danh@openbsd.org>
-
+# BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
 WRKDIST=	${WRKDIR}

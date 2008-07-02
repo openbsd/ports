@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/04/16 14:42:13 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/07/02 18:07:41 ajacoutot Exp $
 @conflict freeradius-*
 @conflict radiusd-cistron-*
-bin/builddbm
-bin/dbmkeys
-bin/dbmrec
-bin/md5test
-bin/radtest
-bin/testuser
-sbin/radiusd
+@bin bin/builddbm
+@bin bin/dbmkeys
+@bin bin/dbmrec
+@bin bin/md5test
+@bin bin/radtest
+@bin bin/testuser
+@bin sbin/radiusd
 share/doc/radiusd-lucent/
 share/doc/radiusd-lucent/LICENSE
 share/doc/radiusd-lucent/README
