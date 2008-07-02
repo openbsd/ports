@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2008/04/29 13:49:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2008/07/02 20:46:47 merdely Exp $
 
 COMMENT=		dynamic window manager
 
-DISTNAME=		dwm-4.9
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		dwm-5.0.1
 
 CATEGORIES=		x11
 
@@ -17,11 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 c
+WANTLIB=		X11 Xinerama c
 
 MASTER_SITES=		http://www.suckless.org/download/
 
-RUN_DEPENDS=		:dmenu->=3.6:x11/dmenu \
+RUN_DEPENDS=		:dmenu->=3.7:x11/dmenu \
 			::x11/terminus-font
 
 MAKE_ENV=		LDFLAGS="${LDFLAGS}"

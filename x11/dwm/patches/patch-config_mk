@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_mk,v 1.1 2008/04/15 19:44:10 merdely Exp $
---- config.mk.orig	Thu Apr  3 22:57:01 2008
-+++ config.mk	Tue Apr  8 18:59:01 2008
-@@ -4,19 +4,19 @@ VERSION = 4.9
+$OpenBSD: patch-config_mk,v 1.2 2008/07/02 20:46:47 merdely Exp $
+--- config.mk.orig	Thu Jun 19 04:11:38 2008
++++ config.mk	Wed Jul  2 16:11:26 2008
+@@ -4,28 +4,28 @@ VERSION = 5.0.1
  # Customize below to fit your system
  
  # paths
@@ -15,21 +15,26 @@ $OpenBSD: patch-config_mk,v 1.1 2008/04/15 19:44:10 merdely Exp $
 +X11INC = ${X11BASE}/include
 +X11LIB = ${X11BASE}/lib
  
+ # Xinerama, comment if you don't want it
+ XINERAMALIBS = -L${X11LIB} -lXinerama
+ XINERAMAFLAGS = -DXINERAMA
+ 
  # includes and libs
 -INCS = -I. -I/usr/include -I${X11INC}
--LIBS = -L/usr/lib -lc -L${X11LIB} -lX11
+-LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS}
 +INCS = -I${X11INC}
-+LIBS = -L${X11LIB} -lX11
++LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS}
  
  # flags
--CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
+-CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+-CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 -LDFLAGS = -s ${LIBS}
-+CFLAGS+= ${INCS} -DVERSION=\"${VERSION}\"
-+LDFLAGS+= ${LIBS}
- #CFLAGS = -g -std=c99 -pedantic -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
- #LDFLAGS = -g ${LIBS}
++CPPFLAGS += -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
++CFLAGS += ${INCS} ${CPPFLAGS}
++LDFLAGS += ${LIBS}
  
-@@ -25,4 +25,4 @@ LDFLAGS = -s ${LIBS}
+ # Solaris
+ #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
  #LDFLAGS = ${LIBS}
  
  # compiler and linker

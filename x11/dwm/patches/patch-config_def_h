@@ -1,42 +1,42 @@
-$OpenBSD: patch-config_def_h,v 1.2 2008/04/29 13:49:08 sthen Exp $
---- config.def.h.orig	Thu Apr  3 21:57:01 2008
-+++ config.def.h	Mon Apr 28 22:18:14 2008
-@@ -2,20 +2,22 @@
+$OpenBSD: patch-config_def_h,v 1.3 2008/07/02 20:46:47 merdely Exp $
+--- config.def.h.orig	Thu Jun 19 09:11:38 2008
++++ config.def.h	Wed Jul  2 19:34:59 2008
+@@ -1,13 +1,13 @@
+ /* See LICENSE file for copyright and license details. */
  
  /* appearance */
- #define BORDERPX		1
--#define FONT			"-*-terminus-medium-r-normal-*-14-*-*-*-*-*-*-*"
--#define NORMBORDERCOLOR		"#cccccc"
--#define NORMBGCOLOR		"#cccccc"
--#define NORMFGCOLOR		"#000000"
--#define SELBORDERCOLOR		"#0066ff"
--#define SELBGCOLOR		"#0066ff"
--#define SELFGCOLOR		"#ffffff"
-+#define FONT			"-*-terminus-medium-*-*-*-*-*-*-*-*-*-*-*"
-+#define NORMBORDERCOLOR		"#404040"
-+#define NORMBGCOLOR		"#202020"
-+#define NORMFGCOLOR		"#c0c0c0"
-+#define SELBORDERCOLOR		"#8888ff"
-+#define SELBGCOLOR		"#404040"
-+#define SELFGCOLOR		"#f0f0f0"
- 
- /* tagging */
- const char tags[][MAXTAGLEN] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
- 
- Rule rules[] = {
- 	/* class	instance	title		tags ref	isfloating */
-+	{ "Firefox",	NULL,		NULL,		tags[8],	False },
- 	{ "Gimp",	NULL,		NULL,		NULL,		True },
-+	{ "Xonix",	NULL,		NULL,		NULL,		True },
+-static const char font[]            = "-*-terminus-medium-r-normal-*-14-*-*-*-*-*-*-*";
+-static const char normbordercolor[] = "#cccccc";
+-static const char normbgcolor[]     = "#cccccc";
+-static const char normfgcolor[]     = "#000000";
+-static const char selbordercolor[]  = "#0066ff";
+-static const char selbgcolor[]      = "#0066ff";
+-static const char selfgcolor[]      = "#ffffff";
++static const char font[]            = "-*-terminus-medium-*-*-*-*-*-*-*-*-*-*-*";
++static const char normbordercolor[] = "#404040";
++static const char normbgcolor[]     = "#202020";
++static const char normfgcolor[]     = "#c0c0c0";
++static const char selbordercolor[]  = "#8888ff";
++static const char selbgcolor[]      = "#404040";
++static const char selfgcolor[]      = "#f0f0f0";
+ static uint borderpx                = 1;        /* border pixel of windows */
+ static uint snap                    = 32;       /* snap pixel */
+ static Bool showbar                 = True;     /* False means no bar */
+@@ -24,6 +24,8 @@ static Rule rules[] = {
+ 	/* class      instance    title       tags mask     isfloating */
+ 	{ "Gimp",     NULL,       NULL,       0,            True },
+ 	{ "Firefox",  NULL,       NULL,       1 << 8,       True },
++	{ "Xonix",    NULL,       NULL,       0,            True },
++	{ NULL,       NULL,       "glxgears", 0,            True },
  };
  
- /* geometries, s{x,y,w,h} and bh are already initualized here */
-@@ -46,7 +48,7 @@ Key keys[] = {
- 	/* modifier			key		function	argument */
- 	{ MODKEY,			XK_p,		spawn,
- 		"exec dmenu_run -fn '"FONT"' -nb '"NORMBGCOLOR"' -nf '"NORMFGCOLOR"' -sb '"SELBGCOLOR"' -sf '"SELFGCOLOR"'" },
--	{ MODKEY|ShiftMask,		XK_Return,	spawn,		"exec uxterm" },
-+	{ MODKEY|ShiftMask,		XK_Return,	spawn,		"exec xterm" },
- 	{ MODKEY,			XK_j,		focusnext,	NULL },
- 	{ MODKEY,			XK_k,		focusprev,	NULL },
- 	{ MODKEY,			XK_r,		reapply,	NULL },
+ /* layout(s) */
+@@ -49,7 +51,7 @@ static Layout layouts[] = {
+ 
+ /* commands */
+ static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+-static const char *termcmd[]  = { "uxterm", NULL };
++static const char *termcmd[]  = { "xterm", NULL };
+ 
+ static Key keys[] = {
+ 	/* modifier                     key        function        argument */
