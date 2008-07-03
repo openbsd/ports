@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.943 2008/07/03 15:43:22 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.944 2008/07/03 17:36:47 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1408,7 +1408,7 @@ _grab_libs_from_plist = sed -n -e '/^@lib /{ s///; p; }' \
 ${_CACHE_REPO}/${_PKGFILE${_S}}:
 	@mkdir -p ${@D}
 	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
-	@if ${SETENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} ${_PKGFILE${_S}} >/dev/null 2>&1; then \
+	@if ${SETENV} ftp_proxy=${ftp_proxy} http_proxy=${http_proxy} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} ${_PKGFILE${_S}} >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	else \
