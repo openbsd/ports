@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2008/06/12 16:59:21 ajacoutot Exp $
---- Makefile.in.orig	Wed Jun 11 10:57:41 2008
-+++ Makefile.in	Thu Jun 12 18:30:11 2008
+$OpenBSD: patch-Makefile_in,v 1.6 2008/07/03 18:39:17 ajacoutot Exp $
+--- Makefile.in.orig	Thu Jul  3 13:28:57 2008
++++ Makefile.in	Thu Jul  3 20:00:30 2008
 @@ -387,12 +387,11 @@ uninstall-iconDATA:
  	done
  install-rcDATA: $(rc_DATA)
