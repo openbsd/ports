@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/25 13:54:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/07/03 08:30:01 ajacoutot Exp $
 %%SHARED%%
-bin/sndfile-resample
+@bin bin/sndfile-resample
 include/samplerate.h
 lib/libsamplerate.a
 lib/libsamplerate.la
