@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/27 15:16:01 jdixon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/07/03 12:32:30 jdixon Exp $
 @owner root
 @group daemon
 hatchet/
@@ -27,6 +27,7 @@ hatchet/docs/
 hatchet/docs/CHANGELOG
 hatchet/docs/INSTALL
 hatchet/docs/LICENSE
+hatchet/docs/LOGGING
 hatchet/docs/README
 hatchet/docs/README.OpenBSD
 @group daemon

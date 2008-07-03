@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/27 15:16:01 jdixon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/07/03 12:32:29 jdixon Exp $
 
 COMMENT=	PF firewall log analysis
 
-DISTNAME=	hatchet-0.9
+DISTNAME=	hatchet-0.9.1
 CATEGORIES=	security www
 HOMEPAGE=	http://www.dixongroup.net/hatchet/
 
