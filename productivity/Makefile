@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2008/03/26 20:19:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2008/07/04 16:23:01 pyr Exp $
 
      SUBDIR += bruce
      SUBDIR += calcurse
@@ -11,6 +11,7 @@
      SUBDIR += qhacc
      SUBDIR += siag
      SUBDIR += taskjuggler
+     SUBDIR += tasks
      SUBDIR += tdl
      SUBDIR += thinkingrock
      SUBDIR += vym
