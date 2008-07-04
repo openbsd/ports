@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2008/05/18 11:22:14 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2008/07/04 15:37:23 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -107,16 +107,15 @@ LOCKDIR ?=
 
 mirror-maker:
 	@mkdir -p ${MIRROR_MK:H}
-# Indirection needed for broken OSes that don't grok this exec
-	@echo "EXEC = exec" >${MIRROR_MK}
-	@echo "SIMPLE_LOCK = : ">>${MIRROR_MK}
 .if !empty(LOCKDIR)
+	@echo "EXEC = " >${MIRROR_MK}
 	@echo 'LOCKDIR = ${LOCKDIR}' >>${MIRROR_MK}
 	@echo 'PORTSDIR = ${PORTSDIR}' >>${MIRROR_MK}
 	@echo 'LOCK_CMD = perl $${PORTSDIR}/infrastructure/build/dolock' >>${MIRROR_MK}
 	@echo 'UNLOCK_CMD = rm -f' >>${MIRROR_MK}
 	@echo 'SIMPLE_LOCK = $${LOCK_CMD} $${LOCKDIR}/$$$$lock.lock; trap "$${UNLOCK_CMD} $$$$lock.lock" 0 1 2 3 13 15' >>${MIRROR_MK}
 .else
+	@echo "EXEC = exec" >${MIRROR_MK}
 	@echo 'SIMPLE_LOCK = :' >>${MIRROR_MK}
 .endif
 
