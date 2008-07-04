@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.12 2008/06/05 10:24:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2008/07/04 07:35:40 bernd Exp $
 @conflict gaim-*
-bin/finch
-bin/pidgin
-bin/purple-client-example
+@bin bin/finch
+@bin bin/pidgin
+@bin bin/purple-client-example
 bin/purple-remote
 bin/purple-send
 bin/purple-send-async

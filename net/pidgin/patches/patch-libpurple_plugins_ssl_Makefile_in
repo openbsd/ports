@@ -1,6 +1,6 @@
-$OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.8 2008/06/05 10:24:15 ajacoutot Exp $
---- libpurple/plugins/ssl/Makefile.in.orig	Fri May 16 14:53:41 2008
-+++ libpurple/plugins/ssl/Makefile.in	Mon May 19 00:40:56 2008
+$OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.9 2008/07/04 07:35:40 bernd Exp $
+--- libpurple/plugins/ssl/Makefile.in.orig	Wed Jul  2 02:46:56 2008
++++ libpurple/plugins/ssl/Makefile.in	Wed Jul  2 10:00:26 2008
 @@ -53,6 +53,12 @@ am__installdirs = "$(DESTDIR)$(plugindir)"
  pluginLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(plugin_LTLIBRARIES)
@@ -32,7 +32,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.8 2008/06/05 10:24:15 ajac
  GNUTLS_CFLAGS = @GNUTLS_CFLAGS@
  GNUTLS_LIBS = @GNUTLS_LIBS@
  GREP = @GREP@
-@@ -354,17 +362,21 @@ EXTRA_DIST = \
+@@ -355,17 +363,21 @@ EXTRA_DIST = \
  
  plugindir = $(libdir)/purple-$(PURPLE_MAJOR_VERSION)
  ssl_la_LDFLAGS = -module -avoid-version
@@ -54,7 +54,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.8 2008/06/05 10:24:15 ajac
  @PLUGINS_TRUE@ssl_gnutls_la_LIBADD = $(GLIB_LIBS) $(GNUTLS_LIBS)
  @PLUGINS_TRUE@ssl_nss_la_LIBADD = $(GLIB_LIBS) $(NSS_LIBS)
  AM_CPPFLAGS = \
-@@ -376,6 +388,7 @@ AM_CPPFLAGS = \
+@@ -377,6 +389,7 @@ AM_CPPFLAGS = \
  	$(GLIB_CFLAGS) \
  	$(PLUGIN_CFLAGS)
  
@@ -62,7 +62,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.8 2008/06/05 10:24:15 ajac
  ssl_gnutls_la_CFLAGS = $(AM_CPPFLAGS) $(GNUTLS_CFLAGS)
  ssl_nss_la_CFLAGS = $(AM_CPPFLAGS) $(NSS_CFLAGS)
  all: all-am
-@@ -438,6 +451,8 @@ clean-pluginLTLIBRARIES:
+@@ -439,6 +452,8 @@ clean-pluginLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
@@ -71,7 +71,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.8 2008/06/05 10:24:15 ajac
  ssl-gnutls.la: $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_DEPENDENCIES) 
  	$(ssl_gnutls_la_LINK) $(am_ssl_gnutls_la_rpath) $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_LIBADD) $(LIBS)
  ssl-nss.la: $(ssl_nss_la_OBJECTS) $(ssl_nss_la_DEPENDENCIES) 
-@@ -452,6 +467,7 @@ distclean-compile:
+@@ -453,6 +468,7 @@ distclean-compile:
  	-rm -f *.tab.c
  
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ssl.Plo@am__quote@
