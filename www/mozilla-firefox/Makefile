@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.94 2008/04/18 15:17:17 martynas Exp $
+# $OpenBSD: Makefile,v 1.95 2008/07/04 13:47:25 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=	redesign of Mozilla's browser component
 
-VER=		2.0.0.14
+VER=		2.0.0.15
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firefox-${VER}
 SO_VERSION=	19.0
@@ -52,7 +52,7 @@ WANTLIB=	X11 Xau Xcomposite Xdamage Xcursor Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		png pthread stdc++ z \
+		pixman-1 png pthread stdc++ z \
 		Xft Xinerama Xt gthread-2.0 jpeg pangox-1.0
 
 VMEM_WARNING=	Yes
@@ -115,7 +115,8 @@ DATADIRS=	chrome components defaults dictionaries extensions \
 
 pre-configure:
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
-		${WRKSRC}/browser/app/mozilla.in
+		${WRKSRC}/browser/app/mozilla.in \
+		${WRKSRC}/js/src/xpconnect/shell/Makefile.in
 	@perl -pi -e 's|_SO_VERSION_|${SO_VERSION}|g' \
 		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
 

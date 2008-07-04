@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2008/02/11 18:13:44 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.19 2008/07/04 13:47:25 martynas Exp $
 @conflict mozilla-firebird-*
 @pkgpath www/mozilla-firefox,-main
 bin/firefox
@@ -292,7 +292,7 @@ mozilla-firefox/extensions/inspector@mozilla.org/defaults/preferences/inspector.
 mozilla-firefox/extensions/inspector@mozilla.org/install.rdf
 mozilla-firefox/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
 mozilla-firefox/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
-mozilla-firefox/firefox-bin
+@bin mozilla-firefox/firefox-bin
 mozilla-firefox/greprefs/
 mozilla-firefox/greprefs/all.js
 mozilla-firefox/greprefs/security-prefs.js
@@ -314,12 +314,12 @@ mozilla-firefox/init.d/README
 @lib mozilla-firefox/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
 @lib mozilla-firefox/libxpcom_core.so.${LIBxpcom_core_VERSION}
 @lib mozilla-firefox/libxpistub.so.${LIBxpistub_VERSION}
-mozilla-firefox/mozilla-firefox-bin
-mozilla-firefox/mozilla-xremote-client
+@bin mozilla-firefox/mozilla-firefox-bin
+@bin mozilla-firefox/mozilla-xremote-client
 mozilla-firefox/plugins/
 @lib mozilla-firefox/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
 @lib mozilla-firefox/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
-mozilla-firefox/regxpcom
+@bin mozilla-firefox/regxpcom
 mozilla-firefox/res/
 mozilla-firefox/res/EditorOverride.css
 mozilla-firefox/res/arrow.gif
