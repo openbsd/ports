@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/19 16:46:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/07/04 11:18:28 ajacoutot Exp $
 
 COMMENT=		lightweight addressbook
 
-GNOME_PROJECT=		contacts
-GNOME_VERSION=		0.9
+DISTNAME=		contacts-0.9
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		misc x11
 
 HOMEPAGE=		http://pimlico-project.org/contacts.html
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://pimlico-project.org/sources/contacts/
-EXTRACT_SUFX=		.tar.gz
 
 WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
@@ -28,15 +27,18 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		png popt pthread smime3 softokn3 ssl ssl3 util xml2 z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			textproc/intltool
 
-DESKTOP_FILES=		Yes
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
+USE_GMAKE=		Yes
 
 LIB_DEPENDS=		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server
+RUN_DEPENDS=		::devel/desktop-file-utils
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/contacts \
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/contacts \
 			--disable-schemas-install \
 			--enable-gnome-vfs \
 			--enable-gconf \
