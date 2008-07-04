@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/14 18:31:15 eric Exp $
+# $OpenBSD: Makefile,v 1.2 2008/07/04 15:39:17 naddy Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
 
 VERSION=		22.2
 DISTNAME=		emacs-${VERSION}
-PKGNAME-main=		emacs-${VERSION}
-FULLPKGNAME-el=		emacs-el-${VERSION}
+PKGNAME-main=		emacs-${VERSION}p0
+FULLPKGNAME-el=		emacs-el-${VERSION}p0
 FULLPKGPATH-el=		editors/emacs22,-el
 
 CATEGORIES=		editors
@@ -80,7 +80,7 @@ LIB_DEPENDS-main=	jpeg::graphics/jpeg \
 WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
 .endif
 
-RUN_DEPENDS-el=		:emacs-${VERSION}*:${BUILD_PKGPATH}
+RUN_DEPENDS-el=		:emacs-${VERSION}*:${PKGPATH}
 PKG_ARCH-el=		*
 
 .include <bsd.port.mk>
