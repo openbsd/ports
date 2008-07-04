@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.51 2008/06/13 23:01:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.52 2008/07/04 06:32:27 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	fast and customizable WWW browser
 
-V=		9.50
-OPERA_BUILD=	2042
+V=		9.51
+OPERA_BUILD=	2061
 DISTNAME=	opera-$V.gcc295-static-qt3.i386
-PKGNAME=	opera-${V}p0
+PKGNAME=	opera-${V}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.opera.com/
