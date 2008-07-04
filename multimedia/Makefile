@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2008/05/17 17:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2008/07/04 21:16:36 jasper Exp $
 
      SUBDIR += avidemux
      SUBDIR += devede
@@ -23,6 +23,7 @@
      SUBDIR += oggconvert
      SUBDIR += ogmtools
      SUBDIR += pspvc
+     SUBDIR += recordmydesktop
      SUBDIR += regionset
      SUBDIR += streamdvd
      SUBDIR += subrip
