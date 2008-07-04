@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/22 17:06:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2008/07/04 16:46:10 naddy Exp $
 
 BRANCH=		21.4
 VERSION=	19
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 
 WANTLIB=	c m ncurses util
 
