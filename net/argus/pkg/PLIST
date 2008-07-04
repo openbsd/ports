@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/30 05:19:33 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/07/04 17:23:39 steven Exp $
+@newgroup _argus:603
+@newuser _argus:603:_argus:daemon:Argus Daemon:/nonexistent:/sbin/nologin
 bin/argusbug
 @man man/man5/argus.conf.5
 @man man/man8/argus.8
@@ -21,4 +23,7 @@ share/examples/argus/Startup/argus
 share/examples/argus/System/
 share/examples/argus/System/crontab
 share/examples/argus/System/magic
+@owner _argus
+@group _argus
+@mode 770
 @sample /var/argus/
