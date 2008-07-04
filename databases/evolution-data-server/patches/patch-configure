@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2008/06/02 16:46:26 jasper Exp $
---- configure.orig	Sun May 25 12:42:26 2008
-+++ configure	Sun Jun  1 00:55:23 2008
-@@ -27758,7 +27758,7 @@ if test "x${with_krb5}" != "xno"; then
+$OpenBSD: patch-configure,v 1.7 2008/07/04 21:28:50 jasper Exp $
+--- configure.orig	Sun Jun 29 07:45:59 2008
++++ configure	Fri Jul  4 23:07:12 2008
+@@ -27776,7 +27776,7 @@ if test "x${with_krb5}" != "xno"; then
  	LDFLAGS_save="$LDFLAGS"
  
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.6 2008/06/02 16:46:26 jasper Exp $
  	sunlibs="-lkrb5 -lgss"
  	{ echo "$as_me:$LINENO: checking for Kerberos 5" >&5
  echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6; }
-@@ -27777,8 +27777,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -27795,8 +27795,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  int
  main ()
  {
@@ -20,7 +20,7 @@ $OpenBSD: patch-configure,v 1.6 2008/06/02 16:46:26 jasper Exp $
    return 0;
  }
  _ACEOF
-@@ -30195,13 +30194,13 @@ EVO_MARSHAL_RULE=$srcdir/marshal.mk
+@@ -30213,13 +30212,13 @@ EVO_MARSHAL_RULE=$srcdir/marshal.mk
  
  
  	PTHREAD_LIB=""
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.6 2008/06/02 16:46:26 jasper Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -30257,7 +30256,7 @@ fi
+@@ -30275,7 +30274,7 @@ fi
  { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
  if test $ac_cv_lib_pthread_pthread_create = yes; then

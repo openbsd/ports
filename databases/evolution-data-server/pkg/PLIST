@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2008/06/09 20:32:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2008/07/04 21:28:50 jasper Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/broken-date-parser.h
@@ -181,6 +181,7 @@ include/evolution-data-server-${R}/libebook/e-destination.h
 include/evolution-data-server-${R}/libebook/e-name-western.h
 include/evolution-data-server-${R}/libebook/e-vcard.h
 include/evolution-data-server-${R}/libecal/
+include/evolution-data-server-${R}/libecal/e-cal-check-timezones.h
 include/evolution-data-server-${R}/libecal/e-cal-component.h
 include/evolution-data-server-${R}/libecal/e-cal-recur.h
 include/evolution-data-server-${R}/libecal/e-cal-time-util.h
