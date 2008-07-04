@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/07/04 11:09:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/07/04 11:12:53 ajacoutot Exp $
 
 COMMENT=		lightweight calendar
 
@@ -26,7 +26,8 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4 \
 		png popt pthread ssl util xml2 z
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			textproc/intltool
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
