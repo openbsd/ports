@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2008/07/04 15:37:23 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2008/07/04 15:43:39 sturm Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -113,7 +113,7 @@ mirror-maker:
 	@echo 'PORTSDIR = ${PORTSDIR}' >>${MIRROR_MK}
 	@echo 'LOCK_CMD = perl $${PORTSDIR}/infrastructure/build/dolock' >>${MIRROR_MK}
 	@echo 'UNLOCK_CMD = rm -f' >>${MIRROR_MK}
-	@echo 'SIMPLE_LOCK = $${LOCK_CMD} $${LOCKDIR}/$$$$lock.lock; trap "$${UNLOCK_CMD} $$$$lock.lock" 0 1 2 3 13 15' >>${MIRROR_MK}
+	@echo 'SIMPLE_LOCK = $${LOCK_CMD} $${LOCKDIR}/$$$$lock.lock; trap "$${UNLOCK_CMD} $${LOCKDIR}/$$$$lock.lock" 0 1 2 3 13 15' >>${MIRROR_MK}
 .else
 	@echo "EXEC = exec" >${MIRROR_MK}
 	@echo 'SIMPLE_LOCK = :' >>${MIRROR_MK}
