@@ -1,21 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/03 07:44:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/07/04 18:58:50 jasper Exp $
 %%SHARED%%
-bin/gvfs-cat
-bin/gvfs-copy
-bin/gvfs-info
+@bin bin/gvfs-cat
+@bin bin/gvfs-copy
+@bin bin/gvfs-info
 bin/gvfs-less
-bin/gvfs-ls
-bin/gvfs-mkdir
-bin/gvfs-monitor-dir
-bin/gvfs-monitor-file
-bin/gvfs-mount
-bin/gvfs-move
-bin/gvfs-open
-bin/gvfs-rename
-bin/gvfs-rm
-bin/gvfs-save
-bin/gvfs-trash
-bin/gvfs-tree
+@bin bin/gvfs-ls
+@bin bin/gvfs-mkdir
+@bin bin/gvfs-monitor-dir
+@bin bin/gvfs-monitor-file
+@bin bin/gvfs-mount
+@bin bin/gvfs-move
+@bin bin/gvfs-open
+@bin bin/gvfs-rename
+@bin bin/gvfs-rm
+@bin bin/gvfs-save
+@bin bin/gvfs-trash
+@bin bin/gvfs-tree
 include/gvfs-client/
 include/gvfs-client/gvfs/
 include/gvfs-client/gvfs/gvfsurimapper.h
@@ -28,19 +28,19 @@ lib/gio/modules/libgvfsdbus.a
 lib/gio/modules/libgvfsdbus.la
 lib/libgvfscommon.a
 lib/libgvfscommon.la
-libexec/gvfsd
-libexec/gvfsd-archive
-libexec/gvfsd-burn
-libexec/gvfsd-computer
-libexec/gvfsd-dav
-libexec/gvfsd-ftp
-libexec/gvfsd-http
-libexec/gvfsd-localtest
-libexec/gvfsd-network
-libexec/gvfsd-sftp
-libexec/gvfsd-smb
-libexec/gvfsd-smb-browse
-libexec/gvfsd-trash
+@bin libexec/gvfsd
+@bin libexec/gvfsd-archive
+@bin libexec/gvfsd-burn
+@bin libexec/gvfsd-computer
+@bin libexec/gvfsd-dav
+@bin libexec/gvfsd-ftp
+@bin libexec/gvfsd-http
+@bin libexec/gvfsd-localtest
+@bin libexec/gvfsd-network
+@bin libexec/gvfsd-sftp
+@bin libexec/gvfsd-smb
+@bin libexec/gvfsd-smb-browse
+@bin libexec/gvfsd-trash
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/gvfs-daemon.service

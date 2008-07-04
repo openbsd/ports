@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/03 07:44:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/07/04 18:58:50 jasper Exp $
 
 COMMENT=		GNOME virtual file system
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		0.2.4
+GNOME_VERSION=		0.2.5
 SHARED_LIBS +=	gvfscommon           0.0      # .0.0
 
 
