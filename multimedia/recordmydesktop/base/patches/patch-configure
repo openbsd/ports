@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/07/04 21:15:24 jasper Exp $
+--- configure.orig	Mon Jun  9 12:26:56 2008
++++ configure	Mon Jun  9 12:27:27 2008
+@@ -8087,13 +8087,13 @@ echo "$as_me: error: Can't find libtheora" >&2;}
+ fi
+ 
+ 
+-{ echo "$as_me:$LINENO: checking for pthread_mutex_lock in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_mutex_lock in -lpthread... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for pthread_mutex_lock in -pthread" >&5
++echo $ECHO_N "checking for pthread_mutex_lock in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_mutex_lock+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -8153,7 +8153,7 @@ if test $ac_cv_lib_pthread_pthread_mutex_lock = yes; t
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else
+   { { echo "$as_me:$LINENO: error: Can't find libpthread" >&5
