@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2008/07/04 10:22:37 pyr Exp $
+--- data/Makefile.in.orig	Thu Jul  3 17:05:09 2008
++++ data/Makefile.in	Thu Jul  3 17:05:23 2008
+@@ -618,7 +618,7 @@ uninstall-man: uninstall-man1
+ @INTLTOOL_DESKTOP_RULE@
+ 
+ install-icons:
+-	for size in 16x16 22x22 24x24 26x26 32x32 48x48 64x64 scalable; do mkdir --parents $(DESTDIR)/$(datadir)/icons/hicolor/$$size/apps; done
++	for size in 16x16 22x22 24x24 26x26 32x32 48x48 64x64 scalable; do mkdir -p $(DESTDIR)/$(datadir)/icons/hicolor/$$size/apps; done
+ 	install -m 644 $(srcdir)/dates-16.png $(DESTDIR)/$(datadir)/icons/hicolor/16x16/apps/dates.png
+ 	install -m 644 $(srcdir)/dates-22.png $(DESTDIR)/$(datadir)/icons/hicolor/22x22/apps/dates.png
+ 	install -m 644 $(srcdir)/dates-24.png $(DESTDIR)/$(datadir)/icons/hicolor/24x24/apps/dates.png
