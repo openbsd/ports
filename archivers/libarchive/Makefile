@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/03/18 21:43:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/05 20:38:09 naddy Exp $
 
 COMMENT=	library for reading and writing streaming archives
 
-V=		2.4.14
+V=		2.5.5
 DISTNAME=	libarchive-$V
-SHARED_LIBS +=  archive              1.3      # .6.14
+SHARED_LIBS +=  archive              2.0      # .7.5
 CATEGORIES=	archivers
 HOMEPAGE=	http://people.freebsd.org/~kientzle/libarchive/
 
@@ -45,7 +45,7 @@ post-install:
 	done
 
 # convenience target for maintainer
-FREEBSDHOST=	shell.uugrn.org
+FREEBSDHOST=	lorvorc
 update-catpages:
 	@cd ${WRKSRC}; \
 	${MAN_fragment}; \

@@ -1,6 +1,6 @@
-$OpenBSD: patch-tar_bsdtar_1,v 1.2 2008/01/27 17:17:04 naddy Exp $
---- tar/bsdtar.1.orig	Tue Jan 22 08:23:44 2008
-+++ tar/bsdtar.1	Sun Jan 27 17:59:03 2008
+$OpenBSD: patch-tar_bsdtar_1,v 1.3 2008/07/05 20:38:09 naddy Exp $
+--- tar/bsdtar.1.orig	Thu May 29 07:27:45 2008
++++ tar/bsdtar.1	Sat Jul  5 21:21:17 2008
 @@ -28,7 +28,7 @@
  .Dt BSDTAR 1
  .Os
@@ -10,7 +10,7 @@ $OpenBSD: patch-tar_bsdtar_1,v 1.2 2008/01/27 17:17:04 naddy Exp $
  .Nd manipulate tape archives
  .Sh SYNOPSIS
  .Nm
-@@ -171,9 +171,9 @@ The filename can be
+@@ -179,9 +179,9 @@ The filename can be
  for standard input or standard output.
  If not specified, the default tape device will be used.
  (On
@@ -19,10 +19,10 @@ $OpenBSD: patch-tar_bsdtar_1,v 1.2 2008/01/27 17:17:04 naddy Exp $
  the default tape device is
 -.Pa /dev/sa0 . )
 +.Pa /dev/rst0 . )
- .It Fl -fast-read ( Fl W Cm fast-read )
- (x and t mode only)
- Extract or list only the first archive entry that matches each pattern
-@@ -428,7 +428,7 @@ for more information.
+ .It Fl H
+ (c and r mode only)
+ Symbolic links named on the command line will be followed; the
+@@ -479,7 +479,7 @@ for more information.
  .El
  .Sh FILES
  .Bl -tag -width ".Ev BLOCKSIZE"
