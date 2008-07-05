@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.5 2008/01/23 16:32:04 martynas Exp $
+@comment $OpenBSD: PLIST-devel,v 1.6 2008/07/05 16:00:29 martynas Exp $
 @conflict xulrunner-<1.8.0.4p0
 lib/pkgconfig/
 lib/pkgconfig/xulrunner-gtkmozembed.pc
@@ -1002,6 +1002,7 @@ xulrunner/idl/nsIWritablePropertyBag.idl
 xulrunner/idl/nsIWritablePropertyBag2.idl
 xulrunner/idl/nsIWyciwygChannel.idl
 xulrunner/idl/nsIX509Cert.idl
+xulrunner/idl/nsIX509Cert18Branch.idl
 xulrunner/idl/nsIX509Cert3.idl
 xulrunner/idl/nsIX509CertDB.idl
 xulrunner/idl/nsIX509CertDB2.idl
@@ -2336,6 +2337,7 @@ xulrunner/include/pipnss/nsITokenDialogs.h
 xulrunner/include/pipnss/nsITokenPasswordDialogs.h
 xulrunner/include/pipnss/nsIUserCertPicker.h
 xulrunner/include/pipnss/nsIX509Cert.h
+xulrunner/include/pipnss/nsIX509Cert18Branch.h
 xulrunner/include/pipnss/nsIX509Cert3.h
 xulrunner/include/pipnss/nsIX509CertDB.h
 xulrunner/include/pipnss/nsIX509CertDB2.h
@@ -3003,8 +3005,8 @@ xulrunner/include/xultmpl/
 xulrunner/include/xultmpl/nsIXULBuilderListener.h
 xulrunner/include/xultmpl/nsIXULSortService.h
 xulrunner/include/xultmpl/nsIXULTemplateBuilder.h
-xulrunner/xpcshell
-xulrunner/xpicleanup
-xulrunner/xpidl
-xulrunner/xpt_dump
-xulrunner/xpt_link
+@bin xulrunner/xpcshell
+@bin xulrunner/xpicleanup
+@bin xulrunner/xpidl
+@bin xulrunner/xpt_dump
+@bin xulrunner/xpt_link

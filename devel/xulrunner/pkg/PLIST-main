@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/01/23 16:32:04 martynas Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/07/05 16:00:29 martynas Exp $
 @unexec xulrunner --unregister-global
 %%SHARED%%
 bin/xulrunner
 bin/xulrunner-config
 xulrunner/
 xulrunner/LICENSE
-xulrunner/TestGtkEmbed
+@bin xulrunner/TestGtkEmbed
 xulrunner/chrome/
 xulrunner/chrome/chromelist.txt
 xulrunner/chrome/classic.jar
@@ -192,10 +192,10 @@ xulrunner/icons/
 xulrunner/icons/document.png
 xulrunner/icons/mozicon16.xpm
 xulrunner/icons/mozicon50.xpm
-xulrunner/mozilla-xremote-client
-xulrunner/nsinstall
+@bin xulrunner/mozilla-xremote-client
+@bin xulrunner/nsinstall
 xulrunner/plugins/
-xulrunner/regxpcom
+@bin xulrunner/regxpcom
 xulrunner/res/
 xulrunner/res/EditorOverride.css
 xulrunner/res/arrow.gif
@@ -359,8 +359,8 @@ xulrunner/res/unixcharset.properties
 xulrunner/res/viewer.properties
 xulrunner/res/viewsource.css
 xulrunner/run-mozilla.sh
-xulrunner/xulrunner-bin
-xulrunner/xulrunner-stub
+@bin xulrunner/xulrunner-bin
+@bin xulrunner/xulrunner-stub
 @sample ${SYSCONFDIR}/gre.d/
 @exec xulrunner --register-global
 @exec rm -rf /tmp/.mozilla
