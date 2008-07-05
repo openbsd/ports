@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2008/04/01 10:14:58 martynas Exp $
+# $OpenBSD: Makefile,v 1.22 2008/07/05 00:42:31 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	integrated mozilla application suite
 
-VER=		1.1.9
+VER=		1.1.10
 DISTNAME=	seamonkey-${VER}.source
 PKGNAME=	seamonkey-${VER}
 
@@ -41,33 +41,32 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
-.for i in 1.1.2 1.1.3 1.1.4 1.1.5 1.1.6 1.1.7 1.1.8 1.1.9
-MASTER_SITES${i:E}+=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/$i/contrib-localized/
+.for i in 1.1.2 1.1.3 1.1.4 1.1.5 1.1.6 1.1.7 1.1.8 1.1.9 1.1.10
+MASTER_SITES${i:C|.*([0-9])|\1|}+=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/$i/contrib-localized/
 .endfor
 
 LANGUAGES=	be-BY 1.1.2 \
-		ca-AD 1.1.4 \
-		cs-CZ 1.1.9 \
-		de-AT 1.1.9 \
+		ca-AD 1.1.8 \
+		cs-CZ 1.1.10 \
+		de-AT 1.1.10 \
 		el-GR 1.1.2 \
-		es-ES 1.1.8 \
+		es-ES 1.1.10 \
 		fr-FR 1.1.8 \
 		he-IL 1.1.2 \
-		hi-IN 1.1.7 \
 		hu-HU 1.1.9 \
-		it-IT 1.1.6 \
+		it-IT 1.1.8 \
 		nl-NL 1.1.4 \
-		pl-PL 1.1.9 \
-		pt-BR 1.1.9 \
-		ru-RU 1.1.9 \
+		pl-PL 1.1.10 \
+		pt-BR 1.1.10 \
+		ru-RU 1.1.10 \
 		ur-PK 1.1.9 \
-		sv-SE 1.1.8
-BINLANGS=	be-BY el-GR fr-FR hi-IN pl-PL pt-BR
+		sv-SE 1.1.9
+BINLANGS=	be-BY el-GR fr-FR pl-PL pt-BR
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 .for l v in ${LANGUAGES}
-DISTFILES+=	seamonkey-$v.$l.langpack.xpi:${v:E}
+DISTFILES+=	seamonkey-$v.$l.langpack.xpi:${v:C|.*([0-9])|\1|}
 .endfor
 
 EXTRACT_CASES += *.xpi) \
@@ -89,7 +88,7 @@ WANTLIB=	c glib-2.0 m pthread stdc++ \
 		Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 \
 		cairo expat fontconfig freetype glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 jpeg pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pangox-1.0 png z
+		pangoft2-1.0 pangox-1.0 pixman-1 png z
 
 VMEM_WARNING=	Yes
 
@@ -159,6 +158,8 @@ post-extract:
 pre-configure:
 	@cd ${WRKSRC}/directory/c-sdk && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
+		${WRKSRC}/js/src/xpconnect/shell/Makefile.in \
+		${WRKSRC}/rdf/chrome/tools/chromereg/Makefile.in \
 		${WRKSRC}/xpfe/bootstrap/mozilla.in
 	@perl -pi -e 's|_SO_VERSION_|${SO_VERSION}|g' \
 		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp

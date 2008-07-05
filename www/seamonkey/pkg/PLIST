@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/02/22 12:55:49 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/07/05 00:42:31 martynas Exp $
 @pkgpath www/seamonkey,-main
 bin/seamonkey
 @man man/man1/seamonkey.1
@@ -48,8 +48,6 @@ seamonkey/chrome/fr-unix.jar
 seamonkey/chrome/he-IL.jar
 seamonkey/chrome/he-unix.jar
 seamonkey/chrome/help.jar
-seamonkey/chrome/hi-IN.jar
-seamonkey/chrome/hi-unix.jar
 seamonkey/chrome/hu-HU.jar
 seamonkey/chrome/hu-unix.jar
 seamonkey/chrome/icons/
@@ -429,12 +427,12 @@ seamonkey/init.d/README
 @lib seamonkey/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
 @lib seamonkey/libxpcom_core.so.${LIBxpcom_core_VERSION}
 @lib seamonkey/libxpistub.so.${LIBxpistub_VERSION}
-seamonkey/mozilla-xremote-client
+@bin seamonkey/mozilla-xremote-client
 seamonkey/plugins/
 @lib seamonkey/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
 @lib seamonkey/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
-seamonkey/regchrome
-seamonkey/regxpcom
+@bin seamonkey/regchrome
+@bin seamonkey/regxpcom
 seamonkey/res/
 seamonkey/res/EditorOverride.css
 seamonkey/res/arrow.gif
@@ -613,7 +611,7 @@ seamonkey/res/unixcharset.properties
 seamonkey/res/viewer.properties
 seamonkey/res/viewsource.css
 seamonkey/run-mozilla.sh
-seamonkey/seamonkey-bin
+@bin seamonkey/seamonkey-bin
 seamonkey/searchplugins/
 seamonkey/searchplugins/dmoz.gif
 seamonkey/searchplugins/dmoz.src
