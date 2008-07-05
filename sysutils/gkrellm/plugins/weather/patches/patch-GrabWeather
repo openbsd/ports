@@ -1,13 +1,12 @@
-$OpenBSD: patch-GrabWeather,v 1.1 2004/04/12 04:55:36 sturm Exp $
---- GrabWeather.orig	2004-04-11 21:34:07.000000000 +0200
-+++ GrabWeather	2004-04-11 21:36:14.000000000 +0200
-@@ -40,8 +40,7 @@ my $DataFileName = "$StationID.dat";
+--- GrabWeather.orig	Fri Jul  4 19:28:21 2008
++++ GrabWeather	Fri Jul  4 19:29:05 2008
+@@ -40,8 +40,7 @@
  # Is LWP installed?
  eval { require LWP::UserAgent };
  if ($@) {
 -  my $cmd = qq{wget --proxy=off --passive-ftp --tries=0 --quiet } .
 -            qq{--output-document=$home/$ReportDir/$HTMLFileName $URL};
-+  my $cmd = qq{ftp -o $home/$ReportDir/$HTMLFileName $URL };
++  my $cmd = qq{ftp -o $home/$ReportDir/$HTMLFileName $URL};
    `$cmd` == 0 or die "unable to fetch weather: $?";
  } else {
    $ENV{FTP_PASSIVE} = 1; # LWP uses Net::FTP internally.
