@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2008/06/04 06:52:46 phessler Exp $
+# $OpenBSD: Makefile,v 1.170 2008/07/06 20:46:19 jdixon Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -36,6 +36,7 @@
      SUBDIR += crack-attack
      SUBDIR += crimson
      SUBDIR += crossfire-client
+     SUBDIR += csmash
      SUBDIR += defendguin
      SUBDIR += dopewars
      SUBDIR += dopewars,no_x11
