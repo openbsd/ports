@@ -1,0 +1,12 @@
+$OpenBSD: patch-BallView_h,v 1.1.1.1 2008/07/06 20:43:20 jdixon Exp $
+--- BallView.h.orig	Fri Jul  4 22:11:21 2008
++++ BallView.h	Fri Jul  4 22:11:35 2008
+@@ -32,7 +32,7 @@ class BallView : public View { (public)
+ 
+   static GLuint m_number[10];
+ private:
+-  void BallView::DrawTargetCircle();
++  void DrawTargetCircle();
+   GLUquadricObj *m_quad;
+ 
+   void DrawBall();

@@ -1,0 +1,20 @@
+$OpenBSD: patch-ttinc_h,v 1.1.1.1 2008/07/06 20:43:20 jdixon Exp $
+--- ttinc.h.orig	Sun Aug 10 05:55:00 2003
++++ ttinc.h	Fri Jul  4 22:09:54 2008
+@@ -204,12 +204,12 @@ typedef int socklen_t;		/* mimic Penguin's socklen typ
+ #include <GL/gl.h>
+ #include <GL/glu.h>
+ 
+-#include <SDL/SDL.h>
+-#include <SDL/SDL_image.h>
+-#include <SDL/SDL_thread.h>
++#include <SDL.h>
++#include <SDL_image.h>
++#include <SDL_thread.h>
+ 
+ #ifdef HAVE_LIBSDL_MIXER
+-#include <SDL/SDL_mixer.h>
++#include <SDL_mixer.h>
+ #endif
+ 
+ #include <libintl.h>

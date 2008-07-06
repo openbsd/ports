@@ -1,0 +1,12 @@
+$OpenBSD: patch-matrix,v 1.1.1.1 2008/07/06 20:43:20 jdixon Exp $
+--- matrix.orig	Fri Jul  4 22:11:40 2008
++++ matrix	Fri Jul  4 22:11:51 2008
+@@ -42,7 +42,7 @@
+ 
+ /* __BEGIN__BEGIN__ */
+ //__NAMESPACE_BEGIN(ese);
+-#if (!defined __GNUG__) || (__GNUC__ == 3)
++#if (!defined __GNUG__) || (__GNUC__ >= 3)
+ template<typename T>
+ void swap(T& a, T& b)
+ {
