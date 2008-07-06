@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/06 16:48:48 phessler Exp $
+@bin bin/acpiexec
+@bin bin/acpisrc
+@bin bin/iasl
+share/doc/acpica/
+share/doc/acpica/LICENSE
+share/doc/acpica/README

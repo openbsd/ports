@@ -1,0 +1,27 @@
+$OpenBSD: patch-compiler_Makefile,v 1.1.1.1 2008/07/06 16:48:48 phessler Exp $
+--- compiler/Makefile.orig	Mon Jun  9 15:30:03 2008
++++ compiler/Makefile	Sat Jun 21 18:29:39 2008
+@@ -91,18 +91,18 @@ SRCS=	aslcompilerparse.c aslcompilerlex.c aslanalyze.c
+ 	../osunixxf.c
+ 
+ NOMAN=	YES
+-CFLAGS+= -Wall -O2 -Wstrict-prototypes -D_LINUX -DACPI_ASL_COMPILER -I../include 
++CFLAGS+= -Wall  -Wstrict-prototypes -D_LINUX -DACPI_ASL_COMPILER -I../include 
+ 
+-#YACC=	yacc
+-YACC=	bison
++YACC=	yacc
++#YACC=	bison
+ YFLAGS+= -v -d
+ LEX=	flex
+ LFLAGS+= -i
+ 
+ #.if $(YACC) == "bison"
+-YFLAGS+= -y -pAslCompiler
++YFLAGS+= -pAslCompiler
+ #.else
+-#CFLAGS+= -D_USE_BERKELEY_YACC
++CFLAGS+= -D_USE_BERKELEY_YACC
+ #.endif
+ 
+ aslmain : $(patsubst %.c,%.o, $(SRCS))
