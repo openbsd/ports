@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.606 2008/06/13 22:00:34 landry Exp $
+# $OpenBSD: Makefile,v 1.607 2008/07/06 16:51:01 phessler Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
      SUBDIR += ORBit
      SUBDIR += ORBit2
+     SUBDIR += acpica
      SUBDIR += ald
      SUBDIR += alex
      SUBDIR += apache-ant
