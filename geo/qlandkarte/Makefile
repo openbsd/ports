@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/05/28 00:29:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/07 17:39:24 pvalchev Exp $
 
 COMMENT=	garmin gps map management tool
 
-DISTNAME=	QLandkarte-0.7.2
-PKGNAME=	${DISTNAME:L}
+DISTNAME=	QLandkarte_0.7.3
+PKGNAME=	${DISTNAME:L:S/_/-/}
 CATEGORIES=	geo
 
 HOMEPAGE=	http://qlandkarte.sourceforge.net/
