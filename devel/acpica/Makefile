@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/06 16:48:48 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2008/07/07 04:08:00 phessler Exp $
+
+ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		reference implementation of ACPI tools
 V =			20080701
