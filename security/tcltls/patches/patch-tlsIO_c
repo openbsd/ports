@@ -1,0 +1,41 @@
+$OpenBSD: patch-tlsIO_c,v 1.1 2008/07/07 17:31:20 steven Exp $
+--- tlsIO.c.orig	Sun Jul  6 17:56:46 2008
++++ tlsIO.c	Sun Jul  6 17:57:44 2008
+@@ -286,7 +286,7 @@ TlsCloseProc(ClientData instanceData,	/* The socket to
+ {
+     State *statePtr = (State *) instanceData;
+ 
+-    dprintf(stderr,"\nTlsCloseProc(0x%x)", (unsigned int) statePtr);
++    dprintf(stderr,"\nTlsCloseProc(%p)", statePtr);
+ 
+     if (channelTypeVersion == TLS_CHANNEL_VERSION_1) {
+ 	/*
+@@ -412,7 +412,7 @@ TlsOutputProc(ClientData instanceData,	/* Socket state
+ 
+     *errorCodePtr = 0;
+ 
+-    dprintf(stderr,"\nBIO_write(0x%x, %d)", (unsigned int) statePtr, toWrite);
++    dprintf(stderr,"\nBIO_write(%p, %d)", statePtr, toWrite);
+ 
+     if (!SSL_is_init_finished(statePtr->ssl)) {
+ 	written = Tls_WaitForConnect(statePtr, errorCodePtr);
+@@ -442,8 +442,8 @@ TlsOutputProc(ClientData instanceData,	/* Socket state
+ 	 */
+ 	ERR_clear_error();
+ 	written = BIO_write(statePtr->bio, buf, toWrite);
+-	dprintf(stderr,"\nBIO_write(0x%x, %d) -> [%d]",
+-		(unsigned int) statePtr, toWrite, written);
++	dprintf(stderr,"\nBIO_write(%p, %d) -> [%d]",
++		statePtr, toWrite, written);
+     }
+     if (written <= 0) {
+ 	switch ((err = SSL_get_error(statePtr->ssl, written))) {
+@@ -850,7 +850,7 @@ Tls_WaitForConnect( statePtr, errorCodePtr)
+ {
+     int err;
+ 
+-    dprintf(stderr,"\nWaitForConnect(0x%x)", (unsigned int) statePtr);
++    dprintf(stderr,"\nWaitForConnect(%p)", statePtr);
+ 
+     for (;;) {
+ 	/* Not initialized yet! */
