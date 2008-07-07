@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2008/02/04 11:29:14 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2008/07/07 12:19:33 landry Exp $
 
      SUBDIR+= exo
      SUBDIR+= gtk-xfce-engine
@@ -18,14 +18,12 @@
      SUBDIR+= xfce-utils
      SUBDIR+= xfce4-appfinder
      SUBDIR+= xfce4-battery
-     SUBDIR+= xfce4-bglist-editor
      SUBDIR+= xfce4-clipman
      SUBDIR+= xfce4-dict
      SUBDIR+= xfce4-diskperf
      SUBDIR+= xfce4-fsguard
      SUBDIR+= xfce4-genmon
      SUBDIR+= xfce4-icon-theme
-     SUBDIR+= xfce4-lua-graph
      SUBDIR+= xfce4-mailwatch
      SUBDIR+= xfce4-mixer
      SUBDIR+= xfce4-mpc
