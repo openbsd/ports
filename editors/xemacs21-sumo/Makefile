@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2008/07/07 17:21:20 naddy Exp $
 
 VERSION=		2006-05-10
 PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}p0
@@ -40,12 +40,10 @@ EXTRACT_ONLY=
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-GUNZIP_CMD=	/usr/bin/gunzip -dc
-
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/xemacs
 .for archive in ${DISTFILES}
-	${GUNZIP_CMD} ${FULLDISTDIR}/${archive} \
+	/usr/bin/gunzip -c ${FULLDISTDIR}/${archive} \
 		| ${TAR} -C ${PREFIX}/lib/xemacs -xf -
 .endfor
 
