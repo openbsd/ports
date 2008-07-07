@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2007/10/22 22:00:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/07 21:29:03 jasper Exp $
 
 COMMENT=		compatibility tools from the Tango project
 
-DISTNAME=		icon-naming-utils-0.8.6
+DISTNAME=		icon-naming-utils-0.8.7
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tango.freedesktop.org/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
