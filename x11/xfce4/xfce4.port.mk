@@ -1,14 +1,11 @@
-# $OpenBSD: xfce4.port.mk,v 1.2 2008/06/14 17:21:35 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.3 2008/07/07 12:06:04 landry Exp $
 
 # Module for Xfce related ports, divided into three categories:
 # core, goodies, plugins.
 
 XFCE_DESKTOP_VERSION=	4.4.2
 CATEGORIES+=	x11/xfce4
-DIST_SUBDIR=	xfce4
 
-MAINTAINER?=	Landry Breuil <gaston@gcu.info>
-USE_X11?=	Yes
 USE_GMAKE?=	Yes
 EXTRACT_SUFX?=	.tar.bz2
 
@@ -32,7 +29,7 @@ MODXFCE_RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 HOMEPAGE?=	http://goodies.xfce.org/projects/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin
 
 MASTER_SITES?=	http://goodies.xfce.org/releases/xfce4-${XFCE_PLUGIN}-plugin/
-DISTNAME=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_VERSION}
+DISTNAME?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_VERSION}
 PKGNAME?=	${DISTNAME:S/-plugin//}
 
 MODXFCE_LIB_DEPENDS=	xfce4panel.>=2::x11/xfce4/xfce4-panel
@@ -50,6 +47,5 @@ DISTNAME=	${XFCE_PROJECT}-${XFCE_VERSION}
 
 LIB_DEPENDS+=	${MODXFCE_LIB_DEPENDS}
 RUN_DEPENDS+=	${MODXFCE_RUN_DEPENDS}
-CONFIGURE_STYLE?=gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
