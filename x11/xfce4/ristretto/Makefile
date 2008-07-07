@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2008/06/14 16:24:00 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2008/07/07 12:08:15 landry Exp $
 
 COMMENT=	lightweight image-viewer for xfce4
 
 XFCE_VERSION=	0.0.20
 XFCE_GOODIE=	ristretto
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.gz
 
 # GPLv2
