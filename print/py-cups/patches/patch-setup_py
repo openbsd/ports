@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2008/04/10 10:21:42 jasper Exp $
+$OpenBSD: patch-setup_py,v 1.2 2008/07/08 09:32:49 ajacoutot Exp $
 --- setup.py.orig	Thu Jul  5 18:43:55 2007
 +++ setup.py	Thu Mar 27 15:25:11 2008
 @@ -3,4 +3,5 @@ setup (name="cups", version="1.0",
@@ -7,4 +7,4 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2008/04/10 10:21:42 jasper Exp $
                                 "cupsppd.c"],
 -                              libraries=["cups"])])
 +                              libraries=["cups", "iconv"],
-+			      include_dirs=['/usr/local/include'])])
++			      include_dirs=['${LOCALBASE}/include'])])

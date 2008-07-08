@@ -1,12 +1,13 @@
-$OpenBSD: patch-cupsconnection_c,v 1.1.1.1 2008/04/10 10:21:42 jasper Exp $
---- cupsconnection.c.orig	Wed Apr  9 23:35:15 2008
-+++ cupsconnection.c	Wed Apr  9 23:35:35 2008
-@@ -2722,7 +2722,7 @@ Connection_printTestPage (Connection *self, PyObject *
-     
-   if (!fileobj) {
-     if ((datadir = getenv ("CUPS_DATADIR")) == NULL)
--      datadir = "/usr/share/cups";
-+      datadir = "!!LOCALBASE!!/share/cups";
- 
-     snprintf (filename, sizeof (filename), "%s/data/testprint.ps", datadir);
-     file = filename;
+$OpenBSD: patch-cupsconnection_c,v 1.2 2008/07/08 09:32:49 ajacoutot Exp $
+--- cupsconnection.c.orig	Wed Jul  2 16:12:01 2008
++++ cupsconnection.c	Wed Jul  2 16:12:59 2008
+@@ -2804,8 +2804,7 @@ Connection_printTestPage (Connection *self, PyObject *
+     if ((datadir = getenv ("CUPS_DATADIR")) != NULL)
+       snprintf (filename, sizeof (filename), testprint, datadir);
+     else {
+-      const char *const dirs[] = { "/usr/share/cups",
+-				   "/usr/local/share/cups",
++      const char *const dirs[] = { "${LOCALBASE}/share/cups",
+ 				   NULL };
+       int i;
+       for (i = 0; (datadir = dirs[i]) != NULL; i++) {

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2008/04/20 09:49:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/07/08 09:32:49 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		CUPS bindings for Python
 
-VERSION=		1.9.38
+VERSION=		1.9.40
 DISTNAME=		pycups-${VERSION}
-PKGNAME=		py-cups-${VERSION}p0
+PKGNAME=		py-cups-${VERSION}
 CATEGORIES=		print
 
 HOMEPAGE=		http://cyberelk.net/tim/software/pycups/
@@ -35,7 +35,6 @@ MAKE_ENV=		PYTON="${MODPY_BIN}" \
 NO_REGRESS=		Yes
 
 pre-configure:
-	@perl -pi -e 's,!!PREFIX!!,${PREFIX},' ${WRKSRC}/setup.py
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},' ${WRKSRC}/cupsconnection.c
+	${SUBST_CMD} ${WRKSRC}/cupsconnection.c ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
