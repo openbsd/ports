@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/04 13:38:30 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/08 23:02:31 sthen Exp $
 
 COMMENT=	read and write gzip and zip files/buffers
 
 MODULES=	cpan
 
-DISTNAME=	IO-Compress-Zlib-2.008
+DISTNAME=	IO-Compress-Zlib-2.011
 CATEGORIES=	archivers
 
 MAINTAINER=	Giovanni Bechis <g.bechis@snb.it>
