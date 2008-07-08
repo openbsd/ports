@@ -1,27 +1,21 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/24 01:24:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/08 09:33:30 landry Exp $
 
 COMMENT=	really simple text editor for xfce4
 
-V=		0.2.13
-DISTNAME=	mousepad-${V}
-PKGNAME=	${DISTNAME}p0
+XFCE_VERSION=	0.2.13
+XFCE_PROJECT=	mousepad
+PKGNAME=	${DISTNAME}p1
 
-HOMEPAGE=	http://www.xfce.org/projects/mousepad/
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
-
-# GPL
+# GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://www.xfce.org/archive/xfce-4.4.2/src/
-EXTRACT_SUFX=	.tar.bz2
-
-USE_GMAKE=	Yes
+MODULES=	x11/xfce4
+DESKTOP_FILES=	Yes
 
 LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4
-RUN_DEPENDS=	::devel/desktop-file-utils
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \

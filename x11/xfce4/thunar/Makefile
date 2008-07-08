@@ -1,27 +1,22 @@
-# $OpenBSD: Makefile,v 1.10 2008/05/24 01:24:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2008/07/08 09:33:30 landry Exp $
 
 COMMENT=	lightweight file manager for xfce4
 
-V=		0.9.0
-DISTNAME=	Thunar-${V}
-PKGNAME=	thunar-${V}p2
+XFCE_VERSION=	0.9.0
+XFCE_PROJECT=	Thunar
+PKGNAME=	${DISTNAME:L}p3
 
 SHARED_LIBS=	thunarx-1	5.1 \
 		thunar-vfs-1	5.1
 
-HOMEPAGE=	http://thunar.xfce.org/
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
-
-# GPL
+# GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://thunar.xfce.org/download/sources/Thunar/${V}/
-EXTRACT_SUFX=	.tar.bz2
-
-USE_GMAKE=	Yes
+MODULES=	x11/xfce4
+DESKTOP_FILES=	Yes
 NO_REGRESS=	Yes
 
 AUTOCONF_VERSION= 2.61
@@ -39,8 +34,7 @@ LIB_DEPENDS=	exo-0.3.>=4::x11/xfce4/exo \
 		dbus-1.>=6::x11/dbus \
 		fam::sysutils/fam
 
-RUN_DEPENDS=	::devel/desktop-file-utils \
-		::x11/xfce4/xfce4-icon-theme
+RUN_DEPENDS=	::x11/xfce4/xfce4-icon-theme
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \

@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/04/17 09:00:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/07/08 09:33:30 landry Exp $
 @conflict xfcalendar-*
 %%SHARED%%
-bin/globaltime
-bin/orage
+@bin bin/globaltime
+@bin bin/orage
 lib/xfce4/
 lib/xfce4/mcs-plugins/
 lib/xfce4/mcs-plugins/orage_plugin.a
 lib/xfce4/mcs-plugins/orage_plugin.la
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
-libexec/xfce4/panel-plugins/orageclock
+@bin libexec/xfce4/panel-plugins/orageclock
 share/applications/xfcalendar.desktop
 share/applications/xfce-xfcalendar-settings.desktop
 share/dbus-1/
@@ -54,8 +54,6 @@ share/locale/en_GB/LC_MESSAGES/orage.mo
 share/locale/eo/LC_MESSAGES/orage.mo
 share/locale/es/LC_MESSAGES/orage.mo
 share/locale/et/LC_MESSAGES/orage.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/orage.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/

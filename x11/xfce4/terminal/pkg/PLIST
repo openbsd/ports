@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/04/17 09:00:24 landry Exp $
-bin/Terminal
+@comment $OpenBSD: PLIST,v 1.5 2008/07/08 09:33:30 landry Exp $
+@bin bin/Terminal
 bin/terminal
 libexec/TerminalHelp
 @man man/man1/Terminal.1
 share/Terminal/
 share/Terminal/Terminal-toolbars.ui
-share/applications/
 share/applications/Terminal.desktop
 share/doc/Terminal/
 share/doc/Terminal/C/
@@ -135,8 +134,6 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/Terminal.mo
 share/locale/eo/LC_MESSAGES/Terminal.mo
 share/locale/es/LC_MESSAGES/Terminal.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/Terminal.mo
 share/locale/fi/LC_MESSAGES/Terminal.mo
 share/locale/fr/LC_MESSAGES/Terminal.mo
