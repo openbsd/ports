@@ -1,16 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/04/17 13:14:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/07/08 12:50:06 landry Exp $
 @conflict xfce4-diskperf-plugin-*
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
-libexec/xfce4/panel-plugins/xfce4-diskperf-plugin
+@bin libexec/xfce4/panel-plugins/xfce4-diskperf-plugin
 share/locale/ca/LC_MESSAGES/xfce4-diskperf-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-diskperf-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-diskperf-plugin.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/xfce4-diskperf-plugin.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xfce4-diskperf-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-diskperf-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-diskperf-plugin.mo

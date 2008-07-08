@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/12/18 21:15:04 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/07/08 12:50:06 landry Exp $
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
-libexec/xfce4/panel-plugins/xfce4-netload-plugin
+@bin libexec/xfce4/panel-plugins/xfce4-netload-plugin
 share/locale/ca/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-netload-plugin.mo

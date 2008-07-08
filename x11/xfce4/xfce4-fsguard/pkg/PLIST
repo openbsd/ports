@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/04/17 09:00:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/07/08 12:50:06 landry Exp $
 @conflict xfce4-fsguard-plugin-*
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
-libexec/xfce4/panel-plugins/xfce4-fsguard-plugin
+@bin libexec/xfce4/panel-plugins/xfce4-fsguard-plugin
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/32x32/
@@ -21,8 +21,6 @@ share/locale/de/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/xfce4-fsguard-plugin.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-fsguard-plugin.mo

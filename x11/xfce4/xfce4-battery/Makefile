@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2008/05/24 01:24:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2008/07/08 12:50:06 landry Exp $
 
 ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc
 
 COMMENT=	battery monitor panel plugin for xfce4
 
-V=		0.5.0
-DISTNAME=	xfce4-battery-plugin-${V}
-PKGNAME=	xfce4-battery-${V}p3
-
-HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-battery-plugin/
+XFCE_VERSION=	0.5.0
+XFCE_PLUGIN=	battery
+PKGNAME=	${DISTNAME:S/-plugin//}p4
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes
@@ -16,12 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://goodies.xfce.org/releases/xfce4-battery-plugin/
-EXTRACT_SUFX=	.tar.bz2
-
-USE_GMAKE=	Yes
-
-LIB_DEPENDS=	xfce4panel::x11/xfce4/xfce4-panel
+MODULES=	x11/xfce4
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \

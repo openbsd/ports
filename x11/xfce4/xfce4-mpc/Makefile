@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/03/24 19:59:13 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/08 12:50:06 landry Exp $
 
 COMMENT=	simple client plugin for Music Player Daemon
 
-V=		0.3.3
-DISTNAME=	xfce4-mpc-plugin-${V}
-PKGNAME=	xfce4-mpc-${V}
-
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
-HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin
+XFCE_VERSION=	0.3.3
+XFCE_PLUGIN=	mpc
+PKGNAME=	${DISTNAME:S/-plugin//}p0
 
 # BSD-ISC
 PERMIT_DISTFILES_CDROM=	Yes
@@ -15,11 +12,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://goodies.xfce.org/releases/xfce4-mpc-plugin/
-
-USE_GMAKE=	Yes
-LIB_DEPENDS=	xfce4panel.>=2.2::x11/xfce4/xfce4-panel \
-		xfcegui4.>=4::x11/xfce4/libxfcegui4
+MODULES=	x11/xfce4
+EXTRACT_SUFX=	.tar.gz
 
 CONFIGURE_ARGS=	--without-libmpd
 
@@ -28,6 +22,6 @@ WANTLIB=	X11 Xdmcp Xrender Xdamage Xau fontconfig freetype m z c \
 		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
 		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
-		xfce4util
+		pixman-1 xfce4util xfcegui4
 
 .include <bsd.port.mk>
