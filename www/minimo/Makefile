@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.44 2008/04/15 09:56:29 martynas Exp $
+# $OpenBSD: Makefile,v 1.45 2008/07/08 20:37:30 martynas Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	small, simple, and powerful web browser for mobile devices
-DISTNAME=	minimo-20080410
+DISTNAME=	minimo-1.8.1.15
+PKGNAME=	${DISTNAME}v0
 
 CATEGORIES=	www
-MASTER_SITES=	http://mirrors.protection.cx/~martynas/mozilla/minimo/ \
-		http://www.bsdfrog.org/OpenBSD/distfiles/mozilla/minimo/
+MASTER_SITES=	http://mirrors.protection.cx/~martynas/mozilla/minimo/
  
 HOMEPAGE=	http://www.mozilla.org/projects/minimo/
 
@@ -33,7 +33,7 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi Xinerama \
 		pthread z \
 		atk-1.0.>=1011.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
 		gobject-2.0.>=600.0 pango-1.0.>=800.0 pangocairo-1.0 \
-		pangoft2-1.0 cairo glitz stdc++
+		pangoft2-1.0 pixman-1 cairo glitz stdc++
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes

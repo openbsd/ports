@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/04/01 13:19:58 martynas Exp $
-bin/minimo
+@comment $OpenBSD: PLIST,v 1.11 2008/07/08 20:37:30 martynas Exp $
+@bin bin/minimo
 share/minimo/
 share/minimo/chrome/
 share/minimo/chrome/classic.jar
