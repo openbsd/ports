@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.37 2008/07/08 15:03:37 naddy Exp $
 
 COMMENT=	SOund eXchange - universal sound sample translator
 
 DISTNAME=	sox-12.18.2
+PKGNAME=	${DISTNAME}	# also see below
 CATEGORIES=	audio
 HOMEPAGE=	http://sox.sourceforge.net/
 
@@ -34,6 +35,7 @@ CONFIGURE_ARGS+= --disable-ogg-vorbis
 .endif
 
 .if ${FLAVOR:L:Mmp3}
+PKGNAME=	${DISTNAME}p0
 LIB_DEPENDS+=	mad.>=2::audio/libmad mp3lame::audio/lame
 .else
 CONFIGURE_ARGS+= --disable-mad --disable-lame
