@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_evolution-import-rss_c,v 1.1.1.1 2008/05/13 14:17:15 jasper Exp $
+$OpenBSD: patch-src_evolution-import-rss_c,v 1.2 2008/07/08 22:38:53 jasper Exp $
 
 Increase the time-out to give evolution a fair chance to launch.
 
---- src/evolution-import-rss.c.orig	Wed May  7 15:50:25 2008
-+++ src/evolution-import-rss.c	Wed May  7 15:50:46 2008
+--- src/evolution-import-rss.c.orig	Tue Jul  8 13:03:07 2008
++++ src/evolution-import-rss.c	Tue Jul  8 13:03:21 2008
 @@ -175,7 +175,7 @@ main (int argc, char *argv[])
  	{
  		system("evolution&");
  		g_print("fireing evolution...\n");
--		sleep(10);
+-		sleep(30);
 +		sleep(60);
          	send_dbus_ping ();
  		g_timeout_add (EVOLUTION_PING_TIMEOUT, err_evo_cb, (gpointer)i++);
