@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/09 13:10:34 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/07/08 21:29:20 martynas Exp $
+lib/python${MODPY_VERSION}/site-packages/pysilc-0.5-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/silc.so
 share/doc/py-silc/
 share/doc/py-silc/README
