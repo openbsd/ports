@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/06/02 16:49:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2008/07/08 11:16:44 jasper Exp $
 %%SHARED%%
-bin/evolution
+@bin bin/evolution
 include/evolution-${R}/
 include/evolution-${R}/addressbook/
 include/evolution-${R}/addressbook/gui/
@@ -261,8 +261,6 @@ lib/evolution/${R}/libetext.a
 lib/evolution/${R}/libetext.la
 lib/evolution/${R}/libetimezonedialog.a
 lib/evolution/${R}/libetimezonedialog.la
-lib/evolution/${R}/libeutil.a
-lib/evolution/${R}/libeutil.la
 lib/evolution/${R}/libevolution-a11y.a
 lib/evolution/${R}/libevolution-a11y.la
 lib/evolution/${R}/libevolution-addressbook-a11y.a
@@ -362,9 +360,9 @@ libexec/evolution/
 libexec/evolution/${R}/
 libexec/evolution/${R}/csv2vcard
 libexec/evolution/${R}/evolution-addressbook-clean
-libexec/evolution/${R}/evolution-addressbook-export
-libexec/evolution/${R}/evolution-alarm-notify
-libexec/evolution/${R}/killev
+@bin libexec/evolution/${R}/evolution-addressbook-export
+@bin libexec/evolution/${R}/evolution-alarm-notify
+@bin libexec/evolution/${R}/killev
 share/applications/evolution.desktop
 share/evolution/
 share/evolution/${R}/
