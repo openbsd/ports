@@ -1,23 +1,18 @@
-# $OpenBSD: Makefile,v 1.4 2008/05/24 01:24:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/08 11:45:38 landry Exp $
 
 COMMENT=	media tags plugin for Thunar file manager
 
-V=		0.1.2
-DISTNAME=	thunar-media-tags-plugin-${V}
-PKGNAME=	thunar-media-tags-${V}p2
+XFCE_VERSION=	0.1.2
+XFCE_GOODIE=	thunar-media-tags-plugin
+PKGNAME=	${DISTNAME:S/-plugin//}p3
 
-HOMEPAGE=	http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin
-
-# GPL
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://goodies.xfce.org/releases/thunar-media-tags-plugin/
-EXTRACT_SUFX=	.tar.bz2
-
-USE_GMAKE=	Yes
+MODULES=	x11/xfce4
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo exo-0.3 \

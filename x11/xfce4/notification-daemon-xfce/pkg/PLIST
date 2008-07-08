@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/04/17 09:00:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/07/08 11:45:38 landry Exp $
 @conflict notification-daemon->=0.3.7
 %%SHARED%%
-bin/notification-settings
+@bin bin/notification-settings
 lib/notification-daemon-xfce-1.0/
 lib/notification-daemon-xfce-1.0/engines/
 lib/notification-daemon-xfce-1.0/engines/libstandard.a
@@ -10,7 +10,7 @@ lib/xfce4/
 lib/xfce4/mcs-plugins/
 lib/xfce4/mcs-plugins/notification_settings.a
 lib/xfce4/mcs-plugins/notification_settings.la
-libexec/notification-daemon-xfce
+@bin libexec/notification-daemon-xfce
 share/applications/notification-settings.desktop
 share/dbus-1/
 share/dbus-1/services/
