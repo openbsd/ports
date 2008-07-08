@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/10/30 18:07:35 naddy Exp $
-bin/bison
+@comment $OpenBSD: PLIST,v 1.9 2008/07/08 00:24:17 brad Exp $
+@bin bin/bison
 @info info/bison.info
 @man man/man1/bison.1
 share/aclocal/bison-i18n.m4
@@ -8,7 +8,9 @@ share/bison/README
 share/bison/c++.m4
 share/bison/c.m4
 share/bison/glr.c
+share/bison/glr.cc
 share/bison/lalr1.cc
+share/bison/location.cc
 share/bison/m4sugar/
 share/bison/m4sugar/m4sugar.m4
 share/bison/yacc.c
@@ -22,8 +24,6 @@ share/locale/et/LC_MESSAGES/bison-runtime.mo
 share/locale/et/LC_MESSAGES/bison.mo
 share/locale/fr/LC_MESSAGES/bison-runtime.mo
 share/locale/fr/LC_MESSAGES/bison.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/bison-runtime.mo
 share/locale/ga/LC_MESSAGES/bison.mo
 share/locale/hr/LC_MESSAGES/bison-runtime.mo
@@ -54,11 +54,11 @@ share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/bison-runtime.mo
 share/locale/rw/LC_MESSAGES/bison.mo
+share/locale/sl/LC_MESSAGES/bison-runtime.mo
 share/locale/sv/LC_MESSAGES/bison-runtime.mo
 share/locale/sv/LC_MESSAGES/bison.mo
 share/locale/tr/LC_MESSAGES/bison-runtime.mo
 share/locale/tr/LC_MESSAGES/bison.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/bison-runtime.mo
 share/locale/vi/LC_MESSAGES/bison.mo
+share/locale/zh_TW/LC_MESSAGES/bison-runtime.mo

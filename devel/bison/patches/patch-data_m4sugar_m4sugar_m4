@@ -1,7 +1,7 @@
-$OpenBSD: patch-data_m4sugar_m4sugar_m4,v 1.1 2005/11/21 09:15:11 espie Exp $
---- data/m4sugar/m4sugar.m4.orig	Sat Nov 19 16:05:49 2005
-+++ data/m4sugar/m4sugar.m4	Sat Nov 19 16:06:24 2005
-@@ -55,13 +55,6 @@ divert(-1)#                             
+$OpenBSD: patch-data_m4sugar_m4sugar_m4,v 1.2 2008/07/08 00:24:17 brad Exp $
+--- data/m4sugar/m4sugar.m4.orig	Mon Nov 14 03:13:07 2005
++++ data/m4sugar/m4sugar.m4	Sun Jun 29 22:09:16 2008
+@@ -55,13 +55,6 @@ divert(-1)#                                           
  changequote()
  changequote([, ])
  

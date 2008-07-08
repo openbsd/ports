@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2005/10/30 18:07:35 naddy Exp $
---- configure.orig	Thu Oct 27 20:27:44 2005
-+++ configure	Thu Oct 27 20:28:03 2005
-@@ -15190,10 +15190,10 @@ s,@host_cpu@,$host_cpu,;t t
+$OpenBSD: patch-configure,v 1.3 2008/07/08 00:24:17 brad Exp $
+--- configure.orig	Mon Jun  5 03:32:01 2006
++++ configure	Sun Jun 29 22:09:16 2008
+@@ -16768,10 +16768,10 @@ s,@host_cpu@,$host_cpu,;t t
  s,@host_vendor@,$host_vendor,;t t
  s,@host_os@,$host_os,;t t
  s,@INTL_MACOSX_LIBS@,$INTL_MACOSX_LIBS,;t t
@@ -13,4 +13,4 @@ $OpenBSD: patch-configure,v 1.2 2005/10/30 18:07:35 naddy Exp $
 +s,@LIBINTL@,$LTLIBINTL,;t t
  s,@LTLIBINTL@,$LTLIBINTL,;t t
  s,@POSUB@,$POSUB,;t t
- s,@BISON_LOCALEDIR@,$BISON_LOCALEDIR,;t t
+ s,@UNISTD_H@,$UNISTD_H,;t t
