@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/04/17 09:00:24 landry Exp $
-bin/xfce-mcs-manager
-bin/xfce-setting-show
+@comment $OpenBSD: PLIST,v 1.8 2008/07/08 09:41:35 landry Exp $
+@bin bin/xfce-mcs-manager
+@bin bin/xfce-setting-show
 include/xfce4/
 include/xfce4/xfce-mcs-manager/
 include/xfce4/xfce-mcs-manager/manager-plugin.h
 lib/pkgconfig/
 lib/pkgconfig/xfce-mcs-manager.pc
-share/applications/
 share/applications/xfce-settings-manager.desktop
 share/icons/
 share/icons/hicolor/
@@ -43,8 +42,6 @@ share/locale/es_MX/
 share/locale/es_MX/LC_MESSAGES/
 share/locale/es_MX/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/et/LC_MESSAGES/xfce-mcs-manager.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/

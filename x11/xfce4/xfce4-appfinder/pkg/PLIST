@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/04/17 09:00:24 landry Exp $
-bin/xfce4-appfinder
-share/applications/
+@comment $OpenBSD: PLIST,v 1.8 2008/07/08 09:41:35 landry Exp $
+@bin bin/xfce4-appfinder
 share/applications/xfce4-appfinder.desktop
 share/icons/
 share/icons/hicolor/
@@ -30,8 +29,6 @@ share/locale/es_MX/
 share/locale/es_MX/LC_MESSAGES/
 share/locale/es_MX/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/et/LC_MESSAGES/xfce4-appfinder.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/

@@ -1,28 +1,20 @@
-# $OpenBSD: Makefile,v 1.11 2008/04/17 09:00:24 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2008/07/08 09:41:35 landry Exp $
 PKG_ARCH=	*
 
 COMMENT=	icon theme for xfce4
-V=		4.4.2
-DISTNAME=	xfce4-icon-theme-${V}
-PKGNAME=	${DISTNAME}p0
 
-HOMEPAGE=	http://www.xfce.org/
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
+XFCE_PROJECT=	xfce4-icon-theme
+PKGNAME=	${DISTNAME}p1
 
-# GPL
+HOMEPAGE=	http://www.xfce.org/projects
+
+# GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
-EXTRACT_SUFX=	.tar.bz2
-
-USE_GMAKE=	Yes
-USE_LIBTOOL=	No
-MODULES=
-
-#not yet
-#RUN_DEPENDS=	::x11/gnome/librsvg,no_gnome
+MODULES=	x11/xfce4
+XFCE_NO_SRC=	Yes
 
 .include <bsd.port.mk>

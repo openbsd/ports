@@ -1,24 +1,17 @@
-# $OpenBSD: Makefile,v 1.20 2008/05/24 01:24:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2008/07/08 09:41:35 landry Exp $
 
 COMMENT=	essential utilities and scripts for xfce4
 
-V=		4.4.2
-DISTNAME=	xfce-utils-${V}
-PKGNAME=	${DISTNAME}p2
+XFCE_PROJECT=	xfce-utils
+PKGNAME=	${DISTNAME}p3
 
-HOMEPAGE=	http://www.xfce.org/projects/xfce-utils/
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
-
-# GPL
+# GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
-EXTRACT_SUFX=	.tar.bz2
-
-USE_GMAKE=	Yes
+MODULES=	x11/xfce4
 
 LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 		dbus-glib-1::x11/dbus-glib \

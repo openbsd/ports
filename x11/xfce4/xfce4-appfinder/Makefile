@@ -1,27 +1,20 @@
-# $OpenBSD: Makefile,v 1.16 2008/05/24 01:24:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2008/07/08 09:41:35 landry Exp $
 
 COMMENT=	xfce4 application finder
 
-V=		4.4.2
-DISTNAME=	xfce4-appfinder-${V}
-PKGNAME=	${DISTNAME}p1
+XFCE_PROJECT=	xfce4-appfinder
+PKGNAME=	${DISTNAME}p2
 
-HOMEPAGE=	http://www.xfce.org/projects/xfce4-appfinder/
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
-
-# GPL
+# GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
-EXTRACT_SUFX=	.tar.bz2
-
-USE_GMAKE=	Yes
+MODULES=	x11/xfce4
+DESKTOP_FILES=	Yes
 
 LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4
-RUN_DEPENDS=	::devel/desktop-file-utils
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
