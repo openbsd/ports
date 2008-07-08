@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/04/09 13:10:18 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2008/07/08 08:38:26 brad Exp $
 @pkgpath devel/glib2
 %%SHARED%%
-bin/glib-genmarshal
+@bin bin/glib-genmarshal
 bin/glib-gettextize
 bin/glib-mkenums
-bin/gobject-query
-bin/gtester
+@bin bin/gobject-query
+@bin bin/gtester
 include/gio-unix-2.0/
 include/gio-unix-2.0/gio/
 include/gio-unix-2.0/gio/gdesktopappinfo.h

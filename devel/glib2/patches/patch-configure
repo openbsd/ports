@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2008/04/09 13:10:17 jasper Exp $
---- configure.orig	Tue Mar 11 01:41:11 2008
-+++ configure	Tue Mar 11 21:22:36 2008
-@@ -32747,6 +32747,8 @@ _ACEOF
+$OpenBSD: patch-configure,v 1.9 2008/07/08 08:38:26 brad Exp $
+--- configure.orig	Tue Jul  1 21:31:24 2008
++++ configure	Wed Jul  2 05:03:56 2008
+@@ -32625,6 +32625,8 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
