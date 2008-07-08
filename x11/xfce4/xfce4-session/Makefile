@@ -1,35 +1,28 @@
-# $OpenBSD: Makefile,v 1.22 2008/06/02 15:37:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2008/07/08 09:45:36 landry Exp $
 
 COMMENT=	xfce4 session manager
 
-V=		4.4.2
-DISTNAME=	xfce4-session-${V}
-PKGNAME=	${DISTNAME}p3
+XFCE_PROJECT=	xfce4-session
+PKGNAME=	${DISTNAME}p4
 
 SHARED_LIBS +=  xfsm-4.2             0.1      # .0.1
 
-HOMEPAGE=	http://www.xfce.org/projects/xfce4-session/
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
-
-# GPL
+# GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
-EXTRACT_SUFX=	.tar.bz2
-
-USE_GMAKE=	Yes
+MODULES=	x11/xfce4
+DESKTOP_FILES=	Yes
 
 CONFIGURE_ARGS=	--disable-dbus \
 		--enable-session-screenshots
 
-BUILD_DEPENDS=	::x11/xfce4/xfce-mcs-manager
 LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 		xfce4mcs-client.>=3::x11/xfce4/libxfce4mcs
-RUN_DEPENDS=	::devel/desktop-file-utils \
-		::x11/xfce4/xfce-mcs-manager
+RUN_DEPENDS=	::x11/xfce4/xfce-mcs-manager
+BUILD_DEPENDS=	::x11/xfce4/xfce-mcs-manager
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \

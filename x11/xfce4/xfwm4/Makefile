@@ -1,29 +1,23 @@
-# $OpenBSD: Makefile,v 1.18 2008/05/24 01:24:32 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2008/07/08 09:45:36 landry Exp $
 
 COMMENT=	xfce4 window manager
-V=		4.4.2
-DISTNAME=	xfwm4-${V}
-PKGNAME=	${DISTNAME}p0
 
-HOMEPAGE=	http://www.xfce.org/projects/xfwm4/
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
+XFCE_PROJECT=	xfwm4
+PKGNAME=	${DISTNAME}p1
 
-# GPL
+# GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
-EXTRACT_SUFX=	.tar.bz2
-
-USE_GMAKE=	Yes
+MODULES=	x11/xfce4
+DESKTOP_FILES=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 		xfce4mcs-client.>=3,xfce4mcs-manager.>=3::x11/xfce4/libxfce4mcs
-RUN_DEPENDS=	::devel/desktop-file-utils \
-		::x11/xfce4/xfce-mcs-manager
+RUN_DEPENDS=	::x11/xfce4/xfce-mcs-manager
 
 WANTLIB= 	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
