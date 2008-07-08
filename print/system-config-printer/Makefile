@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/12 21:51:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/07/08 09:33:21 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
-DISTNAME=		system-config-printer-0.9.90
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		system-config-printer-1.0.3
 CATEGORIES=		print sysutils
 
 HOMEPAGE=		http://cyberelk.net/tim/software/system-config-printer/
@@ -14,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://cyberelk.net/tim/data/system-config-printer/
+MASTER_SITES=		http://cyberelk.net/tim/data/system-config-printer/1.0.x/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		lang/python \
@@ -36,7 +35,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 
-SUBST_FILES=		applet.py cupshelpers.py pysmb.py \
+SUBST_FILES=		applet.py cupshelpers/cupshelpers.py pysmb.py \
 			system-config-printer.py my-default-printer \
 			system-config-printer system-config-printer-applet \
 			manage-print-jobs.desktop.in \

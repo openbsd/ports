@@ -1,9 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/10 10:23:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/07/08 09:33:22 ajacoutot Exp $
 bin/my-default-printer
+bin/system-config-printer
 bin/system-config-printer-applet
+lib/python${MODPY_VERSION}/site-packages/cupshelpers/
+lib/python${MODPY_VERSION}/site-packages/cupshelpers/__init__.py
+lib/python${MODPY_VERSION}/site-packages/cupshelpers/cupshelpers.py
+lib/python${MODPY_VERSION}/site-packages/cupshelpers/openprinting.py
+lib/python${MODPY_VERSION}/site-packages/cupshelpers/ppds.py
 @man man/man1/system-config-printer-applet.1
 @man man/man1/system-config-printer.1
-sbin/system-config-printer
 share/applications/redhat-manage-print-jobs.desktop
 share/applications/redhat-my-default-printer.desktop
 share/applications/redhat-system-config-printer.desktop
@@ -65,7 +70,9 @@ share/locale/si/LC_MESSAGES/system-config-printer.mo
 share/locale/sk/LC_MESSAGES/system-config-printer.mo
 share/locale/sl/LC_MESSAGES/system-config-printer.mo
 share/locale/sr/LC_MESSAGES/system-config-printer.mo
-share/locale/sr@Latn/LC_MESSAGES/system-config-printer.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/system-config-printer.mo
 share/locale/sv/LC_MESSAGES/system-config-printer.mo
 share/locale/ta/LC_MESSAGES/system-config-printer.mo
 share/locale/te/LC_MESSAGES/system-config-printer.mo
@@ -80,8 +87,8 @@ share/system-config-printer/applet.py
 share/system-config-printer/authconn.py
 share/system-config-printer/config.py
 share/system-config-printer/contextmenu.py
-share/system-config-printer/cupshelpers.py
 share/system-config-printer/debug.py
+share/system-config-printer/errordialogs.py
 share/system-config-printer/gtk_label_autowrap.py
 share/system-config-printer/gtk_treeviewtooltips.py
 share/system-config-printer/icons/
@@ -89,10 +96,8 @@ share/system-config-printer/icons/i-network-printer.png
 share/system-config-printer/jobviewer.py
 share/system-config-printer/monitor.py
 share/system-config-printer/my-default-printer.py
-share/system-config-printer/openprinting.py
 share/system-config-printer/options.py
 share/system-config-printer/optionwidgets.py
-share/system-config-printer/ppds.py
 share/system-config-printer/probe_printer.py
 share/system-config-printer/pysmb.py
 share/system-config-printer/smburi.py
@@ -104,6 +109,7 @@ share/system-config-printer/troubleshoot/CheckLocalServerPublishing.py
 share/system-config-printer/troubleshoot/CheckNetworkServerSanity.py
 share/system-config-printer/troubleshoot/CheckPPDSanity.py
 share/system-config-printer/troubleshoot/CheckPrinterSanity.py
+share/system-config-printer/troubleshoot/CheckUSBPermissions.py
 share/system-config-printer/troubleshoot/ChooseNetworkPrinter.py
 share/system-config-printer/troubleshoot/ChoosePrinter.py
 share/system-config-printer/troubleshoot/DeviceListed.py
@@ -123,5 +129,6 @@ share/system-config-printer/troubleshoot/Shrug.py
 share/system-config-printer/troubleshoot/Welcome.py
 share/system-config-printer/troubleshoot/__init__.py
 share/system-config-printer/troubleshoot/base.py
+share/system-config-printer/userdefault.py
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

@@ -1,11 +1,11 @@
-$OpenBSD: patch-my-default-printer_desktop_in,v 1.2 2008/06/12 21:51:43 ajacoutot Exp $
---- my-default-printer.desktop.in.orig	Thu Mar 27 18:26:45 2008
-+++ my-default-printer.desktop.in	Thu Mar 27 18:26:56 2008
+$OpenBSD: patch-my-default-printer_desktop_in,v 1.3 2008/07/08 09:33:21 ajacoutot Exp $
+--- my-default-printer.desktop.in.orig	Wed Jul  2 15:35:37 2008
++++ my-default-printer.desktop.in	Wed Jul  2 15:35:50 2008
 @@ -2,7 +2,7 @@
  Encoding=UTF-8
  _Name=Default Printer
  _Comment=Select default printer
--Exec=/usr/bin/my-default-printer
+-Exec=my-default-printer
 +Exec=${PREFIX}/bin/my-default-printer
  Terminal=false
  Type=Application

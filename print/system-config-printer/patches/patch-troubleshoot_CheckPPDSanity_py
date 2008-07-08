@@ -1,0 +1,12 @@
+$OpenBSD: patch-troubleshoot_CheckPPDSanity_py,v 1.1 2008/07/08 09:33:21 ajacoutot Exp $
+--- troubleshoot/CheckPPDSanity.py.orig	Wed Jul  2 17:50:13 2008
++++ troubleshoot/CheckPPDSanity.py	Wed Jul  2 17:50:28 2008
+@@ -26,7 +26,7 @@ import subprocess
+ from base import *
+ from base import _
+ 
+-install_cmd = "/usr/bin/system-install-packages"
++install_cmd = "/usr/bin/true"
+ 
+ class CheckPPDSanity(Question):
+     def __init__ (self, troubleshooter):

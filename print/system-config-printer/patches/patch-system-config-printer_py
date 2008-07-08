@@ -1,19 +1,10 @@
 set_program_name(domain) requires newer py-gtk2, but is kept back
 due to implied py-Nummeric update.
 
-$OpenBSD: patch-system-config-printer_py,v 1.2 2008/06/12 21:51:43 ajacoutot Exp $
---- system-config-printer.py.orig	Thu Apr  3 17:54:02 2008
-+++ system-config-printer.py	Tue Apr  8 15:36:56 2008
-@@ -77,7 +77,7 @@ from gettext import gettext as _
- import gettext
- gettext.textdomain (domain)
- gtk.glade.bindtextdomain (domain)
--pkgdata = '/usr/share/' + domain
-+pkgdata = '${PREFIX}/share/' + domain
- iconpath = pkgdata + '/icons/'
- glade_file = pkgdata + '/' + domain + '.glade'
- sys.path.append (pkgdata)
-@@ -243,7 +243,7 @@ class GUI(GtkGUI, monitor.Watcher):
+$OpenBSD: patch-system-config-printer_py,v 1.3 2008/07/08 09:33:21 ajacoutot Exp $
+--- system-config-printer.py.orig	Wed Jul  2 16:21:38 2008
++++ system-config-printer.py	Wed Jul  2 16:23:41 2008
+@@ -309,7 +309,7 @@ class GUI(GtkGUI, monitor.Watcher):
          np.NewPrinterWindow.set_transient_for(self.MainWindow)
  
          # Set up "About" dialog
@@ -21,8 +12,8 @@ $OpenBSD: patch-system-config-printer_py,v 1.2 2008/06/12 21:51:43 ajacoutot Exp
 +        #self.AboutDialog.set_program_name(domain)
          self.AboutDialog.set_version(config.VERSION)
          self.AboutDialog.set_icon_name('printer')
-         self.AboutDialog.set_logo_icon_name('printer')
-@@ -270,7 +270,7 @@ class GUI(GtkGUI, monitor.Watcher):
+ 
+@@ -341,7 +341,7 @@ class GUI(GtkGUI, monitor.Watcher):
          self.dests_iconview.set_model(self.mainlist)
          self.dests_iconview.set_pixbuf_column (1)
          self.dests_iconview.set_text_column (2)
@@ -31,30 +22,21 @@ $OpenBSD: patch-system-config-printer_py,v 1.2 2008/06/12 21:51:43 ajacoutot Exp
          self.dests_iconview.connect ('item-activated',
                                       self.dests_iconview_item_activated)
          self.dests_iconview.connect ('selection-changed',
-@@ -2855,7 +2855,7 @@ class NewPrinterGUI(GtkGUI):
+@@ -3325,7 +3325,7 @@ class NewPrinterGUI(GtkGUI):
          # Try to get make and model via SNMP
          if host:
              os.environ["HOST"] = host
--            cmd = '/usr/lib/cups/backend/snmp "${HOST}" 2>/dev/null'
-+            cmd = '${LOCALBASE}/libexec/cups/backend/snmp "${HOST}" 2>/dev/null'
+-            cmd = '/usr/lib/cups/backend/snmp "${HOST}"'
++            cmd = '${LOCALBASE}/libexec/cups/backend/snmp "${HOST}"'
              debugprint (host + ": " + cmd)
-             p = os.popen(cmd, 'r')
-             output = p.read ().strip ()
-@@ -3931,7 +3931,7 @@ class NewPrinterGUI(GtkGUI):
-                 os.environ["PPD"] = filename
-                 # We want this to be in the current natural language,
-                 # so we intentionally don't set LC_ALL=C here.
--                p = os.popen ('/usr/bin/cupstestppd -rvv "$PPD"', 'r')
-+                p = os.popen ('${LOCALBASE}/bin/cupstestppd -rvv "$PPD"', 'r')
-                 output = p.readlines ()
-                 p.close ()
-                 err += reduce (lambda x, y: x + y, output)
-@@ -4212,7 +4212,7 @@ class NewPrinterGUI(GtkGUI):
-         (pkgs, exes) = cupshelpers.missingPackagesAndExecutables (ppd)
-         if len (pkgs) > 0 or len (exes) > 0:
-             # We didn't find a necessary executable.  Complain.
--            install = "/usr/bin/system-install-packages"
-+            install = "/usr/bin/true"
-             if len (pkgs) > 0 and os.access (install, os.X_OK):
-                 pkg = pkgs[0]
-                 install_text = ('<span weight="bold" size="larger">' +
+             stdout = None
+             try:
+@@ -4627,7 +4627,7 @@ class NewPrinterGUI(GtkGUI):
+                 try:
+                     # We want this to be in the current natural language,
+                     # so we intentionally don't set LC_ALL=C here.
+-                    p = subprocess.Popen (['/usr/bin/cupstestppd',
++                    p = subprocess.Popen (['${LOCALBASE}/bin/cupstestppd',
+                                            '-rvv', filename],
+                                           stdin=file("/dev/null"),
+                                           stdout=subprocess.PIPE,
