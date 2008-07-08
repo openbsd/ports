@@ -16,7 +16,8 @@ BUILD_DEPENDS+=		:cmake->=2.4.8p0:devel/cmake
 CONFIGURE_STYLE?=	cmake
 
 EXTRACT_SUFX?=		.tar.bz2
-MASTER_SITES?=	${MASTER_SITE_KDE:=stable/${VERSION}/src/}
+MASTER_SITES?=	${MASTER_SITE_KDE:=stable/${VERSION}/src/} \
+		http://mirrors.protection.cx/~martynas/kde/${VERSION}/
 
 PORTHOME?=		${WRKDIR}
 
