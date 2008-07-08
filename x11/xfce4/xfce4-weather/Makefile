@@ -1,13 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2008/05/24 01:24:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2008/07/08 12:54:43 landry Exp $
 
 COMMENT=	see temperature/weather conditions on the xfce4 panel
 
-V=		0.6.2
-DISTNAME=	xfce4-weather-plugin-${V}
-PKGNAME=	xfce4-weather-${V}p2
-
-HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/xfce4-weather-plugin
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
+XFCE_VERSION=	0.6.2
+XFCE_PLUGIN=	weather
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes
@@ -15,12 +11,9 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	http://goodies.xfce.org/releases/xfce4-weather-plugin/
-EXTRACT_SUFX=	.tar.bz2
+MODULES=	x11/xfce4
 
-USE_GMAKE=	Yes
-LIB_DEPENDS=	xfce4panel.>=2::x11/xfce4/xfce4-panel \
-		xml2.>=9::textproc/libxml
+LIB_DEPENDS=	xml2.>=9::textproc/libxml
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \

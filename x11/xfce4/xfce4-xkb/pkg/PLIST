@@ -1,14 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/12/18 21:34:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/07/08 12:54:43 landry Exp $
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
-libexec/xfce4/panel-plugins/xfce4-xkb-plugin
+@bin libexec/xfce4/panel-plugins/xfce4-xkb-plugin
 share/locale/bg/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/el/LC_MESSAGES/xfce4-xkb-plugin.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-xkb-plugin.mo

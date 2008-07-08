@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/04/17 09:00:25 landry Exp $
-bin/xfce4-popup-notes
+@comment $OpenBSD: PLIST,v 1.8 2008/07/08 12:54:43 landry Exp $
+@bin bin/xfce4-popup-notes
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
-libexec/xfce4/panel-plugins/xfce4-notes-plugin
+@bin libexec/xfce4/panel-plugins/xfce4-notes-plugin
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/16x16/
@@ -23,8 +23,6 @@ share/icons/hicolor/scalable/apps/xfce4-notes-plugin.svg
 share/locale/ca/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-notes-plugin.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-notes-plugin.mo
