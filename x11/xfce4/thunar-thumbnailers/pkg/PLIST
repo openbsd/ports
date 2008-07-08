@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/06 20:19:11 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/07/08 11:32:57 landry Exp $
+@conflict thunar-thumbnailers-plugin-*
 libexec/dvi-thumbnailer
 libexec/eps-thumbnailer
 libexec/ffmpeg-thumbnailer
