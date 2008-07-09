@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.8 2008/07/09 14:46:19 wcmaier Exp $
+--- Makefile.in.orig	Tue Jul  8 10:14:15 2008
++++ Makefile.in	Tue Jul  8 10:14:20 2008
+@@ -193,8 +193,8 @@ $(ZENMAPDIR)/setup.py:
+ 	cd $(ZENMAPDIR) && install_scripts/unix/setup.sh
+ 
+ # Update the version number used by Zenmap.
+-$(ZENMAPDIR)/zenmapCore/Version.py $(ZENMAPDIR)/share/zenmap/config/zenmap_version: nmap.h
+-	cd $(ZENMAPDIR) && $(PYTHON) install_scripts/utils/version_update.py "$(NMAP_VERSION)"
++#$(ZENMAPDIR)/zenmapCore/Version.py $(ZENMAPDIR)/share/zenmap/config/zenmap_version: nmap.h
++#	cd $(ZENMAPDIR) && $(PYTHON) install_scripts/utils/version_update.py "$(NMAP_VERSION)"
+ 
+ # By default distutils rewrites installed scripts to hardcode the
+ # location of the Python interpreter they were built with (something
