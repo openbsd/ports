@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2008/07/04 10:23:25 pyr Exp $
+# $OpenBSD: Makefile,v 1.112 2008/07/09 11:22:02 landry Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -23,6 +23,7 @@
      SUBDIR += digitemp
      SUBDIR += dnetc
      SUBDIR += dtach
+     SUBDIR += dvtm
      SUBDIR += figlet
      SUBDIR += fileutils
      SUBDIR += findutils
