@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.22 2008/02/08 17:32:42 jakemsr Exp $
-bin/mencoder
-bin/mplayer
+@comment $OpenBSD: PLIST,v 1.23 2008/07/09 02:19:36 jakemsr Exp $
+@bin bin/mencoder
+@bin bin/mplayer
 @man man/man1/mencoder.1
 @man man/man1/mplayer.1
 share/doc/mplayer/
