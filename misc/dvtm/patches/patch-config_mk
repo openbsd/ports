@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_mk,v 1.1.1.1 2008/07/09 11:20:43 landry Exp $
+--- config.mk.orig	Mon Jul  7 22:02:58 2008
++++ config.mk	Mon Jul  7 22:03:09 2008
+@@ -4,7 +4,7 @@ VERSION = 0.4.1
+ # Customize below to fit your system
+ 
+ PREFIX = /usr/local
+-MANPREFIX = ${PREFIX}/share/man
++MANPREFIX = ${PREFIX}/man
+ 
+ INCS = -I. -I/usr/include -I/usr/local/include 
+ LIBS = -lc -lutil -lncurses

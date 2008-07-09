@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/09 11:20:43 landry Exp $
+@bin bin/dvtm
+bin/dvtm-status
+@man man/man1/dvtm.1
