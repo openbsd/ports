@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_ffmpeg_gstffmpegaudioresample_c,v 1.1 2008/07/09 02:22:59 jakemsr Exp $
+--- ext/ffmpeg/gstffmpegaudioresample.c.orig	Sat Jun 21 18:39:00 2008
++++ ext/ffmpeg/gstffmpegaudioresample.c	Sat Jun 21 18:39:14 2008
+@@ -27,7 +27,7 @@
+ #ifdef HAVE_FFMPEG_UNINSTALLED
+ #include <avcodec.h>
+ #else
+-#include <ffmpeg/avcodec.h>
++#include <libavcodec/avcodec.h>
+ #endif
+ 
+ #include <gst/gst.h>

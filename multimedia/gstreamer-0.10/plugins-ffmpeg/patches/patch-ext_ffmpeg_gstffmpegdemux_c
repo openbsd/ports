@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_ffmpeg_gstffmpegdemux_c,v 1.3 2008/07/09 02:22:59 jakemsr Exp $
+--- ext/ffmpeg/gstffmpegdemux.c.orig	Sat Jun 21 18:46:06 2008
++++ ext/ffmpeg/gstffmpegdemux.c	Sat Jun 21 18:46:35 2008
+@@ -30,7 +30,7 @@
+ #include <avi.h>
+ #endif
+ #else
+-#include <ffmpeg/avformat.h>
++#include <libavformat/avformat.h>
+ #ifdef HAVE_AVI_H
+ #include <ffmpeg/avi.h>
+ #endif

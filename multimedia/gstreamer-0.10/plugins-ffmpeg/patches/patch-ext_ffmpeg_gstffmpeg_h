@@ -1,0 +1,14 @@
+$OpenBSD: patch-ext_ffmpeg_gstffmpeg_h,v 1.1 2008/07/09 02:22:59 jakemsr Exp $
+--- ext/ffmpeg/gstffmpeg.h.orig	Sat Jun 21 18:39:46 2008
++++ ext/ffmpeg/gstffmpeg.h	Sat Jun 21 18:40:32 2008
+@@ -28,8 +28,8 @@
+ #include <avcodec.h>
+ #include <avformat.h>
+ #else
+-#include <ffmpeg/avcodec.h>
+-#include <ffmpeg/avformat.h>
++#include <libavcodec/avcodec.h>
++#include <libavformat/avformat.h>
+ #endif
+ 
+ #include <gst/gst.h>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-ext_libpostproc_gstpostproc_c,v 1.1 2008/07/09 02:22:59 jakemsr Exp $
+--- ext/libpostproc/gstpostproc.c.orig	Sat Jun 21 18:48:39 2008
++++ ext/libpostproc/gstpostproc.c	Sat Jun 21 18:49:13 2008
+@@ -32,8 +32,8 @@
+ #include <avcodec.h>
+ #include <postprocess.h>
+ #else
+-#include <ffmpeg/avcodec.h>
+-#include <postproc/postprocess.h>
++#include <libavcodec/avcodec.h>
++#include <libpostproc/postprocess.h>
+ #endif
+ 
+ 
