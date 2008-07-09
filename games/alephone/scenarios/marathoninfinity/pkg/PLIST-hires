@@ -1,0 +1,200 @@
+@comment $OpenBSD: PLIST-hires,v 1.1.1.1 2008/07/09 16:56:43 phessler Exp $
+share/alephone/Infinity/Landscapes/
+share/alephone/Infinity/Landscapes/1.jpg
+share/alephone/Infinity/Landscapes/2.jpg
+share/alephone/Infinity/Landscapes/3.jpg
+share/alephone/Infinity/Landscapes/4.jpg
+share/alephone/Infinity/Scripts/00.dds
+share/alephone/Infinity/Scripts/01.dds
+share/alephone/Infinity/Scripts/02.dds
+share/alephone/Infinity/Scripts/03.dds
+share/alephone/Infinity/Scripts/16_25.dds
+share/alephone/Infinity/Scripts/16_25_1.dds
+share/alephone/Infinity/Scripts/16_25_3.dds
+share/alephone/Infinity/Scripts/16_26.dds
+share/alephone/Infinity/Scripts/16_26_1.dds
+share/alephone/Infinity/Scripts/16_26_3.dds
+share/alephone/Infinity/Scripts/16_27.dds
+share/alephone/Infinity/Scripts/16_27_1.dds
+share/alephone/Infinity/Scripts/16_27_3.dds
+share/alephone/Infinity/Scripts/16_28.dds
+share/alephone/Infinity/Scripts/16_28_1.dds
+share/alephone/Infinity/Scripts/16_28_3.dds
+share/alephone/Infinity/Scripts/16_29.dds
+share/alephone/Infinity/Scripts/16_29_1.dds
+share/alephone/Infinity/Scripts/16_29_3.dds
+share/alephone/Infinity/Scripts/16_30.dds
+share/alephone/Infinity/Scripts/16_30_1.dds
+share/alephone/Infinity/Scripts/16_30_3.dds
+share/alephone/Infinity/Scripts/16_31.dds
+share/alephone/Infinity/Scripts/16_31_1.dds
+share/alephone/Infinity/Scripts/16_31_3.dds
+share/alephone/Infinity/Scripts/16_32.dds
+share/alephone/Infinity/Scripts/16_32_1.dds
+share/alephone/Infinity/Scripts/16_32_3.dds
+share/alephone/Infinity/Scripts/16_33.dds
+share/alephone/Infinity/Scripts/16_33_1.dds
+share/alephone/Infinity/Scripts/16_33_3.dds
+share/alephone/Infinity/Scripts/16_34.dds
+share/alephone/Infinity/Scripts/16_34_1.dds
+share/alephone/Infinity/Scripts/16_34_3.dds
+share/alephone/Infinity/Scripts/25.dds
+share/alephone/Infinity/Scripts/26.dds
+share/alephone/Infinity/Scripts/27.dds
+share/alephone/Infinity/Scripts/28.dds
+share/alephone/Infinity/Scripts/29.dds
+share/alephone/Infinity/Scripts/30.dds
+share/alephone/Infinity/Scripts/31.dds
+share/alephone/Infinity/Scripts/34.dds
+share/alephone/Infinity/Scripts/35.dds
+share/alephone/Infinity/Scripts/36.dds
+share/alephone/Infinity/Scripts/37.dds
+share/alephone/Infinity/Scripts/48.dds
+share/alephone/Infinity/Scripts/49.dds
+share/alephone/Infinity/Scripts/50.dds
+share/alephone/Infinity/Scripts/51.dds
+share/alephone/Infinity/Scripts/56.dds
+share/alephone/Infinity/Scripts/57.dds
+share/alephone/Infinity/Scripts/58.dds
+share/alephone/Infinity/Scripts/59.dds
+share/alephone/Infinity/Scripts/60.dds
+share/alephone/Infinity/Scripts/61.dds
+share/alephone/Infinity/Scripts/62.dds
+share/alephone/Infinity/Scripts/74.dds
+share/alephone/Infinity/Scripts/75.dds
+share/alephone/Infinity/Scripts/76.dds
+share/alephone/Infinity/Scripts/9_61.dds
+share/alephone/Infinity/Scripts/9_65.dds
+share/alephone/Infinity/Scripts/9_67.dds
+share/alephone/Infinity/Scripts/9_68.dds
+share/alephone/Infinity/Scripts/9_69.dds
+share/alephone/Infinity/Scripts/9_70.dds
+share/alephone/Infinity/Scripts/9_71.dds
+share/alephone/Infinity/Textures/
+share/alephone/Infinity/Textures/17 Water/
+share/alephone/Infinity/Textures/17 Water/00.dds
+share/alephone/Infinity/Textures/17 Water/01.dds
+share/alephone/Infinity/Textures/17 Water/02.dds
+share/alephone/Infinity/Textures/17 Water/03.dds
+share/alephone/Infinity/Textures/17 Water/04.dds
+share/alephone/Infinity/Textures/17 Water/05.dds
+share/alephone/Infinity/Textures/17 Water/06.dds
+share/alephone/Infinity/Textures/17 Water/07.dds
+share/alephone/Infinity/Textures/17 Water/08.dds
+share/alephone/Infinity/Textures/17 Water/09.dds
+share/alephone/Infinity/Textures/17 Water/10.dds
+share/alephone/Infinity/Textures/17 Water/11.dds
+share/alephone/Infinity/Textures/17 Water/12.dds
+share/alephone/Infinity/Textures/17 Water/13.dds
+share/alephone/Infinity/Textures/17 Water/14.dds
+share/alephone/Infinity/Textures/17 Water/15.dds
+share/alephone/Infinity/Textures/17 Water/16.dds
+share/alephone/Infinity/Textures/17 Water/17.dds
+share/alephone/Infinity/Textures/17 Water/18.dds
+share/alephone/Infinity/Textures/17 Water/19.dds
+share/alephone/Infinity/Textures/17 Water/20.dds
+share/alephone/Infinity/Textures/17 Water/21.dds
+share/alephone/Infinity/Textures/17 Water/22.dds
+share/alephone/Infinity/Textures/17 Water/23.dds
+share/alephone/Infinity/Textures/17 Water/24.dds
+share/alephone/Infinity/Textures/17 Water/25.dds
+share/alephone/Infinity/Textures/17 Water/26.dds
+share/alephone/Infinity/Textures/17 Water/27.dds
+share/alephone/Infinity/Textures/17 Water/28.dds
+share/alephone/Infinity/Textures/17 Water/29.dds
+share/alephone/Infinity/Textures/18 Lava/
+share/alephone/Infinity/Textures/18 Lava/00.dds
+share/alephone/Infinity/Textures/18 Lava/01.dds
+share/alephone/Infinity/Textures/18 Lava/02.dds
+share/alephone/Infinity/Textures/18 Lava/03.dds
+share/alephone/Infinity/Textures/18 Lava/04.dds
+share/alephone/Infinity/Textures/18 Lava/05.dds
+share/alephone/Infinity/Textures/18 Lava/06.dds
+share/alephone/Infinity/Textures/18 Lava/07.dds
+share/alephone/Infinity/Textures/18 Lava/08.dds
+share/alephone/Infinity/Textures/18 Lava/09.dds
+share/alephone/Infinity/Textures/18 Lava/10.dds
+share/alephone/Infinity/Textures/18 Lava/11.dds
+share/alephone/Infinity/Textures/18 Lava/12.dds
+share/alephone/Infinity/Textures/18 Lava/13.dds
+share/alephone/Infinity/Textures/18 Lava/14.dds
+share/alephone/Infinity/Textures/18 Lava/15.dds
+share/alephone/Infinity/Textures/18 Lava/16.dds
+share/alephone/Infinity/Textures/18 Lava/17.dds
+share/alephone/Infinity/Textures/18 Lava/18.dds
+share/alephone/Infinity/Textures/18 Lava/19.dds
+share/alephone/Infinity/Textures/18 Lava/20.dds
+share/alephone/Infinity/Textures/18 Lava/21.dds
+share/alephone/Infinity/Textures/18 Lava/22.dds
+share/alephone/Infinity/Textures/18 Lava/23.dds
+share/alephone/Infinity/Textures/18 Lava/24.dds
+share/alephone/Infinity/Textures/18 Lava/25.dds
+share/alephone/Infinity/Textures/18 Lava/26.dds
+share/alephone/Infinity/Textures/18 Lava/27.dds
+share/alephone/Infinity/Textures/18 Lava/28.dds
+share/alephone/Infinity/Textures/18 Lava/29.dds
+share/alephone/Infinity/Textures/18 Lava/29m.dds
+share/alephone/Infinity/Textures/19 Sewage/
+share/alephone/Infinity/Textures/19 Sewage/00.dds
+share/alephone/Infinity/Textures/19 Sewage/01.dds
+share/alephone/Infinity/Textures/19 Sewage/02.dds
+share/alephone/Infinity/Textures/19 Sewage/03.dds
+share/alephone/Infinity/Textures/19 Sewage/04.dds
+share/alephone/Infinity/Textures/19 Sewage/05.dds
+share/alephone/Infinity/Textures/19 Sewage/06.dds
+share/alephone/Infinity/Textures/19 Sewage/07.dds
+share/alephone/Infinity/Textures/19 Sewage/08.dds
+share/alephone/Infinity/Textures/19 Sewage/09.dds
+share/alephone/Infinity/Textures/19 Sewage/10.dds
+share/alephone/Infinity/Textures/19 Sewage/11.dds
+share/alephone/Infinity/Textures/19 Sewage/12.dds
+share/alephone/Infinity/Textures/19 Sewage/13.dds
+share/alephone/Infinity/Textures/19 Sewage/14.dds
+share/alephone/Infinity/Textures/19 Sewage/15.dds
+share/alephone/Infinity/Textures/19 Sewage/16.dds
+share/alephone/Infinity/Textures/19 Sewage/17.dds
+share/alephone/Infinity/Textures/19 Sewage/18.dds
+share/alephone/Infinity/Textures/19 Sewage/19.dds
+share/alephone/Infinity/Textures/19 Sewage/20.dds
+share/alephone/Infinity/Textures/19 Sewage/21.dds
+share/alephone/Infinity/Textures/19 Sewage/22.dds
+share/alephone/Infinity/Textures/19 Sewage/23.dds
+share/alephone/Infinity/Textures/19 Sewage/24.dds
+share/alephone/Infinity/Textures/19 Sewage/25.dds
+share/alephone/Infinity/Textures/19 Sewage/26.dds
+share/alephone/Infinity/Textures/19 Sewage/27.dds
+share/alephone/Infinity/Textures/19 Sewage/28.dds
+share/alephone/Infinity/Textures/19 Sewage/29.dds
+share/alephone/Infinity/Textures/21 Pfhor/
+share/alephone/Infinity/Textures/21 Pfhor/00.dds
+share/alephone/Infinity/Textures/21 Pfhor/01.dds
+share/alephone/Infinity/Textures/21 Pfhor/02.dds
+share/alephone/Infinity/Textures/21 Pfhor/03.dds
+share/alephone/Infinity/Textures/21 Pfhor/04.dds
+share/alephone/Infinity/Textures/21 Pfhor/05.dds
+share/alephone/Infinity/Textures/21 Pfhor/06.dds
+share/alephone/Infinity/Textures/21 Pfhor/07.dds
+share/alephone/Infinity/Textures/21 Pfhor/08.dds
+share/alephone/Infinity/Textures/21 Pfhor/09.dds
+share/alephone/Infinity/Textures/21 Pfhor/10.dds
+share/alephone/Infinity/Textures/21 Pfhor/11.dds
+share/alephone/Infinity/Textures/21 Pfhor/12.dds
+share/alephone/Infinity/Textures/21 Pfhor/13.dds
+share/alephone/Infinity/Textures/21 Pfhor/14.dds
+share/alephone/Infinity/Textures/21 Pfhor/15.dds
+share/alephone/Infinity/Textures/21 Pfhor/16.dds
+share/alephone/Infinity/Textures/21 Pfhor/17.dds
+share/alephone/Infinity/Textures/21 Pfhor/18.dds
+share/alephone/Infinity/Textures/21 Pfhor/19.dds
+share/alephone/Infinity/Textures/21 Pfhor/20.dds
+share/alephone/Infinity/Textures/21 Pfhor/21.dds
+share/alephone/Infinity/Textures/21 Pfhor/22.dds
+share/alephone/Infinity/Textures/21 Pfhor/23.dds
+share/alephone/Infinity/Textures/21 Pfhor/24.dds
+share/alephone/Infinity/Textures/21 Pfhor/25.dds
+share/alephone/Infinity/Textures/21 Pfhor/26.dds
+share/alephone/Infinity/Textures/21 Pfhor/27.dds
+share/alephone/Infinity/Textures/21 Pfhor/28.dds
+share/alephone/Infinity/Textures/21 Pfhor/29.dds
+share/alephone/Infinity/tex/
+share/alephone/Infinity/tex/shots/

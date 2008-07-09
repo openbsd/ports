@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/07/09 16:56:43 phessler Exp $
+bin/marathon2
+share/alephone/
+share/alephone/Marathon2/
+share/alephone/Marathon2/Fonts
+share/alephone/Marathon2/Images.imgA
+@comment share/alephone/Marathon2/Landscapes/.DS_Store
+share/alephone/Marathon2/Map.sceA
+share/alephone/Marathon2/Music.aif
+share/alephone/Marathon2/Physics Models/
+share/alephone/Marathon2/Physics Models/Standard.phyA
+share/alephone/Marathon2/Scripts/
+share/alephone/Marathon2/Scripts/Filenames.mml
+share/alephone/Marathon2/Scripts/Marathon 2.mml
+share/alephone/Marathon2/Scripts/Transparent_Liquids.mml
+share/alephone/Marathon2/Shapes.shpA
+share/alephone/Marathon2/Sounds.sndA
+share/alephone/Marathon2/Themes/
+share/alephone/Marathon2/Themes/Default/
+share/alephone/Marathon2/Themes/Default/button_c.bmp
+share/alephone/Marathon2/Themes/Default/button_l.bmp
+share/alephone/Marathon2/Themes/Default/button_r.bmp
+share/alephone/Marathon2/Themes/Default/frame_b.bmp
+share/alephone/Marathon2/Themes/Default/frame_bl.bmp
+share/alephone/Marathon2/Themes/Default/frame_br.bmp
+share/alephone/Marathon2/Themes/Default/frame_l.bmp
+share/alephone/Marathon2/Themes/Default/frame_r.bmp
+share/alephone/Marathon2/Themes/Default/frame_t.bmp
+share/alephone/Marathon2/Themes/Default/frame_tl.bmp
+share/alephone/Marathon2/Themes/Default/frame_tr.bmp
+share/alephone/Marathon2/Themes/Default/list_b.bmp
+share/alephone/Marathon2/Themes/Default/list_bl.bmp
+share/alephone/Marathon2/Themes/Default/list_br.bmp
+share/alephone/Marathon2/Themes/Default/list_l.bmp
+share/alephone/Marathon2/Themes/Default/list_r.bmp
+share/alephone/Marathon2/Themes/Default/list_t.bmp
+share/alephone/Marathon2/Themes/Default/list_tl.bmp
+share/alephone/Marathon2/Themes/Default/list_tr.bmp
+share/alephone/Marathon2/Themes/Default/resources
+share/alephone/Marathon2/Themes/Default/slider.bmp
+share/alephone/Marathon2/Themes/Default/slider_c.bmp
+share/alephone/Marathon2/Themes/Default/slider_l.bmp
+share/alephone/Marathon2/Themes/Default/slider_r.bmp
+share/alephone/Marathon2/Themes/Default/theme.mml
+share/alephone/Marathon2/Themes/Default/thumb_b.bmp
+share/alephone/Marathon2/Themes/Default/thumb_bc.bmp
+share/alephone/Marathon2/Themes/Default/thumb_c.bmp
+share/alephone/Marathon2/Themes/Default/thumb_t.bmp
+share/alephone/Marathon2/Themes/Default/thumb_tc.bmp

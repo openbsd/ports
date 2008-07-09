@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/07/09 16:56:43 phessler Exp $
+bin/marathoninfinity
+share/alephone/
+share/alephone/Infinity/
+share/alephone/Infinity/Fonts
+share/alephone/Infinity/Images.imgA
+@comment share/alephone/Infinity/Landscapes/.DS_Store
+share/alephone/Infinity/Map.sceA
+share/alephone/Infinity/Music.aif
+share/alephone/Infinity/Physics Models/
+share/alephone/Infinity/Physics Models/Standard.phyA
+share/alephone/Infinity/Scripts/
+share/alephone/Infinity/Scripts/Filenames.mml
+share/alephone/Infinity/Scripts/Marathon Infinity.mml
+share/alephone/Infinity/Scripts/Transparent_Liquids.mml
+share/alephone/Infinity/Scripts/Transparent_Sprites.mml
+share/alephone/Infinity/Shapes.shpA
+share/alephone/Infinity/Sounds.sndA
+share/alephone/Infinity/Themes/
+share/alephone/Infinity/Themes/Default/
+share/alephone/Infinity/Themes/Default/button_c.bmp
+share/alephone/Infinity/Themes/Default/button_l.bmp
+share/alephone/Infinity/Themes/Default/button_r.bmp
+share/alephone/Infinity/Themes/Default/frame_b.bmp
+share/alephone/Infinity/Themes/Default/frame_bl.bmp
+share/alephone/Infinity/Themes/Default/frame_br.bmp
+share/alephone/Infinity/Themes/Default/frame_l.bmp
+share/alephone/Infinity/Themes/Default/frame_r.bmp
+share/alephone/Infinity/Themes/Default/frame_t.bmp
+share/alephone/Infinity/Themes/Default/frame_tl.bmp
+share/alephone/Infinity/Themes/Default/frame_tr.bmp
+share/alephone/Infinity/Themes/Default/list_b.bmp
+share/alephone/Infinity/Themes/Default/list_bl.bmp
+share/alephone/Infinity/Themes/Default/list_br.bmp
+share/alephone/Infinity/Themes/Default/list_l.bmp
+share/alephone/Infinity/Themes/Default/list_r.bmp
+share/alephone/Infinity/Themes/Default/list_t.bmp
+share/alephone/Infinity/Themes/Default/list_tl.bmp
+share/alephone/Infinity/Themes/Default/list_tr.bmp
+share/alephone/Infinity/Themes/Default/resources
+share/alephone/Infinity/Themes/Default/slider.bmp
+share/alephone/Infinity/Themes/Default/slider_c.bmp
+share/alephone/Infinity/Themes/Default/slider_l.bmp
+share/alephone/Infinity/Themes/Default/slider_r.bmp
+share/alephone/Infinity/Themes/Default/theme.mml
+share/alephone/Infinity/Themes/Default/thumb_b.bmp
+share/alephone/Infinity/Themes/Default/thumb_bc.bmp
+share/alephone/Infinity/Themes/Default/thumb_c.bmp
+share/alephone/Infinity/Themes/Default/thumb_t.bmp
+share/alephone/Infinity/Themes/Default/thumb_tc.bmp

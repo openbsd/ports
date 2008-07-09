@@ -1,0 +1,66 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/09 16:56:43 phessler Exp $
+bin/marathon
+share/alephone/
+share/alephone/Marathon/
+share/alephone/Marathon/Fonts
+share/alephone/Marathon/M1A1 Images.imgA
+share/alephone/Marathon/M1A1 Map.sceA
+share/alephone/Marathon/M1A1 Music.aif
+share/alephone/Marathon/M1A1 Shapes.shpA
+share/alephone/Marathon/M1A1 Sounds.sndA
+share/alephone/Marathon/Read Me M1A1.html
+share/alephone/Marathon/Scripts/
+share/alephone/Marathon/Scripts/M1A1.mml
+share/alephone/Marathon/Scripts/havoc.mml
+share/alephone/Marathon/Scripts/monsters.mml
+share/alephone/Marathon/Scripts/scenery.mml
+share/alephone/Marathon/Scripts/settings.mml
+share/alephone/Marathon/Themes/
+share/alephone/Marathon/Themes/Default/
+share/alephone/Marathon/Themes/Default/button_c.bmp
+share/alephone/Marathon/Themes/Default/button_l.bmp
+share/alephone/Marathon/Themes/Default/button_r.bmp
+share/alephone/Marathon/Themes/Default/frame_b.bmp
+share/alephone/Marathon/Themes/Default/frame_bl.bmp
+share/alephone/Marathon/Themes/Default/frame_br.bmp
+share/alephone/Marathon/Themes/Default/frame_l.bmp
+share/alephone/Marathon/Themes/Default/frame_r.bmp
+share/alephone/Marathon/Themes/Default/frame_t.bmp
+share/alephone/Marathon/Themes/Default/frame_tl.bmp
+share/alephone/Marathon/Themes/Default/frame_tr.bmp
+share/alephone/Marathon/Themes/Default/list_b.bmp
+share/alephone/Marathon/Themes/Default/list_bl.bmp
+share/alephone/Marathon/Themes/Default/list_br.bmp
+share/alephone/Marathon/Themes/Default/list_l.bmp
+share/alephone/Marathon/Themes/Default/list_r.bmp
+share/alephone/Marathon/Themes/Default/list_t.bmp
+share/alephone/Marathon/Themes/Default/list_tl.bmp
+share/alephone/Marathon/Themes/Default/list_tr.bmp
+share/alephone/Marathon/Themes/Default/resources
+share/alephone/Marathon/Themes/Default/slider.bmp
+share/alephone/Marathon/Themes/Default/slider_c.bmp
+share/alephone/Marathon/Themes/Default/slider_l.bmp
+share/alephone/Marathon/Themes/Default/slider_r.bmp
+share/alephone/Marathon/Themes/Default/theme.mml
+share/alephone/Marathon/Themes/Default/thumb_b.bmp
+share/alephone/Marathon/Themes/Default/thumb_bc.bmp
+share/alephone/Marathon/Themes/Default/thumb_c.bmp
+share/alephone/Marathon/Themes/Default/thumb_t.bmp
+share/alephone/Marathon/Themes/Default/thumb_tc.bmp
+share/alephone/Marathon/Tracks/
+share/alephone/Marathon/Tracks/aliensagain.mp3
+share/alephone/Marathon/Tracks/chomber.mp3
+share/alephone/Marathon/Tracks/fatman.mp3
+share/alephone/Marathon/Tracks/flippant.mp3
+share/alephone/Marathon/Tracks/flowersinheaven.mp3
+share/alephone/Marathon/Tracks/freedom.mp3
+share/alephone/Marathon/Tracks/guardians.mp3
+share/alephone/Marathon/Tracks/landing.mp3
+share/alephone/Marathon/Tracks/leela.mp3
+share/alephone/Marathon/Tracks/newpacific.mp3
+share/alephone/Marathon/Tracks/newpacific_reprise.mp3
+share/alephone/Marathon/Tracks/rapture.mp3
+share/alephone/Marathon/Tracks/rushing.mp3
+share/alephone/Marathon/Tracks/splash_marathon.mp3
+share/alephone/Marathon/Tracks/swirls.mp3
+share/alephone/Marathon/Tracks/whataboutbob.mp3
