@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/13 17:19:26 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/09 17:46:51 martynas Exp $
 
 COMMENT=		discovery-based unittest extension
 
-VERSION=		0.10.1
+VERSION=		0.10.3
 DISTNAME=		nose-${VERSION}
 PKGNAME=		py-${DISTNAME}
 
