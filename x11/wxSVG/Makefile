@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/17 17:10:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/07/09 02:13:59 jakemsr Exp $
 
 COMMENT=		C++ library to  create, manipulate and render SVG files
 
 DISTNAME=		wxsvg-1.0b10
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	wxsvg                0.0      # .0.0
 CATEGORIES=		x11 graphics
 
@@ -24,7 +25,7 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=          ${MODGNU_AUTOCONF_DEPENDS} \
                         ${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=		avcodec,avformat::graphics/ffmpeg \
+LIB_DEPENDS=		avcodec,avformat,swscale::graphics/ffmpeg \
 			art_lgpl_2::graphics/libart \
 			wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_richtext,wx_gtk2_xrc::x11/wxWidgets
 

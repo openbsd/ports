@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_decoder_ffmpeg_k3bffmpegwrapper_cpp,v 1.1 2008/07/09 02:13:01 jakemsr Exp $
+--- plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp.orig	Sun Jun 22 01:24:57 2008
++++ plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp	Sun Jun 22 01:25:20 2008
+@@ -18,8 +18,8 @@
+ #include "k3bffmpegwrapper.h"
+ 
+ extern "C" {
+-#include <ffmpeg/avcodec.h>
+-#include <ffmpeg/avformat.h>
++#include <libavcodec/avcodec.h>
++#include <libavformat/avformat.h>
+ }
+ 
+ #include <string.h>

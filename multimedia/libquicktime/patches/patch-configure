@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2008/01/26 02:02:50 jakemsr Exp $
+$OpenBSD: patch-configure,v 1.7 2008/07/09 02:13:01 jakemsr Exp $
 --- configure.orig	Tue Jan  8 14:00:53 2008
-+++ configure	Sat Jan 19 21:52:53 2008
++++ configure	Sat Jun 21 12:16:30 2008
 @@ -24861,7 +24861,7 @@ fi
      VORBIS_LIBS="-L$prefix/lib"
    fi
@@ -26,3 +26,30 @@ $OpenBSD: patch-configure,v 1.6 2008/01/26 02:02:50 jakemsr Exp $
  
  
  { echo "$as_me:$LINENO: checking for lame" >&5
+@@ -27562,7 +27562,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
+     #include <stdio.h>
+-    #include <ffmpeg/avcodec.h>
++    #include <libavcodec/avcodec.h>
+     int main()
+     {
+     FILE * output;
+@@ -27728,7 +27728,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
+     #include <stdio.h>
+-    #include <ffmpeg/avcodec.h>
++    #include <libavcodec/avcodec.h>
+     int main()
+     {
+     FILE * output;
+@@ -27893,7 +27893,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
+     #include <stdio.h>
+-    #include <ffmpeg/avcodec.h>
++    #include <libavcodec/avcodec.h>
+     int main()
+     {
+     FILE * output;

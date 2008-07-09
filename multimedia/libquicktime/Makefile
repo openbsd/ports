@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2008/06/01 08:21:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2008/07/09 02:13:01 jakemsr Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		library for reading and writing quicktime files
 DISTNAME=		libquicktime-1.0.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		multimedia
 SHARED_LIBS=		quicktime	3.0
 
@@ -36,7 +36,7 @@ LIB_DEPENDS=		vorbis.>=3,vorbisfile.>=4,vorbisenc.>=2::audio/libvorbis \
 			png.>=4::graphics/png \
 			dv.>=4::multimedia/libdv \
 			mp3lame::audio/lame \
-			avcodec.>=11,avutil.>=5::graphics/ffmpeg \
+			avcodec.>=11,avutil.>=5,swscale.>=1::graphics/ffmpeg \
 			gtk-x11-2.0.>=800.8,gdk-x11-2.0.>=800.8,gdk_pixbuf-2.0.>=800.8::x11/gtk+2
 
 VMEM_WARNING=		Yes
@@ -48,9 +48,9 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			ac_cv_search_pthread_create=-pthread
+
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-gpl \
-			--without-alsa \
-			--with-avcodec="${LOCALBASE}"
+			--without-alsa
 
 .include <bsd.port.mk>

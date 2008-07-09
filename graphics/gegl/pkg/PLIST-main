@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/04/10 14:12:35 ajacoutot Exp $
-bin/gegl
+@comment $OpenBSD: PLIST-main,v 1.2 2008/07/09 02:09:59 jakemsr Exp $
+@bin bin/gegl
 include/gegl-0.0/
 include/gegl-0.0/gegl-buffer.h
 include/gegl-0.0/gegl-chant.h

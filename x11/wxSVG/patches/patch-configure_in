@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2008/05/17 17:10:40 jasper Exp $
---- configure.in.orig	Tue Jan 15 13:59:31 2008
-+++ configure.in	Thu May 15 23:32:24 2008
+$OpenBSD: patch-configure_in,v 1.2 2008/07/09 02:13:59 jakemsr Exp $
+--- configure.in.orig	Tue Jan 15 04:59:31 2008
++++ configure.in	Sat Jun 21 19:53:39 2008
 @@ -3,7 +3,7 @@ dnl Process this file with autoconf to produce a confi
  dnl initialization
  AC_PREREQ(2.57)
@@ -10,3 +10,12 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2008/05/17 17:10:40 jasper Exp $
  AM_MAINTAINER_MODE
  
  dnl options
+@@ -161,7 +161,7 @@ if test x$enable_ffmpeg = xyes; then
+   AC_CHECK_LIB(avformat, av_register_all, [], [AC_MSG_ERROR([*** missing ffmpeg library: libavformat])])
+   AC_CHECK_LIB(avcodec, avcodec_decode_audio2, [], [AC_MSG_ERROR([*** missing ffmpeg library: libavcodec])])
+   AC_CHECK_LIB(swscale, sws_getContext)
+-  AC_CHECK_HEADERS(ffmpeg/avcodec.h, [], [AC_MSG_ERROR([*** missing ffmpeg header file: ffmpeg/avcodec.h.])])
++  AC_CHECK_HEADERS(libavcodec/avcodec.h, [], [AC_MSG_ERROR([*** missing ffmpeg header file: libavcodec/avcodec.h.])])
+   CXXFLAGS="$CXXFLAGS -DUSE_FFMPEG"
+ fi
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2008/05/22 19:27:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2008/07/09 02:13:59 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	H.323 video conferencing library
 
 V=		1_19_0_1
 DISTNAME=	openh323-v${V}
-PKGNAME=	openh323-${V:S/_/./g}p0
+PKGNAME=	openh323-${V:S/_/./g}p1
 CATEGORIES=	net devel
 
 EXTRACT_SUFX=	-src-tar.gz
@@ -39,7 +39,7 @@ ALL_TARGET=	optshared
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread -lavutil"
 CONFIGURE_ARGS=	--enable-h263avcodec \
 		--disable-localspeex \
@@ -53,6 +53,8 @@ MAKE_ENV+=	STDCCFLAGS="${STDCCFLAGS} -I${WRKSRC}/include" \
 		CC=${CC} CPLUS=${CXX} BUILDSELF="1"
 MAKE_FLAGS=	LIB_MAJOR_VERSION=${LIBh323_VERSION:R} \
 		LIB_MINOR_VERSION=${LIBh323_VERSION:E}
+
+CFLAGS +=	-I${LOCALBASE}/include/libavcodec
 
 do-extract:
 	@tar xzf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR}

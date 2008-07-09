@@ -1,0 +1,14 @@
+$OpenBSD: patch-ffmpeg2theora_c,v 1.1 2008/07/09 02:13:01 jakemsr Exp $
+--- ffmpeg2theora.c.orig	Sat Jun 21 20:56:30 2008
++++ ffmpeg2theora.c	Sat Jun 21 20:56:54 2008
+@@ -26,8 +26,8 @@
+ #include <getopt.h>
+ #include <math.h>
+ 
+-#include "avformat.h"
+-#include "swscale.h"
++#include "libavformat/avformat.h"
++#include "libswscale/swscale.h"
+ 
+ #include "theora/theora.h"
+ #include "vorbis/codec.h"

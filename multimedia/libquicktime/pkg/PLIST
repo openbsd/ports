@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/01/26 02:02:50 jakemsr Exp $
-bin/libquicktime_config
+@comment $OpenBSD: PLIST,v 1.7 2008/07/09 02:13:01 jakemsr Exp $
+@bin bin/libquicktime_config
 bin/lqt-config
-bin/lqt_transcode
-bin/lqtplay
-bin/qt2text
-bin/qtdechunk
-bin/qtdump
-bin/qtinfo
-bin/qtrechunk
-bin/qtstreamize
-bin/qtyuv4toyuv
+@bin bin/lqt_transcode
+@bin bin/lqtplay
+@bin bin/qt2text
+@bin bin/qtdechunk
+@bin bin/qtdump
+@bin bin/qtinfo
+@bin bin/qtrechunk
+@bin bin/qtstreamize
+@bin bin/qtyuv4toyuv
 include/lqt/
 include/lqt/colormodels.h
 include/lqt/lqt.h

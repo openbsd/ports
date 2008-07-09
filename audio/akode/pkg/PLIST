@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/04/16 02:10:21 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/07/09 02:07:36 jakemsr Exp $
 %%SHARED%%
 bin/akode-config
-bin/akodeplay
+@bin bin/akodeplay
 include/akode/
 include/akode/akode_export.h
 include/akode/akodelib.h

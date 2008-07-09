@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2008/01/26 02:17:50 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.20 2008/07/09 02:13:01 jakemsr Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		video stream processing tools
 
 DISTNAME=		transcode-1.0.5
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.transcoding.org/
@@ -86,7 +87,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-sunau \
 			--enable-theora \
 			--enable-vorbis \
-			--with-libpostproc-includes="${LOCALBASE}/include/postproc"
+			--with-libpostproc-includes="${LOCALBASE}/include/libpostproc"
 
 .if ${FLAVOR:L:Mlzo}
 CONFIGURE_ARGS+=	--enable-lzo
@@ -108,7 +109,7 @@ PKG_ARGS+=		-Dmjpegtools=0
 .if ${FLAVOR:L:Mquicktime}
 CONFIGURE_ARGS+=	--enable-libquicktime
 LIB_DEPENDS+=		quicktime::multimedia/libquicktime
-WANTLIB+=		png
+WANTLIB+=		GL intl
 PKG_ARGS+=		-Dquicktime=1
 .else
 PKG_ARGS+=		-Dquicktime=0
