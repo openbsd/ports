@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/09 09:10:04 kevlo Exp $
 
 COMMENT=	handle data in a hierarchical structure
 
 MODULES=	cpan
-DISTNAME=	Data-Hierarchy-0.31
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Data-Hierarchy-0.34
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
