@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2008/07/06 20:46:19 jdixon Exp $
+# $OpenBSD: Makefile,v 1.171 2008/07/09 16:58:57 phessler Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -6,6 +6,7 @@
      SUBDIR += adom
      SUBDIR += afternoonstalker
      SUBDIR += agm
+     SUBDIR += alephone
      SUBDIR += amoebax
      SUBDIR += amph
      SUBDIR += an
