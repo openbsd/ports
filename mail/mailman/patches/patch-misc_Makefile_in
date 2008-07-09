@@ -1,7 +1,7 @@
-$OpenBSD: patch-misc_Makefile_in,v 1.4 2005/06/23 07:34:56 djm Exp $
---- misc/Makefile.in.orig	Fri Apr 29 22:05:10 2005
-+++ misc/Makefile.in	Fri Jun 10 07:40:33 2005
-@@ -73,6 +73,10 @@ ICONS=		$(srcdir)/*.jpg $(srcdir)/*.png
+$OpenBSD: patch-misc_Makefile_in,v 1.5 2008/07/09 19:30:24 wcmaier Exp $
+--- misc/Makefile.in.orig	Wed Jul 26 00:11:13 2006
++++ misc/Makefile.in	Wed Jul  9 13:13:49 2008
+@@ -74,6 +74,10 @@ ICONS=		$(srcdir)/*.jpg $(srcdir)/*.png
  # Rules
  
  all:
@@ -12,7 +12,7 @@ $OpenBSD: patch-misc_Makefile_in,v 1.4 2005/06/23 07:34:56 djm Exp $
  
  install: install-other install-packages
  
-@@ -92,8 +96,7 @@ install-other:
+@@ -93,8 +97,7 @@ install-other:
  install-packages:
  	for p in $(PACKAGES); \
  	do \

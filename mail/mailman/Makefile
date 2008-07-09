@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2008/06/24 16:00:23 steven Exp $
+# $OpenBSD: Makefile,v 1.49 2008/07/09 19:30:23 wcmaier Exp $
 
 COMMENT=	mailing list manager with web interface
 
 DISTNAME=	mailman-2.1.9
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	mail www
 
 HOMEPAGE=	http://www.gnu.org/software/mailman/
@@ -50,6 +50,24 @@ CONFIGURE_ARGS+=--with-mail-gid=_mailman
 .else
 CONFIGURE_ARGS+=--with-mail-gid=daemon
 .endif
+
+SCRIPTS=	Mailman/Archiver/pipermail.py \
+		Mailman/Post.py \
+		admin/bin/faq2ht.py \
+		admin/bin/mm2do \
+		admin/bin/release \
+		admin/www/reset_pw.py \
+		bin/msgfmt.py \
+		messages/Makefile.in \
+		templates/ru/s2s.py \
+		tests/onebounce.py
+
+SUBST_VARS=	MODPY_BIN
+
+pre-configure:
+.for SCRIPT in ${SCRIPTS}
+	@${SUBST_CMD} ${WRKSRC}/${SCRIPT}
+.endfor
 
 post-install:
 	@${INSTALL_DATA_DIR} ${MMDOC}
