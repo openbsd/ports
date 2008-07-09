@@ -1,12 +1,29 @@
-$OpenBSD: patch-config_mk,v 1.1.1.1 2008/07/09 11:20:43 landry Exp $
---- config.mk.orig	Mon Jul  7 22:02:58 2008
-+++ config.mk	Mon Jul  7 22:03:09 2008
-@@ -4,7 +4,7 @@ VERSION = 0.4.1
+$OpenBSD: patch-config_mk,v 1.2 2008/07/09 20:40:23 okan Exp $
+--- config.mk.orig	Sat May 10 12:39:01 2008
++++ config.mk	Wed Jul  9 11:39:41 2008
+@@ -3,19 +3,19 @@ VERSION = 0.4.1
+ 
  # Customize below to fit your system
  
- PREFIX = /usr/local
+-PREFIX = /usr/local
 -MANPREFIX = ${PREFIX}/share/man
++PREFIX = ${LOCALBASE}
 +MANPREFIX = ${PREFIX}/man
  
- INCS = -I. -I/usr/include -I/usr/local/include 
+-INCS = -I. -I/usr/include -I/usr/local/include 
++INCS = -I. -I/usr/include
  LIBS = -lc -lutil -lncurses
+ LIBS_UTF8 = -lc -lutil -lncursesw
+ 
+-CFLAGS += -std=c99 -Os ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG
+-LDFLAGS += -L/usr/lib -L/usr/local/lib ${LIBS}
++CFLAGS += -std=c99 ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG
++LDFLAGS += -L/usr/lib ${LIBS}
+ 
+ # Mouse handling
+ CFLAGS += -DHANDLE_MOUSE
+ 
+ DEBUG_CFLAGS = ${CFLAGS} -UNDEBUG -O0 -g -ggdb -Wall
+ 
+-CC = cc
++CC ?= cc
