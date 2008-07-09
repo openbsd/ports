@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2008/01/25 20:39:57 martynas Exp $
+# $OpenBSD: Makefile,v 1.12 2008/07/09 21:27:50 martynas Exp $
 
 COMMENT=	pythonic, object-oriented web development framework
 
-VERSION=	3.0.3
-DISTNAME=	CherryPy-${VERSION}
-PKGNAME=	py-${DISTNAME}
-CATEGORIES=	www
+MODPY_EGG_VERSION=	3.1.0
+DISTNAME=		CherryPy-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME}
+CATEGORIES=		www
 
 HOMEPAGE=	http://www.cherrypy.org/ 
 
@@ -17,11 +17,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://download.cherrypy.org/cherrypy/${VERSION}/
+MASTER_SITES=	http://download.cherrypy.org/cherrypy/${MODPY_EGG_VERSION}/
 
 MODULES=	lang/python
-
-SUBST_VARS=	VERSION
 
 do-regress:
 	@cd ${WRKSRC} && ${MODPY_BIN} ./cherrypy/test/test.py --dumb

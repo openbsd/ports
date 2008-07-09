@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/01/25 20:39:57 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/07/09 21:27:50 martynas Exp $
 @conflict py-cherrypy2-*
-lib/python${MODPY_VERSION}/site-packages/CherryPy-${VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/cherrypy/
+lib/python${MODPY_VERSION}/site-packages/cherrypy/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/cherrypy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpcgifs.py
@@ -12,8 +13,6 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpconfig.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpdispatch.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpdispatch.pyc
-lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpengine.py
-lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpengine.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cperror.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cperror.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cplogging.py
@@ -32,6 +31,9 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/_cptree.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cptree.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpwsgi.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpwsgi.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpwsgi_server.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpwsgi_server.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/cherryd
 lib/python${MODPY_VERSION}/site-packages/cherrypy/favicon.ico
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/__init__.py
@@ -52,6 +54,8 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/httpauth.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/httpauth.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/profiler.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/profiler.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/safemime.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/safemime.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/sessions.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/sessions.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/static.py
@@ -62,6 +66,22 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/wsgiapp.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/wsgiapp.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/xmlrpc.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/xmlrpc.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/process/
+lib/python${MODPY_VERSION}/site-packages/cherrypy/process/__init__.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/process/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/process/plugins.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/process/plugins.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/process/servers.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/process/servers.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/process/win32.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/process/win32.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/process/wspbus.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/process/wspbus.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/
+lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/example.conf
+lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/site.conf
+lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/static/
+lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/static/made_with_cherrypy_small.png
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/__init__.pyc
@@ -71,14 +91,19 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/test/checkerdemo.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/checkerdemo.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/helper.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/helper.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/logtest.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/logtest.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/modpy.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/modpy.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/modwsgi.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/modwsgi.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/py25.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/py25.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/static/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/static/dirback.jpg
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/static/index.html
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/style.css
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test.pem
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_caching.py
@@ -97,6 +122,10 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_http.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_http.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_httpauth.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_httpauth.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_httplib.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_httplib.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_logging.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_logging.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_misc_tools.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_misc_tools.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_objectmapping.py
@@ -107,6 +136,8 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_refleaks.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_refleaks.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_routes.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_routes.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_safe_multipart.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_safe_multipart.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_session.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_session.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_sessionauthenticate.py
@@ -127,6 +158,8 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_virtualhost.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_virtualhost.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_wsgi_ns.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_wsgi_ns.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_wsgi_vhost.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_wsgi_vhost.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_wsgiapps.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_wsgiapps.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_xmlrpc.py
