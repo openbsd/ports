@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/09 12:13:45 martynas Exp $
 
 COMMENT=		protocol definition, declaration and adaptation
 
 VERSION=		1.0
 REVISION=		2306
 DISTNAME=		PyProtocols
-PKGNAME=		py-protocols-${VERSION}r${REVISION}p0
+PKGNAME=		py-protocols-${VERSION}r${REVISION}p1
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://peak.telecommunity.com/
+HOMEPAGE=		http://peak.telecommunity.com/PyProtocols.html
 
 MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
