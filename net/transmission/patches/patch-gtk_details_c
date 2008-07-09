@@ -1,7 +1,16 @@
-$OpenBSD: patch-gtk_details_c,v 1.1 2008/04/22 16:50:43 naddy Exp $
---- gtk/details.c.orig	Sat Mar 29 01:02:21 2008
-+++ gtk/details.c	Wed Apr  2 02:24:36 2008
-@@ -672,10 +672,10 @@ info_page_new (tr_torrent * tor)
+$OpenBSD: patch-gtk_details_c,v 1.2 2008/07/09 19:43:42 naddy Exp $
+--- gtk/details.c.orig	Fri May  9 21:00:55 2008
++++ gtk/details.c	Wed May 14 17:50:12 2008
+@@ -407,7 +407,7 @@ fmtpeercount (GtkWidget * l, int count)
+     gtk_label_set_text( GTK_LABEL(l), "?" );
+   } else {
+     char str[16];
+-    g_snprintf( str, sizeof str, "%'d", count );
++    g_snprintf( str, sizeof str, "%d", count );
+     gtk_label_set_text( GTK_LABEL(l), str );
+   }
+ }
+@@ -733,10 +733,10 @@ info_page_new (tr_torrent * tor)
  
      tr_strlsize( sizeStr, info->pieceSize, sizeof(sizeStr) );
      g_snprintf( buf, sizeof( buf ),

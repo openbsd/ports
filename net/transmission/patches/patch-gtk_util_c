@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_util_c,v 1.1 2008/04/22 16:50:43 naddy Exp $
---- gtk/util.c.orig	Tue Apr  1 16:26:37 2008
-+++ gtk/util.c	Tue Apr  1 16:28:05 2008
-@@ -58,11 +58,11 @@ tr_strlratio( char * buf, double ratio, size_t buflen 
+$OpenBSD: patch-gtk_util_c,v 1.2 2008/07/09 19:43:42 naddy Exp $
+--- gtk/util.c.orig	Fri May  9 21:00:55 2008
++++ gtk/util.c	Wed May 14 17:50:12 2008
+@@ -63,11 +63,11 @@ tr_strlratio( char * buf, double ratio, size_t buflen 
      else if( (int)ratio == TR_RATIO_INF )
          g_strlcpy( buf, "\xE2\x88\x9E", buflen );
      else if( ratio < 10.0 )
@@ -16,7 +16,7 @@ $OpenBSD: patch-gtk_util_c,v 1.1 2008/04/22 16:50:43 naddy Exp $
      return buf;
  }
  
-@@ -83,18 +83,18 @@ tr_strlsize( char * buf, guint64 size, size_t buflen )
+@@ -88,18 +88,18 @@ tr_strlsize( char * buf, guint64 size, size_t buflen )
      }
  #else
      else if( size < (guint64)KILOBYTE_FACTOR )
@@ -39,7 +39,7 @@ $OpenBSD: patch-gtk_util_c,v 1.1 2008/04/22 16:50:43 naddy Exp $
          }
      }
  #endif
-@@ -107,13 +107,13 @@ tr_strlspeed( char * buf, double kb_sec, size_t buflen
+@@ -112,13 +112,13 @@ tr_strlspeed( char * buf, double kb_sec, size_t buflen
      const double speed = kb_sec;
  
      if ( speed < 1000.0 ) /* 0.0 KB to 999.9 KB */
@@ -57,7 +57,7 @@ $OpenBSD: patch-gtk_util_c,v 1.1 2008/04/22 16:50:43 naddy Exp $
  
      return buf;
  }
-@@ -129,14 +129,14 @@ tr_strltime( char * buf, int seconds, size_t buflen )
+@@ -134,14 +134,14 @@ tr_strltime( char * buf, int seconds, size_t buflen )
  
      if( seconds < 60 )
      {
@@ -74,7 +74,7 @@ $OpenBSD: patch-gtk_util_c,v 1.1 2008/04/22 16:50:43 naddy Exp $
          return buf;
      }
  
-@@ -149,20 +149,20 @@ tr_strltime( char * buf, int seconds, size_t buflen )
+@@ -154,20 +154,20 @@ tr_strltime( char * buf, int seconds, size_t buflen )
  
          const int minutes = ( seconds - hours * 60 * 60 + 30 ) / 60;
  
