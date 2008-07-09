@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2008/06/09 22:55:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2008/07/09 02:17:12 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	videolan client; multimedia player
 
 V=		0.8.6h
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -47,7 +47,7 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 WANTLIB-main=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
 		pthread stdc++ usbhid z Xau Xdmcp Xrandr Xrender \
-		SDL jpeg tiff faad ogg vorbis vorbisenc faac mp3lame
+		SDL jpeg tiff bz2 faad ogg vorbis vorbisenc faac mp3lame
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.61
@@ -171,7 +171,7 @@ FLAVOR?=
 .if !${FLAVOR:L:Mno_web}
 MULTI_PACKAGES+=-web
 COMMENT-web=	mozilla plugin for embedded media playback
-PKGNAME-web=	vlc-web-${V}
+PKGNAME-web=	vlc-web-${V}p0
 BUILD_DEPENDS+=	:xulrunner-devel-*:devel/xulrunner,-devel
 CONFIGURE_ARGS+=--enable-mozilla
 CONFIGURE_ENV+=	MOZILLA_CONFIG="${LOCALBASE}/bin/xulrunner-config" \
@@ -179,7 +179,8 @@ CONFIGURE_ENV+=	MOZILLA_CONFIG="${LOCALBASE}/bin/xulrunner-config" \
 PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/xulrunner
 LIB_DEPENDS-web=${LIB_DEPENDS}
 RUN_DEPENDS-web=::${BUILD_PKGPATH}
-WANTLIB-web=	ICE SM X11 Xau Xdmcp Xext Xinerama Xv Xxf86vm dvbpsi m ogg theora
+WANTLIB-web=	ICE SM X11 Xau Xdmcp Xext Xinerama Xt Xv Xxf86vm dvbpsi m \
+		ogg theora
 .else
 CONFIGURE_ARGS+=--disable-mozilla
 .endif

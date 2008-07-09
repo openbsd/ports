@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/06/09 22:55:43 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/07/09 02:17:12 jakemsr Exp $
 @pkgpath x11/vlc
 %%altivec%%
 %%win32%%
 %%x86opt%%
 @bin bin/vlc
 bin/vlc-config
-@bin bin/wxvlc
+bin/wxvlc
 include/vlc/
 include/vlc/aout.h
 include/vlc/decoder.h
