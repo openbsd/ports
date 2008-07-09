@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.1.1.1 2008/07/09 16:56:43 phessler Exp $
+#	$OpenBSD: Makefile,v 1.2 2008/07/09 23:50:23 phessler Exp $
 PKG_ARCH =	*
 
 COMMENT =	marathon one data files
@@ -24,24 +24,6 @@ do-install:
 	# Marathon 1
 	@cd ${WRKDIR}/M1A1 && pax -rw . ${INSTALL_M}
 	${INSTALL_SCRIPT} ${FILESDIR}/marathon.sh ${PREFIX}/bin/marathon
-
-#do-install:
-#	${INSTALL_DATA_DIR} ${INSTALL_M}
-#	# Marathon 1
-#	${INSTALL_DATA} ${WRKDIR}/M1A1/"Fonts" ${INSTALL_M}
-#	${INSTALL_DATA} ${WRKDIR}/M1A1/"M1A1 Images.imgA" ${INSTALL_M}
-#	${INSTALL_DATA} ${WRKDIR}/M1A1/"M1A1 Map.sceA" ${INSTALL_M}
-#	${INSTALL_DATA} ${WRKDIR}/M1A1/"M1A1 Music.aif" ${INSTALL_M}
-#	${INSTALL_DATA} ${WRKDIR}/M1A1/"M1A1 Shapes.shpA" ${INSTALL_M}
-#	${INSTALL_DATA} ${WRKDIR}/M1A1/"M1A1 Sounds.sndA" ${INSTALL_M}
-#	${INSTALL_DATA} ${WRKDIR}/M1A1/"Read Me M1A1.html" ${INSTALL_M}
-#	${INSTALL_DATA_DIR} ${INSTALL_M}/Scripts
-#	${INSTALL_DATA} ${WRKDIR}/M1A1/Scripts/*.mml ${INSTALL_M}/Scripts	
-#	${INSTALL_DATA_DIR} ${INSTALL_M}/Themes/Default
-#	${INSTALL_DATA} ${WRKDIR}/M1A1/Themes/Default/* ${INSTALL_M}/Themes/Default
-#	${INSTALL_DATA_DIR} ${INSTALL_M}/Tracks
-#	${INSTALL_DATA} ${WRKDIR}/M1A1/Tracks/* ${INSTALL_M}/Tracks/
-#	${INSTALL_SCRIPT} ${FILESDIR}/marathon.sh ${PREFIX}/bin/marathon
 
 NO_BUILD =	Yes
 NO_REGRESS =	Yes
