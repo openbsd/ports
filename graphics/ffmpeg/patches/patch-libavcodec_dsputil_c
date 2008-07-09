@@ -1,7 +1,7 @@
-$OpenBSD: patch-libavcodec_dsputil_c,v 1.4 2008/01/26 01:56:02 jakemsr Exp $
---- libavcodec/dsputil.c.orig	Fri Jan 18 01:21:39 2008
-+++ libavcodec/dsputil.c	Sat Jan 19 18:35:16 2008
-@@ -3970,7 +3970,7 @@ void dsputil_init(DSPContext* c, AVCodecContext *avctx
+$OpenBSD: patch-libavcodec_dsputil_c,v 1.5 2008/07/09 01:57:44 jakemsr Exp $
+--- libavcodec/dsputil.c.orig	Sat May 24 22:01:01 2008
++++ libavcodec/dsputil.c	Fri Jun 20 22:38:19 2008
+@@ -4118,7 +4118,7 @@ void dsputil_init(DSPContext* c, AVCodecContext *avctx
  {
      int i;
  

@@ -1,0 +1,26 @@
+$OpenBSD: patch-subdir_mak,v 1.1 2008/07/09 01:57:44 jakemsr Exp $
+--- subdir.mak.orig	Fri Jun 20 19:40:11 2008
++++ subdir.mak	Sat Jun 21 10:06:50 2008
+@@ -29,7 +29,7 @@ $(SUBDIR)$(SLIBNAME): $(SUBDIR)$(SLIBNAME_WITH_MAJOR)
+ 
+ $(SUBDIR)$(SLIBNAME_WITH_MAJOR): $(OBJS)
+ 	$(SLIB_CREATE_DEF_CMD)
+-	$(CC) $(SHFLAGS) $(FFLDFLAGS) -o $$@ $$^ $(FFEXTRALIBS) $(EXTRAOBJS)
++	$(CC) $(SHFLAGS) $(FFLDFLAGS) -o $$@ $(sort $(OBJS)) $(LIB$(NAME)_EXTRALIBS) $(EXTRAOBJS)
+ 	$(SLIB_EXTRA_CMD)
+ 
+ ifdef SUBDIR
+@@ -39,12 +39,8 @@ endif
+ 
+ install-lib$(NAME)-shared: $(SUBDIR)$(SLIBNAME)
+ 	install -d "$(SHLIBDIR)"
+-	install -m 755 $(SUBDIR)$(SLIBNAME) "$(SHLIBDIR)/$(SLIBNAME_WITH_VERSION)"
++	install -m 755 $(SUBDIR)$(SLIBNAME_WITH_VERSION) "$(SHLIBDIR)"
+ 	$(STRIP) "$(SHLIBDIR)/$(SLIBNAME_WITH_VERSION)"
+-	cd "$(SHLIBDIR)" && \
+-		$(LN_S) $(SLIBNAME_WITH_VERSION) $(SLIBNAME_WITH_MAJOR)
+-	cd "$(SHLIBDIR)" && \
+-		$(LN_S) $(SLIBNAME_WITH_VERSION) $(SLIBNAME)
+ 	$(SLIB_INSTALL_EXTRA_CMD)
+ 
+ install-lib$(NAME)-static: $(SUBDIR)$(LIBNAME)
