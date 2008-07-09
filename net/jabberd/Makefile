@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2007/10/25 21:05:33 steven Exp $
+# $OpenBSD: Makefile,v 1.35 2008/07/09 09:36:18 espie Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		net
 HOMEPAGE=		http://jabberd2.xiaoka.com/
 
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--disable-db
 .endif
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=		ldap.>=8,lber.>=8:openldap-*->=2.3:databases/openldap
+LIB_DEPENDS+=		ldap.>=8,lber.>=8:openldap-client->=2.3:databases/openldap
 CONFIGURE_ARGS+=	--enable-ldap
 WANTLIB+=		sasl2 asn1 com_err gssapi krb5
 .else
