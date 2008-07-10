@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/03/15 08:41:07 ajacoutot Exp $
-bin/advchk
-bin/advchk-addfeeds.sh
-@man man/man1/advchk.1
