@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/07/08 15:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2008/07/10 21:25:55 sthen Exp $
 
 COMMENT =	enhanced TightVNC client
 
 V =		1.0.20
-DISTNAME =	ssvnc_no_windows-$V
-PKGNAME =	ssvnc-viewer-$Vp0
+DISTNAME =	ssvnc_unixsrc_only-$V
+PKGNAME =	ssvnc-viewer-$Vp1
 CATEGORIES =	net x11
 
 HOMEPAGE =	http://www.karlrunge.com/x11vnc/ssvnc.html
@@ -15,7 +15,10 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	http://www.karlrunge.com/x11vnc/etv/
+# 1.0.20 distfile is not yet final; mirrored for now from
+# http://www.karlrunge.com/x11vnc/etv/ssvnc_no_windows-1.0.20.tar.gz
+# Repacked with non-Unix binaries removed to save space.
+MASTER_SITES =	http://spacehopper.org/mirrors/
 
 USE_X11 =	Yes
 
