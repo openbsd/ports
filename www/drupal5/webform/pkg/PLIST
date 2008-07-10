@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/03/16 10:15:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/07/10 14:21:38 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}/webform/
+${DRUPAL_MODS}/webform/CHANGELOG.txt
 ${DRUPAL_MODS}/webform/INSTALL.txt
 ${DRUPAL_MODS}/webform/LICENSE.txt
 ${DRUPAL_MODS}/webform/README.txt
@@ -26,6 +27,7 @@ ${DRUPAL_MODS}/webform/po/da.po
 ${DRUPAL_MODS}/webform/po/de.po
 ${DRUPAL_MODS}/webform/po/el.po
 ${DRUPAL_MODS}/webform/po/es.po
+${DRUPAL_MODS}/webform/po/fr.po
 ${DRUPAL_MODS}/webform/po/he.po
 ${DRUPAL_MODS}/webform/po/hu.po
 ${DRUPAL_MODS}/webform/po/it.po
@@ -34,8 +36,10 @@ ${DRUPAL_MODS}/webform/po/ru.po
 ${DRUPAL_MODS}/webform/po/sv.po
 ${DRUPAL_MODS}/webform/po/webform.pot
 ${DRUPAL_MODS}/webform/webform.css
-${DRUPAL_MODS}/webform/webform.inc
 ${DRUPAL_MODS}/webform/webform.info
 ${DRUPAL_MODS}/webform/webform.install
+${DRUPAL_MODS}/webform/webform.js
 ${DRUPAL_MODS}/webform/webform.module
+${DRUPAL_MODS}/webform/webform_components.inc
 ${DRUPAL_MODS}/webform/webform_report.inc
+${DRUPAL_MODS}/webform/webform_submissions.inc

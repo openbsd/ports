@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/24 15:48:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2008/07/10 14:21:38 espie Exp $
 
 COMMENT =	document drupal site for other admins
 
-DISTNAME = 	sitedoc-5.x-1.6
-PKGNAME =	drupal5-site-documentation-1.6p1
+DISTNAME = 	sitedoc-5.x-1.8
+PKGNAME =	drupal5-site-documentation-1.8
 
 .include <bsd.port.mk>

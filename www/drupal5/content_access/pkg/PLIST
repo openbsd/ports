@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/16 11:24:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/07/10 14:21:37 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}/content_access/
@@ -8,3 +8,4 @@ ${DRUPAL_MODS}/content_access/content_access.css
 ${DRUPAL_MODS}/content_access/content_access.info
 ${DRUPAL_MODS}/content_access/content_access.install
 ${DRUPAL_MODS}/content_access/content_access.module
+${DRUPAL_MODS}/content_access/content_access.workflow_ng.inc

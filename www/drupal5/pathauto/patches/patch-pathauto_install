@@ -1,8 +1,8 @@
-$OpenBSD: patch-pathauto_install,v 1.2 2008/02/18 12:44:18 espie Exp $
---- pathauto.install.orig	Mon Feb 18 13:42:22 2008
-+++ pathauto.install	Mon Feb 18 13:42:39 2008
-@@ -55,7 +55,7 @@ function pathauto_install() {
-   // Make the variable column wide enough for long cck names
+$OpenBSD: patch-pathauto_install,v 1.3 2008/07/10 14:21:38 espie Exp $
+--- pathauto.install.orig	Fri May 30 02:58:55 2008
++++ pathauto.install	Thu Jul 10 15:52:31 2008
+@@ -95,7 +95,7 @@ function pathauto_update_2() {
+   $ret = array();
    switch ($GLOBALS['db_type']) {
      case 'pgsql':
 -      db_change_column($ret, 'variable', 'name', 'name', 'varchar(128)', array('not null' => TRUE, 'default' => "''"));
