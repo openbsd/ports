@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.200 2008/07/06 11:27:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.201 2008/07/10 16:35:18 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
      SUBDIR += ADMfzap
      SUBDIR += ADMsmb
      SUBDIR += ADMsnmp
-     SUBDIR += advchk
      SUBDIR += aescrypt
      SUBDIR += aide
      SUBDIR += amap
