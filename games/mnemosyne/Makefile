@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/03/22 17:34:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/07/10 18:52:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	flash-card tool which optimises your learning process
 
-DISTNAME=	mnemosyne-1.0.1.1
+MODPY_EGG_VERSION=1.0.2
+DISTNAME=	mnemosyne-${MODPY_EGG_VERSION}
 CATEGORIES=	games education
 
 EXTRACT_SUFX=	.tgz
@@ -22,6 +23,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mnemosyne-proj/}
 
 MODULES=	lang/python
+
+MODPY_SETUPTOOLS=yes
 
 RUN_DEPENDS=	::x11/py-qt3 \
 		:python-bz2-*:lang/python/${MODPY_VERSION},-bz2 \

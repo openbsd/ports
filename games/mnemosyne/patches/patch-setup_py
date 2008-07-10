@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2008/01/16 08:32:47 ajacoutot Exp $
---- setup.py.orig	Tue Jan 15 12:56:00 2008
-+++ setup.py	Tue Jan 15 12:56:28 2008
-@@ -147,8 +147,7 @@ if sys.platform == "win32": # For py2exe.
+$OpenBSD: patch-setup_py,v 1.2 2008/07/10 18:52:27 ajacoutot Exp $
+--- setup.py.orig	Tue Jul  8 20:50:14 2008
++++ setup.py	Thu Jul 10 21:00:32 2008
+@@ -151,8 +151,7 @@ elif sys.platform == "darwin": # For py2app.
  else:
      base_path = os.path.join(sys.exec_prefix, "lib", "python"+sys.version[:3],
                               "site-packages","mnemosyne")
