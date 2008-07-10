@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/05 23:00:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/07/10 14:37:31 merdely Exp $
 
 COMMENT=	automatically fetch hotmail.com email
 
-DISTNAME=	GetLive_0_56
-PKGNAME=	p5-GetLive-0.56
+DISTNAME=	GetLive_0_57
+PKGNAME=	p5-GetLive-0.57
 CATEGORIES=	mail perl5
 EXTRACT_SUFX=	.tgz
 
@@ -27,8 +27,7 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 post-patch:
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},' \
-		${WRKSRC}/{GetLive.pl,Manual}
+	@${SUBST_CMD} ${WRKSRC}/{GetLive.pl,Manual}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/GetLive.pl ${PREFIX}/bin/GetLive
