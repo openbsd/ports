@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/08 12:54:43 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	locks your screen and forces you to take a break
 
 XFCE_VERSION=	0.1.0
 XFCE_PLUGIN=	time-out
-PKGNAME=	${DISTNAME:S/-plugin//}p2
+PKGNAME=	${DISTNAME:S/-plugin//}p3
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

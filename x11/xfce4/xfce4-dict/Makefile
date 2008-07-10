@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/07/08 11:45:38 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	query a dictionary service for words or phrases
 
 XFCE_VERSION=	0.4.0
 XFCE_GOODIE=	xfce4-dict
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

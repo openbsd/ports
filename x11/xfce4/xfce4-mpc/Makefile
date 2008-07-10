@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/08 12:50:06 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	simple client plugin for Music Player Daemon
 
 XFCE_VERSION=	0.3.3
 XFCE_PLUGIN=	mpc
-PKGNAME=	${DISTNAME:S/-plugin//}p0
+PKGNAME=	${DISTNAME:S/-plugin//}p1
 
 # BSD-ISC
 PERMIT_DISTFILES_CDROM=	Yes

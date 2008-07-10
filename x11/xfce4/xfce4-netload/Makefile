@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2008/07/08 12:50:06 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	displays load of a network interface in the xfce4 panel
 
 XFCE_VERSION=	0.4.0
 XFCE_PLUGIN=	netload
-PKGNAME=	${DISTNAME:S/-plugin//}p1
+PKGNAME=	${DISTNAME:S/-plugin//}p2
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

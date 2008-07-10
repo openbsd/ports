@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/07/08 09:45:36 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	printing helper for xfce4
 
 XFCE_PROJECT=	xfprint
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 SHARED_LIBS=	xfprint	0.1
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/08 11:45:38 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	media tags plugin for Thunar file manager
 
 XFCE_VERSION=	0.1.2
 XFCE_GOODIE=	thunar-media-tags-plugin
-PKGNAME=	${DISTNAME:S/-plugin//}p3
+PKGNAME=	${DISTNAME:S/-plugin//}p4
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

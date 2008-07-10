@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2008/07/08 12:54:43 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	sticky notes for the xfce4 desktop
 
-#to update ?
 XFCE_VERSION=	1.4.1
 XFCE_PLUGIN=	notes
-PKGNAME=	${DISTNAME:S/-plugin//}p4
+PKGNAME=	${DISTNAME:S/-plugin//}p5
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

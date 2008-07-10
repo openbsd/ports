@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2008/07/08 09:33:30 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	advanced calendar for xfce4
 
 XFCE_VERSION=	4.5.12.2
 XFCE_PROJECT=	orage
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

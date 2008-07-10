@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/07/08 12:34:58 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	integrates WindowMaker dockapps into xfce4 panel
 
 XFCE_VERSION=	0.2.0
 XFCE_PLUGIN=	wmdock
+PKGNAME=	${DISTNAME:S/-plugin//}p0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

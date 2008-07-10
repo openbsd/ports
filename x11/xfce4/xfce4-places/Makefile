@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/07 12:08:15 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	gnome-like places plugin for the xfce4 panel
 
 XFCE_VERSION=	1.1.0
 XFCE_PLUGIN=	places
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

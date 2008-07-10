@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/07/08 12:54:43 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	command line plugin for the xfce4 panel
 
 XFCE_VERSION=	0.3.5
 XFCE_PLUGIN=	verve
 DISTNAME=	${XFCE_PLUGIN}-plugin-${XFCE_VERSION}
-PKGNAME=	xfce4-${XFCE_PLUGIN}-${XFCE_VERSION}p2
+PKGNAME=	xfce4-${XFCE_PLUGIN}-${XFCE_VERSION}p3
 
 HOMEPAGE=	http://goodies.xfce.org/projects/panel-plugins/verve-plugin
 

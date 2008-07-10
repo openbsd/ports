@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2008/07/08 09:33:30 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	lightweight vte-based terminal for xfce4
 
 XFCE_VERSION=	0.2.8
 XFCE_PROJECT=	Terminal
 # :L is here for a reason
-PKGNAME=	${DISTNAME:L}p1
+PKGNAME=	${DISTNAME:L}p2
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2008/07/08 12:50:06 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	monitors a chosen mountpoint for free disk space
 
 XFCE_VERSION=	0.4.0
 XFCE_PLUGIN=	fsguard
-PKGNAME=	${DISTNAME:S/-plugin//}p2
+PKGNAME=	${DISTNAME:S/-plugin//}p3
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes

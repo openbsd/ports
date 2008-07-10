@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2008/07/08 12:50:06 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	displays instant disk performance in the xfce4 panel
 
 XFCE_VERSION=	2.2.0
 XFCE_PLUGIN=	diskperf
-PKGNAME=	${DISTNAME:S/-plugin//}p0
+PKGNAME=	${DISTNAME:S/-plugin//}p1
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2008/07/10 09:45:42 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	displays stats from a WLAN interface
 
 XFCE_VERSION=	0.5.4
 XFCE_PLUGIN=	wavelan
+PKGNAME=	${DISTNAME:S/-plugin//}p0
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes

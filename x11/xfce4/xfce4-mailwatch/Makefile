@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/08 12:50:06 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	monitor various types of mailboxes
 
 XFCE_VERSION=	1.0.1
 XFCE_PLUGIN=	mailwatch
-PKGNAME=	${DISTNAME:S/-plugin//}p2
+PKGNAME=	${DISTNAME:S/-plugin//}p3
 
 HOMEPAGE=	http://spuriousinterrupt.org/projects/mailwatch
 

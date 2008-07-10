@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2008/07/08 09:41:35 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2008/07/10 11:38:03 landry Exp $
 
 COMMENT=	settings manager for xfce4
 
 XFCE_PROJECT=	xfce-mcs-manager
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 # LGPLv2
 PERMIT_DISTFILES_CDROM=	Yes
