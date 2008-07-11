@@ -18,6 +18,7 @@ be up at all times.
 Pidgin is under constant development, and releases are usually frequent.
 
 Flavors:
-	audio - Build with gstreamer support
-	debug - Enable debugging
+	audio    - Build with gstreamer support
+	debug    - Enable debugging
 	gtkspell - Build with spell checking support
+	msnp14   - Build with MSN protocol 14 support (experimental)

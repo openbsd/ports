@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2008/07/04 07:35:40 bernd Exp $
+# $OpenBSD: Makefile,v 1.25 2008/07/11 14:20:55 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-protocol instant messaging client
 
 DISTNAME=	pidgin-2.4.3
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS += jabber               0.0      # .0.0
 SHARED_LIBS += oscar                0.0      # .0.0
 SHARED_LIBS += purple               3.2      # .4.2
@@ -70,7 +71,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAKE_FLAGS+=	CFLAGS="${CFLAGS}"
 
-FLAVORS=	audio debug gtkspell
+FLAVORS=	audio debug gtkspell msnp14
 FLAVOR?=	
 
 .if ${FLAVOR:L:Maudio}
@@ -92,6 +93,10 @@ LIB_DEPENDS+=	gtkspell::textproc/gtkspell
 WANTLIB+=	aspell
 .else
 CONFIGURE_ARGS+=--disable-gtkspell
+.endif
+
+.if ${FLAVOR:L:Mmsnp14}
+CONFIGURE_ARGS+=--enable-msnp14
 .endif
 
 PYTHON_SCRIPTS=	purple-remote purple-url-handler
