@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/11 01:54:15 phessler Exp $
+@bin bin/xcalib
+share/examples/xcalib/
+share/examples/xcalib/README
+share/examples/xcalib/bluish.icc
+share/examples/xcalib/gamma_1_0.icc
+share/examples/xcalib/gamma_2_2.icc
+share/examples/xcalib/gamma_2_2_bright.icc
+share/examples/xcalib/gamma_2_2_lowContrast.icc

@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/07/11 01:54:15 phessler Exp $
+--- Makefile.orig	Sun Aug 26 23:30:34 2007
++++ Makefile	Sun Jan 27 00:17:51 2008
+@@ -36,9 +36,8 @@
+ # to change the following variables
+ 
+ XCALIB_VERSION = 0.8
+-CFLAGS = -O2
+-XINCLUDEDIR = /usr/X11R6/include
+-XLIBDIR = /usr/X11R6/lib
++XINCLUDEDIR = "${X11BASE}/include"
++XLIBDIR = "${X11BASE}/lib"
+ # for ATI's proprietary driver (must contain the header file fglrx_gamma.h)
+ FGLRXINCLUDEDIR = ./fglrx
+ FGLRXLIBDIR = ./fglrx

@@ -1,0 +1,18 @@
+$OpenBSD: patch-xcalib_c,v 1.1.1.1 2008/07/11 01:54:15 phessler Exp $
+--- xcalib.c.orig	Thu Jul 10 16:57:09 2008
++++ xcalib.c	Thu Jul 10 16:57:31 2008
+@@ -150,12 +150,12 @@ usage (void)
+ 	   "last parameter must be an ICC profile containing a vcgt-tag\n");
+   fprintf (stdout, "\n");
+ #ifndef WIN32GDI 
+-  fprintf (stdout, "Example: ./xcalib -d :0 -s 0 -v bluish.icc\n");
++  fprintf (stdout, "Example: xcalib -d :0 -s 0 -v bluish.icc\n");
+ #else
+   fprintf (stdout, "Example: ./xcalib -v bluish.icc\n");
+ #endif
+ #ifndef FGLRX
+-  fprintf (stdout, "Example: ./xcalib -red 1.1 10.0 100.0\n");
++  fprintf (stdout, "Example: xcalib -red 1.1 10.0 100.0\n");
+ #endif
+   fprintf (stdout, "\n");
+   exit (0);
