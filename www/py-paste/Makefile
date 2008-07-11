@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/13 17:04:07 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/11 00:23:15 martynas Exp $
 
 COMMENT=		tools for using web server gateway interface stack
 
-VERSION=		1.6
-DISTNAME=		Paste-${VERSION}
-PKGNAME=		py-paste-${VERSION}
+MODPY_EGG_VERSION=	1.7.1
+DISTNAME=		Paste-${MODPY_EGG_VERSION}
+PKGNAME=		py-paste-${MODPY_EGG_VERSION}
 
 CATEGORIES=		www
 
@@ -22,10 +22,8 @@ MASTER_SITES=		http://cheeseshop.python.org/packages/source/P/Paste/
 
 MODULES=		lang/python
 RUN_DEPENDS=		::www/py-flup
-REGRESS_DEPENDS=	::devel/py-py \
-			::www/py-flup
-
-SUBST_VARS=		VERSION
+REGRESS_DEPENDS=	${RUN_DEPENDS} \
+			::devel/py-py
 
 MODPY_SETUPTOOLS=	Yes
 
