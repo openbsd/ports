@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2008/05/26 07:47:57 mcbride Exp $
+# $OpenBSD: Makefile,v 1.10 2008/07/11 08:37:56 mcbride Exp $
 
 COMMENT=	dynamic window manager
 
 DISTNAME=	wmii-3.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.suckless.org
