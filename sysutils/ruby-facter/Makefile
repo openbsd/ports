@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/07/11 10:39:10 msf Exp $
+# $OpenBSD: Makefile,v 1.7 2008/07/11 11:14:07 msf Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,7 +35,7 @@ do-install:
 			${PREFIX}/share/examples/ruby-facter 
 
 do-regress:
-	@cd ${WRKSRC}/spec && rake all
+	@cd ${WRKSRC}/spec && ${LOCALBASE}/rake all
 
 
 .include <bsd.port.mk>
