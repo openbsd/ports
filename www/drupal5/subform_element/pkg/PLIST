@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/11 09:16:19 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}/subform_element/
+${DRUPAL_MODS}/subform_element/API.txt
+${DRUPAL_MODS}/subform_element/LICENSE.txt
+${DRUPAL_MODS}/subform_element/README.txt
+${DRUPAL_MODS}/subform_element/subform_element.info
+${DRUPAL_MODS}/subform_element/subform_element.module

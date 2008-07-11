@@ -1,0 +1,6 @@
+This module provides a new form element, that can be used by other
+modules. This form element allows you to reuse existing forms inside
+your form!  So you can build forms that reuse existing forms while
+you extend them with further form items. Note that form reusing
+means not only reusing the visual representation, but also the
+validation and submit logic.
