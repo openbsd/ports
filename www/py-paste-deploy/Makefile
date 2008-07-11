@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/13 17:07:39 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/11 00:25:12 martynas Exp $
 
 COMMENT=		load, configure, and compose WSGI applications and servers
 
-VERSION=		1.3.1
-DISTNAME=		PasteDeploy-${VERSION}
-PKGNAME=		py-paste-deploy-${VERSION}
+MODPY_EGG_VERSION=	1.3.2
+DISTNAME=		PasteDeploy-${MODPY_EGG_VERSION}
+PKGNAME=		py-paste-deploy-${MODPY_EGG_VERSION}
 
 CATEGORIES=		www
 
@@ -22,16 +22,14 @@ MASTER_SITES=		http://cheeseshop.python.org/packages/source/P/PasteDeploy/
 
 MODULES=		lang/python
 RUN_DEPENDS=		::www/py-paste
-REGRESS_DEPENDS=	::devel/py-py \
-			::www/py-paste
-
-SUBST_VARS=		VERSION
+REGRESS_DEPENDS=	${RUN_DEPENDS} \
+			::devel/py-py
 
 MODPY_SETUPTOOLS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-paste-deploy
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/py-paste-deploy/
+	cd ${WRKSRC}/docs && pax -rw * $ ${PREFIX}/share/doc/py-paste-deploy/
 
 do-regress:
 	cd ${WRKSRC} && py.test .
