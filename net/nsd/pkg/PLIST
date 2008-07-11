@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/11/21 07:24:47 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/07/11 10:01:16 brad Exp $
 @man man/man5/nsd.conf.5
 @man man/man8/nsd-checkconf.8
 @man man/man8/nsd-notify.8
@@ -7,16 +7,16 @@
 @man man/man8/nsd.8
 @man man/man8/nsdc.8
 @man man/man8/zonec.8
-sbin/nsd
-sbin/nsd-checkconf
-sbin/nsd-notify
-sbin/nsd-patch
-sbin/nsd-xfer
+@bin sbin/nsd
+@bin sbin/nsd-checkconf
+@bin sbin/nsd-notify
+@bin sbin/nsd-patch
+@bin sbin/nsd-xfer
 sbin/nsdc
-sbin/zonec
+@bin sbin/zonec
 share/examples/nsd/
-@group named
 @mode 770
+@group named
 @sample ${SYSCONFDIR}/nsd/
 @group
 @mode

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2008/05/22 07:34:09 jakob Exp $
+# $OpenBSD: Makefile,v 1.43 2008/07/11 10:01:16 brad Exp $
 
 COMMENT=	authoritative-only name server daemon
 
-VERSION=	3.0.8
+VERSION=	3.1.0
 DISTNAME=	nsd-${VERSION}
-PKGNAME=	nsd-${VERSION}
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/
@@ -13,6 +12,7 @@ HOMEPAGE=	http://www.nlnetlabs.nl/nsd/
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -27,7 +27,6 @@ CFLAGS=	-O0
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-bind8-stats \
 			--enable-nsid \
-			--enable-nsec3 \
 			--with-ssl=/usr \
 			--with-user=named \
 			--with-pidfile=/var/nsd/nsd.pid \
