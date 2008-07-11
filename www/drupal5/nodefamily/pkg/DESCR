@@ -1,0 +1,15 @@
+With this module you can define relations between content types.
+It automatically creates a relation between all nodes, which have
+been created from the same user and have the defined content types.
+
+It is a simple node relationship module, which doesn't provide any
+enduser interface. Relations are set automatically (based on admin
+defined content type relations) or programmatically through its
+API. It also allows to restrict the population of a content type
+(the number of creatable nodes of a content type per user).
+
+The module doesn't display related nodes when viewing a node or
+anything similar. Currently it's up to the user to use the relation,
+e.g. use it to display related nodes during viewing a node (example
+provided) or use it for generating views in conjunction with views
+fusion
