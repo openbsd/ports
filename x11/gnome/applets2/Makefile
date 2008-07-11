@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2008/06/02 17:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2008/07/11 17:46:56 ajacoutot Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -6,8 +6,8 @@ COMMENT-battstat=	GNOME applet for monitoring battery level
 GNOME_PROJECT=		gnome-applets
 GNOME_VERSION=		2.20.0
 
-PKGNAME-main=		gnome-applets2-${VERSION}p3
-PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}p4
+PKGNAME-main=		gnome-applets2-${VERSION}p4
+PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}p5
 SHARED_LIBS +=	gweather             0.0      # .0.0
 CATEGORIES=		x11
 
@@ -51,13 +51,6 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 PSEUDO_FLAVORS=		no_battstat
 FLAVOR?=
 
-# We use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
-.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "arm" \
- && ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "macppc" \
- && ${MACHINE_ARCH} != "sparc"
-FLAVOR+=		no_battstat
-.endif
-
 MULTI_PACKAGES=		-main
 .if ${FLAVOR:L:Mno_battstat}
 CONFIGURE_ARGS+=	--disable-battstat
@@ -83,3 +76,11 @@ post-install:
 .include <bsd.port.mk>
 
 CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
+
+# not all powerpc support apm(4), hence the use of ${ARCH} and macppc
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "arm" \
+ && ${MACHINE_ARCH} != "i386" && ${ARCH} != "macppc" \
+ && ${MACHINE_ARCH} != "sparc"
+FLAVOR+=		no_battstat
+.endif
+

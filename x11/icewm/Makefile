@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2008/05/28 20:05:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2008/07/11 17:46:56 ajacoutot Exp $
 
 COMMENT=	small, fast window manager
 
 DISTNAME=	icewm-1.2.35
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11	
 
 HOMEPAGE=	http://www.icewm.org/
@@ -42,16 +42,16 @@ CONFIGURE_ARGS=	--with-imlib=${PREFIX}/bin \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-# we use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
-.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" \
- || ${MACHINE_ARCH} == "macppc" || ${MACHINE_ARCH} == "sparc" \
- || ${MACHINE_ARCH} == "amd64"
-PATCH_LIST=	patch-* apm-*
-.endif
-
 post-install:
 	@perl -pi -e 's:%%SYSCONFDIR%%:${SYSCONFDIR}:g;' \
 		-e 's:%%PREFIX%%:${TRUEPREFIX}:g;' \
 		${PREFIX}/share/doc/icewm/icewm-7.html
 
 .include <bsd.port.mk>
+
+# not all powerpc support apm(4), hence the use of ${ARCH} and macppc
+.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" \
+ || ${ARCH} == "macppc" || ${MACHINE_ARCH} == "sparc" \
+ || ${MACHINE_ARCH} == "amd64"
+PATCH_LIST=	patch-* apm-*
+.endif

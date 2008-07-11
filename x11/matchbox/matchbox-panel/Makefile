@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2008/04/30 04:22:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2008/07/11 17:46:56 ajacoutot Exp $
 # XXX hardcoded apm list
 
 COMMENT=	window bar for holding application launchers
 DISTNAME=	matchbox-panel-0.9.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 MASTER_SITES=	${MASTER_SITES_MATCHBOX:=matchbox-panel/0.9/}
 
@@ -24,9 +24,9 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" 
 
 .include <bsd.port.mk>
 
-# We use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
+# not all powerpc support apm(4), hence the use of ${ARCH} and macppc
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "arm" \
- || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "macppc" \
+ || ${MACHINE_ARCH} == "i386" || ${ARCH} == "macppc" \
  || ${MACHINE_ARCH} == "sparc"
 PKG_ARGS+=-DAPM=1
 .else

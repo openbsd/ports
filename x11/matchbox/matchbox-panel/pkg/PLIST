@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/12/15 21:44:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/07/11 17:46:56 ajacoutot Exp $
 %%APM%%
-bin/matchbox-panel
-bin/mb-applet-clock
-bin/mb-applet-launcher
-bin/mb-applet-menu-launcher
-@comment bin/mb-applet-system-monitor
+@bin bin/matchbox-panel
+@bin bin/mb-applet-clock
+@bin bin/mb-applet-launcher
+@bin bin/mb-applet-menu-launcher
+@comment @bin bin/mb-applet-system-monitor
 @comment bin/mb-applet-xterm-wrapper.sh
-share/applications/
 share/applications/mb-applet-clock.desktop
 share/applications/mb-applet-menu-launcher.desktop
 @comment share/applications/mb-applet-system-monitor.desktop

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.12 2006/11/02 17:53:03 ajacoutot Exp $
-bin/icehelp
-bin/icesh
-bin/icewm
-bin/icewm-session
-bin/icewmbg
-bin/icewmhint
-bin/icewmtray
+@comment $OpenBSD: PLIST,v 1.13 2008/07/11 17:46:56 ajacoutot Exp $
+@bin bin/icehelp
+@bin bin/icesh
+@bin bin/icewm
+@bin bin/icewm-session
+@bin bin/icewmbg
+@bin bin/icewmhint
+@bin bin/icewmtray
 share/doc/icewm/
 share/doc/icewm/icewm-1.html
 share/doc/icewm/icewm-10.html
