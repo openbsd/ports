@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/13 17:23:17 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/11 22:43:19 martynas Exp $
 
 COMMENT=		template plugin for TurboGears that supports json
 
-VERSION=		1.1.1
-DISTNAME=		TurboJson-${VERSION}
-PKGNAME=		py-turbojson-${VERSION}
+MODPY_EGG_VERSION=	1.1.3
+DISTNAME=		TurboJson-${MODPY_EGG_VERSION}
+PKGNAME=		py-turbojson-${MODPY_EGG_VERSION}
 
 CATEGORIES=		devel
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://files.turbogears.org/eggs/
+MASTER_SITES=		http://pypi.python.org/packages/source/T/TurboJson/
 
 MODULES=		lang/python
 RUN_DEPENDS=		::databases/py-sqlobject \
@@ -26,8 +26,6 @@ RUN_DEPENDS=		::databases/py-sqlobject \
 			::devel/py-simplejson
 REGRESS_DEPENDS=	${RUN_DEPENDS} \
 			::devel/py-nose
-
-SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 
