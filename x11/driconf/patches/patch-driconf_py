@@ -1,0 +1,26 @@
+$OpenBSD: patch-driconf_py,v 1.1.1.1 2008/07/11 13:07:54 wcmaier Exp $
+--- driconf.py.orig	Mon Jul  7 08:29:20 2008
++++ driconf.py	Mon Jul  7 08:29:13 2008
+@@ -30,15 +30,15 @@ if gtk.check_version(2, 4, 0):
+     print "Error: DRIconf requires GTK 2.4 or newer."
+     sys.exit(1)
+ 
+-import driconf_commonui
+-import driconf_complexui
+-import driconf_simpleui
++import commonui
++import complexui
++import simpleui
+ 
+-commonui = driconf_commonui     # short cuts
+-complexui = driconf_complexui
+-simpleui = driconf_simpleui
++#commonui = driconf_commonui     # short cuts
++#complexui = driconf_complexui
++#simpleui = driconf_simpleui
+ 
+-from driconf_commonui import _
++from commonui import _
+ 
+ 
+ def main():

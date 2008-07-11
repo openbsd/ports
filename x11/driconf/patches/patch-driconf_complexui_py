@@ -1,0 +1,17 @@
+$OpenBSD: patch-driconf_complexui_py,v 1.1.1.1 2008/07/11 13:07:54 wcmaier Exp $
+--- driconf_complexui.py.orig	Mon Jul  7 08:30:04 2008
++++ driconf_complexui.py	Mon Jul  7 08:29:55 2008
+@@ -24,10 +24,10 @@ pygtk.require ("2.0")
+ import gtk
+ import gobject
+ 
+-import driconf_commonui
+-commonui = driconf_commonui    # short cut
++import commonui
++#commonui = driconf_commonui    # short cut
+ 
+-from driconf_commonui import _, lang, findInShared, escapeMarkup, WrappingCheckButton, SectionPage, UnknownSectionPage
++from commonui import _, lang, findInShared, escapeMarkup, WrappingCheckButton, SectionPage, UnknownSectionPage
+ 
+ class DriverPanel (gtk.Frame):
+     """ Panel for driver settings for a specific application. """

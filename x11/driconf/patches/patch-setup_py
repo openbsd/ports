@@ -1,0 +1,22 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2008/07/11 13:07:54 wcmaier Exp $
+--- setup.py.orig	Sun Sep 17 20:41:20 2006
++++ setup.py	Mon Jul  7 08:26:00 2008
+@@ -12,12 +12,16 @@ setup(name="driconf",
+       author="Felix Kuehling",
+       author_email="fxkuehl@gmx.de",
+       url="http://dri.freedesktop.org/wiki/DriConf",
+-      py_modules=["dri", "driconf", "driconf_commonui", "driconf_complexui",
+-                  "driconf_simpleui"],
++      packages=["driconf",],
++      package_dir={"": "lib"},
+       scripts=["driconf"],
+       data_files=[("share/driconf", ["card.png", "screen.png", "screencard.png",
+                                      "drilogo.jpg", "driconf-icon.png"])
+                   ] + translations)
++
++# Exit here, skipping useless checks below.
++import sys
++sys.exit(0)
+ 
+ #
+ # Search for obsolete files.
