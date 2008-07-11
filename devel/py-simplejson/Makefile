@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/04/15 09:36:06 martynas Exp $
+# $OpenBSD: Makefile,v 1.7 2008/07/11 22:40:06 martynas Exp $
 
 COMMENT=		JSON encoder/decoder
 
-MODPY_EGG_VERSION=	1.8.1
+MODPY_EGG_VERSION=	1.9.2
 DISTNAME=		simplejson-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -30,5 +30,9 @@ post-install:
 	cd ${WRKSRC}/docs && \
 		find . -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-simplejson/{} \; && \
 		find . ! -type d -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/py-simplejson/{} \;
+
+do-regress:
+	cd ${WRKSRC} && ${MODPY_BIN} -c \
+		'import simplejson.tests; simplejson.tests.main()'
 
 .include <bsd.port.mk>

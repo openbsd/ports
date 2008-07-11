@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/04/15 09:36:06 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/07/11 22:40:06 martynas Exp $
 %%SHARED%%
 lib/python${MODPY_VERSION}/site-packages/simplejson/
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/native_libs.txt
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
@@ -15,8 +14,6 @@ lib/python${MODPY_VERSION}/site-packages/simplejson/decoder.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/decoder.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/encoder.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/encoder.pyc
-lib/python${MODPY_VERSION}/site-packages/simplejson/jsonfilter.py
-lib/python${MODPY_VERSION}/site-packages/simplejson/jsonfilter.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/scanner.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/scanner.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/
@@ -28,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_default.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_default.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_dump.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_dump.pyc
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_encode_basestring_ascii.py
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_encode_basestring_ascii.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_fail.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_fail.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_float.py
@@ -42,10 +41,14 @@ lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_pass3.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_pass3.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_recursion.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_recursion.pyc
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_scanstring.py
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_scanstring.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_separators.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_separators.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_unicode.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_unicode.pyc
+lib/python${MODPY_VERSION}/site-packages/simplejson/tool.py
+lib/python${MODPY_VERSION}/site-packages/simplejson/tool.pyc
 share/doc/py-simplejson/
 share/doc/py-simplejson/class-simplejson.JSONDecoder.html
 share/doc/py-simplejson/class-simplejson.JSONEncoder.html
