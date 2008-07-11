@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/03/19 09:21:37 ajacoutot Exp $
-bin/avidemux2_cli
-bin/avidemux2_gtk
+@comment $OpenBSD: PLIST,v 1.4 2008/07/11 08:51:41 ajacoutot Exp $
+@bin bin/avidemux2_cli
+@bin bin/avidemux2_gtk
 share/locale/ca/LC_MESSAGES/avidemux.mo
 share/locale/cs/LC_MESSAGES/avidemux.mo
 share/locale/de/LC_MESSAGES/avidemux.mo

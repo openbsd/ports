@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2008/06/01 08:21:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2008/07/11 08:51:40 ajacoutot Exp $
 
 COMMENT=	free video editor
 
-V=		2.4.1
+V=		2.4.2
 DISTNAME=	avidemux_${V}
-PKGNAME=	avidemux-${V}p1
+PKGNAME=	avidemux-${V}
 
 CATEGORIES=	multimedia
 
@@ -53,8 +53,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib -logg -lm -lz"
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--with-jsapi-include=${LOCALBASE}/include/js \
 		--enable-xv \
+		--with-x \
 		--with-freetype2 \
 		--with-lame \
 		--with-fontconfig \
@@ -69,6 +69,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--without-aften \
 		--without-qt-dir \
 		--without-qt-includes \
+		--without-gpt \
 		--disable-ssse3 \
 		--disable-altivec
 
