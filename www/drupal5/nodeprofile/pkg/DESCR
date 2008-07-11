@@ -1,0 +1,11 @@
+This module builds user profiles as nodes, which opens the opportunity
+to use the Content Construction Kit (CCK). So it's possible to make
+use of the field types, which are available for CCK. The integration
+of the views module allows one to easily build customizable user
+listings or even user searches.
+
+Furthermore it allows one
+
+    * to build nodeprofiles consisting of several content types,
+    * to build different nodeprofiles for different roles or
+    * to build multiple (different kind of) nodeprofiles for the same users.

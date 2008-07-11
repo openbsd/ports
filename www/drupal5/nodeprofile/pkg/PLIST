@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/11 09:16:55 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}/nodeprofile/
+${DRUPAL_MODS}/nodeprofile/LICENSE.txt
+${DRUPAL_MODS}/nodeprofile/README.txt
+${DRUPAL_MODS}/nodeprofile/nodeprofile.css
+${DRUPAL_MODS}/nodeprofile/nodeprofile.info
+${DRUPAL_MODS}/nodeprofile/nodeprofile.install
+${DRUPAL_MODS}/nodeprofile/nodeprofile.module
+${DRUPAL_MODS}/nodeprofile/nodeprofile_panels.inc
+${DRUPAL_MODS}/nodeprofile/nodeprofile_workflow_ng.inc
