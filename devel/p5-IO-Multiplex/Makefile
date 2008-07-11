@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/07/11 22:30:59 dhill Exp $
 
 COMMENT=		handle multiple file handles
 
 MODULES=		cpan
-DISTNAME=		IO-Multiplex-1.08
-PKGNAME=		p5-${DISTNAME}p0
+DISTNAME=		IO-Multiplex-1.09
+PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel
 
 MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
