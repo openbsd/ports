@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/11 01:54:15 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2008/07/11 06:47:56 phessler Exp $
 
 COMMENT =		tiny monitor calibration loader for XFree86 or X.org
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xcalib/}
 
 WANTLIB =		X11 Xext Xxf86vm m c
-WRKDIST =		${WRKDIR}/${PKGNAME}
+WRKDIST =		${WRKDIR}/xcalib-${V}
 USE_X11 =		Yes
 NO_REGRESS =		Yes
 
