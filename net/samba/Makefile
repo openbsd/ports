@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.91 2008/05/13 11:34:12 dlg Exp $
+# $OpenBSD: Makefile,v 1.92 2008/07/11 11:40:33 brad Exp $
 
 COMMENT-main=	SMB and CIFS client and server for UNIX
 COMMENT-docs=	documentation and examples for samba
 
-DISTNAME=		samba-3.0.28
-PKGNAME-main=		${DISTNAME}p1
+DISTNAME=		samba-3.0.30
+PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 SHARED_LIBS=		smbclient	1.0 \
 			msrpc		1.0
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.samba.org/
 
 MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -111,13 +111,11 @@ SAMBA_DOCS=${WRKSRC}/../README \
 SAMPLE_CONFIG=	${PREFIX}/share/examples/samba/smb.conf.default
 
 pre-configure:
-	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g;' \
-		-e 's,!!LOCALBASE!!,${LOCALBASE},g' \
-		${WRKSRC}/../docs/manpages/swat.8
+	@${SUBST_CMD} ${WRKSRC}/../docs/manpages/swat.8
 
 post-extract:
-	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
-	chmod a+x ${WRKDIR}/bin/krb5-config
+	@cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
+	@chmod a+x ${WRKDIR}/bin/krb5-config
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samba/pdf
