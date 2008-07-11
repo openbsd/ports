@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/04/15 09:34:57 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/07/11 00:27:26 martynas Exp $
 bin/paster
 lib/python${MODPY_VERSION}/site-packages/PasteScript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/PasteScript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -85,9 +85,22 @@ lib/python${MODPY_VERSION}/site-packages/paste/script/wsgiserver/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/paste/script/wsgiutils_server.py
 lib/python${MODPY_VERSION}/site-packages/paste/script/wsgiutils_server.pyc
 share/doc/py-paste-script/
+share/doc/py-paste-script/_static/
+share/doc/py-paste-script/_static/paste.css
+share/doc/py-paste-script/_templates/
+share/doc/py-paste-script/_templates/layout.html
+share/doc/py-paste-script/conf.py
 share/doc/py-paste-script/developer.txt
 share/doc/py-paste-script/example_app.ini
 share/doc/py-paste-script/example_cgi_app.ini
 share/doc/py-paste-script/index.txt
 share/doc/py-paste-script/license.txt
+share/doc/py-paste-script/modules/
+share/doc/py-paste-script/modules/checkperms.txt
+share/doc/py-paste-script/modules/command.txt
+share/doc/py-paste-script/modules/copydir.txt
+share/doc/py-paste-script/modules/filemaker.txt
+share/doc/py-paste-script/modules/templates.txt
+share/doc/py-paste-script/modules/testapp.txt
+share/doc/py-paste-script/modules/util.secret.txt
 share/doc/py-paste-script/news.txt
