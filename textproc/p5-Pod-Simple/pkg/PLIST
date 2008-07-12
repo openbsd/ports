@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/07/12 12:22:33 dhill Exp $
 ${P5SITE}/Pod/Simple/
 ${P5SITE}/Pod/Simple.pm
 ${P5SITE}/Pod/Simple.pod
@@ -28,6 +28,7 @@ ${P5SITE}/Pod/Simple/TiedOutFH.pm
 ${P5SITE}/Pod/Simple/Transcode.pm
 ${P5SITE}/Pod/Simple/TranscodeDumb.pm
 ${P5SITE}/Pod/Simple/TranscodeSmart.pm
+${P5SITE}/Pod/Simple/XHTML.pm
 ${P5SITE}/Pod/Simple/XMLOutStream.pm
 @comment ${P5SITE}/perlpod.pod
 @comment ${P5SITE}/perlpodspec.pod
@@ -51,6 +52,7 @@ ${P5SITE}/Pod/Simple/XMLOutStream.pm
 @man man/man3p/Pod::Simple::Subclassing.3p
 @man man/man3p/Pod::Simple::Text.3p
 @man man/man3p/Pod::Simple::TextContent.3p
+@man man/man3p/Pod::Simple::XHTML.3p
 @man man/man3p/Pod::Simple::XMLOutStream.3p
 @man man/man3p/perlpod.3p
 @man man/man3p/perlpodspec.3p

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:59:39 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/07/12 12:22:33 dhill Exp $
 
 COMMENT=	framework for parsing the Perl Pod format
 
 MODULES=	cpan
-DISTNAME=	Pod-Simple-3.04
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Pod-Simple-3.07
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
