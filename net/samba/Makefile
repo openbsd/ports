@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.92 2008/07/11 11:40:33 brad Exp $
+# $OpenBSD: Makefile,v 1.93 2008/07/12 12:33:21 brad Exp $
 
 COMMENT-main=	SMB and CIFS client and server for UNIX
 COMMENT-docs=	documentation and examples for samba
 
 DISTNAME=		samba-3.0.30
-PKGNAME-main=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 SHARED_LIBS=		smbclient	1.0 \
 			msrpc		1.0
@@ -123,6 +123,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/samba
 	@cp -R ${WRKSRC}/../examples/* ${PREFIX}/share/examples/samba
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/samba
+	@find ${PREFIX}/share/examples/samba -type f | \
+	    xargs chmod ${SHAREMODE}
+	@find ${PREFIX}/share/examples/samba -type d | \
+	    xargs chmod ${DIRMODE}
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/samba
 	@for i in ${SAMBA_DOCS}; do \
 	 ${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;	\
