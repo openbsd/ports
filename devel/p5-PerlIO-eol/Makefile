@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/07/12 13:40:31 kevlo Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PerlIO layer for normalizing line endings
 
 MODULES=	cpan
-DISTNAME=	PerlIO-eol-0.13
+DISTNAME=	PerlIO-eol-0.14
 CATEGORIES=	devel 
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
