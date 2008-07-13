@@ -1,10 +1,10 @@
-#	$OpenBSD: Makefile,v 1.1.1.1 2008/07/09 16:56:43 phessler Exp $
+#	$OpenBSD: Makefile,v 1.2 2008/07/13 01:08:35 phessler Exp $
 PKG_ARCH-main =		*
 PKG_ARCH-hires =	*
 
 COMMENT-main =		marathon infinity data files
 COMMENT-hires =		hires graphics and sounds
-V =			0.0.20080413
+V =			0.0.20080712
 DISTNAME =		marathoninfinity-${V}
 PKGNAME-main =		marathoninfinity-${V}
 PKGNAME-hires =		marathoninfinity-hires-${V}
@@ -14,7 +14,6 @@ DISTFILES =		MarathonInfinity.zip
 DISTFILES +=		LandscapeEnhancementPackv10.zip:0
 DISTFILES +=		TotalTextureEnhancementv61.zip:1
 DISTFILES +=		shots_fired.zip:2
-#DISTFILES +=		WEP2.zip:3
 
 # http://trilogyrelease.bungie.org/faq.html
 PERMIT_PACKAGE_CDROM =	"not for sale"

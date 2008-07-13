@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.2 2008/07/09 23:50:23 phessler Exp $
+#	$OpenBSD: Makefile,v 1.3 2008/07/13 01:08:35 phessler Exp $
 PKG_ARCH =	*
 
 COMMENT =	marathon one data files
-V =		0.0.20080413
+V =		0.0.20080712
 DISTNAME =	marathon-${V}
 PKGNAME =	marathon-${V}
 HOMEPAGE =	http://source.bungie.org/get/
