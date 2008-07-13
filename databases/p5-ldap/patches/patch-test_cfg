@@ -1,0 +1,26 @@
+$OpenBSD: patch-test_cfg,v 1.1 2008/07/13 17:52:09 simon Exp $
+--- test.cfg.orig	Mon Apr 21 17:11:07 2008
++++ test.cfg	Sun Jul 13 18:46:11 2008
+@@ -3,19 +3,19 @@
+ # can find the executable and know what type of server it is
+ 
+ # Set this to the path to where you have slapd
+-$SERVER_EXE = "<path to ldap server executable>";
++$SERVER_EXE = "${LOCALBASE}/libexec/slapd";
+ 
+ # This should be one of
+ #  openldap1
+ #  openldap2
+ #  openldap2[+ssl][+ipc][+sasl]
+-$SERVER_TYPE = "openldap2";
++$SERVER_TYPE = "openldap2+ssl+ipc";
+ 
+ # $HOST = "localhost";
+ 
+ # If you are using openldap 2.1 then you will need to change this to point
+ # to your installation schema dir (eg /usr/local/etc/openldap/schema)
+-$SCHEMA_DIR = "";
++$SCHEMA_DIR = "${SYSCONFDIR}/openldap/schema";
+ 
+ $EXTERNAL_TESTS = 0;
+ 
