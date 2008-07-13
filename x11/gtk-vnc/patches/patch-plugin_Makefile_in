@@ -1,12 +1,48 @@
-$OpenBSD: patch-plugin_Makefile_in,v 1.1 2008/05/13 09:48:56 ajacoutot Exp $
---- plugin/Makefile.in.orig	Sat May 10 12:17:22 2008
-+++ plugin/Makefile.in	Sat May 10 12:18:01 2008
+$OpenBSD: patch-plugin_Makefile_in,v 1.2 2008/07/13 17:16:25 jasper Exp $
+--- plugin/Makefile.in.orig	Mon May  5 22:54:31 2008
++++ plugin/Makefile.in	Sat Jul 12 14:17:21 2008
 @@ -232,7 +232,7 @@ target_os = @target_os@
  target_vendor = @target_vendor@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -@ENABLE_PLUGIN_TRUE@plugindir = $(libdir)/mozilla/plugins
-+@ENABLE_PLUGIN_TRUE@plugindir = $(libdir)/mozilla-plugins
++@ENABLE_PLUGIN_TRUE@plugindir = $(PREFIX)/lib/mozilla-plugins
  @ENABLE_PLUGIN_TRUE@plugin_LTLIBRARIES = gtk-vnc-plugin.la
  @ENABLE_PLUGIN_TRUE@gtk_vnc_plugin_la_SOURCES = \
  @ENABLE_PLUGIN_TRUE@	gtk-vnc-plugin.c gtk-vnc-plugin.h npshell.c npunix.c
+@@ -285,12 +285,12 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
+ 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
+ install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(plugindir)" || $(MKDIR_P) "$(DESTDIR)$(plugindir)"
++	test -z "$(plugindir)" || $(MKDIR_P) "$(plugindir)"
+ 	@list='$(plugin_LTLIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    f=$(am__strip_dir) \
+-	    echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(plugindir)/$$f'"; \
+-	    $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(plugindir)/$$f"; \
++	    echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(plugindir)/$$f'"; \
++	    $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(plugindir)/$$f"; \
+ 	  else :; fi; \
+ 	done
+ 
+@@ -298,8 +298,8 @@ uninstall-pluginLTLIBRARIES:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(plugin_LTLIBRARIES)'; for p in $$list; do \
+ 	  p=$(am__strip_dir) \
+-	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f '$(DESTDIR)$(plugindir)/$$p'"; \
+-	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f "$(DESTDIR)$(plugindir)/$$p"; \
++	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f '$(plugindir)/$$p'"; \
++	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f "$(plugindir)/$$p"; \
+ 	done
+ 
+ clean-pluginLTLIBRARIES:
+@@ -449,7 +449,7 @@ check: check-am
+ @ENABLE_PLUGIN_FALSE@all-local:
+ all-am: Makefile $(LTLIBRARIES) all-local
+ installdirs:
+-	for dir in "$(DESTDIR)$(plugindir)"; do \
++	for dir in "$(plugindir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am

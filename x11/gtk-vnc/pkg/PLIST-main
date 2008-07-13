@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/05/13 09:48:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/07/13 17:16:25 jasper Exp $
 @pkgpath ${BASE_PKGPATH}
-bin/gvncviewer
+@bin bin/gvncviewer
 include/gtk-vnc-1.0/
 include/gtk-vnc-1.0/vncdisplay.h
 lib/libgtk-vnc-1.0.a
