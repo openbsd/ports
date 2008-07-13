@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2008/07/13 08:41:16 sthen Exp $
+--- src/Makefile.in.orig	Sat Jul 12 12:15:32 2008
++++ src/Makefile.in	Sat Jul 12 12:15:35 2008
+@@ -206,7 +206,6 @@ INCLUDES = \
+ 
+ AM_CFLAGS = \
+ 	-Wall\
+-	-O4\
+ 	-DWITH_GCONF\
+ 	-DDCRAW_NOMAIN\
+ 	-DDCRAW_NOLCMS\

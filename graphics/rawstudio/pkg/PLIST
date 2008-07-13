@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/13 08:41:16 sthen Exp $
+@bin bin/rawstudio
+share/applications/
+share/applications/rawstudio.desktop
+share/icons/
+share/icons/rawstudio.png
+share/locale/cz/
+share/locale/cz/LC_MESSAGES/
+share/locale/cz/LC_MESSAGES/rawstudio.mo
+share/locale/da/LC_MESSAGES/rawstudio.mo
+share/locale/de/LC_MESSAGES/rawstudio.mo
+share/locale/en/LC_MESSAGES/rawstudio.mo
+share/locale/es/LC_MESSAGES/rawstudio.mo
+share/locale/fi/LC_MESSAGES/rawstudio.mo
+share/locale/fr/LC_MESSAGES/rawstudio.mo
+share/locale/it/LC_MESSAGES/rawstudio.mo
+share/locale/nb/LC_MESSAGES/rawstudio.mo
+share/locale/pl/LC_MESSAGES/rawstudio.mo
+share/locale/ru/LC_MESSAGES/rawstudio.mo
+share/pixmaps/
+share/pixmaps/rawstudio/
+share/pixmaps/rawstudio/overlay_deleted.png
+share/pixmaps/rawstudio/overlay_exported.png
+share/pixmaps/rawstudio/overlay_priority1.png
+share/pixmaps/rawstudio/overlay_priority2.png
+share/pixmaps/rawstudio/overlay_priority3.png
+share/pixmaps/rawstudio/transform_180.png
+share/pixmaps/rawstudio/transform_270.png
+share/pixmaps/rawstudio/transform_90.png
+share/pixmaps/rawstudio/transform_flip.png
+share/pixmaps/rawstudio/transform_mirror.png
+share/rawstudio/
+share/rawstudio/rawstudio.gtkrc
+share/rawstudio/ui.xml

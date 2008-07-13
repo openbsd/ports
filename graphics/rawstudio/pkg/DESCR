@@ -1,0 +1,15 @@
+Rawstudio is an open-source program to read and manipulate RAW images
+from most digital cameras.
+
+Rawstudio will convert your RAW files into JPEG, PNG or TIF images which
+you can then print or send to friends and clients.
+
+It has a graphical user interface, so you can simply open a RAW file and
+experiment with the controls to see how they effect the image. Rawstudio
+has a very simple architecture which is optimized for ease of use and
+therefore should be intuitive to most photographers.
+
+The normal workflow would be that you first convert your RAW files and
+then use an image editing application to further work on your images.
+Rawstudio itself is a highly specialized application for processing RAW
+images, not a fully featured image editing application.
