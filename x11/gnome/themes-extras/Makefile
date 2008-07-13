@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2008/04/17 08:49:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2008/07/13 17:03:24 jasper Exp $
 
 COMMENT=		themes collection for GNOME
 
 GNOME_PROJECT=		gnome-themes-extras
-GNOME_VERSION=		2.20
+GNOME_VERSION=		2.22.0
 CATEGORIES=		x11
-PKGNAME=		${DISTNAME}p3
 
 TAR=			${LOCALBASE}/bin/gtar
 
@@ -17,13 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION}/}
-
 MODULES=		x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::archivers/gtar \
-			:icon-naming-utils-*:x11/icon-naming-utils
+			:icon-naming-utils->=0.8.7:x11/icon-naming-utils
 RUN_DEPENDS=		:gettext-*:devel/gettext \
 			:gtk-engines2->=2.11:x11/gtk-engines2
 
