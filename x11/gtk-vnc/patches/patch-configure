@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2008/07/13 17:22:13 jasper Exp $
+--- configure.orig	Mon May  5 22:54:32 2008
++++ configure	Mon Jun 30 18:04:43 2008
+@@ -2384,7 +2384,7 @@ for as_dir in $PATH$PATH_SEPARATOR/opt/sfw/bin
+ do
+   IFS=$as_save_IFS
+   test -z "$as_dir" && as_dir=.
+-  for ac_prog in mkdir gmkdir; do
++  for ac_prog in mkdir ; do
+ 	 for ac_exec_ext in '' $ac_executable_extensions; do
+ 	   { test -f "$as_dir/$ac_prog$ac_exec_ext" && $as_test_x "$as_dir/$ac_prog$ac_exec_ext"; } || continue
+ 	   case `"$as_dir/$ac_prog$ac_exec_ext" --version 2>&1` in #(
