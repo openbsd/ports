@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2008/06/13 16:56:59 mglocker Exp $
+# $OpenBSD: Makefile,v 1.216 2008/07/13 08:42:08 sthen Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -156,6 +156,7 @@
      SUBDIR += py-pyx
      SUBDIR += pycha
      SUBDIR += qiv
+     SUBDIR += rawstudio
      SUBDIR += ruby-gd2
      SUBDIR += ruby-gdk-imlib
      SUBDIR += ruby-gdk-pixbuf
