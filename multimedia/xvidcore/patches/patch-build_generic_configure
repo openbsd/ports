@@ -1,18 +1,27 @@
-$OpenBSD: patch-build_generic_configure,v 1.1 2006/01/08 22:12:38 jakemsr Exp $
---- build/generic/configure.orig	Sun Dec 19 03:38:55 2004
-+++ build/generic/configure	Sat Dec 24 03:48:11 2005
+$OpenBSD: patch-build_generic_configure,v 1.2 2008/07/14 06:02:31 brad Exp $
+--- build/generic/configure.orig	Thu Jun 28 11:27:27 2007
++++ build/generic/configure	Mon Jul  7 23:31:24 2008
 @@ -1316,8 +1316,8 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
  
 -API_MAJOR="4"
--API_MINOR="0"
+-API_MINOR="1"
 +API_MAJOR="$API_MAJOR"
 +API_MINOR="$API_MINOR"
  
  minimum_nasm_patch_version=34
  nasm_prog="nasm"
-@@ -3824,7 +3824,7 @@ case "$target_os" in
+@@ -2613,7 +2613,7 @@ echo $ECHO_N "checking for architecture type... $ECHO_
+ echo "${ECHO_T}ia32" >&6
+ 	  	ARCHITECTURE="IA32"
+                 ;;
+-          x86_64)
++          x86_64 | amd64)
+                 echo "$as_me:$LINENO: result: x86_64" >&5
+ echo "${ECHO_T}x86_64" >&6
+                 ARCHITECTURE="X86_64"
+@@ -3838,7 +3838,7 @@ echo "${ECHO_T}ok" >&6
  echo "${ECHO_T}ok" >&6
  	STATIC_LIB="libxvidcore.\$(STATIC_EXTENSION)"
  	SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR).\$(API_MINOR)"
