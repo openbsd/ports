@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/07/14 13:55:58 dhill Exp $
 
 COMMENT=		use the freedesktop Base Directory Specification
 
-DISTNAME=		File-BaseDir-0.02
+DISTNAME=		File-BaseDir-0.03
 CATEGORIES=		devel
 
 # perl
@@ -12,6 +12,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-CPAN_AUTHOR=		PARDUS/File-BaseDir
+CONFIGURE_STYLE=	modbuild
+
+CPAN_AUTHOR=		PARDUS
+
+MAKE_ENV+=		TEST_POD=1
 
 .include <bsd.port.mk>
