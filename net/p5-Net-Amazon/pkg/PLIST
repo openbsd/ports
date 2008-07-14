@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/11/20 14:29:03 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/07/14 16:24:34 dhill Exp $
 ${P5SITE}/Net/Amazon/
 ${P5SITE}/Net/Amazon.pm
 ${P5SITE}/Net/Amazon/Attribute/
@@ -235,7 +235,6 @@ ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Author.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Availability.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Brand.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/BrowseNode.pm
-${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Browsenode.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/City.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Composer.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Condition.pm
@@ -484,7 +483,6 @@ ${P5SITE}/Net/Amazon/Validate/Type/TransactionLookup.pm
 @man man/man3p/Net::Amazon::Validate::ItemSearch::us::Availability.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::us::Brand.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::us::BrowseNode.3p
-@man man/man3p/Net::Amazon::Validate::ItemSearch::us::Browsenode.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::us::City.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::us::Composer.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::us::Condition.3p
