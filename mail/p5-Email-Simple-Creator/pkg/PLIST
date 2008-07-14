@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 00:11:11 espie Exp $
-${P5SITE}/Email/Simple/
+@comment $OpenBSD: PLIST,v 1.2 2008/07/14 11:15:27 simon Exp $
 ${P5SITE}/Email/Simple/Creator.pm
 @man man/man3p/Email::Simple::Creator.3p

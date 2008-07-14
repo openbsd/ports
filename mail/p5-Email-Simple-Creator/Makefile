@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/14 11:15:27 simon Exp $
 
 COMMENT= 	Email::Simple constructor for starting anew
 
 MODULES=	cpan
 
-DISTNAME=	Email-Simple-Creator-1.420
+DISTNAME=	Email-Simple-Creator-1.424
 CATEGORIES=	mail
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::mail/p5-Email-Date \
+RUN_DEPENDS=	::mail/p5-Email-Date-Format \
 		::mail/p5-Email-Simple
 
 MAKE_ENV=	TEST_POD=Yes
