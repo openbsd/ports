@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2008/06/02 17:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2008/07/14 12:24:47 jasper Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.20.3
-PKGNAME=		control-center2-${VERSION}p5
+PKGNAME=		control-center2-${VERSION}p6
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
 
@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/control
 			--enable-esd \
 			--enable-gstreamer \
 			--enable-aboutme
-CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
