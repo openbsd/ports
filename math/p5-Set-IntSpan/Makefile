@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 18:44:37 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2008/07/14 02:05:27 dhill Exp $
 
 COMMENT=	manage sets of integers
 
 MODULES=	cpan
-DISTNAME=	Set-IntSpan-1.09
+DISTNAME=	Set-IntSpan-1.13
 CATEGORIES=	math
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
