@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/14 23:54:16 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2008/07/15 08:43:08 bernd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	ruby bindings for RRDtool
 
 V=		0.6.0
 DISTNAME=	RubyRRDtool-$V
-PKGNAME=	ruby-rrdtool-$Vp0
+PKGNAME=	ruby-rrdtool-$Vp1
 CATEGORIES=	net
 
 HOMEPAGE=	http://rubyrrdtool.rubyforge.org/
@@ -23,7 +23,7 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=rubyrrdtool/}
 
 MODULES=	lang/ruby
 
-BUILD_DEPENDS=	::devel/ruby-hoe
+GEM_SKIPDEPENDS= hoe
 LIB_DEPENDS=	ruby::lang/ruby \
 		rrd:rrdtool-1.2.*:net/rrdtool
 
