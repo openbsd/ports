@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 2008/04/13 07:13:59 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.7 2008/07/15 16:14:24 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	LIVE555 streaming media library
 
-DISTNAME=	live.2008.04.09
-PKGNAME=	liveMedia-20080409
+DISTNAME=	live.2008.07.06
+PKGNAME=	liveMedia-20080706
 CATEGORIES=	net devel
 MASTER_SITES=	http://comstyle.com/source/
 
 HOMEPAGE=	http://www.live555.com/liveMedia/
 
-# LGPL
+# LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

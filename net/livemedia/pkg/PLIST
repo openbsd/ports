@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/10/03 02:19:06 jakemsr Exp $
-bin/openRTSP
-bin/playSIP
-bin/sapWatch
+@comment $OpenBSD: PLIST,v 1.3 2008/07/15 16:14:24 brad Exp $
+@bin bin/openRTSP
+@bin bin/playSIP
+@bin bin/sapWatch
 live/
 live/BasicUsageEnvironment/
 live/BasicUsageEnvironment/include/
