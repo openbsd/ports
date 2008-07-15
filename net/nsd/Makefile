@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2008/07/11 10:01:16 brad Exp $
+# $OpenBSD: Makefile,v 1.44 2008/07/15 11:51:41 sthen Exp $
 
 COMMENT=	authoritative-only name server daemon
 
 VERSION=	3.1.0
 DISTNAME=	nsd-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/
@@ -18,11 +19,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto
-
-# gcc 3.3.5, Bus errors
-.if ${MACHINE_ARCH} == "sparc64"
-CFLAGS=	-O0
-.endif
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-bind8-stats \
