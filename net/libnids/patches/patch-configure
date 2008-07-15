@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2005/05/24 00:01:46 mjc Exp $
---- configure.orig	Tue Oct 14 16:40:09 2003
-+++ configure	Sat May 21 21:19:46 2005
-@@ -3605,11 +3605,11 @@ echo "${ECHO_T}no" >&6
+$OpenBSD: patch-configure,v 1.2 2008/07/15 16:11:02 brad Exp $
+--- configure.orig	Mon May  1 13:14:51 2006
++++ configure	Tue Jul  8 10:04:48 2008
+@@ -4399,11 +4399,11 @@ echo "${ECHO_T}no" >&6
    *)
       echo "$as_me:$LINENO: result: $withval" >&5
  echo "${ECHO_T}$withval" >&6

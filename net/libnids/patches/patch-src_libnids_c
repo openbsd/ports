@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_libnids_c,v 1.4 2008/03/31 11:39:48 sthen Exp $
---- src/libnids.c.orig	Sat Jan 29 05:03:24 2005
-+++ src/libnids.c	Fri Jan 25 19:06:09 2008
-@@ -28,6 +28,12 @@
- #include "util.h"
- #include "nids.h"
+$OpenBSD: patch-src_libnids_c,v 1.5 2008/07/15 16:11:02 brad Exp $
+--- src/libnids.c.orig	Thu Feb 21 05:47:12 2008
++++ src/libnids.c	Wed Jul  9 23:20:06 2008
+@@ -31,6 +31,12 @@
+ #include <glib.h>
+ #endif
  
 +#ifdef DLT_PFLOG
 +#include <sys/socket.h>
@@ -14,68 +14,52 @@ $OpenBSD: patch-src_libnids_c,v 1.4 2008/03/31 11:39:48 sthen Exp $
  #ifdef __linux__
  extern int set_all_promisc();
  #endif
-@@ -214,6 +220,7 @@ static void pcap_hand(u_char * par, struct pcap_pkthdr
- #endif
- #ifdef DLT_IEEE802_11
-     case DLT_IEEE802_11:
-+    case DLT_IEEE802_11_RADIO:
- 	/* I don't know why frame control is always little endian, but it 
- 	 * works for tcpdump, so who am I to complain? (wam)
- 	 */
-@@ -462,6 +469,7 @@ int nids_init()
-     case DLT_PRISM_HEADER:
- #endif
-     case DLT_IEEE802_11:
-+    case DLT_IEEE802_11_RADIO:
- 	/* wireless, need to calculate offset per frame */
- 	break;
- #endif
-@@ -469,22 +477,46 @@ int nids_init()
+@@ -618,22 +624,46 @@ int nids_init()
      case DLT_NULL:
-         linkoffset = 4;
+         nids_linkoffset = 4;
          break;
 -#endif        
 +#endif
 +#ifdef DLT_LOOP
 +    case DLT_LOOP:
-+        linkoffset = 4;
++        nids_linkoffset = 4;
 +        break;
 +#endif
      case DLT_EN10MB:
- 	linkoffset = 14;
+ 	nids_linkoffset = 14;
  	break;
      case DLT_PPP:
- 	linkoffset = 4;
+ 	nids_linkoffset = 4;
  	break;
 +#ifdef DLT_PPP_ETHER
 +    case DLT_PPP_ETHER:
-+	linkoffset = 8;
++	nids_linkoffset = 8;
 +	break;
 +#endif
  	/* Token Ring Support by vacuum@technotronic.com, thanks dugsong! */
      case DLT_IEEE802:
- 	linkoffset = 22;
+ 	nids_linkoffset = 22;
  	break;
 -
      case DLT_RAW:
      case DLT_SLIP:
- 	linkoffset = 0;
+ 	nids_linkoffset = 0;
  	break;
 +#ifdef DLT_OLD_PFLOG
 +    case DLT_OLD_PFLOG:
-+	linkoffset = 28;
++	nids_linkoffset = 28;
 +	break;
 +#endif
 +#ifdef DLT_PFLOG
 +    case DLT_PFLOG:
-+	linkoffset = PFLOG_HDRLEN;
++	nids_linkoffset = PFLOG_HDRLEN;
 +	break;
 +#endif
 +#ifdef DLT_PFSYNC
 +    case DLT_PFSYNC:
-+	linkoffset = 4;
++	nids_linkoffset = 4;
 +	break;
 +#endif
  #define DLT_LINUX_SLL   113
      case DLT_LINUX_SLL:
- 	linkoffset = 16;
+ 	nids_linkoffset = 16;
