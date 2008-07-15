@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.4 2007/06/22 11:42:14 jasper Exp $
---- doc/mpdconf.example.orig	Mon May 28 15:19:30 2007
-+++ doc/mpdconf.example	Fri Jun 22 13:31:06 2007
+$OpenBSD: patch-doc_mpdconf_example,v 1.5 2008/07/15 08:40:49 bernd Exp $
+--- doc/mpdconf.example.orig	Mon Jun 16 04:48:07 2008
++++ doc/mpdconf.example	Wed Jul  9 12:26:44 2008
 @@ -2,11 +2,11 @@
  # See the mpd.conf man page for a more detailed description of each parameter.
  
@@ -48,7 +48,7 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.4 2007/06/22 11:42:14 jasper Exp $
  #port                            "6600"
  #
  # Controls the amount of information that is logged.  Can be
-@@ -100,6 +100,12 @@ error_file                      "~/.mpd/mpd.error"
+@@ -108,6 +108,12 @@ error_file                      "~/.mpd/mpd.error"
  #        format                  "44100:16:2" # optional
  #}
  #
@@ -61,7 +61,7 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.4 2007/06/22 11:42:14 jasper Exp $
  # An example of a shout output (for streaming to Icecast):
  #
  #audio_output {
-@@ -149,12 +155,12 @@ error_file                      "~/.mpd/mpd.error"
+@@ -157,12 +163,12 @@ error_file                      "~/.mpd/mpd.error"
  #
  #mixer_type                      "oss"
  #mixer_device                    "/dev/mixer"
