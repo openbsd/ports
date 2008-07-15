@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/28 13:13:11 okan Exp $
-bin/tea
+@comment $OpenBSD: PLIST,v 1.3 2008/07/15 14:22:16 landry Exp $
+@bin bin/teagtk
 share/doc/tea/
 share/doc/tea/AUTHORS
 share/doc/tea/COPYING
@@ -9,6 +9,8 @@ share/doc/tea/README
 share/doc/tea/TODO
 share/doc/tea/cs/
 share/doc/tea/cs/index.html
+share/doc/tea/de/
+share/doc/tea/de/index.html
 share/doc/tea/en/
 share/doc/tea/en/a1030.html
 share/doc/tea/en/c102.html
@@ -179,16 +181,16 @@ share/doc/tea/ru/x750.html
 share/doc/tea/ru/x766.html
 share/doc/tea/ru/x787.html
 share/doc/tea/tea_doc.css
-share/locale/cs/LC_MESSAGES/tea.mo
-share/locale/de/LC_MESSAGES/tea.mo
-share/locale/es/LC_MESSAGES/tea.mo
-share/locale/fr/LC_MESSAGES/tea.mo
-share/locale/ja/LC_MESSAGES/tea.mo
-share/locale/lv/LC_MESSAGES/tea.mo
-share/locale/pl/LC_MESSAGES/tea.mo
-share/locale/ru/LC_MESSAGES/tea.mo
-share/locale/sr/LC_MESSAGES/tea.mo
-share/locale/uk/LC_MESSAGES/tea.mo
+share/locale/cs/LC_MESSAGES/teagtk.mo
+share/locale/de/LC_MESSAGES/teagtk.mo
+share/locale/es/LC_MESSAGES/teagtk.mo
+share/locale/fr/LC_MESSAGES/teagtk.mo
+share/locale/ja/LC_MESSAGES/teagtk.mo
+share/locale/lv/LC_MESSAGES/teagtk.mo
+share/locale/pl/LC_MESSAGES/teagtk.mo
+share/locale/ru/LC_MESSAGES/teagtk.mo
+share/locale/sr/LC_MESSAGES/teagtk.mo
+share/locale/uk/LC_MESSAGES/teagtk.mo
 share/pixmaps/
 share/pixmaps/tea/
 share/pixmaps/tea/tea_icon_v2.png

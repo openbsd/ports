@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/15 00:06:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/15 14:22:16 landry Exp $
 
 COMMENT=	powerful and simple GTK editor
 
-DISTNAME=	tea-17.6.0
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	teagtk-17.6.5
 CATEGORIES=	editors x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tea-editor/}
 EXTRACT_SUFX=	.tar.bz2
@@ -12,7 +11,7 @@ HOMEPAGE=	http://tea-editor.sf.net/
 
 MAINTAINER=	Giovanni Bechis <g.bechis@snb.it>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

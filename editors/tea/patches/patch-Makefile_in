@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/01/23 17:02:30 okan Exp $
---- Makefile.in.orig	Sat Oct 27 15:11:04 2007
-+++ Makefile.in	Sat Oct 27 15:15:47 2007
-@@ -629,7 +629,7 @@ uninstall-am: uninstall-local
+$OpenBSD: patch-Makefile_in,v 1.2 2008/07/15 14:22:16 landry Exp $
+--- Makefile.in.orig	Thu Jun 26 11:13:59 2008
++++ Makefile.in	Fri Jul  4 11:50:54 2008
+@@ -634,7 +634,7 @@ uninstall-am: uninstall-local
  
  @DEB_TRUE@install-data-local:
  @DEB_TRUE@	@$(NORMAL_INSTALL)
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/01/23 17:02:30 okan Exp $
  @DEB_FALSE@@FINK_TRUE@install-data-local:
  @DEB_FALSE@@FINK_TRUE@	@$(NORMAL_INSTALL)
  @DEB_FALSE@@FINK_TRUE@	$(mkinstalldirs) $(DESTDIR)$(pkgdocdir); \
-@@ -650,19 +650,19 @@ uninstall-am: uninstall-local
+@@ -655,19 +655,19 @@ uninstall-am: uninstall-local
  @DEB_FALSE@@FINK_TRUE@	fi 
  @DEB_FALSE@@FINK_FALSE@install-data-local:
  @DEB_FALSE@@FINK_FALSE@	@$(NORMAL_INSTALL)
