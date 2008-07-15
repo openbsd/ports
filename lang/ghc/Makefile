@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/16 20:05:12 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2008/07/15 20:08:39 naddy Exp $
 # 
 # Ancient versions based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
@@ -49,7 +49,7 @@ DOC_DIR=		${PREFIX}/share/doc/ghc
 # tested with is 6.2.2.
 BUILD_DEPENDS+=		:ghc->=6.2.2:lang/ghc
 .else
-HCFILES=		ghc-${MODGHC_VER}-${ARCH}-unknown-openbsd-hc.tar.bz2:1
+HCFILES=		${HCFILES-${MACHINE_ARCH}}
 CONFIGURE_ARGS=		--enable-hc-boot
 .endif
 
@@ -80,8 +80,10 @@ DISTFILES=		ghc-${MODGHC_VER}-src.tar.bz2 \
 # already running GHC. For more information, see:
 # http://hackage.haskell.org/trac/ghc/wiki/Building/Porting
 
-SUPDISTFILES=		ghc-${MODGHC_VER}-i386-unknown-openbsd-hc.tar.bz2:1 \
-			ghc-${MODGHC_VER}-amd64-unknown-openbsd-hc.tar.bz2:1
+.for m in amd64 i386
+HCFILES-$m=		ghc-${MODGHC_VER}-$m-unknown-openbsd-hc.tar.bz2:1
+SUPDISTFILES+=		${HCFILES-$m}
+.endfor
 
 SUBST_VARS=		MODGHC_VER
 
