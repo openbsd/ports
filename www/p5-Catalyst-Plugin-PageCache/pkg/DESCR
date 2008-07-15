@@ -1,0 +1,8 @@
+Using the PageCache plugin, you can cache the full output of different
+pages so they are served to your visitors as fast as possible.  This
+method of caching is very useful for withstanding huge amounts of
+request in a short time.
+
+This plugin requires that you also load a Cache plugin.  Please
+reference the documentation for this module when choosing a cache
+backend.

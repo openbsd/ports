@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/15 16:34:12 simon Exp $
+${P5SITE}/Catalyst/Plugin/
+${P5SITE}/Catalyst/Plugin/PageCache.pm
+@man man/man3p/Catalyst::Plugin::PageCache.3p
