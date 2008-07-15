@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/01/13 13:37:33 mbalmer Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/07/15 18:25:53 brad Exp $
 @pkgpath ${BASE_PKGPATH}
 bin/ldapadd
-bin/ldapcompare
-bin/ldapdelete
-bin/ldapmodify
-bin/ldapmodrdn
-bin/ldappasswd
-bin/ldapsearch
-bin/ldapwhoami
+@bin bin/ldapcompare
+@bin bin/ldapdelete
+@bin bin/ldapmodify
+@bin bin/ldapmodrdn
+@bin bin/ldappasswd
+@bin bin/ldapsearch
+@bin bin/ldapwhoami
 include/lber.h
 include/lber_types.h
 include/ldap.h

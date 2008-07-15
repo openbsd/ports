@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-server,v 1.16 2008/02/13 09:45:54 landry Exp $
+@comment $OpenBSD: PLIST-server,v 1.17 2008/07/15 18:25:53 brad Exp $
 @conflict openldap-client->=2.3.11,<=2.3.11p3
 @newgroup _openldap:544
 @newuser _openldap:544:_openldap:daemon:OpenLDAP Account:/nonexistent:/sbin/nologin
-libexec/slapd
-libexec/slurpd
+@bin libexec/slapd
+@bin libexec/slurpd
 @man man/man5/slapd-bdb.5
 @man man/man5/slapd-dnssrv.5
 @man man/man5/slapd-hdb.5
