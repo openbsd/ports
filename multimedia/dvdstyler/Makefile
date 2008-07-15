@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/01 08:21:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2008/07/15 11:15:30 jakemsr Exp $
 
 COMMENT=		DVD authoring application
 
 DISTNAME=		DVDStyler-1.6.2
-PKGNAME=		${DISTNAME:L}p0
+PKGNAME=		${DISTNAME:L}p2
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.dvdstyler.de/
@@ -20,7 +20,7 @@ MODULES=		devel/gettext
 
 WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
-		audiofile avcodec avformat avutil bonobo-2 bonobo-activation \
+		audiofile bonobo-2 bonobo-activation \
 		bonoboui-2 c cairo esd expat fontconfig freetype gailutil \
 		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 \
 		gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 \
@@ -34,7 +34,8 @@ BUILD_DEPENDS=		::multimedia/dvdauthor \
 			::sysutils/dvd+rw-tools
 LIB_DEPENDS=		exif::graphics/libexif \
 			gnomeui-2::x11/gnome/libgnomeui \
-			wxsvg::x11/wxSVG
+			wxsvg::x11/wxSVG \
+			avcodec.>=12,avformat.>=12,avutil.>=6,swscale.>=1::graphics/ffmpeg
 RUN_DEPENDS=		::devel/desktop-file-utils \
 			::multimedia/dvdauthor \
                         ::multimedia/mjpegtools \

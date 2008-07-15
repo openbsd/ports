@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/17 17:18:48 jasper Exp $
-bin/dvdstyler
+@comment $OpenBSD: PLIST,v 1.2 2008/07/15 11:15:30 jakemsr Exp $
+@bin bin/dvdstyler
 share/applications/dvdstyler.desktop
 share/doc/dvdstyler/
 share/doc/dvdstyler/README
