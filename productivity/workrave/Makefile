@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/03 14:56:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/15 08:39:50 bernd Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
 DISTNAME=		workrave-1.8.5
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.workrave.org/welcome/
@@ -41,10 +41,11 @@ USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
+CFLAGS+=		-DNDEBUG
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/workrave/sound/events

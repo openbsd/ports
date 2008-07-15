@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/11/12 22:05:41 jasper Exp $
-bin/workrave
+@comment $OpenBSD: PLIST,v 1.3 2008/07/15 08:39:50 bernd Exp $
+@bin bin/workrave
 lib/bonobo/
 lib/bonobo/servers/
 lib/bonobo/servers/Workrave-Applet.server
 lib/bonobo/servers/Workrave-Control.server
-libexec/workrave-applet
+@bin libexec/workrave-applet
 share/examples/workrave/
 @sample ${SYSCONFDIR}/gnome/
 share/examples/workrave/sound/
@@ -24,8 +24,6 @@ share/locale/de/LC_MESSAGES/workrave.mo
 share/locale/el/LC_MESSAGES/workrave.mo
 share/locale/eo/LC_MESSAGES/workrave.mo
 share/locale/es/LC_MESSAGES/workrave.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/workrave.mo
 share/locale/fr/LC_MESSAGES/workrave.mo
 share/locale/he/LC_MESSAGES/workrave.mo
