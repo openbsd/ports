@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_codec_ffmpeg_Makefile_in,v 1.1 2008/07/09 02:17:12 jakemsr Exp $
---- modules/codec/ffmpeg/Makefile.in.orig	Sun Jun 22 15:01:34 2008
-+++ modules/codec/ffmpeg/Makefile.in	Sun Jun 22 15:04:50 2008
+$OpenBSD: patch-modules_codec_ffmpeg_Makefile_in,v 1.2 2008/07/15 16:19:15 brad Exp $
+--- modules/codec/ffmpeg/Makefile.in.orig	Tue Jul  8 17:35:49 2008
++++ modules/codec/ffmpeg/Makefile.in	Sun Jul 13 03:38:04 2008
 @@ -70,7 +70,7 @@ am__objects_1 =
  am__objects_2 = libffmpeg_a-ffmpeg.$(OBJEXT) \
  	libffmpeg_a-video.$(OBJEXT) libffmpeg_a-audio.$(OBJEXT) \
@@ -68,7 +68,7 @@ $OpenBSD: patch-modules_codec_ffmpeg_Makefile_in,v 1.1 2008/07/09 02:17:12 jakem
  	libffmpegaltivec_plugin_la-encoder.lo \
  	libffmpegaltivec_plugin_la-postprocess.lo \
  	libffmpegaltivec_plugin_la-demux.lo \
-@@ -492,7 +487,6 @@ SOURCES_ffmpeg = \
+@@ -494,7 +489,6 @@ SOURCES_ffmpeg = \
  	video.c \
  	audio.c \
  	video_filter.c \
@@ -76,7 +76,7 @@ $OpenBSD: patch-modules_codec_ffmpeg_Makefile_in,v 1.1 2008/07/09 02:17:12 jakem
  	encoder.c \
  	postprocess.c \
  	demux.c \
-@@ -505,7 +499,6 @@ SOURCES_ffmpegaltivec = \
+@@ -507,7 +501,6 @@ SOURCES_ffmpegaltivec = \
  	video.c \
  	audio.c \
  	video_filter.c \
@@ -84,7 +84,7 @@ $OpenBSD: patch-modules_codec_ffmpeg_Makefile_in,v 1.1 2008/07/09 02:17:12 jakem
  	encoder.c \
  	postprocess.c \
  	demux.c \
-@@ -661,7 +654,6 @@ distclean-compile:
+@@ -663,7 +656,6 @@ distclean-compile:
  	-rm -f *.tab.c
  
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_a-audio.Po@am__quote@
@@ -92,7 +92,7 @@ $OpenBSD: patch-modules_codec_ffmpeg_Makefile_in,v 1.1 2008/07/09 02:17:12 jakem
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_a-demux.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_a-encoder.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_a-ffmpeg.Po@am__quote@
-@@ -670,7 +662,6 @@ distclean-compile:
+@@ -672,7 +664,6 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_a-video.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_a-video_filter.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_builtin_la-audio.Plo@am__quote@
@@ -100,7 +100,7 @@ $OpenBSD: patch-modules_codec_ffmpeg_Makefile_in,v 1.1 2008/07/09 02:17:12 jakem
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_builtin_la-demux.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_builtin_la-encoder.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_builtin_la-ffmpeg.Plo@am__quote@
-@@ -679,7 +670,6 @@ distclean-compile:
+@@ -681,7 +672,6 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_builtin_la-video.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_builtin_la-video_filter.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_plugin_a-audio.Po@am__quote@
@@ -108,7 +108,7 @@ $OpenBSD: patch-modules_codec_ffmpeg_Makefile_in,v 1.1 2008/07/09 02:17:12 jakem
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_plugin_a-demux.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_plugin_a-encoder.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_plugin_a-ffmpeg.Po@am__quote@
-@@ -688,7 +678,6 @@ distclean-compile:
+@@ -690,7 +680,6 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_plugin_a-video.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_plugin_a-video_filter.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_plugin_la-audio.Plo@am__quote@
@@ -116,7 +116,7 @@ $OpenBSD: patch-modules_codec_ffmpeg_Makefile_in,v 1.1 2008/07/09 02:17:12 jakem
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_plugin_la-demux.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_plugin_la-encoder.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_plugin_la-ffmpeg.Plo@am__quote@
-@@ -697,7 +686,6 @@ distclean-compile:
+@@ -699,7 +688,6 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_plugin_la-video.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpeg_plugin_la-video_filter.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_a-audio.Po@am__quote@
@@ -124,7 +124,7 @@ $OpenBSD: patch-modules_codec_ffmpeg_Makefile_in,v 1.1 2008/07/09 02:17:12 jakem
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_a-demux.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_a-encoder.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_a-ffmpeg.Po@am__quote@
-@@ -706,7 +694,6 @@ distclean-compile:
+@@ -708,7 +696,6 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_a-video.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_a-video_filter.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_builtin_la-audio.Plo@am__quote@
@@ -132,7 +132,7 @@ $OpenBSD: patch-modules_codec_ffmpeg_Makefile_in,v 1.1 2008/07/09 02:17:12 jakem
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_builtin_la-demux.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_builtin_la-encoder.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_builtin_la-ffmpeg.Plo@am__quote@
-@@ -715,7 +702,6 @@ distclean-compile:
+@@ -717,7 +704,6 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_builtin_la-video.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_builtin_la-video_filter.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_plugin_a-audio.Po@am__quote@
@@ -140,7 +140,7 @@ $OpenBSD: patch-modules_codec_ffmpeg_Makefile_in,v 1.1 2008/07/09 02:17:12 jakem
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_plugin_a-demux.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_plugin_a-encoder.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_plugin_a-ffmpeg.Po@am__quote@
-@@ -724,7 +710,6 @@ distclean-compile:
+@@ -726,7 +712,6 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_plugin_a-video.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_plugin_a-video_filter.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libffmpegaltivec_plugin_la-audio.Plo@am__quote@
