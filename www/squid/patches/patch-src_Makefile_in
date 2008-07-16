@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.14 2007/09/10 17:49:23 merdely Exp $
---- src/Makefile.in.orig	Wed Sep  5 17:57:25 2007
-+++ src/Makefile.in	Wed Sep  5 21:01:07 2007
-@@ -224,7 +224,7 @@ CPP = @CPP@
+$OpenBSD: patch-src_Makefile_in,v 1.15 2008/07/16 21:18:28 brad Exp $
+--- src/Makefile.in.orig	Wed Jan  2 20:16:40 2008
++++ src/Makefile.in	Sun Jun 29 03:10:24 2008
+@@ -241,7 +241,7 @@ CPP = @CPP@
  CPPFLAGS = @CPPFLAGS@
  CRYPTLIB = @CRYPTLIB@
  CYGPATH_W = @CYGPATH_W@
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.14 2007/09/10 17:49:23 merdely Exp $
  DEPDIR = @DEPDIR@
  DIGEST_AUTH_HELPERS = @DIGEST_AUTH_HELPERS@
  ECHO_C = @ECHO_C@
-@@ -382,7 +382,7 @@ program_transform_name = @program_transform_name@
+@@ -397,7 +397,7 @@ program_transform_name = @program_transform_name@
  psdir = @psdir@
  sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.14 2007/09/10 17:49:23 merdely Exp $
  target_alias = @target_alias@
  @USE_DNSSERVER_FALSE@DNSSOURCE = dns_internal.c
  @USE_DNSSERVER_TRUE@DNSSOURCE = dns.c
-@@ -622,8 +622,8 @@ EXTRA_DIST = \
+@@ -650,8 +650,8 @@ EXTRA_DIST = \
  DEFAULT_HTTP_PORT = @CACHE_HTTP_PORT@
  DEFAULT_ICP_PORT = @CACHE_ICP_PORT@
  DEFAULT_PREFIX = $(prefix)
@@ -30,7 +30,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.14 2007/09/10 17:49:23 merdely Exp $
  DEFAULT_DNSSERVER = $(libexecdir)/`echo dnsserver | sed '$(transform);s/$$/$(EXEEXT)/'`
  DEFAULT_LOG_PREFIX = $(localstatedir)/logs
  DEFAULT_CACHE_LOG = $(DEFAULT_LOG_PREFIX)/cache.log
-@@ -884,37 +884,37 @@ distclean-compile:
+@@ -926,37 +926,37 @@ distclean-compile:
  uninstall-info-am:
  install-dataDATA: $(data_DATA)
  	@$(NORMAL_INSTALL)
@@ -78,7 +78,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.14 2007/09/10 17:49:23 merdely Exp $
  	done
  
  # This directory's subdirectories are mostly independent; you can cd
-@@ -1097,7 +1097,7 @@ check: $(BUILT_SOURCES)
+@@ -1139,7 +1139,7 @@ check: $(BUILT_SOURCES)
  all-am: Makefile $(PROGRAMS) $(DATA)
  installdirs: installdirs-recursive
  installdirs-am:
@@ -87,7 +87,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.14 2007/09/10 17:49:23 merdely Exp $
  	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
  	done
  install: $(BUILT_SOURCES)
-@@ -1236,7 +1236,7 @@ cf.data: cf.data.pre Makefile
+@@ -1278,7 +1278,7 @@ cf.data: cf.data.pre Makefile
  	sed "\
  	s%@DEFAULT_HTTP_PORT@%$(DEFAULT_HTTP_PORT)%g;\
  	s%@DEFAULT_ICP_PORT@%$(DEFAULT_ICP_PORT)%g;\

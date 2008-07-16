@@ -1,25 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.28 2008/05/31 10:07:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2008/07/16 21:18:28 brad Exp $
 @pkgpath www/squid,transparent
 @pkgpath www/squid,snmp,transparent
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 bin/RunCache
-bin/squidclient
-libexec/cachemgr.cgi
-libexec/digest_pw_auth
-libexec/diskd-daemon
-libexec/ip_user_check
-libexec/ncsa_auth
-libexec/squid_kerb_auth
-libexec/squid_unix_group
-libexec/unlinkd
-libexec/yp_auth
+@bin bin/squidclient
+@bin libexec/cachemgr.cgi
+@bin libexec/digest_pw_auth
+@bin libexec/diskd-daemon
+@bin libexec/ip_user_check
+@bin libexec/logfile-daemon
+@bin libexec/ncsa_auth
+@bin libexec/squid_kerb_auth
+@bin libexec/squid_unix_group
+@bin libexec/unlinkd
+@bin libexec/yp_auth
 @man man/man8/cachemgr.cgi.8
 @man man/man8/ncsa_auth.8
 @man man/man8/squid.8
 @man man/man8/squid_unix_group.8
 %%ldap%%
-sbin/squid
+@bin sbin/squid
 share/examples/squid/
 @sample ${SYSCONFDIR}/squid/
 share/examples/squid/errors/

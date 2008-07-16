@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.ldap,v 1.1 2008/05/31 10:07:45 jasper Exp $
-libexec/digest_ldap_auth
-libexec/squid_ldap_auth
-libexec/squid_ldap_group
+@comment $OpenBSD: PFRAG.ldap,v 1.2 2008/07/16 21:18:28 brad Exp $
+@bin libexec/digest_ldap_auth
+@bin libexec/squid_ldap_auth
+@bin libexec/squid_ldap_group
 @man man/man8/squid_ldap_auth.8
 @man man/man8/squid_ldap_group.8
