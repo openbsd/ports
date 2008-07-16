@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.341 2008/07/11 13:11:21 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.342 2008/07/16 16:17:00 merdely Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -25,6 +25,7 @@
      SUBDIR += bbpager
      SUBDIR += bclock
      SUBDIR += belt
+     SUBDIR += bgs
      SUBDIR += blackbox
      SUBDIR += blast
      SUBDIR += bricons
