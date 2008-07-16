@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_example_conf_in,v 1.1 2008/07/16 20:34:10 jakob Exp $
+--- doc/example.conf.in.orig	Mon Jun  9 16:59:29 2008
++++ doc/example.conf.in	Wed Jul 16 20:36:51 2008
+@@ -165,9 +165,9 @@ server:
+ 	# chroot: "@UNBOUND_CHROOT_DIR@"
+ 
+ 	# if given, user privileges are dropped (after binding port),
+-	# and the given username is assumed. Default is user "unbound".
++	# and the given username is assumed. Default is user "_unbound".
+ 	# If you give "" no privileges are dropped.
+-	# username: "unbound"
++	# username: "_unbound"
+ 
+ 	# the working directory. The relative files in this config are 
+ 	# relative to this directory. If you give "" the working directory
