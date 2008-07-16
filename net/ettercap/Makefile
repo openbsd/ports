@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2008/06/12 21:58:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2008/07/16 20:15:48 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,13 +6,13 @@ COMMENT=	multi-purpose sniffer/interceptor/logger
 
 VER=		0.7.3
 DISTNAME=	ettercap-NG-${VER}
-PKGNAME=	ettercap-${VER}p0
+PKGNAME=	ettercap-${VER}p1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 
 HOMEPAGE=	http://ettercap.sourceforge.net/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

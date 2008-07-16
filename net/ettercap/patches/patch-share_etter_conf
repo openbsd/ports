@@ -1,6 +1,6 @@
-$OpenBSD: patch-share_etter_conf,v 1.1 2008/04/23 20:49:46 okan Exp $
---- share/etter.conf.orig	Mon Mar 24 18:19:12 2008
-+++ share/etter.conf	Mon Mar 24 18:19:28 2008
+$OpenBSD: patch-share_etter_conf,v 1.2 2008/07/16 20:15:48 brad Exp $
+--- share/etter.conf.orig	Tue Oct 12 11:28:38 2004
++++ share/etter.conf	Wed Jul 16 15:49:45 2008
 @@ -14,8 +14,8 @@
  ############################################################################
  
@@ -12,3 +12,12 @@ $OpenBSD: patch-share_etter_conf,v 1.1 2008/04/23 20:49:46 okan Exp $
  
  [mitm]
  arp_storm_delay = 10          # milliseconds
+@@ -67,7 +67,7 @@ ftp = 21                   # tcp    21
+ ssh = 22                   # tcp    22
+ telnet = 23                # tcp    23
+ smtp = 25                  # tcp    25
+-dns = 53                   # udp    53
++#dns = 53                   # udp    53
+ dhcp = 67                  # udp    68
+ http = 80                  # tcp    80
+ ospf = 89                  # ip     89  (IPPROTO 0x59)

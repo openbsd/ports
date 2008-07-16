@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/04/23 20:49:46 okan Exp $
-bin/ettercap
-bin/etterfilter
-bin/etterlog
+@comment $OpenBSD: PLIST,v 1.16 2008/07/16 20:15:48 brad Exp $
+@bin bin/ettercap
+@bin bin/etterfilter
+@bin bin/etterlog
 lib/ettercap/
 @comment lib/ettercap/ec_arp_cop.la
 lib/ettercap/ec_arp_cop.so
