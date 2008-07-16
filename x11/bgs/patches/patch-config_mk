@@ -1,0 +1,45 @@
+$OpenBSD: patch-config_mk,v 1.1.1.1 2008/07/16 16:16:14 merdely Exp $
+--- config.mk.orig	Mon Jul 14 11:57:28 2008
++++ config.mk	Wed Jul 16 10:56:32 2008
+@@ -4,31 +4,28 @@ VERSION = 0.4
+ # Customize below to fit your system
+ 
+ # paths
+-PREFIX = /usr/local
+-MANPREFIX = ${PREFIX}/share/man
++#PREFIX = /usr/local
++MANPREFIX = ${PREFIX}/man
+ 
+-X11INC = /usr/X11R6/include
+-X11LIB = /usr/X11R6/lib
++X11INC = ${X11BASE}/include
++X11LIB = ${X11BASE}/lib
+ 
+-IMLIB2INC = /usr/include/imlib2
+-IMLIB2LIB = /usr/lib/imlib2/
+-
+ # Xinerama, comment if you don't want it
+ XINERAMALIBS = -L${X11LIB} -lXinerama
+ XINERAMAFLAGS = -DXINERAMA
+ 
+ # includes and libs
+-INCS = -I. -I/usr/include -I${X11INC} -I ${IMLIB2INC}
+-LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS} -L ${IMLIB2LIB} -lImlib2
++INCS = -I${X11INC} -I${LOCALBASE}/include
++LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} -L${LOCALBASE}/lib -lImlib2
+ 
+ # flags
+-CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+-CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
+-LDFLAGS = -s ${LIBS}
++CPPFLAGS += -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
++CFLAGS += ${INCS} ${CPPFLAGS}
++LDFLAGS += -s ${LIBS}
+ 
+ # Solaris
+ #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
+ #LDFLAGS = ${LIBS}
+ 
+ # compiler and linker
+-CC = cc
++CC ?= cc
