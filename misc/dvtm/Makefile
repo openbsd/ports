@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/09 20:47:16 okan Exp $
+# $OpenBSD: Makefile,v 1.4 2008/07/16 17:45:23 okan Exp $
 
 COMMENT=		tiling window management for the console
 
 DISTNAME=		dvtm-0.4.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.brain-dump.org/projects/dvtm/
