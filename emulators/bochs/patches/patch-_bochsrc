@@ -1,6 +1,6 @@
-$OpenBSD: patch-_bochsrc,v 1.2 2008/04/10 03:39:54 fgsch Exp $
---- .bochsrc.orig	Sat Sep 15 12:00:17 2007
-+++ .bochsrc	Tue Sep 18 04:15:27 2007
+$OpenBSD: patch-_bochsrc,v 1.3 2008/07/16 20:31:33 brad Exp $
+--- .bochsrc.orig	Fri May 30 17:00:05 2008
++++ .bochsrc	Wed Jul 16 15:01:44 2008
 @@ -197,13 +197,13 @@ vga: extension=vbe
  # such as a: or b: as the path.  The parameter 'image' works with image files
  # only. In that case the size must match one of the supported types.
@@ -17,6 +17,15 @@ $OpenBSD: patch-_bochsrc,v 1.2 2008/04/10 03:39:54 fgsch Exp $
  
  #=======================================================================
  # FLOPPYB:
+@@ -334,7 +334,7 @@ boot: disk
+ # 
+ # Default value are sync=none, time0=local
+ #=======================================================================
+-#clock: sync=none, time0=local
++clock: sync=realtime, time0=local
+ 
+ 
+ #=======================================================================
 @@ -358,8 +358,8 @@ floppy_bootsig_check: disabled=0
  #   log: ./bochs.out
  #   log: /dev/tty

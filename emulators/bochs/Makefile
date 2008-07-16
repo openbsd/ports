@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.42 2008/04/10 03:39:54 fgsch Exp $
+# $OpenBSD: Makefile,v 1.43 2008/07/16 20:31:33 brad Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	x86 machine simulator
 
-DISTNAME=	bochs-2.3.6
+DISTNAME=	bochs-2.3.7
 CATEGORIES=	emulators
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
 
 HOMEPAGE=	http://bochs.sourceforge.net/
 
-# LGPL
+# LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -39,7 +39,6 @@ CONFIGURE_ARGS+= --enable-debugger \
 		 --enable-port-e9-hack \
 		 --enable-readline
 WANTLIB+=	curses readline
-CFLAGS+=	-DMAGIC_BREAKPOINT
 .endif
 
 .if ${FLAVOR:L:Mno_x11}

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/04/10 03:39:54 fgsch Exp $
-bin/bochs
-bin/bxcommit
-bin/bximage
+@comment $OpenBSD: PLIST,v 1.18 2008/07/16 20:31:33 brad Exp $
+@bin bin/bochs
+@bin bin/bxcommit
+@bin bin/bximage
 @man man/man1/bochs-dlx.1
 @man man/man1/bochs.1
 @man man/man1/bxcommit.1
