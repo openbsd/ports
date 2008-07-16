@@ -1,0 +1,55 @@
+$OpenBSD: patch-cmuwmraster_c,v 1.1 2008/07/16 14:38:32 naddy Exp $
+--- cmuwmraster.c.orig	Wed Jul 16 16:22:59 2008
++++ cmuwmraster.c	Wed Jul 16 16:23:21 2008
+@@ -22,9 +22,9 @@ struct cmuwm_header *headerp;
+ {
+     printf("%s is a %ldx%ld %ld plane CMU WM raster\n",
+ 	   name,
+-	   memToVal(headerp->width, sizeof(long)),
+-	   memToVal(headerp->height, sizeof(long)),
+-	   memToVal(headerp->depth, sizeof(short)));
++	   memToVal(headerp->width, 4),
++	   memToVal(headerp->height, 4),
++	   memToVal(headerp->depth, 2));
+ }
+ 
+ int cmuwmIdent(fullname, name)
+@@ -48,7 +48,7 @@ char *fullname, *name;
+ 	  break;
+ 
+       case sizeof(struct cmuwm_header):
+-	if (memToVal(header.magic, sizeof(long)) != CMUWM_MAGIC)
++	if (memToVal(header.magic, 4) != CMUWM_MAGIC)
+ 	  {
+ 	      r = 0;
+ 	      break;
+@@ -91,7 +91,7 @@ unsigned int verbose;
+ 	  exit(1);
+ 
+       case sizeof(struct cmuwm_header):
+-	  if (memToVal(header.magic, sizeof(long)) != CMUWM_MAGIC)
++	  if (memToVal(header.magic, 4) != CMUWM_MAGIC)
+ 	    {
+ 		zclose(zf);
+ 		return(NULL);
+@@ -104,16 +104,16 @@ unsigned int verbose;
+ 	  return(NULL);
+       }
+ 
+-    if (memToVal(header.depth, sizeof(short)) != 1)
++    if (memToVal(header.depth, 2) != 1)
+       {
+ 	  fprintf(stderr,"CMU WM raster %s is of depth %d, must be 1",
+ 		  name,
+-		  (int) header.depth);
++		  memToVal(header.depth, 2));
+ 	  return(NULL);
+       }
+ 
+-    image = newBitImage(width = memToVal(header.width, sizeof(long)),
+-			height = memToVal(header.height, sizeof(long)));
++    image = newBitImage(width = memToVal(header.width, 4),
++			height = memToVal(header.height, 4));
+ 
+     linelen = (width / 8) + (width % 8 ? 1 : 0);
+     lineptr = image->data;

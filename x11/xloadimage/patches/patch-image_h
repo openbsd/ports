@@ -1,0 +1,21 @@
+$OpenBSD: patch-image_h,v 1.1 2008/07/16 14:38:32 naddy Exp $
+--- image.h.orig	Wed Jul 16 16:22:59 2008
++++ image.h	Wed Jul 16 16:23:21 2008
+@@ -163,7 +163,7 @@ typedef struct {
+     ((LEN) == 2 ? ((unsigned long) \
+ 		   (*(byte *)(PTR) << 8) | \
+ 		   (*((byte *)(PTR) + 1))) : \
+-     ((unsigned long)((*(byte *)(PTR) << 24) | \
++     (((unsigned long)(*(byte *)(PTR) << 24) | \
+ 		      (*((byte *)(PTR) + 1) << 16) | \
+ 		      (*((byte *)(PTR) + 2) << 8) | \
+ 		      (*((byte *)(PTR) + 3)))))))
+@@ -176,7 +176,7 @@ typedef struct {
+ 		  (*((byte *)(PTR) + 2) << 16)) : \
+     ((LEN) == 2 ? ((unsigned long) \
+ 		   (*(byte *)(PTR)) | (*((byte *)(PTR) + 1) << 8)) : \
+-     ((unsigned long)((*(byte *)(PTR)) | \
++     (((unsigned long)(*(byte *)(PTR)) | \
+ 		      (*((byte *)(PTR) + 1) << 8) | \
+ 		      (*((byte *)(PTR) + 2) << 16) | \
+ 		      (*((byte *)(PTR) + 3) << 24))))))
