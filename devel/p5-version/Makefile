@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2007/10/29 15:34:50 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2008/07/16 21:15:59 dhill Exp $
 
 SHARED_ONLY=	Yes
 
 MODULES=	cpan
 COMMENT=	perl extension for version objects
-DISTNAME=	version-0.74
+DISTNAME=	version-0.7501
 CATEGORIES=	devel
 CONFIGURE_STYLE=modbuild
 
