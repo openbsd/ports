@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.531 2008/07/15 08:57:17 robert Exp $
+# $OpenBSD: Makefile,v 1.532 2008/07/17 04:34:14 jdixon Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -93,6 +93,7 @@
      SUBDIR += gopher
      SUBDIR += gotthard
      SUBDIR += gtk-gnutella
+     SUBDIR += haproxy
      SUBDIR += honeyd
      SUBDIR += howl
      SUBDIR += hping
