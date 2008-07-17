@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.216 2008/06/10 06:44:52 landry Exp $
+# $OpenBSD: Makefile,v 1.217 2008/07/17 16:30:32 simon Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -145,6 +145,7 @@
      SUBDIR += p5-Mail-Box
      SUBDIR += p5-Mail-DKIM
      SUBDIR += p5-Mail-IMAPClient
+     SUBDIR += p5-Mail-IMAPTalk
      SUBDIR += p5-Mail-Mbox-MessageParser
      SUBDIR += p5-Mail-POP3Client
      SUBDIR += p5-Mail-SPF-Query
