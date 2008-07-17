@@ -1,0 +1,9 @@
+A sample config file for HAProxy has been installed in
+${HAPROXYCONF}, edit it to your site's needs.
+
+To start, add the following to /etc/rc.local:
+
+if [ -x ${PREFIX}/sbin/haproxy ]; then
+	${PREFIX}/sbin/haproxy -f ${HAPROXYCONF}/haproxy.cfg
+	echo -n ' haproxy'
+fi

@@ -1,0 +1,6 @@
+HAProxy is a high-performance and highly-robust TCP/HTTP load balancer which
+provides cookie-based persistence, automatic failover, header insertion,
+deletion, modification on the fly, advanced logging contents to help trouble-
+shoot buggy applications and/or networks, and a few other features. It uses
+its own state machine to achieve up to ten thousands hits per second on modern
+hardware, even with thousands of simultaneous connections.
