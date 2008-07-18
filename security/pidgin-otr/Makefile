@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/06/03 06:59:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/07/18 13:22:01 dhill Exp $
 
 COMMENT=	allows deniable private conversations using Pidgin
 
-DISTNAME=	pidgin-otr-3.1.0
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	pidgin-otr-3.2.0
+PKGNAME=	${DISTNAME}
 CATEGORIES=	security net
 
 HOMEPAGE=	http://www.cypherpunks.ca/otr/
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:pidgin->=2.0.0:net/pidgin
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	otr.>=3.1:libotr->=3.1.0:security/libotr
+LIB_DEPENDS=	otr.>=3.2:libotr->=3.2.0:security/libotr
 
 MODULES=	devel/gettext \
 		textproc/intltool
