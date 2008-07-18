@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.35 2008/03/24 17:26:12 simon Exp $
+@comment $OpenBSD: PLIST-docs,v 1.36 2008/07/18 06:57:30 brad Exp $
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/FAQ
 share/doc/postgresql/FAQ_DEV
@@ -553,6 +553,8 @@ share/doc/postgresql/html/release-7-4-17.html
 share/doc/postgresql/html/release-7-4-18.html
 share/doc/postgresql/html/release-7-4-19.html
 share/doc/postgresql/html/release-7-4-2.html
+share/doc/postgresql/html/release-7-4-20.html
+share/doc/postgresql/html/release-7-4-21.html
 share/doc/postgresql/html/release-7-4-3.html
 share/doc/postgresql/html/release-7-4-4.html
 share/doc/postgresql/html/release-7-4-5.html
@@ -568,6 +570,8 @@ share/doc/postgresql/html/release-8-0-12.html
 share/doc/postgresql/html/release-8-0-13.html
 share/doc/postgresql/html/release-8-0-14.html
 share/doc/postgresql/html/release-8-0-15.html
+share/doc/postgresql/html/release-8-0-16.html
+share/doc/postgresql/html/release-8-0-17.html
 share/doc/postgresql/html/release-8-0-2.html
 share/doc/postgresql/html/release-8-0-3.html
 share/doc/postgresql/html/release-8-0-4.html
@@ -580,6 +584,8 @@ share/doc/postgresql/html/release-8-0.html
 share/doc/postgresql/html/release-8-1-1.html
 share/doc/postgresql/html/release-8-1-10.html
 share/doc/postgresql/html/release-8-1-11.html
+share/doc/postgresql/html/release-8-1-12.html
+share/doc/postgresql/html/release-8-1-13.html
 share/doc/postgresql/html/release-8-1-2.html
 share/doc/postgresql/html/release-8-1-3.html
 share/doc/postgresql/html/release-8-1-4.html
@@ -596,8 +602,12 @@ share/doc/postgresql/html/release-8-2-4.html
 share/doc/postgresql/html/release-8-2-5.html
 share/doc/postgresql/html/release-8-2-6.html
 share/doc/postgresql/html/release-8-2-7.html
+share/doc/postgresql/html/release-8-2-8.html
+share/doc/postgresql/html/release-8-2-9.html
 share/doc/postgresql/html/release-8-2.html
 share/doc/postgresql/html/release-8-3-1.html
+share/doc/postgresql/html/release-8-3-2.html
+share/doc/postgresql/html/release-8-3-3.html
 share/doc/postgresql/html/release-8-3.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/resources.html

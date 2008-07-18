@@ -1,23 +1,23 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2008/03/24 17:26:12 simon Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2008/07/18 06:57:30 brad Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
 @pkgpath databases/postgresql
-bin/clusterdb
-bin/createdb
-bin/createlang
-bin/createuser
-bin/dropdb
-bin/droplang
-bin/dropuser
-bin/ecpg
-bin/pg_config
-bin/pg_dump
-bin/pg_dumpall
-bin/pg_restore
-bin/psql
-bin/reindexdb
-bin/vacuumdb
+@bin bin/clusterdb
+@bin bin/createdb
+@bin bin/createlang
+@bin bin/createuser
+@bin bin/dropdb
+@bin bin/droplang
+@bin bin/dropuser
+@bin bin/ecpg
+@bin bin/pg_config
+@bin bin/pg_dump
+@bin bin/pg_dumpall
+@bin bin/pg_restore
+@bin bin/psql
+@bin bin/reindexdb
+@bin bin/vacuumdb
 include/postgresql/
 include/postgresql/ecpg_config.h
 include/postgresql/ecpg_informix.h
@@ -83,7 +83,7 @@ lib/postgresql/pgxs/src/makefiles/pgxs.mk
 lib/postgresql/pgxs/src/nls-global.mk
 lib/postgresql/pgxs/src/test/
 lib/postgresql/pgxs/src/test/regress/
-lib/postgresql/pgxs/src/test/regress/pg_regress
+@bin lib/postgresql/pgxs/src/test/regress/pg_regress
 @man man/man1/clusterdb.1
 @man man/man1/createdb.1
 @man man/man1/createlang.1
@@ -308,6 +308,7 @@ share/postgresql/timezone/America/Argentina/La_Rioja
 share/postgresql/timezone/America/Argentina/Mendoza
 share/postgresql/timezone/America/Argentina/Rio_Gallegos
 share/postgresql/timezone/America/Argentina/San_Juan
+share/postgresql/timezone/America/Argentina/San_Luis
 share/postgresql/timezone/America/Argentina/Tucuman
 share/postgresql/timezone/America/Argentina/Ushuaia
 share/postgresql/timezone/America/Aruba
@@ -490,6 +491,7 @@ share/postgresql/timezone/Asia/Dubai
 share/postgresql/timezone/Asia/Dushanbe
 share/postgresql/timezone/Asia/Gaza
 share/postgresql/timezone/Asia/Harbin
+share/postgresql/timezone/Asia/Ho_Chi_Minh
 share/postgresql/timezone/Asia/Hong_Kong
 share/postgresql/timezone/Asia/Hovd
 share/postgresql/timezone/Asia/Irkutsk
@@ -502,6 +504,7 @@ share/postgresql/timezone/Asia/Kamchatka
 share/postgresql/timezone/Asia/Karachi
 share/postgresql/timezone/Asia/Kashgar
 share/postgresql/timezone/Asia/Katmandu
+share/postgresql/timezone/Asia/Kolkata
 share/postgresql/timezone/Asia/Krasnoyarsk
 share/postgresql/timezone/Asia/Kuala_Lumpur
 share/postgresql/timezone/Asia/Kuching
