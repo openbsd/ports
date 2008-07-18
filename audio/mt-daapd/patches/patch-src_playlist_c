@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_playlist_c,v 1.1 2008/07/18 14:29:42 naddy Exp $
+--- src/playlist.c.orig	Sat Apr 19 15:31:30 2008
++++ src/playlist.c	Fri Jul  4 10:18:03 2008
+@@ -352,7 +352,7 @@ int pl_eval_node(MP3FILE *pmp3, PL_NODE *pnode) {
+ 	    retval = not ? r_arg : !r_arg;
+ 	    break;
+ 	case INCLUDES:
+-	    r_arg=(int)strcasestr(cval,pnode->arg2.cval);
++	    r_arg=!!strcasestr(cval,pnode->arg2.cval);
+ 	    retval = not ? !r_arg : r_arg;
+ 	    break;
+ 	}
