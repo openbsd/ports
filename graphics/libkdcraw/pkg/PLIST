@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/12 14:52:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/07/18 22:03:11 espie Exp $
 include/libkdcraw/
 include/libkdcraw/dcrawbinary.h
 include/libkdcraw/dcrawinfocontainer.h
@@ -10,9 +10,9 @@ include/libkdcraw/rawfiles.h
 include/libkdcraw/version.h
 lib/libkdcraw.la
 @lib lib/libkdcraw.so.${LIBkdcraw_VERSION}
-lib/libkdcraw2/
-lib/libkdcraw2/CAMERALIST
-lib/libkdcraw2/kdcraw
+lib/libkdcraw3/
+lib/libkdcraw3/CAMERALIST
+@bin lib/libkdcraw3/kdcraw
 lib/pkgconfig/libkdcraw.pc
 share/icons/hicolor/128x128/apps/kdcraw.png
 share/icons/hicolor/32x32/apps/kdcraw.png
@@ -27,6 +27,7 @@ share/locale/et/LC_MESSAGES/libkdcraw.mo
 share/locale/is/LC_MESSAGES/libkdcraw.mo
 share/locale/it/LC_MESSAGES/libkdcraw.mo
 share/locale/ja/LC_MESSAGES/libkdcraw.mo
+share/locale/ms/LC_MESSAGES/libkdcraw.mo
 share/locale/nds/
 share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/libkdcraw.mo
