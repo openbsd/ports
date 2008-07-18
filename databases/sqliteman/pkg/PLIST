@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/15 22:37:36 ajacoutot Exp $
-bin/sqliteman
-share/applications/
+@comment $OpenBSD: PLIST,v 1.3 2008/07/18 16:41:09 espie Exp $
+@bin bin/sqliteman
 share/applications/sqliteman.desktop
 share/icons/
 share/icons/sqliteman.png
@@ -45,6 +44,10 @@ share/sqliteman/icons/table.png
 share/sqliteman/icons/trigger.png
 share/sqliteman/icons/view.png
 share/sqliteman/sqliteman_cs.qm
+share/sqliteman/sqliteman_de.qm
+share/sqliteman/sqliteman_en.qm
+share/sqliteman/sqliteman_it.qm
 share/sqliteman/sqliteman_pl.qm
+share/sqliteman/sqliteman_ru.qm
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
