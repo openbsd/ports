@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2008/05/26 10:28:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2008/07/18 12:06:42 jasper Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
-GNOME_VERSION=		0.14.2
-PKGNAME=		${DISTNAME}p4
+GNOME_VERSION=		0.14.3
 CATEGORIES=		x11
 
 SHARED_LIBS +=  planner-1            0.0      # .0.0
 
 HOMEPAGE=		http://live.gnome.org/Planner
 
-# LGPL
+# LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -48,7 +47,8 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/planner \
 			--disable-schemas-install \
 			--disable-update-mimedb \
-			--enable-python
+			--enable-python \
+			--enable-eds=no
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
