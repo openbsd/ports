@@ -1,0 +1,31 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+--- configure.in.orig	Thu Sep 25 16:20:19 2003
++++ configure.in	Tue Jul  8 16:19:15 2008
+@@ -14,9 +14,9 @@ AC_PREFIX_DEFAULT(/usr/local/rtg)
+ 
+ dnl Define auxiliary libraries
+ CGI_LIB_DIR=cgilib-0.4
+-GD_LIB_DIR=gd-1.8.4
+-PNG_LIB_DIR=libpng-1.2.1
+-ZLIB_LIB_DIR=zlib-1.1.4
++GD_LIB_DIR=$LOCALBASE
++PNG_LIB_DIR=$LOCALBASE
++ZLIB_LIB_DIR=/usr
+ 
+ dnl Compilation Setup
+ AC_ARG_WITH(mysql,
+@@ -221,6 +221,14 @@ if test "$OLD_UCD_SNMP" = "yes"; then
+        AC_MSG_ERROR(Cannot find UCD-SNMP libraries(snmp)))
+ fi
+ dnl ****************** End SNMP checking ***********************
++
++AC_CHECK_LIB(gd, gdImageDestroy,
++       [ LIBS="`$LOCALBASE/bin/gdlib-config --ldflags` `$LOCALBASE/bin/gdlib-config --libs` -lgd $LIBS" ],
++       AC_MSG_ERROR(Cannot find GD))
++
++AC_CHECK_LIB(png, png_free,
++       [ LIBS="`$LOCALBASE/bin/libpng-config --ldflags` $LIBS"],
++       AC_MSG_ERROR(Cannot find libpng))
+ 
+ 
+ AC_OUTPUT(Makefile                         \

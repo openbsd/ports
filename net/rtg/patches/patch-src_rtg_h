@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_rtg_h,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+--- src/rtg.h.orig	Thu Sep 25 17:56:04 2003
++++ src/rtg.h	Thu Nov 24 11:58:31 2005
+@@ -26,8 +26,8 @@
+ /* Define CONFIG_PATHS places to search for the rtg.conf file.  Note
+    that RTG_HOME, as determined during autoconf is one path */
+ #define CONFIG_PATHS 3
+-#define CONFIG_PATH_1 ""
+-#define CONFIG_PATH_2 "/etc/"
++#define CONFIG_PATH_1 "/etc/rtg/"
++#define CONFIG_PATH_2 ""
+ 
+ /* Defaults */
+ #define DEFAULT_CONF_FILE "rtg.conf"
+@@ -37,6 +37,7 @@
+ #define DEFAULT_LOWSKEWSLOP .5
+ #define DEFAULT_OUT_OF_RANGE 93750000000ull
+ #define DEFAULT_DB_HOST "localhost"
++#define DEFAULT_DB_PORT 3306
+ #define DEFAULT_DB_DB "rtg"
+ #define DEFAULT_DB_USER "snmp"
+ #define DEFAULT_DB_PASS "rtgdefault"
+@@ -78,6 +79,7 @@ typedef struct config_struct {
+     unsigned int interval;
+     unsigned long long out_of_range;
+     char dbhost[80];
++    unsigned int dbport;
+     char dbdb[80];
+     char dbuser[80];
+     char dbpass[80];

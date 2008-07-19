@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+bin/95.pl
+bin/report.pl
+@bin bin/rtgplot
+@bin bin/rtgpoll
+bin/rtgtargmkr.pl
+include/common.h
+include/rtg.h
+include/rtgplot.h
+@man man/man1/rtgplot.1
+@man man/man1/rtgpoll.1
+@sample ${SYSCONFDIR}/rtg/
+share/examples/rtg/
+share/examples/rtg/etc/
+share/examples/rtg/etc/BER.pm
+@sample ${SYSCONFDIR}/rtg/BER.pm
+share/examples/rtg/etc/SNMP_Session.pm
+@sample ${SYSCONFDIR}/rtg/SNMP_Session.pm
+share/examples/rtg/etc/SNMP_util.pm
+@sample ${SYSCONFDIR}/rtg/SNMP_util.pm
+share/examples/rtg/etc/createdb
+@sample ${SYSCONFDIR}/rtg/createdb
+share/examples/rtg/etc/routers
+@sample ${SYSCONFDIR}/rtg/routers
+share/examples/rtg/etc/rtg.conf
+@sample ${SYSCONFDIR}/rtg/rtg.conf
+share/examples/rtg/web/
+share/examples/rtg/web/95.php
+share/examples/rtg/web/common.php
+share/examples/rtg/web/rtg.php
+share/examples/rtg/web/rtg.png
+share/examples/rtg/web/rtgback.png
+share/examples/rtg/web/view.php

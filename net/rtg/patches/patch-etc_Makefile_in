@@ -1,0 +1,45 @@
+$OpenBSD: patch-etc_Makefile_in,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+--- etc/Makefile.in.orig	Thu Oct  2 17:59:32 2003
++++ etc/Makefile.in	Fri Jul  1 13:33:11 2005
+@@ -84,13 +84,14 @@ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+ top_builddir = ..
+-etcdir = /etc
+-webdir = /web
+-reportsdir = /bin
++etcdir = ${PREFIX}/share/examples/rtg/etc
++webdir = ${PREFIX}/share/examples/rtg/web
++reportsdir = ${PREFIX}/bin
+ 
+-ETC = rtg.conf rtgtargmkr.pl routers createdb BER.pm \
+-               SNMP_Session.pm SNMP_util.pm
++BIN = rtgtargmkr.pl
+ 
++ETC = rtg.conf routers createdb BER.pm SNMP_Session.pm SNMP_util.pm
++
+ WEB = rtg.php 95.php view.php common.php rtg.png rtgback.png
+ REPORTS = report.pl 95.pl
+ 
+@@ -220,14 +221,15 @@ uninstall-am: uninstall-info-am
+ all:
+ 
+ install: installdirs
+-	@for i in $(ETC) ; do $(INSTALL) $(srcdir)/$$i $(prefix)$(etcdir) ; echo "install: installed $$i in $(prefix)$(etcdir)" ; done
+-	@for i in $(WEB) ; do $(INSTALL) $(srcdir)/$$i $(prefix)$(webdir) ; echo "install: installed $$i in $(prefix)$(webdir)" ; done
+-	@for i in $(REPORTS) ; do $(INSTALL) $(srcdir)/$$i $(prefix)$(reportsdir) ; echo "install: installed $$i in $(prefix)$(reportsdir)" ; done
++	@for i in $(BIN) ; do $(INSTALL_SCRIPT) $(srcdir)/$$i $(reportsdir) ; echo "install: installed $$i in $(reportsdir)" ; done
++	@for i in $(ETC) ; do $(INSTALL) $(srcdir)/$$i $(etcdir) ; echo "install: installed $$i in $(etcdir)" ; done
++	@for i in $(WEB) ; do $(INSTALL) $(srcdir)/$$i $(webdir) ; echo "install: installed $$i in $(webdir)" ; done
++	@for i in $(REPORTS) ; do $(INSTALL) $(srcdir)/$$i $(reportsdir) ; echo "install: installed $$i in $(reportsdir)" ; done
+ 
+ installdirs:
+-	$(mkinstalldirs) $(prefix)$(etcdir)
+-	$(mkinstalldirs) $(prefix)$(webdir)
+-	$(mkinstalldirs) $(prefix)$(reportsdir)
++	$(mkinstalldirs) $(etcdir)
++	$(mkinstalldirs) $(webdir)
++	$(mkinstalldirs) $(reportsdir)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

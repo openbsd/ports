@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_rtgplot_c,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+--- src/rtgplot.c.orig	Thu Oct  2 16:27:52 2003
++++ src/rtgplot.c	Mon Jul  7 13:42:39 2008
+@@ -785,7 +785,7 @@ void plot_scale(gdImagePtr *img, graph_t *graph) {
+ 	int             i;
+ 	int             last_day = 0;
+ 	int             last_month = 0;
+-	long            seconds;
++	time_t		seconds;
+ 	float           rate = 0.0;
+ 	float           plot_rate = 0.0;
+ 	int             days = 0;
+@@ -800,7 +800,7 @@ void plot_scale(gdImagePtr *img, graph_t *graph) {
+ 	if (days < 1) {
+ 		/* Draw X-axis time labels */
+ 		for (i = 0; i <= graph->image.xplot_area; i += (graph->image.xplot_area / XTICKS)) {
+-			seconds = (long)i *(1 / pixels_per_sec);
++			seconds = (time_t)i *(1 / pixels_per_sec);
+ 			seconds += graph->xoffset;
+ 			thetime = localtime(&seconds);
+ 			snprintf(string, sizeof(string), "%d:%02d", thetime->tm_hour, thetime->tm_min);
+@@ -813,7 +813,7 @@ void plot_scale(gdImagePtr *img, graph_t *graph) {
+ 	if (skip <= 0)
+ 		skip = 1;
+ 	for (i = 0; i <= graph->image.xplot_area; i += skip) {
+-		seconds = (long)i *(1 / pixels_per_sec);
++		seconds = (time_t)i *(1 / pixels_per_sec);
+ 		seconds += graph->xoffset;
+ 		thetime = localtime(&seconds);
+ 		if (thetime->tm_mon != last_month) {

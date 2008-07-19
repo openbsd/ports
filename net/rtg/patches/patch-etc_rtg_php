@@ -1,0 +1,18 @@
+$OpenBSD: patch-etc_rtg_php,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+--- etc/rtg.php.orig	Wed Sep 24 22:42:03 2003
++++ etc/rtg.php	Thu Nov 24 12:05:41 2005
+@@ -4,12 +4,12 @@
+   print "<HTML>\n<!-- RTG Version $VERSION -->\n<HEAD>\n";
+ 
+   /* Connect to RTG MySQL Database */
+-  $dbc=@mysql_connect ($host, $user, $pass) or
++  $dbc=@mysql_connect ("$host:$port", $user, $pass) or
+   $dbc=@mysql_connect ("$host:/var/lib/mysql/mysql.sock", $user, $pass) or 
+      die ("MySQL Connection Failed, Check Configuration.");
+   mysql_select_db($db,$dbc);
+ 
+- if ($PHP_SELF == "") {
++ if (!$PHP_SELF) {
+    $PHP_SELF = "rtg.php";
+    $errors = $_GET['errors'];
+    $scalex = $_GET['scalex'];

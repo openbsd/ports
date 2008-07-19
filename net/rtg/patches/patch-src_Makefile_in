@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+--- src/Makefile.in.orig	Thu Oct  2 16:59:33 2003
++++ src/Makefile.in	Tue Jul  8 15:40:17 2008
+@@ -77,15 +77,17 @@ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+ CGI_LIB_DIR = $(top_srcdir)/@CGI_LIB_DIR@
+-GD_LIB_DIR = $(top_srcdir)/@GD_LIB_DIR@
+-PNG_LIB_DIR = $(top_srcdir)/@PNG_LIB_DIR@
+-ZLIB_LIB_DIR = $(top_srcdir)/@ZLIB_LIB_DIR@
+-INCLUDES = -I$(CGI_LIB_DIR) -I$(GD_LIB_DIR) -I$(PNG_LIB_DIR) -I$(ZLIB_LIB_DIR)
++GD_LIB_DIR = @GD_LIB_DIR@
++PNG_LIB_DIR = @PNG_LIB_DIR@
++ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
++INCLUDES = -I$(CGI_LIB_DIR) -I$(GD_LIB_DIR)/include -I$(PNG_LIB_DIR)/include/libpng -I$(ZLIB_LIB_DIR)/include
+ 
+-RTG_LIBS = $(CGI_LIB_DIR)/libcgi.a $(GD_LIB_DIR)/libgd.a \
+-           $(PNG_LIB_DIR)/libpng.a $(ZLIB_LIB_DIR)/libzlib.a
++RTG_LIBS = $(CGI_LIB_DIR)/libcgi.a
++# $(GD_LIB_DIR)/lib/libgd.a $(PNG_LIB_DIR)/lib/libpng.a
+ 
++#           $(PNG_LIB_DIR)/lib/libpng.a $(ZLIB_LIB_DIR)/lib/libz.a
+ 
++
+ rtgpoll_SOURCES = rtgsnmp.c rtgmysql.c rtgpoll.c rtgutil.c rtghash.c
+ rtgplot_SOURCES = rtgplot.c rtgmysql.c rtgutil.c 
+ 
+@@ -104,8 +106,7 @@ PROGRAMS = $(bin_PROGRAMS)
+ am_rtgplot_OBJECTS = rtgplot.$(OBJEXT) rtgmysql.$(OBJEXT) \
+ 	rtgutil.$(OBJEXT)
+ rtgplot_OBJECTS = $(am_rtgplot_OBJECTS)
+-rtgplot_DEPENDENCIES = $(CGI_LIB_DIR)/libcgi.a $(GD_LIB_DIR)/libgd.a \
+-	$(PNG_LIB_DIR)/libpng.a $(ZLIB_LIB_DIR)/libzlib.a
++rtgplot_DEPENDENCIES = $(CGI_LIB_DIR)/libcgi.a
+ rtgplot_LDFLAGS =
+ am_rtgpoll_OBJECTS = rtgsnmp.$(OBJEXT) rtgmysql.$(OBJEXT) \
+ 	rtgpoll.$(OBJEXT) rtgutil.$(OBJEXT) rtghash.$(OBJEXT)

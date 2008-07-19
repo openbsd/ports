@@ -1,0 +1,11 @@
+$OpenBSD: patch-etc_rtg_conf,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+--- etc/rtg.conf.orig	Tue Nov 22 18:05:14 2005
++++ etc/rtg.conf	Tue Nov 22 18:06:16 2005
+@@ -8,6 +8,7 @@ OutOfRange	93750000000
+ SNMP_Ver	1
+ SNMP_Port       161
+ DB_Host	localhost
++DB_Port	3306
+ DB_Database	rtg
+ DB_User	snmp
+ DB_Pass	rtgdefault

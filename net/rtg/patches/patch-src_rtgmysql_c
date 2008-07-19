@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_rtgmysql_c,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+--- src/rtgmysql.c.orig	Wed May 21 21:20:38 2003
++++ src/rtgmysql.c	Mon Jul  7 13:42:39 2008
+@@ -26,10 +26,10 @@ int db_insert(char *query, MYSQL * mysql)
+ int rtg_dbconnect(char *database, MYSQL * mysql)
+ {
+     if (set.verbose >= LOW)
+-	fprintf(dfp, "Connecting to MySQL database '%s' on '%s'...", database, set.dbhost);
++	fprintf(dfp, "Connecting to MySQL database '%s' on '%s' port '%d'...", database, set.dbhost, set.dbport);
+     mysql_init(mysql);
+     if (!mysql_real_connect
+-     (mysql, set.dbhost, set.dbuser, set.dbpass, database, 0, NULL, 0)) {
++     (mysql, set.dbhost, set.dbuser, set.dbpass, database, set.dbport, NULL, 0)) {
+ 	fprintf(dfp, "** Failed: %s\n", mysql_error(mysql));
+ 	return (-1);
+     } else

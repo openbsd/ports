@@ -1,0 +1,30 @@
+$OpenBSD: patch-etc_common_php_in,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+--- etc/common.php.in.orig	Fri Sep 26 17:52:29 2003
++++ etc/common.php.in	Thu Nov 24 11:53:32 2005
+@@ -2,16 +2,15 @@
+  /* Begin with reasonable defaults */
+  $VERSION = "@VERSION@";
+  $host="localhost";
++ $port="3306";
+  $user="snmp";
+  $pass="rtgdefault";
+  $db="rtg";
+  $refresh=300;
+  
+  /* Default locations to find RTG configuration file */
++ $configs[] = '/etc/rtg/rtg.conf';
+  $configs[] = 'rtg.conf';
+- $configs[] = '@RTG_HOME@/etc/rtg.conf';
+- $configs[] = '/usr/local/rtg/etc/rtg.conf';
+- $configs[] = '/etc/rtg.conf';
+ 
+  while ($conf = each($configs)) {
+    $fp = @fopen($conf['value'], "r");
+@@ -21,6 +20,7 @@
+        if (!feof($fp) && $line[0] != '#' && $line[0] != ' ' && $line[0] != '\n') {
+          $cVals = preg_split("/[\s]+/", $line, 2);
+          if (!strcasecmp($cVals[0], "DB_Host")) $host = chop($cVals[1]);
++         else if (!strcasecmp($cVals[0], "DB_Port")) $port = chop($cVals[1]);
+          else if (!strcasecmp($cVals[0], "DB_User")) $user = chop($cVals[1]);
+          else if (!strcasecmp($cVals[0], "DB_Pass")) $pass = chop($cVals[1]);
+          else if (!strcasecmp($cVals[0], "DB_Database")) $db = chop($cVals[1]);

@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+--- Makefile.in.orig	Thu Oct  2 16:59:32 2003
++++ Makefile.in	Tue Jul  8 15:19:31 2008
+@@ -80,7 +80,8 @@ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-SUBDIRS = cgilib-0.4 zlib-1.1.4 libpng-1.2.1 gd-1.8.4 src etc contrib
++#SUBDIRS = cgilib-0.4 zlib-1.1.4 libpng-1.2.1 gd-1.8.4 src etc
++SUBDIRS = cgilib-0.4 src etc
+ 
+ man_MANS = man/rtgplot.1 man/rtgpoll.1
+ EXTRA_DIST = COPYRIGHT FAQ $(man_MANS)

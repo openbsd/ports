@@ -1,0 +1,47 @@
+$OpenBSD: patch-etc_rtgtargmkr_pl_in,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+--- etc/rtgtargmkr.pl.in.orig	Fri Sep 26 17:56:02 2003
++++ etc/rtgtargmkr.pl.in	Thu Nov 24 12:49:56 2005
+@@ -85,6 +85,8 @@ foreach $conf (@configs) {
+       @cVals = split /\s+/, $line;
+       if ($cVals[0] =~ /DB_Host/) {
+         $db_host=$cVals[1];
++      } elsif ($cVals[0] =~ /DB_Port/) {
++        $db_port=$cVals[1];
+       } elsif ($cVals[0] =~ /DB_User/) {
+         $db_user=$cVals[1];
+       } elsif ($cVals[0] =~ /DB_Pass/) {
+@@ -162,9 +164,9 @@ sub find_interface_id {
+         $iid = $row[0];
+         if ( $row[1] ne $desc ) {
+             print "Interface description changed.\n";
+-            print "Was: \"$row[1]\"\n";
+-            print "Now: \"$desc\"\n";
+-            print "Suggest: UPDATE interface SET description='$desc' WHERE id=$iid\n";
++	    print "\"$row[1]\" -> \"$desc\", updating.\n";
++	    $sql = "UPDATE interface SET description='$desc' WHERE id=$iid";
++	    &sql_insert($sql);
+         }
+     }
+     $sth->finish;
+@@ -274,9 +276,10 @@ sub main {
+ 
+     # SQL Database Handle
+     if ( !$DBOFF ) {
+-       $dbh = DBI->connect("DBI:mysql:$db_db:host=$db_host",$db_user,$db_pass);
++       $dbh = DBI->connect("DBI:mysql:$db_db:$db_host:$db_port",$db_user,
++           $db_pass);
+        if (!$dbh) {
+-          print "Could not connect to database ($db_db) on $db_host.\n";
++          print "Could not connect to database ($db_db) on $db_host:$db_port.\n";
+           print "Check configuration.\n";
+           exit(-1);
+        }
+@@ -296,7 +299,7 @@ sub main {
+         if ( $bits == 64 ) { %mibs_of_interest = %mibs_of_interest_64 }
+         else { %mibs_of_interest = %mibs_of_interest_32 }
+ 
+-        print "Poking $router ($communities{$router}) ($bits bit)...\n" if $INFO;
++        print "Poking $router ($bits bit)...\n" if $INFO;
+         if ( !$DBOFF ) {
+             $rid = &find_router_id($router);
+         }
