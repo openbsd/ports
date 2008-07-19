@@ -1,0 +1,7 @@
+Module::Signature adds cryptographic authentications to CPAN
+distributions, via the special SIGNATURE file.
+
+You should add the module signature keys to your public keyring:
+gpg --import ${PREFIX}/share/p5-Module-Signature/*.pub
+
+Use cpansign -v to verify a module's signature before you build it.
