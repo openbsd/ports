@@ -1,0 +1,21 @@
+$OpenBSD: patch-doc_man_snownews_1_in,v 1.3 2008/07/20 17:09:26 martynas Exp $
+--- doc/man/snownews.1.in.orig	Sun Feb 17 14:43:57 2008
++++ doc/man/snownews.1.in	Sun Jul 20 18:09:54 2008
+@@ -186,14 +186,14 @@ variable "http_proxy". Snownews expects this variable 
+ .P
+ .B Automatic update checking
+ .P
+-Once a week the program will automatically check for a new version when it exits.
++Once a week the program can automatically check for a new version when it exits.
+ It will request a file named "version" from my webserver and compare
+ the returned value with the local program version. If they differ it
+ notifies the user of a new version. It is done on exit to be least
+ annoying I hope. This way you can easily ignore it if you don't want
+ to upgrade for some reason or can't, because you're using a package
+-that came with your distribution, etc. To disable this check, put the value
+--1 into the file ~/.snownews/updatecheck. Snownews will
++that came with your distribution, etc. To enable this check, create
++an empty file ~/.snownews/updatecheck. Snownews will
+ not transfer anything to my server. It will just download a file
+ containing the version number and compare it locally.
+ .P

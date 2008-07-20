@@ -1,0 +1,14 @@
+$OpenBSD: patch-updatecheck_c,v 1.1 2008/07/20 17:09:26 martynas Exp $
+--- updatecheck.c.orig	Sun Feb 17 14:43:58 2008
++++ updatecheck.c	Sun Jul 20 18:09:09 2008
+@@ -54,9 +54,7 @@ void AutoVersionCheck (void) {
+ 	snprintf (file, sizeof(file), "%s/.snownews/updatecheck", getenv("HOME"));
+ 	lastupdated = fopen (file, "r+");
+ 	if (lastupdated == NULL) {
+-		lastupdated = fopen (file, "w+");
+-		fputs (timestring, lastupdated);
+-		fclose (lastupdated);
++		return;
+ 	} else {
+ 		fgets (oldtimestring, sizeof(oldtimestring), lastupdated);
+ 		oldtime = atoi(oldtimestring);
