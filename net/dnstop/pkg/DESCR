@@ -1,0 +1,23 @@
+dnstop is a libpcap application (a la tcpdump) that displays
+various tables of DNS traffic on your network. Currently dnstop
+displays tables of:
+
+    * Source IP addresses
+    * Destination IP addresses
+    * Query types
+    * Response codes
+    * Opcodes
+    * Top level domains
+    * Second level domains
+    * Third level domains
+    * etc...
+
+dnstop supports both IPv4 and IPv6 addresses.
+
+To help find especially undesirable DNS queries, dnstop provides a
+number of filters. The filters tell dnstop to display only the following
+types of queries:
+
+    * For unknown/invalid TLDs
+    * A queries where the query name is already an IP address
+    * PTR queries for RFC1918 address space

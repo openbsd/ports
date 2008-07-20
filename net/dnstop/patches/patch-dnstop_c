@@ -1,0 +1,11 @@
+$OpenBSD: patch-dnstop_c,v 1.1.1.1 2008/07/20 09:40:13 sthen Exp $
+--- dnstop.c.orig	Sun Jul 20 00:07:10 2008
++++ dnstop.c	Sun Jul 20 00:07:11 2008
+@@ -45,6 +45,7 @@ static const char *Version = "20080502";
+ #include <netdb.h>
+ 
+ #ifdef HAVE_NET_IF_PPP_H
++#include <net/ppp_defs.h>
+ #include <net/if_ppp.h>
+ #define PPP_ADDRESS_VAL       0xff	/* The address byte value */
+ #define PPP_CONTROL_VAL       0x03	/* The control byte value */
