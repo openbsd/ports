@@ -1,4 +1,4 @@
-$OpenBSD: patch-browser_app_mozilla_in,v 1.8 2007/11/28 20:22:25 martynas Exp $
+$OpenBSD: patch-browser_app_mozilla_in,v 1.9 2008/07/20 09:49:00 claudio Exp $
 --- browser/app/mozilla.in.orig	Thu Nov  8 10:53:19 2007
 +++ browser/app/mozilla.in	Tue Nov 27 11:43:00 2007
 @@ -92,7 +92,13 @@ moz_pis_startstop_scripts()
@@ -11,7 +11,7 @@ $OpenBSD: patch-browser_app_mozilla_in,v 1.8 2007/11/28 20:22:25 martynas Exp $
 +fi
 +
  moz_libdir=%MOZAPPDIR%
-+MOZ_PLUGIN_PATH=_LOCALBASE_/lib/mozilla-plugins
++MOZ_PLUGIN_PATH=${MOZ_PLUGIN_PATH:=_LOCALBASE_/lib/mozilla-plugins}
  MRE_HOME=%MREDIR%
  
  # Use run-mozilla.sh in the current dir if it exists
