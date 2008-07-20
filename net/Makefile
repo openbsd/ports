@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.533 2008/07/19 13:55:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.534 2008/07/20 09:42:19 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -58,6 +58,7 @@
      SUBDIR += dlint
      SUBDIR += dnsmasq
      SUBDIR += dnsreflector
+     SUBDIR += dnstop
      SUBDIR += dnstracer
      SUBDIR += doc
      SUBDIR += dsocks
