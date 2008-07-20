@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2007/12/05 20:56:21 okan Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/07/20 22:26:00 okan Exp $
 @pkgpath mail/femail
 @pkgpath mail/femail,static
 @man man/man8/femail.8
-sbin/femail
+@bin sbin/femail

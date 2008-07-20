@@ -1,0 +1,5 @@
+By default, femail will use `localhost' for smtphost.  Make sure to
+review FAQ Section 10.16 discussing name resolution with httpd(8)'s
+default chroot(2).
+
+Additionally, one may create a custom femail.conf; see femail(8).
