@@ -1,5 +1,5 @@
 /*
- * $OpenBSD: param.i386_obsd.h,v 1.1 2007/09/24 19:36:49 todd Exp $
+ * $OpenBSD: param.i386_obsd.h,v 1.2 2008/07/21 03:13:01 todd Exp $
  * Jim Rees, University of Michigan CITI
  */
 
@@ -26,6 +26,11 @@
 #define AFS_OBSD36_ENV		1
 #define AFS_OBSD37_ENV		1
 #define AFS_OBSD38_ENV		1
+#define AFS_OBSD39_ENV		1
+#define AFS_OBSD40_ENV		1
+#define AFS_OBSD41_ENV		1
+#define AFS_OBSD42_ENV		1
+#define AFS_OBSD43_ENV		1
 #define AFS_NONFSTRANS		1
 #define AFS_VM_RDWR_ENV		1
 #define AFS_VFS_ENV		1

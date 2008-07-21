@@ -1,31 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/09/24 19:36:49 todd Exp $
-bin/afsmonitor
-bin/bos
-bin/cmdebug
-bin/compile_et
-bin/dlog
-bin/dpass
-bin/fs
-bin/klog
-bin/klog.krb
-bin/knfs
-bin/kpasswd
-bin/kpwvalid
-bin/livesys
-bin/pagsh
-bin/pagsh.krb
-bin/pts
-bin/rxgen
-bin/scout
-bin/sys
-bin/tokens
-bin/tokens.krb
-bin/translate_et
-bin/udebug
-bin/unlog
-bin/up
-bin/xstat_cm_test
-bin/xstat_fs_test
+@comment $OpenBSD: PLIST,v 1.3 2008/07/21 03:13:01 todd Exp $
+%%SHARED%%
+@bin bin/afsmonitor
+@bin bin/bos
+@bin bin/cmdebug
+@bin bin/compile_et
+@bin bin/dlog
+@bin bin/dpass
+@bin bin/fs
+@bin bin/klog
+@bin bin/klog.krb
+@bin bin/knfs
+@bin bin/kpasswd
+@bin bin/kpwvalid
+@bin bin/livesys
+@bin bin/pagsh
+@bin bin/pagsh.krb
+@bin bin/pts
+@bin bin/rxgen
+@bin bin/scout
+@bin bin/sys
+@bin bin/tokens
+@bin bin/tokens.krb
+@bin bin/translate_et
+@bin bin/udebug
+@bin bin/unlog
+@bin bin/up
+@bin bin/xstat_cm_test
+@bin bin/xstat_fs_test
 include/afs/
 include/afs/acl.h
 include/afs/afs.h
@@ -84,6 +85,7 @@ include/afs/kaport.h
 include/afs/kauth.h
 include/afs/kautils.h
 include/afs/keys.h
+include/afs/ktc.h
 include/afs/ktime.h
 include/afs/mit-sipb-cr.h
 include/afs/namei_ops.h
@@ -192,8 +194,7 @@ lib/afs/libxstat_cm.a
 lib/afs/libxstat_fs.a
 lib/afs/util.a
 lib/afs/vlib.a
-lib/libafsauthent.a
-lib/libafsrpc.a
+lib/libafssetpag.so.1
 lib/libdes.a
 lib/liblwp.a
 lib/librx.a
@@ -202,41 +203,45 @@ lib/librxstat.a
 lib/libubik.a
 lib/openafs/
 libexec/openafs/
-libexec/openafs/buserver
-libexec/openafs/fileserver
-libexec/openafs/kaserver
-libexec/openafs/ptserver
-libexec/openafs/salvager
-libexec/openafs/upclient
-libexec/openafs/upserver
-libexec/openafs/vlserver
-libexec/openafs/volserver
-sbin/afsd
-sbin/backup
-sbin/bos_util
-sbin/bosserver
-sbin/butc
-sbin/copyauth
-sbin/fms
-sbin/fstrace
-sbin/kadb_check
-sbin/kas
-sbin/kdb
-sbin/kdump/
-sbin/kdump/kdump-build
-sbin/kpwvalid
-sbin/kseal
+@bin libexec/openafs/buserver
+@bin libexec/openafs/fileserver
+@bin libexec/openafs/ka-forwarder
+@bin libexec/openafs/kaserver
+@bin libexec/openafs/ptserver
+@bin libexec/openafs/salvager
+@bin libexec/openafs/upclient
+@bin libexec/openafs/upserver
+@bin libexec/openafs/vlserver
+@bin libexec/openafs/volserver
+@bin sbin/afsd
+@bin sbin/backup
+@bin sbin/bos_util
+@bin sbin/bosserver
+@bin sbin/butc
+@bin sbin/copyauth
+@bin sbin/fms
+@bin sbin/fstrace
+@bin sbin/ka-forwarder
+@bin sbin/kadb_check
+@bin sbin/kas
+@bin sbin/kdb
+@comment sbin/kdump
+@bin sbin/kpwvalid
 sbin/openafs-setup
-sbin/prdb_check
-sbin/pt_util
-sbin/read_tape
-sbin/restorevol
-sbin/rmtsysd
-sbin/rxdebug
-sbin/uss
-sbin/vldb_check
-sbin/vldb_convert
-sbin/voldump
-sbin/volinfo
-sbin/vos
-sbin/vsys
+@bin sbin/prdb_check
+@bin sbin/pt_util
+@bin sbin/read_tape
+@bin sbin/restorevol
+@bin sbin/rmtsysd
+@bin sbin/rxdebug
+@bin sbin/uss
+@bin sbin/vldb_check
+@bin sbin/vldb_convert
+@bin sbin/voldump
+@bin sbin/volinfo
+@bin sbin/vos
+@bin sbin/vsys
+share/examples/openafs/
+share/examples/openafs/krb5.conf
+share/openafs/
+share/openafs/README.OpenBSD

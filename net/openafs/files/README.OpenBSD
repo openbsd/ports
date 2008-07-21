@@ -1,0 +1,123 @@
+Using OpenAFS in an OpenBSD environment
+
+Some knob twiddling you may find useful:
+
+  1. Increase the default maximum number of open files in /etc/login.conf
+     for daemon to at least a few thousand.
+
+        :openfiles-cur=infinity:\
+
+  2. If you increase #2 above 1772 then consider also updating
+     kern.maxfiles in /etc/sysctl.conf:
+
+	kern.maxfiles=102400            # increase maximum files
+
+  3. Setting up kerberos authentication for users is accomplished by modifying
+     /etc/login.conf's auth-defaults line:
+
+	auth-defaults:auth=krb5-or-pwd,passwd,skey:
+
+     Please note if you have a local password and wish to login using that
+     instead of kerberos, you'll need to use 'username:passwd' to login.
+
+To setup OpenAFS, you must first have a KerberosV realm setup.  Below
+are brief instructions to do so.  See 'info heimdal' for further details.
+
+Once the KerberosV realm is setup, run '%LOCALBASE%/sbin/openafs-setup'
+and follow the instructions there to setup OpenAFS.
+
+
+
+Quick Start Guide to KerberosV as needed by OpenAFS
+---------------------------------------------------
+
+For KerberosV setup, it is highly recommended to have some entries
+in the DNS domain that you will use that is the lowercase equivalent
+of your KerberosV realm name.  If, for example, you had the domain
+'example.com' you would have a realm of 'EXAMPLE.COM' and add the
+following to the 'example.com' zone file:
+
+  _kerberos._udp      SRV 0 0 88 kdc0
+  _kerberos._tcp      SRV 0 0 88 kdc0
+  _kpasswd._udp       SRV 0 0 464 kdc0
+  _kerberos-adm._tcp  SRV 0 0 749 kdc0
+  _kerberos           TXT "EXAMPLE.COM"
+
+Setting a default krb5.conf is useful on all AFS clients and servers.
+
+  cd /etc/kerberosV
+  REALM=EXAMPLE.COM
+  cell=example.com
+  host=kdc0
+  sed 's/%host%/'$host'/g;s/%cell%/'$cell'/g;s/%REALM%/'$REALM'/g' \
+	< %LOCALBASE%/share/examples/openafs/krb5.conf > krb5.conf
+
+Create the heimdal directory:
+
+  mkdir -p 700 /var/heimdal
+
+Initialize the basic key:
+
+  kstash --random-key
+
+Initialize the Kerberos realm:
+
+  kadmin -l
+   kadmin> init EXAMPLE.COM
+   Max ticket life [1 day]:unlimited
+   Max renewable life [1 week]:unlimited
+   Principal expiration time [never]:
+   Password expiration time [never]:
+   Attributes []:
+   todd@EXAMPLE.COM's Password: 
+   Verifying - todd@EXAMPLE.COM's Password: 
+   kadmin> add todd/admin
+   Max ticket life [1 day]:
+   Max renewable life [1 week]:
+   Principal expiration time [never]:
+   Password expiration time [never]:
+   Attributes []:
+   todd/admin@EXAMPLE.COM's Password: 
+   Verifying - todd/admin@EXAMPLE.COM's Password: 
+
+ .. do this last part per KerberosV client and server:
+  
+   kadmin> add --random-key host/kdc0.example.com
+   Max ticket life [1 day]:unlimited
+   Max renewable life [1 week]:unlimited
+   Principal expiration time [never]:
+   Password expiration time [never]:
+   Attributes []:
+   kadmin> ext host/kdc0.example.com
+   kadmin> quit
+
+On the server run:
+
+   /usr/libexec/kdc &
+
+Verify authentication works:
+
+  kinit todd
+  todd@EXAMPLE.COM's Password: 
+  klist
+   Credentials cache: FILE:/tmp/krb5cc_1000
+        Principal: todd@EXAMPLE.COM
+
+     Issued           Expires          Principal
+   Jul 20 22:10:41  Aug 30 22:10:41  krbtgt/EXAMPLE.COM@EXAMPLE.COM
+
+Permit network based kerberos administration:
+
+  /usr/libexec/kadmind &
+
+Setup the acl file:
+
+ Put the following into /var/heimdal/kadmind.acl:
+
+   todd/admin@EXAMPLE.COM	all
+
+Make sure things startup properly upon reboot:
+
+ Put the following into /etc/rc.conf.local:
+
+   krb5_master_kdc=YES

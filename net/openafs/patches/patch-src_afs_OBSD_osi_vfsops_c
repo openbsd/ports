@@ -1,0 +1,14 @@
+diff -u src/afs/OBSD/osi_vfsops.c.orig src/afs/OBSD/osi_vfsops.c
+--- src/afs/OBSD/osi_vfsops.c.orig	Fri Mar 11 00:50:43 2005
++++ src/afs/OBSD/osi_vfsops.c	Tue Apr 22 17:22:54 2008
+@@ -283,6 +283,10 @@ afs_unmount(afsp, flags, p)
+     afs_globalVp = NULL;
+ 
+     vflush(afsp, NULLVP, 0);	/* don't support forced */
++    if (!LIST_EMPTY(&afsp->mnt_vnodelist)) {
++	printf("warning: afs_unmount: vnode list is not empty\n");
++	LIST_INIT(&afsp->mnt_vnodelist);
++    }
+     afsp->mnt_data = NULL;
+     AFS_GLOCK();
+     afs_globalVFS = 0;
