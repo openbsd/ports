@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/31 06:34:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2008/07/21 07:53:03 bernd Exp $
 
 # mips64 architecture does not support trampoline code yet
 NOT_FOR_ARCHS=		mips64
@@ -6,7 +6,7 @@ NOT_FOR_ARCHS=		mips64
 COMMENT=		curses based frontend for mpd
 
 DISTNAME=		ncmpc-20070917
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio
 
 HOMEPAGE=		http://hem.bredband.net/kaw/ncmpc/
@@ -33,7 +33,7 @@ MASTER_SITES=		http://humppa.nl/distfiles/
 
 CONFIGURE_STYLE=	gnu
 AUTOMAKE_VERSION=	1.8
-AUTOCONF_VERSION=	2.59
+AUTOCONF_VERSION=	2.61
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -41,7 +41,7 @@ CFLAGS+=		-ftrampolines
 
 WRKDIST= 		${WRKDIR}/ncmpc
 
-post-patch:
+pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
