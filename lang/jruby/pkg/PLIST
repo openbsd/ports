@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/17 22:27:56 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/07/21 11:17:33 bernd Exp $
 bin/jgem
 bin/jirb
 bin/jirb_swing
@@ -11,8 +11,9 @@ bin/jspec
 lib/jruby/
 lib/jruby/bsf.jar
 lib/jruby/jruby.jar
+lib/jruby/profile-all.properties
+lib/jruby/profile-ruby.properties
 lib/jruby/profile.jar
-lib/jruby/profile.properties
 lib/jruby/ruby/
 lib/jruby/ruby/${RUBY_REV}/
 lib/jruby/ruby/${RUBY_REV}/.document
@@ -587,9 +588,6 @@ lib/jruby/ruby/${RUBY_REV}/xsd/xmlparser/xmlscanner.rb
 lib/jruby/ruby/gems/
 lib/jruby/ruby/gems/${RUBY_REV}/
 lib/jruby/ruby/gems/${RUBY_REV}/cache/
-lib/jruby/ruby/gems/${RUBY_REV}/cache/rake-0.8.1.gem
-lib/jruby/ruby/gems/${RUBY_REV}/cache/rspec-1.1.4.gem
-lib/jruby/ruby/gems/${RUBY_REV}/cache/sources-0.0.1.gem
 lib/jruby/ruby/gems/${RUBY_REV}/doc/
 lib/jruby/ruby/gems/${RUBY_REV}/doc/rake-0.8.1/
 lib/jruby/ruby/gems/${RUBY_REV}/doc/rake-0.8.1/rdoc/
@@ -2800,8 +2798,6 @@ lib/jruby/ruby/gems/${RUBY_REV}/gems/rspec-1.1.4/stories/resources/test/test_cas
 lib/jruby/ruby/gems/${RUBY_REV}/gems/sources-0.0.1/
 lib/jruby/ruby/gems/${RUBY_REV}/gems/sources-0.0.1/lib/
 lib/jruby/ruby/gems/${RUBY_REV}/gems/sources-0.0.1/lib/sources.rb
-lib/jruby/ruby/gems/${RUBY_REV}/latest_source_cache
-lib/jruby/ruby/gems/${RUBY_REV}/source_cache
 lib/jruby/ruby/gems/${RUBY_REV}/specifications/
 lib/jruby/ruby/gems/${RUBY_REV}/specifications/rake-0.8.1.gemspec
 lib/jruby/ruby/gems/${RUBY_REV}/specifications/rspec-1.1.4.gemspec
@@ -2878,6 +2874,7 @@ lib/jruby/ruby/site_ruby/${RUBY_REV}/jruby/openssl/builtin.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/jruby/openssl/gem.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/jruby/openssl/gem_only.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/jruby/openssl/stub.rb
+lib/jruby/ruby/site_ruby/${RUBY_REV}/jruby/vm.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rbconfig/
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rbconfig/datadir.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/
@@ -2908,13 +2905,16 @@ lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/commands/search_command.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/commands/server_command.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/commands/sources_command.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/commands/specification_command.rb
+lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/commands/stale_command.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/commands/uninstall_command.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/commands/unpack_command.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/commands/update_command.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/commands/which_command.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/config_file.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/custom_require.rb
+lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/defaults/
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/defaults.rb
+lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/defaults/jruby.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/dependency.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/dependency_installer.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/dependency_list.rb
@@ -2932,22 +2932,15 @@ lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/ext/configure_builder.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/ext/ext_conf_builder.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/ext/rake_builder.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/format.rb
-lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/gem_open_uri.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/gem_openssl.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/gem_path_searcher.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/gem_runner.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/indexer/
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/indexer.rb
-lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/indexer/abstract_index_builder.rb
-lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/indexer/latest_index_builder.rb
-lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/indexer/marshal_index_builder.rb
-lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/indexer/master_index_builder.rb
-lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/indexer/quick_index_builder.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/install_update_options.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/installer.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/local_remote_options.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/old_format.rb
-lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/open-uri.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/package/
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/package.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/package/f_sync_dir.rb
@@ -2968,7 +2961,9 @@ lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/server.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/source_index.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/source_info_cache.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/source_info_cache_entry.rb
+lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/spec_fetcher.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/specification.rb
+lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/test_utilities.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/timer.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/uninstaller.rb
 lib/jruby/ruby/site_ruby/${RUBY_REV}/rubygems/user_interaction.rb

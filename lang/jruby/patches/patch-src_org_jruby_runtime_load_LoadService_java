@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_org_jruby_runtime_load_LoadService_java,v 1.1.1.1 2008/06/17 22:27:56 bernd Exp $
+$OpenBSD: patch-src_org_jruby_runtime_load_LoadService_java,v 1.2 2008/07/21 11:17:33 bernd Exp $
 
 Add the JRUBY_LIBDIR to the library search path so we can run jruby from
 anywhere.
 
---- src/org/jruby/runtime/load/LoadService.java.orig	Wed May 28 01:24:20 2008
-+++ src/org/jruby/runtime/load/LoadService.java	Sat May 31 11:11:58 2008
-@@ -160,6 +160,15 @@ public class LoadService {
+--- src/org/jruby/runtime/load/LoadService.java.orig	Sat Jul 19 07:09:36 2008
++++ src/org/jruby/runtime/load/LoadService.java	Sun Jul 20 11:02:42 2008
+@@ -161,6 +161,15 @@ public class LoadService {
             }
         }
  

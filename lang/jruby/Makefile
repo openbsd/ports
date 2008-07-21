@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/10 23:31:40 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2008/07/21 11:17:33 bernd Exp $
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		1.1.2
+V =		1.1.3
 RUBY_REV =	1.8
 DISTNAME =	jruby-src-${V}
-PKGNAME =	jruby-${V}p0
+PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
 
 HOMEPAGE =	http://www.jruby.org/
@@ -38,7 +38,8 @@ SUBST_VARS =	JRUBY_LIBDIR RUBY_REV
 NO_REGRESS =	Yes
 
 pre-build:
-	@${SUBST_CMD} ${WRKSRC}/src/org/jruby/runtime/load/LoadService.java
+	@${SUBST_CMD} ${WRKSRC}/src/org/jruby/runtime/load/LoadService.java \
+		${WRKSRC}/src/org/jruby/libraries/RbConfigLibrary.java
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant
