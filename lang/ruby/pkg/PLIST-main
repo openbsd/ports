@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/03/29 12:05:27 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/07/21 09:40:42 bernd Exp $
 @pkgpath lang/ruby
 bin/erb
 bin/irb
 bin/rdoc
 bin/ri
-bin/ruby
+@bin bin/ruby
 bin/testrb
 lib/libruby-static.a
 lib/libruby.so
@@ -861,7 +861,6 @@ share/ri/${REV}/system/Bignum/to_s-i.yaml
 share/ri/${REV}/system/Binding/
 share/ri/${REV}/system/Binding/cdesc-Binding.yaml
 share/ri/${REV}/system/Binding/clone-i.yaml
-share/ri/${REV}/system/Binding/dup-i.yaml
 share/ri/${REV}/system/CGI/
 share/ri/${REV}/system/CGI/Cookie/
 share/ri/${REV}/system/CGI/Cookie/cdesc-Cookie.yaml
@@ -4124,7 +4123,6 @@ share/ri/${REV}/system/Proc/binding-i.yaml
 share/ri/${REV}/system/Proc/call-i.yaml
 share/ri/${REV}/system/Proc/cdesc-Proc.yaml
 share/ri/${REV}/system/Proc/clone-i.yaml
-share/ri/${REV}/system/Proc/dup-i.yaml
 share/ri/${REV}/system/Proc/new-c.yaml
 share/ri/${REV}/system/Proc/to_proc-i.yaml
 share/ri/${REV}/system/Proc/to_s-i.yaml
