@@ -1,0 +1,24 @@
+$OpenBSD: patch-root_c,v 1.1 2008/07/21 17:58:44 naddy Exp $
+--- root.c.orig	Mon Jul 21 19:47:22 2008
++++ root.c	Mon Jul 21 19:48:18 2008
+@@ -68,16 +68,16 @@ freePrevious(dpy, w)
+   Pixmap *pm;			
+   Atom	actual_type;		/* NOTUSED */
+   int	format;
+-  int	nitems;
+-  int	bytes_after;
++  long	nitems;
++  long	bytes_after;
+ 
+   /* intern the property name */
+   Atom atom = XInternAtom(dpy, RETAIN_PROP_NAME, 0);
+ 
+   /* look for existing resource allocation */
+   if ((XGetWindowProperty(dpy, w, atom, 0, 1, 1/*delete*/,
+-			  AnyPropertyType, &actual_type, &format, (unsigned long *)&nitems,
+-			  (unsigned long *)&bytes_after, (unsigned char **)&pm) == Success) &&
++			  AnyPropertyType, &actual_type, &format, &nitems,
++			  &bytes_after, (unsigned char **)&pm) == Success) &&
+       nitems == 1) {
+     if ((actual_type == XA_PIXMAP) && (format == 32) &&
+ 	(nitems == 1) && (bytes_after == 0)) {
