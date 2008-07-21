@@ -1,10 +1,10 @@
-#$OpenBSD: Makefile,v 1.17 2008/06/29 20:44:51 sthen Exp $
+#$OpenBSD: Makefile,v 1.18 2008/07/21 18:48:45 sthen Exp $
 
 COMMENT=	Image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	2.10.8
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 SHARED_LIBS=	gthumb	0.0	# .0.0
 
@@ -12,9 +12,9 @@ CATEGORIES=	graphics
 
 HOMEPAGE=	http://gthumb.sourceforge.net/
 
-MAINTAINER=	Guillaume Protet <mortheres@hotpop.com>	
+MAINTAINER=	Guillaume Protet <guillaume.protet@mortheres.info>	
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
