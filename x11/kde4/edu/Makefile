@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/07/08 20:42:24 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2008/07/22 18:38:04 martynas Exp $
 
 COMMENT =		K Desktop Environment, edu
 DISTNAME =		kdeedu-${VERSION}
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 
 SHARED_LIBS +=	compoundviewer       0.0      # .4.0
 SHARED_LIBS +=	extdate              5.0      # .4.0
