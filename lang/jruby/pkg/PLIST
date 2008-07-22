@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/07/21 11:17:33 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/07/22 07:35:45 bernd Exp $
 bin/jgem
 bin/jirb
 bin/jirb_swing
@@ -588,6 +588,8 @@ lib/jruby/ruby/${RUBY_REV}/xsd/xmlparser/xmlscanner.rb
 lib/jruby/ruby/gems/
 lib/jruby/ruby/gems/${RUBY_REV}/
 lib/jruby/ruby/gems/${RUBY_REV}/cache/
+lib/jruby/ruby/gems/${RUBY_REV}/cache/rake-0.8.1.gem
+lib/jruby/ruby/gems/${RUBY_REV}/cache/rspec-1.1.4.gem
 lib/jruby/ruby/gems/${RUBY_REV}/doc/
 lib/jruby/ruby/gems/${RUBY_REV}/doc/rake-0.8.1/
 lib/jruby/ruby/gems/${RUBY_REV}/doc/rake-0.8.1/rdoc/
