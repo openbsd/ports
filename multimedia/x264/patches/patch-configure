@@ -1,25 +1,16 @@
-$OpenBSD: patch-configure,v 1.3 2007/07/20 20:11:48 ajacoutot Exp $
---- configure.orig	Sun Mar 25 22:45:02 2007
-+++ configure	Fri Jul 20 13:02:53 2007
-@@ -46,7 +46,7 @@ as_check() {
- 
- rm -f config.h config.mak x264.pc
- 
--prefix='/usr/local'
-+prefix='!!PREFIX!!';
- exec_prefix='${prefix}'
- bindir='${exec_prefix}/bin'
- libdir='${exec_prefix}/lib'
-@@ -160,7 +160,7 @@ case "${MACHINE%%-*}" in
-       ASFLAGS="$ASFLAGS -f elf"
+$OpenBSD: patch-configure,v 1.4 2008/07/22 20:24:04 brad Exp $
+--- configure.orig	Fri Jul  4 16:45:05 2008
++++ configure	Sat Jul 12 02:16:14 2008
+@@ -254,7 +254,7 @@ case $host_cpu in
      fi
+     as_check || AS="nasm"
      ;;
 -  x86_64)
 +  x86_64 | amd64)
      ARCH="X86_64"
-     CFLAGS="$CFLAGS -DHAVE_MMX"
      AS="yasm"
-@@ -334,6 +334,9 @@ if test "$pthread" = "auto" ; then
+     if [ "$SYS" = MACOSX ];then
+@@ -353,6 +353,9 @@ if test "$pthread" = "auto" ; then
                  CFLAGS="$CFLAGS -DPTW32_STATIC_LIB"
              fi
              ;;
@@ -29,13 +20,15 @@ $OpenBSD: patch-configure,v 1.3 2007/07/20 20:11:48 ajacoutot Exp $
          *)
              cc_check pthread.h -lpthread && pthread="yes" && libpthread="-lpthread"
              ;;
-@@ -370,19 +373,19 @@ if [ "$avis_input" = "yes" ] ; then
+@@ -389,21 +392,21 @@ if [ "$avis_input" = "yes" ] ; then
  fi
  
  if [ "$pic" = "yes" ] ; then
 -    CFLAGS="$CFLAGS -fPIC"
 +    CFLAGS="$CFLAGS"
      ASFLAGS="$ASFLAGS -D__PIC__"
+     # resolve textrels in the x86 asm
+     cc_check stdio.h -Wl,-Bsymbolic && LDFLAGS="$LDFLAGS -Wl,-Bsymbolic"
  fi
  
  if [ "$debug" != "yes" -a "$gprof" != "yes" ]; then
@@ -53,15 +46,23 @@ $OpenBSD: patch-configure,v 1.3 2007/07/20 20:11:48 ajacoutot Exp $
  fi
  
  if cc_check "stdio.h" "" "fseeko(stdin,0,0);" ; then
-@@ -426,7 +429,6 @@ echo '' >> config.mak
+@@ -449,7 +452,6 @@ echo '' >> config.mak
  cp config.mak gtk/config.mak
  
  if [ "$shared" = "yes" ]; then
 -    API=$(grep '#define X264_BUILD' < x264.h | cut -f 3 -d ' ')
-     echo "SONAME=libx264.so.$API" >> config.mak
+     if [ "$SYS" = "MINGW" ]; then
+         echo "SONAME=libx264-$API.dll" >> config.mak
+         echo 'IMPLIBNAME=libx264.dll.a' >> config.mak
+@@ -459,7 +461,6 @@ if [ "$shared" = "yes" ]; then
+         echo 'SOFLAGS=-dynamiclib -Wl,-single_module -Wl,-read_only_relocs,suppress' >> config.mak        
+     else
+         echo "SONAME=libx264.so.$API" >> config.mak
+-        echo 'SOFLAGS=-Wl,-soname,$(SONAME)' >> config.mak
+     fi
      echo 'default: $(SONAME)' >> config.mak
      if [ "$gtk" = "yes" ]; then
-@@ -441,7 +443,7 @@ fi
+@@ -474,7 +475,7 @@ fi
  
  ./version.sh
  

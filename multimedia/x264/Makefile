@@ -1,45 +1,37 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/20 20:11:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/07/22 20:24:04 brad Exp $
 
-COMMENT=	free h264/avc encoder
+COMMENT=	free H264/AVC encoder
 
-V=		20070325
+V=		20080713
 DISTNAME=	x264-snapshot-${V}-2245
-PKGNAME=	x264-${V}p1
-SHARED_LIBS=	x264	0.0	# 5.0
+PKGNAME=	x264-${V}
 CATEGORIES=	multimedia
+MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/
+EXTRACT_SUFX=	.tar.bz2
+
+SHARED_LIBS=	x264	1.0
 
 HOMEPAGE=	http://www.videolan.org/developers/x264.html
 
-EXTRACT_SUFX=	.tar.bz2
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
-
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/
-
 WANTLIB=	c m pthread
 
-NO_REGRESS=	Yes
 USE_GMAKE=	Yes
-
 CONFIGURE_STYLE=simple
 CONFIGURE_ENV=	API=${LIBx264_VERSION}
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--enable-pthread \
-		--enable-pic
+		--enable-pic \
+		--disable-mp4-output
 
-.if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	::devel/nasm
-.endif
-
-.if ${MACHINE_ARCH} == "amd64"
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	::devel/yasm
 .endif
+
+NO_REGRESS=	Yes
 
 pre-configure:
 	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g; s,!!X11BASE!!,${X11BASE},g' \

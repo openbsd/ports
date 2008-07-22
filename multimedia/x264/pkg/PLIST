@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/08 17:31:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/07/22 20:24:05 brad Exp $
 %%SHARED%%
-bin/x264
+@bin bin/x264
 include/x264.h
 lib/libx264.a
 lib/pkgconfig/

@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_cpu_c,v 1.1.1.1 2007/04/08 17:31:01 ajacoutot Exp $
---- common/cpu.c.orig	Sun Mar 25 22:45:02 2007
-+++ common/cpu.c	Mon Mar 26 17:28:58 2007
-@@ -144,7 +144,7 @@ uint32_t x264_cpu_detect( void )
+$OpenBSD: patch-common_cpu_c,v 1.2 2008/07/22 20:24:04 brad Exp $
+--- common/cpu.c.orig	Fri Jul  4 16:45:05 2008
++++ common/cpu.c	Tue Jul  8 23:59:12 2008
+@@ -201,7 +201,7 @@ uint32_t x264_cpu_detect( void )
      return cpu;
  }
  
