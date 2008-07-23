@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/07/23 11:17:22 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2008/07/23 11:44:15 espie Exp $
 
 
 COMMENT =	smalltalk system, vm
@@ -6,7 +6,7 @@ COMMENT =	smalltalk system, vm
 SRCV =		1
 DISTFILES =	Squeak-$V-${SRCV}.src.tar.gz 
 
-PKGNAME =	squeak-vm-$V.${SRCV}
+PKGNAME =	squeak-vm-$V.${SRCV}p0
 
 WRKDIST =	${WRKDIR}/Squeak-$V-${SRCV}
 WRKSRC =	${WRKDIST}/platforms/unix/config
@@ -22,7 +22,7 @@ CONFIGURE_ENV =		RANLIB=ranlib
 USE_GMAKE =		Yes
 USE_X11 =		Yes
 
-WANTLIB =		GL X11 m c SM util Xext ICE
+WANTLIB =		GL X11 m c SM util Xext ICE Xrender Xt pthread
 FULLV =			$V-${SRCV}
 
 .if ${MACHINE_ARCH} != "powerpc"
