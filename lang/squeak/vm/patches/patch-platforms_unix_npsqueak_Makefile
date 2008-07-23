@@ -1,0 +1,12 @@
+$OpenBSD: patch-platforms_unix_npsqueak_Makefile,v 1.1 2008/07/23 11:17:22 espie Exp $
+--- platforms/unix/npsqueak/Makefile.orig	Sat Oct 13 05:03:33 2007
++++ platforms/unix/npsqueak/Makefile	Wed Jul 23 13:07:25 2008
+@@ -8,7 +8,7 @@ INC	= -I./include -I/usr/X11R6/include
+ CC	= gcc
+ CFLAGS	= $(INC) -O2 -fPIC -Wall
+ LD	= gcc
+-LDFLAGS = -lXt
++LDFLAGS = -L/usr/X11R6/lib -lXt
+ 
+ # usually overridden from top level makefile
+ VM_VERSION=  3.9-12

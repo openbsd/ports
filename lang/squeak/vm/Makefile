@@ -1,39 +1,43 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:36 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2008/07/23 11:17:22 espie Exp $
 
 
-COMMENT=	smalltalk system, vm
+COMMENT =	smalltalk system, vm
 
+SRCV =		1
+DISTFILES =	Squeak-$V-${SRCV}.src.tar.gz 
 
-DISTFILES=Squeak-$V-${SRC_V}.src.tar.gz 
+PKGNAME =	squeak-vm-$V.${SRCV}
 
-PKGNAME=squeak-vm-$V.${SRC_V}
+WRKDIST =	${WRKDIR}/Squeak-$V-${SRCV}
+WRKSRC =	${WRKDIST}/platforms/unix/config
 
-WRKDIST=${WRKDIR}/Squeak-$V-${SRC_V}
-WRKSRC=${WRKDIST}/platforms/unix/config
+SEPARATE_BUILD =	simple
 
-SEPARATE_BUILD=simple
+MASTER_SITES =	${SQUEAK_SITE}unix-linux/
 
-CONFIGURE_STYLE=gnu
-AUTOCONF_VERSION=2.57
-DESTDIRNAME=ROOT
-CONFIGURE_ENV=RANLIB=ranlib
-USE_GMAKE=yes
-USE_X11=yes
+CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION =	2.60
+DESTDIRNAME =		ROOT
+CONFIGURE_ENV =		RANLIB=ranlib
+USE_GMAKE =		Yes
+USE_X11 =		Yes
 
-WANTLIB=GL X11 m c SM util Xext ICE
+WANTLIB =		GL X11 m c SM util Xext ICE
+FULLV =			$V-${SRCV}
 
 .if ${MACHINE_ARCH} != "powerpc"
-MAKE_FLAGS+=INTERP=gnu-interp
+MAKE_FLAGS +=		INTERP=gnu-interp
 .endif
 
-MAKE_FLAGS+=docdir=${PREFIX}/share/doc/squeak
-DESTDIRNAME=	ROOT
+MAKE_FLAGS +=		docdir=${PREFIX}/share/doc/squeak
+DESTDIRNAME =		ROOT
+SUBST_VARS +=		FULLV
 
 post-extract:
+	# start with the sun sound-plugin that we'll patch
 	mkdir ${WRKDIST}/platforms/unix/vm-sound-OpenBSD
-	cp ${FILESDIR}/vm-sound-OpenBSD/{acinclude.m4,sqUnixSoundOpenBSD.c} ${WRKDIST}/platforms/unix/vm-sound-OpenBSD
+	cd ${WRKDIST}/platforms/unix && cp vm-sound-Sun/acinclude.m4 vm-sound-OpenBSD && cp vm-sound-Sun/sqUnixSoundSun.c vm-sound-OpenBSD/sqUnixSoundOpenBSD.c
 
-RUN_DEPENDS=	:squeak-image-$V.*:lang/squeak/image \
-		:squeak-sources-${MAJOR}:lang/squeak/sources
+RUN_DEPENDS =		:squeak-sources-${SOURCEV}:lang/squeak/sources
 
 .include <bsd.port.mk>

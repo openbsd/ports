@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/23 11:17:22 espie Exp $
 
 
-COMMENT=	smalltalk system, sources
+COMMENT =	smalltalk system, smalltalk sources
 
-DISTFILES=Squeak-${MAJOR}.sources.tar.gz
-EXTRACT_ONLY=
-NO_BUILD=Yes
-DISTNAME=squeak-sources-${MAJOR}
-PKGNAME=${DISTNAME}
-PKG_ARCH=*
-DIST_SUBDIR=squeak-3.6
+DISTFILES =	SqueakV39.sources.gz
+EXTRACT_ONLY =
+NO_BUILD =	Yes
+DISTNAME =	squeak-sources-${SOURCEV}
+PKG_ARCH = *
+MASTER_SITES =	${SQUEAK_SITE}
 
 do-install:
-	cd ${WRKINST} && tar -zx -s ,Squeak-${MAJOR}/,, -f ${FULLDISTDIR}/${DISTFILES}
+	${INSTALL_DATA_DIR} ${SQUEAK_DIR}
+	${INSTALL_DATA} ${FULLDISTDIR}/${DISTFILES} ${SQUEAK_DIR}
+	gunzip ${SQUEAK_DIR}/${DISTFILES}
 
 
 .include <bsd.port.mk>

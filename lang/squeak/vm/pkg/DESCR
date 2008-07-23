@@ -1,4 +1,11 @@
 Squeak is a comprehensive smalltalk 80 system, that was originally
 fostered by Apple and Disney.
 
-The current release does not work on 64 bits system.
+It also needs an image to work, OpenBSD packages a selection of images
+that can be installed, and that will be available under 
+${SQUEAK_DIR}
+
+For any serious development, you will have to copy the image in your
+workdir to record new changes.
+
+Refer to the web site for other images.
