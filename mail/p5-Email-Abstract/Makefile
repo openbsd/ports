@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/07/23 08:10:25 simon Exp $
 
 COMMENT= 	unified interface to mail representations
 
 MODULES=	cpan
-DISTNAME=	Email-Abstract-2.132
+DISTNAME=	Email-Abstract-2.134
 CATEGORIES=	mail
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
