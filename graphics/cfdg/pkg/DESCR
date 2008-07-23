@@ -1,0 +1,7 @@
+Chris Coyne created a small language for design grammars called
+CFDG. These grammars are sets of non-deterministic rules to produce
+images. The images are surprisingly beautiful, often from very
+simple grammars.
+
+cfdg is a command-line tool to produce images in PNG format from
+these grammars.
