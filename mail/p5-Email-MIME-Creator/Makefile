@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/23 08:20:09 simon Exp $
 
 COMMENT= 	Email::MIME constructor for starting anew
 
 MODULES=	cpan
 
-DISTNAME=	Email-MIME-Creator-1.453
+DISTNAME=	Email-MIME-Creator-1.454
 CATEGORIES=	mail
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
