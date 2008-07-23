@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.32 2007/09/15 18:51:35 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2008/07/23 17:31:17 martynas Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
-V=		3.4.2
+V=		3.5.9
 DISTNAME=	sqlite-${V}
 PKGNAME-main=	sqlite3-${V}
 PKGNAME-tcl=	sqlite3-tcl-${V}
 CATEGORIES=	databases
-SHARED_LIBS +=	sqlite3              9.0      # .8.6
-SHARED_LIBS +=	tclsqlite3           9.0      # .8.6
+SHARED_LIBS +=	sqlite3              10.0      # .8.6
+SHARED_LIBS +=	tclsqlite3           10.0      # .8.6
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -20,12 +20,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB-main=	c ncurses readline
+WANTLIB-main=	c ncurses pthread readline
 
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
+		--enable-threads-override-locks
 
 # XXX gcc bug? some regress tests crash w/-O2 but not -Os
 .if ${MACHINE_ARCH} == "amd64"
@@ -44,8 +45,7 @@ MULTI_PACKAGES=-main
 MULTI_PACKAGES+=-tcl
 .endif
 
-LIB_DEPENDS-tcl=sqlite3.>=9.0::databases/sqlite3 \
-		tcl84.>=1.0:tcl-8.4.*:lang/tcl/8.4
+BUILD_DEPENDS-tcl= tcl84.>=1.0:tcl-8.4.*:lang/tcl/8.4
 
 .if ${MULTI_PACKAGES:M-tcl}
 CONFIGURE_ARGS+=--with-tcl=${LOCALBASE}/lib/tcl8.4
@@ -64,5 +64,11 @@ pre-install:
 CONFIGURE_ARGS+=--disable-tcl
 NO_REGRESS=	Yes
 .endif
+
+# Don't include dependency on pthreads, weak pthread functions are
+# used for non-threaded applications.
+post-install:
+	perl -pi -e s,'\-pthread','',g ${PREFIX}/lib/libsqlite3.la \
+		${PREFIX}/lib/pkgconfig/sqlite3.pc
 
 .include <bsd.port.mk>

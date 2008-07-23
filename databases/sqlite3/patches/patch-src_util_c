@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_util_c,v 1.1 2008/07/23 17:31:17 martynas Exp $
+--- src/util.c.orig	Tue May 13 19:41:50 2008
++++ src/util.c	Sat Jul 19 15:10:45 2008
+@@ -19,23 +19,14 @@
+ #include "sqliteInt.h"
+ #include <stdarg.h>
+ #include <ctype.h>
++#include <math.h>
+ 
+ 
+ /*
+ ** Return true if the floating point value is Not a Number.
+ */
+ int sqlite3IsNaN(double x){
+-  /* This NaN test sometimes fails if compiled on GCC with -ffast-math.
+-  ** On the other hand, the use of -ffast-math comes with the following
+-  ** warning:
+-  **
+-  **      This option [-ffast-math] should never be turned on by any
+-  **      -O option since it can result in incorrect output for programs
+-  **      which depend on an exact implementation of IEEE or ISO 
+-  **      rules/specifications for math functions.
+-  */
+-  volatile double y = x;
+-  return x!=y;
++	return isnan(x);
+ }
+ 
+ /*

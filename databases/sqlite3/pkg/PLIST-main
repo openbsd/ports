@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/01/16 23:24:32 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/07/23 17:31:18 martynas Exp $
 @pkgpath databases/sqlite3
 @pkgpath databases/sqlite3,no_tcl
 %%SHARED%%
-bin/sqlite3
+@bin bin/sqlite3
 include/sqlite3.h
 include/sqlite3ext.h
 lib/libsqlite3.a

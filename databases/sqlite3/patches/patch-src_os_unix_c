@@ -1,0 +1,85 @@
+$OpenBSD: patch-src_os_unix_c,v 1.3 2008/07/23 17:31:17 martynas Exp $
+--- src/os_unix.c.orig	Tue May 13 08:51:29 2008
++++ src/os_unix.c	Wed Jul 23 10:46:40 2008
+@@ -61,6 +61,9 @@
+ #if SQLITE_THREADSAFE
+ # include <pthread.h>
+ # define SQLITE_UNIX_THREADS 1
++# if SQLITE_THREAD_OVERRIDE_LOCK != 1 || defined(SQLITE_TEST)
++#  define SQLITE_NEED_TID_CHECKS 1
++# endif
+ #endif
+ 
+ /*
+@@ -97,7 +100,7 @@ struct unixFile {
+   int h;                    /* The file descriptor */
+   unsigned char locktype;   /* The type of lock held on this fd */
+   int dirfd;                /* File descriptor for the directory */
+-#if SQLITE_THREADSAFE
++#if SQLITE_NEED_TID_CHECKS
+   pthread_t tid;            /* The thread that "owns" this unixFile */
+ #endif
+ };
+@@ -138,7 +141,7 @@ struct unixFile {
+ ** The threadid macro resolves to the thread-id or to 0.  Used for
+ ** testing and debugging only.
+ */
+-#if SQLITE_THREADSAFE
++#if SQLITE_NEED_TID_CHECKS
+ #define threadid pthread_self()
+ #else
+ #define threadid 0
+@@ -160,7 +163,7 @@ struct unixFile {
+ ** recomputed because its key includes the thread-id.  See the 
+ ** transferOwnership() function below for additional information
+ */
+-#if SQLITE_THREADSAFE
++#if SQLITE_NEED_TID_CHECKS
+ # define SET_THREADID(X)   (X)->tid = pthread_self()
+ # define CHECK_THREADID(X) (threadsOverrideEachOthersLocks==0 && \
+                             !pthread_equal((X)->tid, pthread_self()))
+@@ -281,7 +284,7 @@ struct unixFile {
+ struct lockKey {
+   dev_t dev;       /* Device number */
+   ino_t ino;       /* Inode number */
+-#if SQLITE_THREADSAFE
++#if SQLITE_NEED_TID_CHECKS
+   pthread_t tid;   /* Thread ID or zero if threads can override each other */
+ #endif
+ };
+@@ -371,7 +374,7 @@ static void leaveMutex(){
+   sqlite3_mutex_leave(sqlite3_mutex_alloc(SQLITE_MUTEX_STATIC_MASTER));
+ }
+ 
+-#if SQLITE_THREADSAFE
++#if SQLITE_NEED_TID_CHECKS
+ /*
+ ** This variable records whether or not threads can override each others
+ ** locks.
+@@ -508,7 +511,7 @@ static void testThreadLockingBehavior(int fd_orig){
+   close(fd);
+   threadsOverrideEachOthersLocks =  d[0].result==0 && d[1].result==0;
+ }
+-#endif /* SQLITE_THREADSAFE */
++#endif /* SQLITE_NEED_TID_CHECKS */
+ 
+ /*
+ ** Release a lockInfo structure previously allocated by findLockInfo().
+@@ -641,7 +644,7 @@ static int findLockInfo(
+   memset(&key1, 0, sizeof(key1));
+   key1.dev = statbuf.st_dev;
+   key1.ino = statbuf.st_ino;
+-#if SQLITE_THREADSAFE
++#if SQLITE_NEED_TID_CHECKS
+   if( threadsOverrideEachOthersLocks<0 ){
+     testThreadLockingBehavior(fd);
+   }
+@@ -737,7 +740,7 @@ static const char *locktypeName(int locktype){
+ ** If the unixFile is locked and an ownership is wrong, then return
+ ** SQLITE_MISUSE.  SQLITE_OK is returned if everything works.
+ */
+-#if SQLITE_THREADSAFE
++#if SQLITE_NEED_TID_CHECKS
+ static int transferOwnership(unixFile *pFile){
+   int rc;
+   pthread_t hSelf;

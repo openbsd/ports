@@ -1,0 +1,19 @@
+$OpenBSD: patch-publish_sh,v 1.1 2008/07/23 17:31:17 martynas Exp $
+--- publish.sh.orig	Mon Jul 21 11:24:47 2008
++++ publish.sh	Mon Jul 21 11:25:05 2008
+@@ -53,13 +53,13 @@ TCLDIR=/home/drh/tcltk/846/linux/846linux
+ TCLSTUBLIB=$TCLDIR/libtclstub8.4g.a
+ CFLAGS="-Os -DSQLITE_ENABLE_FTS3=1 -DHAVE_LOCALTIME_R=1 -DHAVE_GMTIME_R=1"
+ echo '***** BUILDING shared libraries for linux'
+-gcc $CFLAGS -shared tclsqlite3.c $TCLSTUBLIB -o tclsqlite3.so -lpthread
++gcc $CFLAGS -shared tclsqlite3.c $TCLSTUBLIB -o tclsqlite3.so -pthread
+ strip tclsqlite3.so
+ chmod 644 tclsqlite3.so
+ mv tclsqlite3.so tclsqlite-$VERS.so
+ gzip tclsqlite-$VERS.so
+ mv tclsqlite-$VERS.so.gz doc
+-gcc $CFLAGS -shared sqlite3.c -o sqlite3.so -lpthread
++gcc $CFLAGS -shared sqlite3.c -o sqlite3.so -pthread
+ strip sqlite3.so
+ chmod 644 sqlite3.so
+ mv sqlite3.so sqlite-$VERS.so

@@ -1,12 +1,64 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2007/06/26 19:13:37 espie Exp $
---- Makefile.in.orig	Thu Jun 14 22:54:38 2007
-+++ Makefile.in	Tue Jun 26 20:39:45 2007
-@@ -711,6 +711,8 @@ clean:	
- distclean:	clean
- 	rm -f config.log config.status libtool Makefile config.h
+$OpenBSD: patch-Makefile_in,v 1.8 2008/07/23 17:31:17 martynas Exp $
+--- Makefile.in.orig	Mon May 12 19:10:26 2008
++++ Makefile.in	Sun Jul 20 21:18:43 2008
+@@ -96,7 +96,7 @@ TEXE = @TARGET_EXEEXT@
+ #
+ HAVE_TCL = @HAVE_TCL@
  
-+.PHONY: test
+-# This is the command to use for tclsh - normally just "tclsh", but we may
++# This is the command to use for tclsh8.4 - normally just "tclsh8.4", but we may
+ # know the specific version we want to use
+ #
+ TCLSH_CMD = @TCLSH_CMD@
+@@ -160,11 +160,11 @@ OBJS0 = alter.lo analyze.lo attach.lo auth.lo bitvec.l
+         select.lo table.lo tokenize.lo trigger.lo update.lo \
+         util.lo vacuum.lo \
+         vdbe.lo vdbeapi.lo vdbeaux.lo vdbeblob.lo vdbefifo.lo vdbemem.lo \
+-        where.lo utf.lo legacy.lo vtab.lo
++        where.lo utf.lo legacy.lo vtab.lo pthread_stub.lo
+ 
+ # Object files for the amalgamation.
+ #
+-OBJS1 = sqlite3.lo
++OBJS1 = sqlite3.lo pthread_stub.lo
+ 
+ # Determine the real value of LIBOBJ based on the 'configure' script
+ #
+@@ -246,7 +246,8 @@ SRC = \
+   $(TOP)/src/vdbemem.c \
+   $(TOP)/src/vdbeInt.h \
+   $(TOP)/src/vtab.c \
+-  $(TOP)/src/where.c
++  $(TOP)/src/where.c \
++  $(TOP)/src/pthread_stub.c
+ 
+ # Generated source code files
+ #
+@@ -392,7 +393,7 @@ HDR += \
+ # hidden when the library is built via the amalgamation).
+ #
+ TESTFIXTURE_SRC0 = $(TESTSRC2) libsqlite3.la
+-TESTFIXTURE_SRC1 = sqlite3.c
++TESTFIXTURE_SRC1 = sqlite3.c $(TOP)/src/pthread_stub.c
+ TESTFIXTURE_SRC = $(TESTSRC) $(TOP)/src/tclsqlite.c $(TESTFIXTURE_SRC$(USE_AMALGAMATION))
+ 
+ 
+@@ -454,6 +455,9 @@ lemon$(BEXE):	$(TOP)/tool/lemon.c $(TOP)/tool/lempar.c
+ sqlite3.lo:	sqlite3.c
+ 	$(LTCOMPILE) -c sqlite3.c
+ 
++pthread_stub.lo: $(TOP)/src/pthread_stub.c
++	$(LTCOMPILE) -c $(TOP)/src/pthread_stub.c
 +
+ # Rules to build individual files
+ #
+ alter.lo:	$(TOP)/src/alter.c $(HDR)
+@@ -720,6 +724,8 @@ clean:	
+ 
+ distclean:	clean
+ 	rm -f config.log config.status libtool Makefile sqlite3.pc
++
++.PHONY: test
+ 
  #
  # Windows section
- #

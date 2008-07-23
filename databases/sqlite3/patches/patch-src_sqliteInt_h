@@ -1,0 +1,58 @@
+$OpenBSD: patch-src_sqliteInt_h,v 1.1 2008/07/23 17:31:17 martynas Exp $
+--- src/sqliteInt.h.orig	Tue May 13 16:27:34 2008
++++ src/sqliteInt.h	Sat Jul 19 15:10:45 2008
+@@ -35,9 +35,6 @@
+ #pragma warn -spa /* Suspicous pointer arithmetic */
+ #endif
+ 
+-/* Needed for various definitions... */
+-#define _GNU_SOURCE
+-
+ /*
+ ** Include standard header files as necessary
+ */
+@@ -327,32 +324,26 @@ typedef INT16_TYPE i16;            /* 2-byte signed in
+ typedef UINT8_TYPE u8;             /* 1-byte unsigned integer */
+ typedef UINT8_TYPE i8;             /* 1-byte signed integer */
+ 
+-/*
+-** Macros to determine whether the machine is big or little endian,
+-** evaluated at runtime.
+-*/
+-#ifdef SQLITE_AMALGAMATION
+-const int sqlite3one;
++#include <sys/endian.h>
++#if _BYTE_ORDER == _BIG_ENDIAN
++#define SQLITE_BIGENDIAN	1
++#define SQLITE_LITTLEENDIAN	0
++#define SQLITE_UTF16NATIVE	SQLITE_UTF16BE
++#elif _BYTE_ORDER == _LITTLE_ENDIAN
++#define SQLITE_BIGENDIAN	0
++#define SQLITE_LITTLEENDIAN	1
++#define SQLITE_UTF16NATIVE	SQLITE_UTF16LE
+ #else
+-extern const int sqlite3one;
++#error "Help, I'm trapped in a PDP11"
+ #endif
+-#if defined(i386) || defined(__i386__) || defined(_M_IX86)
+-# define SQLITE_BIGENDIAN    0
+-# define SQLITE_LITTLEENDIAN 1
+-# define SQLITE_UTF16NATIVE  SQLITE_UTF16LE
+-#else
+-# define SQLITE_BIGENDIAN    (*(char *)(&sqlite3one)==0)
+-# define SQLITE_LITTLEENDIAN (*(char *)(&sqlite3one)==1)
+-# define SQLITE_UTF16NATIVE (SQLITE_BIGENDIAN?SQLITE_UTF16BE:SQLITE_UTF16LE)
+-#endif
+ 
+ /*
+ ** Constants for the largest and smallest possible 64-bit signed integers.
+ ** These macros are designed to work correctly on both 32-bit and 64-bit
+ ** compilers.
+ */
+-#define LARGEST_INT64  (0xffffffff|(((i64)0x7fffffff)<<32))
+-#define SMALLEST_INT64 (((i64)-1) - LARGEST_INT64)
++#define LARGEST_INT64	INT64_MAX
++#define SMALLEST_INT64	INT64_MIN
+ 
+ /*
+ ** An instance of the following structure is used to store the busy-handler
