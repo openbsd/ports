@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.347 2008/07/15 16:34:15 simon Exp $
+# $OpenBSD: Makefile,v 1.348 2008/07/23 18:42:33 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -109,6 +109,7 @@
      SUBDIR += p5-Apache-DBI
      SUBDIR += p5-Apache-Gallery
      SUBDIR += p5-Apache-MP3
+     SUBDIR += p5-Apache-Reload
      SUBDIR += p5-Apache-Session
      SUBDIR += p5-Apache-Session-Generate-UUID
      SUBDIR += p5-Apache-Session-Memcached
