@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2008/07/23 17:31:17 martynas Exp $
+# $OpenBSD: Makefile,v 1.34 2008/07/23 23:06:39 martynas Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
@@ -45,7 +45,7 @@ MULTI_PACKAGES=-main
 MULTI_PACKAGES+=-tcl
 .endif
 
-BUILD_DEPENDS-tcl= tcl84.>=1.0:tcl-8.4.*:lang/tcl/8.4
+BUILD_DEPENDS= :tcl-8.4.*:lang/tcl/8.4
 
 .if ${MULTI_PACKAGES:M-tcl}
 CONFIGURE_ARGS+=--with-tcl=${LOCALBASE}/lib/tcl8.4
