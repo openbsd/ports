@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/07/08 22:38:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/23 13:00:51 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		RSS-reader plugin for GNOME
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.1.0
-PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}
+PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}p0
 CATEGORIES=    		mail
 EVO_VERSION=		2.22
 
@@ -27,6 +27,8 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
 			::x11/gnome/common
 RUN_DEPENDS=		:gconf2-*:devel/gconf2 \
 			:evolution->=2.22.2:mail/evolution
@@ -48,9 +50,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 SUBST_VARS=		EVO_VERSION
 
-post-patch:
+do-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
-
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh \
+		${CONFIGURE_ARGS} GMSGFMT=${LOCALBASE}/bin/msgfmt DATADIRNAME=share
 
 .include <bsd.port.mk>
