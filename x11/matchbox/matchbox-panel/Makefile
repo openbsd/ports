@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2008/07/11 17:46:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2008/07/23 09:54:04 ajacoutot Exp $
 # XXX hardcoded apm list
 
 COMMENT=	window bar for holding application launchers
@@ -15,6 +15,15 @@ WANTLIB=	X11 Xext Xft Xrender c fontconfig freetype m z \
 		glib-2.0.>=600.0 gmodule-2.0.>=600.0 gobject-2.0.>=600.0 jpeg \
 		pango-1.0 pangoft2-1.0 pangoxft-1.0 png Xau Xdmcp expat
 
+# not all powerpc support apm(4), hence the use of ${MACHINE} and macppc
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "arm" \
+ || ${MACHINE_ARCH} == "i386" || ${MACHINE} == "macppc" \
+ || ${MACHINE_ARCH} == "sparc"
+PKG_ARGS+=-DAPM=1
+.else
+PKG_ARGS+=-DAPM=0
+.endif
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-nls
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
@@ -23,12 +32,3 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" 
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
-
-# not all powerpc support apm(4), hence the use of ${ARCH} and macppc
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "arm" \
- || ${MACHINE_ARCH} == "i386" || ${ARCH} == "macppc" \
- || ${MACHINE_ARCH} == "sparc"
-PKG_ARGS+=-DAPM=1
-.else
-PKG_ARGS+=-DAPM=0
-.endif
