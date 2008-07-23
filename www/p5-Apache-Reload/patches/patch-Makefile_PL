@@ -1,0 +1,15 @@
+Avoids DNS lookup during "make configure".
+
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2008/07/23 18:39:19 sthen Exp $
+--- Makefile.PL.orig	Sat Feb 16 08:02:31 2008
++++ Makefile.PL	Wed Jul 23 14:30:30 2008
+@@ -18,7 +18,8 @@ else {
+ 
+ %prereqs = ($mp_gen == 1 ? %mp1 : %mp2);
+ 
+-my $HAS_APACHE_TEST = check_for_apache_test();
++#my $HAS_APACHE_TEST = check_for_apache_test();
++my $HAS_APACHE_TEST = 0;
+ 
+ my %common_opts = (
+                    PREREQ_PM       => \%prereqs,
