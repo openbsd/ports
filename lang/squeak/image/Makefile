@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/07/23 11:17:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/23 11:40:49 sturm Exp $
 
 
 COMMENT =	smalltalk system, basic runtime image
@@ -12,6 +12,8 @@ DISTNAME =	squeak-image-$V.${DOTV}.${IMAGE_V}
 MASTER_SITES =	${SQUEAK_SITE}
 EXTRACT_ONLY =
 NO_BUILD =	Yes
+
+BUILD_DEPENDS =	::archivers/unzip
 
 SUBST_VARS +=	IMAGE_V
 
