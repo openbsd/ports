@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/17 04:31:45 jdixon Exp $
-@newgroup _haproxy:${HAPROXYUID}
-@newuser _haproxy:${HAPROXYGID}:_haproxy:daemon:HAProxy Daemon:/var/haproxy:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.2 2008/07/23 15:33:17 jdixon Exp $
+@newgroup _haproxy:${HAPROXYGID}
+@newuser _haproxy:${HAPROXYUID}:_haproxy:daemon:HAProxy Daemon:/var/haproxy:/sbin/nologin
 @man man/man1/haproxy.1
 @bin sbin/haproxy
 @sample ${HAPROXYCONF}/
