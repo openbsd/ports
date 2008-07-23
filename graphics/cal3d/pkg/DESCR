@@ -1,0 +1,5 @@
+Cal3D is a skeletal based character animation library. 
+It is platform-independent and not bound to a specific graphic API.
+Originally designed to be used in a 3d client for the Worldforge project
+(www.worldforge.org) it evolved into a stand-alone product that can be 
+used in many different projects.
