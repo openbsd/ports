@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.70 2008/07/21 19:19:06 martynas Exp $
+# $OpenBSD: Makefile,v 1.71 2008/07/24 10:10:33 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=	redesign of Mozilla's mail component
 
-VER=		2.0.0.14
+VER=		2.0.0.16
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p0
+PKGNAME=	mozilla-thunderbird-${VER}
 SO_VERSION=	13.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
@@ -40,7 +40,7 @@ WANTLIB=        X11 Xau Xcursor Xdmcp Xext Xfixes Xcomposite Xdamage \
                 Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 c cairo \
                 expat fontconfig freetype glib-2.0 gthread-2.0 glitz \
 		gmodule-2.0 gobject-2.0 jpeg m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pangox-1.0 png pthread stdc++ z
+		pangoft2-1.0 pangox-1.0 pixman-1 png pthread stdc++ z
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/
 DISTFILES=	thunderbird-${VER}-source.tar.bz2
@@ -110,6 +110,7 @@ DATADIRS=	chrome components defaults dictionaries extensions \
 pre-configure:
 	@cd ${WRKSRC}/directory/c-sdk && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
+		${WRKSRC}/js/src/xpconnect/shell/Makefile.in \
 		${WRKSRC}/mail/app/mozilla.in
 	@perl -pi -e 's|_SO_VERSION_|${SO_VERSION}|g' \
 		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp

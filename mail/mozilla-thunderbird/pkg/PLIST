@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2008/02/04 19:52:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2008/07/24 10:10:34 martynas Exp $
 %%SHARED%%
 bin/mozilla-thunderbird
 bin/thunderbird
@@ -253,9 +253,9 @@ mozilla-thunderbird/icons/mozicon16.xpm
 mozilla-thunderbird/icons/mozicon50.xpm
 mozilla-thunderbird/init.d/
 mozilla-thunderbird/init.d/README
-mozilla-thunderbird/mozilla-thunderbird-bin
-mozilla-thunderbird/mozilla-xremote-client
-mozilla-thunderbird/regxpcom
+@bin mozilla-thunderbird/mozilla-thunderbird-bin
+@bin mozilla-thunderbird/mozilla-xremote-client
+@bin mozilla-thunderbird/regxpcom
 mozilla-thunderbird/res/
 mozilla-thunderbird/res/EditorOverride.css
 mozilla-thunderbird/res/arrow.gif
@@ -422,7 +422,7 @@ mozilla-thunderbird/res/unixcharset.properties
 mozilla-thunderbird/res/viewer.properties
 mozilla-thunderbird/res/viewsource.css
 mozilla-thunderbird/run-mozilla.sh
-mozilla-thunderbird/thunderbird-bin
+@bin mozilla-thunderbird/thunderbird-bin
 share/applications/thunderbird.desktop
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
