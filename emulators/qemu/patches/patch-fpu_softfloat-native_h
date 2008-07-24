@@ -1,13 +1,7 @@
-$OpenBSD: patch-fpu_softfloat-native_h,v 1.4 2008/04/28 22:52:38 todd Exp $
---- fpu/softfloat-native.h.orig	Sun Jan  6 14:38:42 2008
-+++ fpu/softfloat-native.h	Tue Apr  1 01:33:39 2008
-@@ -1,4 +1,5 @@
- /* Native implementation of soft float functions */
-+#include "gnu-c99-math.h"
- #include <math.h>
- 
- #if (defined(_BSD) && !defined(__APPLE__)) || defined(HOST_SOLARIS)
-@@ -84,6 +85,11 @@ typedef union {
+$OpenBSD: patch-fpu_softfloat-native_h,v 1.5 2008/07/24 19:00:11 martynas Exp $
+--- fpu/softfloat-native.h.orig	Sun Jan  6 21:38:42 2008
++++ fpu/softfloat-native.h	Thu Jul 24 21:41:56 2008
+@@ -84,6 +84,11 @@ typedef union {
  | Software IEC/IEEE floating-point rounding mode.
  *----------------------------------------------------------------------------*/
  #if (defined(_BSD) && !defined(__APPLE__)) || defined(HOST_SOLARIS)
