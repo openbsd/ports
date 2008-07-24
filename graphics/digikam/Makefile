@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2008/07/19 11:58:58 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2008/07/24 17:23:32 espie Exp $
 
 COMMENT =		digital image kde application
 CATEGORIES =		graphics x11 x11/kde
@@ -33,9 +33,8 @@ CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61
 CONFIGURE_ARGS +=	${MODKDE_CONFIGURE_ARGS}
 
-# awaiting sqlite update
-#CONFIGURE_ARGS +=	--without-included-sqlite3
-#LIB_DEPENDS +=		sqlite3::databases/sqlite3
+CONFIGURE_ARGS +=	--without-included-sqlite3
+LIB_DEPENDS +=		sqlite3:sqlite3->=3.5.9:databases/sqlite3
 
 USE_GMAKE ?=		Yes
 CONFIGURE_ENV +=	${MODKDE_CONFIGURE_ENV}
