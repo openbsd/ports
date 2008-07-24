@@ -12,11 +12,17 @@ In order to run with standard OpenBSD chroot'ed httpd:
 
 - make sure you can connect to your database.
 
-For mysql on localhost, run the following snippet AFTER
-you make sure your mysql daemon is running:
+Create a directory for the mysql socket.
 
 	mkdir -p /var/www/var/run/mysql
-	ln /var/run/mysql/mysql.sock /var/www/var/run/mysql
+
+Adjust ${SYSCONFDIR}/my.cnf to put the mysql socket into the chroot.
+
+	[client]
+	socket = /var/www/var/run/mysql/mysql.sock
+
+	[mysqld]
+	socket = /var/www/var/run/mysql/mysql.sock
 
 - file uploads require a tmp directory writable by www.
 .e.g., with the default php setup:
@@ -28,9 +34,9 @@ Don't forget to set the character set to utf8 in your database.
 
 In mysql, assuming you're connected as admin initially.
 
-create user drupal identified by password('clearpassword');
+create user drupal@localhost identified by 'password';
 create database drupal character set utf8;
-grant all on drupal.* to drupal@localhost:
+grant all on drupal.* to drupal@localhost;
 
 In postgresql, assuming an `admin' account has all rights:
 
