@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:34:03 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2008/07/24 10:06:42 martynas Exp $
 
 COMMENT=	graphical interface to sqlite databases
 DISTNAME=	sqlitebrowser-1.3
+PKGNAME=	${DISTNAME}p0
 DISTFILES=	${DISTNAME}-src.tar.gz
-WRKDIST=	${WRKDIR}/sqlitebrowser/sqlitebrowser
+WRKDIST=	${WRKDIR}/sqlitebrowser
 CATEGORIES=	databases x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sqlitebrowser/}
 HOMEPAGE=	http://sqlitebrowser.sourceforge.net/
 
 MODULES=	x11/qt3
-LIB_DEPENDS=	sqlite3::databases/sqlite3
 NO_REGRESS=	Yes
 USE_X11=	Yes
 
@@ -21,10 +21,10 @@ post-extract:
 	find ${WRKDIST} -type f -name \*.bak -print|xargs rm
 
 do-configure:
-	cd ${WRKDIST} && qmake sqlitebrowser.pro
+	cd ${WRKDIST} && qmake sqlitedbbrowser.pro
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/sqlitebrowser ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/sqlitebrowser/sqlitebrowser ${PREFIX}/bin
 
 # Public domain
 PERMIT_PACKAGE_FTP=	Yes
