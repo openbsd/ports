@@ -1,5 +1,9 @@
-Cal3D is a skeletal based character animation library. 
-It is platform-independent and not bound to a specific graphic API.
-Originally designed to be used in a 3d client for the Worldforge project
-(www.worldforge.org) it evolved into a stand-alone product that can be 
-used in many different projects.
+ENet's purpose is to provide a relatively thin, simple and robust
+network communication layer on top of UDP (User Datagram Protocol).
+The primary feature it provides is optionally reliable, in-order
+delivery of packets.
+
+ENet is NOT intended to be a general purpose high level networking
+library that handles authentication, lobbying, server discovery,
+compression, encryption and other high level, often application
+level or dependent tasks.  

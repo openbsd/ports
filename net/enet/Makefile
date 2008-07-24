@@ -1,28 +1,22 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.2 2008/07/24 12:25:21 laurent Exp $
 
-COMMENT =	skeletal based character animation library
-DISTNAME =	cal3d-0.10.0
+COMMENT =		network library for games
+DISTNAME =		enet-1.2
+PKGNAME =		${DISTNAME}p1
 
-SHARED_LIBS =	cal3d	0.0	# .11.0
+CATEGORIES =		net
 
-CATEGORIES =	graphics
+HOMEPAGE =		http://enet.bespin.org/
+MAINTAINER =		Laurent FANIS <laurent@openbsd.org>
 
-HOMEPAGE =	http://home.gna.org/cal3d/
-
-MAINTAINER =	Laurent Fanis <laurent@openbsd.org>
-
-# LGPL
+# MIT-like
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	c
+MASTER_SITES =		${HOMEPAGE}/download/
 
-MASTER_SITES =	http://download.gna.org/cal3d/sources/
-
-USE_LIBTOOL =	Yes
-
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>
