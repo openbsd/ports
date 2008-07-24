@@ -1,9 +1,9 @@
-#$OpenBSD: Makefile,v 1.17 2007/09/16 02:53:00 merdely Exp $
+#$OpenBSD: Makefile,v 1.18 2008/07/24 09:37:26 jakemsr Exp $
 CATEGORIES=		devel
 
 COMMENT=		accessing DVD files
 DISTNAME=		libdvdread-0.9.7
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 HOMEPAGE=		http://www.dtek.chalmers.se/groups/dvd/
 MASTER_SITES=		${HOMEPAGE}dist/
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=		::converters/libdvdcss
 RUN_DEPENDS=		::converters/libdvd
 .endif
 
-SHARED_LIBS +=	dvdread              4.2      # .5.1
+SHARED_LIBS +=	dvdread              4.3      # .5.1
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

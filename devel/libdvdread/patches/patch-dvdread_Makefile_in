@@ -1,0 +1,12 @@
+$OpenBSD: patch-dvdread_Makefile_in,v 1.1 2008/07/24 09:37:26 jakemsr Exp $
+--- dvdread/Makefile.in.orig	Thu Jul 17 23:53:21 2008
++++ dvdread/Makefile.in	Fri Jul 18 00:05:22 2008
+@@ -190,7 +190,7 @@ libdvdread_la_SOURCES = dvd_input.c dvd_reader.c dvd_u
+ 	md5.c md5.h
+ 
+ libdvdread_la_LIBADD = @DL_LIBS@ @CSS_LIBS@
+-libdvdread_la_LDFLAGS = -version-info 5:1:2 -export-symbols-regex "(DVD.*|ifo.*|nav.*|cmd.*)"
++libdvdread_la_LDFLAGS = -version-info 5:1:2 -export-symbols-regex "(DVD.*|ifo.*|nav.*|cmd.*|UDFFindFile)"
+ pkginclude_HEADERS = dvd_reader.h ifo_types.h ifo_read.h \
+ 	ifo_print.h nav_types.h nav_read.h nav_print.h cmd_print.h
+ 

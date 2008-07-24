@@ -1,7 +1,7 @@
-$OpenBSD: patch-dvdread_dvd_input_c,v 1.7 2007/02/03 17:07:07 espie Exp $
---- dvdread/dvd_input.c.orig	Mon Sep 19 15:43:08 2005
-+++ dvdread/dvd_input.c	Tue Dec 26 14:54:04 2006
-@@ -45,30 +45,30 @@ int         (*dvdinput_read)  (dvd_input
+$OpenBSD: patch-dvdread_dvd_input_c,v 1.8 2008/07/24 09:37:26 jakemsr Exp $
+--- dvdread/dvd_input.c.orig	Mon Sep 19 06:43:08 2005
++++ dvdread/dvd_input.c	Thu Jul 17 23:43:16 2008
+@@ -45,30 +45,30 @@ int         (*dvdinput_read)  (dvd_input_t, void *, in
  char *      (*dvdinput_error) (dvd_input_t);
  
  #ifdef HAVE_DVDCSS_DVDCSS_H
@@ -59,7 +59,7 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.7 2007/02/03 17:07:07 espie Exp $
  {
    dvd_input_t dev;
      
-@@ -89,9 +89,9 @@ static dvd_input_t css_open(const char *
+@@ -89,9 +89,9 @@ static dvd_input_t css_open(const char *target)
      return NULL;
    }
    
@@ -72,7 +72,7 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.7 2007/02/03 17:07:07 espie Exp $
      free(dev);
      dev = NULL;
    }
-@@ -102,44 +102,44 @@ static dvd_input_t css_open(const char *
+@@ -102,44 +102,44 @@ static dvd_input_t css_open(const char *target)
  /**
   * return the last error message
   */
