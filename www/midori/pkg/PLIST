@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/25 12:54:33 landry Exp $
+@bin bin/midori
+share/applications/midori.desktop
+share/locale/de/LC_MESSAGES/midori.mo
+share/locale/fr/LC_MESSAGES/midori.mo
+share/locale/pl/LC_MESSAGES/midori.mo
+share/locale/sv/LC_MESSAGES/midori.mo
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

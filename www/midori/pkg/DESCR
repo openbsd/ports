@@ -1,0 +1,8 @@
+Midori is a lightweight web browser that uses WebKit for it's rendering
+engine. Written in Gtk+2, it is currently in alpha state and features :
+* Tabs, windows and session management.
+* Bookmarks with XBEL and keyword support.
+* Flexibly configurable Web Searchbox.
+* Custom context menu actions.
+* User scripts and user styles support.
+* Extensible via Javascript.
