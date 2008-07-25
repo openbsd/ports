@@ -1,0 +1,11 @@
+$OpenBSD: patch-gtk-themes_Darklooks_gtk-2_0_gtkrc,v 1.1 2008/07/25 11:25:13 ajacoutot Exp $
+--- gtk-themes/Darklooks/gtk-2.0/gtkrc.orig	Sun Mar  9 13:38:00 2008
++++ gtk-themes/Darklooks/gtk-2.0/gtkrc	Fri Jul 25 13:05:53 2008
+@@ -1,6 +1,6 @@
+ # Set GtkSettings color scheme property.
+ # This can be overriden (via an xsetting) with eg. the gnome-appearance-properties.
+-gtk_color_scheme = "fg_color:#E6E6E6\nbg_color:#555753\nbase_color:#2E3436\ntext_color:#D3D7CF\nselected_bg_color:#3F403D\nselected_fg_color:#7AA3CC\ntooltips_bg_color:#EDDE5C\ntooltips_fg_color:#000000"
++gtk_color_scheme = "fg_color:#E6E6E6\nbg_color:#555753\nbase_color:#2E3436\ntext_color:#D3D7CF\nselected_bg_color:#3F403D\nselected_fg_color:#7AA3CC\ntooltip_bg_color:#EDDE5C\ntooltip_fg_color:#000000"
+ 
+ style "clearlooks-default"
+ {
