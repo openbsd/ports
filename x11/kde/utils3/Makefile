@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2008/03/26 11:11:42 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2008/07/25 23:09:44 martynas Exp $
 
 COMMENT= 		K Desktop Environment, utilities
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.9
 DISTNAME=		kdeutils-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5.8
 SHARED_LIBS +=	khexeditcommon       1.0      # .0.0
 SHARED_LIBS +=	kcmlaptop            1.0      # .0.0
