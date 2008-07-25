@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2008/02/09 13:18:16 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2008/07/25 16:08:35 martynas Exp $
 
 COMMENT =		K Desktop Environment, libraries
 DISTNAME =		kdelibs-${VERSION}
-PKGNAME =		${DISTNAME}
+PKGNAME =		${DISTNAME}p0
 
 SHARED_LIBS +=	kaudiodevicelist     4.0      # .4.0
 SHARED_LIBS +=	kde3support          0.0      # .4.0
