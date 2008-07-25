@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/25 00:05:31 ian Exp $
+@newgroup _hudson:605
+@newuser _hudson:605:_hudson:daemon:Hudson Account:${HOMEDIR}:/sbin/nologin
+bin/hudson
+share/hudson/
+share/hudson/README.OpenBSD
+share/hudson/hudson.war
+@extraunexec rm -rf ${HOMEDIR}
+@owner _hudson
+@group _hudson
+@sample ${HOMEDIR}/

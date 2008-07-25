@@ -1,0 +1,13 @@
+To arrange for the standalone Hudson server to run automatically
+on reboot, add the following to /etc/rc.local:
+
+if [ -d ${PREFIX}/share/hudson ]; then
+	sudo -u _hudson ${PREFIX}/bin/hudson >/tmp/hudson.log 2>&1 &
+fi
+
+NOTE: This script runs Hudson on port 8000, not 8080, since most
+Java application servers run on port 8080.
+
+To run Hudson in an existing Java server, copy or link the war file
+from ${PREFIX}/share/hudson to your server's deploy directory, or read
+more at ${HOMEPAGE}.
