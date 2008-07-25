@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/25 18:10:24 merdely Exp $
 
 COMMENT= 	perl implementation of XML-RPC
 
@@ -18,6 +18,7 @@ USE_GMAKE=		Yes
 RUN_DEPENDS=		::www/p5-libwww \
 			::textproc/p5-XML-Parser
 REGRESS_DEPENDS=	::www/mod_perl \
+			::devel/p5-Net-Server \
 			::devel/p5-Test-Pod \
 			::devel/p5-Test-Pod-Coverage
 
