@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_c-opts_c,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
---- gcc/c-opts.c.orig	Thu Jun 12 13:58:31 2003
-+++ gcc/c-opts.c	Mon Jan  3 10:17:41 2005
-@@ -127,6 +127,7 @@ static void sanitize_cpp_opts PARAMS ((v
+$OpenBSD: patch-gcc_c-opts_c,v 1.2 2008/07/25 20:50:26 martynas Exp $
+--- gcc/c-opts.c.orig	Thu Jun 12 14:58:31 2003
++++ gcc/c-opts.c	Fri Jul 25 12:34:57 2008
+@@ -127,6 +127,7 @@ static void sanitize_cpp_opts PARAMS ((void));
    OPT("Wabi",                   CL_CXX,   OPT_Wabi)                          \
    OPT("Wall",			CL_ALL,   OPT_Wall)			     \
    OPT("Wbad-function-cast",	CL_C,     OPT_Wbad_function_cast)	     \

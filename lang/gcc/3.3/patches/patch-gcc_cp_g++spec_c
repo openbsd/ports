@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_cp_g++spec_c,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
---- gcc/cp/g++spec.c.orig	Tue Mar 11 01:59:25 2003
-+++ gcc/cp/g++spec.c	Mon Jan  3 10:54:03 2005
+$OpenBSD: patch-gcc_cp_g++spec_c,v 1.2 2008/07/25 20:50:26 martynas Exp $
+--- gcc/cp/g++spec.c.orig	Tue Mar 11 02:59:25 2003
++++ gcc/cp/g++spec.c	Fri Jul 25 12:34:58 2008
 @@ -37,11 +37,17 @@ Boston, MA 02111-1307, USA.  */
  #endif
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-gcc_cp_g++spec_c,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
  
  void
  lang_specific_driver (in_argc, in_argv, in_added_libraries)
-@@ -61,6 +67,10 @@ lang_specific_driver (in_argc, in_argv, 
+@@ -61,6 +67,10 @@ lang_specific_driver (in_argc, in_argv, in_added_libra
       link in libstdc++.  */
    int library = 1;
  
@@ -32,7 +32,7 @@ $OpenBSD: patch-gcc_cp_g++spec_c,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
    /* The number of arguments being added to what's in argv, other than
       libraries.  We use this to track the number of times we've inserted
       -xc++/-xnone.  */
-@@ -128,11 +138,18 @@ lang_specific_driver (in_argc, in_argv, 
+@@ -128,11 +138,18 @@ lang_specific_driver (in_argc, in_argv, in_added_libra
  
        if (argv[i][0] == '-')
  	{
@@ -52,7 +52,7 @@ $OpenBSD: patch-gcc_cp_g++spec_c,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
  	  else if (strcmp (argv[i], "-lm") == 0
  		   || strcmp (argv[i], "-lmath") == 0
  		   || strcmp (argv[i], MATH_LIBRARY) == 0
-@@ -146,6 +163,8 @@ lang_specific_driver (in_argc, in_argv, 
+@@ -146,6 +163,8 @@ lang_specific_driver (in_argc, in_argv, in_added_libra
  	    }
  	  else if (strcmp (argv[i], "-lc") == 0)
  	    args[i] |= WITHLIBC;
@@ -61,7 +61,7 @@ $OpenBSD: patch-gcc_cp_g++spec_c,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
  	  else if (strcmp (argv[i], "-pg") == 0 || strcmp (argv[i], "-p") == 0)
  	    saw_profile_flag++;
  	  else if (strcmp (argv[i], "-v") == 0)
-@@ -269,6 +288,12 @@ lang_specific_driver (in_argc, in_argv, 
+@@ -269,6 +288,12 @@ lang_specific_driver (in_argc, in_argv, in_added_libra
        j++;
      }
  

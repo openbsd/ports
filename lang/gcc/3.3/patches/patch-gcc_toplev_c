@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_toplev_c,v 1.3 2005/02/27 15:42:50 espie Exp $
---- gcc/toplev.c.orig	Fri Mar  5 18:55:51 2004
-+++ gcc/toplev.c	Sun Feb 27 13:50:52 2005
-@@ -852,7 +852,11 @@ int flag_instrument_function_entry_exit 
+$OpenBSD: patch-gcc_toplev_c,v 1.4 2008/07/25 20:50:26 martynas Exp $
+--- gcc/toplev.c.orig	Fri Mar  5 19:55:51 2004
++++ gcc/toplev.c	Fri Jul 25 12:34:58 2008
+@@ -852,7 +852,11 @@ int flag_instrument_function_entry_exit = 0;
     On SVR4 targets, it also controls whether or not to emit a
     string identifying the compiler.  */
  
@@ -32,7 +32,7 @@ $OpenBSD: patch-gcc_toplev_c,v 1.3 2005/02/27 15:42:50 espie Exp $
  /* Table of supported debugging formats.  */
  static const struct
  {
-@@ -1188,6 +1204,10 @@ static const lang_independent_options f_
+@@ -1188,6 +1204,10 @@ static const lang_independent_options f_options[] =
     N_("Trap for signed overflow in addition / subtraction / multiplication") },
    { "new-ra", &flag_new_regalloc, 1,
     N_("Use graph coloring register allocation.") },
@@ -53,7 +53,7 @@ $OpenBSD: patch-gcc_toplev_c,v 1.3 2005/02/27 15:42:50 espie Exp $
  
  #define DEFINE_LANG_NAME(NAME) { NULL, NAME },
  
-@@ -1547,7 +1570,9 @@ static const lang_independent_options W_
+@@ -1547,7 +1570,9 @@ static const lang_independent_options W_options[] =
    {"missing-noreturn", &warn_missing_noreturn, 1,
     N_("Warn about functions which might be candidates for attribute noreturn") },
    {"strict-aliasing", &warn_strict_aliasing, 1,
@@ -64,7 +64,7 @@ $OpenBSD: patch-gcc_toplev_c,v 1.3 2005/02/27 15:42:50 espie Exp $
  };
  
  void
-@@ -4910,14 +4935,19 @@ parse_options_and_default_flags (argc, a
+@@ -4910,14 +4935,19 @@ parse_options_and_default_flags (argc, argv)
        flag_schedule_insns_after_reload = 1;
  #endif
        flag_regmove = 1;

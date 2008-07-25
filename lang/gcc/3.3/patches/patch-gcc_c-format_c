@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_c-format_c,v 1.1.1.1 2005/01/03 15:21:29 espie Exp $
---- gcc/c-format.c.orig	Sun Dec  1 18:51:44 2002
-+++ gcc/c-format.c	Mon Jan  3 10:17:41 2005
+$OpenBSD: patch-gcc_c-format_c,v 1.2 2008/07/25 20:50:26 martynas Exp $
+--- gcc/c-format.c.orig	Sun Dec  1 19:51:44 2002
++++ gcc/c-format.c	Fri Jul 25 12:34:57 2008
 @@ -54,7 +54,7 @@ set_Wformat (setting)
  
  /* This must be in the same order as format_types, with format_type_error
@@ -30,7 +30,7 @@ $OpenBSD: patch-gcc_c-format_c,v 1.1.1.1 2005/01/03 15:21:29 espie Exp $
    /* The argument number of that parameter.  */
    int arg_num;
    /* The next type to check for this format conversion, or NULL if none.  */
-@@ -572,7 +578,15 @@ static const format_length_info printf_l
+@@ -572,7 +578,15 @@ static const format_length_info printf_length_specs[] 
    { NULL, 0, 0, NULL, 0, 0 }
  };
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-gcc_c-format_c,v 1.1.1.1 2005/01/03 15:21:29 espie Exp $
  /* This differs from printf_length_specs only in that "Z" is not accepted.  */
  static const format_length_info scanf_length_specs[] =
  {
-@@ -765,6 +779,46 @@ static const format_char_info print_char
+@@ -765,6 +779,46 @@ static const format_char_info print_char_table[] =
    { NULL,  0, 0, NOLENGTHS, NULL, NULL }
  };
  
@@ -93,7 +93,7 @@ $OpenBSD: patch-gcc_c-format_c,v 1.1.1.1 2005/01/03 15:21:29 espie Exp $
  static const format_char_info scan_char_table[] =
  {
    /* C89 conversion specifiers.  */
-@@ -828,6 +882,18 @@ static const format_kind_info format_typ
+@@ -828,6 +882,18 @@ static const format_kind_info format_types[] =
      'w', 0, 'p', 0, 'L',
      &integer_type_node, &integer_type_node
    },
@@ -112,7 +112,7 @@ $OpenBSD: patch-gcc_c-format_c,v 1.1.1.1 2005/01/03 15:21:29 espie Exp $
    { "scanf",    scanf_length_specs,   scan_char_table,  "*'I", NULL, 
      scanf_flag_specs, scanf_flag_pairs,
      FMT_FLAG_ARG_CONVERT|FMT_FLAG_SCANF_A_KLUDGE|FMT_FLAG_USE_DOLLAR|FMT_FLAG_ZERO_WIDTH_BAD|FMT_FLAG_DOLLAR_GAP_POINTER_OK,
-@@ -1574,6 +1640,7 @@ check_format_info_main (status, res, inf
+@@ -1574,6 +1640,7 @@ check_format_info_main (status, res, info, format_char
        const format_length_info *fli = NULL;
        const format_char_info *fci = NULL;
        char flag_chars[256];
@@ -120,7 +120,7 @@ $OpenBSD: patch-gcc_c-format_c,v 1.1.1.1 2005/01/03 15:21:29 espie Exp $
        int aflag = 0;
        if (*format_chars == 0)
  	{
-@@ -1715,20 +1782,29 @@ check_format_info_main (status, res, inf
+@@ -1715,20 +1782,29 @@ check_format_info_main (status, res, info, format_char
  	      /* Possibly read a numeric width.  If the width is zero,
  		 we complain if appropriate.  */
  	      int non_zero_width_char = FALSE;
@@ -154,7 +154,7 @@ $OpenBSD: patch-gcc_c-format_c,v 1.1.1.1 2005/01/03 15:21:29 espie Exp $
  		  i = strlen (flag_chars);
  		  flag_chars[i++] = fki->width_char;
  		  flag_chars[i] = 0;
-@@ -2126,10 +2202,15 @@ check_format_info_main (status, res, inf
+@@ -2126,10 +2202,15 @@ check_format_info_main (status, res, info, format_char
  	  main_wanted_type.wanted_type_name = wanted_type_name;
  	  main_wanted_type.pointer_count = fci->pointer_count + aflag;
  	  main_wanted_type.char_lenient_flag = 0;

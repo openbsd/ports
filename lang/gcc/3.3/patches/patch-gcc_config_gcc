@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
---- gcc/config.gcc.orig	Thu Apr 29 06:42:47 2004
-+++ gcc/config.gcc	Mon Jan  3 10:17:41 2005
+$OpenBSD: patch-gcc_config_gcc,v 1.2 2008/07/25 20:50:26 martynas Exp $
+--- gcc/config.gcc.orig	Thu Apr 29 07:42:47 2004
++++ gcc/config.gcc	Fri Jul 25 12:34:57 2008
 @@ -402,9 +402,19 @@ case $machine in
  	esac
  	;;
@@ -110,7 +110,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
  	;;
  m88k-*-sysv4*)
  	xm_defines=POSIX
-@@ -1893,13 +1928,19 @@ mips*-*-linux*)				# Linux MIPS, either 
+@@ -1893,13 +1928,19 @@ mips*-*-linux*)				# Linux MIPS, either endian.
          esac
  	tmake_file="t-slibgcc-elf-ver t-linux mips/t-linux"
  	;;

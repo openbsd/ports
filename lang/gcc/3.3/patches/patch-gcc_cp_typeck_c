@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_cp_typeck_c,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
---- gcc/cp/typeck.c.orig	Sun Feb 22 17:27:37 2004
-+++ gcc/cp/typeck.c	Mon Jan  3 10:17:44 2005
-@@ -2739,6 +2739,9 @@ build_function_call_real (function, para
+$OpenBSD: patch-gcc_cp_typeck_c,v 1.2 2008/07/25 20:50:26 martynas Exp $
+--- gcc/cp/typeck.c.orig	Sun Feb 22 18:27:37 2004
++++ gcc/cp/typeck.c	Fri Jul 25 12:34:58 2008
+@@ -2739,6 +2739,9 @@ build_function_call_real (function, params, flags)
    if (warn_format)
      check_function_format (NULL, TYPE_ATTRIBUTES (fntype), coerced_params);
  

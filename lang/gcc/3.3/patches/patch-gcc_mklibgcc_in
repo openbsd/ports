@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_mklibgcc_in,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
---- gcc/mklibgcc.in.orig	Wed Dec 24 23:42:28 2003
-+++ gcc/mklibgcc.in	Mon Jan  3 10:17:42 2005
-@@ -63,10 +63,10 @@ make_compile='$(MAKE) GCC_FOR_TARGET="$(
+$OpenBSD: patch-gcc_mklibgcc_in,v 1.2 2008/07/25 20:50:26 martynas Exp $
+--- gcc/mklibgcc.in.orig	Thu Dec 25 00:42:28 2003
++++ gcc/mklibgcc.in	Fri Jul 25 12:34:58 2008
+@@ -63,10 +63,10 @@ make_compile='$(MAKE) GCC_FOR_TARGET="$(GCC_FOR_TARGET
  	  LANGUAGES="$(LANGUAGES)"'
  
  # Dependencies for libgcc2.c

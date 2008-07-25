@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2008/07/04 19:41:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2008/07/25 20:50:26 martynas Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -7,7 +7,7 @@ FULL_VERSION=3.3.6
 FULL_PKGVERSION=3.3.6
 
 PKGNAME-main=	gcc-${FULL_PKGVERSION}p10
-PKGNAME-c++ =	g++-${FULL_PKGVERSION}p9
+PKGNAME-c++ =	g++-${FULL_PKGVERSION}p10
 PKGNAME-estdc=	libstdc++-${FULL_PKGVERSION}p3
 PKGNAME-g77=	g77-${FULL_PKGVERSION}p9
 PKGNAME-java=	gcj-${FULL_PKGVERSION}p6

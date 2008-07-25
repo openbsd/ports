@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_Makefile_in,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
---- gcc/Makefile.in.orig	Mon Jan  3 12:27:24 2005
-+++ gcc/Makefile.in	Mon Jan  3 12:28:10 2005
+$OpenBSD: patch-gcc_Makefile_in,v 1.2 2008/07/25 20:50:26 martynas Exp $
+--- gcc/Makefile.in.orig	Thu Apr  1 19:55:23 2004
++++ gcc/Makefile.in	Fri Jul 25 12:34:56 2008
 @@ -742,7 +742,8 @@ CXX_TARGET_OBJS=@cxx_target_objs@
  
  # Language-specific object files for C and Objective C.
@@ -11,7 +11,7 @@ $OpenBSD: patch-gcc_Makefile_in,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
    c-objc-common.o c-dump.o libcpp.a $(C_TARGET_OBJS)
  
  # Language-specific object files for C.
-@@ -1269,6 +1270,9 @@ attribs.o : attribs.c $(CONFIG_H) $(SYST
+@@ -1269,6 +1270,9 @@ attribs.o : attribs.c $(CONFIG_H) $(SYSTEM_H) $(TREE_H
  	builtin-types.def $(TARGET_H) langhooks.h
  
  c-format.o : c-format.c $(CONFIG_H) $(SYSTEM_H) $(TREE_H) langhooks.h \

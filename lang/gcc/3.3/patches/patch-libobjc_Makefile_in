@@ -1,7 +1,7 @@
-$OpenBSD: patch-libobjc_Makefile_in,v 1.1 2006/01/08 21:35:09 espie Exp $
---- libobjc/Makefile.in.orig	Sun Jan  8 19:03:31 2006
-+++ libobjc/Makefile.in	Sun Jan  8 20:45:30 2006
-@@ -261,15 +261,18 @@ $(OBJC_THREAD_FILE)_gc.lo: $(OBJC_THREAD
+$OpenBSD: patch-libobjc_Makefile_in,v 1.2 2008/07/25 20:50:26 martynas Exp $
+--- libobjc/Makefile.in.orig	Sun Jan 26 13:29:56 2003
++++ libobjc/Makefile.in	Fri Jul 25 12:34:59 2008
+@@ -261,15 +261,18 @@ $(OBJC_THREAD_FILE)_gc.lo: $(OBJC_THREAD_FILE).c
  
  doc: info dvi html
  

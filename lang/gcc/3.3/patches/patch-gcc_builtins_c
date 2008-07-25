@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
---- gcc/builtins.c.orig	Tue Aug  3 22:06:45 2004
-+++ gcc/builtins.c	Mon Jan  3 10:17:41 2005
-@@ -4003,9 +4003,11 @@ expand_builtin (exp, target, subtarget, 
+$OpenBSD: patch-gcc_builtins_c,v 1.2 2008/07/25 20:50:26 martynas Exp $
+--- gcc/builtins.c.orig	Tue Aug  3 23:06:45 2004
++++ gcc/builtins.c	Fri Jul 25 12:34:56 2008
+@@ -4003,9 +4003,11 @@ expand_builtin (exp, target, subtarget, mode, ignore)
        break;
  
      case BUILT_IN_STRCPY:
@@ -13,7 +13,7 @@ $OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
        break;
  
      case BUILT_IN_STRNCPY:
-@@ -4015,9 +4017,11 @@ expand_builtin (exp, target, subtarget, 
+@@ -4015,9 +4017,11 @@ expand_builtin (exp, target, subtarget, mode, ignore)
        break;
  
      case BUILT_IN_STRCAT:

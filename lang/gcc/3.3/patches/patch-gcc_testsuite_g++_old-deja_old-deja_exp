@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_testsuite_g++_old-deja_old-deja_exp,v 1.1 2005/10/30 19:24:11 espie Exp $
---- gcc/testsuite/g++.old-deja/old-deja.exp.orig	Sun Oct 30 18:15:19 2005
-+++ gcc/testsuite/g++.old-deja/old-deja.exp	Sun Oct 30 18:15:27 2005
-@@ -52,7 +52,7 @@ foreach file [lsort [find $srcdir/$subdi
+$OpenBSD: patch-gcc_testsuite_g++_old-deja_old-deja_exp,v 1.2 2008/07/25 20:50:26 martynas Exp $
+--- gcc/testsuite/g++.old-deja/old-deja.exp.orig	Tue Oct  9 12:16:17 2001
++++ gcc/testsuite/g++.old-deja/old-deja.exp	Fri Jul 25 12:34:58 2008
+@@ -52,7 +52,7 @@ foreach file [lsort [find $srcdir/$subdir *.C]] {
      # We don't want old-dejagnu.exp to have to know about all the global
      # variables we use.  For now we tell it about CXXFLAGS and LIBS and
      # leave LDFLAGS alone.
