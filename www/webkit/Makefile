@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/25 12:51:10 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2008/07/25 14:51:56 landry Exp $
 
 COMMENT =	open source web browser engine
 
@@ -60,10 +60,10 @@ BUILD_DEPENDS =	::devel/bison \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
 pre-configure:
-	cd ${WRKSRC} && ${SETENV} CC=${PREFIX}/bin/egcc CXX=${PREFIX}/bin/eg++ \
+	cd ${WRKSRC} && CC=${LOCALBASE}/bin/egcc CXX=${LOCALBASE}/bin/eg++ \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		autoreconf --install
-	cd ${WRKSRC} && ${SETENV} CC=${PREFIX}/bin/egcc CXX=${PREFIX}/bin/eg++ \
+	cd ${WRKSRC} && CC=${LOCALBASE}/bin/egcc CXX=${LOCALBASE}/bin/eg++ \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		automake --add-missing --copy
 
