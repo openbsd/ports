@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2008/07/25 20:12:02 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=   ${HOMEPAGE}/files/
+MASTER_SITES=   ${HOMEPAGE}files/
 
 WANTLIB=	c crypto m ncurses perl ssl util pcre
 
