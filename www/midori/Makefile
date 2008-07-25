@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/25 12:54:33 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2008/07/25 15:19:10 landry Exp $
 
 COMMENT =	lightweight web browser
 
 DISTNAME =	midori-0.0.18
 CATEGORIES =	www
+PKGNAME =	${DISTNAME}p0
 
 HOMEPAGE =	http://www.twotoasts.de/index.php/pages/midori_summary.html
 MASTER_SITES =	http://www.twotoasts.de/media/midori/
@@ -36,7 +37,7 @@ WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 icudata icui18n icuuc idn intl jpeg m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pthread sqlite3 ssl \
-		xslt z cairo curl estdc++ pixman-1 png xml2
+		xslt z cairo curl pixman-1 png xml2
 
 post-extract:
 	@chmod 755 ${WRKSRC}/install-sh
