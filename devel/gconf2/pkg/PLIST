@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.19 2008/04/29 18:23:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2008/07/25 13:42:57 ajacoutot Exp $
 %%SHARED%%
-bin/gconf-merge-tree
-bin/gconftool-2
+@bin bin/gconf-merge-tree
+@bin bin/gconftool-2
 include/gconf/
 include/gconf/2/
 include/gconf/2/gconf/
@@ -24,15 +24,22 @@ lib/libgconf-2.a
 lib/libgconf-2.la
 lib/pkgconfig/
 lib/pkgconfig/gconf-2.0.pc
-libexec/gconf-sanity-check-2
-libexec/gconfd-2
+@bin libexec/gconf-sanity-check-2
+@bin libexec/gconfd-2
 @man man/man1/gconftool-2.1
 share/aclocal/gconf-2.m4
-@sample ${SYSCONFDIR}/gconf/
 share/examples/gconf2/
+@sample ${SYSCONFDIR}/gconf/
+share/examples/gconf2/2/
 @sample ${SYSCONFDIR}/gconf/2/
-share/examples/gconf2/path
+share/examples/gconf2/2/path
 @sample ${SYSCONFDIR}/gconf/2/path
+share/examples/gconf2/gconf.xml.defaults/
+@sample /var/db/gconf/
+@sample /var/db/gconf/2/
+@sample /var/db/gconf/gconf.xml.defaults/
+share/examples/gconf2/gconf.xml.mandatory/
+@sample /var/db/gconf/gconf.xml.mandatory/
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gconf/
@@ -100,8 +107,6 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/GConf2.mo
 share/locale/es/LC_MESSAGES/GConf2.mo
 share/locale/et/LC_MESSAGES/GConf2.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/GConf2.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/
@@ -214,9 +219,5 @@ share/locale/zh_TW/LC_MESSAGES/GConf2.mo
 share/sgml/
 share/sgml/gconf/
 share/sgml/gconf/gconf-1.0.dtd
-@sample /var/db/gconf/
-@sample /var/db/gconf/2/
-@sample /var/db/gconf/gconf.xml.defaults/
-@sample /var/db/gconf/gconf.xml.mandatory/
 @extraunexec rm -fr /var/db/gconf/gconf.xml.defaults/*
 @extraunexec rm -fr /var/db/gconf/gconf.xml.mandatory/*

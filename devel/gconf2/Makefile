@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2008/06/18 20:24:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2008/07/25 13:42:57 ajacoutot Exp $
 
 COMMENT=	configuration database system for GNOME
 
 GNOME_PROJECT=	GConf
 GNOME_VERSION=	2.22.0
-PKGNAME=	gconf2-${GNOME_VERSION}p0
+PKGNAME=	gconf2-${GNOME_VERSION}p1
 SHARED_LIBS +=	gconf-2              6.1      # .5.5
 CATEGORIES=	devel
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
 		freetype glitz m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
@@ -33,5 +34,8 @@ USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+
+FAKE_FLAGS=	sysgconfdir=${PREFIX}/share/examples/gconf2
 
 .include <bsd.port.mk>
