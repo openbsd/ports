@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2008/02/12 23:21:38 martynas Exp $
+# $OpenBSD: Makefile,v 1.25 2008/07/25 00:42:33 martynas Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -6,14 +6,14 @@ ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 COMMENT-main=		Netscape Portable Runtime
 COMMENT-docs=		HTML Documentation for NSPR
 
-VER=			4.6.8
+VER=			4.7.1
 DISTNAME=		nspr-${VER}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-docs=		nspr-docs-${VER}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			nspr-reference${EXTRACT_SUFX}:0
 
-SO_VERSION=		19.0
+SO_VERSION=		20.0
 .for _lib in nspr4 plc4 plds4
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -73,7 +73,7 @@ do-regress:
 	${MAKE_PROGRAM} -C ${WRKSRC}/pr/tests
 	${MAKE_PROGRAM} -C ${WRKSRC}/lib/tests
 	@cd ${WRKSRC}/pr/tests && ulimit -Sn 192 && env TZ=gmt \
-		LD_LIBRARY_PATH=${WRKSRC}/dist/lib /bin/ksh runtests.ksh
+		LD_LIBRARY_PATH=${WRKSRC}/dist/lib /bin/ksh runtests.sh
 	LD_LIBRARY_PATH=${WRKSRC}/dist/lib ${WRKSRC}/lib/tests/string
 	LD_LIBRARY_PATH=${WRKSRC}/dist/lib ${WRKSRC}/lib/tests/base64t
 
