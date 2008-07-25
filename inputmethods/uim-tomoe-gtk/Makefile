@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/29 20:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/25 09:43:31 fgsch Exp $
 COMMENT=	japanese handwriting
 
 DISTNAME=	uim-tomoe-gtk-0.2.0
 PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE= 	http://tomoe.sourceforge.jp/
-MASTER_SITES=	http://dl.sourceforge.jp/tomoe/17172/
+MASTER_SITES=	http://osdn.dl.sourceforge.jp/tomoe/17172/
 
 CATEGORIES=	japanese inputmethods
 
