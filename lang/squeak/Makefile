@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2007/02/16 07:30:56 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2008/07/25 14:02:48 espie Exp $
 
 SUBDIR =vm
 SUBDIR+=image
+SUBDIR+=funsqueak
 SUBDIR+=sources
 
 .include <bsd.port.subdir.mk>
