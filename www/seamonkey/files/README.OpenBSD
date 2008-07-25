@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.3 2007/04/22 15:04:39 martynas Exp $
+$OpenBSD: README.OpenBSD,v 1.4 2008/07/25 17:41:06 martynas Exp $
 
 To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
 
@@ -6,7 +6,8 @@ Plugins
 
 Seamonkey looks for plugins in ~/.mozilla/plugins,
 !!PREFIX!!/lib/mozilla-plugins, and !!PREFIX!!/seamonkey/plugins.
-The user environment variable MOZ_PLUGIN_PATH is not used on OpenBSD.
+If the environment variable MOZ_PLUGIN_PATH is specified, this
+location will be overridden.
 
 Using Java Applets
 

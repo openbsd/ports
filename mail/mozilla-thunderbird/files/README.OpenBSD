@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1 2007/06/22 18:51:30 martynas Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2008/07/25 17:41:06 martynas Exp $
 
 If you encounter strange problems or Thunderbird doesn't start at
 all, try the -safe-mode switch.
@@ -19,3 +19,5 @@ Plugins
 Thunderbird looks for plugins in ~/.mozilla/plugins
 ${LOCALBASE}/mozilla-thunderbird/plugins and
 ${LOCALBASE}/lib/mozilla-plugins.
+If the environment variable MOZ_PLUGIN_PATH is specified, this
+location will be overridden.

@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.5 2007/06/12 16:45:37 martynas Exp $
+$OpenBSD: README.OpenBSD,v 1.6 2008/07/25 17:41:06 martynas Exp $
 
 If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is
@@ -30,7 +30,8 @@ Plugins
 
 Firefox looks for plugins in ~/.mozilla/plugins,
 !!PREFIX!!/lib/mozilla-plugins, and !!PREFIX!!/mozilla-firefox/plugins.
-The user environment variable MOZ_PLUGIN_PATH is not used on OpenBSD.
+If the environment variable MOZ_PLUGIN_PATH is specified, this
+location will be overridden.
 
 Using Java Applets
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2008/07/21 19:19:06 martynas Exp $
+# $OpenBSD: Makefile,v 1.25 2008/07/25 17:41:06 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	integrated mozilla application suite
 
 VER=		1.1.11
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}p0
+PKGNAME=	seamonkey-${VER}p1
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
