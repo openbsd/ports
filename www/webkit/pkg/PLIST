@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/25 12:51:10 landry Exp $
+%%SHARED%%
+@bin bin/jsc
+include/webkit-1.0/
+include/webkit-1.0/JavaScriptCore/
+include/webkit-1.0/JavaScriptCore/JSBase.h
+include/webkit-1.0/JavaScriptCore/JSContextRef.h
+include/webkit-1.0/JavaScriptCore/JSObjectRef.h
+include/webkit-1.0/JavaScriptCore/JSStringRef.h
+include/webkit-1.0/JavaScriptCore/JSStringRefBSTR.h
+include/webkit-1.0/JavaScriptCore/JSStringRefCF.h
+include/webkit-1.0/JavaScriptCore/JSValueRef.h
+include/webkit-1.0/JavaScriptCore/JavaScript.h
+include/webkit-1.0/JavaScriptCore/JavaScriptCore.h
+include/webkit-1.0/webkit/
+include/webkit-1.0/webkit/webkit.h
+include/webkit-1.0/webkit/webkitdefines.h
+include/webkit-1.0/webkit/webkitenumtypes.h
+include/webkit-1.0/webkit/webkitnetworkrequest.h
+include/webkit-1.0/webkit/webkitversion.h
+include/webkit-1.0/webkit/webkitwebbackforwardlist.h
+include/webkit-1.0/webkit/webkitwebframe.h
+include/webkit-1.0/webkit/webkitwebhistoryitem.h
+include/webkit-1.0/webkit/webkitwebsettings.h
+include/webkit-1.0/webkit/webkitwebview.h
+lib/libwebkit-1.0.a
+lib/libwebkit-1.0.la
+lib/pkgconfig/
+lib/pkgconfig/webkit-1.0.pc

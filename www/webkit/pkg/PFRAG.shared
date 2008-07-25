@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/07/25 12:51:10 landry Exp $
+@lib lib/libwebkit-1.0.so.${LIBwebkit-1.0_VERSION}
