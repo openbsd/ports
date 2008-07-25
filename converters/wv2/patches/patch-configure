@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure,v 1.1 2008/07/25 15:16:34 sthen Exp $
+--- configure.orig	Fri Jul 25 15:59:24 2008
++++ configure	Fri Jul 25 16:01:23 2008
+@@ -25945,6 +25945,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <math.h>
+ 
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ #ifdef __cplusplus
+@@ -25952,13 +25953,12 @@ extern "C"
+ #endif
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+-char isnan ();
++double val = 0.0;
++
+ int
+ main ()
+ {
+-isnan ();
+-  ;
+-  return 0;
++  return isnan (val);
+ }
+ _ACEOF
+ rm -f conftest.$ac_objext conftest$ac_exeext
