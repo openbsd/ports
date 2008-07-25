@@ -1,0 +1,8 @@
+FunSqueak is a squeak image that's not meant to be used for serious
+development, but rather as an exploration tool.
+
+It doesn't work 100%, but it contains lots of classical squeak packages,
+to give you an idea of what is possible.
+
+If the fonts look weird, middle click -> appearance -> window title font,
+then force a redraw.
