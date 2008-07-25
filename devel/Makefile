@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.608 2008/07/23 00:39:02 fgsch Exp $
+# $OpenBSD: Makefile,v 1.609 2008/07/25 00:07:17 ian Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -107,6 +107,7 @@
      SUBDIR += hmake
      SUBDIR += horde
      SUBDIR += hs-newbinary
+     SUBDIR += hudson
      SUBDIR += id-utils
      SUBDIR += idoc
      SUBDIR += ipython
