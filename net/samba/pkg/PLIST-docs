@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.9 2008/07/11 11:40:33 brad Exp $
+@comment $OpenBSD: PLIST-docs,v 1.10 2008/07/25 22:01:17 brad Exp $
 share/doc/samba/
 share/doc/samba/NT4-Locking.reg
 share/doc/samba/NT4_PlainPassword.reg
@@ -113,6 +113,9 @@ share/examples/samba/libsmbclient/smbwrapper/bsd-strlcpy.c
 share/examples/samba/libsmbclient/smbwrapper/bsd-strlfunc.h
 share/examples/samba/libsmbclient/smbwrapper/opendir_smbsh.c
 share/examples/samba/libsmbclient/smbwrapper/select.c
+share/examples/samba/libsmbclient/smbwrapper/smbsh.1
+share/examples/samba/libsmbclient/smbwrapper/smbsh.1.html
+share/examples/samba/libsmbclient/smbwrapper/smbsh.1.xml
 share/examples/samba/libsmbclient/smbwrapper/smbsh.c
 share/examples/samba/libsmbclient/smbwrapper/smbw.c
 share/examples/samba/libsmbclient/smbwrapper/smbw.h
@@ -364,7 +367,7 @@ share/swat/help/Samba3-HOWTO/apa.html
 share/swat/help/Samba3-HOWTO/bugreport.html
 share/swat/help/Samba3-HOWTO/cfgsmarts.html
 share/swat/help/Samba3-HOWTO/ch-ldap-tls.html
-share/swat/help/Samba3-HOWTO/ch46.html
+share/swat/help/Samba3-HOWTO/ch47.html
 share/swat/help/Samba3-HOWTO/classicalprinting.html
 share/swat/help/Samba3-HOWTO/compiling.html
 share/swat/help/Samba3-HOWTO/diagnosis.html
@@ -487,7 +490,6 @@ share/swat/help/manpages/smbmnt.8.html
 share/swat/help/manpages/smbmount.8.html
 share/swat/help/manpages/smbpasswd.5.html
 share/swat/help/manpages/smbpasswd.8.html
-share/swat/help/manpages/smbsh.1.html
 share/swat/help/manpages/smbspool.8.html
 share/swat/help/manpages/smbstatus.1.html
 share/swat/help/manpages/smbtar.1.html
