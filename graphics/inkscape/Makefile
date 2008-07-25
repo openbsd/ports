@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/29 20:29:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2008/07/25 20:48:12 martynas Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.46
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	graphics
 
 MAINTAINER=	Benoit Chesneau <benoitc@metavers.net>
