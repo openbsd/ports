@@ -1,0 +1,38 @@
+$OpenBSD: patch-browser_components_nsBrowserGlue_js,v 1.1.1.1 2008/07/25 01:52:55 martynas Exp $
+--- browser/components/nsBrowserGlue.js.orig	Sat May 10 18:52:32 2008
++++ browser/components/nsBrowserGlue.js	Fri Jul 18 00:54:00 2008
+@@ -175,34 +175,6 @@ BrowserGlue.prototype = {
+   // profile startup handler (contains profile initialization routines)
+   _onProfileStartup: function() 
+   {
+-    // Check to see if the EULA must be shown on startup
+-
+-    // Global override for tinderbox machines
+-    var prefBranch = Cc["@mozilla.org/preferences-service;1"].
+-                     getService(Ci.nsIPrefBranch);
+-    var mustDisplayEULA = true;
+-    try {
+-      mustDisplayEULA = !prefBranch.getBoolPref("browser.EULA.override");
+-    } catch (e) {
+-      // Pref might not exist
+-    }
+-
+-    // Make sure it hasn't already been accepted
+-    if (mustDisplayEULA) {
+-      try {
+-        var EULAVersion = prefBranch.getIntPref("browser.EULA.version");
+-        mustDisplayEULA = !prefBranch.getBoolPref("browser.EULA." + EULAVersion + ".accepted");
+-      } catch(ex) {
+-      }
+-    }
+-
+-    if (mustDisplayEULA) {
+-      var ww2 = Cc["@mozilla.org/embedcomp/window-watcher;1"].
+-                getService(Ci.nsIWindowWatcher);
+-      ww2.openWindow(null, "chrome://browser/content/EULA.xul", 
+-                     "_blank", "chrome,centerscreen,modal,resizable=yes", null);
+-    }
+-
+     this.Sanitizer.onStartup();
+     // check if we're in safe mode
+     var app = Cc["@mozilla.org/xre/app-info;1"].getService(Ci.nsIXULAppInfo).
