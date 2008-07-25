@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/04/25 16:37:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/07/25 08:31:06 ajacoutot Exp $
 
 COMMENT=		screen magnifier for the GNOME desktop
 
 GNOME_PROJECT=		gnome-mag
-GNOME_VERSION=		0.14.10
-PKGNAME=		${DISTNAME}p0
-SHARED_LIBS +=	gnome-mag            0.0      # .4.10
+GNOME_VERSION=		0.15.0
+SHARED_LIBS +=	gnome-mag            0.1      # .4.10
 CATEGORIES=		sysutils
 
 HOMEPAGE=		https://launchpad.net/gnome-mag
@@ -22,7 +21,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gdk_pixbuf_xlib-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre png pthread z
+		pangoft2-1.0 pcre png pthread z pixman-1
 
 USE_X11=		Yes
 
@@ -35,16 +34,15 @@ BUILD_DEPENDS=		::devel/doxygen,-main
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-mag/ \
-			--enable-colorblind-applet=no \
-			--disable-scrollkeeper
+			--enable-colorblind-applet=no
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 MAKE_ENV+=		DOXYGEN_ENCODE_PATH_STRIP="${WRKSRC}"
 
+SUBST_VARS=		LIBgnome-mag_VERSION
+
 pre-configure:
-	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g;' \
-		-e 's,!!LIBgnome-mag_VERSION!!,${LIBgnome-mag_VERSION},g' \
-		${WRKSRC}/docs/man/magnifier.1
+	${SUBST_CMD} ${WRKSRC}/docs/man/magnifier.1
 
 .include <bsd.port.mk>
