@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:39 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/07/25 17:11:31 landry Exp $
 
 COMMENT=	formatter for spellchecking pod
 
 MODULES=	cpan
 
 DISTNAME=	Pod-Spell-1.01
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	textproc
 
-MAINTAINER=	Mathieu Sauve-Frankel <msd@openbsd.org>
+MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
