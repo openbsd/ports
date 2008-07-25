@@ -1,100 +1,100 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2007/12/15 23:47:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2008/07/25 20:28:03 kili Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
 @newgroup _kdesud:583
-bin/appletproxy
-bin/drkonqi
-bin/extensionproxy
-bin/genkdmconf
-bin/kaccess
-bin/kappfinder
-bin/kapplymousetheme
-bin/kasbar
-bin/kate
-bin/kblankscrn.kss
-bin/kbookmarkmerger
+@bin bin/appletproxy
+@bin bin/drkonqi
+@bin bin/extensionproxy
+@bin bin/genkdmconf
+@bin bin/kaccess
+@bin bin/kappfinder
+@bin bin/kapplymousetheme
+@bin bin/kasbar
+@bin bin/kate
+@bin bin/kblankscrn.kss
+@bin bin/kbookmarkmerger
 @mode u+s
 @owner root
 bin/kcheckpass
 @mode
 @owner
-bin/kcheckrunning
-bin/kcminit
-bin/kcminit_startup
-bin/kcontrol
-bin/kcontroledit
-bin/kdcop
-bin/kdebugdialog
+@bin bin/kcheckrunning
+@bin bin/kcminit
+@bin bin/kcminit_startup
+@bin bin/kcontrol
+@bin bin/kcontroledit
+@bin bin/kdcop
+@bin bin/kdebugdialog
 bin/kdeeject
 bin/kdeinstallktheme
-bin/kdepasswd
-bin/kdeprintfax
-bin/kdesktop
-bin/kdesktop_lock
-bin/kdesu
+@bin bin/kdepasswd
+@bin bin/kdeprintfax
+@bin bin/kdesktop
+@bin bin/kdesktop_lock
+@bin bin/kdesu
 @mode g+s
 @group _kdesud
 bin/kdesud
 @mode
 @group
-bin/kdialog
-bin/kdm
-bin/kdm_config
-bin/kdm_greet
-bin/kdmctl
-bin/keditbookmarks
-bin/keditfiletype
-bin/kfind
-bin/kfmclient
-bin/kfontinst
-bin/kfontview
+@bin bin/kdialog
+@bin bin/kdm
+@bin bin/kdm_config
+@bin bin/kdm_greet
+@bin bin/kdmctl
+@bin bin/keditbookmarks
+@bin bin/keditfiletype
+@bin bin/kfind
+@bin bin/kfmclient
+@bin bin/kfontinst
+@bin bin/kfontview
 bin/khc_docbookdig.pl
 bin/khc_htdig.pl
 bin/khc_htsearch.pl
-bin/khc_indexbuilder
+@bin bin/khc_indexbuilder
 bin/khc_mansearch.pl
-bin/khelpcenter
-bin/khotkeys
-bin/kicker
+@bin bin/khelpcenter
+@bin bin/khotkeys
+@bin bin/kicker
 bin/kinfocenter
-bin/kio_media_mounthelper
+@bin bin/kio_media_mounthelper
 bin/kio_system_documenthelper
-bin/kjobviewer
-bin/klipper
-bin/klocaldomainurifilterhelper
-bin/kmenuedit
-bin/knetattach
-bin/kompmgr
-bin/konqueror
-bin/konsole
-bin/kpager
-bin/kpersonalizer
-bin/kpm
-bin/kprinter
-bin/krandom.kss
-bin/krandrtray
+@bin bin/kjobviewer
+@bin bin/klipper
+@bin bin/klocaldomainurifilterhelper
+@bin bin/kmenuedit
+@bin bin/knetattach
+@bin bin/kompmgr
+@bin bin/konqueror
+@bin bin/konsole
+@bin bin/kpager
+@bin bin/kpersonalizer
+@bin bin/kpm
+@bin bin/kprinter
+@bin bin/krandom.kss
+@bin bin/krandrtray
 bin/krdb
-bin/kreadconfig
-bin/krootimage
-bin/ksmserver
-bin/ksplash
-bin/ksplashsimple
-bin/kstart
-bin/ksysguard
-bin/ksysguardd
-bin/ksystraycmd
-bin/ktip
-bin/ktrash
-bin/kwebdesktop
-bin/kwin
-bin/kwin_killer_helper
-bin/kwin_rules_dialog
-bin/kwrite
-bin/kwriteconfig
-bin/kxkb
-bin/nspluginscan
-bin/nspluginviewer
+@bin bin/kreadconfig
+@bin bin/krootimage
+@bin bin/ksmserver
+@bin bin/ksplash
+@bin bin/ksplashsimple
+@bin bin/kstart
+@bin bin/ksysguard
+@bin bin/ksysguardd
+@bin bin/ksystraycmd
+@bin bin/ktip
+@bin bin/ktrash
+@bin bin/kwebdesktop
+@bin bin/kwin
+@bin bin/kwin_killer_helper
+@bin bin/kwin_rules_dialog
+@bin bin/kwrite
+@bin bin/kwriteconfig
+@bin bin/kxkb
+@bin bin/nspluginscan
+@bin bin/nspluginviewer
 bin/startkde
 include/KBackgroundIface.h
 include/KDesktopIface.h
@@ -161,10 +161,10 @@ include/kwin/options.h
 include/kwin/workspace.h
 include/libkonq_export.h
 lib/kconf_update_bin/
-lib/kconf_update_bin/khotkeys_update
-lib/kconf_update_bin/kicker-3.4-reverseLayout
-lib/kconf_update_bin/kwin_update_default_rules
-lib/kconf_update_bin/kwin_update_window_settings
+@bin lib/kconf_update_bin/khotkeys_update
+@bin lib/kconf_update_bin/kicker-3.4-reverseLayout
+@bin lib/kconf_update_bin/kwin_update_default_rules
+@bin lib/kconf_update_bin/kwin_update_window_settings
 ${KDE}/appletproxy.la
 ${KDE}/appletproxy.so
 ${KDE}/clock_panelapplet.la
@@ -633,7 +633,6 @@ lib/libtaskbar.la
 @lib lib/libtaskbar.so.${LIBtaskbar_VERSION}
 lib/libtaskmanager.la
 @lib lib/libtaskmanager.so.${LIBtaskmanager_VERSION}
-libexec/genkdmconf
 share/applications/kde/Help.desktop
 share/applications/kde/Home.desktop
 share/applications/kde/KControl.desktop
@@ -4782,3 +4781,6 @@ share/wallpapers/triplegears.jpg
 share/wallpapers/triplegears.jpg.desktop
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
+@exec %D/bin/genkdmconf --in %D/share/config/kdm || true
+@extra share/config/kdm/
+@extra share/apps/kdm/faces/

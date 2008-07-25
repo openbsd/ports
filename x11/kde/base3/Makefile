@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2008/03/25 17:34:14 espie Exp $
+# $OpenBSD: Makefile,v 1.85 2008/07/25 20:28:03 kili Exp $
 
 COMMENT-main= 		K Desktop Environment, basic applications
 COMMENT-plugins=	Konqueror nsplugins, essentially native JDK
@@ -6,7 +6,7 @@ COMMENT-samba=		K Desktop Environment, samba support
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.9
 DISTNAME=		kdebase-${VERSION}
-PKGNAME-main=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 PKGNAME-samba=		kdesamba-${VERSION}
 MODKDE_VERSION?=	3.5.8
 SHARED_LIBS +=	konq                 7.0      # .6.0
@@ -66,8 +66,6 @@ SAMPLECONFDIR=${PREFIX}/share/apps/kde-conf-sample
 SUBST_VARS=EXTRA_CONFIG SAMPLECONFDIR
 
 post-install:
-	rm -rf ${PREFIX}/share/config/kdm
-	${INSTALL_PROGRAM} ${WRKBUILD}/kdm/kfrontend/genkdmconf ${PREFIX}/libexec
 	${INSTALL_DATA} ${FILESDIR}/kdesurc ${PREFIX}/share/config
 
 FAKE_FLAGS=	sysconfdir=${SAMPLECONFDIR}
