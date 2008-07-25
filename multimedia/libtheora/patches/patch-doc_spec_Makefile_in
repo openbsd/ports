@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_spec_Makefile_in,v 1.1 2008/07/25 14:20:50 brad Exp $
+--- doc/spec/Makefile.in.orig	Tue Jul 15 17:48:31 2008
++++ doc/spec/Makefile.in	Tue Jul 15 17:48:40 2008
+@@ -197,7 +197,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@

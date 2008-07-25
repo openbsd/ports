@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 03:24:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2008/07/25 14:15:55 brad Exp $
 
 COMMENT=	open video codec
-DISTNAME=	libtheora-1.0alpha7
-CATEGORIES=	multimedia
-SHARED_LIBS=	theora	2.0
 
+DISTNAME=	libtheora-1.0beta3
+CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/
 
-HOMEPAGE=	http://www.theora.org/
+SHARED_LIBS+=	theora		3.0
+SHARED_LIBS+=	theoradec	1.0
+SHARED_LIBS+=	theoraenc	1.0
 
-MAINTAINER=	Vladimir Tamara Patino <vtamara@pasosdejesus.org>
+HOMEPAGE=	http://www.theora.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
