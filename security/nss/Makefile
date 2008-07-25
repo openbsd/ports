@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2008/02/12 23:26:31 martynas Exp $
+# $OpenBSD: Makefile,v 1.10 2008/07/25 00:46:59 martynas Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.11.9
+VERSION=		3.12
 DISTNAME=		nss-${VERSION}
-SO_VERSION=		21.0
-.for _lib in freebl3 nss3 nssckbi smime3 softokn3 ssl3
+SO_VERSION=		22.0
+.for _lib in freebl3 nss3 nssckbi nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
 CATEGORIES=		security
@@ -26,15 +26,17 @@ WANTLIB += c pthread z
 MASTER_SITES=		http://ftp.eu.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${VERSION:S/./_/g}_RTM/src/ \
 			http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${VERSION:S/./_/g}_RTM/src/
 
-LIB_DEPENDS=		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr
+LIB_DEPENDS=		nspr4.>=20,plc4.>=20,plds4.>=20:nspr->=4.7:devel/nspr \
+			sqlite3.>=10.0:sqlite3->=3.5:databases/sqlite3
 
 MAKE_ENV=		BUILD_OPT=1 \
 			LOCALBASE="${LOCALBASE}" \
 			NSS_ENABLE_ECC=1 \
+			NSS_USE_SYSTEM_SQLITE=1 \
 			SO_VERSION="${SO_VERSION}" \
-			XCFLAGS="${CFLAGS}" \
-			NSPR_INCLUDE_DIR=${LOCALBASE}/include/nspr \
-			NSPR_LIB_DIR=${LOCALBASE}/lib
+			XCFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
+			NSPR_INCLUDE_DIR="${LOCALBASE}/include/nspr" \
+			NSPR_LIB_DIR="${LOCALBASE}/lib"
 
 USE_GMAKE=		Yes
 

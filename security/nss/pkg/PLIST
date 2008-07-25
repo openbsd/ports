@@ -1,14 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/02/13 17:11:05 naddy Exp $
-%%SHARED%%
-bin/certutil
-bin/cmsutil
-bin/crlutil
-bin/modutil
+@comment $OpenBSD: PLIST,v 1.4 2008/07/25 00:47:00 martynas Exp $
+@bin bin/certutil
+@bin bin/cmsutil
+@bin bin/crlutil
+@bin bin/modutil
 bin/nss-config
-bin/pk12util
-bin/signtool
-bin/signver
-bin/ssltap
+@bin bin/pk12util
+@bin bin/signtool
+@bin bin/signver
+@bin bin/ssltap
 include/nss/
 include/nss/base64.h
 include/nss/blapit.h
@@ -99,8 +98,17 @@ include/nss/ssl.h
 include/nss/sslerr.h
 include/nss/sslproto.h
 include/nss/sslt.h
+include/nss/utilrename.h
 include/nss/watcomfx.h
 lib/libcrmf.a
 lib/libfreebl3.chk
+@lib lib/libfreebl3.so.${LIBfreebl3_VERSION}
+@lib lib/libnss3.so.${LIBnss3_VERSION}
+@lib lib/libnssckbi.so.${LIBnssckbi_VERSION}
+@lib lib/libnssdbm3.so.${LIBnssdbm3_VERSION}
+@lib lib/libnssutil3.so.${LIBnssutil3_VERSION}
+@lib lib/libsmime3.so.${LIBsmime3_VERSION}
 lib/libsoftokn3.chk
+@lib lib/libsoftokn3.so.${LIBsoftokn3_VERSION}
+@lib lib/libssl3.so.${LIBssl3_VERSION}
 lib/pkgconfig/nss.pc
