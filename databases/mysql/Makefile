@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2008/05/23 14:38:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.142 2008/07/25 20:25:59 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -6,13 +6,13 @@ COMMENT-tests=	multithreaded SQL database (regression test suite)
 
 VERSION=	5.0.51a
 DISTNAME=	mysql-${VERSION}
-PKGNAME-main=	mysql-client-${VERSION}
+PKGNAME-main=	mysql-client-${VERSION}p0
 PKGNAME-server=	mysql-server-${VERSION}p1
 PKGNAME-tests= 	mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.0
-SHARED_LIBS +=	mysqlclient_r        18.0     # .15.0
-SHARED_LIBS +=	mysqlclient          18.0     # .15.0
+SHARED_LIBS +=	mysqlclient_r        19.0     # .15.0
+SHARED_LIBS +=	mysqlclient          19.0     # .15.0
 
 MASTER_SITES=	http://mysql.serenitynet.com/Downloads/$V/
 

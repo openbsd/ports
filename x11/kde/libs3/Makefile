@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2008/04/11 16:16:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.94 2008/07/25 20:25:59 sthen Exp $
 
 COMMENT-main=		K Desktop Environment, libraries
 COMMENT-cups=		K Desktop Environment, cups support
@@ -7,7 +7,7 @@ VERSION=		3.5.9
 DISTNAME=		kdelibs-${VERSION}
 MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
 
-PKGNAME-main=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p1
 PKGNAME-cups=		kdecups-${VERSION}
 MODKDE_VERSION=		3.5.8
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
@@ -15,10 +15,10 @@ SHARED_LIBS +=	kdefx                7.0      # .6.0
 SHARED_LIBS +=	kdefakes             7.0      # .6.0
 SHARED_LIBS +=	kdecore              7.0      # .6.0
 SHARED_LIBS +=	kunittest            2.0      # .1.0
-SHARED_LIBS +=	kdeui                7.0      # .6.0
+SHARED_LIBS +=	kdeui                8.0      # .6.0
 SHARED_LIBS +=	kspell               7.0      # .6.0
 SHARED_LIBS +=	kdesu                7.0      # .6.0
-SHARED_LIBS +=	kjs                  4.0      # .3.0
+SHARED_LIBS +=	kjs                  5.0      # .3.0
 SHARED_LIBS +=	kwalletclient        2.0      # .1.1
 SHARED_LIBS +=	kwalletbackend       2.0      # .1.0
 SHARED_LIBS +=	kio                  7.0      # .6.0

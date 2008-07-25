@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2007/10/30 16:56:45 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2008/07/25 20:25:59 sthen Exp $
 
 COMMENT=	Apache Portable Runtime
 
 V=		1.2.11
 DISTNAME=	apr-$V
-FULLPKGNAME=	apr${MT}-$Vp1
-SHARED_LIBS +=	apr-1${MT}             2.11     # .2.11
+FULLPKGNAME=	apr${MT}-$Vp2
+SHARED_LIBS +=	apr-1${MT}             3.0     # .2.11
 
 CATEGORIES=	devel
 

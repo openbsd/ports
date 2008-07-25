@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.37 2008/06/29 20:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2008/07/25 20:25:59 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 COMMENT-main=	kaffe.org's Java JDK1.4 compiler, runtime and libs
 
 DISTNAME=	kaffe-1.1.7
-PKGNAME-main=	${DISTNAME}p5
+PKGNAME-main=	${DISTNAME}p6
 
 CATEGORIES=	lang
 
 .for _lib in gtkpeer javaio javalang javanet javanio jawtgnu \
 	kaffevm management math security tritonusesd zip
-SHARED_LIBS+=           ${_lib} 1.0
+SHARED_LIBS+=           ${_lib} 2.0
 .endfor
 
 MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/v1.1.x-development/

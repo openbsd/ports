@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2008/07/25 16:08:35 martynas Exp $
+# $OpenBSD: Makefile,v 1.10 2008/07/25 20:25:59 sthen Exp $
 
 COMMENT =		K Desktop Environment, libraries
 DISTNAME =		kdelibs-${VERSION}
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 
 SHARED_LIBS +=	kaudiodevicelist     4.0      # .4.0
 SHARED_LIBS +=	kde3support          0.0      # .4.0
@@ -17,7 +17,7 @@ SHARED_LIBS +=	kdnssd               3.0      # .2.0
 SHARED_LIBS +=	khtml                8.0      # .5.0
 SHARED_LIBS +=	kimproxy             2.0      # .4.0
 SHARED_LIBS +=	kio                  8.0      # .5.0
-SHARED_LIBS +=	kjs                  5.0      # .2.0
+SHARED_LIBS +=	kjs                  6.0      # .2.0
 SHARED_LIBS +=	kjsembed             3.0      # .4.0
 SHARED_LIBS +=	kmediaplayer         2.0      # .4.0
 SHARED_LIBS +=	knewstuff            3.0      # .4.0
