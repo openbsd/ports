@@ -1,4 +1,4 @@
-$OpenBSD: patch-browser_app_mozilla_in,v 1.1.1.1 2008/07/25 01:52:55 martynas Exp $
+$OpenBSD: patch-browser_app_mozilla_in,v 1.2 2008/07/25 01:55:40 martynas Exp $
 --- browser/app/mozilla.in.orig	Fri Oct  5 10:29:26 2007
 +++ browser/app/mozilla.in	Sat Nov 17 16:13:18 2007
 @@ -52,6 +52,11 @@
@@ -22,7 +22,7 @@ $OpenBSD: patch-browser_app_mozilla_in,v 1.1.1.1 2008/07/25 01:52:55 martynas Ex
 +	export GDK_USE_XFT=0
 +fi
 +
-+export MOZ_PLUGIN_PATH=_LOCALBASE_/lib/mozilla-plugins
++export MOZ_PLUGIN_PATH=${MOZ_PLUGIN_PATH:=_LOCALBASE_/lib/mozilla-plugins}
  
  if [ $debugging = 1 ]
  then
