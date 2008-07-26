@@ -1,23 +1,53 @@
-$OpenBSD: patch-masquerade_module,v 1.1 2008/03/16 10:18:04 espie Exp $
---- masquerade.module.orig	Sun Mar 16 11:16:31 2008
-+++ masquerade.module	Sun Mar 16 11:16:46 2008
-@@ -198,7 +198,14 @@ function _masquerade_block_1_form($record) {
-  * masquerade block form submit
+$OpenBSD: patch-masquerade_module,v 1.2 2008/07/26 13:35:33 espie Exp $
+--- masquerade.module.orig	Fri Jul 11 22:33:03 2008
++++ masquerade.module	Sat Jul 26 15:30:28 2008
+@@ -266,14 +266,23 @@ function masquerade_block_1($record) {
+  * Masquerade block form validation. Implementation of hook_validate().
   */
- function _masquerade_block_1_form_submit($form_id, $form_values) {
--  $masq_user = user_load(array('name' => $form_values['masquerade_user_field']));
+ function masquerade_block_1_validate($form_id, $form_value) {
+-  if ($form_value['masquerade_user_field'] == '') {
++  $name = $form_value['masquerade_user_field'];
++
++  if ($name == '') {
+     form_set_error('masquerade_user_field', t('You cannot masquerade as %anonymous!', array('%anonymous' => variable_get('anonymous', 'Anonymous'))));
+   }
+   if ($GLOBALS['masquerading']) {
+     form_set_error('masquerade_user_field', t('You are already masquerading!'));
+   }
+   global $user;
+-  $masq_user = user_load(array('name' => $form_value['masquerade_user_field']));
++
 +  if (module_exists('alt_login')) {
-+    $name = $form_values['masquerade_user_field'];
-+    $alt = db_fetch_object(db_query("SELECT u.name FROM {users} u INNER JOIN {alt_login} al ON u.uid = al.uid WHERE al.alt_login = '%s'", $name));
-+    if ($alt->name) {
-+      $name = $alt->name;
++    $alt_login = db_fetch_object(db_query("SELECT u.name FROM {users} u INNER JOIN {alt_login} al ON u.uid = al.uid WHERE al.alt_login = '%s'", $name));
++    if ($alt_login->name) {
++      $name = $alt_login->name;
 +    }
 +  }
 +  $masq_user = user_load(array('name' => $name));
+   if (!$masq_user) {
+     form_set_error('masquerade_user_field', t('User %masq_as does not exist. Please enter a valid username.', array('%masq_as' => $form_value['masquerade_user_field'])));
+   }
+@@ -289,15 +298,16 @@ function masquerade_block_1_validate($form_id, $form_v
+  * Masquerade block form submission. Implementation of hook_submit().
+  */
+ function masquerade_block_1_submit($form_id, $form_values) {
+-  $masq_user = user_load(array('name' => $form_values['masquerade_user_field']));
++  $name = $form_values['masquerade_user_field'];
+ 
+-  if (module_exists('alt_login')) { // alt_login.module integration patch by espie.
++  if (module_exists('alt_login')) {
+     $alt_login = db_fetch_object(db_query("SELECT u.name FROM {users} u INNER JOIN {alt_login} al ON u.uid = al.uid WHERE al.alt_login = '%s'", $name));
+     if ($alt_login->name) {
+-      $masq_user = user_load(array('name' => $alt_login->name));
++      $name = $alt_login->name;
+     }
+   }
+ 
++  $masq_user = user_load(array('name' => $name));
    masquerade_switch_user($masq_user->uid);
-   drupal_goto();
  }
-@@ -326,6 +333,12 @@ function masquerade_autocomplete($string) {
+ 
+@@ -309,6 +319,12 @@ function masquerade_autocomplete($string) {
    $result = db_query_range("SELECT name FROM {users} WHERE LOWER(name) LIKE LOWER('%s%%')", $string, 0, 10);
    while ($user = db_fetch_object($result)) {
      $matches[$user->name] = check_plain($user->name);
