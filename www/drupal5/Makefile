@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/03/16 12:40:28 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2008/07/26 14:12:00 espie Exp $
 
     SUBDIR += IMCE
     SUBDIR += admin-menu
@@ -33,10 +33,13 @@
     SUBDIR += locale-ja
     SUBDIR += masquerade
     SUBDIR += meta-tags
+    SUBDIR += nodefamily
+    SUBDIR += nodeprofile
     SUBDIR += pathauto
     SUBDIR += printer-friendly
     SUBDIR += securelogin
     SUBDIR += sitedoc
+    SUBDIR += subform_element
     SUBDIR += tinyMCE
     SUBDIR += token
     SUBDIR += tql
@@ -55,5 +58,6 @@
     SUBDIR += views
     SUBDIR += views-bonus
     SUBDIR += webform
+    SUBDIR += workflow
 
 .include <bsd.port.subdir.mk>
