@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/07/01 10:29:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/07/26 10:39:29 ajacoutot Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	2.0.12
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 
 CATEGORIES=	net multimedia
 
