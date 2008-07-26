@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/14 23:41:32 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2008/07/26 11:13:03 bernd Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		JSON implementation for Ruby
 
-DISTNAME=		json-1.1.2
-PKGNAME=		ruby-${DISTNAME}p0
+DISTNAME=		json-1.1.3
+PKGNAME=		ruby-${DISTNAME}
 CATEGORIES=		converters
 
 HOMEPAGE=		http://json.rubyforge.org/
@@ -25,7 +25,7 @@ CONFIGURE_STYLE=	ruby gem
 WANTLIB=		c m
 LIB_DEPENDS=		ruby::lang/ruby
 
-REGRESS_DEPENDS=	::converters/ruby-json
+REGRESS_DEPENDS=	:${PKGNAME}:${BASE_PKGPATH}
 
 do-regress:
 	@cd ${WRKBUILD} && ${RUBY} -rubygems tests/runner.rb
