@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.947 2008/07/26 11:16:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.948 2008/07/26 11:22:59 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -835,12 +835,10 @@ UNMESSAGE${_S} ?= ${PKGDIR}/UNMESSAGE${_S}
 DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
 
 .    if exists(${PKGDIR}/INSTALL${_S})
-ERRORS += "INSTALL script support is deprecated"
-PKG_ARGS${_S} += -i ${PKGDIR}/INSTALL${_S}
+ERRORS += "Fatal: INSTALL script support is obsolete"
 .    endif
 .    if exists(${PKGDIR}/DEINSTALL${_S})
-ERRORS += "DEINSTALL script support is deprecated"
-PKG_ARGS${_S} += -k ${PKGDIR}/DEINSTALL${_S}
+ERRORS += "Fatal: DEINSTALL script support is obsolete"
 .    endif
 .    if exists(${PKGDIR}/REQ${_S})
 ERRORS += "Fatal: REQ script support is obsolete"
@@ -982,7 +980,7 @@ __MKSUMFILES += ${_file}
 .  endfor
 .endif
 
-# List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
+# List of all files, with ${DIST_SUBDIR} in front.  Used for makesum.
 .if !empty(DIST_SUBDIR)
 MAKESUMFILES = ${__MKSUMFILES:S/^/${DIST_SUBDIR}\//}
 .else
