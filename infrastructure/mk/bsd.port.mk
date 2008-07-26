@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.948 2008/07/26 11:22:59 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.949 2008/07/26 12:23:43 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1499,13 +1499,19 @@ ${_UPDATE_COOKIE${_S}}:
 	@a=`${_PKG_QUERY} ${FULLPKGPATH${_S}} 2>/dev/null || true`; \
 	case $$a in \
 		'') ${ECHO_MSG} "Not installed, no update";; \
-		*) ${ECHO_MSG} "Upgrading from $$a"; \
+		*) cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=package \
+		     ${MAKE} _internal-run-depends _internal-runlib-depends \
+			   _internal-runwantlib-depends; \
+		   ${ECHO_MSG} "Upgrading from $$a"; \
 		   ${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}};; \
 	esac
 	@${_MAKE_COOKIE} $@
 
 ${_FUPDATE_COOKIE${_S}}:
 	@cd ${.CURDIR} && exec ${MAKE} _internal-package
+	@cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=package \
+		exec ${MAKE} _internal-run-depends _internal-runlib-depends \
+		_internal-runwantlib-depends
 .  if empty(UPDATE_COOKIES_DIR)
 	@exec ${MAKE} ${WRKDIR}
 .  else
