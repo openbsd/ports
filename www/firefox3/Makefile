@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/07/26 14:52:02 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/26 16:23:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		3.0.1
 DISTNAME=	mozilla
-PKGNAME=	firefox3-${VER}p2
+PKGNAME=	firefox3-${VER}p3
 SO_VERSION=	20.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -142,7 +142,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/firefox.desktop ${PREFIX}/share/applications
 	${INSTALL_MAN} ${FILESDIR}/mozilla-firefox.1 ${PREFIX}/man/man1
-	perl -pi -e 's,!!PREFIX!!,${TRUEPREFIX},g; s,!!VERSION!!,${VER},g' \
+	perl -pi -e 's,!!PREFIX!!,${TRUEPREFIX},g; \
+		s,!!LOCALBASE!!,${LOCALBASE},g; s,!!VERSION!!,${VER},g' \
 		${MOZ}/README.OpenBSD ${PREFIX}/man/man1/mozilla-firefox.1 \
 		${PREFIX}/share/applications/firefox.desktop
 	ln -f ${PREFIX}/man/man1/mozilla-firefox.1 ${PREFIX}/man/man1/firefox.1

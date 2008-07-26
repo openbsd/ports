@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2008/07/25 17:41:06 martynas Exp $
+$OpenBSD: README.OpenBSD,v 1.3 2008/07/26 16:23:32 ajacoutot Exp $
 
 If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is
@@ -20,7 +20,7 @@ in Firefox's URL text field.  Type "mailto" in the filter.  If there
 is a string called "network.protocol-handler.app.mailto", its value
 names the application for mailto URLs. If present, right click,
 choose Modify, and enter the path to your mail program, e.g.,
-"!!PREFIX!!/bin/thunderbird" or "!!PREFIX!!/bin/kmail" (other
+"!!LOCALBASE!!/bin/thunderbird" or "!!LOCALBASE!!/bin/kmail" (other
 programs may work, but these two have been tested).  If absent,
 right click, choose New String. Set the name to
 "network.protocol-handler.app.mailto" and the value to the path to
@@ -40,7 +40,7 @@ libjavaplugin_oji.so into one of the directories listed above.
 This might be done like the following:
 
 $ cd ~/.mozilla/plugins
-$ ln -s !!PREFIX!!/jdk-1.5.0/jre/plugin/i386/ns7/libjavaplugin_oji.so .
+$ ln -s !!LOCALBASE!!/jdk-1.5.0/jre/plugin/i386/ns7/libjavaplugin_oji.so .
 $   
 
 Information on building Java (on some platforms) can be found in

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2008/07/25 17:41:06 martynas Exp $
+# $OpenBSD: Makefile,v 1.100 2008/07/26 16:23:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		2.0.0.16
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p2
+PKGNAME=	mozilla-firefox-${VER}p3
 SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -139,7 +139,7 @@ do-install:
 	${INSTALL_PROGRAM} ${MOB}/firefox-bin ${MOB}/mozilla-xremote-client \
 		${MOB}/regxpcom ${MOZ}
 	ln -f ${MOZ}/firefox-bin ${MOZ}/mozilla-firefox-bin
-	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
+	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g; s,!!LOCALBASE!!,${LOCALBASE},g' \
 		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
 	${INSTALL_MAN} ${WRKSRC}/xpfe/bootstrap/firefox.1 ${PREFIX}/man/man1/
 	@ln -f ${PREFIX}/man/man1/firefox.1 ${PREFIX}/man/man1/mozilla-firefox.1
