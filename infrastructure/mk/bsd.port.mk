@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.944 2008/07/03 17:36:47 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.945 2008/07/26 10:59:20 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -475,15 +475,19 @@ _BULK_COOKIE =			${BULK_COOKIES_DIR}/${FULLPKGNAME}
 _FAKE_COOKIE =			${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE =	${WRKINST}/.install_started
 _UPDATE_COOKIES =
+_FUPDATE_COOKIES =
 _INSTALL_COOKIES =
 .for _S in ${MULTI_PACKAGES}
 .  if !empty(UPDATE_COOKIES_DIR)
 _UPDATE_COOKIE${_S} =	${UPDATE_COOKIES_DIR}/${FULLPKGNAME${_S}}
+_FUPDATE_COOKIE${_S} =	${UPDATE_COOKIES_DIR}/F${FULLPKGNAME${_S}}
 .  else
 _UPDATE_COOKIE${_S} =	${WRKDIR}/.update_${FULLPKGNAME${_S}}
+_FUPDATE_COOKIE${_S} =	${WRKDIR}/.fupdate_${FULLPKGNAME${_S}}
 .  endif
 _INSTALL_COOKIE${_S} =	${PKG_DBDIR}/${FULLPKGNAME${_S}}/+CONTENTS
 _UPDATE_COOKIES += 		${_UPDATE_COOKIE${_S}}
+_FUPDATE_COOKIES += 	${_FUPDATE_COOKIE${_S}}
 _INSTALL_COOKIES +=		${_INSTALL_COOKIE${_S}}
 .endfor
 .if ${SEPARATE_BUILD:L} != "no"
@@ -1453,7 +1457,7 @@ ${_PACKAGE_COOKIE${_S}}:
 .    if target(post-package)
 	@cd ${.CURDIR} && exec ${MAKE} post-package
 .    endif
-	@rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}}
+	@rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}} ${_FUPDATE_COOKIE${_S}}
 .  endif
 
 
@@ -1502,6 +1506,17 @@ ${_UPDATE_COOKIE${_S}}:
 		*) ${ECHO_MSG} "Upgrading from $$a"; \
 		   ${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}};; \
 	esac
+	@${_MAKE_COOKIE} $@
+
+${_FUPDATE_COOKIE${_S}}:
+	@cd ${.CURDIR} && exec ${MAKE} _internal-package
+.  if empty(UPDATE_COOKIES_DIR)
+	@exec ${MAKE} ${WRKDIR}
+.  else
+	@mkdir -p ${UPDATE_COOKIES_DIR}
+.  endif
+	@${ECHO_MSG} "===> Updating/installing for ${FULLPKGNAME${_S}}"
+	@${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}}
 	@${_MAKE_COOKIE} $@
 .endfor
 
@@ -1709,7 +1724,8 @@ _internal-all _internal-build _internal-checksum _internal-configure \
 	_internal-install _internal-install-all _internal-manpages-check \
 	_internal-package _internal-patch _internal-plist _internal-regress \
 	_internal-subpackage _internal-subupdate _internal-uninstall \
-	_internal-update _internal-update-plist describe dump-vars \
+	_internal-update _internal-update-or-install \
+	_internal-update-or-install-all _internal-update-plist describe dump-vars \
 	port-lib-depends-check update-patches:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
@@ -1845,6 +1861,8 @@ _internal-install-all: ${_INSTALL_COOKIES}
 _internal-fake: ${_FAKE_COOKIE}
 _internal-subupdate: ${_UPDATE_COOKIE${SUBPACKAGE}}
 _internal-update: ${_UPDATE_COOKIES}
+_internal-update-or-install: ${_FUPDATE_COOKIE${SUBPACKAGE}
+_internal-update-or-install-all: ${_FUPDATE_COOKIES}
 
 
 .  if defined(_IGNORE_REGRESS)
@@ -1908,10 +1926,10 @@ update-patches:
 # if locking exists.
 
 .for _t in extract patch distpatch configure build all install fake \
-	subupdate fetch fetch-all checksum regress depends lib-depends \
-	build-depends \
-	run-depends regress-depends clean manpages-check \
-	plist update-plist update package install-all
+	subupdate fetch fetch-all checksum regress \
+	depends lib-depends build-depends run-depends regress-depends \
+	clean manpages-check plist update-plist \
+	update update-or-install update-or-install-all package install-all
 .  if defined(_LOCK)
 ${_t}:
 	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-${_t}
