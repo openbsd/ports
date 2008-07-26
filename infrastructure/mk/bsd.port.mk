@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.945 2008/07/26 10:59:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.946 2008/07/26 11:14:07 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -796,12 +796,10 @@ UNMESSAGE ?= ${PKGDIR}/UNMESSAGE
 .  endif
 
 .  if exists(${PKGDIR}/INSTALL)
-ERRORS += "INSTALL script support is deprecated"
-PKG_ARGS- += -i ${PKGDIR}/INSTALL
+ERRORS += "Fatal: INSTALL script support is obsolete"
 .  endif
 .  if exists(${PKGDIR}/DEINSTALL)
-ERRORS += "DEINSTALL script support is deprecated"
-PKG_ARGS- += -k ${PKGDIR}/DEINSTALL
+ERRORS += "Fatal: DEINSTALL script support is obsolete"
 .  endif
 .  if exists(${PKGDIR}/REQ)
 ERRORS += "Fatal: REQ script support is obsolete"
