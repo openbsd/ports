@@ -1,0 +1,13 @@
+The workflow module enables you to create arbitrary workflows in 
+Drupal and associate them with node types.
+
+Workflows are made up of workflow states.
+
+Moving from one state to another is called a transition.
+
+Only some roles can switch from some state to another.
+The permission system is well thought-out: though complex,
+workflow allows to see who can do what at a glance.
+
+This allows managing content in more subtle ways than
+published/not published.
