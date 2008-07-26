@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2008/06/17 22:54:19 bernd Exp $
+# $OpenBSD: Makefile,v 1.16 2008/07/26 10:33:28 bernd Exp $
 
 COMMENT=	ruby MVC web application framework
 
 DISTNAME=	rails-2.1.0
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	www 
 
 # MIT License
@@ -22,8 +22,7 @@ RUN_DEPENDS=	:ruby-rake->=0.7.3:devel/ruby-rake \
 		:ruby-activerecord-2.1.0:databases/ruby-activerecord \
 		:ruby-actionpack-2.1.0:devel/ruby-actionpack \
 		:ruby-actionmailer-2.1.0:mail/ruby-actionmailer \
-		:ruby-activeresource-2.1.0:www/ruby-activeresource \
-		::databases/ruby-sqlite3
+		:ruby-activeresource-2.1.0:www/ruby-activeresource
 
 CONFIGURE_STYLE=ruby gem
 
