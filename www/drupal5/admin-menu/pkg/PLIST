@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/07/10 14:21:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/07/26 12:40:30 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}/admin_menu/
@@ -11,6 +11,7 @@ ${DRUPAL_MODS}/admin_menu/admin_menu.inc
 ${DRUPAL_MODS}/admin_menu/admin_menu.info
 ${DRUPAL_MODS}/admin_menu/admin_menu.install
 ${DRUPAL_MODS}/admin_menu/admin_menu.js
+${DRUPAL_MODS}/admin_menu/admin_menu.menu.js
 ${DRUPAL_MODS}/admin_menu/admin_menu.module
 ${DRUPAL_MODS}/admin_menu/images/
 ${DRUPAL_MODS}/admin_menu/images/arrow.png
