@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.946 2008/07/26 11:14:07 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.947 2008/07/26 11:16:04 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -348,7 +348,7 @@ SUBPACKAGE ?= -
 SUBPACKAGE ?= -main
 .endif
 
-_FMN =
+_FETCH_MAKEFILE_NAMES =
 FLAVOR ?=
 FLAVORS ?=
 PSEUDO_FLAVORS ?=
@@ -1283,7 +1283,7 @@ _FAKE_SETUP = TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} \
 _CLEANDEPENDS ?= Yes
 
 .for _S in ${MULTI_PACKAGES}
-_FMN += ${PKGPATH}/${FULLPKGNAME${_S}}
+_FETCH_MAKEFILE_NAMES += ${PKGPATH}/${FULLPKGNAME${_S}}
 .endfor
 
 # Internal variables, used by dependencies targets
@@ -2446,13 +2446,13 @@ _fetch-makefile:
 .  if ${PERMIT_DISTFILES_CDROM:L} == "yes"
 	@echo -n " cdrom"
 .  endif
-	@echo ":: ${_FMN}"
+	@echo ":: ${_FETCH_MAKEFILE_NAMES}"
 # write generic package dependencies
-	@echo ".PHONY: ${_FMN}"
+	@echo ".PHONY: ${_FETCH_MAKEFILE_NAMES}"
 .  if ${RECURSIVE_FETCH_LIST:L} == "yes"
-	@echo "${_FMN}: ${MAKESUMFILES} "`_FULL_PACKAGE_NAME=Yes ${MAKE} full-all-depends|fgrep -v ${PKGPATH}/`
+	@echo "${_FETCH_MAKEFILE_NAMES}: ${MAKESUMFILES} "`_FULL_PACKAGE_NAME=Yes ${MAKE} full-all-depends|fgrep -v ${PKGPATH}/`
 .  else
-	@echo "${_FMN}: ${MAKESUMFILES}"
+	@echo "${_FETCH_MAKEFILE_NAMES}: ${MAKESUMFILES}"
 .  endif
 .endif
 .if !empty(MAKESUMFILES)
