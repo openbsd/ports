@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2008/04/26 16:37:33 bluhm Exp $
+# $OpenBSD: Makefile,v 1.27 2008/07/26 10:51:16 bluhm Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		perl module for using OpenSSL
 
-DISTNAME=		Net-SSLeay-1.32
+DISTNAME=		Net-SSLeay-1.34
 
 CATEGORIES=		security
+
+MAINTAINER=		Alexander Bluhm <bluhm@openbsd.org>
 
 # same terms as OpenSSL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,12 +25,12 @@ REGRESS_DEPENDS=	::devel/p5-Test-Exception \
 			::devel/p5-Test-Pod \
 			::devel/p5-Test-Pod-Coverage
 
-PLDIR=	${PREFIX}/share/examples/p5-Net-SSLeay
 SRCDIR=	${WRKSRC}/examples
+DSTDIR=	${PREFIX}/share/examples/p5-Net-SSLeay
 
 post-install:
-	${INSTALL_DATA_DIR} ${PLDIR}
-	${INSTALL_SCRIPT} ${SRCDIR}/*.pl ${PLDIR}/
-	${INSTALL_DATA} ${SRCDIR}/req.conf ${PLDIR}/req.conf
+	${INSTALL_DATA_DIR} ${DSTDIR}
+	${INSTALL_SCRIPT} ${SRCDIR}/*.pl ${DSTDIR}/
+	${INSTALL_DATA} ${SRCDIR}/*.conf ${SRCDIR}/*.pem ${DSTDIR}/
 
 .include <bsd.port.mk>

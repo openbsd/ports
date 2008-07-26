@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2008/04/26 16:37:34 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2008/07/26 10:51:16 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/SSLeay/
@@ -101,6 +101,7 @@ share/examples/p5-Net-SSLeay/makecert.pl
 share/examples/p5-Net-SSLeay/minicli.pl
 share/examples/p5-Net-SSLeay/passwd-cb.pl
 share/examples/p5-Net-SSLeay/req.conf
+share/examples/p5-Net-SSLeay/server_key.pem
 share/examples/p5-Net-SSLeay/ssl-inetd-serv.pl
 share/examples/p5-Net-SSLeay/ssl_diff.pl
 share/examples/p5-Net-SSLeay/sslcat.pl
