@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/16 10:15:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/07/26 12:48:14 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}/taxonomy_manager/
@@ -9,6 +9,7 @@ ${DRUPAL_MODS}/taxonomy_manager/css/taxonomy_manager.css
 ${DRUPAL_MODS}/taxonomy_manager/images/
 ${DRUPAL_MODS}/taxonomy_manager/images/2downarrow.png
 ${DRUPAL_MODS}/taxonomy_manager/images/ajax-loader.gif
+${DRUPAL_MODS}/taxonomy_manager/images/csv.png
 ${DRUPAL_MODS}/taxonomy_manager/images/dialog-cancel.png
 ${DRUPAL_MODS}/taxonomy_manager/images/document-save.png
 ${DRUPAL_MODS}/taxonomy_manager/images/edit-find.png
@@ -28,6 +29,7 @@ ${DRUPAL_MODS}/taxonomy_manager/images/tv-item-last.gif
 ${DRUPAL_MODS}/taxonomy_manager/images/tv-item.gif
 ${DRUPAL_MODS}/taxonomy_manager/js/
 ${DRUPAL_MODS}/taxonomy_manager/js/childForm.js
+${DRUPAL_MODS}/taxonomy_manager/js/csv_export.js
 ${DRUPAL_MODS}/taxonomy_manager/js/hideForm.js
 ${DRUPAL_MODS}/taxonomy_manager/js/siblingsForm.js
 ${DRUPAL_MODS}/taxonomy_manager/js/termData.js
@@ -36,3 +38,4 @@ ${DRUPAL_MODS}/taxonomy_manager/js/updateWeight.js
 ${DRUPAL_MODS}/taxonomy_manager/taxonomy_manager.info
 ${DRUPAL_MODS}/taxonomy_manager/taxonomy_manager.install
 ${DRUPAL_MODS}/taxonomy_manager/taxonomy_manager.module
+@comment ${DRUPAL_MODS}/taxonomy_manager/taxonomy_manager.module.orig
