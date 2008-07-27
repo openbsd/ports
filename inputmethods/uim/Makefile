@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/06/29 20:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2008/07/27 21:44:59 sthen Exp $
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for gtk
 COMMENT-qt=	uim for qt
@@ -14,7 +14,7 @@ MASTER_SITES=	http://uim.freedesktop.org/releases/uim/stable/
 HOMEPAGE=	http://uim.freedesktop.org/wiki/
 PKGNAME-main=	uim-$Vp0
 PKGNAME-gtk=	uim-gtk-$Vp1
-PKGNAME-qt=	uim-qt-$Vp0
+PKGNAME-qt=	uim-qt-$Vp1
 PKGNAME-kde=	uim-kde-$V
 PKGNAME-gnome=	uim-gnome-$Vp0
 

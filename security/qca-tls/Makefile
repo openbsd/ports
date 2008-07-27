@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2008/06/06 17:23:18 bernd Exp $ 
+# $OpenBSD: Makefile,v 1.10 2008/07/27 21:44:59 sthen Exp $ 
 
 COMMENT=                Qt Cryptographic Architecture, TLS plugin
 
 DISTNAME=               qca-tls-1.0
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 CATEGORIES=             security
 
 HOMEPAGE=               http://delta.affinix.com/qca/
