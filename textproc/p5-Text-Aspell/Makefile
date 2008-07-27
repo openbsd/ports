@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/05/08 22:44:13 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2008/07/27 17:44:03 simon Exp $
 
 COMMENT=	interface to the GNU aspell library
 SHARED_ONLY=	Yes
 
 MODULES=	cpan
-DISTNAME=	Text-Aspell-0.08
+DISTNAME=	Text-Aspell-0.09
 CATEGORIES=	devel textproc
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
