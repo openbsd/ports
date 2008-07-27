@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/27 17:07:42 simon Exp $
 
 COMMENT=	handle MIME messages
 
 MODULES=	cpan
-DISTNAME=	Email-MIME-1.859
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Email-MIME-1.861
 CATEGORIES=	mail
 
-MAINTAINER=	Sam Smith <s@msmith.net>
+MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:p5-Email-MIME-ContentType->=1.014:mail/p5-Email-MIME-ContentType \
 		::mail/p5-Email-MIME-Encodings \
-		:p5-Email-Simple->=1.999:mail/p5-Email-Simple \
+		:p5-Email-Simple->=2.003:mail/p5-Email-Simple \
 		::mail/p5-MIME-Types
 
 .include <bsd.port.mk>
