@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/22 19:43:34 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/07/27 22:42:41 simon Exp $
 
 COMMENT=	mock database driver for testing
 
 MODULES=	cpan
-DISTNAME=	DBD-Mock-1.36
+DISTNAME=	DBD-Mock-1.37
 CATEGORIES=	databases devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
