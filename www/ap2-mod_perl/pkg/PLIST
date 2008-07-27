@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/01/29 16:31:58 simon Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/07/27 00:50:52 simon Exp $
 bin/mp2bug
 include/apache2/mod_perl.h
 include/apache2/modperl_apache_compat.h
@@ -73,6 +73,7 @@ ${P5ARCH}/APR/Socket.pm
 ${P5ARCH}/APR/Status.pm
 ${P5ARCH}/APR/String.pm
 ${P5ARCH}/APR/Table.pm
+${P5ARCH}/APR/ThreadRWLock.pm
 ${P5ARCH}/APR/URI.pm
 ${P5ARCH}/APR/UUID.pm
 ${P5ARCH}/APR/Util.pm
@@ -98,7 +99,6 @@ ${P5ARCH}/Apache2/PerlSections/
 ${P5ARCH}/Apache2/PerlSections.pm
 ${P5ARCH}/Apache2/PerlSections/Dump.pm
 ${P5ARCH}/Apache2/Process.pm
-${P5ARCH}/Apache2/Reload.pm
 ${P5ARCH}/Apache2/RequestIO.pm
 ${P5ARCH}/Apache2/RequestRec.pm
 ${P5ARCH}/Apache2/RequestUtil.pm
@@ -107,6 +107,7 @@ ${P5ARCH}/Apache2/Response.pm
 ${P5ARCH}/Apache2/ServerRec.pm
 ${P5ARCH}/Apache2/ServerUtil.pm
 ${P5ARCH}/Apache2/SizeLimit.pm
+@comment ${P5ARCH}/Apache2/SizeLimit.pm.orig
 ${P5ARCH}/Apache2/SourceTables.pm
 ${P5ARCH}/Apache2/Status.pm
 ${P5ARCH}/Apache2/SubProcess.pm
@@ -203,6 +204,9 @@ ${P5ARCH}/auto/APR/String/String.so
 ${P5ARCH}/auto/APR/Table/
 ${P5ARCH}/auto/APR/Table/Table.bs
 ${P5ARCH}/auto/APR/Table/Table.so
+${P5ARCH}/auto/APR/ThreadRWLock/
+${P5ARCH}/auto/APR/ThreadRWLock/ThreadRWLock.bs
+${P5ARCH}/auto/APR/ThreadRWLock/ThreadRWLock.so
 ${P5ARCH}/auto/APR/URI/
 ${P5ARCH}/auto/APR/URI/URI.bs
 ${P5ARCH}/auto/APR/URI/URI.so
@@ -319,6 +323,7 @@ ${P5ARCH}/mod_perl2.pm
 @man man/man3p/APR::String.3p
 @man man/man3p/APR::Table.3p
 @man man/man3p/APR::ThreadMutex.3p
+@man man/man3p/APR::ThreadRWLock.3p
 @man man/man3p/APR::URI.3p
 @man man/man3p/APR::UUID.3p
 @man man/man3p/APR::Util.3p
@@ -338,7 +343,6 @@ ${P5ARCH}/mod_perl2.pm
 @man man/man3p/Apache2::Module.3p
 @man man/man3p/Apache2::PerlSections.3p
 @man man/man3p/Apache2::Process.3p
-@man man/man3p/Apache2::Reload.3p
 @man man/man3p/Apache2::RequestIO.3p
 @man man/man3p/Apache2::RequestRec.3p
 @man man/man3p/Apache2::RequestUtil.3p
