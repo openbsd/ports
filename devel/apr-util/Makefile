@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2008/01/06 17:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2008/07/27 10:47:53 sthen Exp $
 
 COMMENT=	companion library to APR
 
 V=		1.2.10
 DISTNAME=	apr-util-$V
-FULLPKGNAME=	apr-util${MT}-$Vp0${FLAVOR_EXT:S/-mt//}
+FULLPKGNAME=	apr-util${MT}-$Vp1${FLAVOR_EXT:S/-mt//}
 SHARED_LIBS +=	aprutil-1${MT}          2.11     # .2.11
 
 CATEGORIES=	devel
@@ -49,13 +49,13 @@ WANTLIB+=		asn1 com_err crypto gssapi krb5 sasl2 ssl
 MT?=
 .if ${FLAVOR:L:Mmt}
 MT=-mt
-LIB_DEPENDS+=	apr-1-mt.=2:apr-mt-1.2.11:devel/apr,mt
+LIB_DEPENDS+=	apr-1-mt.=3:apr-mt-1.2.11:devel/apr,mt
 
 post-install:
 	sed 's/{APRUTIL_LIBNAME}/{APRUTIL_LIBNAME}-mt/g' ${WRKSRC}/apu-config.out > ${PREFIX}/bin/apu-1-mt-config
 
 .else
-LIB_DEPENDS+=	apr-1.=2:apr-1.2.11:devel/apr
+LIB_DEPENDS+=	apr-1.=3:apr-1.2.11:devel/apr
 .endif
 
 SUBST_VARS+=	MT
