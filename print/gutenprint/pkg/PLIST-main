@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/10/01 10:32:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/07/27 00:05:25 jakemsr Exp $
 %%SHARED%%
-bin/escputil
-bin/ijsgutenprint.5.0
-bin/testpattern
+@bin bin/escputil
+@bin bin/ijsgutenprint.5.0
+@bin bin/testpattern
 include/gutenprint/
 include/gutenprint/array.h
 include/gutenprint/bit-ops.h
