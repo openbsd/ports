@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2008/05/14 16:24:57 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2008/07/27 11:00:48 simon Exp $
 
 COMMENT=	drop-in object-oriented CGI.pm replacement
 
 MODULES=	cpan
-DISTNAME=	CGI-Simple-1.104
+DISTNAME=	CGI-Simple-1.105
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
