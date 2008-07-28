@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2008/06/05 19:49:17 rui Exp $
+# $OpenBSD: Makefile,v 1.18 2008/07/28 21:51:10 rui Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,15 +8,15 @@ COMMENT-mysql=		freeradius mysql rlm addon
 COMMENT-pgsql=		freeradius pgsql rlm addon
 COMMENT-ldap=		freeradius ldap rlm addon
 
-V=			2.0.4
+V=			2.0.5
 DISTNAME=		freeradius-server-$V
-PKGNAME-main=		freeradius-$Vp0
+PKGNAME-main=		freeradius-$V
 PKGNAME-iodbc=		freeradius-iodbc-$V
 PKGNAME-mysql=		freeradius-mysql-$V
 PKGNAME-pgsql=		freeradius-pgsql-$V
 PKGNAME-ldap=		freeradius-ldap-$V
-SHARED_LIBS=		freeradius-eap	0.0 \
-			freeradius-radius 0.0
+SHARED_LIBS=		freeradius-eap	1.0 \
+			freeradius-radius 1.0
 
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
@@ -106,7 +106,7 @@ CONFIGURE_ARGS+=--with-rlm_sql_postgresql \
 LIB_DEPENDS-iodbc=	iodbc.>=2::databases/iodbc
 RUN_DEPENDS-iodbc=	::net/freeradius
 LIB_DEPENDS-ldap=	lber.>=8,ldap_r.>=8:openldap-client-*:databases/openldap \
-			freeradius-radius.>=0::net/freeradius
+			freeradius-radius.>=1::net/freeradius
 WANTLIB-ldap=		crypto sasl2 ssl asn1 com_err gssapi krb5
 LIB_DEPENDS-mysql=	mysqlclient_r.>=16:mysql-client-*:databases/mysql
 RUN_DEPENDS-mysql=	::net/freeradius

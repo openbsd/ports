@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.4 2008/01/21 22:21:24 rui Exp $
---- Makefile.orig	Thu Jan 10 13:33:06 2008
-+++ Makefile	Mon Jan 21 16:21:31 2008
+$OpenBSD: patch-Makefile,v 1.5 2008/07/28 21:51:10 rui Exp $
+--- Makefile.orig	Tue May 13 13:39:05 2008
++++ Makefile	Tue Jul 15 08:43:37 2008
 @@ -44,14 +44,6 @@ tests:
  #
  export DESTDIR := $(R)
@@ -22,5 +22,5 @@ $OpenBSD: patch-Makefile,v 1.4 2008/01/21 22:21:24 rui Exp $
  	done
 -	$(LIBTOOL) --finish $(R)$(libdir)
  
- common:
- 	@for dir in $(SUBDIRS); do \
+ ifneq ($(RADMIN),)
+ ifneq ($(RGROUP),)
