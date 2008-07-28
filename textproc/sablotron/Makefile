@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2008/06/03 10:47:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2008/07/28 23:41:54 sthen Exp $
 
 COMMENT=	fast, compact and portable XSL/XSLT processor
 
 V=		1.0.1
 DISTNAME=	Sablot-${V}
-PKGNAME=	sablotron-${V}p2
-SHARED_LIBS=	sablot	101.0
+PKGNAME=	sablotron-${V}p3
+SHARED_LIBS=	sablot	102.0
 CATEGORIES=    	textproc
 
 HOMEPAGE=	http://www.gingerall.com/

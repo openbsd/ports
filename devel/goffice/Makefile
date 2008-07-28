@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/06/03 16:35:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/07/28 23:41:54 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,8 @@ COMMENT=	document centric objects and utilities
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.6.4
 V=		${GNOME_VERSION}
-SHARED_LIBS +=	goffice-0.6          0.0      # .6.4
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS +=	goffice-0.6          1.0      # .6.4
 CATEGORIES=	devel
 
 # LGPL
