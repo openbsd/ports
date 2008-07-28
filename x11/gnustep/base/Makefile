@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2008/06/23 10:59:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2008/07/28 23:55:28 sthen Exp $
 
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.16.1
-SHARED_LIBS=	gnustep-base 1.16	# .1.16.1
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=	gnustep-base 2.0	# .1.16.1
 CATEGORIES=	devel
+
+LIBDIR=		lib/GNUstep/Libraries/gnustep-base/Versions/${LIBgnustep-base_VERSION}
+SUBST_VARS=	LIBDIR
 
 HOMEPAGE=	http://www.gnustep.org/
 
