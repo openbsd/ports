@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2008/06/13 17:43:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2008/07/28 11:44:17 ajacoutot Exp $
 @bin bin/update-mime-database
 lib/pkgconfig/
 lib/pkgconfig/shared-mime-info.pc
@@ -393,6 +393,7 @@ share/mime/audio/x-xmf.xml
 share/mime/generic-icons
 @comment no checksum
 share/mime/globs
+@comment no checksum
 share/mime/globs2
 share/mime/icons
 share/mime/image/
