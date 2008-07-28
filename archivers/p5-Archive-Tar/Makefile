@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2007/12/18 11:16:33 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2008/07/28 10:20:32 simon Exp $
 
 COMMENT=	perl interface to tar archives
 
 MODULES=	cpan
 
-DISTNAME=	Archive-Tar-1.36
+DISTNAME=	Archive-Tar-1.38
 
 CATEGORIES=	archivers
 
