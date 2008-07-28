@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2007/11/14 09:43:40 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2008/07/28 23:56:28 sthen Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
 
 DISTNAME=	kst-1.2.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_ONLY=	Yes
-SHARED_LIBS=	kst		3.0 \
-		kstapp		3.0 \
+SHARED_LIBS=	kst		4.0 \
+		kstapp		4.0 \
 		kstguiapp	3.0 \
-		kstmath		3.0 \
+		kstmath		4.0 \
 		kstwidgets	3.0 \
 		kstextdate	3.0
 

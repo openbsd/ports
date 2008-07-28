@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2008/07/28 23:56:28 sthen Exp $
 
 COMMENT=		library of assorted spiffy things
 
 DISTNAME=		libast-0.7
-PKGNAME=		${DISTNAME}p3
-SHARED_LIBS +=	ast                  2.2      # .2.1
+PKGNAME=		${DISTNAME}p4
+SHARED_LIBS +=	ast                  3.0      # .2.1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://eterm.sourceforge.net/
