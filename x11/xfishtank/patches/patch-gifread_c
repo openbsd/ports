@@ -1,0 +1,11 @@
+$OpenBSD: patch-gifread_c,v 1.1 2008/07/28 22:29:49 sthen Exp $
+--- gifread.c.orig	Mon Jul 28 20:58:24 2008
++++ gifread.c	Mon Jul 28 20:58:41 2008
+@@ -56,6 +56,7 @@
+ 
+ #include <X11/Xlib.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #if  defined(SYSV) || defined(SVR4)
+ #include <string.h>
+ #else	/* SYSV */

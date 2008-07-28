@@ -1,6 +1,6 @@
-$OpenBSD: patch-xfish_c,v 1.1 2007/10/26 23:54:56 ajacoutot Exp $
---- xfish.c.orig	Thu Dec 17 22:26:17 1992
-+++ xfish.c	Sat Oct 27 01:50:24 2007
+$OpenBSD: patch-xfish_c,v 1.2 2008/07/28 22:29:49 sthen Exp $
+--- xfish.c.orig	Thu Dec 17 21:26:17 1992
++++ xfish.c	Mon Jul 28 23:22:24 2008
 @@ -11,6 +11,8 @@
  
    *	Ported to monocrome by Jonathan Greenblatt (jonnyg@rover.umd.edu)
@@ -305,20 +305,29 @@ $OpenBSD: patch-xfish_c,v 1.1 2007/10/26 23:54:56 ajacoutot Exp $
  }
  
      binfo = (bubble *) malloc(blimit * sizeof(bubble));
-@@ -1965,9 +2065,15 @@ void 
+@@ -1965,9 +2065,14 @@ void 
  high_res_sleep(seconds)
      double      seconds;
  {
-+#ifndef __FreeBSD__
-     int         fds = 0;
-+#endif
+-    int         fds = 0;
      struct timeval timeout;
 -
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
 +    fd_set fds;
 +    FD_ZERO(&fds);
++#else
++    int         fds = 0;
 +#endif    
 +    
      timeout.tv_sec = seconds;
      timeout.tv_usec = (seconds - timeout.tv_sec) * 1000000.0;
      select(0, &fds, &fds, &fds, &timeout);
+@@ -1976,7 +2081,7 @@ high_res_sleep(seconds)
+ 
+ /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+-void 
++int
+ main(argc, argv)
+     int         argc;
+     char      **argv;

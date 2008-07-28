@@ -1,0 +1,10 @@
+$OpenBSD: patch-read_c,v 1.1 2008/07/28 22:29:49 sthen Exp $
+--- read.c.orig	Mon Jul 28 20:58:19 2008
++++ read.c	Mon Jul 28 20:58:45 2008
+@@ -1,5 +1,6 @@
+ #include <X11/Xlib.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "compact.h"
+ #include "medcut.h"
+ 

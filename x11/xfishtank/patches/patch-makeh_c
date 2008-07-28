@@ -1,0 +1,10 @@
+$OpenBSD: patch-makeh_c,v 1.1 2008/07/28 22:29:49 sthen Exp $
+--- makeh.c.orig	Mon Jul 28 20:54:02 2008
++++ makeh.c	Mon Jul 28 20:54:11 2008
+@@ -1,5 +1,6 @@
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ main()
+ {
