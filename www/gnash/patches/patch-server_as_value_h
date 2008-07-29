@@ -1,0 +1,23 @@
+$OpenBSD: patch-server_as_value_h,v 1.1 2008/07/29 18:46:08 martynas Exp $
+--- server/as_value.h.orig	Tue Jul 29 01:25:32 2008
++++ server/as_value.h	Tue Jul 29 01:25:34 2008
+@@ -65,6 +65,7 @@ class asName;
+ // The following template works just like its C counterpart, with added
+ // type safety (i.e., they will only compile for floating point arguments).
+ 
++#ifndef isnan
+ template <typename T>
+ inline bool
+ isnan(const T& num, typename boost::enable_if<boost::is_floating_point<T> >::type* dummy = 0)
+@@ -72,8 +73,11 @@ isnan(const T& num, typename boost::enable_if<boost::i
+ 	UNUSED(dummy);
+ 	return num != num;
+ }
++#endif
+ 
++#ifndef isinf
+ #define isinf(x) (isnan(x - x))
++#endif
+ 
+ /// Use this methods to obtain a properly-formatted property name
+ /// The methods will convert the name to lowercase if the current VM target
