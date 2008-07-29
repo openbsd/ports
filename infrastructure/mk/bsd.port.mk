@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.950 2008/07/29 11:25:44 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.951 2008/07/29 17:54:52 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1847,7 +1847,7 @@ _refetch:
 .  for file cipher value in ${_PROBLEMS}
 	@rm ${DISTDIR}/${file}
 	@cd ${.CURDIR} && exec ${MAKE} ${DISTDIR}/${file} \
-		MASTER_SITE_OVERRIDE="${MASTER_SITE_OPENBSD:=by_cypher/${cipher}/${value:C/(..).*/\1/}/${value}/} ${MASTER_SITE_OPENBSD:=${cipher}/${value}/}"
+		MASTER_SITE_OVERRIDE="${MASTER_SITE_OPENBSD:=by_cipher/${cipher}/${value:C/(..).*/\1/}/${value}/} ${MASTER_SITE_OPENBSD:=${cipher}/${value}/}"
 .  endfor
 	cd ${.CURDIR} && exec ${MAKE} _internal-checksum REFETCH=false
 
