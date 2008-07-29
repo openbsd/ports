@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/29 00:16:38 okan Exp $
+bin/mk-archiver
+bin/mk-checksum-filter
+bin/mk-deadlock-logger
+bin/mk-duplicate-key-checker
+bin/mk-find
+bin/mk-heartbeat
+bin/mk-parallel-dump
+bin/mk-parallel-restore
+bin/mk-profile-compact
+bin/mk-query-profiler
+bin/mk-show-grants
+bin/mk-slave-delay
+bin/mk-slave-find
+bin/mk-slave-move
+bin/mk-slave-prefetch
+bin/mk-slave-restart
+bin/mk-table-checksum
+bin/mk-table-sync
+bin/mk-visual-explain
+${P5SITE}/maatkit.pm
+${P5SITE}/maatkitdsn.pm
+@man man/man1/mk-archiver.1
+@man man/man1/mk-checksum-filter.1
+@man man/man1/mk-deadlock-logger.1
+@man man/man1/mk-duplicate-key-checker.1
+@man man/man1/mk-find.1
+@man man/man1/mk-heartbeat.1
+@man man/man1/mk-parallel-dump.1
+@man man/man1/mk-parallel-restore.1
+@man man/man1/mk-profile-compact.1
+@man man/man1/mk-query-profiler.1
+@man man/man1/mk-show-grants.1
+@man man/man1/mk-slave-delay.1
+@man man/man1/mk-slave-find.1
+@man man/man1/mk-slave-move.1
+@man man/man1/mk-slave-prefetch.1
+@man man/man1/mk-slave-restart.1
+@man man/man1/mk-table-checksum.1
+@man man/man1/mk-table-sync.1
+@man man/man1/mk-visual-explain.1
+@man man/man3p/maatkit.3p
+@man man/man3p/maatkitdsn.3p
