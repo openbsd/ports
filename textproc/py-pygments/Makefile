@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2008/03/14 23:55:30 djm Exp $
+# $OpenBSD: Makefile,v 1.5 2008/07/29 08:42:40 djm Exp $
 COMMENT=	Python syntax highlighter
 
-DISTNAME=	Pygments-0.9
+DISTNAME=	Pygments-0.10
 PKGNAME=	${DISTNAME:L:S/^/py-/}
 CATEGORIES=    	textproc devel
 
