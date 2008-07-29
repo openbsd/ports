@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2008/02/28 21:47:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2008/07/29 00:18:58 sthen Exp $
 
 COMMENT=	free and complete CORBA-compliant implementation
 
 DISTNAME=	mico-2.3.6
-PKGNAME=	$(DISTNAME)p2
+PKGNAME=	$(DISTNAME)p3
 CATEGORIES=	devel
 
 # The build framework accommodates only a single shared lib extension.
@@ -12,7 +12,7 @@ SHARED_LIBS=	mico2.3.6	${LIB_VERSION} \
 		micocoss2.3.6	${LIB_VERSION} \
 		micoir2.3.6	${LIB_VERSION} \
 		micox2.3.6	${LIB_VERSION}
-LIB_VERSION=	2.0
+LIB_VERSION=	3.0
 
 HOMEPAGE=	http://www.mico.org/
 MASTER_SITES=	${HOMEPAGE}
