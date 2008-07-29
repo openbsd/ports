@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/07/29 08:42:40 djm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/07/29 08:50:16 djm Exp $
 bin/pygmentize
-lib/python${MODPY_VERSION}/site-packages/Pygments-0.10-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/Pygments-0.10-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/Pygments-0.10-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/Pygments-0.10-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/Pygments-0.10-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/Pygments-0.10-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/Pygments-0.10-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/Pygments-0.9-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/Pygments-0.9-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/Pygments-0.9-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/Pygments-0.9-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Pygments-0.9-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/Pygments-0.9-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/Pygments-0.9-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pygments/
 lib/python${MODPY_VERSION}/site-packages/pygments/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygments/__init__.pyc
@@ -30,8 +30,6 @@ lib/python${MODPY_VERSION}/site-packages/pygments/formatters/bbcode.py
 lib/python${MODPY_VERSION}/site-packages/pygments/formatters/bbcode.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/formatters/html.py
 lib/python${MODPY_VERSION}/site-packages/pygments/formatters/html.pyc
-lib/python${MODPY_VERSION}/site-packages/pygments/formatters/img.py
-lib/python${MODPY_VERSION}/site-packages/pygments/formatters/img.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/formatters/latex.py
 lib/python${MODPY_VERSION}/site-packages/pygments/formatters/latex.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/formatters/other.py
@@ -94,8 +92,6 @@ lib/python${MODPY_VERSION}/site-packages/pygments/styles/autumn.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/autumn.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/borland.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/borland.pyc
-lib/python${MODPY_VERSION}/site-packages/pygments/styles/bw.py
-lib/python${MODPY_VERSION}/site-packages/pygments/styles/bw.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/colorful.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/colorful.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/default.py
