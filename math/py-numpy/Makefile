@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2007/11/16 11:42:25 djm Exp $
+# $OpenBSD: Makefile,v 1.8 2008/07/30 17:49:32 martynas Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	fast array and numeric programming library for Python
 
 DISTNAME=	numpy-1.0.4
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	math devel
 
 MAINTAINER=	Damien Miller <djm@openbsd.org>
