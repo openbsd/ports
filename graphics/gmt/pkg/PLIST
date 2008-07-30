@@ -1,68 +1,68 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/06/01 04:04:45 steven Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/07/30 17:14:37 martynas Exp $
 bin/GMT
-bin/blockmean
-bin/blockmedian
-bin/blockmode
-bin/filter1d
-bin/fitcircle
-bin/gmt2rgb
-bin/gmtconvert
-bin/gmtdefaults
-bin/gmtmath
-bin/gmtselect
-bin/gmtset
-bin/grd2cpt
-bin/grd2xyz
-bin/grdblend
-bin/grdclip
-bin/grdcontour
-bin/grdcut
-bin/grdedit
-bin/grdfft
-bin/grdfilter
-bin/grdgradient
-bin/grdhisteq
-bin/grdimage
-bin/grdinfo
-bin/grdlandmask
-bin/grdmask
-bin/grdmath
-bin/grdpaste
-bin/grdproject
-bin/grdreformat
-bin/grdsample
-bin/grdtrack
-bin/grdtrend
-bin/grdvector
-bin/grdview
-bin/grdvolume
-bin/makecpt
-bin/mapproject
-bin/minmax
-bin/nearneighbor
-bin/project
-bin/psbasemap
-bin/psclip
-bin/pscoast
-bin/pscontour
-bin/pshistogram
-bin/psimage
-bin/pslegend
-bin/psmask
-bin/psrose
-bin/psscale
-bin/pstext
-bin/pswiggle
-bin/psxy
-bin/psxyz
-bin/sample1d
-bin/spectrum1d
-bin/splitxyz
-bin/surface
-bin/trend1d
-bin/trend2d
-bin/triangulate
-bin/xyz2grd
+@bin bin/blockmean
+@bin bin/blockmedian
+@bin bin/blockmode
+@bin bin/filter1d
+@bin bin/fitcircle
+@bin bin/gmt2rgb
+@bin bin/gmtconvert
+@bin bin/gmtdefaults
+@bin bin/gmtmath
+@bin bin/gmtselect
+@bin bin/gmtset
+@bin bin/grd2cpt
+@bin bin/grd2xyz
+@bin bin/grdblend
+@bin bin/grdclip
+@bin bin/grdcontour
+@bin bin/grdcut
+@bin bin/grdedit
+@bin bin/grdfft
+@bin bin/grdfilter
+@bin bin/grdgradient
+@bin bin/grdhisteq
+@bin bin/grdimage
+@bin bin/grdinfo
+@bin bin/grdlandmask
+@bin bin/grdmask
+@bin bin/grdmath
+@bin bin/grdpaste
+@bin bin/grdproject
+@bin bin/grdreformat
+@bin bin/grdsample
+@bin bin/grdtrack
+@bin bin/grdtrend
+@bin bin/grdvector
+@bin bin/grdview
+@bin bin/grdvolume
+@bin bin/makecpt
+@bin bin/mapproject
+@bin bin/minmax
+@bin bin/nearneighbor
+@bin bin/project
+@bin bin/psbasemap
+@bin bin/psclip
+@bin bin/pscoast
+@bin bin/pscontour
+@bin bin/pshistogram
+@bin bin/psimage
+@bin bin/pslegend
+@bin bin/psmask
+@bin bin/psrose
+@bin bin/psscale
+@bin bin/pstext
+@bin bin/pswiggle
+@bin bin/psxy
+@bin bin/psxyz
+@bin bin/sample1d
+@bin bin/spectrum1d
+@bin bin/splitxyz
+@bin bin/surface
+@bin bin/trend1d
+@bin bin/trend2d
+@bin bin/triangulate
+@bin bin/xyz2grd
 include/gmt.h
 include/gmt_bcr.h
 include/gmt_boundcond.h

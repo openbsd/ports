@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gmt_h,v 1.1 2008/07/30 17:14:37 martynas Exp $
+--- src/gmt.h.orig	Mon May 29 03:34:49 2006
++++ src/gmt.h	Wed Jul 30 17:18:47 2008
+@@ -32,6 +32,7 @@
+ 
+ #ifndef _POSIX_SOURCE
+ #define _POSIX_SOURCE 1
++#define _ISOC99_SOURCE 1
+ #endif
+ 
+ /* Declaration modifiers for DLL support (MSC et al) */
