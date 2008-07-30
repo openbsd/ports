@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/10/12 11:07:43 djm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/07/30 17:51:21 martynas Exp $
 lib/python${MODPY_VERSION}/site-packages/matplotlib/
+lib/python${MODPY_VERSION}/site-packages/matplotlib-0.90.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/matplotlib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_agg.so
@@ -12,6 +13,10 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/_image.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_isnan.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_mathtext_data.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_mathtext_data.pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/_nc_cntr.so
+lib/python${MODPY_VERSION}/site-packages/matplotlib/_nc_image.so
+lib/python${MODPY_VERSION}/site-packages/matplotlib/_nc_nxutils.so
+lib/python${MODPY_VERSION}/site-packages/matplotlib/_nc_transforms.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_ns_cntr.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_ns_image.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_ns_nxutils.so
@@ -46,6 +51,8 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/Matplotlib.nib/keye
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_gtkagg.so
+lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_nc_backend_agg.so
+lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_nc_backend_gdk.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_ns_backend_agg.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_ns_backend_gdk.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_agg.py

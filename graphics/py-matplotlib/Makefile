@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2008/06/29 20:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2008/07/30 17:51:21 martynas Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python charting and plotting API
 
 DISTNAME=	matplotlib-0.90.1
-PKGNAME=	py-${DISTNAME}p1
+PKGNAME=	py-${DISTNAME}p2
 CATEGORIES=	graphics devel
 
 HOMEPAGE=	http://matplotlib.sourceforge.net/
