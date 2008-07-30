@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2008/07/04 16:35:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2008/07/30 19:47:09 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,15 +10,15 @@ COMMENT-tcl=	Tcl bindings for plplot
 
 VERSION=	5.6.1
 DISTNAME=	plplot-${VERSION}
-SHARED_LIBS=	csirocsa	0.1	\
+SHARED_LIBS=	csirocsa	1.0	\
 		plplotcxxd	11.0	\
-		plplotd		11.0	\
+		plplotd		12.0	\
 		plplotf77cd	10.0	\
 		plplotf77d	10.0	\
 		plplottcltkd	11.0	\
 		tclmatrixd	11.0
 
-PKGNAME-main=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}p2
 PKGNAME-c++ =	plplot-c++-${VERSION}p1
 PKGNAME-f77=	plplot-f77-${VERSION}p1
 PKGNAME-octave=	plplot-octave-${VERSION}p6
