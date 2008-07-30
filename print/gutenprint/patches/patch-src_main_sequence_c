@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_main_sequence_c,v 1.1 2008/07/30 17:12:24 martynas Exp $
+--- src/main/sequence.c.orig	Mon Sep 18 05:21:12 2006
++++ src/main/sequence.c	Wed Jul 30 18:47:02 2008
+@@ -484,7 +484,7 @@ stp_sequence_set_##name##_data(stp_sequence_t *sequenc
+ 									     \
+   /* Validate the data before we commit to it. */			     \
+   for (i = 0; i < count; i++)						     \
+-    if (! isfinite(data[i]) ||                                                 \
++    if (! isfinite((double)data[i]) ||                                       \
+         data[i] < sequence->blo ||                                           \
+         data[i] > sequence->bhi)                                             \
+       return 0;								     \
