@@ -1,0 +1,12 @@
+$OpenBSD: patch-konq-embed_kdesrc_kjs_operations_cpp,v 1.1 2008/07/30 16:29:03 sthen Exp $
+--- konq-embed/kdesrc/kjs/operations.cpp.orig	Tue Jul 29 02:15:27 2008
++++ konq-embed/kdesrc/kjs/operations.cpp	Tue Jul 29 02:15:29 2008
+@@ -55,7 +55,7 @@ using namespace KJS;
+ 
+ bool KJS::isNaN(double d)
+ {
+-#ifdef HAVE_FUNC_ISNAN
++#if defined(HAVE_FUNC_ISNAN) || defined(isnan)
+   return isnan(d);
+ #elif defined HAVE_FLOAT_H
+   return _isnan(d) != 0;

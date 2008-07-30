@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/06 19:15:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2008/07/30 16:29:03 sthen Exp $
 
 COMMENT=	stand-alone Qt-based web browser
 CATEGORIES=	www x11
@@ -14,8 +14,7 @@ EXTRACT_ONLY=	konqueror3-embedded-0.2-${DATE}.tar.bz2
 DIST_SUBDIR=	kde
 DISTFILES=	konqueror3-embedded-0.2-${DATE}.tar.bz2 kdelibs-3.5.5.tar.bz2:0
 
-
-PKGNAME=	konqueror-${DATE}p2
+PKGNAME=	konqueror-${DATE}p3
 HOMEPAGE=	http://www.konqueror.org/embedded.html
 MASTER_SITES= 	http://www.cirulla.net/kdenox-snapshots/snapshots/
 MASTER_SITES0= 	${MASTER_SITE_KDE:=stable/3.5.5/src/}
