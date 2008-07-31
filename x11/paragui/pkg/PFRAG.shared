@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/26 16:45:43 naddy Exp $
-@lib lib/libparagui.so.${LIBparagui_VERSION}
