@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/07/25 00:42:33 martynas Exp $
+# $OpenBSD: Makefile,v 1.26 2008/07/31 17:31:00 martynas Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -8,7 +8,7 @@ COMMENT-docs=		HTML Documentation for NSPR
 
 VER=			4.7.1
 DISTNAME=		nspr-${VER}
-PKGNAME-main=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 PKGNAME-docs=		nspr-docs-${VER}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			nspr-reference${EXTRACT_SUFX}:0
@@ -59,8 +59,11 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/nspr
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nspr/html
-	cd ${WRKSRC}/dist/include && tar cfL - . | \
-		(cd ${PREFIX}/include && tar -xf -)
+	cd ${WRKSRC}/dist/include && \
+		find . -type d \
+			-exec ${INSTALL_DATA_DIR} ${PREFIX}/include/{} \; && \
+		find . ! -type d \
+			-exec ${INSTALL_DATA} {} ${PREFIX}/include/{} \;
 	cd ${WRKSRC}/dist/lib && tar cfL - . | \
 		(cd ${PREFIX}/lib && tar -xf -)
 	cd ${WRKDIR}/nspr/reference/html && \
