@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_bin_java_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
+$OpenBSD: patch-jdk_src_solaris_bin_java_md_c,v 1.2 2008/08/01 20:22:48 kurt Exp $
 --- jdk/src/solaris/bin/java_md.c.orig	Sat Dec  1 00:00:00 2007
-+++ jdk/src/solaris/bin/java_md.c	Tue Feb 26 20:20:09 2008
++++ jdk/src/solaris/bin/java_md.c	Thu Jul 31 22:53:02 2008
 @@ -34,10 +34,14 @@
  #include <sys/stat.h>
  #include <unistd.h>
@@ -41,15 +41,6 @@ $OpenBSD: patch-jdk_src_solaris_bin_java_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp
        /*
         * On linux, if a binary is running as sgid or suid, glibc sets
         * LD_LIBRARY_PATH to the empty string for security purposes.  (In
-@@ -841,7 +851,7 @@ static const char*
- SetExecname(char **argv)
- {
-     char* exec_path = NULL;
--#if defined(__solaris__)
-+#if defined(__solaris__) || defined(_ALLBSD_SOURCE)
-     {
-         Dl_info dlinfo;
-         int (*fptr)();
 @@ -1209,6 +1219,20 @@ UnsetEnv(char *name)
      return(borrowed_unsetenv(name));
  }
