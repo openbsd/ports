@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.32 2008/08/01 15:52:48 naddy Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
 # Originally by: peter.galbavy@knowledge.com
 
+BROKEN=		does not work on OpenBSD
 COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	zebra-0.93a
@@ -17,8 +18,6 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 		ftp://ftp.styx.net/mirrors/zebra/
 
 HOMEPAGE=	http://www.zebra.org/
-
-MAINTAINER=	Jun-ichiro itojun Hagino <itojun@itojun.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
