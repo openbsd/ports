@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2008/07/24 10:02:57 martynas Exp $
+# $OpenBSD: Makefile,v 1.49 2008/08/01 20:53:05 naddy Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
 VERSION=		2.16.4
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}p0
+PKGNAME-main=		glib2-${VERSION}p1
 PKGNAME-docs=		glib2-docs-${VERSION}p0
 CATEGORIES=		devel
 
