@@ -1,0 +1,22 @@
+$OpenBSD: patch-Lib_test_seq_tests_py,v 1.1 2008/08/06 03:23:31 djm Exp $
+--- Lib/test/seq_tests.py.orig	Tue Nov 13 07:04:41 2007
++++ Lib/test/seq_tests.py	Tue Aug  5 18:18:52 2008
+@@ -307,11 +307,13 @@ class CommonTest(unittest.TestCase):
+             self.assertEqual(id(s), id(s*1))
+ 
+     def test_bigrepeat(self):
+-        x = self.type2test([0])
+-        x *= 2**16
+-        self.assertRaises(MemoryError, x.__mul__, 2**16)
+-        if hasattr(x, '__imul__'):
+-            self.assertRaises(MemoryError, x.__imul__, 2**16)
++        import sys
++        if sys.maxint <= 2147483647:
++            x = self.type2test([0])
++            x *= 2**16
++            self.assertRaises(MemoryError, x.__mul__, 2**16)
++            if hasattr(x, '__imul__'):
++                self.assertRaises(MemoryError, x.__imul__, 2**16)
+ 
+     def test_subscript(self):
+         a = self.type2test([10, 11])

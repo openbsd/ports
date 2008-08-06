@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2008/07/25 19:32:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2008/08/06 03:23:31 djm Exp $
 
 VERSION=		2.5
 PATCHLEVEL=		.2
-PKG_PATCHLEVEL=		p3
+PKG_PATCHLEVEL=		p4
 SHARED_LIBS=		python2.5 1.0
 
 # PSUBDIR=		python/${VERSION}
