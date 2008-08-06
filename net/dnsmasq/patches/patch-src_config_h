@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_config_h,v 1.4 2008/06/05 19:38:39 rui Exp $
---- src/config.h.orig	Thu May 29 20:44:42 2008
-+++ src/config.h	Wed Jun  4 21:42:55 2008
-@@ -47,7 +47,7 @@
+$OpenBSD: patch-src_config_h,v 1.5 2008/08/06 03:11:38 pvalchev Exp $
+--- src/config.h.orig	Sun Jul 20 19:26:32 2008
++++ src/config.h	Tue Aug  5 11:00:00 2008
+@@ -48,7 +48,7 @@
  #if defined(__FreeBSD__)
  #   define CONFFILE "/usr/local/etc/dnsmasq.conf"
  #else
