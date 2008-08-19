@@ -1,27 +1,37 @@
-$OpenBSD: patch-README_txt,v 1.1.1.1 2008/03/16 11:25:56 espie Exp $
---- README.txt.orig	Tue Mar 11 11:33:04 2008
-+++ README.txt	Tue Mar 11 11:33:45 2008
-@@ -5,21 +5,5 @@ you will want to build off a newer version of JQuery. 
- John Resig's compat-1.0.js plugin that provides backwards compatiblity for
- newer versions of JQuery to work with the JS code in Drupal 5.
- 
--The main issue with this module is that you will need to *replace* the
--jquery.js file in core with the jquery.js file included in the jquery_update
--directory. JQuery may exhibit some odd behaviors if you fail to do this
--and the JQuery Update module will warn you about this problem.
+$OpenBSD: patch-README_txt,v 1.2 2008/08/19 23:45:30 espie Exp $
+--- README.txt.orig	Sat Aug 16 12:35:22 2008
++++ README.txt	Sat Aug 16 12:35:39 2008
+@@ -1,32 +1 @@
+-/* $Id: patch-README_txt,v 1.2 2008/08/19 23:45:30 espie Exp $ */
+-
+-This module facilitates the upgrade of jQuery in Drupal 5.  jQuery 1.0.1 is
+-included with Drupal 5, however it is not very well supported in the jQuery
+-community. In order to use most current and advanced jQuery functionality
+-you will want to build off a newer version of jQuery. This module includes
+-John Resig's compat-1.0.js and compat-1.1js plugins compiled into a compat.js
+-file that provides backwards compatiblity for newer versions of jQuery to work
+-with JavaScript code in Drupal 5.
+-
+-The main issue with this module is that you will need to *copy* all *.js files
+-from the jquery_update/misc folder and place them in Drupal core's misc/ folder,
+-replacing each file with these updated JavaScript files.
+-
+-If you fail to do this, the jQuery Update module will warn you about this
+-problem.
 -
 -INSTALLATION:
 -
 -1) Place this module directory in your modules folder (this will usually be
--"sites/all/modules/").
+-   "sites/all/modules/").
 -
 -2) Enable the module.
 -
--3) Copy the jquery.js file in this directory and use it to replace the one at
--misc/jquery.js. Note: You will receive a warning message in the Drupal
--administration area if you if you do not perform this step correctly.
+-3) Copy all *.js files from the jquery_update/misc folder and place them in
+-   Drupal core's misc/ folder, replacing the files that already exist.
 -
--You will need to repeat step #3 if/when you update your Drupal installation.
+-   Note: You will receive a warning message in Drupal's administration area if
+-   you do not perform this step correctly.
 -
-+In OpenBSD, Drupal core has been patched to allow jquery update to be
-+a simple module that you activate as usual.
+-You will need to repeat step #3 whenever you update your Drupal installation.
+-
++OpenBSD already patched drupal for  jquery_update to work as-is.

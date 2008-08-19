@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/05/03 19:03:28 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2008/08/19 23:45:30 espie Exp $
 
 COMMENT =	development tools for drupal
 
-DISTNAME = 	devel-5.x-0.3
-PKGNAME =	drupal5-devel-0.3
+DISTNAME = 	devel-5.x-0.4
+PKGNAME =	drupal5-devel-0.4
 
 .include <bsd.port.mk>

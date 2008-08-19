@@ -1,13 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/16 11:25:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/08/19 23:45:30 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
-${DRUPAL_MODS}/
 ${DRUPAL_MODS}/jquery_update/
+${DRUPAL_MODS}/jquery_update/CHANGELOG.txt
 ${DRUPAL_MODS}/jquery_update/LICENSE.txt
 ${DRUPAL_MODS}/jquery_update/README.txt
 @comment ${DRUPAL_MODS}/jquery_update/README.txt.orig
-${DRUPAL_MODS}/jquery_update/collapse-fix.js
-${DRUPAL_MODS}/jquery_update/compat-1.0.js
-${DRUPAL_MODS}/jquery_update/jquery.js
+${DRUPAL_MODS}/jquery_update/compat.js
 ${DRUPAL_MODS}/jquery_update/jquery_update.info
+${DRUPAL_MODS}/jquery_update/jquery_update.install
 ${DRUPAL_MODS}/jquery_update/jquery_update.module
+${DRUPAL_MODS}/jquery_update/misc/
+${DRUPAL_MODS}/jquery_update/misc/collapse.js
+${DRUPAL_MODS}/jquery_update/misc/farbtastic/
+${DRUPAL_MODS}/jquery_update/misc/farbtastic/farbtastic.js
+${DRUPAL_MODS}/jquery_update/misc/jquery.js
+${DRUPAL_MODS}/jquery_update/misc/tableselect.js
+${DRUPAL_MODS}/jquery_update/misc/upload.js
