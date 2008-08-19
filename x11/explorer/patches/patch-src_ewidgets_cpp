@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ewidgets_cpp,v 1.1 2002/10/08 15:53:36 naddy Exp $
---- src/ewidgets.cpp.orig	Tue Oct  8 17:34:34 2002
-+++ src/ewidgets.cpp	Tue Oct  8 17:34:45 2002
-@@ -1287,7 +1287,7 @@ void    ExploreClass::signals_n_slots(vo
+$OpenBSD: patch-src_ewidgets_cpp,v 1.2 2008/08/19 22:25:29 jasper Exp $
+--- src/ewidgets.cpp.orig	Fri Jul 11 16:32:32 1997
++++ src/ewidgets.cpp	Fri Aug 15 16:41:55 2008
+@@ -1287,7 +1287,7 @@ void    ExploreClass::signals_n_slots(void)
  	// SVr4 signals are unreliable and can slip trough...
  	// 
  

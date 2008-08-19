@@ -1,6 +1,7 @@
+$OpenBSD: patch-src_config_expl_cpp,v 1.1 2008/08/19 22:25:29 jasper Exp $
 --- src/config_expl.cpp.orig	Fri Jul 11 16:32:33 1997
-+++ src/config_expl.cpp	Thu Jun  7 21:45:41 2001
-@@ -398,7 +398,7 @@ int     ConfigClass::load_resources(void
++++ src/config_expl.cpp	Fri Aug 15 16:41:55 2008
+@@ -398,7 +398,7 @@ int     ConfigClass::load_resources(void)
  	}
  
      // check to see if the path is valid

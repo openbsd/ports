@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2008/08/19 22:25:29 jasper Exp $
 
 COMMENT=	file manager with same look and feel as Windows95(tm)
 
 DISTNAME=	explorer-0.72
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://humppa.nl/distfiles/
 
@@ -23,8 +24,5 @@ CONFIGURE_ARGS=	--datadir='$${DESTDIR}${PREFIX}/lib/X11/explorer' \
 ALL_TARGET=	explorer
 USE_X11=	Yes
 NO_REGRESS=	Yes
-
-post-install:
-	@/usr/bin/strip ${PREFIX}/bin/explorer
 
 .include <bsd.port.mk>

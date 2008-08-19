@@ -1,5 +1,6 @@
+$OpenBSD: patch-src_plugin_m_cpp,v 1.1 2008/08/19 22:25:29 jasper Exp $
 --- src/plugin_m.cpp.orig	Fri Jul 11 16:32:33 1997
-+++ src/plugin_m.cpp	Thu Jun  7 21:45:41 2001
++++ src/plugin_m.cpp	Fri Aug 15 16:41:55 2008
 @@ -205,7 +205,7 @@ const char *name):QMultiLineEdit(parent,
  					"%s/plugins",
  					pldir);
