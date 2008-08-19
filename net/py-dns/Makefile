@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/10/12 22:20:24 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2008/08/19 22:26:41 jasper Exp $
 
 COMMENT=	Python DNS library
 
-VERSION=	2.3.1
+VERSION=	2.3.3
 DISTNAME=	pydns-${VERSION}
-PKGNAME=	py-dns-${VERSION}p0
+PKGNAME=	py-dns-${VERSION}
 CATEGORIES=    	net
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pydns/}
