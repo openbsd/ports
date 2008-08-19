@@ -1,7 +1,7 @@
-$OpenBSD: patch-includes_form_inc,v 1.1 2008/03/15 09:36:48 espie Exp $
---- includes/form.inc.orig	Sun Feb 17 13:00:26 2008
-+++ includes/form.inc	Sun Feb 17 13:00:40 2008
-@@ -1122,6 +1122,13 @@ function expand_password_confirm($element) {
+$OpenBSD: patch-includes_form_inc,v 1.2 2008/08/19 23:44:48 espie Exp $
+--- includes/form.inc.orig	Mon Aug  4 06:00:24 2008
++++ includes/form.inc	Thu Aug 14 11:29:23 2008
+@@ -1123,6 +1123,13 @@ function expand_password_confirm($element) {
      '#value' => $element['#value']['pass2'],
      '#required' => $element['#required'],
    );
@@ -15,7 +15,7 @@ $OpenBSD: patch-includes_form_inc,v 1.1 2008/03/15 09:36:48 espie Exp $
    $element['#validate'] = array('password_confirm_validate' => array());
    $element['#tree'] = TRUE;
  
-@@ -1132,19 +1139,51 @@ function expand_password_confirm($element) {
+@@ -1133,19 +1140,51 @@ function expand_password_confirm($element) {
    return $element;
  }
  

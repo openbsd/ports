@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/03/16 10:15:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/08/19 23:44:48 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/
@@ -107,6 +107,7 @@ ${DRUPAL_ROOT}/modules/blog/blog.info
 ${DRUPAL_ROOT}/modules/blog/blog.module
 ${DRUPAL_ROOT}/modules/blogapi/
 ${DRUPAL_ROOT}/modules/blogapi/blogapi.info
+${DRUPAL_ROOT}/modules/blogapi/blogapi.install
 ${DRUPAL_ROOT}/modules/blogapi/blogapi.module
 ${DRUPAL_ROOT}/modules/book/
 ${DRUPAL_ROOT}/modules/book/book.css
@@ -158,11 +159,11 @@ ${DRUPAL_ROOT}/modules/locale/locale.module
 ${DRUPAL_ROOT}/modules/menu/
 ${DRUPAL_ROOT}/modules/menu/menu.info
 ${DRUPAL_ROOT}/modules/menu/menu.module
-${DRUPAL_ROOT}/modules/node/
-${DRUPAL_ROOT}/modules/node/content_types.inc
-${DRUPAL_ROOT}/modules/node/node.css
-${DRUPAL_ROOT}/modules/node/node.info
-${DRUPAL_ROOT}/modules/node/node.module
+${DRUPAL_LOCALE}/
+${DRUPAL_LOCALE}/content_types.inc
+${DRUPAL_LOCALE}/node.css
+${DRUPAL_LOCALE}/node.info
+${DRUPAL_LOCALE}/node.module
 ${DRUPAL_ROOT}/modules/path/
 ${DRUPAL_ROOT}/modules/path/path.info
 ${DRUPAL_ROOT}/modules/path/path.module
