@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/08/26 18:34:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/08/19 22:28:12 jasper Exp $
 %%SHARED%%
 lib/bonobo/
 lib/bonobo/servers/
@@ -17,6 +17,9 @@ share/idl/Spell-${VERSION}.idl
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/gnome-spell-${VERSION}.mo
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gnome-spell-${VERSION}.mo
@@ -26,6 +29,9 @@ share/locale/ca/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/cs/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/da/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/de/LC_MESSAGES/gnome-spell-${VERSION}.mo
+share/locale/dz/
+share/locale/dz/LC_MESSAGES/
+share/locale/dz/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/el/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
@@ -34,6 +40,7 @@ share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/es/LC_MESSAGES/gnome-spell-${VERSION}.mo
+share/locale/et/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/fi/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/fr/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/ga/LC_MESSAGES/gnome-spell-${VERSION}.mo
@@ -56,7 +63,9 @@ share/locale/ne/
 share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/nl/LC_MESSAGES/gnome-spell-${VERSION}.mo
-share/locale/no/LC_MESSAGES/gnome-spell-${VERSION}.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gnome-spell-${VERSION}.mo
@@ -68,6 +77,7 @@ share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/sk/LC_MESSAGES/gnome-spell-${VERSION}.mo
+share/locale/sl/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gnome-spell-${VERSION}.mo
