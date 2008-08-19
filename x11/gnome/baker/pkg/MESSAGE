@@ -1,3 +1,7 @@
 To ensure correct operation, GnomeBaker needs to run with root privileges.
 They are 2 ways to do so, either start it with sudo(8) or add the setuid
 bit to the gnomebaker binary (not recommended).
+
+You have to restart the GConf daemon by killing it before running
+GnomeBaker for the first time.  As a regular user:
+  gconftool-2 --shutdown && sudo gnomebaker

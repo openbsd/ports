@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_prefsdlg_c,v 1.1.1.1 2008/04/16 16:05:36 jasper Exp $
---- src/prefsdlg.c.orig	Sun Sep 16 18:36:33 2007
-+++ src/prefsdlg.c	Tue Apr 15 11:24:55 2008
+$OpenBSD: patch-src_prefsdlg_c,v 1.2 2008/08/19 22:37:40 jasper Exp $
+--- src/prefsdlg.c.orig	Mon Aug  4 10:29:47 2008
++++ src/prefsdlg.c	Mon Aug  4 10:33:29 2008
 @@ -25,6 +25,7 @@
  #include "filebrowser.h"
  #include "devices.h"
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_prefsdlg_c,v 1.1.1.1 2008/04/16 16:05:36 jasper Exp $
  
  /* Prefs dialog glade widget names */
  static const gchar *const widget_prefsdlg = "prefsDlg";
-@@ -40,7 +41,6 @@ static const gchar *const widget_prefsdlg_backend = "c
+@@ -41,7 +42,6 @@ static const gchar *const widget_prefsdlg_backend = "c
  
  static const gint DEVICELIST_COL_ICON = 0;
  static const gint DEVICELIST_COL_NAME = 1;
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_prefsdlg_c,v 1.1.1.1 2008/04/16 16:05:36 jasper Exp $
  static const gint DEVICELIST_COL_NODE = 3;
  static const gint DEVICELIST_COL_MOUNT = 4;
  static const gint DEVICELIST_WRITE_CDR = 5;
-@@ -149,15 +149,6 @@ prefsdlg_create_device_list()
+@@ -150,15 +150,6 @@ prefsdlg_create_device_list()
      gtk_tree_view_column_set_attributes(col, renderer, "text", DEVICELIST_COL_NAME, NULL);
      gtk_tree_view_append_column(GTK_TREE_VIEW(device_list), col);
  
@@ -33,14 +33,17 @@ $OpenBSD: patch-src_prefsdlg_c,v 1.1.1.1 2008/04/16 16:05:36 jasper Exp $
  	/* Third column to display the device node */
  	renderer = gtk_cell_renderer_text_new();
  	col = gtk_tree_view_column_new_with_attributes(_("Node"), renderer,
-@@ -465,8 +456,8 @@ prefsdlg_on_add(GtkButton  *button, gpointer user_data
+@@ -469,8 +460,13 @@ prefsdlg_on_add(GtkButton  *button, gpointer user_data
  	gtk_list_store_set(device_model, &iter,
      		DEVICELIST_COL_ICON, GNOME_STOCK_PIXMAP_CDROM,
      		DEVICELIST_COL_NAME, "New CD Burner",
--    		DEVICELIST_COL_ID, "1,0,0",
--    		DEVICELIST_COL_NODE, "/dev/cdrom",
++#if defined(__OpenBSD__)
 +    		DEVICELIST_COL_ID, "",
 +    		DEVICELIST_COL_NODE, "/dev/rcd0c",
++#else
+     		DEVICELIST_COL_ID, "1,0,0",
+     		DEVICELIST_COL_NODE, "/dev/cdrom",
++#endif
      		DEVICELIST_COL_MOUNT, "/mnt/cdrom", -1);
  }
  
