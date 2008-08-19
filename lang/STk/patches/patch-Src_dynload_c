@@ -1,6 +1,6 @@
-$OpenBSD: patch-Src_dynload_c,v 1.1 2003/05/19 08:50:43 naddy Exp $
---- Src/dynload.c.orig	Sun Sep 26 09:02:14 1999
-+++ Src/dynload.c	Mon May 19 01:03:06 2003
+$OpenBSD: patch-Src_dynload_c,v 1.2 2008/08/19 22:45:27 jasper Exp $
+--- Src/dynload.c.orig	Sun Sep 26 17:02:14 1999
++++ Src/dynload.c	Fri Aug 15 20:15:21 2008
 @@ -37,7 +37,7 @@
  #  define DLOPEN_COMPATIBLE
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-Src_dynload_c,v 1.1 2003/05/19 08:50:43 naddy Exp $
  #  include <dlfcn.h>
  #  define DLOPEN_COMPATIBLE
  #endif
-@@ -172,7 +172,7 @@ static void load_and_call(char *path, ch
+@@ -172,7 +172,7 @@ static void load_and_call(char *path, char *fct_name)
  #endif /* MSC_VER WIN32 */
  
  

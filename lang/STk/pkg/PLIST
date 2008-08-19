@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:16:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/08/19 22:45:27 jasper Exp $
+%%SHARED%%
 bin/snow
 bin/snow-${STK_VERSION}
 bin/stk
@@ -357,8 +358,8 @@ lib/stk/${STK_VERSION}/Images/vlines3
 lib/stk/${STK_VERSION}/Images/warning
 lib/stk/${STK_VERSION}/Images/warning.gif
 lib/stk/${STK_VERSION}/${STK_ARCH}/
-lib/stk/${STK_VERSION}/${STK_ARCH}/snow
-lib/stk/${STK_VERSION}/${STK_ARCH}/stk
+@bin lib/stk/${STK_VERSION}/${STK_ARCH}/snow
+@bin lib/stk/${STK_VERSION}/${STK_ARCH}/stk
 lib/stk/${STK_VERSION}/STk/
 lib/stk/${STK_VERSION}/STk/Balloon.stklos
 lib/stk/${STK_VERSION}/STk/Basics.stklos
@@ -557,4 +558,3 @@ lib/stk/${STK_VERSION}/man/mann/STk-man.macros
 @man lib/stk/${STK_VERSION}/man/mann/stk_wm.n
 lib/stk/man
 lib/stk/site-scheme/
-%%SHARED%%

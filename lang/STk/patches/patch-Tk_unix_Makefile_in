@@ -1,7 +1,7 @@
-$OpenBSD: patch-Tk_unix_Makefile_in,v 1.1 2003/05/19 08:50:43 naddy Exp $
---- Tk/unix/Makefile.in.orig	Mon May 19 00:54:51 2003
-+++ Tk/unix/Makefile.in	Mon May 19 00:55:03 2003
-@@ -98,7 +98,7 @@ LIBS = @TCL_BUILD_LIB_SPEC@ @LIBS@ $(X11
+$OpenBSD: patch-Tk_unix_Makefile_in,v 1.2 2008/08/19 22:45:27 jasper Exp $
+--- Tk/unix/Makefile.in.orig	Sun Oct 25 22:52:31 1998
++++ Tk/unix/Makefile.in	Fri Aug 15 20:15:21 2008
+@@ -98,7 +98,7 @@ LIBS = @TCL_BUILD_LIB_SPEC@ @LIBS@ $(X11_LIB_SWITCHES)
  
  # To change the compiler switches, for example to change from -O
  # to -g, change the following line:

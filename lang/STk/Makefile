@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/07/04 16:46:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2008/08/19 22:45:27 jasper Exp $
 
 COMMENT=	Scheme interpreter with Tk interface
 
@@ -23,6 +23,8 @@ CONFIGURE_STYLE=gnu
 DESTDIRNAME=	root
 
 NO_REGRESS=	Yes
+
+STK_ARCH=	$(OPSYS)-$(OPSYS_VER)-$(MACHINE)
 SUBST_VARS=	STK_VERSION STK_ARCH
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 STk is a R4RS Scheme interpreter which can access the Tk graphical
-package.  Concretely it can be seen as the John Ousterhout's Tk
-package where the Tcl language has been replaced by Scheme.
+package.  Concretely it can be seen as the John Ousterhout's Tk package
+where the Tcl language has been replaced by Scheme.
 
 STk also provides an efficient object oriented system called STklos.
 STklos is an extensive OO system with multiple inheritance, generic
