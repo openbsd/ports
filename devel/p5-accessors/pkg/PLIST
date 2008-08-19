@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/08/19 22:51:02 jasper Exp $
+${P5SITE}/accessors/
+${P5SITE}/accessors.pm
+${P5SITE}/accessors/chained.pm
+${P5SITE}/accessors/classic.pm
+${P5SITE}/accessors/ro.pm
+${P5SITE}/accessors/rw.pm
+@man man/man3p/accessors.3p
+@man man/man3p/accessors::chained.3p
+@man man/man3p/accessors::classic.3p
+@man man/man3p/accessors::ro.3p
+@man man/man3p/accessors::rw.3p

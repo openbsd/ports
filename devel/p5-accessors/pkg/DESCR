@@ -1,0 +1,7 @@
+The accessors pragma lets you create simple accessors at compile-time.
+
+This saves you from writing them by hand, which tends to result in
+cut-n-paste errors and a mess of duplicated code. It can also help you
+reduce the ammount of unwanted direct-variable access that may creep
+into your codebase when you're feeling lazy. accessors was designed with
+laziness in mind.
