@@ -1,28 +1,31 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/08/19 22:20:40 jasper Exp $
 
-ONLY_FOR_ARCHS=	i386
+COMMENT=	Scheme Underground's implementation of R5RS
 
-COMMENT=	R5RS Scheme byte-code interpreter
-
-DISTNAME=	scheme48-1.3
+V=		1.8
+DISTNAME=	scheme48-$V
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.s48.org/
 
 MAINTAINER=	Aaron Hsu <arcfide@sacrificumdeo.net>
 
-# BSD with GPL, see COPYING file
+# 3-clause BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		m c
 
-MASTER_SITES=	${HOMEPAGE}/1.3/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=		${HOMEPAGE}/$V/
+EXTRACT_SUFX=		.tgz
 
-CONFIGURE_STYLE=gnu dest
-CONFIGURE_ENV=	LDFLAGS="-Wl,--export-dynamic"
+WANTLIB=		c m pthread
+
+USE_GMAKE=		Yes
+ALL_TARGET=		enough
+
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		LDFLAGS="-Wl,--export-dynamic"
 
 post-install: 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scheme48

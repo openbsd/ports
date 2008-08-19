@@ -1,0 +1,32 @@
+$OpenBSD: patch-c_unix_socket_c,v 1.1 2008/08/19 22:20:40 jasper Exp $
+
+Fix compilation with pthreads.
+
+--- c/unix/socket.c.orig	Fri Aug 15 14:51:34 2008
++++ c/unix/socket.c	Fri Aug 15 14:55:51 2008
+@@ -19,6 +19,7 @@
+ #include <string.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
++#include <pthread.h>
+ 
+ #include "c-mods.h"
+ #include "scheme48.h"
+@@ -374,7 +375,7 @@ s48_get_host_by_name(s48_value machine)
+   handshake->host_name[machine_length] = '\0';
+   
+   handshake->event_uid = s48_external_event_uid();
+-  if (pthread_create(&t, NULL, gethostbyname_thread, (void*) handshake))
++  if (pthread_create(&t, NULL, (void *)gethostbyname_thread, (void *) handshake))
+     {
+       static struct hostent *host;
+       s48_unregister_external_event_uid(handshake->event_uid);
+@@ -473,7 +474,7 @@ s48_get_host_by_address(s48_value sch_addr)
+ 	 (char *) s48_extract_byte_vector(sch_addr), sizeof(struct in_addr));
+ 
+   handshake->event_uid = s48_external_event_uid();
+-  if (pthread_create(&t, NULL, gethostbyaddr_thread, (void*) handshake))
++  if (pthread_create(&t, NULL, (void *)gethostbyaddr_thread, (void*) handshake))
+     {
+       s48_unregister_external_event_uid(handshake->event_uid);
+       free(handshake);
