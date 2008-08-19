@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_autotest_general_m4,v 1.1.1.1 2008/08/19 23:52:19 espie Exp $
+--- lib/autotest/general.m4.orig	Sun Apr  6 01:04:48 2008
++++ lib/autotest/general.m4	Sat Jul 19 11:52:32 2008
+@@ -1440,7 +1440,7 @@ at_setup_line='m4_defn([AT_line])'
+ m4_if(AT_banner_ordinal, [0], [], [at_func_banner AT_banner_ordinal
+ ])dnl
+ at_desc="AS_ESCAPE(m4_dquote(m4_defn([AT_description])))"
+-$at_quiet AS_ECHO_N([m4_format(["%3d: $at_desc%*s"], AT_ordinal,
++$at_quiet AS_ECHO_N([m4_format(["%3s: $at_desc%*s"], AT_ordinal,
+   m4_max(0, m4_eval(47 - m4_qlen(m4_defn([AT_description])))), [])])
+ m4_divert_push([TEST_SCRIPT])dnl
+ ])

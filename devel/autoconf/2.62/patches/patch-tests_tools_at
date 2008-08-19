@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_tools_at,v 1.1.1.1 2008/08/19 23:52:19 espie Exp $
+--- tests/tools.at.orig	Fri Aug 15 15:41:41 2008
++++ tests/tools.at	Fri Aug 15 15:41:46 2008
+@@ -199,12 +199,6 @@ END
+ [m4@&t@_include(foo.m4)
+ m4@&t@_divert(0)d@&t@nl]
+ END
+-  rm -rf "$file.m4f"
+-  AT_CHECK_AUTOM4TE([-C "$cachedir" -I "$dir" --language=m4sugar --freeze -o "$file.m4f" "$file"])
+-  AT_CHECK([test -s "$file.m4f"])
+-
+-  # Check --reload-state
+-  AT_CHECK_AUTOM4TE([-C "$cachedir" --language=m4sugar -o "$outfile" "$file.m4f" /dev/null])
+ 
+   test ! -f b
+ done

@@ -1,0 +1,11 @@
+$OpenBSD: patch-tests_local_at,v 1.1.1.1 2008/08/19 23:52:19 espie Exp $
+--- tests/local.at.orig	Sun Apr  6 01:04:48 2008
++++ tests/local.at	Fri Aug 15 14:35:41 2008
+@@ -114,6 +114,7 @@ m4_case([$4], [], [], [ignore], [],
+ 	s/: include:\( cannot open\)/:\1/
+ 	s/^autom4te: [^ ]*m4[.ex]* /autom4te: m4 /
+ 	s/ (E[A-Z]*)$//
++	s/: \(.*\) at line \([0-9]*\): include(\(.*\)):/:\1:\2: cannot open `\3'\'':/
+     ' stderr >&2]], [0], [], [$4])])
+ ])
+ 

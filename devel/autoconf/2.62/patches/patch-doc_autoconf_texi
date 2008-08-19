@@ -1,0 +1,42 @@
+$OpenBSD: patch-doc_autoconf_texi,v 1.1.1.1 2008/08/19 23:52:19 espie Exp $
+--- doc/autoconf.texi.orig	Sat Apr  5 20:43:30 2008
++++ doc/autoconf.texi	Sat Jul 19 11:51:53 2008
+@@ -205,27 +205,27 @@ freedom.''
+ 
+ @dircategory Software development
+ @direntry
+-* Autoconf: (autoconf).         Create source code configuration scripts.
++* Autoconf-2.62: (autoconf-2.62).         Create source code configuration scripts.
+ @end direntry
+ 
+ @dircategory Individual utilities
+ @direntry
+-* autoscan: (autoconf)autoscan Invocation.
++* autoscan-2.62: (autoconf-2.62)autoscan Invocation.
+                                 Semi-automatic @file{configure.ac} writing
+-* ifnames: (autoconf)ifnames Invocation.        Listing conditionals in source.
+-* autoconf-invocation: (autoconf)autoconf Invocation.
++* ifnames-2.62: (autoconf-2.62)ifnames Invocation.        Listing conditionals in source.
++* autoconf-invocation-2.62: (autoconf-2.62)autoconf Invocation.
+                                 How to create configuration scripts
+-* autoreconf: (autoconf)autoreconf Invocation.
++* autoreconf-2.62: (autoconf-2.62)autoreconf Invocation.
+                                 Remaking multiple @command{configure} scripts
+-* autoheader: (autoconf)autoheader Invocation.
++* autoheader-2.62: (autoconf-2.62)autoheader Invocation.
+                                 How to create configuration templates
+-* autom4te: (autoconf)autom4te Invocation.
++* autom4te-2.62: (autoconf-2.62)autom4te Invocation.
+                                 The Autoconf executables backbone
+-* configure: (autoconf)configure Invocation.    Configuring a package.
+-* autoupdate: (autoconf)autoupdate Invocation.
++* configure-2.62: (autoconf-2.62)configure Invocation.    Configuring a package.
++* autoupdate-2.62: (autoconf-2.62)autoupdate Invocation.
+                                 Automatic update of @file{configure.ac}
+-* config.status: (autoconf)config.status Invocation. Recreating configurations.
+-* testsuite: (autoconf)testsuite Invocation.    Running an Autotest test suite.
++* config.status-2.62: (autoconf-2.62)config.status Invocation. Recreating configurations.
++* testsuite-2.62: (autoconf-2.62)testsuite Invocation.    Running an Autotest test suite.
+ @end direntry
+ 
+ @titlepage

@@ -1,0 +1,21 @@
+$OpenBSD: patch-tests_c_at,v 1.1.1.1 2008/08/19 23:52:19 espie Exp $
+--- tests/c.at.orig	Sun Apr  6 01:04:48 2008
++++ tests/c.at	Sat Jul 19 11:53:22 2008
+@@ -141,7 +141,7 @@ AT_CLEANUP
+ AT_SETUP([AC_PROG_CPP without warnings])
+ 
+ # Ignore if /lib/cpp doesn't work
+-AT_CHECK([[echo '#include <stdio.h>' | /lib/cpp || exit 77]],
++AT_CHECK([[echo '#include <stdio.h>' | /usr/bin/cpp || exit 77]],
+   [], [ignore], [ignore])
+ 
+ # A cpp which exit status is meaningless.
+@@ -179,7 +179,7 @@ AT_CLEANUP
+ AT_SETUP([AC_PROG_CPP via CC])
+ 
+ # Ignore if /lib/cpp doesn't work
+-AT_CHECK([[echo '#include <stdio.h>' | /lib/cpp || exit 77]],
++AT_CHECK([[echo '#include <stdio.h>' | /usr/bin/cpp || exit 77]],
+   [], [ignore], [ignore])
+ 
+ AT_DATA([mycc],

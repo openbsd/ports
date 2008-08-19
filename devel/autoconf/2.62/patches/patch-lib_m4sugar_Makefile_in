@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_m4sugar_Makefile_in,v 1.1.1.1 2008/08/19 23:52:19 espie Exp $
+--- lib/m4sugar/Makefile.in.orig	Sun Apr  6 01:06:27 2008
++++ lib/m4sugar/Makefile.in	Sat Jul 19 11:42:13 2008
+@@ -178,7 +178,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ m4sugarlibdir = $(pkgdatadir)/m4sugar
+ dist_m4sugarlib_DATA = m4sugar.m4 m4sh.m4
+-nodist_m4sugarlib_DATA = version.m4 m4sugar.m4f m4sh.m4f
++nodist_m4sugarlib_DATA = version.m4 # m4sugar.m4f m4sh.m4f
+ CLEANFILES = $(nodist_m4sugarlib_DATA)
+ TAGS_FILES = $(dist_m4sugarlib_DATA)
+ ETAGS_ARGS = $(ETAGS_FOR_AUTOCONF)

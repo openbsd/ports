@@ -1,0 +1,36 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2008/08/19 23:52:19 espie Exp $
+--- doc/Makefile.in.orig	Sun Apr  6 00:57:18 2008
++++ doc/Makefile.in	Sat Jul 19 11:42:13 2008
+@@ -354,6 +354,10 @@ dist-info: $(INFO_DEPS)
+ 	  for file in $$d/$$base $$d/$$base-[0-9] $$d/$$base-[0-9][0-9] $$d/$$base_i[0-9] $$d/$$base_i[0-9][0-9]; do \
+ 	    if test -f $$file; then \
+ 	      relfile=`expr "$$file" : "$$d/\(.*\)"`; \
++	      ext=`echo $$relfile | sed -e 's/^.*\\.//'`; \
++	      relfile=`echo $$relfile | sed -e 's/\\.[0-9a-z]*$$//'`; \
++	      relfile=`echo $$relfile | sed -e 's/^.*\///'`; \
++	      relfile=`echo $$relfile | sed '$(transform)'`.$$ext; \
+ 	      test -f $(distdir)/$$relfile || \
+ 		cp -p $$file $(distdir)/$$relfile; \
+ 	    else :; fi; \
+@@ -519,6 +523,10 @@ install-info-am: $(INFO_DEPS)
+                        $$d/$$file_i[0-9] $$d/$$file_i[0-9][0-9] ; do \
+ 	    if test -f $$ifile; then \
+ 	      relfile=`echo "$$ifile" | sed 's|^.*/||'`; \
++ 	      ext=`echo $$relfile | sed -e 's/^.*\\.//'`; \
++ 	      relfile=`echo $$relfile | sed -e 's/\\.[0-9a-z]*$$//'`; \
++ 	      relfile=`echo $$relfile | sed -e 's/^.*\///'`; \
++ 	      relfile=`echo $$relfile | sed '$(transform)'`.$$ext; \
+ 	      echo " $(INSTALL_DATA) '$$ifile' '$(DESTDIR)$(infodir)/$$relfile'"; \
+ 	      $(INSTALL_DATA) "$$ifile" "$(DESTDIR)$(infodir)/$$relfile"; \
+ 	    else : ; fi; \
+@@ -530,6 +538,10 @@ install-info-am: $(INFO_DEPS)
+ 	  list='$(INFO_DEPS)'; \
+ 	  for file in $$list; do \
+ 	    relfile=`echo "$$file" | sed 's|^.*/||'`; \
++ 	    ext=`echo $$relfile | sed -e 's/^.*\\.//'`; \
++ 	    relfile=`echo $$relfile | sed -e 's/\\.[0-9a-z]*$$//'`; \
++ 	    relfile=`echo $$relfile | sed -e 's/^.*\///'`; \
++ 	    relfile=`echo $$relfile | sed '$(transform)'`.$$ext; \
+ 	    echo " install-info --info-dir='$(DESTDIR)$(infodir)' '$(DESTDIR)$(infodir)/$$relfile'";\
+ 	    install-info --info-dir="$(DESTDIR)$(infodir)" "$(DESTDIR)$(infodir)/$$relfile" || :;\
+ 	  done; \

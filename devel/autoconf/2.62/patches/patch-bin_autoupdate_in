@@ -1,0 +1,24 @@
+$OpenBSD: patch-bin_autoupdate_in,v 1.1.1.1 2008/08/19 23:52:19 espie Exp $
+--- bin/autoupdate.in.orig	Sun Apr  6 01:04:48 2008
++++ bin/autoupdate.in	Sat Jul 19 11:47:13 2008
+@@ -57,6 +57,7 @@ my @include = ('@datadir@');
+ my $force = 0;
+ # m4.
+ my $m4 = $ENV{"M4"} || '@M4@';
++$m4.=" -g -D__gnu__";
+ 
+ 
+ # $HELP
+@@ -395,9 +396,9 @@ EOF
+        or error "cannot close $tmp/input.m4: $!";
+ 
+     # Now ask m4 to perform the update.
+-    xsystem ("$m4 --include=" . shell_quote ($tmp)
+-	     . join (' --include=', '', map { shell_quote ($_) } reverse (@prepend_include))
+-	     . join (' --include=', '', map { shell_quote ($_) } @include)
++    xsystem ("$m4 -I" . shell_quote ($tmp)
++	     . join (' -I', '', map { shell_quote ($_) } reverse (@prepend_include))
++	     . join (' -I', '', map { shell_quote ($_) } @include)
+ 	     . " " . shell_quote ("$tmp/input.m4") . " > " . shell_quote ("$tmp/updated"));
+     update_file ("$tmp/updated",
+ 		 "$file" eq "$tmp/stdin" ? '-' : "$file");
