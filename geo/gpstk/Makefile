@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/01 23:39:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/08/19 22:21:29 jasper Exp $
 
 COMMENT-main=		"GPS processing toolkit"
 COMMENT-devel=		"GPStk development libraries and headers"
@@ -40,7 +40,7 @@ CONFIGURE_STYLE=	gnu
 NO_REGRESS=		Yes
 VMEM_WARNING=		Yes
 # way faster than -O0, a bit slower than -O2, but doesn't need 800M to compile
-.if ${MACHINE_ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "mips64"
 CFLAGS+=		-g
 CXXFLAGS+=		-g
 .else
