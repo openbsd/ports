@@ -1,0 +1,11 @@
+$OpenBSD: patch-js_Makefile_in,v 1.1 2008/08/19 23:53:45 martynas Exp $
+--- js/Makefile.in.orig	Wed Aug 20 01:24:26 2008
++++ js/Makefile.in	Wed Aug 20 01:29:00 2008
+@@ -61,6 +61,6 @@ include $(DEPTH)/config/autoconf.mk
+ # See top-level makefile for details
+ #
+ 
+-DIRS		= src/fdlibm src
++DIRS		= src
+ 
+ include $(topsrcdir)/config/rules.mk
