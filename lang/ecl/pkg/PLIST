@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/06 09:31:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/08/19 23:45:58 espie Exp $
 %%SHARED%%
-bin/ecl
+@bin bin/ecl
 bin/ecl-config
 include/ecl/
 include/ecl/bytecodes.h
@@ -12,8 +12,6 @@ include/ecl/ecl-inl.h
 include/ecl/ecl.h
 include/ecl/eval.h
 include/ecl/external.h
-include/ecl/gc/
-include/ecl/gc/private/
 include/ecl/internal.h
 include/ecl/number.h
 include/ecl/object.h
@@ -30,6 +28,7 @@ lib/ecl/defsystem.fas
 lib/ecl/dpp
 lib/ecl/ecl_min
 lib/ecl/help.doc
+lib/ecl/profile.fas
 lib/ecl/rt.fas
 lib/ecl/serve-event.fas
 lib/ecl/sockets.fas

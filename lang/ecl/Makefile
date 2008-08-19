@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/06 09:31:25 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2008/08/19 23:45:58 espie Exp $
 
 COMMENT = embeddable common-lisp
 CATEGORIES = lang
 
-DISTNAME = ecl-0.9j-p1
-PKGNAME = ecl-0.9jpl1
-WRKDIST = ${WRKDIR}/ecl-0.9j
+DISTNAME = ecl-0.9l
+PKGNAME = ecl-0.9l
+WRKDIST = ${WRKDIR}/ecl-0.9l
 EXTRACT_SUFX = .tgz
 MASTER_SITES = ${MASTER_SITE_SOURCEFORGE:=ecls/}
 HOMEPAGE = http://ecls.sourceforge.net/
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP = Yes
 CONFIGURE_STYLE = gnu
 USE_GMAKE = Yes
 USE_LIBTOOL = Yes
+NO_REGRESS = Yes
 CONFIGURE_ENV +=	LDFLAGS='-pthread -L${LOCALBASE}/lib' \
 			CPPFLAGS=-I${LOCALBASE}/include \
 			CFLAGS='${CFLAGS} -pthread'
