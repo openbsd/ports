@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/24 13:38:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/08/19 22:35:09 jasper Exp $
 %%SHARED%%
 bin/gmime-config
-@comment bin/uudecode
-@comment bin/uuencode
+@comment @bin bin/uudecode
+@comment @bin bin/uuencode
 include/gmime-2.0/
 include/gmime-2.0/gmime/
 include/gmime-2.0/gmime/gmime-charset.h
