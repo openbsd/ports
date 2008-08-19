@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.4 2006/12/27 11:16:10 steven Exp $
+# $OpenBSD: mksqlitedb,v 1.5 2008/08/19 23:50:54 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -22,6 +22,9 @@
 
 use strict;
 use warnings;
+use Getopt::Std;
+
+our ($opt_v);
 
 sub words($)
 {
@@ -31,6 +34,279 @@ sub words($)
 	return split(/\s+/, $v);
 }
 
+package AbstractInserter;
+# this is the object to use to put stuff into the db...
+sub new
+{
+	my ($class, $db, $i) = @_;
+	bless {db => $db, transaction => 0, threshold => $i, vars => {}, done => {} }, $class;
+}
+
+sub set
+{
+	my ($self, $ref) = @_;
+	$self->{ref} = $ref;
+}
+
+sub db
+{
+	return shift->{db};
+}
+
+sub last_id
+{
+	return shift->db->func('last_insert_rowid');
+}
+
+sub insert_done
+{
+	my $self = shift;
+	if ($self->{transaction}++ % $self->{threshold} == 0) {
+		$self->db->commit;
+	}
+}
+
+sub new_table
+{
+	my ($self, $name, @cols) = @_;
+
+	return if defined $self->{done}->{$name};
+
+	$self->db->do("DROP TABLE IF EXISTS $name");
+	print "CREATE TABLE $name (".join(', ', @cols).")\n" if $main::opt_v;
+	$self->db->do("CREATE TABLE $name (".join(', ', @cols).")");
+	$self->{done}->{$name} = 1;
+}
+
+sub prepare
+{
+	my ($self, $s) = @_;
+	return $self->db->prepare($s);
+}
+
+sub prepare_inserter
+{
+	my ($ins, $table, @cols) = @_;
+	$ins->{insert}->{$table} = $ins->prepare("INSERT OR REPLACE INTO $table (".join(', ', @cols).") VALUES (". join(', ', map {'?'} @cols).")");
+}
+
+sub prepare_normal_inserter
+{
+	my ($ins, $table, @cols) = @_;
+	$ins->prepare_inserter($table, "FULLPKGPATH", @cols);
+}
+
+sub finish_port
+{
+	my $self = shift;
+	my @values = ($self->ref);
+	for my $i (@{$self->{varlist}}) {
+		push(@values, $self->{vars}->{$i});
+	}
+	$self->insert('Ports', @values);
+	$self->{vars} = {};
+}
+
+sub add_to_port
+{
+	my ($self, $var, $value) = @_;
+	$self->{vars}->{$var} = $value;
+}
+
+sub create_tables
+{
+	my ($self, $vars) = @_;
+
+	$self->db->commit;
+	$self->new_table("Ports", $self->pathref." PRIMARY KEY", map {$_." ".$vars->{$_}->sqltype } sort @{$self->{varlist}});
+	$self->prepare_normal_inserter('Ports', @{$self->{varlist}});
+	$self->prepare_normal_inserter('Paths', 'PKGPATH');
+}
+
+sub ref
+{
+	return shift->{ref};
+}
+
+sub insert
+{
+	my $self = shift;
+	my $table = shift;
+	$self->{insert}->{$table}->execute(@_);
+	$self->insert_done;
+}
+
+package CompactInserter;
+our @ISA=(qw(AbstractInserter));
+
+our $c = {
+	Library => 0,
+	Run => 1,
+	Build => 2,
+	Regress => 3
+};
+
+sub convert_depends
+{
+	my ($self, $value) = @_;
+	return $c->{$value};
+}
+
+
+sub pathref
+{
+	return "FULLPKGPATH INTEGER NOT NULL";
+}
+
+sub create_tables
+{
+	my ($self, $vars) = @_;
+	# create the various tables, dropping old versions
+
+	my @keys;
+
+	while (my ($name, $class) = each %$vars) {
+		if (!defined( $class->table() )) {
+			push(@keys, $name." ".$class->sqltype);
+			push(@{$self->{varlist}}, $name);
+		}
+		$class->create_table($self);
+	}
+
+	$self->new_table("Paths", "ID INTEGER PRIMARY KEY", "FULLPKGPATH TEXT NOT NULL UNIQUE", "PKGPATH INTEGER");
+	$self->SUPER::create_tables($vars);
+	$self->{find_pathkey} =  $self->prepare("SELECT ID From Paths WHERE FULLPKGPATH=(?)");
+}
+
+sub find_pathkey
+{
+	my ($self, $key) = @_;
+
+	if ($key eq '') {
+		print STDERR "Empty pathkey\n";
+		return 0;
+	}
+
+	# get pathkey for existing value
+	$self->{find_pathkey}->execute($key);
+	my $z = $self->{find_pathkey}->fetchrow_arrayref;
+	if (!defined $z) {
+		# if none, we create one
+		my $path = $key;
+		$path =~ s/\,.*//;
+		if ($path ne $key) {
+			$path = $self->find_pathkey($path);
+		} else {
+			$path = undef;
+		}
+		$self->insert('Paths', $key, $path);
+		$self->insert_done;
+		return $self->last_id;
+	} else {
+		return $z->[0];
+	}
+}
+
+sub set_newkey
+{
+	my ($self, $key) = @_;
+
+	$self->set($self->find_pathkey($key));
+}
+
+sub find_keyword_id
+{
+	my ($self, $key, $t) = @_;
+	$self->{$t}->{find_key1}->execute($key);
+	my $a = $self->{$t}->{find_key1}->fetchrow_arrayref;
+	if (!defined $a) {
+		$self->{$t}->{find_key2}->execute($key);
+		$self->insert_done;
+		return $self->last_id;
+	} else {
+		return $a->[0];
+	}
+}
+
+sub create_keyword_table
+{
+	my ($self, $t) = @_;
+	$self->new_table($t,
+	    "KEYREF INTEGER PRIMARY KEY AUTOINCREMENT", 
+	    "VALUE TEXT NOT NULL UNIQUE");
+	$self->{$t}->{find_key1} = $self->prepare("SELECT KEYREF FROM $t WHERE VALUE=(?)");
+	$self->{$t}->{find_key2} = $self->prepare("INSERT INTO $t (VALUE) VALUES (?)");
+}
+
+package NormalInserter;
+our @ISA=(qw(AbstractInserter));
+
+our $c = {
+	Library => 'L',
+	Run => 'R',
+	Build => 'B',
+	Regress => 'Regress'
+};
+
+sub convert_depends
+{
+	my ($self, $value) = @_;
+	return $c->{$value};
+}
+
+sub create_tables
+{
+	my ($self, $vars) = @_;
+	# create the various tables, dropping old versions
+
+	my @keys;
+
+	while (my ($name, $class) = each %$vars) {
+		push(@keys, $name." ".$class->sqltype);
+		push(@{$self->{varlist}}, $name);
+		$class->create_table($self);
+	}
+
+	$self->new_table("Paths", "FULLPKGPATH TEXT NOT NULL PRIMARY KEY", "PKGPATH TEXT NOT NULL");
+	$self->SUPER::create_tables($vars);
+
+}
+
+sub pathref
+{
+	return "FULLPKGPATH TEXT NOT NULL";
+}
+
+sub set_newkey
+{
+	my ($self, $key) = @_;
+
+	my $path = $key;
+	$path =~ s/\,.*//;
+	$self->insert('Paths', $key, $path);
+	$self->insert_done;
+	$self->set($key);
+}
+
+sub find_pathkey
+{
+	my ($self, $key) = @_;
+
+	return $key;
+}
+
+# no keyword for this dude
+sub find_keyword_id
+{
+	my ($self, $key, $t) = @_;
+	return $key;
+}
+
+sub create_keyword_table
+{
+	my ($self, $t) = @_;
+}
+
 # use a Template Method approach to store the variable values.
 
 # rule: we store each value in the main table, after converting YesNo
@@ -38,11 +314,112 @@ sub words($)
 # to store them in secondary tables (because of one/many associations).
 
 package AnyVar;
+sub new
+{
+	my ($class, $var, $value) = @_;
+	bless [$var, $value], $class;
+}
+
+sub var
+{
+	return shift->[0];
+}
+
+sub value
+{
+	return shift->[1];
+}
+
 sub add
 {
-	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
-	my $stmt=$db->prepare("UPDATE Ports SET $var=(?) WHERE RowID=(?)");
-	$stmt->execute($value, $rowid);
+	my ($self, $ins) = @_;
+	$ins->add_to_port($self->var, $self->value);
+}
+
+sub add_value
+{
+	my ($self, $ins, $value) = @_;
+	$ins->add_to_port($self->var, $value);
+}
+
+sub sqltype()
+{
+	return "TEXT";
+}
+
+sub table()
+{
+	return undef;
+}
+
+sub keyword
+{
+	my ($self, $ins, $value) = @_;
+	return $ins->find_keyword_id($value, $self->keyword_table);
+}
+
+# by default, there's no separate table
+sub create_table
+{
+}
+
+sub keyword_table()
+{
+	return "Keywords";
+}
+
+sub insert
+{
+	my $self = shift;
+	my $ins = shift;
+	$ins->insert($self->table, @_);
+}
+
+sub normal_insert
+{
+	my $self = shift;
+	my $ins = shift;
+    	$ins->insert($self->table, $ins->ref, @_);
+}
+
+package KeyVar;
+our @ISA=(qw(AnyVar));
+sub add
+{
+	my ($self, $ins) = @_;
+	$self->add_value($ins, $self->keyword($ins, $self->value));
+}
+
+sub sqltype()
+{
+	return "INTEGER NOT NULL";
+}
+
+sub create_table
+{
+	my ($self, $inserter) = @_;
+	$inserter->create_keyword_table($self->keyword_table);
+}
+
+package ArchKeyVar;
+our @ISA=(qw(KeyVar));
+
+sub keyword_table()
+{ 'Arch' }
+
+package OptKeyVar;
+our @ISA=(qw(KeyVar));
+sub add
+{
+	my ($self, $ins) = @_;
+	if ($self->value ne '') {
+		$self->SUPER::add($ins);
+	}
+}
+
+sub sqltype()
+{
+	return "INTEGER";
 }
 
 package YesNoVar;
@@ -50,8 +427,13 @@ our @ISA=(qw(AnyVar));
 
 sub add
 {
-	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
-	$class->SUPER::add($pkgpath, $db, $var, $value =~ m/^Yes/i ? 1 : undef, $rowid);
+	my ($self, $ins) = @_;
+	$self->add_value($ins, $self->value =~ m/^Yes/i ? 1 : undef);
+}
+
+sub sqltype()
+{
+	return "INTEGER";
 }
 
 # variable is always defined, but we don't need to store empty values.
@@ -60,9 +442,9 @@ our @ISA=(qw(AnyVar));
 
 sub add
 {
-	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
-	return if $value eq '';
-	$class->SUPER::add($pkgpath, $db, $var, $value, $rowid);
+	my ($self, $ins) = @_;
+	return if $self->value eq '';
+	$self->SUPER::add($ins);
 }
 
 
@@ -70,55 +452,121 @@ sub add
 # end up being treated as WANTLIB as well.
 
 package DependsVar;
+our @ISA=(qw(AnyVar));
 sub add
 {
-	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
-	AnyVar->add($pkgpath, $db, $var, $value, $rowid);
-	for my $depends (main::words $value) {
+	my ($self, $ins) = @_;
+	$self->SUPER::add($ins);
+	for my $depends (main::words $self->value) {
 		my ($libs, $pkgspec, $pkgpath2, $rest) = split(/\:/, $depends);
-		my $stmt = $db->prepare("INSERT INTO Depends (FULLPKGPATH, FULLDEPENDS, DEPENDSPATH, TYPE) VALUES (?, ?, ?, ?)");
-		$stmt->execute($pkgpath, $depends, $pkgpath2, $class->type());
+		$self->normal_insert($ins, $depends, $ins->find_pathkey($pkgpath2), $ins->convert_depends($self->depends_type), $pkgspec, $rest);
 		if ($libs ne '') {
 			for my $lib (split(/\,/, $libs)) {
-				$class->addlib($pkgpath, $db, $lib);
+				$self->add_lib($ins, $lib);
 			}
 		}
 	}
 }
 
-sub addlib
+sub create_table
 {
+	my ($self, $inserter) = @_;
+	$inserter->new_table($self->table, $inserter->pathref, "FULLDEPENDS TEXT NOT NULL", "PKGSPEC TEXT" , "REST TEXT", "DEPENDSPATH TEXT NOT NULL", "TYPE TEXT NOT NULL");
+	$inserter->prepare_normal_inserter($self->table, "FULLDEPENDS", "DEPENDSPATH", "TYPE", "PKGSPEC", "REST");
+}
+
+sub add_lib
+{
+}
+
+sub table()
+{
+	return "Depends";
+}
+
+sub sqltype()
+{
+	return "TEXT";
 }
 
 package LibDependsVar;
 our @ISA=(qw(DependsVar));
-sub type() { 'L' }
+sub depends_type() { 'Library' }
 
-sub addlib
+sub add_lib
 {
-	my ($class, $pkgpath, $db, $lib) = @_;
-	WantlibVar->addvalue($pkgpath, $db, $lib);
+	my ($self, $ins, $lib) = @_;
+	WantlibVar->add_value($ins, $lib);
 }
 
 package RunDependsVar;
 our @ISA=(qw(DependsVar));
-sub type() { 'R' }
+sub depends_type() { 'Run' }
 
 package BuildDependsVar;
 our @ISA=(qw(DependsVar));
-sub type() { 'B' }
+sub depends_type() { 'Build' }
 
 package RegressDependsVar;
 our @ISA=(qw(DependsVar));
-sub type() { 'Regress' }
+sub depends_type() { 'Regress' }
 
-# Stuff that gets stored in another table as well
+# Stuff that gets stored in another table
 package SecondaryVar;
-sub addvalue
+our @ISA=(qw(KeyVar));
+sub add_value
 {
-	my ($class, $pkgpath, $db, $value) = @_;
-	my $stmt = $db->prepare("INSERT OR REPLACE INTO ".$class->table." (FULLPKGPATH, VALUE) VALUES (?, ?)");
-	$stmt->execute($pkgpath, $value);
+	my ($self, $ins, $value) = @_;
+	$self->normal_insert($ins, $value);
+}
+
+sub add_keyword
+{
+	my ($self, $ins, $value) = @_;
+	$self->add_value($ins, $self->keyword($ins, $value));
+}
+
+sub create_table
+{
+	my ($self, $inserter) = @_;
+	$inserter->new_table($self->table, $inserter->pathref, 
+	    "VALUE TEXT NOT NULL", "UNIQUE(FULLPKGPATH, VALUE)");
+	$self->SUPER::create_table($inserter);
+	$inserter->prepare_normal_inserter($self->table, "VALUE");
+}
+
+sub keyword_table()
+{
+	return "Keywords";
+}
+
+sub sqltype() { "TEXT" }
+
+package MasterSitesVar;
+our @ISA=(qw(OptKeyVar));
+sub add
+{
+	my ($self, $ins) = @_;
+
+	my $n;
+	if ($self->var =~ m/^MASTER_SITES(\d)$/) {
+		$n = $1;
+	}
+	$self->normal_insert($ins, $n, $self->value);
+}
+
+sub create_table
+{
+	my ($self, $inserter) = @_;
+	$inserter->new_table($self->table, $inserter->pathref, 
+	    "N INTEGER", "VALUE TEXT NOT NULL", "UNIQUE(FULLPKGPATH, N, VALUE)");
+	$inserter->prepare_normal_inserter($self->table, "N", "VALUE");
+	$self->SUPER::create_table($inserter);
+}
+
+sub table()
+{
+	return "MasterSites";
 }
 
 # Generic handling for any blank-separated list
@@ -127,10 +575,22 @@ our @ISA=(qw(SecondaryVar));
 
 sub add
 {
-	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
-	AnyVar->add($pkgpath, $db, $var, $value, $rowid);
-	for my $d (main::words $value) {
-		$class->addvalue($pkgpath, $db, $d) if $d ne '';
+	my ($self, $ins) = @_;
+	$self->AnyVar::add($ins);
+	for my $d (main::words $self->value) {
+		$self->add_value($ins, $d) if $d ne '';
+	}
+}
+
+package ListKeyVar;
+our @ISA=(qw(SecondaryVar));
+
+sub add
+{
+	my ($self, $ins) = @_;
+	$self->AnyVar::add($ins);
+	for my $d (main::words $self->value) {
+		$self->add_keyword($ins, $d) if $d ne '';
 	}
 }
 
@@ -139,9 +599,9 @@ our @ISA=(qw(SecondaryVar));
 
 sub add
 {
-	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
-	AnyVar->add($pkgpath, $db, $var, $value, $rowid);
-	my @l = (main::words $value);
+	my ($self, $ins) = @_;
+	$self->AnyVar::add($ins);
+	my @l = (main::words $self->value);
 	while (my $v = shift @l) {
 		while ($v =~ m/^[^']*\'[^']*$/ || $v =~m/^[^"]*\"[^"]*$/) {
 			$v.=' '.shift @l;
@@ -152,38 +612,64 @@ sub add
 		if ($v =~ m/^\'(.*)\'$/) {
 		    $v = $1;
 		}
-		$class->addvalue($pkgpath, $db, $v) if $v ne '';
+		$self->add_value($ins, $v) if $v ne '';
 	}
 }
 
-package DefinedListVar;
-our @ISA=(qw(ListVar));
+package DefinedListKeyVar;
+our @ISA=(qw(ListKeyVar));
 sub add
 {
-	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
-	return if $value eq '';
-	$class->SUPER::add($pkgpath, $db, $var, $value, $rowid);
+	my ($self, $ins) = @_;
+	return if $self->value eq '';
+	$self->SUPER::add($ins);
 }
 
 package FlavorsVar;
-our @ISA=(qw(DefinedListVar));
+our @ISA=(qw(DefinedListKeyVar));
 sub table() { 'Flavors' }
 
+package PseudoFlavorsVar;
+our @ISA=(qw(DefinedListKeyVar));
+sub table() { 'PseudoFlavors' }
+
+package ArchListVar;
+our @ISA=(qw(DefinedListKeyVar));
+sub keyword_table() { 'Arch' }
+
+package OnlyForArchListVar;
+our @ISA=(qw(ArchListVar));
+sub table() { 'OnlyForArch' }
+
+package NotForArchListVar;
+our @ISA=(qw(ArchListVar));
+sub table() { 'NotForArch' }
+
 package CategoriesVar;
-our @ISA=(qw(ListVar));
+our @ISA=(qw(ListKeyVar));
 sub table() { 'Categories' }
+sub keyword_table() { 'CategoryKeys' }
 
 package MultiVar;
 our @ISA=(qw(ListVar));
 sub table() { 'Multi' }
 
+sub add
+{
+	my ($self, $ins) = @_;
+	return if $self->value eq '-';
+	$self->SUPER::add($ins);
+}
+
 package ModulesVar;
-our @ISA=(qw(ListVar));
+our @ISA=(qw(ListKeyVar));
 sub table() { 'Modules' }
+sub keyword_table() { 'ModuleKeys' }
 
 package ConfigureVar;
-our @ISA=(qw(DefinedListVar));
+our @ISA=(qw(DefinedListKeyVar));
 sub table() { 'Configure' }
+sub keyword_table() { 'ConfigureKeys' }
 
 package ConfigureArgsVar;
 our @ISA=(qw(QuotedListVar));
@@ -192,61 +678,131 @@ sub table() { 'ConfigureArgs' }
 package WantlibVar;
 our @ISA=(qw(ListVar));
 sub table() { 'Wantlib' }
-sub addvalue
+sub _add
 {
-	my ($class, $pkgpath, $db, $value) = @_;
-	$class->SUPER::addvalue($pkgpath, $db, $value);
-	if ($value =~ m/\.(?:\>?\=)?\d+\.\d+$/) {
-		$class->SUPER::addvalue($pkgpath, $db, $`);
-	} elsif ($value =~ m/\.(?:\>?\=)?\d+$/) {
-		$class->SUPER::addvalue($pkgpath, $db, $`);
+	my ($self, $ins, $value, $extra) = @_;
+	$self->normal_insert($ins, $self->keyword($ins, $value), $extra);
+}
+
+sub add_value
+{
+	my ($self, $ins, $value) = @_;
+	if ($value =~ m/^(.*)(\.(?:\>?\=)?\d+\.\d+)$/) {
+		$self->_add($ins, $1, $2);
+	} elsif ($value =~ m/^(.*)(\.(?:\>?\=)?\d+)$/) {
+		$self->_add($ins, $1, $2);
+	} else {
+		$self->_add($ins, $value, undef);
 	}
 }
+
+sub create_table
+{
+	my ($self, $inserter) = @_;
+	$inserter->new_table($self->table, $inserter->pathref, 
+	    "VALUE TEXT NOT NULL", "EXTRA TEXT", "UNIQUE(FULLPKGPATH, VALUE)");
+	KeyVar::create_table($self, $inserter);
+	$inserter->prepare_normal_inserter($self->table, "VALUE", "EXTRA");
+}
+
+sub keyword_table() { 'Library' }
+
+package OnlyForArchVar;
+our @ISA=(qw(DefinedListKeyVar));
+sub table() { 'OnlyForArch' }
+sub keyword_table() { 'Arches' }
 
 package FileVar;
 our @ISA=(qw(SecondaryVar));
 
 sub add
 {
-	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
-	AnyVar->add($pkgpath, $db, $var, $value, $rowid);
-	open my $file, '<', $value or return;
+	my ($self, $ins) = @_;
+	$self->SUPER::add($ins);
+	open my $file, '<', $self->value or return;
 	local $/ = undef;
-	$class->addvalue($pkgpath, $db, <$file>);
+	$self->add_value($ins, <$file>);
 }
 
 sub table() { 'Descr' }
 
 package SharedLibsVar;
-our @ISA=(qw(AnyVar));
+our @ISA=(qw(KeyVar));
 
 sub add
 {
-	my ($class, $pkgpath, $db, $var, $value, $rowid) = @_;
-	$class->SUPER::add($pkgpath, $db, $var, $value, $rowid);
-	my $stmt = $db->prepare("INSERT INTO Shared_Libs (FULLPKGPATH, LIBNAME, VERSION) VALUES (?, ?, ?)");
-	my %t = main::words($value);
+	my ($self, $ins) = @_;
+	$self->SUPER::add($ins);
+	my %t = main::words($self->value);
 	while (my ($k, $v) = each %t) {
-		$stmt->execute($pkgpath, $k, $v);
+		$self->normal_insert($ins, $self->keyword($ins, $k), $v);
 	}
 }
 
+sub create_table
+{
+	my ($self, $inserter) = @_;
+	$inserter->new_table("Shared_Libs", $inserter->pathref, 
+	    "LIBNAME TEXT NOT NULL", "VERSION TEXT NOT NULL", 
+	    "UNIQUE (FULLPKGPATH, LIBNAME)");
+	$inserter->prepare_normal_inserter($self->table, "LIBNAME", "VERSION");
+	$self->SUPER::create_table($inserter);
+}
+
+sub table()
+{
+	"Shared_Libs"
+}
+
+sub keyword_table() 
+{
+	return "Library";
+}
+	
+package EmailVar;
+our @ISA=(qw(KeyVar));
+sub keyword_table()
+{
+	return "Email";
+}
+
+package YesKeyVar;
+our @ISA=(qw(KeyVar));
+sub keyword_table()
+{
+	return "Keywords2";
+}
+
+package AutoVersionVar;
+our @ISA=(qw(OptKeyVar));
+
+sub keyword_table()
+{
+	return "AutoVersion";
+}
 
 package main;
 
 use DBI;
 
+getopts('v');
 my $dbname;
 if (@ARGV > 0) {
 	$dbname = shift;
 } else {
 	$dbname = 'sqlports';
 }
+my @inserters;
 
 my $db =DBI->connect("dbi:SQLite:dbname=$dbname", '', '', {AutoCommit => 0});
+my $db2 =DBI->connect("dbi:SQLite:dbname=$dbname-compact", '', '', {AutoCommit => 0});
+push(@inserters, NormalInserter->new($db, 1000));
+push(@inserters, CompactInserter->new($db2, 1000));
+
+
 my $vars = {
-    AUTOCONF_VERSION => 'AnyVar',
-    AUTOMAKE_VERSION => 'AnyVar',
+    AUTOCONF_VERSION => 'AutoVersionVar',
+    AUTOMAKE_VERSION => 'AutoVersionVar',
     BROKEN => 'AnyVar',
     BUILD_DEPENDS => 'BuildDependsVar',
     CATEGORIES=> 'CategoriesVar',
@@ -254,7 +810,6 @@ my $vars = {
     CONFIGURE_ARGS => 'ConfigureArgsVar',
     CONFIGURE_STYLE => 'ConfigureVar',
     DESCR => 'FileVar',
-    PACKAGING => 'AnyVar',
     DISTFILES => 'AnyVar',
     DISTNAME => 'AnyVar',
     DIST_SUBDIR => 'DefinedVar',
@@ -263,35 +818,35 @@ my $vars = {
     HOMEPAGE => 'AnyVar',
     IS_INTERACTIVE => 'AnyVar',
     LIB_DEPENDS => 'LibDependsVar',
-    MAINTAINER=> 'AnyVar',
-    MASTER_SITES => 'AnyVar',
-    MASTER_SITES0 => 'AnyVar',
-    MASTER_SITES1 => 'AnyVar',
-    MASTER_SITES2 => 'AnyVar',
-    MASTER_SITES3 => 'AnyVar',
-    MASTER_SITES4=> 'AnyVar',
-    MASTER_SITES5 => 'AnyVar',
-    MASTER_SITES6 => 'AnyVar',
-    MASTER_SITES7 => 'AnyVar',
-    MASTER_SITES8 => 'AnyVar',
-    MASTER_SITES9=> 'AnyVar',
+    MAINTAINER=> 'EmailVar',
+    MASTER_SITES => 'MasterSitesVar',
+    MASTER_SITES0 => 'MasterSitesVar',
+    MASTER_SITES1 => 'MasterSitesVar',
+    MASTER_SITES2 => 'MasterSitesVar',
+    MASTER_SITES3 => 'MasterSitesVar',
+    MASTER_SITES4=> 'MasterSitesVar',
+    MASTER_SITES5 => 'MasterSitesVar',
+    MASTER_SITES6 => 'MasterSitesVar',
+    MASTER_SITES7 => 'MasterSitesVar',
+    MASTER_SITES8 => 'MasterSitesVar',
+    MASTER_SITES9=> 'MasterSitesVar',
     MODULES => 'ModulesVar',
     MULTI_PACKAGES => 'MultiVar',
     NO_BUILD => 'YesNoVar',
     NO_REGRESS => 'YesNoVar',
-    ONLY_FOR_ARCHS => 'AnyVar',
-    PACKAGES => 'AnyVar',
-    PERMIT_DISTFILES_CDROM => 'AnyVar',
-    PERMIT_DISTFILES_FTP=> 'AnyVar',
-    PERMIT_PACKAGE_CDROM => 'AnyVar',
-    PERMIT_PACKAGE_FTP=> 'AnyVar',
+    NOT_FOR_ARCHS => 'NotForArchListVar',
+    ONLY_FOR_ARCHS => 'OnlyForArchListVar',
+    PERMIT_DISTFILES_CDROM => 'YesKeyVar',
+    PERMIT_DISTFILES_FTP=> 'YesKeyVar',
+    PERMIT_PACKAGE_CDROM => 'YesKeyVar',
+    PERMIT_PACKAGE_FTP=> 'YesKeyVar',
     PKGNAME => 'AnyVar',
-    PKG_ARCH => 'AnyVar',
-    PSEUDO_FLAVORS => 'DefinedVar',
+    PKG_ARCH => 'ArchKeyVar',
+    PSEUDO_FLAVORS => 'PseudoFlavorsVar',
     REGRESS_DEPENDS => 'RegressDependsVar',
     REGRESS_IS_INTERACTIVE => 'AnyVar',
     RUN_DEPENDS => 'RunDependsVar',
-    SEPARATE_BUILD => 'AnyVar',
+    SEPARATE_BUILD => 'YesKeyVar',
     SHARED_LIBS => 'SharedLibsVar',
     SHARED_ONLY => 'YesNoVar',
     SUBPACKAGE => 'DefinedVar',
@@ -303,37 +858,16 @@ my $vars = {
     WANTLIB => 'WantlibVar',
 };
 
-# create the various tables, dropping old versions
-
-for my $t (qw(Categories Flavors Multi Modules Configure ConfigureArgs Wantlib)) {
-    $db->do("DROP TABLE IF EXISTS $t");
-    $db->do("CREATE TABLE $t (FULLPKGPATH TEXT NOT NULL, VALUE TEXT NOT NULL, UNIQUE(FULLPKGPATH, VALUE))");
+for my $inserter (@inserters) {
+	$inserter->create_tables($vars);
 }
-$db->do("DROP TABLE IF EXISTS Depends");
-$db->do("CREATE TABLE Depends (FULLPKGPATH TEXT NOT NULL, FULLDEPENDS TEXT NOT NULL, DEPENDSPATH TEXT NOT NULL, TYPE TEXT NOT NULL)");
-$db->do("DROP TABLE IF EXISTS Shared_Libs");
-$db->do("CREATE TABLE Shared_Libs (FULLPKGPATH TEXT NOT NULL, LIBNAME TEXT NOT NULL, VERSION TEXT NOT NULL, UNIQUE (FULLPKGPATH, LIBNAME))");
-$db->do("DROP TABLE IF EXISTS Ports");
-$db->do("CREATE TABLE Ports (FULLPKGPATH TEXT NOT NULL PRIMARY KEY, ".
-	join(',', (map {$_." TEXT"} (keys %$vars))).")");
-$db->do("DROP TABLE IF EXISTS Paths");
-$db->do("CREATE TABLE Paths (FULLPKGPATH TEXT NOT NULL PRIMARY KEY, PKGPATH TEXT NOT NULL)");
-$db->do("DROP TABLE IF EXISTS Descr");
-$db->do("CREATE TABLE Descr (FULLPKGPATH TEXT NOT NULL PRIMARY KEY, VALUE TEXT NOT NULL)");
-$db->commit();
 
-my $stmt = $db->prepare("SELECT RowID FROM Ports WHERE FULLPKGPATH=(?)");
-my $stmt2= $db->prepare("INSERT INTO Ports (FULLPKGPATH) VALUES (?)");
-my $stmt3= $db->prepare("INSERT INTO Paths (FULLPKGPATH, PKGPATH) VALUES (?, ?)");
-
-my $i = 0;
-my $rowid;
 my $lastkey;
 while (<STDIN>) {
 	chomp;
 	# kill noise
 	if (m/^\=\=\=/) {
-		print $_, "\n";
+		print "---", $_, "\n";
 		next;
 	}
 	next unless m/^(.*?)\.([A-Z][A-Z_0-9]*)\=(.*)$/;
@@ -345,28 +879,23 @@ while (<STDIN>) {
 	}
 
 	if (!(defined $lastkey) || $key ne $lastkey) {
-		# get rowid for existing value
-		$stmt->execute($key);
-		my $z = $stmt->fetchall_arrayref;
-		if (@$z == 0) {
-			# if none, we create one
-			$stmt2->execute($key);
-			my $path = $key;
-			$path =~ s/\,.*//;
-			$stmt3->execute($key, $path);
-			$stmt->execute($key);
-			$z = $stmt->fetchall_arrayref;
+		if (defined $lastkey) {
+			for my $inserter (@inserters) {
+				$inserter->finish_port;
+			}
 		}
-		$rowid = $z->[0]->[0];
+		for my $inserter (@inserters) {
+			$inserter->set_newkey($key);
+		}
 		$lastkey = $key;
 	}
-	$vars->{$var}->add($key, $db, $var, $value, $rowid);
-
-	# and we commit just once every 1000 transactions, for efficiency
-	$i++;
-	if ($i % 1000 == 0) {
-		$db->commit();
+	my $v = $vars->{$var}->new($var, $value);
+	for my $inserter (@inserters) {
+		$v->add($inserter);
 	}
 }
-$db->commit();
+for my $inserter (@inserters) {
+	$inserter->finish_port;
+	$inserter->db->commit;
+}
 

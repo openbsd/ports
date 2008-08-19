@@ -1,0 +1,91 @@
+SQLite database of every port in the system. This can be queried through
+e.g., sqlitebrowser, or any kind of programming interface.
+
+This schema is mostly optimized for tools, and cumbersome to query by
+hand.
+
+Database Schema:
+- Paths (ID, FULLPKGPATH, PKGPATH)
+PKGPATH points to a PATHS entry corresponding to the stripped down version of 
+FULLPKGPATH, without flavors or subpackage markers, or is null if FULLPKGPATH
+is already stripped.  Every other FULLPKGPATH, PKGPATH, DEPENDSPATH entry
+in the database points to this table.
+
+- Ports(FULLPKGPATH, ...)
+holds all the information retrieved through various variables that is not
+stored in specialized tables, e.g.,:
+    AUTOCONF_VERSION 
+    AUTOMAKE_VERSION 
+    BROKEN 
+    COMMENT 
+    DESCR 
+    DISTFILES 
+    DISTNAME 
+    DIST_SUBDIR 
+    FLAVORS 
+    HOMEPAGE 
+    IS_INTERACTIVE 
+    MAINTAINER
+    MULTI_PACKAGES 
+    NO_*
+    PERMIT_*
+    PKGNAME 
+    PKG_ARCH 
+    PSEUDO_FLAVORS 
+    REGRESS_IS_INTERACTIVE 
+    SEPARATE_BUILD 
+    SHARED_ONLY 
+    SUBPACKAGE 
+    SUPDISTFILES 
+    USE_*
+
+This information is mostly unchanged, except for replacing Yes/No variables
+with 1/0. Variables not present in a given port are left undefined.
+
+MULTI_PACKAGES ports hold several entries with corresponding FULLPKGPATH
+
+- Flavors(FULLPKGPATH, VALUE)
+- PseudoFlavors(FULLPKGPATH, VALUE)
+- Categories(FULLPKGPATH, VALUE)
+- Multi(FULLPKGPATH, VALUE)		('-' values are not stored)
+- Modules(FULLPKGPATH, VALUE)
+- Configure(FULLPKGPATH, VALUE) 	(corresponds to CONFIGURE_STYLE)
+- ConfigureArgs(FULLPKGPATH, VALUE)
+- MasterSites(FULLPKGPATH, N, VALUE)
+- NotForArch(FULLPKGPATH, VALUE)
+- OnlyForArch(FULLPKGPATH, VALUE)
+All of these variable values are actually lists. These lists are taken apart
+and result in many entries in these secondary tables (or none if the list
+is completely empty)
+
+
+Each keyword table follows the same scheme
+TABLENAME(KEYREF, VALUE)
+
+
+- Depends(FULLPKGPATH, FULLDEPENDS, PKGSPEC, REST, DEPENDSPATH, TYPE)
+All depends are stored in a single table, including the type:
+0 -> library
+1 -> run
+2 -> build
+3 -> regress
+with FULLDEPENDS the full text of the dependency, and DEPENDSPATH the key to
+the FULLPKGPATH we depend upon.
+- Wantlib(FULLPKGPATH, VALUE, EXTRA)
+All the libraries the FULLPKGPATH depends upon, with optional version 
+number specification stored in EXTRA
+coming from either the WANTLIB variable or various LIB_DEPENDS.
+
+- Shared_Libs(FULLPKGPATH, LIBNAME, VERSION)
+
+Some information, both in the main table and in secondary tables 
+is stored as keyword references to other tables:
+AUTOCONF_VERSION, AUTOMAKE_VERSION -> AUTOVERSION
+MAINTAINER -> EMAIL
+CATEGORIES -> CATEGORYKEYS
+CONFIGURE -> CONFIGURE_KEYS
+MODULES -> MODULEKEYS
+WANTLIB.VALUE, SHARED_LIBS.LIBNAME -> LIBRARY
+PERMIT_*, SEPARATE_BUILD -> KEYWORDS2
+FLAVORS, PSEUDO_FLAVORS -> KEYWORDS
+NOT_FOR_ARCHS, ONLY_FOR_ARCHS, PKG_ARCH -> ARCH
