@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/06/24 20:34:46 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2008/08/19 22:32:08 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		2.22.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		editors
 
 HOMEPAGE=		http://live.gnome.org/Gedit/Plugins
@@ -33,7 +34,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 RUN_DEPENDS=		::devel/vte,-python \
 			:gedit->=2.22.0:x11/gnome/gedit \
 			:gucharmap-*:x11/gnome/gucharmap \
-			:py-gtk2-*:x11/py-gtk2
+			:py-gtk2->=2.12.0:x11/py-gtk2
 
 USE_X11=		Yes
 
