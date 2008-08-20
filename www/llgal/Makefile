@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/06 13:51:25 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2008/08/20 22:38:25 okan Exp $
 
 COMMENT=	command-line online gallery generator
 
-DISTNAME=	llgal-0.13.14
+DISTNAME=	llgal-0.13.15
 CATEGORIES=	www graphics
 
 HOMEPAGE=	http://home.gna.org/llgal/
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
