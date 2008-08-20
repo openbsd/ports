@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.952 2008/08/19 23:49:32 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.953 2008/08/20 08:56:53 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -193,7 +193,7 @@ _clean += work
 .if ${CLEANDEPENDS_${PKGPATH}:L} == "yes"
 _clean += depends
 .endif
-.if ${_clean:L:Mwork}
+.if ${_clean:L:Mwork} || ${_clean:L:Mbuild}
 _clean += fake
 .endif
 .if ${_clean:L:Mforce}
@@ -201,7 +201,7 @@ _clean += -f
 .endif
 # check that clean is clean
 _okay_words = depends work fake -f flavors dist install sub packages package \
-	readmes bulk force plist
+	readmes bulk force plist build
 .for _w in ${_clean:L}
 .  if !${_okay_words:M${_w}}
 ERRORS += "Fatal: unknown clean command: ${_w}"
@@ -2386,7 +2386,7 @@ _internal-clean:
 .if ${_clean:L:Mfake}
 	@if cd ${WRKINST} 2>/dev/null; then ${SUDO} rm -rf ${WRKINST}; fi
 .endif
-.if ${_clean:L:Mwork}
+.if ${_clean:L:Mwork} || (${_clean:L:Mbuild} && ${SEPARATE_BUILD:L} == "no")
 .  if ${_clean:L:Mflavors}
 	@for i in ${.CURDIR}/w-*; do \
 		if [ -L $$i ]; then ${SUDO} rm -rf `readlink $$i`; fi; \
@@ -2396,6 +2396,8 @@ _internal-clean:
 	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
 	@rm -rf ${WRKDIR}
 .  endif
+.elif ${_clean:L:Mbuild} && ${SEPARATE_BUILD:L} != "no"
+	@rm -rf ${WRKBUILD} ${_CONFIGURE_COOKIE} ${_BUILD_COOKIE}
 .endif
 .if ${_clean:L:Mdist}
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
