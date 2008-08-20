@@ -1,0 +1,7 @@
+Method modifiers are a powerful feature from the CLOS (Common Lisp
+Object System) world.
+Class::Method::Modifiers provides three modifiers: before, around, and
+after.  before and after are run just before and after the method they
+modify, but can not really affect that original method.  around is run
+in place of the original method, with a hook to easily call that
+original method.
