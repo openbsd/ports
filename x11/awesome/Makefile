@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/05/16 20:06:12 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.7 2008/08/20 16:00:03 sthen Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://awesome.naquadah.org/
 
 MAINTAINER=		D. Adam Karim <adam@akarsoft.com>
 
-# BSD
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
