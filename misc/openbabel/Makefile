@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2007/08/27 16:53:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2008/08/20 16:08:11 ajacoutot Exp $
 
 COMMENT=	chemistry file translation program
 
-V=		2.1.1
+V=		2.2.0
 DISTNAME=	openbabel-${V}
 CATEGORIES=	misc
 
-SHARED_LIBS+=	inchi		0.1	# .0.1
-SHARED_LIBS+=	openbabel	3.1	# .3.1
+SHARED_LIBS+=	openbabel	4.0	# .3.0
 
 HOMEPAGE=	http://openbabel.sourceforge.net/
 
@@ -21,7 +20,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openbabel/}
 
-WANTLIB=	c iconv m stdc++ z
+WANTLIB=	c iconv m z
+
+# needs the __builtin_popcount built-in function (gcc>=3.4) 
+MODULES+=	gcc4
+MODGCC4_LANGS=	c++
+MODGCC4_ARCHES=	*
 
 SUBST_VARS=	V
 
@@ -34,6 +38,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_path_DOXYGEN=""
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-inchi
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-inchi \
+		--disable-wx-gui
 
 .include <bsd.port.mk>

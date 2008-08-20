@@ -1,6 +1,12 @@
-$OpenBSD: patch-test_cml_sh,v 1.1.1.1 2007/01/22 16:32:41 ajacoutot Exp $
---- test/cml.sh.orig	Fri Jan 19 11:09:42 2007
-+++ test/cml.sh	Fri Jan 19 11:09:51 2007
+$OpenBSD: patch-test_cml_sh,v 1.2 2008/08/20 16:08:11 ajacoutot Exp $
+--- test/cml.sh.orig	Sat Jun 21 15:58:04 2008
++++ test/cml.sh	Tue Aug 19 13:19:23 2008
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # test Open Babel with CML, if the CML test suite exists
+ 
+ builddir=`pwd`
 @@ -15,7 +15,7 @@ fi
  echo
  echo "# Testing CML support..."
