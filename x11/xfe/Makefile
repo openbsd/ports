@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2008/07/03 18:39:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2008/08/20 08:43:24 ajacoutot Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
-DISTNAME= 	xfe-1.19.1
+DISTNAME= 	xfe-1.19.2
 CATEGORIES= 	x11
 
 HOMEPAGE=	http://roland65.free.fr/xfe/
