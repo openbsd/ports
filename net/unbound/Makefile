@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/16 20:34:10 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2008/08/20 08:25:41 jakob Exp $
 
 COMMENT=	validating DNS resolver
 
-DISTNAME=	unbound-1.0.1
+DISTNAME=	unbound-1.0.2
 PKGNAME=	${DISTNAME}
 
 CATEGORIES=	net
@@ -35,7 +35,8 @@ CONFIGURE_ARGS+=	--with-ssl=/usr \
 			--without-pthreads \
 			--with-chroot-dir=/var/unbound \
 			--with-pidfile=/var/unbound/var/run/unbound.pid \
-			--with-conf-file=/var/unbound/etc/unbound.conf
+			--with-conf-file=/var/unbound/etc/unbound.conf \
+			--with-username=_unbound
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/unbound
