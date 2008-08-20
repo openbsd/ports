@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/04/17 08:46:48 ajacoutot Exp $
-bin/gossip
+@comment $OpenBSD: PLIST,v 1.6 2008/08/20 16:14:03 jasper Exp $
+@bin bin/gossip
 lib/bonobo/
 lib/bonobo/servers/
 lib/bonobo/servers/GNOME_Peekaboo_Applet.server
-libexec/peekaboo-applet
+@bin libexec/peekaboo-applet
 share/applications/gossip.desktop
 share/examples/gossip/
 @sample ${SYSCONFDIR}/gnome/
@@ -29,6 +29,7 @@ share/gossip/gossip-file-transfer.png
 share/gossip/gossip-group-message.png
 share/gossip/gossip-log.xsl
 share/gossip/gossip-logo.png
+share/gossip/gossip-mac-overlay-new-message.png
 share/gossip/gossip-message.png
 share/gossip/gossip-offline.png
 share/gossip/gossip-pending.png
@@ -40,6 +41,7 @@ share/gossip/vcard_16.png
 share/gossip/vcard_48.png
 share/icons/hicolor/16x16/apps/gossip.png
 share/icons/hicolor/22x22/apps/gossip.png
+share/icons/hicolor/24x24/apps/gossip.png
 share/icons/hicolor/32x32/apps/gossip.png
 share/icons/hicolor/48x48/apps/gossip.png
 share/icons/hicolor/scalable/apps/gossip.svg
@@ -61,6 +63,7 @@ share/locale/eu/LC_MESSAGES/gossip.mo
 share/locale/fi/LC_MESSAGES/gossip.mo
 share/locale/fr/LC_MESSAGES/gossip.mo
 share/locale/ga/LC_MESSAGES/gossip.mo
+share/locale/he/LC_MESSAGES/gossip.mo
 share/locale/hr/LC_MESSAGES/gossip.mo
 share/locale/hu/LC_MESSAGES/gossip.mo
 share/locale/it/LC_MESSAGES/gossip.mo
