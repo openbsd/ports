@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2008/07/25 20:50:26 martynas Exp $
+# $OpenBSD: Makefile,v 1.32 2008/08/20 09:56:17 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
 V=3.3.6
 FULL_VERSION=3.3.6
 FULL_PKGVERSION=3.3.6
+BOOTSTRAP_GEN = 6
+ADASTRAP = adastrap-i386-3.3.6-${BOOTSTRAP_GEN}.tgz
 
 PKGNAME-main=	gcc-${FULL_PKGVERSION}p10
 PKGNAME-c++ =	g++-${FULL_PKGVERSION}p10
@@ -58,7 +60,7 @@ REGRESS_DEPENDS=::devel/dejagnu
 DISTNAME=	gcc-${FULL_VERSION}
 
 DISTFILES=  ${DISTNAME}.tar.bz2
-SUPDISTFILES=adastrap-i386-3.3.6-5.tgz:0
+SUPDISTFILES=${ADASTRAP}:0
 
 MASTER_SITES=	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
 MASTER_SITES0=	ftp://quatramaran.ens.fr/pub/espie/
@@ -92,7 +94,7 @@ CONFIGURE_ARGS+=--enable-java-gc=system-boehm
 .if ${FLAVOR:L:Mada}
 LANGS:=${LANGS},ada
 MULTI_PACKAGES+=-ada
-DISTFILES+=adastrap-${MACHINE_ARCH}-3.3.6-5.tgz:0
+DISTFILES+=${ADASTRAP}:0
 CONFIGURE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 MAKE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 
@@ -178,4 +180,16 @@ LIB_DEPENDS-java=gc::devel/boehm-gc
 
 RUN_DEPENDS-c++ =${RUN_DEPENDS} ::${PKGPATH},-estdc
 
+
 .include <bsd.port.mk>
+
+ADA_PACKAGE=${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-ada}${PKG_SUFX}
+GCC_PACKAGE=${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-main}${PKG_SUFX}
+
+
+adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE}
+	mkdir -p ${WRKDIR}/prepare/bootstrap
+	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${ADA_PACKAGE}
+	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${GCC_PACKAGE}
+	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
+	cd ${WRKDIR}/prepare && tar zcf ${FULLDISTDIR}/${ADASTRAP} bootstrap
