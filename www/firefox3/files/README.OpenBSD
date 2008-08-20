@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.3 2008/07/26 16:23:32 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.4 2008/08/20 00:21:50 martynas Exp $
 
 If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is
@@ -54,3 +54,27 @@ Double-click on any cipher to toggle its state. For example, to
 enable TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, double-click on
 security.ssl3.ecdhe_ecdsa_aes128_sha until its boolean entry in the
 Value column changes to true.
+
+Using CUPS for printing
+
+Since version 3, Firefox uses standard printing dialog from gtk+2.
+In order to use CUPS for printing, you will need to install cups
+subpackage of gtk+2, i.e.:
+
+# pkg_add gtk+2-cups
+
+Scaled images render incorrectly
+
+Due to incompatibilities between some of the drivers and X server,
+scaled images may render incorrectly.  Possible workarounds are:
+
+(Known to fix using NVIDIA cards.)
+DefaultDepth 16
+
+(Known to fix using ATI cards.)
+Option "AccelMethod" "EXA"
+Option "XAANoOffscreenPixmaps"
+
+For more information please see:
+http://bugs.freedesktop.org/show_bug.cgi?id=13795
+http://bugs.freedesktop.org/show_bug.cgi?id=15098
