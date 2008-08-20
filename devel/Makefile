@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.610 2008/08/19 22:55:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.611 2008/08/20 13:44:40 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -265,6 +265,7 @@
      SUBDIR += p5-Class-MakeMethods
      SUBDIR += p5-Class-Meta
      SUBDIR += p5-Class-Meta-Express
+     SUBDIR += p5-Class-Method-Modifiers
      SUBDIR += p5-Class-MethodMaker
      SUBDIR += p5-Class-MethodMapper
      SUBDIR += p5-Class-ReturnValue
@@ -286,6 +287,7 @@
      SUBDIR += p5-Curses
      SUBDIR += p5-Curses-UI
      SUBDIR += p5-Curses-Widgets
+     SUBDIR += p5-Data-Alias
      SUBDIR += p5-Data-Buffer
      SUBDIR += p5-Data-Dump
      SUBDIR += p5-Data-Dumper-Simple
@@ -425,6 +427,7 @@
      SUBDIR += p5-Module-ScanDeps
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Moose
+     SUBDIR += p5-Mouse
      SUBDIR += p5-Net-Server
      SUBDIR += p5-Number-Compare
      SUBDIR += p5-Number-Compare-Date
@@ -569,6 +572,7 @@
      SUBDIR += p5-capitalization
      SUBDIR += p5-enum
      SUBDIR += p5-libintl
+     SUBDIR += p5-namespace-clean
      SUBDIR += p5-parent
      SUBDIR += p5-prefork
      SUBDIR += p5-version
