@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 09:09:43 espie Exp $
-${P5SITE}/MIME/
+@comment $OpenBSD: PLIST,v 1.5 2008/08/20 20:09:59 dhill Exp $
 ${P5SITE}/MIME/Lite.pm
 ${P5SITE}/MIME/changes.pod
 @man man/man3p/MIME::Lite.3p
