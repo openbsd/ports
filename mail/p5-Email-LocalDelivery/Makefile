@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/08/20 20:36:28 simon Exp $
 
 COMMENT= 	deliver a piece of mail locally
 
 MODULES=	cpan
 
-HOMEPAGE=	http://pep.kwiki.org/
-
-DISTNAME=	Email-LocalDelivery-0.21
+DISTNAME=	Email-LocalDelivery-0.217
 CATEGORIES=	mail
 
 # perl
