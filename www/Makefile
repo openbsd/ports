@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.349 2008/07/25 18:15:07 martynas Exp $
+# $OpenBSD: Makefile,v 1.350 2008/08/20 08:46:45 landry Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -65,6 +65,7 @@
      SUBDIR += mimetex
      SUBDIR += mindterm
      SUBDIR += minimo
+     SUBDIR += midori
      SUBDIR += mod_auth_bsd
      SUBDIR += mod_auth_kerb
      SUBDIR += mod_auth_ldap
@@ -324,6 +325,7 @@
      SUBDIR += wApua
      SUBDIR += wbox
      SUBDIR += webalizer
+     SUBDIR += webkit
      SUBDIR += webcollab
      SUBDIR += weblint
      SUBDIR += wml
