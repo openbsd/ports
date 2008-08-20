@@ -1,50 +1,43 @@
-# $OpenBSD: Makefile,v 1.19 2008/06/29 20:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2008/08/20 15:55:15 jasper Exp $
 
 COMMENT=	flash rendering library
-DISTNAME=	swfdec-0.2.2
-PKGNAME=	${DISTNAME}p6
-SHARED_LIBS=	swfdec	0.0
+DISTNAME=	swfdec-0.6.8
+SHARED_LIBS +=	swfdec-0.6           0.0      # .90.0
+SHARED_LIBS +=	swfdec-gtk-0.6       0.0      # .90.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=swfdec/}
 
 HOMEPAGE=	http://swfdec.sourceforge.net/
 
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
-
-# LGPL
+# LGPLv2.1
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xcomposite Xdamage pcre \
-		Xrender atk-1.0 c cairo expat fontconfig freetype glib-2.0 \
-		glitz gmodule-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1 png pthread usbhid z
 
-MODULES=	devel/gettext
-LIB_DEPENDS=	SDL::devel/sdl \
-		mad.>=2::audio/libmad \
-		art_lgpl_2.>=5::graphics/libart \
-		gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
+MASTER_SITES=		${HOMEPAGE}/download/swfdec/0.6/
 
-USE_X11=	Yes
-USE_LIBTOOL=	Yes
-CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.57
-CONFIGURE_ARGS+=--disable-pixbuf-loader
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig"
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
+		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+		gstreamer-0.10 gthread-2.0 m oil-0.3 pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre pixman-1 png xml2 z
 
-FLAVORS=	plugin
-FLAVOR?=
+LIB_DEPENDS=		mad::audio/libmad \
+			soup-2.4::devel/libsoup \
+			gstpbutils-0.10::multimedia/gstreamer-0.10/plugins-base \
+			gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
-.if ${FLAVOR:L:Mplugin}
-WANTLIB+=	ICE SM Xt
-BUILD_DEPENDS=	:mozilla-firefox-devel->=2.0:www/mozilla-firefox,-devel
-CFLAGS+=	-DMOZ_X11
-CONFIGURE_ENV+=	ENABLE_PLUGIN=Yes
-.endif
+
+MODULES=		devel/gettext
+
+USE_X11=		Yes
+USE_LIBTOOL=		Yes
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--with-audio=oss \
+			--enable-mad \
+			--enable-gstreamer
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig"
 
 .include <bsd.port.mk>

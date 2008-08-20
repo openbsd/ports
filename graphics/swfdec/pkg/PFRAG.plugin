@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.plugin,v 1.4 2007/05/25 16:23:51 martynas Exp $
-lib/mozilla-plugins/
-@lib lib/mozilla-plugins/libmozswfdec.a
-@lib lib/mozilla-plugins/libmozswfdec.la
-@lib lib/mozilla-plugins/libmozswfdec.so

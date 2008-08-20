@@ -1,6 +1,3 @@
-Swfdec is a library for rendering Flash animations and games.
-
-FLAVORs:
-	plugin	- Build a Mozilla plugin.  Currently, the plugin isn't
-		especially useful or reliable, causing Mozilla to crash.
-		Use at your own risk.
+Swfdec is the library for decoding and rendering Flash animations. It is
+still in heavy development. The intended audience are developers or
+people using it for pretested Flash animations (think embedded here).
