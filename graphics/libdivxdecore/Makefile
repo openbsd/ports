@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2008/08/20 15:32:10 ajacoutot Exp $
 
 COMMENT=	opendivx decoding API
 
@@ -7,7 +7,7 @@ PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=		divxdecore	0.0
 CATEGORIES=	graphics devel
 
-MASTER_SITE_OPENBSD=    Yes
+MASTER_SITES=	${MASTER_SITE_OPENBSD}
 
 # Mayo licence, h263 decoding
 PERMIT_PACKAGE_CDROM=	No commercial use plus patent issue

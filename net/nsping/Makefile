@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 22:36:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2008/08/20 15:32:10 ajacoutot Exp $
 
 COMMENT=	DNS ping
 
@@ -6,7 +6,7 @@ DISTNAME=	nsping-0.8
 DISTFILES=	nsping.tar.gz
 CATEGORIES=	net
 
-MASTER_SITE_OPENBSD=	Yes
+MASTER_SITES=	${MASTER_SITE_OPENBSD}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

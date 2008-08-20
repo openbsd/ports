@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 22:36:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2008/08/20 15:32:10 ajacoutot Exp $
 
 COMMENT=	irc client that uses Tcl/Tk
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		ICE SM X11 c m stdc++ tcl84 
 
-MASTER_SITE_OPENBSD=	Yes
+MASTER_SITES=	${MASTER_SITE_OPENBSD}
 
 LIB_DEPENDS=	tk84:tk-8.4.*:x11/tk/8.4
 

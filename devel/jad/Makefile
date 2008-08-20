@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/02/24 15:56:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2008/08/20 15:32:10 ajacoutot Exp $
 
 BROKEN=		bad system call
 ONLY_FOR_ARCHS=	i386
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=     shareware
 PERMIT_DISTFILES_CDROM= shareware
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITE_OPENBSD=	Yes
+MASTER_SITES=	${MASTER_SITE_OPENBSD}
 EXTRACT_SUFX=	.zip
 
 WRKDIST=	${WRKDIR}
