@@ -1,0 +1,40 @@
+$OpenBSD: patch-rdpsnd_sun_c,v 1.1 2008/08/20 16:25:41 jasper Exp $
+
+2 changes are here:
+- Change all uint_t to unsigned int.  On Linux a uint_t is just a typedef
+  to unsigned int.  We don't have a uint_t.
+
+- In sun_open rdesktop will also check that a device is in full duplex
+  mode before opening the device successfully. I didn't add code to check
+  if a device is in full duplex mode, I just removed the check.
+
+--- rdpsnd_sun.c.orig	Sat May 10 23:14:38 2008
++++ rdpsnd_sun.c	Tue Jun 17 16:08:59 2008
+@@ -54,7 +54,7 @@ static uint32 snd_rate;
+ static short samplewidth;
+ static char *dsp_dev;
+ 
+-static uint_t written_samples;
++static unsigned int written_samples;
+ 
+ void sun_play(void);
+ void sun_record(void);
+@@ -147,8 +147,7 @@ sun_open(int mode)
+ 	{
+ 		AUDIO_INITINFO(&info);
+ 
+-		if ((ioctl(dsp_fd, AUDIO_GETINFO, &info) == -1)
+-		    || !(info.hw_features & AUDIO_HWFEATURE_DUPLEX))
++		if (ioctl(dsp_fd, AUDIO_GETINFO, &info) == -1)
+ 		{
+ 			close(dsp_fd);
+ 			dsp_fd = -1;
+@@ -440,7 +439,7 @@ sun_play(void)
+ 	if (out->p == out->end)
+ 	{
+ 		audio_info_t info;
+-		uint_t delay_samples;
++		unsigned int delay_samples;
+ 		unsigned long delay_us;
+ 
+ 		if (ioctl(dsp_fd, AUDIO_GETINFO, &info) != -1)

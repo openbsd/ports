@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 20:04:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2008/08/20 16:25:41 jasper Exp $
 
 COMMENT=	open source client for Windows Terminal Server
-DISTNAME=	rdesktop-1.5.0
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	rdesktop-1.6.0
 CATEGORIES=	x11 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rdesktop/}
 
@@ -10,7 +9,7 @@ HOMEPAGE=	http://www.rdesktop.org/
 
 MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
