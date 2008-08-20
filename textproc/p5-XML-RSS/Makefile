@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2008/08/20 19:26:06 simon Exp $
 
 COMMENT=	perl module to manage XML RSS files
 
-DISTNAME=	XML-RSS-1.22
+DISTNAME=	XML-RSS-1.33
 CATEGORIES=	textproc
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

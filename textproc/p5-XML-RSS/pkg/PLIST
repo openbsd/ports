@@ -1,6 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/04/04 06:46:20 steven Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/08/20 19:26:06 simon Exp $
 ${P5SITE}/XML/
+${P5SITE}/XML/RSS/
 ${P5SITE}/XML/RSS.pm
+${P5SITE}/XML/RSS/Private/
+${P5SITE}/XML/RSS/Private/Output/
+${P5SITE}/XML/RSS/Private/Output/Base.pm
+${P5SITE}/XML/RSS/Private/Output/Roles/
+${P5SITE}/XML/RSS/Private/Output/Roles/ImageDims.pm
+${P5SITE}/XML/RSS/Private/Output/Roles/ModulesElems.pm
+${P5SITE}/XML/RSS/Private/Output/V0_9.pm
+${P5SITE}/XML/RSS/Private/Output/V0_91.pm
+${P5SITE}/XML/RSS/Private/Output/V1_0.pm
+${P5SITE}/XML/RSS/Private/Output/V2_0.pm
 @man man/man3p/XML::RSS.3p
 share/examples/p5-XML-RSS/
 share/examples/p5-XML-RSS/0.9/
