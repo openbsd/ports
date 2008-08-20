@@ -1,0 +1,42 @@
+$OpenBSD: patch-DWIW_xs,v 1.1.1.1 2008/08/20 11:05:39 simon Exp $
+
+Necessary to prevent segfaults on 64bit arches.
+Bug filed upstream as http://rt.cpan.org/Ticket/Display.html?id=38499
+
+--- DWIW.xs.orig	Fri Aug 15 10:25:12 2008
++++ DWIW.xs	Fri Aug 15 10:25:56 2008
+@@ -51,14 +51,14 @@ JSON_TRACE(char *fmt, ...) {
+ 
+ 
+ static SV *
+-vjson_encode_error(self_context * ctx, const char * file, int line_num, const char * fmt, va_list ap) {
++vjson_encode_error(self_context * ctx, const char * file, int line_num, const char * fmt, va_list *ap) {
+     SV * error = newSVpv("", 0);
+     bool junk = 0;
+     HV * error_data = Nullhv;
+ 
+     sv_setpvf(error, "JSON::DWIW v%s - ", MOD_VERSION);
+ 
+-    sv_vcatpvfn(error, fmt, strlen(fmt), &ap, (SV **)0, 0, &junk);
++    sv_vcatpvfn(error, fmt, strlen(fmt), ap, (SV **)0, 0, &junk);
+ 
+     error_data = newHV();
+     ctx->error_data = newRV_noinc((SV *)error_data);
+@@ -74,7 +74,7 @@ json_encode_error(self_context * ctx, const char * fil
+     SV * error;
+     
+     va_start(ap, fmt);
+-    error = vjson_encode_error(ctx, file, line_num, fmt, ap);
++    error = vjson_encode_error(ctx, file, line_num, fmt, &ap);
+     va_end(ap);
+ 
+     return error;
+@@ -99,7 +99,7 @@ JSON_ENCODE_ERROR(self_context * ctx, const char * fmt
+     SV * error;
+ 
+     va_start(ap, fmt);
+-    error = vjson_encode_error(ctx, NULL, 0, fmt, ap);
++    error = vjson_encode_error(ctx, NULL, 0, fmt, &ap);
+     va_end(ap);
+ 
+     return error;

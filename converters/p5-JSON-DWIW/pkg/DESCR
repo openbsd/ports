@@ -1,0 +1,5 @@
+Other JSON modules require setting several parameters before calling the
+conversion methods to do what the author wants.  This module does things
+by default that the author thinks should be done when working with JSON
+in Perl.  This module also encodes and decodes faster than JSON.pm and
+JSON::Syck in the benchmarks.

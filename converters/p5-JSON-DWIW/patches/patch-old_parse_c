@@ -1,0 +1,51 @@
+$OpenBSD: patch-old_parse_c,v 1.1.1.1 2008/08/20 11:05:39 simon Exp $
+
+Necessary to prevent segfaults on 64bit arches.
+Bug filed upstream as http://rt.cpan.org/Ticket/Display.html?id=38499
+
+--- old_parse.c.orig	Fri Aug 15 10:25:22 2008
++++ old_parse.c	Fri Aug 15 10:25:28 2008
+@@ -18,6 +18,7 @@ Copyright (c) 2007-2008 Don Owens <don@regexguy.com>. 
+ */
+ 
+ #include "old_parse.h"
++#include <stdio.h>
+ 
+ #define JsHaveMoreChars(ctx) ( (ctx)->pos < (ctx)->len )
+ 
+@@ -235,7 +236,7 @@ get_new_bool_obj(int bool_val) {
+ 
+ static SV *
+ vjson_parse_error(json_context * ctx, const char * file, unsigned int line_num, const char * fmt,
+-    va_list ap) {
++    va_list *ap) {
+     SV * error = Nullsv;
+     bool junk = 0;
+     HV * error_data;
+@@ -252,7 +253,7 @@ vjson_parse_error(json_context * ctx, const char * fil
+     }
+     
+     sv_catpvn(error, " - ", 3);
+-    sv_vcatpvfn(error, fmt, strlen(fmt), &ap, (SV **)0, 0, &junk);
++    sv_vcatpvfn(error, fmt, strlen(fmt), ap, (SV **)0, 0, &junk);
+     sv_catpvf(error, " - at char %u (byte %u), line %u, col %u (byte col %u)", ctx->char_pos,
+         ctx->pos, ctx->line, ctx->char_col, ctx->col);
+ 
+@@ -283,7 +284,7 @@ json_parse_error(json_context * ctx, const char * file
+     va_list ap;
+ 
+     va_start(ap, fmt);
+-    error = vjson_parse_error(ctx, file, line_num, fmt, ap);
++    error = vjson_parse_error(ctx, file, line_num, fmt, &ap);
+     va_end(ap);
+ 
+     return error;
+@@ -297,7 +298,7 @@ JSON_PARSE_ERROR(json_context * ctx, const char * fmt,
+     va_list ap;
+ 
+     va_start(ap, fmt);
+-    error = vjson_parse_error(ctx, NULL, 0, fmt, ap);
++    error = vjson_parse_error(ctx, NULL, 0, fmt, &ap);
+     va_end(ap);
+ 
+     return error;
