@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2008/03/17 18:59:39 ajacoutot Exp $
---- configure.orig	Sun Mar  2 06:34:45 2008
-+++ configure	Mon Mar 17 10:52:02 2008
-@@ -9380,7 +9380,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
+$OpenBSD: patch-configure,v 1.8 2008/08/20 13:30:55 jasper Exp $
+--- configure.orig	Mon Aug 11 07:11:59 2008
++++ configure	Wed Aug 20 15:05:40 2008
+@@ -9372,7 +9372,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.7 2008/03/17 18:59:39 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -9447,7 +9447,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
+@@ -9439,7 +9439,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.7 2008/03/17 18:59:39 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -9516,7 +9516,7 @@ fi
+@@ -9508,7 +9508,7 @@ fi
  	  fi
  
            if test "$gt_cv_func_dgettext_libintl" = "yes"; then
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.7 2008/03/17 18:59:39 ajacoutot Exp $
            fi
  
  	  if test "$gt_cv_func_dgettext_libc" = "yes" \
-@@ -16380,13 +16380,13 @@ echo "${ECHO_T}adding \"$osx_crud\" to GL_LIBS" >&6; }
+@@ -16468,13 +16468,13 @@ echo "${ECHO_T}adding \"$osx_crud\" to GL_LIBS" >&6; }
      # link -lpthread after the Mesa libs (be they named -lGL or -lMesaGL.)
      #
      if test "$ac_have_mesa_gl" = yes; then
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.7 2008/03/17 18:59:39 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -16442,7 +16442,7 @@ fi
+@@ -16530,7 +16530,7 @@ fi
  { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
  if test $ac_cv_lib_pthread_pthread_create = yes; then

@@ -1,6 +1,6 @@
-$OpenBSD: patch-hacks_deco_man,v 1.2 2007/12/16 14:09:26 jasper Exp $
---- hacks/deco.man.orig	Sun Dec 16 13:44:38 2007
-+++ hacks/deco.man	Sun Dec 16 13:45:40 2007
+$OpenBSD: patch-hacks_deco_man,v 1.3 2008/08/20 13:30:55 jasper Exp $
+--- hacks/deco.man.orig	Thu Jul 31 21:56:35 2008
++++ hacks/deco.man	Wed Aug 20 15:05:40 2008
 @@ -1,8 +1,8 @@
  .TH XScreenSaver 1 "27-Apr-97" "X Version 11"
  .SH NAME
@@ -12,9 +12,9 @@ $OpenBSD: patch-hacks_deco_man,v 1.2 2007/12/16 14:09:26 jasper Exp $
  [\-display \fIhost:display.screen\fP]
  [\-foreground \fIcolor\fP]
  [\-background \fIcolor\fP]
-@@ -20,12 +20,12 @@ deco - draw tacky 70s basement wall panelling
- [\-golden\-ratio]
+@@ -21,12 +21,12 @@ deco - draw tacky 70s basement wall panelling
  [\-mondrian]
+ [\-fps]
  .SH DESCRIPTION
 -The \fIdeco\fP program subdivides and colors rectangles randomly.
 +The \fIxdeco\fP program subdivides and colors rectangles randomly.
