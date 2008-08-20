@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/23 16:53:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/08/20 08:32:59 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	substitute for MS TTF core fonts
 
-V=		0.2
-BASENAME=	liberation-fonts
-DISTNAME=	${BASENAME}-ttf-3
-PKGNAME=	${BASENAME}-${V}p0
+DISTNAME=	liberation-fonts-1.04
 CATEGORIES=	x11
 
-HOMEPAGE=	http://www.redhat.com/promo/fonts/
+HOMEPAGE=	https://fedorahosted.org/liberation-fonts
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -20,12 +17,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	https://www.redhat.com/f/fonts/
+MASTER_SITES=	https://fedorahosted.org/releases/l/i/liberation-fonts/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/${BASENAME}-${V}
 INST_DIR=	${PREFIX}/lib/X11/fonts/Liberation
 
 do-install:
