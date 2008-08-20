@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2008/04/24 15:42:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/08/20 15:51:42 ajacoutot Exp $
 
 COMMENT-main=	template engine for PHP
 COMMENT-docs=	documentation for Smarty
 
 VERSION=	2.6.19
 DISTNAME=	Smarty-${VERSION}
-PKGNAME-main=	smarty-${VERSION}
+PKGNAME-main=	smarty-${VERSION}p0
 DISTNAME-docs=	Smarty-2.6.14-docs
-PKGNAME-docs=	smarty-docs-${VERSION}
+PKGNAME-docs=	smarty-docs-${VERSION}p0
 CATEGORIES=	devel www
 
-HOMEPAGE=	http://smarty.php.net/
+HOMEPAGE=	http://www.smarty.net
 
 MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
