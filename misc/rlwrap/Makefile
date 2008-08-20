@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/08/20 00:07:04 espie Exp $
 
 COMMENT=		generic readline wrapper for various programs
 
@@ -20,7 +20,7 @@ WANTLIB=		c curses readline util
 CONFIGURE_STYLE=	gnu
 
 REGRESS_IS_INTERACTIVE=	yes
-REGRESS_DEPENDS=	${PKGNAME}:misc/rlwrap
+REGRESS_DEPENDS=	:${PKGNAME}:misc/rlwrap
 
 do-regress:
 	cd ${WRKSRC} && rlwrap perl test/testclient

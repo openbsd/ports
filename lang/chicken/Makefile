@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 00:27:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/08/20 00:06:20 espie Exp $
 
 COMMENT=	practical and portable Scheme system
 
@@ -30,7 +30,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 REGRESS_TARGET=		bench
-REGRESS_DEPENDS=	${PKGNAME}:lang/chicken
+REGRESS_DEPENDS=	:${PKGNAME}:lang/chicken
 
 CFLAGS+=		-I${LOCALBASE}/include
 
