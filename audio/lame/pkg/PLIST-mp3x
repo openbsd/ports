@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-mp3x,v 1.1 2008/03/25 17:27:27 fgsch Exp $
-bin/mp3x
+@comment $OpenBSD: PLIST-mp3x,v 1.2 2008/08/20 09:02:03 ajacoutot Exp $
+@bin bin/mp3x

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.36 2008/03/25 17:27:27 fgsch Exp $
+# $OpenBSD: Makefile,v 1.37 2008/08/20 09:02:03 ajacoutot Exp $
 
 COMMENT-main=	lame ain't an MP3 encoder
 COMMENT-mp3x=	gtk frame analyzer
 
-V=		3.97
-DISTNAME=	lame-${V}
-PKGNAME-main=	lame-${V}p0
+V=		3.98
+DISTNAME=	lame-398
+PKGNAME-main=	lame-${V}
 PKGNAME-mp3x=	lame-mp3x-${V}
 
-SHARED_LIBS=	mp3lame	1.0	# .0.1
+SHARED_LIBS=	mp3lame	2.0	# .0.1
 
 CATEGORIES=	audio
 
@@ -53,11 +53,14 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--enable-mp3rtp
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-mp3rtp \
+		--with-fileio=lame
 
 .if ${MULTI_PACKAGES:M-mp3x}
 USE_X11=		Yes
-CONFIGURE_ARGS+=	--enable-mp3x --with-gtk-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=	--enable-mp3x \
+			--with-gtk-prefix=${LOCALBASE}
 .endif
 
 .if ${MACHINE_ARCH} == "i386"
