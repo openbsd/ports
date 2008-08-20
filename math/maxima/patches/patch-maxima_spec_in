@@ -1,0 +1,12 @@
+$OpenBSD: patch-maxima_spec_in,v 1.1 2008/08/20 20:36:45 espie Exp $
+--- maxima.spec.in.orig	Fri Aug 15 18:28:30 2008
++++ maxima.spec.in	Fri Aug 15 18:28:40 2008
+@@ -33,7 +33,7 @@
+ 
+ # Inhibit automatic compressing of info files. Compressed info
+ # files break maxima's internal help.
+-%define __spec_install_post /bin/true
++%define __spec_install_post /usr/bin/true
+ 
+ Summary: Symbolic Computation Program
+ Name: maxima

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2008/08/20 20:36:45 espie Exp $
+--- src/Makefile.am.orig	Fri Aug 15 18:28:45 2008
++++ src/Makefile.am	Fri Aug 15 18:29:02 2008
+@@ -284,7 +284,7 @@ binary-ecl/maxima:
+ 	mv maxima binary-ecl/maxima || \
+ 	success=false; \
+ 	test -f maxima-tmp && mv maxima-tmp maxima ; \
+-	test $$success = true && /bin/true || /bin/false
++	test $$success = true && /usr/bin/true || /usr/bin/false
+ 
+ install-ecl:
+ 	$(mkinstalldirs) "$(DESTDIR)$(verpkglibdir)/binary-ecl"

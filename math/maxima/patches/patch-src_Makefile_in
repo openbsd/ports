@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2008/08/20 20:36:45 espie Exp $
+--- src/Makefile.in.orig	Fri Aug 15 18:29:04 2008
++++ src/Makefile.in	Fri Aug 15 18:29:46 2008
+@@ -2965,7 +2965,7 @@ uninstall-datafiles:
+ @ECL_TRUE@	mv maxima binary-ecl/maxima || \
+ @ECL_TRUE@	success=false; \
+ @ECL_TRUE@	test -f maxima-tmp && mv maxima-tmp maxima ; \
+-@ECL_TRUE@	test $$success = true && /bin/true || /bin/false
++@ECL_TRUE@	test $$success = true && /usr/bin/true || /usr/bin/false
+ 
+ @ECL_TRUE@install-ecl:
+ @ECL_TRUE@	$(mkinstalldirs) "$(DESTDIR)$(verpkglibdir)/binary-ecl"

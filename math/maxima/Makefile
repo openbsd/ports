@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/11/25 14:56:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2008/08/20 20:36:45 espie Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
-VERSION=		5.13.0
+VERSION=		5.16.1
 DISTNAME=		maxima-${VERSION}
 CATEGORIES=		math
 
@@ -19,16 +19,16 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=maxima/}
 USE_GMAKE=		yes
 CONFIGURE_STYLE=	gnu
 
-RUN_DEPENDS=		:clisp->=2.42:lang/clisp 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-WANTLIB +=		c m ncurses readline sigsegv
+RUN_DEPENDS=		::lang/ecl
+BUILD_DEPENDS=		::lang/ecl
+WANTLIB +=		c gc gmp m pthread
 
 SUBST_VARS=		VERSION
 
 FLAVORS=		no_x11
 FLAVOR?=
 
-CONFIGURE_ARGS+=	--enable-clisp 
+CONFIGURE_ARGS+=	--enable-ecl
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		Yes
 RUN_DEPENDS+= 		:tcl-8.4.*:lang/tcl/8.4 \
