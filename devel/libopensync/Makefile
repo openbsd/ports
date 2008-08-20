@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/13 21:37:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/08/20 08:34:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	data synchronization framework
 
-V=		0.35
+V=		0.36
 DISTNAME=	libopensync-${V}
 SHARED_LIBS +=	opensync 1.1
 CATEGORIES=	devel comms
@@ -30,12 +30,15 @@ SEPARATE_BUILD=	simple
 MODULES=	devel/cmake \
 		devel/gettext
 
+MODCMAKE_WANTCOLOR=No
 MAKE_FLAGS=	VERBOSE=2
 CFLAGS+=	-pthread
 
 LIB_DEPENDS=	sqlite3.>=8::databases/sqlite3 \
 		xml2.>=9::textproc/libxml \
 		glib-2.0.>=1200,gmodule-2.0.>=1200,gthread-2.0.>=1200::devel/glib2
+
+CONFIGURE_ARGS=	-DCMAKE_INSTALL_PREFIX="${PREFIX}"
 
 NO_REGRESS=	Yes
 
