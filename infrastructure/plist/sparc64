@@ -1,9 +1,10 @@
-# $OpenBSD: sparc64,v 1.31 2008/08/20 09:12:10 ajacoutot Exp $
+# $OpenBSD: sparc64,v 1.32 2008/08/20 16:16:53 ajacoutot Exp $
 # This is the master list of subdirs used to choose sparc64 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
 net/rsync
 textproc/gdiff
+sysutils/mergemaster
 editors/vim,no_x11
 editors/emacs21
 archivers/unzip
