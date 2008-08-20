@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2008/05/21 12:57:55 simon Exp $
+# $OpenBSD: Makefile,v 1.43 2008/08/20 11:05:50 simon Exp $
 #
 
     SUBDIR += base64
@@ -13,6 +13,7 @@
     SUBDIR += mpack
     SUBDIR += p5-Calendar-Simple
     SUBDIR += p5-Catalyst-Plugin-Charsets-Japanese
+    SUBDIR += p5-Catalyst-View-JSON
     SUBDIR += p5-Convert-ASCII-Armour
     SUBDIR += p5-Convert-ASN1
     SUBDIR += p5-Convert-BER
@@ -26,6 +27,8 @@
     SUBDIR += p5-Finance-Currency-Convert-XE
     SUBDIR += p5-IDNA-Punycode
     SUBDIR += p5-JSON
+    SUBDIR += p5-JSON-Any
+    SUBDIR += p5-JSON-DWIW
     SUBDIR += p5-JSON-XS
     SUBDIR += p5-Jcode
     SUBDIR += p5-MARC-Record
