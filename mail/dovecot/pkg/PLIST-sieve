@@ -1,2 +1,6 @@
-@comment $OpenBSD: PLIST-sieve,v 1.2 2007/01/15 08:12:40 jakob Exp $
+@comment $OpenBSD: PLIST-sieve,v 1.3 2008/08/20 02:07:04 brad Exp $
+@comment lib/dovecot/lda/lib90_cmusieve_plugin.a
+@comment lib/dovecot/lda/lib90_cmusieve_plugin.la
 lib/dovecot/lda/lib90_cmusieve_plugin.so
+@bin libexec/dovecot/sievec
+@bin libexec/dovecot/sieved

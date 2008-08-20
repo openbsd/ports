@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-server,v 1.10 2008/06/22 18:36:46 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.11 2008/08/20 02:07:04 brad Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _dovecot:518
 @newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
 lib/dovecot/
+lib/dovecot/auth/
 lib/dovecot/imap/
 lib/dovecot/imap/lib01_acl_plugin.so
 lib/dovecot/imap/lib02_lazy_expunge_plugin.so
@@ -12,16 +13,21 @@ lib/dovecot/imap/lib10_quota_plugin.so
 lib/dovecot/imap/lib11_imap_quota_plugin.so
 lib/dovecot/imap/lib11_trash_plugin.so
 lib/dovecot/imap/lib20_convert_plugin.so
+lib/dovecot/imap/lib20_expire_plugin.so
+lib/dovecot/imap/lib20_fts_plugin.so
 lib/dovecot/imap/lib20_mail_log_plugin.so
-@comment lib/dovecot/imap/lib20_zlib_plugin.a
-@comment lib/dovecot/imap/lib20_zlib_plugin.la
+lib/dovecot/imap/lib20_mbox_snarf_plugin.so
 lib/dovecot/imap/lib20_zlib_plugin.so
+lib/dovecot/imap/lib21_fts_squat_plugin.so
 lib/dovecot/lda/
 lib/dovecot/lda/lib01_acl_plugin.so
 lib/dovecot/lda/lib10_quota_plugin.so
 lib/dovecot/lda/lib11_trash_plugin.so
 lib/dovecot/lda/lib20_convert_plugin.so
+lib/dovecot/lda/lib20_expire_plugin.so
+lib/dovecot/lda/lib20_fts_plugin.so
 lib/dovecot/lda/lib20_mail_log_plugin.so
+lib/dovecot/lda/lib21_fts_squat_plugin.so
 @comment lib/dovecot/lib01_acl_plugin.a
 @comment lib/dovecot/lib01_acl_plugin.la
 lib/dovecot/lib01_acl_plugin.so
@@ -37,24 +43,48 @@ lib/dovecot/lib11_trash_plugin.so
 @comment lib/dovecot/lib20_convert_plugin.a
 @comment lib/dovecot/lib20_convert_plugin.la
 lib/dovecot/lib20_convert_plugin.so
+@comment lib/dovecot/lib20_expire_plugin.a
+@comment lib/dovecot/lib20_expire_plugin.la
+lib/dovecot/lib20_expire_plugin.so
+@comment lib/dovecot/lib20_fts_plugin.a
+@comment lib/dovecot/lib20_fts_plugin.la
+lib/dovecot/lib20_fts_plugin.so
 @comment lib/dovecot/lib20_mail_log_plugin.a
 @comment lib/dovecot/lib20_mail_log_plugin.la
 lib/dovecot/lib20_mail_log_plugin.so
+@comment lib/dovecot/lib20_mbox_snarf_plugin.a
+@comment lib/dovecot/lib20_mbox_snarf_plugin.la
+lib/dovecot/lib20_mbox_snarf_plugin.so
+@comment lib/dovecot/lib20_zlib_plugin.a
+@comment lib/dovecot/lib20_zlib_plugin.la
+lib/dovecot/lib20_zlib_plugin.so
+@comment lib/dovecot/lib21_fts_squat_plugin.a
+@comment lib/dovecot/lib21_fts_squat_plugin.la
+lib/dovecot/lib21_fts_squat_plugin.so
 lib/dovecot/pop3/
 lib/dovecot/pop3/lib02_lazy_expunge_plugin.so
 lib/dovecot/pop3/lib10_quota_plugin.so
 lib/dovecot/pop3/lib20_convert_plugin.so
+lib/dovecot/pop3/lib20_expire_plugin.so
+lib/dovecot/pop3/lib20_fts_plugin.so
 lib/dovecot/pop3/lib20_mail_log_plugin.so
+lib/dovecot/pop3/lib20_mbox_snarf_plugin.so
+lib/dovecot/pop3/lib20_zlib_plugin.so
+lib/dovecot/pop3/lib21_fts_squat_plugin.so
 libexec/dovecot/
 @bin libexec/dovecot/checkpassword-reply
+@bin libexec/dovecot/convert-tool
 @bin libexec/dovecot/deliver
 @bin libexec/dovecot/dict
 @bin libexec/dovecot/dovecot-auth
+@bin libexec/dovecot/expire-tool
 @bin libexec/dovecot/gdbhelper
 @bin libexec/dovecot/idxview
 @bin libexec/dovecot/imap
 @bin libexec/dovecot/imap-login
+@bin libexec/dovecot/listview
 @bin libexec/dovecot/logview
+@bin libexec/dovecot/maildirlock
 @bin libexec/dovecot/pop3
 @bin libexec/dovecot/pop3-login
 @bin libexec/dovecot/rawlog
@@ -79,6 +109,7 @@ share/doc/dovecot/wiki/Authentication.Caching.txt
 share/doc/dovecot/wiki/Authentication.Kerberos.txt
 share/doc/dovecot/wiki/Authentication.MasterUsers.txt
 share/doc/dovecot/wiki/Authentication.Mechanisms.DigestMD5.txt
+share/doc/dovecot/wiki/Authentication.Mechanisms.NTLM.txt
 share/doc/dovecot/wiki/Authentication.Mechanisms.Winbind.txt
 share/doc/dovecot/wiki/Authentication.Mechanisms.txt
 share/doc/dovecot/wiki/Authentication.MultipleDatabases.txt
@@ -93,6 +124,7 @@ share/doc/dovecot/wiki/CommandLine.txt
 share/doc/dovecot/wiki/CompilingSource.txt
 share/doc/dovecot/wiki/Debugging.Authentication.txt
 share/doc/dovecot/wiki/Debugging.ProcessTracing.txt
+share/doc/dovecot/wiki/Debugging.Rawlog.txt
 share/doc/dovecot/wiki/Debugging.Thunderbird.txt
 share/doc/dovecot/wiki/Design.AuthProcess.txt
 share/doc/dovecot/wiki/Design.Indexes.Cache.txt
@@ -106,7 +138,10 @@ share/doc/dovecot/wiki/Design.txt
 share/doc/dovecot/wiki/FindMailLocation.txt
 share/doc/dovecot/wiki/FinishBasicConfiguration.txt
 share/doc/dovecot/wiki/HowTo.EximAndDovecotSASL.txt
+share/doc/dovecot/wiki/HowTo.PopBSMTPAndDovecot.txt
+share/doc/dovecot/wiki/HowTo.PopRelay.txt
 share/doc/dovecot/wiki/HowTo.PostfixAndDovecotSASL.txt
+share/doc/dovecot/wiki/HowTo.Rootless.txt
 share/doc/dovecot/wiki/HowTo.SimpleVirtualInstall.txt
 share/doc/dovecot/wiki/HowTo.txt
 share/doc/dovecot/wiki/IndexFiles.txt
@@ -136,12 +171,15 @@ share/doc/dovecot/wiki/MailboxFormat.mailstore.txt
 share/doc/dovecot/wiki/MailboxFormat.mbox.txt
 share/doc/dovecot/wiki/MailboxFormat.mbx.txt
 share/doc/dovecot/wiki/MailboxFormat.txt
+share/doc/dovecot/wiki/ManageSieve.txt
 share/doc/dovecot/wiki/MboxLocking.txt
 share/doc/dovecot/wiki/MboxProblems.txt
+share/doc/dovecot/wiki/Migration.BincIMAP.txt
 share/doc/dovecot/wiki/Migration.Courier.txt
 share/doc/dovecot/wiki/Migration.Cyrus.txt
 share/doc/dovecot/wiki/Migration.Linuxconf.txt
 share/doc/dovecot/wiki/Migration.MailFormat.txt
+share/doc/dovecot/wiki/Migration.Teapop.txt
 share/doc/dovecot/wiki/Migration.UW.txt
 share/doc/dovecot/wiki/Migration.Vm-pop3d.txt
 share/doc/dovecot/wiki/Migration.txt
@@ -170,17 +208,14 @@ share/doc/dovecot/wiki/Plugins.Lazyexpunge.txt
 share/doc/dovecot/wiki/Plugins.MailLog.txt
 share/doc/dovecot/wiki/Plugins.Trash.txt
 share/doc/dovecot/wiki/Plugins.txt
-share/doc/dovecot/wiki/PopBSMTPAndDovecot.txt
-share/doc/dovecot/wiki/PopRelay.txt
 share/doc/dovecot/wiki/PostLoginScripting.txt
 share/doc/dovecot/wiki/QuickConfiguration.txt
+share/doc/dovecot/wiki/Quota.1.1.txt
 share/doc/dovecot/wiki/Quota.Dict.txt
 share/doc/dovecot/wiki/Quota.Dirsize.txt
 share/doc/dovecot/wiki/Quota.FS.txt
 share/doc/dovecot/wiki/Quota.Maildir.txt
-share/doc/dovecot/wiki/Quota.New.txt
 share/doc/dovecot/wiki/Quota.txt
-share/doc/dovecot/wiki/Rootless.txt
 share/doc/dovecot/wiki/RunningDovecot.txt
 share/doc/dovecot/wiki/SSL.CertificateClientImporting.txt
 share/doc/dovecot/wiki/SSL.CertificateCreation.txt
@@ -189,6 +224,7 @@ share/doc/dovecot/wiki/SSL.txt
 share/doc/dovecot/wiki/Sasl.txt
 share/doc/dovecot/wiki/SecurityTuning.txt
 share/doc/dovecot/wiki/SharedMailboxes.txt
+share/doc/dovecot/wiki/ShellEasyConf.txt
 share/doc/dovecot/wiki/SystemUsers.txt
 share/doc/dovecot/wiki/TestInstallation.txt
 share/doc/dovecot/wiki/TestPop3Installation.txt

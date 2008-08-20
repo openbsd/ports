@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.101 2008/07/21 09:33:18 brad Exp $
+# $OpenBSD: Makefile,v 1.102 2008/08/20 02:07:04 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-server= compact IMAP/POP3 server
 COMMENT-sieve=	sieve mail filtering for Dovecot
 
-V_MAJOR=	1.0
-V_DOVECOT=	1.0.15
-V_SIEVE=	1.0.3
+V_MAJOR=	1.1
+V_DOVECOT=	1.1.2
+V_SIEVE=	1.1.5
 
 PKGNAME=	dovecot-${V_DOVECOT}
-PKGNAME-server=	dovecot-${V_DOVECOT}p1
-PKGNAME-sieve=	dovecot-sieve-${V_SIEVE}
+PKGNAME-server=	dovecot-${V_DOVECOT}
+FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}
 
 DISTNAME=	dovecot-${V_DOVECOT}
 CATEGORIES=	mail
@@ -31,10 +31,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB-server=		c crypto gssapi krb5 ssl z
-WANTLIB-sieve=
+WANTLIB-server=		c crypto gssapi krb5 rpcsvc ssl z
+WANTLIB-sieve=		c
 
 MODULES=	converters/libiconv
+LIB_DEPENDS+=	bz2::archivers/bzip2
 
 MULTI_PACKAGES=	-server
 SUBPACKAGE?=	-server
@@ -43,19 +44,17 @@ PSEUDO_FLAVORS=	no_sieve
 FLAVORS=	ldap mysql postgresql sqlite
 FLAVOR?=
 
+CFLAGS+=	-I/usr/include/kerberosV -I${LOCALBASE}/include
+
 USE_LIBTOOL=		Yes
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--localstatedir=/var \
-			--with-ioloop=kqueue \
-			--with-ssl=openssl \
-			--with-ssldir=/etc/ssl \
 			--with-gssapi \
-			--without-pam \
-			--without-shadow \
-			--without-vpopmail
-CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I/usr/include/kerberosV -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			--with-pam=no \
+			--with-shadow=no \
+			--with-vpopmail=no
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !${FLAVOR:L:Mno_sieve}
 MULTI_PACKAGES+=	-sieve
@@ -95,7 +94,7 @@ post-configure:
 .endif
 
 pre-build:
-	@perl -pi -e s#_PREFIX_#\${PREFIX}#g ${WRKSRC}/dovecot-example.conf
+	@${SUBST_CMD} ${WRKSRC}/dovecot-example.conf
 
 .if !${FLAVOR:L:Mno_sieve}
 post-build:
@@ -112,8 +111,10 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/mkcert.sh \
 		${PREFIX}/sbin/dovecot-mkcert.sh
 .if !${FLAVOR:L:Mno_sieve}
+	cd ${SIEVE_DIR}/src/libsieve && ${INSTALL_PROGRAM} {sievec,sieved} \
+		${PREFIX}/libexec/dovecot
 	${INSTALL_DATA} \
-		${SIEVE_DIR}/src/.libs/lib90_cmusieve_plugin.so \
+		${SIEVE_DIR}/src/.libs/lib90_cmusieve_plugin.{a,la,so} \
 		${PREFIX}/lib/dovecot/lda
 .endif
 
