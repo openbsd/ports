@@ -12,7 +12,7 @@ production:
 To complete the installation, you must create an empty MySQL database
 and grant a corresponding user all privileges to it.
 Then point your web browser to:
-http://<localhost>/vtigercrm/install.php
+http://<hostname>/vtigercrm/install.php
 
 *** Upgrade
 To complete the upgrade, login as an admin user, go to the "Settings"
