@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 15:26:25 espie Exp $
-${P5SITE}/Data/
+@comment $OpenBSD: PLIST,v 1.2 2008/08/20 15:33:13 simon Exp $
 ${P5SITE}/Data/Visitor/
 ${P5SITE}/Data/Visitor.pm
 ${P5SITE}/Data/Visitor/Callback.pm
