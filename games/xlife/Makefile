@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2007/11/13 14:54:31 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2008/08/20 00:06:02 espie Exp $
 
 COMMENT=	John Horton Conway's Game of Life
 
@@ -8,7 +8,7 @@ CATEGORIES=	games
 
 HOMEPAGE=	http://www.catb.org/~esr/software.html
 
-MASTER_SITE_OPENBSD=	Yes
+MASTER_SITES = ${MASTER_SITE_OPENBSD}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
