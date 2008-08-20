@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_input_input_cdda_c,v 1.4 2008/06/18 01:26:41 brad Exp $
---- src/input/input_cdda.c.orig	Sat Jun 14 19:15:00 2008
-+++ src/input/input_cdda.c	Mon Jun 16 02:30:50 2008
-@@ -71,7 +71,7 @@
+$OpenBSD: patch-src_input_input_cdda_c,v 1.5 2008/08/20 01:54:01 brad Exp $
+--- src/input/input_cdda.c.orig	Wed Aug 13 12:33:05 2008
++++ src/input/input_cdda.c	Thu Aug 14 18:48:39 2008
+@@ -72,7 +72,7 @@
  #elif defined(WIN32)
  #define DEFAULT_CDDA_DEVICE "d:\\"
  #else
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_input_input_cdda_c,v 1.4 2008/06/18 01:26:41 brad Exp $
  #endif
  
  #define CDDB_SERVER             "freedb.freedb.org"
-@@ -610,7 +610,7 @@ static int read_cdrom_frames(cdda_input_plugin_t *this
+@@ -611,7 +611,7 @@ static int read_cdrom_frames(cdda_input_plugin_t *this
    return 0;
  }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_input_input_cdda_c,v 1.4 2008/06/18 01:26:41 brad Exp $
  
  #include <sys/cdio.h>
  
-@@ -623,7 +623,7 @@ static int read_cdrom_toc(int fd, cdrom_toc *toc) {
+@@ -624,7 +624,7 @@ static int read_cdrom_toc(int fd, cdrom_toc *toc) {
    struct ioc_toc_header tochdr;
  #if defined(__FreeBSD_kernel__)
    struct ioc_read_toc_single_entry tocentry;
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_input_input_cdda_c,v 1.4 2008/06/18 01:26:41 brad Exp $
    struct ioc_read_toc_entry tocentry;
    struct cd_toc_entry data;
  #endif
-@@ -658,7 +658,7 @@ static int read_cdrom_toc(int fd, cdrom_toc *toc) {
+@@ -659,7 +659,7 @@ static int read_cdrom_toc(int fd, cdrom_toc *toc) {
        perror("CDIOREADTOCENTRY");
        return -1;
      }
@@ -37,7 +37,7 @@ $OpenBSD: patch-src_input_input_cdda_c,v 1.4 2008/06/18 01:26:41 brad Exp $
      memset(&data, 0, sizeof(data));
      tocentry.data_len = sizeof(data);
      tocentry.data = &data;
-@@ -679,7 +679,7 @@ static int read_cdrom_toc(int fd, cdrom_toc *toc) {
+@@ -680,7 +680,7 @@ static int read_cdrom_toc(int fd, cdrom_toc *toc) {
        (tocentry.entry.addr.msf.minute * CD_SECONDS_PER_MINUTE * CD_FRAMES_PER_SECOND) +
        (tocentry.entry.addr.msf.second * CD_FRAMES_PER_SECOND) +
         tocentry.entry.addr.msf.frame;
@@ -46,7 +46,7 @@ $OpenBSD: patch-src_input_input_cdda_c,v 1.4 2008/06/18 01:26:41 brad Exp $
      toc->toc_entries[i-1].track_mode = (tocentry.data->control & 0x04) ? 1 : 0;
      toc->toc_entries[i-1].first_frame_minute = tocentry.data->addr.msf.minute;
      toc->toc_entries[i-1].first_frame_second = tocentry.data->addr.msf.second;
-@@ -701,7 +701,7 @@ static int read_cdrom_toc(int fd, cdrom_toc *toc) {
+@@ -702,7 +702,7 @@ static int read_cdrom_toc(int fd, cdrom_toc *toc) {
      perror("CDIOREADTOCENTRY");
      return -1;
    }
@@ -55,7 +55,7 @@ $OpenBSD: patch-src_input_input_cdda_c,v 1.4 2008/06/18 01:26:41 brad Exp $
    memset(&data, 0, sizeof(data));
    tocentry.data_len = sizeof(data);
    tocentry.data = &data;
-@@ -722,7 +722,7 @@ static int read_cdrom_toc(int fd, cdrom_toc *toc) {
+@@ -723,7 +723,7 @@ static int read_cdrom_toc(int fd, cdrom_toc *toc) {
      (tocentry.entry.addr.msf.minute * CD_SECONDS_PER_MINUTE * CD_FRAMES_PER_SECOND) +
      (tocentry.entry.addr.msf.second * CD_FRAMES_PER_SECOND) +
       tocentry.entry.addr.msf.frame;
@@ -64,7 +64,7 @@ $OpenBSD: patch-src_input_input_cdda_c,v 1.4 2008/06/18 01:26:41 brad Exp $
    toc->leadout_track.track_mode = (tocentry.data->control & 0x04) ? 1 : 0;
    toc->leadout_track.first_frame_minute = tocentry.data->addr.msf.minute;
    toc->leadout_track.first_frame_second = tocentry.data->addr.msf.second;
-@@ -760,7 +760,7 @@ static int read_cdrom_frames(cdda_input_plugin_t *this
+@@ -761,7 +761,7 @@ static int read_cdrom_frames(cdda_input_plugin_t *this
        perror("CDIOCREADAUDIO");
        return -1;
      }

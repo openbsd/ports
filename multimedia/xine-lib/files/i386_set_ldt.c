@@ -1,3 +1,5 @@
+/*	$OpenBSD: i386_set_ldt.c,v 1.2 2008/08/20 01:54:01 brad Exp $	*/
+
 /*
  *  Copyright (c) 1993 John Brezak
  *  All rights reserved.
@@ -34,10 +36,7 @@
 #include <machine/sysarch.h>
 
 int
-i386_set_ldt(start, desc, num)
-	int start;
-	union descriptor *desc;
-	int num;
+i386_set_ldt(int start, union descriptor *desc, int num)
 {
 	struct i386_set_ldt_args p;
 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_input_input_dvb_c,v 1.7 2008/07/02 01:02:42 brad Exp $
---- src/input/input_dvb.c.orig	Wed Jun 25 09:04:09 2008
-+++ src/input/input_dvb.c	Sun Jun 29 20:54:12 2008
+$OpenBSD: patch-src_input_input_dvb_c,v 1.8 2008/08/20 01:54:01 brad Exp $
+--- src/input/input_dvb.c.orig	Thu Aug  7 13:52:41 2008
++++ src/input/input_dvb.c	Thu Aug 14 18:48:39 2008
 @@ -903,7 +903,7 @@ static channel_t *load_channels(xine_t *xine, xine_str
    if (!f) {
      xprintf(xine, XINE_VERBOSITY_LOG, _("input_dvb: failed to open dvb channel file '%s': %s\n"), filename, strerror (errno));
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_input_input_dvb_c,v 1.7 2008/07/02 01:02:42 brad Exp $
      return NULL;
    }
    if (fstat(fileno(f), &st) || !S_ISREG (st.st_mode)) {
-@@ -2584,7 +2584,7 @@ static off_t dvb_plugin_read (input_plugin_t *this_gen
+@@ -2585,7 +2585,7 @@ static off_t dvb_plugin_read (input_plugin_t *this_gen
  
    /* no data for several seconds - tell the user a possible reason */
    if(this->read_failcount==5){

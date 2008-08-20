@@ -1,29 +1,7 @@
-$OpenBSD: patch-src_libfaad_xine_faad_decoder_c,v 1.2 2008/01/15 00:36:46 jakemsr Exp $
---- src/libfaad/xine_faad_decoder.c.orig	Tue Jan  1 08:30:08 2008
-+++ src/libfaad/xine_faad_decoder.c	Wed Jan  9 01:50:22 2008
-@@ -31,16 +31,21 @@
- #define LOG
- */
- 
-+#include <faad.h>
-+
- #include "xine_internal.h"
- #include "audio_out.h"
- #include "buffer.h"
- #include "xineutils.h"
-+
-+#if 0
- #include "common.h"
- #include "structs.h"
- #include "decoder.h"
- #include "syntax.h"
- 
- #define FAAD_MIN_STREAMSIZE 768 /* 6144 bits/channel */
-+#endif
- 
- typedef struct {
-   audio_decoder_class_t   decoder_class;
-@@ -52,26 +57,26 @@ typedef struct faad_decoder_s {
+$OpenBSD: patch-src_libfaad_xine_faad_decoder_c,v 1.3 2008/08/20 01:54:01 brad Exp $
+--- src/libfaad/xine_faad_decoder.c.orig	Wed Aug 13 12:26:38 2008
++++ src/libfaad/xine_faad_decoder.c	Thu Aug 14 18:48:40 2008
+@@ -56,26 +56,26 @@ typedef struct faad_decoder_s {
    xine_stream_t    *stream;
    
    /* faad2 stuff */
@@ -59,7 +37,7 @@ $OpenBSD: patch-src_libfaad_xine_faad_decoder_c,v 1.2 2008/01/15 00:36:46 jakems
    uint32_t         ao_cap_mode; 
     
    int              output_open;
-@@ -122,33 +127,33 @@ static void faad_meta_info_set ( faad_decoder_t *this 
+@@ -126,33 +126,33 @@ static void faad_meta_info_set ( faad_decoder_t *this 
  static int faad_open_dec( faad_decoder_t *this ) {
    int used;
  
@@ -101,7 +79,7 @@ $OpenBSD: patch-src_libfaad_xine_faad_decoder_c,v 1.2 2008/01/15 00:36:46 jakems
                   this->rate, this->num_channels, used);
                        
          this->size -= used;
-@@ -162,7 +167,7 @@ static int faad_open_dec( faad_decoder_t *this ) {
+@@ -166,7 +166,7 @@ static int faad_open_dec( faad_decoder_t *this ) {
    
    if( this->faac_failed ) {
      if( this->faac_dec ) {
@@ -110,7 +88,7 @@ $OpenBSD: patch-src_libfaad_xine_faad_decoder_c,v 1.2 2008/01/15 00:36:46 jakems
        this->faac_dec = NULL;
      }
      _x_stream_info_set(this->stream, XINE_STREAM_INFO_AUDIO_HANDLED, 0);
-@@ -186,9 +191,9 @@ static int faad_open_output( faad_decoder_t *this ) {
+@@ -190,9 +190,9 @@ static int faad_open_output( faad_decoder_t *this ) {
          this->ao_cap_mode = AO_CAP_MODE_5_1CHANNEL;
          break;
        } else {
@@ -122,7 +100,7 @@ $OpenBSD: patch-src_libfaad_xine_faad_decoder_c,v 1.2 2008/01/15 00:36:46 jakems
          this->num_channels = 2;
        }
      case 2:
-@@ -211,7 +216,7 @@ static void faad_decode_audio ( faad_decoder_t *this, 
+@@ -215,7 +215,7 @@ static void faad_decode_audio ( faad_decoder_t *this, 
    uint8_t *sample_buffer;
    uint8_t *inbuf;
    audio_buffer_t *audio_buffer;
@@ -131,7 +109,7 @@ $OpenBSD: patch-src_libfaad_xine_faad_decoder_c,v 1.2 2008/01/15 00:36:46 jakems
      
    if( !this->faac_dec )
      return;
-@@ -220,12 +225,12 @@ static void faad_decode_audio ( faad_decoder_t *this, 
+@@ -224,12 +224,12 @@ static void faad_decode_audio ( faad_decoder_t *this, 
    while( (!this->raw_mode && end_frame && this->size >= 10) ||
           (this->raw_mode && this->size >= this->rec_audio_src_size) ) {
        
@@ -146,7 +124,7 @@ $OpenBSD: patch-src_libfaad_xine_faad_decoder_c,v 1.2 2008/01/15 00:36:46 jakems
        used = 1;    
      } else {
        used = this->faac_finfo.bytesconsumed;
-@@ -405,7 +410,7 @@ static void faad_dispose (audio_decoder_t *this_gen) {
+@@ -409,7 +409,7 @@ static void faad_dispose (audio_decoder_t *this_gen) {
    this->dec_config_size = 0;
    
    if( this->faac_dec )

@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.36 2008/07/02 01:02:42 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2008/08/20 01:54:01 brad Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT-main=		multimedia decoding library
 COMMENT-esd=		esound audio output module for xine-lib
 COMMENT-arts=		artsd audio output module for xine-lib
 COMMENT-jack=		jackd audio output module for xine-lib
 
-V=			1.1.14
+V=			1.1.15
 DISTNAME=		xine-lib-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-esd=		xine-lib-esd-${V}
@@ -14,7 +16,7 @@ PKGNAME-jack=		xine-lib-jack-${V}
 
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
-SHARED_LIBS=		xine	22.0
+SHARED_LIBS=		xine	23.0
 
 HOMEPAGE=		http://xinehq.de/
 
@@ -71,13 +73,12 @@ LIB_DEPENDS-jack=	${LIB_DEPENDS} \
 			xine::${BUILD_PKGPATH}
 RUN_DEPENDS-jack=	${RUN_DEPENDS}
 
-SHARED_ONLY=		Yes
 USE_X11=		Yes
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS+=		--tag=disable-static
 
-XINEAPI_REV=		1.23
+XINEAPI_REV=		1.24
 SUBST_VARS+=		XINEAPI_REV
 
 .if ${MACHINE_ARCH} == "i386"
@@ -87,8 +88,7 @@ MAKE_FLAGS+=		TOMSMOCOMP_LINKS=\#
 .endif
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-optimizations \
+CONFIGURE_ARGS+=	--disable-optimizations \
 			--disable-mlib \
 			--disable-opengl \
 			--disable-fb \
@@ -117,10 +117,10 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-freetype \
 			--with-fontconfig \
 			--disable-vcd \
-			--with-external-ffmpeg=yes \
 			--with-external-dvdnav=yes \
 			--with-external-a52dec=yes \
-			--with-external-libmad=yes
+			--with-external-libmad=yes \
+			--with-external-libfaad=yes
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
@@ -133,9 +133,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			EXTRA_X_LIBS="-Wl,-R,${LOCALBASE}/lib -Wl,-R,${X11BASE}/lib" \
 			ac_cv_member_audio_info_t_output_muted=yes
 
-post-patch:
+post-extract:
 .if ${MACHINE_ARCH} == "i386"
-	cp ${FILESDIR}/i386_set_ldt.c ${WRKSRC}/src/libw32dll/wine/
+	@cp ${FILESDIR}/i386_set_ldt.c ${WRKSRC}/src/libw32dll/wine
 .endif
 
 .include <bsd.port.mk>
