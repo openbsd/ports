@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/08/20 11:05:46 simon Exp $
+${P5SITE}/Catalyst/Helper/
+${P5SITE}/Catalyst/Helper/View/
+${P5SITE}/Catalyst/Helper/View/JSON.pm
+${P5SITE}/Catalyst/View/
+${P5SITE}/Catalyst/View/JSON.pm
+@man man/man3p/Catalyst::Helper::View::JSON.3p
+@man man/man3p/Catalyst::View::JSON.3p
