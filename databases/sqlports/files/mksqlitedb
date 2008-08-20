@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.5 2008/08/19 23:50:54 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.6 2008/08/20 21:02:47 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -39,7 +39,13 @@ package AbstractInserter;
 sub new
 {
 	my ($class, $db, $i) = @_;
-	bless {db => $db, transaction => 0, threshold => $i, vars => {}, done => {} }, $class;
+	bless {
+		db => $db, 
+		transaction => 0, 
+		threshold => $i, 
+		vars => {}, 
+		tables_created => {}
+	}, $class;
 }
 
 sub set
@@ -70,12 +76,12 @@ sub new_table
 {
 	my ($self, $name, @cols) = @_;
 
-	return if defined $self->{done}->{$name};
+	return if defined $self->{tables_created}->{$name};
 
 	$self->db->do("DROP TABLE IF EXISTS $name");
 	print "CREATE TABLE $name (".join(', ', @cols).")\n" if $main::opt_v;
 	$self->db->do("CREATE TABLE $name (".join(', ', @cols).")");
-	$self->{done}->{$name} = 1;
+	$self->{tables_created}->{$name} = 1;
 }
 
 sub prepare
@@ -87,7 +93,11 @@ sub prepare
 sub prepare_inserter
 {
 	my ($ins, $table, @cols) = @_;
-	$ins->{insert}->{$table} = $ins->prepare("INSERT OR REPLACE INTO $table (".join(', ', @cols).") VALUES (". join(', ', map {'?'} @cols).")");
+	$ins->{insert}->{$table} = $ins->prepare(
+	    "INSERT OR REPLACE INTO $table (".
+	    join(', ', @cols).
+	    ") VALUES (". 
+	    join(', ', map {'?'} @cols).")");
 }
 
 sub prepare_normal_inserter
@@ -118,7 +128,8 @@ sub create_tables
 	my ($self, $vars) = @_;
 
 	$self->db->commit;
-	$self->new_table("Ports", $self->pathref." PRIMARY KEY", map {$_." ".$vars->{$_}->sqltype } sort @{$self->{varlist}});
+	$self->new_table("Ports", $self->pathref." PRIMARY KEY", 
+	    map {$_." ".$vars->{$_}->sqltype } sort @{$self->{varlist}});
 	$self->prepare_normal_inserter('Ports', @{$self->{varlist}});
 	$self->prepare_normal_inserter('Paths', 'PKGPATH');
 }
@@ -173,9 +184,11 @@ sub create_tables
 		$class->create_table($self);
 	}
 
-	$self->new_table("Paths", "ID INTEGER PRIMARY KEY", "FULLPKGPATH TEXT NOT NULL UNIQUE", "PKGPATH INTEGER");
+	$self->new_table("Paths", "ID INTEGER PRIMARY KEY", 
+	    "FULLPKGPATH TEXT NOT NULL UNIQUE", "PKGPATH INTEGER");
 	$self->SUPER::create_tables($vars);
-	$self->{find_pathkey} =  $self->prepare("SELECT ID From Paths WHERE FULLPKGPATH=(?)");
+	$self->{find_pathkey} =  
+	    $self->prepare("SELECT ID From Paths WHERE FULLPKGPATH=(?)");
 }
 
 sub find_pathkey
@@ -200,7 +213,6 @@ sub find_pathkey
 			$path = undef;
 		}
 		$self->insert('Paths', $key, $path);
-		$self->insert_done;
 		return $self->last_id;
 	} else {
 		return $z->[0];
@@ -267,7 +279,8 @@ sub create_tables
 		$class->create_table($self);
 	}
 
-	$self->new_table("Paths", "FULLPKGPATH TEXT NOT NULL PRIMARY KEY", "PKGPATH TEXT NOT NULL");
+	$self->new_table("Paths", "FULLPKGPATH TEXT NOT NULL PRIMARY KEY", 
+	    "PKGPATH TEXT NOT NULL");
 	$self->SUPER::create_tables($vars);
 
 }
@@ -284,7 +297,6 @@ sub set_newkey
 	my $path = $key;
 	$path =~ s/\,.*//;
 	$self->insert('Paths', $key, $path);
-	$self->insert_done;
 	$self->set($key);
 }
 
@@ -304,7 +316,6 @@ sub find_keyword_id
 
 sub create_keyword_table
 {
-	my ($self, $t) = @_;
 }
 
 # use a Template Method approach to store the variable values.
@@ -459,7 +470,10 @@ sub add
 	$self->SUPER::add($ins);
 	for my $depends (main::words $self->value) {
 		my ($libs, $pkgspec, $pkgpath2, $rest) = split(/\:/, $depends);
-		$self->normal_insert($ins, $depends, $ins->find_pathkey($pkgpath2), $ins->convert_depends($self->depends_type), $pkgspec, $rest);
+		$self->normal_insert($ins, $depends, 
+		    $ins->find_pathkey($pkgpath2), 
+		    $ins->convert_depends($self->depends_type), 
+		    $pkgspec, $rest);
 		if ($libs ne '') {
 			for my $lib (split(/\,/, $libs)) {
 				$self->add_lib($ins, $lib);
@@ -471,8 +485,11 @@ sub add
 sub create_table
 {
 	my ($self, $inserter) = @_;
-	$inserter->new_table($self->table, $inserter->pathref, "FULLDEPENDS TEXT NOT NULL", "PKGSPEC TEXT" , "REST TEXT", "DEPENDSPATH TEXT NOT NULL", "TYPE TEXT NOT NULL");
-	$inserter->prepare_normal_inserter($self->table, "FULLDEPENDS", "DEPENDSPATH", "TYPE", "PKGSPEC", "REST");
+	$inserter->new_table($self->table, $inserter->pathref, 
+	    "FULLDEPENDS TEXT NOT NULL", "PKGSPEC TEXT" , "REST TEXT", 
+	    "DEPENDSPATH TEXT NOT NULL", "TYPE TEXT NOT NULL");
+	$inserter->prepare_normal_inserter($self->table, 
+	    "FULLDEPENDS", "DEPENDSPATH", "TYPE", "PKGSPEC", "REST");
 }
 
 sub add_lib
@@ -795,7 +812,8 @@ if (@ARGV > 0) {
 my @inserters;
 
 my $db =DBI->connect("dbi:SQLite:dbname=$dbname", '', '', {AutoCommit => 0});
-my $db2 =DBI->connect("dbi:SQLite:dbname=$dbname-compact", '', '', {AutoCommit => 0});
+my $db2 =DBI->connect("dbi:SQLite:dbname=$dbname-compact", '', '', 
+    {AutoCommit => 0});
 push(@inserters, NormalInserter->new($db, 1000));
 push(@inserters, CompactInserter->new($db2, 1000));
 
