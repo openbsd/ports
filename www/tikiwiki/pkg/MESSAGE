@@ -4,6 +4,13 @@ You should point this to the DocumentRoot of your web-server:
  # ln -s ../tikiwiki /var/www/htdocs/tikiwiki
 (make sure you use a relative symlink since Apache is chrooted)
 
-Make sure you read ${INSTDIR}/README.OpenBSD then complete the
-installation by accessing:
+*** First install
+To complete the installation, make sure you read
+${INSTDIR}/README.OpenBSD then point your web browser to:
 http://<hostname>/tikiwiki/tiki-install.php
+
+*** Upgrade
+To complete the upgrade, you must update your database schema using the
+scripts under ${INSTDIR}/tikiwiki/db/.
+Make sure to read the official documentation at:
+http://tikiwiki.org/ReleaseNotes20#1_9_x_to_2_0_migration_tips
