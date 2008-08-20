@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.611 2008/08/20 13:44:40 simon Exp $
+# $OpenBSD: Makefile,v 1.612 2008/08/20 20:05:59 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -446,6 +446,7 @@
      SUBDIR += p5-Params-CallbackRequest
      SUBDIR += p5-Params-Util
      SUBDIR += p5-Params-Validate
+     SUBDIR += p5-Paranoid
      SUBDIR += p5-Parse-PlainConfig
      SUBDIR += p5-Parse-RecDescent
      SUBDIR += p5-Path-Class
