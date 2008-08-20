@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2007/06/06 23:29:55 rui Exp $
---- configure.orig	Tue May 16 00:28:36 2006
-+++ configure	Wed Jun  6 11:37:20 2007
+$OpenBSD: patch-configure,v 1.5 2008/08/20 20:13:36 sturm Exp $
+--- configure.orig	Mon Aug 18 17:49:49 2008
++++ configure	Mon Aug 18 17:54:04 2008
 @@ -82,6 +82,9 @@ elif echo $UNAME | grep -i openbsd > /dev/null ; then
  	echo It looks like you are using OpenBSD\; this should compile 
  	echo fine by typing in \'make\'.
@@ -11,3 +11,14 @@ $OpenBSD: patch-configure,v 1.4 2007/06/06 23:29:55 rui Exp $
  elif echo $UNAME | grep -i mingw32 > /dev/null ; then
  	cat $BUILDDIR/Makefile.mingw32 >> Makefile
  	echo It looks like you are using MinGW32 \; this is only a partial
+@@ -164,6 +167,10 @@ if [ -z "$AUTHONLY" ] ; then
+ 	# FreeBSD uses -pthread instead of -lpthread to compile a
+ 	# Pthread program
+ 	if echo $UNAME | grep -i freebsd > /dev/null ; then
++		cat server/Makefile.recursive | \
++			sed 's/lpthread/pthread/' > server/Makefile
++	fi
++	if echo $UNAME | grep -i openbsd > /dev/null ; then
+ 		cat server/Makefile.recursive | \
+ 			sed 's/lpthread/pthread/' > server/Makefile
+ 	fi

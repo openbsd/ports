@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/01/08 19:18:05 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/08/20 20:13:36 sturm Exp $
 @pkgpath net/maradns/stable
 @newgroup _maradns:537
 @newuser _maradns:537:_maradns::MaraDNS Account:${SYSCONFDIR}/maradns:/sbin/nologin
-bin/askmara
-bin/duende
-bin/fetchzone
-bin/getzone
+@bin bin/askmara
+@bin bin/duende
+@bin bin/fetchzone
+@bin bin/getzone
 @man man/man1/askmara.1
 @man man/man1/fetchzone.1
 @man man/man1/getzone.1
@@ -16,22 +16,21 @@ bin/getzone
 @man man/man8/duende.8
 @man man/man8/maradns.8
 @man man/man8/zoneserver.8
-sbin/maradns
-sbin/zoneserver
+@bin sbin/maradns
+@bin sbin/zoneserver
 share/doc/maradns/
 share/doc/maradns/Makefile
 share/doc/maradns/QuickStart
 share/doc/maradns/README
-share/doc/maradns/changelog.html
 share/doc/maradns/changelog.txt
 share/doc/maradns/credits.txt
-share/doc/maradns/download.html
 share/doc/maradns/faq.html
 share/doc/maradns/faq.txt
 share/doc/maradns/files.txt
 share/doc/maradns/man/
 share/doc/maradns/man/Makefile
 share/doc/maradns/man/askmara.1
+share/doc/maradns/man/bind2csv2.1
 share/doc/maradns/man/csv1.5
 share/doc/maradns/man/csv2.5
 share/doc/maradns/man/csv2_txt.5
@@ -48,25 +47,8 @@ share/doc/maradns/man/zoneserver.8
 share/doc/maradns/maradns.gpg.key
 share/doc/maradns/misc/
 share/doc/maradns/misc/0README
-share/doc/maradns/misc/RFC1035.compliance
-share/doc/maradns/misc/advocacy/
-share/doc/maradns/misc/advocacy/active.other
-share/doc/maradns/misc/advocacy/bind9
-share/doc/maradns/misc/advocacy/djbdns
-share/doc/maradns/misc/advocacy/inactive
-share/doc/maradns/misc/bind2csv2.design
-share/doc/maradns/misc/cache.poison.protection
-share/doc/maradns/misc/compression/
-share/doc/maradns/misc/compression/decompress_api.abw
-share/doc/maradns/misc/compression/decompress_api.html
-share/doc/maradns/misc/compression/describing_dns_rrs.html
-share/doc/maradns/misc/compression/handling.compression
-share/doc/maradns/misc/csv2-1.4-ideas/
-share/doc/maradns/misc/csv2-1.4-ideas/csv2.brace.processing
 share/doc/maradns/misc/csv2.regexmatch.functionlist
 share/doc/maradns/misc/dns-record-types.txt
-share/doc/maradns/misc/how.maradns.stores.rrs
-share/doc/maradns/misc/how.to.support.sql
 share/doc/maradns/misc/js-manpages/
 share/doc/maradns/misc/js-manpages/README
 share/doc/maradns/misc/js-manpages/js_alloc.3
@@ -113,33 +95,25 @@ share/doc/maradns/misc/js-manpages/js_tolower.3
 share/doc/maradns/misc/js-manpages/js_unlock.3
 share/doc/maradns/misc/js-manpages/js_val.3
 share/doc/maradns/misc/js-manpages/js_write.3
-share/doc/maradns/misc/man_macros/
-share/doc/maradns/misc/man_macros/README
-share/doc/maradns/misc/man_macros/example_manpage.1
-share/doc/maradns/misc/man_macros/man.macros
-share/doc/maradns/misc/man_macros/man.macros.7
 share/doc/maradns/misc/multiple.qdcount
-share/doc/maradns/misc/private_rrs.abw
-share/doc/maradns/misc/private_rrs.html
 share/doc/maradns/misc/propagation.txt
-share/doc/maradns/misc/recursive-case-insensitive
 share/doc/maradns/misc/recursive.algorithm
-share/doc/maradns/misc/resolution.algorithm
-share/doc/maradns/misc/rfc1034.notes.abw
 share/doc/maradns/misc/setup.bind.djbdns.axfr.test
 share/doc/maradns/misc/vim.cheatsheet
 share/doc/maradns/misc/year_2038_statement.txt
 share/doc/maradns/pdf/
 share/doc/maradns/pdf/Makefile
 share/doc/maradns/pdf/README
-share/doc/maradns/pdf/manpage_reference.pdf
 share/doc/maradns/pdf/tmac.an.patch
 share/doc/maradns/source/
 share/doc/maradns/source/SOURCE.FILES
 share/doc/maradns/source/askmara.ej
 share/doc/maradns/source/authoritative.ej
+share/doc/maradns/source/bind2csv2-man.ej
+share/doc/maradns/source/bind2csv2.ej
 share/doc/maradns/source/changelog.ej
 share/doc/maradns/source/changelog.embed
+share/doc/maradns/source/coding_style.ej
 share/doc/maradns/source/compile.ej
 share/doc/maradns/source/convert.ej
 share/doc/maradns/source/copy
@@ -182,6 +156,7 @@ share/doc/maradns/source/quick_start.ej
 share/doc/maradns/source/recordtypes.ej
 share/doc/maradns/source/recursive.ej
 share/doc/maradns/source/security_design.embed
+share/doc/maradns/source/troubleshoot.ej
 share/doc/maradns/source/tutorial.ej
 share/doc/maradns/source/update.ej
 share/doc/maradns/source/win_service.ej
@@ -189,6 +164,8 @@ share/doc/maradns/source/zoneserver.ej
 share/doc/maradns/text/
 share/doc/maradns/text/Makefile
 share/doc/maradns/text/authoritative.txt
+share/doc/maradns/text/bind2csv2.txt
+share/doc/maradns/text/coding_style.txt
 share/doc/maradns/text/compile.txt
 share/doc/maradns/text/convert.txt
 share/doc/maradns/text/dangling.txt
@@ -209,12 +186,16 @@ share/doc/maradns/text/man.zoneserver.txt
 share/doc/maradns/text/quick_start.txt
 share/doc/maradns/text/recordtypes.txt
 share/doc/maradns/text/recursive.txt
+share/doc/maradns/text/troubleshoot.txt
 share/doc/maradns/text/tutorial.txt
 share/doc/maradns/text/update.txt
 share/doc/maradns/text/win_service.txt
 share/doc/maradns/tutorial/
+share/doc/maradns/tutorial/00index.html
 share/doc/maradns/tutorial/Makefile
 share/doc/maradns/tutorial/authoritative.html
+share/doc/maradns/tutorial/bind2csv2.html
+share/doc/maradns/tutorial/coding_style.html
 share/doc/maradns/tutorial/compile.html
 share/doc/maradns/tutorial/convert.html
 share/doc/maradns/tutorial/dangling.html
@@ -224,6 +205,7 @@ share/doc/maradns/tutorial/dnsmaster.html
 share/doc/maradns/tutorial/dnsslave.html
 share/doc/maradns/tutorial/dnstcp.html
 share/doc/maradns/tutorial/glossary.html
+share/doc/maradns/tutorial/index.html
 share/doc/maradns/tutorial/make.index
 share/doc/maradns/tutorial/man.askmara.html
 share/doc/maradns/tutorial/man.csv2.html
@@ -236,6 +218,7 @@ share/doc/maradns/tutorial/man.zoneserver.html
 share/doc/maradns/tutorial/quick_start.html
 share/doc/maradns/tutorial/recordtypes.html
 share/doc/maradns/tutorial/recursive.html
+share/doc/maradns/tutorial/troubleshoot.html
 share/doc/maradns/tutorial/tutorial.html
 share/doc/maradns/tutorial/update.html
 share/doc/maradns/tutorial/win_service.html
@@ -247,6 +230,8 @@ share/doc/maradns/webpage/changelog.embed
 share/doc/maradns/webpage/changelog.html
 share/doc/maradns/webpage/contact.embed
 share/doc/maradns/webpage/contact.html
+share/doc/maradns/webpage/debian.embed
+share/doc/maradns/webpage/debian.html
 share/doc/maradns/webpage/dns_software.embed
 share/doc/maradns/webpage/dns_software.html
 share/doc/maradns/webpage/download.embed

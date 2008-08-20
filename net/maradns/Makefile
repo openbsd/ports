@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2008/01/07 21:24:07 bernd Exp $
+# $OpenBSD: Makefile,v 1.10 2008/08/20 20:13:36 sturm Exp $
 
-VERSION=	1.2.12.09
+VERSION=	1.3.07.09
 COMMENT=	simple and performant DNS server
 DISTNAME=	maradns-${VERSION}
 CATEGORIES=	net
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c pthread
 
-MASTER_SITES=	http://www.maradns.org/download/1.2/${VERSION}/
+MASTER_SITES=	http://www.maradns.org/download/1.3/${VERSION}/
 
 MAKE_FLAGS=	CC="${CC}" FLAGS="${CFLAGS} -D_THREAD_SAFE -pthread"
 
