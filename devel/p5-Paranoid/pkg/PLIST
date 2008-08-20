@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/08/20 20:05:54 simon Exp $
+${P5SITE}/Paranoid/
+${P5SITE}/Paranoid.pm
+${P5SITE}/Paranoid/BerkeleyDB.pm
+${P5SITE}/Paranoid/Debug.pm
+${P5SITE}/Paranoid/Filesystem.pm
+${P5SITE}/Paranoid/Input.pm
+${P5SITE}/Paranoid/Lockfile.pm
+${P5SITE}/Paranoid/Log/
+${P5SITE}/Paranoid/Log.pm
+${P5SITE}/Paranoid/Log/Buffer.pm
+${P5SITE}/Paranoid/Log/Email.pm
+${P5SITE}/Paranoid/Log/File.pm
+${P5SITE}/Paranoid/Log/Syslog.pm
+${P5SITE}/Paranoid/Log/Template.pm
+${P5SITE}/Paranoid/Module.pm
+${P5SITE}/Paranoid/Network.pm
+${P5SITE}/Paranoid/Process.pm
+@man man/man3p/Paranoid.3p
+@man man/man3p/Paranoid::BerkeleyDB.3p
+@man man/man3p/Paranoid::Debug.3p
+@man man/man3p/Paranoid::Filesystem.3p
+@man man/man3p/Paranoid::Input.3p
+@man man/man3p/Paranoid::Lockfile.3p
+@man man/man3p/Paranoid::Log.3p
+@man man/man3p/Paranoid::Log::Buffer.3p
+@man man/man3p/Paranoid::Log::Email.3p
+@man man/man3p/Paranoid::Log::File.3p
+@man man/man3p/Paranoid::Log::Syslog.3p
+@man man/man3p/Paranoid::Log::Template.3p
+@man man/man3p/Paranoid::Module.3p
+@man man/man3p/Paranoid::Network.3p
+@man man/man3p/Paranoid::Process.3p
