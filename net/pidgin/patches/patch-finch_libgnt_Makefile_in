@@ -1,7 +1,7 @@
-$OpenBSD: patch-finch_libgnt_Makefile_in,v 1.9 2008/07/04 07:35:40 bernd Exp $
---- finch/libgnt/Makefile.in.orig	Wed Jul  2 02:46:54 2008
-+++ finch/libgnt/Makefile.in	Wed Jul  2 10:00:26 2008
-@@ -353,7 +353,7 @@ target_vendor = @target_vendor@
+$OpenBSD: patch-finch_libgnt_Makefile_in,v 1.10 2008/08/21 05:59:01 brad Exp $
+--- finch/libgnt/Makefile.in.orig	Mon Aug 18 21:55:32 2008
++++ finch/libgnt/Makefile.in	Wed Aug 20 00:48:34 2008
+@@ -355,7 +355,7 @@ target_vendor = @target_vendor@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  EXTRA_DIST = genmarshal

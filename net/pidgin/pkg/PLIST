@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/07/11 14:20:55 brad Exp $
+@comment $OpenBSD: PLIST,v 1.15 2008/08/21 05:59:01 brad Exp $
 @conflict gaim-*
 @bin bin/finch
 @bin bin/pidgin
@@ -101,6 +101,7 @@ include/libpurple/roomlist.h
 include/libpurple/savedstatuses.h
 include/libpurple/server.h
 include/libpurple/signals.h
+include/libpurple/smiley.h
 include/libpurple/sound.h
 include/libpurple/sslconn.h
 include/libpurple/status.h
@@ -150,6 +151,7 @@ include/pidgin/gtkroomlist.h
 include/pidgin/gtksavedstatuses.h
 include/pidgin/gtkscrollbook.h
 include/pidgin/gtksession.h
+include/pidgin/gtksmiley.h
 include/pidgin/gtksound.h
 include/pidgin/gtksourceiter.h
 include/pidgin/gtksourceundomanager.h
@@ -459,6 +461,7 @@ share/pixmaps/pidgin/emotes/default/bowl.png
 share/pixmaps/pidgin/emotes/default/boy.png
 share/pixmaps/pidgin/emotes/default/brb.png
 share/pixmaps/pidgin/emotes/default/bulgy-eyes.png
+share/pixmaps/pidgin/emotes/default/bunny.png
 share/pixmaps/pidgin/emotes/default/bye.png
 share/pixmaps/pidgin/emotes/default/cake.png
 share/pixmaps/pidgin/emotes/default/call-me.png
@@ -467,6 +470,7 @@ share/pixmaps/pidgin/emotes/default/can.png
 share/pixmaps/pidgin/emotes/default/car.png
 share/pixmaps/pidgin/emotes/default/cat.png
 share/pixmaps/pidgin/emotes/default/chicken.png
+share/pixmaps/pidgin/emotes/default/cigarette.png
 share/pixmaps/pidgin/emotes/default/clap.png
 share/pixmaps/pidgin/emotes/default/clock.png
 share/pixmaps/pidgin/emotes/default/cloudy.png
@@ -488,7 +492,7 @@ share/pixmaps/pidgin/emotes/default/dance.png
 share/pixmaps/pidgin/emotes/default/dazed.png
 share/pixmaps/pidgin/emotes/default/desire.png
 share/pixmaps/pidgin/emotes/default/devil.png
-share/pixmaps/pidgin/emotes/default/disapointed.png
+share/pixmaps/pidgin/emotes/default/disappointed.png
 share/pixmaps/pidgin/emotes/default/disdain.png
 share/pixmaps/pidgin/emotes/default/doctor.png
 share/pixmaps/pidgin/emotes/default/dog.png
@@ -589,7 +593,6 @@ share/pixmaps/pidgin/emotes/default/shout.png
 share/pixmaps/pidgin/emotes/default/shut-mouth.png
 share/pixmaps/pidgin/emotes/default/sick.png
 share/pixmaps/pidgin/emotes/default/sidefrown.png
-share/pixmaps/pidgin/emotes/default/sigarette.png
 share/pixmaps/pidgin/emotes/default/silly.png
 share/pixmaps/pidgin/emotes/default/sinister.png
 share/pixmaps/pidgin/emotes/default/skeleton.png
@@ -773,6 +776,7 @@ share/pixmaps/pidgin/toolbar/16/insert.png
 share/pixmaps/pidgin/toolbar/16/message-new.png
 share/pixmaps/pidgin/toolbar/16/plugins.png
 share/pixmaps/pidgin/toolbar/16/send-file.png
+share/pixmaps/pidgin/toolbar/16/transfer.png
 share/pixmaps/pidgin/toolbar/16/unblock.png
 share/pixmaps/pidgin/toolbar/22/
 share/pixmaps/pidgin/toolbar/22/select-avatar.png
@@ -920,6 +924,8 @@ share/pixmaps/purple/buddy_icons/qq/qq_98.png
 share/pixmaps/purple/buddy_icons/qq/qq_99.png
 share/purple/
 share/purple/ca-certs/
+share/purple/ca-certs/CAcert_Class3.pem
+share/purple/ca-certs/CAcert_Root.pem
 share/purple/ca-certs/Equifax_Secure_CA.pem
 share/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
 share/purple/ca-certs/Microsoft_Secure_Server_Authority.pem

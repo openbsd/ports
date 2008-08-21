@@ -21,4 +21,3 @@ Flavors:
 	audio    - Build with gstreamer support
 	debug    - Enable debugging
 	gtkspell - Build with spell checking support
-	msnp14   - Build with MSN protocol 14 support (experimental)

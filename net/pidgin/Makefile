@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2008/07/11 14:20:55 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2008/08/21 05:59:01 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-protocol instant messaging client
 
-DISTNAME=	pidgin-2.4.3
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS += jabber               0.0      # .0.0
-SHARED_LIBS += oscar                0.0      # .0.0
-SHARED_LIBS += purple               3.2      # .4.2
-SHARED_LIBS += purple-client        3.2      # .4.2
-SHARED_LIBS += gnt                  3.1      # .0.0
+DISTNAME=	pidgin-2.5.0
+SHARED_LIBS +=	jabber		0.0
+SHARED_LIBS +=	oscar		0.0
+SHARED_LIBS +=	purple		4.0
+SHARED_LIBS +=	purple-client	4.0
+SHARED_LIBS +=	gnt		4.0
 CATEGORIES=	net
 
 HOMEPAGE=	http://pidgin.im/
@@ -46,6 +45,8 @@ LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		xml2::textproc/libxml \
 		dbus-glib-1::x11/dbus-glib
 
+SUBST_VARS=	MODPY_BIN TRUEPREFIX
+
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
@@ -65,13 +66,12 @@ CONFIGURE_ARGS+= --with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/pidgin 
 		 --disable-cap \
 		 --disable-schemas-install \
 		 --with-python=${MODPY_BIN}
-
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAKE_FLAGS+=	CFLAGS="${CFLAGS}"
 
-FLAVORS=	audio debug gtkspell msnp14
+FLAVORS=	audio debug gtkspell
 FLAVOR?=	
 
 .if ${FLAVOR:L:Maudio}
@@ -95,26 +95,21 @@ WANTLIB+=	aspell
 CONFIGURE_ARGS+=--disable-gtkspell
 .endif
 
-.if ${FLAVOR:L:Mmsnp14}
-CONFIGURE_ARGS+=--enable-msnp14
-.endif
-
-PYTHON_SCRIPTS=	purple-remote purple-url-handler
-
 post-extract:
-	cp -f ${FILESDIR}/ssl-openssl.c ${WRKSRC}/libpurple/plugins/ssl
+	@cp ${FILESDIR}/ssl-openssl.c ${WRKSRC}/libpurple/plugins/ssl
+
+post-build:
+	cp ${FILESDIR}/purple.service ${WRKSRC}
+	${SUBST_CMD} ${WRKSRC}/libpurple/purple-remote \
+		     ${WRKSRC}/libpurple/purple-url-handler \
+		     ${WRKSRC}/purple.service
 
 post-install:
-	perl -pi -e 's,/bin/bash,/bin/sh,g' ${PREFIX}/bin/purple-send*
-.for f in ${PYTHON_SCRIPTS}
-	perl -pi -e 's#%python%#${MODPY_BIN}#g' ${PREFIX}/bin/${f}
-.endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/dbus-1/services/
-	sed -e "s,!!PREFIX!!,${TRUEPREFIX}," \
-		< ${FILESDIR}/purple.service \
-		> ${PREFIX}/share/dbus-1/services/purple.service
+	${INSTALL_DATA_DIR} ${PREFIX}/share/dbus-1/services
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pidgin
+	${INSTALL_DATA} ${WRKSRC}/purple.service \
+	    ${PREFIX}/share/dbus-1/services
 	mv ${PREFIX}/lib/purple-2/libjabber.* ${PREFIX}/lib
 	mv ${PREFIX}/lib/purple-2/liboscar.* ${PREFIX}/lib
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pidgin/
 
 .include <bsd.port.mk>
