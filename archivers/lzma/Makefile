@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/05/23 20:17:03 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2008/08/21 17:50:47 steven Exp $
 
 COMMENT=		LZMA utils - make usage of LZMA compression easy
 
-DISTNAME=		lzma-4.32.6
+DISTNAME=		lzma-4.32.7
 SHARED_LIBS +=	lzmadec              0.0      # .0.0
 CATEGORIES=		archivers
 
