@@ -1,9 +1,9 @@
-$OpenBSD: patch-help_C_evolution_xml,v 1.1 2008/07/08 11:16:44 jasper Exp $
+$OpenBSD: patch-help_C_evolution_xml,v 1.2 2008/08/21 22:50:21 jasper Exp $
 
 svn revision 35707, fixes xml2po errors.
 
---- help/C/evolution.xml.orig	Tue Jul  8 10:43:52 2008
-+++ help/C/evolution.xml	Tue Jul  8 10:56:10 2008
+--- help/C/evolution.xml.orig	Mon Jun 30 17:23:49 2008
++++ help/C/evolution.xml	Thu Aug  7 11:26:54 2008
 @@ -73,7 +73,7 @@
         its mail, calendar, addressbook, and task list features.
       </para>
@@ -22,7 +22,7 @@ svn revision 35707, fixes xml2po errors.
    <itemizedlist>
     <listitem>
      <para><link linkend="usage-mainwindow">Getting Started</link></para>
-@@ -144,13 +144,14 @@
+@@ -144,13 +144,13 @@
    </itemizedlist>
    <formalpara id="b17q8uz1">
     <title>Documentation Conventions: </title>
@@ -33,13 +33,12 @@ svn revision 35707, fixes xml2po errors.
  
   <chapter id="usage-mainwindow">
    <title>Getting Started</title>
--  <para>Evolution is a highly evolved<link linkend=\"groupware\">groupware</link> application that makes it easy to store, organize, and retrieve your personal information. Evolution seamlessly combines e-mail, a calendar, an address book, and a task list in one easy-to-use application. You can read and manage your mail and events locally or on a network and thus handle the daily communication more effectively.</para>
+-  <para>Evolution is a highly evolved<link linkend="groupware">groupware</link> application that makes it easy to store, organize, and retrieve your personal information. Evolution seamlessly combines e-mail, a calendar, an address book, and a task list in one easy-to-use application. You can read and manage your mail and events locally or on a network and thus handle the daily communication more effectively.</para>
 +  <para><trademark>Evolution</trademark> is a <link linkend="groupware">groupware</link> application that helps you work in a group by handling e-mail, address, memos, tasks, and one or more calendars. This makes the tasks of storing, organizing, and retrieving your personal information easy, so you can work and communicate more effectively with others.</para>
-+  <itemizedlist>
+    <itemizedlist>
     <listitem>
      <para><link linkend="usage-mainwindow-starting">Starting Evolution for the First Time</link></para>
-    </listitem>
-@@ -267,7 +268,7 @@
+@@ -268,7 +268,7 @@
         <para>The following is a list of server types that are available:</para>
         <formalpara id="bsj74dr">
          <title>Novell GroupWise:</title>
@@ -48,7 +47,7 @@ svn revision 35707, fixes xml2po errors.
         </formalpara>
         <formalpara id="bsj74ds">
          <title>Microsoft Exchange:</title>
-@@ -283,7 +284,7 @@
+@@ -284,7 +284,7 @@
         </formalpara>
         <formalpara id="b13sa2jr">
          <title>Hula:</title>
@@ -57,7 +56,7 @@ svn revision 35707, fixes xml2po errors.
         </formalpara>
         <formalpara id="bstgdhu">
          <title>USENET News:</title>
-@@ -291,7 +292,7 @@
+@@ -292,7 +292,7 @@
         </formalpara>
         <formalpara id="bsj74dv">
          <title>Local Delivery:</title>
@@ -66,7 +65,7 @@ svn revision 35707, fixes xml2po errors.
         </formalpara>
         <formalpara id="bsj74dw">
          <title>MH Format Mail Directories:</title>
-@@ -344,13 +345,13 @@
+@@ -345,13 +345,13 @@
          <para>Click Forward.</para>
         </listitem>
        </orderedlist>
@@ -82,7 +81,7 @@ svn revision 35707, fixes xml2po errors.
       </section>
      </section>
  
-@@ -404,15 +405,15 @@
+@@ -405,15 +405,15 @@
         </listitem>
         <listitem id="bsthlvl">
          <para>Select if you want to check new messages for junk content.</para>
@@ -101,7 +100,7 @@ svn revision 35707, fixes xml2po errors.
         </listitem>
         <listitem id="bsthnab">
          <para>Type your Post Office Agent SOAP port in the Post Office Agent SOAP Port field.</para>
-@@ -452,13 +453,13 @@
+@@ -453,13 +453,13 @@
          <para>If you select this option, you need to specify how often Evolution should send the password expire message.</para>
         </listitem>
         <listitem id="bv6uqm7">
@@ -117,7 +116,7 @@ svn revision 35707, fixes xml2po errors.
          <para>For more information refer <link linkend="usage-mail-organize-spam">Stopping Junk Mail (Spam)</link></para>
         </listitem>
         <listitem id="bstgtoj">
-@@ -503,7 +504,7 @@
+@@ -504,7 +504,7 @@
         <listitem id="bstgje2">
          <para>Select if you want to automatically synchronize remote mail locally.</para>
          <para>Evolution, by default downloads only the header information such as From, Subject, and Date. The body of the message and the attachments are downloaded only when you click the message. Thus you can save time and network usage. This is useful when you don't read all the messages you receive.</para>
@@ -126,7 +125,7 @@ svn revision 35707, fixes xml2po errors.
         </listitem>
         <listitem id="bstgjlq">
          <para>Click Forward.</para>
-@@ -770,11 +771,11 @@
+@@ -771,11 +771,11 @@
     </formalpara>
     <formalpara id="b17s9of0">
      <title>Side bar:</title>
@@ -140,7 +139,7 @@ svn revision 35707, fixes xml2po errors.
     </formalpara>
     <formalpara id="b17s9ol7">
      <title>Status Bar:</title>
-@@ -819,8 +820,8 @@
+@@ -820,8 +820,8 @@
     </section>
  
     <section id="usage-mainwindow-shortcutbar">
@@ -151,7 +150,7 @@ svn revision 35707, fixes xml2po errors.
      <para>The folder list organizes your e-mail, calendars, contact lists, and task lists in a tree, similar to a <link linkend="filetree">file tree</link>. Most people find one to four folders at the base of the tree, depending on the tool and their system configuration. Each Evolution tool has at least one folder, called On This Computer, for local information. For example, the folder list for the e-mail tool shows any remote e-mail storage you have set up, plus local folders and search folders, which are discussed in <link linkend="usage-mail-organize-vfolders">Using Search Folders</link>.</para>
      <para>If you get large amounts of e-mail, you might want more folders than just your Inbox. You can create multiple calendar, task, or contacts folders.</para>
      <para>To create a new folder:</para>
-@@ -857,11 +858,11 @@
+@@ -858,11 +858,11 @@
       <formalpara id="b13cfibm">
        <title>Toolbar Style:</title>
        <para>Shows buttons using the desktop toolbar settings.</para>
@@ -168,7 +167,7 @@ svn revision 35707, fixes xml2po errors.
      </section>
  
      <section id="subfolders">
-@@ -962,19 +963,18 @@
+@@ -963,19 +963,18 @@
      <para>To use the contacts tool, click Contacts in the switcher. By default, the display shows all your contacts in alphabetical order, in a minicard view. You can select other views from the View menu, and adjust the width of the columns by clicking and dragging the gray column dividers.</para>
      <mediaobject id="usage-contact-fig"><imageobject><imagedata format="PNG" fileref="figures/contacts_mainwindow_a.png"/></imageobject></mediaobject>
      <para>Another advantage of the Evolution contacts is its integration with the rest of the application. For example, you can right-click an e-mail address in Evolution mail to instantly create a contact entry.</para>
@@ -192,7 +191,7 @@ svn revision 35707, fixes xml2po errors.
       <mediaobject id="b17qyglq"><imageobject><imagedata format="PNG" fileref="figures/evo_backup.png"/></imageobject></mediaobject>
       <para>Evolution is always backed up as evolution-backup.tar.gz.</para>
       <para>Before the backup process starts, it asks you to close Evolution and displays a warning as shown below:</para>
-@@ -982,28 +982,27 @@
+@@ -983,28 +982,27 @@
       
      </listitem>
      <listitem id="b17qygt2">
@@ -226,7 +225,7 @@ svn revision 35707, fixes xml2po errors.
        </tip>
        <mediaobject id="b17rbvcy"><imageobject><imagedata format="PNG" fileref="figures/evo_restore.png"/></imageobject></mediaobject>
        <para>Evolution will auto-restart after the process.</para>
-@@ -1016,7 +1015,7 @@
+@@ -1017,7 +1015,7 @@
     <title>Crash Recovery</title>
     <para>Evolution displays a crash detection message when you restart it after a crash.</para>
     <mediaobject id="b1a5aezg"><imageobject><imagedata format="PNG" fileref="figures/evo_crash_recovery.png"/></imageobject></mediaobject>
@@ -235,7 +234,7 @@ svn revision 35707, fixes xml2po errors.
    </section>
    <section id="bsekq8r">
     <title>Command Line Options</title>
-@@ -1095,7 +1094,7 @@
+@@ -1096,7 +1094,7 @@
        </row>
        <row id="bsl8i08">
         <entry colname="1">
@@ -244,7 +243,7 @@ svn revision 35707, fixes xml2po errors.
         </entry>
         <entry colname="2">
          <para>Makes Evolution your default e-mail handler for your Web browser and in the GNOME&z-3rdParty; Control Center.</para>
-@@ -1109,7 +1108,7 @@
+@@ -1110,7 +1108,7 @@
  
   <chapter id="usage-mail">
    <title>Sending and Receiving E-Mail</title>
@@ -253,7 +252,7 @@ svn revision 35707, fixes xml2po errors.
    <itemizedlist>
     <listitem>
      <para><link linkend="usage-mail-getnsend-read">Reading Mail</link></para>
-@@ -1138,43 +1137,49 @@
+@@ -1139,43 +1137,49 @@
  
     <section id="b17rgdac">
      <title>Magic Spacebar For Reading Mail</title>
@@ -315,7 +314,7 @@ svn revision 35707, fixes xml2po errors.
      <para>Evolution provides you vertical view in addition to the classical view. In the vertical view, message preview pane is located at the right side of the message list when compared to the Classical view where the message preview pane is placed below the message list. Vertical View enables you to use the extra width of the wide screen monitors.</para>
      <formalpara id="b131nl11">
       <title>Vertical View:</title>
-@@ -1211,13 +1216,13 @@
+@@ -1212,13 +1216,13 @@
        <para>Select Mail Preferences</para>
       </listitem>
       <listitem id="b131onvr">
@@ -331,7 +330,7 @@ svn revision 35707, fixes xml2po errors.
     </section>
  
     <section id="bsempjs">
-@@ -1414,7 +1419,7 @@
+@@ -1415,7 +1419,7 @@
  
     <section id="usage-mail-getnsend-send-charsets">
      <title>Unicode, ASCII, and Non-Latin Alphabets</title>
@@ -340,7 +339,7 @@ svn revision 35707, fixes xml2po errors.
      <para>For greater language display capabilities, click Edit &gt; Preferences, then select the character set choices in the Mail Preferences and Composer Preferences sections. If you aren't sure which one to use, select UTF-8, which offers the greatest range of character displays for the greatest range of languages.</para>
  
      <section id="bsfnqkj">
-@@ -1442,7 +1447,7 @@
+@@ -1443,7 +1447,7 @@
  
     <section id="usage-mail-getnsend-offline">
      <title>Working Offline</title>
@@ -349,7 +348,7 @@ svn revision 35707, fixes xml2po errors.
      <para>POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.</para>
      <para>To mark a folder for offline use,</para>
      <orderedlist>
-@@ -1509,40 +1514,40 @@
+@@ -1510,40 +1514,40 @@
      </orderedlist>
      <para>You can also drag a file into the composer window. If you want to send it as an inline attachment, right-click the attachment and click Properties, then select Automatic Display of Attachments.</para>
      <para>When you send the message, a copy of the attached file goes with it. Be aware that large attachments can take a long time to send and receive.</para>
@@ -421,7 +420,7 @@ svn revision 35707, fixes xml2po errors.
      <para>Addresses on the Bcc: list are hidden from the other recipients of the message. You can use it to send mail to large groups of people, especially if they don't know each other or if privacy is a concern. If your Bcc: field is absent, click View &gt; Bcc Field.</para>
      <para>If you frequently write e-mail to the same groups of people, you can create address lists in the contacts tool, and then send them mail as though they have a single address. To learn how to do that, see <link linkend="usage-contact-organize-group-list">Creating a List of Contacts</link>.</para>
      <para>Evolution has the ability to let you specify the Reply-To in an e-mail. Using this, you can set up a special Reply-To for an e-mail.To do this:</para>
-@@ -1648,7 +1653,7 @@
+@@ -1649,7 +1653,7 @@
      </formalpara>
      <formalpara id="bsai5pj">
       <title>Find Regex:</title>
@@ -430,7 +429,7 @@ svn revision 35707, fixes xml2po errors.
      </formalpara>
      <formalpara id="bsai5wk">
       <title>Find Again:</title>
-@@ -1858,7 +1863,7 @@
+@@ -1859,7 +1863,7 @@
      <para>To change your default settings,</para>
      <orderedlist>
       <listitem id="b13uu17q">
@@ -439,7 +438,7 @@ svn revision 35707, fixes xml2po errors.
       </listitem>
       <listitem id="b13uu2g0">
        <para>Select the mail account you want to change the default settings.</para>
-@@ -1867,7 +1872,7 @@
+@@ -1868,7 +1872,7 @@
        <para>Click Edit to open Account Editor window.</para>
       </listitem>
       <listitem id="b13uu7rw">
@@ -448,7 +447,7 @@ svn revision 35707, fixes xml2po errors.
       </listitem>
       <listitem id="b13uuba1">
        <para>Click the respective check boxes and enter the email addresses you want CC and BCC to.</para>
-@@ -1940,7 +1945,7 @@
+@@ -1941,7 +1945,7 @@
        <para>Don't forward chain letters. If you must, watch out for hoaxes and urban legends, and make sure the message doesn't have multiple layers of greater-than signs, (&gt;) indicating multiple layers of careless in-line forwarding.</para>
       </listitem>
       <listitem>
@@ -457,7 +456,7 @@ svn revision 35707, fixes xml2po errors.
       </listitem>
       <listitem>
        <para>WRITING IN CAPITAL LETTERS MEANS YOU'RE SHOUTING! Don't write a whole message in capital letters. It hurts people's ears.</para>
-@@ -2032,7 +2037,7 @@
+@@ -2033,7 +2037,7 @@
       <para>You can attach an encrypted signature to a plain text message, so that the recipient can read the message without decrypting it, and needs decrypting only to verify the sender's identity.</para>
      </listitem>
     </itemizedlist>
@@ -466,7 +465,7 @@ svn revision 35707, fixes xml2po errors.
  
     <section id="encryption-keygen">
      <title>Making a GPG Encryption Key</title>
-@@ -2093,7 +2098,7 @@
+@@ -2094,7 +2098,7 @@
      <para>To send an encrypted message, you need to use the recipient's public key in combination with your private key. Evolution handles the encryption, but you need to get the public key and add it to your keyring.</para>
      <para>To get public keys from a public key server, enter the command<command> gpg --recv-keys --keyserver wwwkeys.pgp.net <varname>keyid</varname></command>, substituting <varname>keyid</varname> for your recipient's ID. You need to enter your password, and the ID is automatically added to your keyring.</para>
      <note>
@@ -475,7 +474,7 @@ svn revision 35707, fixes xml2po errors.
       The gpg utility tries to connect to one in the current network; and if that particular host is down, 
       it fails with a time-out.</para>
       <para>To avoid this, Type <command>$ host wwwkeys.pgp.net</command> in a terminal console and get the IP address of the hosts. 
-@@ -2231,7 +2236,7 @@
+@@ -2232,7 +2236,7 @@
  
   <chapter id="usage-mail-organize">
    <title>Organizing Your E-Mail</title>
@@ -484,7 +483,7 @@ svn revision 35707, fixes xml2po errors.
    <itemizedlist>
     <listitem>
      <para><link linkend="importing-mail-and-settings">Importing Your Old E-Mail</link></para>
-@@ -2356,7 +2361,7 @@
+@@ -2357,7 +2361,7 @@
      <mediaobject id="b1448dzl"><imageobject><imagedata format="PNG" fileref="figures/mail-threaded.png"/></imageobject></mediaobject>
      <para>In a thread of conversation view, each new message is stacked below of the ones that arrived before it, so that the newest message is always the one you see first. Whenever a new message arrives to an old thread as a reply, you will see it below the parent message. You always see the thread based on the date of the recent message received. The threads are sorted by the date of most recent message in the threads.</para>
      <tip>
@@ -493,7 +492,7 @@ svn revision 35707, fixes xml2po errors.
      </tip>
     </section>
  
-@@ -2507,7 +2512,7 @@
+@@ -2508,7 +2512,7 @@
      <mediaobject id="b13tarj6"><imageobject><imagedata format="PNG" fileref="figures/evo_flag_follow_up_a.png"/></imageobject></mediaobject>
      <para>The flag itself is the action you want to remind yourself about. Several are provided for you, such as Call, Forward, and Reply, but you can enter your own note or action if you want.</para>
      <para>After you have added a flag, you can mark it as complete or remove it entirely by right-clicking the message, then click either Flag Completed or Clear Flag.</para>
@@ -502,7 +501,7 @@ svn revision 35707, fixes xml2po errors.
      <para>Flags can help you organize your work in a number of ways. For example, you might add a Flag Status column to your message list and sort that way. Alternately, you could create a search folder that displays all your flagged messages, then clear the flags when you're done, so the search folder contains only messages with upcoming deadlines.</para>
      <formalpara id="b17s9rir">
       <title>Mark as Important Feature:</title>
-@@ -2525,7 +2530,7 @@
+@@ -2526,7 +2530,7 @@
     <para>If you want to create a new folder click New at the bottom left of the window. Specify the location and enter the label of the folder at the entry box appeared at the top. You can also move the messages from one folder to another by selecting the message and then press Move tab at the bottom right.</para>
     <para>If you create a filter with the filter assistant, you can have mail filed automatically. For that select Edit &gt; Message Filters to appear Message Filters window</para>
     <mediaobject id="b13tf6pl"><imageobject><imagedata format="PNG" fileref="figures/evo_message_filters_a.png"/></imageobject></mediaobject>
@@ -511,7 +510,7 @@ svn revision 35707, fixes xml2po errors.
     <note>
      <para>The Inbox folder on most IMAP servers cannot contain both subfolders and messages. When you create additional folders on your IMAP mail server, branch them from the root of the IMAP account's folder tree, not from the Inbox. If you create subfolders in your Inbox folder, you lose the ability to read messages that exist in your Inbox until you move the folders out of the way.</para>
     </note>
-@@ -2772,14 +2777,14 @@
+@@ -2773,14 +2777,14 @@
         <title>Specific Header:</title>
         <para>Any header including custom ones.</para>
        </formalpara>
@@ -529,7 +528,7 @@ svn revision 35707, fixes xml2po errors.
        </formalpara>
        <formalpara id="bshkbvl">
         <title>Date Sent:</title>
-@@ -2981,7 +2986,7 @@
+@@ -2982,7 +2986,7 @@
     <para>As messages that meet the search folder criteria arrive or are deleted, Evolution automatically adjusts the search folder contents. When you delete a message, it is erased from the folder in which it actually exists, as well as any search folders that display it.</para>
     <para>The Unmatched Search Folder is the opposite of other search folders: it displays all messages that do not appear in other search folders.</para>
     <para>If you use remote e-mail storage like IMAP or Microsoft Exchange, and have created search folders to search through them, the Unmatched Search Folder also searches the remote folders. If you do not create any search folders that search remote mail stores, the Unmatched Search Folder does not search in them either.</para>
@@ -538,7 +537,7 @@ svn revision 35707, fixes xml2po errors.
  
     <section id="vfolder-create">
      <title>Creating A Search Folder</title>
-@@ -3109,21 +3114,21 @@
+@@ -3110,21 +3114,21 @@
  
    <section id="usage-mail-organize-spam">
     <title>Stopping Junk Mail (Spam)</title>
@@ -564,7 +563,7 @@ svn revision 35707, fixes xml2po errors.
    <itemizedlist>
     <listitem>
      <para><link linkend="usage-contact-cards">Contacts and Cards</link></para>
-@@ -3168,7 +3173,7 @@
+@@ -3169,7 +3173,7 @@
      <para>Most of the items in the contact editor simply display the information you enter, but some of them have additional features:</para>
      <formalpara id="b13psuii">
       <title>Full Name:</title>
@@ -573,7 +572,7 @@ svn revision 35707, fixes xml2po errors.
      </formalpara>
      <formalpara id="b13psvf3">
       <title>Where:</title>
-@@ -3192,7 +3197,7 @@
+@@ -3193,7 +3197,7 @@
         <para>Click the down arrow key next to the New button in the toolbar</para>
        </listitem>
        <listitem id="b13prup2">
@@ -582,7 +581,7 @@ svn revision 35707, fixes xml2po errors.
        </listitem>
        <listitem id="b13prwao">
         <para>Enter the contact information to the entry boxes provided.</para>
-@@ -3431,7 +3436,7 @@
+@@ -3432,7 +3436,7 @@
     <section id="usage-contact-organize-group-list">
      <title>Creating a List of Contacts</title>
      <para>A contact list is a set of contacts with a single nickname that you create. When you send e-mail to the nickname, it is sent to every member of the list. This differs from a network mailing list in that it exists only on your computer as a convenience to you, rather than as an actual e-mail address managed by a mailing list application on a server.</para>
@@ -591,7 +590,7 @@ svn revision 35707, fixes xml2po errors.
      <para> To create a list of contacts:</para>
      <orderedlist>
       <listitem id="bshlf6r">
-@@ -3449,7 +3454,7 @@
+@@ -3450,7 +3454,7 @@
       </listitem>
       <listitem id="bshlfem">
        <para>Choose whether you want to hide the e-mail addresses when you send a message to the list.</para>
@@ -600,7 +599,7 @@ svn revision 35707, fixes xml2po errors.
       </listitem>
       <listitem id="bshlfgv">
        <para>When you are finished, click OK.</para>
-@@ -3462,7 +3467,7 @@
+@@ -3463,7 +3467,7 @@
  
     <section id="usage-contact-organize-group-category">
      <title>Grouping with Categories</title>
@@ -609,7 +608,7 @@ svn revision 35707, fixes xml2po errors.
      <para>To mark a card as belonging to a category,</para>
      <orderedlist>
       <listitem id="b13ptaog">
-@@ -3497,21 +3502,10 @@
+@@ -3498,21 +3502,10 @@
       <listitem id="b13ptgw7">
        <para>Press OK at the right bottom of the Contact Editor window.</para>
       </listitem>
@@ -634,7 +633,7 @@ svn revision 35707, fixes xml2po errors.
     </section>
    </section>
  
-@@ -3546,7 +3540,7 @@
+@@ -3547,7 +3540,7 @@
  
   <chapter id="usage-calendar">
    <title>Evolution Calendar</title>
@@ -643,7 +642,7 @@ svn revision 35707, fixes xml2po errors.
    <itemizedlist>
     <listitem>
      <para><link linkend="usage-calendar-view">Ways of Looking at your Calendar</link></para>
-@@ -3674,7 +3668,7 @@
+@@ -3675,7 +3668,7 @@
        <para>Edit the label from Name field.</para>
       </listitem>
       <listitem id="b13xyirm">
@@ -652,7 +651,7 @@ svn revision 35707, fixes xml2po errors.
       </listitem>
       <listitem id="b13xyj63">
        <para>Select the color and click OK.</para>
-@@ -3691,8 +3685,8 @@
+@@ -3692,8 +3685,8 @@
    
     <section id="b1a47igh">
      <title>Google Calendar </title>
@@ -663,7 +662,7 @@ svn revision 35707, fixes xml2po errors.
      <orderedlist>
       <listitem id="b1a47ou5">
        <para>Click New, then select Calendar to open the New Calendar dialog.</para>
-@@ -3703,18 +3697,18 @@
+@@ -3704,18 +3697,18 @@
        
       </listitem>
       <listitem id="b1a4aebo">
@@ -685,7 +684,7 @@ svn revision 35707, fixes xml2po errors.
          </formalpara>
         </listitem>
        </itemizedlist>
-@@ -3723,14 +3717,14 @@
+@@ -3724,14 +3717,14 @@
        <para>Set the time to automatically refresh the calendar. </para>
       </listitem>
       <listitem id="b1a4ak4r">
@@ -703,7 +702,7 @@ svn revision 35707, fixes xml2po errors.
       </listitem>
       <listitem id="b1a4awms">
        <para>Click OK to save your modifications.</para>
-@@ -3910,7 +3904,7 @@
+@@ -3911,7 +3904,7 @@
  
      <section id="bxmtbjb">
       <title>Classifications</title>
@@ -712,7 +711,7 @@ svn revision 35707, fixes xml2po errors.
       <para>If you are using a Novell GroupWise or Microsoft Exchange server, other people on the server can check your schedule to see if you are available at any given time. If you have an appointment that is flexible or that you want to designate as Free rather than Busy time, select the Free box in the Show Time As section. Normally, appointments display as Busy.</para>
       <para>You can categorize appointments in the same way you can categorize contacts.</para>
       <orderedlist>
-@@ -3933,7 +3927,7 @@
+@@ -3934,7 +3927,7 @@
  
      <section id="bxmtcp3">
       <title>Recurrence</title>
@@ -721,7 +720,7 @@ svn revision 35707, fixes xml2po errors.
       <para>After you have finished settings, click the disk icon in the toolbar to save and close the appointment editor window. If you want, you can alter an appointment summary in the calendar view by clicking it and typing. You can change other settings by right-clicking the appointment then choosing Open, or double-clicking the appointment.</para>
      </section>
     </section>
-@@ -3941,7 +3935,7 @@
+@@ -3942,7 +3935,7 @@
     <section id="usage-calendar-rsvp">
      <title>Sending a Meeting Invitation</title>
      <para>A meeting is an event you schedule for multiple people. Evolution can be used to schedule group meetings and help you manage responses to meeting requests.</para>
@@ -730,7 +729,7 @@ svn revision 35707, fixes xml2po errors.
      <para>If you don't need to collect attendance information when you're scheduling an event, and would rather just announce the event, right-click the meeting and select Forward as iCalendar. This opens a new e-mail message with the event notification attached as an announcement. Recipients can add the event to their calendars with one click, but it won't automatically send you e-mail about whether they plan to attend.</para>
      <para>To schedule a meeting:</para>
      <orderedlist>
-@@ -4116,13 +4110,14 @@
+@@ -4117,13 +4110,14 @@
  
    <section id="CHDJAEFJ">
     <title>Searching for Calendar Items</title>
@@ -747,7 +746,7 @@ svn revision 35707, fixes xml2po errors.
      </listitem>
      <listitem id="b131n2au">
       <para>Select the search type:</para>
-@@ -4144,15 +4139,14 @@
+@@ -4145,15 +4139,14 @@
     </orderedlist>
     <formalpara id="b17qbhpu">
      <title>Advanced Search:</title>
@@ -765,7 +764,7 @@ svn revision 35707, fixes xml2po errors.
       <para>Search name field displays the search type you have selected.</para>
       <mediaobject id="b17qbkiq"><imageobject><imagedata format="PNG" fileref="figures/evo_cal_advsearch.png"/></imageobject></mediaobject>
       
-@@ -4161,7 +4155,7 @@
+@@ -4162,7 +4155,7 @@
       <para>Click Add to add rules.</para>
      </listitem>
      <listitem id="b17qcpti">
@@ -774,7 +773,7 @@ svn revision 35707, fixes xml2po errors.
      </listitem>
      <listitem id="b17qcr6c">
       <para>Click OK.</para>
-@@ -4172,9 +4166,8 @@
+@@ -4173,9 +4166,8 @@
     </orderedlist>
     <formalpara id="b131n58d">
      <title>Quick Search:</title>
@@ -785,7 +784,7 @@ svn revision 35707, fixes xml2po errors.
     <orderedlist>
      <listitem id="b131n6zv">
       <para>Click the Show drop-down list.</para>
-@@ -4260,7 +4253,7 @@
+@@ -4261,7 +4253,7 @@
       </itemizedlist>
      </listitem>
     </orderedlist>
@@ -794,7 +793,7 @@ svn revision 35707, fixes xml2po errors.
    </section>
  
    <section id="CHDFEJGG">
-@@ -4297,7 +4290,7 @@
+@@ -4298,7 +4290,7 @@
     <title>Multiple Calendars, Web Calendars, and CalDAV</title>
     <para>To create a new calendar, click File &gt; New &gt; Calendar. If the calendar is one you plan to store locally, you need only provide a name and color. If it is a remote calendar, specify the name, color, URL, and a refresh frequency. The refresh frequency determines how often Evolution checks to see if the calendar has changed. If you are working with someone who publishes an online calendar, you might want to check for updates every thirty minutes. On the other hand, if you have displayed a sports team schedule in your calendar, you might not need to refresh it more than once a week.</para>
     <para>The <ulink url="http://icalshare.com">icalshare.com Web site</ulink> has an extensive list of shared online calendars, including national and religious holidays, phases of the moon, sports, and local and regional events.</para>
@@ -803,7 +802,7 @@ svn revision 35707, fixes xml2po errors.
    </section>
  
    <section id="usage-calendar-todo">
-@@ -4383,7 +4376,7 @@
+@@ -4384,7 +4376,7 @@
     <section id="b1012vcx">
      <title>Assigned Tasks</title>
      <para>Evolution can be used to assign a task to multiple people.</para>
@@ -812,7 +811,7 @@ svn revision 35707, fixes xml2po errors.
      <para>To assign a new task:</para>
      <orderedlist>
       <listitem id="b1012vcy">
-@@ -4432,10 +4425,10 @@
+@@ -4433,10 +4425,10 @@
     </section>
  
     <section id="b17qcv9q">
@@ -825,7 +824,7 @@ svn revision 35707, fixes xml2po errors.
      </formalpara>
      <orderedlist>
       <listitem id="b17qcy7p">
-@@ -4461,12 +4454,11 @@
+@@ -4462,12 +4454,11 @@
      </orderedlist>
      <formalpara id="b17qczaw">
       <title>Advanced Search:</title>
@@ -840,7 +839,7 @@ svn revision 35707, fixes xml2po errors.
        <para>Search name field displays the search type you have selected.</para>
        <mediaobject id="b17qcztn"><imageobject><imagedata format="PNG" fileref="figures/evo_cal_advsearch.png"/></imageobject></mediaobject>
        
-@@ -4475,45 +4467,45 @@
+@@ -4476,45 +4467,45 @@
        <para>Click Add to add rules.</para>
       </listitem>
       <listitem id="b17qd0b1">
@@ -896,7 +895,7 @@ svn revision 35707, fixes xml2po errors.
      </formalpara>
      <para>To perform quick search,</para>
      <orderedlist>
-@@ -4634,7 +4626,7 @@
+@@ -4635,7 +4626,7 @@
       <para>Type text for the memo in the Summary field.</para>
      </listitem>
      <listitem id="b15ilfa0">
@@ -905,7 +904,7 @@ svn revision 35707, fixes xml2po errors.
      </listitem>
      <listitem id="b15ilpb6">
       <para>Type text for the memo in the Memo Content field.</para>
-@@ -4650,7 +4642,7 @@
+@@ -4651,7 +4642,7 @@
     </orderedlist>
  
     <section id="b1012vdk">
@@ -914,7 +913,7 @@ svn revision 35707, fixes xml2po errors.
      <para>As with calendars and tasks, you can create multiple memo lists. Each memo list is assigned a color, and you can use the Memos switcher to hide and show memos.</para>
      <para>To create a new memo list: </para>
      <orderedlist>
-@@ -4667,10 +4659,11 @@
+@@ -4668,10 +4659,11 @@
     </section>
  
     <section id="b17qeph9">
@@ -928,7 +927,7 @@ svn revision 35707, fixes xml2po errors.
      </formalpara>
      <orderedlist>
       <listitem id="b17qers6">
-@@ -4696,15 +4689,14 @@
+@@ -4697,15 +4689,14 @@
      </orderedlist>
      <formalpara id="b17qesf9">
       <title>Advanced Search:</title>
@@ -946,7 +945,7 @@ svn revision 35707, fixes xml2po errors.
        <para>Search name field displays the search type you have selected.</para>
        <mediaobject id="b17qewa3"><imageobject><imagedata format="PNG" fileref="figures/evo_cal_advsearch.png"/></imageobject></mediaobject>
        
-@@ -4713,7 +4705,7 @@
+@@ -4714,7 +4705,7 @@
        <para>Click Add to add rules. </para>
       </listitem>
       <listitem id="b17qewzp">
@@ -955,7 +954,7 @@ svn revision 35707, fixes xml2po errors.
       </listitem>
       <listitem id="b17qexap">
        <para>Click OK.</para>
-@@ -4724,9 +4716,8 @@
+@@ -4725,9 +4716,8 @@
      </orderedlist>
      <formalpara id="b17qeyur">
       <title>Quick Search: </title>
@@ -966,7 +965,7 @@ svn revision 35707, fixes xml2po errors.
      <orderedlist>
       <listitem id="b17qezgk">
        <para>Click the Show drop-down list.</para>
-@@ -4836,7 +4827,7 @@
+@@ -4837,7 +4827,7 @@
  
   <chapter id="usage-exchange">
    <title>Connecting to Exchange Servers</title>
@@ -975,7 +974,7 @@ svn revision 35707, fixes xml2po errors.
    <itemizedlist>
     <listitem>
      <para><link linkend="features">Evolution Exchange Features</link></para>
-@@ -4897,13 +4888,13 @@
+@@ -4898,13 +4888,13 @@
        <listitem>
         <formalpara id="b10fqiuh">
          <title>Sending E-mail via Exchange Protocols:</title>
@@ -991,7 +990,7 @@ svn revision 35707, fixes xml2po errors.
         </formalpara>
        </listitem>
        <listitem>
-@@ -4992,6 +4983,7 @@
+@@ -4993,6 +4983,7 @@
        <para>You are permitted to access the account with WebDAV. This is the default setting for the Exchange server, so unless your system administrator has specifically turned it off, no changes should be necessary.</para>
       </listitem>
      </itemizedlist>
@@ -999,7 +998,7 @@ svn revision 35707, fixes xml2po errors.
     </section>
  
     <section id="config-client">
-@@ -5136,7 +5128,7 @@
+@@ -5137,7 +5128,7 @@
  
    <section id="exchange-settings">
     <title>Settings Exclusive to Evolution Exchange</title>
@@ -1008,7 +1007,7 @@ svn revision 35707, fixes xml2po errors.
     <mediaobject id="bs4aw7m"><imageobject><imagedata format="PNG" fileref="figures/exchng-settings.png"/></imageobject></mediaobject>
     <itemizedlist>
      <listitem>
-@@ -5205,7 +5197,7 @@
+@@ -5206,7 +5197,7 @@
           <warning>
            <para>You are not permitted to send a message on behalf of more than one person at a time.</para>
           </warning>
@@ -1017,7 +1016,7 @@ svn revision 35707, fixes xml2po errors.
          </listitem>
         </orderedlist>
        </listitem>
-@@ -5224,10 +5216,9 @@
+@@ -5225,10 +5216,9 @@
      <section id="b17reixo">
       <title>Delegating Calendar Items</title>
       <para>You can send Meetings or Appointments on behalf of someone else if you have subscribed to his or her Calendar.</para>
@@ -1029,7 +1028,7 @@ svn revision 35707, fixes xml2po errors.
        </listitem>
        <listitem id="b17rekzs">
         <para>Open a new Meeting composer window.</para>
-@@ -5236,9 +5227,8 @@
+@@ -5237,9 +5227,8 @@
         <para>Add the recipients. </para>
        </listitem>
        <listitem id="b17renoo">
@@ -1041,7 +1040,7 @@ svn revision 35707, fixes xml2po errors.
        </listitem>
       </orderedlist>
      </section>
-@@ -5256,7 +5246,7 @@
+@@ -5257,7 +5246,7 @@
         <para>Click Edit &gt; Preferences or press Shift+Ctrl+S, then click the Exchange Settings tab.</para>
        </listitem>
        <listitem id="b17qx94g">
@@ -1050,7 +1049,7 @@ svn revision 35707, fixes xml2po errors.
         <mediaobject id="bxorvbh"><imageobject><imagedata format="PNG" fileref="figures/delgt-add.png"/></imageobject></mediaobject>
         
        </listitem>
-@@ -5265,7 +5255,7 @@
+@@ -5266,7 +5255,7 @@
         <para>Remember that the Global Address List (GAL) appears empty until you have searched for something in it.</para>
        </listitem>
        <listitem id="b17qxknb">
@@ -1059,7 +1058,7 @@ svn revision 35707, fixes xml2po errors.
         <mediaobject id="b17qxmcm"><imageobject><imagedata format="PNG" fileref="figures/evo_delegate_permission_a.png"/></imageobject></mediaobject>
         
        </listitem>
-@@ -5292,7 +5282,7 @@
+@@ -5293,7 +5282,7 @@
         <para>Click OK.</para>
        </listitem>
       </orderedlist>
@@ -1068,7 +1067,7 @@ svn revision 35707, fixes xml2po errors.
      </section>
  
      <section id="exchange-delegated-to-you">
-@@ -5300,7 +5290,7 @@
+@@ -5301,7 +5290,7 @@
       <para>To access the folders delegated to you:</para>
       <orderedlist>
        <listitem id="bshok43">
@@ -1077,7 +1076,7 @@ svn revision 35707, fixes xml2po errors.
         <mediaobject id="bxorvbj"><imageobject><imagedata format="PNG" fileref="figures/sub-others-folder.png"/></imageobject></mediaobject>
         
        </listitem>
-@@ -5346,7 +5336,7 @@
+@@ -5347,7 +5336,7 @@
  
     <section id="b13pnzby">
      <title>Reminders</title>
@@ -1086,7 +1085,7 @@ svn revision 35707, fixes xml2po errors.
     </section>
  
     <section id="exchange-out-of-office">
-@@ -5431,13 +5421,13 @@
+@@ -5432,13 +5421,13 @@
       <para>Click Options &gt; Update Free/Busy to check participant schedules and, if possible, update the meeting in all participants' calendars</para>
      </listitem>
     </orderedlist>
@@ -1102,7 +1101,7 @@ svn revision 35707, fixes xml2po errors.
    <itemizedlist>
     <listitem>
      <para><link linkend="bv7wchf">GroupWise Features</link></para>
-@@ -5473,7 +5463,7 @@
+@@ -5474,7 +5463,7 @@
         <para>Viewing mail and folders stored on the GroupWise system.</para>
        </listitem>
        <listitem>
@@ -1111,7 +1110,7 @@ svn revision 35707, fixes xml2po errors.
        </listitem>
        <listitem>
         <para>Converting mail to a task or meeting.</para>
-@@ -5507,7 +5497,7 @@
+@@ -5508,7 +5497,7 @@
         <para>Address Completion is supported for your GroupWise address books, including the System address book, the Frequent Contacts address book, and your personal address book.</para>
        </listitem>
        <listitem>
@@ -1120,7 +1119,7 @@ svn revision 35707, fixes xml2po errors.
        </listitem>
        <listitem>
         <para>To create your GroupWise Frequent contacts and Personal address books, you need to access your GroupWise account once through GroupWise Java client because Evolution currently does not support creating them.The GroupWise system address book is marked for offline use by default.This boosts performance.</para>
-@@ -5518,7 +5508,7 @@
+@@ -5519,7 +5508,7 @@
       <para>Reminder Note</para>
       <itemizedlist>
        <listitem>
@@ -1129,7 +1128,7 @@ svn revision 35707, fixes xml2po errors.
        </listitem>
       </itemizedlist>
      </listitem>
-@@ -5606,7 +5596,7 @@
+@@ -5607,7 +5596,7 @@
          <para>Phone Message</para>
         </entry>
         <entry colname="2">
@@ -1138,7 +1137,7 @@ svn revision 35707, fixes xml2po errors.
         </entry>
        </row>
        <row id="bv3rldo">
-@@ -5768,8 +5758,11 @@
+@@ -5769,8 +5758,11 @@
     <para>Reminders for appointments in your GroupWise calendar do not work until you have run Evolution at least once after logging in. This is different from locally stored reminders, which work from the moment you log in, regardless of whether you have run Evolution in the session.</para>
     <orderedlist>
      <listitem id="bv7wal9">
@@ -1151,7 +1150,7 @@ svn revision 35707, fixes xml2po errors.
      <listitem id="bv7wato">
       <para>Add attendees, either by entering their e-mail addresses into the list, or by clicking the Invite Others button.</para>
      </listitem>
-@@ -5777,7 +5770,7 @@
+@@ -5778,7 +5770,7 @@
       <para>Click Options, then click Update Free/Busy to check participant schedules and, if possible, update the meeting in all participants' calendars.</para>
      </listitem>
     </orderedlist>
@@ -1160,7 +1159,7 @@ svn revision 35707, fixes xml2po errors.
    </section>
  
    <section id="Aaej55l">
-@@ -5808,11 +5801,11 @@
+@@ -5809,11 +5801,11 @@
      <para>Evolution provides several ways for you to confirm that your item was delivered. You can easily track message status of any message you have sent. For example, you can see when an e-mail was delivered and when the recipient opened or deleted the e-mail.</para>
      <formalpara id="b17sa0q2">
       <title>Track an Item You Sent:</title>
@@ -1174,7 +1173,7 @@ svn revision 35707, fixes xml2po errors.
      </formalpara>
      <formalpara id="b17sa1iu">
       <title>Request a Reply:</title>
-@@ -5820,9 +5813,7 @@
+@@ -5821,9 +5813,7 @@
      </formalpara>
  
      <section id="b17qstbk">
@@ -1185,7 +1184,7 @@ svn revision 35707, fixes xml2po errors.
       <orderedlist>
        <listitem id="b17qt8ih">
         <para>In the Compose Message window, click Insert &gt; Send Options &gt; Status Tracking</para>
-@@ -5838,13 +5829,10 @@
+@@ -5839,13 +5829,10 @@
         <para>For more information, see <link linkend="Aal54a9">Checking the Status of an Item You Have Sent</link>.</para>
        </listitem>
        <listitem id="b17qtcil">
@@ -1201,7 +1200,7 @@ svn revision 35707, fixes xml2po errors.
        </listitem>
        <listitem id="b17qtf00">
         <para>Click OK.</para>
-@@ -5857,7 +5845,7 @@
+@@ -5858,7 +5845,7 @@
       <orderedlist>
        <listitem id="Aaezj33">
         <para>Right-click an e-mail in your Sent folder, then click Track Message Status.</para>
@@ -1210,7 +1209,7 @@ svn revision 35707, fixes xml2po errors.
        </listitem>
       </orderedlist>
      </section>
-@@ -5885,49 +5873,43 @@
+@@ -5886,49 +5873,43 @@
       <listitem id="Ak05z6c">
        <para>In the Compose Message window, click Insert &gt; Send Options.</para>
        <mediaobject id="Ak06ek0"><imageobject><imagedata format="PNG" fileref="figures/evo_sendstatus_a.png"/></imageobject></mediaobject>
@@ -1264,7 +1263,7 @@ svn revision 35707, fixes xml2po errors.
     <section id="bxjm31g">
      <title>Delegating an Item</title>
      <orderedlist>
-@@ -5944,13 +5926,11 @@
+@@ -5945,13 +5926,11 @@
      <para>Each contact gets a copy of the appointment or meeting.</para>
  
      <section id="b17rea9d">
@@ -1279,7 +1278,7 @@ svn revision 35707, fixes xml2po errors.
        </listitem>
        <listitem id="b17recrx">
         <para>Select the check box next to Create a sent item to track information.</para>
-@@ -5960,13 +5940,10 @@
+@@ -5961,13 +5940,10 @@
         <para>Based on this selection, you can view the status of the send message in the Sent Items folder.</para>
        </listitem>
        <listitem id="b17red21">
@@ -1295,7 +1294,7 @@ svn revision 35707, fixes xml2po errors.
        </listitem>
        <listitem id="b17redc7">
         <para>Click OK.</para>
-@@ -5975,7 +5952,7 @@
+@@ -5976,7 +5952,7 @@
      </section>
     </section>
    </section>
@@ -1304,7 +1303,7 @@ svn revision 35707, fixes xml2po errors.
    <section id="Aai4ois">
     <title>Giving Other People Access to Your Mailbox or Calendar</title>
     <para>Use Proxy to manage another user's Mailbox and Calendar. Proxy lets you perform various actions, such as reading, accepting, and declining items on behalf of another user, within the restrictions the other user sets.</para>
-@@ -6016,10 +5993,10 @@
+@@ -6017,10 +5993,10 @@
        <thead valign="top">
         <row id="b10fqugl">
          <entry colname="1">
@@ -1317,7 +1316,7 @@ svn revision 35707, fixes xml2po errors.
          </entry>
         </row>
        </thead>
-@@ -6172,7 +6149,7 @@
+@@ -6173,7 +6149,7 @@
      <orderedlist>
       <listitem id="bxqwgji">
        <para>Select the message to mark as junk, then click the Junk icon or press Ctrl+J.</para>
@@ -1326,7 +1325,7 @@ svn revision 35707, fixes xml2po errors.
       </listitem>
      </orderedlist>
     </section>
-@@ -6240,7 +6217,7 @@
+@@ -6241,7 +6217,7 @@
  
   <chapter id="b1012tkg">
    <title>Connecting to Hula</title>
@@ -1335,7 +1334,7 @@ svn revision 35707, fixes xml2po errors.
    <para>To add your Hula account to Evolution, you must create a new Hula account by performing the following steps:</para>
    <orderedlist>
     <listitem id="b10at9kq">
-@@ -6257,7 +6234,7 @@
+@@ -6258,7 +6234,7 @@
  
   <chapter id="config-prefs">
    <title>Advanced Configuration</title>
@@ -1344,7 +1343,7 @@ svn revision 35707, fixes xml2po errors.
    <itemizedlist>
     <listitem>
      <para><link linkend="config-prefs-mail-identity">Working with Mail Accounts</link></para>
-@@ -6301,7 +6278,7 @@
+@@ -6302,7 +6278,7 @@
    </formalpara>
    <formalpara id="b17sa85j">
     <title>Composer Preferences:</title>
@@ -1353,7 +1352,7 @@ svn revision 35707, fixes xml2po errors.
    </formalpara>
    <formalpara id="b17sa8cq">
     <title>Calendar and Tasks:</title>
-@@ -6316,7 +6293,7 @@
+@@ -6317,7 +6293,7 @@
    <section id="config-prefs-mail-identity">
     <title>Working with Mail Accounts</title>
     <para>Evolution allows you to maintain multiple accounts, or identities. When you are writing an e-mail message, you can choose which account to use by selecting from the drop-down list next to the From field in the message composer.</para>
@@ -1362,7 +1361,7 @@ svn revision 35707, fixes xml2po errors.
     <para>To add a new account, click Add to open the Evolution configuration assistant. To alter an existing account, select it in the Preferences window, then click Edit to open the account editor dialog box.</para>
     <para>The account editor dialog box has seven sections:</para>
     <formalpara id="bsbhdwn">
-@@ -6325,7 +6302,7 @@
+@@ -6326,7 +6302,7 @@
     </formalpara>
     <formalpara id="bsbhe10">
      <title>Receiving Email:</title>
@@ -1371,7 +1370,7 @@ svn revision 35707, fixes xml2po errors.
     </formalpara>
     <para>Your system administrator might ask you to connect to a specific port on a mail server. To specify which port you use, just type a colon and the port number after the server name. For example, to connect to port 143 on the server smtp.example.com, specify smtp.example.com:143 as the server name.</para>
     <para>For additional information, see <link linkend="second-step">Receiving Mail</link>.</para>
-@@ -6363,7 +6340,7 @@
+@@ -6364,7 +6340,7 @@
  
    <section id="b15fx7uz">
     <title>IMAP Mail Headers</title>
@@ -1380,7 +1379,7 @@ svn revision 35707, fixes xml2po errors.
     <formalpara id="b15fzvdp">
      <title>All Headers:</title>
      <para>This include all the available IMAP Mail headers. By choosing this option, Evolution will download all the Headers for all the messages.</para>
-@@ -6429,7 +6406,7 @@
+@@ -6430,7 +6406,7 @@
       <para><link linkend="mail-prefs-html">HTML Mail Preferences</link></para>
      </listitem>
      <listitem>
@@ -1389,7 +1388,7 @@ svn revision 35707, fixes xml2po errors.
      </listitem>
      <listitem>
       <para><link linkend="mail-prefs-headers">Mail Header Preferences</link></para>
-@@ -6455,7 +6432,7 @@
+@@ -6456,7 +6432,7 @@
      </formalpara>
      <formalpara id="bsbho3f">
       <title>Message Display:</title>
@@ -1398,7 +1397,7 @@ svn revision 35707, fixes xml2po errors.
      </formalpara>
      <para>To group the messages as threads select View &gt; Group By threads or press Ctrl +T.</para>
      <formalpara id="bsbhq3y">
-@@ -6464,7 +6441,7 @@
+@@ -6465,7 +6441,7 @@
      </formalpara>
      <formalpara id="bsbhq7t">
       <title>New Mail Notifications:</title>
@@ -1407,7 +1406,7 @@ svn revision 35707, fixes xml2po errors.
      </formalpara>
     </section>
  
-@@ -6481,21 +6458,19 @@
+@@ -6482,21 +6458,19 @@
      </formalpara>
      <formalpara id="bsbhr9p">
       <title>Loading Images:</title>
@@ -1433,7 +1432,7 @@ svn revision 35707, fixes xml2po errors.
       </listitem>
       <listitem id="b1a58pyg">
        <para>Click the color tab and select a color, then click OK.</para>
-@@ -6510,7 +6485,7 @@
+@@ -6511,7 +6485,7 @@
        <para>Edit name and color, then click OK.</para>
       </listitem>
      </orderedlist>
@@ -1442,7 +1441,7 @@ svn revision 35707, fixes xml2po errors.
      <orderedlist>
       <listitem id="b1a58ynk">
        <para>Right-click the message from the message preview.</para>
-@@ -6530,25 +6505,25 @@
+@@ -6531,25 +6505,25 @@
       <para>This feature adds support for viewing the photograph of the sender at the right side of the preview pane.</para>
      </formalpara>
      <para>To enable this feature, select Edit &gt; Preferences &gt; Mail Preferences &gt; Headers &gt; Show the photograph of sender in the email preview. Deselect this option to disable this feature.</para>
@@ -1473,7 +1472,7 @@ svn revision 35707, fixes xml2po errors.
      </formalpara>
      <formalpara id="bsaz9zd">
       <title>Checking Incoming Mail for Junk:</title>
-@@ -6556,21 +6531,21 @@
+@@ -6557,21 +6531,21 @@
      </formalpara>
      <formalpara id="b17xmakf">
       <title>Delete junk mails on exit:</title>
@@ -1500,7 +1499,7 @@ svn revision 35707, fixes xml2po errors.
      </formalpara>
      <note>
       <para>Check new messages for junk contents option under Edit &gt; Preferences &gt; Mail Accounts &gt; Edit &gt; Receiving option is enabled only for IMAP. Check incoming mail for junk option under Edit &gt; Prefernces &gt; Mail Preferences &gt; Junk &gt; General refers only to POP and Local Delivery.</para>
-@@ -6643,7 +6618,7 @@
+@@ -6644,7 +6618,7 @@
  
     <section id="bshpjuj">
      <title>Spell Checking</title>
@@ -1509,7 +1508,7 @@ svn revision 35707, fixes xml2po errors.
     </section>
    </section>
  
-@@ -6901,10 +6876,10 @@
+@@ -6902,10 +6876,10 @@
    
    <section id="b1a4ol61">
     <title>Debug Logs</title>
@@ -1522,7 +1521,7 @@ svn revision 35707, fixes xml2po errors.
       <mediaobject id="b1a4or91"><imageobject><imagedata format="PNG" fileref="figures/evo_debuglogs_a.png"/></imageobject></mediaobject>
      </listitem>
      <listitem id="b1a4orv0">
-@@ -6913,14 +6888,14 @@
+@@ -6914,14 +6888,14 @@
      </listitem>
     </orderedlist>
     <note>
@@ -1539,7 +1538,7 @@ svn revision 35707, fixes xml2po errors.
    <itemizedlist>
     <listitem>
      <para><link linkend="bshq58g">Enabling Synchronization</link></para>
-@@ -6977,7 +6952,7 @@
+@@ -6978,7 +6952,7 @@
  
   <appendix id="outlook-migration">
    <title>Migration from Outlook to Evolution</title>
@@ -1548,7 +1547,7 @@ svn revision 35707, fixes xml2po errors.
  
    <section id="outlook-migration-mail">
     <title>Migrating Local Outlook Mail Folders</title>
-@@ -7039,7 +7014,7 @@
+@@ -7040,7 +7014,7 @@
  
   <appendix id="menuref">
    <title>Quick Reference</title>
@@ -1557,7 +1556,7 @@ svn revision 35707, fixes xml2po errors.
    <itemizedlist>
     <listitem>
      <para><link linkend="quickref-open">Opening or Creating Items</link></para>
-@@ -7153,13 +7128,13 @@
+@@ -7154,13 +7128,13 @@
  
   <appendix id="bugs">
    <title>Known Bugs and Limitations</title>
@@ -1573,7 +1572,7 @@ svn revision 35707, fixes xml2po errors.
    <para>The Evolution code owes a great debt to the GNOME-pim and GNOME-Calendar applications, and to KHTMLW. The developers of Evolution acknowledge the efforts and contributions of all who worked on those projects.</para>
    <para>For more information please visit the Evolution <ulink url="http://www.novell.com/products/desktop/features/evolution.html">Web page</ulink>. Please send all comments, suggestions, and bug reports to the <ulink url="http://bugzilla.gnome.com">bug tracking database</ulink>. Instructions for submitting bug reports can be found on-line at the same location. You can also use the GNOME bug report tool, bug-buddy, to submit your defect reports.</para>
    <para>This manual was written by:</para>
-@@ -7218,7 +7193,7 @@
+@@ -7219,7 +7193,7 @@
  
   <glossary id="apx-gloss">
    <title>Glossary</title>
@@ -1582,7 +1581,7 @@ svn revision 35707, fixes xml2po errors.
    <glossentry id="assistant">
     <glossterm>Assistant</glossterm>
     <glossdef>
-@@ -7354,7 +7329,7 @@
+@@ -7355,7 +7329,7 @@
    <glossentry id="regular-expression">
     <glossterm>regular expression</glossterm>
     <glossdef>
@@ -1591,7 +1590,7 @@ svn revision 35707, fixes xml2po errors.
     </glossdef>
    </glossentry>
    <glossentry id="script">
-@@ -7435,7 +7410,7 @@
+@@ -7436,7 +7410,7 @@
      <member>You may not use, export, or re-export this product in violation of any applicable laws or regulations including, without limitation, U.S. export regulations or the laws of the country in which you reside.</member>
     </simplelist>
     <simplelist>

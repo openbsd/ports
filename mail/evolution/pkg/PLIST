@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2008/07/08 11:16:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2008/08/21 22:50:21 jasper Exp $
 %%SHARED%%
 @bin bin/evolution
 include/evolution-${R}/
@@ -261,6 +261,8 @@ lib/evolution/${R}/libetext.a
 lib/evolution/${R}/libetext.la
 lib/evolution/${R}/libetimezonedialog.a
 lib/evolution/${R}/libetimezonedialog.la
+lib/evolution/${R}/libeutil.a
+lib/evolution/${R}/libeutil.la
 lib/evolution/${R}/libevolution-a11y.a
 lib/evolution/${R}/libevolution-a11y.la
 lib/evolution/${R}/libevolution-addressbook-a11y.a
