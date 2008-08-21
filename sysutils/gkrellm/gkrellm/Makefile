@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2008/07/01 10:17:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2008/08/21 07:23:44 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,8 +7,8 @@ COMMENT-client=	single process stack of system monitors for GTK+2
 
 V=		2.3.1
 DISTNAME=	gkrellm-${V}
-PKGNAME-main=	gkrellm-server-${V}p1
-PKGNAME-client=	gkrellm-${V}p2
+PKGNAME-main=	gkrellm-server-${V}p2
+PKGNAME-client=	gkrellm-${V}p3
 CATEGORIES=	sysutils sysutils/gkrellm
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -56,7 +56,19 @@ INSTALL_TARGET=	install_openbsd
 
 MAKE_ENV+=	without_gnutls=yes
 
+# not all powerpc support apm(4), hence the use of ${MACHINE} and macppc
+# (patches/patch-src_sysdeps_openbsd_c)
+.if ${MACHINE} == "macppc"
+CFLAGS+=	-D__macppc__
+.endif
+
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/server/gkrellmd.h
+	${SUBST_CMD} ${WRKSRC}/server/gkrellmd.h \
+		${WRKSRC}/gkrellm.1 ${WRKSRC}/gkrellmd.1
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gkrellm-server
+	${INSTALL_DATA} ${WRKSRC}/server/gkrellmd.conf \
+		${PREFIX}/share/examples/gkrellm-server
 
 .include <bsd.port.mk>

@@ -1,18 +1,22 @@
-$OpenBSD: patch-server_gkrellmd_h,v 1.5 2008/07/01 10:17:35 ajacoutot Exp $
---- server/gkrellmd.h.orig	Thu Jul 19 23:22:16 2007
-+++ server/gkrellmd.h	Fri Oct 26 15:52:38 2007
-@@ -110,9 +110,11 @@ GKRELLMD_VERSION_REV >= (rev)))
+$OpenBSD: patch-server_gkrellmd_h,v 1.6 2008/08/21 07:23:44 ajacoutot Exp $
+--- server/gkrellmd.h.orig	Tue Jul 29 09:59:22 2008
++++ server/gkrellmd.h	Tue Jul 29 10:00:52 2008
+@@ -104,14 +104,14 @@ GKRELLMD_VERSION_REV >= (rev)))
+ #define GKRELLMD_CONFIG     "gkrellmd.conf"
+ 
+ #define GKRELLMD_PLUGINS_DIR		".gkrellm2/plugins-gkrellmd"
+-#define GKRELLMD_LOCAL_PLUGINS_DIR	"/usr/local/lib/gkrellm2/plugins-gkrellmd"
++#define GKRELLMD_LOCAL_PLUGINS_DIR	"${PREFIX}/lib/gkrellm2/plugins-gkrellmd"
+ #if !defined(GKRELLMD_SYSTEM_PLUGINS_DIR)
+-#define GKRELLMD_SYSTEM_PLUGINS_DIR	"/usr/lib/gkrellm2/plugins-gkrellmd"
++#define GKRELLMD_SYSTEM_PLUGINS_DIR	"${PREFIX}/lib/gkrellm2/plugins-gkrellmd"
  #endif
  
  #if !defined(WIN32)
 -#define	GKRELLMD_SYS_ETC	"/etc"
 -#define GKRELLMD_LOCAL_ETC	"/usr/local/etc"
--#endif
-+#if !defined(GKRELLMD_SYS_ETC)
 +#define	GKRELLMD_SYS_ETC	"${SYSCONFDIR}"
-+#endif /* GKRELLMD_SYS_ETC */
 +#define GKRELLMD_LOCAL_ETC	"${SYSCONFDIR}"
-+#endif /* WIN32 */
+ #endif
  
  
- typedef struct _GkrellmdClient

@@ -1,0 +1,20 @@
+$OpenBSD: patch-server_gkrellmd_conf,v 1.1 2008/08/21 07:23:44 ajacoutot Exp $
+--- server/gkrellmd.conf.orig	Tue Jul 29 10:02:02 2008
++++ server/gkrellmd.conf	Tue Jul 29 10:05:18 2008
+@@ -29,14 +29,14 @@ port 19150
+ 
+ # Drop privileges after startup (you must start gkrellmd as root to do it).
+ #
+-#user	nobody
++user	_gkrellmd
+ #group	proc
+ 
+ # Create a PID file for the running gkrellmd.  Default is no PID file.
+ #pidfile /var/run/gkrellmd.pid
+ 
+ # Run in background and detach from the controlling terminal
+-#detach
++detach
+ 
+ # Time interval between checks for various monitors.  If nfs-interval
+ # is <= 0 then gkrellmd will not read data for nfs file system types.

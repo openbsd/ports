@@ -1,9 +1,16 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 20:12:10 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/08/21 07:23:44 ajacoutot Exp $
 @pkgpath sysutils/gkrellm/gkrellm
 @pkgpath sysutils/gkrellm/gkrellm,no_client
+@newgroup _gkrellmd:607
+@newuser _gkrellmd:607:_gkrellmd::GKrellM Daemon:/var/empty:/sbin/nologin
 include/gkrellm2/
 include/gkrellm2/gkrellmd.h
 @man man/man1/gkrellmd.1
 @mode 2755
 @group kmem
 sbin/gkrellmd
+@mode
+@group
+share/examples/gkrellm-server/
+share/examples/gkrellm-server/gkrellmd.conf
+@sample ${SYSCONFDIR}/gkrellmd.conf

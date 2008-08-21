@@ -1,0 +1,75 @@
+$OpenBSD: patch-gkrellm_1,v 1.1 2008/08/21 07:23:44 ajacoutot Exp $
+--- gkrellm.1.orig	Tue Jul 29 10:10:38 2008
++++ gkrellm.1	Tue Jul 29 10:12:27 2008
+@@ -758,7 +758,7 @@ any correction factors and offsets for each of the sen
+ (see below and lm_sensor documentation).  For Linux, default values are
+ automatically provided for many sensor chips.
+ .PP
+-But if using libsenors, it is not possible to enter correction factors and
++But if using libsensors, it is not possible to enter correction factors and
+ offsets on the Sensors config page because libsensors configuration is
+ done in the /etc/sensors.conf file.  To get sensor debug output and to find
+ out the sensor data source, run:
+@@ -1088,8 +1088,7 @@ several locations:
+ .RS
+ .nf
+ ~/.gkrellm2/themes
+-/usr/local/share/gkrellm2/themes
+-/usr/share/gkrellm2/themes
++${PREFIX}/share/gkrellm2/themes
+ .fi
+ .RE
+ .PP
+@@ -1100,7 +1099,7 @@ theme may also be installed as:
+ .RS
+ .nf
+ ~/.themes/THEME_NAME/gkrellm2
+-/usr/share/themes/THEME_NAME/gkrellm2
++${PREFIX}/share/themes/THEME_NAME/gkrellm2
+ .fi
+ .RE
+ .PP
+@@ -1125,11 +1124,9 @@ and there you will find a Theme making reference.
+ tries to load all plugins (shared object files ending in .so)
+ it finds in your plugin directory
+ .IR ~/.gkrellm2/plugins.
+-The directories
+-.IR /usr/local/lib/gkrellm2/plugins
+-and
+-.IR /usr/lib/gkrellm2/plugins
+-are also searched for plugins to install.
++The directory
++.IR ${PREFIX}/lib/gkrellm2/plugins
++is also searched for plugins to install.
+ .PP
+ Some plugins may be available only as source files and they will
+ have to be compiled before installation.  There should be instructions
+@@ -1164,25 +1161,19 @@ and user's themes.
+ .I ~/.gkrellm2/plugins
+ User plugin directory.
+ .TP
+-.I /usr/lib/gkrellm2/plugins
++.I ${PREFIX}/lib/gkrellm2/plugins
+ System wide plugin directory.
+ .TP
+-.I /usr/local/lib/gkrellm2/plugins
+-Local plugin directory.
+-.TP
+ .I ~/.gkrellm2/themes
+ User theme directory.
+ .TP
+ .I ~/.themes/THEME_NAME/gkrellm2
+ User theme packaged as part of a user Gtk theme.
+ .TP
+-.I /usr/share/gkrellm2/themes
++.I ${PREFIX}/share/gkrellm2/themes
+ System wide theme directory.
+ .TP
+-.I /usr/local/share/gkrellm2/themes
+-Local theme directory.
+-.TP
+-.I /usr/share/themes/THEME_NAME/gkrellm2
++.I ${PREFIX}/share/themes/THEME_NAME/gkrellm2
+ System wide theme packaged as part of a system wide Gtk theme.
+ 
+ .SH "AUTHORS"

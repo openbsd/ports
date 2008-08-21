@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.9 2008/07/01 10:17:35 ajacoutot Exp $
+$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.10 2008/08/21 07:23:44 ajacoutot Exp $
 --- src/sysdeps/openbsd.c.orig	Sat Jul  7 01:54:22 2007
 +++ src/sysdeps/openbsd.c	Tue Jul  1 10:48:13 2008
 @@ -53,41 +53,71 @@ gkrellm_sys_main_cleanup(void)
@@ -98,7 +98,7 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.9 2008/07/01 10:17:35 ajacoutot Exp $
  #include <sys/ioctl.h>
  
 -#if defined(__i386__) || defined(__powerpc__)
-+#if defined(__i386__) || defined(__powerpc__) || defined(__amd64__) || defined(__arm__) || (defined(__sparc__) && !defined(__sparc64__))
++#if defined(__i386__) || defined(__macppc__) || defined(__amd64__) || defined(__arm__) || defined(__sparc__) || defined(__sparc64__)
  
  #include <machine/apmvar.h>
  #define	APMDEV		"/dev/apm"
