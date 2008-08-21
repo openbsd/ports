@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.612 2008/08/20 20:05:59 simon Exp $
+# $OpenBSD: Makefile,v 1.613 2008/08/21 14:07:18 ckuethe Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -26,6 +26,7 @@
      SUBDIR += autogen
      SUBDIR += automake
      SUBDIR += avr
+     SUBDIR += avrdude
      SUBDIR += beediff
      SUBDIR += bison
      SUBDIR += blame
