@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.92 2008/07/27 21:30:05 sthen Exp $
+$OpenBSD: user.list,v 1.93 2008/08/21 07:24:19 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -115,3 +115,4 @@ id  user		group		port options
 604 _haproxy		_haproxy	net/haproxy
 605 _hudson		_hudson		devel/hudson
 606 _ladvd		_ladvd		net/ladvd
+607 _gkrellmd		_gkrellmd	sysutils/gkrellm/gkrellm
