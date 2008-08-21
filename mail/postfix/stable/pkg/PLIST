@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2008/05/29 17:12:54 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.22 2008/08/21 21:52:08 brad Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -10,31 +10,31 @@
 @extra /var/postfix/
 @extra /var/spool/postfix/
 libexec/postfix/
-libexec/postfix/anvil
-libexec/postfix/bounce
-libexec/postfix/cleanup
-libexec/postfix/discard
-libexec/postfix/error
-libexec/postfix/flush
-libexec/postfix/lmtp
-libexec/postfix/local
-libexec/postfix/master
-libexec/postfix/nqmgr
-libexec/postfix/oqmgr
-libexec/postfix/pickup
-libexec/postfix/pipe
-libexec/postfix/proxymap
-libexec/postfix/qmgr
-libexec/postfix/qmqpd
-libexec/postfix/scache
-libexec/postfix/showq
-libexec/postfix/smtp
-libexec/postfix/smtpd
-libexec/postfix/spawn
-libexec/postfix/tlsmgr
-libexec/postfix/trivial-rewrite
-libexec/postfix/verify
-libexec/postfix/virtual
+@bin libexec/postfix/anvil
+@bin libexec/postfix/bounce
+@bin libexec/postfix/cleanup
+@bin libexec/postfix/discard
+@bin libexec/postfix/error
+@bin libexec/postfix/flush
+@bin libexec/postfix/lmtp
+@bin libexec/postfix/local
+@bin libexec/postfix/master
+@bin libexec/postfix/nqmgr
+@bin libexec/postfix/oqmgr
+@bin libexec/postfix/pickup
+@bin libexec/postfix/pipe
+@bin libexec/postfix/proxymap
+@bin libexec/postfix/qmgr
+@bin libexec/postfix/qmqpd
+@bin libexec/postfix/scache
+@bin libexec/postfix/showq
+@bin libexec/postfix/smtp
+@bin libexec/postfix/smtpd
+@bin libexec/postfix/spawn
+@bin libexec/postfix/tlsmgr
+@bin libexec/postfix/trivial-rewrite
+@bin libexec/postfix/verify
+@bin libexec/postfix/virtual
 @man man/man1/mailq.1
 @man man/man1/newaliases.1
 @man man/man1/postalias.1
@@ -98,22 +98,22 @@ libexec/postfix/virtual
 @man man/man8/virtual.8
 sbin/mailq
 sbin/newaliases
-sbin/postalias
-sbin/postcat
-sbin/postconf
-sbin/postdrop
-sbin/postfix
+@bin sbin/postalias
+@bin sbin/postcat
+@bin sbin/postconf
+@bin sbin/postdrop
+@bin sbin/postfix
 sbin/postfix-disable
 sbin/postfix-enable
 sbin/postfix-install
-sbin/postkick
-sbin/postlock
-sbin/postlog
-sbin/postmap
-sbin/postqueue
-sbin/postsuper
+@bin sbin/postkick
+@bin sbin/postlock
+@bin sbin/postlog
+@bin sbin/postmap
+@bin sbin/postqueue
+@bin sbin/postsuper
 sbin/qshape
-sbin/sendmail
+@bin sbin/sendmail
 share/doc/postfix/
 share/doc/postfix/html/
 share/doc/postfix/html/ADDRESS_CLASS_README.html
