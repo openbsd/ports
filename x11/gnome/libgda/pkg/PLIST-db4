@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-db4,v 1.1.1.1 2008/08/21 10:27:25 jasper Exp $
+%%SHARED%%
+lib/libgda-${GDA_MAJOR}/providers/libgda-bdb.a
+lib/libgda-${GDA_MAJOR}/providers/libgda-bdb.la
+lib/pkgconfig/libgda-bdb-${GDA_MAJOR}.pc
+share/libgda-${GDA_MAJOR}/bdb_specs_dsn.xml

@@ -1,0 +1,12 @@
+$OpenBSD: patch-providers_bdb_gda-bdb_h,v 1.1.1.1 2008/08/21 10:27:25 jasper Exp $
+--- providers/bdb/gda-bdb.h.orig	Thu Dec 20 00:20:56 2007
++++ providers/bdb/gda-bdb.h	Thu Dec 20 00:21:11 2007
+@@ -28,7 +28,7 @@
+ #include <glib/gmacros.h>
+ #include <glib/gi18n-lib.h>
+ #include <libgda/gda-server-provider.h>
+-#include <db.h>
++#include <db4/db.h>
+ 
+ #include "gda-bdb-provider.h"
+ #include "gda-bdb-recordset.h"

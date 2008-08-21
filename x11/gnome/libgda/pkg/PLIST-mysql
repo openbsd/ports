@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST-mysql,v 1.1.1.1 2008/08/21 10:27:25 jasper Exp $
+%%SHARED%%
+lib/libgda-${GDA_MAJOR}/providers/libgda-mysql.a
+lib/libgda-${GDA_MAJOR}/providers/libgda-mysql.la
+lib/pkgconfig/libgda-mysql-${GDA_MAJOR}.pc
+share/libgda-${GDA_MAJOR}/mysql_specs_add_column.xml
+share/libgda-${GDA_MAJOR}/mysql_specs_create_db.xml
+share/libgda-${GDA_MAJOR}/mysql_specs_create_index.xml
+share/libgda-${GDA_MAJOR}/mysql_specs_create_table.xml
+share/libgda-${GDA_MAJOR}/mysql_specs_drop_column.xml
+share/libgda-${GDA_MAJOR}/mysql_specs_drop_db.xml
+share/libgda-${GDA_MAJOR}/mysql_specs_drop_index.xml
+share/libgda-${GDA_MAJOR}/mysql_specs_drop_table.xml
+share/libgda-${GDA_MAJOR}/mysql_specs_dsn.xml
+share/libgda-${GDA_MAJOR}/mysql_specs_rename_table.xml

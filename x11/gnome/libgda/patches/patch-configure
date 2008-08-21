@@ -1,0 +1,101 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/08/21 10:27:25 jasper Exp $
+--- configure.orig	Thu Jul 10 15:03:18 2008
++++ configure	Thu Jul 10 15:06:22 2008
+@@ -24896,96 +24896,7 @@ else
+ fi
+ 
+ 
+-SQLITE_MODULES="sqlite3 >= 3.3"
+-
+-pkg_failed=no
+-{ echo "$as_me:$LINENO: checking for SQLITE" >&5
+-echo $ECHO_N "checking for SQLITE... $ECHO_C" >&6; }
+-
+-if test -n "$SQLITE_CFLAGS"; then
+-    pkg_cv_SQLITE_CFLAGS="$SQLITE_CFLAGS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"\$SQLITE_MODULES\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "$SQLITE_MODULES") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_SQLITE_CFLAGS=`$PKG_CONFIG --cflags "$SQLITE_MODULES" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-if test -n "$SQLITE_LIBS"; then
+-    pkg_cv_SQLITE_LIBS="$SQLITE_LIBS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"\$SQLITE_MODULES\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "$SQLITE_MODULES") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_SQLITE_LIBS=`$PKG_CONFIG --libs "$SQLITE_MODULES" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        SQLITE_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "$SQLITE_MODULES" 2>&1`
+-        else
+-	        SQLITE_PKG_ERRORS=`$PKG_CONFIG --print-errors "$SQLITE_MODULES" 2>&1`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$SQLITE_PKG_ERRORS" >&5
+-
+-	{ echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6; }
+-                have_sqlite=no
+-elif test $pkg_failed = untried; then
+-	have_sqlite=no
+-else
+-	SQLITE_CFLAGS=$pkg_cv_SQLITE_CFLAGS
+-	SQLITE_LIBS=$pkg_cv_SQLITE_LIBS
+-        { echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6; }
+-	have_sqlite=yes
+-fi
+-if test x"$have_sqlite" = "xyes"
+-then
+-        realvers=`sqlite3 -version`
+-        microvers=`sqlite3 -version | cut -d '.' -f 3`
+-        { echo "$as_me:$LINENO: checking for sqlite version" >&5
+-echo $ECHO_N "checking for sqlite version... $ECHO_C" >&6; }
+-        if test $microvers -lt 100
+-        then
+-                { echo "$as_me:$LINENO: result: Version $realvers of SQLite does not implement required pragmas" >&5
+-echo "${ECHO_T}Version $realvers of SQLite does not implement required pragmas" >&6; }
+-                have_sqlite=no
+-        else
+-                { echo "$as_me:$LINENO: result: Version $realvers" >&5
+-echo "${ECHO_T}Version $realvers" >&6; }
+-                SQLITE_CFLAGS="$SQLITE_CFLAGS -DHAVE_SQLITE"
+-
+-
+-                SQLITE_VERS=$realvers
+-
+-        fi
+-fi
+-
++have_sqlite=no
+ 
+ if test x"$have_sqlite" = "xyes"; then
+   HAVE_SQLITE_TRUE=

@@ -1,0 +1,6 @@
+GNOME Data Access (GDA) is an attempt to provide uniform access to
+different kinds of data sources (databases, information servers, mail
+spools, etc).  It is a complete architecture that provides all you need
+to access your data.  It is defined by a set of CORBA interfaces as
+generic as possible (but very powerful at the same time) so that any
+kind of data source can be accessed through them.
