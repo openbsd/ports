@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/08/21 14:05:21 ckuethe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/08/21 14:20:12 ckuethe Exp $
 @bin bin/avrdude
 @man man/man1/avrdude.1
 share/doc/avrdude/
 share/doc/avrdude/avrdude-doc-5.5.pdf
 share/examples/avrdude/
-@sample share/examples/avrdude/avrdude.conf
+share/examples/avrdude/avrdude.conf
+@sample ${SYSCONFDIR}/avrdude.conf
