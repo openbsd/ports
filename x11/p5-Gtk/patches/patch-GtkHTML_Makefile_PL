@@ -1,7 +1,7 @@
-$OpenBSD: patch-GtkHTML_Makefile_PL,v 1.1 2001/12/09 05:06:01 jcs Exp $
---- GtkHTML/Makefile.PL.orig	Sat Dec  8 22:37:13 2001
-+++ GtkHTML/Makefile.PL	Sat Dec  8 22:37:19 2001
-@@ -81,7 +81,7 @@
+$OpenBSD: patch-GtkHTML_Makefile_PL,v 1.2 2008/08/21 13:52:30 jasper Exp $
+--- GtkHTML/Makefile.PL.orig	Fri Mar 23 15:57:08 2001
++++ GtkHTML/Makefile.PL	Thu Aug 21 15:28:18 2008
+@@ -81,7 +81,7 @@ WriteMakefile(
  	'XSOPT' => '-noversioncheck',
  	'dist' => { COMPRESS=>"gzip", SUFFIX=>"gz" },
  	'MAN3PODS' => {

@@ -1,7 +1,7 @@
-# $OpenBSD: patch-Makefile_PL,v 1.1 2003/02/02 19:14:25 jcs Exp $
---- Makefile.PL.orig	Sun Feb  2 11:55:47 2003
-+++ Makefile.PL	Sun Feb  2 11:57:03 2003
-@@ -22,7 +22,7 @@
+# $OpenBSD: patch-Makefile_PL,v 1.2 2008/08/21 13:52:30 jasper Exp $
+--- Makefile.PL.orig	Tue Jun 26 17:17:02 2001
++++ Makefile.PL	Thu Aug 21 15:28:18 2008
+@@ -22,7 +22,7 @@ use Config;
  		check => sub {ccompile('#include <gtkgl/gtkglarea.h>', "", `gtk-config --cflags`,
  					"-lgtkgl  -lGL -lGLU " . `gtk-config --libs`)}},
  	gdkpixbuf => {order => 2, dir => 'GdkPixbuf', depends => [qw(gtk)],

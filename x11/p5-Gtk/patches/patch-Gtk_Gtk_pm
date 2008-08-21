@@ -1,7 +1,7 @@
-$OpenBSD: patch-Gtk_Gtk_pm,v 1.1 2001/12/09 05:06:01 jcs Exp $
---- Gtk/Gtk.pm.orig	Sat Dec  8 22:33:33 2001
-+++ Gtk/Gtk.pm	Sat Dec  8 22:33:39 2001
-@@ -39,7 +39,7 @@
+$OpenBSD: patch-Gtk_Gtk_pm,v 1.2 2008/08/21 13:52:30 jasper Exp $
+--- Gtk/Gtk.pm.orig	Wed Jun 27 20:00:26 2001
++++ Gtk/Gtk.pm	Thu Aug 21 15:28:18 2008
+@@ -39,7 +39,7 @@ Kenneth Albanowski, Paolo Molaro
  
  =head1 SEE ALSO
  

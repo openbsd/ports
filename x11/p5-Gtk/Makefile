@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/01/04 17:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2008/08/21 13:52:30 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	set of modules to use Gtk+ libraries from Perl
 
 VERSION=	0.7008
 DISTNAME=	Gtk-Perl-${VERSION}
-PKGNAME=	p5-Gtk-${VERSION}
+PKGNAME=	p5-Gtk-${VERSION}p0
 
 CATEGORIES=	x11 devel perl5
 
@@ -33,7 +33,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ARGS=	--without-gtkhtml --without-gtkxmhtml \
-		--without-gnomeprint --without-applets --without-glade
+		--without-gnomeprint --without-applets \
+		--without-glade --without-gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -48,7 +49,7 @@ FAKE_FLAGS=	INSTALLPRIVLIB="${PERLDIR}" \
 		INSTALLMAN3DIR="${DESTDIR}/${PREFIX}/man/man3p" \
 		INSTALLSITEMAN3DIR="${DESTDIR}/${PREFIX}/man/man3p"
 
-FLAVORS=	gtkglarea gnome
+FLAVORS=	gtkglarea
 FLAVOR?=	
 
 .if ${FLAVOR:L:Mgtkglarea}
@@ -56,15 +57,6 @@ LIB_DEPENDS+=	gtkgl.>=1.2::x11/gtkglarea
 CONFIGURE_ARGS+= --with-gtkglarea-force
 .else
 CONFIGURE_ARGS+= --without-gtkglarea
-.endif
-
-.if ${FLAVOR:L:Mgnome}
-LIB_DEPENDS+=	zvt.>=5::x11/gnome/libs
-CONFIGURE_ARGS+= --with-gnome
-LIB_DEPENDS+=zvt::x11/gnome/libs
-WANTLIB+=	ICE SM art_lgpl audiofile esd gnome gnomesupport gnomeui util
-.else
-CONFIGURE_ARGS+= --without-gnome
 .endif
 
 .include <bsd.port.mk>

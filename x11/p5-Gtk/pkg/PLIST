@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 19:26:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/08/21 13:52:30 jasper Exp $
+@pkgpath x11/p5-Gtk,gnome
+@pkgpath x11/p5-Gtk,gnome,gtkglarea
+%%gtkglarea%%
 ${P5ARCH}/Gtk/
 ${P5ARCH}/Gtk.pm
 ${P5ARCH}/Gtk/Atoms.pm
@@ -73,5 +76,3 @@ ${P5ARCH}/auto/Gtk/autosplit.ix
 @man man/man3p/Gtk::cookbook.3p
 @man man/man3p/Gtk::objects.3p
 @man man/man3p/Gtk::reference.3p
-%%gtkglarea%%
-%%gnome%%
