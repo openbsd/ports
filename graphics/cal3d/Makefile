@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/07/24 12:34:54 laurent Exp $
+# $OpenBSD: Makefile,v 1.3 2008/08/21 21:59:51 simon Exp $
 
 COMMENT =	skeletal based character animation library
-DISTNAME =	cal3d-0.10.0
+DISTNAME =	cal3d-0.11.0
 
-SHARED_LIBS =	cal3d	0.0	# .11.0
+SHARED_LIBS =	cal3d	1.0	# .12.0
 
 CATEGORIES =	graphics
 
