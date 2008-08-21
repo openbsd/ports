@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/08/21 01:12:35 sthen Exp $
 
 COMMENT=		full-featured text WWW browser
-DISTNAME=		elinks-0.11.2
-EXTRACT_SUFX=		.tar.bz2
+DISTNAME=		elinks-0.11.4
 CATEGORIES=		www
 MASTER_SITES=		http://elinks.cz/download/
 
@@ -17,13 +16,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+=		CFLAGS=-I${LOCALBASE}/include \
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-bzlib \
 			--without-spidermonkey \
 			--disable-xbel \
 			--enable-gopher \
 			--with-libiconv=${LOCALBASE}
+# don't hide compiler command lines
+MAKE_ENV=		V=true
 LIB_DEPENDS+=		bz2::archivers/bzip2 \
 			idn::devel/libidn
 USE_GMAKE=		Yes
