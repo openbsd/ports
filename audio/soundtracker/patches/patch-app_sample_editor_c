@@ -1,7 +1,7 @@
-$OpenBSD: patch-app_sample_editor_c,v 1.4 2005/11/28 16:09:52 kurt Exp $
---- app/sample-editor.c.orig	Thu May 16 10:55:24 2002
-+++ app/sample-editor.c	Thu Nov  3 14:23:10 2005
-@@ -186,7 +186,7 @@ static void sample_editor_reverse_clicke
+$OpenBSD: patch-app_sample_editor_c,v 1.5 2008/08/21 14:11:14 jasper Exp $
+--- app/sample-editor.c.orig	Thu May 16 16:55:24 2002
++++ app/sample-editor.c	Thu Aug 21 15:54:06 2008
+@@ -186,7 +186,7 @@ static void sample_editor_reverse_clicked(void);
  static void
  sample_editor_lock_sample (void)
  {
@@ -37,7 +37,7 @@ $OpenBSD: patch-app_sample_editor_c,v 1.4 2005/11/28 16:09:52 kurt Exp $
      const char *labels1[] = {
  	_("Normalize"),
  	_("Execute"),
-@@ -2146,7 +2146,8 @@ sample_editor_open_volume_ramp_dialog (v
+@@ -2146,7 +2146,8 @@ sample_editor_open_volume_ramp_dialog (void)
  	gtk_widget_show(thing);
  	gtk_box_pack_start(GTK_BOX(box1), thing, TRUE, TRUE, 0);
  	gtk_signal_connect(GTK_OBJECT(thing), "clicked",

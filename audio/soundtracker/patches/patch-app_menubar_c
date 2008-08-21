@@ -1,6 +1,6 @@
-$OpenBSD: patch-app_menubar_c,v 1.1 2002/07/30 06:51:15 wcobb Exp $
---- app/menubar.c.orig	Tue Jul 30 02:50:28 2002
-+++ app/menubar.c	Tue Jul 30 02:52:01 2002
+$OpenBSD: patch-app_menubar_c,v 1.2 2008/08/21 14:11:14 jasper Exp $
+--- app/menubar.c.orig	Mon May 20 16:33:38 2002
++++ app/menubar.c	Thu Aug 21 15:54:06 2008
 @@ -117,7 +117,7 @@ menubar_clear_callback (gint reply,
  			gpointer data)
  {
@@ -10,7 +10,7 @@ $OpenBSD: patch-app_menubar_c,v 1.1 2002/07/30 06:51:15 wcobb Exp $
  	    gui_free_xm();
  	    gui_new_xm();
  	    xm->modified = 0;
-@@ -709,19 +709,22 @@ menubar_gnome_to_gtk (GnomeUIInfo *gnome
+@@ -709,19 +709,22 @@ menubar_gnome_to_gtk (GnomeUIInfo *gnometree,
  	switch(gnometree->type) {
  	case GNOME_APP_UI_SUBTREE:
  	    menubar_gtk_items[n].callback = (GtkItemFactoryCallback)gnometree->func;

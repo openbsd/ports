@@ -1,7 +1,7 @@
-$OpenBSD: patch-app_gui-subs_c,v 1.1 2002/07/30 06:51:15 wcobb Exp $
---- app/gui-subs.c.orig	Tue Jul 30 02:47:58 2002
-+++ app/gui-subs.c	Tue Jul 30 02:49:08 2002
-@@ -359,7 +359,7 @@ gui_build_option_menu (OptionMenuItem it
+$OpenBSD: patch-app_gui-subs_c,v 1.2 2008/08/21 14:11:14 jasper Exp $
+--- app/gui-subs.c.orig	Mon May 20 15:19:54 2002
++++ app/gui-subs.c	Thu Aug 21 15:54:06 2008
+@@ -359,7 +359,7 @@ gui_build_option_menu (OptionMenuItem items[],
      {
        menu_item = gtk_radio_menu_item_new_with_label (group, items[i].name);
        gtk_signal_connect (GTK_OBJECT (menu_item), "activate",

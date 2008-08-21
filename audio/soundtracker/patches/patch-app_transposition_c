@@ -1,7 +1,7 @@
-$OpenBSD: patch-app_transposition_c,v 1.1 2002/07/30 06:51:15 wcobb Exp $
---- app/transposition.c.orig	Tue Jul 30 02:54:56 2002
-+++ app/transposition.c	Tue Jul 30 02:56:33 2002
-@@ -127,7 +127,7 @@ transposition_transpose_notes (GtkWidget
+$OpenBSD: patch-app_transposition_c,v 1.2 2008/08/21 14:11:14 jasper Exp $
+--- app/transposition.c.orig	Fri May 17 15:21:59 2002
++++ app/transposition.c	Thu Aug 21 15:54:06 2008
+@@ -127,7 +127,7 @@ transposition_transpose_notes (GtkWidget *w,
  {
      int add = 0;
  

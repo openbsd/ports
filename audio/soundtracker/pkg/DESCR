@@ -3,7 +3,4 @@ DOS program `FastTracker' and the Amiga legend `ProTracker'.
 
 Packages can be built with additional FLAVORs:
 
-  gnome: SoundTracker built with gnome libraries. This is required
-         by the graphical volume/panning envelope editors.
-
   esd:   SoundTracker built with the esound package.
