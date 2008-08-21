@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2008/06/08 11:15:03 simon Exp $
+# $OpenBSD: Makefile,v 1.201 2008/08/21 19:02:17 jasper Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -154,7 +154,6 @@
      SUBDIR += soundtouch
      SUBDIR += soundtracker
      SUBDIR += soundtracker,esd
-     SUBDIR += soundtracker,gnome,esd
      SUBDIR += sox
      SUBDIR += sox,mp3,vorbis
      SUBDIR += speex

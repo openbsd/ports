@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.344 2008/08/21 02:32:31 jcs Exp $
+# $OpenBSD: Makefile,v 1.345 2008/08/21 19:02:17 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -147,7 +147,6 @@
      SUBDIR += osd_clock
      SUBDIR += p5-Gnome2-Canvas
      SUBDIR += p5-Gtk
-     SUBDIR += p5-Gtk,gnome
      SUBDIR += p5-Gtk,gtkglarea
      SUBDIR += p5-Gtk2
      SUBDIR += p5-Gtk2-Ex-FormFactory
