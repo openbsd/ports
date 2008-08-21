@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/12/15 20:54:19 ajacoutot Exp $
-bin/pornview
-share/applications/
+@comment $OpenBSD: PLIST,v 1.6 2008/08/21 13:12:33 jasper Exp $
+@bin bin/pornview
 share/applications/pornview.desktop
 share/locale/fr/LC_MESSAGES/pornview.mo
 share/locale/pl/LC_MESSAGES/pornview.mo

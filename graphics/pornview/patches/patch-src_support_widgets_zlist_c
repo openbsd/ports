@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_support_widgets_zlist_c,v 1.1 2008/08/21 13:12:33 jasper Exp $
+
+Fixed an out-of-bounds error. From Debian.
+
+--- src/support/widgets/zlist.c.orig	Thu Aug 21 14:37:23 2008
++++ src/support/widgets/zlist.c	Thu Aug 21 14:38:27 2008
+@@ -634,7 +634,8 @@ zlist_draw (GtkWidget * widget, GdkRectangle * area)
+ 					   CELL_X_FROM_COL (list, j), area->y,
+ 					   list->cell_x_pad, area->height);
+ 
+-		cell = ZLIST_CELL_FROM_INDEX (list, idx);
++		if (idx < list->cell_count)
++	 		cell = ZLIST_CELL_FROM_INDEX (list, idx);
+ 
+ 		cell_area.x = CELL_X_FROM_COL (list, j) + list->cell_x_pad;
+ 		cell_area.y = CELL_Y_FROM_ROW (list, i) + list->cell_y_pad;
