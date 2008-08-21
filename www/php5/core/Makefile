@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2008/05/20 14:01:45 robert Exp $
+# $OpenBSD: Makefile,v 1.38 2008/08/21 15:51:51 ajacoutot Exp $
 
 COMMENT-main=	server-side HTML-embedded scripting language
 COMMENT-fastcgi=stand-alone FastCGI version of PHP
 
 PKGNAME=	php5-core-${V}
-PKGNAME-main=	php5-core-${V}
+PKGNAME-main=	php5-core-${V}p0
 PKGNAME-fastcgi=php5-fastcgi-${V}
 
 DISTFILES=	php-${V}.tar.gz
@@ -69,7 +69,7 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cgi/php-cgi ${PREFIX}/bin/php-fastcgi
 	${INSTALL_DATA} ${FILESDIR}/php5.conf \
 		${PREFIX}/share/examples/php5/php5.conf
-	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g" \
+	@perl -pi -e "s,!!PREFIX!!,${TRUEPREFIX},g" \
 		${PREFIX}/share/examples/php5/php5.conf
 	
 .for i in dist recommended
