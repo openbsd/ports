@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/08/21 05:20:53 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.12 2008/08/21 19:43:27 naddy Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-gui=		Tk front-end to gpsbabel
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-#MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		${HOMEPAGE}
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf
