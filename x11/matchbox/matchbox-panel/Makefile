@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2008/07/23 09:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2008/08/21 07:30:16 ajacoutot Exp $
 # XXX hardcoded apm list
 
 COMMENT=	window bar for holding application launchers
@@ -18,7 +18,7 @@ WANTLIB=	X11 Xext Xft Xrender c fontconfig freetype m z \
 # not all powerpc support apm(4), hence the use of ${MACHINE} and macppc
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "arm" \
  || ${MACHINE_ARCH} == "i386" || ${MACHINE} == "macppc" \
- || ${MACHINE_ARCH} == "sparc"
+ || ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64"
 PKG_ARGS+=-DAPM=1
 .else
 PKG_ARGS+=-DAPM=0

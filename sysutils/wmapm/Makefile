@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2008/04/14 14:05:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2008/08/21 07:30:16 ajacoutot Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
-ONLY_FOR_ARCHS=		amd64 arm i386 macppc sparc
+ONLY_FOR_ARCHS=		amd64 arm i386 macppc sparc sparc64
 
 COMMENT=		wm-dockapp; APM/battery monitor
 
