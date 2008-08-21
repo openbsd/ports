@@ -1,0 +1,7 @@
+pidgin-libnotify adds a libnotify interface to pidgin, enabling
+popups much like guifications.  It has some configuration options,
+to show popups when a buddy signs on, on new messages and on new
+conversations only.
+
+After installation, don't forget to enable the plugin in pidgin via
+the Tools->Plugins menu.

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_pidgin-libnotify_c,v 1.1.1.1 2008/08/21 02:30:22 jcs Exp $
+--- src/pidgin-libnotify.c.orig	Wed Aug 20 21:05:07 2008
++++ src/pidgin-libnotify.c	Wed Aug 20 21:05:30 2008
+@@ -263,7 +263,7 @@ notify (const gchar *title,
+ 	contact = purple_buddy_get_contact (buddy);
+ 
+ 	if (body)
+-		tr_body = truncate_escape_string (body, 60);
++		tr_body = truncate_escape_string (body, 300);
+ 	else
+ 		tr_body = NULL;
+ 
