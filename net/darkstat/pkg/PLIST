@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/05/14 21:42:47 ckuethe Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/08/21 05:26:59 ckuethe Exp $
 @newgroup _darkstat:587
 @newuser _darkstat:587:_darkstat::Darkstat Network Monitor Account:/nonexistent:/sbin/nologin
 @man man/man1/darkstat.1
-sbin/darkstat
+@bin sbin/darkstat
