@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/10/20 15:50:26 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.11 2008/08/21 05:20:53 ckuethe Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-gui=		Tk front-end to gpsbabel
 
-VERSION=		1.3.4
+VERSION=		1.3.5
 DISTNAME=		gpsbabel-${VERSION}
 PKGNAME-main=		gpsbabel-${VERSION}
 PKGNAME-gui=		gpsbabel-gui-${VERSION}
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gpsbabel/}
+#MASTER_SITES=		${HOMEPAGE}
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf
@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	--with-zlib=system \
 #			WEB=${WRKSRC} 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			WEB=${WRKSRC} 
+			WEB=${WRKSRC}
 
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes # expects FP conversion to be exact and invertible
@@ -49,6 +49,11 @@ LIB_DEPENDS-gui=
 PKG_ARCH-gui=	*
 RUN_DEPENDS-gui=	::geo/gpsbabel \
 			:tk-8.4.*:x11/tk/8.4
+
+do-fetch:
+	@test -f ${FULLDISTDIR}/${DISTNAME}.tar.gz || \
+	${FETCH_CMD} -o ${FULLDISTDIR}/${DISTNAME}.tar.gz \
+	    ${HOMEPAGE}/plan9.php?dl=gpsbabel-1.3.5.tar.gz
 
 post-build:
 	gmake -C ${WRKSRC} doc

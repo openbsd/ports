@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2007/10/20 15:50:26 ckuethe Exp $
---- Makefile.in.orig	Mon Jul 23 15:30:00 2007
-+++ Makefile.in	Sat Oct 20 09:44:54 2007
-@@ -86,7 +86,7 @@ LIBOBJS = queue.o route.o waypt.o filter_vecs.o util.o
+$OpenBSD: patch-Makefile_in,v 1.4 2008/08/21 05:20:53 ckuethe Exp $
+--- Makefile.in.orig	Sat Apr 26 03:49:34 2008
++++ Makefile.in	Wed Jul  2 22:04:22 2008
+@@ -91,7 +91,7 @@ LIBOBJS = queue.o route.o waypt.o filter_vecs.o util.o
            uuid.o formspec.o xmltag.o cet.o cet_util.o fatal.o rgbcolors.o \
- 	  xhtmlent.o inifile.o garmin_fs.o gbsleep.o units.o @GBSER@ gbser.o \
- 	  gbfile.o \
+ 	  inifile.o garmin_fs.o gbsleep.o units.o @GBSER@ gbser.o \
+ 	  gbfile.o parse.o avltree.o \
 -	$(PALM_DB) $(GARMIN) $(JEEPS) $(SHAPE) @ZLIB@ $(FMTS) $(FILTERS)
 +	$(PALM_DB) $(GARMIN) $(JEEPS) @SHAPE@ @ZLIB@ $(FMTS) $(FILTERS)
  OBJS = main.o globals.o $(LIBOBJS) @FILEINFO@
  
  .c.o:
-@@ -177,7 +177,6 @@ dep:
+@@ -185,7 +185,6 @@ dep:
  $(WEB)/htmldoc-$(DOCVERSION)/readme.html: FORCE
  	mkdir -p $(WEB)/htmldoc-$(DOCVERSION)
  	perl xmldoc/makedoc
@@ -18,7 +18,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2007/10/20 15:50:26 ckuethe Exp $
  	xmllint --noout --valid xmldoc/readme.xml    	#validate
  	xsltproc \
  	 --stringparam base.dir "$(WEB)/htmldoc-$(DOCVERSION)/" \
-@@ -224,7 +223,7 @@ gpsbabel.html: FORCE
+@@ -232,7 +231,7 @@ gpsbabel.html: FORCE
  readme.txt: gpsbabel.html
  	lynx -nolist -dump gpsbabel.html  > $@
  
