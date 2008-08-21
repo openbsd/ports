@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_icewm-7_html,v 1.7 2005/03/23 21:43:31 naddy Exp $
+$OpenBSD: patch-doc_icewm-7_html,v 1.8 2008/08/21 07:34:07 ajacoutot Exp $
 --- doc/icewm-7.html.orig	Sun Jan  9 22:48:56 2005
 +++ doc/icewm-7.html	Wed Mar 23 22:26:53 2005
 @@ -25,8 +25,8 @@ directories:</P>
@@ -7,8 +7,8 @@ $OpenBSD: patch-doc_icewm-7_html,v 1.7 2005/03/23 21:43:31 naddy Exp $
  be customized by setting the $ICEWM_PRIVCFG environment variable.</P>
 -<DT><B>/etc/X11/icewm</B><DD><P>system-wide customized defaults</P>
 -<DT><B>/usr/share/icewm OR /usr/local/share/icewm</B><DD><P>compiled-in default directory
-+<DT><B>%%SYSCONFDIR%%/icewm</B><DD><P>system-wide customized defaults</P>
-+<DT><B>%%PREFIX%%/share/icewm</B><DD><P>compiled-in default directory
++<DT><B>${SYSCONFDIR}/icewm</B><DD><P>system-wide customized defaults</P>
++<DT><B>${PREFIX}/share/icewm</B><DD><P>compiled-in default directory
  with default files</P>
  </DL>
  </P>
@@ -18,8 +18,8 @@ $OpenBSD: patch-doc_icewm-7_html,v 1.7 2005/03/23 21:43:31 naddy Exp $
  <P>To customize icewm yourself, you should create the $HOME/.icewm directory and copy
 -the files that you wish to modify (preferences, winoptions),from /etc/X11/icewm,
 -/usr/share/icewm or /usr/local/share/icewm and then modify as you like.</P>
-+the files that you wish to modify (preferences, winoptions),from %%SYSCONFDIR%%/icewm,
-+or %%PREFIX%%/share/icewm and then modify as you like.</P>
++the files that you wish to modify (preferences, winoptions),from ${SYSCONFDIR}/icewm,
++or ${PREFIX}/share/icewm and then modify as you like.</P>
  <P>To customize the default themes, you should create the $HOME/.icewm/themes directory
  and copy all the theme files there and then modify as necessary.</P>
  

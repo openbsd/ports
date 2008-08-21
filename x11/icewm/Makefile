@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2008/07/23 09:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2008/08/21 07:34:07 ajacoutot Exp $
 
 COMMENT=	small, fast window manager
 
@@ -31,7 +31,7 @@ USE_X11=	Yes
 # not all powerpc support apm(4), hence the use of ${MACHINE} and macppc
 .if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" \
  || ${MACHINE} == "macppc" || ${MACHINE_ARCH} == "sparc" \
- || ${MACHINE_ARCH} == "amd64"
+ || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	patch-* apm-*
 .endif
 
@@ -49,9 +49,7 @@ CONFIGURE_ARGS=	--with-imlib=${PREFIX}/bin \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-install:
-	@perl -pi -e 's:%%SYSCONFDIR%%:${SYSCONFDIR}:g;' \
-		-e 's:%%PREFIX%%:${TRUEPREFIX}:g;' \
-		${PREFIX}/share/doc/icewm/icewm-7.html
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/doc/icewm-7.html
 
 .include <bsd.port.mk>
