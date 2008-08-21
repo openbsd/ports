@@ -1,0 +1,6 @@
+AVRDUDE is a full featured BSD Unix program for programming Atmel's AVR
+CPU's. It can program the Flash and EEPROM, and where supported by the
+serial programming protocol, it can program fuse and lock bits. AVRDUDE
+also supplies a direct instruction mode allowing one to issue any
+programming instruction to the AVR chip regardless of whether AVRDUDE
+implements that specific feature of a particular chip. 
