@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/08/22 11:38:25 ajacoutot Exp $
+@lib lib/libguichan.so.${LIBguichan_VERSION}
+@lib lib/libguichan_opengl.so.${LIBguichan_opengl_VERSION}
+@lib lib/libguichan_sdl.so.${LIBguichan_sdl_VERSION}

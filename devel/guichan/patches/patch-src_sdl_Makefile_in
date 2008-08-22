@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sdl_Makefile_in,v 1.1.1.1 2008/08/22 11:38:25 ajacoutot Exp $
+--- src/sdl/Makefile.in.orig	Thu Aug 21 15:19:48 2008
++++ src/sdl/Makefile.in	Thu Aug 21 15:20:14 2008
+@@ -204,7 +204,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ lib_LTLIBRARIES = libguichan_sdl.la
+ INCLUDES = -I$(top_srcdir)/include
+-libguichan_sdl_la_LDFLAGS = -no-undefined -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libguichan_sdl_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ libguichan_sdl_la_SOURCES = \
+ 	sdl.cpp			\
+ 	sdlgraphics.cpp		\

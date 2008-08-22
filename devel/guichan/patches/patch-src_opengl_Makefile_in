@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_opengl_Makefile_in,v 1.1.1.1 2008/08/22 11:38:25 ajacoutot Exp $
+--- src/opengl/Makefile.in.orig	Thu Aug 21 15:20:27 2008
++++ src/opengl/Makefile.in	Thu Aug 21 15:20:43 2008
+@@ -202,7 +202,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ lib_LTLIBRARIES = libguichan_opengl.la
+ INCLUDES = -I$(top_srcdir)/include
+-libguichan_opengl_la_LDFLAGS = -no-undefined -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 
++libguichan_opengl_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 
+ libguichan_opengl_la_SOURCES = \
+ 	opengl.cpp		\
+ 	openglimage.cpp		\
