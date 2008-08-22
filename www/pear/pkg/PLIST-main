@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/05/07 13:46:59 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/08/22 14:48:53 robert Exp $
 @conflict php5-pear-*
 @conflict php4-pear-*
 @pkgpath www/php5/core,-pear
@@ -23,6 +23,7 @@ pear/lib/.channels/pear.php.net.reg
 pear/lib/.channels/pecl.php.net.reg
 pear/lib/.depdb
 pear/lib/.depdblock
+pear/lib/.lock
 pear/lib/.registry/
 pear/lib/.registry/.channel.__uri/
 pear/lib/.registry/.channel.pecl.php.net/
@@ -79,6 +80,7 @@ pear/lib/PEAR/Downloader.php
 pear/lib/PEAR/Downloader/Package.php
 pear/lib/PEAR/ErrorStack.php
 pear/lib/PEAR/Exception.php
+pear/lib/PEAR/FixPHP5PEARWarnings.php
 pear/lib/PEAR/Frontend/
 pear/lib/PEAR/Frontend.php
 pear/lib/PEAR/Frontend/CLI.php
@@ -86,6 +88,8 @@ pear/lib/PEAR/Installer/
 pear/lib/PEAR/Installer.php
 pear/lib/PEAR/Installer/Role/
 pear/lib/PEAR/Installer/Role.php
+pear/lib/PEAR/Installer/Role/Cfg.php
+pear/lib/PEAR/Installer/Role/Cfg.xml
 pear/lib/PEAR/Installer/Role/Common.php
 pear/lib/PEAR/Installer/Role/Data.php
 pear/lib/PEAR/Installer/Role/Data.xml
@@ -101,6 +105,8 @@ pear/lib/PEAR/Installer/Role/Src.php
 pear/lib/PEAR/Installer/Role/Src.xml
 pear/lib/PEAR/Installer/Role/Test.php
 pear/lib/PEAR/Installer/Role/Test.xml
+pear/lib/PEAR/Installer/Role/Www.php
+pear/lib/PEAR/Installer/Role/Www.xml
 pear/lib/PEAR/PackageFile/
 pear/lib/PEAR/PackageFile.php
 pear/lib/PEAR/PackageFile/Generator/
@@ -119,6 +125,7 @@ pear/lib/PEAR/REST/
 pear/lib/PEAR/REST.php
 pear/lib/PEAR/REST/10.php
 pear/lib/PEAR/REST/11.php
+pear/lib/PEAR/REST/13.php
 pear/lib/PEAR/Registry.php
 pear/lib/PEAR/Remote.php
 pear/lib/PEAR/RunTest.php

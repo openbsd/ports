@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/13 14:30:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2008/08/22 14:48:53 robert Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
 
-VERSION=	1.5.0
+VERSION=	1.7.2
 DISTNAME=	pear-${VERSION}
 PKGNAME=	${DISTNAME}
-PKGNAME-main=	${DISTNAME}p1
-PKGNAME-utils=	pear-utils-${VERSION}p0
+PKGNAME-main=	${DISTNAME}
+PKGNAME-utils=	pear-utils-${VERSION}
 CATEGORIES=	www devel
 
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://pear.php.net/
-MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=ale/}
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		${MASTER_SITE_FREEBSD_LOCAL:=miwi/}
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -49,5 +50,6 @@ do-install:
 	@patch -d ${WRKINST}${PREFIX-main}/pear < ${FILESDIR}/patch-lib_PEAR_Config_php
 	@perl -pi -e "s,OPENBSD_PEAR_ROOT,'${PREFIX-main}/pear',g" \
 		${WRKINST}${PREFIX-main}/pear/lib/PEAR/Config.php
+	@touch ${WRKINST}${PREFIX-main}/pear/.lock
 
 .include <bsd.port.mk>

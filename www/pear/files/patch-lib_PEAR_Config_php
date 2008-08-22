@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_PEAR_Config_php,v 1.1.1.1 2007/03/19 23:13:23 robert Exp $
---- lib/PEAR/Config.php.orig	Tue Mar 20 00:01:00 2007
-+++ lib/PEAR/Config.php	Tue Mar 20 00:03:08 2007
+$OpenBSD: patch-lib_PEAR_Config_php,v 1.2 2008/08/22 14:48:53 robert Exp $
+--- lib/PEAR/Config.php.orig	Fri Aug 22 16:30:55 2008
++++ lib/PEAR/Config.php	Fri Aug 22 16:38:49 2008
 @@ -84,12 +84,7 @@
  if (getenv('PHP_PEAR_INSTALL_DIR')) {
      define('PEAR_CONFIG_DEFAULT_PHP_DIR', getenv('PHP_PEAR_INSTALL_DIR'));
@@ -25,7 +25,7 @@ $OpenBSD: patch-lib_PEAR_Config_php,v 1.1.1.1 2007/03/19 23:13:23 robert Exp $
  }
  
  // Default for bin_dir
-@@ -127,16 +121,14 @@
+@@ -127,8 +121,7 @@
  if (getenv('PHP_PEAR_DATA_DIR')) {
      define('PEAR_CONFIG_DEFAULT_DATA_DIR', getenv('PHP_PEAR_DATA_DIR'));
  } else {
@@ -34,7 +34,8 @@ $OpenBSD: patch-lib_PEAR_Config_php,v 1.1.1.1 2007/03/19 23:13:23 robert Exp $
 +    define('PEAR_CONFIG_DEFAULT_DATA_DIR', OPENBSD_PEAR_ROOT.'/data');
  }
  
- // Default for test_dir
+ // Default for cfg_dir
+@@ -151,8 +144,7 @@
  if (getenv('PHP_PEAR_TEST_DIR')) {
      define('PEAR_CONFIG_DEFAULT_TEST_DIR', getenv('PHP_PEAR_TEST_DIR'));
  } else {
@@ -44,7 +45,7 @@ $OpenBSD: patch-lib_PEAR_Config_php,v 1.1.1.1 2007/03/19 23:13:23 robert Exp $
  }
  
  // Default for temp_dir
-@@ -152,9 +144,7 @@
+@@ -168,9 +160,7 @@
  if (getenv('PHP_PEAR_CACHE_DIR')) {
      define('PEAR_CONFIG_DEFAULT_CACHE_DIR', getenv('PHP_PEAR_CACHE_DIR'));
  } else {
@@ -55,7 +56,7 @@ $OpenBSD: patch-lib_PEAR_Config_php,v 1.1.1.1 2007/03/19 23:13:23 robert Exp $
  }
  
  // Default for download_dir
-@@ -213,9 +203,7 @@
+@@ -229,9 +219,7 @@
  if (getenv('PHP_PEAR_SIG_BIN')) {
      define('PEAR_CONFIG_DEFAULT_SIG_BIN', getenv('PHP_PEAR_SIG_BIN'));
  } else {
