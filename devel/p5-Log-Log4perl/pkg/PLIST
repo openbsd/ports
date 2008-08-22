@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/11/20 19:11:24 simon Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/08/22 20:54:06 simon Exp $
 ${P5SITE}/Log/
 ${P5SITE}/Log/Log4perl/
 ${P5SITE}/Log/Log4perl.pm
@@ -52,7 +52,9 @@ ${P5SITE}/Log/Log4perl/Logger.pm
 ${P5SITE}/Log/Log4perl/MDC.pm
 ${P5SITE}/Log/Log4perl/NDC.pm
 ${P5SITE}/Log/Log4perl/Resurrector.pm
+${P5SITE}/Log/Log4perl/Util/
 ${P5SITE}/Log/Log4perl/Util.pm
+${P5SITE}/Log/Log4perl/Util/Semaphore.pm
 @man man/man3p/Log::Log4perl.3p
 @man man/man3p/Log::Log4perl::Appender.3p
 @man man/man3p/Log::Log4perl::Appender::Buffer.3p
@@ -99,3 +101,4 @@ ${P5SITE}/Log/Log4perl/Util.pm
 @man man/man3p/Log::Log4perl::NDC.3p
 @man man/man3p/Log::Log4perl::Resurrector.3p
 @man man/man3p/Log::Log4perl::Util.3p
+@man man/man3p/Log::Log4perl::Util::Semaphore.3p
