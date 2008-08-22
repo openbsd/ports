@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/10/07 21:29:50 steven Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/08/22 20:18:22 steven Exp $
 bin/chartex
 ${P5SITE}/Spreadsheet/
 ${P5SITE}/Spreadsheet/WriteExcel/
@@ -27,6 +27,7 @@ ${P5SITE}/Spreadsheet/WriteExcel/Worksheet.pm
 @man man/man3p/Spreadsheet::WriteExcel::Worksheet.3p
 share/examples/p5-Spreadsheet-WriteExcel/
 share/examples/p5-Spreadsheet-WriteExcel/README
+share/examples/p5-Spreadsheet-WriteExcel/a_simple.pl
 share/examples/p5-Spreadsheet-WriteExcel/autofilter.pl
 share/examples/p5-Spreadsheet-WriteExcel/autofit.pl
 share/examples/p5-Spreadsheet-WriteExcel/bigfile.pl
@@ -39,6 +40,7 @@ share/examples/p5-Spreadsheet-WriteExcel/comments2.pl
 share/examples/p5-Spreadsheet-WriteExcel/convertA1.pl
 share/examples/p5-Spreadsheet-WriteExcel/copyformat.pl
 share/examples/p5-Spreadsheet-WriteExcel/csv2xls.pl
+share/examples/p5-Spreadsheet-WriteExcel/data_validate.pl
 share/examples/p5-Spreadsheet-WriteExcel/date_time.pl
 share/examples/p5-Spreadsheet-WriteExcel/datecalc1.pl
 share/examples/p5-Spreadsheet-WriteExcel/datecalc2.pl
@@ -65,6 +67,7 @@ share/examples/p5-Spreadsheet-WriteExcel/merge6.pl
 share/examples/p5-Spreadsheet-WriteExcel/mod_perl1.pl
 share/examples/p5-Spreadsheet-WriteExcel/mod_perl2.pl
 share/examples/p5-Spreadsheet-WriteExcel/outline.pl
+share/examples/p5-Spreadsheet-WriteExcel/outline_collapsed.pl
 share/examples/p5-Spreadsheet-WriteExcel/panes.pl
 share/examples/p5-Spreadsheet-WriteExcel/protection.pl
 share/examples/p5-Spreadsheet-WriteExcel/regions.pl
@@ -73,7 +76,6 @@ share/examples/p5-Spreadsheet-WriteExcel/right_to_left.pl
 share/examples/p5-Spreadsheet-WriteExcel/row_wrap.pl
 share/examples/p5-Spreadsheet-WriteExcel/sales.pl
 share/examples/p5-Spreadsheet-WriteExcel/sendmail.pl
-share/examples/p5-Spreadsheet-WriteExcel/simple.pl
 share/examples/p5-Spreadsheet-WriteExcel/stats.pl
 share/examples/p5-Spreadsheet-WriteExcel/stats_ext.pl
 share/examples/p5-Spreadsheet-WriteExcel/stocks.pl
