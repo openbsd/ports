@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-music,v 1.1.1.1 2008/08/22 11:41:50 ajacoutot Exp $
+share/tmw/data/music/
+share/tmw/data/music/Clouds Calling.ogg
+share/tmw/data/music/Faith.ogg
+share/tmw/data/music/Magick - Real.ogg
+share/tmw/data/music/The Mana World - Snow Village.ogg
+share/tmw/data/music/The Mana World - The Forest.ogg
+share/tmw/data/music/finalman_and_yakslem-cavesong.ogg
