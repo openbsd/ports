@@ -1,12 +1,27 @@
-$OpenBSD: patch-configure,v 1.1 2006/06/26 20:39:16 aanriot Exp $
---- configure.orig	Fri Jun  9 15:45:35 2006
-+++ configure	Fri Jun  9 15:46:31 2006
-@@ -6965,7 +6965,7 @@ fi
+--- configure.orig	Tue Aug 19 14:11:50 2008
++++ configure	Thu Aug 21 11:10:03 2008
+@@ -7833,6 +7833,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
  
- fi
++#include <sys/types.h>
+ #include <netinet/in.h>
  
--LIBS="$LIBS -lresolv"
-+#LIBS="$LIBS -lresolv"
  
- echo "$as_me:$LINENO: checking for herror" >&5
- echo $ECHO_N "checking for herror... $ECHO_C" >&6
+@@ -7898,6 +7899,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
++#include <sys/types.h>
+ #include <netinet/in.h>
+ 
+ 
+@@ -7955,7 +7957,7 @@
+ echo $ECHO_N "checking for C flags to get more warnings... $ECHO_C" >&6; }
+ ac_save_CFLAGS="$CFLAGS"
+ if test "x$ac_cv_c_compiler_gnu" = "xyes" ; then
+-    warning_CFLAGS="-Wall -Wno-pointer-sign"
++    warning_CFLAGS="-Wall"
+ else
+     case "$host_os" in
+         irix*)
