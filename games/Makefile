@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2008/07/09 16:58:57 phessler Exp $
+# $OpenBSD: Makefile,v 1.172 2008/08/22 11:43:35 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -129,6 +129,7 @@
      SUBDIR += toppler
      SUBDIR += tornado
      SUBDIR += tetrinetx
+     SUBDIR += tmw
      SUBDIR += tutris
      SUBDIR += tuxpaint
      SUBDIR += tuxpaint-config
