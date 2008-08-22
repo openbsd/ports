@@ -1,16 +1,15 @@
-$OpenBSD: patch-postgrey,v 1.2 2008/03/31 21:26:15 jakob Exp $
---- postgrey.orig	Thu Sep  6 16:32:58 2007
-+++ postgrey	Fri Mar 21 10:19:05 2008
-@@ -23,7 +23,7 @@ use vars qw(@ISA);
+--- postgrey.orig	Thu Jul 31 12:51:39 2008
++++ postgrey	Thu Jul 31 12:54:15 2008
+@@ -23,7 +23,7 @@
  @ISA = qw(Net::Server::Multiplex);
  
- my $VERSION = '1.31';
+ my $VERSION = '1.32';
 -my $DEFAULT_DBDIR = '/var/spool/postfix/postgrey';
 +my $DEFAULT_DBDIR = '/var/db/postgrey';
  my $CONFIG_DIR = '/etc/postfix';
  
  sub cidr_parse($)
-@@ -556,8 +556,8 @@ sub main()
+@@ -574,8 +574,8 @@
              commandline      => [ $0, @ARGV_saved ],
              port             => [ $opt{inet} ? $opt{inet} : $opt{unix}."|unix" ],
              proto            => $opt{inet} ? 'tcp' : 'unix',
@@ -21,7 +20,7 @@ $OpenBSD: patch-postgrey,v 1.2 2008/03/31 21:26:15 jakob Exp $
              dbdir            => $opt{dbdir} || $DEFAULT_DBDIR,
              setsid           => $opt{daemonize} ? 1 : undef,
              pid_file         => $opt{daemonize} ? $opt{pidfile} : undef,
-@@ -763,9 +763,9 @@ B<postgrey> [I<options>...]
+@@ -782,9 +782,9 @@
   -i, --inet=[HOST:]PORT  listen on PORT, localhost if HOST is not specified
   -d, --daemonize         run in the background
       --pidfile=PATH      put daemon pid into this file
