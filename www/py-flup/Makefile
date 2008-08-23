@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/10 21:07:52 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2008/08/23 20:38:57 martynas Exp $
 
 COMMENT=		random assortment of WSGI servers, middleware
 
-VERSION=		0.5
-REVISION=		2311
-DISTNAME=		flup-${VERSION}
-PKGNAME=		py-flup-${VERSION}r${REVISION}p0
+MODPY_EGG_VERSION=	1.0.1
+DISTNAME=		flup-${MODPY_EGG_VERSION}
+PKGNAME=		py-flup-${MODPY_EGG_VERSION}
 
 CATEGORIES=		www
 
@@ -20,7 +19,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.saddi.com/software/flup/dist/
-DISTFILES=		flup-r${REVISION}${EXTRACT_SUFX}
 
 MODULES=		lang/python
 
