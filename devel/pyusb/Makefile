@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/08/23 20:45:10 martynas Exp $
 SHARED_ONLY=	Yes
 
-COMMENT=	python interface to libusb
-DISTNAME=	pyusb-0.3.5
-PKGNAME=	${DISTNAME}p0
-CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyusb/}
+COMMENT=		python interface to libusb
+MODPY_EGG_VERSION=	0.4.1
+DISTNAME=		pyusb-${MODPY_EGG_VERSION}
+CATEGORIES=		devel
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pyusb/}
 
 HOMEPAGE=	http://pyusb.berlios.de/
 
-# GPL
+# BSD
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes

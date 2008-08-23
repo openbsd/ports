@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 18:11:25 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/08/23 20:45:10 martynas Exp $
+lib/python${MODPY_VERSION}/site-packages/pyusb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/usb.so
 share/examples/pyusb/
 share/examples/pyusb/usbenum.py
