@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.42 2008/08/20 02:07:04 brad Exp $
+$OpenBSD: patch-dovecot-example_conf,v 1.43 2008/08/23 20:13:39 brad Exp $
 --- dovecot-example.conf.orig	Fri Jul 11 19:14:14 2008
-+++ dovecot-example.conf	Mon Jul 28 09:16:14 2008
++++ dovecot-example.conf	Sat Aug 23 16:09:00 2008
 @@ -10,13 +10,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -157,6 +157,15 @@ $OpenBSD: patch-dovecot-example_conf,v 1.42 2008/08/20 02:07:04 brad Exp $
  }
  
  ##
+@@ -663,7 +663,7 @@ protocol lda {
+   # Support for dynamically loadable plugins. mail_plugins is a space separated
+   # list of plugins to load.
+   #mail_plugins = 
+-  #mail_plugin_dir = /usr/lib/dovecot/lda
++  #mail_plugin_dir = ${PREFIX}/lib/dovecot/lda
+ 
+   # If user is over quota, return with temporary failure instead of
+   # bouncing the mail.
 @@ -677,7 +677,7 @@ protocol lda {
    #deliver_log_format = msgid=%m: %$
  
