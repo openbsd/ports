@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/07/28 08:27:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/08/23 21:23:47 ajacoutot Exp $
 bin/mnemosyne
 lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -104,8 +104,6 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/product_tour_frm.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/product_tour_frm.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/qtextedit2.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/qtextedit2.pyc
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/scrolllabel.py
-lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/scrolllabel.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/sound.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/sound.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/statistics_dlg.py
