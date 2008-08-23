@@ -1,78 +1,78 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/06/12 17:28:15 ckuethe Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/08/23 16:29:34 ajacoutot Exp $
 %%SHARED%%
-bin/DDBase
-bin/DiscFix
-bin/EditRinex
-bin/IonoBias
-bin/NavMerge
-bin/PRSolve
-bin/ResCor
-bin/RinSum
-bin/RinexDump
-bin/TECMaps
-bin/ash2mdp
-bin/ash2xyz
-bin/ats2mdp
-bin/bc2sp3
-bin/calgps
-bin/codeDump
-bin/compSatVis
-bin/compStaVis
-bin/corltr
-bin/daa
-bin/ddGen
-bin/ddmerge
-bin/ephdiff
-@comment bin/example1
-@comment bin/example2
-@comment bin/example3
-@comment bin/example4
-@comment bin/example5
-@comment bin/example6
-@comment bin/example7
-bin/fic2rin
-bin/ficacheck
-bin/ficafic
-bin/ficcheck
-bin/ficdiff
-bin/ficfica
-bin/findMoreThan12
-bin/gpsSim
-bin/gpstracker
-bin/iqdump
-bin/mdp2rinex
-bin/mdpEdit
-bin/mdpscreenx
-bin/mdptool
-bin/mergeFIC
-bin/mergeRinMet
-bin/mergeRinNav
-bin/mergeRinObs
-bin/mergeSRI
-bin/mpsolve
-bin/navdmp
-bin/novaRinex
-bin/ordClock
-bin/ordEdit
-bin/ordGen
-bin/ordLinEst
-bin/ordStats
-bin/posInterp
-bin/poscvt
-bin/rfw
-bin/rinexpvt
-bin/rinexthin
-bin/rmwcheck
-bin/rmwdiff
-bin/rnwcheck
-bin/rnwdiff
-bin/rowcheck
-bin/rowdiff
-bin/rstats
-bin/simpleNav
-bin/sp3version
-bin/svvis
-bin/tcptest
-bin/timeconvert
-bin/vecsol
-bin/wheresat
+@bin bin/DDBase
+@bin bin/DiscFix
+@bin bin/EditRinex
+@bin bin/IonoBias
+@bin bin/NavMerge
+@bin bin/PRSolve
+@bin bin/ResCor
+@bin bin/RinSum
+@bin bin/RinexDump
+@bin bin/TECMaps
+@bin bin/ash2mdp
+@bin bin/ash2xyz
+@bin bin/ats2mdp
+@bin bin/bc2sp3
+@bin bin/calgps
+@bin bin/codeDump
+@bin bin/compSatVis
+@bin bin/compStaVis
+@bin bin/corltr
+@bin bin/daa
+@bin bin/ddGen
+@bin bin/ddmerge
+@bin bin/ephdiff
+@comment @bin bin/example1
+@comment @bin bin/example2
+@comment @bin bin/example3
+@comment @bin bin/example4
+@comment @bin bin/example5
+@comment @bin bin/example6
+@comment @bin bin/example7
+@bin bin/fic2rin
+@bin bin/ficacheck
+@bin bin/ficafic
+@bin bin/ficcheck
+@bin bin/ficdiff
+@bin bin/ficfica
+@bin bin/findMoreThan12
+@bin bin/gpsSim
+@bin bin/gpstracker
+@bin bin/iqdump
+@bin bin/mdp2rinex
+@bin bin/mdpEdit
+@bin bin/mdpscreenx
+@bin bin/mdptool
+@bin bin/mergeFIC
+@bin bin/mergeRinMet
+@bin bin/mergeRinNav
+@bin bin/mergeRinObs
+@bin bin/mergeSRI
+@bin bin/mpsolve
+@bin bin/navdmp
+@bin bin/novaRinex
+@bin bin/ordClock
+@bin bin/ordEdit
+@bin bin/ordGen
+@bin bin/ordLinEst
+@bin bin/ordStats
+@bin bin/posInterp
+@bin bin/poscvt
+@bin bin/rfw
+@bin bin/rinexpvt
+@bin bin/rinexthin
+@bin bin/rmwcheck
+@bin bin/rmwdiff
+@bin bin/rnwcheck
+@bin bin/rnwdiff
+@bin bin/rowcheck
+@bin bin/rowdiff
+@bin bin/rstats
+@bin bin/simpleNav
+@bin bin/sp3version
+@bin bin/svvis
+@bin bin/tcptest
+@bin bin/timeconvert
+@bin bin/vecsol
+@bin bin/wheresat
