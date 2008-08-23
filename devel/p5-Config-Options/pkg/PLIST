@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/04 20:23:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/08/23 08:06:18 steven Exp $
 ${P5SITE}/Config/
+${P5SITE}/Config/Options/
 ${P5SITE}/Config/Options.pm
+${P5SITE}/Config/Options/Threaded.pm
 @man man/man3p/Config::Options.3p
+@man man/man3p/Config::Options::Threaded.3p
