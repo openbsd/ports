@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2008/08/23 16:33:44 simon Exp $
+# $OpenBSD: Makefile,v 1.145 2008/08/23 16:49:05 simon Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -68,6 +68,7 @@
      SUBDIR += p5-DBIx-Class-Validation
      SUBDIR += p5-DBIx-ContextualFetch
      SUBDIR += p5-DBIx-DBSchema
+     SUBDIR += p5-DBIx-DWIW
      SUBDIR += p5-DBIx-DataModel
      SUBDIR += p5-DBIx-Migration
      SUBDIR += p5-DBIx-SearchBuilder
