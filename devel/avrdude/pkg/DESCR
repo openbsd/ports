@@ -4,3 +4,8 @@ serial programming protocol, it can program fuse and lock bits. AVRDUDE
 also supplies a direct instruction mode allowing one to issue any
 programming instruction to the AVR chip regardless of whether AVRDUDE
 implements that specific feature of a particular chip. 
+
+If you're planning on programming *duino devices with avrdude, you'll want
+to invoke it something like this:
+
+	avrdude -b19200 -P /dev/cuaU0 -c avrisp -p m169 -U flash:w:blink.hex
