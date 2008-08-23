@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.6 2008/07/05 16:00:29 martynas Exp $
+@comment $OpenBSD: PLIST-devel,v 1.7 2008/08/23 22:07:03 martynas Exp $
 @conflict xulrunner-<1.8.0.4p0
 lib/pkgconfig/
 lib/pkgconfig/xulrunner-gtkmozembed.pc
@@ -1878,7 +1878,6 @@ xulrunner/include/java/typedefs.h
 xulrunner/include/java/typedefs_md.h
 xulrunner/include/java/zip.h
 xulrunner/include/js/
-xulrunner/include/js/fdlibm.h
 xulrunner/include/js/js.msg
 xulrunner/include/js/jsapi.h
 xulrunner/include/js/jsarena.h
