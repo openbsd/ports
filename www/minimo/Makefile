@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.46 2008/07/17 15:38:25 martynas Exp $
+# $OpenBSD: Makefile,v 1.47 2008/08/23 22:12:21 martynas Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	small, simple, and powerful web browser for mobile devices
 DISTNAME=	minimo-1.8.1.16
-PKGNAME=	${DISTNAME}v0
+PKGNAME=	${DISTNAME}p0v0
 
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~martynas/mozilla/minimo/
  
-HOMEPAGE=	http://www.mozilla.org/projects/minimo/
+HOMEPAGE=	http://www-archive.mozilla.org/projects/minimo/
 
 # MPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,7 +27,7 @@ LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=3::graphics/png \
 		gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
-		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
+		nss3.>=19,nssutil3.>=22,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
 WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi Xinerama \
 		Xrandr Xrender Xt Xau Xdmcp expat c fontconfig freetype m \
 		pthread z \
