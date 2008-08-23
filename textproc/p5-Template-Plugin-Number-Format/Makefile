@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/08/23 14:27:19 simon Exp $
 
 COMMENT= 	plugin/filter interface to Number::Format
 
 MODULES=	cpan
-DISTNAME=	Template-Plugin-Number-Format-1.01
+DISTNAME=	Template-Plugin-Number-Format-1.02
 CATEGORIES=	textproc
 
 # Artistic
