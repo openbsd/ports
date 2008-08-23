@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/02 14:10:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/08/23 21:40:08 martynas Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
@@ -59,8 +59,9 @@ post-install:
 		${PREFIX}/share/examples/py-gnome-extras
 
 do-regress: fake
-	cd ${WRKSRC}/tests && \
-		env PYTHONPATH="${WRKINST}${MODPY_LIBDIR}/site-packages/gtk-2.0" \
+	cd ${WRKSRC}/tests && env \
+		LD_LIBRARY_PATH="${LOCALBASE}/xulrunner" \
+		PYTHONPATH="${WRKINST}${MODPY_LIBDIR}/site-packages/gtk-2.0" \
 		${MODPY_BIN} runtests.py
 
 .include <bsd.port.mk>
