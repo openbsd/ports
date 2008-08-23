@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2008/08/22 11:43:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.173 2008/08/23 16:01:28 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -19,7 +19,6 @@
      SUBDIR += belooted
      SUBDIR += blobwars
      SUBDIR += bomberclone
-     SUBDIR += bombermaze
      SUBDIR += boswars
      SUBDIR += burgerspace
      SUBDIR += bzflag
