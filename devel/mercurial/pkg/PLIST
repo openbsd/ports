@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/05/13 12:02:54 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/08/24 11:24:24 wcmaier Exp $
 %%SHARED%%
 bin/hg
 lib/python${MODPY_VERSION}/site-packages/hgext/
@@ -80,7 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/hgext/win32mbcs.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/win32text.py
 lib/python${MODPY_VERSION}/site-packages/hgext/win32text.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/
-lib/python${MODPY_VERSION}/site-packages/mercurial-${VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/mercurial-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mercurial/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/__version__.py
