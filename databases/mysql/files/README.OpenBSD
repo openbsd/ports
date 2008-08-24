@@ -2,10 +2,10 @@ Using MySQL in an OpenBSD environment
 
 If you are installing MySQL for the first time, you have to create
 a default database first. In order to create the database, please run
-@PREFIX@/bin/mysql_install_db
+${TRUEPREFIX}/bin/mysql_install_db
 
 You will need to tune the values in the my.cnf file (examples
-available in @PREFIX@/share/mysql).
+available in ${TRUEPREFIX}/share/mysql).
 
 By default, the _mysql user, and so the mysqld processes run in
 the login(1) class of "daemon". On a busy server, it may be advisable
@@ -25,12 +25,12 @@ Rebuild the login.conf.db file if necessary:
 
 And start the server like this:
 
-	if [ -x @PREFIX@/bin/mysqld_safe ] ; then
-		su -c mysql root -c '@PREFIX@/bin/mysqld_safe >/dev/null 2>&1 &' 
+	if [ -x ${TRUEPREFIX}/bin/mysqld_safe ] ; then
+		su -c mysql root -c '${TRUEPREFIX}/bin/mysqld_safe >/dev/null 2>&1 &' 
 		echo -n ' mysql'
 	fi
 
-mysqld_safe(1) is the recommended way to start a mysqld server,
+mysqld_safe(1) is the recommended way to start a MySQL server,
 it creates the directory for the socket and adds some safety
 features such as restarting the server when an error occurs
 and logging runtime information to an error log file. Options

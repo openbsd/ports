@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.9 2008/01/18 20:31:17 merdely Exp $
---- scripts/mysql_install_db.sh.orig	Thu Nov 15 09:06:33 2007
-+++ scripts/mysql_install_db.sh	Thu Dec  6 18:15:43 2007
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.10 2008/08/24 08:40:03 brad Exp $
+--- scripts/mysql_install_db.sh.orig	Mon Aug  4 08:20:02 2008
++++ scripts/mysql_install_db.sh	Fri Aug  8 17:22:43 2008
 @@ -25,7 +25,8 @@ srcdir=""
  args=""
  defaults=""
@@ -20,7 +20,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.9 2008/01/18 20:31:17 merdely Ex
        --skip-name-resolve) ip_only=1 ;;
        --verbose) verbose=1 ;; # Obsolete
        --rpm) in_rpm=1 ;;
-@@ -320,7 +323,7 @@ do
+@@ -321,7 +324,7 @@ do
    fi
    if test -w / -a ! -z "$user"
    then
@@ -29,7 +29,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.9 2008/01/18 20:31:17 merdely Ex
    fi
  done
  
-@@ -354,11 +357,6 @@ then
+@@ -364,11 +367,6 @@ then
      echo
    fi
  
@@ -38,10 +38,10 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.9 2008/01/18 20:31:17 merdely Ex
 -  s_echo "support-files/mysql.server to the right place for your system"
 -  s_echo
 -
-   if test "$windows" -eq 0
+   if test "$cross_bootstrap" -eq 0
    then
-     # A root password should of course also be set on Windows!
-@@ -381,16 +379,6 @@ then
+     # This is not a true installation on a running system.  The end user must
+@@ -389,16 +387,6 @@ then
      echo
      echo "See the manual for more instructions."
      echo

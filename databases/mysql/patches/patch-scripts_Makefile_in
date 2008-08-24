@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_Makefile_in,v 1.9 2007/08/08 21:33:51 robert Exp $
---- scripts/Makefile.in.orig	Wed Jul  4 09:10:00 2007
-+++ scripts/Makefile.in	Sat Jul 14 16:19:38 2007
-@@ -786,6 +786,7 @@ mysql_fix_privilege_tables_sql.c: comp_sql.c mysql_fix
+$OpenBSD: patch-scripts_Makefile_in,v 1.10 2008/08/24 08:40:03 brad Exp $
+--- scripts/Makefile.in.orig	Mon Aug  4 08:22:27 2008
++++ scripts/Makefile.in	Fri Aug  8 17:21:01 2008
+@@ -793,6 +793,7 @@ mysql_fix_privilege_tables_sql.c: comp_sql.c mysql_fix
  	  -e 's!@''datadir''@!$(datadir)!g' \
  	  -e 's!@''localstatedir''@!$(localstatedir)!g' \
  	  -e 's!@''libexecdir''@!$(libexecdir)!g' \

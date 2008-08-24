@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2007/08/08 21:33:51 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/08/24 08:40:03 brad Exp $
 @pkgpath databases/mysql
-bin/mysql
-bin/mysql_client_test
+@bin bin/mysql
+@bin bin/mysql_client_test
 bin/mysql_config
-bin/mysql_tzinfo_to_sql
-bin/mysqladmin
-bin/mysqlbinlog
-bin/mysqlcheck
-bin/mysqldump
+@bin bin/mysql_tzinfo_to_sql
+@bin bin/mysqladmin
+@bin bin/mysqlbinlog
+@bin bin/mysqlcheck
+@bin bin/mysqldump
 bin/mysqldumpslow
-bin/mysqlimport
-bin/mysqlshow
-bin/mysqltest
-bin/mysqltestmanager-pwgen
-bin/mysqltestmanagerc
+@bin bin/mysqlimport
+@bin bin/mysqlshow
+@bin bin/mysqltest
+@bin bin/mysqltestmanager-pwgen
+@bin bin/mysqltestmanagerc
 include/mysql/
 include/mysql/decimal.h
 include/mysql/errmsg.h

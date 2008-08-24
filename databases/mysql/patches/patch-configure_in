@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.23 2007/08/08 21:33:51 robert Exp $
---- configure.in.orig	Wed Jul  4 09:06:08 2007
-+++ configure.in	Sat Jul 14 16:21:38 2007
-@@ -489,48 +489,11 @@ then
+$OpenBSD: patch-configure_in,v 1.24 2008/08/24 08:40:03 brad Exp $
+--- configure.in.orig	Mon Aug  4 08:19:07 2008
++++ configure.in	Fri Aug  8 17:21:01 2008
+@@ -504,48 +504,11 @@ then
  fi
  AC_SUBST(ICHECK)
  
@@ -52,7 +52,7 @@ $OpenBSD: patch-configure_in,v 1.23 2007/08/08 21:33:51 robert Exp $
  AC_SUBST(FIND_PROC)
  AC_MSG_RESULT("$FIND_PROC")
  
-@@ -864,7 +827,8 @@ AC_ARG_WITH(libwrap,
+@@ -907,7 +870,8 @@ AC_ARG_WITH(libwrap,
      AC_CHECK_HEADER(tcpd.h,
        LIBS="-lwrap $LIBS"
        AC_MSG_CHECKING(for TCP wrappers library -lwrap)
@@ -62,7 +62,7 @@ $OpenBSD: patch-configure_in,v 1.23 2007/08/08 21:33:51 robert Exp $
  int allow_severity = 0;
  int deny_severity  = 0;
  
-@@ -1632,7 +1596,7 @@ then
+@@ -1675,7 +1639,7 @@ then
    AC_CHECK_LIB(c_r,strtok_r)
    case "$with_osf32_threads---$target_os" in
      # Don't keep -lc_r in LIBS; -pthread handles it magically
@@ -71,7 +71,7 @@ $OpenBSD: patch-configure_in,v 1.23 2007/08/08 21:33:51 robert Exp $
  
    esac
    AC_CHECK_FUNCS(strtok_r pthread_init)
-@@ -1680,29 +1644,6 @@ case $SYSTEM_TYPE in
+@@ -1723,29 +1687,6 @@ case $SYSTEM_TYPE in
  AC_SYS_RESTARTABLE_SYSCALLS
      ;;
  esac
