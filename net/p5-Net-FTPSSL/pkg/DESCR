@@ -1,0 +1,3 @@
+Net::FTPSSL is an object oriented Perl module which implements a simple
+FTP client over a Secure Socket Layer (SSL) connection written following
+the directives described in RFC959 and RFC2228.
