@@ -1,10 +1,10 @@
-$OpenBSD: patch-devede_py,v 1.5 2008/08/20 08:30:36 ajacoutot Exp $
---- devede.py.orig	Mon Aug 18 15:19:45 2008
-+++ devede.py	Mon Aug 18 15:22:14 2008
+$OpenBSD: patch-devede_py,v 1.6 2008/08/24 22:02:26 ajacoutot Exp $
+--- devede.py.orig	Sun Aug 24 23:55:02 2008
++++ devede.py	Sun Aug 24 23:56:45 2008
 @@ -36,13 +36,13 @@ import pickle
  import cairo
  
- print "DeVeDe 3.10"
+ print "DeVeDe 3.11"
 -if sys.platform!="win32":
 +if sys.platform!="win32" and not sys.platform.startswith('openbsd'):
  	print "Locale: "+str(os.environ["LANG"])
@@ -17,7 +17,7 @@ $OpenBSD: patch-devede_py,v 1.5 2008/08/20 08:30:36 ajacoutot Exp $
  	fichero.close()
  	tipo=1
  	found=True
-@@ -94,14 +94,14 @@ elif tipo==1:
+@@ -94,15 +94,15 @@ elif tipo==1:
  	#gtk.glade.bindtextdomain("devede","/usr/share/locale")
  	#arbol=gtk.glade.XML("/usr/local/share/devede/devede.glade",domain="devede")
  
@@ -30,12 +30,14 @@ $OpenBSD: patch-devede_py,v 1.5 2008/08/20 08:30:36 ajacoutot Exp $
 -	pic_path="/usr/local/share/devede"
 -	other_path="/usr/local/share/devede"
 -	help_path="/usr/local/share/doc/devede"
+-	print "Using local-installed files"
 +	glade="${PREFIX}/share/devede/devede.glade"
 +	sys.path.append("${MODPY_SITEPKG}/devede")
 +	font_path="${PREFIX}/share/devede"
 +	pic_path="${PREFIX}/share/devede"
 +	other_path="${PREFIX}/share/devede"
 +	help_path="${PREFIX}/share/doc/devede"
- 	print "Using local-installed files"
++        print "Using local-installed files"
  	
  elif tipo==2:
+ 	# if the files aren't at /usr/local, try with ./
