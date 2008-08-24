@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/06/09 18:24:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2008/08/24 09:01:51 brad Exp $
 
 COMMENT=	image manipulation library
 
@@ -32,17 +32,5 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${WRKBUILD}/src/lib/.libs -L${X11BASE}/lib -L${LOCALBASE}/lib"
-
-.if ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ARGS+= --enable-amd64
-.else
-CONFIGURE_ARGS+= --disable-amd64
-.endif
-
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS+= --enable-mmx
-.else
-CONFIGURE_ARGS+= --disable-mmx
-.endif
 
 .include <bsd.port.mk>
