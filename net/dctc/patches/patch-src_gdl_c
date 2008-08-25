@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gdl_c,v 1.2 2007/12/11 11:04:58 jakemsr Exp $
---- src/gdl.c.orig	Fri Jan 25 08:37:57 2002
-+++ src/gdl.c	Tue Dec 11 00:04:50 2007
-@@ -583,7 +583,7 @@ static int append_this_range_entry_to_file(FILE *f, un
+$OpenBSD: patch-src_gdl_c,v 1.3 2008/08/25 15:14:43 jasper Exp $
+--- src/gdl.c.orig	Thu Aug 21 21:26:23 2008
++++ src/gdl.c	Thu Aug 21 21:26:58 2008
+@@ -748,7 +748,7 @@ static int append_this_range_entry_to_file(FILE *f, un
  		}
  		if(have!=want)
  		{

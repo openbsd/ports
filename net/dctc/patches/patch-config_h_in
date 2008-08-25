@@ -1,44 +1,37 @@
-$OpenBSD: patch-config_h_in,v 1.2 2007/12/11 11:04:57 jakemsr Exp $
---- config.h.in.orig	Sat Jan  5 01:07:48 2002
-+++ config.h.in	Tue Dec 11 00:04:52 2007
-@@ -24,9 +24,14 @@
- /* Define if your <sys/time.h> declares struct tm.  */
- #undef TM_IN_SYS_TIME
- 
+$OpenBSD: patch-config_h_in,v 1.3 2008/08/25 15:14:43 jasper Exp $
+--- config.h.in.orig	Sat Jan 24 07:30:27 2004
++++ config.h.in	Sat Aug 23 18:04:36 2008
+@@ -1,7 +1,8 @@
+ /* config.h.in.  Generated from configure.in by autoheader.  */
 +#undef HAVE_LIBPTHREAD
-+
- /* Define if you have the getcwd function.  */
+ 
+-/* Define to 1 if you have the <db.h> header file. */
+-#undef HAVE_DB_H
++/* Define to 1 if you have the <db/db.h> header file. */
++#undef HAVE_DB_DB_H
+ 
+ /* Define to 1 if you have the <dirent.h> header file, and it defines `DIR'.
+    */
+@@ -22,6 +23,12 @@
+ /* Define to 1 if you have the `getcwd' function. */
  #undef HAVE_GETCWD
  
-+/* Define if you have the getopt_long function.  */
-+#undef HAVE_GETOPT_LONG
-+
- /* Define if you have the getpagesize function.  */
- #undef HAVE_GETPAGESIZE
- 
-@@ -63,9 +68,15 @@
- /* Define if you have the <fcntl.h> header file.  */
- #undef HAVE_FCNTL_H
- 
-+/* Define if you have the <getopt.h> header file.  */
++/* Define to 1 if you have the <getopt.h> header file. */
 +#undef HAVE_GETOPT_H
 +
- /* Define if you have the <limits.h> header file.  */
- #undef HAVE_LIMITS_H
- 
-+/* Define if you have the <linux/sem.h> header file.  */
-+#undef HAVE_LINUX_SEM_H
++/* Define to 1 if you have the `getopt_long' function. */
++#undef HAVE_GETOPT_LONG
 +
- /* Define if you have the <ndir.h> header file.  */
- #undef HAVE_NDIR_H
+ /* Define to 1 if you have the `getpagesize' function. */
+ #undef HAVE_GETPAGESIZE
  
-@@ -95,9 +106,6 @@
+@@ -36,6 +43,9 @@
  
- /* Define if you have the gthread library (-lgthread).  */
- #undef HAVE_LIBGTHREAD
--
--/* Define if you have the pthread library (-lpthread).  */
--#undef HAVE_LIBPTHREAD
+ /* Define to 1 if you have the <limits.h> header file. */
+ #undef HAVE_LIMITS_H
++
++/* Define to 1 if you have the <linux/sem.h> header file. */
++#undef HAVE_LINUX_SEM_H
  
- /* Name of package */
- #undef PACKAGE
+ /* Define to 1 if you have the <memory.h> header file. */
+ #undef HAVE_MEMORY_H

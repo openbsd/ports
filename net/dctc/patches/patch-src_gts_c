@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gts_c,v 1.1.1.1 2002/01/31 12:21:54 naddy Exp $
---- src/gts.c.orig	Mon Jan 28 16:52:25 2002
-+++ src/gts.c	Mon Jan 28 16:52:42 2002
-@@ -431,7 +431,7 @@ void list_gts_content(void)
+$OpenBSD: patch-src_gts_c,v 1.2 2008/08/25 15:14:43 jasper Exp $
+--- src/gts.c.orig	Sun Dec 28 09:12:38 2003
++++ src/gts.c	Fri Aug 22 20:32:04 2008
+@@ -456,7 +456,7 @@ void list_gts_content(void)
  		if(mapped_gts[i].slot_status==0)		/* empty slot */
  			continue;
  

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_keyboard_master_c,v 1.1 2008/08/25 15:14:43 jasper Exp $
+--- src/keyboard_master.c.orig	Sat Aug 23 18:19:44 2008
++++ src/keyboard_master.c	Sat Aug 23 18:20:13 2008
+@@ -572,7 +572,7 @@ static void keyb_do_csearch(const char *cmd, int sck, 
+ 			if(!md5sum_of_file(pattern,md5sum))
+ 			{
+ 				char txt_md[3*MD5SUMLEN+1];
+-				md5tostr(md5sum,txt_md);
++				md5tostr(md5sum,txt_md,sizeof txt_md);
+ 				g_string_sprintfa(query,".%s",txt_md);
+ 	
+ 				/* add a tos entry for this search */
+@@ -587,7 +587,7 @@ static void keyb_do_csearch(const char *cmd, int sck, 
+ 			if(!md5sum_of_file(pattern,md5sum))
+ 			{
+ 				char txt_md[3*MD5SUMLEN+1];
+-				md5tostr(md5sum,txt_md);
++				md5tostr(md5sum,txt_md,sizeof txt_md);
+ 				g_string_sprintfa(query,".%s",txt_md);
+ 	
+ 				/* add a tos entry for this search */

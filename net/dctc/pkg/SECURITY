@@ -1,4 +1,0 @@
-This package used sprintf and strcpy in various places, they were
-all replaced with the safe counterparts snprintf and strncpy.
-dctc does not require any privileges and should not be run as root,
-just specify another port to listen on instead of the default (412).

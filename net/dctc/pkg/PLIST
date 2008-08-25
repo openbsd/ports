@@ -1,12 +1,44 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:39 espie Exp $
-bin/dctc
-bin/hublist
+@comment $OpenBSD: PLIST,v 1.3 2008/08/25 15:14:43 jasper Exp $
+bin/GDLjoiner
+@bin bin/dc2k
+@bin bin/dctc
+@bin bin/dctc_cmd
+@bin bin/dctc_gdl123
+@bin bin/dctc_master
+@bin bin/hublist
+@man man/man1/dctc.1
+@man man/man1/dctc_cmd.1
+@man man/man1/dctc_gdl123.1
+@man man/man1/hublist.1
 share/doc/dctc/
-share/doc/dctc/DCextensions/
-share/doc/dctc/DCextensions/p2p_capabilities
-share/doc/dctc/DCextensions/search_by_content
-share/doc/dctc/GDL
-share/doc/dctc/VAR
-share/doc/dctc/commands
-share/doc/dctc/output
-share/doc/dctc/programs
+share/doc/dctc/Documentation/
+share/doc/dctc/Documentation/BerkeleyDB
+share/doc/dctc/Documentation/BerkeleyDB.nl
+share/doc/dctc/Documentation/DCextensions/
+share/doc/dctc/Documentation/DCextensions/CVS/
+share/doc/dctc/Documentation/DCextensions/CVS/Entries
+share/doc/dctc/Documentation/DCextensions/CVS/Repository
+share/doc/dctc/Documentation/DCextensions/CVS/Root
+share/doc/dctc/Documentation/DCextensions/ed2k_crc
+share/doc/dctc/Documentation/DCextensions/p2p_capabilities
+share/doc/dctc/Documentation/DCextensions/p2p_capabilities.nl
+share/doc/dctc/Documentation/DCextensions/search_by_content
+share/doc/dctc/Documentation/DCextensions/search_by_content.nl
+share/doc/dctc/Documentation/GDL
+share/doc/dctc/Documentation/GDL.nl
+share/doc/dctc/Documentation/LS_cache
+share/doc/dctc/Documentation/LS_cache.nl
+share/doc/dctc/Documentation/UNODE
+share/doc/dctc/Documentation/UNODE.nl
+share/doc/dctc/Documentation/VAR
+share/doc/dctc/Documentation/VAR.nl
+share/doc/dctc/Documentation/Vshare
+share/doc/dctc/Documentation/Vshare.nl
+share/doc/dctc/Documentation/commands
+share/doc/dctc/Documentation/commands.nl
+share/doc/dctc/Documentation/core_0.85.4
+share/doc/dctc/Documentation/output
+share/doc/dctc/Documentation/output.nl
+share/doc/dctc/Documentation/programs
+share/doc/dctc/Documentation/programs.nl
+share/doc/dctc/Documentation/programs.pl

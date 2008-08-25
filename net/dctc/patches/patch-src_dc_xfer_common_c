@@ -1,11 +1,10 @@
-$OpenBSD: patch-src_dc_manage_c,v 1.2 2007/12/11 11:04:57 jakemsr Exp $
---- src/dc_manage.c.orig	Fri Jan 25 08:39:48 2002
-+++ src/dc_manage.c	Tue Dec 11 00:04:50 2007
-@@ -69,6 +69,16 @@ typedef enum
- 	MY_DIR_UPLOAD=1,				/* what we should do on the connection: Upload */
- } MY_DIR;
+$OpenBSD: patch-src_dc_xfer_common_c,v 1.1 2008/08/25 15:14:43 jasper Exp $
+--- src/dc_xfer_common.c.orig	Fri Aug 22 12:30:03 2008
++++ src/dc_xfer_common.c	Fri Aug 22 12:37:45 2008
+@@ -61,6 +61,15 @@ $Id: dc_xfer_common.c,v 1.3 2004/01/09 18:16:01 ericpr
+ #include "misc.h"
+ #include "main.h"
  
-+
 +/* compability macros for reading/writing to sockets */
 +#ifdef __OpenBSD__
 +# define sock_read(sck, buf, size, flags) read(sck, buf, size)
@@ -15,53 +14,55 @@ $OpenBSD: patch-src_dc_manage_c,v 1.2 2007/12/11 11:04:57 jakemsr Exp $
 +# define sock_write(sck, buf, size, flags) send(sck, buf, size, flags)
 +#endif
 +
- int hub_logged=0;	/* set to 1 when dctc is logged on the hub */
+ int hub_logged=0; /* set to 1 when dctc is logged on the hub */
  
  /********************************************************/
-@@ -294,13 +304,13 @@ static int send_file_data(int sck,char *filename, int 
+@@ -249,7 +258,7 @@ int send_file_data(int sck,char *filename, unsigned lo
  		act->last_touch=time(NULL);
  
- 		get_slices(bl_semid,sizeof(buf)/512);							/* obtain upload authorization */
+ 		get_ul_slices(bl_semid,sizeof(buf)/512);							/* obtain upload authorization */
 -		res=send(sck,buf,sizeof(buf),MSG_NOSIGNAL /* |MSG_WAITALL */ );
-+                res=sock_write(sck,buf,sizeof(buf),MSG_NOSIGNAL /* |MSG_WAITALL */ );
++		res=sock_write(sck,buf,sizeof(buf),MSG_NOSIGNAL /* |MSG_WAITALL */ );
  
  		act->last_touch=time(NULL);
  		if(res!=sizeof(buf))
- 			goto abrt;
+@@ -259,7 +268,7 @@ int send_file_data(int sck,char *filename, unsigned lo
+ 		}
  
--		sprintf(ul_stat,"%lu:%d/%lu/%lu/%lu",act->thread_id,start_pos,file_len,(i+1)*sizeof(buf),a);
+ 		sent_data+=res;
+-		sprintf(ul_stat,"%lu:%llu/%llu/%llu/%llu",act->thread_id,start_pos,file_len,(i+1)*sizeof(buf),a);
 +		snprintf(ul_stat, sizeof(ul_stat), "%lu:%d/%lu/%lu/%lu",act->thread_id,start_pos,file_len,(i+1)*sizeof(buf),a);
  		disp_msg(XFER_UL_STAT,NULL,ul_stat,NULL);
  	}
  
-@@ -317,7 +327,7 @@ static int send_file_data(int sck,char *filename, int 
+@@ -279,7 +288,7 @@ int send_file_data(int sck,char *filename, unsigned lo
  		act->last_touch=time(NULL);
  
- 		get_slices(bl_semid,(remain+511)/512);							/* obtain upload authorization */
+ 		get_ul_slices(bl_semid,(remain+511)/512);							/* obtain upload authorization */
 -		res=send(sck,buf,remain,MSG_NOSIGNAL /* |MSG_WAITALL */ );
 +		res=sock_write(sck,buf,remain,MSG_NOSIGNAL /* |MSG_WAITALL */ );
  
  		act->last_touch=time(NULL);
  		if(res!=remain)
-@@ -351,7 +361,7 @@ static int send_array_data(int sck,GByteArray *ba,WAIT
+@@ -350,7 +359,7 @@ int send_array_data(int sck,GByteArray *ba,WAIT_ACT *a
  		act->last_touch=time(NULL);
  
- 		get_slices(bl_semid,BLOCK_SIZE/512);							/* obtain upload authorization */
+ 		get_ul_slices(bl_semid,BLOCK_SIZE/512);							/* obtain upload authorization */
 -		res=send(sck,ba->data+cur_pos,BLOCK_SIZE,MSG_NOSIGNAL /* |MSG_WAITALL */ );
 +		res=sock_write(sck,ba->data+cur_pos,BLOCK_SIZE,MSG_NOSIGNAL /* |MSG_WAITALL */ );
  
  		act->last_touch=time(NULL);
  		if(res!=BLOCK_SIZE)
-@@ -369,7 +379,7 @@ static int send_array_data(int sck,GByteArray *ba,WAIT
+@@ -368,7 +377,7 @@ int send_array_data(int sck,GByteArray *ba,WAIT_ACT *a
  		act->last_touch=time(NULL);
  
- 		get_slices(bl_semid,(remain+511)/512);							/* obtain upload authorization */
+ 		get_ul_slices(bl_semid,(remain+511)/512);							/* obtain upload authorization */
 -		res=send(sck,ba->data+cur_pos,remain,MSG_NOSIGNAL /* |MSG_WAITALL */ );
 +		res=sock_write(sck,ba->data+cur_pos,remain,MSG_NOSIGNAL /* |MSG_WAITALL */ );
  
  		act->last_touch=time(NULL);
  		if(res!=remain)
-@@ -454,17 +464,18 @@ static int com_up_get_list_len_process(const char *cmd
+@@ -463,15 +472,16 @@ int com_up_get_list_len_process(const char *cmd,WAIT_A
  
  	disp_msg(DEBUG_MSG,"reply",out->str,NULL);
  
@@ -75,72 +76,46 @@ $OpenBSD: patch-src_dc_manage_c,v 1.2 2007/12/11 11:04:57 jakemsr Exp $
  	{
  		if(cpy_data!=NULL)
  			g_byte_array_free(cpy_data,TRUE);
- 		LOCK_WRITE(user_info);
- 		free_dl_slot++;
- 		UNLOCK_WRITE(user_info);
+ 		free_one_ul_slot(bl_semid);
 -		return 1;
 +		return strcmp(cmd,"$GetListLen");
  	}
  
  	/* get command */
-@@ -480,7 +491,9 @@ static int com_up_get_list_len_process(const char *cmd
+@@ -487,7 +497,7 @@ int com_up_get_list_len_process(const char *cmd,WAIT_A
  				g_string_sprintfa(out,"%lu|",(unsigned long)100000+rand()%500000);
  			else
  				g_string_sprintfa(out,"%lu|",(unsigned long)cpy_data->len);
 -			res=send(sck,out->str,out->len,MSG_NOSIGNAL);
-+
 +			res=sock_write(sck,out->str,out->len,MSG_NOSIGNAL);
-+
  			res=(res!=out->len);
  			g_string_free(out,TRUE);
  			if(res)
-@@ -685,7 +698,7 @@ static int com_up_get_process(const char *cmd,WAIT_ACT
- 	disp_msg(XFER_UL_START,"",act->remote_nick->str,fullpathname,NULL);
- 	{
- 		char tmp[510];
--		sprintf(tmp,"%lu",(unsigned long)(act->thread_id));
-+		snprintf(tmp, sizeof(tmp), "%lu",(unsigned long)(act->thread_id));
- 		disp_msg(XFER_UL_RUN,NULL,tmp,act->remote_nick->str,act->disp_info->str,NULL);
- 	}
- 	
-@@ -885,8 +898,9 @@ static int copie_fd_to_file(int remote, FILE *local, u
- 
- 		/* touch the action slot to avoid timeout */
- 		act->last_touch=time(NULL);
--		ret=recv(remote,buf,nb,MSG_WAITALL|MSG_NOSIGNAL);
--		
-+
-+		ret=sock_read(remote,buf,nb,MSG_WAITALL|MSG_NOSIGNAL);
-+
- 		if((ret==-1)||(ret==0))
- 		{	/* error or nothing received */
- 			disp_msg(ERR_MSG,"copie_fd_to_file","connection closed (1)",NULL);
-@@ -1298,7 +1312,8 @@ static int start_a_xdownload(WAIT_ACT *act, WAIT_REVCO
- 				break;
+@@ -1045,7 +1055,7 @@ int start_a_xdownload(WAIT_ACT *act, WAIT_REVCON *act_
+ 			get_dl_slices(bl_semid,(amount+1023)/1024);
  
  			act->last_touch=time(NULL);
 -			ret=recv(act->sock_fd,buf,amount,MSG_WAITALL|MSG_NOSIGNAL);
 +			ret=sock_read(act->sock_fd,buf,amount,MSG_WAITALL|MSG_NOSIGNAL);
-+
  			if((ret==-1)||(ret==0))
  			{	/* error or nothing received */
  				goto end_on_error;
-@@ -1388,12 +1403,9 @@ static int copie_fd_to_bytearray(int remote, GByteArra
+@@ -1122,12 +1132,11 @@ int copie_fd_to_bytearray(int remote, GByteArray **ba,
  
  		/* touch the action slot to avoid timeout */
  		act->last_touch=time(NULL);
 -#if 0
--		ret=recv(remote,(*ba)->data+pos,nb,MSG_WAITALL|MSG_NOSIGNAL);
+ 		ret=recv(remote,(*ba)->data+pos,nb,MSG_WAITALL|MSG_NOSIGNAL);
 -#else
--		ret=recv(remote,(*ba)->data+pos,nb,MSG_NOSIGNAL);
-+		ret=sock_read(remote,(*ba)->data+pos,nb,MSG_NOSIGNAL /*MSG_NOSIGNAL*/);
-+
- 		printf("%d (nb:%lu, amount: %lu)\n",ret,nb,amount);
--#endif
++#if 0
+ 		ret=recv(remote,(*ba)->data+pos,nb,MSG_NOSIGNAL);
+-		printf("%d (nb:%lu, amount: %lu)\n",ret,nb,amount);
+ #endif
++		printf("%d (nb:%lu, amount: %lu)\n",ret,nb,amount);
  		
  		if((ret==-1)||(ret==0))
  		{	/* error or nothing received */
-@@ -3109,7 +3121,7 @@ void get_dc_line_and_process(int sck)
+@@ -2515,7 +2524,7 @@ void get_dc_line_and_process(int sck)
  	static int call_counter=0;
  	char tmp[512];
  

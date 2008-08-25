@@ -1,26 +1,18 @@
-$OpenBSD: patch-src_main_c,v 1.2 2007/12/11 11:04:58 jakemsr Exp $
---- src/main.c.orig	Tue Jan 22 05:47:39 2002
-+++ src/main.c	Tue Dec 11 00:04:50 2007
-@@ -34,9 +34,16 @@
- #include <sys/param.h>
- #include <sys/utsname.h>
- #include <sys/un.h>
--#include <linux/sem.h>     /* for the value of SEMVMX */
-+
-+#ifdef HAVE_LINUX_SEM_H
-+# include <linux/sem.h>     /* for the value of SEMVMX */
-+#endif
-+
+$OpenBSD: patch-src_main_c,v 1.3 2008/08/25 15:14:43 jasper Exp $
+--- src/main.c.orig	Sun Dec 28 09:12:38 2003
++++ src/main.c	Sun Aug 24 13:23:35 2008
+@@ -43,7 +43,9 @@ $Id: patch-src_main_c,v 1.3 2008/08/25 15:14:43 jasper Exp $
+ #include <sys/sem.h>
+ #endif
+ #include <errno.h>
+-#include <getopt.h>
 +#ifdef HAVE_GETOPT_H
 +# include <getopt.h>
 +#endif
-+
- #include <errno.h>
--#include <getopt.h>
  #include <string.h>
+ #include <db.h>
  #include <glib.h>
- #include <pthread.h>
-@@ -204,7 +211,7 @@ void display_cnx_status(void)
+@@ -264,7 +266,7 @@ void display_cnx_status(void)
  	if(cnx_in_progress==0)
  		val+=2;
  
@@ -29,7 +21,7 @@ $OpenBSD: patch-src_main_c,v 1.2 2007/12/11 11:04:58 jakemsr Exp $
  	disp_msg(VAR_MSG,NULL,"cnx_status",buf,NULL);
  }
  
-@@ -247,14 +254,14 @@ void hub_disconnect(HUBDISC_FLAG exit_flag)
+@@ -314,14 +316,14 @@ void hub_disconnect(HUBDISC_FLAG exit_flag)
  		disp_msg(INFO_MSG,"hub_disconnect","have xfer ?",NULL);
  		G_LOCK(waiting_action);
  		
@@ -46,18 +38,17 @@ $OpenBSD: patch-src_main_c,v 1.2 2007/12/11 11:04:58 jakemsr Exp $
  			disp_msg(INFO_MSG,NULL,tmp,NULL);
  
  			if(user_wants_to_quit)		/* wait except if the user wants to leave now */
-@@ -937,6 +944,10 @@ static void display_usage(char *fname)
+@@ -1049,6 +1051,9 @@ static void display_usage(char *fname)
  						"Be careful, most of the information you provide can't contain the following\n"
  						"characters because Direct Connect uses them internally: | $\n"
  						,fname,dc_version);
-+
 +#ifndef HAVE_GETOPT_LONG
 +	fprintf(stderr,"\nNOTE: Long options are not available on this platform\n");
 +#endif
  }
  
  /************************************************************/
-@@ -1061,7 +1072,9 @@ static void start_rebuild_db_thread(void)
+@@ -1175,7 +1180,9 @@ static void start_rebuild_db_thread(void)
  /* beginning of the code */
  int main(int argc,char **argv)
  {
@@ -68,40 +59,41 @@ $OpenBSD: patch-src_main_c,v 1.2 2007/12/11 11:04:58 jakemsr Exp $
  												{"help",no_argument,NULL,'h'},				/* get help */
  												{"nick",required_argument,NULL,'n'},		/* nickname */
  												{"info",required_argument,NULL,'i'},		/* user description */
-@@ -1085,7 +1098,9 @@ int main(int argc,char **argv)
- 												{"nomd5sum",no_argument,NULL,'5'},	/* don't compute md5 sum for each file of the database */
+@@ -1207,7 +1214,9 @@ int main(int argc,char **argv)
+ 												{"virtual_share_dir",required_argument,NULL,'D'},	/* directory containing files containing virtual shared files */
  												{NULL,0,NULL,'\0'}					/* last option */
  											};
--	static const char *short_opt="hn:i:c:e:d:s:o:a:p:g:fxwtlv:u:m:b:5";
+-	static const char *short_opt="hn:i:c:e:d:s:o:a:p:g:fT:xwtlv:u:b:5kS:P:U:D:Z:mC:XK:";
 +#endif
 +
-+  static const char *short_opt="hn:i:c:e:d:s:o:a:p:g:fxwtlv:u:m:b:5";
++	static const char *short_opt="hn:i:c:e:d:s:o:a:p:g:fxwtlv:u:m:b:5";
  										
  	int ch;
  	int detach_from_tty=0;
-@@ -1129,7 +1144,11 @@ int main(int argc,char **argv)
+@@ -1262,7 +1271,11 @@ int main(int argc,char **argv)
  	pre_gsc=g_string_chunk_new(128);
  	pre_gpa=g_ptr_array_new();
  
+-	while((ch=getopt_long(argc,argv,short_opt,optab,NULL))!=EOF)
 +#ifdef HAVE_GETOPT_LONG
- 	while((ch=getopt_long(argc,argv,short_opt,optab,NULL))!=EOF)
++ 	while((ch=getopt_long(argc,argv,short_opt,optab,NULL))!=EOF)
 +#else
 +	while((ch=getopt(argc,argv,short_opt))!= -1)
-+#endif          
++#endif   
  	{
  		switch(ch)
  		{
-@@ -1448,7 +1467,8 @@ int main(int argc,char **argv)
+@@ -1693,7 +1706,8 @@ int main(int argc,char **argv)
  			struct sockaddr_un name;
  
  			name.sun_family=AF_UNIX;
--			strcpy(name.sun_path,local_dctc_sock_path->str);
+-			strcpy(name.sun_path,local_dctc_udp_sock_path->str);
 +			strncpy(name.sun_path,local_dctc_sock_path->str,sizeof(name.sun_path) - 1);
 +                        name.sun_path[sizeof(name.sun_path) - 1] = 0x0;
- 			if(bind(local_sck,(void *)&name,sizeof(struct sockaddr_un)))
+ 			if(bind(local_sck_udp,(void *)&name,sizeof(struct sockaddr_un)))
  			{
- 				perror("local_sck - bind");
-@@ -1502,7 +1522,7 @@ int main(int argc,char **argv)
+ 				perror("local_sck_udp - bind");
+@@ -1780,7 +1794,7 @@ int main(int argc,char **argv)
  			if(p!=NULL)
  			{
  				char tmp_str[512];

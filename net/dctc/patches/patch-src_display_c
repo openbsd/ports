@@ -1,65 +1,65 @@
-$OpenBSD: patch-src_display_c,v 1.2 2007/12/11 11:04:57 jakemsr Exp $
---- src/display.c.orig	Sat Jan  5 00:46:07 2002
-+++ src/display.c	Tue Dec 11 00:04:50 2007
-@@ -36,7 +36,7 @@
+$OpenBSD: patch-src_display_c,v 1.3 2008/08/25 15:14:43 jasper Exp $
+--- src/display.c.orig	Fri Aug 22 12:40:51 2008
++++ src/display.c	Fri Aug 22 12:44:30 2008
+@@ -39,7 +39,7 @@ $Id: display.c,v 1.3 2003/12/28 08:12:38 uid68112 Exp 
  #include "var.h"
  
  /* this mutex provides a lock for stdout to avoid display conflict between thread */
--G_LOCK_DEFINE_STATIC(stdout);
+-G_LOCK_DEFINE_STATIC(std_out);
 +G_LOCK_DEFINE_STATIC(stdout_lock);
  
  static FILE *log_fd=NULL;
  static FILE *errlog_fd=NULL;
-@@ -121,7 +121,7 @@ void disp_msg(DISP_MSG_TYPE msg_type,const char *fnc_n
+@@ -139,7 +139,7 @@ void disp_msg_full(DISP_MSG_TYPE msg_type,GString **pr
+ 	if((msg_type==DEBUG_MSG)&&(debug_mode==0))
  		return;
  
- 	o_str=g_string_new("");
--	G_LOCK(stdout);
+-	G_LOCK(std_out);
 +	G_LOCK(stdout_lock);
+ 	o_str=g_string_new("");
  
  	va_start(ap,fnc_name);
- 
-@@ -248,7 +248,7 @@ void disp_msg(DISP_MSG_TYPE msg_type,const char *fnc_n
+@@ -278,7 +278,7 @@ void disp_msg_full(DISP_MSG_TYPE msg_type,GString **pr
  	va_end(ap);
  
  	fflush(stdout);			/* flush stdout before unlocking */
--	G_UNLOCK(stdout);
+-	G_UNLOCK(std_out);
 +	G_UNLOCK(stdout_lock);
  }
  
- /***********************************/
-@@ -259,7 +259,7 @@ void disp_msg(DISP_MSG_TYPE msg_type,const char *fnc_n
+ /****************************************************************************************/
+@@ -433,7 +433,7 @@ void disp_msg_ptr_array(DISP_MSG_TYPE msg_type,const c
  void change_logfile(char *filename)
  {
  	/* to avoid potential access conflict, we lock the display */
--	G_LOCK(stdout);
+-	G_LOCK(std_out);
 +	G_LOCK(stdout_lock);
  
  	/* close the previously existing FILE */
  	if(log_fd!=NULL)
-@@ -277,7 +277,7 @@ void change_logfile(char *filename)
+@@ -451,7 +451,7 @@ void change_logfile(char *filename)
  			disp_msg(ERR_MSG,"change_logfile",strerror(errno),NULL);
  		}
  	}
--	G_UNLOCK(stdout);
+-	G_UNLOCK(std_out);
 +	G_UNLOCK(stdout_lock);
  }
  
  /***************************************/
-@@ -288,7 +288,7 @@ void change_logfile(char *filename)
+@@ -462,7 +462,7 @@ void change_logfile(char *filename)
  void change_errlogfile(char *filename)
  {
  	/* to avoid potential access conflict, we lock the display */
--	G_LOCK(stdout);
+-	G_LOCK(std_out);
 +	G_LOCK(stdout_lock);
  
  	/* close the previously existing FILE */
  	if(errlog_fd!=NULL)
-@@ -306,6 +306,6 @@ void change_errlogfile(char *filename)
+@@ -480,6 +480,6 @@ void change_errlogfile(char *filename)
  			disp_msg(ERR_MSG,"change_errlogfile",strerror(errno),NULL);
  		}
  	}
--	G_UNLOCK(stdout);
+-	G_UNLOCK(std_out);
 +	G_UNLOCK(stdout_lock);
  }
  

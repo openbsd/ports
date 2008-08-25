@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_bdb_c,v 1.1 2008/08/25 15:14:43 jasper Exp $
+--- src/bdb.c.orig	Sun Aug 24 13:38:07 2008
++++ src/bdb.c	Sun Aug 24 13:38:29 2008
+@@ -179,11 +179,9 @@ void do_berkeley_init(void)
+ 		while(db_list[i].db_name!=NULL)
+ 		{
+ 			db_create(db_list[i].ptr,dbenv,0);
+-#ifndef BDB_V4
+-			rt=(*(db_list[i].ptr))->open(*(db_list[i].ptr),db_list[i].db_name,NULL,db_list[i].db_type,DB_CREATE|DB_THREAD,0666);
+-#else
++
+ 			rt=(*(db_list[i].ptr))->open(*(db_list[i].ptr),NULL,db_list[i].db_name,NULL,db_list[i].db_type,DB_CREATE|DB_THREAD,0666);
+-#endif
++
+ 			if(rt!=0)
+ 			{
+ 				dbenv->err(dbenv,rt,"db_appinit, dbopen %s/%s fails",t,db_list[i].db_name);

@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_network_c,v 1.2 2007/12/11 11:04:58 jakemsr Exp $
---- src/network.c.orig	Sat Jan  5 00:47:40 2002
-+++ src/network.c	Tue Dec 11 00:04:51 2007
-@@ -231,11 +231,17 @@ GString *get_default_host_ip(void)
- 	char buf[512];
+$OpenBSD: patch-src_network_c,v 1.3 2008/08/25 15:14:43 jasper Exp $
+--- src/network.c.orig	Fri Aug 22 12:55:55 2008
++++ src/network.c	Fri Aug 22 13:00:20 2008
+@@ -752,13 +752,15 @@ GString *get_default_host_ip(const char *ip_or_if, gbo
+ 	gboolean it_is_an_ip;
  
  	/* the following script does this: */
 -	/* 1) extract the interface used by the default route: netstat -rn | grep ^0.0.0.0 | awk '{print $8;} */
@@ -11,14 +11,14 @@ $OpenBSD: patch-src_network_c,v 1.2 2007/12/11 11:04:58 jakemsr Exp $
 +	/* 2) obtain the IP of this interface from ifconfig */
 +
 +#ifdef __OpenBSD__
- 	const char *cmd=
++ 	const char *cmd=
 +               "/sbin/ifconfig `netstat -rn | grep ^default | awk '{print $7;}'` | fgrep 'inet ' | awk '{print $2;}'";
 +#else        
-+	const char *cmd=
- 		"/sbin/ifconfig `netstat -rn | grep ^0.0.0.0 | awk '{print $8;}'` | fgrep inet | cut -d : -f 2 | awk '{print $1;}'";
--
-+#endif
-+        
- 	f=popen(cmd,"r");
- 	if(f==NULL)
- 	{
+ 	const char *cmd=
+-#ifndef ROUTE_HAS_GET_DEFAULT
+ 		"/sbin/ifconfig `netstat -rn | awk '/^0.0.0.0/{print$NF}'` | fgrep inet | cut -d : -f 2 | awk '{print $1;}'";
+-#else
+-		"/sbin/route -n get default | awk '/local/{print$NF}'";
+ #endif
+ 
+ 	it_is_an_ip=is_an_ip(ip_or_if);

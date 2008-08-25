@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_db_c,v 1.3 2007/12/11 11:04:57 jakemsr Exp $
---- src/db.c.orig	Sat Jan 26 00:05:21 2002
-+++ src/db.c	Tue Dec 11 00:04:50 2007
-@@ -45,7 +45,7 @@
+$OpenBSD: patch-src_mydb_c,v 1.1 2008/08/25 15:14:43 jasper Exp $
+--- src/mydb.c.orig	Fri Aug 22 12:20:33 2008
++++ src/mydb.c	Fri Aug 22 12:26:16 2008
+@@ -57,7 +57,7 @@ char *vshare_directory=NULL;
  /* list of shared directories */
  /******************************/
  G_LOCK_DEFINE_STATIC(shared_dirs);
@@ -10,15 +10,15 @@ $OpenBSD: patch-src_db_c,v 1.3 2007/12/11 11:04:57 jakemsr Exp $
  
  /********************************************************************/
  /* database containing the list of all shared files with their type */
-@@ -398,6 +398,29 @@ static GArray *rebuild_dir_database(GArray *db,double 
+@@ -622,6 +622,29 @@ static GArray *rebuild_dir_database(GArray *db,double 
  }
  
  /***************************************************************/
 +/* determines the level for the next dir given the previous    */
-+/* dir, based on the common part of the both dirs.             */
++/* dir, based on the common part of the both dirs.	       */
 +/***************************************************************/
 +/* output: lvl contains the correct level to use for the next  */
-+/*         dir. Returns the starting point to use with nextdir */
++/*	   dir. Returns the starting point to use with nextdir */
 +/***************************************************************/
 +char * get_level_for_next_dir(char *prevdir, char *nextdir, int *lvl)
 +{
@@ -26,10 +26,10 @@ $OpenBSD: patch-src_db_c,v 1.3 2007/12/11 11:04:57 jakemsr Exp $
 +    
 +    *lvl = 0;
 +    while( *nextdir && *nextdir == *prevdir ) {
-+        if( *nextdir == '/' && nextdir != startp ) /* ignore the first '/' */
-+          (*lvl)++;
-+        nextdir++;
-+        prevdir++;
++	if( *nextdir == '/' && nextdir != startp ) /* ignore the first '/' */
++	  (*lvl)++;
++	nextdir++;
++	prevdir++;
 +    }
 +    while( nextdir != startp && *(nextdir - 1) != '/' )
 +      nextdir--;
@@ -40,42 +40,42 @@ $OpenBSD: patch-src_db_c,v 1.3 2007/12/11 11:04:57 jakemsr Exp $
  /* fully rebuild shared file database                          */
  /* this rebuilding can be done even if a search is in progress */
  /***************************************************************/
-@@ -410,6 +433,10 @@ void rebuild_database(void)
+@@ -634,6 +657,10 @@ void rebuild_database(void)
  	GByteArray *nw_he3;
  	GByteArray *old_he3;
  	GString *ls_format=NULL;
-+        char *prevdir = NULL;
-+        char *nextdir;
-+        int lvl;
-+        GSList *li;
++	char *prevdir = NULL;
++	char *nextdir;
++	int lvl;
++	GSList *li;
  
  	/* rebuild a new database */
  	ls_format=g_string_sized_new(65536);
-@@ -419,12 +446,18 @@ void rebuild_database(void)
+@@ -643,12 +670,18 @@ void rebuild_database(void)
  	new_shared=g_array_new(FALSE,FALSE,sizeof(DB_ENTRY));
  	if(shared_dirs!=NULL)
  	{
 -		for(i=0;i<shared_dirs->len;i++)
-+                lvl = 0;
-+                li = shared_dirs;
-+                while( li != NULL )
++		lvl = 0;
++		li = shared_dirs;
++		while( li != NULL )
  		{
 -			int lvl=0;
 -			add_initial_dir_to_ls(&ls_format,&lvl,g_ptr_array_index(shared_dirs,i));
 -			
 -			new_shared=rebuild_dir_database(new_shared,&sod,g_ptr_array_index(shared_dirs,i),&ls_format,lvl);
-+                        nextdir = li->data;
-+                        if(prevdir)
-+                            nextdir = get_level_for_next_dir(prevdir, nextdir, &lvl );
++			nextdir = li->data;
++			if(prevdir)
++				nextdir = get_level_for_next_dir(prevdir, nextdir, &lvl );
 +
 +			add_initial_dir_to_ls(&ls_format,&lvl,nextdir);
 +			new_shared=rebuild_dir_database(new_shared,&sod,li->data,&ls_format,lvl);
-+                        prevdir = li->data;
-+                        li = g_slist_next(li);
++			prevdir = li->data;
++			li = g_slist_next(li);
  		}
  	}
  
-@@ -472,6 +505,14 @@ void rebuild_database(void)
+@@ -697,6 +730,14 @@ void rebuild_database(void)
  }
  
  /*****************************************************/
@@ -83,16 +83,16 @@ $OpenBSD: patch-src_db_c,v 1.3 2007/12/11 11:04:57 jakemsr Exp $
 +/*****************************************************/
 +gint string_compare(gconstpointer a, gconstpointer b)
 +{
-+    return strcmp( (char *)a, (char *)b );
++	return strcmp( (char *)a, (char *)b );
 +}
 +
 +/*****************************************************/
  /* add a directory to the list of shared directories */
  /**********************************************************/
  /* due to the fact this function runs in the main thread, */
-@@ -484,9 +525,6 @@ void add_shared_directory(char *dir)
- 	struct stat st;
- 	char *str;
+@@ -711,9 +752,6 @@ void add_shared_directory(char *dir)
+ 	int ln;
+ 
  
 -	if(shared_dirs==NULL)
 -		shared_dirs=g_ptr_array_new();
@@ -100,7 +100,7 @@ $OpenBSD: patch-src_db_c,v 1.3 2007/12/11 11:04:57 jakemsr Exp $
  	if(stat(dir,&st))
  	{
  		disp_msg(ERR_MSG,"add_shared_directory","invalid dir",dir,NULL);
-@@ -509,7 +547,7 @@ void add_shared_directory(char *dir)
+@@ -746,7 +784,7 @@ void add_shared_directory(char *dir)
  
  	/* add this directory to the list and rebuild database */
  	G_LOCK(shared_dirs);
@@ -109,7 +109,7 @@ $OpenBSD: patch-src_db_c,v 1.3 2007/12/11 11:04:57 jakemsr Exp $
  	G_UNLOCK(shared_dirs);
  
  	rebuild_database();
-@@ -532,15 +570,8 @@ void remove_shared_directory(char *dir)
+@@ -769,15 +807,8 @@ void remove_shared_directory(char *dir)
  
  	/* remove this directory to the list and rebuild database */
  	G_LOCK(shared_dirs);
@@ -122,16 +122,16 @@ $OpenBSD: patch-src_db_c,v 1.3 2007/12/11 11:04:57 jakemsr Exp $
 -			break;
 -		}
 -	}
-+        disp_msg(DEBUG_MSG,NULL,"unsharing",dir,NULL);
-+        shared_dirs=g_slist_remove( shared_dirs, dir );
++	disp_msg(DEBUG_MSG,NULL,"unsharing",dir,NULL);
++	shared_dirs=g_slist_remove( shared_dirs, dir );
  	G_UNLOCK(shared_dirs);
  
  	rebuild_database();
-@@ -554,17 +585,20 @@ void remove_shared_directory(char *dir)
+@@ -809,17 +840,20 @@ void set_vshare_directory(char *dir)
  GString *get_shared_directory_list(void)
  {
  	GString *lst;
-+        GSList *li;
++	GSList *li;
  	int i;
  
  	lst=g_string_new("");
@@ -139,19 +139,19 @@ $OpenBSD: patch-src_db_c,v 1.3 2007/12/11 11:04:57 jakemsr Exp $
  	if(shared_dirs!=NULL)
  	{
 -		for(i=0;i<shared_dirs->len;i++)
-+                li = shared_dirs;
++		li = shared_dirs;
 +		while( li != NULL )
  		{
 -			if(i!=0)
-+			if(li!=shared_dirs)
++			if(i!=shared_dirs)
  				lst=g_string_append_c(lst,'|');
 -			g_string_sprintfa(lst,"%s",(char*)g_ptr_array_index(shared_dirs,i));
 +			g_string_sprintfa(lst,"%s", li->data);
-+                        li = g_slist_next(li);
++			li = g_slist_next(li);
  		}
  	}
  	G_UNLOCK(shared_dirs);
-@@ -743,7 +777,7 @@ static void send_a_db_result(int output_sck, char *des
+@@ -991,7 +1025,7 @@ static void send_a_db_result(int output_sck, char *des
  	else
  	{
  		char strmd5[512];
@@ -159,4 +159,4 @@ $OpenBSD: patch-src_db_c,v 1.3 2007/12/11 11:04:57 jakemsr Exp $
 +		md5tostr(md5sum,strmd5,sizeof strmd5);
  		g_string_sprintfa(str,"$SR %s %s\005%lu.%s %d/%d\005%s (%s)",
  											nickname,adapted->str,de->filesize,strmd5,
- 											(dl_on?free_dl_slot:0), ttl_dl_slot,
+ 											(dl_on? ((free_dl_slot>0)?free_dl_slot:0) :0), ttl_dl_slot,
