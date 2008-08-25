@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/08/22 11:41:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/08/25 09:19:39 ajacoutot Exp $
 
 COMMENT-main=	free open source 2D MMORPG
 COMMENT-music=	music addon for TMW
@@ -7,7 +7,7 @@ DISTNAME=	tmw-0.0.25
 
 V_MUSIC=	0.2
 
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-music=	tmw-music-${V_MUSIC}
 
 CATEGORIES=	games x11
