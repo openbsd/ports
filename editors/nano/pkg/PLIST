@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.19 2007/12/27 20:53:18 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.20 2008/08/25 17:55:27 naddy Exp $
 @pkgpath editors/nano,slang
-bin/nano
+@bin bin/nano
 bin/rnano
 @info info/nano.info
 @comment man/fr/
@@ -20,8 +20,6 @@ share/locale/cs/LC_MESSAGES/nano.mo
 share/locale/da/LC_MESSAGES/nano.mo
 share/locale/de/LC_MESSAGES/nano.mo
 share/locale/es/LC_MESSAGES/nano.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/nano.mo
 share/locale/fi/LC_MESSAGES/nano.mo
 share/locale/fr/LC_MESSAGES/nano.mo
