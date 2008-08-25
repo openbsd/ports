@@ -1,0 +1,12 @@
+--- gui.c.orig	Tue Feb  7 19:16:39 2006
++++ gui.c	Mon Aug  4 12:42:28 2008
+@@ -69,7 +69,8 @@ static int resize(unsigned char *INbuff, unsigned char
+ 		Cc = 0;
+ 	    if (lastCc == Cc) {
+ 		/* no Chroma interleave correct by moving the index */
+-		rx -= 1;
++		if (rx != 0)
++			rx -= 1;
+ 		Cc = !Cc;
+ 	    }
+ 	    memcpy(output++, &input[ADDRESSE((int) rx, (int) y, Owidth)],
