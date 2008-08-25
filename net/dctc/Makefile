@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/08/25 15:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2008/08/25 17:22:34 naddy Exp $
 
 COMMENT=		Direct Connect clone
 
@@ -33,7 +33,7 @@ CONFIGURE_ENV=		CPPFLAGS="-DMSG_NOSIGNAL=0 \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-extract:
- 	echo "#undef HAVE_LIBPTHREAD" > ${WRKSRC}/acconfig.h
+	echo "#undef HAVE_LIBPTHREAD" > ${WRKSRC}/acconfig.h
 	rm -fr ${WRKSRC}/Documentation/Documentation/CVS/
 
 post-install:
