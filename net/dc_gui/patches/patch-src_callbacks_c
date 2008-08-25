@@ -1,28 +1,25 @@
-$OpenBSD: patch-src_callbacks_c,v 1.1.1.1 2002/02/01 02:40:17 naddy Exp $
---- src/callbacks.c.orig	Mon Jan 28 12:49:50 2002
-+++ src/callbacks.c	Mon Jan 28 12:49:58 2002
-@@ -9,9 +9,12 @@
- #include <sys/types.h>
- #include <dirent.h>
- #include <gdk/gdkkeysyms.h>
+$OpenBSD: patch-src_callbacks_c,v 1.2 2008/08/25 15:15:53 jasper Exp $
+--- src/callbacks.c.orig	Thu Aug 21 16:19:13 2008
++++ src/callbacks.c	Thu Aug 21 16:19:38 2008
+@@ -30,7 +30,9 @@ $Id: callbacks.c,v 1.65 2004/01/21 15:57:32 ericprev E
+ #include <sys/socket.h>
+ #include <sys/un.h>
+ #include <math.h>
 -#include <linux/sem.h>
- #include <gnome.h>
- 
 +#ifdef HAVE_LINUX_SEM_H
 +# include <linux/sem.h>     /* for the value of SEMVMX */
 +#endif
-+
- #include "callbacks.h"
- #include "interface.h"
- #include "support.h"
-@@ -22,6 +25,10 @@
- #include "do_connect.h"
- #include "dctc_process.h"
- #include "gui_define.h"
+ #include <fcntl.h>
+ #include <signal.h>
+ #include <dirent.h>
+@@ -74,6 +76,10 @@ $Id: callbacks.c,v 1.65 2004/01/21 15:57:32 ericprev E
+ #include "notes_buffer.h"
+ #include "global_user.h"
+ #include "manage_chat.h"
 +
 +#ifdef __OpenBSD__
 +# define SEMVMX 32767
 +#endif
  
- static void start_download_from_clist(char *clist_name, int nick_col, int filename_col, int localfname_col);
- 
+ static void build_start_dl_popup(int from_panel);
+ void on_load_selected_share_lists_button_clicked (GtkButton       *button, gpointer         user_data);

@@ -1,67 +1,50 @@
-$OpenBSD: patch-src_do_connect_c,v 1.1.1.1 2002/02/01 02:40:17 naddy Exp $
---- src/do_connect.c.orig	Mon Jan 28 12:31:11 2002
-+++ src/do_connect.c	Mon Jan 28 12:35:39 2002
-@@ -395,9 +395,11 @@ void start_a_new_dctc(char *hub_address)
- 	/* argv[0] */
- 	g_ptr_array_add(cmd_line,g_string_chunk_insert(sc,"dctc"));
+$OpenBSD: patch-src_do_connect_c,v 1.2 2008/08/25 15:15:53 jasper Exp $
+--- src/do_connect.c.orig	Thu Aug 21 16:19:57 2008
++++ src/do_connect.c	Thu Aug 21 16:26:32 2008
+@@ -662,8 +662,10 @@ void start_a_new_dctc(const char *hub_address, int no_
+ 		/* argv[0] */
+ 		g_ptr_array_add(cmd_line,g_string_chunk_insert(sc,"dctc"));
  
 +#ifndef __OpenBSD__
- 	/* argv[1] */
- 	g_ptr_array_add(cmd_line,g_string_chunk_insert(sc,"dctc"));
--
+ 		/* argv[1] */
+ 		g_ptr_array_add(cmd_line,g_string_chunk_insert(sc,"dctc"));
 +#endif
-+        
- 	add_cmd_line_opt(cmd_line,&sc,"nickname_entry","-n");
- 	add_cmd_line_opt(cmd_line,&sc,"user_description_entry","-i");
- 	add_cmd_line_opt(cmd_line,&sc,"cnx_type_entry","-c");
-@@ -533,11 +535,11 @@ void start_a_new_dctc(char *hub_address)
- 	/* -5 [if GTK_RADIO_BUTTON(md5sum_computation_checkbutton) is set] */
- 	add_cmd_line_opt_radio(cmd_line, &sc,"md5sum_computation_checkbutton", NULL,NULL,"-5",NULL);
  
--	/* --precmd "/FOLLOWFORCE" or --precmd "/UNFOLLOWFORCE" */
--	add_cmd_line_opt_radio(cmd_line, &sc,"follow_forcemove_checkbutton", "--precmd","/FOLLOWFORCE","--precmd","/UNFOLLOWFORCE");
-+	/* -b "/FOLLOWFORCE" or -b "/UNFOLLOWFORCE" */
-+	add_cmd_line_opt_radio(cmd_line, &sc,"follow_forcemove_checkbutton", "-b","/FOLLOWFORCE","-b","/UNFOLLOWFORCE");
- 
--	/* --precmd "/DDL" or --precmd "/NODDL" */
--	add_cmd_line_opt_radio(cmd_line, &sc,"ddl_checkbutton", "--precmd","/DDL","--precmd","/NODDL");
-+	/* -b "/DDL" or -b "/NODDL" */
-+	add_cmd_line_opt_radio(cmd_line, &sc,"ddl_checkbutton", "-b","/DDL","-b","/NODDL");
- 
- 	/* -v VERSION [if GTK_RADIO_BUTTON(override_version_check_button) is set and version_number_entry is not empty */
- 	{
-@@ -569,7 +571,7 @@ void start_a_new_dctc(char *hub_address)
+ 		add_prof_cmd_line_opt(profile_to_use,cmd_line,&sc,"nickname_entry_ent_cnt","-n");
+ 		add_prof_cmd_line_opt(profile_to_use,cmd_line,&sc,"user_description_entry_ent_cnt","-i");
+@@ -850,8 +852,8 @@ void start_a_new_dctc(const char *hub_address, int no_
+ 			} tbl_opt_radio[]={	{"passive_mode_radio_button_toggle_val", "-f",NULL,NULL,NULL},
+ 										{"enable_upload_checkbutton_toggle_val", NULL,NULL,"-x",NULL},
+ 										{"use_done_dir_checkbutton_toggle_val", "-w",NULL,NULL,NULL},
+-										{"follow_forcemove_checkbutton_toggle_val", "--precmd","/FOLLOWFORCE","--precmd","/UNFOLLOWFORCE"},
+-										{"ddl_checkbutton_toggle_val", "--precmd","/DDL","--precmd","/NODDL"},
++										{"follow_forcemove_checkbutton_toggle_val", "-b","/FOLLOWFORCE","-b","/UNFOLLOWFORCE"},
++										{"ddl_checkbutton_toggle_val", "-b","/DDL","-b","/NODDL"},
+ 										{"away_togglebutton_toggle_val", "--precmd","/AWAY","--precmd","/HERE"},
+ 										{"grabip_checkbutton_toggle_val", "--precmd","/GBANIP","--precmd","/NOGBANIP"},
+ 										{"abort_upload_checkbutton_toggle_val", "--precmd","/ABORTLEAVED","--precmd","/NOABORTLEAVED"},
+@@ -941,20 +943,20 @@ void start_a_new_dctc(const char *hub_address, int no_
+ 			g_string_free(xbl_string,TRUE);
  		}
- 	}
  
--	/* --precmd "/RECOND xxx" */
-+	/* -b "/RECOND xxx" */
- 	{
- 		GtkWidget *w;
- 		w=get_widget_by_widget_name("reconnect_delay_scale");
-@@ -579,14 +581,14 @@ void start_a_new_dctc(char *hub_address)
+-		/* --precmd "/RECOND xxx" */
++		/* -b "/RECOND xxx" */
  		{
  			char bf[512];
- 
+ 	
 -			g_ptr_array_add(cmd_line,g_string_chunk_insert(sc,"--precmd"));
 +			g_ptr_array_add(cmd_line,g_string_chunk_insert(sc,"-b"));
- 
- 			sprintf(bf,"/RECOND %u",(unsigned int)gtk_range_get_adjustment(GTK_RANGE(w))->value);
+ 			sprintf(bf,"/RECOND %u",(unsigned int)get_profile_int_entry(profile_to_use,"reconnect_delay_scale_scale_val"));
  			g_ptr_array_add(cmd_line,g_string_chunk_insert(sc,bf));
  		}
- 	}
  
--	/* --precmd "/REBUILD xxx" */
-+	/* -b "/REBUILD xxx" */
- 	{
- 		GtkWidget *w;
- 		w=get_widget_by_widget_name("rebuild_delay_scale");
-@@ -596,7 +598,7 @@ void start_a_new_dctc(char *hub_address)
+-		/* --precmd "/REBUILD xxx" */
++		/* -b "/REBUILD xxx" */
  		{
  			char bf[512];
- 
+ 	
 -			g_ptr_array_add(cmd_line,g_string_chunk_insert(sc,"--precmd"));
 +			g_ptr_array_add(cmd_line,g_string_chunk_insert(sc,"-b"));
- 
- 			sprintf(bf,"/REBUILD %u",60*(unsigned int)gtk_range_get_adjustment(GTK_RANGE(w))->value);
+ 			sprintf(bf,"/REBUILD %u",60*(unsigned int)get_profile_int_entry(profile_to_use,"rebuild_delay_scale_scale_val"));
  			g_ptr_array_add(cmd_line,g_string_chunk_insert(sc,bf));
+ 		}

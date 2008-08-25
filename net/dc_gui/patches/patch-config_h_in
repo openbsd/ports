@@ -1,13 +1,13 @@
-$OpenBSD: patch-config_h_in,v 1.1.1.1 2002/02/01 02:40:17 naddy Exp $
---- config.h.in.orig	Mon Jan 28 12:38:58 2002
-+++ config.h.in	Mon Jan 28 12:39:50 2002
-@@ -152,6 +152,9 @@
- /* Define if you have the <X11/SM/SMlib.h> header file.  */
- #undef HAVE_X11_SM_SMLIB_H
+$OpenBSD: patch-config_h_in,v 1.2 2008/08/25 15:15:53 jasper Exp $
+--- config.h.in.orig	Sat Jan 24 07:41:43 2004
++++ config.h.in	Sat Aug 23 18:32:15 2008
+@@ -31,6 +31,9 @@
+ /* Define if your <locale.h> file defines LC_MESSAGES. */
+ #undef HAVE_LC_MESSAGES
  
-+/* Define if you have the <linux/sem.h> header file.  */
++/* Define to 1 if you have the <linux/sem.h> header file. */
 +#undef HAVE_LINUX_SEM_H
 +
- /* Name of package */
- #undef PACKAGE
+ /* Define to 1 if you have the <locale.h> header file. */
+ #undef HAVE_LOCALE_H
  

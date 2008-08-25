@@ -1,13 +1,51 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:39 espie Exp $
-bin/dc_gui
+@comment $OpenBSD: PLIST,v 1.4 2008/08/25 15:15:53 jasper Exp $
+@bin bin/bt2dc_gui2
+@bin bin/bt2dc_gui2_prelaunch
+@bin bin/cmd2dc_gui2
+@bin bin/dc_gui2
+@bin bin/dc_gui2_bt
+@bin bin/dc_gui2_stat
+@bin bin/dc_gui2_unattached_gdl
+share/applications/dc_gui2.desktop
 share/gnome/
 share/gnome/help/
 share/gnome/help/dc_gui/
 share/gnome/help/dc_gui/C/
+share/gnome/help/dc_gui/C/chat.html
+share/gnome/help/dc_gui/C/chat.png
+share/gnome/help/dc_gui/C/connect.html
+share/gnome/help/dc_gui/C/favorites.png
+share/gnome/help/dc_gui/C/find.html
+share/gnome/help/dc_gui/C/find.png
+share/gnome/help/dc_gui/C/find_and_gdl_config.html
+share/gnome/help/dc_gui/C/find_and_gdl_config.png
 share/gnome/help/dc_gui/C/images/
 share/gnome/help/dc_gui/C/index.html
-share/gnome/help/dc_gui/C/topic.dat
-share/locale/
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
-share/locale/nl/LC_MESSAGES/dc_gui.mo
+share/gnome/help/dc_gui/C/private_chat.html
+share/gnome/help/dc_gui/C/private_chat.png
+share/gnome/help/dc_gui/C/public.png
+share/gnome/help/dc_gui/C/recent.png
+share/gnome/help/dc_gui/C/running_tab.png
+share/gnome/help/dc_gui/C/seen_public.png
+share/gnome/help/dc_gui/C/startup.html
+share/gnome/help/dc_gui/C/startup.png
+share/gnome/help/dc_gui/C/user_file_list.html
+share/gnome/help/dc_gui/C/user_file_list.png
+share/locale/fr/LC_MESSAGES/dc_gui2.mo
+share/locale/fr/LC_MESSAGES/dc_gui2_bt.mo
+share/locale/fr/LC_MESSAGES/dc_gui2_stat.mo
+share/locale/fr/LC_MESSAGES/dc_gui2_unattached_gdl.mo
+share/locale/nl/LC_MESSAGES/dc_gui2.mo
+share/locale/nl/LC_MESSAGES/dc_gui2_bt.mo
+share/locale/nl/LC_MESSAGES/dc_gui2_stat.mo
+share/locale/nl/LC_MESSAGES/dc_gui2_unattached_gdl.mo
+share/locale/pl/LC_MESSAGES/dc_gui2.mo
+share/locale/pl/LC_MESSAGES/dc_gui2_bt.mo
+share/locale/pl/LC_MESSAGES/dc_gui2_stat.mo
+share/locale/pl/LC_MESSAGES/dc_gui2_unattached_gdl.mo
+share/pixmaps/
+share/pixmaps/dc_gui2/
+share/pixmaps/dc_gui2.xpm
+share/pixmaps/dc_gui2/icon_kill.xpm
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

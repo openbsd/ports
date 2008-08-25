@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2002/02/01 02:40:17 naddy Exp $
---- configure.in.orig	Sun Jan 20 07:52:02 2002
-+++ configure.in	Fri Feb  1 02:31:27 2002
-@@ -27,6 +27,9 @@ else
-   AC_DEFINE_UNQUOTED(PACKAGE_LOCALE_DIR, "${prefix}/${DATADIRNAME}/locale")
+$OpenBSD: patch-configure_in,v 1.2 2008/08/25 15:15:53 jasper Exp $
+--- configure.in.orig	Thu Aug 21 16:16:14 2008
++++ configure.in	Thu Aug 21 16:16:32 2008
+@@ -44,6 +44,9 @@ if test $valid_gtk_version -eq 0; then
  fi
+ AC_MSG_RESULT(recent enough)
  
 +dnl check for headers
 +AC_CHECK_HEADERS(linux/sem.h)
