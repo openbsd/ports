@@ -1,16 +1,16 @@
-$OpenBSD: patch-po_Makefile_in,v 1.1 2008/04/22 08:57:24 jasper Exp $
---- po/Makefile.in.orig	Sat Apr 19 23:07:18 2008
-+++ po/Makefile.in	Sat Apr 19 23:07:35 2008
-@@ -128,9 +128,9 @@ top_srcdir = @top_srcdir@
- var = @var@
+$OpenBSD: patch-po_Makefile_in,v 1.2 2008/08/25 14:48:42 ajacoutot Exp $
+--- po/Makefile.in.orig	Tue Jul 22 14:45:54 2008
++++ po/Makefile.in	Mon Aug 25 15:25:51 2008
+@@ -141,9 +141,9 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  DOMAIN = osmo
  POTFILES = $(wildcard ../src/*.c ../src/*.h)
 -MSGFMT = /usr/bin/msgfmt
 -XGETTEXT = /usr/bin/xgettext
 -MSGMERGE = /usr/bin/msgmerge
-+MSGFMT = !!LOCALBASE!!/bin/msgfmt
-+XGETTEXT = !!LOCALBASE!!/bin/xgettext
-+MSGMERGE = !!LOCALBASE!!/bin/msgmerge
++MSGFMT = ${LOCALBASE}/bin/msgfmt
++XGETTEXT = ${LOCALBASE}/bin/xgettext
++MSGMERGE = ${LOCALBASE}/bin/msgmerge
  XGETTEXT_OPTS = --keyword=_ --keyword=N_ --keyword=X_ --add-comments=TRANSLATORS: --no-location
- POFILES = cs.po de.po es.po fr.po lt.po nl.po pl.po pt.po
+ POFILES = cs.po de.po es.po fr.po hu.po it.po lt.po nl.po pl.po pt.po ru.po zh.po
  MOFILES = $(POFILES:.po=.mo)

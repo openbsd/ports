@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/31 23:11:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2008/08/25 14:48:42 ajacoutot Exp $
 
 COMMENT=	handy personal organizer
 
-DISTNAME=	osmo-0.2.0
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	osmo-0.2.2
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://clay.ll.pl/osmo/
@@ -20,15 +19,18 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread z
+		pixman-1 png pthread z dbus-1 dbus-glib-1
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=osmo-pim/}
 
 MODULES=	devel/gettext
+
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		xml2.>=6::textproc/libxml \
+		xml2.>=9::textproc/libxml \
 		ical::textproc/libical \
-		gringotts::security/libgringotts
+		gringotts::security/libgringotts \
+		notify.>=2::devel/libnotify 
+
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=	Yes
@@ -38,8 +40,9 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		BUILD_CFLAGS="${CFLAGS}"
+CONFIGURE_ARGS=	--without-libsyncml
 
 pre-configure:
-	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' ${WRKSRC}/po/Makefile.in
+	${SUBST_CMD} ${WRKSRC}/po/Makefile.in
 
 .include <bsd.port.mk>
