@@ -1,4 +1,4 @@
-# $OpenBSD: i386,v 1.41 2008/08/20 22:20:42 pvalchev Exp $
+# $OpenBSD: i386,v 1.42 2008/08/25 17:20:49 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -25,16 +25,16 @@ devel/automake
 books/autobook
 devel/bison
 sysutils/colorls
-#archivers/gtar
+archivers/gtar
 mail/mutt/stable
 audio/libao,-esd
 audio/vorbis-tools
 audio/mpg321
 net/curl
 net/wget
-#print/ghostscript/gnu
+print/ghostscript/gnu
 print/gv
-audio/cdparanoia
+#audio/cdparanoia
 net/ircII
 devel/id-utils
 x11/openmotif
@@ -42,8 +42,8 @@ www/mozilla-firefox
 x11/kde/base3
 #x11/kde/office3
 #x11/kde/edu3
-#graphics/digikam
 #x11/kde/games3
+graphics/digikam
 x11/windowmaker
 x11/windowmaker-extra
 www/tidy
@@ -76,8 +76,8 @@ sysutils/pftop
 security/bsd-airtools
 editors/abiword
 #archivers/zip
-net/snort
-x11/aterm
+#net/snort
+#x11/aterm
 net/ettercap
 security/stunnel
 net/silc-client
@@ -90,15 +90,15 @@ security/pidgin-otr
 misc/tpwireless
 sysutils/tphdisk
 #www/squid
-www/transproxy
+#www/transproxy
 security/aide
 security/dsniff
 #net/ntop
 #news/slrn
 #security/gnupg
 #print/lyx
-net/libdnet
-net/nsd
+#net/libdnet
+#net/nsd
 #graphics/ImageMagick
 #audio/abcde
 #devel/smpeg
@@ -111,7 +111,7 @@ misc/magicpoint
 audio/xmms
 audio/xmms,-vorbis
 audio/xmms-mad
-#graphics/jhead
+graphics/jhead
 #x11/ogle
 #graphics/gphoto2
 #x11/blackbox

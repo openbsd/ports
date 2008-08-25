@@ -1,9 +1,8 @@
-# $OpenBSD: sh,v 1.3 2008/08/20 16:16:53 ajacoutot Exp $
+# $OpenBSD: sh,v 1.4 2008/08/25 17:20:49 pvalchev Exp $
 # This is the master list of subdirs used to choose sh packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
 net/rsync
-sysutils/mergemaster
 editors/vim,no_x11
 archivers/unzip
 archivers/bzip2

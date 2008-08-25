@@ -1,11 +1,10 @@
-# $OpenBSD: vax,v 1.16 2008/08/20 16:16:53 ajacoutot Exp $
+# $OpenBSD: vax,v 1.17 2008/08/25 17:20:49 pvalchev Exp $
 # This is the master list of subdirs used to choose vax packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
 net/rsync
 net/cvsup
 net/cvsync
-sysutils/mergemaster
 editors/vim,no_x11
 editors/emacs21
 archivers/unzip
