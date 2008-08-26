@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.35 2008/01/04 17:48:35 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2008/08/26 14:32:20 sthen Exp $
 
 COMMENT=	CAD drawing program for X11
 
-VERSION=	3.2.4
+VERSION=	3.2.5
 DISTNAME=	xfig.${VERSION}.full
-PKGNAME=	xfig-${VERSION}p0
+PKGNAME=	xfig-${VERSION}
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://www.xfig.org/
 
+# MIT
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -16,11 +17,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM Xau Xdmcp X11 Xext Xmu Xp Xpm Xt c m z
 
-MASTER_SITES=	http://www.xfig.org/software/xfig/${VERSION}/ \
-		ftp://www-epb.lbl.gov/xfig/ \
-		ftp://www-epb.lbl.gov/xfig/previous_versions/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mcj/}
 
 FAKE=		lib
+PATCHORIG=	.pat.orig
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=2::graphics/png \
 		Xaw3d.>=6.1::x11/Xaw3d

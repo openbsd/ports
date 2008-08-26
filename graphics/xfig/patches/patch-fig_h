@@ -1,0 +1,12 @@
+$OpenBSD: patch-fig_h,v 1.1 2008/08/26 14:32:20 sthen Exp $
+--- fig.h.pat.orig	Fri Feb 24 20:15:16 2006
++++ fig.h	Wed Aug 20 11:30:02 2008
+@@ -383,7 +383,7 @@ extern	double		drand48();
+ extern	long		random();
+ extern	void		srandom(unsigned int);
+ 
+-#elif !defined(__osf__) && !defined(__CYGWIN__) && !defined(linux)
++#elif !defined(__osf__) && !defined(__CYGWIN__) && !defined(linux) && !defined(__OpenBSD__)
+ extern	void		srandom(int);
+ 
+ #endif

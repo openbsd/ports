@@ -1,0 +1,14 @@
+$OpenBSD: patch-w_snap_h,v 1.1 2008/08/26 14:32:20 sthen Exp $
+--- w_snap.h.pat.orig	Tue Nov  9 21:14:42 2004
++++ w_snap.h	Wed Aug 20 11:30:02 2008
+@@ -63,8 +63,10 @@ extern Boolean snap_found;
+ extern Widget snap_indicator_panel;  
+ extern Widget snap_indicator_label;
+ 
++#ifndef signbit
+ #  define signbit(x) \
+     ((0.0 >  (x)) ? 1 : 0)
++#endif
+ 
+ 
+ #endif
