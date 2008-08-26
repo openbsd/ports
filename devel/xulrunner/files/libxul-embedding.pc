@@ -1,0 +1,10 @@
+prefix=!!PREFIX!!
+exec_prefix=${prefix}
+libdir=${exec_prefix}/xulrunner
+includedir=${prefix}/xulrunner/include
+
+Name: libxul-embedding
+Description: Static library for version-independent embedding of the Mozilla runtime
+Version: !!VERSION!!
+Libs: -L${libdir} -lxpcomglue
+Cflags: -DXPCOM_GLUE -I${includedir} -fshort-wchar

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2008/08/23 22:07:03 martynas Exp $
+# $OpenBSD: Makefile,v 1.27 2008/08/26 18:05:23 martynas Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
@@ -8,8 +8,8 @@ COMMENT-devel=	devel files for Gecko
 VER=		1.8.1.16
 DISTNAME=	mozilla
 PKGNAME=	xulrunner-${VER}
-PKGNAME-main=	xulrunner-${VER}p1
-PKGNAME-devel=	xulrunner-devel-${VER}p1
+PKGNAME-main=	xulrunner-${VER}p2
+PKGNAME-devel=	xulrunner-devel-${VER}p2
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -126,11 +126,16 @@ do-install:
 			-exec ${INSTALL_DATA} -m 644 {} ${MOZ}/{} \; && \
 		${INSTALL_PROGRAM} ${TOOLS} ${MOZ}
 	${INSTALL_DATA} ${MOB}/*.so.${SO_VERSION} ${MOZ}
+	${INSTALL_DATA} ${WRKSRC}/dist/lib/libxpcomglue.a \
+		${WRKSRC}/dist/lib/libxpcomglue_s.a ${MOZ}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/xulrunner \
 		${MOB}/xulrunner-config ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
-	${INSTALL_DATA} ${WRKBUILD}/build/unix/*.pc ${PREFIX}/lib/pkgconfig
+	${INSTALL_DATA} ${WRKBUILD}/build/unix/*.pc \
+		${FILESDIR}/libxul-embedding.pc ${PREFIX}/lib/pkgconfig
+	@perl -pi -e 's|!!PREFIX!!|${TRUEPREFIX}|g; s|!!VERSION!!|${VER}|g' \
+		${PREFIX}/lib/pkgconfig/libxul-embedding.pc
 
 .include <bsd.port.mk>
