@@ -1,0 +1,23 @@
+$OpenBSD: patch-secblock_h,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
+--- secblock.h.orig	Wed Jun 18 13:43:26 2008
++++ secblock.h	Wed Jun 18 13:43:49 2008
+@@ -156,7 +156,7 @@ class AllocatorWithCleanup : public AllocatorBase<T> 
+ 	// VS.NET STL enforces the policy of "All STL-compliant allocators have to provide a
+ 	// template class member called rebind".
+     template <class U> struct rebind { typedef AllocatorWithCleanup<U, T_Align16> other; };
+-#if _MSC_VER >= 1500
++#if defined(_MSC_VER) && _MSC_VER >= 1500
+ 	AllocatorWithCleanup() {}
+ 	template <class U, bool A> AllocatorWithCleanup(const AllocatorWithCleanup<U, A> &) {}
+ #endif
+@@ -279,8 +279,8 @@ class SecBlock (public)
+ 	typedef typename A::const_pointer const_iterator;
+ 	typedef typename A::size_type size_type;
+ 
+-	explicit SecBlock(size_type size=0)
+-		: m_size(size) {m_ptr = m_alloc.allocate(size, NULL);}
++	explicit SecBlock(size_type sz=0)
++		: m_size(sz) {m_ptr = m_alloc.allocate(sz, NULL);}
+ 	SecBlock(const SecBlock<T, A> &t)
+ 		: m_size(t.m_size) {m_ptr = m_alloc.allocate(m_size, NULL); memcpy_s(m_ptr, m_size*sizeof(T), t.m_ptr, m_size*sizeof(T));}
+ 	SecBlock(const T *t, size_type len)

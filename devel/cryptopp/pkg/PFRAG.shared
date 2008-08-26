@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
+@lib lib/libcryptopp.so.${LIBcryptopp_VERSION}

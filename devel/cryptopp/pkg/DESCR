@@ -1,0 +1,5 @@
+Yet another library of cryptographic functions, this one in C++.
+All code is public domain, except the mars implementation.
+
+This is a dependency of current amule, otherwise it wouldn't even be
+there.

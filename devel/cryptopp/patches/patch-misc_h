@@ -1,0 +1,39 @@
+$OpenBSD: patch-misc_h,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
+--- misc.h.orig	Wed Jun 18 13:42:22 2008
++++ misc.h	Fri Jun 20 13:36:34 2008
+@@ -146,7 +146,7 @@ retry:
+ 
+ // ************** misc functions ***************
+ 
+-#if (!__STDC_WANT_SECURE_LIB__)
++#if (!defined(__STDC_WANT_SECURE_LIB__) || !__STDC_WANT_SECURE_LIB__)
+ inline void memcpy_s(void *dest, size_t sizeInBytes, const void *src, size_t count)
+ {
+ 	if (count > sizeInBytes)
+@@ -322,7 +322,7 @@ inline unsigned int GetAlignmentOf(T *dummy=NULL)	// V
+ 		return 1;			// alignment not needed on x86 and x64
+ #endif
+ 
+-#if (_MSC_VER >= 1300)
++#if defined(_MSC_VER) && (_MSC_VER >= 1300)
+ 	return __alignof(T);
+ #elif defined(__GNUC__)
+ 	return __alignof__(T);
+@@ -487,7 +487,7 @@ template<> inline word32 rotrMod<word32>(word32 x, uns
+ 
+ #endif // #ifdef _MSC_VER
+ 
+-#if _MSC_VER >= 1300 && !defined(__INTEL_COMPILER)
++#if defined(_MSC_VER) && _MSC_VER >= 1300 && !defined(__INTEL_COMPILER)
+ // Intel C++ Compiler 10.0 calls a function instead of using the rotate instruction when using these instructions
+ 
+ template<> inline word64 rotlFixed<word64>(word64 x, unsigned int y)
+@@ -526,7 +526,7 @@ template<> inline word64 rotrMod<word64>(word64 x, uns
+ 
+ #endif // #if _MSC_VER >= 1310
+ 
+-#if _MSC_VER >= 1400 && !defined(__INTEL_COMPILER)
++#if defined(_MSC_VER) && _MSC_VER >= 1400 && !defined(__INTEL_COMPILER)
+ // Intel C++ Compiler 10.0 gives undefined externals with these
+ 
+ template<> inline word16 rotlFixed<word16>(word16 x, unsigned int y)

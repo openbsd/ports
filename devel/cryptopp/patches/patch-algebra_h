@@ -1,0 +1,22 @@
+$OpenBSD: patch-algebra_h,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
+--- algebra.h.orig	Wed Jun 18 13:43:58 2008
++++ algebra.h	Fri Jun 20 15:06:45 2008
+@@ -47,7 +47,8 @@ template <class T> class CRYPTOPP_NO_VTABLE AbstractRi
+ 	typedef T Element;
+ 
+ 	AbstractRing() {m_mg.m_pRing = this;}
+-	AbstractRing(const AbstractRing &source) {m_mg.m_pRing = this;}
++	AbstractRing(const AbstractRing &source): AbstractGroup<T>(source) 
++	    {m_mg.m_pRing = this;}
+ 	AbstractRing& operator=(const AbstractRing &source) {return *this;}
+ 
+ 	virtual bool IsUnit(const Element &a) const =0;
+@@ -120,7 +121,7 @@ struct BaseAndExponent
+ {
+ public:
+ 	BaseAndExponent() {}
+-	BaseAndExponent(const T &base, const E &exponent) : base(base), exponent(exponent) {}
++	BaseAndExponent(const T &b, const E &e) : base(b), exponent(e) {}
+ 	bool operator<(const BaseAndExponent<T, E> &rhs) const {return exponent < rhs.exponent;}
+ 	T base;
+ 	E exponent;

@@ -1,0 +1,14 @@
+$OpenBSD: patch-smartptr_h,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
+--- smartptr.h.orig	Wed Jun 18 13:41:43 2008
++++ smartptr.h	Wed Jun 18 13:42:09 2008
+@@ -189,8 +189,8 @@ template <class T> counted_ptr<T> & counted_ptr<T>::op
+ template <class T> class vector_member_ptrs
+ {
+ public:
+-	vector_member_ptrs(size_t size=0)
+-		: m_size(size), m_ptr(new member_ptr<T>[size]) {}
++	vector_member_ptrs(size_t sz=0)
++		: m_size(sz), m_ptr(new member_ptr<T>[sz]) {}
+ 	~vector_member_ptrs()
+ 		{delete [] this->m_ptr;}
+ 

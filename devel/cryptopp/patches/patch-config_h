@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_h,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
+--- config.h.orig	Wed Jun 18 13:40:59 2008
++++ config.h	Wed Jun 18 13:41:28 2008
+@@ -272,7 +272,7 @@ NAMESPACE_END
+ 
+ 	// SSSE3 was actually introduced in GNU as 2.17, which was released 6/23/2006, but we can't tell what version of binutils is installed.
+ 	// GCC 4.1.2 was released on 2/13/2007, so we'll use that as a proxy for the binutils version.
+-	#if !defined(CRYPTOPP_DISABLE_SSSE3) && (_MSC_VER >= 1400 || CRYPTOPP_GCC_VERSION >= 40102)
++	#if !defined(CRYPTOPP_DISABLE_SSSE3) && (defined(_MSC_VER) && _MSC_VER >= 1400 || CRYPTOPP_GCC_VERSION >= 40102)
+ 		#define CRYPTOPP_BOOL_SSSE3_ASM_AVAILABLE 1
+ 	#else
+ 		#define CRYPTOPP_BOOL_SSSE3_ASM_AVAILABLE 0

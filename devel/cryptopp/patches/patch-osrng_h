@@ -1,0 +1,12 @@
+$OpenBSD: patch-osrng_h,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
+--- osrng.h.orig	Fri Jun 20 14:58:43 2008
++++ osrng.h	Fri Jun 20 15:01:52 2008
+@@ -140,7 +140,7 @@ void AutoSeededX917RNG<BLOCK_CIPHER>::Reseed(bool bloc
+ 
+ CRYPTOPP_DLL_TEMPLATE_CLASS AutoSeededX917RNG<AES>;
+ 
+-#if CRYPTOPP_ENABLE_COMPLIANCE_WITH_FIPS_140_2
++#if defined(CRYPTOPP_ENABLE_COMPLIANCE_WITH_FIPS_140_2) && CRYPTOPP_ENABLE_COMPLIANCE_WITH_FIPS_140_2
+ typedef AutoSeededX917RNG<AES> DefaultAutoSeededRNG;
+ #else
+ typedef AutoSeededRandomPool DefaultAutoSeededRNG;

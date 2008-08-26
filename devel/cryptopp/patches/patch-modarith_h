@@ -1,0 +1,12 @@
+$OpenBSD: patch-modarith_h,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
+--- modarith.h.orig	Wed Jun 18 13:44:33 2008
++++ modarith.h	Fri Jun 20 13:58:36 2008
+@@ -27,7 +27,7 @@ class CRYPTOPP_DLL ModularArithmetic : public Abstract
+ 		: m_modulus(modulus), m_result((word)0, modulus.reg.size()) {}
+ 
+ 	ModularArithmetic(const ModularArithmetic &ma)
+-		: m_modulus(ma.m_modulus), m_result((word)0, m_modulus.reg.size()) {}
++		: AbstractRing<Integer>(ma), m_modulus(ma.m_modulus), m_result((word)0, m_modulus.reg.size()) {}
+ 
+ 	ModularArithmetic(BufferedTransformation &bt);	// construct from BER encoded parameters
+ 

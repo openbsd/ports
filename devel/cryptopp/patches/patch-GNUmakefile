@@ -1,0 +1,20 @@
+$OpenBSD: patch-GNUmakefile,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
+--- GNUmakefile.orig	Sun Sep 23 21:03:14 2007
++++ GNUmakefile	Sun Jun 15 10:30:30 2008
+@@ -102,7 +102,15 @@ LIBIMPORTOBJS = $(LIBOBJS:.o=.import.o)
+ TESTIMPORTOBJS = $(TESTOBJS:.o=.import.o)
+ DLLTESTOBJS = dlltest.dllonly.o
+ 
+-all: cryptest.exe
++SHARED_LIB = libcryptopp.so.${LIBcryptopp_VERSION}
++
++all:  libcryptopp.a ${SHARED_LIB}
++
++${SHARED_LIB}: ${LIBOBJS}
++	$(CXX) -shared -o $@ $(CXXFLAGS) $(LIBOBJS) $(LDFLAGS)
++
++regress: cryptest.exe
++	LD_LIBRARY_PATH=. ./cryptest.exe
+ 
+ clean:
+ 	$(RM) cryptest.exe libcryptopp.a $(LIBOBJS) $(TESTOBJS) cryptopp.dll libcryptopp.dll.a libcryptopp.import.a cryptest.import.exe dlltest.exe $(DLLOBJS) $(LIBIMPORTOBJS) $(TESTIMPORTOBJS) $(DLLTESTOBJS)
