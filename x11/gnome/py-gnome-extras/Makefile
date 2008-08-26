@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/08/23 21:40:08 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2008/08/26 18:11:03 martynas Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
 GNOME_PROJECT=	gnome-python-extras
 GNOME_VERSION=	2.19.1
-PKGNAME=	py-gnome-extras-${VERSION}p0
+PKGNAME=	py-gnome-extras-${VERSION}p1
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -60,7 +60,6 @@ post-install:
 
 do-regress: fake
 	cd ${WRKSRC}/tests && env \
-		LD_LIBRARY_PATH="${LOCALBASE}/xulrunner" \
 		PYTHONPATH="${WRKINST}${MODPY_LIBDIR}/site-packages/gtk-2.0" \
 		${MODPY_BIN} runtests.py
 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gtkmozembed_Makefile_in,v 1.1 2008/08/26 18:11:03 martynas Exp $
+--- gtkmozembed/Makefile.in.orig	Tue Jun  5 18:03:47 2007
++++ gtkmozembed/Makefile.in	Mon Aug 25 16:38:27 2008
+@@ -259,7 +259,7 @@ defs_DATA = gtkmozembed.defs
+ pkgpyexec_LTLIBRARIES = gtkmozembed.la
+ gtkmozembed_la_LDFLAGS = -module -avoid-version	\
+ 	-export-symbols-regex initgtkmozembed	\
+-	-R$(MOZILLA_HOME)
++	-Wl,-rpath,'$(MOZILLA_HOME)'
+ 
+ gtkmozembed_la_LIBADD = $(GTKMOZEMBED_LIBS)
+ gtkmozembed_la_SOURCES = gtkmozembedmodule.c
