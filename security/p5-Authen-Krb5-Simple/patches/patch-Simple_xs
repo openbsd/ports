@@ -1,6 +1,6 @@
-$OpenBSD: patch-Simple_xs,v 1.1 2005/02/09 05:36:24 pvalchev Exp $
---- Simple.xs.orig	Sun Jan 19 13:33:34 2003
-+++ Simple.xs	Tue Feb  8 22:32:42 2005
+$OpenBSD: patch-Simple_xs,v 1.2 2008/08/26 20:57:27 fgsch Exp $
+--- Simple.xs.orig	Sun Jul 27 13:03:36 2008
++++ Simple.xs	Sun Jul 27 13:05:20 2008
 @@ -61,6 +61,20 @@ cleanup2:
      return(ret);
  }
@@ -22,7 +22,7 @@ $OpenBSD: patch-Simple_xs,v 1.1 2005/02/09 05:36:24 pvalchev Exp $
  MODULE = Authen::Krb5::Simple     PACKAGE = Authen::Krb5::Simple		
  
  PROTOTYPES: DISABLE
-@@ -75,14 +89,12 @@ krb5_auth(user, password)
+@@ -75,13 +89,11 @@ krb5_auth(user, password)
      OUTPUT:
      RETVAL
  
@@ -38,4 +38,3 @@ $OpenBSD: patch-Simple_xs,v 1.1 2005/02/09 05:36:24 pvalchev Exp $
 +    RETVAL = _krb5_error_msg(errcode);
      OUTPUT:
      RETVAL
- 

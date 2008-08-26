@@ -1,28 +1,27 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2004/06/26 05:07:53 sk Exp $
---- Makefile.PL.orig	Sun Jan 19 13:33:34 2003
-+++ Makefile.PL	Fri Jun 25 21:18:34 2004
-@@ -27,7 +27,7 @@ WriteMakefile(
-             AUTHOR     => 'Damien S. Stuart <damien.stuart@usi.net>')
+$OpenBSD: patch-Makefile_PL,v 1.2 2008/08/26 20:57:27 fgsch Exp $
+--- Makefile.PL.orig	Sun Jul 27 13:29:15 2008
++++ Makefile.PL	Sun Jul 27 13:29:26 2008
+@@ -55,10 +55,10 @@ if(exists($ENV{KRB5_LIB})) {
+ # See if the needed libs are available.  Take a shot at several "possible"
+ # locations for these libs.
+ #
+-check_lib_or_exit(
+-    lib     => [qw( krb5 k5crypto com_err )],
+-    libpath => \@kr_lib_dirs
+-);
++#check_lib_or_exit(
++#    lib     => [qw( krb5 k5crypto com_err )],
++#    libpath => \@kr_lib_dirs
++#);
+ 
+ # Write out the Makefile
+ #
+@@ -72,7 +72,7 @@ WriteMakefile(
+             AUTHOR     => 'Damien S. Stuart <dstuart@dstuart.org>')
          : ()
      ),
--    'LIBS'      => ["-L$krb5_lib -lkrb5 -lk5crypto -lcom_err"],
-+    'LIBS'      => ["-L$krb5_lib -lkrb5 -lcrypto -lcom_err"],
+-    'LIBS'      => ["$krb5_lib -lkrb5 -lk5crypto"],
++    'LIBS'      => ["$krb5_lib -lkrb5 -lcrypto -lcom_err"],
      'DEFINE'    => '',
-     'INC'       => "-I$krb5_inc",
+     'INC'       => $krb5_inc,
  );
-@@ -81,11 +81,11 @@ sub get_krb5_info {
-     
-     # Prompt for the location of key Kerberos files.
-     #
--    print "\nPlease enter information about your Kerberos5 installation.\n";
--    print " - (Press <Enter> to keep the default value):\n\n";
-+    #print "\nPlease enter information about your Kerberos5 installation.\n";
-+    #print " - (Press <Enter> to keep the default value):\n\n";
-     
--    my $krb_inc = get_resp('Enter Kerboros5 include directory', $def_kinc);
--    my $krb_lib = get_resp('Enter Kerberos5 lib directory', $def_klib);
-+    my $krb_inc = '/usr/include/kerberosV'; #get_resp('Enter Kerboros5 include directory', $def_kinc);
-+    my $krb_lib = '/usr/lib'; #get_resp('Enter Kerberos5 lib directory', $def_klib);
- 
-     return($krb_inc, $krb_lib);
- }
