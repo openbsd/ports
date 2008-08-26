@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/05/27 14:39:00 ajacoutot Exp $
-bin/amarok
+@comment $OpenBSD: PLIST,v 1.12 2008/08/26 17:24:38 espie Exp $
+@bin bin/amarok
 bin/amarok_daapserver.rb
 bin/amarok_proxy.rb
-bin/amarokapp
-bin/amarokcollectionscanner
+@bin bin/amarokapp
+@bin bin/amarokcollectionscanner
 ${KDE}/konqsidebar_universalamarok.la
 ${KDE}/konqsidebar_universalamarok.so
 ${KDE}/libamarok_daap-mediadevice.la
@@ -943,37 +943,7 @@ share/doc/HTML/pt_BR/amarok/requirements.docbook
 share/doc/HTML/pt_BR/amarok/using.docbook
 share/doc/HTML/ru/
 share/doc/HTML/ru/amarok/
-share/doc/HTML/ru/amarok/advanced.docbook
-share/doc/HTML/ru/amarok/collection.png
-share/doc/HTML/ru/amarok/common
-share/doc/HTML/ru/amarok/config.docbook
-share/doc/HTML/ru/amarok/config_appearance.png
-share/doc/HTML/ru/amarok/config_collection.png
-share/doc/HTML/ru/amarok/config_engine.png
-share/doc/HTML/ru/amarok/config_general.png
-share/doc/HTML/ru/amarok/config_osd.png
-share/doc/HTML/ru/amarok/config_playback.png
-share/doc/HTML/ru/amarok/config_scrobbler.png
-share/doc/HTML/ru/amarok/context.png
-share/doc/HTML/ru/amarok/coverman.png
-share/doc/HTML/ru/amarok/dynamic_mode1.png
-share/doc/HTML/ru/amarok/equalizer.png
-share/doc/HTML/ru/amarok/faq.docbook
-share/doc/HTML/ru/amarok/feature_guide.docbook
-share/doc/HTML/ru/amarok/file_browser.png
-share/doc/HTML/ru/amarok/index.cache.bz2
-share/doc/HTML/ru/amarok/index.docbook
-share/doc/HTML/ru/amarok/menubar.png
-share/doc/HTML/ru/amarok/pl_browser.png
-share/doc/HTML/ru/amarok/pl_tip1.png
-share/doc/HTML/ru/amarok/play_list.png
-share/doc/HTML/ru/amarok/playlist_window.png
-share/doc/HTML/ru/amarok/queue_manager.png
-share/doc/HTML/ru/amarok/quick.docbook
 share/doc/HTML/ru/amarok/requirements.docbook
-share/doc/HTML/ru/amarok/rmb_menu.png
-share/doc/HTML/ru/amarok/status_bar.png
-share/doc/HTML/ru/amarok/using.docbook
 share/doc/HTML/sv/
 share/doc/HTML/sv/amarok/
 share/doc/HTML/sv/amarok/add_dynamic.png
@@ -1064,6 +1034,7 @@ share/locale/id/LC_MESSAGES/amarok.mo
 share/locale/is/LC_MESSAGES/amarok.mo
 share/locale/it/LC_MESSAGES/amarok.mo
 share/locale/ja/LC_MESSAGES/amarok.mo
+share/locale/ka/LC_MESSAGES/amarok.mo
 share/locale/km/
 share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/amarok.mo
@@ -1109,6 +1080,7 @@ share/locale/th/LC_MESSAGES/amarok.mo
 share/locale/tr/LC_MESSAGES/amarok.mo
 share/locale/uk/LC_MESSAGES/amarok.mo
 share/locale/uz/LC_MESSAGES/amarok.mo
+share/locale/uz@cyrillic/LC_MESSAGES/amarok.mo
 share/locale/zh_CN/LC_MESSAGES/amarok.mo
 share/locale/zh_TW/LC_MESSAGES/amarok.mo
 share/services/amarok_daap-mediadevice.desktop
