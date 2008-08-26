@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2008/07/25 20:28:03 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2008/08/26 16:52:29 espie Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
@@ -25,6 +25,7 @@ bin/kcheckpass
 @bin bin/kcontrol
 @bin bin/kcontroledit
 @bin bin/kdcop
+bin/kde3
 @bin bin/kdebugdialog
 bin/kdeeject
 bin/kdeinstallktheme

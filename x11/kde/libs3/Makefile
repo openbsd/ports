@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.94 2008/07/25 20:25:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2008/08/26 16:52:29 espie Exp $
 
-COMMENT-main=		K Desktop Environment, libraries
-COMMENT-cups=		K Desktop Environment, cups support
-CATEGORIES=		x11 x11/kde
-VERSION=		3.5.9
-DISTNAME=		kdelibs-${VERSION}
-MASTER_SITES0=  ftp://ftp.kde.org/pub/kde/security_patches/
+COMMENT-main =		K Desktop Environment, libraries
+COMMENT-cups =		K Desktop Environment, cups support
+CATEGORIES =		x11 x11/kde
+VERSION =		3.5.10
+DISTNAME =		kdelibs-${VERSION}
+MASTER_SITES0 =  	ftp://ftp.kde.org/pub/kde/security_patches/
 
-PKGNAME-main=		${DISTNAME}p1
-PKGNAME-cups=		kdecups-${VERSION}
-MODKDE_VERSION=		3.5.8
+PKGNAME-main =		${DISTNAME}
+PKGNAME-cups =		kdecups-${VERSION}
+MODKDE_VERSION =		3.5.8
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
 SHARED_LIBS +=	kdefx                7.0      # .6.0
 SHARED_LIBS +=	kdefakes             7.0      # .6.0
@@ -51,30 +51,31 @@ SHARED_LIBS +=	kmediaplayer         1.0      # .0.0
 SHARED_LIBS +=	kimproxy             1.0      # .0.0
 SHARED_LIBS +=	katepartinterfaces   1.0      # .0.0
 
-FLAVORS=debug
-VMEM_WARNING=	Yes
+FLAVORS =	debug
+VMEM_WARNING =	Yes
 
 
-MULTI_PACKAGES=	-main -cups
-CONFIGURE_ARGS+= --enable-cups
+MULTI_PACKAGES =	-main -cups
+CONFIGURE_ARGS += 	--enable-cups
 
-LIB_DEPENDS=	art_lgpl_2::graphics/libart \
+LIB_DEPENDS =	art_lgpl_2::graphics/libart \
 		idn::devel/libidn \
 		fam::sysutils/fam
-WANTLIB=	iconv intl util jpeg m X11 ICE Xrender c SM pthread \
+WANTLIB =	iconv intl util jpeg m X11 ICE Xrender c SM pthread \
 		stdc++ Xext z png rpcsvc Xau Xdmcp
 
-LIB_DEPENDS-main=${LIB_DEPENDS} \
-		artsflow.>=1.0,artsflow_idl,qtmcop,soundserver_idl,mcop,kmedia2_idl::x11/kde/arts3 \
-		pcreposix,pcre::devel/pcre \
-		xslt.>=1.10:libxslt->=1.0.10:textproc/libxslt \
-		bz2::archivers/bzip2 \
-		tiff.>=35::graphics/tiff \
-		jasper::graphics/jasper \
-		IlmImf.>=4::graphics/openexr \
-		aspell::textproc/aspell/core
+LIB_DEPENDS-main =	\
+	${LIB_DEPENDS} \
+	artsflow.>=1.0,artsflow_idl,qtmcop,soundserver_idl,mcop,kmedia2_idl::x11/kde/arts3 \
+	pcreposix,pcre::devel/pcre \
+	xslt.>=1.10:libxslt->=1.0.10:textproc/libxslt \
+	bz2::archivers/bzip2 \
+	tiff.>=35::graphics/tiff \
+	jasper::graphics/jasper \
+	IlmImf.>=4::graphics/openexr \
+	aspell::textproc/aspell/core
 
-WANTLIB-main=	${WANTLIB} \
+WANTLIB-main =	${WANTLIB} \
 		Half Iex IlmThread Imath \
 		audiofile esd glib-2.0 \
 		gmodule-2.0 gthread-2.0 mad ogg \
@@ -82,23 +83,25 @@ WANTLIB-main=	${WANTLIB} \
 		xml2 krb5 gssapi crypto asn1
 
 
-RUN_DEPENDS-main=${RUN_DEPENDS} \
-		::x11/hicolor-icon-theme \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS-main = \
+	${RUN_DEPENDS} \
+	::x11/hicolor-icon-theme \
+	:desktop-file-utils-*:devel/desktop-file-utils
 
-LIB_DEPENDS-cups=${LIB_DEPENDS} \
-		kdecore.>=6,kwalletclient,kdefakes,kdefx,kdeprint,kio,kparts,kdeui,kdesu,kdeprint_management,DCOP::x11/kde/libs3 \
-		cups::print/cups
+LIB_DEPENDS-cups = \
+	${LIB_DEPENDS} \
+	kdecore.>=6,kwalletclient,kdefakes,kdefx,kdeprint,kio,kparts,kdeui,kdesu,kdeprint_management,DCOP::x11/kde/libs3 \
+	cups::print/cups
 
-WANTLIB-cups=	${WANTLIB} \
+WANTLIB-cups =	${WANTLIB} \
 		crypto ssl
 
 
-SEPARATE_BUILD=	flavored
-SAMPLECONFDIR=${TRUEPREFIX}/share/apps/kde-conf-sample
-EXTRA_CONFIG=xdg/menus/applications.menu
+SEPARATE_BUILD =	flavored
+SAMPLECONFDIR =		${TRUEPREFIX}/share/apps/kde-conf-sample
+EXTRA_CONFIG =		xdg/menus/applications.menu
 
-FAKE_FLAGS=	sysconfdir=${SAMPLECONFDIR}
+FAKE_FLAGS =		sysconfdir=${SAMPLECONFDIR}
 
 post-extract:
 	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
@@ -112,4 +115,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKBUILD}/libtool ${PREFIX}/bin/kdelibtool
 
 .include <bsd.port.mk>
-MODGNU_AUTOCONF_FILES+= dcop/dcop-path.h.in
+MODGNU_AUTOCONF_FILES +=	dcop/dcop-path.h.in

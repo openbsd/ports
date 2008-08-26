@@ -1,24 +1,15 @@
-$OpenBSD: patch-artsc_artsdsp_in,v 1.1 2008/06/12 19:18:00 tobias Exp $
---- artsc/artsdsp.in.orig	Sat Sep 10 11:13:34 2005
-+++ artsc/artsdsp.in	Tue Jun 10 01:44:32 2008
-@@ -109,7 +109,7 @@ case $3 in
-        arch_libdir=lib
-        ;;
-     64-bit)
--       arch_libdir=lib64
-+       arch_libdir=lib
-        ;;
-     *)
-        exit 1
-@@ -122,9 +122,9 @@ exec_prefix=@exec_prefix@
- libdir=${prefix}/${arch_libdir}
+$OpenBSD: patch-artsc_artsdsp_in,v 1.2 2008/08/26 16:52:28 espie Exp $
+--- artsc/artsdsp.in.orig	Tue Aug 19 20:10:01 2008
++++ artsc/artsdsp.in	Wed Aug 20 21:43:07 2008
+@@ -93,9 +93,9 @@ prefix=@prefix@
+ exec_prefix=@exec_prefix@
  
  if test "$single_thread" = 1; then
--  LD_PRELOAD=${libdir}/libartsdsp_st.so.0
-+  LD_PRELOAD=${libdir}/libartsdsp_st.so
+-  LD_PRELOAD=${exec_prefix}/\$LIB/libartsdsp_st.so.0
++  LD_PRELOAD=${exec_prefix}/\$LIB/libartsdsp_st.so
  else
--  LD_PRELOAD=${libdir}/libartsdsp.so.0:${libdir}/libartsc.so.0
-+  LD_PRELOAD=${libdir}/libartsdsp.so:${libdir}/libartsc.so
+-  LD_PRELOAD=${exec_prefix}/\$LIB/libartsdsp.so.0:${exec_prefix}/\$LIB/libartsc.so.0
++  LD_PRELOAD=${exec_prefix}/\$LIB/libartsdsp.so:${exec_prefix}/\$LIB/libartsc.so.0
  fi
- if test -f ${libdir}/libdl.so.2; then
-   LD_PRELOAD=$LD_PRELOAD:${libdir}/libdl.so.2
+ if test -f ${exec_prefix}/\$LIB/libdl.so.2; then
+   LD_PRELOAD=$LD_PRELOAD:${exec_prefix}/\$LIB/libdl.so.2

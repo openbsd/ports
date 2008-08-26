@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdesu_process_cpp,v 1.9 2006/10/12 23:12:19 espie Exp $
---- kdesu/process.cpp.orig	Sun Oct  1 19:33:34 2006
-+++ kdesu/process.cpp	Tue Oct  3 01:00:17 2006
-@@ -438,8 +438,13 @@ int PtyProcess::waitForChild()
+$OpenBSD: patch-kdesu_process_cpp,v 1.10 2008/08/26 16:52:29 espie Exp $
+--- kdesu/process.cpp.orig	Tue Aug 19 20:18:14 2008
++++ kdesu/process.cpp	Thu Aug 21 00:02:14 2008
+@@ -492,8 +492,13 @@ int PtyProcess::waitForChild()
  
      while (1) 
      {

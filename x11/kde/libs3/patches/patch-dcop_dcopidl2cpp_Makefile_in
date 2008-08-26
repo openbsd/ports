@@ -1,12 +1,12 @@
-$OpenBSD: patch-dcop_dcopidl2cpp_Makefile_in,v 1.1 2007/10/24 21:52:18 espie Exp $
---- dcop/dcopidl2cpp/Makefile.in.orig	Mon Oct 22 22:48:57 2007
-+++ dcop/dcopidl2cpp/Makefile.in	Mon Oct 22 22:53:31 2007
+$OpenBSD: patch-dcop_dcopidl2cpp_Makefile_in,v 1.2 2008/08/26 16:52:29 espie Exp $
+--- dcop/dcopidl2cpp/Makefile.in.orig	Wed Aug 20 18:05:55 2008
++++ dcop/dcopidl2cpp/Makefile.in	Thu Aug 21 00:03:29 2008
 @@ -410,7 +410,7 @@ INCLUDES = $(all_includes)
  AM_LDFLAGS = $(all_libraries)
  dcopidl2cpp_SOURCES = main.cpp skel.cpp stub.cpp stubimpl.cpp
  noinst_HEADERS = main.h
 -dcopidl2cpp_LDADD = $(LIB_QT)
 +dcopidl2cpp_LDADD = $(all_libraries) $(LIB_QT)
- dcopidl2cpp_LDFLAGS = $(KDE_RPATH)
+ dcopidl2cpp_LDFLAGS = $(KDE_RPATH) $(AM_LDFLAGS)
  #>- all: all-am
  #>+ 1

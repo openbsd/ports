@@ -1,12 +1,12 @@
-$OpenBSD: patch-dcop_dcopidl_Makefile_in,v 1.1 2007/10/24 21:52:18 espie Exp $
---- dcop/dcopidl/Makefile.in.orig	Mon Oct 22 22:48:28 2007
-+++ dcop/dcopidl/Makefile.in	Mon Oct 22 22:53:28 2007
+$OpenBSD: patch-dcop_dcopidl_Makefile_in,v 1.2 2008/08/26 16:52:29 espie Exp $
+--- dcop/dcopidl/Makefile.in.orig	Wed Aug 20 18:05:55 2008
++++ dcop/dcopidl/Makefile.in	Thu Aug 21 00:03:57 2008
 @@ -409,7 +409,7 @@ AM_LDFLAGS = $(all_libraries)
  AM_CPPFLAGS = -DYYDEBUG
  dcopidl_SOURCES = main.cpp yacc.cc scanner.cc
  noinst_HEADERS = yacc.cc.h
 -dcopidl_LDADD = $(LIB_QT)
 +dcopidl_LDADD = $(all_libraries) $(LIB_QT)
- dcopidl_LDFLAGS = $(KDE_RPATH)
+ dcopidl_LDFLAGS = $(KDE_RPATH) $(AM_LDFLAGS)
  EXTRA_DIST = dcopidl_test.h scanner.ll yacc.yy
  MAINTAINERCLEANFILES = yacc.cc.output

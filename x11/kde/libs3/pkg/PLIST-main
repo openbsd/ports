@@ -1,70 +1,70 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2008/03/25 11:45:08 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2008/08/26 16:52:29 espie Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
 @conflict kdeadmin-<3.4
 @pkgpath x11/kde/libs3
-bin/artsmessage
+@bin bin/artsmessage
 bin/checkXML
-bin/dcop
-bin/dcopclient
-bin/dcopfind
-bin/dcopidl
-bin/dcopidl2cpp
+@bin bin/dcop
+@bin bin/dcopclient
+@bin bin/dcopfind
+@bin bin/dcopidl
+@bin bin/dcopidl2cpp
 bin/dcopidlng
-bin/dcopobject
-bin/dcopquit
-bin/dcopref
-bin/dcopserver
-bin/dcopserver_shutdown
-bin/dcopstart
+@bin bin/dcopobject
+@bin bin/dcopquit
+@bin bin/dcopref
+@bin bin/dcopserver
+@bin bin/dcopserver_shutdown
+@bin bin/dcopstart
 @comment bin/filesharelist
 @comment bin/fileshareset
 bin/imagetops
-bin/kab2kabc
-bin/kaddprinterwizard
-bin/kbuildsycoca
-bin/kcmshell
-bin/kconf_update
-bin/kconfig_compiler
-bin/kcookiejar
-bin/kde-config
-bin/kde-menu
-bin/kded
-bin/kdeinit
-bin/kdeinit_shutdown
-bin/kdeinit_wrapper
+@bin bin/kab2kabc
+@bin bin/kaddprinterwizard
+@bin bin/kbuildsycoca
+@bin bin/kcmshell
+@bin bin/kconf_update
+@bin bin/kconfig_compiler
+@bin bin/kcookiejar
+@bin bin/kde-config
+@bin bin/kde-menu
+@bin bin/kded
+@bin bin/kdeinit
+@bin bin/kdeinit_shutdown
+@bin bin/kdeinit_wrapper
 bin/kdelibtool
-bin/kdesu_stub
-bin/kdontchangethehostname
-bin/kdostartupconfig
-bin/kfile
+@bin bin/kdesu_stub
+@bin bin/kdontchangethehostname
+@bin bin/kdostartupconfig
+@bin bin/kfile
 bin/kfmexec
 @comment bin/kgrantpty
-bin/khotnewstuff
-bin/kinstalltheme
-bin/kio_http_cache_cleaner
-bin/kio_uiserver
-bin/kioexec
-bin/kioslave
-bin/klauncher
-bin/kmailservice
+@bin bin/khotnewstuff
+@bin bin/kinstalltheme
+@bin bin/kio_http_cache_cleaner
+@bin bin/kio_uiserver
+@bin bin/kioexec
+@bin bin/kioslave
+@bin bin/klauncher
+@bin bin/kmailservice
 @comment bin/kpac_dhcp_helper
-bin/ksendbugmail
-bin/kshell
-bin/kstartupconfig
-bin/ksvgtopng
-bin/ktelnetservice
-bin/ktradertest
-bin/kunittestmodrunner
-bin/kwrapper
-bin/lnusertemp
-bin/make_driver_db_lpr
-bin/makekdewidgets
-bin/meinproc
+@bin bin/ksendbugmail
+@bin bin/kshell
+@bin bin/kstartupconfig
+@bin bin/ksvgtopng
+@bin bin/ktelnetservice
+@bin bin/ktradertest
+@bin bin/kunittestmodrunner
+@bin bin/kwrapper
+@bin bin/lnusertemp
+@bin bin/make_driver_db_lpr
+@bin bin/makekdewidgets
+@bin bin/meinproc
 bin/preparetips
-bin/start_kdeinit
-bin/start_kdeinit_wrapper
+@bin bin/start_kdeinit
+@bin bin/start_kdeinit_wrapper
 include/arts/artskde.h
 include/arts/kartsdispatcher.h
 include/arts/kartsfloatwatch.h

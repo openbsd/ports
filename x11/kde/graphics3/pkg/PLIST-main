@@ -1,23 +1,23 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/12/15 23:47:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/08/26 16:52:29 espie Exp $
 @pkgpath x11/kde/graphics3
-bin/kcolorchooser
-bin/kcoloredit
-bin/kdvi
-bin/kfax
-bin/kfaxview
-bin/kghostview
-bin/kiconedit
-bin/kolourpaint
-bin/kpdf
-bin/kruler
-bin/ksnapshot
-bin/kuickshow
-bin/kview
-bin/kviewshell
-bin/mrmlsearch
-bin/printnodetest
-bin/svgdisplay
-bin/xf86gammacfg
+@bin bin/kcolorchooser
+@bin bin/kcoloredit
+@bin bin/kdvi
+@bin bin/kfax
+@bin bin/kfaxview
+@bin bin/kghostview
+@bin bin/kiconedit
+@bin bin/kolourpaint
+@bin bin/kpdf
+@bin bin/kruler
+@bin bin/ksnapshot
+@bin bin/kuickshow
+@bin bin/kview
+@bin bin/kviewshell
+@bin bin/mrmlsearch
+@bin bin/printnodetest
+@bin bin/svgdisplay
+@bin bin/xf86gammacfg
 include/dom/SVGAElement.h
 include/dom/SVGAltGlyphDefElement.h
 include/dom/SVGAltGlyphElement.h

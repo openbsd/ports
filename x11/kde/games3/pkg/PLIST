@@ -1,38 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.22 2007/12/15 23:47:40 ajacoutot Exp $
-bin/atlantik
-bin/kasteroids
-bin/katomic
-bin/kbackgammon
-bin/kbattleship
-bin/kblackbox
-bin/kbounce
-bin/kenolaba
-bin/kfouleggs
-bin/kgoldrunner
-bin/kjumpingcube
-bin/klickety
-bin/klines
-bin/kmahjongg
-bin/kmines
-bin/knetwalk
-bin/kolf
-bin/konquest
-bin/kpat
-bin/kpoker
-bin/kreversi
-bin/ksame
-bin/kshisen
-bin/ksirtet
-bin/ksmiletris
-bin/ksnake
-bin/ksokoban
-bin/kspaceduel
-bin/ktron
-bin/ktuberling
-bin/kwin4
-bin/kwin4proc
-bin/lskat
-bin/lskatproc
+@comment $OpenBSD: PLIST,v 1.23 2008/08/26 16:52:29 espie Exp $
+@bin bin/atlantik
+@bin bin/kasteroids
+@bin bin/katomic
+@bin bin/kbackgammon
+@bin bin/kbattleship
+@bin bin/kblackbox
+@bin bin/kbounce
+@bin bin/kenolaba
+@bin bin/kfouleggs
+@bin bin/kgoldrunner
+@bin bin/kjumpingcube
+@bin bin/klickety
+@bin bin/klines
+@bin bin/kmahjongg
+@bin bin/kmines
+@bin bin/knetwalk
+@bin bin/kolf
+@bin bin/konquest
+@bin bin/kpat
+@bin bin/kpoker
+@bin bin/kreversi
+@bin bin/ksame
+@bin bin/kshisen
+@bin bin/ksirtet
+@bin bin/ksmiletris
+@bin bin/ksnake
+@bin bin/ksokoban
+@bin bin/kspaceduel
+@bin bin/ktron
+@bin bin/ktuberling
+@bin bin/kwin4
+@bin bin/kwin4proc
+@bin bin/lskat
+@bin bin/lskatproc
 include/atlantic/
 include/atlantic/atlantic_core.h
 include/atlantic/auction.h

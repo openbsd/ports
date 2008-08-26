@@ -1,42 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.30 2008/03/25 12:26:03 espie Exp $
-bin/apmount
-bin/blinken
-bin/celestrongps
-bin/fliccd
-bin/fliwheel
-bin/indiserver
-bin/kalzium
-bin/kanagram
-bin/kbruch
-bin/keduca
-bin/keducabuilder
-bin/kgeography
-bin/khangman
-bin/kig
-bin/kiten
-bin/kitengen
-bin/klatin
-bin/klettres
-bin/kmplot
-bin/kpercentage
-bin/kstars
-bin/ktouch
-bin/kturtle
-bin/kverbos
-bin/kvoctrain
-bin/kwordquiz
+@comment $OpenBSD: PLIST,v 1.31 2008/08/26 16:52:29 espie Exp $
+@bin bin/apmount
+@bin bin/blinken
+@bin bin/celestrongps
+@bin bin/fliccd
+@bin bin/fliwheel
+@bin bin/indiserver
+@bin bin/kalzium
+@bin bin/kanagram
+@bin bin/kbruch
+@bin bin/keduca
+@bin bin/keducabuilder
+@bin bin/kgeography
+@bin bin/khangman
+@bin bin/kig
+@bin bin/kiten
+@bin bin/kitengen
+@bin bin/klatin
+@bin bin/klettres
+@bin bin/kmplot
+@bin bin/kpercentage
+@bin bin/kstars
+@bin bin/ktouch
+@bin bin/kturtle
+@bin bin/kverbos
+@bin bin/kvoctrain
+@bin bin/kwordquiz
 bin/lx200_16
 bin/lx200autostar
-bin/lx200basic
+@bin bin/lx200basic
 bin/lx200classic
-bin/lx200generic
+@bin bin/lx200generic
 bin/lx200gps
 bin/pykig.py
-bin/skycommander
-bin/spotlight2kvtml
-bin/temma
-bin/test_extdate
-bin/test_extdatepicker
+@bin bin/skycommander
+@bin bin/spotlight2kvtml
+@bin bin/temma
 include/kstarsinterface.h
 include/libkdeedu/
 include/libkdeedu/kdeeduglossary.h
@@ -1852,6 +1850,7 @@ share/apps/ktouch/hungarian_expert.ktouch.xml
 share/apps/ktouch/it.keyboard
 share/apps/ktouch/italian.ktouch.xml
 share/apps/ktouch/ktouchui.rc
+share/apps/ktouch/nb.keyboard
 share/apps/ktouch/nederlands.ktouch.xml
 share/apps/ktouch/nederlands_junior.ktouch.xml
 share/apps/ktouch/norwegian.ktouch.xml
