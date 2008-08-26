@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2008/03/26 14:29:24 okan Exp $
+# $OpenBSD: Makefile,v 1.5 2008/08/26 00:03:54 okan Exp $
 
 COMMENT=	log file preprocessor
 
-DISTNAME=	logpp-0.15
+DISTNAME=	logpp-0.16
 CATEGORIES=	sysutils
 
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
+MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

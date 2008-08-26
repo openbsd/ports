@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/23 09:04:41 msf Exp $
-bin/logpp
+@comment $OpenBSD: PLIST,v 1.2 2008/08/26 00:03:54 okan Exp $
+@bin bin/logpp
 @man man/man1/logpp.1
