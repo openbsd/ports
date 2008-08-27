@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/04 10:56:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2008/08/27 20:04:07 jasper Exp $
 
 COMMENT=	web proxy with antivirus filter
 
-DISTNAME=	havp-0.88
+DISTNAME=	havp-0.89
 CATEGORIES=	www
-MASTER_SITES=	http://www.server-side.de/download/
+MASTER_SITES=	${HOMEPAGE}/download/
 
 HOMEPAGE=	http://www.server-side.de/
 
 MAINTAINER=	Giovanni Bechis <g.bechis@snb.it>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 

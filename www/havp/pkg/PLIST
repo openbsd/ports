@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/04 10:56:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/08/27 20:04:07 jasper Exp $
 @newgroup _havp:602
 @newuser _havp:602:_havp:daemon:Havp Account:/nonexistent:/sbin/nologin
-sbin/havp
+@bin sbin/havp
 share/examples/havp/
 @sample ${SYSCONFDIR}/havp/
 share/examples/havp/blacklist
