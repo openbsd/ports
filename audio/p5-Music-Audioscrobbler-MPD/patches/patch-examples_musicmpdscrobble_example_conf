@@ -1,0 +1,15 @@
+$OpenBSD: patch-examples_musicmpdscrobble_example_conf,v 1.1.1.1 2008/08/27 19:50:37 jasper Exp $
+
+Use an existing directory.
+
+--- examples/musicmpdscrobble_example.conf.orig	Wed Aug 27 21:04:42 2008
++++ examples/musicmpdscrobble_example.conf	Wed Aug 27 21:04:55 2008
+@@ -40,7 +40,7 @@
+ 	pidfile => "/var/run/musicmpdscrobble.pid",
+ 
+ #Specify the file to store pending scrobbles in.
+-   	scrobble_queue	  =>  "/var/lib/musicmpdscrobble.queue",
++   	scrobble_queue	  =>  "/var/cache/musicmpdscrobble.queue",
+ 
+ #Automatically get missing mbid info:
+ #	get_mbid_from_mb  => 1,  	

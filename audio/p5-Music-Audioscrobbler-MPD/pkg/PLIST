@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/08/27 19:50:37 jasper Exp $
+bin/musicmpdscrobble
+${P5SITE}/Music/Audioscrobbler/MPD.pm
+@man man/man1/musicmpdscrobble.1
+@man man/man3p/Music::Audioscrobbler::MPD.3p
+share/examples/p5-Music-Audioscrobbler-MPD/
+share/examples/p5-Music-Audioscrobbler-MPD/musicmpdscrobble.conf
