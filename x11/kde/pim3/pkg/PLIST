@@ -1,47 +1,47 @@
-@comment $OpenBSD: PLIST,v 1.30 2008/03/26 09:15:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.31 2008/08/27 12:25:14 espie Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
-bin/akregator
-bin/egroupwarewizard
-bin/exchangewizard
-bin/groupwarewizard
-bin/groupwisewizard
+@bin bin/akregator
+@bin bin/egroupwarewizard
+@bin bin/exchangewizard
+@bin bin/groupwarewizard
+@bin bin/groupwisewizard
 bin/ical2vcal
 bin/indexlib-config
-bin/kabc2mutt
-bin/kaddressbook
-bin/kalarm
-bin/kalarmd
-bin/kandy
-bin/kandy_client
-bin/karm
-bin/kleopatra
-bin/kmail
+@bin bin/kabc2mutt
+@bin bin/kaddressbook
+@bin bin/kalarm
+@bin bin/kalarmd
+@bin bin/kandy
+@bin bin/kandy_client
+@bin bin/karm
+@bin bin/kleopatra
+@bin bin/kmail
 bin/kmail_antivir.sh
 bin/kmail_clamav.sh
 bin/kmail_fprot.sh
 bin/kmail_sav.sh
-bin/kmailcvt
-bin/knode
-bin/knotes
-bin/kode
-bin/kolabwizard
-bin/konsolekalendar
-bin/kontact
-bin/korgac
-bin/korganizer
-bin/korn
-bin/kpalmdoc
-bin/kpilot
-bin/kpilotDaemon
-bin/ktnef
-bin/kwatchgnupg
-bin/kxml_compiler
-bin/networkstatustestservice
-bin/scalixadmin
-bin/scalixwizard
-bin/sloxwizard
+@bin bin/kmailcvt
+@bin bin/knode
+@bin bin/knotes
+@bin bin/kode
+@bin bin/kolabwizard
+@bin bin/konsolekalendar
+@bin bin/kontact
+@bin bin/korgac
+@bin bin/korganizer
+@bin bin/korn
+@bin bin/kpalmdoc
+@bin bin/kpilot
+@bin bin/kpilotDaemon
+@bin bin/ktnef
+@bin bin/kwatchgnupg
+@bin bin/kxml_compiler
+@bin bin/networkstatustestservice
+@bin bin/scalixadmin
+@bin bin/scalixwizard
+@bin bin/sloxwizard
 include/KNotesAppIface.h
 include/KNotesIface.h
 include/akregator/
@@ -273,7 +273,7 @@ include/mimelib/uuencode.h
 include/qgpgme/
 include/qgpgme/dataprovider.h
 include/qgpgme/eventloopinteractor.h
-lib/kconf_update_bin/korn-3-4-config_change
+@bin lib/kconf_update_bin/korn-3-4-config_change
 ${KDE}/conduit_address.la
 ${KDE}/conduit_address.so
 ${KDE}/conduit_doc.la
@@ -886,6 +886,8 @@ share/apps/kmail/kmcomposerui.rc
 share/apps/kmail/kmmainwin.rc
 share/apps/kmail/kmreadermainwin.rc
 share/apps/kmail/pics/
+share/apps/kmail/pics/attachmentQuicklistClosed.png
+share/apps/kmail/pics/attachmentQuicklistOpened.png
 share/apps/kmail/pics/enterprise_bottom.png
 share/apps/kmail/pics/enterprise_bottom_left.png
 share/apps/kmail/pics/enterprise_bottom_right.png
@@ -1250,6 +1252,7 @@ share/apps/libical/zoneinfo/America/Argentina/La_Rioja.ics
 share/apps/libical/zoneinfo/America/Argentina/Mendoza.ics
 share/apps/libical/zoneinfo/America/Argentina/Rio_Gallegos.ics
 share/apps/libical/zoneinfo/America/Argentina/San_Juan.ics
+share/apps/libical/zoneinfo/America/Argentina/San_Luis.ics
 share/apps/libical/zoneinfo/America/Argentina/Tucuman.ics
 share/apps/libical/zoneinfo/America/Argentina/Ushuaia.ics
 share/apps/libical/zoneinfo/America/Aruba.ics
@@ -1318,6 +1321,7 @@ share/apps/libical/zoneinfo/America/Los_Angeles.ics
 share/apps/libical/zoneinfo/America/Maceio.ics
 share/apps/libical/zoneinfo/America/Managua.ics
 share/apps/libical/zoneinfo/America/Manaus.ics
+share/apps/libical/zoneinfo/America/Marigot.ics
 share/apps/libical/zoneinfo/America/Martinique.ics
 share/apps/libical/zoneinfo/America/Mazatlan.ics
 share/apps/libical/zoneinfo/America/Menominee.ics
@@ -1356,6 +1360,7 @@ share/apps/libical/zoneinfo/America/Santo_Domingo.ics
 share/apps/libical/zoneinfo/America/Sao_Paulo.ics
 share/apps/libical/zoneinfo/America/Scoresbysund.ics
 share/apps/libical/zoneinfo/America/Shiprock.ics
+share/apps/libical/zoneinfo/America/St_Barthelemy.ics
 share/apps/libical/zoneinfo/America/St_Johns.ics
 share/apps/libical/zoneinfo/America/St_Kitts.ics
 share/apps/libical/zoneinfo/America/St_Lucia.ics
@@ -1412,6 +1417,7 @@ share/apps/libical/zoneinfo/Asia/Dubai.ics
 share/apps/libical/zoneinfo/Asia/Dushanbe.ics
 share/apps/libical/zoneinfo/Asia/Gaza.ics
 share/apps/libical/zoneinfo/Asia/Harbin.ics
+share/apps/libical/zoneinfo/Asia/Ho_Chi_Minh.ics
 share/apps/libical/zoneinfo/Asia/Hong_Kong.ics
 share/apps/libical/zoneinfo/Asia/Hovd.ics
 share/apps/libical/zoneinfo/Asia/Irkutsk.ics
@@ -1424,6 +1430,7 @@ share/apps/libical/zoneinfo/Asia/Kamchatka.ics
 share/apps/libical/zoneinfo/Asia/Karachi.ics
 share/apps/libical/zoneinfo/Asia/Kashgar.ics
 share/apps/libical/zoneinfo/Asia/Katmandu.ics
+share/apps/libical/zoneinfo/Asia/Kolkata.ics
 share/apps/libical/zoneinfo/Asia/Krasnoyarsk.ics
 share/apps/libical/zoneinfo/Asia/Kuala_Lumpur.ics
 share/apps/libical/zoneinfo/Asia/Kuching.ics
@@ -1623,12 +1630,14 @@ share/apps/libkdepim/about/kde_infopage_rtl.css
 share/apps/libkdepim/about/top-left.png
 share/apps/libkdepim/about/top-middle.png
 share/apps/libkholidays/
+share/apps/libkholidays/holiday_BelgiumDutch
+share/apps/libkholidays/holiday_BelgiumFrench
+share/apps/libkholidays/holiday_BelgiumWalloon
 share/apps/libkholidays/holiday_Suedtirol
 share/apps/libkholidays/holiday_ar
 share/apps/libkholidays/holiday_at
 share/apps/libkholidays/holiday_au
 share/apps/libkholidays/holiday_bavarian
-share/apps/libkholidays/holiday_be
 share/apps/libkholidays/holiday_br
 share/apps/libkholidays/holiday_ca
 share/apps/libkholidays/holiday_catalan

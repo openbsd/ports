@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.12 2007/12/15 23:47:40 ajacoutot Exp $
-bin/kcron
-bin/kpackage
-bin/kuser
-bin/secpolicy
+@comment $OpenBSD: PLIST,v 1.13 2008/08/27 12:25:14 espie Exp $
+@bin bin/kcron
+@bin bin/kpackage
+@bin bin/kuser
+@bin bin/secpolicy
 ${KDE}/kcm_knetworkconfmodule.la
 ${KDE}/kcm_knetworkconfmodule.so
 ${KDE}/kfile_deb.la
