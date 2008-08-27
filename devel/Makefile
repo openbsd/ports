@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.614 2008/08/22 11:40:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.615 2008/08/27 07:43:08 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -87,8 +87,6 @@
      SUBDIR += giggle
      SUBDIR += gindent
      SUBDIR += git
-     SUBDIR += glade
-     SUBDIR += glade,gnome
      SUBDIR += glib
      SUBDIR += glib2
      SUBDIR += glib2mm

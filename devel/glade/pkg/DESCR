@@ -1,8 +1,0 @@
-Glade is a free user interface builder for GTK+ and GNOME.
-Glade can produce C source code itself. C++, Ada95, Python &
-Perl support is also available, via external tools which
-process the XML interface description files output by Glade.
-
-Available flavors:
-
-	gnome: Build with gnome support
