@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/08/27 22:08:34 jasper Exp $
 
 COMMENT=		utility to make parameter checking easier
 
 MODULES=		cpan
-DISTNAME=		Params-Util-0.21
-CATEGORIES=		devel perl5
+DISTNAME=		Params-Util-0.33
+CATEGORIES=		devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
