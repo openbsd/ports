@@ -1,9 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2007/06/01 17:17:18 jasper Exp $
-@lib lib/libart_lgpl.so.${LIBart_lgpl_VERSION}
-@lib lib/libgnome.so.${LIBgnome_VERSION}
-@lib lib/libgnomesupport.so.${LIBgnomesupport_VERSION}
-@lib lib/libgnomeui.so.${LIBgnomeui_VERSION}
-@lib lib/libgnorba.so.${LIBgnorba_VERSION}
-@lib lib/libgnorbagtk.so.${LIBgnorbagtk_VERSION}
-@lib lib/libgtkxmhtml.so.${LIBgtkxmhtml_VERSION}
-@lib lib/libzvt.so.${LIBzvt_VERSION}

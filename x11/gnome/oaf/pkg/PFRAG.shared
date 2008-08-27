@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/01/08 22:49:25 alek Exp $
-@lib lib/liboaf.so.${LIBoaf_VERSION}
