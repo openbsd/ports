@@ -1,0 +1,7 @@
+Music::Audioscrobbler::Submit is a scrobbler for MPD implementing the
+1.2 protocol, including "Now Playing' feature.
+
+Items are submitted and stored in a queue. This queue is stored as a
+file using Tie::File. When you submit a track, it will add the queue to
+the track and process the queue. If it submits all items in the queue,
+the submit() method will return true.
