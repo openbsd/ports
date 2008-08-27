@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/05/26 08:23:09 jasper Exp $
-bin/herrie
+@comment $OpenBSD: PLIST,v 1.9 2008/08/27 18:25:02 jasper Exp $
+@bin bin/herrie
 @man man/man1/herrie.1
 share/herrie/
 share/herrie/herrie.conf.sample
