@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST-svn,v 1.1 2008/08/27 13:39:27 espie Exp $
+@bin bin/kio_svn_helper
+${KDE}/kded_ksvnd.la
+${KDE}/kded_ksvnd.so
+${KDE}/kio_svn.la
+${KDE}/kio_svn.so
+share/apps/konqueror/servicemenus/subversion.desktop
+share/apps/konqueror/servicemenus/subversion_toplevel.desktop
+share/icons/crystalsvg/128x128/actions/svn_add.png
+share/icons/crystalsvg/128x128/actions/svn_branch.png
+share/icons/crystalsvg/128x128/actions/svn_merge.png
+share/icons/crystalsvg/128x128/actions/svn_remove.png
+share/icons/crystalsvg/128x128/actions/svn_status.png
+share/icons/crystalsvg/128x128/actions/svn_switch.png

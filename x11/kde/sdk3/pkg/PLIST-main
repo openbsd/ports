@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.19 2007/12/15 23:47:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2008/08/27 13:39:27 espie Exp $
 bin/adddebug
 bin/build-progress.sh
-bin/catalogmanager
-bin/cervisia
+@bin bin/catalogmanager
+@bin bin/cervisia
 bin/cheatmake
 bin/colorsvn
 bin/create_cvsignore
@@ -11,14 +11,14 @@ bin/create_makefiles
 bin/create_svnignore
 bin/cvs-clean
 bin/cvs2dist
-bin/cvsaskpass
+@bin bin/cvsaskpass
 bin/cvsbackport
 bin/cvsblame
 bin/cvsforwardport
 bin/cvslastchange
 bin/cvslastlog
 bin/cvsrevertlast
-bin/cvsservice
+@bin bin/cvsservice
 bin/cvsversion
 bin/cxxmetric
 bin/dprof2calltree
@@ -31,10 +31,10 @@ bin/fixuifiles
 bin/hotshot2calltree
 bin/includemocs
 bin/kapptemplate
-bin/kbabel
-bin/kbabeldict
-bin/kbugbuster
-bin/kcachegrind
+@bin bin/kbabel
+@bin bin/kbabeldict
+@bin bin/kbugbuster
+@bin bin/kcachegrind
 bin/kcvscheck
 bin/kde-build
 bin/kdedoc
@@ -42,11 +42,11 @@ bin/kdekillall
 bin/kdelnk2desktop.py
 bin/kdemangen.pl
 bin/kdesvn-build
-bin/kompare
-bin/kuiviewer
+@bin bin/kompare
+@bin bin/kuiviewer
 bin/kunittest
 bin/kunittest_debughelper
-bin/kunittestguimodrunner
+@bin bin/kunittestguimodrunner
 bin/kunittestmod
 bin/licensecheck
 bin/makeobj
@@ -56,11 +56,11 @@ bin/nonsvnlist
 bin/op2calltree
 bin/package_crystalsvg
 bin/png2mng.pl
-bin/po2xml
+@bin bin/po2xml
 bin/pprof2calltree
 bin/pruneemptydirs
 bin/qtdoc
-bin/split2po
+@bin bin/split2po
 bin/svn-clean
 bin/svn2dist
 bin/svnaddcurrentdir
@@ -72,11 +72,11 @@ bin/svnlastchange
 bin/svnlastlog
 bin/svnrevertlast
 bin/svnversions
-bin/swappo
-bin/transxx
-bin/umbodoc
-bin/umbrello
-bin/xml2pot
+@bin bin/swappo
+@bin bin/transxx
+@bin bin/umbodoc
+@bin bin/umbrello
+@bin bin/xml2pot
 bin/zonetab2pot.py
 include/cvsjob_stub.h
 include/cvsservice_stub.h
@@ -821,6 +821,12 @@ share/doc/HTML/en/umbrello/uml_basics.docbook
 share/doc/HTML/en/umbrello/use-case-diagram.png
 share/doc/HTML/en/umbrello/working_with_umbrello.docbook
 share/icons/crystalsvg/128x128/mimetypes/umbrellofile.png
+share/icons/crystalsvg/16x16/actions/svn_add.png
+share/icons/crystalsvg/16x16/actions/svn_branch.png
+share/icons/crystalsvg/16x16/actions/svn_merge.png
+share/icons/crystalsvg/16x16/actions/svn_remove.png
+share/icons/crystalsvg/16x16/actions/svn_status.png
+share/icons/crystalsvg/16x16/actions/svn_switch.png
 share/icons/crystalsvg/16x16/actions/umbrello_diagram_activity.png
 share/icons/crystalsvg/16x16/actions/umbrello_diagram_class.png
 share/icons/crystalsvg/16x16/actions/umbrello_diagram_collaboration.png
@@ -836,6 +842,12 @@ share/icons/crystalsvg/16x16/actions/vcs_remove.png
 share/icons/crystalsvg/16x16/actions/vcs_status.png
 share/icons/crystalsvg/16x16/actions/vcs_update.png
 share/icons/crystalsvg/16x16/mimetypes/umbrellofile.png
+share/icons/crystalsvg/22x22/actions/svn_add.png
+share/icons/crystalsvg/22x22/actions/svn_branch.png
+share/icons/crystalsvg/22x22/actions/svn_merge.png
+share/icons/crystalsvg/22x22/actions/svn_remove.png
+share/icons/crystalsvg/22x22/actions/svn_status.png
+share/icons/crystalsvg/22x22/actions/svn_switch.png
 share/icons/crystalsvg/22x22/actions/umbrello_diagram_activity.png
 share/icons/crystalsvg/22x22/actions/umbrello_diagram_class.png
 share/icons/crystalsvg/22x22/actions/umbrello_diagram_collaboration.png
@@ -852,6 +864,12 @@ share/icons/crystalsvg/22x22/actions/vcs_remove.png
 share/icons/crystalsvg/22x22/actions/vcs_status.png
 share/icons/crystalsvg/22x22/actions/vcs_update.png
 share/icons/crystalsvg/22x22/mimetypes/umbrellofile.png
+share/icons/crystalsvg/32x32/actions/svn_add.png
+share/icons/crystalsvg/32x32/actions/svn_branch.png
+share/icons/crystalsvg/32x32/actions/svn_merge.png
+share/icons/crystalsvg/32x32/actions/svn_remove.png
+share/icons/crystalsvg/32x32/actions/svn_status.png
+share/icons/crystalsvg/32x32/actions/svn_switch.png
 share/icons/crystalsvg/32x32/actions/vcs_add.png
 share/icons/crystalsvg/32x32/actions/vcs_commit.png
 share/icons/crystalsvg/32x32/actions/vcs_diff.png
@@ -859,6 +877,12 @@ share/icons/crystalsvg/32x32/actions/vcs_remove.png
 share/icons/crystalsvg/32x32/actions/vcs_status.png
 share/icons/crystalsvg/32x32/actions/vcs_update.png
 share/icons/crystalsvg/32x32/mimetypes/umbrellofile.png
+share/icons/crystalsvg/48x48/actions/svn_add.png
+share/icons/crystalsvg/48x48/actions/svn_branch.png
+share/icons/crystalsvg/48x48/actions/svn_merge.png
+share/icons/crystalsvg/48x48/actions/svn_remove.png
+share/icons/crystalsvg/48x48/actions/svn_status.png
+share/icons/crystalsvg/48x48/actions/svn_switch.png
 share/icons/crystalsvg/48x48/actions/vcs_add.png
 share/icons/crystalsvg/48x48/actions/vcs_commit.png
 share/icons/crystalsvg/48x48/actions/vcs_diff.png
@@ -866,7 +890,19 @@ share/icons/crystalsvg/48x48/actions/vcs_remove.png
 share/icons/crystalsvg/48x48/actions/vcs_status.png
 share/icons/crystalsvg/48x48/actions/vcs_update.png
 share/icons/crystalsvg/48x48/mimetypes/umbrellofile.png
+share/icons/crystalsvg/64x64/actions/svn_add.png
+share/icons/crystalsvg/64x64/actions/svn_branch.png
+share/icons/crystalsvg/64x64/actions/svn_merge.png
+share/icons/crystalsvg/64x64/actions/svn_remove.png
+share/icons/crystalsvg/64x64/actions/svn_status.png
+share/icons/crystalsvg/64x64/actions/svn_switch.png
 share/icons/crystalsvg/64x64/mimetypes/umbrellofile.png
+share/icons/crystalsvg/scalable/actions/svn_add.svgz
+share/icons/crystalsvg/scalable/actions/svn_branch.svgz
+share/icons/crystalsvg/scalable/actions/svn_merge.svgz
+share/icons/crystalsvg/scalable/actions/svn_remove.svgz
+share/icons/crystalsvg/scalable/actions/svn_status.svgz
+share/icons/crystalsvg/scalable/actions/svn_switch.svgz
 share/icons/crystalsvg/scalable/actions/vcs_add.svgz
 share/icons/crystalsvg/scalable/actions/vcs_commit.svgz
 share/icons/crystalsvg/scalable/actions/vcs_diff.svgz
@@ -948,6 +984,7 @@ share/services/kbabel_whitespacetool.desktop
 share/services/kbabel_xliff_export.desktop
 share/services/kbabel_xliff_import.desktop
 share/services/kbabel_xmltool.desktop
+share/services/kded/ksvnd.desktop
 share/services/kfile_cpp.desktop
 share/services/kfile_diff.desktop
 share/services/kfile_h.desktop
@@ -960,6 +997,11 @@ share/services/kuiviewer_part.desktop
 share/services/poauxiliary.desktop
 share/services/pocompendium.desktop
 share/services/pothumbnail.desktop
+share/services/svn+file.protocol
+share/services/svn+http.protocol
+share/services/svn+https.protocol
+share/services/svn+ssh.protocol
+share/services/svn.protocol
 share/services/tmxcompendium.desktop
 share/servicetypes/kbabel_tool.desktop
 share/servicetypes/kbabel_validator.desktop

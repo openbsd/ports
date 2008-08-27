@@ -1,27 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.31 2008/03/27 09:35:01 espie Exp $
-bin/kbanner.kss
-bin/kblob.kss
-bin/kclock.kss
-bin/keuphoria.kss
-bin/kfiresaver.kss
-bin/kflux.kss
-bin/kfountain.kss
-bin/kgravity.kss
-bin/klines.kss
-bin/klorenz.kss
-bin/kpartsaver.kss
-bin/kpendulum.kss
-bin/kpolygon.kss
-bin/krotation.kss
-bin/kscience.kss
-bin/kslideshow.kss
-bin/ksolarwinds.kss
-bin/kspace.kss
-bin/kswarm.kss
-bin/kvm.kss
-bin/kwave.kss
-bin/kxsconfig
-bin/kxsrun
+@comment $OpenBSD: PLIST,v 1.32 2008/08/27 13:39:27 espie Exp $
+@bin bin/kbanner.kss
+@bin bin/kblob.kss
+@bin bin/kclock.kss
+@bin bin/keuphoria.kss
+@bin bin/kfiresaver.kss
+@bin bin/kflux.kss
+@bin bin/kfountain.kss
+@bin bin/kgravity.kss
+@bin bin/klines.kss
+@bin bin/klorenz.kss
+@bin bin/kpartsaver.kss
+@bin bin/kpendulum.kss
+@bin bin/kpolygon.kss
+@bin bin/krotation.kss
+@bin bin/kscience.kss
+@bin bin/kslideshow.kss
+@bin bin/ksolarwinds.kss
+@bin bin/kspace.kss
+@bin bin/kswarm.kss
+@bin bin/kvm.kss
+@bin bin/kwave.kss
+@bin bin/kxsconfig
+@bin bin/kxsrun
 ${KDE}/kstyle_phase_config.la
 ${KDE}/kstyle_phase_config.so
 ${KDE}/kwin3_cde.la
@@ -2553,6 +2553,7 @@ share/icons/kdeclassic/16x16/actions/upper.png
 share/icons/kdeclassic/16x16/actions/validators.png
 share/icons/kdeclassic/16x16/actions/variablenew.png
 share/icons/kdeclassic/16x16/actions/vertical_text.png
+share/icons/kdeclassic/16x16/actions/view.png
 share/icons/kdeclassic/16x16/actions/view_bottom.png
 share/icons/kdeclassic/16x16/actions/view_choose.png
 share/icons/kdeclassic/16x16/actions/view_detailed.png
@@ -3703,6 +3704,7 @@ share/icons/kdeclassic/22x22/actions/up.png
 share/icons/kdeclassic/22x22/actions/upper.png
 share/icons/kdeclassic/22x22/actions/validators.png
 share/icons/kdeclassic/22x22/actions/vertical_text.png
+share/icons/kdeclassic/22x22/actions/view.png
 share/icons/kdeclassic/22x22/actions/view_bottom.png
 share/icons/kdeclassic/22x22/actions/view_choose.png
 share/icons/kdeclassic/22x22/actions/view_detailed.png
@@ -3999,6 +4001,7 @@ share/icons/kdeclassic/32x32/actions/undo.png
 share/icons/kdeclassic/32x32/actions/unindent.png
 share/icons/kdeclassic/32x32/actions/unlock.png
 share/icons/kdeclassic/32x32/actions/up.png
+share/icons/kdeclassic/32x32/actions/view.png
 share/icons/kdeclassic/32x32/actions/view_bottom.png
 share/icons/kdeclassic/32x32/actions/view_choose.png
 share/icons/kdeclassic/32x32/actions/view_detailed.png

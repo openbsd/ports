@@ -1,29 +1,48 @@
-# $OpenBSD: Makefile,v 1.38 2008/03/26 13:22:22 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2008/08/27 13:39:27 espie Exp $
 
-COMMENT= 		K Desktop Environment, developer extensions
-CATEGORIES=		x11 x11/kde devel
-VERSION=		3.5.9
-DISTNAME=		kdesdk-${VERSION}
-PKGNAME=		${DISTNAME}
-MODKDE_VERSION=		3.5.8
+COMMENT-main = 		K Desktop Environment, developer extensions
+COMMENT-svn = 		K Desktop Environment, svn extensions
+CATEGORIES =		x11 x11/kde devel
+VERSION =		3.5.10
+DISTNAME =		kdesdk-${VERSION}
+
+PKGNAME-main =		${DISTNAME}
+PKGNAME-svn =		kdesvn-${VERSION}
+
+MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
 SHARED_LIBS +=	kbabelcommon         6.0      # .5.0
 SHARED_LIBS +=	kbabeldictplugin     4.0      # .3.0
 SHARED_LIBS +=	kompareinterface     1.0      # .0.0
 SHARED_LIBS +=	kspy                 4.0      # .3.0
 SHARED_LIBS +=	kunittestgui         1.0      # .0.0
+MULTI_PACKAGES =	-main -svn
 
-RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	kdecore.>=6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,ktexteditor,kutils,kwalletclient,vcard,kunittest::x11/kde/libs3 \
-		kcal::x11/kde/pim3
+RUN_DEPENDS-main +=	:desktop-file-utils-*:devel/desktop-file-utils
 
-FLAVORS=	debug
-SEPARATE_BUILD=flavored
+LIB_DEPENDS =		kdecore.>=6,DCOP,kdefx,kdesu,kdeui,kio,kwalletclient::x11/kde/libs3
 
-WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg ktnef m pcre \
-		pcreposix png pthread qui-mt stdc++ util z iconv idn \
-		xslt xml2 Xau Xdmcp fam rpcsvc intl
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			kcal,kmime::x11/kde/pim3
 
+LIB_DEPENDS-svn = 	${LIB_DEPENDS} \
+			svn_client-1,svn_diff-1,svn_delta-1,svn_fs-1,svn_fs_base-1,svn_fs_fs-1,svn_ra-1,svn_ra_dav-1,svn_ra_local-1,svn_ra_svn-1,svn_repos-1,svn_subr-1,svn_wc-1::devel/subversion
+
+FLAVORS =		debug
+SEPARATE_BUILD =	flavored
+
+WANTLIB	=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg m \
+		png pthread stdc++ util z iconv idn \
+		Xau Xdmcp fam rpcsvc intl
+
+WANTLIB-main =	${WANTLIB} \
+		kabc kdeprint khtml kutils vcard kresources kparts kspell kjs \
+		ktexteditor ktnef kunittest ktnef \
+		pcre pcreposix qui-mt xml2 xslt
+
+
+WANTLIB-svn =	${WANTLIB} \
+		apr-1 aprutil-1 crypto db expat neon ssl
 
 post-install:
 	cd ${PREFIX}/bin && mv cvscheck kcvscheck

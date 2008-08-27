@@ -1,22 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.23 2007/12/15 23:47:41 ajacoutot Exp $
-bin/ark
-bin/irkick
-bin/kcalc
-bin/kcharselect
-bin/kdessh
-bin/kdf
-bin/kedit
-bin/kfloppy
-bin/kgpg
-bin/khexedit
-bin/kjots
-bin/klaptop_acpi_helper
-bin/klaptop_check
-bin/kregexpeditor
-bin/ktimer
-bin/kwalletmanager
-bin/kwikdisk
-bin/superkaramba
+@comment $OpenBSD: PLIST,v 1.24 2008/08/27 13:39:27 espie Exp $
+@bin bin/ark
+@bin bin/irkick
+@bin bin/kcalc
+@bin bin/kcharselect
+@bin bin/kdessh
+@bin bin/kdf
+@bin bin/kedit
+@bin bin/kfloppy
+@bin bin/kgpg
+@bin bin/khexedit
+@bin bin/kjots
+@bin bin/klaptop_acpi_helper
+@bin bin/klaptop_check
+@bin bin/kregexpeditor
+@bin bin/ktimer
+@bin bin/kwalletmanager
+@bin bin/kwikdisk
+@bin bin/superkaramba
 include/kmultiformlistbox.h
 include/kmultiformlistboxentry.h
 include/kmultiformlistboxfactory.h
