@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/26 10:53:32 espie Exp $
-@lib lib/libgnomemm.so.${LIBgnomemm_VERSION}
