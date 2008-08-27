@@ -1,29 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.37 2007/12/15 23:47:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2008/08/27 15:21:50 espie Exp $
 @conflict sirc-*
 bin/dsirc
-bin/feedbrowser
-bin/kdict
-bin/kget
-bin/knewstickerstub
-bin/kopete
+@bin bin/feedbrowser
+@bin bin/kdict
+@bin bin/kget
+@bin bin/knewstickerstub
+@bin bin/kopete
 bin/kopete_latexconvert.sh
 @mode u+s
 @owner root
 bin/kppp
 @mode
 @owner
-bin/kppplogview
-bin/krdc
-bin/krfb
+@bin bin/kppplogview
+@bin bin/krdc
+@bin bin/krfb
 bin/krfb_httpd
-bin/ksirc
-bin/ktalkd
-bin/ktalkdlg
-bin/lisa
-bin/mail.local
-bin/reslisa
-bin/rssclient
-bin/rssservice
+@bin bin/ksirc
+@bin bin/ktalkd
+@bin bin/ktalkdlg
+@bin bin/lisa
+@bin bin/mail.local
+@bin bin/reslisa
+@bin bin/rssclient
+@bin bin/rssservice
 bin/winpopup-install.sh
 bin/winpopup-send.sh
 include/kopete/
@@ -98,9 +98,9 @@ include/rss/librss.h
 include/rss/loader.h
 include/rss/textinput.h
 lib/kconf_update_bin/
-lib/kconf_update_bin/kopete-account-kconf_update
-lib/kconf_update_bin/kopete-nameTracking-kconf_update
-lib/kconf_update_bin/kopete-pluginloader2-kconf_update
+@bin lib/kconf_update_bin/kopete-account-kconf_update
+@bin lib/kconf_update_bin/kopete-nameTracking-kconf_update
+@bin lib/kconf_update_bin/kopete-pluginloader2-kconf_update
 ${KDE}/fileshare_propsdlgplugin.la
 ${KDE}/fileshare_propsdlgplugin.so
 ${KDE}/kcm_fileshare.la

@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/03/27 11:39:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2008/08/27 15:21:51 espie Exp $
 @conflict quanta-*
 @pkgpath x11/kde/quanta
-bin/kfilereplace
-bin/kimagemapeditor
-bin/klinkstatus
-bin/kmdr-editor
-bin/kmdr-executor
-bin/kmdr-plugins
-bin/kxsldbg
-bin/quanta
-bin/xsldbg
+@bin bin/kfilereplace
+@bin bin/kimagemapeditor
+@bin bin/klinkstatus
+@bin bin/kmdr-editor
+@bin bin/kmdr-executor
+@bin bin/kmdr-plugins
+@bin bin/kxsldbg
+@bin bin/quanta
+@bin bin/xsldbg
 include/kommander_export.h
 include/kommanderfactory.h
 include/kommanderplugin.h
@@ -1755,6 +1755,7 @@ share/doc/HTML/en/xsldbg/index.docbook
 share/doc/HTML/en/xsldbg/introduction.docbook
 share/doc/HTML/en/xsldbg/usage.docbook
 share/doc/HTML/en/xsldbg/xsldbghelp.xml
+share/doc/HTML/en/xsldbg/xsldbghelp.xsl
 share/icons/crystalsvg/128x128/apps/kommander.png
 share/icons/crystalsvg/16x16/actions/bug.png
 share/icons/crystalsvg/16x16/apps/kommander.png
