@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.537 2008/08/24 16:13:56 simon Exp $
+# $OpenBSD: Makefile,v 1.538 2008/08/27 18:56:06 kili Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -99,6 +99,7 @@
      SUBDIR += honeyd
      SUBDIR += howl
      SUBDIR += hping
+     SUBDIR += hs-HTTP
      SUBDIR += httptunnel
      SUBDIR += icb
      SUBDIR += icbirc
