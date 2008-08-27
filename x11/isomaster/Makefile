@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/03/28 11:31:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/08/27 19:56:14 kili Exp $
 
 COMMENT=		gui cd image editor
 
-DISTNAME=		isomaster-1.3.1
+DISTNAME=		isomaster-1.3.3
 CATEGORIES=		x11
 HOMEPAGE=		http://littlesvr.ca/isomaster/
 
@@ -25,7 +25,7 @@ WANTLIB=	c iconv intl m X11 Xau Xcursor Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender expat fontconfig freetype \
 		atk-1.0 glib-2.0 gmodule-2.0 gobject-2.0 glitz png \
 		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo z \
-		Xcomposite Xdamage
+		Xcomposite Xdamage pixman-1
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
