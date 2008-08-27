@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/08/27 22:08:56 jasper Exp $
 
 COMMENT=		ensure that a platform has weaken support
 
 MODULES=		cpan
-DISTNAME=		Task-Weaken-0.99
-PKGNAME=		p5-${DISTNAME}
-CATEGORIES=		devel perl5
+DISTNAME=		Task-Weaken-1.02
+CATEGORIES=		devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
