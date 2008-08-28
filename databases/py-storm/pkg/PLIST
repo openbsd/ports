@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/06 17:09:36 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/08/28 16:53:41 wcmaier Exp $
 %%SHARED%%
 lib/python${MODPY_VERSION}/site-packages/storm/
-lib/python${MODPY_VERSION}/site-packages/storm-0.11-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/storm-0.11-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/storm-0.11-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/storm-0.11-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/storm-0.11-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/storm-0.11-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/storm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/storm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/storm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/storm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/storm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/storm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/storm/__init__.py
 lib/python${MODPY_VERSION}/site-packages/storm/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/base.py
 lib/python${MODPY_VERSION}/site-packages/storm/base.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/cache.py
+lib/python${MODPY_VERSION}/site-packages/storm/cache.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/cextensions.c
 lib/python${MODPY_VERSION}/site-packages/storm/database.py
 lib/python${MODPY_VERSION}/site-packages/storm/database.pyc
@@ -50,8 +52,10 @@ lib/python${MODPY_VERSION}/site-packages/storm/variables.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/zope/
 lib/python${MODPY_VERSION}/site-packages/storm/zope/__init__.py
 lib/python${MODPY_VERSION}/site-packages/storm/zope/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/zope/configure.zcml
 lib/python${MODPY_VERSION}/site-packages/storm/zope/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/storm/zope/interfaces.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/zope/meta.zcml
 lib/python${MODPY_VERSION}/site-packages/storm/zope/metaconfigure.py
 lib/python${MODPY_VERSION}/site-packages/storm/zope/metaconfigure.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/zope/metadirectives.py
