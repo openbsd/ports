@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/08/28 21:20:23 sthen Exp $
 
 COMMENT=		Web Tools Platform for Eclipse
 
 V=			1.5.4
 DISTNAME=		wtp-sdk-R-${V}-200705021353
-PKGNAME=		eclipse-plugin-wtp-sdk-${V}
+PKGNAME=		eclipse-plugin-wtp-sdk-${V}p0
 CATEGORIES=		devel/eclipse/plugins java
-EXTRACT_SUFX=           .zip
+EXTRACT_SUFX=		.zip
 PKG_ARCH=		*
 
 HOMEPAGE=		http://www.eclipse.org/webtools/
