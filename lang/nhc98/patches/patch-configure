@@ -1,19 +1,11 @@
-$OpenBSD: patch-configure,v 1.1 2007/06/29 11:06:25 kili Exp $
+$OpenBSD: patch-configure,v 1.2 2008/08/28 19:55:20 kili Exp $
 
 Don't be so picky about the compiler used to build nhc.
+Disable -m32 for now, not all archs support it.
 
---- configure.orig	Fri Mar 11 10:32:56 2005
-+++ configure	Sat Jun  9 12:07:35 2007
-@@ -104,7 +104,7 @@ NEWHEAP=$HEAP
- 
- MOREEVIL=no
- case $CCC in	# versions of gcc >= 3.3 require extra evil in the evil mangler!
--  *gcc*) if $CCC --version | head -1 | grep "3.3" >/dev/null
-+  *cc*) if $CCC --version | head -1 | grep "3.3" >/dev/null
-          then MOREEVIL=yes
-          fi ;;
- esac
-@@ -323,8 +323,7 @@ then
+--- configure.orig	Thu Nov 22 14:05:24 2007
++++ configure	Sun Nov 25 16:56:18 2007
+@@ -309,8 +309,7 @@ then
    fi
    case $BUILDWITH in
      hbc|xtc)   RTSFLAG=no;;
@@ -23,3 +15,55 @@ Don't be so picky about the compiler used to build nhc.
    esac
    echo "nhc98comp uses RTS delimiters?              $RTSFLAG"
    if [ "$BUILDOPTS" != "" ]
+@@ -334,7 +333,7 @@ main() {
+   }
+ }
+ !!!
+-    $CCC -m32 $COPTS -o endian endian.c
++    $CCC $COPTS -o endian endian.c
+     ENDIAN=`./endian`
+     rm -f endian$EXE endian.c
+     echo -n "$ENDIAN "
+@@ -365,16 +364,16 @@ main() {
+ void test (void) { mvaddstr(1,2,"hello world"); }
+ int main (void) { test(); }
+ !!!
+-      if $CCC $COPTS -m32 -o curses curses.c >/dev/null 2>/dev/null
++      if $CCC $COPTS -o curses curses.c >/dev/null 2>/dev/null
+       then CURSES=""
+       else
+-        if $CCC $COPTS -m32 -o curses curses.c -lncurses >/dev/null 2>/dev/null
++        if $CCC $COPTS -o curses curses.c -lncurses >/dev/null 2>/dev/null
+         then CURSES="-lncurses"
+         else
+-          if $CCC $COPTS -m32 -o curses curses.c -lcurses >/dev/null 2>/dev/null
++          if $CCC $COPTS -o curses curses.c -lcurses >/dev/null 2>/dev/null
+           then CURSES="-lcurses"
+           else
+-            if $CCC $COPTS -m32 -o curses curses.c -lcurses -ltermcap >/dev/null 2>/dev/null
++            if $CCC $COPTS -o curses curses.c -lcurses -ltermcap >/dev/null 2>/dev/null
+             then CURSES="-lcurses -ltermcap"
+             else CURSES="-ltermcap -lcurses"	# don't know a good default?
+             fi
+@@ -391,10 +390,10 @@ int main (void) { test(); }
+ 
+     echo -n "Testing for the readline library: "
+     echo 'main(){readline();}' >rd.c
+-    if ${CCC} $COPTS -m32 -o rd.out rd.c -lreadline >/dev/null 2>&1
++    if ${CCC} $COPTS -o rd.out rd.c -lreadline >/dev/null 2>&1
+     then echo '          -lreadline (detected)'
+          READLINE="-DUSE_READLINE=1 -lreadline"
+-    else if ${CCC} $COPTS -m32 -o rd.out rd.c -lreadline $CURSES >/dev/null 2>&1
++    else if ${CCC} $COPTS -o rd.out rd.c -lreadline $CURSES >/dev/null 2>&1
+       then echo "          -lreadline $CURSES (detected)"
+          READLINE="-DUSE_READLINE=1 -lreadline $CURSES"
+       else echo '          no  (detected)'
+@@ -508,7 +507,7 @@ main(int argc, char **argv)
+   then
+     echo "Creating new lib/$MACHINE/nhc98heap ..."
+     sed -e "s|DefaultHeap|$HEAP|" script/nhc98heap.c >./nhc98heap.c
+-    $CCC $COPTS -m32 -o lib/$MACHINE/nhc98heap$EXE nhc98heap.c
++    $CCC $COPTS -o lib/$MACHINE/nhc98heap$EXE nhc98heap.c
+     rm -f nhc98heap.c
+   else
+     echo "Creating new src/runtime/nhc98heap.c ..."

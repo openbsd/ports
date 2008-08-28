@@ -1,9 +1,11 @@
-$OpenBSD: patch-script_nhc98_inst,v 1.1 2007/06/29 11:06:25 kili Exp $
+$OpenBSD: patch-script_nhc98_inst,v 1.2 2008/08/28 19:55:20 kili Exp $
 
 We don't have to care about different archs installed at the same place.
+Disable -m32 for now, not all archs support it.
+Fix the handling of RUNFLAGS and pragmas.
 
---- script/nhc98.inst.orig	Tue Feb  1 19:09:26 2005
-+++ script/nhc98.inst	Sat Jun  9 19:33:47 2007
+--- script/nhc98.inst.orig	Thu Nov 22 12:22:16 2007
++++ script/nhc98.inst	Sat Aug 23 22:46:54 2008
 @@ -13,7 +13,7 @@
  NHC98BINDIR=${NHC98BINDIR-ScriptDir}
  NHC98LIBDIR=${NHC98LIBDIR-ExecutableDir}
@@ -13,3 +15,51 @@ We don't have to care about different archs installed at the same place.
  
  if [ ! -d $NHC98LIBDIR/$MACHINE ]
  then
+@@ -70,7 +70,7 @@ CSUFFIX="hc"
+ 
+ MAINROUTINE=$NHC98LIBDIR/$MACHINE/main
+ 
+-CC=${CC-gcc}" -m32 -D__NHC__=$VERSIONNUM"
++CC=${CC-gcc}" -D__NHC__=$VERSIONNUM"
+ CPPHS="$NHC98LIBDIR/$MACHINE/cpphs"
+ if test $USINGRTS -eq 0 ; then
+   CPPHS="$CPPHS -"
+@@ -266,13 +266,6 @@ HIFILE=
+ TMPHIFILE=
+ HSFILE=
+ 
+-if test $USINGRTS -ne 0
+-then
+-  RUNFLAGS="+RTS "$RUNFLAGS" -RTS"
+-else
+-  RUNFLAGS=$RUNFLAGS" -"
+-fi
+-
+ # Fix OSUFFIX for tprof _and_ tracing
+ if test $TPFLAG -eq 1
+ then OSUFFIX=$TRACE$TPROF".o"
+@@ -511,8 +504,15 @@ case $COMPFILES in
+     if test $HSRC -ne 0
+     then
+       # Grab any per-file options here, just before compiling.
++      SAVED_RUNFLAGS=$RUNFLAGS
+       processArgs `checkPragmas OPTIONS_COMPILE $POSTGRFILE` \
+                   `checkPragmas OPTIONS_NHC98 $POSTGRFILE`
++      if test $USINGRTS -ne 0
++      then
++	RUNFLAGS="+RTS "$RUNFLAGS" -RTS"
++      else
++	RUNFLAGS=$RUNFLAGS" -"
++      fi
+ 
+       if test $PRECPP -ne 0
+       then
+@@ -547,6 +547,8 @@ case $COMPFILES in
+       then
+ 	exit 1
+       fi
++
++      RUNFLAGS=$SAVED_RUNFLAGS
+ 
+       if test $PRECPP -ne 0
+       then

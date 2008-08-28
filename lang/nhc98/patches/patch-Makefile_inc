@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_inc,v 1.1 2008/08/28 19:55:20 kili Exp $
+
+Disable -m32 for now, not all archs support it.
+
+--- Makefile.inc.orig	Thu Nov 22 14:05:04 2007
++++ Makefile.inc	Sun Nov 25 16:56:37 2007
+@@ -1,7 +1,7 @@
+ ### Configurable variables:
+ 
+ OPT = -O3
+-ARCH = -m32
++ARCH =
+ 
+ # CC = actually sourced from LIBDIR/MACHINE/config
+ INSTALL = cp

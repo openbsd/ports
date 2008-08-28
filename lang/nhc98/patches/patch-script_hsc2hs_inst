@@ -1,9 +1,10 @@
-$OpenBSD: patch-script_hsc2hs_inst,v 1.1 2007/06/29 11:06:25 kili Exp $
+$OpenBSD: patch-script_hsc2hs_inst,v 1.2 2008/08/28 19:55:20 kili Exp $
 
 We don't have to care about different archs installed at the same place.
+Disable -m32 for now, not all archs support it.
 
---- script/hsc2hs.inst.orig	Sun Jun 27 22:44:41 2004
-+++ script/hsc2hs.inst	Sat Jun  9 19:33:47 2007
+--- script/hsc2hs.inst.orig	Thu Nov 22 11:32:51 2007
++++ script/hsc2hs.inst	Sun Nov 25 16:56:48 2007
 @@ -4,7 +4,7 @@
  SCRIPTDIR=${SCRIPTDIR-ScriptDir}
  EXEDIR=${EXEDIR-ExecutableDir}
@@ -13,3 +14,12 @@ We don't have to care about different archs installed at the same place.
  export MACHINE EXEDIR SCRIPTDIR
  
  if [ ! -d $EXEDIR/$MACHINE ]
+@@ -17,7 +17,7 @@ fi
+ # (Flags are sourced from machine-specific configuration)
+ . $EXEDIR/$MACHINE/config
+ 
+-HSC2HSOPTS="--cc=$CC --ld=$CC --cflag=-D__NHC__=$VERSIONNUM --cflag=-m32 --lflag=-m32 -I$INCDIR"
++HSC2HSOPTS="--cc=$CC --ld=$CC --cflag=-D__NHC__=$VERSIONNUM -I$INCDIR"
+ if test $USINGRTS -eq 0 ; then
+   HSC2HSOPTS="- $HSC2HSOPTS"
+ fi
