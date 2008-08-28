@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/04/09 14:38:08 alek Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/08/28 13:35:17 wcmaier Exp $
 lib/python${MODPY_VERSION}/site-packages/dns/
 lib/python${MODPY_VERSION}/site-packages/dns/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dns/__init__.pyc
@@ -155,6 +155,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/version.py
 lib/python${MODPY_VERSION}/site-packages/dns/version.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/zone.py
 lib/python${MODPY_VERSION}/site-packages/dns/zone.pyc
+lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 share/examples/py-dnspython/
 share/examples/py-dnspython/ddns.py
 share/examples/py-dnspython/e164.py

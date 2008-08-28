@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:42 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2008/08/28 13:35:17 wcmaier Exp $
 
 COMMENT=		DNS toolkit for Python
 
-DISTNAME=		dnspython-1.5.0
-PKGNAME=		${DISTNAME:S/^/py-/}p0
+MODPY_EGG_VERSION=	1.6.0
+DISTNAME=		dnspython-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.dnspython.org/
 
-MAINTAINER=		Will Maier <willmaier@ml1.net>
+MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}kits/stable/
+MASTER_SITES=		${HOMEPAGE}/kits/${MODPY_EGG_VERSION}/
 
 MODULES=		lang/python
 
