@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2008/07/12 13:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2008/08/28 14:53:06 brad Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME=	gimp-2.4.6
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	gimp-2.0	246.00	\
 		gimpbase-2.0	246.00	\
 		gimpcolor-2.0	246.00	\
@@ -56,23 +56,12 @@ MODULES=	devel/gettext \
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-
 AUTOCONF_VERSION= 2.61
-
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--without-gtkhtml2 --without-librsvg --without-print \
 		--without-gnomevfs --without-libcurl --disable-python
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-FLAVORS=	altivec
-FLAVOR?=
-
-.if ${FLAVOR:L} == "altivec"
-ONLY_FOR_ARCHS= powerpc   
-.else
-CONFIGURE_ARGS+= --disable-altivec
-.endif
 
 .include <bsd.port.mk>
