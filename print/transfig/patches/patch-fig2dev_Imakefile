@@ -1,7 +1,7 @@
-$OpenBSD: patch-fig2dev_Imakefile,v 1.5 2003/04/04 14:28:36 naddy Exp $
---- fig2dev/Imakefile.orig	Thu Dec 19 18:33:44 2002
-+++ fig2dev/Imakefile	Thu Apr  3 01:33:40 2003
-@@ -20,13 +20,13 @@ XCOMM ******
+$OpenBSD: patch-fig2dev_Imakefile,v 1.6 2008/08/28 19:02:55 sthen Exp $
+--- fig2dev/Imakefile.orig	Thu Oct 27 17:56:02 2005
++++ fig2dev/Imakefile	Wed Aug 20 13:20:52 2008
+@@ -34,7 +34,7 @@ XCOMM ******
  XCOMM You should point XFIGLIBDIR to the same directory you did when you compiled
  XCOMM and installed xfig.
  
@@ -9,15 +9,8 @@ $OpenBSD: patch-fig2dev_Imakefile,v 1.5 2003/04/04 14:28:36 naddy Exp $
 +XFIGLIBDIR =	$(LIBDIR)/xfig
  
  XCOMM ******
- XCOMM If your system has the strerror() function (doesn't have sys_errlist) then
- XCOMM comment out NEED_STRERROR with an XCOMM comment.
- 
--NEED_STRERROR = -DNEED_STRERROR
-+XCOMM NEED_STRERROR = -DNEED_STRERROR
- 
- XCOMM The following probably only applies to Windows 9x/NT:
- XCOMM If your system can open files in text and binary modes and has the
-@@ -39,7 +39,7 @@ XCOMM Uncomment the following line if yo
+ XCOMM If your system doesn't have the strerror() function (has sys_errlist) then
+@@ -53,7 +53,7 @@ XCOMM Uncomment the following line if your compiler su
  XCOMM inline functions. With the "INLINE" keyword, you should notice that
  XCOMM the display will be a bit faster in complex figures
  
@@ -26,23 +19,20 @@ $OpenBSD: patch-fig2dev_Imakefile,v 1.5 2003/04/04 14:28:36 naddy Exp $
  
  XCOMM ****************
  XCOMM Change RGB if necessary, to point to your rgb.txt color database
-@@ -60,8 +60,8 @@ XCOMM Redefine the following if your PNG
- XCOMM are in different places
+@@ -74,9 +74,9 @@ XCOMM Redefine the following if your PNG library, zlib
+ XCOMM file are in different places
  
  #ifdef USEPNG
 -PNGLIBDIR = $(USRLIBDIR)
--PNGINC = -I/usr/include/X11
 +PNGLIBDIR = ${LOCALBASE}/lib
+ ZLIBDIR = $(USRLIBDIR)
+-PNGINC = -I/usr/include/X11
 +PNGINC = -I${LOCALBASE}/include/libpng
  #endif
  
  XCOMM ****************
-@@ -73,11 +73,11 @@ XCOMM Change XPMLIBDIR if necessary to p
- XCOMM Change XPMINC if necessary to point to the include file for xpm (xpm.h)
- XCOMM
- 
--XCOMM #define USEXPM
-+#define USEXPM
+@@ -91,8 +91,8 @@ XCOMM
+ #define USEXPM
  
  #ifdef USEXPM
 -XPMLIBDIR = $(USRLIBDIR)
@@ -52,16 +42,16 @@ $OpenBSD: patch-fig2dev_Imakefile,v 1.5 2003/04/04 14:28:36 naddy Exp $
  #endif
  
  XCOMM ****************
-@@ -126,7 +126,7 @@ XCOMM Comment out the next line if you h
+@@ -141,7 +141,7 @@ XCOMM Comment out the next line if you have any proble
  
  #ifdef I18N
  I18N_DEFS = -DI18N 
 -FIG2DEV_LIBDIR = /usr/local/lib/fig2dev
 +FIG2DEV_LIBDIR = $(LIBDIR)/fig2dev
- I18N_DEV_DEFS = $(I18N_DEFS) -DFIG2DEV_LIBDIR=\\\"$(FIG2DEV_LIBDIR)\\\"
+ I18N_DEV_DEFS = $(I18N_DEFS) -DFIG2DEV_LIBDIR=$(FIG2DEV_LIBDIR) -DFIG2DEV_LIBDIR_STR=\\\"$(FIG2DEV_LIBDIR)\\\"
  
- install::
-@@ -154,7 +154,7 @@ XCOMM **********************************
+ #endif /* I18N */
+@@ -150,7 +150,7 @@ XCOMM ************************************************
  XCOMM *** You shouldn't have to change anything below this point ***
  XCOMM **************************************************************
  
@@ -70,12 +60,3 @@ $OpenBSD: patch-fig2dev_Imakefile,v 1.5 2003/04/04 14:28:36 naddy Exp $
  
  #ifdef USEPNG
  DUSEPNG = -DUSE_PNG
-@@ -177,7 +177,7 @@ DEFINES = $(NEED_STRERROR) $(HAVE_NO_STR
- 
- IMAKE_DEFINES = $(DUSEPNG) $(DUSEXPM)
- 
--DEVDEFINES = $(DUSEPNG) $(DUSEXPM) $(XPMINC) $(DDNFSS) $(DDA4) \
-+DEVDEFINES = $(DUSEPNG) $(DUSEXPM) $(PNGINC) $(XPMINC) $(DDNFSS) $(DDA4) \
- 		$(DDLATEX2E_GRAPHICS) $(DDEPSFIG) $(DDIBMGEC) $(DDDVIPS) $(I18N_DEV_DEFS)
- 
- #define IHaveSubdirs

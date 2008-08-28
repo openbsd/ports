@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:32:15 espie Exp $
-bin/fig2dev
+@comment $OpenBSD: PLIST,v 1.8 2008/08/28 19:02:56 sthen Exp $
+@bin bin/fig2dev
 bin/fig2ps2tex
 bin/fig2ps2tex.sh
 bin/pic2tpic
-bin/transfig
+@bin bin/transfig
 lib/X11/fig2dev/
 lib/X11/fig2dev/cs_CZ.ps
 lib/X11/fig2dev/hr_HR.ps
