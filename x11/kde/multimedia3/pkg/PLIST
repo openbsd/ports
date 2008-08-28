@@ -1,24 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.30 2007/12/15 23:47:41 ajacoutot Exp $
-bin/artsbuilder
-bin/artscontrol
-bin/juk
-bin/kaboodle
-bin/kaudiocreator
-bin/kmid
-bin/kmix
-bin/kmixctrl
-bin/krec
-bin/kscd
-bin/midisend
-bin/mpeglibartsplay
-bin/noatun
+@comment $OpenBSD: PLIST,v 1.31 2008/08/28 08:52:00 espie Exp $
+@bin bin/artsbuilder
+@bin bin/artscontrol
+@bin bin/juk
+@bin bin/kaboodle
+@bin bin/kaudiocreator
+@bin bin/kmid
+@bin bin/kmix
+@bin bin/kmixctrl
+@bin bin/krec
+@bin bin/kscd
+@bin bin/midisend
+@bin bin/mpeglibartsplay
+@bin bin/noatun
 bin/workman2cddb.pl
-bin/yaf-cdda
-bin/yaf-mpgplay
-bin/yaf-splay
-bin/yaf-tplay
-bin/yaf-vorbis
-bin/yaf-yuv
+@bin bin/yaf-cdda
+@bin bin/yaf-mpgplay
+@bin bin/yaf-splay
+@bin bin/yaf-tplay
+@bin bin/yaf-vorbis
+@bin bin/yaf-yuv
 include/arts/artsbuilder.h
 include/arts/artsbuilder.idl
 include/arts/artsgui.h
@@ -638,7 +638,7 @@ share/apps/kconf_update/kaudiocreator-libkcddb.upd
 share/apps/kconf_update/kaudiocreator-meta.upd
 share/apps/kconf_update/kcmcddb-emailsettings.upd
 share/apps/kconf_update/noatun.upd
-share/apps/kconf_update/noatun20update
+@bin share/apps/kconf_update/noatun20update
 share/apps/kconf_update/upgrade-kaudiocreator-metadata.sh
 share/apps/kconf_update/upgrade-metadata.sh
 share/apps/kde-conf-sample/xdg/menus/applications-merged/

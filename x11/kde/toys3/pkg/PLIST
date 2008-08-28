@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.16 2007/12/15 23:47:41 ajacoutot Exp $
-bin/amor
-bin/kodo
-bin/kteatime
-bin/ktux
-bin/kweatherreport
-bin/kweatherservice
-bin/kworldclock
+@comment $OpenBSD: PLIST,v 1.17 2008/08/28 08:52:00 espie Exp $
+@bin bin/amor
+@bin bin/kodo
+@bin bin/kteatime
+@bin bin/ktux
+@bin bin/kweatherreport
+@bin bin/kweatherservice
+@bin bin/kworldclock
 include/AmorIface.h
 ${KDE}/eyes_panelapplet.la
 ${KDE}/eyes_panelapplet.so

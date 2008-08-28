@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.11 2007/10/24 21:52:16 espie Exp $
-bin/kmag
-bin/kmousetool
-bin/kmouth
-bin/ksayit
-bin/kttsd
-bin/kttsmgr
+@comment $OpenBSD: PLIST,v 1.12 2008/08/28 08:52:00 espie Exp $
+@bin bin/kmag
+@bin bin/kmousetool
+@bin bin/kmouth
+@bin bin/ksayit
+@bin bin/kttsd
+@bin bin/kttsmgr
 include/ksayit_fxplugin.h
 ${KDE}/kbstate_panelapplet.la
 ${KDE}/kbstate_panelapplet.so
