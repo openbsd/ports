@@ -1,7 +1,7 @@
-$OpenBSD: patch-libdkim_dkim_h,v 1.3 2008/04/28 20:17:42 jakob Exp $
---- libdkim/dkim.h.orig	Tue Apr 22 23:54:00 2008
-+++ libdkim/dkim.h	Mon Apr 28 22:01:34 2008
-@@ -22,6 +22,10 @@ static char dkim_h_id[] = "@(#)$Id: dkim.h,v 1.175 200
+$OpenBSD: patch-libdkim_dkim_h,v 1.4 2008/08/28 08:23:09 jakob Exp $
+--- libdkim/dkim.h.orig	Thu Aug 28 08:00:14 2008
++++ libdkim/dkim.h	Thu Aug 28 10:14:36 2008
+@@ -17,6 +17,10 @@ static char dkim_h_id[] = "@(#)$Id: dkim.h,v 1.185.4.1
  /* openssl includes */
  #include <openssl/sha.h>
  
