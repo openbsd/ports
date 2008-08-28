@@ -1,0 +1,32 @@
+$OpenBSD: patch-gcc_config_i386_i386_c,v 1.1 2008/08/28 19:04:40 martynas Exp $
+--- gcc/config/i386/i386.c.orig	Sun Dec 12 23:00:44 2004
++++ gcc/config/i386/i386.c	Wed Aug 27 06:21:41 2008
+@@ -1725,6 +1725,10 @@ classify_argument (mode, type, classes, bit_offset)
+   if (bytes < 0)
+     return 0;
+ 
++  if (mode != VOIDmode
++      && MUST_PASS_IN_STACK (mode, type))
++    return 0;
++
+   if (type && AGGREGATE_TYPE_P (type))
+     {
+       int i;
+@@ -14826,6 +14830,17 @@ x86_machine_dependent_reorg (first)
+     if (insert)
+       emit_insn_before (gen_nop (), ret);
+   }
++}
++
++/* Return if we do not know how to pass TYPE solely in registers.  */
++bool
++ix86_must_pass_in_stack (mode, type)
++	enum machine_mode mode;
++	tree type;
++{
++   if (default_must_pass_in_stack (mode, type))
++     return true;
++   return (!TARGET_64BIT && type && mode == TImode);
+ }
+ 
+ #include "gt-i386.h"
