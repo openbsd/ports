@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/03 09:08:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/08/29 16:05:37 merdely Exp $
 
 COMMENT =	collection of perl scripts to manage your iPod
 
-DISTNAME =	gnupod-0.99.6
-PKGNAME =	p5-${DISTNAME}p0
+DISTNAME =	gnupod-0.99.7
+PKGNAME =	p5-${DISTNAME}
 CATEGORIES =	audio
 
 HOMEPAGE =	http://www.gnu.org/software/gnupod/
@@ -28,6 +28,7 @@ RUN_DEPENDS =	::security/p5-Digest-SHA1 \
 		::converters/p5-Unicode-String \
 		::audio/p5-MP3-Info \
 		::www/p5-libwww \
+		::devel/p5-Time-TimeDate \
 		::audio/p5-Audio-FLAC-Header \
 		::audio/p5-Ogg-Vorbis-Header-PurePerl \
 		::graphics/ffmpeg \
