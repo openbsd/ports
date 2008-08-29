@@ -1,7 +1,7 @@
-$OpenBSD: patch-qtruby_rubylib_designer_rbuic_Makefile_in,v 1.1 2007/12/11 07:55:05 jakemsr Exp $
---- qtruby/rubylib/designer/rbuic/Makefile.in.orig	Tue Oct 30 14:14:05 2007
-+++ qtruby/rubylib/designer/rbuic/Makefile.in	Tue Oct 30 14:17:52 2007
-@@ -399,7 +399,7 @@ INCLUDES = $(all_includes)
+$OpenBSD: patch-qtruby_rubylib_designer_rbuic_Makefile_in,v 1.2 2008/08/29 11:27:44 espie Exp $
+--- qtruby/rubylib/designer/rbuic/Makefile.in.orig	Wed Aug 20 17:38:15 2008
++++ qtruby/rubylib/designer/rbuic/Makefile.in	Thu Aug 28 10:56:33 2008
+@@ -400,7 +400,7 @@ INCLUDES = $(all_includes)
  librbuic_la_SOURCES = widgetdatabase.cpp uic.cpp subclassing.cpp parser.cpp object.cpp form.cpp embed.cpp domtool.cpp
  librbuic_la_LIBADD = $(LIB_QT) $(LIBZ)
  rbuic_SOURCES = main.cpp

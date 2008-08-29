@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.17 2007/12/15 23:47:40 ajacoutot Exp $
-bin/embedjs
-bin/jsaccess
-bin/kjscmd
-bin/krubyinit
-bin/qtrubyinit
-bin/rbkconfig_compiler
+@comment $OpenBSD: PLIST,v 1.18 2008/08/29 11:27:44 espie Exp $
+@bin bin/embedjs
+@bin bin/jsaccess
+@bin bin/kjscmd
+@bin bin/krubyinit
+@bin bin/qtrubyinit
+@bin bin/rbkconfig_compiler
 bin/rbkdeapi
 bin/rbkdesh
 bin/rbqtapi
 bin/rbqtsh
-bin/rbuic
+@bin bin/rbuic
 include/kjsembed/
 include/kjsembed/customobject_imp.h
 include/kjsembed/global.h

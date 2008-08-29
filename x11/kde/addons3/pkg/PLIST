@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.27 2007/12/15 23:47:40 ajacoutot Exp $
-bin/atlantikdesigner
-bin/fsview
+@comment $OpenBSD: PLIST,v 1.28 2008/08/29 11:27:43 espie Exp $
+@bin bin/atlantikdesigner
+@bin bin/fsview
 bin/jpegorient
 bin/kio_media_realfolder
-bin/ksig
-bin/lnkforward
-bin/noatunsynaescope.bin
-bin/noatuntippecanoe.bin
-bin/noatuntyler.bin
+@bin bin/ksig
+@bin bin/lnkforward
+@bin bin/noatunsynaescope.bin
+@bin bin/noatuntippecanoe.bin
+@bin bin/noatuntyler.bin
 ${KDE}/katecppsymbolviewerplugin.la
 ${KDE}/katecppsymbolviewerplugin.so
 ${KDE}/katefiletemplates.la
