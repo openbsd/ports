@@ -1,7 +1,7 @@
-$OpenBSD: patch-server_convert_c,v 1.1 2003/03/12 21:21:55 brad Exp $
---- server/convert.c.orig	Mon Dec  2 06:01:34 1996
-+++ server/convert.c	Wed Mar 12 14:59:07 2003
-@@ -54,4 +54,6 @@ static char rcs_id[] = "@(#) 102.1 $Id: 
+$OpenBSD: patch-server_convert_c,v 1.2 2008/08/29 15:01:29 espie Exp $
+--- server/convert.c.orig	Mon Dec  2 12:01:34 1996
++++ server/convert.c	Fri Aug 29 16:52:05 2008
+@@ -54,4 +54,6 @@ static char rcs_id[] = "@(#) 102.1 $Id: convert.c,v 6.
  #define ACK3 3
  #define CHECK_ACK_BUF_SIZE	(ACK_BUFSIZE + (SIZEOFLONG * 2) )
 +#define IR_INT_MAX 32767

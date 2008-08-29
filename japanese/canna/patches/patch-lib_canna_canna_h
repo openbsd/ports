@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_canna_canna_h,v 1.1 2002/03/26 19:58:37 espie Exp $
---- lib/canna/canna.h.orig	Tue Mar 26 20:32:09 2002
-+++ lib/canna/canna.h	Tue Mar 26 20:33:34 2002
-@@ -110,7 +110,11 @@ extern CANNA_wcstombs pro((char *, wchar
+$OpenBSD: patch-lib_canna_canna_h,v 1.2 2008/08/29 15:01:29 espie Exp $
+--- lib/canna/canna.h.orig	Mon Dec  2 03:20:15 1996
++++ lib/canna/canna.h	Fri Aug 29 16:52:05 2008
+@@ -110,7 +110,11 @@ extern CANNA_wcstombs pro((char *, wchar_t *, int));
  #  include <memory.h>
  # endif
 -# ifndef __EMX__
