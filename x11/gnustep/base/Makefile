@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2008/07/28 23:55:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2008/08/29 11:52:20 espie Exp $
 
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.16.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	gnustep-base 2.0	# .1.16.1
 CATEGORIES=	devel
 

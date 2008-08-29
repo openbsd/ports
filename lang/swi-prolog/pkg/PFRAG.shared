@@ -1,19 +1,20 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2007/01/27 17:35:46 espie Exp $
-lib/pl-${V}/lib/${FULLARCH}/cgi.so
-lib/pl-${V}/lib/${FULLARCH}/double_metaphone.so
-lib/pl-${V}/lib/${FULLARCH}/files.so
-lib/pl-${V}/lib/${FULLARCH}/libpl.so
-@lib lib/pl-${V}/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
-lib/pl-${V}/lib/${FULLARCH}/memfile.so
-lib/pl-${V}/lib/${FULLARCH}/mime.so
-lib/pl-${V}/lib/${FULLARCH}/porter_stem.so
-lib/pl-${V}/lib/${FULLARCH}/random.so
-lib/pl-${V}/lib/${FULLARCH}/rdf_db.so
-lib/pl-${V}/lib/${FULLARCH}/readutil.so
-lib/pl-${V}/lib/${FULLARCH}/rlimit.so
-lib/pl-${V}/lib/${FULLARCH}/socket.so
-lib/pl-${V}/lib/${FULLARCH}/table.so
-lib/pl-${V}/lib/${FULLARCH}/time.so
-lib/pl-${V}/lib/${FULLARCH}/unix.so
-lib/pl-${V}/lib/${FULLARCH}/zlib4pl.so
-lib/pl-${V}/xpce-${XV}/lib/${FULLARCH}/pl2xpce.so
+@comment $OpenBSD: PFRAG.shared,v 1.3 2008/08/29 11:52:20 espie Exp $
+@lib lib/libpl.so.${LIBpl_VERSION}
+lib/swipl-${V}/lib/${FULLARCH}/cgi.so
+lib/swipl-${V}/lib/${FULLARCH}/double_metaphone.so
+lib/swipl-${V}/lib/${FULLARCH}/files.so
+lib/swipl-${V}/lib/${FULLARCH}/libpl.so
+@lib lib/swipl-${V}/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
+lib/swipl-${V}/lib/${FULLARCH}/memfile.so
+lib/swipl-${V}/lib/${FULLARCH}/mime.so
+lib/swipl-${V}/lib/${FULLARCH}/porter_stem.so
+lib/swipl-${V}/lib/${FULLARCH}/random.so
+lib/swipl-${V}/lib/${FULLARCH}/rdf_db.so
+lib/swipl-${V}/lib/${FULLARCH}/readutil.so
+lib/swipl-${V}/lib/${FULLARCH}/rlimit.so
+lib/swipl-${V}/lib/${FULLARCH}/socket.so
+lib/swipl-${V}/lib/${FULLARCH}/table.so
+lib/swipl-${V}/lib/${FULLARCH}/time.so
+lib/swipl-${V}/lib/${FULLARCH}/unix.so
+lib/swipl-${V}/lib/${FULLARCH}/zlib4pl.so
+lib/swipl-${V}/xpce-${XV}/lib/${FULLARCH}/pl2xpce.so

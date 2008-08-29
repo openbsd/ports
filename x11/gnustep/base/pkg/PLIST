@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/07/28 23:55:28 sthen Exp $
-@conflict swi-prolog-*
+@comment $OpenBSD: PLIST,v 1.5 2008/08/29 11:52:20 espie Exp $
+@conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
 @bin bin/cvtenc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/07/30 19:47:09 martynas Exp $
+# $OpenBSD: Makefile,v 1.14 2008/08/29 11:52:20 espie Exp $
 
 CATEGORIES=		lang
 V=			5.6.27
@@ -6,7 +6,7 @@ XV=			6.6.27
 FULLARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS=		V XV FULLARCH
 DISTNAME=		pl-$V
-PKGNAME=		swi-prolog-$Vp6
+PKGNAME=		swi-prolog-$Vp7
 MASTER_SITES=		http://gollem.science.uva.nl/cgi-bin/nph-download/SWI-Prolog/
 COMMENT=		Prolog for the real world
 HOMEPAGE=		http://www.swi-prolog.org/
@@ -45,6 +45,9 @@ WANTLIB=		ICE Xrender readline SM freetype Xt pthread \
 
 LIB_DEPENDS=		jpeg::graphics/jpeg
 SUBST_VARS+=		BOOT
+
+post-install:
+	cd ${PREFIX}/lib && ln -s swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
 
 .include <bsd.port.mk>
 
