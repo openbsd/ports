@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2008/08/27 13:39:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.33 2008/08/29 10:54:06 espie Exp $
 @bin bin/kbanner.kss
 @bin bin/kblob.kss
 @bin bin/kclock.kss
@@ -77,6 +77,7 @@ share/applnk/System/ScreenSavers/KWave.desktop
 share/applnk/System/ScreenSavers/abstractile.desktop
 share/applnk/System/ScreenSavers/anemone.desktop
 share/applnk/System/ScreenSavers/anemotaxis.desktop
+share/applnk/System/ScreenSavers/ant.desktop
 share/applnk/System/ScreenSavers/antinspect.desktop
 share/applnk/System/ScreenSavers/antmaze.desktop
 share/applnk/System/ScreenSavers/antspotlight.desktop
@@ -118,6 +119,7 @@ share/applnk/System/ScreenSavers/cwaves.desktop
 share/applnk/System/ScreenSavers/cynosure.desktop
 share/applnk/System/ScreenSavers/dangerball.desktop
 share/applnk/System/ScreenSavers/decayscreen.desktop
+share/applnk/System/ScreenSavers/deco.desktop
 share/applnk/System/ScreenSavers/deluxe.desktop
 share/applnk/System/ScreenSavers/demon.desktop
 share/applnk/System/ScreenSavers/discrete.desktop
@@ -128,6 +130,7 @@ share/applnk/System/ScreenSavers/engine.desktop
 share/applnk/System/ScreenSavers/epicycle.desktop
 share/applnk/System/ScreenSavers/eruption.desktop
 share/applnk/System/ScreenSavers/euler2d.desktop
+share/applnk/System/ScreenSavers/extrusion.desktop
 share/applnk/System/ScreenSavers/fadeplot.desktop
 share/applnk/System/ScreenSavers/fiberlamp.desktop
 share/applnk/System/ScreenSavers/fireworkx.desktop
@@ -218,6 +221,7 @@ share/applnk/System/ScreenSavers/phosphor.desktop
 share/applnk/System/ScreenSavers/piecewise.desktop
 share/applnk/System/ScreenSavers/pinion.desktop
 share/applnk/System/ScreenSavers/pipes.desktop
+share/applnk/System/ScreenSavers/pixmaps.desktop
 share/applnk/System/ScreenSavers/polyhedra.desktop
 share/applnk/System/ScreenSavers/polyominoes.desktop
 share/applnk/System/ScreenSavers/polytopes.desktop
@@ -283,6 +287,7 @@ share/applnk/System/ScreenSavers/xmatrix.desktop
 share/applnk/System/ScreenSavers/xrayswarm.desktop
 share/applnk/System/ScreenSavers/xspirograph.desktop
 share/applnk/System/ScreenSavers/xsublim.desktop
+share/applnk/System/ScreenSavers/xteevee.desktop
 share/applnk/System/ScreenSavers/zoom.desktop
 share/apps/kfiresaver/
 share/apps/kfiresaver/kfs_debris.ogg

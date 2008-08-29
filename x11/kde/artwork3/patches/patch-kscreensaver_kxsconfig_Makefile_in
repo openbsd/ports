@@ -1,0 +1,19 @@
+$OpenBSD: patch-kscreensaver_kxsconfig_Makefile_in,v 1.1 2008/08/29 10:54:06 espie Exp $
+--- kscreensaver/kxsconfig/Makefile.in.orig	Fri Aug 29 12:36:14 2008
++++ kscreensaver/kxsconfig/Makefile.in	Fri Aug 29 12:36:53 2008
+@@ -707,13 +707,8 @@ install-data-local:
+ 	list=`(cd $(srcdir)/ScreenSavers && ls -1 *.desktop)` ;\
+ 	for i in $$list; do \
+ 		hack=`echo $$i | sed -e "s#\.desktop##"` ;\
+-		if test -x $(XSCREENSAVER_HACKS_DIR)/$$hack; then \
+-			echo "$$hack found" ;\
+-			echo $(INSTALL_DATA) $(srcdir)/ScreenSavers/$$i $(DESTDIR)$(screensaverdir)/$$i ;\
+-			$(INSTALL_DATA) $(srcdir)/ScreenSavers/$$i $(DESTDIR)$(screensaverdir)/$$i ;\
+-		else \
+-			echo "$$hack not found" ;\
+-		fi ;\
++		echo $(INSTALL_DATA) $(srcdir)/ScreenSavers/$$i $(DESTDIR)$(screensaverdir)/$$i ;\
++		$(INSTALL_DATA) $(srcdir)/ScreenSavers/$$i $(DESTDIR)$(screensaverdir)/$$i ;\
+ 	done 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
