@@ -1,31 +1,31 @@
-# $OpenBSD: Makefile,v 1.14 2008/08/29 11:52:20 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2008/08/29 12:30:21 espie Exp $
 
-CATEGORIES=		lang
-V=			5.6.27
-XV=			6.6.27
-FULLARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
-SUBST_VARS=		V XV FULLARCH
-DISTNAME=		pl-$V
-PKGNAME=		swi-prolog-$Vp7
-MASTER_SITES=		http://gollem.science.uva.nl/cgi-bin/nph-download/SWI-Prolog/
-COMMENT=		Prolog for the real world
-HOMEPAGE=		http://www.swi-prolog.org/
+CATEGORIES =		lang
+V =			5.6.59
+XV =			6.6.58
+FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
+SUBST_VARS =		V XV FULLARCH
+DISTNAME =		pl-$V
+PKGNAME =		swi-prolog-$V
+MASTER_SITES =		http://gollem.science.uva.nl/cgi-bin/nph-download/SWI-Prolog/
+COMMENT =		Prolog for the real world
+HOMEPAGE =		http://www.swi-prolog.org/
 
-SHARED_LIBS=		pl	1.0
+SHARED_LIBS =		pl	2.0
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes 
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = Yes 
+PERMIT_DISTFILES_FTP =	Yes
 
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.59
-AUTOCONF_DIR=		${WRKSRC}/src ${WRKSRC}/packages/semweb
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/src \
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.60
+AUTOCONF_DIR =		${WRKSRC}/src ${WRKSRC}/packages/semweb
+MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
 				${WRKSRC}/packages/jpl \
 				${WRKSRC}/packages/xpce/src
-CONFIGURE_ARGS=		--enable-mt \
+CONFIGURE_ARGS =	--enable-mt \
 			--disable-custom-flags \
 			--with-world \
 			--disable-gmp \
@@ -33,18 +33,18 @@ CONFIGURE_ARGS=		--enable-mt \
 			--without-sgml \
 			${CONFIGURE_SHARED}
 
-USE_X11=		Yes
-USE_GMAKE=		Yes
+USE_X11 =		Yes
+USE_GMAKE =		Yes
 
-MAKE_FLAGS=		SONAMEOPT= \
+MAKE_FLAGS =		SONAMEOPT= \
 			SHAREDV=libpl.so.${LIBpl_VERSION}
 
-WANTLIB=		ICE Xrender readline SM freetype Xt pthread \
+WANTLIB =		ICE Xrender readline SM freetype Xt pthread \
 			c Xinerama Xft Xpm m fontconfig X11 ncurses z \
 			Xau Xdmcp expat
 
-LIB_DEPENDS=		jpeg::graphics/jpeg
-SUBST_VARS+=		BOOT
+LIB_DEPENDS =		jpeg::graphics/jpeg
+SUBST_VARS +=		BOOT
 
 post-install:
 	cd ${PREFIX}/lib && ln -s swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
@@ -53,7 +53,7 @@ post-install:
 
 .for _m in ${MACHINE_ARCH}
 .  if !empty(LP64_ARCHS:M${_m})
-BOOT=boot64
+BOOT =	boot64
 .  endif
 .endfor
-BOOT?=boot32
+BOOT ?=	boot32

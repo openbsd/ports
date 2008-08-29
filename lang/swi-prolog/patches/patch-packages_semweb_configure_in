@@ -1,9 +1,9 @@
-$OpenBSD: patch-packages_semweb_configure_in,v 1.1 2007/07/10 20:53:59 kili Exp $
+$OpenBSD: patch-packages_semweb_configure_in,v 1.2 2008/08/29 12:30:21 espie Exp $
 
 Don't override CFLAGS, don't force -O3 (but keep -fno-strict-aliasing).
 
---- packages/semweb/configure.in.orig	Tue Jan 23 20:25:14 2007
-+++ packages/semweb/configure.in	Tue Jun 26 13:28:57 2007
+--- packages/semweb/configure.in.orig	Tue Aug  5 21:36:31 2008
++++ packages/semweb/configure.in	Fri Aug 29 14:11:36 2008
 @@ -65,14 +65,13 @@ AC_CHECK_PROGS(ETAGS, etags ctags, ":")
  AC_PROG_INSTALL
  AC_ISC_POSIX
@@ -15,8 +15,8 @@ Don't override CFLAGS, don't force -O3 (but keep -fno-strict-aliasing).
  AC_CHECK_SIZEOF(long)
  
  if test ! -z "$GCC"; then
--    COFLAGS="-O3 -fno-strict-aliasing"
-+    COFLAGS=-fno-strict-aliasing
-     CWFLAGS=${CWFLAGS--Wall}
+-    COFLAGS="${COFLAGS--O3 -fno-strict-aliasing}"
++    COFLAGS="${COFLAGS} -fno-strict-aliasing"
+     CWFLAGS="${CWFLAGS--Wall}"
  else
-     COFLAGS=-O
+     COFLAGS="${CFLAGS--O}"
