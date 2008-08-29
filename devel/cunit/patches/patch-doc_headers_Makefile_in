@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_headers_Makefile_in,v 1.1.1.1 2008/08/29 09:18:39 sthen Exp $
+--- doc/headers/Makefile.in.orig	Wed Jun 25 12:20:20 2008
++++ doc/headers/Makefile.in	Wed Jun 25 12:22:48 2008
+@@ -183,7 +183,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-dochdrdir = $(prefix)/doc/@PACKAGE@/headers
++dochdrdir = $(prefix)/share/doc/@PACKAGE@/headers
+ INCLUDE_FILES = \
+ 	Automated.h \
+ 	Basic.h \
