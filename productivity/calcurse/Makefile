@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/05/17 15:16:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/08/29 17:27:57 ajacoutot Exp $
 
 COMMENT=	text-based calendar and scheduling application
 
-DISTNAME=	calcurse-2.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	calcurse-2.2
 CATEGORIES=	productivity
 
 MAINTAINER=	Frederic Culot <frederic@culot.org>
@@ -21,6 +20,7 @@ MASTER_SITES=	ftp://ftp2.culot.org/culot/
 WANTLIB=	c m ncurses pthread
 
 MODULES=	devel/gettext
+
 CONFIGURE_STYLE=gnu
 
 post-install:
