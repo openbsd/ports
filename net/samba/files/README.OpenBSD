@@ -1,17 +1,17 @@
 Using samba package in an OpenBSD environment:
 
-1. Edit ${SYSCONDIR}/samba/smb.conf to suit your needs.
+1. Edit ${SYSCONFDIR}/samba/smb.conf to suit your needs.
 
-2. Edit ${SYSCONDIR}/rc.conf.local:
+2. Edit ${SYSCONFDIR}/rc.conf.local:
    ...
    smbd_flags="-D"         # for normal use: "-D"
    nmbd_flags="-D"         # for normal use: "-D"
    ...
 
-3. Edit ${SYSCONDIR}/rc.local:
+3. Edit ${SYSCONFDIR}/rc.local:
    echo -n 'starting local daemons:'
    ...
-   if [ -f ${SYSCONDIR}/samba/smb.conf ]; then
+   if [ -f ${SYSCONFDIR}/samba/smb.conf ]; then
        if [ X"${smbd_flags}" != X"NO" -a -x /usr/local/libexec/smbd ]; then
            echo -n ' smbd';    /usr/local/libexec/smbd ${smbd_flags}
        fi
@@ -28,13 +28,13 @@ with swat over a network is inadvisable as passwords are passed in
 the clear. You can avoid this problem by using ssh forwarding to
 port 901.
 
-4. add the following entry to ${SYSCONDIR}/inetd.conf:
+4. add the following entry to ${SYSCONFDIR}/inetd.conf:
 
    ...
    swat  stream  tcp  nowait.400  root  /usr/local/libexec/swat  swat
    ...
 
-5. add the following entry to ${SYSCONDIR}/services:
+5. add the following entry to ${SYSCONFDIR}/services:
 
    ...
    swat            901/tcp                 # samba admin service
