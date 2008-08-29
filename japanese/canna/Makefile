@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2008/01/04 17:48:35 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2008/08/29 14:50:02 espie Exp $
 
 COMMENT-main= 	canna (kana-kanji converter) libraries
 COMMENT-dict=	canna (kana-kanji converter) dictionaries
@@ -53,7 +53,8 @@ MAKE_ENV+=      CANNAOWNER=${CANNAOWNER} CANNAGROUP=${CANNAGROUP} \
 MAKE_FLAGS=	LIBRKC_VERSION=$(LIBRKC_VERSION) \
 		LIBRKC16_VERSION=$(LIBRKC16_VERSION) \
 		LIBcanna_VERSION=$(LIBcanna_VERSION) \
-		LIBcanna16_VERSION=$(LIBcanna16_VERSION)
+		LIBcanna16_VERSION=$(LIBcanna16_VERSION) \
+		COPTS="${COPTS}"
 
 NO_REGRESS=	Yes
 
