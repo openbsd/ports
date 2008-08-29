@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/02 17:49:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/08/29 08:11:35 ajacoutot Exp $
 
 COMMENT=	IMAP synchronization tool
 
-DISTNAME=	imapsync-1.255
+DISTNAME=	imapsync-1.264
 CATEGORIES=	mail
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
@@ -25,6 +25,7 @@ RUN_DEPENDS=	::converters/p5-DateManip \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	/usr/bin/pod2man ${WRKSRC}/imapsync ${WRKSRC}/imapsync.1
