@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-devel,v 1.8 2008/08/26 18:05:23 martynas Exp $
+@comment $OpenBSD: PLIST-devel,v 1.9 2008/08/29 01:16:47 martynas Exp $
 @conflict xulrunner-<1.8.0.4p0
 lib/pkgconfig/
+lib/pkgconfig/xulrunner-embedding.pc
 lib/pkgconfig/xulrunner-gtkmozembed.pc
 lib/pkgconfig/xulrunner-js.pc
 @comment lib/pkgconfig/xulrunner-nspr.pc
 @comment lib/pkgconfig/xulrunner-nss.pc
-lib/pkgconfig/libxul-embedding.pc
 lib/pkgconfig/xulrunner-plugin.pc
 lib/pkgconfig/xulrunner-xpcom.pc
 xulrunner/idl/
