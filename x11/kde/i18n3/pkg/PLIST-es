@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-es,v 1.15 2008/04/13 12:14:11 espie Exp $
+@comment $OpenBSD: PLIST-es,v 1.16 2008/08/29 12:59:49 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.es.xml
 share/apps/khangman/
@@ -568,11 +568,13 @@ ${DOC}kasteroids/${I}
 ${DOC}kate/
 ${DOC}kate-plugins/
 ${DOC}kate-plugins/common
+${DOC}kate-plugins/configure_insertcommand.png
 ${DOC}kate-plugins/filetemplates.docbook
 ${DOC}kate-plugins/htmltools.docbook
 ${DOC}kate-plugins/${C}
 ${DOC}kate-plugins/${I}
 ${DOC}kate-plugins/insertcommand.docbook
+${DOC}kate-plugins/insertcommand.png
 ${DOC}kate-plugins/openheader.docbook
 ${DOC}kate-plugins/projectmanager.docbook
 ${DOC}kate-plugins/textfilter.docbook
@@ -2502,6 +2504,7 @@ ${DOC}ksig/
 ${DOC}ksig/common
 ${DOC}ksig/${C}
 ${DOC}ksig/${I}
+${DOC}ksig/screenshot.png
 ${DOC}ksim/
 ${DOC}ksim/common
 ${DOC}ksim/${C}
@@ -3397,6 +3400,7 @@ ${LOC}kio_nntp.mo
 ${LOC}kio_pop3.mo
 ${LOC}kio_print.mo
 ${LOC}kio_remote.mo
+${LOC}kio_scalix.mo
 ${LOC}kio_settings.mo
 ${LOC}kio_sftp.mo
 ${LOC}kio_sieve.mo
@@ -3504,6 +3508,7 @@ ${LOC}kres_groupware.mo
 ${LOC}kres_groupwise.mo
 ${LOC}kres_kolab.mo
 ${LOC}kres_remote.mo
+${LOC}kres_scalix.mo
 ${LOC}kres_tvanytime.mo
 ${LOC}kres_xmlrpc.mo
 ${LOC}kreversi.mo
@@ -3634,6 +3639,7 @@ ${LOC}privacy.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo
+${LOC}scalixadmin.mo
 ${LOC}searchbarplugin.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo

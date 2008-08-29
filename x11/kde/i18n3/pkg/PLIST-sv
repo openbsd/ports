@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sv,v 1.14 2008/04/13 12:14:11 espie Exp $
+@comment $OpenBSD: PLIST-sv,v 1.15 2008/08/29 12:59:49 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.sv.xml
 share/apps/khangman/
@@ -1618,6 +1618,7 @@ ${DOC}kommander/introduction.docbook
 ${DOC}kommander/parser.docbook
 ${DOC}kommander/q-and-a.docbook
 ${DOC}kommander/specials.docbook
+${DOC}kommander/translating.docbook
 ${DOC}kommander/tutorials.docbook
 ${DOC}kommander/widgets.docbook
 ${DOC}kompare/

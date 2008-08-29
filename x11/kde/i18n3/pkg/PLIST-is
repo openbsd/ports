@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-is,v 1.10 2007/10/24 21:52:17 espie Exp $
+@comment $OpenBSD: PLIST-is,v 1.11 2008/08/29 12:59:49 espie Exp $
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -298,6 +298,7 @@ ${LOC}kio_nntp.mo
 ${LOC}kio_pop3.mo
 ${LOC}kio_print.mo
 ${LOC}kio_remote.mo
+${LOC}kio_scalix.mo
 ${LOC}kio_settings.mo
 ${LOC}kio_sftp.mo
 ${LOC}kio_sieve.mo

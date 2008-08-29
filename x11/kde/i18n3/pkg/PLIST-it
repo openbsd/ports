@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-it,v 1.14 2008/04/13 12:14:11 espie Exp $
+@comment $OpenBSD: PLIST-it,v 1.15 2008/08/29 12:59:49 espie Exp $
 @conflict kde-i18n-ca-<3.4
 share/apps/kanagram/
 share/apps/kanagram/data/
@@ -701,11 +701,13 @@ ${DOC}kdeprint/cupsaddprinterwizard3_networkscan.png
 ${DOC}kdeprint/cupsaddprinterwizard4_networkscan_config.png
 ${DOC}kdeprint/extensions.docbook
 ${DOC}kdeprint/external-command.docbook
+${DOC}kdeprint/final-word.docbook
 ${DOC}kdeprint/getting-started.docbook
 ${DOC}kdeprint/lpd.docbook
 ${DOC}kdeprint/lpr-bsd.docbook
 ${DOC}kdeprint/lprng.docbook
 ${DOC}kdeprint/rlpr.docbook
+${DOC}kdeprint/tech-overview.docbook
 ${DOC}kdesu/
 ${DOC}kdesu/common
 ${DOC}kdesu/${C}

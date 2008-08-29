@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-et,v 1.13 2008/04/13 12:14:11 espie Exp $
+@comment $OpenBSD: PLIST-et,v 1.14 2008/08/29 12:59:49 espie Exp $
 share/apps/kanagram/
 share/apps/kanagram/data/
 share/apps/kanagram/data/et/
@@ -1138,8 +1138,10 @@ ${DOC}kommander/${C}
 ${DOC}kommander/${I}
 ${DOC}kommander/installation.docbook
 ${DOC}kommander/introduction.docbook
+${DOC}kommander/parser.docbook
 ${DOC}kommander/q-and-a.docbook
 ${DOC}kommander/specials.docbook
+${DOC}kommander/translating.docbook
 ${DOC}kommander/tutorials.docbook
 ${DOC}kommander/widgets.docbook
 ${DOC}kompare/

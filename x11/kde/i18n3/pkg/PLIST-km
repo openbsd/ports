@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-km,v 1.7 2007/10/24 21:52:17 espie Exp $
+@comment $OpenBSD: PLIST-km,v 1.8 2008/08/29 12:59:49 espie Exp $
 share/locale/km/
 share/locale/km/LC_MESSAGES/
 ${LOC}akregator.mo
@@ -269,6 +269,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
+${LOC}kickermenu_kate.mo
 ${LOC}kiconedit.mo
 ${LOC}kig.mo
 ${LOC}kinetd.mo

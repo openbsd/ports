@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nds,v 1.13 2008/04/13 12:14:11 espie Exp $
+@comment $OpenBSD: PLIST-nds,v 1.14 2008/08/29 12:59:49 espie Exp $
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/nds/
@@ -680,3 +680,4 @@ ${LOC}wavecapture.mo
 ${LOC}webarchiver.mo
 share/locale/nds/charset
 share/locale/nds/entry.desktop
+share/locale/nds/flag.png

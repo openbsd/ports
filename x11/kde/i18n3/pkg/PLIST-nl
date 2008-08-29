@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nl,v 1.11 2008/04/13 12:14:11 espie Exp $
+@comment $OpenBSD: PLIST-nl,v 1.12 2008/08/29 12:59:49 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.nl.xml
 share/apps/khangman/
@@ -2167,7 +2167,6 @@ ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
 ${LOC}libksieve.mo
 ${LOC}libksirtet.mo
-${LOC}libksync.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
@@ -2184,7 +2183,6 @@ ${LOC}nsplugin.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
-${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pl,v 1.14 2008/04/13 12:14:11 espie Exp $
+@comment $OpenBSD: PLIST-pl,v 1.15 2008/08/29 12:59:49 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.pl.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -1645,6 +1645,7 @@ ${LOC}kio_nntp.mo
 ${LOC}kio_pop3.mo
 ${LOC}kio_print.mo
 ${LOC}kio_remote.mo
+${LOC}kio_scalix.mo
 ${LOC}kio_settings.mo
 ${LOC}kio_sftp.mo
 ${LOC}kio_sieve.mo
@@ -1758,6 +1759,7 @@ ${LOC}kres_groupware.mo
 ${LOC}kres_groupwise.mo
 ${LOC}kres_kolab.mo
 ${LOC}kres_remote.mo
+${LOC}kres_scalix.mo
 ${LOC}kres_tvanytime.mo
 ${LOC}kres_xmlrpc.mo
 ${LOC}kreversi.mo
@@ -1891,6 +1893,7 @@ ${LOC}privacy.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}rellinks.mo
+${LOC}scalixadmin.mo
 ${LOC}searchbarplugin.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo
