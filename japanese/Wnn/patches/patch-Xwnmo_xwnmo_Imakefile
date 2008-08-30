@@ -1,7 +1,7 @@
-$OpenBSD: patch-Xwnmo_xwnmo_Imakefile,v 1.1 2000/04/22 12:05:57 espie Exp $
---- Xwnmo/xwnmo/Imakefile.orig	Fri Apr 21 17:44:22 2000
-+++ Xwnmo/xwnmo/Imakefile	Fri Apr 21 17:44:39 2000
-@@ -30,7 +30,7 @@ XCOMM CONNECTION WITH THE USE OR PERFORM
+$OpenBSD: patch-Xwnmo_xwnmo_Imakefile,v 1.2 2008/08/30 11:17:00 espie Exp $
+--- Xwnmo/xwnmo/Imakefile.orig	Thu Aug 25 01:26:16 1994
++++ Xwnmo/xwnmo/Imakefile	Sat Aug 30 13:13:02 2008
+@@ -30,7 +30,7 @@ XCOMM CONNECTION WITH THE USE OR PERFORMANCE OF THIS S
  XCOMM
  
  LOCAL_INSTFLAGS = $(INSTBINFLAGS) -o $(WNNOWNER)

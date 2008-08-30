@@ -1,7 +1,7 @@
-$OpenBSD: patch-Xwnmo_xjutil_jutil_c,v 1.1 2000/04/22 12:05:57 espie Exp $
---- Xwnmo/xjutil/jutil.c.orig	Fri Apr 21 17:58:01 2000
-+++ Xwnmo/xjutil/jutil.c	Fri Apr 21 17:58:32 2000
-@@ -664,10 +664,7 @@ int  (*error_handler)(), (*message_handl
+$OpenBSD: patch-Xwnmo_xjutil_jutil_c,v 1.2 2008/08/30 11:17:00 espie Exp $
+--- Xwnmo/xjutil/jutil.c.orig	Thu Jan 21 09:05:44 1993
++++ Xwnmo/xjutil/jutil.c	Sat Aug 30 13:13:01 2008
+@@ -664,10 +664,7 @@ int  (*error_handler)(), (*message_handler)();
      extern int srand();
      extern long rand();
  #else

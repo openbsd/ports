@@ -1,6 +1,6 @@
---- config/Project.tmpl.orig	1994-08-29 10:40:17.000000000 +0200
-+++ config/Project.tmpl	2004-01-02 20:21:26.000000000 +0100
-@@ -14,6 +14,20 @@ XCOMM $XConsortium: Project.tmpl,v 1.242
+--- config/Project.tmpl.orig	Mon Aug 29 10:40:17 1994
++++ config/Project.tmpl	Sat Aug 30 13:13:02 2008
+@@ -14,6 +14,20 @@ XCOMM $XConsortium: Project.tmpl,v 1.242 94/04/13 14:5
   *                                                                          *
   ***************************************************************************/
  
@@ -21,7 +21,7 @@
  #define ProjectX		6	/* do *not* change this line */
  
  /* The following project-specific rules are defined at the end of this file:
-@@ -70,9 +84,9 @@ XCOMM $XConsortium: Project.tmpl,v 1.242
+@@ -70,9 +84,9 @@ XCOMM $XConsortium: Project.tmpl,v 1.242 94/04/13 14:5
  #ifndef BuildXKB
  #define BuildXKB		NO
  #endif

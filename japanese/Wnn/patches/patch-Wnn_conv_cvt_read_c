@@ -1,6 +1,6 @@
-$OpenBSD: patch-Wnn_conv_cvt_read_c,v 1.1 2000/04/16 21:53:30 espie Exp $
+$OpenBSD: patch-Wnn_conv_cvt_read_c,v 1.2 2008/08/30 11:16:59 espie Exp $
 --- Wnn/conv/cvt_read.c.orig	Thu Apr  8 03:59:13 1993
-+++ Wnn/conv/cvt_read.c	Sun Apr 16 02:05:08 2000
++++ Wnn/conv/cvt_read.c	Sat Aug 30 13:13:01 2008
 @@ -72,6 +72,13 @@
  #endif /* TERMINFO */
  #include <term.h>
@@ -15,7 +15,7 @@ $OpenBSD: patch-Wnn_conv_cvt_read_c,v 1.1 2000/04/16 21:53:30 espie Exp $
  
  #define ENTRY_LEN 10 /* ¥³¥ó¥Ð¡¼¥ÈÉ½¤Î¥¨¥ó¥È¥êÌ¾¤ÎºÇÂçÄ¹ */
  
-@@ -437,6 +444,40 @@ int	flg; /* verbose¥â¡¼¥É¤Çµ¯¤³¤¹¤«¤Î¥Õ¥
+@@ -437,6 +444,40 @@ int	flg; /* verbose¥â¡¼¥É¤Çµ¯¤³¤¹¤«¤Î¥Õ¥é¥°¡Êº£¤Î½ê¤½¤
  	keydef_key[i++] = stradd(&tdataptr, key_f29);
  	keydef_key[i++] = stradd(&tdataptr, key_f30);
  	keydef_key[i++] = stradd(&tdataptr, key_f31);

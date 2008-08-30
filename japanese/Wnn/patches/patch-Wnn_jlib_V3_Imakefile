@@ -1,6 +1,6 @@
-$OpenBSD: patch-Wnn_jlib_V3_Imakefile,v 1.1 2000/04/16 21:53:30 espie Exp $
+$OpenBSD: patch-Wnn_jlib_V3_Imakefile,v 1.2 2008/08/30 11:17:00 espie Exp $
 --- Wnn/jlib.V3/Imakefile.orig	Wed Aug 17 03:10:13 1994
-+++ Wnn/jlib.V3/Imakefile	Thu Apr 13 20:41:39 2000
++++ Wnn/jlib.V3/Imakefile	Sat Aug 30 13:13:01 2008
 @@ -19,6 +19,10 @@ SRC3= $(WNNETCSRC)/sstrings.c
  OBJ3= sstrings.o
  SRCS= $(SRC1) $(SRC2) $(SRC3)
@@ -21,7 +21,7 @@ $OpenBSD: patch-Wnn_jlib_V3_Imakefile,v 1.1 2000/04/16 21:53:30 espie Exp $
  
  #if DebugLibJd
  DebuggedLibraryTarget(jd,$(OBJS))
-@@ -42,4 +46,5 @@ NamedMakeSubdirs($(WNNJLIB),$(WNNJLIBSRC
+@@ -42,4 +46,5 @@ NamedMakeSubdirs($(WNNJLIB),$(WNNJLIBSRC))
  
  WnnSpecialObjectRule($(OBJ2),$(SRC2),$(WNNETCSRC),)
  WnnSpecialObjectRule($(OBJ3),$(SRC3),$(WNNETCSRC),)
