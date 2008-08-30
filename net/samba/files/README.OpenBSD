@@ -2,21 +2,21 @@ Using samba package in an OpenBSD environment:
 
 1. Edit ${SYSCONFDIR}/samba/smb.conf to suit your needs.
 
-2. Edit ${SYSCONFDIR}/rc.conf.local:
+2. Edit /etc/rc.conf.local:
    ...
    smbd_flags="-D"         # for normal use: "-D"
    nmbd_flags="-D"         # for normal use: "-D"
    ...
 
-3. Edit ${SYSCONFDIR}/rc.local:
+3. Edit /etc/rc.local:
    echo -n 'starting local daemons:'
    ...
    if [ -f ${SYSCONFDIR}/samba/smb.conf ]; then
-       if [ X"${smbd_flags}" != X"NO" -a -x /usr/local/libexec/smbd ]; then
-           echo -n ' smbd';    /usr/local/libexec/smbd ${smbd_flags}
+       if [ X"${smbd_flags}" != X"NO" -a -x ${LOCALBASE}/libexec/smbd ]; then
+           echo -n ' smbd';    ${LOCALBASE}/libexec/smbd ${smbd_flags}
        fi
-       if [ X"${nmbd_flags}" != X"NO" -a -x /usr/local/libexec/nmbd ]; then
-           echo -n ' nmbd';    /usr/local/libexec/nmbd ${nmbd_flags}
+       if [ X"${nmbd_flags}" != X"NO" -a -x ${LOCALBASE}/libexec/nmbd ]; then
+           echo -n ' nmbd';    ${LOCALBASE}/libexec/nmbd ${nmbd_flags}
        fi
    fi
    ...
@@ -28,20 +28,18 @@ with swat over a network is inadvisable as passwords are passed in
 the clear. You can avoid this problem by using ssh forwarding to
 port 901.
 
-4. add the following entry to ${SYSCONFDIR}/inetd.conf:
+4. add the following entry to /etc/inetd.conf:
 
    ...
-   swat  stream  tcp  nowait.400  root  /usr/local/libexec/swat  swat
+   swat  stream  tcp  nowait.400  root  ${LOCALBASE}/libexec/swat  swat
    ...
 
-5. add the following entry to ${SYSCONFDIR}/services:
+5. add the following entry to /etc/services:
 
    ...
    swat            901/tcp                 # samba admin service
    ...
 
-Install the samba-docs package and see documentation files in
-/usr/local/share/doc/samba and example config files in
-/usr/local/share/examples/samba for more information.
-
-
+See documentation files in
+${PREFIX}/share/doc/samba and example config files in
+${PREFIX}/share/examples/samba for more information.
