@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:16:07 espie Exp $
-bin/eltclsh
-bin/elwish
+@comment $OpenBSD: PLIST,v 1.3 2008/08/30 13:54:58 matthieu Exp $
+@bin bin/eltclsh
+@bin bin/elwish
 @man man/cat1/eltclsh.0
 @man man/man1/eltclsh.1
 share/eltcl/
