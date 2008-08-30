@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.53 2008/01/04 17:48:35 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2008/08/30 11:08:12 espie Exp $
 
 COMMENT-main= 	Japanese input method
 COMMENT-dict=	dictionaries for Japanese Wnn
@@ -116,7 +116,7 @@ do-configure:
 
 # Xfree4 believes it can build html documentation, fat chance...
 #MAKE_FLAGS=IMAKE='imake -DBuildHtmlManPages=0 -DPorts' WNNOWNER_INDIRECT=_wnn
-MAKE_FLAGS=IMAKE='imake -DPorts' WNNOWNER_INDIRECT=_wnn
+MAKE_FLAGS=IMAKE='imake -DPorts' WNNOWNER_INDIRECT=_wnn COPTS="${COPTS}"
 FAKE_FLAGS=WNNOWNER_INDIRECT=bin
 
 MAKE_ENV=IMAKEINCLUDE=-I${WRKSRC}/config
