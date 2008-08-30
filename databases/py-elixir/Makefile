@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/29 22:40:48 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2008/08/30 02:24:32 fgsch Exp $
 
 COMMENT =	declarative mapper for SQLAlchemy
 
-MODPY_EGG_VERSION =	0.5.2
+MODPY_EGG_VERSION =	0.6.1
 DISTNAME =	Elixir-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
@@ -23,7 +23,8 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		::databases/py-sqlalchemy \
 			::security/py-crypto
-REGRESS_DEPENDS =	${RUN_DEPENDS}
+REGRESS_DEPENDS =	::databases/py-sqlite2 \
+			${RUN_DEPENDS}
 
 do-regress: fake
 	@cd ${WRKSRC}/tests; for i in `echo test_*.py`; do \
