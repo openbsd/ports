@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/07/27 00:50:52 simon Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/08/30 08:25:48 simon Exp $
 bin/mp2bug
 include/apache2/mod_perl.h
 include/apache2/modperl_apache_compat.h
@@ -107,7 +107,6 @@ ${P5ARCH}/Apache2/Response.pm
 ${P5ARCH}/Apache2/ServerRec.pm
 ${P5ARCH}/Apache2/ServerUtil.pm
 ${P5ARCH}/Apache2/SizeLimit.pm
-@comment ${P5ARCH}/Apache2/SizeLimit.pm.orig
 ${P5ARCH}/Apache2/SourceTables.pm
 ${P5ARCH}/Apache2/Status.pm
 ${P5ARCH}/Apache2/SubProcess.pm
