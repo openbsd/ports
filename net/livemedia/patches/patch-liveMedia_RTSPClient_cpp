@@ -1,0 +1,15 @@
+$OpenBSD: patch-liveMedia_RTSPClient_cpp,v 1.1 2008/08/30 08:31:28 landry Exp $
+Fixes tv-over-ip with my isp (free.fr) using vlc.
+--- liveMedia/RTSPClient.cpp.orig	Sat Aug  2 13:44:39 2008
++++ liveMedia/RTSPClient.cpp	Sat Aug  2 13:45:14 2008
+@@ -2100,9 +2100,7 @@ unsigned RTSPClient::getResponse1(char*& responseBuffe
+   Boolean success = False;
+   while (1) {
+     unsigned char firstByte;
+-    struct timeval timeout;
+-    timeout.tv_sec = 30; timeout.tv_usec = 0;
+-    if (readSocket(envir(), fInputSocketNum, &firstByte, 1, fromAddress, &timeout)
++    if (readSocket(envir(), fInputSocketNum, &firstByte, 1, fromAddress)
+ 	!= 1) break;
+     if (firstByte != '$') {
+       // Normal case: This is the start of a regular response; use it:
