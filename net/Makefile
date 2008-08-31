@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.538 2008/08/27 18:56:06 kili Exp $
+# $OpenBSD: Makefile,v 1.539 2008/08/31 19:46:40 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -450,8 +450,6 @@
      SUBDIR += yt
      SUBDIR += ytalk
      SUBDIR += ytalk,no_x11
-     SUBDIR += zebra
-     SUBDIR += zebra,snmp
      SUBDIR += zenirc
 
 .include <bsd.port.subdir.mk>
