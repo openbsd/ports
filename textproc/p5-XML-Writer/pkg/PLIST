@@ -1,4 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:44:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/08/31 23:09:00 jasper Exp $
 ${P5SITE}/XML/
 ${P5SITE}/XML/Writer.pm
 @man man/man3p/XML::Writer.3p
+share/examples/p5-XML-Writer/
+share/examples/p5-XML-Writer/data-mode-sample.pl
+share/examples/p5-XML-Writer/directory-as-atom.pl
+share/examples/p5-XML-Writer/double-escaping-example.pl
+share/examples/p5-XML-Writer/namespace-prefixes.pl
+share/examples/p5-XML-Writer/simple-xml.pl
+share/examples/p5-XML-Writer/writing-unicode.pl
+share/examples/p5-XML-Writer/xml-writer-string.pl
