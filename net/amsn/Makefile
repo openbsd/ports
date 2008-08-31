@@ -1,8 +1,8 @@
-#$OpenBSD: Makefile,v 1.3 2008/02/02 21:17:49 steven Exp $
+#$OpenBSD: Makefile,v 1.4 2008/08/31 17:16:22 steven Exp $
 
 COMMENT=	open source MSN Messenger clone
 
-DISTNAME=	amsn-0.97
+DISTNAME=	amsn-0.97.2
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.amsn-project.net/
@@ -20,26 +20,28 @@ WANTLIB=	ICE SM X11 m z stdc++
 
 LIB_DEPENDS=	jpeg::graphics/jpeg \
 		png::graphics/png
-RUN_DEPENDS=	:tk-8.4.*:x11/tk/8.4 \
+RUN_DEPENDS+=	${MODTK_RUN_DEPENDS} \
 		::security/tcltls \
 		::x11/bwidget \
 		:desktop-file-utils-*:devel/desktop-file-utils
-BUILD_DEPENDS= 	:tk-8.4.*:x11/tk/8.4 \
+BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS} \
 		::security/tcltls
+
+MODULES=	x11/tk
 
 USE_GMAKE=	Yes
 MAKE_FLAGS=	verbose=yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
-		--with-tk=${LOCALBASE}/lib/tk8.4
+CONFIGURE_ARGS=	--with-tcl=${MODTCL_LIBDIR} \
+		--with-tk=${MODTK_LIBDIR}
 
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-lm -L${LOCALBASE}/lib -fPIC" \
-		TK_INC_SPEC="${LOCALBASE}/include/tk8.4/generic" \
-		TCLSH="${LOCALBASE}/bin/tclsh8.4"
+		TK_INC_SPEC="${MODTK_INCDIR}/generic" \
+		TCLSH="${MODTCL_BIN}"
 
 pre-configure:
-	perl -pi -e 's|__LOCALBASE__|${LOCALBASE}|' ${WRKSRC}/amsn*
+	@${SUBST_CMD} ${WRKSRC}/amsn*
 
 post-install:
 .for a in amsn amsn-remote amsn-remote-CLI

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/02/02 21:17:50 steven Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/08/31 17:16:22 steven Exp $
 %%SHARED%%
 bin/amsn
 bin/amsn-remote
@@ -20,7 +20,6 @@ share/amsn/autoupdate.tcl
 share/amsn/balloon.tcl
 share/amsn/bugs.tcl
 share/amsn/chatwindow.tcl
-share/amsn/clgui.tcl
 share/amsn/config.tcl
 share/amsn/console.tcl
 share/amsn/contactlist.tcl
@@ -87,6 +86,7 @@ share/amsn/lang/langit
 share/amsn/lang/langko
 share/amsn/lang/langlt
 share/amsn/lang/langmk
+share/amsn/lang/langmt
 share/amsn/lang/langnl
 share/amsn/lang/langno
 share/amsn/lang/langoc
@@ -383,6 +383,7 @@ share/amsn/skins/default/pixmaps/mobile.png
 share/amsn/skins/default/pixmaps/moretabs.png
 share/amsn/skins/default/pixmaps/msnbot.png
 share/amsn/skins/default/pixmaps/mystatus_bg.png
+share/amsn/skins/default/pixmaps/newline.png
 share/amsn/skins/default/pixmaps/no-emblem.png
 share/amsn/skins/default/pixmaps/note.png
 share/amsn/skins/default/pixmaps/notesdispic.png

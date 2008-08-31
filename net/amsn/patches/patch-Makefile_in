@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2008/02/02 21:17:50 steven Exp $
---- Makefile.in.orig	Mon Dec 24 22:25:59 2007
-+++ Makefile.in	Sat Feb  2 19:37:03 2008
+$OpenBSD: patch-Makefile_in,v 1.3 2008/08/31 17:16:22 steven Exp $
+--- Makefile.in.orig	Thu May 29 00:46:00 2008
++++ Makefile.in	Sun Aug 31 11:41:07 2008
 @@ -11,10 +11,10 @@ STATIC		:= @STATIC@
  doc_files	:= docs INSTALL CREDITS FAQ GNUGPL HELP README TODO AGREEMENT remote.help
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2008/02/02 21:17:50 steven Exp $
  FILES_TO_INSTALL += plugins utils/sexytile
  FILES_TO_INSTALL += utils/log utils/uri utils/combobox
  
-@@ -77,7 +77,7 @@ USE_MMX		:= @USE_MMX@
+@@ -80,7 +80,7 @@ USE_MMX		:= @USE_MMX@
  # build final cflags
  CFLAGS   := @CFLAGS@
  ifeq (@DEBUG@,no)
@@ -23,34 +23,32 @@ $OpenBSD: patch-Makefile_in,v 1.2 2008/02/02 21:17:50 steven Exp $
  else
  CFLAGS   += -g3 -DDEBUG
  endif
-@@ -124,16 +124,24 @@ ifeq ($(FOUND_OS),linux)
+@@ -133,18 +133,18 @@ ifeq ($(FOUND_OS),linux)
  FILES_TO_INSTALL += utils/webcamsn/webcamsn.so utils/webcamsn/pkgIndex.tcl utils/TkCximage/TkCximage.so utils/TkCximage/pkgIndex.tcl utils/linux/capture/capture.so utils/linux/capture/pkgIndex.tcl utils/linux/linflash/flash.so utils/linux/linflash/pkgIndex.tcl utils/linux/traydock/libtray.so  utils/linux/traydock/pkgIndex.tcl utils/linux/capture/libng/plugins/drv0-v4l2.so utils/linux/capture/libng/plugins/drv1-v4l.so utils/linux/capture/libng/plugins/conv-mjpeg.so utils/linux/capture/libng/plugins/sn9c10x.so utils/tcl_siren/tcl_siren.so utils/tcl_siren/pkgIndex.tcl
  
  FILES_TO_EXCLUDE += AppMain.tcl
--else ifeq ($(FOUND_OS),bsd)
+-else 
+-	ifeq ($(FOUND_OS),bsd)
 +endif
++
 +ifeq ($(FOUND_OS),bsd)
  FILES_TO_INSTALL += utils/webcamsn/webcamsn.so utils/webcamsn/pkgIndex.tcl utils/TkCximage/TkCximage.so utils/TkCximage/pkgIndex.tcl utils/linux/linflash/flash.so utils/linux/linflash/pkgIndex.tcl utils/linux/traydock/libtray.so  utils/linux/traydock/pkgIndex.tcl utils/tcl_siren/tcl_siren.so utils/tcl_siren/pkgIndex.tcl
  
  FILES_TO_EXCLUDE += AppMain.tcl
--else ifeq ($(FOUND_OS),solaris)
+-	else 
+-		ifeq ($(FOUND_OS),solaris)
 +endif
++
 +ifeq ($(FOUND_OS),solaris)
  FILES_TO_INSTALL += utils/webcamsn/webcamsn.so utils/webcamsn/pkgIndex.tcl utils/TkCximage/TkCximage.so utils/TkCximage/pkgIndex.tcl utils/linux/capture/capture.so utils/linux/capture/pkgIndex.tcl utils/linux/linflash/flash.so utils/linux/linflash/pkgIndex.tcl utils/linux/traydock/libtray.so  utils/linux/traydock/pkgIndex.tcl utils/linux/capture/libng/plugins/drv0-v4l2.so utils/linux/capture/libng/plugins/conv-mjpeg.so utils/tcl_siren/tcl_siren.so utils/tcl_siren/pkgIndex.tcl
  
  FILES_TO_EXCLUDE += AppMain.tcl
+-		endif
+-	endif
  endif
-+ifeq ($(FOUND_OS),bsd)
-+FILES_TO_INSTALL += utils/TkCximage/TkCximage.so utils/TkCximage/pkgIndex.tcl utils/linux/traydock/libtray.so utils/linux/traydock/pkgIndex.tcl utils/webcamsn/pkgIndex.tcl utils/webcamsn/webcamsn.so
-+FILES_TO_EXCLUDE += AppMain.tcl utils/linux/capture/test.tcl
-+endif
  
-+
-+
  CONFIGURE_ARGS := @CONFIGURE_ARGS@
- 
- #########################################################
-@@ -176,9 +184,9 @@ install:: $(FILES_TO_INSTALL)
+@@ -189,9 +189,9 @@ install:: $(FILES_TO_INSTALL)
  		rm -Rf $(DESTDIR)$(dstdir)/$(PACKAGE)/$$p; \
  	done
  
@@ -63,35 +61,48 @@ $OpenBSD: patch-Makefile_in,v 1.2 2008/02/02 21:17:50 steven Exp $
  
  	cp $(srcdir)/amsn.desktop $(DESTDIR)$(dstdir)/applications/
  
-@@ -254,13 +262,15 @@ ifeq ($(FOUND_OS),linux)
+@@ -271,22 +271,29 @@ ifeq ($(FOUND_OS),linux)
        include $(tray_dir)/Rules.mk
        include $(linflash_dir)/Rules.mk
    endif
--else ifeq ($(FOUND_OS),bsd)
-+endif
-+ifeq ($(FOUND_OS),bsd)
-    ifeq ($(FOUND_X11),yes)
-        ADDLIBS    += ${X_LIBS} 
-       include $(tray_dir)/Rules.mk
-       include $(linflash_dir)/Rules.mk
-   endif
--else ifeq ($(FOUND_OS),solaris)
-+endif
-+ifeq ($(FOUND_OS),solaris)
-   include $(capture_dir)/Rules.mk
-   include $(capture_dir)/libng/Rules.mk
-   include $(capture_dir)/libng/plugins/Rules.mk
-@@ -269,6 +279,13 @@ else ifeq ($(FOUND_OS),solaris)
-       ADDLIBS	 += ${X_LIBS}
-       include $(tray_dir)/Rules.mk
-       include $(linflash_dir)/Rules.mk
-+  endif
+-else
+-  ifeq ($(FOUND_OS),mac)
 +endif
 +
 +ifeq ($(FOUND_OS),bsd)
 +   ifeq ($(FOUND_X11),yes)
 +      ADDLIBS    += ${X_LIBS}
 +      include $(tray_dir)/Rules.mk
-   endif
++  endif
++endif
++ifeq ($(FOUND_OS),mac)
+ 	include $(macosx_dir)/sndplay-src/Rules.mk
+ 	include $(macosx_dir)/growl1.0/Rules.mk
+ 	include $(macosx_dir)/growl1.0/src/Rules.mk
+ 	include $(macosx_dir)/tclCarbon/Rules.mk
+ 	include $(macosx_dir)/tclCarbon/src/Rules.mk
+-  endif
+-  ifeq ($(FOUND_OS),bsd)
++endif
++ifeq ($(FOUND_OS),bsd)
+     ifeq ($(FOUND_X11),yes)
+        ADDLIBS    += ${X_LIBS} 
+       include $(tray_dir)/Rules.mk
+       include $(linflash_dir)/Rules.mk
+     endif
+-  else
+-    ifeq ($(FOUND_OS),solaris)
++endif
++ifeq ($(FOUND_OS),solaris)
+       include $(capture_dir)/Rules.mk
+       include $(capture_dir)/libng/Rules.mk
+       include $(capture_dir)/libng/plugins/Rules.mk
+@@ -296,8 +303,6 @@ else
+         include $(tray_dir)/Rules.mk
+         include $(linflash_dir)/Rules.mk
+       endif
+-    endif
+-  endif
  endif
  
+ #########################################################

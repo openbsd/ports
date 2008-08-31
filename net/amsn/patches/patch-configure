@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2008/02/02 21:17:50 steven Exp $
---- configure.orig	Mon Dec 24 22:35:51 2007
-+++ configure	Sat Feb  2 20:13:16 2008
-@@ -1781,8 +1781,8 @@ case `uname -s` in
+$OpenBSD: patch-configure,v 1.3 2008/08/31 17:16:22 steven Exp $
+--- configure.orig	Fri Jul 25 16:47:03 2008
++++ configure	Sun Aug 31 11:37:29 2008
+@@ -1883,8 +1883,8 @@ case `uname -s` in
  	OpenBSD | FreeBSD | NetBSD)
  		# *BSD has important stuff (from ports)
  		# in /usr/local ...
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure,v 1.2 2008/02/02 21:17:50 steven Exp $
  		FOUND_OS="bsd"
  		;;
  	Darwin)
-@@ -1904,7 +1904,7 @@ echo X"$prefix" |
+@@ -2008,7 +2008,7 @@ $as_echo X"$prefix" |
  fi
  
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure,v 1.2 2008/02/02 21:17:50 steven Exp $
  VERSION=`echo "puts $::tcl_version ; exit" | ${TCLSH}`
  # Check whether --enable-version-check was given.
  if test "${enable_version_check+set}" = set; then
-@@ -3279,7 +3279,7 @@ echo $ECHO_N "checking tcl build dir... $ECHO_C" >&6; 
+@@ -3407,7 +3407,7 @@ $as_echo_n "checking tcl build dir... " >&6; }
  		/usr/lib64/tcl8.5.* \
  		/usr/local/lib64/tcl8.5 \
  		/usr/local/lib64/tcl8.5.* \
@@ -30,7 +30,7 @@ $OpenBSD: patch-configure,v 1.2 2008/02/02 21:17:50 steven Exp $
  
  	for i in $dirs ; do
  
-@@ -3427,7 +3427,7 @@ echo $ECHO_N "checking tk build dir... $ECHO_C" >&6; }
+@@ -3556,7 +3556,7 @@ $as_echo_n "checking tk build dir... " >&6; }
  		/usr/lib64/tk8.5.* \
  		/usr/local/lib64/tk8.5 \
  		/usr/local/lib64/tk8.5.* \
