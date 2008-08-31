@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/05/09 11:31:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2008/08/31 10:44:10 steven Exp $
 
 PKG_ARCH=	*
 
@@ -6,8 +6,8 @@ COMMENT=	high-level widget set for Tcl/Tk
 
 V=		1.8.0
 DISTNAME=	BWidget-$V
-PKGNAME=	bwidget-$V
-CATEGORIES=	x11 x11/tk
+PKGNAME=	bwidget-$Vp0
+CATEGORIES=	x11
 
 HOMEPAGE=	http://sourceforge.net/projects/tcllib/
 
@@ -19,7 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcllib/}
 
-RUN_DEPENDS=	:tk-8.4*:x11/tk/8.4
+MODULES=	x11/tk
+
+RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
