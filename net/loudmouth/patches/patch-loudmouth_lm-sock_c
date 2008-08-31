@@ -1,13 +1,13 @@
-$OpenBSD: patch-loudmouth_lm-sock_c,v 1.1 2008/08/20 16:11:11 jasper Exp $
---- loudmouth/lm-sock.c.orig	Mon Aug  4 13:31:31 2008
-+++ loudmouth/lm-sock.c	Mon Aug  4 13:36:34 2008
-@@ -28,7 +28,9 @@
+$OpenBSD: patch-loudmouth_lm-sock_c,v 1.2 2008/08/31 12:16:14 jasper Exp $
+--- loudmouth/lm-sock.c.orig	Sun Aug 31 13:42:29 2008
++++ loudmouth/lm-sock.c	Sun Aug 31 13:43:08 2008
+@@ -29,7 +29,9 @@
  #include <string.h>
  #include <unistd.h>
  #include <sys/socket.h>
 +#include <sys/types.h>
  #include <fcntl.h>
 +#include <netinet/in_systm.h>
- #include <netinet/in.h>
- #include <netinet/ip.h>
- #include <netinet/tcp.h>
+ 
+ /* Needed for BSD, LM-130 */
+ #ifdef HAVE_NETINET_IN_SYSTM_H
