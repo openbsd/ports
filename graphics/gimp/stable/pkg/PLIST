@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/08/28 14:53:06 brad Exp $
+@comment $OpenBSD: PLIST,v 1.15 2008/08/31 15:02:43 steven Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 %%SHARED%%
-@bin bin/gimp
+bin/gimp
 @bin bin/gimp-2.4
-@bin bin/gimp-console
+bin/gimp-console
 @bin bin/gimp-console-2.4
-@bin bin/gimp-remote
+bin/gimp-remote
 @bin bin/gimp-remote-2.4
 bin/gimptool-2.0
 include/gimp-2.0/
