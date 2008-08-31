@@ -2,5 +2,4 @@ This package only contains the gutenprint libraries and ijs driver.  To
 use gutenprint with your favorite spooler, install the corresponding
 package(s):
  * foomatic (lpr, cups, LPRng) -> foomatic-db-gutenprint
- * cups (direct cups printing) -> gutenprint-cups
  * gimp (print plugin) -> gutenprint-gimp

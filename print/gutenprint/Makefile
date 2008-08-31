@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/30 17:12:24 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2008/08/31 16:06:11 ajacoutot Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
@@ -6,7 +6,7 @@ COMMENT-gimp=		Gimp print plug-in
 
 V=			5.0.1
 DISTNAME=		gutenprint-${V}
-PKGNAME-main=		${DISTNAME}p2
+PKGNAME-main=		${DISTNAME}p3
 PKGNAME-foomatic=	foomatic-db-${DISTNAME}
 PKGNAME-gimp=		gutenprint-gimp-${V}p1
 CATEGORIES=		print
