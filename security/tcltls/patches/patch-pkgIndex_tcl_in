@@ -1,0 +1,10 @@
+$OpenBSD: patch-pkgIndex_tcl_in,v 1.1 2008/08/31 11:02:23 steven Exp $
+--- pkgIndex.tcl.in.orig	Sun Aug 31 12:19:12 2008
++++ pkgIndex.tcl.in	Sun Aug 31 12:18:31 2008
+@@ -5,5 +5,5 @@
+ #    replace the original which didn't include the commands from "tls.tcl".
+ #
+ 
+-package ifneeded tls 1.5 "[list load [file join $dir @RELPATH@ @tls_LIB_FILE@] ] ; [list source [file join $dir tls.tcl] ]"
++package ifneeded tls 1.50 "[list load [file join $dir @RELPATH@ @tls_LIB_FILE@] ] ; [list source [file join $dir tls.tcl] ]"
+ 

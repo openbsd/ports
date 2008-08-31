@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/07 17:31:20 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/08/31 11:02:23 steven Exp $
 
 COMMENT=	OpenSSL Tcl extension
 
 VERSION=	1.5.0
 DISTNAME=	tls${VERSION}-src
-PKGNAME=	tcltls-${VERSION}p0
+PKGNAME=	tcltls-${VERSION}p1
 SHARED_LIBS=	tls150	0.0
 
-CATEGORIES=	security lang/tcl
+CATEGORIES=	security
 
 HOMEPAGE=	http://tls.sourceforge.net/
 
@@ -23,17 +23,18 @@ WANTLIB=	ssl crypto
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tls/}
 
-RUN_DEPENDS=	:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION}
+MODULES=	lang/tcl
+
+RUN_DEPENDS=	${MODTCL_RUN_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 TCLTLS=		tls1.5
-TCL_VERSION=	8.4
 SUBST_VARS+=	TCLTLS
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-tcl=${LOCALBASE}/lib/tcl${TCL_VERSION} \
-		--with-tclinclude=${LOCALBASE}/include/tcl${TCL_VERSION} \
+		--with-tcl=${MODTCL_LIBDIR} \
+		--with-tclinclude=${MODTCL_INCDIR} \
 		--with-ssl-dir=/usr
 
 MAKE_FLAGS=	MYCFLAGS="${CFLAGS}"
