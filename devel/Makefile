@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.616 2008/08/29 09:20:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.617 2008/09/01 09:57:40 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -439,6 +439,7 @@
      SUBDIR += p5-PAR-Dist
      SUBDIR += p5-POE
      SUBDIR += p5-POE-Component-IKC
+     SUBDIR += p5-POE-Component-Pluggable
      SUBDIR += p5-POE-XS-Queue-Array
      SUBDIR += p5-Package-Generator
      SUBDIR += p5-PadWalker
