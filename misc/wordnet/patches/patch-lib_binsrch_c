@@ -1,0 +1,39 @@
+$OpenBSD: patch-lib_binsrch_c,v 1.1 2008/09/01 20:02:53 sthen Exp $
+--- lib/binsrch.c.orig	Wed Nov 29 21:02:21 2006
++++ lib/binsrch.c	Mon Sep  1 20:53:39 2008
+@@ -28,7 +28,7 @@ char *read_index(long offset, FILE *fp) {
+     char *linep;
+ 
+     linep = line;
+-    line[0] = '0';
++    line[0] = '\0';
+ 
+     fseek( fp, offset, SEEK_SET );
+     fgets(linep, LINE_LEN, fp);
+@@ -58,6 +58,8 @@ char *bin_search(char *searchkey, FILE *fp)
+         last_bin_search_offset = ftell( fp );
+ 	fgets(linep, LINE_LEN, fp);
+ 	length = (int)(strchr(linep, ' ') - linep);
++	if (length > (sizeof(key) - 1))
++            return(NULL);
+ 	strncpy(key, linep, length);
+ 	key[length] = '\0';
+ 	if(strcmp(key, searchkey) < 0) {
+@@ -110,6 +112,8 @@ static int bin_search_key(char *searchkey, FILE *fp)
+ 	line[length++] =  c;
+     if (getc(fp) == EOF) {	/* only 1 line in file */
+ 	length = (int)(strchr(linep, ' ') - linep);
++	if (length > (sizeof(key) - 1))
++            return(0);
+ 	strncpy(key, linep, length);
+ 	key[length] = '\0';
+ 	if(strcmp(key, searchkey) > 0) {
+@@ -132,6 +136,8 @@ static int bin_search_key(char *searchkey, FILE *fp)
+ 	if (fgets(linep, LINE_LEN, fp) != NULL) {
+   	    offset2 = ftell(fp); /* offset at start of next line */
+ 	    length = (int)(strchr(linep, ' ') - linep);
++	    if (length > (sizeof(key) - 1))
++                return(0);
+ 	    strncpy(key, linep, length);
+ 	    key[length] = '\0';
+ 	    if(strcmp(key, searchkey) < 0) {	/* further in file */

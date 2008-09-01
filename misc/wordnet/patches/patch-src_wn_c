@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_wn_c,v 1.1 2008/09/01 20:02:53 sthen Exp $
+--- src/wn.c.orig	Thu Nov 30 21:40:26 2006
++++ src/wn.c	Mon Sep  1 20:53:39 2008
+@@ -129,7 +129,7 @@ static void printusage(), printlicense(),
+        printsearches(char *, int, unsigned long);
+ static int error_message(char *);
+ 
+-main(int argc,char *argv[])
++int main(int argc,char *argv[])
+ {
+     display_message = error_message;
+     
+@@ -225,14 +225,14 @@ static int do_search(char *searchword, int pos, int se
+ 	printf("\n%s of %s %s\n%s",
+ 	       label, partnames[pos], searchword, outbuf);
+ 
+-    if (morphword = morphstr(searchword, pos))
++    if ((morphword = morphstr(searchword, pos)) != NULL)
+ 	do {
+ 	    outbuf = findtheinfo(morphword, pos, search, whichsense);
+ 	    totsenses += wnresults.printcnt;
+ 	    if (strlen(outbuf) > 0) 
+ 		printf("\n%s of %s %s\n%s",
+ 		       label, partnames[pos], morphword, outbuf);
+-	} while (morphword = morphstr(NULL, pos));
++	} while ((morphword = morphstr(NULL, pos)) != NULL);
+ 
+     return(totsenses);
+ }

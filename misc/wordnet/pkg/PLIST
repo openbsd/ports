@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/12 00:32:01 sthen Exp $
-bin/wishwn
-bin/wn
+@comment $OpenBSD: PLIST,v 1.2 2008/09/01 20:02:53 sthen Exp $
+@bin bin/wishwn
+@bin bin/wn
 bin/wnb
 include/wn.h
 lib/libWN.a

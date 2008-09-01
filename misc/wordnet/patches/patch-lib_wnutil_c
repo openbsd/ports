@@ -1,0 +1,97 @@
+$OpenBSD: patch-lib_wnutil_c,v 1.1 2008/09/01 20:02:53 sthen Exp $
+--- lib/wnutil.c.orig	Sat Jan 20 20:50:23 2007
++++ lib/wnutil.c	Mon Sep  1 20:53:39 2008
+@@ -48,7 +48,7 @@ int wninit(void)
+     char *env;
+ 
+     if (!done) {
+-	if (env = getenv("WNDBVERSION")) {
++	if ((env = getenv("WNDBVERSION")) != NULL) {
+ 	    wnrelease = strdup(env);	/* set release */
+ 	    assert(wnrelease);
+ 	}
+@@ -70,7 +70,7 @@ int re_wninit(void)
+ 
+     closefps();
+ 
+-    if (env = getenv("WNDBVERSION")) {
++    if ((env = getenv("WNDBVERSION")) != NULL) {
+ 	wnrelease = strdup(env);	/* set release */
+ 	assert(wnrelease);
+     }
+@@ -149,25 +149,25 @@ static int do_init(void)
+ 	sprintf(searchdir, DEFAULTPATH);
+ #else
+     if ((env = getenv("WNSEARCHDIR")) != NULL)
+-	strcpy(searchdir, env);
++	snprintf(searchdir, sizeof(searchdir), "%s", env);
+     else if ((env = getenv("WNHOME")) != NULL)
+-	sprintf(searchdir, "%s%s", env, DICTDIR);
++	snprintf(searchdir, sizeof(searchdir), "%s%s", env, DICTDIR);
+     else
+ 	strcpy(searchdir, DEFAULTPATH);
+ #endif
+ 
+     for (i = 1; i < NUMPARTS + 1; i++) {
+-	sprintf(tmpbuf, DATAFILE, searchdir, partnames[i]);
++	snprintf(tmpbuf, sizeof(tmpbuf), DATAFILE, searchdir, partnames[i]);
+ 	if((datafps[i] = fopen(tmpbuf, "r")) == NULL) {
+-	    sprintf(msgbuf,
++	    snprintf(msgbuf, sizeof(msgbuf),
+ 		    "WordNet library error: Can't open datafile(%s)\n",
+ 		    tmpbuf);
+ 	    display_message(msgbuf);
+ 	    openerr = -1;
+ 	}
+-	sprintf(tmpbuf, INDEXFILE, searchdir, partnames[i]);
++	snprintf(tmpbuf, sizeof(tmpbuf), INDEXFILE, searchdir, partnames[i]);
+ 	if((indexfps[i] = fopen(tmpbuf, "r")) == NULL) {
+-	    sprintf(msgbuf,
++	    snprintf(msgbuf, sizeof(msgbuf),
+ 		    "WordNet library error: Can't open indexfile(%s)\n",
+ 		    tmpbuf);
+ 	    display_message(msgbuf);
+@@ -178,35 +178,35 @@ static int do_init(void)
+     /* This file isn't used by the library and doesn't have to
+        be present.  No error is reported if the open fails. */
+ 
+-    sprintf(tmpbuf, SENSEIDXFILE, searchdir);
++    snprintf(tmpbuf, sizeof(tmpbuf), SENSEIDXFILE, searchdir);
+     sensefp = fopen(tmpbuf, "r");
+ 
+     /* If this file isn't present, the runtime code will skip printint out
+        the number of times each sense was tagged. */
+ 
+-    sprintf(tmpbuf, CNTLISTFILE, searchdir);
++    snprintf(tmpbuf, sizeof(tmpbuf), CNTLISTFILE, searchdir);
+     cntlistfp = fopen(tmpbuf, "r");
+ 
+     /* This file doesn't have to be present.  No error is reported if the
+        open fails. */
+ 
+-    sprintf(tmpbuf, KEYIDXFILE, searchdir);
++    snprintf(tmpbuf, sizeof(tmpbuf), KEYIDXFILE, searchdir);
+     keyindexfp = fopen(tmpbuf, "r");
+ 
+-    sprintf(tmpbuf, REVKEYIDXFILE, searchdir);
++    snprintf(tmpbuf, sizeof(tmpbuf), REVKEYIDXFILE, searchdir);
+     revkeyindexfp = fopen(tmpbuf, "r");
+ 
+-    sprintf(tmpbuf, VRBSENTFILE, searchdir);
++    snprintf(tmpbuf, sizeof(tmpbuf), VRBSENTFILE, searchdir);
+     if ((vsentfilefp = fopen(tmpbuf, "r")) == NULL) {
+-	sprintf(msgbuf,
++	snprintf(msgbuf, sizeof(msgbuf),
+ "WordNet library warning: Can't open verb example sentence file(%s)\n",
+ 		tmpbuf);
+ 	display_message(msgbuf);
+     }
+ 
+-    sprintf(tmpbuf, VRBIDXFILE, searchdir);
++    snprintf(tmpbuf, sizeof(tmpbuf), VRBIDXFILE, searchdir);
+     if ((vidxfilefp = fopen(tmpbuf, "r")) == NULL) {
+-	sprintf(msgbuf,
++	snprintf(msgbuf, sizeof(msgbuf),
+ "WordNet library warning: Can't open verb example sentence index file(%s)\n",
+ 		tmpbuf);
+ 	display_message(msgbuf);

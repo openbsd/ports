@@ -1,0 +1,187 @@
+$OpenBSD: patch-lib_morph_c,v 1.1 2008/09/01 20:02:53 sthen Exp $
+--- lib/morph.c.orig	Wed Jan  3 21:51:35 2007
++++ lib/morph.c	Mon Sep  1 20:53:39 2008
+@@ -51,24 +51,24 @@ static struct {
+     char *str;
+     int strlen;
+ } prepositions[NUMPREPS] = {
+-    "to", 2,
+-    "at", 2,
+-    "of", 2,
+-    "on", 2,
+-    "off", 3,
+-    "in", 2,
+-    "out", 3,
+-    "up", 2,
+-    "down", 4,
+-    "from", 4,
+-    "with", 4,
+-    "into", 4,
+-    "for", 3,
+-    "about", 5,
+-    "between", 7,
++    { "to", 2 },
++    { "at", 2 },
++    { "of", 2 },
++    { "on", 2 },
++    { "off", 3 },
++    { "in", 2 },
++    { "out", 3 },
++    { "up", 2 },
++    { "down", 4 },
++    { "from", 4 },
++    { "with", 4 },
++    { "into", 4 },
++    { "for", 3 },
++    { "about", 5 },
++    { "between", 7 }
+ };
+ 
+-static FILE *exc_fps[NUMPARTS + 1];
++static FILE *exc_fps[NUMPARTS];
+ 
+ static int do_init();
+ static int strend(char *, char *);
+@@ -100,7 +100,7 @@ int re_morphinit(void)
+ {
+     int i;
+ 
+-    for (i = 1; i <= NUMPARTS; i++) {
++    for (i = 0; i < NUMPARTS; i++) {
+ 	if (exc_fps[i] != NULL) {
+ 	    fclose(exc_fps[i]); exc_fps[i] = NULL;
+ 	}
+@@ -144,18 +144,19 @@ static int do_init(void)
+     } else
+ 	sprintf(searchdir, DEFAULTPATH);
+ #else
+-    if ((env = getenv("WNSEARCHDIR")) != NULL)
+-	strcpy(searchdir, env);
+-    else if ((env = getenv("WNHOME")) != NULL)
+-	sprintf(searchdir, "%s%s", env, DICTDIR);
+-    else
++    if ((env = getenv("WNSEARCHDIR")) != NULL) {
++	snprintf(searchdir, sizeof(searchdir), "%s", env);
++    } else if ((env = getenv("WNHOME")) != NULL) {
++	snprintf(searchdir, sizeof(searchdir), "%s%s", env, DICTDIR);
++    } else {
+ 	strcpy(searchdir, DEFAULTPATH);
++    }
+ #endif
+ 
+-    for (i = 1; i <= NUMPARTS; i++) {
+-	sprintf(fname, EXCFILE, searchdir, partnames[i]);
++    for (i = 0; i < NUMPARTS; i++) {
++	snprintf(fname, sizeof(fname), EXCFILE, searchdir, partnames[i+1]);
+ 	if ((exc_fps[i] = fopen(fname, "r")) == NULL) {
+-	    sprintf(msgbuf,
++	    snprintf(msgbuf, sizeof(msgbuf),
+ 		    "WordNet library error: Can't open exception file(%s)\n\n",
+ 		    fname);
+ 	    display_message(msgbuf);
+@@ -178,13 +179,16 @@ char *morphstr(char *origstr, int pos)
+     int prep;
+     char *end_idx1, *end_idx2;
+     char *append;
+-    
++
+     if (pos == SATELLITE)
+ 	pos = ADJ;
+ 
+     /* First time through for this string */
+ 
+     if (origstr != NULL) {
++        if (strlen(origstr) > WORDBUF - 1)
++            return(NULL);
++
+ 	/* Assume string hasn't had spaces substitued with '_' */
+ 	strtolower(strsubst(strcpy(str, origstr), ' ', '_'));
+ 	searchstr[0] = '\0';
+@@ -232,7 +236,7 @@ char *morphstr(char *origstr, int pos)
+ 		if (end_idx < 0) return(NULL);		/* shouldn't do this */
+ 		strncpy(word, str + st_idx, end_idx - st_idx);
+ 		word[end_idx - st_idx] = '\0';
+-		if(tmp = morphword(word, pos))
++		if ((tmp = morphword(word, pos)) != NULL)
+ 		    strcat(searchstr,tmp);
+ 		else
+ 		    strcat(searchstr,word);
+@@ -240,7 +244,7 @@ char *morphstr(char *origstr, int pos)
+ 		st_idx = end_idx + 1;
+ 	    }
+ 	    
+-	    if(tmp = morphword(strcpy(word, str + st_idx), pos)) 
++	    if ((tmp = morphword(strcpy(word, str + st_idx), pos)) != NULL)
+ 		strcat(searchstr,tmp);
+ 	    else
+ 		strcat(searchstr,word);
+@@ -270,16 +274,15 @@ char *morphword(char *word, int pos)
+ {
+     int offset, cnt;
+     int i;
+-    static char retval[WORDBUF];
+-    char *tmp, tmpbuf[WORDBUF], *end;
+-    
+-    sprintf(retval,"");
+-    sprintf(tmpbuf, "");
+-    end = "";
+-    
++    static char retval[WORDBUF] = "";
++    char *tmp, tmpbuf[WORDBUF] = "", *end = "";
++
+     if(word == NULL) 
+ 	return(NULL);
+ 
++    if (strlen(word) > WORDBUF - 1)
++        return(NULL);
++
+     /* first look for word on exception list */
+     
+     if((tmp = exc_lookup(word, pos)) != NULL)
+@@ -335,7 +338,10 @@ static char *wordbase(char *word, int ender)
+ {
+     char *pt1;
+     static char copy[WORDBUF];
+-    
++
++    if (strlen(word) > WORDBUF - 1)
++        return(NULL);
++
+     strcpy(copy, word);
+     if(strend(copy,sufx[ender])) {
+ 	pt1=strchr(copy,'\0');
+@@ -368,13 +374,14 @@ static char *exc_lookup(char *word, int pos)
+ {
+     static char line[WORDBUF], *beglp, *endlp;
+     char *excline;
+-    int found = 0;
+ 
+     if (exc_fps[pos] == NULL)
+ 	return(NULL);
+ 
+     /* first time through load line from exception file */
+     if(word != NULL){
++        if (strlen(word) > WORDBUF - 1)
++           return(NULL);
+ 	if ((excline = bin_search(word, exc_fps[pos])) != NULL) {
+ 	    strcpy(line, excline);
+ 	    endlp = strchr(line,' ');
+@@ -403,6 +410,9 @@ static char *morphprep(char *s)
+     char word[WORDBUF], end[WORDBUF];
+     static char retval[WORDBUF];
+ 
++    if (strlen(s) > WORDBUF - 1)
++        return (NULL);
++
+     /* Assume that the verb is the first word in the phrase.  Strip it
+        off, check for validity, then try various morphs with the
+        rest of the phrase tacked on, trying to find a match. */
+@@ -410,7 +420,7 @@ static char *morphprep(char *s)
+     rest = strchr(s, '_');
+     last = strrchr(s, '_');
+     if (rest != last) {		/* more than 2 words */
+-	if (lastwd = morphword(last + 1, NOUN)) {
++	if ((lastwd = morphword(last + 1, NOUN)) != NULL) {
+ 	    strncpy(end, rest, last - rest + 1);
+ 	    end[last-rest+1] = '\0';
+ 	    strcat(end, lastwd);
