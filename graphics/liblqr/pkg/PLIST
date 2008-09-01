@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/01 11:03:29 espie Exp $
+%%SHARED%%
+include/lqr-1/
+include/lqr-1/lqr/
+include/lqr-1/lqr.h
+include/lqr-1/lqr/lqr_base.h
+include/lqr-1/lqr/lqr_carver_bias_pub.h
+include/lqr-1/lqr/lqr_carver_list_pub.h
+include/lqr-1/lqr/lqr_carver_pub.h
+include/lqr-1/lqr/lqr_cursor_pub.h
+include/lqr-1/lqr/lqr_gradient_pub.h
+include/lqr-1/lqr/lqr_progress_pub.h
+include/lqr-1/lqr/lqr_vmap_list_pub.h
+include/lqr-1/lqr/lqr_vmap_pub.h
+lib/liblqr-1.a
+lib/liblqr-1.la
+lib/pkgconfig/
+lib/pkgconfig/lqr-1.pc

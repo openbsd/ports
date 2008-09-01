@@ -1,0 +1,7 @@
+liblqr (liquid resize) implements a smart-resize algorithm from 2007 SigGraph.
+This algorithm works by finding paths of least energy that traverse an image
+from top to bottom (or left to right) in an image, and carving the image
+by removing the line.  
+
+The algorithm can also be reversed, and used to insert a line of 
+averaged pixels to enlarge the picture.

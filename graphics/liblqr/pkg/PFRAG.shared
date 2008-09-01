@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/09/01 11:03:29 espie Exp $
+@lib lib/liblqr-1.so.${LIBlqr-1_VERSION}
