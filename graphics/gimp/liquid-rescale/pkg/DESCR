@@ -1,0 +1,4 @@
+A gimp plugin using the liquid rescale library.
+
+The plugin allows you to choose features to preserve/erase using layers
+before using the library proper.
