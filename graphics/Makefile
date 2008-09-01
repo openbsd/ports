@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.218 2008/08/19 22:33:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.219 2008/09/01 11:17:54 espie Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -100,6 +100,7 @@
      SUBDIR += libkexif
      SUBDIR += libkexiv2
      SUBDIR += libkipi
+     SUBDIR += liblqr
      SUBDIR += libmng
      SUBDIR += libmpeg2
      SUBDIR += libungif
