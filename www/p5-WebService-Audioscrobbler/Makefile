@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/08/29 13:24:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/09/01 16:25:16 jasper Exp $
 
 COMMENT=	interface to the Audioscrobbler WebService API
 
-DISTNAME=	WebService-Audioscrobbler-0.05
+DISTNAME=	WebService-Audioscrobbler-0.07
 CATEGORIES=	www audio
 
 MODULES=	cpan
