@@ -1,9 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/09/27 15:15:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/09/01 09:54:49 jasper Exp $
 ${P5SITE}/POE/
 ${P5SITE}/POE.pm
-${P5SITE}/POE/API/
-${P5SITE}/POE/API/Ctl.pm
-${P5SITE}/POE/API/ResLoader.pm
 ${P5SITE}/POE/Component/
 ${P5SITE}/POE/Component.pm
 ${P5SITE}/POE/Component/Client/
@@ -46,7 +43,6 @@ ${P5SITE}/POE/Queue/Array.pm
 ${P5SITE}/POE/Resource/
 ${P5SITE}/POE/Resource.pm
 ${P5SITE}/POE/Resource/Aliases.pm
-${P5SITE}/POE/Resource/Controls.pm
 ${P5SITE}/POE/Resource/Events.pm
 ${P5SITE}/POE/Resource/Extrefs.pm
 ${P5SITE}/POE/Resource/FileHandles.pm
@@ -66,8 +62,6 @@ ${P5SITE}/POE/Wheel/ReadWrite.pm
 ${P5SITE}/POE/Wheel/Run.pm
 ${P5SITE}/POE/Wheel/SocketFactory.pm
 @man man/man3p/POE.3p
-@man man/man3p/POE::API::Ctl.3p
-@man man/man3p/POE::API::ResLoader.3p
 @man man/man3p/POE::Component.3p
 @man man/man3p/POE::Component::Client::TCP.3p
 @man man/man3p/POE::Component::Server::TCP.3p
@@ -101,7 +95,6 @@ ${P5SITE}/POE/Wheel/SocketFactory.pm
 @man man/man3p/POE::Queue::Array.3p
 @man man/man3p/POE::Resource.3p
 @man man/man3p/POE::Resource::Aliases.3p
-@man man/man3p/POE::Resource::Controls.3p
 @man man/man3p/POE::Resource::Events.3p
 @man man/man3p/POE::Resource::Extrefs.3p
 @man man/man3p/POE::Resource::FileHandles.3p
