@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/02/14 08:52:51 winiger Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/09/01 19:13:05 eric Exp $
 @option no-default-conflict
 @conflict py-Imaging-*-python${MODPY_VERSION}
 @pkgpath graphics/py-Imaging
+include/python${MODPY_VERSION}/ImPlatform.h
+include/python${MODPY_VERSION}/Imaging.h
 lib/python${MODPY_VERSION}/site-packages/PIL/
 lib/python${MODPY_VERSION}/site-packages/PIL.pth
 lib/python${MODPY_VERSION}/site-packages/PIL/ArgImagePlugin.py
@@ -58,6 +60,8 @@ lib/python${MODPY_VERSION}/site-packages/PIL/ImageColor.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageColor.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageDraw.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageDraw.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageDraw2.py
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageDraw2.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageEnhance.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageEnhance.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageFile.py
@@ -72,12 +76,18 @@ lib/python${MODPY_VERSION}/site-packages/PIL/ImageGL.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageGL.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageGrab.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageGrab.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageMath.py
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageMath.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageMode.py
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageMode.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageOps.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageOps.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImagePalette.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImagePalette.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImagePath.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImagePath.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageQt.py
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageQt.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageSequence.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageSequence.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageStat.py
@@ -154,4 +164,5 @@ lib/python${MODPY_VERSION}/site-packages/PIL/__init__.py
 lib/python${MODPY_VERSION}/site-packages/PIL/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/_imaging.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingft.so
+lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmath.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingtk.so
