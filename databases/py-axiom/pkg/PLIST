@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/03 12:40:49 eric Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/09/01 19:10:22 eric Exp $
 bin/axiomatic
 lib/python${MODPY_VERSION}/site-packages/Axiom-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/axiom/
 lib/python${MODPY_VERSION}/site-packages/axiom/__init__.py
 lib/python${MODPY_VERSION}/site-packages/axiom/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/axiom/_apsw.py
-lib/python${MODPY_VERSION}/site-packages/axiom/_apsw.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/_fincache.py
 lib/python${MODPY_VERSION}/site-packages/axiom/_fincache.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/_pysqlite2.py
@@ -55,14 +53,14 @@ lib/python${MODPY_VERSION}/site-packages/axiom/iaxiom.py
 lib/python${MODPY_VERSION}/site-packages/axiom/iaxiom.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/item.py
 lib/python${MODPY_VERSION}/site-packages/axiom/item.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/listversions.py
+lib/python${MODPY_VERSION}/site-packages/axiom/listversions.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/plugins/
 @unexec /bin/rm %D/lib/python${MODPY_VERSION}/site-packages/axiom/plugins/dropin.cache
 lib/python${MODPY_VERSION}/site-packages/axiom/plugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/axiom/plugins/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/axiom/plugins/browsecmd.py
-lib/python${MODPY_VERSION}/site-packages/axiom/plugins/browsecmd.pyc
-lib/python${MODPY_VERSION}/site-packages/axiom/plugins/userbasecmd.py
-lib/python${MODPY_VERSION}/site-packages/axiom/plugins/userbasecmd.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/plugins/axiom_plugins.py
+lib/python${MODPY_VERSION}/site-packages/axiom/plugins/axiom_plugins.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/queryutil.py
 lib/python${MODPY_VERSION}/site-packages/axiom/queryutil.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/scheduler.py
@@ -91,6 +89,8 @@ lib/python${MODPY_VERSION}/site-packages/axiom/test/brokenapp.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/brokenapp.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/cursortest.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/cursortest.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/deleteswordapp.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/deleteswordapp.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/__init__.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/__init__.pyc
@@ -159,8 +159,6 @@ lib/python${MODPY_VERSION}/site-packages/axiom/test/openthenload.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/openthenload.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/path_postcopy.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/path_postcopy.pyc
-lib/python${MODPY_VERSION}/site-packages/axiom/test/test_apsw.py
-lib/python${MODPY_VERSION}/site-packages/axiom/test/test_apsw.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/test_attributes.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/test_attributes.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/test_axiomatic.py
@@ -179,6 +177,8 @@ lib/python${MODPY_VERSION}/site-packages/axiom/test/test_inheritance.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/test_inheritance.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/test_item.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/test_item.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/test_listversions.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/test_listversions.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/test_mixin.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/test_mixin.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/test_paginate.py
@@ -217,10 +217,35 @@ lib/python${MODPY_VERSION}/site-packages/axiom/test/test_xatop.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/test_xatop.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/toonewapp.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/toonewapp.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/__init__.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/override_init_new.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/override_init_new.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/override_init_old.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/override_init_old.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/reentrant_new.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/reentrant_new.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/reentrant_old.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/reentrant_old.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/replace_attribute_new.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/replace_attribute_new.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/replace_attribute_old.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/replace_attribute_old.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/replace_delete_new.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/replace_delete_new.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/replace_delete_old.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/replace_delete_old.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/two_upgrades_new.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/two_upgrades_new.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/two_upgrades_old.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/upgrade_fixtures/two_upgrades_old.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/util.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/util.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/upgrade.py
 lib/python${MODPY_VERSION}/site-packages/axiom/upgrade.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/userbase.py
 lib/python${MODPY_VERSION}/site-packages/axiom/userbase.pyc
-@exec %D/sbin/twisted-regen-dropin.cache axiom.plugins
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/axiom_plugins.py
+lib/python${MODPY_VERSION}/site-packages/twisted/plugins/axiom_plugins.pyc
+@exec %D/sbin/twisted-regen-dropin.cache twisted.plugins axiom.plugins
