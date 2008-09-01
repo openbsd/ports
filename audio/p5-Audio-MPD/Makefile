@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2008/04/15 21:01:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2008/09/01 09:03:34 jasper Exp $
 
 COMMENT=		module for communicating with MPD servers
-DISTNAME=		Audio-MPD-0.19.1
+DISTNAME=		Audio-MPD-0.19.4
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
