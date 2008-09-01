@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/06/08 21:24:48 eric Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/09/01 19:11:04 eric Exp $
 bin/nevow-xmlgettext
 bin/nit
 lib/python${MODPY_VERSION}/site-packages/Nevow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -29,6 +29,8 @@ lib/python${MODPY_VERSION}/site-packages/nevow/
 lib/python${MODPY_VERSION}/site-packages/nevow/Canvas.swf
 lib/python${MODPY_VERSION}/site-packages/nevow/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nevow/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/nevow/_flat.py
+lib/python${MODPY_VERSION}/site-packages/nevow/_flat.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/_version.py
 lib/python${MODPY_VERSION}/site-packages/nevow/_version.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/_widget_plugin.py
@@ -45,6 +47,8 @@ lib/python${MODPY_VERSION}/site-packages/nevow/blocks.py
 lib/python${MODPY_VERSION}/site-packages/nevow/blocks.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/canvas.py
 lib/python${MODPY_VERSION}/site-packages/nevow/canvas.pyc
+lib/python${MODPY_VERSION}/site-packages/nevow/compression.py
+lib/python${MODPY_VERSION}/site-packages/nevow/compression.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/compy.py
 lib/python${MODPY_VERSION}/site-packages/nevow/compy.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/context.py
@@ -117,6 +121,7 @@ lib/python${MODPY_VERSION}/site-packages/nevow/js/Nevow/Test/
 lib/python${MODPY_VERSION}/site-packages/nevow/js/Nevow/Test/ReconnectAcceptanceTest.js
 lib/python${MODPY_VERSION}/site-packages/nevow/js/Nevow/Test/TestInit.js
 lib/python${MODPY_VERSION}/site-packages/nevow/js/Nevow/Test/TestMessageDelivery.js
+lib/python${MODPY_VERSION}/site-packages/nevow/js/Nevow/Test/TestTabbedPane.js
 lib/python${MODPY_VERSION}/site-packages/nevow/js/Nevow/Test/TestWidget.js
 lib/python${MODPY_VERSION}/site-packages/nevow/js/Nevow/Test/Util.js
 lib/python${MODPY_VERSION}/site-packages/nevow/js/Nevow/Test/WidgetUtil.js
@@ -201,6 +206,8 @@ lib/python${MODPY_VERSION}/site-packages/nevow/test/test_appserver.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_appserver.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_athena.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_athena.pyc
+lib/python${MODPY_VERSION}/site-packages/nevow/test/test_compression.py
+lib/python${MODPY_VERSION}/site-packages/nevow/test/test_compression.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_consolejstest.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_consolejstest.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_context.py
@@ -231,6 +238,8 @@ lib/python${MODPY_VERSION}/site-packages/nevow/test/test_livepage.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_livepage.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_loaders.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_loaders.pyc
+lib/python${MODPY_VERSION}/site-packages/nevow/test/test_newflat.py
+lib/python${MODPY_VERSION}/site-packages/nevow/test/test_newflat.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_nit.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_nit.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_package/
@@ -297,6 +306,7 @@ share/examples/py-nevow/athenademo/__init__.py
 share/examples/py-nevow/athenademo/benchmark.js
 share/examples/py-nevow/athenademo/benchmark.py
 share/examples/py-nevow/athenademo/calculator.html
+share/examples/py-nevow/athenademo/calculator.js
 share/examples/py-nevow/athenademo/calculator.py
 share/examples/py-nevow/athenademo/typeahead.html
 share/examples/py-nevow/athenademo/typeahead.py
