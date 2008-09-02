@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 01:40:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/09/02 14:09:51 jasper Exp $
 
 COMMENT=	MARC (machine readable cataloging format)
 CATEGORIES=	converters
 
-DISTNAME=	MARC-Record-1.38
+DISTNAME=	MARC-Record-2.0.0
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
