@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2008/07/26 09:56:36 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2008/09/02 21:51:42 bernd Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
-V=		6.0.0
+V=		6.0.3
 DISTNAME=	offlineimap_${V}
 CATEGORIES=	mail
 PKGNAME=	${DISTNAME:S/_/-/}
@@ -29,6 +29,7 @@ BUILD_DEPENDS=	::textproc/docbook-to-man
 WRKDIST=	${WRKDIR}/offlineimap
 
 EXAMPLESDIR=	${PREFIX}/share/examples/offlineimap
+SUBST_VARS=	V
 
 post-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/docbook-to-man offlineimap.sgml \

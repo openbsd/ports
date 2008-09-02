@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/07/26 09:56:36 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/09/02 21:51:42 bernd Exp $
 bin/offlineimap
 lib/python${MODPY_VERSION}/site-packages/offlineimap/
-lib/python${MODPY_VERSION}/site-packages/offlineimap-6.0.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/offlineimap-${V}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/offlineimap/CustomConfig.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/CustomConfig.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/__init__.py
