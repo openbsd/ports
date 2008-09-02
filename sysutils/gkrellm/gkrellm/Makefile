@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2008/08/21 07:23:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2008/09/02 11:28:05 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,8 +7,8 @@ COMMENT-client=	single process stack of system monitors for GTK+2
 
 V=		2.3.1
 DISTNAME=	gkrellm-${V}
-PKGNAME-main=	gkrellm-server-${V}p2
-PKGNAME-client=	gkrellm-${V}p3
+PKGNAME-main=	gkrellm-server-${V}p3
+PKGNAME-client=	gkrellm-${V}p4
 CATEGORIES=	sysutils sysutils/gkrellm
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>

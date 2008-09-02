@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.10 2008/08/21 07:23:44 ajacoutot Exp $
---- src/sysdeps/openbsd.c.orig	Sat Jul  7 01:54:22 2007
-+++ src/sysdeps/openbsd.c	Tue Jul  1 10:48:13 2008
+$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.11 2008/09/02 11:28:05 landry Exp $
+--- src/sysdeps/openbsd.c.orig	Fri Jul  6 16:54:22 2007
++++ src/sysdeps/openbsd.c	Sat Jul 12 09:14:03 2008
 @@ -53,41 +53,71 @@ gkrellm_sys_main_cleanup(void)
  #include <sys/dkstat.h>
  #include <kvm.h>
@@ -93,7 +93,133 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.10 2008/08/21 07:23:44 ajacoutot Exp $
  /* ===================================================================== */
  /* Proc monitor interface */
  
-@@ -293,7 +323,7 @@ gkrellm_sys_sensors_init(void)
+@@ -259,41 +289,122 @@ gkrellm_sys_mem_init(void)
+ 
+ 
+ /* ===================================================================== */
+-/* Sensor monitor interface - not implemented */
++/* Sensor monitor interface */
+ 
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <sys/sensors.h>
++#include <errno.h>
++
++static gboolean
++get_sensor(int dev, int type, int num, gfloat *val)
++{
++	int mib[5] = { CTL_HW, HW_SENSORS };
++	struct sensor sen;
++	size_t len = sizeof(sen);
++
++	mib[2] = dev;
++	mib[3] = type;
++	mib[4] = num;
++	if (sysctl(mib, 5, &sen, &len, NULL, 0) == -1 ||
++	    (SENSOR_FINVALID|SENSOR_FUNKNOWN) & sen.flags)
++		return FALSE;
++
++	*val = (gfloat)sen.value;
++	return TRUE;
++}
++
+ gboolean
+ gkrellm_sys_sensors_get_temperature(gchar *device_name, gint id,
+ 		gint iodev, gint interface, gfloat *temp)
+-	{
+-	return FALSE;
+-	}
++{
++	return get_sensor(id, iodev, interface, temp);
++}
+ 
+ gboolean
+ gkrellm_sys_sensors_get_fan(gchar *device_name, gint id,
+ 		gint iodev, gint interface, gfloat *fan)
+-	{
+-	return FALSE;
+-	}
++{
++	return get_sensor(id, iodev, interface, fan);
++}
+ 
+ gboolean
+ gkrellm_sys_sensors_get_voltage(gchar *device_name, gint id,
+ 		gint iodev, gint interface, gfloat *volt)
+-	{
+-	return FALSE;
++{
++	return get_sensor(id, iodev, interface, volt);
++}
++
++static gboolean
++add_sensdev(int dev, struct sensordev *sensdev)
++{
++	static enum sensor_type stypes[] =
++		{ SENSOR_TEMP, SENSOR_FANRPM, SENSOR_VOLTS_DC };
++	static gint gtypes[] =
++		{ SENSOR_TEMPERATURE, SENSOR_FAN, SENSOR_VOLTAGE };
++	static gfloat fac[] = { 0.000001, 1.0, 0.000001 };
++	static gfloat off[] = { -273.15, 0.0, 0.0 };
++	char name[32];
++	int mib[5] = { CTL_HW, HW_SENSORS };
++	struct sensor sen;
++	size_t len = sizeof(sen);
++	int idx, num;
++	gboolean found = FALSE;
++
++	mib[2] = dev;
++	for (idx = 0; sizeof(stypes) / sizeof(stypes[0]) > idx; idx++) {
++		mib[3] = stypes[idx];
++		for (num = 0; sensdev->maxnumt[stypes[idx]] > num; num++) {
++			mib[4] = num;
++			len = sizeof(sen);
++			if (sysctl(mib, 5, &sen, &len, NULL, 0) == -1) {
++				if (ENOENT != errno)
++					return FALSE;
++				continue;
++			}
++			if (SENSOR_FINVALID & sen.flags)
++				continue;
++			snprintf(name, sizeof(name), "%s.%s%d", sensdev->xname,
++			    sensor_type_s[stypes[idx]], num);
++			gkrellm_sensors_add_sensor(gtypes[idx], NULL, name,
++			    sensdev->num, stypes[idx], num, fac[idx],
++			    off[idx], NULL, (sen.desc[0] ? sen.desc : NULL));
++			found = TRUE;
++		}
+ 	}
+ 
++	return found;
++}
++
+ gboolean
+ gkrellm_sys_sensors_init(void)
+-	{
+-	return FALSE;
++{
++	int mib[3] = { CTL_HW, HW_SENSORS };
++	struct sensordev sensdev;
++	size_t len = sizeof(sensdev);
++	int dev;
++	gboolean found = FALSE;
++
++	for (dev = 0; MAXSENSORDEVICES > dev; dev++) {
++		mib[2] = dev;
++		if (sysctl(mib, 3, &sensdev, &len, NULL, 0) == -1) {
++			if (ENOENT != errno)
++				return FALSE;
++			continue;
++		}
++		if (add_sensdev(dev, &sensdev))
++			found = TRUE;
+ 	}
+ 
++	return found;
++}
+ 
++
+ /* ===================================================================== */
  /* Battery monitor interface */
  #include <sys/ioctl.h>
  
@@ -102,7 +228,7 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.10 2008/08/21 07:23:44 ajacoutot Exp $
  
  #include <machine/apmvar.h>
  #define	APMDEV		"/dev/apm"
-@@ -405,7 +435,7 @@ gkrellm_sys_disk_read_data(void)
+@@ -405,7 +516,7 @@ gkrellm_sys_disk_read_data(void)
  		/* Separate read/write stats were implemented in NetBSD 1.6K.
  		*/
  
@@ -111,7 +237,7 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.10 2008/08/21 07:23:44 ajacoutot Exp $
  		rbytes = d.dk_rbytes;
  		wbytes = d.dk_wbytes;
  #else
-@@ -413,7 +443,7 @@ gkrellm_sys_disk_read_data(void)
+@@ -413,7 +524,7 @@ gkrellm_sys_disk_read_data(void)
  		wbytes = 0;
  #endif
  
