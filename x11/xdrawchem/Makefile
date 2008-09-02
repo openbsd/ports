@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2008/09/01 08:52:31 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2008/09/02 21:11:12 ajacoutot Exp $
 
 COMMENT=	two-dimensional molecule drawing program
 
 DISTNAME=	xdrawchem-1.9.9
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11 biology
 
 HOMEPAGE=	http://xdrawchem.sourceforge.net/
@@ -36,9 +36,5 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-qtincdir=${MODQT_INCDIR} \
 		--with-qtlibdir=${MODQT_LIBDIR}
-
-.if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "arm"
-PATCH_LIST=	patch-* gcc-*
-.endif
 
 .include <bsd.port.mk>

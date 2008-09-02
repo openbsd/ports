@@ -1,4 +1,4 @@
-$OpenBSD: gcc-xdrawchem_Makefile_in,v 1.1 2007/02/07 14:02:13 sturm Exp $
+$OpenBSD: patch-xdrawchem_Makefile_in,v 1.1 2008/09/02 21:11:12 ajacoutot Exp $
 --- xdrawchem/Makefile.in.orig	Wed Feb  7 05:52:13 2007
 +++ xdrawchem/Makefile.in	Wed Feb  7 05:53:33 2007
 @@ -459,6 +459,13 @@ distclean-compile:
