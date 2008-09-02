@@ -1,0 +1,9 @@
+$OpenBSD: patch-scripts_pyzord,v 1.1.1.1 2008/09/02 12:33:17 jasper Exp $
+--- scripts/pyzord.orig	Tue Sep  2 12:55:24 2008
++++ scripts/pyzord	Tue Sep  2 12:55:38 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python2
++#!${MODPY_BIN}
+ 
+ import os
+ import os.path
