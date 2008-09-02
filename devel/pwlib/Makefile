@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/08/20 01:57:31 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.14 2008/09/02 23:17:15 todd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -64,12 +64,9 @@ CONFIGURE_ARGS=	--enable-plugins \
 		--disable-dc \
 		--disable-odbc
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64" \
+	|| ${MACHINE_ARCH} == "powerpc"
 CFLAGS+=	-fPIC
-.endif
-
-.if ${MACHINE_ARCH} == "powerpc"
-BROKEN=		Compiles on powerpc but it does not work
 .endif
 
 pre-configure:
