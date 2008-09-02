@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2008/06/04 18:15:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2008/09/02 14:13:03 jasper Exp $
 
 COMMENT=		text widget that extends GTK2's GtkTextView widget
 
 MAJOR_VERSION=		2.0
 GNOME_PROJECT=		gtksourceview
-GNOME_VERSION=		2.2.1
-PKGNAME=		${DISTNAME}p2
+GNOME_VERSION=		2.2.2
 SHARED_LIBS +=	gtksourceview-2.0    1.0      # .0.0
 CATEGORIES=		x11
 
@@ -15,7 +14,7 @@ HOMEPAGE=		http://gtksourceview.sourceforge.net/
 
 MAINTAINER=		Giovanni Bechis <g.bechis@snb.it>
 
-# GPL
+# GPLv2/LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
