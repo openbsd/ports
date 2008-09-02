@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.19 2008/06/14 23:40:35 landry Exp $
+# $OpenBSD: ruby.port.mk,v 1.20 2008/09/02 21:08:29 steven Exp $
 
 # ruby module
 
@@ -7,6 +7,7 @@ MODRUBY_REV=		1.8
 RUBY=			${LOCALBASE}/bin/ruby
 
 MODRUBY_RUN_DEPENDS+=	::lang/ruby
+MODRUBY_LIB_DEPENDS+=	ruby.>=2::lang/ruby
 
 BUILD_DEPENDS+=		::lang/ruby
 RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
