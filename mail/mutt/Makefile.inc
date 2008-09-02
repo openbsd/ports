@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.28 2008/05/22 14:40:12 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.29 2008/09/02 18:35:57 todd Exp $
 
 CATEGORIES=	mail
 
@@ -91,7 +91,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mutt
 	${INSTALL_DATA} ${WRKSRC}/${MUTTRCDIR}Muttrc \
 		${PREFIX}/share/examples/mutt/Muttrc.sample
-	${INSTALL_DATA} ${WRKSRC}/mime.types \
+	${INSTALL_DATA} ${WRKDIST}/mime.types \
 		${PREFIX}/share/examples/mutt/mime.types.sample
 	@mv -f ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt
 	@perl -pi -e "s,/etc/Muttrc,${CONFDIR}/Muttrc," ${PREFIX}/man/man1/mutt.1
