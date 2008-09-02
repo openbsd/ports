@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.218 2008/07/22 19:43:03 martynas Exp $
+# $OpenBSD: Makefile,v 1.219 2008/09/02 12:34:20 jasper Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -169,6 +169,7 @@
      SUBDIR += prepop
      SUBDIR += procmail
      SUBDIR += py-milter
+     SUBDIR += pyzor
      SUBDIR += razor-agents
      SUBDIR += relaydb
      SUBDIR += roundcubemail
