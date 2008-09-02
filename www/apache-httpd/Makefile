@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2008/01/28 19:48:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.18 2008/09/02 22:05:23 bernd Exp $
 
 COMMENT=	apache HTTP server
 
-V=		2.2.8
+V=		2.2.9
 PKGNAME=	apache-httpd-${V}
 DISTNAME=	httpd-${V}
 
@@ -21,6 +21,8 @@ NO_REGRESS=		Yes
 
 WANTLIB=		c crypto m ssl expat apr-1 db.>=4 z
 
+LIB_DEPENDS=		pcre::devel/pcre
+
 FLAVORS=		ldap
 FLAVOR?=
 
@@ -30,7 +32,7 @@ WANTLIB+=		asn1 com_err gssapi krb5 sasl2
 LIB_DEPENDS+=		ldap,lber::databases/openldap
 LIB_DEPENDS+=		aprutil-1.>=2:apr-util-*-ldap:devel/apr-util,ldap
 .else
-LIB_DEPENDS=		aprutil-1.>=2::devel/apr-util
+LIB_DEPENDS+=		aprutil-1.>=2:apr-util-*-!ldap:devel/apr-util
 .endif
 
 MODULES=		converters/libiconv
@@ -57,7 +59,8 @@ CONFIGURE_ARGS+=	--enable-layout=OpenBSD \
 			--enable-cache \
 			--enable-disk-cache \
 			--enable-proxy \
-			--enable-mods-shared=all
+			--enable-mods-shared=all \
+			--with-pcre=${LOCALBASE}
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
