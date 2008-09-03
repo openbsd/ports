@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2008/09/02 16:41:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2008/09/03 14:43:30 ajacoutot Exp $
 
 COMMENT=	simple GTK+ text editor
 
-DISTNAME=	leafpad-0.8.14
+DISTNAME=	leafpad-0.8.15
 CATEGORIES=	editors x11
 
 HOMEPAGE=	http://tarot.freeshell.org/leafpad/
@@ -23,13 +23,13 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 png z
 
-MODULES=	devel/gettext textproc/intltool
+MODULES=	devel/gettext \
+		textproc/intltool
 
 LIB_DEPENDS=	gtk-x11-2.0.>=1000,gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000::x11/gtk+2
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=	Yes
-
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu

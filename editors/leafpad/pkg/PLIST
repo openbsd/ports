@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/09/02 16:41:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/09/03 14:43:30 ajacoutot Exp $
 @bin bin/leafpad
 share/applications/leafpad.desktop
 share/doc/leafpad/
@@ -23,6 +23,7 @@ share/icons/hicolor/scalable/apps/leafpad.svg
 share/locale/bg/LC_MESSAGES/leafpad.mo
 share/locale/ca/LC_MESSAGES/leafpad.mo
 share/locale/cs/LC_MESSAGES/leafpad.mo
+share/locale/da/LC_MESSAGES/leafpad.mo
 share/locale/de/LC_MESSAGES/leafpad.mo
 share/locale/el/LC_MESSAGES/leafpad.mo
 share/locale/es/LC_MESSAGES/leafpad.mo
@@ -32,6 +33,7 @@ share/locale/fr/LC_MESSAGES/leafpad.mo
 share/locale/ga/LC_MESSAGES/leafpad.mo
 share/locale/he/LC_MESSAGES/leafpad.mo
 share/locale/hu/LC_MESSAGES/leafpad.mo
+share/locale/id/LC_MESSAGES/leafpad.mo
 share/locale/it/LC_MESSAGES/leafpad.mo
 share/locale/ja/LC_MESSAGES/leafpad.mo
 share/locale/ko/LC_MESSAGES/leafpad.mo
@@ -41,6 +43,7 @@ share/locale/lt/LC_MESSAGES/leafpad.mo
 share/locale/nl/LC_MESSAGES/leafpad.mo
 share/locale/pl/LC_MESSAGES/leafpad.mo
 share/locale/pt/LC_MESSAGES/leafpad.mo
+share/locale/pt_BR/LC_MESSAGES/leafpad.mo
 share/locale/ru/LC_MESSAGES/leafpad.mo
 share/locale/sk/LC_MESSAGES/leafpad.mo
 share/locale/sv/LC_MESSAGES/leafpad.mo
