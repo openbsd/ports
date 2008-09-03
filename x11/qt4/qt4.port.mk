@@ -1,8 +1,4 @@
-# $OpenBSD: qt4.port.mk,v 1.2 2007/03/23 16:28:52 espie Exp $
-
-MODULES+=	gcc3
-MODGCC3_ARCHES+=sparc64
-MODGCC3_LANGS+=	c++
+# $OpenBSD: qt4.port.mk,v 1.3 2008/09/03 21:58:17 brad Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt1/qt2/qt3 in a port.
