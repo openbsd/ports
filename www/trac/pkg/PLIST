@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/05/30 22:03:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/09/03 13:29:33 sthen Exp $
 bin/trac-admin
 bin/tracd
 lib/python${MODPY_VERSION}/site-packages/trac/
+lib/python${MODPY_VERSION}/site-packages/trac-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/trac/About.py
 lib/python${MODPY_VERSION}/site-packages/trac/About.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/Search.py
