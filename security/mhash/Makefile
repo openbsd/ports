@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2008/09/03 21:02:31 jakob Exp $
 
 COMMENT=	strong hash library
 
-DISTNAME=	mhash-0.9.1
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	mhash-0.9.9
+PKGNAME=	${DISTNAME}
 CATEGORIES=	security
-SHARED_LIBS=	mhash	2.0
+SHARED_LIBS=	mhash	2.1
 MODGNU_SHARED_LIBS=mhash ''
 LIBmhash_ALIAS=	realmhash
 

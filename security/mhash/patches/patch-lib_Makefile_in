@@ -1,12 +1,13 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1 2005/12/25 11:15:34 sturm Exp $
---- lib/Makefile.in.orig	Sun Dec 25 09:31:33 2005
-+++ lib/Makefile.in	Sun Dec 25 09:32:11 2005
-@@ -147,7 +147,7 @@ libmhash_la_SOURCES = mhash.c swap.c bze
- 		adler32.c whirlpool.c
+$OpenBSD: patch-lib_Makefile_in,v 1.2 2008/09/03 21:02:31 jakob Exp $
+--- lib/Makefile.in.orig	Thu Apr  5 04:33:30 2007
++++ lib/Makefile.in	Wed Sep  3 22:48:43 2008
+@@ -220,7 +220,8 @@ MISCELLANEOUS = haval.c mhash_haval.h gosthash.c mhash
+ libmhash_la_SOURCES = $(FRAMEWORK) $(KEYGEN) $(CRC) $(MD_SERIES) \
+ 			$(SHA_SERIES) $(TIGER) $(MISCELLANEOUS)
  
- 
--libmhash_la_LDFLAGS = -version-info 2 -no-undefined -export-symbols $(srcdir)/libmhash.sym
-+libmhash_la_LDFLAGS = ${librealmhash_la_LDFLAGS} -no-undefined -export-symbols $(srcdir)/libmhash.sym
- 
+-libmhash_la_LDFLAGS = -version-info 2:1
++libmhash_la_LDFLAGS = ${librealmhash_la_LDFLAGS}
++
  EXTRA_DIST = libmhash.sym
- subdir = lib
+ all: all-am
+ 

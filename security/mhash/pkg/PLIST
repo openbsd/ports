@@ -1,5 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:36:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/09/03 21:02:31 jakob Exp $
 include/mhash.h
+include/mutils/
+include/mutils/mglobal.h
+include/mutils/mhash.h
+include/mutils/mhash_config.h
+include/mutils/mincludes.h
+include/mutils/mtypes.h
+include/mutils/mutils.h
 lib/libmhash.a
 lib/libmhash.la
 @man man/man3/mhash.3
