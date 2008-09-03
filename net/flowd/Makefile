@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/03 20:41:49 jakob Exp $
 
 COMMENT=	NetFlow collector
 
-DISTNAME=	flowd-0.9
+DISTNAME=	flowd-0.9.1
 CATEGORIES=	net
 MASTER_SITES=	http://www2.mindrot.org/files/flowd/
 
-HOMEPAGE=	http://www.mindrot.org/flowd.html
+HOMEPAGE=	http://www.mindrot.org/projects/flowd/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
