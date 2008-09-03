@@ -1,0 +1,17 @@
+$OpenBSD: patch-stream_tvi_v4l2_c,v 1.1 2008/09/03 12:20:52 brad Exp $
+--- stream/tvi_v4l2.c.orig	Mon Sep  1 22:57:10 2008
++++ stream/tvi_v4l2.c	Mon Sep  1 22:57:48 2008
+@@ -38,8 +38,13 @@ known issues:
+ #ifdef HAVE_SYS_SYSINFO_H
+ #include <sys/sysinfo.h>
+ #endif
++#ifdef __linux__
+ #include <linux/types.h>
+ #include <linux/videodev2.h>
++#endif
++#ifdef __OpenBSD__
++#include <sys/videoio.h>
++#endif
+ #include "mp_msg.h"
+ #include "libmpcodecs/img_format.h"
+ #include "libaf/af_format.h"

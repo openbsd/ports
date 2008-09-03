@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2008/07/09 02:19:36 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.134 2008/09/03 12:20:52 brad Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -9,7 +9,7 @@ V=			1.0rc2
 N=			mplayer
 DISTNAME=		MPlayer-${V}
 DIST_SUBDIR=		${N}
-PKGNAME=		${N}-${V}p7
+PKGNAME=		${N}-${V}p8
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -79,6 +79,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--enable-iconv \
 		--enable-cdparanoia \
 		--enable-x264 \
+		--enable-tv-v4l2 \
 		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
 		--with-extralibdir=${LOCALBASE}/lib \
 		--extra-libs-mplayer="$$(pkg-config --libs x264)" \
@@ -210,7 +211,7 @@ CONFIGURE_ARGS+=--disable-jack
 NO_REGRESS=	Yes
 
 post-patch:
-	cp ${FILESDIR}/ao_rtunes.c ${WRKSRC}/libao2/
+	@cp ${FILESDIR}/ao_rtunes.c ${WRKSRC}/libao2
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mplayer
