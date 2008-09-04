@@ -1,7 +1,7 @@
-$OpenBSD: patch-sa-update_raw,v 1.4 2007/05/06 13:28:30 mbalmer Exp $
---- sa-update.raw.orig	Tue May  1 14:54:33 2007
-+++ sa-update.raw	Sat May  5 14:50:43 2007
-@@ -1322,7 +1322,7 @@ Options:
+$OpenBSD: patch-sa-update_raw,v 1.5 2008/09/04 06:42:12 brad Exp $
+--- sa-update.raw.orig	Tue Jun 10 05:21:07 2008
++++ sa-update.raw	Thu Sep  4 01:06:56 2008
+@@ -1325,7 +1325,7 @@ Options:
                            keyring. Use multiple times for multiple files
    --updatedir path        Directory to place updates, defaults to the
                            SpamAssassin site rules directory
@@ -10,7 +10,7 @@ $OpenBSD: patch-sa-update_raw,v 1.4 2007/05/06 13:28:30 mbalmer Exp $
    -D, --debug [area=n,...]  Print debugging messages
    -V, --version           Print version
    -h, --help              Print usage message
-@@ -1441,7 +1441,7 @@ Note: use of this option automatically enables GPG ver
+@@ -1444,7 +1444,7 @@ Note: use of this option automatically enables GPG ver
  
  By default, C<sa-update> will use the system-wide rules update directory:
  

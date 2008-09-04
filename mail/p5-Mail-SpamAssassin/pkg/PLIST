@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.24 2007/05/07 19:53:42 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.25 2008/09/04 06:42:12 brad Exp $
 @newgroup _spamdaemon:506
 @newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
 bin/sa-compile
 bin/sa-learn
 bin/sa-update
 bin/spamassassin
-bin/spamc
+@bin bin/spamc
 bin/spamd
 ${P5SITE}/Mail/SpamAssassin/
 ${P5SITE}/Mail/SpamAssassin.pm
@@ -246,6 +246,7 @@ share/spamassassin/60_whitelist_dkim.cf
 share/spamassassin/60_whitelist_spf.cf
 share/spamassassin/60_whitelist_subject.cf
 share/spamassassin/72_active.cf
+share/spamassassin/72_removed.cf
 share/spamassassin/languages
 share/spamassassin/sa-update-pubkey.txt
 share/spamassassin/user_prefs.template
