@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.12 2008/08/20 02:07:04 brad Exp $
---- configure.in.orig	Wed Jul 23 19:46:52 2008
-+++ configure.in	Mon Jul 28 11:07:57 2008
+$OpenBSD: patch-configure_in,v 1.13 2008/09/04 08:35:43 brad Exp $
+--- configure.in.orig	Sat Aug 30 09:19:44 2008
++++ configure.in	Tue Sep  2 03:13:05 2008
 @@ -13,6 +13,7 @@ AC_PROG_CXX # lucene plugin needs this
  AC_HEADER_STDC
  AC_C_INLINE
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure_in,v 1.12 2008/08/20 02:07:04 brad Exp $
  AM_ICONV
  
  AC_CHECK_HEADERS(strings.h stdint.h unistd.h dirent.h malloc.h inttypes.h \
-@@ -1726,67 +1727,14 @@ fi
+@@ -1744,74 +1745,15 @@ fi
  
  have_gssapi=no
  if test $want_gssapi != no; then
@@ -55,6 +55,13 @@ $OpenBSD: patch-configure_in,v 1.12 2008/08/20 02:07:04 brad Exp $
 -					KRB5_LIBS="$KRB5_LIBS -lgss"
 -				],, $KRB5_LIBS)
 -
+-				# MIT has a #define for Heimdal acceptor_identity, but it's way too
+-				# difficult to test for it..
+-				old_LIBS=$LIBS
+-				LIBS="$LIBS $KRB5_LIBS"
+-				AC_CHECK_FUNCS(gsskrb5_register_acceptor_identity krb5_gss_register_acceptor_identity)
+-				LIBS=$old_LIBS
+-
 -				if test x$want_gssapi_plugin != xyes; then
 -				  AUTH_LIBS="$AUTH_LIBS $KRB5_LIBS"
 -				  AUTH_CFLAGS="$AUTH_CFLAGS $KRB5_CFLAGS"
@@ -79,6 +86,7 @@ $OpenBSD: patch-configure_in,v 1.12 2008/08/20 02:07:04 brad Exp $
 +	AC_CHECK_HEADER([kerberosV/gssapi.h], [
 +		AC_DEFINE(HAVE_GSSAPI,, Build with GSSAPI support)
 +		AC_DEFINE(HAVE_GSSAPI_H,, Build with GSSAPI support)
++		AC_DEFINE(HAVE_GSSKRB5_REGISTER_ACCEPTOR_IDENTITY,, Have the gsskrb5_register_acceptor_identity function)
 +		have_gssapi=yes
 +	])
 +	AUTH_LIBS="$LIBS -lkrb5 -lgssapi -lcrypto"
