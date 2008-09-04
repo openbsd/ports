@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/09/04 08:52:29 martin Exp $
 
 COMMENT=	OLSR routing daemon
 
-DISTNAME=	olsrd-0.4.10
+DISTNAME=	olsrd-0.5.6
 CATEGORIES=     net
 
 HOMEPAGE=	http://www.olsr.org/
-MASTER_SITES=	http://www.olsr.org/releases/0.4/
+MASTER_SITES=	http://www.olsr.org/releases/0.5/
 
-MAINTAINER=	Holger Mauermann <holger@mauermann.org>
+MAINTAINER=	Martin Reindl <martin@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,6 +20,8 @@ WANTLIB=	c
 USE_GMAKE=	Yes
 
 NO_REGRESS=	Yes
+
+BUILD_DEPENDS=	::devel/bison
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/olsrd ${PREFIX}/sbin
