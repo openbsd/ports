@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.27 2008/07/22 17:44:04 guenther Exp $
+# $OpenBSD: OpenBSD,v 1.28 2008/09/04 07:52:36 fkr Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -76,7 +76,7 @@
 52.35		4.62		"otto"		# Otto Moerbeek
 52.3667		9.71667		"reyk"		# Reyk Floeter
 52.5		21		"alek"		# Aleksander Piotrowski
-52.992283	8.257298	"fkr"		# Felix Kronlage
+53.08566	8.13058		"fkr"		# Felix Kronlage
 53.13		9		"jufi"		# Jan-Uwe Finck
 53.30		-6.24		"niallo"	# Niall O'Higgins
 53.317		9.817		"bernd"		# Bernd Ahlers
