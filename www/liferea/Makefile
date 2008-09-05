@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2008/06/25 09:37:03 martynas Exp $
+# $OpenBSD: Makefile,v 1.22 2008/09/05 15:45:10 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		simple GTK desktop news aggregator
 
-DISTNAME=		liferea-1.4.16b
+DISTNAME=		liferea-1.4.19
 CATEGORIES=		www x11
 
 HOMEPAGE=		http://liferea.sourceforge.net/
@@ -22,7 +22,7 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		dbus-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre plc4 plds4 png pthread xml2 z
+		pcre pixman-1 plc4 plds4 png pthread xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=liferea/}
 

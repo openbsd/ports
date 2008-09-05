@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/06/25 09:37:03 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/09/05 15:45:10 jasper Exp $
 bin/liferea
 bin/liferea-add-feed
 @bin bin/liferea-bin
@@ -16,7 +16,6 @@ lib/liferea/libliscrlua.so
 man/pl/
 man/pl/man1/
 @man man/pl/man1/liferea.1
-share/applications/
 share/applications/liferea.desktop
 share/doc/liferea/
 share/doc/liferea/html/
