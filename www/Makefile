@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.351 2008/08/20 15:59:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.352 2008/09/05 11:22:26 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -14,6 +14,7 @@
      SUBDIR += calamaris
      SUBDIR += cgicc
      SUBDIR += cgiparse
+     SUBDIR += cherokee
      SUBDIR += clearsilver
      SUBDIR += clearsilver,python
      SUBDIR += cronolog
