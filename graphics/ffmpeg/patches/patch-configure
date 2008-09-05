@@ -1,7 +1,18 @@
-$OpenBSD: patch-configure,v 1.19 2008/07/09 01:57:44 jakemsr Exp $
---- configure.orig	Fri Jun 20 19:40:11 2008
-+++ configure	Sat Jul  5 03:08:34 2008
-@@ -953,9 +953,9 @@ enable stripping
+$OpenBSD: patch-configure,v 1.20 2008/09/05 01:10:21 brad Exp $
+--- configure.orig	Fri Jun 20 22:40:11 2008
++++ configure	Thu Aug 14 23:43:26 2008
+@@ -934,6 +934,10 @@ cpu="generic"
+ # OS
+ target_os=$(tolower $(uname -s))
+ 
++if test $target_os = openbsd; then
++  arch=`arch -s`
++fi
++
+ # libraries
+ enable bzlib
+ enable zlib
+@@ -953,9 +957,9 @@ enable stripping
  vhook="default"
  
  # build settings
@@ -13,7 +24,7 @@ $OpenBSD: patch-configure,v 1.19 2008/07/09 01:57:44 jakemsr Exp $
  FFSERVERLDFLAGS=-Wl,-E
  LIBPREF="lib"
  LIBSUF=".a"
-@@ -965,7 +965,7 @@ SLIBPREF="lib"
+@@ -965,7 +969,7 @@ SLIBPREF="lib"
  SLIBSUF=".so"
  SLIBNAME='$(SLIBPREF)$(FULLNAME)$(SLIBSUF)'
  SLIBNAME_WITH_VERSION='$(SLIBNAME).$(LIBVERSION)'
@@ -22,7 +33,33 @@ $OpenBSD: patch-configure,v 1.19 2008/07/09 01:57:44 jakemsr Exp $
  LIB_INSTALL_EXTRA_CMD='$(RANLIB) "$(LIBDIR)/$(LIBNAME)"'
  
  # gcc stupidly only outputs the basename of targets with -MM
-@@ -1213,9 +1213,9 @@ case $target_os in
+@@ -1130,7 +1134,7 @@ EOF
+         arch="powerpc"
+         enable fast_64bit
+     ;;
+-    mips|mipsel|IP*)
++    mips|mipsel|mips64|IP*)
+         arch="mips"
+     ;;
+     sun4u|sparc64)
+@@ -1140,13 +1144,13 @@ EOF
+     sparc)
+         arch="sparc"
+     ;;
+-    sh4)
++    sh4|sh)
+         arch="sh4"
+     ;;
+-    parisc)
++    parisc|hppa)
+         arch="parisc"
+     ;;
+-    parisc64)
++    parisc64|hppa64)
+         arch="parisc"
+         enable fast_64bit
+     ;;
+@@ -1213,9 +1217,9 @@ case $target_os in
          disable need_memalign
          LIBOBJFLAGS='$(PIC)'
          SHFLAGS='-shared'
@@ -35,7 +72,7 @@ $OpenBSD: patch-configure,v 1.19 2008/07/09 01:57:44 jakemsr Exp $
          oss_demuxer_extralibs="-lossaudio"
          oss_muxer_extralibs="-lossaudio"
          ;;
-@@ -1501,7 +1501,7 @@ fi
+@@ -1501,7 +1505,7 @@ fi
  check_cc <<EOF || die "Symbol mangling check failed."
  int ff_extern;
  EOF
@@ -44,7 +81,34 @@ $OpenBSD: patch-configure,v 1.19 2008/07/09 01:57:44 jakemsr Exp $
  extern_prefix=${sym%%ff_extern*}
  
  check_asm inline_asm '""'
-@@ -1582,10 +1582,14 @@ enabled vis && add_cflags "-mcpu=ultrasparc -mtune=ult
+@@ -1531,16 +1535,16 @@ fi
+ 
+ # check for assembler specific support
+ 
+-if test $arch = "powerpc"; then
+-check_cc <<EOF && enable dcbzl
+-int main(void) {
+-    register long zero = 0;
+-    char data[1024];
+-    asm volatile("dcbzl %0, %1" : : "b" (data), "r" (zero));
+-return 0;
+-}
+-EOF
+-fi
++#if test $arch = "powerpc"; then
++#check_cc <<EOF && enable dcbzl
++#int main(void) {
++#    register long zero = 0;
++#    char data[1024];
++#    asm volatile("dcbzl %0, %1" : : "b" (data), "r" (zero));
++#return 0;
++#}
++#EOF
++#fi
+ 
+ # check for SIMD availability
+ 
+@@ -1582,10 +1586,14 @@ enabled vis && add_cflags "-mcpu=ultrasparc -mtune=ult
  
  # ---
  # big/little-endian test
@@ -62,7 +126,7 @@ $OpenBSD: patch-configure,v 1.19 2008/07/09 01:57:44 jakemsr Exp $
  
  # ---
  # check availability of some header files
-@@ -1607,7 +1611,7 @@ check_func2 windows.h GetProcessTimes
+@@ -1607,7 +1615,7 @@ check_func2 windows.h GetProcessTimes
  check_header byteswap.h
  check_header conio.h
  check_header dlfcn.h
@@ -71,7 +135,7 @@ $OpenBSD: patch-configure,v 1.19 2008/07/09 01:57:44 jakemsr Exp $
  check_header sys/mman.h
  check_header sys/resource.h
  check_header termios.h
-@@ -1717,10 +1721,10 @@ if test "$target_os" = cygwin -o "$target_os" = mingw3
+@@ -1717,10 +1725,10 @@ if test "$target_os" = cygwin -o "$target_os" = mingw3
      echo
  fi
  
@@ -86,7 +150,7 @@ $OpenBSD: patch-configure,v 1.19 2008/07/09 01:57:44 jakemsr Exp $
  
  check_foo_config imlib2 imlib2 Imlib2.h imlib_load_font
  check_foo_config freetype2 freetype ft2build.h FT_Init_FreeType
-@@ -1756,7 +1760,7 @@ fi
+@@ -1756,7 +1764,7 @@ fi
  
  texi2html -version > /dev/null 2>&1 && enable texi2html || disable texi2html
  
@@ -95,7 +159,7 @@ $OpenBSD: patch-configure,v 1.19 2008/07/09 01:57:44 jakemsr Exp $
  
  ##########################################
  # Network check
-@@ -1831,7 +1835,7 @@ enabled extra_warnings && check_cflags -Winline
+@@ -1831,7 +1839,7 @@ enabled extra_warnings && check_cflags -Winline
  # add some linker flags
  check_ldflags -Wl,--warn-common
  check_ldflags $LDLATEFLAGS
@@ -104,7 +168,7 @@ $OpenBSD: patch-configure,v 1.19 2008/07/09 01:57:44 jakemsr Exp $
  
  if enabled small; then
      check_cflags -Os            # not all compilers support -Os
-@@ -2204,8 +2208,7 @@ Version: $version
+@@ -2204,8 +2212,7 @@ Version: $version
  Requires: $(disabled shared && echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -114,7 +178,7 @@ $OpenBSD: patch-configure,v 1.19 2008/07/09 01:57:44 jakemsr Exp $
  Cflags: -I\${includedir}
  EOF
  cat <<EOF > $name/$name-uninstalled.pc
-@@ -2224,17 +2227,17 @@ Cflags: -I\${includedir}
+@@ -2224,17 +2231,17 @@ Cflags: -I\${includedir}
  EOF
  }
  

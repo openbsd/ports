@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2008/07/25 20:25:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2008/09/05 01:10:21 brad Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 V=			20080620
 DISTNAME=		ffmpeg-svn-${V}
-PKGNAME=		ffmpeg-${V}p1
+PKGNAME=		ffmpeg-${V}p2
 SHARED_LIBS=		avutil		6.0 \
 			avcodec		13.0 \
 			avformat	12.0 \
@@ -79,7 +79,12 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-x11grab \
 			--extra-libs="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			--extra-cflags="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			--disable-decoder=cavs
+			--disable-decoder=cavs \
+			--disable-altivec \
+			--disable-armv6 \
+			--disable-armvfp \
+			--disable-iwmmxt \
+			--disable-neon
 
 CONFIGURE_ENV+=		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
 			LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
