@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/09 18:20:36 okan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/09/05 19:53:44 okan Exp $
 lib/python${MODPY_VERSION}/site-packages/boto/
 lib/python${MODPY_VERSION}/site-packages/boto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/boto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -31,6 +31,10 @@ lib/python${MODPY_VERSION}/site-packages/boto/ec2/keypair.py
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/keypair.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/securitygroup.py
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/securitygroup.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/ec2/snapshot.py
+lib/python${MODPY_VERSION}/site-packages/boto/ec2/snapshot.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/ec2/volume.py
+lib/python${MODPY_VERSION}/site-packages/boto/ec2/volume.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/zone.py
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/zone.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/exception.py
@@ -117,6 +121,23 @@ lib/python${MODPY_VERSION}/site-packages/boto/sdb/persist/test_persist.py
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/persist/test_persist.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/queryresultset.py
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/queryresultset.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/services/
+lib/python${MODPY_VERSION}/site-packages/boto/services/__init__.py
+lib/python${MODPY_VERSION}/site-packages/boto/services/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/services/bs.py
+lib/python${MODPY_VERSION}/site-packages/boto/services/bs.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/services/message.py
+lib/python${MODPY_VERSION}/site-packages/boto/services/message.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/services/result.py
+lib/python${MODPY_VERSION}/site-packages/boto/services/result.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/services/service.py
+lib/python${MODPY_VERSION}/site-packages/boto/services/service.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/services/servicedef.py
+lib/python${MODPY_VERSION}/site-packages/boto/services/servicedef.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/services/sonofmmm.py
+lib/python${MODPY_VERSION}/site-packages/boto/services/sonofmmm.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/services/submit.py
+lib/python${MODPY_VERSION}/site-packages/boto/services/submit.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/sqs/
 lib/python${MODPY_VERSION}/site-packages/boto/sqs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/boto/sqs/__init__.pyc
@@ -147,6 +168,6 @@ lib/python${MODPY_VERSION}/site-packages/boto/utils.py
 lib/python${MODPY_VERSION}/site-packages/boto/utils.pyc
 share/doc/boto/
 share/doc/boto/README
-share/doc/boto/ec2-tut.txt
+share/doc/boto/ec2_tut.txt
 share/doc/boto/s3_tut.txt
 share/doc/boto/sqs_tut.txt
