@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/29 14:37:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/09/05 12:28:50 ajacoutot Exp $
 
      SUBDIR += addresses
      SUBDIR += back
@@ -6,6 +6,7 @@
      SUBDIR += examples
      SUBDIR += gnumail
      SUBDIR += gui
+     SUBDIR += gworkspace
      SUBDIR += make
      SUBDIR += pantomime
 
