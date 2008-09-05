@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_demux_live555_cpp,v 1.1 2008/09/05 01:01:00 brad Exp $
+--- modules/demux/live555.cpp.orig	Tue Sep  2 00:48:25 2008
++++ modules/demux/live555.cpp	Tue Sep  2 00:49:08 2008
+@@ -829,7 +829,8 @@ describe:
+         else
+         {
+             const char *psz_tmp = strstr( psz_error, "RTSP" );
+-            sscanf( psz_tmp, "RTSP/%*s%3u", &i_code );
++            if( psz_tmp )
++                sscanf( psz_tmp, "RTSP/%*s%3u", &i_code );
+         }
+         msg_Dbg( p_demux, "DESCRIBE failed with %d: [%s]", i_code, psz_error );
+ 
