@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.93 2008/08/21 07:24:19 ajacoutot Exp $
+$OpenBSD: user.list,v 1.94 2008/09/05 11:21:17 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -116,3 +116,4 @@ id  user		group		port options
 605 _hudson		_hudson		devel/hudson
 606 _ladvd		_ladvd		net/ladvd
 607 _gkrellmd		_gkrellmd	sysutils/gkrellm/gkrellm
+608 _cherokee		_cherokee	www/cherokee
