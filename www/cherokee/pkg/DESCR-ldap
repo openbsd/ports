@@ -1,0 +1,4 @@
+Cherokee is a very fast, flexible and easy to configure Web Server.
+
+This package contains the LDAP validator allows you to authenticate a
+user using the Lightweight Directory Access Protocol v3.

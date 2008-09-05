@@ -1,0 +1,5 @@
+Cherokee is a very fast, flexible and easy to configure Web Server. It
+supports the widespread technologies nowadays: FastCGI, SCGI, PHP, CGI,
+TLS and SSL encrypted connections, Virtual hosts, Authentication, on the
+fly encoding, Load balancing, Apache compatible log files, and much
+more.
