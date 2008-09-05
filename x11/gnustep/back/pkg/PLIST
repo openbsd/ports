@@ -1,15 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/06/23 11:00:18 ajacoutot Exp $
-@bin bin/font_cacher
+@comment $OpenBSD: PLIST,v 1.3 2008/09/05 18:29:43 ajacoutot Exp $
 @bin bin/gpbs
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/English.lproj/
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/English.lproj/nfontFaceNames.strings
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/Info-gnustep.plist
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/Swedish.lproj/
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/Swedish.lproj/nfontFaceNames.strings
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/libgnustep-back-014.so
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/stamp.make
 lib/GNUstep/Fonts/
 lib/GNUstep/Fonts/Helvetica.nfont/
 lib/GNUstep/Fonts/Helvetica.nfont/FontInfo.plist
@@ -38,3 +28,6 @@ lib/GNUstep/Fonts/Helvetica.nfont/n019064l.afm
 lib/GNUstep/Fonts/Helvetica.nfont/n019064l.pfb
 lib/GNUstep/Fonts/Helvetica.nfont/n019064l.pfm
 @man man/man1/gpbs.1
+%%cairo%%
+%%libart%%
+%%xlib%%

@@ -10,3 +10,8 @@ easily ported to other display systems.
 The GNUstep GUI Backend is for platforms using the X-Window System or
 Window's Systems. It works via a DPS emulation engine to emulate the
 DPS functions required by the front-end system.
+
+Available flavors:
+	cairo - use cairo as graphics backend (experimental)
+	libart - use libart as graphics backend
+	xlib - use xlib as graphics backend (default)
