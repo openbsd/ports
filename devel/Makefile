@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.617 2008/09/01 09:57:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.618 2008/09/06 09:53:12 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -321,6 +321,7 @@
      SUBDIR += p5-DateTime-Format-W3CDTF
      SUBDIR += p5-DateTime-Locale
      SUBDIR += p5-DateTime-TimeZone
+     SUBDIR += p5-Devel-Cover
      SUBDIR += p5-Devel-Cycle
      SUBDIR += p5-Devel-FastProf
      SUBDIR += p5-Devel-Leak
@@ -330,6 +331,7 @@
      SUBDIR += p5-Devel-StackTrace
      SUBDIR += p5-Devel-Symdump
      SUBDIR += p5-Devel-ptkdb
+     SUBDIR += p5-Directory-Scratch
      SUBDIR += p5-Env-PS1 
      SUBDIR += p5-Error
      SUBDIR += p5-Event
@@ -517,6 +519,7 @@
      SUBDIR += p5-Test-Expect
      SUBDIR += p5-Test-File-Contents
      SUBDIR += p5-Test-Group
+     SUBDIR += p5-Test-HTML-Tidy
      SUBDIR += p5-Test-Inline
      SUBDIR += p5-Test-LongString
      SUBDIR += p5-Test-Manifest
@@ -531,6 +534,7 @@
      SUBDIR += p5-Test-Pod-Coverage
      SUBDIR += p5-Test-Reporter
      SUBDIR += p5-Test-Spelling
+     SUBDIR += p5-Test-Strict
      SUBDIR += p5-Test-Taint
      SUBDIR += p5-Test-Tester
      SUBDIR += p5-Test-Unit
