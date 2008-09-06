@@ -1,0 +1,2 @@
+Test::Strict lets you check the syntax, presence of the strict and
+warnings pragma in your Perl code.
