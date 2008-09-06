@@ -1,0 +1,78 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/06 09:53:05 simon Exp $
+bin/cover
+bin/cpancover
+bin/gcov2perl
+${P5ARCH}/Devel/
+${P5ARCH}/Devel/Cover/
+${P5ARCH}/Devel/Cover.pm
+${P5ARCH}/Devel/Cover/Annotation/
+${P5ARCH}/Devel/Cover/Annotation/Random.pm
+${P5ARCH}/Devel/Cover/Annotation/Svk.pm
+${P5ARCH}/Devel/Cover/Branch.pm
+${P5ARCH}/Devel/Cover/Condition.pm
+${P5ARCH}/Devel/Cover/Condition_and_2.pm
+${P5ARCH}/Devel/Cover/Condition_and_3.pm
+${P5ARCH}/Devel/Cover/Condition_or_2.pm
+${P5ARCH}/Devel/Cover/Condition_or_3.pm
+${P5ARCH}/Devel/Cover/Condition_xor_4.pm
+${P5ARCH}/Devel/Cover/Criterion.pm
+${P5ARCH}/Devel/Cover/DB/
+${P5ARCH}/Devel/Cover/DB.pm
+${P5ARCH}/Devel/Cover/DB/File.pm
+${P5ARCH}/Devel/Cover/DB/Structure.pm
+${P5ARCH}/Devel/Cover/Inc.pm
+${P5ARCH}/Devel/Cover/Op.pm
+${P5ARCH}/Devel/Cover/Pod.pm
+${P5ARCH}/Devel/Cover/Report/
+${P5ARCH}/Devel/Cover/Report/Compilation.pm
+${P5ARCH}/Devel/Cover/Report/Html.pm
+${P5ARCH}/Devel/Cover/Report/Html_basic.pm
+${P5ARCH}/Devel/Cover/Report/Html_minimal.pm
+${P5ARCH}/Devel/Cover/Report/Html_subtle.pm
+${P5ARCH}/Devel/Cover/Report/Sort.pm
+${P5ARCH}/Devel/Cover/Report/Text.pm
+${P5ARCH}/Devel/Cover/Report/Text2.pm
+${P5ARCH}/Devel/Cover/Statement.pm
+${P5ARCH}/Devel/Cover/Subroutine.pm
+${P5ARCH}/Devel/Cover/Test.pm
+${P5ARCH}/Devel/Cover/Time.pm
+${P5ARCH}/Devel/Cover/Truth_Table.pm
+${P5ARCH}/Devel/Cover/Tutorial.pod
+${P5ARCH}/Devel/Cover/Web.pm
+${P5ARCH}/auto/Devel/
+${P5ARCH}/auto/Devel/Cover/
+${P5ARCH}/auto/Devel/Cover/Cover.bs
+${P5ARCH}/auto/Devel/Cover/Cover.so
+@man man/man1/cover.1
+@man man/man1/cpancover.1
+@man man/man1/gcov2perl.1
+@man man/man3p/Devel::Cover.3p
+@man man/man3p/Devel::Cover::Annotation::Random.3p
+@man man/man3p/Devel::Cover::Annotation::Svk.3p
+@man man/man3p/Devel::Cover::Branch.3p
+@man man/man3p/Devel::Cover::Condition.3p
+@man man/man3p/Devel::Cover::Condition_and_2.3p
+@man man/man3p/Devel::Cover::Condition_and_3.3p
+@man man/man3p/Devel::Cover::Condition_or_2.3p
+@man man/man3p/Devel::Cover::Condition_or_3.3p
+@man man/man3p/Devel::Cover::Condition_xor_4.3p
+@man man/man3p/Devel::Cover::Criterion.3p
+@man man/man3p/Devel::Cover::DB.3p
+@man man/man3p/Devel::Cover::DB::File.3p
+@man man/man3p/Devel::Cover::DB::Structure.3p
+@man man/man3p/Devel::Cover::Op.3p
+@man man/man3p/Devel::Cover::Pod.3p
+@man man/man3p/Devel::Cover::Report::Compilation.3p
+@man man/man3p/Devel::Cover::Report::Html.3p
+@man man/man3p/Devel::Cover::Report::Html_basic.3p
+@man man/man3p/Devel::Cover::Report::Html_minimal.3p
+@man man/man3p/Devel::Cover::Report::Html_subtle.3p
+@man man/man3p/Devel::Cover::Report::Sort.3p
+@man man/man3p/Devel::Cover::Report::Text.3p
+@man man/man3p/Devel::Cover::Report::Text2.3p
+@man man/man3p/Devel::Cover::Statement.3p
+@man man/man3p/Devel::Cover::Subroutine.3p
+@man man/man3p/Devel::Cover::Time.3p
+@man man/man3p/Devel::Cover::Truth_Table.3p
+@man man/man3p/Devel::Cover::Tutorial.3p
+@man man/man3p/Devel::Cover::Web.3p
