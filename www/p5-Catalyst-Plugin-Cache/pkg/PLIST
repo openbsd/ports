@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/06 10:33:41 simon Exp $
+${P5SITE}/Catalyst/Plugin/
+${P5SITE}/Catalyst/Plugin/Cache/
+${P5SITE}/Catalyst/Plugin/Cache.pm
+${P5SITE}/Catalyst/Plugin/Cache/Backend/
+${P5SITE}/Catalyst/Plugin/Cache/Backend.pm
+${P5SITE}/Catalyst/Plugin/Cache/Backend/Memory.pm
+${P5SITE}/Catalyst/Plugin/Cache/Choose/
+${P5SITE}/Catalyst/Plugin/Cache/Choose/KeyRegexes.pm
+${P5SITE}/Catalyst/Plugin/Cache/Curried.pm
+${P5SITE}/Catalyst/Plugin/Cache/Store/
+${P5SITE}/Catalyst/Plugin/Cache/Store.pod
+${P5SITE}/Catalyst/Plugin/Cache/Store/Memory.pm
+@man man/man3p/Catalyst::Plugin::Cache.3p
+@man man/man3p/Catalyst::Plugin::Cache::Backend.3p
+@man man/man3p/Catalyst::Plugin::Cache::Backend::Memory.3p
+@man man/man3p/Catalyst::Plugin::Cache::Choose::KeyRegexes.3p
+@man man/man3p/Catalyst::Plugin::Cache::Curried.3p
+@man man/man3p/Catalyst::Plugin::Cache::Store.3p
+@man man/man3p/Catalyst::Plugin::Cache::Store::Memory.3p
