@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.618 2008/09/06 09:53:12 simon Exp $
+# $OpenBSD: Makefile,v 1.619 2008/09/06 10:34:06 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -237,6 +237,7 @@
      SUBDIR += p5-Carp-Clan
      SUBDIR += p5-Carp-Datum
      SUBDIR += p5-Catalyst-Manual
+     SUBDIR += p5-Catalyst-Plugin-C3
      SUBDIR += p5-Catalyst-Plugin-StackTrace
      SUBDIR += p5-Class-Accessor
      SUBDIR += p5-Class-Accessor-Chained

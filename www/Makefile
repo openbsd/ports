@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.352 2008/09/05 11:22:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.353 2008/09/06 10:34:06 simon Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -134,19 +134,24 @@
      SUBDIR += p5-CSS-Squish
      SUBDIR += p5-CSS-Tiny
      SUBDIR += p5-Catalyst-Action-RenderView
+     SUBDIR += p5-Catalyst-Component-ACCEPT_CONTEXT
      SUBDIR += p5-Catalyst-Controller-FormBuilder
      SUBDIR += p5-Catalyst-Devel
      SUBDIR += p5-Catalyst-Engine-Apache
      SUBDIR += p5-Catalyst-Engine-HTTP-POE
      SUBDIR += p5-Catalyst-Helper-Controller-Scaffold
      SUBDIR += p5-Catalyst-Log-Log4perl
+     SUBDIR += p5-Catalyst-Plugin-Cache
      SUBDIR += p5-Catalyst-Plugin-Cache-FileCache
      SUBDIR += p5-Catalyst-Plugin-Cache-Memcached
+     SUBDIR += p5-Catalyst-Plugin-Cache-Store-FastMmap
      SUBDIR += p5-Catalyst-Plugin-ConfigLoader
+     SUBDIR += p5-Catalyst-Plugin-ConfigLoader-Environment
      SUBDIR += p5-Catalyst-Plugin-DefaultEnd
      SUBDIR += p5-Catalyst-Plugin-FormValidator
      SUBDIR += p5-Catalyst-Plugin-HTML-Widget
      SUBDIR += p5-Catalyst-Plugin-I18N
+     SUBDIR += p5-Catalyst-Plugin-LogWarnings
      SUBDIR += p5-Catalyst-Plugin-PageCache
      SUBDIR += p5-Catalyst-Plugin-Pluggable
      SUBDIR += p5-Catalyst-Plugin-Prototype
@@ -182,6 +187,7 @@
      SUBDIR += p5-HTML-PopupTreeSelect
      SUBDIR += p5-HTML-Prototype
      SUBDIR += p5-HTML-ResolveLink
+     SUBDIR += p5-HTML-SBC
      SUBDIR += p5-HTML-Scrubber
      SUBDIR += p5-HTML-SimpleParse
      SUBDIR += p5-HTML-SiteTear
@@ -240,6 +246,7 @@
      SUBDIR += p5-WebService-Audioscrobbler
      SUBDIR += p5-WebService-MusicBrainz
      SUBDIR += p5-XML-Atom
+     SUBDIR += p5-XML-Atom-SimpleFeed
      SUBDIR += p5-XML-Feed
      SUBDIR += p5-libapreq
      SUBDIR += p5-libwww
