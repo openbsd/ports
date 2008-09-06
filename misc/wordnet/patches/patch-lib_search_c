@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_search_c,v 1.1 2008/09/01 20:02:53 sthen Exp $
+$OpenBSD: patch-lib_search_c,v 1.2 2008/09/06 21:49:15 sthen Exp $
 --- lib/search.c.orig	Wed Nov 29 21:02:21 2006
-+++ lib/search.c	Mon Sep  1 20:53:39 2008
++++ lib/search.c	Sat Sep  6 22:44:37 2008
 @@ -13,6 +13,7 @@
  #include <stdlib.h>
  #include <string.h>
@@ -329,8 +329,8 @@ $OpenBSD: patch-lib_search_c,v 1.1 2008/09/01 20:02:53 sthen Exp $
  			bufstart++;
  		    }
 -		    strncpy(bufstart, tmpbuf, strlen(tmpbuf));
-+		    /* Dodgy...? */
-+		    strcpy(bufstart, tmpbuf);
++		    /* Don't include the \0 */
++		    memcpy(bufstart, tmpbuf, strlen(tmpbuf));
  		    bufstart = searchbuffer + strlen(searchbuffer);
  		}
  	    }
