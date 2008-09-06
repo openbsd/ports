@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/06 10:33:55 simon Exp $
+${P5SITE}/Catalyst/Component/
+${P5SITE}/Catalyst/Component/ACCEPT_CONTEXT.pm
+@man man/man3p/Catalyst::Component::ACCEPT_CONTEXT.3p
