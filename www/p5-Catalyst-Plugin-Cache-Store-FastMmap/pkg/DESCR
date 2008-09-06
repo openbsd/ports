@@ -1,0 +1,4 @@
+This store plugin is a bit of a wrapper for Cache::FastMmap.
+As Cache::FastMmap can't store plain values by default, this module
+ships with a subclass that will wrap all values in a scalar reference
+before storing.
