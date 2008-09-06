@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2008/05/10 17:10:24 deanna Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2008/09/06 23:39:57 djm Exp $
 @option no-default-conflict
 @conflict python->=2.5,<2.6
 @pkgpath lang/python/2.5
@@ -1387,8 +1387,6 @@ lib/python2.5/lib-dynload/_locale.so
 lib/python2.5/lib-dynload/_lsprof.so
 lib/python2.5/lib-dynload/_multibytecodec.so
 lib/python2.5/lib-dynload/_random.so
-lib/python2.5/lib-dynload/_sha256.so
-lib/python2.5/lib-dynload/_sha512.so
 lib/python2.5/lib-dynload/_socket.so
 lib/python2.5/lib-dynload/_ssl.so
 lib/python2.5/lib-dynload/_struct.so
