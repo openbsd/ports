@@ -1,0 +1,3 @@
+This module is related to the possible transition of Catalyst from NEXT
+to Class::C3.  This transition hasn't happened yet, and might not for a
+while.
