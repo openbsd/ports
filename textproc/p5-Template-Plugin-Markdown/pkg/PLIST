@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/06 11:39:40 simon Exp $
+${P5SITE}/Template/
+${P5SITE}/Template/Plugin/
+${P5SITE}/Template/Plugin/Markdown.pm
+@man man/man3p/Template::Plugin::Markdown.3p
