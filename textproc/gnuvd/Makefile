@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:38 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/09/07 17:13:19 steven Exp $
 
 COMMENT=		query the online Dutch Van Dale dictionary
-DISTNAME=		gnuvd-1.0.3
+DISTNAME=		gnuvd-1.0.7
 CATEGORIES=		textproc education
 
 HOMEPAGE=		http://www.djcbsoftware.nl/code/gnuvd/
