@@ -1,12 +1,14 @@
-$OpenBSD: patch-src_Makefile,v 1.4 2006/01/27 01:11:08 jolan Exp $
---- src/Makefile.orig	Wed Jan 11 22:27:20 2006
-+++ src/Makefile	Sat Jan 14 23:47:13 2006
-@@ -141,7 +141,7 @@ ifdef BUILD_DIST				# distribution build
+$OpenBSD: patch-src_Makefile,v 1.5 2008/09/07 07:54:04 ajacoutot Exp $
+--- src/Makefile.orig	Thu Sep 13 23:32:36 2007
++++ src/Makefile	Fri Jun 20 09:44:06 2008
+@@ -142,8 +142,8 @@ ifdef BUILD_DIST				# distribution build
  OPTIONS = -O3 -Wall
  endif
  
 -CFLAGS = $(OPTIONS) $(SYS_CFLAGS)  $(EXTRA_CFLAGS) $(CONFIG)
-+CFLAGS = $(SYS_CFLAGS)  $(EXTRA_CFLAGS) $(CONFIG)
- LDFLAGS =           $(SYS_LDFLAGS) $(EXTRA_LDFLAGS) -lm
+-LDFLAGS =           $(SYS_LDFLAGS) $(EXTRA_LDFLAGS) -lm
++CFLAGS += $(SYS_CFLAGS)  $(EXTRA_CFLAGS) $(CONFIG)
++LDFLAGS +=           $(SYS_LDFLAGS) $(EXTRA_LDFLAGS) -lm
  
  
+ SRCS =	main.c		\

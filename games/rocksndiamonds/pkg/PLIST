@@ -1,17 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/01/27 01:11:08 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/09/07 07:54:04 ajacoutot Exp $
 @mode 2555
 @group games
-bin/rocksndiamonds
+@bin bin/rocksndiamonds
 @mode
 @group
+share/doc/rocksndiamonds/
+share/doc/rocksndiamonds/README
 share/rocksndiamonds/
 share/rocksndiamonds/graphics/
 share/rocksndiamonds/graphics/gfx_classic/
+share/rocksndiamonds/graphics/gfx_classic/RocksBusy.pcx
 share/rocksndiamonds/graphics/gfx_classic/RocksDC.pcx
+share/rocksndiamonds/graphics/gfx_classic/RocksDC2.pcx
 share/rocksndiamonds/graphics/gfx_classic/RocksDoor.pcx
 share/rocksndiamonds/graphics/gfx_classic/RocksEMC.pcx
 share/rocksndiamonds/graphics/gfx_classic/RocksElements.pcx
 share/rocksndiamonds/graphics/gfx_classic/RocksFontBig.pcx
+share/rocksndiamonds/graphics/gfx_classic/RocksFontDC.pcx
 share/rocksndiamonds/graphics/gfx_classic/RocksFontEM.pcx
 share/rocksndiamonds/graphics/gfx_classic/RocksFontMedium.pcx
 share/rocksndiamonds/graphics/gfx_classic/RocksFontSmall.pcx
@@ -23,6 +28,7 @@ share/rocksndiamonds/graphics/gfx_classic/RocksToons.pcx
 share/rocksndiamonds/graphics/gfx_classic/graphicsinfo.conf
 share/rocksndiamonds/graphics/gfx_classic/mouse.pcx
 share/rocksndiamonds/graphics/gfx_classic/rocks_icon.xbm
+share/rocksndiamonds/graphics/gfx_classic/rocks_icon_32x32.pcx
 share/rocksndiamonds/graphics/gfx_classic/rocks_iconmask.xbm
 share/rocksndiamonds/levels/
 share/rocksndiamonds/levels/Classic_Games/
@@ -471,7 +477,6 @@ share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/013.level
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/014.level
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/015.level
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/016.level
-share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/016.level.orig
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/017.level
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/018.level
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/019.level
@@ -500,7 +505,6 @@ share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/tapes/013.tape
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/tapes/014.tape
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/tapes/015.tape
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/tapes/016.tape
-share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/tapes/016.tape.orig
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/tapes/017.tape
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/tapes/018.tape
 share/rocksndiamonds/levels/Tutorials/rnd_tutorial_aaron_davidson/tapes/019.tape
