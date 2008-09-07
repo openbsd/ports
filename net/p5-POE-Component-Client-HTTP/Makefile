@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/22 16:10:37 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/09/07 09:15:35 simon Exp $
 
 COMMENT=	POE HTTP user-agent component
 
 MODULES=	cpan
-DISTNAME=	POE-Component-Client-HTTP-0.82
+DISTNAME=	POE-Component-Client-HTTP-0.85
 CATEGORIES=	net www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
