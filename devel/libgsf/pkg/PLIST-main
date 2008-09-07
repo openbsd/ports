@@ -1,14 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2008/06/03 16:34:43 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2008/09/07 22:21:10 brad Exp $
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
 %%SHARED%%
-bin/gsf
-bin/gsf-vba-dump
+@bin bin/gsf
+@bin bin/gsf-vba-dump
 include/libgsf-1/
 include/libgsf-1/gsf/
-include/libgsf-1/gsf-gvfs/
-include/libgsf-1/gsf-gvfs/gsf-input-gvfs.h
-include/libgsf-1/gsf-gvfs/gsf-output-gvfs.h
 include/libgsf-1/gsf/gsf-blob.h
 include/libgsf-1/gsf/gsf-clip-data.h
 include/libgsf-1/gsf/gsf-doc-meta-data.h
@@ -21,6 +18,7 @@ include/libgsf-1/gsf/gsf-infile-stdio.h
 include/libgsf-1/gsf/gsf-infile-zip.h
 include/libgsf-1/gsf/gsf-infile.h
 include/libgsf-1/gsf/gsf-input-bzip.h
+include/libgsf-1/gsf/gsf-input-gio.h
 include/libgsf-1/gsf/gsf-input-gzip.h
 include/libgsf-1/gsf/gsf-input-http.h
 include/libgsf-1/gsf/gsf-input-impl.h
@@ -42,6 +40,7 @@ include/libgsf-1/gsf/gsf-outfile-zip.h
 include/libgsf-1/gsf/gsf-outfile.h
 include/libgsf-1/gsf/gsf-output-bzip.h
 include/libgsf-1/gsf/gsf-output-csv.h
+include/libgsf-1/gsf/gsf-output-gio.h
 include/libgsf-1/gsf/gsf-output-gzip.h
 include/libgsf-1/gsf/gsf-output-iconv.h
 include/libgsf-1/gsf/gsf-output-impl.h
@@ -65,6 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/gsf/__init__.pyo
 @comment lib/python${MODPY_VERSION}/site-packages/gsf/gnomemodule.a
 @comment lib/python${MODPY_VERSION}/site-packages/gsf/gnomemodule.la
 @man man/man1/gsf-office-thumbnailer.1
+@man man/man1/gsf-vba-dump.1
 @man man/man1/gsf.1
 share/gtk-doc/
 share/gtk-doc/html/
@@ -74,6 +74,7 @@ share/gtk-doc/html/gsf/api.html
 share/gtk-doc/html/gsf/dependencies.html
 share/gtk-doc/html/gsf/gsf-Bononbo.html
 share/gtk-doc/html/gsf/gsf-Compression.html
+share/gtk-doc/html/gsf/gsf-GIO.html
 share/gtk-doc/html/gsf/gsf-GIOChannel.html
 share/gtk-doc/html/gsf/gsf-GnomeVFS.html
 share/gtk-doc/html/gsf/gsf-Infile-reading-structed-files.html
@@ -108,6 +109,7 @@ share/gtk-doc/html/gsf/sources.html
 share/gtk-doc/html/gsf/style.css
 share/gtk-doc/html/gsf/up.png
 share/locale/es/LC_MESSAGES/libgsf.mo
+share/locale/nb/LC_MESSAGES/libgsf.mo
 share/locale/oc/LC_MESSAGES/libgsf.mo
 share/locale/sv/LC_MESSAGES/libgsf.mo
 share/locale/zh_HK/LC_MESSAGES/libgsf.mo

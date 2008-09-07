@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-gnome,v 1.4 2008/06/03 16:34:43 jasper Exp $
+@comment $OpenBSD: PLIST-gnome,v 1.5 2008/09/07 22:21:10 brad Exp $
 %%SHARED%%
-bin/gsf-office-thumbnailer
+@bin bin/gsf-office-thumbnailer
 include/libgsf-1/gsf-gnome/
 include/libgsf-1/gsf-gnome/gsf-input-bonobo.h
 include/libgsf-1/gsf-gnome/gsf-input-gnomevfs.h
