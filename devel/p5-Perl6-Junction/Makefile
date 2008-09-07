@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/02 22:02:24 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/09/07 09:00:34 simon Exp $
 
 COMMENT =	Perl6 style Junction operators in Perl5
 
 MODULES =	cpan
-DISTNAME =	Perl6-Junction-1.30000
+DISTNAME =	Perl6-Junction-1.40000
 CATEGORIES =	devel
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
