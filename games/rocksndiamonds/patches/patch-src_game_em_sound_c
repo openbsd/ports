@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_game_em_sound_c,v 1.1 2008/09/07 07:54:57 ajacoutot Exp $
+--- src/game_em/sound.c.orig	Sat Sep  6 17:02:58 2008
++++ src/game_em/sound.c	Sat Sep  6 17:03:51 2008
+@@ -16,7 +16,7 @@
+ #endif
+ 
+ #ifdef PLATFORM_BSD
+-#include <ioctl.h>
++#include <sys/ioctl.h>
+ #include <soundcard.h>
+ #endif
+ 
