@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/27 19:43:58 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/09/07 09:58:14 simon Exp $
 @man man/man5/clamsmtpd.conf.5
 @man man/man8/clamsmtpd.8
-sbin/clamsmtpd
+@bin sbin/clamsmtpd
 share/examples/clamsmtp/
 share/examples/clamsmtp/clamsmtpd.conf
 @sample ${SYSCONFDIR}/clamsmtpd.conf
