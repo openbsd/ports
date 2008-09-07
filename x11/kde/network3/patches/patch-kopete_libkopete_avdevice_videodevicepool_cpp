@@ -1,0 +1,12 @@
+$OpenBSD: patch-kopete_libkopete_avdevice_videodevicepool_cpp,v 1.3 2008/09/07 23:00:17 brad Exp $
+--- kopete/libkopete/avdevice/videodevicepool.cpp.orig	Mon Jun 16 17:31:03 2008
++++ kopete/libkopete/avdevice/videodevicepool.cpp	Mon Jun 16 17:32:41 2008
+@@ -608,7 +608,7 @@ int VideoDevicePool::scanDevices()
+     /// @todo implement me
+ 
+ 	kdDebug(14010) <<  k_funcinfo << "called" << endl;
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ 	QDir videodevice_dir;
+ 	const QString videodevice_dir_path=QString::fromLocal8Bit("/dev/v4l/");
+ 	const QString videodevice_dir_filter=QString::fromLocal8Bit("video*");

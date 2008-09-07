@@ -1,0 +1,474 @@
+$OpenBSD: patch-kopete_libkopete_avdevice_videodevice_cpp,v 1.3 2008/09/07 23:00:17 brad Exp $
+--- kopete/libkopete/avdevice/videodevice.cpp.orig	Wed Feb 13 16:03:06 2008
++++ kopete/libkopete/avdevice/videodevice.cpp	Sun Jun 22 03:59:23 2008
+@@ -181,7 +181,7 @@ int VideoDevice::checkDevice()
+ 		m_videostream=false;
+ 
+ 		m_driver=VIDEODEV_DRIVER_NONE;
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 
+ //if(!getWorkaroundBrokenDriver())
+@@ -360,6 +360,7 @@ kdDebug(14010) <<  k_funcinfo << " Control: " << QStri
+ 
+ }
+ #endif
++#ifdef __linux__
+ 
+ 		CLEAR(V4L_capabilities);
+ 
+@@ -425,6 +426,7 @@ kdDebug(14010) <<  k_funcinfo << " Control: " << QStri
+ 			}
+ 		}
+ #endif
++#endif
+ 		m_name=m_model; // Take care about changing the name to be different from the model itself...
+ 
+ 		detectPixelFormats();
+@@ -512,7 +514,7 @@ int VideoDevice::initDevice()
+ 	m_io_method = IO_METHOD_NONE;
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ 			if(V4L2_capabilities.capabilities & V4L2_CAP_READWRITE)
+@@ -540,6 +542,7 @@ int VideoDevice::initDevice()
+ 			}
+ 			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ 			m_videoread=true;
+ 			m_io_method=IO_METHOD_READ;
+@@ -551,6 +554,7 @@ int VideoDevice::initDevice()
+ 			}
+ 			break;
+ #endif
++#endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:
+ 
+@@ -558,7 +562,7 @@ int VideoDevice::initDevice()
+ 	}
+ 
+ // Select video input, video standard and tune here.
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 	cropcap.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+ 	if (-1 == xioctl (VIDIOC_CROPCAP, &cropcap))
+@@ -676,7 +680,7 @@ kdDebug(14010) <<  k_funcinfo << "setSize(" << newwidt
+ // Change resolution for the video device
+ 		switch(m_driver)
+ 		{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 			case VIDEODEV_DRIVER_V4L2:
+ //				CLEAR (fmt);
+@@ -705,6 +709,7 @@ kdDebug(14010) << k_funcinfo << "VIDIOC_S_FMT worked (
+ 				}
+ 				break;
+ #endif
++#ifdef __linux__
+ 			case VIDEODEV_DRIVER_V4L:
+ 				{
+ 					struct video_window V4L_videowindow;
+@@ -734,6 +739,7 @@ kdDebug(14010) << "------------- width: " << V4L_video
+ 				}
+ 				break;
+ #endif
++#endif
+ 			case VIDEODEV_DRIVER_NONE:
+ 			default:
+ 				break;
+@@ -778,7 +784,7 @@ pixel_format VideoDevice::setPixelFormat(pixel_format 
+ // Change the pixel format for the video device
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ //			CLEAR (fmt);
+@@ -805,6 +811,7 @@ pixel_format VideoDevice::setPixelFormat(pixel_format 
+ 			}
+ 			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ 			{
+ 			struct video_picture V4L_picture;
+@@ -829,6 +836,7 @@ pixel_format VideoDevice::setPixelFormat(pixel_format 
+ 			}
+ 			break;
+ #endif
++#endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:
+ 			break;
+@@ -867,7 +875,7 @@ int VideoDevice::selectInput(int newinput)
+ 	{
+ 		switch (m_driver)
+ 		{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 			case VIDEODEV_DRIVER_V4L2:
+ 				if (-1 == ioctl (descriptor, VIDIOC_S_INPUT, &newinput))
+@@ -877,6 +885,7 @@ int VideoDevice::selectInput(int newinput)
+ 				}
+ 				break;
+ #endif
++#ifdef __linux__
+ 			case VIDEODEV_DRIVER_V4L:
+ 				struct video_channel V4L_input;
+ 				V4L_input.channel=newinput;
+@@ -888,6 +897,7 @@ int VideoDevice::selectInput(int newinput)
+ 				}
+ 				break;
+ #endif
++#endif
+ 			case VIDEODEV_DRIVER_NONE:
+ 			default:
+ 				break;
+@@ -935,7 +945,7 @@ int VideoDevice::startCapturing()
+ 			case IO_METHOD_READ: // Nothing to do
+ 				break;
+ 			case IO_METHOD_MMAP:
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 				{
+ 					unsigned int loop;
+@@ -957,7 +967,7 @@ int VideoDevice::startCapturing()
+ #endif
+ 				break;
+ 			case IO_METHOD_USERPTR:
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 				{
+ 					unsigned int loop;
+@@ -995,7 +1005,7 @@ int VideoDevice::getFrame()
+     /// @todo implement me
+ 	ssize_t bytesread;
+ 
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 	struct v4l2_buffer v4l2buffer;
+ #endif
+@@ -1029,7 +1039,7 @@ int VideoDevice::getFrame()
+ 				}
+ 				break;
+ 			case IO_METHOD_MMAP:
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 				CLEAR (v4l2buffer);
+ 				v4l2buffer.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+@@ -1089,7 +1099,7 @@ memcpy(&m_currentbuffer.data[0], m_rawbuffers[v4l2buff
+ #endif
+ 				break;
+ 			case IO_METHOD_USERPTR:
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 				{
+ 					unsigned int i;
+@@ -1475,7 +1485,7 @@ float VideoDevice::setBrightness(float brightness)
+ 
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ 			{
+@@ -1512,6 +1522,7 @@ float VideoDevice::setBrightness(float brightness)
+ 			}
+ 			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ 			{
+ 				struct video_picture V4L_picture;
+@@ -1523,6 +1534,7 @@ float VideoDevice::setBrightness(float brightness)
+ 			}
+ 			break;
+ #endif
++#endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:
+ 			break;
+@@ -1545,7 +1557,7 @@ float VideoDevice::setContrast(float contrast)
+ 
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ 			{
+@@ -1582,6 +1594,7 @@ float VideoDevice::setContrast(float contrast)
+ 			}
+ 			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ 			{
+ 				struct video_picture V4L_picture;
+@@ -1593,6 +1606,7 @@ float VideoDevice::setContrast(float contrast)
+ 			}
+ 		break;
+ #endif
++#endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:
+ 			break;
+@@ -1615,7 +1629,7 @@ float VideoDevice::setSaturation(float saturation)
+ 
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ 			{
+@@ -1652,6 +1666,7 @@ float VideoDevice::setSaturation(float saturation)
+ 			}
+ 			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ 			{
+ 				struct video_picture V4L_picture;
+@@ -1663,6 +1678,7 @@ float VideoDevice::setSaturation(float saturation)
+ 			}
+ 		break;
+ #endif
++#endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:
+ 			break;
+@@ -1685,7 +1701,7 @@ float VideoDevice::setWhiteness(float whiteness)
+ 
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ 			{
+@@ -1722,6 +1738,7 @@ float VideoDevice::setWhiteness(float whiteness)
+ 			}
+ 			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ 			{
+ 				struct video_picture V4L_picture;
+@@ -1733,6 +1750,7 @@ float VideoDevice::setWhiteness(float whiteness)
+ 			}
+ 		break;
+ #endif
++#endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:
+ 			break;
+@@ -1755,7 +1773,7 @@ float VideoDevice::setHue(float hue)
+ 
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ 			{
+@@ -1792,6 +1810,7 @@ float VideoDevice::setHue(float hue)
+ 			}
+ 			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ 			{
+ 				struct video_picture V4L_picture;
+@@ -1803,6 +1822,7 @@ float VideoDevice::setHue(float hue)
+ 			}
+ 		break;
+ #endif
++#endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:
+ 			break;
+@@ -1876,7 +1896,7 @@ pixel_format VideoDevice::pixelFormatForPalette( int p
+ {
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ 			switch(palette)
+@@ -1927,6 +1947,7 @@ pixel_format VideoDevice::pixelFormatForPalette( int p
+ 			}
+ 			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ 			switch(palette)
+ 			{
+@@ -1945,6 +1966,7 @@ pixel_format VideoDevice::pixelFormatForPalette( int p
+ 			}
+ 			break;
+ #endif
++#endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:
+ 			return PIXELFORMAT_NONE;	break;
+@@ -1956,7 +1978,7 @@ int VideoDevice::pixelFormatCode(pixel_format pixelfor
+ {
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ 			switch(pixelformat)
+@@ -2007,6 +2029,7 @@ int VideoDevice::pixelFormatCode(pixel_format pixelfor
+ 			}
+ 			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ 			switch(pixelformat)
+ 			{
+@@ -2052,6 +2075,7 @@ int VideoDevice::pixelFormatCode(pixel_format pixelfor
+ 			}
+ 			break;
+ #endif
++#endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:
+ 			return PIXELFORMAT_NONE;	break;
+@@ -2162,7 +2186,7 @@ QString VideoDevice::pixelFormatName(int pixelformat)
+ 	returnvalue = "None";
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ 			switch(pixelformat)
+@@ -2213,6 +2237,7 @@ QString VideoDevice::pixelFormatName(int pixelformat)
+ 			}
+ 			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ 			switch(pixelformat)
+ 			{
+@@ -2230,6 +2255,7 @@ QString VideoDevice::pixelFormatName(int pixelformat)
+ 			}
+ 			break;
+ #endif
++#endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:
+ 			break;
+@@ -2242,7 +2268,7 @@ int VideoDevice::detectPixelFormats()
+ 			int err = 0;
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ 			fmtdesc.index = 0;
+@@ -2264,6 +2290,7 @@ int VideoDevice::detectPixelFormats()
+ 			}
+ //			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ // TODO: THis thing can be used to detec what pixel formats are supported in a API-independent way, but V4L2 has VIDIOC_ENUM_PIXFMT.
+ // The correct thing to do is to isolate these calls and do a proper implementation for V4L and another for V4L2 when this thing will be migrated to a plugin architecture.
+@@ -2308,6 +2335,7 @@ int VideoDevice::detectPixelFormats()
+ 			if(PIXELFORMAT_NONE != setPixelFormat(PIXELFORMAT_YYUV))	kdDebug(14010) <<  k_funcinfo << pixelFormatName(PIXELFORMAT_YYUV) << endl;
+ 			break;
+ #endif
++#endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:
+ 			return PIXELFORMAT_NONE;	break;
+@@ -2319,7 +2347,7 @@ __u64 VideoDevice::signalStandardCode(signal_standard 
+ {
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ 			switch(standard)
+@@ -2362,6 +2390,7 @@ __u64 VideoDevice::signalStandardCode(signal_standard 
+ 			}
+ 			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ 			switch(standard)
+ 			{
+@@ -2403,6 +2432,7 @@ __u64 VideoDevice::signalStandardCode(signal_standard 
+ 			}
+ 			break;
+ #endif
++#endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:
+ 			return STANDARD_NONE;	break;
+@@ -2461,7 +2491,7 @@ QString VideoDevice::signalStandardName(int standard)
+ 	returnvalue = "None";
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ 			switch(standard)
+@@ -2503,6 +2533,7 @@ QString VideoDevice::signalStandardName(int standard)
+ 			}
+ 			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ 			switch(standard)
+ 			{
+@@ -2517,6 +2548,7 @@ QString VideoDevice::signalStandardName(int standard)
+ 			}
+ 			break;
+ #endif
++#endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:
+ 			break;
+@@ -2531,13 +2563,15 @@ int VideoDevice::detectSignalStandards()
+ {
+ 	switch(m_driver)
+ 	{
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 		case VIDEODEV_DRIVER_V4L2:
+ 			break;
+ #endif
++#ifdef __linux__
+ 		case VIDEODEV_DRIVER_V4L:
+ 			break;
++#endif
+ #endif
+ 		case VIDEODEV_DRIVER_NONE:
+ 		default:

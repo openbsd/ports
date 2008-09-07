@@ -1,6 +1,6 @@
-$OpenBSD: patch-kopete_libkopete_avdevice_videocontrol_h,v 1.1 2007/10/24 21:52:18 espie Exp $
---- kopete/libkopete/avdevice/videocontrol.h.orig	Wed Oct 24 00:18:36 2007
-+++ kopete/libkopete/avdevice/videocontrol.h	Wed Oct 24 00:22:20 2007
+$OpenBSD: patch-kopete_libkopete_avdevice_videocontrol_h,v 1.2 2008/09/07 22:58:25 brad Exp $
+--- kopete/libkopete/avdevice/videocontrol.h.orig	Mon Oct  8 05:49:07 2007
++++ kopete/libkopete/avdevice/videocontrol.h	Sun Jun 22 03:01:23 2008
 @@ -20,15 +20,12 @@
  #ifndef KOPETE_AVVIDEOCONTROL_H
  #define KOPETE_AVVIDEOCONTROL_H
@@ -11,14 +11,14 @@ $OpenBSD: patch-kopete_libkopete_avdevice_videocontrol_h,v 1.1 2007/10/24 21:52:
 -#define __u64 unsigned long long
 -#endif // __u64
 +#include <stdint.h>
-+#define __u64 uint64_t
  
 -#ifndef __s64 //required by videodev.h
 -#define __s64 long long
 -#endif // __s64
 +#define __s64 int64_t
-+#define __u32 uint32_t
 +#define __s32 int32_t
++#define __u64 uint64_t
++#define __u32 uint32_t
  
  #include <qstring.h>
  #include <kdebug.h>

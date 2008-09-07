@@ -1,0 +1,64 @@
+$OpenBSD: patch-kopete_libkopete_avdevice_videodevice_h,v 1.3 2008/09/07 23:00:17 brad Exp $
+--- kopete/libkopete/avdevice/videodevice.h.orig	Sun Jun 22 02:46:34 2008
++++ kopete/libkopete/avdevice/videodevice.h	Sun Jun 22 04:05:39 2008
+@@ -33,7 +33,7 @@
+ #include <unistd.h>
+ #include <signal.h>
+ 
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && defined(__linux__)
+ 
+ #include <asm/types.h>
+ #undef __STRICT_ANSI__
+@@ -61,6 +61,18 @@
+ 
+ #endif // __linux__
+ 
++#if defined(ENABLE_AV) && defined(__OpenBSD__)
++
++#include <stdint.h>
++
++#define __s64 int64_t
++#define __s32 int32_t
++#define __u64 uint64_t
++#define __u32 uint32_t
++
++#include <sys/videoio.h>
++#endif // __OpenBSD__
++
+ #include <qstring.h>
+ #include <qfile.h>
+ #include <qimage.h>
+@@ -80,9 +92,11 @@ namespace AV {
+ typedef enum
+ {
+ 	VIDEODEV_DRIVER_NONE
+-#if defined( __linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
++#ifdef __linux__
+         ,
+ 	VIDEODEV_DRIVER_V4L
++#endif
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+         ,
+ 	VIDEODEV_DRIVER_V4L2
+@@ -276,7 +290,7 @@ class VideoDevice{ (public)
+ 	int descriptor;
+ 
+ //protected:
+-#if defined(__linux__) && defined(ENABLE_AV)
++#if defined(ENABLE_AV) && (defined(__linux__) || defined(__OpenBSD__))
+ #ifdef V4L2_CAP_VIDEO_CAPTURE
+ 	struct v4l2_capability V4L2_capabilities;
+ 	struct v4l2_cropcap cropcap;
+@@ -289,8 +303,10 @@ class VideoDevice{ (public)
+ void enumerateMenu (void);
+ 
+ #endif
++#ifdef __linux__
+ 	struct video_capability V4L_capabilities;
+ 	struct video_buffer V4L_videobuffer;
++#endif
+ #endif	
+ 	QValueVector<Kopete::AV::VideoInput> m_input;
+ 	QValueVector<Kopete::AV::VideoControl> m_control;
