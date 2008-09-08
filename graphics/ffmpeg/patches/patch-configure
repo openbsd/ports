@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.20 2008/09/05 01:10:21 brad Exp $
+$OpenBSD: patch-configure,v 1.21 2008/09/08 23:28:28 brad Exp $
 --- configure.orig	Fri Jun 20 22:40:11 2008
-+++ configure	Thu Aug 14 23:43:26 2008
++++ configure	Sun Sep  7 00:17:23 2008
+@@ -884,7 +884,7 @@ rtp_muxer_deps="network rtp_protocol"
+ rtsp_demuxer_deps="sdp_demuxer"
+ sdp_demuxer_deps="rtp_protocol mpegts_demuxer"
+ v4l_demuxer_deps="linux_videodev_h"
+-v4l2_demuxer_deps="linux_videodev2_h"
++v4l2_demuxer_deps="sys_videoio_h"
+ vfwcap_demuxer_deps="capCreateCaptureWindow"
+ vfwcap_demuxer_extralibs="-lvfw32"
+ x11_grab_device_demuxer_deps="x11grab XShmCreateImage"
 @@ -934,6 +934,10 @@ cpu="generic"
  # OS
  target_os=$(tolower $(uname -s))
@@ -159,7 +168,15 @@ $OpenBSD: patch-configure,v 1.20 2008/09/05 01:10:21 brad Exp $
  
  ##########################################
  # Network check
-@@ -1831,7 +1839,7 @@ enabled extra_warnings && check_cflags -Winline
+@@ -1791,6 +1799,7 @@ EOF
+ 
+ check_header linux/videodev.h
+ check_header linux/videodev2.h
++check_header sys/videoio.h
+ 
+ check_func2 "windows.h vfw.h" capCreateCaptureWindow -lvfw32
+ 
+@@ -1831,7 +1840,7 @@ enabled extra_warnings && check_cflags -Winline
  # add some linker flags
  check_ldflags -Wl,--warn-common
  check_ldflags $LDLATEFLAGS
@@ -168,7 +185,7 @@ $OpenBSD: patch-configure,v 1.20 2008/09/05 01:10:21 brad Exp $
  
  if enabled small; then
      check_cflags -Os            # not all compilers support -Os
-@@ -2204,8 +2212,7 @@ Version: $version
+@@ -2204,8 +2213,7 @@ Version: $version
  Requires: $(disabled shared && echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -178,7 +195,7 @@ $OpenBSD: patch-configure,v 1.20 2008/09/05 01:10:21 brad Exp $
  Cflags: -I\${includedir}
  EOF
  cat <<EOF > $name/$name-uninstalled.pc
-@@ -2224,17 +2231,17 @@ Cflags: -I\${includedir}
+@@ -2224,17 +2232,17 @@ Cflags: -I\${includedir}
  EOF
  }
  

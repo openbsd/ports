@@ -1,0 +1,17 @@
+$OpenBSD: patch-libavdevice_v4l2_c,v 1.1 2008/09/08 23:28:28 brad Exp $
+--- libavdevice/v4l2.c.orig	Sun Sep  7 00:20:51 2008
++++ libavdevice/v4l2.c	Sun Sep  7 00:22:31 2008
+@@ -34,8 +34,13 @@
+ #include <sys/ioctl.h>
+ #include <sys/mman.h>
+ #include <sys/time.h>
++#ifdef __linux__
+ #include <asm/types.h>
+ #include <linux/videodev2.h>
++#endif
++#ifdef __OpenBSD__
++#include <sys/videoio.h>
++#endif
+ #include <time.h>
+ 
+ static const int desired_video_buffers = 256;
