@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2008/08/27 00:35:24 martynas Exp $
+# $OpenBSD: Makefile,v 1.12 2008/09/08 16:31:47 martynas Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	SILC plugin for irssi
 
-VERSION=	1.1.4
+VERSION=	1.1.5
 DISTNAME=	silc-client-${VERSION}
-PKGNAME=	irssi-silc-${VERSION}p1
+PKGNAME=	irssi-silc-${VERSION}
 
 CATEGORIES=	net
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://penguin-breeder.org/silc/
 
 MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -30,6 +30,9 @@ MASTER_SITES=	http://ftp.silcnet.org/client/sources/ \
 
 BUILD_DEPENDS=	::devel/gettext \
 		::devel/glib2
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS+= :yasm-*:devel/yasm
+.endif
 RUN_DEPENDS=	::net/irssi
 
 MAKE_FLAGS=	libfe_common_silc_la_LDFLAGS=-avoid-version \
@@ -39,6 +42,9 @@ USE_LIBTOOL=	  Yes
 LIBTOOL_FLAGS+=	  --tag=disable-static
 CONFIGURE_STYLE=  autoconf
 AUTOCONF_VERSION= 2.61
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+CONFIGURE_ENV+= ac_cv_path_NASM=no YASM=${LOCALBASE}/bin/yasm
+.endif
 CONFIGURE_ARGS+=  --docdir=${PREFIX}/share/doc/irssi/silc \
 		  --enable-ipv6 \
 		  --with-iconv=${LOCALBASE} \
@@ -48,7 +54,7 @@ CONFIGURE_ARGS+=  --docdir=${PREFIX}/share/doc/irssi/silc \
 		  --with-silc-plugin=${PREFIX}/lib/irssi \
 		  --without-libtoolfix
 
-.if ${MACHINE_ARCH} != "i386"
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+=  --disable-asm
 .endif
 

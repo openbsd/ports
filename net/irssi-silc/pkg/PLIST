@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/12/08 22:32:00 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/09/08 16:31:47 martynas Exp $
 lib/irssi/modules/libfe_common_silc.la
 lib/irssi/modules/libfe_common_silc.so
 @comment lib/irssi/modules/libfe_silc.so
@@ -10,7 +10,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Silc/Silc.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Silc/Silc.so
 @comment @man man/man1/silc.1
 share/doc/irssi/silc/
-@comment share/doc/irssi/silc/CHANGES
 @comment share/doc/irssi/silc/COPYING
 @comment share/doc/irssi/silc/CREDITS
 share/doc/irssi/silc/FAQ
