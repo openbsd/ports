@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 20:34:00 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2008/09/08 07:48:43 wilfried Exp $
 
 COMMENT=		GUI client for MySQL
 
-VERSION=		0.9.4
+VERSION=		0.9.8
 DISTNAME=		mysqlcc-${VERSION}-src
-PKGNAME=		mysqlcc-${VERSION}p2
+PKGNAME=		mysqlcc-${VERSION}
 CATEGORIES=		databases
 
-HOMEPAGE=		http://mysql.com/products/mysqlcc/index.html
+HOMEPAGE=		http://mysqlcc.sourceforge.net/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -18,10 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c m pthread stdc++ z
 
-MASTER_SITES=		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQLCC/ \
-			ftp://sunsite.dk/mirrors/mysql/Downloads/MySQLCC/ \
-			ftp://gd.tuwien.ac.at/db/mysql/Downloads/MySQLCC/ \
-			ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQLCC
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mysqlcc/}
 
 MODQT_MT=		Yes
 MODULES=		x11/qt3

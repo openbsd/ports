@@ -1,16 +1,38 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2004/07/19 13:56:20 wilfried Exp $
---- configure.orig	Fri Mar 28 23:06:00 2003
-+++ configure	Tue Apr  1 15:30:59 2003
-@@ -2480,7 +2480,7 @@ fi
+$OpenBSD: patch-configure,v 1.2 2008/09/08 07:48:43 wilfried Exp $
+--- configure.orig	Sun Oct  8 22:40:01 2006
++++ configure	Thu Aug 21 13:39:50 2008
+@@ -2457,9 +2457,9 @@ echo "${ECHO_T}" >&6
+         for dir in $mysql_lib; do
+             if test "x$mysql_found" != "xyes"
+             then
+-                as_ac_File=`echo "ac_cv_file_"$dir/libmysqlclient.so"" | $as_tr_sh`
+-echo "$as_me:$LINENO: checking for \"$dir/libmysqlclient.so\"" >&5
+-echo $ECHO_N "checking for \"$dir/libmysqlclient.so\"... $ECHO_C" >&6
++                as_ac_File=`echo "ac_cv_file_"$dir/libmysqlclient.a"" | $as_tr_sh`
++echo "$as_me:$LINENO: checking for \"$dir/libmysqlclient.a\"" >&5
++echo $ECHO_N "checking for \"$dir/libmysqlclient.a\"... $ECHO_C" >&6
+ if eval "test \"\${$as_ac_File+set}\" = set"; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+@@ -2467,7 +2467,7 @@ else
+   { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
+ echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
+    { (exit 1); exit 1; }; }
+-if test -r ""$dir/libmysqlclient.so""; then
++if test -r ""$dir/libmysqlclient.a""; then
+   eval "$as_ac_File=yes"
+ else
+   eval "$as_ac_File=no"
+@@ -2484,7 +2484,7 @@ fi
                  if test "x$mysql_found" = "xyes"
                  then
                      LIBS="-L$dir $SAVE_LIBS $LIBZ_LIB"
--                    MYSQL_LIB="$dir/libmysqlclient.a $LIBZ_LIB"
+-                    MYSQL_LIB="$dir/libmysqlclient.so $LIBZ_LIB"
 +                    MYSQL_LIB="-lmysqlclient $LIBZ_LIB"
  
                      echo "$as_me:$LINENO: checking for mysql_real_connect in -lmysqlclient" >&5
  echo $ECHO_N "checking for mysql_real_connect in -lmysqlclient... $ECHO_C" >&6
-@@ -3086,51 +3086,7 @@ fi
+@@ -3090,51 +3090,7 @@ fi
  
                  if test "x$mysql_found" = "xyes"
                  then
@@ -63,7 +85,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/19 13:56:20 wilfried Exp $
                  fi
              fi
          done
-@@ -3142,14 +3098,6 @@ echo "$as_me: error: Could not find mysq
+@@ -3146,16 +3102,8 @@ echo "$as_me: error: Could not find mysql.h in '$mysql
     { (exit 1); exit 1; }; }
          fi
  
@@ -74,11 +96,13 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/19 13:56:20 wilfried Exp $
 -           echo "other than $dir, please specify it as --with-mysql-include= argument"
 -           exit 1
 -        fi
+ 
+ 
 -
- 
- 
  # Check whether --with-qt or --without-qt was given.
-@@ -3179,7 +3127,7 @@ fi
+ if test "${with_qt+set}" = set; then
+   withval="$with_qt"
+@@ -3184,7 +3132,7 @@ fi
  
  echo "$as_me:$LINENO: checking \"if Qt Version in $QTDIR is >= 3.0.5\"" >&5
  echo $ECHO_N "checking \"if Qt Version in $QTDIR is >= 3.0.5\"... $ECHO_C" >&6
@@ -87,9 +111,9 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/07/19 13:56:20 wilfried Exp $
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  #include "confdefs.h"
-@@ -4067,7 +4015,7 @@ fi
+@@ -4078,7 +4026,7 @@ else
+ fi
  
- QMAKESPEC=$QTDIR/mkspecs/$host_os
  echo "Creating Makefile with qmake"
 -QMAKESPEC=$QMAKESPEC QTDIR=$QTDIR $QTDIR/bin/qmake mysqlcc.pro
 +QMAKESPEC=$FILESDIR QTDIR=$QTDIR $QTDIR/bin/qmake-mt mysqlcc.pro

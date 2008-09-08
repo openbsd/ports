@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_CApplication_cpp,v 1.1.1.1 2004/07/19 13:56:20 wilfried Exp $
---- src/CApplication.cpp.orig	2003-12-14 00:10:43.000000000 +0100
-+++ src/CApplication.cpp	2003-12-26 14:12:03.000000000 +0100
-@@ -109,7 +109,7 @@ void CApplication::initGlobals(bool star
-   mydir += "/";
+$OpenBSD: patch-src_CApplication_cpp,v 1.2 2008/09/08 07:48:43 wilfried Exp $
+--- src/CApplication.cpp.orig	Fri Aug 11 22:29:12 2006
++++ src/CApplication.cpp	Thu Aug 21 13:30:52 2008
+@@ -110,7 +110,7 @@ void CApplication::initGlobals(bool startup)
  #else
    //Directory where mysqlcc.exe (or mysqlcc) is.
--  QString mydir = QDir::currentDirPath() + "/";
+   //QString mydir = QDir::currentDirPath() + "/";
+-  QString mydir = "/usr/share/mysqlcc/";  // This needs to be done with a PREFIX define ..
 +  QString mydir = LOCALBASE "/share/mysqlcc/";
-   //QString mydir = "/usr/share/mysqlcc/";  This needs to be done with a PREFIX define ..
  #endif
  
+   //Translations path

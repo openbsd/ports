@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_main_cpp,v 1.1.1.1 2004/07/19 13:56:20 wilfried Exp $
---- src/main.cpp.orig	2003-12-14 00:10:44.000000000 +0100
-+++ src/main.cpp	2003-12-26 14:10:30.000000000 +0100
+$OpenBSD: patch-src_main_cpp,v 1.2 2008/09/08 07:48:43 wilfried Exp $
+--- src/main.cpp.orig	Fri Aug 11 22:29:12 2006
++++ src/main.cpp	Thu Aug 21 13:27:40 2008
 @@ -22,7 +22,9 @@
  #undef VERSION
  #endif
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_main_cpp,v 1.1.1.1 2004/07/19 13:56:20 wilfried Exp $
  #ifndef NO_QT
  #define NO_QT
  #endif
-@@ -44,6 +46,7 @@ static const char *load_default_groups[]
+@@ -44,6 +46,7 @@ static const char *load_default_groups[]= { "mysqlcc",
  static ulong select_limit,my_net_buffer_length,max_join_size,my_max_allowed_packet,opt_connect_timeout=0;
  static uint opt_local_infile=0;
  
