@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-cgi,v 1.5 2004/09/27 03:10:24 marcm Exp $
+@comment $OpenBSD: PLIST-cgi,v 1.6 2008/09/08 19:38:30 martynas Exp $
 cgi-bin/nut/
-cgi-bin/nut/upsimage.cgi
-cgi-bin/nut/upsset.cgi
-cgi-bin/nut/upsstats.cgi
+@bin cgi-bin/nut/upsimage.cgi
+@bin cgi-bin/nut/upsset.cgi
+@bin cgi-bin/nut/upsstats.cgi
 conf/nut/
 conf/nut/hosts.conf.sample
 @sample ${WEB_ROOT}/conf/nut/hosts.conf

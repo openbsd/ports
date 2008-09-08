@@ -1,61 +1,65 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/01/30 20:55:59 mbalmer Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/09/08 19:38:30 martynas Exp $
 @conflict upsd-*
 @pkgpath sysutils/nut
 @pkgpath sysutils/nut,no_cgi
 @pkgpath sysutils/nut,snmp
 @pkgpath sysutils/nut,no_cgi,snmp
 @newuser ${NUT_USER}:${NUT_ID}:::UPS User:/var/empty:/sbin/nologin
-bin/al175
-bin/apcsmart
-bin/bcmxcp
-bin/bcmxcp_usb
-bin/belkin
-bin/belkinunv
-bin/bestfcom
-bin/bestuferrups
-bin/bestups
-bin/cpsups
-bin/cyberpower
-bin/dummy-ups
-bin/etapro
-bin/everups
-bin/gamatronic
-bin/genericups
-bin/isbmex
-bin/liebert
-bin/masterguard
-bin/megatec
-bin/megatec_usb
-bin/metasys
-bin/mge-shut
-bin/mge-utalk
-bin/newmge-shut
-bin/nitram
-bin/oneac
-bin/optiups
-bin/powercom
-bin/powerpanel
-bin/rhino
-bin/safenet
-bin/skel
-bin/solis
-bin/tripplite
-bin/tripplite_usb
-bin/tripplitesu
-bin/upsc
-bin/upscmd
-bin/upscode2
-bin/upsdrvctl
-bin/upslog
-bin/upsrw
+%%SHARED%%
+@bin bin/al175
+@bin bin/apcsmart
+@bin bin/bcmxcp
+@bin bin/bcmxcp_usb
+@bin bin/belkin
+@bin bin/belkinunv
+@bin bin/bestfcom
+@bin bin/bestuferrups
+@bin bin/bestups
+@bin bin/cpsups
+@bin bin/cyberpower
+@bin bin/dummy-ups
+@bin bin/etapro
+@bin bin/everups
+@bin bin/gamatronic
+@bin bin/genericups
+@bin bin/isbmex
+@bin bin/liebert
+@bin bin/masterguard
+@bin bin/megatec
+@bin bin/megatec_usb
+@bin bin/metasys
+@bin bin/mge-shut
+@bin bin/mge-utalk
+@bin bin/netxml-ups
+@bin bin/newmge-shut
+@bin bin/nitram
+@bin bin/oneac
+@bin bin/optiups
+@bin bin/powercom
+@bin bin/powerpanel
+@bin bin/rhino
+@bin bin/safenet
+@bin bin/skel
+@bin bin/solis
+@bin bin/tripplite
+@bin bin/tripplite_usb
+@bin bin/tripplitesu
+@bin bin/upsc
+@bin bin/upscmd
+@bin bin/upscode2
+@bin bin/upsdrvctl
+@bin bin/upslog
+@bin bin/upsrw
 bin/upssched-cmd
-bin/usbhid-ups
-bin/victronups
+@bin bin/usbhid-ups
+@bin bin/victronups
 @comment html/
 @comment html/bottom.html
 @comment html/header.html
 @comment html/index.html
 html/nut-banner.png
+lib/libupsclient.a
+lib/libupsclient.la
 lib/pkgconfig/
 @man man/man5/hosts.conf.5
 @man man/man5/ups.conf.5
@@ -89,6 +93,7 @@ lib/pkgconfig/
 @man man/man8/metasys.8
 @man man/man8/mge-shut.8
 @man man/man8/mge-utalk.8
+@man man/man8/netxml-ups.8
 @man man/man8/nitram.8
 @man man/man8/nutupsdrv.8
 @man man/man8/oneac.8
@@ -115,9 +120,9 @@ lib/pkgconfig/
 @man man/man8/upsstats.cgi.8
 @man man/man8/usbhid-ups.8
 @man man/man8/victronups.8
-sbin/upsd
-sbin/upsmon
-sbin/upssched
+@bin sbin/upsd
+@bin sbin/upsmon
+@bin sbin/upssched
 share/doc/nut/
 share/doc/nut/FAQ
 share/doc/nut/Makefile
