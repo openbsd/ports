@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/05 14:56:15 jasper Exp $
-${P5SITE}/POE/
-${P5SITE}/POE/Component/
+@comment $OpenBSD: PLIST,v 1.2 2008/09/08 09:50:18 jasper Exp $
 ${P5SITE}/POE/Component/SSLify/
 ${P5SITE}/POE/Component/SSLify.pm
 ${P5SITE}/POE/Component/SSLify/ClientHandle.pm

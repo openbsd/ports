@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/08/28 20:18:41 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2008/09/08 09:50:18 jasper Exp $
 
 COMMENT=		make use of SSL with POE
 
 MODULES=		cpan
-DISTNAME=		POE-Component-SSLify-0.08
+DISTNAME=		POE-Component-SSLify-0.14
 CATEGORIES=		net security
 
 # perl
@@ -12,6 +12,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=		::security/p5-Net_SSLeay
+CONFIGURE_STYLE=	modbuild
+
+RUN_DEPENDS=		::devel/p5-POE \
+			::security/p5-Net_SSLeay
 
 .include <bsd.port.mk>
