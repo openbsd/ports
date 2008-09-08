@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/16 00:11:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/08 09:41:35 jasper Exp $
 
 COMMENT=		automated interface to the Wikipedia encyclopedia
 
-DISTNAME=		WWW-Wikipedia-1.93
+DISTNAME=		WWW-Wikipedia-1.94
 CATEGORIES=		www
 
 MODULES=		cpan
