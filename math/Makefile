@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2008/06/12 19:06:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.76 2008/09/08 18:55:26 jasper Exp $
 #
 
      SUBDIR += R
@@ -34,6 +34,7 @@
      SUBDIR += jacal
      SUBDIR += kst
      SUBDIR += lapack
+     SUBDIR += libneural
      SUBDIR += maple
      SUBDIR += maple-share
      SUBDIR += mathomatic
