@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/08 18:46:57 jasper Exp $
+include/neuron.h
+include/nnwork.h
+lib/libneural.a
+lib/libneural.la
+@lib lib/libneural.so.${LIBneural_VERSION}
