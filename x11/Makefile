@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.346 2008/08/27 07:40:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.347 2008/09/08 08:40:42 brad Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -50,7 +50,6 @@
      SUBDIR += eterm
      SUBDIR += eterm,kanji
      SUBDIR += evilwm
-     SUBDIR += explorer
      SUBDIR += extace
      SUBDIR += farsiweb-ttf
      SUBDIR += fbpanel
