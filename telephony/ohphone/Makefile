@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/06/04 13:05:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/08 17:17:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 IP telephony endpoint
 
 DISTNAME=	ohphone-1.4.5
-PKGNAME=	${DISTNAME}p0v0
+PKGNAME=	${DISTNAME}p1v0
 CATEGORIES=	telephony net
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -32,7 +32,7 @@ MAKE_ENV+=	CC=${CC} CPLUS=${CXX} \
 		OPENH323DIR=${LOCALBASE}/share/openh323/ \
 		PWLIBDIR=`ptlib-config --pwlibdir` \
 		SYSLIBDIR=`ptlib-config --libdir` \
-		STDCCFLAGS="${STDCCFLAGS} -I${LOCALBASE}/include/openh323"
+		STDCCFLAGS="-I${LOCALBASE}/include/openh323"
 
 post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1/

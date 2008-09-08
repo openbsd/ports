@@ -1,6 +1,6 @@
-$OpenBSD: patch-make_unix_mak,v 1.2 2008/03/15 17:38:07 ajacoutot Exp $
+$OpenBSD: patch-make_unix_mak,v 1.3 2008/09/08 17:17:10 ajacoutot Exp $
 --- make/unix.mak.orig	Fri Oct 19 08:22:33 2007
-+++ make/unix.mak	Fri Jan  4 14:04:44 2008
++++ make/unix.mak	Mon Sep  8 18:05:20 2008
 @@ -454,7 +454,7 @@ endif # P_SHAREDLIB
  
  
@@ -19,7 +19,15 @@ $OpenBSD: patch-make_unix_mak,v 1.2 2008/03/15 17:38:07 ajacoutot Exp $
  endif
  
  LDLIBS		+= -lossaudio
-@@ -503,7 +503,7 @@ endif
+@@ -489,6 +489,7 @@ LDLIBS		+= -lossaudio
+ P_USE_RANLIB		:= 1
+ #STDCCFLAGS      += -DP_USE_PRAGMA		# migrated to configure
+ 
++STDCCFLAGS	+= -fPIC
+ 
+ endif # OpenBSD
+ 
+@@ -503,7 +504,7 @@ endif
  
  LDLIBS		+= -lossaudio
  
@@ -28,7 +36,7 @@ $OpenBSD: patch-make_unix_mak,v 1.2 2008/03/15 17:38:07 ajacoutot Exp $
  
  # enable the USE_PTH line to compile using pth
  # enable the USE_NATIVE_THREADS line to compile using native threads
-@@ -908,11 +908,11 @@ LIB_SUFFIX	= $(SHAREDLIBEXT)
+@@ -908,11 +909,11 @@ LIB_SUFFIX	= $(SHAREDLIBEXT)
  LIB_TYPE	=
  else   
  LIB_SUFFIX	= a 
@@ -42,7 +50,7 @@ $OpenBSD: patch-make_unix_mak,v 1.2 2008/03/15 17:38:07 ajacoutot Exp $
  endif
  
  ifndef INSTALLBIN_DIR
-@@ -950,8 +950,10 @@ endif
+@@ -950,8 +951,10 @@ endif
  PW_LIBDIR	= $(PWLIBDIR)/lib
  
  # set name of the PT library
@@ -54,7 +62,7 @@ $OpenBSD: patch-make_unix_mak,v 1.2 2008/03/15 17:38:07 ajacoutot Exp $
  PT_OBJBASE	= obj_$(PLATFORM_TYPE)_$(OBJDIR_SUFFIX)
  PT_OBJDIR	= $(PW_LIBDIR)/$(PT_OBJBASE)
  
-@@ -983,7 +985,7 @@ ifneq ($(OSTYPE),Darwin)
+@@ -983,7 +986,7 @@ ifneq ($(OSTYPE),Darwin)
    ifeq ($(OSTYPE),solaris)
      OPTCCFLAGS	+= -O3 
    else

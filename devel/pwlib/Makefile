@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/09/02 23:17:15 todd Exp $
+# $OpenBSD: Makefile,v 1.15 2008/09/08 17:17:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	portable Windows library
 
 V=		1_12_0
 DISTNAME=	ptlib-v${V}
-PKGNAME=	pwlib-${V:S/_/./g}p5
+PKGNAME=	pwlib-${V:S/_/./g}p6
 CATEGORIES=	devel
 
 EXTRACT_SUFX=	-src.tar.gz
@@ -35,13 +35,9 @@ LIB_DEPENDS=	esd.>=2::audio/esound \
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-/_/}
 NO_REGRESS=	Yes
 
-.if ${MACHINE_ARCH} == "alpha"
-STDCCFLAGS+=	-fPIC
-.endif
-
 USE_GMAKE=	Yes
 ALL_TARGET=	optshared
-MAKE_ENV+=	STDCCFLAGS="${STDCCFLAGS} -I${X11BASE}/include \
+MAKE_ENV+=	STDCCFLAGS="-I${X11BASE}/include \
 			-I${LOCALBASE}/include" \
 		CC=${CC} CPLUS=${CXX}
 MAKE_FLAGS=	LIB_MAJOR_VERSION=${LIBpt_VERSION:R} \
@@ -63,11 +59,6 @@ CONFIGURE_ARGS=	--enable-plugins \
 		--disable-avc \
 		--disable-dc \
 		--disable-odbc
-
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64" \
-	|| ${MACHINE_ARCH} == "powerpc"
-CFLAGS+=	-fPIC
-.endif
 
 pre-configure:
 	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' \
