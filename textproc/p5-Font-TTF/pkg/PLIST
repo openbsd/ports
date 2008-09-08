@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2006/09/29 08:57:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2008/09/08 00:04:14 jasper Exp $
 ${P5SITE}/Font/
 ${P5SITE}/Font/TTF/
 ${P5SITE}/Font/TTF.pm
@@ -11,6 +11,7 @@ ${P5SITE}/Font/TTF/Cmap.pm
 ${P5SITE}/Font/TTF/Coverage.pm
 ${P5SITE}/Font/TTF/Cvt_.pm
 ${P5SITE}/Font/TTF/Delta.pm
+${P5SITE}/Font/TTF/Dumper.pm
 ${P5SITE}/Font/TTF/EBDT.pm
 ${P5SITE}/Font/TTF/EBLC.pm
 ${P5SITE}/Font/TTF/Fdsc.pm
@@ -23,6 +24,7 @@ ${P5SITE}/Font/TTF/GPOS.pm
 ${P5SITE}/Font/TTF/GSUB.pm
 ${P5SITE}/Font/TTF/Glyf.pm
 ${P5SITE}/Font/TTF/Glyph.pm
+${P5SITE}/Font/TTF/GrFeat.pm
 ${P5SITE}/Font/TTF/Hdmx.pm
 ${P5SITE}/Font/TTF/Head.pm
 ${P5SITE}/Font/TTF/Hhea.pm
@@ -49,6 +51,7 @@ ${P5SITE}/Font/TTF/Mort/Rearrangement.pm
 ${P5SITE}/Font/TTF/Mort/Subtable.pm
 ${P5SITE}/Font/TTF/Name.pm
 ${P5SITE}/Font/TTF/OS_2.pm
+${P5SITE}/Font/TTF/OTTags.pm
 ${P5SITE}/Font/TTF/OldCmap.pm
 ${P5SITE}/Font/TTF/OldMort.pm
 ${P5SITE}/Font/TTF/PCLT.pm
@@ -76,6 +79,7 @@ ${P5SITE}/ttfmod.pl
 @man man/man3p/Font::TTF::Coverage.3p
 @man man/man3p/Font::TTF::Cvt_.3p
 @man man/man3p/Font::TTF::Delta.3p
+@man man/man3p/Font::TTF::Dumper.3p
 @man man/man3p/Font::TTF::EBDT.3p
 @man man/man3p/Font::TTF::EBLC.3p
 @man man/man3p/Font::TTF::Fdsc.3p
@@ -88,6 +92,7 @@ ${P5SITE}/ttfmod.pl
 @man man/man3p/Font::TTF::GSUB.3p
 @man man/man3p/Font::TTF::Glyf.3p
 @man man/man3p/Font::TTF::Glyph.3p
+@man man/man3p/Font::TTF::GrFeat.3p
 @man man/man3p/Font::TTF::Hdmx.3p
 @man man/man3p/Font::TTF::Head.3p
 @man man/man3p/Font::TTF::Hhea.3p
@@ -112,6 +117,7 @@ ${P5SITE}/ttfmod.pl
 @man man/man3p/Font::TTF::Mort::Subtable.3p
 @man man/man3p/Font::TTF::Name.3p
 @man man/man3p/Font::TTF::OS_2.3p
+@man man/man3p/Font::TTF::OTTags.3p
 @man man/man3p/Font::TTF::OldCmap.3p
 @man man/man3p/Font::TTF::OldMort.3p
 @man man/man3p/Font::TTF::PCLT.3p
