@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.46 2008/08/27 00:35:24 martynas Exp $
+# $OpenBSD: Makefile,v 1.47 2008/09/08 15:02:41 brad Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) client
 
-DISTNAME=	silc-client-1.1.4
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	silc-client-1.1.5
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -28,6 +27,10 @@ MASTER_SITES=	http://ftp.silcnet.org/client/sources/ \
 MODULES=	devel/gettext
 LIB_DEPENDS+=	glib-2.0.>=1000.0,gmodule-2.0.>=1000.0::devel/glib2
 
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS+= :yasm-*:devel/yasm
+.endif
+
 CONFDIR=	${SYSCONFDIR}/silc
 SUBST_VARS=	CONFDIR
 
@@ -35,6 +38,9 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+CONFIGURE_ENV+= ac_cv_path_NASM=no YASM=${LOCALBASE}/bin/yasm
+.endif
 CONFIGURE_ARGS+= --enable-ipv6 \
 		 --docdir=${PREFIX}/share/doc/silc \
 		 --sysconfdir=${CONFDIR} \
@@ -43,7 +49,7 @@ CONFIGURE_ARGS+= --enable-ipv6 \
 		 --without-libtoolfix \
 		 --with-perl=no
 
-.if ${MACHINE_ARCH} != "i386"
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+= --disable-asm
 .endif
 
