@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/02 22:36:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/09/08 09:51:22 jasper Exp $
 
 COMMENT=	perl module for parsing nmap XML reports
 
 MODULES=	cpan
-DISTNAME=	Nmap-Parser-1.11
+DISTNAME=	Nmap-Parser-1.16
 CATEGORIES=	net
 
 HOMEPAGE=       http://nmapparser.wordpress.com/
 
-# GPLv2
+# MIT
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
