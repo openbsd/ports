@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 01:40:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/09/08 00:01:07 jasper Exp $
 
 COMMENT= 		currency conversion
 
-DISTNAME=		Finance-Currency-Convert-XE-0.11
+DISTNAME=		Finance-Currency-Convert-XE-0.15
 CATEGORIES=		converters
 MODULES=		cpan
 
