@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2008/09/07 22:21:10 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2008/09/09 20:58:11 brad Exp $
 
 COMMENT-main=		GNOME Structured File library
 COMMENT-gnome=		GNOME specific extensions to libgsf
@@ -62,7 +62,8 @@ WANTLIB-gnome=		${WANTLIB} crypto ssl ORBit-2 ORBitCosNaming-2 \
 			bz2 dbus-1 dbus-glib-1 gconf-2 glib-2.0 gmodule-2.0
 
 .if !${MULTI_PACKAGES:M-gnome}
-CONFIGURE_ARGS+=	--without-gnome_vfs
+CONFIGURE_ARGS+=	--without-bonobo \
+			--without-gnome_vfs
 .endif
 
 .include <bsd.port.mk>
