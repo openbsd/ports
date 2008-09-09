@@ -1,0 +1,2 @@
+Best attempts to load modules from a list, stopping at the first
+successful load and failing only if no alternative was found.
