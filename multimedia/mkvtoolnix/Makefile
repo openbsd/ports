@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/03/15 10:11:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/09/09 07:27:49 ajacoutot Exp $
 
-COMMENT=	set of tools to create, alter and inspect Matroska files
+COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-2.2.0
+DISTNAME=	mkvtoolnix-2.3.0
 CATEGORIES=	multimedia x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -19,32 +19,33 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/sources/
 
-WANTLIB=	c ebml m ogg stdc++ z expat
+WANTLIB=	c ebml expat m ogg stdc++ z
 
 MODULES=	converters/libiconv
 LIB_DEPENDS=	FLAC.>=7::audio/flac \
-		pcre.>=1,pcrecpp.>=2::devel/pcre \
 		bz2.>=10::archivers/bzip2 \
 		lzo.>=1::archivers/lzo \
 		matroska:libmatroska->=0.8.1:multimedia/libmatroska \
 		vorbis.>=5::audio/libvorbis \
-		magic.>=1::devel/libmagic
+		magic.>=1::devel/libmagic \
+		boost_regex-mt.>=1::devel/boost
 
 MAKE_FLAGS+=	V=1
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
+
 CONFIGURE_STYLE=gnu
-
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib \
+			-lm -lstdc++ -pthread" \
 		ac_cv_has_nl_langinfo=no
-
 CONFIGURE_ARGS=	--enable-lzo \
 		--enable-bz2 \
 		--disable-qt \
-		--with-flac
+		--with-flac \
+		--with-boost-regex=boost_regex-mt
 
 FLAVORS=	no_x11
 FLAVOR?=

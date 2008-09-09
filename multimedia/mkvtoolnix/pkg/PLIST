@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/19 12:23:42 ajacoutot Exp $
-bin/base64tool
-bin/mkvextract
-bin/mkvinfo
-bin/mkvmerge
+@comment $OpenBSD: PLIST,v 1.2 2008/09/09 07:27:49 ajacoutot Exp $
+@bin bin/base64tool
+@bin bin/mkvextract
+@bin bin/mkvinfo
+@bin bin/mkvmerge
 @man man/man1/base64tool.1
 @man man/man1/mkvextract.1
 @man man/man1/mkvinfo.1
