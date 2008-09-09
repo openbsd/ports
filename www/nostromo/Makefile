@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2008/04/25 07:34:54 mglocker Exp $
+# $OpenBSD: Makefile,v 1.25 2008/09/09 18:54:57 mglocker Exp $
 
 COMMENT=		Nostromo webserver
 
-DISTNAME=		nostromo-1.8.6
+DISTNAME=		nostromo-1.8.7
 CATEGORIES=		www
 MASTER_SITES=		http://www.nazgul.ch/dev/
 
@@ -30,7 +30,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nostromo
 	${INSTALL_DATA} ${WRKDIST}/ChangeLog ${PREFIX}/share/doc/nostromo
 	${INSTALL_DATA} ${WRKDIST}/README ${PREFIX}/share/doc/nostromo
-	${INSTALL_DATA} ${WRKDIST}/TODO ${PREFIX}/share/doc/nostromo
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nostromo
 	${INSTALL_DATA} ${WRKDIST}/htdocs/cgi-bin/printenv \
 		${PREFIX}/share/examples/nostromo

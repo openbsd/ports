@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/01/27 06:54:50 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/09/09 18:54:57 mglocker Exp $
 @newgroup _nostromo:536
 @newuser _nostromo:536:_nostromo:daemon:Nostromo Account:/nonexistent:/sbin/nologin
 @man man/man8/nhttpd.8
-sbin/crypt
-sbin/nhttpd
+@bin sbin/crypt
+@bin sbin/nhttpd
 share/doc/nostromo/
 share/doc/nostromo/ChangeLog
 share/doc/nostromo/README
-share/doc/nostromo/TODO
 @sample /var/nostromo/
 @sample /var/nostromo/conf/
 @sample /var/nostromo/htdocs/
