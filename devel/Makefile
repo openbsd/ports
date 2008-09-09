@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.619 2008/09/06 10:34:06 simon Exp $
+# $OpenBSD: Makefile,v 1.620 2008/09/09 21:14:35 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -207,6 +207,7 @@
      SUBDIR += p5-Algorithm-C3
      SUBDIR += p5-Algorithm-Dependency
      SUBDIR += p5-Algorithm-Diff
+     SUBDIR += p5-Algorithm-IncludeExclude
      SUBDIR += p5-Algorithm-MDiff
      SUBDIR += p5-Algorithm-MarkovChain
      SUBDIR += p5-Algorithm-Permute
@@ -224,6 +225,7 @@
      SUBDIR += p5-BSD-Resource
      SUBDIR += p5-BSD-stat
      SUBDIR += p5-Benchmark-Timer
+     SUBDIR += p5-Best
      SUBDIR += p5-Bit-Vector-Minimal
      SUBDIR += p5-C-Scan
      SUBDIR += p5-CLASS
@@ -270,6 +272,7 @@
      SUBDIR += p5-Class-Method-Modifiers
      SUBDIR += p5-Class-MethodMaker
      SUBDIR += p5-Class-MethodMapper
+     SUBDIR += p5-Class-Multimethods
      SUBDIR += p5-Class-ReturnValue
      SUBDIR += p5-Class-Singleton
      SUBDIR += p5-Class-Std
@@ -348,9 +351,12 @@
      SUBDIR += p5-ExtUtils-ParseXS
      SUBDIR += p5-ExtUtils-PkgConfig
      SUBDIR += p5-ExtUtils-XSBuilder
+     SUBDIR += p5-File-Attributes
+     SUBDIR += p5-File-Attributes-Recursive
      SUBDIR += p5-File-BOM
      SUBDIR += p5-File-BaseDir
      SUBDIR += p5-File-Copy-Recursive
+     SUBDIR += p5-File-CreationTime
      SUBDIR += p5-File-DesktopEntry
      SUBDIR += p5-File-Find-Rule
      SUBDIR += p5-File-Find-Rule-Filesys-Virtual
@@ -416,6 +422,7 @@
      SUBDIR += p5-Log-Dispatch
      SUBDIR += p5-Log-Dispatch-FileRotate
      SUBDIR += p5-Log-Log4perl
+     SUBDIR += p5-Log-Trace
      SUBDIR += p5-MLDBM
      SUBDIR += p5-MLDBM-Sync
      SUBDIR += p5-MRO-Compat
@@ -509,6 +516,7 @@
      SUBDIR += p5-Term-Screen
      SUBDIR += p5-Term-ScreenColor
      SUBDIR += p5-Term-Shell
+     SUBDIR += p5-Test-Assertions
      SUBDIR += p5-Test-Base
      SUBDIR += p5-Test-Class
      SUBDIR += p5-Test-ClassAPI
@@ -522,11 +530,13 @@
      SUBDIR += p5-Test-Group
      SUBDIR += p5-Test-HTML-Tidy
      SUBDIR += p5-Test-Inline
+     SUBDIR += p5-Test-JSON
      SUBDIR += p5-Test-LongString
      SUBDIR += p5-Test-Manifest
      SUBDIR += p5-Test-Memory-Cycle
      SUBDIR += p5-Test-MockModule
      SUBDIR += p5-Test-MockObject
+     SUBDIR += p5-Test-NoTabs
      SUBDIR += p5-Test-NoWarnings
      SUBDIR += p5-Test-Object
      SUBDIR += p5-Test-Output
@@ -542,6 +552,7 @@
      SUBDIR += p5-Test-WWW-Mechanize
      SUBDIR += p5-Test-WWW-Mechanize-Catalyst
      SUBDIR += p5-Test-Warn
+     SUBDIR += p5-Test-YAML-Valid
      SUBDIR += p5-Test-use-ok
      SUBDIR += p5-Text-FixEOL
      SUBDIR += p5-Tie-Array-Sorted
