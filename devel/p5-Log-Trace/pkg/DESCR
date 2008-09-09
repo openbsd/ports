@@ -1,0 +1,2 @@
+This module provides a unified approach to tracing.  A script can use
+Log::Trace qw( < mode > ) to set the behaviour of the TRACE function.

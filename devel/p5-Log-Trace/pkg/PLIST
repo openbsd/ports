@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/09 21:14:17 simon Exp $
+${P5SITE}/Log/
+${P5SITE}/Log/Trace/
+${P5SITE}/Log/Trace.pm
+${P5SITE}/Log/Trace/Manual.pod
+@man man/man3p/Log::Trace.3p
+@man man/man3p/Log::Trace::Manual.3p
