@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/09 21:14:13 simon Exp $
+${P5SITE}/File/CreationTime.pm
+@man man/man3p/File::CreationTime.3p

@@ -1,0 +1,2 @@
+This module keeps track of creation times on filesystems that don't
+normally provide such information.
