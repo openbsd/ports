@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/09 21:14:05 simon Exp $
+${P5SITE}/File/
+${P5SITE}/File/Attributes/
+${P5SITE}/File/Attributes.pm
+${P5SITE}/File/Attributes/Base.pm
+${P5SITE}/File/Attributes/Simple.pm
+@man man/man3p/File::Attributes.3p
+@man man/man3p/File::Attributes::Base.3p
+@man man/man3p/File::Attributes::Simple.3p

@@ -1,0 +1,4 @@
+File::Attributes is a wrapper around modules in the File::Attributes
+hierarchy.  If you use this module directly (instead of one of the
+aforementioned decendants), then your attribute manipulations will Just
+Work, regardless of the underlying filesystem.
