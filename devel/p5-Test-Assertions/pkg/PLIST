@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/09 21:14:20 simon Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Assertions/
+${P5SITE}/Test/Assertions.pm
+${P5SITE}/Test/Assertions/Manual.pod
+${P5SITE}/Test/Assertions/TestScript.pm
+@man man/man3p/Test::Assertions.3p
+@man man/man3p/Test::Assertions::Manual.3p
+@man man/man3p/Test::Assertions::TestScript.3p
