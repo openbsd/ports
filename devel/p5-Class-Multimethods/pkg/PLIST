@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/09 21:14:02 simon Exp $
+${P5SITE}/Class/
+${P5SITE}/Class/Multimethods.pm
+${P5SITE}/Class/Multimethods.pod
+@man man/man3p/Class::Multimethods.3p

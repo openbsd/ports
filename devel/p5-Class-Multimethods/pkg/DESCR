@@ -1,0 +1,4 @@
+The Class:Multimethod module exports a subroutine (&multimethod) that
+can be used to declare other subroutines that are dispatched using a
+algorithm different from the normal Perl subroutine or method dispatch
+mechanism.
