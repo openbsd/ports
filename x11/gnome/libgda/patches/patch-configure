@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/08/21 10:27:25 jasper Exp $
---- configure.orig	Thu Jul 10 15:03:18 2008
-+++ configure	Thu Jul 10 15:06:22 2008
-@@ -24896,96 +24896,7 @@ else
+$OpenBSD: patch-configure,v 1.2 2008/09/10 19:37:29 naddy Exp $
+--- configure.orig	Thu Apr 10 12:38:54 2008
++++ configure	Wed Sep 10 19:07:32 2008
+@@ -23474,7 +23474,6 @@ fi
+ 
+ 
+ case $host_cpu in
+-x86_64* | sparc64*) lib="lib64";;
+ *) lib="lib";;
+ esac
+ 
+@@ -24896,96 +24895,7 @@ else
  fi
  
  
