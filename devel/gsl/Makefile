@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2008/07/29 00:17:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2008/09/10 21:16:53 martynas Exp $
 
 COMMENT=	GNU Scientific Library
 
 DISTNAME=	gsl-1.8
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=	gslcblas             0.0      # .0.0
 SHARED_LIBS +=	gsl                  10.0     # .9.0
 
