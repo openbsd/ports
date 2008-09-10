@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/23 08:24:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2008/09/10 20:49:03 martynas Exp $
 
 COMMENT =	Context Free Design Grammar
 
 VERSION =	2.1
 DISTNAME =	ContextFreeSource${VERSION}
-PKGNAME =	cfdg-${VERSION}
+PKGNAME =	cfdg-${VERSION}p0
 
 CATEGORIES =	graphics
 
