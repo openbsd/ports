@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/05/17 18:21:53 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2008/09/10 15:55:03 simon Exp $
 
 COMMENT= 	I18N for Catalyst
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-I18N-0.07
+DISTNAME=	Catalyst-Plugin-I18N-0.08
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
