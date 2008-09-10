@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/06/01 17:17:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/09/10 17:25:26 martynas Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
 DISTNAME=	gmfsk-0.6
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://gmfsk.connect.fi/
