@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tclx_config_linux,v 1.1 2008/09/11 21:45:43 martynas Exp $
+--- src/tclx/config/linux.orig	Mon Feb  4 04:52:26 2008
++++ src/tclx/config/linux	Thu Sep 11 22:55:35 2008
+@@ -4,7 +4,7 @@
+ # $Id: patch-src_tclx_config_linux,v 1.1 2008/09/11 21:45:43 martynas Exp $
+ #------------------------------------------------------------------------------
+ #
+-SYS_DEP_FLAGS=-DTCL_HAVE_SETLINEBUF -DTCL_32_BIT_RANDOM -DTCL_POSIX_SIG -DTCL_TM_GMTOFF
++SYS_DEP_FLAGS=-DTCL_HAVE_SETLINEBUF -DTCL_32_BIT_RANDOM -DTCL_POSIX_SIG -DTCL_TM_GMTOFF -DTCL_IEEE_FP_MATH
+ LIBS=-lm
+ RANLIB_CMD=ranlib
+ MCS_CMD=true

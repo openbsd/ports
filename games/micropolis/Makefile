@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/02/19 13:25:18 deanna Exp $
+# $OpenBSD: Makefile,v 1.9 2008/09/11 21:45:43 martynas Exp $
 
 COMMENT=	city-building simulation
 
 DISTNAME=	micropolis-20080211
+PKGNAME=	${DISTNAME}p0
 WRKDIST=	${WRKDIR}/micropolis
 
 CATEGORIES=	games
