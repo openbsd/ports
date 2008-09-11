@@ -1,19 +1,7 @@
-$OpenBSD: patch-applets_lancelot_app_src_BaseActionWidget_cpp,v 1.1 2008/01/29 22:11:28 espie Exp $
---- applets/lancelot/app/src/BaseActionWidget.cpp.orig	Sun Jan 27 17:15:49 2008
-+++ applets/lancelot/app/src/BaseActionWidget.cpp	Sun Jan 27 17:17:53 2008
-@@ -91,6 +91,11 @@ void BaseActionWidget::paintWidget ( QPainter * painte
- 
- }
- 
-+inline float fmaxf(float a, float b)
-+{
-+	return a > b ? a : b;
-+}
-+
- void BaseActionWidget::paintForeground (QPainter * painter) {
-     QPainter * _painter = painter;
- 
-@@ -158,7 +163,8 @@ void BaseActionWidget::paintForeground (QPainter * pai
+$OpenBSD: patch-applets_lancelot_app_src_BaseActionWidget_cpp,v 1.2 2008/09/11 19:52:18 martynas Exp $
+--- applets/lancelot/app/src/BaseActionWidget.cpp.orig	Wed Jan 30 21:34:41 2008
++++ applets/lancelot/app/src/BaseActionWidget.cpp	Thu Sep 11 00:02:00 2008
+@@ -158,7 +158,8 @@ void BaseActionWidget::paintForeground (QPainter * pai
  
          if (m_icon || m_iconInSvg) { // using real painter...
              iconRect.moveTop(top);
@@ -23,7 +11,7 @@ $OpenBSD: patch-applets_lancelot_app_src_BaseActionWidget_cpp,v 1.1 2008/01/29 2
              if (m_icon) {
                  m_icon->paint(_painter, rect);
              } else {
-@@ -213,7 +219,8 @@ void BaseActionWidget::paintForeground (QPainter * pai
+@@ -213,7 +214,8 @@ void BaseActionWidget::paintForeground (QPainter * pai
          descriptionRect.moveLeft(WIDGET_PADDING + iconRect.right());
  
          if (m_icon || m_iconInSvg) {  // using real painter...
