@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/01/09 15:31:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/09/11 19:22:05 martynas Exp $
 %%SHARED%%
 bin/ecpp
 bin/egcc
@@ -19,7 +19,6 @@ lib/gcc/${CONFIG}/${V}/include/
 lib/gcc/${CONFIG}/${V}/include/README
 lib/gcc/${CONFIG}/${V}/include/com_err.h
 lib/gcc/${CONFIG}/${V}/include/limits.h
-lib/gcc/${CONFIG}/${V}/include/math.h
 lib/gcc/${CONFIG}/${V}/include/rpc/
 lib/gcc/${CONFIG}/${V}/include/rpc/rpc_des.h
 lib/gcc/${CONFIG}/${V}/include/rpc/svc.h

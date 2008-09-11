@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2008/08/28 19:04:40 martynas Exp $
+# $OpenBSD: Makefile,v 1.34 2008/09/11 19:22:05 martynas Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 m68k sparc sparc64 powerpc vax
 
@@ -8,7 +8,7 @@ FULL_PKGVERSION=3.3.6
 BOOTSTRAP_GEN = 6
 ADASTRAP = adastrap-i386-3.3.6-${BOOTSTRAP_GEN}.tgz
 
-PKGNAME-main=	gcc-${FULL_PKGVERSION}p11
+PKGNAME-main=	gcc-${FULL_PKGVERSION}p12
 PKGNAME-c++ =	g++-${FULL_PKGVERSION}p10
 PKGNAME-estdc=	libstdc++-${FULL_PKGVERSION}p3
 PKGNAME-g77=	g77-${FULL_PKGVERSION}p9
