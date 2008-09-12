@@ -40,6 +40,6 @@ port 901.
    swat            901/tcp                 # samba admin service
    ...
 
-See documentation files in
+Install the samba-docs package and see documentation files in
 ${PREFIX}/share/doc/samba and example config files in
 ${PREFIX}/share/examples/samba for more information.

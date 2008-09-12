@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST-docs,v 1.10 2008/07/25 22:01:17 brad Exp $
+@comment $OpenBSD: PLIST-docs,v 1.11 2008/09/12 07:49:11 brad Exp $
+@conflict samba-<=3.0.31p0
 share/doc/samba/
 share/doc/samba/NT4-Locking.reg
 share/doc/samba/NT4_PlainPassword.reg
-share/doc/samba/README
-share/doc/samba/README.OpenBSD
-share/doc/samba/THANKS
 share/doc/samba/Win-2Kx-XPP-DeleteCachedProfiles.reg
 share/doc/samba/Win-2Kx-XPP-ForceLocalProfile.reg
 share/doc/samba/Win-NT-DeleteRoamingProfile.reg
@@ -39,6 +37,8 @@ share/examples/samba/VFS/
 share/examples/samba/VFS/Makefile.in
 share/examples/samba/VFS/README
 share/examples/samba/VFS/autogen.sh
+share/examples/samba/VFS/config.guess
+share/examples/samba/VFS/config.sub
 share/examples/samba/VFS/configure.in
 share/examples/samba/VFS/install-sh
 share/examples/samba/VFS/shadow_copy_test.c
