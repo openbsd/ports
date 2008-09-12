@@ -1,0 +1,27 @@
+$OpenBSD: patch-qca-tls_cpp,v 1.1 2008/09/12 13:56:32 naddy Exp $
+--- qca-tls.cpp.orig	Thu Sep 11 22:42:05 2008
++++ qca-tls.cpp	Thu Sep 11 22:43:46 2008
+@@ -454,7 +454,11 @@ class RSAKeyContext : public QCA_RSAKeyContext (public
+ 			if(!r) {
+ 				// try this other public function, for whatever reason
+ 				p = (void *)in;
++#ifdef OSSL_098
++				r = d2i_RSA_PUBKEY(NULL, (const unsigned char **)&p, len);
++#else
+ 				r = d2i_RSA_PUBKEY(NULL, (unsigned char **)&p, len);
++#endif
+ 			}
+ 			if(r) {
+ 				if(pub) {
+@@ -799,7 +803,11 @@ class CertContext : public QCA_CertContext (public)
+ 	bool createFromDER(const char *in, unsigned int len)
+ 	{
+ 		unsigned char *p = (unsigned char *)in;
++#ifdef OSSL_098
++		X509 *t = d2i_X509(NULL, (const unsigned char**)&p, len);
++#else
+ 		X509 *t = d2i_X509(NULL, &p, len);
++#endif
+ 		if(!t)
+ 			return false;
+ 		fromX509(t);
