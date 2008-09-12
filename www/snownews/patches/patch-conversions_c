@@ -1,52 +1,20 @@
-$OpenBSD: patch-conversions_c,v 1.7 2008/01/14 22:40:39 martynas Exp $
---- conversions.c.orig	Tue Jan  8 11:41:02 2008
-+++ conversions.c	Sat Jan 12 21:30:42 2008
-@@ -21,6 +21,7 @@
-  *
-  */
-  
-+#include <sys/types.h> 
- #include <string.h>
- #include <iconv.h>
- #include <stdio.h>
-@@ -30,6 +31,7 @@
+$OpenBSD: patch-conversions_c,v 1.8 2008/09/12 20:07:15 martynas Exp $
+--- conversions.c.orig	Mon Jul 28 12:26:16 2008
++++ conversions.c	Fri Sep 12 22:33:53 2008
+@@ -31,7 +31,7 @@
  #include <errno.h>
  #include <libxml/HTMLparser.h>
  #include <langinfo.h>
+-/*#include <md5.h>*/
 +#include <md5.h>
  
  #include "os-support.h"
  
-@@ -48,7 +50,6 @@
- #include "interface.h"
+@@ -51,7 +51,6 @@
  #include "ui-support.h"
  #include "setup.h"
--#include "md5.h"
  #include "digcalc.h"
+-#include "md5.h"
  
  extern struct entity *first_entity;
-@@ -63,17 +64,22 @@ char * iconvert (char * inbuf) {
- 	iconv_t cd;							/* Iconvs conversion descriptor. */
- 	char *outbuf, *outbuf_first;		/* We need two pointers so we do not lose
- 	                                      the string starting position. */
-+	char target_charset[64];
- 	size_t inbytesleft, outbytesleft;
  
-+	(void)strlcpy(target_charset, nl_langinfo(CODESET), sizeof(target_charset));
-+
- 	/* Take a shortcut. */
--	if (strcasecmp (TARGET_CHARSET, "UTF-8") == 0)
-+	if (strcasecmp (target_charset, "UTF-8") == 0)
- 		return strdup(inbuf);
- 	
- 	inbytesleft = strlen(inbuf);
- 	outbytesleft = strlen(inbuf);
- 
-+	(void)strlcat(target_charset, "//TRANSLIT", sizeof(target_charset));
-+
- 	/* cd = iconv_open(nl_langinfo(CODESET), "UTF-8"); */
--	cd = iconv_open (TARGET_CHARSET, "UTF-8");
-+	cd = iconv_open (target_charset, "UTF-8");
- 	if (cd == (iconv_t) -1) {
- 		return NULL;
- 	}
