@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/08 14:40:39 ajacoutot Exp $
-bin/yasm
+@comment $OpenBSD: PLIST,v 1.3 2008/09/12 14:26:01 brad Exp $
+@bin bin/yasm
 include/libyasm/
 include/libyasm-stdint.h
 include/libyasm.h

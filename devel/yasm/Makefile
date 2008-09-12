@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/01/08 14:40:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/09/12 14:26:00 brad Exp $
 
 COMMENT=	complete rewrite of the NASM assembler
 
-DISTNAME=	yasm-0.6.2
+DISTNAME=	yasm-0.7.1
 CATEGORIES=	devel lang
 
 MAINTAINER=	Shaun Amott <shaun@inerd.com>
@@ -22,9 +22,10 @@ MASTER_SITES=		${HOMEPAGE}/releases/
 
 MODULES=		devel/gettext
 
+CXXFLAGS+=		-I${LOCALBASE}/include
+
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 
 INSTALL_TARGET= 	install install-man
 
