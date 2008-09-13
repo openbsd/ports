@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/13 08:25:12 simon Exp $
 
 COMMENT=	simple eyecandy ASCII Tables
 
-DISTNAME=	Text-SimpleTable-0.03
-PKGNAME=	p5-${DISTNAME}p1
+DISTNAME=	Text-SimpleTable-0.05
 CATEGORIES=	textproc
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -15,8 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
-
-CONFIGURE_STYLE=modbuild
 
 MAKE_ENV=	TEST_POD=Yes
 
