@@ -1,6 +1,7 @@
-#	$OpenBSD: Makefile,v 1.8 2008/02/21 21:35:54 jasper Exp $
+#	$OpenBSD: Makefile,v 1.9 2008/09/13 17:02:09 matthieu Exp $
 
 COMMENT=	sample X Compositing Manager
+COMES_WITH=	4.5
 
 DISTNAME=	xcompmgr-1.1.1
 PKGNAME=	${DISTNAME}p4
