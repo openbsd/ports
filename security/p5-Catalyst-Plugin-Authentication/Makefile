@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/05/22 10:59:16 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2008/09/13 15:27:51 simon Exp $
 
 COMMENT= 	Catalyst authentication framework
 
-DISTNAME=	Catalyst-Plugin-Authentication-0.10006
+DISTNAME=	Catalyst-Plugin-Authentication-0.10007
 CATEGORIES=	security
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -21,7 +21,8 @@ RUN_DEPENDS=	::devel/p5-Class-Inspector \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 REGRESS_DEPENDS=::devel/p5-Test-WWW-Mechanize-Catalyst \
 		::security/p5-Digest-SHA1 \
-		::www/p5-Catalyst-Plugin-Session-State-Cookie
+		::www/p5-Catalyst-Plugin-Session-State-Cookie \
+		::devel/p5-Test-Exception
 
 MAKE_ENV=	TEST_POD=Yes
 
