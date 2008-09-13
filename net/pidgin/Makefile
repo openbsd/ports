@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.26 2008/08/21 05:59:01 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2008/09/13 22:04:40 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-protocol instant messaging client
 
-DISTNAME=	pidgin-2.5.0
-SHARED_LIBS +=	jabber		0.0
-SHARED_LIBS +=	oscar		0.0
-SHARED_LIBS +=	purple		4.0
-SHARED_LIBS +=	purple-client	4.0
-SHARED_LIBS +=	gnt		4.0
+DISTNAME=	pidgin-2.5.1
 CATEGORIES=	net
+
+SHARED_LIBS+=	jabber		0.0
+SHARED_LIBS+=	oscar		0.0
+SHARED_LIBS+=	purple		4.1
+SHARED_LIBS+=	purple-client	4.1
+SHARED_LIBS+=	gnt		4.1
 
 HOMEPAGE=	http://pidgin.im/
 
@@ -30,7 +31,7 @@ WANTLIB=		ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 
-MODULES=	devel/gettext lang/python textproc/intltool
+MODULES=	devel/gettext textproc/intltool
 
 BUILD_DEPENDS=	:gconf2-*:devel/gconf2
 RUN_DEPENDS+=	:dbus-python-*:x11/dbus-python \
@@ -45,7 +46,9 @@ LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		xml2::textproc/libxml \
 		dbus-glib-1::x11/dbus-glib
 
-SUBST_VARS=	MODPY_BIN TRUEPREFIX
+PYTHON=		${LOCALBASE}/bin/python2.5
+
+SUBST_VARS=	PYTHON TRUEPREFIX
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
@@ -65,7 +68,7 @@ CONFIGURE_ARGS+= --with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/pidgin 
 		 --disable-tk \
 		 --disable-cap \
 		 --disable-schemas-install \
-		 --with-python=${MODPY_BIN}
+		 --with-python=${PYTHON}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

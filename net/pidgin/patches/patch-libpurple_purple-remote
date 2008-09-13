@@ -1,9 +1,9 @@
-$OpenBSD: patch-libpurple_purple-remote,v 1.3 2008/08/21 05:59:01 brad Exp $
+$OpenBSD: patch-libpurple_purple-remote,v 1.4 2008/09/13 22:04:40 brad Exp $
 --- libpurple/purple-remote.orig	Mon Aug 18 21:53:50 2008
 +++ libpurple/purple-remote	Wed Aug 20 01:55:58 2008
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python
-+#!${MODPY_BIN}
++#!${PYTHON}
  
  import dbus
  import re

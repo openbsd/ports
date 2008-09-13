@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.2 2008/04/12 08:19:28 steven Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.3 2008/09/13 22:04:40 brad Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for purple
@@ -316,7 +316,7 @@ static PurplePluginInfo info = {
 
 	SSL_OPENSSL_PLUGIN_ID,				/* id */
 	N_("OpenSSL"),					/* name */
-	VERSION,					/* version */
+	DISPLAY_VERSION,				/* version */
 
 	N_("Provides SSL support through OpenSSL."),	/* description */
 	N_("Provides SSL support through OpenSSL."),
@@ -330,7 +330,13 @@ static PurplePluginInfo info = {
 	NULL,						/* ui_info */
 	NULL,						/* extra_info */
 	NULL,						/* prefs_info */
-	NULL						/* actions */
+	NULL,						/* actions */
+
+	/* padding */
+	NULL,
+	NULL,
+	NULL,
+	NULL
 };
 
 static void

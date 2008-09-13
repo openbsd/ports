@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.12 2008/08/21 05:59:01 brad Exp $
---- configure.ac.orig	Mon Aug 18 21:53:21 2008
-+++ configure.ac	Wed Aug 20 01:16:43 2008
-@@ -672,6 +672,7 @@ if test "x$enable_consoleui" = "xyes"; then
+$OpenBSD: patch-configure_ac,v 1.13 2008/09/13 22:04:40 brad Exp $
+--- configure.ac.orig	Sun Aug 31 00:36:15 2008
++++ configure.ac	Sun Aug 31 18:21:24 2008
+@@ -671,6 +671,7 @@ if test "x$enable_consoleui" = "xyes"; then
  		# ncursesw was not found. Look for plain old ncurses
  		enable_consoleui=yes
  		AC_CHECK_LIB(ncurses, initscr, [GNT_LIBS="-lncurses"], [enable_consoleui=no])
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure_ac,v 1.12 2008/08/21 05:59:01 brad Exp $
  		AC_CHECK_LIB(panel, update_panels, [GNT_LIBS="$GNT_LIBS -lpanel"], [enable_consoleui=no])
  		AC_DEFINE(NO_WIDECHAR, 1, [Define to 1 if you don't have wide-character support.])
  		if test x"$ac_ncurses_includes" != "x"; then
-@@ -867,7 +868,7 @@ else
+@@ -866,7 +867,7 @@ else
  	if test "$ac_silc_libs" != "no"; then
  		SILC_LIBS="-L$ac_silc_libs"
  	fi
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure_ac,v 1.12 2008/08/21 05:59:01 brad Exp $
  	AC_CHECK_LIB(silcclient, silc_client_init, [silcclient=yes], , $SILC_LIBS)
  
  	if test "x$silcincludes" = "xyes" -a "x$silcclient" = "xyes"; then
-@@ -1600,6 +1601,11 @@ AM_CONDITIONAL(INSTALL_SSL_CERTIFICATES, test "x$SSL_C
+@@ -1599,6 +1600,11 @@ AM_CONDITIONAL(INSTALL_SSL_CERTIFICATES, test "x$SSL_C
  
  dnl These two are inverses of each other <-- stolen from evolution!
  
@@ -30,7 +30,7 @@ $OpenBSD: patch-configure_ac,v 1.12 2008/08/21 05:59:01 brad Exp $
  AC_ARG_ENABLE(gnutls,
  	[  --enable-gnutls=[yes,no]  attempt to use GnuTLS for SSL support [default=yes]],
  	[enable_gnutls="$enableval"],
-@@ -1610,11 +1616,99 @@ AC_ARG_ENABLE(nss,
+@@ -1609,11 +1615,99 @@ AC_ARG_ENABLE(nss,
  	[enable_nss="$enableval"],
  	[enable_nss="yes"])
  
@@ -132,7 +132,7 @@ $OpenBSD: patch-configure_ac,v 1.12 2008/08/21 05:59:01 brad Exp $
  if test "x$enable_gnutls" != "xno"; then
  	enable_gnutls="no"
  	prefix=`eval echo $prefix`
-@@ -1978,17 +2072,31 @@ fi
+@@ -1977,17 +2071,31 @@ fi
  
  AM_CONDITIONAL(USE_NSS, test "x$enable_nss" = "xyes")
  

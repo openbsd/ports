@@ -1,9 +1,9 @@
-$OpenBSD: patch-libpurple_purple-url-handler,v 1.3 2008/08/21 05:59:01 brad Exp $
+$OpenBSD: patch-libpurple_purple-url-handler,v 1.4 2008/09/13 22:04:40 brad Exp $
 --- libpurple/purple-url-handler.orig	Mon Aug 18 21:53:50 2008
 +++ libpurple/purple-url-handler	Wed Aug 20 01:56:15 2008
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python
-+#!${MODPY_BIN}
++#!${PYTHON}
  
  import dbus
  import re
