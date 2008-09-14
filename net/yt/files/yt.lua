@@ -1,5 +1,5 @@
 #!/usr/local/bin/lua
--- $OpenBSD: yt.lua,v 1.13 2008/09/11 11:58:09 jsg Exp $
+-- $OpenBSD: yt.lua,v 1.14 2008/09/14 12:28:11 jsg Exp $
 -- Fetch videos from YouTube.com and convert them to MPEG.
 -- Written by Pedro Martelletto in August 2006. Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -29,6 +29,13 @@ body = assert(http.request(url))
 pattern = "<title>(.-)</title>"
 title = assert(string.match(body, pattern))
 
+-- Fetch high quality if available
+if (string.match(body, "yt.VideoQualityConstants.HIGH") ~= nil) then
+	fmt = "&fmt=6"
+else
+	fmt = ""
+end
+
 -- Build a name for the files the video will be stored in.
 file = string.gsub(title, "[^%w-]", "_")
 file = string.lower(file)
@@ -48,7 +55,7 @@ if video_id then
 	pattern = "/watch_fullscreen%?.*&t=(.-)&"
 	t = assert(string.match(body, pattern))
 	url = string.format("%q", base_url .. "?video_id=" .. video_id
-		.. "&t=" .. t)
+		.. "&t=" .. t .. fmt)
 else
 	-- We assume it's Google Video URL.
 	pattern = "'/googleplayer.swf%?videoUrl(.-)'"
