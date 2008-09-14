@@ -1,0 +1,3 @@
+# $OpenBSD: systrace.filter,v 1.1 2008/09/14 15:00:43 sthen Exp $
+# fdpass check in configure script (from m4/fdpassing.m4) uses this
+native-sendmsg: sockaddr eq "<unknown>" then permit

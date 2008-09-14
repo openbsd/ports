@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2008/07/08 22:38:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2008/09/14 15:00:43 sthen Exp $
 
 COMMENT=		virus scanner
-DISTNAME=		clamav-0.93.3
+DISTNAME=		clamav-0.94
 CATEGORIES=		security
-SHARED_LIBS=		clamav 8.0 \
-			clamunrar 0.0 \
-			clamunrar_iface 0.0
+SHARED_LIBS=		clamav 9.0 \
+			clamunrar 1.0 \
+			clamunrar_iface 1.0
 
 HOMEPAGE=		http://www.clamav.net/
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c milter pthread wrap z
+
+BUILD_DEPENDS=		::devel/check
 
 LIB_DEPENDS=		gmp.>=6::devel/gmp \
 			bz2.>=10::archivers/bzip2 \
@@ -45,7 +47,7 @@ CONFIGURE_ARGS+=        --disable-clamav \
                         --disable-cr \
 			--with-dbdir=/var/db/clamav
 
-NO_REGRESS=		Yes
+REGRESS_TARGET=		check
 
 CONFIGURE_ENV+=		LDFLAGS="-pthread -L/usr/lib -L../libclamav/.libs -L${LOCALBASE}/lib" \
 			CPPFLAGS="-I/usr/include -I${LOCALBASE}/include"
