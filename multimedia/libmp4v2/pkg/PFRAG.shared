@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/09/15 21:46:28 jakemsr Exp $
+@lib lib/libmp4v2.so.${LIBmp4v2_VERSION}

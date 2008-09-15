@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_Makefile_in,v 1.1.1.1 2008/09/15 21:46:28 jakemsr Exp $
+--- test/Makefile.in.orig	Sat Jun 28 21:40:39 2008
++++ test/Makefile.in	Sat Jun 28 21:44:11 2008
+@@ -191,7 +191,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/util
+ c_api_SOURCES = c_api.c
+-c_api_LDADD = $(top_builddir)/libmp4v2.la -lstdc++
++c_api_LDADD = $(top_builddir)/libmp4v2.la -lstdc++ -lm
+ mp4broadcaster_SOURCES = mp4broadcaster.cpp
+ mp4broadcaster_LDADD = $(top_builddir)/libmp4v2.la
+ nullcreate_SOURCES = nullcreate.cpp

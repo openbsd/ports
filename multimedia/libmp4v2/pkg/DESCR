@@ -1,0 +1,4 @@
+This is the standalone version of the mp4v2 library. This library
+provides functions to read, create, and modify mp4 files.  It is derived
+from the mpeg4ip source tree but for licensing reasons it has been
+adapted to this form.

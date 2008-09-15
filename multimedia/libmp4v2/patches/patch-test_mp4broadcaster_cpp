@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_mp4broadcaster_cpp,v 1.1.1.1 2008/09/15 21:46:28 jakemsr Exp $
+--- test/mp4broadcaster.cpp.orig	Sat Jun 28 21:44:31 2008
++++ test/mp4broadcaster.cpp	Sat Jun 28 21:47:38 2008
+@@ -21,6 +21,8 @@
+ 
+ #include "mpeg4ip.h"
+ #include <arpa/inet.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include "mp4.h"
+ 
+ // forward declarations
