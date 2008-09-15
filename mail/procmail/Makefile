@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.33 2008/09/15 02:30:14 brad Exp $
 
 COMMENT=	filtering local mail delivery agent
 
@@ -12,18 +12,13 @@ MASTER_SITES=	${HOMEPAGE} \
 		ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/procmail/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/procmail/ \
-		ftp://ftp.fdt.net/pub/unix/packages/procmail/ \
-		ftp://ftp.tamu.edu/pub/mirrors/procmail/ \
 		ftp://ftp.kfki.hu/pub/packages/mail/procmail/ \
-		ftp://giswitch.sggw.waw.pl/pub/unix/procmail/ \
-		ftp://ftp.solarisguide.com/pub/procmail/ \
-		ftp://ftp.win.ne.jp/pub/network/mail/procmail/ \
 		ftp://ftp.ring.gr.jp/pub/net/mail/procmail/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/procmail/ 
 
 HOMEPAGE=	http://www.procmail.org/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
