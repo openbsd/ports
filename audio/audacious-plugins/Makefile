@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/05/19 15:25:48 fgsch Exp $
+# $OpenBSD: Makefile,v 1.15 2008/09/15 22:02:44 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,8 +7,8 @@ COMMENT-arts=	arts helper and plugin for audacious
 
 V=		1.5.0
 DISTNAME=	audacious-plugins-$V
-PKGNAME-main=	${DISTNAME}p0
-PKGNAME-arts=	audacious-arts-$Vp0
+PKGNAME-main=	${DISTNAME}p1
+PKGNAME-arts=	audacious-arts-$Vp1
 
 CATEGORIES=	audio multimedia
 
@@ -41,7 +41,7 @@ RUN_DEPENDS-main=	:audacious->=1.5:audio/audacious
 RUN_DEPENDS-arts=	::audio/audacious-plugins,-main
 
 LIB_DEPENDS-main=	esd.>=2::audio/esound \
-			faad.>=1,mp4ff::audio/faad \
+			faad.>=2,mp4ff.>=1::audio/faad \
 			FLAC.>=7::audio/flac \
 			jack::audio/jack \
 			mp3lame::audio/lame \

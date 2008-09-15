@@ -1,52 +1,21 @@
-$OpenBSD: patch-src_aac_libmp4_c,v 1.1 2008/04/02 00:39:19 fgsch Exp $
---- src/aac/libmp4.c.orig	Wed Jan 30 04:43:44 2008
-+++ src/aac/libmp4.c	Wed Jan 30 04:46:43 2008
-@@ -347,13 +347,13 @@ static Tuple *mp4_get_song_tuple_base(char *filename, 
-         gint mp4track= getAACTrack(mp4file);
-         gint numSamples = mp4ff_num_samples(mp4file, mp4track);
-         guint framesize = 1024;
--        guint samplerate = 0;
--        guchar channels = 0;
-+        guint32 samplerate = 0;
-+        guint8 channels = 0;
-         gint msDuration;
-         mp4AudioSpecificConfig mp4ASC;
-         gchar *tmpval;
--        guchar *buffer = NULL;
--        guint bufferSize = 0;
-+        guint8 *buffer = NULL;
-+        guint32 bufferSize = 0;
-         faacDecHandle decoder;
+$OpenBSD: patch-src_aac_libmp4_c,v 1.2 2008/09/15 22:02:44 jakemsr Exp $
+--- src/aac/libmp4.c.orig	Thu Mar 13 15:22:35 2008
++++ src/aac/libmp4.c	Sat Aug 30 22:22:57 2008
+@@ -91,7 +91,7 @@ static guint32 mp4_read_callback(void *data, void *buf
+     return aud_vfs_fread(buffer, 1, len, (VFSFile *) data);
+ }
  
-         if (mp4track == -1) {
-@@ -479,10 +479,10 @@ static int my_decode_mp4( InputPlayback *playback, cha
-     gint mp4track= getAACTrack(mp4file);
-     faacDecHandle   decoder;
-     mp4AudioSpecificConfig mp4ASC;
--    guchar      *buffer = NULL;
--    guint       bufferSize = 0;
--    guint       samplerate = 0;
--    guchar      channels = 0;
-+    guint8      *buffer = NULL;
-+    guint32     bufferSize = 0;
-+    guint32     samplerate = 0;
-+    guint8      channels = 0;
-     gulong      msDuration;
-     guint       numSamples;
-     gulong      sampleID = 1;
-@@ -627,11 +627,11 @@ static int my_decode_mp4( InputPlayback *playback, cha
- void my_decode_aac( InputPlayback *playback, char *filename, VFSFile *file )
+-static guint32 mp4_seek_callback(void *data, guint64 pos)
++static guint32 mp4_seek_callback(void *data, uint64_t pos)
  {
+     if (data == NULL)
+         return -1;
+@@ -629,7 +629,7 @@ void my_decode_aac( InputPlayback *playback, char *fil
      faacDecHandle   decoder = 0;
--    guchar      streambuffer[BUFFER_SIZE];
-+    guint8      streambuffer[BUFFER_SIZE];
+     guchar      streambuffer[BUFFER_SIZE];
      gulong      bufferconsumed = 0;
 -    gulong      samplerate = 0;
--    guchar      channels = 0;
--    gulong      buffervalid = 0;
-+    guint32     samplerate = 0;
-+    guint8      channels = 0;
-+    guint32     buffervalid = 0;
++    guint       samplerate = 0;
+     guchar      channels = 0;
+     gulong      buffervalid = 0;
      gchar       *ttemp = NULL, *stemp = NULL;
-     gchar       *temp = g_strdup(filename);
-     gchar       *xmmstitle = NULL;
