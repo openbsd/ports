@@ -1,0 +1,12 @@
+$OpenBSD: patch-db_cc,v 1.1 2008/09/15 21:49:10 jakemsr Exp $
+--- db.cc.orig	Tue Jul 22 02:40:07 2008
++++ db.cc	Tue Jul 22 02:40:07 2008
+@@ -325,7 +325,7 @@ void Database::addM4a( std::string& path, struct stat 
+ 			MP4TrackId trackId = MP4FindTrackId(mp4file, 0);
+ 			u32 timeScale = MP4GetTrackTimeScale(mp4file, trackId);
+ 			MP4Duration trackDuration = MP4GetTrackDuration(mp4file, trackId);
+-			double msDuration = UINT64_TO_DOUBLE(MP4ConvertFromTrackDuration(mp4file, trackId, trackDuration, MP4_MSECS_TIME_SCALE));
++			double msDuration = (double)(MP4ConvertFromTrackDuration(mp4file, trackId, trackDuration, MP4_MSECS_TIME_SCALE));
+ 			u32 avgBitRate = MP4GetTrackBitRate(mp4file, trackId);
+ 			song->time = (u32) (msDuration);
+ 			song->bitrate = (u16) ((avgBitRate + 500) / 1000);

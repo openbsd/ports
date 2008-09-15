@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 21:26:00 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/15 21:49:10 jakemsr Exp $
 
 COMMENT=	server for the DAA protocol
 DISTNAME=	daapd-0.2.4b
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	audio net
 MASTER_SITES=	${HOMEPAGE}
@@ -14,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-LIB_DEPENDS=	mp4v2::audio/faad \
+LIB_DEPENDS=	mp4v2.>=1::multimedia/libmp4v2 \
 		id3tag.>=3.0::audio/libid3tag \
 		howl::net/howl
 
