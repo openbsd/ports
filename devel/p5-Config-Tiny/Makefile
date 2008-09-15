@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/09/15 06:42:36 jasper Exp $
 
 COMMENT=	simple methods to Read/Write .ini style files
 
 MODULES=	cpan
-DISTNAME=	Config-Tiny-2.10
+DISTNAME=	Config-Tiny-2.12
 CATEGORIES=     devel
 
 # perl
