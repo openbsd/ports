@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2008/09/09 08:11:29 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2008/09/15 22:04:17 jakemsr Exp $
 
 COMMENT=		Music Player Daemon
 DISTNAME=		mpd-0.13.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio
 HOMEPAGE=		http://www.musicpd.org/
 MAINTAINER=		Tobias Ulmer <tobiasu@tmux.org>
@@ -22,7 +22,7 @@ MODULES=		converters/libiconv
 LIB_DEPENDS=		audiofile::devel/libaudiofile \
 			ao::audio/libao \
 			samplerate::audio/libsamplerate \
-			faad.>=1::audio/faad \
+			faad.>=2::audio/faad \
 			FLAC::audio/flac \
 			id3tag::audio/libid3tag \
 			mad::audio/libmad \

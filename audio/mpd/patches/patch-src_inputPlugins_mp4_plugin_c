@@ -1,18 +1,12 @@
-$OpenBSD: patch-src_inputPlugins_mp4_plugin_c,v 1.1 2007/06/29 06:08:12 jakemsr Exp $
---- src/inputPlugins/mp4_plugin.c.orig	Mon May 28 06:19:30 2007
-+++ src/inputPlugins/mp4_plugin.c	Thu Jun 28 21:34:04 2007
-@@ -98,10 +98,10 @@ static int mp4_decode(OutputBuffer * cb, DecoderContro
- 	faacDecHandle decoder;
- 	faacDecFrameInfo frameInfo;
+$OpenBSD: patch-src_inputPlugins_mp4_plugin_c,v 1.2 2008/09/15 22:04:17 jakemsr Exp $
+--- src/inputPlugins/mp4_plugin.c.orig	Sun Jan 27 15:13:31 2008
++++ src/inputPlugins/mp4_plugin.c	Wed Jul 16 01:44:57 2008
+@@ -100,7 +100,7 @@ static int mp4_decode(OutputBuffer * cb, DecoderContro
  	faacDecConfigurationPtr config;
--	unsigned char *mp4Buffer;
--	unsigned int mp4BufferSize;
+ 	unsigned char *mp4Buffer;
+ 	unsigned int mp4BufferSize;
 -	unsigned long sampleRate;
--	unsigned char channels;
-+	uint8_t *mp4Buffer;
-+	uint32_t mp4BufferSize;
-+	uint32_t sampleRate;
-+	uint8_t channels;
++	unsigned int sampleRate;
+ 	unsigned char channels;
  	long sampleId;
  	long numSamples;
- 	int eof = 0;

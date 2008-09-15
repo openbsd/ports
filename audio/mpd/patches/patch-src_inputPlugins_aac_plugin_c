@@ -1,45 +1,21 @@
-$OpenBSD: patch-src_inputPlugins_aac_plugin_c,v 1.1 2007/06/29 06:08:12 jakemsr Exp $
---- src/inputPlugins/aac_plugin.c.orig	Mon May 28 06:19:30 2007
-+++ src/inputPlugins/aac_plugin.c	Thu Jun 28 21:30:21 2007
-@@ -37,10 +37,10 @@
- /* all code here is either based on or copied from FAAD2's frontend code */
- typedef struct {
- 	InputStream *inStream;
--	long bytesIntoBuffer;
--	long bytesConsumed;
--	long fileOffset;
--	unsigned char *buffer;
-+	uint32_t bytesIntoBuffer;
-+	uint32_t bytesConsumed;
-+	uint32_t fileOffset;
-+	uint8_t *buffer;
- 	int atEof;
- } AacBuffer;
- 
-@@ -237,10 +237,10 @@ static float getAacFloatTotalTime(char *file)
+$OpenBSD: patch-src_inputPlugins_aac_plugin_c,v 1.2 2008/09/15 22:04:17 jakemsr Exp $
+--- src/inputPlugins/aac_plugin.c.orig	Sun Jan 27 15:13:31 2008
++++ src/inputPlugins/aac_plugin.c	Wed Jul 16 01:41:56 2008
+@@ -237,7 +237,7 @@ static float getAacFloatTotalTime(char *file)
  	size_t fileread, tagsize;
  	faacDecHandle decoder;
  	faacDecConfigurationPtr config;
 -	unsigned long sampleRate;
--	unsigned char channels;
-+	uint32_t sampleRate;
-+	uint8_t channels;
++	unsigned int sampleRate;
+ 	unsigned char channels;
  	InputStream inStream;
--	long bread;
-+	int32_t bread;
- 
- 	if (openInputStream(&inStream, file) < 0)
- 		return -1;
-@@ -292,9 +292,9 @@ static int aac_decode(OutputBuffer * cb, DecoderContro
- 	faacDecHandle decoder;
+ 	long bread;
+@@ -293,7 +293,7 @@ static int aac_decode(OutputBuffer * cb, DecoderContro
  	faacDecFrameInfo frameInfo;
  	faacDecConfigurationPtr config;
--	long bread;
+ 	long bread;
 -	unsigned long sampleRate;
--	unsigned char channels;
-+	int32_t bread;
-+	uint32_t sampleRate;
-+	uint8_t channels;
++	unsigned int sampleRate;
+ 	unsigned char channels;
  	int eof = 0;
  	unsigned int sampleCount;
- 	char *sampleBuffer;
