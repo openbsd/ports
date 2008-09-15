@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2008/09/03 12:20:52 brad Exp $
+# $OpenBSD: Makefile,v 1.135 2008/09/15 22:13:02 jakemsr Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -9,7 +9,7 @@ V=			1.0rc2
 N=			mplayer
 DISTNAME=		MPlayer-${V}
 DIST_SUBDIR=		${N}
-PKGNAME=		${N}-${V}p8
+PKGNAME=		${N}-${V}p9
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -50,7 +50,7 @@ LIB_DEPENDS=	png::graphics/png \
 		ogg.>=5::audio/libogg \
 		xvidcore::multimedia/xvidcore \
 		x264::multimedia/x264 \
-		faad::audio/faad \
+		faad.>=2::audio/faad \
 		mp3lame:lame-*:audio/lame
 
 BUILD_DEPENDS=	::net/livemedia \
