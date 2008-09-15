@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_example_silcd_conf_in,v 1.7 2008/03/22 23:06:50 sthen Exp $
---- doc/example_silcd.conf.in.orig	Sun Nov  4 03:39:39 2007
-+++ doc/example_silcd.conf.in	Thu Mar  6 16:59:53 2008
+$OpenBSD: patch-doc_example_silcd_conf_in,v 1.8 2008/09/15 00:13:40 brad Exp $
+--- doc/example_silcd.conf.in.orig	Sat Sep 13 10:40:39 2008
++++ doc/example_silcd.conf.in	Sun Sep 14 19:07:16 2008
 @@ -22,7 +22,7 @@
  # Include global algorithms from the "silcalgs.conf" file.  This file defines
  # ciphers, hash functions, HMACs and PKCS algorithms that can be used.
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.7 2008/03/22 23:06:50 sthen Exp $
  
  #
  # General configuration options
-@@ -186,14 +186,14 @@ ServerInfo {
+@@ -186,7 +186,7 @@ ServerInfo {
  	#
  	# Server name (FQDN)
  	#
@@ -19,15 +19,16 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.7 2008/03/22 23:06:50 sthen Exp $
  
  	#
  	# Primary listener.  Specify the IP address and the port to bind
- 	# the server.
+@@ -194,7 +194,7 @@ ServerInfo {
+ 	# if the server is behind NAT.
  	#
  	Primary {
 -		ip = "10.2.1.6";
 +		ip = "127.0.0.1";
+ 		# public_ip = "11.1.1.1";
  		port = 706;
  	};
- 
-@@ -213,37 +213,37 @@ ServerInfo {
+@@ -215,37 +215,37 @@ ServerInfo {
  	#
  	# Geographic location
  	#
@@ -73,7 +74,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.7 2008/03/22 23:06:50 sthen Exp $
  
  	#
  	# Pid file
-@@ -456,10 +456,10 @@ Client {
+@@ -458,10 +458,10 @@ Client {
  # required.
  #
  Admin {
@@ -88,7 +89,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.7 2008/03/22 23:06:50 sthen Exp $
  	# PublicKey = "/path/to/the/public.pub";
  };
  
-@@ -482,13 +482,13 @@ Admin {
+@@ -484,13 +484,13 @@ Admin {
  # to true.  For normal connections set it false.  If it is set to true then
  # your server will be backup router.
  #
@@ -109,7 +110,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.7 2008/03/22 23:06:50 sthen Exp $
  
  #
  # Configured router connections
-@@ -518,17 +518,17 @@ ServerConnection {
+@@ -520,17 +520,17 @@ ServerConnection {
  # backup router is in our cell then set the "BackupLocal" option to true.
  # If the backup router is in other cell then set it to false.
  #
