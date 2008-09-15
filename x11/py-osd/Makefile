@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:44 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/09/15 13:00:55 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,9 +8,7 @@ DISTNAME=	pyosd-0.2.14
 PKGNAME=	${DISTNAME:S/^py/py-/}p0
 CATEGORIES=	x11
 
-HOMEPAGE=	http://repose.cx/pyosd/
-
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+HOMEPAGE=	http://ichi2.net/pyosd/
 
 # GPL
 PERMIT_PACKAGE_FTP=	Yes
