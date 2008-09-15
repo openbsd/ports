@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2008/08/31 00:35:08 brad Exp $
+# $OpenBSD: Makefile,v 1.40 2008/09/15 22:11:42 jakemsr Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-jack=		jackd audio output module for xine-lib
 
 V=			1.1.15
 DISTNAME=		xine-lib-${V}
-PKGNAME-main=		${DISTNAME}p1
+PKGNAME-main=		${DISTNAME}p2
 PKGNAME-esd=		xine-lib-esd-${V}
 PKGNAME-arts=		xine-lib-arts-${V}
 PKGNAME-jack=		xine-lib-jack-${V}
@@ -51,7 +51,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			a52::audio/liba52 \
 			avcodec.>=7,postproc.>=7::graphics/ffmpeg \
 			dvdnav.>=5::multimedia/libdvdnav \
-			faad.>=1::audio/faad \
+			faad.>=2::audio/faad \
 			mad.>=2::audio/libmad \
 			mng.>=3::graphics/libmng \
 			ogg.>=5::audio/libogg \

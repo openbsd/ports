@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.18 2008/08/20 01:54:01 brad Exp $
+$OpenBSD: patch-configure,v 1.19 2008/09/15 22:11:42 jakemsr Exp $
 --- configure.orig	Thu Aug 14 17:18:56 2008
 +++ configure	Thu Aug 14 19:04:37 2008
 @@ -24654,6 +24654,9 @@ _ACEOF
@@ -72,65 +72,6 @@ $OpenBSD: patch-configure,v 1.18 2008/08/20 01:54:01 brad Exp $
  else
    { echo "$as_me:$LINENO: result: *** All libmng dependent parts will be disabled ***" >&5
  echo "${ECHO_T}*** All libmng dependent parts will be disabled ***" >&6; }
-@@ -45513,13 +45516,13 @@ if test "x$enable_faad" = "xno"; then
-   { echo "$as_me:$LINENO: result: faad support disabled" >&5
- echo "${ECHO_T}faad support disabled" >&6; }
- elif test "x$with_external_libfaad" != "xno"; then
--  { echo "$as_me:$LINENO: checking for NeAACDecInit in -lfaad" >&5
--echo $ECHO_N "checking for NeAACDecInit in -lfaad... $ECHO_C" >&6; }
--if test "${ac_cv_lib_faad_NeAACDecInit+set}" = set; then
-+  { echo "$as_me:$LINENO: checking for faacDecInit in -lfaad" >&5
-+echo $ECHO_N "checking for faacDecInit in -lfaad... $ECHO_C" >&6; }
-+if test "${ac_cv_lib_faad_faacDecInit+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lfaad  $LIBS"
-+LIBS="-lfaad -lm  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -45533,11 +45536,11 @@ cat >>conftest.$ac_ext <<_ACEOF
- #ifdef __cplusplus
- extern "C"
- #endif
--char NeAACDecInit ();
-+char faacDecInit ();
- int
- main ()
- {
--return NeAACDecInit ();
-+return faacDecInit ();
-   ;
-   return 0;
- }
-@@ -45560,21 +45563,21 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
- 	 test ! -s conftest.err
-        } && test -s conftest$ac_exeext &&
-        $as_test_x conftest$ac_exeext; then
--  ac_cv_lib_faad_NeAACDecInit=yes
-+  ac_cv_lib_faad_faacDecInit=yes
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
- 
--	ac_cv_lib_faad_NeAACDecInit=no
-+	ac_cv_lib_faad_faacDecInit=no
- fi
- 
- rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
-       conftest$ac_exeext conftest.$ac_ext
- LIBS=$ac_check_lib_save_LIBS
- fi
--{ echo "$as_me:$LINENO: result: $ac_cv_lib_faad_NeAACDecInit" >&5
--echo "${ECHO_T}$ac_cv_lib_faad_NeAACDecInit" >&6; }
--if test $ac_cv_lib_faad_NeAACDecInit = yes; then
-+{ echo "$as_me:$LINENO: result: $ac_cv_lib_faad_faacDecInit" >&5
-+echo "${ECHO_T}$ac_cv_lib_faad_faacDecInit" >&6; }
-+if test $ac_cv_lib_faad_faacDecInit = yes; then
-   have_faad=yes
- fi
- 
 @@ -50533,7 +50536,7 @@ cat >>confdefs.h <<_ACEOF
  _ACEOF
  
