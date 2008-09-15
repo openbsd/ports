@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2008/07/25 08:08:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2008/09/15 22:08:40 jakemsr Exp $
 
 COMMENT=	free video editor
 
 V=		2.4.3
 DISTNAME=	avidemux_${V}
-PKGNAME=	avidemux-${V}
+PKGNAME=	avidemux-${V}p0
 
 CATEGORIES=	multimedia
 
@@ -32,8 +32,8 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
 		:automake-${AUTOMAKE_VERSION}.*:devel/automake/${AUTOMAKE_VERSION}
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		faac::audio/faac \
-		faad.>=1::audio/faad \
+		faac.>=1::audio/faac \
+		faad.>=2::audio/faad \
 		mp3lame.>=1::audio/lame \
 		vorbis.>=5,vorbisenc.>=2::audio/libvorbis \
 		xml2.>=9::textproc/libxml \

@@ -1,37 +1,21 @@
-$OpenBSD: patch-avidemux_ADM_audiocodec_ADM_codecfaad_cpp,v 1.2 2008/03/19 09:21:37 ajacoutot Exp $
---- avidemux/ADM_audiocodec/ADM_codecfaad.cpp.orig	Mon Jan  7 09:14:57 2008
-+++ avidemux/ADM_audiocodec/ADM_codecfaad.cpp	Mon Jan  7 09:16:14 2008
-@@ -34,11 +34,11 @@ ADM_faad::ADM_faad( uint32_t fourcc ,uint32_t highEffi
+$OpenBSD: patch-avidemux_ADM_audiocodec_ADM_codecfaad_cpp,v 1.3 2008/09/15 22:08:40 jakemsr Exp $
+--- avidemux/ADM_audiocodec/ADM_codecfaad.cpp.orig	Thu Jul 17 01:40:39 2008
++++ avidemux/ADM_audiocodec/ADM_codecfaad.cpp	Thu Jul 17 01:43:46 2008
+@@ -34,7 +34,7 @@ ADM_faad::ADM_faad( uint32_t fourcc ,uint32_t highEffi
  {
  faacDecConfigurationPtr conf;
  #ifdef OLD_FAAD_PROTO
 -unsigned long int srate;
-+uint32_t srate;
++unsigned int srate;
  #else
  uint32_t srate;
  #endif
--unsigned char chan;
-+uint8_t chan;
- 		_inited=0;
- 		_instance=NULL;
- 		_inbuffer=0;
-@@ -115,16 +115,16 @@ uint8_t ADM_faad::endDecompress( void ) 
- uint8_t ADM_faad::run(uint8_t *inptr, uint32_t nbIn, float *outptr, uint32_t *nbOut)
- {
- uint32_t xin;
--long int res;
-+int32_t res;
- void *outbuf;
+@@ -120,7 +120,7 @@ void *outbuf;
  faacDecFrameInfo info;
  int max=0;
  #ifdef OLD_FAAD_PROTO
 -unsigned long int srate;
-+uint32_t srate;
++unsigned int srate;
  #else
  uint32_t srate;
  #endif
--unsigned char chan=0;
-+uint8_t chan=0;
- uint8_t first=0;
- 
- 
