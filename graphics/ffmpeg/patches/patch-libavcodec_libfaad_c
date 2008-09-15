@@ -1,89 +1,49 @@
-$OpenBSD: patch-libavcodec_libfaad_c,v 1.3 2008/07/09 01:57:44 jakemsr Exp $
---- libavcodec/libfaad.c.orig	Fri Jun 20 19:40:02 2008
-+++ libavcodec/libfaad.c	Fri Jun 20 23:06:05 2008
-@@ -73,21 +73,21 @@ typedef struct {
-                                  short *sample_buffer,
-                                  unsigned long *samples);
+$OpenBSD: patch-libavcodec_libfaad_c,v 1.4 2008/09/15 22:06:11 jakemsr Exp $
+--- libavcodec/libfaad.c.orig	Wed Jul 16 00:28:58 2008
++++ libavcodec/libfaad.c	Wed Jul 16 00:37:44 2008
+@@ -75,14 +75,14 @@ typedef struct {
  #else
--    unsigned char FAADAPI (*faacDecSetConfiguration)(faacDecHandle hDecoder,
-+    uint8_t FAADAPI (*faacDecSetConfiguration)(faacDecHandle hDecoder,
+     unsigned char FAADAPI (*faacDecSetConfiguration)(faacDecHandle hDecoder,
                                                       faacDecConfigurationPtr config);
 -    long FAADAPI (*faacDecInit)(faacDecHandle hDecoder,
--                                unsigned char *buffer,
++    int FAADAPI (*faacDecInit)(faacDecHandle hDecoder,
+                                 unsigned char *buffer,
 -                                unsigned long buffer_size,
 -                                unsigned long *samplerate,
--                                unsigned char *channels);
--    char FAADAPI (*faacDecInit2)(faacDecHandle hDecoder, unsigned char *pBuffer,
--                                 unsigned long SizeOfDecoderSpecificInfo,
++                                unsigned int buffer_size,
++                                unsigned int *samplerate,
+                                 unsigned char *channels);
+     char FAADAPI (*faacDecInit2)(faacDecHandle hDecoder, unsigned char *pBuffer,
+                                  unsigned long SizeOfDecoderSpecificInfo,
 -                                 unsigned long *samplerate, unsigned char *channels);
-+    int32_t FAADAPI (*faacDecInit)(faacDecHandle hDecoder,
-+                                uint8_t *buffer,
-+                                uint32_t buffer_size,
-+                                uint32_t *samplerate,
-+                                uint8_t *channels);
-+    int8_t FAADAPI (*faacDecInit2)(faacDecHandle hDecoder, uint8_t *pBuffer,
-+                                 uint32_t SizeOfDecoderSpecificInfo,
-+                                 uint32_t *samplerate, uint8_t *channels);
++                                 unsigned int *samplerate, unsigned char *channels);
      void *FAADAPI (*faacDecDecode)(faacDecHandle hDecoder,
                                     faacDecFrameInfo *hInfo,
--                                   unsigned char *buffer,
--                                   unsigned long buffer_size);
--    char* FAADAPI (*faacDecGetErrorMessage)(unsigned char errcode);
-+                                   uint8_t *buffer,
-+                                   uint32_t buffer_size);
-+    int8_t* FAADAPI (*faacDecGetErrorMessage)(uint8_t errcode);
- #endif
- 
-     void FAADAPI (*faacDecClose)(faacDecHandle hDecoder);
-@@ -95,7 +95,7 @@ typedef struct {
- 
- } FAACContext;
- 
--static const unsigned long faac_srates[] =
-+static const uint32_t faac_srates[] =
- {
-     96000, 88200, 64000, 48000, 44100, 32000,
-     24000, 22050, 16000, 12000, 11025, 8000
-@@ -119,11 +119,11 @@ static void channel_setup(AVCodecContext *avctx)
+                                    unsigned char *buffer,
+@@ -119,7 +119,7 @@ static void channel_setup(AVCodecContext *avctx)
  static int faac_init_mp4(AVCodecContext *avctx)
  {
      FAACContext *s = avctx->priv_data;
 -    unsigned long samplerate;
-+    uint32_t samplerate;
++    unsigned int samplerate;
  #ifndef FAAD2_VERSION
      unsigned long channels;
  #else
--    unsigned char channels;
-+    uint8_t channels;
- #endif
-     int r = 0;
- 
-@@ -134,7 +134,7 @@ static int faac_init_mp4(AVCodecContext *avctx)
+@@ -133,7 +133,7 @@ static int faac_init_mp4(AVCodecContext *avctx)
+                             &samplerate, &channels);
          if (r < 0){
              av_log(avctx, AV_LOG_ERROR,
-                    "faacDecInit2 failed r:%d   sr:%ld  ch:%ld  s:%d\n",
--                   r, samplerate, (long)channels, avctx->extradata_size);
-+                   r, (long)samplerate, (long)channels, avctx->extradata_size);
+-                   "faacDecInit2 failed r:%d   sr:%ld  ch:%ld  s:%d\n",
++                   "faacDecInit2 failed r:%d   sr:%d  ch:%ld  s:%d\n",
+                    r, samplerate, (long)channels, avctx->extradata_size);
          } else {
              avctx->sample_rate = samplerate;
-             avctx->channels = channels;
-@@ -176,8 +176,8 @@ static int faac_decode_frame(AVCodecContext *avctx,
+@@ -176,7 +176,7 @@ static int faac_decode_frame(AVCodecContext *avctx,
  #else
  
      if(!s->init){
 -        unsigned long srate;
--        unsigned char channels;
-+        uint32_t srate;
-+        uint8_t channels;
++        unsigned int srate;
+         unsigned char channels;
          int r = s->faacDecInit(s->faac_handle, buf, buf_size, &srate, &channels);
          if(r < 0){
-             av_log(avctx, AV_LOG_ERROR, "faac: codec init failed.\n");
-@@ -189,7 +189,7 @@ static int faac_decode_frame(AVCodecContext *avctx,
-         s->init = 1;
-     }
- 
--    out = s->faacDecDecode(s->faac_handle, &frame_info, (unsigned char*)buf, (unsigned long)buf_size);
-+    out = s->faacDecDecode(s->faac_handle, &frame_info, buf, buf_size);
- 
-     if (frame_info.error > 0) {
-         av_log(avctx, AV_LOG_ERROR, "faac: frame decoding failed: %s\n",
