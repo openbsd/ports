@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 08:17:18 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/09/15 19:10:02 naddy Exp $
 @pkgpath security/xmlsec
-bin/xmlsec1
+@bin bin/xmlsec1
 bin/xmlsec1-config
 include/xmlsec1/
 include/xmlsec1/xmlsec/
@@ -60,3 +60,5 @@ lib/xmlsec1Conf.sh
 @man man/man1/xmlsec1-config.1
 @man man/man1/xmlsec1.1
 %%SHARED%%
+share/aclocal/
+share/aclocal/xmlsec1.m4

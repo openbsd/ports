@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 23:30:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2008/09/15 19:10:01 naddy Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
 
-VERSION=	1.2.5
+VERSION=	1.2.11
 DISTNAME=	xmlsec1-${VERSION}
-PKGNAME-main=	xmlsec-${VERSION}p3
-PKGNAME-docs=	xmlsec-docs-${VERSION}p0
+PKGNAME-main=	xmlsec-${VERSION}
+PKGNAME-docs=	xmlsec-docs-${VERSION}
 CATEGORIES=	security
-SHARED_LIBS=	xmlsec1-gnutls	3.5 \
-		xmlsec1-openssl	3.5 \
-		xmlsec1		3.5
-MODGNU_SHARED_LIBS=xmlsec1-gnutls '' \
-		xmlsec1-openssl	'' \
-		xmlsec1		''
+SHARED_LIBS=	xmlsec1-gnutls	4.0 \
+		xmlsec1-openssl	4.0 \
+		xmlsec1		4.0
 
 HOMEPAGE=	http://www.aleksey.com/xmlsec/
 
@@ -22,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto gcrypt gpg-error intl m xml2 z
+WANTLIB=		c crypto gcrypt gpg-error m xml2 z
 
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -36,9 +33,9 @@ WANTLIB-docs=
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
-MODULES=		converters/libiconv
-LIB_DEPENDS=		xslt.>=2::textproc/libxslt \
-			gnutls.>=12::security/gnutls
+MODULES=		devel/gettext
+LIB_DEPENDS=		xslt.>=3::textproc/libxslt \
+			gnutls.>=13::security/gnutls
 
 USE_LIBTOOL=		Yes
 
