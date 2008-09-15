@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2008/07/04 21:16:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2008/09/15 22:07:29 jakemsr Exp $
 
      SUBDIR += avidemux
      SUBDIR += devede
@@ -13,6 +13,7 @@
      SUBDIR += libdv
      SUBDIR += libdvdnav
      SUBDIR += libmatroska
+     SUBDIR += libmp4v2
      SUBDIR += libquicktime
      SUBDIR += libtheora
      SUBDIR += lsdvd
