@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/06/05 19:57:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/09/15 14:36:20 ajacoutot Exp $
 bin/sonata
 lib/python${MODPY_VERSION}/site-packages/Sonata-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mmkeys.so
@@ -27,6 +27,9 @@ share/locale/ca/LC_MESSAGES/sonata.mo
 share/locale/cs/LC_MESSAGES/sonata.mo
 share/locale/da/LC_MESSAGES/sonata.mo
 share/locale/de/LC_MESSAGES/sonata.mo
+share/locale/el_GR/
+share/locale/el_GR/LC_MESSAGES/
+share/locale/el_GR/LC_MESSAGES/sonata.mo
 share/locale/es/LC_MESSAGES/sonata.mo
 share/locale/et/LC_MESSAGES/sonata.mo
 share/locale/fi/LC_MESSAGES/sonata.mo
