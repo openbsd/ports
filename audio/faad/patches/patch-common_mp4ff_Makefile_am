@@ -1,0 +1,9 @@
+$OpenBSD: patch-common_mp4ff_Makefile_am,v 1.1 2008/09/15 21:58:19 jakemsr Exp $
+--- common/mp4ff/Makefile.am.orig	Fri Jul 11 14:17:17 2008
++++ common/mp4ff/Makefile.am	Fri Jul 11 14:17:37 2008
+@@ -1,4 +1,4 @@
+-noinst_LTLIBRARIES = libmp4ff.la
++lib_LTLIBRARIES = libmp4ff.la
+ 
+ libmp4ff_la_CFLAGS = -DUSE_TAGGING=1
+ 

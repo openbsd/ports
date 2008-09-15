@@ -1,0 +1,36 @@
+$OpenBSD: patch-libfaad_structs_h,v 1.3 2008/09/15 21:58:19 jakemsr Exp $
+--- libfaad/structs.h.orig	Thu Nov  1 05:33:40 2007
++++ libfaad/structs.h	Tue Jul 15 23:47:02 2008
+@@ -317,7 +317,7 @@ typedef struct mp4AudioSpecificConfig
+     /* Audio Specific Info */
+     /*uint8_t*/ unsigned char objectTypeIndex;
+     /*uint8_t*/ unsigned char samplingFrequencyIndex;
+-    /*uint32_t*/ unsigned long samplingFrequency;
++    /*uint32_t*/ unsigned int samplingFrequency;
+     /*uint8_t*/ unsigned char channelsConfiguration;
+ 
+     /* GA Specific Info */
+@@ -338,7 +338,7 @@ typedef struct mp4AudioSpecificConfig
+ typedef struct NeAACDecConfiguration
+ {
+     /*uint8_t*/ unsigned char defObjectType;
+-    /*uint32_t*/ unsigned long defSampleRate;
++    /*uint32_t*/ unsigned int defSampleRate;
+     /*uint8_t*/ unsigned char outputFormat;
+     /*uint8_t*/ unsigned char downMatrix;
+     /*uint8_t*/ unsigned char useOldADTSFormat;
+@@ -347,11 +347,11 @@ typedef struct NeAACDecConfiguration
+ 
+ typedef struct NeAACDecFrameInfo
+ {
+-    /*uint32_t*/ unsigned long bytesconsumed;
+-    /*uint32_t*/ unsigned long samples;
++    /*uint32_t*/ unsigned int bytesconsumed;
++    /*uint32_t*/ unsigned int samples;
+     /*uint8_t*/ unsigned char channels;
+     /*uint8_t*/ unsigned char error;
+-    /*uint32_t*/ unsigned long samplerate;
++    /*uint32_t*/ unsigned int samplerate;
+ 
+     /* SBR: 0: off, 1: on; normal, 2: on; downsampled */
+     /*uint8_t*/ unsigned char sbr;

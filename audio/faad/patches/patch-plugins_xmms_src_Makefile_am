@@ -1,19 +1,11 @@
-$OpenBSD: patch-plugins_xmms_src_Makefile_am,v 1.2 2007/12/11 11:00:37 jakemsr Exp $
---- plugins/xmms/src/Makefile.am.orig	Fri Feb  6 08:05:07 2004
-+++ plugins/xmms/src/Makefile.am	Sun Oct 21 02:19:37 2007
-@@ -1,7 +1,7 @@
- libdir = `$(XMMS_CONFIG) --input-plugin-dir`
- lib_LTLIBRARIES = libmp4.la
+$OpenBSD: patch-plugins_xmms_src_Makefile_am,v 1.3 2008/09/15 21:58:19 jakemsr Exp $
+--- plugins/xmms/src/Makefile.am.orig	Sat Jun 28 22:56:19 2008
++++ plugins/xmms/src/Makefile.am	Sat Jun 28 22:57:03 2008
+@@ -9,6 +9,6 @@ libmp4_la_CFLAGS = $(local_CFLAGS) -Wall \
+ libmp4_la_LIBADD = $(top_builddir)/libfaad/libfaad.la \
+        $(top_builddir)/common/mp4ff/libmp4ff.la
  
--libmp4_la_CFLAGS = `$(XMMS_CONFIG) --cflags` -Wall \
-+CFLAGS = `$(XMMS_CONFIG) --cflags` -Wall \
-        `$(GTK_CONFIG) --cflags` -DHAVE_GLIB_H=1 \
-        -I$(top_srcdir)/include -I$(top_srcdir)/common/mp4v2
+-libmp4_la_LDFLAGS = -module -avoid-version $(local_LDFLAGS) -lpthread
++libmp4_la_LDFLAGS = -module -avoid-version $(local_LDFLAGS)
  
-@@ -9,5 +9,5 @@ libmp4_la_LIBADD = $(top_builddir)/libfaad/libfaad.la 
-        $(top_builddir)/common/mp4v2/libmp4v2.la
- 
- libmp4_la_LDFLAGS = -module -avoid-version `$(XMMS_CONFIG) --libs` \
--       `$(GTK_CONFIG) --libs` -lpthread -lstdc++
-+       `$(GTK_CONFIG) --libs` -lstdc++
  libmp4_la_SOURCES = libmp4.c mp4_utils.c aac_utils.c

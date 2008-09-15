@@ -1,48 +1,32 @@
-$OpenBSD: patch-plugins_xmms_src_libmp4_c,v 1.1 2007/06/29 06:01:42 jakemsr Exp $
---- plugins/xmms/src/libmp4.c.orig	Wed Dec  3 10:37:56 2003
-+++ plugins/xmms/src/libmp4.c	Thu May 31 14:42:02 2007
-@@ -22,6 +22,9 @@
- #define MP4_ABOUT	"Written by ciberfred"
- #define BUFFER_SIZE	FAAD_MIN_STREAMSIZE*64
- 
-+extern void     getMP4info(char* file);
-+extern int      getAACTrack(MP4FileHandle file);
-+
- static void	mp4_init(void);
- static void	mp4_about(void);
- static void	mp4_play(char *);
-@@ -113,9 +116,9 @@ static int	mp4_isFile(char *filename)
- 
-     extention = strrchr(filename, '.');
-     if (extention &&
--	!strcasecmp(extention, ".mp4") ||	// official extention
--	!strcasecmp(extention, ".m4a") ||	// Apple mp4 extention
--	!strcasecmp(extention, ".aac")		// old MPEG2/4-AAC extention
-+	(!strcasecmp(extention, ".mp4") ||	// official extention
-+	 !strcasecmp(extention, ".m4a") ||	// Apple mp4 extention
-+	 !strcasecmp(extention, ".aac"))	// old MPEG2/4-AAC extention
- 	){
-       return (1);
-     }
-@@ -202,8 +205,8 @@ static void *mp4Decode(void *args)
-       faacDecHandle	decoder;
+$OpenBSD: patch-plugins_xmms_src_libmp4_c,v 1.2 2008/09/15 21:58:19 jakemsr Exp $
+--- plugins/xmms/src/libmp4.c.orig	Tue Jun  5 12:00:18 2007
++++ plugins/xmms/src/libmp4.c	Wed Jul 16 00:12:57 2008
+@@ -290,7 +290,7 @@ static void *mp4Decode(void *args)
+       NeAACDecHandle	decoder;
        unsigned char	*buffer	= NULL;
        guint		bufferSize = 0;
 -      gulong		samplerate;
--      guchar		channels;
-+      guint32		samplerate;
-+      guint8		channels;
-       guint		avgBitrate;
-       MP4Duration	duration;
-       gulong		msDuration;
-@@ -330,8 +333,8 @@ static void *mp4Decode(void *args)
-     faacDecHandle	decoder = 0;
++      guint		samplerate;
+       guchar		channels;
+       //guint		avgBitrate;
+       //MP4Duration	duration;
+@@ -339,7 +339,7 @@ static void *mp4Decode(void *args)
+       mp4_ip.output->open_audio(FMT_S16_NE, samplerate, channels);
+       mp4_ip.output->flush(0);
+       mp4_ip.set_info(xmmstitle, msDuration, -1, samplerate/1000, channels);
+-      g_print("MP4 - %d channels @ %ld Hz\n", channels, samplerate);
++      g_print("MP4 - %d channels @ %d Hz\n", channels, samplerate);
+ 
+       while(bPlaying){
+ 	void*			sampleBuffer;
+@@ -414,8 +414,8 @@ end:
+     FILE		*file = NULL;
+     NeAACDecHandle	decoder = 0;
      guchar		*buffer = 0;
-     gulong		bufferconsumed = 0;
+-    gulong		bufferconsumed = 0;
 -    gulong		samplerate = 0;
--    guchar		channels;
-+    guint32		samplerate = 0;
-+    guint8		channels;
++    gint		bufferconsumed = 0;
++    guint		samplerate = 0;
+     guchar		channels;
      gulong		buffervalid = 0;
      TitleInput*		input;
-     gchar		*temp = g_strdup(args);

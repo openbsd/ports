@@ -1,0 +1,70 @@
+$OpenBSD: patch-include_neaacdec_h,v 1.1 2008/09/15 21:58:19 jakemsr Exp $
+--- include/neaacdec.h.orig	Thu Nov  1 05:33:29 2007
++++ include/neaacdec.h	Tue Jul 15 23:59:41 2008
+@@ -141,7 +141,7 @@ typedef struct mp4AudioSpecificConfig
+     /* Audio Specific Info */
+     unsigned char objectTypeIndex;
+     unsigned char samplingFrequencyIndex;
+-    unsigned long samplingFrequency;
++    unsigned int samplingFrequency;
+     unsigned char channelsConfiguration;
+ 
+     /* GA Specific Info */
+@@ -162,7 +162,7 @@ typedef struct mp4AudioSpecificConfig
+ typedef struct NeAACDecConfiguration
+ {
+     unsigned char defObjectType;
+-    unsigned long defSampleRate;
++    unsigned int defSampleRate;
+     unsigned char outputFormat;
+     unsigned char downMatrix;
+     unsigned char useOldADTSFormat;
+@@ -171,11 +171,11 @@ typedef struct NeAACDecConfiguration
+ 
+ typedef struct NeAACDecFrameInfo
+ {
+-    unsigned long bytesconsumed;
+-    unsigned long samples;
++    unsigned int bytesconsumed;
++    unsigned int samples;
+     unsigned char channels;
+     unsigned char error;
+-    unsigned long samplerate;
++    unsigned int samplerate;
+ 
+     /* SBR: 0: off, 1: on; upsample, 2: on; downsampled, 3: off; upsampled */
+     unsigned char sbr;
+@@ -199,7 +199,7 @@ typedef struct NeAACDecFrameInfo
+ 
+ char* NEAACDECAPI NeAACDecGetErrorMessage(unsigned char errcode);
+ 
+-unsigned long NEAACDECAPI NeAACDecGetCapabilities(void);
++unsigned int NEAACDECAPI NeAACDecGetCapabilities(void);
+ 
+ NeAACDecHandle NEAACDECAPI NeAACDecOpen(void);
+ 
+@@ -209,19 +209,19 @@ unsigned char NEAACDECAPI NeAACDecSetConfiguration(NeA
+                                                    NeAACDecConfigurationPtr config);
+ 
+ /* Init the library based on info from the AAC file (ADTS/ADIF) */
+-long NEAACDECAPI NeAACDecInit(NeAACDecHandle hDecoder,
++int NEAACDECAPI NeAACDecInit(NeAACDecHandle hDecoder,
+                               unsigned char *buffer,
+-                              unsigned long buffer_size,
+-                              unsigned long *samplerate,
++                              unsigned int buffer_size,
++                              unsigned int *samplerate,
+                               unsigned char *channels);
+ 
+ /* Init the library using a DecoderSpecificInfo */
+ char NEAACDECAPI NeAACDecInit2(NeAACDecHandle hDecoder, unsigned char *pBuffer,
+                                unsigned long SizeOfDecoderSpecificInfo,
+-                               unsigned long *samplerate, unsigned char *channels);
++                               unsigned int *samplerate, unsigned char *channels);
+ 
+ /* Init the library for DRM */
+-char NEAACDECAPI NeAACDecInitDRM(NeAACDecHandle *hDecoder, unsigned long samplerate,
++char NEAACDECAPI NeAACDecInitDRM(NeAACDecHandle *hDecoder, unsigned int samplerate,
+                                  unsigned char channels);
+ 
+ void NEAACDECAPI NeAACDecPostSeekReset(NeAACDecHandle hDecoder, long frame);
