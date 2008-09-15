@@ -1,7 +1,7 @@
---- libfaac/Makefile.am.orig	Fri Oct 17 10:41:05 2003
-+++ libfaac/Makefile.am	Thu Jul 13 09:06:22 2006
-@@ -4,5 +4,5 @@ libfaac_la_SOURCES = aacquant.c bitstrea
- libfaac_la_INCLUDES = aacquant.h channels.h filtbank.h hufftab.h psych.h backpred.h coder.h frame.h midside.h tns.h bitstream.h fft.h huffman.h ltp.h util.h
+--- libfaac/Makefile.am.orig	Mon Aug 20 11:03:23 2007
++++ libfaac/Makefile.am	Sun Jun  1 13:23:41 2008
+@@ -9,5 +9,5 @@ libfaac_la_INCLUDES = aacquant.h channels.h filtbank.h
+ libfaac_la_LIBADD = -lm
  
  INCLUDES = -I$(top_srcdir)/include
 -

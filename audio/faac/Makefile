@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2008/09/15 22:00:38 jakemsr Exp $
 
 COMMENT=	MPEG-2 and MPEG-4 AAC encoder
-DISTNAME=	faac-1.24
+DISTNAME=	faac-1.26
 CATEGORIES=    	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
-SHARED_LIBS +=	faac                 0.0      # .0.0
+SHARED_LIBS +=	faac                 1.0      # .0.0
 
 HOMEPAGE=	http://www.audiocoding.com/
 
@@ -16,8 +16,10 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS}
-LIB_DEPENDS=	mp4v2.>=1::audio/faad
 USE_LIBTOOL=	Yes
+USE_GMAKE=	Yes
+
+LIB_DEPENDS=	mp4v2.>=3::multimedia/libmp4v2
 
 WRKDIST=	${WRKDIR}/faac
 CONFIGURE_STYLE= automake

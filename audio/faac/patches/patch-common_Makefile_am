@@ -1,0 +1,10 @@
+$OpenBSD: patch-common_Makefile_am,v 1.1 2008/09/15 22:00:38 jakemsr Exp $
+--- common/Makefile.am.orig	Thu Jul 10 23:57:28 2008
++++ common/Makefile.am	Thu Jul 10 23:57:53 2008
+@@ -1,5 +1,5 @@
+ if WITH_MP4V2
+-SUBDIRS = mp4v2
++SUBDIRS =
+ else
+ SUBDIRS =
+ endif

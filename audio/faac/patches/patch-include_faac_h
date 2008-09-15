@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_faac_h,v 1.1.1.1 2006/07/13 16:18:40 ckuethe Exp $
---- include/faac.h.orig	Sun Jul  9 15:39:41 2006
-+++ include/faac.h	Sun Jul  9 15:40:49 2006
+$OpenBSD: patch-include_faac_h,v 1.2 2008/09/15 22:00:38 jakemsr Exp $
+--- include/faac.h.orig	Sun Jul  4 05:12:05 2004
++++ include/faac.h	Sun Aug 31 02:00:36 2008
 @@ -36,8 +36,6 @@ extern "C" {
  # endif
  #endif
@@ -10,7 +10,17 @@ $OpenBSD: patch-include_faac_h,v 1.1.1.1 2006/07/13 16:18:40 ckuethe Exp $
  typedef struct {
    void *ptr;
    char *name;
-@@ -84,9 +82,6 @@ int FAACAPI faacEncEncode(faacEncHandle 
+@@ -49,9 +47,6 @@ psymodellist_t;
+ 
+ typedef void *faacEncHandle;
+ 
+-#ifndef HAVE_INT32_T
+-typedef int int32_t;
+-#endif
+ 
+ /*
+ 	Allows an application to get FAAC version info. This is intended
+@@ -88,9 +83,6 @@ int FAACAPI faacEncEncode(faacEncHandle hEncoder, int3
  
  int FAACAPI faacEncClose(faacEncHandle hEncoder);
  

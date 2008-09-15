@@ -1,10 +1,16 @@
---- frontend/Makefile.am.orig	Wed Mar 24 04:00:40 2004
-+++ frontend/Makefile.am	Thu Jul 13 08:34:13 2006
-@@ -1,6 +1,6 @@
+--- frontend/Makefile.am.orig	Wed Jul 28 01:18:21 2004
++++ frontend/Makefile.am	Fri Jul 11 00:00:32 2008
+@@ -1,10 +1,10 @@
  bin_PROGRAMS = faac
  
 -faac_SOURCES = main.c input.c
 +faac_SOURCES = main.c input.c dummy.cc
  
+ if WITH_MP4V2
+-INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir)/common/mp4v2
+-LDADD = $(top_builddir)/libfaac/libfaac.la $(top_srcdir)/common/mp4v2/libmp4v2.la -lm -lstdc++
++INCLUDES = -I$(top_srcdir)/include
++LDADD = $(top_builddir)/libfaac/libfaac.la -lmp4v2 -lm -lstdc++
+ else
  INCLUDES = -I$(top_srcdir)/include 
  LDADD = $(top_builddir)/libfaac/libfaac.la -lm
