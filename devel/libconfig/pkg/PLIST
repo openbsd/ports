@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/21 20:19:05 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/09/16 16:52:15 jasper Exp $
 %%SHARED%%
 include/libconfig.h
 include/libconfig.h++
@@ -10,3 +10,12 @@ lib/libconfig.la
 lib/pkgconfig/
 lib/pkgconfig/libconfig++.pc
 lib/pkgconfig/libconfig.pc
+share/examples/libconfig/
+share/examples/libconfig/sample1.c
+share/examples/libconfig/sample1.cpp
+share/examples/libconfig/sample2.c
+share/examples/libconfig/sample2.cpp
+share/examples/libconfig/sample3.c
+share/examples/libconfig/sample3.cpp
+share/examples/libconfig/stub.c
+share/examples/libconfig/stubcpp.cpp
