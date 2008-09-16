@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1 2001/06/08 17:02:13 shell Exp $
-bin/gtkasp2php
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2008/09/16 19:41:35 jasper Exp $
+@bin bin/gtkasp2php
