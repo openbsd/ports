@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.353 2008/09/06 10:34:06 simon Exp $
+# $OpenBSD: Makefile,v 1.354 2008/09/16 21:22:39 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -103,7 +103,6 @@
      SUBDIR += nag
      SUBDIR += nginx
      SUBDIR += nostromo
-     SUBDIR += nscache
      SUBDIR += ntlmaps
      SUBDIR += opera
      SUBDIR += opera-flashplugin
