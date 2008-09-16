@@ -1,40 +1,51 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2008/09/16 20:00:18 jasper Exp $
 COMMENT=	lightweight Gtk text editor with syntax highlighting
 
-DISTNAME=	beaver-0.2.7
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	beaver0_3_0_1
+PKGNAME=	beaver-0.3.0.1
 CATEGORIES=	editors	
 
 HOMEPAGE=	http://www.nongnu.org/beaver/
-MASTER_SITES=	http://savannah.nongnu.org/download/beaver/
+MASTER_SITES=	http://download.savannah.gnu.org/releases/beaver/0.3.0.1%20-%202008.06.26/
+EXTRACT_SUFX=	.tgz
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 
-LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
+		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 iconv \
+		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png z
+
+LIB_DEPENDS=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+
+RUN_DEPENDS=	::devel/desktop-file-utils
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 MAKE_FLAGS=	CC="${CC}" OPTI="${CFLAGS}"
 
-WRKSRC=	${WRKDIST}/src
+WRKSRC= 	${WRKDIST}/src
 
 NO_REGRESS=	Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/interface.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/beaver \
 		${PREFIX}/bin/beaver
 	${INSTALL_DATA} ${WRKDIST}/beaver.1x \
 		${PREFIX}/man/man1/beaver.1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/beaver
-	${INSTALL_DATA} ${WRKDIST}/pixmaps/beaver.png \
-		${PREFIX}/share/beaver/beaver.png
+	${INSTALL_DATA_DIR} ${PREFIX}/share/beaver/pixmaps
 	${INSTALL_DATA_DIR} ${PREFIX}/share/beaver/bl
 	@cd ${WRKDIST}; ${INSTALL_DATA} ${WRKDIST}/bl/* \
 		${PREFIX}/share/beaver/bl
+	${INSTALL_DATA} ${WRKDIST}/pixmaps/* ${PREFIX}/share/beaver/pixmaps/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKDIST}/beaver.desktop ${PREFIX}/share/applications/
 
 .include <bsd.port.mk>

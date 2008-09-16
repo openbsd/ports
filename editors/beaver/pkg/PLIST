@@ -1,9 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:01:06 espie Exp $
-bin/beaver
+@comment $OpenBSD: PLIST,v 1.3 2008/09/16 20:00:18 jasper Exp $
+@bin bin/beaver
 @man man/man1/beaver.1
+share/applications/beaver.desktop
 share/beaver/
-share/beaver/beaver.png
 share/beaver/bl/
 share/beaver/bl/example1.bl
 share/beaver/bl/example2.bl
 share/beaver/bl/glib.bl
+share/beaver/pixmaps/
+share/beaver/pixmaps/about.xpm
+share/beaver/pixmaps/beaver.png
+share/beaver/pixmaps/stock_about.xpm
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
