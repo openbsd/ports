@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/07/01 23:14:23 jolan Exp $
---- Makefile.in.orig	Sat Jan 26 14:51:00 2002
-+++ Makefile.in	Sat Jun 28 13:33:42 2003
-@@ -28,7 +28,7 @@ EVENTLIB	= @EVENTLIB@
- CC		= @CC@
- CFLAGS		= -Wall @CFLAGS@ $(JPEGINC) $(FILEINC) -I$(srcdir)/missing
- LDFLAGS		= @LDFLAGS@
--LIBS		= $(JPEGLIB)
-+LIBS		= $(JPEGLIB) -lcrypto
+$OpenBSD: patch-Makefile_in,v 1.2 2008/09/16 21:08:27 jasper Exp $
+--- Makefile.in.orig	Tue Sep 16 22:59:28 2008
++++ Makefile.in	Tue Sep 16 23:02:44 2008
+@@ -83,7 +83,7 @@ GTKLIB = @GTKLIB@
+ EVENTINC = @EVENTINC@
+ EVENTLIB = @EVENTLIB@
  
- INSTALL		= @INSTALL@
- INSTALL_PROG	= @INSTALL_PROGRAM@
+-LIBS = $(JPEGLIB)
++LIBS = $(JPEGLIB) -lcrypto
+ 
+ SUBDIRS = jpeg-6b file
+ 
