@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2008/09/01 11:17:54 espie Exp $
+# $OpenBSD: Makefile,v 1.220 2008/09/17 10:18:19 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -173,6 +173,7 @@
      SUBDIR += sng
      SUBDIR += swfdec
      SUBDIR += synaesthesia
+     SUBDIR += tesseract
      SUBDIR += tgif
      SUBDIR += tiff
      SUBDIR += tiff2png
