@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/25 00:05:31 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2008/09/17 13:54:54 ajacoutot Exp $
 
 COMMENT =		continuous integration server
 
@@ -37,7 +37,7 @@ HOMEDIR =		/var/hudson
 WARDIR =		${PREFIX}/share/hudson
 BINDIR =		${PREFIX}/bin
 
-SUBST_VARS +=		HOMEDIR TRUEPREFIX
+SUBST_VARS +=		HOMEDIR
 
 do-install:
 	${INSTALL_DATA_DIR} ${HOMEDIR}

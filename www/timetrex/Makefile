@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/17 10:08:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/09/17 13:54:54 ajacoutot Exp $
 
 COMMENT=	web-based payroll and time management suite
 
@@ -32,7 +32,7 @@ PKG_ARCH=	*
 
 PREFIX=		/var/www
 INSTDIR=	${PREFIX}/timetrex
-SUBST_VARS=	INSTDIR TRUEPREFIX
+SUBST_VARS=	INSTDIR
 
 do-install:
 	mv ${WRKSRC} ${INSTDIR}

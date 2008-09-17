@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2008/09/13 22:04:40 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2008/09/17 13:54:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -48,7 +48,7 @@ LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 
 PYTHON=		${LOCALBASE}/bin/python2.5
 
-SUBST_VARS=	PYTHON TRUEPREFIX
+SUBST_VARS=	PYTHON
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes

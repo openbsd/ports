@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/04/29 12:10:15 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2008/09/17 13:54:54 ajacoutot Exp $
 
 COMMENT=		PDF backend for CUPS
 
@@ -23,8 +23,6 @@ RUN_DEPENDS=		::print/cups \
 			::mail/p5-MIME-tools
 
 NO_REGRESS=		Yes
-
-SUBST_VARS=		TRUEPREFIX
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKDIR}/bin/cups-pdf ${WRKDIR}/${DISTNAME}/src/cups-pdf.c

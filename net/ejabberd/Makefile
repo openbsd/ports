@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/06/17 15:31:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2008/09/17 13:54:54 ajacoutot Exp $
 
 COMMENT=		jabber server written in Erlang
 
@@ -59,7 +59,7 @@ WRKSRC=			${WRKDIST}/src
 
 NO_REGRESS=		Yes
 
-SUBST_VARS=		TRUEPREFIX LOCALBASE EJDBDIR EJLOGDIR JABBERDUSER
+SUBST_VARS=		EJDBDIR EJLOGDIR JABBERDUSER
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ejabberd

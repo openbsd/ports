@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2008/08/24 08:40:02 brad Exp $
+# $OpenBSD: Makefile,v 1.144 2008/09/17 13:54:54 ajacoutot Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -29,7 +29,7 @@ WANTLIB=		c crypto m pthread ssl z
 
 DB_DIR?=	/var/mysql
 SOCKET_DIR=	/var/run/mysql
-SUBST_VARS=	DB_DIR SOCKET_DIR TRUEPREFIX VERSION
+SUBST_VARS=	DB_DIR SOCKET_DIR VERSION
 
 # XXX gcc bug, gcc/3.3.5
 .if ${MACHINE_ARCH} == "alpha"

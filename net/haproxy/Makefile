@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/17 04:31:45 jdixon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/09/17 13:54:54 ajacoutot Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -22,7 +22,7 @@ HAPROXYCONF =	${SYSCONFDIR}/haproxy
 HAPROXYSTATE =	/var/haproxy
 HAPROXYUID =	604
 HAPROXYGID =	604
-SUBST_VARS =	TRUEPREFIX HAPROXYCONF HAPROXYSTATE \
+SUBST_VARS =	HAPROXYCONF HAPROXYSTATE \
 			HAPROXYUID HAPROXYGID
 
 MAKE_FILE =	Makefile.bsd
