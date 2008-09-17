@@ -1,0 +1,8 @@
+TimeTrex has been installed into ${INSTDIR}
+
+You should point this to the DocumentRoot of your web-server:
+ # ln -s ../timetrex /var/www/htdocs/timetrex
+(make sure you use a relative symlink since Apache is chrooted)
+
+To complete the installation or update, make sure you read
+  ${INSTDIR}/README.OpenBSD.

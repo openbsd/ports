@@ -1,0 +1,12 @@
+$OpenBSD: patch-classes_cache_lite_Hashed_Cache_Lite_php,v 1.1.1.1 2008/09/17 10:08:23 ajacoutot Exp $
+--- classes/cache_lite/Hashed_Cache_Lite.php.orig	Sat Sep 13 12:55:25 2008
++++ classes/cache_lite/Hashed_Cache_Lite.php	Sat Sep 13 12:55:34 2008
+@@ -73,7 +73,7 @@ class Hashed_Cache_Lite extends Cache_Lite
+ 			$new_dir = ($dir{0} == DIR_SEP) ? DIR_SEP : '';
+ 			foreach ($dir_parts as $dir_part) {
+ 				$new_dir .= $dir_part;
+-				if (!file_exists($new_dir) && !mkdir($new_dir, 0771)) {
++				if (!file_exists($new_dir) && !mkdir($new_dir, 0771, true)) {
+ 					Cache_Lite::raiseError('Cache_Lite : problem creating directory \"$dir\" !', -3);
+ 					return false;
+ 				}

@@ -1,0 +1,28 @@
+$OpenBSD: patch-templates_install_SystemSettings_tpl,v 1.1.1.1 2008/09/17 10:08:23 ajacoutot Exp $
+--- templates/install/SystemSettings.tpl.orig	Sat Sep 13 12:03:39 2008
++++ templates/install/SystemSettings.tpl	Sat Sep 13 12:04:40 2008
+@@ -70,7 +70,7 @@
+ 						</span>
+ 					</td>
+ 					<td class="cellRightEditTable">
+-						<input type="checkbox" class="checkbox" name="data[update_notify]" value="1" checked>
++						<input type="checkbox" class="checkbox" name="data[update_notify]" value="1">
+ 						<font color='red'><b>{t}*HIGHLY RECOMMENDED{/t}</b></font>
+ 					</td>
+ 				</tr>
+@@ -81,7 +81,7 @@
+ 						<br>
+ 					</td>
+ 					<td class="cellRightEditTable">
+-						<input type="checkbox" class="checkbox" name="data[anonymous_update_notify]" value="1">
++						<input type="checkbox" class="checkbox" name="data[anonymous_update_notify]" value="1" checked>
+ 					</td>
+ 				</tr>
+ 				{/if}
+@@ -97,4 +97,4 @@
+ 		</form>
+ 	</div>
+ </div>
+-{include file="footer.tpl"}
+\ No newline at end of file
++{include file="footer.tpl"}

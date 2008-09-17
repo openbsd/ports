@@ -1,0 +1,35 @@
+$OpenBSD: patch-timetrex_ini_php-example_linux,v 1.1.1.1 2008/09/17 10:08:23 ajacoutot Exp $
+--- timetrex.ini.php-example_linux.orig	Mon May 26 23:14:19 2008
++++ timetrex.ini.php-example_linux	Sat Sep 13 10:30:41 2008
+@@ -17,19 +17,19 @@ base_url = /timetrex/interface
+ ;log directory
+ ;
+ ;Linux
+-log = /var/log/timetrex
++log = ${TRUEPREFIX}/timetrex/log
+ 
+ ;
+ ;Misc storage, for attachments/images
+ ;
+ ;Linux
+-storage = /var/timetrex/storage
++storage = ${TRUEPREFIX}/timetrex/storage
+ 
+ ;
+ ;Full path and name to the PHP CLI Binary
+ ;
+ ;Linux
+-php_cli = /usr/bin/php
++php_cli = ${LOCALBASE}/bin/php
+ 
+ 
+ 
+@@ -53,7 +53,7 @@ password = ENTER_PASSWORD_HERE
+ [cache]
+ enable = TRUE
+ ;Linux
+-dir = /tmp/timetrex
++dir = ${TRUEPREFIX}/timetrex/tmp
+ 
+ 
+ 
