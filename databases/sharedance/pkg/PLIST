@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/17 14:27:53 jasper Exp $
+@bin sbin/sharedanced
+share/doc/sharedance/
+share/doc/sharedance/README
+share/examples/sharedance/
+share/examples/sharedance/session_handler.php
+share/examples/sharedance/sharedance.php
+share/examples/sharedance/test_session.php
+share/examples/sharedance/test_sharedance.php

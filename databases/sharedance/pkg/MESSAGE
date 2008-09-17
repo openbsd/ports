@@ -1,0 +1,6 @@
+Please see the README on using sharedance at:
+${PREFIX}/share/doc/sharedance/README
+
+There are example PHP scripts that demonstrate sharedance's use
+installed at: ${PREFIX}/share/examples/sharedance/
+

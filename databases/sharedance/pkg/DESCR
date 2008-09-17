@@ -1,0 +1,8 @@
+Sharedance is a high-performance server that centralize ephemeral
+KEY/DATA Pairs on remote hosts, without the overhead and the complexity
+of an SQL database.
+
+It was mainly designed to share caches and sessions between a pool of
+web servers. Access to a sharedance server is trivial through a simple
+PHP API and it is compatible with the expectations of PHP 4 and PHP 5
+session handlers.
