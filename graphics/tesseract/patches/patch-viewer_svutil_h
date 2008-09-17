@@ -1,0 +1,15 @@
+$OpenBSD: patch-viewer_svutil_h,v 1.1.1.1 2008/09/17 10:17:27 ajacoutot Exp $
+--- viewer/svutil.h.orig	Tue Apr 22 02:07:25 2008
++++ viewer/svutil.h	Sun Sep  7 12:51:15 2008
+@@ -32,6 +32,11 @@
+ #else
+ #include <pthread.h>
+ #include <semaphore.h>
++#ifdef __OpenBSD__
++#include <unistd.h>
++#include <sys/types.h>
++#include <netinet/in.h>
++#endif
+ #endif
+ 
+ #include <string>

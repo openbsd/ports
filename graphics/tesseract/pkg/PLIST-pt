@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-pt,v 1.1.1.1 2008/09/17 10:17:27 ajacoutot Exp $
+share/tessdata/por.DangAmbigs
+share/tessdata/por.freq-dawg
+share/tessdata/por.inttemp
+share/tessdata/por.normproto
+share/tessdata/por.pffmtable
+share/tessdata/por.unicharset
+share/tessdata/por.user-words
+share/tessdata/por.word-dawg
