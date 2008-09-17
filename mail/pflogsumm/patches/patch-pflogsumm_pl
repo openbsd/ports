@@ -1,6 +1,5 @@
-$OpenBSD: patch-pflogsumm_pl,v 1.4 2005/06/30 13:22:23 jakob Exp $
---- pflogsumm.pl.orig	2004-01-28 13:38:53.000000000 +1000
-+++ pflogsumm.pl	2004-01-28 13:39:29.000000000 +1000
+--- pflogsumm.pl.orig	Sun Jun 29 15:46:01 2008
++++ pflogsumm.pl	Fri Sep 12 19:09:05 2008
 @@ -4,13 +4,13 @@ eval 'exec perl -S $0 "$@"'
  
  =head1 NAME
@@ -8,7 +7,7 @@ $OpenBSD: patch-pflogsumm_pl,v 1.4 2005/06/30 13:22:23 jakob Exp $
 -pflogsumm.pl - Produce Postfix MTA logfile summary
 +pflogsumm - Produce Postfix MTA logfile summary
  
- Copyright (C) 1998-2003 by James S. Seymour, Release 1.1.0.
+ Copyright (C) 1998-2007 by James S. Seymour, Release 1.1.2.
  
  =head1 SYNOPSIS
  
@@ -17,7 +16,7 @@ $OpenBSD: patch-pflogsumm_pl,v 1.4 2005/06/30 13:22:23 jakob Exp $
  	[--verp_mung[=<n>]] [--verbose_msg_detail] [--iso_date_time]
  	[-m|--uucp_mung] [-i|--ignore_case] [--smtpd_stats] [--mailq]
  	[--problems_first] [--rej_add_from] [--no_bounce_detail]
-@@ -18,7 +18,7 @@ Copyright (C) 1998-2003 by James S. Seym
+@@ -18,7 +18,7 @@ Copyright (C) 1998-2007 by James S. Seymour, Release 1
  	[--no_smtpd_warnings] [--zero_fill] [--syslog_name=string]
  	[file1 [filen]]
  
@@ -26,7 +25,7 @@ $OpenBSD: patch-pflogsumm_pl,v 1.4 2005/06/30 13:22:23 jakob Exp $
  
      If no file(s) specified, reads from stdin.  Output is to stdout.
  
-@@ -119,7 +119,7 @@ Copyright (C) 1998-2003 by James S. Seym
+@@ -119,7 +119,7 @@ Copyright (C) 1998-2007 by James S. Seymour, Release 1
  		    The message may be delivered long-enough after the
  		    (last) qmgr log entry that the information is not in
  		    the log(s) processed by a particular run of
@@ -35,7 +34,7 @@ $OpenBSD: patch-pflogsumm_pl,v 1.4 2005/06/30 13:22:23 jakob Exp $
  		    size" and the total for "bytes delivered." These are
  		    normally reported by pflogsumm as "Messages with no
  		    size data."
-@@ -216,15 +216,15 @@ Copyright (C) 1998-2003 by James S. Seym
+@@ -216,15 +216,15 @@ Copyright (C) 1998-2007 by James S. Seymour, Release 1
  
      Produce a report of previous day's activities:
  
@@ -63,12 +62,3 @@ $OpenBSD: patch-pflogsumm_pl,v 1.4 2005/06/30 13:22:23 jakob Exp $
  $usageMsg =
      "usage: $progName -[eq] [-d <today|yesterday>] [-h <cnt>] [-u <cnt>]
         [--verp_mung[=<n>]] [--verbose_msg_detail] [--iso_date_time]
-@@ -696,7 +696,7 @@ while(<>) {
- 	    }
- 	}
- 	elsif((($addr, $relay, $delay, $status, $toRmdr) = $logRmdr =~
--		/to=<([^>]*)>, (?:orig_to=<[^>]*>, )?relay=([^,]+), delay=([^,]+), status=(\S+)(.*)$/o) >= 4)
-+		/to=<([^>]*)>, (?:orig_to=<[^>]*>, )?relay=([^,]+), delay=([^,]+), (?:dsn=\d+\.\d+\.\d+, )?status=(\S+)(.*)$/o) >= 4)
- 	{
- 
- 	    if($opts{'m'} && $addr =~ /^(.*!)*([^!]+)!([^!@]+)@([^\.]+)$/o) {
