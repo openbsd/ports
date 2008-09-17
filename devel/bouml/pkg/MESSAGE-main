@@ -1,0 +1,6 @@
+Set the maximum number of concurrent users working on the same project,
+to users + 1. Like:
+	export BOUML_ID=2
+
+To use your prefered editor, instead of BOUML's editor:
+	export BOUML_EDITOR=$EDITOR
