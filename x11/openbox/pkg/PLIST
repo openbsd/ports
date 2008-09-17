@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2008/04/17 10:57:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2008/09/17 15:12:32 ajacoutot Exp $
 %%SHARED%%
 bin/gdm-control
 bin/gnome-panel-control
@@ -33,6 +33,7 @@ lib/pkgconfig/obrender-3.0.pc
 @man man/man1/openbox-session.1
 @man man/man1/openbox.1
 share/examples/openbox/
+@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/openbox/
 share/examples/openbox/menu.xml
 @sample ${SYSCONFDIR}/xdg/openbox/menu.xml
