@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/09 18:27:45 okan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/09/17 02:40:27 okan Exp $
 bin/duplicity
 bin/rdiffdir
 lib/python${MODPY_VERSION}/site-packages/duplicity/
@@ -6,8 +6,27 @@ lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/duplicity/__init__.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/_librsync.so
-lib/python${MODPY_VERSION}/site-packages/duplicity/backends.py
-lib/python${MODPY_VERSION}/site-packages/duplicity/backends.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/asyncscheduler.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/asyncscheduler.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/__init__.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/botobackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/botobackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ftpbackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ftpbackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/hsibackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/hsibackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/localbackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/localbackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/rsyncbackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/rsyncbackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/sshbackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/sshbackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/webdavbackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/webdavbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/collections.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/collections.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/commandline.py
@@ -16,8 +35,12 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/diffdir.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/diffdir.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/dup_temp.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/dup_temp.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/dup_threading.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/dup_threading.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/dup_time.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/dup_time.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/errors.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/errors.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/file_naming.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/file_naming.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/globals.py

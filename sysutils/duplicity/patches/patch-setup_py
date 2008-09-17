@@ -1,13 +1,13 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2008/06/09 18:27:45 okan Exp $
---- setup.py.orig	Mon May  5 10:40:53 2008
-+++ setup.py	Tue Jun  3 17:42:07 2008
-@@ -48,8 +48,6 @@ setup(name="duplicity",
- 							   library_dirs=libdir_list,
- 							   libraries=["rsync"])],
- 	  scripts = ['rdiffdir', 'duplicity'],
--	  data_files = [('share/man/man1', ['duplicity.1', 'rdiffdir.1']),
--					('share/doc/duplicity-%s' % version_string,
--					 ['COPYING', 'README', 'CHANGELOG'])])
-+	  data_files = [('man/man1', ['duplicity.1', 'rdiffdir.1'])])
+$OpenBSD: patch-setup_py,v 1.2 2008/09/17 02:40:27 okan Exp $
+--- setup.py.orig	Fri Sep 12 00:00:34 2008
++++ setup.py	Fri Sep 12 00:00:52 2008
+@@ -49,8 +49,6 @@ setup(name="duplicity",
+                                library_dirs=libdir_list,
+                                libraries=["rsync"])],
+       scripts = ['rdiffdir', 'duplicity'],
+-      data_files = [('share/man/man1', ['duplicity.1', 'rdiffdir.1']),
+-                    ('share/doc/duplicity-%s' % version_string,
+-                     ['COPYING', 'README', 'CHANGELOG'])])
++      data_files = [('man/man1', ['duplicity.1', 'rdiffdir.1'])])
  
  
