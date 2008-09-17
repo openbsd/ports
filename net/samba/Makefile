@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.97 2008/09/12 07:49:11 brad Exp $
+# $OpenBSD: Makefile,v 1.98 2008/09/17 10:38:59 brad Exp $
 
 COMMENT-main=	SMB and CIFS client and server for UNIX
 COMMENT-docs=	additional documentation and examples for Samba
 
 DISTNAME=		samba-3.0.32
-PKGNAME-main=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 SHARED_LIBS=		smbclient	1.0 \
 			msrpc		1.0
@@ -41,7 +41,8 @@ SUBST_VARS=     CONFDIR LOCALBASE SYSCONFDIR
 
 SEPARATE_BUILD= concurrent
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS= --localstatedir="/var" \
+CONFIGURE_ARGS= --disable-fam \
+		--localstatedir="/var" \
 		--sbindir="${PREFIX}/libexec" \
 		--with-configdir="${CONFDIR}" \
 		--with-libdir="${PREFIX}/lib/samba" \
@@ -56,7 +57,6 @@ CONFIGURE_ARGS= --localstatedir="/var" \
 		--with-ssllib="/usr/lib" \
 		--with-syslog \
 		--with-utmp
-
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,--export-dynamic"
 
@@ -66,9 +66,8 @@ FLAVOR?=
 MULTI_PACKAGES= -main -docs
 
 .if ${FLAVOR:L:Mcups}
-CONFIGURE_ARGS+= --enable-cups
 LIB_DEPENDS+=	cups::print/cups
-WANTLIB+=	ssl crypto m pthread z
+WANTLIB+=	ssl m pthread z
 .else
 CONFIGURE_ARGS+= --disable-cups
 .endif
@@ -77,21 +76,22 @@ CONFIGURE_ARGS+= --disable-cups
 ERRORS+="Fatal: ldap and ads flavors conflict"
 .endif
 
-.if ${FLAVOR:L:Mldap}
-CONFIGURE_ARGS+= --with-ldap --without-ads
+.if ${FLAVOR:L:Mldap} || ${FLAVOR:L:Mads}
 LIB_DEPENDS+=	ldap,lber::databases/openldap
 BUILD_DEPENDS+=	::misc/libutf8
 .else
-CONFIGURE_ARGS+= --without-ldap --without-ads
+CONFIGURE_ARGS+= --without-ldap
 .endif
 
 .if ${FLAVOR:L:Mads}
-CONFIGURE_ARGS+= --with-ldap --with-krb5="${WRKDIR}/usr" --with-ads
-LIB_DEPENDS+=	ldap,lber::databases/openldap
-BUILD_DEPENDS+=	::misc/libutf8
+CONFIGURE_ARGS+= --with-krb5="${WRKDIR}/usr"
 WANTLIB+=	asn1 com_err gssapi krb5
 .else
-CONFIGURE_ARGS+= --without-ldap --without-ads
+CONFIGURE_ARGS+= --without-ads
+.endif
+
+.if ${FLAVOR:L:Mads} || ${FLAVOR:L:Mcups}
+WANTLIB+=	crypto
 .endif
 
 PKG_ARCH-docs=	*
