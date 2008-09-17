@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile,v 1.1.1.1 2008/09/17 15:39:51 ajacoutot Exp $
+--- src/Makefile.orig	Sat Jul 19 15:43:41 2008
++++ src/Makefile	Wed Sep 17 14:51:56 2008
+@@ -11,8 +11,8 @@ ifndef DESTDIR
+ 		XDG_CONFIG_DIR=/etc/xdg
+ 	endif
+ else
+-	BINDIR=$(DESTDIR)/usr/bin
+-	XDG_CONFIG_DIR=$(DESTDIR)/etc/xdg
++	BINDIR=$(PREFIX)/bin
++	XDG_CONFIG_DIR=$(PREFIX)/share/examples/
+ endif
+ 
+ 
