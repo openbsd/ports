@@ -1,0 +1,28 @@
+$OpenBSD: patch-nettest_bsd_c,v 1.1 2008/09/17 12:39:17 markus Exp $
+--- nettest_bsd.c.orig	Wed Sep  3 20:35:56 2008
++++ nettest_bsd.c	Wed Sep  3 20:36:04 2008
+@@ -4885,6 +4885,24 @@ recv_udp_stream()
+     send_response();
+     exit(1);
+   }
++
++  if (!udp_stream_request->ipaddress && !udp_stream_request->port) {
++    struct sockaddr_in temp;
++
++    bzero(&temp,sizeof(temp));
++    temp.sin_port = 0;
++    temp.sin_family = AF_INET;
++    temp.sin_addr.s_addr = 0;
++    if (bind(s_data,
++	     (struct sockaddr *)&temp,
++	     sizeof(struct sockaddr_in)) < 0) {
++      fprintf(where,
++	      "netperf: recv_udp_stream: data socket bind failed errno %d\n",
++	      errno);
++      fprintf(where," port: %d\n",ntohs(temp.sin_port));
++      fflush(where);
++    }
++  }
+   
+   udp_stream_response->test_length = udp_stream_request->test_length;
+   
