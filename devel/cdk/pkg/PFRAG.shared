@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/09/17 13:22:06 ajacoutot Exp $
+@lib lib/libcdk.so.${LIBcdk_VERSION}
