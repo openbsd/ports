@@ -1,7 +1,7 @@
-$OpenBSD: patch-nsock_src_nsock_pcap_h,v 1.1 2008/01/25 01:21:17 okan Exp $
---- nsock/src/nsock_pcap.h.orig	Mon Jan 14 17:07:38 2008
-+++ nsock/src/nsock_pcap.h	Mon Jan 14 17:07:55 2008
-@@ -73,7 +73,7 @@ typedef struct{
+$OpenBSD: patch-nsock_src_nsock_pcap_h,v 1.2 2008/09/17 18:09:54 kili Exp $
+--- nsock/src/nsock_pcap.h.orig	Wed Aug 13 09:02:22 2008
++++ nsock/src/nsock_pcap.h	Thu Sep 11 15:32:17 2008
+@@ -72,7 +72,7 @@ typedef struct{
  
  
  typedef struct{

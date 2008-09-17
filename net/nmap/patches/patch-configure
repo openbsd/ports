@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2008/07/09 14:46:19 wcmaier Exp $
---- configure.orig	Sun Jun 15 02:05:12 2008
-+++ configure	Tue Jul  8 10:13:21 2008
-@@ -6590,6 +6590,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+$OpenBSD: patch-configure,v 1.9 2008/09/17 18:09:54 kili Exp $
+--- configure.orig	Tue Sep  9 01:37:03 2008
++++ configure	Mon Sep 15 09:30:03 2008
+@@ -6688,6 +6688,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  extern char pcap_version[];
  int main() {
    int major, minor1, minor2;
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.8 2008/07/09 14:46:19 wcmaier Exp $
    sscanf(pcap_version,"%d.%d.%d", &major, &minor1, &minor2);
    if (major > 0)
      exit(0);
-@@ -6910,7 +6911,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -7008,7 +7009,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.8 2008/07/09 14:46:19 wcmaier Exp $
  _ACEOF
  rm -f conftest.$ac_objext
  if { (ac_try="$ac_compile"
-@@ -7105,7 +7106,7 @@ if test $have_pcre != yes ; then
+@@ -7203,7 +7204,7 @@ if test $have_pcre != yes ; then
  else
  # We only need to check for and use this if we are NOT using included pcre
  

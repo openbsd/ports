@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.80 2008/07/09 14:46:19 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.81 2008/09/17 18:09:54 kili Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 
-MODPY_EGG_VERSION=	4.68
+MODPY_EGG_VERSION=	4.76
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
@@ -55,5 +55,8 @@ NO_REGRESS=	Yes
 
 post-extract:
 	@cd ${WRKSRC} && rm -rf libpcap/ libdnet-stripped/ liblua/ libpcre/
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/zenmap/install_scripts/unix/su-to-zenmap.sh
 
 .include <bsd.port.mk>

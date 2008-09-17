@@ -1,21 +1,24 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.5 2008/07/09 14:46:19 wcmaier Exp $
-libexec/nmap/
-libexec/nmap/nselib-bin/
-libexec/nmap/nselib-bin/bit.so
+@comment $OpenBSD: PFRAG.shared-main,v 1.6 2008/09/17 18:09:54 kili Exp $
 share/nmap/nselib/
+share/nmap/nselib/base64.lua
 share/nmap/nselib/comm.lua
 share/nmap/nselib/datafiles.lua
+share/nmap/nselib/dns.lua
 share/nmap/nselib/http.lua
 share/nmap/nselib/ipOps.lua
 share/nmap/nselib/listop.lua
 share/nmap/nselib/match.lua
 share/nmap/nselib/packet.lua
+share/nmap/nselib/pop3.lua
 share/nmap/nselib/shortport.lua
+share/nmap/nselib/snmp.lua
 share/nmap/nselib/stdnse.lua
 share/nmap/nselib/strbuf.lua
 share/nmap/nselib/tab.lua
+share/nmap/nselib/unpwdb.lua
 share/nmap/nselib/url.lua
 share/nmap/scripts/
+share/nmap/scripts/ASN.nse
 share/nmap/scripts/HTTPAuth.nse
 share/nmap/scripts/HTTP_open_proxy.nse
 share/nmap/scripts/HTTPpasswd.nse
@@ -26,15 +29,19 @@ share/nmap/scripts/PPTPversion.nse
 share/nmap/scripts/RealVNC_auth_bypass.nse
 share/nmap/scripts/SMTP_openrelay_test.nse
 share/nmap/scripts/SMTPcommands.nse
-share/nmap/scripts/SNMPsysdesr.nse
+share/nmap/scripts/SNMPcommunitybrute.nse
+share/nmap/scripts/SNMPsysdescr.nse
 share/nmap/scripts/SQLInject.nse
 share/nmap/scripts/SSHv1-support.nse
 share/nmap/scripts/SSLv2-support.nse
 share/nmap/scripts/UPnP-info.nse
 share/nmap/scripts/anonFTP.nse
+share/nmap/scripts/brutePOP3.nse
 share/nmap/scripts/bruteTelnet.nse
 share/nmap/scripts/chargenTest.nse
 share/nmap/scripts/daytimeTest.nse
+share/nmap/scripts/dns-safe-recursion-port.nse
+share/nmap/scripts/dns-safe-recursion-txid.nse
 share/nmap/scripts/dns-test-open-recursion.nse
 share/nmap/scripts/echoTest.nse
 share/nmap/scripts/finger.nse
@@ -44,6 +51,7 @@ share/nmap/scripts/ircServerInfo.nse
 share/nmap/scripts/ircZombieTest.nse
 share/nmap/scripts/nbstat.nse
 share/nmap/scripts/netbios-smb-os-discovery.nse
+share/nmap/scripts/popcapa.nse
 share/nmap/scripts/promiscuous.nse
 share/nmap/scripts/ripeQuery.nse
 share/nmap/scripts/robots.nse
@@ -56,5 +64,6 @@ share/nmap/scripts/showSMTPVersion.nse
 share/nmap/scripts/showSSHVersion.nse
 share/nmap/scripts/skype_v2-version.nse
 share/nmap/scripts/strangeSMTPport.nse
+share/nmap/scripts/whois.nse
 share/nmap/scripts/xamppDefaultPass.nse
 share/nmap/scripts/zoneTrans.nse
