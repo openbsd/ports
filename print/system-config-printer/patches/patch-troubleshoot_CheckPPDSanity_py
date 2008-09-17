@@ -1,9 +1,9 @@
-$OpenBSD: patch-troubleshoot_CheckPPDSanity_py,v 1.1 2008/07/08 09:33:21 ajacoutot Exp $
---- troubleshoot/CheckPPDSanity.py.orig	Wed Jul  2 17:50:13 2008
-+++ troubleshoot/CheckPPDSanity.py	Wed Jul  2 17:50:28 2008
-@@ -26,7 +26,7 @@ import subprocess
+$OpenBSD: patch-troubleshoot_CheckPPDSanity_py,v 1.2 2008/09/17 12:00:56 ajacoutot Exp $
+--- troubleshoot/CheckPPDSanity.py.orig	Thu Aug 28 15:34:24 2008
++++ troubleshoot/CheckPPDSanity.py	Wed Sep 17 13:46:48 2008
+@@ -25,7 +25,7 @@ import os
+ import subprocess
  from base import *
- from base import _
  
 -install_cmd = "/usr/bin/system-install-packages"
 +install_cmd = "/usr/bin/true"

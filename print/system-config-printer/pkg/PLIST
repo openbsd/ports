@@ -1,12 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/07/08 09:33:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/09/17 12:00:56 ajacoutot Exp $
 bin/my-default-printer
 bin/system-config-printer
 bin/system-config-printer-applet
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/
+lib/python${MODPY_VERSION}/site-packages/cupshelpers-1.0-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/__init__.py
+lib/python${MODPY_VERSION}/site-packages/cupshelpers/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/cupshelpers.py
+lib/python${MODPY_VERSION}/site-packages/cupshelpers/cupshelpers.pyc
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/openprinting.py
+lib/python${MODPY_VERSION}/site-packages/cupshelpers/openprinting.pyc
 lib/python${MODPY_VERSION}/site-packages/cupshelpers/ppds.py
+lib/python${MODPY_VERSION}/site-packages/cupshelpers/ppds.pyc
 @man man/man1/system-config-printer-applet.1
 @man man/man1/system-config-printer.1
 share/applications/redhat-manage-print-jobs.desktop
@@ -82,6 +87,8 @@ share/locale/vi/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_CN/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 share/system-config-printer/
+share/system-config-printer/AdvancedServerSettings.py
+share/system-config-printer/PhysicalDevice.py
 share/system-config-printer/applet.glade
 share/system-config-printer/applet.py
 share/system-config-printer/authconn.py
@@ -117,6 +124,7 @@ share/system-config-printer/troubleshoot/ErrorLogCheckpoint.py
 share/system-config-printer/troubleshoot/ErrorLogFetch.py
 share/system-config-printer/troubleshoot/ErrorLogParse.py
 share/system-config-printer/troubleshoot/LocalOrRemote.py
+share/system-config-printer/troubleshoot/Locale.py
 share/system-config-printer/troubleshoot/NetworkCUPSPrinterShared.py
 share/system-config-printer/troubleshoot/PrintTestPage.py
 share/system-config-printer/troubleshoot/PrinterStateReasons.py

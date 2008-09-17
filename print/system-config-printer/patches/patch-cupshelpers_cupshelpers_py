@@ -1,7 +1,7 @@
-$OpenBSD: patch-cupshelpers_cupshelpers_py,v 1.1 2008/07/08 09:33:21 ajacoutot Exp $
---- cupshelpers/cupshelpers.py.orig	Wed Jul  2 16:18:51 2008
-+++ cupshelpers/cupshelpers.py	Wed Jul  2 16:21:08 2008
-@@ -699,7 +699,7 @@ def missingPackagesAndExecutables(ppd):
+$OpenBSD: patch-cupshelpers_cupshelpers_py,v 1.2 2008/09/17 12:00:56 ajacoutot Exp $
+--- cupshelpers/cupshelpers.py.orig	Thu Aug 28 15:34:24 2008
++++ cupshelpers/cupshelpers.py	Wed Sep 17 13:46:48 2008
+@@ -700,7 +700,7 @@ def missingPackagesAndExecutables(ppd):
  
      # First, a local function.  How to check that something exists
      # in a path:
@@ -10,7 +10,7 @@ $OpenBSD: patch-cupshelpers_cupshelpers_py,v 1.1 2008/07/08 09:33:21 ajacoutot E
          # Strip out foomatic '%'-style place-holders.
          p = name.find ('%')
          if p != -1:
-@@ -794,8 +794,7 @@ def missingPackagesAndExecutables(ppd):
+@@ -795,8 +795,7 @@ def missingPackagesAndExecutables(ppd):
                      continue
  
                  exepath = pathcheck (exe,
