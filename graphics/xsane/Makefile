@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/06/29 20:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2008/09/18 13:37:41 ajacoutot Exp $
 
 COMMENT=	scanner frontend for SANE
 
@@ -33,8 +33,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		lcms.>=1::graphics/lcms \
 		sane.>=1::graphics/sane-backends
-
-SUBST_VARS=	LOCALBASE
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

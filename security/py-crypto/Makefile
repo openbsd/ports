@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/06/11 02:59:32 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.11 2008/09/18 13:37:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,8 +25,6 @@ MODULES=	lang/python
 LIB_DEPENDS=	gmp.>=6::devel/gmp
 
 DOCSDIR=	${PREFIX}/share/doc/py-crypto
-
-SUBST_VARS+=	LOCALBASE
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/setup.py

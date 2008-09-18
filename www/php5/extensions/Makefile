@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2008/05/20 14:01:45 robert Exp $
+# $OpenBSD: Makefile,v 1.44 2008/09/18 13:37:41 ajacoutot Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 COMMENT-main=		informational package about PHP5 extensions
@@ -364,7 +364,7 @@ MODULE_NAME${i}=	${i:S/-//g}
 MESSAGE=		${PKGDIR}/MESSAGE
 UNMESSAGE=		${PKGDIR}/UNMESSAGE
 
-SUBST_VARS=		MODULE_NAME PHP_CONFIG_FILE LOCALBASE V
+SUBST_VARS=		MODULE_NAME PHP_CONFIG_FILE V
 
 LIB_DEPENDS-main=
 MESSAGE-main=		${PKGDIR}/DESCR-main

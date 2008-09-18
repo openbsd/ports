@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/07/25 17:41:06 martynas Exp $
+# $OpenBSD: Makefile,v 1.26 2008/09/18 13:37:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -95,7 +95,6 @@ VMEM_WARNING=	Yes
 USE_X11=	Yes
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
-SUBST_VARS=	LOCALBASE
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
 				${WRKSRC}/directory/c-sdk/config/autoconf

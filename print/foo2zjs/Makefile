@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/13 04:40:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/09/18 13:37:41 ajacoutot Exp $
 
 COMMENT=		driver for ZjStream wire protocol compatible printers
 
@@ -26,7 +26,6 @@ MASTER_SITES=		http://bigio.snb.it/openbsd/distfiles/ \
 
 USE_GMAKE=		Yes
 WRKDIST=		${WRKDIR}/foo2zjs
-SUBST_VARS=		LOCALBASE
 
 BUILD_DEPENDS=		::print/ghostscript/gnu # ps2pdf
 RUN_DEPENDS=		::print/ghostscript/gnu

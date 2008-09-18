@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2007/12/11 08:00:06 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.32 2008/09/18 13:37:41 ajacoutot Exp $
 
 COMMENT=		Common Unix Printing System
 
@@ -61,8 +61,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 
 CFLAGS+=		"-I${LOCALBASE}/include" \
 			"-I${LOCALBASE}/include/libpng"
-
-SUBST_VARS=		LOCALBASE
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-source//}
 USE_GMAKE=		Yes

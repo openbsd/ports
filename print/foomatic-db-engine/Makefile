@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/27 23:44:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/09/18 13:37:41 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD generator
 
@@ -75,7 +75,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2"
 			CUPS_LPINFO="${LOCALBASE}/sbin/lpinfo"
 
 NO_REGRESS=		Yes
-SUBST_VARS=		LOCALBASE
 
 pre-configure:
 	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/06/29 22:04:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/18 13:37:41 ajacoutot Exp $
 
 COMMENT=		compiler for the GObject type system
 
@@ -35,8 +35,6 @@ CONFIGURE_ARGS+=	--enable-gen-project \
 			--enable-vapigen
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
-
-SUBST_VARS=		LOCALBASE
 
 pre-regress:
 	${SUBST_CMD} ${WRKSRC}/tests/testrunner.sh

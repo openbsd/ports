@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2008/09/18 13:37:41 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD print filters
 
@@ -33,8 +33,6 @@ CONFIGURE_ENV=		CUPS="${LOCALBASE}/libexec/cups" \
 			MPAGE="${LOCALBASE}/bin/mpage"
 
 FAKE_FLAGS=		ETCDIR="${PREFIX}/share/examples/foomatic"
-
-SUBST_VARS+=		SYSCONFDIR
 
 PKG_ARCH=		*
 

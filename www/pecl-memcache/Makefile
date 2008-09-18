@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/01/21 20:36:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2008/09/18 13:37:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,7 +36,6 @@ CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 
 PREFIX=		/var/www
 DESTDIRNAME=	INSTALL_ROOT
-SUBST_VARS=	LOCALBASE
 
 NO_REGRESS=	Yes
 

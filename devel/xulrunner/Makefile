@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2008/08/29 01:16:47 martynas Exp $
+# $OpenBSD: Makefile,v 1.29 2008/09/18 13:37:41 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
@@ -56,7 +56,6 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 # Regression tests do nothing
 NO_REGRESS=	Yes
-SUBST_VARS=	LOCALBASE
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/09/08 17:17:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2008/09/18 13:37:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,7 +32,6 @@ LIB_DEPENDS=	pt.>=2::devel/pwlib \
 		avutil.>=2::graphics/ffmpeg
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-/_/}
-SUBST_VARS=	LOCALBASE
 
 USE_GMAKE=	Yes
 ALL_TARGET=	optshared

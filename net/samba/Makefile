@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2008/09/17 10:38:59 brad Exp $
+# $OpenBSD: Makefile,v 1.99 2008/09/18 13:37:41 ajacoutot Exp $
 
 COMMENT-main=	SMB and CIFS client and server for UNIX
 COMMENT-docs=	additional documentation and examples for Samba
@@ -35,9 +35,9 @@ MAKE_FLAGS=	PASSWD_PROGRAM="/usr/bin/passwd" \
 		LIBsmbclient_VERSION=${LIBsmbclient_VERSION} \
 		LIBmsrpc_VERSION=${LIBmsrpc_VERSION}
 
-CONFDIR=        ${SYSCONFDIR}/samba
-SAMBA_LOGDIR=   /var/log
-SUBST_VARS=     CONFDIR LOCALBASE SYSCONFDIR
+CONFDIR=	${SYSCONFDIR}/samba
+SAMBA_LOGDIR=	/var/log
+SUBST_VARS=	CONFDIR
 
 SEPARATE_BUILD= concurrent
 CONFIGURE_STYLE= gnu

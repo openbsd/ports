@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/27 23:44:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/09/18 13:37:41 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD data
 
@@ -29,8 +29,6 @@ CONFIGURE_ARGS=		--disable-ppds-to-cups
 PKG_ARCH=		*
 
 WRKDIST=		${WRKDIR}/foomatic-db-${V}
-
-SUBST_VARS=		LOCALBASE
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
