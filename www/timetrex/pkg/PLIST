@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/17 10:08:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/09/18 13:36:07 ajacoutot Exp $
 timetrex/
 timetrex/INSTALL.txt
 timetrex/LICENSE
@@ -381,6 +381,8 @@ timetrex/classes/modules/install/InstallSchema_1022A.class.php
 timetrex/classes/modules/install/InstallSchema_1023A.class.php
 timetrex/classes/modules/install/InstallSchema_1024A.class.php
 timetrex/classes/modules/install/InstallSchema_1025A.class.php
+timetrex/classes/modules/install/InstallSchema_1026A.class.php
+timetrex/classes/modules/install/InstallSchema_1027A.class.php
 timetrex/classes/modules/install/InstallSchema_Base.class.php
 timetrex/classes/modules/install/sql/
 timetrex/classes/modules/install/sql/mysql/
@@ -418,6 +420,8 @@ timetrex/classes/modules/install/sql/mysql/1022A.sql
 timetrex/classes/modules/install/sql/mysql/1023A.sql
 timetrex/classes/modules/install/sql/mysql/1024A.sql
 timetrex/classes/modules/install/sql/mysql/1025A.sql
+timetrex/classes/modules/install/sql/mysql/1026A.sql
+timetrex/classes/modules/install/sql/mysql/1027A.sql
 timetrex/classes/modules/install/sql/postgresql/
 timetrex/classes/modules/install/sql/postgresql/1000A.sql
 timetrex/classes/modules/install/sql/postgresql/1000T.sql
@@ -453,6 +457,8 @@ timetrex/classes/modules/install/sql/postgresql/1022A.sql
 timetrex/classes/modules/install/sql/postgresql/1023A.sql
 timetrex/classes/modules/install/sql/postgresql/1024A.sql
 timetrex/classes/modules/install/sql/postgresql/1025A.sql
+timetrex/classes/modules/install/sql/postgresql/1026A.sql
+timetrex/classes/modules/install/sql/postgresql/1027A.sql
 timetrex/classes/modules/message/
 timetrex/classes/modules/message/MessageFactory.class.php
 timetrex/classes/modules/message/MessageListFactory.class.php
@@ -569,6 +575,8 @@ timetrex/classes/modules/users/UserGenericStatusFactory.class.php
 timetrex/classes/modules/users/UserGenericStatusListFactory.class.php
 timetrex/classes/modules/users/UserGroupFactory.class.php
 timetrex/classes/modules/users/UserGroupListFactory.class.php
+timetrex/classes/modules/users/UserIdentificationFactory.class.php
+timetrex/classes/modules/users/UserIdentificationListFactory.class.php
 timetrex/classes/modules/users/UserListFactory.class.php
 timetrex/classes/modules/users/UserPreferenceFactory.class.php
 timetrex/classes/modules/users/UserPreferenceListFactory.class.php
@@ -1889,6 +1897,8 @@ timetrex/interface/images/paging_prev_off.gif
 timetrex/interface/images/powered_by.jpg
 timetrex/interface/images/printer.gif
 timetrex/interface/images/printer16.gif
+timetrex/interface/images/printer_detail.gif
+timetrex/interface/images/printer_detail16.gif
 timetrex/interface/images/question_mark_sm.gif
 timetrex/interface/images/quick_help.gif
 timetrex/interface/images/red_flag.gif
@@ -2477,6 +2487,8 @@ timetrex/unit_tests/USPayrollDeductionTest.php
 @sample timetrex/storage/
 @sample timetrex/tmp/
 @owner
+@sample var/
+@sample var/www/
 @sample var/www/timetrex/
 @exec-add cd %D/%D/timetrex && ln -sf ../../../timetrex/log log
 @exec-add cd %D/%D/timetrex && ln -sf ../../../timetrex/storage storage
