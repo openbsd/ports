@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/06/15 06:39:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2008/09/18 23:16:14 sthen Exp $
 %%SHARED%%
-@bin bin/dialyzer
+bin/dialyzer
 bin/epmd
 bin/erl
-@bin bin/erlc
-@bin bin/escript
-@bin bin/run_erl
-@bin bin/to_erl
-@bin bin/typer
+bin/erlc
+bin/escript
+bin/run_erl
+bin/to_erl
+bin/typer
 lib/erlang/
 lib/erlang/COPYRIGHT
 lib/erlang/Install
@@ -15,7 +15,7 @@ lib/erlang/PR.template
 lib/erlang/README
 lib/erlang/bin/
 @bin lib/erlang/bin/dialyzer
-@bin lib/erlang/bin/epmd
+lib/erlang/bin/epmd
 lib/erlang/bin/erl
 @bin lib/erlang/bin/erlc
 @bin lib/erlang/bin/escript
