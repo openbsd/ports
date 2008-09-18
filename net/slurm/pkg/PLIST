@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/18 23:02:31 sthen Exp $
+@bin bin/slurm
+@man man/man1/slurm.1
+share/doc/slurm/
+share/doc/slurm/COPYING
+share/doc/slurm/COPYRIGHT
+share/doc/slurm/FAQ
+share/doc/slurm/THANKS
+share/slurm/
+share/slurm/black.theme
+share/slurm/blue.theme
+share/slurm/cyan.theme
+share/slurm/foo.theme

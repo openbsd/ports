@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_if_media_c,v 1.1.1.1 2008/09/18 23:02:31 sthen Exp $
+--- src/if_media.c.orig	Mon Sep 27 14:08:59 2004
++++ src/if_media.c	Wed Sep 17 09:17:25 2008
+@@ -95,8 +95,16 @@ int get_if_speed (char *ifstring)
+      *
+      */
+ 
++#ifdef IFM_TYPE
++    type = IFM_TYPE(ifmr.ifm_active);
++#else
+     type = ifmr.ifm_active & 0xf0;
++#endif
++#ifdef IFM_TYPE
++    physical = IFM_SUBTYPE(ifmr.ifm_active);
++#else
+     physical = ifmr.ifm_active & 0x0f;
++#endif
+ 
+ #ifdef MEDIADEBUG
+     printf("      all: %6d\n", ifmr.ifm_current);

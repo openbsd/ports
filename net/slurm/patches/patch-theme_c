@@ -1,0 +1,12 @@
+$OpenBSD: patch-theme_c,v 1.1.1.1 2008/09/18 23:02:31 sthen Exp $
+--- theme.c.orig	Wed Sep 17 10:25:11 2008
++++ theme.c	Wed Sep 17 10:23:26 2008
+@@ -75,7 +75,7 @@ int theme_readfile(theme *t, char *name)
+ #elif __Debian__
+ 			snprintf(filename, BUFSIZ, "/usr/share/slurm/%s.theme", name);
+ #else
+-			snprintf(filename, BUFSIZ, "/usr/local/share/slurm/%s.theme", name);
++			snprintf(filename, BUFSIZ, "${PREFIX}/share/slurm/%s.theme", name);
+ #endif
+ 			if ((f = fopen(filename, "r")) == NULL)
+ 				error(ERR_FATAL, "cannot find theme '%s'", name);
