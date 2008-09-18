@@ -1,0 +1,21 @@
+$OpenBSD: patch-gettext-runtime_intl_libgnuintl_h_in,v 1.1 2008/09/18 14:47:59 naddy Exp $
+--- gettext-runtime/intl/libgnuintl.h.in.orig	Thu Sep 18 16:19:59 2008
++++ gettext-runtime/intl/libgnuintl.h.in	Thu Sep 18 16:28:56 2008
+@@ -88,7 +88,7 @@ extern int libintl_version;
+    If he doesn't, we choose the method.  A third possible method is
+    _INTL_REDIRECT_ASM, supported only by GCC.  */
+ #if !(defined _INTL_REDIRECT_INLINE || defined _INTL_REDIRECT_MACROS)
+-# if __GNUC__ >= 2 && !(__APPLE_CC__ > 1) && !defined __MINGW32__ && !(__GNUC__ == 2 && defined _AIX) && (defined __STDC__ || defined __cplusplus)
++# if (defined __GNUC__ && __GNUC__ >= 2) && !(defined __APPLE_CC_ && __APPLE_CC__ > 1) && !defined __MINGW32__ && !(__GNUC__ == 2 && defined _AIX) && (defined __STDC__ || defined __cplusplus)
+ #  define _INTL_REDIRECT_ASM
+ # else
+ #  ifdef __cplusplus
+@@ -110,7 +110,7 @@ extern int libintl_version;
+ /* _INTL_MAY_RETURN_STRING_ARG(n) declares that the given function may return
+    its n-th argument literally.  This enables GCC to warn for example about
+    printf (gettext ("foo %y")).  */
+-#if __GNUC__ >= 3 && !(__APPLE_CC__ > 1 && defined __cplusplus)
++#if (defined __GNUC__ && __GNUC__ >= 3) && !(defined __APPLE_CC__ && __APPLE_CC__ > 1 && defined __cplusplus)
+ # define _INTL_MAY_RETURN_STRING_ARG(n) __attribute__ ((__format_arg__ (n)))
+ #else
+ # define _INTL_MAY_RETURN_STRING_ARG(n)
