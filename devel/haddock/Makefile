@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2007/08/01 21:59:55 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2008/09/19 21:39:43 kili Exp $
 
 COMMENT=	documentation tool for the functional language Haskell
 
 V=		0.8
 DISTNAME=	haddock-${V}
-PKGNAME=	haddock-${V}
+PKGNAME=	haddock-${V}p0
 DISTFILES=	${DISTNAME}-src.tar.gz
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.haskell.org/haddock/
-MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
 # BSD style w/o advertising clause
 PERMIT_PACKAGE_CDROM=   Yes
