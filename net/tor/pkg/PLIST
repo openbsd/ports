@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/09/20 22:06:36 ray Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/09/19 21:51:00 rui Exp $
 @newgroup _tor:566
 @newuser _tor:566:566:daemon:tor:/nonexistent:/sbin/nologin
-bin/tor
-bin/tor-resolve
-bin/torify
+@bin bin/tor
+@bin bin/tor-gencert
+@bin bin/tor-resolve
+@comment bin/torify
+@man man/man1/tor-gencert.1
 @man man/man1/tor-resolve.1
 @man man/man1/tor.1
-@man man/man1/torify.1
+@comment @man man/man1/torify.1
 share/examples/tor/
 @sample ${SYSCONFDIR}/tor/
 share/examples/tor/tor-tsocks.conf
@@ -17,3 +19,8 @@ share/examples/tor/torrc.sample
 @owner _tor
 @group _tor
 @sample ${DB_DIR}/
+@mode
+@owner
+@group
+share/tor/
+share/tor/geoip
