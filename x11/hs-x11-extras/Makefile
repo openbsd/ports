@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2007/11/18 19:44:27 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2008/09/19 21:57:16 kili Exp $
 
 COMMENT=		missing bindings to the X11 graphics library for GHC
 
 V=			0.4
 DISTNAME=		X11-extras-$V
-PKGNAME=		hs-x11-extras-$V
+PKGNAME=		hs-x11-extras-${V}p0
 
 CATEGORIES=		x11
 
 HOMEPAGE=		http://hackage.haskell.org/cgi-bin/hackage-scripts/package/${DISTNAME}
-
-MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
