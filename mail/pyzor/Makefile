@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/02 12:33:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/09/19 12:48:36 sthen Exp $
 
 COMMENT=		collaborative, networked system to detect and block spam
 
 DISTNAME=		pyzor-0.4.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		mail net
 
 HOMEPAGE=		http://pyzor.sourceforge.net/
@@ -21,6 +22,9 @@ MODULES=		lang/python
 NO_REGRESS=		Yes
 
 SUBST_VARS=		MODPY_BIN
+
+post-extract:
+	chmod -R og+r ${WRKSRC}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/scripts/pyzor ${WRKSRC}/scripts/pyzord
