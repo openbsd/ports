@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.955 2008/09/17 13:42:10 ajacoutot Exp $
+#	$OpenBSD: bsd.port.mk,v 1.956 2008/09/19 13:00:30 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -69,6 +69,7 @@ CLEANDEPENDS ?= No
 USE_SYSTRACE ?= No
 BULK ?= No
 RECURSIVE_FETCH_LIST ?= Yes
+WRKDIR_LINKNAME ?= 
 _FETCH_MAKEFILE ?= /dev/stdout
 WRKOBJDIR ?=
 FAKEOBJDIR ?=
@@ -1986,6 +1987,9 @@ ${_WRKDIR_COOKIE}:
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin ${DEPDIR}
 #	@ln -s ${LOCALBASE}/bin/pkg-config ${WRKDIR}/bin
+.if !empty(WRKDIR_LINKNAME)
+	@ln -sf ${WRKDIR} ${.CURDIR}/${WRKDIR_LINKNAME}
+.endif
 	@${_MAKE_COOKIE} $@
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
