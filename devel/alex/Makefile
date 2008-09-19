@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/08/01 21:57:37 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2008/09/19 21:19:15 kili Exp $
 
 COMMENT=	lexical analyser generator for Haskell
 
 V=		2.1.0
 DISTNAME=	alex-${V}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.haskell.org/alex/
@@ -13,8 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
 WANTLIB=	c m
 

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2007/08/01 22:00:53 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2008/09/19 21:23:19 kili Exp $
 
 COMMENT=		parser generator for the functional language Haskell
 
 V=			1.16
 DISTNAME=		happy-${V}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.haskell.org/happy/
-MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # BSD style w/o advertising clause
 PERMIT_PACKAGE_CDROM=	Yes
