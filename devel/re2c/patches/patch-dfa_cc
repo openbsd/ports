@@ -1,12 +1,16 @@
-$OpenBSD: patch-dfa_cc,v 1.1.1.1 2007/05/16 14:10:57 steven Exp $
---- dfa.cc.orig	Mon Apr 16 22:22:28 2007
-+++ dfa.cc	Mon May  7 02:01:10 2007
+$OpenBSD: patch-dfa_cc,v 1.2 2008/09/19 00:26:43 sthen Exp $
+
+Our isprint() has a different idea of which chars are printable
+than the system on which the regression tests were written.
+
+--- dfa.cc.orig	Fri Sep 19 00:41:00 2008
++++ dfa.cc	Fri Sep 19 00:41:39 2008
 @@ -12,7 +12,7 @@ void prtChOrHex(std::ostream& o, uint c, bool useTalx)
  {
  	int oc = (int)(re2c::wFlag || !useTalx ? c : re2c::talx[c]);
  
--	if ((oc < 256) && isprint(oc))
-+	if ((oc < 128) && isprint(oc))
+-	if ((oc < 256) && (isprint(oc) || isspace(oc)))
++	if ((oc < 128) && (isprint(oc) || isspace(oc)))
  	{
- 		o << '\'';
- 		prtCh(o, oc);
+ 		o << (DFlag ? '"' : '\'');
+ 		prtCh(o, c);
