@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/18 23:02:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2008/09/19 09:47:39 steven Exp $
 
 COMMENT =	network traffic monitor and statistics
 DISTNAME =	slurm-0.3.3
@@ -18,14 +18,10 @@ WANTLIB =	c ncurses
 
 MASTER_SITES =	${HOMEPAGE}
 
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS}
-AUTOCONF_VERSION =	2.59
-MAKE_ENV =		AUTOCONF_VERSION=${AUTOCONF_VERSION}
-
 CONFIGURE_STYLE =	gnu
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/theme.c ${WRKSRC}/slurm.1
+	@${SUBST_CMD} ${WRKSRC}/theme.c ${WRKSRC}/slurm.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/slurm ${PREFIX}/bin/

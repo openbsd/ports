@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2008/09/19 09:47:39 steven Exp $
+--- Makefile.in.orig	Fri Sep 19 10:07:48 2008
++++ Makefile.in	Fri Sep 19 10:07:55 2008
+@@ -127,7 +127,7 @@ Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/conf
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)
+ 
+ $(top_builddir)/config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+-	$(SHELL) ./config.status --recheck
++#	$(SHELL) ./config.status --recheck
+ $(srcdir)/configure:  $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+ 	cd $(srcdir) && $(AUTOCONF)
+ 
