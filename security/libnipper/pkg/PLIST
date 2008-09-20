@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/20 20:26:05 steven Exp $
+%%SHARED%%
+include/libnipper/
+include/libnipper/config.h
+include/libnipper/libnipper.h
+@man man/man5/nipper.conf.5
+share/examples/libnipper/
+share/examples/libnipper/nipper.conf
+@sample ${SYSCONFDIR}/nipper.conf
