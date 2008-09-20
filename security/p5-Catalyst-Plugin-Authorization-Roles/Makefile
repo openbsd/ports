@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/09/13 15:39:59 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2008/09/20 16:58:32 sturm Exp $
 
 COMMENT= 	role based authorization for Catalyst
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-Set-Object \
 		::devel/p5-Universal-isa \
 		::security/p5-Catalyst-Plugin-Authentication
