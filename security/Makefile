@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2008/07/19 12:19:44 bluhm Exp $
+# $OpenBSD: Makefile,v 1.203 2008/09/20 20:29:17 steven Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -61,6 +61,7 @@
      SUBDIR += libgringotts
      SUBDIR += libident
      SUBDIR += libmcrypt
+     SUBDIR += libnipper
      SUBDIR += libotr
      SUBDIR += libssh2
      SUBDIR += libtasn1
@@ -74,6 +75,7 @@
      SUBDIR += nessus
      SUBDIR += nfsshell
      SUBDIR += nikto
+     SUBDIR += nipper
      SUBDIR += nss
      SUBDIR += onesixtyone
      SUBDIR += opencdk
