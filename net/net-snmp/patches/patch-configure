@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2007/09/26 20:03:42 rui Exp $
---- configure.orig	Fri Jul 27 18:04:19 2007
-+++ configure	Sat Sep 15 23:12:29 2007
-@@ -21267,34 +21267,6 @@ fi
+$OpenBSD: patch-configure,v 1.9 2008/09/20 22:15:52 rui Exp $
+--- configure.orig	Fri Sep  5 10:29:01 2008
++++ configure	Fri Sep 19 18:04:38 2008
+@@ -21655,34 +21655,6 @@ fi
  echo "$as_me:$LINENO: result: $EXTRACPPFLAGS" >&5
  echo "${ECHO_T}$EXTRACPPFLAGS" >&6
  
@@ -36,7 +36,7 @@ $OpenBSD: patch-configure,v 1.8 2007/09/26 20:03:42 rui Exp $
  # Set SNMPLIBPATH & SNMPSHAREPATH
  
  SNMPLIBPATH=""
-@@ -27953,6 +27925,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -28344,6 +28316,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -44,7 +44,7 @@ $OpenBSD: patch-configure,v 1.8 2007/09/26 20:03:42 rui Exp $
  #include <tcpd.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -27997,6 +27970,7 @@ _ACEOF
+@@ -28388,6 +28361,7 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -52,7 +52,7 @@ $OpenBSD: patch-configure,v 1.8 2007/09/26 20:03:42 rui Exp $
  #include <tcpd.h>
  _ACEOF
  if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
-@@ -33548,7 +33522,7 @@ done
+@@ -33939,7 +33913,7 @@ done
  
  
  
@@ -61,7 +61,7 @@ $OpenBSD: patch-configure,v 1.8 2007/09/26 20:03:42 rui Exp $
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for $ac_header" >&5
-@@ -37024,7 +36998,6 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -37415,7 +37389,6 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  

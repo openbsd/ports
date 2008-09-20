@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/06/10 18:00:35 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2008/09/20 22:15:52 rui Exp $
 @pkgpath net/net-snmp
 %%SHARED%%
 @bin bin/encode_keychange
@@ -15,7 +15,7 @@ bin/snmpconf
 @bin bin/snmpdf
 @bin bin/snmpget
 @bin bin/snmpgetnext
-@bin bin/snmpinform
+bin/snmpinform
 @bin bin/snmpnetstat
 @bin bin/snmpset
 @bin bin/snmpstatus
@@ -440,6 +440,7 @@ share/snmp/mib2c.iterate_access.conf
 share/snmp/mib2c.mfd.conf
 share/snmp/mib2c.notify.conf
 share/snmp/mib2c.old-api.conf
+share/snmp/mib2c.perl.conf
 share/snmp/mib2c.scalar.conf
 share/snmp/mib2c.table_data.conf
 share/snmp/mibs/
@@ -480,6 +481,7 @@ share/snmp/mibs/RFC-1215.txt
 share/snmp/mibs/RFC1155-SMI.txt
 share/snmp/mibs/RFC1213-MIB.txt
 share/snmp/mibs/RMON-MIB.txt
+share/snmp/mibs/SCTP-MIB.txt
 share/snmp/mibs/SMUX-MIB.txt
 share/snmp/mibs/SNMP-COMMUNITY-MIB.txt
 share/snmp/mibs/SNMP-FRAMEWORK-MIB.txt

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_top,v 1.5 2007/09/26 20:03:42 rui Exp $
---- Makefile.top.orig	Sat Jul  7 00:39:10 2007
-+++ Makefile.top	Sat Sep 15 23:12:28 2007
+$OpenBSD: patch-Makefile_top,v 1.6 2008/09/20 22:15:51 rui Exp $
+--- Makefile.top.orig	Fri May  9 15:23:07 2008
++++ Makefile.top	Fri Sep 19 18:04:37 2008
 @@ -35,7 +35,9 @@ INSTALL_PREFIX  = $(DESTDIR)
  INSTALL		= $(LIBTOOL) --mode=install @INSTALL@
  UNINSTALL	= $(LIBTOOL) --mode=uninstall rm -f
@@ -14,7 +14,7 @@ $OpenBSD: patch-Makefile_top,v 1.5 2007/09/26 20:03:42 rui Exp $
  AUTOCONF	= @AUTOCONF@
 @@ -80,10 +82,10 @@ LIBCURRENT  = 16
  LIBAGE      = 1
- LIBREVISION = 0
+ LIBREVISION = 1
  
 -LIB_LD_CMD      = $(LIBTOOL) --mode=link $(LINKCC) $(CFLAGS) -rpath $(libdir) -version-info $(LIBCURRENT):$(LIBREVISION):$(LIBAGE) -o
 +LIB_LD_CMD      = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -rpath $(libdir) -o 
