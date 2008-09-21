@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2008/05/05 19:32:02 rui Exp $
---- configure.orig	Sat Apr 26 16:10:09 2008
-+++ configure	Sat May  3 15:08:10 2008
-@@ -4865,7 +4865,7 @@ fi
+$OpenBSD: patch-configure,v 1.6 2008/09/21 15:39:14 rui Exp $
+--- configure.orig	Fri Sep  5 14:27:57 2008
++++ configure	Fri Sep 19 17:29:38 2008
+@@ -4862,7 +4862,7 @@ fi
      LTDLINCL='-I${top_srcdir}/''libltdl'
    else
      ac_configure_args="$ac_configure_args --enable-ltdl-install=no"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.5 2008/05/05 19:32:02 rui Exp $
      LTDLINCL=
    fi
    # For backwards non-gettext consistent compatibility...
-@@ -8877,7 +8877,6 @@ bsdi[45]*)
+@@ -8874,7 +8874,6 @@ bsdi[45]*)
    need_version=no
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major $libname${shared_ext}'
    soname_spec='${libname}${release}${shared_ext}$major'
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.5 2008/05/05 19:32:02 rui Exp $
    shlibpath_var=LD_LIBRARY_PATH
    sys_lib_search_path_spec="/shlib /usr/lib /usr/X11/lib /usr/contrib/lib /lib /usr/local/lib"
    sys_lib_dlsearch_path_spec="/shlib /usr/lib /usr/local/lib"
-@@ -20360,13 +20359,13 @@ fi
+@@ -20336,13 +20335,13 @@ fi
  done
  
  
@@ -35,7 +35,7 @@ $OpenBSD: patch-configure,v 1.5 2008/05/05 19:32:02 rui Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -20423,7 +20422,7 @@ fi
+@@ -20399,7 +20398,7 @@ fi
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
  if test $ac_cv_lib_pthread_pthread_create = yes; then
     CFLAGS="$CFLAGS -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS"
@@ -44,7 +44,7 @@ $OpenBSD: patch-configure,v 1.5 2008/05/05 19:32:02 rui Exp $
  else
    { echo "$as_me:$LINENO: checking for pthread_create in -lc_r" >&5
  echo $ECHO_N "checking for pthread_create in -lc_r... $ECHO_C" >&6; }
-@@ -20673,7 +20672,6 @@ if test "${ac_cv_lib_resolv_inet_aton+set}" = set; the
+@@ -20649,7 +20648,6 @@ if test "${ac_cv_lib_resolv_inet_aton+set}" = set; the
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -52,7 +52,7 @@ $OpenBSD: patch-configure,v 1.5 2008/05/05 19:32:02 rui Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -20733,8 +20731,6 @@ if test $ac_cv_lib_resolv_inet_aton = yes; then
+@@ -20709,8 +20707,6 @@ if test $ac_cv_lib_resolv_inet_aton = yes; then
  #define HAVE_LIBRESOLV 1
  _ACEOF
  
@@ -61,7 +61,7 @@ $OpenBSD: patch-configure,v 1.5 2008/05/05 19:32:02 rui Exp $
  fi
  
  
-@@ -20891,7 +20887,7 @@ if test "${ac_cv_lib_ssl_SSL_new+set}" = set; then
+@@ -20867,7 +20863,7 @@ if test "${ac_cv_lib_ssl_SSL_new+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -70,7 +70,25 @@ $OpenBSD: patch-configure,v 1.5 2008/05/05 19:32:02 rui Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -22989,7 +22985,7 @@ _ACEOF
+@@ -21096,7 +21092,7 @@ if test "${ac_cv_lib_readline_readline+set}" = set; th
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lreadline  $LIBS"
++LIBS="-lreadline -lncurses $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -21152,7 +21148,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_readline_readline" >&5
+ echo "${ECHO_T}$ac_cv_lib_readline_readline" >&6; }
+ if test $ac_cv_lib_readline_readline = yes; then
+-   LIBREADLINE="-lreadline"
++   LIBREADLINE="-lreadline -lncurses"
+ fi
+ 
+ 
+@@ -23035,7 +23031,7 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -79,7 +97,7 @@ $OpenBSD: patch-configure,v 1.5 2008/05/05 19:32:02 rui Exp $
  #ifdef HAVE_NETINET_IN_H
  #include <netinet/in.h>
  #endif
-@@ -23056,7 +23052,7 @@ _ACEOF
+@@ -23102,7 +23098,7 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_main_command_c,v 1.1 2008/09/21 15:39:14 rui Exp $
+--- src/main/command.c.orig	Fri Sep  5 14:27:57 2008
++++ src/main/command.c	Fri Sep 19 17:20:53 2008
+@@ -21,6 +21,9 @@
+  * Copyright 2008 Alan DeKok <aland@deployingradius.com>
+  */
+ 
++#include <sys/types.h>
++#include <sys/stat.h>
++
+ #ifdef WITH_COMMAND_SOCKET
+ 
+ #include <freeradius-devel/modpriv.h>

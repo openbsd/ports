@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2008/07/28 21:51:10 rui Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2008/09/21 15:39:14 rui Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -67,6 +67,9 @@ lib/freeradius/rlm_detail.so
 lib/freeradius/rlm_digest.a
 lib/freeradius/rlm_digest.la
 lib/freeradius/rlm_digest.so
+lib/freeradius/rlm_dynamic_clients.a
+lib/freeradius/rlm_dynamic_clients.la
+lib/freeradius/rlm_dynamic_clients.so
 lib/freeradius/rlm_eap.a
 lib/freeradius/rlm_eap.la
 lib/freeradius/rlm_eap.so
@@ -115,6 +118,9 @@ lib/freeradius/rlm_ippool.so
 lib/freeradius/rlm_krb5.a
 lib/freeradius/rlm_krb5.la
 lib/freeradius/rlm_krb5.so
+lib/freeradius/rlm_linelog.a
+lib/freeradius/rlm_linelog.la
+lib/freeradius/rlm_linelog.so
 lib/freeradius/rlm_logintime.a
 lib/freeradius/rlm_logintime.la
 lib/freeradius/rlm_logintime.so
@@ -195,12 +201,14 @@ lib/libfreeradius-radius.la
 @man man/man5/unlang.5
 @man man/man5/users.5
 @man man/man8/radiusd.8
+@man man/man8/radmin.8
 @man man/man8/radrelay.8
 @man man/man8/radsqlrelay.8
 @man man/man8/radwatch.8
 @man man/man8/rlm_ippool_tool.8
 sbin/checkrad
 @bin sbin/radiusd
+@bin sbin/radmin
 sbin/radwatch
 @comment sbin/rc.radiusd
 share/doc/freeradius/
@@ -250,6 +258,7 @@ share/doc/freeradius/rfc/rfc1448.txt
 share/doc/freeradius/rfc/rfc1901.txt
 share/doc/freeradius/rfc/rfc1905.txt
 share/doc/freeradius/rfc/rfc2243.txt
+share/doc/freeradius/rfc/rfc2284.txt
 share/doc/freeradius/rfc/rfc2289.txt
 share/doc/freeradius/rfc/rfc2433.txt
 share/doc/freeradius/rfc/rfc2548.txt
@@ -276,11 +285,18 @@ share/doc/freeradius/rfc/rfc3580.txt
 share/doc/freeradius/rfc/rfc3748.txt
 share/doc/freeradius/rfc/rfc4372.txt
 share/doc/freeradius/rfc/rfc4590.txt
+share/doc/freeradius/rfc/rfc4668.txt
+share/doc/freeradius/rfc/rfc4669.txt
+share/doc/freeradius/rfc/rfc4670.txt
+share/doc/freeradius/rfc/rfc4671.txt
+share/doc/freeradius/rfc/rfc4672.txt
+share/doc/freeradius/rfc/rfc4673.txt
 share/doc/freeradius/rfc/rfc4675.txt
 share/doc/freeradius/rfc/rfc4679.txt
 share/doc/freeradius/rfc/rfc4818.txt
 share/doc/freeradius/rfc/rfc4849.txt
 share/doc/freeradius/rfc/rfc5080.txt
+share/doc/freeradius/rfc/rfc5090.txt
 share/doc/freeradius/rfc/rfc5176.txt
 share/doc/freeradius/rlm_dbm
 share/doc/freeradius/rlm_eap
@@ -362,6 +378,8 @@ share/examples/freeradius/modules/counter
 @sample ${SYSCONFDIR}/raddb/modules/counter
 share/examples/freeradius/modules/detail
 @sample ${SYSCONFDIR}/raddb/modules/detail
+share/examples/freeradius/modules/detail.example.com
+@sample ${SYSCONFDIR}/raddb/modules/detail.example.com
 share/examples/freeradius/modules/detail.log
 @sample ${SYSCONFDIR}/raddb/modules/detail.log
 share/examples/freeradius/modules/digest
@@ -378,12 +396,16 @@ share/examples/freeradius/modules/expr
 @sample ${SYSCONFDIR}/raddb/modules/expr
 share/examples/freeradius/modules/files
 @sample ${SYSCONFDIR}/raddb/modules/files
+share/examples/freeradius/modules/inner-eap
+@sample ${SYSCONFDIR}/raddb/modules/inner-eap
 share/examples/freeradius/modules/ippool
 @sample ${SYSCONFDIR}/raddb/modules/ippool
 share/examples/freeradius/modules/krb5
 @sample ${SYSCONFDIR}/raddb/modules/krb5
 share/examples/freeradius/modules/ldap
 @sample ${SYSCONFDIR}/raddb/modules/ldap
+share/examples/freeradius/modules/linelog
+@sample ${SYSCONFDIR}/raddb/modules/linelog
 share/examples/freeradius/modules/logintime
 @sample ${SYSCONFDIR}/raddb/modules/logintime
 share/examples/freeradius/modules/mac2ip
@@ -414,6 +436,8 @@ share/examples/freeradius/modules/sradutmp
 @sample ${SYSCONFDIR}/raddb/modules/sradutmp
 share/examples/freeradius/modules/unix
 @sample ${SYSCONFDIR}/raddb/modules/unix
+share/examples/freeradius/modules/wimax
+@sample ${SYSCONFDIR}/raddb/modules/wimax
 share/examples/freeradius/otp.conf
 @sample ${SYSCONFDIR}/raddb/otp.conf
 share/examples/freeradius/policy.conf
@@ -433,13 +457,17 @@ share/examples/freeradius/sites-available/
 @sample ${SYSCONFDIR}/raddb/sites-available/
 share/examples/freeradius/sites-available/README
 share/examples/freeradius/sites-available/buffered-sql
+share/examples/freeradius/sites-available/control-socket
 share/examples/freeradius/sites-available/copy-acct-to-home-server
+share/examples/freeradius/sites-available/decoupled-accounting
 share/examples/freeradius/sites-available/default
 share/examples/freeradius/sites-available/dhcp
+share/examples/freeradius/sites-available/dynamic-clients
 share/examples/freeradius/sites-available/example
 share/examples/freeradius/sites-available/inner-tunnel
 share/examples/freeradius/sites-available/proxy-inner-tunnel
 share/examples/freeradius/sites-available/robust-proxy-accounting
+share/examples/freeradius/sites-available/status
 share/examples/freeradius/sites-available/virtual.example.com
 share/examples/freeradius/sites-available/vmps
 share/examples/freeradius/sites-enabled/
@@ -448,8 +476,6 @@ share/examples/freeradius/sites-enabled/default
 @sample ${SYSCONFDIR}/raddb/sites-enabled/default
 share/examples/freeradius/sites-enabled/inner-tunnel
 @sample ${SYSCONFDIR}/raddb/sites-enabled/inner-tunnel
-share/examples/freeradius/snmp.conf
-@sample ${SYSCONFDIR}/raddb/snmp.conf
 share/examples/freeradius/sql/
 @sample ${SYSCONFDIR}/raddb/sql/
 share/examples/freeradius/sql.conf
@@ -514,6 +540,7 @@ share/freeradius/dictionary.alcatel
 share/freeradius/dictionary.alteon
 share/freeradius/dictionary.altiga
 share/freeradius/dictionary.alvarion
+share/freeradius/dictionary.apc
 share/freeradius/dictionary.aptis
 share/freeradius/dictionary.aruba
 share/freeradius/dictionary.ascend
@@ -596,6 +623,7 @@ share/freeradius/dictionary.rfc4675
 share/freeradius/dictionary.rfc4679
 share/freeradius/dictionary.rfc4818
 share/freeradius/dictionary.rfc4849
+share/freeradius/dictionary.rfc5090
 share/freeradius/dictionary.rfc5176
 share/freeradius/dictionary.riverstone
 share/freeradius/dictionary.roaringpenguin
@@ -613,11 +641,13 @@ share/freeradius/dictionary.trapeze
 share/freeradius/dictionary.tropos
 share/freeradius/dictionary.unix
 share/freeradius/dictionary.usr
+share/freeradius/dictionary.utstarcom
 share/freeradius/dictionary.valemount
 share/freeradius/dictionary.versanet
 share/freeradius/dictionary.vqp
 share/freeradius/dictionary.walabi
 share/freeradius/dictionary.waverider
+share/freeradius/dictionary.wimax
 share/freeradius/dictionary.wispr
 share/freeradius/dictionary.xedia
 share/freeradius/dictionary.xylan

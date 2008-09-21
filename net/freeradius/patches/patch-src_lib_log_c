@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lib_log_c,v 1.1 2008/09/21 15:39:14 rui Exp $
+--- src/lib/log.c.orig	Fri Sep  5 14:27:57 2008
++++ src/lib/log.c	Fri Sep 19 17:20:18 2008
+@@ -57,6 +57,8 @@
+ #endif
+ #endif
+ 
++#define USE_PTHREAD_FOR_TLS (1)
++
+ #ifndef USE_PTHREAD_FOR_TLS
+ /*
+  *	Try to create a thread-local-storage version of this buffer.

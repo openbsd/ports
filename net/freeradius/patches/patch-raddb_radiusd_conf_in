@@ -1,6 +1,6 @@
-$OpenBSD: patch-raddb_radiusd_conf_in,v 1.8 2008/07/28 21:51:10 rui Exp $
---- raddb/radiusd.conf.in.orig	Wed Jul 23 12:04:57 2008
-+++ raddb/radiusd.conf.in	Wed Jul 23 12:09:43 2008
+$OpenBSD: patch-raddb_radiusd_conf_in,v 1.9 2008/09/21 15:39:14 rui Exp $
+--- raddb/radiusd.conf.in.orig	Fri Sep 19 11:59:05 2008
++++ raddb/radiusd.conf.in	Fri Sep 19 12:07:53 2008
 @@ -54,7 +54,7 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
@@ -10,7 +10,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.8 2008/07/28 21:51:10 rui Exp $
  sbindir = @sbindir@
  logdir = @logdir@
  raddbdir = @raddbdir@
-@@ -99,7 +99,7 @@ db_dir = $(raddbdir)
+@@ -99,7 +99,7 @@ db_dir = ${raddbdir}
  #	make
  #	make install
  #
@@ -30,7 +30,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.8 2008/07/28 21:51:10 rui Exp $
  
  #  max_request_time: The maximum time (in seconds) to handle a request.
  #
-@@ -476,8 +476,8 @@ security {
+@@ -501,8 +501,8 @@ security {
  #
  #  allowed values: {no, yes}
  #
@@ -41,7 +41,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.8 2008/07/28 21:51:10 rui Exp $
  
  
  # CLIENTS CONFIGURATION
-@@ -493,7 +493,7 @@ $INCLUDE proxy.conf
+@@ -518,7 +518,7 @@ $INCLUDE proxy.conf
  #  Anything listed in 'clients.conf' will take precedence over the
  #  information from the old-style configuration files.
  #
@@ -49,55 +49,49 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.8 2008/07/28 21:51:10 rui Exp $
 +$INCLUDE ${confdir}/clients.conf
  
  
- # SNMP CONFIGURATION
-@@ -505,7 +505,7 @@ $INCLUDE clients.conf
- #  'snmp' attribute to 'yes'
- #
- snmp	= no
--$INCLUDE snmp.conf
-+$INCLUDE ${confdir}/snmp.conf
- 
- 
  # THREAD POOL CONFIGURATION
-@@ -622,12 +622,12 @@ modules {
+@@ -635,12 +635,12 @@ modules {
  	#  For all EAP related authentications.
  	#  Now in another file, because it is very large.
  	#
 -	$INCLUDE eap.conf
-+	$INCLUDE ${confdir}/eap.conf
++	$INCLUDE ${confdir}/eap.conf 
  
  	#  Include another file that has the SQL-related configuration.
  	#  This is another file only because it tends to be big.
  	#
 -	$INCLUDE sql.conf
-+	$INCLUDE ${confdir}/sql.conf
++	$INCLUDE ${confdir}/sql.conf 
  
- 
- 	#  For Cisco VoIP specific accounting with Postgresql,
-@@ -648,13 +648,13 @@ modules {
+ 	#
+ 	#  This module is an SQL enabled version of the counter module.
+@@ -652,16 +652,16 @@ modules {
  	#  totally dependent on the SQL module to process Accounting
  	#  packets.
  	#
 -	$INCLUDE sql/mysql/counter.conf
 -	#$INCLUDE sql/postgresql/counter.conf
-+	$INCLUDE ${confdir}/sql/mysql/counter.conf
-+	#$INCLUDE ${confdir}/sql/postgresql/counter.conf
++	$INCLUDE ${confdir}/sql/mysql/counter.conf 
++	#$INCLUDE ${confdir}/sql/postgresql/counter.conf 
  
--	# $INCLUDE sqlippool.conf
-+	# $INCLUDE ${confdir}/sqlippool.conf
+ 	#
+ 	#  IP addresses managed in an SQL table.
+ 	#
+-	#$INCLUDE sqlippool.conf
++	#$INCLUDE ${confdir}/sqlippool.conf 
  
  	# OTP token support.  Not included by default.
 -	# $INCLUDE otp.conf
-+	# $INCLUDE ${confdir}/otp.conf
++	# $INCLUDE ${confdir}/otp.conf 
  
  }
  
-@@ -725,7 +725,7 @@ instantiate {
+@@ -732,7 +732,7 @@ instantiate {
  #	to multiple times.
  #
  ######################################################################
 -$INCLUDE policy.conf
-+$INCLUDE ${confdir}/policy.conf
++$INCLUDE ${confdir}/policy.conf 
  
  ######################################################################
  #
