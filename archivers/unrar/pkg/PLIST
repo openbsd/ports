@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/07/24 14:20:49 espie Exp $
-bin/unrar
+@comment $OpenBSD: PLIST,v 1.5 2008/09/21 18:25:32 rui Exp $
+@bin bin/unrar
 share/doc/unrar/
 share/doc/unrar/license.txt
 share/doc/unrar/readme.txt
