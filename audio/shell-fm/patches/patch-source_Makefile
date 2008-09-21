@@ -1,0 +1,24 @@
+$OpenBSD: patch-source_Makefile,v 1.1.1.1 2008/09/21 22:27:31 jasper Exp $
+
+Respect CFLAGS.
+
+--- source/Makefile.orig	Fri Sep 19 08:46:46 2008
++++ source/Makefile	Fri Sep 19 08:47:35 2008
+@@ -1,7 +1,7 @@
+ SOURCE	:= $(wildcard *.c)
+ OBJECT	:= $(subst .c,.o,$(SOURCE))
+ BINARY	:= shell-fm
+-LDFLAGS := $(shell pkg-config --exists ao && pkg-config ao --libs) \
++LDFLAGS += $(shell pkg-config --exists ao && pkg-config ao --libs) \
+ 	$(shell pkg-config mad --libs)
+ ifeq ($(shell uname -s), OpenBSD)
+ 	LDFLAGS += -lossaudio
+@@ -10,7 +10,7 @@ ifeq ($(shell uname -s), NetBSD)
+ 	LDFLAGS += -lossaudio
+ endif
+ LIBAO	:= $(shell pkg-config --exists ao && echo -DLIBAO && pkg-config ao --cflags)
+-CFLAGS  := -Os -Wall -W -I./include/ $(LIBAO) $(shell pkg-config mad --cflags)
++CFLAGS  += -Wall -W -I./include/ $(LIBAO) $(shell pkg-config mad --cflags)
+ 
+ .PHONY: clean tags cscope
+ 
