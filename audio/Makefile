@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2008/08/27 19:52:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.203 2008/09/21 22:29:19 jasper Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -150,6 +150,7 @@
      SUBDIR += rtunes
      SUBDIR += ruby-id3lib
      SUBDIR += scmpc
+     SUBDIR += shell-fm
      SUBDIR += shorten
      SUBDIR += sidplay
      SUBDIR += sonata
