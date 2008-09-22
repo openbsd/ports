@@ -1,4 +1,4 @@
-$OpenBSD: patch-vl_c,v 1.18 2008/06/19 05:51:17 todd Exp $
+$OpenBSD: patch-vl_c,v 1.19 2008/09/22 15:17:54 mpf Exp $
 --- vl.c.orig	Sun Jan  6 13:38:42 2008
 +++ vl.c	Tue Jun 17 19:48:00 2008
 @@ -61,7 +61,8 @@
@@ -169,7 +169,7 @@ $OpenBSD: patch-vl_c,v 1.18 2008/06/19 05:51:17 todd Exp $
 +            if (get_param_value(ifname, sizeof(ifname), "ifname", p) == 0)
 +               ret = net_tap_init(vlan, NULL, setup_script, down_script);
 +            else
-+               ret = net_tap_init(vlan, NULL, setup_script, down_script);
++               ret = net_tap_init(vlan, ifname, setup_script, down_script);
          }
      } else
  #endif
