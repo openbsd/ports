@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2008/04/11 09:15:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2008/09/22 08:13:28 jasper Exp $
 
 COMMENT=	record and analyze your meals for nutrient composition
 
-DISTNAME=	nut-13.5
-PKGNAME=	nutdb-13.5
+DISTNAME=	nut-13.9
+PKGNAME=	nutdb-13.9
 CATEGORIES=	biology
-HOMEPAGE=	http://www.lafn.org/~av832/
-
-MAINTAINER=	Jon Trembley <jon@brain-box.net>
+HOMEPAGE=	http://nut.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,6 +27,6 @@ USE_GMAKE=	Yes
 EXTRA_CFLAGS=	-O0
 .endif
 
-MAKE_FLAGS+=		EXTRA_CFLAGS=${EXTRA_CFLAGS}
+MAKE_FLAGS+=	EXTRA_CFLAGS=${EXTRA_CFLAGS}
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/04/11 09:15:49 jasper Exp $
-bin/nutdb
+@comment $OpenBSD: PLIST,v 1.6 2008/09/22 08:13:28 jasper Exp $
+@bin bin/nutdb
 lib/nutdb/
 lib/nutdb/FOOD_DES.txt
 lib/nutdb/NUT_DATA.txt
