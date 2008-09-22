@@ -1,7 +1,7 @@
-$OpenBSD: patch-UPGRADING,v 1.1 2008/06/20 10:32:47 sthen Exp $
---- UPGRADING.orig	Fri Jun 20 11:10:43 2008
-+++ UPGRADING	Fri Jun 20 11:12:21 2008
-@@ -18,6 +18,9 @@ from version 0.1.1
+$OpenBSD: patch-UPGRADING,v 1.2 2008/09/22 13:53:02 sthen Exp $
+--- UPGRADING.orig	Tue Aug 26 08:21:50 2008
++++ UPGRADING	Sun Sep 21 20:35:56 2008
+@@ -33,6 +33,9 @@ from version 0.1.1
    below the line "-- Updates from version 0.1.1"
  * check the config/main.inc.php.dist for new configuration 
    options and add them to your config 

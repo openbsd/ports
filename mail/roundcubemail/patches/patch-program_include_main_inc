@@ -1,12 +1,13 @@
-$OpenBSD: patch-program_include_main_inc,v 1.4 2008/06/20 10:31:35 sthen Exp $
---- program/include/main.inc.orig	Fri May 30 20:55:28 2008
-+++ program/include/main.inc	Fri Jun 20 10:03:28 2008
-@@ -840,7 +840,7 @@ function format_date($date, $format=NULL)
-    
-   // get user's timezone
-   $tz = $CONFIG['timezone'];
--  if ($CONFIG['dst_active'])
-+  if ($CONFIG['dst_active'] && (date("I", $ts) == "1"))
-     $tz++;
+$OpenBSD: patch-program_include_main_inc,v 1.5 2008/09/22 13:53:02 sthen Exp $
+--- program/include/main.inc.orig	Thu Sep 18 21:29:50 2008
++++ program/include/main.inc	Sun Sep 21 20:39:22 2008
+@@ -728,7 +728,8 @@ function format_date($date, $format=NULL)
+     $tz = isset($_SESSION['timezone']) ? $_SESSION['timezone'] : date('Z')/3600;
+   else {
+     $tz = $CONFIG['timezone'];
+-    if ($CONFIG['dst_active'])
++    //if ($CONFIG['dst_active'])
++    if ($CONFIG['dst_active'] && (date("I", $ts) == "1"))
+       $tz++;
+   }
  
-   // convert time to user's timezone
