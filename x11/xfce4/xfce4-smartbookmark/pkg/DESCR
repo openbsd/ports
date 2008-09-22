@@ -1,0 +1,6 @@
+This plugin allows you to send search requests directly to your
+preferred web search engine and display results in your browser.
+Some examples:
+- http://www.google.com/search?q= if you want to do a Google search
+- http://openports.se/search.php?so= if you want to search through
+available packages for OpenBSD.
