@@ -1,0 +1,91 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/09/22 13:50:29 ajacoutot Exp $
+--- configure.orig	Tue Aug 26 14:39:36 2008
++++ configure	Tue Aug 26 14:39:58 2008
+@@ -23850,7 +23850,6 @@ CAIRO_REQUIRED=1.2.4
+ GNOME_VFS_REQUIRED=2.18.0
+ LIBEBOOK_REQUIRED=1.12.0
+ DBUS_REQUIRED=1.0
+-HAL_REQUIRED=0.5.9
+ DBUS_GLIB_REQUIRED=0.7
+ LIBRSVG_REQUIRED=2.18.0
+ PANGOCAIRO_REQUIRED=1.18.0
+@@ -23877,7 +23876,6 @@ if test -n "$PKG_CONFIG"; then
+   libebook-1.2 >= \$LIBEBOOK_REQUIRED \\
+   cairo >= \$CAIRO_REQUIRED \\
+   dbus-1 >= \$DBUS_REQUIRED \\
+-  hal >= \$HAL_REQUIRED \\
+   dbus-glib-1 >= \$DBUS_GLIB_REQUIRED \\
+   pangocairo >= \$PANGOCAIRO_REQUIRED \\
+   librsvg-2.0 >= \$LIBRSVG_REQUIRED \\
+@@ -23894,7 +23892,6 @@ if test -n "$PKG_CONFIG"; then
+   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   cairo >= $CAIRO_REQUIRED \
+   dbus-1 >= $DBUS_REQUIRED \
+-  hal >= $HAL_REQUIRED \
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED \
+@@ -23914,7 +23911,6 @@ if test -n "$PKG_CONFIG"; then
+   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   cairo >= $CAIRO_REQUIRED \
+   dbus-1 >= $DBUS_REQUIRED \
+-  hal >= $HAL_REQUIRED \
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED \
+@@ -23943,7 +23939,6 @@ if test -n "$PKG_CONFIG"; then
+   libebook-1.2 >= \$LIBEBOOK_REQUIRED \\
+   cairo >= \$CAIRO_REQUIRED \\
+   dbus-1 >= \$DBUS_REQUIRED \\
+-  hal >= \$HAL_REQUIRED \\
+   dbus-glib-1 >= \$DBUS_GLIB_REQUIRED \\
+   pangocairo >= \$PANGOCAIRO_REQUIRED \\
+   librsvg-2.0 >= \$LIBRSVG_REQUIRED \\
+@@ -23960,7 +23955,6 @@ if test -n "$PKG_CONFIG"; then
+   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   cairo >= $CAIRO_REQUIRED \
+   dbus-1 >= $DBUS_REQUIRED \
+-  hal >= $HAL_REQUIRED \
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED \
+@@ -23980,7 +23974,6 @@ if test -n "$PKG_CONFIG"; then
+   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   cairo >= $CAIRO_REQUIRED \
+   dbus-1 >= $DBUS_REQUIRED \
+-  hal >= $HAL_REQUIRED \
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED \
+@@ -24015,7 +24008,6 @@ fi
+   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   cairo >= $CAIRO_REQUIRED \
+   dbus-1 >= $DBUS_REQUIRED \
+-  hal >= $HAL_REQUIRED \
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED \
+@@ -24033,7 +24025,6 @@ fi
+   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   cairo >= $CAIRO_REQUIRED \
+   dbus-1 >= $DBUS_REQUIRED \
+-  hal >= $HAL_REQUIRED \
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED \
+@@ -24054,7 +24045,6 @@ fi
+   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   cairo >= $CAIRO_REQUIRED \
+   dbus-1 >= $DBUS_REQUIRED \
+-  hal >= $HAL_REQUIRED \
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED \
+@@ -24081,7 +24071,6 @@ echo "$as_me: error: Package requirements (\
+   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   cairo >= $CAIRO_REQUIRED \
+   dbus-1 >= $DBUS_REQUIRED \
+-  hal >= $HAL_REQUIRED \
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED \

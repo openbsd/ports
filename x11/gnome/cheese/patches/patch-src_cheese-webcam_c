@@ -1,0 +1,101 @@
+$OpenBSD: patch-src_cheese-webcam_c,v 1.1.1.1 2008/09/22 13:50:29 ajacoutot Exp $
+--- src/cheese-webcam.c.orig	Sun Jun 29 18:17:43 2008
++++ src/cheese-webcam.c	Mon Sep  8 12:23:55 2008
+@@ -31,8 +31,20 @@
+ #include <gdk-pixbuf/gdk-pixbuf.h>
+ #include <X11/Xlib.h>
+ #include <X11/extensions/xf86vmode.h>
++
++#ifndef __OpenBSD__ // no HAL under OpenBSD
+ #include <libhal.h>
++#else
++#include <sys/ioctl.h>
++#include <fcntl.h>
++#include <unistd.h>
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++#include <sys/types.h>
++#include <sys/videoio.h>
++#endif
++#endif
+ 
++
+ #include "cheese-webcam.h"
+ 
+ G_DEFINE_TYPE (CheeseWebcam, cheese_webcam, G_TYPE_OBJECT)
+@@ -233,7 +245,7 @@ cheese_webcam_bus_message_cb (GstBus *bus, GstMessage 
+   }
+ }
+ 
+-
++#ifndef __OpenBSD__ // no HAL under OpenBSD
+ static void
+ cheese_webcam_get_video_devices_from_hal (CheeseWebcam *webcam)
+ {
+@@ -307,7 +319,55 @@ cheese_webcam_get_video_devices_from_hal (CheeseWebcam
+   }
+   libhal_free_string_array (udis);
+ }
++#else // __OpenBSD__
++static void
++cheese_webcam_get_video_devices_from_probe (CheeseWebcam *webcam)
++{
++  CheeseWebcamPrivate* priv = CHEESE_WEBCAM_GET_PRIVATE (webcam);
++  struct v4l2_capability caps;
++  gchar videodev[] = "/dev/video?";
++  guint16 cammask = 0;
++  int i, ncams = 0, fd, ret, cur = 0;
+ 
++  for (i = 0; i < 9; i++)
++  {
++    videodev[strlen(videodev) - 1] = '0' + i;
++    fd = open(videodev, O_RDONLY);
++    if (fd == -1)
++      continue;
++    ret = ioctl(fd, VIDIOC_QUERYCAP, &caps);
++    close(fd);
++    if (ret)
++    {
++      continue;
++    }
++    g_message("Found video device: %s\n", caps.card);
++    cammask |= (1 << i);
++    ++ncams;
++  }
++
++  priv->num_webcam_devices = ncams;
++  if (ncams == 0)
++    return;
++  priv->webcam_devices = g_new0 (CheeseWebcamDevice, ncams);
++  for (i = 0; i < ncams; i++)
++  {
++    priv->webcam_devices[i].num_video_formats = 0;
++    priv->webcam_devices[i].video_formats = g_array_new (FALSE, FALSE, sizeof (CheeseVideoFormat));
++  }
++
++  for (i = 0; i < 9; i++)
++  {
++    if (cammask & (1 << i))
++    {
++      videodev[strlen(videodev) - 1] = '0' + i;
++      priv->webcam_devices[i].video_device = g_strdup (videodev);
++      ++cur;
++    }
++  }
++}
++#endif /* __OpenBSD__ */
++
+ static void
+ cheese_webcam_get_supported_framerates (CheeseVideoFormat *video_format, GstStructure *structure)
+ {
+@@ -549,7 +609,11 @@ cheese_webcam_detect_webcam_devices (CheeseWebcam *web
+   CheeseWebcamPrivate* priv = CHEESE_WEBCAM_GET_PRIVATE (webcam);
+   int i;
+ 
++#ifndef __OpenBSD__ // no HAL under OpenBSD
+   cheese_webcam_get_video_devices_from_hal (webcam);
++#else
++  cheese_webcam_get_video_devices_from_probe (webcam);
++#endif
+   for (i = 0; i < priv->num_webcam_devices; i++) 
+   {
+     cheese_webcam_get_webcam_device_data (&(priv->webcam_devices[i]));
