@@ -1,0 +1,42 @@
+$OpenBSD: patch-agent_mibgroup_hardware_cpu_cpu_sysctl_c,v 1.1 2008/09/22 18:46:36 sthen Exp $
+
+the last chunk is probably not used yet, but what they have now
+is plain wrong, so it may as well go in here so it's not lost.
+
+--- agent/mibgroup/hardware/cpu/cpu_sysctl.c.orig	Mon Sep 22 00:58:02 2008
++++ agent/mibgroup/hardware/cpu/cpu_sysctl.c	Mon Sep 22 01:06:11 2008
+@@ -37,19 +37,20 @@ void _cpu_copy_stats( netsnmp_cpu_info *cpu );
+      *   (including descriptions)
+      */
+ void init_cpu_sysctl( void ) {
+-    int               i, n;
++    int               n;
+     int               ncpu_mib[]  = { CTL_HW, HW_NCPU };
+     int               model_mib[] = { CTL_HW, HW_MODEL };
++    size_t            i;
+     char              descr[ SNMP_MAXBUF ];
+     netsnmp_cpu_info  *cpu = netsnmp_cpu_get_byIdx( -1, 1 );
+     strcpy(cpu->name, "Overall CPU statistics");
+ 
+     i = sizeof(n);
+-    sysctl(ncpu_mib, 2, &n, (void *)&i, NULL, 0);
++    sysctl(ncpu_mib, 2, &n, &i, NULL, 0);
+     if ( n <= 0 )
+         n = 1;   /* Single CPU system */
+     i = sizeof(descr);
+-    sysctl(model_mib, 2, descr, (void *)&i, NULL, 0);
++    sysctl(model_mib, 2, descr, &i, NULL, 0);
+     for ( i = 0; i < n; i++ ) {
+         cpu = netsnmp_cpu_get_byIdx( i, 1 );
+         cpu->status = 2;  /* running */
+@@ -190,8 +191,8 @@ int netsnmp_cpu_arch_load( netsnmp_cache *cache, void 
+ 
+ #ifdef NETSNMP_KERN_MCPU
+     mcpu_stats = malloc(cpu_num*sizeof(NETSNMP_KERN_MCPU_TYPE));
+-    sysctl(mcpu_mib, 2, mcpu_stats,
+-           cpu_num*sizeof(NETSNMP_KERN_MCPU_TYPE), NULL, 0);
++    mcpu_size = sizeof(mcpu_stats);
++    sysctl(mcpu_mib, 2, mcpu_stats, &mcpu_size, NULL, 0);
+     for ( i = 0; i < cpu_num; i++ ) {
+         cpu = netsnmp_cpu_get_byIdx( i, 0 );
+         /* XXX - per-CPU statistics - mcpu_mib[i].??? */
