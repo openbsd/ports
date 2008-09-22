@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2008/08/25 20:52:47 kili Exp $
+# $OpenBSD: Makefile,v 1.175 2008/09/22 12:44:00 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -134,6 +134,7 @@
      SUBDIR += tuxpaint-stamps
      SUBDIR += uqm
      SUBDIR += vectoroids
+     SUBDIR += vitetris
      SUBDIR += vodovod
      SUBDIR += wanderer
      SUBDIR += warzone2100
