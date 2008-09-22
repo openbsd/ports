@@ -1,4 +1,7 @@
 LADVD uses CDP / LLDP frames to inform switches about connected hosts,
 which simplifies ethernet switch management. It does this by creating
-the required payloads and descriptors on startup and then switching 
-to a non-privileged user for the remaining runtime.
+a raw socket at startup, and then switching to a non-privileged user
+for the remaining runtime. Every 30 seconds it will transmit CDP/LLDP
+packets reflecting the current system state. Interfaces (bridge,
+trunk, wireless), capabilities (bridging, forwarding, wireless) and
+addresses (IPv4, IPv6) are detected dynamically.

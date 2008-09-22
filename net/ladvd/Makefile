@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/27 21:29:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2008/09/22 22:32:26 sthen Exp $
 
 COMMENT =		LLDP/CDP sender for UNIX
 
-DISTNAME =		ladvd-0.6.0
+DISTNAME =		ladvd-0.6.1
 CATEGORIES =		net
 
 HOMEPAGE =		http://blinkenlights.nl/software/ladvd/
