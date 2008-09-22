@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/22 12:43:31 ajacoutot Exp $
+@mode g+s
+@group games
+@bin bin/vitetris
+@mode
+@group
+share/doc/vitetris/
+share/doc/vitetris/README
+share/doc/vitetris/licence.txt
+share/examples/vitetris/
+@mode g+w
+@group games
+share/examples/vitetris/vitetris-hiscores
+@sample /var/games/vitetris-hiscores
