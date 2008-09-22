@@ -1,0 +1,3 @@
+GNOME URL handler for web-published ical calendar files, which
+integrates with the Evolution groupware suite. It allows you to
+subscribe to a published calendar simply by clicking on a webcal: URL.
