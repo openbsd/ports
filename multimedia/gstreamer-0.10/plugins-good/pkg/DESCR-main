@@ -59,6 +59,7 @@ The following plugins are in specific packages because of dependencies:
 * jpeg
 * png
 * shout2send
+* soup
 * speex
 * taglib
 

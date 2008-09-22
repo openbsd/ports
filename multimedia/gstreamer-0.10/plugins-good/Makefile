@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2008/06/21 21:03:56 deanna Exp $
+# $OpenBSD: Makefile,v 1.22 2008/09/22 15:36:56 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -14,6 +14,7 @@ COMMENT-png =		multimedia framework - png plugin
 COMMENT-gdk =		multimedia framework - gdk pixbuf plugin
 COMMENT-caca =		multimedia framework - libcaca plugin
 COMMENT-shout =		multimedia framework - shoutcast plugin
+COMMENT-soup =		multimedia framework - libsoup plugin
 
 V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
@@ -31,10 +32,11 @@ PKGNAME-png =		gstreamer-png-$Vp0
 PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp1
 PKGNAME-caca =		gstreamer-libcaca-$Vp0
 PKGNAME-shout =		gstreamer-shoutcast-$Vp0
+PKGNAME-soup =		gstreamer-libsoup-$V
 
 
 MULTI_PACKAGES =	-main -aalib -cairo -gconf -esd -flac -speex \
-			-taglib -dv -jpeg -png -gdk -caca -shout
+			-taglib -dv -jpeg -png -gdk -caca -shout -soup
 SHARED_LIBS =
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-good/}
@@ -139,6 +141,12 @@ WANTLIB-shout =		${WANTLIB} \
 LIB_DEPENDS-shout =	${LIB_DEPENDS} \
 			speex::audio/speex \
 			shout::net/libshout
+
+WANTLIB-soup =		${WANTLIB} \
+			gio-2.0 gstbase-0.10.0 gsttag-0.10
+
+LIB_DEPENDS-soup =	${LIB_DEPENDS} \
+			soup-2.4::devel/libsoup
 
 CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-cdio \
