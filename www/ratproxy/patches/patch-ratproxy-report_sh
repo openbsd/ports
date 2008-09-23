@@ -1,0 +1,27 @@
+$OpenBSD: patch-ratproxy-report_sh,v 1.1.1.1 2008/09/23 20:59:40 jasper Exp $
+--- ratproxy-report.sh.orig	Tue Sep 23 20:57:14 2008
++++ ratproxy-report.sh	Tue Sep 23 20:58:55 2008
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ #
+ # ratproxy - report generator
+ # ---------------------------
+@@ -50,7 +50,7 @@ cat <<_EOF_
+ <style>
+ a:link, a:visited { text-decoration: none; color: green }
+ a:hover { text-decoration: underline; color: red }
+-body { background-color: white; background-image: url('ratproxy-back.png'); background-repeat: no-repeat; }
++body { background-color: white; background-image: url('${PREFIX}/share/ratproxy/ratproxy-back.png'); background-repeat: no-repeat; }
+ </style>
+ </head>
+ 
+@@ -214,7 +214,7 @@ SCNT=0
+       fi
+ 
+       echo "<font color=darkslateblue>"
+-      grep -F "~$desc~" messages.list | cut -d'~' -f3 
++      grep -F "~$desc~" ${PREFIX}/share/ratproxy/messages.list | cut -d'~' -f3 
+       echo "</font></font><p>"
+ 
+       PREVDESC="$desc"

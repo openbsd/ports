@@ -1,0 +1,14 @@
+$OpenBSD: patch-ratproxy_c,v 1.1.1.1 2008/09/23 20:59:40 jasper Exp $
+--- ratproxy.c.orig	Tue Sep 23 21:09:25 2008
++++ ratproxy.c	Tue Sep 23 21:09:29 2008
+@@ -618,8 +618,8 @@ static void decode_flash(struct http_response* res) {
+   if (!(pid = fork())) {
+     /* Flare is way too noisy, let's close stderr. */
+     close(2);
+-    execl("./flare","flare",tmp,NULL);
+-    execlp("flare","flare",tmp,NULL);
++    execl("./flare","flare",tmp,(void *)NULL);
++    execlp("flare","flare",tmp,(void *)NULL);
+     exit(1);
+   }
+ 

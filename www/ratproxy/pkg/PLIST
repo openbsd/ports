@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/23 20:59:40 jasper Exp $
+@bin bin/ratproxy
+bin/ratproxy-report.sh
+share/doc/ratproxy/
+share/doc/ratproxy/README
+share/ratproxy/
+share/ratproxy/keyfile.pem
+share/ratproxy/messages.list
+share/ratproxy/ratproxy-back.png

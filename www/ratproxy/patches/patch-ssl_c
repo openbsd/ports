@@ -1,0 +1,16 @@
+$OpenBSD: patch-ssl_c,v 1.1.1.1 2008/09/23 20:59:40 jasper Exp $
+--- ssl.c.orig	Tue Sep 23 20:56:13 2008
++++ ssl.c	Tue Sep 23 20:59:34 2008
+@@ -143,10 +143,10 @@ void ssl_start(_s32 srv_fd, _s32 cli_fd) {
+ 
+   if (!srv_ctx || !cli_ctx || !err) ssl_fatal("unable to create SSL CTX or BIO", err);
+ 
+-  if (SSL_CTX_use_certificate_chain_file(cli_ctx,"keyfile.pem") != 1) 
++  if (SSL_CTX_use_certificate_chain_file(cli_ctx,"${PREFIX}/share/ratproxy/keyfile.pem") != 1) 
+     ssl_fatal("certificate load failed", err);
+ 
+-  if (SSL_CTX_use_PrivateKey_file(cli_ctx,"keyfile.pem",SSL_FILETYPE_PEM) != 1) 
++  if (SSL_CTX_use_PrivateKey_file(cli_ctx,"${PREFIX}/share/ratproxy/keyfile.pem",SSL_FILETYPE_PEM) != 1) 
+     ssl_fatal("private key load failed", err);
+ 
+   cli_ssl = SSL_new(cli_ctx);

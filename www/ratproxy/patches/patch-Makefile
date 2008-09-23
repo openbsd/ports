@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/09/23 20:59:40 jasper Exp $
+
+Disable flare-check target, which in turn disables scanning Flash files.
+
+--- Makefile.orig	Tue Jun 10 13:44:28 2008
++++ Makefile	Tue Sep 23 22:48:33 2008
+@@ -20,10 +20,10 @@
+ #
+ 
+ PROGNAME = ratproxy
+-CFLAGS	 = -Wall -O3 -Wno-pointer-sign -D_GNU_SOURCE
++CFLAGS	 += -Wall -D_GNU_SOURCE
+ LDFLAGS  = -lcrypto -lssl
+ 
+-all: $(PROGNAME) flare-check
++all: $(PROGNAME)
+ 
+ $(PROGNAME): $(PROGNAME).c http.c mime.c ssl.c http.h mime.h ssl.h nlist.h config.h debug.h types.h string-inl.h
+ 	$(CC) $(PROGNAME).c -o $(PROGNAME)  $(CFLAGS) http.c mime.c ssl.c $(LDFLAGS)
