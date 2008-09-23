@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2008/01/17 00:11:29 rui Exp $
+# $OpenBSD: Makefile,v 1.11 2008/09/23 21:21:01 rui Exp $
 
 COMMENT=	Web and CGI vulnerability scanner with SSL support
 
-DISTNAME=	nikto-2.02
+DISTNAME=	nikto-2.03
 CATEGORIES=	security www
 
 HOMEPAGE=	http://www.cirt.net/code/nikto.shtml
@@ -24,6 +24,8 @@ RUN_DEPENDS=	:p5-Net-SSLeay-*:security/p5-Net_SSLeay
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
+
+WRKDIST=	${WRKDIR}/nikto
 
 pre-configure:
 	perl -pi -e 's,# EXECDIR=.+,EXECDIR=${PREFIX}/share/nikto,' \
@@ -47,5 +49,7 @@ do-install:
 
 	${INSTALL_DATA} ${WRKSRC}/docs/nikto_manual.html ${PREFIX}/share/doc/nikto
 	${INSTALL_DATA} ${WRKSRC}/docs/CHANGES.txt ${PREFIX}/share/doc/nikto
-	
+	${INSTALL_DATA} ${WRKSRC}/docs/nikto.dtd ${PREFIX}/share/doc/nikto
+	${INSTALL_MAN} ${WRKSRC}/docs/nikto.1 ${PREFIX}/man/man1/nikto.1
+
 .include <bsd.port.mk>

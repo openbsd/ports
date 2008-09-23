@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/01/17 00:11:29 rui Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/09/23 21:21:01 rui Exp $
 bin/nikto
+@man man/man1/nikto.1
 share/doc/nikto/
 @comment no checksum
 share/doc/nikto/CHANGES.txt
+share/doc/nikto/nikto.dtd
 share/doc/nikto/nikto_manual.html
 share/examples/nikto/
 share/examples/nikto/nikto.conf
@@ -28,6 +30,7 @@ share/nikto/plugins/db_variables
 share/nikto/plugins/nikto_apache_expect_xss.plugin
 @comment no checksum
 share/nikto/plugins/nikto_apacheusers.plugin
+share/nikto/plugins/nikto_cgi.plugin
 @comment no checksum
 share/nikto/plugins/nikto_core.plugin
 @comment no checksum
