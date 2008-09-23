@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2008/09/04 08:35:43 brad Exp $
+# $OpenBSD: Makefile,v 1.105 2008/09/23 13:31:50 bernd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ V_SIEVE=	1.1.5
 
 PKGNAME=	dovecot-${V_DOVECOT}
 PKGNAME-server=	dovecot-${V_DOVECOT}
-FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}
+FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}p0
 
 DISTNAME=	dovecot-${V_DOVECOT}
 CATEGORIES=	mail
