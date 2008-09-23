@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/09 20:35:51 okan Exp $
+# $OpenBSD: Makefile,v 1.5 2008/09/23 14:23:22 martynas Exp $
 
 COMMENT=		simple BitTorrent implementation
 
-DISTNAME=		unworkable-20080108
+DISTNAME=		unworkable-0.5
+PKGNAME=		${DISTNAME}v0
 CATEGORIES=		net
 
-HOMEPAGE=		http://niallohiggins.com/unworkable
+HOMEPAGE=		http://p2presearch.com/unworkable
 
 MAINTAINER=		Niall O Higgins <niallo@openbsd.org>
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://niallohiggins.com/unworkable/dist/
+MASTER_SITES=		http://p2presearch.com/unworkable/dist/
 
 WRKDIST=		${WRKDIR}/unworkable
 WANTLIB=		c crypto event
