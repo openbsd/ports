@@ -1,13 +1,11 @@
-#	$OpenBSD: Makefile,v 1.4 2007/09/18 23:36:54 sthen Exp $
+#	$OpenBSD: Makefile,v 1.5 2008/09/23 20:57:20 jasper Exp $
 
 COMMENT=	perl interface to the ACEDB database
 
-DISTNAME=	AcePerl-1.87
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	AcePerl-1.91
 CATEGORIES=	biology perl5 databases
 
 FLAVORS=	opt
-
 FLAVOR?=
 
 # perl licence
@@ -26,6 +24,8 @@ CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT=Yes
 # go through extra indirection to allow both flavors to share most files.
 SUBST_VARS=	P5ACE
 
+RUN_DEPENDS=	::devel/p5-Cache-Cache \
+		::devel/p5-WeakRef
 
 .if ${FLAVOR:L:Mopt}
 SHARED_ONLY=Yes

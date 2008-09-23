@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2005/03/03 00:10:54 espie Exp $
---- Makefile.PL.orig	Thu Mar  3 00:46:52 2005
-+++ Makefile.PL	Thu Mar  3 00:47:20 2005
-@@ -9,7 +9,7 @@ while (!$choice) {
+$OpenBSD: patch-Makefile_PL,v 1.2 2008/09/23 20:57:20 jasper Exp $
+--- Makefile.PL.orig	Mon Sep 22 10:22:31 2008
++++ Makefile.PL	Mon Sep 22 10:35:24 2008
+@@ -10,7 +10,7 @@ while (!$choice) {
  		  "  1) Interface to Ace socket server and local databases (pure Perl)\n" .
  		  "  2) The above plus XS optimizations (requires C compiler)\n" .
  		  "  3) The above plus RPC server interface (requires C compiler)\n\n" .
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_PL,v 1.1.1.1 2005/03/03 00:10:54 espie Exp $
    if ($reply =~ /(\d+)/) {
      $choice = $1;
      die "invalid choice: $choice!" if $choice < 1  ||  $choice > 3;
-@@ -23,7 +23,7 @@ push @extlib,'Freesubs' if $choice >= 2;
+@@ -24,7 +24,7 @@ push @extlib,'Freesubs' if $choice >= 2;
  push @extlib,'RPC'      if $choice >= 3;
  
  print "\n";
