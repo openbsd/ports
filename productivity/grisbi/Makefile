@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/05/31 23:11:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2008/09/23 19:37:06 landry Exp $
 
 COMMENT=	personal accounting application
 
 DISTNAME=	grisbi-0.5.9
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	productivity x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -31,11 +31,18 @@ LIB_DEPENDS=	xml2.>=9::textproc/libxml \
 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		ofx.>=3::devel/libofx
 
+RUN_DEPENDS=	::devel/desktop-file-utils
+
 USE_X11=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${SUBST_CMD} -c ${FILESDIR}/grisbi.desktop \
+		${PREFIX}/share/applications/grisbi.desktop
 
 .include <bsd.port.mk>
