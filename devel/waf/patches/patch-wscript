@@ -1,0 +1,18 @@
+$OpenBSD: patch-wscript,v 1.1.1.1 2008/09/23 19:55:02 landry Exp $
+--- wscript.orig	Tue Aug 26 23:44:34 2008
++++ wscript	Tue Sep  2 09:40:42 2008
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#!${MODPY_BIN}
+ # encoding: utf-8
+ # Thomas Nagy, 2005, 2006 (ita)
+ 
+@@ -324,7 +324,7 @@ def build(bld):
+ 	wafadmin = bld.create_obj('py')
+ 	wafadmin.find_sources_in_dirs('wafadmin', exts=['.py'])
+ 	wafadmin.inst_var = 'PREFIX'
+-	wafadmin.inst_dir = os.path.join('lib', 'waf-%s-%s' % (VERSION, REVISION), 'wafadmin')
++	wafadmin.inst_dir = 'lib/python${MODPY_VERSION}/site-packages/wafadmin'
+ 
+ 	tools = bld.create_obj('py')
+ 	tools.find_sources_in_dirs('wafadmin/Tools', exts=['.py'])
