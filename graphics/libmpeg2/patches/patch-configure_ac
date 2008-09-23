@@ -1,0 +1,60 @@
+$OpenBSD: patch-configure_ac,v 1.1 2008/09/23 00:44:17 brad Exp $
+--- configure.ac.orig	Fri Jul 18 10:30:17 2008
++++ configure.ac	Tue Sep 16 21:35:39 2008
+@@ -37,13 +37,6 @@ elif test x"$GCC" = x"yes"; then
+     TRY_CFLAGS="$OPT_CFLAGS -Wall -Wpointer-arith -Wcast-align -Wcast-qual -Wstrict-prototypes -Wshadow -Waggregate-return -Wmissing-prototypes -Wnested-externs -Wsign-compare"
+     AC_TRY_CFLAGS([$TRY_CFLAGS $CFLAGS],[OPT_CFLAGS="$TRY_CFLAGS"])
+ 
+-    dnl -O3
+-    changequote(<<,>>)
+-    TRY_CFLAGS=`echo "$OPT_CFLAGS $CFLAGS"|sed "s/-O[0-9]*//g"`
+-    changequote([,])
+-    TRY_CFLAGS="$TRY_CFLAGS -O3"
+-    AC_TRY_CFLAGS([$TRY_CFLAGS],[OPT_CFLAGS="$TRY_CFLAGS"])
+-
+     AC_ARG_ENABLE([debug],
+ 	[  --enable-debug          debug mode configuration])
+     if test x"$enable_debug" = x"yes"; then
+@@ -61,41 +54,7 @@ elif test x"$GCC" = x"yes"; then
+     dnl arch-specific flags
+     arm_conditional=false
+     case "$host" in
+-    i?86-* | k?-* | x86_64-* | amd64-*)
+-	AC_DEFINE([ARCH_X86],,[x86 architecture])
+-	case "$host" in
+-	i386-*) TRY_CFLAGS="$OPT_CFLAGS -mcpu=i386";;
+-	i486-*) TRY_CFLAGS="$OPT_CFLAGS -mcpu=i486";;
+-	i586-*) TRY_CFLAGS="$OPT_CFLAGS -mcpu=pentium";;
+-	i686-*) TRY_CFLAGS="$OPT_CFLAGS -mcpu=pentiumpro";;
+-	k6-*)   TRY_CFLAGS="$OPT_CFLAGS -mcpu=k6";;
+-	esac
+-	AC_TRY_CFLAGS([$TRY_CFLAGS $CFLAGS],[OPT_CFLAGS="$TRY_CFLAGS"]);;
+-    ppc-* | powerpc-*)
+-	have_altivec=no
+-	for TRY_CFLAGS in "-mpim-altivec -force_cpusubtype_ALL" -faltivec -maltivec -fvec; do
+-	    AC_TRY_CFLAGS([$OPT_CFLAGS $TRY_CFLAGS $CFLAGS],
+-		[save_CFLAGS="$CFLAGS"
+-		 CFLAGS="$OPT_CFLAGS $TRY_CFLAGS $CFLAGS"
+-		 AC_MSG_CHECKING([if <altivec.h> is needed])
+-		 AC_TRY_COMPILE([],
+-		    [typedef vector int t;
+-		     vec_ld(0, (unsigned char *)0);],
+-		    [have_altivec=yes; AC_MSG_RESULT(no)],
+-		    [AC_TRY_COMPILE([#include <altivec.h>],
+-			[typedef vector int t; vec_ld(0, (unsigned char *)0);],
+-			[AC_DEFINE([HAVE_ALTIVEC_H],,
+-			    [Define to 1 if you have the <altivec.h> header.])
+-			 have_altivec=yes; AC_MSG_RESULT(yes)],
+-			[AC_MSG_RESULT(unsupported)])])
+-		 CFLAGS="$save_CFLAGS"])
+-	    if test "$have_altivec" = "yes"; then
+-		ARCH_OPT_CFLAGS="$TRY_CFLAGS"
+-		AC_DEFINE([ARCH_PPC],,[ppc architecture])
+-		break
+-	    fi
+-	done;;
+-    sparc-* | sparc64-*)
++    sparc64-*)
+ 	AC_DEFINE([ARCH_SPARC],,[sparc architecture])
+ 	TRY_CFLAGS="$OPT_CFLAGS -mcpu=ultrasparc -mvis"
+ 	AC_TRY_CFLAGS([$TRY_CFLAGS $CFLAGS],[OPT_CFLAGS="$TRY_CFLAGS"]);;
