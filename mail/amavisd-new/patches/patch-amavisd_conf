@@ -1,10 +1,10 @@
-$OpenBSD: patch-amavisd_conf,v 1.3 2007/11/27 13:53:19 okan Exp $
---- amavisd.conf.orig	Wed Jun 27 12:42:55 2007
-+++ amavisd.conf	Sat Nov 24 11:18:48 2007
+$OpenBSD: patch-amavisd_conf,v 1.4 2008/09/23 21:39:21 kili Exp $
+--- amavisd.conf.orig	Wed Apr 23 20:49:58 2008
++++ amavisd.conf	Thu May  8 20:19:02 2008
 @@ -15,12 +15,12 @@ use strict;
  # $bypass_decode_parts = 1;         # controls running of decoders&dearchivers
  
- $max_servers = 2;            # num of pre-forked children (2..15 is common), -m
+ $max_servers = 2;            # num of pre-forked children (2..30 is common), -m
 -$daemon_user  = 'vscan';     # (no default;  customary: vscan or amavis), -u
 -$daemon_group = 'vscan';     # (no default;  customary: vscan or amavis), -g
 +$daemon_user  = '_vscan';     # (no default;  customary: vscan or amavis), -u
@@ -13,11 +13,11 @@ $OpenBSD: patch-amavisd_conf,v 1.3 2007/11/27 13:53:19 okan Exp $
  $mydomain = 'example.com';   # a convenient default for other settings
  
 -# $MYHOME = '/var/amavis';   # a convenient default for other settings, -H
-+$MYHOME = '/var/amavisd';    # a convenient default for other settings, -H
++$MYHOME = '/var/amavisd';   # a convenient default for other settings, -H
  $TEMPBASE = "$MYHOME/tmp";   # working directory, needs to exist, -T
  $ENV{TMPDIR} = $TEMPBASE;    # environment variable TMPDIR, used by SA, etc.
  $QUARANTINEDIR = '/var/virusmails';  # -Q
-@@ -42,7 +42,7 @@ $syslog_facility = 'mail';   # Syslog facility as a st
+@@ -44,7 +44,7 @@ $syslog_facility = 'mail';   # Syslog facility as a st
  $syslog_priority = 'debug';  # Syslog base (minimal) priority as a string,
             # choose from: emerg, alert, crit, err, warning, notice, info, debug
  
@@ -25,4 +25,4 @@ $OpenBSD: patch-amavisd_conf,v 1.3 2007/11/27 13:53:19 okan Exp $
 +$enable_db = 0;              # enable use of BerkeleyDB/libdb (SNMP and nanny)
  $enable_global_cache = 1;    # enable use of libdb-based cache if $enable_db=1
  $nanny_details_level = 2;    # nanny verbosity: 1: traditional, 2: detailed
- 
+ $enable_dkim_verification = 1;  # enable DKIM signatures verification

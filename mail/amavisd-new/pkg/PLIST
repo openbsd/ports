@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/11/27 13:53:19 okan Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/09/23 21:39:21 kili Exp $
 @newgroup _vscan:530
 @newuser _vscan:530:_vscan::Amavisd-new Daemon:/var/empty:/sbin/nologin
+bin/amavisd-agent
+bin/amavisd-nanny
+bin/amavisd-release
 sbin/amavisd
 share/doc/amavisd-new/
 share/doc/amavisd-new/AAAREADME.first
@@ -45,4 +48,6 @@ share/examples/amavisd-new/amavisd.conf-sample
 @group _vscan
 @sample /var/amavisd/
 @sample /var/amavisd/tmp/
+@sample /var/amavisd/db/
+@sample /var/amavisd/var/
 @extraunexec rm -rf /var/amavisd/* 2>/dev/null || true
