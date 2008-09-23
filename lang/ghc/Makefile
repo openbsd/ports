@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2008/09/03 22:40:27 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2008/09/23 13:27:11 bernd Exp $
 # 
 # Ancient versions based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
@@ -9,7 +9,7 @@ COMMENT-doc=		documentation for GHC
 
 DISTNAME=		ghc-${MODGHC_VER}
 PKGNAME-main=		ghc-${MODGHC_VER}p2
-PKGNAME-doc=		ghc-doc-${MODGHC_VER}
+PKGNAME-doc=		ghc-doc-${MODGHC_VER}p0
 CATEGORIES=		lang
 HOMEPAGE=		http://www.haskell.org/ghc/
 
