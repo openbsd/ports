@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/09/24 16:30:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2008/09/24 17:01:16 ajacoutot Exp $
 
 COMMENT=	scanner frontend for SANE
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://www.xsane.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
