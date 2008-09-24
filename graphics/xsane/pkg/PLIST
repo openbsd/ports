@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/11/23 09:07:26 ajacoutot Exp $
-bin/xsane
+@comment $OpenBSD: PLIST,v 1.5 2008/09/24 16:30:43 ajacoutot Exp $
+@bin bin/xsane
 @man man/man1/xsane.1
+share/applications/xsane.desktop
 share/doc/xsane/
 share/doc/xsane/sane-backends-doc.html
 share/doc/xsane/sane-pnm-doc.html
@@ -171,6 +172,8 @@ share/locale/zh/
 share/locale/zh/LC_MESSAGES/
 share/locale/zh/LC_MESSAGES/xsane.mo
 share/locale/zh_CN/LC_MESSAGES/xsane.mo
+share/pixmaps/
+share/pixmaps/xsane.xpm
 share/xsane/
 share/xsane/Mustek-logo.xpm
 share/xsane/Plustek-logo.xpm
@@ -186,3 +189,5 @@ share/xsane/xsane-logo.xpm
 share/xsane/xsane-startimage.pnm
 share/xsane/xsane-style.rc
 %%gimp%%
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2006/10/20 17:54:45 ajacoutot Exp $
---- src/Makefile.in.orig	Sat Jan  7 00:22:47 2006
-+++ src/Makefile.in	Thu Sep 21 17:02:53 2006
+$OpenBSD: patch-src_Makefile_in,v 1.2 2008/09/24 16:30:43 ajacoutot Exp $
+--- src/Makefile.in.orig	Wed Sep 24 17:59:31 2008
++++ src/Makefile.in	Wed Sep 24 17:59:51 2008
 @@ -21,8 +21,8 @@ mandir = @mandir@
  includedir = @includedir@
  oldincludedir = /usr/include
@@ -9,6 +9,6 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2006/10/20 17:54:45 ajacoutot Exp $
 -xsanedocdir = ${datadir}/sane/xsane/doc
 +sanedatadir = ${datadir}
 +xsanedocdir = ${datadir}/doc/xsane
+ desktopappdir = @datadir@/applications
+ pixmapdir = @datadir@/pixmaps
  
- MKINSTALLDIRS = @MKINSTALLDIRS@
- INSTALL = @INSTALL@

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2008/09/18 13:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2008/09/24 16:30:43 ajacoutot Exp $
 
 COMMENT=	scanner frontend for SANE
 
-DISTNAME=	xsane-0.995
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	xsane-0.996
 CATEGORIES=	graphics
 
 MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/xsane/ \
@@ -33,6 +32,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		lcms.>=1::graphics/lcms \
 		sane.>=1::graphics/sane-backends
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -40,7 +40,7 @@ CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib -liconv" \
 		gt_cv_func_gettext_libintl=yes
 
 NO_REGRESS=	Yes
@@ -49,7 +49,8 @@ FLAVORS=	gimp
 FLAVOR?=
 
 .if ${FLAVOR:L} == "gimp"
-LIB_DEPENDS+=	gimp-2.0.>=200.0,gimpmodule-2.0,gimpui-2.0,gimpmath-2.0,gimpwidgets-2.0,gimpbase-2.0,gimpcolor-2.0::graphics/gimp/stable
+WANTLIB+=	gthread-2.0
+LIB_DEPENDS+=	gimp-2.0.>=200.0,gimpmodule-2.0,gimpui-2.0,gimpmath-2.0,gimpwidgets-2.0,gimpbase-2.0,gimpcolor-2.0,gimpconfig-2.0::graphics/gimp/stable
 CONFIGURE_ENV+=	CPPFLAGS+="-I${LOCALBASE}/include/gimp-2.0"
 .else
 CONFIGURE_ARGS+=--disable-gimp
