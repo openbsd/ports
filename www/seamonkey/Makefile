@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.26 2008/09/18 13:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2008/09/24 19:29:16 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	integrated mozilla application suite
 
-VER=		1.1.11
+VER=		1.1.12
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}p1
+PKGNAME=	seamonkey-${VER}
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -41,32 +41,39 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
-.for i in 1.1.2 1.1.3 1.1.4 1.1.5 1.1.6 1.1.7 1.1.8 1.1.9 1.1.10 1.1.11
-MASTER_SITES${i:C|.*([0-9])|\1|}+=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/$i/contrib-localized/
+.for id version in \
+	0 1.1.2 \
+	1 1.1.8 \
+	2 1.1.9 \
+	3 1.1.10 \
+	4 1.1.11 \
+	5 1.1.12
+MASTER_SITES${id}+=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${version}/contrib-localized/
 .endfor
 
-LANGUAGES=	be-BY 1.1.2 \
-		ca-AD 1.1.8 \
-		cs-CZ 1.1.11 \
-		de-AT 1.1.11 \
-		el-GR 1.1.2 \
-		es-ES 1.1.10 \
-		fr-FR 1.1.8 \
-		he-IL 1.1.2 \
-		hu-HU 1.1.9 \
-		it-IT 1.1.8 \
-		nl-NL 1.1.4 \
-		pl-PL 1.1.10 \
-		pt-BR 1.1.10 \
-		ru-RU 1.1.11 \
-		ur-PK 1.1.9 \
-		sv-SE 1.1.9
+LANGUAGES=	be-BY 2 1.1.9 \
+		ca-AD 1 1.1.8 \
+		cs-CZ 5 1.1.12 \
+		de-AT 5 1.1.12 \
+		el-GR 0 1.1.2 \
+		es-ES 3 1.1.10 \
+		fr-FR 2 1.1.9 \
+		he-IL 0 1.1.2 \
+		hu-HU 4 1.1.11 \
+		it-IT 2 1.1.9 \
+		lt-LT 5 1.1.12 \
+		nl-NL 5 1.1.12 \
+		pl-PL 5 1.1.12 \
+		pt-BR 5 1.1.12 \
+		ru-RU 5 1.1.12 \
+		ur-PK 2 1.1.9 \
+		sv-SE 5 1.1.12
 BINLANGS=	be-BY el-GR fr-FR pl-PL pt-BR
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-.for l v in ${LANGUAGES}
-DISTFILES+=	seamonkey-$v.$l.langpack.xpi:${v:C|.*([0-9])|\1|}
+.for language id version in ${LANGUAGES}
+DISTFILES+=	seamonkey-${version}.${language}.langpack.xpi:${id}
 .endfor
 
 EXTRACT_CASES += *.xpi) \
@@ -150,8 +157,8 @@ post-extract:
 	@mv -f ${WRKDIR}/$i/bin/* ${WRKDIR}/$i/
 	@rmdir ${WRKDIR}/$i/bin
 .endfor
-.for l v in ${LANGUAGES}
-	@rm -f ${WRKDIR}/$l/chrome/*-{mac,win}.jar
+.for language id version in ${LANGUAGES}
+	@rm -f ${WRKDIR}/${language}/chrome/*-{mac,win}.jar
 .endfor
 
 pre-configure:
@@ -179,10 +186,10 @@ do-install:
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
 		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
 	${INSTALL_MAN} ${WRKSRC}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
-.for l v in ${LANGUAGES}
-	${INSTALL_DATA} ${WRKDIR}/$l/chrome/*.jar ${MOZ}/chrome/
-	sh ${FILESDIR}/genchrome ${WRKDIR}/$l/install.js $l \
-		>> ${MOZ}/chrome/installed-chrome.txt
+.for language id version in ${LANGUAGES}
+	${INSTALL_DATA} ${WRKDIR}/${language}/chrome/*.jar ${MOZ}/chrome/
+	sh ${FILESDIR}/genchrome ${WRKDIR}/${language}/install.js \
+		${language} >> ${MOZ}/chrome/installed-chrome.txt
 .endfor
 
 .include <bsd.port.mk>
