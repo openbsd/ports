@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/08/20 08:44:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/09/24 17:18:26 ajacoutot Exp $
 tikiwiki/
 tikiwiki/INSTALL
 tikiwiki/README
@@ -59,6 +59,7 @@ tikiwiki/db/tiki-2.0-sqlite.sql
 tikiwiki/db/tiki-2.0-sybase.sql
 tikiwiki/db/tiki-db.php
 tikiwiki/db/tiki-secdb_2.0_mysql.sql
+tikiwiki/db/tiki-secdb_2.1_mysql.sql
 tikiwiki/db/tiki.sql
 tikiwiki/db/tiki_1.8to1.9.sql
 tikiwiki/db/tiki_1.9to2.0.sql

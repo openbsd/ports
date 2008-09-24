@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2008/08/20 08:44:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2008/09/24 17:18:26 ajacoutot Exp $
 
 COMMENT=	all-in-one wiki/groupware/CMS solution
 
-V=		2.0
+V=		2.1
 DISTNAME=	tikiwiki-${V}
 CATEGORIES=	www
 
