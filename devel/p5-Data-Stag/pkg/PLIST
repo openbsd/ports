@@ -1,0 +1,93 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/24 13:32:49 jasper Exp $
+bin/stag-autoschema.pl
+bin/stag-db.pl
+bin/stag-diff.pl
+bin/stag-drawtree.pl
+bin/stag-filter.pl
+bin/stag-findsubtree.pl
+bin/stag-flatten.pl
+bin/stag-grep.pl
+bin/stag-handle.pl
+bin/stag-itext2simple.pl
+bin/stag-itext2sxpr.pl
+bin/stag-itext2xml.pl
+bin/stag-join.pl
+bin/stag-merge.pl
+bin/stag-mogrify.pl
+bin/stag-parse.pl
+bin/stag-query.pl
+bin/stag-splitter.pl
+bin/stag-view.pl
+bin/stag-xml2itext.pl
+${P5SITE}/Data/Stag/
+${P5SITE}/Data/Stag.pm
+${P5SITE}/Data/Stag/Arr2HTML.pm
+${P5SITE}/Data/Stag/Base.pm
+${P5SITE}/Data/Stag/BaseGenerator.pm
+${P5SITE}/Data/Stag/BaseHandler.pm
+${P5SITE}/Data/Stag/ChainHandler.pm
+${P5SITE}/Data/Stag/DTDWriter.pm
+${P5SITE}/Data/Stag/GraphHandler.pm
+${P5SITE}/Data/Stag/HashDB.pm
+${P5SITE}/Data/Stag/ITextParser.pm
+${P5SITE}/Data/Stag/ITextWriter.pm
+${P5SITE}/Data/Stag/IndentParser.pm
+${P5SITE}/Data/Stag/IndentWriter.pm
+${P5SITE}/Data/Stag/PerlWriter.pm
+${P5SITE}/Data/Stag/PodParser.pm
+${P5SITE}/Data/Stag/SAX2Stag.pm
+${P5SITE}/Data/Stag/Simple.pm
+${P5SITE}/Data/Stag/StagDB.pm
+${P5SITE}/Data/Stag/StagI.pm
+${P5SITE}/Data/Stag/StagImpl.pm
+${P5SITE}/Data/Stag/SxprParser.pm
+${P5SITE}/Data/Stag/SxprWriter.pm
+${P5SITE}/Data/Stag/Util.pm
+${P5SITE}/Data/Stag/Writer.pm
+${P5SITE}/Data/Stag/XMLParser.pm
+${P5SITE}/Data/Stag/XMLWriter.pm
+${P5SITE}/Data/Stag/XSLHandler.pm
+${P5SITE}/Data/Stag/XSLTHandler.pm
+${P5SITE}/Data/Stag/null.pm
+@man man/man1/stag-autoschema.pl.1
+@man man/man1/stag-db.pl.1
+@man man/man1/stag-diff.pl.1
+@man man/man1/stag-drawtree.pl.1
+@man man/man1/stag-filter.pl.1
+@man man/man1/stag-findsubtree.pl.1
+@man man/man1/stag-flatten.pl.1
+@man man/man1/stag-grep.pl.1
+@man man/man1/stag-handle.pl.1
+@man man/man1/stag-join.pl.1
+@man man/man1/stag-merge.pl.1
+@man man/man1/stag-mogrify.pl.1
+@man man/man1/stag-parse.pl.1
+@man man/man1/stag-query.pl.1
+@man man/man1/stag-splitter.pl.1
+@man man/man1/stag-view.pl.1
+@man man/man3p/Data::Stag.3p
+@man man/man3p/Data::Stag::Arr2HTML.3p
+@man man/man3p/Data::Stag::BaseGenerator.3p
+@man man/man3p/Data::Stag::BaseHandler.3p
+@man man/man3p/Data::Stag::ChainHandler.3p
+@man man/man3p/Data::Stag::DTDWriter.3p
+@man man/man3p/Data::Stag::GraphHandler.3p
+@man man/man3p/Data::Stag::HashDB.3p
+@man man/man3p/Data::Stag::ITextParser.3p
+@man man/man3p/Data::Stag::ITextWriter.3p
+@man man/man3p/Data::Stag::IndentParser.3p
+@man man/man3p/Data::Stag::IndentWriter.3p
+@man man/man3p/Data::Stag::PerlWriter.3p
+@man man/man3p/Data::Stag::PodParser.3p
+@man man/man3p/Data::Stag::SAX2Stag.3p
+@man man/man3p/Data::Stag::Simple.3p
+@man man/man3p/Data::Stag::StagDB.3p
+@man man/man3p/Data::Stag::StagImpl.3p
+@man man/man3p/Data::Stag::SxprParser.3p
+@man man/man3p/Data::Stag::SxprWriter.3p
+@man man/man3p/Data::Stag::Writer.3p
+@man man/man3p/Data::Stag::XMLParser.3p
+@man man/man3p/Data::Stag::XMLWriter.3p
+@man man/man3p/Data::Stag::XSLHandler.3p
+@man man/man3p/Data::Stag::XSLTHandler.3p
+@man man/man3p/Data::Stag::null.3p
