@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2008/09/08 18:55:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.77 2008/09/24 13:45:45 jasper Exp $
 #
 
      SUBDIR += R
@@ -55,13 +55,16 @@
      SUBDIR += p5-Math-Bezier
      SUBDIR += p5-Math-BigInt-GMP
      SUBDIR += p5-Math-Calc-Units
+     SUBDIR += p5-Math-Derivative
      SUBDIR += p5-Math-FFT
      SUBDIR += p5-Math-Fibonacci
      SUBDIR += p5-Math-Fibonacci-Phi
      SUBDIR += p5-Math-GMP
      SUBDIR += p5-Math-Pari
      SUBDIR += p5-Math-Round
+     SUBDIR += p5-Math-Spline
      SUBDIR += p5-Set-IntSpan
+     SUBDIR += p5-Statistics-Descriptive
      SUBDIR += pari
      SUBDIR += plplot
      SUBDIR += py-Numeric
