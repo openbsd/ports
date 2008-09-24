@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/06/28 08:30:00 ajacoutot Exp $
-
-BROKEN=		needs to cope with recent network changes
+# $OpenBSD: Makefile,v 1.9 2008/09/24 13:56:00 sthen Exp $
 
 COMMENT=	PF to NetFlow converter
 
 DISTNAME=	pfflowd-0.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 MASTER_SITES=	http://www.mindrot.org/files/pfflowd/
 

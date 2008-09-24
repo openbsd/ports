@@ -1,0 +1,12 @@
+$OpenBSD: patch-pfflowd_h,v 1.1 2008/09/24 13:56:00 sthen Exp $
+--- pfflowd.h.orig	Wed Jul 16 13:48:31 2008
++++ pfflowd.h	Wed Jul 16 13:48:40 2008
+@@ -29,7 +29,7 @@
+ #define DEFAULT_INTERFACE       "pfsync0"
+ #define LIBPCAP_SNAPLEN         2020    /* Default MTU */
+  
+-#define _PFSYNC_VER            3
++#define _PFSYNC_VER            4
+ 
+ /*
+  * This is the Cisco Netflow(tm) version 1 packet format

@@ -1,0 +1,182 @@
+$OpenBSD: patch-pfflowd_c,v 1.1 2008/09/24 13:56:00 sthen Exp $
+--- pfflowd.c.orig	Fri Jun 13 02:40:21 2008
++++ pfflowd.c	Fri Jun 13 02:56:30 2008
+@@ -210,14 +210,14 @@ connsock(struct sockaddr *addr, socklen_t len)
+ }
+ 
+ static void 
+-format_pf_host(char *buf, size_t n, struct pf_state_host *h, sa_family_t af)
++format_pf_addr(char *buf, size_t n, const struct pf_addr *h, sa_family_t af)
+ {
+ 	const char *err = NULL;
+ 
+ 	switch (af) {
+ 	case AF_INET:
+ 	case AF_INET6:
+-		if (inet_ntop(af, &h->addr, buf, n) == NULL)
++		if (inet_ntop(af, h, buf, n) == NULL)
+ 			err = strerror(errno);
+ 		break;
+ 	default:
+@@ -253,7 +253,8 @@ send_netflow_v1(const struct pfsync_state *st, u_int n
+ 
+ 	hdr = (struct NF1_HEADER *)packet;
+ 	for(num_packets = offset = j = i = 0; i < n; i++) {
+-		struct pf_state_host src, dst;
++		const struct pf_addr *src, *dst;
++		u_int16_t src_port, dst_port;
+ 		u_int32_t bytes_in, bytes_out;
+ 		u_int32_t packets_in, packets_out;
+ 		char src_s[64], dst_s[64], rt_s[64], pbuf[16], creation_s[64];
+@@ -300,19 +301,23 @@ send_netflow_v1(const struct pfsync_state *st, u_int n
+ 			creation = uptime_ms; /* Avoid u_int wrap */
+ 
+ 		if (st[i].direction == PF_OUT) {
+-			memcpy(&src, &st[i].lan, sizeof(src));
+-			memcpy(&dst, &st[i].ext, sizeof(dst));
++			src = &st[i].key[PF_SK_WIRE].addr[1];
++			dst = &st[i].key[PF_SK_WIRE].addr[0];
++			src_port = st[i].key[PF_SK_WIRE].port[1];
++			dst_port = st[i].key[PF_SK_WIRE].port[0];
+ 		} else {
+-			memcpy(&src, &st[i].ext, sizeof(src));
+-			memcpy(&dst, &st[i].lan, sizeof(dst));
++			src = &st[i].key[PF_SK_STACK].addr[0];
++			dst = &st[i].key[PF_SK_STACK].addr[1];
++			src_port = st[i].key[PF_SK_STACK].port[0];
++			dst_port = st[i].key[PF_SK_STACK].port[1];
+ 		}
+ 
+ 		flw = (struct NF1_FLOW *)(packet + offset);
+ 		if (netflow_socket != -1 && st[i].packets[0][0] != 0) {
+-			flw->src_ip = src.addr.v4.s_addr;
+-			flw->dest_ip = dst.addr.v4.s_addr;
+-			flw->src_port = src.port;
+-			flw->dest_port = dst.port;
++			flw->src_ip = src->v4.s_addr;
++			flw->dest_ip = dst->v4.s_addr;
++			flw->src_port = src_port;
++			flw->dest_port = dst_port;
+ 			flw->flow_packets = st[i].packets[0][0];
+ 			flw->flow_octets = st[i].bytes[0][0];
+ 			flw->flow_start = htonl(uptime_ms - creation);
+@@ -325,10 +330,10 @@ send_netflow_v1(const struct pfsync_state *st, u_int n
+ 		}
+ 		flw = (struct NF1_FLOW *)(packet + offset);
+ 		if (netflow_socket != -1 && st[i].packets[1][0] != 0) {
+-			flw->src_ip = dst.addr.v4.s_addr;
+-			flw->dest_ip = src.addr.v4.s_addr;
+-			flw->src_port = dst.port;
+-			flw->dest_port = src.port;
++			flw->src_ip = dst->v4.s_addr;
++			flw->dest_ip = src->v4.s_addr;
++			flw->src_port = dst_port;
++			flw->dest_port = src_port;
+ 			flw->flow_packets = st[i].packets[1][0];
+ 			flw->flow_octets = st[i].bytes[1][0];
+ 			flw->flow_start = htonl(uptime_ms - creation);
+@@ -352,17 +357,17 @@ send_netflow_v1(const struct pfsync_state *st, u_int n
+ 			strftime(creation_s, sizeof(creation_s), 
+ 			    "%Y-%m-%dT%H:%M:%S", &creation_tm);
+ 
+-			format_pf_host(src_s, sizeof(src_s), &src, st[i].af);
+-			format_pf_host(dst_s, sizeof(dst_s), &dst, st[i].af);
++			format_pf_addr(src_s, sizeof(src_s), src, st[i].af);
++			format_pf_addr(dst_s, sizeof(dst_s), dst, st[i].af);
+ 			inet_ntop(st[i].af, &st[i].rt_addr, rt_s, sizeof(rt_s));
+ 
+ 			if (st[i].proto == IPPROTO_TCP || 
+ 			    st[i].proto == IPPROTO_UDP) {
+ 				snprintf(pbuf, sizeof(pbuf), ":%d", 
+-				    ntohs(src.port));
++				    ntohs(src_port));
+ 				strlcat(src_s, pbuf, sizeof(src_s));
+ 				snprintf(pbuf, sizeof(pbuf), ":%d", 
+-				    ntohs(dst.port));
++				    ntohs(dst_port));
+ 				strlcat(dst_s, pbuf, sizeof(dst_s));
+ 			}
+ 
+@@ -425,9 +430,10 @@ send_netflow_v5(const struct pfsync_state *st, u_int n
+ 
+ 	hdr = (struct NF5_HEADER *)packet;
+ 	for(num_packets = offset = j = i = 0; i < n; i++) {
+-		struct pf_state_host src, dst;
++		const struct pf_addr *src, *dst;
+ 		u_int32_t bytes_in, bytes_out, packets_in, packets_out;
+ 		u_int32_t creation;
++		u_int16_t src_port, dst_port;
+ 		char src_s[64], dst_s[64], rt_s[64], pbuf[16], creation_s[64];
+ 		time_t creation_tt;
+ 		struct tm creation_tm;
+@@ -472,20 +478,25 @@ send_netflow_v5(const struct pfsync_state *st, u_int n
+ 		if (creation > uptime_ms)
+ 			creation = uptime_ms; /* Avoid u_int wrap */
+ 
++
+ 		if (st[i].direction == PF_OUT) {
+-			memcpy(&src, &st[i].lan, sizeof(src));
+-			memcpy(&dst, &st[i].ext, sizeof(dst));
++			src = &st[i].key[PF_SK_WIRE].addr[1];
++			dst = &st[i].key[PF_SK_WIRE].addr[0];
++			src_port = st[i].key[PF_SK_WIRE].port[1];
++			dst_port = st[i].key[PF_SK_WIRE].port[0];
+ 		} else {
+-			memcpy(&src, &st[i].ext, sizeof(src));
+-			memcpy(&dst, &st[i].lan, sizeof(dst));
++			src = &st[i].key[PF_SK_STACK].addr[0];
++			dst = &st[i].key[PF_SK_STACK].addr[1];
++			src_port = st[i].key[PF_SK_STACK].port[0];
++			dst_port = st[i].key[PF_SK_STACK].port[1];
+ 		}
+ 
+ 		flw = (struct NF5_FLOW *)(packet + offset);
+ 		if (netflow_socket != -1 && st[i].packets[0][0] != 0) {
+-			flw->src_ip = src.addr.v4.s_addr;
+-			flw->dest_ip = dst.addr.v4.s_addr;
+-			flw->src_port = src.port;
+-			flw->dest_port = dst.port;
++			flw->src_ip = src->v4.s_addr;
++			flw->dest_ip = dst->v4.s_addr;
++			flw->src_port = src_port;
++			flw->dest_port = dst_port;
+ 			flw->flow_packets = st[i].packets[0][0];
+ 			flw->flow_octets = st[i].bytes[0][0];
+ 			flw->flow_start = htonl(uptime_ms - creation);
+@@ -498,10 +509,10 @@ send_netflow_v5(const struct pfsync_state *st, u_int n
+ 		}
+ 		flw = (struct NF5_FLOW *)(packet + offset);
+ 		if (netflow_socket != -1 && st[i].packets[1][0] != 0) {
+-			flw->src_ip = dst.addr.v4.s_addr;
+-			flw->dest_ip = src.addr.v4.s_addr;
+-			flw->src_port = dst.port;
+-			flw->dest_port = src.port;
++			flw->src_ip = dst->v4.s_addr;
++			flw->dest_ip = src->v4.s_addr;
++			flw->src_port = dst_port;
++			flw->dest_port = src_port;
+ 			flw->flow_packets = st[i].packets[1][0];
+ 			flw->flow_octets = st[i].bytes[1][0];
+ 			flw->flow_start = htonl(uptime_ms - creation);
+@@ -525,17 +536,17 @@ send_netflow_v5(const struct pfsync_state *st, u_int n
+ 			strftime(creation_s, sizeof(creation_s), 
+ 			    "%Y-%m-%dT%H:%M:%S", &creation_tm);
+ 
+-			format_pf_host(src_s, sizeof(src_s), &src, st[i].af);
+-			format_pf_host(dst_s, sizeof(dst_s), &dst, st[i].af);
++			format_pf_addr(src_s, sizeof(src_s), src, st[i].af);
++			format_pf_addr(dst_s, sizeof(dst_s), dst, st[i].af);
+ 			inet_ntop(st[i].af, &st[i].rt_addr, rt_s, sizeof(rt_s));
+ 
+ 			if (st[i].proto == IPPROTO_TCP || 
+ 			    st[i].proto == IPPROTO_UDP) {
+ 				snprintf(pbuf, sizeof(pbuf), ":%d", 
+-				    ntohs(src.port));
++				    ntohs(src_port));
+ 				strlcat(src_s, pbuf, sizeof(src_s));
+ 				snprintf(pbuf, sizeof(pbuf), ":%d", 
+-				    ntohs(dst.port));
++				    ntohs(dst_port));
+ 				strlcat(dst_s, pbuf, sizeof(dst_s));
+ 			}
+ 
