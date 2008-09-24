@@ -1,0 +1,12 @@
+$OpenBSD: patch-webform_components_inc,v 1.1 2008/09/24 15:30:54 espie Exp $
+--- webform_components.inc.orig	Wed Sep 24 17:13:36 2008
++++ webform_components.inc	Wed Sep 24 17:13:49 2008
+@@ -284,7 +284,7 @@ function webform_component_edit_form(&$node, $componen
+     '#default_value' => $component['name'],
+     '#title' => t("Label"),
+     '#description' => t('This is used as a descriptive label when displaying this form element.'),
+-    '#required' => TRUE,
++    '#required' => FALSE,
+     '#weight' => -2,
+     '#maxlength' => 255,
+   );
