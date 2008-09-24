@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2008/09/17 10:18:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.221 2008/09/24 13:47:50 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -141,6 +141,7 @@
      SUBDIR += p5-Imager
      SUBDIR += p5-PerlMagick
      SUBDIR += p5-SVG
+     SUBDIR += p5-SVG-Graph
      SUBDIR += png
      SUBDIR += png2ico
      SUBDIR += pngcrush
