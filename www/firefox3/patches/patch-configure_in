@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2008/07/25 01:52:55 martynas Exp $
---- configure.in.orig	Wed Jun 25 01:51:17 2008
-+++ configure.in	Wed Jul 16 18:58:36 2008
+$OpenBSD: patch-configure_in,v 1.2 2008/09/24 19:25:40 martynas Exp $
+--- configure.in.orig	Thu Aug 14 13:00:32 2008
++++ configure.in	Tue Sep 23 20:37:31 2008
 @@ -128,7 +128,7 @@ LIBGNOME_VERSION=2.0
  STARTUP_NOTIFICATION_VERSION=0.8
  DBUS_VERSION=0.60
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2008/07/25 01:52:55 martynas Exp $
  
  MSMANIFEST_TOOL=
  
-@@ -2205,7 +2205,7 @@ case "$target" in
+@@ -2223,7 +2223,7 @@ case "$target" in
  	;;
  
  *-openbsd*)
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2008/07/25 01:52:55 martynas Exp $
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -4029,7 +4029,7 @@ MOZ_ARG_WITH_BOOL(system-nss,
+@@ -4047,7 +4047,7 @@ MOZ_ARG_WITH_BOOL(system-nss,
      _USE_SYSTEM_NSS=1 )
  
  if test -n "$_USE_SYSTEM_NSS"; then

@@ -1,16 +1,15 @@
-$OpenBSD: patch-browser_components_nsBrowserGlue_js,v 1.1.1.1 2008/07/25 01:52:55 martynas Exp $
---- browser/components/nsBrowserGlue.js.orig	Sat May 10 18:52:32 2008
-+++ browser/components/nsBrowserGlue.js	Fri Jul 18 00:54:00 2008
-@@ -175,34 +175,6 @@ BrowserGlue.prototype = {
+$OpenBSD: patch-browser_components_nsBrowserGlue_js,v 1.2 2008/09/24 19:25:40 martynas Exp $
+--- browser/components/nsBrowserGlue.js.orig	Tue Sep 16 22:07:25 2008
++++ browser/components/nsBrowserGlue.js	Tue Sep 23 20:40:15 2008
+@@ -175,33 +175,6 @@ BrowserGlue.prototype = {
    // profile startup handler (contains profile initialization routines)
    _onProfileStartup: function() 
    {
 -    // Check to see if the EULA must be shown on startup
 -
--    // Global override for tinderbox machines
 -    var prefBranch = Cc["@mozilla.org/preferences-service;1"].
 -                     getService(Ci.nsIPrefBranch);
--    var mustDisplayEULA = true;
+-    var mustDisplayEULA = false;
 -    try {
 -      mustDisplayEULA = !prefBranch.getBoolPref("browser.EULA.override");
 -    } catch (e) {
