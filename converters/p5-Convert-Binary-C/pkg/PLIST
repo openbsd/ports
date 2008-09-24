@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/24 13:29:14 jasper Exp $
+bin/ccconfig
+${P5ARCH}/
+${P5ARCH}/Convert/
+${P5ARCH}/Convert/Binary/
+${P5ARCH}/Convert/Binary/C/
+${P5ARCH}/Convert/Binary/C.pm
+${P5ARCH}/Convert/Binary/C/Cached.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Convert/
+${P5ARCH}/auto/Convert/Binary/
+${P5ARCH}/auto/Convert/Binary/C/
+${P5ARCH}/auto/Convert/Binary/C/C.bs
+${P5ARCH}/auto/Convert/Binary/C/C.so
+@man man/man1/ccconfig.1
+@man man/man3p/Convert::Binary::C.3p
+@man man/man3p/Convert::Binary::C::Cached.3p
