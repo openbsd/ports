@@ -1,0 +1,5 @@
+Bio::ASN1::EntrezGene is a regular expression-based Perl Parser for NCBI
+Entrez Gene genome databases
+(http://www.ncbi.nih.gov/entrez/query.fcgi?db=gene). It parses an
+ASN.1-formatted Entrez Gene record and returns a data structure that
+contains all data items from the gene record.

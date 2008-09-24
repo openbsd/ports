@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/24 13:36:21 jasper Exp $
+${P5SITE}/Bio/
+${P5SITE}/Bio/ASN1/
+${P5SITE}/Bio/ASN1/EntrezGene/
+${P5SITE}/Bio/ASN1/EntrezGene.pm
+${P5SITE}/Bio/ASN1/EntrezGene/Indexer.pm
+${P5SITE}/Bio/ASN1/Sequence/
+${P5SITE}/Bio/ASN1/Sequence.pm
+${P5SITE}/Bio/ASN1/Sequence/Indexer.pm
+@man man/man3p/Bio::ASN1::EntrezGene.3p
+@man man/man3p/Bio::ASN1::EntrezGene::Indexer.3p
+@man man/man3p/Bio::ASN1::Sequence.3p
+@man man/man3p/Bio::ASN1::Sequence::Indexer.3p
