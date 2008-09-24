@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2008/08/20 11:05:50 simon Exp $
+# $OpenBSD: Makefile,v 1.44 2008/09/24 13:30:07 jasper Exp $
 #
 
     SUBDIR += base64
@@ -18,6 +18,7 @@
     SUBDIR += p5-Convert-ASN1
     SUBDIR += p5-Convert-BER
     SUBDIR += p5-Convert-BinHex
+    SUBDIR += p5-Convert-Binary-C
     SUBDIR += p5-Convert-PEM
     SUBDIR += p5-Convert-TNEF
     SUBDIR += p5-Convert-UU
