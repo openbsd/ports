@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2008/08/20 09:02:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2008/09/24 17:29:46 ajacoutot Exp $
 
 COMMENT-main=	lame ain't an MP3 encoder
 COMMENT-mp3x=	gtk frame analyzer
 
-V=		3.98
-DISTNAME=	lame-398
+V=		3.98.2
+DISTNAME=	lame-398-2
 PKGNAME-main=	lame-${V}
 PKGNAME-mp3x=	lame-mp3x-${V}
 
