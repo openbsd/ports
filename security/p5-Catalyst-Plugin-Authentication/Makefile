@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/09/13 15:27:51 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2008/09/24 06:40:32 sturm Exp $
 
 COMMENT= 	Catalyst authentication framework
 
@@ -18,11 +18,11 @@ MODULES=	cpan
 RUN_DEPENDS=	::devel/p5-Class-Inspector \
 		::www/p5-Catalyst-Runtime \
 		::www/p5-Catalyst-Plugin-Session
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		::devel/p5-Test-Exception
 REGRESS_DEPENDS=::devel/p5-Test-WWW-Mechanize-Catalyst \
 		::security/p5-Digest-SHA1 \
-		::www/p5-Catalyst-Plugin-Session-State-Cookie \
-		::devel/p5-Test-Exception
+		::www/p5-Catalyst-Plugin-Session-State-Cookie
 
 MAKE_ENV=	TEST_POD=Yes
 
