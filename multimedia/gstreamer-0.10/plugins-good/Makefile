@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2008/09/22 15:45:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2008/09/24 23:01:32 jakemsr Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -32,7 +32,7 @@ PKGNAME-png =		gstreamer-png-$Vp0
 PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp1
 PKGNAME-caca =		gstreamer-libcaca-$Vp0
 PKGNAME-shout =		gstreamer-shoutcast-$Vp0
-PKGNAME-soup =		gstreamer-libsoup-$V
+PKGNAME-soup =		gstreamer-libsoup-$Vp0
 
 
 MULTI_PACKAGES =	-main -aalib -cairo -gconf -esd -flac -speex \
@@ -143,7 +143,7 @@ LIB_DEPENDS-shout =	${LIB_DEPENDS} \
 			shout::net/libshout
 
 WANTLIB-soup =		${WANTLIB} \
-			gio-2.0 gstbase-0.10.0 gsttag-0.10
+			gio-2.0 gstbase-0.10 gsttag-0.10
 
 LIB_DEPENDS-soup =	${LIB_DEPENDS} \
 			soup-2.4::devel/libsoup
