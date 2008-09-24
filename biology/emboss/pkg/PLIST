@@ -1,178 +1,196 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/11/06 06:30:32 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/09/24 17:14:26 jasper Exp $
 @conflict pscan-*
 %%SHARED%%
-bin/aaindexextract
-bin/abiview
-bin/acdc
-bin/acdpretty
-bin/acdtable
-bin/acdtrace
-bin/acdvalid
-bin/antigenic
-bin/backtranambig
-bin/backtranseq
-bin/banana
-bin/biosed
-bin/btwisted
-bin/cai
-bin/chaos
-bin/charge
-bin/checktrans
-bin/chips
-bin/cirdna
-bin/codcmp
-bin/codcopy
-bin/coderet
-bin/compseq
-bin/cons
-bin/cpgplot
-bin/cpgreport
-bin/cusp
-bin/cutgextract
-bin/cutseq
-bin/dan
-bin/dbiblast
-bin/dbifasta
-bin/dbiflat
-bin/dbigcg
-bin/dbxfasta
-bin/dbxflat
-bin/dbxgcg
-bin/degapseq
-bin/descseq
-bin/diffseq
-bin/digest
-bin/distmat
-bin/dotmatcher
-bin/dotpath
-bin/dottup
-bin/dreg
-bin/edialign
-bin/einverted
-bin/embossdata
-bin/embossversion
-bin/emma
-bin/emowse
-bin/entret
-bin/epestfind
-bin/eprimer3
-bin/equicktandem
-bin/est2genome
-bin/etandem
-bin/extractalign
-bin/extractfeat
-bin/extractseq
-bin/findkm
-bin/freak
-bin/fuzznuc
-bin/fuzzpro
-bin/fuzztran
-bin/garnier
-bin/geecee
-bin/getorf
-bin/helixturnhelix
-bin/hmoment
-bin/iep
-bin/infoalign
-bin/infoseq
-bin/isochore
-bin/jembossctl
-bin/lindna
-bin/listor
-bin/makenucseq
-bin/makeprotseq
-bin/marscan
-bin/maskfeat
-bin/maskseq
-bin/matcher
-bin/megamerger
-bin/merger
-bin/msbar
-bin/mwcontam
-bin/mwfilter
-bin/needle
-bin/newcpgreport
-bin/newcpgseek
-bin/newseq
-bin/noreturn
-bin/notseq
-bin/nthseq
-bin/octanol
-bin/oddcomp
-bin/palindrome
-bin/pasteseq
-bin/patmatdb
-bin/patmatmotifs
-bin/pepcoil
-bin/pepinfo
-bin/pepnet
-bin/pepstats
-bin/pepwheel
-bin/pepwindow
-bin/pepwindowall
-bin/plotcon
-bin/plotorf
-bin/polydot
-bin/preg
-bin/prettyplot
-bin/prettyseq
-bin/primersearch
-bin/printsextract
-bin/profit
-bin/prophecy
-bin/prophet
-bin/prosextract
-bin/pscan
-bin/psiphi
-bin/rebaseextract
-bin/recoder
-bin/redata
-bin/remap
-bin/restover
-bin/restrict
-bin/revseq
+@bin bin/aaindexextract
+@bin bin/abiview
+@bin bin/acdc
+@bin bin/acdpretty
+@bin bin/acdtable
+@bin bin/acdtrace
+@bin bin/acdvalid
+@bin bin/aligncopy
+@bin bin/aligncopypair
+@bin bin/antigenic
+@bin bin/backtranambig
+@bin bin/backtranseq
+@bin bin/banana
+@bin bin/biosed
+@bin bin/btwisted
+@bin bin/cai
+@bin bin/chaos
+@bin bin/charge
+@bin bin/checktrans
+@bin bin/chips
+@bin bin/cirdna
+@bin bin/codcmp
+@bin bin/codcopy
+@bin bin/coderet
+@bin bin/compseq
+@bin bin/cons
+@bin bin/consambig
+@bin bin/cpgplot
+@bin bin/cpgreport
+@bin bin/cusp
+@bin bin/cutgextract
+@bin bin/cutseq
+@bin bin/dan
+@bin bin/dbiblast
+@bin bin/dbifasta
+@bin bin/dbiflat
+@bin bin/dbigcg
+@bin bin/dbxfasta
+@bin bin/dbxflat
+@bin bin/dbxgcg
+@bin bin/degapseq
+@bin bin/density
+@bin bin/descseq
+@bin bin/diffseq
+@bin bin/digest
+@bin bin/distmat
+@bin bin/dotmatcher
+@bin bin/dotpath
+@bin bin/dottup
+@bin bin/dreg
+@bin bin/edialign
+@bin bin/einverted
+@bin bin/embossdata
+@bin bin/embossversion
+@bin bin/emma
+@bin bin/emowse
+@bin bin/entret
+@bin bin/epestfind
+@bin bin/eprimer3
+@bin bin/equicktandem
+@bin bin/est2genome
+@bin bin/etandem
+@bin bin/extractalign
+@bin bin/extractfeat
+@bin bin/extractseq
+@bin bin/featcopy
+@bin bin/featreport
+@bin bin/findkm
+@bin bin/freak
+@bin bin/fuzznuc
+@bin bin/fuzzpro
+@bin bin/fuzztran
+@bin bin/garnier
+@bin bin/geecee
+@bin bin/getorf
+@bin bin/helixturnhelix
+@bin bin/hmoment
+@bin bin/iep
+@bin bin/infoalign
+@bin bin/infobase
+@bin bin/inforesidue
+@bin bin/infoseq
+@bin bin/isochore
+@bin bin/jaspextract
+@bin bin/jaspscan
+@bin bin/jembossctl
+@bin bin/lindna
+@bin bin/listor
+@bin bin/makenucseq
+@bin bin/makeprotseq
+@bin bin/marscan
+@bin bin/maskambignuc
+@bin bin/maskambigprot
+@bin bin/maskfeat
+@bin bin/maskseq
+@bin bin/matcher
+@bin bin/megamerger
+@bin bin/merger
+@bin bin/msbar
+@bin bin/mwcontam
+@bin bin/mwfilter
+@bin bin/needle
+@bin bin/newcpgreport
+@bin bin/newcpgseek
+@bin bin/newseq
+@bin bin/nohtml
+@bin bin/noreturn
+@bin bin/nospace
+@bin bin/notab
+@bin bin/notseq
+@bin bin/nthseq
+@bin bin/octanol
+@bin bin/oddcomp
+@bin bin/palindrome
+@bin bin/pasteseq
+@bin bin/patmatdb
+@bin bin/patmatmotifs
+@bin bin/pepcoil
+@bin bin/pepinfo
+@bin bin/pepnet
+@bin bin/pepstats
+@bin bin/pepwheel
+@bin bin/pepwindow
+@bin bin/pepwindowall
+@bin bin/plotcon
+@bin bin/plotorf
+@bin bin/polydot
+@bin bin/preg
+@bin bin/prettyplot
+@bin bin/prettyseq
+@bin bin/primersearch
+@bin bin/printsextract
+@bin bin/profit
+@bin bin/prophecy
+@bin bin/prophet
+@bin bin/prosextract
+@bin bin/pscan
+@bin bin/psiphi
+@bin bin/rebaseextract
+@bin bin/recoder
+@bin bin/redata
+@bin bin/remap
+@bin bin/restover
+@bin bin/restrict
+@bin bin/revseq
 bin/runJemboss.csh
-bin/seealso
-bin/seqmatchall
-bin/seqret
-bin/seqretsplit
-bin/showalign
-bin/showdb
-bin/showfeat
-bin/showorf
-bin/showseq
-bin/shuffleseq
-bin/sigcleave
-bin/silent
-bin/sirna
-bin/sixpack
-bin/skipseq
-bin/splitter
-bin/stretcher
-bin/stssearch
-bin/supermatcher
-bin/syco
-bin/tcode
-bin/textsearch
-bin/tfextract
-bin/tfm
-bin/tfscan
-bin/tmap
-bin/tranalign
-bin/transeq
-bin/trimest
-bin/trimseq
-bin/twofeat
-bin/union
-bin/vectorstrip
-bin/water
-bin/whichdb
-bin/wobble
-bin/wordcount
-bin/wordfinder
-bin/wordmatch
-bin/wossname
-bin/yank
+@bin bin/seealso
+@bin bin/seqmatchall
+@bin bin/seqret
+@bin bin/seqretsplit
+@bin bin/showalign
+@bin bin/showdb
+@bin bin/showfeat
+@bin bin/showorf
+@bin bin/showseq
+@bin bin/shuffleseq
+@bin bin/sigcleave
+@bin bin/silent
+@bin bin/sirna
+@bin bin/sixpack
+@bin bin/sizeseq
+@bin bin/skipredundant
+@bin bin/skipseq
+@bin bin/splitter
+@bin bin/stretcher
+@bin bin/stssearch
+@bin bin/supermatcher
+@bin bin/syco
+@bin bin/tcode
+@bin bin/textsearch
+@bin bin/tfextract
+@bin bin/tfm
+@bin bin/tfscan
+@bin bin/tmap
+@bin bin/tranalign
+@bin bin/transeq
+@bin bin/trimest
+@bin bin/trimseq
+@bin bin/trimspace
+@bin bin/twofeat
+@bin bin/union
+@bin bin/vectorstrip
+@bin bin/water
+@bin bin/whichdb
+@bin bin/wobble
+@bin bin/wordcount
+@bin bin/wordfinder
+@bin bin/wordmatch
+@bin bin/wossname
+@bin bin/yank
 include/ajacd.h
 include/ajalign.h
 include/ajarch.h
@@ -191,6 +209,8 @@ include/ajexcept.h
 include/ajfeat.h
 include/ajfeatdata.h
 include/ajfile.h
+include/ajfiledata.h
+include/ajfileio.h
 include/ajfmt.h
 include/ajgraph.h
 include/ajgraphstruct.h
@@ -294,6 +314,8 @@ share/EMBOSS/acd/acdvalid.acd
 share/EMBOSS/acd/ajbad.acd
 share/EMBOSS/acd/ajfeatest.acd
 share/EMBOSS/acd/ajtest.acd
+share/EMBOSS/acd/aligncopy.acd
+share/EMBOSS/acd/aligncopypair.acd
 share/EMBOSS/acd/antigenic.acd
 share/EMBOSS/acd/backtranambig.acd
 share/EMBOSS/acd/backtranseq.acd
@@ -313,6 +335,7 @@ share/EMBOSS/acd/codes.english
 share/EMBOSS/acd/complex.acd
 share/EMBOSS/acd/compseq.acd
 share/EMBOSS/acd/cons.acd
+share/EMBOSS/acd/consambig.acd
 share/EMBOSS/acd/corbatest.acd
 share/EMBOSS/acd/cpgplot.acd
 share/EMBOSS/acd/cpgreport.acd
@@ -329,14 +352,7 @@ share/EMBOSS/acd/dbxflat.acd
 share/EMBOSS/acd/dbxgcg.acd
 share/EMBOSS/acd/dbxstat.acd
 share/EMBOSS/acd/degapseq.acd
-share/EMBOSS/acd/demoalign.acd
-share/EMBOSS/acd/demofeatures.acd
-share/EMBOSS/acd/demolist.acd
-share/EMBOSS/acd/demoreport.acd
-share/EMBOSS/acd/demosequence.acd
-share/EMBOSS/acd/demostring.acd
-share/EMBOSS/acd/demostringnew.acd
-share/EMBOSS/acd/demotable.acd
+share/EMBOSS/acd/density.acd
 share/EMBOSS/acd/descseq.acd
 share/EMBOSS/acd/diffseq.acd
 share/EMBOSS/acd/digest.acd
@@ -361,6 +377,8 @@ share/EMBOSS/acd/etandem.acd
 share/EMBOSS/acd/extractalign.acd
 share/EMBOSS/acd/extractfeat.acd
 share/EMBOSS/acd/extractseq.acd
+share/EMBOSS/acd/featcopy.acd
+share/EMBOSS/acd/featreport.acd
 share/EMBOSS/acd/findkm.acd
 share/EMBOSS/acd/freak.acd
 share/EMBOSS/acd/fuzznuc.acd
@@ -379,6 +397,8 @@ share/EMBOSS/acd/infoalign.acd
 share/EMBOSS/acd/infoseq.acd
 share/EMBOSS/acd/intconv.acd
 share/EMBOSS/acd/isochore.acd
+share/EMBOSS/acd/jaspextract.acd
+share/EMBOSS/acd/jaspscan.acd
 share/EMBOSS/acd/keywords.standard
 share/EMBOSS/acd/knowntypes.standard
 share/EMBOSS/acd/lindna.acd
@@ -386,6 +406,8 @@ share/EMBOSS/acd/listor.acd
 share/EMBOSS/acd/makenucseq.acd
 share/EMBOSS/acd/makeprotseq.acd
 share/EMBOSS/acd/marscan.acd
+share/EMBOSS/acd/maskambignuc.acd
+share/EMBOSS/acd/maskambigprot.acd
 share/EMBOSS/acd/maskfeat.acd
 share/EMBOSS/acd/maskseq.acd
 share/EMBOSS/acd/matcher.acd
@@ -399,7 +421,10 @@ share/EMBOSS/acd/newcoils.acd
 share/EMBOSS/acd/newcpgreport.acd
 share/EMBOSS/acd/newcpgseek.acd
 share/EMBOSS/acd/newseq.acd
+share/EMBOSS/acd/nohtml.acd
 share/EMBOSS/acd/noreturn.acd
+share/EMBOSS/acd/nospace.acd
+share/EMBOSS/acd/notab.acd
 share/EMBOSS/acd/notseq.acd
 share/EMBOSS/acd/nthseq.acd
 share/EMBOSS/acd/octanol.acd
@@ -462,6 +487,8 @@ share/EMBOSS/acd/sigcleave.acd
 share/EMBOSS/acd/silent.acd
 share/EMBOSS/acd/sirna.acd
 share/EMBOSS/acd/sixpack.acd
+share/EMBOSS/acd/sizeseq.acd
+share/EMBOSS/acd/skipredundant.acd
 share/EMBOSS/acd/skipseq.acd
 share/EMBOSS/acd/splitter.acd
 share/EMBOSS/acd/stretcher.acd
@@ -852,6 +879,7 @@ share/EMBOSS/data/Efeatures.embl
 share/EMBOSS/data/Efeatures.emboss
 share/EMBOSS/data/Efeatures.gff
 share/EMBOSS/data/Efeatures.gff3
+share/EMBOSS/data/Efeatures.gff3protein
 share/EMBOSS/data/Efeatures.gffprotein
 share/EMBOSS/data/Efeatures.pir
 share/EMBOSS/data/Efeatures.protein
@@ -863,6 +891,7 @@ share/EMBOSS/data/Ehth87.dat
 share/EMBOSS/data/Emass.dat
 share/EMBOSS/data/Emassmod.dat
 share/EMBOSS/data/Ememe.dat
+share/EMBOSS/data/Emolwt.dat
 share/EMBOSS/data/Emwfilter.dat
 share/EMBOSS/data/Enakai.dat
 share/EMBOSS/data/Epepcoil.dat
@@ -870,6 +899,7 @@ share/EMBOSS/data/Epk.dat
 share/EMBOSS/data/Epprofile
 share/EMBOSS/data/Eprior1.plib
 share/EMBOSS/data/Eprior30.plib
+share/EMBOSS/data/Eresidues.iub
 share/EMBOSS/data/Erna.melt
 share/EMBOSS/data/Esig.euk
 share/EMBOSS/data/Esig.pro
@@ -884,6 +914,18 @@ share/EMBOSS/data/Etags.swiss
 share/EMBOSS/data/Etcode.dat
 share/EMBOSS/data/Evdw.dat
 share/EMBOSS/data/Ewhite-wimley.dat
+share/EMBOSS/data/JASPAR_CNE/
+share/EMBOSS/data/JASPAR_CNE/dummyfile
+share/EMBOSS/data/JASPAR_CORE/
+share/EMBOSS/data/JASPAR_CORE/dummyfile
+share/EMBOSS/data/JASPAR_FAM/
+share/EMBOSS/data/JASPAR_FAM/dummyfile
+share/EMBOSS/data/JASPAR_PHYLOFACTS/
+share/EMBOSS/data/JASPAR_PHYLOFACTS/dummyfile
+share/EMBOSS/data/JASPAR_POLII/
+share/EMBOSS/data/JASPAR_POLII/dummyfile
+share/EMBOSS/data/JASPAR_SPLICE/
+share/EMBOSS/data/JASPAR_SPLICE/dummyfile
 share/EMBOSS/data/Matrices.nucleotide
 share/EMBOSS/data/Matrices.protein
 share/EMBOSS/data/Matrices.proteinstructure
@@ -1235,6 +1277,8 @@ share/EMBOSS/test/data/nuc.pat
 share/EMBOSS/test/data/nucseq.pat
 share/EMBOSS/test/data/nucsimple.pat
 share/EMBOSS/test/data/opsd.msf
+share/EMBOSS/test/data/paamir.gff
+share/EMBOSS/test/data/paamir.gff3
 share/EMBOSS/test/data/paamir.pep
 share/EMBOSS/test/data/pax6_cdna.fasta
 share/EMBOSS/test/data/prints.test
@@ -1381,260 +1425,6 @@ share/EMBOSS/test/testdb/division.lkp
 share/EMBOSS/test/testdb/entrynam.idx
 share/EMBOSS/test/testdb/testdb.fasta
 share/doc/EMBOSS/
-share/doc/EMBOSS/html/
-share/doc/EMBOSS/html/emboss/
-share/doc/EMBOSS/html/emboss/apps/
-share/doc/EMBOSS/html/emboss/apps/aaindexextract.html
-share/doc/EMBOSS/html/emboss/apps/abiview.1.abiview.gif
-share/doc/EMBOSS/html/emboss/apps/abiview.html
-share/doc/EMBOSS/html/emboss/apps/acd_group.html
-share/doc/EMBOSS/html/emboss/apps/acdc.html
-share/doc/EMBOSS/html/emboss/apps/acdlog.html
-share/doc/EMBOSS/html/emboss/apps/acdpretty.html
-share/doc/EMBOSS/html/emboss/apps/acdtable.html
-share/doc/EMBOSS/html/emboss/apps/acdtrace.html
-share/doc/EMBOSS/html/emboss/apps/acdvalid.html
-share/doc/EMBOSS/html/emboss/apps/ajtest.html
-share/doc/EMBOSS/html/emboss/apps/alignment_consensus_group.html
-share/doc/EMBOSS/html/emboss/apps/alignment_differences_group.html
-share/doc/EMBOSS/html/emboss/apps/alignment_dot_plots_group.html
-share/doc/EMBOSS/html/emboss/apps/alignment_global_group.html
-share/doc/EMBOSS/html/emboss/apps/alignment_local_group.html
-share/doc/EMBOSS/html/emboss/apps/alignment_multiple_group.html
-share/doc/EMBOSS/html/emboss/apps/antigenic.html
-share/doc/EMBOSS/html/emboss/apps/backtranambig.html
-share/doc/EMBOSS/html/emboss/apps/backtranseq.html
-share/doc/EMBOSS/html/emboss/apps/banana.1.banana.gif
-share/doc/EMBOSS/html/emboss/apps/banana.html
-share/doc/EMBOSS/html/emboss/apps/biosed.html
-share/doc/EMBOSS/html/emboss/apps/btwisted.html
-share/doc/EMBOSS/html/emboss/apps/cai.html
-share/doc/EMBOSS/html/emboss/apps/chaos.1.chaos.gif
-share/doc/EMBOSS/html/emboss/apps/chaos.html
-share/doc/EMBOSS/html/emboss/apps/charge.html
-share/doc/EMBOSS/html/emboss/apps/checktrans.html
-share/doc/EMBOSS/html/emboss/apps/chips.html
-share/doc/EMBOSS/html/emboss/apps/cirdna.1.cirdna.gif
-share/doc/EMBOSS/html/emboss/apps/cirdna.html
-share/doc/EMBOSS/html/emboss/apps/codcmp.html
-share/doc/EMBOSS/html/emboss/apps/codcopy.html
-share/doc/EMBOSS/html/emboss/apps/coderet.html
-share/doc/EMBOSS/html/emboss/apps/compseq.html
-share/doc/EMBOSS/html/emboss/apps/cons.html
-share/doc/EMBOSS/html/emboss/apps/cpgplot.1.cpgplot.gif
-share/doc/EMBOSS/html/emboss/apps/cpgplot.html
-share/doc/EMBOSS/html/emboss/apps/cpgreport.html
-share/doc/EMBOSS/html/emboss/apps/cusp.html
-share/doc/EMBOSS/html/emboss/apps/cutgextract.html
-share/doc/EMBOSS/html/emboss/apps/cutseq.html
-share/doc/EMBOSS/html/emboss/apps/dan.2.dan.gif
-share/doc/EMBOSS/html/emboss/apps/dan.html
-share/doc/EMBOSS/html/emboss/apps/dbiblast.html
-share/doc/EMBOSS/html/emboss/apps/dbifasta.html
-share/doc/EMBOSS/html/emboss/apps/dbiflat.html
-share/doc/EMBOSS/html/emboss/apps/dbigcg.html
-share/doc/EMBOSS/html/emboss/apps/dbxfasta.html
-share/doc/EMBOSS/html/emboss/apps/dbxflat.html
-share/doc/EMBOSS/html/emboss/apps/dbxgcg.html
-share/doc/EMBOSS/html/emboss/apps/degapseq.html
-share/doc/EMBOSS/html/emboss/apps/descseq.html
-share/doc/EMBOSS/html/emboss/apps/diffseq.html
-share/doc/EMBOSS/html/emboss/apps/digest.html
-share/doc/EMBOSS/html/emboss/apps/display_group.html
-share/doc/EMBOSS/html/emboss/apps/distmat.html
-share/doc/EMBOSS/html/emboss/apps/dotmatcher.1.dotmatcher.gif
-share/doc/EMBOSS/html/emboss/apps/dotmatcher.html
-share/doc/EMBOSS/html/emboss/apps/dotpath.1.dotpath.gif
-share/doc/EMBOSS/html/emboss/apps/dotpath.html
-share/doc/EMBOSS/html/emboss/apps/dottup.1.dottup.gif
-share/doc/EMBOSS/html/emboss/apps/dottup.html
-share/doc/EMBOSS/html/emboss/apps/dreg.html
-share/doc/EMBOSS/html/emboss/apps/edialign.html
-share/doc/EMBOSS/html/emboss/apps/einverted.html
-share/doc/EMBOSS/html/emboss/apps/emboss_icon.gif
-share/doc/EMBOSS/html/emboss/apps/emboss_icon.jpg
-share/doc/EMBOSS/html/emboss/apps/embossdata.html
-share/doc/EMBOSS/html/emboss/apps/embossversion.html
-share/doc/EMBOSS/html/emboss/apps/emma.html
-share/doc/EMBOSS/html/emboss/apps/emowse.html
-share/doc/EMBOSS/html/emboss/apps/entret.html
-share/doc/EMBOSS/html/emboss/apps/enzyme_kinetics_group.html
-share/doc/EMBOSS/html/emboss/apps/epestfind.html
-share/doc/EMBOSS/html/emboss/apps/eprimer3.html
-share/doc/EMBOSS/html/emboss/apps/equicktandem.html
-share/doc/EMBOSS/html/emboss/apps/est2genome.html
-share/doc/EMBOSS/html/emboss/apps/etandem.html
-share/doc/EMBOSS/html/emboss/apps/extractfeat.html
-share/doc/EMBOSS/html/emboss/apps/extractseq.html
-share/doc/EMBOSS/html/emboss/apps/feature_tables_group.html
-share/doc/EMBOSS/html/emboss/apps/findkm.1.findkm.gif
-share/doc/EMBOSS/html/emboss/apps/findkm.html
-share/doc/EMBOSS/html/emboss/apps/freak.html
-share/doc/EMBOSS/html/emboss/apps/fuzznuc.html
-share/doc/EMBOSS/html/emboss/apps/fuzzpro.html
-share/doc/EMBOSS/html/emboss/apps/fuzztran.html
-share/doc/EMBOSS/html/emboss/apps/garnier.html
-share/doc/EMBOSS/html/emboss/apps/geecee.html
-share/doc/EMBOSS/html/emboss/apps/getorf.html
-share/doc/EMBOSS/html/emboss/apps/groups.html
-share/doc/EMBOSS/html/emboss/apps/helixturnhelix.html
-share/doc/EMBOSS/html/emboss/apps/hmm_group.html
-share/doc/EMBOSS/html/emboss/apps/hmoment.html
-share/doc/EMBOSS/html/emboss/apps/iep.html
-share/doc/EMBOSS/html/emboss/apps/index.html
-share/doc/EMBOSS/html/emboss/apps/infoalign.html
-share/doc/EMBOSS/html/emboss/apps/information_group.html
-share/doc/EMBOSS/html/emboss/apps/infoseq.html
-share/doc/EMBOSS/html/emboss/apps/isochore.1.isochore.gif
-share/doc/EMBOSS/html/emboss/apps/isochore.html
-share/doc/EMBOSS/html/emboss/apps/jembossctl.html
-share/doc/EMBOSS/html/emboss/apps/lindna.1.lindna.gif
-share/doc/EMBOSS/html/emboss/apps/lindna.html
-share/doc/EMBOSS/html/emboss/apps/listor.html
-share/doc/EMBOSS/html/emboss/apps/makenucseq.html
-share/doc/EMBOSS/html/emboss/apps/makeprotseq.html
-share/doc/EMBOSS/html/emboss/apps/marscan.html
-share/doc/EMBOSS/html/emboss/apps/maskfeat.html
-share/doc/EMBOSS/html/emboss/apps/maskseq.html
-share/doc/EMBOSS/html/emboss/apps/matcher.html
-share/doc/EMBOSS/html/emboss/apps/megamerger.html
-share/doc/EMBOSS/html/emboss/apps/menus_group.html
-share/doc/EMBOSS/html/emboss/apps/merger.html
-share/doc/EMBOSS/html/emboss/apps/msbar.html
-share/doc/EMBOSS/html/emboss/apps/mwcontam.html
-share/doc/EMBOSS/html/emboss/apps/mwfilter.html
-share/doc/EMBOSS/html/emboss/apps/needle.html
-share/doc/EMBOSS/html/emboss/apps/newcpgreport.html
-share/doc/EMBOSS/html/emboss/apps/newcpgseek.html
-share/doc/EMBOSS/html/emboss/apps/newseq.html
-share/doc/EMBOSS/html/emboss/apps/noreturn.html
-share/doc/EMBOSS/html/emboss/apps/notseq.html
-share/doc/EMBOSS/html/emboss/apps/nthseq.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_2d_structure_group.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_codon_usage_group.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_codon_usage_nucleic_gene_finding_group.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_composition_group.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_cpg_islands_group.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_gene_finding_group.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_motifs_group.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_mutation_group.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_primers_group.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_profiles_group.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_repeats_group.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_restriction_group.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_transcription_group.html
-share/doc/EMBOSS/html/emboss/apps/nucleic_translation_group.html
-share/doc/EMBOSS/html/emboss/apps/octanol.1.octanol.gif
-share/doc/EMBOSS/html/emboss/apps/octanol.html
-share/doc/EMBOSS/html/emboss/apps/oddcomp.html
-share/doc/EMBOSS/html/emboss/apps/palindrome.html
-share/doc/EMBOSS/html/emboss/apps/pasteseq.html
-share/doc/EMBOSS/html/emboss/apps/patmatdb.html
-share/doc/EMBOSS/html/emboss/apps/patmatmotifs.html
-share/doc/EMBOSS/html/emboss/apps/pepcoil.html
-share/doc/EMBOSS/html/emboss/apps/pepinfo.1.pepinfo.gif
-share/doc/EMBOSS/html/emboss/apps/pepinfo.html
-share/doc/EMBOSS/html/emboss/apps/pepnet.1.pepnet.gif
-share/doc/EMBOSS/html/emboss/apps/pepnet.html
-share/doc/EMBOSS/html/emboss/apps/pepstats.html
-share/doc/EMBOSS/html/emboss/apps/pepwheel.1.pepwheel.gif
-share/doc/EMBOSS/html/emboss/apps/pepwheel.html
-share/doc/EMBOSS/html/emboss/apps/pepwindow.1.pepwindow.gif
-share/doc/EMBOSS/html/emboss/apps/pepwindow.html
-share/doc/EMBOSS/html/emboss/apps/pepwindowall.1.pepwindowall.gif
-share/doc/EMBOSS/html/emboss/apps/pepwindowall.html
-share/doc/EMBOSS/html/emboss/apps/phylogeny_consensus_group.html
-share/doc/EMBOSS/html/emboss/apps/phylogeny_continuous_characters_group.html
-share/doc/EMBOSS/html/emboss/apps/phylogeny_discrete_characters_group.html
-share/doc/EMBOSS/html/emboss/apps/phylogeny_distance_matrix_group.html
-share/doc/EMBOSS/html/emboss/apps/phylogeny_gene_frequencies_group.html
-share/doc/EMBOSS/html/emboss/apps/phylogeny_group.html
-share/doc/EMBOSS/html/emboss/apps/phylogeny_molecular_sequence_group.html
-share/doc/EMBOSS/html/emboss/apps/phylogeny_tree_drawing_group.html
-share/doc/EMBOSS/html/emboss/apps/plotcon.1.plotcon.gif
-share/doc/EMBOSS/html/emboss/apps/plotcon.html
-share/doc/EMBOSS/html/emboss/apps/plotorf.1.plotorf.gif
-share/doc/EMBOSS/html/emboss/apps/plotorf.2.plotorf.gif
-share/doc/EMBOSS/html/emboss/apps/plotorf.html
-share/doc/EMBOSS/html/emboss/apps/polydot.1.polydot.gif
-share/doc/EMBOSS/html/emboss/apps/polydot.html
-share/doc/EMBOSS/html/emboss/apps/preg.html
-share/doc/EMBOSS/html/emboss/apps/prettyplot.1.prettyplot.gif
-share/doc/EMBOSS/html/emboss/apps/prettyplot.2.prettyplot.gif
-share/doc/EMBOSS/html/emboss/apps/prettyplot.html
-share/doc/EMBOSS/html/emboss/apps/prettyseq.html
-share/doc/EMBOSS/html/emboss/apps/primersearch.html
-share/doc/EMBOSS/html/emboss/apps/printsextract.html
-share/doc/EMBOSS/html/emboss/apps/profit.html
-share/doc/EMBOSS/html/emboss/apps/prophecy.html
-share/doc/EMBOSS/html/emboss/apps/prophet.html
-share/doc/EMBOSS/html/emboss/apps/prosextract.html
-share/doc/EMBOSS/html/emboss/apps/protein_2d_structure_group.html
-share/doc/EMBOSS/html/emboss/apps/protein_3d_structure_group.html
-share/doc/EMBOSS/html/emboss/apps/protein_composition_group.html
-share/doc/EMBOSS/html/emboss/apps/protein_motifs_group.html
-share/doc/EMBOSS/html/emboss/apps/protein_mutation_group.html
-share/doc/EMBOSS/html/emboss/apps/protein_profiles_group.html
-share/doc/EMBOSS/html/emboss/apps/protein_sequence_alignment_group.html
-share/doc/EMBOSS/html/emboss/apps/pscan.html
-share/doc/EMBOSS/html/emboss/apps/psiphi.html
-share/doc/EMBOSS/html/emboss/apps/rebaseextract.html
-share/doc/EMBOSS/html/emboss/apps/recoder.html
-share/doc/EMBOSS/html/emboss/apps/redata.html
-share/doc/EMBOSS/html/emboss/apps/remap.html
-share/doc/EMBOSS/html/emboss/apps/restover.html
-share/doc/EMBOSS/html/emboss/apps/restrict.html
-share/doc/EMBOSS/html/emboss/apps/revseq.html
-share/doc/EMBOSS/html/emboss/apps/seealso.html
-share/doc/EMBOSS/html/emboss/apps/seqmatchall.html
-share/doc/EMBOSS/html/emboss/apps/seqret.html
-share/doc/EMBOSS/html/emboss/apps/seqretsplit.html
-share/doc/EMBOSS/html/emboss/apps/showalign.html
-share/doc/EMBOSS/html/emboss/apps/showdb.html
-share/doc/EMBOSS/html/emboss/apps/showfeat.html
-share/doc/EMBOSS/html/emboss/apps/showorf.html
-share/doc/EMBOSS/html/emboss/apps/showseq.html
-share/doc/EMBOSS/html/emboss/apps/shuffleseq.html
-share/doc/EMBOSS/html/emboss/apps/sigcleave.html
-share/doc/EMBOSS/html/emboss/apps/silent.html
-share/doc/EMBOSS/html/emboss/apps/sirna.html
-share/doc/EMBOSS/html/emboss/apps/sixpack.html
-share/doc/EMBOSS/html/emboss/apps/skipseq.html
-share/doc/EMBOSS/html/emboss/apps/splitter.html
-share/doc/EMBOSS/html/emboss/apps/stretcher.html
-share/doc/EMBOSS/html/emboss/apps/stssearch.html
-share/doc/EMBOSS/html/emboss/apps/supermatcher.html
-share/doc/EMBOSS/html/emboss/apps/syco.1.syco.gif
-share/doc/EMBOSS/html/emboss/apps/syco.html
-share/doc/EMBOSS/html/emboss/apps/tcode.2.tcode.gif
-share/doc/EMBOSS/html/emboss/apps/tcode.html
-share/doc/EMBOSS/html/emboss/apps/template.html
-share/doc/EMBOSS/html/emboss/apps/test_group.html
-share/doc/EMBOSS/html/emboss/apps/textsearch.html
-share/doc/EMBOSS/html/emboss/apps/tfextract.html
-share/doc/EMBOSS/html/emboss/apps/tfm.html
-share/doc/EMBOSS/html/emboss/apps/tfscan.html
-share/doc/EMBOSS/html/emboss/apps/tmap.1.tmap.gif
-share/doc/EMBOSS/html/emboss/apps/tmap.html
-share/doc/EMBOSS/html/emboss/apps/tranalign.html
-share/doc/EMBOSS/html/emboss/apps/transeq.html
-share/doc/EMBOSS/html/emboss/apps/trimest.html
-share/doc/EMBOSS/html/emboss/apps/trimseq.html
-share/doc/EMBOSS/html/emboss/apps/twofeat.html
-share/doc/EMBOSS/html/emboss/apps/union.html
-share/doc/EMBOSS/html/emboss/apps/utils_database_creation_group.html
-share/doc/EMBOSS/html/emboss/apps/utils_database_indexing_group.html
-share/doc/EMBOSS/html/emboss/apps/utils_misc_group.html
-share/doc/EMBOSS/html/emboss/apps/vectorstrip.html
-share/doc/EMBOSS/html/emboss/apps/water.html
-share/doc/EMBOSS/html/emboss/apps/whichdb.html
-share/doc/EMBOSS/html/emboss/apps/wobble.1.wobble.gif
-share/doc/EMBOSS/html/emboss/apps/wobble.html
-share/doc/EMBOSS/html/emboss/apps/wordcount.html
-share/doc/EMBOSS/html/emboss/apps/wordfinder.html
-share/doc/EMBOSS/html/emboss/apps/wordmatch.html
-share/doc/EMBOSS/html/emboss/apps/wossname.html
-share/doc/EMBOSS/html/emboss/apps/yank.html
 share/doc/EMBOSS/manuals/
 share/doc/EMBOSS/manuals/EMBOSS-FreeBSD-HOWTO.txt
 share/doc/EMBOSS/manuals/admin.aux
@@ -1652,6 +1442,283 @@ share/doc/EMBOSS/manuals/emboss_qg.ps
 share/doc/EMBOSS/manuals/fdl.txt
 share/doc/EMBOSS/manuals/program.ps.gz
 share/doc/EMBOSS/programs/
+share/doc/EMBOSS/programs/html/
+share/doc/EMBOSS/programs/html/aaindexextract.html
+share/doc/EMBOSS/programs/html/abiview.1.abiview.gif
+share/doc/EMBOSS/programs/html/abiview.html
+share/doc/EMBOSS/programs/html/acd_group.html
+share/doc/EMBOSS/programs/html/acdc.html
+share/doc/EMBOSS/programs/html/acdlog.html
+share/doc/EMBOSS/programs/html/acdpretty.html
+share/doc/EMBOSS/programs/html/acdtable.html
+share/doc/EMBOSS/programs/html/acdtrace.html
+share/doc/EMBOSS/programs/html/acdvalid.html
+share/doc/EMBOSS/programs/html/ajtest.html
+share/doc/EMBOSS/programs/html/aligncopy.html
+share/doc/EMBOSS/programs/html/aligncopypair.html
+share/doc/EMBOSS/programs/html/alignment_consensus_group.html
+share/doc/EMBOSS/programs/html/alignment_differences_group.html
+share/doc/EMBOSS/programs/html/alignment_dot_plots_group.html
+share/doc/EMBOSS/programs/html/alignment_global_group.html
+share/doc/EMBOSS/programs/html/alignment_local_group.html
+share/doc/EMBOSS/programs/html/alignment_multiple_group.html
+share/doc/EMBOSS/programs/html/antigenic.html
+share/doc/EMBOSS/programs/html/assembly_fragment_assembly_group.html
+share/doc/EMBOSS/programs/html/backtranambig.html
+share/doc/EMBOSS/programs/html/backtranseq.html
+share/doc/EMBOSS/programs/html/banana.1.banana.gif
+share/doc/EMBOSS/programs/html/banana.html
+share/doc/EMBOSS/programs/html/biosed.html
+share/doc/EMBOSS/programs/html/btwisted.html
+share/doc/EMBOSS/programs/html/cai.html
+share/doc/EMBOSS/programs/html/chaos.1.chaos.gif
+share/doc/EMBOSS/programs/html/chaos.html
+share/doc/EMBOSS/programs/html/charge.html
+share/doc/EMBOSS/programs/html/checktrans.html
+share/doc/EMBOSS/programs/html/chips.html
+share/doc/EMBOSS/programs/html/cirdna.1.cirdna.gif
+share/doc/EMBOSS/programs/html/cirdna.html
+share/doc/EMBOSS/programs/html/codcmp.html
+share/doc/EMBOSS/programs/html/codcopy.html
+share/doc/EMBOSS/programs/html/coderet.html
+share/doc/EMBOSS/programs/html/complex.html
+share/doc/EMBOSS/programs/html/compseq.html
+share/doc/EMBOSS/programs/html/cons.html
+share/doc/EMBOSS/programs/html/consambig.html
+share/doc/EMBOSS/programs/html/cpgplot.1.cpgplot.gif
+share/doc/EMBOSS/programs/html/cpgplot.html
+share/doc/EMBOSS/programs/html/cpgreport.html
+share/doc/EMBOSS/programs/html/cusp.html
+share/doc/EMBOSS/programs/html/cutgextract.html
+share/doc/EMBOSS/programs/html/cutseq.html
+share/doc/EMBOSS/programs/html/dan.2.dan.gif
+share/doc/EMBOSS/programs/html/dan.html
+share/doc/EMBOSS/programs/html/dbiblast.html
+share/doc/EMBOSS/programs/html/dbifasta.html
+share/doc/EMBOSS/programs/html/dbiflat.html
+share/doc/EMBOSS/programs/html/dbigcg.html
+share/doc/EMBOSS/programs/html/dbxfasta.html
+share/doc/EMBOSS/programs/html/dbxflat.html
+share/doc/EMBOSS/programs/html/dbxgcg.html
+share/doc/EMBOSS/programs/html/degapseq.html
+share/doc/EMBOSS/programs/html/density.html
+share/doc/EMBOSS/programs/html/descseq.html
+share/doc/EMBOSS/programs/html/diffseq.html
+share/doc/EMBOSS/programs/html/digest.html
+share/doc/EMBOSS/programs/html/display_group.html
+share/doc/EMBOSS/programs/html/distmat.html
+share/doc/EMBOSS/programs/html/dotmatcher.1.dotmatcher.gif
+share/doc/EMBOSS/programs/html/dotmatcher.html
+share/doc/EMBOSS/programs/html/dotpath.1.dotpath.gif
+share/doc/EMBOSS/programs/html/dotpath.html
+share/doc/EMBOSS/programs/html/dottup.1.dottup.gif
+share/doc/EMBOSS/programs/html/dottup.html
+share/doc/EMBOSS/programs/html/dreg.html
+share/doc/EMBOSS/programs/html/edialign.html
+share/doc/EMBOSS/programs/html/edit_group.html
+share/doc/EMBOSS/programs/html/einverted.html
+share/doc/EMBOSS/programs/html/emboss_icon.gif
+share/doc/EMBOSS/programs/html/emboss_icon.jpg
+share/doc/EMBOSS/programs/html/embossdata.html
+share/doc/EMBOSS/programs/html/embossversion.html
+share/doc/EMBOSS/programs/html/emma.html
+share/doc/EMBOSS/programs/html/emowse.html
+share/doc/EMBOSS/programs/html/entret.html
+share/doc/EMBOSS/programs/html/enzyme_kinetics_group.html
+share/doc/EMBOSS/programs/html/epestfind.1.epestfind.gif
+share/doc/EMBOSS/programs/html/epestfind.html
+share/doc/EMBOSS/programs/html/eprimer3.html
+share/doc/EMBOSS/programs/html/equicktandem.html
+share/doc/EMBOSS/programs/html/est2genome.html
+share/doc/EMBOSS/programs/html/etandem.html
+share/doc/EMBOSS/programs/html/extractalign.html
+share/doc/EMBOSS/programs/html/extractfeat.html
+share/doc/EMBOSS/programs/html/extractseq.html
+share/doc/EMBOSS/programs/html/featcopy.html
+share/doc/EMBOSS/programs/html/featreport.html
+share/doc/EMBOSS/programs/html/feature_tables_group.html
+share/doc/EMBOSS/programs/html/findkm.1.findkm.gif
+share/doc/EMBOSS/programs/html/findkm.html
+share/doc/EMBOSS/programs/html/freak.html
+share/doc/EMBOSS/programs/html/fuzznuc.html
+share/doc/EMBOSS/programs/html/fuzzpro.html
+share/doc/EMBOSS/programs/html/fuzztran.html
+share/doc/EMBOSS/programs/html/garnier.html
+share/doc/EMBOSS/programs/html/geecee.html
+share/doc/EMBOSS/programs/html/getorf.html
+share/doc/EMBOSS/programs/html/groups.html
+share/doc/EMBOSS/programs/html/helixturnhelix.html
+share/doc/EMBOSS/programs/html/hmm_group.html
+share/doc/EMBOSS/programs/html/hmoment.html
+share/doc/EMBOSS/programs/html/iep.html
+share/doc/EMBOSS/programs/html/index.html
+share/doc/EMBOSS/programs/html/infoalign.html
+share/doc/EMBOSS/programs/html/infobase.html
+share/doc/EMBOSS/programs/html/inforesidue.html
+share/doc/EMBOSS/programs/html/information_group.html
+share/doc/EMBOSS/programs/html/infoseq.html
+share/doc/EMBOSS/programs/html/isochore.1.isochore.gif
+share/doc/EMBOSS/programs/html/isochore.html
+share/doc/EMBOSS/programs/html/jaspextract.html
+share/doc/EMBOSS/programs/html/jaspscan.html
+share/doc/EMBOSS/programs/html/jembossctl.html
+share/doc/EMBOSS/programs/html/libscan.html
+share/doc/EMBOSS/programs/html/lindna.1.lindna.gif
+share/doc/EMBOSS/programs/html/lindna.html
+share/doc/EMBOSS/programs/html/listor.html
+share/doc/EMBOSS/programs/html/makenucseq.html
+share/doc/EMBOSS/programs/html/makeprotseq.html
+share/doc/EMBOSS/programs/html/marscan.html
+share/doc/EMBOSS/programs/html/maskambignuc.html
+share/doc/EMBOSS/programs/html/maskambigprot.html
+share/doc/EMBOSS/programs/html/maskfeat.html
+share/doc/EMBOSS/programs/html/maskseq.html
+share/doc/EMBOSS/programs/html/matcher.html
+share/doc/EMBOSS/programs/html/megamerger.html
+share/doc/EMBOSS/programs/html/menus_group.html
+share/doc/EMBOSS/programs/html/merger.html
+share/doc/EMBOSS/programs/html/msbar.html
+share/doc/EMBOSS/programs/html/mwcontam.html
+share/doc/EMBOSS/programs/html/mwfilter.html
+share/doc/EMBOSS/programs/html/needle.html
+share/doc/EMBOSS/programs/html/newcpgreport.html
+share/doc/EMBOSS/programs/html/newcpgseek.html
+share/doc/EMBOSS/programs/html/newseq.html
+share/doc/EMBOSS/programs/html/nohtml.html
+share/doc/EMBOSS/programs/html/noreturn.html
+share/doc/EMBOSS/programs/html/nospace.html
+share/doc/EMBOSS/programs/html/notab.html
+share/doc/EMBOSS/programs/html/notseq.html
+share/doc/EMBOSS/programs/html/nthseq.html
+share/doc/EMBOSS/programs/html/nucleic_2d_structure_group.html
+share/doc/EMBOSS/programs/html/nucleic_codon_usage_group.html
+share/doc/EMBOSS/programs/html/nucleic_codon_usage_nucleic_gene_finding_group.html
+share/doc/EMBOSS/programs/html/nucleic_composition_group.html
+share/doc/EMBOSS/programs/html/nucleic_cpg_islands_group.html
+share/doc/EMBOSS/programs/html/nucleic_gene_finding_group.html
+share/doc/EMBOSS/programs/html/nucleic_motifs_group.html
+share/doc/EMBOSS/programs/html/nucleic_mutation_group.html
+share/doc/EMBOSS/programs/html/nucleic_primers_group.html
+share/doc/EMBOSS/programs/html/nucleic_profiles_group.html
+share/doc/EMBOSS/programs/html/nucleic_repeats_group.html
+share/doc/EMBOSS/programs/html/nucleic_restriction_group.html
+share/doc/EMBOSS/programs/html/nucleic_rna_folding_group.html
+share/doc/EMBOSS/programs/html/nucleic_transcription_group.html
+share/doc/EMBOSS/programs/html/nucleic_translation_group.html
+share/doc/EMBOSS/programs/html/octanol.1.octanol.gif
+share/doc/EMBOSS/programs/html/octanol.html
+share/doc/EMBOSS/programs/html/oddcomp.html
+share/doc/EMBOSS/programs/html/palindrome.html
+share/doc/EMBOSS/programs/html/pasteseq.html
+share/doc/EMBOSS/programs/html/patmatdb.html
+share/doc/EMBOSS/programs/html/patmatmotifs.html
+share/doc/EMBOSS/programs/html/pepcoil.html
+share/doc/EMBOSS/programs/html/pepinfo.1.pepinfo.gif
+share/doc/EMBOSS/programs/html/pepinfo.html
+share/doc/EMBOSS/programs/html/pepnet.1.pepnet.gif
+share/doc/EMBOSS/programs/html/pepnet.html
+share/doc/EMBOSS/programs/html/pepstats.html
+share/doc/EMBOSS/programs/html/pepwheel.1.pepwheel.gif
+share/doc/EMBOSS/programs/html/pepwheel.html
+share/doc/EMBOSS/programs/html/pepwindow.1.pepwindow.gif
+share/doc/EMBOSS/programs/html/pepwindow.html
+share/doc/EMBOSS/programs/html/pepwindowall.1.pepwindowall.gif
+share/doc/EMBOSS/programs/html/pepwindowall.html
+share/doc/EMBOSS/programs/html/phylogeny_consensus_group.html
+share/doc/EMBOSS/programs/html/phylogeny_continuous_characters_group.html
+share/doc/EMBOSS/programs/html/phylogeny_discrete_characters_group.html
+share/doc/EMBOSS/programs/html/phylogeny_distance_matrix_group.html
+share/doc/EMBOSS/programs/html/phylogeny_gene_frequencies_group.html
+share/doc/EMBOSS/programs/html/phylogeny_group.html
+share/doc/EMBOSS/programs/html/phylogeny_molecular_sequence_group.html
+share/doc/EMBOSS/programs/html/phylogeny_tree_drawing_group.html
+share/doc/EMBOSS/programs/html/plotcon.1.plotcon.gif
+share/doc/EMBOSS/programs/html/plotcon.html
+share/doc/EMBOSS/programs/html/plotorf.1.plotorf.gif
+share/doc/EMBOSS/programs/html/plotorf.2.plotorf.gif
+share/doc/EMBOSS/programs/html/plotorf.html
+share/doc/EMBOSS/programs/html/polydot.1.polydot.gif
+share/doc/EMBOSS/programs/html/polydot.html
+share/doc/EMBOSS/programs/html/preg.html
+share/doc/EMBOSS/programs/html/prettyplot.1.prettyplot.gif
+share/doc/EMBOSS/programs/html/prettyplot.2.prettyplot.gif
+share/doc/EMBOSS/programs/html/prettyplot.html
+share/doc/EMBOSS/programs/html/prettyseq.html
+share/doc/EMBOSS/programs/html/primersearch.html
+share/doc/EMBOSS/programs/html/printsextract.html
+share/doc/EMBOSS/programs/html/profit.html
+share/doc/EMBOSS/programs/html/prophecy.html
+share/doc/EMBOSS/programs/html/prophet.html
+share/doc/EMBOSS/programs/html/prosextract.html
+share/doc/EMBOSS/programs/html/protein_2d_structure_group.html
+share/doc/EMBOSS/programs/html/protein_3d_structure_group.html
+share/doc/EMBOSS/programs/html/protein_composition_group.html
+share/doc/EMBOSS/programs/html/protein_motifs_group.html
+share/doc/EMBOSS/programs/html/protein_mutation_group.html
+share/doc/EMBOSS/programs/html/protein_profiles_group.html
+share/doc/EMBOSS/programs/html/protein_sequence_alignment_group.html
+share/doc/EMBOSS/programs/html/pscan.html
+share/doc/EMBOSS/programs/html/psiphi.html
+share/doc/EMBOSS/programs/html/rebaseextract.html
+share/doc/EMBOSS/programs/html/recoder.html
+share/doc/EMBOSS/programs/html/redata.html
+share/doc/EMBOSS/programs/html/remap.html
+share/doc/EMBOSS/programs/html/restover.html
+share/doc/EMBOSS/programs/html/restrict.html
+share/doc/EMBOSS/programs/html/revseq.html
+share/doc/EMBOSS/programs/html/seealso.html
+share/doc/EMBOSS/programs/html/seqmatchall.html
+share/doc/EMBOSS/programs/html/seqret.html
+share/doc/EMBOSS/programs/html/seqretsplit.html
+share/doc/EMBOSS/programs/html/showalign.html
+share/doc/EMBOSS/programs/html/showdb.html
+share/doc/EMBOSS/programs/html/showfeat.html
+share/doc/EMBOSS/programs/html/showorf.html
+share/doc/EMBOSS/programs/html/showseq.html
+share/doc/EMBOSS/programs/html/shuffleseq.html
+share/doc/EMBOSS/programs/html/sigcleave.html
+share/doc/EMBOSS/programs/html/silent.html
+share/doc/EMBOSS/programs/html/sirna.html
+share/doc/EMBOSS/programs/html/sixpack.html
+share/doc/EMBOSS/programs/html/sizeseq.html
+share/doc/EMBOSS/programs/html/skipredundant.html
+share/doc/EMBOSS/programs/html/skipseq.html
+share/doc/EMBOSS/programs/html/splitter.html
+share/doc/EMBOSS/programs/html/stretcher.html
+share/doc/EMBOSS/programs/html/stssearch.html
+share/doc/EMBOSS/programs/html/supermatcher.html
+share/doc/EMBOSS/programs/html/syco.1.syco.gif
+share/doc/EMBOSS/programs/html/syco.html
+share/doc/EMBOSS/programs/html/tcode.2.tcode.gif
+share/doc/EMBOSS/programs/html/tcode.html
+share/doc/EMBOSS/programs/html/template.html
+share/doc/EMBOSS/programs/html/test_group.html
+share/doc/EMBOSS/programs/html/textsearch.html
+share/doc/EMBOSS/programs/html/tfextract.html
+share/doc/EMBOSS/programs/html/tfm.html
+share/doc/EMBOSS/programs/html/tfscan.html
+share/doc/EMBOSS/programs/html/tmap.1.tmap.gif
+share/doc/EMBOSS/programs/html/tmap.html
+share/doc/EMBOSS/programs/html/tranalign.html
+share/doc/EMBOSS/programs/html/transeq.html
+share/doc/EMBOSS/programs/html/trimest.html
+share/doc/EMBOSS/programs/html/trimseq.html
+share/doc/EMBOSS/programs/html/trimspace.html
+share/doc/EMBOSS/programs/html/twofeat.html
+share/doc/EMBOSS/programs/html/union.html
+share/doc/EMBOSS/programs/html/utils_database_creation_group.html
+share/doc/EMBOSS/programs/html/utils_database_indexing_group.html
+share/doc/EMBOSS/programs/html/utils_misc_group.html
+share/doc/EMBOSS/programs/html/vectorstrip.html
+share/doc/EMBOSS/programs/html/water.html
+share/doc/EMBOSS/programs/html/whichdb.html
+share/doc/EMBOSS/programs/html/wobble.1.wobble.gif
+share/doc/EMBOSS/programs/html/wobble.html
+share/doc/EMBOSS/programs/html/wordcount.html
+share/doc/EMBOSS/programs/html/wordfinder.html
+share/doc/EMBOSS/programs/html/wordmatch.html
+share/doc/EMBOSS/programs/html/wossname.html
+share/doc/EMBOSS/programs/html/yank.html
 share/doc/EMBOSS/programs/text/
 share/doc/EMBOSS/programs/text/SITE-DIRECTED.txt
 share/doc/EMBOSS/programs/text/aaindexextract.txt
@@ -1662,6 +1729,8 @@ share/doc/EMBOSS/programs/text/acdpretty.txt
 share/doc/EMBOSS/programs/text/acdtable.txt
 share/doc/EMBOSS/programs/text/acdtrace.txt
 share/doc/EMBOSS/programs/text/acdvalid.txt
+share/doc/EMBOSS/programs/text/aligncopy.txt
+share/doc/EMBOSS/programs/text/aligncopypair.txt
 share/doc/EMBOSS/programs/text/antigenic.txt
 share/doc/EMBOSS/programs/text/backtranambig.txt
 share/doc/EMBOSS/programs/text/backtranseq.txt
@@ -1680,6 +1749,7 @@ share/doc/EMBOSS/programs/text/coderet.txt
 share/doc/EMBOSS/programs/text/complex.txt
 share/doc/EMBOSS/programs/text/compseq.txt
 share/doc/EMBOSS/programs/text/cons.txt
+share/doc/EMBOSS/programs/text/consambig.txt
 share/doc/EMBOSS/programs/text/cpgplot.txt
 share/doc/EMBOSS/programs/text/cpgreport.txt
 share/doc/EMBOSS/programs/text/cusp.txt
@@ -1694,6 +1764,7 @@ share/doc/EMBOSS/programs/text/dbxfasta.txt
 share/doc/EMBOSS/programs/text/dbxflat.txt
 share/doc/EMBOSS/programs/text/dbxgcg.txt
 share/doc/EMBOSS/programs/text/degapseq.txt
+share/doc/EMBOSS/programs/text/density.txt
 share/doc/EMBOSS/programs/text/descseq.txt
 share/doc/EMBOSS/programs/text/diffseq.txt
 share/doc/EMBOSS/programs/text/digest.txt
@@ -1714,10 +1785,14 @@ share/doc/EMBOSS/programs/text/eprimer3.txt
 share/doc/EMBOSS/programs/text/equicktandem.txt
 share/doc/EMBOSS/programs/text/est2genome.txt
 share/doc/EMBOSS/programs/text/etandem.txt
+share/doc/EMBOSS/programs/text/extractalign.txt
 share/doc/EMBOSS/programs/text/extractfeat.txt
 share/doc/EMBOSS/programs/text/extractseq.txt
+share/doc/EMBOSS/programs/text/featcopy.txt
+share/doc/EMBOSS/programs/text/featreport.txt
 share/doc/EMBOSS/programs/text/findkm.txt
 share/doc/EMBOSS/programs/text/freak.txt
+share/doc/EMBOSS/programs/text/frestdist.txt
 share/doc/EMBOSS/programs/text/fuzznuc.txt
 share/doc/EMBOSS/programs/text/fuzzpro.txt
 share/doc/EMBOSS/programs/text/fuzztran.txt
@@ -1728,14 +1803,20 @@ share/doc/EMBOSS/programs/text/helixturnhelix.txt
 share/doc/EMBOSS/programs/text/hmoment.txt
 share/doc/EMBOSS/programs/text/iep.txt
 share/doc/EMBOSS/programs/text/infoalign.txt
+share/doc/EMBOSS/programs/text/infobase.txt
+share/doc/EMBOSS/programs/text/inforesidue.txt
 share/doc/EMBOSS/programs/text/infoseq.txt
 share/doc/EMBOSS/programs/text/isochore.txt
+share/doc/EMBOSS/programs/text/jaspextract.txt
+share/doc/EMBOSS/programs/text/jaspscan.txt
 share/doc/EMBOSS/programs/text/jembossctl.txt
 share/doc/EMBOSS/programs/text/lindna.txt
 share/doc/EMBOSS/programs/text/listor.txt
 share/doc/EMBOSS/programs/text/makenucseq.txt
 share/doc/EMBOSS/programs/text/makeprotseq.txt
 share/doc/EMBOSS/programs/text/marscan.txt
+share/doc/EMBOSS/programs/text/maskambignuc.txt
+share/doc/EMBOSS/programs/text/maskambigprot.txt
 share/doc/EMBOSS/programs/text/maskfeat.txt
 share/doc/EMBOSS/programs/text/maskseq.txt
 share/doc/EMBOSS/programs/text/matcher.txt
@@ -1748,7 +1829,10 @@ share/doc/EMBOSS/programs/text/needle.txt
 share/doc/EMBOSS/programs/text/newcpgreport.txt
 share/doc/EMBOSS/programs/text/newcpgseek.txt
 share/doc/EMBOSS/programs/text/newseq.txt
+share/doc/EMBOSS/programs/text/nohtml.txt
 share/doc/EMBOSS/programs/text/noreturn.txt
+share/doc/EMBOSS/programs/text/nospace.txt
+share/doc/EMBOSS/programs/text/notab.txt
 share/doc/EMBOSS/programs/text/notseq.txt
 share/doc/EMBOSS/programs/text/nthseq.txt
 share/doc/EMBOSS/programs/text/octanol.txt
@@ -1799,6 +1883,8 @@ share/doc/EMBOSS/programs/text/sigcleave.txt
 share/doc/EMBOSS/programs/text/silent.txt
 share/doc/EMBOSS/programs/text/sirna.txt
 share/doc/EMBOSS/programs/text/sixpack.txt
+share/doc/EMBOSS/programs/text/sizeseq.txt
+share/doc/EMBOSS/programs/text/skipredundant.txt
 share/doc/EMBOSS/programs/text/skipseq.txt
 share/doc/EMBOSS/programs/text/splitter.txt
 share/doc/EMBOSS/programs/text/stretcher.txt
@@ -1815,6 +1901,7 @@ share/doc/EMBOSS/programs/text/tranalign.txt
 share/doc/EMBOSS/programs/text/transeq.txt
 share/doc/EMBOSS/programs/text/trimest.txt
 share/doc/EMBOSS/programs/text/trimseq.txt
+share/doc/EMBOSS/programs/text/trimspace.txt
 share/doc/EMBOSS/programs/text/twofeat.txt
 share/doc/EMBOSS/programs/text/union.txt
 share/doc/EMBOSS/programs/text/vectorstrip.txt

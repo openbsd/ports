@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/06 06:30:32 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2008/09/24 17:14:26 jasper Exp $
 
 COMMENT=	European Molecular Biology Open Software Suite
 
-DISTNAME=	EMBOSS-5.0.0
-PKGNAME=	${DISTNAME:L}p0
+DISTNAME=	EMBOSS-6.0.1
 SHARED_LIBS +=  eplplot                 0.0   # .5.7
-SHARED_LIBS +=  ajax                    0.0   # .5.0
-SHARED_LIBS +=  ajaxg                   0.0   # .5.0
-SHARED_LIBS +=  nucleus                 0.0   # .5.0
+SHARED_LIBS +=  ajax                    1.0   # .6.0
+SHARED_LIBS +=  ajaxg                   1.0   # .6.0
+SHARED_LIBS +=  nucleus                 1.0   # .6.0
 
 CATEGORIES=	biology
 
@@ -26,6 +25,7 @@ WANTLIB=	X11 Xau Xdmcp c m
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS+= --without-java
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
