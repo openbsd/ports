@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/05/21 13:55:43 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/09/24 16:19:14 jasper Exp $
 bin/pwhois
 ${P5SITE}/Net/Whois/
 ${P5SITE}/Net/Whois/Raw/
 ${P5SITE}/Net/Whois/Raw.pm
+${P5SITE}/Net/Whois/Raw/Common.pm
 ${P5SITE}/Net/Whois/Raw/Data.pm
 @man man/man1/pwhois.1
 @man man/man3p/Net::Whois::Raw.3p
