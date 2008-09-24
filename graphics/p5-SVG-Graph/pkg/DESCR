@@ -1,0 +1,3 @@
+SVG::Graph is a suite of perl modules for plotting data. SVG::Graph
+currently supports plots of one-, two- and three-dimensional data, as
+well as N-ary rooted trees.
