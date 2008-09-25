@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 01:40:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/25 18:31:45 jasper Exp $
 
 COMMENT=	handles various Japanese charsets
 
-DISTNAME=	Jcode-2.06
-PKGNAME=	p5-${DISTNAME}
+DISTNAME=	Jcode-2.07
 CATEGORIES=	converters japanese
 MODULES=	cpan
 
