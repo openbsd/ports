@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:59:39 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/25 21:33:18 jasper Exp $
 
 COMMENT=	Perl extension for formatting numbers
 
 MODULES=	cpan
-DISTNAME=	Number-Format-1.45
-PKGNAME=	p5-${DISTNAME}p1
+DISTNAME=	Number-Format-1.60
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.bayview.com/software/perl.shtml
