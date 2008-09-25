@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/09/25 18:39:09 jasper Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/ParseWhois/
 ${P5SITE}/Net/ParseWhois.pm
@@ -12,10 +12,17 @@ ${P5SITE}/Net/ParseWhois/Domain/Registrar/DomainBank.pm
 ${P5SITE}/Net/ParseWhois/Domain/Registrar/DomainDiscover.pm
 ${P5SITE}/Net/ParseWhois/Domain/Registrar/Dotster.pm
 ${P5SITE}/Net/ParseWhois/Domain/Registrar/Easyspace.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/Enom.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/GoDaddy.pm
 ${P5SITE}/Net/ParseWhois/Domain/Registrar/INameWW.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/NameJuice.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/NameScout.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/NameSecure.pm
 ${P5SITE}/Net/ParseWhois/Domain/Registrar/Netsol.pm
 ${P5SITE}/Net/ParseWhois/Domain/Registrar/OpenSRS.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/PIR.pm
 ${P5SITE}/Net/ParseWhois/Domain/Registrar/Register.pm
 ${P5SITE}/Net/ParseWhois/Domain/Registrar/Registrars.pm
+${P5SITE}/Net/ParseWhois/Domain/Registrar/SRSPlus.pm
 ${P5SITE}/Net/ParseWhois/Domain/Registrar/Unknown.pm
 @man man/man3p/Net::ParseWhois.3p
