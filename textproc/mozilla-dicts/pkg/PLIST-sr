@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-sr,v 1.1 2008/09/25 21:13:49 martynas Exp $
+share/mozilla-dicts/
+share/mozilla-dicts/Srpski_latinica.aff
+share/mozilla-dicts/Srpski_latinica.dic

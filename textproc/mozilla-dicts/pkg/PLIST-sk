@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-sk,v 1.1 2008/09/25 21:13:49 martynas Exp $
+share/mozilla-dicts/
+share/mozilla-dicts/sk-SK-bez diakritiky.aff
+share/mozilla-dicts/sk-SK-bez diakritiky.dic
+share/mozilla-dicts/sk-SK-s diakritikou.aff
+share/mozilla-dicts/sk-SK-s diakritikou.dic

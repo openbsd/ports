@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-af,v 1.1 2008/09/25 21:13:48 martynas Exp $
+share/mozilla-dicts/
+share/mozilla-dicts/af-ZA.aff
+share/mozilla-dicts/af-ZA.dic

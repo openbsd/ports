@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-la,v 1.1 2008/09/25 21:13:48 martynas Exp $
+share/mozilla-dicts/
+share/mozilla-dicts/la.aff
+share/mozilla-dicts/la.dic

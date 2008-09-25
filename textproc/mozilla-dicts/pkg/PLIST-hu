@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hu,v 1.1.1.1 2007/04/07 11:52:20 martynas Exp $
+@comment $OpenBSD: PLIST-hu,v 1.2 2008/09/25 21:13:48 martynas Exp $
 share/mozilla-dicts/
-share/mozilla-dicts/hu.aff
-share/mozilla-dicts/hu.dic
+share/mozilla-dicts/hu-HU.aff
+share/mozilla-dicts/hu-HU.dic

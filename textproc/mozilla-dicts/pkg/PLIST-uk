@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-uk,v 1.1 2008/09/25 21:13:49 martynas Exp $
+share/mozilla-dicts/
+share/mozilla-dicts/uk-UA.aff
+share/mozilla-dicts/uk-UA.dic

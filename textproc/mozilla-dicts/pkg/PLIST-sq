@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-sq,v 1.1 2008/09/25 21:13:49 martynas Exp $
+share/mozilla-dicts/
+share/mozilla-dicts/sq.aff
+share/mozilla-dicts/sq.dic

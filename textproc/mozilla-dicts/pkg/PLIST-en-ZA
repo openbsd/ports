@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-en-ZA,v 1.1 2008/09/25 21:13:48 martynas Exp $
+share/mozilla-dicts/
+share/mozilla-dicts/en-ZA.aff
+share/mozilla-dicts/en-ZA.dic
