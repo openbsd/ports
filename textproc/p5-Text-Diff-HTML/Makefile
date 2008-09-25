@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/09/25 21:36:20 jasper Exp $
 
-COMMENT=		perl, XHTML format for Text::Diff::Unified
+COMMENT=		XHTML format for Text::Diff::Unified
 
 MODULES=		cpan
-DISTNAME=		Text-Diff-HTML-0.04
+DISTNAME=		Text-Diff-HTML-0.05
 CATEGORIES=		textproc www
 
-# Artistic
+# perl
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -16,8 +16,6 @@ CONFIGURE_STYLE=	modbuild
 
 RUN_DEPENDS=		::www/p5-HTML-Parser \
 			::textproc/p5-Text-Diff
-
-BUILD_DEPENDS=		${RUN_DEPENDS}
 
 REGRESS_DEPENDS=	::devel/p5-Test-Pod
 
