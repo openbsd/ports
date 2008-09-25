@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/08/22 20:18:22 steven Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/09/25 18:49:44 jasper Exp $
 bin/chartex
 ${P5SITE}/Spreadsheet/
 ${P5SITE}/Spreadsheet/WriteExcel/
@@ -9,6 +9,7 @@ ${P5SITE}/Spreadsheet/WriteExcel/Chart.pm
 ${P5SITE}/Spreadsheet/WriteExcel/Format.pm
 ${P5SITE}/Spreadsheet/WriteExcel/Formula.pm
 ${P5SITE}/Spreadsheet/WriteExcel/OLEwriter.pm
+${P5SITE}/Spreadsheet/WriteExcel/Properties.pm
 ${P5SITE}/Spreadsheet/WriteExcel/Utility.pm
 ${P5SITE}/Spreadsheet/WriteExcel/Workbook.pm
 ${P5SITE}/Spreadsheet/WriteExcel/WorkbookBig.pm
@@ -21,6 +22,7 @@ ${P5SITE}/Spreadsheet/WriteExcel/Worksheet.pm
 @man man/man3p/Spreadsheet::WriteExcel::Format.3p
 @man man/man3p/Spreadsheet::WriteExcel::Formula.3p
 @man man/man3p/Spreadsheet::WriteExcel::OLEwriter.3p
+@man man/man3p/Spreadsheet::WriteExcel::Properties.3p
 @man man/man3p/Spreadsheet::WriteExcel::Utility.3p
 @man man/man3p/Spreadsheet::WriteExcel::Workbook.3p
 @man man/man3p/Spreadsheet::WriteExcel::WorkbookBig.3p
@@ -69,6 +71,7 @@ share/examples/p5-Spreadsheet-WriteExcel/mod_perl2.pl
 share/examples/p5-Spreadsheet-WriteExcel/outline.pl
 share/examples/p5-Spreadsheet-WriteExcel/outline_collapsed.pl
 share/examples/p5-Spreadsheet-WriteExcel/panes.pl
+share/examples/p5-Spreadsheet-WriteExcel/properties.pl
 share/examples/p5-Spreadsheet-WriteExcel/protection.pl
 share/examples/p5-Spreadsheet-WriteExcel/regions.pl
 share/examples/p5-Spreadsheet-WriteExcel/repeat.pl
