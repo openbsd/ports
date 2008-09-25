@@ -1,16 +1,14 @@
-$OpenBSD: patch-src_xine-utils_cpu_accel_c,v 1.2 2007/06/13 10:58:29 jakemsr Exp $
---- src/xine-utils/cpu_accel.c.orig	Thu Mar 29 15:45:12 2007
-+++ src/xine-utils/cpu_accel.c	Sun May 20 22:40:14 2007
-@@ -56,6 +56,12 @@ static uint32_t arch_accel (void)
-   /* No need to test for this on AMD64, we know what the
-      platform has.  */
-   caps = MM_ACCEL_X86_MMX | MM_ACCEL_X86_SSE | MM_ACCEL_X86_MMXEXT | MM_ACCEL_X86_SSE2;
+$OpenBSD: patch-src_xine-utils_cpu_accel_c,v 1.3 2008/09/25 20:43:09 brad Exp $
+--- src/xine-utils/cpu_accel.c.orig	Tue Sep 23 19:09:01 2008
++++ src/xine-utils/cpu_accel.c	Tue Sep 23 19:12:58 2008
+@@ -40,6 +40,10 @@
+ 
+ #include "xineutils.h"
+ 
++#if defined(PIC) && ! defined(__PIC__)
++#define __PIC__
 +#endif
 +
-+#if defined(__OpenBSD__)
-+#ifdef __i386__
-+  caps = MM_ACCEL_X86_MMX;
-+#endif
- #else
+ #if defined(ARCH_X86) || defined(ARCH_X86_64)
  
- #ifndef _MSC_VER
+ static jmp_buf sigill_return;

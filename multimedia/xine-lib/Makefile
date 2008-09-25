@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2008/09/16 02:37:04 brad Exp $
+# $OpenBSD: Makefile,v 1.42 2008/09/25 20:43:09 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-jack=		jackd audio output module for xine-lib
 
 V=			1.1.15
 DISTNAME=		xine-lib-${V}
-PKGNAME-main=		${DISTNAME}p3
+PKGNAME-main=		${DISTNAME}p4
 PKGNAME-esd=		xine-lib-esd-${V}
 PKGNAME-arts=		xine-lib-arts-${V}
 PKGNAME-jack=		xine-lib-jack-${V}
