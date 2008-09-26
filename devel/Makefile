@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.625 2008/09/24 13:35:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.626 2008/09/26 18:25:58 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -552,6 +552,7 @@
      SUBDIR += p5-Test-Taint
      SUBDIR += p5-Test-Tester
      SUBDIR += p5-Test-Unit
+     SUBDIR += p5-Test-URI
      SUBDIR += p5-Test-WWW-Mechanize
      SUBDIR += p5-Test-WWW-Mechanize-Catalyst
      SUBDIR += p5-Test-Warn
