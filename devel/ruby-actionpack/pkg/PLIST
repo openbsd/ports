@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/06/17 22:54:19 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/09/26 14:46:43 jcs Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -2238,6 +2238,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test/hello_xml_world
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test/list.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test/non_erb_block_content_for.builder
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test/potential_conflicts.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test/render_file_from_template.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test/render_file_with_ivar.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test/render_file_with_locals.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test/render_to_string_test.erb
@@ -2253,6 +2254,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/asset_tag_helper_tes
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/atom_feed_helper_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/benchmark_helper_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/date_helper_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/deprecated_erb_variable_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/erb_util_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/form_helper_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/form_options_helper_test.rb
