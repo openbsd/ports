@@ -2,6 +2,6 @@ A set of CGI scripts that can query a Nut based UPS and display information
 and statistics on a web page.
 
 By default the Nut CGIs are designed to work within OpenBSD's chrooted
-Apapche webserver.  If you disable the chroot feature you can use Apache's
+Apache webserver.  If you disable the chroot feature you can use Apache's
 SetEnv directive to override the configuration file location by setting
 the NUT_CGICONFPATH environment variable.  

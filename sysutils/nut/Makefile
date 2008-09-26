@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2008/09/08 19:38:30 martynas Exp $
+# $OpenBSD: Makefile,v 1.28 2008/09/26 19:00:58 martynas Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -6,7 +6,7 @@ COMMENT-snmp=		driver for monitoring UPSs via SNMP
 
 DISTNAME=		nut-2.2.2
 PKGNAME-main=		${DISTNAME}
-PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
+PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}p0
 PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.networkupstools.org/
