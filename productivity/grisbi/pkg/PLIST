@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/09/23 19:37:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/09/26 11:44:39 landry Exp $
 @bin bin/grisbi
 @man man/man1/grisbi.1
+share/applications/
 share/applications/grisbi.desktop
 share/doc/grisbi/
 share/doc/grisbi/help/

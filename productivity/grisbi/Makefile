@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/09/23 19:37:06 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/26 11:44:39 landry Exp $
 
 COMMENT=	personal accounting application
 
@@ -42,7 +42,8 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${SUBST_CMD} -c ${FILESDIR}/grisbi.desktop \
+	${INSTALL_DATA} ${FILESDIR}/grisbi.desktop \
 		${PREFIX}/share/applications/grisbi.desktop
+	${SUBST_CMD} ${PREFIX}/share/applications/grisbi.desktop
 
 .include <bsd.port.mk>
