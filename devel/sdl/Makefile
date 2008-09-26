@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.65 2008/09/16 20:43:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.66 2008/09/26 03:14:42 brad Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.13
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p4
+PKGNAME=	${DISTNAME:L}p5
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
-# LGPL
+# LGPLv2.1+
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -22,6 +22,10 @@ MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
 		${HOMEPAGE}release/
 MASTER_SITES0=	http://dev.beastie.hu/ \
 		http://www.beastie.hu/
+
+.if ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS+=	:yasm-*:devel/yasm
+.endif
 
 FLAVORS=	esd arts aa caca no_x11 altivec
 FLAVOR?=
@@ -35,8 +39,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
 SHARED_LIBS=	SDL	8.0
 CONFIGURE_ENV+=	X11BASE="${X11BASE}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 # in case devel/usb is installed, don't pick it up.
 CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
@@ -45,18 +48,10 @@ CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-oss \
 		 --disable-ltdl \
+		 --disable-pulseaudio \
+		 --enable-nasm \
 		 --enable-pthread-sem \
 		 --enable-sunaudio
-
-.include <bsd.own.mk>
-USE_GCC3?=No
-# XXX gcc 3/nasm issue.
-.if (${MACHINE_ARCH} == "i386") && (${CC} != "egcc" && ${USE_GCC3:L} != "yes")
-BUILD_DEPENDS+=	nasm::devel/nasm
-CONFIGURE_ARGS+= --enable-nasm
-.else
-CONFIGURE_ARGS+= --disable-nasm
-.endif
 
 .if ${FLAVOR:L:Mesd}
 # used via dlopen()
