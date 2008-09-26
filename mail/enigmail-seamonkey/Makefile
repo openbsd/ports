@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2008/09/24 19:56:11 martynas Exp $
+# $OpenBSD: Makefile,v 1.3 2008/09/26 19:33:25 martynas Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GnuPG extension for SeaMonkey
 
-VER=		0.95.6
+VER=		0.95.7
 DISTNAME=	enigmail-${VER}
-PKGNAME=	enigmail-seamonkey-${VER}p0
+PKGNAME=	enigmail-seamonkey-${VER}
 
 CATEGORIES=	mail security
 
