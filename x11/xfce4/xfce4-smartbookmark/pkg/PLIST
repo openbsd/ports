@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/22 13:24:23 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/09/26 09:48:40 landry Exp $
 %%SHARED%%
 lib/xfce4/
 lib/xfce4/panel-plugins/
 lib/xfce4/panel-plugins/libsmartbookmark.a
-@lib/xfce4/panel-plugins/libsmartbookmark.la
+lib/xfce4/panel-plugins/libsmartbookmark.la
 share/locale/fr/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
