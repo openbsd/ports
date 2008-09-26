@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_common_h,v 1.1.1.1 2008/09/26 12:01:43 jasper Exp $
+--- src/common.h.orig	Thu Sep 25 23:06:18 2008
++++ src/common.h	Thu Sep 25 23:06:27 2008
+@@ -21,6 +21,8 @@
+   <http://www.gnu.org/licenses/>.
+ ***/
+ 
++#include <stdarg.h>
++
+ #include "canberra.h"
+ #include "macro.h"
+ #include "mutex.h"

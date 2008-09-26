@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2008/09/26 12:01:43 jasper Exp $
+
+As long as we don't build the GTK+ modules, this only creates
+empty directories.
+
+--- src/Makefile.in.orig	Thu Sep 25 23:11:36 2008
++++ src/Makefile.in	Thu Sep 25 23:12:57 2008
+@@ -1322,8 +1322,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-gnomeautostartDATA \
+-	install-gnomeshutdownSCRIPTS install-gtkmoduleLTLIBRARIES \
++install-data-am: install-gtkmoduleLTLIBRARIES \
+ 	install-includeHEADERS install-pluginLTLIBRARIES
+ 
+ install-dvi: install-dvi-am
