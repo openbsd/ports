@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.541 2008/09/18 23:04:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.542 2008/09/26 04:09:17 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -377,6 +377,7 @@
      SUBDIR += sharity-light
      SUBDIR += silc-client
      SUBDIR += silc-server
+     SUBDIR += silc-server,operops
      SUBDIR += sing
      SUBDIR += sipsak
      SUBDIR += sirc
