@@ -1,7 +1,7 @@
-$OpenBSD: patch-git-gui_git-gui_sh,v 1.4 2008/06/24 20:28:01 bernd Exp $
---- git-gui/git-gui.sh.orig	Thu Jun 19 00:49:49 2008
-+++ git-gui/git-gui.sh	Thu Jun 19 08:59:54 2008
-@@ -2931,7 +2931,9 @@ if {[winfo exists $ui_comm]} {
+$OpenBSD: patch-git-gui_git-gui_sh,v 1.5 2008/09/27 21:47:20 bernd Exp $
+--- git-gui/git-gui.sh.orig	Sun Aug 17 22:43:06 2008
++++ git-gui/git-gui.sh	Mon Aug 25 09:30:04 2008
+@@ -2997,7 +2997,9 @@ if {[winfo exists $ui_comm]} {
  	#    in pipe mode to spellcheck the commit message.
  	#
  	set spell_cmd [list |]

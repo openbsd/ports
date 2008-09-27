@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-x11,v 1.3 2008/06/24 20:28:01 bernd Exp $
+@comment $OpenBSD: PLIST-x11,v 1.4 2008/09/27 21:47:20 bernd Exp $
 @conflict git-<=1.5.4.2p0
-bin/git-citool
-bin/git-gui
 bin/gitk
+libexec/git/git-citool
+libexec/git/git-gui
 @man man/man1/git-citool.1
 @man man/man1/git-gui.1
 @man man/man1/gitk.1

@@ -1,144 +1,147 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2008/07/21 07:48:54 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2008/09/27 21:47:20 bernd Exp $
 @pkgpath devel/git
 @bin bin/git
-@bin bin/git-add
-bin/git-add--interactive
-bin/git-am
-@bin bin/git-annotate
-@bin bin/git-apply
-bin/git-archimport
-@bin bin/git-archive
-bin/git-bisect
-@bin bin/git-blame
-@bin bin/git-branch
-@bin bin/git-bundle
-@bin bin/git-cat-file
-@bin bin/git-check-attr
-@bin bin/git-check-ref-format
-@bin bin/git-checkout
-@bin bin/git-checkout-index
-@bin bin/git-cherry
-@bin bin/git-cherry-pick
-@bin bin/git-clean
-@bin bin/git-clone
-@bin bin/git-commit
-@bin bin/git-commit-tree
-@bin bin/git-config
-@bin bin/git-count-objects
-bin/git-cvsexportcommit
-bin/git-cvsimport
-bin/git-cvsserver
-@bin bin/git-daemon
-@bin bin/git-describe
-@bin bin/git-diff
-@bin bin/git-diff-files
-@bin bin/git-diff-index
-@bin bin/git-diff-tree
-@bin bin/git-fast-export
-@bin bin/git-fast-import
-@bin bin/git-fetch
-@bin bin/git-fetch--tool
-@bin bin/git-fetch-pack
-bin/git-filter-branch
-@bin bin/git-fmt-merge-msg
-@bin bin/git-for-each-ref
-@bin bin/git-format-patch
-@bin bin/git-fsck
-@bin bin/git-fsck-objects
-@bin bin/git-gc
-@bin bin/git-get-tar-commit-id
-@bin bin/git-grep
-@bin bin/git-hash-object
-@bin bin/git-http-fetch
-@bin bin/git-http-push
-@bin bin/git-imap-send
-@bin bin/git-index-pack
-@bin bin/git-init
-@bin bin/git-init-db
-bin/git-instaweb
-@bin bin/git-log
-bin/git-lost-found
-@bin bin/git-ls-files
-@bin bin/git-ls-remote
-@bin bin/git-ls-tree
-@bin bin/git-mailinfo
-@bin bin/git-mailsplit
-bin/git-merge
-@bin bin/git-merge-base
-@bin bin/git-merge-file
-@bin bin/git-merge-index
-bin/git-merge-octopus
-bin/git-merge-one-file
-@bin bin/git-merge-ours
-@bin bin/git-merge-recursive
-bin/git-merge-resolve
-bin/git-merge-stupid
-@bin bin/git-merge-subtree
-@bin bin/git-merge-tree
-bin/git-mergetool
-@bin bin/git-mktag
-@bin bin/git-mktree
-@bin bin/git-mv
-@bin bin/git-name-rev
-@bin bin/git-pack-objects
-@bin bin/git-pack-redundant
-@bin bin/git-pack-refs
-bin/git-parse-remote
-@bin bin/git-patch-id
-@bin bin/git-peek-remote
-@bin bin/git-prune
-@bin bin/git-prune-packed
-bin/git-pull
-@bin bin/git-push
-bin/git-quiltimport
-@bin bin/git-read-tree
-bin/git-rebase
-bin/git-rebase--interactive
 @bin bin/git-receive-pack
-@bin bin/git-reflog
-bin/git-relink
-@bin bin/git-remote
-bin/git-repack
-@bin bin/git-repo-config
-bin/git-request-pull
-@bin bin/git-rerere
-@bin bin/git-reset
-@bin bin/git-rev-list
-@bin bin/git-rev-parse
-@bin bin/git-revert
-@bin bin/git-rm
-bin/git-send-email
-@bin bin/git-send-pack
-bin/git-sh-setup
-@bin bin/git-shell
-@bin bin/git-shortlog
-@bin bin/git-show
-@bin bin/git-show-branch
-@bin bin/git-show-index
-@bin bin/git-show-ref
-bin/git-stash
-@bin bin/git-status
-@bin bin/git-stripspace
-bin/git-submodule
-@bin bin/git-symbolic-ref
-@bin bin/git-tag
-@bin bin/git-tar-tree
-@bin bin/git-unpack-file
-@bin bin/git-unpack-objects
-@bin bin/git-update-index
-@bin bin/git-update-ref
-@bin bin/git-update-server-info
 @bin bin/git-upload-archive
 @bin bin/git-upload-pack
-@bin bin/git-var
-@bin bin/git-verify-pack
-@bin bin/git-verify-tag
-bin/git-web--browse
-@bin bin/git-whatchanged
-@bin bin/git-write-tree
 lib/libgit.a
 libdata/perl5/site_perl/Git.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
+libexec/git/
+@bin libexec/git/git-add
+libexec/git/git-add--interactive
+libexec/git/git-am
+@bin libexec/git/git-annotate
+@bin libexec/git/git-apply
+libexec/git/git-archimport
+@bin libexec/git/git-archive
+libexec/git/git-bisect
+@bin libexec/git/git-blame
+@bin libexec/git/git-branch
+@bin libexec/git/git-bundle
+@bin libexec/git/git-cat-file
+@bin libexec/git/git-check-attr
+@bin libexec/git/git-check-ref-format
+@bin libexec/git/git-checkout
+@bin libexec/git/git-checkout-index
+@bin libexec/git/git-cherry
+@bin libexec/git/git-cherry-pick
+@bin libexec/git/git-clean
+@bin libexec/git/git-clone
+@bin libexec/git/git-commit
+@bin libexec/git/git-commit-tree
+@bin libexec/git/git-config
+@bin libexec/git/git-count-objects
+libexec/git/git-cvsexportcommit
+libexec/git/git-cvsimport
+libexec/git/git-cvsserver
+@bin libexec/git/git-daemon
+@bin libexec/git/git-describe
+@bin libexec/git/git-diff
+@bin libexec/git/git-diff-files
+@bin libexec/git/git-diff-index
+@bin libexec/git/git-diff-tree
+@bin libexec/git/git-fast-export
+@bin libexec/git/git-fast-import
+@bin libexec/git/git-fetch
+@bin libexec/git/git-fetch--tool
+@bin libexec/git/git-fetch-pack
+libexec/git/git-filter-branch
+@bin libexec/git/git-fmt-merge-msg
+@bin libexec/git/git-for-each-ref
+@bin libexec/git/git-format-patch
+@bin libexec/git/git-fsck
+@bin libexec/git/git-fsck-objects
+@bin libexec/git/git-gc
+@bin libexec/git/git-get-tar-commit-id
+@bin libexec/git/git-grep
+@bin libexec/git/git-hash-object
+@bin libexec/git/git-http-fetch
+@bin libexec/git/git-http-push
+@bin libexec/git/git-imap-send
+@bin libexec/git/git-index-pack
+@bin libexec/git/git-init
+@bin libexec/git/git-init-db
+libexec/git/git-instaweb
+@bin libexec/git/git-log
+libexec/git/git-lost-found
+@bin libexec/git/git-ls-files
+@bin libexec/git/git-ls-remote
+@bin libexec/git/git-ls-tree
+@bin libexec/git/git-mailinfo
+@bin libexec/git/git-mailsplit
+@bin libexec/git/git-merge
+@bin libexec/git/git-merge-base
+@bin libexec/git/git-merge-file
+@bin libexec/git/git-merge-index
+libexec/git/git-merge-octopus
+libexec/git/git-merge-one-file
+@bin libexec/git/git-merge-ours
+@bin libexec/git/git-merge-recursive
+libexec/git/git-merge-resolve
+@bin libexec/git/git-merge-subtree
+@bin libexec/git/git-merge-tree
+libexec/git/git-mergetool
+@bin libexec/git/git-mktag
+@bin libexec/git/git-mktree
+@bin libexec/git/git-mv
+@bin libexec/git/git-name-rev
+@bin libexec/git/git-pack-objects
+@bin libexec/git/git-pack-redundant
+@bin libexec/git/git-pack-refs
+libexec/git/git-parse-remote
+@bin libexec/git/git-patch-id
+@bin libexec/git/git-peek-remote
+@bin libexec/git/git-prune
+@bin libexec/git/git-prune-packed
+libexec/git/git-pull
+@bin libexec/git/git-push
+libexec/git/git-quiltimport
+@bin libexec/git/git-read-tree
+libexec/git/git-rebase
+libexec/git/git-rebase--interactive
+@bin libexec/git/git-receive-pack
+@bin libexec/git/git-reflog
+libexec/git/git-relink
+@bin libexec/git/git-remote
+libexec/git/git-repack
+@bin libexec/git/git-repo-config
+libexec/git/git-request-pull
+@bin libexec/git/git-rerere
+@bin libexec/git/git-reset
+@bin libexec/git/git-rev-list
+@bin libexec/git/git-rev-parse
+@bin libexec/git/git-revert
+@bin libexec/git/git-rm
+libexec/git/git-send-email
+@bin libexec/git/git-send-pack
+libexec/git/git-sh-setup
+@bin libexec/git/git-shell
+@bin libexec/git/git-shortlog
+@bin libexec/git/git-show
+@bin libexec/git/git-show-branch
+@bin libexec/git/git-show-index
+@bin libexec/git/git-show-ref
+libexec/git/git-stash
+@bin libexec/git/git-status
+@bin libexec/git/git-stripspace
+libexec/git/git-submodule
+@bin libexec/git/git-symbolic-ref
+@bin libexec/git/git-tag
+@bin libexec/git/git-tar-tree
+@bin libexec/git/git-unpack-file
+@bin libexec/git/git-unpack-objects
+@bin libexec/git/git-update-index
+@bin libexec/git/git-update-ref
+@bin libexec/git/git-update-server-info
+@bin libexec/git/git-upload-archive
+@bin libexec/git/git-upload-pack
+@bin libexec/git/git-var
+@bin libexec/git/git-verify-pack
+@bin libexec/git/git-verify-tag
+libexec/git/git-web--browse
+@bin libexec/git/git-whatchanged
+@bin libexec/git/git-write-tree
 @man man/man1/git-add.1
 @man man/man1/git-am.1
 @man man/man1/git-annotate.1
@@ -328,7 +331,11 @@ share/doc/git/RelNotes-1.5.6.1.txt
 share/doc/git/RelNotes-1.5.6.2.txt
 share/doc/git/RelNotes-1.5.6.3.txt
 share/doc/git/RelNotes-1.5.6.4.txt
+share/doc/git/RelNotes-1.5.6.5.txt
 share/doc/git/RelNotes-1.5.6.txt
+share/doc/git/RelNotes-1.6.0.1.txt
+share/doc/git/RelNotes-1.6.0.2.txt
+share/doc/git/RelNotes-1.6.0.txt
 share/doc/git/blame-options.txt
 share/doc/git/cmds-ancillaryinterrogators.txt
 share/doc/git/cmds-ancillarymanipulators.txt
@@ -670,16 +677,16 @@ share/git-core/templates/
 share/git-core/templates/branches/
 share/git-core/templates/description
 share/git-core/templates/hooks/
-share/git-core/templates/hooks/applypatch-msg
-share/git-core/templates/hooks/commit-msg
-share/git-core/templates/hooks/post-commit
-share/git-core/templates/hooks/post-receive
-share/git-core/templates/hooks/post-receive-email
-share/git-core/templates/hooks/post-update
-share/git-core/templates/hooks/pre-applypatch
-share/git-core/templates/hooks/pre-commit
-share/git-core/templates/hooks/pre-rebase
-share/git-core/templates/hooks/prepare-commit-msg
-share/git-core/templates/hooks/update
+share/git-core/templates/hooks/applypatch-msg.sample
+share/git-core/templates/hooks/commit-msg.sample
+share/git-core/templates/hooks/post-commit.sample
+share/git-core/templates/hooks/post-receive-email.sample
+share/git-core/templates/hooks/post-receive.sample
+share/git-core/templates/hooks/post-update.sample
+share/git-core/templates/hooks/pre-applypatch.sample
+share/git-core/templates/hooks/pre-commit.sample
+share/git-core/templates/hooks/pre-rebase.sample
+share/git-core/templates/hooks/prepare-commit-msg.sample
+share/git-core/templates/hooks/update.sample
 share/git-core/templates/info/
 share/git-core/templates/info/exclude
