@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.28 2008/09/26 19:00:58 martynas Exp $
+# $OpenBSD: Makefile,v 1.29 2008/09/27 17:30:08 martynas Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=		driver for monitoring UPSs via SNMP
 
 DISTNAME=		nut-2.2.2
-PKGNAME-main=		${DISTNAME}
-PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}p0
-PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}
+PKGNAME-main=		${DISTNAME}p0
+PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}p1
+PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}p0
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.networkupstools.org/
 
@@ -22,7 +22,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto m ssl 
+WANTLIB-main=		c crypto expat iconv intl m ssl z
+WANTLIB-snmp=		c crypto
 
 WEB_ROOT=		/var/www
 NUT_USER=		_ups
@@ -46,7 +47,8 @@ MULTI_PACKAGES=		-main -cgi
 MULTI_PACKAGES+=	-snmp
 .endif
 
-LIB_DEPENDS-main=	usb::devel/libusb
+LIB_DEPENDS-main=	usb::devel/libusb \
+			neon::net/neon
 
 PREFIX-cgi=		${WEB_ROOT}
 WANTLIB-cgi=
@@ -63,6 +65,7 @@ CONFIGURE_ARGS+=	--with-cgi \
 			--with-gd-includes="-I${PREFIX}/include"
 .endif
 
+USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 NO_REGRESS=		Yes
