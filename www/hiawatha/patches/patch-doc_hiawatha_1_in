@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_hiawatha_1_in,v 1.3 2008/07/23 10:41:00 ajacoutot Exp $
---- doc/hiawatha.1.in.orig	Thu Jul 10 22:20:14 2008
-+++ doc/hiawatha.1.in	Wed Jul 23 12:17:24 2008
+$OpenBSD: patch-doc_hiawatha_1_in,v 1.4 2008/09/27 11:34:07 ajacoutot Exp $
+--- doc/hiawatha.1.in.orig	Sat Aug  9 16:48:31 2008
++++ doc/hiawatha.1.in	Sat Sep 27 13:22:36 2008
 @@ -23,7 +23,7 @@ hiawatha \- Advanced and secure webserver
  Hiawatha is a secure webserver for Unix. It has been written with 'being secure' as its main goal. Hiawatha has lots of features that no other webserver has. This and the fact that Hiawatha's source code is free of security-bugs, makes Hiawatha the most secure webserver available.
  .br
@@ -23,7 +23,7 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.3 2008/07/23 10:41:00 ajacoutot Exp $
 -Example: CGIwrapper = /usr/sbin/cgi-wrapper
 +Example: CGIwrapper = ${PREFIX}/sbin/cgi-wrapper
  .TP
- .B CommandChannel = <portnumber>,<MD5 hash of password>
+ .B CommandChannel = <portnumber>, <MD5 hash of password>
  The port and the password for the CommandChannel. You can use telnet to connect to the CommandChannel (localhost:<portnumber>). Type 'help' in the CommandChannel for more information.
 @@ -188,7 +188,7 @@ Example: GarbageLogfile = @logdir@/garbage.log
  .B Include <filename>|<directory>
@@ -34,7 +34,7 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.3 2008/07/23 10:41:00 ajacoutot Exp $
  .TP
  .B KickOnBan = yes|no
  Close all other connections that originate from the same IP in case of a ban.
-@@ -240,7 +240,7 @@ Default = @pidfiledir@/hiawatha.pid, example: PIDfile 
+@@ -245,7 +245,7 @@ Default = 0, example: ReconnectDelay = 3
  .B ServerId = <userid>|<userid>:<groupid>[,<groupid>, ...]
  The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group. The userid en groupid of user root are not allowed here.
  .br
@@ -43,7 +43,7 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.3 2008/07/23 10:41:00 ajacoutot Exp $
  .TP
  .B ServerKey = <SSL certificate file>
  The file containing the SSL private key and certificate. These will be used for all SSL bindings that don't have their own certificate file (see ServerKey and UseSSL in BINDING CONFIGURATION).
-@@ -806,7 +806,7 @@ and
+@@ -811,7 +811,7 @@ and
  .B UseGZfile
  
  .SH MIMETYPES
@@ -52,7 +52,7 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.3 2008/07/23 10:41:00 ajacoutot Exp $
  .TP
  .B <mimetype> <extension> [<extension> ...]
  Example: image/jpeg jpg jpeg jpe
-@@ -830,15 +830,15 @@ Will unban all clients.
+@@ -835,15 +835,15 @@ Will unban all clients.
  Will close all open logfiles
  
  .SH FILES
