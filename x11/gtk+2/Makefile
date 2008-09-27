@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2008/07/08 08:40:11 brad Exp $
+# $OpenBSD: Makefile,v 1.69 2008/09/27 17:59:12 brad Exp $
 
 SHARED_ONLY=			Yes
 
@@ -6,20 +6,21 @@ COMMENT-main=			multi-platform graphical toolkit
 COMMENT-docs=           	gtk+2 documentation
 COMMENT-cups=			gtk+2 CUPS print backend
 
-VERSION=			2.12.11
+VERSION=			2.12.12
 DISTNAME=			gtk+-${VERSION}
 PKGNAME-main=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 PKGNAME-cups=			gtk+2-cups-${VERSION}
-SHARED_LIBS +=	gdk_pixbuf-2.0       1200.10   # .1200.11
-SHARED_LIBS +=	gdk-x11-2.0          1200.10   # .1200.11
-SHARED_LIBS +=	gtk-x11-2.0          1200.10   # .1200.11
-SHARED_LIBS +=	gdk_pixbuf_xlib-2.0  1200.10   # .1200.11
 CATEGORIES=			x11 devel
+
+SHARED_LIBS+=	gdk_pixbuf-2.0		1200.11
+SHARED_LIBS+=	gdk-x11-2.0		1200.11
+SHARED_LIBS+=	gtk-x11-2.0		1200.11
+SHARED_LIBS+=	gdk_pixbuf_xlib-2.0	1200.11
 
 HOMEPAGE=			http://www.gtk.org/
 
-# LGPL
+# LGPLv2
 PERMIT_PACKAGE_CDROM=		Yes
 PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		Yes
