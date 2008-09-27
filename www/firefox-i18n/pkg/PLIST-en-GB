@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-en-GB,v 1.1 2008/09/27 19:14:33 martynas Exp $
+@pkgpath www/firefox-i18n
+mozilla-firefox/extensions/langpack-en-GB@firefox.mozilla.org/
+mozilla-firefox/extensions/langpack-en-GB@firefox.mozilla.org/chrome/
+mozilla-firefox/extensions/langpack-en-GB@firefox.mozilla.org/chrome.manifest
+mozilla-firefox/extensions/langpack-en-GB@firefox.mozilla.org/chrome/chromelist.txt
+mozilla-firefox/extensions/langpack-en-GB@firefox.mozilla.org/chrome/en-GB.jar
+mozilla-firefox/extensions/langpack-en-GB@firefox.mozilla.org/install.rdf

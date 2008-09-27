@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2008/09/26 19:35:47 martynas Exp $
+# $OpenBSD: Makefile,v 1.23 2008/09/27 19:14:32 martynas Exp $
 
 PKG_ARCH=	*
 
-COMMENT-main=	${MAINLANG} language pack for Thunderbird
 V=		2.0.0.17
 NAME=		thunderbird-i18n
-PKGNAME=	${NAME}-${MAINLANG}-${V}
-PKGNAME-main=	${NAME}-${MAINLANG}-${V}	# also see below
+PKGNAME=	${NAME}-${V}
 
 CATEGORIES=	mail
 
@@ -22,10 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${V}/linux-i686/xpi/
 
-# define one language for the main package
-MAINLANG=	en-GB
-OTHERLANGS=	be bg ca cs da de el es-AR es-ES eu fi fr ga-IE \
-		hu it ja ko lt nb-NO nl nn-NO pl pt-BR pt-PT \
+LANGUAGES=	be bg ca cs da de el en-GB es-AR es-ES eu fi fr \
+		ga-IE hu it ja ko lt nb-NO nl nn-NO pl pt-BR pt-PT \
 		ru sk sl sv-SE tr zh-CN zh-TW
 #		broken: mk pa-IN
 
@@ -36,12 +32,10 @@ DIST_SUBDIR=	${NAME}-${V}
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-DISTFILES=	${MAINLANG}.xpi
-LPACKDIR-${MAINLANG}=${PREFIX}/mozilla-thunderbird/extensions/langpack-${MAINLANG}@thunderbird.mozilla.org
+# define one language for the main package
+SUBPACKAGE?=	-en-GB
 
-MULTI_PACKAGES=	-main
-
-.for i in ${OTHERLANGS}
+.for i in ${LANGUAGES}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.xpi
 PKGNAME-$i=	${NAME}-$i-${V}
@@ -52,16 +46,14 @@ LPACKDIR-$i=	${PREFIX}/mozilla-thunderbird/extensions/langpack-$i@thunderbird.mo
 # use the same for all subpackages
 MESSAGE=	${PKGDIR}/MESSAGE
 
-SUBST_VARS=	MAINLANG
-
 do-extract:
-.for i in ${MAINLANG} ${OTHERLANGS}
+.for i in ${LANGUAGES}
 	@mkdir -p ${WRKDIR}/$i
 	@${UNZIP} -oq ${FULLDISTDIR}/$i.xpi -d ${WRKDIR}/$i
 .endfor
 
 do-install:
-.for i in ${MAINLANG} ${OTHERLANGS}
+.for i in ${LANGUAGES}
 	${INSTALL_DATA_DIR} ${LPACKDIR-$i}/chrome
 	${INSTALL_DATA} ${WRKSRC}/$i/chrome.manifest ${LPACKDIR-$i}
 	${INSTALL_DATA} ${WRKSRC}/$i/install.rdf ${LPACKDIR-$i}
