@@ -1,18 +1,16 @@
-$OpenBSD: patch-rsnapshot_conf_default_in,v 1.2 2006/08/01 12:32:36 alek Exp $
---- rsnapshot.conf.default.in.orig	Fri Jul 14 18:30:37 2006
-+++ rsnapshot.conf.default.in	Fri Jul 14 18:35:51 2006
-@@ -39,10 +39,6 @@ snapshot_root	/.snapshots/
- # LINUX USERS:   Be sure to uncomment "cmd_cp". This gives you extra features.
- # EVERYONE ELSE: Leave "cmd_cp" commented out for compatibility.
+$OpenBSD: patch-rsnapshot_conf_default_in,v 1.3 2008/09/27 11:54:11 ajacoutot Exp $
+--- rsnapshot.conf.default.in.orig	Sun Apr 27 12:26:16 2008
++++ rsnapshot.conf.default.in	Fri Sep 19 15:33:52 2008
+@@ -54,7 +54,7 @@ snapshot_root	/.snapshots/
+ 
+ # Uncomment this to enable remote ssh backups over rsync.
  #
--# Note: Linux users with gnu cp/coreutils version > 5.3, should leave
--# cmd_cp commented out, since cp fails to create destination directories
--# with a trailing slash for versions 5.3 or later.
--#
- # See the README file or the man page for more details.
+-#@CMD_SSH@
++@CMD_SSH@
+ 
+ # Comment this out to disable syslog support.
  #
- #@CMD_CP@
-@@ -136,8 +132,6 @@ loglevel	3
+@@ -132,8 +132,6 @@ lockfile	/var/run/rsnapshot.pid
  #ssh_args	-p 22
  
  # Default arguments for the "du" program (for disk space reporting).
@@ -21,7 +19,7 @@ $OpenBSD: patch-rsnapshot_conf_default_in,v 1.2 2006/08/01 12:32:36 alek Exp $
  #
  #du_args	-csh
  
-@@ -168,7 +162,7 @@ loglevel	3
+@@ -164,7 +162,7 @@ lockfile	/var/run/rsnapshot.pid
  # This is the best way to support special files (FIFOs, etc) cross-platform.
  # The default is 0 (off).
  #
@@ -30,7 +28,7 @@ $OpenBSD: patch-rsnapshot_conf_default_in,v 1.2 2006/08/01 12:32:36 alek Exp $
  
  # When sync_first is enabled, it changes the default behaviour of rsnapshot.
  # Normally, when rsnapshot is called with its lowest interval
-@@ -190,9 +184,9 @@ loglevel	3
+@@ -193,9 +191,9 @@ lockfile	/var/run/rsnapshot.pid
  ###############################
  
  # LOCALHOST

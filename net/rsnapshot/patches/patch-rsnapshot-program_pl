@@ -1,85 +1,94 @@
-$OpenBSD: patch-rsnapshot-program_pl,v 1.3 2006/08/01 12:32:36 alek Exp $
---- rsnapshot-program.pl.orig	Fri Jul 14 18:41:47 2006
-+++ rsnapshot-program.pl	Fri Jul 14 18:47:25 2006
-@@ -355,7 +355,7 @@ sub find_config_file {
+$OpenBSD: patch-rsnapshot-program_pl,v 1.4 2008/09/27 11:54:11 ajacoutot Exp $
+--- rsnapshot-program.pl.orig	Sun Aug 31 13:17:07 2008
++++ rsnapshot-program.pl	Fri Sep 19 15:28:30 2008
+@@ -392,7 +392,7 @@ sub find_config_file {
  	# autoconf variables (may have too many slashes)
  	my $autoconf_sysconfdir	= '@sysconfdir@';
  	my $autoconf_prefix		= '@prefix@';
 -	my $default_config_file	= '/etc/rsnapshot.conf';
-+	my $default_config_file	= '!!SYSCONFDIR!!/rsnapshot.conf';
++	my $default_config_file	= '${SYSCONFDIR}/rsnapshot.conf';
  	
  	# consolidate multiple slashes
  	$autoconf_sysconfdir	=~ s/\/+/\//g;
-@@ -5651,7 +5651,7 @@ of cron jobs. It is possible, however, t
+@@ -2986,7 +2986,7 @@ sub handle_interval {
+ 		if (0 == $test) {
+ 			my $result = rm_rf( "$config_vars{'snapshot_root'}/_delete.$$" );
+ 			if (0 == $result) {
+-				bail("Error! rm_rf(\"$config_vars{'snapshot_root'}/_delete.$$\")\n");
++				bail("Error! rm_rf(\"$config_vars{'snapshot_root'}/_delete.$$\\")\n");
+ 			}
+ 		}
+ 	} else {
+@@ -6093,7 +6093,7 @@ of cron jobs. It is possible, however, to run as any a
  with an alternate configuration file.
  
  All important options are specified in a configuration file, which is
 -located by default at B</etc/rsnapshot.conf>. An alternate file can be
-+located by default at B<!!SYSCONFDIR!!/rsnapshot.conf>. An alternate file can be
++located by default at B<${SYSCONFDIR}/rsnapshot.conf>. An alternate file can be
  specified on the command line. There are also additional options which
  can be passed on the command line.
  
-@@ -5677,12 +5677,12 @@ B<-D> a firehose of diagnostic informati
+@@ -6119,14 +6119,10 @@ B<-D> a firehose of diagnostic information
  
  =head1 CONFIGURATION
  
 -B</etc/rsnapshot.conf> is the default configuration file. All parameters
 -in this file must be separated by tabs. B</etc/rsnapshot.conf.default>
-+B<!!SYSCONFDIR!!/rsnapshot.conf> is the default configuration file. All parameters
-+in this file must be separated by tabs. B<!!SAMPLES_DIR!!/rsnapshot.conf.default>
++B<${SYSCONFDIR}/rsnapshot.conf> is the default configuration file. All parameters
++in this file must be separated by tabs. B<${SAMPLES_DIR}/rsnapshot.conf.default>
  can be used as a reference.
  
 -It is recommended that you copy B</etc/rsnapshot.conf.default> to
 -B</etc/rsnapshot.conf>, and then modify B</etc/rsnapshot.conf> to suit
-+It is recommended that you copy B<!!SAMPLES_DIR!!/rsnapshot.conf.default> to
-+B<!!SYSCONFDIR!!/rsnapshot.conf>, and then modify B<!!SYSCONFDIR!!/rsnapshot.conf> to suit
- your needs.
- 
- Here is a list of allowed parameters:
-@@ -6164,7 +6164,7 @@ also want to run it from the command lin
+-your needs.
+-
+ Long lines may be split over several lines.  "Continuation" lines
+ B<must> begin with a space or a tab character.  Continuation lines will
+ have all leading and trailing whitespace stripped off, and then be appended
+@@ -6729,7 +6725,7 @@ also want to run it from the command line once or twic
  a feel for what it's doing.
  
- Here is an example crontab entry, assuming that intervals B<hourly>,
+ Here is an example crontab entry, assuming that backup levels B<hourly>,
 -B<daily>, B<weekly> and B<monthly> have been defined in B</etc/rsnapshot.conf>
-+B<daily>, B<weekly> and B<monthly> have been defined in B<!!SYSCONFDIR!!/rsnapshot.conf>
++B<daily>, B<weekly> and B<monthly> have been defined in B<${SYSCONFDIR}/rsnapshot.conf>
  
  =over 4
  
-@@ -6200,7 +6200,7 @@ really comes in handy.
+@@ -6774,7 +6770,7 @@ your hourly snapshot will fail sometimes because the d
  
  Remember that these are just the times that the program runs.
- To set the number of backups stored, set the B<interval> numbers in
+ To set the number of backups stored, set the B<retain> numbers in
 -B</etc/rsnapshot.conf>
-+B<!!SYSCONFDIR!!/rsnapshot.conf>
++B<${SYSCONFDIR}/rsnapshot.conf>
  
  To check the disk space used by rsnapshot, you can call it with the "du" argument.
  
-@@ -6313,7 +6313,7 @@ B<2>  Some warnings occurred, but the ba
+@@ -6887,7 +6883,7 @@ B<2>  Some warnings occurred, but the backup still fin
  
  =head1 FILES
  
 -/etc/rsnapshot.conf
-+!!SYSCONFDIR!!/rsnapshot.conf
++${SYSCONFDIR}/rsnapshot.conf
  
  =head1 SEE ALSO
  
-@@ -6342,8 +6342,8 @@ B<http://lists.sourceforge.net/lists/lis
+@@ -6916,8 +6912,8 @@ B<http://lists.sourceforge.net/lists/listinfo/rsnapsho
  
  =head1 NOTES
  
 -Make sure your /etc/rsnapshot.conf file has all elements separated by tabs.
 -See /etc/rsnapshot.conf.default for a working example file.
-+Make sure your !!SYSCONFDIR!!/rsnapshot.conf file has all elements separated by tabs.
-+See !!SAMPLES_DIR!!/rsnapshot.conf.default for a working example file.
++Make sure your ${SYSCONFDIR}/rsnapshot.conf file has all elements separated by tabs.
++See ${SAMPLES_DIR}/rsnapshot.conf.default for a working example file.
  
  Make sure you put a trailing slash on the end of all directory references.
  If you don't, you may have extra directories created in your snapshots.
-@@ -6359,7 +6359,7 @@ If you would like regular users to be ab
+@@ -6933,7 +6929,7 @@ If you would like regular users to be able to restore 
  there are a number of ways this can be accomplished. One such scenario
  would be:
  
 -Set B<snapshot_root> to B</.private/.snapshots> in B</etc/rsnapshot.conf>
-+Set B<snapshot_root> to B</.private/.snapshots> in B<!!SYSCONFDIR!!/rsnapshot.conf>
++Set B<snapshot_root> to B</.private/.snapshots> in B<${SYSCONFDIR}/rsnapshot.conf>
  
  Set the file permissions on these directories as follows:
  
