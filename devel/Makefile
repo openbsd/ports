@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.627 2008/09/28 16:42:00 bernd Exp $
+# $OpenBSD: Makefile,v 1.628 2008/09/28 16:50:11 bernd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -680,6 +680,7 @@
      SUBDIR += ruby-abstract
      SUBDIR += ruby-actionpack
      SUBDIR += ruby-activesupport
+     SUBDIR += ruby-assistance
      SUBDIR += ruby-color-tools
      SUBDIR += ruby-daemons
      SUBDIR += ruby-debug
