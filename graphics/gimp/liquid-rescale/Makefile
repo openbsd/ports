@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/01 11:15:29 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2008/09/28 07:46:01 sturm Exp $
 
 COMMENT = 			seam-carving smart rescale gimp plugin
 CATEGORIES =			graphics
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 
 CONFIGURE_STYLE =		gnu
 
+BUILD_DEPENDS=			::textproc/p5-XML-Parser
 LIB_DEPENDS =			lqr-1::graphics/liblqr \
 				gimp-2.0,gimpbase-2.0,gimpcolor-2.0,gimpconfig-2.0,gimpmath-2.0,gimpmodule-2.0,gimpui-2.0,gimpwidgets-2.0::graphics/gimp/stable
 
