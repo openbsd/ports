@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/06/02 17:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/28 10:29:47 sturm Exp $
 
 COMMENT=		binary editor
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		ghex
 GNOME_VERSION=		2.20.1
 SHARED_LIBS=		gtkhex 0.0
 CATEGORIES=		sysutils editors
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,8 +27,10 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=		devel/gettext \
 			x11/gnome
 
+BUILD_DEPENDS=		::x11/gnome/doc-utils
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui
+RUN_DEPENDS=		::x11/gnome/doc-utils
 
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
