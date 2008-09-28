@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2008/06/01 15:34:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/09/28 07:13:18 sturm Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	MAL plugin for J-Pilot
 
 DISTNAME=	jpilot-syncmal-0.80
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	comms palm
 
 HOMEPAGE=	http://jasonday.home.att.net/code/syncmal/
@@ -22,15 +22,16 @@ MASTER_SITES=	${HOMEPAGE}
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat \
-		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m \
+		fontconfig freetype m \
+		glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 z
 
 MODULES=	devel/gettext
 RUN_DEPENDS=	::comms/jpilot
 LIB_DEPENDS=	pisock.>=9::comms/pilot-link \
 		mal.>=1::comms/libmal \
-		png.>=5::graphics/png
+		png.>=5::graphics/png \
+		gtk-x11-2.0.>=400.13,gdk-x11-2.0.>=400.13,gdk_pixbuf-2.0.>=400.13::x11/gtk+2
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
