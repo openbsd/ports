@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/02 17:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/09/28 08:55:01 sturm Exp $
 
 COMMENT=		graphical predictive text input system
 
 GNOME_PROJECT=		dasher
 GNOME_VERSION=		4.6.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 CATEGORIES=		x11
 
@@ -28,8 +28,10 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
 		popt pthread ssl stdc++ util xml2 z
 
+BUILD_DEPENDS=		::x11/gnome/doc-utils
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			cspi,spi::x11/gnome/at-spi
+RUN_DEPENDS=		::x11/gnome/doc-utils
 
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
