@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 22:36:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2008/09/28 13:55:17 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT-main=	network file distribution system
@@ -6,12 +6,10 @@ COMMENT-server=	network file distribution server
 
 VERSION=	16.1h
 DISTNAME=	cvsup-snap-${VERSION}
-PKGNAME-main=	cvsup-${VERSION}p0
-PKGNAME-server=	cvsupd-${VERSION}
+PKGNAME-main=	cvsup-${VERSION}p1
+PKGNAME-server=	cvsupd-${VERSION}p0
 CATEGORIES=	net devel
-HOMEPAGE=	http://www.polstra.com/projects/freeware/CVSup/
-
-MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
+HOMEPAGE=	http://www.cvsup.org/
 
 # BSD
 PERMIT_PACKAGE_FTP=	Yes
@@ -23,8 +21,7 @@ MASTER_SITES= 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ \
-		ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ \
-		ftp://ftp.dnsbalance.ring.gr.jp/pub/FreeBSD/
+		ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/
 MASTER_SITES:=	${MASTER_SITES:=development/CVSup/snapshots/}
 
 MULTI_PACKAGES=	-main -server

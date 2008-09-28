@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 00:27:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2008/09/28 13:55:17 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	Modula-3 distribution for building CVSup
 DISTNAME=	ezm3-1.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	lang
 
-HOMEPAGE=	http://www.polstra.com/projects/freeware/ezm3/
-
-MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
+HOMEPAGE=	http://www.cvsup.org/ezm3/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -21,8 +19,7 @@ MASTER_SITES= 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ \
-		ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ \
-		ftp://ftp.dnsbalance.ring.gr.jp/pub/FreeBSD/
+		ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/
 MASTER_SITES:=	${MASTER_SITES:=development/CVSup/ezm3/}
 MASTER_SITES0=	http://sites.inka.de/~mips/unix/distfiles/
 
