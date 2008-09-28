@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/07/21 09:40:42 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2008/09/28 15:43:05 bernd Exp $
 @pkgpath lang/ruby
 bin/erb
 bin/irb
@@ -95,6 +95,7 @@ lib/ruby/${REV}/${SUB}/fcntl.so
 lib/ruby/${REV}/${SUB}/intern.h
 lib/ruby/${REV}/${SUB}/io/
 lib/ruby/${REV}/${SUB}/io/wait.so
+lib/ruby/${REV}/${SUB}/largefile.h
 lib/ruby/${REV}/${SUB}/missing.h
 lib/ruby/${REV}/${SUB}/nkf.so
 lib/ruby/${REV}/${SUB}/node.h
@@ -6471,20 +6472,22 @@ share/ri/${REV}/system/Resolv/DNS/Requester/ConnectedUDP/Sender/
 share/ri/${REV}/system/Resolv/DNS/Requester/ConnectedUDP/Sender/cdesc-Sender.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/ConnectedUDP/Sender/send-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/ConnectedUDP/cdesc-ConnectedUDP.yaml
+share/ri/${REV}/system/Resolv/DNS/Requester/ConnectedUDP/close-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/ConnectedUDP/new-c.yaml
+share/ri/${REV}/system/Resolv/DNS/Requester/ConnectedUDP/recv_reply-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/ConnectedUDP/sender-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/RequestError/
 share/ri/${REV}/system/Resolv/DNS/Requester/RequestError/cdesc-RequestError.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/Sender/
 share/ri/${REV}/system/Resolv/DNS/Requester/Sender/cdesc-Sender.yaml
-share/ri/${REV}/system/Resolv/DNS/Requester/Sender/new-c.yaml
-share/ri/${REV}/system/Resolv/DNS/Requester/Sender/recv-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/TCP/
 share/ri/${REV}/system/Resolv/DNS/Requester/TCP/Sender/
 share/ri/${REV}/system/Resolv/DNS/Requester/TCP/Sender/cdesc-Sender.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/TCP/Sender/send-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/TCP/cdesc-TCP.yaml
+share/ri/${REV}/system/Resolv/DNS/Requester/TCP/close-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/TCP/new-c.yaml
+share/ri/${REV}/system/Resolv/DNS/Requester/TCP/recv_reply-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/TCP/sender-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/UnconnectedUDP/
 share/ri/${REV}/system/Resolv/DNS/Requester/UnconnectedUDP/Sender/
@@ -6492,12 +6495,14 @@ share/ri/${REV}/system/Resolv/DNS/Requester/UnconnectedUDP/Sender/cdesc-Sender.y
 share/ri/${REV}/system/Resolv/DNS/Requester/UnconnectedUDP/Sender/new-c.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/UnconnectedUDP/Sender/send-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/UnconnectedUDP/cdesc-UnconnectedUDP.yaml
+share/ri/${REV}/system/Resolv/DNS/Requester/UnconnectedUDP/close-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/UnconnectedUDP/new-c.yaml
+share/ri/${REV}/system/Resolv/DNS/Requester/UnconnectedUDP/recv_reply-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/UnconnectedUDP/sender-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/cdesc-Requester.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/close-i.yaml
-share/ri/${REV}/system/Resolv/DNS/Requester/delete-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/new-c.yaml
+share/ri/${REV}/system/Resolv/DNS/Requester/request-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Resource/
 share/ri/${REV}/system/Resolv/DNS/Resource/%3d%3d-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Resource/ANY/
@@ -9249,6 +9254,8 @@ share/ri/${REV}/system/TimeExtentionTest/cdesc-TimeExtentionTest.yaml
 share/ri/${REV}/system/Timeout/
 share/ri/${REV}/system/Timeout/Error/
 share/ri/${REV}/system/Timeout/Error/cdesc-Error.yaml
+share/ri/${REV}/system/Timeout/ExitException/
+share/ri/${REV}/system/Timeout/ExitException/cdesc-ExitException.yaml
 share/ri/${REV}/system/Timeout/cdesc-Timeout.yaml
 share/ri/${REV}/system/Timeout/timeout-i.yaml
 share/ri/${REV}/system/TokenStream/
@@ -9771,6 +9778,8 @@ share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/service-i.yaml
 share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/set_dir_list-i.yaml
 share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/set_filename-i.yaml
 share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/shift_path_info-i.yaml
+share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/trailing_pathsep%3f-i.yaml
+share/ri/${REV}/system/WEBrick/HTTPServlet/FileHandler/windows_ambiguous_name%3f-i.yaml
 share/ri/${REV}/system/WEBrick/HTTPServlet/HTTPServletError/
 share/ri/${REV}/system/WEBrick/HTTPServlet/HTTPServletError/cdesc-HTTPServletError.yaml
 share/ri/${REV}/system/WEBrick/HTTPServlet/ProcHandler/

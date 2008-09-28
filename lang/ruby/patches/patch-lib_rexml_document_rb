@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_rexml_document_rb,v 1.1 2008/09/28 15:43:05 bernd Exp $
+
+http://www.ruby-lang.org/en/news/2008/08/23/dos-vulnerability-in-rexml/
+
+--- lib/rexml/document.rb.orig	Sun Nov  4 05:50:15 2007
++++ lib/rexml/document.rb	Thu Sep  4 09:53:31 2008
+@@ -18,6 +18,18 @@ module REXML
+   # you create, you must add one; REXML documents do not write a default
+ 	# declaration for you.  See |DECLARATION| and |write|.
+ 	class Document < Element
++		@@entity_expansion_limit = 10_000
++		def self.entity_expansion_limit= val
++			@@entity_expansion_limit = val
++		end
++
++		def record_entity_expansion!
++			@number_of_expansions ||= 0
++			@number_of_expansions += 1
++			if @number_of_expansions > @@entity_expansion_limit
++				raise "Number of entity expansions exceeded, processing aborted."
++			end
++		end
+ 		# A convenient default XML declaration.  If you want an XML declaration,
+ 		# the easiest way to add one is mydoc << Document::DECLARATION
+     # +DEPRECATED+
