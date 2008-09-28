@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2008/08/23 16:29:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/28 10:37:13 sturm Exp $
 
 COMMENT-main=		GPS processing toolkit
 COMMENT-devel=		GPStk development libraries and headers
 
 V=			1.5
 DISTNAME=		gpstk${V}
-PKGNAME-main=		gpstk-${V}p1
-PKGNAME-devel=		gpstk-devel-${V}p1
+PKGNAME-main=		gpstk-${V}p2
+PKGNAME-devel=		gpstk-devel-${V}p2
 CATEGORIES=		geo devel
 SHARED_LIBS=		base 15.0 \
 			geomatics 15.0 \
@@ -43,6 +43,9 @@ VMEM_WARNING=		Yes
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "mips64"
 CFLAGS+=		-g
 CXXFLAGS+=		-g
+.elif ${MACHINE_ARCH} == "sparc64"
+CFLAGS+=		-O0 -g
+CXXFLAGS+=		-O0 -g
 .else
 CFLAGS+=		-O1 -g
 CXXFLAGS+=		-O1 -g
