@@ -1,0 +1,4 @@
+This is a newer interface to access PostgreSQL database from Ruby.
+It is designed to offer every feature available in libpq to Ruby, with a
+better API. This module is simpler, cleaner, and more portable than
+ruby-postgres.
