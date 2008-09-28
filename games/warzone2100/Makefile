@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/22 14:57:52 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/09/28 07:34:43 sturm Exp $
 
 COMMENT=	3d realtime strategy on a future earth
 
@@ -28,6 +28,7 @@ LIB_DEPENDS=	SDL_net.>=1::devel/sdl-net \
 		png.>=5::graphics/png
 
 BUILD_DEPENDS=	::devel/bison \
+		::archivers/unzip \
 		::archivers/zip
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
