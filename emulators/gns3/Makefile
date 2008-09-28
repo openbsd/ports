@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/05/17 22:55:59 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2008/09/28 07:19:07 sturm Exp $
 
 COMMENT=	graphical network simulator
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gns-3/}
 
 MODULES=	lang/python
+BUILD_DEPENDS=	${_MODPY_BUILD_DEPENDS}
 RUN_DEPENDS=	::x11/py-qt4 \
 		::emulators/dynamips
 
