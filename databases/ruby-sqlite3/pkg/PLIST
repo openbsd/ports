@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/06/05 07:37:47 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/09/28 15:58:55 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -184,8 +184,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/M000091.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/M000092.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet.src/M000093.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet/FieldsContainer.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet/TypesContainer.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet/ArrayWithTypes.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet/ArrayWithTypesAndFields.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/ResultSet/HashWithTypes.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/SQLException.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/SchemaChangedException.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SQLite3/Statement.html
@@ -447,10 +448,12 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/RangeException/cdesc-Ran
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ReadOnlyException/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ReadOnlyException/cdesc-ReadOnlyException.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/FieldsContainer/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/FieldsContainer/cdesc-FieldsContainer.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/TypesContainer/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/TypesContainer/cdesc-TypesContainer.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/ArrayWithTypes/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/ArrayWithTypes/cdesc-ArrayWithTypes.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/ArrayWithTypesAndFields/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/ArrayWithTypesAndFields/cdesc-ArrayWithTypesAndFields.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/HashWithTypes/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/HashWithTypes/cdesc-HashWithTypes.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/cdesc-ResultSet.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/close-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/SQLite3/ResultSet/closed%3f-i.yaml
