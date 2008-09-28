@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.24 2008/05/07 14:29:39 naddy Exp $
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.25 2008/09/28 14:43:22 naddy Exp $
 --- scripts/makefile.openbsd.orig	Sat Sep  8 05:23:02 2007
 +++ scripts/makefile.openbsd	Wed Oct  3 17:20:11 2007
 @@ -4,11 +4,12 @@
@@ -12,7 +12,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.24 2008/05/07 14:29:39 naddy Exp $
 +DOCDIR= ${PREFIX}/share/doc/png
  
 -SHLIB_MAJOR=	0
--SHLIB_MINOR=	1.2.28
+-SHLIB_MINOR=	1.2.32
  
  LIB=	png
  SRCS=	png.c pngerror.c pngget.c pngmem.c pngpread.c \
@@ -25,7 +25,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.24 2008/05/07 14:29:39 naddy Exp $
  
  MAN=	libpng.3 libpngpf.3 png.5
 -DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO libpng.txt
-+DOCS = libpng-1.2.28.txt
++DOCS = libpng-1.2.32.txt
  
 +all: ${_LIBS} libpng-config libpng.pc
 +
