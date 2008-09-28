@@ -1,21 +1,21 @@
-$OpenBSD: patch-lib_rubygems_installer_rb,v 1.6 2008/06/17 22:42:59 bernd Exp $
+$OpenBSD: patch-lib_rubygems_installer_rb,v 1.7 2008/09/28 15:45:18 bernd Exp $
 
 This is for GEM_SKIPDEPENDS in ruby.port.mk.
 
---- lib/rubygems/installer.rb.orig	Sat Apr 19 14:52:49 2008
-+++ lib/rubygems/installer.rb	Sat Apr 19 14:53:52 2008
-@@ -76,6 +76,7 @@ class Gem::Installer
-     @security_policy = options[:security_policy]
-     @wrappers = options[:wrappers]
+--- lib/rubygems/installer.rb.orig	Tue Sep 23 06:01:38 2008
++++ lib/rubygems/installer.rb	Sat Sep 27 23:05:48 2008
+@@ -109,6 +109,7 @@ class Gem::Installer
      @bin_dir = options[:bin_dir]
+     @development = options[:development]
+     @source_index = options[:source_index]
 +    @skip_dependencies = options[:skip_dependencies]
  
      begin
        @format = Gem::Format.from_file_by_path @gem, @security_policy
-@@ -120,7 +121,12 @@ class Gem::Installer
+@@ -194,7 +195,12 @@ class Gem::Installer
+         deps |= @spec.development_dependencies if @development
  
-       unless @ignore_dependencies then
-         @spec.dependencies.each do |dep_gem|
+         deps.each do |dep_gem|
 -          ensure_dependency @spec, dep_gem
 +          if @skip_dependencies && @skip_dependencies.include?(dep_gem.name)
 +            say "Skipping '#{dep_gem.name}' dependency."

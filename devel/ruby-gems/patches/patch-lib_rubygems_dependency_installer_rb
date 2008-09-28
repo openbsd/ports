@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_rubygems_dependency_installer_rb,v 1.2 2008/06/17 22:42:59 bernd Exp $
+$OpenBSD: patch-lib_rubygems_dependency_installer_rb,v 1.3 2008/09/28 15:45:18 bernd Exp $
 
 This is for GEM_SKIPDEPENDS in ruby.port.mk.
 
---- lib/rubygems/dependency_installer.rb.orig	Sat Apr 19 14:49:10 2008
-+++ lib/rubygems/dependency_installer.rb	Sat Apr 19 14:50:57 2008
-@@ -18,7 +18,8 @@ class Gem::DependencyInstaller
+--- lib/rubygems/dependency_installer.rb.orig	Tue Aug 12 23:50:22 2008
++++ lib/rubygems/dependency_installer.rb	Sun Sep 28 13:47:49 2008
+@@ -21,7 +21,8 @@ class Gem::DependencyInstaller
      :format_executable => false, # HACK dup
      :ignore_dependencies => false,
      :security_policy => nil, # HACK NoSecurity requires OpenSSL.  AlmostNo? Low?
@@ -14,21 +14,30 @@ This is for GEM_SKIPDEPENDS in ruby.port.mk.
    }
  
    ##
-@@ -46,6 +47,7 @@ class Gem::DependencyInstaller
+@@ -42,7 +43,7 @@ class Gem::DependencyInstaller
+   # :wrappers:: See Gem::Installer::new
+ 
+   def initialize(options = {})
+-    if options[:install_dir] then
++    if options[:install_dir] and not options[:default_source_index] then
+       spec_dir = options[:install_dir], 'specifications'
+       @source_index = Gem::SourceIndex.from_gems_in spec_dir
+     else
+@@ -61,6 +62,7 @@ class Gem::DependencyInstaller
      @security_policy = options[:security_policy]
+     @user_install = options[:user_install]
      @wrappers = options[:wrappers]
-     @bin_dir = options[:bin_dir]
 +    @skip_dependencies = options[:skip_dependencies]
  
      @installed_gems = []
-   end
-@@ -205,7 +207,8 @@ class Gem::DependencyInstaller
-                                 :install_dir => @install_dir,
-                                 :security_policy => @security_policy,
-                                 :wrappers => @wrappers,
--                                :bin_dir => @bin_dir
-+                                :bin_dir => @bin_dir,
-+                                :skip_dependencies => @skip_dependencies
+ 
+@@ -244,7 +246,8 @@ class Gem::DependencyInstaller
+                                 :security_policy     => @security_policy,
+                                 :source_index        => @source_index,
+                                 :user_install        => @user_install,
+-                                :wrappers            => @wrappers
++                                :wrappers            => @wrappers,
++                                :skip_dependencies   => @skip_dependencies
  
        spec = inst.install
  
