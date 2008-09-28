@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2008/06/15 00:01:25 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2008/09/28 15:52:15 bernd Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	fast HTTP library and server for Ruby
 
-DISTNAME=	mongrel-1.1.4
-PKGNAME=	ruby-${DISTNAME}p0
+DISTNAME=	mongrel-1.1.5
+PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	www
 
 MAINTAINER=	Jason LaRiviere <jason@indelicate.net>
@@ -24,7 +24,7 @@ WANTLIB=	c m
 
 MODULES=	lang/ruby
 
-LIB_DEPENDS=	ruby.>=1::lang/ruby
+LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:ruby-daemons->=1.0.3:devel/ruby-daemons \
