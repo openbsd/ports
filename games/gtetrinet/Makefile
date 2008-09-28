@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/06/15 00:08:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/28 07:28:54 sturm Exp $
 
 MULTI_PACKAGES=	-main -themes
 
@@ -34,6 +34,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+BUILD_DEPENDS=		::textproc/p5-XML-Parser
 LIB_DEPENDS-main=	gnome-2::x11/gnome/libgnome \
 			gnomeui-2::x11/gnome/libgnomeui \
 			esd:esound->=0.2.38:audio/esound
