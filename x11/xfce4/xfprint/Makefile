@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/10 11:38:03 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/28 10:53:05 sturm Exp $
 
 COMMENT=	printing helper for xfce4
 
@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--enable-cups \
 		--enable-bsdlpr \
 		--with-printcap=/etc/printcap
 
+BUILD_DEPENDS=	::x11/xfce4/xfce-mcs-manager
 RUN_DEPENDS=	::x11/xfce4/xfce-mcs-manager \
 		::print/a2ps
 
