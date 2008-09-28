@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2008/09/17 14:28:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.147 2008/09/28 16:04:47 bernd Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -127,6 +127,7 @@
      SUBDIR += ruby-bdb
      SUBDIR += ruby-ldap
      SUBDIR += ruby-mysql
+     SUBDIR += ruby-pg
      SUBDIR += ruby-postgres
      SUBDIR += ruby-sqlite3
      SUBDIR += sharedance
