@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2008/06/02 17:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2008/09/28 09:16:24 sturm Exp $
 
 COMMENT= 		telepathy based messenger for the Gnome desktop
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		0.14
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 SHARED_LIBS +=	empathy              0.0      # .4.0
 SHARED_LIBS +=	empathy-gtk          0.0      # .5.0
 CATEGORIES=		net
@@ -35,13 +35,15 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		::devel/iso-codes
+BUILD_DEPENDS=		::devel/iso-codes \
+			::x11/py-gtk2
 LIB_DEPENDS=		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
 			missioncontrol-client::net/telepathy/telepathy-mission-control \
 			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS=		::net/telepathy/telepathy-butterfly \
 			::net/telepathy/telepathy-gabble \
-			::x11/hicolor-icon-theme
+			::x11/hicolor-icon-theme \
+			::x11/py-gtk2
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
