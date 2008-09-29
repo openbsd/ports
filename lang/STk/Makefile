@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.27 2008/09/23 13:24:08 bernd Exp $
+# $OpenBSD: Makefile,v 1.28 2008/09/29 08:32:04 jasper Exp $
 
 COMMENT=	Scheme interpreter with Tk interface
 
 STK_VERSION=	4.0.1
-STK_ARCH=	$(OPSYS)-$(OPSYS_VER)-$(MACHINE)
 DISTNAME=	STk-${STK_VERSION}
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	lang
+
+HOMEPAGE=	http://kaolin.unice.fr/STk/
 
 MASTER_SITES=	ftp://kaolin.unice.fr/pub/STk/
 
+# BSD-like licenses apply
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	c SM X11 m ICE
+WANTLIB=	ICE SM X11 c m
 
 USE_X11=	Yes
 
