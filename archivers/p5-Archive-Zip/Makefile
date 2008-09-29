@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2008/09/01 16:54:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2008/09/29 18:34:23 simon Exp $
 
 COMMENT=	perl interface to ZIP files
 
 MODULES=	cpan
 
 DISTNAME=	Archive-Zip-1.24
+PKGNAME=	p5-${DISTNAME}p0
 
 CATEGORIES=	archivers
 
@@ -14,7 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::archivers/p5-Compress-Zlib
 REGRESS_DEPENDS=:zip-*:archivers/zip \
  		::devel/p5-Test-Pod
 
