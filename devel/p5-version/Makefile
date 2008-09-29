@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2008/07/16 21:15:59 dhill Exp $
+# $OpenBSD: Makefile,v 1.13 2008/09/29 22:54:15 simon Exp $
 
 SHARED_ONLY=	Yes
+COMES_WITH=	4.5
 
 MODULES=	cpan
 COMMENT=	perl extension for version objects

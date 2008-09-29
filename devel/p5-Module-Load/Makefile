@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/09/29 22:54:15 simon Exp $
 
 COMMENT=	runtime require of both modules and files
+COMES_WITH=	4.5
 
 MODULES=	cpan
 DISTNAME=	Module-Load-0.10
