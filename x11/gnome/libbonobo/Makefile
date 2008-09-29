@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2008/09/28 10:57:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.29 2008/09/29 19:02:22 sturm Exp $
 
 COMMENT=		GNOME component and compound document system
 
@@ -24,6 +24,8 @@ BUILD_DEPENDS=		::devel/popt
 LIB_DEPENDS=		ORBit-2.>=2,ORBitCosNaming-2.>=2::devel/ORBit2 \
 			glib-2.0.>=1200.0,gmodule-2.0.>=1200.0,gobject-2.0.>=1200.0,gthread-2.0.>=1200.0::devel/glib2 \
 			xml2.>=9::textproc/libxml			
+# popt usage is deprecated in gnome, but the header file is still included
+# from some libbonobo header and might still be used inside libbonobo
 RUN_DEPENDS=		::devel/popt
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
