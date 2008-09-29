@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/08 23:04:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2008/09/29 18:32:12 simon Exp $
+
+COMES_WITH=	4.5
 
 SHARED_ONLY=	Yes
 MODULES=	cpan

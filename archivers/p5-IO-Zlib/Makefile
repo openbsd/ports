@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2007/12/04 13:40:46 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2008/09/29 18:32:12 simon Exp $
 
 COMMENT=	IO:: style interface to Compress::Zlib
+COMES_WITH=	4.5
 
 MODULES=	cpan
 
