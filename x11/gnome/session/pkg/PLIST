@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.16 2008/01/24 11:43:31 jasper Exp $
-bin/gnome-session
-bin/gnome-session-properties
-bin/gnome-session-remove
-bin/gnome-session-save
+@comment $OpenBSD: PLIST,v 1.17 2008/09/29 09:27:32 jasper Exp $
+@bin bin/gnome-session
+@bin bin/gnome-session-properties
+@bin bin/gnome-session-remove
+@bin bin/gnome-session-save
 bin/gnome-wm
 @man man/man1/gnome-session-save.1
 @man man/man1/gnome-session.1
