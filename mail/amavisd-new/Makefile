@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2008/09/23 21:39:21 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2008/09/29 18:53:38 simon Exp $
 
 COMMENT=		interface between mailer MTA and content checkers
 
 DISTNAME=		amavisd-new-2.6.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		mail security
 
 HOMEPAGE=		http://www.ijs.si/software/amavisd/
@@ -26,9 +27,7 @@ RUN_DEPENDS=		::archivers/arc \
 			::archivers/freeze \
 			::archivers/lha \
 			::archivers/lzop \
-			::archivers/p5-Archive-Tar \
 			:p5-Archive-Zip->=1.14:archivers/p5-Archive-Zip \
-			::archivers/p5-Compress-Zlib \
 			::archivers/ripole \
 			::archivers/unarj \
 			::archivers/unrar \
