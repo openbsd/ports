@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/06/28 15:38:16 simon Exp $
-bin/gtetrinet
+@comment $OpenBSD: PLIST-main,v 1.2 2008/09/29 18:16:58 ajacoutot Exp $
+@bin bin/gtetrinet
 @man man/man6/gtetrinet.6
-share/applications/
 share/applications/gtetrinet.desktop
 share/gtetrinet/
 share/gtetrinet/themes/
@@ -31,8 +30,6 @@ share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gtetrinet.mo
 share/locale/es/LC_MESSAGES/gtetrinet.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/gtetrinet.mo
 share/locale/fi/LC_MESSAGES/gtetrinet.mo
 share/locale/fr/LC_MESSAGES/gtetrinet.mo
@@ -74,8 +71,6 @@ share/locale/tr/LC_MESSAGES/gtetrinet.mo
 share/locale/uk/LC_MESSAGES/gtetrinet.mo
 share/locale/vi/LC_MESSAGES/gtetrinet.mo
 share/locale/zh_CN/LC_MESSAGES/gtetrinet.mo
-share/locale/zh_HK/
-share/locale/zh_HK/LC_MESSAGES/
 share/locale/zh_HK/LC_MESSAGES/gtetrinet.mo
 share/locale/zh_TW/LC_MESSAGES/gtetrinet.mo
 share/pixmaps/
