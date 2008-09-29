@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2008/06/08 17:16:06 simon Exp $
+# $OpenBSD: Makefile,v 1.45 2008/09/29 22:53:57 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,11 +6,11 @@ COMMENT=	access to PostgreSQL databases through the DBI
 
 MODULES=	cpan
 DISTNAME=	DBD-Pg-2.7.2
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	databases
 
 LIB_DEPENDS=	pq.>=2:postgresql-client-*:databases/postgresql
-RUN_DEPENDS=	::databases/p5-DBI \
-		::devel/p5-version
+RUN_DEPENDS=	::databases/p5-DBI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 REGRESS_DEPENDS=:postgresql-server-*:databases/postgresql,-server
 

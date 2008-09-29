@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/09/29 22:53:58 simon Exp $
 
 COMMENT= 	parse records in CSV-like formats
 
 MODULES=	cpan
 DISTNAME=	Text-RecordParser-v1.2.1
-PKGNAME=	p5-Text-RecordParser-1.2.1p0
+PKGNAME=	p5-Text-RecordParser-1.2.1p1
 CATEGORIES=	textproc devel
 
 
@@ -15,8 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/p5-version \
-		::devel/p5-List-MoreUtils \
+RUN_DEPENDS=	::devel/p5-List-MoreUtils \
 		::devel/p5-Readonly \
 		::devel/p5-Class-Accessor \
 		::devel/p5-IO-stringy
