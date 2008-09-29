@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 20:59:40 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2008/09/29 18:41:21 simon Exp $
 
 COMMENT=	perl modules for creating and manipulating PDF
 
 MODULES=	cpan
 DISTNAME=	Text-PDF-0.25
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	textproc
 
 # Artistic
@@ -12,8 +12,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-RUN_DEPENDS=	:p5-Compress-Zlib-*:archivers/p5-Compress-Zlib
 
 EXAMPLE_DIR=	${PREFIX}/share/examples/p5-Text-PDF
 EXAMPLE_LOC=	${WRKSRC}/examples
