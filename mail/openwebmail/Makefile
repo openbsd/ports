@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.28 2008/09/29 18:56:15 simon Exp $
 
 COMMENT=	highly configurable webmail client
 
 DISTNAME=	openwebmail-2.51
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	mail www
 
 HOMEPAGE=	http://www.openwebmail.org/
@@ -22,7 +22,6 @@ RUN_DEPENDS=	::textproc/ispell \
 		::mail/tnef \
 		:p5-Text-Iconv->=1.2:converters/p5-Text-Iconv \
 		:p5-CGI-SpeedyCGI->=2.21:www/p5-CGI-SpeedyCGI \
-		:p5-Compress-Zlib->=1.22:archivers/p5-Compress-Zlib \
 		:p5-Quota->=1.4.6:sysutils/p5-Quota \
 		:p5-Authen-SASL->=2.08:security/p5-Authen-SASL \
 		:p5-IO-Socket-SSL->=0.96:security/p5-IO-Socket-SSL
