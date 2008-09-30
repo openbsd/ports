@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2008/09/24 13:45:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2008/09/30 09:25:02 jasper Exp $
 #
 
      SUBDIR += R
@@ -46,6 +46,7 @@
      SUBDIR += netcdf
      SUBDIR += ntl
      SUBDIR += octave
+     SUBDIR += p5-AI-FANN
      SUBDIR += p5-AI-NeuralNet-BackProp
      SUBDIR += p5-AI-NeuralNet-Mesh
      SUBDIR += p5-AI-Perceptron
