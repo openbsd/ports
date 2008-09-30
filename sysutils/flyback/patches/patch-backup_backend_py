@@ -1,6 +1,6 @@
-$OpenBSD: patch-backup_backend_py,v 1.2 2008/06/26 13:14:06 ajacoutot Exp $
+$OpenBSD: patch-backup_backend_py,v 1.3 2008/09/30 08:15:06 ajacoutot Exp $
 --- backup_backend.py.orig	Thu Nov 15 07:22:16 2007
-+++ backup_backend.py	Mon Apr 14 13:08:35 2008
++++ backup_backend.py	Tue Sep 30 10:01:30 2008
 @@ -229,7 +229,7 @@ class backup:
  
          if latest_backup_dir:
@@ -10,3 +10,15 @@ $OpenBSD: patch-backup_backend_py,v 1.2 2008/06/26 13:14:06 ajacoutot Exp $
              self.run_cmd_output_gui("chmod u+w '%s'" % new_backup)
          
          for dir in self.included_dirs:
+@@ -290,9 +290,9 @@ class backup:
+             file = src.rstrip('/') +'/'+ local_file
+             print 'file', file
+             if os.path.isdir(file):
+-                cmd = 'cp -vR "%s" "%s"' % (file, dest)
++                cmd = 'gcp -vR "%s" "%s"' % (file, dest)
+             else:
+-                cmd = 'cp -v "%s" "%s"' % (file, dest)
++                cmd = 'gcp -v "%s" "%s"' % (file, dest)
+             file_pairs = self.run_cmd_output_gui(cmd)
+ #            for file_pair in file_pairs:
+ #                to_f = file_pair.split(' -> ')[1].strip("'`\n")
