@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/02/03 16:04:09 jasper Exp $
-bin/conky
+@comment $OpenBSD: PLIST,v 1.3 2008/09/30 09:54:19 landry Exp $
+@bin bin/conky
 share/doc/conky/
 share/doc/conky/README
 share/doc/conky/config_settings.html
@@ -9,4 +9,3 @@ share/examples/conky/
 @sample ${SYSCONFDIR}/conky/
 share/examples/conky/conky.conf
 @sample ${SYSCONFDIR}/conky/conky.conf
-share/examples/conky/conkyrc.sample

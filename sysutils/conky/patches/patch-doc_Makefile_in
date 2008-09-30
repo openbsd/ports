@@ -1,13 +1,13 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2007/10/10 21:20:23 jasper Exp $
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2008/09/30 09:54:19 landry Exp $
 
---- doc/Makefile.in.orig	Fri Sep 28 20:12:41 2007
-+++ doc/Makefile.in	Fri Sep 28 20:12:52 2007
-@@ -187,7 +187,7 @@ top_builddir = @top_builddir@
+--- doc/Makefile.in.orig	Thu Aug 14 19:16:52 2008
++++ doc/Makefile.in	Mon Sep 22 22:49:34 2008
+@@ -191,7 +191,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  xsltproc_cmd = @xsltproc_cmd@
  @HAVE_DOCSTUFF_TRUE@DOCS = conky.1 docs.html variables.html config_settings.html
 -man_MANS = conky.1
 +man_MANS =
- EXTRA_DIST = $(DOCS) conkyrc.sample command_options.xml config_settings.xml docgen.sh docs.xml variables.xml variables.xsl config_settings.xsl
+ sysconf_SYSCONFS = conky.conf
+ EXTRA_DIST = $(DOCS) conky.conf command_options.xml config_settings.xml docgen.sh docs.xml variables.xml variables.xsl config_settings.xsl
  all: all-am
- 
