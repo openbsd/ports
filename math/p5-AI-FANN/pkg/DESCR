@@ -1,0 +1,3 @@
+AI::FANN is a Perl wrapper for the Fast Artificial Neural Network (FANN)
+Library. It's an object oriented interface provides an almost direct map
+to the C library API.

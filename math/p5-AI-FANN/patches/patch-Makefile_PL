@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2008/09/30 09:22:58 jasper Exp $
+--- Makefile.PL.orig	Fri Nov 24 10:37:08 2006
++++ Makefile.PL	Tue Sep 30 00:37:17 2008
+@@ -1,8 +1,8 @@
+ 
+ use ExtUtils::MakeMaker;
+ 
+-my $fann_lib="";
+-my $fan_inc="";
++my $fann_lib="-L${PREFIX}/lib";
++my $fan_inc="-I${PREFIX}/include";
+ 
+ @ARGV = map {
+     if (/^FANN_LIB=(.*)/) {
+@@ -24,7 +24,7 @@ WriteMakefile( NAME => 'AI::FANN',
+                PREREQ_PM => {},
+                ABSTRACT_FROM => 'lib/AI/FANN.pm',
+                AUTHOR => 'Salvador Fandiño <sfandino@yahoo.com>',
+-               LIBS => ["${fann_lib}-ldoublefann"],
++               LIBS => ["${fann_lib} -ldoublefann"],
+                DEFINE => '',
+                INC => "${fann_inc}-I.",
+                OBJECT => '$(BASEEXT)$(OBJ_EXT) morefann$(OBJ_EXT)',

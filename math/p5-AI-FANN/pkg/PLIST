@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/30 09:22:58 jasper Exp $
+${P5ARCH}/
+${P5ARCH}/AI/
+${P5ARCH}/AI/FANN.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/AI/
+${P5ARCH}/auto/AI/FANN/
+${P5ARCH}/auto/AI/FANN/FANN.bs
+${P5ARCH}/auto/AI/FANN/FANN.so
+@man man/man3p/AI::FANN.3p
+share/examples/p5-FANN/
+share/examples/p5-FANN/add.pl
+share/examples/p5-FANN/ox.pl
+share/examples/p5-FANN/xor.pl
