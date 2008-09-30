@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2007/06/26 19:19:46 simon Exp $
+@comment $OpenBSD: PLIST,v 1.20 2008/09/30 13:18:59 simon Exp $
 lib/${MODAPACHE_MODULE}
 @exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
 ${P5ARCH}/
@@ -72,19 +72,13 @@ ${P5ARCH}/mod_perl_hooks.pm.PL
 ${P5ARCH}/mod_perl_method_handlers.pod
 ${P5ARCH}/mod_perl_traps.pod
 ${P5ARCH}/mod_perl_tuning.pod
-@man man/man3p/Apache.3p
-@man man/man3p/Apache::Constants.3p
 @man man/man3p/Apache::Debug.3p
 @man man/man3p/Apache::ExtUtils.3p
 @man man/man3p/Apache::FakeRequest.3p
-@man man/man3p/Apache::File.3p
 @man man/man3p/Apache::Include.3p
-@man man/man3p/Apache::Leak.3p
-@man man/man3p/Apache::Log.3p
 @man man/man3p/Apache::MyConfig.3p
 @man man/man3p/Apache::Options.3p
 @man man/man3p/Apache::PerlRun.3p
-@man man/man3p/Apache::PerlRunXS.3p
 @man man/man3p/Apache::PerlSections.3p
 @man man/man3p/Apache::RedirectLogFix.3p
 @man man/man3p/Apache::Registry.3p
@@ -94,11 +88,7 @@ ${P5ARCH}/mod_perl_tuning.pod
 @man man/man3p/Apache::SizeLimit.3p
 @man man/man3p/Apache::StatINC.3p
 @man man/man3p/Apache::Status.3p
-@man man/man3p/Apache::Symbol.3p
 @man man/man3p/Apache::Symdump.3p
-@man man/man3p/Apache::Table.3p
-@man man/man3p/Apache::URI.3p
-@man man/man3p/Apache::Util.3p
 @man man/man3p/Apache::fork.3p
 @man man/man3p/Apache::httpd_conf.3p
 @man man/man3p/Apache::src.3p
