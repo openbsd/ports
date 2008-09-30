@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2008/06/02 17:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2008/09/30 10:31:25 ajacoutot Exp $
 
 COMMENT=		archive manager for GNOME
 
 GNOME_PROJECT=		file-roller
 GNOME_VERSION=		2.20.3
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		archivers
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
