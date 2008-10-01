@@ -24,10 +24,12 @@ The following plugins are in specific packages because of dependencies:
 * faad
 * gsm
 * ladspa
+* mplex
 * musepack 
 * neon
 * real
 * sdl
+* x264
 * xvid
 
 

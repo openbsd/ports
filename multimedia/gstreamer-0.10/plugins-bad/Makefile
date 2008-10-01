@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/06/30 22:43:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2008/10/01 08:02:58 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - plugins bad
 COMMENT-tremor =	multimedia framework - tremor plugin
@@ -15,10 +15,12 @@ COMMENT-swf =		multimedia framework - flash plugin
 COMMENT-meta =		multimedia framework - metadata plugin
 COMMENT-sndfile =	multimedia framework - sndfile plugin
 COMMENT-real =		multimedia framework - real plugin
+COMMENT-x264 =		multimedia framework - x264 plugin
+COMMENT-mplex =		multimedia framework - mplex plugin
 
 V =			0.10.7
 DISTNAME =		gst-plugins-bad-$V
-PKGNAME-main =		gstreamer-plugins-bad-${V}p2
+PKGNAME-main =		gstreamer-plugins-bad-${V}p3
 PKGNAME-tremor =	gstreamer-tremor-$Vp1
 PKGNAME-musepack =	gstreamer-musepack-$Vp1
 PKGNAME-faac =		gstreamer-faac-$Vp1
@@ -33,8 +35,11 @@ PKGNAME-swf =		gstreamer-flash-$Vp1
 PKGNAME-meta =		gstreamer-meta-$Vp1
 PKGNAME-sndfile =	gstreamer-sndfile-$Vp1
 PKGNAME-real =		gstreamer-real-$Vp1
+PKGNAME-x264 =		gstreamer-x264-$V
+PKGNAME-mplex =		gstreamer-mplex-$V
+
 MULTI_PACKAGES =	-main -tremor -musepack -faac -faad -xvid -sdl -bz2 \
-			-gsm -ladspa -meta -neon -sndfile
+			-gsm -ladspa -meta -neon -sndfile -x264 -mplex
 
 SHARED_LIBS +=	gstapp-0.10           0.0     # .0.0
 
@@ -140,6 +145,15 @@ LIB_DEPENDS-real =	${LIB_DEPENDS} \
 			gstaudio-0.10,gstinterfaces-0.10::$P/plugins-base
 .endif
 
+WANTLIB-x264 =		${WANTLIB}
+LIB_DEPENDS-x264 =	${LIB_DEPENDS} \
+			x264.>=1::multimedia/x264
+
+WANTLIB-mplex =		${WANTLIB} \
+			gstbase-0.10
+LIB_DEPENDS-mplex =	${LIB_DEPENDS} \
+			mjpegutils.>=4,mplex2.>=5::multimedia/mjpegtools
+
 CONFIGURE_ARGS =	--disable-alsa \
 			--disable-amrwb \
 			--disable-cdaudio \
@@ -164,14 +178,12 @@ CONFIGURE_ARGS =	--disable-alsa \
 			--disable-qtwrapper \
 			--disable-soundtouch \
 			--disable-spc \
-			--disable-swfdec   \
+			--disable-swfdec \
 			--disable-theoradec \
-			--disable-theoraexpdec \
 			--disable-timidity \
-			--disable-vcdsrc   \
+			--disable-vcdsrc \
 			--disable-wavpack \
 			--disable-wildmidi \
-			--disable-wininet \
-			--disable-x264
+			--disable-wininet
 
 .include <bsd.port.mk>
