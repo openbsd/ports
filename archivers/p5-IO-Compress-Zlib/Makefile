@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2008/09/29 18:32:12 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2008/10/01 22:09:27 simon Exp $
 
 COMMENT=	read and write gzip and zip files/buffers
+COMES_WITH=	4.5
 
 MODULES=	cpan
 

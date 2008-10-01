@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2008/07/08 23:00:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2008/10/01 22:09:27 simon Exp $
 
 COMMENT=	base class for IO::Compress modules
+COMES_WITH=	4.5
 
 MODULES=	cpan
 
