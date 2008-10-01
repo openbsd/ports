@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2008/09/04 06:42:12 brad Exp $
+# $OpenBSD: Makefile,v 1.55 2008/10/01 19:30:39 sthen Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
 DISTNAME=		Mail-SpamAssassin-3.2.5
-PKGNAME=		p5-${DISTNAME}
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		mail perl5
 
 MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
@@ -25,9 +25,7 @@ COMMON_DEPENDS=		:p5-HTML-Parser->=3.31:www/p5-HTML-Parser \
 			:p5-Mail-SPF-Query-*:mail/p5-Mail-SPF-Query \
 			:p5-IO-INET6-*:net/p5-IO-INET6 \
 			:p5-IO-Socket-SSL-*:security/p5-IO-Socket-SSL \
-			:p5-libwww-*:www/p5-libwww \
-			:p5-Archive-Tar->=1.23:archivers/p5-Archive-Tar \
-			:p5-IO-Zlib->=1.04:archivers/p5-IO-Zlib
+			:p5-libwww-*:www/p5-libwww
 
 BUILD_DEPENDS=		${COMMON_DEPENDS}
 RUN_DEPENDS=		${COMMON_DEPENDS} \

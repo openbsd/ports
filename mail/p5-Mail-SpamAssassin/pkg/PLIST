@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2008/09/04 06:42:12 brad Exp $
+@comment $OpenBSD: PLIST,v 1.26 2008/10/01 19:30:39 sthen Exp $
 @newgroup _spamdaemon:506
 @newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
 bin/sa-compile
@@ -176,7 +176,9 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::SubProcBackChannel.3p
 @man man/man3p/Mail::SpamAssassin::Timeout.3p
 @man man/man3p/Mail::SpamAssassin::Util.3p
+@man man/man3p/Mail::SpamAssassin::Util::DependencyInfo.3p
 @man man/man3p/Mail::SpamAssassin::Util::Progress.3p
+@man man/man3p/Mail::SpamAssassin::Util::RegistrarBoundaries.3p
 @man man/man3p/spamassassin-run.3p
 share/doc/SpamAssassin/
 share/doc/SpamAssassin/LICENSE
