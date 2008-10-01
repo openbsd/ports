@@ -1,2 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/04/25 14:17:25 deanna Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2008/10/01 19:48:46 steven Exp $
 @lib lib/libtk85.so.${LIBtk85_VERSION}
+lib/libtk85_pic.a
+lib/libtkstub85_pic.a

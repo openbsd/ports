@@ -1,63 +1,79 @@
-# $OpenBSD: Makefile,v 1.4 2008/05/02 13:17:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/01 19:48:46 steven Exp $
 
-COMMENT=	graphical toolkit for Tcl
+COMMENT =		graphical toolkit for Tcl
 
-VERSION=	8.5.2
+V =			8.5.4
+DISTNAME =		tk${V}
+PKGNAME =		tk-${V}
 
-DISTNAME=	tk${VERSION}
-PKGNAME=	tk-${VERSION}p2
-SHARED_LIBS=	tk85 0.0
-CATEGORIES=	x11 x11/tk
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}
-DISTFILES=	tk${VERSION}-src.tar.gz
-WANTLIB=	X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig freetype m z
+SHARED_LIBS =		tk85 0.1
 
-MAINTAINER=	Stuart Cassoff <stwo@users.sourceforge.net>
-HOMEPAGE=	http://www.tcl.tk/
+CATEGORIES =		x11 x11/tk
 
-# BSD 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+HOMEPAGE =		http://www.tcl.tk/
 
-LIB_DEPENDS=    tcl85:tcl-8.5.*:lang/tcl/8.5
+MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
-FLAVORS=	threaded
-FLAVOR?=
+# BSD
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-WRKSRC=		${WRKDIST}/unix
+WANTLIB =		X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig freetype m z
 
-USE_X11=	Yes
-SEPARATE_BUILD=	concurrent
-AUTOCONF_VERSION= 2.59
-CONFIGURE_STYLE= autoconf no-autoheader old
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-tcl="${LOCALBASE}/lib/tcl8.5" \
-		--includedir="${LOCALBASE}/include/tk8.5" \
-		--mandir="${LOCALBASE}/lib/tk8.5/man" \
-		--sysconfdir="${SYSCONFDIR}"
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
+DISTFILES =		${DISTNAME}-src.tar.gz
 
-CONFIGURE_ENV+=	LIBtk85_VERSION="${LIBtk85_VERSION}"
-CONFIGURE_ENV+= CFLAGS=""
+LIB_DEPENDS =           tcl85:tcl-${V}:lang/tcl/8.5
 
-FAKE_FLAGS=	INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
-		INSTALL_LIBRARY="${INSTALL_DATA}" \
-		INSTALL_DATA="${INSTALL_DATA}"
-
-FAKE_FLAGS+=INSTALL_PROGRAM="${INSTALL_PROGRAM}"
-
-.if ${FLAVOR:L:Mthreaded}
-CONFIGURE_ARGS+=--enable-threads
-WANTLIB+=pthread
+.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
+MAKE_FLAGS +=		TK_BUILD_EXP_FILE="libtk85.a" \
+			TK_EXP_FILE="libtk85.a"
 .endif
 
+FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
+			INSTALL_LIBRARY="${INSTALL_DATA}" \
+			INSTALL_DATA="${INSTALL_DATA}" \
+			INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+			CONFIG_INSTALL_DIR="${WRKINST}${TRUEPREFIX}/lib/tk8.5" \
+			DEMO_INSTALL_DIR="${WRKINST}${TRUEPREFIX}/share/examples/tk8.5"
+
+REGRESS_FLAGS =		HOME=${TESTHOME} \
+			DISPLAY=${DISPLAY} \
+			XAUTHORITY=${XAUTHORITY}
+
+SEPARATE_BUILD =	concurrent
+USE_X11 =		Yes
+
+AUTOCONF_VERSION =	2.59
+CONFIGURE_STYLE =	autoconf no-autoheader old
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--includedir="${PREFIX}/include/tk8.5" \
+			--mandir="${PREFIX}/lib/tk8.5/man" \
+			--sysconfdir="${SYSCONFDIR}" \
+			--enable-man-symlinks \
+			--disable-rpath \
+			--with-tcl="${LOCALBASE}/lib/tcl8.5"
+
+CONFIGURE_ENV +=	SHLIB_VERSION="${LIBtk85_VERSION}" \
+			CFLAGS=""
+
 # This regression test wants an X11 display
-REGRESS_IS_INTERACTIVE=	Yes
-REGRESS_TARGET=	test
-REGRESS_FLAGS=	HOME=${TESTHOME}
-REGRESS_FLAGS+=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
-TESTHOME=${WRKDIR}/testhome
+REGRESS_IS_INTERACTIVE =Yes
+
+FLAVORS =		threaded
+FLAVOR ?=
+
+.if ${FLAVOR:L:Mthreaded}
+CONFIGURE_ARGS +=	--enable-threads
+WANTLIB +=		pthread
+.endif
+
+WRKSRC =		${WRKDIST}/unix
+REGRESS_TARGET =	test
+
+TESTHOME =		${WRKDIR}/testhome
 
 pre-regress:
 .for t in DISPLAY XAUTHORITY
@@ -68,6 +84,9 @@ pre-regress:
 	@mkdir -p ${TESTHOME}
 
 post-install:
+.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
+	ln -s libtk85.a ${PREFIX}/lib/libtk85_pic.a
 	ln -s libtkstub85.a ${PREFIX}/lib/libtkstub85_pic.a
+.endif
 
 .include <bsd.port.mk>

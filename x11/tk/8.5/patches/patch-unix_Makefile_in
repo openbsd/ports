@@ -1,16 +1,17 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2008/04/25 14:17:25 deanna Exp $
---- unix/Makefile.in.orig	Fri Mar 28 14:46:36 2008
-+++ unix/Makefile.in	Thu Apr 17 11:07:46 2008
-@@ -241,6 +241,8 @@ TK_LIB_FILE		= @TK_LIB_FILE@
- # Generic lib name used in rules that apply to tcl and tk
- LIB_FILE		= ${TK_LIB_FILE}
+$OpenBSD: patch-unix_Makefile_in,v 1.2 2008/10/01 19:48:46 steven Exp $
+--- unix/Makefile.in.orig	Thu Aug 14 13:31:55 2008
++++ unix/Makefile.in	Thu Sep 11 22:16:09 2008
+@@ -92,6 +92,9 @@ HTML_DIR		= @HTML_DIR@
+ # Directory in which to install html documentation:
+ HTML_INSTALL_DIR	= $(INSTALL_ROOT)$(HTML_DIR)
  
-+STATIC_LIB_FILE		= libtk${MAJOR_VERSION}${MINOR_VERSION}.a
++# Directory in which to install the configuration file tkConfig.sh:
++CONFIG_INSTALL_DIR     = $(INSTALL_ROOT)$(libdir)
 +
- TK_LIB_FLAG		= @TK_LIB_FLAG@
- #TK_LIB_FLAG		= -ltk
- 
-@@ -547,8 +549,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
+ # The directory containing the Tcl sources and headers appropriate
+ # for this version of Tk ("srcdir" will be replaced or has already
+ # been replaced by the configure script):
+@@ -547,8 +550,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
  
  # The private headers we want installed for install-private-headers
  PRIVATE_HDRS = $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
@@ -20,27 +21,27 @@ $OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2008/04/25 14:17:25 deanna Exp $
  
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
  
-@@ -560,7 +561,7 @@ SHELL_ENV = \
+@@ -560,7 +562,7 @@ SHELL_ENV = \
  
  all: binaries libraries doc
  
 -binaries: ${LIB_FILE} ${STUB_LIB_FILE} wish
-+binaries: ${LIB_FILE} ${STUB_LIB_FILE} ${STATIC_LIB_FILE} wish
++binaries: ${LIB_FILE} ${STUB_LIB_FILE} ${TK_BUILD_EXP_FILE} wish
  
  libraries:
  
-@@ -580,6 +581,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+@@ -580,6 +582,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
  
-+${STATIC_LIB_FILE}: ${OBJS}
++${TK_BUILD_EXP_FILE}: ${OBJS}
 +	rm -f $@
 +	${STLIB_LD} $@ ${OBJS} ; ${RANLIB} $@
 +
  # Build Aqua resource files
  ${TK_RSRC_FILE}: $(AQUA_RESOURCES)
  	rm -f $@
-@@ -635,7 +640,6 @@ xttest: test.o tkTest.o tkSquare.o $(TK_LIB_FILE)
+@@ -635,7 +641,6 @@ xttest: test.o tkTest.o tkSquare.o $(TK_LIB_FILE)
  #	% make test TESTFLAGS="-verbose bps -file fileName.test"
  
  test: test-classic test-ttk
@@ -48,21 +49,12 @@ $OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2008/04/25 14:17:25 deanna Exp $
  
  test-classic: tktest
  	$(SHELL_ENV) ./tktest $(TEST_DIR)/all.tcl -geometry +0+0 $(TESTFLAGS)
-@@ -674,7 +678,7 @@ gdb: wish
- 	gdb ./wish --command=gdb.run
- 	rm gdb.run
- 
--INSTALL_TARGETS = install-binaries install-libraries install-demos install-doc @EXTRA_INSTALL@
-+INSTALL_TARGETS = install-binaries install-libraries install-demos install-doc @EXTRA_INSTALL@ print-msg-install
- 
- install: $(INSTALL_TARGETS)
- 
-@@ -688,12 +692,11 @@ install-strip:
+@@ -688,18 +693,14 @@ install-strip:
  # possible (e.g. if installing as root).
  
  install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
 -	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" "$(PKG_INSTALL_DIR)"; \
-+	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" "$(PKG_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)"; \
++	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" "$(PKG_INSTALL_DIR)" "$(CONFIG_INSTALL_DIR)"; \
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -72,7 +64,13 @@ $OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2008/04/25 14:17:25 deanna Exp $
  		else true; \
  		fi; \
  	    done;
-@@ -710,10 +713,13 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+-	@if test ! -x $(SRC_DIR)/install-sh; then \
+-	    chmod +x $(SRC_DIR)/install-sh; \
+-	    fi
+ 	@if test "x$(TK_SHARED_BUILD)" = "x1"; then \
+ 	    echo "Creating package index $(PKG_INDEX)"; \
+ 	    rm -f "$(PKG_INDEX)"; \
+@@ -710,19 +711,20 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
  	    echo "package ifneeded Tk $(MAJOR_VERSION).$(MINOR_VERSION)$(PATCH_LEVEL)\
  		[list load [file join \$$dir $${relative}$(TK_LIB_FILE)] Tk]";\
  	    ) > "$(PKG_INDEX)"; \
@@ -81,24 +79,22 @@ $OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2008/04/25 14:17:25 deanna Exp $
  	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@@INSTALL_LIB@
 -	@chmod 555 "$(LIB_INSTALL_DIR)"/$(LIB_FILE)
-+	@echo "Installing $(STATIC_LIB_FILE) to $(LIB_INSTALL_DIR)/"
-+	@$(INSTALL_DATA) $(STATIC_LIB_FILE) "$(LIB_INSTALL_DIR)"/$(STATIC_LIB_FILE); \
-+		(cd "$(LIB_INSTALL_DIR)" ; $(RANLIB) $(STATIC_LIB_FILE))
  	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
-@@ -721,8 +727,8 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+ 			"$(LIB_INSTALL_DIR)"/$(TK_EXP_FILE); \
++	    (cd "$(LIB_INSTALL_DIR)" ; $(RANLIB) $(TK_EXP_FILE)); \
  	    fi
  	@echo "Installing wish as $(BIN_INSTALL_DIR)/wish$(VERSION)"
  	@$(INSTALL_PROGRAM) wish "$(BIN_INSTALL_DIR)"/wish$(VERSION)
 -	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/"
 -	@$(INSTALL_DATA) tkConfig.sh "$(LIB_INSTALL_DIR)"/tkConfig.sh
-+	@echo "Installing tkConfig.sh to $(SCRIPT_INSTALL_DIR)/"
-+	@$(INSTALL_DATA) tkConfig.sh "$(SCRIPT_INSTALL_DIR)"/tkConfig.sh
++	@echo "Installing tkConfig.sh to $(CONFIG_INSTALL_DIR)/"
++	@$(INSTALL_DATA) tkConfig.sh "$(CONFIG_INSTALL_DIR)"/tkConfig.sh
  	@if test "$(STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    @INSTALL_STUB_LIB@ ; \
-@@ -733,13 +739,14 @@ install-libraries: libraries
+@@ -733,24 +735,35 @@ install-libraries: libraries
  	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \
  	    XLIB_INCLUDE_INSTALL_DIR="$(INCLUDE_INSTALL_DIR)"/X11; fi; \
  	for i in "$(INCLUDE_INSTALL_DIR)" "$${XLIB_INCLUDE_INSTALL_DIR}" \
@@ -115,7 +111,10 @@ $OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2008/04/25 14:17:25 deanna Exp $
  		else true; \
  		fi; \
  	    done;
-@@ -750,7 +757,20 @@ install-libraries: libraries
+-	@if test ! -x $(SRC_DIR)/install-sh; then \
+-	    chmod +x $(SRC_DIR)/install-sh; \
+-	    fi
+ 	@echo "Installing header files";
  	@for i in $(PUBLIC_HDRS); \
  	    do \
  	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"; \
@@ -136,7 +135,15 @@ $OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2008/04/25 14:17:25 deanna Exp $
  	@list='$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)'; for i in $$list ; \
  	    do \
  	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"/X11; \
-@@ -790,8 +810,7 @@ install-demos:
+@@ -784,34 +797,33 @@ install-libraries: libraries
+ 	    done;
+ 
+ install-demos:
+-	@for i in "$(SCRIPT_INSTALL_DIR)" \
+-		"$(SCRIPT_INSTALL_DIR)"/demos \
+-		"$(SCRIPT_INSTALL_DIR)"/demos/images ; \
++	@for i in "$(DEMO_INSTALL_DIR)" \
++		"$(DEMO_INSTALL_DIR)"/images ; \
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -146,21 +153,32 @@ $OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2008/04/25 14:17:25 deanna Exp $
  		else true; \
  		fi; \
  	    done;
-@@ -801,11 +820,12 @@ install-demos:
+-	@echo "Installing demos to $(SCRIPT_INSTALL_DIR)/demos/";
++	@echo "Installing demos to $(DEMO_INSTALL_DIR)/";
+ 	@for i in $(TOP_DIR)/library/demos/*; \
+ 	    do \
  	    if [ -f $$i ] ; then \
  		sed -e '3 s|exec wish|exec wish$(VERSION)|' \
- 			$$i > "$(SCRIPT_INSTALL_DIR)"/demos/`basename $$i`; \
-+		chmod 444 "$(SCRIPT_INSTALL_DIR)"/demos/`basename $$i`; \
+-			$$i > "$(SCRIPT_INSTALL_DIR)"/demos/`basename $$i`; \
++			$$i > "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
++		chmod 444 "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
  	    fi; \
  	    done;
  	@for i in $(DEMOPROGS); \
  	    do \
 -	    chmod 755 "$(SCRIPT_INSTALL_DIR)"/demos/$$i; \
-+	    chmod 555 "$(SCRIPT_INSTALL_DIR)"/demos/$$i; \
++	    chmod 555 "$(DEMO_INSTALL_DIR)"/$$i; \
  	    done;
  	@echo "Installing demo images";
  	@for i in $(TOP_DIR)/library/demos/images/*; \
-@@ -823,8 +843,7 @@ install-doc:
+ 	    do \
+ 	    if [ -f $$i ] ; then \
+-		$(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/demos/images; \
++		$(INSTALL_DATA) $$i "$(DEMO_INSTALL_DIR)"/images; \
+ 		fi; \
+ 	    done;
+ 
+@@ -823,8 +835,7 @@ install-doc:
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -170,21 +188,3 @@ $OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2008/04/25 14:17:25 deanna Exp $
  		else true; \
  		fi; \
  	    done;
-@@ -865,6 +884,17 @@ install-private-headers: libraries
- 	@if test -f tkConfig.h; then\
- 	    $(INSTALL_DATA) tkConfig.h "$(PRIVATE_INCLUDE_INSTALL_DIR)"; \
- 	    fi;
-+
-+print-msg-install:
-+	@echo "**********"
-+	@echo "IMPORTANT:"
-+	@echo "**********"
-+	@echo "tkConfig.sh     in $(TK_LIBRARY)/tkConfig.sh"
-+	@echo "tk.h            in $(includedir)/tk.h"
-+	@echo "tkDecls.h       in $(includedir)/tkDecls.h"
-+	@echo "tkPlatDecls.h   in $(includedir)/tkPlatDecls.h"
-+	@echo "These are NOT in the default place, but in a good place to avoid"
-+	@echo "conflicting with another version of Tcl/Tk."
- 
- Makefile: $(UNIX_DIR)/Makefile.in
- 	$(SHELL) config.status

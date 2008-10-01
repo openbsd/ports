@@ -4,10 +4,4 @@ standard GUI not only for Tcl, but for many other dynamic languages, and
 can produce rich, native applications that run unchanged across most
 platforms.
 
-Tcl/Tk resources:
-  Newsgroup: comp.lang.tcl
-  Wiki: http://wiki.tcl.tk
-  Book: Practical Programming in Tcl and Tk, 4th Edition
-        ISBN: 0-13-038560-3
-
 Flavor: threaded - build with threads support
