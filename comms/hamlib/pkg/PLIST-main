@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/05/28 17:07:27 jason Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/10/01 22:33:19 sthen Exp $
 %%SHARED%%
-bin/rigctl
-bin/rigmem
-bin/rigswr
-bin/rotctl
+@bin bin/rigctl
+@bin bin/rigmem
+@bin bin/rigswr
+@bin bin/rotctl
 include/hamlib/
 include/hamlib/rig.h
 include/hamlib/rig_dll.h
@@ -74,11 +74,10 @@ lib/libhamlib++.a
 lib/libhamlib++.la
 lib/libhamlib.a
 lib/libhamlib.la
-lib/pkgconfig/
 lib/pkgconfig/hamlib.pc
-libdata/perl5/${MACHINE_ARCH}-openbsd/
-libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.8/
-libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.8/perllocal.pod
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.0/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.0/perllocal.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Hamlib.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
@@ -91,7 +90,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/perltest.pl
 @man man/man1/rotctl.1
 @man man/man8/rpc.rigd.8
 @man man/man8/rpc.rotd.8
-sbin/rpc.rigd
-sbin/rpc.rotd
-share/aclocal/
+@bin sbin/rpc.rigd
+@bin sbin/rpc.rotd
 share/aclocal/hamlib.m4
