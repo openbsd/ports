@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/01 20:15:04 millert Exp $
 
 COMMENT=		Website META Language
 
-DISTNAME=		wml-2.0.9
+DISTNAME=		wml-2.0.11
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.thewml.org/

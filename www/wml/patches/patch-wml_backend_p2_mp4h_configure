@@ -1,7 +1,7 @@
-$OpenBSD: patch-wml_backend_p2_mp4h_configure,v 1.1.1.1 2006/07/14 16:12:14 bernd Exp $
---- wml_backend/p2_mp4h/configure.orig	Fri Oct 18 01:33:13 2002
-+++ wml_backend/p2_mp4h/configure	Mon Feb 13 14:48:15 2006
-@@ -8123,7 +8123,7 @@ _ACEOF
+$OpenBSD: patch-wml_backend_p2_mp4h_configure,v 1.2 2008/10/01 20:15:04 millert Exp $
+--- wml_backend/p2_mp4h/configure.orig	Sat Aug 19 02:09:49 2006
++++ wml_backend/p2_mp4h/configure	Mon Sep 29 11:23:21 2008
+@@ -27049,7 +27049,7 @@ _ACEOF
  
  
  
@@ -10,17 +10,17 @@ $OpenBSD: patch-wml_backend_p2_mp4h_configure,v 1.1.1.1 2006/07/14 16:12:14 bern
  
  
  
-@@ -16070,7 +16070,7 @@ s,@host_cpu@,$host_cpu,;t t
- s,@host_vendor@,$host_vendor,;t t
- s,@host_os@,$host_os,;t t
- s,@GLIBC21@,$GLIBC21,;t t
+@@ -44810,7 +44810,7 @@ s,@HAVE_POSIX_PRINTF@,$HAVE_POSIX_PRINTF,;t t
+ s,@HAVE_ASPRINTF@,$HAVE_ASPRINTF,;t t
+ s,@HAVE_SNPRINTF@,$HAVE_SNPRINTF,;t t
+ s,@HAVE_WPRINTF@,$HAVE_WPRINTF,;t t
 -s,@LIBICONV@,$LIBICONV,;t t
 +s,@LIBICONV@,$LTLIBICONV,;t t
  s,@LTLIBICONV@,$LTLIBICONV,;t t
  s,@INTLBISON@,$INTLBISON,;t t
- s,@USE_NLS@,$USE_NLS,;t t
-@@ -16083,7 +16083,7 @@ s,@INSTOBJEXT@,$INSTOBJEXT,;t t
- s,@GENCAT@,$GENCAT,;t t
+ s,@BUILD_INCLUDED_LIBINTL@,$BUILD_INCLUDED_LIBINTL,;t t
+@@ -44822,7 +44822,7 @@ s,@GENCAT@,$GENCAT,;t t
+ s,@INTLOBJS@,$INTLOBJS,;t t
  s,@INTL_LIBTOOL_SUFFIX_PREFIX@,$INTL_LIBTOOL_SUFFIX_PREFIX,;t t
  s,@INTLLIBS@,$INTLLIBS,;t t
 -s,@LIBINTL@,$LIBINTL,;t t

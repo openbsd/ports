@@ -1,0 +1,16 @@
+$OpenBSD: patch-wml_backend_p3_eperl_configure_in,v 1.1 2008/10/01 20:15:04 millert Exp $
+--- wml_backend/p3_eperl/configure.in.orig	Thu Dec  1 12:50:13 2005
++++ wml_backend/p3_eperl/configure.in	Mon Sep 29 12:18:19 2008
+@@ -159,7 +159,11 @@ case $usedl in
+     define )
+         rc=yes
+         AC_DEFINE(HAVE_PERL_DYNALOADER)
+-        perl_dla=$perl_archlib/auto/DynaLoader/DynaLoader.a
++	if test -f $perl_archlib/auto/DynaLoader/DynaLoader.a; then
++	    perl_dla=$perl_archlib/auto/DynaLoader/DynaLoader.a
++	else
++	    perl_dla=
++	fi
+         ;;
+     * )
+         rc=no
