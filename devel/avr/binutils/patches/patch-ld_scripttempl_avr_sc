@@ -1,0 +1,44 @@
+$OpenBSD: patch-ld_scripttempl_avr_sc,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
+--- ld/scripttempl/avr.sc.orig	Wed May 24 00:36:12 2006
++++ ld/scripttempl/avr.sc	Sat Sep 27 20:20:28 2008
+@@ -4,9 +4,12 @@ OUTPUT_ARCH(${ARCH})
+ 
+ MEMORY
+ {
+-  text   (rx)   : ORIGIN = 0, LENGTH = $TEXT_LENGTH
+-  data   (rw!x) : ORIGIN = 0x800060, LENGTH = $DATA_LENGTH
+-  eeprom (rw!x) : ORIGIN = 0x810000, LENGTH = 64K
++  text      (rx)   : ORIGIN = 0, LENGTH = $TEXT_LENGTH
++  data      (rw!x) : ORIGIN = $DATA_ORIGIN, LENGTH = $DATA_LENGTH
++  eeprom    (rw!x) : ORIGIN = 0x810000, LENGTH = 64K
++  fuse      (rw!x) : ORIGIN = 0x820000, LENGTH = 1K
++  lock      (rw!x) : ORIGIN = 0x830000, LENGTH = 1K
++  signature (rw!x) : ORIGIN = 0x840000, LENGTH = 1K
+ }
+ 
+ SECTIONS
+@@ -195,6 +198,24 @@ SECTIONS
+     *(.eeprom*)
+     ${RELOCATING+ __eeprom_end = . ; }
+   } ${RELOCATING+ > eeprom}
++
++  .fuse ${RELOCATING-0}:
++  {
++    KEEP(*(.fuse))
++    KEEP(*(.lfuse))
++    KEEP(*(.hfuse))
++    KEEP(*(.efuse))
++  } ${RELOCATING+ > fuse}
++
++  .lock ${RELOCATING-0}:
++  {
++    KEEP(*(.lock*))
++  } ${RELOCATING+ > lock}
++
++  .signature ${RELOCATING-0}:
++  {
++    KEEP(*(.signature*))
++  } ${RELOCATING+ > signature}
+ 
+   /* Stabs debugging sections.  */
+   .stab 0 : { *(.stab) }

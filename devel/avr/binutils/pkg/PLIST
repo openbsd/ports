@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/20 15:22:43 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/01 04:46:20 ckuethe Exp $
 avr/
 avr/bin/
-avr/bin/ar
-avr/bin/as
-avr/bin/ld
-avr/bin/nm
-avr/bin/ranlib
-avr/bin/strip
+@bin avr/bin/ar
+@bin avr/bin/as
+@bin avr/bin/ld
+@bin avr/bin/nm
+@bin avr/bin/objcopy
+@bin avr/bin/objdump
+@bin avr/bin/ranlib
+@bin avr/bin/strip
 avr/lib/
 avr/lib/ldscripts/
 avr/lib/ldscripts/avr1.x
@@ -34,24 +36,70 @@ avr/lib/ldscripts/avr5.xbn
 avr/lib/ldscripts/avr5.xn
 avr/lib/ldscripts/avr5.xr
 avr/lib/ldscripts/avr5.xu
-bin/avr-addr2line
-bin/avr-ar
-bin/avr-as
-bin/avr-c++filt
-bin/avr-ld
-bin/avr-nm
-bin/avr-objcopy
-bin/avr-objdump
-bin/avr-ranlib
-bin/avr-readelf
-bin/avr-size
-bin/avr-strings
-bin/avr-strip
+avr/lib/ldscripts/avr6.x
+avr/lib/ldscripts/avr6.xbn
+avr/lib/ldscripts/avr6.xn
+avr/lib/ldscripts/avr6.xr
+avr/lib/ldscripts/avr6.xu
+avr/lib/ldscripts/avrxmega1.x
+avr/lib/ldscripts/avrxmega1.xbn
+avr/lib/ldscripts/avrxmega1.xn
+avr/lib/ldscripts/avrxmega1.xr
+avr/lib/ldscripts/avrxmega1.xu
+avr/lib/ldscripts/avrxmega2.x
+avr/lib/ldscripts/avrxmega2.xbn
+avr/lib/ldscripts/avrxmega2.xn
+avr/lib/ldscripts/avrxmega2.xr
+avr/lib/ldscripts/avrxmega2.xu
+avr/lib/ldscripts/avrxmega3.x
+avr/lib/ldscripts/avrxmega3.xbn
+avr/lib/ldscripts/avrxmega3.xn
+avr/lib/ldscripts/avrxmega3.xr
+avr/lib/ldscripts/avrxmega3.xu
+avr/lib/ldscripts/avrxmega4.x
+avr/lib/ldscripts/avrxmega4.xbn
+avr/lib/ldscripts/avrxmega4.xn
+avr/lib/ldscripts/avrxmega4.xr
+avr/lib/ldscripts/avrxmega4.xu
+avr/lib/ldscripts/avrxmega5.x
+avr/lib/ldscripts/avrxmega5.xbn
+avr/lib/ldscripts/avrxmega5.xn
+avr/lib/ldscripts/avrxmega5.xr
+avr/lib/ldscripts/avrxmega5.xu
+avr/lib/ldscripts/avrxmega6.x
+avr/lib/ldscripts/avrxmega6.xbn
+avr/lib/ldscripts/avrxmega6.xn
+avr/lib/ldscripts/avrxmega6.xr
+avr/lib/ldscripts/avrxmega6.xu
+avr/lib/ldscripts/avrxmega7.x
+avr/lib/ldscripts/avrxmega7.xbn
+avr/lib/ldscripts/avrxmega7.xn
+avr/lib/ldscripts/avrxmega7.xr
+avr/lib/ldscripts/avrxmega7.xu
+@bin bin/avr-addr2line
+@bin bin/avr-ar
+@bin bin/avr-as
+@bin bin/avr-c++filt
+@bin bin/avr-gprof
+@bin bin/avr-ld
+@bin bin/avr-nm
+@bin bin/avr-objcopy
+@bin bin/avr-objdump
+@bin bin/avr-ranlib
+@bin bin/avr-readelf
+@bin bin/avr-size
+@bin bin/avr-strings
+@bin bin/avr-strip
+@info info/as.info
+@info info/binutils.info
+@info info/gprof.info
+@info info/ld.info
 @man man/man1/avr-addr2line.1
 @man man/man1/avr-ar.1
 @man man/man1/avr-as.1
 @man man/man1/avr-c++filt.1
 @man man/man1/avr-dlltool.1
+@man man/man1/avr-gprof.1
 @man man/man1/avr-ld.1
 @man man/man1/avr-nlmconv.1
 @man man/man1/avr-nm.1
@@ -62,4 +110,5 @@ bin/avr-strip
 @man man/man1/avr-size.1
 @man man/man1/avr-strings.1
 @man man/man1/avr-strip.1
+@man man/man1/avr-windmc.1
 @man man/man1/avr-windres.1

@@ -1,0 +1,16 @@
+$OpenBSD: patch-ld_emulparams_avrxmega6_sh,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
+--- ld/emulparams/avrxmega6.sh.orig	Sat Sep 27 20:20:28 2008
++++ ld/emulparams/avrxmega6.sh	Sat Sep 27 20:20:28 2008
+@@ -0,0 +1,12 @@
++ARCH=avr:106
++MACHINE=
++SCRIPT_NAME=avr
++OUTPUT_FORMAT="elf32-avr"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=elf32
++
++TEXT_LENGTH=1024K
++DATA_ORIGIN=0x802000
++DATA_LENGTH=0xffa0
++EXTRA_EM_FILE=avrelf

@@ -1,0 +1,21 @@
+$OpenBSD: patch-ld_emultempl_avrelf_em,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
+--- ld/emultempl/avrelf.em.orig	Mon Aug  6 13:00:21 2007
++++ ld/emultempl/avrelf.em	Sat Sep 27 20:20:28 2008
+@@ -71,8 +71,15 @@ avr_elf_${EMULATION_NAME}_before_allocation (void)
+ 
+   gld${EMULATION_NAME}_before_allocation ();
+ 
+-  /* We only need stubs for the avr6 family.  */
+-  if (strcmp ("${EMULATION_NAME}","avr6"))
++  /* We only need stubs for the avr6 and avrxmega* family.  */
++  if (strcmp ("${EMULATION_NAME}","avr6") 
++      && strcmp ("${EMULATION_NAME}","avrxmega1") 
++      && strcmp ("${EMULATION_NAME}","avrxmega2")
++      && strcmp ("${EMULATION_NAME}","avrxmega3")
++      && strcmp ("${EMULATION_NAME}","avrxmega4")
++      && strcmp ("${EMULATION_NAME}","avrxmega5")
++      && strcmp ("${EMULATION_NAME}","avrxmega6")
++      && strcmp ("${EMULATION_NAME}","avrxmega7") )
+     avr_no_stubs = TRUE;
+ 
+   avr_elf_set_global_bfd_parameters ();

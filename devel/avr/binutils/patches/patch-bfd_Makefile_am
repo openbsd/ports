@@ -1,7 +1,7 @@
-$OpenBSD: patch-bfd_Makefile_in,v 1.2 2008/10/01 04:46:19 ckuethe Exp $
---- bfd/Makefile.in.orig	Tue Aug 28 13:20:12 2007
-+++ bfd/Makefile.in	Sat Sep 27 20:20:27 2008
-@@ -458,6 +458,8 @@ BFD32_BACKENDS = \
+$OpenBSD: patch-bfd_Makefile_am,v 1.1 2008/10/01 04:46:19 ckuethe Exp $
+--- bfd/Makefile.am.orig	Tue Aug 28 13:20:14 2007
++++ bfd/Makefile.am	Sat Sep 27 20:20:27 2008
+@@ -208,6 +208,8 @@ BFD32_BACKENDS = \
  	coff-apollo.lo \
  	coff-arm.lo \
  	coff-aux.lo \
@@ -10,7 +10,7 @@ $OpenBSD: patch-bfd_Makefile_in,v 1.2 2008/10/01 04:46:19 ckuethe Exp $
  	coff-h8300.lo \
  	coff-h8500.lo \
  	coff-i386.lo \
-@@ -637,6 +639,8 @@ BFD32_BACKENDS_CFILES = \
+@@ -387,6 +389,8 @@ BFD32_BACKENDS_CFILES = \
  	coff-apollo.c \
  	coff-arm.c \
  	coff-aux.c \
@@ -19,17 +19,7 @@ $OpenBSD: patch-bfd_Makefile_in,v 1.2 2008/10/01 04:46:19 ckuethe Exp $
  	coff-h8300.c \
  	coff-h8500.c \
  	coff-i386.c \
-@@ -1206,7 +1210,8 @@ installdirs-am:
- 	for dir in "$(DESTDIR)$(bfdlibdir)"; do \
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
- 	done
--install: install-recursive
-+#install: install-recursive
-+install:
- install-exec: install-exec-recursive
- install-data: install-data-recursive
- uninstall: uninstall-recursive
-@@ -1556,13 +1561,13 @@ stmp-lcoff-h: $(LIBCOFF_H_FILES)
+@@ -976,13 +980,13 @@ DISTCLEANFILES = $(BUILD_CFILES) $(BUILD_HFILES) libto
  bfdver.h: $(srcdir)/version.h $(srcdir)/Makefile.in
  	@echo "creating $@"
  	@bfd_version=`echo "$(VERSION)" | sed -e 's/\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\).*/\1.00\2.00\3.00\4.00\5/' -e 's/\([^\.]*\)\..*\(..\)\..*\(..\)\..*\(..\)\..*\(..\)$$/\1\2\3\4\5/'` ;\
@@ -45,7 +35,7 @@ $OpenBSD: patch-bfd_Makefile_in,v 1.2 2008/10/01 04:46:19 ckuethe Exp $
  	  bfd_soversion="$(VERSION).$${bfd_version_date}" ;\
  	fi ;\
  	sed -e "s,@bfd_version@,$$bfd_version," \
-@@ -1766,6 +1771,12 @@ coff-aux.lo: coff-aux.c $(INCDIR)/filenames.h $(INCDIR
+@@ -1186,6 +1190,12 @@ coff-aux.lo: coff-aux.c $(INCDIR)/filenames.h $(INCDIR
    coff-m68k.c $(INCDIR)/hashtab.h $(INCDIR)/coff/m68k.h \
    $(INCDIR)/coff/internal.h libcoff.h $(INCDIR)/bfdlink.h \
    coffcode.h coffswap.h

@@ -1,7 +1,7 @@
-$OpenBSD: patch-ld_Makefile_in,v 1.2 2008/10/01 04:46:20 ckuethe Exp $
---- ld/Makefile.in.orig	Mon Aug  6 13:29:54 2007
-+++ ld/Makefile.in	Sat Sep 27 20:20:28 2008
-@@ -385,6 +385,13 @@ ALL_EMULATIONS = \
+$OpenBSD: patch-ld_Makefile_am,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
+--- ld/Makefile.am.orig	Mon Aug  6 13:00:17 2007
++++ ld/Makefile.am	Sat Sep 27 20:20:28 2008
+@@ -138,6 +138,13 @@ ALL_EMULATIONS = \
  	eavr4.o \
  	eavr5.o \
  	eavr6.o \
@@ -15,7 +15,7 @@ $OpenBSD: patch-ld_Makefile_in,v 1.2 2008/10/01 04:46:20 ckuethe Exp $
  	ecoff_i860.o \
  	ecoff_sparc.o \
  	eelf32_spu.o \
-@@ -1448,6 +1455,34 @@ eavr6.c: $(srcdir)/emulparams/avr6.sh $(srcdir)/emulte
+@@ -622,6 +629,34 @@ eavr6.c: $(srcdir)/emulparams/avr6.sh $(srcdir)/emulte
    $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
    ${GEN_DEPENDS}
  	${GENSCRIPTS} avr6 "$(tdir_avr2)"

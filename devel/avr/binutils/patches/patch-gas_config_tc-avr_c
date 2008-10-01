@@ -1,0 +1,195 @@
+$OpenBSD: patch-gas_config_tc-avr_c,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
+--- gas/config/tc-avr.c.orig	Mon Aug  6 12:59:55 2007
++++ gas/config/tc-avr.c	Sat Sep 27 20:20:27 2008
+@@ -27,20 +27,21 @@
+ 
+ struct avr_opcodes_s
+ {
+-  char *        name;
+-  char *        constraints;
+-  int           insn_size;		/* In words.  */
+-  int           isa;
++  char *name;
++  char *constraints;
++  char *opcode;
++  int insn_size;		/* In words.  */
++  int isa;
+   unsigned int  bin_opcode;
+ };
+ 
+ #define AVR_INSN(NAME, CONSTR, OPCODE, SIZE, ISA, BIN) \
+-{#NAME, CONSTR, SIZE, ISA, BIN},
++{#NAME, CONSTR, OPCODE, SIZE, ISA, BIN},
+ 
+ struct avr_opcodes_s avr_opcodes[] =
+ {
+   #include "opcode/avr.h"
+-  {NULL, NULL, 0, 0, 0}
++  {NULL, NULL, NULL, 0, 0, 0}
+ };
+ 
+ const char comment_chars[] = ";";
+@@ -63,10 +64,20 @@ static struct mcu_type_s mcu_types[] =
+ {
+   {"avr1",       AVR_ISA_TINY1,   bfd_mach_avr1},
+   {"avr2",       AVR_ISA_TINY2,   bfd_mach_avr2},
+-  {"avr3",       AVR_ISA_M103,    bfd_mach_avr3},
++  {"avr3",       AVR_ISA_AVR3,    bfd_mach_avr3},
++  {"avr31",      AVR_ISA_M103,    bfd_mach_avr3},
++  {"avr35",      AVR_ISA_USB162,  bfd_mach_avr3},
+   {"avr4",       AVR_ISA_M8,      bfd_mach_avr4},
+-  {"avr5",       AVR_ISA_ALL,     bfd_mach_avr5},
+-  {"avr6",       AVR_ISA_ALL,     bfd_mach_avr6},
++  {"avr5",       AVR_ISA_M323,    bfd_mach_avr5},
++  {"avr51",      AVR_ISA_M128,    bfd_mach_avr5},
++  {"avr6",       AVR_ISA_M256,    bfd_mach_avr6},
++  {"avrxmega1",  AVR_ISA_XMEGA,   bfd_mach_avrxmega1},
++  {"avrxmega2",  AVR_ISA_XMEGA,   bfd_mach_avrxmega2},
++  {"avrxmega3",  AVR_ISA_XMEGA,   bfd_mach_avrxmega3},
++  {"avrxmega4",  AVR_ISA_XMEGA,   bfd_mach_avrxmega4},
++  {"avrxmega5",  AVR_ISA_XMEGA,   bfd_mach_avrxmega5},
++  {"avrxmega6",  AVR_ISA_XMEGA,   bfd_mach_avrxmega6},
++  {"avrxmega7",  AVR_ISA_XMEGA,   bfd_mach_avrxmega7},
+   {"at90s1200",  AVR_ISA_1200,    bfd_mach_avr1},
+   {"attiny10",   AVR_ISA_TINY1,   bfd_mach_avr1}, /* XXX -> tn11 */
+   {"attiny11",   AVR_ISA_TINY1,   bfd_mach_avr1},
+@@ -85,7 +96,7 @@ static struct mcu_type_s mcu_types[] =
+   {"at90s8515",  AVR_ISA_2xxx,    bfd_mach_avr2},
+   {"at90s8535",  AVR_ISA_2xxx,    bfd_mach_avr2},
+   {"at90c8534",  AVR_ISA_2xxx,    bfd_mach_avr2},
+-  {"at86rf401",  AVR_ISA_2xxx,    bfd_mach_avr2},
++  {"at86rf401",  AVR_ISA_RF401,   bfd_mach_avr2},
+   {"attiny13",   AVR_ISA_TINY2,   bfd_mach_avr2},
+   {"attiny2313", AVR_ISA_TINY2,   bfd_mach_avr2},
+   {"attiny261",  AVR_ISA_TINY2,   bfd_mach_avr2},
+@@ -97,22 +108,32 @@ static struct mcu_type_s mcu_types[] =
+   {"attiny25",   AVR_ISA_TINY2,   bfd_mach_avr2},
+   {"attiny45",   AVR_ISA_TINY2,   bfd_mach_avr2},
+   {"attiny85",   AVR_ISA_TINY2,   bfd_mach_avr2},
++  {"attiny43u",  AVR_ISA_TINY2,   bfd_mach_avr2},
++  {"attiny48",   AVR_ISA_TINY2,   bfd_mach_avr2},
++  {"attiny88",   AVR_ISA_TINY2,   bfd_mach_avr2},
+   {"atmega603",  AVR_ISA_M603,    bfd_mach_avr3}, /* XXX -> m103 */
+   {"atmega103",  AVR_ISA_M103,    bfd_mach_avr3},
+   {"at43usb320", AVR_ISA_M103,    bfd_mach_avr3},
+   {"at43usb355", AVR_ISA_M603,    bfd_mach_avr3},
+   {"at76c711",   AVR_ISA_M603,    bfd_mach_avr3},
++  {"at90usb82",  AVR_ISA_USB162,  bfd_mach_avr3},
++  {"at90usb162", AVR_ISA_USB162,  bfd_mach_avr3},
++  {"attiny167",  AVR_ISA_TINY3,   bfd_mach_avr3},
+   {"atmega48",   AVR_ISA_PWMx,    bfd_mach_avr4},
++  {"atmega48p",  AVR_ISA_PWMx,    bfd_mach_avr4},
+   {"atmega8",    AVR_ISA_M8,      bfd_mach_avr4},
+   {"atmega83",   AVR_ISA_M8,      bfd_mach_avr4}, /* XXX -> m8535 */
+   {"atmega85",   AVR_ISA_M8,      bfd_mach_avr4}, /* XXX -> m8 */
+   {"atmega88",   AVR_ISA_PWMx,    bfd_mach_avr4},
++  {"atmega88p",  AVR_ISA_PWMx,    bfd_mach_avr4},
+   {"atmega8515", AVR_ISA_M8,      bfd_mach_avr4},
+   {"atmega8535", AVR_ISA_M8,      bfd_mach_avr4},
+   {"atmega8hva", AVR_ISA_PWMx,    bfd_mach_avr4},
+   {"at90pwm1",   AVR_ISA_PWMx,    bfd_mach_avr4},
+   {"at90pwm2",   AVR_ISA_PWMx,    bfd_mach_avr4},
++  {"at90pwm2b",  AVR_ISA_PWMx,    bfd_mach_avr4},
+   {"at90pwm3",   AVR_ISA_PWMx,    bfd_mach_avr4},
++  {"at90pwm3b",  AVR_ISA_PWMx,    bfd_mach_avr4},
+   {"atmega16",   AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega161",  AVR_ISA_M161,    bfd_mach_avr5},
+   {"atmega162",  AVR_ISA_M323,    bfd_mach_avr5},
+@@ -121,6 +142,7 @@ static struct mcu_type_s mcu_types[] =
+   {"atmega165",  AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega165p", AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega168",  AVR_ISA_M323,    bfd_mach_avr5},
++  {"atmega168p", AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega169",  AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega169p", AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega32",   AVR_ISA_M323,    bfd_mach_avr5},
+@@ -128,12 +150,14 @@ static struct mcu_type_s mcu_types[] =
+   {"atmega324p", AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega325",  AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega325p", AVR_ISA_M323,    bfd_mach_avr5},
++  {"atmega328p", AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega329",  AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega329p", AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega3250", AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega3250p",AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega3290", AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega3290p",AVR_ISA_M323,    bfd_mach_avr5},
++  {"atmega32hvb",AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega406",  AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega64",   AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega640",  AVR_ISA_M323,    bfd_mach_avr5},
+@@ -142,6 +166,7 @@ static struct mcu_type_s mcu_types[] =
+   {"atmega128",  AVR_ISA_M128,    bfd_mach_avr5},
+   {"atmega1280", AVR_ISA_M128,    bfd_mach_avr5},
+   {"atmega1281", AVR_ISA_M128,    bfd_mach_avr5},
++  {"atmega1284p",AVR_ISA_M128,    bfd_mach_avr5},
+   {"atmega645",  AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega649",  AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega6450", AVR_ISA_M323,    bfd_mach_avr5},
+@@ -150,15 +175,20 @@ static struct mcu_type_s mcu_types[] =
+   {"at90can32" , AVR_ISA_M323,    bfd_mach_avr5},
+   {"at90can64" , AVR_ISA_M323,    bfd_mach_avr5},
+   {"at90can128", AVR_ISA_M128,    bfd_mach_avr5},
+-  {"at90usb82",  AVR_ISA_M323,    bfd_mach_avr5},
+-  {"at90usb162", AVR_ISA_M323,    bfd_mach_avr5},
++  {"at90pwm216", AVR_ISA_M323,    bfd_mach_avr5},
++  {"at90pwm316", AVR_ISA_M323,    bfd_mach_avr5},
++  {"atmega32c1", AVR_ISA_M323,    bfd_mach_avr5},
++  {"atmega32m1", AVR_ISA_M323,    bfd_mach_avr5},
++  {"atmega32u4", AVR_ISA_M323,    bfd_mach_avr5},
+   {"at90usb646", AVR_ISA_M323,    bfd_mach_avr5},
+   {"at90usb647", AVR_ISA_M323,    bfd_mach_avr5},
+   {"at90usb1286",AVR_ISA_M128,    bfd_mach_avr5},
+   {"at90usb1287",AVR_ISA_M128,    bfd_mach_avr5},
+   {"at94k",      AVR_ISA_94K,     bfd_mach_avr5},
+-  {"atmega2560", AVR_ISA_ALL,     bfd_mach_avr6},
+-  {"atmega2561", AVR_ISA_ALL,     bfd_mach_avr6},
++  {"atmega2560", AVR_ISA_M256,    bfd_mach_avr6},
++  {"atmega2561", AVR_ISA_M256,    bfd_mach_avr6},
++  {"atxmega64a1", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
++  {"atxmega128a1", AVR_ISA_XMEGA, bfd_mach_avrxmega3},
+   {NULL, 0, 0}
+ };
+ 
+@@ -645,7 +675,9 @@ avr_ldi_expression (expressionS *exp)
+ 		      break;
+ 
+ 		    default:
+-		      as_warn (_("expression dangerous with linker stubs"));
++		      /* PR 5523: Do not generate a warning here,
++			 legitimate code can trigger this case.  */
++		      break;
+ 		    }
+ 		}
+ 	      return reloc_to_return;
+@@ -790,7 +822,12 @@ avr_operand (struct avr_opcodes_s *opcode,
+       if (*str == '+')
+ 	{
+ 	  ++str;
+-	  op_mask |= 1;
++          char *s;
++          for (s = opcode->opcode; *s; ++s)
++            {
++              if (*s == '+')
++                op_mask |= (1 << (15 - (s - opcode->opcode)));
++            }
+ 	}
+       break;
+ 
+@@ -901,6 +938,16 @@ avr_operand (struct avr_opcodes_s *opcode,
+       }
+       break;
+ 
++    case 'E':
++      {
++	unsigned int x;
++
++	x = avr_get_constant (str, 15);
++	str = input_line_pointer;
++	op_mask |= (x << 4);
++      }
++      break;
++    
+     case '?':
+       break;
+ 

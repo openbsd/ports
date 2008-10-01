@@ -1,0 +1,19 @@
+$OpenBSD: patch-include_elf_avr_h,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
+--- include/elf/avr.h.orig	Wed May 24 00:36:11 2006
++++ include/elf/avr.h	Sat Sep 27 20:20:27 2008
+@@ -35,7 +35,14 @@
+ #define E_AVR_MACH_AVR3 3
+ #define E_AVR_MACH_AVR4 4
+ #define E_AVR_MACH_AVR5 5
+-#define E_AVR_MACH_AVR6 6 
++#define E_AVR_MACH_AVR6 6
++#define E_AVR_MACH_XMEGA1 101
++#define E_AVR_MACH_XMEGA2 102
++#define E_AVR_MACH_XMEGA3 103
++#define E_AVR_MACH_XMEGA4 104
++#define E_AVR_MACH_XMEGA5 105
++#define E_AVR_MACH_XMEGA6 106
++#define E_AVR_MACH_XMEGA7 107
+ 
+ /* Relocations.  */
+ START_RELOC_NUMBERS (elf_avr_reloc_type)

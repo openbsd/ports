@@ -1,0 +1,11 @@
+$OpenBSD: patch-ld_emulparams_avr6_sh,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
+--- ld/emulparams/avr6.sh.orig	Wed May 24 00:36:11 2006
++++ ld/emulparams/avr6.sh	Sat Sep 27 20:20:28 2008
+@@ -7,5 +7,6 @@ EMBEDDED=yes
+ TEMPLATE_NAME=elf32
+ 
+ TEXT_LENGTH=1024K
+-DATA_LENGTH=0xffa0
++DATA_ORIGIN=0x800200
++DATA_LENGTH=0xfe00
+ EXTRA_EM_FILE=avrelf

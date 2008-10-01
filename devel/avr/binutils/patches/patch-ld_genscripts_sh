@@ -1,0 +1,50 @@
+$OpenBSD: patch-ld_genscripts_sh,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
+--- ld/genscripts.sh.orig	Sun Aug 12 12:00:07 2007
++++ ld/genscripts.sh	Sat Sep 27 20:20:28 2008
+@@ -390,30 +390,30 @@ case " $EMULATION_LIBPATH " in
+     *" ${EMULATION_NAME} "*) COMPILE_IN=true;;
+ esac
+ 
+-if test -n "${BASH+set}"; then
++#if test -n "${BASH+set}"; then
++#  source_em()
++#  {
++#    local current_script="$em_script"
++#    em_script=$1
++#    . $em_script
++#    em_script=$current_script
++#  }
++#  fragment()
++#  {
++#    local lineno=$[${BASH_LINENO[0]} + 1]
++#    echo >> e${EMULATION_NAME}.c "#line $lineno \"$em_script\""
++#    cat >> e${EMULATION_NAME}.c
++#  }
++#else
+   source_em()
+   {
+-    local current_script="$em_script"
+-    em_script=$1
+-    . $em_script
+-    em_script=$current_script
+-  }
+-  fragment()
+-  {
+-    local lineno=$[${BASH_LINENO[0]} + 1]
+-    echo >> e${EMULATION_NAME}.c "#line $lineno \"$em_script\""
+-    cat >> e${EMULATION_NAME}.c
+-  }
+-else
+-  source_em()
+-  {
+     . $1
+   }
+   fragment()
+   {
+     cat >> e${EMULATION_NAME}.c
+   }
+-fi
++#fi
+ 
+ # Generate e${EMULATION_NAME}.c.
+ # Start with an empty file, then the sourced .em script

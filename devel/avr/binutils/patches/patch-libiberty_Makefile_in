@@ -1,12 +1,13 @@
-$OpenBSD: patch-libiberty_Makefile_in,v 1.1.1.1 2005/09/20 15:22:43 aanriot Exp $
---- libiberty/Makefile.in.orig	Sat Jun 25 09:29:23 2005
-+++ libiberty/Makefile.in	Sat Jun 25 09:29:55 2005
-@@ -266,7 +266,7 @@ libiberty.html : $(srcdir)/libiberty.tex
+$OpenBSD: patch-libiberty_Makefile_in,v 1.2 2008/10/01 04:46:20 ckuethe Exp $
+--- libiberty/Makefile.in.orig	Mon Aug  6 12:59:45 2007
++++ libiberty/Makefile.in	Sat Sep 27 20:20:28 2008
+@@ -344,7 +344,8 @@ libiberty.html : $(srcdir)/libiberty.texi $(TEXISRC)
  @MAINT@	echo stamp > stamp-functions
  
  INSTALL_DEST = @INSTALL_DEST@
 -install: install_to_$(INSTALL_DEST) install-subdir
++#install: install_to_$(INSTALL_DEST) install-subdir
 +install:
  
- install_to_libdir: all
- 	${mkinstalldirs} $(DESTDIR)$(libdir)$(MULTISUBDIR)
+ # This is tricky.  Even though CC in the Makefile contains
+ # multilib-specific flags, it's overridden by FLAGS_TO_PASS from the

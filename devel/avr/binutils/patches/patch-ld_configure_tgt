@@ -1,0 +1,12 @@
+$OpenBSD: patch-ld_configure_tgt,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
+--- ld/configure.tgt.orig	Tue Aug 28 10:19:42 2007
++++ ld/configure.tgt	Sat Sep 27 20:20:28 2008
+@@ -107,7 +107,7 @@ xscale-*-coff)		targ_emul=armcoff ;;
+ xscale-*-elf)		targ_emul=armelf
+ 			;;
+ avr-*-*)		targ_emul=avr2
+-			targ_extra_emuls="avr1 avr3 avr4 avr5 avr6"
++			targ_extra_emuls="avr1 avr3 avr4 avr5 avr6 avrxmega1 avrxmega2 avrxmega3 avrxmega4 avrxmega5 avrxmega6 avrxmega7"
+ 			;;
+ bfin-*-elf)		targ_emul=elf32bfin;
+ 			targ_extra_emuls="elf32bfinfd"

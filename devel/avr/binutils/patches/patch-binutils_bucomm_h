@@ -1,0 +1,12 @@
+$OpenBSD: patch-binutils_bucomm_h,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
+--- binutils/bucomm.h.orig	Mon Aug  6 12:55:09 2007
++++ binutils/bucomm.h	Sat Sep 27 20:20:27 2008
+@@ -54,6 +54,8 @@ bfd_vma parse_vma (const char *, const char *);
+ 
+ off_t get_file_size (const char *);
+ 
++const char *bu_basename PARAMS ((const char *));
++
+ extern char *program_name;
+ 
+ /* filemode.c */

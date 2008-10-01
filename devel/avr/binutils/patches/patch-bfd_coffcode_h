@@ -1,0 +1,178 @@
+$OpenBSD: patch-bfd_coffcode_h,v 1.1 2008/10/01 04:46:19 ckuethe Exp $
+--- bfd/coffcode.h.orig	Mon Aug  6 12:59:19 2007
++++ bfd/coffcode.h	Sat Sep 27 20:20:27 2008
+@@ -1,3 +1,4 @@
++
+ /* Support for the generic parts of most COFF variants, for BFD.
+    Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999,
+    2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007
+@@ -1769,6 +1770,17 @@ coff_mkobject (bfd * abfd)
+   coff->relocbase = 0;
+   coff->local_toc_sym_map = 0;
+ 
++  /* These members communicate important constants about the symbol
++     table to GDB's symbol-reading code.  These `constants'
++     unfortunately vary among coff implementations...  */
++  coff->local_n_btmask = N_BTMASK;
++  coff->local_n_btshft = N_BTSHFT;
++  coff->local_n_tmask = N_TMASK;
++  coff->local_n_tshift = N_TSHIFT;
++  coff->local_symesz = bfd_coff_symesz (abfd);
++  coff->local_auxesz = bfd_coff_auxesz (abfd);
++  coff->local_linesz = bfd_coff_linesz (abfd);
++
+ /*  make_abs_section(abfd);*/
+ 
+   return TRUE;
+@@ -1793,17 +1805,6 @@ coff_mkobject_hook (bfd * abfd,
+ 
+   coff->sym_filepos = internal_f->f_symptr;
+ 
+-  /* These members communicate important constants about the symbol
+-     table to GDB's symbol-reading code.  These `constants'
+-     unfortunately vary among coff implementations...  */
+-  coff->local_n_btmask = N_BTMASK;
+-  coff->local_n_btshft = N_BTSHFT;
+-  coff->local_n_tmask = N_TMASK;
+-  coff->local_n_tshift = N_TSHIFT;
+-  coff->local_symesz = bfd_coff_symesz (abfd);
+-  coff->local_auxesz = bfd_coff_auxesz (abfd);
+-  coff->local_linesz = bfd_coff_linesz (abfd);
+-
+   coff->timestamp = internal_f->f_timdat;
+ 
+   obj_raw_syment_count (abfd) =
+@@ -1930,6 +1931,11 @@ coff_set_arch_mach_hook (bfd *abfd, void * filehdr)
+ 	}
+       break;
+ #endif
++#ifdef AVRMAGIC
++    case AVRMAGIC:
++      arch = bfd_arch_avr;
++      break;
++#endif
+ #ifdef MC68MAGIC
+     case MC68MAGIC:
+     case M68MAGIC:
+@@ -2726,6 +2732,13 @@ coff_set_flags (bfd * abfd,
+       return TRUE;
+ #endif
+ 
++#ifdef AVRMAGIC
++    case bfd_arch_avr:
++      *magicp = AVRMAGIC;
++      return TRUE;
++      break;
++#endif
++
+ #ifdef PPCMAGIC
+     case bfd_arch_powerpc:
+       *magicp = PPCMAGIC;
+@@ -3522,6 +3535,11 @@ coff_write_object_contents (bfd * abfd)
+       section.s_page = coff_get_section_load_page (current);
+ #endif
+ 
++#ifdef AVR
++      /* AVR uses s_paddr the way GNU uses s_vaddr, and effectively
++	 ignores s_vaddr. */
++      section.s_paddr = current->vma;
++#endif
+ #ifdef COFF_WITH_PE
+       section.s_paddr = 0;
+ #endif
+@@ -3866,6 +3884,17 @@ coff_write_object_contents (bfd * abfd)
+     internal_a.magic = ZMAGIC;
+ #endif
+ 
++#ifdef AVR
++    /* a.out is a dummy for non-extended COFF */
++    internal_a.magic = AVRAOUTMAGIC;
++    /* Upper nibble of f_flags must be set for historical reasons.
++       The upper byte remains blank on coff-avr, so undo the F_AR32WR
++       setting performed above. */
++    internal_f.f_flags |= F_JUNK;
++    internal_f.f_flags &= ~F_UNUSED;
++#define __A_MAGIC_SET__
++#endif /* AVR */
++
+ #if defined(PPC_PE)
+ #define __A_MAGIC_SET__
+     internal_a.magic = IMAGE_NT_OPTIONAL_HDR_MAGIC;
+@@ -3933,8 +3962,16 @@ coff_write_object_contents (bfd * abfd)
+ #endif
+   }
+ 
++#ifdef AVR_EXT_COFF
++    /* Note that we do not set F_PTRINFO because the GNU toolchain
++       doesn't provide any information about the target of a pointer,
++       so we cannot derive which section our pointer target would be
++       in. */
++  internal_a.vstamp = F_FULLPATHS | F_STRUCTINFO;
++#else
+   /* FIXME: Does anybody ever set this to another value?  */
+   internal_a.vstamp = 0;
++#endif
+ 
+   /* Now should write relocs, strings, syms.  */
+   obj_sym_filepos (abfd) = sym_base;
+@@ -4120,22 +4157,29 @@ coff_write_object_contents (bfd * abfd)
+       char * buff;
+       bfd_size_type amount = bfd_coff_aoutsz (abfd);
+ 
+-      buff = bfd_malloc (amount);
+-      if (buff == NULL)
+-	return FALSE;
++      /* Do not attempt to malloc() zero bytes.  According to the
++         C standard, the behaviour is implementation-defined, and
++	 malloc() might return NULL in that case, which would confuse
++	 us to assume an error where it actually isn't. */
++      if (amount != 0)
++	{
++	  buff = bfd_malloc (amount);
++	  if (buff == NULL)
++	    return FALSE;
+ 
+-      coff_swap_aouthdr_out (abfd, & internal_a, buff);
+-      amount = bfd_bwrite (buff, amount, abfd);
++	  coff_swap_aouthdr_out (abfd, & internal_a, buff);
++	  amount = bfd_bwrite (buff, amount, abfd);
+ 
+-      free (buff);
++	  free (buff);
+ 
+-      if (amount != bfd_coff_aoutsz (abfd))
+-	return FALSE;
++	  if (amount != bfd_coff_aoutsz (abfd))
++	    return FALSE;
+ 
+ #ifdef COFF_IMAGE_WITH_PE
+-      if (! coff_apply_checksum (abfd))
+-	return FALSE;
++	  if (! coff_apply_checksum (abfd))
++	    return FALSE;
+ #endif
++	}
+     }
+ #ifdef RS6000COFF_C
+   else
+@@ -4491,6 +4535,10 @@ coff_slurp_symbol_table (bfd * abfd)
+ 	    /* In PE, 0x69 (105) denotes a weak external symbol.  */
+ 	    case C_NT_WEAK:
+ #endif
++#ifdef AVR
++	    /* Some AVR COFF compilers handle EXTDEF like EXT. */
++	    case C_EXTDEF:	/* external definition		 */
++#endif
+ 	      switch (coff_classify_symbol (abfd, &src->u.syment))
+ 		{
+ 		case COFF_SYMBOL_GLOBAL:
+@@ -4714,7 +4762,9 @@ coff_slurp_symbol_table (bfd * abfd)
+ 		  && src->u.syment.n_scnum == 0)
+ 		break;
+ 	      /* Fall through.  */
++#if !defined(AVR)
+ 	    case C_EXTDEF:	/* External definition.  */
++#endif
+ 	    case C_ULABEL:	/* Undefined label.  */
+ 	    case C_USTATIC:	/* Undefined static.  */
+ #ifndef COFF_WITH_PE
