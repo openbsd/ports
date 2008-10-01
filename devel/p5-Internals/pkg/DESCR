@@ -1,0 +1,3 @@
+This module allows you to write-protect and write-enable your Perl
+variables, objects and data structures.
+Moreover, the reference count of any Perl variable can be read and set.
