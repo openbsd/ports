@@ -1,0 +1,11 @@
+$OpenBSD: patch-gcc_config_avr_constraints_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
+--- gcc/config/avr/constraints.md.orig	Sat Sep  1 08:28:30 2007
++++ gcc/config/avr/constraints.md	Sat Sep 27 16:29:43 2008
+@@ -99,6 +99,6 @@
+        (match_test "op == CONST0_RTX (SFmode)")))
+ 
+ (define_memory_constraint "Q"
+-  "A memory address based on X or Y pointer with displacement."
++  "A memory address based on Y or Z pointer with displacement."
+   (and (match_code "mem")
+        (match_test "extra_constraint_Q (op)")))

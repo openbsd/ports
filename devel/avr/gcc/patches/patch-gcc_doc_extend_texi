@@ -1,0 +1,57 @@
+$OpenBSD: patch-gcc_doc_extend_texi,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
+--- gcc/doc/extend.texi.orig	Mon Mar 12 15:10:12 2007
++++ gcc/doc/extend.texi	Sat Sep 27 16:29:43 2008
+@@ -81,6 +81,7 @@ extensions, accepted by GCC in C89 mode and in C++.
+ * Pragmas::             Pragmas accepted by GCC.
+ * Unnamed Fields::      Unnamed struct/union fields within structs/unions.
+ * Thread-Local::        Per-thread variables.
++* Binary constants::    Binary constants using the @samp{0b} prefix.
+ @end menu
+ 
+ @node Statement Exprs
+@@ -3460,6 +3461,16 @@ placed in either the @code{.bss_below100} section or t
+ 
+ @end table
+ 
++@subsection AVR Variable Attributes
++
++@table @code
++@item progmem
++@cindex @code{progmem} variable attribute
++The @code{progmem} attribute is used on the AVR to place data in the Program
++Memory address space. The AVR is a Harvard Architecture processor and data
++normally resides in the Data Memory address space.
++@end table
++
+ @node Type Attributes
+ @section Specifying Attributes of Types
+ @cindex attribute of types
+@@ -10372,6 +10383,28 @@ Add after paragraph 6
+ Non-@code{static} members shall not be @code{__thread}.
+ @end quotation
+ @end itemize
++
++@node Binary constants
++@section Binary constants using the @samp{0b} prefix
++@cindex Binary constants using the @samp{0b} prefix
++
++Integer constants can be written as binary constants, consisting of a
++sequence of @samp{0} and @samp{1} digits, prefixed by @samp{0b} or
++@samp{0B}.  This is particularly useful in environments that operate a
++lot on the bit-level (like microcontrollers).
++
++The following statements are identical:
++
++@smallexample
++i =       42;
++i =     0x2a;
++i =      052;
++i = 0b101010;
++@end smallexample
++
++The type of these constants follows the same rules as for octal or
++hexadecimal integer constants, so suffixes like @samp{L} or @samp{UL}
++can be applied.
+ 
+ @node C++ Extensions
+ @chapter Extensions to the C++ Language

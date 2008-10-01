@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2008/10/01 04:52:19 ckuethe Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC
 
-V=3.4.5
-FULL_VERSION=3.4-20050913
+V=4.2.2
 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
@@ -18,15 +17,14 @@ MAKE_OBJC=No
 MAKE_JAVA=No
 MAKE_ADA=No
 
-DISTNAME=	gcc-${FULL_VERSION}
+DISTNAME=	gcc-${V}
 EXTRACT_SUFX=	.tar.bz2
-PKGNAME=	avr-gcc-${V}p3
+PKGNAME=	avr-gcc-${V}
 
-MASTER_SITE_GCC=	ftp://gcc.gnu.org/pub/gcc/ \
-			ftp://ftp.uvsq.fr/pub/gcc/ \
-			ftp://ftp.grolier.fr/pub/egcs/
+MASTER_SITES= 		${MASTER_SITE_GNU:=gcc/gcc-$(V)/}
 
-MASTER_SITES= 		${MASTER_SITE_GCC:=snapshots/$(FULL_VERSION)/}
+LIB_DEPENDS+=		gmp:gmp->=4.2:devel/gmp \
+			mpfr::devel/mpfr
 
 BUILD_DEPENDS+=		:autoconf-2.13*:devel/autoconf/2.13 \
 			:bison-*:devel/bison		\
@@ -37,10 +35,17 @@ LANGS=c,c++
 CC=/usr/bin/gcc
 CFLAGS=-O2 -g
 
+# dear autoconf, why do you suck so hard?
+CONFIGURE_ENV=	INSTALL="install -c" \
+		INSTALL_DATA="install -c -m 444" \
+		INSTALL_SCRIPT="install -c -m 555"
+
 CONFIGURE_ARGS+= 			\
-	--verbose 			\
+	--disable-libssp		\
 	--enable-languages=${LANGS} 	\
-	--enable-cpp
+	--enable-cpp			\
+	--with-gmp=${LOCALBASE}		\
+	--with-mpfr=${LOCALBASE}
 
 MAKE_FLAGS=	LANGUAGES="c c++" CFLAGS="-I/usr/local/include"
 MAKE_ENV=	MACHINE_ARCH=avr

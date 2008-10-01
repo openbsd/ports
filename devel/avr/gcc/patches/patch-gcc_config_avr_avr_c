@@ -1,0 +1,410 @@
+$OpenBSD: patch-gcc_config_avr_avr_c,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
+--- gcc/config/avr/avr.c.orig	Sat Sep  1 08:28:30 2007
++++ gcc/config/avr/avr.c	Sat Sep 27 16:29:43 2008
+@@ -48,6 +48,8 @@
+ #define MAX_LD_OFFSET(MODE) (64 - (signed)GET_MODE_SIZE (MODE))
+ 
+ static int avr_naked_function_p (tree);
++static int avr_OS_main_function_p (tree);
++static int avr_OS_task_function_p (tree);
+ static int interrupt_function_p (tree);
+ static int signal_function_p (tree);
+ static int avr_regs_to_save (HARD_REG_SET *);
+@@ -129,22 +131,28 @@ int avr_asm_only_p = 0;
+ /* Core have 'MOVW' and 'LPM Rx,Z' instructions.  */
+ int avr_have_movw_lpmx_p = 0;
+ 
++/* Core have 'EIJMP' and 'EICALL' instructions.  */
++int avr_have_eijmp_eicall_p = 0;
++
+ struct base_arch_s {
+   int asm_only;
+   int enhanced;
+   int mega;
+   int have_movw_lpmx;
++  int have_eijmp_eicall;
+   const char *const macro;
+ };
+ 
+ static const struct base_arch_s avr_arch_types[] = {
+-  { 1, 0, 0, 0,  NULL },  /* unknown device specified */
+-  { 1, 0, 0, 0, "__AVR_ARCH__=1" },
+-  { 0, 0, 0, 0, "__AVR_ARCH__=2" },
+-  { 0, 0, 0, 1, "__AVR_ARCH__=25"},
+-  { 0, 0, 1, 0, "__AVR_ARCH__=3" },
+-  { 0, 1, 0, 1, "__AVR_ARCH__=4" },
+-  { 0, 1, 1, 1, "__AVR_ARCH__=5" }
++  { 1, 0, 0, 0, 0,  NULL },  /* unknown device specified */
++  { 1, 0, 0, 0, 0, "__AVR_ARCH__=1" },
++  { 0, 0, 0, 0, 0, "__AVR_ARCH__=2" },
++  { 0, 0, 0, 1, 0, "__AVR_ARCH__=25"},
++  { 0, 0, 1, 0, 0, "__AVR_ARCH__=3" },
++  { 0, 0, 1, 1, 0, "__AVR_ARCH__=35" },
++  { 0, 1, 0, 1, 0, "__AVR_ARCH__=4" },
++  { 0, 1, 1, 1, 0, "__AVR_ARCH__=5" },
++  { 0, 1, 1, 1, 1, "__AVR_ARCH__=6" }
+ };
+ 
+ /* These names are used as the index into the avr_arch_types[] table 
+@@ -157,8 +165,10 @@ enum avr_arch
+   ARCH_AVR2,
+   ARCH_AVR25,
+   ARCH_AVR3,
++  ARCH_AVR35,
+   ARCH_AVR4,
+-  ARCH_AVR5
++  ARCH_AVR5,
++  ARCH_AVR6
+ };
+ 
+ struct mcu_type_s {
+@@ -204,6 +214,9 @@ static const struct mcu_type_s avr_mcu_types[] = {
+   { "attiny261",    ARCH_AVR25, "__AVR_ATtiny261__" },
+   { "attiny461",    ARCH_AVR25, "__AVR_ATtiny461__" },
+   { "attiny861",    ARCH_AVR25, "__AVR_ATtiny861__" },
++  { "attiny43u",    ARCH_AVR25, "__AVR_ATtiny43U__" },
++  { "attiny48",     ARCH_AVR25, "__AVR_ATtiny48__" },
++  { "attiny88",     ARCH_AVR25, "__AVR_ATtiny88__" },
+   { "at86rf401",    ARCH_AVR25, "__AVR_AT86RF401__" },
+     /* Classic, > 8K.  */
+   { "avr3",         ARCH_AVR3, NULL },
+@@ -212,17 +225,25 @@ static const struct mcu_type_s avr_mcu_types[] = {
+   { "at43usb320",   ARCH_AVR3, "__AVR_AT43USB320__" },
+   { "at43usb355",   ARCH_AVR3, "__AVR_AT43USB355__" },
+   { "at76c711",     ARCH_AVR3, "__AVR_AT76C711__" },
++  /* Classic + MOVW + JMP/CALL.  */
++  { "avr35",        ARCH_AVR35, NULL },
++  { "at90usb82",    ARCH_AVR35, "__AVR_AT90USB82__" },
++  { "at90usb162",   ARCH_AVR35, "__AVR_AT90USB162__" },
+     /* Enhanced, <= 8K.  */
+   { "avr4",         ARCH_AVR4, NULL },
+   { "atmega8",      ARCH_AVR4, "__AVR_ATmega8__" },
+   { "atmega48",     ARCH_AVR4, "__AVR_ATmega48__" },
++  { "atmega48p",    ARCH_AVR4, "__AVR_ATmega48P__" },
+   { "atmega88",     ARCH_AVR4, "__AVR_ATmega88__" },
++  { "atmega88p",    ARCH_AVR4, "__AVR_ATmega88P__" },
+   { "atmega8515",   ARCH_AVR4, "__AVR_ATmega8515__" },
+   { "atmega8535",   ARCH_AVR4, "__AVR_ATmega8535__" },
+   { "atmega8hva",   ARCH_AVR4, "__AVR_ATmega8HVA__" },
+   { "at90pwm1",     ARCH_AVR4, "__AVR_AT90PWM1__" },
+   { "at90pwm2",     ARCH_AVR4, "__AVR_AT90PWM2__" },
++  { "at90pwm2b",    ARCH_AVR4, "__AVR_AT90PWM2B__" },
+   { "at90pwm3",     ARCH_AVR4, "__AVR_AT90PWM3__" },
++  { "at90pwm3b",    ARCH_AVR4, "__AVR_AT90PWM3B__" },
+     /* Enhanced, > 8K.  */
+   { "avr5",         ARCH_AVR5, NULL },
+   { "atmega16",     ARCH_AVR5, "__AVR_ATmega16__" },
+@@ -233,6 +254,7 @@ static const struct mcu_type_s avr_mcu_types[] = {
+   { "atmega165",    ARCH_AVR5, "__AVR_ATmega165__" },
+   { "atmega165p",   ARCH_AVR5, "__AVR_ATmega165P__" },
+   { "atmega168",    ARCH_AVR5, "__AVR_ATmega168__" },
++  { "atmega168p",   ARCH_AVR5, "__AVR_ATmega168P__" },
+   { "atmega169",    ARCH_AVR5, "__AVR_ATmega169__" },
+   { "atmega169p",   ARCH_AVR5, "__AVR_ATmega169P__" },
+   { "atmega32",     ARCH_AVR5, "__AVR_ATmega32__" },
+@@ -242,10 +264,12 @@ static const struct mcu_type_s avr_mcu_types[] = {
+   { "atmega325p",   ARCH_AVR5, "__AVR_ATmega325P__" },
+   { "atmega3250",   ARCH_AVR5, "__AVR_ATmega3250__" },
+   { "atmega3250p",  ARCH_AVR5, "__AVR_ATmega3250P__" },
++  { "atmega328p",   ARCH_AVR5, "__AVR_ATmega328P__" },
+   { "atmega329",    ARCH_AVR5, "__AVR_ATmega329__" },
+   { "atmega329p",   ARCH_AVR5, "__AVR_ATmega329P__" },
+   { "atmega3290",   ARCH_AVR5, "__AVR_ATmega3290__" },
+   { "atmega3290p",  ARCH_AVR5, "__AVR_ATmega3290P__" },
++  { "atmega32hvb",  ARCH_AVR5, "__AVR_ATmega32HVB__" },
+   { "atmega406",    ARCH_AVR5, "__AVR_ATmega406__" },
+   { "atmega64",     ARCH_AVR5, "__AVR_ATmega64__" },
+   { "atmega640",    ARCH_AVR5, "__AVR_ATmega640__" },
+@@ -258,17 +282,22 @@ static const struct mcu_type_s avr_mcu_types[] = {
+   { "atmega128",    ARCH_AVR5, "__AVR_ATmega128__" },
+   { "atmega1280",   ARCH_AVR5, "__AVR_ATmega1280__" },
+   { "atmega1281",   ARCH_AVR5, "__AVR_ATmega1281__" },
++  { "atmega1284p",  ARCH_AVR5, "__AVR_ATmega1284P__" },
+   { "atmega16hva",  ARCH_AVR5, "__AVR_ATmega16HVA__" },
+   { "at90can32",    ARCH_AVR5, "__AVR_AT90CAN32__" },
+   { "at90can64",    ARCH_AVR5, "__AVR_AT90CAN64__" },
+   { "at90can128",   ARCH_AVR5, "__AVR_AT90CAN128__" },
+-  { "at90usb82",    ARCH_AVR5, "__AVR_AT90USB82__" },
+-  { "at90usb162",   ARCH_AVR5, "__AVR_AT90USB162__" },
++  { "at90pwm216",   ARCH_AVR5, "__AVR_AT90PWM216__" },
++  { "at90pwm316",   ARCH_AVR5, "__AVR_AT90PWM316__" },
+   { "at90usb646",   ARCH_AVR5, "__AVR_AT90USB646__" },
+   { "at90usb647",   ARCH_AVR5, "__AVR_AT90USB647__" },
+   { "at90usb1286",  ARCH_AVR5, "__AVR_AT90USB1286__" },
+   { "at90usb1287",  ARCH_AVR5, "__AVR_AT90USB1287__" },
+   { "at94k",        ARCH_AVR5, "__AVR_AT94K__" },
++    /* 3-Byte PC */
++  { "avr6",         ARCH_AVR6, NULL },
++  { "atmega2560",   ARCH_AVR6, "__AVR_ATmega2560__" },
++  { "atmega2561",   ARCH_AVR6, "__AVR_ATmega2561__" },
+     /* Assembler only.  */
+   { "avr1",         ARCH_AVR1, NULL },
+   { "at90s1200",    ARCH_AVR1, "__AVR_AT90S1200__" },
+@@ -351,6 +380,7 @@ avr_override_options (void)
+   avr_enhanced_p = base->enhanced;
+   avr_mega_p = base->mega;
+   avr_have_movw_lpmx_p = base->have_movw_lpmx;
++  avr_have_eijmp_eicall_p = base->have_eijmp_eicall;
+   avr_base_arch_macro = base->macro;
+   avr_extra_arch_macro = t->macro;
+ 
+@@ -400,6 +430,33 @@ avr_naked_function_p (tree func)
+   return a != NULL_TREE;
+ }
+ 
++/* Return nonzero if FUNC is a OS_main function.  */
++
++static int
++avr_OS_main_function_p (tree func)
++{
++  tree a;
++
++  gcc_assert (TREE_CODE (func) == FUNCTION_DECL);
++  
++  a = lookup_attribute ("OS_main", TYPE_ATTRIBUTES (TREE_TYPE (func)));
++  return a != NULL_TREE;
++}
++
++/* Return nonzero if FUNC is a OS_task function.  */
++
++static int
++avr_OS_task_function_p (tree func)
++{
++  tree a;
++
++  gcc_assert (TREE_CODE (func) == FUNCTION_DECL);
++  
++  a = lookup_attribute ("OS_task", TYPE_ATTRIBUTES (TREE_TYPE (func)));
++  return a != NULL_TREE;
++}
++
++
+ /* Return nonzero if FUNC is an interrupt function as specified
+    by the "interrupt" attribute.  */
+ 
+@@ -445,8 +502,11 @@ avr_regs_to_save (HARD_REG_SET *set)
+     CLEAR_HARD_REG_SET (*set);
+   count = 0;
+ 
+-  /* No need to save any registers if the function never returns.  */
+-  if (TREE_THIS_VOLATILE (current_function_decl))
++  /* No need to save any registers if the function never returns or 
++     is have "OS_main" or OS_task attribute.  */
++  if (TREE_THIS_VOLATILE (current_function_decl)
++      || avr_OS_main_function_p (current_function_decl)
++      || avr_OS_task_function_p (current_function_decl))
+     return 0;
+ 
+   for (reg = 0; reg < 32; reg++)
+@@ -480,9 +540,10 @@ initial_elimination_offset (int from, int to)
+   else
+     {
+       int offset = frame_pointer_needed ? 2 : 0;
++      int avr_pc_size = avr_have_eijmp_eicall_p ? 3 : 2;
+ 
+       offset += avr_regs_to_save (NULL);
+-      return get_frame_size () + 2 + 1 + offset;
++      return get_frame_size () + (avr_pc_size) + 1 + offset;
+     }
+ }
+ 
+@@ -497,7 +558,6 @@ avr_simple_epilogue (void)
+ 	  && ! interrupt_function_p (current_function_decl)
+ 	  && ! signal_function_p (current_function_decl)
+ 	  && ! avr_naked_function_p (current_function_decl)
+-	  && ! MAIN_NAME_P (DECL_NAME (current_function_decl))
+ 	  && ! TREE_THIS_VOLATILE (current_function_decl));
+ }
+ 
+@@ -666,7 +726,8 @@ avr_output_function_prologue (FILE *file, HOST_WIDE_IN
+   int reg;
+   int interrupt_func_p;
+   int signal_func_p;
+-  int main_p;
++  int OS_main_p;
++  int OS_task_p;
+   int live_seq;
+   int minimize;
+ 
+@@ -684,9 +745,11 @@ avr_output_function_prologue (FILE *file, HOST_WIDE_IN
+ 
+   interrupt_func_p = interrupt_function_p (current_function_decl);
+   signal_func_p = signal_function_p (current_function_decl);
+-  main_p = MAIN_NAME_P (DECL_NAME (current_function_decl));
++  OS_main_p = avr_OS_main_function_p (current_function_decl);
++  OS_task_p = avr_OS_task_function_p (current_function_decl);
+   live_seq = sequent_regs_live ();
+   minimize = (TARGET_CALL_PROLOGUES
++	      && !OS_main_p && !OS_task_p
+ 	      && !interrupt_func_p && !signal_func_p && live_seq);
+ 
+   if (interrupt_func_p)
+@@ -704,19 +767,8 @@ avr_output_function_prologue (FILE *file, HOST_WIDE_IN
+ 	       AS1 (clr,__zero_reg__)    "\n");
+       prologue_size += 5;
+     }
+-  if (main_p)
++  if (minimize && (frame_pointer_needed || live_seq > 6)) 
+     {
+-      fprintf (file, ("\t" 
+-		      AS1 (ldi,r28) ",lo8(%s - " HOST_WIDE_INT_PRINT_DEC ")" CR_TAB
+-		      AS1 (ldi,r29) ",hi8(%s - " HOST_WIDE_INT_PRINT_DEC ")" CR_TAB
+-		      AS2 (out,__SP_H__,r29)     CR_TAB
+-		      AS2 (out,__SP_L__,r28) "\n"),
+-	       avr_init_stack, size, avr_init_stack, size);
+-      
+-      prologue_size += 4;
+-    }
+-  else if (minimize && (frame_pointer_needed || live_seq > 6)) 
+-    {
+       fprintf (file, ("\t"
+ 		      AS1 (ldi, r26) ",lo8(" HOST_WIDE_INT_PRINT_DEC ")" CR_TAB
+ 		      AS1 (ldi, r27) ",hi8(" HOST_WIDE_INT_PRINT_DEC ")" CR_TAB), size, size);
+@@ -754,12 +806,17 @@ avr_output_function_prologue (FILE *file, HOST_WIDE_IN
+ 	}
+       if (frame_pointer_needed)
+ 	{
++	  if (!OS_main_p && !OS_task_p)
++            {
++	      fprintf (file, "\t"
++		       AS1 (push,r28) CR_TAB
++		       AS1 (push,r29) "\n");
++	      prologue_size += 2;
++	    }
+ 	  fprintf (file, "\t"
+-		   AS1 (push,r28) CR_TAB
+-		   AS1 (push,r29) CR_TAB
+ 		   AS2 (in,r28,__SP_L__) CR_TAB
+ 		   AS2 (in,r29,__SP_H__) "\n");
+-	  prologue_size += 4;
++	  prologue_size += 2;
+ 	  if (size)
+ 	    {
+ 	      fputs ("\t", file);
+@@ -769,7 +826,7 @@ avr_output_function_prologue (FILE *file, HOST_WIDE_IN
+ 		{
+ 		  prologue_size += out_set_stack_ptr (file, 1, 1);
+ 		}
+-	      else if (signal_func_p)
++	      else if (signal_func_p || OS_main_p)
+ 		{
+ 		  prologue_size += out_set_stack_ptr (file, 0, 0);
+ 		}
+@@ -793,7 +850,8 @@ avr_output_function_epilogue (FILE *file, HOST_WIDE_IN
+   int reg;
+   int interrupt_func_p;
+   int signal_func_p;
+-  int main_p;
++  int OS_main_p;
++  int OS_task_p;
+   int function_size;
+   int live_seq;
+   int minimize;
+@@ -825,28 +883,15 @@ avr_output_function_epilogue (FILE *file, HOST_WIDE_IN
+ 
+   interrupt_func_p = interrupt_function_p (current_function_decl);
+   signal_func_p = signal_function_p (current_function_decl);
+-  main_p = MAIN_NAME_P (DECL_NAME (current_function_decl));
++  OS_main_p = avr_OS_main_function_p (current_function_decl);
++  OS_task_p = avr_OS_task_function_p (current_function_decl);
+   live_seq = sequent_regs_live ();
+   minimize = (TARGET_CALL_PROLOGUES
++	      && !OS_main_p && !OS_task_p
+ 	      && !interrupt_func_p && !signal_func_p && live_seq);
+   
+-  if (main_p)
++  if (minimize && (frame_pointer_needed || live_seq > 4))
+     {
+-      /* Return value from main() is already in the correct registers
+-	 (r25:r24) as the exit() argument.  */
+-      if (AVR_MEGA)
+-	{
+-	  fputs ("\t" AS1 (jmp,exit) "\n", file);
+-	  epilogue_size += 2;
+-	}
+-      else
+-	{
+-	  fputs ("\t" AS1 (rjmp,exit) "\n", file);
+-	  ++epilogue_size;
+-	}
+-    }
+-  else if (minimize && (frame_pointer_needed || live_seq > 4))
+-    {
+       fprintf (file, ("\t" AS2 (ldi, r30, %d) CR_TAB), live_seq);
+       ++epilogue_size;
+       if (frame_pointer_needed)
+@@ -893,10 +938,13 @@ avr_output_function_epilogue (FILE *file, HOST_WIDE_IN
+ 		  epilogue_size += out_set_stack_ptr (file, -1, -1);
+ 		}
+ 	    }
+-	  fprintf (file, "\t"
+-		   AS1 (pop,r29) CR_TAB
+-		   AS1 (pop,r28) "\n");
+-	  epilogue_size += 2;
++	  if (!OS_main_p && !OS_task_p)
++            {
++	      fprintf (file, "\t"
++		       AS1 (pop,r29) CR_TAB
++		       AS1 (pop,r28) "\n");
++	      epilogue_size += 2;
++	    }
+ 	}
+ 
+       epilogue_size += avr_regs_to_save (&set);
+@@ -1103,7 +1151,7 @@ print_operand_address (FILE *file, rtx addr)
+ 	  && ((GET_CODE (addr) == SYMBOL_REF && SYMBOL_REF_FUNCTION_P (addr))
+ 	      || GET_CODE (addr) == LABEL_REF))
+ 	{
+-	  fprintf (file, "pm(");
++	  fprintf (file, "gs(");
+ 	  output_addr_const (file,addr);
+ 	  fprintf (file ,")");
+ 	}
+@@ -1128,6 +1176,11 @@ print_operand (FILE *file, rtx x, int code)
+       if (!AVR_MEGA)
+ 	fputc ('r', file);
+     }
++  else if (code == '!')
++    {
++      if (AVR_HAVE_EIJMP_EICALL)
++	fputc ('e', file);
++    }
+   else if (REG_P (x))
+     {
+       if (x == zero_reg_rtx)
+@@ -4524,7 +4577,7 @@ avr_assemble_integer (rtx x, unsigned int size, int al
+       && ((GET_CODE (x) == SYMBOL_REF && SYMBOL_REF_FUNCTION_P (x))
+ 	  || GET_CODE (x) == LABEL_REF))
+     {
+-      fputs ("\t.word\tpm(", asm_out_file);
++      fputs ("\t.word\tgs(", asm_out_file);
+       output_addr_const (asm_out_file, x);
+       fputs (")\n", asm_out_file);
+       return true;
+@@ -4643,6 +4696,8 @@ class_likely_spilled_p (int c)
+    interrupt - make a function to be hardware interrupt. After function
+    prologue interrupts are enabled;
+    naked     - don't generate function prologue/epilogue and `ret' command.
++   OS_main - ...
++   OS_task - ...
+ 
+    Only `progmem' attribute valid for type.  */
+ 
+@@ -4653,6 +4708,8 @@ const struct attribute_spec avr_attribute_table[] =
+   { "signal",    0, 0, true,  false, false,  avr_handle_fndecl_attribute },
+   { "interrupt", 0, 0, true,  false, false,  avr_handle_fndecl_attribute },
+   { "naked",     0, 0, false, true,  true,   avr_handle_fntype_attribute },
++  { "OS_main",   0, 0, false, true,  true,   avr_handle_fntype_attribute },
++  { "OS_task",   0, 0, false, true,  true,   avr_handle_fntype_attribute },
+   { NULL,        0, 0, false, false, false, NULL }
+ };
+ 
+@@ -5914,7 +5971,7 @@ avr_output_addr_vec_elt (FILE *stream, int value)
+ {
+   switch_to_section (progmem_section);
+   if (AVR_MEGA)
+-    fprintf (stream, "\t.word pm(.L%d)\n", value);
++    fprintf (stream, "\t.word gs(.L%d)\n", value);
+   else
+     fprintf (stream, "\trjmp .L%d\n", value);
+ 

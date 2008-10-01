@@ -1,0 +1,16 @@
+$OpenBSD: patch-gcc_doc_md_texi,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
+--- gcc/doc/md.texi.orig	Tue Apr  3 18:24:10 2007
++++ gcc/doc/md.texi	Sat Sep 27 16:29:43 2008
+@@ -1742,6 +1742,12 @@ Constant integer 1
+ 
+ @item G
+ A floating point constant 0.0
++
++@item R
++Integer constant in the range -6 @dots{} 5.
++
++@item Q
++A memory address based on Y or Z pointer with displacement.
+ @end table
+ 
+ @item CRX Architecture---@file{config/crx/crx.h}

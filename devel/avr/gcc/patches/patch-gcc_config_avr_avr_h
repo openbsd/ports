@@ -1,0 +1,199 @@
+$OpenBSD: patch-gcc_config_avr_avr_h,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
+--- gcc/config/avr/avr.h.orig	Mon Sep  3 14:03:50 2007
++++ gcc/config/avr/avr.h	Sat Sep 27 16:29:43 2008
+@@ -36,6 +36,12 @@ along with GCC; see the file COPYING3.  If not see
+ 	builtin_define ("__AVR_HAVE_LPMX__");	\
+       if (avr_asm_only_p)			\
+ 	builtin_define ("__AVR_ASM_ONLY__");	\
++      if (!avr_have_eijmp_eicall_p)		\
++	builtin_define ("__AVR_2_BYTE_PC__");	\
++      if (avr_have_eijmp_eicall_p)		\
++	builtin_define ("__AVR_3_BYTE_PC__");	\
++      if (avr_have_eijmp_eicall_p)		\
++	builtin_define ("__AVR_HAVE_EIJMP_EICALL__");	\
+       if (avr_enhanced_p)			\
+ 	builtin_define ("__AVR_ENHANCED__");	\
+       if (avr_enhanced_p)			\
+@@ -53,6 +59,8 @@ extern int avr_mega_p;
+ extern int avr_enhanced_p;
+ extern int avr_asm_only_p;
+ extern int avr_have_movw_lpmx_p;
++extern int avr_have_eijmp_eicall_p;
++
+ #ifndef IN_LIBGCC2
+ extern GTY(()) section *progmem_section;
+ #endif
+@@ -60,6 +68,7 @@ extern GTY(()) section *progmem_section;
+ #define AVR_MEGA (avr_mega_p && !TARGET_SHORT_CALLS)
+ #define AVR_ENHANCED (avr_enhanced_p)
+ #define AVR_HAVE_MOVW (avr_have_movw_lpmx_p)
++#define AVR_HAVE_EIJMP_EICALL (avr_have_eijmp_eicall_p)
+ 
+ #define TARGET_VERSION fprintf (stderr, " (GNU assembler syntax)");
+ 
+@@ -631,7 +640,7 @@ sprintf (STRING, "*.%s%lu", PREFIX, (unsigned long)(NU
+ 
+ #define PRINT_OPERAND(STREAM, X, CODE) print_operand (STREAM, X, CODE)
+ 
+-#define PRINT_OPERAND_PUNCT_VALID_P(CODE) ((CODE) == '~')
++#define PRINT_OPERAND_PUNCT_VALID_P(CODE) ((CODE) == '~' || (CODE) == '!')
+ 
+ #define PRINT_OPERAND_ADDRESS(STREAM, X) print_operand_address(STREAM, X)
+ 
+@@ -733,7 +742,7 @@ extern int avr_case_values_threshold;
+ /* A C string constant that tells the GCC drvier program options to
+    pass to `cc1plus'.  */
+ 
+-#define ASM_SPEC "%{mmcu=avr25:-mmcu=avr2;\
++#define ASM_SPEC "%{mmcu=avr25:-mmcu=avr2;mmcu=avr35:-mmcu=avr3;\
+ mmcu=*:-mmcu=%*}"
+ 
+ #define LINK_SPEC " %{!mmcu*:-m avr2}\
+@@ -759,42 +768,58 @@ mmcu=*:-mmcu=%*}"
+ %{mmcu=atmega103|\
+   mmcu=atmega603|\
+   mmcu=at43*|\
+-  mmcu=at76*:-m avr3}\
++  mmcu=at76*:|\
++  mmcu=at90usb82|\
++  mmcu=at90usb162:-m avr3}	  \
+ %{mmcu=atmega8*|\
+-  mmcu=atmega48|\
+-  mmcu=at90pwm*:-m avr4}\
++  mmcu=atmega48*|\
++  mmcu=at90pwm1|\
++  mmcu=at90pwm2|\
++  mmcu=at90pwm2b|\
++  mmcu=at90pwm3|\
++  mmcu=at90pwm3b:-m avr4}\
+ %{mmcu=atmega16*|\
+   mmcu=atmega32*|\
+   mmcu=atmega406|\
+   mmcu=atmega64*|\
+   mmcu=atmega128*|\
+   mmcu=at90can*|\
+-  mmcu=at90usb*|\
++  mmcu=at90pwm216|\
++  mmcu=at90pwm316|\
++  mmcu=at90usb6*|\
++  mmcu=at90usb12*|\
+   mmcu=at94k:-m avr5}\
++%{mmcu=atmega256*:-m avr6}\
+ %{mmcu=atmega324*|\
+   mmcu=atmega325*|\
++  mmcu=atmega328p|\
+   mmcu=atmega329*|\
+   mmcu=atmega406|\
+-  mmcu=atmega48|\
+-  mmcu=atmega88|\
++  mmcu=atmega48*|\
++  mmcu=atmega88*|\
+   mmcu=atmega64|\
+   mmcu=atmega644*|\
+   mmcu=atmega645*|\
+   mmcu=atmega649*|\
+   mmcu=atmega128|\
++  mmcu=atmega1284p|\
+   mmcu=atmega162|\
+   mmcu=atmega164*|\
+   mmcu=atmega165*|\
+-  mmcu=atmega168|\
++  mmcu=atmega168*|\
+   mmcu=atmega169*|\
+   mmcu=atmega8hva|\
+   mmcu=atmega16hva|\
++  mmcu=atmega32hvb|\
++  mmcu=attiny48|\
++  mmcu=attiny88|\
+   mmcu=at90can*|\
+   mmcu=at90pwm*|\
+   mmcu=at90usb*: -Tdata 0x800100}\
+ %{mmcu=atmega640|\
+   mmcu=atmega1280|\
+-  mmcu=atmega1281: -Tdata 0x800200} "
++  mmcu=atmega1281|\
++  mmcu=atmega256*: -Tdata 0x800200} "
+ 
+ #define LIB_SPEC \
+   "%{!mmcu=at90s1*:%{!mmcu=attiny11:%{!mmcu=attiny12:%{!mmcu=attiny15:%{!mmcu=attiny28: -lc }}}}}"
+@@ -839,6 +864,9 @@ mmcu=*:-mmcu=%*}"
+ %{mmcu=attiny261:crttn261.o%s} \
+ %{mmcu=attiny461:crttn461.o%s} \
+ %{mmcu=attiny861:crttn861.o%s} \
++%{mmcu=attiny43u:crttn43u.o%s} \
++%{mmcu=attiny48:crttn48.o%s} \
++%{mmcu=attiny88:crttn88.o%s} \
+ %{mmcu=atmega103|mmcu=avr3:crtm103.o%s} \
+ %{mmcu=atmega603:crtm603.o%s} \
+ %{mmcu=at43usb320:crt43320.o%s} \
+@@ -846,12 +874,16 @@ mmcu=*:-mmcu=%*}"
+ %{mmcu=at76c711:crt76711.o%s} \
+ %{mmcu=atmega8|mmcu=avr4:crtm8.o%s} \
+ %{mmcu=atmega48:crtm48.o%s} \
++%{mmcu=atmega48p:crtm48p.o%s} \
+ %{mmcu=atmega88:crtm88.o%s} \
++%{mmcu=atmega88p:crtm88p.o%s} \
+ %{mmcu=atmega8515:crtm8515.o%s} \
+ %{mmcu=atmega8535:crtm8535.o%s} \
+ %{mmcu=at90pwm1:crt90pwm1.o%s} \
+ %{mmcu=at90pwm2:crt90pwm2.o%s} \
++%{mmcu=at90pwm2b:crt90pwm2b.o%s} \
+ %{mmcu=at90pwm3:crt90pwm3.o%s} \
++%{mmcu=at90pwm3b:crt90pwm3b.o%s} \
+ %{mmcu=atmega16:crtm16.o%s} \
+ %{mmcu=atmega161|mmcu=avr5:crtm161.o%s} \
+ %{mmcu=atmega162:crtm162.o%s} \
+@@ -860,6 +892,7 @@ mmcu=*:-mmcu=%*}"
+ %{mmcu=atmega165:crtm165.o%s} \
+ %{mmcu=atmega165p:crtm165p.o%s} \
+ %{mmcu=atmega168:crtm168.o%s} \
++%{mmcu=atmega168p:crtm168p.o%s} \
+ %{mmcu=atmega169:crtm169.o%s} \
+ %{mmcu=atmega169p:crtm169p.o%s} \
+ %{mmcu=atmega32:crtm32.o%s} \
+@@ -869,10 +902,12 @@ mmcu=*:-mmcu=%*}"
+ %{mmcu=atmega325p:crtm325p.o%s} \
+ %{mmcu=atmega3250:crtm3250.o%s} \
+ %{mmcu=atmega3250p:crtm3250p.o%s} \
++%{mmcu=atmega328p:crtm328p.o%s} \
+ %{mmcu=atmega329:crtm329.o%s} \
+ %{mmcu=atmega329p:crtm329p.o%s} \
+ %{mmcu=atmega3290:crtm3290.o%s} \
+ %{mmcu=atmega3290p:crtm3290p.o%s} \
++%{mmcu=atmega32hvb:crtm32hvb.o%s} \
+ %{mmcu=atmega406:crtm406.o%s} \
+ %{mmcu=atmega64:crtm64.o%s} \
+ %{mmcu=atmega640:crtm640.o%s} \
+@@ -885,11 +920,16 @@ mmcu=*:-mmcu=%*}"
+ %{mmcu=atmega128:crtm128.o%s} \
+ %{mmcu=atmega1280:crtm1280.o%s} \
+ %{mmcu=atmega1281:crtm1281.o%s} \
++%{mmcu=atmega1284p:crtm1284p.o%s} \
++%{mmcu=atmega2560:crtm2560.o%s} \
++%{mmcu=atmega2561:crtm2561.o%s} \
+ %{mmcu=atmega8hva:crtm8hva.o%s} \
+ %{mmcu=atmega16hva:crtm16hva.o%s} \
+ %{mmcu=at90can32:crtcan32.o%s} \
+ %{mmcu=at90can64:crtcan64.o%s} \
+ %{mmcu=at90can128:crtcan128.o%s} \
++%{mmcu=at90pwm216:crt90pwm216.o%s} \
++%{mmcu=at90pwm316:crt90pwm316.o%s} \
+ %{mmcu=at90usb82:crtusb82.o%s} \
+ %{mmcu=at90usb162:crtusb162.o%s} \
+ %{mmcu=at90usb646:crtusb646.o%s} \
+@@ -898,7 +938,15 @@ mmcu=*:-mmcu=%*}"
+ %{mmcu=at90usb1287:crtusb1287.o%s} \
+ %{mmcu=at94k:crtat94k.o%s}"
+ 
++#define DWARF2_DEBUGGING_INFO 1
++#define DWARF2_DEBUGGING_INFO 1
++
++/* Offset from the frame pointer register value to the top of the stack.  */
++#define FRAME_POINTER_CFA_OFFSET(FNDECL) 0
+ #define EXTRA_SPECS {"crt_binutils", CRT_BINUTILS_SPECS},
++
++/* Offset from the frame pointer register value to the top of the stack.  */
++#define FRAME_POINTER_CFA_OFFSET(FNDECL) 0
+ 
+ /* This is the default without any -mmcu=* option (AT90S*).  */
+ #define MULTILIB_DEFAULTS { "mmcu=avr2" }

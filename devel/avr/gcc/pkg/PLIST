@@ -1,26 +1,41 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/01/04 17:48:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/10/01 04:52:19 ckuethe Exp $
 avr/
 avr/lib/
-bin/avr-c++
-bin/avr-cpp
-bin/avr-g++
-bin/avr-gcc
-bin/avr-gcc-${V}
+@bin bin/avr-c++
+@bin bin/avr-cpp
+@bin bin/avr-g++
+@bin bin/avr-gcc
+@bin bin/avr-gcc-${V}
 bin/avr-gccbug
+@comment @info info/cpp.info
+@comment @info info/cppinternals.info
+@comment @info info/gcc.info
+@comment @info info/gccinstall.info
+@comment @info info/gccint.info
 lib/gcc/
 lib/gcc/avr/
 lib/gcc/avr/${V}/
+lib/gcc/avr/${V}/avr25/
+lib/gcc/avr/${V}/avr25/libgcc.a
+lib/gcc/avr/${V}/avr25/libgcov.a
 lib/gcc/avr/${V}/avr3/
 lib/gcc/avr/${V}/avr3/libgcc.a
 lib/gcc/avr/${V}/avr3/libgcov.a
+lib/gcc/avr/${V}/avr35/
+lib/gcc/avr/${V}/avr35/libgcc.a
+lib/gcc/avr/${V}/avr35/libgcov.a
 lib/gcc/avr/${V}/avr4/
 lib/gcc/avr/${V}/avr4/libgcc.a
 lib/gcc/avr/${V}/avr4/libgcov.a
 lib/gcc/avr/${V}/avr5/
 lib/gcc/avr/${V}/avr5/libgcc.a
 lib/gcc/avr/${V}/avr5/libgcov.a
+lib/gcc/avr/${V}/avr6/
+lib/gcc/avr/${V}/avr6/libgcc.a
+lib/gcc/avr/${V}/avr6/libgcov.a
 lib/gcc/avr/${V}/include/
 lib/gcc/avr/${V}/include/README
+lib/gcc/avr/${V}/include/decfloat.h
 lib/gcc/avr/${V}/include/fixed
 lib/gcc/avr/${V}/include/float.h
 lib/gcc/avr/${V}/include/iso646.h
@@ -35,6 +50,7 @@ lib/gcc/avr/${V}/install-tools/
 lib/gcc/avr/${V}/install-tools/gsyslimits.h
 lib/gcc/avr/${V}/install-tools/include/
 lib/gcc/avr/${V}/install-tools/include/README
+lib/gcc/avr/${V}/install-tools/include/decfloat.h
 lib/gcc/avr/${V}/install-tools/include/float.h
 lib/gcc/avr/${V}/install-tools/include/iso646.h
 lib/gcc/avr/${V}/install-tools/include/limits.h
@@ -43,23 +59,22 @@ lib/gcc/avr/${V}/install-tools/include/stdbool.h
 lib/gcc/avr/${V}/install-tools/include/stddef.h
 lib/gcc/avr/${V}/install-tools/include/unwind.h
 lib/gcc/avr/${V}/install-tools/include/varargs.h
+lib/gcc/avr/${V}/install-tools/macro_list
 lib/gcc/avr/${V}/install-tools/mkheaders.conf
 lib/gcc/avr/${V}/libgcc.a
 lib/gcc/avr/${V}/libgcov.a
-lib/gcc/avr/${V}/specs
 libexec/gcc/
 libexec/gcc/avr/
 libexec/gcc/avr/${V}/
-libexec/gcc/avr/${V}/cc1
-libexec/gcc/avr/${V}/cc1plus
-libexec/gcc/avr/${V}/collect2
+@bin libexec/gcc/avr/${V}/cc1
+@bin libexec/gcc/avr/${V}/cc1plus
+@bin libexec/gcc/avr/${V}/collect2
 libexec/gcc/avr/${V}/install-tools/
-libexec/gcc/avr/${V}/install-tools/fix-header
+@bin libexec/gcc/avr/${V}/install-tools/fix-header
 libexec/gcc/avr/${V}/install-tools/fixinc.sh
-libexec/gcc/avr/${V}/install-tools/fixincl
+@bin libexec/gcc/avr/${V}/install-tools/fixincl
 libexec/gcc/avr/${V}/install-tools/fixproto
 libexec/gcc/avr/${V}/install-tools/mkheaders
-libexec/gcc/avr/${V}/install-tools/mkinstalldirs
 @man man/man1/avr-cpp.1
 @man man/man1/avr-g++.1
 @man man/man1/avr-gcc.1

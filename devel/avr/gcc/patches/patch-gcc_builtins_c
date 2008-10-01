@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_builtins_c,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
+--- gcc/builtins.c.orig	Sat Sep  1 08:28:30 2007
++++ gcc/builtins.c	Sat Sep 27 16:29:43 2008
+@@ -5353,7 +5353,7 @@ expand_builtin_signbit (tree exp, rtx target)
+ 	  lo = 0;
+ 	}
+ 
+-      if (imode != rmode)
++      if (imode > rmode)
+ 	temp = gen_lowpart (rmode, temp);
+       temp = expand_binop (rmode, and_optab, temp,
+ 			   immed_double_const (lo, hi, rmode),

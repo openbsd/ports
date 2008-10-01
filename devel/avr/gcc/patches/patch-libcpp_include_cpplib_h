@@ -1,0 +1,11 @@
+$OpenBSD: patch-libcpp_include_cpplib_h,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
+--- libcpp/include/cpplib.h.orig	Mon Aug 14 16:13:54 2006
++++ libcpp/include/cpplib.h	Sat Sep 27 16:29:43 2008
+@@ -744,6 +744,7 @@ struct cpp_num
+ #define CPP_N_DECIMAL	0x0100
+ #define CPP_N_HEX	0x0200
+ #define CPP_N_OCTAL	0x0400
++#define CPP_N_BINARY	0x0800
+ 
+ #define CPP_N_UNSIGNED	0x1000	/* Properties.  */
+ #define CPP_N_IMAGINARY	0x2000
