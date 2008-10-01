@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/04/17 08:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/10/01 19:30:03 ajacoutot Exp $
 
 COMMENT=		easy GNOME menu editing tool
 
 GNOME_PROJECT=		alacarte
 GNOME_VERSION=		0.11.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11
 
 # LGPL
@@ -18,7 +18,7 @@ MODULES=		lang/python \
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::devel/gettext \
-			:python-expat-*:textproc/py-xml \
+			:python-expat-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-expat \
 			:fam-*:sysutils/fam \
 			:py-gtk2->=2.8.6:x11/py-gtk2 \
 			:gnome-menus-*:x11/gnome/menus \
