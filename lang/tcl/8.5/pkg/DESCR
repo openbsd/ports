@@ -5,10 +5,4 @@ many more. Open source and business-friendly, Tcl is a mature yet
 evolving language that is truly cross platform, easily deployed and
 highly extensible.
 
-Tcl/Tk resources:
-  Newsgroup: comp.lang.tcl
-  Wiki: http://wiki.tcl.tk
-  Book: Practical Programming in Tcl and Tk, 4th Edition
-        ISBN: 0-13-038560-3
-
 Flavor: threaded - build with thread support

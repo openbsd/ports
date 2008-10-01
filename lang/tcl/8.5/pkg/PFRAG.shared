@@ -1,2 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/04/25 14:10:47 deanna Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2008/10/01 19:47:40 steven Exp $
 @lib lib/libtcl85.so.${LIBtcl85_VERSION}
+lib/libtcl85_pic.a
+lib/libtclstub85_pic.a
