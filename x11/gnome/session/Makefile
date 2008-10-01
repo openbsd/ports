@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2008/09/29 09:27:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2008/10/01 20:34:38 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.20.3
-PKGNAME=		${DISTNAME}p12
+PKGNAME=		${DISTNAME}p13
 CATEGORIES=		x11
 
 # GPLv2/LGPL
@@ -31,15 +31,18 @@ BUILD_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
 LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui
 
 # Here we hang all the additional ports that will make up a satisfying
-# Gnome2 user experience :)
-RUN_DEPENDS+=		::x11/gnome/alacarte \
+# GNOME user experience :)
+RUN_DEPENDS+=		::textproc/gnome-spell \
+			::x11/gnome/alacarte \
 			::x11/gnome/applets2 \
 			::x11/gnome/backgrounds \
 			::x11/gnome/controlcenter2 \
 			::x11/gnome/devhelp \
+			::x11/gnome/file-roller \
 			::x11/gnome/gdm \
 			::x11/gnome/gedit \
 			::x11/gnome/media \
+			::x11/gnome/eog \
 			::x11/gnome/terminal \
 			::x11/gnome/themes \
 			::x11/gnome/themes-extras \

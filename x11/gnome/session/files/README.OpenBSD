@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.9 2008/06/08 09:37:00 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.10 2008/10/01 20:34:38 ajacoutot Exp $
 The OpenBSD/GNOME desktop
 
 * Introduction
@@ -41,9 +41,7 @@ you can install. The most important ones will be mentioned by category:
    * zenity - easy-to-script dialogs
 
  - Utilities
-   * eog - image viewer and categorizer
    * evince - document viewer for multiple document formats
-   * file-roller - archive manager
    * gcalctool - desktop calculator
    * gnome-scan - scanning application
    * gnomebaker - CD/DVD burning application
