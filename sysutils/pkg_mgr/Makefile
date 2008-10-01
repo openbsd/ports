@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/17 11:27:40 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/01 12:24:04 sthen Exp $
 
 COMMENT=	user-friendly package browser and manager
 
 DISTNAME=	pkg_mgr-0.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://gruiik.info/pkg_mgr.html
@@ -24,5 +25,7 @@ NO_REGRESS=	yes
 RUN_DEPENDS=	::devel/p5-Curses-UI \
 		::databases/p5-DBD-SQLite \
 		::databases/sqlports
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
