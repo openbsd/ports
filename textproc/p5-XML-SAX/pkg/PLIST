@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/09/29 19:12:29 simon Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/10/01 16:04:27 simon Exp $
 ${P5SITE}/XML/SAX/
 ${P5SITE}/XML/SAX.pm
 ${P5SITE}/XML/SAX/Base.pm
@@ -27,7 +27,9 @@ ${P5SITE}/XML/SAX/PurePerl/UnicodeExt.pm
 ${P5SITE}/XML/SAX/PurePerl/XMLDecl.pm
 ${P5SITE}/XML/SAX/placeholder.pl
 @man man/man3p/XML::SAX.3p
+@man man/man3p/XML::SAX::Base.3p
 @man man/man3p/XML::SAX::DocumentLocator.3p
+@man man/man3p/XML::SAX::Exception.3p
 @man man/man3p/XML::SAX::Intro.3p
 @man man/man3p/XML::SAX::ParserFactory.3p
 @man man/man3p/XML::SAX::PurePerl.3p
