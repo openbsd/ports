@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/09/29 18:17:18 simon Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/10/01 16:01:51 simon Exp $
 ${P5ARCH}/
 ${P5ARCH}/XML/
 ${P5ARCH}/XML/Parser/
@@ -38,6 +38,7 @@ ${P5ARCH}/auto/XML/Parser/Expat/
 ${P5ARCH}/auto/XML/Parser/Expat/Expat.bs
 ${P5ARCH}/auto/XML/Parser/Expat/Expat.so
 @man man/man3p/XML::Parser.3p
+@man man/man3p/XML::Parser::Expat.3p
 @man man/man3p/XML::Parser::Style::Debug.3p
 @man man/man3p/XML::Parser::Style::Objects.3p
 @man man/man3p/XML::Parser::Style::Stream.3p
