@@ -1,0 +1,5 @@
+ctunnel is a software for proxying and forwarding TCP connections via 
+a cryptographic tunnel.
+ctunnel can be used to secure any existing TCP based protocol, such 
+as HTTP, VNC, Telnet, FTP, RSH, MySQL, etc.
+You can also chain/bounce connections to any number of intermediary hosts.

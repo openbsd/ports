@@ -1,0 +1,21 @@
+$OpenBSD: patch-ctunnel_c,v 1.1.1.1 2008/10/01 16:12:55 ajacoutot Exp $
+--- ctunnel.c.orig	Sat Sep 20 22:12:59 2008
++++ ctunnel.c	Wed Oct  1 14:42:37 2008
+@@ -15,8 +15,8 @@
+ 
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+-#include <netinet/ip.h>
+ #include <netinet/in_systm.h>
++#include <netinet/ip.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ #include <sys/ioctl.h>
+@@ -459,6 +459,7 @@ int main(int argc, char *argv[])
+             EVP_cleanup();
+ 	    _exit(0);
+ 	} else {
++	    signal(SIGCHLD, SIG_IGN);
+ 	    close(clifd);
+ 	}
+     }

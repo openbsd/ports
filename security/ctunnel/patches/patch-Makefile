@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/10/01 16:12:55 ajacoutot Exp $
+--- Makefile.orig	Sat Sep 20 22:07:47 2008
++++ Makefile	Wed Oct  1 13:44:08 2008
+@@ -1,5 +1,5 @@
+-CC=gcc
+-CFLAGS=-Wall -g -O2
++CC ?= gcc
++CFLAGS ?= -Wall -g -O2
+ LDFLAGS=-lcrypto
+ 
+ all: ctunnel
+@@ -9,6 +9,6 @@ ctunnel.o:
+ ctunnel: ctunnel.o
+ 	$(CC) $(CFLAGS) -o ctunnel ctunnel.o $(LDFLAGS)
+ install:
+-	install ctunnel /usr/local/bin
++	install ctunnel $(PREFIX)/bin
+ clean:
+ 	rm -f ctunnel *.o
