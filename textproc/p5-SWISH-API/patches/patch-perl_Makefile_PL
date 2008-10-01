@@ -1,0 +1,19 @@
+$OpenBSD: patch-perl_Makefile_PL,v 1.1 2008/10/01 21:49:48 merdely Exp $
+
+Fixes build after perl 5.10 update.
+
+--- perl/Makefile.PL.orig	Wed Oct  1 16:48:37 2008
++++ perl/Makefile.PL	Wed Oct  1 16:49:18 2008
+@@ -80,10 +80,8 @@ Can be either environment variables or passed on comma
+ 
+ EOF
+ 
+-$SIG{__DIE__} = sub {
+-    print STDERR "\n  ** ERROR: ", @_;
+-    print STDERR "  Run perl Makefile.PL SWISHHELP for options\n\n";
+-    exit 1;
++END {
++    print STDERR "Run perl Makefile.PL SWISHHELP for options\n\n" if $?;
+ };
+ 
+ #----------------------------------------------------------------------------------
