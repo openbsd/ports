@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2008/09/20 20:29:17 steven Exp $
+# $OpenBSD: Makefile,v 1.204 2008/10/01 16:14:10 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -27,6 +27,7 @@
      SUBDIR += crank
      SUBDIR += cryptcat
      SUBDIR += cryptokit
+     SUBDIR += ctunnel
      SUBDIR += cyrus-sasl2
      SUBDIR += cyrus-sasl2,db4
      SUBDIR += cyrus-sasl2,ldap
