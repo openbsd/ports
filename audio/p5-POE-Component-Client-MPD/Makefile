@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/04/15 21:06:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/02 22:25:37 jasper Exp $
 
 COMMENT=		complete MPD client library
 
-DISTNAME=		POE-Component-Client-MPD-0.8.1
+DISTNAME=		POE-Component-Client-MPD-0.9.0
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
