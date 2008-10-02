@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2003/10/31 10:23:47 kevlo Exp $
---- Makefile.PL.orig	2003-10-05 06:40:46.000000000 +0000
-+++ Makefile.PL	2003-10-31 11:14:26.000000000 +0000
-@@ -16,12 +16,12 @@ requires a working copy of "apxs" in you
+$OpenBSD: patch-Makefile_PL,v 1.3 2008/10/02 05:58:56 simon Exp $
+--- Makefile.PL.orig	Sun Oct  5 08:40:46 2003
++++ Makefile.PL	Thu Oct  2 00:21:22 2008
+@@ -16,12 +16,12 @@ requires a working copy of "apxs" in your path, Apache
  support, and additional Apache configuration.
  
  END
@@ -16,3 +16,12 @@ $OpenBSD: patch-Makefile_PL,v 1.2 2003/10/31 10:23:47 kevlo Exp $
      die "ERROR: Command 'apxs -q CC' failed.\n"
  	unless $macro->{APACHE_APXS_WORKS};
      print "Compiling for Apache version $macro->{APACHE_VERSION}\n";
+@@ -71,7 +71,7 @@ readable:
+ 	chmod -R u+w,go-w,go+r .
+ 
+ README: src/SpeedyCGI.pm
+-	cd src && $(PERL) -e "use Pod::Text; pod2text(-80)" <SpeedyCGI.pm >../README
++	cd src && pod2text -80 <SpeedyCGI.pm >../README
+ 
+ README.html: src/SpeedyCGI.pm
+ 	cd src && pod2html SpeedyCGI.pm >../README.html && $(RM_F) pod2h*

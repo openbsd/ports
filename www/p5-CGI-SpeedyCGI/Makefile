@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/11/08 06:43:47 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 2008/10/02 05:58:56 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	speed up perl scripts by running them persistently
 MODULES=	cpan
 VERSION=	2.22
 DISTNAME=	CGI-SpeedyCGI-${VERSION}
-PKGNAME=	p5-CGI-SpeedyCGI-${VERSION}p0
+PKGNAME=	p5-CGI-SpeedyCGI-${VERSION}p1
 CATEGORIES=	www
 
 HOMEPAGE=	http://daemoninc.com/SpeedyCGI/

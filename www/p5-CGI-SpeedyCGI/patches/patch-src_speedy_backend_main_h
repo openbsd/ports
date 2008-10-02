@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_speedy_backend_main_h,v 1.1 2008/10/02 05:58:56 simon Exp $
+--- src/speedy_backend_main.h.orig	Thu Oct  2 00:21:40 2008
++++ src/speedy_backend_main.h	Thu Oct  2 00:23:12 2008
+@@ -38,7 +38,7 @@ void * efence_realloc (void *ptr, size_t size);
+ 
+ #else
+ 
+-#define speedy_new(s,n,t)	New(123,s,n,t)
++#define speedy_new(s,n,t)	Newx(s,n,t)
+ #define speedy_renew		Renew
+ #define speedy_free		Safefree
+ 
