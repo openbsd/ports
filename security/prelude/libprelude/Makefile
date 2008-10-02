@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2008/06/04 09:37:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2008/10/02 20:32:19 sthen Exp $
 
 COMMENT=	Prelude framework library
 
 DISTNAME=	libprelude-0.9.15.1
-PKGNAME=	prelude-${DISTNAME}p1
+PKGNAME=	prelude-${DISTNAME}p2
 
 MODPY_EGG_VERSION=0.0.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2008/06/04 09:37:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2008/10/02 20:32:19 sthen Exp $
 
 COMMENT-main=	Prelude framework database-access library
 COMMENT-pgsql=	PostgreSQL module for libpreludedb
@@ -10,7 +10,7 @@ DISTNAME=	libpreludedb-${VERSION}
 
 MODPY_EGG_VERSION=0.0.0
 
-PKGNAME-main=	prelude-libpreludedb-${VERSION}p1
+PKGNAME-main=	prelude-libpreludedb-${VERSION}p2
 PKGNAME-pgsql=	prelude-libpreludedb-pgsql-${VERSION}p0
 PKGNAME-mysql=	prelude-libpreludedb-mysql-${VERSION}p0
 PKGNAME-sqlite=	prelude-libpreludedb-sqlite-${VERSION}p0
