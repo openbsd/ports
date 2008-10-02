@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/14 19:09:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/02 15:39:12 jasper Exp $
 ${P5ARCH}/
 ${P5ARCH}/XML/
 ${P5ARCH}/XML/SAX/
@@ -23,6 +23,7 @@ ${P5ARCH}/XML/SAX/ExpatXS/Encodings/x-sjis-cp932.enc
 ${P5ARCH}/XML/SAX/ExpatXS/Encodings/x-sjis-jdk117.enc
 ${P5ARCH}/XML/SAX/ExpatXS/Encodings/x-sjis-jisx0221.enc
 ${P5ARCH}/XML/SAX/ExpatXS/Encodings/x-sjis-unicode.enc
+${P5ARCH}/XML/SAX/ExpatXS/Preload.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/XML/
 ${P5ARCH}/auto/XML/SAX/
@@ -31,3 +32,4 @@ ${P5ARCH}/auto/XML/SAX/ExpatXS/ExpatXS.bs
 ${P5ARCH}/auto/XML/SAX/ExpatXS/ExpatXS.so
 @man man/man3p/XML::SAX::ExpatXS.3p
 @man man/man3p/XML::SAX::ExpatXS::Encoding.3p
+@man man/man3p/XML::SAX::ExpatXS::Preload.3p

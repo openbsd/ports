@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2006/11/14 19:09:21 espie Exp $
---- Makefile.PL.orig	Tue Nov 14 19:44:32 2006
-+++ Makefile.PL	Tue Nov 14 19:46:14 2006
-@@ -97,7 +97,7 @@ WriteMakefile(
-     @extras
+$OpenBSD: patch-Makefile_PL,v 1.2 2008/10/02 15:39:12 jasper Exp $
+--- Makefile.PL.orig	Mon Jul  2 09:59:45 2007
++++ Makefile.PL	Thu Oct  2 17:38:11 2008
+@@ -100,7 +100,7 @@ WriteMakefile(
  );
+ 
  
 -sub MY::install {
 +sub dont {
