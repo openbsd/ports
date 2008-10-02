@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/16 12:48:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/02 19:18:33 jasper Exp $
 
 COMMENT=		POE Component for communicating over Jabber
 
-DISTNAME=		POE-Component-Jabber-2.02
+DISTNAME=		POE-Component-Jabber-2.03
 CATEGORIES=		net
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,6 +17,7 @@ CONFIGURE_STYLE=	modbuild
 
 RUN_DEPENDS=		::devel/p5-Filter-Template \
 			::security/p5-Authen-SASL \
+			:p5-Net-SSLeay->=1.35:security/p5-Net_SSLeay \
 			::security/p5-POE-Component-SSLify \
 			::textproc/p5-POE-Filter-XML
 BUILD_DEPENDS=		${RUN_DEPENDS}
