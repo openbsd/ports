@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2008/09/23 13:27:11 bernd Exp $
+# $OpenBSD: Makefile,v 1.29 2008/10/02 19:50:52 kili Exp $
 # 
 # Ancient versions based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
@@ -88,7 +88,8 @@ SUBST_VARS=		MODGHC_VER
 
 USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	gnu dest autoconf
+AUTOCONF_VERSION=	2.57
 CONFIGURE_ARGS+=	--with-gmp-includes=${LOCALBASE}/include \
 			--with-gmp-libraries=${LOCALBASE}/lib
 

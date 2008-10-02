@@ -1,0 +1,12 @@
+$OpenBSD: patch-aclocal_m4,v 1.1 2008/10/02 19:50:52 kili Exp $
+--- aclocal.m4.orig	Wed Apr 25 19:10:41 2007
++++ aclocal.m4	Tue Sep 30 15:45:58 2008
+@@ -571,7 +571,7 @@ AC_DEFUN([FPTOOLS_CHECK_PERL_VERSION],
+       if grep "v5.8" conftest.out >/dev/null 2>&1; then
+          :
+       else
+-         if grep "version 6" conftest.out >/dev/null 2>&1; then
++         if grep "v5.10" conftest.out >/dev/null 2>&1; then
+             :
+          else
+             AC_MSG_ERROR([your version of perl probably won't work, try upgrading it.])
