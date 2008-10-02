@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2008/09/27 19:14:32 martynas Exp $
+# $OpenBSD: Makefile,v 1.24 2008/10/02 19:53:12 naddy Exp $
 
 PKG_ARCH=	*
 
@@ -42,6 +42,7 @@ PKGNAME-$i=	${NAME}-$i-${V}
 COMMENT-$i=	$i language pack for Thunderbird
 LPACKDIR-$i=	${PREFIX}/mozilla-thunderbird/extensions/langpack-$i@thunderbird.mozilla.org
 .endfor
+PKGNAME-en-GB=	${NAME}-en-GB-${V}p0
 
 # use the same for all subpackages
 MESSAGE=	${PKGDIR}/MESSAGE

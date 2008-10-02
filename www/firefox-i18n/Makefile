@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2008/09/27 19:14:33 martynas Exp $
+# $OpenBSD: Makefile,v 1.30 2008/10/02 19:53:12 naddy Exp $
 
 PKG_ARCH=	*
 
@@ -42,6 +42,7 @@ PKGNAME-$i=	${NAME}-$i-${V}
 COMMENT-$i=	$i language pack for Firefox
 LPACKDIR-$i=	${PREFIX}/mozilla-firefox/extensions/langpack-$i@firefox.mozilla.org
 .endfor
+PKGNAME-en-GB=	${NAME}-en-GB-${V}p0
 
 # use the same for all subpackages
 MESSAGE=	${PKGDIR}/MESSAGE

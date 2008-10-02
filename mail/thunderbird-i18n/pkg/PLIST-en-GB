@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-en-GB,v 1.1 2008/09/27 19:14:33 martynas Exp $
+@comment $OpenBSD: PLIST-en-GB,v 1.2 2008/10/02 19:53:12 naddy Exp $
 @pkgpath mail/thunderbird-i18n
+@pkgpath mail/thunderbird-i18n,-main
 mozilla-thunderbird/extensions/langpack-en-GB@thunderbird.mozilla.org/
 mozilla-thunderbird/extensions/langpack-en-GB@thunderbird.mozilla.org/chrome/
 mozilla-thunderbird/extensions/langpack-en-GB@thunderbird.mozilla.org/chrome.manifest
