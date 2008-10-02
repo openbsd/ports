@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.629 2008/10/01 22:51:20 simon Exp $
+# $OpenBSD: Makefile,v 1.630 2008/10/02 21:06:14 naddy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -430,11 +430,8 @@
      SUBDIR += p5-MLDBM
      SUBDIR += p5-MLDBM-Sync
      SUBDIR += p5-MRO-Compat
-     SUBDIR += p5-Module-Build
-     SUBDIR += p5-Module-CoreList
      SUBDIR += p5-Module-Find
      SUBDIR += p5-Module-Install
-     SUBDIR += p5-Module-Load
      SUBDIR += p5-Module-Loaded
      SUBDIR += p5-Module-Pluggable
      SUBDIR += p5-Module-Pluggable-Fast
@@ -600,7 +597,6 @@
      SUBDIR += p5-namespace-clean
      SUBDIR += p5-parent
      SUBDIR += p5-prefork
-     SUBDIR += p5-version
      SUBDIR += pango
      SUBDIR += pccts
      SUBDIR += pcre
