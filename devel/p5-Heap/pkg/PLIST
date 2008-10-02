@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/03 00:58:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/02 23:10:26 jasper Exp $
 ${P5SITE}/Heap/
 ${P5SITE}/Heap.pm
 ${P5SITE}/Heap/Binary.pm
@@ -12,29 +12,6 @@ ${P5SITE}/Heap/Elem/RefRev.pm
 ${P5SITE}/Heap/Elem/Str.pm
 ${P5SITE}/Heap/Elem/StrRev.pm
 ${P5SITE}/Heap/Fibonacci.pm
-${P5SITE}/auto/
-${P5SITE}/auto/Heap/
-${P5SITE}/auto/Heap/Binary/
-${P5SITE}/auto/Heap/Binary/autosplit.ix
-${P5SITE}/auto/Heap/Binomial/
-${P5SITE}/auto/Heap/Binomial/autosplit.ix
-${P5SITE}/auto/Heap/Elem/
-${P5SITE}/auto/Heap/Elem/Num/
-${P5SITE}/auto/Heap/Elem/Num/autosplit.ix
-${P5SITE}/auto/Heap/Elem/NumRev/
-${P5SITE}/auto/Heap/Elem/NumRev/autosplit.ix
-${P5SITE}/auto/Heap/Elem/Ref/
-${P5SITE}/auto/Heap/Elem/Ref/autosplit.ix
-${P5SITE}/auto/Heap/Elem/RefRev/
-${P5SITE}/auto/Heap/Elem/RefRev/autosplit.ix
-${P5SITE}/auto/Heap/Elem/Str/
-${P5SITE}/auto/Heap/Elem/Str/autosplit.ix
-${P5SITE}/auto/Heap/Elem/StrRev/
-${P5SITE}/auto/Heap/Elem/StrRev/autosplit.ix
-${P5SITE}/auto/Heap/Elem/autosplit.ix
-${P5SITE}/auto/Heap/Fibonacci/
-${P5SITE}/auto/Heap/Fibonacci/autosplit.ix
-${P5SITE}/auto/Heap/autosplit.ix
 @man man/man3p/Heap.3p
 @man man/man3p/Heap::Binary.3p
 @man man/man3p/Heap::Binomial.3p
