@@ -1,0 +1,19 @@
+pdnsd is a proxy dns server with permanent caching (the cache
+contents are written to hard disk on exit) that is designed to cope
+with unreachable or down dns servers (for example in dial-in
+networking).
+
+pdnsd is configurable via a file and supports run-time configuration
+using the program pdnsd-ctl that comes with pdnsd.
+
+Wonder why you should use it instead of BIND?
+
+* permanent disk cache (useful for frequent power-offs/reboots)
+* usually smaller memory footprint (depends on cache size)
+* offline-detection prevents hangs (e.g. the typical hang on startup
+  of some Netscape Navigator versions if not dialed in)
+* better control about timeouts (also to prevent hangs)
+* better control over the cache
+* better run-time control
+* strict RFC 2181 matching
+* negative caching

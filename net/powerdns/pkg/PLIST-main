@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/10/02 18:40:41 jasper Exp $
+@newgroup _pdnsd:609
+@newuser _pdnsd:609:_pdnsd:daemon:Proxy DNS Server:/nonexistent:/sbin/nologin
+%%SHARED%%
+@bin bin/pdns_control
+@bin bin/zone2ldap
+@bin bin/zone2sql
+lib/libgeobackend.a
+lib/libgeobackend.la
+@man man/man8/pdns_control.8
+@man man/man8/pdns_server.8
+@man man/man8/zone2sql.8
+@bin sbin/pdns_server
+share/examples/powerdns/
+@sample ${SYSCONFDIR}/pdns/
+share/examples/powerdns/pdns.conf
+@sample ${SYSCONFDIR}/pdns/pdns.conf
+share/examples/powerdns/pdns.conf-dist
+share/examples/powerdns/tables-mysql.sql
+share/examples/powerdns/tables-pgsql.sql
+share/examples/powerdns/tables-sqlite.sql
+@extraunexec rm -rf /var/pdnsd

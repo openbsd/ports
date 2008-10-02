@@ -1,0 +1,13 @@
+$OpenBSD: patch-pdns_Makefile_in,v 1.1.1.1 2008/10/02 18:40:41 jasper Exp $
+--- pdns/Makefile.in.orig	Mon Sep 22 12:46:55 2008
++++ pdns/Makefile.in	Mon Sep 22 12:50:20 2008
+@@ -1042,8 +1042,7 @@ info-am:
+ 
+ install-data-am:
+ 
+-install-exec-am: install-binPROGRAMS install-sbinPROGRAMS \
+-	install-sysconfDATA
++install-exec-am: install-binPROGRAMS install-sbinPROGRAMS
+ 
+ install-info: install-info-recursive
+ 
