@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2008/10/02 20:35:08 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2008/10/02 22:25:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	BSD process resource limit and priority functions
 
 MODULES=	cpan
-DISTNAME=	BSD-Resource-1.28
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	BSD-Resource-1.2901
 CATEGORIES=	devel
 
-# GPL or Artistic (same terms as Perl)
+# perl
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

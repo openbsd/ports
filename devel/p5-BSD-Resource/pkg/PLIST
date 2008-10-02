@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/14 23:43:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/10/02 22:25:47 jasper Exp $
 ${P5ARCH}/
 ${P5ARCH}/BSD/
 ${P5ARCH}/BSD/Resource.pm
@@ -7,8 +7,11 @@ ${P5ARCH}/auto/BSD/
 ${P5ARCH}/auto/BSD/Resource/
 ${P5ARCH}/auto/BSD/Resource/Resource.bs
 ${P5ARCH}/auto/BSD/Resource/Resource.so
+${P5ARCH}/auto/BSD/Resource/_find_prio.al
+${P5ARCH}/auto/BSD/Resource/_find_rlimit.al
 ${P5ARCH}/auto/BSD/Resource/_g.al
 ${P5ARCH}/auto/BSD/Resource/autosplit.ix
+${P5ARCH}/auto/BSD/Resource/get_prios.al
 ${P5ARCH}/auto/BSD/Resource/get_rlimits.al
 ${P5ARCH}/auto/BSD/Resource/getpriority.al
 ${P5ARCH}/auto/BSD/Resource/getrlimit.al
