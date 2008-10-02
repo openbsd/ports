@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/30 18:07:06 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/02 20:32:18 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	talk to modem devices connected via serial port
 
 DISTNAME=	Device-SerialPort-1.003001
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	comms
 MODULES=	cpan
 

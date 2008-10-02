@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/16 06:25:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2008/10/02 20:41:32 simon Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		template processing system
 MODULES=		cpan
 VERSION=		2.19
 DISTNAME=		Template-Toolkit-${VERSION}
-PKGNAME=		p5-Template-${VERSION}
+PKGNAME=		p5-Template-${VERSION}p0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.template-toolkit.org/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/11/19 20:05:04 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2008/10/02 20:39:33 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	routines for accessing the OpenSSL prng
 
 MODULES=	cpan
 DISTNAME=	Crypt-OpenSSL-Random-0.04
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	security
 HOMEPAGE=	http://perl-openssl.sourceforge.net/
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/16 01:40:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/10/02 20:32:45 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	modules to handle various Unicode issues
 
 DISTNAME=	Unicode-String-2.09
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	converters
 MODULES=	cpan
 

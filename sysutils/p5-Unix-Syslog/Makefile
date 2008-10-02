@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2008/07/15 18:13:05 dhill Exp $
+# $OpenBSD: Makefile,v 1.10 2008/10/02 20:41:13 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	interface to the UNIX system logger
 
 DISTNAME=	Unix-Syslog-1.1
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	sysutils
 
 MAINTAINER=	Ibrahim Khalifa <ibo@toontown.org>

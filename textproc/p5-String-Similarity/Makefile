@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 20:59:39 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2008/10/02 20:41:32 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	calculate the similarity of two strings
 
 MODULES=	cpan
 DISTNAME=	String-Similarity-1.02
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	textproc
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

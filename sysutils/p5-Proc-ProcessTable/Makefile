@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 22:16:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/10/02 20:41:13 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	interface to the system's process table
 
 DISTNAME=	Proc-ProcessTable-0.41
-PKGNAME=	p5-${DISTNAME}p1
+PKGNAME=	p5-${DISTNAME}p2
 CATEGORIES=	sysutils
 
 MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>

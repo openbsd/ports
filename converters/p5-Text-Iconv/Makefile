@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/16 01:40:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2008/10/02 20:32:44 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	interface to iconv() codeset conversion function
 
 DISTNAME=	Text-Iconv-1.4
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	converters
 MODULES=	converters/libiconv cpan
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/16 22:55:26 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/02 20:42:37 simon Exp $
 
 COMMENT=	(X)HTML validation in a Perl object
 SHARED_ONLY=	Yes
 
 DISTNAME=	HTML-Tidy-1.08
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www
 MODULES=	cpan
 

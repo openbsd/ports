@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/08 15:24:41 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/02 20:41:32 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	implementation of a "sounds like" algorithm
 
 MODULES=	cpan
 DISTNAME=	Text-DoubleMetaphone-0.07
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	textproc
 
 MAINTAINER=	Jim Razmus II <jim@bonetruck.org>

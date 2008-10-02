@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2008/10/02 20:39:33 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	interface to the Blowfish encryption algorithm
 
 MODULES=	cpan
 DISTNAME=	Crypt-Blowfish-2.10
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	security
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

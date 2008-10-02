@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2008/06/15 01:51:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2008/10/02 20:36:04 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Perl interface to the Imlib2 image library
 
 DISTNAME=	Image-Imlib2-1.13
-PKGNAME=	p5-${DISTNAME}p1
+PKGNAME=	p5-${DISTNAME}p2
 CATEGORIES=	graphics
 
 # Perl

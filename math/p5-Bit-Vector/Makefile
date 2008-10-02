@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 18:44:37 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2008/10/02 20:38:08 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	library of advanced math functions
 
 MODULES=	cpan
 DISTNAME=	Bit-Vector-6.4
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	math
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

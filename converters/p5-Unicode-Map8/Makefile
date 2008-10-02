@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/16 01:40:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2008/10/02 20:32:45 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	module to implement efficient mapping tables
 
 DISTNAME=	Unicode-Map8-0.12
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	converters
 MODULES=	cpan
 

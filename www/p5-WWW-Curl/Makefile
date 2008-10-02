@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2008/10/02 20:42:37 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	perl binding for curl
 
 MODULES=	cpan
 DISTNAME=	p5-WWW-Curl-20040519
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www net
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
 

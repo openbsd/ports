@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/22 16:22:01 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/02 20:42:37 simon Exp $
 
 COMMENT=	apache HTTP server request library
 SHARED_ONLY=	Yes
 
 DISTNAME=	libapreq2-2.08
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/J/JO/JOESUF/}

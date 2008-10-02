@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2008/08/21 13:52:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2008/10/02 20:42:37 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	set of modules to use Gtk+ libraries from Perl
 
 VERSION=	0.7008
 DISTNAME=	Gtk-Perl-${VERSION}
-PKGNAME=	p5-Gtk-${VERSION}p0
+PKGNAME=	p5-Gtk-${VERSION}p1
 
 CATEGORIES=	x11 devel perl5
 

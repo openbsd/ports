@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/02 20:30:43 simon Exp $
 
 COMMENT= 	PerlIO layer to gzip/gunzip
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 
 SHARED_ONLY=	Yes
 DISTNAME=	PerlIO-gzip-0.18
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	archivers
 
 # perl

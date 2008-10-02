@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 18:44:37 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/02 20:38:08 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	calculate Fast Fourier Transforms in perl
 
 MODULES=	cpan
 DISTNAME=	Math-FFT-1.28
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	math
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
