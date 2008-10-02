@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 20:58:51 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/10/02 08:31:29 sthen Exp $
 @pkgpath x11/p5-Tk
 bin/gedi
 bin/ptked
@@ -94,7 +94,6 @@ ${P5ARCH}/Tk/Image.pod
 ${P5ARCH}/Tk/InputO.pm
 ${P5ARCH}/Tk/InputO.pod
 ${P5ARCH}/Tk/Internals.pod
-${P5ARCH}/Tk/Item.pod
 ${P5ARCH}/Tk/ItemStyle.pm
 ${P5ARCH}/Tk/JPEG.pm
 ${P5ARCH}/Tk/LabEntry.pm
@@ -116,11 +115,14 @@ ${P5ARCH}/Tk/Menu/
 ${P5ARCH}/Tk/Menu.pm
 ${P5ARCH}/Tk/Menu.pod
 ${P5ARCH}/Tk/Menu/Item.pm
+${P5ARCH}/Tk/Menu/Item.pod
 ${P5ARCH}/Tk/Menubar.pm
 ${P5ARCH}/Tk/Menubutton.pm
 ${P5ARCH}/Tk/Menubutton.pod
 ${P5ARCH}/Tk/Message.pm
 ${P5ARCH}/Tk/Message.pod
+${P5ARCH}/Tk/MsgBox.pm
+${P5ARCH}/Tk/MsgBox.pod
 ${P5ARCH}/Tk/Mwm.pm
 ${P5ARCH}/Tk/Mwm.pod
 ${P5ARCH}/Tk/NBFrame.pm
@@ -211,6 +213,8 @@ ${P5ARCH}/Tk/cbxarrow.xbm
 ${P5ARCH}/Tk/chooseColor.pod
 ${P5ARCH}/Tk/chooseDirectory.pod
 ${P5ARCH}/Tk/composite.pod
+${P5ARCH}/Tk/demos/widtrib/all.pl
+${P5ARCH}/Tk/demos/widtrib/cursor.pl
 ${P5ARCH}/Tk/event.pod
 ${P5ARCH}/Tk/exit.pod
 ${P5ARCH}/Tk/file.xbm
@@ -543,6 +547,14 @@ ${P5ARCH}/auto/Tk/Toplevel/autosplit.ix
 ${P5ARCH}/auto/Tk/TraverseToMenu.al
 ${P5ARCH}/auto/Tk/Widget/
 ${P5ARCH}/auto/Tk/Widget/ASkludge.al
+${P5ARCH}/auto/Tk/Widget/AltKeyInDialog.al
+${P5ARCH}/auto/Tk/Widget/AmpWidget.al
+${P5ARCH}/auto/Tk/Widget/FindAltKeyTarget.al
+${P5ARCH}/auto/Tk/Widget/MasterMenu.al
+${P5ARCH}/auto/Tk/Widget/RestoreFocusGrab.al
+${P5ARCH}/auto/Tk/Widget/SetAmpText.al
+${P5ARCH}/auto/Tk/Widget/SetFocusGrab.al
+${P5ARCH}/auto/Tk/Widget/UnderlineAmpersand.al
 ${P5ARCH}/auto/Tk/Widget/autosplit.ix
 ${P5ARCH}/auto/Tk/Widget/bindDump.al
 ${P5ARCH}/auto/Tk/Widget/clipboardKeysyms.al
@@ -570,6 +582,8 @@ ${P5ARCH}/auto/Tk/focusFollowsMouse.al
 ${P5ARCH}/auto/Tk/focusNext.al
 ${P5ARCH}/auto/Tk/focusPrev.al
 ${P5ARCH}/auto/Tk/getEncoding.al
+${P5ARCH}/auto/Tk/getNextFocus.al
+${P5ARCH}/auto/Tk/getPrevFocus.al
 ${P5ARCH}/auto/Tk/interps.al
 ${P5ARCH}/auto/Tk/lsearch.al
 ${P5ARCH}/auto/Tk/pTk/
@@ -616,7 +630,6 @@ ${P5ARCH}/fix_4_os2.pl
 @man man/man3p/Tk::Image.3p
 @man man/man3p/Tk::InputO.3p
 @man man/man3p/Tk::Internals.3p
-@man man/man3p/Tk::Item.3p
 @man man/man3p/Tk::JPEG.3p
 @man man/man3p/Tk::LabFrame.3p
 @man man/man3p/Tk::Label.3p
@@ -624,8 +637,10 @@ ${P5ARCH}/fix_4_os2.pl
 @man man/man3p/Tk::Listbox.3p
 @man man/man3p/Tk::MainWindow.3p
 @man man/man3p/Tk::Menu.3p
+@man man/man3p/Tk::Menu::Item.3p
 @man man/man3p/Tk::Menubutton.3p
 @man man/man3p/Tk::Message.3p
+@man man/man3p/Tk::MsgBox.3p
 @man man/man3p/Tk::Mwm.3p
 @man man/man3p/Tk::NoteBook.3p
 @man man/man3p/Tk::Optionmenu.3p
