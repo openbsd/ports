@@ -1,11 +1,12 @@
-$OpenBSD: patch-examples_rss_info_pl,v 1.1.1.1 2001/03/21 23:59:21 avsm Exp $
---- examples/rss_info.pl.orig	Wed Mar 21 23:17:05 2001
-+++ examples/rss_info.pl	Wed Mar 21 23:17:12 2001
-@@ -1,7 +1,6 @@
- #!/usr/bin/perl -w
+$OpenBSD: patch-examples_rss_info_pl,v 1.2 2008/10/02 23:10:23 jasper Exp $
+--- examples/rss_info.pl.orig	Fri Oct  3 00:52:13 2008
++++ examples/rss_info.pl	Fri Oct  3 00:52:23 2008
+@@ -3,8 +3,6 @@
  # channel_info.pl
  # print channel info
+ 
 -use lib '.';
+-
  use strict;
- use XML::RSS;
+ use warnings;
  
