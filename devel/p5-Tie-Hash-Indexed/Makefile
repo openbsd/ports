@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/26 21:22:44 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/02 20:35:10 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	ordered hashes for Perl
 
 DISTNAME=	Tie-Hash-Indexed-0.05
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 MODULES=	cpan
 

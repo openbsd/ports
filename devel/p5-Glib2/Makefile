@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/27 14:40:25 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2008/10/02 20:35:09 simon Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	perl interface to the Glib libraries
 MODULES=	cpan
 V=		1.161
 DISTNAME=	Glib-${V}
-PKGNAME=	p5-Glib2-${V}
+PKGNAME=	p5-Glib2-${V}p0
 CATEGORIES=	x11 devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

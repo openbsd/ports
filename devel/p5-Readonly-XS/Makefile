@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/02 20:35:10 simon Exp $
 
 COMMENT= 	create readonly variables faster
 
 MODULES=	cpan
 SHARED_ONLY=	Yes
 DISTNAME=	Readonly-XS-1.04
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 # perl licence

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/08/20 13:44:25 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/02 20:35:08 simon Exp $
 
 COMMENT =	comprehensive set of aliasing operations
 SHARED_ONLY =	Yes
 
 MODULES =	cpan
 DISTNAME =	Data-Alias-1.07
+PKGNAME =	p5-${DISTNAME}p0
 CATEGORIES =	devel
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>

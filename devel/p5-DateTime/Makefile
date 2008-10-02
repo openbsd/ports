@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/10/20 17:22:06 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2008/10/02 20:35:09 simon Exp $
 
 COMMENT=		perl objected oriented Date Time
 
@@ -6,6 +6,7 @@ SHARED_ONLY=		Yes
 
 MODULES=		cpan
 DISTNAME=		DateTime-0.41
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		devel
 
 # Artistic

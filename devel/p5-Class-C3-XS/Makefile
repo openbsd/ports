@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/19 17:45:52 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/02 20:35:08 simon Exp $
 
 SHARED_ONLY=		Yes
 COMMENT=		XS speed-up for Class-C3
 
 MODULES=		cpan
 DISTNAME=		Class-C3-XS-0.08
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		devel
 CPAN_AUTHOR=		BLBLACK
 

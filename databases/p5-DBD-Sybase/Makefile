@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.14 2008/10/02 20:34:39 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Sybase database driver for the DBI module
 
 DISTNAME=	DBD-Sybase-1.04
-PKGNAME=	p5-${DISTNAME}p2
+PKGNAME=	p5-${DISTNAME}p3
 CATEGORIES=	databases
 
 # GPL/Artistic License

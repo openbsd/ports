@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/23 20:53:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/02 20:35:10 simon Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	API to the Perl weak references
 
 DISTNAME =	WeakRef-0.01
+PKGNAME =	p5-${DISTNAME}p0
 
 CATEGORIES =	devel
 
