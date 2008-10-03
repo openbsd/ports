@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/03 10:29:42 jasper Exp $
 
 COMMENT= 	pure perl client interface to memcached
 
 MODULES=	cpan
 
-DISTNAME=	Cache-Memcached-1.18
+DISTNAME=	Cache-Memcached-1.24
 CATEGORIES=	devel
 HOMEPAGE=	http://www.danga.com/memcached/
 
@@ -20,7 +20,7 @@ REGRESS_DEPENDS=	::misc/memcached
 REGRESS_IS_INTERACTIVE=	Yes
 
 start-memcached:
-	memcached -d -m 2048 -c 16 -l 127.0.0.1 -p 11211
+	memcached -u nobody -d -m 2048 -c 16 -l 127.0.0.1 -p 11211
 
 stop-memcached:
 	pkill memcached
