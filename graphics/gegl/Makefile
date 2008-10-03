@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2008/07/13 12:09:14 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2008/10/03 10:13:48 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	graph based image processing framework
 COMMENT-plugins=gegl plugins
 
-V=		0.0.16
+V=		0.0.18
 DISTNAME=	gegl-${V}
 CATEGORIES=	graphics devel
 
-PKGNAME-main=	gegl-${V}p2
-PKGNAME-plugins=gegl-plugins-${V}p2
+PKGNAME-main=	gegl-${V}
+PKGNAME-plugins=gegl-plugins-${V}
 
-SHARED_LIBS=	gegl-0.0	0.0 # .16.0
+SHARED_LIBS=	gegl-0.0	1.0 # .18.0
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -29,7 +29,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/${V:R}/
 MULTI_PACKAGES=	-main -plugins
 
 WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender glib-2.0 gmodule-2.0 \
-		gobject-2.0 gthread-2.0 m pcre z
+		gio-2.0 gobject-2.0 gthread-2.0 m pcre z
 
 MODULES=	devel/gettext
 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-operations_external_ff-load_c,v 1.1 2008/07/09 02:09:59 jakemsr Exp $
---- operations/external/ff-load.c.orig	Sat Jun 21 15:16:10 2008
-+++ operations/external/ff-load.c	Sat Jun 21 15:16:23 2008
+$OpenBSD: patch-operations_external_ff-load_c,v 1.2 2008/10/03 10:13:48 ajacoutot Exp $
+--- operations/external/ff-load.c.orig	Fri Oct  3 11:22:59 2008
++++ operations/external/ff-load.c	Fri Oct  3 11:23:11 2008
 @@ -27,7 +27,7 @@ gegl_chant_int (frame, "Frame", 0, 1000000, 0, "frame 
  
  #include "gegl-chant.h"
