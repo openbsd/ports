@@ -1,13 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2008/04/11 17:54:39 ajacoutot Exp $
---- Makefile.in.orig	Fri Apr 11 13:39:11 2008
-+++ Makefile.in	Fri Apr 11 13:39:24 2008
-@@ -230,8 +230,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-Makefile_in,v 1.2 2008/10/03 10:07:41 ajacoutot Exp $
+--- Makefile.in.orig	Thu Jun 12 23:50:54 2008
++++ Makefile.in	Thu Oct  2 15:08:22 2008
+@@ -233,9 +233,7 @@ target_alias = @target_alias@
  AUTOMAKE_OPTIONS = foreign dist-bzip2
- SUBDIRS = babl		\
- 	  extensions	\
--	  tests		\
--	  docs
-+	  tests
+ SUBDIRS = \
+ 	babl		\
+-	extensions	\
+-	tests		\
+-	docs
++	extensions
  
  pkgconfigdir = $(libdir)/pkgconfig
  pkgconfig_DATA = babl.pc

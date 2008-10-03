@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2008/04/11 21:58:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/03 10:07:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	dynamic pixel format conversion library
 
-V=		0.0.20
+V=		0.0.22
 DISTNAME=	babl-${V}
-PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics devel
 
-SHARED_LIBS=	babl-0.0	0.0 # .20.0
+SHARED_LIBS=	babl-0.0	1.0 # .22.0
 
 EXTRACT_SUFX=	.tar.bz2
 
