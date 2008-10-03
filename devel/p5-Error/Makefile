@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2007/10/27 14:48:50 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2008/10/03 10:30:30 jasper Exp $
 
 COMMENT=	error/exception handling in an OO-ish way
 
 MODULES=	cpan
-DISTNAME=	Error-0.17009
+DISTNAME=	Error-0.17015
 CATEGORIES=	devel
 
-# Artistic License
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
