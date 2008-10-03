@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/05 12:28:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/03 07:58:13 ajacoutot Exp $
 bin/GWorkspace
 bin/Recycler
 @bin bin/ddbd
@@ -113,6 +113,7 @@ lib/GNUstep/Bundles/IBViewViewer.inspector/IBViewViewer.so
 lib/GNUstep/Bundles/IBViewViewer.inspector/Resources/
 lib/GNUstep/Bundles/IBViewViewer.inspector/Resources/English.lproj/
 lib/GNUstep/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/
+lib/GNUstep/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
 lib/GNUstep/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
 lib/GNUstep/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 lib/GNUstep/Bundles/IBViewViewer.inspector/Resources/Info-gnustep.plist
@@ -128,6 +129,7 @@ lib/GNUstep/Bundles/ImageViewer.inspector/ImageViewer.so
 lib/GNUstep/Bundles/ImageViewer.inspector/Resources/
 lib/GNUstep/Bundles/ImageViewer.inspector/Resources/English.lproj/
 lib/GNUstep/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/
+lib/GNUstep/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
 lib/GNUstep/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
 lib/GNUstep/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 lib/GNUstep/Bundles/ImageViewer.inspector/Resources/Info-gnustep.plist
@@ -143,6 +145,7 @@ lib/GNUstep/Bundles/NSColorViewer.inspector/NSColorViewer.so
 lib/GNUstep/Bundles/NSColorViewer.inspector/Resources/
 lib/GNUstep/Bundles/NSColorViewer.inspector/Resources/English.lproj/
 lib/GNUstep/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/
+lib/GNUstep/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
 lib/GNUstep/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
 lib/GNUstep/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 lib/GNUstep/Bundles/NSColorViewer.inspector/Resources/Info-gnustep.plist
@@ -399,7 +402,6 @@ libexec/GNUstep/GWorkspace.app/Resources/English.lproj/DefEditorPref.gorm/data.i
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/DefEditorPref.gorm/objects.gorm
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.gorm/data.classes
-libexec/GNUstep/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.gorm/data.info
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.gorm/objects.gorm
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/DesktopPref.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/DesktopPref.gorm/data.classes
@@ -464,7 +466,6 @@ libexec/GNUstep/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/Tab
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/dummy.tiff
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/data.classes
-libexec/GNUstep/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/data.info
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/objects.gorm
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm/data.classes
@@ -485,11 +486,9 @@ libexec/GNUstep/GWorkspace.app/Resources/English.lproj/LSFolder.gorm/objects.gor
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/Localizable.strings
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/data.classes
-libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/data.info
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/objects.gorm
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/data.classes
-libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/data.info
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/objects.gorm
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/data.classes
@@ -497,7 +496,6 @@ libexec/GNUstep/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/data.info
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/objects.gorm
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/data.classes
-libexec/GNUstep/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/data.info
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/objects.gorm
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/data.classes
@@ -505,11 +503,9 @@ libexec/GNUstep/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/data.i
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/objects.gorm
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/data.classes
-libexec/GNUstep/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/data.info
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/objects.gorm
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/data.classes
-libexec/GNUstep/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/data.info
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/objects.gorm
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/
 libexec/GNUstep/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/data.classes
@@ -530,6 +526,7 @@ libexec/GNUstep/GWorkspace.app/Resources/FileManager.tiff
 libexec/GNUstep/GWorkspace.app/Resources/French.lproj/
 libexec/GNUstep/GWorkspace.app/Resources/French.lproj/Localizable.strings
 libexec/GNUstep/GWorkspace.app/Resources/GWorkspace.desktop
+libexec/GNUstep/GWorkspace.app/Resources/GWorkspaceInfo.plist
 libexec/GNUstep/GWorkspace.app/Resources/German.lproj/
 libexec/GNUstep/GWorkspace.app/Resources/German.lproj/Localizable.strings
 libexec/GNUstep/GWorkspace.app/Resources/Hungarian.lproj/
@@ -651,11 +648,9 @@ libexec/GNUstep/Recycler.app/Resources/English.lproj/
 libexec/GNUstep/Recycler.app/Resources/English.lproj/Localizable.strings
 libexec/GNUstep/Recycler.app/Resources/English.lproj/PreferencesWin.gorm/
 libexec/GNUstep/Recycler.app/Resources/English.lproj/PreferencesWin.gorm/data.classes
-libexec/GNUstep/Recycler.app/Resources/English.lproj/PreferencesWin.gorm/data.info
 libexec/GNUstep/Recycler.app/Resources/English.lproj/PreferencesWin.gorm/objects.gorm
 libexec/GNUstep/Recycler.app/Resources/English.lproj/StartAppWin.gorm/
 libexec/GNUstep/Recycler.app/Resources/English.lproj/StartAppWin.gorm/data.classes
-libexec/GNUstep/Recycler.app/Resources/English.lproj/StartAppWin.gorm/data.info
 libexec/GNUstep/Recycler.app/Resources/English.lproj/StartAppWin.gorm/objects.gorm
 libexec/GNUstep/Recycler.app/Resources/Info-gnustep.plist
 libexec/GNUstep/Recycler.app/Resources/Recycler.desktop
