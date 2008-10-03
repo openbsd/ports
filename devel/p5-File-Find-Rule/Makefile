@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/03 13:38:29 jasper Exp $
 
 COMMENT=	alternative interface to File::Find
 
 MODULES=	cpan
-DISTNAME=	File-Find-Rule-0.28
+DISTNAME=	File-Find-Rule-0.30
 CATEGORIES=	devel
 
 # perl
