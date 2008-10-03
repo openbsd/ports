@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-gimp,v 1.1.1.1 2008/04/14 12:38:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gimp,v 1.2 2008/10/03 10:15:45 ajacoutot Exp $
 lib/gimp/
 lib/gimp/2.0/
 lib/gimp/2.0/plug-ins/
-lib/gimp/2.0/plug-ins/flegita-gimp
+@bin lib/gimp/2.0/plug-ins/flegita-gimp

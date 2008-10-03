@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/04/14 12:38:02 ajacoutot Exp $
-bin/flegita
+@comment $OpenBSD: PLIST-main,v 1.2 2008/10/03 10:15:45 ajacoutot Exp $
+@bin bin/flegita
 include/gnome-scan-1.0/
 include/gnome-scan-1.0/gnome-scan-acquisition-dialog.h
 include/gnome-scan-1.0/gnome-scan-backend.h
@@ -63,8 +63,8 @@ share/gtk-doc/html/gnome-scan/up.png
 share/icons/hicolor/scalable/actions/scan-as-layer.svg
 share/icons/hicolor/scalable/actions/scan-preview.svg
 share/icons/hicolor/scalable/actions/scan.svg
-share/icons/hicolor/scalable/apps/flegita.svg
 share/icons/hicolor/scalable/apps/flegita-gimp.svg
+share/icons/hicolor/scalable/apps/flegita.svg
 share/locale/ar/LC_MESSAGES/gnome-scan.mo
 share/locale/ca/LC_MESSAGES/gnome-scan.mo
 share/locale/de/LC_MESSAGES/gnome-scan.mo
