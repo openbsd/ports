@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:31:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/10/03 18:31:49 jasper Exp $
 ${P5SITE}/SQL/
 ${P5SITE}/SQL/Dialects/
 ${P5SITE}/SQL/Dialects/ANSI.pm
@@ -8,10 +8,17 @@ ${P5SITE}/SQL/Eval.pm
 ${P5SITE}/SQL/Parser.pm
 ${P5SITE}/SQL/Statement/
 ${P5SITE}/SQL/Statement.pm
+${P5SITE}/SQL/Statement/Embed.pod
+${P5SITE}/SQL/Statement/Functions.pm
 ${P5SITE}/SQL/Statement/GetInfo.pm
-@man man/man3p/SQL::Dialects::ANSI.3p
-@man man/man3p/SQL::Dialects::AnyData.3p
-@man man/man3p/SQL::Dialects::CSV.3p
+${P5SITE}/SQL/Statement/RAM.pm
+${P5SITE}/SQL/Statement/Structure.pod
+${P5SITE}/SQL/Statement/Syntax.pod
+${P5SITE}/SQL/Statement/Util.pm
 @man man/man3p/SQL::Eval.3p
 @man man/man3p/SQL::Parser.3p
 @man man/man3p/SQL::Statement.3p
+@man man/man3p/SQL::Statement::Embed.3p
+@man man/man3p/SQL::Statement::Functions.3p
+@man man/man3p/SQL::Statement::Structure.3p
+@man man/man3p/SQL::Statement::Syntax.3p
