@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/03 10:33:43 jasper Exp $
 
 COMMENT=	module to launch and control background processes
 
 MODULES=	cpan
-DISTNAME=	Proc-Simple-1.21
+DISTNAME=	Proc-Simple-1.23
 CATEGORIES=	devel
 
 # perl
