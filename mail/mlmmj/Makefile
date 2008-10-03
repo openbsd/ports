@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2008/06/19 20:41:12 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2008/10/03 23:38:35 simon Exp $
 
 COMMENT=	mailing list manager
 
 DISTNAME=	mlmmj-1.2.15
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=    	mail
 
-HOMEPAGE=	http://mlmmj.mmj.dk/
+HOMEPAGE=	http://mlmmj.org/
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/12/10 23:39:18 simon Exp $
-bin/mlmmj-bounce
-bin/mlmmj-list
-bin/mlmmj-maintd
+@comment $OpenBSD: PLIST,v 1.5 2008/10/03 23:38:35 simon Exp $
+@bin bin/mlmmj-bounce
+@bin bin/mlmmj-list
+@bin bin/mlmmj-maintd
 bin/mlmmj-make-ml
-bin/mlmmj-process
-bin/mlmmj-recieve
-bin/mlmmj-recieve-strip
-bin/mlmmj-send
-bin/mlmmj-sub
-bin/mlmmj-unsub
+@bin bin/mlmmj-process
+@bin bin/mlmmj-recieve
+@bin bin/mlmmj-recieve-strip
+@bin bin/mlmmj-send
+@bin bin/mlmmj-sub
+@bin bin/mlmmj-unsub
 @man man/man1/mlmmj-bounce.1
 @man man/man1/mlmmj-list.1
 @man man/man1/mlmmj-maintd.1
