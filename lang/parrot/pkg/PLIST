@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/07/20 21:05:40 simon Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/10/03 23:33:18 simon Exp $
 %%i386%%
 @bin bin/parrot
+@bin bin/parrot_config
+@bin bin/parrot_debugger
 @bin bin/pbc_disassemble
 @bin bin/pbc_info
 @bin bin/pbc_merge
 @bin bin/pbc_to_exe
-@bin bin/pdb
 @bin bin/pdump
 @bin bin/perl6
 compilers/
@@ -51,7 +52,6 @@ include/parrot/atomic/fallback.h
 include/parrot/atomic/gcc_pcc.h
 include/parrot/atomic/gcc_x86.h
 include/parrot/atomic/sparc.h
-include/parrot/builtin.h
 include/parrot/caches.h
 include/parrot/cclass.h
 include/parrot/charset.h
@@ -59,7 +59,7 @@ include/parrot/compiler.h
 include/parrot/config.h
 include/parrot/core_pmcs.h
 include/parrot/datatypes.h
-include/parrot/debug.h
+include/parrot/debugger.h
 include/parrot/dod.h
 include/parrot/dynext.h
 include/parrot/embed.h
@@ -162,6 +162,8 @@ languages/lua/
 languages/lua/lua.pbc
 languages/m4/
 languages/m4/m4.pbc
+languages/markdown/
+languages/markdown/markdown.pbc
 languages/ook/
 languages/ook/ook.pbc
 languages/perl6/
@@ -212,6 +214,7 @@ lib/parrot/dynext/wmls_ops_cg.so
 lib/parrot/dynext/wmls_ops_cgp.so
 lib/parrot/dynext/wmls_ops_switch.so
 lib/parrot/include/
+lib/parrot/include/fp_equality.pasm
 lib/parrot/include/hllmacros.pir
 lib/parrot/include/sockets.pasm
 lib/parrot/include/test_more.pir
@@ -432,7 +435,8 @@ share/doc/parrot/docs/book/ch04_pir_subroutines.pod
 share/doc/parrot/docs/book/ch05_pasm.pod
 share/doc/parrot/docs/book/ch06_testing.pod
 share/doc/parrot/docs/book/ch07_architecture.pod
-share/doc/parrot/docs/book/ch08_reference.pod
+share/doc/parrot/docs/book/ch08_pct.pod
+share/doc/parrot/docs/book/ch09_reference.pod
 share/doc/parrot/docs/book/figs/
 share/doc/parrot/docs/book/figs/p6e_0801.png
 share/doc/parrot/docs/debugger.pod
@@ -484,8 +488,9 @@ share/doc/parrot/docs/pdds/draft/pdd10_embedding.pod
 share/doc/parrot/docs/pdds/draft/pdd11_extending.pod
 share/doc/parrot/docs/pdds/draft/pdd14_bignum.pod
 share/doc/parrot/docs/pdds/draft/pdd16_native_call.pod
-share/doc/parrot/docs/pdds/draft/pdd19_pir.pod
 share/doc/parrot/docs/pdds/draft/pdd29_compiler_tools.pod
+share/doc/parrot/docs/pdds/draft/pdd30_install.pod
+share/doc/parrot/docs/pdds/draft/pdd31_hll_interop.pod
 share/doc/parrot/docs/pdds/pdd00_pdd.pod
 share/doc/parrot/docs/pdds/pdd03_calling_conventions.pod
 share/doc/parrot/docs/pdds/pdd07_codingstd.pod
@@ -496,6 +501,7 @@ share/doc/parrot/docs/pdds/pdd15_object_metamodel.svg
 share/doc/parrot/docs/pdds/pdd15_objects.pod
 share/doc/parrot/docs/pdds/pdd17_pmc.pod
 share/doc/parrot/docs/pdds/pdd18_security.pod
+share/doc/parrot/docs/pdds/pdd19_pir.pod
 share/doc/parrot/docs/pdds/pdd20_lexical_vars.pod
 share/doc/parrot/docs/pdds/pdd21_namespaces.pod
 share/doc/parrot/docs/pdds/pdd22_io.pod
@@ -672,11 +678,19 @@ share/doc/parrot/examples/mops/mops.scheme
 share/doc/parrot/examples/namespace/
 share/doc/parrot/examples/namespace/namespace_dump.pir
 share/doc/parrot/examples/nci/
+share/doc/parrot/examples/nci/Mysql.pir
 share/doc/parrot/examples/nci/PQt.C
 share/doc/parrot/examples/nci/QtHelloWorld.pasm
+share/doc/parrot/examples/nci/Xlib.pir
+share/doc/parrot/examples/nci/Xlibconstants.pir
 share/doc/parrot/examples/nci/ls.pir
+share/doc/parrot/examples/nci/mysqltest.p6
+share/doc/parrot/examples/nci/mysqltest.pir
 share/doc/parrot/examples/nci/sdl_blue_rectangle.pir
 share/doc/parrot/examples/nci/win32api.pir
+share/doc/parrot/examples/nci/xlibtest.nqp
+share/doc/parrot/examples/nci/xlibtest.p6
+share/doc/parrot/examples/nci/xlibtest.pir
 share/doc/parrot/examples/opengl/
 share/doc/parrot/examples/opengl/shapes.pir
 share/doc/parrot/examples/opengl/triangle.pir

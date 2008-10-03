@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2008/07/20 21:05:40 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/03 23:33:18 simon Exp $
 
 COMMENT=	virtual machine designed for interpreted languages
 VMEM_WARNING=	Yes
 
 SHARED_ONLY=	Yes
 
-DISTNAME=	parrot-0.6.4
+DISTNAME=	parrot-0.7.1
 CATEGORIES=	lang perl6
 
 HOMEPAGE=	http://www.parrotcode.org/
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/B/BS/BSCHMAL/}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/P/PM/PMIC/}
 
 # Artistic2
 PERMIT_PACKAGE_CDROM=	Yes
