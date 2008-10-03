@@ -1,0 +1,21 @@
+$OpenBSD: patch-objects_GRAFCET_boolequation_c,v 1.1 2008/10/03 11:39:01 ajacoutot Exp $
+--- objects/GRAFCET/boolequation.c.orig	Sat Feb 17 14:10:43 2007
++++ objects/GRAFCET/boolequation.c	Fri Oct  3 12:38:56 2008
+@@ -58,7 +58,7 @@ struct _Block {
+ 
+ 
+ /* utility */
+-inline static gboolean isspecial(gunichar c) 
++inline static gboolean dia_isspecial(gunichar c) 
+ {
+   switch (c) {
+   case '!':
+@@ -136,7 +136,7 @@ static Block *textblock_create(const gchar **str) 
+     gchar *p1;
+     c = g_utf8_get_char(*str);
+     p1 = g_utf8_next_char(*str);
+-    if (isspecial(c)) break;
++    if (dia_isspecial(c)) break;
+     *str = p1;
+   }
+   

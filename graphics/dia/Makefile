@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2008/06/29 20:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2008/10/03 11:39:01 ajacoutot Exp $
 
 COMMENT=	technical diagrams drawing tool
 
 DISTNAME=	dia-0.96.1
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://live.gnome.org/Dia/
@@ -22,13 +22,14 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png pthread xml2 z
+		pangoft2-1.0 pcre pixman-1 png pthread z
 
 BUILD_DEPENDS=	::textproc/xmlto \
 		::textproc/docbook
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		art_lgpl_2.>=5::graphics/libart \
 		popt::devel/popt \
+		xml2.>=10::textproc/libxml \
 		xslt.>=1::textproc/libxslt
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
