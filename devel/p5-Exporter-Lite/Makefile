@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/03 13:36:44 jasper Exp $
 
-COMMENT=		Lightweight Exporting of variables
+COMMENT=		lightweight exporting of variables
 
 MODULES=		cpan
 VERSION=		0.01
-DISTNAME=		Exporter-Lite-${VERSION}
-PKGNAME=		p5-${DISTNAME}p0
+DISTNAME=		Exporter-Lite-0.02
 CATEGORIES=		devel
 
 PERMIT_PACKAGE_CDROM=	Yes
