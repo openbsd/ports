@@ -1,8 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 16:28:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/03 13:38:31 jasper Exp $
 ${P5SITE}/File/
 ${P5SITE}/File/ShareDir.pm
 ${P5SITE}/auto/
-${P5SITE}/auto/File/
-${P5SITE}/auto/File/ShareDir/
-${P5SITE}/auto/File/ShareDir/sample.txt
+${P5SITE}/auto/share/
+${P5SITE}/auto/share/dist/
+${P5SITE}/auto/share/dist/File-ShareDir/
+${P5SITE}/auto/share/dist/File-ShareDir/sample.txt
+${P5SITE}/auto/share/dist/File-ShareDir/subdir/
+${P5SITE}/auto/share/dist/File-ShareDir/subdir/sample.txt
+${P5SITE}/auto/share/module/
+${P5SITE}/auto/share/module/File-ShareDir/
+${P5SITE}/auto/share/module/File-ShareDir/test_file.txt
 @man man/man3p/File::ShareDir.3p
