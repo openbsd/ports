@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/04 14:37:26 landry Exp $
-bin/inkscape
-bin/inkview
+@comment $OpenBSD: PLIST,v 1.2 2008/10/03 11:17:17 sthen Exp $
+@bin bin/inkscape
+@bin bin/inkview
 man/fr/
 man/fr/man1/
 @man man/fr/man1/inkscape.1
 @man man/man1/inkscape.1
 @man man/man1/inkview.1
-share/applications/
 share/applications/inkscape.desktop
 share/inkscape/
 share/inkscape/clipart/
@@ -535,8 +534,6 @@ share/locale/es_MX/
 share/locale/es_MX/LC_MESSAGES/
 share/locale/es_MX/LC_MESSAGES/inkscape.mo
 share/locale/et/LC_MESSAGES/inkscape.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/inkscape.mo
 share/locale/fi/LC_MESSAGES/inkscape.mo
 share/locale/fr/LC_MESSAGES/inkscape.mo
