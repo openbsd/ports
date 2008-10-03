@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/07 00:30:31 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/03 16:59:03 sturm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,7 +26,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xcomposite \
 
 MASTER_SITES=	http://downloads.guifications.org/plugins/Guifications2/
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext textproc/intltool
 LIB_DEPENDS=	purple::net/pidgin
 
 USE_X11=	Yes
