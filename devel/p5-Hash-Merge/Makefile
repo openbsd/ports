@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/03 13:40:22 jasper Exp $
 
 COMMENT=        merge associative arrays
 
 MODULES=	cpan
-DISTNAME=	Hash-Merge-0.08
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Hash-Merge-0.10
 CATEGORIES=     devel
 
 # perl
