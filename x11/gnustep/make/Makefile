@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2008/06/23 10:59:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2008/10/03 07:21:56 ajacoutot Exp $
+
+# WARNING: this port does NOT use the x11/gnustep MODULE
 
 PKG_ARCH=	*
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/06/23 11:00:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/10/03 07:21:56 ajacoutot Exp $
 
 COMMENT=	GNUstep gui library
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.gnustep.org/
 
 WANTLIB=	c crypto m objc pthread ssl stdc++ tiff z
 
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
 MODULES=	x11/gnustep
 LIB_DEPENDS=	aspell.>=16::textproc/aspell/core \

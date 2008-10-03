@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/06/23 11:00:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/10/03 07:21:56 ajacoutot Exp $
 
 COMMENT=	GNUstep example applications
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.gnustep.org/experience/examples.html
 
 WANTLIB=	GL GLU c m objc pthread
 
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
 USE_X11=	Yes
 MODULES=	x11/gnustep

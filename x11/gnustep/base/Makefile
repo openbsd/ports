@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2008/08/29 11:52:20 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2008/10/03 07:21:56 ajacoutot Exp $
 
 COMMENT=	GNUstep base library
 
@@ -18,7 +18,7 @@ WANTLIB=	c crypto gcrypt gpg-error m objc pthread ssl xml2 z
 WANTLIB+=	iberty
 .endif
 
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
 MODULES=	x11/gnustep \
 		devel/gettext
