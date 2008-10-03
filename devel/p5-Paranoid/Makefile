@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/08/20 20:05:54 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/03 23:31:47 simon Exp $
 
 COMMENT =	paranoia support for safer programs
 
 MODULES =	cpan
-DISTNAME =	Paranoid-0.18
+DISTNAME =	Paranoid-0.20
 CATEGORIES =	devel
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
