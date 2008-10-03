@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2008/10/03 14:33:53 ajacoutot Exp $
+--- src/Makefile.in.orig	Mon Sep 15 17:42:18 2008
++++ src/Makefile.in	Mon Sep 15 17:42:29 2008
+@@ -275,7 +275,7 @@ clean-binPROGRAMS:
+ 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+ freedroidRPG$(EXEEXT): $(freedroidRPG_OBJECTS) $(freedroidRPG_DEPENDENCIES) 
+ 	@rm -f freedroidRPG$(EXEEXT)
+-	$(LINK) $(freedroidRPG_LDFLAGS) $(freedroidRPG_OBJECTS) $(freedroidRPG_LDADD) $(LIBS)
++	$(LINK) $(freedroidRPG_LDFLAGS) $(freedroidRPG_OBJECTS) $(freedroidRPG_LDADD) $(LIBS) $(INTLLIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)

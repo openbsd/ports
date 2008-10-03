@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_init_c,v 1.2 2007/12/04 17:21:29 ajacoutot Exp $
---- src/init.c.orig	Tue Dec  4 17:52:41 2007
-+++ src/init.c	Tue Dec  4 17:53:22 2007
-@@ -2152,8 +2152,6 @@ I will not be able to load or save games or configurat
+$OpenBSD: patch-src_init_c,v 1.3 2008/10/03 14:33:53 ajacoutot Exp $
+--- src/init.c.orig	Mon Sep 15 17:23:49 2008
++++ src/init.c	Mon Sep 15 17:24:06 2008
+@@ -2323,8 +2323,6 @@ I will not be able to load or save games or configurat
   
      ShowStartupPercentage ( 100 ) ; 
  
 -    if(GameConfig . screen_width == 640)
--	 GiveMouseAlertWindow ( "\nYou are playing in 640x480.\n\nWhile this resolution works correctly and will\ngive you a great gaming experience, its support is\nin the process of being dropped, therefore you will\nwant to consider using 800x600 or 1024x768.\n\nThank you.\n");
+-	 GiveMouseAlertWindow ( _("\nYou are playing in 640x480.\n\nWhile this resolution works correctly and will\ngive you a great gaming experience, its support is\nin the process of being dropped, therefore you will\nwant to consider using 800x600 or 1024x768.\n\nThank you.\n"));
      if ( strstr( VERSION, "rc" ) )
- 	 GiveMouseAlertWindow ( "\nYou are playing a release candidate version.\nMany strange bugs might still be present in the game.\nPlease report anything you may find to #freedroid at irc.freenode.net, or\n by mail to freedroid-discussion at lists.sourceforge.net\nThank you for helping us test the game.\nGood luck!\n");
+ 	 GiveMouseAlertWindow ( _("\nYou are playing a candidate release.\nMany strange bugs might still be present in the game.\nPlease report anything you may find to #freedroid at irc.freenode.net, or\n by mail to freedroid-discussion at lists.sourceforge.net\nThank you for helping us test the game.\nGood luck!\n"));
  
