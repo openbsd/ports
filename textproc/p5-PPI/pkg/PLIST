@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/27 09:33:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/03 10:33:26 jasper Exp $
 ${P5SITE}/PPI/
 ${P5SITE}/PPI.pm
 ${P5SITE}/PPI/Cache.pm
@@ -9,6 +9,9 @@ ${P5SITE}/PPI/Document/Fragment.pm
 ${P5SITE}/PPI/Document/Normalized.pm
 ${P5SITE}/PPI/Dumper.pm
 ${P5SITE}/PPI/Element.pm
+${P5SITE}/PPI/Exception/
+${P5SITE}/PPI/Exception.pm
+${P5SITE}/PPI/Exception/ParserTimeout.pm
 ${P5SITE}/PPI/Find.pm
 ${P5SITE}/PPI/Lexer.pm
 ${P5SITE}/PPI/Node.pm
@@ -22,7 +25,9 @@ ${P5SITE}/PPI/Statement/Compound.pm
 ${P5SITE}/PPI/Statement/Data.pm
 ${P5SITE}/PPI/Statement/End.pm
 ${P5SITE}/PPI/Statement/Expression.pm
+${P5SITE}/PPI/Statement/Include/
 ${P5SITE}/PPI/Statement/Include.pm
+${P5SITE}/PPI/Statement/Include/Perl6.pm
 ${P5SITE}/PPI/Statement/Null.pm
 ${P5SITE}/PPI/Statement/Package.pm
 ${P5SITE}/PPI/Statement/Scheduled.pm
@@ -51,7 +56,14 @@ ${P5SITE}/PPI/Token/End.pm
 ${P5SITE}/PPI/Token/HereDoc.pm
 ${P5SITE}/PPI/Token/Label.pm
 ${P5SITE}/PPI/Token/Magic.pm
+${P5SITE}/PPI/Token/Number/
 ${P5SITE}/PPI/Token/Number.pm
+${P5SITE}/PPI/Token/Number/Binary.pm
+${P5SITE}/PPI/Token/Number/Exp.pm
+${P5SITE}/PPI/Token/Number/Float.pm
+${P5SITE}/PPI/Token/Number/Hex.pm
+${P5SITE}/PPI/Token/Number/Octal.pm
+${P5SITE}/PPI/Token/Number/Version.pm
 ${P5SITE}/PPI/Token/Operator.pm
 ${P5SITE}/PPI/Token/Pod.pm
 ${P5SITE}/PPI/Token/Prototype.pm
@@ -106,6 +118,7 @@ ${P5SITE}/PPI/Util.pm
 @man man/man3p/PPI::Statement::End.3p
 @man man/man3p/PPI::Statement::Expression.3p
 @man man/man3p/PPI::Statement::Include.3p
+@man man/man3p/PPI::Statement::Include::Perl6.3p
 @man man/man3p/PPI::Statement::Null.3p
 @man man/man3p/PPI::Statement::Package.3p
 @man man/man3p/PPI::Statement::Scheduled.3p
@@ -133,6 +146,12 @@ ${P5SITE}/PPI/Util.pm
 @man man/man3p/PPI::Token::Label.3p
 @man man/man3p/PPI::Token::Magic.3p
 @man man/man3p/PPI::Token::Number.3p
+@man man/man3p/PPI::Token::Number::Binary.3p
+@man man/man3p/PPI::Token::Number::Exp.3p
+@man man/man3p/PPI::Token::Number::Float.3p
+@man man/man3p/PPI::Token::Number::Hex.3p
+@man man/man3p/PPI::Token::Number::Octal.3p
+@man man/man3p/PPI::Token::Number::Version.3p
 @man man/man3p/PPI::Token::Operator.3p
 @man man/man3p/PPI::Token::Pod.3p
 @man man/man3p/PPI::Token::Prototype.3p
