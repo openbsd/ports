@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/02 20:35:10 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/03 15:19:04 bluhm Exp $
 
 COMMENT=	YAML and JSON for perl, optimized C
 
 SHARED_ONLY=	Yes
 MODULES=	cpan
 
-DISTNAME=	YAML-Syck-1.00
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	YAML-Syck-1.05
 CATEGORIES=	devel
 
 # MIT
