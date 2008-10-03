@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/11/18 21:50:33 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/03 13:40:33 jasper Exp $
 
 COMMENT=	exporter on steroids
 
 MODULES=	cpan
-DISTNAME=	Sub-Exporter-0.976
+DISTNAME=	Sub-Exporter-0.980
 CATEGORIES=	devel
 
 # perl
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	::devel/p5-Data-OptList \
+		::devel/p5-Params-Util \
 		::devel/p5-Sub-Install
 
 MAKE_ENV=	TEST_POD=Yes \
