@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/29 22:46:57 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/03 13:40:28 jasper Exp $
 
 COMMENT=	functional and object-oriented callback architecture
 
 MODULES=	cpan
-DISTNAME=	Params-CallbackRequest-1.17
+DISTNAME=	Params-CallbackRequest-1.19
 CATEGORIES=	devel
 
 # perl
@@ -12,7 +12,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-Params-Validate \
 		::devel/p5-Exception-Class
 
