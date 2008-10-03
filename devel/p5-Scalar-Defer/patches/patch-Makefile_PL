@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2006/11/12 16:28:53 espie Exp $
---- Makefile.PL.orig	Sun Nov 12 01:01:00 2006
-+++ Makefile.PL	Sun Nov 12 01:01:04 2006
-@@ -5,8 +5,8 @@ name        'Scalar-Defer';
- license     'MIT';
+$OpenBSD: patch-Makefile_PL,v 1.2 2008/10/03 10:31:55 jasper Exp $
+--- Makefile.PL.orig	Fri Aug  8 17:17:52 2008
++++ Makefile.PL	Fri Oct  3 12:26:14 2008
+@@ -4,8 +4,8 @@ use inc::Module::Install;
+ name        'Scalar-Defer';
  all_from    'lib/Scalar/Defer.pm';
  
 -requires    'Class::InsideOut';
