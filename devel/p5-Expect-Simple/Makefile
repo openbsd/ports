@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/21 02:38:59 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/03 10:30:53 jasper Exp $
 
 COMMENT=	wrapper around the Expect module
 
 MODULES=	cpan
-DISTNAME=	Expect-Simple-0.03
+DISTNAME=	Expect-Simple-0.04
 CATEGORIES=	devel
 
 # perl
