@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/01 21:54:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/03 23:47:24 bluhm Exp $
 
 COMMENT =		module signature file manipulation
 
 DISTNAME =		Module-Signature-0.55
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		p5-${DISTNAME}p1
 
 CATEGORIES =		security
 
