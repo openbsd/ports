@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/10/01 11:24:07 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2008/10/04 19:17:27 landry Exp $
 
 COMMENT=		free software clone of Worms(R) game concept
 
@@ -26,9 +26,14 @@ LIB_DEPENDS=		SDL_gfx::devel/sdl-gfx \
 			curl.>=5::net/curl \
 			xml2::textproc/libxml
 
+BUILD_DEPENDS=		::devel/automake/1.9
+
 MODULES=		devel/gettext
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+pre-fake:
+	# the provided script is broken
+	cp ${LOCALBASE}/share/automake-1.9/install-sh ${WRKSRC}
 .include <bsd.port.mk>
