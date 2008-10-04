@@ -1,0 +1,5 @@
+To run xcin25, you have to set the following environment 
+variables in csh or tcsh:
+
+setenv LC_CTYPE 	zh_TW.Big5
+setenv XMODIFIERS	"@im=xcin"

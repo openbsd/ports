@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/04 08:11:54 kevlo Exp $
+bin/xcin
+lib/xcin/
+lib/xcin/array30.cin
+lib/xcin/array30.tab
+@comment lib/xcin/array30.tab.phr
+@comment lib/xcin/array30.tab.quick
+lib/xcin/array30.tab.rev
+lib/xcin/cin2tab
+lib/xcin/cj.cin
+lib/xcin/cj.tab
+lib/xcin/cj.tab.rev
+lib/xcin/docs/
+lib/xcin/docs/Boshiamy.HOWTO
+@comment lib/xcin/docs/README.xcin
+lib/xcin/docs/XCIN.client.doc
+lib/xcin/docs/Xfonts.HOWTO
+lib/xcin/docs/cin2tab.HOWTO
+lib/xcin/docs/xcin.HOWTO
+lib/xcin/et.kbm
+lib/xcin/et26.kbm
+lib/xcin/hsu.kbm
+lib/xcin/lphrase
+lib/xcin/pho.sel1st
+lib/xcin/pho.tab
+lib/xcin/phone.cin
+lib/xcin/phone.tab
+lib/xcin/phone.tab.rev
+lib/xcin/phs_out
+lib/xcin/pin2tsin
+lib/xcin/pinyin.cin
+lib/xcin/pinyin.tab
+lib/xcin/pinyin.tab.rev
+lib/xcin/sample.phs.out
+lib/xcin/tsa2d
+lib/xcin/tsa2rel
+lib/xcin/tsd2a
+lib/xcin/tsin
+lib/xcin/tsin.idx
+lib/xcin/tsin.rel
+lib/xcin/tsin.rel.src
+lib/xcin/tsin.src
+lib/xcin/tsin_pin.map
+lib/xcin/voca.box
+lib/xcin/zmdbosh.cin
+lib/xcin/zmdbosh.tab
+lib/xcin/zmdbosh.tab.rev
+lib/xcin/zo.kbm
+@man man/man1/cin2tab.1
+@man man/man1/xcin.1

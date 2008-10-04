@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/04 08:11:53 kevlo Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/TrueType/
+lib/X11/fonts/TrueType/bkai00mp.ttf
+lib/X11/fonts/TrueType/bsmi00lp.ttf
+lib/X11/fonts/TrueType/gbsn00lp.ttf
+lib/X11/fonts/TrueType/gkai00mp.ttf

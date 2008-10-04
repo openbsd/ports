@@ -1,0 +1,26 @@
+$OpenBSD: patch-script_Makefile_in,v 1.1.1.1 2008/10/04 08:11:54 kevlo Exp $
+--- script/Makefile.in.orig	Wed Feb 24 09:30:33 1999
++++ script/Makefile.in	Fri Dec 28 14:40:17 2007
+@@ -7,13 +7,19 @@
+ #          Email: thhsieh@twcpro.phys.ntu.edu.tw
+ #
+ 
+-all:  @MAKEALL@
++all:  
++	cd src && ${MAKE} all
++	cd input_tab && ${MAKE} all
+ 
+ .PHONY: install make_xcin make_inptab install_xcin install_inptab \
+ 	install_doc install_filelist rm_filelist clean very_clean dist_clean
+ 
+-install: rm_filelist @INSTALLALL@ install_filelist
+-
++install: 
++	${MAKE} rm_filelist
++	cd src && ${MAKE} install
++	cd input_tab && ${MAKE} install
++	cd doc && ${MAKE} install
++	${MAKE} install_filelist
+ 
+ make_xcin:
+ 	(cd src; make all)

@@ -1,0 +1,16 @@
+--- Makefile.orig	Tue Aug 11 04:14:48 1992
++++ Makefile	Thu Mar  1 10:49:51 2001
+@@ -1,9 +1,11 @@
+ # Makefile of LUNAR
+ 
+-CFLAGS= -O
++CFLAGS= -O -DBITMAPFILE=\"$(BITMAPFILE)\"
++
++BITMAPFILE= $(PREFIX)/share/chinese/lunar.bitmap
+ 
+ lunar:	lunar.o
+-	cc -o lunar lunar.o
++	cc $(CFLAGS) -o lunar lunar.o
+ 
+ clean:
+ 	rm *.o core

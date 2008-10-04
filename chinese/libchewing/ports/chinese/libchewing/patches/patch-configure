@@ -1,0 +1,63 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/10/04 08:11:54 kevlo Exp $
+--- configure.orig	Wed Oct  1 16:48:55 2008
++++ configure	Fri Oct  3 15:25:55 2008
+@@ -12615,48 +12615,8 @@ echo "${ECHO_T}no" >&6; }
+ fi
+ 
+ pkg_failed=no
+-{ echo "$as_me:$LINENO: checking for CHECK" >&5
+-echo $ECHO_N "checking for CHECK... $ECHO_C" >&6; }
+ 
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$CHECK_CFLAGS"; then
+-        pkg_cv_CHECK_CFLAGS="$CHECK_CFLAGS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"check >= 0.9.4\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "check >= 0.9.4") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_CHECK_CFLAGS=`$PKG_CONFIG --cflags "check >= 0.9.4" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$CHECK_LIBS"; then
+-        pkg_cv_CHECK_LIBS="$CHECK_LIBS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"check >= 0.9.4\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "check >= 0.9.4") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_CHECK_LIBS=`$PKG_CONFIG --libs "check >= 0.9.4" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+ 
+-
+-
+ if test $pkg_failed = yes; then
+ 
+ if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+@@ -12680,9 +12640,7 @@ elif test $pkg_failed = untried; then
+ else
+ 	CHECK_CFLAGS=$pkg_cv_CHECK_CFLAGS
+ 	CHECK_LIBS=$pkg_cv_CHECK_LIBS
+-        { echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6; }
+-	enable_check=yes
++	enable_check=no
+ fi
+  if test $enable_check = "yes"; then
+   ENABLE_UNIT_TEST_TRUE=

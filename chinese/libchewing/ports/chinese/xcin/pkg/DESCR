@@ -1,0 +1,4 @@
+Xcin is an input server for X11 applications that need
+Chinese text input.  It is *only* an input server.  See,
+for example, crxvt, a display client (xterm replacement) that
+uses the xcin cli_xcin.o module to provide chinese input services.

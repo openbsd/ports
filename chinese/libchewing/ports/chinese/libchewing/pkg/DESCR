@@ -1,0 +1,5 @@
+libchewing is derived from Chewing input method, a xcin module
+focusing on intelligent phonetic processing by Lu-chuan Kung
+(lckung) and Kang-pen Chen (kpchen). However, the original
+authors of Chewing dropped its development, and Chewing was
+highly bonded with xcin, which prevents from wider applications.

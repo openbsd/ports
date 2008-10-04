@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/04 08:11:54 kevlo Exp $
+bin/cless
+bin/clesskey
+@man man/man1/cless.1
+@man man/man1/clesskey.1
+share/doc/cless/
+share/doc/cless/README.CLESS
+share/doc/cless/cless.bg5
+share/doc/cless/cless.gb
+share/doc/cless/cless.hlp

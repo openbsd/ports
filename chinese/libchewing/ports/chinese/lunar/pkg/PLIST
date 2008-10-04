@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/04 08:11:54 kevlo Exp $
+bin/lunar
+@man man/man1/lunar.1
+share/chinese/
+share/chinese/lunar.bitmap
