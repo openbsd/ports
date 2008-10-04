@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 16:31:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/04 22:59:43 simon Exp $
 ${P5SITE}/Cache/
+${P5SITE}/Cache/Memcached/
 ${P5SITE}/Cache/Memcached.pm
+${P5SITE}/Cache/Memcached/GetParser.pm
 @man man/man3p/Cache::Memcached.3p
