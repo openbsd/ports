@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2006/02/12 14:58:15 david Exp $
+# $OpenBSD: Makefile,v 1.17 2008/10/04 08:13:36 kevlo Exp $
 # $FreeBSD: Makefile,v 1.16 1997/11/17 18:36:43 max Exp $
 
      SUBDIR += arphicttf
@@ -9,6 +9,7 @@
      SUBDIR += crxvt
      SUBDIR += hc
      SUBDIR += kcfonts
+     SUBDIR += libchewing
      SUBDIR += libtabe
      SUBDIR += lunar
      SUBDIR += py-zhCodecs
