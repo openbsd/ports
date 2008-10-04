@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2007/09/15 20:59:38 merdely Exp $
+# $OpenBSD: Makefile,v 1.48 2008/10/04 16:08:16 ajacoutot Exp $
 
 COMMENT-main=		interactive spelling checker
 COMMENT-dutch=		ispell dictionary for Dutch
@@ -10,7 +10,7 @@ COMMENT-slovak=		ispell dictionary for Slovak
 COMMENT-spanish=	ispell dictionary for Spanish
 COMMENT-swedish=	ispell dictionary for Swedish
 
-PATCHLEVEL=	p3
+PATCHLEVEL=	p4
 
 VERSION=	3.2.06
 DISTNAME=	ispell-${VERSION}
@@ -28,7 +28,7 @@ MASTER_SITES3=	http://www.sslug.dk/locale/ispell/iswedish/
 MASTER_SITES4=	ftp://mch5.chem.msu.su/pub/russian/ispell/ \
 		ftp://ftp.afti.nsu.ru/pub/mirrors/russian-ispell/
 MASTER_SITES5=	http://natura.di.uminho.pt/~jj/pln/
-MASTER_SITES6=	http://ispell.hq.sk/
+MASTER_SITES6=	http://sk-spell.sk.cx/files/
 MASTER_SITES7=	http://www.datsi.fi.upm.es/~coes/
 
 DIST_SUBDIR=	ispell
@@ -39,7 +39,7 @@ GERMAN_DICT=		hk2-deutsch
 SWEDISH_DICT=		iswedish-1.2.1
 RUSSIAN_DICT=		rus-ispell-0.99e7
 PORTUGUESE_DICT=	UMportugues
-SLOVAK_DICT=		ispell-sk-0.2.0
+SLOVAK_DICT=		ispell-sk-0.3.2
 SPANISH_DICT=		espa~nol-1.7
 
 DISTFILES=	${DISTNAME}.tar.gz \
@@ -73,15 +73,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB-main=		c termcap 
+WANTLIB-main=		c termcap
 
 PERMIT_PACKAGE_CDROM-german=	no license
 PERMIT_PACKAGE_FTP-german=	no license
- 
+
 RUN_DEPENDS=	::textproc/ispell
 RUN_DEPENDS-main=
 
-MAKE_FLAGS=	TMPDIR=${WRKDIR} 
+MAKE_FLAGS=	TMPDIR=${WRKDIR}
 
 NO_REGRESS=	Yes
 
@@ -97,7 +97,7 @@ post-extract:
 	@mkdir -p ${WRKDIR}/russian
 	@(cd ${WRKDIR}/russian; \
 	tar xzf ${FULLDISTDIR}/${RUSSIAN_DICT}${EXTRACT_SUFX})
-	
+
 	@(cd ${WRKDIR}/${SPANISH_DICT}/; \
 	mv espa~nol.aff spanish.aff; \
 	mv espa~nol.words+ spanish.words+)
@@ -135,7 +135,6 @@ post-build:
 	cp portugues.aff portuguese.aff)
 
 	@(cd ${WRKDIR}/${SLOVAK_DICT}; \
-	cat *.words | sort -u -f > slovak.words; \
 	${WRKDIST}/buildhash slovak.words slovak.aff slovak.hash)
 
 	@(cd ${WRKDIR}/${SPANISH_DICT}; \
