@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/04 08:11:54 kevlo Exp $
-@conflict hc-*
-bin/b2g
-bin/g2b
-bin/hc
-@man man/man1/hc.1
-share/hc/
-share/hc/hc-supp.tab
-share/hc/hc.tab

@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/04 08:11:53 kevlo Exp $
-bin/bg5pdf
-lib/python${PYTHON_VER}/site-packages/bg5pdflib.so

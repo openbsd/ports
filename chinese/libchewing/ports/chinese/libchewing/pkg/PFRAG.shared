@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/10/04 08:11:54 kevlo Exp $
-@lib lib/libchewing.so.${LIBchewing_VERSION}
