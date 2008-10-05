@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.13 2008/04/26 06:51:29 steven Exp $
+@comment $OpenBSD: PLIST,v 1.14 2008/10/05 16:22:04 steven Exp $
 %%SHARED%%
 bin/mkoctfile
-bin/octave
+@bin bin/octave
 bin/octave-bug
 bin/octave-config
 include/octave-${VERSION}/
@@ -692,10 +692,20 @@ libexec/octave/${VERSION}/oct/${GNU_ARCH}/urlwrite.oct
 libexec/octave/${VERSION}/site/
 libexec/octave/${VERSION}/site/exec/
 libexec/octave/${VERSION}/site/exec/${GNU_ARCH}/
+libexec/octave/${VERSION}/site/oct/
+libexec/octave/${VERSION}/site/oct/${GNU_ARCH}/
+libexec/octave/api-v32/
+libexec/octave/api-v32/site/
+libexec/octave/api-v32/site/exec/
+libexec/octave/api-v32/site/exec/${GNU_ARCH}/
 libexec/octave/ls-R
 libexec/octave/site/
 libexec/octave/site/exec/
 libexec/octave/site/exec/${GNU_ARCH}/
+libexec/octave/site/oct/
+libexec/octave/site/oct/api-v32/
+libexec/octave/site/oct/api-v32/${GNU_ARCH}/
+libexec/octave/site/oct/${GNU_ARCH}/
 @man man/man1/mkoctfile.1
 @man man/man1/octave-bug.1
 @man man/man1/octave-config.1
@@ -3296,8 +3306,12 @@ share/octave/${VERSION}/m/time/etime.m
 share/octave/${VERSION}/m/time/is_leap_year.m
 share/octave/${VERSION}/m/time/now.m
 share/octave/${VERSION}/m/time/weekday.m
+share/octave/${VERSION}/site/
+share/octave/${VERSION}/site/m/
 share/octave/ls-R
 share/octave/site/
+share/octave/site/api-v32/
+share/octave/site/api-v32/m/
 share/octave/site/m/
 share/octave/site/m/startup/
 share/octave/site/m/startup/octaverc
