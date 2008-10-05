@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/07/24 03:25:03 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2008/10/05 21:08:49 jasper Exp $
 
 COMMENT=	virus/spam scanning framework
 
@@ -39,6 +39,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 post-extract:
 	@cd ${WRKDIR} && ${TAR} xzf MailScanner-install-${V}.${Vs}/perl-tar/MailScanner-${V}.${Vss}${EXTRACT_SUFX} && \
