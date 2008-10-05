@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/04/08 05:17:08 jolan Exp $
-lib/aspell/sk-extend.multi
+@comment $OpenBSD: PLIST,v 1.3 2008/10/05 08:58:56 ajacoutot Exp $
 lib/aspell/sk-extend.rws
+lib/aspell/sk-extended.multi
 lib/aspell/sk.multi
 lib/aspell/sk.rws
-lib/aspell/slovak-extend.alias
+lib/aspell/sk_SK-extended.alias
+lib/aspell/sk_SK.alias
+lib/aspell/slovak-extended.alias
 lib/aspell/slovak.alias
 share/aspell/sk.dat
