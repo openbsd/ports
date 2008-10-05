@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2007/05/28 16:30:23 kili Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2008/10/05 09:46:52 ajacoutot Exp $
 
 PKGNAME?=	${DISTNAME:C/-([0-9])$/_\1/}p0
 
@@ -8,7 +8,7 @@ EXTRACT_SUFX?=	.tar.bz2
 
 HOMEPAGE?=	http://aspell.sourceforge.net/
 
-# GPL
+# GPLv2 - LGPLv2 - FDL - CC ShareAlike
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 PERMIT_PACKAGE_CDROM?=	Yes
