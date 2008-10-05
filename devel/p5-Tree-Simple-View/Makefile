@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/04 20:05:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/05 21:24:57 jasper Exp $
 
 COMMENT=	class for viewing Tree::Simple hierarchies
 
-DISTNAME=	Tree-Simple-View-0.16
+DISTNAME=	Tree-Simple-View-0.17
 CATEGORIES=	devel
 
 MODULES=	cpan
