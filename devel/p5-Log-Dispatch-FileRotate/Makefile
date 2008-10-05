@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/11/20 18:43:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/05 23:07:58 jasper Exp $
 
 COMMENT=	log to files that archive/rotate themselves
 
 MODULES=	cpan
-DISTNAME=	Log-Dispatch-FileRotate-1.16
+DISTNAME=	Log-Dispatch-FileRotate-1.18
 CATEGORIES=	devel
 
 # Perl
@@ -14,8 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=		::converters/p5-DateManip \
 			::devel/p5-Log-Dispatch \
-			::devel/p5-Params-Validate
-
-REGRESS_DEPENDS=	::devel/p5-Log-Log4perl
+			::devel/p5-Params-Validate \
+			::devel/p5-Log-Log4perl
 
 .include <bsd.port.mk>
