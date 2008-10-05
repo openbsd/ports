@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2007/10/04 21:25:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2008/10/05 21:54:31 jasper Exp $
 
 COMMENT=	HTML output stream class
 
 MODULES=	cpan
-DISTNAME=	HTML-Stream-1.55
-PKGNAME=	p5-${DISTNAME}p1
+DISTNAME=	HTML-Stream-1.60
 CATEGORIES=	www devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-# GPL
+# perl
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
