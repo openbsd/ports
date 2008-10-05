@@ -1,4 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/15 19:43:12 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/05 21:15:25 jasper Exp $
 ${P5SITE}/OLE/
 ${P5SITE}/OLE/Storage_Lite.pm
 @man man/man3p/OLE::Storage_Lite.3p
+share/examples/p5-OLE-Storage_Lite/
+share/examples/p5-OLE-Storage_Lite/README
+share/examples/p5-OLE-Storage_Lite/smpadd.pl
+share/examples/p5-OLE-Storage_Lite/smpaddF.pl
+share/examples/p5-OLE-Storage_Lite/smpadd_a.pl
+share/examples/p5-OLE-Storage_Lite/smplls.pl
+share/examples/p5-OLE-Storage_Lite/smplls_a.pl
+share/examples/p5-OLE-Storage_Lite/smpsv.pl
+share/examples/p5-OLE-Storage_Lite/test.xls
