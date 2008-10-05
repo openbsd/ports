@@ -1,9 +1,10 @@
-This module provides a framework for generating UUIDs (Universally Unique
-Identifiers, also known as GUIDs (Globally Unique Identifiers). A UUID is
-128 bits long, and is guaranteed to be different from all other UUIDs/GUIDs
-generated until 3400 A.D. UUIDs were originally used in the Network Computing 
-System (NCS) and later in the Open Software Foundation's (OSF) Distributed 
-Computing Environment. Currently many different technologies rely on UUIDs to
-provide unique identity for various software components, Microsoft COM/DCOM
-for instance, uses GUIDs very extensively to uniquely identify classes, 
-applications and components across network-connected systems.
+This module provides a framework for generating UUIDs (Universally
+Unique Identifiers, also known as GUIDs (Globally Unique Identifiers). A
+UUID is 128 bits long, and is guaranteed to be different from all other
+UUIDs/GUIDs generated until 3400 A.D. UUIDs were originally used in the
+Network Computing System (NCS) and later in the Open Software
+Foundation's (OSF) Distributed Computing Environment. Currently many
+different technologies rely on UUIDs to provide unique identity for
+various software components, Microsoft COM/DCOM for instance, uses GUIDs
+very extensively to uniquely identify classes, applications and
+components across network-connected systems.
