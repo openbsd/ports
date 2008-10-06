@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/02/08 22:00:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/10/06 16:50:49 jasper Exp $
 ${P5SITE}/Curses/
 ${P5SITE}/Curses/UI/
 ${P5SITE}/Curses/UI.pm
@@ -27,6 +27,7 @@ ${P5SITE}/Curses/UI/Language/english.pm
 ${P5SITE}/Curses/UI/Language/french.pm
 ${P5SITE}/Curses/UI/Language/german.pm
 ${P5SITE}/Curses/UI/Language/italian.pm
+${P5SITE}/Curses/UI/Language/japanese.pm
 ${P5SITE}/Curses/UI/Language/norwegian.pm
 ${P5SITE}/Curses/UI/Language/polish.pm
 ${P5SITE}/Curses/UI/Language/portuguese.pm

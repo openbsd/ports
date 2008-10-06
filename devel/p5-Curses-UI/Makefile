@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/04/17 09:38:44 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2008/10/06 16:50:49 jasper Exp $
 
 COMMENT=	curses based user interface framework for Perl
 
 MODULES=	cpan
-DISTNAME=	Curses-UI-0.9603
+DISTNAME=	Curses-UI-0.9605
 
 CATEGORIES=	devel
 
