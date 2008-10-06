@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/15 13:54:58 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/06 17:00:25 jasper Exp $
 
 COMMENT=	perl module that provides ellipsoid values
 MODULES=	cpan
-DISTNAME=	Geo-Ellipsoids-0.14
+DISTNAME=	Geo-Ellipsoids-0.16
 CATEGORIES=	geo
 
 # Perl
