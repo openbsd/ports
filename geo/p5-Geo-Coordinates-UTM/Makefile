@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/12/14 22:42:28 matthieu Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/06 16:59:28 jasper Exp $
 
 COMMENT=	provides Latitude Longitude conversions
 MODULES=	cpan
-DISTNAME=	Geo-Coordinates-UTM-0.06
+DISTNAME=	Geo-Coordinates-UTM-0.08
 CATEGORIES=	geo
 
 # Perl
