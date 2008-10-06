@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:36:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/10/06 17:01:16 jasper Exp $
 ${P5SITE}/Crypt/
 ${P5SITE}/Crypt/CBC.pm
 @man man/man3p/Crypt::CBC.3p
+share/examples/p5-Crypt-CBC/
+share/examples/p5-Crypt-CBC/aes.pl
+share/examples/p5-Crypt-CBC/des.pl
+share/examples/p5-Crypt-CBC/idea.pl
