@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2008/10/02 20:42:37 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2008/10/06 00:04:45 sthen Exp $
+
+BROKEN=		Incompatible with Perl 5.10.0
 
 SHARED_ONLY=	Yes
 
