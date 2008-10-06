@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/10/04 18:00:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2008/10/06 22:07:19 simon Exp $
 
 COMMENT=	critique perl source code for best practices
 
 MODULES=	cpan
 DISTNAME=	Perl-Critic-1.092
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@kisoku.net> 
@@ -23,6 +24,7 @@ RUN_DEPENDS=	::devel/p5-B-Keywords \
 		:p5-PPI->=1.203:textproc/p5-PPI \
 		::devel/p5-Set-Scalar \
 		::devel/p5-String-Format \
+		::devel/p5-Readonly \
 		::devel/perltidy \
 		::sysutils/p5-File-Which
 
