@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/06 17:02:37 jasper Exp $
 
 COMMENT= 	test framework for HTTP::Server::Simple
 
 MODULES=	cpan
 
-DISTNAME=	Test-HTTP-Server-Simple-0.03
+DISTNAME=	Test-HTTP-Server-Simple-0.09
 CATEGORIES=	www devel
 
 # perl
