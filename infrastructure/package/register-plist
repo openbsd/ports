@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.17 2008/04/12 13:09:58 espie Exp $
+# $OpenBSD: register-plist,v 1.18 2008/10/06 09:37:02 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -84,6 +84,7 @@ package OpenBSD::PackingElement::FileBase;
 sub forget_details
 {
 	my $self = shift;
+	undef $self->{d};
 	undef $self->{md5};
 	undef $self->{size};
 }
@@ -105,13 +106,16 @@ sub compare
 	if ($self->{name} ne $self2->{name}) {
 		return 1;
 	}
-	if (defined $self->{md5} && defined $self2->{md5}) {
-		if ($self->{md5} eq $self2->{md5}) {
+	if (defined $self->{d} && defined $self2->{d}) {
+		if (ref($self->{d}) ne ref($self2->{d})) {
+			return 2;
+		}
+		if ($self->{d}->equals($self2->{d})) {
 			return 0;
 		} else {
 			return 1;
 		}
-	} elsif (!defined $self->{md5} && !defined $self2->{md5}) {
+	} elsif (!defined $self->{d} && !defined $self2->{d}) {
 		return 0;
 	}
 	return 2;
