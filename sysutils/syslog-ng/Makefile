@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/11/27 10:54:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2008/10/06 16:09:13 steven Exp $
 
 COMMENT=	syslogd replacement
 
@@ -10,9 +10,9 @@ LIBOL=		libol-0.3.16
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 MASTER_SITE_SYSLOGNG=\
-	http://www.balabit.com/downloads/
+	http://www.balabit.com/downloads/files/syslog-ng/sources/
 
-MASTER_SITES=	${MASTER_SITE_SYSLOGNG:=syslog-ng/1.6/src/}
+MASTER_SITES=	${MASTER_SITE_SYSLOGNG:=1.6/src/}
 MASTER_SITES0=	${MASTER_SITE_SYSLOGNG:=libol/0.3/}
 
 HOMEPAGE=	http://www.balabit.com/products/syslog_ng/
