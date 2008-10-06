@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/08 05:37:01 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/06 08:15:32 jasper Exp $
 ${P5SITE}/Log/
 ${P5SITE}/Log/Dispatch/
 ${P5SITE}/Log/Dispatch.pm
@@ -14,6 +14,7 @@ ${P5SITE}/Log/Dispatch/File/
 ${P5SITE}/Log/Dispatch/File.pm
 ${P5SITE}/Log/Dispatch/File/Locked.pm
 ${P5SITE}/Log/Dispatch/Handle.pm
+${P5SITE}/Log/Dispatch/Null.pm
 ${P5SITE}/Log/Dispatch/Output.pm
 ${P5SITE}/Log/Dispatch/Screen.pm
 ${P5SITE}/Log/Dispatch/Syslog.pm
@@ -28,6 +29,7 @@ ${P5SITE}/Log/Dispatch/Syslog.pm
 @man man/man3p/Log::Dispatch::File.3p
 @man man/man3p/Log::Dispatch::File::Locked.3p
 @man man/man3p/Log::Dispatch::Handle.3p
+@man man/man3p/Log::Dispatch::Null.3p
 @man man/man3p/Log::Dispatch::Output.3p
 @man man/man3p/Log::Dispatch::Screen.3p
 @man man/man3p/Log::Dispatch::Syslog.3p

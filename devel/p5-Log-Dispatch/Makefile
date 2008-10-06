@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/06 08:15:32 jasper Exp $
 
 COMMENT=	dispatches messages to one or more outputs
 
 MODULES=	cpan
-DISTNAME=	Log-Dispatch-2.13
+DISTNAME=	Log-Dispatch-2.21
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
-# Artistic License
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
