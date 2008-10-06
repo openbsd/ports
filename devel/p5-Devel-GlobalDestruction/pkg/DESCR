@@ -1,0 +1,2 @@
+Perl's global destruction is a little tricky to deal with WRT finalizers
+because it's not ordered and objects can sometimes disappear.

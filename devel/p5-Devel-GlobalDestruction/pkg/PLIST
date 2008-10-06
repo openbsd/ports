@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/06 16:47:54 jasper Exp $
+${P5ARCH}/
+${P5ARCH}/Devel/
+${P5ARCH}/Devel/GlobalDestruction.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Devel/
+${P5ARCH}/auto/Devel/GlobalDestruction/
+${P5ARCH}/auto/Devel/GlobalDestruction/GlobalDestruction.bs
+${P5ARCH}/auto/Devel/GlobalDestruction/GlobalDestruction.so
+@man man/man3p/Devel::GlobalDestruction.3p
