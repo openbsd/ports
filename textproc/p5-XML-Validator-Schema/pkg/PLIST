@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/14 19:09:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/06 17:02:17 jasper Exp $
 ${P5SITE}/XML/Validator/
 ${P5SITE}/XML/Validator/Schema/
 ${P5SITE}/XML/Validator/Schema.pm
 ${P5SITE}/XML/Validator/Schema/Attribute.pm
 ${P5SITE}/XML/Validator/Schema/AttributeLibrary.pm
+${P5SITE}/XML/Validator/Schema/AttributeNode.pm
 ${P5SITE}/XML/Validator/Schema/ComplexTypeNode.pm
 ${P5SITE}/XML/Validator/Schema/ElementLibrary.pm
 ${P5SITE}/XML/Validator/Schema/ElementNode.pm
@@ -20,6 +21,7 @@ ${P5SITE}/XML/Validator/Schema/Util.pm
 @man man/man3p/XML::Validator::Schema.3p
 @man man/man3p/XML::Validator::Schema::Attribute.3p
 @man man/man3p/XML::Validator::Schema::AttributeLibrary.3p
+@man man/man3p/XML::Validator::Schema::AttributeNode.3p
 @man man/man3p/XML::Validator::Schema::ComplexTypeNode.3p
 @man man/man3p/XML::Validator::Schema::ElementLibrary.3p
 @man man/man3p/XML::Validator::Schema::ElementNode.3p
