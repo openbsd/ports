@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/06 16:48:51 jasper Exp $
+${P5SITE}/Sub/
+${P5SITE}/Sub/Identify.pm
+@man man/man3p/Sub::Identify.3p
