@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/04 21:15:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/06 10:54:00 ajacoutot Exp $
 
 COMMENT=		GTK frontend to recorMyDesktop
 
 V=			0.3.7.2
 DISTNAME=		gtk-recordmydesktop-$V
-PKGNAME=		recordmydesktop-gtk-$V
+PKGNAME=		recordmydesktop-gtk-$Vp0
 
 BUILD_DEPENDS=		::x11/py-gtk2
 RUN_DEPENDS=		::devel/desktop-file-utils \
@@ -22,7 +22,9 @@ CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib" \
 			PYTHON="${MODPY_BIN}"
 
+SUBST_VARS=		MODPY_BIN
+
 pre-configure:
-	perl -pi -e 's,!!PYTHON!!,${MODPY_BIN},' ${WRKSRC}/src/gtk-recordMyDesktop.in
+	${SUBST_CMD} ${WRKSRC}/src/gtk-recordMyDesktop.in
 
 .include <bsd.port.mk>

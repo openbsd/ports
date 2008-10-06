@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gtk-recordmydesktop_desktop,v 1.1 2008/10/06 10:54:00 ajacoutot Exp $
+--- src/gtk-recordmydesktop.desktop.orig	Tue Jun 10 19:18:34 2008
++++ src/gtk-recordmydesktop.desktop	Tue Jun 10 19:18:44 2008
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Version=1.0
+ Encoding=UTF-8
+-Name=gtk-recordMyDesktop
++Name=recordMyDesktop
+ Comment=Frontend for recordMyDesktop
+ Comment[fr]=Interface pour recordmydesktop
+ Exec=gtk-recordMyDesktop
