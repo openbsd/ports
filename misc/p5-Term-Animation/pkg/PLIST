@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/07 17:05:39 jasper Exp $
+${P5SITE}/Term/
+${P5SITE}/Term/Animation/
+${P5SITE}/Term/Animation.pm
+${P5SITE}/Term/Animation/Entity.pm
+@man man/man3p/Term::Animation.3p
+@man man/man3p/Term::Animation::Entity.3p
+share/examples/p5-Term-Animation/
+share/examples/p5-Term-Animation/color_nature.pl

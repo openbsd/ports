@@ -1,0 +1,4 @@
+This module provides a framework to produce sprite animations using
+ASCII art. Each ASCII 'sprite' is given one or more frames, and placed
+into the animation as an 'animation entity'. An animation entity can
+have a callback routine.
