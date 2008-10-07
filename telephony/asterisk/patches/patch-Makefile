@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.17 2008/05/27 22:14:34 sthen Exp $
---- Makefile.orig	Mon May  5 21:17:55 2008
-+++ Makefile	Wed May 21 01:24:30 2008
+$OpenBSD: patch-Makefile,v 1.18 2008/10/07 09:57:52 sthen Exp $
+--- Makefile.orig	Mon Sep  8 21:15:42 2008
++++ Makefile	Thu Oct  2 22:54:53 2008
 @@ -35,6 +35,7 @@ export ASTVARRUNDIR
  export MODULES_DIR
  export ASTSPOOLDIR
@@ -69,7 +69,7 @@ $OpenBSD: patch-Makefile,v 1.17 2008/05/27 22:14:34 sthen Exp $
  
  ifeq ($(PROC),ppc)
    ASTCFLAGS+=-fsigned-char
-@@ -575,13 +583,14 @@ samples: adsi
+@@ -574,6 +582,7 @@ samples: adsi
  		echo "astetcdir => $(ASTETCDIR)" ; \
  		echo "astmoddir => $(MODULES_DIR)" ; \
  		echo "astvarlibdir => $(ASTVARLIBDIR)" ; \
@@ -77,15 +77,7 @@ $OpenBSD: patch-Makefile,v 1.17 2008/05/27 22:14:34 sthen Exp $
  		echo "astdatadir => $(ASTDATADIR)" ; \
  		echo "astagidir => $(AGI_DIR)" ; \
  		echo "astspooldir => $(ASTSPOOLDIR)" ; \
- 		echo "astrundir => $(ASTVARRUNDIR)" ; \
- 		echo "astlogdir => $(ASTLOGDIR)" ; \
- 		echo "" ; \
--		echo ";[options]" ; \
-+		echo "[options]" ; \
- 		echo ";verbose = 3" ; \
- 		echo ";debug = 3" ; \
- 		echo ";alwaysfork = yes ; same as -F at startup" ; \
-@@ -605,15 +614,15 @@ samples: adsi
+@@ -604,16 +613,16 @@ samples: adsi
  		echo ";transmit_silence_during_record = yes ; Transmit SLINEAR silence while a channel is being recorded" ; \
  		echo ";transmit_silence = yes ; Transmit SLINEAR silence while a channel is being recorded or DTMF is being generated" ; \
  		echo ";transcode_via_sln = yes ; Build transcode paths via SLINEAR, instead of directly" ; \
@@ -93,6 +85,7 @@ $OpenBSD: patch-Makefile,v 1.17 2008/05/27 22:14:34 sthen Exp $
 -		echo ";rungroup = asterisk ; The group to run as" ; \
 +		echo "runuser = _asterisk ; The user to run as" ; \
 +		echo "rungroup = _asterisk ; The group to run as" ; \
+ 		echo ";dahdichanname = yes ; Channels created by chan_dahdi will be called 'DAHDI', otherwise 'Zap'" ; \
  		echo "" ; \
  		echo "; Changing the following lines may compromise your security." ; \
 -		echo ";[files]" ; \

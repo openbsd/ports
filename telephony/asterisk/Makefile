@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2008/07/23 08:57:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2008/10/07 09:57:52 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-V=			1.4.21.2
+V=			1.4.22
 DISTNAME=		asterisk-$V
 FULLPKGNAME-main=	asterisk-$V
 
@@ -205,7 +205,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/{BUGS,CHANGES,COPYING,CREDITS} \
 		${WRKSRC}/{ChangeLog,LICENSE,README,UPGRADE.txt} \
 		${PREFIX}/share/doc/asterisk
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/asterisk
+	${INSTALL_DATA} `find ${WRKSRC}/doc -type f` \
+		${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/openbsd
 	${INSTALL_DATA} ${FILESDIR}/*.sample ${EXAMPLEDIR}/openbsd
