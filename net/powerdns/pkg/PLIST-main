@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/10/02 18:40:41 jasper Exp $
-@newgroup _pdnsd:609
-@newuser _pdnsd:609:_pdnsd:daemon:Proxy DNS Server:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST-main,v 1.2 2008/10/07 21:02:53 jasper Exp $
+@newgroup _powerdns:609
+@newuser _powerdns:609:_powerdns:daemon:Proxy DNS Server:/nonexistent:/sbin/nologin
 %%SHARED%%
 @bin bin/pdns_control
 @bin bin/zone2ldap

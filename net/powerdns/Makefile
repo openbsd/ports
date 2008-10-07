@@ -1,16 +1,21 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/02 18:40:41 jasper Exp $
-
-V=			2.9.21.1
-DISTNAME=		pdns-${V}
-PKGNAME=		powerdns-${V}
-CATEGORIES=		net
-HOMEPAGE=		http://www.powerdns.com/
+# $OpenBSD: Makefile,v 1.2 2008/10/07 21:02:53 jasper Exp $
 
 COMMENT-main=		modern authoritative nameserver
 COMMENT-mysql=		mysql database access emodule for powerdns
 COMMENT-pgsql=		pgsql database access module for powerdns
 COMMENT-sqlite=		sqlite database access module for powerdns
 COMMENT-sqlite3=	sqlite3 database access module for powerdns
+
+V=			2.9.21.1
+DISTNAME=		pdns-${V}
+PKGNAME=		powerdns-${V}
+PKGNAME-main=		powerdns-${V}p0
+PKGNAME-mysql=		powerdns-mysql-${V}
+PKGNAME-pgsql=		powerdns-pgsql-${V}
+PKGNAME-sqlite= 	powerdns-sqlite-${V}
+PKGNAME-sqlite3=	powerdns-sqlite3-${V}
+CATEGORIES=		net
+HOMEPAGE=		http://www.powerdns.com/
 
 SHARED_LIBS=		geobackend 	0.0 \
 			gmysqlbackend	0.0 \
@@ -34,12 +39,12 @@ NO_REGRESS=		Yes
 
 BUILD_DEPENDS=		::devel/boost
 
+PSEUDO_FLAVORS+=	no_mysql no_pgsql no_sqlite no_sqlite3
 FLAVOR?=
 
 BACKENDS=
 
-# mysql
-PSEUDO_FLAVORS+=	no_mysql
+# MySQL
 .if ${FLAVOR:L:Mno_mysql}
 CONFIGURE_ARGS+=	--without-mysql
 .else
@@ -50,8 +55,7 @@ WANTLIB-mysql+= 	z
 BACKENDS+=		gmysql
 .endif
 
-# postgresql
-PSEUDO_FLAVORS+=	no_pgsql
+# PostgreSQL
 .if ${FLAVOR:L:Mno_pgsql}
 CONFIGURE_ARGS+=	--without-pgsql
 .else
@@ -62,8 +66,7 @@ LIB_DEPENDS-pgsql=	pq.>=2:postgresql-client-*:databases/postgresql
 BACKENDS+=		gpgsql
 .endif
 
-# sqlite
-PSEUDO_FLAVORS+=	no_sqlite
+# SQLite
 .if ${FLAVOR:L:Mno_sqlite}
 CONFIGURE_ARGS+=	--without-sqlite
 .else
@@ -75,8 +78,7 @@ WANTLIB-sqlite+=	z
 BACKENDS+=		gsqlite
 .endif
 
-# sqlite3
-PSEUDO_FLAVORS+=	no_sqlite3
+# SQLite3
 .if ${FLAVOR:L:Mno_sqlite3}
 CONFIGURE_ARGS+=	--without-sqlite3
 .else
