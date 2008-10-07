@@ -1,0 +1,206 @@
+$OpenBSD: patch-texmf-dist_tex_latex_gmverb_gmverb_sty,v 1.1 2008/10/07 20:54:35 steven Exp $
+--- texmf-dist/tex/latex/gmverb/gmverb.sty.orig	Thu Aug 14 00:50:27 2008
++++ texmf-dist/tex/latex/gmverb/gmverb.sty	Sun Aug 31 22:28:54 2008
+@@ -46,12 +46,13 @@
+ % \chschange{v0.85}{2008/5/1}{673}
+ % \chschange{v0.87}{2008/8/6}{661}
+ % \chschange{v0.88}{2008/8/13}{682}
++% \chschange{v0.89}{2008/8/30}{686}
+ %
+ 
+ % \skiplines we skip the driver
+ \ifnum\catcode`\@=12
+ 
+-\documentclass [codespacesgrey,pagella] {gmdocc}
++\documentclass [countalllines, codespacesgrey, pagella] {gmdocc}
+ \twocoltoc
+ \begin{document}
+ \DocInput{\jobname.sty}
+@@ -69,12 +70,12 @@
+ 
+ \NeedsTeXFormat{LaTeX2e}
+ \ProvidesPackage{gmverb}
+-    [2008/08/11 v0.88 After shortvrb (FM) but my way (GM)]
++    [2008/08/30 v0.89 After shortvrb (FM) but my way (GM)]
+ 
+ %
+ % \tableofcontents
+ % 
+-% \division{Intro, Usage}
++% \division{Intro, usage}
+ %
+ % This package redefines the |\verb| command and the \env{verbatim}
+ % environment so that the verbatim text can break into lines, with |%|
+@@ -124,7 +125,7 @@
+ % instead of typing |\verb+\mymacro+|. Because the char used in this
+ % example is my favourite and used just this way by DEK in the
+ % \TeXbook's format, \pk{gmverb} provides a~macro \TextUsage\dekclubs\
+-% as a~shorthand for \verb+\MakeShortVerb*\|+.
++% as a~shorthand for \verb+\MakeShortVerb(*)\|+.
+ %
+ % Be careful because such active chars may interfere with other
+ % things, e.g., the \verb+|+ with the vertical marker in tables and
+@@ -145,16 +146,21 @@
+ %
+ % There's one more declaration provided by \pk{gmverb}:
+ % \TextUsage\dekclubs, which is a~shorthand for
+-% \verb+\MakeShortVerb\|+ and \TextUsage\dekclubs*\ for
++% \verb+\MakeShortVerb\|+, \TextUsage\dekclubs*\ for
++% \verb+\MakeShortVerb*\|+ and \TextUsage\olddekclubs\ for 
+ % \verb+\OldMakeShortVerb\|+.  
+ %
+-% So that, after the latter declaration, you can write 
+-%\[\verb+\[|+\<verbatim stuff>\verb+|\]+\]
++% There's one more declaration, \TextUsage\edverbs\ that makes 
++% \cs{[} %^^A]
++% checks if the next token is an active char and opens an |\hbox| if
++% so. That is done  
++% so that you can write (in  |\edverbs|' and |\dekclubs|' scope)
++%\[\verb+\[|<verbatim stuff>|\]+\]
+ % instead of 
+-%\[\verb+\[\hbox{|+\<the stuff>\verb+|}\]+\]
++%\[\verb+\[\hbox{|<verbatim stuff>|}\]+\]
+ % to get a~displayed shortverb. 
+ %
+-% Both versions of |\dekclubs| OCSR.
++% Both versions of |\dekclubs| \acro{OCSR}.
+ %
+ % The \env{verbatim} environment inserts |\topsep| before and after
+ % itself, just as in standard version (as if it was a~\env{list}).
+@@ -185,7 +191,7 @@
+ %   most probably.
+ % \end{gmlonely}
+ %
+-% \subdivision{Contents of the \pk{gmverb.zip} Archive}
++% \subdivision{Contents of the \pk{gmverb.zip} archive}
+ %
+ % The distribution of the \pk{gmverb} package consists of the
+ % following three files and a~\acro{TDS}-compliant archive.
+@@ -200,7 +206,7 @@
+ % also available on \acro{CTAN}.
+ %
+ % \begin{gmlonely}
+-%   \subdivision{Compiling the Documentation}
++%   \subdivision{Compiling of the documentation}
+ %
+ %   The last of the above files (the \pk{.pdf}, i.e., \emph{this
+ %     file}) is a~documentation compiled from the \pk{.sty} file by
+@@ -235,7 +241,7 @@
+ % \StopEventually{\NoEOF}
+ %
+ %
+-% \division{The Code}
++% \division{The code}
+ %
+ % \DoIndex{\verb \verb*}
+ % \subdivision{Preliminaries}
+@@ -264,7 +270,7 @@
+ % As you see, it's always global.
+ 
+ 
+-% \subdivision{The Breakables}
++% \subdivision{The breakables}
+ %
+ % Let's define a~|\discretionary| left brace such that if it breaks,
+ % it turns |{%| at the end of line. We'll use it in almost Knuthian ^^A}
+@@ -295,7 +301,7 @@
+ %\CodeEscapeChar\\
+ %
+ % Sometimes linebreaking at a~backslash may be unwelcome. The basic
+-% case, when the first CS in a~verbatim breaks at the lineend leaving
++% case, when the first \CS in a~verbatim breaks at the lineend leaving
+ % there |%|, is covered by line \ref{special opening bslash}. For the
+ % others let's give the user a~countercrank:
+ \newcommand*\fixbslash{\let\breakbslash=\bslash}% to use due to the
+@@ -351,8 +357,8 @@
+   \tt
+   \ttverbatim@hook}
+ 
+-% While typesetting stuff in the QX fontencoding I~noticed there were
+-% no spaces in verbatims. That was because the QX encoding doesn't
++% While typesetting stuff in the \acro{QX} fontencoding I~noticed there were
++% no spaces in verbatims. That was because the \acro{QX} encoding doesn't
+ % have any reasonable char at position 32. So we provide a~hook in
+ % the very core of the verbatim making macros to set proper
+ % fontencoding for instance.
+@@ -367,7 +373,7 @@
+ %
+ %^^A~|\meta| and pals moved to \pk{gmutils}
+ 
+-% \subdivision{The Core: From \pk{shortvrb}}
++% \subdivision{The core: from \pk{shortvrb}}
+ %
+ % The below is copied verbatim ;-) from
+ % \file{doc.pdf} and then is added my slight changes.
+@@ -443,7 +449,7 @@
+ % documentation. Here let's only say it's just amazing: so tricky and
+ % wicked use of |\do|. The internal macro |\rem@special| defines |\do|
+ % to expand to nothing if the |\do|'s argument is the one to be
+-% removed and to unexpandable CSs |\do| and \<\cs{do}'s argument>
++% removed and to unexpandable \CSs\ |\do| and \<\cs{do}'s argument>
+ % otherwise. With |\do| defined this way the entire list is just
+ % globally expanded itself. Analogous hack is done to the |\@sanitize|
+ % list. 
+@@ -465,7 +471,7 @@
+ % to allow the user to define his/her own environments with
+ % |\verbatim|  inside them. I.e., as with the \pk{verbatim} package,
+ % you may write |\verbatim| in the begdef of your environment and then
+-% necessarily |\endverbatim| in its enddef. Of course (or \emph {maybe ^^B
++% necessarily |\endverbatim| in its enddef. Of course (or maybe \emph{^^B
+ % surprisingly}), the commands written in the begdef after |\verbatim|
+ % will also be executed at \cs{begin\marg{environment}}.
+ % \Define*{verbatim}
+@@ -477,7 +483,7 @@
+   \hyphenpenalty=\gmv@hyphenpe\relax
+   \exhyphenpenalty=\gmv@exhyphenpe
+   \hyphenchar\font=\m@ne}% in the \LaTeX\ version
+-% there's |%\@vobeyspaces| instead of |%\gmobeyspaces|.
++% there's \incs{@vobeyspaces} instead of \incs{gmobeyspaces}.
+ % \changes{v0.73}{06/09/06}{\cs{@vobeyspaces} changed to 
+ %   \cs{obeyspaces} to make the blank \cs{verb/atim} spaces breakable}
+ % \Define*{verbatim*}
+@@ -619,7 +625,7 @@
+ \let\gm@verb@eol\verb@eol@error
+ % The latter is a~\LaTeXe\ kernel macro that |\active|ates line end
+ % and defines it to close the verb group and to issue an error
+-% message. We use a~separate CS 'cause we are not quite positive to
++% message. We use a~separate \CS 'cause we are not quite positive to
+ % the forbidden line ends idea. (Although the allowed line ends with
+ % a~forgotten closing shortverb char caused funny disasters at my
+ % work a~few times.) Another reason is that \pk{gmdoc} wishes to
+@@ -659,8 +665,8 @@
+ % And finally, what I~thought to be so smart and clever, now is just
+ % one of many possible uses of a~general almost Rainer Sch\"opf's
+ % macro:
+-% \Define\dekclubs
+-\def\dekclubs{\@ifstar{\OldMakeShortVerb\|}{\MakeShortVerb\|}}
++\def\dekclubs{\@ifstar{\MakeShortVerb*\|}{\MakeShortVerb\|}}
++\def\olddekclubs{\OldMakeShortVerb\|}
+ 
+ % But even if a~shortverb is unconditional, the spaces in the math
+ % mode are not printed. So, 
+@@ -680,7 +686,7 @@
+   % ^^A  \@xa\ verb\string
+   \hbox\bgroup\def\]{\egroup\gmv@edismath}}
+ 
+-%\subdivision{\pk{doc}- And \pk{shortvrb}-Compatibility}
++%\subdivision{\pk{doc}- and \pk{shortvrb}-compatibility}
+ %
+ % One of minor errors while \TeX ing \pk{doc.dtx} was caused by my
+ % understanding of a~`shortverb' char:  at my settings, in the math
+@@ -765,9 +771,13 @@
+ %
+ % \changes{v0.87}{2008/08/06}{visible space tidyied and taken from
+ %   \pk{xltxtra} if available. \pk{gmutils} required. The \cs{xii...}
+-%   \acro{CS}'es moved to \pk{gmutils}. The documentation driver moved
++%   \CSes moved to \pk{gmutils}. The documentation driver moved
+ %   into the \file{.sty} file}
+-
++%
++% \changes{v0.89}{2008/08/30}{\cs{dekclubs}, \cs{dekclubs*} and
++% \cs{olddekclubs} made more consistent, shorthands for
++% \cs{MakeShortVerb}\cmd\|, \cs{MakeShortVerb*}\cmd\| and
++% \cs{OldMakeShortVerb}\cmd{\|} respectively.}
+ 
+ % \PrintChanges \PrintIndex
+ % \Finale

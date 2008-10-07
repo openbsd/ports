@@ -1,0 +1,2057 @@
+$OpenBSD: patch-texmf-dist_tex_latex_gmutils_gmutils_sty,v 1.1 2008/10/07 20:54:35 steven Exp $
+--- texmf-dist/tex/latex/gmutils/gmutils.sty.orig	Wed Sep 17 02:48:43 2008
++++ texmf-dist/tex/latex/gmutils/gmutils.sty	Wed Sep 17 02:55:16 2008
+@@ -1,9 +1,12 @@
++% OpenBSD patch - Fixes gmutils conflicting with \nocite
+ %
+ % \GetFileInfo{gmutils.sty}
+ % \title{The \pk{gmutils} Package\thfileinfo}
+ % \author{Grzegorz Murzynowski}
+ % \maketitle
+ %
++% \let\ty\emph
++%
+ % \begin{copyrnote}
+ %
+ %%Written by Grzegorz Murzynowski,
+@@ -49,11 +52,15 @@
+ % \chschange{v0.90}{2008/8/4}{4035}
+ % \chschange{v0.91}{2008/8/6}{4055}
+ % \chschange{v0.92}{2008/8/11}{4133}
++% \chschange{v0.93}{2008/8/21}{4140}
++% \chschange{v0.93}{2008/8/30}{4501}
+ %
++%
+ % \skiplines we skip the driver 
+ \ifnum\catcode`\@=12
+ 
+-\documentclass[debug,countalllines,codespacesgrey,outeroff,pagella]{gmdocc}
++\documentclass[debug, countalllines, codespacesgrey, outeroff,
++pagella, fontspec=quiet]{gmdocc}
+ \usepackage{eufrak}% for |\continuum| in the commentary.
+ \twocoltoc
+ \begin{document}
+@@ -75,7 +82,7 @@
+ 
+ \NeedsTeXFormat{LaTeX2e}
+ \ProvidesPackage{gmutils}
+-     [2008/08/07 v0.92 some rather TeXnical macros, some of them tricky (GM)]
++     [2008/08/30 v0.93 some rather TeXnical macros, some of them tricky (GM)]
+ 
+ %
+ % \tableofcontents
+@@ -105,29 +112,28 @@
+ %   most probably.
+ % \end{gmlonely}
+ %
+-% \subdivision{Contents of the \pk{gmutils.zip} Archive}
++% \subdivision{Contents of the \pk{gmutils.zip} archive}
+ %
+ % The distribution of the \pk{gmutils} package consists of the
+-% following four files and a~\acro{TDS}-compliant archive.
++% following three files and a~\acro{TDS}-compliant archive.
+ % \begin{verse}
+ %   \pk{gmutils.sty}\\
+ %   \pk{README}\\
+-%   \pk{gmutilsDoc.tex}\\
+-%   \pk{gmutilsDoc.pdf}\\
++%   \pk{gmutils.pdf}\\
+ %   \pk{gmutils.tds.zip}
+ % \end{verse}
+ % 
+ % \begin{gmlonely}
+-%   \subdivision{Compiling of the Documentation}
++%   \subdivision{Compiling of the documentation}
+ %
+ %   The last of the above files (the \pk{.pdf}, i.e., \emph{this
+ %     file}) is a~documentation compiled from the \pk{.sty} file by
+-%   running \LaTeX\ on the \pk{gmutilsDoc.tex} file twice
++%   running \LaTeX\ on the \pk{gmutils.sty} file twice
+ %   (|xelatex gmutils.sty|  in the directory you wish the
+ %   documentation to be in, you don't have copy the \file{.sty} file
+ %   there, \TeX\ will find it),
+ %   then MakeIndex on the \file{gmutils.idx} file, and then \LaTeX\
+-%   on \file{gmutilsDoc.tex} once more.
++%   on \file{gmutils.sty} once more.
+ %
+ %   MakeIndex shell command:
+ %   \[\hbox{|makeindex -r gmutilsDoc|}\]
+@@ -149,13 +155,13 @@
+ % \end{gmlonely}
+ %
+ \ifx\XeTeXversion\relax
+-\let\XeTeXversion\@undefined% If someone earlier used the
+-                            % |\@ifundefined{XeTeXversion}| to test
+-% whether the engine is \XeTeX, then |\XeTeXversion| \emph{is} defined
++  \let\XeTeXversion\@undefined% If someone earlier used 
++% \inverb|\@ifundefined{XeTeXversion}| to test
++% whether the engine is \XeTeX, then \incs{XeTeXversion} \emph{is} defined
+ % in the sense of \eTeX\ tests. In that case we |\let| it to something
+-% really undefined. Well, we might keep sticking to |\@ifundefined|,
++% really undefined. Well, we might keep sticking to \incs{@ifundefined},
+ % but it's a~macro and it eats its arguments, freezing their catcodes,
+-% which is not what we want in line \ref{not@ifundef}
++% which is not what we want in line \ref{not@ifundef}.
+ \fi
+ 
+ \ifdefined\XeTeXversion
+@@ -164,12 +170,81 @@
+ 
+ 
+ % 
+-% \division{A~couple of abbreviations}
+-% \Define\@xa \Define\@nx
++% \subdivision{A~couple of abbreviations}
++% {\DoIndex{\@nx \@xa} \Define\@xa \Define\@nx
+ \let\@xa\expandafter
+ \let\@nx\noexpand
+ 
++%} \HideDefining*\pdef
++\def\pdef{\protected\def}
++%\changes{v0.93}{2008/08/20}{added}
++
++% And this one is defined, I~know, but it's not |\long| with the
++% standard definition and I~want to be able to |\gobble| a~|\par|
++% sometimes. 
++% \Define\gobbletwo
++\long\def\gobble#1{}
++% \Define\@gobble
++\let\@gobble\gobble
++\let\gobbletwo\@gobbletwo
++
++
++% \HideDefining*\provide 
++\long\pdef\provide#1{%\changes{v0.93}{2008/08/30}{added}
++  \ifdefined#1% \UnDef
++    \ifx\relax#1\afterfifi{\def#1}%
++    \else\afterfifi{\gmu@gobdef}% \UnDef
++    \fi
++  \else\afterfi{\def#1}%
++  \fi}
++
++
++\long\def\gmu@gobdef#1#{% \UnDef
++  \def\gmu@tempa{}% it's a~junk macro assignment
++  % to absorb possible prefixes.
++  \@gobble}
++
++% \HideDefining*\pprovide
++\def\pprovide{\protected\provide}
++% \changes[\pprovide]{v0.93}{2008/08/30}{added} Note that both
++% |\provide| and |\pprovide| may be prefixed with |\global|, |\outer|,
++% |\long| and |\protected| because the prefixes stick to |\def|
++% because all before it is expandable. If the condition(s) is false
++% (|#1| is defined) then the prefixes are absorbed by a~junk
++% assignment.
+ %
++% Note moreover that unlike \LaTeX's |\providecommand|, our
++% \cs{(p)provide} allow any parameters string just like |\def|
++% (because they just \emph{expand} to |\def|).
++%
++
++\long\def\@nameedef#1#2{% \changes{v0.93}{2008/08/30}{added}
++  \@xa\edef\csname#1\endcsname{#2}}
++
++% \subdivision{\cs{firstofone} and the queer \cs{catcode}s}
++%
++% Remember that once a~macro's argument has been read, its
++% |\catcode|s are assigned forever and ever. That's what is
++% |\firstofone| for. It allows you to change the |\catcode|s locally
++% for a~definition \emph{outside} the changed |\catcode|s' group.
++% Just see the below usage of this macro `with \TeX's eyes', as my
++% \TeX\ Guru taught me.
++%
++\long\def\firstofone#1{#1}
++
++% The next command, |\foone|, is intended as two-argument for
++% shortening of the |\bgroup...\firstofone{\egroup...}| hack.
++% 
++\long\def\foone#1{\bgroup#1\egroupfirstofone}
++% \UnDef
++\long\def\egroupfirstofone#1{\egroup#1}
++
++\long\def\fooatletter{\foone\makeatletter}
++
++
++
++% \subdivision{Global Boolean switches}
++%
+ % The |\newgif| declaration's effect is used even in the \LaTeXe\
+ % source by redefining some particular user defined ifs (UD-ifs
+ % henceforth) step by step.  The goal is to make the UD-if's
+@@ -178,7 +253,7 @@
+ % \LaTeX's |\newif| modulo the letter $g$ and the |\global| prefix.
+ % (File d: \file{ltdefns.dtx} Date: 2004/02/20 Version v1.3g, lines
+ % 139--150) \Define\newgif
+-\protected\def\newgif#1{%
++\pdef\newgif#1{%
+   {\escapechar\m@ne
+     \global\let#1\iffalse
+     \@gif#1\iftrue
+@@ -195,13 +270,13 @@
+   \@xa\@gobbletwo\string#2\endcsname
+   {\global\let#1#2}}
+ 
+-\protected\def\newif#1{% We not only make \incs{newif}
++\pdef\newif#1{% We not only make \incs{newif}
+   % \incs{protected} but also make it to define \cs{protected}
+   % assignments so that premature expansion doesn't affect
+   % \inverb|\if…\fi| nesting.
+  % \changes{v0.92}{2008/08/09}{added redefinition so that now
+  % switches defined with it are \cs{protected} so they won't expand to
+- % an further expanding or unbalanced \cs{iftrue/false} in an edef}
++ % a~further expanding or unbalanced \cs{iftrue/false} in an \cs{edef}}
+   \count@\escapechar \escapechar\m@ne
+   \let#1\iffalse
+   \@if#1\iftrue
+@@ -214,6 +289,9 @@
+   {\let#1#2}}
+ 
+ 
++\pdef\hidden@iffalse{\iffalse}
++\pdef\hidden@iftrue{\iftrue}
++
+ % After |\newgif\iffoo| you may type |{\foogtrue}| and the |\iffoo|
+ % switch becomes globally equal |\iftrue|. Simili modo |\foogfalse|.
+ % Note the letter $g$ added to underline globalness of the assignment.
+@@ -233,7 +311,7 @@
+ % Warning. I~use it because of very special reasons in \pk{gmdoc} and
+ % in general it is probably not a~good idea to make |\refstepcounter|
+ % global since it is contrary to the original \LaTeX\ approach.
+-\protected\def\grefstepcounter#1{%
++\pdef\grefstepcounter#1{%
+   {\let\protected@edef=\protected@xdef\refstepcounter{#1}}}
+ % Na\"\i{}ve first try |\globaldefs=\tw@| raised an error 
+ % |unknown command \reserved@e|. The matter was to globalize
+@@ -248,7 +326,7 @@
+ % touch \pk{hyperref}'s guts, so I~worked it around with ensuring
+ % every \cs{grefstepcounter} to be in hmode:
+ 
+-\protected\def\hgrefstepcounter#1{%
++\pdef\hgrefstepcounter#1{%
+   \ifhmode\leavevmode\fi\grefstepcounter{#1}}
+ 
+ % By the way I~read some lines from \TB\ and was reminded that
+@@ -256,7 +334,7 @@
+ % vertical. And I~use \cs{unskip} mostly to replace a~blank space with
+ % some fixed skip. Therefore define
+ 
+-\protected\def\hunskip{\ifhmode\unskip\fi}
++\pdef\hunskip{\ifhmode\unskip\fi}
+ 
+ % Note the two macros defined above are \cs{protected}. I~think it's
+ % a~good idea to make \cs{protected} all the macros that contain
+@@ -297,7 +375,7 @@
+ \long\def\addtotoks#1#2{%
+   #1=\@xa{\the#1#2}}
+ 
+-%\Define\@emptify \Define\emptify
++% \Define\emptify
+ \newcommand*\@emptify[1]{\let#1=\@empty}
+ \@ifdefinable\emptify{\let\emptify\@emptify}
+ 
+@@ -315,7 +393,84 @@
+ \newcommand*\g@relaxen{\global\@relaxen}
+ \@ifdefinable\grelaxen{\let\grelaxen\g@relaxen}
+ 
++% \subdivision{Apmpulex Compressa-like modifications of macros}
++% Ampulex Compressa is a~wasp that performs brain surgery on its
++% victim cockroach to lead it to its lair and keep alive for its
++% larva. Well, all we do here with the internal \LaTeX\ macros
++% resembles Ampulex's actions but here is a~tool for a~replacement of
++% part of macro's definition. 
++%
++% The \cs{ampulexdef} command takes its |#2| which has to be a~macro
++% and replaces part of its definition (delimited with |#3| and |#4|)
++% with the replacement |#5|. The redefinition may be prefixed with
++% |#1|. |#2| may have parameters and for such a~macro you have to set
++% the parameters string and arguments string  with the \cs{ampulexset}
++% declaration. If \cs{ampulexdef} doesn't find the sart and end tokens
++% in the meaning of the macro, it does nothing to it. For an example
++% use see line \ref{ampulexset}.
+ 
++\newcommand\ampulexdef[5][\relax]{%^^B
++  % \begin{enumargs}
++  % \item definition prefix,
++  % \item macro to be redefined,
++  % \item start token(s),
++  % \item end token(s)
++  % \item replacement.
++  % \end{enumargs}
++  % \changes{v0.93}{2008/08/29}{added}
++  \def\gmu@tempa{#3}%
++  \def\gmu@tempb{#4}%
++  \def\gmu@tempc{#5}% we wrap the start, end and replacement tokens in
++  % macros to avoid unbalanced \incs{if}s.
++  \edef\gmu@tempd{%
++    \long\def\@nx\gmu@tempd
++    ####1\all@other\gmu@tempa
++    ####2\all@other\gmu@tempb
++    ####3\@nx\gmu@tempd{%
++      \@ifempty{####3}{\hidden@iffalse}{\hidden@iftrue}}}%
++  %
++  \gmu@tempd% it defines \incs{gmu@tempc} to produce an open \incs{if}
++  % depending on whether the start and end token(s) are found in the
++  % meaning of \inverb|#2|.
++  %
++  \edef\gmu@tempe{%
++    \@nx\gmu@tempd\all@other#2%
++    \all@other\gmu@tempa
++    \all@other\gmu@tempb\@nx\gmu@tempd
++  }%
++  %
++  \gmu@tempe% we apply the checker and it
++  % produces an  open \incs{if}.
++  \edef\gmu@tempd{%
++    \long\def\@nx\gmu@tempd
++    ####1\@xa\unexpanded\@xa{\gmu@tempa}%
++    ####2\@xa\unexpanded\@xa{\gmu@tempb}%
++    ####3\@nx\ampulexdef{% we define a~temporary
++      % macro with the parameters delimited with the `start' and `end' parameters
++      % of \incs{ampulexdef}.
++      \@nx\unexpanded{####1}%
++      \@nx\@xa\@nx\unexpanded
++      \@nx\@xa{\@nx\gmu@tempc}%we replace the part of the redefined
++      % macro's meaning with the replacement text.
++      \@nx\unexpanded{####3}}}%
++  \gmu@tempd
++  % 
++  \edef\gmu@tempe{%
++    #1\def\@nx#2\gmu@ampulexpa{%
++      \@xa\@xa\@xa\gmu@tempd\@xa#2\gmu@ampulexpb
++      \ampulexdef}}%
++  \gmu@tempe
++  \fi}
++
++
++\long\def\ampulexset#1#2{%
++  \def\gmu@ampulexpa{#1}% it's the parameter string for definition
++  \def\gmu@ampulexpb{#2}% it's the arguments string for the first
++  % expansion. For the example of usage see \ref{ampulexset}.
++}
++
++\ampulexset{}{}
++
+ % For the heavy debugs I~was doing while preparing \pk{gmdoc}, as
+ % a~last resort I~used |\showlists|. But this command alone was
+ % usually too little: usually it needed setting |\showboxdepth| and
+@@ -396,7 +551,7 @@
+ % assigned for the future \cs{ifx} text, as we know. Therefore we call
+ % it \cs{@ifnextif}.
+ 
+-\long\def\@ifnextif#1#2#3{%
++\long\pdef\@ifnextif#1#2#3{%
+ % \changes{v0.75}{2007/01/01}{\cs{let} for \cs[\#]1 changed to
+ % \cs{def} to allow things like \cs{noexpand\*}}
+ % \HideDef
+@@ -430,10 +585,9 @@
+ % opener. We do that to avoid taking a~whole |{...}| as the argument
+ % of the next macro, that doesn't use |\futurelet| but takes the next
+ % token as an argument, tests it and puts back intact.
+-% \Define\@ifnextac
+ % \changes{v0.75}{2007/01/11}{added}
+ %
+-\long\def\@ifnextac#1#2{%
++\long\pdef\@ifnextac#1#2{%
+   \@ifnextcat\bgroup{#2}{\gm@ifnac{#1}{#2}}}
+ 
+ \long\def\gm@ifnac#1#2#3{%
+@@ -445,7 +599,8 @@
+ % char working as |\bgroup|?)
+ %
+ % \stanza Now, define a~test that checks whether the next token is
+-% a~genuine space, | |${}_{10}$ that is. First define a~CS let such
++% a~genuine space, | |${}_{10}$ that is. First define
++% a~\CS let such 
+ % a~space. The assignment needs a~little trick (\TeXbook\ appendix D)
+ % since |\let|'s syntax includes one optional space after |=|.
+ %
+@@ -467,9 +622,17 @@
+ % First use of this macro is for an active |-| that expands to |---|
+ % if followed by a~space. Another to make dot checking whether is
+ % followed by |~| without gobbling the space if it occurs instead.
++%
++% \stanza
++% Now a~test if the next token is an active line end. I~use it in
++% \pk{gmdoc} and later in this package for active long dashes.
+ 
+-% \division{\cs{afterfi} and Pals}
++\foone\obeylines{%
++  \long\pdef\@ifnextMac#1#2{%
++    \@ifnextchar^^M{#1}{#2}}}
+ 
++% \division{\cs{afterfi} and pals}
++
+ % It happens from time to time that you have some sequence of macros
+ % in an |\if...| and you would like to expand |\fi| before expanding
+ % them (e.g., when the macros should take some tokens next to |\fi...|
+@@ -482,17 +645,14 @@
+ % I~think the situations when the Knuthian (the former) trick is not
+ % available are rather seldom, but they are imaginable at least: the
+ % |\next| trick involves an assignment so it won't work e.g.\ in
+-% |\edef|. But in general it's only a~matter of taste which one to
+-% use.
++% |\edef|. 
+ %
+-% One warning: those macros peel the braces off, i.e., 
+-% \[|\if..\afterfi{\@makeother\^^M}\fi|\] 
+-% causes a~leakage of
+-% |^^M|\catother. To avoid pollution write 
+-% \[|\if..\afterfi{\bgroup\@makeother\^^M\egroup}\fi|\,.\] 
++%^^A % One warning: those macros peel the braces off, i.e., 
++%^^A % \[|\if..\afterfi{\@makeother\^^M}\fi|\] 
++%^^A % causes a~leakage of
++%^^A % |^^M|\catother. To avoid pollution write 
++%^^A % \[|\if..\afterfi{\bgroup\@makeother\^^M\egroup}\fi|\,.\] 
+ %
+-% \Define\afterfi \Define\afterfifi 
+-% \Define\afteriffifi
+ 
+ \long\def\afterfi#1#2\fi{\fi#1}
+ % And two more of that family:
+@@ -506,7 +666,7 @@
+ \long\def\afterfififi#1#2\fi#3\fi#4\fi{\fi\fi\fi#1}
+ 
+ % \division{Environments redefined}
+-% \subdivision{Almost an Environment or Redefinition of \cs{begin}}
++% \subdivision{Almost an environment or redefinition of \cs{begin}}
+ %
+ % We'll extend the functionality of |\begin|: the non-starred
+ % instances shall act as usual and we'll add the starred version. The
+@@ -568,7 +728,7 @@
+   \fi}%
+ 
+ 
+-%\subdivision{\cs{@ifenvir} and Improvement of \cs{end}}
++%\subdivision{\cs{@ifenvir} and improvement of \cs{end}}
+ %
+ % \changes{v0.74}{2006/11/27}{The catcodes of \cs{begin} and \cs{end}
+ % argument(s) don't have to agree strictly anymore: an environment is properly
+@@ -576,16 +736,18 @@
+ % same \cs{csname}}
+ %
+ % It's very clever and useful that |\end| checks whether its argument
+-% is |ifx|-equivalent |@currenvir|. However, in standard \LaTeX\ it
++% is |\ifx|-equivalent |\@currenvir|. However, in standard \LaTeX\ it
+ % works not quite as I~would expect: Since the idea of environment is
+-% to open a~group and launch the \acro{CS} named in the |\begin|'s
++% to open a~group and launch the \CS named in the |\begin|'s
+ %   argument. That last thing is done with |\csname...\endcsname| so
+-%   the char catcodes are equivalent. Thus should be also in the
+-%   |\end|'s test and therefore we ensure the compared texts are both
+-% expanded and made all `other'.
+-
++%   the catcodes of chars are irrelevant (until they are |\active|,
++%   ${}_1$, ${}_2$ etc.). Thus should be also in the |\end|'s test and
++% therefore we ensure the compared texts are both expanded and made
++% all `other'.
++%
+ % First a~(not expandable) macro that checks whether current
+-% environment is as given in |#1|.
++% environment is as given in |#1|. Why is this macro |\long|?---you
++% may ask. It's |\long| to allow evironments such as |\string\par|.
+ %
+ \long\def\@ifenvir#1#2#3{%\label{@ifenvir}
+   % \changes{v0.92}{2008/08/07}{added}
+@@ -601,8 +763,10 @@
+ % and end it with |\end{macrocode*}| with |*|\catletter\ (that was the
+ % problem that led me to this solution). The error messages looked
+ % really funny:
+-% $$\hbox{|! LaTeX Error: \begin{macrocode*} on input line 1844 ended by \end{macrocode*}.|}$$
+-% Of course, you might write
++%\begin{verbatim}
++%! LaTeX Error: \begin{macrocode*} on input line 1844 ended by \end{macrocode*}.
++%\end{verbatim}
++% You might also write
+ % also |\end{macrocode\star}| where |\star| is defined as `other' star
+ % or letter star.
+ 
+@@ -633,7 +797,7 @@
+ % doesn't issue an error if its argument has been defined and it only
+ % informs about redefining, loading \pk{relsize} remains allowed.)
+ % \Define\relsize
+-\DeclareRobustCommand*\relsize[1]{%
++\pdef\relsize#1{%
+   \ifmmode \@nomath\relsize\else
+     \begingroup
+      \@tempcnta % assign number representing current font size
+@@ -660,11 +824,9 @@
+           \rs@size@warning{large}{\string\Huge}\Huge
+ \fi\fi}% end of |\relsize|.
+ 
+-% \Define\rs@size@warning
+ \providecommand*\rs@size@warning[2]{\PackageWarning{gmutils (relsize)}{%
+  Size requested is too #1.\MessageBreak Using #2 instead}}
+ 
+-% \Define\rs@unknown@warning
+ \providecommand*\rs@unknown@warning{\PackageWarning{gmutils (relsize)}{Current font size 
+  is unknown! (Why?!?)\MessageBreak Assuming \string\normalsize}}
+ 
+@@ -674,44 +836,15 @@
+ \DeclareRobustCommand*\smaller[1][\@ne]{\relsize{-#1}}
+ \DeclareRobustCommand*\textlarger[2][\@ne]{{\relsize{+#1}#2}}
+ \DeclareRobustCommand*\textsmaller[2][\@ne]{{\relsize{-#1}#2}}
+-\DeclareRobustCommand*\largerr{\relsize{+2}}
+-\DeclareRobustCommand*\smallerr{\relsize{-2}}
++\pdef\largerr{\relsize{+2}}
++\pdef\smallerr{\relsize{-2}}
+ 
+-% \division{\cs{firstofone} and the Queer \cs{catcode}s}
+-%
+-% Remember that once a~macro's argument has been read, its
+-% |\catcode|s are assigned forever and ever. That's what is
+-% |\firstofone| for. It allows you to change the |\catcode|s locally
+-% for a~definition \emph{outside} the changed |\catcode|s' group.
+-% Just see the below usage of this macro `with \TeX's eyes', as my
+-% \TeX\ Guru taught me.
+-%
+-\long\def\firstofone#1{#1}
+ 
+-% The next command, |\foone|, is intended as two-argument for
+-% shortening of the |\bgroup...\firstofone{\egroup...}| hack.
+-% 
+-\long\def\foone#1{\bgroup#1\egroupfirstofone}
+-% \UnDef
+-\long\def\egroupfirstofone#1{\egroup#1}
+-
+-\long\def\fooatletter{\foone\makeatletter}
+-
+-
+-
+-% And this one is defined, I~know, but it's not |\long| with the
+-% standard definition.
+-% \Define\gobbletwo
+-\long\def\gobble#1{}
+-\let\@gobble\gobble
+-\let\gobbletwo\@gobbletwo
+-
+-
+ % \division{Some `other' stuff}
+ % Here I~define a~couple of macros expanding to special chars made
+-% `other'. It's important the \acro{CS} are expandable and therefore
++% `other'. It's important the \CS are expandable and therefore
+ % they can occur e.g. inside |\csname...\endcsname| unlike e.g.
+-% \acro{CS}'es |\chardef|ed.
++% \CS'es |\chardef|ed.
+ %
+ % \Define\subs
+ \foone{\catcode`\_=8 }%
+@@ -804,7 +937,7 @@
+ %^^A~\ifx\l@nohyphenation\undefined
+ %^^A~  \newlanguage\l@nohyphenation
+ %^^A~\fi
+-\DeclareRobustCommand*\meta[1]{%
++\pdef\meta#1{%
+ % \begin{quotation}
+ % Since the old implementation of |\meta| could be used in math we better ensure
+ % that this is possible with the new one as well. So we use |\ensuremath| around
+@@ -842,7 +975,7 @@
+ % \Define*{\<...>}
+ \def\<#1>{\meta{#1}}
+ 
+-% \division{Macros for Printing Macros and Filenames}
++% \division{Macros for printing macros and filenames}
+ %
+ % First let's define three auxiliary macros analogous to |\dywiz| from
+ % \pk{polski.sty}: a~shorthands for |\discretionary| that'll stick to
+@@ -860,32 +993,29 @@
+ % has its original meaning inside math.
+ \def\:{\ifmmode\afterfi{\mskip\medmuskip}\else\afterfi{\discret{}}\fi}
+ 
+-% \Define\vs
+ \newcommand*{\vs}{\discre{\visiblespace}{}{\visiblespace}}
+ 
+ % Then we define a~macro that makes the spaces visible even if used in
+ % an argument (i.e., in a~situation where re|\catcode|ing has no
+ % effect).
+ %
+-% \Define\printspaces
+ \def\printspaces#1{{\let~=\vs \let\ =\vs \gm@pswords#1 \@@nil}}
+ % \DefIndex\gm@pswords
+ \def\gm@pswords#1 #2\@@nil{%
+   \ifx\relax#1\relax\else#1\fi
+   \ifx\relax#2\relax\else\vs\penalty\hyphenpenalty\gm@pswords#2\@@nil\fi}% note 
+-% that in the recursive call of |\gm@pswords| the argument string is
++% that in the recursive call of \incs{gm@pswords} the argument string is
+ % not extended with a~guardian space: it has been already by
+-% |\printspaces|.
++% \incs{printspaces}.\ilrr
+ 
+-% \Define\sfname \Define\file
+-\DeclareRobustCommand*\sfname[1]{\textsf{\printspaces{#1}}}
++\pdef\sfname#1{\textsf{\printspaces{#1}}}
+ 
+ \def\gmu@discretionaryslash{\discre{/}{\hbox{}}{/}}% the second
+-                                % pseudo-argument nonempty to get
+-                                % |\hyphenpenalty| not |\exhyphenpenalty|.
++% pseudo-argument nonempty to get
++% \incs{hyphenpenalty} not \incs{exhyphenpenalty}.\ilrr
+ 
+ 
+-\DeclareRobustCommand*\file[1]{\gmu@printslashes#1/\gmu@printslashes}
++\pdef\file#1{\gmu@printslashes#1/\gmu@printslashes}
+ 
+ \def\gmu@printslashes#1/#2\gmu@printslashes{%
+   \sfname{#1}%
+@@ -900,7 +1030,7 @@
+ 
+ % The below macro I~use to format the packages' names.
+ % \Define\pk
+-\DeclareRobustCommand*{\pk}[1]{\textsf{\textup{#1}}}
++\pdef\pk#1{\textsf{\textup{#1}}}
+ 
+ % Some (if not all) of the below macros are copied from \pk{doc}
+ % and/or \pk{ltxdoc}.
+@@ -917,11 +1047,11 @@
+ 
+ % \Define\env
+ % \changes{v0.66}{06/09/29}{the braces removed}
+-\DeclareRobustCommand*{\env}[1]{\cs[]{#1}}
++\pdef\env#1{\cs[]{#1}}
+ 
+ % And for the special sequences like |^^A|:
+ \foone{\@makeother\^}
+-  {\DeclareRobustCommand*\hathat[1]{\cs[^^]{#1}}}
++  {\pdef\hathat#1{\cs[^^]{#1}}}
+ 
+ 
+ % And one for encouraging linebreaks e.g., before long verbatim words.
+@@ -969,26 +1099,35 @@
+         \@pargp\marg}}\fi}%
+ }
+ 
+-% \division{Storing and Restoring the Meanings of CSs}
++% Now you can write 
++%\begin{verse}
++% |\arg{mand. arg}| to get \arg{mand. arg},\\
++% |\arg[opt. arg]| for \arg[opt. arg] and\\
++% |\arg(pict. arg)| for \arg(pict. arg).\\
++% And |$\arg(1+i) = \pi/4$| for $\arg(1+i) = \pi/4$.
++% \end{verse}
++% 
++
++% \division{Storing and restoring the meanings of \CSs}
+ %
+-% First a~Boolean switch af globalness of assignments and 
++% First a~Boolean switch of globalness of assignments and 
+ % its verifier.
+ \newif\ifgmu@SMglobal
+ 
+-\def\SMglobal{\gmu@SMglobaltrue}
++\pdef\SMglobal{\gmu@SMglobaltrue}
+ % The subsequent commands are defined in such a~way that you can
+ % `prefix' them with |\SMglobal| to get global (re)storing.
+ % \stanza
+-% A~command to store the current meaning of a~CS in another macro to
+-% temporarily redefine the CS and be able to set its original meanig
++% A~command to store the current meaning of a~\CS in another macro to
++% temporarily redefine the \CS and be able to set its original meanig
+ % back (when grouping is not recommended):
+ %
+ %\Define\StoreMacro
+ %\changes{v0.61}{06/09/05}{added.}
+ %\changes{v0.67}{06/10/11}{enriched with \cs{makeatletter}}
+-\def\StoreMacro{%
++\pdef\StoreMacro{%
+   \bgroup\makeatletter\@ifstar\egStore@MacroSt\egStore@Macro}
+-% The unstarred version takes a~\acro{CS} and the starred version
++% The unstarred version takes a~\CS and the starred version
+ % a~text, which is intended for special control sequences. For storing
+ % environments there is a~special command in line \ref{StoreEnvironment}.
+ 
+@@ -1007,9 +1146,10 @@
+     \ifgmu@SMglobal\global\fi
+     \@nx\let\@xa\@nx\csname/gmu/store\bslash#1\endcsname%\label{SMbslash}
+     % we add backslash because to ensure compatibility between
+-    % \cs{(Re)StoreMacro} and \cs{(Re)StoreMacro*}, that is. to allow
+-    % writing e.g.  |\StoreMacro\kitten| and then
+-    % |\RestoreMacro*{kitten}| to restore the meaning of |\kitten|.
++    % \incs{(Re)StoreMacro} and \incs{(Re)StoreMacro*}, that is. to allow
++    % writing e.g.  \inverb|\StoreMacro\kitten| and then
++    % \inverb|\RestoreMacro*{kitten}| to restore the meaning of
++    % \incs{kitten}.\ilrr
+     \@xa\@nx\csname#1\endcsname}
+   \gmu@smtempa
+   \global\gmu@SMglobalfalse}% we wish the globality to be just
+@@ -1024,11 +1164,11 @@
+ % |\csname foo \endcsname|.
+ % 
+ %
+-% The next command iterates over a~list of CSs and stores each of
+-% them. The CS may be separated with commas but they don't have to.
++% The next command iterates over a~list of \CSs and stores each of
++% them. The \CS may be separated with commas but they don't have to.
+ % \Define\StoreMacros
+ 
+-\long\def\StoreMacros{\bgroup\makeatletter\Store@Macros}
++\long\pdef\StoreMacros{\bgroup\makeatletter\Store@Macros}
+ \long\def\Store@Macros#1{\egroup
+   \gmu@setsetSMglobal
+   \let\gml@StoreCS\Store@Macro
+@@ -1054,19 +1194,18 @@
+     % contain commas and that's O.K., we just continue the work.
+       \afterfifi\gml@storemacros
+     \else% what is else this shall be stored.
+-      \gml@StoreCS{#1}% we use a~particular CS to may |\let| it both to
++      \gml@StoreCS{#1}% we use a~particular \CS to may |\let| it both to
+       % the storing macro as above and to the restoring one as
+       % \gmiflink[letRestore]{below}. 
+       \afterfifi{\gmu@setSMglobal\gml@storemacros}%
+     \fi
+   \fi}
+ 
+-
+ % And for the restoring
+ %\Define\RestoreMacro
+ %\changes{v0.61}{06/09/05}{added.}
+ %\changes{v0.67}{06/10/11}{enriched with \cs{makeatletter}}
+-\def\RestoreMacro{%
++\pdef\RestoreMacro{%
+   \bgroup\makeatletter\@ifstar\egRestore@MacroSt\egRestore@Macro}
+ 
+ \long\def\egRestore@Macro#1{\egroup\Restore@Macro{#1}}
+@@ -1088,12 +1227,12 @@
+   \global\gmu@SMglobalfalse}
+ 
+ % \Define\RestoreMacros
+-\long\def\RestoreMacros{\bgroup\makeatletter\Restore@Macros}
++\long\pdef\RestoreMacros{\bgroup\makeatletter\Restore@Macros}
+ 
+ \long\def\Restore@Macros#1{\egroup
+   \gmu@setsetSMglobal
+   \let\gml@StoreCS\Restore@Macro% \gmhypertarget[letRestore]{we}
+-  % direct the core CS towards restoring and call the same iterating
++  % direct the core \CS towards restoring and call the same iterating
+   % macro as in line \ref{InnerStore}.
+   \gml@storemacros#1.}
+ % As you see, the |\RestoreMacros| command uses the same iterating
+@@ -1104,17 +1243,17 @@
+ \def\StoredMacro{\bgroup\makeatletter\Stored@Macro}
+ \long\def\Stored@Macro#1{\egroup\Restore@Macro#1#1}
+ 
+-% To be able to call a~stored \acro{CS} without restoring it.
++% To be able to call a~stored \CS without restoring it.
+ \def\storedcsname#1{%% \changes{v0.88}{2008/08/03}{added}
+   \csname /gmu/store\bslash#1\endcsname}
+ 
+ 
+ % 2008/08/03 we need to store also an environment.
+-\def\StoreEnvironment#1{% \label{StoreEnvironment}
++\pdef\StoreEnvironment#1{% \label{StoreEnvironment}
+ % \changes{v0.88}{2008/08/03}{added}
+   \StoreMacro*{#1}\StoreMacro*{end#1}}
+ 
+-\def\RestoreEnvironment#1{%
++\pdef\RestoreEnvironment#1{%
+ % \changes{v0.88}{2008/08/03}{added}
+   \RestoreMacro*{#1}\RestoreMacro*{end#1}}
+ 
+@@ -1159,7 +1298,6 @@
+ % Note that both |\StoringAndRelaxingDo| and |\RestoringDo| are
+ % sensitive to the |\SMglobal| `prefix'.
+ 
+-
+ % And to store a~cs as explicitly named cs, i.e. to |\let| one csname
+ % another (|\n@melet| not |\@namelet| becasuse the latter is defined
+ % in Till Tantau's \pk{beamer} class another way) (both arguments
+@@ -1218,19 +1356,34 @@
+ 
+ % A~subtle error raises: the \LaTeX\ standard |\@onlypreamble| and
+ % what |\document| does with |\@preamblecmds| makes any two of `only
+-% preamble' \acro{CS}'s |\ifx|-identical inside \env{document}. And my
+-% change makes any two \acro{CS}'s |\ifx|-different. The first it
+-% causes a~problem is |\nocite| that checks
++% preamble' \CS's |\ifx|-identical inside \env{document}. And my
++% change makes any two \CS's |\ifx|-different. The first it
++% causes a~problem with is standard \LaTeX's |\nocite| that checks
+ % |\ifx\@onlypreamble\document|. So hoping this is a~rare problem, we
+-% circumvent in with
++% circumvent in with. 2008/08/29 a~bug is reported by Edd Barrett that
++% with \pk{natbib} an `extra \}' error occurs so we wrap the fix in
++% a~conditional. 
+ 
+-\def\nocite#1{%
+-  \@bsphack{\setbox0=\hbox{\cite{#1}}}\@esphack}
++% \changes[\nocite]{v0.93}{2008/08/29}{a~bug fixed: with \pk{natbib}
++% an `extra \}' error. Now it fixes only the standard version of
++% \cs{nocite}}
+ 
+ 
++\def\gmu@nocite@ampulex{% we wrap the stuff in a~macro to hide an open
++  % \incs{if}. And not to make the begin-input hook not too large.
++  \ampulexset{########1}{{####1}}% \label{ampulexset} the first is the
++  % parameters string and the second the argument for one-level
++  % expansion of \incs{nocite} so it has to consist of two times less
++  % hashes than the first. Both hash strings are doubled to pass the
++  % first \incs{def}.
++  \ampulexdef\nocite\ifx
++  {\@onlypreamble\document}%
++  \iftrue}
+ 
++\AtBeginDocument\gmu@nocite@ampulex
+ 
+-% \division{Third Person Pronouns}
++
++% \division{Third person pronouns}
+ %
+ % Is a~reader of my documentations `she' or 'he' and does it make
+ % a~difference?
+@@ -1270,48 +1423,47 @@
+ \newcommand*\HimHer{\gm@atppron{Him}{Her}}
+ \newcommand*\HisHers{\gm@atppron{His}{Hers}}
+ 
+-% \division[To Save Precious Count Registers]{\gmhypertarget{To Save Precious Count Registers}}
+-%
+-% It's a~contribution to \TeX's ecology \gobble(;-). You can use as
+-% many CSs as you wish and you may use only 256 count registers
+-% (although in \eTeX\ there are $2^{16}$ count registers, which makes
+-% the following a~bit obsolete).
++%^^A % \division[To Save Precious Count Registers]{\gmhypertarget{To Save Precious Count Registers}}
++%^^A %
++%^^A % It's a~contribution to \TeX's ecology \gobble(;-). You can use as
++%^^A % many \CSs as you wish and you may use only 256 count registers
++%^^A % (although in \eTeX\ there are $2^{16}$ count registers, which makes
++%^^A % the following a~bit obsolete).
++%^^A 
++%^^A \newcommand*\nummacro[1]{\gdef#1{0}}
++%^^A 
++%^^A \newcommand*\stepnummacro[1]{%
++%^^A   \@tempcnta=#1\relax
++%^^A   \advance\@tempcnta by1\relax
++%^^A   \xdef#1{\the\@tempcnta}}% Because of some mysterious reasons
++%^^A % explicit |\count0| interferred with page
++%^^A % numbering when used in |\gmd@evpaddonce| in \pk{gmdoc}.
++%^^A 
++%^^A 
++%^^A 
++%^^A \newcommand*\addtonummacro[2]{%
++%^^A   \count0=#1\relax
++%^^A   \advance\count0by#2\relax
++%^^A   \xdef#1{\the\count\z@}}
++%^^A % Need an explanation? The |\nummacro| declaration defines its
++%^^A % argument (that should be a~\CS) as |{0}| which is analogous to
++%^^A % |\newcount| declaration but doesn't use up any count register.
++%^^A %
++%^^A % Then you may use this numeric macro as something between \TeX's
++%^^A % count \CS and \LaTeX's counter. The macros |\stepnummacro| and
++%^^A % |\addtonummacro| are analogous to \LaTeX's |\stepcounter| and
++%^^A % |\addtocounter| respectively: |\stepnummacro| advances the number
++%^^A % stored in its argument by 1 and |\addtonummacro| advances it by the
++%^^A % second argument. As the \LaTeX's analogoi, they have the global effect
++%^^A % (the effect of global warming \gobble(;-)\,).
++%^^A %
++%^^A % So far I've used only |\nummacro| and |\stepnummacro|. Notify me if
++%^^A % you use them and whether you need sth.\ more, |\multiplynummacro|
++%^^A % e.g. 
++%^^A %
+ 
+-\newcommand*\nummacro[1]{\gdef#1{0}}
+-
+-\newcommand*\stepnummacro[1]{%
+-  \@tempcnta=#1\relax
+-  \advance\@tempcnta by1\relax
+-  \xdef#1{\the\@tempcnta}}% Because of some mysterious reasons
+-% explicit |\count0| interferred with page
+-% numbering when used in |\gmd@evpaddonce| in \pk{gmdoc}.
+-
+-
+-
+-\newcommand*\addtonummacro[2]{%
+-  \count0=#1\relax
+-  \advance\count0by#2\relax
+-  \xdef#1{\the\count\z@}}
+-% Need an explanation? The |\nummacro| declaration defines its
+-% argument (that should be a~CS) as |{0}| which is analogous to
+-% |\newcount| declaration but doesn't use up any count register.
++% \division{Improvements to \pk{mwcls} sectioning commands}
+ %
+-% Then you may use this numeric macro as something between \TeX's
+-% count CS and \LaTeX's counter. The macros |\stepnummacro| and
+-% |\addtonummacro| are analogous to \LaTeX's |\stepcounter| and
+-% |\addtocounter| respectively: |\stepnummacro| advances the number
+-% stored in its argument by 1 and |\addtonummacro| advances it by the
+-% second argument. As the \LaTeX's analogoi, they have the global effect
+-% (the effect of global warming \gobble(;-)\,).
+-%
+-% So far I've used only |\nummacro| and |\stepnummacro|. Notify me if
+-% you use them and whether you need sth.\ more, |\multiplynummacro|
+-% e.g. 
+-%
+-
+-
+-% \division{Improvements to \pk{mwcls} Sectioning Commands}
+-%
+ % That is, `Expe-ri-mente'\footnote{A.\ Berg, \textit{Wozzeck}.} mit MW
+ % sectioning \& \cs{refstepcounter} to improve \pk{mwcls}'s cooperation
+ % with \pk{hyperref}. They shouldn't make any harm if another class
+@@ -1332,7 +1484,7 @@
+     \setcounter{NoNumSecs}{617}% to make |\ref|ing to an unnumbered section
+     % visible (and funny?).
+     \def\gm@hyperrefstepcounter{\refstepcounter{NoNumSecs}}%
+-    \DeclareRobustCommand*\gm@targetheading[1]{%
++    \pdef\gm@targetheading#1{%
+       \hypertarget{#1}{#1}}}% end of then
+   {\def\gm@hyperrefstepcounter{}%
+     \def\gm@targetheading#1{#1}}% end of else
+@@ -1408,7 +1560,7 @@
+        \global\@topnum\z@
+   \fi% of |\if\mw@HeadingBreakBefore|
+ %%
+-% placement of |\refstep| suggested by me (GM)
++% placement of |\refstep| suggested by me (GM):\nostanza
+   \ifHeadingNumbered
+     \refstepcounter{#1}%
+     \protected@edef\HeadingNumber{\csname the#1\endcsname\relax}%
+@@ -1485,10 +1637,13 @@
+   \else\mw@setflags{#2}%
+   \fi}
+ 
+-\def\mw@secdef#1#2#3#4{% |#1| the heading name,\\
+-% |%| |#2| the command distinctor, \\
+-% |%| |#3| the meaning, \\
+-% |%| |#4| the number of argument to error message.
++\def\mw@secdef#1#2#3#4{% ^^B
++% \begin{enumargs}
++% \item  the heading name,
++% \item  the command distinctor,
++% \item  the meaning,
++% \item  the number of argument to error message.
++% \end{enumargs}
+   \@ifempty{#3}
+     {\mw@secundef{#1#2}{#4}}
+     {\@namedef{#1#2}{#3}}}
+@@ -1501,7 +1656,7 @@
+       Provide the #2 argument of \bslash SetSectionFormatting.}}{}}
+ 
+ 
+-% First argument is a~sectioning command (wo. |\|) and second the
++% First argument is a~sectioning command (wo.\ the backslash) and second the
+ % stuff to be added at the beginning of the heading declarations.
+ \def\addtoheading#1#2{%
+     \n@melet{gmu@reserveda}{#1@head}%
+@@ -1522,7 +1677,7 @@
+ % to introduce a~check whether the previous vertical space equals the
+ % postskip of the section one level higher.
+ 
+-\@ifnotmw{}{% We proceed only in \acro{MWCLS}
++\@ifnotmw{}{% We proceed only in \acro{MWCLS}.
+   
+ % The information that we are just after a~heading will be stored in
+ % the |\gmu@prevsec| macro: any heading will define it as the section
+@@ -1547,7 +1702,7 @@
+ % level lower I~suppose), then we add the less of the higher header's
+ % post-skip and the lower header pre-skip or, if defined, the
+ % two-header-skip. (We put the macro defined below just before
+-% |\addvspace| in MWCLS inner macros.)
++% |\addvspace| in \pk{mwcls} inner macros.)
+ \def\gmu@checkaftersec{%
+   \@ifundefined{gmu@prevsec}{}{%
+     \ifgmu@postsec% an additional switch that is true by default but
+@@ -1579,12 +1734,12 @@
+       \relax}%
+     \penalty10000
+     \hrule height\z@\relax% to hide the last (un)skip before subsequent
+-    % |\addvspace|s. 
++    % \incs{addvspace}s. \ilrr
+     \penalty10000
+     \fi
+     \fi
+-  }% of |\@ifundefined{gmu@prevsec}| `else'
+-}% of |\def\gmu@checkaftersec|
++  }% of |\@ifundefined{gmu@prevsec}| `else'.
++}% of |\def\gmu@checkaftersec|.
+ 
+ \def\ParanoidPostsec{% \label{gmu@postsec} this version of
+   % \inverb|\ifgmu@postsec| is intended for the special case of
+@@ -1615,7 +1770,7 @@
+ 
+ \def\SetTwoheadSkip#1#2{\@namedef{#1@twoheadskip}{#2}}
+ 
+-}% of |\@ifnotmw|
++}% of |\@ifnotmw|.
+ 
+ 
+ % \subdivision{My heading setup for \pk{mwcls}}
+@@ -1676,7 +1831,7 @@
+ }% of |\@ifnotmw|
+ 
+ 
+-% \division{Compatibilising Standard and \pk{mwcls} Sectionings}
++% \division{Compatibilising standard and \pk{mwcls} sectionings}
+ %
+ % If you use Marcin Woli\nacute ski's document classes (\pk{mwcls}), you
+ % might have met their little queerness: the sectioning commands take
+@@ -1728,7 +1883,7 @@
+         % appropriate argument.
+         \csname gm@true@#1mark\endcsname{#2}%
+         \n@melet{#1mark}{gm@true@#1mark}% after we've done what we
+-        % wanted we restore original |\#1mark|.
++        % wanted we restore original |\#1mark|.\ilrr
+       }%
+       \def\gm@secstar{[#3]}% if |\gm@secstar|
+     % is empty, which means the sectioning command was written
+@@ -1821,7 +1976,7 @@
+ 
+ 
+ 
+-% \division{The Logos}
++% \division{The logos}
+ %
+ % We'll modify The \LaTeX\ logo now to make it fit better to various
+ % fonts. 
+@@ -1831,12 +1986,14 @@
+ 
+ \def\TeX{T\kern-.1667em\lower.5ex\hbox{E}\kern-.125emX\@}
+ 
+-\newcommand*\DeclareLogo[3][\relax]{%
+-  % |#1| is for non-\LaTeX\ spelling and will be used in the PD1
+-  % encoding (to make pdf bookmarks);\\
+-  % |#2| is the command, its name will be the PD1 spelling by
+-  % default,\\ 
+-  % |#3| is the definition for all the font encodings except PD1.
++\newcommand*\DeclareLogo[3][\relax]{% \begin{enumargs}
++  % \item  is for non-\LaTeX\ spelling and will be used in the
++  % \acro{PD1} encoding (to make pdf bookmarks);
++  % \item is the command, its name will be the PD1 spelling by
++  % default,
++  % \item is the definition for all the font encodings except PD1.
++  % \end{enumargs}
++  % 
+   \ifx\relax#1\def\gmu@reserveda{\@xa\@gobble\string#2}%
+   \else
+     \def\gmu@reserveda{#1}%
+@@ -1845,7 +2002,7 @@
+     \@nx\DeclareTextCommand\@nx#2{PD1}{\gmu@reserveda}}
+   \gmu@reserveda
+   \DeclareTextCommandDefault#2{#3}%
+-  \DeclareRobustCommand*#2{#3}}% added for \XeTeX
++  \pdef#2{#3}}% added for \XeTeX
+ 
+ % \DeclareDefining\DeclareLogo
+ \DeclareLogo\LaTeX{%
+@@ -1961,36 +2118,30 @@
+ % you get as the Unicode Latin Letter Reversed E.
+ 
+ 
+-% \division{Expanding turning stuff all into `other'}
++% \division{Expandable turning stuff all into `other'}
+ 
+ % While typesetting a~unicode file contents with \pk{inputenc} package
+ % I~got a~trouble with some Unicode sequences that expanded to
+-% unexpandable CSs: they could'nt be used within
++% unexpandable \CSs: they could'nt be used within
+ % |\csname...\endcsname|. My \TeX Guru advised to use |\meanig| to
+ % make all the name `other'. So---here we are.
+ %
+ % Don't use them in |\edef|s, they would expand not quite.
+ % \Define\unex@namedef \Define\unex@nameuse
+ 
+-%^^A~% The next macro turns its |#2| all into `other' chars and assigns
+-%^^A~% them to |#1| which has to be a~\acro{CS} or an active char.
+-%^^A~% \Define\def@other
+-%^^A~\long\def\def@other#1#2{%
+-%^^A~  \long\def\gm@def@other@tempa{#2}%
+-%^^A~  \all@other#1{#2}}
+ 
+ % The next macro is intended to be put in |\edef|s with a~macro
+ % argument. The meaning of the macro will be made all `other' and the
+ % words '(long) macro:->' gobbled.
+ %\Define\all@other
+-\def\all@other#1{\@xa\gm@gobmacro\meaning#1}
++\long\def\all@other#1{\@xa\gm@gobmacro\meaning#1}
+ 
+ % The |\gm@gobmacro| macro above is applied to gobble the |\meaning|'s
+ % beginnig, |long macro:->| all `other' that is. Use of it: 
+ % \Define\gm@gobmacro
+-\edef\gmu@reserveda{%
+-  \def\@nx\gm@gobmacro##1\@xa\@gobble\string\macro:->{}}
+-\gmu@reserveda
++\edef\gmu@tempa{%
++  \def\@nx\gm@gobmacro##1\@xa\@gobble\string\macro:##2->{}}
++\gmu@tempa
+ 
+ % In the next two macros' names, `unex' stands both for not expanding
+ % the argument(s) and for disastrously partial unexpandability of the
+@@ -2017,11 +2168,6 @@
+ \def\XeTeXthree{% \changes{v0.90}{2008/8/4}{adjusted to the redefinition of
+   % \cs{verb} in  \pk{xlxtra} 2008/07/29}
+   \@ifXeTeX{%
+-    % ^^A    \SMglobal\StoreMacro\LaTeX
+-    % ^^A    \SMglobal\StoreMacro*{LaTeX }% we want \emph{our} version
+-    % ^^A of |\LaTeX|.
+-    % ^^A    \RequirePackage{fontspec}% these two packages are loaded
+-    % ^^A    \RequirePackage{xunicode}% by \pk{xltxtra}
+     \@ifpackageloaded{gmverb}{\StoreMacro\verb}{}% 
+     \RequirePackage{xltxtra}% since v 0.4 (2008/07/29) this package
+     % redefines |\verb| and \env{verbatim*},
+@@ -2034,17 +2180,16 @@
+     \AtBeginDocument{%
+       \RestoreMacro\LaTeX\RestoreMacro*{LaTeX }}% my version of the
+     % \LaTeX\ logo has been stored just
+-    % after defining, in line \ref{SMLaTeX}.
++    % after defining, in line \ref{SMLaTeX}. \ilrr
+     % ^^A \def\dekfracc##1/##2{\vfrac{##1}{##2}}
+ }{}}
+ 
+-
+-% The |\udigits| declaration causes the digits to be typeset
++% \indent The |\udigits| declaration causes the digits to be typeset
+ % uppercase. I~provide it since by default I~prefer the lowercase
+ % (nautical) digits.
+ \AtBeginDocument{%
+   \@ifpackageloaded{fontspec}{%
+-    \DeclareRobustCommand*\udigits{%
++    \pdef\udigits{%
+       \addfontfeature{Numbers=Uppercase}}%
+   }{%
+     \emptify\udigits}}
+@@ -2055,7 +2200,8 @@
+ \def\Xedekfracc{\@ifstar\gmu@xedekfraccstar\gmu@xedekfraccplain}
+     % (plain) The starless version turns the font feature |frac| on. 
+     % 
+-    % (*) But nor Minion GM neither \TeX\ Gyre Pagella doesn't feature the
++    % (*) But nor my modification of Minion Pro neither \TeX\ Gyre
++    % Pagella doesn't feature the
+     % |frac| font feature properly so, with the starred version of the
+     % declaration we use the characters from the font where available
+     % (see the |\@namedef|s below) and the |numr| and |dnom| features
+@@ -2123,7 +2269,7 @@
+ % 4. (The \LaTeXe\ Source claims that that is changed in the `new
+ % implementation' of |\@ifstar| so maybe it's subject to change.)
+ 
+-% A~simpler version of |\dekfracc| is provided in line \ref{2292}
++% A~simpler version of |\dekfracc| is provided in line \ref{2292}.
+ 
+ % \subdivision{\cs{resizegraphics}}
+ %
+@@ -2169,7 +2315,7 @@
+   }{\truetextsuperscript}}
+ 
+ \def\truetextsuperscript{%
+-  \DeclareRobustCommand*\textsuperscript[1]{%
++  \pdef\textsuperscript##1{%
+     \@textsuperscript{\selectfont##1}}%
+   \def\@textsuperscript##1{%
+     {\m@th\ensuremath{^{\mbox{\fontsize\sf@size\z@##1}}}}}}
+@@ -2189,7 +2335,7 @@
+ % Originally there was just |\ | instead of |\mbox{ }| but some
+ % commands of ours do redefine |\ |.
+ % \Define\*
+-\DeclareRobustCommand*\*{\gmu@tilde}
++\pdef\*{\gmu@tilde}
+ % \Define\~
+ % \changes{v0.83}{2007/08/22}{postponed to
+ % \cs{begin\{document\}} to avoid overwriting by a~text command and
+@@ -2197,9 +2343,9 @@
+ 
+ \AtBeginDocument{% to bypass redefinition of |\~| as a~text command
+   % with various encodings
+-  \DeclareRobustCommand*\texttilde{% 
+-    %%%%%% \changes{v0.86}{2007/12/11}{renamed from \bslash\texttilde\
+-    %%%%%% since the latter is one of~\LaTeX\ accents}
++  \pdef\texttilde{% 
++    % \changes{v0.86}{2007/12/11}{renamed from \cmd\~
++    %   since the latter is one of~\LaTeX\ accents}
+     \@ifnextchar/{\gmu@tilde\kern-0,1667em\relax}\gmu@tilde}}
+ % We prepare the proper kerning for ``\texttilde/''.
+ 
+@@ -2208,7 +2354,7 @@
+ % because no one `normal' redefines the active space. But we are
+ % \emph{not} normal and we do \emph{not} do usual things and therefore
+ % we want a~declaration that not only will |\active|ate the space but
+-% also will (re)define it as the \verb*|\ | primitive. So define
++% also will (re)define it as the |\ | primitive. So define
+ % |\gmobeyspaces| that obeys this requirement.
+ % 
+ % (This definition is repeated in \pk{gmverb}.)
+@@ -2298,33 +2444,33 @@
+ % The macro given below is taken from the \pk{multicol} package (where
+ % its name is |\enough@room|). I~put it in this package since I~needed
+ % it in two totally different works.
+-%\Define\enoughpage
+-\newcommand\enoughpage[1]{%
++\newcommand*\enoughpage[1]{%
+   \par
+   \dimen0=\pagegoal
+   \advance\dimen0 by-\pagetotal
+   \ifdim\dimen0<#1\relax\newpage\fi}
+ 
+-% Two shorthands for debugging:
+-%\Define\tOnLine\Define\OnAtLine
+-\newcommand*\tOnLine{\typeout{\on@line}}
++%^^A % Two shorthands for debugging:
++%^^A %\Define\tOnLine\Define\OnAtLine
++%^^A \newcommand*\tOnLine{\typeout{\on@line}}
++%^^A 
++%^^A \let\OnAtLine\on@line
+ 
+-\let\OnAtLine\on@line
+-
+ % An equality sign properly spaced:
+-% \Define\equals\Define\eequals
+-\newcommand*\equals{${}={}$}
++\pdef\equals{\hunskip${}={}$\ignorespaces}
+ % And for the \LaTeX's pseudo-code statements:
+-\newcommand*\eequals{${}=={}$}
++\pdef\eequals{\hunskip${}=={}$\ignorespaces}
+ 
++\pdef\·{\hunskip${}·{}$\ignorespaces}
+ 
+-% While typesetting a~UTF-8 ls-R result I~found a~difficulty that
+-% follows: UTF-8 encoding is handled by the \pk{inputenc}
+-% package. It's O.K. so far. The UTF-8 sequences are managed using
++
++% While typesetting a~\acro{UTF-8} ls-R result I~found a~difficulty that
++% follows: \acro{UTF-8} encoding is handled by the \pk{inputenc}
++% package. It's O.K. so far. The \acro{UTF-8} sequences are managed using
+ % active chars. That's O.K. so far. While writing such sequences to
+ % a~file, the active chars expand. You feel the blues? When the result of
+ % expansion is read again, it sometimes is again an active char, but
+-% now it doesn't star a~correct UTF-8 sequence. 
++% now it doesn't star a~correct \acro{UTF-8} sequence. 
+ %
+ % Because of that I~wanted to `freeze' the active chars so that they
+ % would be |\write|n to a~file unexpanded. A~very brutal operation is
+@@ -2365,7 +2511,7 @@
+ % \Define\liturgiques
+ % \changes{v0.76}{07/3/30}{added, or rather moved from \file{Akatyst.tex}}
+ \newcommand*\liturgiques[1][red]{% Requires the \pk{color} package.
+-  \gmu@RPif{color}{color}%
++  \gmu@RPfor{color}\color%
+   \newcommand*\czerwo{\small\color{#1}}% environment
+   \newcommand{\czer}[1]{\leavevmode{\czerwo##1}}% we leave
+   % vmode because if we don't, then \env{verse}'s |\everypar| would be
+@@ -2375,34 +2521,36 @@
+   \newcommand*\nieczer[1]{\textcolor{black}{##1}}}
+ 
+ % After the next definition you can write
+-% \cs{gmu@RP}\arg[options]\arg{package}\arg{csname} to get the package |#2|
+-% loaded with options |#1| if the csname |#3| is undefined.
+-\newcommand*\gmu@RPif[3][]{%
++% \cs{gmu@RP}\arg[options]\arg{package}\arg{\CS} to get the package |#2|
++% loaded with options |#1| if the \CS |#3| is undefined.
++\newcommand*\gmu@RPfor[3][]{% \changes{v0.93}{2008/08/30}{renamed from
++  % \cs{gmu@RPif} and \#3 changed from a~csname to \CS} 
+   \ifx\relax#1\relax
+   \else \def\gmu@resa{[#1]}%
+   \fi
+   \@xa\RequirePackage\gmu@resa{#2}}
+ 
+ % Since inside \env{document} we cannot load a~package, we'll redefine
+-% |\gmu@RPif| to issue a~request before the error issued by undefined
+-% CS. 
+-% \Define\gmu@RPif
++% |\gmu@RPfor| to issue a~request before the error issued by undefined
++% \CS. 
++%^^A \Define\gmu@RPfor
+ \AtBeginDocument{%
+-  \renewcommand*\gmu@RPif[3][]{%
+-    \@ifundefined{#3}{%
++  \renewcommand*\gmu@RPfor[3][]{%
++    \unless\ifdefined#3%
+       \@ifpackageloaded{#2}{}{%
+-        \typeout{^^J! Package `#2' not loaded!!! (\on@line)^^J}}}{}}}
++        \typeout{^^J! Package `#2' not loaded!!! (\on@line)^^J}}%
++    \fi}}
+ 
+ 
+ % It's very strange to me but it seems that $\continuum$ is not
+ % defined in the basic math packages. It is missing at least in the
+-% \textit{Symbols} book.\Define\continuum
+-\providecommand*\continuum{\gmu@RPif{eufrak}{mathfrak}\mathfrak{c}}
++% \textit{Symbols} book.
++\pprovide\continuum{\gmu@RPfor{eufrak}\mathfrak\mathfrak{c}}
+ 
+ % And this macro I~saw in the \pk{ltugproc} document class nad I~liked
+ % it.
+ \def\iteracro{%
+-  \DeclareRobustCommand*\acro[1]{\gmu@acrospaces##1 \gmu@acrospaces}%
++  \pdef\acro##1{\gmu@acrospaces##1 \gmu@acrospaces}%
+ }
+ 
+ \iteracro
+@@ -2414,7 +2562,7 @@
+     \afterfi{\gmu@acrospaces#2\gmu@acrospaces}% when |#2| is nonempty,
+     % it is ended with a~space. Adding one
+     % more space in this line resulted in
+-    % an infinite loop.
++    % an infinite loop, of course.
+   \fi}
+ 
+ 
+@@ -2440,22 +2588,22 @@
+ \newcommand*\IMO{\acro{IMO}}
+ \newcommand*\AKA{\acro{AKA}}
+ 
+-\DeclareRobustCommand*\usc[1]{{\addfontfeature{Letters=UppercaseSmallCaps}#1}}
++\pdef\usc#1{{\addfontfeature{Letters=UppercaseSmallCaps}#1}}
+ 
+ \def\uscacro{\let\acro\usc}
+ 
+-\newcommand*\qxenc{\fontencoding{QX}\selectfont}
+-% The |\copyright| command is unavailable in T1 and U~(unknown)
+-% encodings so provide
+-\newcommand*\qxcopyright{{\qxenc\copyright}}
+-\newcommand*\qxcopyrights{%
+-  \let\gmu@copyright\copyright
+-  \def\copyright{{\qxenc\gmu@copyright}}}
++%^^A \newcommand*\qxenc{\fontencoding{QX}\selectfont}
++%^^A % The |\copyright| command is unavailable in T1 and U~(unknown)
++%^^A % encodings so provide
++%^^A \newcommand*\qxcopyright{{\qxenc\copyright}}
++%^^A \newcommand*\qxcopyrights{%
++%^^A   \let\gmu@copyright\copyright
++%^^A   \def\copyright{{\qxenc\gmu@copyright}}}
++%^^A 
++%^^A \newcommand*\fixcopyright{%
++%^^A   \@ifXeTeX{\def\copyright{\char"00A9 }}{\qxcopyrights}}
+ 
+-\newcommand*\fixcopyright{%
+-  \@ifXeTeX{\def\copyright{\char"00A9 }}{\qxcopyrights}}
+ 
+-
+ % Probably the only use of it is loading \pk{gmdocc.cls} `as second
+ % class'. This command takes first argument optional, options of the
+ % class, and second mandatory, the class name. I~use it in an article
+@@ -2468,19 +2616,13 @@
+ % the error message.
+ 
+ 
+-% Cf.\ \TeXbook exc. 11.6.\par
++% Cf.\ \TeXbook\ exc.\ 11.6.\par
+ % A~line from \LaTeX:
+ % \[|% \check@mathfonts\fontsize\sf@size\z@\math@fontsfalse\selectfont|\]
+ % didn't work as I~would wish: in a~|\footnotesize|'s scope it still
+ % was |\scriptsize|, so too large.
+ % \changes{v0.81}{2007/05/13}{moved here from \pk{pmlectionis.cls}}
+ 
+-%^^A% From my first love with infinite stretchabilities
+-%^^A~ \def\myvfil#1/{\vskip0pt plus#1fil\relax}
+-%^^A~ \def\myvfill#1/{\vskip0pt plus#1fill\relax}
+-%^^A~ \def\myhfil#1/{\hskip0pt plus#1fil\relax}
+-%^^A~ \def\myhfill#1/{\hskip0pt plus#1fill\relax}
+-
+ \def\gmu@dekfraccsimple#1/#2{\leavevmode\kern.1em
+   \raise.5ex\hbox{\udigits\smaller[3]#1}\gmu@numeratorkern
+   \dekfraccslash\gmu@denominatorkern
+@@ -2513,7 +2655,7 @@
+ 
+ % \subdivision{\cs{@ifempty}}
+ 
+-\long\def\@ifempty#1#2#3{%
++\long\pdef\@ifempty#1#2#3{%
+   \def\gmu@reserveda{#1}%
+   \ifx\gmu@reserveda\@empty\afterfi{#2}%
+   \else\afterfi{#3}\fi
+@@ -2685,7 +2827,7 @@
+   \par\global\napapierkicore}{%
+   \par\dimen\z@=\baselineskip
+   \global\baselineskip=\dimen\z@}% so that you can use  |\endnapapierki|
+-                              % in interlacing environments
++                              % in interlacing environments.
+ 
+ 
+ \newcount\gmu@luzniej
+@@ -2715,55 +2857,65 @@
+ % beginning of a~line as the mark of a~dialogue.
+ % \Define\pauza\Define\pauzacore\Define\shortpauza
+ \ifdefined\XeTeXversion
++\def\pauza@skipcore{\hskip0.2em plus0.1em\relax
++  \pauzacore\hskip.2em plus0.1em\relax\ignorespaces}%
++%
++\def\ppauza@skipcore{\unskip\penalty10000\hskip0.2em plus0.1em\relax
++          –\hskip.2em plus0.1em\ignorespaces}
++% 
+ \AtBeginDocument{% to be independent of moment of loading of \pk{polski}.
+-  \DeclareRobustCommand*\—{%
++  \pdef\—{%
+     \ifhmode
+       \unskip\penalty10000
+       \afterfi{%
+-        \@ifnextspace{\hskip0.2em plus0.1em\relax
+-          \pauzacore\hskip.2em plus0.1em\relax\ignorespaces}%
+-        {\pauzacore\penalty\hyphenpenalty\hskip\z@}}%
++        \@ifnextspace{\pauza@skipcore}%
++        {\@ifnextMac\pauza@skipcore{%
++            \pauzacore\penalty\hyphenpenalty\hskip\z@}}}%
+       \else
+-    % According to \tytul{Instrukcja technologiczna. Skład ręczny ^^B
++    % According to \tytul{Instrukcja technologiczna.\ Skład ręczny ^^B
+     % i~maszynowy} the dialogue dash should be followed by a~rigid
+     % hskip of \dekfracc1/2\,em.
+       \leavevmode\pauzacore\penalty10000\hskip0,5em\ignorespaces
+     \fi}%
+   % The next command's name consists of letters and therefore it eats
+   % any spaces following it, so |\@ifnextspace| would always be false.
+-  \DeclareRobustCommand*\pauza{%
++  \pdef\pauza{%
+     \ifhmode
+       \unskip\penalty10000
+       \hskip0.2em plus0.1em\relax
+       \pauzacore\hskip.2em plus0.1em\relax\ignorespaces%
+     \else
+-    % According to \tytul{Instrukcja technologiczna. Skład ręczny ^^B
+-    % i~maszynowy} the dialogue dash should be followed by a~rigid
+-    % hskip of \dekfracc1/2\,em.
+-      \leavevmode\pauzacore\penalty10000\hskip0,5em\ignorespaces
++      \pauzadial
+     \fi}%
++  % 
++  % According to \tytul{Instrukcja technologiczna.\ Skład ręczny ^^B
++  %   i~maszynowy} the dialogue dash should be followed by a~rigid
++  % hskip of \dekfracc1/2\,em.
++  \pdef\pauzadial{%
++    \leavevmode\pauzacore\penalty10000\hskip0,5em\ignorespaces}
++  % 
+   % And a~version with no space at the left, to begin a~|\noindent|
+   % paragraph or a~dialogue in quotation marks:
+-  \DeclareRobustCommand*\lpauza{%
++  \pdef\lpauza{%
+     \pauzacore\hskip.2em plus0.1em\ignorespaces}%
+   % 
+   % We define |\ppauza| as an en dash surrounded with thin stretchable
+   % spaces and sticking to the upper line or bare but discretionary
+   % depending on the next token being space${}_10$. Of course you'll
+-  % never get such a~space after a~literal CS so an explicit |\ppauza|
++  % never get such a~space after a~literal \CS so an explicit |\ppauza|
+   % will always result with a~bare discretionary en dash, but if we
+   % |\let–\ppauza|…
+-  \DeclareRobustCommand*\–{%
++  \pdef\–{%
+     \ifvmode    \PackageError{gmutils}{%
+       command \bslash ppauza (en dash) not intended for vmode.}{%
+       Use \bslash ppauza (en dash) only in number and numeral ranges.}%
+     \else
+       \afterfi{%
+-        \@ifnextspace{\unskip\penalty10000\hskip0.2em plus0.1em\relax
+-          –\hskip.2em plus0.1em\ignorespaces}{\unskip\discretionary{–}{–}{–}}}%
++        \@ifnextspace{\ppauza@skipcore}{%
++          \@ifnextMac\ppauza@skipcore{\unskip\discretionary{–}{–}{–}}}}%
+     \fi}%
+   % 
+-   \DeclareRobustCommand*\ppauza{%
++   \pdef\ppauza{%
+     \ifvmode    \PackageError{gmutils}{%
+       command \bslash ppauza (en dash) not intended for vmode.}{%
+       Use \bslash ppauza (en dash) only in number and numeral ranges.}%
+@@ -2811,158 +2963,169 @@
+   \def\ahyphen{\let-\gmu@dywiz\catcode`\-\active}}
+ 
+ 
+-% To get current time. Works in \eTeX s, icluding \XeTeX. 
++% To get current time. Works in \eTeX s, icluding \XeTeX. |\czas|
++% typesets \czas\ and |\czas[:]| typesets \czas[:].
+ \newcommand*\czas[1][.]{%
+   \the\numexpr(\time-30)/60\relax#1%
+   \@tempcnta=\numexpr\time-(\time-30)/60*60\relax
+   \ifnum\@tempcnta<10 0\fi\the\@tempcnta}
+ 
+-% To push the stuff up to the header and have the after heading skip
+-% after the stuff
++%^^A % To push the stuff up to the header and have the after heading skip
++%^^A % after the stuff
++%^^A 
++%^^A \long\def\przeniesvskip#1{%
++%^^A   \edef\gmu@LastSkip{\the\lastskip}%
++%^^A   \vskip-\gmu@LastSkip\relax
++%^^A   \vspace*{0sp}%
++%^^A   #1\vskip\gmu@LastSkip\relax}
+ 
+-\long\def\przeniesvskip#1{%
+-  \edef\gmu@LastSkip{\the\lastskip}%
+-  \vskip-\gmu@LastSkip\relax
+-  \vspace*{0sp}%
+-  #1\vskip\gmu@LastSkip\relax}
+-
+ \@ifXeTeX{\chardef\textbullet="2022 }{\def\textbullet{$\bullet$}}
+ 
+ \newenvironment*{tytulowa}{\newpage}{\par\thispagestyle{empty}\newpage}
+ 
+-% Nazwisko na stronę redakcyjną
++% To typeset peoples' names on page 4 (the editorial page):
+ \def\nazwired{\quad\textsc}
+ 
+ % \division{Settings for mathematics in main font}
+-% I~used this terrible macros while typesetting E.~Szarzyński's
+-% \textit{Letters} in 2008.
+-\def\gmath{%
+-  \def\do##1{\edef##1{{\@nx\mathit{\@xa\@gobble\string##1}}}}%
+-  \do\A \do\a \do\B \do\b \do\c \do\C\do\d \do\D \do\e \do\E\do\f
+-  \do\F\do\g\do\G \do\i\do\I \do\j\do\J \do\k\do\K \do\l \do\L \do\m
+-  \do\M \do\n \do\N \do\P \do\p \do\q \do\Q \do\R \do\r
+-  \let\sectionsign\S \do\S \do\s \do\T \do\t \do\u \do\U \do\v\do\V
+-  \do\w \do\W \do\x \do\X \do\Y \do\y \do\z\do\Z
+-  % 
+-  \def\do##1{\edef##1{{\@nx\mathrm{\@xa\@gobble\string##1}}}}%
+-  \do\0\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9%
+-  % 
+-  \relaxen\do
+-  \newcommand*\do[4][\mathit]{\def##2{##3{##1{\char"##4}}}}%
+-  \do\alpha{}{03B1}%
+-  \do[\mathrm]\Delta{}{0394}%
+-  \do\varepsilon{}{03B5}%
+-  \do\vartheta{}{03D1}%
+-  \do\nu{}{03BD}%
+-  \do\pi{}{03C0}%
+-  \do\phi{}{03D5}%
+-  \do[\mathrm]\Phi{}{0424}%
+-  \do\sigma{}{03C3}%
+-  \do\varsigma{}{03DA}%
+-  \do\psi{}{03C8}%
+-  \do\omega{}{03C9}%
+-  \do\infty{}{221E}%
+-  \do[\mathrm]\neg{\mathbin}{00AC}%
+-  \do[\mathrm]\neq{\mathrel}{2260}%
+-  \do\partial{}{2202}%
+-  \do[\mathrm]\pm{}{00B1}%
+-  \do[\mathrm]\pm{\mathbin}{00B1}%
+-  \do[\mathrm]\sim{\mathrel}{007E}%
+-  % 
+-  \def\do##1##2##3{\def##1{%
+-      \mathop{\mathchoice{\hbox{%
+-            \rm
+-            \edef\gma@tempa{\the\fontdimen8\font}%
+-          \larger[3]%
+-          \lower\dimexpr(\fontdimen8\font-\gma@tempa)/2 %
+-          \hbox{##2}}}{\hbox{%
+-          \rm
+-          \edef\gma@tempa{\the\fontdimen8\font}%
+-          \larger[2]%
+-          \lower\dimexpr(\fontdimen8\font-\gma@tempa)/2 %
+-          \hbox{##2}}}%
+-        {\mathrm{##2}}{\mathrm{##2}}}##3}}%
+-  \do\sum{\char"2211}{}%
+-  \do\forall{\gma@quantifierhook \rotatebox[origin=c]{180}{A}%
+-    \setbox0=\hbox{A}\setbox2=\hbox{\scriptsize x}%
+-    \kern\dimexpr\ht2/3*2 -\wd0/2\relax}{\nolimits}%
+-  \do\exists{\rotatebox[origin=c]{180}{\gma@quantifierhook E}}\nolimits%
+-  %
+-  \def\do##1##2##3{\def##1{##3{%
+-        \mathchoice{\hbox{\rm##2}}{\hbox{\rm##2}}%
+-        {\hbox{\rm\scriptsize##2}}{\hbox{\rm\tiny##2}}}}}%
++% I~used these terrible macros while typesetting E.~Szarzyński's
++% \textit{Letters} in 2008. The \TextUsage\gmath\ declaration defines
++% one-letter an one-digt \CSes etc.,  the \TextUsage\garamath\
++% declaration redefines the quantifiers and is more Garamond Premier
++% Pro-specific. 
++\pdef\gmath{%
++  \everymath{%
++    \def\do##1{\edef##1{{\@nx\mathit{\@xa\@gobble\string##1}}}}%
++    \do\A \do\a \do\B \do\b \do\c \do\C\do\d \do\D \do\e \do\E\do\f
++    \do\F\do\g\do\G \do\i\do\I \do\j\do\J \do\k\do\K \do\l \do\L \do\m
++    \do\M \do\n \do\N \do\P \do\p \do\q \do\Q \do\R \do\r
++    \let\sectionsign\S \do\S \do\s \do\T \do\t \do\u \do\U \do\v\do\V
++    \do\w \do\W \do\x \do\X \do\Y \do\y \do\z\do\Z
++    % 
++    \def\do##1{\edef##1{{\@nx\mathrm{\@xa\@gobble\string##1}}}}%
++    \do\0\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9%
++    % 
++    %^^A\typeout{@@@@ przeszło 2897}%
++    \relaxen\do
++    \newcommand*\do[4][\mathit]{\def##2{##3{##1{\char"##4}}}}%
++    \do\alpha{}{03B1}%
++    \do[\mathrm]\Delta{}{0394}%
++    \do\varepsilon{}{03B5}%
++    \do\vartheta{}{03D1}%
++    \do\nu{}{03BD}%
++    \do\pi{}{03C0}%
++    \do\phi{}{03D5}%
++    \do[\mathrm]\Phi{}{0424}%
++    \do\sigma{}{03C3}%
++    \do\varsigma{}{03DA}%
++    \do\psi{}{03C8}%
++    \do\omega{}{03C9}%
++    \do\infty{}{221E}%
++    \do[\mathrm]\neg{\mathbin}{00AC}%
++    \do[\mathrm]\neq{\mathrel}{2260}%
++    \do\partial{}{2202}%
++    \do[\mathrm]\pm{}{00B1}%
++    \do[\mathrm]\pm{\mathbin}{00B1}%
++    \do[\mathrm]\sim{\mathrel}{007E}%
++    % 
++    \def\do##1##2##3{\def##1{%
++        \mathop{\mathchoice{\hbox{%
++              \rm
++              \edef\gma@tempa{\the\fontdimen8\font}%
++              \larger[3]%
++              \lower\dimexpr(\fontdimen8\font-\gma@tempa)/2 %
++              \hbox{##2}}}{\hbox{%
++              \rm
++              \edef\gma@tempa{\the\fontdimen8\font}%
++              \larger[2]%
++              \lower\dimexpr(\fontdimen8\font-\gma@tempa)/2 %
++              \hbox{##2}}}%
++          {\mathrm{##2}}{\mathrm{##2}}}##3}}%
++    \do\sum{\char"2211}{}%
++    \do\forall{\gma@quantifierhook \rotatebox[origin=c]{180}{A}%
++      \setbox0=\hbox{A}\setbox2=\hbox{\scriptsize x}%
++      \kern\dimexpr\ht2/3*2 -\wd0/2\relax}{\nolimits}%
++    \do\exists{\rotatebox[origin=c]{180}{\gma@quantifierhook E}}\nolimits%
++    % 
++    \def\do##1##2##3{\def##1{##3{%
++          \mathchoice{\hbox{\rm##2}}{\hbox{\rm##2}}%
++          {\hbox{\rm\scriptsize##2}}{\hbox{\rm\tiny##2}}}}}%
+     \do\vee{\rotatebox[origin=c]{90}{<}}\mathbin
+     \do\wedge{\rotatebox[origin=c]{-90}{<}}\mathbin
+     \do\leftarrow{\char"2190}\mathrel
+     \do\rightarrow{\char"2192}\mathrel
+     \do\leftrightarrow{\char"2190\kern-0,1em \char"2192}\mathrel
+     % 
+-   \def\do##1##2##3{%
+-     \catcode`##1=12\relax
+-     \scantokens{\mathcode`##1="8000\relax
+-       \foone{\catcode`##1=\active}{\def##1}{##3{%
+-           \mathchoice{\hbox{\rm##2}}{\hbox{\rm##2}}%
+-           {\hbox{\rm\scriptsize##2}}{\hbox{\rm\tiny##2}}}}%
+-       \ignorespaces}}% to eat the lineend (scantokens acts as |\read|
+-   % icluding line end.
+-   \do..\mathpunct  \do,,\mathpunct  \do……\mathpunct
+-   \do((\mathopen
+-   \@ifundefined{resetMathstrut@}{}{% an error occured `bad mathchar
+-     % etc.'\ because \pk{amsmath.sty} doesn't take account of
+-     % a~possibility of |(| %)
+-     % being math-active.
+-     \def\resetMathstrut@{%
+-       \setbox\z@\hbox{%
+-         % |%% \mathchardef\@tempa\mathcode`\(\relax|
+-         % |%% \def\@tempb##1"##2##3{\the\textfont"##3\char"}%|
+-         % |%% \expandafter\@tempb\meaning\@tempa \relax|
+-         (}%
+-       \ht\Mathstrutbox@\ht\z@ \dp\Mathstrutbox@\dp\z@
+-     }}%
+-   \do))\mathclose
+-   \do[[\mathopen\do]]\mathclose
+-   \do-{\char"2212}\mathbin  \do++\mathbin  \do==\mathrel  \do××\mathbin 
+-   \do::\mathbin  \do··\mathbin  \do//\mathbin \do<<\mathrel
+-   \do>>\mathrel
+-   %
+-   \def\do##1##2##3{\def##1####1{##2{\hbox{%
+-           \rm
+-           \setbox0=\hbox{####1}%
+-           \edef\gma@tempa{\the\ht0}%
+-           \edef\gma@tempb{\the\dp0}%
+-           ##3%
+-           \setbox0=\hbox{####1}%
++    \gmu@storespecials[\do\`\do\"\do\=]% \label{@storespecials}
++    \gmu@septify[\do\`12\do\"12\do\=12]%
++    \def\do##1##2##3{%
++      \catcode`##1=12\relax
++        \scantokens{\mathcode`##1="8000\relax
++          \foone{\catcode`##1=\active}{\def##1}{##3{%
++            \mathchoice{\hbox{\rm##2}}{\hbox{\rm##2}}%
++            {\hbox{\rm\scriptsize##2}}{\hbox{\rm\tiny##2}}}}%
++        \ignorespaces}}% to eat the lineend (scantokens acts as |\read|
++    % icluding line end).
++    \do..\mathpunct \do,,\mathpunct \do……\mathpunct
++    \do((\mathopen%^^A))
++    \@ifundefined{resetMathstrut@}{}{% an error occured `bad mathchar
++      % etc.'\ because \pk{amsmath.sty} doesn't take account of
++      % a~possibility of `|(|' %^^A)
++      % being math-active.
++      \def\resetMathstrut@{%
++        \setbox\z@\hbox{% \label{gmu:leading space} \nostanza \gmdnoindent
++          % |%% \mathchardef\@tempa\mathcode`\(\relax|\\
++          % |%% \def\@tempb##1"##2##3{\the\textfont"##3\char"}%|\\
++          % |%% \expandafter\@tempb\meaning\@tempa \relax|\nostanza
++          (%^^A)
++        }%
++        \ht\Mathstrutbox@\ht\z@ \dp\Mathstrutbox@\dp\z@
++      }}%^^A((
++    \do))\mathclose
++    \do[[\mathopen\do]]\mathclose
++    \do-{\char"2212}\mathbin  \do++\mathbin  \do==\mathrel  \do××\mathbin 
++    \do::\mathbin  \do··\mathbin  \do//\mathbin \do<<\mathrel
++    \do>>\mathrel
++    \gmu@restorespecials
++    % 
++    \def\do##1##2##3{\def##1####1{##2{\hbox{%
++            \rm
++            \setbox0=\hbox{####1}%
++            \edef\gma@tempa{\the\ht0}%
++            \edef\gma@tempb{\the\dp0}%
++            ##3%
++            \setbox0=\hbox{####1}%
+            \lower\dimexpr(\ht0 + \dp0)/2-\dp0 -((\gma@tempa+\gma@tempb)/2-\gma@tempb) %
+            \box0}}}}%
+-  \do\bigl\mathopen\larger
+-  \do\bigr\mathclose\larger
+-  \do\Bigl\mathopen\largerr
+-  \do\Bigr\mathclose\largerr
+-  \do\biggl\mathopen{\larger[3]}%
+-  \do\biggr\mathclose{\larger[3]}%
+-  \do\Biggl\mathopen{\larger[4]}%
+-  \do\Biggr\mathclose{\larger[4]}%
+-  %
+-  \def\do##1##2{\def##1{\ifmmode##2{\mathchoice
+-        {\hbox{\rm\char`##1}}{\hbox{\rm\char`##1}}%
+-        {\hbox{\rm\scriptsize\char`##1}}{\hbox{\rm\tiny\char`##1}}}%
+-    \else\char`##1\fi}}%
+-\StoreMacros{\{\}}%
+-  \do\{\mathopen
+-  \do\}\mathclose
+-  %
+-  \def\={\mathbin{=}}%
+-  \def\neqb{\mathbin{\neq}}%
+-  \def\do##1{\edef\gma@tempa{%
+-      \def\@xa\@nx\csname \@xa\gobble\string##1r\endcsname{%
+-        \@nx\mathrel{\@nx##1}}}%
+-    \gma@tempa}%
+-  \do\vee \do\wedge \do\neg
+-  \def\fakern{\mkern-3mu}%
+-  \thickmuskip=8mu plus 4mu\relax
+-  %
+-  \gma@gmathhook
+-}% of def gmath
++   \do\bigl\mathopen\larger
++   \do\bigr\mathclose\larger
++   \do\Bigl\mathopen\largerr
++    \do\Bigr\mathclose\largerr
++    \do\biggl\mathopen{\larger[3]}%
++    \do\biggr\mathclose{\larger[3]}%
++    \do\Biggl\mathopen{\larger[4]}%
++    \do\Biggr\mathclose{\larger[4]}%
++    % 
++    \def\do##1##2{\def##1{\ifmmode##2{\mathchoice
++          {\hbox{\rm\char`##1}}{\hbox{\rm\char`##1}}%
++          {\hbox{\rm\scriptsize\char`##1}}{\hbox{\rm\tiny\char`##1}}}%
++        \else\char`##1\fi}}%
++  %^^A  \StoreMacros{\{\}}%
++    \do\{\mathopen
++    \do\}\mathclose
++    % 
++    \def\={\mathbin{=}}%
++    \def\neqb{\mathbin{\neq}}%
++    \def\do##1{\edef\gma@tempa{%
++        \def\@xa\@nx\csname \@xa\gobble\string##1r\endcsname{%
++          \@nx\mathrel{\@nx##1}}}%
++      \gma@tempa}%
++    \do\vee \do\wedge \do\neg
++    \def\fakern{\mkern-3mu}%
++    \thickmuskip=8mu plus 4mu\relax
++    % 
++    \gma@gmathhook
++    }% of |\everymath|.
++  }% of |\def\gmath|.
+ 
+ \emptify\gma@quantifierhook
+ \def\quantifierhook#1{%
+@@ -3010,7 +3173,8 @@
+ 
+ % \division{Typesetting dates in my memoirs}
+ 
+-% A~date in the |YYYY-MM-DD| format we'll transform into  DD mmmm YYYY
++% A~date in the |YYYY-MM-DD| format we'll transform into  
++% `\acro{DD mmmm YYYY}' 
+ % format or we'll just typeset next two tokens/|{...}| if the
+ % arguments' string begins with |--|. The latter option is provided to
+ % preserve compatibility with already used macros and to avoid
+@@ -3142,7 +3306,7 @@
+ 
+ % Dates for memoirs to be able to typeset them also as diaries.
+ \newif\ifdate
+-%|%\newcounter{dateinsection}[section]|
++%^^A|%\newcounter{dateinsection}[section]|
+ \newcommand*{\data}[1]{%
+   \ifdate\gmu@testdash#1\ifgmu@dash\datef#1\else\datefsl#1\fi\fi}
+ 
+@@ -3166,26 +3330,27 @@
+ \let\thedate\ldate
+ 
+ 
+-\DeclareRobustCommand*\zwrobcy[1]{\emph{#1}} %ostinato, allegro con moto,
++\pdef\zwrobcy#1{\emph{#1}} %ostinato, allegro con moto,
+                                 %garden party etc., także kompliment
+ 
+-\DeclareRobustCommand*\tytul[1]{\emph{#1}}
++\pdef\tytul#1{\emph{#1}}
+ 
+ 
+-% Maszynopis w~świecie justowanym zrobi delikatną chorągiewkę.
++% Maszynopis w~świecie justowanym zrobi delikatną
++% chorągiewkę. (The \env{maszynopis} environment will make a~delicate
++% ragged right if called in a~justified world.)
+ \newenvironment{maszynopis}[1][]{#1\ttfamily
+-  \hyphenchar\font=45\relax% to przypisanie jest globalne do fontu.
++  \hyphenchar\font=45\relax% this assignment is global for the font.
+   \@tempskipa=\glueexpr\rightskip+\leftskip\relax
+   \ifdim\gluestretch\@tempskipa=\z@ 
+   \tolerance900
+-  % sprawdziło się przy tolerancji 900
++  % \nostanza it worked well with tolerance \equals 900.\nostanza
+   \advance\rightskip by\z@ plus0,5em\relax\fi
+-  \fontdimen3\font=\z@% zabraniamy rozciągania odstępów, ale
+-  %|%  \fontdimen4\font=\z@| dopuszczamy ich skurczenie 
+-  \hyphenpenalty0 % żeby nie stresować \TeX a: w~maszynopisie
+-  % ten wspaniały algorytm dzielenia akapitu powinien
+-  % być wyłączony, a~każdy wiersz łamany na ostatnim
+-  % dopuszczalnym miejscu przełamania.
++  \fontdimen3\font=\z@% we forbid stretching spaces…\par\nostanza\gmdnoindent
++  %|%  \fontdimen4\font=\z@| but allow shrinking them.\nostanza
++  \hyphenpenalty0 % not to make \TeX\ nervous: in a~typewriting this
++  % marvellous algorithm of hyphenation should be turned off and every
++  % line broken at the last allowable point.
+   \StoreMacro\pauzacore
+   \def\pauzacore{-\rlap{\kern-0,3em-}-}%
+ }{\par}
+@@ -3200,7 +3365,41 @@
+   \advance\parfillskip by 0sp plus 1fil\relax
+   \let\\\@normalcr}
+ 
++% To conform Polish recommendation for typesetting saying that
++% a~paragraph's last line leaving less than |\parindent| should be
++% stretched to fill the text width:\nostanza
++\newcommand*\fullpar{%
++  \hunskip
++  \bgroup\parfillskip\z@skip\par\egroup}
+ 
++% To conform Polish recommendation for typesetting saying that the
++% last line of a~paragraph has to be 2|\parindent| long at least. The
++% idea is to set \cs{parfillskip} naturally rigid and long as
++% |\textwidth-2\parindent|, but that causes non-negligible shrinking
++% of the
++% interword spaces so we provide a~declaration to catch the proper
++% glue where the parindent is set (e.g.\ in footnotes parindent is 0\,pt) 
++\newcommand*\twoparinit{% the name stands for `\emph{last} paragraph
++  % line's length \emph{min}imum \emph{two} \incs{parindent}.
++  \edef\twopar{%
++    \hunskip% it's \incs{protected}, remember?
++    \bgroup
++    \parfillskip=\the\glueexpr
++    \dimexpr\textwidth-2\parindent\relax 
++    minus\dimexpr\textwidth-2\parindent\relax
++    \relax% to delimit |\glueexpr|.
++    \relax% to delimit the assignment.
++    \par\egroup
++  }% of \incs{gmu@twoparfill}
++  % ^^A   \gmu@lastmintwo
++  % ^^A   \ampulexdef\@arrayparboxrestore\parfillskip\lineskip{%
++  %   ^^A     \gmu@lastmintwo\lineskip}% we replace original setting of
++  % ^^A   % \incs{parfillskip} by ours in \inenv{minipage} and \incs{footnote(text)}.
++}% of \cs{twoparinit}.
++
++
++
++
+ % For dati under poems.
+ 
+ \newcommand\wherncore[1]{%
+@@ -3211,10 +3410,10 @@
+       \let\\\linebreak
+       \footnotesize #1}}}
+ 
+-\newcommand\whern[1]{%
+-  \vskip\whernskip
+-  \wherncore{#1}}
++\def\whern{%
++  \@ifstar\wherncore{\vskip\whernskip\wherncore}}
+ 
++
+ \newskip\whernskip
+ \whernskip2\baselineskip minus 2\baselineskip\relax
+ 
+@@ -3224,13 +3423,172 @@
+ 
+ % \subdivision{Minion and Garamond Premier kerning and ligature fixes}
+ 
+-% „Ws” nie będzie robiło długiego „s”, bo źle wygląda przy „W”
+-\DeclareRobustCommand*\Ws{W\kern-0,08em\penalty10000\hskip0sp\relax
++%»Ws« shall not make long »s« because long »s« looks ugly next to »W«.
++
++\def\gmu@tempa{\kern-0,08em\penalty10000\hskip0sp\relax
+   s\penalty10000\hskip0sp\relax}
+ 
+-\DeclareRobustCommand*\Wz{W\kern-0,05em\penalty10000\hskip0sp\relax z}
++\protected\edef\Vs{V\gmu@tempa}
+ 
++\protected\edef\Ws{W\gmu@tempa}
+ 
++\pdef\Wz{W\kern-0,05em\penalty10000\hskip0sp\relax z}
++
++% \subdivision{A~left-slanted font} Or rather a~left Italic \emph{and}
++% left slanted font. In both cases we sample the skewness of the
++% itshape font of the current family, we reverse it and apply to
++% \cs{itshape} in \cs{litshape} and 
++% \cs{textlit} and to \cs{sl} in \cs{lsl}. Note
++% a~slight asymmetry: \cs{litshape} and \cs{textlit} take the current
++% family while \cs{lsl} and \cs{textlsl} the basic Roman family and
++% basic (serif) Italic font. Therefore we introduce the \cs{lit}
++% declaration for symmetry, that declaration left-slants \cs{it}.
++%
++% {\leftslanting
++% I~introduced them first while typesetting E.~Szarzyński's
++% \ty{Letters} to follow his (elaborate) hand-writing and now I copy
++% them here when need left Italic for his \ty{Albert Camus' ^^B
++% \ty{The Plague}} to avoid using bold font.\par}
++%
++% Of course it's rather esoteric so I~wrap all that in a~declaration.
++
++
++\def\leftslanting{%
++  \pdef\litshape{% \changes{v0.93}{2008/08/22}{copied here from
++    % E.~Szarzyński's \ty{The Letters}}
++    \itshape
++    \@tempdima=-2\fontdimen1\font
++    \advance\leftskip by\strip@pt\fontdimen1\font ex % to assure al
++    % least the lowercase letters not to overshoot to the (left)
++    % margin. Note this has any effect only if there is a~\incs{par} in
++    % the scope.
++    \edef\gmu@tempa{%
++      \@nx\addfontfeature{RawFeature={slant=\strip@pt\@tempdima}}}%^^B 
++    % \ilrr when not \incs{edef}ed, it caused an error, which is
++    % perfectly understandable. 
++    \gmu@tempa}%
++  %
++  % 
++  \pdef\textlit##1{% \changes{v0.93}{2008/08/22}{added}
++    {\litshape##1}}%
++  %
++  \pdef\lit{\rm\litshape}%
++  %
++  % 
++  \pdef\lsl{{\it
++      % \changes{v0.93}{2008/08/22}{copied here from E.~Szarzyński's \ty{The
++      %     Letters}}
++      \@tempdima=-\fontdimen1\font
++      \xdef\gmu@tempa{%
++        \@nx\addfontfeature{RawFeature={slant=\strip@pt\@tempdima}}}}%
++    \rm  % Note in this declaration we left-slant the basic Roman font
++    % not the itshape of the current family.
++    \gmu@tempa}%
++  %
++  % Now we can redefine \cs{em} and \cs{emph} to use left Italic for
++  % nested emphasis. In Polish typesetting there is bold in nested
++  % emphasis as I~have heard but we don't like bold since it perturbs
++  % homogeneous greyness of a~page. So we introduce a~three-cycle
++  % instead of two-: Italic, left Italic, upright.
++  % 
++  \pdef\em{%\changes{v0.93}{2008/08/22}{added}
++    \ifdim\fontdimen1\font=\z@  \itshape
++    \else
++      \ifdim\fontdimen1\font>\z@ \litshape
++      \else \upshape
++      \fi
++    \fi}%
++  %
++  %
++  \pdef\emph##1{% \changes{v0.93}{2008/08/22}{added}
++    {\em##1}}%
++}% of \cs{leftslanting}.
++
++%\subdivision{Thousand separator}
++
++\pdef\thousep#1{% a~macro that'll put the thousand separator between
++  % every two three-digit groups.\par\nostanza
++  % First we check whether we have at least five digits.
++  %\changes{v0.93}{2008/08/23}{added}
++  \gmu@thou@fiver#1\relax\relax\relax\relax\relax% we put five
++  % \incs{relax}es after the parameter to ensure the string will meet
++  % \incs{gmu\+@\+thou\+@\+fi\+ver}'s definition.\ilrr
++  \gmu@thou@fiver{#1}{% if more than five digits:
++    \emptify\gmu@thou@put
++    \relaxen\gmu@thou@o\relaxen\gmu@thou@i\relaxen\gmu@thou@ii
++    \@tempcnta\z@
++    \gmu@thou@putter#1\gmu@thou@putter
++    \gmu@thou@put
++  }}
++
++\def\gmu@thou@fiver#1#2#3#4#5\gmu@thou@fiver#6#7{%
++  \ifx\relax#5\relax\afterfi{#6}\else\afterfi{#7}\fi}
++
++\def\gmu@thou@putter#1#2{% we are sure to have at least five tokens
++  % before the guardian \incs{gmu@thou@putter}.
++  \advance\@tempcnta\@ne
++  \@tempcntb\@tempcnta
++  \divide\@tempcntb3\relax
++  \@tempcnta=\numexpr\@tempcnta-\@tempcntb*3
++  \edef\gmu@thou@put{\gmu@thou@put#1%
++    \ifx\gmu@thou@putter#2\else
++      \ifcase\@tempcnta
++        \gmu@thou@o\or\gmu@thou@i\or\gmu@thou@ii% all three
++        % \CSes are yet  \incs{relax} so we may put them in
++        % an \incs{edef} safely.\ilrr
++      \fi
++    \fi}% of \cs{edef}
++  \ifx\gmu@thou@putter#2% if we are at end of the digits…
++    \edef\gmu@tempa{%
++      \ifcase\@tempcnta
++        \gmu@thou@o\or\gmu@thou@i\or\gmu@thou@ii
++      \fi}%
++    \@xa\let\gmu@tempa\gmu@thousep% … we set the proper \CS…
++  \else% or …
++    \afterfi{%  iterate.
++      \gmu@thou@putter#2}% of \cs{afterfi}
++  \fi% of if end of digits.
++}% of \cs{gmu@thou@putter}.
++
++\def\gmu@thousep{\,}% in Polish the recommended thousand separator is
++% a~thin space.
++%
++% So you can type |\thousep{7123123123123}| to get
++% \thousep{7123123123123}. But what if you want to apply |\thousep| to
++% a~count register or a~|\numexpr|? You should write one or two
++% |\expandafter|s and |\the|. Let's do it only once for all:
++
++\pdef\xathousep#1{\@xa\thousep\@xa{\the#1}}
++% Now write |\xathousep{\numexpr 10*9*8*7*6*120}| to get
++% \xathousep{\numexpr 90*8*7*6*120}. 
++
++
++% \subdivision{Storing and restoring the catcodes of specials}
++
++\newcommand*\gmu@storespecials[1][]{% we provide a~possibility of
++  % adding stuff. For usage see line \ref{@storespecials}.
++  \def\do##1{\catcode`\@nx##1=\the\catcode`##1\relax}%
++  \edef\gmu@restorespecials{\dospecials\do\^^M#1}}
++
++\newcommand*\gmu@septify[1][]{% restoring the standard catcodes of specials. The
++  % name is the opposite of `sanitize' ^^A(
++  % :-)\,. It restores also the original catcode of \inverb|^^M|
++  \def\do{\relax\catcode`}%
++  \do\ 10\do\\0\do\{1\do\}2\do\$3\do\&4%
++  \do\#6\do\^7\do\_8\do\%14\do\~13\do\^^M5#1\relax}
++
++% \subdivision{\pk{hyperref}'s \cs{nolinkurl} into \cs{url*}}
++
++\def\urladdstar{%
++  \AtBeginDocument{%
++    \@ifpackageloaded{hyperref}{%
++      \StoreMacro\url
++      \def\url{\@ifstar{\nolinkurl}{\storedcsname{url}}}%
++    }{}}}
++
++\@onlypreamble\urladdstar
++
++
+ \endinput
+ %
+ % \ChangesGeneral
+@@ -3247,7 +3605,7 @@
+ % to the latter}
+ %
+ % \changes{v0.76}{2007/03/10}{A~`fixing' of \cs{dots} was rolled back
+-% since it came out they were O.K. and that was the QX encoding that
++% since it came out they were \acro{O.K.} and that was the \acro{QX} encoding that
+ % prints them very tight}
+ %
+ % \changes{v0.77}{2007/04/13}{\cs{afterfi} \& pals made two-argument
+@@ -3262,7 +3620,7 @@
+ % with \pk{gmdoc} by adding an \cs{ifdim} test}
+ %
+ % \changes{v0.87}{2008/08/03}{the package goes \eTeX\ even more,
+-% making use of \cs{ifdefined} and the code using\acro{UTF-8} chars is
++% making use of \cs{ifdefined} and the code using \acro{UTF-8} chars is
+ % wrapped in a~\XeTeX-condition}
+ %
+ % \changes{v0.89}{2008/08/04}{removed obsolete adjustment of \pk{pgf}
+@@ -3273,6 +3631,11 @@
+ % \cs{visiblespace} \cs{let} to \cs{xxt@visiblespace} of \pk{xltxtra}
+ % if available. The documentation driver integrated with the \file{.sty} file}
+ %
++% \changes{v0.93}{2008/08/21}{A~couple of \cs{DeclareRobustCommand*}
++% changed to \cs{pdef}}
++%
++% \changes{v0.93}{2008/08/29}{The numerical macros commented out as
++% obsolete and never really used}
+ %
+ % \PrintChanges\PrintIndex
+ %\NoEOF
