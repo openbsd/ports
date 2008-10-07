@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2008/06/15 00:04:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2008/10/07 21:47:48 landry Exp $
 
-COMMENT=		MP3 ID3 tags editor
+COMMENT=		tag editor for various audio file formats
 
 DISTNAME=		easytag-2.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://easytag.sourceforge.net/
@@ -28,6 +28,7 @@ WANTLIB=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=		id3.>=3::audio/id3lib \
 			FLAC.>=4::audio/flac \
+			mp4v2::multimedia/libmp4v2 \
 			vorbis.>=1,vorbisfile.>=1::audio/libvorbis \
 			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
@@ -36,7 +37,7 @@ USE_GMAKE=		Yes
 USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-mp4 --disable-wavpack
+CONFIGURE_ARGS=		--disable-wavpack
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

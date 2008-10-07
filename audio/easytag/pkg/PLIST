@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/12/15 18:56:35 ajacoutot Exp $
-bin/easytag
+@comment $OpenBSD: PLIST,v 1.10 2008/10/07 21:47:48 landry Exp $
+@bin bin/easytag
 @man man/man1/easytag.1
-share/applications/
 share/applications/easytag.desktop
 share/doc/easytag/
 share/doc/easytag/USERS-GUIDE
