@@ -1,6 +1,15 @@
-$OpenBSD: patch-SConstruct,v 1.1.1.1 2007/01/31 07:33:52 ajacoutot Exp $
---- SConstruct.orig	Tue Dec  5 13:31:42 2006
-+++ SConstruct	Tue Jan  9 10:46:45 2007
+$OpenBSD: patch-SConstruct,v 1.2 2008/10/07 04:11:56 brad Exp $
+--- SConstruct.orig	Tue Dec  5 07:31:42 2006
++++ SConstruct	Tue Oct  7 00:07:28 2008
+@@ -8,7 +8,7 @@ version="0.1.2"
+ #######################################
+ # OPTIONS
+ #######################################
+-opts = Options(ARGUMENTS)
++opts = Options(args = ARGUMENTS)
+ # conditionally build parts of gaia
+ #opts.Add(BoolOption('gaia', 'Compile gaia OpenGL client', 1));
+ 
 @@ -39,11 +39,15 @@ if not env.GetOption('clean'):
  		print "Compiling for FreeBSD"
  		env.Append(CPPPATH = [ '/usr/local/include', '/usr/X11R6/include' ])
