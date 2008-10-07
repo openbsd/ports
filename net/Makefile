@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.542 2008/09/26 04:09:17 brad Exp $
+# $OpenBSD: Makefile,v 1.543 2008/10/07 10:02:33 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -16,6 +16,7 @@
      SUBDIR += archie
      SUBDIR += argus
      SUBDIR += argus-clients
+     SUBDIR += arp-scan
      SUBDIR += arpcatch
      SUBDIR += arpd
      SUBDIR += arping
