@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 18:00:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/08 12:41:46 jasper Exp $
 ${P5SITE}/DateTime/Format/Builder/
 ${P5SITE}/DateTime/Format/Builder.pm
 ${P5SITE}/DateTime/Format/Builder.pod
@@ -18,3 +18,11 @@ ${P5SITE}/DateTime/Format/Builder/Tutorial.pod
 @man man/man3p/DateTime::Format::Builder::Parser::Strptime.3p
 @man man/man3p/DateTime::Format::Builder::Parser::generic.3p
 @man man/man3p/DateTime::Format::Builder::Tutorial.3p
+share/examples/p5-DateTime-Format-Builder/
+share/examples/p5-DateTime-Format-Builder/Apache.pm
+share/examples/p5-DateTime-Format-Builder/Fall.pm
+share/examples/p5-DateTime-Format-Builder/ICal.pm
+share/examples/p5-DateTime-Format-Builder/MySQL.pm
+share/examples/p5-DateTime-Format-Builder/Simple.pm
+share/examples/p5-DateTime-Format-Builder/Tivoli.pm
+share/examples/p5-DateTime-Format-Builder/W3CDTF.pm
