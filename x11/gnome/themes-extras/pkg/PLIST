@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/10/08 12:43:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/10/08 13:00:00 ajacoutot Exp $
 share/icons/Foxtrot/
 share/icons/Foxtrot/16x16/
 share/icons/Foxtrot/16x16/actions/
@@ -5678,12 +5678,12 @@ share/themes/Unity/gtk-2.0/gtkrc
 share/themes/Unity/index.theme
 share/themes/Unity/metacity-1/
 share/themes/Unity/metacity-1/metacity-theme-1.xml
-@unexec-delete rm -f %D/share/icons/Foxtrot/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Gion/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Neu/icon-theme.cache
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Foxtrot 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Foxtrot 2> /dev/null || true
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Gion 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Gion 2> /dev/null || true
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Neu 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Neu 2> /dev/null || true
+@unexec-delete rm -f %D/share/icons/Foxtrot/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/Gion/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/Neu/icon-theme.cache
