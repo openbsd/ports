@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2008/10/07 20:54:35 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/08 05:22:45 steven Exp $
 
 COMMENT-main =		texlive texmf for plain TeX only
 COMMENT-tetex =		texlive texmf for laTeX/PdfTeX 
@@ -20,9 +20,9 @@ NO_REGRESS =		Yes
 PKG_ARCH =		*
 
 BUILD_DEPENDS =		::archivers/lzma
-RUN_DEPENDS-tetex = 	:texlive_texmf-base-${V}:print/texlive/base
+RUN_DEPENDS-tetex = 	:texlive_base-${V}:print/texlive/base
 RUN_DEPENDS-full =	:texlive_texmf-tetex-${V}:print/texlive/texmf,-tetex
-RUN_DEPENDS-docs = 	:texlive_texmf-base-${V}:print/texlive/base
+RUN_DEPENDS-docs = 	:texlive_base-${V}:print/texlive/base
 
 MULTI_PACKAGES = 	-main -tetex -full -docs
 
