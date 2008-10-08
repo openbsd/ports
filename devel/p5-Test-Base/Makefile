@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/08 21:46:06 jasper Exp $
 
 COMMENT= 	data driven test framework
 
 MODULES=	cpan 
 
-DISTNAME=	Test-Base-0.52
+DISTNAME=	Test-Base-0.54
 CATEGORIES=	devel
 
 # perl
