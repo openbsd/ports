@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:41 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/08 16:51:58 jasper Exp $
 
 COMMENT=		subclass for non-blocking (incremental) parsing
 
-DISTNAME=		XML-SAX-Expat-Incremental-0.04
+DISTNAME=		XML-SAX-Expat-Incremental-0.05
 CATEGORIES=		textproc
 
-# Artistic/GPL
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
