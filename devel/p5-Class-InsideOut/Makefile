@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/08 17:51:46 simon Exp $
 
 COMMENT= 	alternative object layout in perl
 
 
 MODULES=	cpan
 
-DISTNAME=	Class-InsideOut-1.03
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Class-InsideOut-1.09
 
 CATEGORIES=	devel
 

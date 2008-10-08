@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 16:27:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/08 17:51:46 simon Exp $
+${P5SITE}/Class/
 ${P5SITE}/Class/InsideOut/
 ${P5SITE}/Class/InsideOut.pm
 ${P5SITE}/Class/InsideOut.pod
