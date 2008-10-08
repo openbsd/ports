@@ -1,4 +1,4 @@
-# $OpenBSD: README.chroot,v 1.1.1.1 2005/05/27 16:07:43 msf Exp $
+# $OpenBSD: README.chroot,v 1.2 2008/10/08 13:14:15 jasper Exp $
 
 In order to make A::G operate in a chrooted environment, it is
 necessary to copy all of the relevant libraries and perl modules
@@ -11,7 +11,7 @@ $ cd /var/www
 # chown www:www tmp	(needs to be writeable for the www user)
 
 $ cd /var/www/
-# mkdir -p ./%%LOCALBASE%%/lib
+# mkdir -p .${LOCALBASE}/lib
 
 $ cd /var/www/usr
 # mkdir -p libdata/perl5 libexec {.,X11R6}/lib
@@ -26,10 +26,10 @@ Next, the required shared libraries:
 $ cd /var/www/usr/lib
 # cp -p /usr/lib/lib{c,m,z,perl}.so* .
 
-$ cd /var/www/%%LOCALBASE%%/lib
-# cp -p %%LOCALBASE%%/lib/lib{jpeg,png,bz2,tiff,ungif,Imlib2,ltdl}.so* .
+$ cd /var/www${LOCALBASE}/lib
+# cp -p ${LOCALBASE}/lib/lib{jpeg,png,bz2,tiff,ungif,Imlib2,ltdl}.so* .
 # mkdir -p imlib2_loaders/image
-# cp -pR %%LOCALBASE%%/lib/imlib2_loaders/image/*.so imlib2_loaders/image
+# cp -pR ${LOCALBASE}/lib/imlib2_loaders/image/*.so imlib2_loaders/image
 
 $ cd /var/www/usr/X11R6/lib
 # cp -p /usr/X11R6/lib/lib{Xext,freetype,X11}.so.* .
@@ -41,31 +41,31 @@ $ cd /var/www/usr/libdata
 
 Next, the A::G images and templates:
 
-$ cd /var/www/%%LOCALBASE%%
+$ cd /var/www${LOCALBASE}
 # mkdir -p share libdata/perl5/site_perl/`machine`-openbsd
-# cp -pR %%LOCALBASE%%/share/Apache-Gallery share
+# cp -pR ${LOCALBASE}/share/Apache-Gallery share
 
 Next, the non-base Perl stuff:
 
-$ cd /var/www/%%LOCALBASE%%/libdata/perl5/site_perl/
+$ cd /var/www${LOCALBASE}/libdata/perl5/site_perl/
 # mkdir -p {,`machine`-openbsd/{,auto/}}Apache
-# cp -p %%LOCALBASE%%/libdata/perl5/site_perl/Apache/Gallery.pm Apache
-# cp -pR %%LOCALBASE%%/libdata/perl5/site_perl/`machine`-openbsd/Apache* \
+# cp -p ${LOCALBASE}/libdata/perl5/site_perl/Apache/Gallery.pm Apache
+# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/Apache* \
 	`machine`-openbsd
-# cp -pR %%LOCALBASE%%/libdata/perl5/site_perl/`machine`-openbsd/auto/Apache \
+# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/auto/Apache \
 	`machine`-openbsd/auto
 
 # mkdir -p {,`machine`-openbsd/}{,auto/}Image
-# cp -pR %%LOCALBASE%%/libdata/perl5/site_perl/Image .
-# cp -pR %%LOCALBASE%%/libdata/perl5/site_perl/auto/Image/Size auto/Image
-# cp -pR %%LOCALBASE%%/libdata/perl5/site_perl/`machine`-openbsd/Image* \
+# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/Image .
+# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/auto/Image/Size auto/Image
+# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/Image* \
 	`machine`-openbsd
-# cp -pR %%LOCALBASE%%/libdata/perl5/site_perl/`machine`-openbsd/auto/Image \
+# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/auto/Image \
 	`machine`-openbsd/auto
 
 # mkdir -p Text URI
-# cp -pR %%LOCALBASE%%/libdata/perl5/site_perl/Text/Template* Text
-# cp -pR %%LOCALBASE%%/libdata/perl5/site_perl/URI* .
+# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/Text/Template* Text
+# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/URI* .
 
 
 Setting up httpd
@@ -76,20 +76,20 @@ Setting up httpd
 	ErrorLog    logs/gallery-error
 	CustomLog   logs/gallery-access combined
 	ServerName  gallery.site.tld
-	Alias /icons/gallery/ "%%LOCALBASE%%/share/Apache-Gallery/icons/"
-	Alias /gallery.css "%%LOCALBASE%%/share/Apache-Gallery/templates/new/gallery.css"
+	Alias /icons/gallery/ "${LOCALBASE}/share/Apache-Gallery/icons/"
+	Alias /gallery.css "${LOCALBASE}/share/Apache-Gallery/templates/new/gallery.css"
 	# This is necessary.
 	Options -Indexes
 	PerlSetVar  GalleryCacheDir '/tmp/'
-	PerlSetVar  GalleryTemplateDir '%%LOCALBASE%%/share/Apache-Gallery/templates/new/'
+	PerlSetVar  GalleryTemplateDir '${LOCALBASE}/share/Apache-Gallery/templates/new/'
 	PerlSetVar  GalleryInfo 'Picture Taken => DateTimeOriginal, Flash => Flash'
 	PerlSetVar  GallerySizes '640 1024'
 	PerlSetVar GalleryThumbnailSize '100x75'
 
 	# Note that you will want to change this.
-	PerlSetVar GalleryCopyrightImage '%%LOCALBASE%%/share/Apache-Gallery/icons/c.png'
+	PerlSetVar GalleryCopyrightImage '${LOCALBASE}/share/Apache-Gallery/icons/c.png'
 
-	<Directory %%LOCALBASE%%/share/Apache-Gallery>
+	<Directory ${LOCALBASE}/share/Apache-Gallery>
 		order allow,deny
 		allow from all
 	</Directory>

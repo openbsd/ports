@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/06/15 01:51:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/10/08 13:14:15 jasper Exp $
 
 
 COMMENT=		mod_perl Apache gallery handler
 
 MODULES=		cpan
 DISTNAME=		Apache-Gallery-0.9.1
-PKGNAME=		p5-${DISTNAME}p1
+PKGNAME=		p5-${DISTNAME}p2
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.apachegallery.dk/
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=		::www/p5-URI \
 			::graphics/p5-Image-Info \
-			::graphics/p5-Image-Size \
+			:p5-Image-Size->=3.1.1:graphics/p5-Image-Size \
 			::textproc/p5-Text-Template \
 			::graphics/p5-Image-Imlib2 \
 			:mod_perl-*:www/mod_perl \
@@ -32,10 +32,6 @@ TEMPLATESDIR=   ${PREFIX}/share/Apache-Gallery/templates
 ICONSDIR=       ${PREFIX}/share/Apache-Gallery/icons
 DOCSDIR=        ${PREFIX}/share/doc/Apache-Gallery
 
-pre-configure:
-	@sed -e 's,%%LOCALBASE%%,${LOCALBASE},g;' \
-		${FILESDIR}/README.chroot > ${WRKSRC}/README.chroot
-
 post-install:
 	${INSTALL_DATA_DIR} ${TEMPLATESDIR}
 .for i in new default
@@ -48,6 +44,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/htdocs/*.png ${ICONSDIR}
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/{README,INSTALL} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.chroot ${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/README.chroot ${DOCSDIR}
+	${SUBST_CMD} ${DOCSDIR}/README.chroot && \
+		rm ${DOCSDIR}/README.chroot.bak
 
 .include <bsd.port.mk>
