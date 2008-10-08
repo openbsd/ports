@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_god_contacts_email_rb,v 1.1.1.1 2008/10/08 20:52:27 jcs Exp $
+--- lib/god/contacts/email.rb.orig	Tue Sep 30 00:00:05 2008
++++ lib/god/contacts/email.rb	Tue Sep 30 00:00:36 2008
+@@ -26,7 +26,6 @@ From: god <#{self.message_settings[:from]}>
+ To: #{name} <#{email}>
+ Subject: [god] #{message}
+ Date: #{Time.now.httpdate}
+-Message-Id: <unique.message.id.string@example.com>
+ 
+ Message: #{message}
+ Host: #{host}
+@@ -70,4 +69,4 @@ Category: #{category}
+     end
+     
+   end
+-end
+\ No newline at end of file
++end

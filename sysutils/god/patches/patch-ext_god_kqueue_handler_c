@@ -1,0 +1,9 @@
+$OpenBSD: patch-ext_god_kqueue_handler_c,v 1.1.1.1 2008/10/08 20:52:27 jcs Exp $
+--- ext/god/kqueue_handler.c.orig	Mon Sep 29 23:48:56 2008
++++ ext/god/kqueue_handler.c	Mon Sep 29 23:49:01 2008
+@@ -1,4 +1,4 @@
+-#if defined(__FreeBSD__) || defined(__APPLE__)
++#if defined(__FreeBSD__) || defined(__APPLE__) || defined(__OpenBSD__)
+ 
+ #include <ruby.h>
+ #include <sys/event.h>
