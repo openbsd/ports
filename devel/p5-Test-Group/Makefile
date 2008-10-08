@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/16 09:24:46 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/08 21:38:44 simon Exp $
 
-COMMENT=        group together related tests in a test suite
+COMMENT=	group together related tests in a test suite
 
 MODULES=	cpan
-DISTNAME=	Test-Group-0.07
-CATEGORIES=     devel
+DISTNAME=	Test-Group-0.14
+CATEGORIES=	devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
