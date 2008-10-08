@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/02 20:38:37 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/08 16:56:50 jasper Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	perl interface to yaz zoom
 CATEGORIES=	net
 
-DISTNAME=	Net-Z3950-ZOOM-1.24
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Net-Z3950-ZOOM-1.25
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
