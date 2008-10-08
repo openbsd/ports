@@ -24,8 +24,28 @@ To setup OpenAFS, you must first have a KerberosV realm setup.  Below
 are brief instructions to do so.  See 'info heimdal' for further details.
 
 Once the KerberosV realm is setup, run '%LOCALBASE%/sbin/openafs-setup'
-and follow the instructions there to setup OpenAFS.
+to setup your first OpenAFS server in your cell.
 
+Finally, you should add the below to /etc/rc.local:
+
+   if [ -x /usr/local/sbin/bosserver ]; then
+	echo -n " openafs"
+	PATH=/usr/local/bin:/usr/local/sbin:$PATH
+	/usr/local/sbin/bosserver -log -syslog
+
+        # to salvage automatically on startup, for the paranoid
+        #echo -n "(salvaging afs volumes $start ..."
+        #/usr/local/bin/bos salvage localhost -all -orphans attach -localauth
+        #echo -n " $stop done)"
+   fi
+
+and add the following to /etc/rc.shutdown:
+
+   if [ -x /usr/local/bin/bos ]; then
+        /usr/local/bin/bos shutdown localhost -localauth -wait
+        sleep 1
+        pkill bosserver
+   fi
 
 
 Quick Start Guide to KerberosV as needed by OpenAFS

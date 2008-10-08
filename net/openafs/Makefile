@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/07/28 23:09:43 todd Exp $
+# $OpenBSD: Makefile,v 1.20 2008/10/08 15:45:55 todd Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -6,7 +6,7 @@ COMMENT=		OpenAFS distributed filesystem
 
 VERSION=		1.4.7
 DISTNAME=		openafs-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		net
 
@@ -43,9 +43,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-kernel-module \
 			--enable-supergroups
 
-
 AUTOCONF_VERSION=	2.60
-BUILD_DEPENDS=		::devel/autoconf/${AUTOCONF_VERSION}
+BUILD_DEPENDS+=		:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION}
 
 FLAVORS=	debug
 FLAVOR?=

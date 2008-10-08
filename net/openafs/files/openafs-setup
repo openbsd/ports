@@ -15,6 +15,10 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 afsp=%LOCALBASE%/libexec/openafs
+PATH=%LOCALBASE%/sbin:%LOCALBASE%/bin:$PATH
+DIR=`mktemp -d /tmp/_openafs.XXXXXXXXXX` || exit 1
+trap 'rm -rf $DIR; exit 1' 0 1 2 3 13 15
+OUTPUT=$DIR/_1
 
 # (borrowed from install.sub)
 # Ask for user input.
@@ -90,13 +94,17 @@ ask_yn() {
 # log all arguments
 sc=0
 log() {
+	local prompt=":"
 	if [ "$1" = "-c" ]; then
+		prompt="#"
 		shift
 	else
 		let sc=sc+1
 	fi
-	printf "%2d " $sc
-	echo "==> $@"
+	dfmt="%H:%M:%S"
+	printf "%s %02d%s " "$(date +"${dfmt}")" $sc "$prompt"
+	# use echo, because printf(1) treats varargs as one arg per line, ugh
+	echo "$@"
 }
 
 # Create a principal in kerberos.
@@ -111,6 +119,7 @@ kadd() {
 	log creating principal: $principal
 	shift
 	kadmin del $principal > /dev/null 2>&1
+	log -c kadmin add "$@" $principal
 	kadmin add \
 		--{pw-,}expiration-time=never \
 		--max-ticket-life="1 month" \
@@ -125,10 +134,11 @@ kadd() {
 #
 retry() {
 	local try=1
+	log -c "$@"
 	while ! $@
 	do
 		let try=try+1
-		log -c "try $try: $@"
+		log -c "$@ : try $try"
 		sleep 2
 	done
 }
@@ -143,8 +153,8 @@ mkvol() {
 	local vol=$1 mnt=$2
 	log "Creating afs volume $1 to be mounted at $mnt"
 	retry vos create $h /vicepa $vol
-	fs mkm $mnt $vol
-	fs sa $mnt system:anyuser rl
+	retry fs mkm $mnt $vol
+	retry fs sa $mnt system:anyuser rl
 }
 
 cat <<__EOT
@@ -166,7 +176,6 @@ for OpenAFS to use for data storage.  Partitions should be mounted under
 /vicepa, /vicepb, /vicepc, etc.
 
 ===========================================================================
-
 __EOT
 
 #
@@ -231,7 +240,6 @@ __EOT
 
 The cell name is typically a dns name.  e.g. example.com.
 __EOT
-	echo "\n$cell_blurb"
 	ask_until "AFS Cell Name?" "${h#*.}"
 	c=${resp}
 	cat <<__EOT
@@ -240,7 +248,6 @@ The realm name is the KerberosV REALM, typically the capitalized dns name.
 e.g. REALM.COM. Use something different at the expense of your sanity.
 Really.
 __EOT
-	echo "\n$realm_blurb"
 	ask_until "KerberosV REALM?" "$(echo "$c"|tr "[a-z]" "[A-Z]")"
 	R=${resp}
 	cat <<__EOT
@@ -248,9 +255,8 @@ __EOT
 This is an existing KerberosV principal with the ability to
 create and delete other kerberos principals.  e.g. todd/admin.
 __EOT
-	user=$(id -un)
 	ask_until "KerberosV principal for kerberos administration?" \
-		"username/admin"
+		"todd/admin"
 	p=${resp}
 	cat <<__EOT
 
@@ -259,51 +265,95 @@ created again with specific attributes.  It will be used to administer afs
 in a similar way that \`root' can administrate OpenBSD.  Tread lightly when
 using this principal.
 __EOT
-	ask_until "KerberosV princiapl for afs administration?" "username/afs"
+	ask_until "KerberosV princiapl for afs administration?" "todd/afs"
 	A=${resp}
+	cat <<__EOT
+
+Just a sample user to create a basic homedir and account on afs with.
+__EOT
+	ask_until "KerberosV princiapl for example user?" "todd"
+	u=${resp}
 else
 	# for advanced users, this script can be started with the above
 	# pre-populated via arguments
-	h="$1" ip="$2" c="$3" R="$4" p="$5" A="$6"
+	h="$1" ip="$2" c="$3" R="$4" p="$5" A="$6" u="$7"
 fi
+
+pp=$(echo "$p"|sed 's,/,.,')
+pA=$(echo "$A"|sed 's,/,.,')
 
 cat <<__EOT
 
-Confirm these look correct:"
+Confirm these look correct:
 hostname   : $h
 IP address : $ip
 cellname   : $c
 realm      : $R
-krb admin  : $p
-afs admin  : $A
+krb admin  : $p (pts name: $pp)
+afs admin  : $A (pts name: $pA)
+sample user: $u
 
-The next step *DESTROYS* all existing OpenAFS configuration on this system!
+The next step *DESTROYS* all existing OpenAFS configuration on this system,
+including any openafs data on all /vicep* partitions!
 __EOT
 
 ask_yn "Are you really sure that you're ready to proceed?"
 [[ $resp == n ]] && { echo "Ok, try again later.\n" ; exit ; }
 
-log prepare dirs %SYSCONFDIR%/openafs, /usr/afs, /var/openafs, %SYSCONFDIR%/afs
+echo
+log "preparing %SYSCONFDIR%/{open,}afs /usr/afs /var/openafs..."
+
 kdestroy
-pkill afsd
+pkill -9 afsd
 umount /afs > /dev/null 2>&1
 [ -d /var/spool/afs ] && rm -rf /var/spool/afs/*
 if [ "$(pgrep bosserver)" ]
 then
-	bos shutdown localhost -noauth > /dev/null 2>&1
+	bos shutdown localhost -noauth -wait > /dev/null 2>&1
 fi
 if [ "$(pgrep bosserver)" ]
 then
-	bos shutdown localhost -localauth > /dev/null 2>&1
+	bos shutdown localhost -localauth -wait > /dev/null 2>&1
 fi
+pkill -9 buserver ptserver vlserver fileserver volserver bos bosserver
 rm -rf %SYSCONFDIR%/openafs /usr/afs /var/openafs
 rm -rf /vicep*/{V*,AFSIDat,Lock}
 rm -f %SYSCONFDIR%/kerberosV/krb5.keytab
-mkdir -p %SYSCONFDIR%/openafs/server /usr/afs
+
+mkdir -p %SYSCONFDIR%/openafs/server /usr/afs /var/spool/afs
 mkdir -m 700 /var/openafs
+echo "f $ip" > /var/openafs/NetInfo
+echo "$R" > %SYSCONFDIR%/openafs/server/krb.conf
+
+log updating %SYSCONFDIR%/afs/CellServDB %SYSCONFDIR%/openafs/server/CellServDB
+# borrowed from %SYSCONFDIR%/security, backup CellServDB
+_fnchg() {
+	echo "$1" | sed 's/^\///;s/\//_/g'
+}
+csdb=%SYSCONFDIR%/afs/CellServDB
+CURdb=/var/backups/$(_fnchg $csdb).current
+BACKdb=/var/backups/$(_fnchg $csdb).backup
+if [ -s $CURdb ]; then
+	diff -ua $CURdb $csdb > $OUTPUT
+	if [ -s $OUTPUT ]; then
+		cp -p $CURdb $BACKdb
+		cp -p $csdb $CURdb
+		chown root:wheel $CURdb $BACKdb
+	fi
+else
+	cp -p $csdb $CURdb
+	chown root:wheel $CURdb
+fi
+# put back arla's CellServDB when this script exits
+trap 'rm -rf $DIR; cp $CURdb $csdb; exit 1' 0 1 2 3 13 15
+echo ">$c	# $c" > $DIR/CellServDB
+echo "$ip	#$h" >> $DIR/CellServDB
+cat $DIR/CellServDB | \
+  tee -a $csdb %SYSCONFDIR%/openafs/server/CellServDB
+
 echo $c | tee %SYSCONFDIR%/openafs/server/ThisCell > %SYSCONFDIR%/afs/ThisCell
 ln -s /var/openafs/db /usr/afs/db
-ln -s %SYSCONFDIR%/openafs/server /usr/afs%SYSCONFDIR%
+ln -s %SYSCONFDIR%/openafs/server /usr/afs/etc
 if [ "$(pgrep bosserver)" ]
 then
 	pkill bosserver
@@ -312,68 +362,72 @@ fi
 log authenticating $p@$R
 retry kinit $p@$R
 kadd host/$h --random-key 
-kadd $A
-kadmin ext --keytab=%SYSCONFDIR%/kerberosV/krb5.keytab host/$h
+retry kadmin ext host/$h
 chmod 0400 %SYSCONFDIR%/kerberosV/krb5.keytab
-#kadmin list host/$h "afs*"
 kadd afs/$c --random-key 
 log creating %SYSCONFDIR%/openafs/server/KeyFile
-kadmin ext -k /tmp/afsv5key afs/$c
-ktutil copy /tmp/afsv5key AFSKEYFILE:%SYSCONFDIR%/openafs/server/KeyFile
+retry kadmin ext -k $DIR/afsv5key afs/$c
+log -c ktutil copy $DIR/afsv5key AFSKEYFILE:%SYSCONFDIR%/openafs/server/KeyFile
+ktutil copy $DIR/afsv5key AFSKEYFILE:%SYSCONFDIR%/openafs/server/KeyFile
 chmod 600 %SYSCONFDIR%/openafs/server/KeyFile
-rm /tmp/afsv5key
-ls -l %SYSCONFDIR%/openafs/server/KeyFile
-# XXX perhaps remove existing entries?
-log updating %SYSCONFDIR%/afs/CellServDB %SYSCONFDIR%/openafs/server/CellServDB
-echo ">$c	# $c" > /tmp/CellServDB
-echo "$ip	#$h" >> /tmp/CellServDB
-cat /tmp/CellServDB | \
-  tee -a %SYSCONFDIR%/afs/CellServDB %SYSCONFDIR%/openafs/server/CellServDB
-chmod 644 /usr/sbin/{bos,pts,vos,fs}
+rm $DIR/afsv5key
+log When asked for a password below, the answer will set it.
+let sc=sc-1
+kadd $A
+log "Disabling arla admin commands (use openafs commands on servers):"
+retry chmod 644 /usr/sbin/{bos,pts,vos,fs}
 
-PATH=%LOCALBASE%/sbin:%LOCALBASE%/bin:$PATH
-
-bosserver -log -syslog -noauth
+log starting unauthenticated bosserver
+retry bosserver -log -syslog -noauth
 retry bos setcellname $h $c -noauth
 
 log creating buserver/ptserver/vlserver entries with bos
 retry bos create $h buserver simple $afsp/buserver -cell $c -noauth
 retry bos create $h ptserver simple $afsp/ptserver -cell $c -noauth
 retry bos create $h vlserver simple $afsp/vlserver -cell $c -noauth
-log setting up pts memberships, todd.afs as initial afs admin
-retry pts createuser -name todd -id `id -u` -cell $c -noauth
-retry pts createuser -name todd.afs -cell $c -noauth
-retry pts adduser todd.afs system:administrators -cell $c -noauth
+log setting up pts memberships, $pA as initial afs admin
+retry pts createuser -name $u -id `id -u $u` -cell $c -noauth
+retry pts createuser -name $pA -cell $c -noauth
+retry pts adduser $pA system:administrators -cell $c -noauth
 retry pts mem system:administrators -cell $c -noauth
 retry pts listentries -cell $c -noauth
-retry bos adduser $h todd.afs -cell $c -noauth
+retry bos adduser $h $pA -cell $c -noauth
 retry bos addhost $h $h -noauth
 retry bos shutdown $h -cell $c -noauth -wait
 
 log getting status of bos config
 retry bos status $h -noauth -cell $c -long
-pkill -HUP bosserver
-
 log creating fs entry with bos
-bosserver -log -syslog 
-bos restart $h -all -cell $c -localauth
-bos create $h fs fs $afsp/{fileserver,volserver,salvager} -cell $c -localauth
+retry bos create $h fs fs $afsp/{fileserver,volserver,salvager} -cell $c -noauth
+retry bos restart $h -all -cell $c -noauth
 log getting partition list
-vos listpart $h -noauth
-
+retry vos listpart $h -noauth
 log creating root.afs
-retry vos create $h /vicepa root.afs -localauth -verbose
+retry vos create $h /vicepa root.afs -noauth
+retry vos create $h /vicepa root.cell -noauth
+
+sync;sync
+sleep 5
+sync;sync
+retry bos shutdown $h -cell $c -noauth -wait
+pkill -HUP bosserver
+sleep 3
+# don't put back CellServDB
+trap 'rm -rf $DIR; exit 1' 0 1 2 3 13 15
+
+log starting authenticated bosserver
+retry bosserver -log -syslog 
+retry bos restart $h -all -cell $c -localauth
+
 
 log starting afs client
 mkdir -p /afs
 [ "$(mount | egrep "^/afs")" ] || mount -t xfs /dev/xfs0 /afs
-/usr/libexec/afsd -z --log=/var/log/afsd.log
-
-sleep 5
+retry /usr/libexec/afsd -z --log=/var/log/afsd.log
 
 log authenticating $A
-kinit $A
-pts listentries
+retry kinit $A
+retry pts listentries
 
 # do this on reboot
 grep "^afs=YES" %SYSCONFDIR%/rc.conf.local > /dev/null 2>&1 || \
@@ -383,24 +437,81 @@ retry ls /afs
 
 log setting permissions/creating volumes
 retry fs sa /afs system:anyuser rl
-vos create $h /vicepa root.cell
-fs mkm /afs/$c root.cell -cell $c -fast
-fs sa /afs/$c system:anyuser rl
-fs mkm /afs/.$c root.cell -cell $c -rw
-fs mkm /afs/.root.afs root.afs -cell $c -rw
+retry fs flushvolume /afs
+retry fs mkm /afs/.$c root.cell -cell $c -rw -fast
+retry fs flushvolume /afs/.$c
+retry fs sa  /afs/.$c system:anyuser rl
+retry fs flushvolume /afs/.$c
+cat <<__EOT> /afs/.$c/robots.txt
+# noticed at ualberta.ca, attempt to prevent robots from traversing afs
+User-Agent: *
+Disallow: /
+__EOT
 
-mkvol user /afs/$c/u
-mkvol ftp /afs/$c/ftp
-fs mkm /afs/$c/.ftp ftp -cell $c -rw
+mkvol user /afs/.$c/u
+mkvol user.todd /afs/.$c/u/todd
+mkvol mirror /afs/.$c/mirror
+
+log Add some remote afs cells
+# significant remote afs cells of note, and/or install mirrors as a basic
+# set of remote cells for our example root.afs
+set -A rc \
+	$c \
+	ualberta.ca \
+	stacken.kth.se \
+	grand.central.org \
+	su.se \
+	mrow.org
+i=0
+while [ i -lt ${#rc[*]} ]
+do
+	log -c fs mkm /afs/${rc[$i]} root.cell -cell ${rc[$i]} -fast
+	fs mkm /afs/${rc[$i]} root.cell -cell ${rc[$i]} -fast
+	let i=i+1
+done
 
 log adding replication sites for root.afs, root.cell
-vos addsite $h /vicepa root.afs
-vos addsite $h /vicepa root.cell
-vos addsite $h /vicepa ftp
+retry vos addsite $h /vicepa root.afs
+retry vos addsite $h /vicepa root.cell
+retry vos addsite $h /vicepa mirror
 
 log initial release of replicated volumes
-vos release root.afs
-vos release root.cell
-vos release ftp
+retry vos release root.afs
+retry vos release root.cell
+retry vos release mirror
 
-log enjoy OpenAFS!
+# add files of note to %SYSCONFDIR%/changelist
+addchg() {
+	while [ "$1" ]
+	do
+		f="$1"
+		shift
+		if egrep "^${f}$" %SYSCONFDIR%/changelist > /dev/null 2>&1; then
+			continue
+		fi
+		echo "$f" >> %SYSCONFDIR%/changelist
+	done
+}
+addchg %SYSCONFDIR%/kerberosV/krb5.conf
+addchg "+%SYSCONFDIR%/kerberosV/krb5.keytab"
+addchg %SYSCONFDIR%/afs/{CellServDB,ThisCell,afsd.conf}
+addchg %SYSCONFDIR%/openafs/{BosConfig,server/{CellServDB,ThisCell,UserList,krb.conf}}
+addchg "+%SYSCONFDIR%/openafs/server/KeyFile"
+addchg /var/openafs/NetInfo
+addchg "+/var/openafs/sysid"
+addchg "+/var/openafs/db/bdb.DB0"
+addchg "+/var/openafs/db/bdb.DBSYS1"
+addchg "+/var/openafs/db/prdb.DB0"
+addchg "+/var/openafs/db/prdb.DBSYS1"
+addchg "+/var/openafs/db/vldb.DB0"
+addchg "+/var/openafs/db/vldb.DBSYS1"
+
+# Pat on the back.
+cat <<__EOT
+
+CONGRATULATIONS! Your OpenAFS server setup has been successfully completed,
+and is now running.
+Please read %LOCALBASE%/share/openafs/README.OpenBSD for further details;
+be sure to note the startup and shutdown script examples.
+__EOT
+
