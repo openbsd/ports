@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/15 14:07:20 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/08 17:15:49 jasper Exp $
 ${P5SITE}/Net/GPSD/
 ${P5SITE}/Net/GPSD.pm
 ${P5SITE}/Net/GPSD/Point.pm
@@ -15,6 +15,7 @@ share/examples/p5-Net-GPSD/display_device.db
 share/examples/p5-Net-GPSD/example-check.pl
 share/examples/p5-Net-GPSD/example-get.pl
 share/examples/p5-Net-GPSD/example-getsatellitelist.pl
+share/examples/p5-Net-GPSD/example-googleearth.cgi
 share/examples/p5-Net-GPSD/example-information.pl
 share/examples/p5-Net-GPSD/example-subscribe-handler.pl
 share/examples/p5-Net-GPSD/example-subscribe.pl
