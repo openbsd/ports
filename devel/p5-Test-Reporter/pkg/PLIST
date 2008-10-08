@@ -1,6 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/10/09 22:20:13 simon Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/10/08 22:27:06 simon Exp $
 bin/cpantest
 ${P5SITE}/Test/
+${P5SITE}/Test/Reporter/
 ${P5SITE}/Test/Reporter.pm
+${P5SITE}/Test/Reporter/Transport/
+${P5SITE}/Test/Reporter/Transport.pm
+${P5SITE}/Test/Reporter/Transport/File.pm
+${P5SITE}/Test/Reporter/Transport/HTTPGateway.pm
+${P5SITE}/Test/Reporter/Transport/Mail/
+${P5SITE}/Test/Reporter/Transport/Mail/Send.pm
+${P5SITE}/Test/Reporter/Transport/Net/
+${P5SITE}/Test/Reporter/Transport/Net/SMTP/
+${P5SITE}/Test/Reporter/Transport/Net/SMTP.pm
+${P5SITE}/Test/Reporter/Transport/Net/SMTP/TLS.pm
 @man man/man1/cpantest.1
 @man man/man3p/Test::Reporter.3p
+@man man/man3p/Test::Reporter::Transport.3p
+@man man/man3p/Test::Reporter::Transport::File.3p
+@man man/man3p/Test::Reporter::Transport::HTTPGateway.3p
+@man man/man3p/Test::Reporter::Transport::Mail::Send.3p
+@man man/man3p/Test::Reporter::Transport::Net::SMTP.3p
+@man man/man3p/Test::Reporter::Transport::Net::SMTP::TLS.3p
