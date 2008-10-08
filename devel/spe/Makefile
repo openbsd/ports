@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/08 21:32:51 jasper Exp $
 
 COMMENT=	SPE -- Stani's Python Editor
 
-DISTNAME=	SPE-0.8.3.c-wx2.6.1.0
-PKGNAME=	spe-0.8.3cp0
+V=		0.8.4
+DISTNAME=	spe-$V.h-wx2.6.1.0
+PKGNAME=	spe-$Vh
 CATEGORIES=	devel
 
 HOMEPAGE=	http://pythonide.stani.be/
 
 MAINTAINER=	Joerg Zinke <umaxx@oleco.net>
 
-# GPL
+# GPLv3
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
@@ -18,14 +19,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=python/}
 
+WRKDIST=	${WRKDIR}/spe-$V.h
+
 MODULES=	lang/python
-RUN_DEPENDS=	:py-wxPython-*:x11/py-wxPython \
-		:py-crypto-*:security/py-crypto
+
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
+		:py-wxPython-*:x11/py-wxPython \
+		:py-crypto-*:security/py-crypto \
+		:py-Checker-*:devel/py-Checker
 
 NO_REGRESS=	Yes
-
-post-install:
-	cd ${WRKSRC}/build/lib/_spe && tar -cf - * | \
-		(cd ${WRKINST}${MODPY_SITEPKG}/_spe && tar -xf -)
 
 .include <bsd.port.mk>
