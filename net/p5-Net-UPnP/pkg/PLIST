@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/26 14:21:08 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/08 17:16:46 jasper Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/UPnP/
 ${P5SITE}/Net/UPnP.pm
@@ -29,3 +29,10 @@ ${P5SITE}/Net/UPnP/Service.pm
 @man man/man3p/Net::UPnP::HTTPResponse.3p
 @man man/man3p/Net::UPnP::QueryResponse.3p
 @man man/man3p/Net::UPnP::Service.3p
+share/examples/p5-Net-UPnP/
+share/examples/p5-Net-UPnP/dms2vodcast.pl
+share/examples/p5-Net-UPnP/upnpavdump.pl
+share/examples/p5-Net-UPnP/upnpavsimple.pl
+share/examples/p5-Net-UPnP/upnpdump.pl
+share/examples/p5-Net-UPnP/upnpgwdump.pl
+share/examples/p5-Net-UPnP/upnpgwtool.pl
