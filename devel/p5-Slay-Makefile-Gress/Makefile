@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/05/15 21:48:26 okan Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/08 17:21:25 simon Exp $
 
 COMMENT=	regression testing software using Slay::Makefile
 
-DISTNAME=	Slay-Makefile-Gress-0.04
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Slay-Makefile-Gress-0.05
 CATEGORIES=	devel
 MODULES=	cpan
 
