@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/10/08 11:40:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/10/08 12:43:38 ajacoutot Exp $
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/128x128/
@@ -314,6 +314,6 @@ share/icons/hicolor/scalable/stock/net/
 share/icons/hicolor/scalable/stock/object/
 share/icons/hicolor/scalable/stock/table/
 share/icons/hicolor/scalable/stock/text/
-@unexec-delete rm -f share/icons/hicolor/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/hicolor/icon-theme.cache
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

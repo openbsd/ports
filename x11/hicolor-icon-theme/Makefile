@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2008/10/08 11:40:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2008/10/08 12:43:38 ajacoutot Exp $
 
 COMMENT=		high-color icon theme shell for GNOME and KDE
 
 DISTNAME=		hicolor-icon-theme-0.10
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.freedesktop.org/Standards/icon-theme-spec

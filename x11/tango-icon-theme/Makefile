@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2008/10/08 11:40:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/10/08 12:43:38 ajacoutot Exp $
 
 COMMENT=		Tango icon theme for GNOME and KDE
 
 DISTNAME=		tango-icon-theme-0.8.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tango.freedesktop.org/
