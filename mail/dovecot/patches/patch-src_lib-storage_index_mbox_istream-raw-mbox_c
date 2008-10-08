@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_lib-storage_index_mbox_istream-raw-mbox_c,v 1.1 2008/10/08 23:03:55 brad Exp $
+--- src/lib-storage/index/mbox/istream-raw-mbox.c.orig	Mon Oct  6 19:19:32 2008
++++ src/lib-storage/index/mbox/istream-raw-mbox.c	Mon Oct  6 19:19:55 2008
+@@ -83,7 +83,7 @@ static int mbox_read_from_line(struct raw_mbox_istream
+ 	    mbox_from_parse(buf+5, pos-5, &received_time, &sender) < 0) {
+ 		/* broken From - should happen only at beginning of
+ 		   file if this isn't a mbox.. */
+-		rstream->istream.istream.stream_errno = EBADMSG;
++		rstream->istream.istream.stream_errno = EINVAL;
+ 		return -1;
+ 	}
+ 
+@@ -307,7 +307,7 @@ static ssize_t i_stream_raw_mbox_read(struct istream_p
+ 			rstream->hdr_offset + rstream->mail_size);
+ 		rstream->eof = TRUE;
+ 		rstream->corrupted = TRUE;
+-		rstream->istream.istream.stream_errno = EBADMSG;
++		rstream->istream.istream.stream_errno = EINVAL;
+ 		stream->pos = 0;
+ 		return -1;
+ 	}
