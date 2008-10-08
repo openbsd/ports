@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/06/01 20:42:19 simon Exp $
+# $OpenBSD: Makefile,v 1.14 2008/10/08 17:34:57 simon Exp $
 
 COMMENT= 	MVC Web Application Framework
 
@@ -30,6 +30,7 @@ RUN_DEPENDS=	::devel/p5-Class-Accessor \
 		::www/p5-HTTP-Body \
 		::www/p5-HTTP-Request-AsCGI \
 		:p5-libwww->=5.805:www/p5-libwww
+REGRESS_DEPENDS=::devel/p5-YAML
 
 MAKE_ENV=	TEST_POD=Yes
 
