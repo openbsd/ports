@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/07/11 22:43:19 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/10/08 21:07:25 martynas Exp $
 lib/python${MODPY_VERSION}/site-packages/TurboJson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/TurboJson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/TurboJson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -14,11 +14,15 @@ lib/python${MODPY_VERSION}/site-packages/turbojson/jsonify.py
 lib/python${MODPY_VERSION}/site-packages/turbojson/jsonify.pyc
 lib/python${MODPY_VERSION}/site-packages/turbojson/jsonsupport.py
 lib/python${MODPY_VERSION}/site-packages/turbojson/jsonsupport.pyc
+lib/python${MODPY_VERSION}/site-packages/turbojson/prioritized_methods.py
+lib/python${MODPY_VERSION}/site-packages/turbojson/prioritized_methods.pyc
 lib/python${MODPY_VERSION}/site-packages/turbojson/tests/
 lib/python${MODPY_VERSION}/site-packages/turbojson/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/turbojson/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/turbojson/tests/test_jsonify.py
 lib/python${MODPY_VERSION}/site-packages/turbojson/tests/test_jsonify.pyc
+lib/python${MODPY_VERSION}/site-packages/turbojson/tests/test_prioritized_methods.py
+lib/python${MODPY_VERSION}/site-packages/turbojson/tests/test_prioritized_methods.pyc
 lib/python${MODPY_VERSION}/site-packages/turbojson/tests/test_sqlalchemy.py
 lib/python${MODPY_VERSION}/site-packages/turbojson/tests/test_sqlalchemy.pyc
 lib/python${MODPY_VERSION}/site-packages/turbojson/tests/test_sqlobject.py
