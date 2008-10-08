@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2008/07/26 03:27:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2008/10/08 17:43:37 jasper Exp $
 
 COMMENT=	run a subprocess in batch mode
 
 MODULES=	cpan
-DISTNAME=	IPC-Run3-0.040
+DISTNAME=	IPC-Run3-0.042
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
