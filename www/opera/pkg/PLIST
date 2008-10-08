@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2008/06/12 19:04:11 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.27 2008/10/08 20:30:23 sturm Exp $
 bin/opera
 lib/opera/
 lib/opera/plugins/
@@ -27,6 +27,7 @@ share/opera/ini/filehandler.ini
 share/opera/ini/font.ini
 share/opera/ini/mailproviders.xml
 share/opera/ini/pluginpath.ini
+share/opera/ini/speeddial_default.ini
 share/opera/ini/standard_keyboard.ini
 share/opera/ini/standard_keyboard_compat.ini
 share/opera/ini/standard_menu.ini
@@ -124,6 +125,11 @@ share/opera/locale/hu/hungarian.lng
 share/opera/locale/hu/license.txt
 share/opera/locale/hu/opera6.adr
 share/opera/locale/hu/search.ini
+share/opera/locale/id/
+share/opera/locale/id/indonesian.lng
+share/opera/locale/id/license.txt
+share/opera/locale/id/opera6.adr
+share/opera/locale/id/search.ini
 share/opera/locale/it/
 share/opera/locale/it/italiano.lng
 share/opera/locale/it/license.txt
@@ -199,6 +205,11 @@ share/opera/locale/tr/license.txt
 share/opera/locale/tr/opera6.adr
 share/opera/locale/tr/search.ini
 share/opera/locale/tr/turkce.lng
+share/opera/locale/uk/
+share/opera/locale/uk/license.txt
+share/opera/locale/uk/opera6.adr
+share/opera/locale/uk/search.ini
+share/opera/locale/uk/ukrainian.lng
 share/opera/locale/zh-cn/
 share/opera/locale/zh-cn/chinese_simp.lng
 share/opera/locale/zh-cn/license.txt
@@ -265,6 +276,7 @@ share/opera/styles/user/structuretables.css
 share/opera/styles/user/tablelayout.css
 share/opera/styles/user/toc.css
 share/opera/styles/warning.css
+share/opera/styles/webfeeds.html
 share/opera/styles/wml.css
 share/opera/svg-mo.dat
 share/opera/svg-mobd.dat

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.53 2008/08/20 20:56:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2008/10/08 20:30:22 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	fast and customizable WWW browser
 
-V=		9.52
-OPERA_BUILD=	2091
-DISTNAME=	opera-${V}-${OPERA_BUILD}.gcc295-static-qt3.i386
+V=		9.60
+OPERA_BUILD=	2444
+DISTNAME=	opera-${V}.gcc4-static-qt3.i386
 PKGNAME=	opera-${V}
 CATEGORIES=	www
 
@@ -39,7 +39,7 @@ RUN_DEPENDS=	::emulators/fedora/base
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/opera-$V-${OPERA_BUILD}.gcc295-static-qt3.i386
+WRKDIST=	${WRKDIR}/opera-$V-${OPERA_BUILD}.gcc4-static-qt3.i386
 
 do-install:
 	cd ${WRKBUILD} && ./install.sh \
