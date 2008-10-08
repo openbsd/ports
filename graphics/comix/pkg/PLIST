@@ -1,26 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/04/17 08:10:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/10/08 16:02:29 jasper Exp $
 bin/comix
 @man man/man1/comix.1
-share/applications/
 share/applications/comix.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/comix.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/comix.svg
 share/locale/ca/LC_MESSAGES/comix.mo
+share/locale/cs/LC_MESSAGES/comix.mo
 share/locale/de/LC_MESSAGES/comix.mo
 share/locale/el/LC_MESSAGES/comix.mo
 share/locale/es/LC_MESSAGES/comix.mo
+share/locale/fa/LC_MESSAGES/comix.mo
 share/locale/fr/LC_MESSAGES/comix.mo
+share/locale/hr/LC_MESSAGES/comix.mo
+share/locale/hu/LC_MESSAGES/comix.mo
+share/locale/id/LC_MESSAGES/comix.mo
 share/locale/it/LC_MESSAGES/comix.mo
 share/locale/ja/LC_MESSAGES/comix.mo
+share/locale/ko/LC_MESSAGES/comix.mo
 share/locale/nl/LC_MESSAGES/comix.mo
 share/locale/pl/LC_MESSAGES/comix.mo
 share/locale/pt_BR/LC_MESSAGES/comix.mo
+share/locale/ru/LC_MESSAGES/comix.mo
 share/locale/sv/LC_MESSAGES/comix.mo
 share/locale/zh_CN/LC_MESSAGES/comix.mo
 share/locale/zh_TW/LC_MESSAGES/comix.mo
