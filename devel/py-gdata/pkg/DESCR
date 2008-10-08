@@ -9,6 +9,8 @@ service modules for the the following Google data services:
  - Google Apps Provisioning API
  - Picasa Web Albums Data API
  - Google Code Search Data API
+ - YouTube Data API
+ - Blogger Data API
  - core Google data API functionality
 
 The core Google data code provides sufficient functionality to use this

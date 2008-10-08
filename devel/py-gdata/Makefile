@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/12 14:07:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/08 16:08:00 jasper Exp $
 
-COMMENT=	Google data Python client library
+COMMENT=	Python client library for Google data APIs
 
-MODPY_EGG_VERSION=1.0.13
+MODPY_EGG_VERSION=1.2.1
 DISTNAME=	gdata.py-${MODPY_EGG_VERSION}
 PKGNAME=	py-gdata-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://code.google.com/p/gdata-python-client/
+MAINTAINER=	frantisek holop <minusf@obiit.org>
 
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,5 +25,16 @@ REGRESS_IS_INTERACTIVE=	Yes
 do-regress: fake
 	@cd ${WRKSRC}/tests && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./run_all_tests.py
+
+D=	${PREFIX}/share/doc/py-gdata
+E=	${PREFIX}/share/examples/py-gdata
+
+post-install:
+	${INSTALL_DATA_DIR} $D
+	${INSTALL_DATA} ${WRKSRC}/pydocs/*.html $D && \
+		${CHMOD} o+r $D/*
+	${INSTALL_DATA_DIR} $E
+	cp -r ${WRKSRC}/samples/* $E && \
+		${CHMOD} -R o+rx $E
 
 .include <bsd.port.mk>
