@@ -1,23 +1,21 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/17 23:06:56 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/08 12:42:08 jasper Exp $
 
 COMMENT=	parse and format strp and strf time patterns
 
 MODULES=	cpan
-DISTNAME=	DateTime-Format-Strptime-1.0702
+DISTNAME=	DateTime-Format-Strptime-1.0800
 CATEGORIES=	devel
 EXTRACT_SUFX=	.tgz
 
-# GPL
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=		::devel/p5-DateTime \
-			::devel/p5-DateTime-Locale \
-			::devel/p5-DateTime-TimeZone \
-			::devel/p5-Params-Validate
-
-BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		:p5-DateTime->=0.4304:devel/p5-DateTime \
+			:p5-DateTime-Locale->=0.41:devel/p5-DateTime-Locale \
+			:p5-DateTime-TimeZone->=0.79:devel/p5-DateTime-TimeZone \
+			:p5-Params-Validate->=0.64:devel/p5-Params-Validate
 
 .include <bsd.port.mk>
