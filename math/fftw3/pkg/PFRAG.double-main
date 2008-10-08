@@ -1,7 +1,7 @@
-@comment $OpenBSD: PFRAG.double-main,v 1.1 2006/11/21 20:42:30 steven Exp $
+@comment $OpenBSD: PFRAG.double-main,v 1.2 2008/10/08 22:27:22 steven Exp $
 @pkgpath math/fftw3
 @pkgpath math/fftw3,double
-bin/fftw-wisdom
+@bin bin/fftw-wisdom
 lib/libfftw3.a
 lib/libfftw3.la
 lib/pkgconfig/fftw3.pc

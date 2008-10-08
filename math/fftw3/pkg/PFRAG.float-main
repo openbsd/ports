@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.float-main,v 1.1 2006/11/21 20:42:30 steven Exp $
+@comment $OpenBSD: PFRAG.float-main,v 1.2 2008/10/08 22:27:22 steven Exp $
 @pkgpath math/fftw3,float
-bin/fftwf-wisdom
+@bin bin/fftwf-wisdom
 lib/libfftw3f.a
 lib/libfftw3f.la
 lib/pkgconfig/fftw3f.pc
