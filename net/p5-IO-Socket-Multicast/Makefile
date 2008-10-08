@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2008/10/02 20:38:37 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2008/10/08 17:29:03 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	module for sending and receiving multicast messages
 
 MODULES=	cpan
-DISTNAME=	IO-Socket-Multicast-1.04
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	IO-Socket-Multicast-1.05
 CATEGORIES=	net
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-# Artistic/GPL
+# perl
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
