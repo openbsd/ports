@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:09:42 simon Exp $
+# $OpenBSD: Makefile,v 1.18 2008/10/08 12:54:46 jasper Exp $
 
 COMMENT=	perl module for getting image information
 
 MODULES=	cpan
-VERSION=	1.23
-DISTNAME=	Image-Info-${VERSION}
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Image-Info-1.28
 CATEGORIES=	graphics
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# perl
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
