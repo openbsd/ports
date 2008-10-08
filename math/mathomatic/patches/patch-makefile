@@ -1,12 +1,21 @@
-$OpenBSD: patch-makefile,v 1.6 2007/09/18 15:46:36 steven Exp $
---- makefile.orig	Tue Sep  4 13:22:42 2007
-+++ makefile	Tue Sep 18 17:42:50 2007
-@@ -3,7 +3,7 @@
+$OpenBSD: patch-makefile,v 1.7 2008/10/08 21:55:19 steven Exp $
+--- makefile.orig	Sun Sep 21 00:54:47 2008
++++ makefile	Wed Oct  8 23:51:23 2008
+@@ -2,7 +2,7 @@
+ # Currently uses gcc only options in CFLAGS, just remove them for other C compilers.
  
  VERSION		= `cat VERSION`
- CFLAGS		+= -Wuninitialized -Wshadow -Wformat -Wparentheses -Wcast-align # gcc specific flags
--CFLAGS		+= -O -DUNIX -DVERSION=\"$(VERSION)\" # general cc flags
-+CFLAGS		+= -DUNIX -DVERSION=\"$(VERSION)\" # general cc flags
- LDFLAGS		+= # The default linker flags.
- LIBS		+= -lm # The default libraries to link.
+-CFLAGS		+= -O2 -Wuninitialized -Wunused -Wshadow -Wformat -Wparentheses # gcc specific flags
++CFLAGS		+= -Wuninitialized -Wunused -Wshadow -Wformat -Wparentheses # gcc specific flags
+ CFLAGS		+= -DUNIX -DVERSION=\"$(VERSION)\" # C compiler flags
+ LIBS		+= -lm # libraries to link
  
+@@ -13,7 +13,7 @@ LIBS		+= $(READLINE:1=-lreadline -lncurses)
+ # Install directories:
+ prefix		?= /usr/local
+ bindir		?= $(prefix)/bin
+-mandir		?= $(prefix)/share/man
++mandir		?= $(prefix)/man
+ docdir		?= $(prefix)/share/doc
+ 
+ MANHTML		= doc/mathomatic.1.html doc/matho-primes.1.html doc/matho-pascal.1.html doc/matho-sumsq.1.html
