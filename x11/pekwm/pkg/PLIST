@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/06/11 08:56:43 ajacoutot Exp $
-bin/pekwm
+@comment $OpenBSD: PLIST,v 1.5 2008/10/09 16:56:12 ajacoutot Exp $
+@bin bin/pekwm
 @man man/man1/pekwm.1
 share/examples/pekwm/
 @sample ${SYSCONFDIR}/pekwm/
@@ -19,9 +19,8 @@ share/examples/pekwm/vars
 @sample ${SYSCONFDIR}/pekwm/vars
 share/pekwm/
 share/pekwm/scripts/
-share/pekwm/scripts/pekwm_themeset.pl
 share/pekwm/scripts/pekwm_themeset.sh
-share/pekwm/scripts/pekwm_ws_menu.pl
+share/pekwm/scripts/pekwm_ws_menu.sh
 share/pekwm/themes/
 share/pekwm/themes/default/
 share/pekwm/themes/default/theme

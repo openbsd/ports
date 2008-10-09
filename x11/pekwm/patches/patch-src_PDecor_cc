@@ -1,16 +1,14 @@
-$OpenBSD: patch-src_PDecor_cc,v 1.1 2007/08/26 19:21:07 mbalmer Exp $
---- src/PDecor.cc.orig	Fri Aug 24 18:35:19 2007
-+++ src/PDecor.cc	Fri Aug 24 18:35:47 2007
-@@ -253,8 +253,10 @@ PDecor::~PDecor(void)
-         }
-     }
+$OpenBSD: patch-src_PDecor_cc,v 1.2 2008/10/09 16:56:12 ajacoutot Exp $
+--- src/PDecor.cc.orig	Tue Oct  7 18:21:36 2008
++++ src/PDecor.cc	Tue Oct  7 18:22:20 2008
+@@ -1025,7 +1025,9 @@ PDecor::activateChild(PWinObj *child)
+ void
+ PDecor::getDecorInfo(wchar_t *buf, uint size)
+ {
+-    swprintf(buf, size, L"%dx%d+%d+%d", _gm.width, _gm.height, _gm.x, _gm.y);
++    char buf2[256];
++    snprintf(buf2, sizeof buf2, "%dx%d+%d+%d", _gm.width, _gm.height, _gm.x, _gm.y);
++    mbstowcs(buf, buf2, size);
+ }
  
--    // make things look smoother, buttons will be noticed as deleted otherwise
--    unmapWindow();
-+    // Make things look smoother, buttons will be noticed as deleted
-+    // otherwise. Using X call directly to avoid re-drawing and other
-+    // special features not required when removing the window.
-+    XUnmapWindow(_dpy, _window);
- 
-     // free buttons
-     unloadDecor();
+ //! @brief
