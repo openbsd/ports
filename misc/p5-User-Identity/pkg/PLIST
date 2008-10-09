@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/09 22:15:18 jasper Exp $
+${P5SITE}/Mail/
+${P5SITE}/Mail/Identity.pm
+${P5SITE}/Mail/Identity.pod
+${P5SITE}/User/
+${P5SITE}/User/Identity/
+${P5SITE}/User/Identity.pm
+${P5SITE}/User/Identity.pod
+${P5SITE}/User/Identity/Archive/
+${P5SITE}/User/Identity/Archive.pm
+${P5SITE}/User/Identity/Archive.pod
+${P5SITE}/User/Identity/Archive/Plain.pm
+${P5SITE}/User/Identity/Archive/Plain.pod
+${P5SITE}/User/Identity/Collection/
+${P5SITE}/User/Identity/Collection.pm
+${P5SITE}/User/Identity/Collection.pod
+${P5SITE}/User/Identity/Collection/Emails.pm
+${P5SITE}/User/Identity/Collection/Emails.pod
+${P5SITE}/User/Identity/Collection/Locations.pm
+${P5SITE}/User/Identity/Collection/Locations.pod
+${P5SITE}/User/Identity/Collection/Systems.pm
+${P5SITE}/User/Identity/Collection/Systems.pod
+${P5SITE}/User/Identity/Collection/Users.pm
+${P5SITE}/User/Identity/Collection/Users.pod
+${P5SITE}/User/Identity/Item.pm
+${P5SITE}/User/Identity/Item.pod
+${P5SITE}/User/Identity/Location.pm
+${P5SITE}/User/Identity/Location.pod
+${P5SITE}/User/Identity/System.pm
+${P5SITE}/User/Identity/System.pod
+@man man/man3p/Mail::Identity.3p
+@man man/man3p/User::Identity.3p
+@man man/man3p/User::Identity::Archive.3p
+@man man/man3p/User::Identity::Archive::Plain.3p
+@man man/man3p/User::Identity::Collection.3p
+@man man/man3p/User::Identity::Collection::Emails.3p
+@man man/man3p/User::Identity::Collection::Locations.3p
+@man man/man3p/User::Identity::Collection::Systems.3p
+@man man/man3p/User::Identity::Collection::Users.3p
+@man man/man3p/User::Identity::Item.3p
+@man man/man3p/User::Identity::Location.3p
+@man man/man3p/User::Identity::System.3p

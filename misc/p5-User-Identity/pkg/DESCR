@@ -1,0 +1,4 @@
+The User::Identity object is created to maintain a set of informational
+objects which are related to one user. The User::Identity module tries
+to be smart providing defaults, conversions and often required
+combinations.
