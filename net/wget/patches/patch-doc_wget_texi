@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_wget_texi,v 1.2 2005/07/25 07:12:58 aanriot Exp $
---- doc/wget.texi.orig	Sun Jul  3 09:34:36 2005
-+++ doc/wget.texi	Sun Jul  3 09:34:54 2005
+$OpenBSD: patch-doc_wget_texi,v 1.3 2008/10/09 18:50:45 sthen Exp $
+--- doc/wget.texi.orig	Mon Jun 30 03:10:16 2008
++++ doc/wget.texi	Thu Oct  9 15:36:39 2008
 @@ -11,6 +11,11 @@
  @setchapternewpage on
  @c %**end of header
@@ -13,3 +13,39 @@ $OpenBSD: patch-doc_wget_texi,v 1.2 2005/07/25 07:12:58 aanriot Exp $
  @iftex
  @c Remove this if you don't use A4 paper.
  @afourpaper
+@@ -191,12 +196,12 @@ gauge can be customized to your preferences.
+ Most of the features are fully configurable, either through command line
+ options, or via the initialization file @file{.wgetrc} (@pxref{Startup
+ File}).  Wget allows you to define @dfn{global} startup files
+-(@file{/usr/local/etc/wgetrc} by default) for site settings.
++(@file{${SYSCONFDIR}/wgetrc} by default) for site settings.
+ 
+ @ignore
+ @c man begin FILES
+ @table @samp
+-@item /usr/local/etc/wgetrc
++@item ${SYSCONFDIR}/wgetrc
+ Default location of the @dfn{global} startup file.
+ 
+ @item .wgetrc
+@@ -2516,9 +2521,8 @@ commands.
+ @cindex location of wgetrc
+ 
+ When initializing, Wget will look for a @dfn{global} startup file,
+-@file{/usr/local/etc/wgetrc} by default (or some prefix other than
+-@file{/usr/local}, if Wget was not installed there) and read commands
+-from there, if it exists.
++@file{${SYSCONFDIR}/wgetrc} by default, and read commands from there
++if it exists.
+ 
+ Then it will look for the user's file.  If the environmental variable
+ @code{WGETRC} is set, Wget will try to load that file.  Failing that, no
+@@ -2528,7 +2532,7 @@ If @code{WGETRC} is not set, Wget will try to load @fi
+ 
+ The fact that user's settings are loaded after the system-wide ones
+ means that in case of collision user's wgetrc @emph{overrides} the
+-system-wide wgetrc (in @file{/usr/local/etc/wgetrc} by default).
++system-wide wgetrc (in @file{${SYSCONFDIR}/wgetrc} by default).
+ Fascist admins, away!
+ 
+ @node Wgetrc Syntax

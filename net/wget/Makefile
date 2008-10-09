@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2008/06/11 17:59:18 okan Exp $
+# $OpenBSD: Makefile,v 1.46 2008/10/09 18:50:44 sthen Exp $
 
 COMMENT=	retrieve files from the web via HTTP, HTTPS and FTP
 
-DISTNAME=	wget-1.11.3
+DISTNAME=	wget-1.11.4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU:=wget/}
 
@@ -22,8 +22,6 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-build:
-	@perl -pi -e s#/usr/local/etc#${SYSCONFDIR}#g ${WRKSRC}/doc/wget.texi
-	@perl -pi -e s#/usr/local#${PREFIX}#g ${WRKSRC}/doc/wget.texi
-	@perl -pi -e s#/usr/local/etc#${SYSCONFDIR}#g ${WRKSRC}/doc/sample.wgetrc
+	@${SUBST_CMD} ${WRKSRC}/doc/wget.texi ${WRKSRC}/doc/sample.wgetrc
 
 .include <bsd.port.mk>
