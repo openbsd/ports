@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2008/10/02 23:10:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2008/10/10 12:38:03 jasper Exp $
 
 COMMENT=	perl module to manage XML RSS files
 
-DISTNAME=	XML-RSS-1.35
+DISTNAME=	XML-RSS-1.36
 CATEGORIES=	textproc
 
 # perl
@@ -24,25 +24,12 @@ REGRESS_DEPENDS=::devel/p5-Test-Differences \
 		:p5-Test-Manifest->=0.9:devel/p5-Test-Manifest \
 		::devel/p5-Test-Pod-Coverage
 
-# Install additional example files
 EXAMPLE_LOC=	${PREFIX}/share/examples/p5-XML-RSS
-EXAMPLE_PL=	rss2html.pl update_rss.pl convert.pl rss_info.pl \
-		create_rss_multiple.pl 1.0/create_rss_1.0.pl \
-		1.0/update_rss_1.0.pl 0.91/create_rss_0.91_full.pl \
-		0.91/create_rss_0.91.pl 0.9/create_rss.pl
-EXAMPLE_DOC=	1.0/rss1.0.rdf 1.0/slash.rdf 0.91/fm.rdf 0.91/rss-0.91.dtd \
-		0.91/fm0.91_full.rdf 0.91/fm0.91.rdf 0.91/xmlnews.rdf \
-		README 0.9/linuxtoday.rdf 0.9/rss-0.9.dtd 0.9/slashdot.rdf
 
 post-install:
-.for i in 1.0 0.91 0.9
-	${INSTALL_DATA_DIR} ${EXAMPLE_LOC}/$i
-.endfor
-.for i in ${EXAMPLE_PL}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/$i ${EXAMPLE_LOC}/$i
-.endfor
-.for i in ${EXAMPLE_DOC}
-	${INSTALL_DATA} ${WRKSRC}/examples/$i ${EXAMPLE_LOC}/$i
-.endfor
-	
+	@find ${WRKSRC} -name \*.orig -print0 | xargs -0 rm -f
+	${INSTALL_DATA_DIR} ${EXAMPLE_LOC}
+	cd ${WRKSRC}/examples && pax -rw . ${EXAMPLE_LOC}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLE_LOC}
+
 .include <bsd.port.mk>
