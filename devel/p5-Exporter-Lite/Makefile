@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/03 13:36:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/10 12:18:06 sthen Exp $
 
 COMMENT=		lightweight exporting of variables
 
 MODULES=		cpan
-VERSION=		0.01
 DISTNAME=		Exporter-Lite-0.02
 CATEGORIES=		devel
 
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
