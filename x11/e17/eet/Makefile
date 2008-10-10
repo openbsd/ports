@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/16 18:23:34 laurent Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/10 19:42:33 sturm Exp $
 
 COMMENT=	library to write an arbitary set of chunks of data to a file
 DISTNAME=	eet-20071211
@@ -16,7 +16,7 @@ WANTLIB= 		c m z
 
 LIB_DEPENDS=		jpeg::graphics/jpeg
 
-CONFIGURE_STYLE=	automake
+CONFIGURE_STYLE=	autoconf automake
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
