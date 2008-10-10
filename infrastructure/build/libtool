@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.19 2008/05/01 22:02:32 steven Exp $
+# $OpenBSD: libtool,v 1.20 2008/10/10 20:32:28 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -909,7 +909,10 @@ sub find_lib
 		# search in .libs when priority is high
 		$sd = "$d/$ltdir" if (exists $dirs{$d} && $dirs{$d} > 3);
 		print "   ... in $d\n" if $D;
-		@globbedlib = glob <$sd/lib$libtofind.so.*>;
+		# select correct library by sorting by version number only
+		@globbedlib = sort { my ($c,$d) =
+			map { /\.so\.(\d+\.\d+)$/; $1 } ($a,$b); $d <=> $c }
+			glob "$sd/lib$libtofind.so.*";
 		if ($globbedlib[0]) {
 			print "found $libtofind in $sd\n" if $D;
 			$libfile = $globbedlib[0];
