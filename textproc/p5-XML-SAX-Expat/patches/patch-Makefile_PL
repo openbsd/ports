@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2006/11/14 19:09:03 espie Exp $
---- Makefile.PL.orig	Tue Nov 14 11:48:36 2006
-+++ Makefile.PL	Tue Nov 14 11:49:18 2006
-@@ -16,7 +16,7 @@ WriteMakefile(
+$OpenBSD: patch-Makefile_PL,v 1.2 2008/10/10 12:50:53 jasper Exp $
+--- Makefile.PL.orig	Fri Oct 10 14:44:21 2008
++++ Makefile.PL	Fri Oct 10 14:44:37 2008
+@@ -23,7 +23,7 @@ WriteMakefile(
  
  
  ## add ourselves to the list of installed parsers
 -sub MY::install {
-+sub dont {
++sub do_not_want {
      package MY;
      my $script = shift->SUPER::install(@_);
-     $script =~ s/install :: (.*)$/install :: $1 install_sax_expat/m;
+     unless ($ENV{'SKIP_SAX_INSTALL'}) {
