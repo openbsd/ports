@@ -1,12 +1,13 @@
-$OpenBSD: patch-Makefile_PL,v 1.3 2003/10/18 10:30:26 naddy Exp $
---- Makefile.PL.orig	2002-02-17 20:39:39.000000000 +0100
-+++ Makefile.PL	2003-10-15 22:13:16.000000000 +0200
-@@ -5,6 +5,7 @@ use ExtUtils::MakeMaker;
- WriteMakefile(
-     'NAME'	=> 'Math::GMP',
-     'VERSION_FROM' => 'lib/Math/GMP.pm', # finds $VERSION
--    'LIBS'	=> ['-lgmp'],   # e.g., '-lm' 
-+    'LIBS'	=> ["$ENV{LDFLAGS} -lgmp"],   # e.g., '-lm' 
-+    'INC'	=> "$ENV{CPPFLAGS}",
-     'DEFINE'	=> '',     # e.g., '-DHAVE_SOMETHING' 
- );
+$OpenBSD: patch-Makefile_PL,v 1.4 2008/10/10 12:12:07 jasper Exp $
+--- Makefile.PL.orig	Fri Oct 10 13:52:55 2008
++++ Makefile.PL	Fri Oct 10 13:53:31 2008
+@@ -8,7 +8,8 @@ my $output = WriteMakefile
+ 	(
+ 	 'NAME'	        => 'Math::GMP',
+ 	 'VERSION_FROM' => 'lib/Math/GMP.pm',
+-	 'LIBS'	        => ['-lgmp'],
++	 'LIBS'		=> ["$ENV{LDFLAGS} -lgmp"],
++	 'INC'		=> "$ENV{CPPFLAGS}",
+ 	 'NO_META'      => 1,
+ 	 );
+ 
