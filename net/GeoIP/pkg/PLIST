@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/12/09 19:33:45 steven Exp $
-bin/geoiplookup
-bin/geoipupdate
+@comment $OpenBSD: PLIST,v 1.7 2008/10/10 21:40:40 steven Exp $
+@bin bin/geoiplookup
+@bin bin/geoiplookup6
+@bin bin/geoipupdate
 include/GeoIP.h
 include/GeoIPCity.h
 include/GeoIPUpdate.h

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libGeoIP_GeoIP_c,v 1.6 2008/02/01 21:56:34 sthen Exp $
---- libGeoIP/GeoIP.c.orig	Sun Nov 25 03:27:25 2007
-+++ libGeoIP/GeoIP.c	Thu Jan 31 00:10:08 2008
-@@ -687,7 +687,7 @@ unsigned long _GeoIP_lookupaddress (const char *host) 
+$OpenBSD: patch-libGeoIP_GeoIP_c,v 1.7 2008/10/10 21:40:40 steven Exp $
+--- libGeoIP/GeoIP.c.orig	Tue Sep 16 17:23:25 2008
++++ libGeoIP/GeoIP.c	Fri Oct 10 23:31:05 2008
+@@ -820,7 +820,7 @@ unsigned long _GeoIP_lookupaddress (const char *host) 
  			free(buf);
  			return 0;
  		}
