@@ -1,4 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/11 12:33:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/10 13:04:17 jasper Exp $
 ${P5SITE}/CGI/
 ${P5SITE}/CGI/Ajax.pm
 @man man/man3p/CGI::Ajax.3p
+share/examples/p5-CGI-Ajax/
+share/examples/p5-CGI-Ajax/CGI-Application-Ajax-ex01.pl
+share/examples/p5-CGI-Ajax/CGI-Application-Ajax-ex02.pl
+share/examples/p5-CGI-Ajax/CGI-Application-Ajax-ex03.pl
+share/examples/p5-CGI-Ajax/convert_degrees.pl
+share/examples/p5-CGI-Ajax/pjx_JSON.pl
+share/examples/p5-CGI-Ajax/pjx_JSON_out.pl
+share/examples/p5-CGI-Ajax/pjx_NO_CACHE_callee.pl
+share/examples/p5-CGI-Ajax/pjx_NO_CACHE_caller.pl
+share/examples/p5-CGI-Ajax/pjx_callback.pl
+share/examples/p5-CGI-Ajax/pjx_chained.pl
+share/examples/p5-CGI-Ajax/pjx_change_encoding.pl
+share/examples/p5-CGI-Ajax/pjx_change_headers.pl
+share/examples/p5-CGI-Ajax/pjx_checkbox.pl
+share/examples/p5-CGI-Ajax/pjx_combo.pl
+share/examples/p5-CGI-Ajax/pjx_cr.pl
+share/examples/p5-CGI-Ajax/pjx_dynselect.pl
+share/examples/p5-CGI-Ajax/pjx_formDump.pl
+share/examples/p5-CGI-Ajax/pjx_from_span.pl
+share/examples/p5-CGI-Ajax/pjx_loading.pl
+share/examples/p5-CGI-Ajax/pjx_manyret.pl
+share/examples/p5-CGI-Ajax/pjx_nobuild.pl
+share/examples/p5-CGI-Ajax/pjx_objects_2_url.pl
+share/examples/p5-CGI-Ajax/pjx_podex.pl
+share/examples/p5-CGI-Ajax/pjx_radio.pl
+share/examples/p5-CGI-Ajax/pjx_splitargs.pl
+share/examples/p5-CGI-Ajax/pjx_subs.pl
+share/examples/p5-CGI-Ajax/pjx_url.pl
