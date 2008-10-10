@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:36:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/10/10 12:14:17 jasper Exp $
 ${P5SITE}/GnuPG/
 ${P5SITE}/GnuPG/Fingerprint.pm
 ${P5SITE}/GnuPG/Handles.pm
@@ -11,6 +11,7 @@ ${P5SITE}/GnuPG/SecretKey.pm
 ${P5SITE}/GnuPG/Signature.pm
 ${P5SITE}/GnuPG/SubKey.pm
 ${P5SITE}/GnuPG/UserId.pm
+${P5SITE}/auto/
 ${P5SITE}/auto/GnuPG/
 ${P5SITE}/auto/GnuPG/Interface/
 ${P5SITE}/auto/GnuPG/Interface/autosplit.ix
