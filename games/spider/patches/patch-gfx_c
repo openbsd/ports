@@ -1,7 +1,15 @@
-$OpenBSD: patch-gfx_c,v 1.1 2004/10/25 13:49:22 brad Exp $
---- gfx.c.orig	Sun Oct 24 17:37:02 2004
-+++ gfx.c	Sun Oct 24 17:37:14 2004
-@@ -166,7 +166,7 @@ unsigned long	redpixel;
+$OpenBSD: patch-gfx_c,v 1.2 2008/10/10 22:58:16 sthen Exp $
+--- gfx.c.orig	Sat Sep 28 18:46:10 1991
++++ gfx.c	Sat Aug  2 19:41:42 2008
+@@ -15,6 +15,7 @@
+  */
+ #include	"defs.h"
+ #include	"globals.h"
++#include <stdlib.h>
+ 
+ #ifdef ROUND_CARDS
+ #include	<X11/Xmu/Drawing.h>
+@@ -166,7 +167,7 @@ unsigned long	redpixel;
  	gcflags |= GCFont;
  
  	textgc = XCreateGC(dpy, RootWindow(dpy, screen), gcflags, &gcv);

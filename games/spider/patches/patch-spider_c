@@ -1,6 +1,15 @@
-$OpenBSD: patch-spider_c,v 1.1 2004/10/25 13:49:22 brad Exp $
---- spider.c.orig	Sun Oct 24 17:38:21 2004
-+++ spider.c	Sun Oct 24 17:38:31 2004
+$OpenBSD: patch-spider_c,v 1.2 2008/10/10 22:58:16 sthen Exp $
+--- spider.c.orig	Sat Sep 28 18:46:12 1991
++++ spider.c	Sat Aug  2 19:41:42 2008
+@@ -17,7 +17,7 @@
+ #include	"defs.h"
+ #include	"globals.h"
+ #include	<ctype.h>
+-
++#include <stdlib.h>
+ static void	fix_coords();
+ 
+ int 	deltamod = 0;
 @@ -619,7 +619,7 @@ Type	type;
  
  	return (type_names[type]);
