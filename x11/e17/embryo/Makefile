@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/16 18:27:50 laurent Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/10 19:35:24 sturm Exp $
 
 COMMENT=	C like scripting language used in the Enlightenment project
 DISTNAME=	embryo-20071211
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m
 
-CONFIGURE_STYLE=	automake
+CONFIGURE_STYLE=	autoconf automake
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
