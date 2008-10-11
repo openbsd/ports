@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/07/28 11:44:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2008/10/11 07:54:13 ajacoutot Exp $
 @bin bin/update-mime-database
 lib/pkgconfig/
 lib/pkgconfig/shared-mime-info.pc
@@ -23,13 +23,12 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/shared-mime-info.mo
 share/locale/eo/LC_MESSAGES/shared-mime-info.mo
 share/locale/es/LC_MESSAGES/shared-mime-info.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/shared-mime-info.mo
 share/locale/fi/LC_MESSAGES/shared-mime-info.mo
 share/locale/fr/LC_MESSAGES/shared-mime-info.mo
 share/locale/ga/LC_MESSAGES/shared-mime-info.mo
 share/locale/hu/LC_MESSAGES/shared-mime-info.mo
+share/locale/id/LC_MESSAGES/shared-mime-info.mo
 share/locale/it/LC_MESSAGES/shared-mime-info.mo
 share/locale/ja/LC_MESSAGES/shared-mime-info.mo
 share/locale/ko/LC_MESSAGES/shared-mime-info.mo
@@ -266,11 +265,13 @@ share/mime/application/x-matroska.xml
 share/mime/application/x-mif.xml
 share/mime/application/x-mozilla-bookmarks.xml
 share/mime/application/x-ms-dos-executable.xml
+share/mime/application/x-msi.xml
 share/mime/application/x-mswinurl.xml
 share/mime/application/x-mswrite.xml
 share/mime/application/x-msx-rom.xml
 share/mime/application/x-n64-rom.xml
 share/mime/application/x-nautilus-link.xml
+share/mime/application/x-navi-animation.xml
 share/mime/application/x-nes-rom.xml
 share/mime/application/x-netcdf.xml
 share/mime/application/x-netshow-channel.xml
@@ -589,7 +590,6 @@ share/mime/text/x-readme.xml
 share/mime/text/x-rpm-spec.xml
 share/mime/text/x-scheme.xml
 share/mime/text/x-setext.xml
-share/mime/text/x-speech.xml
 share/mime/text/x-sql.xml
 share/mime/text/x-ssa.xml
 share/mime/text/x-subviewer.xml
@@ -607,6 +607,8 @@ share/mime/text/x-vhdl.xml
 share/mime/text/x-xmi.xml
 share/mime/text/x-xslfo.xml
 share/mime/text/xmcd.xml
+share/mime/treemagic
+share/mime/types
 share/mime/video/
 share/mime/video/3gpp.xml
 share/mime/video/dv.xml
@@ -630,6 +632,22 @@ share/mime/video/x-nsv.xml
 share/mime/video/x-ogm+ogg.xml
 share/mime/video/x-sgi-movie.xml
 share/mime/video/x-theora+ogg.xml
+share/mime/x-content/
+share/mime/x-content/audio-cdda.xml
+share/mime/x-content/audio-dvd.xml
+share/mime/x-content/audio-player.xml
+share/mime/x-content/blank-bd.xml
+share/mime/x-content/blank-cd.xml
+share/mime/x-content/blank-dvd.xml
+share/mime/x-content/blank-hddvd.xml
+share/mime/x-content/image-dcf.xml
+share/mime/x-content/image-picturecd.xml
+share/mime/x-content/software.xml
+share/mime/x-content/video-bluray.xml
+share/mime/x-content/video-dvd.xml
+share/mime/x-content/video-hddvd.xml
+share/mime/x-content/video-svcd.xml
+share/mime/x-content/video-vcd.xml
 share/mime/x-epoc/
 share/mime/x-epoc/x-sisx-app.xml
 @exec %D/bin/update-mime-database %D/share/mime
