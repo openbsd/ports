@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2008/10/01 14:31:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2008/10/11 10:58:58 simon Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache
 
 DISTNAME=	mod_perl-1.30
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		${MASTER_SITE_PERL_CPAN:=Apache/}
