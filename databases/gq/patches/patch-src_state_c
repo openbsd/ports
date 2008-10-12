@@ -1,6 +1,6 @@
 --- src/state.c.orig	Mon Nov  3 22:19:54 2003
-+++ src/state.c	Sat Feb  5 06:50:26 2005
-@@ -754,7 +754,7 @@ static void state_valueE(struct parser_c
++++ src/state.c	Sun Oct 12 17:01:58 2008
+@@ -754,7 +754,7 @@ static void state_valueE(struct parser_context *ctx,
  	}
      }
  

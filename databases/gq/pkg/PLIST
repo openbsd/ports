@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/02/28 13:30:07 mbalmer Exp $
-bin/gq
+@comment $OpenBSD: PLIST,v 1.8 2008/10/12 17:36:03 ajacoutot Exp $
+@bin bin/gq
 share/gnome/
 share/gnome/apps/
 share/gnome/apps/Internet/

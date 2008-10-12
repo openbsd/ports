@@ -1,5 +1,5 @@
 --- src/xmlparse.c.orig	Mon Nov  3 22:05:18 2003
-+++ src/xmlparse.c	Sat Feb  5 06:50:26 2005
++++ src/xmlparse.c	Sun Oct 12 17:01:58 2008
 @@ -51,7 +51,7 @@
  #include "xmlparse.h"
  
@@ -9,7 +9,7 @@
  
  #define TAGSTACK_INCR 20
  
-@@ -162,10 +162,11 @@ static void startElementH(struct parser_
+@@ -162,10 +162,11 @@ static void startElementH(struct parser_context *ctx,
      e->attrs = NULL;
      if (attrs) {
  	for (i = 0 ; attrs[i] ; i++) ;

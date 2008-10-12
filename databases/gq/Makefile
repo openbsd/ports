@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.26 2008/06/02 14:34:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2008/10/12 17:36:03 ajacoutot Exp $
 
 COMMENT=	GTK-based LDAP client
 
 DISTNAME=	gq-1.0beta1
-PKGNAME=	${DISTNAME}p8
-CATEGORIES=	databases
+PKGNAME=	${DISTNAME}p9
+CATEGORIES=	databases sysutils
 
 HOMEPAGE=	http://biot.com/gq/
 
 MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -37,5 +37,8 @@ AUTOCONF_VERSION= 2.57
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE} \
 		--with-sasl-prefix=${LOCALBASE} \
 		--with-kerberos-prefix=/usr
-		
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/gq.desktop
+
 .include <bsd.port.mk>

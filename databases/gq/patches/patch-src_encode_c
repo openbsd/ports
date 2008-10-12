@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_encode_c,v 1.1 2005/02/28 13:30:07 mbalmer Exp $
+$OpenBSD: patch-src_encode_c,v 1.2 2008/10/12 17:36:03 ajacoutot Exp $
 --- src/encode.c.orig	Wed Oct  8 23:21:16 2003
-+++ src/encode.c	Tue Feb 15 03:51:19 2005
-@@ -53,14 +53,14 @@ const char *decode_string(char *native_s
++++ src/encode.c	Sun Oct 12 17:01:58 2008
+@@ -53,14 +53,14 @@ const char *decode_string(char *native_string, const g
  			  size_t len)
  {
  #if defined(HAVE_ICONV)
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_encode_c,v 1.1 2005/02/28 13:30:07 mbalmer Exp $
  	  out = native_string;
  	  /*       len = strlen(in); */
  	  outlen = len;
-@@ -94,12 +94,12 @@ const gchar *encode_string(gchar *ldap_s
+@@ -94,12 +94,12 @@ const gchar *encode_string(gchar *ldap_string, const g
  			   size_t len)
  {
  #if defined(HAVE_ICONV)

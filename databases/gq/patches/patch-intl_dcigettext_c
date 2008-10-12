@@ -1,5 +1,5 @@
 --- intl/dcigettext.c.orig	Sat May  4 18:10:13 2002
-+++ intl/dcigettext.c	Tue Feb 15 03:50:16 2005
++++ intl/dcigettext.c	Sun Oct 12 17:01:58 2008
 @@ -57,11 +57,6 @@ extern int errno;
  #include <stdlib.h>
  
@@ -12,7 +12,7 @@
  
  #if defined HAVE_UNISTD_H || defined _LIBC
  # include <unistd.h>
-@@ -868,7 +863,7 @@ _nl_find_msg (domain_file, domainbinding
+@@ -868,7 +863,7 @@ _nl_find_msg (domain_file, domainbinding, msgid, lengt
  
  	      outleft = freemem_size - sizeof (size_t);
  	      if (iconv (domain->conv,

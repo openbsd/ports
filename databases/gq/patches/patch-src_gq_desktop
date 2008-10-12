@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gq_desktop,v 1.1 2008/10/12 17:36:03 ajacoutot Exp $
+--- src/gq.desktop.orig	Sun Oct 12 17:02:54 2008
++++ src/gq.desktop	Sun Oct 12 17:06:44 2008
+@@ -3,6 +3,6 @@ Name=GQ LDAP Client
+ Comment=GQ LDAP Client
+ TryExec=gq
+ Exec=gq
+-#Icon=
++Icon=${PREFIX}/share/pixmaps/gq/logo.xpm
+ Terminal=0
+ Type=Application

@@ -1,5 +1,5 @@
 --- configure.in.orig	Mon Nov  3 23:56:14 2003
-+++ configure.in	Sat Nov 12 11:30:15 2005
++++ configure.in	Sun Oct 12 17:02:00 2008
 @@ -278,9 +278,9 @@ AC_CHECK_LIB(lber, ber_alloc,
  )
  
@@ -12,7 +12,7 @@
  )
  
  AC_CACHE_CHECK([OpenLDAP version], gq_cv_OpenLDAP_version,
-@@ -340,7 +340,7 @@ AC_CHECK_FUNCS(ldap_str2objectclass ldap
+@@ -340,7 +340,7 @@ AC_CHECK_FUNCS(ldap_str2objectclass ldap_memfree ldap_
  AC_ARG_WITH(kerberos-prefix,
  	    [  --with-kerberos-prefix=PFX Prefix where Kerberos is installed],
  	    [
