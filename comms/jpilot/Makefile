@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.48 2008/06/01 15:27:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2008/10/12 14:45:58 ajacoutot Exp $
 
 COMMENT=	desktop organizer software for the palm pilot
 
 DISTNAME=	jpilot-1.6.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	comms palm
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE}/
 
 HOMEPAGE=	http://www.jpilot.org/
 
@@ -42,5 +43,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-gtk-prefix=${LOCALBASE}
 
 MAKE_FLAGS=	mkdir_p='mkdir -p'
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/jpilot.xpm ${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
