@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/09/20 22:15:52 rui Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/10/12 08:21:21 brad Exp $
 @pkgpath net/net-snmp
 %%SHARED%%
 @bin bin/encode_keychange
@@ -107,7 +107,9 @@ include/net-snmp/library/snmp-tc.h
 include/net-snmp/library/snmp.h
 include/net-snmp/library/snmpCallbackDomain.h
 include/net-snmp/library/snmpTCPDomain.h
+include/net-snmp/library/snmpTCPIPv6Domain.h
 include/net-snmp/library/snmpUDPDomain.h
+include/net-snmp/library/snmpUDPIPv6Domain.h
 include/net-snmp/library/snmpUnixDomain.h
 include/net-snmp/library/snmp_alarm.h
 include/net-snmp/library/snmp_api.h
