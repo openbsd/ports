@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/08 05:22:45 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/12 22:00:36 steven Exp $
 
 COMMENT-main =		texlive texmf for plain TeX only
 COMMENT-tetex =		texlive texmf for laTeX/PdfTeX 
@@ -35,6 +35,7 @@ do-extract:
 do-install:
 	mv ${WRKDIST}/texmf ${PREFIX}/share
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
+	mv ${WRKDIST}/texmf-doc ${PREFIX}/share
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/*
 
 post-install:
