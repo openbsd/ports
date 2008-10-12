@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_DAPA_C,v 1.1 2008/10/12 08:29:39 martin Exp $
+--- src/DAPA.C.orig	Tue Dec 28 15:39:38 2004
++++ src/DAPA.C	Sun Jun  8 18:04:35 2008
+@@ -84,6 +84,35 @@
+ #define ioport_enable(port, num)  i386_set_ioperm(port, num, 1)
+ #define ioport_disable(port, num) i386_set_ioperm(port, num, 0)
+
++#elif defined(__OpenBSD__) && defined(__i386__)
++
++#include <sys/types.h>
++#include <machine/sysarch.h>
++#include <i386/pio.h>
++
++#define IOPAGES 32
++
++#define ioport_read(port)         inb(port)
++#define ioport_write(port, val)   outb(port, val)
++#define ioport_enable(port, num)  set_ioperm_obsd(port, num, 1)
++#define ioport_disable(port, num) set_ioperm_obsd(port, num, 0)
++
++int
++set_ioperm_obsd(int parport_port, int num, int flag)
++{
++  int i=0;
++  u_long iopermtable[IOPAGES] = {};
++
++  /* get current i/o permission table */
++  i386_get_ioperm(iopermtable);
++
++  /* request access to desired i/o port */
++  for (i=0; i<num; i++)
++     iopermtable[parport_port / IOPAGES] &= ~(flag << parport_port % IOPAGES + i);
++
++  return i386_set_ioperm(iopermtable);
++}
++
+ #else
+
+ /* Direct I/O port access not supported - ppdev/ppi kernel driver
