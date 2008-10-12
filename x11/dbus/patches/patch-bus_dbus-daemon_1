@@ -1,15 +1,15 @@
-$OpenBSD: patch-bus_dbus-daemon_1,v 1.1 2008/04/20 21:00:19 jasper Exp $
---- bus/dbus-daemon.1.orig	Sun Apr 20 22:54:14 2008
-+++ bus/dbus-daemon.1	Sun Apr 20 22:54:17 2008
+$OpenBSD: patch-bus_dbus-daemon_1,v 1.2 2008/10/12 22:08:04 brad Exp $
+--- bus/dbus-daemon.1.orig	Wed Aug  6 15:43:48 2008
++++ bus/dbus-daemon.1	Thu Aug  7 15:05:14 2008
 @@ -30,9 +30,9 @@ a different configuration file.
  
  .PP
  The \-\-session option is equivalent to
--"\-\-config-file=/usr/local/etc/dbus-1/session.conf" and the \-\-system
-+"\-\-config-file=!!SYSCONFDIR!!/dbus-1/session.conf" and the \-\-system
+-"\-\-config-file=/src/build/jhbuild/etc/dbus-1/session.conf" and the \-\-system
++"\-\-config-file=${SYSCONFDIR}/dbus-1/session.conf" and the \-\-system
  option is equivalent to
--"\-\-config-file=/usr/local/etc/dbus-1/system.conf". By creating 
-+"\-\-config-file=!!SYSCONFDIR!!/dbus-1/system.conf". By creating 
+-"\-\-config-file=/src/build/jhbuild/etc/dbus-1/system.conf". By creating 
++"\-\-config-file=${SYSCONFDIR}/dbus-1/system.conf". By creating 
  additional configuration files and using the \-\-config-file option,
  additional special-purpose message bus daemons could be created.
  
@@ -17,28 +17,52 @@ $OpenBSD: patch-bus_dbus-daemon_1,v 1.1 2008/04/20 21:00:19 jasper Exp $
  
  .PP
  The standard systemwide and per-session message bus setups are
--configured in the files "/usr/local/etc/dbus-1/system.conf" and
--"/usr/local/etc/dbus-1/session.conf".  These files normally
-+configured in the files "!!SYSCONFDIR!!/dbus-1/system.conf" and
-+"!!SYSCONFDIR!!/dbus-1/session.conf".  These files normally
+-configured in the files "/src/build/jhbuild/etc/dbus-1/system.conf" and
+-"/src/build/jhbuild/etc/dbus-1/session.conf".  These files normally
++configured in the files "${SYSCONFDIR}/dbus-1/system.conf" and
++"${SYSCONFDIR}/dbus-1/session.conf".  These files normally
  <include> a system-local.conf or session-local.conf; you can put local
  overrides in those files to avoid modifying the primary configuration
  files.
-@@ -169,7 +169,7 @@ Only files ending in ".conf" are included.
+@@ -183,7 +183,7 @@ Only files ending in ".conf" are included.
  This is intended to allow extension of the system bus by particular
  packages. For example, if CUPS wants to be able to send out
  notification of printer queue changes, it could install a file to
--/usr/local/etc/dbus-1/system.d that allowed all apps to receive
-+!!SYSCONFDIR!!/dbus-1/system.d that allowed all apps to receive
+-/src/build/jhbuild/etc/dbus-1/system.d that allowed all apps to receive
++${SYSCONFDIR}/dbus-1/system.d that allowed all apps to receive
  this message and allowed the printer daemon user to send it.
  
  .TP
-@@ -264,7 +264,7 @@ otherwise try your favorite search engine.
+@@ -312,7 +312,7 @@ otherwise try your favorite search engine.
  .PP
  The <standard_session_servicedirs/> option is only relevant to the
  per-user-session bus daemon defined in
--/usr/local/etc/dbus-1/session.conf. Putting it in any other
-+!!SYSCONFDIR!!/dbus-1/session.conf. Putting it in any other
+-/src/build/jhbuild/etc/dbus-1/session.conf. Putting it in any other
++${SYSCONFDIR}/dbus-1/session.conf. Putting it in any other
+ configuration file would probably be nonsense.
+ 
+ .TP
+@@ -321,12 +321,12 @@ configuration file would probably be nonsense.
+ .PP
+ <standard_system_servicedirs/> specifies the standard system-wide
+ activation directories that should be searched for service files.
+-This option defaults to /src/build/jhbuild/share/dbus-1/system-services.
++This option defaults to ${PREFIX}/share/dbus-1/system-services.
+ 
+ .PP
+ The <standard_system_servicedirs/> option is only relevant to the
+ per-system bus daemon defined in
+-/src/build/jhbuild/etc/dbus-1/system.conf. Putting it in any other
++${SYSCONFDIR}/dbus-1/system.conf. Putting it in any other
+ configuration file would probably be nonsense.
+ 
+ .TP
+@@ -339,7 +339,7 @@ the dbus-daemon-launch-helper executable in located in
+ 
+ .PP
+ The <servicehelper/> option is only relevant to the per-system bus daemon
+-defined in /src/build/jhbuild/etc/dbus-1/system.conf. Putting it in any other
++defined in ${SYSCONFDIR}/dbus-1/system.conf. Putting it in any other
  configuration file would probably be nonsense.
  
  .TP

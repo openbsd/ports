@@ -1,11 +1,17 @@
-$OpenBSD: patch-bus_Makefile_in,v 1.1 2008/03/23 10:53:55 ajacoutot Exp $
---- bus/Makefile.in.orig	Thu Mar 20 16:59:20 2008
-+++ bus/Makefile.in	Thu Mar 20 16:59:50 2008
-@@ -858,7 +858,6 @@ install-data-hook:
- 		chmod 755 $(DESTDIR)$(DBUS_DAEMONDIR); \
- 	fi
- 	$(INSTALL_PROGRAM) dbus-daemon $(DESTDIR)$(DBUS_DAEMONDIR)
--	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/run/dbus
- 	$(mkinstalldirs) $(DESTDIR)$(configdir)/system.d
- 	$(mkinstalldirs) $(DESTDIR)$(datadir)/dbus-1/services
+$OpenBSD: patch-bus_Makefile_in,v 1.2 2008/10/12 22:08:04 brad Exp $
+--- bus/Makefile.in.orig	Wed Oct  1 18:50:44 2008
++++ bus/Makefile.in	Wed Oct  1 18:51:42 2008
+@@ -1298,13 +1298,6 @@ install-data-hook:
+ 	$(mkinstalldirs) $(DESTDIR)$(datadir)/dbus-1/system-services
+ 	$(mkinstalldirs) $(DESTDIR)$(libexecdir)/dbus-1
+ 	$(INSTALL_PROGRAM) dbus-daemon-launch-helper $(DESTDIR)$(libexecdir)
+-	if test `id -u` -eq 0; then \
+-		chown root:$(DBUS_USER) $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper; \
+-		chmod 4750 $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper; \
+-	else \
+-		echo "Not installing $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper binary setuid!"; \
+-		echo "You'll need to manually set permissions to root:$(DBUS_USER) and permissions 4750"; \
+-	fi
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -1,12 +1,12 @@
-$OpenBSD: patch-dbus_Makefile_in,v 1.1 2007/03/21 00:21:58 espie Exp $
---- dbus/Makefile.in.orig	Tue Dec 12 20:41:47 2006
-+++ dbus/Makefile.in	Fri Dec 29 18:45:43 2006
-@@ -299,7 +299,7 @@ target_cpu = @target_cpu@
- target_os = @target_os@
- target_vendor = @target_vendor@
+$OpenBSD: patch-dbus_Makefile_in,v 1.2 2008/10/12 22:08:04 brad Exp $
+--- dbus/Makefile.in.orig	Wed Aug  6 15:43:39 2008
++++ dbus/Makefile.in	Thu Aug  7 14:58:28 2008
+@@ -310,7 +310,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  configdir = $(sysconfdir)/dbus-1
--INCLUDES = -I$(top_builddir) -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) -DDBUS_COMPILATION -DDBUS_MACHINE_UUID_FILE=\""$(localstatedir)/lib/dbus/machine-id"\"
-+INCLUDES = -I$(top_builddir) -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) -DDBUS_COMPILATION -DDBUS_MACHINE_UUID_FILE=\""$(configdir)/machine-id"\"
- dbusincludedir = $(includedir)/dbus-1.0/dbus
- dbusarchincludedir = $(libdir)/dbus-1.0/include/dbus
- lib_LTLIBRARIES = libdbus-1.la
+ INCLUDES = -I$(top_builddir) -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) @PIC_CFLAGS@ -DDBUS_COMPILATION	\
+-	-DDBUS_MACHINE_UUID_FILE=\""$(localstatedir)/lib/dbus/machine-id"\"		\
++	-DDBUS_MACHINE_UUID_FILE=\""$(configdir)/machine-id"\"		\
+ 	-DDBUS_SYSTEM_CONFIG_FILE=\""$(configdir)/system.conf"\"			\
+ 	-DDBUS_SESSION_CONFIG_FILE=\""$(configdir)/session.conf"\"
+ 
