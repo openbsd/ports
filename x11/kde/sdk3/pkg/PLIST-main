@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/08/27 13:39:27 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/10/12 19:06:30 kili Exp $
+@pkgpath x11/kde/sdk3
 bin/adddebug
 bin/build-progress.sh
 @bin bin/catalogmanager

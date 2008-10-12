@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2008/08/27 13:39:27 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2008/10/12 19:06:30 kili Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -6,7 +6,7 @@ CATEGORIES =		x11 x11/kde devel
 VERSION =		3.5.10
 DISTNAME =		kdesdk-${VERSION}
 
-PKGNAME-main =		${DISTNAME}
+PKGNAME-main =		${DISTNAME}p0
 PKGNAME-svn =		kdesvn-${VERSION}
 
 MODKDE_VERSION =	3.5.8
