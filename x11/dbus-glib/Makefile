@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2008/05/27 08:02:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2008/10/12 22:09:20 brad Exp $
 
 COMMENT=	glib bindings for dbus message system
 
-DISTNAME=	dbus-glib-0.74
-PKGNAME=	${DISTNAME}p1
-SHARED_LIBS +=	dbus-glib-1          3.0      # .3.0
+DISTNAME=	dbus-glib-0.76
+SHARED_LIBS+=	dbus-glib-1	4.0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://dbus.freedesktop.org/
 
-# GPL
+# GPLv2+
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,19 +19,19 @@ WANTLIB=	expat c pthread pcre
 MASTER_SITES=	${HOMEPAGE}releases/dbus-glib/
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	dbus-1.>=5::x11/dbus \
+LIB_DEPENDS=	dbus-1.>=7::x11/dbus \
 		glib-2.0,gobject-2.0::devel/glib2
+
+#CFLAGS+=	-I${LOCALBASE}/include -pthread
 
 SEPARATE_BUILD=	simple
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-build:
-	cp ${FILESDIR}/dbus-bus-introspect.xml ${WRKBUILD}/tools/
+	@cp ${FILESDIR}/dbus-bus-introspect.xml ${WRKBUILD}/tools
 
 .include <bsd.port.mk>
