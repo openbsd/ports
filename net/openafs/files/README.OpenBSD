@@ -23,26 +23,26 @@ Some knob twiddling you may find useful:
 To setup OpenAFS, you must first have a KerberosV realm setup.  Below
 are brief instructions to do so.  See 'info heimdal' for further details.
 
-Once the KerberosV realm is setup, run '%LOCALBASE%/sbin/openafs-setup'
+Once the KerberosV realm is setup, run '${PREFIX}/sbin/openafs-setup'
 to setup your first OpenAFS server in your cell.
 
 Finally, you should add the below to /etc/rc.local:
 
-   if [ -x /usr/local/sbin/bosserver ]; then
+   if [ -x ${PREFIX}/sbin/bosserver ]; then
 	echo -n " openafs"
-	PATH=/usr/local/bin:/usr/local/sbin:$PATH
-	/usr/local/sbin/bosserver -log -syslog
+	PATH=${PREFIX}/bin:${PREFIX}/sbin:$PATH
+	${PREFIX}/sbin/bosserver -log -syslog
 
         # to salvage automatically on startup, for the paranoid
         #echo -n "(salvaging afs volumes $start ..."
-        #/usr/local/bin/bos salvage localhost -all -orphans attach -localauth
+        #${PREFIX}/bin/bos salvage localhost -all -orphans attach -localauth
         #echo -n " $stop done)"
    fi
 
 and add the following to /etc/rc.shutdown:
 
-   if [ -x /usr/local/bin/bos ]; then
-        /usr/local/bin/bos shutdown localhost -localauth -wait
+   if [ -x ${PREFIX}/bin/bos ]; then
+        ${PREFIX}/bin/bos shutdown localhost -localauth -wait
         sleep 1
         pkill bosserver
    fi
@@ -70,7 +70,7 @@ Setting a default krb5.conf is useful on all AFS clients and servers.
   cell=example.com
   host=kdc0
   sed 's/%host%/'$host'/g;s/%cell%/'$cell'/g;s/%REALM%/'$REALM'/g' \
-	< %LOCALBASE%/share/examples/openafs/krb5.conf > krb5.conf
+	< ${PREFIX}/share/examples/openafs/krb5.conf > krb5.conf
 
 Create the heimdal directory:
 

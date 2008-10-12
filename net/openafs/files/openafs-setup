@@ -14,8 +14,8 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-afsp=%LOCALBASE%/libexec/openafs
-PATH=%LOCALBASE%/sbin:%LOCALBASE%/bin:$PATH
+afsp=${PREFIX}/libexec/openafs
+PATH=${PREFIX}/sbin:${PREFIX}/bin:$PATH
 DIR=`mktemp -d /tmp/_openafs.XXXXXXXXXX` || exit 1
 trap 'rm -rf $DIR; exit 1' 0 1 2 3 13 15
 OUTPUT=$DIR/_1
@@ -208,14 +208,14 @@ then
 	cat <<__EOT
 
 The hostname for this afs server should resolve in dns but
-definately reside in %SYSCONFDIR%/hosts. e.g. afs0.example.com.
+definitely reside in /etc/hosts. e.g. afs0.example.com.
 __EOT
 	while :; do
 		ask_until "System hostname?" "$(hostname)"
 		h=${resp}
-		if [[ `grep $h %SYSCONFDIR%/hosts` = "" ]]
+		if [[ `grep $h /etc/hosts` = "" ]]
 		then
-			echo "Could not find %SYSCONFDIR%/hosts entry for $h."
+			echo "Could not find /etc/hosts entry for $h."
 			continue
 		fi
 		break
@@ -223,15 +223,15 @@ __EOT
 	cat <<__EOT
 
 The IPv4 IP address for this afs server should resolve in dns but
-definately reside in %SYSCONFDIR%/hosts. e.g. 192.168.1.200.
+definitely reside in /etc/hosts. e.g. 192.168.1.200.
 __EOT
 	while :; do
 		ask_until "System IP?" "$(host $h | \
 			awk '/has address/{print $4}')"
 		ip=${resp}
-		if [[ `grep $ip %SYSCONFDIR%/hosts` = "" ]]
+		if [[ `grep $ip /etc/hosts` = "" ]]
 		then
-			echo "Could not find %SYSCONFDIR%/hosts entry for $ip."
+			echo "Could not find /etc/hosts entry for $ip."
 			continue
 		fi
 		break
@@ -301,7 +301,7 @@ ask_yn "Are you really sure that you're ready to proceed?"
 [[ $resp == n ]] && { echo "Ok, try again later.\n" ; exit ; }
 
 echo
-log "preparing %SYSCONFDIR%/{open,}afs /usr/afs /var/openafs..."
+log "preparing ${SYSCONFDIR}/{open,}afs /usr/afs /var/openafs..."
 
 kdestroy
 pkill -9 afsd
@@ -316,21 +316,21 @@ then
 	bos shutdown localhost -localauth -wait > /dev/null 2>&1
 fi
 pkill -9 buserver ptserver vlserver fileserver volserver bos bosserver
-rm -rf %SYSCONFDIR%/openafs /usr/afs /var/openafs
+rm -rf ${SYSCONFDIR}/openafs /usr/afs /var/openafs
 rm -rf /vicep*/{V*,AFSIDat,Lock}
-rm -f %SYSCONFDIR%/kerberosV/krb5.keytab
+rm -f /etc/kerberosV/krb5.keytab
 
-mkdir -p %SYSCONFDIR%/openafs/server /usr/afs /var/spool/afs
+mkdir -p ${SYSCONFDIR}/openafs/server /usr/afs /var/spool/afs
 mkdir -m 700 /var/openafs
 echo "f $ip" > /var/openafs/NetInfo
-echo "$R" > %SYSCONFDIR%/openafs/server/krb.conf
+echo "$R" > ${SYSCONFDIR}/openafs/server/krb.conf
 
-log updating %SYSCONFDIR%/afs/CellServDB %SYSCONFDIR%/openafs/server/CellServDB
-# borrowed from %SYSCONFDIR%/security, backup CellServDB
+log updating /etc/afs/CellServDB ${SYSCONFDIR}/openafs/server/CellServDB
+# borrowed from /etc/security, backup CellServDB
 _fnchg() {
 	echo "$1" | sed 's/^\///;s/\//_/g'
 }
-csdb=%SYSCONFDIR%/afs/CellServDB
+csdb=/etc/afs/CellServDB
 CURdb=/var/backups/$(_fnchg $csdb).current
 BACKdb=/var/backups/$(_fnchg $csdb).backup
 if [ -s $CURdb ]; then
@@ -349,11 +349,11 @@ trap 'rm -rf $DIR; cp $CURdb $csdb; exit 1' 0 1 2 3 13 15
 echo ">$c	# $c" > $DIR/CellServDB
 echo "$ip	#$h" >> $DIR/CellServDB
 cat $DIR/CellServDB | \
-  tee -a $csdb %SYSCONFDIR%/openafs/server/CellServDB
+  tee -a $csdb ${SYSCONFDIR}/openafs/server/CellServDB
 
-echo $c | tee %SYSCONFDIR%/openafs/server/ThisCell > %SYSCONFDIR%/afs/ThisCell
+echo $c | tee ${SYSCONFDIR}/openafs/server/ThisCell > /etc/afs/ThisCell
 ln -s /var/openafs/db /usr/afs/db
-ln -s %SYSCONFDIR%/openafs/server /usr/afs/etc
+ln -s ${SYSCONFDIR}/openafs/server /usr/afs/etc
 if [ "$(pgrep bosserver)" ]
 then
 	pkill bosserver
@@ -363,13 +363,13 @@ log authenticating $p@$R
 retry kinit $p@$R
 kadd host/$h --random-key 
 retry kadmin ext host/$h
-chmod 0400 %SYSCONFDIR%/kerberosV/krb5.keytab
+chmod 0400 /etc/kerberosV/krb5.keytab
 kadd afs/$c --random-key 
-log creating %SYSCONFDIR%/openafs/server/KeyFile
+log creating ${SYSCONFDIR}/openafs/server/KeyFile
 retry kadmin ext -k $DIR/afsv5key afs/$c
-log -c ktutil copy $DIR/afsv5key AFSKEYFILE:%SYSCONFDIR%/openafs/server/KeyFile
-ktutil copy $DIR/afsv5key AFSKEYFILE:%SYSCONFDIR%/openafs/server/KeyFile
-chmod 600 %SYSCONFDIR%/openafs/server/KeyFile
+log -c ktutil copy $DIR/afsv5key AFSKEYFILE:${SYSCONFDIR}/openafs/server/KeyFile
+ktutil copy $DIR/afsv5key AFSKEYFILE:${SYSCONFDIR}/openafs/server/KeyFile
+chmod 600 ${SYSCONFDIR}/openafs/server/KeyFile
 rm $DIR/afsv5key
 log When asked for a password below, the answer will set it.
 let sc=sc-1
@@ -430,8 +430,8 @@ retry kinit $A
 retry pts listentries
 
 # do this on reboot
-grep "^afs=YES" %SYSCONFDIR%/rc.conf.local > /dev/null 2>&1 || \
-echo afs=YES >> %SYSCONFDIR%/rc.conf.local
+grep "^afs=YES" /etc/rc.conf.local > /dev/null 2>&1 || \
+echo afs=YES >> /etc/rc.conf.local
 
 retry ls /afs
 
@@ -480,23 +480,23 @@ retry vos release root.afs
 retry vos release root.cell
 retry vos release mirror
 
-# add files of note to %SYSCONFDIR%/changelist
+# add files of note to /etc/changelist
 addchg() {
 	while [ "$1" ]
 	do
 		f="$1"
 		shift
-		if egrep "^${f}$" %SYSCONFDIR%/changelist > /dev/null 2>&1; then
+		if egrep "^${f}$" /etc/changelist > /dev/null 2>&1; then
 			continue
 		fi
-		echo "$f" >> %SYSCONFDIR%/changelist
+		echo "$f" >> /etc/changelist
 	done
 }
-addchg %SYSCONFDIR%/kerberosV/krb5.conf
-addchg "+%SYSCONFDIR%/kerberosV/krb5.keytab"
-addchg %SYSCONFDIR%/afs/{CellServDB,ThisCell,afsd.conf}
-addchg %SYSCONFDIR%/openafs/{BosConfig,server/{CellServDB,ThisCell,UserList,krb.conf}}
-addchg "+%SYSCONFDIR%/openafs/server/KeyFile"
+addchg /etc/kerberosV/krb5.conf
+addchg "+/etc/kerberosV/krb5.keytab"
+addchg /etc/afs/{CellServDB,ThisCell,afsd.conf}
+addchg ${SYSCONFDIR}/openafs/{BosConfig,server/{CellServDB,ThisCell,UserList,krb.conf}}
+addchg "+${SYSCONFDIR}/openafs/server/KeyFile"
 addchg /var/openafs/NetInfo
 addchg "+/var/openafs/sysid"
 addchg "+/var/openafs/db/bdb.DB0"
@@ -511,7 +511,7 @@ cat <<__EOT
 
 CONGRATULATIONS! Your OpenAFS server setup has been successfully completed,
 and is now running.
-Please read %LOCALBASE%/share/openafs/README.OpenBSD for further details;
+Please read ${PREFIX}/share/openafs/README.OpenBSD for further details;
 be sure to note the startup and shutdown script examples.
 __EOT
 

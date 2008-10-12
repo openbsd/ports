@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2008/10/12 00:12:07 todd Exp $
+# $OpenBSD: Makefile,v 1.22 2008/10/12 17:31:17 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -6,7 +6,7 @@ COMMENT=		OpenAFS distributed filesystem
 
 VERSION=		1.4.7
 DISTNAME=		openafs-${VERSION}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 CATEGORIES=		net
 
@@ -14,6 +14,7 @@ HOMEPAGE=		http://www.openafs.org
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
+# IBM Public License 1.0
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -54,24 +55,18 @@ post-patch:
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/openafs
-.for file in README.OpenBSD
-	sed -e s,%LOCALBASE%,${LOCALBASE},g \
-		-e s,%SYSCONFDIR%,${SYSCONFDIR},g \
-		< ${FILESDIR}/${file} > ${PREFIX}/share/openafs/${file}
-.endfor
+	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/openafs/README.OpenBSD
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openafs
-.for file in krb5.conf
-	sed -e s,%LOCALBASE%,${LOCALBASE},g \
-		-e s,%SYSCONFDIR%,${SYSCONFDIR},g \
-		< ${FILESDIR}/${file} > \
-		${PREFIX}/share/examples/openafs/${file}
-.endfor
-.for file in openafs-setup
-	sed -e s,%LOCALBASE%,${LOCALBASE},g \
-		-e s,%SYSCONFDIR%,${SYSCONFDIR},g \
-		< ${FILESDIR}/${file} > ${PREFIX}/sbin/${file}
-	chmod u+x ${PREFIX}/sbin/${file}
-.endfor
+	${SUBST_CMD} -c ${FILESDIR}/krb5.conf \
+		${PREFIX}/share/examples/openafs/krb5.conf
+	${SUBST_CMD} -c ${FILESDIR}/openafs-setup \
+		${PREFIX}/sbin/openafs-setup
+	chown ${BINOWN}:${BINGRP} \
+		${PREFIX}/share/openafs/README.OpenBSD \
+		${PREFIX}/share/examples/openafs/krb5.conf \
+		${PREFIX}/sbin/openafs-setup
+	chmod u+x ${PREFIX}/sbin/openafs-setup
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=	--enable-debug
