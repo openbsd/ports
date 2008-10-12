@@ -179,7 +179,7 @@ for OpenAFS to use for data storage.  Partitions should be mounted under
 __EOT
 
 #
-# Santiy checks
+# Sanity checks
 #
 
 # Require root.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2008/10/08 15:45:55 todd Exp $
+# $OpenBSD: Makefile,v 1.21 2008/10/12 00:12:07 todd Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -6,7 +6,7 @@ COMMENT=		OpenAFS distributed filesystem
 
 VERSION=		1.4.7
 DISTNAME=		openafs-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 CATEGORIES=		net
 
@@ -29,7 +29,8 @@ EXTRACT_SUFX=		-src.tar.bz2
 
 NO_REGRESS=		Yes
 
-CONFIGURE_STYLE=	GNU
+AUTOCONF_VERSION=	2.60
+CONFIGURE_STYLE=	automake autoconf
 
 CONFIGURE_ENV+=		KRB5CFLAGS="-I/usr/include/kerberosV -DUSING_HEIMDAL" \
 			KRB5LIBS="-lkrb5"
@@ -43,30 +44,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-kernel-module \
 			--enable-supergroups
 
-AUTOCONF_VERSION=	2.60
-BUILD_DEPENDS+=		:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION}
-
 FLAVORS=	debug
 FLAVOR?=
-
-pre-configure:	patch
-	@if [ ! -d /usr/src/sys ] ; then \
-		echo ; \
-		echo "*** Error: Building this package requires the kernel sources" ; \
-		echo "***        to be available in directory /usr/src/sys" ; \
-		echo ; \
-		exit 1 ; \
-	fi
-	@( \
-		cd ${WRKBUILD} ; \
-		cp -p configure configure.orig ; \
-		cp -p configure-libafs configure-libafs.orig ; \
-		env AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf ; \
-		env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			autoconf configure-libafs.in > configure-libafs ; \
-		chmod +x configure-libafs ; \
-		rm -r autom4te.cache \
-	)
 
 post-patch:
 	@sed 's/%OSrev%/'${OSrev}'/g;s/i386/'${ARCH}'/g' \

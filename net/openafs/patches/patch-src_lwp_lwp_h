@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_lwp_lwp_h,v 1.1 2008/07/21 03:13:01 todd Exp $
---- src/lwp/lwp.h.orig	Mon Apr 28 01:55:49 2008
-+++ src/lwp/lwp.h	Mon Apr 28 01:56:15 2008
-@@ -301,7 +301,7 @@ char lwp_debug;			/* ON = show LWP debugging trace */
+$OpenBSD: patch-src_lwp_lwp_h,v 1.2 2008/10/12 00:12:07 todd Exp $
+--- src/lwp/lwp.h.orig	Thu Mar 13 08:42:31 2008
++++ src/lwp/lwp.h	Sun Aug 24 21:04:52 2008
+@@ -300,6 +300,8 @@ char lwp_debug;			/* ON = show LWP debugging trace */
+ #define AFS_LWP_MINSTACKSIZE  (288 * 1024)
  #elif defined(AFS_LINUX22_ENV)
  #define AFS_LWP_MINSTACKSIZE	(192 * 1024)
- #else
--#define AFS_LWP_MINSTACKSIZE	(48 * 1024)
++#elif defined(AFS_OBSD41_ENV)
 +#define AFS_LWP_MINSTACKSIZE	(480 * 1024)
+ #else
+ #define AFS_LWP_MINSTACKSIZE	(48 * 1024)
  #endif
- 
- /* Action to take on stack overflow. */

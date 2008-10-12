@@ -7,7 +7,7 @@ Some knob twiddling you may find useful:
 
         :openfiles-cur=infinity:\
 
-  2. If you increase #2 above 1772 then consider also updating
+  2. If you increase #1 above the default then consider also updating
      kern.maxfiles in /etc/sysctl.conf:
 
 	kern.maxfiles=102400            # increase maximum files

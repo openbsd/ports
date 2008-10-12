@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_cf_osconf_m4,v 1.1 2008/10/12 00:12:07 todd Exp $
+--- src/cf/osconf.m4.orig	Wed Oct  8 11:32:24 2008
++++ src/cf/osconf.m4	Wed Oct  8 11:34:47 2008
+@@ -412,13 +412,19 @@ case $AFS_SYSNAME in
+ 		LEX="flex -l"
+ 		MT_CFLAGS='-DAFS_PTHREAD_ENV -pthread -D_REENTRANT ${XCFLAGS}'
+ 		MT_LIBS="-pthread"
+-		PAM_CFLAGS="-O2 -pipe -fpic"
++		PAM_CFLAGS="${CFLAGS} -pipe -fpic"
+ 		SHLIB_CFLAGS="-fpic"
+ 		SHLIB_LDFLAGS="-shared -Xlinker -x"
+ 		SHLIB_LINKER="${MT_CC} -shared"
+ 		TXLIBS="/usr/lib/libcurses.a"
+-		XCFLAGS="-O2"
++		XCFLAGS="${CFLAGS}"
++		OPTMZ="${CFLAGS}"
++		KERN_OPTMZ="${CFLAGS}"
++		LWP_OPTMZ="${CFLAGS}"
+ 		YACC="yacc"
++		CC="${CC}"
++		CCOBJ="${CC}"
++		MT_CC="${CC}"
+ 		;;
+ 
+ 	parisc_linux24)
