@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/10/08 08:22:42 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2008/10/13 12:05:24 sturm Exp $
 
 COMMENT=	Prelude Management Console
 
@@ -7,7 +7,8 @@ PKGNAME=	prelude-${DISTNAME}p0
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	:py-cheetah-*:devel/py-cheetah
+BUILD_DEPENDS=	:gettext->=0.17:devel/gettext \
+		:py-cheetah-*:devel/py-cheetah
 
 RUN_DEPENDS=	:prelude-manager-*:security/prelude/manager	\
 		:py-cheetah-*:devel/py-cheetah
