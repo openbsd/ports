@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/27 13:03:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/13 13:05:18 sturm Exp $
 
 COMMENT=		OSS replacement for Nomachine's nxclient
 
@@ -20,7 +20,8 @@ USE_X11=		Yes
 WANTLIB=		X11 Xmu c m pthread stdc++
 
 LIB_DEPENDS=		wx_base,wx_base_net,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc::x11/wxWidgets
-BUILD_DEPENDS=		::devel/bison \
+BUILD_DEPENDS=		::archivers/zip \
+			::devel/bison \
 			::net/samba \
 			::print/cups
 RUN_DEPENDS=		::devel/desktop-file-utils \
