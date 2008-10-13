@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/10/13 14:22:56 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2008/10/13 19:44:37 brad Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-gui=		Tk front-end to gpsbabel
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 #MASTER_SITES=		${HOMEPAGE}
-MASTER_SITES =		ftp://quatramaran.ens.fr/pub/espie/
+MASTER_SITES=		http://comstyle.com/source/ \
+			ftp://quatramaran.ens.fr/pub/espie/
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf
