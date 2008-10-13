@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/14 15:37:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/13 11:47:25 sturm Exp $
 
 COMMENT=		xml to manpage converter
 
 V=			0.3
 DISTNAME=		xmltoman_$V.orig
-PKGNAME=		xmltoman-$V
+PKGNAME=		xmltoman-${V}p0
 CATEGORIES=		converters textproc
 
 # GPL
@@ -16,6 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://ftp.debian.org/debian/pool/main/x/xmltoman/
 
 NO_REGRESS=		Yes
+
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		::textproc/p5-XML-Parser
 
 WRKDIST= 		${WRKDIR}/xmltoman-$V
 
