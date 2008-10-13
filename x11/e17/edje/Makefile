@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/16 18:28:59 laurent Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/13 14:23:10 sturm Exp $
 
 COMMENT=	complex graphical design & layout library
 DISTNAME=	edje-20071211
@@ -20,7 +20,7 @@ LIB_DEPENDS=		SDL::devel/sdl \
 			ecore,ecore_evas,ecore_job,ecore_txt,ecore_x::x11/e17/ecore \
 			embryo::x11/e17/embryo
 
-CONFIGURE_STYLE=	automake
+CONFIGURE_STYLE=	autoconf automake
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 

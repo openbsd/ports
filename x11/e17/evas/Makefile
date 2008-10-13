@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/12/16 18:24:56 laurent Exp $
+# $OpenBSD: Makefile,v 1.7 2008/10/13 14:23:10 sturm Exp $
 
 COMMENT=	canvas API for X
 DISTNAME=	evas-20071211
@@ -22,7 +22,7 @@ LIB_DEPENDS=		gif::graphics/libungif \
 			edb::x11/e17/edb \
 			eet::x11/e17/eet
 
-CONFIGURE_STYLE=	automake
+CONFIGURE_STYLE=	autoconf automake
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=		--disable-image-loader-svg --enable-image-loader-edb

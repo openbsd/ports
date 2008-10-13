@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/16 19:45:04 laurent Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/13 14:23:10 sturm Exp $
 
 COMMENT=	implementations of freedesktop.org specifications
 DISTNAME=	efreet-20071211
@@ -19,7 +19,7 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		ecore,ecore_file::x11/e17/ecore
 RUN_DEPENDS=		::devel/desktop-file-utils
 
-CONFIGURE_STYLE=	automake
+CONFIGURE_STYLE=	autoconf automake
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
