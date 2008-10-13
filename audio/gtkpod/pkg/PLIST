@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/12/31 18:35:42 ckuethe Exp $
-bin/gtkpod
-share/applications/
+@comment $OpenBSD: PLIST,v 1.8 2008/10/13 14:55:14 martynas Exp $
+@bin bin/gtkpod
 share/applications/gtkpod.desktop
 share/gtkpod/
 share/gtkpod/data/
