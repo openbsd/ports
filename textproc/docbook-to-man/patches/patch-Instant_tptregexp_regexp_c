@@ -1,7 +1,15 @@
-$OpenBSD: patch-Instant_tptregexp_regexp_c,v 1.1.1.1 2005/02/14 11:56:38 espie Exp $
---- Instant/tptregexp/regexp.c.orig	Mon Jun 17 05:50:29 1996
-+++ Instant/tptregexp/regexp.c	Fri Feb 11 12:00:53 2005
-@@ -196,7 +196,6 @@ char *exp;
+$OpenBSD: patch-Instant_tptregexp_regexp_c,v 1.2 2008/10/13 10:56:38 kevlo Exp $
+--- Instant/tptregexp/regexp.c.orig	Mon Jun 17 11:50:29 1996
++++ Instant/tptregexp/regexp.c	Mon Sep 22 17:58:40 2008
+@@ -23,6 +23,7 @@
+  * regular-expression syntax might require a total rethink.
+  */
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <tptregexp.h>
+ #include "regmagic.h"
+@@ -196,7 +197,6 @@ char *exp;
  	register char *longest;
  	register int len;
  	int flags;
@@ -9,7 +17,7 @@ $OpenBSD: patch-Instant_tptregexp_regexp_c,v 1.1.1.1 2005/02/14 11:56:38 espie E
  
  	if (exp == NULL)
  		FAIL("NULL argument");
-@@ -705,7 +704,6 @@ register regexp *prog;
+@@ -705,7 +705,6 @@ register regexp *prog;
  register char *string;
  {
  	register char *s;
@@ -17,7 +25,7 @@ $OpenBSD: patch-Instant_tptregexp_regexp_c,v 1.1.1.1 2005/02/14 11:56:38 espie E
  
  	/* Be paranoid... */
  	if (prog == NULL || string == NULL) {
-@@ -804,7 +802,6 @@ char *prog;
+@@ -804,7 +803,6 @@ char *prog;
  {
  	register char *scan;	/* Current node. */
  	char *next;		/* Next node. */
@@ -25,3 +33,11 @@ $OpenBSD: patch-Instant_tptregexp_regexp_c,v 1.1.1.1 2005/02/14 11:56:38 espie E
  
  	scan = prog;
  #ifdef DEBUG
+@@ -1065,7 +1063,6 @@ regexp *r;
+ 	register char *s;
+ 	register char op = EXACTLY;	/* Arbitrary non-END op. */
+ 	register char *next;
+-	extern char *strchr();
+ 
+ 
+ 	s = r->program + 1;
