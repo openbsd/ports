@@ -1,0 +1,10 @@
+--- xv_ui.c.orig	Sun Aug  3 09:38:21 2008
++++ xv_ui.c	Sun Aug  3 09:42:50 2008
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <xview/xview.h>
+ #include <xview/canvas.h>
+ #include <xview/icon_load.h>

@@ -1,7 +1,14 @@
-$OpenBSD: patch-movelog_c,v 1.1 2002/02/21 00:32:07 naddy Exp $
 --- movelog.c.orig	Sat Sep 28 19:46:17 1991
-+++ movelog.c	Thu Feb 21 01:26:42 2002
-@@ -745,6 +745,7 @@ char	*fname;
++++ movelog.c	Sun Aug  3 09:33:25 2008
+@@ -17,6 +17,7 @@
+ #include	"defs.h"
+ #include	"globals.h"
+ #include	<string.h>
++#include        <stdlib.h>
+ #include	<sys/file.h>
+ #include	<ctype.h>
+ #ifdef SVR4
+@@ -745,6 +746,7 @@
  FILE	*fp;
  char	buf[1024], buf2[1024];
  char	*dp;
@@ -9,7 +16,7 @@ $OpenBSD: patch-movelog_c,v 1.1 2002/02/21 00:32:07 naddy Exp $
  
  	fname = remove_newlines(fname);
  	if ((fp = fopen(fname, "r")) == NULL)	{
-@@ -756,7 +757,8 @@ char	*dp;
+@@ -756,7 +758,8 @@
  
  	/* read card string */
  	dp = buf;
@@ -19,7 +26,7 @@ $OpenBSD: patch-movelog_c,v 1.1 2002/02/21 00:32:07 naddy Exp $
  		if (*dp == '\n')	/* ignore any CR */
  			continue;
  		if (*dp == '.')
-@@ -767,7 +769,8 @@ char	*dp;
+@@ -767,7 +770,8 @@
  
  	/* read moves string */
  	dp = buf2;

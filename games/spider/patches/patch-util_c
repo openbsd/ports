@@ -1,0 +1,10 @@
+--- util.c.orig	Sun Aug  3 09:35:39 2008
++++ util.c	Sun Aug  3 09:37:57 2008
+@@ -24,6 +24,7 @@
+ #endif /* XAW */
+ #include	<ctype.h>
+ #include	<string.h>
++#include	<stdlib.h>
+ #include	<pwd.h>
+ 
+ #define	NUM_RETRIES	5

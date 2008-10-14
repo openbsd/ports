@@ -1,0 +1,10 @@
+--- xv_stubs.c.orig	Sun Aug  3 09:37:44 2008
++++ xv_stubs.c	Sun Aug  3 09:42:41 2008
+@@ -10,6 +10,7 @@
+  *      @(#)xv_stubs.c	2.2	90/04/27
+  */
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <X11/Xlib.h>
+ #include <xview/xview.h>
+ #include <xview/panel.h>
