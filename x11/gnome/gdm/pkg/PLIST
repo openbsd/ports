@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/04/16 20:31:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2008/10/14 12:15:37 ajacoutot Exp $
 %%SHARED%%
-bin/gdm-dmx-reconnect-proxy
+@bin bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
-bin/gdmXnestchooser
-bin/gdmdynamic
-bin/gdmflexiserver
-bin/gdmphotosetup
+@bin bin/gdmXnestchooser
+@bin bin/gdmdynamic
+@bin bin/gdmflexiserver
+@bin bin/gdmphotosetup
 bin/gdmthemetester
 lib/gtk-2.0/
 lib/gtk-2.0/modules/
@@ -13,16 +13,20 @@ lib/gtk-2.0/modules/libdwellmouselistener.a
 lib/gtk-2.0/modules/libdwellmouselistener.la
 lib/gtk-2.0/modules/libkeymouselistener.a
 lib/gtk-2.0/modules/libkeymouselistener.la
-libexec/gdmchooser
-libexec/gdmgreeter
-libexec/gdmlogin
-libexec/gdmtranslate
+libexec/gdm-ssh-session
+@bin libexec/gdmchooser
+@bin libexec/gdmgreeter
+@bin libexec/gdmlogin
+@bin libexec/gdmtranslate
+@man man/man1/gdm.1
 sbin/gdm
-sbin/gdm-binary
+@bin sbin/gdm-binary
 sbin/gdm-restart
 sbin/gdm-safe-restart
 sbin/gdm-stop
-sbin/gdmsetup
+@bin sbin/gdmsetup
+share/examples/dm/
+@sample ${SYSCONFDIR}/X11/dm/
 share/examples/gdm/
 @sample ${SYSCONFDIR}/X11/gdm/
 share/examples/gdm/Init/
@@ -93,8 +97,6 @@ share/gdm/themes/happygnome/background.svg
 share/gdm/themes/happygnome/gnome-logo.svg
 share/gdm/themes/happygnome/happygnome.xml
 share/gdm/themes/happygnome/screenshot.png
-share/gnome/
-share/gnome/help/
 share/gnome/help/gdm/
 share/gnome/help/gdm/C/
 share/gnome/help/gdm/C/gdm.xml
@@ -130,12 +132,8 @@ share/icons/hicolor/48x48/apps/gdmflexiserver.png
 share/icons/hicolor/48x48/apps/gdmsetup.png
 share/icons/hicolor/scalable/apps/gdmflexiserver.svg
 share/icons/hicolor/scalable/apps/gdmsetup.svg
-share/locale/af/
-share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gdm.mo
 share/locale/am/LC_MESSAGES/gdm.mo
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gdm.mo
 share/locale/as/
 share/locale/as/LC_MESSAGES/
@@ -143,50 +141,28 @@ share/locale/as/LC_MESSAGES/gdm.mo
 share/locale/az/LC_MESSAGES/gdm.mo
 share/locale/be/LC_MESSAGES/gdm.mo
 share/locale/bg/LC_MESSAGES/gdm.mo
-share/locale/bn/
-share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/gdm.mo
-share/locale/bn_IN/
-share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/gdm.mo
-share/locale/bs/
-share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/gdm.mo
 share/locale/ca/LC_MESSAGES/gdm.mo
 share/locale/cs/LC_MESSAGES/gdm.mo
-share/locale/cy/
-share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/gdm.mo
 share/locale/da/LC_MESSAGES/gdm.mo
 share/locale/de/LC_MESSAGES/gdm.mo
-share/locale/dz/
-share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/gdm.mo
 share/locale/el/LC_MESSAGES/gdm.mo
-share/locale/en_CA/
-share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/gdm.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gdm.mo
 share/locale/es/LC_MESSAGES/gdm.mo
 share/locale/et/LC_MESSAGES/gdm.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/gdm.mo
-share/locale/fa/
-share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/gdm.mo
 share/locale/fi/LC_MESSAGES/gdm.mo
 share/locale/fr/LC_MESSAGES/gdm.mo
 share/locale/ga/LC_MESSAGES/gdm.mo
 share/locale/gl/LC_MESSAGES/gdm.mo
-share/locale/gu/
-share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/gdm.mo
 share/locale/he/LC_MESSAGES/gdm.mo
-share/locale/hi/
-share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/gdm.mo
 share/locale/hr/LC_MESSAGES/gdm.mo
 share/locale/hu/LC_MESSAGES/gdm.mo
@@ -194,89 +170,47 @@ share/locale/hy/
 share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/gdm.mo
 share/locale/id/LC_MESSAGES/gdm.mo
-share/locale/is/
-share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/gdm.mo
 share/locale/it/LC_MESSAGES/gdm.mo
 share/locale/ja/LC_MESSAGES/gdm.mo
-share/locale/ka/
-share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/gdm.mo
 share/locale/kn/LC_MESSAGES/gdm.mo
 share/locale/ko/LC_MESSAGES/gdm.mo
-share/locale/ku/
-share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/gdm.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gdm.mo
 share/locale/lv/LC_MESSAGES/gdm.mo
-share/locale/mg/
-share/locale/mg/LC_MESSAGES/
 share/locale/mg/LC_MESSAGES/gdm.mo
-share/locale/mi/
-share/locale/mi/LC_MESSAGES/
 share/locale/mi/LC_MESSAGES/gdm.mo
-share/locale/mk/
-share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/gdm.mo
-share/locale/ml/
-share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/gdm.mo
-share/locale/mn/
-share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/gdm.mo
-share/locale/mr/
-share/locale/mr/LC_MESSAGES/
 share/locale/mr/LC_MESSAGES/gdm.mo
-share/locale/ms/
-share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/gdm.mo
 share/locale/nb/LC_MESSAGES/gdm.mo
-share/locale/ne/
-share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/gdm.mo
 share/locale/nl/LC_MESSAGES/gdm.mo
 share/locale/nn/LC_MESSAGES/gdm.mo
-share/locale/nso/
-share/locale/nso/LC_MESSAGES/
 share/locale/nso/LC_MESSAGES/gdm.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/gdm.mo
-share/locale/or/
-share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/gdm.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gdm.mo
 share/locale/pl/LC_MESSAGES/gdm.mo
 share/locale/pt/LC_MESSAGES/gdm.mo
 share/locale/pt_BR/LC_MESSAGES/gdm.mo
 share/locale/ro/LC_MESSAGES/gdm.mo
 share/locale/ru/LC_MESSAGES/gdm.mo
-share/locale/rw/
-share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/gdm.mo
 share/locale/si/
 share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/gdm.mo
 share/locale/sk/LC_MESSAGES/gdm.mo
 share/locale/sl/LC_MESSAGES/gdm.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gdm.mo
 share/locale/sr/LC_MESSAGES/gdm.mo
 share/locale/sr@Latn/LC_MESSAGES/gdm.mo
 share/locale/sv/LC_MESSAGES/gdm.mo
-share/locale/ta/
-share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gdm.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/gdm.mo
-share/locale/th/
-share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gdm.mo
 share/locale/tr/LC_MESSAGES/gdm.mo
 share/locale/uk/LC_MESSAGES/gdm.mo
@@ -287,21 +221,12 @@ share/locale/uz@cyrillic/
 share/locale/uz@cyrillic/LC_MESSAGES/
 share/locale/uz@cyrillic/LC_MESSAGES/gdm.mo
 share/locale/vi/LC_MESSAGES/gdm.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gdm.mo
-share/locale/xh/
-share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/gdm.mo
 share/locale/zh_CN/LC_MESSAGES/gdm.mo
 share/locale/zh_HK/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
-share/locale/zu/
-share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/gdm.mo
-share/man/
-share/man/man1/
-@man share/man/man1/gdm.1
 share/omf/gdm/
 share/omf/gdm/gdm-C.omf
 share/omf/gdm/gdm-en_GB.omf
@@ -342,6 +267,7 @@ share/pixmaps/nobody.png
 share/pixmaps/nohost.png
 share/xsessions/
 share/xsessions/gnome.desktop
+share/xsessions/ssh.desktop
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
 @exec %D/bin/update-desktop-database

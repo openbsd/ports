@@ -1,0 +1,14 @@
+$OpenBSD: patch-utils_gdm-ssh-session,v 1.1 2008/10/14 12:15:37 ajacoutot Exp $
+--- utils/gdm-ssh-session.orig	Tue Oct 14 13:19:28 2008
++++ utils/gdm-ssh-session	Tue Oct 14 13:20:15 2008
+@@ -1,8 +1,8 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ ZENITY=`which zenity`
+ TARGETHOST=`$ZENITY --title "Host to connect to" --entry --text "Enter the name of the host you want to log in to"`
+ # @@@ should probably get a user name too;
+ # for now can bet set using the $USERNAME@ convention
+ # @@@ should it do an ssh-add so the user doesn't have to enter its passphrase again?
+-ssh -A -X -T -n "$TARGETHOST" /etc/X11/Xsession
++ssh -A -Y -T -n "$TARGETHOST" /etc/X11/xdm/Xsession

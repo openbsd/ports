@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.30 2008/09/28 10:10:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.31 2008/10/14 12:15:36 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.2
-PKGNAME=		${DISTNAME}p7
+PKGNAME=		${DISTNAME}p8
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
-# LGPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -24,11 +24,13 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		pcre pixman-1 png pthread ssl util xml2 z
 
 BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
-			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
+			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
+			::x11/gnome/zenity
 RUN_DEPENDS=		:sox-*:audio/sox \
 			:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-audio-*:x11/gnome/audio \
-			:hicolor-icon-theme-*:x11/hicolor-icon-theme
+			:hicolor-icon-theme-*:x11/hicolor-icon-theme \
+			::x11/gnome/zenity
 LIB_DEPENDS=		rsvg-2.>=18.1:librsvg->=2.18.1-!no_gnome:x11/gnome/librsvg
 
 MODULES=		devel/gettext \
@@ -37,20 +39,26 @@ MODULES=		devel/gettext \
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
+
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--sysconfdir="${SYSCONFDIR}/X11" \
-			--localstatedir=/var
+			--localstatedir=/var \
+			--mandir=${PREFIX}/man \
+			--enable-secureremote=yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+# XXX IPv6-only FLAVOR?
+CONFIGURE_ARGS+=	--enable-ipv6=no
+
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples \
+			dmconfdir=${PREFIX}/share/examples/dm
 post-patch:
 	ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm; \
-	mv ${WRKINST}/${SYSCONFDIR}/X11/gdm ${PREFIX}/share/examples/; \
-	rmdir ${WRKINST}/${SYSCONFDIR}/X11/dm
 	find ${PREFIX}/share/examples/gdm -type d -exec chmod 555 {} \;
 	find ${PREFIX}/share/examples/gdm ! -type d -exec chmod 444 {} \;
 	chmod 644 ${PREFIX}/share/examples/gdm/custom.conf
