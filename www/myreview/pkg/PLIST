@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/31 11:54:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/14 14:40:37 ajacoutot Exp $
 myreview/
 myreview/Admin.php
 myreview/AdminLists.php
@@ -197,8 +197,8 @@ myreview/mm_menu.js
 myreview/mn.gif
 myreview/mn.png
 myreview/mySchema.sql
-myreview/myreview.pdf
 myreview/myreview.png
+myreview/myreview_v1.pdf
 myreview/oldForm.php
 myreview/stats/
 myreview/stats.php

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/09/27 09:23:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/14 14:40:37 ajacoutot Exp $
 
 COMMENT=	web-based conference management software
 
@@ -37,7 +37,7 @@ do-install:
 	@find ${PREFIX} -type d -name ".svn" | xargs rm -R
 	@find ${PREFIX} -type f -name "*~" -exec rm {} \;
 	@find ${PREFIX} -type f -name "*.bak" -exec rm {} \;
-	@${INSTALL_DATA} ${FULLDISTDIR}/myreview.pdf ${INSTDIR}
+	@${INSTALL_DATA} ${FULLDISTDIR}/myreview_v1.pdf ${INSTDIR}
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
