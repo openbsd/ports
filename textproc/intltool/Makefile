@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2008/10/03 16:53:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2008/10/14 09:14:19 ajacoutot Exp $
 
 COMMENT=		internationalization tool
 
 GNOME_PROJECT=		intltool
-GNOME_VERSION=		0.40.4
+GNOME_VERSION=		0.40.5
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.gnome.org/
