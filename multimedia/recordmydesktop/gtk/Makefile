@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/06 10:54:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/14 07:36:00 ajacoutot Exp $
 
 COMMENT=		GTK frontend to recorMyDesktop
 
 V=			0.3.7.2
 DISTNAME=		gtk-recordmydesktop-$V
-PKGNAME=		recordmydesktop-gtk-$Vp0
+PKGNAME=		recordmydesktop-gtk-$Vp1
 
 BUILD_DEPENDS=		::x11/py-gtk2
 RUN_DEPENDS=		::devel/desktop-file-utils \

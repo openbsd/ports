@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_gtk-recordMyDesktop_in,v 1.2 2008/10/06 10:54:00 ajacoutot Exp $
+$OpenBSD: patch-src_gtk-recordMyDesktop_in,v 1.3 2008/10/14 07:36:00 ajacoutot Exp $
 --- src/gtk-recordMyDesktop.in.orig	Mon Jun  9 15:25:57 2008
 +++ src/gtk-recordMyDesktop.in	Mon Jun  9 15:26:17 2008
 @@ -1,4 +1,4 @@
 -#!/usr/bin/python
-+#${MODPY_BIN}
++#!${MODPY_BIN}
  
  
  #/*********************************************************************************
