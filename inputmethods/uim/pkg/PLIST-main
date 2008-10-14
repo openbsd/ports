@@ -1,45 +1,49 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/12/18 15:56:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/10/14 02:16:46 kevlo Exp $
 @pkgpath inputmethods/uim
-bin/uim-el-agent
-bin/uim-el-helper-agent
-bin/uim-fep
-bin/uim-fep-tick
-bin/uim-module-manager
-bin/uim-sh
-bin/uim-xim
+@bin bin/uim-el-agent
+@bin bin/uim-el-helper-agent
+@bin bin/uim-fep
+@bin bin/uim-fep-tick
+@bin bin/uim-module-manager
+@bin bin/uim-sh
+@bin bin/uim-xim
 include/gcroots.h
 include/libgcroots/
 include/sigscheme/
-include/sigscheme/config-old.h
-include/sigscheme/config.h
-include/sigscheme/encoding-dummy.h
-include/sigscheme/global.h
-include/sigscheme/scmint.h
-include/sigscheme/sigscheme.h
-include/sigscheme/storage-common.h
-include/sigscheme/storage-compact.h
 include/uim/
 include/uim/plugin.h
-include/uim/uim-compat-scm.h
 include/uim/uim-custom.h
 include/uim/uim-helper.h
 include/uim/uim-im-switcher.h
+include/uim/uim-notify.h
+include/uim/uim-posix.h
+include/uim/uim-scm-abbrev.h
 include/uim/uim-scm.h
 include/uim/uim-util.h
 include/uim/uim.h
+lib/gtk-2.0/
+lib/gtk-2.0/2.10.0/
+lib/gtk-2.0/2.10.0/immodules/
+lib/kde3/
 lib/libgcroots.a
 lib/libgcroots.la
 @lib lib/libgcroots.so.${LIBgcroots_VERSION}
 lib/libuim-custom.a
 lib/libuim-custom.la
 @lib lib/libuim-custom.so.${LIBuim-custom_VERSION}
+lib/libuim-scm.a
+lib/libuim-scm.la
+@lib lib/libuim-scm.so.${LIBuim-scm_VERSION}
 lib/libuim.a
 lib/libuim.la
 @lib lib/libuim.so.${LIBuim_VERSION}
 lib/pkgconfig/gcroots.pc
-lib/pkgconfig/sigscheme.pc
 lib/pkgconfig/uim.pc
+lib/qt3/
+${MODQT_PLUGINS}/
+${MODQT_PLUGINS}/inputmethods/
 lib/uim/
+lib/uim/notify/
 lib/uim/plugin/
 lib/uim/plugin/libuim-anthy.a
 lib/uim/plugin/libuim-anthy.la
@@ -47,30 +51,17 @@ lib/uim/plugin/libuim-anthy.so
 lib/uim/plugin/libuim-custom-enabler.a
 lib/uim/plugin/libuim-custom-enabler.la
 lib/uim/plugin/libuim-custom-enabler.so
+lib/uim/plugin/libuim-look.a
+lib/uim/plugin/libuim-look.la
+lib/uim/plugin/libuim-look.so
 lib/uim/plugin/libuim-skk.a
 lib/uim/plugin/libuim-skk.la
 lib/uim/plugin/libuim-skk.so
-libexec/uim-helper-server
+@bin libexec/uim-helper-server
 @man man/man1/uim-xim.1
-share/applications/
 share/applications/uim.desktop
+share/apps/
 share/doc/sigscheme/
-share/doc/sigscheme/design.html
-share/doc/sigscheme/design.txt
-share/doc/sigscheme/gc-protection.html
-share/doc/sigscheme/gc-protection.txt
-share/doc/sigscheme/global-obj.html
-share/doc/sigscheme/global-obj.txt
-share/doc/sigscheme/index.html
-share/doc/sigscheme/index.txt
-share/doc/sigscheme/release.html
-share/doc/sigscheme/release.txt
-share/doc/sigscheme/spec.html
-share/doc/sigscheme/spec.txt
-share/doc/sigscheme/style.html
-share/doc/sigscheme/style.txt
-share/doc/sigscheme/test-c.html
-share/doc/sigscheme/test-c.txt
 share/emacs/site-lisp/uim-el/
 share/emacs/site-lisp/uim-el/uim-candidate.el
 share/emacs/site-lisp/uim-el/uim-debug.el
@@ -81,6 +72,7 @@ share/emacs/site-lisp/uim-el/uim-leim.el
 share/emacs/site-lisp/uim-el/uim-preedit.el
 share/emacs/site-lisp/uim-el/uim-util.el
 share/emacs/site-lisp/uim-el/uim-var.el
+share/emacs/site-lisp/uim-el/uim-version.el
 share/emacs/site-lisp/uim-el/uim.el
 share/locale/fr/LC_MESSAGES/uim.mo
 share/locale/ja/LC_MESSAGES/uim-chardict-qt.mo
@@ -90,6 +82,8 @@ share/uim/
 share/uim/action.scm
 share/uim/anthy-custom.scm
 share/uim/anthy-key-custom.scm
+share/uim/anthy-utf8-custom.scm
+share/uim/anthy-utf8.scm
 share/uim/anthy.scm
 share/uim/byeoru-custom.scm
 share/uim/byeoru-dic.scm
@@ -102,7 +96,12 @@ share/uim/canna.scm
 share/uim/custom-rt.scm
 share/uim/custom.scm
 share/uim/default.scm
+share/uim/deprecated-util.scm
 share/uim/direct.scm
+share/uim/editline.scm
+share/uim/elatin-custom.scm
+share/uim/elatin-rules.scm
+share/uim/elatin.scm
 share/uim/generic-custom.scm
 share/uim/generic-key-custom.scm
 share/uim/generic.scm
@@ -113,20 +112,34 @@ share/uim/helperdata/
 share/uim/helperdata/bushu.t
 share/uim/helperdata/uim-dict-ui.xml
 share/uim/i18n.scm
+share/uim/ichar.scm
 share/uim/im-custom.scm
 share/uim/im-switcher.scm
 share/uim/im.scm
 share/uim/init.scm
 share/uim/installed-modules.scm
 share/uim/ipa-x-sampa.scm
+share/uim/iso-639-1.scm
 share/uim/japanese-azik.scm
 share/uim/japanese-kana.scm
 share/uim/japanese.scm
 share/uim/key.scm
 share/uim/latin.scm
 share/uim/lazy-load.scm
+share/uim/lib/
+share/uim/lib/sigscheme-init.scm
+share/uim/lib/srfi-0.scm
+share/uim/lib/srfi-1.scm
+share/uim/lib/srfi-43.scm
+share/uim/lib/srfi-55.scm
+share/uim/lib/srfi-69.scm
+share/uim/lib/srfi-9.scm
+share/uim/lib/srfi-95.scm
+share/uim/lib/unittest.scm
 share/uim/load-action.scm
 share/uim/loader.scm
+share/uim/look-custom.scm
+share/uim/look.scm
 share/uim/m17nlib.scm
 share/uim/mana-custom.scm
 share/uim/mana-key-custom.scm
@@ -141,6 +154,8 @@ share/uim/pixmaps/direct.png
 share/uim/pixmaps/direct.svg
 share/uim/pixmaps/direct_input.png
 share/uim/pixmaps/direct_input.svg
+share/uim/pixmaps/elatin.png
+share/uim/pixmaps/elatin.svg
 share/uim/pixmaps/hangul2.png
 share/uim/pixmaps/hangul2.svg
 share/uim/pixmaps/hangul3.png
@@ -180,6 +195,8 @@ share/uim/pixmaps/ko_hangulword.png
 share/uim/pixmaps/ko_hangulword.svg
 share/uim/pixmaps/latin.png
 share/uim/pixmaps/latin.svg
+share/uim/pixmaps/look.png
+share/uim/pixmaps/look.svg
 share/uim/pixmaps/mana.png
 share/uim/pixmaps/mana.svg
 share/uim/pixmaps/null.png
@@ -200,6 +217,8 @@ share/uim/pixmaps/romaja.png
 share/uim/pixmaps/romaja.svg
 share/uim/pixmaps/scim.png
 share/uim/pixmaps/scim.svg
+share/uim/pixmaps/sj3.png
+share/uim/pixmaps/sj3.svg
 share/uim/pixmaps/skk.png
 share/uim/pixmaps/skk.svg
 share/uim/pixmaps/tcode.png
@@ -218,6 +237,8 @@ share/uim/pixmaps/unknown.png
 share/uim/pixmaps/unknown.svg
 share/uim/pixmaps/viqr.png
 share/uim/pixmaps/viqr.svg
+share/uim/pixmaps/wnn.png
+share/uim/pixmaps/wnn.svg
 share/uim/plugin.scm
 share/uim/prime-custom.scm
 share/uim/prime-key-custom.scm
@@ -228,23 +249,29 @@ share/uim/pyunihan.scm
 share/uim/rk.scm
 share/uim/romaja.scm
 share/uim/scim.scm
+share/uim/sj3-custom.scm
+share/uim/sj3-key-custom.scm
+share/uim/sj3.scm
 share/uim/skk-custom.scm
 share/uim/skk-dialog.scm
 share/uim/skk-editor.scm
 share/uim/skk-key-custom.scm
 share/uim/skk.scm
-share/uim/spellcheck-custom.scm
-share/uim/spellcheck.scm
 share/uim/tcode.scm
 share/uim/trycode.scm
+share/uim/tutcode-bushudic.scm
+share/uim/tutcode-custom.scm
 share/uim/tutcode-key-custom.scm
+share/uim/tutcode-rule.scm
 share/uim/tutcode.scm
-share/uim/uim-db.scm
 share/uim/uim-module-manager.scm
 share/uim/uim-sh.scm
 share/uim/ustr.scm
 share/uim/util.scm
 share/uim/viqr.scm
+share/uim/wnn-custom.scm
+share/uim/wnn-key-custom.scm
+share/uim/wnn.scm
 share/uim/zaurus.scm
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
