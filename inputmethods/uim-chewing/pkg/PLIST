@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/14 02:19:04 kevlo Exp $
+@comment lib/uim/plugin/libuim-chewing.la
+lib/uim/plugin/libuim-chewing.so
+share/uim/chewing-custom.scm
+share/uim/chewing-key-custom.scm
+share/uim/chewing.scm
+share/uim/pixmaps/chewing.png
+@exec %D/bin/uim-module-manager --register chewing
+@unexec %D/bin/uim-module-manager --unregister chewing
