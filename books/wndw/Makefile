@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/26 08:49:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/14 00:15:29 sthen Exp $
 
 COMMENT-main =	Wireless Networking in the Developing World, English edition
 COMMENT-es =	Wireless Networking in the Developing World, Spanish edition
@@ -6,7 +6,7 @@ COMMENT-fr =	Wireless Networking in the Developing World, French edition
 COMMENT-ar =	Wireless Networking in the Developing World, Arabic edition
 
 PKGNAME-main =	wndw-2.0
-PKGNAME-es =	wndw-es-2.0
+PKGNAME-es =	wndw-es-3.0
 PKGNAME-fr =	wndw-fr-1.0
 PKGNAME-ar =	wndw-ar-1.0
 
@@ -28,12 +28,12 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE =	http://wndw.net/
 
 MASTER_SITES =	${HOMEPAGE}pdf/wndw2-en/
-MASTER_SITES0 =	${HOMEPAGE}pdf/wndw2-es/
+MASTER_SITES0 =	${HOMEPAGE}pdf/wndw3-es/
 MASTER_SITES1 =	${HOMEPAGE}pdf/wndw-fr/
 MASTER_SITES2 =	${HOMEPAGE}pdf/wndw-ar/
 
 DISTFILES =	wndw2-ebook.pdf \
-		wndw2-es-ebook.pdf:0 \
+		wndw3-es-ebook.pdf:0 \
 		wndw-fr-ebook.pdf:1 \
 		wndw-ar-ebook.pdf:2
 

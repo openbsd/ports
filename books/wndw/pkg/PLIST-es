@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST-es,v 1.1.1.1 2008/06/26 08:49:37 sthen Exp $
+@comment $OpenBSD: PLIST-es,v 1.2 2008/10/14 00:15:29 sthen Exp $
 share/doc/wndw/
-share/doc/wndw/wndw2-es-ebook.pdf
+share/doc/wndw/wndw3-es-ebook.pdf
