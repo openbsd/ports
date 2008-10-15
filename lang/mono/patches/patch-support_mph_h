@@ -1,0 +1,12 @@
+$OpenBSD: patch-support_mph_h,v 1.1.1.1 2008/10/15 13:34:10 robert Exp $
+--- support/mph.h.orig	Tue Oct  7 17:12:09 2008
++++ support/mph.h	Tue Oct  7 17:12:13 2008
+@@ -131,7 +131,7 @@ typedef gint64 suseconds_t;
+ 
+ #define _mph_return_val_if_cb_(val, ret, cb) G_STMT_START{ \
+ 	if (cb (val)) { \
+-		errno = EOVERFLOW; \
++		errno = EINVAL; \
+ 		return ret; \
+ 	}}G_STMT_END
+ 

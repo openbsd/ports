@@ -1,0 +1,9 @@
+$OpenBSD: patch-mcs_tools_gensources_sh,v 1.1.1.1 2008/10/15 13:34:10 robert Exp $
+--- mcs/tools/gensources.sh.orig	Thu Oct  9 15:18:49 2008
++++ mcs/tools/gensources.sh	Thu Oct  9 15:25:23 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+ includefile=$1
+ excludefile=$2
