@@ -1,0 +1,4 @@
+Libgdiplus is the Mono library that provide a GDI+ comptible API on non-Windows
+operating systems.
+This implementation uses Cairo (http://www.cairographics.org) to do most of the
+heavy lifting. 

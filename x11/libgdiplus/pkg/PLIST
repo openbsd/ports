@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/15 10:46:07 robert Exp $
+%%SHARED%%
+lib/libgdiplus.a
+lib/libgdiplus.la
+lib/pkgconfig/
+lib/pkgconfig/libgdiplus.pc
