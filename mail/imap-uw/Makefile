@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.59 2008/05/20 07:16:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2008/10/15 14:29:04 ajacoutot Exp $
 
 COMMENT-server=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=University of Washington IMAP4rev1/POP2/POP3 mail utility
 COMMENT-c-client=University of Washington's c-client mail access routines
 
-V=		2007a1
+V=		2007b
 DISTNAME=	imap-${V}
 
 PKGNAME-server=	imap-uw-${V}
 PKGNAME-mailutil=mailutil-uw-${V}
 PKGNAME-c-client=c-client-${V}
+
+#WRKDIST=	${WRKDIR}/imap-2007b
 
 CATEGORIES=	mail
 CATEGORIES-c-client=mail devel
@@ -61,8 +63,6 @@ HEADERS=	c-client.h dummy.h env.h env_unix.h fdstring.h flockcyg.h \
 		rfc822.h smtp.h sslio.h tcp.h tcp_unix.h unix.h utf8.h \
 		utf8aux.h
 
-WRKDIST=	${WRKDIR}/imap-2007a
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop2d ${PREFIX}/libexec
@@ -77,8 +77,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/src/mailutil/mailutil.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/src/tmail/tmail.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/imap-uw
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/imap-uw
-	@perl -pi -e 's,!!TRUEPREFIX!!,${TRUEPREFIX},' \
+	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
 		${PREFIX}/share/doc/imap-uw/README.OpenBSD
 	tar -C ${WRKSRC}/docs -cf - . | \
 		tar -C ${PREFIX}/share/doc/imap-uw -xf -

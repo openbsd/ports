@@ -1,25 +1,25 @@
-$OpenBSD: README.OpenBSD,v 1.1 2007/10/31 13:53:56 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2008/10/15 14:29:04 ajacoutot Exp $
 
 The ipop2d, ipop3d, and imapd daemons should be invoked by your
 /etc/inetd.conf file with lines such as:
 
-  pop2    stream  tcp     nowait  root    !!TRUEPREFIX!!/libexec/ipop2d   ipop2d
-  pop2    stream  tcp6    nowait  root    !!TRUEPREFIX!!/libexec/ipop2d   ipop2d
-  pop3    stream  tcp     nowait  root    !!TRUEPREFIX!!/libexec/ipop3d   ipop3d
-  pop3    stream  tcp6    nowait  root    !!TRUEPREFIX!!/libexec/ipop3d   ipop3d
-  imap    stream  tcp     nowait  root    !!TRUEPREFIX!!/libexec/imapd    imapd
-  imap    stream  tcp6    nowait  root    !!TRUEPREFIX!!/libexec/imapd    imapd
+  pop2    stream  tcp     nowait  root    ${TRUEPREFIX}/libexec/ipop2d   ipop2d
+  pop2    stream  tcp6    nowait  root    ${TRUEPREFIX}/libexec/ipop2d   ipop2d
+  pop3    stream  tcp     nowait  root    ${TRUEPREFIX}/libexec/ipop3d   ipop3d
+  pop3    stream  tcp6    nowait  root    ${TRUEPREFIX}/libexec/ipop3d   ipop3d
+  imap    stream  tcp     nowait  root    ${TRUEPREFIX}/libexec/imapd    imapd
+  imap    stream  tcp6    nowait  root    ${TRUEPREFIX}/libexec/imapd    imapd
 
 
 To use SSL as default transport you need to add the lines below to
 /etc/inetd.conf.
 
-  pop3s   stream  tcp     nowait  root    !!TRUEPREFIX!!/libexec/ipop3d   ipop3d
-  pop3s   stream  tcp6    nowait  root    !!TRUEPREFIX!!/libexec/ipop3d   ipop3d
-  imaps   stream  tcp     nowait  root    !!TRUEPREFIX!!/libexec/imapd    imapd
-  imaps   stream  tcp6    nowait  root    !!TRUEPREFIX!!/libexec/imapd    imapd
+  pop3s   stream  tcp     nowait  root    ${TRUEPREFIX}/libexec/ipop3d   ipop3d
+  pop3s   stream  tcp6    nowait  root    ${TRUEPREFIX}/libexec/ipop3d   ipop3d
+  imaps   stream  tcp     nowait  root    ${TRUEPREFIX}/libexec/imapd    imapd
+  imaps   stream  tcp6    nowait  root    ${TRUEPREFIX}/libexec/imapd    imapd
 
-You also need to install files containing RSA certificates to
+You also need to install your certificates to
 /etc/ssl/{imapd,ipop3d}.pem and files containing the corresponding private
 keys to /etc/ssl/private/{imapd,ipop3d}.pem.  See ssl(8) for how to do this.
 
@@ -27,7 +27,7 @@ keys to /etc/ssl/private/{imapd,ipop3d}.pem.  See ssl(8) for how to do this.
 If you want to use the included mailbox lock program, you need to enable
 the setgid bit on the mlock binary, then give the "smmsp" group write
 permission on the /var/mail directory.  As root:
- chmod 2555 !!TRUEPREFIX!!/libexec/mlock
+ chmod 2555 ${TRUEPREFIX}/libexec/mlock
  chgrp smmsp /var/mail
  chmod 775 /var/mail
 
