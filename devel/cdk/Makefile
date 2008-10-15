@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/17 13:22:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/15 13:32:53 ajacoutot Exp $
 
 COMMENT=	curses development kit
 
 V=		5.0-20060507
-DISTNAME=	cdk
-PKGNAME=	${DISTNAME}-${V:S/-/./}
-WRKDIST=	${WRKDIR}/${DISTNAME}-${V}
+DISTNAME=	cdk-${V}
+PKGNAME=	cdk-${V:S/-/./}p0
+
+EXTRACT_SUFX=	.tgz
 
 SHARED_LIBS +=	cdk	0.0	# .4.0
 
@@ -30,5 +31,10 @@ CONFIGURE_ARGS=	--with-ncurses \
 		--with-libtool
 
 NO_REGRESS=	Yes
+
+# format tables in man pages
+post-build:
+	cd ${WRKSRC}/man && for m in *.[1-9] ; do \
+		mv $$m $$m.bak && tbl $$m.bak > $$m ; done
 
 .include <bsd.port.mk>
