@@ -1,7 +1,7 @@
-$OpenBSD: patch-alpine_Makefile_in,v 1.3 2008/06/15 00:08:44 ajacoutot Exp $
---- alpine/Makefile.in.orig	Fri Jan 11 19:15:07 2008
-+++ alpine/Makefile.in	Sun May 18 16:04:24 2008
-@@ -83,14 +83,14 @@ rpdump_LDADD = $(LDADD)
+$OpenBSD: patch-alpine_Makefile_in,v 1.4 2008/10/15 14:31:04 ajacoutot Exp $
+--- alpine/Makefile.in.orig	Tue Jun  3 17:54:15 2008
++++ alpine/Makefile.in	Sat Oct 11 18:58:57 2008
+@@ -84,14 +84,14 @@ rpdump_LDADD = $(LDADD)
  rpdump_DEPENDENCIES = ../pico/libpico.a ../pico/osdep/libpicoosd.a \
  	../pith/libpith.a ../pith/osdep/libpithosd.a \
  	../pith/charconv/libpithcc.a osdep/libpineosd.a \
@@ -18,7 +18,7 @@ $OpenBSD: patch-alpine_Makefile_in,v 1.3 2008/06/15 00:08:44 ajacoutot Exp $
  DEFAULT_INCLUDES = 
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
-@@ -122,7 +122,7 @@ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS)
+@@ -123,7 +123,7 @@ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS)
  ACLOCAL = @ACLOCAL@
  AMTAR = @AMTAR@
  AM_CFLAGS = @AM_CFLAGS@
@@ -27,7 +27,7 @@ $OpenBSD: patch-alpine_Makefile_in,v 1.3 2008/06/15 00:08:44 ajacoutot Exp $
  AR = @AR@
  AUTOCONF = @AUTOCONF@
  AUTOHEADER = @AUTOHEADER@
-@@ -281,7 +281,7 @@ BUILT_SOURCES = date.c
+@@ -282,7 +282,7 @@ BUILT_SOURCES = date.c
  LDADD = ../pico/libpico.a ../pico/osdep/libpicoosd.a \
  	../pith/libpith.a ../pith/osdep/libpithosd.a  \
  	../pith/charconv/libpithcc.a \
