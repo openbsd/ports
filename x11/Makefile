@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.350 2008/10/02 21:06:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.351 2008/10/15 10:47:13 robert Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -115,6 +115,7 @@
      SUBDIR += lesstif
      SUBDIR += libdnd
      SUBDIR += liberation-fonts
+     SUBDIR += libgdiplus
      SUBDIR += libsexy
      SUBDIR += lupe
      SUBDIR += matchbox
