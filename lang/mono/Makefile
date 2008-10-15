@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/15 13:34:10 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/15 21:33:25 robert Exp $
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	cross platform, open source .NET developement framework
 
@@ -26,7 +26,7 @@ WANTLIB=	c glib-2.0 gmodule-2.0 gthread-2.0 intl \
 MASTER_SITES=	ftp://ftp.novell.com/pub/mono/sources/mono/
 EXTRACT_SUFX=	.tar.bz2
 
-#USE_LIBTOOL=	Yes
+USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
 MODULES=	converters/libiconv

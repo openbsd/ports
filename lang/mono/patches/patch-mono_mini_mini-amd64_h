@@ -1,6 +1,6 @@
-$OpenBSD: patch-mono_mini_mini-amd64_h,v 1.1.1.1 2008/10/15 13:34:10 robert Exp $
---- mono/mini/mini-amd64.h.orig	Tue Oct 14 19:41:26 2008
-+++ mono/mini/mini-amd64.h	Tue Oct 14 19:48:56 2008
+$OpenBSD: patch-mono_mini_mini-amd64_h,v 1.2 2008/10/15 21:33:25 robert Exp $
+--- mono/mini/mini-amd64.h.orig	Tue Sep  2 17:42:54 2008
++++ mono/mini/mini-amd64.h	Wed Oct 15 22:07:39 2008
 @@ -217,7 +217,7 @@ typedef struct {
   */
  #define MONO_ARCH_VARARG_ICALLS 1
@@ -10,3 +10,12 @@ $OpenBSD: patch-mono_mini_mini-amd64_h,v 1.1.1.1 2008/10/15 13:34:10 robert Exp 
  
  #define MONO_ARCH_USE_SIGACTION 1
  
+@@ -229,7 +229,7 @@ typedef struct {
+ 
+ #endif /* PLATFORM_WIN32 */
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+ #define REG_RAX 7
+ #define REG_RCX 4
