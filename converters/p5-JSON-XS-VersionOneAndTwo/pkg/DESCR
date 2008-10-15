@@ -1,0 +1,5 @@
+JSON::XS is by far the best JSON module on the CPAN. However, it
+changed its API at version 2.01. If you have to maintain code which
+may be run on systems with either version one or two then this is
+a bit of a pain. This module takes the pain away without sacrificing
+performance.

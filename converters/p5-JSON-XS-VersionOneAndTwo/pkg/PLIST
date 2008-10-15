@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/15 23:58:40 sthen Exp $
+${P5SITE}/JSON/
+${P5SITE}/JSON/XS/
+${P5SITE}/JSON/XS/VersionOneAndTwo.pm
+@man man/man3p/JSON::XS::VersionOneAndTwo.3p
