@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/16 00:00:05 sthen Exp $
+${P5SITE}/PAR.pm
+${P5SITE}/PAR/Environment.pod
+${P5SITE}/PAR/FAQ.pod
+${P5SITE}/PAR/Heavy.pm
+${P5SITE}/PAR/Tutorial.pod
+@man man/man3p/PAR.3p
+@man man/man3p/PAR::Environment.3p
+@man man/man3p/PAR::FAQ.3p
+@man man/man3p/PAR::Heavy.3p
+@man man/man3p/PAR::Tutorial.3p
