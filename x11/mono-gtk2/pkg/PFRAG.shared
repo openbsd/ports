@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/10/16 16:02:07 robert Exp $
+lib/libatksharpglue-2.so
+lib/libgdksharpglue-2.so
+lib/libgladesharpglue-2.so
+lib/libglibsharpglue-2.so
+lib/libgtksharpglue-2.so
+lib/libpangosharpglue-2.so
