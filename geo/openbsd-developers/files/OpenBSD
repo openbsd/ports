@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.28 2008/09/04 07:52:36 fkr Exp $
+# $OpenBSD: OpenBSD,v 1.29 2008/10/16 22:36:02 weerd Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -70,6 +70,7 @@
 51.46		-0.13		"fgsch"		# Federico G. Schwindt
 51.5		5		"jasper"	# Jasper Lievisse Adriaanse
 51.6		-114.1		"deraadt"	# Theo de Raadt
+51.67938	5.1194		"weerd"		# Paul de Weerd
 52.2		12.75		"uwe"		# Uwe Stuehler
 52.26		4.63		"camield"	# Camiel Dobbelaar
 52.28083	10.57271	"kili"		# Matthias Kilian
