@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/07/04 17:36:00 ajacoutot Exp $
-bin/tuxpaint-config
+@comment $OpenBSD: PLIST,v 1.3 2008/10/16 17:00:53 ajacoutot Exp $
+@bin bin/tuxpaint-config
 @man man/man1/tuxpaint-config.1
 share/doc/tuxpaint-config/
 share/doc/tuxpaint-config/README.txt
-share/pixmaps/
 share/pixmaps/tuxpaint-config.png
 share/pixmaps/tuxpaint-config.xpm
