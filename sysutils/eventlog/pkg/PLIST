@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/16 18:31:41 steven Exp $
+%%SHARED%%
+include/eventlog/
+include/eventlog/evtlog.h
+include/eventlog/evtmaps.h
+lib/libevtlog.a
+lib/libevtlog.la
+lib/pkgconfig/
+lib/pkgconfig/eventlog.pc
+share/doc/eventlog/
+share/doc/eventlog/API.txt
+share/doc/eventlog/DESIGN.txt
+share/doc/eventlog/configuration.txt

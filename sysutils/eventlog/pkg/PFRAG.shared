@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/10/16 18:31:41 steven Exp $
+@lib lib/libevtlog.so.${LIBevtlog_VERSION}
