@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.633 2008/10/16 00:19:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.634 2008/10/16 19:52:50 steven Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -334,7 +334,6 @@
      SUBDIR += p5-Devel-FastProf
      SUBDIR += p5-Devel-GlobalDestruction
      SUBDIR += p5-Devel-Leak
-     SUBDIR += p5-Devel-PAR
      SUBDIR += p5-Devel-SawAmpersand
      SUBDIR += p5-Devel-Size
      SUBDIR += p5-Devel-SmallProf
@@ -450,6 +449,7 @@
      SUBDIR += p5-Object-Declare
      SUBDIR += p5-Object-Realize
      SUBDIR += p5-Object-Signature
+     SUBDIR += p5-PAR
      SUBDIR += p5-PAR-Dist
      SUBDIR += p5-POE
      SUBDIR += p5-POE-Component-IKC
