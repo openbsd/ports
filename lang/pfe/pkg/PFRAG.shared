@@ -1,14 +1,39 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/30 23:21:16 alek Exp $
-@lib lib/libpfe-0.so.${LIBpfe-0_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.3 2008/10/16 17:30:24 jasper Exp $
+@lib lib/libpfe-0-forth.so.${LIBpfe-0-forth_VERSION}
 @lib lib/libpfe.so.${LIBpfe_VERSION}
-lib/pfe/dstrings.so
-lib/pfe/edit.so
-lib/pfe/floating.so
-lib/pfe/fpnostack.so
-lib/pfe/gforth.so
-lib/pfe/help.so
-lib/pfe/module.so
-lib/pfe/smart-go.so
-lib/pfe/struct.so
-lib/pfe/toolbelt.so
-lib/pfe/zchar.so
+lib/pfe-forth/assembler.so
+lib/pfe-forth/complex.so
+lib/pfe-forth/dstrings.so
+lib/pfe-forth/edit.so
+lib/pfe-forth/floating.so
+lib/pfe-forth/fpnostack.so
+lib/pfe-forth/gforth.so
+lib/pfe-forth/help.so
+lib/pfe-forth/module.so
+lib/pfe-forth/renamed/libassembler.so
+lib/pfe-forth/renamed/libcomplex.so
+lib/pfe-forth/renamed/libdstrings.so
+lib/pfe-forth/renamed/libedit.so
+lib/pfe-forth/renamed/libfloating.so
+lib/pfe-forth/renamed/libfpnostack.so
+lib/pfe-forth/renamed/libgforth.so
+lib/pfe-forth/renamed/libhelp.so
+lib/pfe-forth/renamed/libmodule.so
+lib/pfe-forth/renamed/libsmart-go.so
+lib/pfe-forth/renamed/libsocket.so
+lib/pfe-forth/renamed/libstackhelp.so
+lib/pfe-forth/renamed/libstruct.so
+lib/pfe-forth/renamed/libstructs.so
+lib/pfe-forth/renamed/libtermcatch.so
+lib/pfe-forth/renamed/libtoolbelt.so
+lib/pfe-forth/renamed/libzchar.so
+lib/pfe-forth/smart-go.so
+lib/pfe-forth/socket.so
+lib/pfe-forth/stackhelp.so
+lib/pfe-forth/struct.so
+lib/pfe-forth/structs.so
+lib/pfe-forth/termcatch.so
+lib/pfe-forth/testmodule1.so
+lib/pfe-forth/testmodule2.so
+lib/pfe-forth/toolbelt.so
+lib/pfe-forth/zchar.so

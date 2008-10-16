@@ -1,0 +1,32 @@
+$OpenBSD: patch-pfe_main-stdc_c,v 1.1 2008/10/16 17:30:24 jasper Exp $
+--- pfe/main-stdc.c.orig	Sun Apr 20 06:46:30 2008
++++ pfe/main-stdc.c	Thu Oct 16 12:37:46 2008
+@@ -28,6 +28,7 @@ static char* id __attribute__((unused)) = 
+ #include <errno.h>
+ 
+ #ifdef PFE_HAVE_SYS_RESOURCE_H
++#include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/resource.h>
+ #endif
+@@ -57,9 +58,17 @@ main (int argc, const char** argv)
+ # endif
+ 
+ # ifdef PFE_HAVE_SYS_RESOURCE_H
+-    {/* a pfe does not need lots of data on the real cpu return stack */
+-	struct rlimit rlimits = { 64*1024, 64*1024 };
+-	setrlimit (RLIMIT_STACK, &rlimits);
++    {
++	/*
++	 * A pfe does not need lots of data on the real cpu return stack.
++	 * So, grow the maximum stack a size.
++	 */
++	struct rlimit reslimit;
++
++	if (getrlimit(RLIMIT_STACK , &reslimit) == 0){
++		reslimit.rlim_cur = reslimit.rlim_max;
++		(void)setrlimit(RLIMIT_STACK , &reslimit);
++	}
+     }
+ # endif
+ 
