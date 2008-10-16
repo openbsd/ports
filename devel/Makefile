@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.634 2008/10/16 19:52:50 steven Exp $
+# $OpenBSD: Makefile,v 1.635 2008/10/16 20:31:22 steven Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -48,8 +48,8 @@
      SUBDIR += cil
      SUBDIR += cln
      SUBDIR += cmake
-     SUBDIR += cook
      SUBDIR += commoncpp
+     SUBDIR += cook
      SUBDIR += cpphs
      SUBDIR += cppunit
      SUBDIR += cscope
@@ -553,8 +553,8 @@
      SUBDIR += p5-Test-Strict
      SUBDIR += p5-Test-Taint
      SUBDIR += p5-Test-Tester
-     SUBDIR += p5-Test-Unit
      SUBDIR += p5-Test-URI
+     SUBDIR += p5-Test-Unit
      SUBDIR += p5-Test-WWW-Mechanize
      SUBDIR += p5-Test-WWW-Mechanize-Catalyst
      SUBDIR += p5-Test-Warn
@@ -694,7 +694,6 @@
      SUBDIR += ruby-gettext
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
-     SUBDIR += ruby-rubyinline
      SUBDIR += ruby-mocha
      SUBDIR += ruby-ncurses
      SUBDIR += ruby-needle
@@ -705,6 +704,7 @@
      SUBDIR += ruby-rspec
      SUBDIR += ruby-ruby2ruby
      SUBDIR += ruby-rubyforge
+     SUBDIR += ruby-rubyinline
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-tzinfo
      SUBDIR += ruby-uuidtools
