@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2008/09/24 13:30:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2008/10/16 00:19:30 sthen Exp $
 #
 
     SUBDIR += base64
@@ -31,6 +31,7 @@
     SUBDIR += p5-JSON-Any
     SUBDIR += p5-JSON-DWIW
     SUBDIR += p5-JSON-XS
+    SUBDIR += p5-JSON-XS-VersionOneAndTwo
     SUBDIR += p5-Jcode
     SUBDIR += p5-MARC-Record
     SUBDIR += p5-Net-IDN-Nameprep

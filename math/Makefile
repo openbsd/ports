@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2008/09/30 09:25:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2008/10/16 00:19:30 sthen Exp $
 #
 
      SUBDIR += R
@@ -64,6 +64,7 @@
      SUBDIR += p5-Math-Pari
      SUBDIR += p5-Math-Round
      SUBDIR += p5-Math-Spline
+     SUBDIR += p5-Math-VecStat
      SUBDIR += p5-Set-IntSpan
      SUBDIR += p5-Statistics-Descriptive
      SUBDIR += pari

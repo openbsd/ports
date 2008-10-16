@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.356 2008/09/23 21:01:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.357 2008/10/16 00:19:30 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -168,6 +168,7 @@
      SUBDIR += p5-Catalyst-Runtime
      SUBDIR += p5-Catalyst-View-Mason
      SUBDIR += p5-Config-ApacheFormat
+     SUBDIR += p5-Data-URIEncode
      SUBDIR += p5-FCGI-ProcManager
      SUBDIR += p5-Feed-Find
      SUBDIR += p5-HTML-Base
