@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_gcompris_Makefile_in,v 1.1 2008/02/13 11:12:50 ajacoutot Exp $
---- src/gcompris/Makefile.in.orig	Wed Feb 13 09:31:23 2008
-+++ src/gcompris/Makefile.in	Wed Feb 13 09:34:10 2008
-@@ -372,8 +372,7 @@ gcompris_SOURCES = \
- 
+$OpenBSD: patch-src_gcompris_Makefile_in,v 1.2 2008/10/16 17:03:08 ajacoutot Exp $
+--- src/gcompris/Makefile.in.orig	Tue Oct  7 22:29:50 2008
++++ src/gcompris/Makefile.in	Thu Oct 16 14:55:03 2008
+@@ -428,8 +428,7 @@ gcompris_SOURCES = \
+ 	wordlist.h
  
  gcompris_LDFLAGS = \
 -	-export-dynamic $(top_builddir)/src/libgnomecanvas/libgnomecanvas-2.a \
 -	$(top_builddir)/src/libart_lgpl/libart_lgpl_2.a
 +	-export-dynamic -lgnomecanvas-2 -lart_lgpl_2
  
- 
  gcompris_LDADD = \
+ 	$(GCOMPRIS_LIBS) $(sqlite_ldadd) $(XML_LIBS) $(GNET_LIBS) \
