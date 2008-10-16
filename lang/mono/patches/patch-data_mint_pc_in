@@ -1,0 +1,11 @@
+$OpenBSD: patch-data_mint_pc_in,v 1.1 2008/10/16 16:00:27 robert Exp $
+--- data/mint.pc.in.orig	Thu Oct 16 10:03:12 2008
++++ data/mint.pc.in	Thu Oct 16 10:24:59 2008
+@@ -1,5 +1,5 @@
+-prefix=${pcfiledir}/../..
+-exec_prefix=${pcfiledir}/../..
++prefix=@prefix@
++exec_prefix=@prefix@
+ libdir=${prefix}/lib
+ includedir=${prefix}/include/mono-@API_VER@
+ 

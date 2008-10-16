@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/15 13:34:12 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/16 16:00:27 robert Exp $
 %%SHARED%%
 bin/al
 bin/al1
@@ -974,6 +974,18 @@ lib/pkgconfig/smcs.pc
 @man man/man1/wsdl.1
 @man man/man1/xsd.1
 @man man/man5/mono-config.5
+share/examples/mono/
+@sample ${SYSCONFDIR}/mono/
+share/examples/mono/browscap.ini
+@sample ${SYSCONFDIR}/mono/browscap.ini
+share/examples/mono/config
+@sample ${SYSCONFDIR}/mono/config
+share/examples/mono/net_1_1/
+share/examples/mono/net_1_1/DefaultWsdlHelpGenerator.aspx
+share/examples/mono/net_1_1/machine.config
+share/examples/mono/net_2_0/
+share/examples/mono/net_2_0/DefaultWsdlHelpGenerator.aspx
+share/examples/mono/net_2_0/machine.config
 share/jay/
 share/jay/ACKNOWLEDGEMENTS
 share/jay/NEW_FEATURES

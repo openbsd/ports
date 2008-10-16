@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/15 21:33:25 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/16 16:00:27 robert Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -29,10 +29,10 @@ EXTRACT_SUFX=	.tar.bz2
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
-MODULES=	converters/libiconv
+MODULES=	converters/libiconv lang/mono
 BUILD_DEPENDS=	:bison-*:devel/bison \
 		${RUN_DEPENDS}
-RUN_DEPENDS+=	::x11/libgdiplus
+RUN_DEPENDS=	::x11/libgdiplus
 LIB_DEPENDS=	gc::devel/boehm-gc
 
 
@@ -43,5 +43,27 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 CONFIGURE_ARGS=	--with-gc=boehm --with-glib=system --with-tls=pthread \
 		--with-jit=yes --with-interp=no --with-sigaltstack=no \
 		--with-libgdiplus=installed
+
+REGRESS_TARGET=check
+
+DLLMAP_FILES=	mcs/class/Managed.Windows.Forms/System.Windows.Forms/MimeIcon.cs \
+		mcs/tools/mono-shlib-cop/mono-shlib-cop.exe.config
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mono
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mono/net_1_1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mono/net_2_0
+
+	${INSTALL_DATA} ${WRKSRC}/data/config \
+		${WRKSRC}/data/browscap.ini \
+		${PREFIX}/share/examples/mono/
+
+	${INSTALL_DATA} ${WRKSRC}/data/net_1_1/DefaultWsdlHelpGenerator.aspx \
+		${WRKSRC}/data/net_1_1/machine.config \
+		${PREFIX}/share/examples/mono/net_1_1/
+
+	${INSTALL_DATA} ${WRKSRC}/data/net_2_0/DefaultWsdlHelpGenerator.aspx \
+		${WRKSRC}/data/net_2_0/machine.config \
+		${PREFIX}/share/examples/mono/net_2_0/
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+$OpenBSD: patch-data_mono-cairo_pc_in,v 1.1 2008/10/16 16:00:27 robert Exp $
+--- data/mono-cairo.pc.in.orig	Thu Oct 16 10:03:20 2008
++++ data/mono-cairo.pc.in	Thu Oct 16 10:25:10 2008
+@@ -1,5 +1,5 @@
+-prefix=${pcfiledir}/../..
+-exec_prefix=${pcfiledir}/../..
++prefix=@prefix@
++exec_prefix=@prefix@
+ libdir=${prefix}/@reloc_libdir@
+ includedir=${prefix}/include
+ 
