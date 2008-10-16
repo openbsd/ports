@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_im_c,v 1.1 2007/07/04 17:39:08 ajacoutot Exp $
---- src/im.c.orig	Mon May  7 16:24:43 2007
-+++ src/im.c	Wed Jul  4 11:33:36 2007
+$OpenBSD: patch-src_im_c,v 1.2 2008/10/16 17:01:36 ajacoutot Exp $
+--- src/im.c.orig	Thu Oct 16 15:12:38 2008
++++ src/im.c	Thu Oct 16 15:13:03 2008
 @@ -37,10 +37,10 @@
  */
  
@@ -11,6 +11,6 @@ $OpenBSD: patch-src_im_c,v 1.1 2007/07/04 17:39:08 ajacoutot Exp $
  #include <string.h>
 -#include <wchar.h>
 +#include <utf8/wchar.h>
- #include "im.h"
  
+ #include "im.h"
  

@@ -1,0 +1,25 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2008/10/16 17:01:36 ajacoutot Exp $
+lib/tuxpaint/plugins/blocks_chalk_drip.so
+lib/tuxpaint/plugins/blur.so
+lib/tuxpaint/plugins/bricks.so
+lib/tuxpaint/plugins/calligraphy.so
+lib/tuxpaint/plugins/cartoon.so
+lib/tuxpaint/plugins/distortion.so
+lib/tuxpaint/plugins/emboss.so
+lib/tuxpaint/plugins/fade_darken.so
+lib/tuxpaint/plugins/fill.so
+lib/tuxpaint/plugins/flower.so
+lib/tuxpaint/plugins/foam.so
+lib/tuxpaint/plugins/glasstile.so
+lib/tuxpaint/plugins/grass.so
+lib/tuxpaint/plugins/kalidescope.so
+lib/tuxpaint/plugins/light.so
+lib/tuxpaint/plugins/metalpaint.so
+lib/tuxpaint/plugins/mirror_flip.so
+lib/tuxpaint/plugins/negative.so
+lib/tuxpaint/plugins/rainbow.so
+lib/tuxpaint/plugins/ripples.so
+lib/tuxpaint/plugins/shift.so
+lib/tuxpaint/plugins/smudge.so
+lib/tuxpaint/plugins/tint.so
+lib/tuxpaint/plugins/waves.so

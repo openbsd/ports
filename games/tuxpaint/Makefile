@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/04 17:39:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/16 17:01:36 ajacoutot Exp $
 
 COMMENT=	drawing program for children
 
-DISTNAME=	tuxpaint-0.9.17
+DISTNAME=	tuxpaint-0.9.20
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/
@@ -17,30 +17,34 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 
-WANTLIB=	X11 Xext c m png pthread usbhid SDL cairo gobject-2.0
+WANTLIB=	ORBit-2 SDL X11 Xau Xdmcp Xrender c cairo expat \
+		fontconfig freetype gdk_pixbuf-2.0 glib-2.0 glitz \
+		gmodule-2.0 gobject-2.0 gthread-2.0 m pixman-1 png \
+		pthread z
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	SDL_image.>=2::devel/sdl-image \
 		SDL_mixer.>=3::devel/sdl-mixer \
 		SDL_ttf.>=7:sdl-ttf->=2.0.8:devel/sdl-ttf \
-		rsvg-2.>=18::x11/gnome/librsvg \
+		rsvg-2.>=18::x11/gnome/librsvg,no_gnome \
 		paper::print/libpaper \
-		utf8.>=1::misc/libutf8
+		utf8.>=1::misc/libutf8 \
+		SDL_Pango::devel/sdl-pango \
+		gnomevfs-2::x11/gnome/vfs2 \
+		gconf-2.>=6::devel/gconf2
 RUN_DEPENDS=	::graphics/netpbm \
 		:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 
-MAKE_ENV+=	SYSCONFDIR=${SYSCONFDIR}
+MAKE_ENV+=	SYSCONFDIR=${SYSCONFDIR} OPTFLAGS="${CFLAGS}"
 CFLAGS+=	-DHAVE_STRCASESTR
 
 NO_REGRESS=	Yes
 
 pre-configure:
 	@perl -pi -e 's,@\$$\(CC\),\$$\(CC\),g' ${WRKSRC}/Makefile
-	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g;' \
-		-e 's,!!LOCALBASE!!,${LOCALBASE},g' \
-		${WRKSRC}/src/manpage/tuxpaint.1
+	${SUBST_CMD} ${WRKSRC}/src/manpage/tuxpaint.1
 
 .include <bsd.port.mk>
