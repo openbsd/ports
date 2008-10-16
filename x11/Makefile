@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.351 2008/10/15 10:47:13 robert Exp $
+# $OpenBSD: Makefile,v 1.352 2008/10/16 16:03:14 robert Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -120,6 +120,7 @@
      SUBDIR += lupe
      SUBDIR += matchbox
      SUBDIR += mlterm
+     SUBDIR += mono-gtk2
      SUBDIR += mouseclock
      SUBDIR += mowitz
      SUBDIR += mplayer
