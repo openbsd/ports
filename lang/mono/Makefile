@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/16 16:00:27 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/16 21:47:10 jasper Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	cross platform, open source .NET developement framework
 
 DISTNAME=	mono-2.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	lang devel
 SHARED_LIBS=	mono-profiler-aot	0.0 \
 		mono-profiler-cov	0.0 \

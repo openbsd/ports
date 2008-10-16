@@ -1,4 +1,6 @@
-# $OpenBSD: mono.port.mk,v 1.1 2008/10/16 16:00:27 robert Exp $
+# $OpenBSD: mono.port.mk,v 1.2 2008/10/16 21:47:10 jasper Exp $
+
+CATEGORIES+=		lang/mono
 
 # A list of files where we have to remove the stupid hardcoded .[0-9] major
 # version from library names. 
