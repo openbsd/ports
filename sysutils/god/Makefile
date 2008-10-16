@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/08 20:52:27 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/16 19:40:31 jcs Exp $
 
 COMMENT=	system monitoring framework written in Ruby
 
 DISTNAME=	god-0.7.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 
 # mit
