@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/08/27 18:25:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/10/16 17:29:33 jasper Exp $
 @bin bin/herrie
 @man man/man1/herrie.1
 share/herrie/
@@ -16,5 +16,6 @@ share/locale/pt_BR/LC_MESSAGES/herrie.mo
 share/locale/ru/LC_MESSAGES/herrie.mo
 share/locale/sv/LC_MESSAGES/herrie.mo
 share/locale/tr/LC_MESSAGES/herrie.mo
+share/locale/uk/LC_MESSAGES/herrie.mo
 share/locale/vi/LC_MESSAGES/herrie.mo
 share/locale/zh_CN/LC_MESSAGES/herrie.mo

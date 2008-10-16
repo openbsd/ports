@@ -1,6 +1,6 @@
-$OpenBSD: patch-herrie_conf_sample,v 1.1 2007/11/06 20:45:21 jakemsr Exp $
---- herrie.conf.sample.orig	Sun Sep 23 06:21:10 2007
-+++ herrie.conf.sample	Tue Nov  6 02:59:28 2007
+$OpenBSD: patch-herrie_conf_sample,v 1.2 2008/10/16 17:29:33 jasper Exp $
+--- herrie.conf.sample.orig	Tue Oct 14 21:20:40 2008
++++ herrie.conf.sample	Tue Oct 14 21:21:13 2008
 @@ -3,22 +3,22 @@
  
  # Use this line to change the behaviour of the playlist to be like
@@ -14,12 +14,12 @@ $OpenBSD: patch-herrie_conf_sample,v 1.1 2007/11/06 20:45:21 jakemsr Exp $
  
  # Switch file browser to a certain directory at startup:
 -gui.browser.defaultpath=/vol/music
-+#gui.browser.defaultpath=/please/configure/the/music/directory
++#gui.browser.defaultpath=/vol/music
  
  # Enable AudioScrobbler song submission. Make sure you generate the
- # password with `echo -n p4ssw0rd | md5'. It's probably not a good idea
- # to place these switches in the public config file. You'd better stick
- # these switches in ~/.herrie/config, with 0600 permissions:
+ # password with `printf %s p4ssw0rd | md5'. It's probably not a good
+ # idea to place these switches in the public config file. You'd better
+ # stick these switches in ~/.herrie/config, with 0600 permissions:
 -scrobbler.username=SomeUser
 -scrobbler.password=0011223344556677889900aabbccddeeff
 +#scrobbler.username=SomeUser
@@ -29,5 +29,5 @@ $OpenBSD: patch-herrie_conf_sample,v 1.1 2007/11/06 20:45:21 jakemsr Exp $
  # and use these switches. It should be reasonably safe...:
 -vfs.lockup.chroot=/vol/music
 -vfs.lockup.user=nobody
-+#vfs.lockup.chroot=/please/configure/the/music/directory
++#vfs.lockup.chroot=/vol/music
 +#vfs.lockup.user=nobody
