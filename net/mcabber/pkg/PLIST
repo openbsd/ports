@@ -1,11 +1,49 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/02/06 11:35:17 martynas Exp $
-bin/mcabber
+@comment $OpenBSD: PLIST,v 1.3 2008/10/16 18:14:09 jasper Exp $
+@bin bin/mcabber
 @man man/man1/mcabber.1
 share/applications/mcabber.desktop
 share/examples/mcabber/
 share/examples/mcabber/mcabberrc.example
 share/mcabber/
 share/mcabber/help/
+share/mcabber/help/cs/
+share/mcabber/help/cs/hlp.txt
+share/mcabber/help/cs/hlp_add.txt
+share/mcabber/help/cs/hlp_alias.txt
+share/mcabber/help/cs/hlp_authorization.txt
+share/mcabber/help/cs/hlp_bind.txt
+share/mcabber/help/cs/hlp_buffer.txt
+share/mcabber/help/cs/hlp_chat_disable.txt
+share/mcabber/help/cs/hlp_clear.txt
+share/mcabber/help/cs/hlp_color.txt
+share/mcabber/help/cs/hlp_connect.txt
+share/mcabber/help/cs/hlp_del.txt
+share/mcabber/help/cs/hlp_disconnect.txt
+share/mcabber/help/cs/hlp_echo.txt
+share/mcabber/help/cs/hlp_event.txt
+share/mcabber/help/cs/hlp_group.txt
+share/mcabber/help/cs/hlp_help.txt
+share/mcabber/help/cs/hlp_iline.txt
+share/mcabber/help/cs/hlp_info.txt
+share/mcabber/help/cs/hlp_move.txt
+share/mcabber/help/cs/hlp_msay.txt
+share/mcabber/help/cs/hlp_otr.txt
+share/mcabber/help/cs/hlp_otrpolicy.txt
+share/mcabber/help/cs/hlp_pgp.txt
+share/mcabber/help/cs/hlp_quit.txt
+share/mcabber/help/cs/hlp_rawxml.txt
+share/mcabber/help/cs/hlp_rename.txt
+share/mcabber/help/cs/hlp_request.txt
+share/mcabber/help/cs/hlp_room.txt
+share/mcabber/help/cs/hlp_roster.txt
+share/mcabber/help/cs/hlp_say.txt
+share/mcabber/help/cs/hlp_say_to.txt
+share/mcabber/help/cs/hlp_screen_refresh.txt
+share/mcabber/help/cs/hlp_set.txt
+share/mcabber/help/cs/hlp_source.txt
+share/mcabber/help/cs/hlp_status.txt
+share/mcabber/help/cs/hlp_status_to.txt
+share/mcabber/help/cs/hlp_version.txt
 share/mcabber/help/de/
 share/mcabber/help/de/hlp.txt
 share/mcabber/help/de/hlp_add.txt
@@ -19,6 +57,7 @@ share/mcabber/help/de/hlp_color.txt
 share/mcabber/help/de/hlp_connect.txt
 share/mcabber/help/de/hlp_del.txt
 share/mcabber/help/de/hlp_disconnect.txt
+share/mcabber/help/de/hlp_echo.txt
 share/mcabber/help/de/hlp_event.txt
 share/mcabber/help/de/hlp_group.txt
 share/mcabber/help/de/hlp_help.txt
@@ -56,6 +95,7 @@ share/mcabber/help/en/hlp_color.txt
 share/mcabber/help/en/hlp_connect.txt
 share/mcabber/help/en/hlp_del.txt
 share/mcabber/help/en/hlp_disconnect.txt
+share/mcabber/help/en/hlp_echo.txt
 share/mcabber/help/en/hlp_event.txt
 share/mcabber/help/en/hlp_group.txt
 share/mcabber/help/en/hlp_help.txt
@@ -93,6 +133,7 @@ share/mcabber/help/fr/hlp_color.txt
 share/mcabber/help/fr/hlp_connect.txt
 share/mcabber/help/fr/hlp_del.txt
 share/mcabber/help/fr/hlp_disconnect.txt
+share/mcabber/help/fr/hlp_echo.txt
 share/mcabber/help/fr/hlp_event.txt
 share/mcabber/help/fr/hlp_group.txt
 share/mcabber/help/fr/hlp_help.txt
@@ -130,6 +171,7 @@ share/mcabber/help/it/hlp_color.txt
 share/mcabber/help/it/hlp_connect.txt
 share/mcabber/help/it/hlp_del.txt
 share/mcabber/help/it/hlp_disconnect.txt
+share/mcabber/help/it/hlp_echo.txt
 share/mcabber/help/it/hlp_event.txt
 share/mcabber/help/it/hlp_group.txt
 share/mcabber/help/it/hlp_help.txt
@@ -167,6 +209,7 @@ share/mcabber/help/nl/hlp_color.txt
 share/mcabber/help/nl/hlp_connect.txt
 share/mcabber/help/nl/hlp_del.txt
 share/mcabber/help/nl/hlp_disconnect.txt
+share/mcabber/help/nl/hlp_echo.txt
 share/mcabber/help/nl/hlp_event.txt
 share/mcabber/help/nl/hlp_group.txt
 share/mcabber/help/nl/hlp_help.txt
@@ -204,6 +247,7 @@ share/mcabber/help/pl/hlp_color.txt
 share/mcabber/help/pl/hlp_connect.txt
 share/mcabber/help/pl/hlp_del.txt
 share/mcabber/help/pl/hlp_disconnect.txt
+share/mcabber/help/pl/hlp_echo.txt
 share/mcabber/help/pl/hlp_event.txt
 share/mcabber/help/pl/hlp_group.txt
 share/mcabber/help/pl/hlp_help.txt
@@ -241,6 +285,7 @@ share/mcabber/help/ru/hlp_color.txt
 share/mcabber/help/ru/hlp_connect.txt
 share/mcabber/help/ru/hlp_del.txt
 share/mcabber/help/ru/hlp_disconnect.txt
+share/mcabber/help/ru/hlp_echo.txt
 share/mcabber/help/ru/hlp_event.txt
 share/mcabber/help/ru/hlp_group.txt
 share/mcabber/help/ru/hlp_help.txt
@@ -278,6 +323,7 @@ share/mcabber/help/uk/hlp_color.txt
 share/mcabber/help/uk/hlp_connect.txt
 share/mcabber/help/uk/hlp_del.txt
 share/mcabber/help/uk/hlp_disconnect.txt
+share/mcabber/help/uk/hlp_echo.txt
 share/mcabber/help/uk/hlp_event.txt
 share/mcabber/help/uk/hlp_group.txt
 share/mcabber/help/uk/hlp_help.txt
