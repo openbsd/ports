@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.352 2008/10/16 16:03:14 robert Exp $
+# $OpenBSD: Makefile,v 1.353 2008/10/16 18:03:46 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -59,6 +59,7 @@
      SUBDIR += fluxter
      SUBDIR += flvw
      SUBDIR += flwm
+     SUBDIR += freefont-ttf
      SUBDIR += freefonts
      SUBDIR += fsv
      SUBDIR += fvwm2
