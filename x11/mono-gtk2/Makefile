@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/16 16:02:07 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/16 21:47:54 jasper Exp $
 
 COMMENT=	.NET language binding for the GTK+2 toolkit
 
@@ -7,8 +7,8 @@ MINOR=		0
 VERSION=	2.${MAJOR}.${MINOR}
 
 DISTNAME=	gtk-sharp-${VERSION}
-PKGNAME=	mono-gtk2-${VERSION}
-CATEGORIES=	x11 lang/mono
+PKGNAME=	mono-gtk2-${VERSION}p0
+CATEGORIES=	x11
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

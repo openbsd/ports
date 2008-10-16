@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/16 20:48:07 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/16 21:48:33 jasper Exp $
 
 COMMENT=	.NET language bindings for assorted GNOME libraries
 
 VERSION=	2.20.0
 DISTNAME=	gnome-sharp-${VERSION}
-PKGNAME=	mono-gnome-${VERSION}
-CATEGORIES=	x11 x11/gnome lang/mono
+PKGNAME=	mono-gnome-${VERSION}p0
+CATEGORIES=	x11 x11/gnome
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
