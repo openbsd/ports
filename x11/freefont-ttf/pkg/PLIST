@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/16 18:02:06 jasper Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/freefont/
+lib/X11/fonts/freefont/FreeMono.ttf
+lib/X11/fonts/freefont/FreeMonoBold.ttf
+lib/X11/fonts/freefont/FreeMonoBoldOblique.ttf
+lib/X11/fonts/freefont/FreeMonoOblique.ttf
+lib/X11/fonts/freefont/FreeSans.ttf
+lib/X11/fonts/freefont/FreeSansBold.ttf
+lib/X11/fonts/freefont/FreeSansBoldOblique.ttf
+lib/X11/fonts/freefont/FreeSansOblique.ttf
+lib/X11/fonts/freefont/FreeSerif.ttf
+lib/X11/fonts/freefont/FreeSerifBold.ttf
+lib/X11/fonts/freefont/FreeSerifBoldItalic.ttf
+lib/X11/fonts/freefont/FreeSerifItalic.ttf
