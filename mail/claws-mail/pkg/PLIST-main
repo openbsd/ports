@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2008/07/02 09:28:09 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2008/10/17 12:46:33 landry Exp $
 @pkgpath mail/sylpheed-claws,-main${FLAVOR_STRING}
 @pkgpath mail/sylpheed-claws${FLAVOR_STRING}
 @bin bin/claws-mail
@@ -102,6 +102,9 @@ include/claws-mail/gtk/description_window.h
 include/claws-mail/gtk/filesel.h
 include/claws-mail/gtk/foldersort.h
 include/claws-mail/gtk/gtkaspell.h
+include/claws-mail/gtk/gtkcmclist.h
+include/claws-mail/gtk/gtkcmctree.h
+include/claws-mail/gtk/gtkcmoptionmenu.h
 include/claws-mail/gtk/gtksctree.h
 include/claws-mail/gtk/gtkshruler.h
 include/claws-mail/gtk/gtksourceprintjob.h
@@ -168,6 +171,8 @@ include/claws-mail/plugins/pgpinline/
 include/claws-mail/plugins/pgpinline/pgpinline.h
 include/claws-mail/plugins/pgpmime/
 include/claws-mail/plugins/pgpmime/pgpmime.h
+include/claws-mail/plugins/smime/
+include/claws-mail/plugins/smime/smime.h
 include/claws-mail/pop.h
 include/claws-mail/prefs_account.h
 include/claws-mail/prefs_actions.h
@@ -234,6 +239,9 @@ lib/claws-mail/plugins/pgpinline.so
 lib/claws-mail/plugins/pgpmime.deps
 lib/claws-mail/plugins/pgpmime.la
 lib/claws-mail/plugins/pgpmime.so
+lib/claws-mail/plugins/smime.deps
+lib/claws-mail/plugins/smime.la
+lib/claws-mail/plugins/smime.so
 lib/claws-mail/plugins/trayicon.la
 lib/claws-mail/plugins/trayicon.so
 lib/pkgconfig/
@@ -292,6 +300,7 @@ share/icons/hicolor/48x48/apps/claws-mail.png
 share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/claws-mail.png
+share/locale/bg/LC_MESSAGES/claws-mail.mo
 share/locale/ca/LC_MESSAGES/claws-mail.mo
 share/locale/de/LC_MESSAGES/claws-mail.mo
 share/locale/en_GB/
@@ -302,10 +311,13 @@ share/locale/fi/LC_MESSAGES/claws-mail.mo
 share/locale/fr/LC_MESSAGES/claws-mail.mo
 share/locale/hu/LC_MESSAGES/claws-mail.mo
 share/locale/it/LC_MESSAGES/claws-mail.mo
+share/locale/nl/LC_MESSAGES/claws-mail.mo
 share/locale/pl/LC_MESSAGES/claws-mail.mo
 share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
+share/locale/ru/LC_MESSAGES/claws-mail.mo
 share/locale/sk/LC_MESSAGES/claws-mail.mo
 share/locale/sr/LC_MESSAGES/claws-mail.mo
+share/locale/sv/LC_MESSAGES/claws-mail.mo
 share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

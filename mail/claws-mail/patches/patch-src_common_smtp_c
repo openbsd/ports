@@ -1,0 +1,66 @@
+$OpenBSD: patch-src_common_smtp_c,v 1.1 2008/10/17 12:46:33 landry Exp $
+--- src/common/smtp.c.orig	Sat Oct  4 16:19:23 2008
++++ src/common/smtp.c	Sat Oct  4 16:21:59 2008
+@@ -124,7 +124,7 @@ static void smtp_session_destroy(Session *session)
+ 
+ gint smtp_from(SMTPSession *session)
+ {
+-	gchar buf[MSGBUFSIZE];
++	gchar buf[MESSAGEBUFSIZE];
+ 	gchar *mail_size = NULL;
+ 
+ 	g_return_val_if_fail(session->from != NULL, SM_ERROR);
+@@ -182,7 +182,7 @@ static gint smtp_auth(SMTPSession *session)
+ 
+ static gint smtp_auth_recv(SMTPSession *session, const gchar *msg)
+ {
+-	gchar buf[MSGBUFSIZE];
++	gchar buf[MESSAGEBUFSIZE];
+ 
+ 	switch (session->auth_type) {
+ 	case SMTPAUTH_LOGIN:
+@@ -258,7 +258,7 @@ static gint smtp_auth_recv(SMTPSession *session, const
+ 
+ static gint smtp_auth_login_user_recv(SMTPSession *session, const gchar *msg)
+ {
+-	gchar buf[MSGBUFSIZE];
++	gchar buf[MESSAGEBUFSIZE];
+ 
+ 	session->state = SMTP_AUTH_LOGIN_PASS;
+ 
+@@ -278,7 +278,7 @@ static gint smtp_auth_login_user_recv(SMTPSession *ses
+ 
+ static gint smtp_ehlo(SMTPSession *session)
+ {
+-	gchar buf[MSGBUFSIZE];
++	gchar buf[MESSAGEBUFSIZE];
+ 
+ 	session->state = SMTP_EHLO;
+ 
+@@ -357,7 +357,7 @@ static gint smtp_auth_cram_md5(SMTPSession *session)
+ 
+ static gint smtp_auth_plain(SMTPSession *session)
+ {
+-	gchar buf[MSGBUFSIZE];
++	gchar buf[MESSAGEBUFSIZE];
+ 
+ 	/* 
+  	 * +1      +1      +1
+@@ -422,7 +422,7 @@ static gint smtp_auth_login(SMTPSession *session)
+ 
+ static gint smtp_helo(SMTPSession *session)
+ {
+-	gchar buf[MSGBUFSIZE];
++	gchar buf[MESSAGEBUFSIZE];
+ 
+ 	session->state = SMTP_HELO;
+ 
+@@ -437,7 +437,7 @@ static gint smtp_helo(SMTPSession *session)
+ 
+ static gint smtp_rcpt(SMTPSession *session)
+ {
+-	gchar buf[MSGBUFSIZE];
++	gchar buf[MESSAGEBUFSIZE];
+ 	gchar *to;
+ 
+ 	g_return_val_if_fail(session->cur_to != NULL, SM_ERROR);

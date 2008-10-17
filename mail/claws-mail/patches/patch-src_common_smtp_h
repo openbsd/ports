@@ -1,14 +1,12 @@
-$OpenBSD: patch-src_common_smtp_h,v 1.1.1.1 2007/03/23 17:38:22 deanna Exp $
---- src/common/smtp.h.orig	Sun Apr  3 15:14:42 2005
-+++ src/common/smtp.h	Sun Apr  3 15:15:18 2005
-@@ -32,7 +32,9 @@ typedef struct _SMTPSession	SMTPSession;
+$OpenBSD: patch-src_common_smtp_h,v 1.2 2008/10/17 12:46:33 landry Exp $
+--- src/common/smtp.h.orig	Thu Jul  3 16:31:28 2008
++++ src/common/smtp.h	Sat Oct  4 16:20:27 2008
+@@ -32,7 +32,7 @@ typedef struct _SMTPSession	SMTPSession;
  
  #define SMTP_SESSION(obj)	((SMTPSession *)obj)
  
 -#define MSGBUFSIZE		8192
-+#ifndef MSGBUFSIZE
-+#  define MSGBUFSIZE		8192
-+#endif
++#define MESSAGEBUFSIZE		8192
  
  typedef enum
  {

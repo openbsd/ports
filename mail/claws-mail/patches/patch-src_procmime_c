@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_procmime_c,v 1.5 2008/02/13 13:17:26 landry Exp $
---- src/procmime.c.orig	Fri Feb  8 06:33:17 2008
-+++ src/procmime.c	Fri Feb  8 18:19:56 2008
-@@ -1083,7 +1083,7 @@ GList *procmime_get_mime_type_list(void)
+$OpenBSD: patch-src_procmime_c,v 1.6 2008/10/17 12:46:33 landry Exp $
+--- src/procmime.c.orig	Wed Oct  1 03:10:29 2008
++++ src/procmime.c	Sat Oct  4 16:02:19 2008
+@@ -1085,7 +1085,7 @@ GList *procmime_get_mime_type_list(void)
  #endif
  	{
  		fp_is_glob_file = FALSE;

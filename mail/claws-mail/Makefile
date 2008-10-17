@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2008/07/02 09:28:09 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2008/10/17 12:46:33 landry Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT-main=		mail and news client
 COMMENT-docs=		documentation
@@ -7,7 +9,7 @@ COMMENT-clamav=		clamav plugin
 COMMENT-dillo=		dillo plugin
 COMMENT-spamassassin=	spamassassin plugin
 
-V=			3.5.0
+V=			3.6.1
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=			${DISTNAME}
 FULLPKGNAME-docs=		claws-mail-docs-${V}
@@ -20,7 +22,7 @@ HOMEPAGE=		http://www.claws-mail.org/
 
 MAINTAINER=		Ulrich Kahl <ulrich.kahl@cityweb.de>
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -38,7 +40,6 @@ FLAVOR?=
 FLAVOR_STRING=		${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=		FLAVOR_STRING
 
-SHARED_ONLY=		Yes
 RUN_DEPENDS-bogofilter=	::${BUILD_PKGPATH} \
 			::mail/bogofilter 
 RUN_DEPENDS-dillo=	::${BUILD_PKGPATH} \
@@ -53,12 +54,12 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			pangoft2-1.0 pcre pixman-1 png ssl z
 
 WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 gthread-2.0 gpg-error \
-			pthread stdc++
+			gcrypt pthread stdc++
 
 WANTLIB-docs=		
 
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-			etpan::mail/libetpan \
+			etpan.>=13::mail/libetpan \
 			sasl2::security/cyrus-sasl2
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
@@ -66,7 +67,8 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			startup-notification-1::devel/startup-notification \
-			aspell::textproc/aspell/core \
+			enchant::textproc/enchant \
+			gnutls::security/gnutls \
 			gpgme::security/gpgme \
 			dbus-glib-1::x11/dbus-glib
 
@@ -158,7 +160,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/${i} \
 	${PREFIX}/share/claws-mail/tools/${i}
 .endfor
-
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/claws-mail
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/claws-mail
 
