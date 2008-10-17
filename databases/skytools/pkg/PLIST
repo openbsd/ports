@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/06/05 11:26:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/10/17 10:04:32 ajacoutot Exp $
 bin/bulk_loader
 bin/cube_dispatcher
 bin/londiste
@@ -100,6 +100,7 @@ share/examples/skytools/conf/pgqadm.ini
 share/examples/skytools/conf/queue_mover.ini.templ
 share/examples/skytools/conf/queue_splitter.ini.templ
 share/examples/skytools/conf/scriptmgr.ini.templ
+share/examples/skytools/conf/skylog.ini
 share/examples/skytools/conf/table_dispatcher.ini.templ
 share/examples/skytools/conf/wal-master.ini
 share/examples/skytools/conf/wal-slave.ini
@@ -125,5 +126,6 @@ share/skytools/upgrade/final/v2.1.5_pgq_core.sql
 share/skytools/upgrade/final/v2.1.5_pgq_ext.sql
 share/skytools/upgrade/final/v2.1.6_londiste.sql
 share/skytools/upgrade/final/v2.1.6_pgq_ext.sql
-share/skytools/upgrade/final/v${MODPY_EGG_VERSION}_londiste.sql
+share/skytools/upgrade/final/v2.1.7_londiste.sql
+share/skytools/upgrade/final/v2.1.7_pgq_core.sql
 share/skytools/upgrade/final/v${MODPY_EGG_VERSION}_pgq_core.sql

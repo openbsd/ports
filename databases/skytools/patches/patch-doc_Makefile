@@ -1,0 +1,21 @@
+$OpenBSD: patch-doc_Makefile,v 1.1 2008/10/17 10:04:32 ajacoutot Exp $
+--- doc/Makefile.orig	Fri Oct 17 09:47:06 2008
++++ doc/Makefile	Fri Oct 17 09:48:02 2008
+@@ -21,7 +21,7 @@ SCRIPT_HTMLS = $(SCRIPT_TXTS:.txt=.html)
+ 
+ COMMON = common.switches.txt common.config.txt common.logutriga.txt
+ 
+-GETATTRS = python ./getattrs.py
++GETATTRS = ${MODPY_BIN} ./getattrs.py
+ 
+ all: man
+ 
+@@ -94,7 +94,7 @@ endif
+ 
+ %.xml: %.txt $(COMMON)
+ 	$(ASCIIDOC) -b docbook -d manpage `$(GETATTRS) $<` -o - $< \
+-	| python fixman.py > $@
++	| ${MODPY_BIN} fixman.py > $@
+ 
+ %.1: %.xml
+ 	$(XMLTO) man $<
