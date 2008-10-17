@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.635 2008/10/16 20:31:22 steven Exp $
+# $OpenBSD: Makefile,v 1.636 2008/10/17 06:56:08 robert Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -195,6 +195,7 @@
      SUBDIR += mico
      SUBDIR += mk
      SUBDIR += mm
+     SUBDIR += mono-addins
      SUBDIR += monotone
      SUBDIR += mowgli
      SUBDIR += mpfr
