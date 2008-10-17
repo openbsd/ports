@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2008/09/26 12:03:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.205 2008/10/17 10:00:42 sthen Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -161,6 +161,7 @@
      SUBDIR += sox
      SUBDIR += sox,mp3,vorbis
      SUBDIR += speex
+     SUBDIR += squeezecenter
      SUBDIR += streamripper
      SUBDIR += taglib
      SUBDIR += tagtool
