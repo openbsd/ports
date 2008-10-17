@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/17 06:52:08 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/17 19:41:33 robert Exp $
 
 COMMENT=	.NET language bindings for assorted GNOME libraries
 
 GNOME_PROJECT=	gnome-sharp
 GNOME_VERSION=	2.20.0
-PKGNAME=	mono-gnome-${VERSION}p3
+PKGNAME=	mono-gnome-${VERSION}p4
 CATEGORIES=	x11
 
 # LGPLv2.1
@@ -30,7 +30,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 LIB_DEPENDS=	panel-applet-2::x11/gnome/panel \
 		gnomeprintui-2-2::x11/gnome/libgnomeprintui
 
-BUILD_DEPENDS=	::lang/mono
+BUILD_DEPENDS=	::lang/mono \
+		::x11/mono-gtk2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 DLLMAP_FILES=	art/art-sharp.dll.config \
