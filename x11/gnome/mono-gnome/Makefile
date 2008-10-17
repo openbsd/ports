@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/17 05:58:56 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/17 06:52:08 robert Exp $
 
 COMMENT=	.NET language bindings for assorted GNOME libraries
 
 GNOME_PROJECT=	gnome-sharp
 GNOME_VERSION=	2.20.0
-PKGNAME=	mono-gnome-${VERSION}p2
+PKGNAME=	mono-gnome-${VERSION}p3
 CATEGORIES=	x11
 
 # LGPLv2.1
@@ -32,5 +32,10 @@ LIB_DEPENDS=	panel-applet-2::x11/gnome/panel \
 
 BUILD_DEPENDS=	::lang/mono
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+DLLMAP_FILES=	art/art-sharp.dll.config \
+		gnome/gnome-sharp.dll.config \
+		gconf/GConf/gconf-sharp.dll.config \
+		gnomevfs/gnome-vfs-sharp.dll.config
 
 .include <bsd.port.mk>
