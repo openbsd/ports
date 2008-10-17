@@ -1,0 +1,16 @@
+Formerly known as SlimServer, this is a streaming audio server
+for use with the SlimDevices/Logitech network music players -
+Squeezebox, Transporter and SLiMP3.
+
+* Web browser UI to control the player and manage playlists
+* MP3 & WMA Internet radio
+* Alarm clock
+* Automatically imports metadata tags
+* Browse and search by title, artist, album or genre
+* Shuffle and repeat albums or songs
+* Create, save, and import .pls, .cue and .m3u playlist files
+* Displays current date and time when not playing
+* Open protocol and command line API
+* Expandable through 3rd party plug-ins and skins
+* Supports multiple synchronized players
+* Listen from any computer using an MP3 software player

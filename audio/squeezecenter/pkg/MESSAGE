@@ -1,0 +1,16 @@
+You may start SqueezeCenter automatically at startup by adding
+the following lines to /etc/rc.local:
+
+if [ -x ${PREFIX}/bin/slimserver.pl ]; then
+	${PREFIX}/bin/slimserver.pl --daemon 2>&1 \
+	    > /var/log/squeezecenter/startup.log
+fi
+
+To stream via HTTP, connect to http://yourhost:9000/stream.mp3
+and control the player from SqueezeCenter's usual web interface.
+
+** SQUEEZECENTER IS BY DEFAULT OPEN TO ANYONE ABLE TO CONNECT **
+
+To restrict access, connect to http://localhost:9000/ and go to
+Settings/Advanced/Security, where you can restrict by IP address
+or password.

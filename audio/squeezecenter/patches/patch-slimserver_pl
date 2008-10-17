@@ -1,0 +1,12 @@
+$OpenBSD: patch-slimserver_pl,v 1.1.1.1 2008/10/17 09:59:26 sthen Exp $
+--- slimserver.pl.orig	Fri Oct 10 17:01:36 2008
++++ slimserver.pl	Fri Oct 10 17:02:12 2008
+@@ -814,7 +814,7 @@ sub changeEffectiveUserAndGroup {
+ 	# MySQL can't be run as root, and it's generally a bad idea anyways.
+ 	# Try starting as 'slimserver' instead.
+ 	if (!defined($user)) {
+-		$user = 'slimserver';
++		$user = '_squeezecenter';
+ 		print STDERR "SqueezeCenter must not be run as root!  Trying user $user instead.\n";
+ 	}
+ 

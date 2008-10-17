@@ -1,0 +1,87 @@
+$OpenBSD: patch-Slim_Utils_OSDetect_pm,v 1.1.1.1 2008/10/17 09:59:26 sthen Exp $
+--- Slim/Utils/OSDetect.pm.orig	Fri Aug 29 10:00:59 2008
++++ Slim/Utils/OSDetect.pm	Sat Oct 11 14:59:23 2008
+@@ -124,7 +124,7 @@ sub initSearchPath {
+ 
+ 	if ($detectedOS ne "win") {
+ 
+-		push @paths, (split(/:/, $ENV{'PATH'}), qw(/usr/bin /usr/local/bin /usr/libexec /sw/bin /usr/sbin));
++		push @paths, (split(/:/, $ENV{'PATH'}), qw(/usr/bin /usr/local/bin /usr/libexec /sw/bin /usr/sbin /usr/local/libexec));
+ 
+ 	} else {
+ 
+@@ -370,6 +370,55 @@ sub dirsFor {
+ 			push @dirs, catdir( $Bin, $dir );
+ 		}
+ 
++	} elsif (isOpenBSD()) {
++
++		if ($dir =~ /^(?:Firmware|Graphics|HTML|IR|MySQL|SQL|Bin)$/) {
++
++			push @dirs, "${LOCALBASE}/share/squeezecenter/$dir";
++
++		} elsif ($dir eq 'Plugins') {
++			
++			push @dirs, "${LOCALBASE}/share/squeezecenter/$dir";
++			push @dirs, "${LOCALBASE}/libdata/perl5/site_perl/Slim/Plugin";
++
++		} elsif ($dir =~ /^(?:Bin|lib)$/) {
++
++			push @dirs, "${LOCALBASE}/libdata/squeezecenter";
++
++		} elsif ($dir eq 'strings' || $dir eq 'revision') {
++
++			push @dirs, "${LOCALBASE}/share/squeezecenter";
++
++		} elsif ($dir =~ /^(?:types|convert)$/) {
++
++			push @dirs, "${SYSCONFDIR}/squeezecenter";
++
++		} elsif ($dir eq 'prefs') {
++
++			push @dirs, "/var/db/squeezecenter/prefs";
++
++		} elsif ($dir eq 'log') {
++
++			push @dirs, "/var/log/squeezecenter";
++
++		} elsif ($dir eq 'cache') {
++
++			push @dirs, "/var/db/squeezecenter/cache";
++
++		} elsif ($dir eq 'MySQL') {
++
++			# Do nothing - use the depended upon MySQL install.
++
++		} elsif ( $dir =~ /^(?:music|playlists)$/ ) {
++
++			push @dirs, '';
++
++		} else {
++
++			warn "dirsFor: Didn't find a match request: [$dir]\n";
++
++		}
++
+ 	} else {
+ 
+ 		# Everyone else - *nix.
+@@ -478,6 +527,18 @@ sub isRHorSUSE {
+ 		return 1;
+ 	}
+ 
++	return 0;
++}
++
++sub isOpenBSD {
++
++	# Initialize
++	my $OS      = OS();
++	my $details = details();
++
++	if ($details->{'osName'} eq 'openbsd') {
++                return 1;
++        }       
+ 	return 0;
+ }
+ 

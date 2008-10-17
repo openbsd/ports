@@ -1,0 +1,33 @@
+$OpenBSD: patch-Slim_Schema_Playlist_pm,v 1.1.1.1 2008/10/17 09:59:26 sthen Exp $
+--- Slim/Schema/Playlist.pm.orig	Fri Oct 10 16:39:25 2008
++++ Slim/Schema/Playlist.pm	Fri Oct 10 16:40:53 2008
+@@ -32,9 +32,11 @@ sub setTracks {
+ 	# With playlists in the database - we want to make sure the playlist is consistent to the user.
+ 	my $autoCommit = Slim::Schema->storage->dbh->{'AutoCommit'};
+ 
+-	if ($autoCommit) {
+-		Slim::Schema->storage->dbh->{'AutoCommit'} = 0;
+-	}
++	# Disabled as per Bugzilla 8261: this causes DBIx transactions to fail.
++	#
++	#if ($autoCommit) {
++	#	Slim::Schema->storage->dbh->{'AutoCommit'} = 0;
++	#}
+ 
+ 	eval {
+ 		Slim::Schema->txn_do(sub {
+@@ -59,9 +61,11 @@ sub appendTracks {
+ 
+ 	my $autoCommit = Slim::Schema->storage->dbh->{'AutoCommit'};
+ 
+-	if ($autoCommit) {
+-		Slim::Schema->storage->dbh->{'AutoCommit'} = 0;
+-	}
++	# Disabled as per Bugzilla 8261: this causes DBIx transactions to fail.
++	#
++	#if ($autoCommit) {
++	#	Slim::Schema->storage->dbh->{'AutoCommit'} = 0;
++	#}
+ 
+ 	eval {
+ 		Slim::Schema->txn_do(sub {
