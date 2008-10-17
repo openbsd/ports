@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/10/17 10:39:17 jasper Exp $
+@lib lib/f-spot/libfspot.so.${LIBfspot_VERSION}
+@lib lib/f-spot/libfspoteog.so.${LIBfspoteog_VERSION}
+@lib lib/f-spot/libfspotjpegtran.so.${LIBfspotjpegtran_VERSION}
