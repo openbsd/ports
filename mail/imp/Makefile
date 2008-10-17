@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2008/01/09 10:12:23 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.22 2008/10/17 21:58:09 sthen Exp $ 
 
 COMMENT=	highly configurable pop3/imap4 webmail client
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_HORDE:=imp/tarballs/}
+MASTER_SITES=	${MASTER_SITE_HORDE:=imp/}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
