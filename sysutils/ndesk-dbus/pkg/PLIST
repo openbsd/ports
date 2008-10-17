@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/17 07:10:03 robert Exp $
+lib/mono/gac/NDesk.DBus/
+lib/mono/gac/NDesk.DBus/1.0.0.0__f6716e4f9b2ed099/
+lib/mono/gac/NDesk.DBus/1.0.0.0__f6716e4f9b2ed099/NDesk.DBus.dll
+lib/mono/gac/NDesk.DBus/1.0.0.0__f6716e4f9b2ed099/NDesk.DBus.dll.mdb
+lib/mono/ndesk-dbus-1.0/
+lib/mono/ndesk-dbus-1.0/NDesk.DBus.dll
+lib/pkgconfig/ndesk-dbus-1.0.pc
