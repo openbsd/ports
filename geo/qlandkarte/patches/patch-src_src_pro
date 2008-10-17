@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_src_pro,v 1.2 2008/05/28 00:29:36 pvalchev Exp $
---- src/src.pro.orig	Tue May 13 12:53:08 2008
-+++ src/src.pro	Mon May 19 07:49:57 2008
+$OpenBSD: patch-src_src_pro,v 1.3 2008/10/17 08:29:41 ajacoutot Exp $
+--- src/src.pro.orig	Tue May 13 21:53:08 2008
++++ src/src.pro	Thu Oct 16 18:13:09 2008
 @@ -5,7 +5,7 @@
  include(../common)
  
@@ -10,6 +10,15 @@ $OpenBSD: patch-src_src_pro,v 1.2 2008/05/28 00:29:36 pvalchev Exp $
  unix {
      desktop.path = /usr/share/applications
      desktop.files = ../qlandkarte.desktop
+@@ -15,7 +15,7 @@ unix {
+     menu.files = ../qlandkarte.menu
+     INSTALLS += menu
+ 
+-    manpage.path = /usr/share/man
++    manpage.path = /usr/man
+     manpage.files = ../qlandkarte.1
+     INSTALLS += manpage
+ }
 @@ -169,7 +169,7 @@ MOC_DIR = .tmp
  OBJECTS_DIR = .tmp
  macx:TARGET = QLandkarte

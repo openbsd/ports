@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2008/07/25 23:07:09 martynas Exp $
+# $OpenBSD: Makefile,v 1.7 2008/10/17 08:29:41 ajacoutot Exp $
 
 COMMENT=	garmin gps map management tool
 
 DISTNAME=	QLandkarte_0.7.3
-PKGNAME=	${DISTNAME:L:S/_/-/}p0
-CATEGORIES=	geo
+PKGNAME=	${DISTNAME:L:S/_/-/}p1
+CATEGORIES=	geo x11
 
 HOMEPAGE=	http://qlandkarte.sourceforge.net/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -23,10 +23,13 @@ MODULES=	x11/qt4
 LIB_DEPENDS+=	proj::devel/proj \
 		usb::devel/libusb \
 		QtGui,QtNetwork,QtXml::x11/qt4
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 WANTLIB+=	ICE SM X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender \
 		crypto fontconfig freetype glib-2.0 gthread-2.0 iconv \
 		c intl m png pthread ssl stdc++ z
+
+PORTHOME=	${WRKDIR}
 
 NO_REGRESS=	Yes
 CONFIGURE_STYLE= gnu
@@ -43,6 +46,7 @@ pre-configure:
 	@perl -pi -e 's,\$$\$$\{QLANDKARTE_LIBDIR\},\
 		${WRKINST}${PREFIX}/lib/qlandkarte,g' \
 		${WRKSRC}/src/device/*/*.pro
+	@perl -pi -e 's,!!CXXFLAGS!!,${CXXFLAGS},g' ${WRKSRC}/common.in
 
 post-install:
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/qlandkarte

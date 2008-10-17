@@ -1,0 +1,11 @@
+$OpenBSD: patch-common_in,v 1.1 2008/10/17 08:29:41 ajacoutot Exp $
+--- common.in.orig	Thu Oct 16 18:25:32 2008
++++ common.in	Thu Oct 16 18:25:58 2008
+@@ -16,6 +16,6 @@ unix{
+ 
+ DEFINES += QL_LIBDIR=$${QLANDKARTE_LIBDIR} QT_NO_DEBUG_OUTPUToff
+ CONFIG += warn_on
+-QMAKE_CXXFLAGS_RELEASE += -O3
++QMAKE_CXXFLAGS_RELEASE += !!CXXFLAGS!!
+ QMAKE_CXXFLAGS_DEBUG +=
+ 
