@@ -1,0 +1,21 @@
+$OpenBSD: patch-usr_bin_mysql-zrm-backup,v 1.1.1.1 2008/10/17 23:05:41 sthen Exp $
+--- usr/bin/mysql-zrm-backup.orig	Mon Oct 13 19:26:13 2008
++++ usr/bin/mysql-zrm-backup	Mon Oct 13 19:26:33 2008
+@@ -38,7 +38,7 @@ use ZRM::MySQL;
+ 
+ $SIG{'TERM'} = sub { $abort_flag = 1; };
+ 
+-my $MD5SUM="md5sum";
++my $MD5SUM="md5";
+ my $MAILCMD="mail";
+ 
+ #Neither mysqlhotcopy not mysqldump will do a --flush-logs 
+@@ -1504,7 +1504,7 @@ sub totalSize()
+ 				    $inputs{"synchronous-checksum"} == 1 ){
+ 					my $file = $File::Find::fullname;
+ 					if( -f $file ){
+-						my $x = $MD5SUM." -b "."\"$file\"";
++						my $x = $MD5SUM." -bq "."\"$file\"";
+         					$x = &execCmdAndGetOutput($x);
+ 						if( !defined $x ){
+ 							&printError( "Could not get md5 checksum\n" );

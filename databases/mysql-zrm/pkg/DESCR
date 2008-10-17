@@ -1,0 +1,7 @@
+Zmanda recovery manager for MySQL (MySQL ZRM) is a backup and
+recovery manager for MySQL database server. It also provides backup
+scheduling and reporting features.
+
+It supports backup of MySQL databases/tables using various methods
+(both running on same machine as the MySQL server as well as on a
+remote machine).

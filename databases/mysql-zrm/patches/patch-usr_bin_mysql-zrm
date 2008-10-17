@@ -1,0 +1,12 @@
+$OpenBSD: patch-usr_bin_mysql-zrm,v 1.1.1.1 2008/10/17 23:05:41 sthen Exp $
+--- usr/bin/mysql-zrm.orig	Fri Oct  3 23:01:21 2008
++++ usr/bin/mysql-zrm	Fri Oct  3 23:01:58 2008
+@@ -27,7 +27,7 @@ our $oldPATH = $ENV{'PATH'};
+ $ENV{'PATH'} = "/usr/local/bin:/opt/csw/bin:/usr/bin:/usr/sbin:/sbin:/bin:/usr/ucb";
+ 
+ #path where ZRM utilities are installed
+-my $ZRM_BINPATH="/usr/bin";
++my $ZRM_BINPATH="${PREFIX}/bin";
+ 
+ my $USAGE="--action <backup|restore|schedule-backup|report|list|getconf|purge|parse-binlogs|check|verify-backup|extract-backup|abort-backup>\nHelp on individual action items can be obtained by specifying --help with the required action.\nFor example: 'mysql-zrm --action backup --help'";
+ 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-usr_bin_mysql-zrm-verify-backup,v 1.1.1.1 2008/10/17 23:05:41 sthen Exp $
+--- usr/bin/mysql-zrm-verify-backup.orig	Mon Oct 13 19:26:41 2008
++++ usr/bin/mysql-zrm-verify-backup	Mon Oct 13 19:26:58 2008
+@@ -30,7 +30,7 @@ use lib '/usr/lib/mysql-zrm';
+ use ZRM::Common;
+ 
+ 
+-my $MD5SUM="md5sum";
++my $MD5SUM="md5";
+ my $CHECKSUM_FILE="zrm_checksum";
+ my $CHECKSUM_PENDING=".checksum_pending";
+ 
+@@ -55,7 +55,7 @@ sub verifyCheckSum()
+ 				$_ ne $EXTRACTED_FILENAME && $_ ne $CHECKSUM_FILE ){
+ 				my $file = $File::Find::fullname;
+ 				if( -f $file ){
+-					my $x = $MD5SUM." -b "."\"$file\"";
++					my $x = $MD5SUM." -bq "."\"$file\"";
+         				$x = &execCmdAndGetOutput($x);
+ 					if( !defined $x ){
+ 						&printError( "Could not get md5 checksum\n" );

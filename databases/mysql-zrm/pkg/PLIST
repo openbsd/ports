@@ -1,0 +1,89 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/17 23:05:41 sthen Exp $
+bin/mysql-zrm
+bin/mysql-zrm-abort-backup
+bin/mysql-zrm-backup
+bin/mysql-zrm-check
+bin/mysql-zrm-extract-backup
+bin/mysql-zrm-getconf
+bin/mysql-zrm-list
+bin/mysql-zrm-migrate-file-ownership
+bin/mysql-zrm-parse-binlogs
+bin/mysql-zrm-purge
+bin/mysql-zrm-reporter
+bin/mysql-zrm-restore
+bin/mysql-zrm-scheduler
+bin/mysql-zrm-verify-backup
+bin/zrm-pre-scheduler
+lib/mysql-zrm/
+lib/mysql-zrm/Data/
+lib/mysql-zrm/Data/Report/
+lib/mysql-zrm/Data/Report.pm
+lib/mysql-zrm/Data/Report/Base.pm
+lib/mysql-zrm/Data/Report/Plugin/
+lib/mysql-zrm/Data/Report/Plugin/Csv.pm
+lib/mysql-zrm/Data/Report/Plugin/Html.pm
+lib/mysql-zrm/Data/Report/Plugin/Text.pm
+lib/mysql-zrm/XML/
+lib/mysql-zrm/XML/RSS.pm
+lib/mysql-zrm/ZRM/
+lib/mysql-zrm/ZRM/Common.pm
+lib/mysql-zrm/ZRM/MySQL.pm
+lib/mysql-zrm/ZRM/Replication.pm
+lib/mysql-zrm/ZRM/SnapshotCommon.pm
+man/cat1/mysql-zrm-abort-backup.1
+man/cat1/mysql-zrm-backup.1
+man/cat1/mysql-zrm-check.1
+man/cat1/mysql-zrm-extract-backup.1
+man/cat1/mysql-zrm-list.1
+man/cat1/mysql-zrm-parse-binlogs.1
+man/cat1/mysql-zrm-purge.1
+man/cat1/mysql-zrm-reporter.1
+man/cat1/mysql-zrm-restore.1
+man/cat1/mysql-zrm-scheduler.1
+man/cat1/mysql-zrm-verify-backup.1
+man/cat1/mysql-zrm.1
+man/cat5/mysql-zrm-reporter.conf.5
+man/cat5/mysql-zrm.conf.5
+share/doc/mysql-zrm/
+share/doc/mysql-zrm/README-plugin-encrypt
+share/doc/mysql-zrm/README-plugin-parse-binlogs
+share/doc/mysql-zrm/README-plugin-post-backup
+share/doc/mysql-zrm/README-plugin-pre-backup
+share/doc/mysql-zrm/README-plugin-pre-scheduler
+share/doc/mysql-zrm/README-plugin-snapshot-plugin
+share/doc/mysql-zrm/README-plugin-socket-copy
+share/doc/mysql-zrm/README-plugin-ssh-copy
+share/examples/mysql-zrm/
+@sample ${SYSCONFDIR}/mysql-zrm/
+share/examples/mysql-zrm/RSS.header
+@sample ${SYSCONFDIR}/mysql-zrm/RSS.header
+share/examples/mysql-zrm/mysql-zrm-release
+share/examples/mysql-zrm/mysql-zrm-reporter.conf
+@sample ${SYSCONFDIR}/mysql-zrm/mysql-zrm-reporter.conf
+share/examples/mysql-zrm/mysql-zrm.conf
+@sample ${SYSCONFDIR}/mysql-zrm/mysql-zrm.conf
+share/examples/mysql-zrm/plugins/
+@sample share/mysql-zrm/plugins/
+share/examples/mysql-zrm/plugins/encrypt.pl
+@sample share/mysql-zrm/plugins/encrypt.pl
+share/examples/mysql-zrm/plugins/lvm-snapshot.pl
+@sample share/mysql-zrm/plugins/lvm-snapshot.pl
+share/examples/mysql-zrm/plugins/parse-binlogs.pl
+@sample share/mysql-zrm/plugins/parse-binlogs.pl
+share/examples/mysql-zrm/plugins/post-backup.pl
+@sample share/mysql-zrm/plugins/post-backup.pl
+share/examples/mysql-zrm/plugins/pre-backup.pl
+@sample share/mysql-zrm/plugins/pre-backup.pl
+share/examples/mysql-zrm/plugins/pre-scheduler-plugin.pl
+@sample share/mysql-zrm/plugins/pre-scheduler-plugin.pl
+share/examples/mysql-zrm/plugins/socket-copy.pl
+@sample share/mysql-zrm/plugins/socket-copy.pl
+share/examples/mysql-zrm/plugins/socket-server.pl
+@sample share/mysql-zrm/plugins/socket-server.pl
+share/examples/mysql-zrm/plugins/ssh-copy.pl
+@sample share/mysql-zrm/plugins/ssh-copy.pl
+share/examples/mysql-zrm/plugins/zfs-snapshot.pl
+@sample share/mysql-zrm/plugins/zfs-snapshot.pl
+@exec chmod ugo+x ${PREFIX}/share/mysql-zrm/plugins/*.pl
+@sample /var/mysql-zrm/
+@sample /var/log/mysql-zrm/

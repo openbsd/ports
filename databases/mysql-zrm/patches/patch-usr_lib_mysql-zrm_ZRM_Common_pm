@@ -1,0 +1,16 @@
+$OpenBSD: patch-usr_lib_mysql-zrm_ZRM_Common_pm,v 1.1.1.1 2008/10/17 23:05:41 sthen Exp $
+--- usr/lib/mysql-zrm/ZRM/Common.pm.orig	Mon Apr  7 21:40:12 2008
++++ usr/lib/mysql-zrm/ZRM/Common.pm	Fri Oct 17 23:55:15 2008
+@@ -72,9 +72,9 @@ our $LOGGER;
+ our $INDEX_FILENAME="index";
+ our $MYSQL_ZRM_CONFIG_FILE=catfile( $MYSQL_ZRM_BASEDIR, "mysql-zrm.conf"); 
+ #Compress & Encrypt progs
+-our $TAR="tar";
+-our $TAR_COMPRESS_OPTIONS=" --same-owner -cpsC ";
+-our $TAR_UNCOMPRESS_OPTIONS=" --same-owner -xpsC ";
++our $TAR="gtar";
++our $TAR_COMPRESS_OPTIONS=" --same-owner -f- -cpsC ";
++our $TAR_UNCOMPRESS_OPTIONS=" --same-owner -f- -xpsC ";
+ our $TAR_EXCLUDE_OPTION=" --exclude";
+ our $COMPRESS_FILENAME="backup-data";
+ our $COMPRESS_LOGICAL_FILENAME="backup-sql";
