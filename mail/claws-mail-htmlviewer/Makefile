@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2008/07/02 09:30:14 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2008/10/17 12:48:16 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	HTML renderer plugin for Claws Mail
 
-VERSION=	0.19
+VERSION=	0.21
 DISTNAME=	gtkhtml2_viewer-${VERSION}
 PKGNAME=	claws-mail-htmlviewer-${VERSION}
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
@@ -28,8 +28,7 @@ MODULES=	devel/gettext
 
 RUN_DEPENDS=	::mail/claws-mail
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	gailutil::x11/gnome/gail \
-		xml2::textproc/libxml \
+LIB_DEPENDS=	xml2::textproc/libxml \
 		curl.>=7::net/curl
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr Xcomposite \
