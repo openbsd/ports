@@ -1,0 +1,9 @@
+$OpenBSD: patch-Tomboy_tomboy-panel_in,v 1.1.1.1 2008/10/17 07:16:15 robert Exp $
+--- Tomboy/tomboy-panel.in.orig	Fri Oct 17 08:28:52 2008
++++ Tomboy/tomboy-panel.in	Fri Oct 17 08:29:18 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+ export LD_LIBRARY_PATH="@pkglibdir@${LD_LIBRARY_PATH+:$LD_LIBRARY_PATH}"
+ export MONO_PATH=$MONO_PATH:@pkglibdir@:@pkglibdir@/addins

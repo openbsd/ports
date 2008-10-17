@@ -1,0 +1,9 @@
+$OpenBSD: patch-Tomboy_tomboy_in,v 1.1.1.1 2008/10/17 07:16:15 robert Exp $
+--- Tomboy/tomboy.in.orig	Fri Oct 17 08:28:46 2008
++++ Tomboy/tomboy.in	Fri Oct 17 08:29:02 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+ if [ "x$PWD" = "x@srcdir@" ] ; then
+     echo "*** Running uninstalled @target@ ***"
