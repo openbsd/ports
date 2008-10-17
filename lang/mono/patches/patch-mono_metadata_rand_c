@@ -1,0 +1,13 @@
+$OpenBSD: patch-mono_metadata_rand_c,v 1.1 2008/10/17 09:07:13 robert Exp $
+--- mono/metadata/rand.c.orig	Fri Oct 17 10:56:50 2008
++++ mono/metadata/rand.c	Fri Oct 17 10:57:20 2008
+@@ -15,6 +15,9 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
++#ifdef HAVE_STRING_H
++#include <string.h>
++#endif
+ #ifdef HAVE_UNISTD_H
+ #include <unistd.h>
+ #endif

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/16 16:00:27 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/10/17 09:07:13 robert Exp $
 %%SHARED%%
 bin/al
 bin/al1
@@ -981,11 +981,17 @@ share/examples/mono/browscap.ini
 share/examples/mono/config
 @sample ${SYSCONFDIR}/mono/config
 share/examples/mono/net_1_1/
+@sample ${SYSCONFDIR}/mono/1.0/
 share/examples/mono/net_1_1/DefaultWsdlHelpGenerator.aspx
+@sample ${SYSCONFDIR}/mono/1.0/DefaultWsdlHelpGenerator.aspx
 share/examples/mono/net_1_1/machine.config
+@sample ${SYSCONFDIR}/mono/1.0/machine.config
 share/examples/mono/net_2_0/
+@sample ${SYSCONFDIR}/mono/2.0/
 share/examples/mono/net_2_0/DefaultWsdlHelpGenerator.aspx
+@sample ${SYSCONFDIR}/mono/2.0/DefaultWsdlHelpGenerator.aspx
 share/examples/mono/net_2_0/machine.config
+@sample ${SYSCONFDIR}/mono/2.0/machine.config
 share/jay/
 share/jay/ACKNOWLEDGEMENTS
 share/jay/NEW_FEATURES
