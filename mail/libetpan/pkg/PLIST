@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/04/23 21:01:04 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/10/17 12:34:29 landry Exp $
 %%SHARED%%
 bin/libetpan-config
 include/libetpan/
@@ -143,8 +143,10 @@ include/libetpan/uidplus_types.h
 lib/libetpan.a
 lib/libetpan.la
 share/doc/libetpan/
+share/doc/libetpan/API.txt
 share/doc/libetpan/COPYRIGHT
 share/doc/libetpan/DOCUMENTATION
+share/doc/libetpan/README.txt
 share/doc/libetpan/html/
 share/doc/libetpan/html/API/
 share/doc/libetpan/html/API.html
