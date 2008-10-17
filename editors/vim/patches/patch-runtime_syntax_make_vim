@@ -1,6 +1,6 @@
-$OpenBSD: patch-runtime_syntax_make_vim,v 1.1 2008/05/16 20:19:12 espie Exp $
---- runtime/syntax/make.vim.orig	Tue May  1 11:18:11 2007
-+++ runtime/syntax/make.vim	Sat Apr  5 20:38:11 2008
+$OpenBSD: patch-runtime_syntax_make_vim,v 1.2 2008/10/17 14:56:53 ckuethe Exp $
+--- runtime/syntax/make.vim.orig	Mon Aug  4 14:28:31 2008
++++ runtime/syntax/make.vim	Thu Oct 16 12:13:38 2008
 @@ -22,6 +22,9 @@ syn match makeInclude	"^ *[-s]\=include"
  syn match makeStatement	"^ *vpath"
  syn match makeExport    "^ *\(export\|unexport\)\>"
@@ -46,11 +46,11 @@ $OpenBSD: patch-runtime_syntax_make_vim,v 1.1 2008/05/16 20:19:12 espie Exp $
  
  syn match makeCommandError "^\s\+\S.*" contained
  syn region makeCommands start=";"hs=s+1 start="^\t" end="^[^\t#]"me=e-1,re=e-1 end="^$" contained contains=makeCmdNextLine,makeSpecial,makeComment,makeIdent,makePreCondit,makeDefine,makeDString,makeSString nextgroup=makeCommandError
-@@ -63,14 +70,14 @@ syn match makeCmdNextLine	"\\\n."he=e-1 contained
+@@ -63,14 +70,15 @@ syn match makeCmdNextLine	"\\\n."he=e-1 contained
  
  
  " Statements / Functions (GNU make)
--syn match makeStatement contained "(\(subst\|addprefix\|addsuffix\|basename\|call\|dir\|error\|eval\|filter-out\|filter\|findstring\|firstword\|foreach\|if\|join\|notdir\|origin\|patsubst\|shell\|sort\|strip\|suffix\|warning\|wildcard\|word\|wordlist\|words\)\>"ms=s+1
+-syn match makeStatement contained "(\(subst\|abspath\|addprefix\|addsuffix\|and\|basename\|call\|dir\|error\|eval\|filter-out\|filter\|findstring\|firstword\|flavor\|foreach\|if\|info\|join\|lastword\|notdir\|or\|origin\|patsubst\|realpath\|shell\|sort\|strip\|suffix\|value\|warning\|wildcard\|word\|wordlist\|words\)\>"ms=s+1
 +syn match makeStatement contained "(\(subst\|addprefix\|addsuffix\|basename\|call\|dir\|error\|filter-out\|filter\|findstring\|firstword\|foreach\|if\|join\|notdir\|origin\|patsubst\|shell\|sort\|strip\|suffix\|warning\|wildcard\|word\|wordlist\|words\)\>"ms=s+1
  
  " Comment
@@ -62,6 +62,7 @@ $OpenBSD: patch-runtime_syntax_make_vim,v 1.1 2008/05/16 20:19:12 espie Exp $
 -   syn match   makeComment	"#$" contains=@Spell
 +   syn region  makeComment	start="#" end="^$" end="[^\\]$" keepend contains=makeTodo
 +   syn match   makeComment	"#$"
++
  endif
  syn keyword makeTodo TODO FIXME XXX contained
  

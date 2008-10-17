@@ -1,7 +1,7 @@
-$OpenBSD: patch-runtime_filetype_vim,v 1.1 2008/02/17 18:10:04 espie Exp $
---- runtime/filetype.vim.orig	Sun Feb 17 13:49:37 2008
-+++ runtime/filetype.vim	Sun Feb 17 13:51:54 2008
-@@ -68,6 +68,14 @@ func! s:Check_inp()
+$OpenBSD: patch-runtime_filetype_vim,v 1.2 2008/10/17 14:56:53 ckuethe Exp $
+--- runtime/filetype.vim.orig	Sun Aug  3 12:38:46 2008
++++ runtime/filetype.vim	Thu Oct 16 12:10:25 2008
+@@ -71,6 +71,14 @@ func! s:Check_inp()
    endif
  endfunc
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-runtime_filetype_vim,v 1.1 2008/02/17 18:10:04 espie Exp $
  " A-A-P recipe
  au BufNewFile,BufRead *.aap			setf aap
  
-@@ -530,7 +538,7 @@ au BufNewFile,BufRead dict.conf,.dictrc		setf dictconf
+@@ -572,7 +580,7 @@ au BufNewFile,BufRead dict.conf,.dictrc		setf dictconf
  au BufNewFile,BufRead dictd.conf		setf dictdconf
  
  " Diff files
@@ -25,7 +25,7 @@ $OpenBSD: patch-runtime_filetype_vim,v 1.1 2008/02/17 18:10:04 espie Exp $
  
  " Dircolors
  au BufNewFile,BufRead .dir_colors,/etc/DIR_COLORS	setf dircolors
-@@ -939,7 +947,7 @@ au BufNewFile,BufRead /etc/mail/aliases,/etc/aliases	s
+@@ -1016,7 +1024,7 @@ au BufNewFile,BufRead /etc/mail/aliases,/etc/aliases	s
  au BufNewFile,BufRead .mailcap,mailcap		setf mailcap
  
  " Makefile
@@ -34,7 +34,7 @@ $OpenBSD: patch-runtime_filetype_vim,v 1.1 2008/02/17 18:10:04 espie Exp $
  
  " MakeIndex
  au BufNewFile,BufRead *.ist,*.mst		setf ist
-@@ -1960,7 +1968,10 @@ au BufNewFile,BufRead *.vim,*.vba,.exrc,_exrc	setf vim
+@@ -2080,7 +2088,10 @@ au BufNewFile,BufRead *.vim,*.vba,.exrc,_exrc	setf vim
  au BufNewFile,BufRead .viminfo,_viminfo		setf viminfo
  
  " Virata Config Script File

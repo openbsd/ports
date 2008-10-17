@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_auto_configure,v 1.4 2008/02/17 18:10:04 espie Exp $
---- src/auto/configure.orig	Sun Feb 17 13:49:40 2008
-+++ src/auto/configure	Sun Feb 17 13:49:42 2008
-@@ -10339,6 +10339,7 @@ cat confdefs.h >>conftest.$ac_ext
+$OpenBSD: patch-src_auto_configure,v 1.5 2008/10/17 14:56:53 ckuethe Exp $
+--- src/auto/configure.orig	Thu Jul 24 05:40:36 2008
++++ src/auto/configure	Thu Oct 16 12:15:10 2008
+@@ -9988,6 +9988,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_auto_configure,v 1.4 2008/02/17 18:10:04 espie Exp $
  #include <$ac_header>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -13638,6 +13639,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -14939,6 +14940,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  #include <sys/types.h>
@@ -17,10 +17,10 @@ $OpenBSD: patch-src_auto_configure,v 1.4 2008/02/17 18:10:04 espie Exp $
  #include <sys/sysctl.h>
  int
  main ()
-@@ -14372,7 +14374,7 @@ else
+@@ -15775,7 +15777,7 @@ else
  sed 's/^/| /' conftest.$ac_ext >&5
  
- olibs=$LIBS
+ 	olibs=$LIBS
 -	  LIBS="$LIBS -lintl"
 +	  LIBS="$LIBS -lintl -liconv"
  	  cat >conftest.$ac_ext <<_ACEOF
