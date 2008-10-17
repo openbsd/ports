@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2008/09/28 16:04:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.148 2008/10/17 23:06:40 sthen Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -23,6 +23,7 @@
      SUBDIR += mysql
      SUBDIR += mysql-administrator
      SUBDIR += mysql-query-browser
+     SUBDIR += mysql-zrm
      SUBDIR += mysql2pgsql
      SUBDIR += mysqlcc
      SUBDIR += mytop
