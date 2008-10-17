@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.123 2008/10/15 14:53:00 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.124 2008/10/17 21:57:22 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -217,10 +217,10 @@ MASTER_SITE_PACKETSTORM+=	\
 
 MASTER_SITE_HORDE+=		\
 	ftp://ftp.horde.org/pub/ \
-	ftp://ftp.at.horde.org/mirror/horde/ \
-	ftp://ftp.es.horde.org/pub/ \
-	ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/ \
-	ftp://ftp.de.horde.org/horde.org/
+	ftp://ftp.de.horde.org/mirrors/ftp.de.horde.org/pub/ \
+	ftp://ftp.se.horde.org/mirror/horde/pub/ \
+	ftp://ftp.tw.horde.org/pub/ \
+	ftp://ftp.us.horde.org/pub/software/horde/
 
 MASTER_SITE_APACHE+= \
 	http://www.reverse.net/pub/apache/ \
