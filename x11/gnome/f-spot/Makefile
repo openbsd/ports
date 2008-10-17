@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/17 10:39:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/17 11:02:16 robert Exp $
 
 COMMENT=		personal photo management application for GNOME
 
@@ -36,7 +36,8 @@ RUN_DEPENDS=		${BUILD_DEPENDS}
 BUILD_DEPENDS+=		::sysutils/ndesk-dbus-glib \
 			::x11/xscreensaver \
 			::x11/gnome/doc-utils \
-			::x11/gnome/mono-gnome
+			::x11/gnome/mono-gnome \
+			::graphics/libgphoto2
 LIB_DEPENDS+=		exif::graphics/libexif \
 			lcms::graphics/lcms
 
