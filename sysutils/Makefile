@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2008/10/16 18:32:19 steven Exp $
+# $OpenBSD: Makefile,v 1.160 2008/10/17 07:11:40 robert Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -64,6 +64,8 @@
      SUBDIR += mtools
      SUBDIR += multitail
      SUBDIR += ncdu
+     SUBDIR += ndesk-dbus
+     SUBDIR += ndesk-dbus-glib
      SUBDIR += notification-daemon
      SUBDIR += nut
      SUBDIR += openpoppassd
