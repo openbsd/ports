@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2008/09/22 13:51:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2008/10/17 07:16:57 robert Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -75,6 +75,7 @@
      SUBDIR += terminal
      SUBDIR += themes
      SUBDIR += themes-extras
+     SUBDIR += tomboy
      SUBDIR += totem
      SUBDIR += totem-pl-parser
      SUBDIR += users-guide
