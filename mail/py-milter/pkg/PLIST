@@ -1,11 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/10/22 13:49:28 mbalmer Exp $
-%%SHARED%%
-lib/python${MODPY_VERSION}/site-packages/Milter.py
-lib/python${MODPY_VERSION}/site-packages/Milter.pyc
+@comment $OpenBSD: PLIST,v 1.3 2008/10/18 12:37:42 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/Milter/
+lib/python${MODPY_VERSION}/site-packages/Milter/__init__.py
+lib/python${MODPY_VERSION}/site-packages/Milter/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Milter/cache.py
+lib/python${MODPY_VERSION}/site-packages/Milter/cache.pyc
+lib/python${MODPY_VERSION}/site-packages/Milter/config.py
+lib/python${MODPY_VERSION}/site-packages/Milter/config.pyc
+lib/python${MODPY_VERSION}/site-packages/Milter/dns.py
+lib/python${MODPY_VERSION}/site-packages/Milter/dns.pyc
+lib/python${MODPY_VERSION}/site-packages/Milter/dsn.py
+lib/python${MODPY_VERSION}/site-packages/Milter/dsn.pyc
+lib/python${MODPY_VERSION}/site-packages/Milter/dynip.py
+lib/python${MODPY_VERSION}/site-packages/Milter/dynip.pyc
+lib/python${MODPY_VERSION}/site-packages/Milter/plock.py
+lib/python${MODPY_VERSION}/site-packages/Milter/plock.pyc
+lib/python${MODPY_VERSION}/site-packages/Milter/unsign.py
+lib/python${MODPY_VERSION}/site-packages/Milter/unsign.pyc
+lib/python${MODPY_VERSION}/site-packages/Milter/utils.py
+lib/python${MODPY_VERSION}/site-packages/Milter/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/milter.so
 lib/python${MODPY_VERSION}/site-packages/mime.py
 lib/python${MODPY_VERSION}/site-packages/mime.pyc
-lib/python${MODPY_VERSION}/site-packages/spf.py
-lib/python${MODPY_VERSION}/site-packages/spf.pyc
 share/doc/py-milter/
 share/doc/py-milter/README
 share/examples/py-milter/
@@ -14,4 +29,3 @@ share/examples/py-milter/milter.cfg
 share/examples/py-milter/rejects.py
 share/examples/py-milter/rhsbl.m4
 share/examples/py-milter/sample.py
-share/examples/py-milter/spfquery.py

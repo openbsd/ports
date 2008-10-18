@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2008/10/18 12:37:42 ajacoutot Exp $
 
 COMMENT=	Python interface to sendmail milter API
 
-DISTNAME=	milter-0.7.2
-PKGNAME=	py-${DISTNAME}p4
+DISTNAME=	pymilter-0.8.10
+PKGNAME=	py-${DISTNAME}
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.bmsi.com/python/milter.html
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	milter
 
-MASTER_SITES=	http://www.bmsi.com/python/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pymilter/}
 
 MODULES=	lang/python
 MODPY_VERSION=	2.4
@@ -28,13 +28,15 @@ post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/{bms,sample,rejects,spfquery}.py \
+	${INSTALL_DATA} ${WRKSRC}/{bms,sample,rejects}.py \
 		${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/milter.cfg ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/rhsbl.m4 ${EXAMPLESDIR}
 
-do-regress: fake
-	@cd ${WRKSRC} && ${MAKE_ENV} \
-		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./test.py
+# needs the DNS python 2.4 module which we don't provide
+NO_REGRESS=	Yes
+#do-regress: fake
+#	@cd ${WRKSRC} && ${MAKE_ENV} \
+#		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./test.py
 
 .include <bsd.port.mk>

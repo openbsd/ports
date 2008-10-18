@@ -1,12 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2004/11/25 15:19:20 xsa Exp $
---- setup.py.orig	Sat Nov 20 18:22:12 2004
-+++ setup.py	Thu Nov 25 14:09:35 2004
-@@ -3,7 +3,7 @@ import sys
- from distutils.core import setup, Extension
- 
+$OpenBSD: patch-setup_py,v 1.2 2008/10/18 12:37:42 ajacoutot Exp $
+--- setup.py.orig	Sat Oct 18 14:26:42 2008
++++ setup.py	Sat Oct 18 14:26:57 2008
+@@ -5,7 +5,7 @@ from distutils.core import setup, Extension
  # FIXME: on some versions of sendmail, smutil is renamed to sm
+ # on slackware and debian, leave it out entirely.  It depends
+ # on how libmilter was built by the sendmail package.
 -libs = ["milter", "smutil"]
 +libs = ["milter"]
+ libdirs = ["/usr/lib/libmilter"]    # needed for Debian
  
  # patch distutils if it can't cope with the "classifiers" or
- # "download_url" keywords
