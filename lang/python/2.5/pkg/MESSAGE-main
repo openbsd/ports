@@ -1,11 +1,6 @@
 If you want to use this package as your default system python, as root
 create symbolic links like so (overwriting any previous default):
  ln -sf ${PREFIX}/bin/python2.5 ${PREFIX}/bin/python
+ ln -sf ${PREFIX}/bin/python2.5-config ${PREFIX}/bin/python-config
  ln -sf ${PREFIX}/bin/pydoc2.5  ${PREFIX}/bin/pydoc
-
-You may wish to add the following to your .emacs:
-
-(autoload 'python-mode "python-mode" "Python Mode." t)
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-(add-to-list 'interpreter-mode-alist '("python" . python-mode))
 

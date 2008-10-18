@@ -11,4 +11,5 @@ in C or C++.  On most systems such modules may be dynamically loaded.
 Python is also adaptable as an extension language for existing
 applications. See the internal documentation for hints.
 
-This package contains extra tools that Python users may find useful.
+This package contains extra tools that Python users may find useful
+as well as a Python mode for Emacs.

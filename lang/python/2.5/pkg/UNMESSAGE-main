@@ -1,3 +1,5 @@
-Don't forget to remove ${PREFIX}/bin/python or/and
+Don't forget to remove ${PREFIX}/bin/python,
+${PREFIX}/bin/python-config or/and
 ${PREFIX}/bin/pydoc if they were symlinks to
-${PREFIX}/bin/python2.5 or to ${PREFIX}/bin/pydoc2.5.
+${PREFIX}/bin/python2.5, ${PREFIX}/bin/python2.5-config
+or to ${PREFIX}/bin/pydoc2.5.

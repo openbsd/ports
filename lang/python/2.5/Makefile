@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2008/09/06 23:39:57 djm Exp $
+# $OpenBSD: Makefile,v 1.26 2008/10/18 12:01:25 djm Exp $
 
 VERSION=		2.5
 PATCHLEVEL=		.2
-PKG_PATCHLEVEL=		p5
+PKG_PATCHLEVEL=		p6
 SHARED_LIBS=		python2.5 1.0
 
 # PSUBDIR=		python/${VERSION}
@@ -13,7 +13,6 @@ PATCH_LIST=		patch-* sup64-*
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS+=	--with-cxx_main
-ALL_TARGET =		everything
 
 post-extract:
 	rm -r ${WRKDIST}/Modules/expat
