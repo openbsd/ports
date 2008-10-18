@@ -1,0 +1,20 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2008/10/18 11:17:59 ajacoutot Exp $
+--- setup.py.orig	Sat Jul 26 05:58:29 2008
++++ setup.py	Thu Oct 16 14:06:11 2008
+@@ -15,10 +15,12 @@ setup(name='python-policyd-spf',
+       py_modules=['policydspfsupp'],
+       keywords = ['Postfix','spf','email'],
+       scripts = ['policyd-spf'],
+-      data_files=[(os.path.join('share', 'man', 'man1'),
+-          ['policyd-spf.1']), (os.path.join('share', 'man', 'man5'),
+-          ['policyd-spf.conf.5']), (os.path.join('../etc', 'python-policyd-spf'),
+-          ['policyd-spf.conf'])],
++      data_files=[
++	  ('man/man1',['policyd-spf.1']), 
++	  ('man/man5',['policyd-spf.conf.5']), 
++	  ('share/examples/py-policyd-spf',['policyd-spf.conf']),
++	  ('share/examples/py-policyd-spf',['policyd-spf.conf.commented']),
++	  ('share/doc/py-policyd-spf',['README.per_user_whitelisting'])],
+       classifiers = [
+ 	'Development Status :: 5 - Production/Stable',
+ 	'Environment :: No Input/Output (Daemon)',

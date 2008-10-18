@@ -1,0 +1,12 @@
+$OpenBSD: patch-policyd-spf_1,v 1.1.1.1 2008/10/18 11:17:59 ajacoutot Exp $
+--- policyd-spf.1.orig	Wed Oct 15 21:19:33 2008
++++ policyd-spf.1	Wed Oct 15 21:19:47 2008
+@@ -251,7 +251,7 @@ followed by a empty line:
+  1. Add the following to /etc/postfix/master.cf:
+ 
+         policyd-spf  unix  -       n       n       -       0       spawn
+-            user=nobody argv=/usr/bin/policyd-spf
++            user=nobody argv=${PREFIX}/bin/policyd-spf
+ 
+     NOTE: Check the path to both the installed Python interpreter and
+           policyd-spf.  These vary from system to system.  To use non-default

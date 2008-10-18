@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/18 11:17:59 ajacoutot Exp $
+bin/policyd-spf
+lib/python${MODPY_VERSION}/site-packages/policydspfsupp.py
+lib/python${MODPY_VERSION}/site-packages/policydspfsupp.pyc
+lib/python${MODPY_VERSION}/site-packages/python_policyd_spf-0.7-py${MODPY_VERSION}.egg-info
+@man man/man1/policyd-spf.1
+@man man/man5/policyd-spf.conf.5
+share/doc/py-policyd-spf/
+share/doc/py-policyd-spf/README.per_user_whitelisting
+share/examples/py-policyd-spf/
+@sample ${SYSCONFDIR}/python-policyd-spf/
+share/examples/py-policyd-spf/policyd-spf.conf
+@sample ${SYSCONFDIR}/python-policyd-spf/policyd-spf.conf
+share/examples/py-policyd-spf/policyd-spf.conf.commented
