@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2006/07/30 21:02:32 alek Exp $
-bin/darcs
+@comment $OpenBSD: PLIST,v 1.11 2008/10/18 18:58:06 kili Exp $
+@bin bin/darcs
 libexec/darcs/
 libexec/darcs/cgi-bin/
 libexec/darcs/cgi-bin/darcs.cgi
@@ -14,6 +14,7 @@ share/darcs/xslt/
 share/darcs/xslt/annotate.xslt
 share/darcs/xslt/browse.xslt
 share/darcs/xslt/common.xslt
+share/darcs/xslt/errors.xml
 share/darcs/xslt/errors.xslt
 share/darcs/xslt/patches.xslt
 share/darcs/xslt/repos.xslt
@@ -24,15 +25,10 @@ share/doc/darcs/examples/
 share/doc/darcs/examples/zsh_completion_new
 share/doc/darcs/examples/zsh_completion_old
 share/doc/darcs/manual/
-share/doc/darcs/manual/WARNINGS
 share/doc/darcs/manual/contents.png
-share/doc/darcs/manual/darcs.css
+share/doc/darcs/manual/crossref.png
 share/doc/darcs/manual/darcs.html
 share/doc/darcs/manual/footnode.html
-share/doc/darcs/manual/images.aux
-share/doc/darcs/manual/images.log
-share/doc/darcs/manual/images.pl
-share/doc/darcs/manual/images.tex
 share/doc/darcs/manual/img1.png
 share/doc/darcs/manual/img10.png
 share/doc/darcs/manual/img11.png
@@ -51,7 +47,18 @@ share/doc/darcs/manual/img22.png
 share/doc/darcs/manual/img23.png
 share/doc/darcs/manual/img24.png
 share/doc/darcs/manual/img25.png
+share/doc/darcs/manual/img26.png
+share/doc/darcs/manual/img27.png
+share/doc/darcs/manual/img28.png
+share/doc/darcs/manual/img29.png
 share/doc/darcs/manual/img3.png
+share/doc/darcs/manual/img30.png
+share/doc/darcs/manual/img31.png
+share/doc/darcs/manual/img32.png
+share/doc/darcs/manual/img33.png
+share/doc/darcs/manual/img34.png
+share/doc/darcs/manual/img35.png
+share/doc/darcs/manual/img36.png
 share/doc/darcs/manual/img4.png
 share/doc/darcs/manual/img5.png
 share/doc/darcs/manual/img6.png
@@ -59,13 +66,12 @@ share/doc/darcs/manual/img7.png
 share/doc/darcs/manual/img8.png
 share/doc/darcs/manual/img9.png
 share/doc/darcs/manual/index.html
-share/doc/darcs/manual/internals.pl
-share/doc/darcs/manual/labels.pl
 share/doc/darcs/manual/next.png
 share/doc/darcs/manual/next_g.png
 share/doc/darcs/manual/node1.html
 share/doc/darcs/manual/node10.html
 share/doc/darcs/manual/node11.html
+share/doc/darcs/manual/node12.html
 share/doc/darcs/manual/node2.html
 share/doc/darcs/manual/node3.html
 share/doc/darcs/manual/node4.html
@@ -74,6 +80,7 @@ share/doc/darcs/manual/node6.html
 share/doc/darcs/manual/node7.html
 share/doc/darcs/manual/node8.html
 share/doc/darcs/manual/node9.html
+share/doc/darcs/manual/nx_grp_g.png
 share/doc/darcs/manual/prev.png
 share/doc/darcs/manual/prev_g.png
 share/doc/darcs/manual/up.png

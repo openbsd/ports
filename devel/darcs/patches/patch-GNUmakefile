@@ -1,15 +1,20 @@
-$OpenBSD: patch-GNUmakefile,v 1.10 2007/06/06 19:52:17 kili Exp $
+$OpenBSD: patch-GNUmakefile,v 1.11 2008/10/18 18:58:06 kili Exp $
 
-Don't try to build or install .ps docs, and don't regen the .html docs.
+Don't rebuild the documentation, and don't install the pdf files
+contained in the distfile.
+This is required in addition to `--without-manual' in CONFIGURE_ARGS.
 
---- GNUmakefile.orig	Mon Jun  4 13:39:20 2007
-+++ GNUmakefile	Mon Jun  4 20:47:41 2007
-@@ -122,7 +122,7 @@ installbin:	all
+--- GNUmakefile.orig	Thu Oct  2 13:47:19 2008
++++ GNUmakefile	Thu Oct  2 20:10:58 2008
+@@ -191,10 +191,9 @@ installbin:	all
  		$(INSTALL) -d $(DESTDIR)$(mandir)/man1
- 	$(INSTALL_DATA) darcs.1 $(DESTDIR)$(mandir)/man1/
+ 	$(INSTALL_DATA) doc/darcs.1 $(DESTDIR)$(mandir)/man1/
  
--installdocs:	manual/darcs.ps manual/index.html
+-installdocs:	doc/manual/darcs.pdf doc/manual/patch-theory.pdf doc/manual/index.html
 +installdocs:
- 	test -d $(DESTDIR)$(datadir)/doc/darcs/manual || \
- 		$(INSTALL) -d $(DESTDIR)$(datadir)/doc/darcs/manual
- 	$(INSTALL_DATA) manual/* $(DESTDIR)$(datadir)/doc/darcs/manual
+ 	test -d $(DESTDIR)$(docdir)/manual || \
+ 		$(INSTALL) -d $(DESTDIR)$(docdir)/manual
+-	$(INSTALL_DATA) doc/manual/*.pdf $(DESTDIR)$(docdir)/manual
+ 	$(INSTALL_DATA) doc/manual/*.png $(DESTDIR)$(docdir)/manual
+ 	$(INSTALL_DATA) doc/manual/*.html $(DESTDIR)$(docdir)/manual
+ 
