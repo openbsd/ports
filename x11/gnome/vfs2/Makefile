@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2008/10/17 14:19:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2008/10/18 07:39:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -47,7 +47,6 @@ RUN_DEPENDS-smb=	${RUN_DEPENDS}
 USE_X11=		Yes
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-vfs2 \
-			--without-afs \
 			--disable-schemas-install \
 			--enable-cdda \
 			--disable-avahi \
