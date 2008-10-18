@@ -1,0 +1,3 @@
+If you want to use this package as your default system idle, as root
+create symbolic links like so (overwriting any previous default):
+ ln -sf ${PREFIX}/bin/idle2.6 ${PREFIX}/bin/idle

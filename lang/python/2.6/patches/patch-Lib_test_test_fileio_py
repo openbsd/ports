@@ -1,0 +1,11 @@
+$OpenBSD: patch-Lib_test_test_fileio_py,v 1.1 2008/10/18 12:03:56 djm Exp $
+--- Lib/test/test_fileio.py.orig	Tue Sep  2 00:13:43 2008
++++ Lib/test/test_fileio.py	Wed Sep 17 10:49:32 2008
+@@ -150,6 +150,7 @@ class OtherFileTests(unittest.TestCase):
+                     self.assertEquals(f.writable(), True)
+                     if sys.platform != "darwin" and \
+                        not sys.platform.startswith('freebsd') and \
++                       not sys.platform.startswith('openbsd') and \
+                        not sys.platform.startswith('sunos'):
+                         # Somehow /dev/tty appears seekable on some BSDs
+                         self.assertEquals(f.seekable(), False)

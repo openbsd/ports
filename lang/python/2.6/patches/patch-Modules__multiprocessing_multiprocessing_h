@@ -1,0 +1,11 @@
+$OpenBSD: patch-Modules__multiprocessing_multiprocessing_h,v 1.1 2008/10/18 12:03:56 djm Exp $
+--- Modules/_multiprocessing/multiprocessing.h.orig	Sat Aug 23 08:53:09 2008
++++ Modules/_multiprocessing/multiprocessing.h	Sat Aug 23 08:53:35 2008
+@@ -21,6 +21,7 @@
+ #else
+ #  include <fcntl.h>                 /* O_CREAT and O_EXCL */
+ #  include <sys/socket.h>
++#  include <sys/uio.h>               /* struct iovec */
+ #  include <arpa/inet.h>             /* htonl() and ntohl() */
+ #  if HAVE_SEM_OPEN
+ #    include <semaphore.h>

@@ -1,0 +1,28 @@
+$OpenBSD: patch-Lib_test_test_dl_py,v 1.1 2008/10/18 12:03:56 djm Exp $
+--- Lib/test/test_dl.py.orig	Sun May 11 07:20:19 2008
++++ Lib/test/test_dl.py	Mon Aug 25 07:45:25 2008
+@@ -5,11 +5,20 @@
+ from test.test_support import verbose,TestSkipped, import_module
+ dl = import_module('dl', deprecated=True)
+ 
++import dircache
++libcNames = []
++libcName = ''
++for file in dircache.listdir('/usr/lib/'):
++	if '/libc.so.' in file:
++		libcNames.append(file)
++# Pick the most recent (highest number) libc
++if len(libcNames) > 0:
++	libcName = sorted(libcNames)[-1]
++if not libcName:
++	raise TestSkipped
++
+ sharedlibs = [
+-    ('/usr/lib/libc.so', 'getpid'),
+-    ('/lib/libc.so.6', 'getpid'),
+-    ('/usr/bin/cygwin1.dll', 'getpid'),
+-    ('/usr/lib/libc.dylib', 'getpid'),
++	(libcName, 'getpid'),
+     ]
+ 
+ def test_main():

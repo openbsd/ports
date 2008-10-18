@@ -1,0 +1,5 @@
+If you want to use this package as your default system python, as root
+create symbolic links like so (overwriting any previous default):
+ ln -sf ${PREFIX}/bin/python2.6 ${PREFIX}/bin/python
+ ln -sf ${PREFIX}/bin/pydoc2.6  ${PREFIX}/bin/pydoc
+

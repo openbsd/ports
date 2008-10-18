@@ -1,0 +1,11 @@
+--- Lib/test/regrtest.py	Tue Sep 30 13:19:44 2008
++++ Lib/test/regrtest.py.orig	Tue Sep 30 13:21:27 2008
+@@ -1066,6 +1066,8 @@
+         """,
+     'openbsd3':
+         """
++        test_audioop
++        test_imageop
+         test_bsddb
+         test_bsddb3
+         test_ctypes

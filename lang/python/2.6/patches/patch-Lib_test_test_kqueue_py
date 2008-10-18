@@ -1,0 +1,13 @@
+$OpenBSD: patch-Lib_test_test_kqueue_py,v 1.1 2008/10/18 12:03:56 djm Exp $
+--- Lib/test/test_kqueue.py.orig	Tue Aug 26 08:52:34 2008
++++ Lib/test/test_kqueue.py	Tue Aug 26 08:52:39 2008
+@@ -85,7 +85,8 @@ class TestKQueue(unittest.TestCase):
+             pass # FreeBSD doesn't raise an exception here
+         server, addr = serverSocket.accept()
+ 
+-        if sys.platform.startswith("darwin"):
++        if sys.platform.startswith("darwin") or \
++           sys.platform.startswith("openbsd"):
+             flags = select.KQ_EV_ADD | select.KQ_EV_ENABLE
+         else:
+             flags = 0

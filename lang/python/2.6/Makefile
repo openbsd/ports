@@ -1,0 +1,21 @@
+# $OpenBSD: Makefile,v 1.1 2008/10/18 12:03:56 djm Exp $
+
+VERSION=		2.6
+#PATCHLEVEL=
+#PSUBDIR=		python/2.6
+#PKG_PATCHLEVEL=		
+SHARED_LIBS=		python2.6 1.0
+
+# PSUBDIR=		python/${VERSION}
+
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=		patch-* sup64-*
+.endif
+
+AUTOCONF_VERSION=	2.61
+CONFIGURE_ARGS+=	--with-cxx_main
+
+post-extract:
+	rm -r ${WRKDIST}/Modules/expat
+
+.include <bsd.port.mk>
