@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/17 20:05:47 ian Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/18 18:17:05 robert Exp $
 
 COMMENT=		personal photo management application for GNOME
 
 GNOME_VERSION=		0.5.0.2
 GNOME_PROJECT=		f-spot
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=	fspoteog             0.0      # .0.0
 SHARED_LIBS +=	fspotjpegtran        0.0      # .0.0
 SHARED_LIBS +=	fspot                0.0      # .0.0
@@ -49,5 +49,9 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-unit
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
+
+DLLMAP_FILES=		src/f-spot.exe.config \
+			src/Cms.dll.config \
+			src/FSpot.Utils.dll.config
 
 .include <bsd.port.mk>
