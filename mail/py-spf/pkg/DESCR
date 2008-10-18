@@ -1,0 +1,2 @@
+Sender-Policy-Framework queries in Python.
+Provides an implementation of SPF useful for detecting email forgery.

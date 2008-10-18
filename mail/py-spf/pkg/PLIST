@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/18 11:15:36 ajacoutot Exp $
+bin/spfquery
+bin/type99
+lib/python${MODPY_VERSION}/site-packages/pyspf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/spf.py
+lib/python${MODPY_VERSION}/site-packages/spf.pyc
