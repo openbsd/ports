@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/18 10:50:46 ajacoutot Exp $
+%%SHARED%%
+include/yaml.h
+lib/libyaml.a
+lib/libyaml.la

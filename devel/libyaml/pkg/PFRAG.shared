@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/10/18 10:50:46 ajacoutot Exp $
+@lib lib/libyaml-0.so.${LIByaml-0_VERSION}
+@lib lib/libyaml.so.${LIByaml_VERSION}
