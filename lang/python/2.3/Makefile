@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2008/07/30 19:47:09 martynas Exp $
+# $OpenBSD: Makefile,v 1.32 2008/10/18 11:55:57 djm Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			compiler hangs on py-Checker for example
@@ -15,5 +15,7 @@ THREAD_STACK_SIZE=	0x100000
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=		patch-* sup64-*
 .endif
+
+ALL_TARGET?=	all ${WRKSRC}/Lib/plat-openbsd4
 
 .include <bsd.port.mk>

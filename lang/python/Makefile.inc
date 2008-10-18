@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.55 2008/05/10 17:10:24 deanna Exp $
+# $OpenBSD: Makefile.inc,v 1.56 2008/10/18 11:55:57 djm Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -29,7 +29,7 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.python.org/
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+MAINTAINER=	Damien Miller <djm@openbsd.org>
 
 # PSF license <http://www.python.org/${VERSION}/license.html>
 # A summary of changes to Python is required to be distributed
@@ -38,8 +38,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+.if ${VERSION} == "2.6"
+# Build knobs are no longer supported
+PSEUDO_FLAVORS=
+.else
 PSEUDO_FLAVORS=	no_expat no_gdbm no_idle no_mpz no_tkinter no_bsddb no_bz2 \
 		no_sqlite
+.endif
+
 FLAVOR?=
 
 MULTI_PACKAGES=	-main -tests -tools
@@ -51,6 +57,10 @@ LIB_DEPENDS=
 
 RUN_DEPENDS-main=
 WANTLIB-main=	ssl panel m crypto c util z readline pthread ncurses stdc++
+.if ${VERSION} == "2.6"
+WANTLIB-main+=		expat ossaudio
+LIB_DEPENDS-main=	sqlite3.>=8.7::databases/sqlite3
+.endif
 
 LIB_DEPENDS-bsddb=	lib/db4/db.>=4:db-4.*:databases/db/v4
 LIB_DEPENDS-gdbm=	gdbm.>=3::databases/gdbm
@@ -67,9 +77,14 @@ LIB_DEPENDS-sqlite=	sqlite3.>=8.7::databases/sqlite3
 SETUP_PY=	"s,!!LOCALBASE!!,${LOCALBASE},g" \
 		"s,!!X11BASE!!,${X11BASE},g"
 
-.if empty(FLAVOR:L:Mno_bsddb) && ${VERSION} == "2.5"
+.if empty(FLAVOR:L:Mno_bsddb) && (${VERSION} == "2.5" || ${VERSION} == "2.6")
+# Python 2.6 lists BSD db 4.6.x as unstable on most architectures (see
+# setup.py:allow_db_version). XXX revisit if databases/db/v4 is updated to 4.7
+. if ${VERSION} != "2.6" || \
+     ( ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" )
 SETUP_PY+=	"s,!!USE_BSDDB!!,1,g"
 MULTI_PACKAGES+=-bsddb
+. endif
 .else
 SETUP_PY+=	"s,!!USE_BSDDB!!,0,g"
 .endif
@@ -107,7 +122,7 @@ MULTI_PACKAGES+=-mpz
 SETUP_PY+=	"s,!!USE_MPZ!!,0,g"
 .endif
 
-.if empty(FLAVOR:L:Mno_expat)
+.if empty(FLAVOR:L:Mno_expat) && ${VERSION} != "2.6"
 SETUP_PY+=	"s,!!USE_EXPAT!!,1,g"
 MULTI_PACKAGES+=-expat
 .else
@@ -143,6 +158,9 @@ CONFIGURE_ARGS+=--enable-ipv6
 THREAD_STACK_SIZE?=0x20000
 
 REGRESS_TARGET=	test
+REGRESS_FLAGS=	"EXTRATESTOPTS=-w"
+# Some regress tests write to $HOME
+PORTHOME=	${WRKDIR}
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
 PKG_ARGS+=	-Dmm=0
@@ -151,7 +169,7 @@ PKG_ARGS+=	-Dmm=1
 .endif
 
 # The ctypes module is not supported on all platforms (in particular, ARM)
-.if ${VERSION} == "2.5"
+.if ${VERSION} == "2.5" || ${VERSION} == "2.6"
 .  if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
       ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64" || \
       ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "m68k" || \
@@ -169,7 +187,7 @@ MAKE_FLAGS+=	LDLIBRARY=libpython${VERSION}.so.${LIBpython${VERSION}_VERSION} \
 		LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
 FAKE_FLAGS+=	RANLIB=:
 
-ALL_TARGET?=	all ${WRKSRC}/Lib/plat-openbsd4
+ALL_TARGET?=	everything ./Lib/plat-openbsd4
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
@@ -188,7 +206,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
 	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
 		${PREFIX}/share/doc/python${VERSION}/CHANGES.OpenBSD
-.if ${VERSION} == 2.5
+.if ${VERSION} == "2.5" || ${VERSION} == "2.6"
 		${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
 		${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
 			${PREFIX}/share/emacs/site-lisp
