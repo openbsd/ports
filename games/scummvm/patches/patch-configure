@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.4 2008/10/19 10:23:09 jsg Exp $
+--- configure.orig	Mon Sep 15 05:08:08 2008
++++ configure	Mon Sep 15 05:07:48 2008
+@@ -1417,9 +1417,11 @@ fi
+ if test "$_flac" = yes ; then
+ 	_def_flac='#define USE_FLAC'
+ 	if test "$_vorbis" = yes ; then
+-		LIBS="$LIBS $FLAC_LIBS $OGG_LIBS -lFLAC -logg"
++		# LIBS="$LIBS $FLAC_LIBS $OGG_LIBS -lFLAC -logg"
++		LIBS="$LIBS `pkg-config --libs flac` -logg"
+ 	else
+-		LIBS="$LIBS $FLAC_LIBS -lFLAC"
++		# LIBS="$LIBS $FLAC_LIBS -lFLAC"
++		LIBS="$LIBS `pkg-config --libs flac`"
+ 	fi
+ 	INCLUDES="$INCLUDES $FLAC_CFLAGS"
+ else
