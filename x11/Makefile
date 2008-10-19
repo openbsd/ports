@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.353 2008/10/16 18:03:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.354 2008/10/19 07:35:32 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -55,6 +55,7 @@
      SUBDIR += fbpanel
      SUBDIR += fleditor
      SUBDIR += fltk
+     SUBDIR += fltk2
      SUBDIR += fluxbox
      SUBDIR += fluxter
      SUBDIR += flvw
