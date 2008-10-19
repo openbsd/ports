@@ -1,0 +1,9 @@
+$OpenBSD: patch-scripts_msmtpq_msmtpq,v 1.1 2008/10/19 20:35:01 jasper Exp $
+--- scripts/msmtpq/msmtpq.orig	Mon Jul 28 00:20:41 2008
++++ scripts/msmtpq/msmtpq	Tue Oct 14 14:18:13 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+ #--------------------------------------------------------------
+ #

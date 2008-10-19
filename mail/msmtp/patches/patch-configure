@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2007/08/28 18:45:34 jasper Exp $
---- configure.orig	Wed Aug  1 11:00:47 2007
-+++ configure	Tue Aug 28 20:26:32 2007
-@@ -903,14 +903,14 @@ localstatedir='${prefix}/var'
+$OpenBSD: patch-configure,v 1.7 2008/10/19 20:35:01 jasper Exp $
+--- configure.orig	Mon Jul 28 00:46:30 2008
++++ configure	Tue Oct 14 13:56:57 2008
+@@ -950,14 +950,14 @@ localstatedir='${prefix}/var'
  includedir='${prefix}/include'
  oldincludedir='/usr/include'
  docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
@@ -18,18 +18,18 @@ $OpenBSD: patch-configure,v 1.6 2007/08/28 18:45:34 jasper Exp $
  
  ac_prev=
  ac_dashdash=
-@@ -20470,7 +20470,7 @@ REPLACE_FTELLO!$REPLACE_FTELLO$ac_delim
- REPLACE_FTELL!$REPLACE_FTELL$ac_delim
- REPLACE_FFLUSH!$REPLACE_FFLUSH$ac_delim
+@@ -21779,7 +21779,7 @@ HAVE_DECL_GETDELIM!$HAVE_DECL_GETDELIM$ac_delim
+ HAVE_DECL_GETLINE!$HAVE_DECL_GETLINE$ac_delim
+ REPLACE_GETLINE!$REPLACE_GETLINE$ac_delim
  GETOPT_H!$GETOPT_H$ac_delim
 -LIBINTL!$LIBINTL$ac_delim
 +LIBINTL!$LTLIBINTL$ac_delim
  LTLIBINTL!$LTLIBINTL$ac_delim
  GNULIB_CHOWN!$GNULIB_CHOWN$ac_delim
  GNULIB_DUP2!$GNULIB_DUP2$ac_delim
-@@ -20586,7 +20586,7 @@ XGETTEXT!$XGETTEXT$ac_delim
- XGETTEXT_015!$XGETTEXT_015$ac_delim
+@@ -21930,7 +21930,7 @@ XGETTEXT_015!$XGETTEXT_015$ac_delim
  MSGMERGE!$MSGMERGE$ac_delim
+ XGETTEXT_EXTRA_OPTIONS!$XGETTEXT_EXTRA_OPTIONS$ac_delim
  INTL_MACOSX_LIBS!$INTL_MACOSX_LIBS$ac_delim
 -LIBICONV!$LIBICONV$ac_delim
 +LIBICONV!$LTLIBICONV$ac_delim

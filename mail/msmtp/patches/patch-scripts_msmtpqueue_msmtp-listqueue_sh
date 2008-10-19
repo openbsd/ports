@@ -1,6 +1,9 @@
---- scripts/msmtpqueue/msmtp-listqueue.sh.orig	Thu Aug  2 15:45:06 2007
-+++ scripts/msmtpqueue/msmtp-listqueue.sh	Thu Aug  2 15:45:00 2007
-@@ -3,6 +3,6 @@
+--- scripts/msmtpqueue/msmtp-listqueue.sh.orig	Mon Jul 28 00:20:57 2008
++++ scripts/msmtpqueue/msmtp-listqueue.sh	Tue Oct 14 14:15:51 2008
+@@ -1,8 +1,8 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
  QUEUEDIR=$HOME/.msmtpqueue
  
  for i in $QUEUEDIR/*.mail; do

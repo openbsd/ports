@@ -1,0 +1,107 @@
+$OpenBSD: patch-scripts_set_sendmail_set_sendmail_sh,v 1.1 2008/10/19 20:35:01 jasper Exp $
+--- scripts/set_sendmail/set_sendmail.sh.orig	Mon Jul 28 00:22:50 2008
++++ scripts/set_sendmail/set_sendmail.sh	Wed Oct 15 03:15:06 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ # Created   : Tue 03 Jul 2007 11:54:53 PM EDT
+ # Modified  : Thu 13 Sep 2007 06:35:56 AM PDT
+ # Author    : Gautam Iyer <gi1242@users.sourceforge.net>
+@@ -13,26 +13,21 @@
+ # Default setting used if the domain name can not be found, or if something goes
+ # wrong.
+ default='/usr/sbin/sendmail -oem -oi'
+-# Script uses bash-3.2. Exit if bash version is lower.
+-if (( BASH_VERSINFO[0] < 3 || BASH_VERSINFO[1] < 2 )); then
+-    echo $default
+-    exit
+-fi
+ 
+ # {{{1 Script Functions
+-function debug()
++function debug
+ {
+     [[ -n $verbose ]] && echo -e "\033[31m$*\033[m" >> /dev/stderr
+ }
+ 
+-function print_usage()
++function print_usage
+ {
+     echo "USAGE:"
+     echo "    set_sendmail.sh [-v] -c config_file"
+     echo "    set_sendmail.sh -h"
+ }
+ 
+-function print_help()
++function print_help
+ {
+     print_usage
+ 
+@@ -67,7 +62,7 @@ EOF
+ }
+ 
+ # Check if a host is reachable
+-function check_host()
++function check_host
+ {
+     debug "Checking for host $1"
+     if [[ $host_pkg == 'bind' ]]; then
+@@ -81,7 +76,7 @@ function check_host()
+ }
+ 
+ # Function to get the domain name (in variable domainname).
+-function get_domainname()
++function get_domainname
+ {
+     debug "Getting domain name"
+ 
+@@ -113,8 +108,8 @@ function get_domainname()
+     # Get ip address
+     #ipaddr=$(/sbin/ifconfig | grep 'inet addr:' | grep -v '127.0.0.1' | \
+     #    	cut -d: -f2 | awk '{ print $1}')
+-    #ipaddr=$(w3m -dump whatismyip.org)
+-    ipaddr=$(wget -qO- http://whatismyip.org)
++    ipaddr=$(lynx -dump whatismyip.org)
++    #ipaddr=$(wget -qO- http://whatismyip.org)
+     debug "Got IP address '$ipaddr'"
+     [[ -z $ipaddr ]] && return
+ 
+@@ -126,7 +121,7 @@ function get_domainname()
+     debug "Got domain name '$domainname'"
+ }
+ 
+-function do_account()
++function do_account
+ {
+     local account=$1
+ 
+@@ -154,14 +149,15 @@ fi
+ source $configFile
+ 
+ # If we can't (or shouldn't) msmtp, then print default and exit
+-if [[ ! $HOSTNAME =~ $run_hosts ]] || ! which msmtp >& /dev/null; then
++if [[ ! $HOSTNAME == $run_hosts ]] || ! which msmtp >& /dev/null; then
+     echo $default
+     exit
+ fi
+ 
+ # See if we can decide on the account based on /etc/resolv.conf
+ debug "Getting account from /etc/resolv.conf"
+-for ((i=0; i<${#accounts[*]}; i++ )); do
++i=-1
++while [ $((++i)) -lt ${#accounts[*]} ]; do
+     if [[ -n ${resolv_regexp[$i]} ]]; then
+ 	regexp=${resolv_regexp[$i]}
+ 	if [[ ${regexp:0:1} != '!' ]]; then
+@@ -178,8 +174,9 @@ get_domainname
+ 
+ # Decide which account to use
+ debug "Getting account from domainname ($domainname)"
+-for ((i=0; i<${#accounts[*]}; i++ )); do
+-    if [[ $domainname =~ ${dom_regexp[$i]} ]]; then
++i=-1
++while [ $((++i)) -lt ${#accounts[*]} ]; do
++    if [[ $domainname == ${dom_regexp[$i]} ]]; then
+ 	do_account ${accounts[$i]}
+     fi
+ done

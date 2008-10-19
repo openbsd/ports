@@ -1,0 +1,9 @@
+$OpenBSD: patch-scripts_msmtpqueue_msmtp-enqueue_sh,v 1.1 2008/10/19 20:35:01 jasper Exp $
+--- scripts/msmtpqueue/msmtp-enqueue.sh.orig	Mon Jul 28 00:20:50 2008
++++ scripts/msmtpqueue/msmtp-enqueue.sh	Tue Oct 14 14:18:49 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+ QUEUEDIR=$HOME/.msmtpqueue
+ 

@@ -1,0 +1,9 @@
+$OpenBSD: patch-scripts_msmtpqueue_msmtp-runqueue_sh,v 1.1 2008/10/19 20:35:01 jasper Exp $
+--- scripts/msmtpqueue/msmtp-runqueue.sh.orig	Mon Jul 28 00:21:43 2008
++++ scripts/msmtpqueue/msmtp-runqueue.sh	Tue Oct 14 14:18:56 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+ QUEUEDIR="$HOME/.msmtpqueue"
+ LOCKFILE="$QUEUEDIR/.lock"
