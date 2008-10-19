@@ -3,4 +3,3 @@ create symbolic links like so (overwriting any previous default):
  ln -sf ${PREFIX}/bin/python2.5 ${PREFIX}/bin/python
  ln -sf ${PREFIX}/bin/python2.5-config ${PREFIX}/bin/python-config
  ln -sf ${PREFIX}/bin/pydoc2.5  ${PREFIX}/bin/pydoc
-
