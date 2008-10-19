@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.mm-main,v 1.1 2006/11/24 20:48:23 steven Exp $
-lib/python2.3/lib-dynload/audioop.so
-lib/python2.3/lib-dynload/dl.so
-lib/python2.3/lib-dynload/imageop.so
-lib/python2.3/lib-dynload/rgbimg.so

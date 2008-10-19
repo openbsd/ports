@@ -1,9 +1,0 @@
-$OpenBSD: patch-Tools_scripts_pydoc,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
---- Tools/scripts/pydoc.orig	Thu Mar  1 01:25:40 2001
-+++ Tools/scripts/pydoc	Sun Jul 20 17:37:33 2003
-@@ -1,4 +1,4 @@
--#!/usr/bin/env python
-+#!/usr/bin/env python2.3
- 
- import pydoc
- pydoc.cli()
