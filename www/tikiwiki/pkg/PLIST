@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/09/24 17:18:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/10/19 07:48:59 ajacoutot Exp $
 tikiwiki/
 tikiwiki/INSTALL
 tikiwiki/README
@@ -57,9 +57,16 @@ tikiwiki/db/tiki-2.0-oci8.sql
 tikiwiki/db/tiki-2.0-pgsql.sql
 tikiwiki/db/tiki-2.0-sqlite.sql
 tikiwiki/db/tiki-2.0-sybase.sql
+tikiwiki/db/tiki-2.2-mysql.sql
+tikiwiki/db/tiki-2.2-mysqli.sql
+tikiwiki/db/tiki-2.2-oci8.sql
+tikiwiki/db/tiki-2.2-pgsql.sql
+tikiwiki/db/tiki-2.2-sqlite.sql
+tikiwiki/db/tiki-2.2-sybase.sql
 tikiwiki/db/tiki-db.php
 tikiwiki/db/tiki-secdb_2.0_mysql.sql
 tikiwiki/db/tiki-secdb_2.1_mysql.sql
+tikiwiki/db/tiki-secdb_2.2_mysql.sql
 tikiwiki/db/tiki.sql
 tikiwiki/db/tiki_1.8to1.9.sql
 tikiwiki/db/tiki_1.9to2.0.sql
@@ -5070,8 +5077,8 @@ tikiwiki/styles/tranquil/cellpic3.gif
 tikiwiki/styles/tranquil/index.php
 tikiwiki/styles/transitions/
 tikiwiki/styles/transitions/1.8to1.9.css
-tikiwiki/styles/transitions/1.8to2.0.css
-tikiwiki/styles/transitions/1.9to2.0.css
+tikiwiki/styles/transitions/1.8to2.2.css
+tikiwiki/styles/transitions/1.9to2.2.css
 tikiwiki/styles/transitions/index.php
 tikiwiki/styles/trollparty.css
 tikiwiki/styles/whitebluegrey.css
@@ -6046,7 +6053,6 @@ tikiwiki/tiki-edit_translation.php
 tikiwiki/tiki-edit_wiki_section.php
 tikiwiki/tiki-editdrawing.php
 tikiwiki/tiki-editpage.php
-tikiwiki/tiki-error.php
 tikiwiki/tiki-error_simple.php
 tikiwiki/tiki-export_sheet.php
 tikiwiki/tiki-export_tracker.php
