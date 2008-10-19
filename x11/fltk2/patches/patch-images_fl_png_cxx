@@ -1,0 +1,12 @@
+$OpenBSD: patch-images_fl_png_cxx,v 1.1.1.1 2008/10/19 07:34:45 ajacoutot Exp $
+--- images/fl_png.cxx.orig	Fri Oct 17 06:15:52 2008
++++ images/fl_png.cxx	Fri Oct 17 06:16:18 2008
+@@ -31,7 +31,7 @@
+ #if HAVE_LIBPNG
+ extern "C"
+ {
+-#ifdef HAVE_LOCAL_PNG_H
++#ifdef HAVE_LIBPNG_PNG_H
+ #  include "libpng/png.h"
+ #else
+ #  include <png.h>

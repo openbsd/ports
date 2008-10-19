@@ -1,0 +1,12 @@
+$OpenBSD: patch-makeinclude_in,v 1.1.1.1 2008/10/19 07:34:45 ajacoutot Exp $
+--- makeinclude.in.orig	Sat Oct 18 10:28:29 2008
++++ makeinclude.in	Sat Oct 18 10:28:44 2008
+@@ -115,7 +115,7 @@ CAT1EXT		= @CAT1EXT@
+ CAT3EXT		= @CAT3EXT@
+ 
+ # Be quiet when building...
+-.SILENT:
++#.SILENT:
+ 
+ # Build commands and filename extensions...
+ .SUFFIXES:	.0 .1 .3 .c .cxx .h .fl .man .o .z $(EXEEXT)

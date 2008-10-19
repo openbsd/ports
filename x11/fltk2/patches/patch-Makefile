@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/10/19 07:34:45 ajacoutot Exp $
+--- Makefile.orig	Fri Oct 17 05:57:47 2008
++++ Makefile	Fri Oct 17 05:57:53 2008
+@@ -25,7 +25,7 @@
+ 
+ include makeinclude
+ 
+-DIRS = src $(LOCALIMAGES) images OpenGL fluid glut test
++DIRS = src $(LOCALIMAGES) images OpenGL fluid glut
+ 
+ all: makeinclude
+ 	for dir in $(DIRS); do\

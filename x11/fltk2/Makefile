@@ -1,0 +1,66 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2008/10/19 07:34:45 ajacoutot Exp $
+
+COMMENT =	fast light toolkit
+
+V=		6403
+DISTNAME =	fltk-2.0.x-r${V}
+PKGNAME =	fltk2-2.0r${V}
+CATEGORIES =	x11
+
+HOMEPAGE =	http://www.fltk.org/
+MASTER_SITES =	http://ftp.easysw.com/pub/fltk/snapshots/ \
+		http://ftp2.easysw.com/pub/fltk/snapshots/
+
+MAINTAINER =	James Turner <james@bsdgroup.org>
+
+# FLTK/GPLv2
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+
+USE_X11 =	Yes
+USE_GMAKE =	Yes
+
+WANTLIB = 	X11 Xext Xft Xi Xinerama Xrender c fontconfig m pthread \
+		stdc++ z
+
+LIB_DEPENDS =	jpeg.>=62::graphics/jpeg \
+		png.>=8::graphics/png
+
+MAKE_FLAGS=	CC=${CC} \
+		CXX=${CXX} \
+		OPTIM="" # empty
+
+CONFIGURE_STYLE =gnu
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+# make sure X overlay is enabled even when there's no running X server
+# at build time
+CONFIGURE_ENV += ac_cv_have_overlay=yes
+
+CONFIGURE_ARGS = --enable-gl \
+		--enable-threads \
+		--enable-jpeg \
+		--enable-zlib \
+		--enable-png \
+		--enable-xft \
+		--enable-xdbe \
+		--enable-xinerama \
+		--disable-cairo \
+		--disable-x11 \
+		--disable-xshm \
+		--disable-shared
+
+# This regression test wants an X11 display
+REGRESS_IS_INTERACTIVE= Yes
+REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+
+do-regress:
+	@cd ${WRKSRC}/test && \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} && \
+		./demo
+
+.include <bsd.port.mk>	
