@@ -1,9 +1,9 @@
 Example config files for Bacula have been installed in
-!!TRUEPREFIX!!/share/examples/bacula and copied also to
-!!BACULACONF!!, edit them to your site's needs.
+${TRUEPREFIX}/share/examples/bacula and copied also to
+${BACULACONF}, edit them to your site's needs.
 
 To start, add the following to /etc/rc.local:
-if [ -x !!TRUEPREFIX!!/libexec/bacula/bacula-ctl-fd ]; then
-  !!TRUEPREFIX!!/libexec/bacula/bacula-ctl-fd start
+if [ -x ${TRUEPREFIX}/libexec/bacula/bacula-ctl-fd ]; then
+  ${TRUEPREFIX}/libexec/bacula/bacula-ctl-fd start
   echo -n ' bacula-fd'
 fi

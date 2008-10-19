@@ -2,21 +2,21 @@ To take advantage of bacula's DVD/CD writing, install cdrtools and
 dvd+rw-tools packages.
 
 Example config files for Bacula have been installed in
-!!TRUEPREFIX!!/share/examples/bacula and copied also to
-!!BACULACONF!!, edit them to your site's needs.
+${TRUEPREFIX}/share/examples/bacula and copied also to
+${BACULACONF}, edit them to your site's needs.
 
 Backend database creation/update scripts are located in
-!!TRUEPREFIX!!/libexec/bacula
+${TRUEPREFIX}/libexec/bacula
 
 To allow the storage daemon user to access tape devices,
-be sure to add !!SD_USER!! to the operator group.
+be sure to add ${SD_USER} to the operator group.
 
 To start, add the following to /etc/rc.local:
-if [ -x !!TRUEPREFIX!!/libexec/bacula/bacula-ctl-sd ]; then
-  !!TRUEPREFIX!!/libexec/bacula/bacula-ctl-sd start
+if [ -x ${TRUEPREFIX}/libexec/bacula/bacula-ctl-sd ]; then
+  ${TRUEPREFIX}/libexec/bacula/bacula-ctl-sd start
   echo -n ' bacula-sd'
 fi
-if [ -x !!TRUEPREFIX!!/libexec/bacula/bacula-ctl-dir ]; then
-  !!TRUEPREFIX!!/libexec/bacula/bacula-ctl-dir start
+if [ -x ${TRUEPREFIX}/libexec/bacula/bacula-ctl-dir ]; then
+  ${TRUEPREFIX}/libexec/bacula/bacula-ctl-dir start
   echo -n ' bacula-dir'
 fi

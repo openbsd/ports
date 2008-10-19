@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_qt-console_main_cpp,v 1.1 2008/02/07 02:53:35 merdely Exp $
+$OpenBSD: patch-src_qt-console_main_cpp,v 1.2 2008/10/19 03:44:42 merdely Exp $
 --- src/qt-console/main.cpp.orig	Mon Oct 22 15:29:07 2007
 +++ src/qt-console/main.cpp	Mon Oct 22 15:29:31 2007
 @@ -46,7 +46,7 @@ void terminate_console(int sig);                      
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_qt-console_main_cpp,v 1.1 2008/02/07 02:53:35 merdely Exp $
  static int check_resources();
  
 -#define CONFIG_FILE "./bat.conf"   /* default configuration file */
-+#define CONFIG_FILE "!!BACULACONF!!/bat.conf"   /* default configuration file */
++#define CONFIG_FILE "${BACULACONF}/bat.conf"   /* default configuration file */
  
  /* Static variables */
  static char *configfile = NULL;

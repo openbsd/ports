@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.3 2008/02/16 21:22:41 merdely Exp $
+@comment $OpenBSD: PLIST-server,v 1.4 2008/10/19 03:44:42 merdely Exp $
 @conflict bacula-<2.2.7
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
@@ -46,19 +46,19 @@ libexec/bacula/update_${BACKEND}_tables
 @man man/man8/btape.8
 @man man/man8/btraceback.8
 @man man/man8/dbcheck.8
-sbin/bacula-dir
-sbin/bacula-sd
-sbin/bconsole
-sbin/bcopy
-sbin/bextract
-sbin/bls
-sbin/bregex
-sbin/bscan
-sbin/bsmtp
-sbin/btape
+@bin sbin/bacula-dir
+@bin sbin/bacula-sd
+@bin sbin/bconsole
+@bin sbin/bcopy
+@bin sbin/bextract
+@bin sbin/bls
+@bin sbin/bregex
+@bin sbin/bscan
+@bin sbin/bsmtp
+@bin sbin/btape
 sbin/btraceback
-sbin/bwild
-sbin/dbcheck
+@bin sbin/bwild
+@bin sbin/dbcheck
 share/doc/bacula/
 share/doc/bacula/README-server.OpenBSD
 share/examples/bacula/

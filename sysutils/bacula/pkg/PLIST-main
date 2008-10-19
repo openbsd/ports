@@ -1,14 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/02/16 21:22:41 merdely Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/10/19 03:44:42 merdely Exp $
 @conflict bacula-client-*
 @conflict bacula-server-<2.2.7
 @pkgpath sysutils/bacula,-client
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
-@newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
 libexec/bacula/
 libexec/bacula/bacula-ctl-fd
 @man man/man8/bacula-fd.8
-sbin/bacula-fd
+@bin sbin/bacula-fd
 share/doc/bacula/
 share/doc/bacula/README-client.OpenBSD
 share/examples/bacula/
