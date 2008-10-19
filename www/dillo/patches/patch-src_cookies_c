@@ -1,28 +1,13 @@
-$OpenBSD: patch-src_cookies_c,v 1.5 2006/09/22 04:13:19 pvalchev Exp $
---- src/cookies.c.orig	Wed Mar 29 10:48:13 2006
-+++ src/cookies.c	Sun Jul  2 18:00:44 2006
-@@ -15,7 +15,6 @@
-  * http://www.cis.ohio-state.edu/cs/Services/rfc/rfc-text/rfc2965.txt
-  */
+$OpenBSD: patch-src_cookies_c,v 1.6 2008/10/19 08:42:55 ajacoutot Exp $
+--- src/cookies.c.orig	Sat Oct 18 11:12:23 2008
++++ src/cookies.c	Sat Oct 18 11:12:44 2008
+@@ -92,6 +92,9 @@ static FILE *Cookies_fopen(const char *filename, char 
  
--#define DEBUG_LEVEL 10
- #include "debug.h"
- 
- 
-@@ -97,13 +96,13 @@ static FILE *Cookies_fopen(const char *f
- 
-          DEBUG_MSG(10, "Cookies: Created file: %s\n", filename);
-          F_in = Cookies_fopen(filename, NULL);
+          MSG("Cookies: Created file: %s\n", filename);
+          F_in = fopen(filename, "r");
 +
-+	 /* set close on exec */
-+	 fcntl(fileno(F_in), F_SETFD, FD_CLOEXEC | fcntl(fileno(F_in), F_GETFD));
++         /* set close on exec */
++         fcntl(fileno(F_in), F_SETFD, FD_CLOEXEC | fcntl(fileno(F_in), F_GETFD));
        } else {
-          DEBUG_MSG(10, "Cookies: Could not create file: %s!\n", filename);
+          MSG("Cookies: Could not create file: %s!\n", filename);
        }
-    }
--
--   /* set close on exec */
--   fcntl(fileno(F_in), F_SETFD, FD_CLOEXEC | fcntl(fileno(F_in), F_GETFD));
- 
-    return F_in;
- }

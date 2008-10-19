@@ -1,25 +1,37 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/09/22 04:13:19 pvalchev Exp $
-bin/dillo
-bin/dpid
+@comment $OpenBSD: PLIST,v 1.9 2008/10/19 08:42:55 ajacoutot Exp $
+@bin bin/dillo
+@bin bin/dpid
 bin/dpidc
 lib/dillo/
 lib/dillo/dpi/
 lib/dillo/dpi/bookmarks/
-lib/dillo/dpi/bookmarks/bookmarks.dpi
+@bin lib/dillo/dpi/bookmarks/bookmarks.dpi
 lib/dillo/dpi/cookies/
-lib/dillo/dpi/cookies/cookies.dpi
+@bin lib/dillo/dpi/cookies/cookies.dpi
 lib/dillo/dpi/datauri/
-lib/dillo/dpi/datauri/datauri.filter.dpi
+@bin lib/dillo/dpi/datauri/datauri.filter.dpi
 lib/dillo/dpi/downloads/
-lib/dillo/dpi/downloads/downloads.dpi
+@bin lib/dillo/dpi/downloads/downloads.dpi
 lib/dillo/dpi/file/
-lib/dillo/dpi/file/file.dpi
+@bin lib/dillo/dpi/file/file.dpi
 lib/dillo/dpi/ftp/
-lib/dillo/dpi/ftp/ftp.filter.dpi
+@bin lib/dillo/dpi/ftp/ftp.filter.dpi
 lib/dillo/dpi/hello/
-lib/dillo/dpi/hello/hello.filter.dpi
+@bin lib/dillo/dpi/hello/hello.filter.dpi
 lib/dillo/dpi/https/
-lib/dillo/dpi/https/https.filter.dpi
+@bin lib/dillo/dpi/https/https.filter.dpi
+share/doc/dillo/
+share/doc/dillo/Cache.txt
+share/doc/dillo/Cookies.txt
+share/doc/dillo/Dillo.txt
+share/doc/dillo/Dpid.txt
+share/doc/dillo/Dw.txt
+share/doc/dillo/HtmlParser.txt
+share/doc/dillo/IO.txt
+share/doc/dillo/Images.txt
+share/doc/dillo/Imgbuf.txt
+share/doc/dillo/NC_design.txt
+share/doc/dillo/Selection.txt
 share/examples/dillo/
 share/examples/dillo/dillorc
 @sample ${SYSCONFDIR}/dillorc

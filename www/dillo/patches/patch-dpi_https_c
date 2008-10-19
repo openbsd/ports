@@ -1,0 +1,11 @@
+$OpenBSD: patch-dpi_https_c,v 1.1 2008/10/19 08:42:55 ajacoutot Exp $
+--- dpi/https.c.orig	Fri Oct 17 07:39:18 2008
++++ dpi/https.c	Fri Oct 17 07:39:29 2008
+@@ -69,7 +69,6 @@
+ 
+ 
+ #define ENABLE_SSL
+-#undef ENABLE_SSL
+ #ifdef ENABLE_SSL
+ 
+ #include <openssl/ssl.h>

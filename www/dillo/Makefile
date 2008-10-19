@@ -1,37 +1,43 @@
-# $OpenBSD: Makefile,v 1.26 2007/09/15 20:38:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.27 2008/10/19 08:42:55 ajacoutot Exp $
 
-COMMENT=		Fast and light gtk-based web browser
+COMMENT=		fast and light graphical web browser
 
-VERSION=		0.8.6
-DISTNAME=		dillo-${VERSION}
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		dillo-2.0
 CATEGORIES=     	www
 
 HOMEPAGE=		http://www.dillo.org/
 
-MAINTAINER=		Jim Uhl <juhl@mala.bc.ca>
+MAINTAINER=		James Turner <james@bsdgroup.org>
 
-# GPL license
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xi c crypto glib gmodule iconv intl m \
-			pthread ssl stdc++ z 
+
+WANTLIB=	X11 Xext Xft Xi Xinerama Xrender c crypto fontconfig m \
+		pthread ssl stdc++ z
+
+MODULES=		converters/libiconv
 
 MASTER_SITES=		${HOMEPAGE}download/
 
 EXTRACT_SUFX=	.tar.bz2
 
+BUILD_DEPENDS=	::x11/fltk2
 LIB_DEPENDS=    jpeg.>=62::graphics/jpeg \
-                png.>=2::graphics/png \
-		gtk.>=1.2,gdk.>=1.2::x11/gtk+
+                png.>=2::graphics/png
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-cookies --enable-ipv6 --disable-dlgui
+CONFIGURE_ARGS=		--enable-ipv6 \
+			--disable-threaded-dns
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dillo
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/dillo
 
 .include <bsd.port.mk>

@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_dns_c,v 1.9 2006/09/22 04:13:19 pvalchev Exp $
---- src/dns.c.orig	Wed Mar 15 09:01:00 2006
-+++ src/dns.c	Tue Jun 20 21:14:46 2006
-@@ -38,7 +38,7 @@
+$OpenBSD: patch-src_dns_c,v 1.10 2008/10/19 08:42:55 ajacoutot Exp $
+--- src/dns.c.orig	Sat Oct  4 20:52:30 2008
++++ src/dns.c	Sat Oct 18 11:14:19 2008
+@@ -34,7 +34,7 @@
  /*
   * Uncomment the following line for debugging or gprof profiling.
   */
 -/* #undef D_DNS_THREADED */
 +#undef D_DNS_THREADED
  
- /*
-  * Uncomment the following line for libc5 optimization
+ 
+ /* Maximum dns resolving threads */
