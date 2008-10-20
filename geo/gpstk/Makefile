@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2008/09/28 10:37:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2008/10/20 20:00:21 sthen Exp $
 
 COMMENT-main=		GPS processing toolkit
 COMMENT-devel=		GPStk development libraries and headers
 
 V=			1.5
 DISTNAME=		gpstk${V}
-PKGNAME-main=		gpstk-${V}p2
-PKGNAME-devel=		gpstk-devel-${V}p2
+PKGNAME-main=		gpstk-${V}p3
+PKGNAME-devel=		gpstk-devel-${V}p3
 CATEGORIES=		geo devel
 SHARED_LIBS=		base 15.0 \
 			geomatics 15.0 \
@@ -39,16 +39,15 @@ CONFIGURE_STYLE=	gnu
 
 NO_REGRESS=		Yes
 VMEM_WARNING=		Yes
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 # way faster than -O0, a bit slower than -O2, but doesn't need 800M to compile
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "mips64"
-CFLAGS+=		-g
-CXXFLAGS+=		-g
-.elif ${MACHINE_ARCH} == "sparc64"
-CFLAGS+=		-O0 -g
-CXXFLAGS+=		-O0 -g
-.else
 CFLAGS+=		-O1 -g
 CXXFLAGS+=		-O1 -g
+.else
+# ...but -O1 is still too much for most build machines, so just use it on the
+# fastest ones.
+CFLAGS+=		-O0 -g
+CXXFLAGS+=		-O0 -g
 .endif
 
 USE_LIBTOOL=		Yes
