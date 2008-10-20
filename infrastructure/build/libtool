@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.20 2008/10/10 20:32:28 steven Exp $
+# $OpenBSD: libtool,v 1.21 2008/10/20 20:16:05 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -109,7 +109,7 @@ $gp->configure(	'no_ignore_case',
 	);
 $gp->getoptions('config' => \&config,
 		'debug' => \$D,
-		'dry-run' => sub { $dry = 1; },
+		'dry-run|n' => sub { $dry = 1; },
 		'features' => \&features,
 		'finish' => sub { $mode = 'finish'; },
 		'help' => \&help, # does not return
