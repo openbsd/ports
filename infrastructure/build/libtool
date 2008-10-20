@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.21 2008/10/20 20:16:05 steven Exp $
+# $OpenBSD: libtool,v 1.22 2008/10/20 20:20:09 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -54,7 +54,7 @@ use constant {
 	PROGRAM	=> 2,
 };
 
-my $version = '1.5.22'; # pretend to be this version of libtool
+my $version = '1.5.26'; # pretend to be this version of libtool
 my @no_shared_archs = qw(m88k vax sh);
 # XXX my $machine_arch = `machine -a`;
 my $machine_arch = 'amd64';
@@ -292,7 +292,7 @@ if ($mode eq 'compile') {
 	while (my ($s, $d) = each %toinstall) {
 		my @realinstopts = @instopts;
 		# do not try to strip .la files
-		if ($s =~ m/\.la$/) {
+		if ($s =~ m/\.la$/ || $d =~ m /\.la$/) {
 			map { $_ = '' if $_ eq '-s' } @realinstopts;
 		}
 		perform("$ltprog @realinstopts $s $d");
