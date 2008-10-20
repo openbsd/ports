@@ -1,6 +1,15 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2005/12/26 19:15:22 sturm Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2008/10/20 20:26:21 steven Exp $
 --- Makefile.in.orig	Tue Oct  8 18:09:12 2002
-+++ Makefile.in	Mon Dec 26 20:04:36 2005
++++ Makefile.in	Mon Oct 20 22:24:03 2008
+@@ -8,7 +8,7 @@ CC = @CC@
+ LIBTOOL = @LIBTOOL@
+ 
+ # GDBM 1.8.3 builds shared libraries version 3.0
+-SHLIB_VER = 3 0 0
++SHLIB_VER = 3:0:0
+ 
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
 @@ -24,7 +24,7 @@ TEXI2DVI = texi2dvi
  DEFS =
  
@@ -10,7 +19,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2005/12/26 19:15:22 sturm Exp $
  
  CFLAGS = @CFLAGS@
  LDFLAGS = @LDFLAGS@
-@@ -122,7 +122,7 @@ MSCFILES = COPYING ChangeLog Makefile.in
+@@ -122,7 +122,7 @@ MSCFILES = COPYING ChangeLog Makefile.in README gdbm.3
  
  DISTFILES = $(SRCS) $(HDRS) $(MSCFILES)
  
