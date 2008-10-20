@@ -1,13 +1,13 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2007/12/20 22:54:28 kili Exp $
-lib/gimp/2.0/modules/libcdisplay_colorblind.so
-lib/gimp/2.0/modules/libcdisplay_gamma.so
-lib/gimp/2.0/modules/libcdisplay_highcontrast.so
-lib/gimp/2.0/modules/libcdisplay_lcms.so
-lib/gimp/2.0/modules/libcdisplay_proof.so
-lib/gimp/2.0/modules/libcolorsel_cmyk.so
-lib/gimp/2.0/modules/libcolorsel_triangle.so
-lib/gimp/2.0/modules/libcolorsel_water.so
-lib/gimp/2.0/modules/libcontroller_midi.so
+@comment $OpenBSD: PFRAG.shared,v 1.8 2008/10/20 21:38:18 kili Exp $
+lib/gimp/2.0/modules/libcolor-selector-cmyk.so
+lib/gimp/2.0/modules/libcolor-selector-water.so
+lib/gimp/2.0/modules/libcolor-selector-wheel.so
+lib/gimp/2.0/modules/libcontroller-midi.so
+lib/gimp/2.0/modules/libdisplay-filter-color-blind.so
+lib/gimp/2.0/modules/libdisplay-filter-gamma.so
+lib/gimp/2.0/modules/libdisplay-filter-high-contrast.so
+lib/gimp/2.0/modules/libdisplay-filter-lcms.so
+lib/gimp/2.0/modules/libdisplay-filter-proof.so
 @lib lib/libgimp-2.0.so.${LIBgimp-2.0_VERSION}
 @lib lib/libgimpbase-2.0.so.${LIBgimpbase-2.0_VERSION}
 @lib lib/libgimpcolor-2.0.so.${LIBgimpcolor-2.0_VERSION}

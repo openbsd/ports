@@ -1,32 +1,16 @@
-$OpenBSD: patch-configure_in,v 1.5 2008/06/15 17:08:01 okan Exp $
---- configure.in.orig	Fri May 23 05:41:20 2008
-+++ configure.in	Fri Jun 13 22:05:04 2008
-@@ -1103,10 +1103,10 @@ AC_ARG_WITH(libmng,  [  --without-libmng        build 
-   if test "x$with_libmng" != xno && test -z "$LIBMNG" &&
-      test -n "$LIBPNG" && test -n "$LIBJPEG" && test -n "$LIBZ"; then
-     AC_CHECK_LIB(mng, mng_create,
--      [AC_CHECK_HEADER(libmng.h, mng_ok=yes)],
--      [have_libmng="no (MNG library not found)"], -lz -lm)
-+      [AC_CHECK_HEADER(libmng.h, mng_ok=yes, $LIBJPEG -lz -lm -llcms)],
-+      [have_libmng="no (MNG library not found)"], $LIBJPEG -lz -lm -llcms)
-     if test "$mng_ok" = yes; then
--      MNG='mng$(EXEEXT)'; LIBMNG="-lmng $LIBJPEG $LIBPNG"
-+      MNG='mng$(EXEEXT)'; LIBMNG="-lmng $LIBJPEG $LIBPNG -llcms"
-     else
-       have_libmng="no (MNG header file not found)"
-     fi
-@@ -1375,11 +1375,11 @@ if test "x$with_lcms" != xno; then
-         have_lcms=yes
-         AC_DEFINE(HAVE_LCMS_LCMS_H, 1,
-           [Define to 1 if the lcms header must be included as lcms/lcms.h]))
--      ])
--  ])
-+      ], ,-lm)
-+  ], ,-lm)
-   if test "x$have_lcms" = xyes; then
-     AC_DEFINE(HAVE_LCMS, 1, [Define to 1 if lcms is available])
--    LIBLCMS="-llcms"
-+    LIBLCMS="-lm -llcms"
-     LCMS='lcms$(EXEEXT)'
+$OpenBSD: patch-configure_in,v 1.6 2008/10/20 21:38:18 kili Exp $
+--- configure.in.orig	Mon Sep 29 19:23:02 2008
++++ configure.in	Thu Oct  2 19:51:05 2008
+@@ -1146,10 +1146,10 @@ if test "x$with_libmng" != xno && test -z "$MNG_LIBS" 
+    test -n "$PNG_LIBS" && test -n "$JPEG_LIBS" && test -n "$Z_LIBS"; then
+   AC_CHECK_LIB(mng, mng_create,
+     [AC_CHECK_HEADER(libmng.h, mng_ok=yes)],
+-    [have_libmng="no (MNG library not found)"], -lz -lm)
++    [have_libmng="no (MNG library not found)"], -lz -lm -llcms -ljpeg )
+   if test "$mng_ok" = yes; then
+     have_libmng=yes
+-    FILE_MNG='file-mng$(EXEEXT)'; MNG_LIBS="-lmng $JPEG_LIBS $PNG_LIBS"
++    FILE_MNG='file-mng$(EXEEXT)'; MNG_LIBS="-lmng -llcms $JPEG_LIBS $PNG_LIBS"
    else
-     have_lcms="no (lcms not found or unusable)"
+     have_libmng="no (MNG header file not found)"
+   fi
