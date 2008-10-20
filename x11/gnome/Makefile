@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2008/10/17 07:16:57 robert Exp $
+# $OpenBSD: Makefile,v 1.72 2008/10/20 06:47:49 sturm Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -59,6 +59,7 @@
      SUBDIR += menus
      SUBDIR += metacity
      SUBDIR += mime-data
+     SUBDIR += mono-gnome
      SUBDIR += nautilus
      SUBDIR += orca
      SUBDIR += panel
