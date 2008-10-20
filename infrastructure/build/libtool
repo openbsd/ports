@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.22 2008/10/20 20:20:09 steven Exp $
+# $OpenBSD: libtool,v 1.23 2008/10/20 21:00:30 steven Exp $
 
 # Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
 #
@@ -797,8 +797,11 @@ sub parse_linkargs
 						next;
 					} else {
 						my $libpath = find_lib($key, @libsearchdirs);
+						if (!$libpath) {
+							die "library $key could not be found.\n";
+						}
 						# avoid searching again later
-						$libs{$key} = $libpath if ($libpath);
+						$libs{$key} = $libpath;
 						my @deps = inspect_lib($libpath);
 						# push @deplibs, @deps;
 						foreach my $d (@deps) {
