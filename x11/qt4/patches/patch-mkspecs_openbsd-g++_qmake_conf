@@ -1,6 +1,6 @@
-$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.4 2007/03/17 17:58:17 espie Exp $
---- mkspecs/openbsd-g++/qmake.conf.orig	Wed Feb 21 10:59:18 2007
-+++ mkspecs/openbsd-g++/qmake.conf	Sat Mar 17 10:47:27 2007
+$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.5 2008/10/21 22:20:00 espie Exp $
+--- mkspecs/openbsd-g++/qmake.conf.orig	Mon Apr 28 15:11:14 2008
++++ mkspecs/openbsd-g++/qmake.conf	Tue May  6 21:08:12 2008
 @@ -7,12 +7,13 @@ TEMPLATE		= app
  CONFIG			+= qt warn_on release link_prl
  QT			+= core gui
@@ -34,13 +34,5 @@ $OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.4 2007/03/17 17:58:17 espie E
 -QMAKE_LFLAGS_SONAME	= -Wl,-soname,
 +QMAKE_LFLAGS_SONAME	= 
  QMAKE_LFLAGS_THREAD	= -pthread
+ QMAKE_LFLAGS_NOUNDEF	= -Wl,-no_unresolved
  
- QMAKE_LIBS		=
-@@ -80,5 +81,6 @@ QMAKE_DEL_FILE		= rm -f
- QMAKE_DEL_DIR		= rmdir
- QMAKE_CHK_DIR_EXISTS	= test -d
- QMAKE_MKDIR		= mkdir -p
--include(../common/unix.conf)
-+QMAKE_SEPARATE_DEBUG_INFO=
-+QMAKE_INSTALL_SEPARATE_DEBUG_INGO=
- load(qt_config)

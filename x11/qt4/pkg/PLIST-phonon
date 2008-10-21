@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-phonon,v 1.1 2008/10/21 22:20:00 espie Exp $
+bin/qtconfig4
+@bin lib/qt4/bin/qtconfig
+lib/qt4/libphonon.la
+lib/qt4/libphonon.prl
+%%SHARED%%

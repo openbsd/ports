@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_tests_unix_odbc_odbc_pro,v 1.1 2005/12/31 15:59:50 espie Exp $
---- config.tests/unix/odbc/odbc.pro.orig	Thu Dec 29 15:14:12 2005
-+++ config.tests/unix/odbc/odbc.pro	Thu Dec 29 15:14:17 2005
+$OpenBSD: patch-config_tests_unix_odbc_odbc_pro,v 1.2 2008/10/21 22:20:00 espie Exp $
+--- config.tests/unix/odbc/odbc.pro.orig	Wed Apr  2 18:29:20 2008
++++ config.tests/unix/odbc/odbc.pro	Thu Apr  3 21:43:37 2008
 @@ -1,4 +1,4 @@
  SOURCES = odbc.cpp
  CONFIG -= qt dylib
- CONFIG -= app_bundle
+ mac:CONFIG -= app_bundle
 -LIBS += -lodbc
 +LIBS += -liodbc
