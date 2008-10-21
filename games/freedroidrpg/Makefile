@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/03 14:33:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/21 17:07:45 ajacoutot Exp $
 
 COMMENT=	isometric RPG game
 
 DISTNAME=	freedroidrpg-0.11
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -25,7 +26,8 @@ MODULES=	devel/gettext
 USE_X11=	Yes
 
 LIB_DEPENDS=	SDL_image.>=2::devel/sdl-image \
-		SDL_mixer.>=3::devel/sdl-mixer
+		SDL_mixer.>=3::devel/sdl-mixer \
+		execinfo::devel/libexecinfo
 
 .if ${MACHINE_ARCH} == "sparc64"
 BROKEN=		SIGBUS on startup under sparc64
@@ -44,8 +46,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		am_cv_prog_tar_ustar=plaintar
 CONFIGURE_ARGS=	--with-x \
 		--enable-opengl \
-		--enable-editors \
-		--disable-backtrace # needs libexecinfo
+		--enable-editors
 
 post-install:
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/freedroidrpg
