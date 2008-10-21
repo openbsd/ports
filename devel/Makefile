@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.637 2008/10/18 10:51:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.638 2008/10/21 17:06:23 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -141,6 +141,7 @@
      SUBDIR += libdvdplay
      SUBDIR += libdvdread
      SUBDIR += libelf
+     SUBDIR += libexecinfo
      SUBDIR += libfmt
      SUBDIR += libglade
      SUBDIR += libglade2
