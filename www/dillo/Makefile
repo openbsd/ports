@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2008/10/19 08:42:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2008/10/21 07:14:20 ajacoutot Exp $
 
 COMMENT=		fast and light graphical web browser
 
 DISTNAME=		dillo-2.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	www
 
 HOMEPAGE=		http://www.dillo.org/
