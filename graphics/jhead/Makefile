@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.9 2008/04/24 19:36:14 okan Exp $
+# $OpenBSD: Makefile,v 1.10 2008/10/21 23:47:52 okan Exp $
 
-COMMENT=	Exif Jpeg camera setting parser and thumbnail remover
+COMMENT=	Exif jpeg camera setting parser and thumbnail remover
 
-DISTNAME=	jhead-2.82
+DISTNAME=	jhead-2.84
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sentex.net/~mwandel/jhead/
+MASTER_SITES=	${HOMEPAGE}
+
+MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # public domain
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m
 
-MASTER_SITES=	${HOMEPAGE}
+WANTLIB=	c m
 
 NO_REGRESS=	Yes
 

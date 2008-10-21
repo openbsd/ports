@@ -1,23 +1,27 @@
-$OpenBSD: patch-gpsinfo_c,v 1.2 2008/04/24 19:36:14 okan Exp $
---- gpsinfo.c.orig	Thu Apr  3 10:52:21 2008
-+++ gpsinfo.c	Thu Apr 24 09:13:11 2008
-@@ -146,7 +146,8 @@ void ProcessGpsInfo(unsigned char * DirStart, int Byte
+$OpenBSD: patch-gpsinfo_c,v 1.3 2008/10/21 23:47:52 okan Exp $
+--- gpsinfo.c.orig	Sat Oct  4 12:10:35 2008
++++ gpsinfo.c	Tue Oct 21 11:53:21 2008
+@@ -144,9 +144,10 @@ void ProcessGpsInfo(unsigned char * DirStart, int Byte
+                     FmtString[3+a*7] = (char)('0'+digits);
  
                      Values[a] = ConvertAnyFormat(ValuePtr+a*ComponentSize, Format);
-                 }
+-                }
++                }
+ 
 -                sprintf(TempString, FmtString, Values[0], Values[1], Values[2]);
 +                snprintf(TempString, sizeof(TempString),
-+		    FmtString, Values[0], Values[1], Values[2]);
++                    FmtString, Values[0], Values[1], Values[2]);
  
                  if (Tag == TAG_GPS_LAT){
                      strncpy(ImageInfo.GpsLat+2, TempString, 29);
-@@ -160,7 +161,8 @@ void ProcessGpsInfo(unsigned char * DirStart, int Byte
+@@ -160,8 +161,8 @@ void ProcessGpsInfo(unsigned char * DirStart, int Byte
                  break;
  
              case TAG_GPS_ALT:
--                sprintf(ImageInfo.GpsAlt + 1, "%dm", Get32s(ValuePtr));
+-                sprintf(ImageInfo.GpsAlt + 1, "%.2fm", 
+-                    ConvertAnyFormat(ValuePtr, Format));
 +                snprintf(ImageInfo.GpsAlt + 1, sizeof(ImageInfo.GpsAlt) + 1,
-+		    "%dm", Get32s(ValuePtr));
++                    "%dm", Get32s(ValuePtr));
                  break;
          }
  
