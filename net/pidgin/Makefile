@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2008/10/18 00:38:54 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2008/10/21 21:40:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,8 +35,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 MODULES=	devel/gettext textproc/intltool
 
 BUILD_DEPENDS=	:gconf2-*:devel/gconf2 \
-		:dbus-python-*:x11/dbus-python \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser
+		:dbus-python-*:x11/dbus-python
 RUN_DEPENDS+=	:gconf2-*:devel/gconf2 \
 		:dbus-python-*:x11/dbus-python \
 		:py-gtk2-*:x11/py-gtk2 \
