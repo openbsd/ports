@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/11/02 22:40:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/10/21 23:28:14 okan Exp $
 @newgroup _mdefang:570
 @newuser _mdefang:570:_mdefang:daemon:MIMEDefang:/nonexistent:/sbin/nologin
-bin/md-mx-ctrl
-bin/mimedefang
-bin/mimedefang-multiplexor
+@bin bin/md-mx-ctrl
+@bin bin/mimedefang
+@bin bin/mimedefang-multiplexor
 bin/mimedefang.pl
 bin/watch-mimedefang
 bin/watch-multiple-mimedefangs.tcl
