@@ -1,6 +1,6 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.2 2008/10/01 19:48:46 steven Exp $
---- unix/Makefile.in.orig	Thu Aug 14 13:31:55 2008
-+++ unix/Makefile.in	Thu Sep 11 22:16:09 2008
+$OpenBSD: patch-unix_Makefile_in,v 1.3 2008/10/21 21:34:41 steven Exp $
+--- unix/Makefile.in.orig	Tue Oct 14 21:44:45 2008
++++ unix/Makefile.in	Tue Oct 21 23:26:45 2008
 @@ -92,6 +92,9 @@ HTML_DIR		= @HTML_DIR@
  # Directory in which to install html documentation:
  HTML_INSTALL_DIR	= $(INSTALL_ROOT)$(HTML_DIR)
@@ -70,7 +70,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2008/10/01 19:48:46 steven Exp $
  	@if test "x$(TK_SHARED_BUILD)" = "x1"; then \
  	    echo "Creating package index $(PKG_INDEX)"; \
  	    rm -f "$(PKG_INDEX)"; \
-@@ -710,19 +711,20 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+@@ -709,19 +710,20 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
  	    echo "package ifneeded Tk $(MAJOR_VERSION).$(MINOR_VERSION)$(PATCH_LEVEL)\
  		[list load [file join \$$dir $${relative}$(TK_LIB_FILE)] Tk]";\
  	    ) > "$(PKG_INDEX)"; \
@@ -94,7 +94,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2008/10/01 19:48:46 steven Exp $
  	@if test "$(STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    @INSTALL_STUB_LIB@ ; \
-@@ -733,24 +735,35 @@ install-libraries: libraries
+@@ -732,24 +734,35 @@ install-libraries: libraries
  	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \
  	    XLIB_INCLUDE_INSTALL_DIR="$(INCLUDE_INSTALL_DIR)"/X11; fi; \
  	for i in "$(INCLUDE_INSTALL_DIR)" "$${XLIB_INCLUDE_INSTALL_DIR}" \
@@ -135,7 +135,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2008/10/01 19:48:46 steven Exp $
  	@list='$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)'; for i in $$list ; \
  	    do \
  	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"/X11; \
-@@ -784,34 +797,33 @@ install-libraries: libraries
+@@ -783,34 +796,33 @@ install-libraries: libraries
  	    done;
  
  install-demos:
@@ -178,7 +178,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2008/10/01 19:48:46 steven Exp $
  		fi; \
  	    done;
  
-@@ -823,8 +835,7 @@ install-doc:
+@@ -822,8 +834,7 @@ install-doc:
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \

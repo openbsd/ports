@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/01 19:48:46 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/21 21:34:41 steven Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
-V =			8.5.4
+V =			8.5.5
 DISTNAME =		tk${V}
 PKGNAME =		tk-${V}
 
-SHARED_LIBS =		tk85 0.1
+SHARED_LIBS =		tk85 0.2
 
 CATEGORIES =		x11 x11/tk
 

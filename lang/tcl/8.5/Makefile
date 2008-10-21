@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/01 19:47:40 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/21 21:34:14 steven Exp $
 
 COMMENT =		Tool Command Language
 
-V =			8.5.4
+V =			8.5.5
 DISTNAME =		tcl${V}
 PKGNAME =		tcl-${V}
 
-SHARED_LIBS =		tcl85 0.1
+SHARED_LIBS =		tcl85 0.2
 
 CATEGORIES =		lang lang/tcl
 
