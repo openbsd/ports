@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/02 06:43:46 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/21 21:49:46 steven Exp $
 bin/tcltutor
 lib/tcltutor/
 lib/tcltutor/NOTICE
@@ -50,6 +50,10 @@ share/doc/tcltutor/Tcl_English/Tcl_English40.lsn
 share/doc/tcltutor/Tcl_English/Tcl_English41.lsn
 share/doc/tcltutor/Tcl_English/Tcl_English42.lsn
 share/doc/tcltutor/Tcl_English/Tcl_English43.lsn
+share/doc/tcltutor/Tcl_English/Tcl_English44.lsn
+share/doc/tcltutor/Tcl_English/Tcl_English45.lsn
+share/doc/tcltutor/Tcl_English/Tcl_English46.lsn
+share/doc/tcltutor/Tcl_English/Tcl_English47.lsn
 share/doc/tcltutor/Tcl_English/Tcl_English5.lsn
 share/doc/tcltutor/Tcl_English/Tcl_English6.lsn
 share/doc/tcltutor/Tcl_English/Tcl_English7.lsn

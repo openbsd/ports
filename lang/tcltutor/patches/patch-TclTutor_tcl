@@ -1,12 +1,12 @@
-$OpenBSD: patch-TclTutor_tcl,v 1.1.1.1 2008/05/02 06:43:46 steven Exp $
---- TclTutor.tcl.orig	Wed Apr 30 20:40:43 2008
-+++ TclTutor.tcl	Wed Apr 30 22:37:54 2008
+$OpenBSD: patch-TclTutor_tcl,v 1.2 2008/10/21 21:49:46 steven Exp $
+--- TclTutor.tcl.orig	Sat Aug  2 05:04:40 2008
++++ TclTutor.tcl	Tue Oct 21 23:46:14 2008
 @@ -1,8 +1,8 @@
 -package provide app-tcltutor 1.0
  #!/bin/sh 
  # \
 -exec wish "$0" "$@"
-+exec wish8.5 "$0" "$@"
++exec ${MODTK_BIN} "$0" "$@"
  
 +package provide app-tcltutor 1.0
  package require Tk
@@ -18,8 +18,8 @@ $OpenBSD: patch-TclTutor_tcl,v 1.1.1.1 2008/05/02 06:43:46 steven Exp $
        "unix"	{
 -            set Tutor(sourceHome) [file dirname $argv0]
 -            set Tutor(lessonHome) [file dirname $argv0]/lesson
-+            set Tutor(sourceHome) !!TT_LIB_DIR!!
-+            set Tutor(lessonHome) !!TT_LSN_DIR!!
++            set Tutor(sourceHome) ${TT_LIB_DIR}
++            set Tutor(lessonHome) ${TT_LSN_DIR}
  	    set Tutor(rcHome) $env(HOME)
              set Tutor(rcfile) [file join $Tutor(rcHome) .tcltutorrc]
              set Tutor(logFileName) [file join $Tutor(rcHome) .tcltutoract]
@@ -49,7 +49,7 @@ $OpenBSD: patch-TclTutor_tcl,v 1.1.1.1 2008/05/02 06:43:46 steven Exp $
          if {$Tutor(logUsage)} {
             $mbf.file add command -label "Disable activity log" -command {set Tutor(logUsage) 0}
           } else {
-@@ -1130,6 +1129,7 @@ proc SetFontSize {} {
+@@ -1134,6 +1133,7 @@ proc SetFontSize {} {
  proc logUsage {str} {
      global Tutor
      
@@ -57,7 +57,7 @@ $OpenBSD: patch-TclTutor_tcl,v 1.1.1.1 2008/05/02 06:43:46 steven Exp $
      if {$Tutor(logUsage) == 0} {return}
  
      if {[string match $Tutor(logFile) ""]} {
-@@ -1156,6 +1156,7 @@ proc logUsage {str} {
+@@ -1160,6 +1160,7 @@ proc logUsage {str} {
  # 
  proc mailLog {} {
    global Tutor tcl_platform
