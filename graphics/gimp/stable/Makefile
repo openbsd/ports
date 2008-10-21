@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2008/10/20 21:38:18 kili Exp $
+# $OpenBSD: Makefile,v 1.39 2008/10/21 19:53:17 kili Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME=	gimp-2.6.0
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	gimp-2.0	260.0	\
 		gimpbase-2.0	260.0	\
 		gimpcolor-2.0	260.0	\
@@ -29,7 +30,6 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		dbus-glib-1::x11/dbus-glib \
 		exif::graphics/libexif \
 		mng::graphics/libmng \
-		::graphics/gegl \
 		tiff.>=35::graphics/tiff \
 		wmf.>=6,wmflite.>=6::graphics/libwmf \
 		poppler.>=3,poppler-glib.>=3::print/poppler \
