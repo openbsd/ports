@@ -1,20 +1,41 @@
-$OpenBSD: patch-texk_tex4htk_Makefile_in,v 1.1.1.1 2007/07/17 21:53:31 jasper Exp $
---- texk/tex4htk/Makefile.in.orig	Sat Apr 21 18:32:35 2007
-+++ texk/tex4htk/Makefile.in	Sat Apr 21 18:33:47 2007
-@@ -29,12 +29,12 @@ install: install-exec install-data
+$OpenBSD: patch-texk_tex4htk_Makefile_in,v 1.2 2008/10/21 20:57:57 steven Exp $
+--- texk/tex4htk/Makefile.in.orig	Wed Aug 27 12:43:01 2008
++++ texk/tex4htk/Makefile.in	Wed Aug 27 12:45:10 2008
+@@ -30,21 +30,28 @@ install: install-exec install-data
  uninstall: uninstall-exec uninstall-data
  
  install-exec: all
 -	$(SHELL) $(top_srcdir)/../mkinstalldirs $(bindir)
 -	for p in $(programs); do $(INSTALL_LIBTOOL_PROG) $$p $(bindir); done
--	for p in $(scripts); do $(INSTALL_SCRIPT) $(srcdir)/$$p $(bindir)/$$p; done
-+	$(SHELL) $(top_srcdir)/../mkinstalldirs ${DESTDIR}$(bindir)
-+	for p in $(programs); do $(INSTALL_LIBTOOL_PROG) $$p ${DESTDIR}$(bindir); done
-+	for p in $(scripts); do $(INSTALL_SCRIPT) $(srcdir)/$$p ${DESTDIR}$(bindir)/$$p; done
+-	$(INSTALL) -d "$(prefix)/texmf-dist/scripts/tex4ht"
+-	for p in $(shell_scripts); do $(INSTALL_SCRIPT) $(srcdir)/$$p "$(prefix)/texmf-dist/scripts/tex4ht/$$p.sh"; done
+-	for p in $(perl_scripts); do $(INSTALL_SCRIPT) $(srcdir)/$$p "$(prefix)/texmf-dist/scripts/tex4ht/$$p.pl"; done
+-	if test -d "$(bindir)/../../texmf-dist/scripts/tex4ht"; then \
++	$(SHELL) $(top_srcdir)/../mkinstalldirs $(DESTDIR)/$(bindir)
++	for p in $(programs); do $(INSTALL_LIBTOOL_PROG) $$p \
++	  $(DESTDIR)/$(bindir); done
++	$(INSTALL) -d "$(DESTDIR)/$(prefix)/texmf-dist/scripts/tex4ht"
++	for p in $(shell_scripts); do $(INSTALL_SCRIPT) $(srcdir)/$$p \
++	  "$(DESTDIR)/$(prefix)/texmf-dist/scripts/tex4ht/$$p.sh"; done
++	for p in $(perl_scripts); do $(INSTALL_SCRIPT) $(srcdir)/$$p \
++	  "$(DESTDIR)/$(prefix)/texmf-dist/scripts/tex4ht/$$p.pl"; done
++	if test -d "$(DESTDIR)/$(bindir)/../../texmf-dist/scripts/tex4ht"; \
++	  then \
+ 	  d=../../texmf-dist/scripts/tex4ht; \
+-	elif test -d "$(bindir)/../texmf-dist/scripts/tex4ht"; then \
++	elif test -d "$(DESTDIR)/$(bindir)/../texmf-dist/scripts/tex4ht"; \
++	  then \
+ 	  d=../texmf-dist/scripts/tex4ht; \
+ 	else \
+ 	  echo "Error: texmf-dist/scripts/tex4ht directory not found" >&2; \
+ 	  exit 1; \
+ 	fi; \
+-	for p in $(shell_scripts); do rm -f $(bindir)/$$p; ln -s $$d/$$p.sh $(bindir)/$$p; done; \
+-	for p in $(perl_scripts); do rm -f $(bindir)/$$p; ln -s $$d/$$p.pl $(bindir)/$$p; done
++	for p in $(shell_scripts); do rm -f $(DESTDIR)/$(bindir)/$$p; \
++ 	  ln -s $$d/$$p.sh $(DESTDIR)/$(bindir)/$$p; done; \
++	for p in $(perl_scripts); do rm -f $(DESTDIR)/$(bindir)/$$p; \
++	  ln -s $$d/$$p.pl $(DESTDIR)/$(bindir)/$$p; done
  
  uninstall-exec:
--	for p in $(programs) $(scripts); do rm -f $(bindir)/$$p; done
-+	for p in $(programs) $(scripts); do rm -f ${DESTDIR}$(bindir)/$$p; done
- 
- install-data:
- 
+ 	for p in $(programs) $(scripts); do rm -f $(bindir)/$$p; done

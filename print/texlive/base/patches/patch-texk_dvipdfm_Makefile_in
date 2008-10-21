@@ -1,40 +1,35 @@
-$OpenBSD: patch-texk_dvipdfm_Makefile_in,v 1.1.1.1 2007/07/17 21:53:30 jasper Exp $
---- texk/dvipdfm/Makefile.in.orig	Sat Apr 21 17:45:31 2007
-+++ texk/dvipdfm/Makefile.in	Sat Apr 21 17:46:16 2007
-@@ -49,24 +49,24 @@ distclean::
+$OpenBSD: patch-texk_dvipdfm_Makefile_in,v 1.2 2008/10/21 20:57:57 steven Exp $
+--- texk/dvipdfm/Makefile.in.orig	Mon Aug 25 16:07:56 2008
++++ texk/dvipdfm/Makefile.in	Mon Aug 25 16:09:41 2008
+@@ -51,21 +51,24 @@ distclean::
  	$(RM) config.h
  
  install-exec:
 -	$(SHELL) $(top_srcdir)/../mkinstalldirs $(bindir)
 -	$(INSTALL_LIBTOOL_PROG) $(program) $(bindir)
--	$(INSTALL_LIBTOOL_PROG) ebb $(bindir)
++	$(SHELL) $(top_srcdir)/../mkinstalldirs $(DESTDIR)/$(bindir)
++	$(INSTALL_LIBTOOL_PROG) $(program) $(DESTDIR)/$(bindir)
+ # don't install ebb; we use the compatible version in dvipdfmx.
+ # but i guess we may as well keep building it for now. --karl, 23may08.
+ #	$(INSTALL_LIBTOOL_PROG) ebb $(bindir)
 -	$(INSTALL_SCRIPT) $(srcdir)/dvipdft $(bindir)
-+	$(SHELL) $(top_srcdir)/../mkinstalldirs ${DESTDIR}$(bindir)
-+	$(INSTALL_LIBTOOL_PROG) $(program) ${DESTDIR}$(bindir)
-+	$(INSTALL_LIBTOOL_PROG) ebb ${DESTDIR}$(bindir)
-+	$(INSTALL_SCRIPT) $(srcdir)/dvipdft ${DESTDIR}$(bindir)
++	$(INSTALL_SCRIPT) $(srcdir)/dvipdft $(DESTDIR)/$(bindir)
  
  uninstall-exec:
--	cd $(bindir); rm -f $(programs)
-+	cd ${DESTDIR}$(bindir); rm -f $(programs)
+ 	cd $(bindir); rm -f $(programs)
  
  install-data:
 -	$(SHELL) $(top_srcdir)/../mkinstalldirs $(man1dir)
 -	$(INSTALL_DATA) $(srcdir)/$(program).1 $(man1dir)/$(program).$(manext)
 -	$(INSTALL_DATA) $(srcdir)/dvipdft.1 $(man1dir)/dvipdft.$(manext)
 -	$(INSTALL_DATA) $(srcdir)/ebb.1 $(man1dir)/ebb.$(manext)
-+	$(SHELL) $(top_srcdir)/../mkinstalldirs ${DESTDIR}$(man1dir)
-+	$(INSTALL_DATA) $(srcdir)/$(program).1 ${DESTDIR}$(man1dir)/$(program).$(manext)
-+	$(INSTALL_DATA) $(srcdir)/dvipdft.1 ${DESTDIR}$(man1dir)/dvipdft.$(manext)
-+	$(INSTALL_DATA) $(srcdir)/ebb.1 ${DESTDIR}$(man1dir)/ebb.$(manext)
++	$(SHELL) $(top_srcdir)/../mkinstalldirs $(DESTDIR)/$(man1dir)
++	$(INSTALL_DATA) $(srcdir)/$(program).1 \
++	  $(DESTDIR)/$(man1dir)/$(program).$(manext)
++	$(INSTALL_DATA) $(srcdir)/dvipdft.1 \
++	  $(DESTDIR)/$(man1dir)/dvipdft.$(manext)
++	$(INSTALL_DATA) $(srcdir)/ebb.1 \
++	  $(DESTDIR)/$(man1dir)/ebb.$(manext)
  
  uninstall-data:
--	rm -f $(man1dir)/dvilj.$(manext)
--	rm -f $(man1dir)/dvipdft.$(manext)
--	rm -f $(man1dir)/ebb.$(manext)
-+	rm -f ${DESTDIR}$(man1dir)/dvilj.$(manext)
-+	rm -f ${DESTDIR}$(man1dir)/dvipdft.$(manext)
-+	rm -f ${DESTDIR}$(man1dir)/ebb.$(manext)
- 
- kpse_include ../make/config.mk
- 
+ 	rm -f $(man1dir)/dvilj.$(manext)

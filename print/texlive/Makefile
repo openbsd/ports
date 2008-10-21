@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/07 08:25:18 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/21 20:57:57 steven Exp $
 
 SUBDIR += base
-SUBDIR += texmf-docs
-SUBDIR += texmf-full
-SUBDIR += texmf-minimal
+SUBDIR += texmf
 
 .include <bsd.port.subdir.mk>

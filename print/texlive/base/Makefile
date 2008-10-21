@@ -1,41 +1,44 @@
-# $OpenBSD: Makefile,v 1.10 2008/06/30 21:38:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2008/10/21 20:57:57 steven Exp $
 
-COMMENT=		base TeXLive LaTeX distribution
+COMMENT =		base binaries for TeXLive typesetting distribution
 
-V=			2007
-DISTNAME=		texlive_base-${V}-src
-PKGNAME=		texlive_base-${V}p6
-SHARED_LIBS=		kpathsea	0.0
+DIST_V = 		20080816
+DISTNAME =		texlive-${DIST_V}-source
+PKGNAME =		texlive_base-${V}
+SHARED_LIBS =		kpathsea	1.0
 
-WANTLIB=		m X11 ICE freetype Xt pthread c Xext fontconfig \
+WANTLIB =		m X11 ICE freetype Xt pthread c Xext fontconfig \
 			Xp Xpm SM Xmu z ncurses Xaw Xau Xdmcp stdc++ expat
 
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX =		.tar.lzma
 
-BUILD_DEPENDS=		:texlive_texmf-minimal-${V}*:print/texlive/texmf-minimal
-RUN_DEPENDS=		:texlive_texmf-minimal-${V}*:print/texlive/texmf-minimal \
-			:ruby-*:lang/ruby \
-			:ghostscript-*:print/ghostscript/gnu \
+BUILD_DEPENDS =		:lzma-*:archivers/lzma
+RUN_DEPENDS =		:ghostscript-*:print/ghostscript/gnu \
 			:detex-*:print/detex \
 			:dvi2tty-*:print/dvi2tty \
 			:ps2eps-*:print/ps2eps \
 			:psutils-*:print/psutils \
-			:t1utils-*:print/t1utils
-LIB_DEPENDS=		t1.>=4::devel/t1lib \
+			:t1utils-*:print/t1utils \
+			:texlive_texmf-minimal-*:print/texlive/texmf,-main
+			
+LIB_DEPENDS =		t1.>=4::devel/t1lib \
 			png.>=3::graphics/png
 
-WRKDIST=		${WRKDIR}/texlive_base-${V}
+# Never set SEPARATE_BUILD
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		GNUMAKE=${GMAKE}
+WRKBUILD =		${WRKSRC}/work # Can't build in same dir
+CONFIGURE_SCRIPT = 	../configure
+MAKE_ENV = 		${CONFIGURE_ENV}
+NO_REGRESS =		Yes # does not listen to DESTDIR, not worth the effort.
 
-SEPARATE_BUILD=	simple
-USE_X11=	Yes
-USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
-NO_REGRESS=	Yes # Regress does not listen to DESTDIR, not worth the effort.
-
-CONFIGURE_STYLE=	gnu
+USE_X11 =	Yes
+USE_GMAKE =	Yes
+USE_LIBTOOL =	Yes
 
 # Do not link with system icu. TeXLive ICU is not vanilla (Yet)!
-CONFIGURE_ARGS+=	--with-fontconfig=${X11BASE} \
+# Xindy not ready yet
+CONFIGURE_ARGS +=	--with-fontconfig=${X11BASE} \
 			--with-system-freetype2 \
 			--with-freetype2-libdir=${X11BASE}/lib \
 			--with-freetype2-include=${X11BASE}/include \
@@ -55,11 +58,30 @@ CONFIGURE_ARGS+=	--with-fontconfig=${X11BASE} \
 			--without-dvi2tty \
 			--without-ps2eps \
 			--without-psutils \
-			--without-t1utils
+			--without-t1utils \
+			--disable-threads \
+			--with-old-mac-fonts \
+			--without-xindy \
+			--without-luatex
 
-post-build:
-	@# Fix for broken metapost
-	mv ${WRKBUILD}/texk/web2c/mpware/.libs/makempx \
-		${WRKBUILD}/texk/web2c/mpware/makempx
+# Could do with bsd.port.mk understanding lzma
+# Also annoyingly loads of .orig files confuse update-patches
+do-extract:
+	cd ${WRKDIR} && \
+	lzma -dc ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${TAR} xf -
+	find ${WRKDIST} -name '*.orig' | xargs rm
+
+post-install:
+	#mv ${PREFIX}/share/texmf/web2c/fmtutil.cnf \
+	#	${PREFIX}/share/texmf/web2c/fmtutil.cnf-full
+	${INSTALL_DATA} ${FILESDIR}/fmtutil.cnf-minimal \
+		${PREFIX}/share/texmf/web2c
+	${INSTALL_DATA} ${FILESDIR}/fmtutil.cnf-tetex \
+		${PREFIX}/share/texmf/web2c
+	${INSTALL_DATA} ${FILESDIR}/fmtutil.cnf-full \
+		${PREFIX}/share/texmf/web2c
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/texlive
+	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/doc/texlive
 
 .include <bsd.port.mk>

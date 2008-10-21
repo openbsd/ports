@@ -1,0 +1,15 @@
+$OpenBSD: patch-libs_lua51_Makefile,v 1.1 2008/10/21 20:57:57 steven Exp $
+--- libs/lua51/Makefile.orig	Mon Mar 24 15:47:15 2008
++++ libs/lua51/Makefile	Sun Oct 12 12:27:43 2008
+@@ -20,9 +20,9 @@ MYLIBS=
+ 
+ # ++ Coco =========
+ # Default: autodetect gccasm/setjmp/ucontext/fibers context switch method.
+-COCOCFLAGS=
++#COCOCFLAGS=
+ # Force use of setjmp (instead of gccasm).
+-#COCOCFLAGS= -DCOCO_USE_SETJMP
++COCOCFLAGS= -DCOCO_USE_SETJMP
+ # Force use of ucontext (instead of gccasm or setjmp).
+ #COCOCFLAGS= -DCOCO_USE_UCONTEXT
+ # Uncomment this if you want to disable support for Coco.

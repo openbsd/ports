@@ -1,0 +1,15 @@
+$OpenBSD: patch-texk_texlive_linked_scripts_texdoc_tlu,v 1.1 2008/10/21 20:57:57 steven Exp $
+--- texk/texlive/linked_scripts/texdoc.tlu.orig	Wed Sep 17 03:13:58 2008
++++ texk/texlive/linked_scripts/texdoc.tlu	Wed Sep 17 03:15:26 2008
+@@ -435,9 +435,10 @@ function complain_about_old_envvar ()
+     for ext in list {'pdf', 'pds', 'dvi', 'html', 'txt'} do
+         for var in list 
+             {"TEXDOCVIEW_"..ext, "TEXDOC_VIEWER_"..string.upper(ext) } do
++            -- OpenBSD patch - better error
+             if os.getenv (var) then
+                 err_print ("Environment variable "..var..
+-                " deprecated. See the manual\n\tsection ?.?, ?.? for details.", 
++                " deprecated. See /usr/local/share/texmf/doc/man/man1/texdoc.pdf for details.", 
+                 "warning")
+             end
+         end

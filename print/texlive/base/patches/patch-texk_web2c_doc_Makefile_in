@@ -1,19 +1,20 @@
-$OpenBSD: patch-texk_web2c_doc_Makefile_in,v 1.1.1.1 2007/07/17 21:53:28 jasper Exp $
---- texk/web2c/doc/Makefile.in.orig	Wed Apr 18 13:50:12 2007
-+++ texk/web2c/doc/Makefile.in	Wed Apr 18 13:51:09 2007
-@@ -48,12 +48,12 @@ Makefile: Makefile.in ../config.status
+$OpenBSD: patch-texk_web2c_doc_Makefile_in,v 1.2 2008/10/21 20:57:57 steven Exp $
+--- texk/web2c/doc/Makefile.in.orig	Mon Aug 25 00:33:28 2008
++++ texk/web2c/doc/Makefile.in	Mon Aug 25 00:37:35 2008
+@@ -49,12 +49,13 @@ Makefile: Makefile.in ../config.status
  install: install-exec install-data
  install-exec:
  install-data: web2c.info
 -	$(SHELL) $(top_srcdir)/../mkinstalldirs $(infodir)
-+	$(SHELL) $(top_srcdir)/../mkinstalldirs ${DESTDIR}$(infodir)
- 	test -r ./web2c.info || cd $(srcdir) && for i in web2c.i*; do \
--	  $(INSTALL_DATA) $$i $(infodir)/$$i; done
-+	  $(INSTALL_DATA) $$i ${DESTDIR}$(infodir)/$$i; done
+-	$(INSTALL_DATA) $(srcdir)/web2c.i* $(infodir)/
++	$(SHELL) $(top_srcdir)/../mkinstalldirs $(DESTDIR)/$(infodir)
++	$(INSTALL_DATA) $(srcdir)/web2c.i* $(DESTDIR)/$(infodir)/
+ #
  	$(POST_INSTALL)
  	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
 -	  install-info --info-dir=$(infodir) $(infodir)/web2c.info; \
-+	  install-info --info-dir=${DESTDIR}$(infodir) ${DESTDIR}$(infodir)/web2c.info; \
++	  install-info --info-dir=$(DESTDIR)/$(infodir) \
++	  $(DESTDIR)/$(infodir)/web2c.info; \
  	else true; fi
  
  check: all

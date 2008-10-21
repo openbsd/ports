@@ -1,0 +1,14 @@
+$OpenBSD: patch-texk_xdvipdfmx_Makefile_in,v 1.1 2008/10/21 20:57:57 steven Exp $
+xdvipdfmx exposes gcc optimizer bugs
+
+--- texk/xdvipdfmx/Makefile.in.orig	Sat Oct 11 11:06:13 2008
++++ texk/xdvipdfmx/Makefile.in	Sat Oct 11 11:06:47 2008
+@@ -91,7 +91,7 @@ AUTOMAKE = @AUTOMAKE@
+ AWK = @AWK@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ -O0
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
+ CXX = @CXX@

@@ -1,0 +1,12 @@
+$OpenBSD: patch-texk_web2c_configure,v 1.1 2008/10/21 20:57:57 steven Exp $
+--- texk/web2c/configure.orig	Tue Jul  8 19:21:45 2008
++++ texk/web2c/configure	Sun Aug 24 12:28:30 2008
+@@ -6608,7 +6608,7 @@ else
+ 
+   if test "$with_system_freetype2" = yes; then
+     if test "x$with_freetype2_libdir" != x; then
+-      EXTRA_FREETYPE2_LIBDIR="-L$with_freetype2_libdir"
++      EXTRA_FREETYPE2_LIBDIR="-L$with_freetype2_libdir -lz" # hack just for the OpenBSD build
+     fi
+     if test "x$with_freetype2_include" != x; then
+       EXTRA_FREETYPE2_INCLUDE="-I$with_freetype2_include -I$with_freetype2_include/freetype2"

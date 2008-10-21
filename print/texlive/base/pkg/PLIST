@@ -1,106 +1,99 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/05/04 20:45:30 okan Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/10/21 20:57:58 steven Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @unexec texlinks -u
 %%SHARED%%
 bin/a2ping
-bin/afm2pl
-bin/afm2tfm
-bin/aleph
+@bin bin/afm2pl
+@bin bin/afm2tfm
+@bin bin/aleph
 bin/allcm
 bin/allec
 bin/allneeded
-bin/bg5+latex
-bin/bg5+pdflatex
-bin/bg5conv
-bin/bg5latex
-bin/bg5pdflatex
-bin/bibtex
-bin/bibtex8
-bin/cef5conv
-bin/cef5latex
-bin/cef5pdflatex
-bin/cefconv
-bin/ceflatex
-bin/cefpdflatex
-bin/cefsconv
-bin/cefslatex
-bin/cefspdflatex
-bin/cfftot1
-bin/ctangle
-bin/ctie
+@bin bin/bibtex
+@bin bin/bibtex8
+@bin bin/cfftot1
+bin/context
+@bin bin/ctangle
+@bin bin/ctie
 bin/ctxtools
-bin/cweave
-bin/devnag
-bin/dmp
-bin/dt2dv
-bin/dv2dt
+@bin bin/cweave
+@bin bin/devnag
+@bin bin/dmp
+@bin bin/dt2dv
+@bin bin/dv2dt
 bin/dvi2fax
-bin/dvibook
-bin/dviconcat
-bin/dvicopy
-bin/dvidvi
+bin/dviasm
+@bin bin/dvibook
+@bin bin/dviconcat
+@bin bin/dvicopy
+@bin bin/dvidvi
+bin/dvigif
 bin/dvihp
-bin/dvilj
-bin/dvilj2p
-bin/dvilj4
-bin/dvilj4l
+@bin bin/dvilj
+@bin bin/dvilj2p
+@bin bin/dvilj4
+@bin bin/dvilj4l
 bin/dvilj6
-bin/dvipdfm
-bin/dvipdfmx
+@bin bin/dvipdfm
+@bin bin/dvipdfmx
 bin/dvipdft
-bin/dvipng
-bin/dvipos
-bin/dvips
+@bin bin/dvipng
+@bin bin/dvipos
+@bin bin/dvips
 bin/dvired
-bin/dviselect
-bin/dvitodvi
-bin/dvitomp
-bin/dvitype
+@bin bin/dviselect
+@bin bin/dvitodvi
+@bin bin/dvitomp
+@bin bin/dvitype
 bin/e2pall
 bin/ebb
 bin/ebong
+bin/epspdf
+bin/epspdftk
 bin/epstopdf
 bin/exatools
-bin/extconv
+bin/extractbb
 bin/fmtutil
 bin/fmtutil-sys
 bin/fontinst
-bin/gbklatex
-bin/gbkpdflatex
 bin/getnonfreefonts
 bin/getnonfreefonts-sys
-bin/gftodvi
-bin/gftopk
-bin/gftype
-bin/giftopng
-bin/gsftopk
-bin/hbf2gf
+@bin bin/gftodvi
+@bin bin/gftopk
+@bin bin/gftype
+@bin bin/gsftopk
+@bin bin/hbf2gf
 bin/ht
 bin/htcontext
 bin/htlatex
 bin/htmex
 bin/httex
 bin/httexi
-bin/kpseaccess
+bin/htxelatex
+bin/htxetex
+@bin bin/kpseaccess
 bin/kpsepath
-bin/kpsereadlink
-bin/kpsestat
+@bin bin/kpsereadlink
+@bin bin/kpsestat
 bin/kpsetool
 bin/kpsewhere
-bin/kpsewhich
+@bin bin/kpsewhich
 bin/kpsexpand
-bin/lacheck
-bin/luatools
-bin/mag
-bin/makeindex
-bin/makempx
+@bin bin/lacheck
+@comment @bin bin/luatex
+@comment @bin bin/luatools
+@bin bin/mag
+bin/makeglossaries
+@bin bin/makeindex
+@bin bin/makempx
 bin/makempy
-bin/mf
-bin/mf-nowin
-bin/mft
+@bin bin/mf
+@bin bin/mf-nowin
+@bin bin/mft
 bin/mk4ht
 bin/mkindex
+bin/mkjobtexmf
 bin/mkocp
 bin/mkofm
 bin/mktexfmt
@@ -108,100 +101,111 @@ bin/mktexlsr
 bin/mktexmf
 bin/mktexpk
 bin/mktextfm
-bin/mmafm
-bin/mmpfb
-bin/mpost
+@bin bin/mmafm
+@bin bin/mmpfb
+@bin bin/mpost
 bin/mpstools
-bin/mpto
-bin/mptopdf
+@bin bin/mpto
+@comment bin/mptopdf
+bin/mtxrun
 bin/mtxtools
-bin/musixflx
-bin/newer
-bin/odvicopy
+@bin bin/musixflx
+@bin bin/newer
+@bin bin/odvicopy
 bin/odvips
-bin/odvitype
+@bin bin/odvitype
 bin/ofm2opl
-bin/omega
-bin/omfonts
+@bin bin/omega
+@bin bin/omfonts
 bin/opl2ofm
-bin/otangle
-bin/otfinfo
-bin/otftotfm
-bin/otp2ocp
-bin/outocp
+@bin bin/otangle
+@bin bin/otfinfo
+@bin bin/otftotfm
+@bin bin/otp2ocp
+@bin bin/outocp
 bin/ovf2ovp
 bin/ovp2ovf
 bin/oxdvi
-bin/patgen
-bin/pdfclose
+@bin bin/patgen
+bin/pdfatfi
+@bin bin/pdfclose
 bin/pdfcrop
-bin/pdfopen
-bin/pdftex
+@bin bin/pdfopen
+@bin bin/pdftex
 bin/pdfthumb
 bin/pdftools
-bin/pdftosrc
+@bin bin/pdftosrc
+bin/pdftrimwhite
 bin/perltex
-bin/pfb2pfa
-bin/pk2bm
+@bin bin/pfb2pfa
+@bin bin/pk2bm
 bin/pkfix
-bin/pktogf
-bin/pktype
-bin/pltotf
-bin/pooltype
+@bin bin/pktogf
+@bin bin/pktype
+@bin bin/pltotf
+@bin bin/pooltype
 bin/ppower4
+@comment bin/ps2eps
 bin/ps2frag
-bin/ps2pk
+@bin bin/ps2pk
 bin/ps4pdf
 bin/pslatex
+bin/pst2pdf
 bin/pstopdf
 bin/rlxtools
 bin/rubibtex
 bin/rumakeindex
+bin/rungs
 bin/runtools
 bin/simpdftex
-bin/sjisconv
-bin/sjislatex
-bin/sjispdflatex
-bin/t1dotlessj
-bin/t1lint
-bin/t1reencode
-bin/t1testpage
-bin/t4ht
-bin/tangle
-bin/tcdialog
-bin/tex
-bin/tex4ht
+@bin bin/synctex
+@bin bin/t1dotlessj
+@bin bin/t1lint
+@bin bin/t1reencode
+@bin bin/t1testpage
+@bin bin/t4ht
+@bin bin/tangle
+@bin bin/tcdialog
+@bin bin/tex
+@bin bin/tex4ht
 bin/texconfig
 bin/texconfig-dialog
 bin/texconfig-sys
+bin/texcount
 bin/texdoc
 bin/texdoctk
 bin/texexec
+bin/texfind
 bin/texfont
 bin/texhash
 bin/texlinks
+@comment bin/texlua
+@comment bin/texluac
 bin/texmfstart
+bin/texshow
 bin/textools
 bin/texutil
-bin/tftopl
+@bin bin/tftopl
 bin/thumbpdf
-bin/tie
+@bin bin/tie
+bin/tlmgr
 bin/tmftools
-bin/ttf2afm
-bin/ttf2pk
-bin/ttf2tfm
-bin/ttftotype42
+bin/tpic2pdftex
+@bin bin/ttf2afm
+@bin bin/ttf2pk
+@bin bin/ttf2tfm
+@bin bin/ttftotype42
 bin/updmap
 bin/updmap-sys
-bin/vftovp
+@bin bin/vftovp
+@bin bin/vlna
 bin/vpe
-bin/vptovf
-bin/weave
+@bin bin/vptovf
+@bin bin/weave
 bin/xdvi
-bin/xdvi-xaw.bin
-bin/xdvipdfmx
-bin/xdvizilla
-bin/xetex
+@bin bin/xdvi-xaw
+@bin bin/xdvipdfmx
+@bin bin/xetex
 bin/xmltools
 include/kpathsea/
 include/kpathsea/absolute.h
@@ -241,7 +245,7 @@ include/kpathsea/pathsearch.h
 include/kpathsea/proginit.h
 include/kpathsea/progname.h
 include/kpathsea/readable.h
-include/kpathsea/remote.h
+include/kpathsea/recorder.h
 include/kpathsea/str-list.h
 include/kpathsea/str-llist.h
 include/kpathsea/systypes.h
@@ -255,11 +259,9 @@ include/kpathsea/types.h
 include/kpathsea/variable.h
 include/kpathsea/xopendir.h
 include/kpathsea/xstat.h
-@comment info/dir
 @info info/dvipng.info
 @info info/dvips.info
 @info info/kpathsea.info
-@info info/latex.info
 @info info/web2c.info
 lib/libkpathsea.a
 lib/libkpathsea.la
@@ -284,6 +286,7 @@ lib/libkpathsea.la
 @man man/man1/dviconcat.1
 @man man/man1/dvicopy.1
 @man man/man1/dvidvi.1
+@man man/man1/dvigif.1
 @man man/man1/dvihp.1
 @man man/man1/dvilj.1
 @man man/man1/dvilj2p.1
@@ -305,7 +308,6 @@ lib/libkpathsea.la
 @man man/man1/eplain.1
 @man man/man1/epstopdf.1
 @man man/man1/etex.1
-@man man/man1/fdf2tex.1
 @man man/man1/fmtutil-sys.1
 @man man/man1/fmtutil.1
 @man man/man1/fontinst.1
@@ -335,6 +337,7 @@ lib/libkpathsea.la
 @man man/man1/mf.1
 @man man/man1/mft.1
 @man man/man1/mkindex.1
+@man man/man1/mkjobtexmf.1
 @man man/man1/mkocp.1
 @man man/man1/mkofm.1
 @man man/man1/mktexfmt.1
@@ -379,6 +382,7 @@ lib/libkpathsea.la
 @man man/man1/pstopdf.1
 @man man/man1/rubibtex.1
 @man man/man1/rumakeindex.1
+@man man/man1/synctex.1
 @man man/man1/t1dotlessj.1
 @man man/man1/t1lint.1
 @man man/man1/t1reencode.1
@@ -388,7 +392,6 @@ lib/libkpathsea.la
 @man man/man1/tex.1
 @man man/man1/texconfig-sys.1
 @man man/man1/texconfig.1
-@man man/man1/texdoc.1
 @man man/man1/texdoctk.1
 @man man/man1/texexec.1
 @man man/man1/texfind.1
@@ -408,16 +411,22 @@ lib/libkpathsea.la
 @man man/man1/updmap-sys.1
 @man man/man1/updmap.1
 @man man/man1/vftovp.1
+@man man/man1/vlna.1
 @man man/man1/vptovf.1
 @man man/man1/weave.1
 @man man/man1/xdvi.1
-@man man/man1/xdvizilla.1
 @man man/man5/fmtutil.cnf.5
+@man man/man5/synctex.5
 @man man/man5/updmap.cfg.5
+share/doc/texlive/
+share/doc/texlive/README.OpenBSD
 share/lcdf-typetools/
 share/lcdf-typetools/7t.enc
 share/lcdf-typetools/glyphlist.txt
 share/lcdf-typetools/texglyphlist.txt
+share/texmf/
+share/texmf/bibtex/
+share/texmf/bibtex/csf/
 share/texmf/bibtex/csf/88591lat.csf
 share/texmf/bibtex/csf/88591sca.csf
 share/texmf/bibtex/csf/ascii.csf
@@ -425,6 +434,7 @@ share/texmf/bibtex/csf/cp437lat.csf
 share/texmf/bibtex/csf/cp850lat.csf
 share/texmf/bibtex/csf/cp850sca.csf
 share/texmf/bibtex/csf/cp866rus.csf
+@comment share/texmf/doc/
 share/texmf/doc/bibtex8/
 share/texmf/doc/bibtex8/00readme.txt
 share/texmf/doc/bibtex8/HISTORY
@@ -435,12 +445,9 @@ share/texmf/doc/tetex/TETEXDOC.dvi
 share/texmf/doc/tetex/TETEXDOC.pdf
 share/texmf/doc/tetex/TETEXDOC.ps
 share/texmf/doc/tetex/teTeX-FAQ
-share/texmf/dvipdfm/EUC-UCS2
-share/texmf/dvipdfm/UniKSCms-UCS2-H
-share/texmf/dvipdfm/UniKSCms-UCS2-V
-share/texmf/dvipdfm/cid-x.map
-share/texmf/dvipdfm/dvipdfmx.cfg
-share/texmf/dvipdfm/glyphlist.txt
+share/texmf/dvipdfmx/
+share/texmf/dvipdfmx/dvipdfmx.cfg
+@comment share/texmf/dvips/
 share/texmf/dvips/base/
 share/texmf/dvips/base/color.pro
 share/texmf/dvips/base/crop.pro
@@ -450,7 +457,15 @@ share/texmf/dvips/base/special.pro
 share/texmf/dvips/base/tex.pro
 share/texmf/dvips/base/texc.pro
 share/texmf/dvips/base/texps.pro
+share/texmf/dvips/gsftopk/
 share/texmf/dvips/gsftopk/render.ps
+@comment share/texmf/fonts/
+@comment share/texmf/fonts/map/
+share/texmf/fonts/map/dvipdfmx/
+share/texmf/fonts/map/dvipdfmx/cid-x.map
+share/texmf/fonts/map/glyphlist/
+share/texmf/fonts/map/glyphlist/glyphlist.txt
+share/texmf/fonts/map/glyphlist/pdfglyphlist.txt
 share/texmf/texconfig/
 share/texmf/texconfig/README
 share/texmf/texconfig/g/
@@ -462,33 +477,121 @@ share/texmf/texconfig/v/
 share/texmf/texconfig/v/vt100
 share/texmf/texconfig/x/
 share/texmf/texconfig/x/xterm
-share/texmf/web2c/aleph.pool
-@comment share/texmf/web2c/fmtutil.cnf
-share/texmf/web2c/mf.pool
+@comment share/texmf/web2c/
+share/texmf/web2c/fmtutil.cnf-full
+share/texmf/web2c/fmtutil.cnf-minimal
+share/texmf/web2c/fmtutil.cnf-tetex
 share/texmf/web2c/mktex.opt
 share/texmf/web2c/mktexdir
 share/texmf/web2c/mktexdir.opt
 share/texmf/web2c/mktexnam
 share/texmf/web2c/mktexnam.opt
 share/texmf/web2c/mktexupd
-share/texmf/web2c/omega.pool
-share/texmf/web2c/pdftex.pool
-share/texmf/web2c/tex.pool
 share/texmf/web2c/texmf.cnf
-share/texmf/web2c/xetex.pool
 share/texmf/xdvi/
 share/texmf/xdvi/XDvi
 share/texmf/xdvi/pixmaps/
 share/texmf/xdvi/pixmaps/toolbar.xpm
 share/texmf/xdvi/pixmaps/toolbar2.xpm
 share/texmf/xdvi/xdvi.cfg
+texmf/
+texmf-dist/
+texmf-dist/scripts/
+texmf-dist/scripts/bengali/
+texmf-dist/scripts/bengali/ebong.py
+texmf-dist/scripts/context/
+texmf-dist/scripts/context/ruby/
+texmf-dist/scripts/context/ruby/texmfstart.rb
+texmf-dist/scripts/context/stubs/
+texmf-dist/scripts/context/stubs/unix/
+texmf-dist/scripts/context/stubs/unix/context
+texmf-dist/scripts/context/stubs/unix/ctxtools
+texmf-dist/scripts/context/stubs/unix/exatools
+texmf-dist/scripts/context/stubs/unix/luatools
+texmf-dist/scripts/context/stubs/unix/makempy
+texmf-dist/scripts/context/stubs/unix/mpstools
+texmf-dist/scripts/context/stubs/unix/mptopdf
+texmf-dist/scripts/context/stubs/unix/mtxrun
+texmf-dist/scripts/context/stubs/unix/mtxtools
+texmf-dist/scripts/context/stubs/unix/pdftools
+texmf-dist/scripts/context/stubs/unix/pdftrimwhite
+texmf-dist/scripts/context/stubs/unix/pstopdf
+texmf-dist/scripts/context/stubs/unix/rlxtools
+texmf-dist/scripts/context/stubs/unix/runtools
+texmf-dist/scripts/context/stubs/unix/texexec
+texmf-dist/scripts/context/stubs/unix/texfind
+texmf-dist/scripts/context/stubs/unix/texfont
+texmf-dist/scripts/context/stubs/unix/texshow
+texmf-dist/scripts/context/stubs/unix/textools
+texmf-dist/scripts/context/stubs/unix/texutil
+texmf-dist/scripts/context/stubs/unix/tmftools
+texmf-dist/scripts/context/stubs/unix/xmltools
+texmf-dist/scripts/dviasm/
+texmf-dist/scripts/dviasm/dviasm.py
+texmf-dist/scripts/epspdf/
+texmf-dist/scripts/epspdf/epspdf
+texmf-dist/scripts/epspdf/epspdftk
+texmf-dist/scripts/glossaries/
+texmf-dist/scripts/glossaries/makeglossaries
+texmf-dist/scripts/mkjobtexmf/
+texmf-dist/scripts/mkjobtexmf/mkjobtexmf.pl
+texmf-dist/scripts/oberdiek/
+texmf-dist/scripts/oberdiek/pdfatfi.pl
+texmf-dist/scripts/pdfcrop/
+texmf-dist/scripts/pdfcrop/pdfcrop.pl
+texmf-dist/scripts/perltex/
+texmf-dist/scripts/perltex/perltex.pl
+texmf-dist/scripts/ppower4/
+texmf-dist/scripts/ppower4/pdfthumb.texlua
+texmf-dist/scripts/ppower4/ppower4.texlua
+texmf-dist/scripts/pst-pdf/
+texmf-dist/scripts/pst-pdf/ps4pdf
+texmf-dist/scripts/pst2pdf/
+texmf-dist/scripts/pst2pdf/pst2pdf.pl
+texmf-dist/scripts/tex4ht/
+texmf-dist/scripts/tex4ht/ht.sh
+texmf-dist/scripts/tex4ht/htcontext.sh
+texmf-dist/scripts/tex4ht/htlatex.sh
+texmf-dist/scripts/tex4ht/htmex.sh
+texmf-dist/scripts/tex4ht/httex.sh
+texmf-dist/scripts/tex4ht/httexi.sh
+texmf-dist/scripts/tex4ht/htxelatex.sh
+texmf-dist/scripts/tex4ht/htxetex.sh
+texmf-dist/scripts/tex4ht/mk4ht.pl
+texmf-dist/scripts/texcount/
+texmf-dist/scripts/texcount/TeXcount.pl
+texmf-dist/scripts/thumbpdf/
+texmf-dist/scripts/thumbpdf/thumbpdf.pl
+texmf-dist/scripts/vpe/
+texmf-dist/scripts/vpe/vpe.pl
+texmf/scripts/
+texmf/scripts/a2ping/
+texmf/scripts/a2ping/a2ping.pl
+texmf/scripts/epstopdf/
+texmf/scripts/epstopdf/epstopdf.pl
+texmf/scripts/pkfix/
+texmf/scripts/pkfix/pkfix.pl
+texmf/scripts/ps2eps/
+texmf/scripts/ps2eps/ps2eps.pl
+texmf/scripts/simpdftex/
+texmf/scripts/simpdftex/simpdftex
+texmf/scripts/tetex/
+texmf/scripts/tetex/e2pall.pl
+texmf/scripts/tetex/texdoctk.pl
+texmf/scripts/texlive/
+texmf/scripts/texlive/getnonfreefonts.pl
+texmf/scripts/texlive/rungs.tlu
+texmf/scripts/texlive/texdoc.tlu
+texmf/scripts/texlive/tlmgr.pl
+@exec ln -sf %D/share/texmf/web2c/fmtutil.cnf-minimal %D/share/texmf/web2c/fmtutil.cnf
 @exec mktexlsr > /dev/null 2>&1
-@exec fmtutil-sys --all > /dev/null 2>&1
-@exec updmap-sys > /dev/null 2>&1
 @exec texlinks
+@exec fmtutil-sys --all > /dev/null 2>&1
+@exec updmap-sys --syncwithtrees > /dev/null 2>&1
 @extra share/texmf/ls-R
 @extra share/texmf-dist/ls-R
 @extra share/texmf-var/ls-R
 @extra share/texmf-config/ls-R
-@extraunexec rm -rf %D/share/texmf-var/
-@extraunexec rm -rf %D/share/texmf-config/
+@extra share/texmf/web2c/fmtutil.cnf
+@extraunexec rm -Rf %D/share/texmf-var/
+@extraunexec rm -Rf %D/share/texmf-config/

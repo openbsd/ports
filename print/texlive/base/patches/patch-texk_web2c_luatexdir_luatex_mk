@@ -1,0 +1,22 @@
+$OpenBSD: patch-texk_web2c_luatexdir_luatex_mk,v 1.1 2008/10/21 20:57:57 steven Exp $
+--- texk/web2c/luatexdir/luatex.mk.orig	Wed Aug 27 22:14:36 2008
++++ texk/web2c/luatexdir/luatex.mk	Wed Aug 27 22:15:48 2008
+@@ -110,7 +110,7 @@ luafmts: $(all_luafmts)
+ 
+ luafmtdir = $(web2cdir)/luatex
+ $(luafmtdir)::
+-	$(SHELL) $(top_srcdir)/../mkinstalldirs $(luafmtdir)
++	$(SHELL) $(top_srcdir)/../mkinstalldirs $(DESTDIR)/$(luafmtdir)
+ 
+ luatex.fmt: luatex
+ 	$(dumpenv) $(MAKE) progname=luatex files="etex.src plain.tex cmr10.tfm" prereq-check
+@@ -122,7 +122,8 @@ install-luatex: install-luatex-exec
+ 
+ install-programs: @LTEX@ install-luatex-exec
+ install-luatex-exec: $(luatex) $(bindir)
+-	for p in luatex; do $(INSTALL_LIBTOOL_PROG) $$p $(bindir); done
++	for p in luatex; do $(INSTALL_LIBTOOL_PROG) $$p \
++	  $(DESTDIR)/$(bindir); done
+ 	cd $(DESTDIR)$(bindir) && rm -f texlua && $(LN) luatex texlua
+ 	cd $(DESTDIR)$(bindir) && rm -f texluac && $(LN) luatex texluac
+ 

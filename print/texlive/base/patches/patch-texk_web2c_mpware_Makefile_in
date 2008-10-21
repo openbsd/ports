@@ -1,7 +1,7 @@
-$OpenBSD: patch-texk_web2c_mpware_Makefile_in,v 1.1.1.1 2007/07/17 21:53:28 jasper Exp $
---- texk/web2c/mpware/Makefile.in.orig	Tue Apr 17 21:27:22 2007
-+++ texk/web2c/mpware/Makefile.in	Tue Apr 17 21:28:04 2007
-@@ -45,11 +45,11 @@ Makefile: Makefile.in ../config.status
+$OpenBSD: patch-texk_web2c_mpware_Makefile_in,v 1.2 2008/10/21 20:57:57 steven Exp $
+--- texk/web2c/mpware/Makefile.in.orig	Sun Aug 24 21:42:01 2008
++++ texk/web2c/mpware/Makefile.in	Sun Aug 24 22:08:07 2008
+@@ -46,11 +46,12 @@ Makefile: Makefile.in ../config.status
  
  install: install-exec install-data
  install-exec: $(programs)
@@ -9,12 +9,13 @@ $OpenBSD: patch-texk_web2c_mpware_Makefile_in,v 1.1.1.1 2007/07/17 21:53:28 jasp
 -	$(INSTALL_PROGRAM) newer $(bindir)/newer
 -	$(INSTALL_LIBTOOL_PROG) dmp $(bindir)
 -	$(INSTALL_LIBTOOL_PROG) mpto $(bindir)
--	$(INSTALL_SCRIPT) makempx $(scriptdir)/makempx
-+	$(SHELL) $(top_srcdir)/../mkinstalldirs ${DESTDIR}$(bindir) ${DESTDIR}$(scriptdir)
-+	$(INSTALL_PROGRAM) newer ${DESTDIR}$(bindir)/newer
-+	$(INSTALL_LIBTOOL_PROG) dmp ${DESTDIR}$(bindir)
-+	$(INSTALL_LIBTOOL_PROG) mpto ${DESTDIR}$(bindir)
-+	$(INSTALL_SCRIPT) makempx ${DESTDIR}$(scriptdir)/makempx
+-	$(INSTALL_LIBTOOL_PROG) makempx $(bindir)
++	$(SHELL) $(top_srcdir)/../mkinstalldirs \
++	  $(DESTDIR)/$(bindir) $(DESTDIR)/$(scriptdir)
++	$(INSTALL_PROGRAM) newer $(DESTDIR)/$(bindir)/newer
++	$(INSTALL_LIBTOOL_PROG) dmp $(DESTDIR)/$(bindir)
++	$(INSTALL_LIBTOOL_PROG) mpto $(DESTDIR)/$(bindir)
++	$(INSTALL_LIBTOOL_PROG) makempx $(DESTDIR)/$(bindir)
  install-data:
  
  kpse_include ../make/tkpathsea.mk

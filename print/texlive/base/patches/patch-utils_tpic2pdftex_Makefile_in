@@ -1,0 +1,14 @@
+$OpenBSD: patch-utils_tpic2pdftex_Makefile_in,v 1.1 2008/10/21 20:57:58 steven Exp $
+--- utils/tpic2pdftex/Makefile.in.orig	Sun Aug 24 20:23:30 2008
++++ utils/tpic2pdftex/Makefile.in	Sun Aug 24 20:24:07 2008
+@@ -39,8 +39,8 @@ beamerexample.pdf:	beamerexample.tex
+ 	$(srcdir)/tpic2pdftex $< > $@
+ 
+ install:
+-	$(INSTALL) -d $(bindir)
+-	$(INSTALL_SCRIPT) $(srcdir)/tpic2pdftex $(bindir)/tpic2pdftex
++	$(INSTALL) -d $(DESTDIR)/$(bindir)
++	$(INSTALL_SCRIPT) $(srcdir)/tpic2pdftex $(DESTDIR)/$(bindir)/tpic2pdftex
+ 
+ clean:
+ 	- rm *.tex

@@ -1,0 +1,49 @@
+$OpenBSD: patch-texk_kpathsea_texmf_cnf,v 1.1 2008/10/21 20:57:57 steven Exp $
+--- texk/kpathsea/texmf.cnf.orig	Sat Jul 26 22:39:36 2008
++++ texk/kpathsea/texmf.cnf	Wed Sep 17 02:09:49 2008
+@@ -42,20 +42,23 @@
+ % find where to look dynamically.  See the manual and the definition
+ % below of TEXMFCNF.
+ 
++% Edd - OpenBSD Patch - Put exact path in instead of SELFAUTO
++OBSD_TMF = /usr/local/share
++
+ % The tree containing the runtime files closely related to the specific
+ % program version used:
+-TEXMFMAIN = $SELFAUTOPARENT/texmf
++TEXMFMAIN = $OBSD_TMF/texmf
+ 
+ % The main distribution tree:
+-TEXMFDIST = $SELFAUTOPARENT/texmf-dist
++TEXMFDIST = $OBSD_TMF/texmf-dist
+ 
+ % Our documentation-only tree, arranged by language:
+-TEXMFDOC = $SELFAUTOPARENT/texmf-doc
++TEXMFDOC = $OBSD_TMF/texmf-doc
+ 
+ % A place for local additions to a "standard" texmf tree.
+ % This tree is not used for local configuration maintained by
+ % texconfig, it uses TEXMFCONFIG below.
+-TEXMFLOCAL = $SELFAUTOPARENT/../texmf-local
++TEXMFLOCAL = $OBSD_TMF/texmf-local
+ 
+ % TEXMFSYSVAR, where texconfig-sys stores variable runtime data.
+ % With teTeX-3.0 or later, this must be set.
+@@ -63,7 +66,7 @@ TEXMFLOCAL = $SELFAUTOPARENT/../texmf-local
+ %   TEXMFSYSVAR = $TEXMFMAIN
+ % For using a separate tree:
+ %   TEXMFSYSVAR = $SELFAUTOPARENT/texmf-var
+-TEXMFSYSVAR = $SELFAUTOPARENT/texmf-var
++TEXMFSYSVAR = $OBSD_TMF/texmf-var
+ 
+ % TEXMFSYSCONFIG, where texconfig-sys stores configuration data.
+ % With teTeX-3.0 or later, this must be set.
+@@ -71,7 +74,7 @@ TEXMFSYSVAR = $SELFAUTOPARENT/texmf-var
+ %   TEXMFSYSCONFIG = $TEXMFMAIN
+ % For using a separate tree:
+ %   TEXMFSYSCONFIG = $SELFAUTOPARENT/texmf-config
+-TEXMFSYSCONFIG = $SELFAUTOPARENT/texmf-config
++TEXMFSYSCONFIG = $TEXMFMAIN
+ 
+ % User texmf trees are allowed as follows.
+ % This used to be HOMETEXMF.

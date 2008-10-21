@@ -1,8 +1,2 @@
-If you require anything other than the minimal texmf tree then you
-should also install texlive_texmf-full (for ConTeXt, XeTeX etc.).  If
-you require documentation you should also install texlive_texmf-docs.
-This will enable you to use 'texdoc'.
-
-Please backup your TeX configuration files (texmf.cnf, fmtutil.cnf, etc.)
-before adding/deleting texlive related packages. It is necessary for the
-package tools to manipulate these files.
+Please see ${PREFIX}/share/doc/texlive/README.OpenBSD for information on
+running TeX Live on OpenBSD.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2007/09/07 15:26:18 steven Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2008/10/21 20:57:57 steven Exp $
 
 CATEGORIES?=	print
 HOMEPAGE?=	http://tug.org/texlive/
@@ -10,4 +10,6 @@ PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
-MASTER_SITES=	http://students.dec.bournemouth.ac.uk/ebarrett/texlive/distfiles/
+V = 2008
+MASTER_SITES =	http://students.dec.bmth.ac.uk/ebarrett/texlive/distfiles/
+MASTER_SITES +=	ftp://ftp.tug.org/texlive/historic/${V}/

@@ -1,0 +1,40 @@
+TeX Live for OpenBSD - Notes
+$OpenBSD: README.OpenBSD,v 1.1 2008/10/21 20:57:57 steven Exp $
+----------------------------
+
+There are a number of texmf trees in the OpenBSD packages:
+
+texmf-minimal:
+  A plain TeX only texmf. Very small, intended for people who do not require
+  laTeX macros or are only installing texlive to satisfy package dependencies
+  (approx 6MB).
+
+texmf-tetex:
+  Add to texmf-minimal for a teTeX like tree, suitable for casual TeX usersi
+  who do not need many extra macros or ConTeXt (approx 212MB).
+
+texmf-full:
+  Extra macros and ConTeXt support (approx 186MB).
+
+texmf-doc:
+  Documentation for all of TeX Live (approx 504MB).
+
+The texmf package contents to not overlap.
+
+Please backup your TeX configuration files (texmf.cnf, fmtutil.cnf, etc.)
+before adding/deleting texlive related packages. It is necessary for the
+package tools to manipulate these files.
+
+Some requirements of TeX Live were not included as dependancies to make the
+package less bloated for people who don't need those features.
+
+As far as I know:
+* You should install ruby and ImageMagick if you wish to use ConTeXt.
+* For texdoctk you will need p5-Tk
+* lua for LuaTeX
+
+If you know more, please mail me: <vext01@gmail.com>
+
+Have fun TeXing.
+
+Edd

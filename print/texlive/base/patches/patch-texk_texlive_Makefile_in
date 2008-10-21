@@ -1,27 +1,53 @@
-$OpenBSD: patch-texk_texlive_Makefile_in,v 1.1.1.1 2007/07/17 21:53:30 jasper Exp $
---- texk/texlive/Makefile.in.orig	Sat Apr 21 18:34:02 2007
-+++ texk/texlive/Makefile.in	Sat Apr 21 18:34:59 2007
-@@ -19,17 +19,17 @@ install: install-data install-exec
+$OpenBSD: patch-texk_texlive_Makefile_in,v 1.2 2008/10/21 20:57:57 steven Exp $
+--- texk/texlive/Makefile.in.orig	Wed Aug 27 13:40:05 2008
++++ texk/texlive/Makefile.in	Wed Aug 27 13:43:20 2008
+@@ -72,7 +72,8 @@ install: install-data install-exec
  # Auxiliary files.
  install-data::
  	for p in $(manpgs); do \
 -	  $(INSTALL_DATA) $(srcdir)/$$p.man $(man1dir)/$$p.$(manext); \
-+	  $(INSTALL_DATA) $(srcdir)/$$p.man ${DESTDIR}$(man1dir)/$$p.$(manext); \
++	  $(INSTALL_DATA) $(srcdir)/$$p.man \
++	    $(DESTDIR)/$(man1dir)/$$p.$(manext); \
  	done
  
+ # The idea is to install the scripts themselves in texmf*/scripts, and
+@@ -98,27 +99,31 @@ install-data::
+ # bin/i386-linux, not the texmf*/scripts dir.
+ # 
  install-exec:
 -	-$(SHELL) $(srcdir)/../mkinstalldirs $(scriptdir)
-+	-$(SHELL) $(srcdir)/../mkinstalldirs ${DESTDIR}$(scriptdir)
- 	for s in $(LIVESCRIPTS); do \
--	  rm -f $(scriptdir)/$$s ; \
--	  $(INSTALL_SCRIPT) $(srcdir)/$$s $(scriptdir)/$$s; \
-+	  rm -f ${DESTDIR}$(scriptdir)/$$s ; \
-+	  $(INSTALL_SCRIPT) $(srcdir)/$$s ${DESTDIR}$(scriptdir)/$$s; \
++	-$(SHELL) $(srcdir)/../mkinstalldirs $(DESTDIR)/$(scriptdir)
+ # - link to the basename, removing any extension, of the source.
+ # - we downcase for the sake of TeXcount.pl -> texcount.
+ # - the purpose of the case..esac is to support both multiplatform and
+ #   non-multiplatform builds.
+ 	for s in $(LINKED_SCRIPTS); do \
+-	  target=$(scriptdir)/`basename $$s | sed 's,\.[^/]*$$,,' | tr '[A-Z]' '[a-z]'`; \
++	  target=$(DESTDIR)/$(scriptdir)/`basename $$s | \
++	    sed 's,\.[^/]*$$,,' | tr '[A-Z]' '[a-z]'`; \
+ 	  target=$$target; \
+ 	  rm -f $$target; \
+-	  case "$(scriptdir)" in \
++	  case "$(DESTDIR)/$(scriptdir)" in \
+ 	    */bin)   d=..;; \
+ 	    */bin/*) d=../..;; \
+-	    *) echo "$(scriptdir): strange directory for linked scripts" >&2;\
++	    *) echo "$(DESTDIR)/$(scriptdir): \
++	      strange directory for linked scripts" >&2;\
+ 	      exit 1;; \
+ 	  esac; \
+-	  $(SHELL) $(srcdir)/../mkinstalldirs $(prefix)/`dirname $$s`; \
+-	  $(INSTALL_SCRIPT) $(srcdir)/linked_scripts/`basename $$s` $(prefix)/$$s; \
++	  $(SHELL) $(srcdir)/../mkinstalldirs \
++	    $(DESTDIR)/$(prefix)/`dirname $$s`; \
++	  $(INSTALL_SCRIPT) $(srcdir)/linked_scripts/`basename $$s` \
++	    $(DESTDIR)/$(prefix)/$$s; \
+ 	  ln -s $$d/$$s $$target; \
  	done
 -	rm -f $(scriptdir)/getnonfreefonts-sys
 -	ln -s getnonfreefonts $(scriptdir)/getnonfreefonts-sys
-+	rm -f ${DESTDIR}$(scriptdir)/getnonfreefonts-sys
-+	ln -s getnonfreefonts ${DESTDIR}$(scriptdir)/getnonfreefonts-sys
++	rm -f $(DESTDIR)/$(scriptdir)/getnonfreefonts-sys
++	ln -s getnonfreefonts $(DESTDIR)/$(scriptdir)/getnonfreefonts-sys
  
  kpse_include ../make/clean.mk
  
