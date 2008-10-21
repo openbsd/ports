@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2008/03/15 10:07:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2008/10/21 08:36:25 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},-main,kerberos
 @newgroup _cyrus:543
 @newuser _cyrus:543:_cyrus:daemon:Cyrus Account:/var/empty:/sbin/nologin
-bin/imtest
-bin/lmtptest
-bin/mupdatetest
-bin/nntptest
-bin/pop3test
-bin/sivtest
-bin/smtptest
-bin/synctest
+@bin bin/imtest
+@bin bin/lmtptest
+@bin bin/mupdatetest
+@bin bin/nntptest
+@bin bin/pop3test
+@bin bin/sivtest
+@bin bin/smtptest
+@bin bin/synctest
 include/cyrus/
 include/cyrus/acl.h
 include/cyrus/assert.h
@@ -50,44 +50,43 @@ include/cyrus/xstrlcat.h
 include/cyrus/xstrlcpy.h
 lib/libcyrus.a
 lib/libcyrus_min.a
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.8/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.8/perllocal.pod
 libexec/cyrus-imapd/
-libexec/cyrus-imapd/arbitron
-libexec/cyrus-imapd/chk_cyrus
-libexec/cyrus-imapd/ctl_cyrusdb
-libexec/cyrus-imapd/ctl_deliver
-libexec/cyrus-imapd/ctl_mboxlist
-libexec/cyrus-imapd/cvt_cyrusdb
-libexec/cyrus-imapd/cyr_dbtool
-libexec/cyrus-imapd/cyr_expire
-libexec/cyrus-imapd/cyr_synclog
-libexec/cyrus-imapd/cyrdump
-libexec/cyrus-imapd/deliver
-libexec/cyrus-imapd/fetchnews
-libexec/cyrus-imapd/fud
-libexec/cyrus-imapd/idled
-libexec/cyrus-imapd/imapd
-libexec/cyrus-imapd/ipurge
-libexec/cyrus-imapd/lmtpd
-libexec/cyrus-imapd/lmtpproxyd
-libexec/cyrus-imapd/master
-libexec/cyrus-imapd/mbexamine
-libexec/cyrus-imapd/mbpath
-libexec/cyrus-imapd/mupdate
-libexec/cyrus-imapd/nntpd
-libexec/cyrus-imapd/notifyd
-libexec/cyrus-imapd/pop3d
-libexec/cyrus-imapd/pop3proxyd
-libexec/cyrus-imapd/proxyd
-libexec/cyrus-imapd/quota
-libexec/cyrus-imapd/reconstruct
-libexec/cyrus-imapd/sievec
-libexec/cyrus-imapd/smmapd
-libexec/cyrus-imapd/squatter
-libexec/cyrus-imapd/timsieved
-libexec/cyrus-imapd/tls_prune
-libexec/cyrus-imapd/unexpunge
+@bin libexec/cyrus-imapd/arbitron
+@bin libexec/cyrus-imapd/chk_cyrus
+@bin libexec/cyrus-imapd/ctl_cyrusdb
+@bin libexec/cyrus-imapd/ctl_deliver
+@bin libexec/cyrus-imapd/ctl_mboxlist
+@bin libexec/cyrus-imapd/cvt_cyrusdb
+@bin libexec/cyrus-imapd/cyr_dbtool
+@bin libexec/cyrus-imapd/cyr_expire
+@bin libexec/cyrus-imapd/cyr_synclog
+@bin libexec/cyrus-imapd/cyrdump
+@bin libexec/cyrus-imapd/deliver
+@bin libexec/cyrus-imapd/fetchnews
+@bin libexec/cyrus-imapd/fud
+@bin libexec/cyrus-imapd/idled
+@bin libexec/cyrus-imapd/imapd
+@bin libexec/cyrus-imapd/ipurge
+@bin libexec/cyrus-imapd/lmtpd
+@bin libexec/cyrus-imapd/lmtpproxyd
+@bin libexec/cyrus-imapd/master
+@bin libexec/cyrus-imapd/mbexamine
+@bin libexec/cyrus-imapd/mbpath
+@bin libexec/cyrus-imapd/mupdate
+@bin libexec/cyrus-imapd/nntpd
+@bin libexec/cyrus-imapd/notifyd
+@bin libexec/cyrus-imapd/pop3d
+@bin libexec/cyrus-imapd/pop3proxyd
+@bin libexec/cyrus-imapd/proxyd
+@bin libexec/cyrus-imapd/quota
+@bin libexec/cyrus-imapd/reconstruct
+@bin libexec/cyrus-imapd/sievec
+@bin libexec/cyrus-imapd/sieved
+@bin libexec/cyrus-imapd/smmapd
+@bin libexec/cyrus-imapd/squatter
+@bin libexec/cyrus-imapd/timsieved
+@bin libexec/cyrus-imapd/tls_prune
+@bin libexec/cyrus-imapd/unexpunge
 @man man/man1/imtest.1
 @man man/man1/lmtptest.1
 @man man/man1/mupdatetest.1

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2008/10/02 20:32:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2008/10/21 08:36:25 ajacoutot Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
 
-V=		2.3.12
+V=		2.3.13
 DISTNAME=	cyrus-imapd-${V}
-PKGNAME-main=	${DISTNAME}p1
-FULLPKGNAME-perl=cyrus-imapd-perl-${V}p1
+PKGNAME-main=	${DISTNAME}
+FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
 CATEGORIES=	mail
+
 HOMEPAGE=	http://cyrusimap.web.cmu.edu
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -58,7 +59,12 @@ CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--enable-murder \
 		--enable-nntp \
 		--without-zephyr \
-		--without-snmp
+		--without-snmp \
+		--with-afs=no \
+		--with-ldap=no \
+		--with-mysql=no \
+		--with-pgsql=no \
+		--with-sqlite=no
 
 # this is a needed hack; to update PLIST:
 # make SHARED_ONLY=Yes plist
@@ -70,9 +76,8 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mdrac}
 BUILD_DEPENDS+=	::mail/drac
-RUN_DEPENDS-main+=::mail/drac
 PATCH_LIST+=	${WRKSRC}/contrib/drac_auth.patch \
-		drac-patch-imap_Makefile.in
+		drac-patch-imap_Makefile_in
 .endif
 
 WANTLIB-main=	${WANTLIB} asn1 c com_err gssapi krb5 pthread wrap

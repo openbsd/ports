@@ -1,2 +1,3 @@
 Don't forget to edit /etc/services to include missing network services
 if needed.
+  e.g. sieve	2000/tcp

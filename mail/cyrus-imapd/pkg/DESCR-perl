@@ -1,14 +1,2 @@
-The Cyrus IMAP server differs from other IMAP server implementations in
-that it is generally intended to be run on sealed servers, where normal
-users are not permitted to log in. The mailbox database is stored in
-parts of the filesystem that are private to the Cyrus IMAP system. All
-user access to mail is through the IMAP, POP3, or KPOP protocols.
-
-The private mailbox database design gives the server large advantages in
-efficiency, scalability, and administratability. Multiple concurrent
-read/write connections to the same mailbox are permitted. The server
-supports access control lists on mailboxes and storage quotas on mailbox
-hierarchies.
-
 This package contains the perl utilities for managing the Cyrus Imap
 server.
