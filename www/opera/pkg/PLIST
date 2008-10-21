@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2008/10/08 20:30:23 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.28 2008/10/21 15:32:33 ajacoutot Exp $
 bin/opera
 lib/opera/
 lib/opera/plugins/
@@ -90,6 +90,11 @@ share/opera/locale/es-LA/espanol-america_latina.lng
 share/opera/locale/es-LA/license.txt
 share/opera/locale/es-LA/opera6.adr
 share/opera/locale/es-LA/search.ini
+share/opera/locale/et/
+share/opera/locale/et/eesti.lng
+share/opera/locale/et/license.txt
+share/opera/locale/et/opera6.adr
+share/opera/locale/et/search.ini
 share/opera/locale/fi/
 share/opera/locale/fi/license.txt
 share/opera/locale/fi/opera6.adr
@@ -200,6 +205,16 @@ share/opera/locale/sv/license.txt
 share/opera/locale/sv/opera6.adr
 share/opera/locale/sv/search.ini
 share/opera/locale/sv/svenska.lng
+share/opera/locale/ta/
+share/opera/locale/ta/license.txt
+share/opera/locale/ta/opera6.adr
+share/opera/locale/ta/search.ini
+share/opera/locale/ta/tamil.lng
+share/opera/locale/te/
+share/opera/locale/te/license.txt
+share/opera/locale/te/opera6.adr
+share/opera/locale/te/search.ini
+share/opera/locale/te/telugu.lng
 share/opera/locale/tr/
 share/opera/locale/tr/license.txt
 share/opera/locale/tr/opera6.adr
