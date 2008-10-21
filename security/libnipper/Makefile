@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/21 21:59:40 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/21 22:00:21 steven Exp $
 
 COMMENT =		library for nipper
 
@@ -21,6 +21,8 @@ EXTRACT_SUFX =		.tgz
 
 CONFIGURE_STYLE =	cmake
 MODULES +=		devel/cmake
+
+NO_REGRESS =		Yes
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
