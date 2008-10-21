@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/12/26 14:01:36 sturm Exp $
-bin/lgrind
+@comment $OpenBSD: PLIST,v 1.5 2008/10/21 21:03:55 steven Exp $
+@bin bin/lgrind
 @man man/man1/lgrind.1
 @man man/man5/lgrindef.5
 share/texmf-local/doc/
