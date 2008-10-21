@@ -34,9 +34,9 @@ Finally, you should add the below to /etc/rc.local:
 	${PREFIX}/sbin/bosserver -log -syslog
 
         # to salvage automatically on startup, for the paranoid
-        #echo -n "(salvaging afs volumes $start ..."
+        #echo -n "(salvaging afs volumes ..."
         #${PREFIX}/bin/bos salvage localhost -all -orphans attach -localauth
-        #echo -n " $stop done)"
+        #echo -n " done)"
    fi
 
 and add the following to /etc/rc.shutdown:

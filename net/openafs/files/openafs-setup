@@ -14,6 +14,9 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+[ "${SYSCONFDIR}" ] || SYSCONFDIR=/etc
+[ "${PREFIX}" ] || PREFIX=/usr/local
+
 afsp=${PREFIX}/libexec/openafs
 PATH=${PREFIX}/sbin:${PREFIX}/bin:$PATH
 DIR=`mktemp -d /tmp/_openafs.XXXXXXXXXX` || exit 1
@@ -218,6 +221,12 @@ __EOT
 			echo "Could not find /etc/hosts entry for $h."
 			continue
 		fi
+		if [[ `grep $(hostname) /etc/hosts` = "" ]]
+		then
+			echo "Could not find /etc/hosts entry for $(hostname)."
+			echo "(afs processes use the system hostname..)"
+			continue
+		fi
 		break
 	done
 	cat <<__EOT
@@ -258,26 +267,73 @@ __EOT
 	ask_until "KerberosV principal for kerberos administration?" \
 		"todd/admin"
 	p=${resp}
-	cat <<__EOT
+	echo
+	ask_until "Is this the first server setup in the $c cell?" "Y"
+	case "${resp}" in [Yy]*) first=1;; *) first=0;; esac
+	if [ first -eq 0 ]; then
+		set -A sservers fs
+		echo
+		ask_until "What is the primary afs server's name (e.g. afs0.example.com)?"
+		psn=$resp
+		ask_until "What is the primary afs server's IP (e.g. 10.1.2.3)?"
+		psip=$resp
 
-This principal will be deleted if it exists, and in any event
-created again with specific attributes.  It will be used to administer afs
-in a similar way that \`root' can administrate OpenBSD.  Tread lightly when
-using this principal.
+		cat <<__EOT
+
+This principal should already exist from the 1st afs server setup, and
+will be used to administer afs in a similar way that \`root'
+can administrate OpenBSD.  Tread lightly when using this principal.
 __EOT
-	ask_until "KerberosV princiapl for afs administration?" "todd/afs"
-	A=${resp}
-	cat <<__EOT
+	else
+		set -A sservers buserver ptserver vlserver fs
+		cat <<__EOT
 
 Just a sample user to create a basic homedir and account on afs with.
 __EOT
-	ask_until "KerberosV princiapl for example user?" "todd"
-	u=${resp}
+		ask_until "KerberosV princiapl for example user?" "todd"
+		u=${resp}
+		cat <<__EOT
+
+This principal will be deleted if it exists, then created with specific
+attributes.  It will be used to administer afs in a similar way that \`root'
+can administrate OpenBSD.  Tread lightly when using this principal.
+__EOT
+	fi
+	ask_until "KerberosV princiapl for afs administration?" \
+		"todd/afs"
+	A=${resp}
+	slist="" i=0
+	while [ i -lt ${#sservers[*]} ]; do
+		slist="$slist ${sservers[$i]}"
+		let i=i+1
+	done
+	slist="${slist# *}"
+	cat <<__EOT
+
+Each afs server can run one or more openafs server processes:
+    vlserver(8) - volume location server, keeps track of volume locations
+    ptserver(8) - protection server for users, groups, and permissions
+    buserver(8) - permit backups to occur for vlserver and ptserver databases
+             fs - fileserver, volserver, salvager (for hosts that store files)
+__EOT
+	ask_until "Servers to run on $h?" "$slist"
+	set -A sservers $resp
 else
 	# for advanced users, this script can be started with the above
 	# pre-populated via arguments
 	h="$1" ip="$2" c="$3" R="$4" p="$5" A="$6" u="$7"
 fi
+
+slist="" i=0 vl2=0
+while [ i -lt ${#sservers[*]} ]; do
+	if [ "${sservers[$i]}" = "vlserver" -a first -eq 0]; then
+		# we are a 2ndary server running vlserver, save to CellServDB
+		vl2=1
+	fi
+	slist="$slist ${sservers[$i]}"
+	let i=i+1
+done
+slist="${slist# *}"
 
 pp=$(echo "$p"|sed 's,/,.,')
 pA=$(echo "$A"|sed 's,/,.,')
@@ -291,7 +347,19 @@ cellname   : $c
 realm      : $R
 krb admin  : $p (pts name: $pp)
 afs admin  : $A (pts name: $pA)
+afs servers: $slist
+__EOT
+if [ first -eq 1 ]; then
+cat <<__EOT
 sample user: $u
+__EOT
+else
+cat <<__EOT
+prim. name : $psn
+prim. ip   : $psip
+__EOT
+fi
+cat <<__EOT
 
 The next step *DESTROYS* all existing OpenAFS configuration on this system,
 including any openafs data on all /vicep* partitions!
@@ -303,36 +371,45 @@ ask_yn "Are you really sure that you're ready to proceed?"
 echo
 log "preparing ${SYSCONFDIR}/{open,}afs /usr/afs /var/openafs..."
 
-kdestroy
-pkill -9 afsd
-umount /afs > /dev/null 2>&1
-[ -d /var/spool/afs ] && rm -rf /var/spool/afs/*
-if [ "$(pgrep bosserver)" ]
-then
-	bos shutdown localhost -noauth -wait > /dev/null 2>&1
-fi
-if [ "$(pgrep bosserver)" ]
-then
-	bos shutdown localhost -localauth -wait > /dev/null 2>&1
-fi
-pkill -9 buserver ptserver vlserver fileserver volserver bos bosserver
-rm -rf ${SYSCONFDIR}/openafs /usr/afs /var/openafs
-rm -rf /vicep*/{V*,AFSIDat,Lock}
-rm -f /etc/kerberosV/krb5.keytab
+# Initialize the filesystems
+initfs() {
+	kdestroy
+	pkill -9 afsd
+	umount /afs > /dev/null 2>&1
+	if [ -d /var/spool/afs ]; then
+		log clearing afs cache
+		retry rm -rf -- "/var/spool/afs/*"
+		retry mkdir -p /var/spool/afs
+	fi
+	log stopping any pre-existing arla and/or openafs daemons
+	if [ "$(pgrep bosserver)" ]
+	then
+		bos shutdown localhost -noauth -wait > /dev/null 2>&1
+	fi
+	if [ "$(pgrep bosserver)" ]
+	then
+		bos shutdown localhost -localauth -wait > /dev/null 2>&1
+	fi
+	pkill -9 buserver ptserver vlserver fileserver volserver bos bosserver
+	retry rm -rf ${SYSCONFDIR}/openafs /usr/afs /var/openafs
+	retry rm -rf /vicep*/{V*,AFSIDat,Lock}
+	retry rm -f /etc/kerberosV/krb5.keytab
 
-mkdir -p ${SYSCONFDIR}/openafs/server /usr/afs /var/spool/afs
-mkdir -m 700 /var/openafs
-echo "f $ip" > /var/openafs/NetInfo
-echo "$R" > ${SYSCONFDIR}/openafs/server/krb.conf
+	retry mkdir -p ${SYSCONFDIR}/openafs/server /usr/afs /var/spool/afs
+	retry mkdir -m 700 /var/openafs
+	echo "f $ip" > /var/openafs/NetInfo
+	echo "$R" > ${SYSCONFDIR}/openafs/server/krb.conf
+	ln -s /var/openafs/db /usr/afs/db
+	ln -s ${SYSCONFDIR}/openafs/server /usr/afs/etc
+}
 
-log updating /etc/afs/CellServDB ${SYSCONFDIR}/openafs/server/CellServDB
 # borrowed from /etc/security, backup CellServDB
 _fnchg() {
 	echo "$1" | sed 's/^\///;s/\//_/g'
 }
-csdb=/etc/afs/CellServDB
-CURdb=/var/backups/$(_fnchg $csdb).current
-BACKdb=/var/backups/$(_fnchg $csdb).backup
+
+# be extra cautious
+backupcsdb() {
 if [ -s $CURdb ]; then
 	diff -ua $CURdb $csdb > $OUTPUT
 	if [ -s $OUTPUT ]; then
@@ -344,141 +421,109 @@ else
 	cp -p $csdb $CURdb
 	chown root:wheel $CURdb
 fi
-# put back arla's CellServDB when this script exits
-trap 'rm -rf $DIR; cp $CURdb $csdb; exit 1' 0 1 2 3 13 15
-echo ">$c	# $c" > $DIR/CellServDB
-echo "$ip	#$h" >> $DIR/CellServDB
-cat $DIR/CellServDB | \
-  tee -a $csdb ${SYSCONFDIR}/openafs/server/CellServDB
+}
 
-echo $c | tee ${SYSCONFDIR}/openafs/server/ThisCell > /etc/afs/ThisCell
-ln -s /var/openafs/db /usr/afs/db
-ln -s ${SYSCONFDIR}/openafs/server /usr/afs/etc
-if [ "$(pgrep bosserver)" ]
-then
-	pkill bosserver
-fi
+# update the CellServDB's
+writecsdb() {
+	# put back arla's CellServDB when this script exits
+	log "Adding cell $c to CellServDB"
+	trap 'rm -rf $DIR; cp $CURdb $csdb; exit 1' 0 1 2 3 13 15
+	echo ">$c	# $c" > $DIR/CellServDB
+	if [ first -eq 0 ]; then
+		echo "$psip	#$psn" >> $DIR/CellServDB
+		if [ vl2 -eq 1 ]; then
+			echo "$ip	#$h" >> $DIR/CellServDB
+		fi
+	else
+		echo "$ip	#$h" >> $DIR/CellServDB
+	fi
+	cat $DIR/CellServDB | \
+  		tee -a $csdb ${SYSCONFDIR}/openafs/server/CellServDB
+}
+writethiscell() {
+	echo $c | tee ${SYSCONFDIR}/openafs/server/ThisCell > /etc/afs/ThisCell
+}
+hostkeytab() {
+	kadd host/$h --random-key 
+	retry kadmin ext host/$h
+	chmod 0400 /etc/kerberosV/krb5.keytab
+}
+saveafskey() {
+	log creating ${SYSCONFDIR}/openafs/server/KeyFile
+	retry kadmin ext -k $DIR/afsv5key afs/$c
+	log -c ktutil copy $DIR/afsv5key AFSKEYFILE:${SYSCONFDIR}/openafs/server/KeyFile
+	ktutil copy $DIR/afsv5key AFSKEYFILE:${SYSCONFDIR}/openafs/server/KeyFile
+	retry chmod 600 ${SYSCONFDIR}/openafs/server/KeyFile
+	retry rm $DIR/afsv5key
+}
+createafskey() {
+	kadd afs/$c --random-key 
+}
+addexampleuser() {
+	log When asked for a password below, the answer will set it.
+	let sc=sc-1
+	kadd $A
+}
+disablearla() {
+	log "Disabling arla admin commands (use openafs commands on servers):"
+	retry chmod 644 /usr/sbin/{bos,pts,vos,fs}
+}
+setuppts() {
+	log setting up pts memberships, $pA as initial afs admin
+	retry pts createuser -name $u -id `id -u $u` -cell $c -noauth
+	retry pts createuser -name $pA -cell $c -noauth
+	retry pts adduser $pA system:administrators -cell $c -noauth
+	retry pts mem system:administrators -cell $c -noauth
+	retry pts listentries -cell $c -noauth
+	retry bos addhost localhost $h -noauth
+}
+initcellp1() {
+	log creating root.afs
+	retry vos create $h /vicepa root.afs -noauth
+	retry vos create $h /vicepa root.cell -noauth
 
-log authenticating $p@$R
-retry kinit $p@$R
-kadd host/$h --random-key 
-retry kadmin ext host/$h
-chmod 0400 /etc/kerberosV/krb5.keytab
-kadd afs/$c --random-key 
-log creating ${SYSCONFDIR}/openafs/server/KeyFile
-retry kadmin ext -k $DIR/afsv5key afs/$c
-log -c ktutil copy $DIR/afsv5key AFSKEYFILE:${SYSCONFDIR}/openafs/server/KeyFile
-ktutil copy $DIR/afsv5key AFSKEYFILE:${SYSCONFDIR}/openafs/server/KeyFile
-chmod 600 ${SYSCONFDIR}/openafs/server/KeyFile
-rm $DIR/afsv5key
-log When asked for a password below, the answer will set it.
-let sc=sc-1
-kadd $A
-log "Disabling arla admin commands (use openafs commands on servers):"
-retry chmod 644 /usr/sbin/{bos,pts,vos,fs}
-
-log starting unauthenticated bosserver
-retry bosserver -log -syslog -noauth
-retry bos setcellname $h $c -noauth
-
-log creating buserver/ptserver/vlserver entries with bos
-retry bos create $h buserver simple $afsp/buserver -cell $c -noauth
-retry bos create $h ptserver simple $afsp/ptserver -cell $c -noauth
-retry bos create $h vlserver simple $afsp/vlserver -cell $c -noauth
-log setting up pts memberships, $pA as initial afs admin
-retry pts createuser -name $u -id `id -u $u` -cell $c -noauth
-retry pts createuser -name $pA -cell $c -noauth
-retry pts adduser $pA system:administrators -cell $c -noauth
-retry pts mem system:administrators -cell $c -noauth
-retry pts listentries -cell $c -noauth
-retry bos adduser $h $pA -cell $c -noauth
-retry bos addhost $h $h -noauth
-retry bos shutdown $h -cell $c -noauth -wait
-
-log getting status of bos config
-retry bos status $h -noauth -cell $c -long
-log creating fs entry with bos
-retry bos create $h fs fs $afsp/{fileserver,volserver,salvager} -cell $c -noauth
-retry bos restart $h -all -cell $c -noauth
-log getting partition list
-retry vos listpart $h -noauth
-log creating root.afs
-retry vos create $h /vicepa root.afs -noauth
-retry vos create $h /vicepa root.cell -noauth
-
-sync;sync
-sleep 5
-sync;sync
-retry bos shutdown $h -cell $c -noauth -wait
-pkill -HUP bosserver
-sleep 3
-# don't put back CellServDB
-trap 'rm -rf $DIR; exit 1' 0 1 2 3 13 15
-
-log starting authenticated bosserver
-retry bosserver -log -syslog 
-retry bos restart $h -all -cell $c -localauth
-
-
-log starting afs client
-mkdir -p /afs
-[ "$(mount | egrep "^/afs")" ] || mount -t xfs /dev/xfs0 /afs
-retry /usr/libexec/afsd -z --log=/var/log/afsd.log
-
-log authenticating $A
-retry kinit $A
-retry pts listentries
-
-# do this on reboot
-grep "^afs=YES" /etc/rc.conf.local > /dev/null 2>&1 || \
-echo afs=YES >> /etc/rc.conf.local
-
-retry ls /afs
-
-log setting permissions/creating volumes
-retry fs sa /afs system:anyuser rl
-retry fs flushvolume /afs
-retry fs mkm /afs/.$c root.cell -cell $c -rw -fast
-retry fs flushvolume /afs/.$c
-retry fs sa  /afs/.$c system:anyuser rl
-retry fs flushvolume /afs/.$c
-cat <<__EOT> /afs/.$c/robots.txt
+	sync;sync
+	sleep 5
+	sync;sync
+}
+initcellp2() {
+	log setting permissions/creating volumes
+	retry fs sa /afs system:anyuser rl
+	retry fs flushvolume /afs
+	retry fs mkm /afs/.$c root.cell -cell $c -rw -fast
+	retry fs flushvolume /afs/.$c
+	retry fs sa  /afs/.$c system:anyuser rl
+	retry fs flushvolume /afs/.$c
+	cat <<__EOT> /afs/.$c/robots.txt
 # noticed at ualberta.ca, attempt to prevent robots from traversing afs
 User-Agent: *
 Disallow: /
 __EOT
 
-mkvol user /afs/.$c/u
-mkvol user.todd /afs/.$c/u/todd
-mkvol mirror /afs/.$c/mirror
+	mkvol user /afs/.$c/u
+	mkvol user.todd /afs/.$c/u/todd
+	mkvol mirror /afs/.$c/mirror
+	retry vos addsite $h /vicepa mirror
+	retry vos release mirror
 
-log Add some remote afs cells
-# significant remote afs cells of note, and/or install mirrors as a basic
-# set of remote cells for our example root.afs
-set -A rc \
-	$c \
-	ualberta.ca \
-	stacken.kth.se \
-	grand.central.org \
-	su.se \
-	mrow.org
-i=0
-while [ i -lt ${#rc[*]} ]
-do
-	log -c fs mkm /afs/${rc[$i]} root.cell -cell ${rc[$i]} -fast
-	fs mkm /afs/${rc[$i]} root.cell -cell ${rc[$i]} -fast
-	let i=i+1
-done
-
-log adding replication sites for root.afs, root.cell
-retry vos addsite $h /vicepa root.afs
-retry vos addsite $h /vicepa root.cell
-retry vos addsite $h /vicepa mirror
-
-log initial release of replicated volumes
-retry vos release root.afs
-retry vos release root.cell
-retry vos release mirror
+	log Add some remote afs cells
+	# significant remote afs cells of note, and/or install mirrors
+	# as a basic set of remote cells for our example root.afs
+	set -A rc \
+		$c \
+		ualberta.ca \
+		stacken.kth.se \
+		grand.central.org \
+		su.se \
+		mrow.org
+	i=0
+	while [ i -lt ${#rc[*]} ]
+	do
+		log -c fs mkm /afs/${rc[$i]} root.cell -cell ${rc[$i]} -fast
+		fs mkm /afs/${rc[$i]} root.cell -cell ${rc[$i]} -fast
+		let i=i+1
+	done
+}
 
 # add files of note to /etc/changelist
 addchg() {
@@ -492,6 +537,121 @@ addchg() {
 		echo "$f" >> /etc/changelist
 	done
 }
+
+log updating /etc/afs/CellServDB ${SYSCONFDIR}/openafs/server/CellServDB
+
+csdb=/etc/afs/CellServDB
+CURdb=/var/backups/$(_fnchg $csdb).current
+BACKdb=/var/backups/$(_fnchg $csdb).backup
+
+initfs
+backupcsdb
+writecsdb
+writethiscell
+if [ "$(pgrep bosserver)" ]
+then
+	pkill bosserver
+fi
+
+log authenticating $p@$R
+retry kinit $p@$R
+hostkeytab
+
+# only 1st afs server
+if [ first -eq 1 ]; then
+	createafskey
+fi
+saveafskey
+
+# only 1st afs server
+if [ first -eq 1 ]; then
+	addexampleuser
+fi
+disablearla
+
+log starting unauthenticated bosserver
+retry bosserver -log -syslog -noauth
+retry bos setcellname localhost $c -noauth
+
+log creating server entries with bos
+i=0
+fs=0
+while [ i -lt ${#sservers[*]} ]; do
+	srv="${sservers[$i]}"
+	case "$srv" in
+	fs)
+		fs=1
+	;;
+	*)
+		retry bos create localhost $srv simple $afsp/$srv -cell $c -noauth
+	;;
+	esac
+	let i=i+1
+done
+
+# only 1st afs server
+if [ first -eq 1 ]; then
+	setuppts
+fi
+retry bos adduser localhost $pA -cell $c -noauth
+retry bos shutdown localhost -cell $c -noauth -wait
+
+log getting status of bos config
+retry bos status localhost -noauth -cell $c -long
+fs=1
+if [ fs -eq 1 ]; then
+	log creating fs entry with bos
+	retry bos create localhost fs fs $afsp/{fileserver,volserver,salvager} -cell $c -noauth
+	retry bos restart localhost -all -cell $c -noauth
+fi
+log getting partition list
+retry vos listpart localhost -noauth
+
+# only 1st afs server
+if [ first -eq 1 ]; then
+	initcellp1
+fi
+
+retry bos shutdown localhost -cell $c -noauth -wait
+pkill -HUP bosserver
+sleep 3
+# don't put back CellServDB
+trap 'rm -rf $DIR; exit 1' 0 1 2 3 13 15
+
+log starting authenticated bosserver
+retry bosserver -log -syslog 
+retry bos restart localhost -all -cell $c -localauth
+
+
+log starting afs client
+retry mkdir -p /afs
+[ "$(mount | egrep "^/afs")" ] || mount -t xfs /dev/xfs0 /afs
+retry /usr/libexec/afsd -z --log=/var/log/afsd.log
+
+log authenticating $A
+retry kinit $A
+retry pts listentries
+
+# do this on reboot
+grep "^afs=YES" /etc/rc.conf > /dev/null 2>&1 || \
+grep "^afs=YES" /etc/rc.conf.local > /dev/null 2>&1 || \
+echo afs=YES >> /etc/rc.conf.local
+
+retry ls /afs
+
+# only 1st afs server
+if [ first -eq 1 ]; then
+	initcellp2
+fi
+
+log adding replication sites for root.afs, root.cell
+retry vos addsite $h /vicepa root.afs
+retry vos addsite $h /vicepa root.cell
+
+log release of replicated volumes
+retry vos release root.afs
+retry vos release root.cell
+
 addchg /etc/kerberosV/krb5.conf
 addchg "+/etc/kerberosV/krb5.keytab"
 addchg /etc/afs/{CellServDB,ThisCell,afsd.conf}
@@ -514,4 +674,3 @@ and is now running.
 Please read ${PREFIX}/share/openafs/README.OpenBSD for further details;
 be sure to note the startup and shutdown script examples.
 __EOT
-
