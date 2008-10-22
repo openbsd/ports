@@ -1,0 +1,26 @@
+The PostgreSQL Toolbox is a collection of small programs to aid the
+PostgreSQL administrator and developer.
+
+* pgcomment parses SQL files which should contain DDL and 
+  (javadoc) comments and can generate the appropriate COMMENT ON 
+  statements or HTML and LaTeX fragments.
+
+* pgstat shows the queries the PostgreSQL server is currently 
+  executing and optionally idle connections.
+
+* listdb lists all databases like the \l+ command in psql.
+
+* dbsize tells the overall size of a single database.
+
+* dbrelationsize tells the size of tables, view, indices, 
+  sequences of a specific database.
+
+* dbstat prints the collected statistics about a database.
+
+* listlock prints locks held by a database.
+
+* xloginfo shows the current write and insert location in the xlogs.
+
+* pg_file2str reads a file from STDIN or the filename given as its first 
+  command line argument and prints the file properly escaped as a
+  PostgreSQL string literal to STDOUT.

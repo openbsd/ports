@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/10/22 11:08:09 ajacoutot Exp $
+--- Makefile.orig	Tue Oct 14 21:52:43 2008
++++ Makefile	Mon Oct 20 16:35:37 2008
+@@ -8,11 +8,10 @@ TOOLS=pgstat pgcomment listdb dbsize dbstat listlock d
+ all:	$(MANPAGES)
+ 	perl -c pgcomment
+ 	perl -c pg_file2str.pl
+-	$(MAKE) -C htdocs $@
+ 
+ install:	all
+ 	for t in $(TOOLS) ; do install -m 755 $$t $(PREFIX)/bin/ ; done
+-	for m in $(MANPAGES) ; do install -m 644 $$m $(PREFIX)/share/man/man1 ; done
++	for m in $(MANPAGES) ; do install -m 644 $$m $(PREFIX)/man/man1 ; done
+ 
+ uninstall:
+ 	for t in $(TOOLS) ; do rm -f $(PREFIX)/bin/$$t ; done
