@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 09:12:00 espie Exp $
-bin/gist
-bin/yorick
+@comment $OpenBSD: PLIST,v 1.7 2008/10/22 00:51:01 pvalchev Exp $
+@bin bin/gist
+@bin bin/yorick
 include/README
 include/bcast.h
 include/binio.h
 include/bound.h
+include/cblasy.h
+include/cfft.h
 include/cgm.h
 include/cgmin.h
 include/clip.h
@@ -16,11 +18,11 @@ include/drat.i
 include/draw.h
 include/engine.h
 include/eps.h
-include/extern_c.h
 include/fft.i
 include/gist.h
 include/graph.i
 include/gtext.h
+include/hack103.h
 include/hash.h
 include/heapsort.h
 include/hex.h
@@ -40,7 +42,10 @@ include/play.h
 include/playgl.h
 include/playu.h
 include/playw.h
+include/playwin.h
 include/playx.h
+include/plugin.h
+include/pmin.h
 include/prmtyp.h
 include/ps.h
 include/pstdio.h
@@ -55,26 +60,28 @@ include/ugetc.h
 include/upoll.h
 include/xbasic.h
 include/xfancy.h
+include/yapi.h
 include/yasync.h
 include/ydata.h
+include/yfnmatch.h
 include/yio.h
+include/yregexp.h
 include/yversion.h
 lib/libyor.a
 @man man/man1/gist.1
 @man man/man1/yorick.1
 share/doc/yorick/
 share/doc/yorick/drat.doc
-share/doc/yorick/drat.tex
 share/doc/yorick/graph.doc
 share/doc/yorick/hex.doc
 share/doc/yorick/library.doc
 share/doc/yorick/math.doc
+share/doc/yorick/ps.ps
+share/doc/yorick/pscom.ps
 share/doc/yorick/refs.pdf
-share/doc/yorick/refs.ps
 share/doc/yorick/refs.tex
 share/doc/yorick/std.doc
 share/doc/yorick/yorick.pdf
-share/doc/yorick/yorick.ps
 share/doc/yorick/yorick.tex
 share/yorick/
 share/yorick/g/
@@ -103,6 +110,7 @@ share/yorick/i/basfix.i
 share/yorick/i/bessel.i
 share/yorick/i/bowtie.i
 share/yorick/i/button.i
+share/yorick/i/calendar.i
 share/yorick/i/cheby.i
 share/yorick/i/collec.i
 share/yorick/i/color.i
@@ -118,33 +126,40 @@ share/yorick/i/demo5.i
 share/yorick/i/digit2.i
 share/yorick/i/ellipse.i
 share/yorick/i/elliptic.i
+share/yorick/i/fermi.i
+share/yorick/i/fermii.i
 share/yorick/i/filter.i
 share/yorick/i/fitlsq.i
 share/yorick/i/fitrat.i
 share/yorick/i/fits.i
 share/yorick/i/gamma.i
+share/yorick/i/gammp.i
 share/yorick/i/gcd.i
 share/yorick/i/hydra.i
+share/yorick/i/idlsave.i
+share/yorick/i/ieee.i
 share/yorick/i/kepler.i
-share/yorick/i/legal.i
 share/yorick/i/legndr.i
 share/yorick/i/make.i
+share/yorick/i/md5.i
 share/yorick/i/mkdoc.i
 share/yorick/i/movie.i
 share/yorick/i/msort.i
 share/yorick/i/multi.i
 share/yorick/i/netcdf.i
+share/yorick/i/pathfun.i
 share/yorick/i/pixels.i
+share/yorick/i/pkg_mngr.i
 share/yorick/i/pl3d.i
 share/yorick/i/plato.i
 share/yorick/i/plclab.i
 share/yorick/i/plwf.i
 share/yorick/i/pnm.i
 share/yorick/i/prefix.i
-share/yorick/i/prmtyp.i
 share/yorick/i/random.i
 share/yorick/i/rays.i
 share/yorick/i/readn.i
+share/yorick/i/regress.i
 share/yorick/i/rezone.i
 share/yorick/i/rkutta.i
 share/yorick/i/romberg.i
@@ -154,6 +169,7 @@ share/yorick/i/show.i
 share/yorick/i/silo.i
 share/yorick/i/slice3.i
 share/yorick/i/spline.i
+share/yorick/i/splinef.i
 share/yorick/i/string.i
 share/yorick/i/style.i
 share/yorick/i/sysafe.i
@@ -166,6 +182,7 @@ share/yorick/i/testg.i
 share/yorick/i/testlp.i
 share/yorick/i/testm.i
 share/yorick/i/testp.i
+share/yorick/i/teststr.i
 share/yorick/i/txpath.i
 share/yorick/i/ylmdec.i
 share/yorick/i/zroots.i
