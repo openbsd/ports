@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/09/17 13:54:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/22 20:03:08 steven Exp $
 
 COMMENT =		continuous integration server
 
@@ -40,7 +40,6 @@ BINDIR =		${PREFIX}/bin
 SUBST_VARS +=		HOMEDIR
 
 do-install:
-	${INSTALL_DATA_DIR} ${HOMEDIR}
 	${INSTALL_DATA_DIR} ${WARDIR}
 	${INSTALL_DATA} ${PORTSDIR}/distfiles/${DIST_SUBDIR}/hudson.war ${WARDIR}
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${WARDIR}
