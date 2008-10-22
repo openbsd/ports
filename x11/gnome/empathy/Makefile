@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/09/28 09:16:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2008/10/22 19:37:49 jasper Exp $
 
 COMMENT= 		telepathy based messenger for the Gnome desktop
 
@@ -58,5 +58,10 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-python=Yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	@ln -s ${LOCALBASE}/bin/python${MODPY_VERSION}-config ${WRKDIR}/bin/python-config
+
+
 
 .include <bsd.port.mk>
