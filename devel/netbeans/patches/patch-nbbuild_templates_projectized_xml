@@ -1,0 +1,12 @@
+$OpenBSD: patch-nbbuild_templates_projectized_xml,v 1.1 2008/10/22 16:04:30 kurt Exp $
+--- nbbuild/templates/projectized.xml.orig	Fri Sep 26 19:23:03 2008
++++ nbbuild/templates/projectized.xml	Fri Sep 26 19:35:38 2008
+@@ -98,7 +98,7 @@ Microsystems, Inc. All Rights Reserved.
+         </condition>
+         <property name="tmp.java.home" value="${java.home}"/>
+ 
+-        <javac srcdir="${src.dir}" destdir="${build.classes.dir}" debug="${build.compiler.debug}" debuglevel="${build.compiler.debuglevel}" deprecation="${build.compiler.deprecation}" optimize="${build.compiler.optimize}" source="${javac.source}" target="${javac.target}" includeantruntime="false">
++        <javac srcdir="${src.dir}" destdir="${build.classes.dir}" debug="${build.compiler.debug}" debuglevel="${build.compiler.debuglevel}" deprecation="${build.compiler.deprecation}" optimize="${build.compiler.optimize}" source="${javac.source}" target="${javac.target}" includeantruntime="false" fork="true">
+             <bootclasspath>
+                 <fileset dir="${tmp.java.home}/lib">
+                     <include name="*.jar"/>
