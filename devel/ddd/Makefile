@@ -1,21 +1,23 @@
-# $OpenBSD: Makefile,v 1.46 2008/01/04 18:38:51 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2008/10/22 17:04:14 landry Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
 DISTNAME=	ddd-3.3.11
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 
 HOMEPAGE=	http://www.gnu.org/software/ddd/
 
-# GPL
+# GPLv2 / LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM X11 Xaw Xau Xdmcp Xext Xmu Xp Xpm Xt c m z stdc++ \
-		Xft Xrender expat fontconfig freetype iconv ncurses
+		Xft Xrender expat fontconfig freetype ncurses
+
+MODULES=	converters/libiconv
 
 REGRESS_IS_INTERACTIVE=Yes
 # Note - we need ~/.XAuthority, which doesn't exist in
@@ -28,15 +30,21 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu autoconf no-autoheader
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		CXXFLAGS="${CXXFLAGS}"
+
+# needed for is_ppc_file() in ddd/filetype.C
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LIB_DEPENDS+=	elf::devel/libelf
+.endif
+
 AUTOCONF_VERSION=2.59
 SEPARATE_BUILD=	simple
 
 CONFIGURE_ARGS=	--with-readline-libraries=/usr/lib
 
 MAKE_FLAGS=	MAINTAINER="'${MAINTAINER}'"
-
-VMEM_WARNING=	Yes
 
 DOCS=	ddd-paper.ps ddd-themes.pdf ddd-themes.ps ddd.pdf ddd.ps html/ddd.html
 
