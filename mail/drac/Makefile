@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/22 09:31:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/22 11:05:36 sthen Exp $
 
 COMMENT=	dynamic relay authorization control daemon
 
 DISTNAME=	drac
-PKGNAME=	${DISTNAME}-1.12p1
+PKGNAME=	${DISTNAME}-1.12p2
 CATEGORIES=	mail
 
 HOMEPAGE=	http://mail.cc.umanitoba.ca/drac/
