@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/18 11:15:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/22 12:29:31 jasper Exp $
+@conflict p5-Mail-SPF-Query-*
 bin/spfquery
 bin/type99
 lib/python${MODPY_VERSION}/site-packages/pyspf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
