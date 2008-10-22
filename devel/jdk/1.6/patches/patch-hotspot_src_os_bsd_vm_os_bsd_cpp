@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1 2008/03/17 03:28:26 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Sun Mar 16 09:33:24 2008
-+++ hotspot/src/os/bsd/vm/os_bsd.cpp	Sun Mar 16 09:33:27 2008
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.2 2008/10/22 16:02:24 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Mon Oct 20 00:41:13 2008
++++ hotspot/src/os/bsd/vm/os_bsd.cpp	Mon Oct 20 08:47:04 2008
 @@ -277,7 +277,11 @@ void os::Bsd::initialize_system_info() {
    int mib[2];
    size_t len;
@@ -25,3 +25,16 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1 2008/03/17 03:28:26 kurt 
    len = sizeof(mem_val);
    if (sysctl(mib, 2, &mem_val, &len, NULL, 0) != -1)
         _physical_memory = mem_val;
+@@ -303,10 +311,10 @@ void os::Bsd::initialize_system_info() {
+ #ifdef __OpenBSD__
+   {
+        // limit _physical_memory memory view on OpenBSD since
+-       // datasize maximum limits us anyway.
++       // datasize limits us anyway.
+        struct rlimit limits;
+        getrlimit(RLIMIT_DATA, &limits);
+-       _physical_memory = MIN2(_physical_memory, (julong)limits.rlim_max);
++       _physical_memory = MIN2(_physical_memory, (julong)limits.rlim_cur);
+   }
+ #endif
+ }

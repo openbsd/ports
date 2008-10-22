@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.5 2008/03/19 18:05:43 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Wed Nov  7 12:41:29 2007
-+++ hotspot/src/os/bsd/vm/os_bsd.cpp	Wed Nov  7 13:07:56 2007
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.6 2008/10/22 16:02:24 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Tue Aug  5 21:06:35 2008
++++ hotspot/src/os/bsd/vm/os_bsd.cpp	Tue Aug  5 21:10:17 2008
 @@ -47,13 +47,26 @@
  # include <semaphore.h>
  # include <fcntl.h>
@@ -212,7 +212,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.5 2008/03/19 18:05:43 kurt 
 +       // datasize maximum limits us anyway.
 +       struct rlimit limits;
 +       getrlimit(RLIMIT_DATA, &limits);
-+       _physical_memory = MIN2(_physical_memory, (julong)limits.rlim_max);
++       _physical_memory = MIN2(_physical_memory, (julong)limits.rlim_cur);
 +  }
 +#endif
 +}
