@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2008/09/18 14:47:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2008/10/22 19:27:07 naddy Exp $
 
 COMMENT=	GNU gettext
 
@@ -29,6 +29,7 @@ WANTLIB=	c expat m ncurses
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-csharp \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-included-gettext \
 		--with-included-glib \
