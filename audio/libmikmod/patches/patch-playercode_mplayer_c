@@ -1,7 +1,7 @@
-$OpenBSD: patch-playercode_mplayer_c,v 1.4 2002/12/24 21:42:13 pvalchev Exp $
---- playercode/mplayer.c.orig	Mon Jan 21 14:23:56 2002
-+++ playercode/mplayer.c	Tue Dec 24 13:45:20 2002
-@@ -254,7 +254,7 @@ static int MP_FindEmptyChannel(MODULE *m
+$OpenBSD: patch-playercode_mplayer_c,v 1.5 2008/10/23 22:06:28 miod Exp $
+--- playercode/mplayer.c.orig	Mon Jan 21 21:23:56 2002
++++ playercode/mplayer.c	Wed Oct 22 19:56:49 2008
+@@ -254,7 +254,7 @@ static int MP_FindEmptyChannel(MODULE *mod)
  		   Voice_Stopped_internal(t))
  			return t;
  
@@ -10,7 +10,19 @@ $OpenBSD: patch-playercode_mplayer_c,v 1.4 2002/12/24 21:42:13 pvalchev Exp $
  	for (k=0;k<md_sngchn;k++,a++) {
  		/* allow us to take over a nonexisting sample */
  		if (!a->main.s)
-@@ -442,24 +442,22 @@ static SWORD ProcessEnvelope(MP_VOICE *a
+@@ -367,9 +367,9 @@ static SWORD StartEnvelope(ENVPR *t,UBYTE flg,UBYTE pt
+ 	}
+ 
+ 	/* Fit in the envelope, still */
+-	if (t->a >= t->pts)
++	if (t->a >= t->pts && t->pts != 0)
+ 		t->a = t->pts - 1;
+-	if (t->b >= t->pts)
++	if (t->b >= t->pts && t->pts != 0)
+ 		t->b = t->pts-1;
+ 
+ 	return t->env[t->a].val;
+@@ -442,24 +442,22 @@ static SWORD ProcessEnvelope(MP_VOICE *aout, ENVPR *t,
  			} else
  			/*
  			 * Non looping situations.
