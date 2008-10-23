@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2008/09/13 22:04:40 brad Exp $
+@comment $OpenBSD: PLIST,v 1.17 2008/10/23 02:55:44 brad Exp $
 @conflict gaim-*
 @bin bin/finch
 @bin bin/pidgin
@@ -338,6 +338,7 @@ share/locale/lo/LC_MESSAGES/
 share/locale/lo/LC_MESSAGES/pidgin.mo
 share/locale/lt/LC_MESSAGES/pidgin.mo
 share/locale/mk/LC_MESSAGES/pidgin.mo
+share/locale/mn/LC_MESSAGES/pidgin.mo
 share/locale/my_MM/
 share/locale/my_MM/LC_MESSAGES/
 share/locale/my_MM/LC_MESSAGES/pidgin.mo

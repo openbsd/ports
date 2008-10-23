@@ -1,12 +1,12 @@
-$OpenBSD: patch-pidgin_Makefile_in,v 1.6 2008/08/21 05:59:01 brad Exp $
---- pidgin/Makefile.in.orig	Mon Aug 18 21:55:46 2008
-+++ pidgin/Makefile.in	Wed Aug 20 00:48:35 2008
-@@ -108,7 +108,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
- LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
- 	--mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
- 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+$OpenBSD: patch-pidgin_Makefile_in,v 1.7 2008/10/23 02:55:44 brad Exp $
+--- pidgin/Makefile.in.orig	Sun Oct 19 10:38:13 2008
++++ pidgin/Makefile.in	Tue Oct 21 20:19:24 2008
+@@ -109,7 +109,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) \
+ 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+ 	$(AM_CFLAGS) $(CFLAGS)
 -CCLD = $(CC)
 +CCLD = $(CXX)
- LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
- 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
- 	$(LDFLAGS) -o $@
+ LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ SOURCES = $(pidgin_SOURCES)
