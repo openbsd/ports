@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2008/07/10 11:38:03 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2008/10/23 11:19:45 landry Exp $
 
 COMMENT=	query a dictionary service for words or phrases
 
-XFCE_VERSION=	0.4.0
+XFCE_VERSION=	0.4.1
 XFCE_GOODIE=	xfce4-dict
-PKGNAME=	${DISTNAME}p1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -14,7 +13,6 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
-EXTRACT_SUFX=	.tar.gz #tocheck
 
 LIB_DEPENDS=	xfce4panel.>=2.2::x11/xfce4/xfce4-panel
 
