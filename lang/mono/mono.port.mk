@@ -1,7 +1,8 @@
-# $OpenBSD: mono.port.mk,v 1.3 2008/10/24 14:49:44 robert Exp $
+# $OpenBSD: mono.port.mk,v 1.4 2008/10/24 15:05:03 robert Exp $
 
 CATEGORIES+=		lang/mono
 
+CONFIGURE_ENV+=		MONO_SHARED_DIR=/tmp
 MAKE_FLAGS+=		MONO_SHARED_DIR=/tmp
 
 # A list of files where we have to remove the stupid hardcoded .[0-9] major
