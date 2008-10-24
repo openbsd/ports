@@ -1,28 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/10/29 18:18:47 alek Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/10/24 14:59:54 jasper Exp $
+bin/gtkdoc-check
+bin/gtkdoc-depscan
 bin/gtkdoc-fixxref
 bin/gtkdoc-mkdb
 bin/gtkdoc-mkhtml
 bin/gtkdoc-mkman
 bin/gtkdoc-mktmpl
+bin/gtkdoc-rebase
 bin/gtkdoc-scan
 bin/gtkdoc-scangobj
 bin/gtkdoc-scanobj
 bin/gtkdocize
 lib/pkgconfig/gtk-doc.pc
 share/aclocal/gtk-doc.m4
-share/gnome/
-share/gnome/help/
-share/gnome/help/gtk-doc-manual/
-share/gnome/help/gtk-doc-manual/C/
-share/gnome/help/gtk-doc-manual/C/fdl-appendix.xml
-share/gnome/help/gtk-doc-manual/C/gtk-doc-manual.xml
-share/gtk-doc/
+share/doc/gtk-doc/
+share/doc/gtk-doc/fdl-appendix.xml
+share/doc/gtk-doc/gtk-doc-manual.xml
 share/gtk-doc/data/
 share/gtk-doc/data/devhelp.xsl
 share/gtk-doc/data/devhelp2.xsl
 share/gtk-doc/data/gtk-doc.dcl
 share/gtk-doc/data/gtk-doc.dsl
 share/gtk-doc/data/gtk-doc.make
+share/gtk-doc/data/gtk-doc.notmpl.make
 share/gtk-doc/data/gtk-doc.xsl
 share/gtk-doc/data/gtkdoc-common.pl
 share/gtk-doc/data/home.png
