@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/23 10:29:21 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/24 12:34:12 jasper Exp $
 @shell bin/psh
 ${P5SITE}/Psh/
 ${P5SITE}/Psh.pm
@@ -97,6 +97,46 @@ ${P5SITE}/Psh/Util.pm
 @man man/man1/pshcomplete.1
 @man man/man1/pshconfig.1
 @man man/man1/pshdevel.1
+@man man/man3p/Psh::Builtins::Alias.3p
+@man man/man3p/Psh::Builtins::Bg.3p
+@man man/man3p/Psh::Builtins::Bind.3p
+@man man/man3p/Psh::Builtins::Builtin.3p
+@man man/man3p/Psh::Builtins::Cd.3p
+@man man/man3p/Psh::Builtins::Complete.3p
+@man man/man3p/Psh::Builtins::Delenv.3p
+@man man/man3p/Psh::Builtins::Dirs.3p
+@man man/man3p/Psh::Builtins::Drives.3p
+@man man/man3p/Psh::Builtins::Exit.3p
+@man man/man3p/Psh::Builtins::Export.3p
+@man man/man3p/Psh::Builtins::Fallback::Env.3p
+@man man/man3p/Psh::Builtins::Fallback::Ls.3p
+@man man/man3p/Psh::Builtins::Fc.3p
+@man man/man3p/Psh::Builtins::Fg.3p
+@man man/man3p/Psh::Builtins::Firsttime.3p
+@man man/man3p/Psh::Builtins::Forfile.3p
+@man man/man3p/Psh::Builtins::Function.3p
+@man man/man3p/Psh::Builtins::Hash.3p
+@man man/man3p/Psh::Builtins::Help.3p
+@man man/man3p/Psh::Builtins::History.3p
+@man man/man3p/Psh::Builtins::Jobs.3p
+@man man/man3p/Psh::Builtins::Kill.3p
+@man man/man3p/Psh::Builtins::Modules.3p
+@man man/man3p/Psh::Builtins::Option.3p
+@man man/man3p/Psh::Builtins::Package.3p
+@man man/man3p/Psh::Builtins::Printenv.3p
+@man man/man3p/Psh::Builtins::Readline.3p
+@man man/man3p/Psh::Builtins::Rehash.3p
+@man man/man3p/Psh::Builtins::Rename.3p
+@man man/man3p/Psh::Builtins::Set.3p
+@man man/man3p/Psh::Builtins::Setenv.3p
+@man man/man3p/Psh::Builtins::Source.3p
+@man man/man3p/Psh::Builtins::Strategy.3p
+@man man/man3p/Psh::Builtins::Sudo.3p
+@man man/man3p/Psh::Builtins::Symbols.3p
+@man man/man3p/Psh::Builtins::Theme.3p
+@man man/man3p/Psh::Builtins::Tieopt.3p
+@man man/man3p/Psh::Builtins::Unalias.3p
+@man man/man3p/Psh::Builtins::Which.3p
 @man man/man3p/Psh::Completion.3p
 @man man/man3p/Psh::Joblist.3p
 @man man/man3p/Psh::Locale.3p
@@ -106,6 +146,19 @@ ${P5SITE}/Psh/Util.pm
 @man man/man3p/Psh::Parser.3p
 @man man/man3p/Psh::PerlEval.3p
 @man man/man3p/Psh::Strategy.3p
+@man man/man3p/Psh::Strategy::Auto_cd.3p
+@man man/man3p/Psh::Strategy::Auto_resume.3p
+@man man/man3p/Psh::Strategy::Bang.3p
+@man man/man3p/Psh::Strategy::Brace.3p
+@man man/man3p/Psh::Strategy::Darwin_apps.3p
+@man man/man3p/Psh::Strategy::Debug.3p
+@man man/man3p/Psh::Strategy::Eval.3p
+@man man/man3p/Psh::Strategy::Executable.3p
+@man man/man3p/Psh::Strategy::Fallback_builtin.3p
+@man man/man3p/Psh::Strategy::Perl.3p
+@man man/man3p/Psh::Strategy::Perlfunc.3p
+@man man/man3p/Psh::Strategy::Perlfunc_heavy.3p
+@man man/man3p/Psh::Strategy::Perlscript.3p
 @man man/man3p/Psh::StrategyBunch.3p
 share/psh/
 share/psh/complete/
