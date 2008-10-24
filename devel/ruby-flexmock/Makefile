@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/06/18 00:29:39 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2008/10/24 14:48:36 bernd Exp $
 
 COMMENT=	simple mock object for unit testing
 
-DISTNAME=	flexmock-0.8.2
+DISTNAME=	flexmock-0.8.3
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	devel
 

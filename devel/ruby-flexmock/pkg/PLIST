@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/06/18 00:29:39 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/10/24 14:48:36 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -429,6 +429,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/CHANGES
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Rakefile
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/TAGS
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/GoogleExample.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/releases/
@@ -446,7 +447,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/releases/flexmock-0.6.4.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/releases/flexmock-0.7.0.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/releases/flexmock-0.7.1.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/releases/flexmock-0.8.0.rdoc
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/releases/${DISTNAME}.rdoc
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/releases/flexmock-0.8.2.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/flexmock.blurb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/install.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
