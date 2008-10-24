@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.639 2008/10/24 13:24:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.640 2008/10/24 22:52:29 bernd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -742,6 +742,7 @@
      SUBDIR += t1lib
      SUBDIR += tclcl
      SUBDIR += tcllib
+     SUBDIR += tig
      SUBDIR += tkcvs
      SUBDIR += tkdiff
      SUBDIR += tla
