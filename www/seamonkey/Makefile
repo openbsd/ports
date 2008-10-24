@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2008/09/24 19:29:16 martynas Exp $
+# $OpenBSD: Makefile,v 1.28 2008/10/24 21:06:58 jasper Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	integrated mozilla application suite
 
 VER=		1.1.12
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}
+PKGNAME=	seamonkey-${VER}p0
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -89,7 +89,8 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
 
-RUN_DEPENDS=	:esound-*:audio/esound
+RUN_DEPENDS=	:esound-*:audio/esound \
+		:desktop-file-utils-*:devel/desktop-file-utils
 WANTLIB=	c glib-2.0 m pthread stdc++ \
 		X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 \
@@ -191,5 +192,9 @@ do-install:
 	sh ${FILESDIR}/genchrome ${WRKDIR}/${language}/install.js \
 		${language} >> ${MOZ}/chrome/installed-chrome.txt
 .endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
+		< ${FILESDIR}/seamonkey.desktop > \
+			${PREFIX}/share/applications/seamonkey.desktop
 
 .include <bsd.port.mk>

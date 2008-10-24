@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Seamonkey
+Comment=Seamonkey application suite
+Exec=seamonkey
+Terminal=false
+Type=Application
+Icon=!!PREFIX!!/seamonkey/chrome/icons/default/seamonkey.png
+Categories=Application;PIM
+StartupNotify=True

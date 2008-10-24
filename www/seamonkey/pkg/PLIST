@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/09/24 19:29:16 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/10/24 21:06:58 jasper Exp $
 @pkgpath www/seamonkey,-main
 bin/seamonkey
 @man man/man1/seamonkey.1
@@ -622,6 +622,7 @@ seamonkey/searchplugins/google.gif
 seamonkey/searchplugins/google.src
 seamonkey/searchplugins/jeeves.gif
 seamonkey/searchplugins/jeeves.src
+share/applications/seamonkey.desktop
 @exec rm -rf /tmp/.mozilla
 @exec cd %D/seamonkey && env HOME=/tmp LD_LIBRARY_PATH=%D/seamonkey ./regchrome
 @exec cd %D/seamonkey && env HOME=/tmp LD_LIBRARY_PATH=%D/seamonkey ./regxpcom
@@ -631,3 +632,5 @@ seamonkey/searchplugins/jeeves.src
 @unexec rm -f %D/seamonkey/chrome/stylesheets.rdf
 @unexec rm -f %D/seamonkey/components/compreg.dat
 @unexec rm -f %D/seamonkey/components/xpti.dat
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
