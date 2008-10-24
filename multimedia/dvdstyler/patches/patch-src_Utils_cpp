@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Utils_cpp,v 1.1.1.1 2008/05/17 17:18:48 jasper Exp $
---- src/Utils.cpp.orig	Fri May 16 10:47:31 2008
-+++ src/Utils.cpp	Fri May 16 10:47:57 2008
+$OpenBSD: patch-src_Utils_cpp,v 1.2 2008/10/24 16:47:27 jasper Exp $
+--- src/Utils.cpp.orig	Sun Jul 13 21:28:02 2008
++++ src/Utils.cpp	Thu Oct 23 00:17:25 2008
 @@ -10,6 +10,7 @@
  
  #include "Utils.h"
@@ -8,4 +8,4 @@ $OpenBSD: patch-src_Utils_cpp,v 1.1.1.1 2008/05/17 17:18:48 jasper Exp $
 +#include <wx/dataobj.h>
  #include <wx/mstream.h>
  #include <wx/log.h>
- 
+ #include <wx/dataobj.h>

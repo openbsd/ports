@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/15 11:15:30 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/24 16:47:27 jasper Exp $
 
 COMMENT=		DVD authoring application
 
-DISTNAME=		DVDStyler-1.6.2
-PKGNAME=		${DISTNAME:L}p2
+DISTNAME=		DVDStyler-1.7.0
+PKGNAME=		${DISTNAME:L}
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.dvdstyler.de/
@@ -15,18 +15,20 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dvdstyler/}
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
 WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
-		audiofile bonobo-2 bonobo-activation \
-		bonoboui-2 c cairo esd expat fontconfig freetype gailutil \
-		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 \
-		gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 \
-		gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1 png popt pthread stdc++ wx_base \
-		wx_gtk2_adv wx_gtk2_core wx_gtk2_html xml2 z
+		Xext Xfixes Xi Xinerama Xrandr Xrender a52 art_lgpl_2 \
+		atk-1.0 audiofile bonobo-2 bonobo-activation bonoboui-2 \
+		bz2 c cairo esd expat faac faad fontconfig freetype \
+		gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
+		glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
+		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg \
+		m mp3lame ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pixman-1 png popt pthread stdc++ theora vorbis vorbisenc \
+		wx_base wx_gtk2_adv wx_gtk2_core wx_gtk2_html x264 xml2 z
 
 BUILD_DEPENDS=		::multimedia/dvdauthor \
 			::multimedia/mjpegtools \
@@ -47,9 +49,15 @@ RUN_DEPENDS=		::devel/desktop-file-utils \
 USE_GMAKE=		Yes
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
+AUTOMAKE_VERSION=	1.8
+AUTOCONF_VERSION=	2.61
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_REGRESS=		Yes
+
+pre-configure:
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>

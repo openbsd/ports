@@ -1,0 +1,7 @@
+$OpenBSD: patch-docs_Makefile_am,v 1.1 2008/10/24 16:47:27 jasper Exp $
+--- docs/Makefile.am.orig	Thu Oct 23 00:27:03 2008
++++ docs/Makefile.am	Thu Oct 23 00:27:11 2008
+@@ -1,2 +1,2 @@
+-pkgdatadir=@datadir@/man/man1
++pkgdatadir=@prefix@/man/man1
+ pkgdata_DATA = dvdstyler.1

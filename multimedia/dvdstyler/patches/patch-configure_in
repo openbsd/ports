@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2008/10/24 16:47:27 jasper Exp $
+--- configure.in.orig	Thu Oct 23 00:12:48 2008
++++ configure.in	Thu Oct 23 00:13:31 2008
+@@ -76,7 +76,7 @@ PKG_CHECK_MODULES(LIBEXIF, libexif, [LIBS="$LIBS -lexi
+ dnl check ffmpeg
+ PKG_CHECK_MODULES(FFMPEG, [libavformat >= 50.0.0 libavcodec >= 51.0.0 libavutil >= 49.0.0 libswscale])
+ dnl check path for old ffmpeg
+-AC_CHECK_HEADERS([ffmpeg/avutil.h])
++AC_CHECK_HEADERS([libavutil/avutil.h])
+ CXXFLAGS="$CXXFLAGS $FFMPEG_CFLAGS"
+ LIBS="$LIBS $FFMPEG_LIBS"
+ 
