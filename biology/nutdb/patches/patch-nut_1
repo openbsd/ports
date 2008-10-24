@@ -1,6 +1,6 @@
-$OpenBSD: patch-nut_1,v 1.6 2008/09/22 08:13:28 jasper Exp $
---- nut.1.orig	Mon Sep 22 10:08:44 2008
-+++ nut.1	Mon Sep 22 10:09:46 2008
+$OpenBSD: patch-nut_1,v 1.7 2008/10/24 12:25:29 jasper Exp $
+--- nut.1.orig	Mon Oct 20 10:31:47 2008
++++ nut.1	Mon Oct 20 10:55:14 2008
 @@ -1,17 +1,17 @@
 -.\" manual page [] for nut
 +.\" manual page [] for nutdb
@@ -9,8 +9,8 @@ $OpenBSD: patch-nut_1,v 1.6 2008/09/22 08:13:28 jasper Exp $
  .\" LP paragraph
  .\" IP indented paragraph
  .\" TP hanging label
--.TH "nut" "1" "2008.05.22" "" ""
-+.TH "nutdb" "1" "2008.05.22" "" ""
+-.TH "nut" "1" "2008.09.17" "" ""
++.TH "nutdb" "1" "2008.09.17" "" ""
  .SH "NAME"
 -.B nut \- analyze meals with the USDA Nutrient Database
 +.B nutdb \- analyze meals with the USDA Nutrient Database
@@ -23,7 +23,7 @@ $OpenBSD: patch-nut_1,v 1.6 2008/09/22 08:13:28 jasper Exp $
 +.B NUTDB
  allows you to record what you eat and analyze your meals for nutrient
  composition.  The database included is the 
- USDA Nutrient Database for Standard Reference, Release 20.
+ USDA Nutrient Database for Standard Reference, Release 21.
 @@ -39,7 +39,7 @@ You may add your own recipes to the database, 
  by creating them from the foods in the database.
  You can also add foods from the information on commercial food labels. The program is completely menu\-driven and there are no commands to learn.
