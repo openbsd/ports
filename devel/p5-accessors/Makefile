@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.2 2008/10/24 16:29:54 jasper Exp $
 
 COMMENT=                create accessor methods in caller's package
 
