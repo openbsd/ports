@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:42 espie Exp $
-bin/mutella
+@comment $OpenBSD: PLIST,v 1.3 2008/10/24 14:31:28 jasper Exp $
+@bin bin/mutella
+@bin bin/mutella_sio
 @man man/man1/mutella.1
 share/mutella/
 share/mutella/remote/
 share/mutella/remote/template/
+share/mutella/remote/template/confirm.html
 share/mutella/remote/template/connections.html
 share/mutella/remote/template/edit.html
 share/mutella/remote/template/images/
@@ -17,6 +19,9 @@ share/mutella/remote/template/images/blip-blue.gif
 share/mutella/remote/template/images/blip-gray.gif
 share/mutella/remote/template/images/blip-green.gif
 share/mutella/remote/template/images/blip-red.gif
+share/mutella/remote/template/images/bullet-pale-yellow-12x12.gif
+share/mutella/remote/template/images/bullet-red-12x12.gif
+share/mutella/remote/template/images/bullet-yellow-12x12.gif
 share/mutella/remote/template/images/clear-16x16.gif
 share/mutella/remote/template/images/clear-32x32.gif
 share/mutella/remote/template/images/connections-64x64.gif
@@ -65,6 +70,9 @@ share/mutella/remote/template/modules/sortby.html
 share/mutella/remote/template/modules/uploads.html
 share/mutella/remote/template/move.html
 share/mutella/remote/template/mutella-remote.css
+share/mutella/remote/template/overview.html
 share/mutella/remote/template/results.html
 share/mutella/remote/template/searches.html
+share/mutella/remote/template/settings.html
 share/mutella/remote/template/transfers.html
+share/mutella/remote/template/varhelp.html

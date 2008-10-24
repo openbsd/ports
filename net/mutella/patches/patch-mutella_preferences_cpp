@@ -1,0 +1,29 @@
+$OpenBSD: patch-mutella_preferences_cpp,v 1.1 2008/10/24 14:31:28 jasper Exp $
+
+Provide some Gnutella Web Caches that actually work by default.
+
+--- mutella/preferences.cpp.orig	Mon Oct 13 23:08:11 2008
++++ mutella/preferences.cpp	Mon Oct 13 23:08:59 2008
+@@ -140,19 +140,19 @@ MGnuPreferences::MGnuPreferences(MController* pControl
+ 	// Initial Gnu Web Caches
+ 	m_pContainer->AddSection("GWebCaches");
+ 	
+-	pP = m_pContainer->AddProperty("GWebCache1", m_szGWebCache1, MAX_URL, "http://www.gnucleus.net/gcache/gcache.php");
++	pP = m_pContainer->AddProperty("GWebCache1", m_szGWebCache1, MAX_URL, "http://aniraws.com/bootstrap/skulls.php");
+ 	pP->SetPropertyDescription("GWebCache server #1 (host cache) URL",
+ 		"GWebCacheX is used to initiate the connection to the Gnutella-net "
+ 		"Alternatively it will be used when Mutella looses the connection to the "
+ 		"net for whatever reason and host cache is empty. Accepts standard "
+ 		"HTTP URL format");
+-	pP = m_pContainer->AddProperty("GWebCache2", m_szGWebCache2, MAX_URL, "http://cache.mynapster.com/index.php");
++	pP = m_pContainer->AddProperty("GWebCache2", m_szGWebCache2, MAX_URL, "http://beacon.awardspace.com/gwc.php");
+ 	pP->SetPropertyDescription("GWebCache server #2 (host cache) URL",
+ 		"GWebCacheX is used to initiate the connection to the Gnutella-net "
+ 		"Alternatively it will be used when Mutella looses the connection to the "
+ 		"net for whatever reason and host cache is empty. Accepts standard "
+ 		"HTTP URL format");
+-	pP = m_pContainer->AddProperty("GWebCache3", m_szGWebCache3, MAX_URL, "http://gwebcache.bearshare.net/gcache.php");
++	pP = m_pContainer->AddProperty("GWebCache3", m_szGWebCache3, MAX_URL, "http://gwc.cluephone.com/skulls.php");
+ 	pP->SetPropertyDescription("GWebCache server #3 (host cache) URL",
+ 		"GWebCacheX is used to initiate the connection to the Gnutella-net "
+ 		"Alternatively it will be used when Mutella looses the connection to the "
