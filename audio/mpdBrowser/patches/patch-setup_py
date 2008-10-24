@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2008/10/24 17:08:09 jasper Exp $
+--- setup.py.orig	Mon Oct 20 13:13:36 2008
++++ setup.py	Mon Oct 20 13:13:56 2008
+@@ -62,7 +62,7 @@ setup(name='mpdBrowser',
+         packages=["mpdBrowser"],
+         package_dir={"mpdBrowser": "src/"},
+         scripts = ['src/mpdBrowser'],
+-        data_files=[('share/mpdbrowser', ['README', 'CHANGELOG', 'TODO', 'TRANSLATORS']),
++        data_files=[('share/mpdbrowser', ['README', 'TRANSLATORS']),
+                     ('share/applications', ['mpdBrowser.desktop']),
+                     ('share/locale/fr/LC_MESSAGES', ['mo/fr/mpdBrowser.mo']),
+                     ('share/locale/it/LC_MESSAGES', ['mo/it/mpdBrowser.mo']),

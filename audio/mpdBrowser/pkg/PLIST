@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/24 17:08:09 jasper Exp $
+bin/mpdBrowser
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser-0.9.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/__init__.py
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/idleObject.py
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/idleObject.pyc
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserBase.py
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserBase.pyc
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserCfg.py
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserCfg.pyc
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserCfgDlg.py
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserCfgDlg.pyc
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserConnection.py
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserConnection.pyc
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserCovers.py
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserCovers.pyc
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserDatabase.py
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserDatabase.pyc
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserDefine.py
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserDefine.pyc
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserIPC.py
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserIPC.pyc
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserUtils.py
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserUtils.pyc
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserView.py
+lib/python${MODPY_VERSION}/site-packages/mpdBrowser/mpdBrowserView.pyc
+share/applications/mpdBrowser.desktop
+share/locale/fr/LC_MESSAGES/mpdBrowser.mo
+share/locale/it/LC_MESSAGES/mpdBrowser.mo
+share/locale/pl/LC_MESSAGES/mpdBrowser.mo
+share/mpdbrowser/
+share/mpdbrowser/README
+share/mpdbrowser/TRANSLATORS
+share/pixmaps/
+share/pixmaps/mpdBrowser.png
+share/pixmaps/mpdBrowser_case.png
+share/pixmaps/mpdBrowser_empty.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
