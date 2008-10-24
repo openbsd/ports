@@ -3,5 +3,5 @@ font for on-screen display of Chinese (traditional and simplified).
 It has arguably the most complete coverage for Chinese characters among
 all known open-source fonts, including CJK Unified Ideograph (U4E00 - U9FA5)
 and CJK Unified Ideograph Extension A (U3400 - U4DB5) glyphs at four 
-four different sizes (9pt-12X12 pixel, 10pt-13X13 pixel, 11pt-15X15 pixel,
+different sizes (9pt-12X12 pixel, 10pt-13X13 pixel, 11pt-15X15 pixel,
 12pt-16x16 pixel) and two weights (medium and bold).
