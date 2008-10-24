@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/07/26 11:03:00 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/10/24 22:31:36 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -129,6 +129,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/tzinfo/info_timezone
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/tzinfo/linked_timezone_info_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/tzinfo/linked_timezone_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/tzinfo/offset_rationals_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/tzinfo/ruby_core_support_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/tzinfo/time_or_datetime_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/tzinfo/timezone_definition_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/tzinfo/timezone_index_definition_rb.html
@@ -204,6 +205,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/TZInfo/OffsetRationals/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/TZInfo/OffsetRationals/cdesc-OffsetRationals.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/TZInfo/PeriodNotFound/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/TZInfo/PeriodNotFound/cdesc-PeriodNotFound.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/TZInfo/RubyCoreSupport/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/TZInfo/RubyCoreSupport/cdesc-RubyCoreSupport.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/TZInfo/TZDataActivatedRule/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/TZInfo/TZDataActivatedRule/cdesc-TZDataActivatedRule.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/TZInfo/TZDataCountry/
@@ -538,6 +541,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Reg
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Resolute.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Rio_Branco.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Rosario.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Santarem.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Santiago.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Santo_Domingo.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Sao_Paulo.rb
@@ -941,6 +945,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/info_timezone.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/linked_timezone.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/linked_timezone_info.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/offset_rationals.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/ruby_core_support.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/time_or_datetime.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/timezone.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/timezone_definition.rb
@@ -962,6 +967,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_info_timezone.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_linked_timezone.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_linked_timezone_info.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_offset_rationals.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_ruby_core_support.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_time_or_datetime.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_timezone.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_timezone_definition.rb
