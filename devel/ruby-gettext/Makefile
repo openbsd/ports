@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/06/14 23:46:38 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/24 15:36:14 bernd Exp $
 
 COMMENT=		Ruby interface to gettext
 
-VERSION=		1.90.0
+VERSION=		1.93.0
 DISTNAME=		gettext-${VERSION}
-PKGNAME=		ruby-gettext-${VERSION}p0
+PKGNAME=		ruby-gettext-${VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.yotabanana.com/hiki/ruby-gettext.html
@@ -37,7 +37,7 @@ pre-regress:
 		${WRKBUILD}/test/rails/config/database.yml \
 		${WRKBUILD}/test/test_active_record.rb \
 		${WRKBUILD}/test/Rakefile
-	@perl -pi -e 's,2\.0\.1,2.0.2,g' \
+	@perl -pi -e 's,2\.1\.0,2.1.2,g' \
 		${WRKBUILD}/test/rails/config/environment.rb
 
 do-regress:
