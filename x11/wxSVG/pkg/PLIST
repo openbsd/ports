@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/07/09 02:13:59 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/10/24 16:44:19 jasper Exp $
 %%SHARED%%
 @bin bin/svgview
 include/wxSVG/
@@ -176,7 +176,9 @@ include/wxSVG/SVGUIButton.h
 include/wxSVG/SVGUIContainer.h
 include/wxSVG/SVGUIControl.h
 include/wxSVG/SVGUIElement.h
+include/wxSVG/SVGUIID.h
 include/wxSVG/SVGUINoteBook.h
+include/wxSVG/SVGUINoteBookContent.h
 include/wxSVG/SVGUIRotatingCtrl.h
 include/wxSVG/SVGUIScrollBar.h
 include/wxSVG/SVGUITextCtrl.h

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/07/09 02:13:59 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/24 16:44:19 jasper Exp $
 
 COMMENT=		C++ library to  create, manipulate and render SVG files
 
-DISTNAME=		wxsvg-1.0b10
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		wxsvg-1.0b11
 SHARED_LIBS +=	wxsvg                0.0      # .0.0
 CATEGORIES=		x11 graphics
 
@@ -16,16 +15,17 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wxsvg/}
+EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB=		X11 Xau Xdmcp c expat fontconfig freetype glib-2.0 \
-			gmodule-2.0 gobject-2.0 m pango-1.0 pangoft2-1.0 pcre \
-			pthread stdc++ z
+WANTLIB=	X11 Xau Xdmcp a52 bz2 c expat fontconfig freetype glib-2.0 \
+		gmodule-2.0 gobject-2.0 m mp3lame ogg pango-1.0 pangoft2-1.0 \
+		pcre pthread stdc++ theora vorbis vorbisenc x264 z
 
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=          ${MODGNU_AUTOCONF_DEPENDS} \
                         ${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=		avcodec,avformat,swscale::graphics/ffmpeg \
+LIB_DEPENDS=		avcodec,avformat,avutil,swscale::graphics/ffmpeg \
 			art_lgpl_2::graphics/libart \
 			wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_richtext,wx_gtk2_xrc::x11/wxWidgets
 
