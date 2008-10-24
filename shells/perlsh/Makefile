@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/24 12:34:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/24 13:24:50 jasper Exp $
 
 COMMENT=		Perl shell
 
 DISTNAME=		psh-1.8.1
-PKGNAME=		${DISTNAME:S/p/perl/}
+PKGNAME=		${DISTNAME:S/p/perl/}p0
 CATEGORIES=		shells
 
 HOMEPAGE=		http://www.focusresearch.com/gregor/sw/psh/
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.focusresearch.com/gregor/download/
 
 RUN_DEPENDS=		::devel/p5-Term-ReadLine-Gnu \
+			::devel/p5-Term-ReadLine-Perl \
 			::devel/p5-BSD-Resource
 
 CONFIGURE_STYLE=	perl
