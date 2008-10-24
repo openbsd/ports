@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/26 21:44:10 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/24 14:41:49 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -32,30 +32,31 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV.src/M000025.
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV.src/M000026.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV.src/M000028.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV.src/M000029.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV.src/M000032.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/MalformedCSVError.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000052.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000053.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000054.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000055.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000056.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000057.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000058.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000059.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000060.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000061.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000062.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000063.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000064.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000065.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000066.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000067.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000068.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000069.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000070.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000071.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000072.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000073.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000074.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Row.src/M000076.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Table.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Table.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Table.src/M000032.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Table.src/M000033.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Table.src/M000034.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Table.src/M000035.html
@@ -74,9 +75,11 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Table.src/M0
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Table.src/M000048.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Table.src/M000049.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Table.src/M000050.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Table.src/M000051.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/FasterCSV/Table.src/M000053.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/String.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/String.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/String.src/M000074.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/String.src/M000077.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/AUTHORS.html
@@ -123,6 +126,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Row/header_row%3f-i.ya
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Row/headers-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Row/include%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Row/index-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Row/inspect-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Row/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Row/push-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Row/to_csv-i.yaml
@@ -145,6 +149,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Table/delete-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Table/delete_if-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Table/each-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Table/headers-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Table/inspect-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Table/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Table/push-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/Table/to_a-i.yaml
@@ -164,6 +169,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/generate_line-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/gets-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/header_convert-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/header_row%3f-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/inspect-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/instance-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/load-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/FasterCSV/new-c.yaml
@@ -208,6 +214,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_csv_parsing.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_csv_writing.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_data_converters.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_encodings.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_features.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_headers.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_interface.rb
