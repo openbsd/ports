@@ -1,19 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/01/02 21:49:23 alek Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/10/24 16:36:56 jasper Exp $
 %%SHARED%%
 bin/cob-config
-bin/cobc
-bin/cobcrun
+@bin bin/cobc
+@bin bin/cobcrun
 include/libcob/
 include/libcob.h
 include/libcob/byteswap.h
 include/libcob/call.h
+include/libcob/codegen.h
 include/libcob/common.h
 include/libcob/exception.def
 include/libcob/fileio.h
+include/libcob/intrinsic.h
 include/libcob/move.h
 include/libcob/numeric.h
 include/libcob/screenio.h
 include/libcob/strings.h
+include/libcob/system.def
 include/libcob/termio.h
 @info info/open-cobol.info
 lib/libcob.a
@@ -21,10 +24,10 @@ lib/libcob.la
 share/locale/ja/LC_MESSAGES/open-cobol.mo
 share/open-cobol/
 share/open-cobol/config/
+share/open-cobol/config/bs2000.conf
 share/open-cobol/config/cobol2002.conf
 share/open-cobol/config/cobol85.conf
 share/open-cobol/config/default.conf
 share/open-cobol/config/ibm.conf
 share/open-cobol/config/mf.conf
 share/open-cobol/config/mvs.conf
-share/open-cobol/config/v023.conf
