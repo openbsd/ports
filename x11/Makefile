@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.354 2008/10/19 07:35:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.355 2008/10/24 01:55:46 kevlo Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -252,6 +252,8 @@
      SUBDIR += wmtz
      SUBDIR += wmweather
      SUBDIR += wmx
+     SUBDIR += wqy-bitmapfont
+     SUBDIR += wqy-zenhei-ttf
      SUBDIR += wterm
      SUBDIR += wxSVG
      SUBDIR += wxWidgets
