@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.638 2008/10/21 17:06:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.639 2008/10/24 13:24:04 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -519,7 +519,8 @@
      SUBDIR += p5-Term-Prompt
      SUBDIR += p5-Term-ReadKey
      SUBDIR += p5-Term-ReadLine-Gnu
-     SUBDIR += p5-Term-ReadLine-Zoid 
+     SUBDIR += p5-Term-ReadLine-Perl
+     SUBDIR += p5-Term-ReadLine-Zoid
      SUBDIR += p5-Term-ReadPassword
      SUBDIR += p5-Term-Screen
      SUBDIR += p5-Term-ScreenColor
