@@ -26,20 +26,48 @@ are brief instructions to do so.  See 'info heimdal' for further details.
 Once the KerberosV realm is setup, run '${PREFIX}/sbin/openafs-setup'
 to setup your first OpenAFS server in your cell.
 
-Finally, you should add the below to /etc/rc.local:
+Add the below to /etc/rc.local:
 
    if [ -x ${PREFIX}/sbin/bosserver ]; then
 	echo -n " openafs"
 	PATH=${PREFIX}/bin:${PREFIX}/sbin:$PATH
-	${PREFIX}/sbin/bosserver -log -syslog
 
+	# help this detach from console, proper fix is to properly daemonize!
+	sh -c "bosserver -log -syslog > /dev/null 2>&1 &"
+
+	# give the servers started by bosserver time to settle
+	# before attacking it with salvaging activity
+	sleep 10
+	
         # to salvage automatically on startup, for the paranoid
-        #echo -n "(salvaging afs volumes ..."
-        #${PREFIX}/bin/bos salvage localhost -all -orphans attach -localauth
-        #echo -n " done)"
+        echo -n "(salvaging"
+	set -A volumes $(
+		vos listvol localhost -noauth 2> /dev/null| \
+		awk '
+		/ partition / { sub(":","",$9); part=$9; next; }
+		/R[OW].* K .*-line/ { printf "%s %s\n",part,$2; }'
+	)
+
+	# 20 dots total, adjust based on volume count
+	freq=$((${#volumes[*]}/20))
+	i=0
+	while [ i -lt ${#volumes[*]} ]
+	do
+		# progress by volume count
+		if [ $(((i/2)%freq)) -eq 0 ]; then
+			echo -n .
+		fi
+		part=${volumes[$i]}
+		let i=i+1
+		vid=${volumes[$i]}
+		let i=i+1
+		bos salvage localhost $part $vid -localauth > /var/tmp/$vid.log 2>&1
+	done
+
+        echo -n ")"
    fi
 
-and add the following to /etc/rc.shutdown:
+Add the following to /etc/rc.shutdown:
 
    if [ -x ${PREFIX}/bin/bos ]; then
         ${PREFIX}/bin/bos shutdown localhost -localauth -wait
