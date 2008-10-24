@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/01 01:36:23 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/24 14:49:44 jasper Exp $
 %%SHARED%%
-bin/DllPlugInTester
+@bin bin/DllPlugInTester
 bin/cppunit-config
-bin/simple
 include/cppunit/
 include/cppunit/AdditionalMessage.h
 include/cppunit/Asserter.h
@@ -40,7 +39,9 @@ include/cppunit/config/
 include/cppunit/config-auto.h
 include/cppunit/config/CppUnitApi.h
 include/cppunit/config/SelectDllLoader.h
+include/cppunit/config/SourcePrefix.h
 include/cppunit/config/config-bcb5.h
+include/cppunit/config/config-evc4.h
 include/cppunit/config/config-mac.h
 include/cppunit/config/config-msvc6.h
 include/cppunit/extensions/
@@ -72,6 +73,8 @@ include/cppunit/portability/CppUnitMap.h
 include/cppunit/portability/CppUnitSet.h
 include/cppunit/portability/CppUnitStack.h
 include/cppunit/portability/CppUnitVector.h
+include/cppunit/portability/FloatingPoint.h
+include/cppunit/portability/Stream.h
 include/cppunit/tools/
 include/cppunit/tools/Algorithm.h
 include/cppunit/tools/StringTools.h
@@ -90,6 +93,8 @@ include/cppunit/ui/text/TestRunner.h
 include/cppunit/ui/text/TextTestRunner.h
 lib/libcppunit.a
 lib/libcppunit.la
+lib/pkgconfig/
+lib/pkgconfig/cppunit.pc
 @man man/man1/cppunit-config.1
 share/aclocal/
 share/aclocal/cppunit.m4
