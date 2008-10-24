@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/10/17 09:07:13 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/10/24 07:06:01 jasper Exp $
 %%SHARED%%
 bin/al
 bin/al1
@@ -943,6 +943,7 @@ lib/pkgconfig/smcs.pc
 @man man/man1/genxs.1
 @man man/man1/httpcfg.1
 @man man/man1/ilasm.1
+@man man/man1/jay.1
 @man man/man1/macpack.1
 @man man/man1/makecert.1
 @man man/man1/mconfig.1
@@ -1000,9 +1001,6 @@ share/jay/README
 share/jay/README.jay
 share/jay/skeleton
 share/jay/skeleton.cs
-share/man/
-share/man/man1/
-@man share/man/man1/jay.1
 share/mono-1.0/
 share/mono-1.0/mono/
 share/mono-1.0/mono/cil/
