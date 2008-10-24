@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/24 22:49:21 bernd Exp $
+@bin bin/tig
+@man man/man1/tig.1
+@man man/man5/tigrc.5
+share/doc/tig/
+share/doc/tig/manual.html
+share/doc/tig/manual.txt

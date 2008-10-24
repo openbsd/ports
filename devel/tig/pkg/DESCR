@@ -1,0 +1,6 @@
+GIT repository browser that additionally can act as a pager for
+output from various GIT commands.  When browsing repositories, it
+uses the underlying GIT commands to present the user with various
+views, such as summarized revision log and showing the commit with
+the log message, diffstat, and the diff.  Using it as a pager, it
+will display input from stdin and colorize it.

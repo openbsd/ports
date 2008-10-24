@@ -1,0 +1,13 @@
+$OpenBSD: patch-tig_c,v 1.1.1.1 2008/10/24 22:49:21 bernd Exp $
+--- tig.c.orig	Wed Oct  8 14:44:57 2008
++++ tig.c	Fri Oct 24 21:40:33 2008
+@@ -43,7 +43,9 @@
+ #include <iconv.h>
+ 
+ /* ncurses(3): Must be defined to have extended wide-character functions. */
++/* disable because of wchar type conflicts and we don't have them anyway
+ #define _XOPEN_SOURCE_EXTENDED
++*/
+ 
+ #ifdef HAVE_NCURSESW_NCURSES_H
+ #include <ncursesw/ncurses.h>
