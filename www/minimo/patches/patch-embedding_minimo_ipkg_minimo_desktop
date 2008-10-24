@@ -1,0 +1,16 @@
+$OpenBSD: patch-embedding_minimo_ipkg_minimo_desktop,v 1.1 2008/10/24 21:01:11 jasper Exp $
+--- embedding/minimo/ipkg/minimo.desktop.orig	Tue Jan 27 02:46:05 2004
++++ embedding/minimo/ipkg/minimo.desktop	Fri Oct 24 17:54:26 2008
+@@ -1,9 +1,9 @@
+ [Desktop Entry]
+ Name=Minimo
+ Comment=Minimo web browser
+-Exec=minimo http://www.mozilla.org/projects/minimo/home.html
+-Terminal=0
++Exec=minimo
++Terminal=false
+ Type=Application
+-Icon=minimo.png
++Icon=${PREFIX}/share/pixmaps/minimo.png
+ Categories=Application;PIM
+ StartupNotify=True

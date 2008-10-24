@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2008/09/26 19:04:26 martynas Exp $
+# $OpenBSD: Makefile,v 1.49 2008/10/24 21:01:11 jasper Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	small, simple, and powerful web browser for mobile devices
 DISTNAME=	minimo-1.8.1.17
-PKGNAME=	${DISTNAME}v0
+PKGNAME=	${DISTNAME}p0v0
 
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~martynas/mozilla/minimo/
@@ -34,6 +34,7 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi Xinerama \
 		atk-1.0.>=1011.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
 		gobject-2.0.>=600.0 pango-1.0.>=800.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 cairo glitz stdc++
+RUN_DEPENDS=	::devel/desktop-file-utils
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
@@ -94,6 +95,9 @@ CONFIGURE_ENV=	${MAKE_ENV} \
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/share/minimo
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/embedding/minimo/ipkg/minimo.desktop
+
 do-install:
 	${INSTALL_DATA_DIR} ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/minimo ${PREFIX}/bin/
@@ -134,5 +138,11 @@ do-install:
 		rm -rf locale
 	@cp -f ${WRKSRC}/minimo/customization/all.js ${MOZ}/greprefs/
 	@cat ${WRKSRC}/minimo/customization/ua.css.additions >> ${MOZ}/res/ua.css
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/embedding/minimo/ipkg/minimo.desktop \
+		${PREFIX}/share/applications/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/embedding/minimo/ipkg/minimo.png \
+		${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
