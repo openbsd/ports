@@ -1,13 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/09/26 12:01:43 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2008/10/24 13:26:14 jasper Exp $
 
 Don't build internal libltdl.
 
---- Makefile.in.orig	Thu Sep 25 21:13:52 2008
-+++ Makefile.in	Thu Sep 25 21:14:04 2008
-@@ -265,7 +265,7 @@ top_builddir = @top_builddir@
+--- Makefile.in.orig	Mon Oct 20 13:28:49 2008
++++ Makefile.in	Mon Oct 20 13:29:04 2008
+@@ -271,7 +271,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  dist_doc_DATA = README
- EXTRA_DIST = bootstrap.sh autogen.sh LGPL
+ EXTRA_DIST = bootstrap.sh autogen.sh LGPL libcanberra.schemas
 -SUBDIRS = src gtkdoc libltdl doc
 +SUBDIRS = src gtkdoc doc
  MAINTAINERCLEANFILES = README

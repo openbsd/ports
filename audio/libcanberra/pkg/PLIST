@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/26 12:01:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/24 13:26:14 jasper Exp $
 %%SHARED%%
 include/canberra.h
 lib/libcanberra/
@@ -31,3 +31,8 @@ share/gtk-doc/html/libcanberra/libcanberra.devhelp2
 share/gtk-doc/html/libcanberra/right.png
 share/gtk-doc/html/libcanberra/style.css
 share/gtk-doc/html/libcanberra/up.png
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/libcanberra/*.schemas > /dev/null
+share/schemas/
+share/schemas/libcanberra/
+share/schemas/libcanberra/libcanberra.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/libcanberra/*.schemas > /dev/null

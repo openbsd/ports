@@ -1,18 +1,18 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/09/26 12:01:43 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2008/10/24 13:26:14 jasper Exp $
 
 Don't build internal libltdl.
 
---- configure.orig	Tue Sep  9 16:32:15 2008
-+++ configure	Thu Sep 25 21:26:43 2008
-@@ -909,7 +909,6 @@ ac_ct_F77
- LIBTOOL
- LTDLINCL
- LIBLTDL
--subdirs
- OS_IS_WIN32_TRUE
- OS_IS_WIN32_FALSE
+--- configure.orig	Mon Oct 20 13:27:59 2008
++++ configure	Mon Oct 20 13:28:34 2008
+@@ -878,7 +878,6 @@ USE_VERSION_SCRIPT_FALSE
  USE_VERSION_SCRIPT_TRUE
-@@ -1046,7 +1045,6 @@ TDB_CFLAGS
+ OS_IS_WIN32_FALSE
+ OS_IS_WIN32_TRUE
+-subdirs
+ LIBLTDL
+ LTDLINCL
+ LIBTOOL
+@@ -1054,7 +1053,6 @@ TDB_CFLAGS
  TDB_LIBS
  VORBIS_CFLAGS
  VORBIS_LIBS'
@@ -20,7 +20,7 @@ Don't build internal libltdl.
  
  # Initialize some variables set by options.
  ac_init_help=
-@@ -21192,7 +21190,6 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -21171,7 +21169,6 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
  
  
  
