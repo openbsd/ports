@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/24 01:51:03 kevlo Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/wqy/
+lib/X11/fonts/wqy/fonts.alias-wqy
+lib/X11/fonts/wqy/wenquanyi_10pt.pcf
+lib/X11/fonts/wqy/wenquanyi_10ptb.pcf
+lib/X11/fonts/wqy/wenquanyi_11pt.pcf
+lib/X11/fonts/wqy/wenquanyi_11ptb.pcf
+lib/X11/fonts/wqy/wenquanyi_12pt.pcf
+lib/X11/fonts/wqy/wenquanyi_12ptb.pcf
+lib/X11/fonts/wqy/wenquanyi_9pt.pcf
+lib/X11/fonts/wqy/wenquanyi_9ptb.pcf
