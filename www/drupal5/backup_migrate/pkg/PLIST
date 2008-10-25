@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/16 10:15:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/10/25 17:58:23 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/files/backup_migrate/
@@ -8,4 +8,9 @@ ${DRUPAL_MODS}/backup_migrate/README.txt
 ${DRUPAL_MODS}/backup_migrate/backup_migrate.info
 ${DRUPAL_MODS}/backup_migrate/backup_migrate.install
 ${DRUPAL_MODS}/backup_migrate/backup_migrate.module
+${DRUPAL_MODS}/backup_migrate/tests/
+${DRUPAL_MODS}/backup_migrate/tests/BackupMigrateFunctionalityTest.test
+${DRUPAL_MODS}/backup_migrate/tests/BackupMigrateUnitTest.test
+${DRUPAL_MODS}/backup_migrate/tests/test.gz
+${DRUPAL_MODS}/backup_migrate/tests/test.txt
 @extraunexec rm -rf ${DRUPAL_ROOT}/files/backup_migrate/*
