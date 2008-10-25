@@ -1,0 +1,21 @@
+$OpenBSD: patch-unique_uniqueapp_c,v 1.1.1.1 2008/10/25 12:47:46 landry Exp $
+--- unique/uniqueapp.c.orig	Wed Oct  1 11:41:59 2008
++++ unique/uniqueapp.c	Sat Oct 25 10:55:20 2008
+@@ -73,7 +73,7 @@ unique_command_get_type (void)
+ 
+   if (G_UNLIKELY (etype == 0))
+     {
+-      const GEnumValue values[] = {
++      static const GEnumValue values[] = {
+         { UNIQUE_INVALID, "UNIQUE_INVALID", "invalid" },
+         { UNIQUE_ACTIVATE, "UNIQUE_ACTIVATE", "activate" },
+         { UNIQUE_NEW, "UNIQUE_NEW", "new" },
+@@ -95,7 +95,7 @@ unique_response_get_type (void)
+ 
+   if (G_UNLIKELY (etype == 0))
+     {
+-      const GEnumValue values[] = {
++      static const GEnumValue values[] = {
+         { UNIQUE_RESPONSE_INVALID, "UNIQUE_RESPONSE_INVALID", "invalid" },
+         { UNIQUE_RESPONSE_OK, "UNIQUE_RESPONSE_OK", "ok" },
+         { UNIQUE_RESPONSE_CANCEL, "UNIQUE_RESPONSE_CANCEL", "cancel" },
