@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/09/26 14:46:43 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/10/25 10:39:48 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -1668,7 +1668,6 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/connections/native_sqlite3/co
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/connections/native_sqlite3/in_memory_connection.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/connections/native_sybase/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/connections/native_sybase/connection.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/debug.log
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/accounts.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/all/
@@ -1698,8 +1697,6 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/developers.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/developers_projects.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/edges.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/entrants.yml
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/fixture_database.sqlite3
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/fixture_database_2.sqlite3
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/fk_test_has_fk.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/fk_test_has_pk.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/funny_jokes.yml
