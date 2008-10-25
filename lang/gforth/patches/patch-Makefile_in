@@ -1,0 +1,103 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/10/25 10:40:37 jasper Exp $
+--- Makefile.in.orig	Mon Aug 25 09:57:49 2003
++++ Makefile.in	Sat Oct 25 00:05:42 2008
+@@ -51,7 +51,7 @@ osclass = @OSCLASS@
+ # -------------	Utility programs
+ 
+ SHELL	= /bin/sh
+-RM	= rm
++RM	= rm -f
+ RMTREE	= rm -rf
+ CP	= cp -p
+ MV	= mv
+@@ -60,10 +60,11 @@ INSTALL	= @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_INFO = @INSTALL_INFO@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ LN_S	= @LN_S@
+ GCC	= @CC@
+ CC	= $(GCC)
+-FORTHPATH = .$(PATHSEP)$(libdir)/gforth/site-forth$(PATHSEP)$(siteforthdir)$(PATHSEP)$(libdir)/gforth/$(VERSION)$(PATHSEP)$(datadir)/gforth/$(VERSION)
++FORTHPATH = .$(PATHSEP)$(libdir)/gforth/site-forth$(PATHSEP)$(siteforthdir)$(PATHSEP)$(libdir)/gforth/$(PATHSEP)$(datadir)/gforth/
+ FORTHSIZES = @FORTHSIZES@
+ FORTHS_ARGS =  -p "$(FORTHPATH)$(PATHSEP)$(srcdir)"
+ FORTH_ARGS = --die-on-signal $(FORTHS_ARGS)
+@@ -110,8 +111,8 @@ LDLIBS	= @LIBS@
+ # ------------	Install Directorys
+ 
+ VPATH = @srcdir@
+-prefix = @prefix@
+-exec_prefix = @exec_prefix@
++prefix = ${DESTDIR}@prefix@
++exec_prefix =${DESTDIR}@prefix@
+ srcdir = @srcdir@
+ bindir = $(exec_prefix)/bin
+ #read-only architecture-independent files
+@@ -519,35 +520,30 @@ hpux-workaround:
+ #we delete $build/gforth.fi and $build/install.TAGS after installation because of ownership.
+ install:	gforth$(EXE) $(FORTH_SRC) $(kernel_fi) gforth.fi gforthmi vmgen doc/gforth.1 prim install.TAGS installdirs
+ 		touch $(siteforthdir)/siteinit.fs
+-		-$(RM) $(bindir)/gforth$(EXE) $(bindir)/gforth-$(VERSION)$(EXE) $(bindir)/gforthmi $(bindir)/vmgen
+-		-$(RM) $(bindir)/gforth-fast$(EXE) $(bindir)/gforth-fast-$(VERSION)$(EXE)
+-		-$(RM) $(bindir)/gforth-itc$(EXE) $(bindir)/gforth-itc-$(VERSION)$(EXE)
+-		$(INSTALL_PROGRAM) -s gforth$(EXE) $(bindir)/gforth-$(VERSION)$(EXE)
+-		(cd $(bindir) && $(LN_S) gforth-$(VERSION)$(EXE) gforth$(EXE))
+-		$(INSTALL_PROGRAM) -s gforth-fast$(EXE) $(bindir)/gforth-fast-$(VERSION)$(EXE)
+-		(cd $(bindir) && $(LN_S) gforth-fast-$(VERSION)$(EXE) gforth-fast$(EXE))
+-		$(INSTALL_PROGRAM) -s gforth-itc$(EXE) $(bindir)/gforth-itc-$(VERSION)$(EXE)
+-		(cd $(bindir) && $(LN_S) gforth-itc-$(VERSION)$(EXE) gforth-itc$(EXE))
+-		$(INSTALL_PROGRAM) gforthmi $(bindir)/gforthmi-$(VERSION)
+-		$(INSTALL_PROGRAM) vmgen $(bindir)/vmgen-$(VERSION)
+-		$(INSTALL_PROGRAM) gforth-ditc $(libdir)/gforth/$(VERSION)
+-		(cd $(bindir) && $(LN_S) gforthmi-$(VERSION) gforthmi)
+-		(cd $(bindir) && $(LN_S) vmgen-$(VERSION) vmgen)
++		-$(RM) $(bindir)/gforth$(EXE) $(bindir)/gforth$(EXE) $(bindir)/gforthmi $(bindir)/vmgen
++		-$(RM) $(bindir)/gforth-fast$(EXE) $(bindir)/gforth-fast$(EXE)
++		-$(RM) $(bindir)/gforth-itc$(EXE) $(bindir)/gforth-itc$(EXE)
++		$(INSTALL_PROGRAM) -s gforth$(EXE) $(bindir)/gforth$(EXE)
++		$(INSTALL_PROGRAM) -s gforth-fast$(EXE) $(bindir)/gforth-fast$(EXE)
++		$(INSTALL_PROGRAM) -s gforth-itc$(EXE) $(bindir)/gforth-itc$(EXE)
++		$(INSTALL_SCRIPT) gforthmi $(bindir)/gforthmi
++		$(INSTALL_SCRIPT) vmgen $(bindir)/vmgen
++		$(INSTALL_PROGRAM) gforth-ditc $(libdir)/gforth/
+ 		-$(INSTALL_DATA) $(srcdir)/doc/gforth.1 $(man1dir)
+ 		-for i in $(srcdir)/doc/gforth.info* $(srcdir)/doc/vmgen.info*; do $(INSTALL_DATA) $$i $(infodir); done
+ 		for i in $(FORTH_SRC) $(COMPAT) prim; do \
+-			$(INSTALL_DATA) $(srcdir)/$$i $(datadir)/gforth/$(VERSION)/$$i; \
++			$(INSTALL_DATA) $(srcdir)/$$i $(datadir)/gforth/$$i; \
+ 		done
+-		$(INSTALL_DATA) $(kernel_fi) $(datadir)/gforth/$(VERSION)
++		$(INSTALL_DATA) $(kernel_fi) $(datadir)/gforth/
+ 		@if test -d "$(emacssitelispdir)"; then \
+ 			$(INSTALL_DATA) $(srcdir)/gforth.el $(emacssitelispdir); \
+ 		else \
+ 			echo ">>>>>Please install $(srcdir)/gforth.el in your .../emacs/site-lisp directory"; \
+ 		fi
+ 		-$(RM) gforth.fi
+-		GFORTHD="./gforth-ditc -p $(libdir)/gforth/site-forth$(PATHSEP)$(siteforthdir)$(PATHSEP)$(datadir)/gforth/$(VERSION) -i $(kernel_fi)" GFORTH="./gforth-ditc --die-on-signal -i $(kernel_fi) $(STARTUP)" ./gforthmi gforth.fi $(FORTHSIZES) $(STARTUP)
+-		$(INSTALL_DATA) gforth.fi $(libdir)/gforth/$(VERSION)
+-		$(INSTALL_DATA) install.TAGS $(datadir)/gforth/$(VERSION)/TAGS
++		GFORTHD="./gforth-ditc -p $(libdir)/gforth/site-forth$(PATHSEP)$(siteforthdir)$(PATHSEP)$(datadir)/gforth/ -i $(kernel_fi)" GFORTH="./gforth-ditc --die-on-signal -i $(kernel_fi) $(STARTUP)" ./gforthmi gforth.fi $(FORTHSIZES) $(STARTUP)
++		$(INSTALL_DATA) gforth.fi $(libdir)/gforth/site-forth/
++		$(INSTALL_DATA) install.TAGS $(datadir)/gforth/TAGS
+ 		$(RM) gforth.fi install.TAGS
+ 		$(INSTALL_INFO) --info-dir=$(infodir) $(infodir)/gforth.info
+ 		$(INSTALL_INFO) --info-dir=$(infodir) $(infodir)/vmgen.info
+@@ -555,13 +551,13 @@ install:	gforth$(EXE) $(FORTH_SRC) $(kernel_fi) gforth
+ install-strip:	install
+ 
+ installdirs:	mkinstalldirs
+-		for i in $(bindir) $(man1dir) $(infodir) $(libdir)/gforth/$(VERSION) $(datadir)/gforth/$(VERSION) $(libdir)/gforth/site-forth $(siteforthdir); do \
++		for i in $(bindir) $(man1dir) $(infodir) $(libdir)/gforth/ $(datadir)/gforth/ $(libdir)/gforth/site-forth $(siteforthdir); do \
+ 			$(srcdir)/mkinstalldirs $$i; \
+ 		done
+ 		for i in $(CVSDIRS); do \
+-			$(srcdir)/mkinstalldirs $(datadir)/gforth/$(VERSION)/`dirname $$i`; \
++			$(srcdir)/mkinstalldirs $(datadir)/gforth/`dirname $$i`; \
+ 		done
+-		$(RM) -rf $(datadir)/gforth/$(VERSION)/engine
++		$(RM) -rf $(datadir)/gforth/engine
+ 
+ #deinstall all files specific to this version of gforth
+ #to uninstall version foo, type `make uninstall VERSION=foo'

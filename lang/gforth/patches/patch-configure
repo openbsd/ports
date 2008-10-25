@@ -1,0 +1,34 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/10/25 10:40:37 jasper Exp $
+
+From NetBSD:
+The gforth configure script tests for linker support of -export-dynamic,
+and then adds it to  LDFLAGS.  Later, the configure script tests for the
+presence of certain functions in libc, and expects to get an error at
+link time if the functions are missing.  On Interix with -export-dynamic,
+the link succeeds even if there are missing functions.  This causes
+configure to detect all tested functions as present, and produce
+binaries that fail at run time.
+
+To work around this issue, postpone adding -export-dynamic to LDFLAGS
+until the end of the configure script.
+
+--- configure.orig	Fri Oct 24 23:09:18 2008
++++ configure	Fri Oct 24 23:10:29 2008
+@@ -3316,7 +3316,7 @@ ac_export_dynamic=no
+ fi
+ rm -f core core.* *.core gmon.out bb.out conftest$ac_exeext conftest.$ac_objext conftest.$ac_ext
+ fi
+-test $ac_export_dynamic = yes|| LDFLAGS=$OLDLDFLAGS
++LDFLAGS=$OLDLDFLAGS
+ echo "$as_me:$LINENO: result: $ac_export_dynamic" >&5
+ echo "${ECHO_T}$ac_export_dynamic" >&6
+ 
+@@ -10853,6 +10853,8 @@ do
+   mv conftest.tail conftest.undefs
+ done
+ rm -f conftest.undefs
++
++test $ac_export_dynamic = yes && LDFLAGS="$LDFLAGS -export-dynamic"
+ 
+ cat >>$CONFIG_STATUS <<\_ACEOF
+   # Let's still pretend it is `configure' which instantiates (i.e., don't

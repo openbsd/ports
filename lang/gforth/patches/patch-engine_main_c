@@ -1,0 +1,23 @@
+$OpenBSD: patch-engine_main_c,v 1.1.1.1 2008/10/25 10:40:37 jasper Exp $
+--- engine/main.c.orig	Sat Oct 25 00:36:45 2008
++++ engine/main.c	Sat Oct 25 00:38:05 2008
+@@ -70,8 +70,18 @@ va_alist clist;
+ 
+ void engine_callback(Xt* fcall, void * alist)
+ {
++  Cell *rp = RP;
++  Cell *sp = SP;
++  Float *fp = FP;
++  Address lp = LP;
++
+   clist = (va_alist)alist;
+-  engine(fcall, SP, RP, FP, LP);
++  engine(fcall, sp, rp, fp, lp);
++
++  RP = rp;
++  SP = sp;
++  FP = fp;
++  LP = lp;
+ }
+ #endif
+ 

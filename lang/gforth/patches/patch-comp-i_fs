@@ -1,0 +1,16 @@
+$OpenBSD: patch-comp-i_fs,v 1.1.1.1 2008/10/25 10:40:37 jasper Exp $
+
+Fix for a known problem of gForth 0.6.2:
+http://www.complang.tuwien.ac.at/forth/gforth/Known-problems.html#exec-shield
+
+--- comp-i.fs.orig	Mon Aug 25 08:11:25 2003
++++ comp-i.fs	Tue Oct 21 09:20:54 2008
+@@ -43,7 +43,7 @@ s" address-unit-bits" environment? drop constant bits/
+     if
+ 	." : images have the same base address; producing only a data-relocatable image" cr
+     else
+-	offset abs expected-offset <> abort" images produced by different engines"
++	\ offset abs expected-offset <> abort" images produced by different engines"
+ 	."  offset=" offset . cr
+ 	0 image1 i-field + ! 0 image2 i-field + !
+     endif
