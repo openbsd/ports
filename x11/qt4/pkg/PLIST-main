@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2008/10/21 22:20:00 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2008/10/25 16:28:43 steven Exp $
 @pkgpath x11/qt4
 %%SHARED%%
 bin/assistant4
@@ -199,7 +199,7 @@ include/X11/qt4/Qt/qatomic_avr32.h
 include/X11/qt4/Qt/qatomic_bfin.h
 include/X11/qt4/Qt/qatomic_bootstrap.h
 include/X11/qt4/Qt/qatomic_generic.h
-include/X11/qt4/Qt/qatomic_${MACHINE_ARCH}.h
+include/X11/qt4/Qt/qatomic_i386.h
 include/X11/qt4/Qt/qatomic_ia64.h
 include/X11/qt4/Qt/qatomic_mips.h
 include/X11/qt4/Qt/qatomic_parisc.h
@@ -1169,7 +1169,7 @@ include/X11/qt4/QtCore/qatomic_avr32.h
 include/X11/qt4/QtCore/qatomic_bfin.h
 include/X11/qt4/QtCore/qatomic_bootstrap.h
 include/X11/qt4/QtCore/qatomic_generic.h
-include/X11/qt4/QtCore/qatomic_${MACHINE_ARCH}.h
+include/X11/qt4/QtCore/qatomic_i386.h
 include/X11/qt4/QtCore/qatomic_ia64.h
 include/X11/qt4/QtCore/qatomic_mips.h
 include/X11/qt4/QtCore/qatomic_parisc.h
