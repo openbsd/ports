@@ -1,12 +1,11 @@
-$OpenBSD: patch-man_fax2ps_1,v 1.1 2006/03/26 10:45:18 espie Exp $
---- man/fax2ps.1.orig	Sun Mar 26 12:33:21 2006
-+++ man/fax2ps.1	Sun Mar 26 12:33:33 2006
-@@ -27,7 +27,7 @@
+$OpenBSD: patch-man_fax2ps_1,v 1.2 2008/10/25 09:39:29 naddy Exp $
+--- man/fax2ps.1.orig	Fri Dec  2 17:01:33 2005
++++ man/fax2ps.1	Fri Oct 24 18:25:45 2008
+@@ -22,6 +22,7 @@
+ .\" LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE 
+ .\" OF THIS SOFTWARE.
+ .\"
++.ds Ps PostScript
+ .if n .po 0
+ .TH FAX2PS 1 "November 2, 2005" "libtiff"
  .SH NAME
- fax2ps \- convert a
- .SM TIFF
--facsimile to compressed \*(Ps\(tm
-+facsimile to compressed PostScript tm
- .SH SYNOPSIS
- .B fax2ps
- [

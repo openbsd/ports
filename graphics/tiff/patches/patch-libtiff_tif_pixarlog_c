@@ -1,0 +1,27 @@
+$OpenBSD: patch-libtiff_tif_pixarlog_c,v 1.4 2008/10/25 09:39:29 naddy Exp $
+
+CVE-2006-3461
+
+--- libtiff/tif_pixarlog.c.orig	Tue Mar 21 17:42:50 2006
++++ libtiff/tif_pixarlog.c	Fri Oct 24 18:55:09 2008
+@@ -768,7 +768,19 @@ PixarLogDecode(TIFF* tif, tidata_t op, tsize_t occ, ts
+ 	if (tif->tif_flags & TIFF_SWAB)
+ 		TIFFSwabArrayOfShort(up, nsamples);
+ 
+-	for (i = 0; i < nsamples; i += llen, up += llen) {
++	/* 
++	 * if llen is not an exact multiple of nsamples, the decode operation
++	 * may overflow the output buffer, so truncate it enough to prevent that
++	 * but still salvage as much data as possible.
++	 * -- taviso@google.com 14th June 2006
++	 */
++	if (nsamples % llen) 
++		TIFFWarningExt(tif->tif_clientdata, module,
++				"%s: stride %lu is not a multiple of sample count, "
++				"%lu, data truncated.", tif->tif_name, llen, nsamples);
++				
++	
++	for (i = 0; i < nsamples - (nsamples % llen); i += llen, up += llen) {
+ 		switch (sp->user_datafmt)  {
+ 		case PIXARLOGDATAFMT_FLOAT:
+ 			horizontalAccumulateF(up, llen, sp->stride,

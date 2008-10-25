@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_TIFFClose_3tiff,v 1.1 2008/10/25 09:39:29 naddy Exp $
+--- man/TIFFClose.3tiff.orig	Fri Oct 24 18:13:32 2008
++++ man/TIFFClose.3tiff	Fri Oct 24 18:13:54 2008
+@@ -40,7 +40,7 @@ Any buffered data are flushed to the file, including t
+ current directory (if modified); and all resources are reclaimed.
+ .SH DIAGNOSTICS
+ All error messages are directed to the
+-.bR TIFFError (3TIFF)
++.BR TIFFError (3TIFF)
+ routine.
+ Likewise, warning messages are directed to the
+ .BR TIFFWarning (3TIFF)

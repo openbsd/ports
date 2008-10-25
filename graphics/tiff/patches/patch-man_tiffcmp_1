@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_tiffcmp_1,v 1.1 2008/10/25 09:39:29 naddy Exp $
+--- man/tiffcmp.1.orig	Fri Oct 24 18:26:44 2008
++++ man/tiffcmp.1	Fri Oct 24 18:26:52 2008
+@@ -77,7 +77,7 @@ The pixel and/or sample number reported in differences
+ in some exotic cases. 
+ .SH "SEE ALSO"
+ .BR pal2rgb (1),
+-.bR tiffinfo (1),
++.BR tiffinfo (1),
+ .BR tiffcp (1),
+ .BR tiffmedian (1),
+ .BR libtiff (3TIFF)

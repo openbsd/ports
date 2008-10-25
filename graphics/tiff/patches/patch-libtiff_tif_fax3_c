@@ -1,0 +1,29 @@
+$OpenBSD: patch-libtiff_tif_fax3_c,v 1.7 2008/10/25 09:39:29 naddy Exp $
+
+CVE-2006-3464,3465
+
+--- libtiff/tif_fax3.c.orig	Tue Mar 21 17:42:50 2006
++++ libtiff/tif_fax3.c	Fri Oct 24 18:54:16 2008
+@@ -1136,6 +1136,7 @@ static int
+ Fax3VSetField(TIFF* tif, ttag_t tag, va_list ap)
+ {
+ 	Fax3BaseState* sp = Fax3State(tif);
++	const TIFFFieldInfo* fip;
+ 
+ 	assert(sp != 0);
+ 	assert(sp->vsetparent != 0);
+@@ -1181,7 +1182,13 @@ Fax3VSetField(TIFF* tif, ttag_t tag, va_list ap)
+ 	default:
+ 		return (*sp->vsetparent)(tif, tag, ap);
+ 	}
+-	TIFFSetFieldBit(tif, _TIFFFieldWithTag(tif, tag)->field_bit);
++	
++	if ((fip = _TIFFFieldWithTag(tif, tag))) {
++		TIFFSetFieldBit(tif, fip->field_bit);
++	} else {
++		return (0);
++	}
++
+ 	tif->tif_flags |= TIFF_DIRTYDIRECT;
+ 	return (1);
+ }

@@ -1,0 +1,21 @@
+$OpenBSD: patch-test_strip_c,v 1.1 2008/10/25 09:39:29 naddy Exp $
+--- test/strip.c.orig	Fri Oct 24 19:41:37 2008
++++ test/strip.c	Fri Oct 24 19:42:55 2008
+@@ -171,7 +171,7 @@ failure:
+ 	TIFFClose(tif);
+ openfailure:
+ 	fprintf (stderr, "Can't create test TIFF file %s:\n"
+-"    ImageWidth=%ld, ImageLength=%ld, RowsPerStrip=%ld, Compression=%d,\n"
++"    ImageWidth=%d, ImageLength=%d, RowsPerStrip=%d, Compression=%d,\n"
+ "    BitsPerSample=%d, SamplesPerPixel=%d, SampleFormat=%d,\n"
+ "    PlanarConfiguration=%d, PhotometricInterpretation=%d.\n",
+ 		 name, width, length, rowsperstrip, compression,
+@@ -249,7 +249,7 @@ failure:
+ 	TIFFClose(tif);
+ openfailure:
+ 	fprintf (stderr, "Can't read test TIFF file %s:\n"
+-"    ImageWidth=%ld, ImageLength=%ld, RowsPerStrip=%ld, Compression=%d,\n"
++"    ImageWidth=%d, ImageLength=%d, RowsPerStrip=%d, Compression=%d,\n"
+ "    BitsPerSample=%d, SamplesPerPixel=%d, SampleFormat=%d,\n"
+ "    PlanarConfiguration=%d, PhotometricInterpretation=%d.\n",
+ 		 name, width, length, rowsperstrip, compression,

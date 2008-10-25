@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_tiffsplit_1,v 1.1 2008/10/25 09:39:29 naddy Exp $
+--- man/tiffsplit.1.orig	Fri Oct 24 18:27:26 2008
++++ man/tiffsplit.1	Fri Oct 24 18:27:47 2008
+@@ -50,7 +50,7 @@ suffix in the range [\fIaaa\fP-\fIzzz\fP], the suffix
+ (e.g. 
+ .IR xaaa.tif ,
+ .IR xaab.tif ,
+-\...
++.IR ... ,
+ .IR xzzz.tif ).
+ If a prefix is not specified on the command line,
+ the default prefix of

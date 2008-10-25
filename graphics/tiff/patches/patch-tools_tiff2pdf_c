@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_tiff2pdf_c,v 1.1 2006/06/12 17:31:34 naddy Exp $
---- tools/tiff2pdf.c.orig	Sun Jun 11 15:58:06 2006
-+++ tools/tiff2pdf.c	Sun Jun 11 16:00:21 2006
-@@ -279,8 +279,8 @@ tsize_t t2p_sample_lab_signed_to_unsigne
+$OpenBSD: patch-tools_tiff2pdf_c,v 1.2 2008/10/25 09:39:29 naddy Exp $
+--- tools/tiff2pdf.c.orig	Tue Mar 21 17:42:51 2006
++++ tools/tiff2pdf.c	Fri Oct 24 18:08:47 2008
+@@ -279,8 +279,8 @@ tsize_t t2p_sample_lab_signed_to_unsigned(tdata_t, uin
  tsize_t t2p_write_pdf_header(T2P*, TIFF*);
  tsize_t t2p_write_pdf_obj_start(uint32, TIFF*);
  tsize_t t2p_write_pdf_obj_end(TIFF*);
@@ -12,7 +12,7 @@ $OpenBSD: patch-tools_tiff2pdf_c,v 1.1 2006/06/12 17:31:34 naddy Exp $
  tsize_t t2p_write_pdf_stream(tdata_t, tsize_t, TIFF*);
  tsize_t t2p_write_pdf_stream_start(TIFF*);
  tsize_t t2p_write_pdf_stream_end(TIFF*);
-@@ -3572,7 +3572,7 @@ tsize_t t2p_write_pdf_obj_end(TIFF* outp
+@@ -3572,7 +3572,7 @@ tsize_t t2p_write_pdf_obj_end(TIFF* output){
  	This function writes a PDF name object to output.
  */
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-tools_tiff2pdf_c,v 1.1 2006/06/12 17:31:34 naddy Exp $
  
  	tsize_t written=0;
  	uint32 i=0;
-@@ -3657,7 +3657,7 @@ tsize_t t2p_write_pdf_name(char* name, T
+@@ -3657,7 +3657,7 @@ tsize_t t2p_write_pdf_name(char* name, TIFF* output){
  	This function writes a PDF string object to output.
  */
  	

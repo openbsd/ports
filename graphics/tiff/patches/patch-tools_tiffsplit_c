@@ -1,0 +1,24 @@
+$OpenBSD: patch-tools_tiffsplit_c,v 1.1 2008/10/25 09:39:29 naddy Exp $
+
+CVE-2006-2656
+
+--- tools/tiffsplit.c.orig	Fri Oct 24 19:10:43 2008
++++ tools/tiffsplit.c	Fri Oct 24 19:12:12 2008
+@@ -61,14 +61,14 @@ main(int argc, char* argv[])
+ 		return (-3);
+ 	}
+ 	if (argc > 2)
+-		strcpy(fname, argv[2]);
++		strlcpy(fname, argv[2], sizeof(fname));
+ 	in = TIFFOpen(argv[1], "r");
+ 	if (in != NULL) {
+ 		do {
+ 			char path[1024+1];
+ 			newfilename();
+-			strcpy(path, fname);
+-			strcat(path, ".tif");
++			strlcpy(path, fname, sizeof(path));
++			strlcat(path, ".tif", sizeof(path));
+ 			out = TIFFOpen(path, TIFFIsBigEndian(in)?"wb":"wl");
+ 			if (out == NULL)
+ 				return (-2);

@@ -1,0 +1,45 @@
+$OpenBSD: patch-libtiff_tif_read_c,v 1.1 2008/10/25 09:39:29 naddy Exp $
+
+CVE-2006-3464,3465
+
+--- libtiff/tif_read.c.orig	Wed Dec 21 13:33:56 2005
++++ libtiff/tif_read.c	Fri Oct 24 18:55:36 2008
+@@ -31,6 +31,8 @@
+ #include "tiffiop.h"
+ #include <stdio.h>
+ 
++#include <limits.h>
++
+ 	int TIFFFillStrip(TIFF*, tstrip_t);
+ 	int TIFFFillTile(TIFF*, ttile_t);
+ static	int TIFFStartStrip(TIFF*, tstrip_t);
+@@ -272,7 +274,13 @@ TIFFFillStrip(TIFF* tif, tstrip_t strip)
+ 		if ((tif->tif_flags & TIFF_MYBUFFER) && tif->tif_rawdata)
+ 			_TIFFfree(tif->tif_rawdata);
+ 		tif->tif_flags &= ~TIFF_MYBUFFER;
+-		if ( td->td_stripoffset[strip] + bytecount > tif->tif_size) {
++		/*
++		 * This sanity check could potentially overflow, causing an OOB read.
++		 * verify that offset + bytecount is > offset.
++		 * -- taviso@google.com 14 Jun 2006
++		 */
++		if ( td->td_stripoffset[strip] + bytecount > tif->tif_size ||
++			bytecount > (UINT_MAX - td->td_stripoffset[strip])) {
+ 			/*
+ 			 * This error message might seem strange, but it's
+ 			 * what would happen if a read were done instead.
+@@ -470,7 +478,13 @@ TIFFFillTile(TIFF* tif, ttile_t tile)
+ 		if ((tif->tif_flags & TIFF_MYBUFFER) && tif->tif_rawdata)
+ 			_TIFFfree(tif->tif_rawdata);
+ 		tif->tif_flags &= ~TIFF_MYBUFFER;
+-		if ( td->td_stripoffset[tile] + bytecount > tif->tif_size) {
++		/*
++		 * We must check this calculation doesnt overflow, potentially
++		 * causing an OOB read.
++		 * -- taviso@google.com 15 Jun 2006
++		 */
++		if (td->td_stripoffset[tile] + bytecount > tif->tif_size ||
++			bytecount > (UINT_MAX - td->td_stripoffset[tile])) {
+ 			tif->tif_curtile = NOTILE;
+ 			return (0);
+ 		}

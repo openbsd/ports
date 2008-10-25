@@ -1,0 +1,26 @@
+$OpenBSD: patch-libtiff_tif_dirinfo_c,v 1.3 2008/10/25 09:39:29 naddy Exp $
+
+CVE-2006-3464,3465
+
+--- libtiff/tif_dirinfo.c.orig	Tue Feb  7 14:51:03 2006
++++ libtiff/tif_dirinfo.c	Fri Oct 24 18:53:28 2008
+@@ -775,7 +775,8 @@ _TIFFFieldWithTag(TIFF* tif, ttag_t tag)
+ 		TIFFErrorExt(tif->tif_clientdata, "TIFFFieldWithTag",
+ 			  "Internal error, unknown tag 0x%x",
+                           (unsigned int) tag);
+-		assert(fip != NULL);
++		/* assert(fip != NULL); */
++
+ 		/*NOTREACHED*/
+ 	}
+ 	return (fip);
+@@ -789,7 +790,8 @@ _TIFFFieldWithName(TIFF* tif, const char *field_name)
+ 	if (!fip) {
+ 		TIFFErrorExt(tif->tif_clientdata, "TIFFFieldWithName",
+ 			  "Internal error, unknown tag %s", field_name);
+-		assert(fip != NULL);
++		/* assert(fip != NULL); */
++		
+ 		/*NOTREACHED*/
+ 	}
+ 	return (fip);
