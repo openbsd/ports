@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/25 10:40:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/25 14:54:23 jasper Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 sparc sparc64
 
 COMMENT =		ANS Standard Forth interpreter and compiler
 
 DISTNAME =		gforth-0.6.2
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		lang
 
 HOMEPAGE =		http://www.jwdt.com/~paysan/gforth.html

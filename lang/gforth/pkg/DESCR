@@ -3,6 +3,6 @@ It works nicely with the Emacs editor, offers some nice features such as
 input completion and history, backtraces, a decompiler and a powerful
 locals facility, and it even has a manual. Gforth combines traditional
 implementation techniques with newer techniques for portability and
-performance performance: its inner innerpreter is direct threaded with
+performance: its inner innerpreter is direct threaded with
 several optimizations, but you can also use a traditional-style indirect
 threaded interpreter.
