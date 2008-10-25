@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/19 08:39:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/25 16:07:05 naddy Exp $
 
 COMMENT=	unit test framework for C programs
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--enable-plain-docdir
