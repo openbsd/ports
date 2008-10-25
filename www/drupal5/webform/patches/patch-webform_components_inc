@@ -1,6 +1,6 @@
-$OpenBSD: patch-webform_components_inc,v 1.1 2008/09/24 15:30:54 espie Exp $
---- webform_components.inc.orig	Wed Sep 24 17:13:36 2008
-+++ webform_components.inc	Wed Sep 24 17:13:49 2008
+$OpenBSD: patch-webform_components_inc,v 1.2 2008/10/25 14:27:42 espie Exp $
+--- webform_components.inc.orig	Sat Oct 25 15:48:56 2008
++++ webform_components.inc	Sat Oct 25 15:49:13 2008
 @@ -284,7 +284,7 @@ function webform_component_edit_form(&$node, $componen
      '#default_value' => $component['name'],
      '#title' => t("Label"),
