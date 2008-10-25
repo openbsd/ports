@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/07/22 20:08:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/10/25 17:30:43 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_THEMES}/newsflash/
+${DRUPAL_THEMES}/newsflash/LICENSE.txt
 ${DRUPAL_THEMES}/newsflash/RoopleThemeLogo.png
 ${DRUPAL_THEMES}/newsflash/block.tpl.php
 ${DRUPAL_THEMES}/newsflash/css/
@@ -71,6 +72,7 @@ ${DRUPAL_THEMES}/newsflash/js/suckerfish.js
 ${DRUPAL_THEMES}/newsflash/logo.png
 ${DRUPAL_THEMES}/newsflash/node.tpl.php
 ${DRUPAL_THEMES}/newsflash/page.tpl.php
+${DRUPAL_THEMES}/newsflash/screenshot-drupal.org.png
 ${DRUPAL_THEMES}/newsflash/screenshot.png
 ${DRUPAL_THEMES}/newsflash/settings.php
 ${DRUPAL_THEMES}/newsflash/style.css
