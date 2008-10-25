@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/05/03 19:03:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/10/25 14:36:32 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}/cck/
@@ -7,6 +7,7 @@ ${DRUPAL_MODS}/cck/LICENSE.txt
 ${DRUPAL_MODS}/cck/README.txt
 ${DRUPAL_MODS}/cck/UPGRADE.txt
 ${DRUPAL_MODS}/cck/content.css
+${DRUPAL_MODS}/cck/content.devel.inc
 ${DRUPAL_MODS}/cck/content.info
 ${DRUPAL_MODS}/cck/content.install
 ${DRUPAL_MODS}/cck/content.module
