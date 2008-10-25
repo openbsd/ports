@@ -1,19 +1,22 @@
-$OpenBSD: patch-includes_common_inc,v 1.2 2008/07/26 10:34:01 espie Exp $
+$OpenBSD: patch-includes_common_inc,v 1.3 2008/10/25 14:20:34 espie Exp $
 --- includes/common.inc.orig	Wed Jul  9 21:34:30 2008
-+++ includes/common.inc	Sat Jul 26 12:28:35 2008
-@@ -1618,7 +1618,14 @@ function drupal_clear_css_cache() {
++++ includes/common.inc	Sat Oct 25 16:15:27 2008
+@@ -1618,8 +1618,17 @@ function drupal_clear_css_cache() {
   */
  function drupal_add_js($data = NULL, $type = 'module', $scope = 'header', $defer = FALSE, $cache = TRUE) {
    if (!is_null($data)) {
 -    _drupal_add_js('misc/jquery.js', 'core', 'header', FALSE, $cache);
 +    if (module_exists('jquery_update')) {
 +      $path = drupal_get_path('module', 'jquery_update');
-+      _drupal_add_js($path .'/jquery.js', 'core', 'header', FALSE, $cache);
-+      _drupal_add_js($path .'/compat-1.0.js', 'core', 'header', FALSE, $cache);
-+      _drupal_add_js($path .'/collapse-fix.js', 'theme', 'header', FALSE, $cache);
++      _drupal_add_js($path .'/misc/jquery.js', 'core', 'header', FALSE, $cache);
 +    } else {
 +      _drupal_add_js('misc/jquery.js', 'core', 'header', FALSE, $cache);
 +    }
      _drupal_add_js('misc/drupal.js', 'core', 'header', FALSE, $cache);
++    $altname = $path.'/'.$data;
++    if (file_exists($altname)) {
++      return _drupal_add_js($altname, $type, $scope, $defer, $cache);
++    }
    }
    return _drupal_add_js($data, $type, $scope, $defer, $cache);
+ }

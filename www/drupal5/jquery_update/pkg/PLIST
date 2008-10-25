@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/08/19 23:45:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/10/25 14:20:34 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}/jquery_update/
@@ -8,7 +8,6 @@ ${DRUPAL_MODS}/jquery_update/README.txt
 @comment ${DRUPAL_MODS}/jquery_update/README.txt.orig
 ${DRUPAL_MODS}/jquery_update/compat.js
 ${DRUPAL_MODS}/jquery_update/jquery_update.info
-${DRUPAL_MODS}/jquery_update/jquery_update.install
 ${DRUPAL_MODS}/jquery_update/jquery_update.module
 ${DRUPAL_MODS}/jquery_update/misc/
 ${DRUPAL_MODS}/jquery_update/misc/collapse.js
