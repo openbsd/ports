@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.640 2008/10/24 22:52:29 bernd Exp $
+# $OpenBSD: Makefile,v 1.641 2008/10/25 12:48:38 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -170,6 +170,7 @@
      SUBDIR += libstdc++-man
      SUBDIR += libtool
      SUBDIR += libunicode
+     SUBDIR += libunique
      SUBDIR += libusb
      SUBDIR += libuta
      SUBDIR += libutf
