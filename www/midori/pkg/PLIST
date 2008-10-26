@@ -1,9 +1,33 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/25 12:54:33 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/26 13:06:29 landry Exp $
 @bin bin/midori
 share/applications/midori.desktop
+share/doc/midori/
+share/doc/midori/user/
+share/doc/midori/user/midori.html
+share/icons/hicolor/16x16/apps/midori.png
+share/icons/hicolor/16x16/categories/extension.png
+share/icons/hicolor/16x16/status/news-feed.png
+share/icons/hicolor/22x22/apps/midori.png
+share/icons/hicolor/22x22/categories/extension.png
+share/icons/hicolor/22x22/status/news-feed.png
+share/icons/hicolor/32x32/apps/midori.png
+share/icons/hicolor/32x32/categories/extension.png
+share/icons/hicolor/32x32/status/news-feed.png
+share/icons/hicolor/48x48/apps/midori.png
+share/icons/hicolor/48x48/categories/extension.png
+share/icons/hicolor/48x48/status/news-feed.png
 share/locale/de/LC_MESSAGES/midori.mo
+share/locale/es/LC_MESSAGES/midori.mo
+share/locale/et/LC_MESSAGES/midori.mo
 share/locale/fr/LC_MESSAGES/midori.mo
+share/locale/gl/LC_MESSAGES/midori.mo
+share/locale/hu/LC_MESSAGES/midori.mo
 share/locale/pl/LC_MESSAGES/midori.mo
+share/locale/ru/LC_MESSAGES/midori.mo
 share/locale/sv/LC_MESSAGES/midori.mo
+share/midori/
+share/midori/logo-shade.png
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
