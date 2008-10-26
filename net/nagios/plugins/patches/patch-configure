@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.10 2008/02/02 18:18:24 sturm Exp $
---- configure.orig	Thu Dec 13 23:42:38 2007
-+++ configure	Sat Feb  2 18:36:01 2008
-@@ -21073,13 +21073,13 @@ if test "${with_pgsql+set}" = set; then
+$OpenBSD: patch-configure,v 1.11 2008/10/26 15:02:16 sthen Exp $
+--- configure.orig	Thu Sep 25 08:33:24 2008
++++ configure	Wed Oct 22 20:24:41 2008
+@@ -21552,13 +21552,13 @@ if test "${with_pgsql+set}" = set; then
  fi
  
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.10 2008/02/02 18:18:24 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -21133,12 +21133,12 @@ if test $ac_cv_lib_crypt_main = yes; then
+@@ -21612,7 +21612,7 @@ if test $ac_cv_lib_crypt_main = yes; then
  #define HAVE_LIBCRYPT 1
  _ACEOF
  
@@ -27,13 +27,7 @@ $OpenBSD: patch-configure,v 1.10 2008/02/02 18:18:24 sturm Exp $
  
  fi
  
- if test "$ac_cv_lib_crypt_main" = "yes"; then
--  if test -n "$PGSQL"; then
-+  if [ "$PGSQL" != "no" ] ; then
-     LDFLAGS="$LDFLAGS -L$PGSQL/lib"
-     CPPFLAGS="$CPPFLAGS -I$PGSQL/include"
-   fi
-@@ -21149,7 +21149,7 @@ if test "${ac_cv_lib_pq_PQsetdbLogin+set}" = set; then
+@@ -21628,7 +21628,7 @@ if test "${ac_cv_lib_pq_PQsetdbLogin+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -42,7 +36,7 @@ $OpenBSD: patch-configure,v 1.10 2008/02/02 18:18:24 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -21635,16 +21635,16 @@ fi
+@@ -22114,16 +22114,16 @@ fi
  done
  
      if [ -n "$PGSQL" -a "$ac_cv_header_libpq_fe_h" = "yes" ]; then
@@ -65,7 +59,7 @@ $OpenBSD: patch-configure,v 1.10 2008/02/02 18:18:24 sturm Exp $
        PGINCLUDE="-I$PGSQL/include"
      fi
      if test -z "$PGINCLUDE"; then
-@@ -22779,7 +22779,7 @@ done
+@@ -23258,7 +23258,7 @@ done
  
  if test "$FOUNDINCLUDE" = "no"; then
    _SAVEDCPPFLAGS="$CPPFLAGS"
@@ -74,7 +68,7 @@ $OpenBSD: patch-configure,v 1.10 2008/02/02 18:18:24 sturm Exp $
    unset ac_cv_header_krb5_h
  
  for ac_header in krb5.h
-@@ -22916,7 +22916,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+@@ -23395,7 +23395,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
    cat >>confdefs.h <<_ACEOF
  #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
