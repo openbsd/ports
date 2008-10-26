@@ -1,0 +1,2 @@
+LineCache - caches (Ruby source) files as might be used in a debugger
+or a tool that works with sets of Ruby source files.
