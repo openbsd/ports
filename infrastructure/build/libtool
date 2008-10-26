@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.24 2008/10/26 09:44:22 steven Exp $
+# $OpenBSD: libtool,v 1.25 2008/10/26 09:52:10 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -25,27 +25,27 @@ use Getopt::Long;
 use Getopt::Std;
 
 use subs qw(
-	help
-	handle_special_chars
-	notyet
-	perform
-	parse_version_info
-	guess_implicit_mode
 	create_symlinks
-	write_lo_file
-	write_la_file
-	write_prog_wrapper
-	is_prog_wrapper
-	parse_file
-	resolve_la
-	parse_linkargs
 	find_la
 	find_lib
-	process_deplibs
-	reverse_zap_duplicates
-	linkcmd
 	generate_objlist
 	get_search_dirs
+	guess_implicit_mode
+	handle_special_chars
+	help
+	is_prog_wrapper
+	linkcmd
+	notyet
+	parse_file
+	parse_linkargs
+	parse_version_info
+	perform
+	process_deplibs
+	resolve_la
+	reverse_zap_duplicates
+	write_la_file
+	write_lo_file
+	write_prog_wrapper
 	);
 
 use constant {
