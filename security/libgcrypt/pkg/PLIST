@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/09/21 06:00:11 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/10/26 10:39:27 landry Exp $
+@bin bin/dumpsexp
+@bin bin/hmac256
 bin/libgcrypt-config
 include/gcrypt-module.h
 include/gcrypt.h
