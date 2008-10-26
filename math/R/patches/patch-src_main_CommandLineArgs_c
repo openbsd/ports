@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_CommandLineArgs_c,v 1.4 2007/10/07 17:54:54 mbalmer Exp $
---- src/main/CommandLineArgs.c.orig	Wed Sep  5 00:13:27 2007
-+++ src/main/CommandLineArgs.c	Sun Oct  7 09:58:19 2007
-@@ -196,7 +196,7 @@ R_common_command_line(int *pac, char **argv, Rstart Rp
+$OpenBSD: patch-src_main_CommandLineArgs_c,v 1.5 2008/10/26 23:04:00 mbalmer Exp $
+--- src/main/CommandLineArgs.c.orig	Sun Sep 21 22:05:26 2008
++++ src/main/CommandLineArgs.c	Sat Oct 25 22:43:34 2008
+@@ -192,7 +192,7 @@ R_common_command_line(int *pac, char **argv, Rstart Rp
  		     !strcmp(*av, "-V") ||
  		     !strcmp(*av, "-n") ||
  		     !strcmp(*av, "-v")) {
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_main_CommandLineArgs_c,v 1.4 2007/10/07 17:54:54 mbalmer Exp
  			 _("WARNING: option '%s' no longer supported\n"), *av);
  		R_ShowMessage(msg);
  	    }
-@@ -207,7 +207,7 @@ R_common_command_line(int *pac, char **argv, Rstart Rp
+@@ -203,7 +203,7 @@ R_common_command_line(int *pac, char **argv, Rstart Rp
  		}
  		else p = &(*av)[12];
  		if (p == NULL) {
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_main_CommandLineArgs_c,v 1.4 2007/10/07 17:54:54 mbalmer Exp
  			     _("WARNING: no value given for '%s'\n"), *av);
  		    R_ShowMessage(msg);
  		    break;
-@@ -215,7 +215,7 @@ R_common_command_line(int *pac, char **argv, Rstart Rp
+@@ -211,7 +211,7 @@ R_common_command_line(int *pac, char **argv, Rstart Rp
  		value = R_Decode2Long(p, &ierr);
  		if(ierr) {
  		    if(ierr < 0)

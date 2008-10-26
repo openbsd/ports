@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_gram_y,v 1.4 2007/10/07 17:54:54 mbalmer Exp $
---- src/main/gram.y.orig	Wed Sep  5 00:13:27 2007
-+++ src/main/gram.y	Sun Oct  7 09:58:19 2007
-@@ -173,7 +173,7 @@ static size_t ucstomb(char *s, const wchar_t wc, mbsta
+$OpenBSD: patch-src_main_gram_y,v 1.5 2008/10/26 23:04:00 mbalmer Exp $
+--- src/main/gram.y.orig	Tue Oct  7 02:05:09 2008
++++ src/main/gram.y	Sat Oct 25 22:43:34 2008
+@@ -99,7 +99,7 @@ static PROTECT_INDEX srindex;
  
  static int mbcs_get_next(int c, wchar_t *wc)
  {

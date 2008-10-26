@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_main_connections_c,v 1.7 2008/07/26 14:59:45 martynas Exp $
---- src/main/connections.c.orig	Fri Feb  8 12:45:41 2008
-+++ src/main/connections.c	Sat Jul 26 13:46:26 2008
-@@ -1980,7 +1980,7 @@ static int text_vfprintf(Rconnection con, const char *
+$OpenBSD: patch-src_main_connections_c,v 1.8 2008/10/26 23:04:00 mbalmer Exp $
+--- src/main/connections.c.orig	Sun Sep 21 22:05:25 2008
++++ src/main/connections.c	Sat Oct 25 22:48:16 2008
+@@ -2269,7 +2269,7 @@ static int text_vfprintf(Rconnection con, const char *
  	b = R_alloc(res + already + 1, sizeof(char));
  	strcpy(b, this->lastline);
  	p = b + already;
 -	vsprintf(p, format, ap);
 +	vsnprintf(p, res + already + 1, format, ap);
-     } else if(res < 0) { /* just a failure indication -- e.g. Windows */
+     } else if(res < 0) { /* just a failure indication */
  #define NBUFSIZE (already + 100*BUFSIZE)
  	usedRalloc = TRUE;
-@@ -3938,7 +3938,8 @@ static Rboolean gzcon_open(Rconnection con)
+@@ -4370,7 +4370,8 @@ static Rboolean gzcon_open(Rconnection con)
  
      if(con->canread) {
  	/* read header */

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_Rdynload_c,v 1.4 2007/10/07 17:54:54 mbalmer Exp $
---- src/main/Rdynload.c.orig	Wed Sep  5 00:13:27 2007
-+++ src/main/Rdynload.c	Sun Oct  7 09:58:19 2007
-@@ -533,7 +533,8 @@ static DllInfo* AddDLL(char *path, int asLocal, int no
+$OpenBSD: patch-src_main_Rdynload_c,v 1.5 2008/10/26 23:04:00 mbalmer Exp $
+--- src/main/Rdynload.c.orig	Sun Sep 21 22:05:25 2008
++++ src/main/Rdynload.c	Sat Oct 25 23:31:38 2008
+@@ -533,7 +533,8 @@ static DllInfo* AddDLL(const char *path, int asLocal, 
  
      DeleteDLL(path);
      if(CountDLL == MAX_NUM_DLLS) {
@@ -43,7 +43,7 @@ $OpenBSD: patch-src_main_Rdynload_c,v 1.4 2007/10/07 17:54:54 mbalmer Exp $
 +	strlcpy(DLLerror, _("could not allocate space for 'name'"),
 +	    sizeof(DLLname));
  	if(handle)
- 	   R_osDynSymbol->closeLibrary(handle);
+ 	    R_osDynSymbol->closeLibrary(handle);
  	free(dpath);
  	return 0;
      }
