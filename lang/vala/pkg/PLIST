@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/06/29 22:04:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/10/26 17:24:16 jasper Exp $
 %%SHARED%%
 bin/vala-gen-introspect
 @bin bin/vala-gen-project
@@ -377,6 +377,8 @@ share/vala/vapi/sdl.vapi
 share/vala/vapi/sqlite3.vapi
 share/vala/vapi/taglib_c.vapi
 share/vala/vapi/tiff.vapi
+share/vala/vapi/unique-1.0.deps
+share/vala/vapi/unique-1.0.vapi
 share/vala/vapi/vala-1.0.vapi
 share/vala/vapi/vte.deps
 share/vala/vapi/vte.vapi
