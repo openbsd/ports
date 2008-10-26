@@ -1,6 +1,6 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.101 2008/10/02 18:06:37 espie Exp $
-# Copyright (c) 2004-2006 Marc Espie <espie@openbsd.org>
+# $OpenBSD: make-plist,v 1.102 2008/10/26 16:02:06 espie Exp $
+# Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -71,8 +71,7 @@ sub add
 
 sub reverse
 {
-	my $self = shift;
-	local $_ = shift;
+	my ($self, $_) = @_;
 	for my $k (@{$self->{r}}) {
 		if ($k =~ m/^\^(.*)$/) {
 			$k = $1;
@@ -88,8 +87,7 @@ sub reverse
 
 sub reverse_with_lib
 {
-	my $self = shift;
-	local $_ = shift;
+	my ($self, $_) = @_;
 	if (m/^(.*?)lib([^\/]+)\.so\.(\d+\.\d+)$/) {
 		my ($path, $name, $version) = ($1, $2, $3);
 		if (!defined $self->{l}->{$name}) {
@@ -155,7 +153,7 @@ sub build_mtree
 
 sub parse_arg
 {
-	local $_ = shift;
+	my $_ = shift;
 	if (m/^DEPPATHS(-.*?)\=/) {
 		$mtree{$1} = build_mtree($1, $');
 		return;
@@ -627,7 +625,7 @@ sub is_info
 
 sub is_manpage
 {
-	local $_ = shift;
+	my $_ = shift;
 	if (m,/man/(?:[^/]*?/)?man(.*?)/[^/]+\.\1[[:alpha:]]?(?:\.gz|\.Z)?$,) {
 		return 1;
 	}
@@ -782,7 +780,7 @@ sub get_files
 # full file name to file name in plist context
 sub strip_base
 {
-	local($_)=shift;
+	my $_ = shift;
 	my $base = shift->{stripprefix};
 	if (m/^\Q$base\E/) {
 		$_ = $';
@@ -819,6 +817,7 @@ sub parse_original_plist
     $plist->fromfile($name, 
 	sub {
 	    my ($fh, $cont) = @_;
+	    my $_;
 	    while (<$fh>) {
 		    if (m/^\%\%(.*)\%\%$/) {
 		    	OpenBSD::PackingElement::Fragment->add($plist, $1);
