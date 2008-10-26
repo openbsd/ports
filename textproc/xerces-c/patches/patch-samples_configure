@@ -1,0 +1,11 @@
+$OpenBSD: patch-samples_configure,v 1.1.1.1 2008/10/26 23:15:18 ajacoutot Exp $
+--- samples/configure.orig	Sun Oct 26 19:47:29 2008
++++ samples/configure	Sun Oct 26 19:47:49 2008
+@@ -4236,6 +4236,7 @@ case "${host}" in
+         *-*-nto*)       platform=QNX ;;
+         *-*-freebsd*)   platform=FREEBSD ;;
+         *-*-netbsd*)    platform=NETBSD ;;
++        *-*-openbsd*)   platform=OPENBSD ;;
+         *-*-irix*)      platform=IRIX ;;
+         *-*-aix*)       platform=AIX ;;
+         *-*-hp*)        platform=HPUX ;

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_xercesc_util_AutoSense_hpp,v 1.1.1.1 2008/10/26 23:15:17 ajacoutot Exp $
+--- src/xercesc/util/AutoSense.hpp.orig	Sun Oct 26 19:52:30 2008
++++ src/xercesc/util/AutoSense.hpp	Sun Oct 26 19:53:28 2008
+@@ -107,6 +107,9 @@
+     #define XML_TRU64
+ #elif defined(__NetBSD__)
+     #define XML_NETBSD
++#elif defined(__OpenBSD__)
++    #define XML_OPENBSD
++    #define XML_UNIX
+ #elif defined(__INTERIX)
+     #define XML_INTERIX
+     #define XML_UNIX

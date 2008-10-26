@@ -1,0 +1,40 @@
+$OpenBSD: patch-samples_runConfigure,v 1.1.1.1 2008/10/26 23:15:18 ajacoutot Exp $
+--- samples/runConfigure.orig	Sun Oct 26 22:14:08 2008
++++ samples/runConfigure	Sun Oct 26 22:15:02 2008
+@@ -46,7 +46,7 @@ platforms"
+     echo "Usage: runConfigure \"options\""
+     echo "       where options may be any of the following:"
+     echo "       -p <platform> (accepts 'aix', 'beos', 'linux', 'freebsd', 'netbsd',
+-            'solaris', 'hp-10', 'hp-11', 'openserver', 'unixware',
++            'openbsd', 'solaris', 'hp-10', 'hp-11', 'openserver', 'unixware',
+             'os400', 'os390', 'irix', 'ptx', 'tru64', 'macosx', 'cygwin', 'qnx',
+             'interix', 'mingw-msys')
+             [required: no default]"
+@@ -197,7 +197,7 @@ echo "Extra link options: $linkeroptions"
+ # Now check if the options are correct or not, bail out if incorrect
+ #
+ case $platform in
+-   aix | openserver | unixware | beos | linux | freebsd | netbsd | solaris | hp-10 | hp-11 | os400 | os390 | irix | ptx | tru64 | macosx | cygwin | qnx | interix | mingw-msys)
++   aix | openserver | unixware | beos | linux | freebsd | netbsd | openbsd | solaris | hp-10 | hp-11 | os400 | os390 | irix | ptx | tru64 | macosx | cygwin | qnx | interix | mingw-msys)
+        # platform has been recognized
+        ;;
+    *)
+@@ -272,6 +272,9 @@ else
+     elif test $platform = "netbsd"; then
+         threadingLibs="-pthread"
+         threadingDefines="-D_THREAD_SAFE -DXML_USE_PTHREADS"
++    elif test $platform = "openbsd"; then
++        threadingLibs="-pthread"
++        threadingDefines="-D_THREAD_SAFE -DXML_USE_PTHREADS"
+     elif test $platform = "aix"; then
+         aix_version=`./config.guess`;
+         echo Found host system to be $aix_version
+@@ -357,7 +360,7 @@ export THREADS
+ 
+ #
+ #  aix | beos | linux | hp-11 | solaris |
+-#  hp-10 | freebsd | netbsd | irix | openserver | unixware | os400 | ptx | tru64 | macosx
++#  hp-10 | freebsd | netbsd | openbsd | irix | openserver | unixware | os400 | ptx | tru64 | macosx
+ #
+ if test $bitsToBuild = 64; then
+     bitstobuildDefines=" -DXML_BITSTOBUILD_64 "

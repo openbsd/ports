@@ -1,0 +1,24 @@
+$OpenBSD: patch-samples_Makefile_incl,v 1.1.1.1 2008/10/26 23:15:18 ajacoutot Exp $
+--- samples/Makefile.incl.orig	Sun Oct 26 19:46:07 2008
++++ samples/Makefile.incl	Sun Oct 26 19:47:14 2008
+@@ -284,6 +284,20 @@ ifeq (${PLATFORM}, NETBSD)
+   endif
+ endif
+ 
++#=============== OPENBSD SPECIFIC OPTIONS =========================
++ifeq (${PLATFORM}, OPENBSD)
++  CMP= -c ${CXXFLAGS}
++  CC= ${COMPILER} -c -D${PLATFORM} -fPIC
++  LINK = ${COMPILER} -D${PLATFORM} -fPIC ${LDFLAGS}
++  PLATFORM_LIB_LINK_OPTIONS=-Wl,-rpath,${XERCESCROOT}/lib
++  ifdef ICUROOT 
++    PLATFORM_LIB_LINK_OPTIONS+=-L${ICUROOT} -Wl,-rpath,${ICUROOT}
++    EXTRA_LINK_OPTIONS=-licudata -lstdc++ ${EXTRA_LIBS}
++  else
++    EXTRA_LINK_OPTIONS=${EXTRA_LIBS} -lstdc++
++  endif
++endif
++
+ #================= HP SPECIFIC OPTIONS ===========================
+ ifeq (${PLATFORM}, HPUX)
+   ifeq (${GXX}, yes)

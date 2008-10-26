@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_xercesc_util_Platforms_Makefile_in,v 1.1.1.1 2008/10/26 23:15:17 ajacoutot Exp $
+--- src/xercesc/util/Platforms/Makefile.in.orig	Sun Oct 26 19:54:14 2008
++++ src/xercesc/util/Platforms/Makefile.in	Sun Oct 26 19:54:36 2008
+@@ -155,6 +155,9 @@ endif
+ ifeq (${PLATFORM}, NETBSD)
+     SUBMODULE = NetBSD
+ endif
++ifeq (${PLATFORM}, OPENBSD)
++    SUBMODULE = OpenBSD
++endif
+ ifeq (${PLATFORM}, HPUX)
+     SUBMODULE = HPUX
+ endif

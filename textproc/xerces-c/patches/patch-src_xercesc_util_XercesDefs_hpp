@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_xercesc_util_XercesDefs_hpp,v 1.1.1.1 2008/10/26 23:15:17 ajacoutot Exp $
+--- src/xercesc/util/XercesDefs.hpp.orig	Sun Oct 26 19:55:38 2008
++++ src/xercesc/util/XercesDefs.hpp	Sun Oct 26 19:56:36 2008
+@@ -237,6 +237,10 @@ typedef XMLUInt32           UCS4Ch;
+ #include       <xercesc/util/Platforms/NetBSD/NetBSDDefs.hpp>
+ #endif
+ 
++#if defined(XML_OPENBSD)
++#include       <xercesc/util/Platforms/OpenBSD/OpenBSDDefs.hpp>
++#endif
++
+ // ---------------------------------------------------------------------------
+ //  According to whether the compiler suports L"" type strings, we define
+ //  the XMLStrL() macro one way or another.

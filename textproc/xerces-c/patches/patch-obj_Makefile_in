@@ -1,0 +1,40 @@
+$OpenBSD: patch-obj_Makefile_in,v 1.1.1.1 2008/10/26 23:15:18 ajacoutot Exp $
+--- obj/Makefile.in.orig	Tue Aug 28 20:47:18 2007
++++ obj/Makefile.in	Sun Oct 26 21:21:44 2008
+@@ -148,12 +148,6 @@ ${FQ_REAL_NAME}: $(ALL_OBJECTS)
+     ifeq (${PLATFORM},OS390)
+ 	$(CP) ${LIBNAME}${VER}${OS390SIDEDECK} ${LIB}
+     endif
+-    ifneq (${FQ_SO_NAME},${FQ_REAL_NAME})
+-	@echo symlink ${FQ_SO_NAME} 
+-	rm -rf ${FQ_SO_NAME}   && ln -s ${FQ_REAL_NAME} ${FQ_SO_NAME}
+-    endif
+-	@echo symlink ${FQ_LINK_NAME}
+-	rm -rf ${FQ_LINK_NAME} && ln -s ${FQ_SO_NAME} ${FQ_LINK_NAME}
+ 
+   ## DepDOM ##
+ ${FQ_REAL_DEPDOM}: $(DEPDOM_OBJECTS)
+@@ -170,12 +164,6 @@ ${FQ_REAL_DEPDOM}: $(DEPDOM_OBJECTS)
+ 	${MAKE_SHARED} ${LD_SODEPDOM} -o ${@} ${^} $(TEMPLATESOBJS) $(PLATFORM_LIBRARIES) $(DEPDOM_LINK_OPTIONS) $(ALLLIBS) -L${LIB} -l${LINK_LIBNAME}
+     endif
+   endif
+-    ifneq (${FQ_SO_DEPDOM},${FQ_REAL_DEPDOM})   
+-	@echo symlink ${FQ_SO_DEPDOM} 
+-	rm -rf ${FQ_SO_DEPDOM}   && ln -s ${FQ_REAL_DEPDOM} ${FQ_SO_DEPDOM}
+-    endif
+-	@echo symlink ${FQ_LINK_DEPDOM}
+-	rm -rf ${FQ_LINK_DEPDOM} && ln -s ${FQ_SO_DEPDOM} ${FQ_LINK_DEPDOM}
+ 	
+   ## Start OS390 ##
+   ifeq (${PLATFORM},OS390)
+@@ -266,10 +254,8 @@ ifeq (${LIBTYPE},shared)
+ 	(cd ${DESTDIR}$(PREFIX)/lib; rm -f ${LINK_DEPDOM}.a libxercesdepdom.dll.a; ln -s ${LIBDEPDOM}${SO_TARGET_VERSION}${SHLIBSUFFIX}.a ${LINK_DEPDOM}.a; rm -f libxercesdepdom.dll.a; ln -s ${LIBDEPDOM}${SO_TARGET_VERSION}${SHLIBSUFFIX}.a libxercesdepdom.dll.a)
+   else
+ 	$(CP) ${FQ_REAL_NAME} ${DESTDIR}$(PREFIX)/lib
+-	(cd ${DESTDIR}$(PREFIX)/lib; rm -f ${SO_NAME}; ln -s ${REAL_NAME} ${SO_NAME}; rm -f ${LINK_NAME}; ln -s ${REAL_NAME} ${LINK_NAME})
+ 	
+ 	$(CP) ${FQ_REAL_DEPDOM} ${DESTDIR}$(PREFIX)/lib
+-	(cd ${DESTDIR}$(PREFIX)/lib; rm -f ${SO_DEPDOM}; ln -s ${REAL_DEPDOM} ${SO_DEPDOM}; rm -f ${LINK_DEPDOM}; ln -s ${REAL_DEPDOM} ${LINK_DEPDOM})	
+   endif
+   ifeq (${PLATFORM},OS390)
+ 	$(CP) ${LIBNAME}${VER}${OS390SIDEDECK} ${DESTDIR}$(PREFIX)/lib
