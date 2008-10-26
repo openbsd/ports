@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2008/10/24 17:09:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.207 2008/10/26 19:43:30 jasper Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -21,6 +21,7 @@
      SUBDIR += disc-cover
      SUBDIR += easytag
      SUBDIR += esound
+     SUBDIR += espeak
      SUBDIR += faac
      SUBDIR += faad
      SUBDIR += festival
