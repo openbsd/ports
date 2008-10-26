@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/26 19:32:49 mbalmer Exp $
+@group daemon
+lib/
+lib/php/
+pear/data/MDB2_Driver_mysql/
+pear/data/MDB2_Driver_mysql/package_mysql.xml
+pear/lib/.registry/mdb2_driver_mysql.reg
+pear/lib/MDB2/
+pear/lib/MDB2/Driver/
+pear/lib/MDB2/Driver/Datatype/
+pear/lib/MDB2/Driver/Datatype/mysql.php
+pear/lib/MDB2/Driver/Function/
+pear/lib/MDB2/Driver/Function/mysql.php
+pear/lib/MDB2/Driver/Manager/
+pear/lib/MDB2/Driver/Manager/mysql.php
+pear/lib/MDB2/Driver/Native/
+pear/lib/MDB2/Driver/Native/mysql.php
+pear/lib/MDB2/Driver/Reverse/
+pear/lib/MDB2/Driver/Reverse/mysql.php
+pear/lib/MDB2/Driver/mysql.php
+pear/tests/MDB2_Driver_mysql/
+pear/tests/MDB2_Driver_mysql/tests/
+pear/tests/MDB2_Driver_mysql/tests/MDB2_nonstandard_mysql.php
