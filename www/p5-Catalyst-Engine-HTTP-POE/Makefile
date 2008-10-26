@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/26 16:40:07 ajacoutot Exp $
 
 COMMENT= 	single-threaded Catalyst engine based on POE
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Engine-HTTP-POE-0.03
+DISTNAME=	Catalyst-Engine-HTTP-POE-0.08
 CATEGORIES=	www
 
 # perl
@@ -15,8 +15,11 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	::www/p5-Catalyst-Runtime \
 		::devel/p5-POE
 
-#MAKE_ENV=	TEST_POD=Yes
+REGRESS_DEPENDS= ::devel/p5-Test-Pod-Coverage \
+		::devel/p5-Test-Pod
 
-CONFIGURE_STYLE=modbuild
+REGRESS_FLAGS=	TEST_POD=Yes
+
+CONFIGURE_ARGS=	--skip
 
 .include <bsd.port.mk>
