@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2008/09/08 15:01:31 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2008/10/26 19:07:57 sthen Exp $
 
 COMMENT=	toolkit for the development of SILC applications
 
-DISTNAME=	silc-toolkit-1.1.7
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	silc-toolkit-1.1.8
 CATEGORIES=	devel
-SHARED_LIBS=	silc		7.0	\
-		silcclient	5.1	\
+SHARED_LIBS=	silc		8.0	\
+		silcclient	6.0	\
 
 MASTER_SITES=	http://www.silcnet.org/download/toolkit/sources/
 

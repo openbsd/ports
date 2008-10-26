@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/10/01 21:30:06 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/10/26 19:07:57 sthen Exp $
 @conflict silc-client-<=1.0.1
 include/silc/
 include/silc/client.h
@@ -103,7 +103,6 @@ lib/pkgconfig/silc.pc
 lib/pkgconfig/silcclient.pc
 share/doc/silc/
 @comment share/doc/silc/BSD
-@comment share/doc/silc/CHANGES
 @comment share/doc/silc/COPYING
 @comment share/doc/silc/CREDITS
 @comment share/doc/silc/CodingStyle
