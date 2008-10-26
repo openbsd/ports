@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.357 2008/10/16 00:19:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.358 2008/10/26 19:33:49 pirofti Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -348,6 +348,7 @@
      SUBDIR += xcache
      SUBDIR += xmhtml
      SUBDIR += xoops
+     SUBDIR += youtube-dl
      SUBDIR += yui
      SUBDIR += zendframework
      SUBDIR += zope
