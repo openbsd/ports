@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.243 2008/10/22 21:48:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.244 2008/10/26 23:16:37 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -248,6 +248,7 @@
      SUBDIR += wdg-sgml-lib
      SUBDIR += wdiff
      SUBDIR += xerces
+     SUBDIR += xerces-c
      SUBDIR += xml2rfc
      SUBDIR += xml2rfc,no_x11
      SUBDIR += xmlcatmgr
