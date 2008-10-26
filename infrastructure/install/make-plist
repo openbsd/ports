@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.102 2008/10/26 16:02:06 espie Exp $
+# $OpenBSD: make-plist,v 1.103 2008/10/26 16:24:22 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1076,6 +1076,9 @@ sub handle_file
 		}
 	}
 }
+
+
+# THIS IS WHERE THE MAIN PROGRAM STARTS
 
 parse_args();
 
