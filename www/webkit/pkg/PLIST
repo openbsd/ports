@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/25 12:51:10 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/26 12:59:02 landry Exp $
 %%SHARED%%
 @bin bin/jsc
 include/webkit-1.0/
@@ -12,6 +12,7 @@ include/webkit-1.0/JavaScriptCore/JSStringRefCF.h
 include/webkit-1.0/JavaScriptCore/JSValueRef.h
 include/webkit-1.0/JavaScriptCore/JavaScript.h
 include/webkit-1.0/JavaScriptCore/JavaScriptCore.h
+include/webkit-1.0/JavaScriptCore/WebKitAvailability.h
 include/webkit-1.0/webkit/
 include/webkit-1.0/webkit/webkit.h
 include/webkit-1.0/webkit/webkitdefines.h

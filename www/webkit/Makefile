@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/25 15:07:55 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/26 12:59:01 landry Exp $
 
 COMMENT =	open source web browser engine
 
-V = 35249
+V = 37790
 DISTNAME =	WebKit-r${V}
 PKGNAME =	webkit-${V}
 CATEGORIES =	www
