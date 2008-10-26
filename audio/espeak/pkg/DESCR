@@ -1,0 +1,21 @@
+eSpeak produces good quality English speech. It uses a different
+synthesis method from other open source TTS engines, and sounds
+quite different. It's perhaps not as natural or "smooth", but
+the articulation is much clearer and easier to listen to for long
+periods.
+
+It can run as a command line program to speak text from a file
+or from stdin. A shared library version is also available.
+
+    * Includes different Voices, whose characteristics can be altered.
+    * Can produce speech output as a WAV file.
+    * SSML (Speech Synthesis Markup Language) is supported (not
+      complete), and also HTML.
+    * Compact size. The program and its data, including several
+      languages, totals about 700 kbytes.
+    * Can translate text to phoneme codes, so it could be adapted
+      as a front end for another speech synthesis engine.
+    * Potential for other languages. Several are included in varying
+      stages of progress. Help from native speakers for these or
+      other languages is welcomed.
+    * Development tools available for producing and tuning phoneme data.

@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_speech_h,v 1.1.1.1 2008/10/26 19:42:11 jasper Exp $
+
+- Don't define USE_ASYNC, this required sem_timedwait() to be present.
+
+--- src/speech.h.orig	Wed Apr 16 14:03:05 2008
++++ src/speech.h	Tue Aug 12 15:57:57 2008
+@@ -36,19 +36,19 @@
+ #define ESPEAK_API  extern "C"
+ 
+ #ifdef LIBRARY
+-#define USE_ASYNC
++//#define USE_ASYNC
+ //#define USE_MBROLA_LIB
+ #endif
+ 
+ #ifdef _ESPEAKEDIT
+ #define USE_PORTAUDIO
+-#define USE_ASYNC
++//#define USE_ASYNC
+ #define LOG_FRAMES      // write keyframe info to log-espeakedit
+ #endif
+ 
+ // will look for espeak_data directory here, and also in user's home directory
+ #ifndef PATH_ESPEAK_DATA
+-   #define PATH_ESPEAK_DATA  "/usr/share/espeak-data"
++   #define PATH_ESPEAK_DATA  "${PREFIX}/share/espeak-data"
+ #endif
+ 
+ typedef unsigned short USHORT;

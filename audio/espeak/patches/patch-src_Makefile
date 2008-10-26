@@ -1,0 +1,56 @@
+$OpenBSD: patch-src_Makefile,v 1.1.1.1 2008/10/26 19:42:11 jasper Exp $
+--- src/Makefile.orig	Wed Apr 16 14:06:34 2008
++++ src/Makefile	Tue Aug 12 16:14:52 2008
+@@ -1,19 +1,20 @@
+ # remove -fno-exceptions  if it causes problems with stdio library on some platforms (ARM)
+ 
+-PREFIX=/usr
+ BINDIR=$(PREFIX)/bin
+ INCDIR=$(PREFIX)/include/espeak
+ LIBDIR=$(PREFIX)/lib
+-DATADIR=$(PREFIX)/share/espeak-data
++DATADIR=${PREFIX}/share/espeak-data
+ 
+ RELEASE = 1.37
+ BIN_NAME = speak
+ BIN2_NAME = espeak
+ LIB_NAME = libespeak.so
+ STATIC_LIB_NAME = libespeak.a
+-LIB_VERSION = 1
+-LIBTAG = $(LIB_VERSION).$(RELEASE)
++LIB_VERSION = ${LIBespeak_VERSION}
++LIBTAG = $(LIB_VERSION)
+ 
++LPATH= -L${LOCALBASE}/lib -Wl,-R${LOCALBASE}/lib
++
+ # Use SONAME_OPT=-Wl,h, on Solaris
+ SONAME_OPT=-Wl,-soname,
+ 
+@@ -60,15 +61,15 @@ libespeak_SOURCES = speak_lib.cpp compiledict.cpp dict
+ 
+ SRCS1=$(speak_SOURCES)
+ OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
+-LIBS1=-lstdc++ $(LIB_AUDIO) -lpthread $(EXTRA_LIBS)
++LIBS1=-lstdc++ $(LPATH) -lportaudio -pthread
+ 
+ SRCS2=$(libespeak_SOURCES)
+ OBJS2=$(patsubst %.cpp,x_%.o,$(SRCS2))
+-LIBS2=-lstdc++ $(LIB_AUDIO) -lpthread
++LIBS2=-lstdc++ $(LPATH) -lportaudio -pthread
+ 
+ SRCS3 = espeak.cpp
+ OBJS3=$(patsubst %.cpp,%.o,$(SRCS3))
+-LIBS3=-lstdc++ -L . -lespeak
++LIBS3=-lstdc++ -L . -lespeak $(LPATH) -lportaudio -pthread
+ 
+ CXXFLAGS=-O2
+ 
+@@ -89,7 +90,7 @@ $(BIN2_NAME): $(OBJS3) $(LIB_NAME)
+ 
+ x_%.o: %.cpp
+ 	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -Wall -fpic -pedantic \
+-	-I. -D LIBRARY -c -fno-exceptions  $<  -o x_$*.o
++	-I. -DLIBRARY -DPATH_ESPEAK_DATA=\"$(DATADIR)\" -c -fno-exceptions $<  -o x_$*.o
+ 
+ $(LIB_NAME): $(OBJS2)
+ 	$(CXX) -shared $(SONAME_OPT)$(LIB_NAME).$(LIB_VERSION) -o $@ $(OBJS2) $(LIBS2)
