@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/26 19:30:51 pirofti Exp $
+bin/youtube-dl
