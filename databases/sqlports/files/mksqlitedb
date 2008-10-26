@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.6 2008/08/20 21:02:47 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.7 2008/10/26 15:12:30 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -195,7 +195,7 @@ sub find_pathkey
 {
 	my ($self, $key) = @_;
 
-	if ($key eq '') {
+	if (!defined $key or $key eq '') {
 		print STDERR "Empty pathkey\n";
 		return 0;
 	}
@@ -470,6 +470,10 @@ sub add
 	$self->SUPER::add($ins);
 	for my $depends (main::words $self->value) {
 		my ($libs, $pkgspec, $pkgpath2, $rest) = split(/\:/, $depends);
+		if (!defined $pkgpath2) {
+			print STDERR "Wrong depends $depends\n";
+			return;
+		}
 		$self->normal_insert($ins, $depends, 
 		    $ins->find_pathkey($pkgpath2), 
 		    $ins->convert_depends($self->depends_type), 
