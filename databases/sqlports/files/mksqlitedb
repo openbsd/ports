@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.7 2008/10/26 15:12:30 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.8 2008/10/26 23:42:24 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -739,7 +739,7 @@ our @ISA=(qw(SecondaryVar));
 sub add
 {
 	my ($self, $ins) = @_;
-	$self->SUPER::add($ins);
+	$self->AnyVar::add($ins);
 	open my $file, '<', $self->value or return;
 	local $/ = undef;
 	$self->add_value($ins, <$file>);
@@ -753,7 +753,7 @@ our @ISA=(qw(KeyVar));
 sub add
 {
 	my ($self, $ins) = @_;
-	$self->SUPER::add($ins);
+	$self->AnyVar::add($ins);
 	my %t = main::words($self->value);
 	while (my ($k, $v) = each %t) {
 		$self->normal_insert($ins, $self->keyword($ins, $k), $v);
