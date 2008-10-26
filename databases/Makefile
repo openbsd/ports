@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2008/10/22 11:12:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.150 2008/10/26 18:59:47 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -96,6 +96,7 @@
      SUBDIR += p5-pgsql
      SUBDIR += p5-sybperl
      SUBDIR += pear-DB
+     SUBDIR += pear-MDB2
      SUBDIR += pg-toolbox
      SUBDIR += pg_top
      SUBDIR += pgadmin3
