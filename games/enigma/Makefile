@@ -1,31 +1,48 @@
-# $OpenBSD: Makefile,v 1.13 2007/12/15 20:37:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2008/10/26 23:19:30 ajacoutot Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
-DISTNAME=	enigma-0.81
-PKGNAME=	${DISTNAME}p1
+V=		1.01
+DISTNAME=	enigma-${V}-64bit
+PKGNAME=	enigma-${V}
+
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.nongnu.org/enigma/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		SDL X11 Xext c m pthread stdc++ usbhid z
 
-MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
+WANTLIB=	SDL c m pthread stdc++ z
+
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=enigma-game/}
+
+WRKDIST=	${WRKDIR}/enigma-${V}
+
+MODULES=	devel/gettext
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-BUILD_DEPENDS= :lua->=5.1:lang/lua
-LIB_DEPENDS=	SDL_image.>=1::devel/sdl-image SDL_mixer.>=2::devel/sdl-mixer
+BUILD_DEPENDS=	::net/enet
+LIB_DEPENDS=	SDL_image.>=1::devel/sdl-image \
+		SDL_mixer.>=2::devel/sdl-mixer \
+		SDL_ttf.>=7::devel/sdl-ttf \
+		png.>=8::graphics/png \
+		zipios.>=1::archivers/zipios \
+		xerces-c::textproc/xerces-c
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
+
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		LIBS="-pthread"
+CONFIGURE_ARGS=	--enable-cxxlua=no
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
+			-I${LOCALBASE}/include/libpng \
+			-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib \
+			-L${LOCALBASE}/lib" \
+		LIBS="-lm -lz -pthread"
 
 .include <bsd.port.mk>

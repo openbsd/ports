@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2008/10/26 23:19:30 ajacoutot Exp $
+--- src/Makefile.in.orig	Sun Oct 26 18:04:36 2008
++++ src/Makefile.in	Sun Oct 26 18:06:16 2008
+@@ -99,9 +99,7 @@ enigma_OBJECTS = $(am_enigma_OBJECTS)
+ @MINGW32_TRUE@am__DEPENDENCIES_1 = enigma_ico.o
+ enigma_DEPENDENCIES = $(top_builddir)/lib-src/enigma-core/libecl.a \
+ 	$(top_builddir)/lib-src/lua/liblua.a \
+-	$(top_builddir)/lib-src/enet/libenet.a \
+ 	$(top_builddir)/lib-src/oxydlib/liboxyd.a \
+-	$(top_builddir)/lib-src/zipios++/src/libzipios.a \
+ 	$(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+@@ -447,9 +445,8 @@ enigma_LDADD = \
+ 	@LIBINTL@ \
+ 	$(top_builddir)/lib-src/enigma-core/libecl.a \
+ 	$(top_builddir)/lib-src/lua/liblua.a \
+-	$(top_builddir)/lib-src/enet/libenet.a \
++	-lenet -lzipios \
+ 	$(top_builddir)/lib-src/oxydlib/liboxyd.a \
+-	$(top_builddir)/lib-src/zipios++/src/libzipios.a \
+ 	-lz \
+ 	$(mingw_ldadd) \
+ 	@SDL_LIBS@

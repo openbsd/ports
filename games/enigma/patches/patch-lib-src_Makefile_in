@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib-src_Makefile_in,v 1.1 2008/10/26 23:19:30 ajacoutot Exp $
+--- lib-src/Makefile.in.orig	Sun Oct 26 18:03:57 2008
++++ lib-src/Makefile.in	Sun Oct 26 18:04:20 2008
+@@ -214,7 +214,7 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-SUBDIRS = oxydlib lua zipios++ enet enigma-core
++SUBDIRS = oxydlib lua enigma-core
+ all: all-recursive
+ 
+ .SUFFIXES:

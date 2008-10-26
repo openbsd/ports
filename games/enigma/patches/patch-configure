@@ -1,0 +1,44 @@
+$OpenBSD: patch-configure,v 1.1 2008/10/26 23:19:30 ajacoutot Exp $
+--- configure.orig	Sun Oct 26 17:58:48 2008
++++ configure	Sun Oct 26 18:03:50 2008
+@@ -753,8 +753,6 @@ CPP
+ CXX
+ CXXFLAGS
+ CCC'
+-ac_subdirs_all='lib-src/zipios++
+-lib-src/enet'
+ 
+ # Initialize some variables set by options.
+ ac_init_help=
+@@ -15277,14 +15275,10 @@ else
+ echo "${ECHO_T}no" >&6; }
+ fi
+ 
+-subdirs="$subdirs lib-src/zipios++"
+ 
+-subdirs="$subdirs lib-src/enet"
+ 
++ac_config_files="$ac_config_files Makefile m4/Makefile data/Makefile data/gfx/Makefile data/gfx32/Makefile data/gfx40/Makefile data/gfx48/Makefile data/levels/Makefile data/levels/enigma_tutorial/Makefile data/levels/enigma_i/Makefile data/levels/enigma_ii/Makefile data/levels/enigma_iii/Makefile data/levels/enigma_iv/Makefile data/levels/enigma_v/Makefile data/levels/enigma_vi/Makefile data/levels/enigma_vii/Makefile data/levels/enigma_cross/Makefile data/levels/enigma_esprit/Makefile data/levels/enigma_oxyd/Makefile data/levels/enigma_peroxyd/Makefile data/levels/enigma_oxydmagnum/Makefile data/levels/enigma_oxydextra/Makefile data/levels/enigma_experimental/Makefile data/levels/enigma_stable/Makefile data/levels/enigma_sokoban/Makefile data/levels/enigma_microban/Makefile data/levels/enigma_mas_microban/Makefile data/levels/lib/Makefile data/levels/patches/Makefile data/fonts/Makefile data/sound/Makefile data/soundsets/Makefile data/soundsets/enigma/Makefile data/schemas/Makefile doc/Makefile doc/images/Makefile doc/images/flags25x15/Makefile doc/manual/Makefile doc/manual/images/Makefile doc/reference/Makefile doc/reference/images/Makefile etc/Makefile lib-src/Makefile lib-src/oxydlib/Makefile lib-src/lua/Makefile lib-src/enigma-core/Makefile src/Makefile etc/enigma.spec etc/enigma.nsi etc/Info.plist po/Makefile.in"
+ 
+-ac_config_files="$ac_config_files Makefile m4/Makefile intl/Makefile data/Makefile data/gfx/Makefile data/gfx32/Makefile data/gfx40/Makefile data/gfx48/Makefile data/levels/Makefile data/levels/enigma_tutorial/Makefile data/levels/enigma_i/Makefile data/levels/enigma_ii/Makefile data/levels/enigma_iii/Makefile data/levels/enigma_iv/Makefile data/levels/enigma_v/Makefile data/levels/enigma_vi/Makefile data/levels/enigma_vii/Makefile data/levels/enigma_cross/Makefile data/levels/enigma_esprit/Makefile data/levels/enigma_oxyd/Makefile data/levels/enigma_peroxyd/Makefile data/levels/enigma_oxydmagnum/Makefile data/levels/enigma_oxydextra/Makefile data/levels/enigma_experimental/Makefile data/levels/enigma_stable/Makefile data/levels/enigma_sokoban/Makefile data/levels/enigma_microban/Makefile data/levels/enigma_mas_microban/Makefile data/levels/lib/Makefile data/levels/patches/Makefile data/fonts/Makefile data/sound/Makefile data/soundsets/Makefile data/soundsets/enigma/Makefile data/schemas/Makefile doc/Makefile doc/images/Makefile doc/images/flags25x15/Makefile doc/manual/Makefile doc/manual/images/Makefile doc/reference/Makefile doc/reference/images/Makefile etc/Makefile lib-src/Makefile lib-src/oxydlib/Makefile lib-src/lua/Makefile lib-src/enigma-core/Makefile src/Makefile tools/Makefile etc/enigma.spec etc/enigma.nsi etc/Info.plist po/Makefile.in"
+-
+-
+ ac_config_files="$ac_config_files etc/mingw32-dist.sh"
+ 
+ 
+@@ -15912,7 +15906,6 @@ do
+     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
+     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
+     "m4/Makefile") CONFIG_FILES="$CONFIG_FILES m4/Makefile" ;;
+-    "intl/Makefile") CONFIG_FILES="$CONFIG_FILES intl/Makefile" ;;
+     "data/Makefile") CONFIG_FILES="$CONFIG_FILES data/Makefile" ;;
+     "data/gfx/Makefile") CONFIG_FILES="$CONFIG_FILES data/gfx/Makefile" ;;
+     "data/gfx32/Makefile") CONFIG_FILES="$CONFIG_FILES data/gfx32/Makefile" ;;
+@@ -15958,7 +15951,6 @@ do
+     "lib-src/lua/Makefile") CONFIG_FILES="$CONFIG_FILES lib-src/lua/Makefile" ;;
+     "lib-src/enigma-core/Makefile") CONFIG_FILES="$CONFIG_FILES lib-src/enigma-core/Makefile" ;;
+     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
+-    "tools/Makefile") CONFIG_FILES="$CONFIG_FILES tools/Makefile" ;;
+     "etc/enigma.spec") CONFIG_FILES="$CONFIG_FILES etc/enigma.spec" ;;
+     "etc/enigma.nsi") CONFIG_FILES="$CONFIG_FILES etc/enigma.nsi" ;;
+     "etc/Info.plist") CONFIG_FILES="$CONFIG_FILES etc/Info.plist" ;;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2008/10/26 23:19:30 ajacoutot Exp $
+--- Makefile.in.orig	Sun Oct 26 17:58:01 2008
++++ Makefile.in	Sun Oct 26 17:58:15 2008
+@@ -246,7 +246,7 @@ target_vendor = @target_vendor@
+ #   tools -> lib-src/lua
+ #   src   -> tools, lib-src
+ #
+-SUBDIRS = m4 lib-src tools intl src data doc po etc
++SUBDIRS = m4 lib-src src data doc po etc
+ EXTRA_DIST = enigma CHANGES ACKNOWLEDGEMENTS
+ doc_DATA = README CHANGES COPYING ACKNOWLEDGEMENTS
+ ACLOCAL_AMFLAGS = -I m4
