@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_utils_c,v 1.2 2008/07/01 06:03:58 sturm Exp $
---- base/utils.c.orig	Mon Jun 23 22:47:41 2008
-+++ base/utils.c	Mon Jun 30 20:26:25 2008
-@@ -3483,7 +3483,7 @@ char *mmap_fgets_multiline(mmapfile *temp_mmapfile){
+$OpenBSD: patch-base_utils_c,v 1.3 2008/10/26 15:03:11 sthen Exp $
+--- base/utils.c.orig	Wed Oct 15 17:43:55 2008
++++ base/utils.c	Wed Oct 22 20:03:01 2008
+@@ -3485,7 +3485,7 @@ char *mmap_fgets_multiline(mmapfile *temp_mmapfile){
  			}
  
  		/* one backslash found, so we should continue reading the next line */
