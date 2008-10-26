@@ -1,7 +1,7 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.23 2008/10/20 21:00:30 steven Exp $
+# $OpenBSD: libtool,v 1.24 2008/10/26 09:44:22 steven Exp $
 
-# Copyright (c) 2007 Steven Mestdagh <steven@openbsd.org>
+# Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -160,34 +160,35 @@ if ($mode eq 'compile') {
 	$pic = 0 if ($nonpic && grep { $_ eq 'disable-shared' } @tags);
 	$nonpic = 1 if ($opts{'static'});
 
-	my $outfile = $opts{'o'};
-	my $srcfile;
+	my ($outfile, $odir, $ofile, $srcfile, $srcext);
 	# XXX check whether -c flag is present and if not, die?
-	if (!$outfile) {
+	if ($opts{'o'}) {
+		$outfile = $opts{'o'};
+		# fix extension if needed
+		$outfile =~ s/\.o$/.lo/;
+		$odir = dirname $outfile;
+		$ofile = basename $outfile;
+	} else {
 		# XXX sometimes no -o flag is present and we need another way
 		my $srcre = join '|', @valid_src;
 		my $found = 0;
 		foreach my $a (@ARGV) {
 			if ($a =~ m/\.($srcre)$/i) {
 				$srcfile = $a;
+				$srcext = $1;
 				$found = 1;
 				last;
 			}
 		}
 		$found or die "cannot find source file in command\n";
 		# the output file ends up in the current directory
-		$outfile = basename $srcfile;
-		$outfile =~ s/\.($srcre)$//i;
-		$outfile .= '.lo';
+		$odir = '.';
+		$ofile = basename $srcfile;
+		$ofile =~ s/\.($srcext)$/.lo/i;
+		$outfile = "$odir/$ofile";
 	}
 	print "srcfile = $srcfile\n" if ($srcfile && $D);
-	# put output file in . if no -o flag is given
-	my $odir = '.';
-	# fix extension if needed
-	$outfile =~ s/\.o$/.lo/;
-	$odir = dirname $outfile if ($opts{'o'});
-	my $ofile = basename $outfile;
-	print "outfile = $odir/$ofile\n" if $D;
+	print "outfile = $outfile\n" if $D;
 	(my $nonpicobj = $ofile) =~ s/\.lo$/.o/;
 	my $picobj = "$ltdir/$nonpicobj";
 
