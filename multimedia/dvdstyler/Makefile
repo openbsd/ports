@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/24 16:47:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/26 11:46:31 sturm Exp $
 
 COMMENT=		DVD authoring application
 
@@ -30,7 +30,8 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		pixman-1 png popt pthread stdc++ theora vorbis vorbisenc \
 		wx_base wx_gtk2_adv wx_gtk2_core wx_gtk2_html x264 xml2 z
 
-BUILD_DEPENDS=		::multimedia/dvdauthor \
+BUILD_DEPENDS=		:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
+			::multimedia/dvdauthor \
 			::multimedia/mjpegtools \
 			::multimedia/mpgtx \
 			::sysutils/dvd+rw-tools
@@ -48,7 +49,7 @@ RUN_DEPENDS=		::devel/desktop-file-utils \
 
 USE_GMAKE=		Yes
 USE_X11=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	automake
 AUTOMAKE_VERSION=	1.8
 AUTOCONF_VERSION=	2.61
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
