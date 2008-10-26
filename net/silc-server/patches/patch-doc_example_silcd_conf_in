@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_example_silcd_conf_in,v 1.8 2008/09/15 00:13:40 brad Exp $
---- doc/example_silcd.conf.in.orig	Sat Sep 13 10:40:39 2008
-+++ doc/example_silcd.conf.in	Sun Sep 14 19:07:16 2008
+$OpenBSD: patch-doc_example_silcd_conf_in,v 1.9 2008/10/26 18:12:11 sthen Exp $
+--- doc/example_silcd.conf.in.orig	Sat Oct 25 14:59:17 2008
++++ doc/example_silcd.conf.in	Sun Oct 26 11:10:26 2008
 @@ -22,7 +22,7 @@
  # Include global algorithms from the "silcalgs.conf" file.  This file defines
  # ciphers, hash functions, HMACs and PKCS algorithms that can be used.
