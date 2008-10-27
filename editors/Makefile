@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2008/06/14 18:32:29 eric Exp $
+# $OpenBSD: Makefile,v 1.70 2008/10/27 00:03:36 bernd Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -36,6 +36,7 @@
      SUBDIR += nvi-m17n
      SUBDIR += nvi-m17n,canna
      SUBDIR += openoffice
+     SUBDIR += qscintilla
      SUBDIR += scintilla
      SUBDIR += scite
      SUBDIR += subtitleeditor
