@@ -1,4 +1,4 @@
-# $OpenBSD: FS.pm,v 1.1 2008/10/27 10:33:46 espie Exp $
+# $OpenBSD: FS.pm,v 1.2 2008/10/27 11:12:01 espie Exp $
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -15,6 +15,23 @@
 
 use strict;
 use warnings;
+
+package FS::File;
+sub new
+{
+	my ($class, $filename, $type) = @_;
+	bless {path =>$filename, type => $type}, $class
+}
+
+sub type
+{
+	shift->{type};
+}
+
+sub path
+{
+	shift->{path};
+}
 
 package FS;
 
@@ -249,7 +266,7 @@ sub scan_destdir
 			return if $File::Find::name =~ m/pear\/lib\/\.(?:filemap|lock)$/;
 			my $path = undest($File::Find::name);
 			$path =~ s,^/etc/X11/app-defaults\b,/usr/local/lib/X11/app-defaults,;
-			$files{$path} = get_type($File::Find::name);
+			$files{$path} = FS::File->new($path, $type);
 		}, $destdir);
 	zap_dirs(\%files, $destdir.'/etc/X11/app-defaults');
 	return \%files;

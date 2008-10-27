@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.104 2008/10/27 10:33:46 espie Exp $
+# $OpenBSD: make-plist,v 1.105 2008/10/27 11:12:01 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -422,13 +422,13 @@ sub register
 	$self->{end_faked} = $plist->{state}->{end_faked};
 	if ($self->{expanded} =~ m/^install\-info\s+(?:\-\-delete\s+)?\-\-info\-dir=.*?\/info\s+(.*)$/) {
 		my $iname = $1;
-		if (defined $existing->{$iname} and $existing->{$iname} eq 'info') {
+		if (defined $existing->{$iname} and $existing->{$iname}->type eq 'info') {
 			return;
 	    	}
 	}
 	if ($self->{expanded} =~ m/^mkdir\s+\-p\s+(.*)$/) {
 		my $iname = $1;
-		if (defined $existing->{$iname} and $existing->{$iname} eq 'directory') {
+		if (defined $existing->{$iname} and $existing->{$iname}->type eq 'directory') {
 			return;
 		}
 	}
@@ -712,23 +712,24 @@ sub handle_modes
 # into the right packing-list.
 sub handle_file
 {
-	my ($i, $type, $foundfiles, $foundcomments, $allplists, $shared_only, $pass) = @_;
+	my ($file, $foundfiles, $foundcomments, $allplists, $shared_only, $pass) = @_;
 
 	my $default = $allplists->[0];
 	my $k;
 	
-	if ($type eq 'library') {
-		$k = $subst->reverse_with_lib($i);
+	if ($file->type eq 'library') {
+		$k = $subst->reverse_with_lib($file->path);
 	} else {
-		$k = $subst->reverse($i);
+		$k = $subst->reverse($file->path);
 	}
 	my $short;
 	my $p;
 	my $item;
 
-	my $possible = possible_subpackages($i);
+	my $possible = possible_subpackages($file->path);
 	if (@$possible == 0) {
-		print "Bogus element outside of every prefix: $i\n";
+		print "Bogus element outside of every prefix: ", $file->path, 
+		    "\n";
 		return;
 	}
 	# find out accurate prefix: if file is part of an existing plist,
@@ -736,10 +737,10 @@ sub handle_file
 	if (defined $foundfiles->{$k}) {
 		$item = $foundfiles->{$k};
 		$p = $item->{plist}->{replacement};
-		if ($type eq 'directory' && $p->{mtree}->{$i}) {
+		if ($file->type eq 'directory' && $p->{mtree}->{$file->path}) {
 			undef $p;
 		} else {
-			$short = strip_base($i, $p);
+			$short = strip_base($file->path, $p);
 			if ($pass == 0 and $item->{end_faked} == 1) {
 				return;
 			}
@@ -752,15 +753,18 @@ sub handle_file
 	# otherwise, look for the first matching prefix in plist to produce
 	# an entry
 		for my $try (@$allplists) {
-			my $s2 = strip_base($i, $try);
-			if ($type eq 'directory' and $try->{mtree}->{$i}) {
+			my $s2 = strip_base($file->path, $try);
+			if ($file->type eq 'directory' and 
+			    $try->{mtree}->{$file->path}) {
 				next;
 			}
 			unless ($s2 =~ m|^/|) {
 				$p = $try;
 				$short = $s2;
 				if ($p ne $default) {
-					print "Element $i going to ", $p->{filename}, " based on prefix\n";
+					print "Element ", $file->path, 
+					    " going to ", $p->{filename}, 
+					    " based on prefix\n";
 				}
 				last;
 			}
@@ -770,7 +774,7 @@ sub handle_file
 	if (!defined $p) {
 		return;
 	}
-	if ($type eq 'library') {
+	if ($file->type eq 'library') {
 		$short = $subst->reverse_with_lib($short);
 	} else {
 		$short = $subst->reverse($short);
@@ -782,7 +786,7 @@ sub handle_file
 	    print STDERR "\t$short\n";
 	}
 
-	my $o = create_object($type, $short, $item);
+	my $o = create_object($file->type, $short, $item);
 	return unless defined $o;
 	my $s = $o->fullstring();
 	# 
@@ -805,7 +809,7 @@ sub handle_file
 			print STDERR "make-plist: generated plist may contain emacs temp file\n";
 			print STDERR "\t$short\n";
 		}
-		if (($type eq 'library' || $type eq 'plugin') && (!defined $item) && !$shared_only) {
+		if (($file->type eq 'library' || $file->type eq 'plugin') && (!defined $item) && !$shared_only) {
 			$p->{wantshared} = 1;
 			$p = $p->{shared};
 			if ($pass == 1) {
@@ -862,7 +866,7 @@ for my $plist (@l) {
 }
 
 for my $i (sort keys %$files) {
-	handle_file($i, $files->{$i}, $foundfiles, $foundcomments, \@l, $shared_only, 0);
+	handle_file($files->{$i}, $foundfiles, $foundcomments, \@l, $shared_only, 0);
 }
 
 my $need_second_pass = 0;
@@ -876,7 +880,7 @@ for my $plist (@l) {
 
 if ($need_second_pass) {
 	for my $i (sort keys %$files) {
-		handle_file($i, $files->{$i}, $foundfiles, $foundcomments, \@l, $shared_only, 1);
+		handle_file($files->{$i}, $foundfiles, $foundcomments, \@l, $shared_only, 1);
 	}
 }
 
