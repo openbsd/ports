@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.107 2008/10/27 11:28:12 espie Exp $
+# $OpenBSD: make-plist,v 1.108 2008/10/27 12:18:40 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -251,7 +251,6 @@ sub add_to_mtree
 sub register
 {
 	my ($self, $plist) = @_;
-	$self->{end_faked} = $plist->{state}->{end_faked};
 }
 
 sub copy_extra
@@ -291,14 +290,6 @@ sub clone_tags
 	}
 }
 
-package OpenBSD::PackingElement::EndFake;
-sub register
-{
-	my ($self, $plist) = @_;
-	$plist->{state}->{end_faked} = 1;
-	$plist->{has_endfake} = 1;
-}
-
 package OpenBSD::PackingElement::Fragment;
 our @ISA=qw(OpenBSD::PackingElement);
 sub register
@@ -309,7 +300,6 @@ sub register
     	} else {
 	    $plist->{tag_marker}->tag_along($self);
 	}
-	$self->{end_faked} = $plist->{state}->{end_faked};
 }
 
 sub deduce_fragment
@@ -357,7 +347,6 @@ sub register
 	my ($self, $plist, $files, $comments) = @_;
 
 	$self->{plist} = $plist;
-	$self->{end_faked} = $plist->{state}->{end_faked};
 	my $fullname = $self->fullname;
 	my $n = $main::subst->reverse($fullname);
 	$files->{$n} = $self;
@@ -377,7 +366,6 @@ sub register
 	my ($self, $plist, $files, $comments) = @_;
 	$plist->{state}->{lastobject} = $self;
 	$self->{plist} = $plist;
-	$self->{end_faked} = $plist->{state}->{end_faked};
 	my $fullname = $self->fullname;
 	my $n = $main::subst->reverse_with_lib($fullname);
 	$files->{$n} = $self;
@@ -395,7 +383,6 @@ package OpenBSD::PackingElement::Sample;
 sub register
 {
 	my ($self, $plist, $files, $comments) = @_;
-	$self->{end_faked} = $plist->{state}->{end_faked};
 	if (defined $self->{copyfrom}) {
 		$self->{copyfrom}->tag_along($self);
 	} else {
@@ -407,7 +394,6 @@ package OpenBSD::PackingElement::Sysctl;
 sub register
 {
 	my ($self, $plist, $files, $comments) = @_;
-	$self->{end_faked} = $plist->{state}->{end_faked};
 	if (defined $plist->{state}->{lastobject}) {
 		$plist->{state}->{lastobject}->tag_along($self);
 	} else {
@@ -419,7 +405,6 @@ package OpenBSD::PackingElement::ExeclikeAction;
 sub register
 {
 	my ($self, $plist, $files, $comments) = @_;
-	$self->{end_faked} = $plist->{state}->{end_faked};
 	if (defined $plist->{state}->{lastobject}) {
 	    $plist->{state}->{lastobject}->tag_along($self);
     	} else {
@@ -431,7 +416,6 @@ package OpenBSD::PackingElement::Sampledir;
 sub register
 {
 	my ($self, $plist, $files, $comments) = @_;
-	$self->{end_faked} = $plist->{state}->{end_faked};
 	if (defined $plist->{state}->{lastobject}) {
 	    $plist->{state}->{lastobject}->tag_along($self);
     	} else {
@@ -451,7 +435,6 @@ package OpenBSD::PackingElement::Comment;
 sub register
 {
 	my ($self, $plist, $files, $comments) = @_;
-	$self->{end_faked} = $plist->{state}->{end_faked};
 	$self->{plist} = $plist;
 	my $name = $self->{name};
 	$comments->{$name} = $self;
@@ -478,7 +461,6 @@ sub copy_extra
 sub register
 {
 	my ($self, $plist) = @_;
-	$self->{end_faked} = $plist->{state}->{end_faked};
 }
 
 package OpenBSD::PackingElement::ExtraUnexec;
@@ -494,7 +476,6 @@ sub copy_extra
 sub register
 {
 	my ($self, $plist) = @_;
-	$self->{end_faked} = $plist->{state}->{end_faked};
 }
 
 package main;
@@ -543,7 +524,7 @@ sub create_packinglist
 # grab original packing list, killing some stuff that is no longer needed.
 sub parse_original_plist
 {
-    my ($name, $sub, $all_plists, $parent) = @_;
+    my ($name, $sub, $all_plists) = @_;
     my $plist = create_packinglist($name, $sub);
     # place holder for extra stuff that comes before any file
     $plist->{tag_marker} = new OpenBSD::PackingElement('');
@@ -565,10 +546,6 @@ sub parse_original_plist
     ) or return;
 
     delete $plist->{state}->{lastobject};
-    if (!defined $parent) {
-    	$parent = 0;
-    }
-    $plist->{state}->{end_faked} = $parent;
     for my $item (@{$plist->{items}}) {
     	$item->register($plist, $foundfiles, $foundcomments);
     }
@@ -579,7 +556,7 @@ sub parse_original_plist
 	    my $pfrag = create_packinglist($fragname, $sub);
 	    $pfrag->{isfrag} = 1;
 	    push(@$all_plists, $pfrag);
-	    my $origpfrag = parse_original_plist($fragname, $sub, $all_plists, $item->{end_faked});
+	    my $origpfrag = parse_original_plist($fragname, $sub, $all_plists);
 	    replaces($origpfrag, $pfrag);
     }
     return $plist;
@@ -696,7 +673,7 @@ sub handle_modes
 # into the right packing-list.
 sub handle_file
 {
-	my ($file, $foundfiles, $foundcomments, $allplists, $shared_only, $pass) = @_;
+	my ($file, $foundfiles, $foundcomments, $allplists, $shared_only) = @_;
 
 	my $default = $allplists->[0];
 	my $k;
@@ -725,12 +702,6 @@ sub handle_file
 			undef $p;
 		} else {
 			$short = strip_base($file->path, $p);
-			if ($pass == 0 and $item->{end_faked} == 1) {
-				return;
-			}
-			if ($pass == 1 and $item->{end_faked} == 0) {
-				return;
-			}
 		}
 	}
 	if (!defined $p) {
@@ -796,9 +767,6 @@ sub handle_file
 		if (($file->type eq 'library' || $file->type eq 'plugin') && (!defined $item) && !$shared_only) {
 			$p->{wantshared} = 1;
 			$p = $p->{shared};
-			if ($pass == 1) {
-				return;
-			}
 		}
 		handle_modes($p, $item, $o);
 		$o->add_object($p);
@@ -850,22 +818,7 @@ for my $plist (@l) {
 }
 
 for my $i (sort keys %$files) {
-	handle_file($files->{$i}, $foundfiles, $foundcomments, \@l, $shared_only, 0);
-}
-
-my $need_second_pass = 0;
-
-for my $plist (@l) {
-	if (defined $plist->{has_endfake}) {
-		OpenBSD::PackingElement::EndFake->add($plist);
-		$need_second_pass = 1;
-	}
-}
-
-if ($need_second_pass) {
-	for my $i (sort keys %$files) {
-		handle_file($files->{$i}, $foundfiles, $foundcomments, \@l, $shared_only, 1);
-	}
+	handle_file($files->{$i}, $foundfiles, $foundcomments, \@l, $shared_only);
 }
 
 # Copy extra stuff
