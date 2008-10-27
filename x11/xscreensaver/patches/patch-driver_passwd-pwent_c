@@ -1,0 +1,16 @@
+$OpenBSD: patch-driver_passwd-pwent_c,v 1.1 2008/10/27 19:49:39 ajacoutot Exp $
+--- driver/passwd-pwent.c.orig	Thu Oct 23 16:10:09 2008
++++ driver/passwd-pwent.c	Thu Oct 23 16:13:00 2008
+@@ -200,10 +200,10 @@ get_encrypted_passwd(const char *user)
+ 	*s = 0;
+     }
+ 
+-#ifndef HAVE_PAM
++#if !defined(HAVE_PAM) && !defined(BSD_AUTH)
+   /* We only issue this warning if not compiled with support for PAM.
+      If we're using PAM, it's not unheard of that normal pwent passwords
+-     would be unavailable. */
++     would be unavailable. This is also true if we use bsd_auth(3). */
+ 
+   if (!result)
+     fprintf (stderr, "%s: couldn't get password of \"%s\"\n",

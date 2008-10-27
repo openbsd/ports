@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.26 2008/08/20 13:30:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2008/10/27 19:49:39 ajacoutot Exp $
 @conflict circuit-*
-@mode 4755
+@mode g+s
+@group auth
 bin/xscreensaver
 @mode
+@group
 @bin bin/xscreensaver-command
 @bin bin/xscreensaver-demo
 @bin bin/xscreensaver-getimage

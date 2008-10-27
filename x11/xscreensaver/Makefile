@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2008/08/20 13:30:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2008/10/27 19:49:39 ajacoutot Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
 DISTNAME=		xscreensaver-5.07
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
@@ -50,6 +51,9 @@ CONFIGURE_ARGS+=	--with-gle
 .else
 CONFIGURE_ARGS+=	--without-gle
 .endif
+
+post-extract:
+	cp ${FILESDIR}/passwd-bsd_auth.c ${WRKSRC}/driver/
 
 post-install:
 # rename deco to xdeco, so it doesn't conflict with misc/deco

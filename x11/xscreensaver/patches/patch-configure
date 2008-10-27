@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.8 2008/08/20 13:30:55 jasper Exp $
+$OpenBSD: patch-configure,v 1.9 2008/10/27 19:49:39 ajacoutot Exp $
 --- configure.orig	Mon Aug 11 07:11:59 2008
-+++ configure	Wed Aug 20 15:05:40 2008
++++ configure	Sun Oct 26 13:43:50 2008
 @@ -9372,7 +9372,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -54,3 +54,19 @@ $OpenBSD: patch-configure,v 1.8 2008/08/20 13:30:55 jasper Exp $
  fi
  
      fi
+@@ -20179,6 +20179,15 @@ fi
+   PASSWD_SRCS="$PASSWD_SRCS \$(PWENT_SRCS)"
+   PASSWD_OBJS="$PASSWD_OBJS \$(PWENT_OBJS)"
+ 
++# OpenBSD uses bsd_auth(3)
++case "$host" in
++  *-openbsd*)
++    PASSWD_SRCS="$PASSWD_SRCS \$(BSD_AUTH_SRCS)"
++    PASSWD_OBJS="$PASSWD_OBJS \$(BSD_AUTH_OBJS)"
++    cat >>confdefs.h <<\_ACEOF  
++#define BSD_AUTH 1
++_ACEOF
++esac
+ 
+ if test "$enable_locking" = yes; then
+   LOCK_SRCS='$(LOCK_SRCS_1) $(PASSWD_SRCS)'
