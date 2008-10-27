@@ -1,9 +1,9 @@
-$OpenBSD: patch-publish_sh,v 1.1 2008/07/23 17:31:17 martynas Exp $
---- publish.sh.orig	Mon Jul 21 11:24:47 2008
-+++ publish.sh	Mon Jul 21 11:25:05 2008
-@@ -53,13 +53,13 @@ TCLDIR=/home/drh/tcltk/846/linux/846linux
- TCLSTUBLIB=$TCLDIR/libtclstub8.4g.a
- CFLAGS="-Os -DSQLITE_ENABLE_FTS3=1 -DHAVE_LOCALTIME_R=1 -DHAVE_GMTIME_R=1"
+$OpenBSD: patch-publish_sh,v 1.2 2008/10/27 17:14:18 simon Exp $
+--- publish.sh.orig	Tue Oct 14 20:07:39 2008
++++ publish.sh	Sat Oct 25 19:39:50 2008
+@@ -56,13 +56,13 @@ CFLAGS="-Os -DSQLITE_ENABLE_FTS3=3 -DSQLITE_ENABLE_RTR
+ CFLAGS="$CFLAGS -DHAVE_LOCALTIME_R=1 -DHAVE_GMTIME_R=1"
+ CFLAGS="$CFLAGS -DSQLITE_ENABLE_COLUMN_METADATA=1"
  echo '***** BUILDING shared libraries for linux'
 -gcc $CFLAGS -shared tclsqlite3.c $TCLSTUBLIB -o tclsqlite3.so -lpthread
 +gcc $CFLAGS -shared tclsqlite3.c $TCLSTUBLIB -o tclsqlite3.so -pthread

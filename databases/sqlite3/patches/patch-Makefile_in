@@ -1,21 +1,21 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2008/07/23 17:31:17 martynas Exp $
---- Makefile.in.orig	Mon May 12 19:10:26 2008
-+++ Makefile.in	Sun Jul 20 21:18:43 2008
-@@ -96,7 +96,7 @@ TEXE = @TARGET_EXEEXT@
+$OpenBSD: patch-Makefile_in,v 1.9 2008/10/27 17:14:18 simon Exp $
+--- Makefile.in.orig	Tue Oct 14 20:07:37 2008
++++ Makefile.in	Sun Oct 26 10:19:40 2008
+@@ -101,7 +101,7 @@ TEXE = @TARGET_EXEEXT@
  #
  HAVE_TCL = @HAVE_TCL@
  
 -# This is the command to use for tclsh - normally just "tclsh", but we may
-+# This is the command to use for tclsh8.4 - normally just "tclsh8.4", but we may
++# This is the command to use for tclsh8.48.4 - normally just "tclsh8.48.4", but we may
  # know the specific version we want to use
  #
  TCLSH_CMD = @TCLSH_CMD@
-@@ -160,11 +160,11 @@ OBJS0 = alter.lo analyze.lo attach.lo auth.lo bitvec.l
-         select.lo table.lo tokenize.lo trigger.lo update.lo \
+@@ -167,11 +167,11 @@ OBJS0 = alter.lo analyze.lo attach.lo auth.lo bitvec.l
+         table.lo tokenize.lo trigger.lo update.lo \
          util.lo vacuum.lo \
          vdbe.lo vdbeapi.lo vdbeaux.lo vdbeblob.lo vdbefifo.lo vdbemem.lo \
--        where.lo utf.lo legacy.lo vtab.lo
-+        where.lo utf.lo legacy.lo vtab.lo pthread_stub.lo
+-        walker.lo where.lo utf.lo vtab.lo
++        walker.lo where.lo utf.lo vtab.lo pthread_stub.lo
  
  # Object files for the amalgamation.
  #
@@ -24,17 +24,17 @@ $OpenBSD: patch-Makefile_in,v 1.8 2008/07/23 17:31:17 martynas Exp $
  
  # Determine the real value of LIBOBJ based on the 'configure' script
  #
-@@ -246,7 +246,8 @@ SRC = \
-   $(TOP)/src/vdbemem.c \
+@@ -262,7 +262,8 @@ SRC = \
    $(TOP)/src/vdbeInt.h \
    $(TOP)/src/vtab.c \
+   $(TOP)/src/walker.c \
 -  $(TOP)/src/where.c
 +  $(TOP)/src/where.c \
 +  $(TOP)/src/pthread_stub.c
  
  # Generated source code files
  #
-@@ -392,7 +393,7 @@ HDR += \
+@@ -419,7 +420,7 @@ HDR += \
  # hidden when the library is built via the amalgamation).
  #
  TESTFIXTURE_SRC0 = $(TESTSRC2) libsqlite3.la
@@ -43,7 +43,16 @@ $OpenBSD: patch-Makefile_in,v 1.8 2008/07/23 17:31:17 martynas Exp $
  TESTFIXTURE_SRC = $(TESTSRC) $(TOP)/src/tclsqlite.c $(TESTFIXTURE_SRC$(USE_AMALGAMATION))
  
  
-@@ -454,6 +455,9 @@ lemon$(BEXE):	$(TOP)/tool/lemon.c $(TOP)/tool/lempar.c
+@@ -444,7 +445,7 @@ libsqlite3.la:	$(LIBOBJ)
+ 
+ libtclsqlite3.la:	tclsqlite.lo libsqlite3.la
+ 	$(LTLINK) -o $@ tclsqlite.lo \
+-		libsqlite3.la @TCL_STUB_LIB_SPEC@ $(TLIBS) \
++		libsqlite3.la -L./.libs @TCL_STUB_LIB_SPEC@ $(TLIBS) \
+                 -rpath "$(libdir)/sqlite" \
+ 		-version-info "8:6:8"
+ 
+@@ -481,6 +482,9 @@ lemon$(BEXE):	$(TOP)/tool/lemon.c $(TOP)/tool/lempar.c
  sqlite3.lo:	sqlite3.c
  	$(LTCOMPILE) -c sqlite3.c
  
@@ -53,7 +62,7 @@ $OpenBSD: patch-Makefile_in,v 1.8 2008/07/23 17:31:17 martynas Exp $
  # Rules to build individual files
  #
  alter.lo:	$(TOP)/src/alter.c $(HDR)
-@@ -720,6 +724,8 @@ clean:	
+@@ -768,6 +772,8 @@ clean:	
  
  distclean:	clean
  	rm -f config.log config.status libtool Makefile sqlite3.pc

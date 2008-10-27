@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_util_c,v 1.1 2008/07/23 17:31:17 martynas Exp $
---- src/util.c.orig	Tue May 13 19:41:50 2008
-+++ src/util.c	Sat Jul 19 15:10:45 2008
-@@ -19,23 +19,14 @@
+$OpenBSD: patch-src_util_c,v 1.2 2008/10/27 17:14:18 simon Exp $
+--- src/util.c.orig	Tue Oct 14 20:07:41 2008
++++ src/util.c	Sat Oct 25 19:51:35 2008
+@@ -19,35 +19,14 @@
  #include "sqliteInt.h"
  #include <stdarg.h>
  #include <ctype.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_util_c,v 1.1 2008/07/23 17:31:17 martynas Exp $
  
  
  /*
- ** Return true if the floating point value is Not a Number.
+ ** Return true if the floating point value is Not a Number (NaN).
  */
  int sqlite3IsNaN(double x){
 -  /* This NaN test sometimes fails if compiled on GCC with -ffast-math.
@@ -20,9 +20,21 @@ $OpenBSD: patch-src_util_c,v 1.1 2008/07/23 17:31:17 martynas Exp $
 -  **      -O option since it can result in incorrect output for programs
 -  **      which depend on an exact implementation of IEEE or ISO 
 -  **      rules/specifications for math functions.
+-  **
+-  ** Under MSVC, this NaN test may fail if compiled with a floating-
+-  ** point precision mode other than /fp:precise.  From the MSDN 
+-  ** documentation:
+-  **
+-  **      The compiler [with /fp:precise] will properly handle comparisons 
+-  **      involving NaN. For example, x != x evaluates to true if x is NaN 
+-  **      ...
 -  */
+-#ifdef __FAST_MATH__
+-# error SQLite will not work correctly with the -ffast-math option of GCC.
+-#endif
 -  volatile double y = x;
--  return x!=y;
+-  volatile double z = y;
+-  return y!=z;
 +	return isnan(x);
  }
  

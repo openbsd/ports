@@ -1,19 +1,21 @@
-$OpenBSD: patch-src_sqliteInt_h,v 1.1 2008/07/23 17:31:17 martynas Exp $
---- src/sqliteInt.h.orig	Tue May 13 16:27:34 2008
-+++ src/sqliteInt.h	Sat Jul 19 15:10:45 2008
-@@ -35,9 +35,6 @@
+$OpenBSD: patch-src_sqliteInt_h,v 1.2 2008/10/27 17:14:18 simon Exp $
+--- src/sqliteInt.h.orig	Sat Oct 25 19:43:37 2008
++++ src/sqliteInt.h	Sat Oct 25 19:45:37 2008
+@@ -35,11 +35,6 @@
  #pragma warn -spa /* Suspicous pointer arithmetic */
  #endif
  
 -/* Needed for various definitions... */
--#define _GNU_SOURCE
+-#ifndef _GNU_SOURCE
+-# define _GNU_SOURCE
+-#endif
 -
  /*
  ** Include standard header files as necessary
  */
-@@ -327,32 +324,26 @@ typedef INT16_TYPE i16;            /* 2-byte signed in
+@@ -378,33 +373,26 @@ typedef INT16_TYPE i16;            /* 2-byte signed in
  typedef UINT8_TYPE u8;             /* 1-byte unsigned integer */
- typedef UINT8_TYPE i8;             /* 1-byte signed integer */
+ typedef INT8_TYPE i8;              /* 1-byte signed integer */
  
 -/*
 -** Macros to determine whether the machine is big or little endian,
@@ -34,7 +36,8 @@ $OpenBSD: patch-src_sqliteInt_h,v 1.1 2008/07/23 17:31:17 martynas Exp $
 -extern const int sqlite3one;
 +#error "Help, I'm trapped in a PDP11"
  #endif
--#if defined(i386) || defined(__i386__) || defined(_M_IX86)
+-#if defined(i386) || defined(__i386__) || defined(_M_IX86)\
+-                             || defined(__x86_64) || defined(__x86_64__)
 -# define SQLITE_BIGENDIAN    0
 -# define SQLITE_LITTLEENDIAN 1
 -# define SQLITE_UTF16NATIVE  SQLITE_UTF16LE

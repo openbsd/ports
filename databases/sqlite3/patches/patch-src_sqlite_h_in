@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sqlite_h_in,v 1.1 2008/07/23 17:31:17 martynas Exp $
---- src/sqlite.h.in.orig	Mon May 12 15:39:56 2008
-+++ src/sqlite.h.in	Sat Jul 19 15:13:05 2008
+$OpenBSD: patch-src_sqlite_h_in,v 1.2 2008/10/27 17:14:18 simon Exp $
+--- src/sqlite.h.in.orig	Tue Oct 14 20:07:41 2008
++++ src/sqlite.h.in	Sat Oct 25 19:39:50 2008
 @@ -35,6 +35,7 @@
  #ifndef _SQLITE3_H_
  #define _SQLITE3_H_
@@ -9,8 +9,8 @@ $OpenBSD: patch-src_sqlite_h_in,v 1.1 2008/07/23 17:31:17 martynas Exp $
  
  /*
  ** Make sure we can call this stuff from C++.
-@@ -188,6 +189,9 @@ typedef struct sqlite3 sqlite3;
- ** {F10202} The [sqlite_uint64] and [sqlite3_uint64] types specify
+@@ -215,6 +216,9 @@ typedef struct sqlite3 sqlite3;
+ ** {H10202} The [sqlite_uint64] and [sqlite3_uint64] type shall specify
  **          a 64-bit unsigned integer.
  */
 +typedef int64_t sqlite_int64;
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_sqlite_h_in,v 1.1 2008/07/23 17:31:17 martynas Exp $
  #ifdef SQLITE_INT64_TYPE
    typedef SQLITE_INT64_TYPE sqlite_int64;
    typedef unsigned SQLITE_INT64_TYPE sqlite_uint64;
-@@ -197,6 +201,7 @@ typedef struct sqlite3 sqlite3;
+@@ -224,6 +228,7 @@ typedef struct sqlite3 sqlite3;
  #else
    typedef long long int sqlite_int64;
    typedef unsigned long long int sqlite_uint64;

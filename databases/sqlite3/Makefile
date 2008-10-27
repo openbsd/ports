@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.35 2008/07/25 19:02:25 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2008/10/27 17:14:18 simon Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
-V=		3.5.9
+V=		3.6.4
 DISTNAME=	sqlite-${V}
-PKGNAME-main=	sqlite3-${V}p0
+PKGNAME-main=	sqlite3-${V}
 PKGNAME-tcl=	sqlite3-tcl-${V}
 CATEGORIES=	databases
-SHARED_LIBS +=	sqlite3              11.0      # .8.6
-SHARED_LIBS +=	tclsqlite3           10.0      # .8.6
+SHARED_LIBS +=	sqlite3              12.0      # .8.6
+SHARED_LIBS +=	tclsqlite3           11.0      # .8.6
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -46,6 +46,7 @@ MULTI_PACKAGES+=-tcl
 .endif
 
 BUILD_DEPENDS= :tcl-8.4.*:lang/tcl/8.4
+LIB_DEPENDS-tcl = sqlite3::${BASE_PKGPATH},-main
 
 .if ${MULTI_PACKAGES:M-tcl}
 CONFIGURE_ARGS+=--with-tcl=${LOCALBASE}/lib/tcl8.4
