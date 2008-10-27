@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/09/17 12:00:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/10/27 13:29:13 ajacoutot Exp $
 bin/my-default-printer
 bin/system-config-printer
 bin/system-config-printer-applet
@@ -39,6 +39,7 @@ share/locale/fa/LC_MESSAGES/system-config-printer.mo
 share/locale/fi/LC_MESSAGES/system-config-printer.mo
 share/locale/fr/LC_MESSAGES/system-config-printer.mo
 share/locale/gu/LC_MESSAGES/system-config-printer.mo
+share/locale/he/LC_MESSAGES/system-config-printer.mo
 share/locale/hi/LC_MESSAGES/system-config-printer.mo
 share/locale/hr/LC_MESSAGES/system-config-printer.mo
 share/locale/hu/LC_MESSAGES/system-config-printer.mo
