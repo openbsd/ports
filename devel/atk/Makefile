@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2008/04/09 13:12:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2008/10/27 21:19:37 landry Exp $
 
 COMMENT=		accessibility toolkit used by gtk+
 
-DISTNAME=		atk-1.22.0
-SHARED_LIBS +=	atk-1.0             2200.0   # .2209.1
+DISTNAME=		atk-1.24.0
+SHARED_LIBS +=	atk-1.0             2400.0   # .2409.1
 
 CATEGORIES=		devel
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/atk/1.22/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/atk/1.24/}
 EXTRACT_SUFX=           .tar.bz2
 
 MODULES=		devel/gettext
