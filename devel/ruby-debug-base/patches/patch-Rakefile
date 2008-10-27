@@ -1,11 +1,11 @@
-$OpenBSD: patch-Rakefile,v 1.1.1.1 2008/02/07 19:48:56 bernd Exp $
---- Rakefile.orig	Wed Feb  6 22:56:31 2008
-+++ Rakefile	Wed Feb  6 22:56:38 2008
-@@ -159,7 +159,7 @@ task :default => [:package]
- # Windows specification
+$OpenBSD: patch-Rakefile,v 1.2 2008/10/27 19:16:10 pirofti Exp $
+--- Rakefile.orig	Thu Oct 16 16:58:37 2008
++++ Rakefile	Thu Oct 16 16:58:59 2008
+@@ -171,7 +171,7 @@ task :default => [:package]
  win_spec = base_spec.clone
  win_spec.extensions = []
--win_spec.platform = Gem::Platform::WIN32
+ ## win_spec.platform = Gem::Platform::WIN32 # deprecated
+-win_spec.platform = 'mswin32'
 +win_spec.platform = Gem::Platform::CURRENT
  win_spec.files += ["lib/#{SO_NAME}"]
  
