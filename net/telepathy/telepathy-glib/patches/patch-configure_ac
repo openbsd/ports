@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.2 2007/12/30 22:46:22 jasper Exp $
---- configure.ac.orig	Thu Nov 22 19:09:07 2007
-+++ configure.ac	Sun Dec 30 21:19:34 2007
-@@ -179,7 +179,7 @@ if test -z "$DBUS_BINDING_TOOL"; then
-   AC_MSG_ERROR([dbus-binding-tool (from dbus-glib) is required])
+$OpenBSD: patch-configure_ac,v 1.3 2008/10/27 00:00:34 jasper Exp $
+--- configure.ac.orig	Tue Oct 14 13:59:48 2008
++++ configure.ac	Sat Oct 25 16:33:29 2008
+@@ -186,7 +186,7 @@ if test -z "$XSLTPROC"; then
+   AC_MSG_ERROR([xsltproc (from the libxslt source package) is required])
  fi
  PYTHON=
 -AC_CHECK_PROGS([PYTHON], [python2.3 python2.4 python2.5 python])

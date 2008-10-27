@@ -1,0 +1,14 @@
+$OpenBSD: patch-telepathy-glib_telepathy-glib_pc_in,v 1.1 2008/10/27 00:00:34 jasper Exp $
+
+Our pkg-config(1) does not install it's own .pc file.
+
+--- telepathy-glib/telepathy-glib.pc.in.orig	Sun Oct 26 13:26:19 2008
++++ telepathy-glib/telepathy-glib.pc.in	Sun Oct 26 13:26:25 2008
+@@ -6,7 +6,6 @@ includedir=@includedir@
+ Name: Telepathy-GLib
+ Description: GLib utility library for the Telepathy framework
+ Version: @VERSION@
+-Requires: pkg-config >= 0.21
+ Requires.private: dbus-glib-1 >= 0.73, glib-2.0 >= 2.16, gobject-2.0 >= 2.16
+ Libs: -L${libdir} -ltelepathy-glib
+ Cflags: -I${includedir}/telepathy-1.0
