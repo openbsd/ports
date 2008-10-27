@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2008/10/27 15:33:52 bernd Exp $
+
+Don't pick up libexecinfo (devel/libexecinfo) if it's installed.
+
+--- configure.orig	Sat Apr 28 22:57:00 2007
++++ configure	Mon Oct 27 18:05:17 2008
+@@ -7445,7 +7445,7 @@ ac_res=`eval echo '${'$as_ac_Header'}'`
+ echo "${ECHO_T}$ac_res" >&6; }
+ 
+ fi
+-if test `eval echo '${'$as_ac_Header'}'` = yes; then
++if false test `eval echo '${'$as_ac_Header'}'` = yes; then
+   cat >>confdefs.h <<_ACEOF
+ #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
+ _ACEOF
