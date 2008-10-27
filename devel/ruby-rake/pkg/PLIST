@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/02/07 20:25:20 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/10/27 22:30:27 pirofti Exp $
 bin/rake
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -33,10 +33,14 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake/SshDirPublisher.h
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake/SshFilePublisher.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake/SshFreshDirPublisher.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake/Task.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake/TaskArgumentError.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake/TaskArguments.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake/TaskLib.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake/TaskManager.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake/TestTask.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake/Win32/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake/Win32.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake/Win32/Win32HomeError.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/RakeFileUtils.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SshDirPublisher.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/SshFilePublisher.html
@@ -73,6 +77,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/rake-0
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/rake-0_7_1_rdoc.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/rake-0_7_2_rdoc.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/rake-0_7_3_rdoc.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/rake-0_8_0_rdoc.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/rake-0_8_2_rdoc.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/rake-0_8_3_rdoc.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/rake/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/rake/classic_namespace_rb.html
@@ -94,6 +101,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/rake/ruby182_test_un
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/rake/runtest_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/rake/tasklib_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/rake/testtask_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/rake/win32_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/rake_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/fr_class_index.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/fr_file_index.html
@@ -122,14 +130,15 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/add_import-i.ya
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/add_loader-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/cdesc-Application.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/collect_tasks-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/command_line_options-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/const_warning-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/display_prerequisites-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/display_tasks_and_comments-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/do_option-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/dynamic_width-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/dynamic_width_stty-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/dynamic_width_tput-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/find_rakefile_location-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/handle_options-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/have_rakefile-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/help-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/init-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/invoke_task-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/load_imports-i.yaml
@@ -141,8 +150,16 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/rake_require-i.
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/rakefile_location-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/run-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/standard_exception_handling-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/standard_rake_options-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/system_dir-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/terminal_width-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/top_level-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/truncate-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/truncate_output%3f-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/tty_output%3d-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/tty_output%3f-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/unix%3f-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Application/windows%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Cloneable/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Cloneable/cdesc-Cloneable.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Cloneable/clone-i.yaml
@@ -283,6 +300,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/add_description-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/arg_names-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/cdesc-Task.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/clear-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/clear-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/clear_actions-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/clear_prerequisites-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/comment%3d-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/create_rule-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/define_task-c.yaml
@@ -291,11 +311,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/execute-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/inspect-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/investigation-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/invoke-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/invoke_prerequisites-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/invoke_with_call_chain-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/name-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/needed%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/new-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/reenable-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/scope_name-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/set_arg_names-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/source-i.yaml
@@ -304,6 +323,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/task_defined%3f-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/tasks-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/timestamp-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Task/to_s-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskArgumentError/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskArgumentError/cdesc-TaskArgumentError.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskArguments/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskArguments/%5b%5d-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskArguments/cdesc-TaskArguments.yaml
@@ -315,9 +336,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskArguments/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskArguments/new_scope-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskArguments/to_hash-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskArguments/to_s-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskArguments/with_defaults-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskLib/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskLib/cdesc-TaskLib.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskLib/paste-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskManager/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskManager/%5b%5d-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TaskManager/cdesc-TaskManager.yaml
@@ -338,6 +359,13 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TestTask/cdesc-TestTask.yam
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TestTask/define-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TestTask/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/TestTask/test_files%3d-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Win32/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Win32/Win32HomeError/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Win32/Win32HomeError/cdesc-Win32HomeError.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Win32/cdesc-Win32.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Win32/normalize-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Win32/rake_system-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/Win32/windows%3f-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/cdesc-Rake.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RakeFileUtils/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RakeFileUtils/cdesc-RakeFileUtils.yaml
@@ -427,6 +455,9 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/rake-0.7.0.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/rake-0.7.1.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/rake-0.7.2.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/rake-0.7.3.rdoc
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/rake-0.8.0.rdoc
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/rake-0.8.2.rdoc
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/${DISTNAME}.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/install.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rake/
@@ -450,10 +481,12 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rake/ruby182_test_unit_fix.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rake/runtest.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rake/tasklib.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rake/testtask.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rake/win32.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/capture_stdout.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/check_expansion.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/contrib/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/contrib/testsys.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/contrib/test_sys.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/chains/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/chains/Rakefile
@@ -481,6 +514,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/unittest/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/unittest/Rakefile
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/filecreation.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/functional.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/in_environment.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/rake_test_setup.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/reqfile.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/reqfile2.rb
@@ -507,7 +541,9 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_require.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_rules.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_task_arguments.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_task_manager.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_tasklib.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_tasks.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_test_task.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_top_level_functions.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_win32.rb
 lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec

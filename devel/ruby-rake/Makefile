@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2008/06/14 23:46:38 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2008/10/27 22:30:27 pirofti Exp $
 
 COMMENT=	ruby make
 
-DISTNAME=	rake-0.8.1
-PKGNAME=	ruby-${DISTNAME}p0
+DISTNAME=	rake-0.8.3
+PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	devel
 
 # MIT License
