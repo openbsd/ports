@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2008/10/24 09:17:34 bernd Exp $
+# $OpenBSD: Makefile,v 1.36 2008/10/27 21:00:24 bernd Exp $
 
 COMMENT-main=		GIT - Tree History Storage Tool
 COMMENT-svn=		GIT - subversion interoperability tools
@@ -26,7 +26,9 @@ DOC_DISTFILES=		git-manpages-${V}${EXTRACT_SUFX} \
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILES}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
-MASTER_SITES=		http://www.kernel.org/pub/software/scm/git/
+MASTER_SITES=		ftp://ftp.kernel.org/pub/software/scm/git/ \
+			ftp://ftp.de.kernel.org/pub/software/scm/git/ \
+			ftp://ftp.au.kernel.org/pub/software/scm/git/
 
 TAR=			${LOCALBASE}/bin/gtar
 
