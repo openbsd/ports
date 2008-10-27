@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/27 02:25:04 kili Exp $
 
 COMMENT=		ASCII art mathematics
 
 DISTNAME=		aamath-0.3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		math
 
 HOMEPAGE=		http://fuse.superglue.se/aamath/
 
-MAINTAINER=		Matthias Kilian <kili@outback.escape.de>
+MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
