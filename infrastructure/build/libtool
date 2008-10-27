@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.25 2008/10/26 09:52:10 steven Exp $
+# $OpenBSD: libtool,v 1.26 2008/10/27 09:36:42 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -238,11 +238,12 @@ if ($mode eq 'compile') {
 	}
 	my @instopts = @argvcopy[0 .. (@argvcopy - @ARGV - 1)];
 	my $dst = pop @ARGV;
-	# assume dst is a directory
-	my $dstdir = $dst;
 	my @src = @ARGV;
-	# dst is not a directory, i.e. a file
-	if (! -d $dst) {
+	my $dstdir;
+	if (-d $dst) {
+		$dstdir = $dst;
+	} else {
+		# dst is not a directory, i.e. a file
 		if (@src > 1) {
 			# XXX not really libtool's task to check this
 			die "multiple source files combined with file destination";
@@ -430,6 +431,7 @@ if ($mode eq 'compile') {
 		print "SHARED: $shared\nSTATIC: $static\n" if $D;
 
 		my %lainfo;
+		$lainfo{'libname'} = $libname;
 		if ($shared) {
 			$lainfo{'dlname'} = $sharedlib;
 			$lainfo{'library_names'} = $sharedlib;
@@ -602,6 +604,7 @@ sub write_la_file
 	my $name = shift;
 	my $lainfo = shift;
 
+	my $libname = $lainfo->{'libname'} || '';
 	my $sharedlibname = $lainfo->{'dlname'} || '';
 	my $staticlibname = $lainfo->{'old_library'} || '';
 	my $librarynames = $lainfo->{'library_names'} || '';
@@ -635,7 +638,7 @@ old_library='$staticlibname'
 # Libraries that this one depends upon.
 dependency_libs='$deplibs'
 
-# Version information for $sharedlibname
+# Version information for $libname.
 current=$current
 age=$age
 revision=$revision
