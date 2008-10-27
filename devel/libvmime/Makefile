@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/09 15:16:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/27 20:59:33 ajacoutot Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
 DISTNAME=	libvmime-0.8.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel mail
 
 SHARED_LIBS+=	vmime	0.0	# .0.0
@@ -21,11 +22,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vmime/}
 
-WANTLIB=	gcrypt gpg-error z
+WANTLIB=	gcrypt gpg-error tasn1 z
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	gnutls.>=13::security/gnutls
+LIB_DEPENDS=	gnutls.>=14::security/gnutls
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
