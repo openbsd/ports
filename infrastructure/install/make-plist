@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.105 2008/10/27 11:12:01 espie Exp $
+# $OpenBSD: make-plist,v 1.106 2008/10/27 11:19:57 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -418,20 +418,8 @@ sub register
 package OpenBSD::PackingElement::ExeclikeAction;
 sub register
 {
-	my ($self, $plist, $files, $comments, $existing) = @_;
+	my ($self, $plist, $files, $comments) = @_;
 	$self->{end_faked} = $plist->{state}->{end_faked};
-	if ($self->{expanded} =~ m/^install\-info\s+(?:\-\-delete\s+)?\-\-info\-dir=.*?\/info\s+(.*)$/) {
-		my $iname = $1;
-		if (defined $existing->{$iname} and $existing->{$iname}->type eq 'info') {
-			return;
-	    	}
-	}
-	if ($self->{expanded} =~ m/^mkdir\s+\-p\s+(.*)$/) {
-		my $iname = $1;
-		if (defined $existing->{$iname} and $existing->{$iname}->type eq 'directory') {
-			return;
-		}
-	}
 	if (defined $plist->{state}->{lastobject}) {
 	    $plist->{state}->{lastobject}->tag_along($self);
     	} else {
@@ -555,7 +543,7 @@ sub create_packinglist
 # grab original packing list, killing some stuff that is no longer needed.
 sub parse_original_plist
 {
-    my ($name, $sub, $files, $all_plists, $parent) = @_;
+    my ($name, $sub, $all_plists, $parent) = @_;
     my $plist = create_packinglist($name, $sub);
     # place holder for extra stuff that comes before any file
     $plist->{tag_marker} = new OpenBSD::PackingElement('');
@@ -584,7 +572,7 @@ sub parse_original_plist
     }
     $plist->{state}->{end_faked} = $parent;
     for my $item (@{$plist->{items}}) {
-    	$item->register($plist, $foundfiles, $foundcomments, $files);
+    	$item->register($plist, $foundfiles, $foundcomments);
     }
     # Try to handle fragments
     for my $item (@{$plist->{items}}) {
@@ -593,7 +581,7 @@ sub parse_original_plist
 	    my $pfrag = create_packinglist($fragname, $sub);
 	    $pfrag->{isfrag} = 1;
 	    push(@$all_plists, $pfrag);
-	    my $origpfrag = parse_original_plist($fragname, $sub, $files, $all_plists, $item->{end_faked});
+	    my $origpfrag = parse_original_plist($fragname, $sub, $all_plists, $item->{end_faked});
 	    replaces($origpfrag, $pfrag);
     }
     return $plist;
@@ -616,19 +604,17 @@ sub replaces
 
 sub grab_all_lists
 {
-	my ($files) = @_;
-
 	my $l = [];
 	for my $sub (@subs) {
 		my $o;
 		my $n = create_packinglist($plistname{$sub}, $sub);
 		push(@$l, $n);
-		$o = parse_original_plist($plistname{$sub}, $sub, $files, $l);
+		$o = parse_original_plist($plistname{$sub}, $sub, $l);
 		replaces($o, $n);
 		my $frag = deduce_name($plistname{$sub}, "shared", 0);
 		my $ns = create_packinglist($frag, $sub);
 		$n->{shared} = $ns;
-		$o = parse_original_plist($frag, $sub, $files, $l);
+		$o = parse_original_plist($frag, $sub, $l);
 		replaces($o, $ns);
 		push(@$l, $ns);
 	}
@@ -834,7 +820,7 @@ parse_args();
 
 my $files = FS::get_files($destdir);
 
-my @l = grab_all_lists($files);
+my @l = grab_all_lists();
 
 for my $plist (@l) {
 	my $orig = $plist->{original};
