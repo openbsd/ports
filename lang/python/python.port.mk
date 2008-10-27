@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.23 2008/06/10 15:01:49 wcmaier Exp $
+# $OpenBSD: python.port.mk,v 1.24 2008/10/27 00:02:27 ajacoutot Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -61,7 +61,7 @@ MAKE_ENV+=	CC=${CC}
 _MODPY_CMD=	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 			${MODPY_BIN} ./${MODPY_SETUP}
 
-SUBST_VARS:=	MODPY_EGG_VERSION MODPY_VERSION ${SUBST_VARS}
+SUBST_VARS:=	MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION ${SUBST_VARS}
 
 # dirty way to do it with no modifications in bsd.port.mk
 .if empty(CONFIGURE_STYLE)
