@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/10/09 15:16:03 ajacoutot Exp $
---- configure.orig	Thu Oct  9 15:49:50 2008
-+++ configure	Thu Oct  9 15:51:04 2008
-@@ -3455,13 +3455,13 @@ if test "$ac_test_CFLAGS" = set; then
+$OpenBSD: patch-configure,v 1.2 2008/10/27 22:03:40 ajacoutot Exp $
+--- configure.orig	Sun Oct 19 14:36:19 2008
++++ configure	Mon Oct 27 22:55:58 2008
+@@ -3486,13 +3486,13 @@ if test "$ac_test_CFLAGS" = set; then
    CFLAGS=$ac_save_CFLAGS
  elif test $ac_cv_prog_cc_g = yes; then
    if test "$GCC" = yes; then
@@ -17,7 +17,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2008/10/09 15:16:03 ajacoutot Exp $
    else
      CFLAGS=
    fi
-@@ -4108,13 +4108,13 @@ if test "$ac_test_CXXFLAGS" = set; then
+@@ -4135,13 +4135,13 @@ if test "$ac_test_CXXFLAGS" = set; then
    CXXFLAGS=$ac_save_CXXFLAGS
  elif test $ac_cv_prog_cxx_g = yes; then
    if test "$GXX" = yes; then
@@ -33,7 +33,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2008/10/09 15:16:03 ajacoutot Exp $
    else
      CXXFLAGS=
    fi
-@@ -7107,13 +7107,13 @@ if test "$ac_test_FFLAGS" = set; then
+@@ -7156,13 +7156,13 @@ if test "$ac_test_FFLAGS" = set; then
    FFLAGS=$ac_save_FFLAGS
  elif test $ac_cv_prog_f77_g = yes; then
    if test "x$ac_cv_f77_compiler_gnu" = xyes; then
@@ -49,7 +49,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2008/10/09 15:16:03 ajacoutot Exp $
    else
      FFLAGS=
    fi
-@@ -24916,7 +24916,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+@@ -32278,7 +32278,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  else
  	# -O2
  	OLD_CXXFLAGS="$CXXFLAGS"

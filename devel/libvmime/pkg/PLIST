@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/09 15:16:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/27 22:03:40 ajacoutot Exp $
 %%SHARED%%
 include/vmime/
 include/vmime/address.hpp
@@ -22,15 +22,6 @@ include/vmime/dateTime.hpp
 include/vmime/defaultAttachment.hpp
 include/vmime/disposition.hpp
 include/vmime/emptyContentHandler.hpp
-include/vmime/encoder.hpp
-include/vmime/encoder7bit.hpp
-include/vmime/encoder8bit.hpp
-include/vmime/encoderB64.hpp
-include/vmime/encoderBinary.hpp
-include/vmime/encoderDefault.hpp
-include/vmime/encoderFactory.hpp
-include/vmime/encoderQP.hpp
-include/vmime/encoderUUE.hpp
 include/vmime/encoding.hpp
 include/vmime/exception.hpp
 include/vmime/fileAttachment.hpp
@@ -74,7 +65,11 @@ include/vmime/net/imap/IMAPStore.hpp
 include/vmime/net/imap/IMAPTag.hpp
 include/vmime/net/imap/IMAPUtils.hpp
 include/vmime/net/maildir/
+include/vmime/net/maildir/format/
+include/vmime/net/maildir/format/courierMaildirFormat.hpp
+include/vmime/net/maildir/format/kmailMaildirFormat.hpp
 include/vmime/net/maildir/maildirFolder.hpp
+include/vmime/net/maildir/maildirFormat.hpp
 include/vmime/net/maildir/maildirMessage.hpp
 include/vmime/net/maildir/maildirServiceInfos.hpp
 include/vmime/net/maildir/maildirStore.hpp
@@ -159,12 +154,23 @@ include/vmime/types.hpp
 include/vmime/utility/
 include/vmime/utility/childProcess.hpp
 include/vmime/utility/datetimeUtils.hpp
+include/vmime/utility/encoder/
+include/vmime/utility/encoder/b64Encoder.hpp
+include/vmime/utility/encoder/binaryEncoder.hpp
+include/vmime/utility/encoder/defaultEncoder.hpp
+include/vmime/utility/encoder/eightBitEncoder.hpp
+include/vmime/utility/encoder/encoder.hpp
+include/vmime/utility/encoder/encoderFactory.hpp
+include/vmime/utility/encoder/qpEncoder.hpp
+include/vmime/utility/encoder/sevenBitEncoder.hpp
+include/vmime/utility/encoder/uuEncoder.hpp
 include/vmime/utility/file.hpp
 include/vmime/utility/filteredStream.hpp
 include/vmime/utility/path.hpp
 include/vmime/utility/progressListener.hpp
 include/vmime/utility/random.hpp
 include/vmime/utility/smartPtr.hpp
+include/vmime/utility/smartPtrInt.hpp
 include/vmime/utility/stream.hpp
 include/vmime/utility/stringProxy.hpp
 include/vmime/utility/stringUtils.hpp

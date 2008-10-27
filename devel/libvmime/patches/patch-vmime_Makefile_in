@@ -1,8 +1,8 @@
-$OpenBSD: patch-vmime_Makefile_in,v 1.1.1.1 2008/10/09 15:16:03 ajacoutot Exp $
---- vmime/Makefile.in.orig	Thu Oct  9 16:22:51 2008
-+++ vmime/Makefile.in	Thu Oct  9 16:23:16 2008
-@@ -369,9 +369,6 @@ nobase_libvmimeinclude_HEADERS = address.hpp \
- 	net/maildir/maildirUtils.hpp \
+$OpenBSD: patch-vmime_Makefile_in,v 1.2 2008/10/27 22:03:40 ajacoutot Exp $
+--- vmime/Makefile.in.orig	Mon Oct 27 22:55:13 2008
++++ vmime/Makefile.in	Mon Oct 27 22:55:47 2008
+@@ -361,9 +361,6 @@ nobase_libvmimeinclude_HEADERS = address.hpp \
+ 	net/maildir/format/courierMaildirFormat.hpp \
  	net/sendmail/sendmailServiceInfos.hpp \
  	net/sendmail/sendmailTransport.hpp \
 -	platforms/windows/windowsFile.hpp \
@@ -11,12 +11,3 @@ $OpenBSD: patch-vmime_Makefile_in,v 1.1.1.1 2008/10/09 15:16:03 ajacoutot Exp $
  	platforms/posix/posixChildProcess.hpp \
  	platforms/posix/posixFile.hpp \
  	platforms/posix/posixHandler.hpp \
-@@ -489,7 +486,7 @@ distclean-tags:
- 	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
- 
- distdir: $(DISTFILES)
--	$(mkdir_p) $(distdir)/mdn $(distdir)/misc $(distdir)/net $(distdir)/net/imap $(distdir)/net/maildir $(distdir)/net/pop3 $(distdir)/net/sendmail $(distdir)/net/smtp $(distdir)/net/tls $(distdir)/platforms/posix $(distdir)/platforms/windows $(distdir)/security $(distdir)/security/cert $(distdir)/security/digest $(distdir)/security/digest/md5 $(distdir)/security/digest/sha1 $(distdir)/security/sasl $(distdir)/utility
-+	$(mkdir_p) $(distdir)/mdn $(distdir)/misc $(distdir)/net $(distdir)/net/imap $(distdir)/net/maildir $(distdir)/net/pop3 $(distdir)/net/sendmail $(distdir)/net/smtp $(distdir)/net/tls $(distdir)/platforms/posix $(distdir)/security $(distdir)/security/cert $(distdir)/security/digest $(distdir)/security/digest/md5 $(distdir)/security/digest/sha1 $(distdir)/security/sasl $(distdir)/utility
- 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
- 	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's|.|.|g'`; \
- 	list='$(DISTFILES)'; for file in $$list; do \
