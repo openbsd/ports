@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/10/27 16:18:54 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2008/10/27 00:07:11 jasper Exp $
+@lib lib/libmcclient.so.${LIBmcclient_VERSION}
 @lib lib/libmissioncontrol-client.so.${LIBmissioncontrol-client_VERSION}
 @lib lib/libmissioncontrol-server.so.${LIBmissioncontrol-server_VERSION}

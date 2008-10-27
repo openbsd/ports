@@ -1,19 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/27 11:49:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/27 00:07:10 jasper Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
-DISTNAME=		telepathy-mission-control-4.55
-PKGNAME=		${DISTNAME}p1
-SHARED_LIBS +=	missioncontrol-client 1.1      # .3.3
-SHARED_LIBS +=	missioncontrol-server 0.2      # .3.6
+DISTNAME=		telepathy-mission-control-4.67
+SHARED_LIBS +=  mcclient              0.0      # .5.0
+SHARED_LIBS +=  missioncontrol-client 2.0      # .4.3
+SHARED_LIBS +=  missioncontrol-server 1.0      # .4.1
 
 HOMEPAGE=		http://mission-control.sourceforge.net/
-
-# LGPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mission-control/}
 
@@ -29,6 +23,7 @@ LIB_DEPENDS=		gconf-2::devel/gconf2 \
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--enable-keyring=no
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2008/10/27 00:07:11 jasper Exp $
+--- src/Makefile.in.orig	Sun Oct 26 16:56:42 2008
++++ src/Makefile.in	Sun Oct 26 16:56:52 2008
+@@ -291,7 +291,6 @@ BUILT_SOURCES = \
+ CLEANFILES = $(BUILT_SOURCES)
+ lib_LTLIBRARIES = libmissioncontrol-server.la
+ libmissioncontrol_server_la_LIBADD = $(GCONF_LIBS) $(TELEPATHY_LIBS) \
+-	-ldl \
+ 	$(top_builddir)/libmissioncontrol/libmissioncontrol-client.la
+ 
+ 
