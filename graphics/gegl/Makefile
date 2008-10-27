@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/10/27 13:15:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2008/10/27 21:39:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,8 +9,8 @@ V=		0.0.20
 DISTNAME=	gegl-${V}
 CATEGORIES=	graphics devel
 
-PKGNAME-main=	gegl-${V}
-PKGNAME-plugins=gegl-plugins-${V}
+PKGNAME-main=	gegl-${V}p0
+PKGNAME-plugins=gegl-plugins-${V}p0
 
 SHARED_LIBS=	gegl-0.0	1.1 # .20.0
 
