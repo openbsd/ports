@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/30 22:49:28 jasper Exp $
-libexec/telepathy-gabble
+@comment $OpenBSD: PLIST,v 1.3 2008/10/27 00:06:00 jasper Exp $
+@bin libexec/telepathy-gabble
 @man man/man8/telepathy-gabble.8
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.gabble.service
+share/doc/telepathy-gabble/
+share/doc/telepathy-gabble/muc-bytestream.html
+share/doc/telepathy-gabble/olpc.html
+share/doc/telepathy-gabble/tubes.html
 share/telepathy/
 share/telepathy/managers/
 share/telepathy/managers/gabble.manager
