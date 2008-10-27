@@ -1,0 +1,15 @@
+$OpenBSD: patch-code_client_libmumblelink_c,v 1.1.1.1 2008/10/27 13:29:02 weerd Exp $
+--- code/client/libmumblelink.c.orig	Thu Aug 21 23:11:45 2008
++++ code/client/libmumblelink.c	Thu Aug 21 23:11:59 2008
+@@ -86,7 +86,11 @@ int mumble_link(const char* name)
+ 		return 0;
+ 
+ 	snprintf(file, sizeof (file), "/MumbleLink.%d", getuid());
++#ifdef __OpenBSD__
++	shmfd = open(file, O_RDWR, S_IRUSR | S_IWUSR);
++#else
+ 	shmfd = shm_open(file, O_RDWR, S_IRUSR | S_IWUSR);
++#endif
+ 	if(shmfd < 0) {
+ 		return -1;
+ 	}

@@ -1,0 +1,104 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/10/27 13:29:02 weerd Exp $
+--- Makefile.orig	Thu Aug  7 00:52:08 2008
++++ Makefile	Fri Aug 22 21:27:21 2008
+@@ -143,8 +143,8 @@ endif
+ 
+ #############################################################################
+ 
+-BD=$(BUILD_DIR)/debug-$(PLATFORM)-$(ARCH)
+-BR=$(BUILD_DIR)/release-$(PLATFORM)-$(ARCH)
++BD=$(BUILD_DIR)/debug-$(PLATFORM)
++BR=$(BUILD_DIR)/release-$(PLATFORM)
+ CDIR=$(MOUNT_DIR)/client
+ SDIR=$(MOUNT_DIR)/server
+ RDIR=$(MOUNT_DIR)/renderer
+@@ -584,12 +584,11 @@ else # ifeq freebsd
+ 
+ ifeq ($(PLATFORM),openbsd)
+ 
+-  #default to i386, no tests done on anything else
+-  ARCH=i386
++  # Get the machine type
++  ARCH=$(shell uname -m)
+ 
+-
+   BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
+-    -DUSE_ICON $(shell sdl-config --cflags)
++    -DUSE_ICON -DARCH_STRING=\\\"${ARCH}\\\" $(shell sdl-config --cflags)
+ 
+   ifeq ($(USE_OPENAL),1)
+     BASE_CFLAGS += -DUSE_OPENAL
+@@ -603,8 +602,8 @@ ifeq ($(PLATFORM),openbsd)
+   endif
+ 
+   BASE_CFLAGS += -DNO_VM_COMPILED -I/usr/X11R6/include -I/usr/local/include
+-  RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 \
+-    -march=pentium -fomit-frame-pointer -pipe -ffast-math \
++  RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG \
++    -fomit-frame-pointer -pipe -ffast-math \
+     -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
+     -funroll-loops -fstrength-reduce
+   HAVE_VM_COMPILED=false
+@@ -781,13 +780,13 @@ endif #SunOS
+ TARGETS =
+ 
+ ifneq ($(BUILD_SERVER),0)
+-  TARGETS += $(B)/oa_ded.$(ARCH)$(BINEXT)
++  TARGETS += $(B)/openarena-server$(BINEXT)
+ endif
+ 
+ ifneq ($(BUILD_CLIENT),0)
+-  TARGETS += $(B)/openarena.$(ARCH)$(BINEXT)
++  TARGETS += $(B)/openarena-client$(BINEXT)
+   ifneq ($(BUILD_CLIENT_SMP),0)
+-    TARGETS += $(B)/openarena-smp.$(ARCH)$(BINEXT)
++    TARGETS += $(B)/openarena-smp$(BINEXT)
+   endif
+ endif
+ 
+@@ -1450,12 +1449,12 @@ Q3POBJ += \
+ Q3POBJ_SMP += \
+   $(B)/clientsmp/sdl_glimp.o
+ 
+-$(B)/openarena.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ) $(LIBSDLMAIN)
++$(B)/openarena-client$(BINEXT): $(Q3OBJ) $(Q3POBJ) $(LIBSDLMAIN)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) -o $@ $(Q3OBJ) $(Q3POBJ) $(CLIENT_LDFLAGS) \
+ 		$(LDFLAGS) $(LIBSDLMAIN)
+ 
+-$(B)/openarena-smp.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ_SMP) $(LIBSDLMAIN)
++$(B)/openarena-smp$(BINEXT): $(Q3OBJ) $(Q3POBJ_SMP) $(LIBSDLMAIN)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) -o $@ $(Q3OBJ) $(Q3POBJ_SMP) $(CLIENT_LDFLAGS) \
+ 		$(THREAD_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
+@@ -1582,7 +1581,7 @@ else
+     $(B)/ded/con_tty.o
+ endif
+ 
+-$(B)/oa_ded.$(ARCH)$(BINEXT): $(Q3DOBJ)
++$(B)/openarena-server$(BINEXT): $(Q3DOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) -o $@ $(Q3DOBJ) $(LDFLAGS)
+ 
+@@ -2041,17 +2040,17 @@ copyfiles: release
+ 	-$(MKDIR) -p -m 0755 $(COPYDIR)/missionpack
+ 
+ ifneq ($(BUILD_CLIENT),0)
+-	$(INSTALL) -s -m 0755 $(BR)/openarena.$(ARCH)$(BINEXT) $(COPYDIR)/openarena.$(ARCH)$(BINEXT)
++	$(INSTALL) -s -m 0755 $(BR)/openarena-client$(BINEXT) $(COPYDIR)/openarena-client$(BINEXT)
+ endif
+ 
+ # Don't copy the SMP until it's working together with SDL.
+ #ifneq ($(BUILD_CLIENT_SMP),0)
+-#	$(INSTALL) -s -m 0755 $(BR)/openarena-smp.$(ARCH)$(BINEXT) $(COPYDIR)/openarena-smp.$(ARCH)$(BINEXT)
++#	$(INSTALL) -s -m 0755 $(BR)/openarena-smp$(BINEXT) $(COPYDIR)/openarena-smp$(BINEXT)
+ #endif
+ 
+ ifneq ($(BUILD_SERVER),0)
+-	@if [ -f $(BR)/oa_ded.$(ARCH)$(BINEXT) ]; then \
+-		$(INSTALL) -s -m 0755 $(BR)/oa_ded.$(ARCH)$(BINEXT) $(COPYDIR)/oa_ded.$(ARCH)$(BINEXT); \
++	@if [ -f $(BR)/openarena-server$(BINEXT) ]; then \
++		$(INSTALL) -s -m 0755 $(BR)/openarena-server$(BINEXT) $(COPYDIR)/openarena-server$(BINEXT); \
+ 	fi
+ endif
+ 

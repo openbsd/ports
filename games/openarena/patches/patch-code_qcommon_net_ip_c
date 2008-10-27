@@ -1,0 +1,25 @@
+$OpenBSD: patch-code_qcommon_net_ip_c,v 1.1.1.1 2008/10/27 13:29:02 weerd Exp $
+--- code/qcommon/net_ip.c.orig	Sun Aug 31 14:36:07 2008
++++ code/qcommon/net_ip.c	Sun Aug 31 14:44:25 2008
+@@ -335,7 +335,21 @@ Sys_SockaddrToString
+ */
+ static void Sys_SockaddrToString(char *dest, int destlen, struct sockaddr *input, int inputlen)
+ {
++/* OA's inputlen is incompatible with getnameinfo() on OpenBSD */
++#ifdef __OpenBSD__
++	struct sockaddr_in *s4;
++	struct sockaddr_in6 *s6;
++		 
++	if (input->sa_family == AF_INET) {
++		s4 = (struct sockaddr_in *)(input);
++		inet_ntop(AF_INET, (void *)&(s4->sin_addr), dest, destlen);
++	} else if (input->sa_family == AF_INET6) {
++		s6 = (struct sockaddr_in6 *)(input);
++		inet_ntop(AF_INET6, (void *)&(s6->sin6_addr), dest, destlen);
++	}
++#else
+ 	getnameinfo(input, inputlen, dest, destlen, NULL, 0, NI_NUMERICHOST);
++#endif
+ }
+ 
+ /*

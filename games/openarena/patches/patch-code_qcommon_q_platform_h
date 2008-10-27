@@ -1,0 +1,51 @@
+$OpenBSD: patch-code_qcommon_q_platform_h,v 1.1.1.1 2008/10/27 13:29:02 weerd Exp $
+--- code/qcommon/q_platform.h.orig	Sun Jun 29 16:00:45 2008
++++ code/qcommon/q_platform.h	Fri Aug 22 21:20:21 2008
+@@ -170,7 +170,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+ 
+ //=================================================================== BSD ===
+ 
+-#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__)
+ 
+ #include <sys/types.h>
+ #include <machine/endian.h>
+@@ -181,8 +181,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+ 
+ #if defined(__FreeBSD__)
+ #define OS_STRING "freebsd"
+-#elif defined(__OpenBSD__)
+-#define OS_STRING "openbsd"
+ #elif defined(__NetBSD__)
+ #define OS_STRING "netbsd"
+ #endif
+@@ -206,6 +204,29 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+ 
+ #endif
+ 
++// --- OpenBSD
++#if defined(__OpenBSD__)
++
++#include <sys/types.h>
++#include <machine/endian.h>
++
++#ifndef __BSD__
++  #define __BSD__
++#endif
++
++#define OS_STRING "openbsd"
++#define ID_INLINE inline
++#define PATH_SEP '/'
++
++#if BYTE_ORDER == BIG_ENDIAN
++#define Q3_BIG_ENDIAN
++#else
++#define Q3_LITTLE_ENDIAN
++#endif
++
++#define DLL_EXT ".so"
++
++#endif
+ //================================================================= SUNOS ===
+ 
+ #ifdef __sun
