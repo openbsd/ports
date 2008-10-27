@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.26 2008/10/27 09:36:42 steven Exp $
+# $OpenBSD: libtool,v 1.27 2008/10/27 10:34:18 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -335,7 +335,7 @@ if ($mode eq 'compile') {
 		);
 	# XXX options ignored: dlopen, dlpreopen, export-dynamic,
 	# 	export-symbols, export-symbols-regex, no-fast-install,
-	# 	no-install, no-undefined, objectlist, precious-files-regex,
+	# 	no-install, no-undefined, precious-files-regex,
 	# 	shrext, thread-safe, prefer-pic, prefer-non-pic
 
 	@libsearchdirs = get_search_dirs();
@@ -372,7 +372,16 @@ if ($mode eq 'compile') {
 
 	my @objs;
 	my @sobjs;
-	my $allpicobj = generate_objlist(\@objs, \@sobjs);
+	my $allpicobj;
+	if ($opts{'objectlist'}) {
+		my $objectlist = $opts{'objectlist'};
+		open(my $ol, '<', $objectlist) or die "cannot open $objectlist: $!\n";
+		my @objlist = <$ol>;
+		for (@objlist) { chomp; } 
+		$allpicobj = generate_objlist(\@objs, \@sobjs, \@objlist);
+	} else {
+		$allpicobj = generate_objlist(\@objs, \@sobjs, \@ARGV);
+	}
 	print "objs = @objs\n" if $D;
 	print "sobjs = @sobjs\n" if $D;
 
@@ -1105,9 +1114,10 @@ sub generate_objlist
 {
 	my $objs = shift;
 	my $sobjs = shift;
+	my $objsource = shift;
 	my $allpic = 1;
 
-	foreach my $a (@ARGV) {
+	foreach my $a (@$objsource) {
 		if ($a =~ m/\S+\.lo$/) {
 			my %loinfo;
 			my $ofile = basename $a;
