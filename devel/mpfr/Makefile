@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/02/14 19:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/27 20:45:54 naddy Exp $
 
 COMMENT=	library for multiple-precision floating-point computations
 
-DISTNAME=	mpfr-2.3.1
-SHARED_LIBS +=  mpfr                 0.1      # .1.1
+DISTNAME=	mpfr-2.3.2
+SHARED_LIBS +=  mpfr                 0.2      # .2.2
 CATEGORIES=	devel math
 HOMEPAGE=	http://www.mpfr.org/
 

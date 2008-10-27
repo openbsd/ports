@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2008/02/14 19:54:16 naddy Exp $
---- Makefile.in.orig	Wed Feb 13 18:54:47 2008
-+++ Makefile.in	Wed Feb 13 18:55:00 2008
-@@ -394,7 +394,7 @@ clean-libLTLIBRARIES:
+$OpenBSD: patch-Makefile_in,v 1.3 2008/10/27 20:45:54 naddy Exp $
+--- Makefile.in.orig	Fri Sep 12 15:48:04 2008
++++ Makefile.in	Mon Oct 27 11:58:15 2008
+@@ -409,7 +409,7 @@ clean-libLTLIBRARIES:
  	  rm -f "$${dir}/so_locations"; \
  	done
  libmpfr.la: $(libmpfr_la_OBJECTS) $(libmpfr_la_DEPENDENCIES) 
--	$(LINK) -rpath $(libdir) $(libmpfr_la_LDFLAGS) $(libmpfr_la_OBJECTS) $(libmpfr_la_LIBADD) $(LIBS)
-+	$(LINK) -rpath $(libdir) $(libmpfr_la_LDFLAGS) $(libmpfr_la_OBJECTS) $(libmpfr_la_LIBADD)
+-	$(libmpfr_la_LINK) -rpath $(libdir) $(libmpfr_la_OBJECTS) $(libmpfr_la_LIBADD) $(LIBS)
++	$(libmpfr_la_LINK) -rpath $(libdir) $(libmpfr_la_OBJECTS) $(libmpfr_la_LIBADD)
  tuneup$(EXEEXT): $(tuneup_OBJECTS) $(tuneup_DEPENDENCIES) 
  	@rm -f tuneup$(EXEEXT)
- 	$(LINK) $(tuneup_LDFLAGS) $(tuneup_OBJECTS) $(tuneup_LDADD) $(LIBS)
+ 	$(tuneup_LINK) $(tuneup_OBJECTS) $(tuneup_LDADD) $(LIBS)
