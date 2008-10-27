@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/14 14:40:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/27 20:24:27 naddy Exp $
 
 COMMENT=	web-based conference management software
 
 V=		1.9.9
 DISTNAME=	myreview_${V:S/./_/g}
-PKGNAME=	myreview-${V}p0
+PKGNAME=	myreview-${V}p1
 CATEGORIES=	www
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} myreview_v1.pdf:0
