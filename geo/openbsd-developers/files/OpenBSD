@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.29 2008/10/16 22:36:02 weerd Exp $
+# $OpenBSD: OpenBSD,v 1.30 2008/10/27 10:09:54 pea Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -31,6 +31,7 @@
 42.49538	-82.89954	"nick"		# Nick Holland
 43.064216	-89.406185	"wcmaier"	# Will Maier
 43.084950	-89.361468	"jolan"		# Jolan Luff
+43.240537 	5.384159	"pea"		# Pierre-Emmanuel Andre
 43.30		5.37		"aanriot"	# Alexandre Anriot
 43.61495	1.44094		"matthieu"	# Matthieu Herrb
 43.5826		1.4376		"miod"		# Miod Vallat
