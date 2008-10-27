@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_check-compat_Makefile_in,v 1.1 2007/12/30 22:47:16 jasper Exp $
---- src/check-compat/Makefile.in.orig	Thu Nov 22 20:18:14 2007
-+++ src/check-compat/Makefile.in	Sun Dec 30 22:58:21 2007
-@@ -224,7 +224,7 @@ AM_CFLAGS = \
+$OpenBSD: patch-src_check-compat_Makefile_in,v 1.2 2008/10/27 00:01:42 jasper Exp $
+--- src/check-compat/Makefile.in.orig	Sun Oct 26 13:12:33 2008
++++ src/check-compat/Makefile.in	Sun Oct 26 13:14:26 2008
+@@ -227,7 +227,7 @@ AM_CFLAGS = \
      $(TP_GLIB_CFLAGS) \
      $(WNO_DEPRECATED_DECLARATIONS)
  
 -everything_CFLAGS = $(AM_CFLAGS) -Wall -Wextra
 +everything_CFLAGS = $(AM_CFLAGS) -Wall
- check_backwards_compat_LDADD = ../libtelepathy.la
- TESTS = $(noinst_PROGRAMS)
- all: all-am
-@@ -272,28 +272,28 @@ check-backwards-compat$(EXEEXT): $(check_backwards_com
+ 
+ # these ones need linking against dbus-glib when compiled with -O0; in the
+ # current build system, linking against telepathy-glib is the easiest to do
+@@ -283,28 +283,28 @@ check-backwards-compat$(EXEEXT): $(check_backwards_com
  	$(LINK) $(check_backwards_compat_LDFLAGS) $(check_backwards_compat_OBJECTS) $(check_backwards_compat_LDADD) $(LIBS)
  everything$(EXEEXT): $(everything_OBJECTS) $(everything_DEPENDENCIES) 
  	@rm -f everything$(EXEEXT)
