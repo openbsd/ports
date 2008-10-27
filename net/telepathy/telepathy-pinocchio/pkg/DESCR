@@ -1,0 +1,5 @@
+Telepathy-pinocchio is a connection manager meant for testing Telepathy
+applications. Pinocchio interacts with settings files on the filesystem
+instead of a remote server, thereby removing two of the biggest
+stumbling blocks for testing a Telepathy-based application: the network
+and control over the back-end server.

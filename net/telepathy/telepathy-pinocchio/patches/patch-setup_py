@@ -1,0 +1,19 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2008/10/27 00:10:16 jasper Exp $
+--- setup.py.orig	Sun Oct 26 19:47:06 2008
++++ setup.py	Sun Oct 26 19:52:24 2008
+@@ -18,12 +18,12 @@ setup(name='telepathy-pinocchio',
+                   ('share/dbus-1/services',
+                     ['data/org.freedesktop.Telepathy.ConnectionManager'
+                                                    '.pinocchio.service']),
+-                  ('/var/lib/telepathy-pinocchio/accounts/'
++                  ('share/telepathy-pinocchio/accounts/'
+                                                     'anotherdefault_40default',
+                     ['data/accounts/anotherdefault_40default/contacts.xml']),
+-                  ('/var/lib/telepathy-pinocchio/accounts/default_40default',
++                  ('share/telepathy-pinocchio/accounts/default_40default',
+                     ['data/accounts/default_40default/contacts.xml']),
+-                  ('/var/lib/telepathy-pinocchio/avatars',
++                  ('share/telepathy-pinocchio/avatars',
+                     ['data/avatars/a.png',
+                      'data/avatars/avatar.png',
+                      'data/avatars/b.png',

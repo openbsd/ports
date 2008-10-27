@@ -1,0 +1,12 @@
+$OpenBSD: patch-pinocchio_common_py,v 1.1.1.1 2008/10/27 00:10:16 jasper Exp $
+--- pinocchio/common.py.orig	Sun Oct 26 19:52:52 2008
++++ pinocchio/common.py	Sun Oct 26 19:53:03 2008
+@@ -28,7 +28,7 @@ ACCOUNT_DEFAULT = 'default@default'
+ CONTACTS_FILENAME='contacts.xml'
+ # this is a pseudo-enum
+ PREFIX_DEFAULT, PREFIX_SAVED, PREFIX_SAVED_PREFERRED = range(3)
+-DATA_DIR_DEFAULT = '/var/lib/telepathy-pinocchio'
++DATA_DIR_DEFAULT = '${PREFIX}/share/telepathy-pinocchio'
+ DATA_DIR_SAVED = os.path.join(os.path.expanduser('~'), '.telepathy-pinocchio')
+ AVATAR_DIR_DEFAULT = os.path.join(DATA_DIR_DEFAULT, 'avatars')
+ AVATAR_DIR_SAVED = os.path.join(DATA_DIR_SAVED, 'avatars')

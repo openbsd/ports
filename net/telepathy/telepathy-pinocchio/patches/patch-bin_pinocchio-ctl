@@ -1,0 +1,9 @@
+$OpenBSD: patch-bin_pinocchio-ctl,v 1.1.1.1 2008/10/27 00:10:16 jasper Exp $
+--- bin/pinocchio-ctl.orig	Sun Oct 26 20:25:00 2008
++++ bin/pinocchio-ctl	Sun Oct 26 20:25:02 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ 
+ # pinocchio-ctl - manipulate an account on the telepathy-pinocchio connection
+ #                 manager
