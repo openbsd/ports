@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.110 2008/10/27 16:53:13 bernd Exp $
+# $OpenBSD: make-plist,v 1.111 2008/10/27 21:00:11 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -546,9 +546,7 @@ sub parse_original_plist
     ) or return;
 
     delete $plist->{state}->{lastobject};
-    for my $item (@{$plist->{items}}) {
-    	$item->register($plist, $foundfiles, $foundcomments);
-    }
+    $plist->register($plist, $foundfiles, $foundcomments);
     # Try to handle fragments
     for my $item (@{$plist->{items}}) {
 	    my $fragname = $item->deduce_fragment($name);
