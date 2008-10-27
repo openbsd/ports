@@ -1,7 +1,7 @@
-$OpenBSD: patch-glib_gprintf_c,v 1.4 2007/10/24 22:29:03 jasper Exp $
---- glib/gprintf.c.orig	Sun Sep 16 18:28:33 2007
-+++ glib/gprintf.c	Tue Oct  2 20:47:04 2007
-@@ -87,6 +87,8 @@ g_fprintf (FILE        *file, 
+$OpenBSD: patch-glib_gprintf_c,v 1.5 2008/10/27 21:28:01 landry Exp $
+--- glib/gprintf.c.orig	Thu Oct 16 16:31:58 2008
++++ glib/gprintf.c	Sat Oct 18 16:46:26 2008
+@@ -89,6 +89,8 @@ g_fprintf (FILE        *file, 
    return retval;
  }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-glib_gprintf_c,v 1.4 2007/10/24 22:29:03 jasper Exp $
  /**
   * g_sprintf:
   * @string: A pointer to a memory buffer to contain the resulting string. It 
-@@ -210,6 +212,8 @@ g_vfprintf (FILE        *file,
+@@ -212,6 +214,8 @@ g_vfprintf (FILE        *file,
    return _g_vfprintf (file, format, args);
  }
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-glib_gstrfuncs_c,v 1.7 2008/04/09 13:10:17 jasper Exp $
---- glib/gstrfuncs.c.orig	Mon Feb 11 18:14:22 2008
-+++ glib/gstrfuncs.c	Fri Feb 22 11:40:05 2008
-@@ -1311,7 +1311,7 @@ g_strerror (gint errnum)
+$OpenBSD: patch-glib_gstrfuncs_c,v 1.8 2008/10/27 21:28:01 landry Exp $
+--- glib/gstrfuncs.c.orig	Thu Oct 16 16:31:58 2008
++++ glib/gstrfuncs.c	Sat Oct 18 16:46:26 2008
+@@ -1313,7 +1313,7 @@ g_strerror (gint errnum)
        g_static_private_set (&msg_private, msg, g_free);
      }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-glib_gstrfuncs_c,v 1.7 2008/04/09 13:10:17 jasper Exp $
  
    errno = saved_errno;
    return msg;
-@@ -1461,7 +1461,7 @@ extern const char *strsignal(int);
+@@ -1463,7 +1463,7 @@ extern const char *strsignal(int);
        g_static_private_set (&msg_private, msg, g_free);
      }
  

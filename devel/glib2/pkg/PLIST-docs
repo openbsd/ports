@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.14 2008/04/09 13:10:18 jasper Exp $
+@comment $OpenBSD: PLIST-docs,v 1.15 2008/10/27 21:28:01 landry Exp $
 @conflict glib2-<2.4.6
 share/gtk-doc/
 share/gtk-doc/html/
@@ -11,6 +11,8 @@ share/gtk-doc/html/gio/GCancellable.html
 share/gtk-doc/html/gio/GDataInputStream.html
 share/gtk-doc/html/gio/GDataOutputStream.html
 share/gtk-doc/html/gio/GDrive.html
+share/gtk-doc/html/gio/GEmblem.html
+share/gtk-doc/html/gio/GEmblemedIcon.html
 share/gtk-doc/html/gio/GFile.html
 share/gtk-doc/html/gio/GFileEnumerator.html
 share/gtk-doc/html/gio/GFileIcon.html
@@ -47,6 +49,7 @@ share/gtk-doc/html/gio/ch15.html
 share/gtk-doc/html/gio/ch15s02.html
 share/gtk-doc/html/gio/ch15s03.html
 share/gtk-doc/html/gio/extending.html
+share/gtk-doc/html/gio/extending-gio.html
 share/gtk-doc/html/gio/file_mon.html
 share/gtk-doc/html/gio/file_ops.html
 share/gtk-doc/html/gio/gio-Desktop-file-based-GAppInfo.html
@@ -56,7 +59,6 @@ share/gtk-doc/html/gio/gio-GFileAttribute.html
 share/gtk-doc/html/gio/gio-GIOError.html
 share/gtk-doc/html/gio/gio-GIOScheduler.html
 share/gtk-doc/html/gio/gio-Unix-Mounts.html
-share/gtk-doc/html/gio/gio-extension-points.html
 share/gtk-doc/html/gio/gio-hierarchy.html
 share/gtk-doc/html/gio/gio.devhelp
 share/gtk-doc/html/gio/gio.devhelp2
@@ -66,6 +68,7 @@ share/gtk-doc/html/gio/icons.html
 share/gtk-doc/html/gio/index.html
 share/gtk-doc/html/gio/index.sgml
 share/gtk-doc/html/gio/ix01.html
+share/gtk-doc/html/gio/ix02.html
 share/gtk-doc/html/gio/left.png
 share/gtk-doc/html/gio/migrating.html
 share/gtk-doc/html/gio/pt01.html
@@ -159,6 +162,8 @@ share/gtk-doc/html/glib/glib-utilities.html
 share/gtk-doc/html/glib/glib.devhelp
 share/gtk-doc/html/glib/glib.devhelp2
 share/gtk-doc/html/glib/glib.html
+share/gtk-doc/html/glib/gtester-report.html
+share/gtk-doc/html/glib/gtester.html
 share/gtk-doc/html/glib/home.png
 share/gtk-doc/html/glib/index.html
 share/gtk-doc/html/glib/index.sgml
@@ -172,6 +177,7 @@ share/gtk-doc/html/glib/ix07.html
 share/gtk-doc/html/glib/ix08.html
 share/gtk-doc/html/glib/ix09.html
 share/gtk-doc/html/glib/ix10.html
+share/gtk-doc/html/glib/ix11.html
 share/gtk-doc/html/glib/left.png
 share/gtk-doc/html/glib/mainloop-states.gif
 share/gtk-doc/html/glib/right.png
@@ -183,8 +189,6 @@ share/gtk-doc/html/gobject/GTypeModule.html
 share/gtk-doc/html/gobject/GTypePlugin.html
 share/gtk-doc/html/gobject/ch01s02.html
 share/gtk-doc/html/gobject/ch06s03.html
-share/gtk-doc/html/gobject/ch07s02.html
-share/gtk-doc/html/gobject/ch07s03.html
 share/gtk-doc/html/gobject/chapter-gobject.html
 share/gtk-doc/html/gobject/chapter-gtype.html
 share/gtk-doc/html/gobject/chapter-intro.html
@@ -234,6 +238,7 @@ share/gtk-doc/html/gobject/ix06.html
 share/gtk-doc/html/gobject/ix07.html
 share/gtk-doc/html/gobject/ix08.html
 share/gtk-doc/html/gobject/ix09.html
+share/gtk-doc/html/gobject/ix10.html
 share/gtk-doc/html/gobject/left.png
 share/gtk-doc/html/gobject/pr01.html
 share/gtk-doc/html/gobject/pt01.html
@@ -248,4 +253,5 @@ share/gtk-doc/html/gobject/tools-ginspector.html
 share/gtk-doc/html/gobject/tools-gob.html
 share/gtk-doc/html/gobject/tools-gtkdoc.html
 share/gtk-doc/html/gobject/tools-refdb.html
+share/gtk-doc/html/gobject/tools-vala.html
 share/gtk-doc/html/gobject/up.png

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2008/09/27 17:58:25 brad Exp $
+# $OpenBSD: Makefile,v 1.52 2008/10/27 21:28:01 landry Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
-VERSION=		2.16.6
+VERSION=		2.18.2
 DISTNAME=		glib-${VERSION}
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
@@ -11,11 +11,11 @@ CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org/
 
-SHARED_LIBS+=	glib-2.0		1600.2
-SHARED_LIBS+=	gobject-2.0		1600.2
-SHARED_LIBS+=	gmodule-2.0		1600.2
-SHARED_LIBS+=	gthread-2.0		1600.2 
-SHARED_LIBS+=	gio-2.0			1600.2
+SHARED_LIBS+=	glib-2.0		1800.0 #.1800.2
+SHARED_LIBS+=	gobject-2.0		1800.0
+SHARED_LIBS+=	gmodule-2.0		1800.0
+SHARED_LIBS+=	gthread-2.0		1800.0
+SHARED_LIBS+=	gio-2.0			1800.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/2.16/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/2.18/}
 EXTRACT_SUFX=		.tar.bz2
 
 MULTI_PACKAGES=		-main -docs

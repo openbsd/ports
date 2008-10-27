@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/07/08 08:38:26 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/10/27 21:28:01 landry Exp $
 @pkgpath devel/glib2
 %%SHARED%%
 @bin bin/glib-genmarshal
@@ -23,6 +23,8 @@ include/glib-2.0/gio/gcontenttype.h
 include/glib-2.0/gio/gdatainputstream.h
 include/glib-2.0/gio/gdataoutputstream.h
 include/glib-2.0/gio/gdrive.h
+include/glib-2.0/gio/gemblem.h
+include/glib-2.0/gio/gemblemedicon.h
 include/glib-2.0/gio/gfile.h
 include/glib-2.0/gio/gfileattribute.h
 include/glib-2.0/gio/gfileenumerator.h
@@ -37,10 +39,12 @@ include/glib-2.0/gio/gfilteroutputstream.h
 include/glib-2.0/gio/gicon.h
 include/glib-2.0/gio/ginputstream.h
 include/glib-2.0/gio/gio.h
+include/glib-2.0/gio/gioenums.h
 include/glib-2.0/gio/gioenumtypes.h
 include/glib-2.0/gio/gioerror.h
 include/glib-2.0/gio/giomodule.h
 include/glib-2.0/gio/gioscheduler.h
+include/glib-2.0/gio/giotypes.h
 include/glib-2.0/gio/gloadableicon.h
 include/glib-2.0/gio/gmemoryinputstream.h
 include/glib-2.0/gio/gmemoryoutputstream.h
@@ -136,6 +140,8 @@ include/glib-2.0/gobject/gvaluearray.h
 include/glib-2.0/gobject/gvaluecollector.h
 include/glib-2.0/gobject/gvaluetypes.h
 @comment lib/charset.alias
+lib/gio/
+lib/gio/modules/
 lib/glib-2.0/
 lib/glib-2.0/include/
 lib/glib-2.0/include/glibconfig.h
@@ -149,6 +155,7 @@ lib/libgobject-2.0.a
 lib/libgobject-2.0.la
 lib/libgthread-2.0.a
 lib/libgthread-2.0.la
+lib/pkgconfig/
 lib/pkgconfig/gio-2.0.pc
 lib/pkgconfig/gio-unix-2.0.pc
 lib/pkgconfig/glib-2.0.pc
@@ -161,6 +168,7 @@ lib/pkgconfig/gthread-2.0.pc
 @man man/man1/glib-gettextize.1
 @man man/man1/glib-mkenums.1
 @man man/man1/gobject-query.1
+@man man/man1/gtester.1
 share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/glib-2.0/
@@ -214,8 +222,6 @@ share/locale/en_GB/LC_MESSAGES/glib20.mo
 share/locale/eo/LC_MESSAGES/glib20.mo
 share/locale/es/LC_MESSAGES/glib20.mo
 share/locale/et/LC_MESSAGES/glib20.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/glib20.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/
@@ -256,6 +262,9 @@ share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/glib20.mo
 share/locale/lv/LC_MESSAGES/glib20.mo
+share/locale/mai/
+share/locale/mai/LC_MESSAGES/
+share/locale/mai/LC_MESSAGES/glib20.mo
 share/locale/mg/
 share/locale/mg/LC_MESSAGES/
 share/locale/mg/LC_MESSAGES/glib20.mo
@@ -290,6 +299,9 @@ share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/glib20.mo
 share/locale/pl/LC_MESSAGES/glib20.mo
+share/locale/ps/
+share/locale/ps/LC_MESSAGES/
+share/locale/ps/LC_MESSAGES/glib20.mo
 share/locale/pt/LC_MESSAGES/glib20.mo
 share/locale/pt_BR/LC_MESSAGES/glib20.mo
 share/locale/ro/LC_MESSAGES/glib20.mo
@@ -306,12 +318,12 @@ share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/glib20.mo
 share/locale/sr/LC_MESSAGES/glib20.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
-share/locale/sr@Latn/LC_MESSAGES/glib20.mo
 share/locale/sr@ije/
 share/locale/sr@ije/LC_MESSAGES/
 share/locale/sr@ije/LC_MESSAGES/glib20.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/glib20.mo
 share/locale/sv/LC_MESSAGES/glib20.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
