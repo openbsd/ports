@@ -1,0 +1,4 @@
+rparsec is a recursive descent parser combinator framework. Intuitive and
+declarative API is provided instead of code generation or proprietary BNF-like
+syntax. A calculator parser can be built from scratch in 10 lines of simple
+code.
