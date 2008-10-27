@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.109 2008/10/27 13:25:35 espie Exp $
+# $OpenBSD: make-plist,v 1.110 2008/10/27 16:53:13 bernd Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -571,7 +571,6 @@ sub replaces
 		$orig->{replacement} = $n;
 		$n->{filename} = $orig->{filename};
 		$orig->{tag_marker}->clone_tags($n);
-		}
 	}
 }
 
