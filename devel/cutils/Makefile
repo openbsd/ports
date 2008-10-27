@@ -1,14 +1,14 @@
-# $Id: Makefile,v 1.2 2008/06/19 09:09:42 steven Exp $
+# $Id: Makefile,v 1.3 2008/10/27 11:34:00 pirofti Exp $
 
 COMMENT=	collection of utilities for C programmers
 
 DISTNAME=	cutils-1.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.sigala.it/sandro/software.php
 
-MAINTAINER=	Paul Irofti <bulibuta@sdf.lonestar.org>
+MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

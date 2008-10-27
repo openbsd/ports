@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/26 16:19:28 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/27 11:34:00 pirofti Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	caches (Ruby source) files
 
 DISTNAME =	linecache-0.43
-PKGNAME =	ruby-${DISTNAME}
+PKGNAME =	ruby-${DISTNAME}p0
 CATEGORIES =	devel
 
-MAINTAINER =	Paul Irofti <bulibuta@sdf.lonestar.org>
+MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

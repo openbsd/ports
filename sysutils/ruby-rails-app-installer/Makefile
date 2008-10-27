@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/19 09:09:42 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/27 11:34:00 pirofti Exp $
 
 COMMENT=	installer for Rails applications
 
 DISTNAME=	rails-app-installer-0.2.0
-PKGNAME=	ruby-${DISTNAME}p1
+PKGNAME=	ruby-${DISTNAME}p2
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://code.google.com/p/rails-app-installer/
 
-MAINTAINER=	Paul Irofti <bulibuta@sdf.lonestar.org>
+MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
 
 # MIT but no license in distfile...
 PERMIT_PACKAGE_CDROM=	No

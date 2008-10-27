@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/19 09:09:42 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/27 11:34:00 pirofti Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	faster implementation of the standard debug.rb - base
 
 DISTNAME=	ruby-debug-base-0.10.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	devel
 
-MAINTAINER=	Paul Irofti <bulibuta@sdf.lonestar.org>
+MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
