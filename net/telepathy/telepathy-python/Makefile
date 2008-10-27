@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/02 17:36:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/27 00:03:12 jasper Exp $
 
 COMMENT=		flexible communications framework, python bindings
 
-DISTNAME=		telepathy-python-0.14.0
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		telepathy-python-0.15.3
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-python/}
 
@@ -13,7 +12,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		${MODPY_EXPAT_DEPENDS} \
 			::devel/py-gobject \
 			::textproc/libxslt \
-			::net/pymsn \
+			:pymsn->=0.3.3:net/pymsn \
 			::x11/dbus-python \
 			::x11/py-gtk2
 
