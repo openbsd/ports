@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/27 11:34:00 pirofti Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/27 19:29:16 pirofti Exp $
 
 COMMENT=	faster implementation of the standard debug.rb
 
-VERSION=	0.10.0
+VERSION=	0.10.2
 DISTNAME=	ruby-debug-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}
 CATEGORIES=	devel
 
 MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=ruby-debug/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-debug-base-${VERSION}:devel/ruby-debug-base
+RUN_DEPENDS=	:ruby-debug-base-${VERSION}:devel/ruby-debug-base \
+		::devel/ruby-columnize
 
 MODULES=	lang/ruby
 
