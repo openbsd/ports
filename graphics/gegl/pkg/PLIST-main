@@ -1,21 +1,23 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/10/03 10:13:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/10/27 13:15:58 ajacoutot Exp $
 @bin bin/gegl
 include/gegl-0.0/
 include/gegl-0.0/gegl-buffer.h
 include/gegl-0.0/gegl-chant.h
 include/gegl-0.0/gegl-color.h
-include/gegl-0.0/gegl-config.c
 include/gegl-0.0/gegl-curve.h
 include/gegl-0.0/gegl-paramspecs.h
 include/gegl-0.0/gegl-plugin.h
+include/gegl-0.0/gegl-simd.h
 include/gegl-0.0/gegl-utils.h
 include/gegl-0.0/gegl.h
 include/gegl-0.0/operation/
 include/gegl-0.0/operation/gegl-operation-area-filter.h
 include/gegl-0.0/operation/gegl-operation-composer.h
+include/gegl-0.0/operation/gegl-operation-composer3.h
 include/gegl-0.0/operation/gegl-operation-filter.h
 include/gegl-0.0/operation/gegl-operation-meta.h
 include/gegl-0.0/operation/gegl-operation-point-composer.h
+include/gegl-0.0/operation/gegl-operation-point-composer3.h
 include/gegl-0.0/operation/gegl-operation-point-filter.h
 include/gegl-0.0/operation/gegl-operation-point-render.h
 include/gegl-0.0/operation/gegl-operation-sink.h
@@ -45,7 +47,7 @@ lib/gegl-0.0/clone.so
 lib/gegl-0.0/color-burn.so
 @comment lib/gegl-0.0/color-dodge.la
 lib/gegl-0.0/color-dodge.so
-lib/gegl-0.0/color-temperature.la
+@comment lib/gegl-0.0/color-temperature.la
 lib/gegl-0.0/color-temperature.so
 @comment lib/gegl-0.0/color.la
 lib/gegl-0.0/color.so
@@ -77,6 +79,8 @@ lib/gegl-0.0/dst-over.so
 lib/gegl-0.0/dst.so
 @comment lib/gegl-0.0/exclusion.la
 lib/gegl-0.0/exclusion.so
+@comment lib/gegl-0.0/fill.la
+lib/gegl-0.0/fill.so
 @comment lib/gegl-0.0/fractal-explorer.la
 lib/gegl-0.0/fractal-explorer.so
 @comment lib/gegl-0.0/gamma.la
@@ -119,7 +123,7 @@ lib/gegl-0.0/nop.so
 lib/gegl-0.0/normal.so
 @comment lib/gegl-0.0/opacity.la
 lib/gegl-0.0/opacity.so
-lib/gegl-0.0/open-buffer.la
+@comment lib/gegl-0.0/open-buffer.la
 lib/gegl-0.0/open-buffer.so
 @comment lib/gegl-0.0/over.la
 lib/gegl-0.0/over.so
@@ -135,7 +139,7 @@ lib/gegl-0.0/png-load.so
 lib/gegl-0.0/png-save.so
 @comment lib/gegl-0.0/raw-load.la
 lib/gegl-0.0/raw-load.so
-lib/gegl-0.0/rectangle.la
+@comment lib/gegl-0.0/rectangle.la
 lib/gegl-0.0/rectangle.so
 @comment lib/gegl-0.0/remap.la
 lib/gegl-0.0/remap.so
@@ -191,7 +195,7 @@ lib/gegl-0.0/unsharp-mask.so
 lib/gegl-0.0/value-invert.so
 @comment lib/gegl-0.0/whitebalance.la
 lib/gegl-0.0/whitebalance.so
-lib/gegl-0.0/write-buffer.la
+@comment lib/gegl-0.0/write-buffer.la
 lib/gegl-0.0/write-buffer.so
 @comment lib/gegl-0.0/xor.la
 lib/gegl-0.0/xor.so
