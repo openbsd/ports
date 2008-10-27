@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2007/10/27 16:18:54 jasper Exp $
---- Makefile.orig	Fri Oct 12 16:45:54 2007
-+++ Makefile	Fri Oct 12 16:46:09 2007
-@@ -13,7 +13,7 @@ CANONICAL_NAMES = $(INTERFACE_XMLS:spec/%.xml=tmp/%.na
+$OpenBSD: patch-Makefile,v 1.2 2008/10/27 00:07:55 jasper Exp $
+--- Makefile.orig	Mon Oct 13 18:24:52 2008
++++ Makefile	Sun Oct 26 12:53:29 2008
+@@ -17,7 +17,7 @@ CANONICAL_NAMES = $(INTERFACE_XMLS:spec/%.xml=tmp/%.na
  
  $(CANONICAL_NAMES): tmp/%.name: spec/%.xml tools/extract-nodename.py
  	@install -d tmp
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/10/27 16:18:54 jasper Exp $
  	tr a-z A-Z < $@ > $@.upper
  	tr A-Z a-z < $@ > $@.lower
  	tr -d _ < $@ > $@.camel
-@@ -48,10 +48,10 @@ $(TEST_INTROSPECT): $(TEST_INTERFACE_XMLS) tools/spec-
+@@ -69,10 +69,10 @@ $(TEST_INTROSPECT): $(TEST_INTERFACE_XMLS) tools/spec-
  
  $(ASYNC_INTROSPECT): introspect/async/%.xml: introspect/%.xml tools/make_all_async.py
  	@install -d introspect/async
