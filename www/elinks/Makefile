@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2008/08/21 01:12:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2008/10/27 14:00:17 sthen Exp $
 
 COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www
 MASTER_SITES=		http://elinks.cz/download/
 
@@ -21,6 +22,7 @@ CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 CONFIGURE_ARGS+=	--with-bzlib \
 			--without-spidermonkey \
 			--disable-xbel \
+			--disable-backtrace \
 			--enable-gopher \
 			--with-libiconv=${LOCALBASE}
 # don't hide compiler command lines
