@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.106 2008/10/27 11:19:57 espie Exp $
+# $OpenBSD: make-plist,v 1.107 2008/10/27 11:28:12 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -557,8 +557,6 @@ sub parse_original_plist
 		    	OpenBSD::PackingElement::Fragment->add($plist, $1);
 		    } elsif (m/^\!\%\%(.*)\%\%$/) {
 		    	OpenBSD::PackingElement::NoFragment->add($plist, $1);
-		    } elsif (m/^(?:NEW)?DYNLIBDIR\(.*\)$/) {
-		    	next;
 		    } else {
 			    &$cont($_);
 		    }
@@ -827,7 +825,7 @@ for my $plist (@l) {
 	if (defined $orig and 
 	    defined $orig->{cvstags}) {
 		for my $tag (@{$orig->{cvstags}}) {
-			$tag->clone()->add_object($plist);
+			$tag->clone->add_object($plist);
 		}
 	} else {
 	    OpenBSD::PackingElement::CVSTag->add($plist, '$OpenBSD'.'$');
@@ -843,7 +841,7 @@ for my $plist (@l) {
 		    pkgpath incompatibility updateset module)) {
 			if (defined $orig->{$listname}) {
 				for my $o (@{$orig->{$listname}}) {
-					$o->clone()->add_object($plist);
+					$o->clone->add_object($plist);
 					$plist->{nonempty} = 1;
 				}
 			}
