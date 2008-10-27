@@ -1,14 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2007/10/12 16:52:56 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2008/10/27 17:58:52 kili Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		vector font editor/converter
 
-DISTNAME=		fontforge_full-20070915
-PKGNAME=		${DISTNAME:S,_full,,}p0
+DISTNAME=		fontforge_full-20080927
+PKGNAME=		${DISTNAME:S,_full,,}
 EXTRACT_SUFX=		.tar.bz2
-SHARED_LIBS=		gdraw		2.0 \
-			gunicode	3.0
+SHARED_LIBS=		fontforge	1.0 \
+			gdraw		3.0 \
+			gioftp		1.0 \
+			gunicode	4.0 \
+			gutils		1.0
+
 CATEGORIES=		print
 
 HOMEPAGE=		http://fontforge.sourceforge.net/
