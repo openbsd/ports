@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/24 23:47:25 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/27 20:17:40 jasper Exp $
 
 COMMENT=	Sender-Policy-Framework queries in Python
 
 MODPY_EGG_VERSION=2.0.5
 DISTNAME=	pyspf-${MODPY_EGG_VERSION}
-PKGNAME=	py-spf-${MODPY_EGG_VERSION}p0
+PKGNAME=	py-spf-${MODPY_EGG_VERSION}p1
 CATEGORIES=	mail
 
 HOMEPAGE=	http://bmsi.com/python/milter.html
@@ -26,14 +26,7 @@ BUILD_DEPENDS=	:py-dns-*:net/py-dns
 REGRESS_DEPENDS=:${PKGNAME}:${BUILD_PKGPATH} \
 		::textproc/py-yaml
 
-BINFILES=	spfquery.py type99.py
-
 do-regress:
 	@cd ${WRKSRC}/test && ${MODPY_BIN} testspf.py
-
-post-install:
-.for i in ${BINFILES}
-	@cd ${PREFIX}/bin && mv ${i} `basename ${i} .py`
-.endfor
 
 .include <bsd.port.mk>
