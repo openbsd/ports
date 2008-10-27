@@ -1,16 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/12 21:58:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/27 00:08:51 jasper Exp $
 
 COMMENT=	display information about a given connection manager
 
 DISTNAME=	telepathy-inspector-0.5.0
 PKGNAME=	${DISTNAME}p1
 HOMEPAGE=	http://telepathy.freedesktop.org/wiki/TelepathyInspector
-
-# LGPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tapioca-voip/}
 
