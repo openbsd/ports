@@ -1,0 +1,6 @@
+As well as features found in standard text editing components,
+QScintilla includes features especially useful when editing and
+debugging source code.
+
+These include support for syntax styling, error indicators, code
+completion, call tips and much more.

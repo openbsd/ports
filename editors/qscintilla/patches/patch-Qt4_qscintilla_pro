@@ -1,0 +1,12 @@
+$OpenBSD: patch-Qt4_qscintilla_pro,v 1.1.1.1 2008/10/27 00:01:45 bernd Exp $
+--- Qt4/qscintilla.pro.orig	Sat Sep 20 16:28:46 2008
++++ Qt4/qscintilla.pro	Sun Oct 26 12:39:44 2008
+@@ -43,7 +43,7 @@ INCLUDEPATH = . ../include ../src
+ DEFINES = QSCINTILLA_MAKE_DLL QT SCI_LEXER
+ 
+ # Handle both Qt v4 and v3.
+-target.path = $$[QT_INSTALL_LIBS]
++target.path = ${LOCALBASE}/lib
+ isEmpty(target.path) {
+ 	target.path = $(QTDIR)/lib
+ }
