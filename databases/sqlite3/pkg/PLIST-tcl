@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-tcl,v 1.1 2005/04/28 22:58:28 jolan Exp $
+@comment $OpenBSD: PLIST-tcl,v 1.2 2008/10/27 23:20:39 steven Exp $
 %%SHARED%%
-lib/tcl8.4/
-lib/tcl8.4/sqlite3/
-lib/tcl8.4/sqlite3/pkgIndex.tcl
+lib/tcl${MODTCL_VERSION}/
+lib/tcl${MODTCL_VERSION}/sqlite3/
+lib/tcl${MODTCL_VERSION}/sqlite3/pkgIndex.tcl

@@ -1,15 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2008/10/27 17:14:18 simon Exp $
+$OpenBSD: patch-Makefile_in,v 1.10 2008/10/27 23:20:39 steven Exp $
 --- Makefile.in.orig	Tue Oct 14 20:07:37 2008
 +++ Makefile.in	Sun Oct 26 10:19:40 2008
-@@ -101,7 +101,7 @@ TEXE = @TARGET_EXEEXT@
- #
- HAVE_TCL = @HAVE_TCL@
- 
--# This is the command to use for tclsh - normally just "tclsh", but we may
-+# This is the command to use for tclsh8.48.4 - normally just "tclsh8.48.4", but we may
- # know the specific version we want to use
- #
- TCLSH_CMD = @TCLSH_CMD@
 @@ -167,11 +167,11 @@ OBJS0 = alter.lo analyze.lo attach.lo auth.lo bitvec.l
          table.lo tokenize.lo trigger.lo update.lo \
          util.lo vacuum.lo \

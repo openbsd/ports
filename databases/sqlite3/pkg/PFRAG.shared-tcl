@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-tcl,v 1.1 2005/04/28 22:58:28 jolan Exp $
-lib/tcl8.4/sqlite3/libtclsqlite3.so
+@comment $OpenBSD: PFRAG.shared-tcl,v 1.2 2008/10/27 23:20:39 steven Exp $
+lib/tcl${MODTCL_VERSION}/sqlite3/libtclsqlite3.so

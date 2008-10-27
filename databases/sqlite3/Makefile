@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2008/10/27 17:14:18 simon Exp $
+# $OpenBSD: Makefile,v 1.37 2008/10/27 23:20:39 steven Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
 V=		3.6.4
 DISTNAME=	sqlite-${V}
 PKGNAME-main=	sqlite3-${V}
-PKGNAME-tcl=	sqlite3-tcl-${V}
+PKGNAME-tcl=	sqlite3-tcl-${V}p0
 CATEGORIES=	databases
 SHARED_LIBS +=	sqlite3              12.0      # .8.6
 SHARED_LIBS +=	tclsqlite3           11.0      # .8.6
@@ -43,20 +43,21 @@ FLAVOR=	no_tcl
 MULTI_PACKAGES=-main
 .if !${FLAVOR:L:Mno_tcl}
 MULTI_PACKAGES+=-tcl
+MODULES+=	lang/tcl
 .endif
 
-BUILD_DEPENDS= :tcl-8.4.*:lang/tcl/8.4
+BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
 LIB_DEPENDS-tcl = sqlite3::${BASE_PKGPATH},-main
 
 .if ${MULTI_PACKAGES:M-tcl}
-CONFIGURE_ARGS+=--with-tcl=${LOCALBASE}/lib/tcl8.4
+CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR}
 # Can't pass all its regress tests, because tcl doesn't handle NaN
 # (strtod doesn't work in an IEEE way)
 
 REGRESS_TARGET=	test
 
 pre-configure:
-	@perl -pi -e s,'tclsh','tclsh8.4',g ${WRKSRC}/Makefile.in
+	@perl -pi -e s,'tclsh',${MODTCL_BIN},g ${WRKSRC}/Makefile.in
 # XXX libtool issue
 pre-install:
 	@cp -p ${WRKSRC}/.libs/libtclsqlite3.so.$(LIBtclsqlite3_VERSION) ${WRKSRC}/.libs/libtclsqlite3.so
