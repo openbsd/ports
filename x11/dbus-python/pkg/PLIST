@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/08/29 16:31:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/10/27 13:59:21 ajacoutot Exp $
 include/dbus-1.0/dbus/dbus-python.h
 lib/pkgconfig/dbus-python.pc
 @comment lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.a
@@ -54,6 +54,9 @@ lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/glib.pyo
 lib/python${MODPY_VERSION}/site-packages/dbus/proxies.py
 lib/python${MODPY_VERSION}/site-packages/dbus/proxies.pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/proxies.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/server.py
+lib/python${MODPY_VERSION}/site-packages/dbus/server.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/server.pyo
 lib/python${MODPY_VERSION}/site-packages/dbus/service.py
 lib/python${MODPY_VERSION}/site-packages/dbus/service.pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/service.pyo
