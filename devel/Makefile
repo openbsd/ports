@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.643 2008/10/27 20:18:57 pirofti Exp $
+# $OpenBSD: Makefile,v 1.644 2008/10/28 14:33:59 steven Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -739,7 +739,6 @@
      SUBDIR += slib-guile
      SUBDIR += smarty
      SUBDIR += smpeg
-     SUBDIR += snit
      SUBDIR += spe
      SUBDIR += splint
      SUBDIR += startup-notification

@@ -1,6 +1,0 @@
-Snit is pure-Tcl object and megawidget framework written entirely in
-Tcl. Unlike most Tcl object systems, it isn't based on object
-inheritance; relying on inheritance only ties you down to the object
-system you've chosen.  Instead, Snit is all about delegation: an object
-type can define its own methods and options, but it can easily delegate
-methods and options to other kinds of object.

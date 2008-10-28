@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:01 espie Exp $
-lib/snit/
-lib/snit/README.txt
-lib/snit/license.txt
-lib/snit/pkgIndex.tcl
-lib/snit/snit.html
-lib/snit/snit.tcl
-lib/snit/snit.test
