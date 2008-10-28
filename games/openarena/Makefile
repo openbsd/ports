@@ -1,52 +1,54 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/27 13:29:02 weerd Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/28 14:27:53 weerd Exp $
 
-COMMENT-main=	OpenArena client
-COMMENT-server=	OpenArena server
-COMMENT-data=	OpenArena data for client/server
+ONLY_FOR_ARCHS =	i386
 
-MULTI_PACKAGES=	-main -server -data
+COMMENT-main =		OpenArena client
+COMMENT-server =	OpenArena server
+COMMENT-data =		OpenArena data for client/server
 
-CATEGORIES=	games x11
+MULTI_PACKAGES =	-main -server -data
 
-V=		0.8.0
+CATEGORIES =		games x11
 
-PKGNAME=	openarena-$V
-PKGNAME-main=	openarena-$V
-PKGNAME-server=	openarena-server-$V
-PKGNAME-data=	openarena-data-$V
+V =			0.8.0
 
-DISTNAME=	oa${V:S/.//g}
-DISTFILES=	${DISTNAME}.zip ioquake3svn1438.tar.bz2
+PKGNAME =		openarena-${V}p0
+PKGNAME-main =		openarena-${V}p0
+PKGNAME-server =	openarena-server-${V}p0
+PKGNAME-data =		openarena-data-${V}p0
 
-MAINTAINER=	Antti Harri <iku@openbsd.fi>
+DISTNAME =		oa${V:S/.//g}
+DISTFILES =		${DISTNAME}.zip ioquake3svn1438.tar.bz2
 
-HOMEPAGE=	http://www.openarena.ws/
-MASTER_SITES=	http://download.tuxfamily.org/openarena/rel/080/ \
-		http://openbsd.fi/distfiles/
+MAINTAINER =		Antti Harri <iku@openbsd.fi>
+
+HOMEPAGE =		http://www.openarena.ws/
+MASTER_SITES =		http://download.tuxfamily.org/openarena/rel/080/ \
+			http://openbsd.fi/distfiles/
 
 # GPLv2 but contains software with other (free) licenses as well
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB-main=	GL c m pthread
-WANTLIB-server=	c m
+WANTLIB-main =		GL c m pthread
+WANTLIB-server =	c m
 
-LIB_DEPENDS-main=	ogg.>=5::audio/libogg \
+LIB_DEPENDS-main =	ogg.>=5::audio/libogg \
 			SDL.>=7::devel/sdl \
 			vorbis.>=6::audio/libvorbis \
 			vorbisfile.>=5::audio/libvorbis
-RUN_DEPENDS-main=	:openarena-data-$V:${BUILD_PKGPATH},-data
-RUN_DEPENDS-server=	:openarena-data-$V:${BUILD_PKGPATH},-data
+RUN_DEPENDS-main =	:openarena-data-$V:${BUILD_PKGPATH},-data
+RUN_DEPENDS-server =	:openarena-data-$V:${BUILD_PKGPATH},-data
 
-ALL_TARGET=	release
-USE_GMAKE=	Yes
-MAKE_FLAGS=	USE_OPENAL=0 \
-		BINEXT='' \
-		DEFAULT_BASEDIR=${LOCALBASE}/share/openarena
+ALL_TARGET =		release
+USE_GMAKE =		Yes
+MAKE_FLAGS =		USE_OPENAL=0 \
+			BINEXT='' \
+			DEFAULT_BASEDIR=${LOCALBASE}/share/openarena
 
-WRKDIST=	${WRKDIR}/ioquake3svn1438
+WRKDIST =		${WRKDIR}/ioquake3svn1438
 
 post-extract:
 	find ${WRKDIR} -name '*.orig' -print0 | xargs -0r rm -f
