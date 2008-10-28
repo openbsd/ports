@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.112 2008/10/28 11:59:12 espie Exp $
+# $OpenBSD: make-plist,v 1.113 2008/10/28 12:07:23 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -420,7 +420,7 @@ sub add_to_mtree
 {
 	my ($self, $mtree) = @_;
 
-	$mtree->{$self->fullname()} = 1;
+	$mtree->{$self->fullname} = 1;
 }
 
 package OpenBSD::PackingElement::Comment;
@@ -477,9 +477,7 @@ sub augment_mtree
 {
 	my ($mtree, $fh) = @_;
 	my $plist = OpenBSD::PackingList->read($fh, \&OpenBSD::PackingList::DirrmOnly) or die "couldn't read packing-list\n";
-	for my $item (@{$plist->{items}}) {
-		$item->add_to_mtree($mtree);
-	}
+	$plist->add_to_mtree($mtree);
 }
 
 # full file name to file name in plist context
@@ -587,7 +585,7 @@ sub create_object
 {
 	my ($type, $short, $item) = @_;
 
-	if ($item->isa("OpenBSD::PackingElement::Comment")) {
+	if (defined $item && $item->isa("OpenBSD::PackingElement::Comment")) {
 		return OpenBSD::PackingElement::Comment->new($short);
 	}
 	if ($type eq "directory") {
