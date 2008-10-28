@@ -1,6 +1,6 @@
-$OpenBSD: patch-cda_d_cda_man,v 1.1 2001/01/18 16:41:27 naddy Exp $
---- cda_d/cda.man.orig	Mon Dec 11 22:20:25 2000
-+++ cda_d/cda.man	Tue Dec 12 00:04:43 2000
+$OpenBSD: patch-cda_d_cda_man,v 1.2 2008/10/28 12:09:05 jasper Exp $
+--- cda_d/cda.man.orig	Sat Feb  5 08:26:39 2000
++++ cda_d/cda.man	Tue Oct 28 13:06:18 2008
 @@ -499,11 +499,11 @@ This parameter which specifies
  the directory path under which
  .I cda's
@@ -15,7 +15,7 @@ $OpenBSD: patch-cda_d_cda_man,v 1.1 2001/01/18 16:41:27 naddy Exp $
  .I xmcd(1)
  for details.
  
-@@ -524,23 +524,21 @@ do not support the appropriate functiona
+@@ -524,23 +524,21 @@ do not support the appropriate functionality.
  .SH "FILES"
  $HOME/.xmcdcfg/\(**
  .br

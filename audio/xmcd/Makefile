@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2007/11/13 12:44:23 steven Exp $
+# $OpenBSD: Makefile,v 1.33 2008/10/28 12:09:05 jasper Exp $
 
 COMMENT=	Motif CD player
 
 DISTNAME=	xmcd-2.6
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	audio
-HOMEPAGE=	http://metalab.unc.edu/tkan/xmcd/
+HOMEPAGE=	http://www.amb.org/xmcd/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xp Xpm Xt c curses termlib
 
-MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/src/
+MASTER_SITES=	http://humppa.nl/distfiles/
 
 USE_X11=	Yes
 USE_MOTIF=	any

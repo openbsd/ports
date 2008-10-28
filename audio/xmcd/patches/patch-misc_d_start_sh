@@ -1,6 +1,6 @@
-$OpenBSD: patch-misc_d_start_sh,v 1.1 2001/01/18 16:41:28 naddy Exp $
+$OpenBSD: patch-misc_d_start_sh,v 1.2 2008/10/28 12:09:05 jasper Exp $
 --- misc_d/start.sh.orig	Sat Feb  5 08:26:39 2000
-+++ misc_d/start.sh	Tue Dec 12 22:57:18 2000
++++ misc_d/start.sh	Tue Oct 28 13:06:18 2008
 @@ -26,7 +26,7 @@
  #    along with this program; if not, write to the Free Software
  #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
@@ -21,7 +21,8 @@ $OpenBSD: patch-misc_d_start_sh,v 1.1 2001/01/18 16:41:28 naddy Exp $
 +XKEYSYMDB=@X11BASE@/lib/X11/XKeysymDB
  
 -PROG=`(basename $0) 2>/dev/null`
--
++PROG=`basename $0 2>/dev/null`
+ 
 -SYS=`(uname -s) 2>/dev/null | sed -e 's/\//_/g' -e 's/-/_/g' -e 's/[ 	]/_/g'`
 -MACH=`(uname -m) 2>/dev/null | sed -e 's/\//_/g' -e 's/-/_/g' -e 's/[ 	]/_/g'`
 -REL=`(uname -r) 2>/dev/null | sed -e 's/\//_/g' -e 's/-/_/g' -e 's/[ 	]/_/g'`
@@ -71,8 +72,7 @@ $OpenBSD: patch-misc_d_start_sh,v 1.1 2001/01/18 16:41:28 naddy Exp $
 -		;;
 -	esac
 -fi
-+PROG=`basename $0 2>/dev/null`
- 
+-
  export XFILESEARCHPATH XUSERFILESEARCHPATH XKEYSYMDB
  
 -exec $XMCD_LIBDIR/bin-${SYS}-${MACH}/$PROG ${1+"$@"}

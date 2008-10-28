@@ -1,6 +1,6 @@
-$OpenBSD: patch-xmcd_d_dbprog_c,v 1.1 2001/08/08 23:31:23 naddy Exp $
+$OpenBSD: patch-xmcd_d_dbprog_c,v 1.2 2008/10/28 12:09:05 jasper Exp $
 --- xmcd_d/dbprog.c.orig	Sat Feb  5 08:26:30 2000
-+++ xmcd_d/dbprog.c	Wed Aug  8 01:32:14 2001
++++ xmcd_d/dbprog.c	Tue Oct 28 13:06:18 2008
 @@ -736,29 +736,29 @@ dbprog_dbput(curstat_t *s)
  	case 0:
  		break;
@@ -45,7 +45,7 @@ $OpenBSD: patch-xmcd_d_dbprog_c,v 1.1 2001/08/08 23:31:23 naddy Exp $
  		(void) sprintf(errstr, app_data.str_saverr_write);
  		CD_WARNING(errstr);
  		return;
-@@ -3801,14 +3801,14 @@ dbprog_linksel_ok(Widget w, XtPointer cl
+@@ -3801,14 +3801,14 @@ dbprog_linksel_ok(Widget w, XtPointer client_data, XtP
  		CD_WARNING(errstr);
  		return;
  

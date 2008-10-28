@@ -1,7 +1,7 @@
-$OpenBSD: patch-xmcd_d_xmcd_man,v 1.1 2001/01/18 16:41:28 naddy Exp $
---- xmcd_d/xmcd.man.orig	Mon Dec 11 22:36:36 2000
-+++ xmcd_d/xmcd.man	Tue Dec 12 00:06:18 2000
-@@ -228,10 +228,9 @@ text labels can also be changed (for exa
+$OpenBSD: patch-xmcd_d_xmcd_man,v 1.2 2008/10/28 12:09:05 jasper Exp $
+--- xmcd_d/xmcd.man.orig	Sat Feb  5 08:26:31 2000
++++ xmcd_d/xmcd.man	Tue Oct 28 13:06:18 2008
+@@ -228,10 +228,9 @@ text labels can also be changed (for example, to anoth
  .PP
  There are too many resources to list here, but the resource names
  and their defaults (plus descriptive comments) can be found in the
@@ -14,7 +14,7 @@ $OpenBSD: patch-xmcd_d_xmcd_man,v 1.1 2001/01/18 16:41:28 naddy Exp $
  unless you want the changes to be forced upon all users of
  .I xmcd
  on the system.  Instead, make a copy of this file, change the copy as you
-@@ -432,13 +431,14 @@ per-drive basis.  For example, in some c
+@@ -432,13 +431,14 @@ per-drive basis.  For example, in some cases
  must operate the drive differently depending upon the brand
  and model of the drive.  Thus, there must be a separate
  configuration file for these parameters \fIper-device\fR.
@@ -34,7 +34,7 @@ $OpenBSD: patch-xmcd_d_xmcd_man,v 1.1 2001/01/18 16:41:28 naddy Exp $
  is provided to make maintaining these configuration
  file easy (Note: on SCO systems the configuration program can
  also be invoked as "\fImkdev xmcd\fR").
-@@ -469,7 +469,7 @@ common and device-specific parameters (w
+@@ -469,7 +469,7 @@ common and device-specific parameters (where HOME is y
  directory and DEVICE is as specified above).  Parameters found in
  this file will override the system defaults (except those
  parameters that cannot be overridden; see the comments in the
@@ -43,7 +43,7 @@ $OpenBSD: patch-xmcd_d_xmcd_man,v 1.1 2001/01/18 16:41:28 naddy Exp $
  
  .SH "USING XMCD"
  The basic functions of
-@@ -566,7 +566,7 @@ The CD database information is stored in
+@@ -566,7 +566,7 @@ The CD database information is stored in text files, o
  in a designated directory (category).  The path of this
  directory is \fBCDDBDIR\fI/\fBCATEGORY\fR, where CDDBDIR
  is the top level directory of the local CD database.

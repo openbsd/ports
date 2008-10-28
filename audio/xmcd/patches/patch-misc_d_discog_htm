@@ -1,7 +1,7 @@
-$OpenBSD: patch-misc_d_discog_htm,v 1.1 2001/01/18 16:41:27 naddy Exp $
+$OpenBSD: patch-misc_d_discog_htm,v 1.2 2008/10/28 12:09:05 jasper Exp $
 --- misc_d/discog.htm.orig	Sat Feb  5 08:26:39 2000
-+++ misc_d/discog.htm	Thu Dec  7 17:38:07 2000
-@@ -79,7 +79,7 @@ there is a supported web browser on your
++++ misc_d/discog.htm	Tue Oct 28 13:06:18 2008
+@@ -79,7 +79,7 @@ there is a supported web browser on your system (<B>Ne
  When xmcd was installed the correct browser must be configured.
  If your xmcd was not configured correctly for <I>wwwWarp</I>, you can
  re-configure it by logging in as <B>root</B>, and then running the
@@ -10,7 +10,7 @@ $OpenBSD: patch-misc_d_discog_htm,v 1.1 2001/01/18 16:41:27 naddy Exp $
  <P>
  Of course, in order to reach Internet sites, your system must be connected
  to the Internet.  However, the Local Discographies feature does not require
-@@ -107,7 +107,7 @@ in the CD's Local Discography when you u
+@@ -107,7 +107,7 @@ in the CD's Local Discography when you use xmcd's wwwW
  view it.
  <P>
  You can set up <B>cron</B>(1M) on your system to run the

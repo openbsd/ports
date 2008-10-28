@@ -1,6 +1,6 @@
-$OpenBSD: patch-libdi_d_fbioc_c,v 1.1 2001/01/18 16:41:27 naddy Exp $
---- libdi_d/fbioc.c.orig	Mon Nov  6 15:09:02 2000
-+++ libdi_d/fbioc.c	Mon Nov  6 15:11:14 2000
+$OpenBSD: patch-libdi_d_fbioc_c,v 1.2 2008/10/28 12:09:05 jasper Exp $
+--- libdi_d/fbioc.c.orig	Sat Feb  5 08:26:26 2000
++++ libdi_d/fbioc.c	Tue Oct 28 13:06:18 2008
 @@ -123,7 +123,7 @@ STATIC iocname_t iname[] = {
   *	FALSE - ioctl failed
   */
@@ -10,7 +10,7 @@ $OpenBSD: patch-libdi_d_fbioc_c,v 1.1 2001/01/18 16:41:27 naddy Exp $
  {
  	int		i,
  			ret;
-@@ -135,14 +135,14 @@ fbioc_send(int cmd, void *arg, bool_t pr
+@@ -135,14 +135,14 @@ fbioc_send(int cmd, void *arg, bool_t prnerr)
  	if (app_data.debug) {
  		for (i = 0; iname[i].name != NULL; i++) {
  			if (iname[i].cmd == cmd) {
