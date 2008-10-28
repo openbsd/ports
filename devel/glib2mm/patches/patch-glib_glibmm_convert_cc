@@ -1,9 +1,9 @@
-$OpenBSD: patch-glib_glibmm_convert_cc,v 1.1 2008/04/09 13:20:44 jasper Exp $
---- glib/glibmm/convert.cc.orig	Mon Apr  7 16:24:19 2008
-+++ glib/glibmm/convert.cc	Mon Apr  7 16:24:37 2008
-@@ -27,6 +27,7 @@
- #include <glib/gconvert.h>
- #include <glib/gmessages.h>
+$OpenBSD: patch-glib_glibmm_convert_cc,v 1.2 2008/10/28 11:27:28 ajacoutot Exp $
+--- glib/glibmm/convert.cc.orig	Wed Jul 16 18:38:24 2008
++++ glib/glibmm/convert.cc	Mon Oct 27 01:32:37 2008
+@@ -31,6 +31,7 @@
+ #include <glib.h> //For g_assert() in all versions of glib.
+ 
  #include <glib/gunicode.h>
 +#include <glib/gtestutils.h>
  #include <glibmm/utility.h>
