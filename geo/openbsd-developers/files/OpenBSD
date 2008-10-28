@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.30 2008/10/27 10:09:54 pea Exp $
+# $OpenBSD: OpenBSD,v 1.31 2008/10/28 00:22:03 pirofti Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -27,6 +27,7 @@
 40.721300	-73.858770	"ray"		# Ray Lai
 40.81588	-73.96056	"okan"		# Okan Demirmen
 42.2342		-88.3737	"jcs"		# Joshua Stein
+42.26		26.06		"pirofti"	# Paul Irofti
 42.2731		-83.782		"aaron"		# Aaron Campbell
 42.49538	-82.89954	"nick"		# Nick Holland
 43.064216	-89.406185	"wcmaier"	# Will Maier
