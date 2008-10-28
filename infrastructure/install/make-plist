@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.115 2008/10/28 12:32:39 espie Exp $
+# $OpenBSD: make-plist,v 1.116 2008/10/28 13:01:05 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -695,12 +695,14 @@ sub handle_file
 {
 	my ($file, $haystack, $allplists, $shared_only) = @_;
 
-	my $foundit = 0;
+	my $foundit;
+	my $default = $allplists->[0];
 	if (defined $haystack->{$file->path}) {
 	    for my $item (@{$haystack->{$file->path}}) {
 		my $p = $item->{plist}->{replacement};
 		if ($file->type eq 'directory' && 
 		    $p->{mtree}->{$file->path}) {
+		    	print "This should not happen !!!\n";
 			next;
 		}
 		my $short = short_name($file, $p);
@@ -709,7 +711,7 @@ sub handle_file
 		    next;
 		}
 		$item->{accounted_for} = 1;
-		$foundit = 1;
+		$foundit = $item;
 		if ($o->can("compute_modes")) {
 			handle_modes($p, $item, $o);
 		}
@@ -720,9 +722,30 @@ sub handle_file
 		$item->clone_tags($p);
 	    }
 	}
-	if ($foundit) {
+	if (defined $foundit) {
 		return;
 	}
+
+	# Try to find a directory that `works'
+	my $dir = $file->path;
+	while (($dir = dirname($dir)) ne '/') {
+		if (defined $haystack->{$dir} && @{$haystack->{$dir}} eq 1) {
+			my $p = $haystack->{$dir}[0]->{plist}->{replacement};
+			my $short = short_name($file, $p);
+			my $o = create_object($file->type, $short, undef);
+			if (!defined $o) {
+			    next;
+		    	}
+			if ($o->can("compute_modes")) {
+				handle_modes($p, undef, $o);
+			}
+			$o->add_object($p);
+			$p->{nonempty} = 1;
+			return;
+		}
+	}
+
+
 	my $short;
 	my $p;
 
@@ -741,7 +764,7 @@ sub handle_file
 		$short = short_name($file, $try);
 		if (defined $short) {
 			$p = $try;
-			if ($p ne $allplists->[0]) {
+			if ($p ne $default) {
 				print "Element ", $file->path, 
 				    " going to ", $p->{filename}, 
 				    " based on prefix\n";
