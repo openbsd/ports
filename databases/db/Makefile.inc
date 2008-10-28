@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.23 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2008/10/28 11:53:33 steven Exp $
 
 COMMENT-main=	Berkeley DB package, revision ${REVISION}
 COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REVISION}
 
 DISTNAME=	db-${VERSION}
-PKGNAME-tcl=	db-tcl-${VERSION}p3
+PKGNAME-tcl=	db-tcl-${VERSION}p4
 CATEGORIES=	databases
 HOMEPAGE=	http://www.oracle.com/technology/products/berkeley-db/
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
@@ -41,26 +41,26 @@ MULTI_PACKAGES+=	-main
 
 LIB_DEPENDS-main?=
 RUN_DEPENDS-main?=
-WANTLIB-tcl?=
-RUN_DEPENDS-tcl=	:db-${REVISION}.*:databases/db/v${REVISION} \
-			:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION}
 
 .if !${FLAVOR:L:Mno_tcl}
+MULTI_PACKAGES+=-tcl
+MODULES+=	lang/tcl
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-MULTI_PACKAGES+=-tcl
+WANTLIB-tcl?=
+RUN_DEPENDS-tcl=	:db-${REVISION}.*:databases/db/v${REVISION} \
+			${MODTCL_RUN_DEPENDS}
 
-TCL_VERSION=	8.4
-BUILD_DEPENDS+=	:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION}
-CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VERSION}
+BUILD_DEPENDS+=	${MODTCL_BUILD_DEPENDS}
+CFLAGS+=	-I${MODTCL_INCDIR}
 CONFIGURE_ARGS+=--enable-tcl \
-		--with-tcl=${LOCALBASE}/lib/tcl${TCL_VERSION}
+		--with-tcl=${MODTCL_LIBDIR}
 
 # this compiles slightly different code, some tests fail nevertheless
 #CONFIGURE_ARGS+=--enable-test
 
 do-regress:
-	@cd ${WRKBUILD}; env PATH=${PORTPATH} tclsh${TCL_VERSION} ${FILESDIR}/regress.tcl
+	@cd ${WRKBUILD}; env PATH=${PORTPATH} ${MODTCL_BIN} ${FILESDIR}/regress.tcl
 
 .else
 CONFIGURE_ARGS+=--disable-tcl

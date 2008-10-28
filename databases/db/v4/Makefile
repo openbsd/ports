@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2008/06/24 02:46:21 kurt Exp $
+# $OpenBSD: Makefile,v 1.34 2008/10/28 11:53:33 steven Exp $
 
 COMMENT-java=	Java bindings for Berkeley DB, revision ${REVISION}
 
@@ -11,7 +11,7 @@ DBLIBDIR=	lib/db4
 SHARED_LIBS +=	db                   5.0      # .0.0
 SHARED_LIBS +=	db_cxx               6.0      # .0.0
 SHARED_LIBS +=	db_java              5.0      # .0.0
-SHARED_LIBS +=	db_tcl               5.0      # .0.0
+SHARED_LIBS +=	db_tcl               6.0      # .0.0
 
 MASTER_SITES0=	${HOMEPAGE}db/update/${VERSION}/
 
@@ -39,9 +39,11 @@ CONFIGURE_ENV+=	JAVAC=${JAVA_HOME}/bin/javac \
 MAKE_FLAGS+=	DBJVERSION=${LIBdb_java_VERSION}
 .endif
 
+SUBST_VARS=	LIBdb_tcl_VERSION
+
 pre-configure:
-	@perl -pi -e "s,db_(archive|checkpoint|deadlock|dump|hotbackup),db4_\1,g" ${WRKSRC}/test/*tcl
-	@perl -pi -e "s,db_(load|printlog|recover|stat|upgrade|verify),db4_\1,g" ${WRKSRC}/test/*tcl
-	@perl -pi -e "s,!!DBVERSION!!,${LIBdb_VERSION}," ${WRKSRC}/test/include.tcl
+	@perl -pi -e "s,db_(archive|checkpoint|deadlock|dump|hotbackup),db5_\0,g" ${WRKSRC}/test/*tcl
+	@perl -pi -e "s,db_(load|printlog|recover|stat|upgrade|verify),db5_\0,g" ${WRKSRC}/test/*tcl
+	@${SUBST_CMD} ${WRKSRC}/test/include.tcl
 
 .include <bsd.port.mk>

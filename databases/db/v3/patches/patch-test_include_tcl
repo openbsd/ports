@@ -1,10 +1,10 @@
-$OpenBSD: patch-test_include_tcl,v 1.1.1.1 2003/12/08 17:37:55 sturm Exp $
+$OpenBSD: patch-test_include_tcl,v 1.2 2008/10/28 11:53:33 steven Exp $
 --- test/include.tcl.orig	Mon Jul 31 19:58:22 2000
 +++ test/include.tcl	Thu Aug 30 21:02:41 2001
 @@ -1,5 +1,5 @@
  set tclsh_path @TCL_TCLSH@
 -set tcllib .libs/libdb_tcl-@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@.@SOSUFFIX@
-+set tcllib .libs/libdb_tcl.@SOSUFFIX@.@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@
++set tcllib .libs/libdb_tcl.@SOSUFFIX@.${LIBdb_tcl_VERSION}
  set rpc_server localhost
  set test_path @srcdir@/../test
  
