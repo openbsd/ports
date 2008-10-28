@@ -1,9 +1,11 @@
 Aspell is an Open Source spell checker designed to eventually replace
-Ispell.  Its main feature is that it does a much better job of
-coming up with possible suggestions than Ispell does. In fact recent
-tests shows that it even does better than Microsoft Word 97's spell
-checker or just about any other spell checker I have seen. It also
-has support for checking (La)TeX and Html files, and run time support
-for other non English languages. Aspell also is a library however
-the recommend way to use aspell is through the Pspell library as
-the actual interface to the aspell library is constantly changing.
+Ispell.  Its main feature is that it does a much better job of coming up
+with possible suggestions than Ispell does. In fact recent tests shows
+that it even does better than Microsoft Word 97's spell checker or just
+about any other spell checker I have seen. It also has support for
+checking (La)TeX and Html files, and run time support for other non
+English languages. Aspell also is a library however the recommend way to
+use aspell is through the Pspell library as the actual interface to the
+aspell library is constantly changing.
+
+This package also contains the English dictionary.

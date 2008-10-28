@@ -1,0 +1,15 @@
+$OpenBSD: patch-gen_mk-static-filter_pl,v 1.1 2008/10/28 16:51:17 jasper Exp $
+
+http://sourceforge.net/tracker/index.php?func=detail&aid=2016300&group_id=245&atid=100245
+
+--- gen/mk-static-filter.pl.orig	Mon Oct 27 12:09:09 2008
++++ gen/mk-static-filter.pl	Mon Oct 27 12:09:31 2008
+@@ -159,7 +159,7 @@ while ($filter = shift @filterhashes) {
+   printf STATICFILTERS "\n  const KeyInfo * ".${$filter}{"NAME"}."_options_begin = ".
+                                               ${$filter}{"NAME"}."_options;\n";
+   # If structure is empty, set options_end to same as options_begin.
+-  if (%{$filter}) {
++  if ($firstopt) {
+     printf STATICFILTERS "\n  const KeyInfo * ".${$filter}{"NAME"}."_options_end = ".
+                                                 ${$filter}{"NAME"}."_options;\n";
+   } else {

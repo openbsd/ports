@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2004/04/08 05:16:41 jolan Exp $
---- Makefile.in.orig	2004-02-10 19:05:49.000000000 -0600
-+++ Makefile.in	2004-04-07 22:21:02.000000000 -0500
-@@ -171,7 +171,7 @@ sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
- AUTOMAKE_OPTIONS = foreign
--SUBDIRS = auto common modules lib examples prog data scripts interfaces manual
-+SUBDIRS = auto common modules lib prog data scripts interfaces manual
- EXTRA_DIST = README suncc/* win32/*
- all: all-recursive
+$OpenBSD: patch-Makefile_in,v 1.3 2008/10/28 16:51:17 jasper Exp $
+--- Makefile.in.orig	Mon Oct 27 00:30:33 2008
++++ Makefile.in	Mon Oct 27 00:30:54 2008
+@@ -481,7 +481,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign subdir-objects
+ SUBDIRS = . po manual
+-DIST_SUBDIRS = ${SUBDIRS} examples myspell lib5
++DIST_SUBDIRS = ${SUBDIRS} myspell lib5
+ filterdir = ${pkglibdir}
+ optdir = ${pkgdatadir}
  

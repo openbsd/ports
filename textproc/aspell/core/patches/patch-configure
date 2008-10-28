@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure,v 1.1 2008/10/28 16:51:17 jasper Exp $
+
+--- configure.orig	Mon Oct 27 11:55:37 2008
++++ configure	Mon Oct 27 11:55:39 2008
+@@ -2645,7 +2645,7 @@ fi
+ 
+ if test "$pkgdatadir" = "undef"
+ then
+-  pkgdatadir=\${libdir}/aspell-0.60
++  pkgdatadir=\${libdir}/aspell
+ fi
+ 
+ 
+@@ -2666,7 +2666,7 @@ fi
+ 
+ if test "$pkglibdir" = "undef"
+ then
+-  pkglibdir=\${libdir}/aspell-0.60
++  pkglibdir=\${libdir}/aspell
+ fi
+ 
+ 
