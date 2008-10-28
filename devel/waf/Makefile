@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/23 19:55:02 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/28 09:28:24 ajacoutot Exp $
 
 COMMENT=	Python-based build system
 
@@ -19,7 +19,7 @@ MODULES=	lang/python
 
 NO_REGRESS=	Yes
 
-SUBST_VARS=	MODPY_BIN MODPY_SITEPKG
+SUBST_VARS=	MODPY_SITEPKG
 
 # waf needs bz2 subpackage
 RUN_DEPENDS =	::lang/python/${MODPY_VERSION},-bz2

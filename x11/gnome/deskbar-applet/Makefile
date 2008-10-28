@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/02 17:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/28 09:28:24 ajacoutot Exp $
 
 COMMENT=		universal search and navigation for GNOME
 
@@ -48,8 +48,6 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/deskbar
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			PYTHON="${MODPY_BIN}"
-
-SUBST_VARS=		MODPY_BIN
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/deskbar/deskbar-applet.py

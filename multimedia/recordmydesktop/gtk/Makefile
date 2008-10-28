@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/14 07:36:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/28 09:28:24 ajacoutot Exp $
 
 COMMENT=		GTK frontend to recorMyDesktop
 
@@ -21,8 +21,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib" \
 			PYTHON="${MODPY_BIN}"
-
-SUBST_VARS=		MODPY_BIN
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/gtk-recordMyDesktop.in

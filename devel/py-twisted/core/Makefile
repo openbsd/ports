@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/06/12 06:46:40 eric Exp $
+# $OpenBSD: Makefile,v 1.11 2008/10/28 09:28:24 ajacoutot Exp $
 
 COMMENT=	event-based Python framework (core module)
 
@@ -13,8 +13,6 @@ MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Core/${VERSION:R}/
 RUN_DEPENDS=	:py-zopeinterface-*:devel/py-zopeinterface \
 		:py-openssl-*:security/py-openssl
 REGRESS_DEPENDS=:python-bz2-*:lang/python/${MODPY_VERSION},-bz2
-
-SUBST_VARS +=	MODPY_BIN
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-twisted-core

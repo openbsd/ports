@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/04/21 19:00:56 okan Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/28 09:28:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,8 +27,6 @@ RUN_DEPENDS+=	::lang/python/${MODPY_VERSION},-bz2 \
 		::textproc/gdiff
 
 REGRESS_DEPENDS=${RUN_DEPENDS}
-
-SUBST_VARS=	MODPY_BIN
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/bzr ${WRKSRC}/bzrlib/tests/test_diff.py

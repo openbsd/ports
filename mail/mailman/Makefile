@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2008/07/09 19:30:23 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.50 2008/10/28 09:28:24 ajacoutot Exp $
 
 COMMENT=	mailing list manager with web interface
 
@@ -61,8 +61,6 @@ SCRIPTS=	Mailman/Archiver/pipermail.py \
 		messages/Makefile.in \
 		templates/ru/s2s.py \
 		tests/onebounce.py
-
-SUBST_VARS=	MODPY_BIN
 
 pre-configure:
 .for SCRIPT in ${SCRIPTS}

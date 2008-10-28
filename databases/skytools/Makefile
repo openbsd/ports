@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/17 10:04:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/28 09:28:24 ajacoutot Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
@@ -40,8 +40,6 @@ BINFILES=	bulk_loader.py cube_dispatcher.py londiste.py \
 		pgqadm.py queue_mover.py queue_splitter.py \
 		scriptmgr.py skytools_upgrade.py table_dispatcher.py \
 		walmgr.py
-
-SUBST_VARS=	MODPY_BIN
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/doc/Makefile

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/09/19 12:48:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/28 09:28:24 ajacoutot Exp $
 
 COMMENT=		collaborative, networked system to detect and block spam
 
@@ -20,8 +20,6 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		lang/python
 
 NO_REGRESS=		Yes
-
-SUBST_VARS=		MODPY_BIN
 
 post-extract:
 	chmod -R og+r ${WRKSRC}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/08 16:53:22 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/28 09:28:24 ajacoutot Exp $
 
 COMMENT =	PostgreSQL module for Python
 
@@ -25,8 +25,6 @@ RUN_DEPENDS =	:postgresql-client-*:databases/postgresql,-main
 MASTER_SITES =	ftp://ftp.pygresql.org/pub/distrib/
 EXTRACT_SUFX =	.tgz
 NO_REGRESS =	Yes
-
-SUBST_VARS =	MODPY_BIN
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/tutorial/advanced.py ${WRKSRC}/tutorial/basics.py
