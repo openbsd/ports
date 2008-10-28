@@ -1,0 +1,19 @@
+$OpenBSD: patch-contrib_lips4_gdevlprn_h,v 1.1 2008/10/28 17:53:42 kili Exp $
+--- contrib/lips4/gdevlprn.h.orig	Fri Jul 27 06:27:36 2007
++++ contrib/lips4/gdevlprn.h	Tue Oct 28 16:29:41 2008
+@@ -86,6 +86,7 @@
+ 	0/*false*/, -1,	/* Duplex[_set] */\
+ 	0/*false*/, 0, 0, 0, /* file_is_new ... buf */\
+ 	0, 0, 0, 0, 0/*false*/, 0, 0, /* buffer_memory ... clist_dis'_mask */\
++	0,              /* num_render_threads_requested */\
+ 	{ 0 },	/* ... orig_procs */\
+        image_out,\
+        0/*false*/,    /* initialized */\
+@@ -129,6 +130,7 @@
+ 	0/*false*/, 0,	/* Duplex[_set] */\
+ 	0/*false*/, 0, 0, 0, /* file_is_new ... buf */\
+ 	0, 0, 0, 0, 0/*false*/, 0, 0, /* buffer_memory ... clist_dis'_mask */\
++	0,              /* num_render_threads_requested */\
+ 	{ 0 },	/* ... orig_procs */\
+        image_out,\
+        0/*false*/,    /* initialized */\

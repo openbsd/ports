@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.gtk,v 1.6 2008/04/01 20:37:01 kili Exp $
-bin/gsc
-bin/gsx
+@comment $OpenBSD: PFRAG.gtk,v 1.7 2008/10/28 17:53:42 kili Exp $
+@bin bin/gsc
+@bin bin/gsx
 include/ghostscript/
 include/ghostscript/gdevdsp.h
 include/ghostscript/iapi.h

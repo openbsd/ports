@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2008/07/12 19:11:56 kili Exp $
+# $OpenBSD: Makefile,v 1.58 2008/10/28 17:53:42 kili Exp $
 
 COMMENT=	GNU PostScript interpreter
 
-VERSION=	8.62
+VERSION=	8.63
 DISTNAME=	ghostscript-${VERSION}
-PKGNAME=	${DISTNAME}p2
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	11.0
 
@@ -28,7 +27,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	m c z
+WANTLIB=	m c pthread z
 
 MODULES=	converters/libiconv
 
@@ -69,7 +68,8 @@ MAKE_FLAGS=	BINDIR=./obj				\
 		SHARE_ZLIB=1				\
 		SOBINRELDIR=../obj			\
 		SOOBJRELDIR=../obj			\
-		STDLIBS='-lm -liconv'			\
+		STDLIBS='-pthread -lm -liconv'		\
+		SYNC=posync				\
 		TRUE_PREFIX='${LOCALBASE}'		\
 		XLDFLAGS=-L${LOCALBASE}/lib		\
 		prefix='${PREFIX}'
@@ -97,12 +97,12 @@ MODULES+=	devel/gettext
 WANTLIB+=	Xcomposite Xcursor Xdamage Xau Xdmcp Xfixes Xi Xinerama \
 		Xrandr Xrender atk-1.0 cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0
+		pangocairo-1.0 pangoft2-1.0 pixman-1
 MAKE_FLAGS+=	SOC_CFLAGS="$$(pkg-config gtk+-2.0 --cflags)"
 # This one is used in the addition of SOC_LIBS to MAKE_FLAGS later.
 # We need this stunt to get gsc and gsx linked correctly when the cups
 # flavor is enabled.
-SOC_LIBS=	$$(pkg-config gtk+-2.0 --libs)
+SOC_LIBS=	$$(pkg-config gtk+-2.0 --libs) -pthread
 ALL_TARGET=	so
 INSTALL_TARGET=	install install-so
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
@@ -121,7 +121,7 @@ CUPSLIBS=	$$(cups-config --image --libs)
 EXTRALIBS+=	${CUPSLIBS}
 SOC_LIBS+=	${CUPSLIBS}
 DEVICES+=	${CUPS_DEVICES}
-WANTLIB+=	crypto pthread ssl tiff
+WANTLIB+=	crypto ssl tiff
 MAKE_FLAGS+=	CUPSCFLAGS="$$(cups-config --cflags)" \
 		CUPSSERVERBIN="$$(cups-config --serverbin)" \
 		CUPSSERVERROOT="$$(cups-config --serverroot)" \

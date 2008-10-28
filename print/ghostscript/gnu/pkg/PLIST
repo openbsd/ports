@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2008/04/06 15:48:13 kili Exp $
+@comment $OpenBSD: PLIST,v 1.14 2008/10/28 17:53:42 kili Exp $
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 bin/bdftops
 bin/dumphint
@@ -6,7 +6,7 @@ bin/dvipdf
 bin/eps2eps
 bin/fixmswrd.pl
 bin/font2c
-bin/gs
+@bin bin/gs
 bin/gsbj
 bin/gsdj
 bin/gsdj500
@@ -409,7 +409,6 @@ share/ghostscript/${VERSION}/doc/README
 share/ghostscript/${VERSION}/doc/Readme.htm
 share/ghostscript/${VERSION}/doc/Release.htm
 share/ghostscript/${VERSION}/doc/Source.htm
-share/ghostscript/${VERSION}/doc/Testing.htm
 share/ghostscript/${VERSION}/doc/Unix-lpr.htm
 share/ghostscript/${VERSION}/doc/Use.htm
 share/ghostscript/${VERSION}/doc/Xfonts.htm

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gximage1_c,v 1.1 2008/10/28 17:53:42 kili Exp $
+--- src/gximage1.c.orig	Tue Jun 24 16:16:29 2008
++++ src/gximage1.c	Tue Oct 28 16:30:59 2008
+@@ -18,6 +18,7 @@
+ #include "gxiparam.h"
+ #include "gximage.h"
+ #include "stream.h"
++#include <string.h>
+ 
+ /* Structure descriptor */
+ public_st_gs_image1();
