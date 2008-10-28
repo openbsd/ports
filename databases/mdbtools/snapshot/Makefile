@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2008/06/02 14:34:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2008/10/28 13:34:49 jasper Exp $
 
 COMMENT-main=	read microsoft Access MDB
 COMMENT-gmdb=	graphical interface to MDB tools
 DATE=		20070603
 DISTNAME=	mdbtools-${DATE}
-PKGNAME-main=	mdbtools-${DATE}p0
-PKGNAME-gmdb=	gmdb-${DATE}p1
+PKGNAME-main=	mdbtools-${DATE}p1
+PKGNAME-gmdb=	gmdb-${DATE}p2
 HOMEPAGE=	http://mdbtools.sourceforge.net/
 
 CATEGORIES=	databases converters

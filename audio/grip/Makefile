@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2008/06/15 00:04:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2008/10/28 13:33:16 jasper Exp $
 
 COMMENT=	front-end to external cd audio rippers and mp3 encoders
 
 DISTNAME=	grip-3.2.0
-PKGNAME=	${DISTNAME}p10
+PKGNAME=	${DISTNAME}p11
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.nostatic.org/grip/

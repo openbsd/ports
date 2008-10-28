@@ -9,7 +9,7 @@ in various settings.
               get results.
 
 In a separate package:
-. gmdb2     - The Gnome MDB File Viewer and debugger.  Still alpha, but making
+. gmdb2     - The GNOME MDB File Viewer and debugger.  Still alpha, but making
               great progress.
 
 Not featured in this port:
