@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.114 2008/10/28 12:28:50 espie Exp $
+# $OpenBSD: make-plist,v 1.115 2008/10/28 12:32:39 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -723,17 +723,8 @@ sub handle_file
 	if ($foundit) {
 		return;
 	}
-	my $default = $allplists->[0];
-	my $k;
-	
-	if ($file->type eq 'library') {
-		$k = $subst->reverse_with_lib($file->path);
-	} else {
-		$k = $subst->reverse($file->path);
-	}
 	my $short;
 	my $p;
-	my $item;
 
 	my $possible = possible_subpackages($file->path);
 	if (@$possible == 0) {
@@ -747,10 +738,10 @@ sub handle_file
 		    $try->{mtree}->{$file->path}) {
 			next;
 		}
-		my $short = short_name($file, $try);
+		$short = short_name($file, $try);
 		if (defined $short) {
 			$p = $try;
-			if ($p ne $default) {
+			if ($p ne $allplists->[0]) {
 				print "Element ", $file->path, 
 				    " going to ", $p->{filename}, 
 				    " based on prefix\n";
