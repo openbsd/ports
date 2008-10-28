@@ -1,4 +1,4 @@
-gnome input module for uim, the universal input method.
+GNOME input module for uim, the universal input method.
 
 In order to use it, you have to put something like
 
@@ -7,7 +7,7 @@ export GTK_IM_MODULE="uim"
 
 in your .xinitrc.
 
-Under gtk+,
+Under GTK+,
 uim-pref-gtk can be used to set up basic preferences.
 uim-toolbar-gtk should be run along the application in
 order to be able to enter japanese text.

@@ -1,10 +1,7 @@
 Universal input method.
 
 Contains the basic library and utilities like uim-xim (wedge for XIM), 
-refer to packages uim-gtk and uim-qt to make use of it under gtk+/qt.
+refer to packages uim-gtk and uim-qt to make use of it under GTK+/QT.
 
 Note that one of these packages is generally required in most 
 circumstances.
-
-
-

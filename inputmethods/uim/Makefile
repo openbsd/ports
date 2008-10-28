@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2008/10/14 02:16:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2008/10/28 13:59:13 jasper Exp $
 
 COMMENT-main=	multilingual input method library
-COMMENT-gtk=	uim for gtk
-COMMENT-qt=	uim for qt
-COMMENT-kde=	uim for kde
-COMMENT-gnome=	uim for gnome
+COMMENT-gtk=	uim for GTK
+COMMENT-qt=	uim for QT
+COMMENT-kde=	uim for KDE
+COMMENT-gnome=	uim for GNOME
 
 SHARED_ONLY=	Yes
 CATEGORIES=	inputmethods japanese chinese
@@ -13,11 +13,11 @@ V=		1.5.3
 DISTNAME=	uim-$V
 MASTER_SITES=	http://uim.googlecode.com/files/
 HOMEPAGE=	http://code.google.com/p/uim/
-PKGNAME-main=	uim-$V
-PKGNAME-gtk=	uim-gtk-$V
-PKGNAME-qt=	uim-qt-$V
-PKGNAME-kde=	uim-kde-$V
-PKGNAME-gnome=	uim-gnome-$V
+PKGNAME-main=	uim-$Vp0
+PKGNAME-gtk=	uim-gtk-$Vp0
+PKGNAME-qt=	uim-qt-$Vp0
+PKGNAME-kde=	uim-kde-$Vp0
+PKGNAME-gnome=	uim-gnome-$Vp0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

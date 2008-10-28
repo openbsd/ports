@@ -1,4 +1,4 @@
-OggConvert is a small Gnome utility which uses GStreamer to convert
+OggConvert is a small GNOME utility which uses GStreamer to convert
 (almost) any media file to the patent-free Ogg Vorbis, Theora and Dirac
 formats.
 
