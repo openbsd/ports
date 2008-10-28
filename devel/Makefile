@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.644 2008/10/28 14:33:59 steven Exp $
+# $OpenBSD: Makefile,v 1.645 2008/10/28 18:38:28 pirofti Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -715,6 +715,7 @@
      SUBDIR += ruby-rubyforge
      SUBDIR += ruby-rubyinline
      SUBDIR += ruby-sexp
+     SUBDIR += ruby-sexp_processor
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-tzinfo
      SUBDIR += ruby-uuidtools
