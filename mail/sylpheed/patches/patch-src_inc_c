@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_inc_c,v 1.6 2007/11/06 21:18:10 rui Exp $
---- src/inc.c.orig	Thu Aug 23 02:06:04 2007
-+++ src/inc.c	Fri Nov  2 15:06:59 2007
-@@ -67,7 +67,9 @@ static GdkPixbuf *current_pixbuf;
+$OpenBSD: patch-src_inc_c,v 1.7 2008/10/28 17:03:15 landry Exp $
+--- src/inc.c.orig	Thu Sep 20 04:27:39 2007
++++ src/inc.c	Tue Oct 28 16:54:06 2008
+@@ -69,7 +69,9 @@ static GdkPixbuf *current_pixbuf;
  static GdkPixbuf *error_pixbuf;
  static GdkPixbuf *ok_pixbuf;
  

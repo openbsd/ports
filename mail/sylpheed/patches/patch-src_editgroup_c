@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_editgroup_c,v 1.1 2008/10/28 17:03:15 landry Exp $
+--- src/editgroup.c.orig	Tue Oct 28 17:32:33 2008
++++ src/editgroup.c	Tue Oct 28 17:32:49 2008
+@@ -26,6 +26,7 @@
+ #include <glib.h>
+ #include <glib/gi18n.h>
+ #include <gdk/gdkkeysyms.h>
++#include <gtk/gtk.h>
+ #include <gtk/gtkwindow.h>
+ #include <gtk/gtkclist.h>
+ #include <gtk/gtkvbox.h>

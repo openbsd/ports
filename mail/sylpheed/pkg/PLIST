@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.29 2007/11/06 21:18:10 rui Exp $
-bin/sylpheed
+@comment $OpenBSD: PLIST,v 1.30 2008/10/28 17:03:15 landry Exp $
+@bin bin/sylpheed
+share/applications/sylpheed.desktop
 share/locale/be/LC_MESSAGES/sylpheed.mo
 share/locale/bg/LC_MESSAGES/sylpheed.mo
 share/locale/cs/LC_MESSAGES/sylpheed.mo
@@ -32,6 +33,8 @@ share/locale/uk/LC_MESSAGES/sylpheed.mo
 share/locale/vi/LC_MESSAGES/sylpheed.mo
 share/locale/zh_CN/LC_MESSAGES/sylpheed.mo
 share/locale/zh_TW/LC_MESSAGES/sylpheed.mo
+share/pixmaps/
+share/pixmaps/sylpheed.png
 share/sylpheed/
 share/sylpheed/faq/
 share/sylpheed/faq/de/
@@ -109,3 +112,5 @@ share/sylpheed/manual/ja/sylpheed-8.html
 share/sylpheed/manual/ja/sylpheed-9.html
 share/sylpheed/manual/ja/sylpheed.html
 share/sylpheed/manual/ja/sylpheed.sgml
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

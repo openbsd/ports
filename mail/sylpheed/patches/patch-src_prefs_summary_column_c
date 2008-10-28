@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_prefs_summary_column_c,v 1.1 2008/10/28 17:03:15 landry Exp $
+--- src/prefs_summary_column.c.orig	Tue Oct 28 17:31:14 2008
++++ src/prefs_summary_column.c	Tue Oct 28 17:31:32 2008
+@@ -26,6 +26,7 @@
+ #include <glib.h>
+ #include <glib/gi18n.h>
+ #include <gdk/gdkkeysyms.h>
++#include <gtk/gtk.h>
+ #include <gtk/gtkmain.h>
+ #include <gtk/gtkwindow.h>
+ #include <gtk/gtkvbox.h>

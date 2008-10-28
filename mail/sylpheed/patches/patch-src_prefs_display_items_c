@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_prefs_display_items_c,v 1.1 2008/10/28 17:03:15 landry Exp $
+--- src/prefs_display_items.c.orig	Tue Oct 28 17:30:44 2008
++++ src/prefs_display_items.c	Tue Oct 28 17:30:58 2008
+@@ -25,6 +25,7 @@
+ 
+ #include <glib.h>
+ #include <glib/gi18n.h>
++#include <gtk/gtk.h>
+ #include <gdk/gdkkeysyms.h>
+ #include <gtk/gtkmain.h>
+ #include <gtk/gtkwindow.h>

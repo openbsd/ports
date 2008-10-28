@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_addr_compl_c,v 1.1 2008/10/28 17:03:15 landry Exp $
+--- src/addr_compl.c.orig	Tue Oct 28 17:32:02 2008
++++ src/addr_compl.c	Tue Oct 28 17:32:18 2008
+@@ -26,6 +26,7 @@
+ #include <glib.h>
+ #include <glib/gi18n.h>
+ #include <gdk/gdkkeysyms.h>
++#include <gtk/gtk.h>
+ #include <gtk/gtkmain.h>
+ #include <gtk/gtkwindow.h>
+ #include <gtk/gtkentry.h>
