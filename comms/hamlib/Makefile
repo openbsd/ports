@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/10/02 20:32:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2008/10/28 12:14:00 steven Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -8,7 +8,7 @@ VERSION=	1.2.6
 DISTNAME=	hamlib-${VERSION}
 PKGNAME-main=	hamlib-${VERSION}p2
 PKGNAME-python=	hamlib-python-${VERSION}p2
-PKGNAME-tcl=	hamlib-tcl-${VERSION}p1
+PKGNAME-tcl=	hamlib-tcl-${VERSION}p2
 CATEGORIES=    	comms hamradio
 
 MULTI_PACKAGES=	-main -python -tcl
@@ -20,7 +20,7 @@ HOMEPAGE=	http://hamlib.sourceforge.net/
 
 MAINTAINER=	Jason Wright <jason@openbsd.org>
 
-MODULES=	lang/python
+MODULES=	lang/python lang/tcl
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -37,7 +37,7 @@ LIB_DEPENDS-main=	xml2::textproc/libxml \
 LIB_DEPENDS-python=	hamlib::${BUILD_PKGPATH} \
 			${MODPY_LIB_DEPENDS}
 LIB_DEPENDS-tcl=	hamlib::${BUILD_PKGPATH} \
-			tcl84:tcl-8.4.*:lang/tcl/8.4
+			${MODTCL_LIB_DEPENDS}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=hamlib/}
 
@@ -55,6 +55,6 @@ RUN_DEPENDS-tcl=
 
 CONFIGURE_ARGS=--with-cxx-binding --with-perl-binding --with-rpc-backends \
 	--with-tcl-binding --with-python-binding --without-rigmatrix \
-	--with-tcl=${LOCALBASE}/lib/tcl8.4
+	--with-tcl=${MODTCL_LIBDIR}
 
 .include <bsd.port.mk>
