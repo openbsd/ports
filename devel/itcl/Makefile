@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:52:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/28 16:08:32 steven Exp $
 
 COMMENT=	object-oriented extensions to Tcl
 
 VERSION=	3.3
 DISTNAME=	itcl${VERSION}
-PKGNAME=	itcl-${VERSION}p0
+PKGNAME=	itcl-${VERSION}p1
 SHARED_LIBS=	itcl33	0.0
 
 CATEGORIES=	devel lang/tcl
@@ -21,27 +21,28 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=incrtcl/}
 
-RUN_DEPENDS=	:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION}
-BUILD_DEPENDS=	${RUN_DEPENDS}
+MODULES=	lang/tcl
+MODTCL_VERSION=	8.4
 
-TCL_VERSION=	8.4
+RUN_DEPENDS=	${MODTCL_RUN_DEPENDS}
+BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
 
 SUBST_VARS=	VERSION
 
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-tcl=${LOCALBASE}/lib/tcl${TCL_VERSION} \
-		--includedir=${LOCALBASE}/include/itcl${VERSION} \
-		--libdir=${LOCALBASE}/lib/itcl${VERSION}
+		--with-tcl=${MODTCL_LIBDIR} \
+		--includedir=${PREFIX}/include/itcl${VERSION} \
+		--libdir=${PREFIX}/lib/itcl${VERSION}
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/tcl${TCL_VERSION}/generic \
-		-I${LOCALBASE}/include/tcl${TCL_VERSION}/unix" \
+CONFIGURE_ENV=	CPPFLAGS="-I${MODTCL_INCDIR}/generic \
+		-I${MODTCL_INCDIR}/unix" \
 		LIBitcl33_VERSION=${LIBitcl33_VERSION}
 
 do-regress:
 	@cd ${WRKSRC} && ${SETENV} ITCL_LIBRARY=${WRKSRC}/library \
-		${PREFIX}/bin/tclsh${TCL_VERSION} tests/all.tcl -load \
+		${MODTCL_BIN} tests/all.tcl -load \
 		"load ./libitcl33.so.${LIBitcl33_VERSION}"
 
 .include <bsd.port.mk>
