@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.30 2008/10/28 10:01:13 steven Exp $
+# $OpenBSD: libtool,v 1.31 2008/10/28 11:16:27 bernd Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -82,7 +82,7 @@ my %libs;		# libraries
 my %libstofind;
 my @orderedlibs;	# ordered library keys (may contain duplicates)
 my %dirs;		# paths to find libraries
-my %file_parsed;	# which files have been parsed
+my %file_cache;		# which files have been parsed
 my $res_level = 0;	# resolve level
 my $parse_level = 0;	# parse recursion level
 my $performed = 0;	# number of commands executed via system()
@@ -726,17 +726,29 @@ sub parse_file
 	my $filename = shift;
 	my $info = shift;
 
-	print "parsing $filename\n" if $D;
-	open(my $fh, '<', $filename) or die "cannot read $filename: $!\n";
-	while (<$fh>) {
-		next if /^#/;
-		next if /^\s*$/;
-		if (m/^(\S+)='(.*)'$/) {
-			$info->{$1} = $2;
-		} elsif (m/^(\S+)=(\S+)$/) {
-			$info->{$1} = $2;
+	my $key = basename($filename);
+
+	print "parsing $filename" if $D;
+	if (defined $file_cache{$key}) {
+		print " (cached)\n" if $D;
+		%{$info} = %{$file_cache{$key}};
+	} else {
+		print "\n" if $D;
+		open(my $fh, '<', $filename) or die "cannot read $filename: $!\n";
+		while (<$fh>) {
+			chomp;
+			next if /^#/;
+			next if /^\s*$/;
+			if (m/^(\S+)='(.*)'$/) {
+				$info->{$1} = $2;
+			} elsif (m/^(\S+)=(\S+)$/) {
+				$info->{$1} = $2;
+			}
 		}
+		$file_cache{$key} = $info;
 	}
+
+	return 1;
 }
 
 # resolve .la files until a level with empty dependency_libs is reached.
@@ -750,18 +762,12 @@ sub resolve_la
 	foreach my $a (@args) {
 		next if ($a !~ m/(.*)\.la$/);
 		my %lainfo;
-		if (!exists $file_parsed{$a} || !$file_parsed{$a}) {
-			parse_file($a, \%lainfo);
-			$file_parsed{$a} = 1;
-			if (exists $lainfo{'dependency_libs'}) {
-				$res_level++;
-				$a = $a . ' ' . resolve_la($lainfo{'dependency_libs'});
-				$res_level--;
-				push @deplibs, $lainfo{'dependency_libs'};
-			}
-		} else {
-			$a = '';
-			next;
+		parse_file($a, \%lainfo);
+		if (exists $lainfo{'dependency_libs'}) {
+			$res_level++;
+			$a = $a . ' ' . resolve_la($lainfo{'dependency_libs'});
+			$res_level--;
+			push @deplibs, $lainfo{'dependency_libs'};
 		}
 	}
 	return join ' ', @args;
@@ -790,6 +796,7 @@ sub parse_linkargs
 
 	my @args = split /\s+/, $argstring;
 	print "parse_linkargs level: $parse_level\n" if $D;
+	print "  argstring: $argstring\n" if $D;
 
 	my $seen_pthread = 0;
 	foreach my $a (@args) {
@@ -1021,7 +1028,9 @@ sub linkcmds
 
 	my @argvcopy = @ARGV;
 	my $argvstring = join ' ', @argvcopy;
+	print "argvstring (pre resolve_la): $argvstring\n" if $D;
 	$argvstring = resolve_la($argvstring);
+	print "argvstring (post resolve_la): $argvstring\n" if $D;
 	@orderedlibs = ();
 	$argvstring = parse_linkargs($argvstring, 0);
 	@argvcopy = split /\s+/, $argvstring;
