@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.113 2008/10/28 12:07:23 espie Exp $
+# $OpenBSD: make-plist,v 1.114 2008/10/28 12:28:50 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -480,18 +480,6 @@ sub augment_mtree
 	$plist->add_to_mtree($mtree);
 }
 
-# full file name to file name in plist context
-sub strip_base
-{
-	my $_ = shift;
-	my $base = shift->{stripprefix};
-	if (m/^\Q$base\E/) {
-		$_ = $';
-	}
-	$_='/' if $_ eq '';
-	return $_;
-}
-
 my $haystack = {};
 
 # Basic packing-list with a known prefix
@@ -656,6 +644,51 @@ sub handle_modes
 	}
 }
 
+sub short_name
+{
+	my ($file, $plist) = @_;
+
+	my $short = $file->path;
+	my $base = $plist->{stripprefix};
+	if ($short =~ m/^\Q$base\E/) {
+		$short = $';
+		$short = '/' if $short eq '';
+	} else {
+		return undef;
+	}
+
+	if ($file->type eq 'library') {
+		$short = $subst->reverse_with_lib($short);
+	} else {
+		$short = $subst->reverse($short);
+	}
+	# If the resulting name is arch-dependent, we warn.
+	# We don't fix it automatically, as this may need special handling.
+	if ($short =~ m/i386|m68k|sparc/) {
+	    print STDERR "make-plist: generated plist $plist->{filename} contains arch-dependent\n"; 
+	    print STDERR "\t$short\n";
+	}
+	return $short;
+}
+
+sub bad_files
+{
+	my ($short, $plist) = @_;
+
+	if ($short =~ /\.orig$/) {
+		print STDERR "make-plist: generated plist $plist->{filename} may contain patched file\n";
+		print STDERR "\t$short\n";
+	}
+	if ($short =~ /\/\.[^\/]*\.swp$/) {
+		print STDERR "make-plist: generated plist $plist->{filename} may contain vim swap file\n";
+		print STDERR "\t$short\n";
+	}
+	if ($short =~ /\~$/) {
+		print STDERR "make-plist: generated plist $plist->{filename} may contain emacs temp file\n";
+		print STDERR "\t$short\n";
+	}
+}
+
 # find out where a file belongs, and insert all corresponding things
 # into the right packing-list.
 sub handle_file
@@ -670,23 +703,11 @@ sub handle_file
 		    $p->{mtree}->{$file->path}) {
 			next;
 		}
-		my $short = strip_base($file->path, $p);
-		if ($file->type eq 'library') {
-			$short = $subst->reverse_with_lib($short);
-		} else {
-			$short = $subst->reverse($short);
-		}
+		my $short = short_name($file, $p);
 		my $o = create_object($file->type, $short, $item);
 		if (!defined $o) {
 		    next;
 		}
-		# If the resulting name is arch-dependent, we warn.
-		# We don't fix it automatically, as this may need special handling.
-		if ($short =~ m/i386|m68k|sparc/) {
-		    print STDERR "make-plist: generated plist contains arch-dependent\n"; 
-		    print STDERR "\t$short\n";
-		}
-
 		$item->{accounted_for} = 1;
 		$foundit = 1;
 		if ($o->can("compute_modes")) {
@@ -722,14 +743,13 @@ sub handle_file
 	}
 	# look for the first matching prefix in plist to produce an entry
 	for my $try (@$allplists) {
-		my $s2 = strip_base($file->path, $try);
 		if ($file->type eq 'directory' and 
 		    $try->{mtree}->{$file->path}) {
 			next;
 		}
-		unless ($s2 =~ m|^/|) {
+		my $short = short_name($file, $try);
+		if (defined $short) {
 			$p = $try;
-			$short = $s2;
 			if ($p ne $default) {
 				print "Element ", $file->path, 
 				    " going to ", $p->{filename}, 
@@ -742,32 +762,11 @@ sub handle_file
 	if (!defined $p) {
 		return;
 	}
-	if ($file->type eq 'library') {
-		$short = $subst->reverse_with_lib($short);
-	} else {
-		$short = $subst->reverse($short);
-	}
-	# If the resulting name is arch-dependent, we warn.
-	# We don't fix it automatically, as this may need special handling.
-	if ($short =~ m/i386|m68k|sparc/) {
-	    print STDERR "make-plist: generated plist contains arch-dependent\n"; 
-	    print STDERR "\t$short\n";
-	}
 
 	my $o = create_object($file->type, $short, undef);
 	return unless defined $o;
-	if ($short =~ /\.orig$/) {
-		print STDERR "make-plist: generated plist may contain patched file\n";
-		print STDERR "\t$short\n";
-	}
-	if ($short =~ /\/\.[^\/]*\.swp$/) {
-		print STDERR "make-plist: generated plist may contain vim swap file\n";
-		print STDERR "\t$short\n";
-	}
-	if ($short =~ /\~$/) {
-		print STDERR "make-plist: generated plist may contain emacs temp file\n";
-		print STDERR "\t$short\n";
-	}
+
+	bad_files($short, $p);
 	if (($file->type eq 'library' || $file->type eq 'plugin') && !$shared_only) {
 		$p->{wantshared} = 1;
 		$p = $p->{shared};
@@ -776,7 +775,6 @@ sub handle_file
 	$o->add_object($p);
 	$p->{nonempty} = 1;
 }
-
 
 # THIS IS WHERE THE MAIN PROGRAM STARTS
 
