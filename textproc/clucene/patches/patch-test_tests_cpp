@@ -1,15 +1,15 @@
-$OpenBSD: patch-test_tests_cpp,v 1.1.1.1 2006/12/23 14:10:13 espie Exp $
---- test/tests.cpp.orig	Sat Dec 23 14:48:05 2006
-+++ test/tests.cpp	Sat Dec 23 14:48:10 2006
+$OpenBSD: patch-test_tests_cpp,v 1.2 2008/10/28 16:20:57 espie Exp $
+--- test/tests.cpp.orig	Mon Jul 23 13:56:00 2007
++++ test/tests.cpp	Wed Jul 30 15:32:01 2008
 @@ -8,7 +8,6 @@
  
  unittest tests[] = {
-     {"indexwriter", testindexwriter},
+     {"document", testdocument},
 -    {"debug", testdebug},
      {"analysis", testanalysis},
      {"analyzers", testanalyzers},
-     {"highfreq", testhighfreq},
-@@ -23,5 +22,6 @@ unittest tests[] = {
+     {"indexwriter", testindexwriter},
+@@ -24,5 +23,6 @@ unittest tests[] = {
      {"store", teststore},
      {"utf8", testutf8},
      {"reuters", testreuters},
