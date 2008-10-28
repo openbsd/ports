@@ -1,4 +1,4 @@
-# $OpenBSD: FS.pm,v 1.2 2008/10/27 11:12:01 espie Exp $
+# $OpenBSD: FS.pm,v 1.3 2008/10/28 14:32:08 espie Exp $
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -19,8 +19,9 @@ use warnings;
 package FS::File;
 sub new
 {
-	my ($class, $filename, $type) = @_;
-	bless {path =>$filename, type => $type}, $class
+	my ($class, $filename, $type, $owner, $group) = @_;
+	bless {path =>$filename, type => $type, owner => $owner, 
+	    group => $group}, $class
 }
 
 sub type
@@ -33,6 +34,16 @@ sub path
 	shift->{path};
 }
 
+sub owner
+{
+	shift->{owner};
+}
+
+sub group
+{
+	shift->{group};
+}
+
 package FS;
 
 my $destdir;
@@ -40,6 +51,7 @@ use OpenBSD::Mtree;
 use File::Find;
 use File::Spec;
 use File::Basename;
+use OpenBSD::IdCache;
 # existing files are classified according to the following routine
 
 sub get_type
@@ -249,6 +261,8 @@ sub scan_destdir
 	my $archname = $Config{'archname'};
 	my $installprivlib = $Config{'installprivlib'};
 	my $installarchlib = $Config{'installarchlib'};
+	my $uid_lookup = OpenBSD::UnameCache->new;
+	my $gid_lookup = OpenBSD::GnameCache->new;
 
 	find(
 		sub {
@@ -265,8 +279,11 @@ sub scan_destdir
 			}
 			return if $File::Find::name =~ m/pear\/lib\/\.(?:filemap|lock)$/;
 			my $path = undest($File::Find::name);
+			my ($uid, $gid) = (stat $_)[4,5];
 			$path =~ s,^/etc/X11/app-defaults\b,/usr/local/lib/X11/app-defaults,;
-			$files{$path} = FS::File->new($path, $type);
+			$files{$path} = FS::File->new($path, $type, 
+			    $uid_lookup->lookup($uid), 
+			    $gid_lookup->lookup($gid));
 		}, $destdir);
 	zap_dirs(\%files, $destdir.'/etc/X11/app-defaults');
 	return \%files;

@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.117 2008/10/28 13:29:01 espie Exp $
+# $OpenBSD: make-plist,v 1.118 2008/10/28 14:32:08 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -283,7 +283,7 @@ sub clone_tags
 			my $n = $t->clone;
 			if ($n->isa("OpenBSD::PackingElement::Sample") || 
 			    $n->isa("OpenBSD::PackingElement::SampleDir")) {
-				main::handle_modes($plist, $n, $t);
+				main::handle_modes($plist, $n, $t, undef, undef);
 			}
 			$n->add_object($plist);
 			$plist->{nonempty} = 1;
@@ -395,15 +395,28 @@ sub stringize
 	return '!%%'.shift->{name}.'%%';
 }
 
+package OpenBSD::PackingElement::Owner;
+sub register2
+{
+	my ($self, $plist, $haystack) = @_;
+
+	$self->SUPER::register2($plist, $haystack);
+	push(@{$haystack->{$main::subst->do($self->{name})}}, $self);
+}
+
+package OpenBSD::PackingElement::Group;
+sub register2
+{
+	&OpenBSD::PackingElement::Owner::register2;
+}
+
 package OpenBSD::PackingElement::FileObject;
 sub register2
 {
 	my ($self, $plist, $haystack) = @_;
 
 	$self->SUPER::register2($plist, $haystack);
-	my $fullname = $self->fullname;
-	my $n = $main::subst->do($fullname);
-	push(@{$haystack->{$n}}, $self);
+	push(@{$haystack->{$main::subst->do($self->fullname)}}, $self);
 }
 
 package OpenBSD::PackingElement::FileBase;
@@ -658,10 +671,11 @@ sub create_object
 # for now, we copy over stuff from old items.
 sub handle_modes
 {
-	my ($plist, $item, $o) = @_;
+	my ($plist, $item, $o, $file, $haystack) = @_;
 	my ($mode, $owner, $group) = ('', '', '');
 	my ($oldmode, $oldowner, $oldgroup) = ($plist->{state}->{mode}, $plist->{state}->{owner}, $plist->{state}->{group});
 	$oldmode = '' unless defined $oldmode;
+
 	$oldowner = '' unless defined $oldowner;
 	$oldgroup = '' unless defined $oldgroup;
 
@@ -681,6 +695,42 @@ sub handle_modes
 		if (defined $item->{group}) {
 			$group = $item->{group};
 		}
+	}
+	if (defined $file) {
+	    if (defined $haystack->{$file->owner}) {
+		for my $o (@{$haystack->{$file->owner}}) {
+		    if ($o->isa("OpenBSD::PackingElement::Owner")) {
+			if ($owner ne '') {
+			    if ($main::subst->do($owner) eq $file->owner) {
+				last;
+			    } else {
+				print "File owner does not match for ", 
+				    $file->path, " ($owner vs. ", 
+				    $file->owner, ")\n";
+			    }
+			} else {
+			    $owner = $o->{name};
+			}
+		    }
+		}
+	    }
+	    if (defined $haystack->{$file->group}) {
+		for my $g (@{$haystack->{$file->group}}) {
+		    if ($g->isa("OpenBSD::PackingElement::Group")) {
+			if ($group ne '') {
+			    if ($main::subst->do($group) eq $file->group) {
+				last;
+			    } else {
+				print "File group does not match for ", 
+				    $file->path, " ($group vs. ", 
+				    $file->group, ")\n";
+			    }
+			} else {
+			    $group = $g->{name};
+			}
+		    }
+		}
+	    }
 	}
 	if ($mode ne $oldmode) {
 		OpenBSD::PackingElement::Mode->add($plist, $mode);
@@ -714,7 +764,7 @@ sub short_name
 	# If the resulting name is arch-dependent, we warn.
 	# We don't fix it automatically, as this may need special handling.
 	if ($short =~ m/i386|m68k|sparc/) {
-	    print STDERR "make-plist: generated plist $plist->{filename} contains arch-dependent\n"; 
+	    print STDERR "make-plist: $plist->{filename} contains arch-dependent\n"; 
 	    print STDERR "\t$short\n";
 	}
 	return $short;
@@ -725,15 +775,15 @@ sub bad_files
 	my ($short, $plist) = @_;
 
 	if ($short =~ /\.orig$/) {
-		print STDERR "make-plist: generated plist $plist->{filename} may contain patched file\n";
+		print STDERR "make-plist: $plist->{filename} may contain patched file\n";
 		print STDERR "\t$short\n";
 	}
 	if ($short =~ /\/\.[^\/]*\.swp$/) {
-		print STDERR "make-plist: generated plist $plist->{filename} may contain vim swap file\n";
+		print STDERR "make-plist: $plist->{filename} may contain vim swap file\n";
 		print STDERR "\t$short\n";
 	}
 	if ($short =~ /\~$/) {
-		print STDERR "make-plist: generated plist $plist->{filename} may contain emacs temp file\n";
+		print STDERR "make-plist: $plist->{filename} may contain emacs temp file\n";
 		print STDERR "\t$short\n";
 	}
 }
@@ -748,6 +798,7 @@ sub handle_file
 	my $default = $allplists->[0];
 	if (defined $haystack->{$file->path}) {
 	    for my $item (@{$haystack->{$file->path}}) {
+	    	next if $item->isa("OpenBSD::PackingElement::State");
 		my $p = $item->{plist}->{replacement};
 		if ($file->type eq 'directory' && 
 		    $p->{mtree}->{$file->path}) {
@@ -761,7 +812,7 @@ sub handle_file
 		}
 		$foundit = $item;
 		if ($o->can("compute_modes")) {
-			handle_modes($p, $item, $o);
+			handle_modes($p, $item, $o, $file, $haystack);
 		}
 		$o->add_object($p);
 		$item->{accounted_for} = $o;
@@ -785,8 +836,15 @@ sub handle_file
 			if (!defined $o) {
 			    next;
 		    	}
+			bad_files($short, $p);
+			if (($file->type eq 'library' || $file->type eq 'plugin') && !$shared_only) {
+				if (defined $p->{shared}) {
+				    $p->{wantshared} = 1;
+				    $p = $p->{shared};
+			    	}
+			}
 			if ($o->can("compute_modes")) {
-				handle_modes($p, undef, $o);
+				handle_modes($p, undef, $o, $file, $haystack);
 			}
 			$o->add_object($p);
 			$p->{nonempty} = 1;
@@ -834,7 +892,7 @@ sub handle_file
 		$p->{wantshared} = 1;
 		$p = $p->{shared};
 	}
-	handle_modes($p, undef, $o);
+	handle_modes($p, undef, $o, $file, $haystack);
 	$o->add_object($p);
 	$p->{nonempty} = 1;
 }
