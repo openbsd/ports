@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.29 2008/10/28 10:00:22 steven Exp $
+# $OpenBSD: libtool,v 1.30 2008/10/28 10:01:13 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -339,6 +339,9 @@ if ($mode eq 'compile') {
 	# 	shrext, thread-safe, prefer-pic, prefer-non-pic
 
 	@libsearchdirs = get_search_dirs();
+	# add the .libs dir as well in case people try to link directly
+	# with the real library instead of the .la library
+	push @libsearchdirs, './.libs';
 
 	my $outfile = $opts{'o'};
 	if (!$outfile) {
