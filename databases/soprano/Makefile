@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/08 23:21:18 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/28 16:44:58 espie Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	rdf framework
@@ -10,7 +10,7 @@ SHARED_LIBS += sopranoindex        0.0 # .1.0
 SHARED_LIBS += sopranoserver       0.0 # .1.0
 
 HOMEPAGE =	http://soprano.sourceforge.net/
-DISTNAME =	soprano-2.0.0
+DISTNAME =	soprano-2.1.1
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=soprano/}
 
@@ -29,7 +29,7 @@ LIB_DEPENDS += clucene::textproc/clucene
 post-extract:
 	cd ${WRKDIST}/cmake/modules && rm FindQt4.cmake MacroPushRequiredVars.cmake
 WANTLIB += QtCore QtDBus QtNetwork
-WANTLIB += c m pthread stdc++ z iconv
+WANTLIB += c m pthread stdc++ z
 WANTLIB += glib-2.0 gthread-2.0
 
 

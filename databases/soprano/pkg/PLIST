@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/08 23:21:18 espie Exp $
-bin/sopranocmd
-bin/sopranod
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:44:58 espie Exp $
+@bin bin/onto2vocabularyclass
+@bin bin/sopranocmd
+@bin bin/sopranod
 include/Soprano/
 include/Soprano/Backend
 include/Soprano/BackendFeature
@@ -10,6 +11,10 @@ include/Soprano/BindingSet
 include/Soprano/Client/
 include/Soprano/Client/DBusClient
 include/Soprano/Client/DBusModel
+include/Soprano/Client/DBusNodeIterator
+include/Soprano/Client/DBusQueryResultIterator
+include/Soprano/Client/DBusStatementIterator
+include/Soprano/Client/LocalSocketClient
 include/Soprano/Client/TcpClient
 include/Soprano/Error/
 include/Soprano/Error/Error
@@ -48,30 +53,44 @@ include/Soprano/RdfSchemaWrapper
 include/Soprano/RdfSerialization
 include/Soprano/Serializer
 include/Soprano/Server/
+include/Soprano/Server/DBusExportIterator
+include/Soprano/Server/DBusExportModel
 include/Soprano/Server/ServerCore
 include/Soprano/Soprano
 include/Soprano/Statement
 include/Soprano/StatementIterator
 include/Soprano/StorageModel
 include/Soprano/Util/
+include/Soprano/Util/AsyncModel
+include/Soprano/Util/AsyncResult
 include/Soprano/Util/DummyModel
 include/Soprano/Util/MutexModel
+include/Soprano/Util/ReadOnlyModel
+include/Soprano/Util/SignalCacheModel
 include/Soprano/Util/SimpleNodeIterator
 include/Soprano/Util/SimpleStatementIterator
+include/Soprano/Version
 include/Soprano/Vocabulary/
 include/Soprano/Vocabulary/NAO
 include/Soprano/Vocabulary/NRL
+include/Soprano/Vocabulary/OWL
 include/Soprano/Vocabulary/RDF
 include/Soprano/Vocabulary/RDFS
 include/Soprano/Vocabulary/SIL
 include/Soprano/Vocabulary/XMLSchema
 include/Soprano/Vocabulary/Xesam
 include/soprano/
+include/soprano/asyncmodel.h
 include/soprano/backend.h
 include/soprano/bindingset.h
 include/soprano/cluceneindex.h
 include/soprano/dbusclient.h
+include/soprano/dbusexportiterator.h
+include/soprano/dbusexportmodel.h
 include/soprano/dbusmodel.h
+include/soprano/dbusnodeiterator.h
+include/soprano/dbusqueryresultiterator.h
+include/soprano/dbusstatementiterator.h
 include/soprano/dummymodel.h
 include/soprano/error.h
 include/soprano/filtermodel.h
@@ -85,6 +104,8 @@ include/soprano/inferenceruleset.h
 include/soprano/iterator.h
 include/soprano/iteratorbackend.h
 include/soprano/literalvalue.h
+include/soprano/localsocketclient.h
+include/soprano/locator.h
 include/soprano/model.h
 include/soprano/mutexmodel.h
 include/soprano/nao.h
@@ -92,6 +113,7 @@ include/soprano/node.h
 include/soprano/nodeiterator.h
 include/soprano/nodepattern.h
 include/soprano/nrl.h
+include/soprano/owl.h
 include/soprano/parser.h
 include/soprano/plugin.h
 include/soprano/pluginmanager.h
@@ -100,8 +122,10 @@ include/soprano/queryresultiteratorbackend.h
 include/soprano/rdf.h
 include/soprano/rdfs.h
 include/soprano/rdfschemamodel.h
+include/soprano/readonlymodel.h
 include/soprano/serializer.h
 include/soprano/servercore.h
+include/soprano/signalcachemodel.h
 include/soprano/sil.h
 include/soprano/simplenodeiterator.h
 include/soprano/simplestatementiterator.h
@@ -113,7 +137,6 @@ include/soprano/statementiterator.h
 include/soprano/statementpattern.h
 include/soprano/storagemodel.h
 include/soprano/tcpclient.h
-include/soprano/unixsocketclient.h
 include/soprano/version.h
 include/soprano/vocabulary.h
 include/soprano/xesam.h
