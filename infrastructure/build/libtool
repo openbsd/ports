@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.32 2008/10/28 11:31:48 bernd Exp $
+# $OpenBSD: libtool,v 1.33 2008/10/28 17:15:00 bernd Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -877,7 +877,7 @@ sub parse_linkargs
 			if ($d !~ m/\Q$ltdir\E$/ && $lainfo{'installed'} eq 'no') {
 				$d .= "/$ltdir";
 			}
-			if ($dlname && $la) {
+			if ($la) {
 				push @deplibs, $fulla;
 			}
 			# the following should happen only in pass 2
