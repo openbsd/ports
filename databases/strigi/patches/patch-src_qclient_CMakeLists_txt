@@ -1,18 +1,18 @@
-$OpenBSD: patch-src_qclient_CMakeLists_txt,v 1.1.1.1 2007/06/10 21:46:27 espie Exp $
---- src/qclient/CMakeLists.txt.orig	Fri Jun  8 22:59:36 2007
-+++ src/qclient/CMakeLists.txt	Fri Jun  8 23:00:03 2007
+$OpenBSD: patch-src_qclient_CMakeLists_txt,v 1.2 2008/10/28 17:11:43 espie Exp $
+--- src/qclient/CMakeLists.txt.orig	Sun Jun  1 23:45:16 2008
++++ src/qclient/CMakeLists.txt	Wed Jul 30 16:58:05 2008
 @@ -8,15 +8,15 @@ set(qclientold_MOC_HDRS filebrowser.h)
  qt4_wrap_cpp(qclientold_MOC_SRCS ${qclientold_MOC_HDRS})
- add_executable(qclient ${qclientold_SRCS} ${qclientold_MOC_SRCS})
+ add_executable(qclientold ${qclientold_SRCS} ${qclientold_MOC_SRCS})
  
--target_link_libraries(qclient streams archiveengine ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
-+target_link_libraries(qclient streams archiveengine ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_CORE_LIB_DEPENDENCIES} ${QT_GUI_LIB_DEPENDENCIES})
+-target_link_libraries(qclientold streams archiveengine ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(qclientold streams archiveengine ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_CORE_LIB_DEPENDENCIES} ${QT_GUI_LIB_DEPENDENCIES})
  
- # archivecat
- add_executable(archivecat archivecat.cpp)
+ # qclientarchivecat
+ add_executable(qclientarchivecat archivecat.cpp)
  
--target_link_libraries(archivecat streams archiveengine ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
-+target_link_libraries(archivecat streams archiveengine ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_CORE_LIB_DEPENDENCIES} ${QT_GUI_LIB_DEPENDENCIES})
+-target_link_libraries(qclientarchivecat streams archiveengine ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
++target_link_libraries(qclientarchivecat streams archiveengine ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_CORE_LIB_DEPENDENCIES} ${QT_GUI_LIB_DEPENDENCIES})
  
  # archivedialog
  add_executable(archivedialog archivedialog.cpp)
