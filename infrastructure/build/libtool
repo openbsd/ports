@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.28 2008/10/28 09:58:55 steven Exp $
+# $OpenBSD: libtool,v 1.29 2008/10/28 10:00:22 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -388,7 +388,17 @@ if ($mode eq 'compile') {
 	if ($linkmode == PROGRAM) {
 		# XXX give higher priority to dirs of not installed libs
 		# XXX no static linking yet here
-		my @tmpcmd = linkcmds($ofile, $ofile, $odir, PROGRAM, 1, \@objs);
+		my $objlist = \@objs;
+		if (@objs == 0) {
+		        if (@sobjs > 0) {
+				warn "no non-pic libtool objects found, trying pic objects...\n";
+				$objlist = \@sobjs;
+			} elsif (@sobjs == 0) {
+				warn "no libtool objects of any kind found\n";
+				warn "hoping for real objects in ARGV...\n";
+			}
+		}
+		my @tmpcmd = linkcmds($ofile, $ofile, $odir, PROGRAM, 1, $objlist);
 		$cmd = $tmpcmd[0];
 		perform($cmd);
 		write_prog_wrapper($outfile);
