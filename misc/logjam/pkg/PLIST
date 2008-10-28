@@ -1,10 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/09/05 12:42:33 espie Exp $
-bin/logjam
+@comment $OpenBSD: PLIST,v 1.4 2008/10/28 15:20:50 landry Exp $
+@bin bin/logjam
 @man man/man1/logjam.1
-@comment share/locale/en_GB/
-@comment share/locale/en_GB/LC_MESSAGES/
-@comment share/locale/en_GB/LC_MESSAGES/logjam.mo
-@comment share/locale/he/LC_MESSAGES/logjam.mo
-@comment share/locale/ru_RU/
-@comment share/locale/ru_RU/LC_MESSAGES/
-@comment share/locale/ru_RU/LC_MESSAGES/logjam.mo
+share/applications/logjam.desktop
+share/locale/de/LC_MESSAGES/logjam.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/logjam.mo
+share/locale/en_US.UTF-8/
+share/locale/en_US.UTF-8/LC_MESSAGES/
+share/locale/en_US.UTF-8/LC_MESSAGES/logjam.mo
+share/locale/es/LC_MESSAGES/logjam.mo
+share/locale/he/LC_MESSAGES/logjam.mo
+share/locale/ja/LC_MESSAGES/logjam.mo
+share/locale/ru_RU/
+share/locale/ru_RU/LC_MESSAGES/
+share/locale/ru_RU/LC_MESSAGES/logjam.mo
+share/locale/uk_UA/
+share/locale/uk_UA/LC_MESSAGES/
+share/locale/uk_UA/LC_MESSAGES/logjam.mo
+share/pixmaps/
+share/pixmaps/logjam_goat.png
+share/pixmaps/logjam_pencil.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

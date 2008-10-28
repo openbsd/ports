@@ -1,43 +1,43 @@
-# $OpenBSD: Makefile,v 1.18 2008/06/05 00:53:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2008/10/28 15:20:50 landry Exp $
 
-COMMENT=	gtk livejournal client
+COMMENT =	gtk livejournal client
 
-VERSION=	4.0.1
-DISTNAME=	logjam-${VERSION}
-PKGNAME=	${DISTNAME}p8
-CATEGORIES=	misc x11
+DISTNAME =	logjam-4.5.3
+CATEGORIES =	misc x11
 
-HOMEPAGE=	http://logjam.danga.com/
+HOMEPAGE =	http://logjam.danga.com/
 
-# GPL
-PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
+# GPLv2
+PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE_FTP =     Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =   Yes
 
-WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xcomposite \
+WANTLIB =	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xcomposite \
 		Xdamage Xrandr Xrender atk-1.0 c cairo crypto expat \
-		fontconfig freetype glitz idn m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pixman-1 png ssl z
+		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 gthread-2.0 idn m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre pixman-1 png pthread ssl z
 
-MASTER_SITES=	http://logjam.danga.com/download/
+MASTER_SITES =	http://logjam.danga.com/download/
+EXTRACT_SUFX =	.tar.bz2
 
-MODULES=	devel/gettext
+MODULES =	devel/gettext
 
-LIB_DEPENDS=	glib-2.0,gobject-2.0,gmodule-2.0::devel/glib2 \
-		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
+LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
+		sqlite3::databases/sqlite3 \
 		curl.>=2::net/curl \
 		xml2::textproc/libxml
 
-PORTHOME=	${WRKDIR}
+RUN_DEPENDS =	::devel/desktop-file-utils
 
-CONFIGURE_ARGS+=	--without-gnome
-CONFIGURE_ARGS+=	--with-xmms=runtime
+USE_X11 =		Yes
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--without-gnome \
+			--without-librsvg \
+			--without-gtkspell
 
-USE_X11=        	Yes
-CONFIGURE_STYLE=	gnu
-
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
