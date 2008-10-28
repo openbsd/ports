@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/12/07 19:55:58 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/10/28 12:59:55 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 %%SHARED%%
@@ -13,10 +13,12 @@ include/poppler/Catalog.h
 include/poppler/CharCodeToUnicode.h
 include/poppler/CharTypes.h
 include/poppler/CompactFontTables.h
+include/poppler/DateInfo.h
 include/poppler/Decrypt.h
 include/poppler/Dict.h
 include/poppler/Error.h
 include/poppler/ErrorCodes.h
+include/poppler/FileSpec.h
 include/poppler/FontEncodingTables.h
 include/poppler/FontInfo.h
 include/poppler/Form.h
@@ -28,12 +30,13 @@ include/poppler/GfxState.h
 include/poppler/GlobalParams.h
 include/poppler/JArithmeticDecoder.h
 include/poppler/JBIG2Stream.h
-include/poppler/JPXStream.h
 include/poppler/Lexer.h
 include/poppler/Link.h
+include/poppler/Movie.h
 include/poppler/NameToCharCode.h
 include/poppler/NameToUnicodeTable.h
 include/poppler/Object.h
+include/poppler/OptionalContent.h
 include/poppler/Outline.h
 include/poppler/OutputDev.h
 include/poppler/PDFDoc.h
@@ -62,6 +65,7 @@ include/poppler/XRef.h
 include/poppler/XpdfPluginAPI.h
 include/poppler/glib/
 include/poppler/glib/poppler-action.h
+include/poppler/glib/poppler-annot.h
 include/poppler/glib/poppler-attachment.h
 include/poppler/glib/poppler-document.h
 include/poppler/glib/poppler-enums.h

@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.20 2008/07/09 14:45:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2008/10/28 12:59:55 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 
-V=		0.6.2
+V=		0.10.0
 DISTNAME=	poppler-$V
 CATEGORIES=	print
-PKGNAME-main=	poppler-$Vp4
-FULLPKGNAME-qt=	poppler-qt-$Vp0
-FULLPKGNAME-qt4=poppler-qt4-$Vp1
+PKGNAME-main=	poppler-$V
+FULLPKGNAME-qt=	poppler-qt-$V
+FULLPKGNAME-qt4=poppler-qt4-$V
 
-SHARED_LIBS +=	poppler              3.0      # .2.0
-SHARED_LIBS +=	poppler-glib         3.0      # .2.0
-SHARED_LIBS +=	poppler-qt           3.0      # .2.0
-SHARED_LIBS +=	poppler-qt4          2.0      # .2.0
+SHARED_LIBS +=	poppler              4.0      # .2.0
+SHARED_LIBS +=	poppler-glib         4.0      # .2.0
+SHARED_LIBS +=	poppler-qt           4.0      # .2.0
+SHARED_LIBS +=	poppler-qt4          3.0      # .2.0
 
 HOMEPAGE=	http://poppler.freedesktop.org/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
@@ -61,7 +61,7 @@ MODULES+=	x11/qt4
 QT4INC=		-I${MODQT4_INCDIR}
 .endif
 
-WANTLIB=	expat freetype fontconfig jpeg m z
+WANTLIB=	expat freetype fontconfig jpeg m pixman-1 z
 
 MODULES+=	devel/gettext
 
@@ -87,7 +87,8 @@ CONFIGURE_ARGS= --enable-xpdf-headers \
 
 CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include ${QT4INC}" \
 		CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		MOCQT4=${MODQT4_MOC}
 
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
