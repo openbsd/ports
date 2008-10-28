@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2008/10/09 22:16:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.115 2008/10/28 14:05:58 naddy Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -82,6 +82,7 @@
      SUBDIR += shared-mime-info
      SUBDIR += splitvt
      SUBDIR += supercat
+     SUBDIR += teseq
      SUBDIR += tkcron
      SUBDIR += tkinfo
      SUBDIR += tkman
