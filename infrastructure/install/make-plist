@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.116 2008/10/28 13:01:05 espie Exp $
+# $OpenBSD: make-plist,v 1.117 2008/10/28 13:29:01 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -295,6 +295,55 @@ sub clone_tags
 	}
 }
 
+sub copy_annotations
+{
+}
+
+package OpenBSD::PackingElement::CVSTag;
+sub copy_annotations
+{
+	my ($self, $plist) = @_;
+	$self->clone->add_object($plist);
+}
+
+package OpenBSD::PackingElement::NoDefaultConflict;
+sub copy_annotations
+{
+	my ($self, $plist) = @_;
+	$self->clone->add_object($plist);
+	$plist->{nonempty} = 1;
+}
+
+package OpenBSD::PackingElement::Conflict;
+sub copy_annotations
+{
+	&OpenBSD::PackingElement::NoDefaultConflict::copy_annotations;
+}
+
+package OpenBSD::PackingElement::NewAuth;
+sub copy_annotations
+{
+	&OpenBSD::PackingElement::NoDefaultConflict::copy_annotations;
+}
+
+package OpenBSD::PackingElement::PkgPath;
+sub copy_annotations
+{
+	&OpenBSD::PackingElement::NoDefaultConflict::copy_annotations;
+}
+
+package OpenBSD::PackingElement::Incompatibility;
+sub copy_annotations
+{
+	&OpenBSD::PackingElement::NoDefaultConflict::copy_annotations;
+}
+
+package OpenBSD::PackingElement::UpdateSet;
+sub copy_annotations
+{
+	&OpenBSD::PackingElement::NoDefaultConflict::copy_annotations;
+}
+
 package OpenBSD::PackingElement::Fragment;
 our @ISA=qw(OpenBSD::PackingElement);
 sub register
@@ -476,7 +525,7 @@ package main;
 sub augment_mtree
 {
 	my ($mtree, $fh) = @_;
-	my $plist = OpenBSD::PackingList->read($fh, \&OpenBSD::PackingList::DirrmOnly) or die "couldn't read packing-list\n";
+	my $plist = OpenBSD::PackingList->read($fh, \&OpenBSD::PackingList::SharedItemsOnly) or die "couldn't read packing-list\n";
 	$plist->add_to_mtree($mtree);
 }
 
@@ -710,12 +759,12 @@ sub handle_file
 		if (!defined $o) {
 		    next;
 		}
-		$item->{accounted_for} = 1;
 		$foundit = $item;
 		if ($o->can("compute_modes")) {
 			handle_modes($p, $item, $o);
 		}
 		$o->add_object($p);
+		$item->{accounted_for} = $o;
 		$p->{nonempty} = 1;
 
 		# Copy properties from source item
@@ -800,30 +849,11 @@ my @l = grab_all_lists();
 
 for my $plist (@l) {
 	my $orig = $plist->{original};
-	if (defined $orig and 
-	    defined $orig->{cvstags}) {
-		for my $tag (@{$orig->{cvstags}}) {
-			$tag->clone->add_object($plist);
-		}
-	} else {
-	    OpenBSD::PackingElement::CVSTag->add($plist, '$OpenBSD'.'$');
-	}
-	# copy properties over
 	if (defined $orig) {
-
-		if (defined $orig->{'no-default-conflict'}) {
-			OpenBSD::PackingElement::NoDefaultConflict->add($plist);
-			$plist->{nonempty} = 1;
-		}
-		for my $listname (qw(pkgcfl conflict groups users 
-		    pkgpath incompatibility updateset module)) {
-			if (defined $orig->{$listname}) {
-				for my $o (@{$orig->{$listname}}) {
-					$o->clone->add_object($plist);
-					$plist->{nonempty} = 1;
-				}
-			}
-		}
+		$orig->copy_annotations($plist);
+	}
+	if (!$plist->has('cvstags')) {
+	    OpenBSD::PackingElement::CVSTag->add($plist, '$OpenBSD'.'$');
 	}
 }
 
