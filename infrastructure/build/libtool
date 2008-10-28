@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.31 2008/10/28 11:16:27 bernd Exp $
+# $OpenBSD: libtool,v 1.32 2008/10/28 11:31:48 bernd Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1052,6 +1052,10 @@ sub linkcmds
 			$cmd = "ar cru $dst";
 			$cmd .= " @$objs" if (@$objs);
 			foreach my $k (@finalorderedlibs) {
+				unless (defined $libs{$k}) {
+					print "library $k not found in \%libs\n" if $D;
+					next;
+				}
 				my $a = $libs{$k};
 				if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
 					# extract objects from archive
