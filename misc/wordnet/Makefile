@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/09/06 21:49:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/28 13:33:48 sthen Exp $
 COMMENT=		browser for a large lexical database of English
 
 V=			3.0
@@ -20,8 +20,9 @@ WANTLIB += X11 c m Xext Xss
 
 MASTER_SITES=		http://wordnet.princeton.edu/3.0/
 
-LIB_DEPENDS+=		tcl85:tcl-8.5.*:lang/tcl/8.5 \
-			tk85:tk-8.5.*:x11/tk/8.5
+MODULES=		x11/tk
+
+LIB_DEPENDS+=		${MODTK_LIB_DEPENDS}
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/include/wn.h ${WRKSRC}/src/wnb
@@ -35,11 +36,10 @@ CONFIGURE_ARGS=		--prefix='${PREFIX}/share/wordnet' \
 			--sysconfdir='${SYSCONFDIR}' \
 			--mandir='${PREFIX}/man' \
 			--includedir='${PREFIX}/include' \
-			--with-tcl=${LOCALBASE}/lib/tcl8.5 \
-			--with-tk=${LOCALBASE}/lib/tk8.5
+			--with-tcl=${MODTCL_LIBDIR} \
+			--with-tk=${MODTK_LIBDIR}
 
-CFLAGS+=		-I${LOCALBASE}/include/tcl8.5 \
-			-I${LOCALBASE}/include/tk8.5
+CFLAGS+=		-I${MODTK_INCDIR} -I${MODTCL_INCDIR}
 
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
 
