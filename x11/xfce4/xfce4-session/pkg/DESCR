@@ -1,6 +1,6 @@
 xfce4-session controls the startup and shutdown of the Xfce Desktop
 Environment.  On logout it can save the running application and start
-them again the next time you log in.  It's compatible with Gnome/KDE,
+them again the next time you log in.  It's compatible with GNOME/KDE,
 supports multihead modes (Xinerama and multiscreen), doesn't rely on
 smproxy (or any rewrite like gnome-smproxy), but provides (partial)
 session management even for non-sm or X11R5-sm aware apps.  Moreover, it

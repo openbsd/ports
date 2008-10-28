@@ -1,3 +1,3 @@
 PyGTK allows you to write full featured GTK programs in
 Python. It is targetted at GTK 2.x, and can be used in
-conjunction with gnome-python to write Gnome applications.
+conjunction with gnome-python to write GNOME applications.

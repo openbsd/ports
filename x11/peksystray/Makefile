@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/02 18:35:47 winiger Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/28 14:29:14 jasper Exp $
 
 COMMENT=		freedesktop.org compliant system tray
 
 DISTNAME=		peksystray-0.4.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 

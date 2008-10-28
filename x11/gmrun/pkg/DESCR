@@ -8,6 +8,6 @@ If you saw KDE, it's window manager (KWM) provides a key combination
 nice, such as it supports URLs, completion from history, TAB
 completion for files on the local filesystem, etc.
 
-Because Gnome didn't had such thing, here it is: gmrun, that provides
+Because GNOME didn't had such thing, here it is: gmrun, that provides
 pretty much the same behavior as the KDE's ALT-F2, only it's more
 configurable.

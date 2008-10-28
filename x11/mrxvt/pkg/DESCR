@@ -4,4 +4,4 @@ Mrxvt is based on rxvt version 2.7.11 CVS and aterm.
 It implements many useful features seen in some modern X terminal
 emulators (like gnome-terminal and konsole) but aims to be fast,
 lightweight and independent of standard toolkits or desktop environments
-(e.g. Gnome / KDE).
+(e.g. GNOME / KDE).

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/10/13 14:23:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2008/10/28 14:29:14 jasper Exp $
 
 COMMENT=	implementations of freedesktop.org specifications
 DISTNAME=	efreet-20071211
-PKGNAME=        ${DISTNAME}p1
+PKGNAME=        ${DISTNAME}p2
 SHARED_LIBS +=	efreet               0.0      # .0.3
 SHARED_LIBS +=	efreet_mime          0.0      # .0.0
 

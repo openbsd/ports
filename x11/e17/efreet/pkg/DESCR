@@ -12,5 +12,5 @@ freedesktop.org:
 
 By following these specifications, Enlightenment 0.17 uses the same
 format for describing application launchers, menus and icon themes as
-the Gnome, KDE and XFCE Desktop Environments. A system must only provide
+the GNOME, KDE and XFCE Desktop Environments. A system must only provide
 a single set of this data for use with any of these desktops.
