@@ -1,6 +1,6 @@
 A sample configuration file has been installed to ${SYSCONFDIR}/mpd.conf.
 MPD is configured to listen on localhost only. To start MPD at boot time,
-add the following to ${SYSCONFDIR}/rc.local:
+add the following to /etc/rc.local:
 
 if [ -x ${PREFIX}/sbin/mpd ]; then
         echo -n ' mpd';       ${PREFIX}/sbin/mpd

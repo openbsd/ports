@@ -10,7 +10,7 @@ Simplified sample configuration is provided in ${SYSCONFDIR}/asterisk;
 the full set is available in ${PREFIX}/share/examples/asterisk/default.
 
 To have Asterisk start at boot time, you may insert the following
-into ${SYSCONFDIR}/rc.local:
+into /etc/rc.local:
 
 if [ -x ${PREFIX}/sbin/safe_asterisk ]; then
         echo -n ' asterisk';   ${PREFIX}/sbin/safe_asterisk

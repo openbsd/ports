@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/07 21:02:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/28 15:21:49 naddy Exp $
 
 COMMENT-main=		modern authoritative nameserver
 COMMENT-mysql=		mysql database access emodule for powerdns
@@ -9,7 +9,7 @@ COMMENT-sqlite3=	sqlite3 database access module for powerdns
 V=			2.9.21.1
 DISTNAME=		pdns-${V}
 PKGNAME=		powerdns-${V}
-PKGNAME-main=		powerdns-${V}p0
+PKGNAME-main=		powerdns-${V}p1
 PKGNAME-mysql=		powerdns-mysql-${V}
 PKGNAME-pgsql=		powerdns-pgsql-${V}
 PKGNAME-sqlite= 	powerdns-sqlite-${V}

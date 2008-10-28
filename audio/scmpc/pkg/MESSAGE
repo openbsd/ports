@@ -1,6 +1,6 @@
 A sample configuration file has been installed to
 ${SYSCONFDIR}/scmpc/scmpc.conf. To start scmpc at boot time, add the
-following to ${SYSCONFDIR}/rc.local:
+following to /etc/rc.local:
 
 if [ -x ${PREFIX}/bin/scmpc ]; then
         echo -n ' scmpc';       ${PREFIX}/bin/scmpc

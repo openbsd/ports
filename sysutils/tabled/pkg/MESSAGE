@@ -4,7 +4,7 @@ in this version of tabled before the daemon is started:
 	# mkfifo /var/run/tabled.sock
 
 To automatically start tabled at system startup time, you can add the following
-commands to ${SYSCONFDIR}/rc.local:
+commands to /etc/rc.local:
 
 if [ -x ${PREFIX}/sbin/tabled ]; then
 	echo -n ' tabled'

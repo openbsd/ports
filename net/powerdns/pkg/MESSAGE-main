@@ -1,5 +1,5 @@
 To start the powerdns server at boot time, add the following to
-${SYSCONFDIR}/rc.local:
+/etc/rc.local:
 
 if [ -x ${PREFIX}/sbin/pdns_server ]; then
         echo -n ' pdns_server';       ${PREFIX}/sbin/pdns_server \

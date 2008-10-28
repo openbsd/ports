@@ -7,4 +7,4 @@ if [ -x ${PREFIX}/bin/smsd ]; then
 fi
 
 smsd needs access to the serial port; this can be done by adding
-the _smsd user to 'dialer' in ${SYSCONFDIR}/group.
+the _smsd user to 'dialer' in /etc/group.

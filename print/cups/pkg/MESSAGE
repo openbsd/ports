@@ -2,7 +2,7 @@ To enable CUPS, execute '${PREFIX}/sbin/cups-enable' as root.
 To disable CUPS, execute '${PREFIX}/sbin/cups-disable' as root.
 
 To start cups at boot time, add the following to
-${SYSCONFDIR}/rc.local:
+/etc/rc.local:
 
 if [ -x ${PREFIX}/sbin/cupsd ]; then
         echo -n ' cupsd';       ${PREFIX}/sbin/cupsd
