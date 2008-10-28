@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/28 14:04:43 naddy Exp $
+bin/reseq
+@bin bin/teseq
+@info info/teseq.info
+libexec/teseq-post.sed
+@man man/man1/reseq.1
+@man man/man1/teseq.1

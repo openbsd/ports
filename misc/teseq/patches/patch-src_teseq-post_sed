@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_teseq-post_sed,v 1.1.1.1 2008/10/28 14:04:43 naddy Exp $
+--- src/teseq-post.sed.orig	Sat Oct 25 16:37:56 2008
++++ src/teseq-post.sed	Sat Oct 25 16:38:04 2008
+@@ -1,4 +1,4 @@
+-#!/bin/sed -f
++#!/usr/bin/sed -f
+ 
+ # Copying and distribution of this file, with or without modification,
+ # are permitted in any medium without royalty provided the copyright

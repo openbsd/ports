@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_run_in,v 1.1.1.1 2008/10/28 14:04:43 naddy Exp $
+--- tests/run.in.orig	Sat Oct 25 16:14:54 2008
++++ tests/run.in	Sat Oct 25 16:15:07 2008
+@@ -37,7 +37,7 @@ get_vars()
+ 	r_expected="${r_expected:-$input}"
+ }
+ 
+-if [ "$#" -ge 1 -a "${1}" = "-r" ]
++if [ "$#" -ge 1 -a X"${1}" = X"-r" ]
+ then
+ 	echo
+ 	echo "RUNNING RESEQ TESTS"
