@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2008/06/15 00:06:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2008/10/28 13:09:53 jasper Exp $
 
 COMMENT=		library for handling pseudo terminals
 
 DISTNAME=		libzvt-2.0.1
-PKGNAME=		${DISTNAME}p7
+PKGNAME=		${DISTNAME}p8
 SHARED_LIBS=		zvt-2.0 0.1
 
 CATEGORIES=		devel

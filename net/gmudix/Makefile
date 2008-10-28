@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2008/06/12 21:58:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2008/10/28 13:09:54 jasper Exp $
 
-COMMENT=		Gnome2 MUD/Moo Client
+COMMENT=		GNOME MUD/Moo Client
 
 DISTNAME=		gmudix-0.10
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 CATEGORIES=		net x11
 
 HOMEPAGE=		http://dw.nl.eu.org/mudix.html

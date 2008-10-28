@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/10/02 20:42:37 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2008/10/28 13:09:54 jasper Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	Perl bindings for the 2.x series of the Gnome Canvas widget
+COMMENT=	Perl bindings for the 2.x series of the GNOME Canvas widget
 
 DISTNAME=	Gnome2-Canvas-1.002
-PKGNAME=	p5-${DISTNAME}p1
+PKGNAME=	p5-${DISTNAME}p2
 CATEGORIES=	x11
 
 # LGPL
