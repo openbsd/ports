@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/28 01:44:01 sthen Exp $
 
 COMMENT=	VNC server for real X displays
 
-VERSION=	0.6.2
-DISTNAME=	x11vnc-${VERSION}
+DISTNAME=	x11vnc-0.9.5
 CATEGORIES=     x11
 
 HOMEPAGE=	http://www.karlrunge.com/x11vnc/
@@ -17,6 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xext Xinerama Xtst c pthread z
+WANTLIB+=	Xdamage Xfixes Xrandr crypto ssl
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libvncserver/}
 

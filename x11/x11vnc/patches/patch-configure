@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2004/12/02 21:21:23 sturm Exp $
---- configure.orig	Thu Dec  2 20:42:03 2004
-+++ configure	Thu Dec  2 20:42:44 2004
-@@ -5375,13 +5375,13 @@ fi
- fi
- if test ! -z "$HAVE_PTHREAD_H"; then
+$OpenBSD: patch-configure,v 1.2 2008/10/28 01:44:01 sthen Exp $
+--- configure.orig	Tue Sep 16 10:05:19 2008
++++ configure	Sun Oct 19 23:27:50 2008
+@@ -8613,13 +8613,13 @@ fi
+ 
+ 	if test ! -z "$HAVE_PTHREAD_H"; then
  
 -echo "$as_me:$LINENO: checking for pthread_mutex_lock in -lpthread" >&5
 -echo $ECHO_N "checking for pthread_mutex_lock in -lpthread... $ECHO_C" >&6
@@ -16,9 +16,9 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/12/02 21:21:23 sturm Exp $
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -5434,17 +5434,17 @@ if test $ac_cv_lib_pthread_pthread_mutex
+ _ACEOF
+@@ -8682,17 +8682,17 @@ if test $ac_cv_lib_pthread_pthread_mutex_lock = yes; t
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  
@@ -27,9 +27,9 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/12/02 21:21:23 sturm Exp $
  
  fi
  
--	echo "$as_me:$LINENO: checking for pthread_mutex_lock in -lpthread" >&5
+-		echo "$as_me:$LINENO: checking for pthread_mutex_lock in -lpthread" >&5
 -echo $ECHO_N "checking for pthread_mutex_lock in -lpthread... $ECHO_C" >&6
-+	echo "$as_me:$LINENO: checking for pthread_mutex_lock in -pthread" >&5
++		echo "$as_me:$LINENO: checking for pthread_mutex_lock in -pthread" >&5
 +echo $ECHO_N "checking for pthread_mutex_lock in -pthread... $ECHO_C" >&6
  if test "${ac_cv_lib_pthread_pthread_mutex_lock+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
@@ -38,5 +38,5 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/12/02 21:21:23 sturm Exp $
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
+ _ACEOF

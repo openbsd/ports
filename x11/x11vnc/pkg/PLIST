@@ -1,4 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/02 21:21:23 sturm Exp $
-bin/x11vnc
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 01:44:01 sthen Exp $
+@bin bin/x11vnc
+@man man/man1/x11vnc.1
 share/doc/x11vnc/
 share/doc/x11vnc/README
+share/x11vnc/
+share/x11vnc/classes/
+share/x11vnc/classes/VncViewer.jar
+share/x11vnc/classes/index.vnc
+share/x11vnc/classes/ssl/
+share/x11vnc/classes/ssl/README
+share/x11vnc/classes/ssl/SignedUltraViewerSSL.jar
+share/x11vnc/classes/ssl/SignedVncViewer.jar
+share/x11vnc/classes/ssl/UltraViewerSSL.jar
+share/x11vnc/classes/ssl/VncViewer.jar
+share/x11vnc/classes/ssl/index.vnc
+share/x11vnc/classes/ssl/proxy.vnc
+share/x11vnc/classes/ssl/ss_vncviewer
+share/x11vnc/classes/ssl/ultra.vnc
+share/x11vnc/classes/ssl/ultrasigned.vnc
