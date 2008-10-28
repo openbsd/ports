@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.32 2008/09/18 13:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2008/10/28 12:33:32 ajacoutot Exp $
 
 COMMENT=		Common Unix Printing System
 
 VERSION=		1.2.7
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		cups-${VERSION}p9
+PKGNAME=		cups-${VERSION}p10
 CATEGORIES=		print sysutils
 SHARED_LIBS=		cups		3.0 \
 			cupsimage	2.3
 
 HOMEPAGE=		http://www.cups.org/
 
-# GPL
+MAITAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+
+# GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -31,7 +33,6 @@ EXTRACT_SUFX=		.tar.bz2
 LIB_DEPENDS=		png.>=3::graphics/png \
 			jpeg.>=62::graphics/jpeg \
 			tiff.>=35::graphics/tiff
-RUN_DEPENDS=		::print/foomatic-filters
 
 FAKE_FLAGS=		BINMODE=${BINMODE} \
 			SHAREMODE=${SHAREMODE}
