@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:25:25 jolan Exp $
-lib/aspell/tr.multi
-lib/aspell/tr.rws
-share/aspell/tr.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+lib/aspell/tr.dat
+share/aspell/tr.multi
+share/aspell/tr.rws

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:22:15 jolan Exp $
-lib/aspell/ga.multi
-lib/aspell/ga.rws
-lib/aspell/gaeilge.alias
-lib/aspell/irish.alias
-share/aspell/ga.dat
-share/aspell/ga_phonet.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+lib/aspell/ga.dat
+lib/aspell/ga_phonet.dat
+share/aspell/ga.multi
+share/aspell/ga.rws
+share/aspell/gaeilge.alias
+share/aspell/irish.alias

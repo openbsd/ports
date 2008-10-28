@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:23:49 jolan Exp $
-lib/aspell/malay.alias
-lib/aspell/ms.multi
-lib/aspell/ms.rws
-share/aspell/ms.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+lib/aspell/ms.dat
+share/aspell/malay.alias
+share/aspell/ms.multi
+share/aspell/ms.rws

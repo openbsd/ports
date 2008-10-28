@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:21:27 jolan Exp $
-lib/aspell/af.multi
-lib/aspell/af.rws
-lib/aspell/afrikaans.alias
-share/aspell/af.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:10 jasper Exp $
+lib/aspell/af.dat
+share/aspell/af.multi
+share/aspell/af.rws
+share/aspell/afrikaans.alias

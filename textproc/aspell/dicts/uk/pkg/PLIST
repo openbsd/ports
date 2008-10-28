@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:43 jolan Exp $
-lib/aspell/uk.multi
-lib/aspell/uk.rws
-lib/aspell/ukrainian.alias
-share/aspell/uk.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+@pkgpath textproc/aspell/dicts/aspell-uk
+lib/aspell/koi8-u-nl.cmap
+lib/aspell/koi8-u-nl.cset
+lib/aspell/uk.dat
+lib/aspell/uk_affix.dat
+lib/aspell/ukrainian.kbd
+share/aspell/uk.multi
+share/aspell/uk.rws
+share/aspell/ukrainian.alias

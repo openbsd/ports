@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:22:53 jolan Exp $
-lib/aspell/ia.multi
-lib/aspell/ia.rws
-lib/aspell/interlingua.alias
-share/aspell/ia.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+lib/aspell/ia.dat
+share/aspell/ia.multi
+share/aspell/ia.rws
+share/aspell/interlingua.alias

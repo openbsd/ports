@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:25:03 jolan Exp $
-lib/aspell/kiswahili.alias
-lib/aspell/sw.multi
-lib/aspell/sw.rws
-lib/aspell/swahili.alias
-share/aspell/sw.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+lib/aspell/sw.dat
+share/aspell/kiswahili.alias
+share/aspell/sw.multi
+share/aspell/sw.rws
+share/aspell/swahili.alias

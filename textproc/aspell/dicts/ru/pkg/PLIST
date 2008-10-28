@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:43 jolan Exp $
-lib/aspell/ru.multi
-lib/aspell/ru.rws
-lib/aspell/russian.alias
-share/aspell/ru.dat
-share/aspell/ru_phonet.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+@pkgpath textproc/aspell/dicts/aspell-ru
+lib/aspell/ru.dat
+lib/aspell/ru_affix.dat
+share/aspell/ru-ye.multi
+share/aspell/ru-ye.rws
+share/aspell/ru-yeyo.multi
+share/aspell/ru-yo.multi
+share/aspell/ru-yo.rws
+share/aspell/ru.multi

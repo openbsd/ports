@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:25:15 jolan Exp $
-lib/aspell/setswana.alias
-lib/aspell/tn.multi
-lib/aspell/tn.rws
-lib/aspell/tswana.alias
-share/aspell/tn.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+lib/aspell/tn.dat
+share/aspell/setswana.alias
+share/aspell/tn.multi
+share/aspell/tn.rws
+share/aspell/tswana.alias

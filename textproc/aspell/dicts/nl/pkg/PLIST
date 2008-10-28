@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:19 jolan Exp $
-lib/aspell/dutch.alias
-lib/aspell/nl.multi
-lib/aspell/nl.rws
-share/aspell/nl.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+lib/aspell/nl.dat
+share/aspell/dutch.alias
+share/aspell/nl.multi
+share/aspell/nl.rws

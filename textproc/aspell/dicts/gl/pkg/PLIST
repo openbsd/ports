@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:22:27 jolan Exp $
-lib/aspell/gl.multi
-lib/aspell/gl.rws
-share/aspell/gl.dat
-share/aspell/gl_phonet.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+@pkgpath textproc/aspell/dicts/aspell-gl
+lib/aspell/gl.dat
+lib/aspell/gl_affix.dat
+lib/aspell/gl_phonet.dat
+share/aspell/galician.alias
+share/aspell/gl-minimos.alias
+share/aspell/gl.multi
+share/aspell/gl.rws

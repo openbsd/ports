@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/04/08 05:17:08 jolan Exp $
-lib/aspell/it.multi
-lib/aspell/it.rws
-lib/aspell/italian.alias
-lib/aspell/italiano.alias
-share/aspell/it.dat
+@comment $OpenBSD: PLIST,v 1.3 2008/10/28 16:54:11 jasper Exp $
+@pkgpath textproc/aspell/dicts/aspell-it
+lib/aspell/it.dat
+lib/aspell/it_affix.dat
+share/aspell/it.multi
+share/aspell/it.rws
+share/aspell/italian.alias
+share/aspell/italiano.alias

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:26:03 jolan Exp $
-lib/aspell/zu.multi
-lib/aspell/zu.rws
-lib/aspell/zulu.alias
-share/aspell/zu.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+lib/aspell/zu.dat
+share/aspell/zu.multi
+share/aspell/zu.rws
+share/aspell/zulu.alias

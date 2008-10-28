@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:24:54 jolan Exp $
-lib/aspell/sl.multi
-lib/aspell/sl.rws
-lib/aspell/slovenian.alias
-share/aspell/sl.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+lib/aspell/sl.dat
+share/aspell/sl.multi
+share/aspell/sl.rws
+share/aspell/slovenian.alias

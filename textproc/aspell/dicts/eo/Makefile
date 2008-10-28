@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/07 19:55:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/28 16:54:11 jasper Exp $
 
 COMMENT=	aspell dictionary for Esperanto
 CATEGORIES=	textproc
-DISTNAME=	aspell-eo-0.50-2
-PKGNAME=	${DISTNAME:C/-([0-9])$/_\1/}p1
+DISTNAME=	aspell6-eo-2.1.20000225a-2
 MASTER_SITES=	${MASTER_SITE_GNU:=aspell/dict/eo/}
 
 # dubious: wordlist has no copyright nor license

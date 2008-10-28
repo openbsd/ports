@@ -1,12 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:19 jolan Exp $
-lib/aspell/de-only.rws
-lib/aspell/de.multi
-lib/aspell/de_CH-only.rws
-lib/aspell/de_CH.multi
-lib/aspell/de_DE-only.rws
-lib/aspell/de_DE.multi
-lib/aspell/deutsch.alias
-lib/aspell/german.alias
-lib/aspell/swiss.alias
-share/aspell/de.dat
-share/aspell/de_phonet.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+@pkgpath textproc/aspell/dicts/aspell-de
+lib/aspell/de.dat
+lib/aspell/de_affix.dat
+lib/aspell/de_phonet.dat
+share/aspell/de-common.rws
+share/aspell/de.multi
+share/aspell/de_AT-only.rws
+share/aspell/de_AT.multi
+share/aspell/de_CH-only.rws
+share/aspell/de_CH.multi
+share/aspell/de_DE-only.rws
+share/aspell/de_DE.multi
+share/aspell/deutsch.alias
+share/aspell/german.alias
+share/aspell/swiss.alias

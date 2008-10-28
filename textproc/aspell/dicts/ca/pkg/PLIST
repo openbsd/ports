@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:19 jolan Exp $
-lib/aspell/ca.multi
-lib/aspell/ca.rws
-lib/aspell/catalan.alias
-share/aspell/ca.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+@pkgpath textproc/aspell/dicts/aspell-ca
+lib/aspell/ca.dat
+lib/aspell/ca_affix.dat
+share/aspell/ca.multi
+share/aspell/ca.rws
+share/aspell/catalan.alias

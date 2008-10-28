@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:23:32 jolan Exp $
-lib/aspell/maori.alias
-lib/aspell/mi.multi
-lib/aspell/mi.rws
-share/aspell/mi.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+lib/aspell/mi.dat
+share/aspell/maori.alias
+share/aspell/mi.multi
+share/aspell/mi.rws

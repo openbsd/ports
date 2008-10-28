@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:19 jolan Exp $
-lib/aspell/cy.multi
-lib/aspell/cy.rws
-lib/aspell/welsh.alias
-share/aspell/cy.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+lib/aspell/cy.dat
+share/aspell/cy.multi
+share/aspell/cy.rws
+share/aspell/welsh.alias

@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:21:57 jolan Exp $
-lib/aspell/bg.multi
-lib/aspell/bg.rws
-lib/aspell/bulgarian.alias
-share/aspell/bg.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+@pkgpath textproc/aspell/dicts/aspell-bg
+lib/aspell/bg.dat
+lib/aspell/bg_affix.dat
+lib/aspell/bg_phonet.dat
+lib/aspell/bulgarian.kbd
+share/aspell/bg.multi
+share/aspell/bg.rws
+share/aspell/bulgarian.alias

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:24:11 jolan Exp $
-lib/aspell/maltese.alias
-lib/aspell/malti.alias
-lib/aspell/mt.multi
-lib/aspell/mt.rws
-share/aspell/mt.dat
-share/aspell/mt_phonet.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+lib/aspell/mt.dat
+lib/aspell/mt_phonet.dat
+share/aspell/maltese.alias
+share/aspell/malti.alias
+share/aspell/mt.multi
+share/aspell/mt.rws

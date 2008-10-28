@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:19 jolan Exp $
-lib/aspell/pl.multi
-lib/aspell/pl.rws
-lib/aspell/polish.alias
-share/aspell/pl.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+@pkgpath textproc/aspell/dicts/aspell-pl
+lib/aspell/pl.dat
+lib/aspell/pl_affix.dat
+share/aspell/pl.multi
+share/aspell/pl.rws
+share/aspell/polish.alias
