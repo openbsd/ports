@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2008/10/28 13:05:45 steven Exp $
 
 COMMENT=	framework to test programs
 
 DISTNAME=	dejagnu-1.4.3
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=dejagnu/}
 
 HOMEPAGE=	http://www.gnu.org/software/dejagnu/
-
-BUILD_DEPENDS=	:tcl-8.4.*:lang/tcl/8.4
-RUN_DEPENDS=	:expect-*:lang/expect,no_tk \
-		${BUILD_DEPENDS}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,9 +15,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MODULES=	lang/tcl
+
+BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
+RUN_DEPENDS=	:expect-*:lang/expect,no_tk \
+		${MODTCL_RUN_DEPENDS}
+
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-tclinclude="${LOCALBASE}/include/tcl8.4/generic"
-CONFIGURE_ENV=	ac_cv_path_tclsh=${LOCALBASE}/bin/tclsh8.4
+CONFIGURE_ARGS=	--with-tclinclude="${MODTCL_INCDIR}/generic"
+CONFIGURE_ENV=	ac_cv_path_tclsh=${MODTCL_BIN}
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install
