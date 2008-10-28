@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2008/10/27 23:20:39 steven Exp $
+# $OpenBSD: Makefile,v 1.38 2008/10/28 12:18:36 steven Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
@@ -47,12 +47,10 @@ MODULES+=	lang/tcl
 .endif
 
 BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
-LIB_DEPENDS-tcl = sqlite3::${BASE_PKGPATH},-main
+LIB_DEPENDS-tcl = sqlite3::${BUILD_PKGPATH},-main
 
 .if ${MULTI_PACKAGES:M-tcl}
 CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR}
-# Can't pass all its regress tests, because tcl doesn't handle NaN
-# (strtod doesn't work in an IEEE way)
 
 REGRESS_TARGET=	test
 
