@@ -1,0 +1,15 @@
+$OpenBSD: patch-test_Makefile_in,v 1.1 2008/10/28 18:25:54 bernd Exp $
+
+The quotes are wrong and our new libtool chokes on it.
+
+--- test/Makefile.in.orig	Tue Oct 28 19:15:08 2008
++++ test/Makefile.in	Tue Oct 28 19:15:23 2008
+@@ -190,7 +190,7 @@ target_os = @target_os@
+ target_vendor = @target_vendor@
+ we_have_sed = @we_have_sed@
+ @BUILD_TEST_PHYSFS_TRUE@INCLUDES = -I$(top_srcdir)
+-@BUILD_READLINE_TRUE@@BUILD_TEST_PHYSFS_TRUE@test_physfs_LDFLAGS = "-lreadline -lcurses"
++@BUILD_READLINE_TRUE@@BUILD_TEST_PHYSFS_TRUE@test_physfs_LDFLAGS = -lreadline -lcurses
+ @BUILD_TEST_PHYSFS_TRUE@test_physfs_LDADD = ../libphysfs.la
+ @BUILD_TEST_PHYSFS_TRUE@test_physfs_SOURCES = test_physfs.c
+ all: all-am
