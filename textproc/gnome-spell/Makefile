@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2008/08/19 22:28:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2008/10/28 14:07:43 jasper Exp $
 
-COMMENT=		Gnome/Bonobo component for spell checking
+COMMENT=		GNOME/Bonobo component for spell checking
 
 GNOME_PROJECT=		gnome-spell
 GNOME_VERSION=		1.0.8
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=    		textproc
 
 # GPLv2
@@ -20,13 +21,14 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png popt ssl stdc++ util xml2 z
+		png popt pthread ssl stdc++ util xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		aspell.>=15::textproc/aspell/core \
 			gnomeui-2::x11/gnome/libgnomeui
+RUN_DEPENDS=		::textproc/aspell/dicts/en
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu

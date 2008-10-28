@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2008/10/02 20:41:32 simon Exp $
+# $OpenBSD: Makefile,v 1.28 2008/10/28 14:07:43 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	perl interface to the libxml2 library
 
 MODULES=	cpan
 DISTNAME=	XML-LibXML-1.66
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	textproc
 
 LIB_DEPENDS=	xml2.>=6::textproc/libxml

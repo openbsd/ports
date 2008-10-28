@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2008/06/02 14:10:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2008/10/28 14:09:16 jasper Exp $
 
 SHARED_ONLY=	Yes
-COMMENT=	extremely lightweight and simple web browser for gnome
+COMMENT=	extremely lightweight and simple web browser for GNOME
 
 M=		2.18
 V=		2.18.2
 DISTNAME=	epiphany-${V}
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.gnome.org/projects/epiphany/
