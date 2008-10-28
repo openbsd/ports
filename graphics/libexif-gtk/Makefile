@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/06/29 20:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/28 17:36:34 landry Exp $
 
 COMMENT=	GTK2 interface to libexif
 
 DISTNAME=	libexif-gtk-0.3.5
-PKGNAME=	${DISTNAME}p3
+PKGNAME=       ${DISTNAME}p4
 SHARED_LIBS +=	exif-gtk 0.0	# .5.0
 CATEGORIES=	graphics
 

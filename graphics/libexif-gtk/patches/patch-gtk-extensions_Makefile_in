@@ -1,0 +1,11 @@
+$OpenBSD: patch-gtk-extensions_Makefile_in,v 1.1 2008/10/28 17:36:34 landry Exp $
+--- gtk-extensions/Makefile.in.orig	Tue Oct 28 18:19:35 2008
++++ gtk-extensions/Makefile.in	Tue Oct 28 18:19:49 2008
+@@ -219,7 +219,6 @@ target_alias = @target_alias@
+ INCLUDES = \
+ 	-I$(top_srcdir)			\
+ 	-I$(top_srcdir)/intl		\
+-	-DGTK_DISABLE_DEPRECATED	\
+ 	$(GTK_CFLAGS)
+ 
+ noinst_LTLIBRARIES = libgtk-extensions.la
