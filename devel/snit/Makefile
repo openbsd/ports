@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/10/28 13:12:29 steven Exp $
 
 COMMENT=		simple object oriented framework for Tcl
 
 VERSION=		0.7
-PKGNAME=		snit-${VERSION}p0
+PKGNAME=		snit-${VERSION}p1
 DISTNAME=		snit${VERSION}
 CATEGORIES=		devel
 
@@ -17,15 +17,19 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
-RUN_DEPENDS=		:tcl-8.4.*:lang/tcl/8.4
+MODTCL_VERSION=		8.4
+MODULES=		lang/tcl
+RUN_DEPENDS=		${MODTCL_RUN_DEPENDS}
 
 WRKSRC=			${WRKDIR}/snit
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
 PKG_ARCH=		*
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/snit
 	${INSTALL_DATA} ${WRKSRC}/* ${PREFIX}/lib/snit
+
+do-regress:
+	cd ${WRKSRC} && ${MODTCL_BIN} snit.test
 
 .include <bsd.port.mk>
