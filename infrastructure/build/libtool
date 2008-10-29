@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.36 2008/10/29 12:13:01 steven Exp $
+# $OpenBSD: libtool,v 1.37 2008/10/29 15:28:22 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1118,7 +1118,7 @@ sub linkcmds
 	my $prev_was_archive = 0;
 	my $libcounter = 0;
 	foreach my $k (@finalorderedlibs) {
-		my $a = $libs{$k};
+		my $a = $libs{$k} || die "ERROR: $k not found in \$libs";
 		if ($a =~ m/\.a$/) {
 			# don't make a -lfoo out of a static library
 			if ($lmode == LIBRARY) {
@@ -1134,8 +1134,10 @@ sub linkcmds
 			}
 			$prev_was_archive = 1;
 		} else {
-			if ($prev_was_archive) {
-				push @libflags, '-Wl,-no-whole-archive';
+			if ($lmode == LIBRARY) {
+				if ($prev_was_archive) {
+					push @libflags, '-Wl,-no-whole-archive';
+				}
 			}
 			$prev_was_archive = 0;
 			my $lib = basename $a;
