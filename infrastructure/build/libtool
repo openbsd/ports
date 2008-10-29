@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.38 2008/10/29 16:10:53 steven Exp $
+# $OpenBSD: libtool,v 1.39 2008/10/29 16:16:49 bernd Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -887,10 +887,11 @@ sub parse_linkargs
 			parse_file($fulla, \%lainfo);
 			my $dlname = $lainfo{'dlname'};
 			my $oldlib = $lainfo{'old_library'};
+			my $libdir = $lainfo{'libdir'};
 			if ($d !~ m/\Q$ltdir\E$/ && $lainfo{'installed'} eq 'no') {
 				$d .= "/$ltdir";
 			}
-			if ($dlname && $la) {
+			if ($libdir ne '' && $la) {
 				unshift @deplibs, $fulla;
 			}
 			# the following should happen only in pass 2
