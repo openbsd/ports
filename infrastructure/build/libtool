@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.35 2008/10/29 10:09:33 steven Exp $
+# $OpenBSD: libtool,v 1.36 2008/10/29 12:13:01 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -26,6 +26,7 @@ use Getopt::Std;
 
 use subs qw(
 	create_symlinks
+	debug
 	find_la
 	find_lib
 	generate_objlist
@@ -127,7 +128,7 @@ my $ltprog = shift @ARGV or die "no libtool command\n";
 if (!($mode && grep { $_ eq $mode } @valid_modes)) {
 	$mode = guess_implicit_mode();
 	if ($mode) {
-		print "implicit mode: $mode\n" if $D;
+		debug 1, "implicit mode: $mode\n";
 	} else {
 		die "MODE must be one of:\n@valid_modes\n";
 	}
@@ -187,8 +188,8 @@ if ($mode eq 'compile') {
 		$ofile =~ s/\.($srcext)$/.lo/i;
 		$outfile = "$odir/$ofile";
 	}
-	print "srcfile = $srcfile\n" if ($srcfile && $D);
-	print "outfile = $outfile\n" if $D;
+	debug 1, "srcfile = $srcfile\n" if ($srcfile);
+	debug 1, "outfile = $outfile\n";
 	(my $nonpicobj = $ofile) =~ s/\.lo$/.o/;
 	my $picobj = "$ltdir/$nonpicobj";
 
@@ -262,8 +263,8 @@ if ($mode eq 'compile') {
 		}
 		my $srcdir = dirname $s;
 		my $srcfile = basename $s;
-		print "srcdir = $srcdir\nsrcfile = $srcfile\n" if $D;
-		print "dstdir = $dstdir\ndstfile = $dstfile\n" if $D;
+		debug 1, "srcdir = $srcdir\nsrcfile = $srcfile\n";
+		debug 1, "dstdir = $dstdir\ndstfile = $dstfile\n";
 		if ($srcfile =~ m/^\S+\.la$/) {
 			# we are installing a .la library
 			if ($ltprog =~ m/install([.-]sh)?$/) {
@@ -347,7 +348,7 @@ if ($mode eq 'compile') {
 	if (!$outfile) {
 		die "no output file given.\n";
 	}
-	print "outfile = $outfile\n" if $D;
+	debug 1, "outfile = $outfile\n";
 	my $odir = dirname $outfile;
 	my $absodir = abs_path($odir);
 	my $ofile = basename $outfile;
@@ -361,14 +362,14 @@ if ($mode eq 'compile') {
 		$linkmode = LIBRARY;
 		$noshared = 1; $static = 1; # XXX improve!
 	}
-	print "linkmode: $linkmode\n" if $D;
+	debug 1, "linkmode: $linkmode\n";
 
 	handle_special_chars(\@ARGV);
 
 	my $argvstring = join ' ', @ARGV;
 	$argvstring = parse_linkargs($argvstring, 1);
 	@ARGV = split /\s+/, $argvstring;
-	print "deplibs = @deplibs\n" if $D;
+	debug 1, "deplibs = @deplibs\n";
 
 	# eat multiple version-info arguments, we only accept the first.
 	map { $_ = '' if ($_ =~ m/\d+:\d+:\d+/); } @ARGV;
@@ -385,8 +386,8 @@ if ($mode eq 'compile') {
 	} else {
 		$allpicobj = generate_objlist(\@objs, \@sobjs, \@ARGV);
 	}
-	print "objs = @objs\n" if $D;
-	print "sobjs = @sobjs\n" if $D;
+	debug 1, "objs = @objs\n";
+	debug 1, "sobjs = @sobjs\n";
 
 	if ($linkmode == PROGRAM) {
 		# XXX give higher priority to dirs of not installed libs
@@ -394,11 +395,11 @@ if ($mode eq 'compile') {
 		my $objlist = \@objs;
 		if (@objs == 0) {
 		        if (@sobjs > 0) {
-				warn "no non-pic libtool objects found, trying pic objects...\n";
+				debug 1, "no non-pic libtool objects found, trying pic objects...\n";
 				$objlist = \@sobjs;
 			} elsif (@sobjs == 0) {
-				warn "no libtool objects of any kind found\n";
-				warn "hoping for real objects in ARGV...\n";
+				debug 1, "no libtool objects of any kind found\n";
+				debug 1, "hoping for real objects in ARGV...\n";
 			}
 		}
 		my @tmpcmd = linkcmds($ofile, $ofile, $odir, PROGRAM, 1, $objlist);
@@ -450,7 +451,7 @@ if ($mode eq 'compile') {
 		$static = 0 if ($shared && grep { $_ eq 'disable-static' } @tags);
 		$shared = 0 if ($static && grep { $_ eq 'disable-shared' } @tags);
 
-		print "SHARED: $shared\nSTATIC: $static\n" if $D;
+		debug 1, "SHARED: $shared\nSTATIC: $static\n";
 
 		my %lainfo;
 		$lainfo{'libname'} = $libname;
@@ -460,7 +461,7 @@ if ($mode eq 'compile') {
 			$lainfo{'library_names'} .= " $sharedlib_symlink"
 				if ($opts{'release'});
 			perform(linkcmds($ofile, $sharedlib, $odir, LIBRARY, 1, \@sobjs));
-			print "sharedlib: $sharedlib\n" if $D;
+			debug 1, "sharedlib: $sharedlib\n";
 			$lainfo{'current'} = $current;
 			$lainfo{'revision'} = $revision;
 			$lainfo{'age'} = $age;
@@ -468,7 +469,7 @@ if ($mode eq 'compile') {
 		if ($static) {
 			$lainfo{'old_library'} = $staticlib;
 			perform(linkcmds($ofile, $staticlib, $odir, LIBRARY, 0, ($allpicobj) ? \@sobjs : \@objs));
-			print "staticlib: $staticlib\n" if $D;
+			debug 1, print "staticlib: $staticlib\n";
 		}
 		$lainfo{'installed'} = 'no';
 		$lainfo{'shouldnotlink'} = $opts{'module'} ? 'yes' : 'no';
@@ -477,7 +478,9 @@ if ($mode eq 'compile') {
 		my $deplibstring = join ' ', @deplibs;
 		$deplibstring = "@Rflags $deplibstring" if (@Rflags);
 		@deplibs = split /\s+/, $deplibstring;
+		debug 1, "deplibs = @deplibs\n";
 		my @finaldeplibs = reverse_zap_duplicates(@deplibs);
+		debug 1, "finaldeplibs = @finaldeplibs\n";
 		$deplibstring = join ' ', @finaldeplibs;
 		$lainfo{'dependency_libs'} = $deplibstring;
 		if ($opts{'rpath'}) {
@@ -537,6 +540,18 @@ sub notyet
 	die "option not implemented yet.\n";
 }
 
+sub debug
+{
+	my $level = shift;
+	my @messages = @_;
+
+	if ($D ge $level) {
+		for (@messages) {
+			print;
+		}
+	}
+}
+
 # display and execute a list of commands via system(), and die on error.
 sub perform
 {
@@ -591,7 +606,7 @@ sub create_symlinks
 	foreach my $f (@$libfiles) {
 		next if ($f =~ m/\.a$/);
 		my $libfile = basename $f;
-		print "ln -s $f $dir/$libfile\n" if $D;
+		debug 1, "ln -s $f $dir/$libfile\n";
 		if (! -f "$dir/$libfile") {
 			symlink abs_path($f), "$dir/$libfile" or die "cannot create symlink: $!\n";
 		}
@@ -728,12 +743,12 @@ sub parse_file
 
 	my $key = basename($filename);
 
-	print "parsing $filename" if $D;
+	debug 1, "parsing $filename";
 	if (defined $file_cache{$key}) {
-		print " (cached)\n" if $D;
+		debug 1, " (cached)\n";
 		%{$info} = %{$file_cache{$key}};
 	} else {
-		print "\n" if $D;
+		debug 1, "\n";
 		open(my $fh, '<', $filename) or die "cannot read $filename: $!\n";
 		while (<$fh>) {
 			chomp;
@@ -757,7 +772,7 @@ sub resolve_la
 	my $argstring = shift;
 
 	my @args = split /\s+/, $argstring;
-	print "resolve level: $res_level\n" if $D;
+	debug 1, "resolve level: $res_level\n";
 
 	foreach my $a (@args) {
 		next if ($a !~ m/(.*)\.la$/);
@@ -795,11 +810,12 @@ sub parse_linkargs
 	my $la = shift;
 
 	my @args = split /\s+/, $argstring;
-	print "parse_linkargs level: $parse_level\n" if $D;
-	print "  argstring: $argstring\n" if $D;
+	debug 1, "parse_linkargs pass: ", ($la == 1) ? 1 : 2, ", level: $parse_level\n";
+	debug 1, "  argstring: $argstring\n";
 
 	my $seen_pthread = 0;
 	foreach my $a (@args) {
+		debug 1, "  processing $a\n";
 		if ($a eq '-lc') {	
 			# don't link explicitly with libc (just remove -lc)
 			$a = '';   
@@ -897,9 +913,10 @@ sub parse_linkargs
 				# shared
 				$libs{$key} = "$d/$dlname";
 			}
-			print "\$libs{$key} = ", $libs{$key}, "\n" if $D;
+			debug 1, "\$libs{$key} = ", $libs{$key}, "\n";
 		}
 	}
+	debug 1, "end parse_linkargs\n";
 	return join ' ', @args;
 }
 
@@ -912,16 +929,17 @@ sub find_la
 	# sort dir search order by priority
 	# XXX not fully correct yet
 	my @dirs = sort { $dirs{$b} <=> $dirs{$a} } keys %dirs;
-	print "searching .la for $l ...\n" if $D;
+	debug 1, "searching .la for $l ...\n";
 	foreach my $d (@dirs) {
-		print "   ... in $d\n" if $D;
+		debug 1, "   ... in $d\n";
 		foreach my $la_candidate ("$d/lib$l.la", "$d/$l.a") {
 			if (-f $la_candidate) {
+				debug 1, "found $la_candidate\n";
 				return $la_candidate;
 			}
 		}
 	}
-	print ".la for $l not found!\n" if $D;
+	debug 1, ".la for $l not found!\n";
 	return 0;
 }
 
@@ -939,23 +957,23 @@ sub find_lib
 	# XXX not fully correct yet
 	my @dirs = sort { $dirs{$b} <=> $dirs{$a} } keys %dirs;
 	push @dirs, @ldconfigdirs;
-	print "searching for $libtofind ...\n" if $D;
+	debug 1, "searching for $libtofind ...\n";
 	foreach my $d (@dirs) {
 		my $sd = $d;
 		# search in .libs when priority is high
 		$sd = "$d/$ltdir" if (exists $dirs{$d} && $dirs{$d} > 3);
-		print "   ... in $d\n" if $D;
+		debug 1, "   ... in $d\n";
 		# select correct library by sorting by version number only
 		@globbedlib = sort { my ($c,$d) =
 			map { /\.so\.(\d+\.\d+)$/; $1 } ($a,$b); $d <=> $c }
 			glob "$sd/lib$libtofind.so.*.*";
 		if ($globbedlib[0]) {
-			print "found $libtofind in $sd\n" if $D;
+			debug 1, print "found $libtofind in $sd\n";
 			$libfile = $globbedlib[0];
 			last;
 		} else {	# XXX find static library instead?
 			if (-f "$sd/lib$libtofind.a") {
-				print "found static $libtofind in $sd\n" if $D;
+				debug 1, "found static $libtofind in $sd\n";
 				$libfile = "$sd/lib$libtofind.a";
 				last;
 			}
@@ -971,15 +989,15 @@ sub inspect_lib
 	my $filename = shift;
 
 	my @deps;
-	print "inspecting $filename for library dependencies...\n" if $D;
+	debug 1, "inspecting $filename for library dependencies...\n";
 	open(my $fh, '-|', "objdump -p $filename");
 	while (<$fh>) {
 		if (m/\s+NEEDED\s+(\S+)\s*$/) {
 			push @deps, $1;
 		}
 	}
-	print "found ", (@deps == 0) ? 'no ' : '',
-		"deps for $filename\n@deps\n" if $D;
+	debug 1, "found ", (@deps == 0) ? 'no ' : '',
+		"deps for $filename\n@deps\n";
 	return @deps;
 }
 
@@ -1016,9 +1034,9 @@ sub linkcmds
 	my $shared = shift;
 	my $objs = shift;
 
-	print "creating link command for ",
+	debug 1, "creating link command for ",
 		($lmode == PROGRAM) ? "program" : "library", " (linked ",
-		($shared) ? "dynam" : "stat", "ically)\n" if $D;
+		($shared) ? "dynam" : "stat", "ically)\n";
 	
 	my @libflags;
 	my @cmdlist;
@@ -1028,15 +1046,16 @@ sub linkcmds
 
 	my @argvcopy = @ARGV;
 	my $argvstring = join ' ', @argvcopy;
-	print "argvstring (pre resolve_la): $argvstring\n" if $D;
+	debug 1, "argvstring (pre resolve_la): $argvstring\n";
 	$argvstring = resolve_la($argvstring);
-	print "argvstring (post resolve_la): $argvstring\n" if $D;
+	debug 1, "argvstring (post resolve_la): $argvstring\n";
 	@orderedlibs = ();
 	$argvstring = parse_linkargs($argvstring, 0);
+	debug 1, "deplibs = @deplibs\n";
 	@argvcopy = split /\s+/, $argvstring;
-	print "orderedlibs = @orderedlibs\n" if $D;
+	debug 1, "orderedlibs = @orderedlibs\n";
 	my @finalorderedlibs = reverse_zap_duplicates(@orderedlibs);
-	print "final orderedlibs = @finalorderedlibs\n" if $D;
+	debug 1, "final orderedlibs = @finalorderedlibs\n";
 
 	# static linking
 	if (!$shared) {
@@ -1053,7 +1072,7 @@ sub linkcmds
 			$cmd .= " @$objs" if (@$objs);
 			foreach my $k (@finalorderedlibs) {
 				unless (defined $libs{$k}) {
-					print "library $k not found in \%libs\n" if $D;
+					debug 1, "library $k not found in \%libs\n";
 					next;
 				}
 				my $a = $libs{$k};
@@ -1095,7 +1114,7 @@ sub linkcmds
 
 	create_symlinks($ltdir, \@libfiles);
 	map { $_ = "$ltdir/". basename $_ } @libfiles;
-	print "symlinks to libfiles used for linking: @libfiles\n" if $D;
+	debug 1, "symlinks to libfiles used for linking: @libfiles\n";
 	my $prev_was_archive = 0;
 	my $libcounter = 0;
 	foreach my $k (@finalorderedlibs) {
@@ -1204,7 +1223,7 @@ sub extract_archive
 	my $archive = shift;
 
 	if (! -d $dir) {
-		print "mkdir -p $dir\n" if $D;
+		debug 1, "mkdir -p $dir\n";
 		File::Path::mkpath($dir);
 	}
 	perform("cd $dir && ar x $archive");
