@@ -1,0 +1,11 @@
+SCIM is a common IM platform written in C++. It abstracts input method 
+interface into several classes and try to make these classes as simple 
+and independent as possible. With such simple interfaces, developers 
+can write their own input method in a few lines of code very easily.
+
+SCIM is highly modularized: most components can be implemented as 
+dynamically loadable modules, thus can be loaded at runtime as you wish. 
+For example, input methods written for SCIM could be IMEngine modules, 
+and users can use such IMEngine modules combined with different interface 
+modules (FrontEnd) in different environment without rewrite/recompile the 
+IMEngine modules.
