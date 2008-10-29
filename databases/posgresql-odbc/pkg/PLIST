@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/29 23:48:44 pirofti Exp $
+lib/psqlodbcw.a
+lib/psqlodbcw.la
+lib/psqlodbcw.so
