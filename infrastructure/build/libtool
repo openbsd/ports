@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.40 2008/10/29 23:09:07 steven Exp $
+# $OpenBSD: libtool,v 1.41 2008/10/29 23:13:22 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -516,11 +516,8 @@ sub help
 {
 	print <<EOF
 Usage: $0 [options]
---config - print configuration
 --debug	- turn on debugging output
 --dry-run - don't do anything, only show what would be done
---features - show basic configuration information
---finish - same as `--mode=finish'
 --help - this message
 --mode=MODE - use operation mode MODE
 --quiet - do not print informational messages
@@ -561,23 +558,6 @@ sub perform
 		}
 	}
 	$performed++;
-}
-
-# XXX incomplete
-sub config
-{
-	print "objdir=$ltdir\n";
-	print "...\n";
-	exit 0;
-}
-
-sub features
-{
-	chomp (my $osver = `uname -r`);	# XXX avoid calling uname
-	print "host: $gnu_arch-unknown-openbsd$osver\n";
-	print (($noshared) ? "dis" : "en", "able shared libraries\n");
-	print ((!$static)  ? "dis" : "en", "able static libraries\n");
-	exit 0;
 }
 
 # convert 4:5:8 into a list of numbers
