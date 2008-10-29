@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/07/11 17:46:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/10/29 12:01:19 jasper Exp $
 @pkgpath x11/gnome/applets2
 @pkgpath x11/gnome/applets2,no_battstat
+@conflict libgweather-*
 %%SHARED%%
 include/libgweather/
 include/libgweather/gweather-gconf.h
