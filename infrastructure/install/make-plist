@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.118 2008/10/28 14:32:08 espie Exp $
+# $OpenBSD: make-plist,v 1.119 2008/10/29 11:26:02 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -802,7 +802,8 @@ sub handle_file
 		my $p = $item->{plist}->{replacement};
 		if ($file->type eq 'directory' && 
 		    $p->{mtree}->{$file->path}) {
-		    	print "This should not happen !!!\n";
+		    	print "Found out old directory in ", $p->{filename}, 
+			    ": ", $file->path, " (mtree)\n";
 			next;
 		}
 		my $short = short_name($file, $p);
@@ -943,11 +944,6 @@ if (($default->{wantshared} || (defined $default->{shared}) && $default->{shared
 	unshift(@{$default->{items}}, OpenBSD::PackingElement::Fragment->new("SHARED"));
 	$default->{nonempty} = 1;
 }
-
-#for my $k (sort keys %$foundcomments) {
-#	next if defined $foundcomments->{$k}->{accounted_for};
-#	print "Not accounted for: \@comment $k\n";
-#}
 
 # write new info over, as joe user.
 # first we write out everything in /tmp
