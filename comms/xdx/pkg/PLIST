@@ -1,18 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/12/15 19:12:06 ajacoutot Exp $
-bin/xdx
+@comment $OpenBSD: PLIST,v 1.4 2008/10/29 11:28:36 landry Exp $
+@bin bin/xdx
 @man man/man1/xdx.1
-share/applications/
 share/applications/Xdx.desktop
 share/locale/es/LC_MESSAGES/xdx.mo
 share/locale/fr/LC_MESSAGES/xdx.mo
 share/locale/nl/LC_MESSAGES/xdx.mo
 share/locale/pl/LC_MESSAGES/xdx.mo
+share/locale/pt/LC_MESSAGES/xdx.mo
 share/xdx/
 share/xdx/MANUAL
 share/xdx/MANUAL.es
 share/xdx/MANUAL.fr
 share/xdx/MANUAL.nl
 share/xdx/MANUAL.pl
+share/xdx/cty.dat
 share/xdx/pixmaps/
 share/xdx/pixmaps/bigsmile.png
 share/xdx/pixmaps/cry.png

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gui_manualdialog_c,v 1.1 2008/10/29 11:28:36 landry Exp $
+--- src/gui_manualdialog.c.orig	Tue Oct 28 16:26:09 2008
++++ src/gui_manualdialog.c	Tue Oct 28 16:27:12 2008
+@@ -59,7 +59,7 @@ void on_manual_activate (GtkMenuItem * menuitem, gpoin
+ 	helpfile = g_strdup_printf ("%s%s%s", PACKAGE_DATA_DIR, G_DIR_SEPARATOR_S, _("MANUAL"));
+ 
+ 	g_signal_connect(G_OBJECT(manualdialog), "response",
+-		GTK_SIGNAL_FUNC(gtk_widget_destroy), NULL);
++		G_CALLBACK(gtk_widget_destroy), NULL);
+ 
+ 
+ 	in = fopen (helpfile, "r");
