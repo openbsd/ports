@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/26 09:33:54 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/29 09:04:53 simon Exp $
 
 COMMENT =	source code browser plugin for the Vim text editor
 
 DISTNAME =	taglist_45
-PKGNAME =	vim-taglist-4.5
+PKGNAME =	vim-taglist-4.5p0
 CATEGORIES =	devel editors
 EXTRACT_SUFX =	.zip
 
@@ -18,7 +18,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-VIMDIR =	vim71
+VIMDIR =	vim72
+
+SUBST_VARS =	VIMDIR
 
 WRKDIST =	${WRKDIR}
 

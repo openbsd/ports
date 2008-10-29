@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/26 09:33:54 simon Exp $
-share/vim/vim71/doc/taglist.txt
-share/vim/vim71/plugin/taglist.vim
+@comment $OpenBSD: PLIST,v 1.2 2008/10/29 09:04:53 simon Exp $
+share/vim/${VIMDIR}/doc/taglist.txt
+share/vim/${VIMDIR}/plugin/taglist.vim
