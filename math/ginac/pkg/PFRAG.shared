@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/12/01 13:38:38 steven Exp $
-@lib lib/libginac-1.4.so.${LIBginac-1.4_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.2 2008/10/29 16:26:14 pirofti Exp $
 @lib lib/libginac.so.${LIBginac_VERSION}

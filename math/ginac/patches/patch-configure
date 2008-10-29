@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2008/10/29 16:26:14 pirofti Exp $
+--- configure.orig	Wed Oct 15 15:50:47 2008
++++ configure	Wed Oct 15 15:51:12 2008
+@@ -13844,7 +13844,7 @@ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="$LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -13904,7 +13904,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6
+ if test $ac_cv_lib_dl_dlopen = yes; then
+ 
+-		DL_LIBS="-ldl"
++		DL_LIBS=""
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_LIBDL 1

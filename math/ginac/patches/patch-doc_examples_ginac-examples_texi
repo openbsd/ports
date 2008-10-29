@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_examples_ginac-examples_texi,v 1.1 2008/10/29 16:26:14 pirofti Exp $
+--- doc/examples/ginac-examples.texi.orig	Sat Oct 25 16:08:33 2008
++++ doc/examples/ginac-examples.texi	Sat Oct 25 16:08:56 2008
+@@ -15,6 +15,11 @@
+ @node Top
+ @end ifnottex
+ 
++@dircategory Mathematics
++@direntry
++* ginac-examples: (ginac-examples).                   C++ library for symbolic computation.
++@end direntry
++
+ @finalout
+ @c finalout prevents ugly black rectangles on overfull hbox lines
+ 

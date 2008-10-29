@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/01 13:38:38 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/10/29 16:26:14 pirofti Exp $
 %%SHARED%%
 bin/ginac-excompiler
-bin/ginsh
-bin/viewgar
+@bin bin/ginsh
+@bin bin/viewgar
 include/ginac/
 include/ginac/add.h
 include/ginac/archive.h
@@ -48,9 +48,7 @@ include/ginac/tensor.h
 include/ginac/version.h
 include/ginac/wildcard.h
 @info info/ginac-examples.info
-info/ginac.info
-info/ginac.info-1
-info/ginac.info-2
+@info info/ginac.info
 lib/libginac.a
 lib/libginac.la
 lib/pkgconfig/
