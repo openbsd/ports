@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.39 2008/10/29 16:16:49 bernd Exp $
+# $OpenBSD: libtool,v 1.40 2008/10/29 23:09:07 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1058,13 +1058,11 @@ sub linkcmds
 	# static linking
 	if (!$shared) {
 		my @libfiles = values %libs;
-		if ($D) {
-			my @dirval = keys %dirs;
-			my @libval = keys %libs;
-			print "dirs:  @dirval\n";
-			print "libs:  @libval\n";
-			print "libfiles: @libfiles\n";
-		}
+		my @dirval = keys %dirs;
+		my @libval = keys %libs;
+		debug 1, "dirs:  @dirval\n";
+		debug 1, "libs:  @libval\n";
+		debug 1, "libfiles: @libfiles\n";
 		if ($lmode == LIBRARY) {
 			$cmd = "ar cru $dst";
 			$cmd .= " @$objs" if (@$objs);
@@ -1102,13 +1100,11 @@ sub linkcmds
 	}
 
 	my @libfiles = values %libs;
-	if ($D) {
-		my @dirval = keys %dirs;
-		my @libval = keys %libs;
-		print "dirs:  @dirval\n";
-		print "libs:  @libval\n";
-		print "libfiles: @libfiles\n";
-	}
+	my @dirval = keys %dirs;
+	my @libval = keys %libs;
+	debug 1, "dirs:  @dirval\n";
+	debug 1, "libs:  @libval\n";
+	debug 1, "libfiles: @libfiles\n";
 
 	create_symlinks($ltdir, \@libfiles);
 	map { $_ = "$ltdir/". basename $_ } @libfiles;
