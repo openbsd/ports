@@ -1,4 +1,4 @@
-# $OpenBSD: rc.mimedefang,v 1.3 2008/10/21 23:28:14 okan Exp $
+# $OpenBSD: rc.mimedefang,v 1.4 2008/10/29 14:36:12 okan Exp $
 
 mimedefang=${LOCALBASE}/bin/mimedefang
 multiplexor=${LOCALBASE}/bin/mimedefang-multiplexor
@@ -24,7 +24,7 @@ if [ -x $mimedefang -a -x $multiplexor ]; then
 
 	echo -n " mimedefang"
 	$mimedefang -U _mdefang -r -s -t \
-		-p /var/run/mdefang/mimedefang.pid \
+		-p /var/run/mdefang/mimedefang.socket \
 		-m /var/run/mdefang/multiplexor.socket
 
 	sleep 3 # for socket creation
