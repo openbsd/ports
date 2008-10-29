@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2008/10/29 11:31:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2008/10/29 14:52:40 ajacoutot Exp $
 
 COMMENT=	GTK+2 IRC client
 
@@ -30,6 +30,7 @@ MASTER_SITES=	${HOMEPAGE}files/source/${MAJOR}/ \
 
 MODULES=	devel/gettext
 
+BUILD_DEPENDS=	::devel/gconf2
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		::devel/gconf2
 LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
