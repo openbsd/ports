@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1 2005/03/24 07:35:03 dons Exp $
+$OpenBSD: patch-configure,v 1.2 2008/10/29 22:55:40 kili Exp $
 
 Don't force -O2
 
---- configure.orig	Thu Mar 24 13:55:34 2005
-+++ configure	Thu Mar 24 13:55:44 2005
-@@ -1721,7 +1721,7 @@ You need to install 'bison' and re-run t
+--- configure.orig	Thu Sep 21 00:34:03 2006
++++ configure	Fri May  4 17:32:19 2007
+@@ -2197,7 +2197,7 @@ You need to install 'bison' and re-run the configure s
  fi
  
  : ${CFLAGS=-g}

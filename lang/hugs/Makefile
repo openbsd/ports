@@ -1,37 +1,32 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/16 00:27:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/10/29 22:55:40 kili Exp $
 
-COMMENT=	Haskell 98 interpreter
+COMMENT =	Haskell 98 interpreter
 
-V=		Mar2005
-DISTNAME=	hugs98-${V}
-PKGNAME=	hugs98-2005.03
-CATEGORIES=	lang
-MAINTAINER=	Don Stewart <dons@openbsd.org>
-HOMEPAGE=	http://www.haskell.org/hugs/
+DISTNAME =	hugs98-plus-Sep2006
+PKGNAME =	hugs98-2006.09
+CATEGORIES =	lang
+MAINTAINER =	Matthias Kilian <kili@openbsd.org>
+HOMEPAGE =	http://www.haskell.org/hugs/
 
-MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/${V}/
-MASTER_SITES0=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/hugs98/
+MASTER_SITES =	http://cvs.haskell.org/Hugs/downloads/2006-09/
+MASTER_SITES0 =	http://openbsd.dead-parrot.de/distfiles/
 
-DISTFILES=	${DISTNAME}-patched.tar.gz ${DISTNAME}-regress.tar.bz2:0
-WRKDIST=	${WRKDIR}/${DISTNAME}-patched
+DISTFILES +=	${DISTNAME}.tar.gz ${DISTNAME}-tests.tar.gz:0
 
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
-CFLAGS+=    -fPIC
+CFLAGS +=	-fPIC
 .endif
 
-USE_X11=	Yes
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CC="${CC}"
-CONFIGURE_ARGS+=--with-pthreads --libdir=${PREFIX}/lib
-
-do-regress:
-	@cd ${WRKDIST}/tests && sh testScript static tcheck rts libs ffi
+USE_X11 =		Yes
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" CC="${CC}"
+CONFIGURE_ARGS +=	--with-pthreads --libdir=${PREFIX}/lib
 
 # BSDish
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ncurses readline GL X11 GLU
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+WANTLIB =		c m ncurses readline GL X11 GLU
 
 .include <bsd.port.mk>
