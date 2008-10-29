@@ -1,4 +1,4 @@
-# $OpenBSD: FS.pm,v 1.3 2008/10/28 14:32:08 espie Exp $
+# $OpenBSD: FS.pm,v 1.4 2008/10/29 00:22:56 espie Exp $
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -279,7 +279,7 @@ sub scan_destdir
 			}
 			return if $File::Find::name =~ m/pear\/lib\/\.(?:filemap|lock)$/;
 			my $path = undest($File::Find::name);
-			my ($uid, $gid) = (stat $_)[4,5];
+			my ($uid, $gid) = (lstat $_)[4,5];
 			$path =~ s,^/etc/X11/app-defaults\b,/usr/local/lib/X11/app-defaults,;
 			$files{$path} = FS::File->new($path, $type, 
 			    $uid_lookup->lookup($uid), 
