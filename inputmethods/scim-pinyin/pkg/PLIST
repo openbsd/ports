@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/29 02:25:18 kevlo Exp $
+@comment lib/scim-1.0/1.4.0/IMEngine/pinyin.la
+lib/scim-1.0/1.4.0/IMEngine/pinyin.so
+@comment lib/scim-1.0/1.4.0/SetupUI/pinyin-imengine-setup.la
+lib/scim-1.0/1.4.0/SetupUI/pinyin-imengine-setup.so
+share/locale/de/LC_MESSAGES/scim-pinyin.mo
+share/locale/fr/LC_MESSAGES/scim-pinyin.mo
+share/locale/it/LC_MESSAGES/scim-pinyin.mo
+share/locale/ja/LC_MESSAGES/scim-pinyin.mo
+share/locale/ko/LC_MESSAGES/scim-pinyin.mo
+share/locale/zh_CN/LC_MESSAGES/scim-pinyin.mo
+share/locale/zh_TW/LC_MESSAGES/scim-pinyin.mo
+share/scim/icons/smart-pinyin.png
+share/scim/pinyin/
+share/scim/pinyin/phrase_lib
+share/scim/pinyin/pinyin_phrase_index
+share/scim/pinyin/pinyin_phrase_lib
+share/scim/pinyin/pinyin_table
+share/scim/pinyin/special_table
