@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/10/21 20:57:57 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2008/10/29 09:26:20 steven Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -35,6 +35,10 @@ NO_REGRESS =		Yes # does not listen to DESTDIR, not worth the effort.
 USE_X11 =	Yes
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
+
+.if ${MACHINE_ARCH} == "sparc64"
+CFLAGS +=	-fPIC
+.endif
 
 # Do not link with system icu. TeXLive ICU is not vanilla (Yet)!
 # Xindy not ready yet
