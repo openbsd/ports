@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.119 2008/10/29 11:26:02 espie Exp $
+# $OpenBSD: make-plist,v 1.120 2008/10/29 15:42:41 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -488,7 +488,11 @@ sub add_to_mtree
 package OpenBSD::PackingElement::Comment;
 sub cwd
 {
-	return ${$_[0]->{cwd}};
+	my $self = shift;
+	if (!defined $self->{cwd}) {
+		die "Update your pkg_add!!!\n";
+	}
+	return ${$self->{cwd}};
 }
 
 sub register2
