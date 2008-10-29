@@ -1,0 +1,53 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/10/29 16:53:57 ajacoutot Exp $
+--- Makefile.orig	Wed Jul 14 23:48:52 2004
++++ Makefile	Wed Oct 29 17:40:54 2008
+@@ -2,19 +2,20 @@
+ # Allan Crossman
+ 
+ # Where the graphics and sound files go...
+-DATAPATH=/usr/local/share/komidata/
++DATAPATH=${PREFIX}/share/komidata/
+ 
+ # Where to put the binary...
+-BINPATH=/usr/local/bin/
++BINPATH=${PREFIX}/bin/
+ 
+ # Where to put the manpage...
+-MANPATH=/usr/local/man/man6/
++MANPATH=${PREFIX}/man/man6/
+ 
+ MIXER=-lSDL_mixer
+-SDL_LIB=$(shell sdl-config --static-libs) $(MIXER)
++SDL_LIB=`sdl-config --libs` $(MIXER)
++SDL_FLAGS=`sdl-config --cflags`
+ 
+-CFLAGS=-Wall -pedantic -std=c99 -O2 \
+-	$(shell sdl-config --cflags) \
++CFLAGS+=-Wall -pedantic -std=c99 \
++	$(SDL_FLAGS) \
+ 	-DDATAPATH=\"$(DATAPATH)\"
+ 
+ all:	komi
+@@ -24,15 +25,13 @@ clean:
+ 	-rm *.o
+ 
+ install:
+-	install -d $(DATAPATH)
+-	cp -R komidata/* $(DATAPATH)
+-	chmod -R 644 $(DATAPATH)
+-	chmod 755 $(DATAPATH)
+-	install -d $(BINPATH)
+-	cp komi $(BINPATH)
+-	chmod 755 $(BINPATH)komi
+-	install -d $(MANPATH)
+-	cp komi.6 $(MANPATH)komi.6
++	${BSD_INSTALL_DATA_DIR} ${DESTDIR}/$(DATAPATH)
++	cp -R komidata/* ${DESTDIR}/$(DATAPATH)
++	chmod -R 644 ${DESTDIR}/$(DATAPATH)
++	${BSD_INSTALL_PROGRAM_DIR} ${DESTDIR}/$(BINPATH)
++	${BSD_INSTALL_PROGRAM} komi ${DESTDIR}/$(BINPATH)
++	${BSD_INSTALL_MAN_DIR} ${DESTDIR}/$(MANPATH)
++	${BSD_INSTALL_MAN} komi.6 ${DESTDIR}/$(MANPATH)komi.6
+ 
+ komi:	komi.o
+ 	$(CC) $(CFLAGS) komi.o -o komi $(SDL_LIB)

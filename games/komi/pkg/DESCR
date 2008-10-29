@@ -1,0 +1,5 @@
+Komi is a 2D arcade game written in C, which uses the SDL library for
+graphics and sound.  The aim of the game is to collect the money (in the
+forms of coins and diamonds) floating about the screen.
+Move Komi (the Space Frog) with the arrow keys, or keypad 4 and 6, or Q
+and W, and extend his tongue with the spacebar, or the return key.
