@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_common_dbus_Makefile_in,v 1.1 2008/10/29 11:31:29 ajacoutot Exp $
+--- src/common/dbus/Makefile.in.orig	Wed Jun 11 10:34:23 2008
++++ src/common/dbus/Makefile.in	Wed Oct 29 12:24:39 2008
+@@ -301,7 +301,7 @@ servicedir = $(DBUS_SERVICES_DIR)
+ service_in_files = org.xchat.service.service.in
+ service_DATA = $(service_in_files:.service.in=.service)
+ @DO_GCONF_TRUE@GCONF_SCHEMA_CONFIG_SOURCE = `$(GCONFTOOL) --get-default-source`
+-@DO_GCONF_TRUE@GCONF_SCHEMA_FILE_DIR = $(sysconfdir)/gconf/schemas
++@DO_GCONF_TRUE@GCONF_SCHEMA_FILE_DIR = $(prefix)/share/schemas/xchat
+ @DO_GCONF_TRUE@schemadir = $(GCONF_SCHEMA_FILE_DIR)
+ @DO_GCONF_TRUE@schema_DATA = apps_xchat_url_handler.schemas
+ all: $(BUILT_SOURCES)
+@@ -560,7 +560,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-schemaDATA \
++install-data-am: install-schemaDATA \
+ 	install-serviceDATA
+ 
+ install-dvi: install-dvi-am

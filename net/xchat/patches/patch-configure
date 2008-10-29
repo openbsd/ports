@@ -1,0 +1,60 @@
+$OpenBSD: patch-configure,v 1.5 2008/10/29 11:31:29 ajacoutot Exp $
+--- configure.orig	Wed Jun 11 10:34:27 2008
++++ configure	Wed Oct 29 11:01:55 2008
+@@ -22291,13 +22291,13 @@ fi
+ 
+         else
+           # Some library is needed. Try libpthread and libc_r.
+-          { echo "$as_me:$LINENO: checking for pthread_kill in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_kill in -lpthread... $ECHO_C" >&6; }
++          { echo "$as_me:$LINENO: checking for pthread_kill in -pthread" >&5
++echo $ECHO_N "checking for pthread_kill in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_kill+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -22354,8 +22354,8 @@ fi
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_kill" >&6; }
+ if test $ac_cv_lib_pthread_pthread_kill = yes; then
+   gl_have_pthread=yes
+-             LIBTHREAD=-lpthread LTLIBTHREAD=-lpthread
+-             LIBMULTITHREAD=-lpthread LTLIBMULTITHREAD=-lpthread
++             LIBTHREAD=-pthread LTLIBTHREAD=-pthread
++             LIBMULTITHREAD=-pthread LTLIBMULTITHREAD=-pthread
+ fi
+ 
+           if test -z "$gl_have_pthread"; then
+@@ -27602,7 +27602,7 @@ _ACEOF
+ 
+ 
+ 
+-    INTLLIBS="$LIBINTL"
++    INTLLIBS="$LTLIBINTL"
+ 
+ 
+ 
+@@ -33409,7 +33409,7 @@ LIBTHREAD!$LIBTHREAD$ac_delim
+ LTLIBTHREAD!$LTLIBTHREAD$ac_delim
+ LIBMULTITHREAD!$LIBMULTITHREAD$ac_delim
+ LTLIBMULTITHREAD!$LTLIBMULTITHREAD$ac_delim
+-LIBICONV!$LIBICONV$ac_delim
++LIBICONV!$LTLIBICONV$ac_delim
+ LTLIBICONV!$LTLIBICONV$ac_delim
+ INTLBISON!$INTLBISON$ac_delim
+ GLIBC21!$GLIBC21$ac_delim
+@@ -33427,8 +33427,8 @@ INSTOBJEXT!$INSTOBJEXT$ac_delim
+ GENCAT!$GENCAT$ac_delim
+ INTLOBJS!$INTLOBJS$ac_delim
+ INTL_LIBTOOL_SUFFIX_PREFIX!$INTL_LIBTOOL_SUFFIX_PREFIX$ac_delim
+-INTLLIBS!$INTLLIBS$ac_delim
+-LIBINTL!$LIBINTL$ac_delim
++INTLLIBS!$LTLIBINTL$ac_delim
++LIBINTL!$LTLIBINTL$ac_delim
+ LTLIBINTL!$LTLIBINTL$ac_delim
+ POSUB!$POSUB$ac_delim
+ sedpath!$sedpath$ac_delim

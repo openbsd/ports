@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2008/10/29 11:31:29 ajacoutot Exp $
+lib/xchat/plugins/perl.so

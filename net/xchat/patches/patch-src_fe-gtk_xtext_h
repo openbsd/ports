@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_fe-gtk_xtext_h,v 1.1 2008/10/29 11:31:29 ajacoutot Exp $
+--- src/fe-gtk/xtext.h.orig	Sun Feb 24 05:48:02 2008
++++ src/fe-gtk/xtext.h	Wed Oct 29 10:25:26 2008
+@@ -270,6 +270,6 @@ void gtk_xtext_set_wordwrap (GtkXText *xtext, gboolean
+ xtext_buffer *gtk_xtext_buffer_new (GtkXText *xtext);
+ void gtk_xtext_buffer_free (xtext_buffer *buf);
+ void gtk_xtext_buffer_show (GtkXText *xtext, xtext_buffer *buf, int render);
+-GtkType gtk_xtext_get_type (void);
++GType gtk_xtext_get_type (void);
+ 
+ #endif

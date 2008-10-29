@@ -1,44 +1,57 @@
-# $OpenBSD: Makefile,v 1.67 2008/06/12 21:58:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2008/10/29 11:31:29 ajacoutot Exp $
 
 COMMENT=	GTK+2 IRC client
 
 MAJOR=		2.8
-VERSION=	${MAJOR}.4
+VERSION=	${MAJOR}.6
 DISTNAME=	xchat-${VERSION}
-PKGNAME=	${DISTNAME}p4
+
 CATEGORIES=	net x11
+
+EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.xchat.org/
 
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xau Xcomposite Xdamage Xdmcp Xcursor Xext Xrender \
-			Xfixes Xi Xinerama Xrandr atk-1.0 c cairo \
-			crypto expat fontconfig freetype glib-2.0 \
-			glitz gmodule-2.0 gobject-2.0 m \
-			pango-1.0 pangocairo-1.0 pixman-1 \
-			pangoft2-1.0 xml2 pcre png ssl z
 
-MASTER_SITES=	${HOMEPAGE}files/source/${MAJOR}/
-MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=xchat/}
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 c cairo crypto \
+		dbus-1 expat fontconfig freetype glib-2.0 glitz \
+		gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1 png \
+		pthread ssl util xml2 z
 
-EXTRACT_SUFX=	.tar.bz2
-
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
-		sexy::x11/libsexy
+MASTER_SITES=	${HOMEPAGE}files/source/${MAJOR}/ \
+		${MASTER_SITE_SOURCEFORGE:=xchat/}
 
 MODULES=	devel/gettext
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
+		::devel/gconf2
+LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
+		dbus-glib-1.>=4::x11/dbus-glib \
+		sexy::x11/libsexy
+
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+USE_GMAKE=	Yes
+
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --disable-python --disable-textfe \
-		 --disable-perl --disable-mmx --disable-dbus \
-		 --enable-ipv6 --enable-openssl="/usr"
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-perl \
+		--enable-ipv6 \
+		--enable-dbus \
+		--enable-openssl="/usr" \
+		--disable-tcl \
+		--disable-python \
+		--disable-textfe \
+		--disable-mmx
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		GCONF_SCHEMA_FILE_DIR=${LOCALBASE}/share/schemas/xchat
 
 .include <bsd.port.mk>

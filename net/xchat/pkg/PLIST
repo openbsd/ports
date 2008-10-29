@@ -1,7 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.23 2007/12/15 21:14:22 ajacoutot Exp $
-bin/xchat
-share/applications/
+@comment $OpenBSD: PLIST,v 1.24 2008/10/29 11:31:29 ajacoutot Exp $
+%%SHARED%%
+@bin bin/xchat
+lib/xchat/
+lib/xchat/plugins/
+@comment lib/xchat/plugins/perl.a
+@comment lib/xchat/plugins/perl.la
 share/applications/xchat.desktop
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.xchat.service.service
 share/locale/be/LC_MESSAGES/xchat.mo
 share/locale/ca/LC_MESSAGES/xchat.mo
 share/locale/cs/LC_MESSAGES/xchat.mo
@@ -15,28 +22,26 @@ share/locale/hu/LC_MESSAGES/xchat.mo
 share/locale/it/LC_MESSAGES/xchat.mo
 share/locale/ja/LC_MESSAGES/xchat.mo
 share/locale/ko/LC_MESSAGES/xchat.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xchat.mo
-share/locale/mk/
-share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/xchat.mo
 share/locale/nl/LC_MESSAGES/xchat.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/xchat.mo
 share/locale/pt/LC_MESSAGES/xchat.mo
 share/locale/ru/LC_MESSAGES/xchat.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/xchat.mo
 share/locale/sr/LC_MESSAGES/xchat.mo
 share/locale/sv/LC_MESSAGES/xchat.mo
+share/locale/th/LC_MESSAGES/xchat.mo
 share/locale/uk/LC_MESSAGES/xchat.mo
 share/locale/vi/LC_MESSAGES/xchat.mo
 share/locale/zh_CN/LC_MESSAGES/xchat.mo
 share/locale/zh_TW/LC_MESSAGES/xchat.mo
 share/pixmaps/
 share/pixmaps/xchat.png
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/xchat/*.schemas > /dev/null
+share/schemas/
+share/schemas/xchat/
+share/schemas/xchat/apps_xchat_url_handler.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/xchat/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

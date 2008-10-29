@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2008/10/29 11:31:29 ajacoutot Exp $
+--- Makefile.in.orig	Wed Oct 29 11:04:40 2008
++++ Makefile.in	Wed Oct 29 11:04:52 2008
+@@ -310,7 +310,6 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config
+ 	esac;
+ 
+ $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+-	$(SHELL) ./config.status --recheck
+ 
+ $(top_srcdir)/configure: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
+ 	cd $(srcdir) && $(AUTOCONF)
