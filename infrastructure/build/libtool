@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.37 2008/10/29 15:28:22 steven Exp $
+# $OpenBSD: libtool,v 1.38 2008/10/29 16:10:53 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -418,8 +418,8 @@ if ($mode eq 'compile') {
 		$shared = 1 if ($opts{'version-info'} ||
 				$opts{'avoid-version'} ||
 				$opts{'module'} ||
-				$opts{'rpath'} );
-		if ($opts{'static'}) {
+				$opts{'rpath'});
+		if ($opts{'static'} || !$opts{'rpath'}) {
 			$shared = 0;
 			$static = 1;
 		}
@@ -485,9 +485,6 @@ if ($mode eq 'compile') {
 		$lainfo{'dependency_libs'} = $deplibstring;
 		if ($opts{'rpath'}) {
 			$lainfo{'libdir'} = $opts{'rpath'};
-		} else {
-			# XXX sensible default?
-			$lainfo{'libdir'} = $instlibdir;
 		}
 		write_la_file($outfile, $ofile, \%lainfo);
 		perform("cd $odir/$ltdir && rm -f $ofile && ln -s ../$ofile $ofile");
@@ -652,7 +649,7 @@ sub write_la_file
 	$age = $lainfo->{'age'} if (defined $lainfo->{'age'});
 	my $installed = $lainfo->{'installed'};
 	my $shouldnotlink = $lainfo->{'shouldnotlink'};
-	my $libdir = $lainfo->{'libdir'};
+	my $libdir = $lainfo->{'libdir'} || '';
 
 	open(my $la, '>', $filename) or die "cannot write $filename: $!\n";
 	print "creating $filename\n" if ($verbose || $D);
