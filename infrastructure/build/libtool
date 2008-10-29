@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.34 2008/10/28 17:16:31 bernd Exp $
+# $OpenBSD: libtool,v 1.35 2008/10/29 10:09:33 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -805,12 +805,12 @@ sub parse_linkargs
 			$a = '';   
 		} elsif ($a eq '-pthread' && !$seen_pthread) {	
 			# XXX special treatment since it's not a -l flag
-			push @deplibs, $a;
+			unshift @deplibs, $a;
 			$seen_pthread = 1;
 		} elsif ($a && $a =~ m/^-L(.*)/) {
 			if (!exists $dirs{$1}) {
 				$dirs{$1} = 1;
-				push @deplibs, $a;
+				unshift @deplibs, $a;
 			}
 			$a = '';
 		} elsif ($a && $a =~ m/^-R(.*)/) {
@@ -825,7 +825,7 @@ sub parse_linkargs
 				if ($la) {
 					my $lafile = find_la($key);
 					if ($lafile) {
-						push @deplibs, $lafile;
+						unshift @deplibs, $lafile;
 						$a = $lafile;
 						next;
 					} else {
@@ -843,7 +843,7 @@ sub parse_linkargs
 							$k =~ s/^lib//;
 							$lstring .= "-l$k ";
 						}
-						push @deplibs, $a;
+						unshift @deplibs, $a;
 					}
 				}
 			}
@@ -877,8 +877,8 @@ sub parse_linkargs
 			if ($d !~ m/\Q$ltdir\E$/ && $lainfo{'installed'} eq 'no') {
 				$d .= "/$ltdir";
 			}
-			if ($la) {
-				push @deplibs, $fulla;
+			if ($dlname && $la) {
+				unshift @deplibs, $fulla;
 			}
 			# the following should happen only in pass 2
 			next if ($la);
