@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/10/29 02:24:17 kevlo Exp $
+--- configure.orig	Sat Oct 25 15:48:33 2008
++++ configure	Sat Oct 25 15:50:24 2008
+@@ -465,7 +465,7 @@ ac_includes_default="\
+ # include <unistd.h>
+ #endif"
+ 
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS SCIM_FCITX_MAJOR_VERSION SCIM_FCITX_MINOR_VERSION SCIM_FCITX_MICRO_VERSION SCIM_FCITX_VERSION INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE am__leading_dot build build_cpu build_vendor build_os host host_cpu host_vendor host_os CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE EGREP LN_S ECHO AR ac_ct_AR RANLIB ac_ct_RANLIB CPP CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE CXXCPP F77 FFLAGS ac_ct_F77 LIBTOOL INSTALL_LTDL_TRUE INSTALL_LTDL_FALSE CONVENIENCE_LTDL_TRUE CONVENIENCE_LTDL_FALSE LIBADD_DL LIBTOOL_DEPS PKG_CONFIG ac_pt_PKG_CONFIG SCIM_CFLAGS SCIM_LIBS ac_aux_dir SCIM_DEBUG_FLAGS SCIM_ICONDIR SCIM_DATADIR SCIM_MODULEDIR SCIM_FCITXDATADIR LIBOBJS LTLIBOBJS'
++ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS SCIM_FCITX_MAJOR_VERSION SCIM_FCITX_MINOR_VERSION SCIM_FCITX_MICRO_VERSION SCIM_FCITX_VERSION INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE am__leading_dot build build_cpu build_vendor build_os host host_cpu host_vendor host_os CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE EGREP LN_S ECHO AR ac_ct_AR RANLIB ac_ct_RANLIB CPP CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE CXXCPP F77 FFLAGS ac_ct_F77 LIBTOOL INSTALL_LTDL_TRUE INSTALL_LTDL_FALSE CONVENIENCE_LTDL_TRUE CONVENIENCE_LTDL_FALSE LIBADD_DL LIBTOOL_DEPS LIBTOOL_EXPORT_OPTIONS PKG_CONFIG ac_pt_PKG_CONFIG SCIM_CFLAGS SCIM_LIBS ac_aux_dir SCIM_DEBUG_FLAGS SCIM_ICONDIR SCIM_DATADIR SCIM_MODULEDIR SCIM_FCITXDATADIR LIBOBJS LTLIBOBJS'
+ ac_subst_files=''
+ 
+ # Initialize some variables set by options.
+@@ -19017,6 +19017,11 @@ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+ 
++# libtool option to control which symbols are exported
++# right now, symbols starting with _ are not exported
++# !!! DO NOT USE IT !!!
++LIBTOOL_EXPORT_OPTIONS=''
++
+ # Prevent multiple expansion
+ 
+ 
+@@ -24486,6 +24491,7 @@ s,@CONVENIENCE_LTDL_TRUE@,$CONVENIENCE_LTDL_TRUE,;t t
+ s,@CONVENIENCE_LTDL_FALSE@,$CONVENIENCE_LTDL_FALSE,;t t
+ s,@LIBADD_DL@,$LIBADD_DL,;t t
+ s,@LIBTOOL_DEPS@,$LIBTOOL_DEPS,;t t
++s,@LIBTOOL_EXPORT_OPTIONS@,$LIBTOOL_EXPORT_OPTIONS,;t t
+ s,@PKG_CONFIG@,$PKG_CONFIG,;t t
+ s,@ac_pt_PKG_CONFIG@,$ac_pt_PKG_CONFIG,;t t
+ s,@SCIM_CFLAGS@,$SCIM_CFLAGS,;t t

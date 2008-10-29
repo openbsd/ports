@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_tools_cpp,v 1.1.1.1 2008/10/29 02:24:17 kevlo Exp $
+--- src/tools.cpp.orig	Sat Oct 25 15:34:40 2008
++++ src/tools.cpp	Sat Oct 25 15:35:41 2008
+@@ -14,6 +14,7 @@ using namespace scim;
+ #include <sys/stat.h>
+ #include <limits.h>
+ #include <string.h>
++#include <unistd.h>
+ 
+ #include "version.h"
+ #include "PYFA.h"
