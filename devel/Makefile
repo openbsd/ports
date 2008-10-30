@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.646 2008/10/30 14:31:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.647 2008/10/30 16:29:55 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -764,6 +764,7 @@
      SUBDIR += vtcl
      SUBDIR += vte
      SUBDIR += waf
+     SUBDIR += xdg-user-dirs
      SUBDIR += xdg-utils
      SUBDIR += xmake
      SUBDIR += xulrunner
