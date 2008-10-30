@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.47 2008/10/30 19:13:11 steven Exp $
+# $OpenBSD: libtool,v 1.48 2008/10/30 22:22:34 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -346,7 +346,7 @@ if ($mode eq 'compile') {
 			'version-number=s{1}'	=> \$opts{'version-info'},
 		);
 	# XXX options ignored: dlopen, dlpreopen,
-	# 	export-symbols, export-symbols-regex, no-fast-install,
+	# 	export-symbols-regex, no-fast-install,
 	# 	no-install, no-undefined, precious-files-regex,
 	# 	shrext, thread-safe, prefer-pic, prefer-non-pic
 
@@ -1088,6 +1088,7 @@ sub linkcmds
 
 	# dynamic linking
 	my @RPdirs = ();
+	my $symbolsfile = $opts{'export-symbols'};
 	if ($lmode == PROGRAM) {
 		@RPdirs = (@Ropts, @RPopts, @Rresolved);
 		@RPdirs = reverse_zap_duplicates(@RPdirs);
@@ -1152,6 +1153,7 @@ sub linkcmds
 	$cmd .= " @$objs" if (@$objs);
 	$cmd .= " -L$ltdir @libflags" if (@libflags);
 	$cmd .= " @RPdirs" if (@RPdirs);
+	$cmd .= " -Wl,-retain-symbols-file,$symbolsfile" if ($symbolsfile);
 	push @cmdlist, $cmd;
 
 	return @cmdlist;
