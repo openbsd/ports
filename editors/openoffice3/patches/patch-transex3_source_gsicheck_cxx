@@ -1,0 +1,11 @@
+--- transex3/source/gsicheck.cxx.orig.port	Sat Oct 25 18:55:21 2008
++++ transex3/source/gsicheck.cxx	Sat Oct 25 18:56:14 2008
+@@ -444,7 +444,7 @@
+             }
+         }
+ 
+-		ByteString aDelimiter( String( sal_Unicode(0x2016) ), RTL_TEXTENCODING_UTF8 );
++		ByteString aDelimiter = ByteString( String( sal_Unicode(0x2016) ), RTL_TEXTENCODING_UTF8 );
+ 
+         if ( aID.Equals( aDelimiter, 6, aDelimiter.Len() ) )
+         {   // New KeyId     6 Letters, digits and spechial chars followed by delimiter

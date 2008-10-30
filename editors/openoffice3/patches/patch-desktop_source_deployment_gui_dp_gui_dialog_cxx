@@ -1,0 +1,13 @@
+--- desktop/source/deployment/gui/dp_gui_dialog.cxx.orig.port	Sun Oct 26 20:01:00 2008
++++ desktop/source/deployment/gui/dp_gui_dialog.cxx	Mon Oct 27 13:28:08 2008
+@@ -1280,9 +1280,7 @@
+         pParent = GetParent();
+ 
+     pUpdateDialog = new UpdateDialog( m_xComponentContext, pParent,
+-                                            ( /*selected ? new SelectedPackageIterator(*m_treelb.get())
+-                                                       : rtl::Reference<SelectedPackageIterator>()),*/
+-                                            rtl::Reference<SelectedPackage>()),
++                                            rtl::Reference<SelectedPackage>(),
+                                             ( selected ? Sequence<Reference<deployment::XPackageManager> >()
+                                                        : m_packageManagers ),
+                                             &data );

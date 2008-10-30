@@ -1,0 +1,11 @@
+--- sfx2/source/doc/objuno.cxx.orig.port	Sun Oct 26 12:35:39 2008
++++ sfx2/source/doc/objuno.cxx	Sun Oct 26 12:42:28 2008
+@@ -390,7 +390,7 @@
+             for (sal_Int32 i = 0; i < oldLength; ++i) {
+                 names.push_back(props[i].Name);
+             }
+-            const ::rtl::OUString sInfo(
++            const ::rtl::OUString sInfo = ::rtl::OUString(
+                         String( SfxResId( STR_DOCINFO_INFOFIELD ) ));
+             for (sal_Int32 i = oldLength; i < FOUR; ++i) {
+                 ::rtl::OUString sName(sInfo);

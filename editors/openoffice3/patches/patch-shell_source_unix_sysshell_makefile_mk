@@ -1,0 +1,23 @@
+--- shell/source/unix/sysshell/makefile.mk.orig.port	Fri Apr 11 10:12:17 2008
++++ shell/source/unix/sysshell/makefile.mk	Sat Oct 25 14:39:13 2008
+@@ -44,6 +44,11 @@
+ CFLAGS+=-DSYSTEM_EXPAT
+ .ENDIF
+ 
++.IF "$(ENABLE_GTK)" != ""
++PKGCONFIG_MODULES=gtk+-2.0
++.INCLUDE: pkg_config.mk
++.ENDIF
++
+ # --- Files --------------------------------------------------------
+ 
+ .IF "$(OS)" != "MACOSX"
+@@ -74,7 +79,7 @@
+ SHL1LIBS=$(SLB)$/xmlparser.lib
+ SHL1OBJS=$(SLOFILES)
+ SHL1VERSIONMAP=recfile.map
+-
++SHL1STDLIBS+=$(PKGCONFIG_LIBS:s/ -lpangoxft-1.0//)
+ .ELSE
+ 
+ dummy:

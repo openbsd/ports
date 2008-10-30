@@ -1,0 +1,11 @@
+--- extensions/source/nsplugin/source/makefile.mk.orig.port	Mon Jun  9 14:31:47 2008
++++ extensions/source/nsplugin/source/makefile.mk	Sat Oct 25 12:19:29 2008
+@@ -53,7 +53,7 @@
+ 	@echo GTK disabled - nothing to build
+ 
+ .ELSE           # "$(ENABLE_GTK)"==""
+-.IF "$(OS)"=="LINUX" || "$(OS)"=="FREEBSD"
++.IF "$(OS)"=="LINUX" || "$(OS)"=="FREEBSD" || "$(OS)"=="OPENBSD"
+ INC+= -DNP_LINUX
+ .ENDIF
+ PKGCONFIG_MODULES=gtk+-2.0

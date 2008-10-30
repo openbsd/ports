@@ -1,0 +1,52 @@
+--- instsetoo_native/util/makefile.mk.orig.port	Wed Jul 30 15:30:16 2008
++++ instsetoo_native/util/makefile.mk	Sat Oct 25 14:03:49 2008
+@@ -47,12 +47,14 @@
+ .ENDIF			# "$(GUI)"=="WNT"
+ .EXPORT: PYTHONPATH
+ 
++.IF "$(OS)"!="OPENBSD"
+ .IF "$(CWS_WORK_STAMP)"=="" || "$(UPDATER)"!=""
+ ENABLE_DOWNLOADSETS*=TRUE
+ .ENDIF			# "$(CWS_WORK_STAMP)"=="" || "$(UPDATER)"!=""
+ .IF "$(FORCE_DOWNLOADSETS)"!=""
+ ENABLE_DOWNLOADSETS=TRUE
+ .ENDIF			# "$(FORCE_DOWNLOADSETS)"!=""
++.ENDIF
+ 
+ .EXPORT: ENABLE_DOWNLOADSETS
+ .EXPORT: LAST_MINOR
+@@ -135,7 +137,7 @@
+ 
+ .IF "$(alllangiso)"!=""
+ 
+-openoffice: $(foreach,i,$(alllangiso) openoffice_$i)
++openoffice: openoffice_en-US
+ 
+ openofficedev: $(foreach,i,$(alllangiso) openofficedev_$i)
+ 
+@@ -228,7 +230,7 @@
+ .ELSE			# "$(PKGFORMAT)"!=""
+ openoffice_% :
+ .ENDIF			# "$(PKGFORMAT)"!=""
+-	$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles $(subst,xxx,$(@:e:s/.//) $(PKGFORMATSWITCH) $(VERBOSESWITCH))
++	$(PERL) -w $(SOLARENV)$/bin$/make_installer.pl -f $(PRJ)$/util$/openoffice.lst -l $(subst,$(@:s/_/ /:1)_, $(@:b)) -p OpenOffice -u $(OUT) -buildid $(BUILD) -msitemplate $(MSIOFFICETEMPLATEDIR) -msilanguage $(COMMONMISC)$/win_ulffiles $(subst,xxx,$(@:e:s/.//) --dontstrip $(PKGFORMATSWITCH) $(VERBOSESWITCH))
+ 	$(PERL) -w $(SOLARENV)$/bin$/gen_update_info.pl --buildid $(BUILD) --arch "$(RTL_ARCH)" --os "$(RTL_OS)" --lstfile $(PRJ)$/util$/openoffice.lst --product OpenOffice --languages $(subst,$(@:s/_/ /:1)_, $(@:b)) $(PRJ)$/util$/update.xml > $(MISC)/$(@:b)_$(RTL_OS)_$(RTL_ARCH)$(@:e).update.xml
+ 
+ .IF "$(PKGFORMAT)"!=""
+@@ -380,11 +382,11 @@
+ 	-$(MKDIRHIER) $(MSIURETEMPLATEDIR)
+ 	-$(MKDIRHIER) $(MSISDKOOTEMPLATEDIR)
+ #	-$(MKDIRHIER) $(MSIURETEMPLATEDIR)
+-	$(GNUCOPY) -ua $(MSIOFFICETEMPLATESOURCE) $(MSIOFFICETEMPLATEDIR:d:d)
+-	$(GNUCOPY) -ua $(MSILANGPACKTEMPLATESOURCE) $(MSILANGPACKTEMPLATEDIR:d:d)
+-	$(GNUCOPY) -ua $(MSIURETEMPLATESOURCE) $(MSIURETEMPLATEDIR:d:d)
+-	$(GNUCOPY) -ua $(MSISDKOOTEMPLATESOURCE) $(MSISDKOOTEMPLATEDIR:d:d)
+-#	$(GNUCOPY) -ua $(MSIURETEMPLATESOURCE) $(MSIURETEMPLATEDIR:d:d)
++	$(GNUCOPY) -R $(MSIOFFICETEMPLATESOURCE) $(MSIOFFICETEMPLATEDIR:d:d)
++	$(GNUCOPY) -R $(MSILANGPACKTEMPLATESOURCE) $(MSILANGPACKTEMPLATEDIR:d:d)
++	$(GNUCOPY) -R $(MSIURETEMPLATESOURCE) $(MSIURETEMPLATEDIR:d:d)
++	$(GNUCOPY) -R $(MSISDKOOTEMPLATESOURCE) $(MSISDKOOTEMPLATEDIR:d:d)
++#	$(GNUCOPY) -R $(MSIURETEMPLATESOURCE) $(MSIURETEMPLATEDIR:d:d)
+ 	$(RM) $(MSIOFFICETEMPLATEDIR)$/Binary$/Image.bmp
+ 	$(RM) $(MSILANGPACKTEMPLATEDIR)$/Binary$/Image.bmp
+ 	$(RM) $(MSIURETEMPLATEDIR)$/Binary$/Image.bmp

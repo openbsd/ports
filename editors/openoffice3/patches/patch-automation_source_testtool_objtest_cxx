@@ -1,0 +1,11 @@
+--- automation/source/testtool/objtest.cxx.orig.port	Fri Apr 11 12:12:26 2008
++++ automation/source/testtool/objtest.cxx	Sat Oct 25 11:53:46 2008
+@@ -521,6 +521,8 @@
+     abGP.Append( "20" );  // Linux ia64
+ #elif defined LINUX && defined S390
+     abGP.Append( "21" );  // Linux S390
++#elif defined OPENBSD
++    abGP.Append( "22" );  // OpenBSD
+ #else
+ #error ("unknown platform. please request an ID for your platform on qa/dev")
+ #endif

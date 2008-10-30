@@ -1,0 +1,11 @@
+--- sal/osl/unx/makefile.mk.orig.port	Wed Aug  6 17:28:18 2008
++++ sal/osl/unx/makefile.mk	Sat Oct 25 14:29:34 2008
+@@ -116,7 +116,7 @@
+ SLOFILES += $(SLO)$/osxlocale.obj
+ .ENDIF
+ 
+-.IF "$(OS)"=="SOLARIS" || "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD" || "$(OS)$(CPU)"=="LINUXS" || "$(OS)"=="MACOSX"
++.IF "$(OS)"=="SOLARIS" || "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD" || "$(OS)$(CPU)"=="LINUXS" || "$(OS)"=="MACOSX" || "$(OS)"=="OPENBSD"
+ SLOFILES += $(SLO)$/backtrace.obj
+ OBJFILES += $(OBJ)$/backtrace.obj
+ .ENDIF

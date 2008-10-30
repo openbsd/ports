@@ -1,0 +1,13 @@
+$OpenBSD: patch-cppu_util_makefile_mk,v 1.1.1.1 2008/10/30 18:51:05 robert Exp $
+--- cppu/util/makefile.mk.orig.port	Wed Jul 18 14:34:25 2007
++++ cppu/util/makefile.mk	Thu Oct 25 16:23:46 2007
+@@ -69,7 +69,9 @@ SHL1STDLIBS = $(SALLIB) $(SALHELPERLIB)
+ SHL1DEPN=
+ SHL1IMPLIB=i$(TARGET)
+ .IF "$(OS)"!="FREEBSD"
++.IF "$(OS)"!="OPENBSD"
+ SHL1DEF=$(MISC)$/$(SHL1TARGET).def
++.ENDIF
+ .ENDIF
+ 
+ SHL1VERSIONMAP=$(TARGET).map

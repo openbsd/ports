@@ -1,0 +1,13 @@
+--- filter/source/pdf/impdialog.cxx.orig.port	Mon Oct 27 13:46:19 2008
++++ filter/source/pdf/impdialog.cxx	Mon Oct 27 13:47:18 2008
+@@ -1454,8 +1454,8 @@
+ 
+ {
+     // load images
+-    Image aWarnImg( BitmapEx( ResId( IMG_WARN, rResMgr ) ) );
+-    Image aErrImg( BitmapEx( ResId( IMG_ERR, rResMgr ) ) );
++    Image aWarnImg = Image( BitmapEx( ResId( IMG_WARN, rResMgr ) ) );
++    Image aErrImg = Image( BitmapEx( ResId( IMG_ERR, rResMgr ) ) );
+ 
+     for( std::set<vcl::PDFWriter::ErrorCode>::const_iterator it = rErrors.begin();
+          it != rErrors.end(); ++it )

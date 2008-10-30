@@ -1,0 +1,20 @@
+--- solenv/bin/modules/installer/download.pm.orig.port	Thu Jul 31 21:27:13 2008
++++ solenv/bin/modules/installer/download.pm	Sat Oct 25 14:46:16 2008
+@@ -144,7 +144,7 @@
+ 	}
+ 	else
+ 	{
+-		installer::exiter::exit_program("ERROR: Incorrect return value from /usr/bin/sum: $sumout", "put_checksum_and_size_into_script");
++		installer::exiter::exit_program("ERROR: Incorrect return value from sum: $sumout", "put_checksum_and_size_into_script");
+ 	}
+ 
+ 	my $infoline = "Adding checksum $checksum and size $size into download shell script\n";
+@@ -230,7 +230,7 @@
+ {
+ 	my ($filename, $getuidlibrary) = @_;
+ 
+-	my $systemcall = "/usr/bin/sum $filename |";
++	my $systemcall = "sum $filename |";
+ 	
+ 	my $sumoutput = "";
+ 

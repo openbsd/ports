@@ -1,0 +1,479 @@
+--- setup_native/source/packinfo/packinfo_office.txt.orig.port	Fri Aug 15 12:47:08 2008
++++ setup_native/source/packinfo/packinfo_office.txt	Sat Oct 25 14:36:40 2008
+@@ -28,7 +28,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Gnome integration module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -43,7 +43,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "KDE integration module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -59,7 +59,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Core module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -75,7 +75,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Writer module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -91,7 +91,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Calc module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -107,7 +107,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Draw module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -123,7 +123,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Impress module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -139,7 +139,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Base module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -155,7 +155,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Math module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -170,7 +170,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Legacy filters (e.g. StarOffice 5.2) for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -185,7 +185,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Graphic filter module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -200,7 +200,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Testtool module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -215,7 +215,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "English spellchecker module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -230,7 +230,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "XSLT filter samples module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -245,7 +245,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Java filter module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -260,7 +260,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "ActiveX control for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -274,7 +274,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Online update modul for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -289,7 +289,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Pyuno module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -304,7 +304,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Email mailmerge module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -319,7 +319,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Headless display module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -334,7 +334,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Images module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -349,7 +349,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Mailcap module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -364,7 +364,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Linguistic module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -380,7 +380,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Office core module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -395,7 +395,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Office core module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -411,7 +411,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Office core module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -426,7 +426,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Office core module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -441,7 +441,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Office core module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -456,7 +456,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "OpenOffice.org"
+ description = "Office core module for OpenOffice.org %OOOBASEVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -472,7 +472,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Af dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -488,7 +488,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Cs dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -504,7 +504,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Da dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -520,7 +520,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "De dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -536,7 +536,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "En dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -552,7 +552,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Es dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -568,7 +568,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Et dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -584,7 +584,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Fr dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -600,7 +600,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Gl dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -616,7 +616,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Hu dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -632,7 +632,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "It dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -648,7 +648,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Lt dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -664,7 +664,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Ne dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -680,7 +680,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Nl dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -696,7 +696,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Pl dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -712,7 +712,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Pt dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -728,7 +728,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Ru dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -744,7 +744,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Sk dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -760,7 +760,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Sl dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -776,7 +776,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Sv dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -792,7 +792,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Sw dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -808,7 +808,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Th dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 
+@@ -824,7 +824,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Vietnamese dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%OOOPACKAGEVERSION"
+ End
+ 
+@@ -840,7 +840,7 @@
+ solariscopyright = "solariscopyrightfile"
+ vendor = "Sun Microsystems, Inc."
+ description = "Zu dictionary for %PRODUCTNAME %PRODUCTVERSION"
+-destpath = "/opt"
++destpath = "openoffice"
+ packageversion = "%PACKAGEVERSION"
+ End
+ 

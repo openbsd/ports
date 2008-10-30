@@ -1,0 +1,11 @@
+--- crashrep/source/unx/makefile.mk.orig.port	Wed Aug  6 17:24:20 2008
++++ crashrep/source/unx/makefile.mk	Sat Oct 25 13:49:11 2008
+@@ -63,7 +63,7 @@
+ .IF "$(OS)" != "MACOSX"
+ APP1STDLIBS=$(DYNAMIC) -lXext -lX11
+ .ENDIF
+-.IF "$(OS)" != "FREEBSD" && "$(OS)" != "MACOSX"
++.IF "$(OS)" != "FREEBSD" && "$(OS)" != "MACOSX" && "$(OS)" != "MACOSX"
+ APP1STDLIBS+=-ldl -lnsl
+ .ENDIF
+ .IF "$(OS)" == "SOLARIS"

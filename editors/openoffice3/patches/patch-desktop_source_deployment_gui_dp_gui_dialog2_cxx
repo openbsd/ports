@@ -1,0 +1,11 @@
+--- desktop/source/deployment/gui/dp_gui_dialog2.cxx.orig.port	Mon Oct 27 13:28:58 2008
++++ desktop/source/deployment/gui/dp_gui_dialog2.cxx	Mon Oct 27 13:29:17 2008
+@@ -1482,7 +1482,7 @@
+     Point aNewEnPt( m_pEnableBtn->GetPosPixel() - Point( 0, nDelta ) );
+     Point aNewSBPt( m_pScrollBar->GetPosPixel() );
+ 
+-    Rectangle aScrRect( Point(), GetOutputSizePixel() );
++    Rectangle aScrRect = Rectangle( Point(), GetOutputSizePixel() );
+     aScrRect.Right() -= pScrBar->GetSizePixel().Width();
+     Scroll( 0, -nDelta, aScrRect );
+ 
