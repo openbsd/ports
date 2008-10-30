@@ -1,0 +1,3 @@
+The PloneLDAP product is intended to make it easier to use LDAP
+connections in a Plone website. It contains PAS plugins which allow
+using of LDAP and Active Directory servers in a Plone site.
