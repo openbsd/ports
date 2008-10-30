@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/30 11:04:43 mbalmer Exp $
+@group daemon
+lib/
+lib/php/
+pear/lib/.registry/auth_http.reg
+pear/lib/Auth/
+pear/lib/Auth/HTTP.php
+pear/tests/Auth_HTTP/
+pear/tests/Auth_HTTP/tests/
+pear/tests/Auth_HTTP/tests/sample.sql
+pear/tests/Auth_HTTP/tests/test_basic_simple.php
+pear/tests/Auth_HTTP/tests/test_digest_get.php
+pear/tests/Auth_HTTP/tests/test_digest_post.php
+pear/tests/Auth_HTTP/tests/test_digest_simple.php
