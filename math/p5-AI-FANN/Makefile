@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/30 09:22:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/30 10:26:54 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		interface to the Fast Artificial Neural Network library  
 
-DISTNAME=		AI-FANN-0.08
+DISTNAME=		AI-FANN-0.09
 CATEGORIES=		math
 
 MODULES=		cpan
