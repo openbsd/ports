@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.41 2008/10/29 23:13:22 steven Exp $
+# $OpenBSD: libtool,v 1.42 2008/10/30 10:39:38 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -334,7 +334,7 @@ if ($mode eq 'compile') {
 			'version_info=s{1}'	=> \$opts{'version-info'},
 			'version-number=s{1}'	=> \$opts{'version-info'},
 		);
-	# XXX options ignored: dlopen, dlpreopen, export-dynamic,
+	# XXX options ignored: dlopen, dlpreopen,
 	# 	export-symbols, export-symbols-regex, no-fast-install,
 	# 	no-install, no-undefined, precious-files-regex,
 	# 	shrext, thread-safe, prefer-pic, prefer-non-pic
@@ -392,6 +392,9 @@ if ($mode eq 'compile') {
 	if ($linkmode == PROGRAM) {
 		# XXX give higher priority to dirs of not installed libs
 		# XXX no static linking yet here
+		if ($opts{'export-dynamic'}) {
+			push(@ARGV, "-Wl,-E");
+		}
 		my $objlist = \@objs;
 		if (@objs == 0) {
 		        if (@sobjs > 0) {
