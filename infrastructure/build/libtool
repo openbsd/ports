@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.48 2008/10/30 22:22:34 steven Exp $
+# $OpenBSD: libtool,v 1.49 2008/10/30 23:53:28 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -345,8 +345,7 @@ if ($mode eq 'compile') {
 			'version_info=s{1}'	=> \$opts{'version-info'},
 			'version-number=s{1}'	=> \$opts{'version-info'},
 		);
-	# XXX options ignored: dlopen, dlpreopen,
-	# 	export-symbols-regex, no-fast-install,
+	# XXX options ignored: dlopen, dlpreopen, no-fast-install,
 	# 	no-install, no-undefined, precious-files-regex,
 	# 	shrext, thread-safe, prefer-pic, prefer-non-pic
 
@@ -1088,7 +1087,14 @@ sub linkcmds
 
 	# dynamic linking
 	my @RPdirs = ();
-	my $symbolsfile = $opts{'export-symbols'};
+	my $symbolsfile;
+	if ($opts{'export-symbols'}) {
+		$symbolsfile = $opts{'export-symbols'};
+	} elsif ($opts{'export-symbols-regex'}) {
+		$symbolsfile = "$odir/$ltdir/$la";
+		$symbolsfile =~ s/\.la$/.exp/;
+		get_symbollist($symbolsfile, $opts{'export-symbols-regex'}, $objs);
+	}
 	if ($lmode == PROGRAM) {
 		@RPdirs = (@Ropts, @RPopts, @Rresolved);
 		@RPdirs = reverse_zap_duplicates(@RPdirs);
@@ -1235,6 +1241,34 @@ sub get_objlist_from_archive
 	close $arh;
 	map { chomp; } @o;
 	return @o;
+}
+
+sub get_symbollist
+{
+	my $filepath = shift;
+	my $regex = shift;
+	my $objlist = shift;
+
+	debug 1, "generating symbol list in file: $filepath\n";
+	my @symbols;
+	open(my $sh, '-|', 'nm', @$objlist) or die "error running nm on object list\n";
+	my $c = 0;
+	while (my $line = <$sh>) {
+		chomp $line;
+		debug 1, "$c: $line\n";
+		if ($line =~ m/\S+\s+[BCDEGRST]\s+(.*)/) {
+			my $s = $1;
+			if ($s =~ m/$regex/) {
+				push @symbols, $s;
+				debug 1, "matched\n";
+			}
+		}
+		$c++;
+	}
+	@symbols = reverse_zap_duplicates(@symbols);
+	@symbols = sort @symbols;
+	open(my $fh, '>', $filepath) or die "cannot open $filepath\n";
+	print $fh join("\n", @symbols), "\n";
 }
 
 # walk a list from back to front, removing any duplicates
