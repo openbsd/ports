@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/09/08 09:51:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/30 18:19:59 jasper Exp $
 
 COMMENT=	perl module for parsing nmap XML reports
 
 MODULES=	cpan
-DISTNAME=	Nmap-Parser-1.16
+DISTNAME=	Nmap-Parser-1.18
 CATEGORIES=	net
 
 HOMEPAGE=       http://nmapparser.wordpress.com/
