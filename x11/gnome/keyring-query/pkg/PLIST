@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/12 21:56:32 jasper Exp $
-bin/gnome-keyring-query
+@comment $OpenBSD: PLIST,v 1.2 2008/10/30 12:26:37 jasper Exp $
+@bin bin/gnome-keyring-query
 share/doc/gnome-keyring-query/
 share/doc/gnome-keyring-query/README.OpenBSD

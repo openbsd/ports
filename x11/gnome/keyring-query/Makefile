@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/12 21:56:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/30 12:26:37 jasper Exp $
 
-COMMENT=		provide limited command-line access to the Gnome keyring
+COMMENT=		provide limited command-line access to the GNOME keyring
 
 GNOME_PROJECT=		gnome-keyring-query
 GNOME_VERSION=		0.0.1
+PKGNAME=		${DISTNAME}p0
 DISTFILES=
 CATEGORIES=		sysutils
 
