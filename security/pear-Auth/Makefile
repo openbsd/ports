@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/02/19 12:31:45 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.5 2008/10/30 11:00:48 mbalmer Exp $
 
 COMMENT=	authentication system for PHP5
 
-DISTNAME=	Auth-1.4.0
+DISTNAME=	Auth-1.6.1
 PKGNAME=	pear-${DISTNAME:S/_/-/}
 CATEGORIES=	security pear
 
