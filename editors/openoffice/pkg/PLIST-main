@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2008/06/27 13:11:11 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2008/10/30 10:27:28 robert Exp $
 @pkgpath editors/openoffice
 %%SHARED%%
 bin/sbase
@@ -2914,7 +2914,6 @@ openoffice/share/xslt/export/common/ooo2ms_docpr.xsl
 openoffice/share/xslt/export/common/styles/
 openoffice/share/xslt/export/common/styles/style_collector.xsl
 openoffice/share/xslt/export/common/styles/style_mapping_css.xsl
-openoffice/share/xslt/export/common/styles/style_mapping_html32.xsl
 openoffice/share/xslt/export/common/table/
 openoffice/share/xslt/export/common/table/table.xsl
 openoffice/share/xslt/export/common/table/table_cells.xsl
@@ -2942,10 +2941,6 @@ openoffice/share/xslt/export/wordml/ooo2wordml_text.xsl
 openoffice/share/xslt/export/xhtml/
 openoffice/share/xslt/export/xhtml/body.xsl
 openoffice/share/xslt/export/xhtml/header.xsl
-openoffice/share/xslt/export/xhtml/master_chapter_numbering.xsl
-openoffice/share/xslt/export/xhtml/master_document.xsl
-openoffice/share/xslt/export/xhtml/master_refs_workaround.xsl
-openoffice/share/xslt/export/xhtml/master_usability_links.xsl
 openoffice/share/xslt/export/xhtml/ooo2xhtml.xsl
 openoffice/share/xslt/export/xhtml/table.xsl
 openoffice/share/xslt/import/
