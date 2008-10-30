@@ -1,0 +1,2 @@
+PlonePAS allows the use of the PluggableAuthService in Plone, with support
+for migration of some existing user folder setups.
