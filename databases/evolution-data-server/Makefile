@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2008/07/04 21:28:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2008/10/30 16:36:35 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		2.22.3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		databases
 SHARED_LIBS +=	edataserver-1.2      10.0     # .10.0
 SHARED_LIBS +=	egroupwise-1.2       13.1     # .13.1
@@ -41,7 +42,8 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		:bison-*:devel/bison \
+BUILD_DEPENDS=		:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
+			:bison-*:devel/bison \
 			:libgnomeui-*:x11/gnome/libgnomeui
 LIB_DEPENDS= 		db:db-4.*:databases/db/v4 \
 			ldap,lber::databases/openldap \
@@ -53,7 +55,8 @@ LIB_DEPENDS= 		db:db-4.*:databases/db/v4 \
 			
 USE_X11=		Yes
 YACC=			bison
-CONFIGURE_STYLE= 	gnu
+AUTOCONF_VERSION=	2.61
+CONFIGURE_STYLE= 	autoconf gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/evolution-data-server \
 			--enable-gnome-keyring=yes \
@@ -65,7 +68,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-krb5-includes=/usr/include/kerberosV \
 			--with-libdb="${PREFIX}/lib" \
 			--with-openldap=${LOCALBASE}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 R=			${GNOME_VERSION:R}
@@ -76,3 +79,9 @@ post-extract:
 		${WRKSRC}/addressbook/libebook/gen-western-table.py
 
 .include <bsd.port.mk>
+
+# XXX:
+# No NTLM support in OpenLDAP; Plaintext password authentication will be
+# used when connecting to the Exchange Global Catalog server. Consider 
+# installing the evo-openldap package, or building OpenLDAP with the 
+# patch in servers/exchange/docs/openldap-ntlm.diff
