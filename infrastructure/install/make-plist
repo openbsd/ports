@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.132 2008/10/30 15:38:09 espie Exp $
+# $OpenBSD: make-plist,v 1.133 2008/10/30 15:54:23 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -729,11 +729,6 @@ sub handle_modes
 {
 	my ($plist, $item, $o, $file, $haystack) = @_;
 	my ($mode, $owner, $group) = ('', '', '');
-	my ($oldmode, $oldowner, $oldgroup) = ($plist->{state}->{mode}, $plist->{state}->{owner}, $plist->{state}->{group});
-	$oldmode = '' unless defined $oldmode;
-
-	$oldowner = '' unless defined $oldowner;
-	$oldgroup = '' unless defined $oldgroup;
 
 	if (defined $item) {
 		if (defined $item->{nochecksum}) {
@@ -757,7 +752,7 @@ sub handle_modes
 		for my $o (@{$haystack->{$file->owner}}) {
 		    if ($o->isa("OpenBSD::PackingElement::Owner")) {
 			if ($owner ne '') {
-			    if ($main::subst->do($owner) eq $file->owner) {
+			    if ($subst->do($owner) eq $file->owner) {
 				last;
 			    } else {
 				report "File owner does not match for ", 
@@ -774,7 +769,7 @@ sub handle_modes
 		for my $g (@{$haystack->{$file->group}}) {
 		    if ($g->isa("OpenBSD::PackingElement::Group")) {
 			if ($group ne '') {
-			    if ($main::subst->do($group) eq $file->group) {
+			    if ($subst->do($group) eq $file->group) {
 				last;
 			    } else {
 				report "File group does not match for ", 
@@ -788,6 +783,14 @@ sub handle_modes
 		}
 	    }
 	}
+
+	# check whether there's a state change
+	my ($oldmode, $oldowner, $oldgroup) = ($plist->{state}->{mode}, 
+	    $plist->{state}->{owner}, $plist->{state}->{group});
+	$oldmode = '' unless defined $oldmode;
+
+	$oldowner = '' unless defined $oldowner;
+	$oldgroup = '' unless defined $oldgroup;
 	if ($mode ne $oldmode) {
 		OpenBSD::PackingElement::Mode->add($plist, $mode);
 	}
