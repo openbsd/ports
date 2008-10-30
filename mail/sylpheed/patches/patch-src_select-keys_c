@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_select-keys_c,v 1.1 2008/10/30 18:23:50 landry Exp $
+--- src/select-keys.c.orig	Thu Oct 30 19:16:28 2008
++++ src/select-keys.c	Thu Oct 30 19:16:44 2008
+@@ -27,6 +27,7 @@
+ #include <glib.h>
+ #include <glib/gi18n.h>
+ #include <gdk/gdkkeysyms.h>
++#include <gtk/gtk.h>
+ #include <gtk/gtkmain.h>
+ #include <gtk/gtkwidget.h>
+ #include <gtk/gtkwindow.h>
