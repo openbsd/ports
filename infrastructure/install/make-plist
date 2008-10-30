@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.122 2008/10/30 10:51:14 espie Exp $
+# $OpenBSD: make-plist,v 1.123 2008/10/30 11:12:25 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -347,11 +347,8 @@ our @ISA=qw(OpenBSD::PackingElement);
 sub register
 {
 	my ($self, $plist) = @_;
-	if (defined $plist->{state}->{lastobject}) {
-	    $plist->{state}->{lastobject}->tag_along($self);
-    	} else {
-	    $plist->{tag_marker}->tag_along($self);
-	}
+
+	$plist->{state}->{lastreal}->tag_along($self);
 }
 
 sub deduce_fragment
@@ -422,6 +419,9 @@ sub register
 {
 	my ($self, $plist) = @_;
 	$plist->{state}->{lastobject} = $self;
+	if (defined $self->{accounted_for}) {
+		$plist->{state}->{lastreal} = $self;
+	}
 }
 
 package OpenBSD::PackingElement::Dir;
@@ -429,6 +429,9 @@ sub register
 {
 	my ($self, $plist) = @_;
 	$plist->{state}->{lastobject} = $self;
+	if (defined $self->{accounted_for}) {
+		$plist->{state}->{lastreal} = $self;
+	}
 }
 
 package OpenBSD::PackingElement::Sample;
@@ -436,9 +439,14 @@ sub register
 {
 	my ($self, $plist) = @_;
 	if (defined $self->{copyfrom}) {
+		if (!defined $self->{copyfrom}->{accounted_for}) {
+			print "Sample ", $self->stringize, 
+			    " no longer refers to anything\n";
+		}
 		$self->{copyfrom}->tag_along($self);
 	} else {
-		print "Bogus sample (unattached) detected\n";
+		print "Bogus sample (unattached) detected ", $self->stringize, 
+		    "\n";
 	}
 }
 
@@ -446,21 +454,19 @@ package OpenBSD::PackingElement::Sysctl;
 sub register
 {
 	my ($self, $plist) = @_;
-	if (defined $plist->{state}->{lastobject}) {
-		$plist->{state}->{lastobject}->tag_along($self);
-	} else {
-		$plist->{tag_marker}->tag_along($self);
-	}
+
+	$plist->{state}->{lastreal}->tag_along($self);
 }
 
 package OpenBSD::PackingElement::ExeclikeAction;
 sub register
 {
 	my ($self, $plist) = @_;
+	# XXX to be revisited
 	if (defined $plist->{state}->{lastobject}) {
 	    $plist->{state}->{lastobject}->tag_along($self);
     	} else {
-	    $plist->{tag_marker}->tag_along($self);
+	    $plist->{lastreal}->tag_along($self);
 	}
 }
 
@@ -468,11 +474,7 @@ package OpenBSD::PackingElement::Sampledir;
 sub register
 {
 	my ($self, $plist) = @_;
-	if (defined $plist->{state}->{lastobject}) {
-	    $plist->{state}->{lastobject}->tag_along($self);
-    	} else {
-	    $plist->{tag_marker}->tag_along($self);
-	}
+	$plist->{state}->{lastreal}->tag_along($self);
 }
 
 package OpenBSD::PackingElement::DirlikeObject;
@@ -566,8 +568,6 @@ sub parse_original_plist
 {
     my ($name, $sub, $all_plists) = @_;
     my $plist = create_packinglist($name, $sub);
-    # place holder for extra stuff that comes before any file
-    $plist->{tag_marker} = new OpenBSD::PackingElement('');
     # special reader for fragments
     $plist->fromfile($name, 
 	sub {
@@ -585,7 +585,6 @@ sub parse_original_plist
 	}
     ) or return;
 
-    delete $plist->{state}->{lastobject};
     $plist->add_to_haystack($plist, $haystack);
     # Try to handle fragments
     for my $item (@{$plist->{items}}) {
@@ -608,7 +607,6 @@ sub replaces
 		$n->{original} = $orig;
 		$orig->{replacement} = $n;
 		$n->{filename} = $orig->{filename};
-		$orig->{tag_marker}->clone_tags($n);
 	}
 }
 
@@ -657,7 +655,11 @@ sub create_object
 	} elsif ($type eq "library") {
 		return OpenBSD::PackingElement::Lib->new($short);
 	} elsif ($type eq "binary") {
-		return OpenBSD::PackingElement::Binary->new($short);
+		if ($item->isa("OpenBSD::PackingElement::Shell")) {
+			return OpenBSD::PackingElement::Shell->new($short);
+		} else {
+			return OpenBSD::PackingElement::Binary->new($short);
+		}
 	} else {
 		if (defined $item) {
 			if ($item->isa("OpenBSD::PackingElement::Shell")) {
@@ -934,24 +936,19 @@ for my $i (sort keys %$files) {
 for my $plist (@l) {
 	my $orig = $plist->{original};
 	if (defined $orig) {
+		delete $orig->{state}->{lastobject};
+		# place holder for extra stuff that comes before any file
+		my $orphans = new OpenBSD::PackingElement('');
+		$orig->{state}->{lastreal} = $orphans;
 		$orig->register($orig);
 		$orig->copy_annotations($plist);
+		$orphans->clone_tags($plist);
 	}
 	if (!$plist->has('cvstags')) {
 	    OpenBSD::PackingElement::CVSTag->add($plist, '$OpenBSD'.'$');
 	}
 }
 
-#for my $i (sort keys %$files) {
-#	if (defined $haystack->{$i}) {
-#		print "$i: \n";
-#		for my $item (@{$haystack->{$i}}) {
-#			print "\t", ref($item), " ", $item->{plist}->{filename},"\n";
-#		}
-#	} else {
-#		print "$i NOT FOUND\n";
-#	}
-#}
 for my $i (sort keys %$files) {
 	handle_file($files->{$i}, $haystack, \@l, $shared_only);
 }
