@@ -1,0 +1,3 @@
+ipguard prevents unregistered hosts from operating correctly on an
+ethernet segment by sending a fake ARP reply when a device transmits
+with a MAC/IP pair not listed in its configuration file.

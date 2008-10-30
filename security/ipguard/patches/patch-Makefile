@@ -1,0 +1,20 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/10/30 19:34:24 sthen Exp $
+--- Makefile.orig	Thu Oct 30 12:09:30 2008
++++ Makefile	Thu Oct 30 12:09:47 2008
+@@ -10,12 +10,12 @@ NAME=ipguard
+ VERSION=1.00
+ 
+ ## FreeBSD
+-LOCALBASE=/usr/local
+-LIBNET_CONFIG=libnet11-config
++#LOCALBASE=/usr/local
++#LIBNET_CONFIG=libnet11-config
+ 
+ ## OpenBSD (tested by irix)
+-# LOCALBASE=/usr/local
+-# LIBNET_CONFIG=libnet-config-1.1
++LOCALBASE=/usr/local
++LIBNET_CONFIG=libnet-config-1.1
+ 
+ ## Linux
+ # LOCALBASE=/usr
