@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.123 2008/10/30 11:12:25 espie Exp $
+# $OpenBSD: make-plist,v 1.124 2008/10/30 11:44:43 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -112,7 +112,6 @@ my %known_libs;
 
 die "No $destdir" unless -d $destdir;
 
-
 my %prefix;
 my %plistname;
 my %mtree;
@@ -121,6 +120,29 @@ my $baseprefix=$ENV{PREFIX};
 my $shared_only;
 my $make = $ENV{MAKE};
 my $portsdir = $ENV{PORTSDIR};
+
+
+sub report
+{
+	print STDERR "make-plist: ";
+
+	for my $i (@_) {
+		if (ref $i) {
+			if ($i->isa("OpenBSD::PackingElement")) {
+				print STDERR $i->stringize;
+			} elsif ($i->isa("OpenBSD::PackingList")) {
+				my $fname = $i->{filename};
+				$fname =~ s/^.*\/pkg\///;
+				print STDERR $fname;
+			} elsif ($i->isa("FS::File")) {
+				print STDERR $i->path;
+			}
+		} else {
+			print STDERR $i;
+	    	}
+	}
+	print STDERR "\n";
+}
 
 
 my $cached_tree = {};
@@ -440,13 +462,13 @@ sub register
 	my ($self, $plist) = @_;
 	if (defined $self->{copyfrom}) {
 		if (!defined $self->{copyfrom}->{accounted_for}) {
-			print "Sample ", $self->stringize, 
-			    " no longer refers to anything\n";
+			main::report $plist, ": sample ", $self, 
+				" no longer refers to anything";
 		}
 		$self->{copyfrom}->tag_along($self);
 	} else {
-		print "Bogus sample (unattached) detected ", $self->stringize, 
-		    "\n";
+		main::report $plist, ": bogus sample ", $self, 
+			" (unattached) detected";
 	}
 }
 
@@ -707,9 +729,9 @@ sub handle_modes
 			    if ($main::subst->do($owner) eq $file->owner) {
 				last;
 			    } else {
-				print "File owner does not match for ", 
-				    $file->path, " ($owner vs. ", 
-				    $file->owner, ")\n";
+				report "File owner does not match for ", 
+				    $file, " ($owner vs. ", 
+				    $file->owner, ")";
 			    }
 			} else {
 			    $owner = $o->{name};
@@ -724,9 +746,9 @@ sub handle_modes
 			    if ($main::subst->do($group) eq $file->group) {
 				last;
 			    } else {
-				print "File group does not match for ", 
-				    $file->path, " ($group vs. ", 
-				    $file->group, ")\n";
+				report "File group does not match for ", 
+				    $file, " ($group vs. ", 
+				    $file->group, ")";
 			    }
 			} else {
 			    $group = $g->{name};
@@ -767,8 +789,7 @@ sub short_name
 	# If the resulting name is arch-dependent, we warn.
 	# We don't fix it automatically, as this may need special handling.
 	if ($short =~ m/i386|m68k|sparc/) {
-	    print STDERR "make-plist: $plist->{filename} contains arch-dependent\n"; 
-	    print STDERR "\t$short\n";
+	    report $plist, " contains arch-dependent\n\t$short"; 
 	}
 	return $short;
 }
@@ -778,16 +799,13 @@ sub bad_files
 	my ($short, $plist) = @_;
 
 	if ($short =~ /\.orig$/) {
-		print STDERR "make-plist: $plist->{filename} may contain patched file\n";
-		print STDERR "\t$short\n";
+		report $plist, " may contain patched file\n\t$short";
 	}
 	if ($short =~ /\/\.[^\/]*\.swp$/) {
-		print STDERR "make-plist: $plist->{filename} may contain vim swap file\n";
-		print STDERR "\t$short\n";
+		report $plist, " may contain vim swap file\n\t$short";
 	}
 	if ($short =~ /\~$/) {
-		print STDERR "make-plist: $plist->{filename} may contain emacs temp file\n";
-		print STDERR "\t$short\n";
+		report $plist, " may contain emacs temp file\n\t$short";
 	}
 }
 
@@ -805,8 +823,6 @@ sub handle_file
 		my $p = $item->{plist}->{replacement};
 		if ($file->type eq 'directory' && 
 		    $p->{mtree}->{$file->path}) {
-		    	print "Found out old directory in ", $p->{filename}, 
-			    ": ", $file->path, " (mtree)\n";
 			next;
 		}
 		my $short = short_name($file, $p);
@@ -862,8 +878,7 @@ sub handle_file
 
 	my $possible = possible_subpackages($file->path);
 	if (@$possible == 0) {
-		print "Bogus element outside of every prefix: ", $file->path, 
-		    "\n";
+		report "Bogus element outside of every prefix: ", $file;
 		return;
 	}
 	# look for the first matching prefix in plist to produce an entry
@@ -876,9 +891,8 @@ sub handle_file
 		if (defined $short) {
 			$p = $try;
 			if ($p ne $default) {
-				print "Element ", $file->path, 
-				    " going to ", $p->{filename}, 
-				    " based on prefix\n";
+				report "Element ", $file, " going to ", $p, 
+				    " based on prefix";
 			}
 			last;
 		}
@@ -911,8 +925,8 @@ sub scan_for_files
 		my $p = $item->{plist}->{replacement};
 		if ($file->type eq 'directory' && 
 		    $p->{mtree}->{$file->path}) {
-		    	print "Found out old directory in ", $p->{filename}, 
-			    ": ", $file->path, " (mtree)\n";
+		    	report "Found out old directory in ", $p, 
+			    ": ", $file, " (mtree)\n";
 			next;
 		}
 		$item->{accounted_for} = 1;
