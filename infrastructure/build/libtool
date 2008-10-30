@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.45 2008/10/30 18:15:06 steven Exp $
+# $OpenBSD: libtool,v 1.46 2008/10/30 19:02:19 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -950,19 +950,18 @@ sub find_lib
 	# sort dir search order by priority
 	# XXX not fully correct yet
 	my @dirs = sort { $dirs{$b} <=> $dirs{$a} } keys %dirs;
+	# search in .libs when priority is high
+	map { $_ = "$_/$ltdir" if (exists $dirs{$_} && $dirs{$_} > 3) } @dirs;
 	push @dirs, @ldconfigdirs;
-	debug 1, "searching for $libtofind ...\n";
-	foreach my $d (@dirs) {
-		my $sd = $d;
-		# search in .libs when priority is high
-		$sd = "$d/$ltdir" if (exists $dirs{$d} && $dirs{$d} > 3);
-		debug 1, "   ... in $d\n";
+	debug 1, "searching for $libtofind\n";
+	debug 1, "search path= ", join(':', @dirs), "\n";
+	foreach my $sd (@dirs) {
 		# select correct library by sorting by version number only
-		@globbedlib = sort { my ($c,$d) =
-			map { /\.so\.(\d+\.\d+)$/; $1 } ($a,$b); $d <=> $c }
+		@globbedlib = sort { my ($x,$y) =
+			map { /\.so\.(\d+\.\d+)$/; $1 } ($a,$b); $y <=> $x }
 			glob "$sd/lib$libtofind.so.*.*";
 		if ($globbedlib[0]) {
-			debug 1, print "found $libtofind in $sd\n";
+			debug 1, "found $libtofind in $sd\n";
 			$libfile = $globbedlib[0];
 			last;
 		} else {	# XXX find static library instead?
