@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:19 jolan Exp $
-lib/aspell/faroese.alias
-lib/aspell/fo.multi
-lib/aspell/fo.rws
-lib/aspell/føroyskt.alias
-share/aspell/fo.dat
-share/aspell/fo_phonet.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/30 15:00:33 jasper Exp $
+lib/aspell/fo.dat
+lib/aspell/fo_phonet.dat
+share/aspell/faroese.alias
+share/aspell/fo.multi
+share/aspell/fo.rws
+share/aspell/føroyskt.alias

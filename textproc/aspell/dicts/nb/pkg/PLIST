@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 05:24:25 jolan Exp $
-lib/aspell/bokmal.alias
-lib/aspell/bokmål.alias
-lib/aspell/nb.multi
-lib/aspell/nb.rws
-lib/aspell/no.alias
-lib/aspell/norsk.alias
-share/aspell/nb.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/30 15:00:33 jasper Exp $
+lib/aspell/nb.dat
+share/aspell/bokmal.alias
+share/aspell/bokmål.alias
+share/aspell/nb.multi
+share/aspell/nb.rws
+share/aspell/no.alias
+share/aspell/norsk.alias

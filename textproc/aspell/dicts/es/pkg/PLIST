@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:19 jolan Exp $
-lib/aspell/es.multi
-lib/aspell/es.rws
-lib/aspell/español.alias
-lib/aspell/esponol.alias
-lib/aspell/spanish.alias
-share/aspell/es.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/30 15:00:33 jasper Exp $
+lib/aspell/es.dat
+lib/aspell/es_affix.dat
+share/aspell/castellano.alias
+share/aspell/es.multi
+share/aspell/es.rws
+share/aspell/espanol.alias
+share/aspell/spanish.alias

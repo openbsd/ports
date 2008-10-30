@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:19 jolan Exp $
-lib/aspell/icelandic.alias
-lib/aspell/is.multi
-lib/aspell/is.rws
-lib/aspell/íslenska.alias
-share/aspell/is.dat
-share/aspell/is_phonet.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/30 15:00:33 jasper Exp $
+lib/aspell/is.dat
+lib/aspell/is_phonet.dat
+share/aspell/icelandic.alias
+share/aspell/is.multi
+share/aspell/is.rws
+share/aspell/íslenska.alias
