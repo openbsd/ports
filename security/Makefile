@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.205 2008/10/02 21:06:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.206 2008/10/30 11:06:31 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -140,6 +140,7 @@
      SUBDIR += passwdqc
      SUBDIR += pcsc-lite
      SUBDIR += pear-Auth
+     SUBDIR += pear-Auth-HTTP
      SUBDIR += pear-Auth-SASL
      SUBDIR += pgp
      SUBDIR += pgp5
