@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.128 2008/10/30 13:39:22 espie Exp $
+# $OpenBSD: make-plist,v 1.129 2008/10/30 13:49:11 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -301,6 +301,11 @@ sub deduce_fragment
 {
 }
 
+sub delay_tag
+{
+	return 0;
+}
+
 sub clone_tags
 {
 	my ($self, $plist) = @_;
@@ -489,23 +494,34 @@ sub pseudo_expand
 	return $_;
 }
 
+sub delay_tag
+{
+	my $self = shift;
+	if (m/\%[fF]/o) {
+		return 0;
+	}
+	if (m/\%[BD]/o) {
+		return 1;
+	}
+	return 0;
+}
+
 sub register
 {
 	my ($self, $plist) = @_;
-	if (defined $plist->{state}->{lastobject}) {
-		if ($plist->{state}->{lastobject} == $plist->{state}->{lastreal}) {
-			$plist->{state}->{lastobject}->tag_along($self);
+	if (!defined $plist->{state}->{lastobject} ||
+	    $plist->{state}->{lastobject} != $plist->{state}->{lastreal}) {
+		my $f1 = pseudo_expand($self->{name}, 
+		    $plist->{state}->{lastobject});
+		my $f2 = pseudo_expand($self->{name}, 
+		    $plist->{state}->{lastreal});
+		if ($f1 ne $f2) {
+			main::report " orphaned \@", $self->keyword, $self,
+			    " in ", $plist;
 			return;
 		}
 	}
-	my $f1 = pseudo_expand($self->{name}, $plist->{state}->{lastobject});
-	my $f2 = pseudo_expand($self->{name}, $plist->{state}->{lastreal});
-	if ($f1 eq $f2) {
-		$plist->{state}->{lastreal}->tag_along($self);
-	} else {
-		main::report " orphaned \@", $self->keyword, $self,
-			" in ", $plist;
-	}
+	$plist->{state}->{lastreal}->tag_along($self);
 }
 
 package OpenBSD::PackingElement::Sampledir;
