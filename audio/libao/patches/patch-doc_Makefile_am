@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_am,v 1.3 2008/10/30 19:25:31 naddy Exp $
+--- doc/Makefile.am.orig	Thu May 24 11:19:08 2007
++++ doc/Makefile.am	Wed Oct 29 17:25:35 2008
+@@ -2,7 +2,7 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ 
+ # We list all of these as opposed to using a wildcard so that
+ # building outside the source directory works.

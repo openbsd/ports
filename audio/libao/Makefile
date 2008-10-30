@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2007/12/11 22:02:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2008/10/30 19:25:31 naddy Exp $
 
 COMMENT-main=	portable audio output library
 COMMENT-arts=	aRts module for portable audio output library
@@ -6,7 +6,7 @@ COMMENT-esd=	ESounD module for portable audio output library
 
 VERSION=	0.8.8
 DISTNAME=	libao-${VERSION}
-PKGNAME-main=	libao-${VERSION}p0
+PKGNAME-main=	libao-${VERSION}p1
 PKGNAME-arts=	libao-arts-${VERSION}
 PKGNAME-esd=	libao-esd-${VERSION}
 CATEGORIES=    	audio
@@ -36,7 +36,10 @@ MULTI_PACKAGES+=-esd
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	simple
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION = 2.61
+AUTOMAKE_VERSION = 1.9
+CONFIGURE_STYLE= no-autoheader automake autoconf
+
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 .if ${FLAVOR:L:Mno_arts}
 CONFIGURE_ARGS+=--disable-arts
@@ -53,7 +56,7 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS-main=
 RUN_DEPENDS-main=
-WANTLIB-main=		pthread
+WANTLIB-main=		pthread sndio
 
 LIB_DEPENDS-arts=	${MODGETTEXT_LIB_DEPENDS} \
 			artsc::x11/kde/arts3
@@ -65,10 +68,22 @@ LIB_DEPENDS-esd=	esd.>=2::audio/esound
 RUN_DEPENDS-esd=	:libao-${VERSION}:audio/libao
 WANTLIB-esd=		audiofile m pthread
 
+post-patch:
+	mkdir ${WRKSRC}/src/plugins/sndio
+	cp ${FILESDIR}/Makefile.am ${FILESDIR}/ao_sndio.c \
+	    ${WRKSRC}/src/plugins/sndio
+	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
+
+pre-configure:
+	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake \
+	    --foreign --add-missing --copy
+
 pre-build:
 	@perl -i -pe 's:/etc/libao.conf:${SYSCONFDIR}/libao.conf:g' \
-		${WRKDIST}/src/ao_private.h \
-		${WRKDIST}/libao.conf.5 \
-		${WRKDIST}/doc/config.html
+	    ${WRKDIST}/src/ao_private.h \
+	    ${WRKDIST}/libao.conf.5 \
+	    ${WRKDIST}/doc/config.html
 
 .include <bsd.port.mk>

@@ -1,0 +1,34 @@
+$OpenBSD: patch-configure_ac,v 1.1 2008/10/30 19:25:31 naddy Exp $
+--- configure.ac.orig	Thu May 24 12:51:05 2007
++++ configure.ac	Wed Oct 29 17:25:35 2008
+@@ -90,9 +90,9 @@ else
+                 PROFILE="-g -pg -D__NO_MATH_INLINES -fsigned-char -Ddlsym=dlsym_auto_underscore" ;;
+         *)
+                 PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
+-                DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char"
+-                CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char"
+-                PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
++                DEBUG="-g -Wall -fsigned-char"
++                CFLAGS="-fsigned-char"
++                PROFILE="-g -pg -fsigned-char" ;;
+         esac
+ fi
+ CFLAGS="$CFLAGS $cflags_save"
+@@ -300,6 +300,11 @@ dnl Check for Sun audio
+ AC_CHECK_HEADERS(sys/audioio.h)
+ AM_CONDITIONAL(HAVE_SUN_AUDIO,test "${ac_cv_header_sys_audioio_h}" = yes)
+ 
++dnl Check for libsndio audio
++
++AC_CHECK_HEADERS(sndio.h)
++AM_CONDITIONAL(HAVE_SNDIO_AUDIO,test "${ac_cv_header_sndio_h}" = yes)
++
+ dnl Check for AIX audio
+ 
+ case $host in
+@@ -415,4 +420,4 @@ dnl Plugins get special LDFLAGS
+ AC_SUBST(PLUGIN_LDFLAGS)
+ 
+ 
+-AC_OUTPUT(Makefile src/Makefile doc/Makefile include/Makefile include/ao/Makefile include/ao/os_types.h src/plugins/Makefile src/plugins/esd/Makefile src/plugins/oss/Makefile src/plugins/alsa/Makefile src/plugins/alsa09/Makefile src/plugins/sun/Makefile src/plugins/irix/Makefile src/plugins/arts/Makefile src/plugins/macosx/Makefile src/plugins/nas/Makefile src/plugins/pulse/Makefile ao.pc)
++AC_OUTPUT(Makefile src/Makefile doc/Makefile include/Makefile include/ao/Makefile include/ao/os_types.h src/plugins/Makefile src/plugins/esd/Makefile src/plugins/oss/Makefile src/plugins/alsa/Makefile src/plugins/alsa09/Makefile src/plugins/sun/Makefile src/plugins/irix/Makefile src/plugins/arts/Makefile src/plugins/macosx/Makefile src/plugins/nas/Makefile src/plugins/pulse/Makefile src/plugins/sndio/Makefile ao.pc)
