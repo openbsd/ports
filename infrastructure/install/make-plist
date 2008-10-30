@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.137 2008/10/30 17:52:56 espie Exp $
+# $OpenBSD: make-plist,v 1.138 2008/10/30 22:00:58 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -70,9 +70,9 @@ sub reverse
 	my ($self, $_) = @_;
 	for my $k (@{$self->{r}}) {
 		if ($k =~ m/^\^(.*)$/) {
-			$k = $1;
-			my $v = $self->{h}->{$k};
-			s/^\Q$v\E/\$\{\Q$k\E\}/g;
+			my $k2 = $1;
+			my $v = $self->{h}->{$k2};
+			s/^\Q$v\E/\$\{\Q$k2\E\}/g;
 		} else {
 			my $v = $self->{h}->{$k};
 			s/\Q$v\E/\$\{\Q$k\E\}/g;
@@ -987,14 +987,18 @@ sub scan_for_files
 
 parse_args();
 
+print "Scanning destdir\n";
 my $files = FS::get_files($destdir);
 
+print "Getting old lists\n";
 my @l = grab_all_lists();
 
+print "1st pass identifying files\n";
 for my $i (sort keys %$files) {
 	scan_for_files($files->{$i}, $haystack);
 }
 
+print "Attaching annotations\n";
 for my $plist (@l) {
 	my $orig = $plist->{original};
 	if (defined $orig) {
@@ -1011,6 +1015,7 @@ for my $plist (@l) {
 	}
 }
 
+print "Sorting out destdir files\n";
 for my $i (sort keys %$files) {
 	handle_file($files->{$i}, $haystack, \@l, $shared_only);
 }
