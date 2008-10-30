@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2008/10/11 11:07:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2008/10/30 18:33:42 ratchov Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -9,7 +9,7 @@ V=			1.0rc2
 N=			mplayer
 DISTNAME=		MPlayer-${V}
 DIST_SUBDIR=		${N}
-PKGNAME=		${N}-${V}p11
+PKGNAME=		${N}-${V}p12
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ncurses pthread stdc++ util z
+WANTLIB=		c m ncurses pthread stdc++ util sndio z
 
 MASTER_SITES=		http://www1.mplayerhq.hu/MPlayer/releases/ \
 			http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -211,7 +211,7 @@ CONFIGURE_ARGS+=--disable-jack
 NO_REGRESS=	Yes
 
 post-patch:
-	@cp ${FILESDIR}/ao_rtunes.c ${WRKSRC}/libao2
+	@cp ${FILESDIR}/ao_rtunes.c ${FILESDIR}/ao_libsndio.c ${WRKSRC}/libao2
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mplayer

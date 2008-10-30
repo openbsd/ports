@@ -1,7 +1,16 @@
-$OpenBSD: patch-libao2_audio_out_c,v 1.1 2008/02/12 11:33:16 jakemsr Exp $
---- libao2/audio_out.c.orig	Sun Oct  7 12:49:27 2007
-+++ libao2/audio_out.c	Sun Feb 10 17:00:56 2008
-@@ -74,6 +74,7 @@ extern ao_functions_t audio_out_v4l2;
+--- libao2/audio_out.c.orig	Sun Oct  7 21:49:27 2007
++++ libao2/audio_out.c	Tue Oct 14 11:48:58 2008
+@@ -53,6 +53,9 @@ extern ao_functions_t audio_out_sdl;
+ #ifdef USE_SUN_AUDIO
+ extern ao_functions_t audio_out_sun;
+ #endif
++#ifdef USE_LIBSNDIO_AUDIO
++extern ao_functions_t audio_out_libsndio;
++#endif
+ #ifdef USE_SGI_AUDIO
+ extern ao_functions_t audio_out_sgi;
+ #endif
+@@ -74,6 +77,7 @@ extern ao_functions_t audio_out_v4l2;
  extern ao_functions_t audio_out_mpegpes;
  extern ao_functions_t audio_out_pcm;
  extern ao_functions_t audio_out_pss;
@@ -9,7 +18,17 @@ $OpenBSD: patch-libao2_audio_out_c,v 1.1 2008/02/12 11:33:16 jakemsr Exp $
  
  ao_functions_t* audio_out_drivers[] =
  {
-@@ -140,6 +141,7 @@ ao_functions_t* audio_out_drivers[] =
+@@ -102,6 +106,9 @@ ao_functions_t* audio_out_drivers[] =
+ #ifdef USE_SGI_AUDIO
+         &audio_out_sgi,
+ #endif
++#ifdef USE_LIBSNDIO_AUDIO
++        &audio_out_libsndio,
++#endif
+ #ifdef USE_SUN_AUDIO
+         &audio_out_sun,
+ #endif
+@@ -140,6 +147,7 @@ ao_functions_t* audio_out_drivers[] =
          &audio_out_null,
  // should not be auto-selected:
  	&audio_out_pcm,

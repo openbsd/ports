@@ -1,6 +1,5 @@
-$OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
---- configure.orig	Sun Oct  7 20:49:33 2007
-+++ configure	Thu May  1 00:29:07 2008
+--- configure.old	Mon Sep 29 17:11:48 2008
++++ configure	Mon Sep 29 17:13:03 2008
 @@ -76,7 +76,7 @@ cc_check() {
  }
  
@@ -10,7 +9,15 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
  }
  
  tmp_run() {
-@@ -501,7 +501,7 @@ _libavcodec_a=auto
+@@ -397,6 +397,7 @@ Audio output:
+   --disable-nas          disable NAS audio output [autodetect]
+   --disable-sgiaudio     disable SGI audio output [autodetect]
+   --disable-sunaudio     disable Sun audio output [autodetect]
++  --disable-libsndio     disable libsndio audio output [autodetect]
+   --disable-win32waveout disable Windows waveout audio output [autodetect]
+   --disable-select       disable using select() on the audio device [enable]
+ 
+@@ -501,7 +502,7 @@ _libavcodec_a=auto
  _libamr_nb=auto
  _libamr_wb=auto
  _libavdecoders_all=`sed -n 's/^[^#]*DEC.*(.*, *\(.*\)).*/\1_decoder/p' libavcodec/allcodecs.c | tr '[a-z]' '[A-Z]'`
@@ -19,7 +26,24 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
  _libavencoders_all=`sed -n 's/^[^#]*ENC.*(.*, *\(.*\)).*/\1_encoder/p' libavcodec/allcodecs.c | tr '[a-z]' '[A-Z]'`
  _libavencoders=` echo $_libavencoders_all | sed -e s/LIBGSM_ENCODER// -e s/LIBGSM_MS_ENCODER// -e s/LIBTHEORA_ENCODER// `
  _libavparsers_all=`sed -n 's/^[^#]*PARSER.*(.*, *\(.*\)).*/\1_parser/p' libavcodec/allcodecs.c | tr '[a-z]' '[A-Z]'`
-@@ -1557,6 +1557,8 @@ if x86 ; then
+@@ -598,6 +599,7 @@ _xf86keysym=auto
+ _mlib=no #broken, thus disabled
+ _sgiaudio=auto
+ _sunaudio=auto
++_libsndio=auto
+ _alsa=auto
+ _fastmemcpy=yes
+ _unrarlib=yes
+@@ -963,6 +965,8 @@ for ac_option do
+   --disable-mlib)	_mlib=no	;;
+   --enable-sunaudio)	_sunaudio=yes	;;
+   --disable-sunaudio)	_sunaudio=no	;;
++  --enable-libsndio)	_libsndio=yes	;;
++  --disable-libsndio)	_libsndio=no	;;
+   --enable-sgiaudio)	_sgiaudio=yes	;;
+   --disable-sgiaudio)	_sgiaudio=no	;;
+   --enable-alsa)	_alsa=yes	;;
+@@ -1557,6 +1561,8 @@ if x86 ; then
    pparam=`echo $exts | sed -e s/k6_mtrr/mtrr/ -e s/cyrix_arr/mtrr/ -e s/centaur_mcr/mtrr/ \
                             -e s/xmm/sse/ -e s/kni/sse/`
  
@@ -28,7 +52,7 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
    for ext in $pparam ; do
      eval test \"\$_$ext\" = auto 2>/dev/null && eval _$ext=kernel_check
    done
-@@ -3065,7 +3067,7 @@ int main(void) { pthread_t tid; return pthread_create 
+@@ -3065,7 +3071,7 @@ int main(void) { pthread_t tid; return pthread_create 
  EOF
  _pthreads=no
  if not hpux ; then
@@ -37,7 +61,7 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
      # for crosscompilation, we cannot execute the program, be happy if we can link statically
      cc_check $_ld_tmp && (tmp_run || test "$_ld_static") && _ld_pthread="$_ld_tmp" && _pthreads=yes && break
    done
-@@ -3108,7 +3110,7 @@ fi
+@@ -3108,7 +3114,7 @@ fi
  echores "$_rpath"
  
  echocheck "iconv"
@@ -46,7 +70,7 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
    cat > $TMPC << EOF
  #include <stdio.h>
  #include <unistd.h>
-@@ -4369,6 +4371,8 @@ if test "$_aa" = yes ; then
+@@ -4369,6 +4375,8 @@ if test "$_aa" = yes ; then
    _def_aa='#define HAVE_AA 1'
    if cygwin ; then
      _libs_mplayer="$_libs_mplayer `aalib-config --libs | cut -d " " -f 2,5,6`"
@@ -55,7 +79,7 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
    fi
    _vosrc="$_vosrc vo_aa.c"
    _vomodules="aa $_vomodules"
-@@ -4576,7 +4580,7 @@ fi
+@@ -4576,7 +4584,7 @@ fi
  echores "$_png"
  if test "$_png" = yes ; then
    _def_png='#define HAVE_PNG 1'
@@ -64,7 +88,7 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
    _vosrc="$_vosrc vo_png.c"
    _vomodules="png $_vomodules"
  else
-@@ -5054,7 +5058,7 @@ if test "$_arts" = yes ; then
+@@ -5054,7 +5062,7 @@ if test "$_arts" = yes ; then
    _def_arts='#define USE_ARTS 1'
    _aosrc="$_aosrc ao_arts.c"
    _aomodules="arts $_aomodules"
@@ -73,7 +97,7 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
    _inc_extra="$_inc_extra `artsc-config --cflags`"
  else
    _noaomodules="arts $_noaomodules"
-@@ -5129,7 +5133,8 @@ fi
+@@ -5129,7 +5137,8 @@ fi
  echocheck "JACK"
  if test "$_jack" = auto ; then
    _jack=yes
@@ -83,7 +107,7 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
  cat > $TMPC << EOF
  #include <jack/jack.h>
  int main(void) { jack_client_new("test"); return 0; }
-@@ -5144,6 +5149,7 @@ EOF
+@@ -5144,6 +5153,7 @@ EOF
    fi
  fi
  
@@ -91,7 +115,35 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
  if test "$_jack" = yes ; then
    _def_jack='#define USE_JACK 1'
    _aosrc="$_aosrc ao_jack.c"
-@@ -5343,7 +5349,7 @@ fi #if irix
+@@ -5303,6 +5313,27 @@ fi
+ echores "$_sunaudio"
+ 
+ 
++echocheck "libsndio audio"
++if test "$_libsndio" = auto ; then
++  cat > $TMPC << EOF
++#include <sndio.h>
++int main(void) { struct sio_par par; sio_initpar(&par); return 0; }
++EOF
++  _libsndio=no
++  cc_check -lsndio && _libsndio=yes
++fi
++if test "$_libsndio" = yes ; then
++  _def_libsndio='#define USE_LIBSNDIO_AUDIO 1'
++  _aosrc="$_aosrc ao_libsndio.c"
++  _aomodules="libsndio $_aomodules"
++  _libs_mplayer="$_libs_mplayer -lsndio"
++else
++  _def_libsndio='#undef USE_LIBSNDIO_AUDIO'
++  _noaomodules="libsndio $_noaomodules"
++fi
++echores "$_libsndio"
++
++
+ if sunos; then
+ echocheck "Sun mediaLib"
+ if test "$_mlib" = auto ; then
+@@ -5343,7 +5374,7 @@ fi #if irix
  
  
  echocheck "VCD support"
@@ -100,7 +152,7 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
    _vcd="yes"
-@@ -5592,7 +5598,7 @@ int main()
+@@ -5592,7 +5623,7 @@ int main()
  }
  EOF
    _fontconfig=no
@@ -109,7 +161,7 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
      _ld_tmp="-lfontconfig $_ld_tmp"
      cc_check $_ld_tmp && _fontconfig=yes && _ld_extra="$_ld_extra $_ld_tmp" && break
    done
-@@ -5704,10 +5710,10 @@ cat > $TMPC << EOF
+@@ -5704,10 +5735,10 @@ cat > $TMPC << EOF
  int main(void) { (void) inflate(0, Z_NO_FLUSH); return 0; }
  EOF
  _zlib=no
@@ -122,7 +174,7 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
  else
    _def_zlib='#undef HAVE_ZLIB'
    _libavdecoders=`echo $_libavdecoders | sed -e s/FLASHSV_DECODER// -e s/PNG_DECODER// -e s/ZMBV_DECODER// -e s/DXA_DECODER// `
-@@ -6207,7 +6213,7 @@ if test "$_real" = auto ; then
+@@ -6207,7 +6238,7 @@ if test "$_real" = auto ; then
    _real=no
    _res_comment="dynamic loader support needed"
    if test "$_dl" = yes || test "$_win32dll" = yes &&
@@ -131,3 +183,11 @@ $OpenBSD: patch-configure,v 1.46 2008/05/01 13:52:19 sthen Exp $
      _real=yes
    fi
  fi
+@@ -8151,6 +8182,7 @@ $_def_openal_h
+ $_def_sys_asoundlib_h
+ $_def_alsa_asoundlib_h
+ $_def_sunaudio
++$_def_libsndio
+ $_def_sgiaudio
+ $_def_win32waveout
+ $_def_nas
