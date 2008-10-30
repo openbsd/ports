@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.46 2008/10/30 19:02:19 steven Exp $
+# $OpenBSD: libtool,v 1.47 2008/10/30 19:13:11 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -923,9 +923,9 @@ sub find_la
 	# sort dir search order by priority
 	# XXX not fully correct yet
 	my @dirs = sort { $dirs{$b} <=> $dirs{$a} } keys %dirs;
-	debug 1, "searching .la for $l ...\n";
+	debug 1, "searching .la for $l\n";
+	debug 1, "search path= ", join(':', @dirs), "\n";
 	foreach my $d (@dirs) {
-		debug 1, "   ... in $d\n";
 		foreach my $la_candidate ("$d/lib$l.la", "$d/$l.a") {
 			if (-f $la_candidate) {
 				debug 1, "found $la_candidate\n";
