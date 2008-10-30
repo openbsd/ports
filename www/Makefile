@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.362 2008/10/30 11:44:09 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.363 2008/10/30 11:56:10 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -368,6 +368,7 @@
      SUBDIR += zope-ldapuserfolder
      SUBDIR += zope-logger
      SUBDIR += zope-placelesstranslationservice
+     SUBDIR += zope-pluggableauthservice
      SUBDIR += zope-rdfsummary
      SUBDIR += zope-xmlmethods
      SUBDIR += zope-zippy
