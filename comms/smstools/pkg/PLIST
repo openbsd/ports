@@ -1,17 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/08/03 17:42:45 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/10/30 13:45:19 sthen Exp $
 @conflict gnokii-*
 @newgroup _smsd:590
 @newuser _smsd:590:_smsd:daemon:smsd user:/nonexistent:/sbin/nologin
 bin/sendsms
 bin/sms2html
 bin/sms2unicode
-bin/smsd
+@bin bin/smsd
 bin/unicode2sms
 share/doc/smstools/
 share/doc/smstools/alarmhandler.html
 share/doc/smstools/blacklist.html
 share/doc/smstools/book.html
-share/doc/smstools/buch.html
 share/doc/smstools/compiling.html
 share/doc/smstools/configure.html
 share/doc/smstools/configure2.html
@@ -26,6 +25,7 @@ share/doc/smstools/history3.html
 share/doc/smstools/index.html
 share/doc/smstools/license.html
 share/doc/smstools/links.html
+share/doc/smstools/localizing.html
 share/doc/smstools/references.html
 share/doc/smstools/run.html
 share/doc/smstools/slideshow/
@@ -36,8 +36,8 @@ share/doc/smstools/slideshow/modem.gif
 share/doc/smstools/slideshow/move_l.gif
 share/doc/smstools/slideshow/move_r.gif
 share/doc/smstools/slideshow/page1.html
-share/doc/smstools/slideshow/page2.gif
 share/doc/smstools/slideshow/page2.html
+share/doc/smstools/slideshow/page2.jpg
 share/doc/smstools/slideshow/page2b.html
 share/doc/smstools/slideshow/page3.html
 share/doc/smstools/slideshow/page4.html
@@ -47,8 +47,10 @@ share/doc/smstools/slideshow/page7.html
 share/doc/smstools/slideshow/page8.html
 share/doc/smstools/slideshow/queue.gif
 share/doc/smstools/slideshow/sms.gif
+share/doc/smstools/slideshow/smstools3-small.jpg
 share/doc/smstools/slideshow/statistic.gif
 share/doc/smstools/slideshow/status.gif
+share/doc/smstools/slideshow/support.gif
 share/doc/smstools/softwarecomp.html
 share/doc/smstools/statformat.html
 share/doc/smstools/statusmonitor.html
