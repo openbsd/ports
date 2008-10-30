@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.120 2008/10/29 15:42:41 espie Exp $
+# $OpenBSD: make-plist,v 1.121 2008/10/30 10:50:36 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -233,7 +233,7 @@ sub possible_subpackages
 
 # Method summary:
 # add_to_mtree: new directory in dependent package
-# register: known items and known comments
+# add_to_haystack: put stuff so that it can be found on the FS
 # copy_extra: stuff that can't be easily deduced but should be copied
 # tag_along: set of items that associate themselves to this item
 #   (e.g., @exec, @unexec, @sample...)
@@ -248,7 +248,7 @@ sub add_to_mtree
 {
 }
 
-sub register2
+sub add_to_haystack
 {
 	my ($self, $plist, $haystack) = @_;
 	$self->{plist} = $plist;
@@ -396,26 +396,26 @@ sub stringize
 }
 
 package OpenBSD::PackingElement::Owner;
-sub register2
+sub add_to_haystack
 {
 	my ($self, $plist, $haystack) = @_;
 
-	$self->SUPER::register2($plist, $haystack);
+	$self->SUPER::add_to_haystack($plist, $haystack);
 	push(@{$haystack->{$main::subst->do($self->{name})}}, $self);
 }
 
 package OpenBSD::PackingElement::Group;
-sub register2
+sub add_to_haystack
 {
-	&OpenBSD::PackingElement::Owner::register2;
+	&OpenBSD::PackingElement::Owner::add_to_haystack;
 }
 
 package OpenBSD::PackingElement::FileObject;
-sub register2
+sub add_to_haystack
 {
 	my ($self, $plist, $haystack) = @_;
 
-	$self->SUPER::register2($plist, $haystack);
+	$self->SUPER::add_to_haystack($plist, $haystack);
 	push(@{$haystack->{$main::subst->do($self->fullname)}}, $self);
 }
 
@@ -495,11 +495,11 @@ sub cwd
 	return ${$self->{cwd}};
 }
 
-sub register2
+sub add_to_haystack
 {
 	my ($self, $plist, $haystack) = @_;
 
-	$self->SUPER::register2($plist, $haystack);
+	$self->SUPER::add_to_haystack($plist, $haystack);
 	my $fullname = File::Spec->canonpath($self->{name});
 	if ($fullname !~ m|^/|o && $self->cwd ne '.') {
 		$fullname = $self->cwd."/".$fullname;
@@ -588,8 +588,7 @@ sub parse_original_plist
     ) or return;
 
     delete $plist->{state}->{lastobject};
-    $plist->register($plist);
-    $plist->register2($plist, $haystack);
+    $plist->add_to_haystack($plist, $haystack);
     # Try to handle fragments
     for my $item (@{$plist->{items}}) {
 	    my $fragname = $item->deduce_fragment($name);
@@ -902,6 +901,26 @@ sub handle_file
 	$p->{nonempty} = 1;
 }
 
+sub scan_for_files
+{
+	my ($file, $haystack) = @_;
+
+	if (defined $haystack->{$file->path}) {
+	    for my $item (@{$haystack->{$file->path}}) {
+	    	next if $item->isa("OpenBSD::PackingElement::State");
+		my $p = $item->{plist}->{replacement};
+		if ($file->type eq 'directory' && 
+		    $p->{mtree}->{$file->path}) {
+		    	print "Found out old directory in ", $p->{filename}, 
+			    ": ", $file->path, " (mtree)\n";
+			next;
+		}
+		$item->{accounted_for} = 1;
+		return;
+	    }
+	}
+}
+
 # THIS IS WHERE THE MAIN PROGRAM STARTS
 
 parse_args();
@@ -910,9 +929,14 @@ my $files = FS::get_files($destdir);
 
 my @l = grab_all_lists();
 
+for my $i (sort keys %$files) {
+	scan_for_files($files->{$i}, $haystack);
+}
+
 for my $plist (@l) {
 	my $orig = $plist->{original};
 	if (defined $orig) {
+		$orig->register($orig);
 		$orig->copy_annotations($plist);
 	}
 	if (!$plist->has('cvstags')) {
