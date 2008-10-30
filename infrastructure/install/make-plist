@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.126 2008/10/30 12:55:21 espie Exp $
+# $OpenBSD: make-plist,v 1.127 2008/10/30 13:10:59 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -309,7 +309,7 @@ sub clone_tags
 		for my $t (@{$self->{tags}}) {
 			my $n = $t->clone;
 			if ($n->isa("OpenBSD::PackingElement::Sample") || 
-			    $n->isa("OpenBSD::PackingElement::SampleDir")) {
+			    $n->isa("OpenBSD::PackingElement::Sampledir")) {
 				main::handle_modes($plist, $n, $t, undef, undef);
 			}
 			$n->add_object2($plist);
@@ -830,6 +830,10 @@ sub handle_file
 		    $p->{mtree}->{$file->path}) {
 			next;
 		}
+		if ($item->isa("OpenBSD::PackingElement::Sampledir")) {
+		    # XXX Don't copy this over, it's supposed to tag along
+		    return;
+		}
 		my $short = short_name($file, $p);
 		my $o = create_object($file->type, $short, $item);
 		if (!defined $o) {
@@ -853,7 +857,9 @@ sub handle_file
 	my $dir = $file->path;
 	while (($dir = dirname($dir)) ne '/') {
 		if (defined $haystack->{$dir} && @{$haystack->{$dir}} eq 1) {
-			my $p = $haystack->{$dir}[0]->{plist}->{replacement};
+			my $item = $haystack->{$dir}[0];
+			next if $item->isa("OpenBSD::PackingElement::Sampledir");
+			my $p = $item->{plist}->{replacement};
 			my $short = short_name($file, $p);
 			my $o = create_object($file->type, $short, undef);
 			if (!defined $o) {
