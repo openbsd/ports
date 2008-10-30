@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.136 2008/10/30 16:35:31 espie Exp $
+# $OpenBSD: make-plist,v 1.137 2008/10/30 17:52:56 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -713,7 +713,7 @@ sub create_object
 	} elsif ($type eq "library") {
 		return OpenBSD::PackingElement::Lib->new($short);
 	} elsif ($type eq "binary") {
-		if ($item->isa("OpenBSD::PackingElement::Shell")) {
+		if (defined $item && $item->isa("OpenBSD::PackingElement::Shell")) {
 			return OpenBSD::PackingElement::Shell->new($short);
 		} else {
 			return OpenBSD::PackingElement::Binary->new($short);
