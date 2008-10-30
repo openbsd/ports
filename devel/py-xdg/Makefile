@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/04/17 16:54:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/10/30 14:19:24 ajacoutot Exp $
 
 COMMENT=		python library to access freedesktop.org standards
 
-MODPY_EGG_VERSION=	0.15
+MODPY_EGG_VERSION=	0.16
 DISTNAME=		pyxdg-${MODPY_EGG_VERSION}
-PKGNAME=		py-xdg-${MODPY_EGG_VERSION}p0
+PKGNAME=		py-xdg-${MODPY_EGG_VERSION}
 
 CATEGORIES=		devel
 
@@ -24,7 +24,6 @@ MODULES=		lang/python
 NO_REGRESS=		Yes
 
 pre-configure:
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
-		-e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' ${WRKSRC}/xdg/*.py
+	${SUBST_CMD} ${WRKSRC}/xdg/BaseDirectory.py
 
 .include <bsd.port.mk>

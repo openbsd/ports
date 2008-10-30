@@ -1,19 +1,19 @@
-$OpenBSD: patch-xdg_BaseDirectory_py,v 1.2 2008/04/17 16:54:52 ajacoutot Exp $
---- xdg/BaseDirectory.py.orig	Thu May 26 23:46:05 2005
-+++ xdg/BaseDirectory.py	Thu Apr 17 17:17:39 2008
+$OpenBSD: patch-xdg_BaseDirectory_py,v 1.3 2008/10/30 14:19:24 ajacoutot Exp $
+--- xdg/BaseDirectory.py.orig	Thu Oct 30 15:11:27 2008
++++ xdg/BaseDirectory.py	Thu Oct 30 15:11:58 2008
 @@ -33,13 +33,13 @@ xdg_data_home = os.environ.get('XDG_DATA_HOME',
- 			os.path.join(_home, '.local', 'share'))
+             os.path.join(_home, '.local', 'share'))
  
  xdg_data_dirs = [xdg_data_home] + \
--	os.environ.get('XDG_DATA_DIRS', '/usr/local/share:/usr/share').split(':')
-+	os.environ.get('XDG_DATA_DIRS', '!!LOCALBASE!!/share:/usr/share').split(':')
+-    os.environ.get('XDG_DATA_DIRS', '/usr/local/share:/usr/share').split(':')
++    os.environ.get('XDG_DATA_DIRS', '${LOCALBASE}/share:/usr/share').split(':')
  
  xdg_config_home = os.environ.get('XDG_CONFIG_HOME',
- 			os.path.join(_home, '.config'))
+             os.path.join(_home, '.config'))
  
  xdg_config_dirs = [xdg_config_home] + \
--	os.environ.get('XDG_CONFIG_DIRS', '/etc/xdg').split(':')
-+	os.environ.get('XDG_CONFIG_DIRS', '!!SYSCONFDIR!!/xdg').split(':')
+-    os.environ.get('XDG_CONFIG_DIRS', '/etc/xdg').split(':')
++    os.environ.get('XDG_CONFIG_DIRS', '${SYSCONFDIR}/xdg').split(':')
  
  xdg_cache_home = os.environ.get('XDG_CACHE_HOME',
- 			os.path.join(_home, '.cache'))
+             os.path.join(_home, '.cache'))
