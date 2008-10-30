@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.135 2008/10/30 16:19:23 espie Exp $
+# $OpenBSD: make-plist,v 1.136 2008/10/30 16:35:31 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -760,7 +760,7 @@ sub handle_modes
 			    if ($subst->do($owner) eq $file->owner) {
 				last;
 			    } else {
-				report "File owner does not match for ", 
+				report "owner mismatch for ", 
 				    $file, " ($owner vs. ", 
 				    $file->owner, ")";
 			    }
@@ -781,7 +781,7 @@ sub handle_modes
 			    if ($subst->do($group) eq $file->group) {
 				last;
 			    } else {
-				report "File group does not match for ", 
+				report "group mismatch for ", 
 				    $file, " ($group vs. ", 
 				    $file->group, ")";
 			    }
