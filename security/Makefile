@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2008/10/30 11:06:31 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.207 2008/10/30 17:01:40 pirofti Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -166,6 +166,7 @@
      SUBDIR += rdp
      SUBDIR += ruby-ezcrypto
      SUBDIR += ruby-openid
+     SUBDIR += ruby-yadis
      SUBDIR += scanlogd
      SUBDIR += scanssh
      SUBDIR += sentinel
