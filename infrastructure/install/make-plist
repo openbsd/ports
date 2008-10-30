@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.125 2008/10/30 12:21:30 espie Exp $
+# $OpenBSD: make-plist,v 1.126 2008/10/30 12:55:21 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -467,14 +467,44 @@ sub register
 }
 
 package OpenBSD::PackingElement::ExeclikeAction;
+sub pseudo_expand
+{
+	my ($_, $item) = @_;
+	if (m/\%F/o) {
+		return "XXXX" unless defined $item;
+		s/\%F/$item->{name}/g;
+	}
+	if (m/\%D/o) {
+		return "XXXX" unless defined $item;
+		s/\%D/$item->cwd/ge;
+	}
+	if (m/\%B/o) {
+		return "XXXX" unless defined $item;
+		s/\%B/dirname($item->fullname)/ge;
+	}
+	if (m/\%f/o) {
+		return "XXXX" unless defined $item;
+		s/\%f/basename($item->fullname)/ge;
+	}
+	return $_;
+}
+
 sub register
 {
 	my ($self, $plist) = @_;
-	# XXX to be revisited
 	if (defined $plist->{state}->{lastobject}) {
-	    $plist->{state}->{lastobject}->tag_along($self);
-    	} else {
-	    $plist->{lastreal}->tag_along($self);
+		if ($plist->{state}->{lastobject} == $plist->{state}->{lastreal}) {
+			$plist->{state}->{lastobject}->tag_along($self);
+			return;
+		}
+	}
+	my $f1 = pseudo_expand($self->{name}, $plist->{state}->{lastobject});
+	my $f2 = pseudo_expand($self->{name}, $plist->{state}->{lastreal});
+	if ($f1 eq $f2) {
+		$plist->{state}->{lastreal}->tag_along($self);
+	} else {
+		main::report " orphaned \@", $self->keyword, $self,
+			" in ", $plist;
 	}
 }
 
@@ -529,19 +559,6 @@ sub copy_extra
 	    OpenBSD::PackingElement::Cwd->add($plist, $self->cwd);
 	}
 	$self->clone->add_object2($plist);
-}
-
-package OpenBSD::PackingElement::ExtraUnexec;
-sub copy_extra
-{
-	my ($self, $plist) = @_;
-
-	# don't try to deal with cwd issues
-	$self->clone->add_object2($plist);
-}
-
-sub register
-{
 }
 
 package main;
