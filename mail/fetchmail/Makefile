@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.113 2008/08/19 22:41:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.114 2008/10/30 15:33:59 bernd Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
 DISTNAME=	fetchmail-6.3.8
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=fetchmail/}
 
@@ -29,6 +29,10 @@ EXTRACT_SUFX=		.tar.bz2
 
 DOCS=			FAQ NOTES FEATURES README COPYING fetchmail-FAQ.html \
 			fetchmail-features.html design-notes.html todo.html
+
+# Remove those so they get rebuild. Fixes problems with gcc2.
+post-extract:
+	@rm -f ${WRKSRC}/rcfile_y.[ch]
 
 pre-patch:
 	@sed -e "s|@PREFIX@|${LOCALBASE}|" \
