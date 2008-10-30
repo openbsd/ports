@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.127 2008/10/30 13:10:59 espie Exp $
+# $OpenBSD: make-plist,v 1.128 2008/10/30 13:39:22 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -548,6 +548,16 @@ sub add_to_haystack
 
 sub copy_annotations
 {
+}
+
+sub register
+{
+	my ($self, $plist) = @_;
+	# comments which are not files will `tag along' more or less...
+	if (!defined $self->{accounted_for}) {
+		main::report "comment ", $self, " position in ", $plist, " guessed";
+		$plist->{state}->{lastreal}->tag_along($self);
+	}
 }
 
 package OpenBSD::PackingElement::Extra;
