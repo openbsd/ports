@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/30 14:28:36 ajacoutot Exp $
+bin/xdg-desktop-icon
+bin/xdg-desktop-menu
+bin/xdg-email
+bin/xdg-icon-resource
+bin/xdg-mime
+bin/xdg-open
+bin/xdg-screensaver
+@man man/man1/xdg-desktop-icon.1
+@man man/man1/xdg-desktop-menu.1
+@man man/man1/xdg-email.1
+@man man/man1/xdg-icon-resource.1
+@man man/man1/xdg-mime.1
+@man man/man1/xdg-open.1
+@man man/man1/xdg-screensaver.1

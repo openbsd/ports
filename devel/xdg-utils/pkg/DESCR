@@ -1,0 +1,5 @@
+Xdg-utils is a set of command line tools that assist applications with a
+variety of desktop integration tasks.  About half of the tools focus on
+tasks commonly required during the installation of a desktop application
+and the other half focuses on integration with the desktop environment
+while the application is running.

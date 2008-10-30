@@ -1,0 +1,80 @@
+$OpenBSD: patch-scripts_xdg-desktop-menu,v 1.1.1.1 2008/10/30 14:28:36 ajacoutot Exp $
+--- scripts/xdg-desktop-menu.orig	Thu Oct 30 14:45:02 2008
++++ scripts/xdg-desktop-menu	Thu Oct 30 14:51:18 2008
+@@ -696,7 +696,7 @@ make_lazy_default()
+     
+     for MIME in $mimetypes ; do
+         xdg_default_dirs="$XDG_DATA_DIRS"
+-        [ -n "$xdg_default_dirs" ] || xdg_default_dirs=/usr/local/share/:/usr/share/
++        [ -n "$xdg_default_dirs" ] || xdg_default_dirs=${LOCALBASE}/share/:/usr/share/
+         if [ x"$mode" = x"user" ] ; then
+             xdg_user_dir="$XDG_DATA_HOME"
+             [ -n "$xdg_user_dir" ] || xdg_user_dir="$HOME/.local/share"
+@@ -739,7 +739,7 @@ update_submenu()
+     xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
+ 
+     xdg_system_dirs="$XDG_CONFIG_DIRS"
+-    [ -n "$xdg_system_dirs" ] || xdg_system_dirs=/etc/xdg
++    [ -n "$xdg_system_dirs" ] || xdg_system_dirs=${SYSCONFDIR}/xdg
+     xdg_global_dir=
+     for x in `echo $xdg_system_dirs | sed 's/:/ /g'` ; do
+         if [ -w $x/$xdg_dir_name ] ; then
+@@ -787,7 +787,7 @@ update_submenu()
+         return
+     fi
+ 
+-    if [ $action = "install" -a -f "/etc/xdg/menus/gnome-applications.menu" ] ; then
++    if [ $action = "install" -a -f "${SYSCONFDIR}/xdg/menus/gnome-applications.menu" ] ; then
+         # Work around for Debian Gnome
+         gnome_xdg_dir=`echo "$xdg_dir" | sed -e 's^/applications-merged^/gnome-applications-merged^'`
+         if [ ! -e "$gnome_xdg_dir" ] ; then
+@@ -805,7 +805,7 @@ update_submenu()
+             eval 'ln -s "applications-merged" "$mandrake_xdg_dir"'$xdg_redirect_output
+         fi
+     fi
+-    if [ $action = "install" -a x"$mode" = x"user" -a -d "/etc/xdg/menus/kde-applications-merged" ] ; then
++    if [ $action = "install" -a x"$mode" = x"user" -a -d "${SYSCONFDIR}/xdg/menus/kde-applications-merged" ] ; then
+         # Work around for Fedora Core 5 + patched KDE
+         kde_xdg_dir=`echo "$xdg_dir" | sed -e 's^/applications-merged^/kde-applications-merged^'`
+         if [ ! -e "$kde_xdg_dir" ] ; then
+@@ -814,7 +814,7 @@ update_submenu()
+             eval 'ln -s "applications-merged" "$kde_xdg_dir"'$xdg_redirect_output
+         fi
+     fi        
+-    if [ $action = "install" -a x"$mode" = x"system" -a -d "/etc/xdg/menus/kde-applications-merged" -a ! -d "/etc/xdg/menus/applications-merged" ] ; then
++    if [ $action = "install" -a x"$mode" = x"system" -a -d "${SYSCONFDIR}/xdg/menus/kde-applications-merged" -a ! -d "${SYSCONFDIR}/xdg/menus/applications-merged" ] ; then
+         # Work around for Kubuntu 6.06
+         kde_xdg_dir=`echo "$xdg_dir" | sed -e 's^/applications-merged^/kde-applications-merged^'`
+         DEBUG 1 "Kubuntu Workaround: Link '$xdg_dir' to 'kde-applications-merged'"
+@@ -1102,7 +1102,7 @@ xdg_user_dir="$XDG_DATA_HOME"
+ xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
+ 
+ xdg_system_dirs="$XDG_DATA_DIRS"
+-[ -n "$xdg_system_dirs" ] || xdg_system_dirs=/usr/local/share/:/usr/share/
++[ -n "$xdg_system_dirs" ] || xdg_system_dirs=${LOCALBASE}/share/:/usr/share/
+ xdg_global_dir=
+ for x in `echo $xdg_system_dirs | sed 's/:/ /g'` ; do
+     if [ -w $x/$xdg_dir_name ] ; then
+@@ -1169,7 +1169,7 @@ xdg_user_dir="$XDG_DATA_HOME"
+ xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
+ 
+ xdg_system_dirs="$XDG_DATA_DIRS"
+-[ -n "$xdg_system_dirs" ] || xdg_system_dirs=/usr/local/share/:/usr/share/
++[ -n "$xdg_system_dirs" ] || xdg_system_dirs=${LOCALBASE}/share/:/usr/share/
+ xdg_global_dir=
+ for x in `echo $xdg_system_dirs | sed 's/:/ /g'` ; do
+     if [ -w $x/$xdg_dir_name ] ; then
+@@ -1179,11 +1179,11 @@ for x in `echo $xdg_system_dirs | sed 's/:/ /g'` ; do
+ done
+ 
+ kde_user_dir="$HOME/.kde/share/applnk"
+-kde_global_dir="/usr/share/applnk"
++kde_global_dir="${LOCALBASE}/share/applnk"
+ [ -w $kde_global_dir ] || kde_global_dir=
+ 
+ gnome_user_dir="$HOME/.gnome/apps"
+-gnome_global_dir="/usr/share/gnome/apps"
++gnome_global_dir="${LOCALBASE}/share/gnome/apps"
+ [ -w $gnome_global_dir ] || gnome_global_dir=
+ 
+ [ -f /etc/mandriva-release ] && need_mandriva_fix=true
