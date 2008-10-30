@@ -1,0 +1,4 @@
+MassLoader allows to do massive uploads via Zip files. When a zip
+file is uploaded via MassLoader, its contents are created in the
+current folder. Content types to use are automatically retrieved
+based on your Plone products.
