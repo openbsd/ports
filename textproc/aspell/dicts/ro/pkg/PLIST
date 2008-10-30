@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:43 jolan Exp $
-lib/aspell/ro.multi
-lib/aspell/ro.rws
-lib/aspell/romaneste.alias
-lib/aspell/romanian.alias
-lib/aspell/româneºte.alias
-share/aspell/ro.dat
+@comment $OpenBSD: PLIST,v 1.2 2008/10/30 11:31:59 jasper Exp $
+lib/aspell/ro.dat
+share/aspell/ro.multi
+share/aspell/ro.rws
+share/aspell/romaneste.alias
+share/aspell/romanian.alias
+share/aspell/româneºte.alias
