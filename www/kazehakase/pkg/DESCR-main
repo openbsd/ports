@@ -1,7 +1,10 @@
-Kazehakase is a web browser using gecko engine, it features:
+Kazehakase is a Gtk2-base web browser, it features:
+* Gecko or webkit engine support
 * Tabbed browsing
 * Session saving
 * Remote bookmark (e.g. RSS) in menu or sidebar
 * Variable UI (menus, toolbar etc.) on user level
 * Customizable mouse gestures
 * Customizable key accelerator
+
+This package provides common infrastructure files.

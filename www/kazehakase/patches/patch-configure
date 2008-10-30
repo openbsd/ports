@@ -1,7 +1,86 @@
-$OpenBSD: patch-configure,v 1.3 2008/06/08 16:05:23 landry Exp $
---- configure.orig	Sat Mar 29 09:20:56 2008
-+++ configure	Wed Apr  2 17:12:20 2008
-@@ -31100,13 +31100,7 @@ done
+$OpenBSD: patch-configure,v 1.4 2008/10/30 22:38:10 landry Exp $
+--- configure.orig	Tue Oct 28 16:09:40 2008
++++ configure	Thu Oct 30 22:43:13 2008
+@@ -29071,78 +29071,6 @@ fi
+ 
+ 
+ anthy_exists=no
+-
+-pkg_failed=no
+-{ echo "$as_me:$LINENO: checking for ANTHY" >&5
+-echo $ECHO_N "checking for ANTHY... $ECHO_C" >&6; }
+-
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$ANTHY_CFLAGS"; then
+-        pkg_cv_ANTHY_CFLAGS="$ANTHY_CFLAGS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"anthy\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "anthy") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_ANTHY_CFLAGS=`$PKG_CONFIG --cflags "anthy" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$ANTHY_LIBS"; then
+-        pkg_cv_ANTHY_LIBS="$ANTHY_LIBS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"anthy\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "anthy") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_ANTHY_LIBS=`$PKG_CONFIG --libs "anthy" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        ANTHY_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "anthy"`
+-        else
+-	        ANTHY_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "anthy"`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$ANTHY_PKG_ERRORS" >&5
+-
+-	{ echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6; }
+-                anthy_exists=no
+-elif test $pkg_failed = untried; then
+-	anthy_exists=no
+-else
+-	ANTHY_CFLAGS=$pkg_cv_ANTHY_CFLAGS
+-	ANTHY_LIBS=$pkg_cv_ANTHY_LIBS
+-        { echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6; }
+-	anthy_exists=yes
+-fi
+-
+ # Extract the first word of "mecab-config", so it can be a program name with args.
+ set dummy mecab-config; ac_word=$2
+ { echo "$as_me:$LINENO: checking for $ac_word" >&5
+@@ -31100,13 +31028,7 @@ done
          sed -e "/POTFILES =/r po/POTFILES" po/Makefile.in > po/Makefile
        esac ;;
      "rgettext":C)

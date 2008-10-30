@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/01/11 14:47:28 landry Exp $
-lib/kazehakase/embed/gecko.so
-@lib lib/kazehakase/libkazehakase.so.${LIBkazehakase_VERSION}

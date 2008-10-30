@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/06/08 16:05:23 landry Exp $
-%%SHARED%%
-bin/kazehakase
+@comment $OpenBSD: PLIST-main,v 1.1 2008/10/30 22:38:11 landry Exp $
+@conflict kazehakase-<=0.5.4
+@bin bin/kazehakase
 lib/kazehakase/
 lib/kazehakase/embed/
-lib/kazehakase/embed/gecko.a
-lib/kazehakase/embed/gecko.la
 lib/kazehakase/libkazehakase.a
 lib/kazehakase/libkazehakase.la
+@lib lib/kazehakase/libkazehakase.so.${LIBkazehakase_VERSION}
 lib/kazehakase/search/
 @man man/man1/kazehakase.1
 share/applications/kazehakase.desktop
