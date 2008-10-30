@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/29 02:23:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/30 03:50:08 kevlo Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	scim input method module for chewing
 
 DISTNAME=	scim-chewing-0.3.2
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	inputmethods chinese
 
@@ -31,7 +32,6 @@ MODULES=	devel/gettext \
 MASTER_SITES=	http://chewing.csie.net/download/scim/
 EXTRACT_SUFX=	.tar.bz2
 
-BUILD_DEPENDS=	::textproc/p5-XML-Parser
 LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 		chewing::chinese/libchewing \
 		scim-1.0,scim-gtkutils-1.0,scim-x11utils-1.0::inputmethods/scim
