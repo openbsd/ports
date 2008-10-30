@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.14 2007/09/30 14:39:23 steven Exp $
+@comment $OpenBSD: PLIST,v 1.15 2008/10/30 13:26:41 ajacoutot Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS:/nonexistent:/sbin/nologin
 %%SHARED%%
-bin/cancel
+@bin bin/cancel
 bin/cups-config
-bin/cupstestdsc
-bin/cupstestppd
-bin/lp
-bin/lpoptions
-bin/lppasswd
-bin/lpq
-bin/lpr
-bin/lprm
-bin/lpstat
+@bin bin/cupstestdsc
+@bin bin/cupstestppd
+@bin bin/lp
+@bin bin/lpoptions
+@bin bin/lppasswd
+@bin bin/lpq
+@bin bin/lpr
+@bin bin/lprm
+@bin bin/lpstat
 include/cups/
 include/cups/adminutil.h
 include/cups/array.h
@@ -33,45 +33,45 @@ include/cups/transcode.h
 libexec/cups/
 libexec/cups/backend/
 libexec/cups/backend/http
-libexec/cups/backend/ipp
-libexec/cups/backend/lpd
-libexec/cups/backend/parallel
-libexec/cups/backend/scsi
-libexec/cups/backend/serial
-libexec/cups/backend/snmp
-libexec/cups/backend/socket
-libexec/cups/backend/usb
+@bin libexec/cups/backend/ipp
+@bin libexec/cups/backend/lpd
+@bin libexec/cups/backend/parallel
+@bin libexec/cups/backend/scsi
+@bin libexec/cups/backend/serial
+@bin libexec/cups/backend/snmp
+@bin libexec/cups/backend/socket
+@bin libexec/cups/backend/usb
 libexec/cups/cgi-bin/
-libexec/cups/cgi-bin/admin.cgi
-libexec/cups/cgi-bin/classes.cgi
-libexec/cups/cgi-bin/help.cgi
-libexec/cups/cgi-bin/jobs.cgi
-libexec/cups/cgi-bin/printers.cgi
+@bin libexec/cups/cgi-bin/admin.cgi
+@bin libexec/cups/cgi-bin/classes.cgi
+@bin libexec/cups/cgi-bin/help.cgi
+@bin libexec/cups/cgi-bin/jobs.cgi
+@bin libexec/cups/cgi-bin/printers.cgi
 libexec/cups/daemon/
-libexec/cups/daemon/cups-deviced
-libexec/cups/daemon/cups-driverd
-libexec/cups/daemon/cups-lpd
-libexec/cups/daemon/cups-polld
+@bin libexec/cups/daemon/cups-deviced
+@bin libexec/cups/daemon/cups-driverd
+@bin libexec/cups/daemon/cups-lpd
+@bin libexec/cups/daemon/cups-polld
 libexec/cups/driver/
 libexec/cups/filter/
 libexec/cups/filter/foomatic-rip
-libexec/cups/filter/gziptoany
-libexec/cups/filter/hpgltops
-libexec/cups/filter/imagetops
-libexec/cups/filter/imagetoraster
-libexec/cups/filter/pdftops
-libexec/cups/filter/pstops
+@bin libexec/cups/filter/gziptoany
+@bin libexec/cups/filter/hpgltops
+@bin libexec/cups/filter/imagetops
+@bin libexec/cups/filter/imagetoraster
+@bin libexec/cups/filter/pdftops
+@bin libexec/cups/filter/pstops
 libexec/cups/filter/rastertodymo
-libexec/cups/filter/rastertoepson
-libexec/cups/filter/rastertohp
-libexec/cups/filter/rastertolabel
-libexec/cups/filter/texttops
+@bin libexec/cups/filter/rastertoepson
+@bin libexec/cups/filter/rastertohp
+@bin libexec/cups/filter/rastertolabel
+@bin libexec/cups/filter/texttops
 libexec/cups/monitor/
-libexec/cups/monitor/bcp
-libexec/cups/monitor/tbcp
+@bin libexec/cups/monitor/bcp
+@bin libexec/cups/monitor/tbcp
 libexec/cups/notifier/
-libexec/cups/notifier/mailto
-libexec/cups/notifier/testnotify
+@bin libexec/cups/notifier/mailto
+@bin libexec/cups/notifier/testnotify
 @man man/man1/cancel.1
 @man man/man1/cups-config.1
 @man man/man1/cupstestdsc.1
@@ -108,20 +108,21 @@ libexec/cups/notifier/testnotify
 @man man/man8/lpinfo.8
 @man man/man8/lpmove.8
 @man man/man8/reject.8
-sbin/accept
+@bin sbin/accept
 @mode 700
 sbin/cups-disable
 sbin/cups-enable
 @mode
-sbin/cupsaddsmb
-sbin/cupsd
+@bin sbin/cupsaddsmb
+@bin sbin/cupsd
 sbin/cupsdisable
 sbin/cupsenable
-sbin/lpadmin
-sbin/lpc
-sbin/lpinfo
-sbin/lpmove
+@bin sbin/lpadmin
+@bin sbin/lpc
+@bin sbin/lpinfo
+@bin sbin/lpmove
 sbin/reject
+share/applications/cups.desktop
 share/cups/
 share/cups/banners/
 share/cups/banners/classified
@@ -1265,20 +1266,26 @@ share/examples/cups/ppd/
 @sample ${SYSCONFDIR}/cups/ppd/
 share/examples/cups/ssl/
 @sample ${SYSCONFDIR}/cups/ssl/
-share/locale/
-share/locale/de/
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
+share/icons/hicolor/128x128/apps/cups.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/cups.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/cups.png
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/cups.png
 share/locale/de/cups_de.po
-share/locale/es/
 share/locale/es/cups_es.po
-share/locale/et/
 share/locale/et/cups_et.po
-share/locale/it/
 share/locale/it/cups_it.po
-share/locale/ja/
 share/locale/ja/cups_ja.po
-share/locale/pl/
 share/locale/pl/cups_pl.po
-share/locale/sv/
 share/locale/sv/cups_sv.po
 @owner _cups
 @group _cups
@@ -1286,3 +1293,7 @@ share/locale/sv/cups_sv.po
 @sample /var/spool/cups/
 @sample /var/spool/cups/tmp/
 @sample /var/cache/cups/
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

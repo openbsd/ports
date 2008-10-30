@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2008/10/28 15:21:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2008/10/30 13:26:41 ajacoutot Exp $
 
 COMMENT=		Common Unix Printing System
 
 VERSION=		1.2.7
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		cups-${VERSION}p11
+PKGNAME=		cups-${VERSION}p12
 CATEGORIES=		print sysutils
 SHARED_LIBS=		cups		3.0 \
 			cupsimage	2.3
@@ -30,6 +30,7 @@ MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 
 EXTRACT_SUFX=		.tar.bz2
 
+RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=		png.>=3::graphics/png \
 			jpeg.>=62::graphics/jpeg \
 			tiff.>=35::graphics/tiff
@@ -51,6 +52,7 @@ CONFIGURE_ARGS+=	--with-cups-user=_cups \
 			--without-perl \
 			--without-php \
 			--without-python \
+			--disable-dbus \
 			--disable-gnutls
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
@@ -84,6 +86,7 @@ CONFIGURE_ARGS+=	--disable-ldap
 post-configure:
 	cd ${WRKBUILD} && perl -pi -e 's|\$${DESTDIR}||g' init/cups.sh \
 	    config.h cups-config conf/cupsd.conf man/*.man
+	${SUBST_CMD} ${WRKSRC}/Makefile
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cups/init
