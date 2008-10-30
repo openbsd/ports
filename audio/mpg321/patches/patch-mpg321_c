@@ -1,7 +1,48 @@
-$OpenBSD: patch-mpg321_c,v 1.5 2007/07/21 15:33:22 naddy Exp $
+$OpenBSD: patch-mpg321_c,v 1.6 2008/10/30 14:46:59 naddy Exp $
 --- mpg321.c.orig	Sun Mar 24 06:49:20 2002
-+++ mpg321.c	Sat Jul 21 16:36:41 2007
-@@ -188,7 +188,7 @@ static int show_id3(struct id3_tag const *tag)
++++ mpg321.c	Thu Oct 30 14:48:54 2008
+@@ -75,9 +75,15 @@ void mpg321_error(char *file)
+ 
+ void usage(char *argv0)
+ {
++    ao_info **devices;
++    int i, driver_count;
++
++    devices = ao_driver_info_list(&driver_count);
++
+     mpg123_boilerplate();
+     fprintf(stderr,
+-        "\nUsage: %s [options] file(s) | URL(s) | -\n\n"
++        "\nUsage: %s [options] file(s) | URL(s) | -\n\n", argv0);
++    fprintf(stderr,
+         "Options supported:\n"
+         "   --verbose or -v          Increase verbosity\n"
+         "   --quiet or -q            Quiet mode (no title or boilerplate)\n"
+@@ -85,7 +91,13 @@ void usage(char *argv0)
+         "   --skip N or -k N         Skip N frames into the file\n"
+         "   --verbose or -v          Be more verbose in playing files\n"
+         "   -o dt                    Set output devicetype to dt\n" 
+-    "                                [esd,alsa(09),arts,sun,oss]\n"
++        "                            (");
++    for (i = 0; i < driver_count; i++) {
++        fprintf(stderr, "%s%s", devices[i]->short_name,
++            (i + 1 < driver_count) ? ", " : "");
++    }
++    fprintf(stderr,
++        ")\n"
+         "   --audiodevice N or -a N  Use N for audio-out\n"
+         "   --stdout or -s           Use stdout for audio-out\n"
+         "   --au N                   Use au file N for output\n"
+@@ -101,7 +113,7 @@ void usage(char *argv0)
+         "   --version or -V          Print version information\n"
+         "\n"
+         "This version of mpg321 has been configured with " AUDIO_DEFAULT " as its default\n"
+-        "libao output device.\n" , argv0);
++        "libao output device.\n");
+ }
+ 
+ /* retsigtype is defined by configure;
+@@ -188,7 +200,7 @@ static int show_id3(struct id3_tag const *tag)
              
              else
              {
@@ -10,7 +51,7 @@ $OpenBSD: patch-mpg321_c,v 1.5 2007/07/21 15:33:22 naddy Exp $
                  free(names[i]);
              }
          }
-@@ -203,7 +203,7 @@ static int show_id3(struct id3_tag const *tag)
+@@ -203,7 +215,7 @@ static int show_id3(struct id3_tag const *tag)
              if (!names[i])  {
                  fprintf (stderr, emptystring);
              }   else    {
@@ -19,7 +60,25 @@ $OpenBSD: patch-mpg321_c,v 1.5 2007/07/21 15:33:22 naddy Exp $
                  free (names[i]);
              }
              if (i%2) fprintf (stderr, "\n");
-@@ -285,6 +285,8 @@ int main(int argc, char *argv[])
+@@ -239,6 +251,8 @@ int main(int argc, char *argv[])
+ 
+     status = MPG321_PLAYING;
+     
++    ao_initialize();
++
+     /* Get the command line options */
+     parse_options(argc, argv, pl);
+ 
+@@ -257,8 +271,6 @@ int main(int argc, char *argv[])
+     if (shuffle_play)
+         shuffle_files(pl);
+ 
+-    ao_initialize();
+-
+     check_default_play_device();
+     
+     if (!(options.opt & MPG321_REMOTE_PLAY))
+@@ -285,6 +297,8 @@ int main(int argc, char *argv[])
          signal(SIGINT, SIG_DFL);
          
          playbuf.buf = NULL;
@@ -28,7 +87,7 @@ $OpenBSD: patch-mpg321_c,v 1.5 2007/07/21 15:33:22 naddy Exp $
          playbuf.fd = -1;
          playbuf.length = 0;
          playbuf.done = 0;
-@@ -410,12 +412,14 @@ int main(int argc, char *argv[])
+@@ -410,12 +424,14 @@ int main(int argc, char *argv[])
              
              if(fstat(fd, &stat) == -1)
              {
@@ -43,7 +102,7 @@ $OpenBSD: patch-mpg321_c,v 1.5 2007/07/21 15:33:22 naddy Exp $
                  continue;
              }
              
-@@ -432,6 +436,7 @@ int main(int argc, char *argv[])
+@@ -432,6 +448,7 @@ int main(int argc, char *argv[])
              if((playbuf.buf = mmap(0, playbuf.length, PROT_READ, MAP_SHARED, fd, 0))
                                  == MAP_FAILED)
              {
@@ -51,7 +110,7 @@ $OpenBSD: patch-mpg321_c,v 1.5 2007/07/21 15:33:22 naddy Exp $
                  mpg321_error(currentfile);
                  continue;
              }
-@@ -509,9 +514,6 @@ int main(int argc, char *argv[])
+@@ -509,9 +526,6 @@ int main(int argc, char *argv[])
  
          mad_decoder_finish(&decoder);
  
@@ -61,7 +120,7 @@ $OpenBSD: patch-mpg321_c,v 1.5 2007/07/21 15:33:22 naddy Exp $
          if (playbuf.frames)
               free(playbuf.frames);
  
-@@ -521,6 +523,7 @@ int main(int argc, char *argv[])
+@@ -521,6 +535,7 @@ int main(int argc, char *argv[])
          if (playbuf.fd == -1)
          {
              munmap(playbuf.buf, playbuf.length);
@@ -69,7 +128,7 @@ $OpenBSD: patch-mpg321_c,v 1.5 2007/07/21 15:33:22 naddy Exp $
          }
  
          else
-@@ -535,10 +538,6 @@ int main(int argc, char *argv[])
+@@ -535,10 +550,6 @@ int main(int argc, char *argv[])
          ao_close(playdevice);
  
      ao_shutdown();

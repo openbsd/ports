@@ -1,0 +1,12 @@
+$OpenBSD: patch-ao_c,v 1.1 2008/10/30 14:46:59 naddy Exp $
+--- ao.c.orig	Thu Oct 30 15:41:11 2008
++++ ao.c	Thu Oct 30 15:41:26 2008
+@@ -94,7 +94,7 @@ void check_ao_default_play_device()
+ void check_default_play_device()
+ {
+     /* check that no output devices are currently selected */
+-    if (!(options.opt & (MPG321_USE_OSS | MPG321_USE_STDOUT | MPG321_USE_ALSA | MPG321_USE_ESD 
++    if (!(options.opt & (MPG321_USE_OSS | MPG321_USE_SUN | MPG321_USE_STDOUT | MPG321_USE_ALSA | MPG321_USE_ESD 
+                          | MPG321_USE_NULL | MPG321_USE_WAV | MPG321_USE_ARTS | MPG321_USE_AU 
+                          | MPG321_USE_CDR | MPG321_USE_ALSA09 | MPG321_USE_USERDEF)))
+     {
