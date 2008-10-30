@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/30 14:19:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/30 14:23:31 ajacoutot Exp $
 
 COMMENT=		python library to access freedesktop.org standards
 
@@ -24,6 +24,6 @@ MODULES=		lang/python
 NO_REGRESS=		Yes
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/xdg/BaseDirectory.py
+	${SUBST_CMD} ${WRKSRC}/xdg/{BaseDirectory.py,Menu.py}
 
 .include <bsd.port.mk>
