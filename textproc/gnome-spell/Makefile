@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/10/28 14:07:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2008/10/30 06:40:48 sturm Exp $
 
 COMMENT=		GNOME/Bonobo component for spell checking
 
@@ -28,7 +28,6 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		aspell.>=15::textproc/aspell/core \
 			gnomeui-2::x11/gnome/libgnomeui
-RUN_DEPENDS=		::textproc/aspell/dicts/en
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
