@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.124 2008/10/30 11:44:43 espie Exp $
+# $OpenBSD: make-plist,v 1.125 2008/10/30 12:21:30 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -268,6 +268,13 @@ sub add_to_mtree
 {
 }
 
+sub add_object2
+{
+	my ($self, $plist) = @_;
+	$self->add_object($plist);
+	$plist->{nonempty} = 1;
+}
+
 sub add_to_haystack
 {
 	my ($self, $plist, $haystack) = @_;
@@ -305,8 +312,7 @@ sub clone_tags
 			    $n->isa("OpenBSD::PackingElement::SampleDir")) {
 				main::handle_modes($plist, $n, $t, undef, undef);
 			}
-			$n->add_object($plist);
-			$plist->{nonempty} = 1;
+			$n->add_object2($plist);
 			if ($n->isa("OpenBSD::PackingElement::Fragment") && 
 			    $n->{name} eq "SHARED") {
 				$plist->{hasshared} = 1;
@@ -319,6 +325,13 @@ sub copy_annotations
 {
 }
 
+package OpenBSD::PackingElement::Meta;
+sub copy_annotations
+{
+	my ($self, $plist) = @_;
+	$self->clone->add_object2($plist);
+}
+
 package OpenBSD::PackingElement::CVSTag;
 sub copy_annotations
 {
@@ -326,42 +339,15 @@ sub copy_annotations
 	$self->clone->add_object($plist);
 }
 
-package OpenBSD::PackingElement::NoDefaultConflict;
-sub copy_annotations
-{
-	my ($self, $plist) = @_;
-	$self->clone->add_object($plist);
-	$plist->{nonempty} = 1;
-}
-
-package OpenBSD::PackingElement::Conflict;
-sub copy_annotations
-{
-	&OpenBSD::PackingElement::NoDefaultConflict::copy_annotations;
-}
-
 package OpenBSD::PackingElement::NewAuth;
 sub copy_annotations
 {
-	&OpenBSD::PackingElement::NoDefaultConflict::copy_annotations;
+	&OpenBSD::PackingElement::Meta;
 }
 
-package OpenBSD::PackingElement::PkgPath;
+package OpenBSD::PackingElement::SpecialFile;
 sub copy_annotations
 {
-	&OpenBSD::PackingElement::NoDefaultConflict::copy_annotations;
-}
-
-package OpenBSD::PackingElement::Incompatibility;
-sub copy_annotations
-{
-	&OpenBSD::PackingElement::NoDefaultConflict::copy_annotations;
-}
-
-package OpenBSD::PackingElement::UpdateSet;
-sub copy_annotations
-{
-	&OpenBSD::PackingElement::NoDefaultConflict::copy_annotations;
 }
 
 package OpenBSD::PackingElement::Fragment;
@@ -530,6 +516,10 @@ sub add_to_haystack
 	push(@{$haystack->{$n}}, $self);
 }
 
+sub copy_annotations
+{
+}
+
 package OpenBSD::PackingElement::Extra;
 sub copy_extra
 {
@@ -538,8 +528,7 @@ sub copy_extra
 	if ($self->cwd ne $plist->{state}->cwd) {
 	    OpenBSD::PackingElement::Cwd->add($plist, $self->cwd);
 	}
-	$self->clone->add_object($plist);
-	$plist->{nonempty} = 1;
+	$self->clone->add_object2($plist);
 }
 
 package OpenBSD::PackingElement::ExtraUnexec;
@@ -548,8 +537,7 @@ sub copy_extra
 	my ($self, $plist) = @_;
 
 	# don't try to deal with cwd issues
-	$self->clone->add_object($plist);
-	$plist->{nonempty} = 1;
+	$self->clone->add_object2($plist);
 }
 
 sub register
@@ -834,9 +822,7 @@ sub handle_file
 		if ($o->can("compute_modes")) {
 			handle_modes($p, $item, $o, $file, $haystack);
 		}
-		$o->add_object($p);
-		$item->{accounted_for} = $o;
-		$p->{nonempty} = 1;
+		$o->add_object2($p);
 
 		# Copy properties from source item
 		$item->clone_tags($p);
@@ -866,8 +852,7 @@ sub handle_file
 			if ($o->can("compute_modes")) {
 				handle_modes($p, undef, $o, $file, $haystack);
 			}
-			$o->add_object($p);
-			$p->{nonempty} = 1;
+			$o->add_object2($p);
 			return;
 		}
 	}
@@ -911,8 +896,7 @@ sub handle_file
 		$p = $p->{shared};
 	}
 	handle_modes($p, undef, $o, $file, $haystack);
-	$o->add_object($p);
-	$p->{nonempty} = 1;
+	$o->add_object2($p);
 }
 
 sub scan_for_files
