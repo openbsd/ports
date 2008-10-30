@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/07/30 17:14:37 martynas Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2008/10/30 16:48:37 naddy Exp $
+@pkgpath graphics/gmt
 bin/GMT
 @bin bin/blockmean
 @bin bin/blockmedian
@@ -186,8 +187,6 @@ share/gmt/share/coast/binned_border_l.cdf
 share/gmt/share/coast/binned_river_c.cdf
 share/gmt/share/coast/binned_river_i.cdf
 share/gmt/share/coast/binned_river_l.cdf
-%%full%%
-%%high%%
 share/gmt/share/cpt/
 share/gmt/share/cpt/GMT_cool.cpt
 share/gmt/share/cpt/GMT_copper.cpt

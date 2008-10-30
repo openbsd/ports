@@ -6,7 +6,4 @@ illuminated surfaces and 3-D perspective views. GMT supports ~30 map
 projections and transformations and comes with support data such as
 coastlines, rivers, and political boundaries.
 
-Flavors:
-	high: adds high resolution coastline data
-
-	full: adds full resolution coastline data
+This package adds high resolution coastline data to GMT.
