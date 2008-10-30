@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.121 2008/10/30 10:50:36 espie Exp $
+# $OpenBSD: make-plist,v 1.122 2008/10/30 10:51:14 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -15,8 +15,6 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 # TODO
-# - multi-package with conflicts don't work.
-# (need to multi annotate files)
 # - multi-packages with inter-dependencies incorrectly strip dirs
 # (need to strip dirs in a smarter way ???)
 # - sample dir/ gets added at the wrong location.
