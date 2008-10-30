@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.42 2008/10/30 10:39:38 steven Exp $
+# $OpenBSD: libtool,v 1.43 2008/10/30 10:46:53 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -87,6 +87,7 @@ my %file_cache;		# which files have been parsed
 my $res_level = 0;	# resolve level
 my $parse_level = 0;	# parse recursion level
 my $performed = 0;	# number of commands executed via system()
+my $seen_pthread = 0;
 
 # build static/shared objects?
 my $static = 1;
@@ -793,7 +794,6 @@ sub parse_linkargs
 	debug 1, "parse_linkargs pass: ", ($la == 1) ? 1 : 2, ", level: $parse_level\n";
 	debug 1, "  argstring: $argstring\n";
 
-	my $seen_pthread = 0;
 	foreach my $a (@args) {
 		debug 1, "  processing $a\n";
 		if ($a eq '-lc') {	
