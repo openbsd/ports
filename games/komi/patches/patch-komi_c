@@ -1,0 +1,66 @@
+$OpenBSD: patch-komi_c,v 1.1 2008/10/30 23:08:31 espie Exp $
+--- komi.c.orig	Mon Aug  9 22:07:21 2004
++++ komi.c	Fri Oct 31 00:05:45 2008
+@@ -30,7 +30,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <math.h>
+ #include <time.h>
+ 
+@@ -2875,8 +2874,8 @@ void loadsound(Mix_Chunk ** thesound, char * directory
+    if (strlen(directory) + strlen(filename) >= sizeof(fullpath))    // Check for buffer overflow on fullpath
+    {
+       fprintf(stderr, "Fatal error while loading %s:\n", filename);
+-      fprintf(stderr, "Size of directory name (%d chars) plus size of file name (%d chars)\n", strlen(directory), strlen(filename));
+-      fprintf(stderr, "is too long (over %d chars), and would cause a buffer overflow...\n", sizeof(fullpath) - 1);
++      fprintf(stderr, "Size of directory name (%zu chars) plus size of file name (%zu chars)\n", strlen(directory), strlen(filename));
++      fprintf(stderr, "is too long (over %zu chars), and would cause a buffer overflow...\n", sizeof(fullpath) - 1);
+       cleanexit(1);
+    }
+    strcpy(fullpath, directory);
+@@ -3276,8 +3275,8 @@ void screenshot (SDL_Surface * surface, char * directo
+    if (strlen(directory) + strlen(filename) >= sizeof(fullpath))    // Check for buffer overflow on fullpath
+    {
+       fprintf(stderr, "Error while saving %s:\n", filename);
+-      fprintf(stderr, "Size of directory name (%d chars) plus size of file name (%d chars)\n", strlen(directory), strlen(filename));
+-      fprintf(stderr, "is too long (over %d chars), and would cause a buffer overflow...\n", sizeof(fullpath) - 1);
++      fprintf(stderr, "Size of directory name (%zu chars) plus size of file name (%zu chars)\n", strlen(directory), strlen(filename));
++      fprintf(stderr, "is too long (over %zu chars), and would cause a buffer overflow...\n", sizeof(fullpath) - 1);
+       return;
+    }
+    strcpy(fullpath, directory);
+@@ -3625,8 +3624,8 @@ void saveprefs (char * directory, char * filename)
+    if (strlen(directory) + strlen(filename) >= sizeof(fullpath))    // Check for buffer overflow on fullpath
+    {
+       fprintf(stderr, "Error while saving %s:\n", filename);
+-      fprintf(stderr, "Size of directory name (%d chars) plus size of file name (%d chars)\n", strlen(directory), strlen(filename));
+-      fprintf(stderr, "is too long (over %d chars), and would cause a buffer overflow...\n", sizeof(fullpath) - 1);
++      fprintf(stderr, "Size of directory name (%zu chars) plus size of file name (%zu chars)\n", strlen(directory), strlen(filename));
++      fprintf(stderr, "is too long (over %zu chars), and would cause a buffer overflow...\n", sizeof(fullpath) - 1);
+       return;
+    }
+    strcpy(fullpath, directory);
+@@ -3662,8 +3661,8 @@ void loadprefs (char * directory, char * filename)
+    if (strlen(directory) + strlen(filename) >= sizeof(fullpath))    // Check for buffer overflow on fullpath
+    {
+       fprintf(stderr, "Error while loading %s:\n", filename);
+-      fprintf(stderr, "Size of directory name (%d chars) plus size of file name (%d chars)\n", strlen(directory), strlen(filename));
+-      fprintf(stderr, "is too long (over %d chars), and would cause a buffer overflow...\n", sizeof(fullpath) - 1);
++      fprintf(stderr, "Size of directory name (%zu chars) plus size of file name (%zu chars)\n", strlen(directory), strlen(filename));
++      fprintf(stderr, "is too long (over %zu chars), and would cause a buffer overflow...\n", sizeof(fullpath) - 1);
+       return;
+    }
+    strcpy(fullpath, directory);
+@@ -3740,8 +3739,8 @@ int playmusic (char * directory, char * filename, int 
+    if (strlen(directory) + strlen(filename) >= sizeof(fullpath))    // Check for buffer overflow on fullpath
+    {
+       fprintf(stderr, "Error while loading %s:\n", filename);
+-      fprintf(stderr, "Size of directory name (%d chars) plus size of file name (%d chars)\n", strlen(directory), strlen(filename));
+-      fprintf(stderr, "is too long (over %d chars), and would cause a buffer overflow...\n", sizeof(fullpath) - 1);
++      fprintf(stderr, "Size of directory name (%zu chars) plus size of file name (%zu chars)\n", strlen(directory), strlen(filename));
++      fprintf(stderr, "is too long (over %zu chars), and would cause a buffer overflow...\n", sizeof(fullpath) - 1);
+       return 1;
+    }
+    strcpy(fullpath, directory);
