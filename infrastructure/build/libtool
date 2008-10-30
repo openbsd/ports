@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.44 2008/10/30 15:03:07 steven Exp $
+# $OpenBSD: libtool,v 1.45 2008/10/30 18:15:06 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -76,7 +76,9 @@ my $verbose = 1;
 my $dry = 0;		# dry-run
 
 my %opts;		# options passed to libtool
-my @Ropts;		# -R options
+my @Ropts;		# -R options on the command line
+my @Rresolved;		# -R options originating from .la resolution
+my @RPopts;		# -rpath options
 my @tags;		# list of --tag options passed to libtool
 my @deplibs;		# list of dependent libraries (both -L and -l flags)
 my %libs;		# libraries
@@ -88,6 +90,14 @@ my $res_level = 0;	# resolve level
 my $parse_level = 0;	# parse recursion level
 my $performed = 0;	# number of commands executed via system()
 my $seen_pthread = 0;
+
+# just to be clear:
+# when building a library:
+# 	* -R libdir records libdir in dependency_libs
+# 	* -rpath is the path where the (shared) library will be installed
+# when building a program:
+# 	* both -R libdir and -rpath libdir add libdir to the run-time path
+# -Wl,-rpath,libdir will bypass libtool.
 
 # build static/shared objects?
 my $static = 1;
@@ -326,7 +336,7 @@ if ($mode eq 'compile') {
 			'prefer-pic'		=> \$opts{'prefer-pic'},
 			'prefer-non-pic'	=> \$opts{'prefer-non-pic'},
 			'release=s'		=> \$opts{'release'},
-			'rpath=s'		=> \$opts{'rpath'},
+			'rpath=s'		=> \@RPopts,
 			'R=s'			=> \@Ropts,
 			'shrext=s'		=> \$opts{'shrext'},
 			'static'		=> \$opts{'static'},
@@ -422,8 +432,8 @@ if ($mode eq 'compile') {
 		$shared = 1 if ($opts{'version-info'} ||
 				$opts{'avoid-version'} ||
 				$opts{'module'} ||
-				$opts{'rpath'});
-		if ($opts{'static'} || !$opts{'rpath'}) {
+				@RPopts);
+		if ($opts{'static'} || !@RPopts) {
 			$shared = 0;
 			$static = 1;
 		}
@@ -477,18 +487,20 @@ if ($mode eq 'compile') {
 		}
 		$lainfo{'installed'} = 'no';
 		$lainfo{'shouldnotlink'} = $opts{'module'} ? 'yes' : 'no';
-		my @Rflags = @Ropts;
-		map { $_ = "-R$_" } @Rflags;
+		map { $_ = "-R$_" } @Ropts;
 		my $deplibstring = join ' ', @deplibs;
-		$deplibstring = "@Rflags $deplibstring" if (@Rflags);
+		$deplibstring = "@Ropts $deplibstring" if (@Ropts);
 		@deplibs = split /\s+/, $deplibstring;
 		debug 1, "deplibs = @deplibs\n";
 		my @finaldeplibs = reverse_zap_duplicates(@deplibs);
 		debug 1, "finaldeplibs = @finaldeplibs\n";
 		$deplibstring = join ' ', @finaldeplibs;
 		$lainfo{'dependency_libs'} = $deplibstring;
-		if ($opts{'rpath'}) {
-			$lainfo{'libdir'} = $opts{'rpath'};
+		if (@RPopts) {
+			if (@RPopts > 1) {
+				debug 1, "more than 1 -rpath option given, taking the first: ", $RPopts[0], "\n";
+			}
+			$lainfo{'libdir'} = $RPopts[0];
 		}
 		write_la_file($outfile, $ofile, \%lainfo);
 		perform("cd $odir/$ltdir && rm -f $ofile && ln -s ../$ofile $ofile");
@@ -810,9 +822,10 @@ sub parse_linkargs
 			}
 			$a = '';
 		} elsif ($a && $a =~ m/^-R(.*)/) {
-			# -R options coming from .la resolution
+			# -R options originating from .la resolution
 			# those from @ARGV are in @Ropts
-			$a = "-Wl,-rpath,$1";
+			push @Rresolved, $1;
+			$a = '';
 		} elsif ($a && $a =~ m/^-l(.*)/) {
 			my $lstring = '';
 			my $key = $1;
@@ -1075,8 +1088,12 @@ sub linkcmds
 	}
 
 	# dynamic linking
-	my @Rflags = @Ropts;
-	map { $_ = "-Wl,-rpath,$_" } @Rflags;
+	my @RPdirs = ();
+	if ($lmode == PROGRAM) {
+		@RPdirs = (@Ropts, @RPopts, @Rresolved);
+		@RPdirs = reverse_zap_duplicates(@RPdirs);
+		map { $_ = "-Wl,-rpath,$_" } @RPdirs;
+	}
 	foreach my $l (keys %libstofind) {
 		my $libpath = find_lib($l);
 		$libs{$l} = $libpath if ($libpath);
@@ -1135,7 +1152,7 @@ sub linkcmds
 	$cmd .= " @argvcopy";
 	$cmd .= " @$objs" if (@$objs);
 	$cmd .= " -L$ltdir @libflags" if (@libflags);
-	$cmd .= " @Rflags" if (@Rflags);
+	$cmd .= " @RPdirs" if (@RPdirs);
 	push @cmdlist, $cmd;
 
 	return @cmdlist;
