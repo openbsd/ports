@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/30 11:13:39 mbalmer Exp $
+lib/zope/lib/python/Products/LDAPMultiPlugins/
+lib/zope/lib/python/Products/LDAPMultiPlugins/ActiveDirectoryMultiPlugin.py
+lib/zope/lib/python/Products/LDAPMultiPlugins/CHANGES.txt
+lib/zope/lib/python/Products/LDAPMultiPlugins/COPYRIGHT.txt
+lib/zope/lib/python/Products/LDAPMultiPlugins/DEPENDENCIES.txt
+lib/zope/lib/python/Products/LDAPMultiPlugins/INSTALL.txt
+lib/zope/lib/python/Products/LDAPMultiPlugins/LDAPMultiPlugin.py
+lib/zope/lib/python/Products/LDAPMultiPlugins/LDAPPluginBase.py
+lib/zope/lib/python/Products/LDAPMultiPlugins/LICENSE.txt
+lib/zope/lib/python/Products/LDAPMultiPlugins/README.txt
+lib/zope/lib/python/Products/LDAPMultiPlugins/VERSION.txt
+lib/zope/lib/python/Products/LDAPMultiPlugins/__init__.py
+lib/zope/lib/python/Products/LDAPMultiPlugins/dtml/
+lib/zope/lib/python/Products/LDAPMultiPlugins/dtml/addActiveDirectoryMultiPlugin.dtml
+lib/zope/lib/python/Products/LDAPMultiPlugins/dtml/addLDAPMultiPlugin.dtml
+lib/zope/lib/python/Products/LDAPMultiPlugins/tests/
+lib/zope/lib/python/Products/LDAPMultiPlugins/tests/__init__.py
+lib/zope/lib/python/Products/LDAPMultiPlugins/tests/test_LDAPMultiPlugins.py
+lib/zope/lib/python/Products/LDAPMultiPlugins/www/
+lib/zope/lib/python/Products/LDAPMultiPlugins/www/admultiplugin.png
+lib/zope/lib/python/Products/LDAPMultiPlugins/www/ldapmultiplugin.png
