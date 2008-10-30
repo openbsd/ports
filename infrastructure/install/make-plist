@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.129 2008/10/30 13:49:11 espie Exp $
+# $OpenBSD: make-plist,v 1.130 2008/10/30 15:28:29 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -347,7 +347,7 @@ sub copy_annotations
 package OpenBSD::PackingElement::NewAuth;
 sub copy_annotations
 {
-	&OpenBSD::PackingElement::Meta;
+	&OpenBSD::PackingElement::Meta::copy_annotations;
 }
 
 package OpenBSD::PackingElement::SpecialFile;
