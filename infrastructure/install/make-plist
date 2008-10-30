@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.130 2008/10/30 15:28:29 espie Exp $
+# $OpenBSD: make-plist,v 1.131 2008/10/30 15:35:51 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -688,7 +688,7 @@ sub create_object
 	my ($type, $short, $item) = @_;
 
 	if (defined $item && $item->isa("OpenBSD::PackingElement::Comment")) {
-		return OpenBSD::PackingElement::Comment->new($short);
+		return OpenBSD::PackingElement::Comment->new($item->stringize);
 	}
 	if ($type eq "directory") {
 		if (defined $item) {
