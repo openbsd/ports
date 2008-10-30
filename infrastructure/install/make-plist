@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.133 2008/10/30 15:54:23 espie Exp $
+# $OpenBSD: make-plist,v 1.134 2008/10/30 16:02:14 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -121,6 +121,12 @@ my $shared_only;
 my $make = $ENV{MAKE};
 my $portsdir = $ENV{PORTSDIR};
 
+sub prettify
+{
+	my $_ = $_[0]->{filename};
+	$_ =~ s/^.*\/pkg\//pkg\//;
+	return $_;
+}
 
 sub report
 {
@@ -131,9 +137,7 @@ sub report
 			if ($i->isa("OpenBSD::PackingElement")) {
 				print STDERR $i->stringize;
 			} elsif ($i->isa("OpenBSD::PackingList")) {
-				my $fname = $i->{filename};
-				$fname =~ s/^.*\/pkg\///;
-				print STDERR $fname;
+				print STDERR prettify($i);
 			} elsif ($i->isa("FS::File")) {
 				print STDERR $i->path;
 			}
@@ -571,7 +575,8 @@ sub register
 	my ($self, $plist) = @_;
 	# comments which are not files will `tag along' more or less...
 	if (!defined $self->{accounted_for}) {
-		main::report "comment ", $self, " position in ", $plist, " guessed";
+		main::report "comment \"", $self, "\" position in ", $plist, 
+		    " guessed";
 		$plist->{state}->{lastreal}->tag_along($self);
 	}
 }
@@ -1053,21 +1058,21 @@ if (($default->{wantshared} || (defined $default->{shared}) && $default->{shared
 		if ($plist->{nonempty}) {
 			if (defined $orig) {
 				if (compare($dir.basename($plist->{filename}), $orig->{filename}) != 0) {
-					print $plist->{filename}, " changed\n";
+					print prettify($plist), " changed\n";
 					$something_changed = 1;
 					$plist->{changed} = 1;
 				}
 			} else {
-				print $plist->{filename}, " is new\n";
+				print prettify($plist), " is new\n";
 				$something_changed = 1;
 				$plist->{changed} = 1;
 			}
 		} else {
 			if (defined $orig) {
 				if ($plist->{isfrag}) {
-					print $plist->{filename}, " empty fragment: NOT writing it\n";
+					print prettify($plist), " empty fragment: NOT writing it\n";
 				} else {
-					print $plist->{filename}, " empty\n";
+					print prettify($plist), " empty\n";
 					$something_changed = 1;
 					$plist->{changed} = 1;
 				}
@@ -1081,7 +1086,7 @@ if (($default->{wantshared} || (defined $default->{shared}) && $default->{shared
 			my $orig = $plist->{original};
 			if (defined $orig) {
 				if (-e $orig->{filename}.".orig") {
-				    print $orig->{filename}.".orig present\n";
+				    print prettify($orig),".orig present\n";
 				    $letsdie = 1;
 				}
 			}
@@ -1096,10 +1101,11 @@ if (($default->{wantshared} || (defined $default->{shared}) && $default->{shared
 
 			if (defined $orig) {
 				rename($orig->{filename}, $orig->{filename}.".orig") or 
-				    die "Can't rename file ", $orig->{filename}, "\n";
+				    die "Can't rename file ", prettify($orig), 
+				    	"\n";
 			}
 			$plist->tofile($plist->{filename}) or 
-			    die "Can't write plist: ", $plist->{filename}, "\n";
+			    die "Can't write plist: ", prettify($plist), "\n";
 		}
 	}
 }
