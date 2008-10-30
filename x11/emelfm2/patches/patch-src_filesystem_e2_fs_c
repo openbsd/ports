@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_filesystem_e2_fs_c,v 1.1.1.1 2008/10/30 19:32:32 landry Exp $
+--- src/filesystem/e2_fs.c.orig	Mon Oct 13 11:17:38 2008
++++ src/filesystem/e2_fs.c	Thu Oct 30 18:26:38 2008
+@@ -54,7 +54,7 @@ Not implemented yet.
+ #ifdef E2_VFS
+ #include "e2_plugins.h"
+ #endif
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include "e2_complete.h"
+ #endif
+ 
+@@ -2493,7 +2493,7 @@ gboolean e2_fs_copy_file (VPATH *src, const struct sta
+ 	//		blksize_t buf_size = 1048576;
+ 		//find a buffer up to 16 times dest block
+ 		//(compromise between accesses and multi-tasking latency)
+-		blksize_t buf_size = dest_sb.st_blksize * 16;
++		size_t buf_size = dest_sb.st_blksize * 16;
+ 		size_t src_size = src_sb->st_size * 2;
+ 		while (buf_size > src_size && buf_size > dest_sb.st_blksize)
+ 			buf_size /= 2;

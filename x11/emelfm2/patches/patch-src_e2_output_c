@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_e2_output_c,v 1.1.1.1 2008/10/30 19:32:32 landry Exp $
+Don't include ctype, _C macro conflicts. Use glib func instead.
+--- src/e2_output.c.orig	Thu Oct 30 18:58:12 2008
++++ src/e2_output.c	Thu Oct 30 18:58:41 2008
+@@ -40,7 +40,6 @@ ToDo
+ #include "emelfm2.h"
+ #include <string.h>
+ #include <pthread.h>
+-#include <ctype.h>
+ #include "e2_output.h"
+ #include "e2_dialog.h"
+ //for pane-text activation
+@@ -629,7 +628,7 @@ nextchar:
+ 				break;
+ 			else if (g_unichar_isspace (d))
+ 				break;
+-			else if (ispunct ((guchar)d))
++			else if (g_ascii_ispunct ((guchar)d))
+ 			{
+ 				if (!gtk_text_iter_forward_char (&iter))
+ 					break;

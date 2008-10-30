@@ -1,0 +1,4 @@
+emelFM2 is a file manager that implements the popular two-pane
+design. It features a simple GTK+2 interface, a flexible filetyping
+scheme, and a built-in command line for executing commands without
+opening an xterm.
