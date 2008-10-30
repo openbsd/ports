@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_hiawatha_httpd_conf_in,v 1.3 2008/05/29 07:53:03 ajacoutot Exp $
---- etc/hiawatha/httpd.conf.in.orig	Thu May 29 09:41:45 2008
-+++ etc/hiawatha/httpd.conf.in	Thu May 29 09:43:19 2008
+$OpenBSD: patch-etc_hiawatha_httpd_conf_in,v 1.4 2008/10/30 11:43:30 ajacoutot Exp $
+--- etc/hiawatha/httpd.conf.in.orig	Fri Oct  3 08:07:40 2008
++++ etc/hiawatha/httpd.conf.in	Thu Oct 30 12:22:44 2008
 @@ -4,7 +4,7 @@
  
  # GENERAL SETTINGS
@@ -21,4 +21,4 @@ $OpenBSD: patch-etc_hiawatha_httpd_conf_in,v 1.3 2008/05/29 07:53:03 ajacoutot E
 +#CGIhandler = ${LOCALBASE}/bin/python:py
  #CGIextension = cgi
  #
- #TimeForCGI = 5
+ #FastCGIserver {
