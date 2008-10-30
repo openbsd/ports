@@ -1,0 +1,23 @@
+$OpenBSD: patch-xdg-user-dirs-update_c,v 1.1.1.1 2008/10/30 16:28:38 ajacoutot Exp $
+--- xdg-user-dirs-update.c.orig	Mon Aug 20 10:12:20 2007
++++ xdg-user-dirs-update.c	Thu Oct 30 17:09:24 2008
+@@ -16,6 +16,19 @@
+ #include <iconv.h>
+ #include <langinfo.h>
+ 
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++static char *strndup(const char *str, size_t len) {
++	char *ret;
++	
++	if ((str == NULL || len < 0)) return(NULL);
++	ret = (char *)malloc(len + 1);
++	if (ret == NULL) return(NULL);
++	memcpy(ret, str, len);
++	ret[len] = '\0';
++	return(ret);
++}
++#endif
++
+ typedef struct {
+   char *name;
+   char *path;
