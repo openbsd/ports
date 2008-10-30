@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2008/10/30 13:26:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2008/10/30 15:07:05 ajacoutot Exp $
 
 COMMENT=		Common Unix Printing System
 
 VERSION=		1.2.7
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		cups-${VERSION}p12
+PKGNAME=		cups-${VERSION}p13
 CATEGORIES=		print sysutils
 SHARED_LIBS=		cups		3.0 \
 			cupsimage	2.3
@@ -30,7 +30,8 @@ MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 
 EXTRACT_SUFX=		.tar.bz2
 
-RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
+			::devel/xdg-utils
 LIB_DEPENDS=		png.>=3::graphics/png \
 			jpeg.>=62::graphics/jpeg \
 			tiff.>=35::graphics/tiff

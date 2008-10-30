@@ -1,0 +1,19 @@
+$OpenBSD: patch-desktop_cups_desktop,v 1.1 2008/10/30 15:07:05 ajacoutot Exp $
+--- desktop/cups.desktop.orig	Thu Oct 30 15:42:04 2008
++++ desktop/cups.desktop	Thu Oct 30 15:42:17 2008
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Categories=Application;System;X-Red-Hat-Base;
+ Encoding=UTF-8
+-Exec=htmlview http://localhost:631/
++Exec=xdg-open http://localhost:631/
+ GenericName=
+ Icon=cups
+ MimeType=
+@@ -24,4 +24,4 @@ Comment[et]=CUPS-i veebiliides
+ Name[pl]=Zarządzanie drukowaniem
+ Comment[pl]=Interfejs WWW CUPS
+ Name[it]=Gestione stampa
+-Comment[it]=Interfaccia web di CUPS
+\ No newline at end of file
++Comment[it]=Interfaccia web di CUPS
