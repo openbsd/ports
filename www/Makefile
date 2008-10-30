@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.359 2008/10/30 11:16:04 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.360 2008/10/30 11:32:55 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -266,6 +266,7 @@
      SUBDIR += phppgadmin
      SUBDIR += plans
      SUBDIR += plone
+     SUBDIR += plone-ldap
      SUBDIR += pmwiki
      SUBDIR += polipo
      SUBDIR += privoxy
