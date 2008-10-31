@@ -8,4 +8,3 @@ install from the ports(7) system. There are also two possibilities for
 the removal of installed packages allowing the user to either remove a
 package with all of the packages which depend on it, or to quit the pro-
 cess of removal if other packages depend on the package to be removed.
-

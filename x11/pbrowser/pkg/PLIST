@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/08 16:10:14 espie Exp $
-bin/pbrowser
+@comment $OpenBSD: PLIST,v 1.2 2008/10/31 10:53:40 jasper Exp $
+@bin bin/pbrowser
 @man man/cat1/pbrowser.0
 share/icons/
 share/icons/pbrowser/
