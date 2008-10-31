@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/10/31 01:39:09 kevlo Exp $
+@lib lib/libhangul.so.${LIBhangul_VERSION}
