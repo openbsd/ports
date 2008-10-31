@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2008/10/28 16:51:17 jasper Exp $
-
---- configure.orig	Mon Oct 27 11:55:37 2008
-+++ configure	Mon Oct 27 11:55:39 2008
+$OpenBSD: patch-configure,v 1.2 2008/10/31 09:33:41 ajacoutot Exp $
+--- configure.orig	Mon Apr  7 06:31:31 2008
++++ configure	Fri Oct 31 10:33:20 2008
 @@ -2645,7 +2645,7 @@ fi
  
  if test "$pkgdatadir" = "undef"
@@ -11,12 +10,26 @@ $OpenBSD: patch-configure,v 1.1 2008/10/28 16:51:17 jasper Exp $
  fi
  
  
-@@ -2666,7 +2666,7 @@ fi
+@@ -17912,7 +17912,7 @@ echo $ECHO_N "checking if posix mutexes are supported.
  
- if test "$pkglibdir" = "undef"
- then
--  pkglibdir=\${libdir}/aspell-0.60
-+  pkglibdir=\${libdir}/aspell
- fi
+ ORIG_LIBS="$LIBS"
  
- 
+-for l in '' '-lpthread'
++for l in '' '-pthread'
+ do
+   if test -z "$use_posix_mutex"
+   then
+@@ -20127,10 +20127,10 @@ XGETTEXT!$XGETTEXT$ac_delim
+ XGETTEXT_015!$XGETTEXT_015$ac_delim
+ MSGMERGE!$MSGMERGE$ac_delim
+ INTL_MACOSX_LIBS!$INTL_MACOSX_LIBS$ac_delim
+-LIBICONV!$LIBICONV$ac_delim
++LIBICONV!$LTLIBICONV$ac_delim
+ LTLIBICONV!$LTLIBICONV$ac_delim
+-INTLLIBS!$INTLLIBS$ac_delim
+-LIBINTL!$LIBINTL$ac_delim
++INTLLIBS!$LTLIBINTL$ac_delim
++LIBINTL!$LTLIBINTL$ac_delim
+ LTLIBINTL!$LTLIBINTL$ac_delim
+ POSUB!$POSUB$ac_delim
+ PTHREAD_LIB!$PTHREAD_LIB$ac_delim

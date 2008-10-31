@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2008/10/28 16:51:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2008/10/31 09:33:41 ajacoutot Exp $
 
 COMMENT=	spell checker designed to eventually replace Ispell
 
 DISTNAME=	aspell-0.60.6
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=  aspell               17.0     # .16.4
 SHARED_LIBS +=  pspell               17.0     # .16.4
 DIST_SUBDIR=	aspell
