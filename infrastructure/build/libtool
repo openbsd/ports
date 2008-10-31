@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.49 2008/10/30 23:53:28 steven Exp $
+# $OpenBSD: libtool,v 1.50 2008/10/31 10:28:05 espie Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -281,12 +281,11 @@ if ($mode eq 'compile') {
 			if ($ltprog =~ m/install([.-]sh)?$/) {
 				push @instopts, '-m 644';
 			}
-			my %lainfo;
-			parse_file($s, \%lainfo);
+			my $lainfo = parse_file($s);
 			# replace info where needed when installing the .la file
-			my $sharedlib = $lainfo{'dlname'};
-			my $staticlib = $lainfo{'old_library'};
-			my @libnames = split /\s+/, $lainfo{'library_names'};
+			my $sharedlib = $lainfo->{'dlname'};
+			my $staticlib = $lainfo->{'old_library'};
+			my @libnames = split /\s+/, $lainfo->{'library_names'};
 			my $laipath = "$srcdir/$ltdir/$srcfile".'i';
 			$toinstall{"$srcdir/$ltdir/$staticlib"} = "$dstdir/$staticlib"
 				if ($staticlib);
@@ -731,31 +730,31 @@ sub is_prog_wrapper
 sub parse_file
 {
 	my $filename = shift;
-	my $info = shift;
 
 	my $key = basename($filename);
 
 	debug 1, "parsing $filename";
 	if (defined $file_cache{$key}) {
 		debug 1, " (cached)\n";
-		%{$info} = %{$file_cache{$key}};
+		return $file_cache{$key};
 	} else {
 		debug 1, "\n";
 		open(my $fh, '<', $filename) or die "cannot read $filename: $!\n";
+		my $info = {};
 		while (<$fh>) {
 			chomp;
-			next if /^#/;
+			next if /^\#/;
 			next if /^\s*$/;
-			if (m/^(\S+)='(.*)'$/) {
+			if (m/^(\S+)\=\'(.*)\'$/) {
 				$info->{$1} = $2;
-			} elsif (m/^(\S+)=(\S+)$/) {
+			} elsif (m/^(\S+)\=(\S+)$/) {
 				$info->{$1} = $2;
 			}
 		}
 		$file_cache{$key} = $info;
+		return $info;
 	}
 
-	return 1;
 }
 
 # resolve .la files until a level with empty dependency_libs is reached.
@@ -768,13 +767,12 @@ sub resolve_la
 
 	foreach my $a (@args) {
 		next if ($a !~ m/(.*)\.la$/);
-		my %lainfo;
-		parse_file($a, \%lainfo);
-		if (exists $lainfo{'dependency_libs'}) {
+		my $lainfo = parse_file($a);
+		if (exists $lainfo->{'dependency_libs'}) {
 			$res_level++;
-			$a = $a . ' ' . resolve_la($lainfo{'dependency_libs'});
+			$a = $a . ' ' . resolve_la($lainfo->{'dependency_libs'});
 			$res_level--;
-			push @deplibs, $lainfo{'dependency_libs'};
+			push @deplibs, $lainfo->{'dependency_libs'};
 		}
 	}
 	return join ' ', @args;
@@ -875,15 +873,14 @@ sub parse_linkargs
 		} elsif ($a && $a =~ m/(\S+\/)*(\S+)\.la$/) {
 			my $key = $2;
 			$key =~ s/^lib//;
-			my %lainfo;
 			my $d = abs_path(dirname($a));
 			$dirs{$d} = 1;
 			my $fulla = abs_path($a);
-			parse_file($fulla, \%lainfo);
-			my $dlname = $lainfo{'dlname'};
-			my $oldlib = $lainfo{'old_library'};
-			my $libdir = $lainfo{'libdir'};
-			if ($d !~ m/\Q$ltdir\E$/ && $lainfo{'installed'} eq 'no') {
+			my $lainfo = parse_file($fulla);
+			my $dlname = $lainfo->{'dlname'};
+			my $oldlib = $lainfo->{'old_library'};
+			my $libdir = $lainfo->{'libdir'};
+			if ($d !~ m/\Q$ltdir\E$/ && $lainfo->{'installed'} eq 'no') {
 				$d .= "/$ltdir";
 			}
 			if ($libdir ne '' && $la) {
@@ -1008,9 +1005,7 @@ sub process_deplibs
 			$lf = '';
 		} elsif ($lf =~ m/\/\S+\/(\S+\.la)/) {
 			my $lafile = $1;
-			my %lainfo;
-			parse_file($lf, \%lainfo);
-			$lf = $lainfo{'libdir'}.'/'.$lafile;
+			$lf = parse_file($lf)->{'libdir'}.'/'.$lafile;
 		}
 	}
 	return join ' ', @linkflags;
@@ -1175,20 +1170,19 @@ sub generate_objlist
 
 	foreach my $a (@$objsource) {
 		if ($a =~ m/\S+\.lo$/) {
-			my %loinfo;
 			my $ofile = basename $a;
 			my $odir = dirname $a;
-			parse_file($a, \%loinfo);
-			if ($loinfo{'non_pic_object'}) {
+			my $loinfo = parse_file($a);
+			if ($loinfo->{'non_pic_object'}) {
 				my $o;
 				$o .= "$odir/" if ($odir ne '.');
-				$o .= $loinfo{'non_pic_object'};
+				$o .= $loinfo->{'non_pic_object'};
 				push @$objs, $o;
 			}
-			if ($loinfo{'pic_object'}) {
+			if ($loinfo->{'pic_object'}) {
 				my $o;
 				$o .= "$odir/" if ($odir ne '.');
-				$o .= $loinfo{'pic_object'};
+				$o .= $loinfo->{'pic_object'};
 				push @$sobjs, $o;
 			} else {
 				$allpic = 0;
