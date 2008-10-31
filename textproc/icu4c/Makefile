@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2008/05/04 12:01:42 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/31 09:56:15 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		International Components for Unicode
 
-DISTNAME=		icu4c-3_6-src
-PKGNAME=		icu4c-3.6p2
-SO_VERSION=		0.0
+DISTNAME=		icu4c-4_0-src
+PKGNAME=		icu4c-4.0
+SO_VERSION=		1.0
 .for _lib in icudata icui18n icuio icule iculx icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -14,7 +14,7 @@ CATEGORIES=		textproc devel
 
 HOMEPAGE=		http://www.icu-project.org
 
-MAINTAINER=		Vincent Gross <marin.shadok@gmail.com>
+MAINTAINER=		Vincent Gross <dermiste@gmail.com>
 
 # ICU
 # http://source.icu-project.org/repos/icu/icu/trunk/license.html
@@ -24,11 +24,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m pthread stdc++
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=icu/} \
-			ftp://ftp.software.ibm.com/software/globalization/icu/3.6/
+MASTER_SITES=		ftp://ftp.software.ibm.com/software/globalization/icu/4.0/ \
+			${MASTER_SITE_SOURCEFORGE:=icu/}
 EXTRACT_SUFX=		.tgz
-
-SEPARATE_BUILD=		concurrent
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu

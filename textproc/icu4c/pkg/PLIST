@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/08/06 21:17:43 steven Exp $
-bin/derb
-bin/genbrk
-bin/gencnval
-bin/genctd
-bin/genrb
+@comment $OpenBSD: PLIST,v 1.3 2008/10/31 09:56:15 landry Exp $
+@bin bin/derb
+@bin bin/genbrk
+@bin bin/gencnval
+@bin bin/genctd
+@bin bin/genrb
 bin/icu-config
-bin/makeconv
-bin/pkgdata
-bin/uconv
+@bin bin/makeconv
+@bin bin/pkgdata
+@bin bin/uconv
 include/layout/
 include/layout/LEFontInstance.h
 include/layout/LEGlyphFilter.h
@@ -20,7 +20,11 @@ include/layout/LETypes.h
 include/layout/LayoutEngine.h
 include/layout/ParagraphLayout.h
 include/layout/RunArrays.h
+include/layout/loengine.h
+include/layout/playout.h
+include/layout/plruns.h
 include/unicode/
+include/unicode/basictz.h
 include/unicode/brkiter.h
 include/unicode/calendar.h
 include/unicode/caniter.h
@@ -36,6 +40,11 @@ include/unicode/dcfmtsym.h
 include/unicode/decimfmt.h
 include/unicode/docmain.h
 include/unicode/dtfmtsym.h
+include/unicode/dtintrv.h
+include/unicode/dtitvfmt.h
+include/unicode/dtitvinf.h
+include/unicode/dtptngen.h
+include/unicode/dtrule.h
 include/unicode/fieldpos.h
 include/unicode/fmtable.h
 include/unicode/format.h
@@ -50,11 +59,14 @@ include/unicode/numfmt.h
 include/unicode/parseerr.h
 include/unicode/parsepos.h
 include/unicode/platform.h
+include/unicode/plurfmt.h
+include/unicode/plurrule.h
 include/unicode/ppalmos.h
 include/unicode/putil.h
 include/unicode/pwin32.h
 include/unicode/rbbi.h
 include/unicode/rbnf.h
+include/unicode/rbtz.h
 include/unicode/regex.h
 include/unicode/rep.h
 include/unicode/resbund.h
@@ -69,6 +81,8 @@ include/unicode/symtable.h
 include/unicode/tblcoll.h
 include/unicode/timezone.h
 include/unicode/translit.h
+include/unicode/tzrule.h
+include/unicode/tztrans.h
 include/unicode/ubidi.h
 include/unicode/ubrk.h
 include/unicode/ucal.h
@@ -87,6 +101,7 @@ include/unicode/ucsdet.h
 include/unicode/ucurr.h
 include/unicode/udat.h
 include/unicode/udata.h
+include/unicode/udatpg.h
 include/unicode/udeprctd.h
 include/unicode/udraft.h
 include/unicode/uenum.h
@@ -133,9 +148,10 @@ include/unicode/utrace.h
 include/unicode/utrans.h
 include/unicode/utypes.h
 include/unicode/uversion.h
+include/unicode/vtzone.h
 lib/icu/
-lib/icu/3.6/
-lib/icu/3.6/Makefile.inc
+lib/icu/4.0/
+lib/icu/4.0/Makefile.inc
 lib/icu/Makefile.inc
 lib/icu/current
 @lib lib/libicudata.so.${LIBicudata_VERSION}
@@ -159,15 +175,16 @@ lib/icu/current
 @man man/man8/gensprep.8
 @man man/man8/genuca.8
 @man man/man8/icupkg.8
-sbin/genccode
-sbin/gencmn
-sbin/gensprep
-sbin/genuca
-sbin/icupkg
-sbin/icuswap
+@bin sbin/genccode
+@bin sbin/gencmn
+@bin sbin/gensprep
+@bin sbin/genuca
+@bin sbin/icupkg
+@bin sbin/icuswap
 share/icu/
-share/icu/3.6/
-share/icu/3.6/config/
-share/icu/3.6/config/mh-bsd-gcc
-share/icu/3.6/license.html
-@comment share/icu/3.6/mkinstalldirs
+share/icu/4.0/
+share/icu/4.0/config/
+share/icu/4.0/config/mh-bsd-gcc
+share/icu/4.0/license.html
+@comment share/icu/4.0/install-sh
+@comment share/icu/4.0/mkinstalldirs

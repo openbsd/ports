@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_common_Makefile_in,v 1.2 2007/08/06 21:17:43 steven Exp $
---- source/common/Makefile.in.orig	Fri Jun 30 16:42:58 2006
-+++ source/common/Makefile.in	Mon Aug  6 19:07:32 2007
-@@ -60,7 +60,7 @@ CPPFLAGS += -I$(top_builddir)/common
+$OpenBSD: patch-source_common_Makefile_in,v 1.3 2008/10/31 09:56:15 landry Exp $
+--- source/common/Makefile.in.orig	Mon Sep 22 21:03:28 2008
++++ source/common/Makefile.in	Wed Oct 29 11:51:13 2008
+@@ -62,7 +62,7 @@ CPPFLAGS += -I$(top_builddir)/common
  endif
  CPPFLAGS += -I$(srcdir) -I$(top_srcdir)/i18n $(LIBCPPFLAGS)
  DEFS += -DU_COMMON_IMPLEMENTATION
@@ -10,7 +10,7 @@ $OpenBSD: patch-source_common_Makefile_in,v 1.2 2007/08/06 21:17:43 steven Exp $
  
  # $(LIBICUDT) is either stub data or the real DLL common data.
  LIBS = $(LIBICUDT) $(DEFAULT_LIBS)
-@@ -124,12 +124,6 @@ ifneq ($(ENABLE_STATIC),)
+@@ -126,21 +126,9 @@ ifneq ($(ENABLE_STATIC),)
  endif
  ifneq ($(ENABLE_SHARED),)
  	$(INSTALL-L) $(FINAL_SO_TARGET) $(DESTDIR)$(libdir)
@@ -18,8 +18,17 @@ $OpenBSD: patch-source_common_Makefile_in,v 1.2 2007/08/06 21:17:43 steven Exp $
 -	cd $(DESTDIR)$(libdir) && $(RM) $(notdir $(SO_TARGET)) && ln -s $(notdir $(FINAL_SO_TARGET)) $(notdir $(SO_TARGET))
 -ifneq ($(FINAL_SO_TARGET),$(MIDDLE_SO_TARGET))
 -	cd $(DESTDIR)$(libdir) && $(RM) $(notdir $(MIDDLE_SO_TARGET)) && ln -s $(notdir $(FINAL_SO_TARGET)) $(notdir $(MIDDLE_SO_TARGET))
+ endif
+-endif
+ ifneq ($(IMPORT_LIB_EXT),)
+ 	$(INSTALL-L) $(FINAL_IMPORT_LIB) $(DESTDIR)$(libdir)
+-ifneq ($(IMPORT_LIB),$(FINAL_IMPORT_LIB))
+-	cd $(DESTDIR)$(libdir) && $(RM) $(notdir $(IMPORT_LIB)) && ln -s $(notdir $(FINAL_IMPORT_LIB)) $(notdir $(IMPORT_LIB))
+-endif
+-ifneq ($(MIDDLE_IMPORT_LIB),$(FINAL_IMPORT_LIB))
+-	cd $(DESTDIR)$(libdir) && $(RM) $(notdir $(MIDDLE_IMPORT_LIB)) && ln -s $(notdir $(FINAL_IMPORT_LIB)) $(notdir $(MIDDLE_IMPORT_LIB))
 -endif
 -endif
  endif
- ifneq ($(IMPORT_LIB_EXT),)
- 	$(INSTALL-L) $(FINAL_IMPORT_LIB) $(DESTDIR)$(libdir)
+ 
+ $(SVC_HOOK_INC):

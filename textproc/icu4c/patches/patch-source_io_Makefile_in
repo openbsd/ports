@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_io_Makefile_in,v 1.1 2007/08/06 21:17:43 steven Exp $
---- source/io/Makefile.in.orig	Mon Aug  6 19:08:02 2007
-+++ source/io/Makefile.in	Mon Aug  6 19:08:14 2007
-@@ -99,12 +99,6 @@ ifneq ($(ENABLE_STATIC),)
+$OpenBSD: patch-source_io_Makefile_in,v 1.2 2008/10/31 09:56:15 landry Exp $
+--- source/io/Makefile.in.orig	Mon Sep 22 21:03:42 2008
++++ source/io/Makefile.in	Wed Oct 29 11:45:50 2008
+@@ -101,21 +101,9 @@ ifneq ($(ENABLE_STATIC),)
  endif
  ifneq ($(ENABLE_SHARED),)
  	$(INSTALL-L) $(FINAL_SO_TARGET) $(DESTDIR)$(libdir)
@@ -9,8 +9,17 @@ $OpenBSD: patch-source_io_Makefile_in,v 1.1 2007/08/06 21:17:43 steven Exp $
 -	cd $(DESTDIR)$(libdir) && $(RM) $(notdir $(SO_TARGET)) && ln -s $(notdir $(FINAL_SO_TARGET)) $(notdir $(SO_TARGET))
 -ifneq ($(FINAL_SO_TARGET),$(MIDDLE_SO_TARGET))
 -	cd $(DESTDIR)$(libdir) && $(RM) $(notdir $(MIDDLE_SO_TARGET)) && ln -s $(notdir $(FINAL_SO_TARGET)) $(notdir $(MIDDLE_SO_TARGET))
+ endif
+-endif
+ ifneq ($(IMPORT_LIB_EXT),)
+ 	$(INSTALL-L) $(FINAL_IMPORT_LIB) $(DESTDIR)$(libdir)
+-ifneq ($(IMPORT_LIB),$(FINAL_IMPORT_LIB))
+-	cd $(DESTDIR)$(libdir) && $(RM) $(notdir $(IMPORT_LIB)) && ln -s $(notdir $(FINAL_IMPORT_LIB)) $(notdir $(IMPORT_LIB))
+-endif
+-ifneq ($(MIDDLE_IMPORT_LIB),$(FINAL_IMPORT_LIB))
+-	cd $(DESTDIR)$(libdir) && $(RM) $(notdir $(MIDDLE_IMPORT_LIB)) && ln -s $(notdir $(FINAL_IMPORT_LIB)) $(notdir $(MIDDLE_IMPORT_LIB))
 -endif
 -endif
  endif
- ifneq ($(IMPORT_LIB_EXT),)
- 	$(INSTALL-L) $(FINAL_IMPORT_LIB) $(DESTDIR)$(libdir)
+ 
+ install-headers:

@@ -1,8 +1,8 @@
-$OpenBSD: patch-source_tools_toolutil_Makefile_in,v 1.1 2007/08/06 21:17:43 steven Exp $
---- source/tools/toolutil/Makefile.in.orig	Mon Aug  6 19:21:08 2007
-+++ source/tools/toolutil/Makefile.in	Mon Aug  6 19:21:17 2007
-@@ -86,12 +86,6 @@ ifneq ($(ENABLE_STATIC),)
- endif
+$OpenBSD: patch-source_tools_toolutil_Makefile_in,v 1.2 2008/10/31 09:56:15 landry Exp $
+--- source/tools/toolutil/Makefile.in.orig	Mon Sep 22 21:03:38 2008
++++ source/tools/toolutil/Makefile.in	Wed Oct 29 11:15:42 2008
+@@ -85,12 +85,6 @@ install-library: all-local
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)
  ifneq ($(ENABLE_SHARED),)
  	$(INSTALL-L) $(FINAL_SO_TARGET) $(DESTDIR)$(libdir)
 -ifneq ($(FINAL_SO_TARGET),$(SO_TARGET))

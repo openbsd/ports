@@ -1,8 +1,8 @@
-$OpenBSD: patch-source_config_icu-config-bottom,v 1.1 2007/10/02 20:53:29 jasper Exp $
---- source/config/icu-config-bottom.orig	Tue Oct  2 22:50:37 2007
-+++ source/config/icu-config-bottom	Tue Oct  2 22:50:56 2007
+$OpenBSD: patch-source_config_icu-config-bottom,v 1.2 2008/10/31 09:56:15 landry Exp $
+--- source/config/icu-config-bottom.orig	Mon Sep 22 21:03:42 2008
++++ source/config/icu-config-bottom	Wed Oct 29 11:15:42 2008
 @@ -3,7 +3,7 @@
- ## Copyright (c) 2002-2005, International Business Machines Corporation and
+ ## Copyright (c) 2002-2007, International Business Machines Corporation and
  ## others. All Rights Reserved.
  
 -ICUUC_FILE=${libdir}/${ICULIBS_COMMON_LIB_NAME}
