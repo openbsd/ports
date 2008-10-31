@@ -122,6 +122,17 @@ static int init(int rate, int channels, int format, int flags)
 	if (!sio_start(hdl)) {
 		mp_msg(MSGT_AO, MSGL_ERR, "ao2: init: couldn't start\n");
 	}
+
+	if (ao_data.samplerate != rate) {
+		/* apparently mplayer rounds a little when resampling.
+		 * anyway, it doesn't write quite a full buffer on the first
+		 * write, which means libsndio never actually starts up
+		 * because it's trying to fill the buffer.  this is
+		 * enough for everything I have come across.
+		 */
+		sio_write(hdl, silence, 32);
+	}
+
 	return 1;
 }
 
