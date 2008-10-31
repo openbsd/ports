@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 00:28:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2008/10/31 02:22:16 kevlo Exp $
 
 COMMENT= 	extra Korean fonts
 
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD/distfiles/ \
 		ftp://ftp.mizi.com/pub/baekmuk/
 HOMEPAGE=	http://www.mizi.co.kr
 
-MAINTAINER=	pilot <pilot@monkey.org>
+MAINTAINER=	Jung <moorang@gmail.com>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

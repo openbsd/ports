@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 23:29:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/10/31 02:22:16 kevlo Exp $
 
 COMMENT=	powerful webserver security scanner
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://monkey.org/~pilot/arirang/ \
 
 HOMEPAGE=	http://www.monkey.org/~pilot
 
-MAINTAINER=	pilot <pilot@monkey.org>
+MAINTAINER=	Jung <moorang@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
