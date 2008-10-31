@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_utils_e2_utils_c,v 1.1 2008/10/31 00:03:12 landry Exp $
+Our file(1) doesn't have all that fancy options.
+--- src/utils/e2_utils.c.orig	Wed Oct 22 04:28:11 2008
++++ src/utils/e2_utils.c	Thu Oct 30 23:49:56 2008
+@@ -466,7 +466,7 @@ gchar *e2_utils_get_mimetype (VPATH *localpath)
+ 		{
+ 			//xdg command failed, maybe due to no xdg utilities, or unrecognised type
+ 			g_free (command);
+-			command = e2_utils_strcat ("file -bNprs --mime-type ", qp);
++			command = e2_utils_strcat ("file -bNs ", qp);
+ 			if (e2_fs_get_command_output (command, (gpointer *) &mime))
+ 			{
+ 				g_strstrip (mime); //strip trailing \n and any whitespace

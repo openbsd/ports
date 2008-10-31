@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/30 19:32:32 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2008/10/31 00:03:12 landry Exp $
 
 COMMENT =		GTK+2 file manager
 
 DISTNAME =		emelfm2-0.5.0
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		x11
 HOMEPAGE =		http://emelfm2.net/
 
@@ -22,7 +23,8 @@ MODULES =	devel/gettext
 
 LIB_DEPENDS =	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
-RUN_DEPENDS =	::devel/desktop-file-utils
+RUN_DEPENDS =	::devel/desktop-file-utils \
+		::devel/xdg-utils
 
 WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
