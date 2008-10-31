@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/31 01:39:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2008/10/31 15:30:32 kevlo Exp $
 
      SUBDIR += baekmuk-fonts
+     SUBDIR += baekmuk-ttf
      SUBDIR += hanterm-fonts
      SUBDIR += hanterm-xf
      SUBDIR += libhangul
