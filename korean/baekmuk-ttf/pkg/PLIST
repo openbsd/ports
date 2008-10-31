@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/31 15:29:59 kevlo Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/korean/
+lib/X11/fonts/korean/batang.ttf
+lib/X11/fonts/korean/dotum.ttf
+lib/X11/fonts/korean/gulim.ttf
+lib/X11/fonts/korean/hline.ttf
