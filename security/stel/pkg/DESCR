@@ -1,11 +1,10 @@
-stel(1) is intended to be a simple and practical plug and play
-solution for logging into a remote system or executing commands on
-a remote system.  stel offers a variety of features which range
-from mutual authentication to file transfer.  The security of stel
-relies upon the underlying cryptographic design, not trusting the
-net in any way.  If no options are provided, stel defaults to triple
-DES encryption, 1024-bits Diffie-Hellman modulus, no protection
-from active attacks, and the remote system user's shell as the
-command to be executed on the remote system.  This should be
-reasonable for most systems, and it is believed to be a good
-compromise between speed, ease of use and security.
+stel(1) is intended to be a simple and practical plug and play solution
+for logging into a remote system or executing commands on a remote
+system.  stel offers a variety of features which range from mutual
+authentication to file transfer.  The security of stel relies upon the
+underlying cryptographic design, not trusting the net in any way.  If no
+options are provided, stel defaults to triple DES encryption, 1024-bits
+Diffie-Hellman modulus, no protection from active attacks, and the
+remote system user's shell as the command to be executed on the remote
+system.  This should be reasonable for most systems, and it is believed
+to be a good compromise between speed, ease of use and security.

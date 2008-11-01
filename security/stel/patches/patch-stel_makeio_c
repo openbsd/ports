@@ -1,7 +1,7 @@
-$OpenBSD: patch-stel_makeio_c,v 1.1 2001/09/29 21:27:50 naddy Exp $
+$OpenBSD: patch-stel_makeio_c,v 1.2 2008/11/01 00:04:13 jasper Exp $
 --- stel/makeio.c.orig	Fri Apr 26 18:29:27 1996
-+++ stel/makeio.c	Sat Sep 29 22:55:22 2001
-@@ -21,7 +21,8 @@ static char *rcsid = "@(#) $Id: makeio.c
++++ stel/makeio.c	Fri Oct 31 22:16:27 2008
+@@ -21,7 +21,8 @@ static char *rcsid = "@(#) $Id: makeio.c,v 1.114 1996/
  #include <sys/time.h>
  #include <netinet/in.h>
  #include <pwd.h>
@@ -11,7 +11,7 @@ $OpenBSD: patch-stel_makeio_c,v 1.1 2001/09/29 21:27:50 naddy Exp $
  
  #ifdef HAS_SYS_PARAM_H
  #include <sys/param.h>
-@@ -33,7 +34,7 @@ static char *rcsid = "@(#) $Id: makeio.c
+@@ -33,7 +34,7 @@ static char *rcsid = "@(#) $Id: makeio.c,v 1.114 1996/
  #endif
  #endif
  

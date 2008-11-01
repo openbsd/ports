@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/15 23:30:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.23 2008/11/01 00:04:13 jasper Exp $
 
 COMMENT=	Secure Telnet, encrypted version of the telnet daemon
 
 DISTNAME=	stel
-PKGNAME=	${DISTNAME}-19960505
+PKGNAME=	${DISTNAME}-19960505p0
 CATEGORIES=	security
 
 MASTER_SITES=	ftp://ftp.ox.ac.uk/pub/crypto/misc/ \
@@ -17,16 +17,16 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c des m skey
 
-LIB_DEPENDS=	gmp.::devel/gmp
+LIB_DEPENDS=	gmp::devel/gmp
 
 WRKDIST=	${WRKDIR}
 
 ALL_TARGET=	bsdi
 
+NO_REGRESS=	Yes
+
 post-extract:
 	@rm ${WRKSRC}/stel/login.c.orig
-
-NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stel/stel ${PREFIX}/bin
