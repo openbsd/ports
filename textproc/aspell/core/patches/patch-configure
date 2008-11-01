@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.2 2008/10/31 09:33:41 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.3 2008/11/01 19:19:29 ajacoutot Exp $
 --- configure.orig	Mon Apr  7 06:31:31 2008
 +++ configure	Fri Oct 31 10:33:20 2008
 @@ -2645,7 +2645,7 @@ fi
@@ -10,15 +10,6 @@ $OpenBSD: patch-configure,v 1.2 2008/10/31 09:33:41 ajacoutot Exp $
  fi
  
  
-@@ -17912,7 +17912,7 @@ echo $ECHO_N "checking if posix mutexes are supported.
- 
- ORIG_LIBS="$LIBS"
- 
--for l in '' '-lpthread'
-+for l in '' '-pthread'
- do
-   if test -z "$use_posix_mutex"
-   then
 @@ -20127,10 +20127,10 @@ XGETTEXT!$XGETTEXT$ac_delim
  XGETTEXT_015!$XGETTEXT_015$ac_delim
  MSGMERGE!$MSGMERGE$ac_delim
