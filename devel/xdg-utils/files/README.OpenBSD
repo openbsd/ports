@@ -1,0 +1,6 @@
+$OpenBSD: README.OpenBSD,v 1.1 2008/11/01 19:30:07 ajacoutot Exp $
+
+xdg-utils is patched to permit customized start scripts when opening
+files, URLs or emails.  Example scripts can be found in
+${TRUEPREFIX}/share/examples/xdg-utils.  Just copy these into your PATH as
+xdg-email-hook or xdg-open-hook.

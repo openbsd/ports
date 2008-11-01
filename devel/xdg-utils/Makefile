@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/30 14:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/01 19:30:07 ajacoutot Exp $
 
 COMMENT=	utilities to assist desktop integration tasks
 
 DISTNAME=	xdg-utils-1.0.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://portland.freedesktop.org/wiki/
@@ -25,5 +26,18 @@ CONFIGURE_ENV=	XMLTO=${LOCALBASE}/bin/xmlto
 pre-configure:
 	${SUBST_CMD} \
 		${WRKSRC}/scripts/{xdg-desktop-menu,xdg-icon-resource,xdg-mime}
+
+post-install:
+	# Official NetBeans does not know about OpenBSD, thus at least
+	# some java apps use 'email' and 'open' as fallbacks.
+	ln -s xdg-email ${PREFIX}/bin/email
+	ln -s xdg-open ${PREFIX}/bin/open
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xdg-utils
+	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/doc/xdg-utils/README.OpenBSD
+	chown ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/share/doc/xdg-utils/README.OpenBSD
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xdg-utils
+	${INSTALL_SCRIPT} ${FILESDIR}/x* ${PREFIX}/share/examples/xdg-utils
 
 .include <bsd.port.mk>
