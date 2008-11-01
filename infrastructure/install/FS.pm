@@ -1,4 +1,4 @@
-# $OpenBSD: FS.pm,v 1.4 2008/10/29 00:22:56 espie Exp $
+# $OpenBSD: FS.pm,v 1.5 2008/11/01 14:49:51 espie Exp $
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -17,6 +17,7 @@ use strict;
 use warnings;
 
 package FS::File;
+
 sub new
 {
 	my ($class, $filename, $type, $owner, $group) = @_;
@@ -52,6 +53,7 @@ use File::Find;
 use File::Spec;
 use File::Basename;
 use OpenBSD::IdCache;
+use Config;
 # existing files are classified according to the following routine
 
 sub get_type
@@ -255,7 +257,6 @@ sub scan_destdir
 {
 	my %files;
 	my %okay_files=map { $_=>1 } split(/\s+/, $ENV{'OKAY_FILES'});
-	use Config;
 
 	my $installsitearch = $Config{'installsitearch'};
 	my $archname = $Config{'archname'};
@@ -301,6 +302,9 @@ sub get_files
 	$mtree->{'/usr/local/lib/X11'} = 1;
 	$mtree->{'/usr/local/include/X11'} = 1;
 	$mtree->{'/usr/local/lib/X11/app-defaults'} = 1;
+	# zap /usr/libdata/xxx from perl install
+	$mtree->{$Config{'installarchlib'}} = 1;
+	$mtree->{dirname($Config{'installarchlib'})} = 1;
 
 	# make sure main mtree is removed 
 	for my $d (keys %$mtree) {
