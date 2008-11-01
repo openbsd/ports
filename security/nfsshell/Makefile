@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2008/11/01 00:02:37 jasper Exp $
 
 COMMENT=	NFS auditing tool
 
-PKGNAME=	nfsshell-1.0
+PKGNAME=	nfsshell-1.0p0
 DISTNAME=	nfsshell
 CATEGORIES=	security
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	no obvious license
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	no obvious license
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c readline termcap
 
 ALL_TARGET=	nfs

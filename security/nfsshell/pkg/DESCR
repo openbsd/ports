@@ -1,30 +1,4 @@
-Date:   Mon, 18 May 1998 19:43:50 +0200
-From:   Leendert van Doorn <leendert@CS.VU.NL>
-Subject:      NFS shell
-To:     BUGTRAQ@NETSPACE.ORG
-
-I recently got a request for an nfs shell binary for AIX from one of
-our security consultants. Since I just moved to IBM Watson's GSAL group
-whose job it is to work on security I decided to look at the program
-again. I cleaned it up and since there are already so many old escaped
-versions of the program floating around I decided to put up my version.
-
-Nfs shell provides user level access to an NFS server, over UDP or TCP,
+NFS shell provides user level access to an NFS server, over UDP or TCP,
 supports source routing and "secure" (privileged port) mounts. Its a
-useful tool to manually check (or show) security problems after a security
-scanner has detected them.
-
-The sources are in:
-
-        ftp://ftp.cs.vu.nl/pub/leendert/nfsshell.tar.gz
-
-Suggestions for improvements are welcome.
-
-Just be responsible,
-
-        Leendert
-
---
-Leendert van Doorn                                    <leendert@watson.ibm.com>
-IBM T.J. Watson Research Center                       (914) 784-7831
-30 Saw Mill River Road, Hawthorne, NY 10532
+useful tool to manually check (or show) security problems after a
+security scanner has detected them.
