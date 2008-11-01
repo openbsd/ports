@@ -1,0 +1,3 @@
+PluginRegistry is a tool for Product developers to enable a pluggable
+architecture. It provides an application-neutraltool for registering
+plugins for a set of application-defined plugin interfaces.
