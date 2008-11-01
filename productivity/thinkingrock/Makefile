@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/28 18:10:09 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2008/11/01 19:31:57 ajacoutot Exp $
 
 COMMENT=	collecting and processing thoughts according to GTD
 
 V=		2.0.1
 DISTNAME=	tr-$V
-PKGNAME=	thinkingrock-${V}p1
+PKGNAME=	thinkingrock-${V}p2
 CATEGORIES=	productivity java
 
 HOMEPAGE=	http://www.thinkingrock.com.au/
@@ -23,18 +23,19 @@ MODULES=	java
 MODJAVA_VER=	1.5+
 MODJAVA_JRERUN= Yes
 
-RUN_DEPENDS=	::java/javaPathHelper
+RUN_DEPENDS=	::java/javaPathHelper \
+		::devel/xdg-utils
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 PKG_ARCH=	*
 
-post-extract:
-	@rm ${WRKSRC}/etc/tr.conf~
-
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/bin/tr ${WRKSRC}/etc/tr.conf
+	@rm ${WRKSRC}/etc/tr.conf~
+	@rm ${WRKSRC}/etc/tr.conf.bak
+	@rm ${WRKSRC}/etc/tr.conf.orig
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/thinkingrock
@@ -43,16 +44,5 @@ do-install:
 	done
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/thinkingrock
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tr ${PREFIX}/bin/thinkingrock
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/xdg-email ${PREFIX}/bin
-	# NetBeans shipped with TR doesn't know about OpenBSD and thus uses
-	# different names than on linux
-	ln -s xdg-email ${PREFIX}/bin/email
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/xdg-open ${PREFIX}/bin
-	ln -s xdg-open ${PREFIX}/bin/open
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/thinkingrock
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/thinkingrock
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/thinkingrock
-	${INSTALL_SCRIPT} ${FILESDIR}/x* ${PREFIX}/share/examples/thinkingrock
 
 .include <bsd.port.mk>

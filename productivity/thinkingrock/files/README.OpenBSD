@@ -1,6 +1,0 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2008/03/26 20:18:35 sturm Exp $
-
-Thinkingrock is patched to permit customized start scripts when opening
-files, URLs or emails. Example scripts can be found in
-%%PREFIX%%/share/examples/thinkingrock. Just copy these into your PATH
-as xdg-email-hook or xdg-open-hook.

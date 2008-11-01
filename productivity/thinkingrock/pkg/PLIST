@@ -1,15 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/06/05 08:33:55 sturm Exp $
-bin/email
-bin/open
+@comment $OpenBSD: PLIST,v 1.3 2008/11/01 19:31:57 ajacoutot Exp $
 bin/thinkingrock
-bin/xdg-email
-bin/xdg-open
-share/doc/thinkingrock/
-share/doc/thinkingrock/README.OpenBSD
-share/examples/thinkingrock/
-share/examples/thinkingrock/xdg-email-hook.pl
-share/examples/thinkingrock/xdg-open-hook.sh
-share/examples/thinkingrock/xmutt.sh
 share/thinkingrock/
 share/thinkingrock/etc/
 share/thinkingrock/etc/tr.clusters
