@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/10/16 16:41:55 ajacoutot Exp $
-bin/burgerspace
+@comment $OpenBSD: PLIST,v 1.5 2008/11/01 20:54:40 naddy Exp $
+@bin bin/burgerspace
 @man man/man6/burgerspace.6
-share/applications/
 share/applications/burgerspace.desktop
 share/pixmaps/
 share/pixmaps/burgerspace.png

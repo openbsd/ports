@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2007/10/16 16:41:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2008/11/01 20:54:40 naddy Exp $
 
 COMMENT=	burgertime clone for X
 
-DISTNAME=	burgerspace-1.8.1
+DISTNAME=	burgerspace-1.8.2
 CATEGORIES=	games
 
 HOMEPAGE=	http://perso.b2b2c.ca/sarrazip/dev/burgerspace.html
 
-MAINTAINER=	Serge basterot <sb@wo-do.com>
+MAINTAINER=	Serge Basterot <sb@wo-do.com>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
