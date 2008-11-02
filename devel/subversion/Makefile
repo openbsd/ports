@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2008/10/05 08:31:14 sturm Exp $
+# $OpenBSD: Makefile,v 1.49 2008/11/02 20:43:49 steven Exp $
 
 COMMENT-main=	subversion revision control system
 COMMENT-perl=	perl interface to subversion
@@ -6,19 +6,19 @@ COMMENT-python=	python interface to subversion
 COMMENT-ruby=	ruby interface to subversion
 COMMENT-ap2=	apache2 subversion modules
 
-VERSION=	1.4.4
+VERSION=	1.5.4
 DISTNAME=	subversion-${VERSION}
 PKGNAME=	${DISTNAME}
-PKGNAME-main=	${DISTNAME}p0
-PKGNAME-perl=	p5-SVN-${VERSION}p2
-PKGNAME-python=	py-subversion-${VERSION}p3
-PKGNAME-ruby=	ruby-subversion-${VERSION}p4
-PKGNAME-ap2=	ap2-subversion-${VERSION}p0
+PKGNAME-main=	${DISTNAME}
+PKGNAME-perl=	p5-SVN-${VERSION}
+PKGNAME-python=	py-subversion-${VERSION}
+PKGNAME-ruby=	ruby-subversion-${VERSION}
+PKGNAME-ap2=	ap2-subversion-${VERSION}
 
-SO_VERSION=	1.0
+SO_VERSION=	1.1
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
-		svn_fs_base-1 svn_fs_fs-1 svn_ra-1 svn_ra_dav-1 \
-		svn_ra_local-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
+		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_neon-1 \
+		svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
 .for _lib in ${SVN_LIBS} svn_swig_perl-1 svn_swig_py-1 svn_swig_ruby-1
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
@@ -27,7 +27,7 @@ CATEGORIES=	devel
 
 HOMEPAGE=	http://subversion.tigris.org/
 
-MAINTAINER=	Sigfred Haversen <bsdlist@mumak.com>
+MAINTAINER=	Stefan Sperling <stsp@stsp.name>
 
 # BSD alike + Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
@@ -42,33 +42,49 @@ FLAVOR?=
 
 MODULES=	devel/gettext
 
-WANTLIB=	apr-1 expat db z
+WANTLIB=	expat db z
 
-LIB_DEPENDS=	neon.>=24:neon->=0.24.7:net/neon \
-		aprutil-1::devel/apr-util
+LIB_DEPENDS=	neon.>=26:neon->=0.26.2:net/neon \
+		apr-1::devel/apr \
+		aprutil-1::devel/apr-util \
+		sasl2.>=2::security/cyrus-sasl2
 
 MULTI_PACKAGES=	-main
 
-WANTLIB-main=	${WANTLIB} c crypto ssl
+WANTLIB-main=	${WANTLIB} c crypto iconv intl ssl
 RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
+
+CONTRIB_HOOK_SCRIPTS=	case-insensitive.py pre-commit-check.py \
+	check-mime-type.pl pre-lock-require-needs-lock.py \
+	commit-block-joke.py remove-zombie-locks.py detect-merge-conflicts.sh \
+	syntax-check.sh
+# There's also 'enforcer', but it has its own subdir in contrib/hook-scripts/
+# So we handle it separately, see post-install
+
+TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
+	commit-access-control.pl svn2feed.py commit-access-control.pl.in \
+	svnperms.conf.example commit-email.pl svnperms.py commit-email.pl.in \
+	verify-po.py commit-email.rb
+# There's also 'mailer', but it has its own subdir in contrib/hook-scripts/
+# So we handle it separately, see post-install
 
 .if !${FLAVOR:L:Mno_ap2}
 MULTI_PACKAGES+=	-ap2
-WANTLIB-ap2=		${WANTLIB} iconv aprutil-1 expat
+WANTLIB-ap2=		${WANTLIB} apr-1 aprutil-1 expat
 LIB_DEPENDS-ap2=	${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in svn_delta-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 \
-	svn_repos-1 svn_subr-1
+	svn_fs_util-1 svn_repos-1 svn_subr-1
 LIB_DEPENDS-ap2+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
+.  endfor
 BUILD_DEPENDS+=		::www/apache-httpd
 RUN_DEPENDS-ap2=	::www/apache-httpd
-.  endfor
 .endif
 
 .if !${FLAVOR:L:Mno_bindings}
 MULTI_PACKAGES+=-perl -python -ruby
 SHARED_ONLY=	Yes
 
-WANTLIB-perl=	${WANTLIB} aprutil-1
+WANTLIB-perl=	${WANTLIB} apr-1 aprutil-1
 RUN_DEPENDS-perl=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in svn_diff-1 svn_ra-1 svn_delta-1 svn_subr-1 svn_fs-1 \
@@ -76,62 +92,66 @@ LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS}
 LIB_DEPENDS-perl+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
 .  endfor
 
-WANTLIB-python=	${WANTLIB} crypto ssl neon aprutil-1
+WANTLIB-python=	${WANTLIB} apr-1 aprutil-1 crypto neon sasl2 ssl
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
 LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
 .  endfor
 
-WANTLIB-ruby=	${WANTLIB} crypto expat ssl neon aprutil-1
+WANTLIB-ruby=	${WANTLIB} apr-1 aprutil-1 crypto neon sasl2 ssl
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
-LIB_DEPENDS-ruby=	${MODGETTEXT_LIB_DEPENDS}
+LIB_DEPENDS-ruby=	ruby.>=2::lang/ruby ${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
 LIB_DEPENDS-ruby+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
 .  endfor
 
 MODULES+=	lang/ruby lang/python
-BUILD_DEPENDS+=	::devel/swig
+BUILD_DEPENDS+=	:swig->=1.3.36:devel/swig
 .endif
 
+# BSD make cannot build target autogen-swig to regenerate bindings
+USE_GMAKE=	Yes
+MAKE_FLAGS=	MAKE=${MAKE_PROGRAM}
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	simple
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.62
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	PYTHON2=${MODPY_BIN}
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--with-neon=${LOCALBASE} \
-		--with-apr=${LOCALBASE} \
-		--with-apr-util=${LOCALBASE} \
-		--with-zlib \
+		--without-jikes \
 		--without-jdk
 .if !${FLAVOR:L:Mno_bindings}
-CONFIGURE_ARGS+=--enable-swig-bindings=perl,python,ruby \
-		--with-swig=${LOCALBASE}
+CONFIGURE_ARGS+=--with-swig
 .else
-CONFIGURE_ARGS+=--disable-swig-bindings \
-		--without-swig
+CONFIGURE_ARGS+=--without-swig
 .endif
 
 .if !${FLAVOR:L:Mno_ap2}
-CONFIGURE_ARGS+=--with-apxs=${LOCALBASE}/sbin/apxs2
+CONFIGURE_ARGS+=--with-apxs=${LOCALBASE}/sbin/apxs2 \
+		--disable-mod-activation
 .else
 CONFIGURE_ARGS+=--without-apxs
 .endif
 
 REGRESS_DEPENDS=::lang/python/${MODPY_VERSION}
 MODPY_VERSION?=	2.5
+SUBST_VARS=	LOCALBASE
+
+pre-patch:
+	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 pre-configure:
-	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE}," ${WRKSRC}/configure
-	@perl -pi -e "s,!!MODPY_VERSION!!,${MODPY_VERSION}," ${WRKSRC}/configure
-
-pre-build:
-	@perl -pi -e "s,!!MODPY_VERSION!!,${MODPY_VERSION}," ${WRKBUILD}/Makefile
+	@${SUBST_CMD} ${WRKSRC}/Makefile.in ${WRKSRC}/configure.ac
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
 
 .if !${FLAVOR:L:Mno_bindings}
-REGRESS_DEPENDS+=	::devel/p5-IO-String \
-			:${PKGNAME-python}:devel/subversion,-python \
+REGRESS_DEPENDS+=	:${PKGNAME-python}:devel/subversion,-python \
 			:${PKGNAME-ruby}:devel/subversion,-ruby
+
+pre-build:
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${MAKE_FLAGS} clean-swig
 
 post-build:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
@@ -172,36 +192,33 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/config \
 			${PREFIX}/share/examples/subversion/config
 	${INSTALL_DATA} ${WRKBUILD}/tools/backup/hot-backup.py \
-			${PREFIX}/share/examples/subversion/backup
+			${PREFIX}/share/examples/subversion/backup/
 	${INSTALL_DATA} ${WRKSRC}/tools/server-side/svn-backup-dumps.py \
-			${PREFIX}/share/examples/subversion/backup
+			${PREFIX}/share/examples/subversion/backup/
 	${INSTALL_DATA} ${WRKSRC}/contrib/server-side/svn-fast-backup \
 			${PREFIX}/share/examples/subversion/backup/svn-fast-backup
-	${INSTALL_DATA} ${WRKBUILD}/tools/hook-scripts/* \
-			${PREFIX}/share/examples/subversion/hook-scripts
-	${INSTALL_DATA} ${WRKSRC}/contrib/hook-scripts/enforcer/* \
-			${PREFIX}/share/examples/subversion/hook-scripts/enforcer
-	${INSTALL_DATA} ${WRKSRC}/contrib/hook-scripts/check-case-insensitive.* \
-			${PREFIX}/share/examples/subversion/hook-scripts
-	${INSTALL_DATA} ${WRKSRC}/contrib/hook-scripts/detect-merge-conflicts.sh \
-			${PREFIX}/share/examples/subversion/hook-scripts
+	${INSTALL_DATA} ${WRKSRC}/contrib/hook-scripts/enforcer/enforcer \
+			${PREFIX}/share/examples/subversion/hook-scripts/enforcer/
+	${INSTALL_DATA} ${WRKSRC}/contrib/hook-scripts/enforcer/enforcer.conf \
+			${PREFIX}/share/examples/subversion/hook-scripts/enforcer/
+.for hook_script in ${CONTRIB_HOOK_SCRIPTS}
+	${INSTALL_DATA} ${WRKSRC}/contrib/hook-scripts/${hook_script} \
+			${PREFIX}/share/examples/subversion/hook-scripts/
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/README \
-			${PREFIX}/share/examples/subversion/hook-scripts
-	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/commit-access-control.cfg.example \
-			${PREFIX}/share/examples/subversion/hook-scripts
-	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/commit-email.rb \
-			${PREFIX}/share/examples/subversion/hook-scripts
-	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/log-police.py \
-			${PREFIX}/share/examples/subversion/hook-scripts
-	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/svnperms.conf.example \
-			${PREFIX}/share/examples/subversion/hook-scripts
-	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/svnperms.py \
-			${PREFIX}/share/examples/subversion/hook-scripts
+			${PREFIX}/share/examples/subversion/hook-scripts/
+.for hook_script in ${TOOLS_HOOK_SCRIPTS}
+	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/${hook_script} \
+			${PREFIX}/share/examples/subversion/hook-scripts/
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/mailer/mailer.conf.example \
 			${PREFIX}/share/examples/subversion/hook-scripts/mailer
 	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/mailer/mailer.py \
 			${PREFIX}/share/examples/subversion/hook-scripts/mailer
 	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/mailer/tests/* \
 			${PREFIX}/share/examples/subversion/hook-scripts/mailer/tests
+	find ${PREFIX}/share/examples/subversion -type f | xargs perl -pi \
+		-e "s,.*/usr/bin/python.*,#!${MODPY_BIN},;" \
+		-e "s,.*env python.*,#!${MODPY_BIN},;"
 
 .include <bsd.port.mk>

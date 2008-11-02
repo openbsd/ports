@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST-ap2,v 1.1 2007/04/11 13:26:36 deanna Exp $
+@comment $OpenBSD: PLIST-ap2,v 1.2 2008/11/02 20:43:49 steven Exp $
+include/subversion-1/mod_authz_svn.h
+include/subversion-1/mod_dav_svn.h
 lib/apache2/mod_authz_svn.so
 lib/apache2/mod_dav_svn.so

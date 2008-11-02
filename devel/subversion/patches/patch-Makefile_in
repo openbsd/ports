@@ -1,69 +1,25 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2007/10/25 10:00:03 steven Exp $
---- Makefile.in.orig	Thu Aug 24 00:12:43 2006
-+++ Makefile.in	Mon Nov 20 15:31:13 2006
-@@ -66,8 +66,8 @@ swig_pl_libdir = @libdir@
+$OpenBSD: patch-Makefile_in,v 1.8 2008/11/02 20:43:49 steven Exp $
+--- Makefile.in.orig	Tue Aug 26 19:27:56 2008
++++ Makefile.in	Sat Oct 25 21:46:14 2008
+@@ -68,8 +68,8 @@ swig_pl_libdir = @libdir@
  swig_rb_libdir = @libdir@
  
  ### these possibly need further discussion
 -swig_pydir = @libdir@/svn-python/libsvn
 -swig_pydir_extra = @libdir@/svn-python/svn
-+swig_pydir = @libdir@/python!!MODPY_VERSION!!/site-packages/libsvn
-+swig_pydir_extra = @libdir@/python!!MODPY_VERSION!!/site-packages/svn
++swig_pydir = @libdir@/python${MODPY_VERSION}/site-packages/libsvn
++swig_pydir_extra = @libdir@/python${MODPY_VERSION}/site-packages/svn
  swig_pldir = @libdir@/svn-perl
  swig_rbdir = $(SWIG_RB_SITE_ARCH_DIR)/svn/ext
- 
-@@ -90,8 +90,8 @@ EXEEXT = @EXEEXT@
- 
- SHELL = @SHELL@
- LIBTOOL = @SVN_LIBTOOL@
--LTFLAGS = @SVN_LT_CCTAG@ --silent
--LTCXXFLAGS = @SVN_LT_CXXTAG@ --silent
-+LTFLAGS = @SVN_LT_CCTAG@
-+LTCXXFLAGS = @SVN_LT_CXXTAG@
- LT_LDFLAGS = @LT_LDFLAGS@
- LT_NO_UNDEFINED = @LT_NO_UNDEFINED@
- LT_CXX_LIBADD = @LT_CXX_LIBADD@
-@@ -108,8 +108,8 @@ APACHE_LDFLAGS = @APACHE_LDFLAGS@
+ contribdir = @bindir@/svn-contrib
+@@ -114,8 +114,8 @@ APACHE_LDFLAGS = @APACHE_LDFLAGS@
  SWIG = @SWIG@
  SWIG_PY_INCLUDES = @SWIG_PY_INCLUDES@ -I$(SWIG_SRC_DIR)/python/libsvn_swig_py
  SWIG_PY_COMPILE = @SWIG_PY_COMPILE@
 -SWIG_PY_LINK = @SWIG_PY_LINK@
 -SWIG_PY_LIBS = @SWIG_PY_LIBS@
 +SWIG_PY_LINK = @SWIG_PY_LINK@ -L@libdir@
-+SWIG_PY_LIBS = -lpython!!MODPY_VERSION!!
++SWIG_PY_LIBS = -lpython${MODPY_VERSION}
  SWIG_PL_INCLUDES = @SWIG_PL_INCLUDES@
  SWIG_RB_INCLUDES = @SWIG_RB_INCLUDES@ -I$(SWIG_SRC_DIR)/ruby/libsvn_swig_ruby
  SWIG_RB_COMPILE = @SWIG_RB_COMPILE@
-@@ -196,19 +196,14 @@ INSTALL_JAVAHL_LIB = $(INSTALL_LIB)
- 
- # additional installation rules for the SWIG wrappers
- INSTALL_EXTRA_SWIG_PY=\
--  $(MKDIR) $(DESTDIR)$(swig_pydir); \
--  $(MKDIR) $(DESTDIR)$(swig_pydir_extra); \
-+  $(INSTALL) -d $(DESTDIR)$(swig_pydir); \
-+  $(INSTALL) -d $(DESTDIR)$(swig_pydir_extra); \
-   for i in $(abs_srcdir)/subversion/bindings/swig/python/svn/*.py; do \
-     $(INSTALL_DATA) "$$i" $(DESTDIR)$(swig_pydir_extra); \
-   done; \
-   for i in $(abs_srcdir)/subversion/bindings/swig/python/*.py; do \
-     $(INSTALL_DATA) "$$i" $(DESTDIR)$(swig_pydir); \
-   done; \
--  if test "$(abs_srcdir)" != "$(abs_builddir)"; then \
--    for i in $(abs_builddir)/subversion/bindings/swig/python/*.py; do \
--      $(INSTALL_DATA) "$$i" $(DESTDIR)$(swig_pydir); \
--    done; \
--  fi; \
-   $(PYTHON) -c 'import compileall; \
-     compileall.compile_dir("$(DESTDIR)$(swig_pydir)", 1, "$(swig_pydir)"); \
-     compileall.compile_dir("$(DESTDIR)$(swig_pydir_extra)", 1, \
-@@ -234,8 +229,8 @@ INSTALL_EXTRA_JAVAHL_JAVA=\
- INSTALL_EXTRA_JAVAHL_LIB=@INSTALL_EXTRA_JAVAHL_LIB@
- 
- INSTALL_EXTRA_SWIG_RB=\
--  @echo $(MKDIR) $(DESTDIR)$(SWIG_RB_SITE_LIB_DIR)/svn; \
--  $(MKDIR) $(DESTDIR)$(SWIG_RB_SITE_LIB_DIR)/svn; \
-+  @echo $(INSTALL) -d $(DESTDIR)$(SWIG_RB_SITE_LIB_DIR)/svn; \
-+  $(INSTALL) -d $(DESTDIR)$(SWIG_RB_SITE_LIB_DIR)/svn; \
-   for i in $(abs_srcdir)/subversion/bindings/swig/ruby/svn/*.rb; do \
-     echo $(INSTALL_DATA) "$$i" $(DESTDIR)$(SWIG_RB_SITE_LIB_DIR)/svn; \
-     $(INSTALL_DATA) "$$i" $(DESTDIR)$(SWIG_RB_SITE_LIB_DIR)/svn; \

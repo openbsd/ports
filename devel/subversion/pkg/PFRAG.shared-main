@@ -1,13 +1,14 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/24 19:52:53 steven Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2008/11/02 20:43:49 steven Exp $
 @lib lib/libsvn_client-1.so.${LIBsvn_client-1_VERSION}
 @lib lib/libsvn_delta-1.so.${LIBsvn_delta-1_VERSION}
 @lib lib/libsvn_diff-1.so.${LIBsvn_diff-1_VERSION}
 @lib lib/libsvn_fs-1.so.${LIBsvn_fs-1_VERSION}
 @lib lib/libsvn_fs_base-1.so.${LIBsvn_fs_base-1_VERSION}
 @lib lib/libsvn_fs_fs-1.so.${LIBsvn_fs_fs-1_VERSION}
+@lib lib/libsvn_fs_util-1.so.${LIBsvn_fs_util-1_VERSION}
 @lib lib/libsvn_ra-1.so.${LIBsvn_ra-1_VERSION}
-@lib lib/libsvn_ra_dav-1.so.${LIBsvn_ra_dav-1_VERSION}
 @lib lib/libsvn_ra_local-1.so.${LIBsvn_ra_local-1_VERSION}
+@lib lib/libsvn_ra_neon-1.so.${LIBsvn_ra_neon-1_VERSION}
 @lib lib/libsvn_ra_svn-1.so.${LIBsvn_ra_svn-1_VERSION}
 @lib lib/libsvn_repos-1.so.${LIBsvn_repos-1_VERSION}
 @lib lib/libsvn_subr-1.so.${LIBsvn_subr-1_VERSION}

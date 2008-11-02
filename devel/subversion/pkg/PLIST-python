@@ -1,30 +1,34 @@
-@comment $OpenBSD: PLIST-python,v 1.4 2007/10/25 10:00:03 steven Exp $
+@comment $OpenBSD: PLIST-python,v 1.5 2008/11/02 20:43:49 steven Exp $
 %%SHARED%%
 lib/libsvn_swig_py-1.a
 lib/libsvn_swig_py-1.la
 lib/python${MODPY_VERSION}/site-packages/libsvn/
 lib/python${MODPY_VERSION}/site-packages/libsvn/__init__.py
 lib/python${MODPY_VERSION}/site-packages/libsvn/__init__.pyc
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_client.a
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_client.la
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_core.a
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_core.la
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_delta.a
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_delta.la
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_fs.a
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_fs.la
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_ra.a
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_ra.la
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_repos.a
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_repos.la
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.a
-@comment lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_client.a
+lib/python${MODPY_VERSION}/site-packages/libsvn/_client.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_core.a
+lib/python${MODPY_VERSION}/site-packages/libsvn/_core.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_delta.a
+lib/python${MODPY_VERSION}/site-packages/libsvn/_delta.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_diff.a
+lib/python${MODPY_VERSION}/site-packages/libsvn/_diff.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_fs.a
+lib/python${MODPY_VERSION}/site-packages/libsvn/_fs.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_ra.a
+lib/python${MODPY_VERSION}/site-packages/libsvn/_ra.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_repos.a
+lib/python${MODPY_VERSION}/site-packages/libsvn/_repos.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.a
+lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.la
 lib/python${MODPY_VERSION}/site-packages/libsvn/client.py
 lib/python${MODPY_VERSION}/site-packages/libsvn/client.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/core.py
 lib/python${MODPY_VERSION}/site-packages/libsvn/core.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/delta.py
 lib/python${MODPY_VERSION}/site-packages/libsvn/delta.pyc
+lib/python${MODPY_VERSION}/site-packages/libsvn/diff.py
+lib/python${MODPY_VERSION}/site-packages/libsvn/diff.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/fs.py
 lib/python${MODPY_VERSION}/site-packages/libsvn/fs.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/ra.py
@@ -42,6 +46,8 @@ lib/python${MODPY_VERSION}/site-packages/svn/core.py
 lib/python${MODPY_VERSION}/site-packages/svn/core.pyc
 lib/python${MODPY_VERSION}/site-packages/svn/delta.py
 lib/python${MODPY_VERSION}/site-packages/svn/delta.pyc
+lib/python${MODPY_VERSION}/site-packages/svn/diff.py
+lib/python${MODPY_VERSION}/site-packages/svn/diff.pyc
 lib/python${MODPY_VERSION}/site-packages/svn/fs.py
 lib/python${MODPY_VERSION}/site-packages/svn/fs.pyc
 lib/python${MODPY_VERSION}/site-packages/svn/ra.py

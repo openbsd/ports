@@ -1,21 +1,21 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/02/15 10:25:17 dlg Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/11/02 20:43:49 steven Exp $
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion
 %%SHARED%%
-bin/svn
-bin/svnadmin
-bin/svndumpfilter
-bin/svnlook
-bin/svnserve
-bin/svnsync
-bin/svnversion
+@bin bin/svn
+@bin bin/svnadmin
+@bin bin/svndumpfilter
+@bin bin/svnlook
+@bin bin/svnserve
+@bin bin/svnsync
+@bin bin/svnversion
 include/subversion-1/
-include/subversion-1/mod_dav_svn.h
 include/subversion-1/svn-revision.txt
 include/subversion-1/svn_auth.h
 include/subversion-1/svn_base64.h
 include/subversion-1/svn_client.h
 include/subversion-1/svn_cmdline.h
+include/subversion-1/svn_compat.h
 include/subversion-1/svn_config.h
 include/subversion-1/svn_ctype.h
 include/subversion-1/svn_dav.h
@@ -27,7 +27,9 @@ include/subversion-1/svn_error_codes.h
 include/subversion-1/svn_fs.h
 include/subversion-1/svn_hash.h
 include/subversion-1/svn_io.h
+include/subversion-1/svn_iter.h
 include/subversion-1/svn_md5.h
+include/subversion-1/svn_mergeinfo.h
 include/subversion-1/svn_nls.h
 include/subversion-1/svn_opt.h
 include/subversion-1/svn_path.h
@@ -59,12 +61,14 @@ lib/libsvn_fs_base-1.a
 lib/libsvn_fs_base-1.la
 lib/libsvn_fs_fs-1.a
 lib/libsvn_fs_fs-1.la
+lib/libsvn_fs_util-1.a
+lib/libsvn_fs_util-1.la
 lib/libsvn_ra-1.a
 lib/libsvn_ra-1.la
-lib/libsvn_ra_dav-1.a
-lib/libsvn_ra_dav-1.la
 lib/libsvn_ra_local-1.a
 lib/libsvn_ra_local-1.la
+lib/libsvn_ra_neon-1.a
+lib/libsvn_ra_neon-1.la
 lib/libsvn_ra_svn-1.a
 lib/libsvn_ra_svn-1.la
 lib/libsvn_repos-1.a
@@ -91,17 +95,19 @@ share/examples/subversion/config
 @sample ${SYSCONFDIR}/subversion/config
 share/examples/subversion/hook-scripts/
 share/examples/subversion/hook-scripts/README
-share/examples/subversion/hook-scripts/check-case-insensitive.pl
-share/examples/subversion/hook-scripts/check-case-insensitive.py
+share/examples/subversion/hook-scripts/case-insensitive.py
+share/examples/subversion/hook-scripts/check-mime-type.pl
 share/examples/subversion/hook-scripts/commit-access-control.cfg.example
 share/examples/subversion/hook-scripts/commit-access-control.pl
+share/examples/subversion/hook-scripts/commit-access-control.pl.in
+share/examples/subversion/hook-scripts/commit-block-joke.py
 share/examples/subversion/hook-scripts/commit-email.pl
+share/examples/subversion/hook-scripts/commit-email.pl.in
 share/examples/subversion/hook-scripts/commit-email.rb
 share/examples/subversion/hook-scripts/detect-merge-conflicts.sh
 share/examples/subversion/hook-scripts/enforcer/
 share/examples/subversion/hook-scripts/enforcer/enforcer
 share/examples/subversion/hook-scripts/enforcer/enforcer.conf
-share/examples/subversion/hook-scripts/log-police.py
 share/examples/subversion/hook-scripts/mailer/
 share/examples/subversion/hook-scripts/mailer/mailer.conf.example
 share/examples/subversion/hook-scripts/mailer/mailer.py
@@ -110,8 +116,15 @@ share/examples/subversion/hook-scripts/mailer/tests/mailer-init.sh
 share/examples/subversion/hook-scripts/mailer/tests/mailer-t1.output
 share/examples/subversion/hook-scripts/mailer/tests/mailer-t1.sh
 share/examples/subversion/hook-scripts/mailer/tests/mailer-tweak.py
+share/examples/subversion/hook-scripts/mailer/tests/mailer.conf
+share/examples/subversion/hook-scripts/pre-commit-check.py
+share/examples/subversion/hook-scripts/pre-lock-require-needs-lock.py
+share/examples/subversion/hook-scripts/remove-zombie-locks.py
+share/examples/subversion/hook-scripts/svn2feed.py
 share/examples/subversion/hook-scripts/svnperms.conf.example
 share/examples/subversion/hook-scripts/svnperms.py
+share/examples/subversion/hook-scripts/syntax-check.sh
+share/examples/subversion/hook-scripts/verify-po.py
 share/locale/de/LC_MESSAGES/subversion.mo
 share/locale/es/LC_MESSAGES/subversion.mo
 share/locale/fr/LC_MESSAGES/subversion.mo
