@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_audio_SDL_sysaudio_h,v 1.4 2008/11/02 14:53:51 jakemsr Exp $
+--- src/audio/SDL_sysaudio.h.orig	Sun Dec 30 20:47:59 2007
++++ src/audio/SDL_sysaudio.h	Sun Sep 21 10:34:09 2008
+@@ -103,6 +103,9 @@ typedef struct AudioBootStrap {
+ #if SDL_AUDIO_DRIVER_BSD
+ extern AudioBootStrap BSD_AUDIO_bootstrap;
+ #endif
++#if SDL_AUDIO_DRIVER_LIBSNDIO
++extern AudioBootStrap LIBSNDIO_bootstrap;
++#endif
+ #if SDL_AUDIO_DRIVER_PULSE
+ extern AudioBootStrap PULSE_bootstrap;
+ #endif

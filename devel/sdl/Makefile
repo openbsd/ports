@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.66 2008/09/26 03:14:42 brad Exp $
+# $OpenBSD: Makefile,v 1.67 2008/11/02 14:53:51 jakemsr Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.13
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p5
+PKGNAME=	${DISTNAME:L}p6
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Jacob Meuser <jakemsr@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		m usbhid
+WANTLIB=		m sndio usbhid
 
 MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
 		${HOMEPAGE}release/
@@ -39,7 +39,8 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
 SHARED_LIBS=	SDL	8.0
 CONFIGURE_ENV+=	X11BASE="${X11BASE}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		WITH_LIBSNDIO="Yes"
 
 # in case devel/usb is installed, don't pick it up.
 CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
@@ -104,5 +105,9 @@ CONFIGURE_ARGS+=--disable-altivec
 .endif
 
 NO_REGRESS=	Yes
+
+pre-configure:
+	mkdir -p ${WRKSRC}/src/audio/libsndio
+	cp ${FILESDIR}/SDL_libsndioaudio.{c,h} ${WRKSRC}/src/audio/libsndio
 
 .include <bsd.port.mk>

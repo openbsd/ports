@@ -1,7 +1,28 @@
-$OpenBSD: patch-configure,v 1.17 2008/03/19 13:33:29 jakemsr Exp $
+$OpenBSD: patch-configure,v 1.18 2008/11/02 14:53:51 jakemsr Exp $
 --- configure.orig	Sun Dec 30 21:09:39 2007
-+++ configure	Mon Feb 18 00:21:17 2008
-@@ -25578,7 +25578,7 @@ fi
++++ configure	Mon Sep 22 20:13:46 2008
+@@ -25411,6 +25411,20 @@ _ACEOF
+     fi
+ }
+ 
++
++CheckLibsndio()
++{
++	if [ x"$WITH_LIBSNDIO" = x"Yes" ]; then
++
++                cat >>confdefs.h <<\_ACEOF
++#define SDL_AUDIO_DRIVER_LIBSNDIO 1
++_ACEOF
++                SOURCES="$SOURCES $srcdir/src/audio/libsndio/*.c"
++		EXTRA_LDFLAGS="$EXTRA_LDFLAGS -lsndio"
++	fi
++}
++
++
+ CheckPulseAudio()
+ {
+     # Check whether --enable-pulseaudio was given.
+@@ -25578,7 +25592,7 @@ fi
              : # arts isn't installed
          else
              ARTS_CFLAGS=`$ARTSCONFIG --cflags`
@@ -10,7 +31,7 @@ $OpenBSD: patch-configure,v 1.17 2008/03/19 13:33:29 jakemsr Exp $
              ARTS_PREFIX=`$ARTSCONFIG --arts-prefix`
              { echo "$as_me:$LINENO: checking for aRts development environment" >&5
  echo $ECHO_N "checking for aRts development environment... $ECHO_C" >&6; }
-@@ -26333,9 +26333,6 @@ echo "${ECHO_T}$CompileNASM_ret" >&6; }
+@@ -26333,9 +26347,6 @@ echo "${ECHO_T}$CompileNASM_ret" >&6; }
                win32)
                    NASMFLAGS="-f win32"
                    ;;
@@ -20,7 +41,15 @@ $OpenBSD: patch-configure,v 1.17 2008/03/19 13:33:29 jakemsr Exp $
                macosx)
                    NASMFLAGS="-f macho"
                    ;;
-@@ -33612,10 +33609,10 @@ _ACEOF
+@@ -33577,6 +33588,7 @@ _ACEOF
+         CheckALSA
+         CheckARTSC
+         CheckESD
++        CheckLibsndio
+         CheckPulseAudio
+         CheckNAS
+         CheckX11
+@@ -33612,10 +33624,10 @@ _ACEOF
              ;;
              netbsd|openbsd)
                  cat >>confdefs.h <<\_ACEOF
