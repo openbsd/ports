@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/11/03 09:02:37 kevlo Exp $
 
 COMMENT=	simple interface to Locale::Maketext::Lexicon
+COMES_WITH=	4.5
 
 MODULES=	cpan
 DISTNAME=	Locale-Maketext-Simple-0.18
