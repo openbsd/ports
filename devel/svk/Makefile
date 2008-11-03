@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2008/09/29 18:57:29 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2008/11/03 14:05:43 sthen Exp $
 
 COMMENT=	decentralized version control system
 
 V=		1.08
 DISTNAME=	SVK-${V}
-PKGNAME=	svk-${V}p0
+PKGNAME=	svk-${V}p1
 CATEGORIES=	devel perl5
 
 HOMEPAGE=	http://svk.elixus.org/
@@ -25,7 +25,6 @@ RUN_DEPENDS=	:p5-Algorithm-Annotate->=0.10:devel/p5-Algorithm-Annotate \
 		:p5-File-Type->=0.22:devel/p5-File-Type \
 		:p5-FreezeThaw->=0.43:devel/p5-FreezeThaw \
 		:p5-Locale-Maketext-Lexicon->=0.45:devel/p5-Locale-Maketext-Lexicon \
-		:p5-Locale-Maketext-Simple->=0.12:devel/p5-Locale-Maketext-Simple \
 		:p5-PerlIO-eol->=0.13:devel/p5-PerlIO-eol \
 		:p5-IO-Digest->=0.10:devel/p5-IO-Digest \
 		:p5-IO-Pager->=0.05:devel/p5-IO-Pager \

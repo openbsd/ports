@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/11/03 14:05:43 sthen Exp $
 
 COMMENT=	subversion repository web frontend
 
 MODULES=	cpan
 DISTNAME=	SVN-Web-0.48
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel perl5
 
 # Artistic
@@ -18,7 +19,6 @@ RUN_DEPENDS=	::devel/subversion,-perl \
 		::devel/p5-Cache-Cache \
 		::devel/p5-Exception-Class \
 		::devel/p5-Locale-Maketext-Lexicon \
-		::devel/p5-Locale-Maketext-Simple \
 		::devel/p5-Test-WWW-Mechanize \
 		::devel/p5-Time-TimeDate \
 		::devel/p5-YAML \
