@@ -1,9 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 19:26:29 espie Exp $
-lib/gtk/
-lib/gtk/themes/
-lib/gtk/themes/engines/
-lib/gtk/themes/engines/libmetal.so
-lib/gtk/themes/engines/libnotif.so
-lib/gtk/themes/engines/libpixmap.so
-lib/gtk/themes/engines/libraleigh.so
-lib/gtk/themes/engines/libredmond95.so
