@@ -1,0 +1,32 @@
+$OpenBSD: patch-ext_Makefile_am,v 1.1 2008/11/03 23:24:09 jakemsr Exp $
+--- ext/Makefile.am.orig	Fri Sep 26 02:05:28 2008
++++ ext/Makefile.am	Fri Sep 26 02:07:07 2008
+@@ -82,6 +82,12 @@ else
+ LIBPNG_DIR =
+ endif
+ 
++if USE_LIBSNDIO
++LIBSNDIO_DIR = libsndio
++else
++LIBSNDIO_DIR =
++endif
++
+ # if USE_MIKMOD
+ # MIKMOD_DIR = mikmod
+ # else
+@@ -140,6 +146,7 @@ SUBDIRS = \
+ 	$(LIBDV_DIR) \
+ 	$(LIBMNG_DIR) \
+ 	$(LIBPNG_DIR) \
++	$(LIBSNDIO_DIR) \
+ 	$(MIKMOD_DIR) \
+ 	$(SHOUT2_DIR) \
+ 	$(SOUP_DIR) \
+@@ -162,6 +169,7 @@ DIST_SUBDIRS = \
+ 	ladspa \
+ 	libcaca \
+ 	libpng \
++	libsndio \
+ 	raw1394 \
+ 	shout2 \
+ 	soup \

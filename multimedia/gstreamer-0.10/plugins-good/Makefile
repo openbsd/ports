@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2008/09/24 23:01:32 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.25 2008/11/03 23:24:08 jakemsr Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -18,7 +18,7 @@ COMMENT-soup =		multimedia framework - libsoup plugin
 
 V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
-PKGNAME-main =		gstreamer-plugins-good-$Vp4
+PKGNAME-main =		gstreamer-plugins-good-$Vp5
 PKGNAME-aalib =		gstreamer-aalib-$Vp0
 PKGNAME-cairo =		gstreamer-cairo-$Vp1
 PKGNAME-gconf =		gstreamer-confelements-$Vp0
@@ -50,7 +50,7 @@ WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10:$P/core
 
 WANTLIB-main =		${WANTLIB} \
-			ICE SM X11 Xdamage Xext Xfixes ossaudio \
+			ICE SM X11 Xdamage Xext Xfixes ossaudio sndio \
 			gstcontroller-0.10 gstbase-0.10 Xau Xdmcp
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			oil-0.3::devel/liboil \
@@ -148,6 +148,10 @@ WANTLIB-soup =		${WANTLIB} \
 LIB_DEPENDS-soup =	${LIB_DEPENDS} \
 			soup-2.4::devel/libsoup
 
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} 
+AUTOMAKE_VERSION =	1.9
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-cdio \
 			--disable-dv1394 \
@@ -156,9 +160,16 @@ CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-schemas-install \
 			--enable-experimental \
 			--enable-gst_v4l2 \
-			--with-default-audiosink=osssink \
-			--with-default-audiosrc=osssrc \
+			--with-default-audiosink=libsndiosink \
+			--with-default-audiosrc=libsndiosrc \
 			--with-default-videosink=xvimagesink \
 			--with-default-videosrc=v4l2src
+
+post-extract:
+	cp -R ${FILESDIR} ${WRKSRC}/ext/libsndio
+
+pre-configure:
+	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} NOCONFIGURE="true" ./autogen.sh
 
 .include <bsd.port.mk>

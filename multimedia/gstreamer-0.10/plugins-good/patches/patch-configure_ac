@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.5 2008/05/16 14:24:01 ajacoutot Exp $
---- configure.ac.orig	Wed Apr 23 03:55:55 2008
-+++ configure.ac	Wed May 14 12:28:02 2008
+$OpenBSD: patch-configure_ac,v 1.6 2008/11/03 23:24:09 jakemsr Exp $
+--- configure.ac.orig	Tue Apr 22 18:55:55 2008
++++ configure.ac	Mon Oct 27 01:45:57 2008
 @@ -488,6 +488,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
@@ -19,7 +19,29 @@ $OpenBSD: patch-configure_ac,v 1.5 2008/05/16 14:24:01 ajacoutot Exp $
  #else /* Linux */
  #include <linux/types.h>
  #define _LINUX_TIME_H
-@@ -699,7 +703,7 @@ AG_GST_CHECK_FEATURE(FLAC, [FLAC lossless audio], flac
+@@ -676,6 +680,21 @@ AG_GST_CHECK_FEATURE(ESD, [ESounD sound daemon], esdsi
+   fi
+ ])
+ 
++dnl *** libsndio ***
++translit(dnm, m, l) AM_CONDITIONAL(USE_LIBSNDIO, true)
++AG_GST_CHECK_FEATURE(LIBSNDIO, [libsndio audio], libsndioaudio, [
++  AC_CHECK_HEADER(sndio.h, HAVE_LIBSNDIO="yes", HAVE_LIBSNDIO="no")
++  if test $HAVE_LIBSNDIO = yes
++  then
++    AC_CHECK_LIB(sndio, sio_open, HAVE_LIBSNDIO="yes", HAVE_LIBSNDIO="no", [])
++    if test $HAVE_LIBSNDIO = yes
++    then
++      LIBSNDIO_LIBS=-lsndio
++      AC_SUBST(LIBSNDIO_LIBS)
++    fi
++  fi
++])
++
+ dnl *** FLAC ***
+ translit(dnm, m, l) AM_CONDITIONAL(USE_FLAC, true)
+ AC_TRY_COMPILE([#include <FLAC/export.h>], [
+@@ -699,7 +718,7 @@ AG_GST_CHECK_FEATURE(FLAC, [FLAC lossless audio], flac
  ])
  else
  AG_GST_CHECK_FEATURE(FLAC, [FLAC lossless audio], flac, [
@@ -28,7 +50,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2008/05/16 14:24:01 ajacoutot Exp $
    dnl API change in FLAC 1.1.3, so require that...
    if test x$HAVE_FLAC = xyes; then
      AC_CHECK_DECL(FLAC__STREAM_ENCODER_TELL_STATUS_ERROR,
-@@ -773,7 +777,7 @@ AG_GST_CHECK_FEATURE(LIBDV, [libdv DV demuxer/decoder]
+@@ -773,7 +792,7 @@ AG_GST_CHECK_FEATURE(LIBDV, [libdv DV demuxer/decoder]
  dnl *** libpng ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_LIBPNG, true)
  AG_GST_CHECK_FEATURE(LIBPNG, [Portable Network Graphics library], png, [
@@ -37,3 +59,19 @@ $OpenBSD: patch-configure_ac,v 1.5 2008/05/16 14:24:01 ajacoutot Exp $
  ])
  
  dnl *** dv1394 ***
+@@ -947,6 +966,7 @@ AM_CONDITIONAL(USE_ANNODEX, false)
+ AM_CONDITIONAL(USE_CAIRO, false)
+ AM_CONDITIONAL(USE_CDIO, false)
+ AM_CONDITIONAL(USE_ESD, false)
++AM_CONDITIONAL(USE_LIBSNDIO, false)
+ AM_CONDITIONAL(USE_FLAC, false)
+ AM_CONDITIONAL(USE_GCONF, false)
+ AM_CONDITIONAL(USE_GDK_PIXBUF, false)
+@@ -1066,6 +1086,7 @@ ext/cairo/Makefile
+ ext/cdio/Makefile
+ ext/dv/Makefile
+ ext/esd/Makefile
++ext/libsndio/Makefile
+ ext/flac/Makefile
+ ext/gconf/Makefile
+ ext/gdk_pixbuf/Makefile
