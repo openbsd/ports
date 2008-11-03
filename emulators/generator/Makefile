@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2008/09/13 07:24:46 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2008/11/03 20:50:00 brad Exp $
 
 COMMENT=	Sega Genesis emulator
 
 DISTNAME=	generator-0.35-cbiere-r4
-PKGNAME=	generator-0.35r4
+PKGNAME=	generator-0.35r4p0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	emulators
 MASTER_SITES=	${HOMEPAGE}
 
-HOMEPAGE=	http://www.ghostwhitecrab.de/generator/
+HOMEPAGE=	http://www.squish.net/generator/
 
 # GPLv2 + custom licenses for CPU emulators
 PERMIT_DISTFILES_CDROM=	can't sell
