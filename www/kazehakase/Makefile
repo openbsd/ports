@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/30 22:38:10 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2008/11/03 16:19:55 landry Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -47,16 +47,16 @@ BUILD_DEPENDS-gecko =	:xulrunner-devel->=1.8:devel/xulrunner,-devel
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			::devel/desktop-file-utils
 RUN_DEPENDS-webkit =	${RUN_DEPENDS} \
-			::${BUILD_PKGPATH},-common
+			::${BUILD_PKGPATH},-main
 RUN_DEPENDS-gecko =	${RUN_DEPENDS} \
-			::${BUILD_PKGPATH},-common
+			::${BUILD_PKGPATH},-main
 
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			gnutls::security/gnutls
 
-LIB_DEPENDS-gecko =	${LIB_DEPENDS-common} \
+LIB_DEPENDS-gecko =	${LIB_DEPENDS-main} \
 			lib/kazehakase/kazehakase::www/kazehakase,-main \
 			xulrunner/xpcom:xulrunner->=1.8:devel/xulrunner
 
