@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.51 2008/11/01 13:06:16 espie Exp $
+# $OpenBSD: libtool,v 1.52 2008/11/03 21:11:58 espie Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -17,6 +17,7 @@
 
 use strict;
 use warnings;
+use feature qw(say switch state);
 use Cwd qw(getcwd abs_path);
 use File::Basename;
 use File::Glob ':glob';
@@ -44,8 +45,25 @@ use subs qw(
 	process_deplibs
 	resolve_la
 	reverse_zap_duplicates
+	reverse_zap_duplicates_ref
 	write_prog_wrapper
 	);
+
+package Trace;
+
+sub print(&)
+{
+	my $val = shift;
+	if (defined $ENV{'TRACE_LIBTOOL'}) {
+		state $trace_file;
+		if (!defined $trace_file) {
+			open $trace_file, '>>', $ENV{'TRACE_LIBTOOL'};
+		}
+		if (defined $trace_file) {
+			print $trace_file (&$val);
+		}
+	}
+}
 
 {
 package Exec;
@@ -82,10 +100,15 @@ sub chdir
 	bless {dir => $dir}, $class;
 }
 
+
 sub command_run
 {
 	my ($self, @l) = @_;
 
+	if ($self->{dir}) {
+		Trace::print {"cd $self->{dir} && "};
+	}
+	Trace::print { join(' ', @l), "\n" };
 	my $pid = fork();
 	if ($pid == -1) {
 		die "Couldn't fork while running @l\n";
@@ -112,7 +135,7 @@ sub shell
 		$self = $self->new;
 	}
 	for my $c (@cmds) {
-		print "$c\n" if $verbose || $dry;
+		say $c if $verbose || $dry;
 		if (!$dry) {
 			$self->command_run($c);
 	        }
@@ -127,7 +150,7 @@ sub command
 	if (!ref($self)) {
 		$self = $self->new;
 	}
-	print "@l\n" if $verbose || $dry;
+	say @l if $verbose || $dry;
 	if (!$dry) {
 		$self->command_run(@l);
 	}
@@ -136,37 +159,61 @@ sub command
 }
 
 package LaLoFile;
-use File::Basename;
 my %file_cache;		# which files have been parsed
+my $cache_by_fullname = {};
+my $cache_by_inode = {};
+
+# allows special treatment for some keywords
+sub set
+{
+	my ($self, $k, $v) = @_;
+
+	$self->{$k} = $v;
+}
+
+sub stringize
+{
+	my ($self, $k) = @_;
+	return $self->{$k} || '';
+}
+
+sub read
+{
+	my ($class, $filename) = @_;
+	my $info = $class->new;
+	open(my $fh, '<', $filename) or die "cannot read $filename: $!\n";
+	my $_;
+	while (<$fh>) {
+		chomp;
+		next if /^\#/;
+		next if /^\s*$/;
+		if (m/^(\S+)\=\'(.*)\'$/) {
+			$info->set($1, $2);
+		} elsif (m/^(\S+)\=(\S+)$/) {
+			$info->set($1, $2);
+		}
+	}
+	return $info;
+}
 
 sub parse
 {
 	my ($class, $filename) = @_;
 
-	my $key = basename($filename);
-
 	main::debug 1, "parsing $filename";
-	if (defined $file_cache{$key}) {
-		main::debug 1, " (cached)\n";
-		return $file_cache{$key};
-	} else {
-		main::debug 1, "\n";
-		open(my $fh, '<', $filename) or die "cannot read $filename: $!\n";
-		my $info = $class->new;
-		while (<$fh>) {
-			chomp;
-			next if /^\#/;
-			next if /^\s*$/;
-			if (m/^(\S+)\=\'(.*)\'$/) {
-				$info->{$1} = $2;
-			} elsif (m/^(\S+)\=(\S+)$/) {
-				$info->{$1} = $2;
-			}
-		}
-		$file_cache{$key} = $info;
-		return $info;
-	}
 
+	if (defined $cache_by_fullname->{$filename}) {
+		main::debug 1, " (cached)\n";
+		return $cache_by_fullname->{$filename};
+	}
+	my $key = join("/", (stat $filename)[0,1]);
+	if (defined $cache_by_inode->{$key}) {
+		main::debug 1, " (cached)\n";
+		return $cache_by_inode->{$key};
+	}
+	main::debug 1, "\n";
+	return $cache_by_inode->{$key} = $cache_by_fullname->{$filename} =
+	    $class->read($filename);
 }
 
 sub new
@@ -179,26 +226,43 @@ package LaFile;
 our @ISA=(qw(LaLoFile));
 use File::Basename;
 
+# allows special treatment for some keywords
+sub set
+{
+	my ($self, $k, $v) = @_;
+
+	$self->SUPER::set($k, $v);
+	if ($k eq 'dependency_libs') {
+		my @l = split /\s+/, $v;
+		$self->{deplib_list} = \@l;
+	}
+}
+
+sub deplib_list
+{
+	my $self = shift;
+	return $self->{deplib_list}
+}
+
 # XXX not sure how much of this cruft we need
 sub write
 {
 	my ($lainfo, $filename, $name) = @_;
 
-	my $libname = $lainfo->{'libname'} || '';
-	my $sharedlibname = $lainfo->{'dlname'} || '';
-	my $staticlibname = $lainfo->{'old_library'} || '';
-	my $librarynames = $lainfo->{'library_names'} || '';
-	my $deplibs = $lainfo->{'dependency_libs'};
-	my ($current, $revision, $age) = ('', '', '');
-	$current = $lainfo->{'current'} if (defined $lainfo->{'current'});
-	$revision = $lainfo->{'revision'} if (defined $lainfo->{'revision'});
-	$age = $lainfo->{'age'} if (defined $lainfo->{'age'});
-	my $installed = $lainfo->{'installed'};
-	my $shouldnotlink = $lainfo->{'shouldnotlink'};
-	my $libdir = $lainfo->{'libdir'} || '';
+	my $libname = $lainfo->stringize('libname');
+	my $sharedlibname = $lainfo->stringize('dlname');
+	my $staticlibname = $lainfo->stringize('old_library');
+	my $librarynames = $lainfo->stringize('library_names');
+	my $deplibs = $lainfo->stringize('dependency_libs');
+	my $current = $lainfo->stringize('current');
+	my $revision = $lainfo->stringize('revision');
+	my $age = $lainfo->stringize('age');
+	my $installed = $lainfo->stringize('installed');
+	my $shouldnotlink = $lainfo->stringize('shouldnotlink');
+	my $libdir = $lainfo->stringize('libdir');
 
 	open(my $la, '>', $filename) or die "cannot write $filename: $!\n";
-	print "creating $filename\n" if $main::verbose || $main::D;
+	say "creating $filename" if $main::verbose || $main::D;
 	print $la <<EOF
 # $name - libtool library file
 # Generated by libtool $main::version
@@ -248,13 +312,13 @@ use File::Basename;
 sub write
 {
 	my ($self, $filename) = @_;
-	my $picobj = $self->{picobj} || '';
-	my $nonpicobj = $self->{nonpicobj} || '';
+	my $picobj = $self->stringize('picobj');
+	my $nonpicobj = $self->stringize('nonpicobj');
 
 	my $name = basename $filename;
 
 	open(my $lo, '>', $filename) or die "cannot write $filename: $!\n";
-	print "creating $filename\n" if $main::verbose || $main::D;
+	say "creating $filename" if $main::verbose || $main::D;
 	print $lo <<EOF
 # $name - a libtool object file
 # Generated by libtool $main::version
@@ -274,6 +338,7 @@ use constant {
 	PROGRAM	=> 2,
 };
 
+my $calls = 0;
 our $version = '1.5.26'; # pretend to be this version of libtool
 my @no_shared_archs = qw(m88k vax sh);
 # XXX my $machine_arch = `machine -a`;
@@ -306,7 +371,6 @@ my %dirs;		# paths to find libraries
 my $res_level = 0;	# resolve level
 my $parse_level = 0;	# parse recursion level
 my $performed = 0;	# number of commands executed via system()
-my $seen_pthread = 0;
 
 # just to be clear:
 # when building a library:
@@ -346,7 +410,7 @@ $gp->getoptions('config' => \&config,
 		'quiet' => sub { $verbose = 0; },
 		'silent' => sub { $verbose = 0; },
 		'tag=s{1}' => \@tags,
-		'version' => sub { print "$version\n" ; exit(0); },
+		'version' => sub { say $version ; exit(0); },
 	);
 
 if ($verbose || $D) {
@@ -704,7 +768,7 @@ if ($mode eq 'compile') {
 		if ($static) {
 			$lainfo->{'old_library'} = $staticlib;
 			Exec->shell(linkcmds($ofile, $staticlib, $odir, LIBRARY, 0, ($allpicobj) ? \@sobjs : \@objs));
-			debug 1, print "staticlib: $staticlib\n";
+			debug 1, "staticlib: $staticlib\n";
 		}
 		$lainfo->{'installed'} = 'no';
 		$lainfo->{'shouldnotlink'} = $opts{'module'} ? 'yes' : 'no';
@@ -716,7 +780,7 @@ if ($mode eq 'compile') {
 		my @finaldeplibs = reverse_zap_duplicates(@deplibs);
 		debug 1, "finaldeplibs = @finaldeplibs\n";
 		$deplibstring = join ' ', @finaldeplibs;
-		$lainfo->{'dependency_libs'} = $deplibstring;
+		$lainfo->set('dependency_libs', $deplibstring);
 		if (@RPopts) {
 			if (@RPopts > 1) {
 				debug 1, "more than 1 -rpath option given, taking the first: ", $RPopts[0], "\n";
@@ -728,7 +792,7 @@ if ($mode eq 'compile') {
 		symlink("../$ofile", "$odir/$ltdir/$ofile");
 		if ($shared) {
 			my $lai = "$odir/$ltdir/$ofile".'i';
-			$lainfo->{'dependency_libs'} = process_deplibs($deplibstring);
+			$lainfo->set('dependency_libs', process_deplibs($deplibstring));
 			$lainfo->{'installed'} = 'yes';
 			# write .lai file (.la file that will be installed)
 			$lainfo->write($lai, $ofile);
@@ -854,25 +918,61 @@ sub is_prog_wrapper
 	return eval(grep { m/wrapper\sfor/ } <$pw>);
 }
 
+sub internal_resolve_la
+{
+	my ($level, $result, $rdeplibs, $args) = @_;
+	debug 1, "resolve level: $level\n";
+	my $seen_pthread = 0;
+	foreach my $a (@$args) {
+		if ($a eq '-pthread') {
+			$seen_pthread++;
+			next;
+		}
+		push(@$result, $a);
+		next if $a !~ m/\.la$/;
+		my $lainfo = LaFile->parse($a);
+		if (!exists $lainfo->{'cached_deplibs'}) {
+		    $lainfo->{'cached_deplibs'} = [];
+		    $lainfo->{'cached_result'} = [];
+		    $lainfo->{'cached_pthread'} =
+			internal_resolve_la($level+1, 
+			    $lainfo->{'cached_result'}, 
+			    $lainfo->{'cached_deplibs'}, 
+			    $lainfo->deplib_list);
+		    push(@{$lainfo->{'cached_deplibs'}}, 
+			@{$lainfo->deplib_list});
+		    if (@{$lainfo->{'cached_deplibs'}} > 50) {
+		    	$lainfo->{'cached_deplibs'} = reverse_zap_duplicates_ref($lainfo->{'cached_deplibs'});
+		    }
+		    if (@{$lainfo->{'cached_result'}} > 50) {
+		    	$lainfo->{'cached_result'} = reverse_zap_duplicates_ref($lainfo->{'cached_result'});
+		    }
+		}
+		$seen_pthread += $lainfo->{'cached_pthread'};
+		push(@$result, @{$lainfo->{'cached_result'}});
+		push(@$rdeplibs, @{$lainfo->{'cached_deplibs'}});
+	}
+	$calls++;
+	return $seen_pthread;
+}
+
+END
+{
+	Trace::print { "Calls to resolve_la: $calls\n" } if $calls;
+}
+
 # resolve .la files until a level with empty dependency_libs is reached.
 sub resolve_la
 {
-	my $argstring = shift;
+	my @args = split /\s+/, shift;
+	my $result = [];
 
-	my @args = split /\s+/, $argstring;
-	debug 1, "resolve level: $res_level\n";
 
-	foreach my $a (@args) {
-		next if ($a !~ m/(.*)\.la$/);
-		my $lainfo = LaFile->parse($a);
-		if (exists $lainfo->{'dependency_libs'}) {
-			$res_level++;
-			$a = $a . ' ' . resolve_la($lainfo->{'dependency_libs'});
-			$res_level--;
-			push @deplibs, $lainfo->{'dependency_libs'};
-		}
+	if (internal_resolve_la(0, $result, \@deplibs, \@args)) {
+		unshift(@$result, '-pthread');
+		unshift(@deplibs, '-pthread');
 	}
-	return join ' ', @args;
+	return join ' ', @$result;
 }
 
 # parse link flags and arguments
@@ -891,87 +991,87 @@ sub resolve_la
 # -Lfoo, -lfoo, foo.a
 # no recursion in pass 2
 # fill orderedlibs array, which is the sequence after resolving all .la
-sub parse_linkargs
+
+sub internal_parse_linkargs
 {
-	my $argstring = shift;
-	my $la = shift;
+	state $seen_pthread = 0;
+	my ($result, $deplibs, $Rresolved, $libsearchdirs, $orderedlibs, 
+	    $dirs, $libs, $libstofind, $args, 
+	    $la, $level) = @_;
+	debug 1, "parse_linkargs pass: ", ($la == 1) ? 1 : 2, ", level: $level\n";
+	debug 1, "  args: ", join(' ', @$args), "\n";
 
-	my @args = split /\s+/, $argstring;
-	debug 1, "parse_linkargs pass: ", ($la == 1) ? 1 : 2, ", level: $parse_level\n";
-	debug 1, "  argstring: $argstring\n";
-
-	foreach my $a (@args) {
+	foreach my $a (@$args) {
 		debug 1, "  processing $a\n";
 		if ($a eq '-lc') {	
 			# don't link explicitly with libc (just remove -lc)
-			$a = '';   
 		} elsif ($a eq '-pthread' && !$seen_pthread) {	
 			# XXX special treatment since it's not a -l flag
-			push @deplibs, $a;
+			push @$deplibs, $a;
 			$seen_pthread = 1;
+			push(@$result, $a);
 		} elsif ($a && $a =~ m/^-L(.*)/) {
-			if (!exists $dirs{$1}) {
-				$dirs{$1} = 1;
-				push @deplibs, $a;
+			if (!exists $dirs->{$1}) {
+				$dirs->{$1} = 1;
+				push @$deplibs, $a;
 			}
-			$a = '';
 		} elsif ($a && $a =~ m/^-R(.*)/) {
 			# -R options originating from .la resolution
 			# those from @ARGV are in @Ropts
-			push @Rresolved, $1;
-			$a = '';
+			push @$Rresolved, $1;
 		} elsif ($a && $a =~ m/^-l(.*)/) {
-			my $lstring = '';
+			my @largs = ();
 			my $key = $1;
-			if (!exists $libstofind{$key}) {
-				$libstofind{$key} = 1;
+			if (!exists $libstofind->{$key}) {
+				$libstofind->{$key} = 1;
 				if ($la) {
 					my $lafile = find_la($key);
 					if ($lafile) {
-						push @deplibs, $lafile;
-						$a = $lafile;
+						push @$deplibs, $lafile;
+						push(@$result, $lafile);
 						next;
 					} else {
-						my $libpath = find_lib($key, @libsearchdirs);
+						my $libpath = find_lib($key, @$libsearchdirs);
 						if (!$libpath) {
 							die "library $key could not be found.\n";
 						}
 						# avoid searching again later
-						$libs{$key} = $libpath;
+						$libs->{$key} = $libpath;
 						my @deps = inspect_lib($libpath);
-						# push @deplibs, @deps;
+						# push @$rdeplibs, @deps;
 						foreach my $d (@deps) {
 							my $k = basename $d;
 							$k =~ s/^(\S+)\.so.*$/$1/;
 							$k =~ s/^lib//;
-							$lstring .= "-l$k ";
+							push(@largs, "-l$k");
 						}
-						push @deplibs, $a;
+						push @$deplibs, $a;
 					}
 				}
 			}
 			if ($la) {
-				$parse_level++;
-				$a .= ' ';
-				$a .= parse_linkargs($lstring, $la) if ($lstring);
-				$parse_level--;
+				push(@$result, $a);
+				internal_parse_linkargs($result, $deplibs, 
+				    $Rresolved, $libsearchdirs, $orderedlibs, 
+				    $dirs, $libs, $libstofind, \@largs, $la, 
+				    $level+1) if @largs;
 			} else {
-				push @orderedlibs, $key;
-				$a = '';
+				push @$orderedlibs, $key;
 			}
 		} elsif ($a && $a =~ m/(\S+\/)*(\S+)\.a$/) {
 			my $key = $2;
 			$key =~ s/^lib//;
-			$libs{$key} = $a;
-			if (!$la) {
-				push @orderedlibs, $key;
-				$a = '';
+			$libs->{$key} = $a;
+			if ($la) {
+				push(@$result, $a);
+			} else {
+				push @$orderedlibs, $key;
 			}
 		} elsif ($a && $a =~ m/(\S+\/)*(\S+)\.la$/) {
 			my $key = $2;
 			$key =~ s/^lib//;
 			my $d = abs_path(dirname($a));
-			$dirs{$d} = 1;
+			$dirs->{$d} = 1;
 			my $fulla = abs_path($a);
 			my $lainfo = LaFile->parse($fulla);
 			my $dlname = $lainfo->{'dlname'};
@@ -981,12 +1081,14 @@ sub parse_linkargs
 				$d .= "/$ltdir";
 			}
 			if ($libdir ne '' && $la) {
-				push @deplibs, $fulla;
+				push @$deplibs, $fulla;
 			}
 			# the following should happen only in pass 2
-			next if ($la);
-			push @orderedlibs, $key;
-			$a = '';
+			if ($la) {
+				push(@$result, $a);
+				next;
+			}
+			push @$orderedlibs, $key;
 			# get the name we need (this may include a -release)
 			if (!$dlname && !$oldlib) {
 				die "neither static nor shared library found in $a\n";
@@ -995,16 +1097,29 @@ sub parse_linkargs
 			# so probably need to use a different key
 			if ($dlname eq '') {
 				# static
-				$libs{$key} = "$d/$oldlib";
+				$libs->{$key} = "$d/$oldlib";
 			} else {
 				# shared
-				$libs{$key} = "$d/$dlname";
+				$libs->{$key} = "$d/$dlname";
 			}
-			debug 1, "\$libs{$key} = ", $libs{$key}, "\n";
+			debug 1, "\$libs{$key} = ", $libs->{$key}, "\n";
+		} else {
+			push(@$result, $a);
 		}
 	}
 	debug 1, "end parse_linkargs\n";
-	return join ' ', @args;
+}
+
+sub parse_linkargs
+{
+	my ($argstring, $la) = @_;
+
+	my @args = split /\s+/, $argstring;
+	my $result = [];
+	internal_parse_linkargs($result, \@deplibs, \@Rresolved, \@libsearchdirs, \@orderedlibs, \%dirs, \%libs,
+	    \%libstofind, \@args, $la, 0);
+
+	return join ' ', @$result;
 }
 
 # find .la file associated with a -llib flag
@@ -1065,7 +1180,7 @@ sub find_lib
 			}
 		}
 	}
-	print "$libtofind not found!\n" if (!$libfile);
+	say "$libtofind not found!" if !$libfile;
 	return $libfile;
 }
 
@@ -1236,7 +1351,7 @@ sub linkcmds
 			if ($lib =~ m/^lib(.*)\.so(\.\d+){2}/) {
 				$lib = $1;
 			} else {
-				print "warning: cannot derive -l flag from library filename, assuming hash key\n";
+				say "warning: cannot derive -l flag from library filename, assuming hash key";
 				$lib = $k;
 			}
 			push @libflags, "-l$lib";
@@ -1377,6 +1492,19 @@ sub reverse_zap_duplicates
 		$h->{$el} = 1;
 	}
 	return @r;
+}
+
+sub reverse_zap_duplicates_ref
+{
+	my $arglist = shift;
+	my $h = {};
+	my $r = [];
+	for my $el (reverse @$arglist) {
+		next if defined $h->{$el};
+		unshift @$r, $el;
+		$h->{$el} = 1;
+	}
+	return $r;
 }
 
 # try to guess libtool mode when it is not specified
