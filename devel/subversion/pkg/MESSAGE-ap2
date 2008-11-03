@@ -1,0 +1,10 @@
+To finish the install of ap2-subversion, you need
+to enable the modules by adding the following line
+to your ${SYSCONFDIR}/apache2/httpd2.conf file:
+
+  LoadModule dav_svn_module ${PREFIX}/lib/apache2/mod_dav_svn.so
+  LoadModule authz_svn_module ${PREFIX}/lib/apache2/mod_authz_svn.so
+
+If you already have Apache running on your machine,
+you should not use "apachectl2 restart" - instead,
+you should fully stop and then restart the server.

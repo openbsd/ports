@@ -1,0 +1,9 @@
+To completely deinstall the ap2-subversion package you
+need to perform these steps as root:
+
+       edit ${SYSCONFDIR}/apache2/httpd2.conf
+       remove the lines: LoadModule dav_svn_module
+                         LoadModule authz_svn_module
+
+Do not do this if you plan on re-installing the ap2-subversion
+package at some future time.
