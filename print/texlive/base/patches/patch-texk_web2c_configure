@@ -1,6 +1,6 @@
-$OpenBSD: patch-texk_web2c_configure,v 1.1 2008/10/21 20:57:57 steven Exp $
---- texk/web2c/configure.orig	Tue Jul  8 19:21:45 2008
-+++ texk/web2c/configure	Sun Aug 24 12:28:30 2008
+$OpenBSD: patch-texk_web2c_configure,v 1.2 2008/11/03 21:30:53 steven Exp $
+--- texk/web2c/configure.orig	Tue Jul  8 20:21:45 2008
++++ texk/web2c/configure	Wed Oct 29 14:47:58 2008
 @@ -6608,7 +6608,7 @@ else
  
    if test "$with_system_freetype2" = yes; then
@@ -10,3 +10,22 @@ $OpenBSD: patch-texk_web2c_configure,v 1.1 2008/10/21 20:57:57 steven Exp $
      fi
      if test "x$with_freetype2_include" != x; then
        EXTRA_FREETYPE2_INCLUDE="-I$with_freetype2_include -I$with_freetype2_include/freetype2"
+@@ -8144,6 +8144,9 @@ EOF
+     done
+   fi
+ 
++# disable this static linking hack for libstdc++
++cpp_link_hack=false
++
+   if $cpp_link_hack; then
+     CXXLDEXTRA=$flags
+     CXXHACKLINK='$(cxx_link_command)'
+@@ -8824,7 +8827,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ case "${host}" in
+ *-*-*bsd*)
+   if test "x$PTHREAD_LIBS" = "x"; then
+-    PTHREAD_LIBS="-lpthread"
++    PTHREAD_LIBS="-pthread"
+   fi ;;
+ esac
+ 
