@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2008/10/21 07:14:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2008/11/03 11:05:25 ajacoutot Exp $
 
 COMMENT=		fast and light graphical web browser
 
 DISTNAME=		dillo-2.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=     	www
 
 HOMEPAGE=		http://www.dillo.org/
@@ -28,6 +28,8 @@ EXTRACT_SUFX=	.tar.bz2
 BUILD_DEPENDS=	::x11/fltk2
 LIB_DEPENDS=    jpeg.>=62::graphics/jpeg \
                 png.>=2::graphics/png
+# XXX dillo should be patched to use ftp(1)
+RUN_DEPENDS=	::net/wget
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

@@ -1,0 +1,19 @@
+$OpenBSD: patch-dillorc,v 1.1 2008/11/03 11:05:25 ajacoutot Exp $
+--- dillorc.orig	Mon Nov  3 11:45:40 2008
++++ dillorc	Mon Nov  3 11:46:03 2008
+@@ -39,13 +39,13 @@
+ # vw_fontname="new century schoolbook"
+ # vw_fontname="helvetica"
+ # vw_fontname="times"
+-# vw_fontname="Bitstream vera Serif"
++vw_fontname="Bitstream vera Serif"
+ # vw_fontname="arial"
+ #vw_fontname="DejaVu Sans"
+ 
+ # Fontname for fixed width rendering (mainly text quoted with <pre>)
+ # fw_fontname=courier
+-# fw_fontname="Bitstream Vera Sans Mono"
++fw_fontname="Bitstream Vera Sans Mono"
+ # fw_fontname="Andale Mono"
+ #fw_fontname="DejaVu Sans Mono"
+ 
