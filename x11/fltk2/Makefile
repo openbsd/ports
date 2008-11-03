@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/19 07:34:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/03 11:02:25 ajacoutot Exp $
 
 COMMENT =	fast light toolkit
 
-V=		6403
+V=		6483
 DISTNAME =	fltk-2.0.x-r${V}
 PKGNAME =	fltk2-2.0r${V}
 CATEGORIES =	x11
@@ -41,7 +41,8 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 # at build time
 CONFIGURE_ENV += ac_cv_have_overlay=yes
 
-CONFIGURE_ARGS = --enable-gl \
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-gl \
 		--enable-threads \
 		--enable-jpeg \
 		--enable-zlib \
@@ -51,8 +52,10 @@ CONFIGURE_ARGS = --enable-gl \
 		--enable-xinerama \
 		--disable-cairo \
 		--disable-x11 \
-		--disable-xshm \
-		--disable-shared
+		--disable-xshm
+
+# shared libs are disabled until fltk2 stabilises
+CONFIGURE_ARGS=	--disable-shared
 
 # This regression test wants an X11 display
 REGRESS_IS_INTERACTIVE= Yes
