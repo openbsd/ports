@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/26 19:42:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/03 20:23:18 jasper Exp $
 
 COMMENT=		compact speech synthesizer
 
 DISTNAME=		espeak-1.37-source
-PKGNAME=		${DISTNAME:S/-source//}
+PKGNAME=		${DISTNAME:S/-source//}p0
 SHARED_LIBS=		espeak 0.0
 CATEGORIES=		audio devel
 
@@ -28,6 +28,12 @@ USE_LIBTOOL=		Yes
 NO_REGRESS=		Yes
 
 WRKSRC= 		${WRKDIST}/src
+
+MAKE_FLAGS+=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+
+.if ${MACHINE_ARCH} == "amd64"
+MAKE_FLAGS +=		EXTRA_FLAGS="-fPIC"
+.endif
 
 SUBST_VARS=		PREFIX LIBespeak_VERSION
 
