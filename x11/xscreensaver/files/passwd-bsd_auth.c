@@ -1,4 +1,4 @@
-/* $OpenBSD: passwd-bsd_auth.c,v 1.1 2008/10/27 19:49:39 ajacoutot Exp $
+/* $OpenBSD: passwd-bsd_auth.c,v 1.2 2008/11/03 23:18:42 ajacoutot Exp $
  * passwd-bsd_auth.c --- verifying typed passwords with bsd_auth(3)
  *
  * Copyright (c) 2008 Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -53,14 +53,11 @@ bsdauth_passwd_valid_p (const char *typed_passwd, int verbose_p)
   pw = getpwuid(getuid());
 
   if (pw != NULL) {
-    block_sigchld();
 
     if (auth_userokay(pw->pw_name, NULL, "auth-xscreensaver", typed_passwd))
       return 1;
     else
       return 0;
-
-    unblock_sigchld();
   } else {
     fprintf(stderr, "getpwuid: couldn't get user ID.\n");
     return 0;
