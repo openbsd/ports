@@ -1,6 +1,6 @@
-$OpenBSD: patch-VAX_vax_sysdev_c,v 1.5 2007/07/24 20:45:41 kili Exp $
---- VAX/vax_sysdev.c.orig	Tue Jun 19 14:29:20 2007
-+++ VAX/vax_sysdev.c	Sun Jul 22 19:37:59 2007
+$OpenBSD: patch-VAX_vax_sysdev_c,v 1.6 2008/11/04 22:13:30 sthen Exp $
+--- VAX/vax_sysdev.c.orig	Wed May 28 15:21:16 2008
++++ VAX/vax_sysdev.c	Tue Nov  4 22:06:49 2008
 @@ -53,6 +53,10 @@
  
  #include "vax_defs.h"
@@ -12,7 +12,7 @@ $OpenBSD: patch-VAX_vax_sysdev_c,v 1.5 2007/07/24 20:45:41 kili Exp $
  #define UNIT_V_NODELAY  (UNIT_V_UF + 0)                 /* ROM access equal to RAM access */
  #define UNIT_NODELAY    (1u << UNIT_V_NODELAY)
  
-@@ -1519,10 +1523,10 @@ conpc = 0;
+@@ -1518,10 +1522,10 @@ conpc = 0;
  conpsl = PSL_IS | PSL_IPL1F | CON_PWRUP;
  if (rom == NULL) return SCPE_IERR;
  if (*rom == 0) {                                        /* no boot? */

@@ -1,35 +1,35 @@
-$OpenBSD: patch-makefile,v 1.11 2007/07/24 20:45:41 kili Exp $
---- makefile.orig	Tue Feb  6 19:24:54 2007
-+++ makefile	Sun Jul 22 20:02:53 2007
-@@ -3,32 +3,9 @@
- # Note: -O2 is sometimes broken in GCC when setjump/longjump is being
- # used. Try -O2 only with released simulators.
- #
+$OpenBSD: patch-makefile,v 1.12 2008/11/04 22:13:30 sthen Exp $
+--- makefile.orig	Fri Jun  6 15:00:46 2008
++++ makefile	Tue Nov  4 22:09:36 2008
+@@ -1,32 +1,6 @@
+-#
+-# CC Command
+-#
 -ifeq ($(WIN32),)
--#Unix Environments
--ifeq ($(OSTYPE),solaris)
--OS_CCDEFS = -lsocket -lnsl -lpthread -D_GNU_SOURCE
+-  #Unix Environments
+-  ifneq (,$(findstring solaris,$(OSTYPE)))
+-    OS_CCDEFS = -lm -lsocket -lnsl -lrt -lpthread -D_GNU_SOURCE
+-  else
+-    ifneq (,$(findstring darwin,$(OSTYPE)))
+-      OS_CCDEFS = -D_GNU_SOURCE
+-    else
+-      OS_CCDEFS = -lrt -lm -D_GNU_SOURCE
+-    endif
+-  endif
+-  CC = gcc -std=c99 -U__STRICT_ANSI__ -g $(OS_CCDEFS) -I .
+-  ifeq ($(USE_NETWORK),)
+-  else
+-    NETWORK_OPT = -DUSE_NETWORK -isystem /usr/local/include /usr/local/lib/libpcap.a
+-  endif
 -else
--OS_CCDEFS = -D_GNU_SOURCE
--endif
--ifeq ($(OSTYPE),macos)
--CC = gcc -std=c99 -O2 -U__STRICT_ANSI__ -g -lm -lrt $(OS_CCDEFS) -I .
--else
--CC = gcc -std=c99 -O2 -U__STRICT_ANSI__ -g -lm $(OS_CCDEFS) -I .
--endif
--ifeq ($(USE_NETWORK),)
--else
--NETWORK_OPT = -DUSE_NETWORK -isystem /usr/local/include /usr/local/lib/libpcap.a
--endif
--else
--#Win32 Environments
--LDFLAGS = -lm -lwsock32 -lwinmm
--CC = gcc -std=c99 -U__STRICT_ANSI__ -O0 -I.
--EXE = .exe
--ifeq ($(USE_NETWORK),)
--else
--NETWORK_OPT = -DUSE_NETWORK -lwpcap -lpacket
--endif
+-  #Win32 Environments
+-  LDFLAGS = -lm -lwsock32 -lwinmm
+-  CC = gcc -std=c99 -U__STRICT_ANSI__ -O2 -I.
+-  EXE = .exe
+-  ifeq ($(USE_NETWORK),)
+-  else
+-    NETWORK_OPT = -DUSE_NETWORK -lwpcap -lpacket
+-  endif
 -endif
 +OS_CCDEFS = -D_GNU_SOURCE $(CFLAGS)
 +CC = gcc -std=c99 -O2 -U__STRICT_ANSI__ -g -lm  $(OS_CCDEFS) -I .
@@ -37,7 +37,7 @@ $OpenBSD: patch-makefile,v 1.11 2007/07/24 20:45:41 kili Exp $
  
  #
  # Common Libraries
-@@ -248,11 +225,7 @@ ALL = pdp1 pdp4 pdp7 pdp8 pdp9 pdp15 pdp11 pdp10 \
+@@ -259,11 +233,7 @@ ALL = pdp1 pdp4 pdp7 pdp8 pdp9 pdp15 pdp11 pdp10 \
  all : ${ALL}
  
  clean :
