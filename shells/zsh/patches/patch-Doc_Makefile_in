@@ -1,7 +1,7 @@
-$OpenBSD: patch-Doc_Makefile_in,v 1.4 2007/12/04 19:26:56 okan Exp $
---- Doc/Makefile.in.orig	Sun Dec 17 11:02:02 2006
-+++ Doc/Makefile.in	Mon Nov 26 14:35:17 2007
-@@ -267,11 +267,11 @@ Zsh/manmodmenu.yo: $(MODDOCSRC)
+$OpenBSD: patch-Doc_Makefile_in,v 1.5 2008/11/04 10:00:59 pea Exp $
+--- Doc/Makefile.in.orig	Thu Oct 30 12:56:08 2008
++++ Doc/Makefile.in	Mon Nov  3 22:44:41 2008
+@@ -275,11 +275,11 @@ Zsh/manmodmenu.yo: $(MODDOCSRC)
  # ========== DEPENDENCIES FOR INSTALLING ==========
  
  # install just installs the manual pages

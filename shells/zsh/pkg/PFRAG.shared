@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2008/07/02 15:02:54 okan Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2008/11/04 10:00:59 pea Exp $
 lib/zsh/
 lib/zsh/${V}/
 lib/zsh/${V}/zsh/
@@ -36,6 +36,37 @@ lib/zsh/${V}/zsh/zprof.so
 lib/zsh/${V}/zsh/zpty.so
 lib/zsh/${V}/zsh/zselect.so
 lib/zsh/${V}/zsh/zutil.so
+share/zsh/${V}/functions/VCS_INFO_adjust
+share/zsh/${V}/functions/VCS_INFO_bydir_detect
+share/zsh/${V}/functions/VCS_INFO_check_com
+share/zsh/${V}/functions/VCS_INFO_detect_bzr
+share/zsh/${V}/functions/VCS_INFO_detect_cdv
+share/zsh/${V}/functions/VCS_INFO_detect_cvs
+share/zsh/${V}/functions/VCS_INFO_detect_darcs
+share/zsh/${V}/functions/VCS_INFO_detect_git
+share/zsh/${V}/functions/VCS_INFO_detect_hg
+share/zsh/${V}/functions/VCS_INFO_detect_mtn
+share/zsh/${V}/functions/VCS_INFO_detect_p4
+share/zsh/${V}/functions/VCS_INFO_detect_svk
+share/zsh/${V}/functions/VCS_INFO_detect_svn
+share/zsh/${V}/functions/VCS_INFO_detect_tla
+share/zsh/${V}/functions/VCS_INFO_formats
+share/zsh/${V}/functions/VCS_INFO_get_data_bzr
+share/zsh/${V}/functions/VCS_INFO_get_data_cdv
+share/zsh/${V}/functions/VCS_INFO_get_data_cvs
+share/zsh/${V}/functions/VCS_INFO_get_data_darcs
+share/zsh/${V}/functions/VCS_INFO_get_data_git
+share/zsh/${V}/functions/VCS_INFO_get_data_hg
+share/zsh/${V}/functions/VCS_INFO_get_data_mtn
+share/zsh/${V}/functions/VCS_INFO_get_data_p4
+share/zsh/${V}/functions/VCS_INFO_get_data_svk
+share/zsh/${V}/functions/VCS_INFO_get_data_svn
+share/zsh/${V}/functions/VCS_INFO_get_data_tla
+share/zsh/${V}/functions/VCS_INFO_maxexports
+share/zsh/${V}/functions/VCS_INFO_nvcsformats
+share/zsh/${V}/functions/VCS_INFO_realpath
+share/zsh/${V}/functions/VCS_INFO_reposub
+share/zsh/${V}/functions/VCS_INFO_set
 share/zsh/${V}/functions/tcp_alias
 share/zsh/${V}/functions/tcp_close
 share/zsh/${V}/functions/tcp_command

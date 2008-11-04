@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.48 2008/07/02 15:02:54 okan Exp $
+# $OpenBSD: Makefile,v 1.49 2008/11/04 10:00:59 pea Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
-V=		4.3.6
+V=		4.3.9
 DISTNAME=	zsh-$V
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	shells
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 HOMEPAGE=	http://www.zsh.org/
 
@@ -17,7 +16,8 @@ MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
 		http://www.math.technion.ac.il/pub/zsh/ \
 		ftp://ftp.demon.nl/pub/mirrors/zsh/ \
-		ftp://sunsite.icm.edu.pl/pub/unix/shells/zsh/
+		ftp://sunsite.icm.edu.pl/pub/unix/shells/zsh/ \
+		http://zsh.raveland.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -41,7 +41,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED:S/shared/dynamic/} \
 		--enable-maildir-support \
 		--with-tcsetpgrp \
 		--enable-multibyte \
-		--enable-pcre
+		--enable-pcre \
+		--disable-gdbm
 
 SUBST_VARS=	V
 
