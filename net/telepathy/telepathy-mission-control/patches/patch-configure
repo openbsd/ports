@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2008/11/04 22:48:17 jasper Exp $
+--- configure.orig	Wed Jul 16 08:36:39 2008
++++ configure	Tue Nov  4 23:45:02 2008
+@@ -20238,7 +20238,7 @@ echo "$as_me: error: xsltproc (from the libxslt source
+ fi
+ 
+ PYTHON=
+-for ac_prog in python2.3 python2.4 python2.5 python
++for ac_prog in python${MODPY_VERSION}
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2

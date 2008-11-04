@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/10/30 11:37:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2008/11/04 22:48:17 jasper Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
@@ -30,5 +30,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-keyring=no
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>
