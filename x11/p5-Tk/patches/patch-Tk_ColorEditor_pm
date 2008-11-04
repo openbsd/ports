@@ -1,12 +1,12 @@
-$OpenBSD: patch-Tk_ColorEditor_pm,v 1.1 2007/06/02 14:54:53 ajacoutot Exp $
---- Tk/ColorEditor.pm.orig	Sat Jun  2 15:16:35 2007
-+++ Tk/ColorEditor.pm	Sat Jun  2 15:17:03 2007
-@@ -20,7 +20,7 @@ sub Populate
-                     split /\s+/, $Tk::Config::xlib;
+$OpenBSD: patch-Tk_ColorEditor_pm,v 1.2 2008/11/04 10:08:03 sthen Exp $
+--- Tk/ColorEditor.pm.orig	Sat Nov  3 20:35:55 2007
++++ Tk/ColorEditor.pm	Tue Nov  4 09:13:50 2008
+@@ -21,7 +21,7 @@ sub Populate
+     my %seen_names;
      foreach $i (@xlibpath,
  		'/usr/local/lib/X11/rgb.txt', '/usr/lib/X11/rgb.txt',
 -		'/usr/X11R6/lib/X11/rgb.txt',
 +		'/usr/X11R6/share/X11/rgb.txt',
                  '/usr/local/X11R5/lib/X11/rgb.txt', '/X11/R5/lib/X11/rgb.txt',
-                 '/X11/R4/lib/rgb/rgb.txt', '/usr/openwin/lib/X11/rgb.txt') {
-         local *FOO;
+                 '/X11/R4/lib/rgb/rgb.txt', '/usr/openwin/lib/X11/rgb.txt',
+ 		'/usr/share/X11/rgb.txt', # This is the Debian location

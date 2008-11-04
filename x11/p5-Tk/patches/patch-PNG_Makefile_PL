@@ -1,4 +1,4 @@
-$OpenBSD: patch-PNG_Makefile_PL,v 1.2 2007/06/02 14:54:53 ajacoutot Exp $
+$OpenBSD: patch-PNG_Makefile_PL,v 1.3 2008/11/04 10:08:03 sthen Exp $
 --- PNG/Makefile.PL.orig	Tue Dec 30 11:45:03 2003
 +++ PNG/Makefile.PL	Sat Jun  2 16:10:46 2007
 @@ -15,7 +15,7 @@ foreach my $file (qw(zlib/Makefile.PL libpng/Makefile.
@@ -6,7 +6,7 @@ $OpenBSD: patch-PNG_Makefile_PL,v 1.2 2007/06/02 14:54:53 ajacoutot Exp $
  
  if ($Tk::MMtry::VERSION ge '4.007' &&
 -    try_run("config/has_png.c",['-I/usr/local/include'],['-lpng -lz -lm']))
-+    try_run("config/has_png.c",['-I%%LOCALBASE%%/include/libpng'],['-L%%LOCALBASE%%/lib -lpng -lz -lm']))
++    try_run("config/has_png.c",['-I${LOCALBASE}/include/libpng'],['-L${LOCALBASE}/lib -lpng -lz -lm']))
   {
    Tk::MMutil::TkExtMakefile(
         NAME         => 'Tk::PNG',
@@ -16,8 +16,8 @@ $OpenBSD: patch-PNG_Makefile_PL,v 1.2 2007/06/02 14:54:53 ajacoutot Exp $
         OBJECT       => '$(O_FILES)',
 -       INC          => '-I/usr/local/include',
 -       LIBS         => ['-lpng -lz -lm'],
-+       INC          => '-I%%LOCALBASE%%/include/libpng',
-+       LIBS         => ['-L%%LOCALBASE%%/lib -lpng -lz -lm'],
++       INC          => '-I${LOCALBASE}/include/libpng',
++       LIBS         => ['-L${LOCALBASE}/lib -lpng -lz -lm'],
       );
   }
  else

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2008/10/02 08:31:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2008/11/04 10:08:03 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-demo=	demonstrate the features of ptk
 MODULES=	cpan
 VERSION=	804.028
 DISTNAME=	Tk-${VERSION}
-PKGNAME-main=	p5-Tk-${VERSION}
+PKGNAME-main=	p5-Tk-${VERSION}p0
 PKGNAME-demo=	p5-Tk-demo-${VERSION}
 CATEGORIES=	x11 devel
 
@@ -36,7 +36,7 @@ REGRESS_IS_INTERACTIVE=	Yes
 REGRESS_FLAGS=	DISPLAY="${DISPLAY}" XAUTHORITY="${HOME}/.Xauthority"
 
 pre-configure:
-	@perl -i -pe 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/PNG/Makefile.PL
+	@${SUBST_CMD} ${WRKSRC}/PNG/Makefile.PL
 
 pre-regress:
 .ifndef DISPLAY
