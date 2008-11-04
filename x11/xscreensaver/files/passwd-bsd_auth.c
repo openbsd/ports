@@ -1,4 +1,4 @@
-/* $OpenBSD: passwd-bsd_auth.c,v 1.2 2008/11/03 23:18:42 ajacoutot Exp $
+/* $OpenBSD: passwd-bsd_auth.c,v 1.3 2008/11/04 15:28:41 ajacoutot Exp $
  * passwd-bsd_auth.c --- verifying typed passwords with bsd_auth(3)
  *
  * Copyright (c) 2008 Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -48,16 +48,32 @@ extern int bsdauth_passwd_valid_p (const char *typed_passwd, int verbose_p);
 int
 bsdauth_passwd_valid_p (const char *typed_passwd, int verbose_p)
 {
+  int res;
   struct passwd *pw;
 
   pw = getpwuid(getuid());
 
   if (pw != NULL) {
+    block_sigchld();
 
-    if (auth_userokay(pw->pw_name, NULL, "auth-xscreensaver", typed_passwd))
-      return 1;
-    else
-      return 0;
+/*
+XXX It should be possible to specify an authentication style by
+appending it to the user's name with a single colon (`:') as a separator
+but xscreensaver does not allow to modify username (yet?).
+*/
+#ifdef ALLOW_ROOT_PASSWD
+    res = (auth_userokay(pw->pw_name, NULL, "auth-xscreensaver", typed_passwd)) ||
+          (auth_userokay("root", "passwd", "auth-xscreensaver", typed_passwd));
+#else
+    res = (auth_userokay(pw->pw_name, NULL, "auth-xscreensaver", typed_passwd));
+#endif
+
+    unblock_sigchld();
+
+  if (res)
+    return 1;
+  else
+    return 0;
   } else {
     fprintf(stderr, "getpwuid: couldn't get user ID.\n");
     return 0;

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2008/11/03 23:18:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2008/11/04 15:28:41 ajacoutot Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
 DISTNAME=		xscreensaver-5.07
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
