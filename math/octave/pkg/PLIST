@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/10/05 16:22:04 steven Exp $
+@comment $OpenBSD: PLIST,v 1.15 2008/11/04 22:41:59 steven Exp $
 %%SHARED%%
 bin/mkoctfile
 @bin bin/octave
@@ -1220,6 +1220,7 @@ share/doc/octave/interpreter/doc_002dclose.html
 share/doc/octave/interpreter/doc_002dclosereq.html
 share/doc/octave/interpreter/doc_002dcolamd.html
 share/doc/octave/interpreter/doc_002dcolloc.html
+share/doc/octave/interpreter/doc_002dcolorbar.html
 share/doc/octave/interpreter/doc_002dcolormap.html
 share/doc/octave/interpreter/doc_002dcolperm.html
 share/doc/octave/interpreter/doc_002dcolumns.html
@@ -1237,6 +1238,7 @@ share/doc/octave/interpreter/doc_002dconfirm_005frecursive_005frmdir.html
 share/doc/octave/interpreter/doc_002dconj.html
 share/doc/octave/interpreter/doc_002dcontour.html
 share/doc/octave/interpreter/doc_002dcontourc.html
+share/doc/octave/interpreter/doc_002dcontourf.html
 share/doc/octave/interpreter/doc_002dconv.html
 share/doc/octave/interpreter/doc_002dconv2.html
 share/doc/octave/interpreter/doc_002dconvhull.html
