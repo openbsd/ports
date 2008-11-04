@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2008/10/27 00:07:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2008/11/04 23:10:21 jasper Exp $
 
 COMMENT=		flexible communications framework, specifications
 
-DISTNAME=		telepathy-spec-0.17.13
+DISTNAME=		telepathy-spec-0.17.14
 CATEGORIES=		books
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-spec/}
