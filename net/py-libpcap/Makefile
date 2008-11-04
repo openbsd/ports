@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2007/10/08 08:22:42 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2008/11/04 22:38:52 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	libpcap bindings for Python
 
-DISTNAME=	pylibpcap-0.5.1
-PKGNAME=	${DISTNAME:S/py/py-/}p1
+DISTNAME=	pylibpcap-0.6.2
+PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	net
 
 HOMEPAGE=	http://pylibpcap.sourceforge.net/
@@ -28,7 +28,7 @@ NO_REGRESS=	Yes
 EXAMPLESDIR=	${PREFIX}/share/examples/py-libpcap
 
 pre-build:
-	@perl -p -i -e "s,^(\#\S+ )python2\$$,#!${LOCALBASE}/bin/python${MODPY_VERSION}," \
+	@perl -p -i -e "s,^\#\! /usr/bin/env python,#!${MODPY_BIN}," \
 		${WRKSRC}/examples/*.py
 
 post-install:
