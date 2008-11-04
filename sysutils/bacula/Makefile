@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/10/19 03:44:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2008/11/04 21:32:44 sthen Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
@@ -8,10 +8,12 @@ V=			2.4.3
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
-PKGNAME-server=		bacula-server-$V
+PKGNAME-server=		bacula-server-$Vp0
 FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
+
+PATCHFILES=		2.4.3-orphaned-jobs.patch
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
 HOMEPAGE=		http://www.bacula.org/
