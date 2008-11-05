@@ -1,7 +1,7 @@
-$OpenBSD: patch-README,v 1.1 2003/04/15 13:17:59 wilfried Exp $
---- README.orig	Wed Apr  2 10:54:38 2003
-+++ README	Mon Apr 14 11:54:54 2003
-@@ -7,13 +7,17 @@ Evil army is attacking your land and tri
+$OpenBSD: patch-README,v 1.2 2008/11/05 18:35:56 jasper Exp $
+--- README.orig	Wed Apr  2 18:54:38 2003
++++ README	Wed Nov  5 19:33:10 2008
+@@ -7,13 +7,17 @@ Evil army is attacking your land and tries to steal yo
  Waste the invaders, protect the oil, protect the mother land...
  
  .:Controls:.
