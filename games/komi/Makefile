@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/30 23:08:31 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2008/11/05 09:53:45 ajacoutot Exp $
 
 COMMENT =	Komi the Space Frog
 
 DISTNAME =	komi-1.04
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 CATEGORIES =	games
 
 HOMEPAGE =	http://komi.sourceforge.net/

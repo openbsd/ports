@@ -1,0 +1,14 @@
+$OpenBSD: patch-sprites_h,v 1.1 2008/11/05 09:53:46 ajacoutot Exp $
+--- sprites.h.orig	Wed Nov  5 10:48:52 2008
++++ sprites.h	Wed Nov  5 10:49:16 2008
+@@ -146,8 +146,8 @@ void loadsprite (struct sprite_struct * thesprite, cha
+    if (strlen(directory) + strlen(filename) >= sizeof(fullpath))    // Check for buffer overflow on fullpath
+    {
+       fprintf(stderr, "Fatal error while loading %s:\n", filename);
+-      fprintf(stderr, "Size of directory name (%d chars) plus size of file name (%d chars)\n", strlen(directory), strlen(filename));
+-      fprintf(stderr, "is too long (over %d chars), and would cause a buffer overflow...\n", sizeof(fullpath) - 1);
++      fprintf(stderr, "Size of directory name (%zu chars) plus size of file name (%zu chars)\n", strlen(directory), strlen(filename));
++      fprintf(stderr, "is too long (over %zu chars), and would cause a buffer overflow...\n", sizeof(fullpath) - 1);
+       cleanexit(1);
+    }
+    strcpy(fullpath, directory);
