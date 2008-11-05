@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.16 2008/11/05 13:11:14 jasper Exp $
 
 COMMENT=	extract digital camera info tags from JPEG images
 
 DISTNAME=	libexif-0.6.16
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	exif	12.2
 CATEGORIES=	graphics
 
