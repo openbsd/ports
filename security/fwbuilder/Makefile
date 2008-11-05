@@ -1,35 +1,57 @@
-# $OpenBSD: Makefile,v 1.9 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2008/11/05 20:38:50 steven Exp $
 
-COMMENT=firewall gui
-CATEGORIES=net security
+COMMENT=	firewall GUI
+DISTNAME=	fwbuilder-3.0.1
+CATEGORIES=	net security
 
-# GPL
+HOMEPAGE=	http://www.fwbuilder.org/
+
+MAINTAINER=	Vadim Zhukov <persgray@gmail.com>
+
+# GPL v2
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-HOMEPAGE=	http://www.fwbuilder.org/
-
-SHARE=		share/fwbuilder21
-SUBST_VARS=	SHARE
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
-DISTNAME=	fwbuilder-2.1.8
-PKGNAME=	${DISTNAME}
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder
 
-MODULES=	x11/qt3
+SHARE=		share/fwbuilder
+SUBST_VARS=	SHARE
+
+FLAVORS=	debug
+FLAVOR?=
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS+=--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder \
+		--with-templatedir=${TRUEPREFIX}/share/fwbuilder \
+		--with-qtdir=${MODQT_QTDIR} \
+		QMAKE=${MODQT_QTDIR}/bin/qmake
+
+.if ${FLAVOR:L:Mdebug}
+CONFIGURE_ARGS+=--enable-debug
+COPTS=		-g
+.endif
+
+MODULES=	x11/qt4
 DESTDIRNAME=	INSTALL_ROOT
-LIB_DEPENDS=	fwcompiler.>=9,fwbuilder.>=9::security/libfwbuilder
+LIB_DEPENDS=	fwcompiler.>=10,fwbuilder.>=10::security/libfwbuilder \
+		QtGui,QtNetwork::x11/qt4
+		
 NO_REGRESS=	Yes
 USE_X11=	Yes
 
-WANTLIB=	stdc++ c util m X11 ssl z crypto Xext pthread iconv xslt xml2 netsnmp
-
-# before qt 4, there is no distinction between INSTALL_FILE and INSTALL_PROGRAM
+WANTLIB=	ICE SM X11 Xext Xi Xinerama Xrandr Xrender \
+		c fontconfig freetype glib-2.0 gthread-2.0 iconv intl \
+		m netsnmp png pthread stdc++ util xml2 xslt z
 
 post-install:
 	chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/*
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/64x64/apps
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/16x16/apps
+	${INSTALL_DATA} ${WRKSRC}/src/gui/Icons/firewall_64.png \
+		${PREFIX}/share/icons/hicolor/64x64/apps/fwbuilder.png
+	${INSTALL_DATA} ${WRKSRC}/src/gui/Icons/firewall_16.png \
+		${PREFIX}/share/icons/hicolor/16x16/apps/fwbuilder.png
 
 .include <bsd.port.mk>

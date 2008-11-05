@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_gui_main_cpp,v 1.1 2008/11/05 20:38:50 steven Exp $
+--- src/gui/main.cpp.orig	Sat Oct  4 18:46:16 2008
++++ src/gui/main.cpp	Wed Oct  8 05:01:00 2008
+@@ -58,6 +58,13 @@
+ #endif
+ */
+ 
++#include <fwbuilder/FWObject.h>
++#include <fwbuilder/Tools.h>
++#include <fwbuilder/dns.h>
++#include <fwbuilder/XMLTools.h>
++#include <fwbuilder/Resources.h>
++#include <fwbuilder/FWException.h>
++
+ #include "FWBSettings.h"
+ #include "RCS.h"
+ #include "FWWindow.h"
+@@ -68,13 +75,6 @@
+ #include "ObjectEditor.h"
+ #include "findDialog.h"
+ #include "ProjectPanel.h"
+-
+-#include "fwbuilder/FWObject.h"
+-#include "fwbuilder/Tools.h"
+-#include "fwbuilder/dns.h"
+-#include "fwbuilder/XMLTools.h"
+-#include "fwbuilder/Resources.h"
+-#include "fwbuilder/FWException.h"
+ 
+ #ifndef _WIN32
+ #  include <sys/wait.h>

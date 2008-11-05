@@ -1,18 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/01/29 11:56:13 espie Exp $
-bin/fwb_ipf
-bin/fwb_ipfw
-bin/fwb_ipt
-bin/fwb_pf
-bin/fwbedit
-bin/fwblookup
-bin/fwbuilder
+@comment $OpenBSD: PLIST,v 1.4 2008/11/05 20:38:50 steven Exp $
+@bin bin/fwb_iosacl
+@bin bin/fwb_ipf
+@bin bin/fwb_ipfw
+@bin bin/fwb_ipt
+@bin bin/fwb_pf
+@bin bin/fwb_pix
+@bin bin/fwbedit
+@bin bin/fwbuilder
+@man man/man1/fwb_iosacl.1
 @man man/man1/fwb_ipf.1
 @man man/man1/fwb_ipfw.1
 @man man/man1/fwb_ipt.1
 @man man/man1/fwb_pf.1
+@man man/man1/fwb_pix.1
 @man man/man1/fwbedit.1
-@man man/man1/fwblookup.1
 @man man/man1/fwbuilder.1
+share/applications/
+share/applications/fwbuilder.desktop
 share/doc/fwbuilder/
 share/doc/fwbuilder/AUTHORS
 share/doc/fwbuilder/COPYING
@@ -21,27 +25,25 @@ share/doc/fwbuilder/Credits
 share/doc/fwbuilder/FWBuilder-Routing-LICENSE.txt
 share/doc/fwbuilder/PatchAcceptancePolicy.txt
 share/doc/fwbuilder/README.floppyfw
+share/doc/fwbuilder/README.iosacl
 share/doc/fwbuilder/README.ipf
 share/doc/fwbuilder/README.ipfw
 share/doc/fwbuilder/README.ipt
 share/doc/fwbuilder/README.pf
+share/doc/fwbuilder/README.pix
+share/doc/fwbuilder/README.policy_import
 share/doc/fwbuilder/README.routing
-share/doc/fwbuilder/ReleaseNotes_2.1.7.html
-share/doc/fwbuilder/ReleaseNotes_2.1.7.txt
-share/doc/fwbuilder/ReleaseNotes_2.1.8.html
-share/doc/fwbuilder/ReleaseNotes_2.1.8.txt
 ${SHARE}/
+${SHARE}/help/
+${SHARE}/help/iptAdvancedDialog_en_US.html
+${SHARE}/help/linux24AdvancedDialog_en_US.html
+${SHARE}/help/pfAdvancedDialog_en_US.html
 ${SHARE}/locale/
-${SHARE}/locale/fwbuilder_de.qm
-${SHARE}/locale/fwbuilder_es.qm
-${SHARE}/locale/fwbuilder_fr.qm
-${SHARE}/locale/fwbuilder_ja.qm
-${SHARE}/locale/fwbuilder_ru.qm
-${SHARE}/locale/fwbuilder_sv.qm
 ${SHARE}/objects_init.xml
 ${SHARE}/os/
 ${SHARE}/os/freebsd.xml
 ${SHARE}/os/fwsm_os.xml
+${SHARE}/os/ios.xml
 ${SHARE}/os/linksys.xml
 ${SHARE}/os/linux24.xml
 ${SHARE}/os/macosx.xml
@@ -51,6 +53,7 @@ ${SHARE}/os/solaris.xml
 ${SHARE}/os/unknown_os.xml
 ${SHARE}/platform/
 ${SHARE}/platform/fwsm.xml
+${SHARE}/platform/iosacl.xml
 ${SHARE}/platform/ipf.xml
 ${SHARE}/platform/ipfw.xml
 ${SHARE}/platform/iptables.xml
@@ -59,3 +62,13 @@ ${SHARE}/platform/pix.xml
 ${SHARE}/platform/unknown.xml
 ${SHARE}/resources.xml
 ${SHARE}/templates.xml
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/fwbuilder.png
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/fwbuilder.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gui_HttpGet_cpp,v 1.1 2008/11/05 20:38:50 steven Exp $
+--- src/gui/HttpGet.cpp.orig	Sat Oct  4 18:46:16 2008
++++ src/gui/HttpGet.cpp	Wed Oct  8 07:27:53 2008
+@@ -30,6 +30,8 @@
+ #include <QtNetwork>
+ #include <QHttpResponseHeader>
+ 
++#include <fwbuilder/FWObject.h>
++
+ #include "HttpGet.h"
+ #include "FWBSettings.h"
+ 
