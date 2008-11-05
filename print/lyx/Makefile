@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2008/05/11 19:41:20 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2008/11/05 18:08:33 jasper Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
@@ -9,9 +9,8 @@ CATEGORIES=	print
 HOMEPAGE=	http://www.lyx.org/
 
 EXTRACT_SUFX?=	.tar.bz2
-MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
-		ftp://ftp.lip6.fr/pub/lyx/stable/ \
-		ftp://ftp.chg.ru/pub/TeX/lyx/stable/
+MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/1.4.x/ \
+		ftp://ftp.lip6.fr/pub/lyx/stable/1.4.x/
 
 MAINTAINER=	Zvezdan Petkovic <zpetkovic@acm.org>
 
