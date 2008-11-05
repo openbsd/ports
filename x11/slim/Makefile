@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2008/11/05 13:36:41 pea Exp $
 
 COMMENT=	simple login manager
 
-DISTNAME=	slim-1.3.0
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	slim-1.3.1
 
 CATEGORIES=	x11
 HOMEPAGE=	http://slim.berlios.de/
@@ -30,15 +29,13 @@ FAKE_FLAGS+=	PREFIX=${PREFIX} \
 		CFGDIR=${PREFIX}/share/examples/slim
 
 pre-configure:
-	perl -pi -e 's!/usr/!${PREFIX}/!' ${WRKSRC}/slim.1
-	perl -pi -e 's!%%X11BASE%%!${X11BASE}!' ${WRKSRC}/slim.conf
-	perl -pi -e 's!%%LOCALBASE%%!${LOCALBASE}!' ${WRKSRC}/slim.conf
+	${SUBST_CMD} ${WRKSRC}/slim.1 ${WRKSRC}/slim.conf
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/slim
-	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
-		-e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' \
-		< ${FILESDIR}/README.OpenBSD \
-		> ${PREFIX}/share/doc/slim/README.OpenBSD
+	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/doc/slim/README.OpenBSD
+	chown ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/share/doc/slim/README.OpenBSD
 
 .include <bsd.port.mk>

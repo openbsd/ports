@@ -1,18 +1,18 @@
-$OpenBSD: README.OpenBSD,v 1.2 2007/10/25 09:30:13 landry Exp $
+$OpenBSD: README.OpenBSD,v 1.3 2008/11/05 13:36:41 pea Exp $
 Slim can be started at boot time by adding the following to
 /etc/rc.local:
 
-if [ -x !!PREFIX!!/bin/slim ]; then
-        echo -n ' slim'; ( sleep 5; !!PREFIX!!/bin/slim -d ) &
+if [ -x ${TRUEPREFIX}/bin/slim ]; then
+        echo -n ' slim'; ( sleep 5; ${TRUEPREFIX}/bin/slim -d ) &
 fi
 
 The sleep 5 is here to be sure tty flags are correctly set, you can try
-to directly run !!PREFIX!!/bin/slim -d instead.
+to directly run ${TRUEPREFIX}/bin/slim -d instead.
 
 On i386, amd64 and VGA-based alpha, slim is launched on vt05 like xdm.
 
 If you're on a zaurus you'll have to change this setting to vt01 in
-!!SYSCONFDIR!!/slim.conf.
+${SYSCONFDIR}/slim.conf.
 
 If you're on an arch which doesn't handle virtual terminals (like
 macppc, sparc, sparc64, TGA-based alpha, hp300 or vax), you will have to

@@ -1,26 +1,27 @@
-$OpenBSD: patch-slim_conf,v 1.2 2007/12/30 10:46:49 landry Exp $
---- slim.conf.orig	Wed Oct 24 17:03:14 2007
-+++ slim.conf	Wed Oct 24 17:06:03 2007
-@@ -1,13 +1,13 @@
+$OpenBSD: patch-slim_conf,v 1.3 2008/11/05 13:36:41 pea Exp $
+--- slim.conf.orig	Fri Sep 26 02:54:15 2008
++++ slim.conf	Mon Nov  3 22:14:42 2008
+@@ -1,13 +1,14 @@
  # Path, X server and arguments (if needed)
  # Note: -xauth $authfile is automatically appended
--default_path        ./:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
--default_xserver     /usr/X11R6/bin/X
+-default_path        ./:/bin:/usr/bin:/usr/local/bin
+-default_xserver     /usr/bin/X
 -#xserver_arguments   -dpi 75
-+default_path        ./:/bin:/usr/bin:%%LOCALBASE%%/bin:%%X11BASE%%/bin
-+default_xserver     %%X11BASE%%/bin/X
++default_path        ./:/bin:/usr/bin:${LOCALBASE}/bin:${X11BASE}/bin
++default_xserver     ${X11BASE}/bin/X
 +xserver_arguments   vt05
  
++
  # Commands for halt, login, etc.
 -halt_cmd            /sbin/shutdown -h now
 +halt_cmd            /sbin/shutdown -ph now
  reboot_cmd          /sbin/shutdown -r now
--console_cmd         /usr/X11R6/bin/xterm -C -fg white -bg black +sb -T "Console login" -e /bin/sh -c "/bin/cat /etc/issue; exec /bin/login"
-+console_cmd         %%X11BASE%%/bin/xterm -C -fg white -bg black +sb -T "Console login" -e /bin/sh -c "/usr/bin/head -1 /etc/motd; exec /usr/bin/login"
+-console_cmd         /usr/bin/xterm -C -fg white -bg black +sb -T "Console login" -e /bin/sh -c "/bin/cat /etc/issue; exec /bin/login"
++console_cmd         ${X11BASE}/bin/xterm -C -fg white -bg black +sb -T "Console login" -e /bin/sh -c "/usr/bin/head -1 /etc/motd; exec /usr/bin/login"
  #suspend_cmd        /usr/sbin/suspend
  
  # Full path to the xauth binary
-@@ -32,8 +32,8 @@ authfile           /var/run/slim.auth
+@@ -32,8 +33,8 @@ authfile           /var/run/slim.auth
  # NOTE: if your system does not have bash you need
  # to adjust the command according to your preferred shell,
  # i.e. for freebsd use:
@@ -31,7 +32,7 @@ $OpenBSD: patch-slim_conf,v 1.2 2007/12/30 10:46:49 landry Exp $
  
  # Commands executed when starting and exiting a session.
  # They can be used for registering a X11 session with
-@@ -72,7 +72,7 @@ reboot_msg         The system is rebooting...
+@@ -84,7 +85,7 @@ reboot_msg         The system is rebooting...
  current_theme       default
  
  # Lock file

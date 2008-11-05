@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1 2007/10/25 09:30:13 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/05 13:36:41 pea Exp $
 @pkgpath x11/slim,-main
-bin/slim
+@bin bin/slim
 @man man/man1/slim.1
 share/doc/slim/
 share/doc/slim/README.OpenBSD
