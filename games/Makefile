@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2008/10/30 17:00:18 weerd Exp $
+# $OpenBSD: Makefile,v 1.180 2008/11/05 21:34:35 weerd Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -94,6 +94,7 @@
      SUBDIR += newvox
      SUBDIR += oilwar
      SUBDIR += omega
+     SUBDIR += openarena
      SUBDIR += openttd
      SUBDIR += pathological
      SUBDIR += pioneers
