@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/28 14:27:53 weerd Exp $
+# $OpenBSD: Makefile,v 1.3 2008/11/05 21:25:28 weerd Exp $
 
-ONLY_FOR_ARCHS =	i386
+ONLY_FOR_ARCHS =	i386 macppc
 
 COMMENT-main =		OpenArena client
 COMMENT-server =	OpenArena server
@@ -10,20 +10,23 @@ MULTI_PACKAGES =	-main -server -data
 
 CATEGORIES =		games x11
 
-V =			0.8.0
+V =			0.8.1
 
-PKGNAME =		openarena-${V}p0
-PKGNAME-main =		openarena-${V}p0
-PKGNAME-server =	openarena-server-${V}p0
-PKGNAME-data =		openarena-data-${V}p0
+PKGNAME-main =		openarena-${V}
+PKGNAME-server =	openarena-server-${V}
+PKGNAME-data =		openarena-data-${V}
+
+PKG_ARCH-data =		i386,macppc
 
 DISTNAME =		oa${V:S/.//g}
-DISTFILES =		${DISTNAME}.zip ioquake3svn1438.tar.bz2
+DISTFILES =		${DISTNAME}.zip openarena-engine-${V}-1.tar.bz2
 
 MAINTAINER =		Antti Harri <iku@openbsd.fi>
 
+MS_PREFIX =		http://download.tuxfamily.org/openarena/rel/
 HOMEPAGE =		http://www.openarena.ws/
-MASTER_SITES =		http://download.tuxfamily.org/openarena/rel/080/ \
+MASTER_SITES =		${MS_PREFIX}/${V:S/.//g}/ \
+			${MS_PREFIX}/${V:S/.//g}/source/ \
 			http://openbsd.fi/distfiles/
 
 # GPLv2 but contains software with other (free) licenses as well
@@ -39,8 +42,8 @@ LIB_DEPENDS-main =	ogg.>=5::audio/libogg \
 			SDL.>=7::devel/sdl \
 			vorbis.>=6::audio/libvorbis \
 			vorbisfile.>=5::audio/libvorbis
-RUN_DEPENDS-main =	:openarena-data-$V:${BUILD_PKGPATH},-data
-RUN_DEPENDS-server =	:openarena-data-$V:${BUILD_PKGPATH},-data
+RUN_DEPENDS-main =	:openarena-data-*:${BUILD_PKGPATH},-data
+RUN_DEPENDS-server =	:openarena-data-*:${BUILD_PKGPATH},-data
 
 ALL_TARGET =		release
 USE_GMAKE =		Yes
@@ -48,7 +51,7 @@ MAKE_FLAGS =		USE_OPENAL=0 \
 			BINEXT='' \
 			DEFAULT_BASEDIR=${LOCALBASE}/share/openarena
 
-WRKDIST =		${WRKDIR}/ioquake3svn1438
+WRKDIST =		${WRKDIR}/openarena-engine-${V}
 
 post-extract:
 	find ${WRKDIR} -name '*.orig' -print0 | xargs -0r rm -f
