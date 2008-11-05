@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2008/07/12 12:22:33 dhill Exp $
+# $OpenBSD: Makefile,v 1.8 2008/11/05 10:06:49 kevlo Exp $
 
 COMMENT=	framework for parsing the Perl Pod format
+COMES_WITH=	4.5
 
 MODULES=	cpan
 DISTNAME=	Pod-Simple-3.07

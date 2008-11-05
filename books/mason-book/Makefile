@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:34:36 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2008/11/05 10:06:49 kevlo Exp $
 
 COMMENT=	book on embedding Perl in HTML with Mason
 CATEGORIES=	books 
@@ -6,7 +6,7 @@ CATEGORIES=	books
 # unversioned, so impose a version on it
 V=		1.0
 DISTNAME=	mason-book
-PKGNAME=	${DISTNAME}-${V}
+PKGNAME=	${DISTNAME}-${V}p0
 DIST_SUBDIR=	mason-book-${V}
 
 HOMEPAGE=	http://www.masonbook.com/
@@ -16,8 +16,7 @@ MASTER_SITES=	${HOMEPAGE}book/
 
 BUILD_DEPENDS=	::www/p5-HTML-Parser \
 		::graphics/p5-Image-Size \
-		::www/p5-URI \
-		::textproc/p5-Pod-Simple 
+		::www/p5-URI
 
 # Open Publication License
 PERMIT_DISTFILES_CDROM=	Yes

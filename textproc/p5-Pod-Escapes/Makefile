@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:59:39 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/11/05 10:06:49 kevlo Exp $
 
 COMMENT=	library to resolve perl Pod escape sequences
+COMES_WITH=	4.5
 
 MODULES=	cpan
 DISTNAME=	Pod-Escapes-1.04
