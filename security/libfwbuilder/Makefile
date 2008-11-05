@@ -1,34 +1,39 @@
-# $OpenBSD: Makefile,v 1.8 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2008/11/05 20:37:48 steven Exp $
 
 COMMENT=	libraries for fwbuilder
-DISTNAME=	libfwbuilder-2.1.8
-PKGNAME=	$(DISTNAME)
+DISTNAME=	libfwbuilder-3.0.1
 CATEGORIES=	net security
-SHARED_LIBS=	fwbuilder	9.0 \
-		fwcompiler	9.0
+SHARED_LIBS=	fwbuilder	10.0 \
+		fwcompiler	10.0
 
-INCLUDE=	include/fwb-2.1
-SHARE=		share/libfwbuilder21
+INCLUDE=	include/fwb-3
+SHARE=		share/libfwbuilder
 SUBST_VARS=	INCLUDE SHARE
 
 HOMEPAGE=	http://www.fwbuilder.org/
 
-# GPL
+MAINTAINER=	Vadim Zhukov <persgray@gmail.com>
+
+# GPL v2
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-WANTLIB=	m ssl crypto z xml2 iconv
+WANTLIB=	m z iconv
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
 
-MODULES=	x11/qt3
+MODULES=	x11/qt4
 LIB_DEPENDS+=	xslt::textproc/libxslt \
+		xml2::textproc/libxml \
 	    	netsnmp::net/net-snmp
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=	--with-docdir=${TRUEPREFIX}/share/doc/libfwbuilder
+CONFIGURE_ARGS+=--with-docdir=${TRUEPREFIX}/share/doc/libfwbuilder \
+		--with-templatedir=${TRUEPREFIX}/share/libfwbuilder \
+		--with-qtdir=${MODQT_QTDIR} \
+		QMAKE=${MODQT_QTDIR}/bin/qmake
 
 NO_REGRESS=	Yes
 
