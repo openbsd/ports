@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/30 15:58:49 okan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/05 17:20:08 jasper Exp $
 %%SHARED%%
 include/spf2/
 include/spf2/spf.h
@@ -18,6 +18,6 @@ include/spf2/spf_server.h
 lib/libspf2.a
 lib/libspf2.la
 libexec/libspf2/
-libexec/libspf2/spfd
-libexec/libspf2/spfquery
-libexec/libspf2/spftest
+@bin libexec/libspf2/spfd
+@bin libexec/libspf2/spfquery
+@bin libexec/libspf2/spftest

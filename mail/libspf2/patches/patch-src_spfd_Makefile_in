@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_spfd_Makefile_in,v 1.1.1.1 2008/01/30 15:58:50 okan Exp $
---- src/spfd/Makefile.in.orig	Wed Dec 12 11:21:56 2007
-+++ src/spfd/Makefile.in	Wed Dec 12 17:42:52 2007
+$OpenBSD: patch-src_spfd_Makefile_in,v 1.2 2008/11/05 17:20:08 jasper Exp $
+--- src/spfd/Makefile.in.orig	Thu Oct 16 00:39:03 2008
++++ src/spfd/Makefile.in	Thu Oct 23 09:02:26 2008
 @@ -39,7 +39,7 @@ NORMAL_UNINSTALL = :
  PRE_UNINSTALL = :
  POST_UNINSTALL = :

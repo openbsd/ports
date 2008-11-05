@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_spfquery_Makefile_in,v 1.1.1.1 2008/01/30 15:58:50 okan Exp $
---- src/spfquery/Makefile.in.orig	Wed Dec 12 17:43:48 2007
-+++ src/spfquery/Makefile.in	Wed Dec 12 17:43:57 2007
+$OpenBSD: patch-src_spfquery_Makefile_in,v 1.2 2008/11/05 17:20:08 jasper Exp $
+--- src/spfquery/Makefile.in.orig	Thu Oct 16 00:39:03 2008
++++ src/spfquery/Makefile.in	Thu Oct 23 09:02:26 2008
 @@ -39,7 +39,7 @@ NORMAL_UNINSTALL = :
  PRE_UNINSTALL = :
  POST_UNINSTALL = :
