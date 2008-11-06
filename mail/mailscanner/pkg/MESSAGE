@@ -1,6 +1,6 @@
 See ${PREFIX}/share/doc/MailScanner/README.OpenBSD.port,
-http://www.mailscanner.info, the man pages MailScanner and
-MailScanner.conf for further instructions.
+http://www.mailscanner.info, and the sample configuration
+files in ${SYSCONFDIR}/MailScanner for further instructions.
 
 You will need to make several modifications to your startup
 routines, documented in the README.OpenBSD.port file above
