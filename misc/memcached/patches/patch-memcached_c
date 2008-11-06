@@ -1,12 +1,15 @@
-$OpenBSD: patch-memcached_c,v 1.3 2007/12/27 17:42:50 jasper Exp $
---- memcached.c.orig	Tue Dec 18 23:54:36 2007
-+++ memcached.c	Tue Dec 18 23:54:47 2007
-@@ -19,7 +19,7 @@ std *
- #include <sys/stat.h>
- #include <sys/socket.h>
- #include <sys/un.h>
--#include <sys/signal.h>
-+#include <signal.h>
- #include <sys/resource.h>
- #include <sys/uio.h>
- 
+$OpenBSD: patch-memcached_c,v 1.4 2008/11/06 13:06:56 sthen Exp $
+--- memcached.c.orig	Wed Nov  5 14:36:30 2008
++++ memcached.c	Wed Nov  5 14:39:11 2008
+@@ -2474,7 +2474,11 @@ static int server_socket(const int port, const bool is
+      * that otherwise mess things up.
+      */
+     memset(&hints, 0, sizeof (hints));
++#ifdef __OpenBSD__
++    hints.ai_flags = AI_PASSIVE;
++#else
+     hints.ai_flags = AI_PASSIVE|AI_ADDRCONFIG;
++#endif
+     if (is_udp)
+     {
+         hints.ai_protocol = IPPROTO_UDP;
