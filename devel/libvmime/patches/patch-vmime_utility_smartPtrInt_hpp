@@ -1,0 +1,12 @@
+$OpenBSD: patch-vmime_utility_smartPtrInt_hpp,v 1.1 2008/11/06 19:12:24 sturm Exp $
+--- vmime/utility/smartPtrInt.hpp.orig	Wed Nov  5 10:40:02 2008
++++ vmime/utility/smartPtrInt.hpp	Wed Nov  5 10:40:18 2008
+@@ -53,7 +53,7 @@ class refCounter (private)
+ #if defined(_WIN32)
+ 	long m_value;
+ #elif defined(__GNUC__) && (defined(__GLIBCPP__) || defined(__GLIBCXX__))
+-	mutable volatile int m_value;
++	mutable volatile _Atomic_word m_value;
+ #elif defined (VMIME_HAVE_PTHREAD)
+ 	volatile long m_value;
+ 	pthread_mutex_t m_mutex;
