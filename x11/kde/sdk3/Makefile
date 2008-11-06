@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2008/10/12 19:06:30 kili Exp $
+# $OpenBSD: Makefile,v 1.41 2008/11/06 12:37:53 sthen Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -7,7 +7,7 @@ VERSION =		3.5.10
 DISTNAME =		kdesdk-${VERSION}
 
 PKGNAME-main =		${DISTNAME}p0
-PKGNAME-svn =		kdesvn-${VERSION}
+PKGNAME-svn =		kdesvn-${VERSION}p0
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
@@ -26,7 +26,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			kcal,kmime::x11/kde/pim3
 
 LIB_DEPENDS-svn = 	${LIB_DEPENDS} \
-			svn_client-1,svn_diff-1,svn_delta-1,svn_fs-1,svn_fs_base-1,svn_fs_fs-1,svn_ra-1,svn_ra_dav-1,svn_ra_local-1,svn_ra_svn-1,svn_repos-1,svn_subr-1,svn_wc-1::devel/subversion
+			svn_client-1,svn_diff-1,svn_delta-1,svn_fs-1,svn_fs_base-1,svn_fs_fs-1,svn_fs_util-1,svn_ra-1,svn_ra_local-1,svn_ra_neon-1,svn_ra_svn-1,svn_repos-1,svn_subr-1,svn_wc-1::devel/subversion
 
 FLAVORS =		debug
 SEPARATE_BUILD =	flavored
@@ -42,7 +42,7 @@ WANTLIB-main =	${WANTLIB} \
 
 
 WANTLIB-svn =	${WANTLIB} \
-		apr-1 aprutil-1 crypto db expat neon ssl
+		apr-1 aprutil-1 crypto db expat neon sasl2 ssl
 
 post-install:
 	cd ${PREFIX}/bin && mv cvscheck kcvscheck
