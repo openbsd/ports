@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/07/08 09:45:36 landry Exp $
+@comment $OpenBSD: PLIST,v 1.12 2008/11/06 15:34:46 landry Exp $
 @conflict xfce4-toys-*
 %%SHARED%%
 @bin bin/xfce4-autostart-editor
@@ -45,6 +45,7 @@ share/examples/xfce4-session/xfce4-session.rc
 share/icons/hicolor/128x128/
 share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/xfce4-session.png
+share/icons/hicolor/48x48/apps/xfce4-autostart-editor.png
 share/icons/hicolor/48x48/apps/xfce4-session.png
 share/icons/hicolor/48x48/apps/xfce4-splash.png
 share/icons/hicolor/48x48/apps/xfsm-logout.png
@@ -68,6 +69,7 @@ share/locale/be/LC_MESSAGES/xfce4-session.mo
 share/locale/bn_IN/LC_MESSAGES/xfce4-session.mo
 share/locale/ca/LC_MESSAGES/xfce4-session.mo
 share/locale/cs/LC_MESSAGES/xfce4-session.mo
+share/locale/da/LC_MESSAGES/xfce4-session.mo
 share/locale/de/LC_MESSAGES/xfce4-session.mo
 share/locale/dz/LC_MESSAGES/xfce4-session.mo
 share/locale/el/LC_MESSAGES/xfce4-session.mo
@@ -85,10 +87,12 @@ share/locale/gu/LC_MESSAGES/xfce4-session.mo
 share/locale/he/LC_MESSAGES/xfce4-session.mo
 share/locale/hi/LC_MESSAGES/xfce4-session.mo
 share/locale/hu/LC_MESSAGES/xfce4-session.mo
+share/locale/id/LC_MESSAGES/xfce4-session.mo
 share/locale/it/LC_MESSAGES/xfce4-session.mo
 share/locale/ja/LC_MESSAGES/xfce4-session.mo
 share/locale/ka/LC_MESSAGES/xfce4-session.mo
 share/locale/ko/LC_MESSAGES/xfce4-session.mo
+share/locale/ku/LC_MESSAGES/xfce4-session.mo
 share/locale/lt/LC_MESSAGES/xfce4-session.mo
 share/locale/lv/LC_MESSAGES/xfce4-session.mo
 share/locale/mk/LC_MESSAGES/xfce4-session.mo
@@ -102,11 +106,13 @@ share/locale/pt_BR/LC_MESSAGES/xfce4-session.mo
 share/locale/pt_PT/LC_MESSAGES/xfce4-session.mo
 share/locale/ro/LC_MESSAGES/xfce4-session.mo
 share/locale/ru/LC_MESSAGES/xfce4-session.mo
+share/locale/si/LC_MESSAGES/xfce4-session.mo
 share/locale/sk/LC_MESSAGES/xfce4-session.mo
 share/locale/sv/LC_MESSAGES/xfce4-session.mo
 share/locale/ta/LC_MESSAGES/xfce4-session.mo
 share/locale/tr/LC_MESSAGES/xfce4-session.mo
 share/locale/uk/LC_MESSAGES/xfce4-session.mo
+share/locale/ur/LC_MESSAGES/xfce4-session.mo
 share/locale/vi/LC_MESSAGES/xfce4-session.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-session.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo

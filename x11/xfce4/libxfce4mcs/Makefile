@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2008/07/10 11:38:03 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2008/11/06 15:34:46 landry Exp $
 
 COMMENT=	settings management library used by most xfce4 modules
 
 XFCE_PROJECT=	libxfce4mcs
-PKGNAME=	${DISTNAME}p2
 
 SHARED_LIBS=	xfce4mcs-manager	3.5 \
 		xfce4mcs-client		3.5 # .3.5

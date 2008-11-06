@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/04/17 09:00:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/11/06 15:34:46 landry Exp $
 %%SHARED%%
 lib/xfce4/
 lib/xfce4/mcs-plugins/
@@ -30,6 +30,7 @@ share/locale/bg/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/bn_IN/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ca/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/cs/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/da/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/de/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/dz/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/el/LC_MESSAGES/xfce-mcs-plugins.mo
@@ -47,10 +48,12 @@ share/locale/gu/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/he/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/hi/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/hu/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/id/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/it/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ja/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ka/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ko/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/ku/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/lt/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/lv/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/mk/LC_MESSAGES/xfce-mcs-plugins.mo
@@ -64,11 +67,13 @@ share/locale/pt_BR/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/pt_PT/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ro/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ru/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/si/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/sk/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/sv/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ta/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/tr/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/uk/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/ur/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/vi/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/xfce-mcs-plugins.mo

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2008/10/28 14:29:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2008/11/06 15:34:46 landry Exp $
 
 COMMENT=	xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
-PKGNAME=	${DISTNAME}p6
 
 SHARED_LIBS +=  xfsm-4.2             0.1      # .0.1
 
@@ -32,15 +31,15 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		startup-notification-1 xfce4util z
 
 post-install:
-	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},' \
-		-e 's,!!LOCALBASE!!,${LOCALBASE},' \
-		${FILESDIR}/README.OpenBSD > ${WRKBUILD}/README.OpenBSD
-	@sed -e 's,!!LOCALBASE!!,${LOCALBASE},' \
-		${FILESDIR}/xfce4.desktop > ${WRKBUILD}/xfce4.desktop
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
-		${PREFIX}/share/xfce4/
+	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/xfce4/README.OpenBSD
+	chown ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/share/xfce4/README.OpenBSD
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xsessions/
-	${INSTALL_DATA} ${WRKBUILD}/xfce4.desktop \
-		${PREFIX}/share/xsessions/
+	${SUBST_CMD} -c ${FILESDIR}/xfce4.desktop \
+		${PREFIX}/share/xsessions/xfce4.desktop
+	chown ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/share/xsessions/xfce4.desktop
+
 
 .include <bsd.port.mk>

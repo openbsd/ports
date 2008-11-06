@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/04/17 09:00:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/11/06 15:34:46 landry Exp $
 @conflict xfce4-panel-<4.4.1
 %%SHARED%%
 include/xfce4/
@@ -117,6 +117,7 @@ share/locale/cs/LC_MESSAGES/libxfcegui4.mo
 share/locale/cy/
 share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/libxfcegui4.mo
+share/locale/da/LC_MESSAGES/libxfcegui4.mo
 share/locale/de/LC_MESSAGES/libxfcegui4.mo
 share/locale/dz/
 share/locale/dz/LC_MESSAGES/
@@ -128,7 +129,6 @@ share/locale/en_GB/LC_MESSAGES/libxfcegui4.mo
 share/locale/eo/LC_MESSAGES/libxfcegui4.mo
 share/locale/es/LC_MESSAGES/libxfcegui4.mo
 share/locale/et/LC_MESSAGES/libxfcegui4.mo
-share/locale/eu/
 share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/libxfcegui4.mo
 share/locale/fa/
@@ -145,12 +145,16 @@ share/locale/hu/LC_MESSAGES/libxfcegui4.mo
 share/locale/hy/
 share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/libxfcegui4.mo
+share/locale/id/LC_MESSAGES/libxfcegui4.mo
 share/locale/it/LC_MESSAGES/libxfcegui4.mo
 share/locale/ja/LC_MESSAGES/libxfcegui4.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/libxfcegui4.mo
 share/locale/ko/LC_MESSAGES/libxfcegui4.mo
+share/locale/ku/
+share/locale/ku/LC_MESSAGES/
+share/locale/ku/LC_MESSAGES/libxfcegui4.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libxfcegui4.mo
@@ -175,6 +179,9 @@ share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/libxfcegui4.mo
 share/locale/ro/LC_MESSAGES/libxfcegui4.mo
 share/locale/ru/LC_MESSAGES/libxfcegui4.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/libxfcegui4.mo
 share/locale/sk/LC_MESSAGES/libxfcegui4.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
@@ -188,6 +195,9 @@ share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/libxfcegui4.mo
 share/locale/tr/LC_MESSAGES/libxfcegui4.mo
 share/locale/uk/LC_MESSAGES/libxfcegui4.mo
+share/locale/ur/
+share/locale/ur/LC_MESSAGES/
+share/locale/ur/LC_MESSAGES/libxfcegui4.mo
 share/locale/zh_CN/LC_MESSAGES/libxfcegui4.mo
 share/locale/zh_TW/LC_MESSAGES/libxfcegui4.mo
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

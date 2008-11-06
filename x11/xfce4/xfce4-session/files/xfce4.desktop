@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Name=Xfce 4.4
 Comment=Use this session to run Xfce 4.4 as your desktop environment
-Exec=!!LOCALBASE!!/bin/startxfce4
-Icon=!!LOCALBASE!!/share/pixmaps/xfce4_xicon1.png
+Exec=${LOCALBASE}/bin/startxfce4
+Icon=${LOCALBASE}/share/pixmaps/xfce4_xicon1.png
 Type=XSession

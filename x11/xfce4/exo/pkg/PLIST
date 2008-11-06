@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/04/17 09:00:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/11/06 15:34:46 landry Exp $
 %%SHARED%%
-bin/exo-csource
-bin/exo-desktop-item-edit
+@bin bin/exo-csource
+@bin bin/exo-desktop-item-edit
 bin/exo-eject
-bin/exo-mount
-bin/exo-open
+@bin bin/exo-mount
+@bin bin/exo-open
 bin/exo-preferred-applications
 bin/exo-unmount
 include/exo-0.3/
@@ -50,11 +50,10 @@ lib/xfce4/mcs-plugins/
 lib/xfce4/mcs-plugins/exo-preferred-applications-settings.a
 lib/xfce4/mcs-plugins/exo-preferred-applications-settings.la
 libexec/exo-compose-mail-0.3
-libexec/exo-helper-0.3
-libexec/exo-mount-notify-0.3
+@bin libexec/exo-helper-0.3
+@bin libexec/exo-mount-notify-0.3
 @man man/man1/exo-csource.1
 @man man/man1/exo-open.1
-share/applications/
 share/applications/exo-preferred-applications.desktop
 share/examples/xfce4/
 share/examples/xfce4/helpers.rc
@@ -142,7 +141,6 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/libexo-0.3.mo
 share/locale/es/LC_MESSAGES/libexo-0.3.mo
 share/locale/et/LC_MESSAGES/libexo-0.3.mo
-share/locale/eu/
 share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/libexo-0.3.mo
 share/locale/fi/LC_MESSAGES/libexo-0.3.mo

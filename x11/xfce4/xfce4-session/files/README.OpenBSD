@@ -24,7 +24,7 @@ $ cd /usr/ports/x11/xfce4 && make show=COMMENT
 - startup
 Xfce desktop environment is launched through the 'startxfce4' script,
 provided by the xfce-utils package. Simply add
-'!!LOCALBASE!!/bin/startxfce4'
+'${LOCALBASE}/bin/startxfce4'
 to your .xinitrc/.xsession script if you use startx, xdm or slim.
 If you use gdm or kdm, have a look at
 http://wiki.xfce.org/faq#starting_xfce. An xfce4.desktop file is
@@ -37,7 +37,7 @@ the computer, provided you have the needed sudo credentials.
 If you don't want to have to enter your password, simply add this line
 to the /etc/sudoers file using visudo:
 
-$your_username ALL=NOPASSWD: !!PREFIX!!/libexec/xfsm-shutdown-helper
+$your_username ALL=NOPASSWD: ${TRUEPREFIX}/libexec/xfsm-shutdown-helper
 
 - thunar file manager tips
 thunar can display resizable svg icons if you install the librsvg

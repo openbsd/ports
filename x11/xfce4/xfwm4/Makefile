@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2008/07/10 11:38:03 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2008/11/06 15:34:47 landry Exp $
 
 COMMENT=	xfce4 window manager
 
 XFCE_PROJECT=	xfwm4
-PKGNAME=	${DISTNAME}p2
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

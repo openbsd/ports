@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2008/07/10 11:38:03 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2008/11/06 15:34:46 landry Exp $
 
 COMMENT=	widget library for xfce4
 
 XFCE_PROJECT=	libxfcegui4
-PKGNAME=	${DISTNAME}p4
 SHARED_LIBS=	xfcegui4	4.0	# .6.6
 
 HOMEPAGE=	http://www.xfce.org/projects/libraries
