@@ -1,24 +1,21 @@
-$OpenBSD: patch-Makefile,v 1.6 2008/04/19 17:59:32 okan Exp $
---- Makefile.orig	Thu Jan 17 18:53:37 2008
-+++ Makefile	Mon Mar 24 14:54:18 2008
-@@ -5,14 +5,14 @@
+$OpenBSD: patch-Makefile,v 1.7 2008/11/07 12:23:12 jsg Exp $
+--- Makefile.orig	Thu Nov  6 21:44:23 2008
++++ Makefile	Thu Nov  6 21:46:04 2008
+@@ -5,11 +5,11 @@
  # == CHANGE THE SETTINGS BELOW TO SUIT YOUR ENVIRONMENT =======================
  
  # Your platform. See PLATS for possible values.
 -PLAT= none
 +PLAT= bsd
  
- # Where to install. The installation starts in the src directory, so take care
- # if INSTALL_TOP is not an absolute path. (Man pages are installed from the
- # doc directory.) You may want to make these paths consistent with LUA_ROOT,
- # LUA_LDIR, and LUA_CDIR in luaconf.h (and also with etc/lua.pc).
- #
+ # Where to install. The installation starts in the src and doc directories,
+ # so take care if INSTALL_TOP is not an absolute path.
 -INSTALL_TOP= /usr/local
 +INSTALL_TOP= $(PREFIX)
  INSTALL_BIN= $(INSTALL_TOP)/bin
  INSTALL_INC= $(INSTALL_TOP)/include
  INSTALL_LIB= $(INSTALL_TOP)/lib
-@@ -38,7 +38,7 @@ PLATS= aix ansi bsd freebsd generic linux macosx mingw
+@@ -43,7 +43,7 @@ PLATS= aix ansi bsd freebsd generic linux macosx mingw
  # What to install.
  TO_BIN= lua luac
  TO_INC= lua.h luaconf.h lualib.h lauxlib.h ../etc/lua.hpp
