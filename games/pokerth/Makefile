@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/05/30 19:43:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/11/07 12:18:54 ajacoutot Exp $
 
 COMMENT=	Qt4 poker game with online capabilities
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pokerth/}
 
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB=	ICE SDL SM X11 Xcursor Xext Xfixes Xi Xinerama Xrandr \
+WANTLIB=	ICE SDL SM X11 Xext Xi Xinerama Xrandr \
 		Xrender c crypto fontconfig freetype glib-2.0 \
 		gthread-2.0 m png pthread stdc++ z QtGui ssl
 
