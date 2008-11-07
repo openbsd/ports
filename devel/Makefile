@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.648 2008/11/02 23:49:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.649 2008/11/07 10:01:41 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -84,7 +84,6 @@
      SUBDIR += geany
      SUBDIR += geotiff
      SUBDIR += gettext
-     SUBDIR += getxml
      SUBDIR += giblib
      SUBDIR += giggle
      SUBDIR += gindent
@@ -142,7 +141,6 @@
      SUBDIR += libelf
      SUBDIR += libexecinfo
      SUBDIR += libfmt
-     SUBDIR += libglade
      SUBDIR += libglade2
      SUBDIR += libglademm
      SUBDIR += libgsf

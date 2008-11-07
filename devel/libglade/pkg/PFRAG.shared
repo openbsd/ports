@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/03 14:55:19 bernd Exp $
-@lib lib/libglade.so.${LIBglade_VERSION}
