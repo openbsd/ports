@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2008/06/01 08:21:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2008/11/07 01:15:01 brad Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
 DISTNAME=		mjpegtools-1.9.0rc3
-PKGNAME=		mjpegtools-1.9.0rc3p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		multimedia
 SHARED_LIBS=		lavfile		4.0 \
 			lavfile-1.9	4.0 \
@@ -29,24 +29,20 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mjpeg/}
 
 WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-			Xfixes Xi Xinerama Xrandr Xrender c cairo expat \
-			fontconfig freetype glitz m pcre pthread pixman-1 \
-			stdc++ usbhid z
+			Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
+			expat fontconfig freetype glib-2.0 glitz gmodule-2.0 \
+			gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+			pcre pthread pixman-1 stdc++ usbhid z
 
 MODULES+=		devel/gettext
-
 LIB_DEPENDS=		SDL.>=2:sdl-*-!no_x11:devel/sdl \
 			dv.>=4::multimedia/libdv \
 			jpeg.>=62::graphics/jpeg \
 			png.>=4::graphics/png \
-			atk-1.0.>=800.0::devel/atk \
-			glib-2.0.>=600.0,gmodule-2.0.>=600.0,gobject-2.0.>=600.0::devel/glib2 \
 			gdk-x11-2.0.>=400.0,gdk_pixbuf-2.0.>=400.0,gtk-x11-2.0.>=400.0::x11/gtk+2 \
-			pango-1.0.>=1001.0,pangoft2-1.0.>=1001.0,pangocairo-1.0.>=1001.0::devel/pango
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
-
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-x --with-libpng --with-libdv
