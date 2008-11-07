@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2008/10/08 17:34:57 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2008/11/07 15:10:14 sthen Exp $
 
 COMMENT= 	MVC Web Application Framework
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Runtime-5.7014
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.catalystframework.org/
@@ -21,7 +22,6 @@ RUN_DEPENDS=	::devel/p5-Class-Accessor \
 		::devel/p5-Class-Inspector \
 		::devel/p5-Data-Dump \
 		::devel/p5-File-Modified \
-		::devel/p5-Module-Pluggable \
 		::devel/p5-Path-Class \
 		::devel/p5-Tree-Simple \
 		::devel/p5-Tree-Simple-VisitorFactory \

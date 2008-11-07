@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/23 08:15:00 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2008/11/07 15:09:37 sthen Exp $
 
 COMMENT= 	find and format date headers
 
 MODULES=	cpan
 
 DISTNAME=	Email-Date-1.103
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	mail
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -15,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Time-Piece \
-		::devel/p5-Time-TimeDate \
+RUN_DEPENDS=	::devel/p5-Time-TimeDate \
 		::mail/p5-Email-Abstract \
 		::mail/p5-Email-Date-Format
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2008/07/23 08:10:25 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2008/11/07 15:09:37 sthen Exp $
 
 COMMENT= 	unified interface to mail representations
 
 MODULES=	cpan
 DISTNAME=	Email-Abstract-2.134
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	mail
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -14,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::devel/p5-Module-Pluggable \
-		:p5-Email-Simple->=1.999:mail/p5-Email-Simple
+RUN_DEPENDS=	:p5-Email-Simple->=1.999:mail/p5-Email-Simple
 REGRESS_DEPENDS=:p5-Email-MIME->=1.859:mail/p5-Email-MIME \
 		::mail/p5-Mail-Box
 

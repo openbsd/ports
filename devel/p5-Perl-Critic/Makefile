@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2008/10/06 22:07:19 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2008/11/07 15:08:59 sthen Exp $
 
 COMMENT=	critique perl source code for best practices
 
 MODULES=	cpan
 DISTNAME=	Perl-Critic-1.092
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@kisoku.net> 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	::devel/p5-B-Keywords \
 		::devel/p5-Config-Tiny \
 		:p5-Exception-Class->=1.23:devel/p5-Exception-Class \
 		::devel/p5-File-HomeDir \
-		::devel/p5-Module-Pluggable \
 		:p5-PPI->=1.203:textproc/p5-PPI \
 		::devel/p5-Set-Scalar \
 		::devel/p5-String-Format \
