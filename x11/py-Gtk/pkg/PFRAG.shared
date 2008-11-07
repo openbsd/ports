@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2007/10/22 14:08:23 steven Exp $
-lib/python${MODPY_VERSION}/site-packages/_gdkimlibmodule.so
-lib/python${MODPY_VERSION}/site-packages/_gtkglmodule.so
-lib/python${MODPY_VERSION}/site-packages/_gtkmodule.so
-lib/python${MODPY_VERSION}/site-packages/_libglademodule.so
-lib/python${MODPY_VERSION}/site-packages/gdkpixbufmodule.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.357 2008/11/03 14:18:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.358 2008/11/07 10:07:28 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -148,8 +148,6 @@
      SUBDIR += oroborus
      SUBDIR += osd_clock
      SUBDIR += p5-Gnome2-Canvas
-     SUBDIR += p5-Gtk
-     SUBDIR += p5-Gtk,gtkglarea
      SUBDIR += p5-Gtk2
      SUBDIR += p5-Gtk2-Ex-FormFactory
      SUBDIR += p5-Gtk2-GladeXML
@@ -165,7 +163,6 @@
      SUBDIR += pidgin-libnotify
      SUBDIR += piewm
      SUBDIR += pwm
-     SUBDIR += py-Gtk
      SUBDIR += py-Xlib
      SUBDIR += py-gtk2
      SUBDIR += py-gtksourceview
