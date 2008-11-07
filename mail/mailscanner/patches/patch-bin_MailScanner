@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_MailScanner,v 1.4 2008/05/16 16:38:36 sthen Exp $
---- bin/MailScanner.orig	Thu May  1 04:33:27 2008
-+++ bin/MailScanner	Fri May  2 18:36:15 2008
+$OpenBSD: patch-bin_MailScanner,v 1.5 2008/11/07 02:33:58 brad Exp $
+--- bin/MailScanner.orig	Sat Nov  1 15:03:52 2008
++++ bin/MailScanner	Thu Nov  6 20:24:55 2008
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -I/opt/MailScanner/lib
 +#!/usr/bin/perl -I%PREFIX%/lib/MailScanner
@@ -16,7 +16,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.4 2008/05/16 16:38:36 sthen Exp $
      unshift @INC, $path;
    }
  
-@@ -177,8 +177,6 @@ if ($Versions) {
+@@ -179,8 +179,6 @@ if ($Versions) {
    my($module, $s, $v, $m);
  
    printf("Running on\n%s", `uname -a`);
@@ -25,7 +25,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.4 2008/05/16 16:38:36 sthen Exp $
    printf("This is Perl version %f (%vd)\n", $], $^V);
    print "\nThis is MailScanner version " . $MailScanner::Config::MailScannerVersion . "\n";
    print "Module versions are:\n";
-@@ -205,9 +203,10 @@ $Debug = 1 if $DebugSpamAssassin;
+@@ -207,9 +205,10 @@ $Debug = 1 if $DebugSpamAssassin;
  
  # Check version of MIME-tools against its requirements
  my $error = 0;
@@ -37,7 +37,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.4 2008/05/16 16:38:36 sthen Exp $
      print STDERR "\n\n**** ERROR: You must upgrade your perl IO module to at least\n**** ERROR: version 1.2301 or MailScanner will not work!\n\n";
      $error = 1;
    }
-@@ -248,7 +247,7 @@ if ($WantLintOnly || $WantLintLiteOnly) {
+@@ -250,7 +249,7 @@ if ($WantLintOnly || $WantLintLiteOnly) {
  # Find the mailscanner.conf file, with a default just in case.
  my $ConfFile = $ARGV[0];
  # Use the default if we couldn't find theirs. Will save a lot of grief.
@@ -46,7 +46,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.4 2008/05/16 16:38:36 sthen Exp $
                                                         !(-f $ConfFile);
  
  # Check the MailScanner version number against what is in MailScanner.conf
-@@ -293,7 +292,7 @@ if (MailScanner::Config::QuickPeek($ConfFile, 'virussc
+@@ -295,7 +294,7 @@ if (MailScanner::Config::QuickPeek($ConfFile, 'virussc
  Currently you are using no virus scanners.
  This is probably not what you want.
  

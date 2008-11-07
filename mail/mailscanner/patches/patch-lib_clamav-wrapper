@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_clamav-wrapper,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
---- lib/clamav-wrapper.orig	Tue Jun  6 12:03:41 2006
-+++ lib/clamav-wrapper	Mon Feb 18 01:38:02 2008
+$OpenBSD: patch-lib_clamav-wrapper,v 1.2 2008/11/07 02:33:58 brad Exp $
+--- lib/clamav-wrapper.orig	Fri Sep  5 04:55:29 2008
++++ lib/clamav-wrapper	Thu Nov  6 20:24:55 2008
 @@ -51,7 +51,7 @@
  
  # You may want to check this script for bash-isms
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_clamav-wrapper,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
  ClamUser="clamav"
  ClamGroup="clamav"
  
-@@ -98,23 +98,23 @@ ExtraScanOptions="$ExtraScanOptions --deb"  
+@@ -98,23 +98,23 @@ ExtraScanOptions=""
  # LESS COMMON unpackers, which probably aren't installed by default
  # (hence disabled)
  # Uncomment ONE of the following lines if you have unrar installed
