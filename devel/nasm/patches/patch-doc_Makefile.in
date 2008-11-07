@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Tue Jun 17 06:31:16 2008
-+++ doc/Makefile.in	Tue Jun 17 15:12:31 2008
-@@ -8,7 +8,7 @@
+--- doc/Makefile.in.orig	Wed Oct 29 13:57:33 2008
++++ doc/Makefile.in	Sun Nov  2 21:43:50 2008
+@@ -8,7 +8,7 @@ prefix		= @prefix@
  exec_prefix	= @exec_prefix@
  bindir		= @bindir@
  mandir		= @mandir@
@@ -9,42 +9,43 @@
  infodir		= @infodir@
  datarootdir	= @datarootdir@
  
-@@ -22,11 +22,8 @@
- PS2PDF          = ps2pdf		# Part of GhostScript
+@@ -27,12 +27,8 @@ PSTOPDF		= @PSTOPDF@		# BSD/MacOS X utility
+ PS2PDF          = @PS2PDF@		# Part of GhostScript
  
- SRCS		= nasmdoc.src
+ SRCS		= nasmdoc.src inslist.src changes.src
 -OUT		= info html nasmdoc.txt nasmdoc.ps nasmdoc.pdf
 +OUT		= info html nasmdoc.txt # nasmdoc.ps nasmdoc.pdf
  
 -# exports
 -export srcdir
 -export PERL
- 
+-
  all: $(OUT)
  
-@@ -40,17 +37,17 @@
+ os2: nasm.inf
+@@ -45,17 +41,17 @@ html: html/nasmdoc0.html
  
- html/nasmdoc0.html: nasmdoc.src rdsrc.pl inslist.src
+ html/nasmdoc0.html: $(SRCS) rdsrc.pl
  	mkdir -p html
 -	$(PERL) $(srcdir)/rdsrc.pl html < $<
 +	$(PERL) $(srcdir)/rdsrc.pl html < $(srcdir)/nasmdoc.src
  	mv -f *.html html
  
- nasmdoc.dip: nasmdoc.src rdsrc.pl inslist.src
+ nasmdoc.dip: $(SRCS) rdsrc.pl
 -	$(PERL) $(srcdir)/rdsrc.pl dip < $<
 +	$(PERL) $(srcdir)/rdsrc.pl dip < $(srcdir)/nasmdoc.src
  
- nasmdoc.texi: nasmdoc.src rdsrc.pl inslist.src
+ nasmdoc.texi: $(SRCS) rdsrc.pl
 -	$(PERL) $(srcdir)/rdsrc.pl texi < $<
 +	$(PERL) $(srcdir)/rdsrc.pl texi < $(srcdir)/nasmdoc.src
  
- nasmdoc.txt: nasmdoc.src rdsrc.pl inslist.src
+ nasmdoc.txt: $(SRCS) rdsrc.pl
 -	$(PERL) $(srcdir)/rdsrc.pl txt < $<
 +	$(PERL) $(srcdir)/rdsrc.pl txt < $(srcdir)/nasmdoc.src
  
  nasmdoc.ps: nasmdoc.dip nasmlogo.eps $(srcdir)/../version genpsdriver.pl \
  	    genps.pl psfonts.ph pswidth.ph head.ps
-@@ -64,7 +61,7 @@
+@@ -71,7 +67,7 @@ info: info/nasm.info
  
  info/nasm.info: nasmdoc.texi
  	mkdir -p info
@@ -53,23 +54,23 @@
  	mv -f *.info *.info-* info
  
  # DVI output from texinfo (optional)
-@@ -73,13 +70,12 @@
+@@ -80,13 +76,12 @@ nasmdoc.dvi: nasmdoc.texi
  
  # Rules for building an OS/2 book
  nasmdoc.ipf: nasmdoc.texi
--	texi2ipf $< >$@
-+	texi2ipf $? >$@
+-	$(TEXI2IPF) $< >$@
++	$(TEXI2IPF) $? >$@
  
  nasm.inf: nasmdoc.ipf
--	ipfc -i -s $< $@
-+	ipfc -i -s $? $@
+-	$(IPFC) -i -s $< $@
++	$(IPFC) -i -s $? $@
  
  clean:
 -	-rm -f *.rtf *.hpj *.texi *.gid *.ipf *.dip
  	-rm -f *.aux *.cp *.fn *.ky *.pg *.log *.toc *.tp *.vr
  
  spotless: clean
-@@ -91,4 +87,4 @@
+@@ -98,4 +93,4 @@ install: all
  	$(INSTALL_DATA) info/* $(INSTALLROOT)$(infodir)
  	mkdir -p $(INSTALLROOT)$(docdir)/html
  	$(INSTALL_DATA) html/* $(INSTALLROOT)$(docdir)/html

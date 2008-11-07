@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2008/06/26 01:25:32 okan Exp $
+# $OpenBSD: Makefile,v 1.26 2008/11/07 18:38:22 okan Exp $
 
 COMMENT=	general-purpose multi-platform x86 assembler
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-DISTNAME=	nasm-2.03.01
+DISTNAME=	nasm-2.05.01
 CATEGORIES=	devel lang
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nasm/}
 
-HOMEPAGE=	http://nasm.sourceforge.net/
+HOMEPAGE=	http://www.nasm.us/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
