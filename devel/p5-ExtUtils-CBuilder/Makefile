@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 02:53:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2008/11/07 15:07:01 sthen Exp $
 
 COMMENT=	compile and link C code for Perl modules 
 
@@ -6,6 +6,8 @@ MODULES=	cpan
 DISTNAME=	ExtUtils-CBuilder-0.18
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel
+
+COMES_WITH=	4.5
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
