@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2007/10/14 08:22:17 winiger Exp $
+# $OpenBSD: Makefile,v 1.14 2008/11/07 00:47:51 sthen Exp $
 
 COMMENT=	library that handles the decoding of sound file formats
 DISTNAME=	SDL_sound-1.0.1
-PKGNAME=	${DISTNAME:L:S/_/-/}p6
+PKGNAME=	${DISTNAME:L:S/_/-/}p7
 SHARED_LIBS=	SDL_sound 2.0
 CATEGORIES=	devel audio
 MASTER_SITES=	http://offload1.icculus.org/SDL_sound/downloads/
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		X11 Xau Xdmcp Xext Xrandr Xrender c iconv m ogg \
-			pthread usbhid z
+			pthread sndio usbhid z
 
 LIB_DEPENDS+=	physfs::devel/physfs \
 		SDL.>=2.0::devel/sdl \
