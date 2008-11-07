@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/07/22 07:36:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2008/11/07 01:16:38 brad Exp $
 
 COMMENT =	tool for working with RAW images
 
 DISTNAME =	rawstudio-1.0
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 CATEGORIES =	graphics
 
@@ -22,23 +22,20 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ENV +=	LDFLAGS=-L${LOCALBASE}/lib
 
-MODULES +=		converters/libiconv devel/gettext
+MODULES +=		devel/gettext
 
 WANTLIB +=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB +=		Xi Xinerama Xrandr Xrender c expat fontconfig freetype
-WANTLIB +=		m pixman-1 pthread stdc++ z
+WANTLIB +=		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat
+WANTLIB +=		fontconfig freetype glib-2.0 glitz gmodule-2.0
+WANTLIB +=		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB +=		pangoft2-1.0 pixman-1 pthread stdc++ z
 
-LIB_DEPENDS += 		atk-1.0::devel/atk \
-			cairo::graphics/cairo \
-			dbus-1::x11/dbus \
+LIB_DEPENDS +=		dbus-1::x11/dbus \
 			gconf-2::devel/gconf2 \
-			glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
-			glitz::graphics/glitz \
 			gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 			jpeg::graphics/jpeg \
 			lcms::graphics/lcms \
 			ORBit-2::devel/ORBit2 \
-			pango-1.0,pangocairo-1.0,pangoft2-1.0::devel/pango \
 			png::graphics/png \
 			tiff::graphics/tiff \
 			xml2::textproc/libxml
