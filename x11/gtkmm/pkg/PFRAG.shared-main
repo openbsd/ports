@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/24 17:25:21 steven Exp $
-@lib lib/libgdkmm.so.${LIBgdkmm_VERSION}
-@lib lib/libgtkmm.so.${LIBgtkmm_VERSION}

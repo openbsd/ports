@@ -1,5 +1,0 @@
-Gtk-- is a C++ interface for the popular GUI library gtk+. Gtk-- provides a
-convenient interface for C++ programmers to create graphical user interfaces
-with Gtk's flexible OO framework. Highlights include type safe callbacks,
-widgets extensible using inheritance and over 180 classes that can be freely
-combined to quickly create complex user interfaces.
