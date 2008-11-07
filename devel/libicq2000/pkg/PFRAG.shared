@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/03 18:07:28 bernd Exp $
-@lib lib/libicq2000.so.${LIBicq2000_VERSION}
