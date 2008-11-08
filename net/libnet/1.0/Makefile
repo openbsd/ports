@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2008/11/08 22:15:10 sthen Exp $
 
 REVISION=	1.0
 VERSION=	${REVISION}.2a
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	net	0.0
 
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/deprecated/
