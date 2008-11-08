@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2005/12/31 14:03:28 steven Exp $
---- src/Makefile.in.orig	Thu Mar 11 10:50:20 2004
-+++ src/Makefile.in	Mon May 23 23:36:28 2005
+$OpenBSD: patch-src_Makefile_in,v 1.4 2008/11/08 22:09:40 sthen Exp $
+--- src/Makefile.in.orig	Thu Mar 11 18:50:20 2004
++++ src/Makefile.in	Sat Nov  8 22:07:59 2008
 @@ -43,10 +43,10 @@ datadir = @datadir@
  sysconfdir = @sysconfdir@
  sharedstatedir = @sharedstatedir@
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2005/12/31 14:03:28 steven Exp $
  oldincludedir = /usr/include
  pkgdatadir = $(datadir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
-@@ -109,8 +109,10 @@ AUTOMAKE_OPTIONS = foreign no-dependenci
+@@ -109,8 +109,10 @@ AUTOMAKE_OPTIONS = foreign no-dependencies
  
  DISTCLEANFILES = *~
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2005/12/31 14:03:28 steven Exp $
  libnet_a_SOURCES = libnet_asn1.c \
  			libnet_build_802.1q.c \
  			libnet_build_802.1x.c \
-@@ -203,6 +205,8 @@ am_libnet_a_OBJECTS = libnet_asn1.$(OBJE
+@@ -203,6 +205,8 @@ am_libnet_a_OBJECTS = libnet_asn1.$(OBJEXT) \
  	libnet_raw.$(OBJEXT) libnet_resolve.$(OBJEXT) \
  	libnet_version.$(OBJEXT) libnet_write.$(OBJEXT)
  libnet_a_OBJECTS = $(am_libnet_a_OBJECTS)
@@ -35,7 +35,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2005/12/31 14:03:28 steven Exp $
  
  DEFS = @DEFS@
  DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)/include
-@@ -226,7 +230,7 @@ SOURCES = $(libnet_a_SOURCES) $(EXTRA_li
+@@ -226,7 +230,7 @@ SOURCES = $(libnet_a_SOURCES) $(EXTRA_libnet_a_SOURCES
  all: all-am
  
  .SUFFIXES:
@@ -53,7 +53,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2005/12/31 14:03:28 steven Exp $
  	  else :; fi; \
  	done
  
-@@ -269,6 +271,10 @@ libnet.a: $(libnet_a_OBJECTS) $(libnet_a
+@@ -269,6 +271,10 @@ libnet.a: $(libnet_a_OBJECTS) $(libnet_a_DEPENDENCIES)
  	$(libnet_a_AR) libnet.a $(libnet_a_OBJECTS) $(libnet_a_LIBADD)
  	$(RANLIB) libnet.a
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libnet_link_bpf_c,v 1.1 2005/05/23 23:50:40 msf Exp $
---- src/libnet_link_bpf.c.orig	Mon Mar 14 11:23:41 2005
-+++ src/libnet_link_bpf.c	Mon Mar 14 11:37:47 2005
+$OpenBSD: patch-src_libnet_link_bpf_c,v 1.2 2008/11/08 22:09:40 sthen Exp $
+--- src/libnet_link_bpf.c.orig	Mon Jan  8 01:13:48 2001
++++ src/libnet_link_bpf.c	Sat Nov  8 22:07:54 2008
 @@ -61,7 +61,7 @@ libnet_bpf_open(char *errbuf)
       */
      for (i = 0;;i++)
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_libnet_link_bpf_c,v 1.1 2005/05/23 23:50:40 msf Exp $
      }
      return (fd);
  }
-@@ -104,7 +104,7 @@ libnet_open_link_interface(char *device,
+@@ -104,7 +104,7 @@ libnet_open_link_interface(char *device, char *ebuf)
      l = (struct libnet_link_int *)malloc(sizeof(*l));
      if (!l)
      {
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_libnet_link_bpf_c,v 1.1 2005/05/23 23:50:40 msf Exp $
  #if (__DEBUG)
          libnet_error(LN_ERR_CRITICAL, "bpf libnet_open_link_interface: malloc %s",
                  ll_strerror(errno));
-@@ -125,13 +125,13 @@ libnet_open_link_interface(char *device,
+@@ -125,13 +125,13 @@ libnet_open_link_interface(char *device, char *ebuf)
       */
      if (ioctl(l->fd, BIOCVERSION, (caddr_t)&bv) < 0)
      {
@@ -44,7 +44,7 @@ $OpenBSD: patch-src_libnet_link_bpf_c,v 1.1 2005/05/23 23:50:40 msf Exp $
          goto bad;
      }
  
-@@ -141,7 +141,7 @@ libnet_open_link_interface(char *device,
+@@ -141,7 +141,7 @@ libnet_open_link_interface(char *device, char *ebuf)
      strncpy(ifr.ifr_name, device, sizeof(ifr.ifr_name));
      if (ioctl(l->fd, BIOCSETIF, (caddr_t)&ifr) == -1)
      {
@@ -53,7 +53,7 @@ $OpenBSD: patch-src_libnet_link_bpf_c,v 1.1 2005/05/23 23:50:40 msf Exp $
          goto bad;
      }
  
-@@ -150,7 +150,7 @@ libnet_open_link_interface(char *device,
+@@ -150,7 +150,7 @@ libnet_open_link_interface(char *device, char *ebuf)
       */
      if (ioctl(l->fd, BIOCGDLT, (caddr_t)&v) == -1)
      {
@@ -62,7 +62,7 @@ $OpenBSD: patch-src_libnet_link_bpf_c,v 1.1 2005/05/23 23:50:40 msf Exp $
          goto bad;
      }
  
-@@ -161,7 +161,7 @@ libnet_open_link_interface(char *device,
+@@ -161,7 +161,7 @@ libnet_open_link_interface(char *device, char *ebuf)
  #if defined(BIOCGHDRCMPLT) && defined(BIOCSHDRCMPLT)
      if (ioctl(l->fd, BIOCSHDRCMPLT, &spoof_eth_src) == -1)
      {

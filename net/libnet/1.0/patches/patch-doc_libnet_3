@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_libnet_3,v 1.1 2005/05/23 23:50:40 msf Exp $
---- doc/libnet.3.orig	Mon Mar 14 11:33:02 2005
-+++ doc/libnet.3	Mon Mar 14 11:33:34 2005
-@@ -19,7 +19,7 @@ supplementary and complementary function
+$OpenBSD: patch-doc_libnet_3,v 1.2 2008/11/08 22:09:40 sthen Exp $
+--- doc/libnet.3.orig	Sun Feb  4 00:27:21 2001
++++ doc/libnet.3	Sat Nov  8 22:07:54 2008
+@@ -19,7 +19,7 @@ supplementary and complementary functionality.
  
  For a much more verbose treatment of libnet, including verbosely commented
  examples, please see the online web-based documentation at

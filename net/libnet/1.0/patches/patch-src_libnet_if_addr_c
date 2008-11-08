@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libnet_if_addr_c,v 1.1 2005/05/23 23:50:40 msf Exp $
---- src/libnet_if_addr.c.orig	Mon Mar 14 11:25:21 2005
-+++ src/libnet_if_addr.c	Mon Mar 14 11:37:14 2005
-@@ -64,7 +64,7 @@ libnet_ifaddrlist(register struct libnet
+$OpenBSD: patch-src_libnet_if_addr_c,v 1.2 2008/11/08 22:09:40 sthen Exp $
+--- src/libnet_if_addr.c.orig	Sun Jan  7 18:55:16 2001
++++ src/libnet_if_addr.c	Sat Nov  8 22:07:54 2008
+@@ -64,7 +64,7 @@ libnet_ifaddrlist(register struct libnet_ifaddr_list *
      fd = socket(AF_INET, SOCK_DGRAM, 0);
      if (fd < 0)
      {
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_libnet_if_addr_c,v 1.1 2005/05/23 23:50:40 msf Exp $
          return (-1);
      }
      ifc.ifc_len = sizeof(ibuf);
-@@ -74,7 +74,7 @@ libnet_ifaddrlist(register struct libnet
+@@ -74,7 +74,7 @@ libnet_ifaddrlist(register struct libnet_ifaddr_list *
              SIOCGIFCONF,
              (char *)&ifc) < 0 || ifc.ifc_len < sizeof(struct ifreq))
      {
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_libnet_if_addr_c,v 1.1 2005/05/23 23:50:40 msf Exp $
          close(fd);
          return (-1);
      }
-@@ -110,7 +110,7 @@ libnet_ifaddrlist(register struct libnet
+@@ -110,7 +110,7 @@ libnet_ifaddrlist(register struct libnet_ifaddr_list *
          if (ioctl(fd, SIOCGIFFLAGS, (char *)&ifr) < 0)
          {
              if (errno == ENXIO) continue;
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_libnet_if_addr_c,v 1.1 2005/05/23 23:50:40 msf Exp $
                      "SIOCGIFFLAGS: %.*s: %s",
                      (int)sizeof(ifr.ifr_name),
                       ifr.ifr_name,
-@@ -129,7 +129,7 @@ libnet_ifaddrlist(register struct libnet
+@@ -129,7 +129,7 @@ libnet_ifaddrlist(register struct libnet_ifaddr_list *
          device[sizeof(device) - 1] = '\0';
          if (ioctl(fd, SIOCGIFADDR, (char *)&ifr) < 0)
          {
@@ -37,7 +37,7 @@ $OpenBSD: patch-src_libnet_if_addr_c,v 1.1 2005/05/23 23:50:40 msf Exp $
              close(fd);
              return (-1);
          }
-@@ -170,12 +170,12 @@ libnet_select_device(struct sockaddr_in 
+@@ -170,12 +170,12 @@ libnet_select_device(struct sockaddr_in *sin, char **d
      c = libnet_ifaddrlist(&address_list, err_buf);
      if (c < 0)
      {
@@ -52,7 +52,7 @@ $OpenBSD: patch-src_libnet_if_addr_c,v 1.1 2005/05/23 23:50:40 msf Exp $
          return (-1);
      }
      if (*device)
-@@ -189,7 +189,7 @@ libnet_select_device(struct sockaddr_in 
+@@ -189,7 +189,7 @@ libnet_select_device(struct sockaddr_in *sin, char **d
          }
          if (i <= 0)
          {
