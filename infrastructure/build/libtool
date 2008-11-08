@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.53 2008/11/07 20:22:39 espie Exp $
+# $OpenBSD: libtool,v 1.54 2008/11/08 09:41:25 espie Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -41,7 +41,7 @@ use subs qw(
 	notyet
 	parse_linkargs_list
 	parse_version_info
-	process_deplibs
+	process_deplibs_list
 	resolve_la_list
 	reverse_zap_duplicates
 	reverse_zap_duplicates_ref
@@ -254,6 +254,23 @@ sub deplib_list
 	return $self->{deplib_list}
 }
 
+sub set_deplibs
+{
+	my ($self, $v) = @_;
+
+	$self->{deplib_list} = $v;
+}
+
+sub stringize
+{
+	my ($self, $k) = @_;
+	if ($k eq 'dependency_libs') {
+		return join(' ', @{$self->{deplib_list}}) || '';
+	} else {
+		return $self->SUPER::stringize($k);
+	}
+}
+
 # XXX not sure how much of this cruft we need
 sub write
 {
@@ -358,14 +375,14 @@ my @valid_modes = qw(clean compile execute finish install link uninstall);
 my @valid_src = qw(asm c cc cpp cxx f s);
 my $cwd = getcwd();
 my $ltdir = '.libs';
-my $picflags = '-fPIC -DPIC';
+my @picflags = ('-fPIC' '-DPIC');
 my $sharedflag = '-shared';
 my $instlibdir = '/usr/local/lib';
 my @libsearchdirs;
 $instlibdir = $ENV{'LIBDIR'} if defined $ENV{'LIBDIR'};
 
 my $mode;
-my $D = 0;		# debug flag
+our $D = 0;		# debug flag
 my $verbose = 1;
 
 my %opts;		# options passed to libtool
@@ -501,7 +518,7 @@ if ($mode eq 'compile') {
 	if ($pic) {
 		$cmd = $ltprog;
 		$cmd .= " @ARGV" if (@ARGV);
-		$cmd .= " $picflags";
+		$cmd .= " @picflags";
 		$cmd .= " -o ";
 		$cmd .= ($odir eq '.') ? '' : $odir.'/';
 		$cmd .= $picobj;
@@ -779,14 +796,11 @@ if ($mode eq 'compile') {
 		$lainfo->{'installed'} = 'no';
 		$lainfo->{'shouldnotlink'} = $opts{'module'} ? 'yes' : 'no';
 		map { $_ = "-R$_" } @Ropts;
-		my $deplibstring = join ' ', @deplibs;
-		$deplibstring = "@Ropts $deplibstring" if (@Ropts);
-		@deplibs = split /\s+/, $deplibstring;
+		unshift(@deplibs, @Ropts) if @Ropts;
 		Trace::debug {"deplibs = @deplibs\n"};
 		my @finaldeplibs = reverse_zap_duplicates(@deplibs);
 		Trace::debug {"finaldeplibs = @finaldeplibs\n"};
-		$deplibstring = join ' ', @finaldeplibs;
-		$lainfo->set('dependency_libs', $deplibstring);
+		$lainfo->set_deplibs(\@finaldeplibs);
 		if (@RPopts) {
 			if (@RPopts > 1) {
 				Trace::debug {"more than 1 -rpath option given, taking the first: ", $RPopts[0], "\n"};
@@ -798,7 +812,8 @@ if ($mode eq 'compile') {
 		symlink("../$ofile", "$odir/$ltdir/$ofile");
 		if ($shared) {
 			my $lai = "$odir/$ltdir/$ofile".'i';
-			$lainfo->set('dependency_libs', process_deplibs($deplibstring));
+			$lainfo->set_deplibs(
+			    process_deplibs_list(\@finaldeplibs));
 			$lainfo->{'installed'} = 'yes';
 			# write .lai file (.la file that will be installed)
 			$lainfo->write($lai, $ofile);
@@ -1195,22 +1210,25 @@ sub inspect_lib
 # prepare dependency_libs information for the .la file which is installed
 # i.e. remove any .libs directories and use the final libdir for all the
 # .la files
-sub process_deplibs
+sub process_deplibs_list
 {
-	my $deplibline = shift;
+	my $linkflags = shift;
 
-	my @linkflags = split /\s+/, $deplibline;
+	my $result = [];
+
 	my %la_in_ldpath;
 
-	foreach my $lf (@linkflags) {
+	foreach my $lf (@$linkflags) {
 		if ($lf =~ m/-L\S+\Q$ltdir\E$/) {
-			$lf = '';
+			next;
 		} elsif ($lf =~ m/\/\S+\/(\S+\.la)/) {
 			my $lafile = $1;
-			$lf = LaFile->parse($lf)->{'libdir'}.'/'.$lafile;
-		}
+			push(@$result, 
+				LaFile->parse($lf)->{'libdir'}.'/'.$lafile);
+		} else {
+			push(@$result, $lf);
 	}
-	return join ' ', @linkflags;
+	return $result;
 }
 
 # construct linker command (list) for either libraries or programs
@@ -1340,8 +1358,8 @@ sub linkcmds
 		$libcounter++;
 	}
 
-	$cmd = "$ltprog";
-	$cmd .= " $sharedflag $picflags" if ($lmode == LIBRARY);
+	$cmd = $ltprog;
+	$cmd .= " $sharedflag @picflags" if ($lmode == LIBRARY);
 	$cmd .= " -o $dst";
 	$cmd .= " @$argv";
 	$cmd .= " @$objs" if (@$objs);
@@ -1423,7 +1441,7 @@ sub get_objlist_from_archive
 {
 	my $a = shift;
 
-	open(my $arh, '-|', "ar t $a");
+	open(my $arh, '-|', "ar", "t", $a);
 	my @o = <$arh>;
 	close $arh;
 	map { chomp; } @o;
