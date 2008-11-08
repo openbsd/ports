@@ -1,43 +1,166 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:49:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/11/08 11:41:01 sthen Exp $
 bin/embpexec.pl
-${P5ARCH}/HTML/
-${P5ARCH}/HTML/Embperl/
-${P5ARCH}/HTML/Embperl.pm
-${P5ARCH}/HTML/Embperl.pod
-${P5ARCH}/HTML/Embperl/CVS.pod
-${P5ARCH}/HTML/Embperl/Changes.pod
-${P5ARCH}/HTML/Embperl/Faq.pod
-${P5ARCH}/HTML/Embperl/Features.pod
-${P5ARCH}/HTML/Embperl/FeaturesD.pod
-${P5ARCH}/HTML/Embperl/INSTALL.pod
-${P5ARCH}/HTML/Embperl/Intro.pod
-${P5ARCH}/HTML/Embperl/IntroD.pod
-${P5ARCH}/HTML/Embperl/IntroEmbperlObject.pod
-${P5ARCH}/HTML/Embperl/Mail.pm
-${P5ARCH}/HTML/Embperl/Module.pm
-${P5ARCH}/HTML/Embperl/NEWS.pod
-${P5ARCH}/HTML/Embperl/Session.pm
-${P5ARCH}/HTML/Embperl/TipsAndTricks.pod
-${P5ARCH}/HTML/EmbperlD.pod
-${P5ARCH}/HTML/EmbperlObject.pm
-${P5ARCH}/auto/HTML/
-${P5ARCH}/auto/HTML/Embperl/
-${P5ARCH}/auto/HTML/Embperl/Embperl.bs
-${P5ARCH}/auto/HTML/Embperl/Embperl.so
+bin/embpmsgid.pl
+${P5ARCH}/Embperl/
+${P5ARCH}/Embperl.pm
+${P5ARCH}/Embperl.pod
+${P5ARCH}/Embperl/App.pm
+${P5ARCH}/Embperl/Config.pod
+${P5ARCH}/Embperl/Constant.pm
+${P5ARCH}/Embperl/Faq.pod
+${P5ARCH}/Embperl/Features.pod
+${P5ARCH}/Embperl/FeaturesD.pod
+${P5ARCH}/Embperl/Form/
+${P5ARCH}/Embperl/Form.pm
+${P5ARCH}/Embperl/Form/Control/
+${P5ARCH}/Embperl/Form/Control.pm
+${P5ARCH}/Embperl/Form/Control/addremove.pm
+${P5ARCH}/Embperl/Form/Control/blank.pm
+${P5ARCH}/Embperl/Form/Control/button.pm
+${P5ARCH}/Embperl/Form/Control/checkbox.pm
+${P5ARCH}/Embperl/Form/Control/checkboxes.pm
+${P5ARCH}/Embperl/Form/Control/display.pm
+${P5ARCH}/Embperl/Form/Control/displaylink.pm
+${P5ARCH}/Embperl/Form/Control/dump.pm
+${P5ARCH}/Embperl/Form/Control/file.pm
+${P5ARCH}/Embperl/Form/Control/grid.pm
+${P5ARCH}/Embperl/Form/Control/hidden.pm
+${P5ARCH}/Embperl/Form/Control/info.pm
+${P5ARCH}/Embperl/Form/Control/input.pm
+${P5ARCH}/Embperl/Form/Control/label.pm
+${P5ARCH}/Embperl/Form/Control/mult.pm
+${P5ARCH}/Embperl/Form/Control/number.pm
+${P5ARCH}/Embperl/Form/Control/password.pm
+${P5ARCH}/Embperl/Form/Control/radio.pm
+${P5ARCH}/Embperl/Form/Control/select.pm
+${P5ARCH}/Embperl/Form/Control/selectdyn.pm
+${P5ARCH}/Embperl/Form/Control/submit.pm
+${P5ARCH}/Embperl/Form/Control/table.pm
+${P5ARCH}/Embperl/Form/Control/tabs.pm
+${P5ARCH}/Embperl/Form/Control/textarea.pm
+${P5ARCH}/Embperl/Form/Control/tinymce.pm
+${P5ARCH}/Embperl/Form/Control/transparent.pm
+${P5ARCH}/Embperl/Form/ControlMultValue.pm
+${P5ARCH}/Embperl/Form/DataSource.pm
+${P5ARCH}/Embperl/Form/Validate/
+${P5ARCH}/Embperl/Form/Validate.pm
+${P5ARCH}/Embperl/Form/Validate/Default.pm
+${P5ARCH}/Embperl/Form/Validate/EMail.pm
+${P5ARCH}/Embperl/Form/Validate/EMailRFC.pm
+${P5ARCH}/Embperl/Form/Validate/FQDN_IPAddr.pm
+${P5ARCH}/Embperl/Form/Validate/IPAddr.pm
+${P5ARCH}/Embperl/Form/Validate/IPAddr_Mask.pm
+${P5ARCH}/Embperl/Form/Validate/Integer.pm
+${P5ARCH}/Embperl/Form/Validate/Number.pm
+${P5ARCH}/Embperl/Form/Validate/PosInteger.pm
+${P5ARCH}/Embperl/Form/Validate/Select.pm
+${P5ARCH}/Embperl/Form/Validate/TimeHHMM.pm
+${P5ARCH}/Embperl/Form/Validate/TimeHHMMSS.pm
+${P5ARCH}/Embperl/Form/Validate/TimeValue.pm
+${P5ARCH}/Embperl/Inline.pm
+${P5ARCH}/Embperl/Intro.pod
+${P5ARCH}/Embperl/IntroEmbperlObject.pod
+${P5ARCH}/Embperl/Log.pm
+${P5ARCH}/Embperl/Mail.pm
+${P5ARCH}/Embperl/Object.pm
+${P5ARCH}/Embperl/Out.pm
+${P5ARCH}/Embperl/Recipe/
+${P5ARCH}/Embperl/Recipe.pm
+${P5ARCH}/Embperl/Recipe/Embperl.pm
+${P5ARCH}/Embperl/Recipe/EmbperlLibXSLT.pm
+${P5ARCH}/Embperl/Recipe/EmbperlPODXSLT.pm
+${P5ARCH}/Embperl/Recipe/EmbperlXSLT.pm
+${P5ARCH}/Embperl/Recipe/EmbperlXalanXSLT.pm
+${P5ARCH}/Embperl/Recipe/LibXSLT.pm
+${P5ARCH}/Embperl/Recipe/XSLT.pm
+${P5ARCH}/Embperl/Recipe/XalanXSLT.pm
+${P5ARCH}/Embperl/Run.pm
+${P5ARCH}/Embperl/SVN.pod
+${P5ARCH}/Embperl/Session.pm
+${P5ARCH}/Embperl/Syntax/
+${P5ARCH}/Embperl/Syntax.pm
+${P5ARCH}/Embperl/Syntax/ASP.pm
+${P5ARCH}/Embperl/Syntax/Embperl.pm
+${P5ARCH}/Embperl/Syntax/EmbperlBlocks.pm
+${P5ARCH}/Embperl/Syntax/EmbperlHTML.pm
+${P5ARCH}/Embperl/Syntax/HTML.pm
+${P5ARCH}/Embperl/Syntax/Mail.pm
+${P5ARCH}/Embperl/Syntax/MsgIdExtract.pm
+${P5ARCH}/Embperl/Syntax/POD.pm
+${P5ARCH}/Embperl/Syntax/Perl.pm
+${P5ARCH}/Embperl/Syntax/RTF.pm
+${P5ARCH}/Embperl/Syntax/SSI.pm
+${P5ARCH}/Embperl/Syntax/Test.pm
+${P5ARCH}/Embperl/Syntax/Test2.pm
+${P5ARCH}/Embperl/Syntax/Text.pm
+${P5ARCH}/Embperl/TOC.pod
+${P5ARCH}/Embperl/TipsAndTricks.pod
+${P5ARCH}/Embperl/Util.pm
+${P5ARCH}/auto/Embperl/
+${P5ARCH}/auto/Embperl/Embperl.bs
+${P5ARCH}/auto/Embperl/Embperl.so
 @man man/man1/embpexec.pl.1
-@man man/man3p/HTML::Embperl.3p
-@man man/man3p/HTML::Embperl::CVS.3p
-@man man/man3p/HTML::Embperl::Changes.3p
-@man man/man3p/HTML::Embperl::Faq.3p
-@man man/man3p/HTML::Embperl::Features.3p
-@man man/man3p/HTML::Embperl::FeaturesD.3p
-@man man/man3p/HTML::Embperl::INSTALL.3p
-@man man/man3p/HTML::Embperl::Intro.3p
-@man man/man3p/HTML::Embperl::IntroD.3p
-@man man/man3p/HTML::Embperl::IntroEmbperlObject.3p
-@man man/man3p/HTML::Embperl::Mail.3p
-@man man/man3p/HTML::Embperl::NEWS.3p
-@man man/man3p/HTML::Embperl::Session.3p
-@man man/man3p/HTML::Embperl::TipsAndTricks.3p
-@man man/man3p/HTML::EmbperlD.3p
-@man man/man3p/HTML::EmbperlObject.3p
+@man man/man1/embpmsgid.pl.1
+@man man/man3p/Embperl.3p
+@man man/man3p/Embperl::App.3p
+@man man/man3p/Embperl::Config.3p
+@man man/man3p/Embperl::Faq.3p
+@man man/man3p/Embperl::Features.3p
+@man man/man3p/Embperl::FeaturesD.3p
+@man man/man3p/Embperl::Form.3p
+@man man/man3p/Embperl::Form::Control.3p
+@man man/man3p/Embperl::Form::Control::addremove.3p
+@man man/man3p/Embperl::Form::Control::blank.3p
+@man man/man3p/Embperl::Form::Control::button.3p
+@man man/man3p/Embperl::Form::Control::checkbox.3p
+@man man/man3p/Embperl::Form::Control::checkboxes.3p
+@man man/man3p/Embperl::Form::Control::display.3p
+@man man/man3p/Embperl::Form::Control::displaylink.3p
+@man man/man3p/Embperl::Form::Control::dump.3p
+@man man/man3p/Embperl::Form::Control::file.3p
+@man man/man3p/Embperl::Form::Control::grid.3p
+@man man/man3p/Embperl::Form::Control::hidden.3p
+@man man/man3p/Embperl::Form::Control::info.3p
+@man man/man3p/Embperl::Form::Control::input.3p
+@man man/man3p/Embperl::Form::Control::label.3p
+@man man/man3p/Embperl::Form::Control::mult.3p
+@man man/man3p/Embperl::Form::Control::number.3p
+@man man/man3p/Embperl::Form::Control::password.3p
+@man man/man3p/Embperl::Form::Control::radio.3p
+@man man/man3p/Embperl::Form::Control::select.3p
+@man man/man3p/Embperl::Form::Control::selectdyn.3p
+@man man/man3p/Embperl::Form::Control::submit.3p
+@man man/man3p/Embperl::Form::Control::table.3p
+@man man/man3p/Embperl::Form::Control::tabs.3p
+@man man/man3p/Embperl::Form::Control::textarea.3p
+@man man/man3p/Embperl::Form::Control::tinymce.3p
+@man man/man3p/Embperl::Form::Control::transparent.3p
+@man man/man3p/Embperl::Form::ControlMultValue.3p
+@man man/man3p/Embperl::Form::DataSource.3p
+@man man/man3p/Embperl::Form::Validate.3p
+@man man/man3p/Embperl::Inline.3p
+@man man/man3p/Embperl::Intro.3p
+@man man/man3p/Embperl::Mail.3p
+@man man/man3p/Embperl::Object.3p
+@man man/man3p/Embperl::Recipe.3p
+@man man/man3p/Embperl::Recipe::Embperl.3p
+@man man/man3p/Embperl::Recipe::EmbperlXSLT.3p
+@man man/man3p/Embperl::Recipe::XSLT.3p
+@man man/man3p/Embperl::SVN.3p
+@man man/man3p/Embperl::Session.3p
+@man man/man3p/Embperl::Syntax.3p
+@man man/man3p/Embperl::Syntax::ASP.3p
+@man man/man3p/Embperl::Syntax::Embperl.3p
+@man man/man3p/Embperl::Syntax::EmbperlBlocks.3p
+@man man/man3p/Embperl::Syntax::EmbperlHTML.3p
+@man man/man3p/Embperl::Syntax::HTML.3p
+@man man/man3p/Embperl::Syntax::Mail.3p
+@man man/man3p/Embperl::Syntax::MsgIdExtract.3p
+@man man/man3p/Embperl::Syntax::POD.3p
+@man man/man3p/Embperl::Syntax::Perl.3p
+@man man/man3p/Embperl::Syntax::RTF.3p
+@man man/man3p/Embperl::Syntax::SSI.3p
+@man man/man3p/Embperl::Syntax::Text.3p
+@man man/man3p/Embperl::TOC.3p
+@man man/man3p/Embperl::TipsAndTricks.3p
+@man man/man3p/IntroEmbperlObject.3p

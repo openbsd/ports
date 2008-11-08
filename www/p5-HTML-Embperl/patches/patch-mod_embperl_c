@@ -1,0 +1,32 @@
+add support for OpenBSD httpd with IPv6 support
+
+$OpenBSD: patch-mod_embperl_c,v 1.1 2008/11/08 11:41:01 sthen Exp $
+--- mod_embperl.c.orig	Sat Apr  8 15:28:15 2006
++++ mod_embperl.c	Mon Nov  3 21:31:44 2008
+@@ -28,6 +28,9 @@
+ #define EMBPERL_SO
+ #endif
+ 
++#if defined(APACHE6) && !defined (__ss_family)
++#define __ss_family ss_family
++#endif
+ 
+ /* use getenv from runtime library and not from Perl */
+ #undef getenv
+@@ -1180,7 +1183,16 @@ int embperl_GetApacheReqParam  (/*in*/  tApp        * 
+ #ifdef APACHE2
+     port   = r -> connection -> local_addr -> port ;
+ #else
++#ifdef APACHE6
++    if (r->connection->local_addr.ss_family == AF_INET6)
++        port = ntohs(((struct sockaddr_in6 *)
++	    &r->connection->local_addr)->sin6_port);
++    else
++        port = ntohs(((struct sockaddr_in *)
++	    &r->connection->local_addr)->sin_port);
++#else
+     port   = ntohs(r -> connection -> local_addr.sin_port) ;
++#endif /* APACHE6 */
+ #endif
+ #ifdef EAPI
+     if (ap_ctx_get (r -> connection -> client -> ctx, "ssl"))
