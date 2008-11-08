@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/31 07:33:52 ajacoutot Exp $
-bin/gaia
+@comment $OpenBSD: PLIST,v 1.2 2008/11/08 13:15:43 ajacoutot Exp $
+@bin bin/gaia
 share/doc/gaia/
 share/doc/gaia/README
 share/gaia/
