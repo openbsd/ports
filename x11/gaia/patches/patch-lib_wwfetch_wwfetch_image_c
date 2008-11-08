@@ -1,0 +1,31 @@
+$OpenBSD: patch-lib_wwfetch_wwfetch_image_c,v 1.1 2008/11/08 17:13:08 ajacoutot Exp $
+--- lib/wwfetch/wwfetch_image.c.orig	Wed Nov 29 04:21:14 2006
++++ lib/wwfetch/wwfetch_image.c	Sat Nov  8 18:01:51 2008
+@@ -27,6 +27,9 @@
+  * @param level level of image [0..]
+  */
+ wwfetch_error wwfetch_fetch_image(wwfetch *handle, int x, int y, int level) {
++	if (level > 14)
++		return WWFETCH_NOT_FOUND;
++
+ 	int res = 1 << (level);
+ 
+ 	double x1 = (double)(x)/(double)(res) * 360.0 - 180.0;
+@@ -36,8 +39,16 @@ wwfetch_error wwfetch_fetch_image(wwfetch *handle, int
+ 
+ 	/* form full url */
+ 	char urlbuf[1024];
+-	if (snprintf(urlbuf, sizeof(urlbuf), "http://wms.jpl.nasa.gov/wms.cgi?request=GetMap&layers=global_mosaic_base&srs=EPSG:4326&width=256&height=256&bbox=%f,%f,%f,%f&format=image/jpeg&version=1.1.0&styles=", x1, y1, x2, y2) >= sizeof(urlbuf))
++	if (snprintf(urlbuf, sizeof(urlbuf), "http://wms.jpl.nasa.gov/wms.cgi?request=GetMap&layers=global_mosaic&srs=EPSG:4326&width=512&height=512&bbox=%f,%f,%f,%f&format=image/jpeg&version=1.1.0&styles=", x1, y1, x2, y2) >= sizeof(urlbuf))
+ 		return WWFETCH_SMALL_BUFFER;
++
++	wwfetch_error result = wwfetch_fetch(handle, urlbuf);
++	if (result == WWFETCH_OK) {
++		if (handle->currentsize < 4 || handle->currentdata[0] != 0xff ||
++		    handle->currentdata[1] != 0xd8 || handle->currentdata[2] != 0xff ||
++		    handle->currentdata[3] != 0xe0)
++			return WWFETCH_FETCH_FAILED;
++	}
+ 
+ 	return wwfetch_fetch(handle, urlbuf);
+ }
