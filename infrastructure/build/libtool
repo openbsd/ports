@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.57 2008/11/09 12:29:54 steven Exp $
+# $OpenBSD: libtool,v 1.58 2008/11/09 12:37:35 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -410,7 +410,7 @@ $gp->configure(	'no_ignore_case',
 $gp->getoptions('config' => \&config,
 		'debug' => \$D,
 		'dry-run|n' => sub { Exec->dry_run },
-		'features' => \&features,
+		'features' => \&notyet,
 		'finish' => sub { $mode = 'finish'; },
 		'help' => \&help, # does not return
 		'mode=s{1}' => \$mode,
@@ -822,7 +822,8 @@ sub help
 {
 	print <<EOF
 Usage: $0 [options]
---debug	- turn on debugging output
+--config - print configuration
+--debug - turn on debugging output
 --dry-run - don't do anything, only show what would be done
 --help - this message
 --mode=MODE - use operation mode MODE
@@ -838,6 +839,14 @@ EOF
 sub notyet
 {
 	die "option not implemented yet.\n";
+}
+
+# XXX incomplete
+sub config
+{
+	print "objdir=$ltdir\n";
+	print "...\n";
+	exit 0;
 }
 
 # convert 4:5:8 into a list of numbers
