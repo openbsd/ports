@@ -1,4 +1,4 @@
-$OpenBSD: patch-html_Makefile_in,v 1.4 2008/03/18 20:25:11 sturm Exp $
+$OpenBSD: patch-html_Makefile_in,v 1.5 2008/11/09 10:18:56 sturm Exp $
 --- html/Makefile.in.orig	Wed Jan  9 18:51:25 2008
 +++ html/Makefile.in	Sat Mar 15 19:53:53 2008
 @@ -33,39 +33,39 @@ distclean: clean
@@ -17,7 +17,7 @@ $OpenBSD: patch-html_Makefile_in,v 1.4 2008/03/18 20:25:11 sturm Exp $
 -	$(INSTALL) -m 664 $(INSTALL_OPTS) robots.txt $(DESTDIR)$(HTMLDIR)
 -	$(INSTALL) -m 664 $(INSTALL_OPTS) docs/robots.txt $(DESTDIR)$(HTMLDIR)/docs
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)
-+	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/media
++#	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/media
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/stylesheets
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/contexthelp
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/docs
@@ -30,9 +30,9 @@ $OpenBSD: patch-html_Makefile_in,v 1.4 2008/03/18 20:25:11 sturm Exp $
  	for file in *.html; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR); done
 +	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR); done
- 	for file in media/*.wav; \
--	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/media; done
-+	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/media; done
+ #	for file in media/*.wav; \
+-#	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/media; done
++#	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/media; done
  	for file in stylesheets/*.css; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/stylesheets; done
 +	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/stylesheets; done
