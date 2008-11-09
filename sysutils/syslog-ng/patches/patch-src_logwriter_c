@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_logwriter_c,v 1.1 2008/11/09 23:27:03 steven Exp $
+--- src/logwriter.c.orig	Wed Nov  5 22:02:50 2008
++++ src/logwriter.c	Wed Nov  5 22:03:02 2008
+@@ -29,6 +29,7 @@
+ #include "stats.h"
+ #include "misc.h"
+ 
++#include <string.h>
+ #include <unistd.h>
+ #include <assert.h>
+ 
