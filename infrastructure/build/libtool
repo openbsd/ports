@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.56 2008/11/09 10:30:54 steven Exp $
+# $OpenBSD: libtool,v 1.57 2008/11/09 12:29:54 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -373,11 +373,11 @@ my @Ropts;		# -R options on the command line
 my @Rresolved;		# -R options originating from .la resolution
 my @RPopts;		# -rpath options
 my @tags;		# list of --tag options passed to libtool
-my @deplibs;		# list of dependent libraries (both -L and -l flags)
-my %libs;		# libraries
-my %libstofind;
-my @orderedlibs;	# ordered library keys (may contain duplicates)
-my %dirs;		# paths to find libraries
+my $deplibs = [];	# list of dependent libraries (both -L and -l flags)
+my $libs = {};		# libraries
+my $libstofind = {};
+my $orderedlibs = [];	# ordered library keys (may contain duplicates)
+my $dirs = {};		# paths to find libraries
 
 # just to be clear:
 # when building a library:
@@ -397,7 +397,7 @@ if (grep { $_ eq $machine_arch } @no_shared_archs) {
 
 # put a priority in the dir hash
 # always look here
-$dirs{'/usr/lib'} = 3;
+$dirs->{'/usr/lib'} = 3;
 
 my $gp = new Getopt::Long::Parser;
 # require_order so we stop parsing at the first non-option or argument,
@@ -671,7 +671,7 @@ if ($mode eq 'compile') {
 
 	my $args = parse_linkargs_list(\@ARGV, 1);
 	@ARGV = @$args;
-	Trace::debug {"deplibs = @deplibs\n"};
+	Trace::debug {"deplibs = @$deplibs\n"};
 
 	# eat multiple version-info arguments, we only accept the first.
 	map { $_ = '' if ($_ =~ m/\d+:\d+:\d+/); } @ARGV;
@@ -779,9 +779,9 @@ if ($mode eq 'compile') {
 		$lainfo->{'installed'} = 'no';
 		$lainfo->{'shouldnotlink'} = $opts{'module'} ? 'yes' : 'no';
 		map { $_ = "-R$_" } @Ropts;
-		unshift @deplibs, @Ropts if (@Ropts);
-		Trace::debug {"deplibs = @deplibs\n"};
-		my $finaldeplibs = reverse_zap_duplicates_ref(\@deplibs);
+		unshift @$deplibs, @Ropts if (@Ropts);
+		Trace::debug {"deplibs = @$deplibs\n"};
+		my $finaldeplibs = reverse_zap_duplicates_ref($deplibs);
 		Trace::debug {"finaldeplibs = @$finaldeplibs\n"};
 		$lainfo->set('dependency_libs', "@$finaldeplibs");
 		if (@RPopts) {
@@ -958,9 +958,9 @@ sub resolve_la_list
 {
 	my $args = shift;
 	my $result = [];
-	if (internal_resolve_la(0, $result, \@deplibs, $args)) {
+	if (internal_resolve_la(0, $result, $deplibs, $args)) {
 		unshift(@$result, '-pthread');
-		unshift(@deplibs, '-pthread');
+		unshift(@$deplibs, '-pthread');
 	}
 	return $result;
 }
@@ -1105,8 +1105,8 @@ sub parse_linkargs_list
 	my ($args, $la) = @_;
 
 	my $result = [];
-	internal_parse_linkargs($result, \@deplibs, \@Rresolved, \@libsearchdirs, \@orderedlibs, \%dirs, \%libs,
-	    \%libstofind, $args, $la, 0);
+	internal_parse_linkargs($result, $deplibs, \@Rresolved, \@libsearchdirs, $orderedlibs, $dirs, $libs,
+	    $libstofind, $args, $la, 0);
 	return $result;
 }
 
@@ -1118,10 +1118,10 @@ sub find_la
 
 	# sort dir search order by priority
 	# XXX not fully correct yet
-	my @dirs = sort { $dirs{$b} <=> $dirs{$a} } keys %dirs;
+	my @sdirs = sort { $dirs->{$b} <=> $dirs->{$a} } keys %$dirs;
 	Trace::debug {"searching .la for $l\n"};
-	Trace::debug {"search path= ", join(':', @dirs), "\n"};
-	foreach my $d (@dirs) {
+	Trace::debug {"search path= ", join(':', @sdirs), "\n"};
+	foreach my $d (@sdirs) {
 		foreach my $la_candidate ("$d/lib$l.la", "$d/$l.a") {
 			if (-f $la_candidate) {
 				Trace::debug {"found $la_candidate\n"};
@@ -1145,13 +1145,13 @@ sub find_lib
 
 	# sort dir search order by priority
 	# XXX not fully correct yet
-	my @dirs = sort { $dirs{$b} <=> $dirs{$a} } keys %dirs;
+	my @sdirs = sort { $dirs->{$b} <=> $dirs->{$a} } keys %$dirs;
 	# search in .libs when priority is high
-	map { $_ = "$_/$ltdir" if (exists $dirs{$_} && $dirs{$_} > 3) } @dirs;
-	push @dirs, @ldconfigdirs;
+	map { $_ = "$_/$ltdir" if (exists $dirs->{$_} && $dirs->{$_} > 3) } @sdirs;
+	push @sdirs, @ldconfigdirs;
 	Trace::debug {"searching for $libtofind\n"};
-	Trace::debug {"search path= ", join(':', @dirs), "\n"};
-	foreach my $sd (@dirs) {
+	Trace::debug {"search path= ", join(':', @sdirs), "\n"};
+	foreach my $sd (@sdirs) {
 		# select correct library by sorting by version number only
 		@globbedlib = sort { my ($x,$y) =
 			map { /\.so\.(\d+\.\d+)$/; $1 } ($a,$b); $y <=> $x }
@@ -1235,26 +1235,26 @@ sub linkcmds
 	Trace::debug {"argvstring (pre resolve_la): @ARGV\n"};
 	my $argv = resolve_la_list(\@ARGV);
 	Trace::debug {"argvstring (post resolve_la): @$argv\n"};
-	@orderedlibs = ();
+	$orderedlibs = [];
 	$argv = parse_linkargs_list($argv, 0);
-	Trace::debug {"deplibs = @deplibs\n"};
-	Trace::debug {"orderedlibs = @orderedlibs\n"};
-	my @finalorderedlibs = reverse_zap_duplicates(@orderedlibs);
-	Trace::debug {"final orderedlibs = @finalorderedlibs\n"};
+	Trace::debug {"deplibs = @$deplibs\n"};
+	Trace::debug {"orderedlibs = @$orderedlibs\n"};
+	my $finalorderedlibs = reverse_zap_duplicates_ref($orderedlibs);
+	Trace::debug {"final orderedlibs = @$finalorderedlibs\n"};
 	# static linking
 	if (!$shared) {
-		Trace::debug {"dirs:\n", join("\n", (keys %dirs)), "\n"};
-		Trace::debug {"libs:\n", join("\n", (keys %libs)), "\n"};
-		Trace::debug {"libfiles:\n", join("\n", (values %libs)), "\n"};
+		Trace::debug {"dirs:\n", join("\n", (keys %$dirs)), "\n"};
+		Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
+		Trace::debug {"libfiles:\n", join("\n", (values %$libs)), "\n"};
 		if ($lmode == LIBRARY) {
 			$cmd = "ar cru $dst";
 			$cmd .= " @$objs" if (@$objs);
-			foreach my $k (@finalorderedlibs) {
-				unless (defined $libs{$k}) {
+			foreach my $k (@$finalorderedlibs) {
+				unless (defined $libs->{$k}) {
 					Trace::debug {"library $k not found in \%libs\n"};
 					next;
 				}
-				my $a = $libs{$k};
+				my $a = $libs->{$k};
 				if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
 					# extract objects from archive
 					my $libfile = basename $a;
@@ -1275,7 +1275,7 @@ sub linkcmds
 	}
 
 	# dynamic linking
-	my @RPdirs = ();
+	my $RPdirs = [];
 	my $symbolsfile;
 	if ($opts{'export-symbols'}) {
 		$symbolsfile = $opts{'export-symbols'};
@@ -1285,18 +1285,18 @@ sub linkcmds
 		get_symbollist($symbolsfile, $opts{'export-symbols-regex'}, $objs);
 	}
 	if ($lmode == PROGRAM) {
-		@RPdirs = (@Ropts, @RPopts, @Rresolved);
-		@RPdirs = reverse_zap_duplicates(@RPdirs);
-		map { $_ = "-Wl,-rpath,$_" } @RPdirs;
+		@$RPdirs = (@Ropts, @RPopts, @Rresolved);
+		$RPdirs = reverse_zap_duplicates_ref($RPdirs);
+		map { $_ = "-Wl,-rpath,$_" } @$RPdirs;
 	}
-	foreach my $l (keys %libstofind) {
+	foreach my $l (keys %$libstofind) {
 		my $libpath = find_lib($l);
-		$libs{$l} = $libpath if ($libpath);
+		$libs->{$l} = $libpath if ($libpath);
 	}
 
-	my @libfiles = values %libs;
-	Trace::debug {"dirs:\n", join("\n", (keys %dirs)), "\n"};
-	Trace::debug {"libs:\n", join("\n", (keys %libs)), "\n"};
+	my @libfiles = values %$libs;
+	Trace::debug {"dirs:\n", join("\n", (keys %$dirs)), "\n"};
+	Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
 	Trace::debug {"libfiles:\n", join("\n", @libfiles), "\n"};
 
 	create_symlinks($ltdir, \@libfiles);
@@ -1304,8 +1304,8 @@ sub linkcmds
 	Trace::debug {"symlinks to libfiles used for linking:\n", join("\n", @libfiles), "\n"};
 	my $prev_was_archive = 0;
 	my $libcounter = 0;
-	foreach my $k (@finalorderedlibs) {
-		my $a = $libs{$k} || die "ERROR: $k not found in \$libs";
+	foreach my $k (@$finalorderedlibs) {
+		my $a = $libs->{$k} || die "ERROR: $k not found in \$libs";
 		if ($a =~ m/\.a$/) {
 			# don't make a -lfoo out of a static library
 			if ($lmode == LIBRARY) {
@@ -1315,7 +1315,7 @@ sub linkcmds
 			}
 			push @libflags, $a;
 			if ($lmode == LIBRARY) {
-				if ($libcounter == @finalorderedlibs - 1) {
+				if ($libcounter == @$finalorderedlibs - 1) {
 					push @libflags, '-Wl,-no-whole-archive';
 				}
 			}
@@ -1345,7 +1345,7 @@ sub linkcmds
 	$cmd .= " @$argv";
 	$cmd .= " @$objs" if (@$objs);
 	$cmd .= " -L$ltdir @libflags" if (@libflags);
-	$cmd .= " @RPdirs" if (@RPdirs);
+	$cmd .= " @$RPdirs" if (@$RPdirs);
 	$cmd .= " -Wl,-retain-symbols-file,$symbolsfile" if ($symbolsfile);
 	push @cmdlist, $cmd;
 
