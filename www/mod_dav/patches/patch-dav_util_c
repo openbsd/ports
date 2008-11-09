@@ -1,6 +1,5 @@
-$OpenBSD: patch-dav_util_c,v 1.1 2005/10/28 01:04:53 brad Exp $
---- dav_util.c.orig	Thu Oct 27 20:53:15 2005
-+++ dav_util.c	Thu Oct 27 20:53:32 2005
+--- dav_util.c~	2008-07-18 07:35:25.000000000 -0700
++++ dav_util.c	2008-07-18 07:45:18.000000000 -0700
 @@ -546,7 +546,7 @@ void dav_xml2text(pool * p,
  		  array_header *namespaces,
  		  int *ns_map,
@@ -10,3 +9,16 @@ $OpenBSD: patch-dav_util_c,v 1.1 2005/10/28 01:04:53 brad Exp $
  {
      /* get the exact size, plus a null terminator */
      size_t size = dav_elem_size(elem, style, namespaces, ns_map) + 1;
+@@ -1254,7 +1254,11 @@ static dav_error * dav_validate_resource
+ 	    switch(state_list->type) {
+ 	    case dav_if_etag:
+ 	    {
+-		int mismatch = strcmp(state_list->etag, etag);
++		const char *given_etag = state_list->etag;
++		const char *current_etag = etag;
++		if ((given_etag[0] == 'W') && (given_etag[1] == '/')) given_etag += 2;
++		if ((current_etag[0] == 'W') && (current_etag[1] == '/')) current_etag += 2;
++		int mismatch = strcmp(given_etag, current_etag);
+ 
+ 		if (state_list->condition == DAV_IF_COND_NORMAL && mismatch) {
+ 		    /*

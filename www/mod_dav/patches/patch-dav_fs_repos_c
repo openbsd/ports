@@ -1,0 +1,61 @@
+--- dav_fs_repos.c~	2008-07-17 10:39:21.000000000 -0700
++++ dav_fs_repos.c	2008-07-18 08:37:40.000000000 -0700
+@@ -47,6 +47,11 @@ struct dav_resource_private {
+     pool *pool;             /* memory storage pool associated with request */
+     const char *pathname;   /* full pathname to resource */
+     struct stat finfo;      /* filesystem info */
++    /* additional values needed by dav_fs_getetag() */
++    time_t request_time;
++    time_t mtime;
++    void *per_dir_config;
++    table *notes;
+ };
+ 
+ /* private context for doing a filesystem walk */
+@@ -567,6 +572,12 @@ static dav_resource * dav_fs_get_resourc
+ 
+     (void) ap_update_mtime(r, r->finfo.st_mtime);
+ 
++    /* additional values needed by dav_fs_getetag() */
++    ctx->request_time = r->request_time;
++    ctx->mtime = r->mtime;
++    ctx->per_dir_config = r->per_dir_config;
++    ctx->notes = r->notes;
++
+     /* Preserve case on OSes which fold canonical filenames */
+ #if MODULE_MAGIC_NUMBER_MAJOR > 19990320 || (MODULE_MAGIC_NUMBER_MAJOR == 19990320 && MODULE_MAGIC_NUMBER_MINOR >= 8)
+     filename = r->case_preserved_filename;
+@@ -1664,7 +1675,7 @@ static dav_error * dav_fs_walk(dav_walke
+  *    for file path.
+  * ### do we need to return weak tags sometimes?
+  */
+-static const char *dav_fs_getetag(const dav_resource *resource)
++static const char *dav_fs_getetag_orig(const dav_resource *resource)
+ {
+     dav_resource_private *ctx = resource->info;
+ 
+@@ -1681,6 +1692,24 @@ static const char *dav_fs_getetag(const 
+     return ap_psprintf(ctx->pool, "\"%lx\"", (unsigned long) ctx->finfo.st_mtime);
+ }
+ 
++static const char *dav_fs_getetag(const dav_resource *resource)
++{
++    dav_resource_private *ctx = resource->info;
++    request_rec r;
++
++    if (!resource->exists)
++        return ap_pstrdup(ctx->pool, "");
++
++    r.pool = ctx->pool;
++    r.request_time = ctx->request_time;
++    r.finfo = ctx->finfo;
++    r.mtime = ctx->mtime;
++    r.per_dir_config = ctx->per_dir_config;
++    r.notes = ctx->notes;
++
++    return ap_make_etag(&r, 0);
++}
++
+ static const dav_hooks_repository dav_hooks_repository_fs =
+ {
+     DEBUG_GET_HANDLER,   /* normally: special GET handling not required */
