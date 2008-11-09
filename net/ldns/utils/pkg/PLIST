@@ -1,24 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/06/03 15:03:10 jakob Exp $
-bin/ldns-chaos
-bin/ldns-compare-zones
-bin/ldns-dpa
-bin/ldns-key2ds
-bin/ldns-keyfetcher
-bin/ldns-keygen
-bin/ldns-mx
-bin/ldns-notify
-bin/ldns-read-zone
-bin/ldns-resolver
-bin/ldns-rrsig
-bin/ldns-signzone
-bin/ldns-testns
-bin/ldns-update
-bin/ldns-verify-zone
-bin/ldns-version
-bin/ldns-walk
-bin/ldns-zcat
-bin/ldns-zsplit
-bin/ldnsd
+@comment $OpenBSD: PLIST,v 1.3 2008/11/09 19:03:18 jakob Exp $
+@bin bin/ldns-chaos
+@bin bin/ldns-compare-zones
+@bin bin/ldns-dpa
+@bin bin/ldns-key2ds
+@bin bin/ldns-keyfetcher
+@bin bin/ldns-keygen
+@bin bin/ldns-mx
+@bin bin/ldns-notify
+@bin bin/ldns-read-zone
+@bin bin/ldns-resolver
+@bin bin/ldns-revoke
+@bin bin/ldns-rrsig
+@bin bin/ldns-signzone
+@bin bin/ldns-testns
+@bin bin/ldns-update
+@bin bin/ldns-verify-zone
+@bin bin/ldns-version
+@bin bin/ldns-walk
+@bin bin/ldns-zcat
+@bin bin/ldns-zsplit
+@bin bin/ldnsd
 @man man/man1/ldns-chaos.1
 @man man/man1/ldns-compare-zones.1
 @man man/man1/ldns-dpa.1
@@ -29,6 +30,7 @@ bin/ldnsd
 @man man/man1/ldns-notify.1
 @man man/man1/ldns-read-zone.1
 @man man/man1/ldns-resolver.1
+@man man/man1/ldns-revoke.1
 @man man/man1/ldns-rrsig.1
 @man man/man1/ldns-signzone.1
 @man man/man1/ldns-testns.1

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile.inc,v 1.2 2008/06/03 15:03:10 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2008/11/09 19:03:18 jakob Exp $
 
-VERSION=	1.3.0
+VERSION=	1.4.0
 
 DISTNAME=	ldns-${VERSION}
 
 CATEGORIES=	net
 
-MASTER_SITES=	http://www.nlnetlabs.nl/downloads/
+MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
 HOMEPAGE=	http://www.nlnetlabs.nl/ldns/
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
