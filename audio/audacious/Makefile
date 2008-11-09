@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2008/05/19 03:01:00 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2008/11/09 17:56:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	gtk+2 media player based on BMP and XMMS
 
 DISTNAME=	audacious-1.5.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	audclient	0.0
 
 CATEGORIES=	audio multimedia
 
 HOMEPAGE=	http://audacious-media-player.org/
 
-# GPL
+# GPLv3
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
@@ -37,7 +37,8 @@ LIB_DEPENDS=	samplerate::audio/libsamplerate \
 		mowgli::devel/mowgli \
 		dbus-glib-1::x11/dbus-glib \
 		dbus-1.>=6::x11/dbus \
-		gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+		gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
+		execinfo::devel/libexecinfo
 
 MAKE_ENV=	LIBaudclient_VERSION=${LIBaudclient_VERSION}
 
@@ -47,7 +48,8 @@ USE_GMAKE=	Yes
 AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--enable-samplerate
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 
 .if ${MACHINE_ARCH} != "amd64"
 CONFIGURE_ARGS+=	--disable-sse2
