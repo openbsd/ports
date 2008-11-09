@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/03/19 15:18:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/11/09 19:11:56 jasper Exp $
 lib/pkgconfig/
 lib/pkgconfig/iso-codes.pc
 share/iso-codes/
-share/iso-codes/iso_3166.tab
 share/iso-codes/iso_639.tab
 share/locale/
 share/locale/af/
@@ -143,6 +142,7 @@ share/locale/fi/
 share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/iso_15924.mo
 share/locale/fi/LC_MESSAGES/iso_3166.mo
+share/locale/fi/LC_MESSAGES/iso_3166_2.mo
 share/locale/fi/LC_MESSAGES/iso_4217.mo
 share/locale/fi/LC_MESSAGES/iso_639.mo
 share/locale/fi/LC_MESSAGES/iso_639_3.mo
