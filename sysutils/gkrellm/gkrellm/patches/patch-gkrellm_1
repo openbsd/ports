@@ -1,7 +1,7 @@
-$OpenBSD: patch-gkrellm_1,v 1.1 2008/08/21 07:23:44 ajacoutot Exp $
---- gkrellm.1.orig	Tue Jul 29 10:10:38 2008
-+++ gkrellm.1	Tue Jul 29 10:12:27 2008
-@@ -758,7 +758,7 @@ any correction factors and offsets for each of the sen
+$OpenBSD: patch-gkrellm_1,v 1.2 2008/11/09 13:38:29 ajacoutot Exp $
+--- gkrellm.1.orig	Sat Oct  4 03:48:08 2008
++++ gkrellm.1	Sun Nov  9 13:26:44 2008
+@@ -767,7 +767,7 @@ any correction factors and offsets for each of the sen
  (see below and lm_sensor documentation).  For Linux, default values are
  automatically provided for many sensor chips.
  .PP
@@ -10,7 +10,7 @@ $OpenBSD: patch-gkrellm_1,v 1.1 2008/08/21 07:23:44 ajacoutot Exp $
  offsets on the Sensors config page because libsensors configuration is
  done in the /etc/sensors.conf file.  To get sensor debug output and to find
  out the sensor data source, run:
-@@ -1088,8 +1088,7 @@ several locations:
+@@ -1097,8 +1097,7 @@ several locations:
  .RS
  .nf
  ~/.gkrellm2/themes
@@ -20,7 +20,7 @@ $OpenBSD: patch-gkrellm_1,v 1.1 2008/08/21 07:23:44 ajacoutot Exp $
  .fi
  .RE
  .PP
-@@ -1100,7 +1099,7 @@ theme may also be installed as:
+@@ -1109,7 +1108,7 @@ theme may also be installed as:
  .RS
  .nf
  ~/.themes/THEME_NAME/gkrellm2
@@ -29,7 +29,7 @@ $OpenBSD: patch-gkrellm_1,v 1.1 2008/08/21 07:23:44 ajacoutot Exp $
  .fi
  .RE
  .PP
-@@ -1125,11 +1124,9 @@ and there you will find a Theme making reference.
+@@ -1134,11 +1133,9 @@ and there you will find a Theme making reference.
  tries to load all plugins (shared object files ending in .so)
  it finds in your plugin directory
  .IR ~/.gkrellm2/plugins.
@@ -44,7 +44,7 @@ $OpenBSD: patch-gkrellm_1,v 1.1 2008/08/21 07:23:44 ajacoutot Exp $
  .PP
  Some plugins may be available only as source files and they will
  have to be compiled before installation.  There should be instructions
-@@ -1164,25 +1161,19 @@ and user's themes.
+@@ -1173,25 +1170,19 @@ and user's themes.
  .I ~/.gkrellm2/plugins
  User plugin directory.
  .TP

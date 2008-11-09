@@ -1,9 +1,9 @@
-$OpenBSD: patch-server_Makefile,v 1.8 2007/10/26 22:56:57 ajacoutot Exp $
---- server/Makefile.orig	Fri Oct 26 15:06:21 2007
-+++ server/Makefile	Fri Oct 26 15:07:54 2007
-@@ -2,12 +2,9 @@ PACKAGE_D ?= gkrellmd
- PKG_CONFIG ?= pkg-config
+$OpenBSD: patch-server_Makefile,v 1.9 2008/11/09 13:38:29 ajacoutot Exp $
+--- server/Makefile.orig	Sun Nov  9 13:21:40 2008
++++ server/Makefile	Sun Nov  9 13:24:01 2008
+@@ -3,10 +3,7 @@ PKG_CONFIG ?= pkg-config
  BINMODE ?= 755
+ BINEXT ?=
  
 -INSTALLROOT ?= $(DESTDIR)$(PREFIX)
 -ifeq ($(INSTALLROOT),)
@@ -11,14 +11,11 @@ $OpenBSD: patch-server_Makefile,v 1.8 2007/10/26 22:56:57 ajacoutot Exp $
 -endif
 +INSTALLROOT ?= $(PREFIX)
  
--SINSTALLDIR ?= $(INSTALLROOT)/bin
-+SINSTALLDIR ?= $(INSTALLROOT)/sbin
+ SINSTALLDIR ?= $(INSTALLROOT)/bin
  INSTALLDIRMODE ?= 755
- 
- INCLUDEDIR ?= $(INSTALLROOT)/include
-@@ -17,11 +14,11 @@ INCLUDEDIRMODE ?= 755
- LIBDIR ?= $(INSTALLROOT)/lib
- LIBDIRMODE ?= 755
+@@ -22,11 +19,11 @@ CFGDIR ?= $(INSTALLROOT)/etc
+ CFGDIRMODE ?= 755
+ CFGMODE ?= 644
  
 -SMANDIR ?= $(INSTALLROOT)/share/man/man1
 +SMANDIR ?= $(INSTALLROOT)/man/man1
@@ -29,40 +26,27 @@ $OpenBSD: patch-server_Makefile,v 1.8 2007/10/26 22:56:57 ajacoutot Exp $
 +LINK_FLAGS ?= -Wl
  EXTRAOBJS =
  
- 
-@@ -51,23 +48,23 @@ PKG_LIB = `$(PKG_CONFIG) --libs glib-2.0 gmodule-2.0 g
+ SHARED_PATH = ../shared
+@@ -59,13 +56,13 @@ PKG_LIB = `$(PKG_CONFIG) --libs glib-2.0 gmodule-2.0 g
  GLIB12_INCLUDE = `glib-config --cflags`
  GLIB12_LIB = `glib-config --libs glib gmodule`
  
--FLAGS = -O2 -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
-+FLAGS = -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
- ifeq ($(glib12),1)
--FLAGS = -O2 -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE)
-+FLAGS = -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE)
- endif
- ifeq ($(glib12),yes)
--FLAGS = -O2 -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE)
-+FLAGS = -I.. $(GLIB12_INCLUDE) $(GTOP_INCLUDE)
- endif
- 
- FLAGS+= $(PTHREAD_INC)
- 
--LIBS = $(PKG_LIB) $(GTOP_LIBS_D) $(SYS_LIBS) $(SENSORS_LIBS)
-+LIBS += $(PKG_LIB) $(GTOP_LIBS_D) $(SYS_LIBS) $(SENSORS_LIBS)
+-FLAGS = -O2 $(PKG_INCLUDE)
++FLAGS = $(PKG_INCLUDE)
  
  ifeq ($(glib12),1)
--LIBS = $(GLIB12_LIB) $(GTOP_LIBS_D) $(SYS_LIBS) $(SENSORS_LIBS)
-+LIBS += $(GLIB12_LIB) $(GTOP_LIBS_D) $(SYS_LIBS) $(SENSORS_LIBS)
+-    FLAGS = -O2 $(GLIB12_INCLUDE)
++    FLAGS = $(GLIB12_INCLUDE)
  endif
  ifeq ($(glib12),yes)
--LIBS = $(GLIB12_LIB) $(GTOP_LIBS_D) $(SYS_LIBS) $(SENSORS_LIBS)
-+LIBS += $(GLIB12_LIB) $(GTOP_LIBS_D) $(SYS_LIBS) $(SENSORS_LIBS)
+-    FLAGS = -O2  $(GLIB12_INCLUDE)
++    FLAGS = $(GLIB12_INCLUDE)
  endif
+ FLAGS += $(GTOP_INCLUDE) $(PTHREAD_INC) -I.. -I$(SHARED_PATH) -DGKRELLM_SERVER
  
- ifeq ($(debug),1)
-@@ -100,7 +97,7 @@ ifeq ($(HAVE_GETADDRINFO),1)
+@@ -107,7 +104,7 @@ ifeq ($(HAVE_GETADDRINFO),1)
+     FLAGS += -DHAVE_GETADDRINFO
  endif
- 
  
 -override CC += -Wall $(FLAGS)
 +CFLAGS += $(FLAGS)

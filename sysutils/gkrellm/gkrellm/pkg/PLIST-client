@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-client,v 1.6 2007/10/25 07:34:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST-client,v 1.7 2008/11/09 13:38:29 ajacoutot Exp $
 @mode 2755
 @group kmem
 bin/gkrellm
@@ -7,6 +7,7 @@ bin/gkrellm
 include/gkrellm2/
 include/gkrellm2/gkrellm-public-proto.h
 include/gkrellm2/gkrellm.h
+include/gkrellm2/log.h
 lib/pkgconfig/gkrellm.pc
 @man man/man1/gkrellm.1
 share/locale/bg/LC_MESSAGES/gkrellm.mo

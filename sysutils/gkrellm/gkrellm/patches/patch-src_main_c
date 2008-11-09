@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_main_c,v 1.1 2008/11/09 13:38:29 ajacoutot Exp $
+--- src/main.c.orig	Sun Nov  9 14:31:11 2008
++++ src/main.c	Sun Nov  9 14:32:04 2008
+@@ -2050,6 +2050,8 @@ main(gint argc, gchar **argv)
+ 	gint		i;
+ 	gchar		*s;
+ 
++	gkrellm_sys_main_init();
++
+ #ifdef ENABLE_NLS
+ 	gtk_set_locale();
+ #endif
+@@ -2188,8 +2190,6 @@ main(gint argc, gchar **argv)
+ 	if (_GK.debug_level > 0)
+ 		g_debug("--- GKrellM %d.%d.%d ---\n", GKRELLM_VERSION_MAJOR,
+ 			GKRELLM_VERSION_MINOR, GKRELLM_VERSION_REV);
+-
+-	gkrellm_sys_main_init(); //FIXME: call this later or earlier?
+ 
+ 	_GK.w_display = gdk_screen_get_width(gdk_screen_get_default());
+ 	_GK.h_display = gdk_screen_get_height(gdk_screen_get_default());

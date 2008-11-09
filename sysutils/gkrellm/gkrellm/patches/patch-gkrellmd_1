@@ -1,7 +1,7 @@
-$OpenBSD: patch-gkrellmd_1,v 1.1 2008/08/21 07:23:44 ajacoutot Exp $
---- gkrellmd.1.orig	Tue Jul 29 10:12:40 2008
-+++ gkrellmd.1	Tue Jul 29 10:13:51 2008
-@@ -362,7 +362,7 @@ to see a log of the plugin install process.
+$OpenBSD: patch-gkrellmd_1,v 1.2 2008/11/09 13:38:29 ajacoutot Exp $
+--- gkrellmd.1.orig	Sat Oct  4 03:52:26 2008
++++ gkrellmd.1	Sun Nov  9 13:26:45 2008
+@@ -375,7 +375,7 @@ to see a log of the plugin install process.
  
  .SH "FILES"
  .TP
@@ -10,7 +10,7 @@ $OpenBSD: patch-gkrellmd_1,v 1.1 2008/08/21 07:23:44 ajacoutot Exp $
  System server config which is read first.
  The config file may contain lines similar to the command line args.
  For example:
-@@ -401,20 +401,14 @@ command line args will override options in gkrellmd.co
+@@ -414,20 +414,14 @@ command line args will override options in gkrellmd.co
  
  .RE
  .TP

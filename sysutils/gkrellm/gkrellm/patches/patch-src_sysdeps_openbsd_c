@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.11 2008/09/02 11:28:05 landry Exp $
---- src/sysdeps/openbsd.c.orig	Fri Jul  6 16:54:22 2007
-+++ src/sysdeps/openbsd.c	Sat Jul 12 09:14:03 2008
-@@ -53,41 +53,71 @@ gkrellm_sys_main_cleanup(void)
+$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.12 2008/11/09 13:38:29 ajacoutot Exp $
+--- src/sysdeps/openbsd.c.orig	Sat Oct  4 02:46:45 2008
++++ src/sysdeps/openbsd.c	Sun Nov  9 13:26:45 2008
+@@ -65,41 +65,71 @@ gkrellm_sys_main_cleanup(void)
  #include <sys/dkstat.h>
  #include <kvm.h>
  
@@ -93,7 +93,7 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.11 2008/09/02 11:28:05 landry Exp $
  /* ===================================================================== */
  /* Proc monitor interface */
  
-@@ -259,41 +289,122 @@ gkrellm_sys_mem_init(void)
+@@ -271,41 +301,122 @@ gkrellm_sys_mem_init(void)
  
  
  /* ===================================================================== */
@@ -228,7 +228,7 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.11 2008/09/02 11:28:05 landry Exp $
  
  #include <machine/apmvar.h>
  #define	APMDEV		"/dev/apm"
-@@ -405,7 +516,7 @@ gkrellm_sys_disk_read_data(void)
+@@ -417,7 +528,7 @@ gkrellm_sys_disk_read_data(void)
  		/* Separate read/write stats were implemented in NetBSD 1.6K.
  		*/
  
@@ -237,7 +237,7 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.11 2008/09/02 11:28:05 landry Exp $
  		rbytes = d.dk_rbytes;
  		wbytes = d.dk_wbytes;
  #else
-@@ -413,7 +524,7 @@ gkrellm_sys_disk_read_data(void)
+@@ -425,7 +536,7 @@ gkrellm_sys_disk_read_data(void)
  		wbytes = 0;
  #endif
  
