@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2008/04/23 22:18:27 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2008/11/09 21:12:34 jasper Exp $
 
 CATEGORIES?=	x11 x11/matchbox
 
@@ -6,7 +6,7 @@ HOMEPAGE?=	http://projects.o-hand.com/matchbox/
 
 MASTER_SITES_MATCHBOX=	http://projects.o-hand.com/matchbox/sources/
 
-# GPL/LGPL
+# GPLv2/LGPLv2.1
 PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_CDROM?=Yes
