@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.55 2008/11/08 09:43:43 espie Exp $
+# $OpenBSD: libtool,v 1.56 2008/11/09 10:30:54 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -779,14 +779,11 @@ if ($mode eq 'compile') {
 		$lainfo->{'installed'} = 'no';
 		$lainfo->{'shouldnotlink'} = $opts{'module'} ? 'yes' : 'no';
 		map { $_ = "-R$_" } @Ropts;
-		my $deplibstring = join ' ', @deplibs;
-		$deplibstring = "@Ropts $deplibstring" if (@Ropts);
-		@deplibs = split /\s+/, $deplibstring;
+		unshift @deplibs, @Ropts if (@Ropts);
 		Trace::debug {"deplibs = @deplibs\n"};
-		my @finaldeplibs = reverse_zap_duplicates(@deplibs);
-		Trace::debug {"finaldeplibs = @finaldeplibs\n"};
-		$deplibstring = join ' ', @finaldeplibs;
-		$lainfo->set('dependency_libs', $deplibstring);
+		my $finaldeplibs = reverse_zap_duplicates_ref(\@deplibs);
+		Trace::debug {"finaldeplibs = @$finaldeplibs\n"};
+		$lainfo->set('dependency_libs', "@$finaldeplibs");
 		if (@RPopts) {
 			if (@RPopts > 1) {
 				Trace::debug {"more than 1 -rpath option given, taking the first: ", $RPopts[0], "\n"};
@@ -798,7 +795,8 @@ if ($mode eq 'compile') {
 		symlink("../$ofile", "$odir/$ltdir/$ofile");
 		if ($shared) {
 			my $lai = "$odir/$ltdir/$ofile".'i';
-			$lainfo->set('dependency_libs', process_deplibs($deplibstring));
+			my $pdeplibs = process_deplibs($finaldeplibs);
+			$lainfo->set('dependency_libs', "@$pdeplibs");
 			$lainfo->{'installed'} = 'yes';
 			# write .lai file (.la file that will be installed)
 			$lainfo->write($lai, $ofile);
@@ -1197,20 +1195,21 @@ sub inspect_lib
 # .la files
 sub process_deplibs
 {
-	my $deplibline = shift;
+	my $linkflags = shift;
 
-	my @linkflags = split /\s+/, $deplibline;
-	my %la_in_ldpath;
+	my $result;
 
-	foreach my $lf (@linkflags) {
+	foreach my $lf (@$linkflags) {
 		if ($lf =~ m/-L\S+\Q$ltdir\E$/) {
-			$lf = '';
 		} elsif ($lf =~ m/\/\S+\/(\S+\.la)/) {
 			my $lafile = $1;
 			$lf = LaFile->parse($lf)->{'libdir'}.'/'.$lafile;
+			push @$result, $lf;
+		} else {
+			push @$result, $lf;
 		}
 	}
-	return join ' ', @linkflags;
+	return $result;
 }
 
 # construct linker command (list) for either libraries or programs
@@ -1244,9 +1243,9 @@ sub linkcmds
 	Trace::debug {"final orderedlibs = @finalorderedlibs\n"};
 	# static linking
 	if (!$shared) {
-		Trace::debug {"dirs:  ", join(' ', (keys %dirs)), "\n"};
-		Trace::debug {"libs:  ", join(' ', (keys %libs)), "\n"};
-		Trace::debug {"libfiles: ", join(' ', (values %libs)), "\n"};
+		Trace::debug {"dirs:\n", join("\n", (keys %dirs)), "\n"};
+		Trace::debug {"libs:\n", join("\n", (keys %libs)), "\n"};
+		Trace::debug {"libfiles:\n", join("\n", (values %libs)), "\n"};
 		if ($lmode == LIBRARY) {
 			$cmd = "ar cru $dst";
 			$cmd .= " @$objs" if (@$objs);
@@ -1296,13 +1295,13 @@ sub linkcmds
 	}
 
 	my @libfiles = values %libs;
-	Trace::debug {"dirs:  ", join(' ', (keys %dirs)), "\n"};
-	Trace::debug {"libs:  ", join(' ', (keys %libs)), "\n"};
-	Trace::debug {"libfiles: ", join(' ', @libfiles), "\n"};
+	Trace::debug {"dirs:\n", join("\n", (keys %dirs)), "\n"};
+	Trace::debug {"libs:\n", join("\n", (keys %libs)), "\n"};
+	Trace::debug {"libfiles:\n", join("\n", @libfiles), "\n"};
 
 	create_symlinks($ltdir, \@libfiles);
 	map { $_ = "$ltdir/". basename $_ } @libfiles;
-	Trace::debug {"symlinks to libfiles used for linking: @libfiles\n"};
+	Trace::debug {"symlinks to libfiles used for linking:\n", join("\n", @libfiles), "\n"};
 	my $prev_was_archive = 0;
 	my $libcounter = 0;
 	foreach my $k (@finalorderedlibs) {
