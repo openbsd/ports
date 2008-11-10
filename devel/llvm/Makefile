@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/10 11:25:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/10 12:17:54 sthen Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
@@ -7,6 +7,8 @@ SNAPDATE =	${SVN_SNAPDATE:S/-//g}
 V =		2.4.snap${SNAPDATE}
 DISTNAME =	llvm-$V
 EXTRACT_SUFX =	.tar.bz2
+
+PKGNAME =	${DISTNAME}p0
 
 SHARED_LIBS +=	LLVMHello      .0.0           # .0.0
 
@@ -50,8 +52,6 @@ MODGNU_CONFIG_GUESS_DIRS =  ${WRKSRC}/autoconf
 
 pre-configure:
 	@perl -pi -e s,-lpthread,-pthread,g ${WRKSRC}/configure
-	@perl -pi -e 's,\(PROJ_docsdir.*:=\).*$$,\1${PREFIX}/share/doc/llvm,g' \
-		${WRKSRC}/Makefile.config.in
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/utils/scan-build
 
 post-install:

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_config_in,v 1.1 2008/11/10 12:17:54 sthen Exp $
+--- Makefile.config.in.orig	Mon Nov 10 11:36:02 2008
++++ Makefile.config.in	Mon Nov 10 11:36:10 2008
+@@ -79,7 +79,7 @@ LLVMMAKE := $(LLVM_SRC_ROOT)/make
+ PROJ_bindir     := $(DESTDIR)$(PROJ_prefix)/bin
+ PROJ_libdir     := $(DESTDIR)$(PROJ_prefix)/lib
+ PROJ_datadir    := $(DESTDIR)$(PROJ_prefix)/share
+-PROJ_docsdir    := $(DESTDIR)$(PROJ_prefix)/docs/llvm
++PROJ_docsdir    := $(DESTDIR)$(PROJ_prefix)/share/doc/llvm
+ PROJ_etcdir     := $(DESTDIR)$(PROJ_prefix)/etc/llvm
+ PROJ_includedir := $(DESTDIR)$(PROJ_prefix)/include
+ PROJ_infodir    := $(DESTDIR)$(PROJ_prefix)/info
