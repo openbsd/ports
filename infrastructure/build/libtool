@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.59 2008/11/10 08:46:21 sthen Exp $
+# $OpenBSD: libtool,v 1.60 2008/11/10 15:01:54 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -43,7 +43,6 @@ use subs qw(
 	parse_version_info
 	process_deplibs
 	resolve_la_list
-	reverse_zap_duplicates
 	reverse_zap_duplicates_ref
 	write_prog_wrapper
 	);
@@ -1445,7 +1444,7 @@ sub get_symbollist
 	my $objlist = shift;
 
 	Trace::debug {"generating symbol list in file: $filepath\n"};
-	my @symbols;
+	my $symbols = [];
 	open(my $sh, '-|', 'nm', @$objlist) or die "error running nm on object list\n";
 	my $c = 0;
 	while (my $line = <$sh>) {
@@ -1454,35 +1453,20 @@ sub get_symbollist
 		if ($line =~ m/\S+\s+[BCDEGRST]\s+(.*)/) {
 			my $s = $1;
 			if ($s =~ m/$regex/) {
-				push @symbols, $s;
+				push @$symbols, $s;
 				Trace::debug {"matched\n"};
 			}
 		}
 		$c++;
 	}
-	@symbols = reverse_zap_duplicates(@symbols);
-	@symbols = sort @symbols;
+	$symbols = reverse_zap_duplicates_ref($symbols);
+	@$symbols = sort @$symbols;
 	open(my $fh, '>', $filepath) or die "cannot open $filepath\n";
-	print $fh join("\n", @symbols), "\n";
+	print $fh join("\n", @$symbols), "\n";
 }
 
 # walk a list from back to front, removing any duplicates
 # this should make sure a library's dependencies are behind the library itself
-sub reverse_zap_duplicates
-{
-	my @arglist = @_;
-
-	my $h = {};
-	my @r;
-	for (my $i = $#arglist; $i >= 0; $i--) {
-		my $el = $arglist[$i];
-		next if (defined $h->{$el});
-		unshift @r, $el;
-		$h->{$el} = 1;
-	}
-	return @r;
-}
-
 sub reverse_zap_duplicates_ref
 {
 	my $arglist = shift;
