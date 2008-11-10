@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2008/09/24 16:19:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2008/11/10 11:16:17 jasper Exp $
 
 COMMENT=	extension for unparsed raw whois information
 
-DISTNAME=	Net-Whois-Raw-1.57
+DISTNAME=	Net-Whois-Raw-1.58
 CATEGORIES=	net
 
 # perl
