@@ -1,0 +1,31 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/11/10 22:11:36 ajacoutot Exp $
+--- configure.orig	Thu Mar 18 19:43:56 2004
++++ configure	Sun Nov  9 12:34:29 2008
+@@ -4096,7 +4096,7 @@ fi
+ 
+ fi
+ 
+-  x_suffix="$X_LIBS $X_PRE_LIBS -lpthread -lX11 -lXi -lXext -lXmu $X_EXTRA_LIBS -lm"
++  x_suffix="$X_LIBS $X_PRE_LIBS -pthread -lX11 -lXi -lXext -lXmu $X_EXTRA_LIBS -lm"
+ 
+ echo "$as_me:4101: checking for glNewList in -lGL" >&5
+ echo $ECHO_N "checking for glNewList in -lGL... $ECHO_C" >&6
+@@ -4642,15 +4642,15 @@ if test "x$ac_cv_header_windows_h" != "xyes" ; then
+     CFLAGS="$CFLAGS -I/usr/local/include -L/usr/local/lib"
+     CXXFLAGS="$CXXFLAGS -I/usr/local/include -L/usr/local/lib"
+   else
+-    CFLAGS="$CFLAGS -O6 -Wall"
+-    CXXFLAGS="$CXXFLAGS -O6 -Wall"
++    CFLAGS="$CFLAGS -Wall"
++    CXXFLAGS="$CXXFLAGS -Wall"
+   fi
+ else
+   CFLAGS="$CFLAGS -O6 -Wall $MACH -malign-double -I/usr/local/include -L/usr/local/lib"
+   CXXFLAGS="$CXXFLAGS -O6 -Wall $MACH -malign-double -I/usr/local/include -L/usr/local/lib"
+ fi
+ 
+-        tuxkart_datadir="$datadir/games/$PACKAGE"
++        tuxkart_datadir="$datadir/$PACKAGE"
+         tuxkart_datadir=`(
+             test "x$prefix" = xNONE && prefix="$ac_default_prefix"
+             test "x$exec_prefix" = xNONE && exec_prefix="${prefix}"

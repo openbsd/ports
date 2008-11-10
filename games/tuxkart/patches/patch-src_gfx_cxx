@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_gfx_cxx,v 1.1.1.1 2008/11/10 22:11:36 ajacoutot Exp $
+--- src/gfx.cxx.orig	Thu Mar 18 17:21:44 2004
++++ src/gfx.cxx	Sun Nov  9 12:23:11 2008
+@@ -4,9 +4,11 @@
+ #ifndef WIN32
+ #include <unistd.h>
+ #include <string.h>
++#ifndef __OpenBSD__
+ #include <sys/io.h>
+ #include <sys/perm.h>                                                           
+ #endif
++#endif
+ 
+ static unsigned int lastKeystroke = 0 ;
+ 
+@@ -137,6 +139,7 @@ void GFX::done ()
+   glEnd () ;
+   glFlush () ;
+ 
++#ifndef __OpenBSD__
+   static int firsttime = TRUE ;
+ 
+   if ( firsttime )
+@@ -171,6 +174,8 @@ void GFX::done ()
+     outb ( (stereo==-1) ? ~3 : ~2, LPBASE+2 ) ;
+     stereo = -stereo ;
+   }
++#endif // __OpenBSD__
++  stereo = 0 ;
+ }
+ 
+ 
