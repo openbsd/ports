@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2008/11/05 21:34:35 weerd Exp $
+# $OpenBSD: Makefile,v 1.181 2008/11/10 22:12:18 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -132,6 +132,7 @@
      SUBDIR += tetrinetx
      SUBDIR += tmw
      SUBDIR += tutris
+     SUBDIR += tuxkart
      SUBDIR += tuxpaint
      SUBDIR += tuxpaint-config
      SUBDIR += tuxpaint-stamps
