@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.60 2008/11/10 15:01:54 steven Exp $
+# $OpenBSD: libtool,v 1.61 2008/11/10 15:52:30 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -744,7 +744,10 @@ if ($mode eq 'compile') {
 			$sharedlib_symlink = $sharedlib;
  			$sharedlib = $libname.'-'.$opts{'release'}.'.so';
 		}
-		if (!$opts{'avoid-version'}) {
+		if ($opts{'avoid-version'} ||
+			($opts{'release'} && !$opts{'version-info'})) {
+			# don't add a version in these cases
+		} else {
 			$sharedlib .= ".$sover";
 			if ($opts{'release'}) {
 				$sharedlib_symlink .= ".$sover";
