@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.58 2008/11/09 12:37:35 steven Exp $
+# $OpenBSD: libtool,v 1.59 2008/11/10 08:46:21 sthen Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -350,7 +350,7 @@ use constant {
 
 my $calls = 0;
 our $version = '1.5.26'; # pretend to be this version of libtool
-my @no_shared_archs = qw(m88k vax sh);
+my @no_shared_archs = qw(m88k vax);
 # XXX my $machine_arch = `machine -a`;
 my $machine_arch = 'amd64';
 (my $gnu_arch = $machine_arch) =~ s/amd64/x86_64/;
