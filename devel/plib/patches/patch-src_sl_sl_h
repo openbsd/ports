@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_sl_sl_h,v 1.1.1.1 2008/11/10 22:10:22 ajacoutot Exp $
+--- src/sl/sl.h.orig	Tue Mar 11 03:06:24 2008
++++ src/sl/sl.h	Sun Nov  9 12:22:37 2008
+@@ -28,6 +28,10 @@
+ #include <stdio.h>
+ #include "slPortability.h"
+ 
++#ifdef __OpenBSD__
++#include <sys/ioctl.h>
++#endif
++
+ #ifdef SL_USING_OSS_AUDIO
+ #define SLDSP_DEFAULT_DEVICE "/dev/dsp"
+ #elif defined(UL_WIN32)

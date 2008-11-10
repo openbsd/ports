@@ -1,0 +1,9 @@
+PLIB is a suite of portable game librairies.
+
+PLIB includes sound effects, music, a complete 3D engine, font
+rendering, a simple Windowing library, a game scripting language, a GUI,
+networking, 3D math library and a collection of handy utility functions.
+All are 100% portable across nearly all modern computing platforms.
+Each library component is fairly independent of the others - so if you
+want to use SDL, GTK, GLUT, or FLTK instead of PLIB's 'PW' windowing
+library, you can.

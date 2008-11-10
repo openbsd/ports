@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/11/10 22:10:22 ajacoutot Exp $
+--- configure.orig	Tue Mar 11 03:10:29 2008
++++ configure	Sun Nov  9 12:22:37 2008
+@@ -6751,13 +6751,13 @@ fi
+ 
+ 
+ 
+-{ echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -6833,7 +6833,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ fi
+ 

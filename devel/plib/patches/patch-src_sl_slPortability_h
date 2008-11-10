@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sl_slPortability_h,v 1.1.1.1 2008/11/10 22:10:22 ajacoutot Exp $
+--- src/sl/slPortability.h.orig	Tue Mar 11 03:06:24 2008
++++ src/sl/slPortability.h	Sun Nov  9 12:22:37 2008
+@@ -51,7 +51,7 @@
+ #include <limits.h>
+ #include <math.h>
+ 
+-#if (defined(UL_LINUX) || defined(UL_BSD)) && !defined(__NetBSD__)
++#if (defined(UL_LINUX) || defined(UL_BSD)) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ #define SL_USING_OSS_AUDIO 1
+ #endif
+ 
