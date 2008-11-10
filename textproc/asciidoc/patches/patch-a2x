@@ -1,7 +1,7 @@
-$OpenBSD: patch-a2x,v 1.1.1.1 2007/10/08 14:39:04 robert Exp $
---- a2x.orig	Wed Jul 18 10:09:06 2007
-+++ a2x	Mon Oct  8 13:24:45 2007
-@@ -220,14 +220,14 @@ function parse_options()
+$OpenBSD: patch-a2x,v 1.2 2008/11/10 11:58:34 pea Exp $
+--- a2x.orig	Wed Jul  2 03:12:42 2008
++++ a2x	Mon Nov 10 09:43:01 2008
+@@ -236,14 +236,14 @@ function parse_options()
      if [ -z "$*" ]; then
          help; exit 0
      fi
@@ -13,7 +13,7 @@ $OpenBSD: patch-a2x,v 1.1.1.1 2007/10/08 14:39:04 robert Exp $
          quit "enhanced getopt(1) required"
      fi
      short_opts="a:d:D:f:hnsv"
-     long_opts="attribute:,asciidoc-opts:,destination-dir:,doctype:,help,icons-dir:,dry-run,format:,copy,icons,skip-asciidoc,stylesheet:,version,verbose,xsltproc-opts:"
+     long_opts="attribute:,asciidoc-opts:,destination-dir:,doctype:,help,icons-dir:,dry-run,format:,copy,icons,skip-asciidoc,stylesheet:,version,verbose,xsltproc-opts:,dblatex-opts:,fop-opts:"
 -    args=$(getopt -o $short_opts -l $long_opts -n $BASENAME -- "$@" 2>/dev/null)
 +    args=$(gnugetopt -o $short_opts -l $long_opts -n $BASENAME -- "$@" 2>/dev/null)
      if [ $? -ne 0 ]; then

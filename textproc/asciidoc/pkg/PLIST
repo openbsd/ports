@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/05/20 14:27:16 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/11/10 11:58:34 pea Exp $
 bin/a2x
 bin/asciidoc
 @man man/man1/a2x.1
@@ -108,9 +108,10 @@ share/examples/asciidoc/latex.conf
 @sample ${SYSCONFDIR}/asciidoc/latex.conf
 share/examples/asciidoc/linuxdoc.conf
 @sample ${SYSCONFDIR}/asciidoc/linuxdoc.conf
+share/examples/asciidoc/math.conf
+@sample ${SYSCONFDIR}/asciidoc/math.conf
 share/examples/asciidoc/stylesheets/
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/
-share/examples/asciidoc/stylesheets/compact.css
 share/examples/asciidoc/stylesheets/docbook-xsl.css
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/docbook-xsl.css
 share/examples/asciidoc/stylesheets/xhtml-deprecated-manpage.css
@@ -123,6 +124,8 @@ share/examples/asciidoc/stylesheets/xhtml11-quirks.css
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml11-quirks.css
 share/examples/asciidoc/stylesheets/xhtml11.css
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml11.css
+share/examples/asciidoc/t.conf
+@sample ${SYSCONFDIR}/asciidoc/t.conf
 share/examples/asciidoc/text.conf
 @sample ${SYSCONFDIR}/asciidoc/text.conf
 share/examples/asciidoc/xhtml-deprecated-css.conf
