@@ -3,3 +3,8 @@ options.
 
 To use GetLive with SMTP as a delivery mechanism, see the scripts in
 ${PREFIX}/share/examples/GetLive.
+
+GetLive has been patched to deal with Hotmail changes.  Log into Hotmail
+through a browser and check the box so it never shows the 'changed' page
+again.  Then, add 'Mode=200810' to your config file.  You may also have
+to turn off 'reading panes'.
