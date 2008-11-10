@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/09/04 20:52:13 jasper Exp $
-bin/fsdiff
-bin/ktcheck
-bin/lapply
-bin/lcksum
-bin/lcreate
-bin/lfdiff
-bin/lmerge
-bin/lsort
+@comment $OpenBSD: PLIST,v 1.5 2008/11/10 09:19:25 jasper Exp $
+@bin bin/fsdiff
+@bin bin/ktcheck
+@bin bin/lapply
+@bin bin/lcksum
+@bin bin/lcreate
+@bin bin/lfdiff
+@bin bin/lmerge
+@bin bin/lsort
 bin/ra.sh
-bin/repo
-bin/twhich
+@bin bin/repo
+@bin bin/twhich
 @man man/man1/fsdiff.1
 @man man/man1/ktcheck.1
 @man man/man1/lapply.1
@@ -23,7 +23,7 @@ bin/twhich
 @man man/man1/twhich.1
 @man man/man5/applefile.5
 @man man/man8/radmind.8
-sbin/radmind
+@bin sbin/radmind
 @sample /var/radmind/
 @sample /var/radmind/cert/
 @sample /var/radmind/client/
