@@ -1,7 +1,7 @@
-$OpenBSD: patch-src-other_procedures_tcl,v 1.1.1.1 2006/12/23 10:26:57 jasper Exp $
---- src/other_procedures.tcl.orig	Sat Aug  5 20:54:23 2006
-+++ src/other_procedures.tcl	Mon Dec  4 17:27:40 2006
-@@ -180,13 +180,13 @@ proc launch {burn_type burn_opt} {
+$OpenBSD: patch-src-other_procedures_tcl,v 1.2 2008/11/10 20:18:14 steven Exp $
+--- src/other_procedures.tcl.orig	Fri Feb  2 13:25:32 2007
++++ src/other_procedures.tcl	Mon Nov 10 19:49:54 2008
+@@ -177,13 +177,13 @@ proc launch {burn_type burn_opt} {
  		}
  	} elseif { $burn_type == "create_iso" } {
  		# burn_opt contains destination file for ISO image
