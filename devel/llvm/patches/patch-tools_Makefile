@@ -1,0 +1,13 @@
+$OpenBSD: patch-tools_Makefile,v 1.1.1.1 2008/11/10 11:25:33 sthen Exp $
+--- tools/Makefile.orig	Sun Nov  9 12:45:09 2008
++++ tools/Makefile	Sun Nov  9 12:45:21 2008
+@@ -16,7 +16,8 @@ PARALLEL_DIRS := llvm-config  \
+                  llc llvm-ranlib llvm-ar llvm-nm \
+                  llvm-ld llvm-prof llvm-link \
+ 		 lli gccas gccld llvm-extract llvm-db \
+-		 bugpoint llvm-bcanalyzer llvm-stub llvmc2
++		 bugpoint llvm-bcanalyzer llvm-stub llvmc2 \
++		 clang
+ 
+ 
+ include $(LEVEL)/Makefile.config

@@ -1,0 +1,11 @@
+$OpenBSD: patch-tools_clang_lib_Lex_Lexer_cpp,v 1.1.1.1 2008/11/10 11:25:33 sthen Exp $
+--- tools/clang/lib/Lex/Lexer.cpp.orig	Sun Nov  9 12:45:29 2008
++++ tools/clang/lib/Lex/Lexer.cpp	Sun Nov  9 12:45:38 2008
+@@ -910,6 +910,7 @@ static bool isEndOfBlockCommentWithEscapedNewLine(cons
+   return true;
+ }
+ 
++#undef __SSE2__
+ #ifdef __SSE2__
+ #include <emmintrin.h>
+ #elif __ALTIVEC__
