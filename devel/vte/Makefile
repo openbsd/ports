@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.36 2008/07/08 12:07:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2008/11/10 09:02:30 landry Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.16.14
+GNOME_VERSION=		0.17.4
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python= 	py-${DISTNAME}
 CATEGORIES=		devel
-SHARED_LIBS +=  vte                  11.12    # .11.18
+SHARED_LIBS+=	vte	12.0    # .12.3
 
 HOMEPAGE=		http://www.gnome.org/
 
@@ -32,7 +32,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 WANTLIB-python= 	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes \
                         Xft Xi Xinerama Xcomposite Xrandr Xrender \
                         Xdamage atk-1.0 cairo expat fontconfig \
-                        freetype m z glib-2.0 glitz gmodule-2.0 \
+                        freetype m z gio-2.0 glib-2.0 glitz gmodule-2.0 \
                         gobject-2.0 ncurses pango-1.0 pangocairo-1.0 \
                         pangoft2-1.0 pangox-1.0 pangoxft-1.0 pcre \
                         pixman-1 png z

@@ -1,24 +1,26 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/07/08 12:02:19 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/11/10 09:02:30 landry Exp $
 @pkgpath devel/vte
-@bin bin/vte
+bin/vte
 include/vte/
 include/vte/pty.h
 include/vte/reaper.h
 include/vte/vte.h
 include/vte/vteaccess.h
+include/vte/vtetypebuiltins.h
+include/vte/vteversion.h
 lib/libvte.a
 lib/libvte.la
 lib/pkgconfig/vte.pc
 lib/vte/
 lib/vte/decset
-@bin lib/vte/interpret
-@bin lib/vte/iso8859mode
-@bin lib/vte/nativeecho
+lib/vte/interpret
+lib/vte/iso8859mode
+lib/vte/nativeecho
 lib/vte/osc
-@bin lib/vte/slowcat
-@bin lib/vte/utf8echo
-@bin lib/vte/utf8mode
-@bin lib/vte/vterdb
+lib/vte/slowcat
+lib/vte/utf8echo
+lib/vte/utf8mode
+lib/vte/vterdb
 lib/vte/window
 @mode g+s
 @group utmp
@@ -109,7 +111,7 @@ share/locale/sk/LC_MESSAGES/vte.mo
 share/locale/sl/LC_MESSAGES/vte.mo
 share/locale/sq/LC_MESSAGES/vte.mo
 share/locale/sr/LC_MESSAGES/vte.mo
-share/locale/sr@Latn/LC_MESSAGES/vte.mo
+share/locale/sr@latin/LC_MESSAGES/vte.mo
 share/locale/sv/LC_MESSAGES/vte.mo
 share/locale/ta/LC_MESSAGES/vte.mo
 share/locale/te/LC_MESSAGES/vte.mo
