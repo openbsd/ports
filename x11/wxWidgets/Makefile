@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/10/28 01:22:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2008/11/11 17:19:34 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -71,6 +71,7 @@ CONFIGURE_ARGS=	--disable-stl \
 		--without-gnomeprint \
 		--without-hildon \
 		--with-opengl \
+		--disable-backtrace \
 		--enable-unicode
 
 .for _l _v in ${SHARED_LIBS}
