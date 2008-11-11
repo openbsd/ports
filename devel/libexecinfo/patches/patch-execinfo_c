@@ -1,7 +1,17 @@
-$OpenBSD: patch-execinfo_c,v 1.1.1.1 2008/10/21 17:01:24 ajacoutot Exp $
+$OpenBSD: patch-execinfo_c,v 1.2 2008/11/11 15:48:47 naddy Exp $
 --- execinfo.c.orig	Mon Jul 19 07:21:09 2004
-+++ execinfo.c	Tue Oct 21 18:40:48 2008
-@@ -78,7 +78,6 @@ backtrace_symbols(void *const *buffer, int size)
++++ execinfo.c	Tue Nov 11 16:45:54 2008
+@@ -69,7 +69,8 @@ backtrace(void **buffer, int size)
+ char **
+ backtrace_symbols(void *const *buffer, int size)
+ {
+-    int i, clen, alen, offset;
++    size_t clen, alen;
++    int i, offset;
+     char **rval;
+     char *cp;
+     Dl_info info;
+@@ -78,7 +79,6 @@ backtrace_symbols(void *const *buffer, int size)
      rval = malloc(clen);
      if (rval == NULL)
          return NULL;
@@ -9,7 +19,7 @@ $OpenBSD: patch-execinfo_c,v 1.1.1.1 2008/10/21 17:01:24 ajacoutot Exp $
      for (i = 0; i < size; i++) {
          if (dladdr(buffer[i], &info) != 0) {
              if (info.dli_sname == NULL)
-@@ -92,14 +91,14 @@ backtrace_symbols(void *const *buffer, int size)
+@@ -92,14 +92,14 @@ backtrace_symbols(void *const *buffer, int size)
                     2 +                      /* " <" */
                     strlen(info.dli_sname) + /* "function" */
                     1 +                      /* "+" */
@@ -26,7 +36,7 @@ $OpenBSD: patch-execinfo_c,v 1.1.1.1 2008/10/21 17:01:24 ajacoutot Exp $
                buffer[i], info.dli_sname, offset, info.dli_fname);
          } else {
              alen = 2 +                      /* "0x" */
-@@ -108,11 +107,14 @@ backtrace_symbols(void *const *buffer, int size)
+@@ -108,11 +108,14 @@ backtrace_symbols(void *const *buffer, int size)
              rval = realloc_safe(rval, clen + alen);
              if (rval == NULL)
                  return NULL;
@@ -40,7 +50,7 @@ $OpenBSD: patch-execinfo_c,v 1.1.1.1 2008/10/21 17:01:24 ajacoutot Exp $
      }
 +
 +    for (i = 0; i < size; i++)
-+        rval[i] += (int) rval;
++        rval[i] += (long) rval;
  
      return rval;
  }

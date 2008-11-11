@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/21 17:01:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/11 15:48:47 naddy Exp $
 
 COMMENT=	clone of backtrace facility found in the GNU libc
 
 DISTNAME=	libexecinfo-1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 SHARED_LIBS=	execinfo	0.0
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/itetcu/
+MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=itetcu/}
 EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	m
