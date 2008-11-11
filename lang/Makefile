@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2008/10/25 10:41:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.87 2008/11/11 22:49:49 simon Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -37,6 +37,7 @@
      SUBDIR += ocamlduce
      SUBDIR += open-cobol
      SUBDIR += otcl
+     SUBDIR += parrot
      SUBDIR += pfe
      SUBDIR += pm3
      SUBDIR += python
