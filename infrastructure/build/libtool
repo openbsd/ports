@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.61 2008/11/10 15:52:30 steven Exp $
+# $OpenBSD: libtool,v 1.62 2008/11/11 09:54:51 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -29,15 +29,14 @@ package main;
 
 use subs qw(
 	create_symlinks
+	do_link
 	find_la
 	find_lib
 	generate_objlist
 	get_search_dirs
 	guess_implicit_mode
-	handle_special_chars
 	help
 	is_prog_wrapper
-	linkcmd
 	notyet
 	parse_linkargs_list
 	parse_version_info
@@ -159,7 +158,7 @@ sub command
 	if (!ref($self)) {
 		$self = $self->new;
 	}
-	say @l if $verbose || $dry;
+	say "@l" if $verbose || $dry;
 	if (!$dry) {
 		$self->command_run(@l);
 	}
@@ -357,7 +356,7 @@ my @valid_modes = qw(clean compile execute finish install link uninstall);
 my @valid_src = qw(asm c cc cpp cxx f s);
 my $cwd = getcwd();
 my $ltdir = '.libs';
-my $picflags = '-fPIC -DPIC';
+my @picflags = ('-fPIC', '-DPIC');
 my $sharedflag = '-shared';
 my $instlibdir = '/usr/local/lib';
 my @libsearchdirs;
@@ -453,7 +452,6 @@ if ($mode eq 'compile') {
 			'static'	=> \$opts{'static'},
 			);
 	# XXX options ignored: -prefer-pic and -prefer-non-pic
-	my $cmd;
 	my $pic = 0;
 	my $nonpic = 1;
 	# assume we need to build pic objects
@@ -494,25 +492,25 @@ if ($mode eq 'compile') {
 	(my $nonpicobj = $ofile) =~ s/\.lo$/.o/;
 	my $picobj = "$ltdir/$nonpicobj";
 
-	handle_special_chars(\@ARGV);
-
 	mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
 	if ($pic) {
-		$cmd = $ltprog;
-		$cmd .= " @ARGV" if (@ARGV);
-		$cmd .= " $picflags";
-		$cmd .= " -o ";
-		$cmd .= ($odir eq '.') ? '' : $odir.'/';
-		$cmd .= $picobj;
-		Exec->shell($cmd);
+		my @cmd = ($ltprog);
+		push @cmd, @ARGV if (@ARGV);
+		push @cmd, @picflags;
+		push @cmd, '-o';
+		my $o = ($odir eq '.') ? '' : $odir.'/';
+		$o .= $picobj;
+		push @cmd, $o;
+		Exec->command(@cmd);
 	}
 	if ($nonpic) {
-		$cmd = $ltprog;
-		$cmd .= " @ARGV" if (@ARGV);
-		$cmd .= " -o ";
-		$cmd .= ($odir eq '.') ? '' : $odir.'/';
-		$cmd .= $nonpicobj;
-		Exec->shell($cmd);
+		my @cmd = ($ltprog);
+		push @cmd, @ARGV if (@ARGV);
+		push @cmd, '-o';
+		my $o = ($odir eq '.') ? '' : $odir.'/';
+		$o .= $nonpicobj;
+		push @cmd, $o;
+		Exec->command(@cmd);
 	}
 	my $lofile = LoFile->new;
 	$lofile->{picobj} = $picobj if $pic;
@@ -557,6 +555,7 @@ if ($mode eq 'compile') {
 	}
 	my %toinstall;
 	my %tosymlink;	# for libraries with a -release in their name
+	my $addedmode = 0;
 	foreach my $s (@src) {
 		my $dstfile = basename $s;
 		# resolve symbolic links, so we don't try to test later
@@ -571,7 +570,8 @@ if ($mode eq 'compile') {
 		if ($srcfile =~ m/^\S+\.la$/) {
 			# we are installing a .la library
 			if ($ltprog =~ m/install([.-]sh)?$/) {
-				push @instopts, '-m 644';
+				push @instopts, '-m', '644' unless $addedmode;
+				$addedmode = 1;
 			}
 			my $lainfo = LaFile->parse($s);
 			# replace info where needed when installing the .la file
@@ -666,8 +666,6 @@ if ($mode eq 'compile') {
 	}
 	Trace::debug {"linkmode: $linkmode\n"};
 
-	handle_special_chars(\@ARGV);
-
 	my $args = parse_linkargs_list(\@ARGV, 1);
 	@ARGV = @$args;
 	Trace::debug {"deplibs = @$deplibs\n"};
@@ -706,9 +704,7 @@ if ($mode eq 'compile') {
 				Trace::debug {"hoping for real objects in ARGV...\n"};
 			}
 		}
-		my @tmpcmd = linkcmds($ofile, $ofile, $odir, PROGRAM, 1, $objlist);
-		$cmd = $tmpcmd[0];
-		Exec->shell($cmd);
+		do_link($ofile, $ofile, $odir, PROGRAM, 1, $objlist);
 		write_prog_wrapper($outfile);
 		chmod 0755, $outfile;
 	} elsif ($linkmode == LIBRARY) {
@@ -767,7 +763,7 @@ if ($mode eq 'compile') {
 			$lainfo->{'library_names'} = $sharedlib;
 			$lainfo->{'library_names'} .= " $sharedlib_symlink"
 				if ($opts{'release'});
-			Exec->shell(linkcmds($ofile, $sharedlib, $odir, LIBRARY, 1, \@sobjs));
+			do_link($ofile, $sharedlib, $odir, LIBRARY, 1, \@sobjs);
 			Trace::debug {"sharedlib: $sharedlib\n"};
 			$lainfo->{'current'} = $current;
 			$lainfo->{'revision'} = $revision;
@@ -775,7 +771,7 @@ if ($mode eq 'compile') {
 		}
 		if ($static) {
 			$lainfo->{'old_library'} = $staticlib;
-			Exec->shell(linkcmds($ofile, $staticlib, $odir, LIBRARY, 0, ($allpicobj) ? \@sobjs : \@objs));
+			do_link($ofile, $staticlib, $odir, LIBRARY, 0, ($allpicobj) ? \@sobjs : \@objs);
 			Trace::debug {"staticlib: $staticlib\n"};
 		}
 		$lainfo->{'installed'} = 'no';
@@ -798,7 +794,9 @@ if ($mode eq 'compile') {
 		if ($shared) {
 			my $lai = "$odir/$ltdir/$ofile".'i';
 			my $pdeplibs = process_deplibs($finaldeplibs);
-			$lainfo->set('dependency_libs', "@$pdeplibs");
+			if (defined $pdeplibs) {
+				$lainfo->set('dependency_libs', "@$pdeplibs");
+			}
 			$lainfo->{'installed'} = 'yes';
 			# write .lai file (.la file that will be installed)
 			$lainfo->write($lai, $ofile);
@@ -809,7 +807,7 @@ if ($mode eq 'compile') {
 	exit 0;
 } elsif ($mode eq 'execute') {
 	# XXX check whether this is right
-	Exec->shell("$ltprog @ARGV");
+	Exec->command($ltprog, @ARGV);
 } else {
 	die "MODE=$mode not implemented yet.\n";
 }
@@ -1004,7 +1002,9 @@ sub internal_parse_linkargs
 
 	foreach my $a (@$args) {
 		Trace::debug {"  processing $a\n"};
-		if ($a eq '-lc') {	
+		if ($a eq '' || $a =~ m/^\s+$/) {
+			# skip empty arguments
+		} elsif ($a eq '-lc') {	
 			# don't link explicitly with libc (just remove -lc)
 		} elsif ($a eq '-pthread' && !$seen_pthread) {	
 			# XXX special treatment since it's not a -l flag
@@ -1223,8 +1223,8 @@ sub process_deplibs
 	return $result;
 }
 
-# construct linker command (list) for either libraries or programs
-sub linkcmds
+# perform linker commands for either libraries or programs
+sub do_link
 {
 	my $la = shift;
 	my $fname = shift;
@@ -1238,8 +1238,7 @@ sub linkcmds
 		($shared) ? "dynam" : "stat", "ically)\n"};
 	
 	my @libflags;
-	my @cmdlist;
-	my $cmd = '';
+	my @cmd;
 	my $dst = ($odir eq '.') ? "$ltdir/$fname" : "$odir/$ltdir/$fname";
 	mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
 
@@ -1258,8 +1257,8 @@ sub linkcmds
 		Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
 		Trace::debug {"libfiles:\n", join("\n", (values %$libs)), "\n"};
 		if ($lmode == LIBRARY) {
-			$cmd = "ar cru $dst";
-			$cmd .= " @$objs" if (@$objs);
+			@cmd = ('ar', 'cru', $dst);
+			push @cmd, @$objs if (@$objs);
 			foreach my $k (@$finalorderedlibs) {
 				unless (defined $libs->{$k}) {
 					Trace::debug {"library $k not found in \%libs\n"};
@@ -1276,10 +1275,10 @@ sub linkcmds
 					push @libflags, @kobjs;
 				}
 			}
-			$cmd .= " @libflags" if (@libflags);
-			push @cmdlist, $cmd;
-			push @cmdlist, "ranlib $dst";
-			return @cmdlist;
+			push @cmd, @libflags if (@libflags);
+			Exec->command(@cmd);
+			Exec->command('ranlib', $dst);
+			return;
 		} elsif ($lmode == PROGRAM) {
 			die "static linking of programs not supported yet\n";
 		}
@@ -1350,17 +1349,15 @@ sub linkcmds
 		$libcounter++;
 	}
 
-	$cmd = "$ltprog";
-	$cmd .= " $sharedflag $picflags" if ($lmode == LIBRARY);
-	$cmd .= " -o $dst";
-	$cmd .= " @$argv";
-	$cmd .= " @$objs" if (@$objs);
-	$cmd .= " -L$ltdir @libflags" if (@libflags);
-	$cmd .= " @$RPdirs" if (@$RPdirs);
-	$cmd .= " -Wl,-retain-symbols-file,$symbolsfile" if ($symbolsfile);
-	push @cmdlist, $cmd;
-
-	return @cmdlist;
+	@cmd = ($ltprog);
+	push @cmd, $sharedflag, @picflags if ($lmode == LIBRARY);
+	push @cmd, '-o', $dst;
+	push @cmd, @$argv;
+	push @cmd, @$objs if (@$objs);
+	push @cmd, "-L$ltdir", @libflags if (@libflags);
+	push @cmd, @$RPdirs if (@$RPdirs);
+	push @cmd, "-Wl,-retain-symbols-file,$symbolsfile" if ($symbolsfile);
+	Exec->command(@cmd);
 }
 
 # populate arrays of non-pic and pic objects and remove these from @ARGV
@@ -1371,6 +1368,7 @@ sub generate_objlist
 	my $objsource = shift;
 	my $allpic = 1;
 
+	my $result = [];
 	foreach my $a (@$objsource) {
 		if ($a =~ m/\S+\.lo$/) {
 			my $ofile = basename $a;
@@ -1390,9 +1388,11 @@ sub generate_objlist
 			} else {
 				$allpic = 0;
 			}
-			$a = '';
+		} else {
+			push @$result, $a;
 		}
 	}
+	@$objsource = @$result;
 	return $allpic;
 }
 
@@ -1497,12 +1497,4 @@ sub guess_implicit_mode
 		}
 	}
 	return $m;	
-}
-
-# escape quotes and meta-characters
-# protect elements containing whitespace or meta-characters by quotes
-sub handle_special_chars
-{
-	my $a = shift;
-	map { $_ =~ s,(['"]),\\$1,g; $_ = "\"$_\"" if $_ =~ m/[\s&()<>]/ } @$a;
 }
