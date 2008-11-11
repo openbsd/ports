@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/16 02:53:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/11/11 01:52:21 kevlo Exp $
 
 COMMENT=	subversion repository mirroring tool
 
-MODULES=	cpan
-DISTNAME=	SVN-Mirror-0.70
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	SVN-Mirror-0.75
 CATEGORIES=	devel
-CPAN_AUTHOR=	CLKAO
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -16,6 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MODULES=	cpan
 RUN_DEPENDS=	:p5-SVN-Simple->=0.27:devel/p5-SVN-Simple \
 		:p5-Class-Accessor->=0.19:devel/p5-Class-Accessor \
 		:p5-Data-UUID->=0.11:devel/p5-Data-UUID \
