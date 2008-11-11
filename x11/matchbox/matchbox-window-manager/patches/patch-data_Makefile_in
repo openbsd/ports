@@ -1,6 +1,6 @@
-$OpenBSD: patch-data_Makefile_in,v 1.3 2008/04/23 22:18:27 jasper Exp $
---- data/Makefile.in.orig	Tue Mar  7 19:41:45 2006
-+++ data/Makefile.in	Thu Apr 24 00:02:20 2008
+$OpenBSD: patch-data_Makefile_in,v 1.4 2008/11/11 22:42:17 jasper Exp $
+--- data/Makefile.in.orig	Thu Apr 12 18:40:34 2007
++++ data/Makefile.in	Sun Nov  9 22:02:27 2008
 @@ -57,7 +57,7 @@ am__vpath_adj = case $$p in \
      *) f=$$p;; \
    esac;
@@ -10,7 +10,7 @@ $OpenBSD: patch-data_Makefile_in,v 1.3 2008/04/23 22:18:27 jasper Exp $
  confDATA_INSTALL = $(INSTALL_DATA)
  defaultsDATA_INSTALL = $(INSTALL_DATA)
  DATA = $(conf_DATA) $(defaults_DATA)
-@@ -171,6 +171,7 @@ target_alias = @target_alias@
+@@ -182,6 +182,7 @@ target_alias = @target_alias@
  @ENABLE_SCHEMAS_FALSE@SUBDIRS = themes
  @ENABLE_SCHEMAS_TRUE@SUBDIRS = themes schemas
  confdir = $(sysconfdir)/matchbox
@@ -18,7 +18,7 @@ $OpenBSD: patch-data_Makefile_in,v 1.3 2008/04/23 22:18:27 jasper Exp $
  conf_DATA = kbdconfig
  defaultsdir = $(datadir)/matchbox
  @WANT_STANDALONE_FALSE@defaults_DATA = mbnoapp.xpm
-@@ -211,20 +212,20 @@ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4
+@@ -222,20 +223,20 @@ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4
  uninstall-info-am:
  install-confDATA: $(conf_DATA)
  	@$(NORMAL_INSTALL)
@@ -44,7 +44,7 @@ $OpenBSD: patch-data_Makefile_in,v 1.3 2008/04/23 22:18:27 jasper Exp $
  	done
  install-defaultsDATA: $(defaults_DATA)
  	@$(NORMAL_INSTALL)
-@@ -423,7 +424,7 @@ check: check-recursive
+@@ -434,7 +435,7 @@ check: check-recursive
  all-am: Makefile $(DATA)
  installdirs: installdirs-recursive
  installdirs-am:

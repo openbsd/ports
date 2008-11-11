@@ -1,23 +1,27 @@
-# $OpenBSD: Makefile,v 1.9 2008/04/23 22:18:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2008/11/11 22:42:17 jasper Exp $
 
-COMMENT=	window manager with a classic pda management policy
-DISTNAME=	matchbox-window-manager-1.0
-PKGNAME=	${DISTNAME}p1
+COMMENT=	window manager suitable for low-resolution screens
+DISTNAME=	matchbox-window-manager-1.2
 
-MASTER_SITES=	${MASTER_SITES_MATCHBOX:=matchbox-window-manager/1.0/}
+MASTER_SITES=	${MASTER_SITES_MATCHBOX:=matchbox-window-manager/1.2/}
 
-LIB_DEPENDS=	mb.>=1::x11/matchbox/libmatchbox
+WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xrender \
+		c expat fontconfig freetype glib-2.0 gmodule-2.0 gobject-2.0 \
+		jpeg m pango-1.0 pangoft2-1.0 pangoxft-1.0 png z
+
+MODULES=	devel/gettext
 RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common \
 		:desktop-file-utils-*:devel/desktop-file-utils
-MODULES=	devel/gettext
-WANTLIB=	ICE SM X11 Xext Xft Xrender c fontconfig freetype m z \
-		glib-2.0.>=600.0 gmodule-2.0.>=600.0 gobject-2.0.>=600.0 jpeg \
-		pango-1.0 pangoft2-1.0 pangoxft-1.0 png Xau Xdmcp expat
+LIB_DEPENDS=	startup-notification-1::devel/startup-notification \
+		mb::x11/matchbox/libmatchbox
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--enable-session
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include " \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CFLAGS+=-I${LOCALBASE}/include/libpng -I${X11BASE}/include
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--enable-expat \
+			--enable-session \
+			--enable-startup-notification
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include " \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+CFLAGS+=		-I${LOCALBASE}/include/libpng -I${X11BASE}/include
 
 .include <bsd.port.mk>

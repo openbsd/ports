@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/15 21:44:24 ajacoutot Exp $
-bin/matchbox-remote
-bin/matchbox-window-manager
+@comment $OpenBSD: PLIST,v 1.3 2008/11/11 22:42:18 jasper Exp $
+@bin bin/matchbox-remote
+@bin bin/matchbox-window-manager
 share/examples/matchbox/
 @sample ${SYSCONFDIR}/matchbox/
 share/examples/matchbox/kbdconfig
