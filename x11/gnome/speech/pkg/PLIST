@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/17 19:07:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/11 16:00:08 jasper Exp $
 %%SHARED%%
-bin/festival-synthesis-driver
-bin/test-speech
+@bin bin/festival-synthesis-driver
+@bin bin/test-speech
 include/gnome-speech-1.0/
 include/gnome-speech-1.0/gnome-speech/
 include/gnome-speech-1.0/gnome-speech/GNOME_Speech.h

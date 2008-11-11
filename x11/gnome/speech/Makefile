@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/17 19:07:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/11 16:00:08 jasper Exp $
 
 COMMENT=		GNOME speech module
 
 GNOME_PROJECT=		gnome-speech
 GNOME_VERSION=		0.4.18
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=  gnomespeech          0.0      # .7.1
 
-# LGPL
+# LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
