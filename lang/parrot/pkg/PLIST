@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/10/03 23:33:18 simon Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/11/11 22:46:30 simon Exp $
 %%i386%%
 @bin bin/parrot
 @bin bin/parrot_config
@@ -89,7 +89,7 @@ include/parrot/list.h
 include/parrot/longopt.h
 include/parrot/memory.h
 include/parrot/misc.h
-include/parrot/mmd.h
+include/parrot/multidispatch.h
 include/parrot/nci.h
 include/parrot/oo.h
 include/parrot/oo_private.h
@@ -183,10 +183,6 @@ languages/pynie/
 languages/pynie/pynie.pbc
 languages/squaak/
 languages/squaak/squaak.pbc
-languages/tcl/
-languages/tcl/runtime/
-languages/tcl/runtime/tcllib.pbc
-languages/tcl/tcl.pbc
 lib/libparrot.a
 lib/parrot/
 lib/parrot/dynext/
@@ -207,7 +203,6 @@ lib/parrot/dynext/perl6_group.so
 lib/parrot/dynext/php_group.so
 lib/parrot/dynext/rational.so
 lib/parrot/dynext/subproxy.so
-lib/parrot/dynext/tcl_group.so
 lib/parrot/dynext/wmls_group.so
 lib/parrot/dynext/wmls_ops.so
 lib/parrot/dynext/wmls_ops_cg.so
@@ -427,16 +422,21 @@ share/doc/parrot/docs/art/pp001-intro.pod
 share/doc/parrot/docs/art/pp002-pmc.pod
 share/doc/parrot/docs/art/pp003-oop.pod
 share/doc/parrot/docs/book/
+share/doc/parrot/docs/book/README
 share/doc/parrot/docs/book/appendix.pod
 share/doc/parrot/docs/book/ch01_overview.pod
 share/doc/parrot/docs/book/ch02_getting_started.pod
 share/doc/parrot/docs/book/ch03_pir_basics.pod
 share/doc/parrot/docs/book/ch04_pir_subroutines.pod
 share/doc/parrot/docs/book/ch05_pasm.pod
-share/doc/parrot/docs/book/ch06_testing.pod
-share/doc/parrot/docs/book/ch07_architecture.pod
-share/doc/parrot/docs/book/ch08_pct.pod
-share/doc/parrot/docs/book/ch09_reference.pod
+share/doc/parrot/docs/book/ch06_library.pod
+share/doc/parrot/docs/book/ch07_testing_and_debugging.pod
+share/doc/parrot/docs/book/ch08_architecture.pod
+share/doc/parrot/docs/book/ch09_pct.pod
+share/doc/parrot/docs/book/ch10_hlls.pod
+share/doc/parrot/docs/book/ch11_pmcs.pod
+share/doc/parrot/docs/book/ch12_opcodes.pod
+share/doc/parrot/docs/book/ch13_reference.pod
 share/doc/parrot/docs/book/figs/
 share/doc/parrot/docs/book/figs/p6e_0801.png
 share/doc/parrot/docs/debugger.pod
@@ -464,7 +464,7 @@ share/doc/parrot/docs/imcc/operation.pod
 share/doc/parrot/docs/intro.pod
 share/doc/parrot/docs/jit.pod
 share/doc/parrot/docs/memory_internals.pod
-share/doc/parrot/docs/mmd.pod
+share/doc/parrot/docs/multidispatch.pod
 share/doc/parrot/docs/native_exec.pod
 share/doc/parrot/docs/ops/
 share/doc/parrot/docs/optable.pod
@@ -521,6 +521,7 @@ share/doc/parrot/docs/pmc/subs.pod
 share/doc/parrot/docs/pmc2c.pod
 share/doc/parrot/docs/porting_intro.pod
 share/doc/parrot/docs/project/
+share/doc/parrot/docs/project/branching_guide.pod
 share/doc/parrot/docs/project/cage_cleaners_guide.pod
 share/doc/parrot/docs/project/committer_guide.pod
 share/doc/parrot/docs/project/debian_packaging_guide.pod
@@ -691,6 +692,7 @@ share/doc/parrot/examples/nci/win32api.pir
 share/doc/parrot/examples/nci/xlibtest.nqp
 share/doc/parrot/examples/nci/xlibtest.p6
 share/doc/parrot/examples/nci/xlibtest.pir
+share/doc/parrot/examples/nci/xlibtest.rb
 share/doc/parrot/examples/opengl/
 share/doc/parrot/examples/opengl/shapes.pir
 share/doc/parrot/examples/opengl/triangle.pir
@@ -723,6 +725,7 @@ share/doc/parrot/examples/pge/simple.pir
 share/doc/parrot/examples/pir/
 share/doc/parrot/examples/pir/circle.pir
 share/doc/parrot/examples/pir/euclid.pir
+share/doc/parrot/examples/pir/genprog.bas
 share/doc/parrot/examples/pir/hanoi.pir
 share/doc/parrot/examples/pir/hello-dwim.pir
 share/doc/parrot/examples/pir/io.pir
@@ -730,6 +733,8 @@ share/doc/parrot/examples/pir/levenshtein.pir
 share/doc/parrot/examples/pir/life.pir
 share/doc/parrot/examples/pir/local_label.pir
 share/doc/parrot/examples/pir/mandel.pir
+share/doc/parrot/examples/pir/mysqltest.bas
+share/doc/parrot/examples/pir/pirric.pir
 share/doc/parrot/examples/pir/queens_r.pir
 share/doc/parrot/examples/pir/quine_ord.pir
 share/doc/parrot/examples/pir/readline.pir

@@ -1,16 +1,20 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/03 23:33:18 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2008/11/11 22:46:30 simon Exp $
+
+# sparc64 fails to build
+# others untested
+ONLY_FOR_ARCHS=	i386 amd64 macppc
 
 COMMENT=	virtual machine designed for interpreted languages
 VMEM_WARNING=	Yes
 
 SHARED_ONLY=	Yes
 
-DISTNAME=	parrot-0.7.1
+DISTNAME=	parrot-0.8.0
 CATEGORIES=	lang perl6
 
 HOMEPAGE=	http://www.parrotcode.org/
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/P/PM/PMIC/}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/P/PA/PARTICLE/}
 
 # Artistic2
 PERMIT_PACKAGE_CDROM=	Yes
