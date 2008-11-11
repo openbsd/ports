@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/11/11 16:00:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/11/11 16:27:48 jasper Exp $
 %%SHARED%%
+@bin bin/espeak-synthesis-driver
 @bin bin/festival-synthesis-driver
 @bin bin/test-speech
 include/gnome-speech-1.0/
@@ -9,6 +10,7 @@ include/gnome-speech-1.0/gnome-speech/gnome-speech.h
 include/gnome-speech-1.0/gnome-speech/speaker.h
 lib/bonobo/
 lib/bonobo/servers/
+lib/bonobo/servers/GNOME_Speech_SynthesisDriver_Espeak.server
 lib/bonobo/servers/GNOME_Speech_SynthesisDriver_Festival.server
 lib/libgnomespeech.a
 lib/libgnomespeech.la
