@@ -1,6 +1,6 @@
---- cs/csparse.c.orig	Fri Feb  3 03:17:41 2006
-+++ cs/csparse.c	Mon May  8 16:54:19 2006
-@@ -1706,6 +1706,7 @@ static NEOERR *eval_expr_string(CSPARSE 
+--- cs/csparse.c.orig	Wed Jul 11 22:37:34 2007
++++ cs/csparse.c	Sun Nov  9 16:28:06 2008
+@@ -1948,6 +1948,7 @@ static NEOERR *eval_expr_string(CSPARSE *parse, CSARG 
  {
    char *s1, *s2;
    int out;
@@ -8,7 +8,7 @@
  
    result->op_type = CS_TYPE_NUM;
    s1 = arg_eval (parse, arg1);
-@@ -1780,11 +1781,12 @@ static NEOERR *eval_expr_string(CSPARSE 
+@@ -2022,11 +2023,12 @@ static NEOERR *eval_expr_string(CSPARSE *parse, CSARG 
        case CS_OP_ADD:
  	result->op_type = CS_TYPE_STRING;
  	result->alloc = 1;
@@ -24,3 +24,12 @@
  	break;
        default:
  	ne_warn ("Unsupported op %s in eval_expr_string", expand_token_type(op, 1));
+@@ -3717,7 +3719,7 @@ static NEOERR * _builtin_str_crc(CSPARSE *parse, CS_FU
+   if (val.op_type & (CS_TYPE_VAR | CS_TYPE_STRING))
+   {
+     char *s = arg_eval(parse, &val);
+-    if (s) result->n = ne_crc((unsigned char *)s, strlen(s));
++    if (s) result->n = (INT32) ne_crc((unsigned char *)s, strlen(s));
+   }
+   if (val.alloc) free(val.s);
+   return STATUS_OK;

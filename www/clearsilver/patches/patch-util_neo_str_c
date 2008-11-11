@@ -1,7 +1,7 @@
-$OpenBSD: patch-util_neo_str_c,v 1.2 2006/05/15 17:08:43 fkr Exp $
---- util/neo_str.c.orig	Fri Jul  1 02:42:50 2005
-+++ util/neo_str.c	Mon May  8 16:54:19 2006
-@@ -122,7 +122,7 @@ NEOERR *string_append (STRING *str, cons
+$OpenBSD: patch-util_neo_str_c,v 1.3 2008/11/11 19:58:15 okan Exp $
+--- util/neo_str.c.orig	Wed Jul 11 21:24:00 2007
++++ util/neo_str.c	Thu Jun 26 13:42:33 2008
+@@ -122,7 +122,7 @@ NEOERR *string_append (STRING *str, const char *buf)
    l = strlen(buf);
    err = string_check_length (str, l);
    if (err != STATUS_OK) return nerr_pass (err);
@@ -10,7 +10,7 @@ $OpenBSD: patch-util_neo_str_c,v 1.2 2006/05/15 17:08:43 fkr Exp $
    str->len += l;
  
    return STATUS_OK;
-@@ -174,7 +174,7 @@ NEOERR *string_appendvf (STRING *str, co
+@@ -174,7 +174,7 @@ NEOERR *string_appendvf (STRING *str, const char *fmt,
    err = string_check_length (str, bl+1);
    if (err != STATUS_OK) return nerr_pass (err);
    va_copy(tmp, ap);

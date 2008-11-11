@@ -1,21 +1,21 @@
---- util/neo_err.h.orig	Thu Dec 15 23:17:36 2005
-+++ util/neo_err.h	Mon May  8 16:54:19 2006
-@@ -105,7 +105,7 @@ NEOERR *nerr_raise_errnof (const char *f
- #define nerr_pass(e) \
+--- util/neo_err.h.orig	Wed Jul 11 23:09:09 2007
++++ util/neo_err.h	Thu Jun 26 13:53:40 2008
+@@ -122,7 +122,7 @@ NEOERR *nerr_raise_errnof (const char *func, const cha
     nerr_passf(__PRETTY_FUNCTION__,__FILE__,__LINE__,e)
- NEOERR *nerr_passf (const char *func, const char *file, int lineno, 
+ 
+ NEOERR *nerr_passf (const char *func, const char *file, int lineno,
 -                    NEOERR *err);
 +                    NEOERR *nerr);
  
  /* function: nerr_pass_ctx
   * description: this function is used to pass an error up a level in the
-@@ -127,47 +127,47 @@ NEOERR *nerr_passf (const char *func, co
- #define nerr_pass_ctx(e,f,...) \
-    nerr_pass_ctxf(__PRETTY_FUNCTION__,__FILE__,__LINE__,e,f,__VA_ARGS__)
+@@ -146,24 +146,24 @@ NEOERR *nerr_passf (const char *func, const char *file
  #endif
--NEOERR *nerr_pass_ctxf (const char *func, const char *file, int lineno, NEOERR *err, 
-+NEOERR *nerr_pass_ctxf (const char *func, const char *file, int lineno, NEOERR *nerr, 
-                        const char *fmt, ...);
+ 
+ NEOERR *nerr_pass_ctxf (const char *func, const char *file, int lineno,
+-                        NEOERR *err, const char *fmt, ...)
++                        NEOERR *nerr, const char *fmt, ...)
+                         ATTRIBUTE_PRINTF(5,6);
  
  /* function: nerr_log_error
   * description: currently, this prints out the error to stderr, and
@@ -38,8 +38,7 @@
  
  /* function: nerr_error_traceback
   * description: returns the full traceback of the error chain
-- * arguments: err - error
-+ * arguments: nerr - error
+@@ -171,13 +171,13 @@ void nerr_error_string (NEOERR *err, STRING *str);
   *            str - string to which the data is appended
   * returns: None - errors appending to the string are ignored
   */
@@ -55,10 +54,8 @@
  
  /* function: nerr_register
   * description: register an error type.  This will assign a numeric value
-  *              to the type, and keep track of the "pretty name" for it.
-- * arguments: err - pointer to a NERR_TYPE
-+ * arguments: nerr - pointer to a NERR_TYPE
-  *            name - pretty name for the error type 
+@@ -186,7 +186,7 @@ void nerr_ignore (NEOERR **err);
+  *            name - pretty name for the error type
   * returns: NERR_NOMEM on no memory
   */
 -NEOERR *nerr_register (NERR_TYPE *err, const char *name);
@@ -66,12 +63,7 @@
  
  /* function: nerr_init
   * description: initialize the NEOERR system.  Can be called more than once.
-@@ -186,21 +186,21 @@ NEOERR *nerr_init (void);
-  *              parlance, this would be the equivalent of "catch".
-  *              Typically, you can just compare a NEOERR against STATUS_OK
-  *              or just test for true if you are checking for any error.
-- * arguments: err - the NEOERR that has an error. 
-+ * arguments: nerr - the NEOERR that has an error. 
+@@ -209,7 +209,7 @@ NEOERR *nerr_init (void);
   *            type - the NEOERR type, as registered with nerr_register
   * returns: true on match
   */
@@ -80,10 +72,7 @@
  
  /* function: nerr_handle
   * description: nerr_handle is a convenience function.  It is the equivalent
-  *              of nerr_match, but it will also deallocate the error chain
-  *              on a match.
-- * arguments: err - pointer to a pointer NEOERR 
-+ * arguments: nerr - pointer to a pointer NEOERR 
+@@ -219,7 +219,7 @@ int nerr_match (NEOERR *err, NERR_TYPE type);
   *            type - the NEOERR type, as registered with nerr_register
   * returns: true on match
   */

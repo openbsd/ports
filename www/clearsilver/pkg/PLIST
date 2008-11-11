@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/05/18 09:13:59 fkr Exp $
-bin/cs
-bin/cs_static.cgi
-bin/cstest
+@comment $OpenBSD: PLIST,v 1.4 2008/11/11 19:58:15 okan Exp $
+@bin bin/cs
+@bin bin/cs_static.cgi
+@bin bin/cstest
 include/ClearSilver/
 include/ClearSilver/ClearSilver.h
 include/ClearSilver/cgi/
@@ -33,6 +33,9 @@ include/ClearSilver/util/wildmat.h
 lib/libneo_cgi.a
 lib/libneo_cs.a
 lib/libneo_utl.a
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.0/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.0/perllocal.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/ClearSilver.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
@@ -64,6 +67,7 @@ libexec/mod_ecs.so
 @man man/man3/cgi_url_escape.3
 @man man/man3/cgi_url_escape_more.3
 @man man/man3/cgi_url_unescape.3
+@man man/man3/cgi_url_validate.3
 @man man/man3/cgi_vredirect.3
 @man man/man3/cgiwrap_getenv.3
 @man man/man3/cgiwrap_init_emu.3
@@ -150,7 +154,6 @@ libexec/mod_ecs.so
 @man man/man3/nerr_match.3
 @man man/man3/nerr_pass.3
 @man man/man3/nerr_pass_ctx.3
-@man man/man3/nerr_raise.3
 @man man/man3/nerr_register.3
 @man man/man3/skipDelete.3
 @man man/man3/skipFreeList.3
