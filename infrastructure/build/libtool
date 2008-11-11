@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.62 2008/11/11 09:54:51 steven Exp $
+# $OpenBSD: libtool,v 1.63 2008/11/11 10:46:14 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -337,6 +337,29 @@ EOF
 ;
 }
 
+sub compile
+{
+	my ($self, $compiler, $odir, $args) = @_;
+
+	if (defined $self->{picobj}) {
+		my @cmd = ($compiler);
+		push @cmd, @$args if (@$args);
+		push @cmd, @main::picflags, '-o';
+		my $o = ($odir eq '.') ? '' : "$odir/";
+		$o .= $self->{picobj};
+		push @cmd, $o;
+		Exec->command(@cmd);
+	}
+	if (defined $self->{nonpicobj}) {
+		my @cmd = ($compiler);
+		push @cmd, @$args if (@$args);
+		push @cmd, '-o';
+		my $o = ($odir eq '.') ? '' : "$odir/";
+		$o .= $self->{nonpicobj};
+		push @cmd, $o;
+		Exec->command(@cmd);
+	}
+}
 
 package main;
 
@@ -356,7 +379,7 @@ my @valid_modes = qw(clean compile execute finish install link uninstall);
 my @valid_src = qw(asm c cc cpp cxx f s);
 my $cwd = getcwd();
 my $ltdir = '.libs';
-my @picflags = ('-fPIC', '-DPIC');
+our @picflags = ('-fPIC', '-DPIC');
 my $sharedflag = '-shared';
 my $instlibdir = '/usr/local/lib';
 my @libsearchdirs;
@@ -493,28 +516,10 @@ if ($mode eq 'compile') {
 	my $picobj = "$ltdir/$nonpicobj";
 
 	mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
-	if ($pic) {
-		my @cmd = ($ltprog);
-		push @cmd, @ARGV if (@ARGV);
-		push @cmd, @picflags;
-		push @cmd, '-o';
-		my $o = ($odir eq '.') ? '' : $odir.'/';
-		$o .= $picobj;
-		push @cmd, $o;
-		Exec->command(@cmd);
-	}
-	if ($nonpic) {
-		my @cmd = ($ltprog);
-		push @cmd, @ARGV if (@ARGV);
-		push @cmd, '-o';
-		my $o = ($odir eq '.') ? '' : $odir.'/';
-		$o .= $nonpicobj;
-		push @cmd, $o;
-		Exec->command(@cmd);
-	}
 	my $lofile = LoFile->new;
 	$lofile->{picobj} = $picobj if $pic;
 	$lofile->{nonpicobj} = $nonpicobj if $nonpic;
+	$lofile->compile($ltprog, $odir, \@ARGV);
 	$lofile->write($outfile);
 } elsif ($mode eq 'install') {
 	# deal with multi-arg ltprog (e.g. /bin/sh install-sh ...)
