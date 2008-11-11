@@ -1,0 +1,10 @@
+$OpenBSD: patch-libmpg123_pc_in,v 1.1 2008/11/11 20:35:49 naddy Exp $
+--- libmpg123.pc.in.orig	Thu Oct 30 19:21:24 2008
++++ libmpg123.pc.in	Thu Oct 30 19:21:37 2008
+@@ -7,5 +7,5 @@ Name: libmpg123
+ Description: An optimised MPEG Audio decoder
+ Requires: 
+ Version: @PACKAGE_VERSION@
+-Libs: -L${libdir} -lmpg123 
++Libs: -L${libdir} -lmpg123 -lm
+ Cflags: -I${includedir} 

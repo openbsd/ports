@@ -1,4 +1,2 @@
-mpg123 reads one or more files (or standard input if "-" is specified)
-or URLs and plays them on the audio device (default) or outputs
-them to stdout.  The file or URL is assumed to be an MPEG-1/2 audio
-bit stream.
+mpg123 is a fast command-line MPEG audio player.  It supports
+MPEG 1.0/2.0/2.5 layers 1, 2, and 3 (commonly known as MP3).

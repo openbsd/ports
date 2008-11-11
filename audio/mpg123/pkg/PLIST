@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/06 14:37:27 espie Exp $
-bin/mpg123
+@comment $OpenBSD: PLIST,v 1.5 2008/11/11 20:35:49 naddy Exp $
+%%SHARED%%
+@bin bin/mpg123
+include/mpg123.h
+lib/libmpg123.a
+lib/libmpg123.la
+lib/pkgconfig/
+lib/pkgconfig/libmpg123.pc
 @man man/man1/mpg123.1
-share/mpg123/
-share/mpg123/COPYING

@@ -1,51 +1,56 @@
-# $OpenBSD: Makefile,v 1.38 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.39 2008/11/11 20:35:48 naddy Exp $
 
-# mpg123 is unusable without FPU
-NOT_FOR_ARCHS=	arm
+COMMENT=	MPEG-1/2 audio layer 1, 2, and 3 player
 
-COMMENT=	mpeg audio 1/2 layer 1, 2 and 3 player
-
-DISTNAME=	mpg123-0.59r
-PKGNAME=	${DISTNAME}p4
+DISTNAME=	mpg123-1.6.1
+SHARED_LIBS=	mpg123	0.0	# .11.2
 CATEGORIES=	audio
 HOMEPAGE=	http://www.mpg123.de/
 
-# Long, unclear license in ${WRKSRC}/COPYING.
-PERMIT_PACKAGE_CDROM=	No
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
+
+# LGPL 2.1
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m
 
-MASTER_SITES=	http://www.mpg123.de/mpg123/ \
-		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/ \
-		ftp://ftp.tu-clausthal.de/pub/unix/audio/mpg123/ \
-		http://ftp.tu-clausthal.de/pub/unix/audio/mpg123
-MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mpg123/}
 
-PATCHFILES=	mpg123-059r-v6-20000713b.diff.gz:0
-PATCH_DIST_STRIP= -p1
+WANTLIB=	c m sndio
+LIB_DEPENDS=	ltdl::devel/libtool,-ltdl
 
-FLAVORS=	esd
-FLAVOR?=
+USE_LIBTOOL=	Yes
+AUTOCONF_VERSION=2.62
+AUTOMAKE_VERSION=1.9
+CONFIGURE_STYLE=autoconf automake
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \
+		--with-audio=sndio \
+		--with-optimization=0
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build
 
-.if ${FLAVOR:L:Mesd}
-LIB_DEPENDS=	esd.>=2::audio/esound
-ALL_TARGET=	openbsd-esd
-WANTLIB+=	audiofile
+.if   ${MACHINE_ARCH} == "arm"
+CONFIGURE_ARGS+=--with-cpu=generic_nofpu
+.elif ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS+=--with-cpu=x86
 .else
-ALL_TARGET=	openbsd
+CONFIGURE_ARGS+=--with-cpu=generic_fpu
 .endif
 
-MAKE_FLAGS=	CC='${CC}'
+post-extract:
+	@cp ${FILESDIR}/sndio.c ${WRKSRC}/src/output
+
+AUTO_ENV=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
 post-patch:
-	@cp ${FILESDIR}/audio_openbsd.c ${FILESDIR}/term.c ${WRKSRC}
+	@echo "Running aclocal-${AUTOMAKE_VERSION} in ${WRKSRC}"
+	@cd ${WRKSRC}; ${AUTO_ENV} aclocal
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/mpg123
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/mpg123
-
-NO_REGRESS=	Yes
+pre-configure:
+	@echo "Running automake-${AUTOMAKE_VERSION} in ${WRKSRC}"
+	@cd ${WRKSRC}; ${AUTO_ENV} automake --foreign
 
 .include <bsd.port.mk>
