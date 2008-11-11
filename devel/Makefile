@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.651 2008/11/10 22:13:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.652 2008/11/11 14:17:42 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -469,6 +469,7 @@
      SUBDIR += p5-Perl-Critic
      SUBDIR += p5-Perl6-Junction
      SUBDIR += p5-PerlIO-eol
+     SUBDIR += p5-PerlIO-via-Bzip2
      SUBDIR += p5-PerlIO-via-dynamic
      SUBDIR += p5-PerlIO-via-symlink
      SUBDIR += p5-Pod-Coverage
@@ -481,6 +482,7 @@
      SUBDIR += p5-Regexp-Copy
      SUBDIR += p5-Regexp-Shellish
      SUBDIR += p5-Return-Value
+     SUBDIR += p5-SVN-Dump
      SUBDIR += p5-SVN-Mirror
      SUBDIR += p5-SVN-Notify
      SUBDIR += p5-SVN-Simple
@@ -579,6 +581,7 @@
      SUBDIR += p5-Time-Period
      SUBDIR += p5-Time-Piece
      SUBDIR += p5-Time-Piece-MySQL
+     SUBDIR += p5-Time-Progress
      SUBDIR += p5-Time-TimeDate
      SUBDIR += p5-Time-modules
      SUBDIR += p5-Tree-DAG_Node
