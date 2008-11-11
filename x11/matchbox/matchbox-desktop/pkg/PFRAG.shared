@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/06/17 02:57:31 jolan Exp $
-lib/matchbox/desktop/dotdesktop.so
-lib/matchbox/desktop/simplefilebrowser.so
-lib/matchbox/desktop/tasks.so
