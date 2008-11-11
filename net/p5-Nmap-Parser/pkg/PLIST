@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/05 21:22:40 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/11 12:37:52 jasper Exp $
 ${P5SITE}/Nmap/
+@comment ${P5SITE}/Nmap/._Parser.pm
 ${P5SITE}/Nmap/Parser.pm
 @man man/man3p/Nmap::Parser.3p
