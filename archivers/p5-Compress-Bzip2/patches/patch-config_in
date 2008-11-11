@@ -1,0 +1,18 @@
+$OpenBSD: patch-config_in,v 1.1.1.1 2008/11/11 13:55:21 kevlo Exp $
+--- config.in.orig	Tue Apr 26 20:05:20 2005
++++ config.in	Tue Nov  4 15:57:03 2008
+@@ -8,10 +8,10 @@
+ # This file is used to control which bzip2 library will be used by
+ # Compress::Bzip2
+ 
+-BUILD_BZLIB   = Test
++BUILD_BZLIB   = 0
+ 
+-BZLIB_INCLUDE = #./bzlib-src
+-BZLIB_LIB     = #./bzlib-src
+-BZLIB_BIN     = #./bzlib-src
++BZLIB_INCLUDE = ${LOCALBASE}/include
++BZLIB_LIB     = ${LOCALBASE}/lib
++BZLIB_BIN     = ${LOCALBASE}/bin
+ 
+ # end of file config.in

@@ -1,0 +1,3 @@
+This module provides a Perl interface to the bzip2 compression 
+algorithms. It uses the low level interface to the algorithm,
+and reimplements all high level routines.

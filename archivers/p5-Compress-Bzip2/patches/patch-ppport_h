@@ -1,0 +1,26 @@
+$OpenBSD: patch-ppport_h,v 1.1.1.1 2008/11/11 13:55:21 kevlo Exp $
+--- ppport.h.orig	Thu Apr 14 04:33:35 2005
++++ ppport.h	Tue Nov  4 15:48:27 2008
+@@ -221,14 +221,16 @@ __DATA__
+ /* Replace: 0 */
+ #endif
+ 
+-#ifdef HASATTRIBUTE
+-#  if (defined(__GNUC__) && defined(__cplusplus)) || defined(__INTEL_COMPILER)
+-#    define PERL_UNUSED_DECL
++#ifndef PERL_UNUSED_DECL
++#  ifdef HASATTRIBUTE
++#    if (defined(__GNUC__) && defined(__cplusplus)) || defined(__INTEL_COMPILER)
++#      define PERL_UNUSED_DECL
++#    else
++#      define PERL_UNUSED_DECL __attribute__((unused))
++#    endif
+ #  else
+-#    define PERL_UNUSED_DECL __attribute__((unused))
++#    define PERL_UNUSED_DECL
+ #  endif
+-#else
+-#  define PERL_UNUSED_DECL
+ #endif
+ 
+ #ifndef dNOOP
