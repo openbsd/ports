@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/11 22:45:23 jasper Exp $
+@bin bin/matchbox-nest
+share/matchbox-nest/
+share/matchbox-nest/dot.png
+share/matchbox-nest/ipaq3800.png
+share/matchbox-nest/ipaq3800.xml
