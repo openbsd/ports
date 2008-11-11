@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/11/11 23:11:25 jasper Exp $
+lib/glade3/modules/libgladegnome.so
+lib/glade3/modules/libgladegtk.so
+@lib lib/libgladeui-1.so.${LIBgladeui-1_VERSION}
