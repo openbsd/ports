@@ -1,6 +1,6 @@
-$OpenBSD: patch-pptp_gre_c,v 1.1 2007/10/23 22:13:38 naddy Exp $
---- pptp_gre.c.orig	Mon Feb 13 04:07:42 2006
-+++ pptp_gre.c	Tue Oct 23 10:49:46 2007
+$OpenBSD: patch-pptp_gre_c,v 1.2 2008/11/11 16:23:26 naddy Exp $
+--- pptp_gre.c.orig	Wed May 14 08:33:55 2008
++++ pptp_gre.c	Sat Sep 20 17:44:51 2008
 @@ -11,6 +11,8 @@
  #include <sys/socket.h>
  #include <sys/stat.h>
@@ -8,9 +8,9 @@ $OpenBSD: patch-pptp_gre_c,v 1.1 2007/10/23 22:13:38 naddy Exp $
 +#include <sys/sysctl.h>
 +#include <netinet/ip_gre.h>
  #include <unistd.h>
+ #include <stdlib.h>
  #include <string.h>
- #include <errno.h>
-@@ -73,12 +75,36 @@ uint64_t time_now_usecs()
+@@ -78,12 +80,36 @@ uint64_t time_now_usecs()
      return (tv.tv_sec * 1000000) + tv.tv_usec;
  }
  

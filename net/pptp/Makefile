@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/10/23 22:13:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2008/11/11 16:23:26 naddy Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/04/10 01:14:01 jtk Exp $
 
 COMMENT=	PPTP client package for Microsoft VPN servers
 
-DISTNAME=	pptp-1.7.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	pptp-1.7.2
 CATEGORIES=	net
 MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE:=pptpclient/}
 
@@ -24,7 +23,7 @@ NO_REGRESS=	Yes
 MAKE_ENV+=	PPPD=/usr/sbin/ppp
 CFLAGS+=	-DUSER_PPP
 
-DIRS=	Documentation Reference
+DIRS=	Documentation
 
 post-patch:
 	@cd ${WRKSRC}; sed -e s,PREFIX,${PREFIX}, < \

@@ -1,21 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/10/23 22:13:38 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/11/11 16:23:26 naddy Exp $
 @man man/man8/pptp.8
-sbin/pptp
+@bin sbin/pptp
 share/doc/pptp/
 share/doc/pptp/Documentation/
 share/doc/pptp/Documentation/DESIGN.CALLMGR
 share/doc/pptp/Documentation/DESIGN.PPTP
 share/doc/pptp/Documentation/PORTING
-share/doc/pptp/Reference/
-share/doc/pptp/Reference/README
-share/doc/pptp/Reference/README.Reference
-share/doc/pptp/Reference/ms-chap.txt
-share/doc/pptp/Reference/pptp-draft.txt
-share/doc/pptp/Reference/rfc1661.txt
-share/doc/pptp/Reference/rfc1662.txt
-share/doc/pptp/Reference/rfc1701.txt
-share/doc/pptp/Reference/rfc1702.txt
-share/doc/pptp/Reference/rfc1990.txt
-share/doc/pptp/Reference/rfc791.txt
-share/doc/pptp/Reference/rfc793.txt
 share/doc/pptp/USING
