@@ -1,0 +1,32 @@
+$OpenBSD: patch-plugins_media-keys_gsd-media-keys-manager_c,v 1.1.1.1 2008/11/11 22:22:41 jasper Exp $
+
+- Give eject(1) a slightly bigger chance of actually doing something.
+- Set the correct "sleep" command for apm(8).
+
+--- plugins/media-keys/gsd-media-keys-manager.c.orig	Mon Aug  4 16:25:52 2008
++++ plugins/media-keys/gsd-media-keys-manager.c	Tue Nov 11 21:33:36 2008
+@@ -575,7 +575,11 @@ do_eject_action (GsdMediaKeysManager *manager)
+         if ((command != NULL) && (strcmp (command, "") != 0)) {
+                 execute (manager, command, FALSE, FALSE);
+         } else {
++#if defined(__OpenBSD__)
++                 execute (manager, "eject -t /dev/cd0", FALSE, FALSE);
++#else
+                 execute (manager, "eject -T", FALSE, FALSE);
++#endif
+         }
+ 
+         g_free (command);
+@@ -785,7 +789,11 @@ do_action (GsdMediaKeysManager *manager,
+                 do_mail_action (manager);
+                 break;
+         case SLEEP_KEY:
+-                do_sleep_action ("apm", "xset dpms force off");
++#if defined(__OpenBSD__) || defined(__FreeBSD__)
++                do_sleep_action ("zzz", "xset dpms force off");
++#else
++                 do_sleep_action ("apm", "xset dpms force off");
++#endif
+                 break;
+         case SCREENSAVER_KEY:
+                 if ((cmd = g_find_program_in_path ("gnome-screensaver-command"))) {
