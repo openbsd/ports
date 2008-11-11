@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2008/10/02 20:32:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2008/11/11 23:06:34 merdely Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		agent for Razor spam filtering networks
 
-DISTNAME=		razor-agents-2.84
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		razor-agents-2.85
 CATEGORIES=		mail
 HOMEPAGE=		http://razor.sourceforge.net/
 MAINTAINER=		Michael Erdely <merdely@openbsd.org>
