@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/26 19:30:51 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/11 23:43:36 pirofti Exp $
 
 COMMENT=	command-line program to download videos from YouTube.com
 
-DISTNAME=	youtube-dl-2008.10.16
+DISTNAME=	youtube-dl-2008.11.01
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.arrakis.es/~rggi3/youtube-dl/
