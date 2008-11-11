@@ -1,0 +1,12 @@
+--- include/GL/glut.h.orig	Sun Nov  9 02:16:28 2008
++++ include/GL/glut.h	Sun Nov  9 02:17:23 2008
+@@ -60,7 +60,9 @@ typedef unsigned short wchar_t;
+ 
+ /* define APIENTRY and CALLBACK to null string if we aren't on Win32 */
+ #if !defined(_WIN32)
++#ifndef APIENTRY
+ #define APIENTRY
++#endif
+ #define GLUT_APIENTRY_DEFINED
+ #define CALLBACK
+ #endif
