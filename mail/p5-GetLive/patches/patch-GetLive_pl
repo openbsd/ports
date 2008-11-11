@@ -1,4 +1,4 @@
-$OpenBSD: patch-GetLive_pl,v 1.3 2008/11/10 20:23:50 merdely Exp $
+$OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
 --- GetLive.pl.orig	Mon Nov 10 14:39:12 2008
 +++ GetLive.pl	Mon Nov 10 14:41:25 2008
 @@ -65,11 +65,12 @@ my $Password                = "";
@@ -262,31 +262,3 @@ $OpenBSD: patch-GetLive_pl,v 1.3 2008/11/10 20:23:50 merdely Exp $
    Display("\nProcessing folder $FolderNames[$FolderIdx].\n",MinVerbosity => 1);
    GetMessagesFromFolder($FolderIdx);
    Display("$NrMessagesDetected/$NrMessagesUnread Messages/Unread.\n",MinVerbosity => 1);
-@@ -1270,6 +1340,18 @@ exit(0);
- ########################################################################################################################
- # 
- # $Log: patch-GetLive_pl,v $
- # Revision 1.3  2008/11/10 20:23:50  merdely
- # Update to handle changes in Hotmail's interface from upstream's CVS.
- # Users will have to log into Hotmail through a browser and check the
- # box so it never shows the 'changed' page again.  Then, add
- # 'Mode=200810' to your config file.  You may also have to turn off
- # 'reading panes'.
- #
- # ok okan@
- #
-+# Revision 1.46  2008/10/31 12:22:31  jdla
-+# *) Bug 2208443 : Additional changes based on user feedback.
-+#    Mainly 'Delete' was made operational and a bug in processing
-+#    folders leading to no processing at all.
-+#
-+# Revision 1.45  2008/10/29 23:03:38  jdla
-+# *) Bug 2208443 : Hotmail changes in 10/2008 solved.
-+#
-+# Revision 1.44  2008/08/31 20:36:08  jdla
-+# *) Bug 2017097 : Messages retrieved multiple times
-+#    (SkipTrash option)
-+#
- # Revision 1.43  2008/07/05 19:55:41  jdla
- # Bug 1962937 : Could not correctly parse the messages table
- #    (after MS started changing things again around 1/7/2008)
