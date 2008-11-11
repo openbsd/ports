@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/11 22:47:44 jasper Exp $
+@bin bin/matchbox-panel-manager
+share/applications/mb-panel-manager.desktop
+share/pixmaps/
+share/pixmaps/mbpanelmgr.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
