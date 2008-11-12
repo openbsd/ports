@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/06/02 16:42:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2008/11/12 22:42:26 jasper Exp $
 %%SHARED%%
 include/libsoup-${API_VERSION}/
 include/libsoup-${API_VERSION}/libsoup/
@@ -7,6 +7,8 @@ include/libsoup-${API_VERSION}/libsoup/soup-auth-domain-basic.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth-domain-digest.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth-domain.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth.h
+include/libsoup-${API_VERSION}/libsoup/soup-cookie-jar.h
+include/libsoup-${API_VERSION}/libsoup/soup-cookie.h
 include/libsoup-${API_VERSION}/libsoup/soup-date.h
 include/libsoup-${API_VERSION}/libsoup/soup-enum-types.h
 include/libsoup-${API_VERSION}/libsoup/soup-form.h
@@ -20,6 +22,7 @@ include/libsoup-${API_VERSION}/libsoup/soup-misc.h
 include/libsoup-${API_VERSION}/libsoup/soup-portability.h
 include/libsoup-${API_VERSION}/libsoup/soup-server.h
 include/libsoup-${API_VERSION}/libsoup/soup-session-async.h
+include/libsoup-${API_VERSION}/libsoup/soup-session-feature.h
 include/libsoup-${API_VERSION}/libsoup/soup-session-sync.h
 include/libsoup-${API_VERSION}/libsoup/soup-session.h
 include/libsoup-${API_VERSION}/libsoup/soup-socket.h
@@ -41,6 +44,8 @@ share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuth.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomain.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomainBasic.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomainDigest.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJar.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupLogger.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupMessage.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupServer.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSession.html
@@ -58,7 +63,7 @@ share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}.devhelp
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}.devhelp2
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-GValue-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-Soup-Miscellaneous-Utilities.html
-share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupLogger.html
+share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupCookie.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupMessageBody.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupMessageHeaders.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupURI.html
