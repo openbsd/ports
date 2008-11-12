@@ -1,0 +1,167 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/12 17:23:04 simon Exp $
+bin/mojo
+bin/mojolicious
+${P5SITE}/Mojo/
+${P5SITE}/Mojo.pm
+${P5SITE}/Mojo/Base.pm
+${P5SITE}/Mojo/Buffer.pm
+${P5SITE}/Mojo/ByteStream.pm
+${P5SITE}/Mojo/Client.pm
+${P5SITE}/Mojo/Content/
+${P5SITE}/Mojo/Content.pm
+${P5SITE}/Mojo/Content/MultiPart.pm
+${P5SITE}/Mojo/Cookie/
+${P5SITE}/Mojo/Cookie.pm
+${P5SITE}/Mojo/Cookie/Request.pm
+${P5SITE}/Mojo/Cookie/Response.pm
+${P5SITE}/Mojo/Date.pm
+${P5SITE}/Mojo/File/
+${P5SITE}/Mojo/File.pm
+${P5SITE}/Mojo/File/Memory.pm
+${P5SITE}/Mojo/Filter/
+${P5SITE}/Mojo/Filter.pm
+${P5SITE}/Mojo/Filter/Chunked.pm
+${P5SITE}/Mojo/Headers.pm
+${P5SITE}/Mojo/HelloWorld.pm
+${P5SITE}/Mojo/Home.pm
+${P5SITE}/Mojo/Loader.pm
+${P5SITE}/Mojo/Manual/
+${P5SITE}/Mojo/Manual.pod
+${P5SITE}/Mojo/Manual/CodingGuidelines.pod
+${P5SITE}/Mojo/Manual/Cookbook.pod
+${P5SITE}/Mojo/Manual/FAQ.pod
+${P5SITE}/Mojo/Manual/FrameworkBuilding.pod
+${P5SITE}/Mojo/Manual/GettingStarted.pod
+${P5SITE}/Mojo/Manual/HTTPGuide.pod
+${P5SITE}/Mojo/Manual/Mojolicious.pod
+${P5SITE}/Mojo/Message/
+${P5SITE}/Mojo/Message.pm
+${P5SITE}/Mojo/Message/Request.pm
+${P5SITE}/Mojo/Message/Response.pm
+${P5SITE}/Mojo/Parameters.pm
+${P5SITE}/Mojo/Path.pm
+${P5SITE}/Mojo/Script/
+${P5SITE}/Mojo/Script.pm
+${P5SITE}/Mojo/Script/Cgi.pm
+${P5SITE}/Mojo/Script/Daemon.pm
+${P5SITE}/Mojo/Script/DaemonPrefork.pm
+${P5SITE}/Mojo/Script/Fastcgi.pm
+${P5SITE}/Mojo/Script/Generate/
+${P5SITE}/Mojo/Script/Generate.pm
+${P5SITE}/Mojo/Script/Generate/App.pm
+${P5SITE}/Mojo/Script/Test.pm
+${P5SITE}/Mojo/Scripts.pm
+${P5SITE}/Mojo/Server/
+${P5SITE}/Mojo/Server.pm
+${P5SITE}/Mojo/Server/CGI.pm
+${P5SITE}/Mojo/Server/Daemon/
+${P5SITE}/Mojo/Server/Daemon.pm
+${P5SITE}/Mojo/Server/Daemon/Prefork.pm
+${P5SITE}/Mojo/Server/FastCGI.pm
+${P5SITE}/Mojo/Stateful.pm
+${P5SITE}/Mojo/Template.pm
+${P5SITE}/Mojo/Transaction.pm
+${P5SITE}/Mojo/URL.pm
+${P5SITE}/Mojo/Upload.pm
+${P5SITE}/MojoX/
+${P5SITE}/MojoX/Dispatcher/
+${P5SITE}/MojoX/Dispatcher/Routes/
+${P5SITE}/MojoX/Dispatcher/Routes.pm
+${P5SITE}/MojoX/Dispatcher/Routes/Context.pm
+${P5SITE}/MojoX/Dispatcher/Routes/Controller.pm
+${P5SITE}/MojoX/Dispatcher/Static.pm
+${P5SITE}/MojoX/Renderer.pm
+${P5SITE}/MojoX/Routes/
+${P5SITE}/MojoX/Routes.pm
+${P5SITE}/MojoX/Routes/Match.pm
+${P5SITE}/MojoX/Routes/Pattern.pm
+${P5SITE}/MojoX/Types.pm
+${P5SITE}/Mojolicious/
+${P5SITE}/Mojolicious.pm
+${P5SITE}/Mojolicious/Context.pm
+${P5SITE}/Mojolicious/Controller.pm
+${P5SITE}/Mojolicious/Dispatcher.pm
+${P5SITE}/Mojolicious/Renderer.pm
+${P5SITE}/Mojolicious/Script/
+${P5SITE}/Mojolicious/Script/Daemon.pm
+${P5SITE}/Mojolicious/Script/Generate/
+${P5SITE}/Mojolicious/Script/Generate.pm
+${P5SITE}/Mojolicious/Script/Generate/App.pm
+${P5SITE}/Mojolicious/Script/Mojo.pm
+${P5SITE}/Mojolicious/Script/Test.pm
+${P5SITE}/Mojolicious/Scripts.pm
+${P5SITE}/Test/
+${P5SITE}/Test/Mojo/
+${P5SITE}/Test/Mojo/Server.pm
+@man man/man3p/Mojo.3p
+@man man/man3p/Mojo::Base.3p
+@man man/man3p/Mojo::Buffer.3p
+@man man/man3p/Mojo::ByteStream.3p
+@man man/man3p/Mojo::Client.3p
+@man man/man3p/Mojo::Content.3p
+@man man/man3p/Mojo::Content::MultiPart.3p
+@man man/man3p/Mojo::Cookie.3p
+@man man/man3p/Mojo::Cookie::Request.3p
+@man man/man3p/Mojo::Cookie::Response.3p
+@man man/man3p/Mojo::Date.3p
+@man man/man3p/Mojo::File.3p
+@man man/man3p/Mojo::File::Memory.3p
+@man man/man3p/Mojo::Filter.3p
+@man man/man3p/Mojo::Filter::Chunked.3p
+@man man/man3p/Mojo::Headers.3p
+@man man/man3p/Mojo::HelloWorld.3p
+@man man/man3p/Mojo::Home.3p
+@man man/man3p/Mojo::Loader.3p
+@man man/man3p/Mojo::Manual.3p
+@man man/man3p/Mojo::Manual::CodingGuidelines.3p
+@man man/man3p/Mojo::Manual::Cookbook.3p
+@man man/man3p/Mojo::Manual::FAQ.3p
+@man man/man3p/Mojo::Manual::FrameworkBuilding.3p
+@man man/man3p/Mojo::Manual::GettingStarted.3p
+@man man/man3p/Mojo::Manual::HTTPGuide.3p
+@man man/man3p/Mojo::Manual::Mojolicious.3p
+@man man/man3p/Mojo::Message.3p
+@man man/man3p/Mojo::Message::Request.3p
+@man man/man3p/Mojo::Message::Response.3p
+@man man/man3p/Mojo::Parameters.3p
+@man man/man3p/Mojo::Path.3p
+@man man/man3p/Mojo::Script.3p
+@man man/man3p/Mojo::Script::Cgi.3p
+@man man/man3p/Mojo::Script::Daemon.3p
+@man man/man3p/Mojo::Script::DaemonPrefork.3p
+@man man/man3p/Mojo::Script::Fastcgi.3p
+@man man/man3p/Mojo::Script::Generate.3p
+@man man/man3p/Mojo::Script::Generate::App.3p
+@man man/man3p/Mojo::Script::Test.3p
+@man man/man3p/Mojo::Scripts.3p
+@man man/man3p/Mojo::Server.3p
+@man man/man3p/Mojo::Server::CGI.3p
+@man man/man3p/Mojo::Server::Daemon.3p
+@man man/man3p/Mojo::Server::Daemon::Prefork.3p
+@man man/man3p/Mojo::Server::FastCGI.3p
+@man man/man3p/Mojo::Stateful.3p
+@man man/man3p/Mojo::Template.3p
+@man man/man3p/Mojo::Transaction.3p
+@man man/man3p/Mojo::URL.3p
+@man man/man3p/Mojo::Upload.3p
+@man man/man3p/MojoX::Dispatcher::Routes.3p
+@man man/man3p/MojoX::Dispatcher::Routes::Context.3p
+@man man/man3p/MojoX::Dispatcher::Routes::Controller.3p
+@man man/man3p/MojoX::Dispatcher::Static.3p
+@man man/man3p/MojoX::Renderer.3p
+@man man/man3p/MojoX::Routes.3p
+@man man/man3p/MojoX::Routes::Match.3p
+@man man/man3p/MojoX::Routes::Pattern.3p
+@man man/man3p/MojoX::Types.3p
+@man man/man3p/Mojolicious.3p
+@man man/man3p/Mojolicious::Context.3p
+@man man/man3p/Mojolicious::Controller.3p
+@man man/man3p/Mojolicious::Dispatcher.3p
+@man man/man3p/Mojolicious::Renderer.3p
+@man man/man3p/Mojolicious::Script::Daemon.3p
+@man man/man3p/Mojolicious::Script::Generate.3p
+@man man/man3p/Mojolicious::Script::Generate::App.3p
+@man man/man3p/Mojolicious::Script::Mojo.3p
+@man man/man3p/Mojolicious::Script::Test.3p
+@man man/man3p/Mojolicious::Scripts.3p
+@man man/man3p/Test::Mojo::Server.3p

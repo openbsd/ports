@@ -1,0 +1,4 @@
+Mojo is a collection of libraries and example web frameworks for web
+framework developers.
+If you are searching for a higher level MVC web framework you should
+take a look at Mojolicious, also coming with this module.
