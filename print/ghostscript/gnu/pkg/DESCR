@@ -4,6 +4,5 @@ many different printers, file formats and some displays.
 
 Flavors:
        a4 - Build with support for A4 page size
-     cups - Build with the cups device and ps2raster
       gtk - Build with Gtk+ support
    no_x11 - Build without X support

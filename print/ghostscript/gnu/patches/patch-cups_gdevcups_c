@@ -1,0 +1,150 @@
+$OpenBSD: patch-cups_gdevcups_c,v 1.1 2008/11/12 19:26:38 kili Exp $
+--- cups/gdevcups.c.orig	Mon May 14 20:22:09 2007
++++ cups/gdevcups.c	Thu Oct 30 15:47:00 2008
+@@ -69,6 +69,7 @@
+ #include "gsexit.h"
+ #include "arch.h"
+ 
++#include <dlfcn.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+ #include <cups/raster.h>
+@@ -87,7 +88,7 @@
+ 
+ #ifdef CUPS_RASTER_SYNCv1
+ #  define cups_page_header_t cups_page_header2_t
+-#  define cupsRasterWriteHeader cupsRasterWriteHeader2
++#  define cupsRasterWriteHeader cups->cupsRasterWriteHeader2
+ #else
+ /* The RGBW colorspace is not defined until CUPS 1.2... */
+ #  define CUPS_CSPACE_RGBW 17
+@@ -204,6 +205,14 @@ typedef struct gx_device_cups_s
+   cups_raster_t		*stream;	/* Raster stream */
+   cups_page_header_t	header;		/* PostScript page device info */
+   int			landscape;	/* Non-zero if this is landscape */
++
++  /* cups stubs, initialized in cups_open() */
++  int libCupsReady;
++  void (*cupsRasterClose) (cups_raster_t *);
++  cups_raster_t *(*cupsRasterOpen) (int, cups_mode_t);
++  unsigned (*cupsRasterWriteHeader2) (cups_raster_t *, cups_page_header2_t *);
++  unsigned (*cupsRasterWritePixels) (cups_raster_t *, unsigned char *, unsigned);
++  ppd_file_t *(*ppdOpenFile) (const char *);
+ } gx_device_cups;
+ 
+ private gx_device_procs	cups_procs =
+@@ -352,7 +361,14 @@ gx_device_cups	gs_cups_device =
+     0,					/* cupsRowCount */
+     0,					/* cupsRowFeed */
+     0					/* cupsRowStep */
+-  }
++  },
++  0,					/* landscape */
++  0,					/* libCupsReady */
++  NULL,					/* cupsRasterClose */
++  NULL,					/* cupsRasterOpen */
++  NULL,					/* cupsRasterWriteHeader2 */
++  NULL,					/* cupsRasterWritePixels */
++  NULL					/* ppdOpenFile */
+ };
+ 
+ /*
+@@ -426,7 +442,7 @@ cups_close(gx_device *pdev)		/* I - Device info */
+ 
+   if (cups->stream != NULL)
+   {
+-    cupsRasterClose(cups->stream);
++    cups->cupsRasterClose(cups->stream);
+     cups->stream = NULL;
+   }
+ 
+@@ -2496,6 +2512,35 @@ cups_open(gx_device *pdev)		/* I - Device info */
+ 
+   dprintf1("DEBUG2: cups_open(%p)\n", pdev);
+ 
++  if (!cups->libCupsReady) {
++    void *handle;
++    if (!(handle = dlopen("libcupsimage.so.2", 0))) {
++      eprintf1("ERROR: libcupsimage.so.2: %s\n", dlerror());
++      return -1;
++    }
++    if (!(cups->cupsRasterClose = dlsym(handle, "cupsRasterClose"))) {
++      eprintf1("ERROR: cupsRasterClose: %s\n", dlerror());
++      return -1;
++    }
++    if (!(cups->cupsRasterOpen = dlsym(handle, "cupsRasterOpen"))) {
++      eprintf1("ERROR: cupsRasterOpen: %s\n", dlerror());
++      return -1;
++    }
++    if (!(cups->cupsRasterWriteHeader2 = dlsym(handle, "cupsRasterWriteHeader2"))) {
++      eprintf1("ERROR: cupsRasterWriteHeader2: %s\n", dlerror());
++      return -1;
++    }
++    if (!(cups->cupsRasterWritePixels = dlsym(handle, "cupsRasterWritePixels"))) {
++      eprintf1("ERROR: cupsRasterWritePixels: %s\n", dlerror());
++      return -1;
++    }
++    if (!(cups->ppdOpenFile = dlsym(handle, "ppdOpenFile"))) {
++      eprintf1("ERROR: ppdOpenFile: %s\n", dlerror());
++      return -1;
++    }
++    cups->libCupsReady = 1;
++  }
++
+   cups->printer_procs.get_space_params = cups_get_space_params;
+ 
+   if (cups->page == 0)
+@@ -2510,7 +2555,7 @@ cups_open(gx_device *pdev)		/* I - Device info */
+     return (code);
+ 
+   if (cupsPPD == NULL)
+-    cupsPPD = ppdOpenFile(getenv("PPD"));
++    cupsPPD = cups->ppdOpenFile(getenv("PPD"));
+ 
+   return (0);
+ }
+@@ -2597,7 +2642,7 @@ cups_print_pages(gx_device_printer *pdev,
+ 
+   if (cups->stream == NULL)
+   {
+-    if ((cups->stream = cupsRasterOpen(fileno(cups->file),
++    if ((cups->stream = cups->cupsRasterOpen(fileno(cups->file),
+                                        CUPS_RASTER_WRITE)) == NULL)
+     {
+       perror("ERROR: Unable to open raster stream - ");
+@@ -3669,7 +3714,7 @@ cups_print_chunked(gx_device_printer *pdev,
+       * Write the bitmap data to the raster stream...
+       */
+ 
+-      cupsRasterWritePixels(cups->stream, dst, cups->header.cupsBytesPerLine);
++      cups->cupsRasterWritePixels(cups->stream, dst, cups->header.cupsBytesPerLine);
+     }
+     else
+     {
+@@ -3677,7 +3722,7 @@ cups_print_chunked(gx_device_printer *pdev,
+       * Write the scanline data to the raster stream...
+       */
+ 
+-      cupsRasterWritePixels(cups->stream, srcptr, cups->header.cupsBytesPerLine);
++      cups->cupsRasterWritePixels(cups->stream, srcptr, cups->header.cupsBytesPerLine);
+     }
+   }
+ }
+@@ -4345,7 +4390,7 @@ cups_print_banded(gx_device_printer *pdev,
+     * Write the bitmap data to the raster stream...
+     */
+ 
+-    cupsRasterWritePixels(cups->stream, dst, cups->header.cupsBytesPerLine);
++    cups->cupsRasterWritePixels(cups->stream, dst, cups->header.cupsBytesPerLine);
+   }
+ }
+ 
+@@ -4716,7 +4761,7 @@ cups_print_planar(gx_device_printer *pdev,
+       * Write the bitmap data to the raster stream...
+       */
+ 
+-      cupsRasterWritePixels(cups->stream, dst, cups->header.cupsBytesPerLine);
++      cups->cupsRasterWritePixels(cups->stream, dst, cups->header.cupsBytesPerLine);
+     }
+ }
+ 

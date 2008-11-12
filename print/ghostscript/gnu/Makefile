@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2008/10/28 17:53:42 kili Exp $
+# $OpenBSD: Makefile,v 1.59 2008/11/12 19:26:38 kili Exp $
 
 COMMENT=	GNU PostScript interpreter
 
 VERSION=	8.63
 DISTNAME=	ghostscript-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	11.0
 
@@ -13,7 +14,7 @@ HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
 
 MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
-FLAVORS=	a4 gtk no_x11 cups
+FLAVORS=	a4 gtk no_x11
 FLAVOR?=
 
 FLAVOR_STRING=	${FLAVOR_EXT:S/-/,/g}
@@ -32,7 +33,7 @@ WANTLIB=	m c pthread z
 MODULES=	converters/libiconv
 
 RUN_DEPENDS=	:ghostscript-fonts-*:print/ghostscript/gnu-fonts
-
+BUILD_DEPENDS=	::print/cups
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg	\
 		png.>=6::graphics/png		\
 		ijs::print/ijs
@@ -46,6 +47,10 @@ CFLAGS+=	-DSYS_TYPES_HAS_STDINT_TYPES	\
 
 MAKE_FLAGS=	BINDIR=./obj				\
 		CFLAGS_STANDARD='${CFLAGS} -fPIC'	\
+		CUPSCFLAGS="$$(cups-config --cflags)"	\
+		CUPSSERVERBIN="$$(cups-config --serverbin)" \
+		CUPSSERVERROOT="$$(cups-config --serverroot)" \
+		CUPSDATA="$$(cups-config --datadir)"	\
 		DEVICE_DEVS='${DEVICES:=$(DD)%.dev}'	\
 		EXTRALIBS="${EXTRALIBS}"		\
 		GLGENDIR=./obj				\
@@ -98,11 +103,8 @@ WANTLIB+=	Xcomposite Xcursor Xdamage Xau Xdmcp Xfixes Xi Xinerama \
 		Xrandr Xrender atk-1.0 cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1
-MAKE_FLAGS+=	SOC_CFLAGS="$$(pkg-config gtk+-2.0 --cflags)"
-# This one is used in the addition of SOC_LIBS to MAKE_FLAGS later.
-# We need this stunt to get gsc and gsx linked correctly when the cups
-# flavor is enabled.
-SOC_LIBS=	$$(pkg-config gtk+-2.0 --libs) -pthread
+MAKE_FLAGS+=	SOC_CFLAGS="$$(pkg-config gtk+-2.0 --cflags)" \
+		SOC_LIBS="$$(pkg-config gtk+-2.0 --libs) -pthread"
 ALL_TARGET=	so
 INSTALL_TARGET=	install install-so
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
@@ -114,22 +116,6 @@ USE_X11=	Yes
 WANTLIB+=	X11 Xt Xext
 DEVICES+=	${X11_DEVICES}
 .endif
-
-.if ${FLAVOR:L:Mcups}
-LIB_DEPENDS+=	cups.>=3,cupsimage.>=2::print/cups
-CUPSLIBS=	$$(cups-config --image --libs)
-EXTRALIBS+=	${CUPSLIBS}
-SOC_LIBS+=	${CUPSLIBS}
-DEVICES+=	${CUPS_DEVICES}
-WANTLIB+=	crypto ssl tiff
-MAKE_FLAGS+=	CUPSCFLAGS="$$(cups-config --cflags)" \
-		CUPSSERVERBIN="$$(cups-config --serverbin)" \
-		CUPSSERVERROOT="$$(cups-config --serverroot)" \
-		CUPSDATA="$$(cups-config --datadir)"
-.endif
-
-SOC_LIBS?=
-MAKE_FLAGS+=	SOC_LIBS="${SOC_LIBS}"
 
 NO_REGRESS=	Yes
 
@@ -174,11 +160,7 @@ post-install:
 		ln -sf ps2pdf.1 ps2pdf13.1 && \
 		ln -sf ps2pdf.1 ps2pdf14.1 && \
 		ln -sf ps2ps.1 eps2eps.1
-.if ${FLAVOR:L:Mcups}
 	mv ${DESTDIR}/etc/cups/* ${PREFIX}/share/ghostscript/${VERSION}/examples
-.else
-	rm -rf ${PREFIX}/libexec/cups
-.endif
 	rm -rf ${DESTDIR}/etc/cups
 
 # Device list based on configure.ac:
@@ -291,7 +273,7 @@ DEVICES+=	bit bitcmyk bitrgb bitrgbtags ccr cgm24 cgm8 cgmmono \
 DEVICES+=	ijs
 
 # Cups
-CUPS_DEVICES=	cups
+DEVICES+=	cups
 
 # gtk (display driver)
 GTK_DEVICES=	display
