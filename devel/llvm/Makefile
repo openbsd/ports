@@ -1,16 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/10 12:17:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2008/11/12 15:46:32 sthen Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
 SVN_SNAPDATE =	2008-11-05
 SNAPDATE =	${SVN_SNAPDATE:S/-//g}
-V =		2.4.snap${SNAPDATE}
+V =		2.5.snap${SNAPDATE}
 DISTNAME =	llvm-$V
 EXTRACT_SUFX =	.tar.bz2
-
-PKGNAME =	${DISTNAME}p0
-
-SHARED_LIBS +=	LLVMHello      .0.0           # .0.0
 
 CATEGORIES =	devel
 
@@ -24,7 +20,6 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c m pthread
 
-#MASTER_SITES =	${HOMEPAGE}releases/$V/
 MASTER_SITES =	${MASTER_SITE_FREEBSD_LOCAL:=brooks/}
 
 MODULES =	gcc4
