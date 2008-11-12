@@ -1,0 +1,3 @@
+sendxmpp is a perl-script to send xmpp (jabber), similar to what mail(1) 
+does for mail.
+Messages can be sent both to individual recipients and chatrooms.
