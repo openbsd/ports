@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/07/04 18:58:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/11/12 22:45:26 jasper Exp $
 %%SHARED%%
 @bin bin/gvfs-cat
 @bin bin/gvfs-copy
@@ -24,6 +24,8 @@ lib/gio/
 lib/gio/modules/
 lib/gio/modules/libgiogconf.a
 lib/gio/modules/libgiogconf.la
+lib/gio/modules/libgioremote-volume-monitor.a
+lib/gio/modules/libgioremote-volume-monitor.la
 lib/gio/modules/libgvfsdbus.a
 lib/gio/modules/libgvfsdbus.la
 lib/libgvfscommon.a
@@ -62,6 +64,7 @@ share/gvfs/mounts/sftp.mount
 share/gvfs/mounts/smb-browse.mount
 share/gvfs/mounts/smb.mount
 share/gvfs/mounts/trash.mount
+share/gvfs/remote-volume-monitors/
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gvfs.mo
@@ -82,12 +85,15 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gvfs.mo
 share/locale/es/LC_MESSAGES/gvfs.mo
 share/locale/et/LC_MESSAGES/gvfs.mo
-share/locale/eu/
 share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/gvfs.mo
 share/locale/fi/LC_MESSAGES/gvfs.mo
 share/locale/fr/LC_MESSAGES/gvfs.mo
+share/locale/ga/LC_MESSAGES/gvfs.mo
 share/locale/gl/LC_MESSAGES/gvfs.mo
+share/locale/gu/
+share/locale/gu/LC_MESSAGES/
+share/locale/gu/LC_MESSAGES/gvfs.mo
 share/locale/he/LC_MESSAGES/gvfs.mo
 share/locale/hi/
 share/locale/hi/LC_MESSAGES/
@@ -95,6 +101,9 @@ share/locale/hi/LC_MESSAGES/gvfs.mo
 share/locale/hu/LC_MESSAGES/gvfs.mo
 share/locale/it/LC_MESSAGES/gvfs.mo
 share/locale/ja/LC_MESSAGES/gvfs.mo
+share/locale/kn/
+share/locale/kn/LC_MESSAGES/
+share/locale/kn/LC_MESSAGES/gvfs.mo
 share/locale/ko/LC_MESSAGES/gvfs.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
@@ -123,10 +132,20 @@ share/locale/pt_BR/LC_MESSAGES/gvfs.mo
 share/locale/ru/LC_MESSAGES/gvfs.mo
 share/locale/sk/LC_MESSAGES/gvfs.mo
 share/locale/sl/LC_MESSAGES/gvfs.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/gvfs.mo
+share/locale/sr/LC_MESSAGES/gvfs.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/gvfs.mo
 share/locale/sv/LC_MESSAGES/gvfs.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gvfs.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/gvfs.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gvfs.mo
