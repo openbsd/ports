@@ -1,0 +1,29 @@
+$OpenBSD: patch-pTk_mTk_generic_tk_h,v 1.1 2008/11/12 09:58:16 jasper Exp $
+
+Fix with new xproto.
+
+--- pTk/mTk/generic/tk.h.orig	Mon Nov 10 18:27:40 2008
++++ pTk/mTk/generic/tk.h	Mon Nov 10 18:27:49 2008
+@@ -677,17 +677,15 @@ typedef struct Tk_GeomMgr {
+  *
+  *---------------------------------------------------------------------------
+  */
+-#define VirtualEvent        (LASTEvent)
+-#define ActivateNotify      (LASTEvent + 1)
+-#define DeactivateNotify    (LASTEvent + 2)
+-#define MouseWheelEvent     (LASTEvent + 3)
+-#define TK_LASTEVENT        (LASTEvent + 4)
++#define VirtualEvent        (MappingNotify + 1)
++#define ActivateNotify      (MappingNotify + 2)
++#define DeactivateNotify    (MappingNotify + 3)
++#define MouseWheelEvent     (MappingNotify + 4)
++#define TK_LASTEVENT        (MappingNotify + 5)
+ 
+ #define MouseWheelMask      (1L << 28)
+-
+ #define ActivateMask        (1L << 29)
+ #define VirtualEventMask    (1L << 30)
+-#define TK_LASTEVENT        (LASTEvent + 4)
+ 
+ 
+ /*
