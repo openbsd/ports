@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.28 2008/10/24 21:06:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2008/11/13 17:35:44 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	integrated mozilla application suite
 
-VER=		1.1.12
+VER=		1.1.13
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}p0
+PKGNAME=	seamonkey-${VER}
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -47,25 +47,26 @@ MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${V
 	2 1.1.9 \
 	3 1.1.10 \
 	4 1.1.11 \
-	5 1.1.12
+	5 1.1.12 \
+	6 1.1.13
 MASTER_SITES${id}+=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${version}/contrib-localized/
 .endfor
 
 LANGUAGES=	be-BY 2 1.1.9 \
 		ca-AD 1 1.1.8 \
 		cs-CZ 5 1.1.12 \
-		de-AT 5 1.1.12 \
+		de-AT 6 1.1.13 \
 		el-GR 0 1.1.2 \
 		es-ES 3 1.1.10 \
-		fr-FR 2 1.1.9 \
+		fr-FR 5 1.1.12 \
 		he-IL 0 1.1.2 \
 		hu-HU 4 1.1.11 \
-		it-IT 2 1.1.9 \
+		it-IT 4 1.1.11 \
 		lt-LT 5 1.1.12 \
-		nl-NL 5 1.1.12 \
-		pl-PL 5 1.1.12 \
+		nl-NL 6 1.1.13 \
+		pl-PL 6 1.1.13 \
 		pt-BR 5 1.1.12 \
-		ru-RU 5 1.1.12 \
+		ru-RU 6 1.1.13 \
 		ur-PK 2 1.1.9 \
 		sv-SE 5 1.1.12
 BINLANGS=	be-BY el-GR fr-FR pl-PL pt-BR
