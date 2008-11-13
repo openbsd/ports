@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/09/26 19:33:25 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2008/11/13 17:36:53 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GnuPG extension for SeaMonkey
 
 VER=		0.95.7
 DISTNAME=	enigmail-${VER}
-PKGNAME=	enigmail-seamonkey-${VER}
+PKGNAME=	enigmail-seamonkey-${VER}p0
 
 CATEGORIES=	mail security
 
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	::${SEAMONKEY_DIR}:configure \
 		::archivers/unzip
 RUN_DEPENDS=	::security/gnupg
 
-LIB_DEPENDS=	seamonkey/xpcom,seamonkey/xpcom_compat,seamonkey/xpcom_core:seamonkey-1.1.12:${SEAMONKEY_DIR}
+LIB_DEPENDS=	seamonkey/xpcom,seamonkey/xpcom_compat,seamonkey/xpcom_core:seamonkey-1.1.13:${SEAMONKEY_DIR}
 WANTLIB=	c m nspr4 plc4 plds4
 
 USE_X11=	Yes
