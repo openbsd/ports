@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/04/09 13:13:40 jasper Exp $
-bin/pango-querymodules
-bin/pango-view
+@comment $OpenBSD: PLIST,v 1.18 2008/11/13 20:17:01 landry Exp $
+@bin bin/pango-querymodules
+@bin bin/pango-view
 include/pango-1.0/
 include/pango-1.0/pango/
 include/pango-1.0/pango/pango-attributes.h
+include/pango-1.0/pango/pango-bidi-type.h
 include/pango-1.0/pango/pango-break.h
 include/pango-1.0/pango/pango-context.h
 include/pango-1.0/pango/pango-coverage.h
@@ -104,6 +105,7 @@ share/gtk-doc/html/pango/index-1.16.html
 share/gtk-doc/html/pango/index-1.18.html
 share/gtk-doc/html/pango/index-1.2.html
 share/gtk-doc/html/pango/index-1.20.html
+share/gtk-doc/html/pango/index-1.22.html
 share/gtk-doc/html/pango/index-1.4.html
 share/gtk-doc/html/pango/index-1.6.html
 share/gtk-doc/html/pango/index-1.8.html
@@ -115,6 +117,7 @@ share/gtk-doc/html/pango/layout.gif
 share/gtk-doc/html/pango/left.png
 share/gtk-doc/html/pango/lowlevel.html
 share/gtk-doc/html/pango/pango-ATSUI-Fonts.html
+share/gtk-doc/html/pango/pango-Bidirectional-Text.html
 share/gtk-doc/html/pango/pango-Cairo-Rendering.html
 share/gtk-doc/html/pango/pango-Coverage-Maps.html
 share/gtk-doc/html/pango/pango-Engines.html
@@ -125,7 +128,7 @@ share/gtk-doc/html/pango/pango-Layout-Objects.html
 share/gtk-doc/html/pango/pango-Miscellaneous-Utilities.html
 share/gtk-doc/html/pango/pango-Modules.html
 share/gtk-doc/html/pango/pango-OpenType-Font-Handling.html
-share/gtk-doc/html/pango/pango-Scripts.html
+share/gtk-doc/html/pango/pango-Scripts-and-Languages.html
 share/gtk-doc/html/pango/pango-Tab-Stops.html
 share/gtk-doc/html/pango/pango-Text-Attributes.html
 share/gtk-doc/html/pango/pango-Text-Processing.html
