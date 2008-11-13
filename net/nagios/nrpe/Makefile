@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 22:36:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/11/13 08:33:16 sthen Exp $
 
 COMMENT=	Nagios Remote Plugin Executor
 
-DISTNAME=	nrpe-2.7.1
+DISTNAME=	nrpe-2.12
 CATEGORIES=	net
 
-MAINTAINER=	David Krause <david@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE=	http://www.nagios.org/
 
 # GPL
@@ -27,7 +27,7 @@ CONFIGURE_ARGS+=--with-nrpe-group=_nrpe
 CONFIGURE_ARGS+=--with-kerberos-inc=/usr/include/kerberosV/
 
 pre-configure:
-	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/src/nrpe.c
+	@${SUBST_CMD} ${WRKSRC}/src/nrpe.c
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/nagios

@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_nrpe_c,v 1.1.1.1 2006/02/04 13:16:08 david Exp $
---- src/nrpe.c.orig	Mon Jan 23 10:36:50 2006
-+++ src/nrpe.c	Wed Jan 25 10:48:41 2006
+$OpenBSD: patch-src_nrpe_c,v 1.2 2008/11/13 08:33:16 sthen Exp $
+--- src/nrpe.c.orig	Mon Mar 10 21:04:43 2008
++++ src/nrpe.c	Wed Oct 22 21:27:46 2008
 @@ -47,7 +47,7 @@ int use_ssl=FALSE;
  char    *command_name=NULL;
  char    *macro_argv[MAX_COMMAND_ARGUMENTS];
  
 -char    config_file[MAX_INPUT_BUFFER]="nrpe.cfg";
-+char    config_file[MAX_INPUT_BUFFER]="%%SYSCONFDIR%%/nrpe.cfg";
++char    config_file[MAX_INPUT_BUFFER]="${SYSCONFDIR}/nrpe.cfg";
+ int     log_facility=LOG_DAEMON;
  int     server_port=DEFAULT_SERVER_PORT;
  char    server_address[16]="0.0.0.0";
- int     socket_timeout=DEFAULT_SOCKET_TIMEOUT;

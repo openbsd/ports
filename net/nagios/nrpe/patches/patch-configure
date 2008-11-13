@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2006/02/04 13:16:08 david Exp $
---- configure.orig	Mon Jan 23 10:36:50 2006
-+++ configure	Wed Jan 25 13:46:20 2006
-@@ -5594,6 +5594,8 @@ _ACEOF
+$OpenBSD: patch-configure,v 1.2 2008/11/13 08:33:16 sthen Exp $
+--- configure.orig	Mon Mar 10 21:04:41 2008
++++ configure	Tue Nov  4 10:35:59 2008
+@@ -6055,6 +6055,8 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -10,3 +10,26 @@ $OpenBSD: patch-configure,v 1.1.1.1 2006/02/04 13:16:08 david Exp $
  
  
  int
+@@ -6187,6 +6189,8 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
++extern int allow_severity=0;
++extern int deny_severity=0;
+ 
+ int
+ main ()
+@@ -6670,10 +6674,12 @@ echo $ECHO_N "checking for SSL libraries... $ECHO_C" >
+ 		found_ssl=no
+ 		for dir in $ssl_lib_dir $ssl_dir /usr/lib64 /usr/lib /usr/local/lib /usr/lib/ssl /usr/ssl/lib /usr/openssl/lib /usr/pkg/lib  /usr/freeware/lib/openssl; do
+ 			ssllibdir="$dir"
+-			if test -f "$dir/libssl.so"; then
++			for i in $dir/libssl.so*; do
++			if test -f "$i"; then
+ 				found_ssl=yes
+ 			        break
+ 			fi
++			done
+ 		done
+ 
+ 		if test x_$found_ssl != x_yes; then

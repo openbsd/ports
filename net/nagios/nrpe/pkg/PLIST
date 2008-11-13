@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/05/21 19:16:34 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/11/13 08:33:16 sthen Exp $
 @newgroup _nrpe:556
 @newuser _nrpe:556:_nrpe:daemon:NRPE Account:/nonexistent:/sbin/nologin
-libexec/nagios/check_nrpe
-sbin/nrpe
+@bin libexec/nagios/check_nrpe
+@bin sbin/nrpe
 share/doc/nrpe/
 share/doc/nrpe/README
 share/doc/nrpe/SECURITY
