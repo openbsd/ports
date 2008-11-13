@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.49 2008/10/24 21:01:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2008/11/13 17:01:56 martynas Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	small, simple, and powerful web browser for mobile devices
-DISTNAME=	minimo-1.8.1.17
-PKGNAME=	${DISTNAME}p0v0
+DISTNAME=	minimo-1.8.1.18
+PKGNAME=	${DISTNAME}v0
 
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~martynas/mozilla/minimo/
  
 HOMEPAGE=	http://www-archive.mozilla.org/projects/minimo/
+
+MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
 
 # MPL
 PERMIT_PACKAGE_CDROM=	Yes
