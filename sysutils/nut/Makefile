@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2008/09/27 17:30:08 martynas Exp $
+# $OpenBSD: Makefile,v 1.30 2008/11/13 13:15:06 ajacoutot Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=		driver for monitoring UPSs via SNMP
 
 DISTNAME=		nut-2.2.2
-PKGNAME-main=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p1
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}p1
 PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}p0
 CATEGORIES=		sysutils
@@ -22,7 +22,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB-main=		c crypto expat iconv intl m ssl z
+WANTLIB-main=		c crypto expat iconv intl m ssl z \
+			asn1 gssapi krb5
 WANTLIB-snmp=		c crypto
 
 WEB_ROOT=		/var/www

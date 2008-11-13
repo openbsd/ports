@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/10/01 08:02:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2008/11/13 13:15:22 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - plugins bad
 COMMENT-tremor =	multimedia framework - tremor plugin
@@ -30,7 +30,7 @@ PKGNAME-sdl =		gstreamer-sdl-$Vp1
 PKGNAME-bz2 =		gstreamer-bz2-$Vp1
 PKGNAME-gsm =		gstreamer-gsm-$Vp1
 PKGNAME-ladspa =	gstreamer-ladspa-$Vp1
-PKGNAME-neon =		gstreamer-neon-$Vp1
+PKGNAME-neon =		gstreamer-neon-$Vp2
 PKGNAME-swf =		gstreamer-flash-$Vp1
 PKGNAME-meta =		gstreamer-meta-$Vp1
 PKGNAME-sndfile =	gstreamer-sndfile-$Vp1
@@ -117,7 +117,7 @@ LIB_DEPENDS-ladspa =	${LIB_DEPENDS} \
 
 WANTLIB-neon =		${WANTLIB} \
 			gstbase-0.10 \
-			crypto expat ssl
+			crypto expat ssl asn1 gssapi krb5
 
 LIB_DEPENDS-neon =	${LIB_DEPENDS} \
 			neon::net/neon

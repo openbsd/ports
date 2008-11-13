@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2008/11/03 21:33:56 steven Exp $
+# $OpenBSD: Makefile,v 1.51 2008/11/13 13:14:51 ajacoutot Exp $
 
 COMMENT-main=	subversion revision control system
 COMMENT-perl=	perl interface to subversion
@@ -9,10 +9,10 @@ COMMENT-ap2=	apache2 subversion modules
 VERSION=	1.5.4
 DISTNAME=	subversion-${VERSION}
 PKGNAME=	${DISTNAME}
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-perl=	p5-SVN-${VERSION}
-PKGNAME-python=	py-subversion-${VERSION}
-PKGNAME-ruby=	ruby-subversion-${VERSION}
+PKGNAME-python=	py-subversion-${VERSION}p0
+PKGNAME-ruby=	ruby-subversion-${VERSION}p0
 PKGNAME-ap2=	ap2-subversion-${VERSION}p0
 
 SO_VERSION=	1.1
@@ -51,7 +51,8 @@ LIB_DEPENDS=	neon.>=26:neon->=0.26.2:net/neon \
 
 MULTI_PACKAGES=	-main
 
-WANTLIB-main=	${WANTLIB} c crypto iconv intl ssl
+WANTLIB-main=	${WANTLIB} c crypto iconv intl ssl \
+		asn1 gssapi krb5
 RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
 
 CONTRIB_HOOK_SCRIPTS=	case-insensitive.py pre-commit-check.py \
@@ -92,14 +93,16 @@ LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS}
 LIB_DEPENDS-perl+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
 .  endfor
 
-WANTLIB-python=	${WANTLIB} apr-1 aprutil-1 crypto neon sasl2 ssl
+WANTLIB-python=	${WANTLIB} apr-1 aprutil-1 crypto neon sasl2 ssl \
+		asn1 gssapi krb5
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
 LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
 .  endfor
 
-WANTLIB-ruby=	${WANTLIB} apr-1 aprutil-1 crypto neon sasl2 ssl
+WANTLIB-ruby=	${WANTLIB} apr-1 aprutil-1 crypto neon sasl2 ssl \
+		asn1 gssapi krb5
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	ruby.>=2::lang/ruby ${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
