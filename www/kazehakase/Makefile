@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/11/03 16:19:55 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2008/11/13 12:29:24 landry Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -42,7 +42,7 @@ USE_LIBTOOL =		Yes
 
 FAKE_FLAGS =		sysconfdir=${TRUEPREFIX}/share/examples
 
-BUILD_DEPENDS-gecko =	:xulrunner-devel->=1.8:devel/xulrunner,-devel
+BUILD_DEPENDS =		:xulrunner-devel->=1.8:devel/xulrunner,-devel
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			::devel/desktop-file-utils
