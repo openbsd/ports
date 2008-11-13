@@ -1,0 +1,12 @@
+#! /bin/sh
+#
+#	$OpenBSD: krb5-config,v 1.1 2008/11/13 13:14:05 ajacoutot Exp $
+#
+
+case x$1 in
+x--libs)
+	echo '-lgssapi -lkrb5 -lasn1 -lcrypto';;
+x--cflags)
+	echo '-I/usr/include/kerberosV';;
+esac
+exit 0

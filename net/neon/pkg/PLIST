@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/01/29 16:31:59 steven Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/11/13 13:14:05 ajacoutot Exp $
 bin/neon-config
 include/neon/
 include/neon/ne_207.h
@@ -12,6 +12,7 @@ include/neon/ne_defs.h
 include/neon/ne_i18n.h
 include/neon/ne_locks.h
 include/neon/ne_md5.h
+include/neon/ne_pkcs11.h
 include/neon/ne_props.h
 include/neon/ne_redirect.h
 include/neon/ne_request.h
@@ -50,9 +51,11 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_close_connection.3
 @man man/man3/ne_forget_auth.3
 @man man/man3/ne_get_error.3
+@man man/man3/ne_get_request_flag.3
 @man man/man3/ne_get_response_header.3
 @man man/man3/ne_get_scheme.3
 @man man/man3/ne_get_server_hostport.3
+@man man/man3/ne_get_session_flag.3
 @man man/man3/ne_get_status.3
 @man man/man3/ne_has_support.3
 @man man/man3/ne_i18n_init.3
@@ -73,15 +76,16 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_session_create.3
 @man man/man3/ne_session_destroy.3
 @man man/man3/ne_session_proxy.3
+@man man/man3/ne_set_connect_timeout.3
 @man man/man3/ne_set_error.3
-@man man/man3/ne_set_persist.3
 @man man/man3/ne_set_proxy_auth.3
 @man man/man3/ne_set_read_timeout.3
 @man man/man3/ne_set_request_body_buffer.3
 @man man/man3/ne_set_request_body_fd.3
 @man man/man3/ne_set_request_body_fd64.3
-@man man/man3/ne_set_request_expect100.3
+@man man/man3/ne_set_request_flag.3
 @man man/man3/ne_set_server_auth.3
+@man man/man3/ne_set_session_flag.3
 @man man/man3/ne_set_useragent.3
 @man man/man3/ne_shave.3
 @man man/man3/ne_sock_exit.3
@@ -149,11 +153,12 @@ share/doc/neon/html/refneon.html
 share/doc/neon/html/refopts.html
 share/doc/neon/html/refreq.html
 share/doc/neon/html/refreqbody.html
+share/doc/neon/html/refreqflags.html
 share/doc/neon/html/refreqhdr.html
-share/doc/neon/html/refreqopts.html
 share/doc/neon/html/refresolve.html
 share/doc/neon/html/refresphdr.html
 share/doc/neon/html/refsess.html
+share/doc/neon/html/refsessflags.html
 share/doc/neon/html/refshave.html
 share/doc/neon/html/refsockinit.html
 share/doc/neon/html/refsslca.html
@@ -172,11 +177,10 @@ share/locale/de/LC_MESSAGES/neon.mo
 share/locale/fr/LC_MESSAGES/neon.mo
 share/locale/ja/LC_MESSAGES/neon.mo
 share/locale/nn/LC_MESSAGES/neon.mo
+share/locale/pl/LC_MESSAGES/neon.mo
 share/locale/ru/LC_MESSAGES/neon.mo
 share/locale/tr/LC_MESSAGES/neon.mo
-share/locale/zh/
-share/locale/zh/LC_MESSAGES/
-share/locale/zh/LC_MESSAGES/neon.mo
+share/locale/zh_CN/LC_MESSAGES/neon.mo
 share/neon/
 share/neon/macros/
 share/neon/macros/ChangeLog

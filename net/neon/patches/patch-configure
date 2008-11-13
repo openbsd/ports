@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2008/05/02 08:14:53 steven Exp $
---- configure.orig	Mon Oct 30 14:32:54 2006
-+++ configure	Fri May  2 01:28:00 2008
-@@ -30308,7 +30308,7 @@ for lib in intl; do
+$OpenBSD: patch-configure,v 1.5 2008/11/13 13:14:05 ajacoutot Exp $
+--- configure.orig	Wed Aug 20 21:47:53 2008
++++ configure	Sun Nov  9 15:51:07 2008
+@@ -32252,7 +32252,7 @@ for lib in intl; do
      *) ne__code="bindtextdomain();" ;;
      esac
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.4 2008/05/02 08:14:53 steven Exp $
      cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -30369,7 +30369,7 @@ if test "$ne_cv_libsfor_bindtextdomain" = "not found";
+@@ -32312,7 +32312,7 @@ if test "$ne_cv_libsfor_bindtextdomain" = "not found";
  elif test "$ne_cv_libsfor_bindtextdomain" = "none needed"; then
     :
  else
