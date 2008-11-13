@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2008/11/13 20:22:13 landry Exp $
+--- src/Makefile.in.orig	Fri Oct 31 13:53:46 2008
++++ src/Makefile.in	Fri Oct 31 13:54:07 2008
+@@ -1400,7 +1400,7 @@ cairo.def: cairo-features.h $(enabled_cairo_headers)
+ 	) >$@
+ 	@ ! grep -q cairo_ERROR $@ || ($(RM) $@; false)
+ 
+-check: headers-standalone
++check:
+ 
+ # The pre-processed result is used by check-{def,plt}.sh to determine whether
+ # cairo has been compiled with symbol hiding.
