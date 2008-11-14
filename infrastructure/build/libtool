@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.64 2008/11/11 11:00:29 steven Exp $
+# $OpenBSD: libtool,v 1.65 2008/11/14 22:50:58 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -339,10 +339,11 @@ EOF
 
 sub compile
 {
-	my ($self, $compiler, $odir, $args) = @_;
+	my ($self, $prog, $odir, $args) = @_;
 
+	my @compiler = split /\s+/, $prog;
 	if (defined $self->{picobj}) {
-		my @cmd = ($compiler);
+		my @cmd = @compiler;
 		push @cmd, @$args if (@$args);
 		push @cmd, @main::picflags, '-o';
 		my $o = ($odir eq '.') ? '' : "$odir/";
@@ -351,7 +352,7 @@ sub compile
 		Exec->command(@cmd);
 	}
 	if (defined $self->{nonpicobj}) {
-		my @cmd = ($compiler);
+		my @cmd = @compiler;
 		push @cmd, @$args if (@$args);
 		push @cmd, '-o';
 		my $o = ($odir eq '.') ? '' : "$odir/";
