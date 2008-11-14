@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/14 11:07:25 ajacoutot Exp $
+bin/ImageViewer
+libexec/GNUstep/
+libexec/GNUstep/ImageViewer.app/
+@bin libexec/GNUstep/ImageViewer.app/ImageViewer
+libexec/GNUstep/ImageViewer.app/Resources/
+libexec/GNUstep/ImageViewer.app/Resources/AUTHORS
+libexec/GNUstep/ImageViewer.app/Resources/COPYING
+libexec/GNUstep/ImageViewer.app/Resources/English.lproj/
+libexec/GNUstep/ImageViewer.app/Resources/English.lproj/Localizable.strings
+libexec/GNUstep/ImageViewer.app/Resources/FileIcon_.gif.tiff
+libexec/GNUstep/ImageViewer.app/Resources/FileIcon_.jpg.tiff
+libexec/GNUstep/ImageViewer.app/Resources/FileIcon_.tiff.tiff
+libexec/GNUstep/ImageViewer.app/Resources/FileIcon_.xpm.tiff
+libexec/GNUstep/ImageViewer.app/Resources/French.lproj/
+libexec/GNUstep/ImageViewer.app/Resources/French.lproj/Localizable.strings
+libexec/GNUstep/ImageViewer.app/Resources/German.lproj/
+libexec/GNUstep/ImageViewer.app/Resources/German.lproj/Localizable.strings
+libexec/GNUstep/ImageViewer.app/Resources/ImageViewer.desktop
+libexec/GNUstep/ImageViewer.app/Resources/ImageViewer.tiff
+libexec/GNUstep/ImageViewer.app/Resources/ImageViewerInfo.plist
+libexec/GNUstep/ImageViewer.app/Resources/Info-gnustep.plist
+libexec/GNUstep/ImageViewer.app/Resources/README
+libexec/GNUstep/ImageViewer.app/Resources/genericImage.tiff
+libexec/GNUstep/ImageViewer.app/stamp.make
