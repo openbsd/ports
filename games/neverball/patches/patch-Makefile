@@ -1,12 +1,19 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2008/03/30 13:52:10 simon Exp $
---- Makefile.orig	Sat Mar 29 10:03:42 2008
-+++ Makefile	Sat Mar 29 10:03:49 2008
-@@ -20,7 +20,7 @@ ifeq ($(ENABLE_WII),1)
-     CFLAGS := -O2
+$OpenBSD: patch-Makefile,v 1.2 2008/11/14 22:09:46 sthen Exp $
+--- Makefile.orig	Mon Nov  3 22:06:36 2008
++++ Makefile	Mon Nov  3 22:47:18 2008
+@@ -16,11 +16,11 @@ endif
+ # Optional flags (CFLAGS, CPPFLAGS, ...)
+ 
+ ifeq ($(DEBUG),1)
+-    CFLAGS   := -g
+-    CPPFLAGS :=
++    CFLAGS   += -g
++    CPPFLAGS +=
  else
-     #CFLAGS := -Wall -g -ansi -pedantic
--    CFLAGS := -Wall -O2 -ansi -pedantic
-+    CFLAGS += -Wall -ansi -pedantic
+-    CFLAGS   := -O2
+-    CPPFLAGS := -DNDEBUG
++    CFLAGS   +=
++    CPPFLAGS += -DNDEBUG
  endif
  
  #------------------------------------------------------------------------------
