@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/14 07:28:43 pea Exp $
+${P5SITE}/LockFile/
+${P5SITE}/LockFile/Lock/
+${P5SITE}/LockFile/Lock.pm
+${P5SITE}/LockFile/Lock/Simple.pm
+${P5SITE}/LockFile/Manager.pm
+${P5SITE}/LockFile/Simple.pm
+@man man/man3p/LockFile::Simple.3p
