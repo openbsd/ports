@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/04/17 08:46:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/11/14 16:14:16 jasper Exp $
 %%SHARED%%
-bin/gnopernicus
+@bin bin/gnopernicus
 bin/gnopernicus-mag-config
-bin/srcore
+@bin bin/srcore
 include/gnopernicus-1.0/
 include/gnopernicus-1.0/libbrl/
 include/gnopernicus-1.0/libbrl/brlxmlapi.h
@@ -43,7 +43,7 @@ lib/gnopernicus-1.0/libsrs.la
 lib/gnopernicus-1.0/libsrutil.a
 lib/gnopernicus-1.0/libsrutil.la
 lib/pkgconfig/gnopernicus-1.0.pc
-libexec/brlmonitor
+@bin libexec/brlmonitor
 share/applications/gnopernicus.desktop
 share/examples/gnopernicus/
 share/examples/gnopernicus/translation_tables/
