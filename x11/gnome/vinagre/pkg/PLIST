@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/06/10 06:30:04 landry Exp $
-bin/vinagre
+@comment $OpenBSD: PLIST,v 1.3 2008/11/14 16:19:31 jasper Exp $
+@bin bin/vinagre
 @man man/man1/vinagre.1
 share/applications/vinagre-file.desktop
 share/applications/vinagre.desktop
@@ -74,7 +74,6 @@ share/icons/hicolor/scalable/mimetypes/
 share/icons/hicolor/scalable/mimetypes/application-x-remote-connection.svg
 share/icons/hicolor/scalable/mimetypes/application-x-vnc.svg
 share/locale/ar/LC_MESSAGES/vinagre.mo
-share/locale/be@latin/
 share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/vinagre.mo
 share/locale/bg/LC_MESSAGES/vinagre.mo
