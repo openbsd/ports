@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/10 08:22:50 jasper Exp $
-bin/gnome-keyring-manager
+@comment $OpenBSD: PLIST,v 1.2 2008/11/14 17:59:34 jasper Exp $
+@bin bin/gnome-keyring-manager
 @man man/man1/gnome-keyring-manager.1
 share/applications/gnome-keyring-manager.desktop
 share/gnome-keyring-manager/
