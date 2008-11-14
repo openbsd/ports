@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2008/11/03 21:30:53 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2008/11/14 10:43:11 sturm Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DIST_V = 		20080816
 DISTNAME =		texlive-${DIST_V}-source
-PKGNAME =		texlive_base-${V}p0
+PKGNAME =		texlive_base-${V}p1
 SHARED_LIBS =		kpathsea	1.0
 
 WANTLIB =		m X11 ICE freetype Xt pthread c Xext fontconfig \
@@ -19,7 +19,7 @@ RUN_DEPENDS =		:ghostscript-*:print/ghostscript/gnu \
 			:ps2eps-*:print/ps2eps \
 			:psutils-*:print/psutils \
 			:t1utils-*:print/t1utils \
-			:texlive_texmf-minimal-*:print/texlive/texmf,-main
+			:texlive_texmf-tetex-*:print/texlive/texmf,-tetex
 			
 LIB_DEPENDS =		t1.>=4::devel/t1lib \
 			png.>=3::graphics/png
