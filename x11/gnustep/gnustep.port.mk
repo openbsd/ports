@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.6 2008/10/03 07:21:56 ajacoutot Exp $
+# $OpenBSD: gnustep.port.mk,v 1.7 2008/11/14 10:34:15 ajacoutot Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS=	i386 amd64
@@ -23,6 +23,11 @@ MAKE_ENV+=	INSTALL_AS_USER=${BINOWN}
 MAKE_ENV+=	INSTALL_AS_GROUP=${BINGRP}
 
 MAKE_ENV+=	messages=yes
+
+.ifdef DEBUG
+MAKE_ENV+=	debug=yes strip=no
+.else
 MAKE_ENV+=	debug=no
+.endif
 
 MASTER_SITE_GNUSTEP= ftp://ftp.gnustep.org/pub/gnustep/
