@@ -1,11 +1,10 @@
-$OpenBSD: patch-src_cheese-webcam_c,v 1.1.1.1 2008/09/22 13:50:29 ajacoutot Exp $
---- src/cheese-webcam.c.orig	Sun Jun 29 18:17:43 2008
-+++ src/cheese-webcam.c	Mon Sep  8 12:23:55 2008
-@@ -31,8 +31,20 @@
+$OpenBSD: patch-src_cheese-webcam_c,v 1.2 2008/11/14 16:18:00 ajacoutot Exp $
+--- src/cheese-webcam.c.orig	Mon Oct 20 18:01:47 2008
++++ src/cheese-webcam.c	Fri Nov 14 17:08:41 2008
+@@ -32,13 +32,25 @@
+ #include <gst/gst.h>
  #include <gdk-pixbuf/gdk-pixbuf.h>
  #include <X11/Xlib.h>
- #include <X11/extensions/xf86vmode.h>
-+
 +#ifndef __OpenBSD__ // no HAL under OpenBSD
  #include <libhal.h>
 +#else
@@ -18,22 +17,27 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.1.1.1 2008/09/22 13:50:29 ajacoutot Exp 
 +#endif
 +#endif
  
-+
- #include "cheese-webcam.h"
+ /* for ioctl query */
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <sys/ioctl.h>
++#ifdef __linux__
+ #include <linux/videodev.h>
++#endif
  
- G_DEFINE_TYPE (CheeseWebcam, cheese_webcam, G_TYPE_OBJECT)
-@@ -233,7 +245,7 @@ cheese_webcam_bus_message_cb (GstBus *bus, GstMessage 
+ #include "cheese-webcam.h"
+ #include "cheese-flash.h"
+@@ -244,6 +256,7 @@ cheese_webcam_bus_message_cb (GstBus *bus, GstMessage 
    }
  }
  
--
 +#ifndef __OpenBSD__ // no HAL under OpenBSD
  static void
  cheese_webcam_get_video_devices_from_hal (CheeseWebcam *webcam)
  {
-@@ -307,7 +319,55 @@ cheese_webcam_get_video_devices_from_hal (CheeseWebcam
+@@ -394,7 +407,55 @@ fallback:
+     priv->webcam_devices[0].hal_udi = g_strdup ("cheese_fake_videodevice");
    }
-   libhal_free_string_array (udis);
  }
 +#else // __OpenBSD__
 +static void
@@ -44,7 +48,7 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.1.1.1 2008/09/22 13:50:29 ajacoutot Exp 
 +  gchar videodev[] = "/dev/video?";
 +  guint16 cammask = 0;
 +  int i, ncams = 0, fd, ret, cur = 0;
- 
++ 
 +  for (i = 0; i < 9; i++)
 +  {
 +    videodev[strlen(videodev) - 1] = '0' + i;
@@ -61,7 +65,7 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.1.1.1 2008/09/22 13:50:29 ajacoutot Exp 
 +    cammask |= (1 << i);
 +    ++ncams;
 +  }
-+
+ 
 +  priv->num_webcam_devices = ncams;
 +  if (ncams == 0)
 +    return;
@@ -87,15 +91,16 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.1.1.1 2008/09/22 13:50:29 ajacoutot Exp 
  static void
  cheese_webcam_get_supported_framerates (CheeseVideoFormat *video_format, GstStructure *structure)
  {
-@@ -549,7 +609,11 @@ cheese_webcam_detect_webcam_devices (CheeseWebcam *web
-   CheeseWebcamPrivate* priv = CHEESE_WEBCAM_GET_PRIVATE (webcam);
+@@ -698,7 +759,11 @@ cheese_webcam_detect_webcam_devices (CheeseWebcam *web
+ 
    int i;
  
+-  cheese_webcam_get_video_devices_from_hal (webcam);
 +#ifndef __OpenBSD__ // no HAL under OpenBSD
-   cheese_webcam_get_video_devices_from_hal (webcam);
++   cheese_webcam_get_video_devices_from_hal (webcam);
 +#else
 +  cheese_webcam_get_video_devices_from_probe (webcam);
 +#endif
-   for (i = 0; i < priv->num_webcam_devices; i++) 
+   for (i = 0; i < priv->num_webcam_devices; i++)
    {
-     cheese_webcam_get_webcam_device_data (&(priv->webcam_devices[i]));
+     cheese_webcam_get_webcam_device_data (webcam, &(priv->webcam_devices[i]));

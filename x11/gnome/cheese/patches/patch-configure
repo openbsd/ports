@@ -1,91 +1,98 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/09/22 13:50:29 ajacoutot Exp $
---- configure.orig	Tue Aug 26 14:39:36 2008
-+++ configure	Tue Aug 26 14:39:58 2008
-@@ -23850,7 +23850,6 @@ CAIRO_REQUIRED=1.2.4
+$OpenBSD: patch-configure,v 1.2 2008/11/14 16:18:00 ajacoutot Exp $
+--- configure.orig	Mon Oct 20 18:02:12 2008
++++ configure	Fri Nov 14 17:03:03 2008
+@@ -15385,13 +15385,12 @@ GTK_REQUIRED=2.10.0
+ GDK_REQUIRED=2.12.0
+ LIBGNOMEUI_REQUIRED=2.20.0
+ GCONF_REQUIRED=2.16.0
+-GSTREAMER_REQUIRED=0.10.20
++GSTREAMER_REQUIRED=0.10.19
  GNOME_VFS_REQUIRED=2.18.0
  LIBEBOOK_REQUIRED=1.12.0
+ CAIRO_REQUIRED=1.4.0
  DBUS_REQUIRED=1.0
--HAL_REQUIRED=0.5.9
  DBUS_GLIB_REQUIRED=0.7
- LIBRSVG_REQUIRED=2.18.0
+-HAL_REQUIRED=0.5.9
  PANGOCAIRO_REQUIRED=1.18.0
-@@ -23877,7 +23876,6 @@ if test -n "$PKG_CONFIG"; then
-   libebook-1.2 >= \$LIBEBOOK_REQUIRED \\
+ LIBRSVG_REQUIRED=2.18.0
+ 
+@@ -15419,7 +15418,6 @@ if test -n "$CHEESE_CFLAGS"; then
    cairo >= \$CAIRO_REQUIRED \\
    dbus-1 >= \$DBUS_REQUIRED \\
--  hal >= \$HAL_REQUIRED \\
    dbus-glib-1 >= \$DBUS_GLIB_REQUIRED \\
+-  hal >= \$HAL_REQUIRED \\
    pangocairo >= \$PANGOCAIRO_REQUIRED \\
-   librsvg-2.0 >= \$LIBRSVG_REQUIRED \\
-@@ -23894,7 +23892,6 @@ if test -n "$PKG_CONFIG"; then
-   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   librsvg-2.0 >= \$LIBRSVG_REQUIRED\"") >&5
+   ($PKG_CONFIG --exists --print-errors "\
+@@ -15437,7 +15435,6 @@ if test -n "$CHEESE_CFLAGS"; then
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
--  hal >= $HAL_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+-  hal >= $HAL_REQUIRED \
    pangocairo >= $PANGOCAIRO_REQUIRED \
-   librsvg-2.0 >= $LIBRSVG_REQUIRED \
-@@ -23914,7 +23911,6 @@ if test -n "$PKG_CONFIG"; then
-   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED") 2>&5
+   ac_status=$?
+@@ -15458,7 +15455,6 @@ if test -n "$CHEESE_CFLAGS"; then
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
--  hal >= $HAL_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+-  hal >= $HAL_REQUIRED \
    pangocairo >= $PANGOCAIRO_REQUIRED \
-   librsvg-2.0 >= $LIBRSVG_REQUIRED \
-@@ -23943,7 +23939,6 @@ if test -n "$PKG_CONFIG"; then
-   libebook-1.2 >= \$LIBEBOOK_REQUIRED \\
+   librsvg-2.0 >= $LIBRSVG_REQUIRED" 2>/dev/null`
+ else
+@@ -15486,7 +15482,6 @@ if test -n "$CHEESE_LIBS"; then
    cairo >= \$CAIRO_REQUIRED \\
    dbus-1 >= \$DBUS_REQUIRED \\
--  hal >= \$HAL_REQUIRED \\
    dbus-glib-1 >= \$DBUS_GLIB_REQUIRED \\
+-  hal >= \$HAL_REQUIRED \\
    pangocairo >= \$PANGOCAIRO_REQUIRED \\
-   librsvg-2.0 >= \$LIBRSVG_REQUIRED \\
-@@ -23960,7 +23955,6 @@ if test -n "$PKG_CONFIG"; then
-   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   librsvg-2.0 >= \$LIBRSVG_REQUIRED\"") >&5
+   ($PKG_CONFIG --exists --print-errors "\
+@@ -15504,7 +15499,6 @@ if test -n "$CHEESE_LIBS"; then
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
--  hal >= $HAL_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+-  hal >= $HAL_REQUIRED \
    pangocairo >= $PANGOCAIRO_REQUIRED \
-   librsvg-2.0 >= $LIBRSVG_REQUIRED \
-@@ -23980,7 +23974,6 @@ if test -n "$PKG_CONFIG"; then
-   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED") 2>&5
+   ac_status=$?
+@@ -15525,7 +15519,6 @@ if test -n "$CHEESE_LIBS"; then
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
--  hal >= $HAL_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+-  hal >= $HAL_REQUIRED \
    pangocairo >= $PANGOCAIRO_REQUIRED \
-   librsvg-2.0 >= $LIBRSVG_REQUIRED \
-@@ -24015,7 +24008,6 @@ fi
-   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED" 2>/dev/null`
+ else
+@@ -15560,7 +15553,6 @@ fi
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
--  hal >= $HAL_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+-  hal >= $HAL_REQUIRED \
    pangocairo >= $PANGOCAIRO_REQUIRED \
-   librsvg-2.0 >= $LIBRSVG_REQUIRED \
-@@ -24033,7 +24025,6 @@ fi
-   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED" 2>&1`
+         else
+@@ -15579,7 +15571,6 @@ fi
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
--  hal >= $HAL_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+-  hal >= $HAL_REQUIRED \
    pangocairo >= $PANGOCAIRO_REQUIRED \
-   librsvg-2.0 >= $LIBRSVG_REQUIRED \
-@@ -24054,7 +24045,6 @@ fi
-   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED" 2>&1`
+         fi
+@@ -15601,7 +15592,6 @@ fi
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
--  hal >= $HAL_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+-  hal >= $HAL_REQUIRED \
    pangocairo >= $PANGOCAIRO_REQUIRED \
-   librsvg-2.0 >= $LIBRSVG_REQUIRED \
-@@ -24081,7 +24071,6 @@ echo "$as_me: error: Package requirements (\
-   libebook-1.2 >= $LIBEBOOK_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED) were not met:
+ 
+@@ -15629,7 +15619,6 @@ $as_echo "$as_me: error: Package requirements (\
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
--  hal >= $HAL_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+-  hal >= $HAL_REQUIRED \
    pangocairo >= $PANGOCAIRO_REQUIRED \
-   librsvg-2.0 >= $LIBRSVG_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED) were not met:
+ 

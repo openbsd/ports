@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/22 13:50:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/14 16:18:00 ajacoutot Exp $
 
 COMMENT=	PhotoBooth inspired application
 
 GNOME_PROJECT=	cheese
-GNOME_VERSION=	2.22.3
+GNOME_VERSION=	2.24.1
 
 CATEGORIES=	multimedia
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender Xxf86vm art_lgpl_2 asn1 atk-1.0 audiofile \
+		Xrender art_lgpl_2 asn1 atk-1.0 audiofile \
 		bonobo-2 bonobo-activation bonoboui-2 bz2 c cairo \
 		com_err croco-0.6 crypto db dbus-1 dbus-glib-1 esd \
 		expat fontconfig freetype gailutil gconf-2 gdk-x11-2.0 \
