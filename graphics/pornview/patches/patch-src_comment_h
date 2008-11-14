@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_comment_h,v 1.1 2008/11/14 17:16:34 landry Exp $
+--- src/comment.h.orig	Tue Nov 11 13:25:56 2008
++++ src/comment.h	Tue Nov 11 13:29:24 2008
+@@ -18,10 +18,10 @@
+ #include "image_info.h"
+ 
+ #define TYPE_COMMENT            (comment_get_type ())
+-#define COMMENT(obj)            (GTK_CHECK_CAST ((obj), TYPE_COMMENT, Comment))
+-#define COMMENT_CLASS(klass)    (GTK_CHECK_CLASS_CAST ((klass), TYPE_COMMENT, CommentClass))
+-#define IS_COMMENT(obj)         (GTK_CHECK_TYPE ((obj), TYPE_COMMENT))
+-#define IS_COMMENT_CLASS(klass) (GTK_CHECK_CLASS_TYPE ((klass), TYPE_COMMENT))
++#define COMMENT(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), TYPE_COMMENT, Comment))
++#define COMMENT_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), TYPE_COMMENT, CommentClass))
++#define IS_COMMENT(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), TYPE_COMMENT))
++#define IS_COMMENT_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), TYPE_COMMENT))
+ 
+ typedef struct Comment_Tag Comment;
+ typedef struct CommentClass_Tag CommentClass;

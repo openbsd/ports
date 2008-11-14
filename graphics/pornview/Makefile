@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2008/08/21 13:12:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2008/11/14 17:16:34 landry Exp $
 
 COMMENT=	image viewer/manager
 
 DISTNAME=	pornview-0.2.0pre1
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://pornview.sourceforge.net/
