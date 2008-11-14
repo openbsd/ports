@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/11/05 10:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/11/14 17:29:24 jasper Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
-DISTNAME=		telepathy-gabble-0.7.14
+DISTNAME=		telepathy-gabble-0.7.15
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-gabble/}
 
