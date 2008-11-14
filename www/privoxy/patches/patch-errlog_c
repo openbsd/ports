@@ -1,0 +1,14 @@
+$OpenBSD: patch-errlog_c,v 1.4 2008/11/14 17:35:00 sturm Exp $
+
+silence useless startup notice
+
+--- errlog.c.orig	Fri Oct  3 16:29:53 2008
++++ errlog.c	Fri Oct  3 16:30:26 2008
+@@ -503,7 +503,6 @@ void init_log_module(const char *prog_name)
+    logfp = stderr;
+    unlock_logfile();
+    set_debug_level(debug);
+-   show_version(prog_name);
+ }
+ 
+ 
