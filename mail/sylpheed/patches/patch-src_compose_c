@@ -1,0 +1,120 @@
+$OpenBSD: patch-src_compose_c,v 1.1 2008/11/15 10:41:15 ajacoutot Exp $
+--- src/compose.c.orig	Fri May 16 11:23:12 2008
++++ src/compose.c	Thu Nov 13 18:35:10 2008
+@@ -69,8 +69,12 @@
+ #if USE_GTKSPELL
+ #  include <gtk/gtkradiomenuitem.h>
+ #  include <gtkspell/gtkspell.h>
++#if USE_ENCHANT
++#  include <enchant/enchant.h>
++#else
+ #  include <aspell.h>
+ #endif
++#endif
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -5296,6 +5300,7 @@ static Compose *compose_create(PrefsAccount *account, 
+ 	compose->check_spell = prefs_common.check_spell;
+ 	compose->spell_lang  = g_strdup(prefs_common.spell_lang);
+ 	compose->spell_menu  = spell_menu;
++	compose->dict_list   = NULL;
+ #endif /* USE_GTKSPELL */
+ 
+ 	compose->focused_editable = NULL;
+@@ -5732,8 +5737,37 @@ static void compose_set_out_encoding(Compose *compose)
+ }
+ 
+ #if USE_GTKSPELL
++#if USE_ENCHANT
++static void ench_dict_desc_cb(const char *const lang_tag,
++			      const char *const provider_name,
++			      const char *const provider_desc,
++			      const char *const provider_file,
++			      void *user_data)
++{
++	GSList **dict_list = (GSList **)user_data;
++	*dict_list = g_slist_append(*dict_list, g_strdup((gchar*)lang_tag));
++}
++
+ static void compose_set_spell_lang_menu(Compose *compose)
+ {
++	EnchantBroker *eb;
++	GSList *dict_list = NULL, *menu_list = NULL, *cur;
++	GtkWidget *menu;
++	gboolean lang_set = FALSE;
++
++	eb = enchant_broker_init();
++	enchant_broker_list_dicts(eb, ench_dict_desc_cb, &dict_list);
++	enchant_broker_free(eb);
++
++	for (cur = dict_list; cur != NULL; cur = cur->next) {
++		if (compose->spell_lang != NULL &&
++		    g_ascii_strcasecmp(compose->spell_lang,
++				       (gchar *)cur->data) == 0)
++			lang_set = TRUE;
++	}
++#else  /* !USE_ENCHANT */
++static void compose_set_spell_lang_menu(Compose *compose)
++{
+ 	AspellConfig *config;
+ 	AspellDictInfoList *dlist;
+ 	AspellDictInfoEnumeration *dels;
+@@ -5748,13 +5782,16 @@ static void compose_set_spell_lang_menu(Compose *compo
+ 
+ 	dels = aspell_dict_info_list_elements(dlist);
+ 	while ((entry = aspell_dict_info_enumeration_next(dels)) != 0) {
+-		dict_list = g_slist_append(dict_list, (gchar *)entry->name);
++		dict_list = g_slist_append(dict_list, g_strdup(entry->name));
+ 		if (compose->spell_lang != NULL &&
+ 		    g_ascii_strcasecmp(compose->spell_lang, entry->name) == 0)
+ 			lang_set = TRUE;
+ 	}
+ 	delete_aspell_dict_info_enumeration(dels);
++#endif /* USE_ENCHANT */
+ 
++	compose->dict_list = dict_list;
++
+ 	menu = gtk_menu_new();
+ 
+ 	for (cur = dict_list; cur != NULL; cur = cur->next) {
+@@ -5777,15 +5814,18 @@ static void compose_set_spell_lang_menu(Compose *compo
+ 		g_object_set_data(G_OBJECT(item), "spell-lang", dict);
+ 		gtk_widget_show(item);
+ 
+-		if (!lang_set && g_ascii_strcasecmp("en", dict) == 0)
++		if (!lang_set && g_ascii_strcasecmp("en", dict) == 0) {
++			g_free(compose->spell_lang);
++			compose->spell_lang = g_strdup("en");
+ 			gtk_check_menu_item_set_active
+ 				(GTK_CHECK_MENU_ITEM(item), TRUE);
++		}
+ 	}
+ 
+ 	gtk_widget_show(menu);
+ 	gtk_menu_item_set_submenu(GTK_MENU_ITEM(compose->spell_menu), menu);
+ }
+-#endif
++#endif /* USE_GTKSPELL */
+ 
+ static void compose_set_template_menu(Compose *compose)
+ {
+@@ -5924,6 +5964,8 @@ static void compose_destroy(Compose *compose)
+ 	address_completion_end(compose->window);
+ 
+ #if USE_GTKSPELL
++	slist_free_strings(compose->dict_list);
++	g_slist_free(compose->dict_list);
+ 	g_free(compose->spell_lang);
+ #endif
+ 
+@@ -7505,7 +7547,8 @@ static void compose_toggle_spell_cb(gpointer data, gui
+ 	GtkSpell *speller;
+ 
+ 	if (GTK_CHECK_MENU_ITEM(widget)->active) {
+-		debug_print("Spell checking enabled\n");
++		debug_print("Spell checking enabled: %s\n",
++			    compose->spell_lang ? compose->spell_lang : "(none)");
+ 		speller = gtkspell_new_attach(GTK_TEXT_VIEW(compose->text),
+ 					      compose->spell_lang, NULL);
+ 		compose->check_spell = TRUE;

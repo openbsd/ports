@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_compose_h,v 1.1 2008/11/15 10:41:15 ajacoutot Exp $
+--- src/compose.h.orig	Thu May  8 10:37:28 2008
++++ src/compose.h	Thu Nov 13 18:35:10 2008
+@@ -1,6 +1,6 @@
+ /*
+  * Sylpheed -- a GTK+ based, lightweight, and fast e-mail client
+- * Copyright (C) 1999-2007 Hiroyuki Yamamoto
++ * Copyright (C) 1999-2008 Hiroyuki Yamamoto
+  *
+  * This program is free software; you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+@@ -133,9 +133,10 @@ struct _Compose
+ 	GtkWidget *tmpl_menu;
+ 
+ #if USE_GTKSPELL
+-        GtkWidget *spell_menu;
+-        gchar     *spell_lang;
+-        gboolean   check_spell;
++	GtkWidget *spell_menu;
++	gchar     *spell_lang;
++	gboolean   check_spell;
++	GSList    *dict_list;
+ #endif
+ 
+ 	ComposeMode mode;
