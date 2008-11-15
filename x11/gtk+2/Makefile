@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2008/09/27 17:59:12 brad Exp $
+# $OpenBSD: Makefile,v 1.70 2008/11/15 13:29:55 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -8,7 +8,7 @@ COMMENT-cups=			gtk+2 CUPS print backend
 
 VERSION=			2.12.12
 DISTNAME=			gtk+-${VERSION}
-PKGNAME-main=			gtk+2-${VERSION}
+PKGNAME-main=			gtk+2-${VERSION}p0
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 PKGNAME-cups=			gtk+2-cups-${VERSION}
 CATEGORIES=			x11 devel
@@ -75,5 +75,11 @@ CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/includ
 # to the appropriate .Xauthority file.
 REGRESS_IS_INTERACTIVE= Yes
 REGRESS_FLAGS=		DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+
+# XXX we should use MODPY_BIN from the lang/python MODULE but
+# we do not want to build/run_depends on python
+pre-configure:
+	perl -pi -e 's,/usr/bin/env python,${LOCALBASE}/bin/python2.5,' \
+		${WRKSRC}/gtk/gtk-builder-convert
 
 .include <bsd.port.mk>
