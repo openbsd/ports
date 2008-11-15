@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/08/29 11:52:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/11/15 14:05:40 ajacoutot Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -294,6 +294,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/America/Argentina/La_Rioja
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Argentina/Mendoza
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Argentina/Rio_Gallegos
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Argentina/San_Juan
+${LIBDIR}/Resources/NSTimeZones/zones/America/Argentina/San_Luis
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Argentina/Tucuman
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Argentina/Ushuaia
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Aruba
@@ -352,6 +353,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/America/Indiana/Indianapolis
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Indiana/Knox
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Indiana/Marengo
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Indiana/Petersburg
+${LIBDIR}/Resources/NSTimeZones/zones/America/Indiana/Tell_City
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Indiana/Vevay
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Indiana/Vincennes
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Indiana/Winamac
@@ -372,6 +374,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/America/Louisville
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Maceio
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Managua
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Manaus
+${LIBDIR}/Resources/NSTimeZones/zones/America/Marigot
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Martinique
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Mazatlan
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Mendoza
@@ -405,13 +408,16 @@ ${LIBDIR}/Resources/NSTimeZones/zones/America/Rainy_River
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Rankin_Inlet
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Recife
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Regina
+${LIBDIR}/Resources/NSTimeZones/zones/America/Resolute
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Rio_Branco
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Rosario
+${LIBDIR}/Resources/NSTimeZones/zones/America/Santarem
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Santiago
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Santo_Domingo
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Sao_Paulo
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Scoresbysund
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Shiprock
+${LIBDIR}/Resources/NSTimeZones/zones/America/St_Barthelemy
 ${LIBDIR}/Resources/NSTimeZones/zones/America/St_Johns
 ${LIBDIR}/Resources/NSTimeZones/zones/America/St_Kitts
 ${LIBDIR}/Resources/NSTimeZones/zones/America/St_Lucia
@@ -472,6 +478,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Dubai
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Dushanbe
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Gaza
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Harbin
+${LIBDIR}/Resources/NSTimeZones/zones/Asia/Ho_Chi_Minh
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Hong_Kong
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Hovd
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Irkutsk
@@ -484,6 +491,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Kamchatka
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Karachi
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Kashgar
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Katmandu
+${LIBDIR}/Resources/NSTimeZones/zones/Asia/Kolkata
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Krasnoyarsk
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Kuala_Lumpur
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Kuching
