@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/09/02 14:13:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/11/16 21:48:55 jasper Exp $
 %%SHARED%%
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
@@ -62,6 +62,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/def.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/desktop.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/diff.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/docbook.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/dot.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/dpatch.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/dtd.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/eiffel.lang
@@ -112,6 +113,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/vbnet.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/verilog.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/vhdl.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/xml.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/xslt.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/yacc.lang
 share/gtksourceview-${MAJOR_VERSION}/styles/
 share/gtksourceview-${MAJOR_VERSION}/styles/classic.xml
@@ -175,6 +177,9 @@ share/locale/hu/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/id/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/it/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/ja/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
+share/locale/kn/
+share/locale/kn/LC_MESSAGES/
+share/locale/kn/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/ko/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
@@ -230,13 +235,16 @@ share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/sr/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
-share/locale/sr@Latn/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/sv/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
