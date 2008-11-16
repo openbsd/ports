@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.65 2008/11/14 22:50:58 steven Exp $
+# $OpenBSD: libtool,v 1.66 2008/11/16 21:58:17 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -597,20 +597,21 @@ if ($mode eq 'compile') {
 			$toinstall->{$s} = $dst;
 		}
 	}
+	my @prog = split /\s+/, $ltprog;
 	while (my ($s, $d) = each %$toinstall) {
 		my @realinstopts = @instopts;
 		# do not try to strip .la files
 		if ($s =~ m/\.la$/ || $d =~ m /\.la$/) {
-			map { $_ = '' if $_ eq '-s' } @realinstopts;
+			@realinstopts = grep { $_ ne '-s' } @realinstopts;
 		}
-		Exec->shell("$ltprog @realinstopts $s $d");
+		Exec->command(@prog, @realinstopts, $s, $d);
 	}
 	while (my ($d, $s) = each %$tosymlink) {
 		unlink("$dstdir/$d");
 		symlink($s, "$dstdir/$d");
 	}
 	if (defined $install_opts{'d'}) {
-		Exec->shell("$ltprog @instopts @ARGV");
+		Exec->command(@prog, @instopts, @ARGV);
 	}
 } elsif ($mode eq 'link') {
 	my $cmd;
