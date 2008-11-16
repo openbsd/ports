@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2008/07/25 13:42:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2008/11/16 21:43:20 jasper Exp $
 %%SHARED%%
 @bin bin/gconf-merge-tree
 @bin bin/gconftool-2
@@ -28,6 +28,9 @@ lib/pkgconfig/gconf-2.0.pc
 @bin libexec/gconfd-2
 @man man/man1/gconftool-2.1
 share/aclocal/gconf-2.m4
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.gnome.GConf.service
 share/examples/gconf2/
 @sample ${SYSCONFDIR}/gconf/
 share/examples/gconf2/2/
@@ -133,6 +136,9 @@ share/locale/ja/LC_MESSAGES/GConf2.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/GConf2.mo
+share/locale/kn/
+share/locale/kn/LC_MESSAGES/
+share/locale/kn/LC_MESSAGES/GConf2.mo
 share/locale/ko/LC_MESSAGES/GConf2.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
@@ -141,6 +147,9 @@ share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/GConf2.mo
 share/locale/lv/LC_MESSAGES/GConf2.mo
+share/locale/mai/
+share/locale/mai/LC_MESSAGES/
+share/locale/mai/LC_MESSAGES/GConf2.mo
 share/locale/mg/
 share/locale/mg/LC_MESSAGES/
 share/locale/mg/LC_MESSAGES/GConf2.mo
@@ -191,9 +200,9 @@ share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/GConf2.mo
 share/locale/sr/LC_MESSAGES/GConf2.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
-share/locale/sr@Latn/LC_MESSAGES/GConf2.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/GConf2.mo
 share/locale/sv/LC_MESSAGES/GConf2.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
