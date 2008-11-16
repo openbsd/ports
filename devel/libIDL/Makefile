@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2008/02/03 20:55:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2008/11/16 21:44:14 jasper Exp $
 
 COMMENT=		IDL parsing library
 
 GNOME_PROJECT=		libIDL
-GNOME_VERSION=		0.8.10
+GNOME_VERSION=		0.8.11
 SHARED_LIBS +=	IDL-2                0.1      # .0.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
 
-# LGPL
+# LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
