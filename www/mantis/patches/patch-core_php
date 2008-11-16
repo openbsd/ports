@@ -1,7 +1,7 @@
-$OpenBSD: patch-core_php,v 1.1.1.1 2006/10/11 18:28:27 mbalmer Exp $
---- core.php.orig	Tue Jul 26 00:55:49 2005
-+++ core.php	Sun Oct  8 15:45:05 2006
-@@ -48,6 +48,9 @@
+$OpenBSD: patch-core_php,v 1.2 2008/11/16 10:41:37 mbalmer Exp $
+--- core.php.orig	Thu May 22 19:43:58 2008
++++ core.php	Sun Nov 16 11:30:23 2008
+@@ -69,6 +69,9 @@
  	if ( file_exists( dirname( __FILE__ ).DIRECTORY_SEPARATOR.'config_inc.php' ) ) {
  		require_once( dirname( __FILE__ ).DIRECTORY_SEPARATOR.'config_inc.php' );
  		$t_config_inc_found = true;

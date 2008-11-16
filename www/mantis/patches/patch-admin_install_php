@@ -1,7 +1,7 @@
-$OpenBSD: patch-admin_install_php,v 1.1.1.1 2006/10/11 18:28:27 mbalmer Exp $
---- admin/install.php.orig	Fri May  5 18:03:25 2006
-+++ admin/install.php	Sun Oct  8 15:11:51 2006
-@@ -640,6 +640,15 @@ if ( 5 == $t_install_state ) {
+$OpenBSD: patch-admin_install_php,v 1.2 2008/11/16 10:41:37 mbalmer Exp $
+--- admin/install.php.orig	Sat Feb  2 03:10:41 2008
++++ admin/install.php	Sun Nov 16 11:30:23 2008
+@@ -808,6 +808,15 @@ if ( 5 == $t_install_state ) {
  				print_test_result( BAD, false, 'cannot write ' . $t_config_filename );
  			}
  		} else {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-login_page_php,v 1.1.1.1 2006/10/11 18:28:27 mbalmer Exp $
---- login_page.php.orig	Sun Oct  8 15:38:53 2006
-+++ login_page.php	Sun Oct  8 15:39:52 2006
-@@ -146,10 +146,6 @@
+$OpenBSD: patch-login_page_php,v 1.2 2008/11/16 10:41:37 mbalmer Exp $
+--- login_page.php.orig	Sun Oct 14 00:36:41 2007
++++ login_page.php	Sun Nov 16 11:30:24 2008
+@@ -158,10 +158,6 @@
  	# Check if the admin directory is available and is readable.
  	$t_admin_dir = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR;
  	if ( is_dir( $t_admin_dir ) && is_readable( $t_admin_dir ) ) {

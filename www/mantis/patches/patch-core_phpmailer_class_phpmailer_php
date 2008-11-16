@@ -1,6 +1,6 @@
-$OpenBSD: patch-core_phpmailer_class_phpmailer_php,v 1.1.1.1 2006/10/11 18:28:27 mbalmer Exp $
---- core/phpmailer/class.phpmailer.php.orig	Sat Feb 12 21:03:46 2005
-+++ core/phpmailer/class.phpmailer.php	Sun Oct  8 16:36:02 2006
+$OpenBSD: patch-core_phpmailer_class_phpmailer_php,v 1.2 2008/11/16 10:41:37 mbalmer Exp $
+--- core/phpmailer/class.phpmailer.php.orig	Sun Nov 27 01:46:19 2005
++++ core/phpmailer/class.phpmailer.php	Sun Nov 16 11:32:15 2008
 @@ -390,9 +390,9 @@ class PHPMailer
       */
      function SendmailSend($header, $body) {
@@ -18,7 +18,14 @@ $OpenBSD: patch-core_phpmailer_class_phpmailer_php,v 1.1.1.1 2006/10/11 18:28:27
              $old_from = ini_get("sendmail_from");
              ini_set("sendmail_from", $this->Sender);
 -            $params = sprintf("-oi -f %s", $this->Sender);
-+            $params = sprintf("-f%s", $this->Sender);
-             $rt = @mail($to, $this->EncodeHeader($this->Subject), $body,
++            $params = sprintf("-f %s", $this->Sender);
+             $rt = @mail($to, $this->EncodeHeader($this->Subject), $body, 
                          $header, $params);
          }
+@@ -1496,4 +1496,4 @@ class PHPMailer
+     }
+ }
+ 
+-?>
+\ No newline at end of file
++?>
