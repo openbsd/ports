@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_reference_Makefile_in,v 1.1 2008/11/16 21:45:28 jasper Exp $
+--- docs/reference/Makefile.in.orig	Sun Nov 16 20:45:21 2008
++++ docs/reference/Makefile.in	Sun Nov 16 20:48:15 2008
+@@ -240,7 +240,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-DOC_MODULE = goffice-@GOFFICE_API_VER@
++DOC_MODULE = goffice
+ DOC_MAIN_SGML_FILE = goffice-docs.sgml
+ DOC_SOURCE_DIR = ../../goffice
+ SCANGOBJ_OPTIONS = --nogtkinit --type-init-func="g_type_init ()"
