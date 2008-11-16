@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2008/11/09 23:27:03 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2008/11/16 20:33:10 steven Exp $
 
 COMMENT=	syslogd replacement
 
-DISTNAME=	syslog-ng-2.1.1
+DISTNAME=	syslog-ng-2.1.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
@@ -30,10 +30,6 @@ EXAMPLES =	${PREFIX}/share/examples/syslog-ng/
 
 post-extract:
 	tar -C ${WRKBUILD} -xzf ${WRKSRC}/doc/reference/syslog-ng.html.tar.gz
-
-# temporary hack: avoid regenerating some files
-pre-configure:
-	touch -m 0808080000 ${WRKSRC}/src/cfg-grammar.y
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOC}
