@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2008/10/20 21:38:18 kili Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.9 2008/11/16 21:19:23 kili Exp $
 lib/gimp/2.0/modules/libcolor-selector-cmyk.so
 lib/gimp/2.0/modules/libcolor-selector-water.so
 lib/gimp/2.0/modules/libcolor-selector-wheel.so
@@ -8,6 +8,11 @@ lib/gimp/2.0/modules/libdisplay-filter-gamma.so
 lib/gimp/2.0/modules/libdisplay-filter-high-contrast.so
 lib/gimp/2.0/modules/libdisplay-filter-lcms.so
 lib/gimp/2.0/modules/libdisplay-filter-proof.so
+lib/gimp/2.0/python/_gimpenums.so
+lib/gimp/2.0/python/_gimpui.so
+lib/gimp/2.0/python/gimp.so
+lib/gimp/2.0/python/gimpcolor.so
+lib/gimp/2.0/python/gimpthumb.so
 @lib lib/libgimp-2.0.so.${LIBgimp-2.0_VERSION}
 @lib lib/libgimpbase-2.0.so.${LIBgimpbase-2.0_VERSION}
 @lib lib/libgimpcolor-2.0.so.${LIBgimpcolor-2.0_VERSION}

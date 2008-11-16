@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2008/10/20 21:38:18 kili Exp $
+@comment $OpenBSD: PLIST,v 1.17 2008/11/16 21:19:23 kili Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 %%SHARED%%
 bin/gimp
@@ -228,8 +228,10 @@ lib/gimp/
 lib/gimp/2.0/
 lib/gimp/2.0/environ/
 lib/gimp/2.0/environ/default.env
+lib/gimp/2.0/environ/pygimp.env
 lib/gimp/2.0/interpreters/
 lib/gimp/2.0/interpreters/default.interp
+lib/gimp/2.0/interpreters/pygimp.interp
 lib/gimp/2.0/modules/
 lib/gimp/2.0/modules/libcolor-selector-cmyk.a
 lib/gimp/2.0/modules/libcolor-selector-cmyk.la
@@ -274,6 +276,7 @@ lib/gimp/2.0/plug-ins/
 @bin lib/gimp/2.0/plug-ins/color-to-alpha
 @bin lib/gimp/2.0/plug-ins/colorify
 @bin lib/gimp/2.0/plug-ins/colormap-remap
+lib/gimp/2.0/plug-ins/colorxhtml.py
 @bin lib/gimp/2.0/plug-ins/compose
 @bin lib/gimp/2.0/plug-ins/contrast-normalize
 @bin lib/gimp/2.0/plug-ins/contrast-retinex
@@ -344,6 +347,7 @@ lib/gimp/2.0/plug-ins/
 @bin lib/gimp/2.0/plug-ins/film
 @bin lib/gimp/2.0/plug-ins/filter-pack
 @bin lib/gimp/2.0/plug-ins/flame
+lib/gimp/2.0/plug-ins/foggify.py
 @bin lib/gimp/2.0/plug-ins/fractal-explorer
 @bin lib/gimp/2.0/plug-ins/fractal-trace
 @bin lib/gimp/2.0/plug-ins/gee
@@ -382,12 +386,20 @@ lib/gimp/2.0/plug-ins/
 @bin lib/gimp/2.0/plug-ins/nova
 @bin lib/gimp/2.0/plug-ins/oilify
 @bin lib/gimp/2.0/plug-ins/pagecurl
+lib/gimp/2.0/plug-ins/palette-offset.py
+lib/gimp/2.0/plug-ins/palette-sort.py
+lib/gimp/2.0/plug-ins/palette-to-gradient.py
 @bin lib/gimp/2.0/plug-ins/photocopy
 @bin lib/gimp/2.0/plug-ins/pixelize
 @bin lib/gimp/2.0/plug-ins/plasma
 @bin lib/gimp/2.0/plug-ins/plugin-browser
 @bin lib/gimp/2.0/plug-ins/polar-coords
+@bin lib/gimp/2.0/plug-ins/print
 @bin lib/gimp/2.0/plug-ins/procedure-browser
+lib/gimp/2.0/plug-ins/py-slice.py
+lib/gimp/2.0/plug-ins/pyconsole.py
+lib/gimp/2.0/plug-ins/python-console.py
+lib/gimp/2.0/plug-ins/python-eval.py
 @bin lib/gimp/2.0/plug-ins/qbist
 @bin lib/gimp/2.0/plug-ins/red-eye-removal
 @bin lib/gimp/2.0/plug-ins/ripple
@@ -421,6 +433,33 @@ lib/gimp/2.0/plug-ins/
 @bin lib/gimp/2.0/plug-ins/web-browser
 @bin lib/gimp/2.0/plug-ins/whirl-pinch
 @bin lib/gimp/2.0/plug-ins/wind
+lib/gimp/2.0/python/
+lib/gimp/2.0/python/_gimpenums.a
+lib/gimp/2.0/python/_gimpenums.la
+lib/gimp/2.0/python/_gimpui.a
+lib/gimp/2.0/python/_gimpui.la
+lib/gimp/2.0/python/gimp.a
+lib/gimp/2.0/python/gimp.la
+lib/gimp/2.0/python/gimpcolor.a
+lib/gimp/2.0/python/gimpcolor.la
+lib/gimp/2.0/python/gimpenums.py
+lib/gimp/2.0/python/gimpenums.pyc
+lib/gimp/2.0/python/gimpenums.pyo
+lib/gimp/2.0/python/gimpfu.py
+lib/gimp/2.0/python/gimpfu.pyc
+lib/gimp/2.0/python/gimpfu.pyo
+lib/gimp/2.0/python/gimpplugin.py
+lib/gimp/2.0/python/gimpplugin.pyc
+lib/gimp/2.0/python/gimpplugin.pyo
+lib/gimp/2.0/python/gimpshelf.py
+lib/gimp/2.0/python/gimpshelf.pyc
+lib/gimp/2.0/python/gimpshelf.pyo
+lib/gimp/2.0/python/gimpthumb.a
+lib/gimp/2.0/python/gimpthumb.la
+lib/gimp/2.0/python/gimpui.py
+lib/gimp/2.0/python/gimpui.pyc
+lib/gimp/2.0/python/gimpui.pyo
+lib/gimp/2.0/python/pygimp-logo.png
 lib/libgimp-2.0.a
 lib/libgimp-2.0.la
 lib/libgimpbase-2.0.a
@@ -1820,6 +1859,8 @@ share/locale/en_CA/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/en_CA/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/en_CA/LC_MESSAGES/gimp20-tips.mo
 share/locale/en_CA/LC_MESSAGES/gimp20.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/en_GB/LC_MESSAGES/gimp20-python.mo
 share/locale/en_GB/LC_MESSAGES/gimp20-script-fu.mo
