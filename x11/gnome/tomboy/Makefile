@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/17 07:16:15 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/16 09:46:02 jasper Exp $
 
-COMMENT=	desktop note-taking application written in C#
+COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
 GNOME_VERSION=	0.12.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 # GPL/LGPL
