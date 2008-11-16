@@ -1,6 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/07/07 16:55:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/11/16 21:55:13 jasper Exp $
 %%SHARED%%
+@bin bin/gtkhtml-editor-test
 include/libgtkhtml-${API_VERSION}/
+include/libgtkhtml-${API_VERSION}/editor/
+include/libgtkhtml-${API_VERSION}/editor/gtkhtml-editor-actions.h
+include/libgtkhtml-${API_VERSION}/editor/gtkhtml-editor-common.h
+include/libgtkhtml-${API_VERSION}/editor/gtkhtml-editor-widgets.h
+include/libgtkhtml-${API_VERSION}/editor/gtkhtml-editor.h
+include/libgtkhtml-${API_VERSION}/editor/gtkhtml-spell-checker.h
+include/libgtkhtml-${API_VERSION}/editor/gtkhtml-spell-language.h
 include/libgtkhtml-${API_VERSION}/gtkhtml/
 include/libgtkhtml-${API_VERSION}/gtkhtml/gtkhtml-embedded.h
 include/libgtkhtml-${API_VERSION}/gtkhtml/gtkhtml-enums.h
@@ -12,21 +20,16 @@ include/libgtkhtml-${API_VERSION}/gtkhtml/gtkhtml.h
 include/libgtkhtml-${API_VERSION}/gtkhtml/htmlenums.h
 include/libgtkhtml-${API_VERSION}/gtkhtml/htmltokenizer.h
 include/libgtkhtml-${API_VERSION}/gtkhtml/htmltypes.h
-lib/bonobo/
-lib/bonobo/servers/
-lib/bonobo/servers/GNOME_GtkHTML_Editor-${API_VERSION}.server
-lib/gtkhtml/
-lib/gtkhtml/libgnome-gtkhtml-editor-${API_VERSION}.a
-lib/gtkhtml/libgnome-gtkhtml-editor-${API_VERSION}.la
 lib/libgtkhtml-${API_VERSION}.a
 lib/libgtkhtml-${API_VERSION}.la
+lib/libgtkhtml-editor.a
+lib/libgtkhtml-editor.la
 lib/pkgconfig/
+lib/pkgconfig/gtkhtml-editor.pc
 lib/pkgconfig/libgtkhtml-${API_VERSION}.pc
 share/gtkhtml-${API_VERSION}/
-share/gtkhtml-${API_VERSION}/Editor.idl
-share/gtkhtml-${API_VERSION}/GNOME_GtkHTML_Editor-emacs.xml
-share/gtkhtml-${API_VERSION}/GNOME_GtkHTML_Editor.xml
-share/gtkhtml-${API_VERSION}/gtkhtml-editor-properties.glade
+share/gtkhtml-${API_VERSION}/gtkhtml-editor.glade
+share/gtkhtml-${API_VERSION}/gtkhtml-editor.ui
 share/gtkhtml-${API_VERSION}/icons/
 share/gtkhtml-${API_VERSION}/icons/bulb.png
 share/gtkhtml-${API_VERSION}/icons/confidential-stamp.jpg
@@ -111,6 +114,9 @@ share/locale/ja/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
+share/locale/kn/
+share/locale/kn/LC_MESSAGES/
+share/locale/kn/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
 share/locale/ko/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
@@ -169,13 +175,16 @@ share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
 share/locale/sr/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
-share/locale/sr@Latn/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
 share/locale/sv/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
