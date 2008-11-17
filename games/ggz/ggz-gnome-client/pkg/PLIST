@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/17 18:58:58 jasper Exp $
+@bin bin/ggz-gnome
+@bin bin/motd_editor
+@man man/man6/ggz-gnome.6
+@man man/man6/motd_editor.6
+share/applications/ggz-gnome.desktop
+share/applications/motd-editor.desktop
+share/ggz/
+share/ggz/ggz-gnome/
+share/ggz/ggz-gnome/Default/
+share/ggz/ggz-gnome/Default/Login.xpm
+share/ggz/ggz-gnome/Default/New.xpm
+share/ggz/ggz-gnome/Default/chat.xpm
+share/ggz/ggz-gnome/Default/chatbackground.xpm
+share/ggz/ggz-gnome/Default/msg.xpm
+share/ggz/ggz-gnome/Default/star1.xpm
+share/ggz/ggz-gnome/Default/star2.xpm
+share/ggz/ggz-gnome/Default/star3.xpm
+share/ggz/ggz-gnome/Default/star4.xpm
+share/ggz/ggz-gnome/Default/star5.xpm
+share/locale/de/LC_MESSAGES/
+share/locale/de/LC_MESSAGES/ggz-gnome-client.mo
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

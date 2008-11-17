@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/11/17 18:58:58 jasper Exp $
+
+The .schemas file in the distfile not properly formatted and is in it's
+original form useless.
+
+--- Makefile.in.orig	Sat Feb 16 22:00:19 2008
++++ Makefile.in	Mon Nov 17 19:55:34 2008
+@@ -580,7 +580,7 @@ check: check-recursive
+ all-am: Makefile $(DATA) config.h
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	for dir in "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(schemadir)"; do \
++	for dir in "$(DESTDIR)$(desktopdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-recursive
+@@ -626,7 +626,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-dist_desktopDATA install-dist_schemaDATA
++install-data-am: install-dist_desktopDATA
+ 
+ install-dvi: install-dvi-recursive
+ 
