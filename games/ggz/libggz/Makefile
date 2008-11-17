@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/17 18:22:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/17 18:33:47 jasper Exp $
 
 COMMENT=		GGZ Gaming Zone - base library
 
 DISTNAME=		libggz-$V
 SHARED_LIBS +=	ggz                  0.0      # .5.0
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-gcrypt \
 			--with-tls="OpenSSL"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

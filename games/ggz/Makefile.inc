@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2008/11/17 18:22:14 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2008/11/17 18:33:47 jasper Exp $
 
 V?=			0.0.14.1
 
@@ -18,3 +18,5 @@ MASTER_SITES?=		http://mirrors.dotsrc.org/ggzgamingzone/ggz/$V/ \
 DIST_SUBDIR=		ggz
 
 USE_LIBTOOL?=		Yes
+
+CONFIGURE_STYLE?=	gnu
