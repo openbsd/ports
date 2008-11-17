@@ -1,0 +1,34 @@
+$OpenBSD: patch-inst_sh,v 1.1.1.1 2008/11/17 08:42:13 jasper Exp $
+--- inst.sh.orig	Mon Sep 29 19:35:08 2008
++++ inst.sh	Mon Sep 29 19:36:00 2008
+@@ -14,10 +14,6 @@ mkdir)
+ 			exit 1
+ 		fi
+ 		chmod $3 $2
+-		if ./usercheck 0 ; then
+-			chgrp $GROUP $2
+-			chown $OWNER $2
+-		fi
+ 		echo Created directory $2
+ 	fi
+ 	exit 0
+@@ -25,19 +21,11 @@ mkdir)
+ copy)
+ 	cp $4 $3
+ 	chmod $2 $3/$4
+-	if ./usercheck 0 ; then
+-		chgrp $GROUP $3/$4
+-		chown $OWNER $3/$4
+-	fi
+ 	echo "$4 -> $3/$4"
+ 	exit 0
+ 	;;
+ chmod)
+ 	chmod $2 $3
+-	if ./usercheck 0 ; then
+-		chgrp $GROUP $3
+-		chown $OWNER $3
+-	fi
+ 	exit 0
+ 	;;
+ esac

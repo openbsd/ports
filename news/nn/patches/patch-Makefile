@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/11/17 08:42:13 jasper Exp $
+--- Makefile.orig	Mon Nov 17 09:35:23 2008
++++ Makefile	Mon Nov 17 09:35:32 2008
+@@ -18,7 +18,7 @@
+ #
+ # Use /lib/cpp or /usr/ccs/lib/cpp for CPP on Solaris or SVR4 machines.
+ 
+-CC =		cc
++CC ?=		cc
+ 
+ CPP =		$(CC) -E
+ #CPP =		/lib/cpp

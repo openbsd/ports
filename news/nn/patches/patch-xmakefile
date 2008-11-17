@@ -1,0 +1,17 @@
+$OpenBSD: patch-xmakefile,v 1.1.1.1 2008/11/17 08:42:13 jasper Exp $
+--- xmakefile.orig	Thu Mar 31 09:47:29 2005
++++ xmakefile	Wed Sep 24 18:45:31 2008
+@@ -51,10 +51,9 @@
+ * Notice:  ymakefile is made from xmakefile by the Makefile.
+ *
+ 
+-CC =	 COMPILER
+-CPP =	 PREPROC
+-LDFLAGS = LDEBUG LOADER_FLAGS EXTRA_LIB
+-CFLAGS = -Iconf COMPILER_FLAGS CDEBUG
++CPP ?=	 PREPROC
++LDFLAGS += LDEBUG LOADER_FLAGS EXTRA_LIB
++CFLAGS += -Iconf COMPILER_FLAGS CDEBUG
+ 
+ *
+ * Resulting programs

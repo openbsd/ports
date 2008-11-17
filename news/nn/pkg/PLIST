@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/17 08:42:13 jasper Exp $
+@bin bin/nn
+@bin bin/nnadmin
+@bin bin/nnbatch
+@bin bin/nncheck
+@bin bin/nngoback
+bin/nngrab
+@bin bin/nngrep
+@bin bin/nnpost
+bin/nnstats
+@bin bin/nntidy
+bin/nnusage
+@bin bin/nnview
+libexec/nn/
+libexec/nn/aux
+libexec/nn/conf
+libexec/nn/upgrade_rc
+@man man/man1/nn.1
+@man man/man1/nnacct.1m
+@man man/man1/nnadmin.1m
+@man man/man1/nncheck.1
+@man man/man1/nngoback.1
+@man man/man1/nngrab.1
+@man man/man1/nngrep.1
+@man man/man1/nnpost.1
+@man man/man1/nnstats.1m
+@man man/man1/nntidy.1
+@man man/man1/nnusage.1m
+@man man/man1/nnview.1
+@man man/man8/nnmaster.8
+@man man/man8/nnspew.8
+share/doc/nn/
+share/doc/nn/Manual
+share/doc/nn/adm.upgrade1
+share/doc/nn/adm.upgrade2
+share/doc/nn/adm.upgrade3
+share/doc/nn/adm.upgrade4
+share/doc/nn/adm.welcome
+share/doc/nn/help.attr
+share/doc/nn/help.commands
+share/doc/nn/help.extended
+share/doc/nn/help.help
+share/doc/nn/help.map
+share/doc/nn/help.menu
+share/doc/nn/help.more
+share/doc/nn/help.read
+share/doc/nn/help.set
+share/doc/nn/help.show
+share/doc/nn/help.sort
+share/doc/nn/help.variables
