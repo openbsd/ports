@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.96 2008/10/07 21:01:51 jasper Exp $
+$OpenBSD: user.list,v 1.97 2008/11/17 12:32:23 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -118,3 +118,4 @@ id  user		group		port options
 607 _gkrellmd		_gkrellmd	sysutils/gkrellm/gkrellm
 608 _cherokee		_cherokee	www/cherokee
 609 _powerdns		_powerdns	net/powerdns
+610 _squeezecenter	_squeezecenter	audio/squeezecenter
