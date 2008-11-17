@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/17 18:22:14 jasper Exp $
+%%SHARED%%
+include/ggz.h
+include/ggz_common.h
+include/ggz_dio.h
+lib/libggz.a
+lib/libggz.la
+@man man/man3/ggz.h.3

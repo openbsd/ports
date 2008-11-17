@@ -1,0 +1,91 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/17 18:22:14 jasper Exp $
+%%SHARED%%
+bin/ggz
+@bin bin/ggz-config
+@bin bin/ggz-wrapper
+include/ggzcore.h
+include/ggzmod.h
+lib/ggz/
+@bin lib/ggz/ggzwrap
+lib/libggzcore.a
+lib/libggzcore.la
+lib/libggzmod.a
+lib/libggzmod.la
+@man man/man1/ggzwrap.1
+@man man/man3/ggzcore_h.3
+@man man/man3/ggzmod_h.3
+@man man/man5/ggz.modules.5
+@man man/man6/ggz-config.6
+@man man/man6/ggz-wrapper.6
+@man man/man6/ggz.6
+@man man/man7/ggz.7
+share/desktop-directories/
+share/desktop-directories/ggz-games.directory
+share/desktop-directories/ggz.directory
+share/ggz-client-libs/
+share/ggz-client-libs/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/ggz-client-libs/xdg/menus/
+@sample ${SYSCONFDIR}/xdg/menus/
+share/ggz-client-libs/xdg/menus/applications-merged/
+@sample ${SYSCONFDIR}/xdg/menus/applications-merged/
+share/ggz-client-libs/xdg/menus/applications-merged/ggz.merge.menu
+@sample ${SYSCONFDIR}/xdg/menus/applications-merged/ggz.merge.menu
+share/ggz-client-libs/xdg/menus/ggz.menu
+@sample ${SYSCONFDIR}/xdg/menus/ggz.menu
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/ggzcore.mo
+share/locale/bg/LC_MESSAGES/ggzcore.mo
+share/locale/ca/LC_MESSAGES/ggzcore.mo
+share/locale/cs/LC_MESSAGES/ggzcore.mo
+share/locale/cy/
+share/locale/cy/LC_MESSAGES/
+share/locale/cy/LC_MESSAGES/ggzcore.mo
+share/locale/da/LC_MESSAGES/ggzcore.mo
+share/locale/de/LC_MESSAGES/ggz-config.mo
+share/locale/de/LC_MESSAGES/ggzcore.mo
+share/locale/dz/
+share/locale/dz/LC_MESSAGES/
+share/locale/dz/LC_MESSAGES/ggzcore.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/ggzcore.mo
+share/locale/es/LC_MESSAGES/ggzcore.mo
+share/locale/et/LC_MESSAGES/ggzcore.mo
+share/locale/fi/LC_MESSAGES/ggzcore.mo
+share/locale/fr/LC_MESSAGES/ggzcore.mo
+share/locale/gl/LC_MESSAGES/ggzcore.mo
+share/locale/gu/
+share/locale/gu/LC_MESSAGES/
+share/locale/gu/LC_MESSAGES/ggzcore.mo
+share/locale/hu/LC_MESSAGES/ggzcore.mo
+share/locale/ja/LC_MESSAGES/ggzcore.mo
+share/locale/ko/LC_MESSAGES/ggzcore.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/ggzcore.mo
+share/locale/lv/LC_MESSAGES/ggzcore.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
+share/locale/mk/LC_MESSAGES/ggzcore.mo
+share/locale/nb/LC_MESSAGES/ggzcore.mo
+share/locale/nl/LC_MESSAGES/ggzcore.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/ggzcore.mo
+share/locale/pa/
+share/locale/pa/LC_MESSAGES/
+share/locale/pa/LC_MESSAGES/ggzcore.mo
+share/locale/pt/LC_MESSAGES/ggzcore.mo
+share/locale/pt_BR/LC_MESSAGES/ggzcore.mo
+share/locale/ru/LC_MESSAGES/ggzcore.mo
+share/locale/sv/LC_MESSAGES/ggzcore.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
+share/locale/th/LC_MESSAGES/ggzcore.mo
+share/locale/uk/LC_MESSAGES/ggzcore.mo
+share/locale/vi/LC_MESSAGES/ggzcore.mo
+share/locale/zh_CN/LC_MESSAGES/ggzcore.mo
+share/locale/zh_HK/LC_MESSAGES/ggzcore.mo
+share/locale/zh_TW/LC_MESSAGES/ggzcore.mo

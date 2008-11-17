@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/11/17 18:22:14 jasper Exp $
+--- configure.orig	Sat Feb 16 22:13:13 2008
++++ configure	Mon Nov 17 18:41:20 2008
+@@ -20759,6 +20759,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/types.h>
+ #include <sys/socket.h>
+ int
+ main ()

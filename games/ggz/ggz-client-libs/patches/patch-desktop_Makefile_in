@@ -1,0 +1,15 @@
+$OpenBSD: patch-desktop_Makefile_in,v 1.1.1.1 2008/11/17 18:22:14 jasper Exp $
+--- desktop/Makefile.in.orig	Sat Feb 16 22:45:45 2008
++++ desktop/Makefile.in	Mon Nov 17 19:08:38 2008
+@@ -184,9 +184,9 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ desktopdirectoriesdir = $(datadir)/desktop-directories
+ desktopdirectories_DATA = ggz.directory ggz-games.directory
+-desktopmenudir = $(sysconfdir)/xdg/menus
++desktopmenudir = $(pkgdatadir)/xdg/menus
+ desktopmenu_DATA = ggz.menu
+-desktopmergedir = $(sysconfdir)/xdg/menus/applications-merged
++desktopmergedir = $(pkgdatadir)/xdg/menus/applications-merged
+ desktopmerge_DATA = ggz.merge.menu
+ EXTRA_DIST = $(desktopdirectories_DATA) $(desktopmenu_DATA) $(desktopmerge_DATA)
+ all: all-am
