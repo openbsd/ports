@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.139 2008/10/30 22:34:06 espie Exp $
+# $OpenBSD: make-plist,v 1.140 2008/11/17 11:20:44 sthen Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -833,7 +833,7 @@ sub short_name
 	}
 	# If the resulting name is arch-dependent, we warn.
 	# We don't fix it automatically, as this may need special handling.
-	if ($short =~ m/i386|m68k|sparc/) {
+	if ($short =~ m/i386|m68k|sparc|amd64|x86[-_]64|powerpc|macppc/) {
 	    report $plist, " contains arch-dependent\n\t$short"; 
 	}
 	return $short;
