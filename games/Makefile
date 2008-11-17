@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2008/11/10 22:12:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.182 2008/11/17 18:23:50 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -54,6 +54,7 @@
      SUBDIR += frotz
      SUBDIR += gcompris
      SUBDIR += gemdropx
+     SUBDIR += ggz
      SUBDIR += glsfcave
      SUBDIR += glutton
      SUBDIR += gnuchess
