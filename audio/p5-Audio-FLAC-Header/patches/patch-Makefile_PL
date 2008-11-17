@@ -1,7 +1,23 @@
-$OpenBSD: patch-Makefile_PL,v 1.4 2007/09/18 18:26:52 naddy Exp $
---- Makefile.PL.orig	Sat Jan  6 00:48:45 2007
-+++ Makefile.PL	Tue Sep 18 17:13:30 2007
-@@ -10,7 +10,9 @@ all_from('Header.pm');
+$OpenBSD: patch-Makefile_PL,v 1.5 2008/11/17 06:13:08 steven Exp $
+--- Makefile.PL.orig	Sat May 31 21:36:22 2008
++++ Makefile.PL	Sat Nov 15 09:12:23 2008
+@@ -10,12 +10,12 @@ sub search_lib {
+     }
+     my $libbase = 'lib' . substr($lib, 2) . $Config{lib_ext};
+     my $libbase_so = 'lib' . substr($lib, 2) . "." . $Config{so};
+-    for my $path (split(' ', $Config{libpth})) {
+-	if (-f $path . '/' . $libbase) {
++    for my $path (split(' ', $ENV{'LIBPATH'})) {
++	if (-f $path . '/' . $libbase_so) {
+ 	    print "$path/$libbase\n";
+ 	    print "Found '$path/$libbase'.\n";
+ 	    return $lib;
+-	} elsif (-f $path . '/' . $libbase_so) {
++	} elsif (-f $path . '/' . $libbase) {
+ 	    print "$path/$libbase_so\n";
+ 	    print "Found `$_/$libbase_so'.\n";
+ 	    return $lib;
+@@ -40,7 +40,9 @@ requires_external_cc();
  if ($^O =~ /win32/i) {
  	cc_lib_links('FLAC_static');
  } else {
@@ -9,6 +25,6 @@ $OpenBSD: patch-Makefile_PL,v 1.4 2007/09/18 18:26:52 naddy Exp $
 +	cc_inc_paths($ENV{'INCPATH'});
 +	cc_lib_paths($ENV{'LIBPATH'});
 +	cc_lib_links('FLAC', 'ogg');
- 	cc_optimize_flags('-Wall');
+ 	cc_optimize_flags('-Wall') if $Config::Config{'archname'} =~ /gnu/i;
  }
  
