@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/17 09:59:26 sthen Exp $
-@newgroup _squeezecenter:596
-@newuser _squeezecenter:596:_squeezecenter:daemon:squeezecenter user:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.2 2008/11/17 12:31:27 sthen Exp $
+@newgroup _squeezecenter:610
+@newuser _squeezecenter:610:_squeezecenter:daemon:squeezecenter user:/nonexistent:/sbin/nologin
 bin/scanner.pl
 bin/slimserver.pl
 libdata/perl5/site_perl/Slim/
@@ -351,17 +351,6 @@ libdata/perl5/site_perl/Slim/Plugin/MusicMagic/ProtocolHandler.pm
 libdata/perl5/site_perl/Slim/Plugin/MusicMagic/Settings.pm
 libdata/perl5/site_perl/Slim/Plugin/MusicMagic/install.xml
 libdata/perl5/site_perl/Slim/Plugin/MusicMagic/strings.txt
-libdata/perl5/site_perl/Slim/Plugin/MyRadio/
-libdata/perl5/site_perl/Slim/Plugin/MyRadio/HTML/
-libdata/perl5/site_perl/Slim/Plugin/MyRadio/HTML/EN/
-libdata/perl5/site_perl/Slim/Plugin/MyRadio/HTML/EN/plugins/
-libdata/perl5/site_perl/Slim/Plugin/MyRadio/HTML/EN/plugins/MyRadio/
-libdata/perl5/site_perl/Slim/Plugin/MyRadio/HTML/EN/plugins/MyRadio/html/
-libdata/perl5/site_perl/Slim/Plugin/MyRadio/HTML/EN/plugins/MyRadio/html/images/
-libdata/perl5/site_perl/Slim/Plugin/MyRadio/HTML/EN/plugins/MyRadio/html/images/icon.png
-libdata/perl5/site_perl/Slim/Plugin/MyRadio/Plugin.pm
-libdata/perl5/site_perl/Slim/Plugin/MyRadio/install.xml
-libdata/perl5/site_perl/Slim/Plugin/MyRadio/strings.txt
 libdata/perl5/site_perl/Slim/Plugin/OPMLBased.pm
 libdata/perl5/site_perl/Slim/Plugin/Pandora/
 libdata/perl5/site_perl/Slim/Plugin/Pandora/HTML/
@@ -785,16 +774,16 @@ share/squeezecenter/
 share/squeezecenter/Firmware/
 share/squeezecenter/Firmware/boom.version
 share/squeezecenter/Firmware/boom_30.bin
-share/squeezecenter/Firmware/boom_32.bin
+share/squeezecenter/Firmware/boom_33.bin
 share/squeezecenter/Firmware/receiver.version
-share/squeezecenter/Firmware/receiver_47.bin
+share/squeezecenter/Firmware/receiver_48.bin
 share/squeezecenter/Firmware/squeezebox.version
 share/squeezecenter/Firmware/squeezebox2.version
-share/squeezecenter/Firmware/squeezebox2_112.bin
+share/squeezecenter/Firmware/squeezebox2_113.bin
 share/squeezecenter/Firmware/squeezebox_10.bin
 share/squeezecenter/Firmware/squeezebox_40.bin
 share/squeezecenter/Firmware/transporter.version
-share/squeezecenter/Firmware/transporter_62.bin
+share/squeezecenter/Firmware/transporter_63.bin
 share/squeezecenter/Graphics/
 share/squeezecenter/Graphics/CODE2000.HTM
 share/squeezecenter/Graphics/CODE2000.TTF
@@ -1122,7 +1111,6 @@ share/squeezecenter/HTML/EN/html/ext/resources/images/default/form/trigger.gif
 share/squeezecenter/HTML/EN/html/ext/resources/images/default/form/trigger.psd
 share/squeezecenter/HTML/EN/html/ext/resources/images/default/gradient-bg.gif
 share/squeezecenter/HTML/EN/html/ext/resources/images/default/grid/
-share/squeezecenter/HTML/EN/html/ext/resources/images/default/grid/Thumbs.db
 share/squeezecenter/HTML/EN/html/ext/resources/images/default/grid/arrow-left-white.gif
 share/squeezecenter/HTML/EN/html/ext/resources/images/default/grid/arrow-right-white.gif
 share/squeezecenter/HTML/EN/html/ext/resources/images/default/grid/col-move-bottom.gif
@@ -1349,6 +1337,7 @@ share/squeezecenter/HTML/EN/html/images/slimp3_logo.gif
 share/squeezecenter/HTML/EN/html/images/slimp3_logo.small.gif
 share/squeezecenter/HTML/EN/html/images/softsqueeze.png
 share/squeezecenter/HTML/EN/html/images/spacer.gif
+share/squeezecenter/HTML/EN/html/images/squeezebox-family.jpg
 share/squeezecenter/HTML/EN/html/images/squeezebox.jpg
 share/squeezecenter/HTML/EN/html/images/squeezebox_logo.gif
 share/squeezecenter/HTML/EN/html/images/squeezebox_logo.small.gif
@@ -1377,6 +1366,7 @@ share/squeezecenter/HTML/EN/html/settings.js
 share/squeezecenter/HTML/EN/html/setup.html
 share/squeezecenter/HTML/EN/html/silence.mp3
 share/squeezecenter/HTML/EN/html/silentpacket.mp3
+share/squeezecenter/HTML/EN/html/slim-backup-alarm.mp3
 share/squeezecenter/HTML/EN/html/softsqueeze/
 share/squeezecenter/HTML/EN/html/softsqueeze/LICENSE.txt
 share/squeezecenter/HTML/EN/html/softsqueeze/SoftSqueeze.jar
