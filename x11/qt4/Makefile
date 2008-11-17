@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2008/10/21 22:19:59 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2008/11/17 15:05:24 espie Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -16,7 +16,7 @@ PKGNAME-postgresql =	qt4-postgresql-${PKGVERSION}
 PKGNAME-examples =	qt4-examples-${PKGVERSION}
 PKGNAME-sqlite2 =	qt4-sqlite2-${PKGVERSION}
 PKGNAME-sqlite =	qt4-sqlite-${PKGVERSION}
-PKGNAME-main =		qt4-${PKGVERSION}
+PKGNAME-main =		qt4-${PKGVERSION}p0
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 PKGNAME-phonon =	qt4-phonon-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
@@ -89,10 +89,8 @@ CONFIGURE_ARGS =	-qt-gif -system-libpng -system-libjpeg -system-zlib \
 			-confirm-license \
 			-I${LOCALBASE}/include/libpng \
 			-I${X11BASE}/include/freetype2 \
-			-I${LOCALBASE}/include \
 			-I${X11BASE}/include \
 			-L${WRKBUILD}/lib \
-			-L${LOCALBASE}/lib \
 			-L${X11BASE}/lib
 
 CONFIGURE_ARGS +=	-prefix ${QT_BASEDIR}
@@ -111,10 +109,10 @@ CONFIGURE_ARGS += 	-I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql \
 			-plugin-sql-mysql
 CONFIGURE_ARGS += 	-I${LOCALBASE}/include/postgresql \
 	    		-I${LOCALBASE}/include/postgresql/server \
-			-L${LOCALBASE}/lib \
-			-I${LOCALBASE}/include -plugin-sql-psql
+			-plugin-sql-psql
 
-CONFIGURE_ENV =		LOCALBASE=${LOCALBASE} QTDIR="${WRKSRC}" 
+CONFIGURE_ENV =		LOCALBASE=${LOCALBASE} QTDIR="${WRKSRC}" \
+			X11BASE=${X11BASE}
 
 BUILD_DEPENDS +=	::print/cups
 BUILD_DEPENDS +=	::databases/postgresql,-server
