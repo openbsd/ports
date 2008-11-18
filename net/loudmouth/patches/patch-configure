@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2008/08/31 12:16:14 jasper Exp $
---- configure.orig	Thu Aug 28 17:23:08 2008
-+++ configure	Sun Aug 31 13:50:02 2008
-@@ -21475,6 +21475,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+$OpenBSD: patch-configure,v 1.3 2008/11/18 11:41:23 jasper Exp $
+--- configure.orig	Wed Oct 29 21:25:57 2008
++++ configure	Tue Nov 18 12:33:20 2008
+@@ -21423,6 +21423,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  
  #include <stdio.h>
  #include <stdlib.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.2 2008/08/31 12:16:14 jasper Exp $
  
  #include <check.h>
  
-@@ -21584,6 +21585,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -21532,6 +21533,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  
  #include <stdio.h>
  #include <stdlib.h>
