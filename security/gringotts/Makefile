@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/05 11:17:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/11/18 12:51:40 landry Exp $
 
 COMMENT=	GTK+2 secure notes manager
 
 DISTNAME=	gringotts-1.2.9
 CATEGORIES=	security
+PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://gringotts.berlios.de/
 
