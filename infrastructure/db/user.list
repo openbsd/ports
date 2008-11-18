@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.98 2008/11/18 21:24:11 pea Exp $
+$OpenBSD: user.list,v 1.99 2008/11/18 22:32:38 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -120,3 +120,4 @@ id  user		group		port options
 609 _powerdns		_powerdns	net/powerdns
 610 _squeezecenter	_squeezecenter	audio/squeezecenter
 611 _icecast		_icecast	net/icecast
+612 _ipguard		_ipguard	security/ipguard
