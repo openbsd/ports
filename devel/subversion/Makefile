@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2008/11/13 13:14:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2008/11/18 23:08:01 steven Exp $
 
 COMMENT-main=	subversion revision control system
 COMMENT-perl=	perl interface to subversion
@@ -40,7 +40,7 @@ MASTER_SITES=	${HOMEPAGE}/tarballs/
 PSEUDO_FLAVORS=	no_bindings no_ap2
 FLAVOR?=
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext lang/python
 
 WANTLIB=	expat db z
 
@@ -109,7 +109,7 @@ LIB_DEPENDS-ruby=	ruby.>=2::lang/ruby ${MODGETTEXT_LIB_DEPENDS}
 LIB_DEPENDS-ruby+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
 .  endfor
 
-MODULES+=	lang/ruby lang/python
+MODULES+=	lang/ruby
 BUILD_DEPENDS+=	:swig->=1.3.36:devel/swig
 .endif
 
