@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2008/07/09 18:59:42 okan Exp $
+# $OpenBSD: Makefile,v 1.9 2008/11/18 09:10:05 ajacoutot Exp $
 
 COMMENT=		terminal emulator for X
 
-DISTNAME=		roxterm-1.12.2
+DISTNAME=		roxterm-1.13.0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
@@ -10,7 +10,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=roxterm/}
 
 MAINTAINER=		Jona Joachim <jaj@hcl-club.lu>
 
-# GPLv2
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -29,13 +29,13 @@ LIB_DEPENDS=		vte::devel/vte \
 			dbus-glib-1::x11/dbus-glib \
 			glade-2.0::devel/libglade2
 
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			:librsvg-*:x11/gnome/librsvg,no_gnome
+RUN_DEPENDS=		::devel/desktop-file-utils
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
