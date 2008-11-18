@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/23 12:39:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/11/18 13:51:14 landry Exp $
 
 COMMENT=	drawing program for children
 
 DISTNAME=	tuxpaint-0.9.20
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/
@@ -27,7 +27,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	SDL_image.>=2::devel/sdl-image \
 		SDL_mixer.>=3::devel/sdl-mixer \
 		SDL_ttf.>=7:sdl-ttf->=2.0.8:devel/sdl-ttf \
-		rsvg-2.>=18::x11/gnome/librsvg,no_gnome \
+		rsvg-2.>=18::x11/gnome/librsvg \
 		paper::print/libpaper \
 		utf8.>=1::misc/libutf8 \
 		SDL_Pango::devel/sdl-pango \
