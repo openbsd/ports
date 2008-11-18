@@ -1,0 +1,10 @@
+--- exempi/tests/test2.cpp.orig	Tue Apr 22 18:44:54 2008
++++ exempi/tests/test2.cpp	Tue Apr 22 18:45:04 2008
+@@ -37,6 +37,7 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
++#include <unistd.h>
+ #include <sys/stat.h>
+ 
+ #include <string>

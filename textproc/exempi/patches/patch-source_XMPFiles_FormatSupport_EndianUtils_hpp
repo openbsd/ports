@@ -1,0 +1,11 @@
+--- source/XMPFiles/FormatSupport/EndianUtils.hpp.orig	Tue Apr 22 17:13:52 2008
++++ source/XMPFiles/FormatSupport/EndianUtils.hpp	Tue Apr 22 17:13:59 2008
+@@ -57,7 +57,7 @@
+ #    define kBigEndianHost 1
+ #  endif
+ # else
+-#  include <endian.h>
++#  include <machine/endian.h>
+ #  if BYTE_ORDER == BIG_ENDIAN
+ #   define kBigEndianHost 1
+ #  elif BYTE_ORDER == LITTLE_ENDIAN

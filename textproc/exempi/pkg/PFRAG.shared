@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/11/18 12:43:28 okan Exp $
+@lib lib/libexempi.so.${LIBexempi_VERSION}

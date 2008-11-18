@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/18 12:43:28 okan Exp $
+%%SHARED%%
+include/exempi-2.0/
+include/exempi-2.0/exempi/
+include/exempi-2.0/exempi/xmp.h
+include/exempi-2.0/exempi/xmpconsts.h
+include/exempi-2.0/exempi/xmperrors.h
+lib/libexempi.a
+lib/libexempi.la
+lib/pkgconfig/
+lib/pkgconfig/exempi-2.0.pc
