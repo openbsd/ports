@@ -1,6 +1,6 @@
---- util/filter.h.orig	Thu Jun 30 14:58:05 2005
-+++ util/filter.h	Thu Jun 26 13:42:32 2008
-@@ -84,7 +84,7 @@ NEOERR *filter_create_fd(const char *cmd, int *fdin, i
+--- util/filter.h.orig	Thu Jun 30 20:58:05 2005
++++ util/filter.h	Mon May  8 16:54:19 2006
+@@ -84,7 +84,7 @@ NEOERR *filter_create_fd(const char *cmd
   *         pid -> the pid of the sub process
   * Returns: NERR_SYSTEM, NERR_IO
   */

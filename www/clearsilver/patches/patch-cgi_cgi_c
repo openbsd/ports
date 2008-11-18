@@ -1,6 +1,6 @@
---- cgi/cgi.c.orig	Wed Jul 11 22:38:03 2007
-+++ cgi/cgi.c	Thu Jun 26 13:42:32 2008
-@@ -508,7 +508,7 @@ static void _launch_debugger (CGI *cgi, char *display)
+--- cgi/cgi.c.orig	Fri Dec  2 10:34:04 2005
++++ cgi/cgi.c	Mon May  8 16:54:19 2006
+@@ -646,7 +646,7 @@ static void _launch_debugger (CGI *cgi, 
  
    if (!pid)
    {
@@ -9,7 +9,7 @@
      execl("/bin/sh", "sh", "-c", buffer, NULL);
    }
    else
-@@ -1210,11 +1210,11 @@ NEOERR *cgi_output (CGI *cgi, STRING *str)
+@@ -1341,11 +1341,11 @@ NEOERR *cgi_output (CGI *cgi, STRING *st
  	  {
  	    if (use_gzip)
  	    {
@@ -23,7 +23,7 @@
  		  Z_DEFLATED, 0 /*flags*/, 0,0,0,0 /*time*/, 0 /*xflags*/,
  		  OS_CODE);
  	      err = cgiwrap_write(gz_buf, 10);
-@@ -1226,7 +1226,7 @@ NEOERR *cgi_output (CGI *cgi, STRING *str)
+@@ -1357,7 +1357,7 @@ NEOERR *cgi_output (CGI *cgi, STRING *st
  	    if (use_gzip)
  	    {
  	      /* write crc and len in network order */

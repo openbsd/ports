@@ -1,0 +1,17 @@
+$OpenBSD: patch-python_setup_py,v 1.4 2008/11/18 20:00:09 okan Exp $
+--- python/setup.py.orig	Tue Nov 18 14:53:47 2008
++++ python/setup.py	Tue Nov 18 14:54:31 2008
+@@ -28,11 +28,11 @@ LDSHARED = "gcc -shared"
+ ## Actually, forget that, I'm just going to load and parse the rules.mk
+ ## file and build what I need
+ 
+-if not os.path.exists("../rules.mk"):
++if not os.path.exists("%%WRKSRC%%/rules.mk"):
+   raise "You need to run configure first to generate the rules.mk file!"
+ 
+ make_vars = {}
+-rules = open("../rules.mk").read()
++rules = open("%%WRKSRC%%/rules.mk").read()
+ for line in string.split(rules, "\n"):
+   parts = string.split(line, '=', 1)
+   if len(parts) != 2: continue

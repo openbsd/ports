@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.15 2008/11/11 19:58:15 okan Exp $
+# $OpenBSD: Makefile,v 1.16 2008/11/18 20:00:09 okan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	fast, powerful, and language-neutral HTML template system
 
-DISTNAME=	clearsilver-0.10.5
+DISTNAME=	clearsilver-0.10.4
+PKGNAME=	${DISTNAME}p1v0
 CATEGORIES=	www net
 
 HOMEPAGE=       http://www.clearsilver.net/
 
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
-# Apache 2
+# Apache 1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -36,6 +37,9 @@ CONFIGURE_ARGS+=	--with-python=${MODPY_BIN}
 .else
 CONFIGURE_ARGS+=	--disable-python
 .endif
+
+pre-configure:
+	@perl -pi -e 's|%%WRKSRC%%|${WRKSRC}|g' ${WRKSRC}/python/setup.py
 
 do-regress:
 	@cd ${WRKSRC}/perl && ${MAKE_PROGRAM} test
