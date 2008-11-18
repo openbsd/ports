@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.545 2008/11/12 16:46:07 pea Exp $
+# $OpenBSD: Makefile,v 1.546 2008/11/18 12:49:24 okan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
      SUBDIR += BitTorrent
      SUBDIR += GeoIP
      SUBDIR += adns
+     SUBDIR += aget
      SUBDIR += aggregate
      SUBDIR += aguri
      SUBDIR += aiccu
