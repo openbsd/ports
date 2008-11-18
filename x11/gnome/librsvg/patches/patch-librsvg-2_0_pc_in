@@ -1,0 +1,11 @@
+$OpenBSD: patch-librsvg-2_0_pc_in,v 1.1 2008/11/18 13:34:43 landry Exp $
+--- librsvg-2.0.pc.in.orig	Wed Oct 29 16:58:25 2008
++++ librsvg-2.0.pc.in	Wed Oct 29 16:58:30 2008
+@@ -7,6 +7,6 @@ Name: librsvg
+ Description: library that renders svg files
+ Version: @VERSION@
+ Requires: glib-2.0 gdk-pixbuf-2.0 cairo
+-Requires.private
++Requires.private:
+ Libs: -L${libdir} -lrsvg-2
+ Cflags: -I${includedir}/librsvg-2
