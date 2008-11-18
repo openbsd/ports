@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.3 2005/10/21 15:59:54 naddy Exp $
---- doc/Makefile.in.orig	Sat Aug 20 21:36:59 2005
-+++ doc/Makefile.in	Tue Aug 23 11:30:10 2005
-@@ -127,7 +127,7 @@ install_sh = @install_sh@
- 
- AUTOMAKE_OPTIONS = foreign
- 
+$OpenBSD: patch-doc_Makefile_in,v 1.4 2008/11/18 21:22:03 pea Exp $
+--- doc/Makefile.in.orig	Fri May 30 01:58:57 2008
++++ doc/Makefile.in	Fri Nov  7 10:44:18 2008
+@@ -176,7 +176,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
 -docdir = $(datadir)/doc/icecast
 +docdir = $(datadir)/doc/@PACKAGE@
- doc_DATA = index.html icecast2_admin.html icecast2_basicsetup.html \
- 	icecast2_config_file.html icecast2_faq.html icecast2_glossary.html \
- 	icecast2_introduction.html icecast2_relay.html icecast2_stats.html \
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@

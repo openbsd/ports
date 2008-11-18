@@ -1,0 +1,29 @@
+$OpenBSD: patch-conf_icecast_minimal_xml_in,v 1.1 2008/11/18 21:22:02 pea Exp $
+--- conf/icecast_minimal.xml.in.orig	Mon Jul  4 00:11:52 2005
++++ conf/icecast_minimal.xml.in	Fri Nov  7 13:38:36 2008
+@@ -22,9 +22,10 @@
+     </listen-socket>
+     <fileserve>1</fileserve>
+     <paths>
+-        <logdir>@localstatedir@/log/@PACKAGE@</logdir>
+-        <webroot>@pkgdatadir@/web</webroot>
+-        <adminroot>@pkgdatadir@/admin</adminroot>
++	<basedir>/var/icecast</basedir>
++        <logdir>/log</logdir>
++        <webroot>/web</webroot>
++        <adminroot>/admin</adminroot>
+         <alias source="/" dest="/status.xsl"/>
+     </paths>
+     <logging>
+@@ -32,4 +33,11 @@
+         <errorlog>error.log</errorlog>
+       	<loglevel>3</loglevel> <!-- 4 Debug, 3 Info, 2 Warn, 1 Error -->
+     </logging>
++    <security>
++        <chroot>1</chroot>  
++        <changeowner>
++            <user>_icecast</user>
++            <group>_icecast</group>
++        </changeowner>
++    </security>
+ </icecast>

@@ -1,12 +1,39 @@
-$OpenBSD: patch-conf_icecast_xml_in,v 1.4 2005/10/21 15:59:54 naddy Exp $
---- conf/icecast.xml.in.orig	Thu Sep  8 16:03:51 2005
-+++ conf/icecast.xml.in	Sat Sep 24 15:23:12 2005
-@@ -139,7 +139,7 @@
-         <logdir>@localstatedir@/log/@PACKAGE@</logdir>
-         <webroot>@pkgdatadir@/web</webroot>
-         <adminroot>@pkgdatadir@/admin</adminroot>
+$OpenBSD: patch-conf_icecast_xml_in,v 1.5 2008/11/18 21:22:02 pea Exp $
+--- conf/icecast.xml.in.orig	Fri Apr  4 17:14:10 2008
++++ conf/icecast.xml.in	Fri Nov  7 13:38:41 2008
+@@ -125,14 +125,14 @@
+ 
+     <paths>
+ 		<!-- basedir is only used if chroot is enabled -->
+-        <basedir>@pkgdatadir@</basedir>
++        <basedir>/var/icecast</basedir>
+ 
+         <!-- Note that if <chroot> is turned on below, these paths must both
+              be relative to the new root, not the original root -->
+-        <logdir>@localstatedir@/log/@PACKAGE@</logdir>
+-        <webroot>@pkgdatadir@/web</webroot>
+-        <adminroot>@pkgdatadir@/admin</adminroot>
 -        <!-- <pidfile>@pkgdatadir@/icecast.pid</pidfile> -->
++        <logdir>/log</logdir>
++        <webroot>/web</webroot>
++        <adminroot>/admin</adminroot>
 +        <!-- <pidfile>@localstatedir@/run/icecast.pid</pidfile> -->
  
          <!-- Aliases: treat requests for 'source' path as being for 'dest' path
               May be made specific to a port or bound address using the "port"
+@@ -163,12 +163,10 @@
+     </logging>
+ 
+     <security>
+-        <chroot>0</chroot>
+-        <!--
++        <chroot>1</chroot>  
+         <changeowner>
+-            <user>nobody</user>
+-            <group>nogroup</group>
++            <user>_icecast</user>
++            <group>_icecast</group>
+         </changeowner>
+-        -->
+     </security>
+ </icecast>

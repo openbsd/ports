@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/10/21 15:59:54 naddy Exp $
-bin/icecast
+@comment $OpenBSD: PLIST,v 1.9 2008/11/18 21:22:03 pea Exp $
+@newgroup _icecast:611
+@newuser _icecast:611:_icecast:daemon:Icecast Server:/var/empty:/sbin/nologin
+@bin bin/icecast
 share/doc/icecast/
 share/doc/icecast/AUTHORS
 share/doc/icecast/NEWS
@@ -20,30 +22,62 @@ share/doc/icecast/index.html
 share/doc/icecast/listener_auth1.jpg
 share/doc/icecast/listener_auth2.jpg
 share/doc/icecast/listener_auth3.jpg
+share/doc/icecast/masterslave.png
+share/doc/icecast/relay.png
 share/examples/icecast/
+@owner _icecast
+@group _icecast
+@sample /var/icecast/
+@sample /var/icecast/admin/
 share/examples/icecast/admin/
 share/examples/icecast/admin/listclients.xsl
+@sample /var/icecast/admin/listclients.xsl
 share/examples/icecast/admin/listmounts.xsl
+@sample /var/icecast/admin/listmounts.xsl
 share/examples/icecast/admin/manageauth.xsl
+@sample /var/icecast/admin/manageauth.xsl
 share/examples/icecast/admin/moveclients.xsl
+@sample /var/icecast/admin/moveclients.xsl
 share/examples/icecast/admin/response.xsl
+@sample /var/icecast/admin/response.xsl
 share/examples/icecast/admin/stats.xsl
+@sample /var/icecast/admin/stats.xsl
 share/examples/icecast/admin/updatemetadata.xsl
+@sample /var/icecast/admin/updatemetadata.xsl
+@mode 600
 share/examples/icecast/icecast.xml.dist
+@sample /var/icecast/icecast.xml
+@mode
 share/examples/icecast/icecast_minimal.xml.dist
 share/examples/icecast/icecast_shoutcast_compat.xml.dist
 share/examples/icecast/icecast_urlauth.xml.dist
 share/examples/icecast/web/
+@sample /var/icecast/web/
 share/examples/icecast/web/auth.xsl
+@sample /var/icecast/web/auth.xsl
 share/examples/icecast/web/corner_bottomleft.jpg
+@sample /var/icecast/web/corner_bottomleft.jpg
 share/examples/icecast/web/corner_bottomright.jpg
+@sample /var/icecast/web/corner_bottomright.jpg
 share/examples/icecast/web/corner_topleft.jpg
+@sample /var/icecast/web/corner_topleft.jpg
 share/examples/icecast/web/corner_topright.jpg
+@sample /var/icecast/web/corner_topright.jpg
 share/examples/icecast/web/icecast.png
+@sample /var/icecast/web/icecast.png
 share/examples/icecast/web/key.gif
+@sample /var/icecast/web/key.gif
 share/examples/icecast/web/key.png
+@sample /var/icecast/web/key.png
 share/examples/icecast/web/server_version.xsl
+@sample /var/icecast/web/server_version.xsl
 share/examples/icecast/web/status.xsl
+@sample /var/icecast/web/status.xsl
 share/examples/icecast/web/status2.xsl
+@sample /var/icecast/web/status2.xsl
 share/examples/icecast/web/style.css
+@sample /var/icecast/web/style.css
 share/examples/icecast/web/tunein.png
+@sample /var/icecast/web/tunein.png
+@sample /var/icecast/log/
+@sample /var/icecast/etc/

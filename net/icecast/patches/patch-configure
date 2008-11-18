@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.9 2008/11/18 21:22:02 pea Exp $
+--- configure.orig	Fri Nov  7 11:02:00 2008
++++ configure	Fri Nov  7 11:02:31 2008
+@@ -24495,7 +24495,7 @@ fi
+ 
+ 
+ if test "x$openssl_prefix" != "x" -a "x$openssl_prefix" != "xyes"; then
+-    OPENSSL_LIBS="-L$openssl_prefix/lib -lssl"
++    OPENSSL_LIBS="-L$openssl_prefix/lib -lssl -lcrypto"
+     OPENSSL_CFLAGS="-I$openssl_prefix/include"
+ else
+     # Extract the first word of "pkg-config", so it can be a program name with args.
+@@ -24548,7 +24548,7 @@ fi
+         else
+             openssl_prefix="$prefix"
+         fi
+-        OPENSSL_LIBS="-L$openssl_prefix/lib -lssl"
++        OPENSSL_LIBS="-L$openssl_prefix/lib -lssl -lcrypto"
+         OPENSSL_CFLAGS="-I$openssl_prefix/include"
+     fi
+ fi

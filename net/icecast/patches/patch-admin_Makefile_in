@@ -1,12 +1,12 @@
-$OpenBSD: patch-admin_Makefile_in,v 1.1 2004/02/02 19:32:37 fgsch Exp $
---- admin/Makefile.in.orig	2004-01-07 22:52:09.000000000 +0100
-+++ admin/Makefile.in	2004-01-08 15:53:04.000000000 +0100
-@@ -33,7 +33,7 @@ infodir = @infodir@
- mandir = @mandir@
- includedir = @includedir@
- oldincludedir = /usr/include
+$OpenBSD: patch-admin_Makefile_in,v 1.2 2008/11/18 21:22:02 pea Exp $
+--- admin/Makefile.in.orig	Fri May 30 01:58:57 2008
++++ admin/Makefile.in	Fri Nov  7 10:40:00 2008
+@@ -15,7 +15,7 @@
+ @SET_MAKE@
+ 
+ VPATH = @srcdir@
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/examples/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
- top_builddir = ..
+ am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd

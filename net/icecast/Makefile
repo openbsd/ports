@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2007/11/17 20:39:02 steven Exp $
+# $OpenBSD: Makefile,v 1.37 2008/11/18 21:22:02 pea Exp $
 
 COMMENT=	server for streaming various media formats
 
-DISTNAME=	icecast-2.3.1
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	icecast-2.3.2
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/
@@ -35,11 +34,8 @@ LIB_DEPENDS=	curl.>=2::net/curl \
 
 SEPARATE_BUILD=	simple
 
-post-build:
-	@sed -e 's,##PREFIX##,${TRUEPREFIX},g' < ${FILESDIR}/README.OpenBSD > \
-		${WRKBUILD}/README.OpenBSD
-
 post-install:
+	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${WRKBUILD}/README.OpenBSD
 	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
 		${PREFIX}/share/doc/icecast/README.OpenBSD
 
