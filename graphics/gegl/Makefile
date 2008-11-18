@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/10/27 21:39:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2008/11/18 13:45:41 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ V=		0.0.20
 DISTNAME=	gegl-${V}
 CATEGORIES=	graphics devel
 
-PKGNAME-main=	gegl-${V}p0
+PKGNAME-main=	gegl-${V}p1
 PKGNAME-plugins=gegl-plugins-${V}p0
 
 SHARED_LIBS=	gegl-0.0	1.1 # .20.0
@@ -39,14 +39,13 @@ LIBTOOL_FLAGS=	--tag=disable-static
 USE_GMAKE=	Yes
 USE_X11=	Yes
 
-WANTLIB-main=	${WANTLIB} ORBit-2 Xcomposite Xcursor Xdamage Xfixes \
-		Xi Xinerama atk-1.0 bz2 c cairo croco-0.6 crypto \
-		dbus-1 dbus-glib-1 expat fontconfig freetype gconf-2 \
-		gdk-x11-2.0 gdk_pixbuf-2.0 glitz gnomevfs-2 gsf-1 \
-		gtk-x11-2.0 jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread ssl util xml2
+WANTLIB-main=	${WANTLIB} Xcomposite Xcursor Xdamage Xfixes Xi \
+		Xinerama atk-1.0 bz2 c cairo croco-0.6 expat \
+		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
+		glitz gsf-1 gtk-x11-2.0 jpeg pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pixman-1 png pthread xml2
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		rsvg-2:librsvg-*-!no_gnome:x11/gnome/librsvg \
+		rsvg-2::x11/gnome/librsvg \
 		babl-0.0::graphics/babl
 
 WANTLIB-plugins=${WANTLIB} Half Iex IlmThread Imath SDL a52 bz2 faac faad \
