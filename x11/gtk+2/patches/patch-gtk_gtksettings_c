@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_gtksettings_c,v 1.6 2007/10/24 22:34:34 jasper Exp $
---- gtk/gtksettings.c.orig	Thu Sep 13 14:35:41 2007
-+++ gtk/gtksettings.c	Wed Oct 10 12:37:07 2007
-@@ -299,7 +299,7 @@ gtk_settings_class_init (GtkSettingsClass *class)
+$OpenBSD: patch-gtk_gtksettings_c,v 1.7 2008/11/18 12:36:49 landry Exp $
+--- gtk/gtksettings.c.orig	Fri Sep 19 06:44:04 2008
++++ gtk/gtksettings.c	Sun Oct 19 20:04:32 2008
+@@ -310,7 +310,7 @@ gtk_settings_class_init (GtkSettingsClass *class)
                                               g_param_spec_string ("gtk-key-theme-name",
  								  P_("Key Theme Name"),
  								  P_("Name of key theme RC file to load"),

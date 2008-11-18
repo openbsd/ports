@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2008/11/15 13:29:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2008/11/18 12:36:49 landry Exp $
 
 SHARED_ONLY=			Yes
 
@@ -6,17 +6,18 @@ COMMENT-main=			multi-platform graphical toolkit
 COMMENT-docs=           	gtk+2 documentation
 COMMENT-cups=			gtk+2 CUPS print backend
 
-VERSION=			2.12.12
+VERSION=			2.14.4
 DISTNAME=			gtk+-${VERSION}
 PKGNAME-main=			gtk+2-${VERSION}p0
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 PKGNAME-cups=			gtk+2-cups-${VERSION}
 CATEGORIES=			x11 devel
 
-SHARED_LIBS+=	gdk_pixbuf-2.0		1200.11
-SHARED_LIBS+=	gdk-x11-2.0		1200.11
-SHARED_LIBS+=	gtk-x11-2.0		1200.11
-SHARED_LIBS+=	gdk_pixbuf_xlib-2.0	1200.11
+SHARED_LIBS+=	gdk_pixbuf-2.0		1400.0 #.1400.4
+SHARED_LIBS+=	gdk-x11-2.0		1400.0
+SHARED_LIBS+=	gtk-x11-2.0		1400.0
+SHARED_LIBS+=	gdk_pixbuf_xlib-2.0	1400.0
+SHARED_LIBS+=	gailutil		22.0   #.18.1
 
 HOMEPAGE=			http://www.gtk.org/
 
@@ -26,7 +27,7 @@ PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		Yes
 PERMIT_DISTFILES_FTP=		Yes
 
-MASTER_SITES=			${MASTER_SITE_GNOME:=sources/gtk+/2.12/}
+MASTER_SITES=			${MASTER_SITE_GNOME:=sources/gtk+/2.14/}
 EXTRACT_SUFX=			.tar.bz2
 
 MULTI_PACKAGES=         	-main -docs -cups
@@ -41,11 +42,12 @@ BUILD_DEPENDS=		::print/cups
 RUN_DEPENDS=		::x11/hicolor-icon-theme
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			glib-2.0.>=1000.0,gmodule-2.0.>=1000.0,gobject-2.0.>=1000.0,gthread-2.0::devel/glib2 \
-			pango-1.0.>=1300.0,pangocairo-1.0.>=1300.0,pangoft2-1.0.>=1300.0::devel/pango \
+			glib-2.0.>=1800.0,gmodule-2.0.>=1800.0,gobject-2.0.>=1800.0,gio-2.0::devel/glib2 \
+			pango-1.0.>=1600.0,pangocairo-1.0.>=1600.0,pangoft2-1.0.>=1600.0::devel/pango \
 			atk-1.0.>=1809.0::devel/atk \
 			tiff.>=35::graphics/tiff \
 			png.>=3::graphics/png \
+			jasper::graphics/jasper \
 			jpeg.>=62::graphics/jpeg
 WANTLIB-main=		${WANTLIB} c pthread
 
@@ -57,7 +59,7 @@ PKG_ARCH-docs=		*
 LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			cups.>=3::print/cups \
 			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::${BASE_PKGPATH},-main
-WANTLIB-cups=		${WANTLIB} atk-1.0 crypto glib-2.0 gmodule-2.0 \
+WANTLIB-cups=		${WANTLIB} atk-1.0 crypto gio-2.0 glib-2.0 gmodule-2.0 \
 			gobject-2.0 pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 png ssl
 

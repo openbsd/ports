@@ -1,11 +1,19 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2008/07/08 08:40:11 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2008/11/18 12:36:49 landry Exp $
 @pkgpath x11/gtk+2
+@conflict gail-*
 @bin bin/gdk-pixbuf-csource
 @bin bin/gdk-pixbuf-query-loaders
 bin/gtk-builder-convert
 @bin bin/gtk-demo
 @bin bin/gtk-query-immodules-2.0
 @bin bin/gtk-update-icon-cache
+include/gail-1.0/
+include/gail-1.0/gail/
+include/gail-1.0/gail/gailwidget.h
+include/gail-1.0/libgail-util/
+include/gail-1.0/libgail-util/gail-util.h
+include/gail-1.0/libgail-util/gailmisc.h
+include/gail-1.0/libgail-util/gailtextutil.h
 include/gtk-2.0/
 include/gtk-2.0/gdk/
 include/gtk-2.0/gdk-pixbuf/
@@ -24,7 +32,7 @@ include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-transform.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixbuf.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixdata.h
 include/gtk-2.0/gdk/gdk.h
-include/gtk-2.0/gdk/gdkalias.h
+include/gtk-2.0/gdk/gdkapplaunchcontext.h
 include/gtk-2.0/gdk/gdkcairo.h
 include/gtk-2.0/gdk/gdkcolor.h
 include/gtk-2.0/gdk/gdkcursor.h
@@ -51,6 +59,7 @@ include/gtk-2.0/gdk/gdkrgb.h
 include/gtk-2.0/gdk/gdkscreen.h
 include/gtk-2.0/gdk/gdkselection.h
 include/gtk-2.0/gdk/gdkspawn.h
+include/gtk-2.0/gdk/gdktestutils.h
 include/gtk-2.0/gdk/gdktypes.h
 include/gtk-2.0/gdk/gdkvisual.h
 include/gtk-2.0/gdk/gdkwindow.h
@@ -117,7 +126,6 @@ include/gtk-2.0/gtk/gtkfilechooserdialog.h
 include/gtk-2.0/gtk/gtkfilechooserwidget.h
 include/gtk-2.0/gtk/gtkfilefilter.h
 include/gtk-2.0/gtk/gtkfilesel.h
-include/gtk-2.0/gtk/gtkfilesystem.h
 include/gtk-2.0/gtk/gtkfixed.h
 include/gtk-2.0/gtk/gtkfontbutton.h
 include/gtk-2.0/gtk/gtkfontsel.h
@@ -132,6 +140,7 @@ include/gtk-2.0/gtk/gtkhruler.h
 include/gtk-2.0/gtk/gtkhscale.h
 include/gtk-2.0/gtk/gtkhscrollbar.h
 include/gtk-2.0/gtk/gtkhseparator.h
+include/gtk-2.0/gtk/gtkhsv.h
 include/gtk-2.0/gtk/gtkiconfactory.h
 include/gtk-2.0/gtk/gtkicontheme.h
 include/gtk-2.0/gtk/gtkiconview.h
@@ -161,6 +170,7 @@ include/gtk-2.0/gtk/gtkmenutoolbutton.h
 include/gtk-2.0/gtk/gtkmessagedialog.h
 include/gtk-2.0/gtk/gtkmisc.h
 include/gtk-2.0/gtk/gtkmodules.h
+include/gtk-2.0/gtk/gtkmountoperation.h
 include/gtk-2.0/gtk/gtknotebook.h
 include/gtk-2.0/gtk/gtkobject.h
 include/gtk-2.0/gtk/gtkoldeditable.h
@@ -201,6 +211,7 @@ include/gtk-2.0/gtk/gtkseparator.h
 include/gtk-2.0/gtk/gtkseparatormenuitem.h
 include/gtk-2.0/gtk/gtkseparatortoolitem.h
 include/gtk-2.0/gtk/gtksettings.h
+include/gtk-2.0/gtk/gtkshow.h
 include/gtk-2.0/gtk/gtksignal.h
 include/gtk-2.0/gtk/gtksizegroup.h
 include/gtk-2.0/gtk/gtksocket.h
@@ -211,6 +222,7 @@ include/gtk-2.0/gtk/gtkstock.h
 include/gtk-2.0/gtk/gtkstyle.h
 include/gtk-2.0/gtk/gtktable.h
 include/gtk-2.0/gtk/gtktearoffmenuitem.h
+include/gtk-2.0/gtk/gtktestutils.h
 include/gtk-2.0/gtk/gtktext.h
 include/gtk-2.0/gtk/gtktextbuffer.h
 include/gtk-2.0/gtk/gtktextbufferrichtext.h
@@ -229,6 +241,7 @@ include/gtk-2.0/gtk/gtktoggletoolbutton.h
 include/gtk-2.0/gtk/gtktoolbar.h
 include/gtk-2.0/gtk/gtktoolbutton.h
 include/gtk-2.0/gtk/gtktoolitem.h
+include/gtk-2.0/gtk/gtktoolshell.h
 include/gtk-2.0/gtk/gtktooltip.h
 include/gtk-2.0/gtk/gtktooltips.h
 include/gtk-2.0/gtk/gtktree.h
@@ -263,6 +276,7 @@ include/gtk-unix-print-2.0/gtk/gtkpagesetupunixdialog.h
 include/gtk-unix-print-2.0/gtk/gtkprinter.h
 include/gtk-unix-print-2.0/gtk/gtkprintjob.h
 include/gtk-unix-print-2.0/gtk/gtkprintunixdialog.h
+include/gtk-unix-print-2.0/gtk/gtkunixprint.h
 lib/gtk-2.0/
 lib/gtk-2.0/2.10.0/
 lib/gtk-2.0/2.10.0/engines/
@@ -313,9 +327,15 @@ lib/gtk-2.0/2.10.0/loaders/libpixbufloader-bmp.so
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-gif.a
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-gif.la
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-gif.so
+lib/gtk-2.0/2.10.0/loaders/libpixbufloader-icns.a
+lib/gtk-2.0/2.10.0/loaders/libpixbufloader-icns.la
+lib/gtk-2.0/2.10.0/loaders/libpixbufloader-icns.so
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ico.a
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ico.la
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ico.so
+lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jasper.a
+lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jasper.la
+lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jasper.so
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jpeg.a
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jpeg.la
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jpeg.so
@@ -355,6 +375,16 @@ lib/gtk-2.0/2.10.0/printbackends/libprintbackend-lpr.la
 lib/gtk-2.0/2.10.0/printbackends/libprintbackend-lpr.so
 lib/gtk-2.0/include/
 lib/gtk-2.0/include/gdkconfig.h
+lib/gtk-2.0/modules/
+lib/gtk-2.0/modules/libferret.a
+lib/gtk-2.0/modules/libferret.la
+lib/gtk-2.0/modules/libferret.so
+lib/gtk-2.0/modules/libgail.a
+lib/gtk-2.0/modules/libgail.la
+lib/gtk-2.0/modules/libgail.so
+lib/libgailutil.a
+lib/libgailutil.la
+@lib lib/libgailutil.so.${LIBgailutil_VERSION}
 lib/libgdk-x11-2.0.a
 lib/libgdk-x11-2.0.la
 @lib lib/libgdk-x11-2.0.so.${LIBgdk-x11-2.0_VERSION}
@@ -367,6 +397,7 @@ lib/libgdk_pixbuf_xlib-2.0.la
 lib/libgtk-x11-2.0.a
 lib/libgtk-x11-2.0.la
 @lib lib/libgtk-x11-2.0.so.${LIBgtk-x11-2.0_VERSION}
+lib/pkgconfig/gail.pc
 lib/pkgconfig/gdk-2.0.pc
 lib/pkgconfig/gdk-pixbuf-2.0.pc
 lib/pkgconfig/gdk-pixbuf-xlib-2.0.pc
@@ -547,6 +578,8 @@ share/locale/lt/LC_MESSAGES/gtk20-properties.mo
 share/locale/lt/LC_MESSAGES/gtk20.mo
 share/locale/lv/LC_MESSAGES/gtk20-properties.mo
 share/locale/lv/LC_MESSAGES/gtk20.mo
+share/locale/mai/LC_MESSAGES/gtk20-properties.mo
+share/locale/mai/LC_MESSAGES/gtk20.mo
 share/locale/mi/
 share/locale/mi/LC_MESSAGES/
 share/locale/mi/LC_MESSAGES/gtk20-properties.mo
@@ -581,6 +614,8 @@ share/locale/pa/LC_MESSAGES/gtk20-properties.mo
 share/locale/pa/LC_MESSAGES/gtk20.mo
 share/locale/pl/LC_MESSAGES/gtk20-properties.mo
 share/locale/pl/LC_MESSAGES/gtk20.mo
+share/locale/ps/LC_MESSAGES/gtk20-properties.mo
+share/locale/ps/LC_MESSAGES/gtk20.mo
 share/locale/pt/LC_MESSAGES/gtk20-properties.mo
 share/locale/pt/LC_MESSAGES/gtk20.mo
 share/locale/pt_BR/LC_MESSAGES/gtk20-properties.mo
@@ -601,10 +636,10 @@ share/locale/sq/LC_MESSAGES/gtk20-properties.mo
 share/locale/sq/LC_MESSAGES/gtk20.mo
 share/locale/sr/LC_MESSAGES/gtk20-properties.mo
 share/locale/sr/LC_MESSAGES/gtk20.mo
-share/locale/sr@Latn/LC_MESSAGES/gtk20-properties.mo
-share/locale/sr@Latn/LC_MESSAGES/gtk20.mo
 share/locale/sr@ije/LC_MESSAGES/gtk20-properties.mo
 share/locale/sr@ije/LC_MESSAGES/gtk20.mo
+share/locale/sr@latin/LC_MESSAGES/gtk20-properties.mo
+share/locale/sr@latin/LC_MESSAGES/gtk20.mo
 share/locale/sv/LC_MESSAGES/gtk20-properties.mo
 share/locale/sv/LC_MESSAGES/gtk20.mo
 share/locale/ta/LC_MESSAGES/gtk20-properties.mo
