@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: getpkgpath,v 1.4 2007/10/29 21:50:40 sturm Exp $
+# $OpenBSD: getpkgpath,v 1.5 2008/11/18 11:45:42 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -37,7 +37,12 @@ for my $d (split ':', $path) {
 if (defined $pkgpath) { 
 	print $pkgpath, "\n";
 } else {
-	print STDERR "Can't parse $dir ($real_dir) through PORTSDIR_PATH=$path\n";
+	print STDERR "Can't find $dir ";
+	if ($real_dir ne $dir) {
+		print STDERR "($real_dir) ";
+	}
+	print STDERR "under PORTSDIR_PATH=$path\n";
 }
-
+# XXX no error code because this is too verbose from the Makefile
 exit 0;
+
