@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/04/17 10:25:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/11/18 13:42:55 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		mini programs for your desktop
 
 DISTNAME=		gDesklets-0.35.4
-PKGNAME=		${DISTNAME:L}p2
+PKGNAME=		${DISTNAME:L}p3
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gdesklets.de/
@@ -27,14 +27,14 @@ WANTLIB=		ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 			bonobo-activation bonoboui-2 bz2 cairo croco-0.6 \
 			crypto dbus-1 dbus-glib-1 esd expat fontconfig \
 			freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
-			glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
+			gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 			gnomecanvas-2 gnomevfs-2 gobject-2.0 gsf-1 gthread-2.0 \
 			gtk-x11-2.0 jpeg kvm m pango-1.0 pangocairo-1.0 \
-			pangoft2-1.0 pcre png popt ssl util xml2 z
+			pangoft2-1.0 pcre pixman-1 png popt ssl util xml2 z
 
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			gtop-2.0::devel/libgtop2 \
-			rsvg-2:librsvg-*-!no_gnome:x11/gnome/librsvg
+			rsvg-2::x11/gnome/librsvg
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::devel/desktop-file-utils \
