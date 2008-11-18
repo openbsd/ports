@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2008/11/18 12:48:41 okan Exp $
+--- Makefile.orig	Sat Oct 18 15:54:18 2008
++++ Makefile	Sat Oct 18 15:53:59 2008
+@@ -2,7 +2,7 @@
+ # http://www.enderunix.org/aget/
+ 
+ OBJS = main.o Aget.o Misc.o Head.o Signal.o Download.o Resume.o
+-CFLAGS = -g -Wall -W -pedantic 
++CFLAGS?= -g -Wall -W -pedantic 
+ LDFLAGS = -pthread
+ CC = gcc
+ STRIP = strip

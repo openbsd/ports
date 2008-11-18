@@ -1,0 +1,5 @@
+aget is a multithreaded HTTP -for now- download accelerator.  aget first
+sends a HEAD request to retrieve the length of the file, and divides it
+into equal segments according to the number user has requested.  Then
+for each segment, it connects to the server and gets only the part which
+it is to download.
