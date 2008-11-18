@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.28 2008/06/02 17:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2008/11/18 12:44:04 landry Exp $
 
 COMMENT=		GNOME Accessibility Implementation Library
+
+IGNORE=			now provided by x11/gtk+2
 
 GNOME_PROJECT=		gail
 GNOME_VERSION=		1.20.2
 SHARED_LIBS +=	gailutil         20.0         # .18.1
 CATEGORIES=		devel
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
