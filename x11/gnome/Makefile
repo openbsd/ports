@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2008/10/20 06:47:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.73 2008/11/18 13:36:26 landry Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -52,7 +52,6 @@
      SUBDIR += libgnomeprintui
      SUBDIR += libgtkhtml
      SUBDIR += librsvg
-     SUBDIR += librsvg,no_gnome
      SUBDIR += libxklavier
      SUBDIR += mag
      SUBDIR += media
