@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.246 2008/11/14 13:28:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.247 2008/11/18 12:44:58 okan Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -19,6 +19,7 @@
      SUBDIR += docbook-xsl
      SUBDIR += enchant
      SUBDIR += eruby
+     SUBDIR += exempi
      SUBDIR += gdiff
      SUBDIR += glimpse
      SUBDIR += gnome-spell
