@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/11/04 23:10:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2008/11/18 12:50:27 jasper Exp $
 
 COMMENT=		flexible communications framework, specifications
 
@@ -17,6 +17,8 @@ NO_REGRESS=		Yes
 
 PKG_ARCH=		*
 
+# XXX we should use MODPY_BIN from the lang/python MODULE but
+# we do not want to build/run_depends on python
 pre-configure:
 	perl -pi -e 's,!!MODPY_BIN!!,${LOCALBASE}/bin/python2.5,g' ${WRKSRC}/Makefile
 	perl -pi -e 's,!!MODPY_BIN!!,${LOCALBASE}/bin/python2.5,g' ${WRKSRC}/tools/*.py
