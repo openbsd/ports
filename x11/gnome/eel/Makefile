@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2008/06/02 17:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2008/11/18 14:00:00 landry Exp $
 
 COMMENT=		Eazel Extensions Library
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		eel
 GNOME_VERSION=		2.20.0
 SHARED_LIBS +=	eel-2                21.0     # .22.0
 CATEGORIES=		devel
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,7 +29,6 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		startup-notification-1::devel/startup-notification \
 			gnome-desktop-2.>=4::x11/gnome/desktop \
-			gailutil.>=17::x11/gnome/gail \
 			gnomeui-2::x11/gnome/libgnomeui \
 			gnome-menu::x11/gnome/menus
 
