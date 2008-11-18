@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2008/10/28 13:44:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2008/11/18 23:06:41 jasper Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.20.3
-PKGNAME=		${DISTNAME}p15
+PKGNAME=		${DISTNAME}p16
 CATEGORIES=		x11
 
 # GPLv2/LGPL
@@ -65,10 +65,8 @@ post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 post-install:
-	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},' ${FILESDIR}/README.OpenBSD > \
-		${WRKBUILD}/README.OpenBSD
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnome-session
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
-		${PREFIX}/share/doc/gnome-session
+	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/doc/gnome-session/README.OpenBSD
 
 .include <bsd.port.mk>
