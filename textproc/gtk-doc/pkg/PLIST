@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/10/24 14:59:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/11/18 11:59:31 jasper Exp $
 bin/gtkdoc-check
 bin/gtkdoc-depscan
 bin/gtkdoc-fixxref
@@ -13,9 +13,10 @@ bin/gtkdoc-scanobj
 bin/gtkdocize
 lib/pkgconfig/gtk-doc.pc
 share/aclocal/gtk-doc.m4
-share/doc/gtk-doc/
-share/doc/gtk-doc/fdl-appendix.xml
-share/doc/gtk-doc/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/
+share/gnome/help/gtk-doc-manual/C/
+share/gnome/help/gtk-doc-manual/C/fdl-appendix.xml
+share/gnome/help/gtk-doc-manual/C/gtk-doc-manual.xml
 share/gtk-doc/data/
 share/gtk-doc/data/devhelp.xsl
 share/gtk-doc/data/devhelp2.xsl
@@ -31,8 +32,8 @@ share/gtk-doc/data/right.png
 share/gtk-doc/data/style.css
 share/gtk-doc/data/up.png
 share/gtk-doc/data/version-greater-or-equal.xsl
-share/omf/gtk-doc/
-share/omf/gtk-doc/gtk-doc-manual-C.omf
+share/omf/gtk-doc-manual/
+share/omf/gtk-doc-manual/gtk-doc-manual-C.omf
 share/sgml/gtk-doc/
 share/sgml/gtk-doc/gtk-doc.cat
 @exec %D/bin/scrollkeeper-update -q

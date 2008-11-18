@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/10/24 14:59:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2008/11/18 11:59:31 jasper Exp $
 
 COMMENT=	GTK C code documentation system
 
-GNOME_VERSION=	1.10
+GNOME_VERSION=	1.11
 GNOME_PROJECT=	gtk-doc
 CATEGORIES=    	textproc devel
 
@@ -24,7 +24,8 @@ CONFIGURE_ARGS=		--with-xml-catalog=${WRKDIR}/catalog.xml
 
 PKG_ARCH=		*
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		::x11/gnome/doc-utils \
+			${RUN_DEPENDS}
 RUN_DEPENDS=		::textproc/openjade \
 			::textproc/docbook \
 			::textproc/docbook-xsl \
