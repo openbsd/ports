@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/06/14 23:54:16 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2008/11/19 14:40:23 pirofti Exp $
 
 COMMENT=	pure-ruby implementation of the SSH2 client protocol
 
-DISTNAME=	net-ssh-2.0.1
-PKGNAME=	ruby-${DISTNAME}p0
+DISTNAME=	net-ssh-2.0.4
+PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	net
 
 # bsd/ruby
@@ -20,6 +20,10 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:ruby-needle-1.3.0:devel/ruby-needle
 
 CONFIGURE_STYLE=ruby gem
+
+REGRESS_DEPENDS=	:ruby-mocha-*:devel/ruby-mocha
+do-regress:
+	@cd ${WRKBUILD} && ${RUBY} -Ilib test/test_all.rb
 
 PKG_ARCH=	*
 
