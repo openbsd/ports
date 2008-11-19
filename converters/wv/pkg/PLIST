@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/05/12 16:14:42 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/11/19 17:26:17 sthen Exp $
 %%SHARED%%
 bin/wvAbw
 bin/wvCleanLatex
-bin/wvConvert
+@bin bin/wvConvert
 bin/wvDVI
 bin/wvDocBook
 bin/wvHtml
@@ -10,11 +10,11 @@ bin/wvLatex
 bin/wvMime
 bin/wvPDF
 bin/wvPS
-bin/wvRTF
-bin/wvSummary
+@bin bin/wvRTF
+@bin bin/wvSummary
 bin/wvText
-bin/wvVersion
-bin/wvWare
+@bin bin/wvVersion
+@bin bin/wvWare
 bin/wvWml
 include/wv/
 include/wv/wv.h
