@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.36 2008/10/30 15:07:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2008/11/19 05:28:30 ajacoutot Exp $
 
 COMMENT=		Common Unix Printing System
 
 VERSION=		1.2.7
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		cups-${VERSION}p13
+PKGNAME=		cups-${VERSION}p14
 CATEGORIES=		print sysutils
-SHARED_LIBS=		cups		3.0 \
-			cupsimage	2.3
+
+SHARED_LIBS+=		cups		3.0
+# XXX ghostscript needs to dlopen() libcupsimage.so.2
+SHARED_LIBS+=		cupsimage	2.3
 
 HOMEPAGE=		http://www.cups.org/
 
@@ -100,6 +102,5 @@ post-install:
 	@sed s,y0y0y0,${LOCALBASE}, < ${FILESDIR}/${file} > \
 		${PREFIX}/sbin/${file}
 .endfor
-	@ln -s ${TRUEPREFIX}/bin/foomatic-rip ${PREFIX}/libexec/cups/filter/
 
 .include <bsd.port.mk>

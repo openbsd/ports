@@ -5,9 +5,14 @@ To start cups at boot time, add the following to
 /etc/rc.local:
 
 if [ -x ${PREFIX}/sbin/cupsd ]; then
-        echo -n ' cupsd';       ${PREFIX}/sbin/cupsd
+	echo -n ' cupsd'; ${PREFIX}/sbin/cupsd
 fi
 
 Starting cupsd will overwrite /etc/printcap. A backup copy of this file
 is saved as /etc/printcap.pre-cups by '${PREFIX}/sbin/cups-enable'
 and will be restored when you run '${PREFIX}/sbin/cups-disable'.
+
+If you want to use CUPS bundled PPD files (i.e. drivers), you'll need to
+install ghostscript.  Also if you want to print on non-PostScript
+printers, you will most probably want to install the foomatic-filters
+package which provides a universal filter script.

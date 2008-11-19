@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/10/30 13:26:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2008/11/19 05:28:31 ajacoutot Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS:/nonexistent:/sbin/nologin
@@ -54,7 +54,6 @@ libexec/cups/daemon/
 @bin libexec/cups/daemon/cups-polld
 libexec/cups/driver/
 libexec/cups/filter/
-libexec/cups/filter/foomatic-rip
 @bin libexec/cups/filter/gziptoany
 @bin libexec/cups/filter/hpgltops
 @bin libexec/cups/filter/imagetops
