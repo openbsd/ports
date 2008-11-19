@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.68 2008/11/18 22:31:11 steven Exp $
+# $OpenBSD: libtool,v 1.69 2008/11/19 21:11:17 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -29,7 +29,6 @@ package main;
 
 use subs qw(
 	create_symlinks
-	do_link
 	find_la
 	find_lib
 	generate_objlist
@@ -309,6 +308,122 @@ EOF
 ;
 }
 
+sub link
+{
+	my $self = shift;
+	my $ltprog = shift;
+	my $la = shift;
+	my $fname = shift;
+	my $odir = shift;
+	my $shared = shift;
+	my $objs = shift;
+	my $libs = shift;
+	my $libstofind = shift;
+	my $opts = shift;
+
+	Trace::debug {"creating link command for library (linked ",
+		($shared) ? "dynam" : "stat", "ically)\n"};
+	
+	my @libflags;
+	my @cmd;
+	my $ltdir = $main::ltdir;
+	my $dst = ($odir eq '.') ? "$ltdir/$fname" : "$odir/$ltdir/$fname";
+	mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
+
+	Trace::debug {"argvstring (pre resolve_la): @ARGV\n"};
+	my $argv = main::resolve_la_list(\@ARGV);
+	Trace::debug {"argvstring (post resolve_la): @$argv\n"};
+	my $orderedlibs = [];
+	$argv = main::parse_linkargs_list($argv, 0, $orderedlibs);
+	Trace::debug {"orderedlibs = @$orderedlibs\n"};
+	my $finalorderedlibs = main::reverse_zap_duplicates_ref($orderedlibs);
+	Trace::debug {"final orderedlibs = @$finalorderedlibs\n"};
+
+	# static linking
+	if (!$shared) {
+		Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
+		Trace::debug {"libfiles:\n", join("\n", (values %$libs)), "\n"};
+		@cmd = ('ar', 'cru', $dst);
+		push @cmd, @$objs if (@$objs);
+		foreach my $k (@$finalorderedlibs) {
+			unless (defined $libs->{$k}) {
+				Trace::debug {"library $k not found in \%libs\n"};
+				next;
+			}
+			my $a = $libs->{$k};
+			if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
+				# extract objects from archive
+				my $libfile = basename $a;
+				my $xdir = "$odir/$ltdir/${la}x/$libfile";
+				main::extract_archive($xdir, $a);
+				my @kobjs = main::get_objlist_from_archive($a);
+				map { $_ = "$xdir/$_"; } @kobjs;
+				push @libflags, @kobjs;
+			}
+		}
+		push @cmd, @libflags if (@libflags);
+		Exec->command(@cmd);
+		Exec->command('ranlib', $dst);
+		return;
+	}
+
+	# dynamic linking
+	my $symbolsfile;
+	if ($opts->{'export-symbols'}) {
+		$symbolsfile = $opts->{'export-symbols'};
+	} elsif ($opts->{'export-symbols-regex'}) {
+		$symbolsfile = "$odir/$ltdir/$la";
+		$symbolsfile =~ s/\.la$/.exp/;
+		main::get_symbollist($symbolsfile, $opts->{'export-symbols-regex'}, $objs);
+	}
+	foreach my $l (keys %$libstofind) {
+		my $libpath = main::find_lib($l);
+		$libs->{$l} = $libpath if ($libpath);
+	}
+
+	my @libfiles = values %$libs;
+	Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
+	Trace::debug {"libfiles:\n", join("\n", @libfiles), "\n"};
+
+	main::create_symlinks($ltdir, \@libfiles);
+	map { $_ = "$ltdir/". basename $_ } @libfiles;
+	Trace::debug {"symlinks to libfiles used for linking:\n", join("\n", @libfiles), "\n"};
+	my $prev_was_archive = 0;
+	my $libcounter = 0;
+	foreach my $k (@$finalorderedlibs) {
+		my $a = $libs->{$k} || die "ERROR: $k not found in \$libs";
+		if ($a =~ m/\.a$/) {
+			# don't make a -lfoo out of a static library
+			push @libflags, '-Wl,-whole-archive' unless $prev_was_archive;
+			push @libflags, $a;
+			if ($libcounter == @$finalorderedlibs - 1) {
+				push @libflags, '-Wl,-no-whole-archive';
+			}
+			$prev_was_archive = 1;
+		} else {
+			push @libflags, '-Wl,-no-whole-archive' if $prev_was_archive;
+			$prev_was_archive = 0;
+			my $lib = basename $a;
+			if ($lib =~ m/^lib(.*)\.so(\.\d+){2}/) {
+				$lib = $1;
+			} else {
+				say "warning: cannot derive -l flag from library filename, assuming hash key";
+				$lib = $k;
+			}
+			push @libflags, "-l$lib";
+		}
+		$libcounter++;
+	}
+
+	@cmd = ($ltprog);
+	push @cmd, $main::sharedflag, @main::picflags;
+	push @cmd, '-o', $dst;
+	push @cmd, @$argv;
+	push @cmd, @$objs if (@$objs);
+	push @cmd, "-L$ltdir", @libflags if (@libflags);
+	push @cmd, "-Wl,-retain-symbols-file,$symbolsfile" if ($symbolsfile);
+	Exec->command(@cmd);
+}
 
 package LoFile;
 our @ISA=(qw(LaLoFile));
@@ -521,7 +636,7 @@ my @valid_src = qw(asm c cc cpp cxx f s);
 my $cwd = getcwd();
 our $ltdir = '.libs';
 our @picflags = ('-fPIC', '-DPIC');
-my $sharedflag = '-shared';
+our $sharedflag = '-shared';
 my $instlibdir = '/usr/local/lib';
 my @libsearchdirs;
 $instlibdir = $ENV{'LIBDIR'} if defined $ENV{'LIBDIR'};
@@ -911,7 +1026,7 @@ if ($mode eq 'compile') {
 			$lainfo->{'library_names'} = $sharedlib;
 			$lainfo->{'library_names'} .= " $sharedlib_symlink"
 				if ($opts{'release'});
-			do_link($ofile, $sharedlib, $odir, 1, \@sobjs);
+			$lainfo->link($ltprog, $ofile, $sharedlib, $odir, 1, \@sobjs, $libs, $libstofind, \%opts);
 			Trace::debug {"sharedlib: $sharedlib\n"};
 			$lainfo->{'current'} = $current;
 			$lainfo->{'revision'} = $revision;
@@ -919,7 +1034,7 @@ if ($mode eq 'compile') {
 		}
 		if ($static) {
 			$lainfo->{'old_library'} = $staticlib;
-			do_link($ofile, $staticlib, $odir, 0, ($allpicobj) ? \@sobjs : \@objs);
+			$lainfo->link($ltprog, $ofile, $staticlib, $odir, 0, ($allpicobj) ? \@sobjs : \@objs, $libs, $libstofind, \%opts);
 			Trace::debug {"staticlib: $staticlib\n"};
 		}
 		$lainfo->{'installed'} = 'no';
@@ -1329,125 +1444,6 @@ sub process_deplibs
 		}
 	}
 	return $result;
-}
-
-# perform linker commands for libraries
-sub do_link
-{
-	my $la = shift;
-	my $fname = shift;
-	my $odir = shift;
-	my $shared = shift;
-	my $objs = shift;
-
-	Trace::debug {"creating link command for library (linked ",
-		($shared) ? "dynam" : "stat", "ically)\n"};
-	
-	my @libflags;
-	my @cmd;
-	my $dst = ($odir eq '.') ? "$ltdir/$fname" : "$odir/$ltdir/$fname";
-	mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
-
-	Trace::debug {"argvstring (pre resolve_la): @ARGV\n"};
-	my $argv = resolve_la_list(\@ARGV);
-	Trace::debug {"argvstring (post resolve_la): @$argv\n"};
-	my $orderedlibs = [];
-	$argv = parse_linkargs_list($argv, 0, $orderedlibs);
-	Trace::debug {"deplibs = @$deplibs\n"};
-	Trace::debug {"orderedlibs = @$orderedlibs\n"};
-	my $finalorderedlibs = reverse_zap_duplicates_ref($orderedlibs);
-	Trace::debug {"final orderedlibs = @$finalorderedlibs\n"};
-
-	# static linking
-	if (!$shared) {
-		Trace::debug {"dirs:\n", join("\n", (keys %$dirs)), "\n"};
-		Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
-		Trace::debug {"libfiles:\n", join("\n", (values %$libs)), "\n"};
-		@cmd = ('ar', 'cru', $dst);
-		push @cmd, @$objs if (@$objs);
-		foreach my $k (@$finalorderedlibs) {
-			unless (defined $libs->{$k}) {
-				Trace::debug {"library $k not found in \%libs\n"};
-				next;
-			}
-			my $a = $libs->{$k};
-			if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
-				# extract objects from archive
-				my $libfile = basename $a;
-				my $xdir = "$odir/$ltdir/${la}x/$libfile";
-				extract_archive($xdir, $a);
-				my @kobjs = get_objlist_from_archive($a);
-				map { $_ = "$xdir/$_"; } @kobjs;
-				push @libflags, @kobjs;
-			}
-		}
-		push @cmd, @libflags if (@libflags);
-		Exec->command(@cmd);
-		Exec->command('ranlib', $dst);
-		return;
-	}
-
-	# dynamic linking
-	my $symbolsfile;
-	if ($opts{'export-symbols'}) {
-		$symbolsfile = $opts{'export-symbols'};
-	} elsif ($opts{'export-symbols-regex'}) {
-		$symbolsfile = "$odir/$ltdir/$la";
-		$symbolsfile =~ s/\.la$/.exp/;
-		get_symbollist($symbolsfile, $opts{'export-symbols-regex'}, $objs);
-	}
-	foreach my $l (keys %$libstofind) {
-		my $libpath = find_lib($l);
-		$libs->{$l} = $libpath if ($libpath);
-	}
-
-	my @libfiles = values %$libs;
-	Trace::debug {"dirs:\n", join("\n", (keys %$dirs)), "\n"};
-	Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
-	Trace::debug {"libfiles:\n", join("\n", @libfiles), "\n"};
-
-	create_symlinks($ltdir, \@libfiles);
-	map { $_ = "$ltdir/". basename $_ } @libfiles;
-	Trace::debug {"symlinks to libfiles used for linking:\n", join("\n", @libfiles), "\n"};
-	my $prev_was_archive = 0;
-	my $libcounter = 0;
-	foreach my $k (@$finalorderedlibs) {
-		my $a = $libs->{$k} || die "ERROR: $k not found in \$libs";
-		if ($a =~ m/\.a$/) {
-			# don't make a -lfoo out of a static library
-			if (!$prev_was_archive) {
-				push @libflags, '-Wl,-whole-archive';
-			}
-			push @libflags, $a;
-			if ($libcounter == @$finalorderedlibs - 1) {
-				push @libflags, '-Wl,-no-whole-archive';
-			}
-			$prev_was_archive = 1;
-		} else {
-			if ($prev_was_archive) {
-				push @libflags, '-Wl,-no-whole-archive';
-			}
-			$prev_was_archive = 0;
-			my $lib = basename $a;
-			if ($lib =~ m/^lib(.*)\.so(\.\d+){2}/) {
-				$lib = $1;
-			} else {
-				say "warning: cannot derive -l flag from library filename, assuming hash key";
-				$lib = $k;
-			}
-			push @libflags, "-l$lib";
-		}
-		$libcounter++;
-	}
-
-	@cmd = ($ltprog);
-	push @cmd, $sharedflag, @picflags;
-	push @cmd, '-o', $dst;
-	push @cmd, @$argv;
-	push @cmd, @$objs if (@$objs);
-	push @cmd, "-L$ltdir", @libflags if (@libflags);
-	push @cmd, "-Wl,-retain-symbols-file,$symbolsfile" if ($symbolsfile);
-	Exec->command(@cmd);
 }
 
 # populate arrays of non-pic and pic objects and remove these from @ARGV
