@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/30 15:34:33 pirofti Exp $
+# $OpenBSD: Makefile,v 1.4 2008/11/19 14:36:36 pirofti Exp $
 
 COMMENT=	extracts the parse tree for an entire class or a method
 
-DISTNAME=	ParseTree-3.0.1
+DISTNAME=	ParseTree-3.0.2
 PKGNAME=	ruby-${DISTNAME:L}
 CATEGORIES=	devel
 
