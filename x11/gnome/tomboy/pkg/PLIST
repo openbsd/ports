@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/17 07:16:15 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/19 17:35:52 ajacoutot Exp $
 bin/tomboy
 bin/tomboy-panel
 lib/bonobo/
@@ -44,8 +44,6 @@ share/applications/tomboy.desktop
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/org.gnome.Tomboy.service
-share/gnome/
-share/gnome/help/
 share/gnome/help/tomboy/
 share/gnome/help/tomboy/C/
 share/gnome/help/tomboy/C/figures/
@@ -320,7 +318,6 @@ share/gnome/help/tomboy/uk/figures/tomboy-preferences-synchronization.png
 share/gnome/help/tomboy/uk/figures/tomboy-tools.png
 share/gnome/help/tomboy/uk/legal.xml
 share/gnome/help/tomboy/uk/tomboy.xml
-share/icons/hicolor/
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/tomboy.png
@@ -339,8 +336,6 @@ share/icons/hicolor/48x48/apps/tomboy.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/tomboy.svg
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/tomboy.mo
 share/locale/as/
 share/locale/as/LC_MESSAGES/
@@ -348,22 +343,14 @@ share/locale/as/LC_MESSAGES/tomboy.mo
 share/locale/be/LC_MESSAGES/tomboy.mo
 share/locale/be@latin/LC_MESSAGES/tomboy.mo
 share/locale/bg/LC_MESSAGES/tomboy.mo
-share/locale/bn/
-share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/tomboy.mo
-share/locale/bn_IN/
-share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/tomboy.mo
 share/locale/ca/LC_MESSAGES/tomboy.mo
 share/locale/cs/LC_MESSAGES/tomboy.mo
 share/locale/da/LC_MESSAGES/tomboy.mo
 share/locale/de/LC_MESSAGES/tomboy.mo
-share/locale/dz/
-share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/tomboy.mo
 share/locale/el/LC_MESSAGES/tomboy.mo
-share/locale/en_CA/
-share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/tomboy.mo
 share/locale/en_GB/LC_MESSAGES/tomboy.mo
 share/locale/es/LC_MESSAGES/tomboy.mo
@@ -372,52 +359,32 @@ share/locale/eu/LC_MESSAGES/tomboy.mo
 share/locale/fi/LC_MESSAGES/tomboy.mo
 share/locale/fr/LC_MESSAGES/tomboy.mo
 share/locale/gl/LC_MESSAGES/tomboy.mo
-share/locale/gu/
-share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/tomboy.mo
 share/locale/he/LC_MESSAGES/tomboy.mo
-share/locale/hi/
-share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/tomboy.mo
 share/locale/hu/LC_MESSAGES/tomboy.mo
-share/locale/is/
-share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/tomboy.mo
 share/locale/it/LC_MESSAGES/tomboy.mo
 share/locale/ja/LC_MESSAGES/tomboy.mo
 share/locale/kn/LC_MESSAGES/tomboy.mo
 share/locale/ko/LC_MESSAGES/tomboy.mo
-share/locale/ku/
-share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/tomboy.mo
 share/locale/lt/LC_MESSAGES/tomboy.mo
 share/locale/lv/LC_MESSAGES/tomboy.mo
 share/locale/mai/
 share/locale/mai/LC_MESSAGES/
 share/locale/mai/LC_MESSAGES/tomboy.mo
-share/locale/mk/
-share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/tomboy.mo
-share/locale/ml/
-share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/tomboy.mo
-share/locale/mr/
-share/locale/mr/LC_MESSAGES/
 share/locale/mr/LC_MESSAGES/tomboy.mo
 share/locale/nb/LC_MESSAGES/tomboy.mo
-share/locale/ne/
-share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/tomboy.mo
 share/locale/nl/LC_MESSAGES/tomboy.mo
 share/locale/nn/LC_MESSAGES/tomboy.mo
 share/locale/oc/
 share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/tomboy.mo
-share/locale/or/
-share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/tomboy.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/tomboy.mo
 share/locale/pl/LC_MESSAGES/tomboy.mo
 share/locale/pt/LC_MESSAGES/tomboy.mo
@@ -436,14 +403,10 @@ share/locale/sr@latin/
 share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/tomboy.mo
 share/locale/sv/LC_MESSAGES/tomboy.mo
-share/locale/ta/
-share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/tomboy.mo
 share/locale/te/
 share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/tomboy.mo
-share/locale/th/
-share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/tomboy.mo
 share/locale/tr/LC_MESSAGES/tomboy.mo
 share/locale/uk/LC_MESSAGES/tomboy.mo
@@ -465,9 +428,10 @@ share/omf/tomboy/tomboy-pt_BR.omf
 share/omf/tomboy/tomboy-ru.omf
 share/omf/tomboy/tomboy-sv.omf
 share/omf/tomboy/tomboy-uk.omf
-share/schemas/
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/tomboy/*.schemas > /dev/null
 share/schemas/tomboy/
 share/schemas/tomboy/tomboy.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/tomboy/*.schemas > /dev/null
 share/tomboy/
 share/tomboy/icons/
 share/tomboy/icons/hicolor/
@@ -506,8 +470,6 @@ share/tomboy/icons/hicolor/48x48/actions/notebook-new.png
 share/tomboy/icons/hicolor/scalable/
 share/tomboy/icons/hicolor/scalable/actions/
 share/tomboy/icons/hicolor/scalable/actions/notebook-new.svg
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/tomboy/*.schemas > /dev/null
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/tomboy/*.schemas > /dev/null
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
