@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:36:00 espie Exp $
-bin/gpa
+@comment $OpenBSD: PLIST,v 1.6 2008/11/19 23:15:45 jasper Exp $
+@bin bin/gpa
 @comment lib/charset.alias
 share/gpa/
 share/gpa/gpa_logo.ppm

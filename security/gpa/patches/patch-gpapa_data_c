@@ -1,0 +1,11 @@
+$OpenBSD: patch-gpapa_data_c,v 1.1 2008/11/19 23:15:45 jasper Exp $
+--- gpapa/data.c.orig	Thu Nov 20 00:12:10 2008
++++ gpapa/data.c	Thu Nov 20 00:12:25 2008
+@@ -21,6 +21,7 @@
+ #include <config.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <assert.h>
+ #include <errno.h>
+ #include <sys/types.h>
