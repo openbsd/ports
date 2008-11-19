@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2008/11/19 23:37:17 jasper Exp $
 
 COMMENT=	simple program for plotting 2d mathematical functions
 
 DISTNAME=	geg-1.0.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	math
 
 MASTER_SITES=	http://www.infolaunch.com/~daveb/ \

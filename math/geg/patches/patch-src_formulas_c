@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_formulas_c,v 1.1 2002/10/23 07:16:11 pvalchev Exp $
---- src/formulas.c.orig	Wed Oct 23 00:53:31 2002
-+++ src/formulas.c	Wed Oct 23 00:56:21 2002
-@@ -200,7 +200,7 @@ really_remove_event(gpointer data, gpoin
+$OpenBSD: patch-src_formulas_c,v 1.2 2008/11/19 23:37:17 jasper Exp $
+--- src/formulas.c.orig	Thu Feb  4 13:21:00 1999
++++ src/formulas.c	Thu Nov 20 00:35:46 2008
+@@ -7,6 +7,8 @@
+ #include <config.h>
+ #endif /* HAVE_CONFIG_H */
+ 
++#include <string.h>
++
+ #include "formulas.h"
+ #include "log.h"
+ #include "prefs.h"
+@@ -200,7 +202,7 @@ really_remove_event(gpointer data, gpointer user_data)
    gint i = 0;
    gchar *text;
  
