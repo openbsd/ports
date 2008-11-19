@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/11/12 19:26:38 kili Exp $
+@comment $OpenBSD: PLIST,v 1.16 2008/11/19 09:59:38 ajacoutot Exp $
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 @pkgpath print/ghostscript/gnu${FLAVOR_STRING},cups
 bin/bdftops
@@ -424,6 +424,7 @@ share/ghostscript/${VERSION}/doc/Xfonts.htm
 share/ghostscript/${VERSION}/doc/gs.css
 share/ghostscript/${VERSION}/doc/index.html
 share/ghostscript/${VERSION}/examples/
+@sample ${SYSCONFDIR}/cups/
 share/ghostscript/${VERSION}/examples/alphabet.ps
 share/ghostscript/${VERSION}/examples/annots.pdf
 share/ghostscript/${VERSION}/examples/chess.ps
@@ -433,6 +434,7 @@ share/ghostscript/${VERSION}/examples/escher.ps
 share/ghostscript/${VERSION}/examples/golfer.eps
 share/ghostscript/${VERSION}/examples/grayalph.ps
 share/ghostscript/${VERSION}/examples/pstoraster.convs
+@sample ${SYSCONFDIR}/cups/pstoraster.convs
 share/ghostscript/${VERSION}/examples/ridt91.eps
 share/ghostscript/${VERSION}/examples/snowflak.ps
 share/ghostscript/${VERSION}/examples/tiger.eps
