@@ -1,0 +1,11 @@
+$OpenBSD: patch-jutil_c,v 1.1 2008/11/19 23:48:52 sthen Exp $
+--- jutil.c.orig	Wed Nov 19 23:39:16 2008
++++ jutil.c	Wed Nov 19 23:40:01 2008
+@@ -37,6 +37,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <err.h>

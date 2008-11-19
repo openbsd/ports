@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/09/16 21:08:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2008/11/19 23:48:52 sthen Exp $
 
 COMMENT=	steganography detection tool
 DISTNAME=	stegdetect-0.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security graphics
 MASTER_SITES=	${HOMEPAGE}
 
