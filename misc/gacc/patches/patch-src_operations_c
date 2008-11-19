@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_operations_c,v 1.1 2008/11/19 23:29:13 sthen Exp $
+--- src/operations.c.orig	Wed Nov 19 23:08:01 2008
++++ src/operations.c	Wed Nov 19 23:09:01 2008
+@@ -23,6 +23,7 @@
+  *
+  */
+ 
++#include <string.h>
+ #include "structs.h"
+ #include "operations.h"
+ #include "categories.h"

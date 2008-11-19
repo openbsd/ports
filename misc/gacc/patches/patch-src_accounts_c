@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_accounts_c,v 1.1 2008/11/19 23:29:13 sthen Exp $
+--- src/accounts.c.orig	Wed Nov 19 23:07:31 2008
++++ src/accounts.c	Wed Nov 19 23:08:46 2008
+@@ -26,6 +26,7 @@
+ #include <config.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <sys/stat.h>
+ #include "structs.h"
+ #include "accounts.h"

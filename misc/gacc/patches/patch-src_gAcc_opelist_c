@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gAcc_opelist_c,v 1.1 2008/11/19 23:29:13 sthen Exp $
+--- src/gAcc_opelist.c.orig	Wed Nov 19 23:13:16 2008
++++ src/gAcc_opelist.c	Wed Nov 19 23:13:27 2008
+@@ -23,6 +23,7 @@
+ #include <config.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <gtk/gtk.h>
+ #include "gAcc_opelist.h"
+ #include "defines.h"

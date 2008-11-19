@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gAcc_editope_c,v 1.1 2008/11/19 23:29:13 sthen Exp $
+--- src/gAcc_editope.c.orig	Wed Nov 19 23:11:42 2008
++++ src/gAcc_editope.c	Wed Nov 19 23:11:53 2008
+@@ -23,6 +23,7 @@
+ #include <config.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <gtk/gtk.h>
+ #include "defines.h"
+ #include "structs.h" 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_acclists_c,v 1.1 2008/11/19 23:29:13 sthen Exp $
+--- src/acclists.c.orig	Wed Nov 19 23:07:26 2008
++++ src/acclists.c	Wed Nov 19 23:08:40 2008
+@@ -26,6 +26,7 @@
+ #include <config.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include "structs.h"
+ #include "acclists.h"
+ 

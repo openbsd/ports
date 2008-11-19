@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gAcc_grlst_c,v 1.1 2008/11/19 23:29:13 sthen Exp $
+--- src/gAcc_grlst.c.orig	Wed Nov 19 23:07:50 2008
++++ src/gAcc_grlst.c	Wed Nov 19 23:08:51 2008
+@@ -22,6 +22,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <gtk/gtk.h>
+ #include "acclists.h"
+ #include "structs.h"

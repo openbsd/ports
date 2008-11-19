@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 17:54:16 espie Exp $
-bin/gacc
+@comment $OpenBSD: PLIST,v 1.4 2008/11/19 23:29:13 sthen Exp $
+@bin bin/gacc
 @man man/man1/gacc.1
 share/examples/gacc/
 share/examples/gacc/HELP

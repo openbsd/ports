@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_oldversions_c,v 1.1 2008/11/19 23:29:13 sthen Exp $
+--- src/oldversions.c.orig	Wed Nov 19 23:07:56 2008
++++ src/oldversions.c	Wed Nov 19 23:08:53 2008
+@@ -25,6 +25,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include "structs.h"
+ #include "oldversions.h"
+ #include "fileaccess.h"

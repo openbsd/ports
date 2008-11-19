@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_fileaccess_c,v 1.1 2008/11/19 23:29:13 sthen Exp $
+--- src/fileaccess.c.orig	Wed Nov 19 23:07:38 2008
++++ src/fileaccess.c	Wed Nov 19 23:08:49 2008
+@@ -26,6 +26,7 @@
+ #include <config.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <math.h>
+ #include "fileaccess.h"
+ #include "structs.h"
