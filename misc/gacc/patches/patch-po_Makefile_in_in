@@ -1,6 +1,6 @@
---- po/Makefile.in.in.orig	Thu Jan 18 10:10:46 2001
-+++ po/Makefile.in.in	Thu Jan 18 10:20:20 2001
-@@ -69,7 +69,7 @@
+--- po/Makefile.in.in.orig	Wed Jan 10 17:53:23 2001
++++ po/Makefile.in.in	Wed Nov 19 23:25:09 2008
+@@ -69,7 +69,7 @@ INSTOBJEXT = @INSTOBJEXT@
  	$(MSGFMT) -o $@ $<
  
  .po.gmo:
@@ -9,7 +9,7 @@
  	  && rm -f $$file && $(GMSGFMT) -o $$file $<
  
  .po.cat:
-@@ -111,9 +111,9 @@
+@@ -111,9 +111,9 @@ install-data: install-data-@USE_NLS@
  install-data-no: all
  install-data-yes: all
  	if test -r "$(MKINSTALLDIRS)"; then \
@@ -21,7 +21,7 @@
  	fi
  	@catalogs='$(CATALOGS)'; \
  	for cat in $$catalogs; do \
-@@ -123,7 +123,7 @@
+@@ -123,7 +123,7 @@ install-data-yes: all
  	    *)     destdir=$(localedir);; \
  	  esac; \
  	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
@@ -30,7 +30,7 @@
  	  if test -r "$(MKINSTALLDIRS)"; then \
  	    $(MKINSTALLDIRS) $$dir; \
  	  else \
-@@ -153,12 +153,12 @@
+@@ -153,12 +153,12 @@ install-data-yes: all
  	done
  	if test "$(PACKAGE)" = "gettext"; then \
  	  if test -r "$(MKINSTALLDIRS)"; then \
@@ -46,7 +46,7 @@
  	else \
  	  : ; \
  	fi
-@@ -171,12 +171,12 @@
+@@ -171,12 +171,12 @@ uninstall:
  	for cat in $$catalogs; do \
  	  cat=`basename $$cat`; \
  	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \

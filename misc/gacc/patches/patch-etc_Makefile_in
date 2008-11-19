@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	Thu Jan 18 10:02:38 2001
-+++ etc/Makefile.in	Thu Jan 18 10:04:30 2001
-@@ -104,14 +104,13 @@
+--- etc/Makefile.in.orig	Wed Jan 10 18:34:24 2001
++++ etc/Makefile.in	Wed Nov 19 23:25:09 2008
+@@ -104,14 +104,13 @@ USE_NLS = @USE_NLS@
  VERSION = @VERSION@
  l = @l@
  
@@ -17,7 +17,7 @@
  
  DIST_COMMON =  Makefile.am Makefile.in
  
-@@ -149,24 +148,6 @@
+@@ -149,24 +148,6 @@ uninstall-dataDATA:
  	  rm -f $(DESTDIR)$(datadir)/$$p; \
  	done
  
