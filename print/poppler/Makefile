@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2008/10/28 12:59:55 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2008/11/19 18:27:16 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -7,9 +7,9 @@ COMMENT-qt4=	qt4 interface to PDF rendering library
 V=		0.10.0
 DISTNAME=	poppler-$V
 CATEGORIES=	print
-PKGNAME-main=	poppler-$V
-FULLPKGNAME-qt=	poppler-qt-$V
-FULLPKGNAME-qt4=poppler-qt4-$V
+PKGNAME-main=	poppler-$Vp0
+FULLPKGNAME-qt=	poppler-qt-$Vp0
+FULLPKGNAME-qt4=poppler-qt4-$Vp0
 
 SHARED_LIBS +=	poppler              4.0      # .2.0
 SHARED_LIBS +=	poppler-glib         4.0      # .2.0
@@ -61,7 +61,7 @@ MODULES+=	x11/qt4
 QT4INC=		-I${MODQT4_INCDIR}
 .endif
 
-WANTLIB=	expat freetype fontconfig jpeg m pixman-1 z
+WANTLIB=	expat freetype fontconfig jpeg m z
 
 MODULES+=	devel/gettext
 
@@ -71,9 +71,9 @@ LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
 LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} poppler::print/poppler
 LIB_DEPENDS-qt4=QtCore,QtGui,QtXml::x11/qt4 poppler::print/poppler
 
-WANTLIB-main=	${WANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr \
+WANTLIB-main=	${WANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr gio-2.0 \
 		glib-2.0 gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 \
+		pangoft2-1.0 pixman-1 \
 		X11 Xau Xcomposite Xdamage Xdmcp Xrender cairo glitz pcre png
 WANTLIB-qt=	${WANTLIB} iconv xml2
 WANTLIB-qt4=	${WANTLIB} iconv xml2
