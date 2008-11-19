@@ -1,17 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/22 19:43:40 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/19 00:27:28 simon Exp $
 ${P5SITE}/DBIx/
 ${P5SITE}/DBIx/DataModel/
 ${P5SITE}/DBIx/DataModel.pm
-${P5SITE}/DBIx/DataModel/AbstractTable.pm
 ${P5SITE}/DBIx/DataModel/Base.pm
-${P5SITE}/DBIx/DataModel/Iterator.pm
+${P5SITE}/DBIx/DataModel/Doc/
+${P5SITE}/DBIx/DataModel/Doc/Cookbook.pod
+${P5SITE}/DBIx/DataModel/Doc/Delta_1.0.pod
+${P5SITE}/DBIx/DataModel/Doc/Design.pod
+${P5SITE}/DBIx/DataModel/Doc/Glossary.pod
+${P5SITE}/DBIx/DataModel/Doc/Internals.pod
+${P5SITE}/DBIx/DataModel/Doc/Misc.pod
+${P5SITE}/DBIx/DataModel/Doc/Quickstart.pod
+${P5SITE}/DBIx/DataModel/Doc/Reference.pod
+${P5SITE}/DBIx/DataModel/Schema/
 ${P5SITE}/DBIx/DataModel/Schema.pm
+${P5SITE}/DBIx/DataModel/Schema/Generator.pm
+${P5SITE}/DBIx/DataModel/Source.pm
+${P5SITE}/DBIx/DataModel/Statement/
+${P5SITE}/DBIx/DataModel/Statement.pm
+${P5SITE}/DBIx/DataModel/Statement/JDBC.pm
 ${P5SITE}/DBIx/DataModel/Table.pm
 ${P5SITE}/DBIx/DataModel/View.pm
 @man man/man3p/DBIx::DataModel.3p
-@man man/man3p/DBIx::DataModel::AbstractTable.3p
 @man man/man3p/DBIx::DataModel::Base.3p
-@man man/man3p/DBIx::DataModel::Iterator.3p
+@man man/man3p/DBIx::DataModel::Doc::Cookbook.3p
+@man man/man3p/DBIx::DataModel::Doc::Delta_1.0.3p
+@man man/man3p/DBIx::DataModel::Doc::Design.3p
+@man man/man3p/DBIx::DataModel::Doc::Glossary.3p
+@man man/man3p/DBIx::DataModel::Doc::Internals.3p
+@man man/man3p/DBIx::DataModel::Doc::Misc.3p
+@man man/man3p/DBIx::DataModel::Doc::Quickstart.3p
+@man man/man3p/DBIx::DataModel::Doc::Reference.3p
 @man man/man3p/DBIx::DataModel::Schema.3p
+@man man/man3p/DBIx::DataModel::Schema::Generator.3p
+@man man/man3p/DBIx::DataModel::Source.3p
+@man man/man3p/DBIx::DataModel::Statement.3p
+@man man/man3p/DBIx::DataModel::Statement::JDBC.3p
 @man man/man3p/DBIx::DataModel::Table.3p
 @man man/man3p/DBIx::DataModel::View.3p
