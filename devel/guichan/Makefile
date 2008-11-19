@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/08/22 11:38:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/19 17:26:20 sthen Exp $
 
 COMMENT=	C++ GUI library designed for games
 
 DISTNAME=	guichan-0.8.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel games
 
 HOMEPAGE=	http://guichan.sourceforge.net/
@@ -21,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://guichan.googlecode.com/files/
 
-WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender iconv m usbhid
+WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender iconv m sndio usbhid
 
 MODULES=	converters/libiconv
 
