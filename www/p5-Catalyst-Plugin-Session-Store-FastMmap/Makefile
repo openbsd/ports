@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/11/19 00:33:01 simon Exp $
 
 COMMENT= 	FastMmap storage backend for session data
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-Session-Store-FastMmap-0.02
+DISTNAME=	Catalyst-Plugin-Session-Store-FastMmap-0.05
 CATEGORIES=	www
 
 # Artistic + GPL
