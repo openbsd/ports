@@ -1,4 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/09/26 12:01:43 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2008/11/19 08:06:03 jasper Exp $
+lib/gtk-2.0/modules/libcanberra-gtk-module.so
+@lib lib/libcanberra-gtk.so.${LIBcanberra-gtk_VERSION}
 @lib lib/libcanberra.so.${LIBcanberra_VERSION}
 lib/libcanberra/libcanberra-gstreamer.so
 lib/libcanberra/libcanberra-multi.so
