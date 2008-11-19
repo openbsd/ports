@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2008/11/16 21:19:23 kili Exp $
+# $OpenBSD: Makefile,v 1.41 2008/11/19 14:08:27 ajacoutot Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME=	gimp-2.6.2
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	gimp-2.0	262.0	\
 		gimpbase-2.0	262.0	\
 		gimpcolor-2.0	262.0	\
@@ -35,7 +36,8 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		wmf.>=6,wmflite.>=6::graphics/libwmf \
 		poppler.>=3,poppler-glib.>=3::print/poppler \
 		gegl-0.0::graphics/gegl \
-		:py-gtk2-*:x11/py-gtk2
+		:py-gtk2-*:x11/py-gtk2 \
+		gnomevfs-2.>=2000::x11/gnome/vfs2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -51,7 +53,7 @@ WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
 		pthread ncurses xml2 z cairo dbus-1 glitz \
 		Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr \
 		expat Xcomposite Xdamage gthread-2.0 pcre \
-		ORBit-2 bz2 croco-0.6 crypto gconf-2 gio-2.0 gnomevfs-2 \
+		ORBit-2 bz2 croco-0.6 crypto gconf-2 gio-2.0 \
 		gsf-1 rsvg-2 ssl util babl-0.0
 
 MODULES=	devel/gettext \
