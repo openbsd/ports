@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/16 21:47:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/11/19 15:21:39 jasper Exp $
 
 COMMENT=	.NET language binding for the GTK+2 toolkit
 
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/gtk-sharp2${MAJOR}/
+MASTER_SITES=	ftp://ftp.novell.com/pub/mono/sources/gtk-sharp2${MAJOR}/ \
+		http://ftp.novell.com/pub/mono/sources/gtk-sharp2${MAJOR}/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
