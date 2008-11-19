@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/16 09:46:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/11/19 16:24:54 jasper Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
 GNOME_VERSION=	0.12.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
-# GPL/LGPL
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,6 +17,7 @@ MODULES=	x11/gnome lang/mono devel/gettext
 
 USE_X11=	Yes
 DESKTOP_FILES=	Yes
+MODGNOME_HELP_FILES=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
@@ -35,8 +36,6 @@ RUN_DEPENDS=	::lang/mono \
 		:scrollkeeper-*:textproc/scrollkeeper \
 		:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
 
-USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-schemas-install \
 		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/tomboy
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
