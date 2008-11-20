@@ -1,0 +1,12 @@
+$OpenBSD: patch-acinclude_m4,v 1.1 2008/11/20 13:31:36 okan Exp $
+--- acinclude.m4.orig	Thu Feb  9 16:27:57 2006
++++ acinclude.m4	Tue Nov  4 07:58:42 2008
+@@ -360,7 +360,7 @@ if test "$use_imagemagick" = "yes"; then
+     if test "$use_imagemagick" = "no"; then
+       AC_MSG_WARN(*** Cannot find ImageMagick include files:  Building w/o ImageMagick support. ***)
+     else
+-      AC_CHECK_LIB([Magick], [WriteImage], AC_DEFINE(HAVE_IMAGEMAGICK, 1, [Imagemagick image library]), use_imagemagick="no")
++      AC_SEARCH_LIBS([WriteImage],[Magick MagickCore], AC_DEFINE(HAVE_IMAGEMAGICK, 1, [Imagemagick image library]), use_imagemagick="no")
+       if test "$use_imagemagick" = "no"; then
+         AC_MSG_WARN(*** Cannot find ImageMagick library files:  Building w/o ImageMagick support. ***)
+       fi

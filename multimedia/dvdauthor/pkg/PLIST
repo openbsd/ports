@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/12/08 06:21:30 jakemsr Exp $
-bin/dvdauthor
+@comment $OpenBSD: PLIST,v 1.4 2008/11/20 13:35:11 okan Exp $
+@bin bin/dvdauthor
 bin/dvddirdel
-bin/dvdunauthor
-bin/mpeg2desc
-bin/spumux
-bin/spuunmux
+@bin bin/dvdunauthor
+@bin bin/mpeg2desc
+@bin bin/spumux
+@bin bin/spuunmux
 @man man/man1/dvdauthor.1
 @man man/man1/spumux.1
 share/doc/dvdauthor/
