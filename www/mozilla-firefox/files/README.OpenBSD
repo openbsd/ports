@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.7 2008/07/26 16:23:32 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.8 2008/11/20 23:41:32 martynas Exp $
 
 If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is
@@ -54,3 +54,20 @@ Double-click on any cipher to toggle its state. For example, to
 enable TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, double-click on
 security.ssl3.ecdhe_ecdsa_aes128_sha until its boolean entry in the
 Value column changes to true.
+
+Using CUPS and LPR for printing
+
+Since version 3, Firefox uses standard printing dialog from gtk+2.
+In order to use CUPS for printing, you will need to install cups
+subpackage of gtk+2, i.e.:
+
+# pkg_add gtk+2-cups
+
+Gtk+2 doesn't try to use LPR printing backend by default.  In order
+to use LPR for printing, create ~/.gtkrc-2.0 with the following
+contents:
+
+gtk-print-backends = "file,lpr,cups"
+
+If you want to make this change available for all users, use
+/etc/gtkrc instead of ~/.gtkrc-2.0.
