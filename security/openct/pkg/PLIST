@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/04 21:58:54 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/20 23:06:10 jasper Exp $
 %%SHARED%%
-bin/openct-tool
+@bin bin/openct-tool
 include/openct/
 include/openct/apdu.h
 include/openct/buffer.h
@@ -24,9 +24,9 @@ lib/libopenctapi.la
 lib/pkgconfig/
 lib/pkgconfig/libopenct.pc
 @man man/man1/openct-tool.1
-sbin/ifdhandler
-sbin/ifdproxy
-sbin/openct-control
+@bin sbin/ifdhandler
+@bin sbin/ifdproxy
+@bin sbin/openct-control
 share/examples/openct/
 share/examples/openct/openct.conf
 @mode 644

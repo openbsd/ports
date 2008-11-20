@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2008/11/20 23:06:10 jasper Exp $
 
 COMMENT=	drivers for several smart card readers
 
 DISTNAME=	openct-0.6.6
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	security
 SHARED_LIBS=	openct	1.0
 

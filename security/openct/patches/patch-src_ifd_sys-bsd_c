@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_ifd_sys-bsd_c,v 1.1 2005/11/24 12:23:04 markus Exp $
+$OpenBSD: patch-src_ifd_sys-bsd_c,v 1.2 2008/11/20 23:06:10 jasper Exp $
 --- src/ifd/sys-bsd.c.orig	Sun Jun 12 11:35:17 2005
-+++ src/ifd/sys-bsd.c	Wed Nov 23 12:14:56 2005
-@@ -37,8 +37,10 @@ int ifd_sysdep_device_type(const char *n
++++ src/ifd/sys-bsd.c	Fri Nov 21 00:02:47 2008
+@@ -18,6 +18,7 @@
+ #include <sys/ioctl.h>
+ #include <sys/poll.h>
+ #include <string.h>
++#include <stdlib.h>
+ #include <stdio.h>
+ #include <signal.h>
+ #include <fcntl.h>
+@@ -37,8 +38,10 @@ int ifd_sysdep_device_type(const char *name)
  
  	if (!strncmp(name, "/dev/ugen", 9)) {
  		ifd_debug(1, "BSD: returning IFD_DEVICE_TYPE_USB");
@@ -12,7 +20,16 @@ $OpenBSD: patch-src_ifd_sys-bsd_c,v 1.1 2005/11/24 12:23:04 markus Exp $
  		return IFD_DEVICE_TYPE_USB;
  	}
  
-@@ -329,7 +331,19 @@ int ifd_sysdep_usb_release_interface(ifd
+@@ -90,7 +93,7 @@ int open_ep(char *name, int interface, int endpoint, i
+ 	return 0;
+ }
+ 
+-close_ep(int interface, int endpoint)
++void close_ep(int interface, int endpoint)
+ {
+ 	if (interfaces[interface][endpoint].ep_fd) {
+ 		close(interfaces[interface][endpoint].ep_fd);
+@@ -329,7 +332,19 @@ int ifd_sysdep_usb_release_interface(ifd_device_t * de
  
  int ifd_sysdep_usb_open(const char *device, int flags)
  {
