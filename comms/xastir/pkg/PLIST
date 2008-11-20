@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/28 17:19:37 jason Exp $
-bin/callpass
-bin/xastir
-bin/xastir_udp_client
+@comment $OpenBSD: PLIST,v 1.2 2008/11/20 13:45:03 okan Exp $
+@bin/callpass
+@bin/xastir
+@bin/xastir_udp_client
 lib/xastir/
 lib/xastir/Coordinate.pm
 lib/xastir/Xastir_tigerpoly.py

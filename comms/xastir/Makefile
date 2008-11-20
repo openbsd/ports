@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/11/20 13:31:36 okan Exp $
+# $OpenBSD: Makefile,v 1.9 2008/11/20 13:45:03 okan Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
 DISTNAME=	xastir-1.8.2
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=    	comms hamradio geo
 
 HOMEPAGE=	http://www.xastir.org/
