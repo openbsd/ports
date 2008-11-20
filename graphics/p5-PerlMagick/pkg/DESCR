@@ -1,3 +1,0 @@
-PerlMagick is an objected-oriented Perl interface to ImageMagick. Use
-the module to read, manipulate, or write an image or image sequence from
-within a Perl script.
