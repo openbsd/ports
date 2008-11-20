@@ -1,12 +1,13 @@
-$OpenBSD: patch-Makefile,v 1.4 2006/10/18 22:02:39 wilfried Exp $
---- Makefile.orig	Fri Feb 24 17:45:51 2006
-+++ Makefile	Wed Oct 18 23:58:14 2006
-@@ -1,16 +1,15 @@
+$OpenBSD: patch-Makefile,v 1.5 2008/11/20 07:49:51 wilfried Exp $
+--- Makefile.orig	Thu Nov 13 02:31:49 2008
++++ Makefile	Thu Nov 20 08:40:53 2008
+@@ -1,5 +1,4 @@
  TGT=noip2
 -CC=gcc
+ PKG=noip-2.1.tgz
  
  PREFIX=/usr/local
- CONFDIR=${PREFIX}/etc
+@@ -7,11 +6,11 @@ CONFDIR=${PREFIX}/etc
  BINDIR=${PREFIX}/bin
  
  # these defines are for Linux
@@ -21,12 +22,12 @@ $OpenBSD: patch-Makefile,v 1.4 2006/10/18 22:02:39 wilfried Exp $
  
  # for early BSD systems without getifaddrs(), uncomment the next line
  #ARCH=bsd
-@@ -21,7 +20,7 @@ ARCH=linux
+@@ -22,7 +21,7 @@ ARCH=linux
  # ARCH=sun
  
  ${TGT}: Makefile ${TGT}.c 
--	${CC} -Wall -g -O2 -D${ARCH} -DPREFIX=\"${PREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
-+	${CC} ${CFLAGS} -D${ARCH} ${TGT}.c -o ${TGT} ${LIBS}
+-	${CC} -Wall -g -D${ARCH} -DPREFIX=\"${PREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
++	${CC} -D${ARCH} -DPREFIX=\"${PREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
  
  install: ${TGT} 
  	if [ ! -d ${BINDIR} ]; then mkdir -p ${BINDIR};fi

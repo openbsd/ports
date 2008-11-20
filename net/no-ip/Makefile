@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2007/10/23 08:27:14 wilfried Exp $
+# $OpenBSD: Makefile,v 1.13 2008/11/20 07:49:51 wilfried Exp $
 
 COMMENT=		No-IP.com Dynamic DNS client
 
-V=			2.1.7
+V=			2.1.8
 DISTNAME=		noip-${V}
 PKGNAME=		no-ip-${V}
 CATEGORIES=		net
@@ -25,7 +25,7 @@ NO_REGRESS=		Yes
 ALL_TARGET=		noip2
 
 do-configure:
-	@perl -pi -e 's|_SYSCONFDIR_|${SYSCONFDIR}|g' ${WRKSRC}/noip2.c
+	@${SUBST_CMD} ${WRKSRC}/noip2.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/noip2 ${PREFIX}/sbin

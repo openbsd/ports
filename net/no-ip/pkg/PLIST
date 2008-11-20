@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/10/14 14:11:51 xsa Exp $
-sbin/noip2
+@comment $OpenBSD: PLIST,v 1.6 2008/11/20 07:49:51 wilfried Exp $
+@bin sbin/noip2
 share/doc/no-ip/
 share/doc/no-ip/README.FIRST
 share/examples/no-ip/
