@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/15 07:59:13 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/20 23:37:25 jasper Exp $
 %%SHARED%%
-bin/ots
+@bin bin/ots
 include/libots-1/
 include/libots-1/ots/
 include/libots-1/ots/libots.h

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:59:38 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2008/11/20 23:37:25 jasper Exp $
 
 COMMENT=	open source tool for summarizing texts
 DISTNAME=	ots-0.4.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	ots-1	4.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libots/}
 
 HOMEPAGE=	http://libots.sourceforge.net/
 
-# GPL
+# GPLv2+
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,7 @@ LIB_DEPENDS=	glib-2.0.>=400.8::devel/glib2 \
 		popt.>=0.3::devel/popt \
 		xml2.>=9.0::textproc/libxml
 
-WANTLIB=	c m z
+WANTLIB=	c m pcre z
 
 USE_LIBTOOL=Yes
 CONFIGURE_STYLE=gnu
