@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2008/09/24 13:47:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.222 2008/11/20 13:30:54 okan Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -139,7 +139,6 @@
      SUBDIR += p5-Image-MetaData-JPEG
      SUBDIR += p5-Image-Size
      SUBDIR += p5-Imager
-     SUBDIR += p5-PerlMagick
      SUBDIR += p5-SVG
      SUBDIR += p5-SVG-Graph
      SUBDIR += png
