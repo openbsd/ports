@@ -2,7 +2,7 @@
 
 # sample script to use with fetch-makefile: check known distfiles checksums
 
-# $OpenBSD: check-all,v 1.1 2000/03/04 17:58:32 espie Exp $
+# $OpenBSD: check-all,v 1.2 2008/11/20 14:06:56 sthen Exp $
 #
 # Copyright (c) 2000 Marc Espie.
 # 
@@ -28,14 +28,14 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 if [ -f "$1" ] 
 then
-	case `${CIPHER} <$1` in
-	${CKSUM}) 
+	if echo "${CHECK}" | cksum -qc
+	then
 		echo "Ok: $1"
-		exit 0;;
-	*) 
+		exit 0
+	else
 		echo "Bad checksum: $1" 
-		exit 1;;
-	esac
+		exit 1
+	fi
 fi
 echo "Missing: $1"
 exit 1
