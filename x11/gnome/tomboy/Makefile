@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/11/19 22:22:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/11/20 01:41:34 sthen Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
@@ -29,7 +29,7 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png xml2 z gio-2.0
 
-BUILD_DEPENDS=	::x11/gnome/doc-utils
+BUILD_DEPENDS=	::x11/gnome/doc-utils \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	::lang/mono \
 		::devel/mono-addins \
