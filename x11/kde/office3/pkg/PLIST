@@ -1,28 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.26 2007/12/15 23:47:41 ajacoutot Exp $
-bin/karbon
-bin/kchart
-bin/kexi
+@comment $OpenBSD: PLIST,v 1.27 2008/11/20 13:40:48 okan Exp $
+@bin bin/karbon
+@bin bin/kchart
+@bin bin/kexi
 bin/kexi_add_column
 bin/kexi_add_column_gui
 bin/kexi_delete_column
 bin/kexi_delete_column_gui
-bin/kformula
-bin/kivio
-bin/koconverter
-bin/koshell
-bin/kplato
+@bin bin/kformula
+@bin bin/kivio
+@bin bin/koconverter
+@bin bin/koshell
+@bin bin/kplato
 bin/kprconverter.pl
-bin/kpresenter
-bin/krita
-bin/krossrunner
-bin/kspread
-bin/ksqlite
-bin/ksqlite2
+@bin bin/kpresenter
+@bin bin/krita
+@bin bin/krossrunner
+@bin bin/kspread
+@bin bin/ksqlite
+@bin bin/ksqlite2
 bin/ksqlite2to3
-bin/kthesaurus
-bin/kudesigner
-bin/kugar
-bin/kword
+@bin bin/kthesaurus
+@bin bin/kudesigner
+@bin bin/kugar
+@bin bin/kword
 include/KDChartAxisParams.h
 include/KDChartAxisParamsWrapper.h
 include/KDChartCustomBox.h

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2008/01/04 17:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2008/11/20 13:40:48 okan Exp $
 
 COMMENT=		office suite for KDE
 
@@ -8,7 +8,7 @@ VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
 
 DISTNAME=	koffice-${VERSION}
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 
 MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
 PATCHFILES=		koffice-xpdf-CVE-2007-3387.diff:0 \
@@ -81,7 +81,7 @@ LIB_DEPENDS=	kdecore.>=4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kpart
 		python2.5:python-2.5.*:lang/python/2.5 \
 		art_lgpl_2.>=5::graphics/libart \
 		wv2::converters/wv2 \
-		Magick,Wand::graphics/ImageMagick \
+		MagickCore.>=1,MagickWand.>=1::graphics/ImageMagick \
 		jbig::graphics/jbigkit \
 		mysqlclient::databases/mysql \
 		ruby::lang/ruby \
@@ -99,8 +99,7 @@ WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
 		soundserver_idl stdc++ tiff util vorbis vorbisenc vorbisfile \
 		xml2 xslt z Xt termcap Xi fontconfig crypto readline ssl \
 		IlmImf Half Imath Iex idn GL GLU poppler \
-		Xau Xdmcp cairo expat fam glitz rpcsvc
-
+		Xau Xdmcp expat fam rpcsvc IlmThread gio-2.0 wmflite
 
 
 CONFIGURE_ARGS+= --with-pgsqlincdir=${LOCALBASE}/include/postgresql
