@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/07 22:01:00 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/20 13:33:00 okan Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
@@ -6,7 +6,6 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/.require_paths
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ChangeLog
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README-Mac-OSX.txt
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README.html
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README.txt
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/build_tarball.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/comtasks.html
@@ -61,8 +60,10 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/color_histogram.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/color_reset.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/colorize.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/colors.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/compose_mask.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/composite.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/composite_layers.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/composite_tiled.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/contrast.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/crop.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/crop_with_gravity.rb
@@ -97,6 +98,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/group.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/hatchfill.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/image.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Apple.miff
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Ballerina.jpg
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Ballerina3.jpg
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Button_0.gif
@@ -141,12 +143,15 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Flower_Hat.jpg
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Gold_Statue.jpg
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Hot_Air_Balloons.jpg
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Hot_Air_Balloons_H.jpg
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Leaf.miff
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/No.wmf
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Polynesia.jpg
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Red_Rocks.jpg
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Rocks_On_Beach.miff
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Shorts.jpg
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Snake.wmf
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Violin.jpg
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/Yellow_Rose.miff
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/big-duck.gif
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/duck.gif
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/duck0.gif
@@ -173,10 +178,9 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/smile.miff
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/images/spin.gif
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/implode.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/level.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/level_colors.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/line.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/line01.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/map.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/map_f.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/mask.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/matte_fill_to_border.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/matte_floodfill.rb
@@ -215,6 +219,8 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/rect01.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/rect02.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/rectangle.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/reduce_noise.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/remap.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/remap_images.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/resize_to_fill.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/resize_to_fit.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/roll.rb

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/14 23:51:46 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2008/11/20 13:33:00 okan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Ruby interface to ImageMagick
 
-DISTNAME=	rmagick-2.2.0
-PKGNAME=	ruby-${DISTNAME}p0
+DISTNAME=	rmagick-2.7.1
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://rmagick.rubyforge.org/
@@ -20,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=rmagick/}
 
 MODULES=	lang/ruby
 
-LIB_DEPENDS=	Magick,Wand::graphics/ImageMagick \
+LIB_DEPENDS=	MagickCore.>=1,MagickWand.>=1::graphics/ImageMagick \
 		ruby::lang/ruby
 
 WANTLIB=	ICE SM X11 Xext Xt bz2 c expat fontconfig freetype \
