@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2008/06/27 22:10:14 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2008/11/20 13:36:37 okan Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -10,8 +10,8 @@ NOT_FOR_ARCHS=m68k m88k vax
 
 V=		2008-05-R1
 DISTNAME=	kismet-${V}
-PKGNAME-main=	kismet-${V:S,-,,g}
-PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}
+PKGNAME-main=	kismet-${V:S,-,,g}p0
+PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}p0
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.kismetwireless.net/
@@ -56,11 +56,9 @@ WANTLIB-main=		c m ncurses panel pcap stdc++
 .if !${FLAVOR:L:Mno_gpsmap}
 USE_X11=		Yes
 MULTI_PACKAGES+=	-gpsmap
-WANTLIB-gpsmap=		c ICE SM X11 Xext Xt bz2 expat fontconfig freetype \
-			jasper jbig jpeg lcms m png pthread stdc++ \
-			tiff wmflite xml2 z
+WANTLIB-gpsmap=		c expat freetype m pthread stdc++ z
 WANTLIB-main+=		z
-LIB_DEPENDS-gpsmap=	Magick.>=11,Wand.>=11::graphics/ImageMagick \
+LIB_DEPENDS-gpsmap=	MagickCore.>=1,MagickWand.>=1::graphics/ImageMagick \
 			gmp.>=6::devel/gmp
 .else
 CONFIGURE_ARGS+=	--disable-gpsmap
