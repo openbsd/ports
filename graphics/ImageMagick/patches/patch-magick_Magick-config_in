@@ -1,0 +1,12 @@
+$OpenBSD: patch-magick_Magick-config_in,v 1.1 2008/11/20 13:29:56 okan Exp $
+--- magick/Magick-config.in.orig	Wed Nov  5 11:50:55 2008
++++ magick/Magick-config.in	Wed Nov  5 11:51:15 2008
+@@ -52,7 +52,7 @@ while test $# -gt 0; do
+       echo '@MAGICK_LDFLAGS@'
+       ;;
+     --libs)
+-      echo "-L${libdir} -lMagickCore"
++      echo "-L${libdir} -lMagickCore -lMagickWand"
+       ;;
+     *)
+       echo "${usage}" 1>&2

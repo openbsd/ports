@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.101 2008/05/02 19:52:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2008/11/20 13:29:56 okan Exp $
 
 COMMENT=		image processing tools
 
-VER=			6.3.6
-DASHVER=		10
+VER=			6.4.5
+DASHVER=		3
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
-PKGNAME=		ImageMagick-${VER}.${DASHVER}p0
-SHARED_LIBS=		Magick++	12.1	\
-			Magick		12.1	\
-			Wand		12.1
+PKGNAME=		ImageMagick-${VER}.${DASHVER}
+
+SHARED_LIBS +=		Magick++	13.0	# .1.0
+SHARED_LIBS +=		MagickCore	1.0	# .1.0
+SHARED_LIBS +=		MagickWand	1.0	# .1.0
 
 CATEGORIES=		graphics
 
@@ -24,6 +25,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c jpeg m z
 
 LIB_DEPENDS=		bz2.>=10::archivers/bzip2 \
@@ -35,60 +37,57 @@ LIB_DEPENDS=		bz2.>=10::archivers/bzip2 \
 
 RUN_DEPENDS=		:netpbm-*:graphics/netpbm
 BUILD_DEPENDS=		:netpbm-*:graphics/netpbm
-REGRESS_DEPENDS= 	:p5-PerlMagick-${VER}.${DASHVER}:graphics/p5-PerlMagick
 
 USE_LIBTOOL=		Yes
-SEPARATE_BUILD=		concurrent
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.61
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-quantum-depth=16 \
-			--without-dot \
 			--without-dps \
 			--without-fpx \
 			--without-gvc \
 			--without-modules \
 			--without-openexr \
 			--without-threads \
-			--without-perl \
+			--with-perl=/usr/bin/perl \
 			--without-rsvg \
+			--with-ltdl-include=${LOCALBASE}/include \
+			--with-ltdl-lib=${LOCALBASE}/lib \
 			--disable-ltdl-install
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
-			LDFLAGS="-L${WRKBUILD}/magick/.libs -L${WRKBUILD}/wand/.libs -L${LOCALBASE}/lib" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_path_LaunchDelegate=no
 
 FLAVORS=		no_x11
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
-BUILD_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu,no_x11
 RUN_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu,no_x11
-CONFIGURE_ARGS+=	--without-x --without-ttf --without-freetype \
-			--without-wmf
+BUILD_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu,no_x11
 CONFIGURE_ENV+=		ac_cv_path_FIGDecodeDelegate=no
+CONFIGURE_ARGS+=	--without-x \
+			--without-freetype \
+			--without-wmf
 .else
-BUILD_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu
-RUN_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu
+WANTLIB+=		ICE SM X11 Xau Xdmcp Xext Xt expat fontconfig \
+			freetype iconv
 USE_X11=		Yes
-RUN_DEPENDS+=		:transfig-*:print/transfig
-BUILD_DEPENDS+=		:transfig-*:print/transfig
-WANTLIB+=		ICE SM X11 Xau Xdmcp Xext Xt expat fontconfig freetype iconv
-CONFIGURE_ARGS+=	--with-wmf
 LIB_DEPENDS+=		wmflite.>=7::graphics/libwmf \
 			xml2.>=9::textproc/libxml
+RUN_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu
+RUN_DEPENDS+=		:transfig-*:print/transfig
+BUILD_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu
+BUILD_DEPENDS+=		:transfig-*:print/transfig
+CONFIGURE_ARGS+=	--with-wmf
 .endif
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-${DASHVER}$//}
 
-post-extract:
-	@rm -f ${WRKDIST}/utilities/*.1
-
 post-install:
-	@perl -pi -e s#'-L${WRKBUILD}/(magick|wand)/.libs '#''#g \
+	@perl -pi -e s,'-L${WRKBUILD}/(magick|wand)/.libs','',g \
 		${PREFIX}/bin/Magick-config
-.for f in Magick++ Magick Wand
-	@perl -pi -e s#'-L${WRKBUILD}/(magick|wand)/.libs '#''#g \
+.for f in Magick++ MagickCore MagickWand
+	@perl -pi -e s,'-L${WRKBUILD}/(magick|wand)/.libs','',g \
 		${PREFIX}/lib/lib${f}.la
 .endfor
 

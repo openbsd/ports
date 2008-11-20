@@ -1,0 +1,38 @@
+$OpenBSD: patch-configure,v 1.3 2008/11/20 13:29:56 okan Exp $
+--- configure.orig	Sat Nov  1 11:22:55 2008
++++ configure	Mon Nov  3 11:59:44 2008
+@@ -20807,6 +20807,7 @@ with_ltdl='no'
+ if test "$libtool_build_shared_libs" != 'no'; then
+     with_ltdl='yes'
+ fi
++with_ltdl='no'
+ 
+  if test "$with_ltdl" != 'no'; then
+   WITH_LTDL_TRUE=
+@@ -42157,7 +42158,7 @@ fi
+ #
+ 
+ # Subdirectory under lib to place ImageMagick lib files
+-LIBRARY_RELATIVE_PATH="${PACKAGE_NAME}-${PACKAGE_VERSION}"
++LIBRARY_RELATIVE_PATH="${PACKAGE_NAME}"
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define LIBRARY_RELATIVE_PATH "$LIBRARY_RELATIVE_PATH"
+@@ -42261,7 +42262,7 @@ _ACEOF
+ 
+ #
+ # Path to ImageMagick documentation files
+-DOCUMENTATION_RELATIVE_PATH="${PACKAGE_NAME}-${PACKAGE_VERSION}"
++DOCUMENTATION_RELATIVE_PATH="${PACKAGE_NAME}"
+ DOCUMENTATION_PATH="${DATA_DIR}/doc/${DOCUMENTATION_RELATIVE_PATH}"
+ DEFINE_DOCUMENTATION_PATH="${DATA_DIR}/doc/${DOCUMENTATION_RELATIVE_PATH}/"
+ case "${build_os}" in
+@@ -42278,7 +42279,7 @@ _ACEOF
+ 
+ #
+ # Path to ImageMagick share files
+-SHARE_RELATIVE_PATH="${PACKAGE_NAME}-${PACKAGE_VERSION}"
++SHARE_RELATIVE_PATH="${PACKAGE_NAME}"
+ SHARE_PATH="${DATA_DIR}/${SHARE_RELATIVE_PATH}"
+ DEFINE_SHARE_PATH="${DATA_DIR}/${SHARE_RELATIVE_PATH}/"
+ case "${build_os}" in
