@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/03 11:17:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2008/11/20 13:32:17 okan Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.46
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	graphics
 
 MAINTAINER=	Benoit Chesneau <benoitc@metavers.net>
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	::devel/boost
 
 LIB_DEPENDS=	gc.>=3::devel/boehm-gc \
 		popt::devel/popt \
-		Magick,Magick++,Wand::graphics/ImageMagick \
+		MagickCore,Magick++,MagickWand::graphics/ImageMagick \
 		lcms::graphics/lcms \
 		png::graphics/png \
 		xslt::textproc/libxslt \
@@ -57,7 +57,8 @@ CONFIGURE_ARGS=		--with-popt --mandir=${PREFIX}/man \
 			--without-gnome-vfs --enable-lcms
 
 CPPFLAGS=		-I${LOCALBASE}/include -I${X11BASE}/include \
-			-I${LOCALBASE}/include/libpng
+			-I${LOCALBASE}/include/libpng \
+			-I${LOCALBASE}/include/ImageMagick
 
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
