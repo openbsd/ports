@@ -1,15 +1,16 @@
-$OpenBSD: patch-capplets_about-me_gnome-about-me_glade,v 1.1 2008/05/12 19:40:17 jasper Exp $
+$OpenBSD: patch-capplets_about-me_gnome-about-me_glade,v 1.2 2008/11/21 17:02:49 jasper Exp $
 
 XXX:
 Changing the password doesn't work like it should at the moment.
 Hide the button for now.
 
---- capplets/about-me/gnome-about-me.glade.orig	Mon May 12 12:42:33 2008
-+++ capplets/about-me/gnome-about-me.glade	Mon May 12 12:43:30 2008
-@@ -214,21 +214,6 @@
+--- capplets/about-me/gnome-about-me.glade.orig	Tue Nov 11 20:59:01 2008
++++ capplets/about-me/gnome-about-me.glade	Tue Nov 11 20:59:40 2008
+@@ -200,22 +200,6 @@
+ 		      <property name="fill">False</property>
  		    </packing>
  		  </child>
- 
+-
 -		  <child>
 -		    <widget class="GtkButton" id="password">
 -		      <property name="visible">True</property>

@@ -1,7 +1,7 @@
-$OpenBSD: patch-capplets_about-me_gnome-about-me_c,v 1.1 2008/01/23 21:47:46 jasper Exp $
---- capplets/about-me/gnome-about-me.c.orig	Wed Jan 23 12:41:18 2008
-+++ capplets/about-me/gnome-about-me.c	Wed Jan 23 12:55:18 2008
-@@ -34,6 +34,7 @@
+$OpenBSD: patch-capplets_about-me_gnome-about-me_c,v 1.2 2008/11/21 17:02:49 jasper Exp $
+--- capplets/about-me/gnome-about-me.c.orig	Tue Nov 11 20:57:09 2008
++++ capplets/about-me/gnome-about-me.c	Tue Nov 11 20:58:39 2008
+@@ -32,6 +32,7 @@
  #include <glade/glade.h>
  #include <pwd.h>
  #include <unistd.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-capplets_about-me_gnome-about-me_c,v 1.1 2008/01/23 21:47:46 jas
  #include <libebook/e-book.h>
  
  #include "e-image-chooser.h"
-@@ -291,12 +292,17 @@ static char *
+@@ -330,12 +331,17 @@ static char *
  get_user_login (void)
  {
  	char buf[LINE_MAX * 4];
@@ -17,7 +17,7 @@ $OpenBSD: patch-capplets_about-me_gnome-about-me_c,v 1.1 2008/01/23 21:47:46 jas
 +	struct passwd *pwd;
  
  	int i;
- #if __sun
+ #if defined(__sun) && !defined(_POSIX_PTHREAD_SEMANTICS)
  	i = getpwuid_r (getuid (), &pwd, buf, sizeof (buf));
  	return (i != 0) ? g_strdup (pwd.pw_name) : NULL;
 +#elif __OpenBSD__

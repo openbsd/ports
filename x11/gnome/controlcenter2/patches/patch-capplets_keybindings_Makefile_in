@@ -1,7 +1,7 @@
-$OpenBSD: patch-capplets_keybindings_Makefile_in,v 1.1 2008/04/15 15:07:03 jasper Exp $
---- capplets/keybindings/Makefile.in.orig	Tue Apr 15 16:52:39 2008
-+++ capplets/keybindings/Makefile.in	Tue Apr 15 16:54:04 2008
-@@ -349,7 +349,7 @@ desktop_DATA = $(Desktop_in_files:.desktop.in=.desktop
+$OpenBSD: patch-capplets_keybindings_Makefile_in,v 1.2 2008/11/21 17:02:49 jasper Exp $
+--- capplets/keybindings/Makefile.in.orig	Tue Nov 11 21:00:06 2008
++++ capplets/keybindings/Makefile.in	Tue Nov 11 21:00:18 2008
+@@ -327,7 +327,7 @@ desktop_DATA = $(Desktop_in_files:.desktop.in=.desktop
  xmldir = $(pkgdatadir)/keybindings
  xml_in_files = 00-multimedia-key.xml.in 01-desktop-key.xml.in
  xml_DATA = $(xml_in_files:.xml.in=.xml)

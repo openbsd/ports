@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.21 2008/07/14 12:24:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2008/11/21 17:02:50 jasper Exp $
 @conflict control-center-1*
 %%SHARED%%
 @bin bin/gnome-about-me
-@bin bin/gnome-accessibility-keyboard-properties
 @bin bin/gnome-appearance-properties
 bin/gnome-at-mobility
 @bin bin/gnome-at-properties
@@ -10,54 +9,29 @@ bin/gnome-at-visual
 @bin bin/gnome-control-center
 @bin bin/gnome-default-applications-properties
 @bin bin/gnome-display-properties
-@bin bin/gnome-font-viewer
 @bin bin/gnome-keybinding-properties
 @bin bin/gnome-keyboard-properties
 @bin bin/gnome-mouse-properties
 @bin bin/gnome-network-preferences
 @bin bin/gnome-sound-properties
-@bin bin/gnome-theme-thumbnailer
-@bin bin/gnome-thumbnail-font
 @bin bin/gnome-typing-monitor
 @bin bin/gnome-window-properties
-@bin bin/themus-theme-applier
-include/gnome-settings-daemon-2.0/
-include/gnome-settings-daemon-2.0/gnome-settings-daemon/
-include/gnome-settings-daemon-2.0/gnome-settings-daemon/gnome-settings-client.h
 include/gnome-window-settings-2.0/
 include/gnome-window-settings-2.0/gnome-window-manager.h
 include/gnome-window-settings-2.0/gnome-wm-manager.h
-lib/gnome-vfs-2.0/
-lib/gnome-vfs-2.0/modules/
-lib/gnome-vfs-2.0/modules/libfont-method.a
-lib/gnome-vfs-2.0/modules/libfont-method.la
-lib/gnome-vfs-2.0/modules/libfont-method.so
-lib/gnome-vfs-2.0/modules/libtheme-method.a
-lib/gnome-vfs-2.0/modules/libtheme-method.la
-lib/gnome-vfs-2.0/modules/libtheme-method.so
 lib/libgnome-window-settings.a
 lib/libgnome-window-settings.la
-lib/nautilus/
-lib/nautilus/extensions-1.0/
-lib/nautilus/extensions-1.0/libnautilus-fontilus.a
-lib/nautilus/extensions-1.0/libnautilus-fontilus.la
-lib/nautilus/extensions-1.0/libnautilus-themus.a
-lib/nautilus/extensions-1.0/libnautilus-themus.la
 lib/pkgconfig/gnome-keybindings.pc
-lib/pkgconfig/gnome-settings-daemon.pc
 lib/pkgconfig/gnome-window-settings-2.0.pc
 lib/window-manager-settings/
 lib/window-manager-settings/libmetacity.a
 lib/window-manager-settings/libmetacity.la
 lib/window-manager-settings/libmetacity.so
-@bin libexec/gnome-settings-daemon
-share/applications/accessibility-keyboard.desktop
 share/applications/at-properties.desktop
 share/applications/default-applications.desktop
 share/applications/display-properties.desktop
 share/applications/gnome-about-me.desktop
 share/applications/gnome-appearance-properties.desktop
-share/applications/gnome-font-viewer.desktop
 share/applications/gnome-network-preferences.desktop
 share/applications/gnome-settings-mouse.desktop
 share/applications/gnome-settings-sound.desktop
@@ -65,58 +39,38 @@ share/applications/gnome-theme-installer.desktop
 share/applications/gnomecc.desktop
 share/applications/keybinding.desktop
 share/applications/keyboard.desktop
-share/applications/themus-theme-applier.desktop
 share/applications/window-properties.desktop
-share/dbus-1/
-share/dbus-1/services/
-share/dbus-1/services/org.gnome.SettingsDaemon.service
 share/desktop-directories/
-share/desktop-directories/font-method.directory
 share/desktop-directories/gnomecc.directory
-share/desktop-directories/theme-method.directory
 share/examples/controlcenter2/
 share/examples/controlcenter2/gnome/
-share/examples/controlcenter2/gnome/gnome-vfs-2.0/
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/
-share/examples/controlcenter2/gnome/gnome-vfs-2.0/modules/
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/
-share/examples/controlcenter2/gnome/gnome-vfs-2.0/modules/font-method.conf
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/font-method.conf
-share/examples/controlcenter2/gnome/gnome-vfs-2.0/modules/theme-method.conf
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/theme-method.conf
 share/examples/controlcenter2/gnome/xdg/
 @sample ${SYSCONFDIR}/xdg/
+share/examples/controlcenter2/gnome/xdg/autostart/
+share/examples/controlcenter2/gnome/xdg/autostart/gnome-at-session.desktop
 share/examples/controlcenter2/gnome/xdg/menus/
 @sample ${SYSCONFDIR}/xdg/menus/
 share/examples/controlcenter2/gnome/xdg/menus/gnomecc.menu
 @sample ${SYSCONFDIR}/xdg/menus/gnomecc.menu
 share/gnome-control-center/
+share/gnome-control-center/default-apps/
+share/gnome-control-center/default-apps/gnome-default-applications.xml
 share/gnome-control-center/glade/
-share/gnome-control-center/glade/acme.glade
 share/gnome-control-center/glade/appearance.glade
-share/gnome-control-center/glade/apply-font.glade
 share/gnome-control-center/glade/at-enable-dialog.glade
+share/gnome-control-center/glade/display-capplet.glade
 share/gnome-control-center/glade/gnome-about-me.glade
-share/gnome-control-center/glade/gnome-accessibility-keyboard-properties.glade
 share/gnome-control-center/glade/gnome-default-applications-properties.glade
 share/gnome-control-center/glade/gnome-keybinding-properties.glade
 share/gnome-control-center/glade/gnome-keyboard-properties.glade
 share/gnome-control-center/glade/gnome-mouse-properties.glade
 share/gnome-control-center/glade/gnome-network-preferences.glade
 share/gnome-control-center/glade/gnome-window-properties.glade
-share/gnome-control-center/glade/modmap-dialog.glade
 share/gnome-control-center/glade/sound-properties.glade
-share/gnome-control-center/gnome-default-applications.xml
 share/gnome-control-center/keybindings/
 share/gnome-control-center/keybindings/00-multimedia-key.xml
 share/gnome-control-center/keybindings/01-desktop-key.xml
 share/gnome-control-center/pixmaps/
-share/gnome-control-center/pixmaps/accessibility-keyboard-bouncekey.png
-share/gnome-control-center/pixmaps/accessibility-keyboard-mousekey.png
-share/gnome-control-center/pixmaps/accessibility-keyboard-slowkey.png
-share/gnome-control-center/pixmaps/accessibility-keyboard-stickykey.png
-share/gnome-control-center/pixmaps/accessibility-keyboard-togglekey.png
-share/gnome-control-center/pixmaps/acme-eject.png
 share/gnome-control-center/pixmaps/at-startup.png
 share/gnome-control-center/pixmaps/at-support.png
 share/gnome-control-center/pixmaps/bar-disabled.png
@@ -130,34 +84,17 @@ share/gnome-control-center/pixmaps/gnome-about-me-lock-open.png
 share/gnome-control-center/pixmaps/gnome-about-me-lock.png
 share/gnome-control-center/pixmaps/gtk-theme-thumbnailing.png
 share/gnome-control-center/pixmaps/icon-theme-thumbnailing.png
-share/gnome-control-center/pixmaps/keyboard-bell.png
-share/gnome-control-center/pixmaps/keyboard-cursor.png
-share/gnome-control-center/pixmaps/keyboard-repeat.png
-share/gnome-control-center/pixmaps/keyboard-volume.png
 share/gnome-control-center/pixmaps/mouse-cursor-normal-large.png
 share/gnome-control-center/pixmaps/mouse-cursor-normal.png
 share/gnome-control-center/pixmaps/mouse-cursor-white-large.png
 share/gnome-control-center/pixmaps/mouse-cursor-white.png
-share/gnome-control-center/pixmaps/mouse-left.png
-share/gnome-control-center/pixmaps/mouse-right.png
 share/gnome-control-center/pixmaps/ocean-stripes.png
-share/gnome-control-center/pixmaps/stop.png
 share/gnome-control-center/pixmaps/subpixel-bgr.png
 share/gnome-control-center/pixmaps/subpixel-rgb.png
 share/gnome-control-center/pixmaps/subpixel-vbgr.png
 share/gnome-control-center/pixmaps/subpixel-vrgb.png
 share/gnome-control-center/pixmaps/theme-thumbnailing.png
-share/gnome-control-center/pixmaps/visual-bell.png
 share/gnome-control-center/pixmaps/window-theme-thumbnailing.png
-share/gnome-control-center/xrdb/
-share/gnome-control-center/xrdb/Editres.ad
-share/gnome-control-center/xrdb/Emacs.ad
-share/gnome-control-center/xrdb/General.ad
-share/gnome-control-center/xrdb/Motif.ad
-share/gnome-control-center/xrdb/Tk.ad
-share/gnome-control-center/xrdb/Xaw.ad
-share/gnome/autostart/
-share/gnome/autostart/gnome-at-session.desktop
 share/gnome/cursor-fonts/
 share/gnome/cursor-fonts/cursor-large-white.pcf
 share/gnome/cursor-fonts/cursor-large.pcf
@@ -187,12 +124,16 @@ share/gnome/help/control-center/es/
 share/gnome/help/control-center/es/control-center.xml
 share/gnome/help/control-center/fr/
 share/gnome/help/control-center/fr/control-center.xml
+share/gnome/help/control-center/it/
+share/gnome/help/control-center/it/control-center.xml
 share/gnome/help/control-center/ja/
 share/gnome/help/control-center/ja/control-center.xml
 share/gnome/help/control-center/oc/
 share/gnome/help/control-center/oc/control-center.xml
 share/gnome/help/control-center/pa/
 share/gnome/help/control-center/pa/control-center.xml
+share/gnome/help/control-center/pl/
+share/gnome/help/control-center/pl/control-center.xml
 share/gnome/help/control-center/pt/
 share/gnome/help/control-center/pt/control-center.xml
 share/gnome/help/control-center/pt_BR/
@@ -211,24 +152,31 @@ share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gnome-display-properties.png
 share/icons/hicolor/16x16/apps/gnome-network-preferences.png
+share/icons/hicolor/16x16/apps/gnome-settings-default-applications.png
 share/icons/hicolor/16x16/apps/gnome-sound-properties.png
 share/icons/hicolor/22x22/
 share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gnome-display-properties.png
 share/icons/hicolor/22x22/apps/gnome-network-preferences.png
+share/icons/hicolor/22x22/apps/gnome-settings-default-applications.png
 share/icons/hicolor/22x22/apps/gnome-sound-properties.png
 share/icons/hicolor/24x24/
 share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gnome-display-properties.png
 share/icons/hicolor/24x24/apps/gnome-network-preferences.png
+share/icons/hicolor/24x24/apps/gnome-settings-default-applications.png
 share/icons/hicolor/24x24/apps/gnome-sound-properties.png
 share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gnome-display-properties.png
 share/icons/hicolor/32x32/apps/gnome-network-preferences.png
+share/icons/hicolor/32x32/apps/gnome-settings-default-applications.png
 share/icons/hicolor/32x32/apps/gnome-sound-properties.png
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/gnome-network-preferences.png
+share/icons/hicolor/48x48/apps/gnome-settings-default-applications.png
+share/icons/hicolor/48x48/apps/gnome-sound-properties.png
 share/icons/hicolor/48x48/apps/typing-monitor.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
@@ -239,6 +187,9 @@ share/icons/hicolor/scalable/apps/typing-monitor.svg
 share/locale/af/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/be@latin/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -274,6 +225,7 @@ share/locale/is/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ka/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/kn/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -307,7 +259,9 @@ share/locale/sk/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/sr/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/sr@Latn/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/te/
@@ -316,12 +270,6 @@ share/locale/te/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/uz/
-share/locale/uz/LC_MESSAGES/
-share/locale/uz/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/uz@cyrillic/
-share/locale/uz@cyrillic/LC_MESSAGES/
-share/locale/uz@cyrillic/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/xh/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -340,15 +288,19 @@ share/mime/application/x-gnome-theme-package.xml
 @comment share/mime/mime.cache
 share/mime/packages/gnome-theme-package.xml
 @comment share/mime/subclasses
+@comment share/mime/treemagic
+@comment share/mime/types
 share/omf/control-center/
 share/omf/control-center/control-center-C.omf
 share/omf/control-center/control-center-ca.omf
 share/omf/control-center/control-center-en_GB.omf
 share/omf/control-center/control-center-es.omf
 share/omf/control-center/control-center-fr.omf
+share/omf/control-center/control-center-it.omf
 share/omf/control-center/control-center-ja.omf
 share/omf/control-center/control-center-oc.omf
 share/omf/control-center/control-center-pa.omf
+share/omf/control-center/control-center-pl.omf
 share/omf/control-center/control-center-pt.omf
 share/omf/control-center/control-center-pt_BR.omf
 share/omf/control-center/control-center-ru.omf
@@ -357,14 +309,10 @@ share/omf/control-center/control-center-uk.omf
 share/omf/control-center/control-center-vi.omf
 share/omf/control-center/control-center-zh_CN.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/control-center2/*.schemas > /dev/null
+share/pkgconfig/
+share/pkgconfig/gnome-default-applications.pc
 share/schemas/control-center2/
-share/schemas/control-center2/apps_gnome_settings_daemon_default_editor.schemas
-share/schemas/control-center2/apps_gnome_settings_daemon_keybindings.schemas
-share/schemas/control-center2/apps_gnome_settings_daemon_screensaver.schemas
 share/schemas/control-center2/control-center.schemas
-share/schemas/control-center2/desktop_gnome_font_rendering.schemas
-share/schemas/control-center2/fontilus.schemas
-share/schemas/control-center2/themus.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/control-center2/*.schemas > /dev/null
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
@@ -374,3 +322,4 @@ share/schemas/control-center2/themus.schemas
 @unexec %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+
