@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_icons_Makefile_in,v 1.1 2008/11/21 17:23:43 jasper Exp $
+
+Make sure icons are installed in the correct directory.
+
+--- data/icons/Makefile.in.orig	Thu Oct 30 20:47:38 2008
++++ data/icons/Makefile.in	Thu Oct 30 20:49:31 2008
+@@ -14,7 +14,7 @@
+ 
+ @SET_MAKE@
+ VPATH = @srcdir@
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(datadir)/
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd

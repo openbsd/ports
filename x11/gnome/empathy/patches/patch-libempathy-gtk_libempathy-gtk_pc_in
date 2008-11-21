@@ -1,0 +1,11 @@
+$OpenBSD: patch-libempathy-gtk_libempathy-gtk_pc_in,v 1.1 2008/11/21 17:23:43 jasper Exp $
+--- libempathy-gtk/libempathy-gtk.pc.in.orig	Tue Nov 18 19:18:49 2008
++++ libempathy-gtk/libempathy-gtk.pc.in	Tue Nov 18 19:19:24 2008
+@@ -5,7 +5,6 @@ includedir=@includedir@
+ 
+ Name: libempathy-gtk
+ Description:  Empathy interface library
+-Requires: pkg-config >= 0.21
+ Requires.private: glib-2.0, gobject-2.0, gtk+-2.0, libglade-2.0, libmissioncontrol, libempathy
+ Version: @VERSION@
+ Libs: -L${libdir} -lempathy-gtk
