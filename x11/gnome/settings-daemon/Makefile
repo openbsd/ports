@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/11 22:22:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/21 18:39:58 ajacoutot Exp $
 
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		2.24.0
+PKGNAME=		${DISTNAME}p0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -45,7 +46,8 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/control
                         --disable-hal \
                         --disable-alsa \
                         --enable-esd \
-                        --enable-gstreamer
+                        --enable-gstreamer \
+			--disable-pulseaudio
 
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
