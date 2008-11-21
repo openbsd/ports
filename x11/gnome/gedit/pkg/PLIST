@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/06/24 20:34:07 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.10 2008/11/21 17:37:38 jasper Exp $
 @bin bin/gedit
-@bin bin/gnome-text-editor
+bin/gnome-text-editor
 include/gedit-2.20/
 include/gedit-2.20/gedit/
 include/gedit-2.20/gedit/gedit-app.h
@@ -51,7 +51,8 @@ lib/gedit-2/plugins/externaltools/manager.pyo
 lib/gedit-2/plugins/externaltools/outputpanel.py
 lib/gedit-2/plugins/externaltools/outputpanel.pyc
 lib/gedit-2/plugins/externaltools/outputpanel.pyo
-lib/gedit-2/plugins/externaltools/tools.glade
+lib/gedit-2/plugins/externaltools/outputpanel.ui
+lib/gedit-2/plugins/externaltools/tools.ui
 lib/gedit-2/plugins/filebrowser.gedit-plugin
 lib/gedit-2/plugins/indent.gedit-plugin
 lib/gedit-2/plugins/libchangecase.la
@@ -128,7 +129,7 @@ lib/gedit-2/plugins/snippets/WindowHelper.pyo
 lib/gedit-2/plugins/snippets/__init__.py
 lib/gedit-2/plugins/snippets/__init__.pyc
 lib/gedit-2/plugins/snippets/__init__.pyo
-lib/gedit-2/plugins/snippets/snippets.glade
+lib/gedit-2/plugins/snippets/snippets.ui
 lib/gedit-2/plugins/sort.gedit-plugin
 lib/gedit-2/plugins/spell.gedit-plugin
 lib/gedit-2/plugins/taglist.gedit-plugin
@@ -139,24 +140,18 @@ libexec/gedit-2/gedit-bugreport.sh
 @man man/man1/gedit.1
 share/applications/gedit.desktop
 share/gedit-2/
-share/gedit-2/glade/
-share/gedit-2/glade/docinfo.glade2
-share/gedit-2/glade/gedit-encodings-dialog.glade
-share/gedit-2/glade/gedit-open-location-dialog.glade
-share/gedit-2/glade/gedit-preferences-dialog.glade
-share/gedit-2/glade/gedit-print-preferences.glade
-share/gedit-2/glade/gedit-search-dialog.glade
-share/gedit-2/glade/languages-dialog.glade2
-share/gedit-2/glade/sort.glade2
-share/gedit-2/glade/spell-checker.glade2
-share/gedit-2/glade/time.glade2
 share/gedit-2/icons/
 share/gedit-2/icons/gedit-plugin.png
 share/gedit-2/logo/
 share/gedit-2/logo/gedit-logo.png
 share/gedit-2/plugins/
+share/gedit-2/plugins/changecase/
+share/gedit-2/plugins/docinfo/
+share/gedit-2/plugins/docinfo/docinfo.ui
 share/gedit-2/plugins/filebrowser/
 share/gedit-2/plugins/filebrowser/gedit-file-browser-widget-ui.xml
+share/gedit-2/plugins/indent/
+share/gedit-2/plugins/sample/
 share/gedit-2/plugins/snippets/
 share/gedit-2/plugins/snippets/c++.xml
 share/gedit-2/plugins/snippets/c.xml
@@ -179,6 +174,13 @@ share/gedit-2/plugins/snippets/sh.xml
 share/gedit-2/plugins/snippets/snippets.xml
 share/gedit-2/plugins/snippets/tcl.xml
 share/gedit-2/plugins/snippets/xml.xml
+share/gedit-2/plugins/sort/
+share/gedit-2/plugins/sort/sort.ui
+share/gedit-2/plugins/spell/
+share/gedit-2/plugins/spell/languages-dialog.ui
+share/gedit-2/plugins/spell/spell-checker.ui
+share/gedit-2/plugins/time/
+share/gedit-2/plugins/time/time.ui
 share/gedit-2/plugins/tools/
 share/gedit-2/plugins/tools/build
 share/gedit-2/plugins/tools/open-terminal-here
@@ -190,6 +192,11 @@ share/gedit-2/taglist/Latex.tags.gz
 share/gedit-2/taglist/XSLT.tags.gz
 share/gedit-2/taglist/XUL.tags.gz
 share/gedit-2/ui/
+share/gedit-2/ui/gedit-encodings-dialog.ui
+share/gedit-2/ui/gedit-open-location-dialog.ui
+share/gedit-2/ui/gedit-preferences-dialog.ui
+share/gedit-2/ui/gedit-print-preferences.ui
+share/gedit-2/ui/gedit-search-dialog.ui
 share/gedit-2/ui/gedit-ui.xml
 share/gnome/help/gedit/
 share/gnome/help/gedit/C/
@@ -212,6 +219,16 @@ share/gnome/help/gedit/bg/figures/gedit_recent_files_menu_icon.png
 share/gnome/help/gedit/bg/figures/gedit_window.png
 share/gnome/help/gedit/bg/gedit.xml
 share/gnome/help/gedit/bg/legal.xml
+share/gnome/help/gedit/da/
+share/gnome/help/gedit/da/figures/
+share/gnome/help/gedit/da/figures/gedit_format_bold.png
+share/gnome/help/gedit/da/figures/gedit_format_italic.png
+share/gnome/help/gedit/da/figures/gedit_format_strikethrough.png
+share/gnome/help/gedit/da/figures/gedit_format_underline.png
+share/gnome/help/gedit/da/figures/gedit_recent_files_menu_icon.png
+share/gnome/help/gedit/da/figures/gedit_window.png
+share/gnome/help/gedit/da/gedit.xml
+share/gnome/help/gedit/da/legal.xml
 share/gnome/help/gedit/de/
 share/gnome/help/gedit/de/figures/
 share/gnome/help/gedit/de/figures/gedit_format_bold.png
@@ -238,6 +255,16 @@ share/gnome/help/gedit/eu/figures/gedit_recent_files_menu_icon.png
 share/gnome/help/gedit/eu/figures/gedit_window.png
 share/gnome/help/gedit/eu/gedit.xml
 share/gnome/help/gedit/eu/legal.xml
+share/gnome/help/gedit/fi/
+share/gnome/help/gedit/fi/figures/
+share/gnome/help/gedit/fi/figures/gedit_format_bold.png
+share/gnome/help/gedit/fi/figures/gedit_format_italic.png
+share/gnome/help/gedit/fi/figures/gedit_format_strikethrough.png
+share/gnome/help/gedit/fi/figures/gedit_format_underline.png
+share/gnome/help/gedit/fi/figures/gedit_recent_files_menu_icon.png
+share/gnome/help/gedit/fi/figures/gedit_window.png
+share/gnome/help/gedit/fi/gedit.xml
+share/gnome/help/gedit/fi/legal.xml
 share/gnome/help/gedit/fr/
 share/gnome/help/gedit/fr/figures/
 share/gnome/help/gedit/fr/figures/gedit_format_bold.png
@@ -452,6 +479,7 @@ share/locale/ko/LC_MESSAGES/gedit.mo
 share/locale/ku/LC_MESSAGES/gedit.mo
 share/locale/lt/LC_MESSAGES/gedit.mo
 share/locale/lv/LC_MESSAGES/gedit.mo
+share/locale/mai/LC_MESSAGES/gedit.mo
 share/locale/mg/LC_MESSAGES/gedit.mo
 share/locale/mi/LC_MESSAGES/gedit.mo
 share/locale/mk/LC_MESSAGES/gedit.mo
@@ -467,6 +495,7 @@ share/locale/oc/LC_MESSAGES/gedit.mo
 share/locale/or/LC_MESSAGES/gedit.mo
 share/locale/pa/LC_MESSAGES/gedit.mo
 share/locale/pl/LC_MESSAGES/gedit.mo
+share/locale/ps/LC_MESSAGES/gedit.mo
 share/locale/pt/LC_MESSAGES/gedit.mo
 share/locale/pt_BR/LC_MESSAGES/gedit.mo
 share/locale/ro/LC_MESSAGES/gedit.mo
@@ -477,7 +506,7 @@ share/locale/sk/LC_MESSAGES/gedit.mo
 share/locale/sl/LC_MESSAGES/gedit.mo
 share/locale/sq/LC_MESSAGES/gedit.mo
 share/locale/sr/LC_MESSAGES/gedit.mo
-share/locale/sr@Latn/LC_MESSAGES/gedit.mo
+share/locale/sr@latin/LC_MESSAGES/gedit.mo
 share/locale/sv/LC_MESSAGES/gedit.mo
 share/locale/ta/LC_MESSAGES/gedit.mo
 share/locale/te/LC_MESSAGES/gedit.mo
@@ -494,9 +523,11 @@ share/locale/zh_TW/LC_MESSAGES/gedit.mo
 share/omf/gedit/
 share/omf/gedit/gedit-C.omf
 share/omf/gedit/gedit-bg.omf
+share/omf/gedit/gedit-da.omf
 share/omf/gedit/gedit-de.omf
 share/omf/gedit/gedit-es.omf
 share/omf/gedit/gedit-eu.omf
+share/omf/gedit/gedit-fi.omf
 share/omf/gedit/gedit-fr.omf
 share/omf/gedit/gedit-hu.omf
 share/omf/gedit/gedit-it.omf
