@@ -1,0 +1,18 @@
+$OpenBSD: patch-data_Makefile_in,v 1.1 2008/11/21 18:18:59 jasper Exp $
+
+gnome.desktop is already installed by GDM. and since
+gnome-session has a run-time dependency on GDM, there's
+no point in installing it twice.
+
+--- data/Makefile.in.orig	Wed Oct 22 11:29:26 2008
++++ data/Makefile.in	Fri Nov 21 17:15:54 2008
+@@ -683,8 +683,7 @@ info: info-recursive
+ info-am:
+ 
+ install-data-am: install-data-local install-gladeDATA \
+-	install-pixmapDATA install-schemasDATA install-settingsDATA \
+-	install-xsessionDATA
++	install-pixmapDATA install-schemasDATA install-settingsDATA
+ 
+ install-dvi: install-dvi-recursive
+ 
