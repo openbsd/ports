@@ -1,5 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/13 22:15:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/21 19:08:42 jasper Exp $
 lib/pkgconfig/gnome-python-desktop-2.0.pc
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.py
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.pyc
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.pyo
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/ebook.la
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/ebook.so
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/ecal.la
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/ecal.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnome/applet.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnome/applet.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gnome/applet.pyo
@@ -57,7 +66,7 @@ share/examples/py-gnome-desktop/gnomeprint/example_10.py
 share/examples/py-gnome-desktop/gnomeprint/example_11.py
 share/examples/py-gnome-desktop/gnomeprint/sample-image.png
 share/examples/py-gnome-desktop/gnomeprint/test-print.py
-@comment share/examples/py-gnome-desktop/gtksourceview/
+@comment share/examples/py-gnome-desktop/gtksourceview
 @comment share/examples/py-gnome-desktop/gtksourceview/test-widget.py
 share/examples/py-gnome-desktop/keyring-async.py
 share/examples/py-gnome-desktop/keyring.py
@@ -93,24 +102,10 @@ share/gtk-doc/html/pygnomeprintui/gnomeprintui-class-reference.html
 share/gtk-doc/html/pygnomeprintui/index.html
 share/gtk-doc/html/pygnomeprintui/index.sgml
 share/gtk-doc/html/pygnomeprintui/pygnomeprintui.devhelp
-share/gtk-doc/html/pygtksourceview/
-share/gtk-doc/html/pygtksourceview/class-gtksourcebuffer.html
-share/gtk-doc/html/pygtksourceview/class-gtksourcelanguage.html
-share/gtk-doc/html/pygtksourceview/class-gtksourcelanguagesmanager.html
-share/gtk-doc/html/pygtksourceview/class-gtksourcemarker.html
-share/gtk-doc/html/pygtksourceview/class-gtksourceprintjob.html
-share/gtk-doc/html/pygtksourceview/class-gtksourcestylescheme.html
-share/gtk-doc/html/pygtksourceview/class-gtksourcetag.html
-share/gtk-doc/html/pygtksourceview/class-gtksourcetagstyle.html
-share/gtk-doc/html/pygtksourceview/class-gtksourcetagtable.html
-share/gtk-doc/html/pygtksourceview/class-gtksourceview.html
-share/gtk-doc/html/pygtksourceview/gtksourcesview-class-reference.html
-share/gtk-doc/html/pygtksourceview/index.html
-share/gtk-doc/html/pygtksourceview/index.sgml
-share/gtk-doc/html/pygtksourceview/pygtksourceview.devhelp
 share/pygtk/2.0/defs/_gnomedesktop.defs
 share/pygtk/2.0/defs/applet.defs
 share/pygtk/2.0/defs/art.defs
+share/pygtk/2.0/defs/ebook.defs
 share/pygtk/2.0/defs/gnomekeyring.defs
 share/pygtk/2.0/defs/mediaprofiles.defs
 share/pygtk/2.0/defs/metacity.defs
