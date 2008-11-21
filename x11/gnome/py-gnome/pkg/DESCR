@@ -1,3 +1,3 @@
-py-gnome (also known as gnome-python) is a set of bindings for the Gnome
+py-gnome (also known as gnome-python) is a set of bindings for the GNOME
 platform libraries.  It builds on top of the PyGTK bindings for GTK and
 the PyORBit bindings for ORBit2.
