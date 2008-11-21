@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.15 2007/11/10 14:53:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2008/11/21 18:32:48 jasper Exp $
 %%SHARED%%
-bin/bonobo-browser
-bin/test-moniker
+@bin bin/bonobo-browser
+@bin bin/test-moniker
 include/libbonoboui-2.0/
 include/libbonoboui-2.0/bonobo/
 include/libbonoboui-2.0/bonobo.h
@@ -40,7 +40,7 @@ include/libbonoboui-2.0/libbonoboui.h
 lib/bonobo/
 lib/bonobo-2.0/
 lib/bonobo-2.0/samples/
-lib/bonobo-2.0/samples/bonobo-sample-controls-2
+@bin lib/bonobo-2.0/samples/bonobo-sample-controls-2
 lib/bonobo/servers/
 lib/bonobo/servers/Bonobo_Sample_Controls.server
 lib/bonobo/servers/CanvDemo.server
@@ -52,7 +52,6 @@ lib/libglade/2.0/libbonobo.a
 lib/libglade/2.0/libbonobo.la
 lib/pkgconfig/
 lib/pkgconfig/libbonoboui-2.0.pc
-share/applications/
 share/applications/bonobo-browser.desktop
 share/gnome-2.0/
 share/gnome-2.0/ui/
@@ -108,6 +107,9 @@ share/locale/am/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libbonoboui-2.0.mo
@@ -141,8 +143,6 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/es/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/et/LC_MESSAGES/libbonoboui-2.0.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/
@@ -183,6 +183,9 @@ share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/lv/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/mai/
+share/locale/mai/LC_MESSAGES/
+share/locale/mai/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/mg/
 share/locale/mg/LC_MESSAGES/
 share/locale/mg/LC_MESSAGES/libbonoboui-2.0.mo
@@ -220,6 +223,9 @@ share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/pl/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/ps/
+share/locale/ps/LC_MESSAGES/
+share/locale/ps/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/pt/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ro/LC_MESSAGES/libbonoboui-2.0.mo
@@ -227,22 +233,28 @@ share/locale/ru/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/sk/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/sl/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/sr/LC_MESSAGES/libbonoboui-2.0.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
-share/locale/sr@Latn/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/sr@ije/
 share/locale/sr@ije/LC_MESSAGES/
 share/locale/sr@ije/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/sv/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/libbonoboui-2.0.mo

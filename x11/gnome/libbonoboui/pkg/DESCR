@@ -1,7 +1,4 @@
 The Bonobo UI Library provides UI code for Bonobo, the Object Activation
-Framework for GNOME 2. Bonobo has a similar purpose to gnorba, the GNOME
-1.x CORBA activation library, and will replace it for GNOME 2.0. It
-allows you to do much more powerful activation queries than gnorba. Each
-server is described by an XML file that defines its attributes. When
-querying or activating, you can specify complex requirements using the
-OAF query language.
+Framework for GNOME. Each server is described by an XML file that
+defines its attributes. When querying or activating, you can specify
+complex requirements using the OAF query language.
