@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/05/26 16:29:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/11/21 18:03:22 jasper Exp $
 
 COMMENT=		developer documentation for GNOME
 
 GNOME_PROJECT=		gnome-devel-docs
-GNOME_VERSION=		2.20.0
-PKGNAME=		${DISTNAME}p1
+GNOME_VERSION=		2.24.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
