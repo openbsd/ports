@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2008/06/02 14:10:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2008/11/21 18:53:48 jasper Exp $
 
 COMMENT=		printing framework for GNOME
 
 GNOME_PROJECT=		libgnomeprint
-GNOME_VERSION=		2.18.4
-PKGNAME=		${DISTNAME}p1
+GNOME_VERSION=		2.18.5
 SHARED_LIBS +=	gnomeprint-2-2 2.1            # .1.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/projects/gnome-print/
 
-# LGPL
+# LGPLv2.1/GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
