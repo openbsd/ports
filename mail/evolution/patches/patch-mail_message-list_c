@@ -1,7 +1,7 @@
-$OpenBSD: patch-mail_message-list_c,v 1.4 2008/07/08 11:16:44 jasper Exp $
---- mail/message-list.c.orig	Wed Jan 16 05:47:37 2008
-+++ mail/message-list.c	Fri Jul  4 23:27:25 2008
-@@ -2492,6 +2492,10 @@ clear_tree (MessageList *ml)
+$OpenBSD: patch-mail_message-list_c,v 1.5 2008/11/21 17:28:07 jasper Exp $
+--- mail/message-list.c.orig	Mon Oct 20 05:28:32 2008
++++ mail/message-list.c	Thu Nov 13 20:19:22 2008
+@@ -2543,6 +2543,10 @@ clear_tree (MessageList *ml)
  
  	ml->tree_root = e_tree_memory_node_insert (E_TREE_MEMORY(etm), NULL, 0, NULL);
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-mail_message-list_c,v 1.4 2008/07/08 11:16:44 jasper Exp $
  #ifdef TIMEIT
  	gettimeofday(&end, NULL);
  	diff = end.tv_sec * 1000 + end.tv_usec/1000;
-@@ -3095,6 +3099,9 @@ mail_folder_hide_by_flag (CamelFolder *folder, Message
+@@ -3146,6 +3150,9 @@ mail_folder_hide_by_flag (CamelFolder *folder, Message
  	CamelFolderChangeInfo *newchanges, *oldchanges = *changes;
  	CamelMessageInfo *info;
  	int i;

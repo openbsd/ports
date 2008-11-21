@@ -1,7 +1,7 @@
-$OpenBSD: patch-shell_main_c,v 1.4 2008/07/08 11:16:44 jasper Exp $
---- shell/main.c.orig	Fri May 23 13:23:29 2008
-+++ shell/main.c	Fri Jul  4 23:27:25 2008
-@@ -711,7 +711,7 @@ main (int argc, char **argv)
+$OpenBSD: patch-shell_main_c,v 1.5 2008/11/21 17:28:07 jasper Exp $
+--- shell/main.c.orig	Mon Oct 13 10:32:56 2008
++++ shell/main.c	Thu Nov 13 20:19:22 2008
+@@ -606,7 +606,7 @@ main (int argc, char **argv)
  		filename = g_build_filename (EVOLUTION_TOOLSDIR,
  					     "killev",
  					     NULL);

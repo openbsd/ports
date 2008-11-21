@@ -1,26 +1,26 @@
-$OpenBSD: patch-configure,v 1.6 2008/07/08 11:16:44 jasper Exp $
---- configure.orig	Sun Jun 29 07:57:09 2008
-+++ configure	Fri Jul  4 23:27:25 2008
-@@ -27640,9 +27640,6 @@ LIBS=$ac_check_lib_save_LIBS
+$OpenBSD: patch-configure,v 1.7 2008/11/21 17:28:07 jasper Exp $
+--- configure.orig	Thu Nov 13 20:16:54 2008
++++ configure	Thu Nov 13 20:18:48 2008
+@@ -28244,9 +28244,6 @@ LIBS=$ac_check_lib_save_LIBS
  fi
- { echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_res_query" >&5
- echo "${ECHO_T}$ac_cv_lib_resolv_res_query" >&6; }
+ { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_res_query" >&5
+ $as_echo "$ac_cv_lib_resolv_res_query" >&6; }
 -if test $ac_cv_lib_resolv_res_query = yes; then
 -  LDAP_LIBS="-lresolv"
 -fi
  
-                 { echo "$as_me:$LINENO: checking for bind in -lsocket" >&5
- echo $ECHO_N "checking for bind in -lsocket... $ECHO_C" >&6; }
-@@ -28089,13 +28086,13 @@ _ACEOF
+ 		{ $as_echo "$as_me:$LINENO: checking for bind in -lsocket" >&5
+ $as_echo_n "checking for bind in -lsocket... " >&6; }
+@@ -29314,13 +29311,13 @@ _ACEOF
  
  
  	PTHREAD_LIB=""
--	{ echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
-+	{ echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
+-	{ $as_echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
++	{ $as_echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++$as_echo_n "checking for pthread_create in -pthread... " >&6; }
  if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
@@ -28,21 +28,21 @@ $OpenBSD: patch-configure,v 1.6 2008/07/08 11:16:44 jasper Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -28151,7 +28148,7 @@ fi
- { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
+@@ -29380,7 +29377,7 @@ fi
+ { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
  if test $ac_cv_lib_pthread_pthread_create = yes; then
 -  PTHREAD_LIB="-lpthread"
 +  PTHREAD_LIB="-pthread"
  else
-   { echo "$as_me:$LINENO: checking for pthread_create in -lpthreads" >&5
- echo $ECHO_N "checking for pthread_create in -lpthreads... $ECHO_C" >&6; }
-@@ -29673,7 +29670,7 @@ if test "x${with_krb5}" != "xno"; then
+   { $as_echo "$as_me:$LINENO: checking for pthread_create in -lpthreads" >&5
+ $as_echo_n "checking for pthread_create in -lpthreads... " >&6; }
+@@ -30947,7 +30944,7 @@ if test "x${with_krb5}" != "xno"; then
  	LDFLAGS_save="$LDFLAGS"
  
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
 -	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
 +	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lgssapi"
  	sunlibs="-lkrb5 -lgss"
- 	{ echo "$as_me:$LINENO: checking for Kerberos 5" >&5
- echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6; }
+ 	{ $as_echo "$as_me:$LINENO: checking for Kerberos 5" >&5
+ $as_echo_n "checking for Kerberos 5... " >&6; }

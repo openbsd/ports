@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2008/06/02 16:49:56 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.13 2008/11/21 17:28:07 jasper Exp $
 lib/evolution/${R}/components/libevolution-addressbook.so
 lib/evolution/${R}/components/libevolution-calendar.so
 lib/evolution/${R}/components/libevolution-mail.so
@@ -33,8 +33,8 @@ lib/evolution/${R}/plugins/liborg-gnome-calendar-weather.so
 lib/evolution/${R}/plugins/liborg-gnome-default-source.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-google.so
-lib/evolution/${R}/plugins/liborg-gnome-evolution-hula-account-setup.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.so
+lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.so
 lib/evolution/${R}/plugins/liborg-gnome-exchange-operations.so
 lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.so
 lib/evolution/${R}/plugins/liborg-gnome-gw-account-setup.so
@@ -42,6 +42,5 @@ lib/evolution/${R}/plugins/liborg-gnome-imap-features.so
 lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.so
 lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.so
 lib/evolution/${R}/plugins/liborg-gnome-plugin-manager.so
-lib/evolution/${R}/plugins/liborg-gnome-print-message.so
 lib/evolution/${R}/plugins/liborg-gnome-publish-calendar.so
 lib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.so
