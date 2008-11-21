@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2007/11/10 14:57:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2008/11/21 18:47:16 jasper Exp $
 %%SHARED%%
 include/libgnomeui-2.0/
 include/libgnomeui-2.0/gnome.h
@@ -53,11 +53,6 @@ include/libgnomeui-2.0/libgnomeui/gnome-window-icon.h
 include/libgnomeui-2.0/libgnomeui/gnome-window.h
 include/libgnomeui-2.0/libgnomeui/gnometypebuiltins.h
 include/libgnomeui-2.0/libgnomeui/libgnomeui.h
-lib/gtk-2.0/
-lib/gtk-2.0/2.10.0/
-lib/gtk-2.0/2.10.0/filesystems/
-lib/gtk-2.0/2.10.0/filesystems/libgnome-vfs.a
-lib/gtk-2.0/2.10.0/filesystems/libgnome-vfs.la
 lib/libglade/
 lib/libglade/2.0/
 lib/libglade/2.0/libgnome.a
@@ -184,6 +179,9 @@ share/locale/am/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libgnomeui-2.0.mo
@@ -205,6 +203,9 @@ share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ca/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/crh/
+share/locale/crh/LC_MESSAGES/
+share/locale/crh/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/cs/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/cy/
 share/locale/cy/LC_MESSAGES/
@@ -224,14 +225,15 @@ share/locale/en_GB/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/eo/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/es/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/et/LC_MESSAGES/libgnomeui-2.0.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/fi/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/fr/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
+share/locale/fur/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ga/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/gl/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/gu/
@@ -269,6 +271,9 @@ share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/lv/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/mai/
+share/locale/mai/LC_MESSAGES/
+share/locale/mai/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/mg/
 share/locale/mg/LC_MESSAGES/
 share/locale/mg/LC_MESSAGES/libgnomeui-2.0.mo
@@ -309,6 +314,9 @@ share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/pl/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/ps/
+share/locale/ps/LC_MESSAGES/
+share/locale/ps/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/pt/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ro/LC_MESSAGES/libgnomeui-2.0.mo
@@ -325,12 +333,12 @@ share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sr/LC_MESSAGES/libgnomeui-2.0.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
-share/locale/sr@Latn/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sr@ije/
 share/locale/sr@ije/LC_MESSAGES/
 share/locale/sr@ije/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/sv/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
