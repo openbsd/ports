@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.34 2008/10/30 16:36:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2008/11/21 17:26:25 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		2.22.3
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		2.24.1
 CATEGORIES=		databases
-SHARED_LIBS +=	edataserver-1.2      10.0     # .10.0
+SHARED_LIBS +=	edataserver-1.2      10.0     # .11.0
+SHARED_LIBS +=	ebackend-1.2           0.0       # .0.0
 SHARED_LIBS +=	egroupwise-1.2       13.1     # .13.1
 SHARED_LIBS +=	exchange-storage-1.2 3.0      # .3.0
 SHARED_LIBS +=	gdata-1.2            0.0      # .1.0
 SHARED_LIBS +=	gdata-google-1.2     0.0      # .1.0
-SHARED_LIBS +=	camel-1.2            11.0     # .11.0
-SHARED_LIBS +=	camel-provider-1.2   11.0     # .11.0
-SHARED_LIBS +=	ebook-1.2            10.1     # .10.1
+SHARED_LIBS +=	camel-1.2            14.0     # .14.0
+SHARED_LIBS +=	camel-provider-1.2   14.0     # .14.0
+SHARED_LIBS +=	ebook-1.2            12.0     # .12.0
 SHARED_LIBS +=	edata-book-1.2       6.1      # .6.1
-SHARED_LIBS +=	ecal-1.2             9.0      # .9.0
+SHARED_LIBS +=	ecal-1.2             9.1      # .9.1
 SHARED_LIBS +=	edata-cal-1.2        6.2      # .6.2
 SHARED_LIBS +=	edataserverui-1.2    9.0      # .9.0
 
@@ -33,10 +33,11 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
 		asn1 atk-1.0 audiofile bonobo-2 bonobo-activation c \
 		cairo com_err crypto dbus-1 dbus-glib-1 esd expat fontconfig \
-		freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gssapi gthread-2.0 \
-		gtk-x11-2.0 krb5 m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 plc4 plds4 png popt pthread sasl2 ssl util xml2 z
+		freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
+		glib-2.0 glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gssapi \
+		gthread-2.0 gtk-x11-2.0 krb5 m nspr4 pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread \
+		sasl2 sqlite3 ssl util xml2 z
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -55,7 +56,7 @@ LIB_DEPENDS= 		db:db-4.*:databases/db/v4 \
 			
 USE_X11=		Yes
 YACC=			bison
-AUTOCONF_VERSION=	2.61
+AUTOCONF_VERSION=	2.62
 CONFIGURE_STYLE= 	autoconf gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/evolution-data-server \
