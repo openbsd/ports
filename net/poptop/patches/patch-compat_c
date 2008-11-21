@@ -1,0 +1,18 @@
+$OpenBSD: patch-compat_c,v 1.1 2008/11/21 15:05:23 jasper Exp $
+--- compat.c.orig	Wed Jan  5 12:01:51 2005
++++ compat.c	Fri Nov 21 12:59:09 2008
+@@ -12,6 +12,14 @@
+ 
+ #include "compat.h"
+ 
++#if HAVE_STDLIB_H
++#include <stdlib.h>
++#endif
++
++#if HAVE_STRING_H
++#include <string.h>
++#endif
++
+ #ifndef HAVE_STRLCPY
+ #include <string.h>
+ #include <stdio.h>

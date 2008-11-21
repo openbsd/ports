@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/08 16:50:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2008/11/21 15:05:23 jasper Exp $
 
 COMMENT=		PPTP Server
 
-PKGNAME=		poptop-1.3.0
+PKGNAME=		poptop-1.3.0p0
 DISTNAME=		pptpd-1.3.0
 CATEGORIES=		net
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.poptop.org/
 
 MAINTAINER=		Giovanni Bechis <g.bechis@snb.it>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
