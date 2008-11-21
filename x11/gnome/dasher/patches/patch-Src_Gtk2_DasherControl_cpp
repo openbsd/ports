@@ -1,7 +1,7 @@
-$OpenBSD: patch-Src_Gtk2_DasherControl_cpp,v 1.1.1.1 2007/11/19 20:43:55 jasper Exp $
---- Src/Gtk2/DasherControl.cpp.orig	Mon Oct 15 15:55:05 2007
-+++ Src/Gtk2/DasherControl.cpp	Mon Nov 19 21:11:05 2007
-@@ -8,6 +8,7 @@
+$OpenBSD: patch-Src_Gtk2_DasherControl_cpp,v 1.2 2008/11/21 17:06:25 jasper Exp $
+--- Src/Gtk2/DasherControl.cpp.orig	Sun Mar  2 19:47:00 2008
++++ Src/Gtk2/DasherControl.cpp	Tue Nov 11 16:40:12 2008
+@@ -9,6 +9,7 @@
  #include "../DasherCore/WrapperFactory.h"
  
  #include <fcntl.h>

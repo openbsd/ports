@@ -1,8 +1,9 @@
-$OpenBSD: patch-Src_Gtk2_dasher_main_cpp,v 1.1.1.1 2007/11/19 20:43:55 jasper Exp $
---- Src/Gtk2/dasher_main.cpp.orig	Mon Oct 15 15:55:06 2007
-+++ Src/Gtk2/dasher_main.cpp	Mon Nov 19 21:11:05 2007
-@@ -1,5 +1,7 @@
- #include "config.h"
+$OpenBSD: patch-Src_Gtk2_dasher_main_cpp,v 1.2 2008/11/21 17:06:25 jasper Exp $
+--- Src/Gtk2/dasher_main.cpp.orig	Mon Apr 21 21:04:03 2008
++++ Src/Gtk2/dasher_main.cpp	Tue Nov 11 16:40:12 2008
+@@ -2,6 +2,8 @@
+ 
+ #include <cstring>
  
 +#include <unistd.h>
 +
