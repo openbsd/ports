@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2008/06/04 13:47:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2008/11/21 17:25:34 jasper Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
-GNOME_VERSION=		2.20.4
-PKGNAME=		${DISTNAME}p3
+GNOME_VERSION=		2.24.1
 CATEGORIES=		graphics
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -18,11 +17,11 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xrender art_lgpl_2 atk-1.0 audiofile bonobo-2 bonobo-activation \
 		bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 esd expat \
 		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
-		gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 \
-		gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png popt pthread ssl startup-notification-1 util \
-		xml2 z
+		gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
+		gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 \
+		gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre pixman-1 png popt pthread ssl startup-notification-1 \
+		util xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -45,8 +44,7 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/eog \
 			--disable-schemas-install \
 			--disable-python \
 			--without-xmp \
-			--with-libexif \
-			--with-dbus
+			--with-libexif
 
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
