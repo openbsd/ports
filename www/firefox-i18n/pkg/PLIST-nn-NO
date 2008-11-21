@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-nn-NO,v 1.1 2007/01/15 13:21:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST-nn-NO,v 1.2 2008/11/21 00:00:29 martynas Exp $
 mozilla-firefox/extensions/langpack-nn-NO@firefox.mozilla.org/
 mozilla-firefox/extensions/langpack-nn-NO@firefox.mozilla.org/chrome/
 mozilla-firefox/extensions/langpack-nn-NO@firefox.mozilla.org/chrome.manifest
-mozilla-firefox/extensions/langpack-nn-NO@firefox.mozilla.org/chrome/chromelist.txt
 mozilla-firefox/extensions/langpack-nn-NO@firefox.mozilla.org/chrome/nn-NO.jar
 mozilla-firefox/extensions/langpack-nn-NO@firefox.mozilla.org/install.rdf

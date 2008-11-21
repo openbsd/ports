@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-nl,v 1.1.1.1 2006/06/25 21:25:44 steven Exp $
+@comment $OpenBSD: PLIST-nl,v 1.2 2008/11/21 00:00:29 martynas Exp $
 mozilla-firefox/extensions/langpack-nl@firefox.mozilla.org/
 mozilla-firefox/extensions/langpack-nl@firefox.mozilla.org/chrome/
 mozilla-firefox/extensions/langpack-nl@firefox.mozilla.org/chrome.manifest
-mozilla-firefox/extensions/langpack-nl@firefox.mozilla.org/chrome/chromelist.txt
 mozilla-firefox/extensions/langpack-nl@firefox.mozilla.org/chrome/nl.jar
 mozilla-firefox/extensions/langpack-nl@firefox.mozilla.org/install.rdf

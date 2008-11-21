@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2008/11/13 16:58:17 martynas Exp $
+# $OpenBSD: Makefile,v 1.32 2008/11/21 00:00:28 martynas Exp $
 
 PKG_ARCH=	*
 
-V=		2.0.0.18
+V=		3.0.4
 NAME=		firefox-i18n
 PKGNAME=	${NAME}-${V}
 
@@ -42,7 +42,7 @@ PKGNAME-$i=	${NAME}-$i-${V}
 COMMENT-$i=	$i language pack for Firefox
 LPACKDIR-$i=	${PREFIX}/mozilla-firefox/extensions/langpack-$i@firefox.mozilla.org
 .endfor
-PKGNAME-en-GB=	${NAME}-en-GB-${V}p0
+PKGNAME-en-GB=	${NAME}-en-GB-${V}
 
 # use the same for all subpackages
 MESSAGE=	${PKGDIR}/MESSAGE
@@ -58,7 +58,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${LPACKDIR-$i}/chrome
 	${INSTALL_DATA} ${WRKSRC}/$i/chrome.manifest ${LPACKDIR-$i}
 	${INSTALL_DATA} ${WRKSRC}/$i/install.rdf ${LPACKDIR-$i}
-	${INSTALL_DATA} ${WRKSRC}/$i/chrome/chromelist.txt ${LPACKDIR-$i}/chrome
 	${INSTALL_DATA} ${WRKSRC}/$i/chrome/$i.jar ${LPACKDIR-$i}/chrome
 .endfor
 
