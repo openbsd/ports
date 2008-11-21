@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/11/18 13:36:32 jasper Exp $
---- configure.orig	Mon Oct 15 15:16:44 2007
-+++ configure	Sat Oct 27 16:32:40 2007
-@@ -24510,13 +24510,11 @@ if test -n "$PKG_CONFIG"; then
+$OpenBSD: patch-configure,v 1.2 2008/11/21 17:00:48 jasper Exp $
+--- configure.orig	Thu Oct 30 13:46:12 2008
++++ configure	Thu Oct 30 13:46:56 2008
+@@ -16282,13 +16282,11 @@ if test -n "$PKG_CONFIG"; then
  	libbonobo-2.0	>= 1.107.0
  	atk		>= 1.17.0
  	gtk+-2.0	>= 2.10.0
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/11/18 13:36:32 jasper Exp $
  ") 2>&5
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
-@@ -24525,7 +24523,6 @@ if test -n "$PKG_CONFIG"; then
+@@ -16297,7 +16295,6 @@ if test -n "$PKG_CONFIG"; then
  	libbonobo-2.0	>= 1.107.0
  	atk		>= 1.17.0
  	gtk+-2.0	>= 2.10.0
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/11/18 13:36:32 jasper Exp $
  " 2>/dev/null`
  else
    pkg_failed=yes
-@@ -24543,13 +24540,11 @@ if test -n "$PKG_CONFIG"; then
+@@ -16315,13 +16312,11 @@ if test -n "$PKG_CONFIG"; then
  	libbonobo-2.0	>= 1.107.0
  	atk		>= 1.17.0
  	gtk+-2.0	>= 2.10.0
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/11/18 13:36:32 jasper Exp $
  ") 2>&5
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
-@@ -24558,7 +24553,6 @@ if test -n "$PKG_CONFIG"; then
+@@ -16330,7 +16325,6 @@ if test -n "$PKG_CONFIG"; then
  	libbonobo-2.0	>= 1.107.0
  	atk		>= 1.17.0
  	gtk+-2.0	>= 2.10.0
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/11/18 13:36:32 jasper Exp $
  " 2>/dev/null`
  else
    pkg_failed=yes
-@@ -24582,14 +24576,12 @@ fi
+@@ -16354,14 +16348,12 @@ fi
  	libbonobo-2.0	>= 1.107.0
  	atk		>= 1.17.0
  	gtk+-2.0	>= 2.10.0
@@ -60,7 +60,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/11/18 13:36:32 jasper Exp $
  "`
          fi
  	# Put the nasty error message in config.log where it belongs
-@@ -24599,7 +24591,6 @@ fi
+@@ -16371,7 +16363,6 @@ fi
  	libbonobo-2.0	>= 1.107.0
  	atk		>= 1.17.0
  	gtk+-2.0	>= 2.10.0
@@ -68,7 +68,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/11/18 13:36:32 jasper Exp $
  ) were not met:
  
  $TESTS_PKG_ERRORS
-@@ -24615,7 +24606,6 @@ echo "$as_me: error: Package requirements (
+@@ -16387,7 +16378,6 @@ echo "$as_me: error: Package requirements (
  	libbonobo-2.0	>= 1.107.0
  	atk		>= 1.17.0
  	gtk+-2.0	>= 2.10.0
