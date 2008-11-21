@@ -1,12 +1,13 @@
-$OpenBSD: patch-deskbar_handlers_Makefile_in,v 1.1.1.1 2008/05/17 18:43:11 jasper Exp $
---- deskbar/handlers/Makefile.in.orig	Mon Jan  7 17:45:33 2008
-+++ deskbar/handlers/Makefile.in	Fri May 16 23:47:36 2008
-@@ -264,7 +264,7 @@ SUBDIRS = actions gdmclient $(am__append_1)
+$OpenBSD: patch-deskbar_handlers_Makefile_in,v 1.2 2008/11/21 17:12:44 jasper Exp $
+--- deskbar/handlers/Makefile.in.orig	Fri Nov 14 19:09:20 2008
++++ deskbar/handlers/Makefile.in	Fri Nov 14 19:09:53 2008
+@@ -266,8 +266,7 @@ SUBDIRS = actions gdmclient $(am__append_1)
  deskbar_handlers_modulesdir = $(pythondir)/deskbar/handlers
  deskbar_handlers_modules_PYTHON = __init__.py
  deskbar_handlersdir = $(libdir)/deskbar-applet/modules-2.20-compatible
 -deskbar_handlers_PYTHON = beagle-static.py beagle-live.py \
-+deskbar_handlers_PYTHON = \
- 	desklicious.py epiphany.py files.py gdmactions.py history.py \
+-	calculator.py desklicious.py epiphany.py files.py \
++deskbar_handlers_PYTHON = calculator.py desklicious.py epiphany.py files.py \
+ 	gdmactions.py googlecodesearch.py googlesearch.py history.py \
  	iswitch-window.py mozilla.py programs.py recent.py \
- 	web_address.py yahoo.py $(am__append_2)
+ 	templates.py tomboy.py twitter.py web_address.py \

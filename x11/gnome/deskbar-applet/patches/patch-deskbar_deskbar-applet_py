@@ -1,13 +1,13 @@
-$OpenBSD: patch-deskbar_deskbar-applet_py,v 1.1.1.1 2008/05/17 18:43:11 jasper Exp $
---- deskbar/deskbar-applet.py.orig	Sat May 17 00:07:42 2008
-+++ deskbar/deskbar-applet.py	Sat May 17 00:08:42 2008
+$OpenBSD: patch-deskbar_deskbar-applet_py,v 1.2 2008/11/21 17:12:44 jasper Exp $
+--- deskbar/deskbar-applet.py.orig	Fri Nov 14 19:10:17 2008
++++ deskbar/deskbar-applet.py	Fri Nov 14 19:11:08 2008
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python
 +#!${MODPY_BIN}
- import gtk, gtk.gdk
+ import gtk
+ import gtk.gdk
  import sys
- from os.path import abspath, join, dirname, exists
-@@ -54,11 +54,6 @@ gettext.bindtextdomain('deskbar-applet', abspath(join(
+@@ -56,11 +56,6 @@ gettext.bindtextdomain('deskbar-applet', abspath(join(
  if hasattr(gettext, 'bind_textdomain_codeset'):
      gettext.bind_textdomain_codeset('deskbar-applet','UTF-8')
  gettext.textdomain('deskbar-applet')
