@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/08/21 10:27:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/21 18:35:31 jasper Exp $
+
+# XXX: use system sqlite3
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-db4=		BerkeleyDB backend for libgda
@@ -8,7 +10,7 @@ COMMENT-mysql=		MySQL backend for libgda
 COMMENT-pgsql=		PostreSQL backend for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		3.0.4
+GNOME_VERSION=		3.1.5
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-db4=		libgda-db4-${GNOME_VERSION}
@@ -19,23 +21,26 @@ PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 
 CATEGORIES=		databases
 
-GDA_MAJOR=		${GNOME_VERSION:R}
+GDA_MAJOR=		3.0
 
-SHARED_LIBS +=	gdasql-3.0           0.0      # .3.0
-SHARED_LIBS +=	gda-3.0              0.0      # .3.0
-SHARED_LIBS +=	gda-report-3.0       0.0      # .3.0
+SHARED_LIBS +=	gdasql-3.0           1.0      # .3.0
+SHARED_LIBS +=	gda-3.0              1.0      # .3.0
+SHARED_LIBS +=	gda-report-3.0       1.0      # .3.0
+SHARED_LIBS +=  gda-xslt-3.0         0.0      # .0.0
+
 
 HOMEPAGE=		http://www.gnome-db.org/
 
-# library: LGPL
+# library: LGPLv2
 # tools: GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		m pcre rpcsvc stdc++ z
-WANTLIB-main=		${WANTLIB} c pthread
+WANTLIB=		crypto m pcre rpcsvc ssl stdc++ util z
+WANTLIB-main=		${WANTLIB} curses c pthread gpg-error \
+			readline xml2
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -47,9 +52,10 @@ FLAVOR?=
 
 MULTI_PACKAGES=		-main
 
-LIB_DEPENDS=		glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
-			xml2::textproc/libxml \
-			fam::sysutils/fam
+LIB_DEPENDS-main=	xslt::textproc/libxslt
+
+LIB_DEPENDS=		gcrypt::security/libgcrypt \
+			gnomevfs-2::x11/gnome/vfs2
 
 REGRESS_DEPENDS=	::devel/check
 
@@ -62,7 +68,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-oracle \
 			--without-sybase \
 			--without-xbase
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4/" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm"
 
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1.1.1 2008/08/21 10:27:25 jasper Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2008/11/21 18:35:31 jasper Exp $
 @lib lib/libgda-${GDA_MAJOR}.so.${LIBgda-3.0_VERSION}
 lib/libgda-${GDA_MAJOR}/providers/libgda-sqlite.so
 @lib lib/libgda-report-${GDA_MAJOR}.so.${LIBgda-report-3.0_VERSION}
+@lib lib/libgda-xslt-${GDA_MAJOR}.so.${LIBgda-xslt-3.0_VERSION}
 @lib lib/libgdasql-${GDA_MAJOR}.so.${LIBgdasql-3.0_VERSION}
