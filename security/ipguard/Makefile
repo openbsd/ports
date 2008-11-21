@@ -2,8 +2,8 @@
 
 COMMENT =	protect LAN IP adress space by ARP spoofing
 
-DISTNAME =	ipguard-1.00
-PKGNAME =	${DISTNAME}p0
+DISTNAME =	ipguard-1.00-r1
+PKGNAME =	${DISTNAME:S/-r/./}
 CATEGORIES =	security
 
 HOMEPAGE =	http://ipguard.deep.perm.ru/
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c pcap
 
-LIB_DEPENDS =	lib/libnet-1.1/net.=11:libnet-1.1*:net/libnet/1.1
+LIB_DEPENDS =	lib/libnet-1.1/net.=11:libnet->=1.1.2.1p0,<1.2:net/libnet/1.1
 
 NO_REGRESS =	Yes
 

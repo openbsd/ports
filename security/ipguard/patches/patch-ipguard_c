@@ -1,0 +1,11 @@
+$OpenBSD: patch-ipguard_c,v 1.1 2008/11/21 13:57:31 sthen Exp $
+--- ipguard.c.orig	Thu Nov 13 21:12:51 2008
++++ ipguard.c	Thu Nov 20 10:13:27 2008
+@@ -74,6 +74,7 @@ int main(int argc, char *argv[]) {
+     srand((unsigned int) getpid());
+ 
+     iface[0] = fmac[0] = log_name[0] = pid_name[0] = suser[0] = '\0';
++    strlcpy(suser, "_ipguard", MAXLOGNAME);
+     strncpy(ethers_name, ETHERSFILE, PATH_MAX);
+     strncpy(fmac, FAKEMAC, 18);
+     ethers_update = ETHERSTO;
