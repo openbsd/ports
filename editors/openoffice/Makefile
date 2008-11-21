@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2008/11/13 13:17:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2008/11/21 18:35:03 jolan Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -27,8 +27,7 @@ MASTER_SITES=	http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/So
 		ftp://ftp.tu-chemnitz.de/pub/openoffice/stable/${VERSION}/ \
 		ftp://ftp.nluug.nl/pub/office/openoffice/stable/${VERSION}/ \
 		http://vlaai.snt.utwente.nl/pub/software/openoffice/stable/${VERSION}/ \
-		ftp://openoffice.mirror.cygnal.ca/openoffice/stable/${VERSION}/ \
-		http://mirrors.protection.cx/~jolan/
+		ftp://openoffice.mirror.cygnal.ca/openoffice/stable/${VERSION}/
 MASTER_SITES0=	http://www.bsd.hu/~robert/ooo/ \
 		http://humppa.hu/ooo/
 
