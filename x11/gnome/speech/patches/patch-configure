@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.2 2008/11/11 16:00:08 jasper Exp $
+$OpenBSD: patch-configure,v 1.3 2008/11/21 18:20:05 jasper Exp $
 
 Force disable Java support. Configure script is broken and doesn't
 correctly disable it.
 
---- configure.orig	Tue Nov 11 16:48:33 2008
-+++ configure	Tue Nov 11 16:49:01 2008
-@@ -20721,7 +20721,7 @@ fi
+--- configure.orig	Sun Nov 16 17:25:05 2008
++++ configure	Tue Nov 18 12:25:13 2008
+@@ -12358,7 +12358,7 @@ fi
  
  # Java support
  
@@ -14,7 +14,7 @@ correctly disable it.
  # Check whether --with-java_home was given.
  if test "${with_java_home+set}" = set; then
    withval=$with_java_home; if test "$withval" = "no" ; then
-@@ -21194,8 +21194,11 @@ else
+@@ -12831,8 +12831,11 @@ else
    BUILD_JAVA_PACKAGE_FALSE=
  fi
  

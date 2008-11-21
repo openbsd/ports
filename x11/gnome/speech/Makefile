@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/11/11 16:27:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/11/21 18:20:04 jasper Exp $
 
 COMMENT=		GNOME speech module
 
 GNOME_PROJECT=		gnome-speech
-GNOME_VERSION=		0.4.18
-PKGNAME=		${DISTNAME}p1
-SHARED_LIBS +=  gnomespeech          0.0      # .7.1
+GNOME_VERSION=		0.4.22
+SHARED_LIBS +=  gnomespeech          0.1      # .7.1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,7 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ORBit-2 ORBitCosNaming-2 c glib-2.0 gmodule-2.0 gobject-2.0 \
-		gthread-2.0 pcre pthread stdc++
+		gthread-2.0 pcre pthread
 
 MODULES=		devel/gettext \
 			x11/gnome
