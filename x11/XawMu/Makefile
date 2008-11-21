@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2008/11/21 15:12:11 jasper Exp $
 
 COMMENT=		modern look Athena widgets
 
 VERSION=		1.5
 DISTNAME=		XawM-${VERSION}u
-PKGNAME=		XawMu-${VERSION}p1
+PKGNAME=		XawMu-${VERSION}p2
 SHARED_LIBS=		XawM 1.0
 CATEGORIES=		x11 devel
 
