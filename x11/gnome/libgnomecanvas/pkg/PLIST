@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2007/11/10 14:49:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2008/11/21 18:51:28 jasper Exp $
 %%SHARED%%
 include/libgnomecanvas-2.0/
 include/libgnomecanvas-2.0/libgnomecanvas/
@@ -98,8 +98,6 @@ share/locale/en_GB/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/eo/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/es/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/et/LC_MESSAGES/libgnomecanvas-2.0.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/
