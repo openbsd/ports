@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/21 14:55:19 bluhm Exp $
+bin/nytprofcsv
+bin/nytprofhtml
+${P5ARCH}/
+${P5ARCH}/Devel/
+${P5ARCH}/Devel/NYTProf/
+${P5ARCH}/Devel/NYTProf.pm
+${P5ARCH}/Devel/NYTProf/Apache.pm
+${P5ARCH}/Devel/NYTProf/Core.pm
+${P5ARCH}/Devel/NYTProf/Data.pm
+${P5ARCH}/Devel/NYTProf/ReadStream.pm
+${P5ARCH}/Devel/NYTProf/Reader.pm
+${P5ARCH}/Devel/NYTProf/Test.pm
+${P5ARCH}/Devel/NYTProf/Util.pm
+${P5ARCH}/Devel/NYTProf/js/
+${P5ARCH}/Devel/NYTProf/js/jquery.min.js
+${P5ARCH}/Devel/NYTProf/js/jquery.tablesorter.min.js
+${P5ARCH}/Devel/auto/
+${P5ARCH}/Devel/auto/Devel/
+${P5ARCH}/Devel/auto/Devel/NYTProf/
+${P5ARCH}/Devel/auto/Devel/NYTProf/NYTProf.so
+${P5ARCH}/Devel/benchmark.pl
+${P5ARCH}/auto/
+${P5ARCH}/auto/Devel/
+${P5ARCH}/auto/Devel/NYTProf/
+${P5ARCH}/auto/Devel/NYTProf/NYTProf.bs
+${P5ARCH}/auto/Devel/NYTProf/NYTProf.so
+@man man/man1/nytprofcsv.1
+@man man/man1/nytprofhtml.1
+@man man/man3p/Devel::NYTProf.3p
+@man man/man3p/Devel::NYTProf::Apache.3p
+@man man/man3p/Devel::NYTProf::Core.3p
+@man man/man3p/Devel::NYTProf::Data.3p
+@man man/man3p/Devel::NYTProf::ReadStream.3p
+@man man/man3p/Devel::NYTProf::Reader.3p
+@man man/man3p/Devel::NYTProf::Util.3p
