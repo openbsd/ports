@@ -1,27 +1,28 @@
-# $OpenBSD: Makefile,v 1.33 2008/06/02 17:58:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2008/11/21 18:21:52 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	2.18.4
-PKGNAME=	${DISTNAME}p3
+GNOME_VERSION=	2.24.1.1
 
-# GPL/LGPL
+# GPLv2/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+# XXX: To be fixed
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/2.24/}
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama Xrandr \
 		Xrender art_lgpl_2 atk-1.0 audiofile bonobo-2 bonobo-activation \
 		bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 esd expat \
 		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
+		gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
-		jpeg m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pangox-1.0 pangoxft-1.0 pcre pixman-1 png popt pthread ssl util \
-		xml2 z
+		m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0 \
+		pangoxft-1.0 pcre pixman-1 png popt pthread ssl util xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome
