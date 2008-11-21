@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2008/10/14 12:15:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2008/11/21 17:43:02 jasper Exp $
 %%SHARED%%
 @bin bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
@@ -101,6 +101,8 @@ share/gnome/help/gdm/
 share/gnome/help/gdm/C/
 share/gnome/help/gdm/C/gdm.xml
 share/gnome/help/gdm/C/legal.xml
+share/gnome/help/gdm/de/
+share/gnome/help/gdm/de/gdm.xml
 share/gnome/help/gdm/en_GB/
 share/gnome/help/gdm/en_GB/gdm.xml
 share/gnome/help/gdm/es/
@@ -135,8 +137,6 @@ share/icons/hicolor/scalable/apps/gdmsetup.svg
 share/locale/af/LC_MESSAGES/gdm.mo
 share/locale/am/LC_MESSAGES/gdm.mo
 share/locale/ar/LC_MESSAGES/gdm.mo
-share/locale/as/
-share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/gdm.mo
 share/locale/az/LC_MESSAGES/gdm.mo
 share/locale/be/LC_MESSAGES/gdm.mo
@@ -200,8 +200,6 @@ share/locale/pt_BR/LC_MESSAGES/gdm.mo
 share/locale/ro/LC_MESSAGES/gdm.mo
 share/locale/ru/LC_MESSAGES/gdm.mo
 share/locale/rw/LC_MESSAGES/gdm.mo
-share/locale/si/
-share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/gdm.mo
 share/locale/sk/LC_MESSAGES/gdm.mo
 share/locale/sl/LC_MESSAGES/gdm.mo
@@ -229,6 +227,7 @@ share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
 share/omf/gdm/
 share/omf/gdm/gdm-C.omf
+share/omf/gdm/gdm-de.omf
 share/omf/gdm/gdm-en_GB.omf
 share/omf/gdm/gdm-es.omf
 share/omf/gdm/gdm-fr.omf

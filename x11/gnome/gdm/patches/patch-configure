@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.11 2008/05/09 10:51:45 bernd Exp $
---- configure.orig	Tue Nov 27 00:20:34 2007
-+++ configure	Wed May  7 16:40:01 2008
-@@ -30752,7 +30752,6 @@ if test x$with_tcp_wrappers = xno ; then
+$OpenBSD: patch-configure,v 1.12 2008/11/21 17:43:02 jasper Exp $
+--- configure.orig	Mon Jun 30 19:55:06 2008
++++ configure	Tue Nov 18 22:55:22 2008
+@@ -30841,7 +30841,6 @@ if test x$with_tcp_wrappers = xno ; then
  else
    { echo "$as_me:$LINENO: checking whether to use TCP wrappers" >&5
  echo $ECHO_N "checking whether to use TCP wrappers... $ECHO_C" >&6; }
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.11 2008/05/09 10:51:45 bernd Exp $
    case "$host" in
      *-*-solaris*)
  	if test -f /usr/sfw/lib/libwrap.so; then
-@@ -30973,7 +30972,6 @@ else
+@@ -31062,7 +31061,6 @@ else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-configure,v 1.11 2008/05/09 10:51:45 bernd Exp $
  fi
  
  rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
-@@ -32757,7 +32755,7 @@ fi
+@@ -32842,7 +32840,7 @@ fi
  #
  # Define some variables to represent the directories we use.
  #
@@ -26,7 +26,7 @@ $OpenBSD: patch-configure,v 1.11 2008/05/09 10:51:45 bernd Exp $
  
  gdmlocaledir=${gdmconfdir}
  
-@@ -33458,11 +33456,11 @@ case "$host" in
+@@ -33556,11 +33554,11 @@ case "$host" in
  	;;
  *)
  	HOST_GDM_USER_PATH="/bin:/usr/bin"
@@ -41,7 +41,7 @@ $OpenBSD: patch-configure,v 1.11 2008/05/09 10:51:45 bernd Exp $
  	HOST_GDMGNOMESESSIONCMD=gnome-session
  	HOST_UTMP_LINE_ATTACHED="/dev/console"
  	HOST_UTMP_LINE_REMOTE=""
-@@ -33565,6 +33563,12 @@ else
+@@ -33663,6 +33661,12 @@ else
     GDM_USER_PATH="$GDM_USER_PATH:/usr/bin/X11:/usr/X11R6/bin:/usr/local/bin:/opt/X11R6/bin"
     X_CONFIG_OPTIONS="-audit 0"
  fi
@@ -52,5 +52,5 @@ $OpenBSD: patch-configure,v 1.11 2008/05/09 10:51:45 bernd Exp $
 +        ;;
 +esac
  
- # Don't add bindir to GDM_USER_PATH if it is already in the PATH.
- # If it is /bin or /usr/bin, for example.
+ # Use Xephyr if it is available.  It works better than Xnest since Xephyr
+ # supports the Xserver extensions, even if on a remote machine.

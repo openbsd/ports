@@ -1,6 +1,6 @@
-$OpenBSD: patch-daemon_gdm-xdmcp-manager_c,v 1.1 2007/11/27 20:26:13 jasper Exp $
---- daemon/gdm-xdmcp-manager.c.orig	Mon Oct 15 23:43:04 2007
-+++ daemon/gdm-xdmcp-manager.c	Sun Nov 25 01:04:46 2007
+$OpenBSD: patch-daemon_gdm-xdmcp-manager_c,v 1.2 2008/11/21 17:43:02 jasper Exp $
+--- daemon/gdm-xdmcp-manager.c.orig	Mon Jun 30 19:53:13 2008
++++ daemon/gdm-xdmcp-manager.c	Tue Nov 18 22:55:23 2008
 @@ -30,6 +30,7 @@
  #include <sys/stat.h>
  #include <sys/types.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-daemon_gdm-xdmcp-manager_c,v 1.1 2007/11/27 20:26:13 jasper Exp 
  
  #include <sys/socket.h>
  #include <netdb.h>
-@@ -63,7 +64,7 @@
+@@ -64,7 +65,7 @@
   * On Sun, we need to define allow_severity and deny_severity to link
   * against libwrap.
   */
@@ -18,7 +18,7 @@ $OpenBSD: patch-daemon_gdm-xdmcp-manager_c,v 1.1 2007/11/27 20:26:13 jasper Exp 
  #include <syslog.h>
  int allow_severity = LOG_INFO;
  int deny_severity = LOG_WARNING;
-@@ -83,6 +84,13 @@ int deny_severity = LOG_WARNING;
+@@ -84,6 +85,13 @@ int deny_severity = LOG_WARNING;
  #define GDM_MAX_FORWARD_QUERIES 10
  #define GDM_FORWARD_QUERY_TIMEOUT 30
  #define MANAGED_FORWARD_INTERVAL 1500 /* 1.5 seconds */

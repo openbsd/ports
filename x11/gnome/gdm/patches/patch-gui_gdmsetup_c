@@ -1,6 +1,6 @@
-$OpenBSD: patch-gui_gdmsetup_c,v 1.5 2008/09/28 10:10:30 sturm Exp $
---- gui/gdmsetup.c.orig	Mon Nov 26 16:11:04 2007
-+++ gui/gdmsetup.c	Sun Sep 28 03:48:54 2008
+$OpenBSD: patch-gui_gdmsetup_c,v 1.6 2008/11/21 17:43:02 jasper Exp $
+--- gui/gdmsetup.c.orig	Mon Jun 30 19:53:05 2008
++++ gui/gdmsetup.c	Tue Nov 18 22:55:23 2008
 @@ -26,7 +26,6 @@
  #include <string.h>
  #include <unistd.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-gui_gdmsetup_c,v 1.5 2008/09/28 10:10:30 sturm Exp $
  #include <ctype.h>
  #include <sys/socket.h>
  #include <sys/types.h>
-@@ -5468,7 +5467,7 @@ install_theme_file (gchar *filename, GtkListStore *sto
+@@ -5454,7 +5453,7 @@ install_theme_file (gchar *filename, GtkListStore *sto
  		/* HACK! */
  		argv[0] = chown;
  		argv[1] = "-R";

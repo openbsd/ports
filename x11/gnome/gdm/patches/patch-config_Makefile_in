@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_Makefile_in,v 1.10 2008/10/14 12:15:37 ajacoutot Exp $
---- config/Makefile.in.orig	Tue Nov 27 00:20:37 2007
-+++ config/Makefile.in	Tue Oct 14 13:07:39 2008
-@@ -257,7 +257,7 @@ am__quote = @am__quote@
+$OpenBSD: patch-config_Makefile_in,v 1.11 2008/11/21 17:43:02 jasper Exp $
+--- config/Makefile.in.orig	Tue Nov 18 22:17:19 2008
++++ config/Makefile.in	Tue Nov 18 22:51:36 2008
+@@ -259,7 +259,7 @@ am__quote = @am__quote@
  am__tar = @am__tar@
  am__untar = @am__untar@
  atspidir = @atspidir@
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_Makefile_in,v 1.10 2008/10/14 12:15:37 ajacoutot Exp $
  bindir = @bindir@
  build = @build@
  build_alias = @build_alias@
-@@ -705,18 +705,6 @@ install-data-hook: gdm.conf gdm.conf-custom Xsession I
+@@ -713,18 +713,6 @@ install-data-hook: gdm.conf gdm.conf-custom Xsession I
  	if test '!' -d $(DESTDIR)$(gnomercdir); then \
  		$(mkinstalldirs) $(DESTDIR)$(gnomercdir); \
  		chmod 755 $(DESTDIR)$(gnomercdir); \

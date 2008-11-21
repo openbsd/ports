@@ -1,7 +1,7 @@
-$OpenBSD: patch-gui_greeter_greeter_c,v 1.7 2007/11/27 20:26:13 jasper Exp $
---- gui/greeter/greeter.c.orig	Mon Oct 15 23:42:38 2007
-+++ gui/greeter/greeter.c	Sat Oct 27 17:09:35 2007
-@@ -1523,8 +1523,8 @@ main (int argc, char *argv[])
+$OpenBSD: patch-gui_greeter_greeter_c,v 1.8 2008/11/21 17:43:02 jasper Exp $
+--- gui/greeter/greeter.c.orig	Mon Jun 30 19:53:05 2008
++++ gui/greeter/greeter.c	Tue Nov 18 22:55:23 2008
+@@ -1527,8 +1527,8 @@ main (int argc, char *argv[])
        gtk_dialog_run (GTK_DIALOG (dialog));
        gtk_widget_destroy (dialog);
  
