@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/02/18 17:57:02 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2008/11/21 17:33:53 jasper Exp $
 @lib lib/libgdl-1.so.${LIBgdl-1_VERSION}
-@lib lib/libgdl-gnome-1.so.${LIBgdl-gnome-1_VERSION}
