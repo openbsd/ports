@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.655 2008/11/18 12:59:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.656 2008/11/21 15:03:43 bluhm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -334,6 +334,7 @@
      SUBDIR += p5-Devel-FastProf
      SUBDIR += p5-Devel-GlobalDestruction
      SUBDIR += p5-Devel-Leak
+     SUBDIR += p5-Devel-NYTProf
      SUBDIR += p5-Devel-SawAmpersand
      SUBDIR += p5-Devel-Size
      SUBDIR += p5-Devel-SmallProf
