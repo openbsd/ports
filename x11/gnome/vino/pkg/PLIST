@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/10 08:38:40 jasper Exp $
-bin/vino-preferences
-bin/vino-session
-lib/bonobo/
-lib/bonobo/servers/
-lib/bonobo/servers/GNOME_RemoteDesktop.server
-libexec/vino-server
+@comment $OpenBSD: PLIST,v 1.2 2008/11/21 19:19:12 jasper Exp $
+@bin bin/vino-passwd
+@bin bin/vino-preferences
+@bin libexec/vino-server
 share/applications/vino-preferences.desktop
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
-share/icons/hicolor/48x48/apps/gnome-remote-desktop.png
+share/gnome/autostart/
+share/gnome/autostart/vino-server.desktop
 share/locale/ar/LC_MESSAGES/vino.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/vino.mo
 share/locale/az/LC_MESSAGES/vino.mo
+share/locale/be@latin/
+share/locale/be@latin/LC_MESSAGES/
+share/locale/be@latin/LC_MESSAGES/vino.mo
 share/locale/bg/LC_MESSAGES/vino.mo
 share/locale/bn/LC_MESSAGES/vino.mo
 share/locale/bn_IN/LC_MESSAGES/vino.mo
@@ -34,11 +36,13 @@ share/locale/gl/LC_MESSAGES/vino.mo
 share/locale/gu/LC_MESSAGES/vino.mo
 share/locale/he/LC_MESSAGES/vino.mo
 share/locale/hi/LC_MESSAGES/vino.mo
+share/locale/hr/LC_MESSAGES/vino.mo
 share/locale/hu/LC_MESSAGES/vino.mo
 share/locale/id/LC_MESSAGES/vino.mo
 share/locale/it/LC_MESSAGES/vino.mo
 share/locale/ja/LC_MESSAGES/vino.mo
 share/locale/ka/LC_MESSAGES/vino.mo
+share/locale/kn/LC_MESSAGES/vino.mo
 share/locale/ko/LC_MESSAGES/vino.mo
 share/locale/ku/LC_MESSAGES/vino.mo
 share/locale/lt/LC_MESSAGES/vino.mo
@@ -46,6 +50,7 @@ share/locale/lv/LC_MESSAGES/vino.mo
 share/locale/mk/LC_MESSAGES/vino.mo
 share/locale/ml/LC_MESSAGES/vino.mo
 share/locale/mn/LC_MESSAGES/vino.mo
+share/locale/mr/LC_MESSAGES/vino.mo
 share/locale/ms/LC_MESSAGES/vino.mo
 share/locale/nb/LC_MESSAGES/vino.mo
 share/locale/ne/LC_MESSAGES/vino.mo
@@ -69,9 +74,14 @@ share/locale/sk/LC_MESSAGES/vino.mo
 share/locale/sl/LC_MESSAGES/vino.mo
 share/locale/sq/LC_MESSAGES/vino.mo
 share/locale/sr/LC_MESSAGES/vino.mo
-share/locale/sr@Latn/LC_MESSAGES/vino.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/vino.mo
 share/locale/sv/LC_MESSAGES/vino.mo
 share/locale/ta/LC_MESSAGES/vino.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/vino.mo
 share/locale/th/LC_MESSAGES/vino.mo
 share/locale/tr/LC_MESSAGES/vino.mo
 share/locale/ug/LC_MESSAGES/vino.mo
@@ -91,5 +101,3 @@ share/vino/vino-preferences.glade
 share/vino/vino-prompt.glade
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
