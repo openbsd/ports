@@ -1,0 +1,10 @@
+To enable the compositor manager of metacity, issue the following
+command:
+
+gconftool-2 -s '/apps/metacity/general/compositing_manager' --type bool \
+true
+
+To disable it:
+
+gconftool-2 -s '/apps/metacity/general/compositing_manager' --type bool \
+false

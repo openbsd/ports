@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2008/07/02 17:42:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2008/11/21 19:01:18 jasper Exp $
 
 COMMENT=		lightweight window manager
 
 GNOME_PROJECT=		metacity
-GNOME_VERSION=		2.20.2
-SHARED_LIBS=		metacity-private 0.0
+GNOME_VERSION=		2.24.0
+SHARED_LIBS +=  metacity-private     0.0      # .0.0
 CATEGORIES=		x11
-PKGNAME=		${DISTNAME}p1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,9 +15,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
-		expat fontconfig freetype glib-2.0 glitz gmodule-2.0 \
-		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre png pthread z	pixman-1
+		dbus-1 dbus-glib-1 expat fontconfig freetype gio-2.0 \
+		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
+		png pthread z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -31,8 +31,7 @@ SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/metacity \
-			--disable-schemas-install \
-			--disable-compositor
+			--disable-schemas-install
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
