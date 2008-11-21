@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/21 18:39:32 jolan Exp $
+@bin bin/hdhomerun_config
+share/hdhomerun/
+share/hdhomerun/hdhomerun_atsc_firmware_20081002.bin
