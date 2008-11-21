@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/16 21:35:42 ajacoutot Exp $
-bin/xarchive
+@comment $OpenBSD: PLIST,v 1.2 2008/11/21 20:09:21 sthen Exp $
+@bin bin/xarchive
 lib/xarchive/
 lib/xarchive/wrappers/
 lib/xarchive/wrappers/7za-wrap.sh
@@ -11,7 +11,6 @@ lib/xarchive/wrappers/rpm-wrap.sh
 lib/xarchive/wrappers/tar-wrap.sh
 lib/xarchive/wrappers/zip-wrap.sh
 @man man/man1/xarchive.1
-share/applications/
 share/applications/xarchive.desktop
 share/doc/xarchive/
 share/doc/xarchive/xarchive.1.txt
