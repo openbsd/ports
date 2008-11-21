@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/21 18:39:32 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/21 19:25:29 ajacoutot Exp $
 
-COMMENT=	"HDHomeRun Config CLI utility & firmware"
+COMMENT=	HDHomeRun Config CLI utility & firmware
 FW=		hdhomerun_atsc_firmware_20081002.bin
 SRC=		libhdhomerun_20081002.tgz
 DISTFILES=	${FW} ${SRC}
 EXTRACT_ONLY=	${SRC}
-PKGNAME=	hdhomerun-20081002
+PKGNAME=	hdhomerun-20081002p0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.silicondust.com/hdhomerun/
 
 HOMEPAGE=	http://www.silicondust.com/
 
-# LGPL
+# LGPLv3+
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
