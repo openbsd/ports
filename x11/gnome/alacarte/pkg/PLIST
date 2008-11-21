@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/04/17 08:46:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/11/21 16:56:44 jasper Exp $
 bin/alacarte
 lib/python${MODPY_VERSION}/site-packages/Alacarte/
 lib/python${MODPY_VERSION}/site-packages/Alacarte/MainWindow.py
@@ -18,10 +18,15 @@ lib/python${MODPY_VERSION}/site-packages/Alacarte/util.pyc
 lib/python${MODPY_VERSION}/site-packages/Alacarte/util.pyo
 share/alacarte/
 share/alacarte/alacarte.glade
-share/alacarte/logo.svg
 share/applications/alacarte.desktop
+share/icons/hicolor/16x16/apps/alacarte.png
 share/icons/hicolor/22x22/apps/alacarte.png
-share/icons/hicolor/scalable/apps/alacarte.svg
+share/icons/hicolor/24x24/apps/alacarte.png
+share/icons/hicolor/256x256/
+share/icons/hicolor/256x256/apps/
+share/icons/hicolor/256x256/apps/alacarte.png
+share/icons/hicolor/32x32/apps/alacarte.png
+share/icons/hicolor/48x48/apps/alacarte.png
 share/locale/ar/LC_MESSAGES/alacarte.mo
 share/locale/as/LC_MESSAGES/alacarte.mo
 share/locale/be/LC_MESSAGES/alacarte.mo
@@ -44,10 +49,13 @@ share/locale/eu/LC_MESSAGES/alacarte.mo
 share/locale/fa/LC_MESSAGES/alacarte.mo
 share/locale/fi/LC_MESSAGES/alacarte.mo
 share/locale/fr/LC_MESSAGES/alacarte.mo
+share/locale/fur/LC_MESSAGES/alacarte.mo
 share/locale/ga/LC_MESSAGES/alacarte.mo
 share/locale/gl/LC_MESSAGES/alacarte.mo
 share/locale/gu/LC_MESSAGES/alacarte.mo
+share/locale/he/LC_MESSAGES/alacarte.mo
 share/locale/hi/LC_MESSAGES/alacarte.mo
+share/locale/hr/LC_MESSAGES/alacarte.mo
 share/locale/hu/LC_MESSAGES/alacarte.mo
 share/locale/id/LC_MESSAGES/alacarte.mo
 share/locale/io/LC_MESSAGES/alacarte.mo
@@ -71,15 +79,17 @@ share/locale/oc/LC_MESSAGES/alacarte.mo
 share/locale/or/LC_MESSAGES/alacarte.mo
 share/locale/pa/LC_MESSAGES/alacarte.mo
 share/locale/pl/LC_MESSAGES/alacarte.mo
+share/locale/ps/LC_MESSAGES/alacarte.mo
 share/locale/pt/LC_MESSAGES/alacarte.mo
 share/locale/pt_BR/LC_MESSAGES/alacarte.mo
 share/locale/ro/LC_MESSAGES/alacarte.mo
 share/locale/ru/LC_MESSAGES/alacarte.mo
 share/locale/si/LC_MESSAGES/alacarte.mo
+share/locale/sk/LC_MESSAGES/alacarte.mo
 share/locale/sl/LC_MESSAGES/alacarte.mo
 share/locale/sq/LC_MESSAGES/alacarte.mo
 share/locale/sr/LC_MESSAGES/alacarte.mo
-share/locale/sr@Latn/LC_MESSAGES/alacarte.mo
+share/locale/sr@latin/LC_MESSAGES/alacarte.mo
 share/locale/sv/LC_MESSAGES/alacarte.mo
 share/locale/ta/LC_MESSAGES/alacarte.mo
 share/locale/te/LC_MESSAGES/alacarte.mo
