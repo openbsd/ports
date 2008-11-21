@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/12/07 22:08:45 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/11/21 19:20:59 jasper Exp $
 bin/gdialog
-bin/zenity
+@bin bin/zenity
 @man man/man1/zenity.1
 share/gnome/help/zenity/
 share/gnome/help/zenity/C/
@@ -32,6 +32,20 @@ share/gnome/help/zenity/bg/figures/zenity-question-screenshot.png
 share/gnome/help/zenity/bg/figures/zenity-text-screenshot.png
 share/gnome/help/zenity/bg/figures/zenity-warning-screenshot.png
 share/gnome/help/zenity/bg/zenity.xml
+share/gnome/help/zenity/de/
+share/gnome/help/zenity/de/figures/
+share/gnome/help/zenity/de/figures/zenity-calendar-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-entry-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-error-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-fileselection-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-information-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-list-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-notification-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-progress-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-question-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-text-screenshot.png
+share/gnome/help/zenity/de/figures/zenity-warning-screenshot.png
+share/gnome/help/zenity/de/zenity.xml
 share/gnome/help/zenity/en_GB/
 share/gnome/help/zenity/en_GB/figures/
 share/gnome/help/zenity/en_GB/figures/zenity-calendar-screenshot.png
@@ -60,6 +74,20 @@ share/gnome/help/zenity/es/figures/zenity-question-screenshot.png
 share/gnome/help/zenity/es/figures/zenity-text-screenshot.png
 share/gnome/help/zenity/es/figures/zenity-warning-screenshot.png
 share/gnome/help/zenity/es/zenity.xml
+share/gnome/help/zenity/fi/
+share/gnome/help/zenity/fi/figures/
+share/gnome/help/zenity/fi/figures/zenity-calendar-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-entry-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-error-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-fileselection-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-information-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-list-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-notification-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-progress-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-question-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-text-screenshot.png
+share/gnome/help/zenity/fi/figures/zenity-warning-screenshot.png
+share/gnome/help/zenity/fi/zenity.xml
 share/gnome/help/zenity/fr/
 share/gnome/help/zenity/fr/figures/
 share/gnome/help/zenity/fr/figures/zenity-calendar-screenshot.png
@@ -132,13 +160,17 @@ share/gnome/help/zenity/uk/figures/zenity-warning-screenshot.png
 share/gnome/help/zenity/uk/zenity.xml
 share/locale/am/LC_MESSAGES/zenity.mo
 share/locale/ar/LC_MESSAGES/zenity.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/zenity.mo
 share/locale/az/LC_MESSAGES/zenity.mo
 share/locale/be/LC_MESSAGES/zenity.mo
+share/locale/be@latin/
+share/locale/be@latin/LC_MESSAGES/
+share/locale/be@latin/LC_MESSAGES/zenity.mo
 share/locale/bg/LC_MESSAGES/zenity.mo
 share/locale/bn/LC_MESSAGES/zenity.mo
 share/locale/bn_IN/LC_MESSAGES/zenity.mo
-share/locale/bs/
-share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/zenity.mo
 share/locale/ca/LC_MESSAGES/zenity.mo
 share/locale/cs/LC_MESSAGES/zenity.mo
@@ -152,8 +184,6 @@ share/locale/en_GB/LC_MESSAGES/zenity.mo
 share/locale/es/LC_MESSAGES/zenity.mo
 share/locale/et/LC_MESSAGES/zenity.mo
 share/locale/eu/LC_MESSAGES/zenity.mo
-share/locale/fa/
-share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/zenity.mo
 share/locale/fi/LC_MESSAGES/zenity.mo
 share/locale/fr/LC_MESSAGES/zenity.mo
@@ -165,16 +195,12 @@ share/locale/hi/LC_MESSAGES/zenity.mo
 share/locale/hr/LC_MESSAGES/zenity.mo
 share/locale/hu/LC_MESSAGES/zenity.mo
 share/locale/id/LC_MESSAGES/zenity.mo
-share/locale/is/
-share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/zenity.mo
 share/locale/it/LC_MESSAGES/zenity.mo
 share/locale/ja/LC_MESSAGES/zenity.mo
 share/locale/ka/LC_MESSAGES/zenity.mo
 share/locale/kn/LC_MESSAGES/zenity.mo
 share/locale/ko/LC_MESSAGES/zenity.mo
-share/locale/ku/
-share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/zenity.mo
 share/locale/lt/LC_MESSAGES/zenity.mo
 share/locale/lv/LC_MESSAGES/zenity.mo
@@ -185,8 +211,7 @@ share/locale/mi/LC_MESSAGES/zenity.mo
 share/locale/mk/LC_MESSAGES/zenity.mo
 share/locale/ml/LC_MESSAGES/zenity.mo
 share/locale/mn/LC_MESSAGES/zenity.mo
-share/locale/ms/
-share/locale/ms/LC_MESSAGES/
+share/locale/mr/LC_MESSAGES/zenity.mo
 share/locale/ms/LC_MESSAGES/zenity.mo
 share/locale/nb/LC_MESSAGES/zenity.mo
 share/locale/ne/LC_MESSAGES/zenity.mo
@@ -203,11 +228,16 @@ share/locale/pt_BR/LC_MESSAGES/zenity.mo
 share/locale/ro/LC_MESSAGES/zenity.mo
 share/locale/ru/LC_MESSAGES/zenity.mo
 share/locale/rw/LC_MESSAGES/zenity.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/zenity.mo
 share/locale/sk/LC_MESSAGES/zenity.mo
 share/locale/sl/LC_MESSAGES/zenity.mo
 share/locale/sq/LC_MESSAGES/zenity.mo
 share/locale/sr/LC_MESSAGES/zenity.mo
-share/locale/sr@Latn/LC_MESSAGES/zenity.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/zenity.mo
 share/locale/sv/LC_MESSAGES/zenity.mo
 share/locale/ta/LC_MESSAGES/zenity.mo
 share/locale/te/
@@ -218,8 +248,6 @@ share/locale/tr/LC_MESSAGES/zenity.mo
 share/locale/ug/LC_MESSAGES/zenity.mo
 share/locale/uk/LC_MESSAGES/zenity.mo
 share/locale/vi/LC_MESSAGES/zenity.mo
-share/locale/xh/
-share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/zenity.mo
 share/locale/zh_CN/LC_MESSAGES/zenity.mo
 share/locale/zh_HK/LC_MESSAGES/zenity.mo
@@ -227,8 +255,10 @@ share/locale/zh_TW/LC_MESSAGES/zenity.mo
 share/omf/zenity/
 share/omf/zenity/zenity-C.omf
 share/omf/zenity/zenity-bg.omf
+share/omf/zenity/zenity-de.omf
 share/omf/zenity/zenity-en_GB.omf
 share/omf/zenity/zenity-es.omf
+share/omf/zenity/zenity-fi.omf
 share/omf/zenity/zenity-fr.omf
 share/omf/zenity/zenity-oc.omf
 share/omf/zenity/zenity-ru.omf
