@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2008/07/13 17:22:13 jasper Exp $
---- configure.orig	Mon May  5 22:54:32 2008
-+++ configure	Mon Jun 30 18:04:43 2008
+$OpenBSD: patch-configure,v 1.2 2008/11/21 19:31:54 jasper Exp $
+--- configure.orig	Tue May  6 04:54:32 2008
++++ configure	Fri Nov 21 20:28:40 2008
 @@ -2384,7 +2384,7 @@ for as_dir in $PATH$PATH_SEPARATOR/opt/sfw/bin
  do
    IFS=$as_save_IFS
@@ -10,3 +10,11 @@ $OpenBSD: patch-configure,v 1.1 2008/07/13 17:22:13 jasper Exp $
  	 for ac_exec_ext in '' $ac_executable_extensions; do
  	   { test -f "$as_dir/$ac_prog$ac_exec_ext" && $as_test_x "$as_dir/$ac_prog$ac_exec_ext"; } || continue
  	   case `"$as_dir/$ac_prog$ac_exec_ext" --version 2>&1` in #(
+@@ -9989,7 +9989,6 @@ openbsd*)
+     *)                         need_version=no  ;;
+   esac
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in
