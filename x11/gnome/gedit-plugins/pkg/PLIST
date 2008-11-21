@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/06/24 20:34:46 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/11/21 17:35:04 jasper Exp $
 %%SHARED%%
 lib/gedit-2/plugins/bracketcompletion.gedit-plugin
 lib/gedit-2/plugins/bracketcompletion.py
@@ -89,7 +89,6 @@ share/locale/nb/LC_MESSAGES/gedit-plugins.mo
 share/locale/ne/LC_MESSAGES/gedit-plugins.mo
 share/locale/nl/LC_MESSAGES/gedit-plugins.mo
 share/locale/nn/LC_MESSAGES/gedit-plugins.mo
-share/locale/no/LC_MESSAGES/gedit-plugins.mo
 share/locale/oc/LC_MESSAGES/gedit-plugins.mo
 share/locale/or/LC_MESSAGES/gedit-plugins.mo
 share/locale/pa/LC_MESSAGES/gedit-plugins.mo
