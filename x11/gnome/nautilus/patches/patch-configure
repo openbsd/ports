@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2007/11/10 15:48:01 jasper Exp $
---- configure.orig	Tue Sep 18 09:01:42 2007
-+++ configure	Fri Oct 26 02:45:45 2007
-@@ -24123,135 +24123,12 @@ done
+$OpenBSD: patch-configure,v 1.9 2008/11/21 19:04:31 jasper Exp $
+--- configure.orig	Mon Oct 20 13:42:32 2008
++++ configure	Wed Oct 29 17:20:37 2008
+@@ -24590,135 +24590,12 @@ done
  if test "$ac_cv_func_statfs" = yes ; then
    { echo "$as_me:$LINENO: checking number of arguments to statfs()" >&5
  echo $ECHO_N "checking number of arguments to statfs()... $ECHO_C" >&6; }
