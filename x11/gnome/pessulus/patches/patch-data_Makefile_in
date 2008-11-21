@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_Makefile_in,v 1.1 2008/11/21 19:06:20 jasper Exp $
+--- data/Makefile.in.orig	Tue Nov 18 14:01:44 2008
++++ data/Makefile.in	Tue Nov 18 14:01:52 2008
+@@ -422,7 +422,7 @@ uninstall-am: uninstall-desktopDATA uninstall-gladeDAT
+ @INTLTOOL_DESKTOP_RULE@
+ 
+ install-icons:			
+-	for size in 16x16 22x22 24x24 32x32 48x48 scalable; do mkdir --parents $(DESTDIR)/$(datadir)/icons/hicolor/$$size/apps; done
++	for size in 16x16 22x22 24x24 32x32 48x48 scalable; do mkdir -p $(DESTDIR)/$(datadir)/icons/hicolor/$$size/apps; done
+ 
+ 	install -m 644 $(srcdir)/pessulus-16.png $(DESTDIR)/$(datadir)/icons/hicolor/16x16/apps/pessulus.png 
+ 	install -m 644 $(srcdir)/pessulus-22.png $(DESTDIR)/$(datadir)/icons/hicolor/22x22/apps/pessulus.png 

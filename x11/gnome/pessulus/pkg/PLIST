@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/16 17:49:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/21 19:06:20 jasper Exp $
 bin/pessulus
 lib/python${MODPY_VERSION}/site-packages/Pessulus/
 lib/python${MODPY_VERSION}/site-packages/Pessulus/__init__.py
@@ -41,8 +41,17 @@ lib/python${MODPY_VERSION}/site-packages/Pessulus/simpleeditabletreeview.py
 lib/python${MODPY_VERSION}/site-packages/Pessulus/simpleeditabletreeview.pyc
 lib/python${MODPY_VERSION}/site-packages/Pessulus/simpleeditabletreeview.pyo
 share/applications/pessulus.desktop
+share/icons/hicolor/16x16/apps/pessulus.png
+share/icons/hicolor/22x22/apps/pessulus.png
+share/icons/hicolor/24x24/apps/pessulus.png
+share/icons/hicolor/32x32/apps/pessulus.png
+share/icons/hicolor/48x48/apps/pessulus.png
+share/icons/hicolor/scalable/apps/pessulus.svg
 share/locale/ar/LC_MESSAGES/pessulus.mo
 share/locale/as/LC_MESSAGES/pessulus.mo
+share/locale/bal/
+share/locale/bal/LC_MESSAGES/
+share/locale/bal/LC_MESSAGES/pessulus.mo
 share/locale/be/LC_MESSAGES/pessulus.mo
 share/locale/be@latin/LC_MESSAGES/pessulus.mo
 share/locale/bg/LC_MESSAGES/pessulus.mo
@@ -71,6 +80,7 @@ share/locale/id/LC_MESSAGES/pessulus.mo
 share/locale/it/LC_MESSAGES/pessulus.mo
 share/locale/ja/LC_MESSAGES/pessulus.mo
 share/locale/ka/LC_MESSAGES/pessulus.mo
+share/locale/kn/LC_MESSAGES/pessulus.mo
 share/locale/ko/LC_MESSAGES/pessulus.mo
 share/locale/ku/LC_MESSAGES/pessulus.mo
 share/locale/lt/LC_MESSAGES/pessulus.mo
@@ -87,14 +97,16 @@ share/locale/oc/LC_MESSAGES/pessulus.mo
 share/locale/or/LC_MESSAGES/pessulus.mo
 share/locale/pa/LC_MESSAGES/pessulus.mo
 share/locale/pl/LC_MESSAGES/pessulus.mo
+share/locale/ps/LC_MESSAGES/pessulus.mo
 share/locale/pt/LC_MESSAGES/pessulus.mo
 share/locale/pt_BR/LC_MESSAGES/pessulus.mo
+share/locale/ro/LC_MESSAGES/pessulus.mo
 share/locale/ru/LC_MESSAGES/pessulus.mo
 share/locale/sk/LC_MESSAGES/pessulus.mo
 share/locale/sl/LC_MESSAGES/pessulus.mo
 share/locale/sq/LC_MESSAGES/pessulus.mo
 share/locale/sr/LC_MESSAGES/pessulus.mo
-share/locale/sr@Latn/LC_MESSAGES/pessulus.mo
+share/locale/sr@latin/LC_MESSAGES/pessulus.mo
 share/locale/sv/LC_MESSAGES/pessulus.mo
 share/locale/ta/LC_MESSAGES/pessulus.mo
 share/locale/te/LC_MESSAGES/pessulus.mo
@@ -110,3 +122,5 @@ share/pessulus/glade/
 share/pessulus/glade/pessulus.glade
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
