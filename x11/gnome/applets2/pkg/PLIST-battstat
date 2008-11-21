@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-battstat,v 1.15 2008/07/11 17:46:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-battstat,v 1.16 2008/11/21 17:50:05 jasper Exp $
 lib/bonobo/servers/GNOME_BattstatApplet.server
 @bin libexec/battstat-applet-2
 share/examples/gnome-applets2/
@@ -7,7 +7,6 @@ share/examples/gnome-applets2/sound/events/
 share/examples/gnome-applets2/sound/events/battstat_applet.soundlist
 @sample ${SYSCONFDIR}/gnome/sound/events/battstat_applet.soundlist
 share/gnome-2.0/ui/GNOME_BattstatApplet.xml
-share/gnome-applets/glade/battstat_applet.glade
 share/gnome/help/battstat/
 share/gnome/help/battstat/C/
 share/gnome/help/battstat/C/battstat.xml
@@ -26,6 +25,14 @@ share/gnome/help/battstat/bg/figures/battstat-applet.png
 share/gnome/help/battstat/bg/figures/battstat-credits-hal.png
 share/gnome/help/battstat/bg/figures/battstat-preferences.png
 share/gnome/help/battstat/bg/figures/context-menu.png
+share/gnome/help/battstat/el/
+share/gnome/help/battstat/el/battstat.xml
+share/gnome/help/battstat/el/figures/
+share/gnome/help/battstat/el/figures/battstat-applet-expanded.png
+share/gnome/help/battstat/el/figures/battstat-applet.png
+share/gnome/help/battstat/el/figures/battstat-credits-hal.png
+share/gnome/help/battstat/el/figures/battstat-preferences.png
+share/gnome/help/battstat/el/figures/context-menu.png
 share/gnome/help/battstat/en_GB/
 share/gnome/help/battstat/en_GB/battstat.xml
 share/gnome/help/battstat/en_GB/figures/
@@ -42,6 +49,14 @@ share/gnome/help/battstat/es/figures/battstat-applet.png
 share/gnome/help/battstat/es/figures/battstat-credits-hal.png
 share/gnome/help/battstat/es/figures/battstat-preferences.png
 share/gnome/help/battstat/es/figures/context-menu.png
+share/gnome/help/battstat/fi/
+share/gnome/help/battstat/fi/battstat.xml
+share/gnome/help/battstat/fi/figures/
+share/gnome/help/battstat/fi/figures/battstat-applet-expanded.png
+share/gnome/help/battstat/fi/figures/battstat-applet.png
+share/gnome/help/battstat/fi/figures/battstat-credits-hal.png
+share/gnome/help/battstat/fi/figures/battstat-preferences.png
+share/gnome/help/battstat/fi/figures/context-menu.png
 share/gnome/help/battstat/fr/
 share/gnome/help/battstat/fr/battstat.xml
 share/gnome/help/battstat/fr/figures/
@@ -50,6 +65,14 @@ share/gnome/help/battstat/fr/figures/battstat-applet.png
 share/gnome/help/battstat/fr/figures/battstat-credits-hal.png
 share/gnome/help/battstat/fr/figures/battstat-preferences.png
 share/gnome/help/battstat/fr/figures/context-menu.png
+share/gnome/help/battstat/ko/
+share/gnome/help/battstat/ko/battstat.xml
+share/gnome/help/battstat/ko/figures/
+share/gnome/help/battstat/ko/figures/battstat-applet-expanded.png
+share/gnome/help/battstat/ko/figures/battstat-applet.png
+share/gnome/help/battstat/ko/figures/battstat-credits-hal.png
+share/gnome/help/battstat/ko/figures/battstat-preferences.png
+share/gnome/help/battstat/ko/figures/context-menu.png
 share/gnome/help/battstat/oc/
 share/gnome/help/battstat/oc/battstat.xml
 share/gnome/help/battstat/oc/figures/
@@ -66,6 +89,14 @@ share/gnome/help/battstat/pa/figures/battstat-applet.png
 share/gnome/help/battstat/pa/figures/battstat-credits-hal.png
 share/gnome/help/battstat/pa/figures/battstat-preferences.png
 share/gnome/help/battstat/pa/figures/context-menu.png
+share/gnome/help/battstat/pt_BR/
+share/gnome/help/battstat/pt_BR/battstat.xml
+share/gnome/help/battstat/pt_BR/figures/
+share/gnome/help/battstat/pt_BR/figures/battstat-applet-expanded.png
+share/gnome/help/battstat/pt_BR/figures/battstat-applet.png
+share/gnome/help/battstat/pt_BR/figures/battstat-credits-hal.png
+share/gnome/help/battstat/pt_BR/figures/battstat-preferences.png
+share/gnome/help/battstat/pt_BR/figures/context-menu.png
 share/gnome/help/battstat/sv/
 share/gnome/help/battstat/sv/battstat.xml
 share/gnome/help/battstat/sv/figures/
@@ -85,11 +116,15 @@ share/gnome/help/battstat/uk/figures/context-menu.png
 share/omf/battstat/
 share/omf/battstat/battstat-C.omf
 share/omf/battstat/battstat-bg.omf
+share/omf/battstat/battstat-el.omf
 share/omf/battstat/battstat-en_GB.omf
 share/omf/battstat/battstat-es.omf
+share/omf/battstat/battstat-fi.omf
 share/omf/battstat/battstat-fr.omf
+share/omf/battstat/battstat-ko.omf
 share/omf/battstat/battstat-oc.omf
 share/omf/battstat/battstat-pa.omf
+share/omf/battstat/battstat-pt_BR.omf
 share/omf/battstat/battstat-sv.omf
 share/omf/battstat/battstat-uk.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gnome-applets2/battstat.schemas > /dev/null
