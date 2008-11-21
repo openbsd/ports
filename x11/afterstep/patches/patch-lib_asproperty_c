@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_asproperty_c,v 1.1 2008/11/21 15:13:58 jasper Exp $
+--- lib/asproperty.c.orig	Fri Nov 21 13:39:34 2008
++++ lib/asproperty.c	Fri Nov 21 13:39:49 2008
+@@ -21,6 +21,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <X11/X.h>
+ #include <X11/Xatom.h>
+ 

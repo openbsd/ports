@@ -1,25 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:27 espie Exp $
-bin/ASSound
-bin/Animate
-bin/Audio
-bin/Banner
-bin/Cascade
-bin/Clean
-bin/Form
-bin/Gnome
-bin/Ident
-bin/Pager
-bin/Save
-bin/Script
-bin/Scroll
-bin/Tile
-bin/Wharf
-bin/WinList
-bin/Zharf
-bin/afterstep
+@comment $OpenBSD: PLIST,v 1.7 2008/11/21 15:13:58 jasper Exp $
+@bin bin/ASSound
+@bin bin/Animate
+@bin bin/Audio
+@bin bin/Banner
+@bin bin/Cascade
+@bin bin/Clean
+@bin bin/Form
+@bin bin/Gnome
+@bin bin/Ident
+@bin bin/Pager
+@bin bin/Save
+@bin bin/Script
+@bin bin/Scroll
+@bin bin/Tile
+@bin bin/Wharf
+@bin bin/WinList
+@bin bin/Zharf
+@bin bin/afterstep
 bin/afterstepdoc
 bin/ascommand.pl
-bin/asetroot
+@bin bin/asetroot
 bin/importasmenu
 bin/installastheme.pl
 bin/makeastheme.pl
