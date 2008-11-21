@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.38 2008/11/21 17:02:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2008/11/21 19:55:29 ajacoutot Exp $
+
+# XXX fix gconftool-2 calls in PLIST (remove 2>&1)
+# WARNING: Failed to parse default value `??????????? ??????
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		control-center2-${VERSION}
+PKGNAME=		control-center2-${VERSION}p0
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
 
@@ -65,14 +68,9 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/control
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/controlcenter2
+
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
-post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/controlcenter2; \
-        mv ${WRKINST}/${SYSCONFDIR}/* \
-		${PREFIX}/share/examples/controlcenter2/
-
 .include <bsd.port.mk>
-
-CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"

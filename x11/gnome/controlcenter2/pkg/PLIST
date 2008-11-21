@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2008/11/21 17:02:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2008/11/21 19:55:29 ajacoutot Exp $
 @conflict control-center-1*
 %%SHARED%%
 @bin bin/gnome-about-me
@@ -43,14 +43,15 @@ share/applications/window-properties.desktop
 share/desktop-directories/
 share/desktop-directories/gnomecc.directory
 share/examples/controlcenter2/
-share/examples/controlcenter2/gnome/
-share/examples/controlcenter2/gnome/xdg/
+share/examples/controlcenter2/xdg/
 @sample ${SYSCONFDIR}/xdg/
-share/examples/controlcenter2/gnome/xdg/autostart/
-share/examples/controlcenter2/gnome/xdg/autostart/gnome-at-session.desktop
-share/examples/controlcenter2/gnome/xdg/menus/
+share/examples/controlcenter2/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/controlcenter2/xdg/autostart/gnome-at-session.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/gnome-at-session.desktop
+share/examples/controlcenter2/xdg/menus/
 @sample ${SYSCONFDIR}/xdg/menus/
-share/examples/controlcenter2/gnome/xdg/menus/gnomecc.menu
+share/examples/controlcenter2/xdg/menus/gnomecc.menu
 @sample ${SYSCONFDIR}/xdg/menus/gnomecc.menu
 share/gnome-control-center/
 share/gnome-control-center/default-apps/
@@ -148,26 +149,18 @@ share/gnome/help/control-center/vi/
 share/gnome/help/control-center/vi/control-center.xml
 share/gnome/help/control-center/zh_CN/
 share/gnome/help/control-center/zh_CN/control-center.xml
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gnome-display-properties.png
 share/icons/hicolor/16x16/apps/gnome-network-preferences.png
 share/icons/hicolor/16x16/apps/gnome-settings-default-applications.png
 share/icons/hicolor/16x16/apps/gnome-sound-properties.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gnome-display-properties.png
 share/icons/hicolor/22x22/apps/gnome-network-preferences.png
 share/icons/hicolor/22x22/apps/gnome-settings-default-applications.png
 share/icons/hicolor/22x22/apps/gnome-sound-properties.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gnome-display-properties.png
 share/icons/hicolor/24x24/apps/gnome-network-preferences.png
 share/icons/hicolor/24x24/apps/gnome-settings-default-applications.png
 share/icons/hicolor/24x24/apps/gnome-sound-properties.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gnome-display-properties.png
 share/icons/hicolor/32x32/apps/gnome-network-preferences.png
 share/icons/hicolor/32x32/apps/gnome-settings-default-applications.png
@@ -178,8 +171,6 @@ share/icons/hicolor/48x48/apps/gnome-network-preferences.png
 share/icons/hicolor/48x48/apps/gnome-settings-default-applications.png
 share/icons/hicolor/48x48/apps/gnome-sound-properties.png
 share/icons/hicolor/48x48/apps/typing-monitor.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gnome-display-properties.svg
 share/icons/hicolor/scalable/apps/gnome-network-preferences.svg
 share/icons/hicolor/scalable/apps/gnome-sound-properties.svg
@@ -241,8 +232,6 @@ share/locale/ne/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/nso/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/or/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/pa/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -252,20 +241,14 @@ share/locale/pt_BR/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ro/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ru/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/rw/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/si/
-share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/sr/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -308,12 +291,11 @@ share/omf/control-center/control-center-sv.omf
 share/omf/control-center/control-center-uk.omf
 share/omf/control-center/control-center-vi.omf
 share/omf/control-center/control-center-zh_CN.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/control-center2/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/control-center2/*.schemas > /dev/null 2>&1
 share/pkgconfig/
 share/pkgconfig/gnome-default-applications.pc
-share/schemas/control-center2/
 share/schemas/control-center2/control-center.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/control-center2/*.schemas > /dev/null
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/control-center2/*.schemas > /dev/null 2>&1
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
 @exec %D/bin/update-desktop-database
@@ -322,4 +304,3 @@ share/schemas/control-center2/control-center.schemas
 @unexec %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-
