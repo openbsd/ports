@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/11/10 15:00:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/11/21 18:52:24 jasper Exp $
 %%SHARED%%
-bin/gkbd-indicator-plugins-capplet
+@bin bin/gkbd-indicator-plugins-capplet
 include/libgnomekbd/
-include/libgnomekbd/gkbd-config-registry-client.h
-include/libgnomekbd/gkbd-config-registry.h
 include/libgnomekbd/gkbd-desktop-config.h
 include/libgnomekbd/gkbd-indicator-config.h
 include/libgnomekbd/gkbd-indicator-plugin.h
@@ -18,13 +16,7 @@ lib/libgnomekbdui.la
 lib/pkgconfig/
 lib/pkgconfig/libgnomekbd.pc
 lib/pkgconfig/libgnomekbdui.pc
-share/applications/
 share/applications/gkbd-indicator-plugins-capplet.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
-share/icons/hicolor/48x48/apps/gkbd-indicator-plugins-capplet.png
 share/libgnomekbd/
 share/libgnomekbd/glade/
 share/libgnomekbd/glade/gkbd-indicator-plugins.glade
@@ -39,6 +31,7 @@ share/locale/bn_IN/
 share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/libgnomekbd.mo
 share/locale/ca/LC_MESSAGES/libgnomekbd.mo
+share/locale/cs/LC_MESSAGES/libgnomekbd.mo
 share/locale/da/LC_MESSAGES/libgnomekbd.mo
 share/locale/de/LC_MESSAGES/libgnomekbd.mo
 share/locale/dz/
@@ -50,12 +43,17 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/libgnomekbd.mo
 share/locale/es/LC_MESSAGES/libgnomekbd.mo
 share/locale/et/LC_MESSAGES/libgnomekbd.mo
+share/locale/eu/LC_MESSAGES/libgnomekbd.mo
 share/locale/fi/LC_MESSAGES/libgnomekbd.mo
 share/locale/fr/LC_MESSAGES/libgnomekbd.mo
 share/locale/gl/LC_MESSAGES/libgnomekbd.mo
 share/locale/gu/
 share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/libgnomekbd.mo
+share/locale/he/LC_MESSAGES/libgnomekbd.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
+share/locale/hi/LC_MESSAGES/libgnomekbd.mo
 share/locale/hu/LC_MESSAGES/libgnomekbd.mo
 share/locale/it/LC_MESSAGES/libgnomekbd.mo
 share/locale/ja/LC_MESSAGES/libgnomekbd.mo
@@ -69,8 +67,15 @@ share/locale/lt/LC_MESSAGES/libgnomekbd.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/libgnomekbd.mo
+share/locale/ml/
+share/locale/ml/LC_MESSAGES/
+share/locale/ml/LC_MESSAGES/libgnomekbd.mo
+share/locale/mr/
+share/locale/mr/LC_MESSAGES/
+share/locale/mr/LC_MESSAGES/libgnomekbd.mo
 share/locale/nb/LC_MESSAGES/libgnomekbd.mo
 share/locale/nl/LC_MESSAGES/libgnomekbd.mo
+share/locale/nn/LC_MESSAGES/libgnomekbd.mo
 share/locale/oc/
 share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/libgnomekbd.mo
@@ -87,16 +92,30 @@ share/locale/ru/LC_MESSAGES/libgnomekbd.mo
 share/locale/si/
 share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/libgnomekbd.mo
+share/locale/sl/LC_MESSAGES/libgnomekbd.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/libgnomekbd.mo
+share/locale/sr/LC_MESSAGES/libgnomekbd.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/libgnomekbd.mo
 share/locale/sv/LC_MESSAGES/libgnomekbd.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/libgnomekbd.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/libgnomekbd.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/libgnomekbd.mo
+share/locale/tr/LC_MESSAGES/libgnomekbd.mo
 share/locale/uk/LC_MESSAGES/libgnomekbd.mo
 share/locale/vi/LC_MESSAGES/libgnomekbd.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomekbd.mo
+share/locale/zh_HK/LC_MESSAGES/libgnomekbd.mo
+share/locale/zh_TW/LC_MESSAGES/libgnomekbd.mo
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/libgnomekbd/*.schemas > /dev/null
 share/schemas/
 share/schemas/libgnomekbd/
