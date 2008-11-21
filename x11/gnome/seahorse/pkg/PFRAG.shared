@@ -1,5 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/01/03 18:38:32 jasper Exp $
-lib/epiphany/2.18/extensions/libseahorseextension.so
-lib/gedit-2/plugins/libseahorse-pgp.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2008/11/21 19:12:32 jasper Exp $
 @lib lib/libcryptui.so.${LIBcryptui_VERSION}
-lib/nautilus/extensions-1.0/libnautilus-seahorse.so
