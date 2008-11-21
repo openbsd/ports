@@ -1,0 +1,12 @@
+$OpenBSD: patch-applets_clock_clock-location_c,v 1.1 2008/11/21 18:15:45 jasper Exp $
+--- applets/clock/clock-location.c.orig	Thu Oct 30 19:53:10 2008
++++ applets/clock/clock-location.c	Thu Oct 30 19:53:23 2008
+@@ -27,6 +27,8 @@
+ #include "set-timezone.h"
+ #include "system-timezone.h"
+ 
++#define daylight 1
++
+ G_DEFINE_TYPE (ClockLocation, clock_location, G_TYPE_OBJECT)
+ 
+ typedef struct {
