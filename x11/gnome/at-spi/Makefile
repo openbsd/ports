@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/11/21 17:00:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2008/11/21 17:01:34 jasper Exp $
 
 COMMENT=		GNOME accessibility interface
 
@@ -36,7 +36,5 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/at-spi 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			PYTHON=${MODPY_BIN}
-
-SUBST_VARS=		GNOME_VERSION
 
 .include <bsd.port.mk>
