@@ -1,24 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/04/17 08:46:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/11/21 18:30:23 jasper Exp $
 %%SHARED%%
 bin/charmap
 bin/gnome-character-map
-bin/gucharmap
-include/gucharmap/
-include/gucharmap/gucharmap-block-chapters.h
-include/gucharmap/gucharmap-chapters.h
-include/gucharmap/gucharmap-charmap.h
-include/gucharmap/gucharmap-codepoint-list.h
-include/gucharmap/gucharmap-mini-fontsel.h
-include/gucharmap/gucharmap-script-chapters.h
-include/gucharmap/gucharmap-script-codepoint-list.h
-include/gucharmap/gucharmap-search-dialog.h
-include/gucharmap/gucharmap-table.h
-include/gucharmap/gucharmap-unicode-info.h
-include/gucharmap/gucharmap-window.h
-include/gucharmap/gucharmap.h
+@bin bin/gucharmap
+include/gucharmap-2/
+include/gucharmap-2/gucharmap/
+include/gucharmap-2/gucharmap/gucharmap-block-chapters-model.h
+include/gucharmap-2/gucharmap/gucharmap-block-codepoint-list.h
+include/gucharmap-2/gucharmap/gucharmap-chapters-model.h
+include/gucharmap-2/gucharmap/gucharmap-chapters-view.h
+include/gucharmap-2/gucharmap/gucharmap-charmap.h
+include/gucharmap-2/gucharmap/gucharmap-chartable.h
+include/gucharmap-2/gucharmap/gucharmap-codepoint-list.h
+include/gucharmap-2/gucharmap/gucharmap-script-chapters-model.h
+include/gucharmap-2/gucharmap/gucharmap-script-codepoint-list.h
+include/gucharmap-2/gucharmap/gucharmap-type-builtins.h
+include/gucharmap-2/gucharmap/gucharmap-unicode-info.h
+include/gucharmap-2/gucharmap/gucharmap.h
 lib/libgucharmap.a
 lib/libgucharmap.la
-lib/pkgconfig/gucharmap.pc
+lib/pkgconfig/gucharmap-2.pc
 share/applications/gucharmap.desktop
 share/gnome/help/gucharmap/
 share/gnome/help/gucharmap/C/
@@ -32,6 +33,11 @@ share/gnome/help/gucharmap/bg/figures/
 share/gnome/help/gucharmap/bg/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/bg/figures/gucharmap_window.png
 share/gnome/help/gucharmap/bg/gucharmap.xml
+share/gnome/help/gucharmap/ca/
+share/gnome/help/gucharmap/ca/figures/
+share/gnome/help/gucharmap/ca/figures/gucharmap_start_window.png
+share/gnome/help/gucharmap/ca/figures/gucharmap_window.png
+share/gnome/help/gucharmap/ca/gucharmap.xml
 share/gnome/help/gucharmap/de/
 share/gnome/help/gucharmap/de/figures/
 share/gnome/help/gucharmap/de/figures/gucharmap_start_window.png
@@ -77,6 +83,11 @@ share/gnome/help/gucharmap/oc/figures/
 share/gnome/help/gucharmap/oc/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/oc/figures/gucharmap_window.png
 share/gnome/help/gucharmap/oc/gucharmap.xml
+share/gnome/help/gucharmap/pt_BR/
+share/gnome/help/gucharmap/pt_BR/figures/
+share/gnome/help/gucharmap/pt_BR/figures/gucharmap_start_window.png
+share/gnome/help/gucharmap/pt_BR/figures/gucharmap_window.png
+share/gnome/help/gucharmap/pt_BR/gucharmap.xml
 share/gnome/help/gucharmap/ru/
 share/gnome/help/gucharmap/ru/figures/
 share/gnome/help/gucharmap/ru/figures/gucharmap_start_window.png
@@ -87,6 +98,11 @@ share/gnome/help/gucharmap/sv/figures/
 share/gnome/help/gucharmap/sv/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/sv/figures/gucharmap_window.png
 share/gnome/help/gucharmap/sv/gucharmap.xml
+share/gnome/help/gucharmap/vi/
+share/gnome/help/gucharmap/vi/figures/
+share/gnome/help/gucharmap/vi/figures/gucharmap_start_window.png
+share/gnome/help/gucharmap/vi/figures/gucharmap_window.png
+share/gnome/help/gucharmap/vi/gucharmap.xml
 share/gnome/help/gucharmap/zh_CN/
 share/gnome/help/gucharmap/zh_CN/figures/
 share/gnome/help/gucharmap/zh_CN/figures/gucharmap_window.png
@@ -97,13 +113,14 @@ share/gnome/help/gucharmap/zh_TW/figures/
 share/gnome/help/gucharmap/zh_TW/figures/gucharmap_window.png
 share/gnome/help/gucharmap/zh_TW/gucharmap.xml
 share/gnome/help/gucharmap/zh_TW/legal.xml
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
-share/icons/hicolor/48x48/apps/gucharmap.png
+share/locale/af/LC_MESSAGES/gucharmap.mo
 share/locale/am/LC_MESSAGES/gucharmap.mo
 share/locale/ar/LC_MESSAGES/gucharmap.mo
 share/locale/az/LC_MESSAGES/gucharmap.mo
 share/locale/be/LC_MESSAGES/gucharmap.mo
+share/locale/be@latin/
+share/locale/be@latin/LC_MESSAGES/
+share/locale/be@latin/LC_MESSAGES/gucharmap.mo
 share/locale/bg/LC_MESSAGES/gucharmap.mo
 share/locale/bn/LC_MESSAGES/gucharmap.mo
 share/locale/bn_IN/LC_MESSAGES/gucharmap.mo
@@ -127,6 +144,7 @@ share/locale/fr/LC_MESSAGES/gucharmap.mo
 share/locale/ga/LC_MESSAGES/gucharmap.mo
 share/locale/gl/LC_MESSAGES/gucharmap.mo
 share/locale/gu/LC_MESSAGES/gucharmap.mo
+share/locale/he/LC_MESSAGES/gucharmap.mo
 share/locale/hi/LC_MESSAGES/gucharmap.mo
 share/locale/hr/LC_MESSAGES/gucharmap.mo
 share/locale/hu/LC_MESSAGES/gucharmap.mo
@@ -168,9 +186,14 @@ share/locale/sk/LC_MESSAGES/gucharmap.mo
 share/locale/sl/LC_MESSAGES/gucharmap.mo
 share/locale/sq/LC_MESSAGES/gucharmap.mo
 share/locale/sr/LC_MESSAGES/gucharmap.mo
-share/locale/sr@Latn/LC_MESSAGES/gucharmap.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/gucharmap.mo
 share/locale/sv/LC_MESSAGES/gucharmap.mo
 share/locale/ta/LC_MESSAGES/gucharmap.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/gucharmap.mo
 share/locale/th/LC_MESSAGES/gucharmap.mo
 share/locale/tr/LC_MESSAGES/gucharmap.mo
 share/locale/uk/LC_MESSAGES/gucharmap.mo
@@ -183,6 +206,7 @@ share/locale/zh_TW/LC_MESSAGES/gucharmap.mo
 share/omf/gucharmap/
 share/omf/gucharmap/gucharmap-C.omf
 share/omf/gucharmap/gucharmap-bg.omf
+share/omf/gucharmap/gucharmap-ca.omf
 share/omf/gucharmap/gucharmap-de.omf
 share/omf/gucharmap/gucharmap-en_GB.omf
 share/omf/gucharmap/gucharmap-es.omf
@@ -192,10 +216,16 @@ share/omf/gucharmap/gucharmap-it.omf
 share/omf/gucharmap/gucharmap-ja.omf
 share/omf/gucharmap/gucharmap-ko.omf
 share/omf/gucharmap/gucharmap-oc.omf
+share/omf/gucharmap/gucharmap-pt_BR.omf
 share/omf/gucharmap/gucharmap-ru.omf
 share/omf/gucharmap/gucharmap-sv.omf
+share/omf/gucharmap/gucharmap-vi.omf
 share/omf/gucharmap/gucharmap-zh_CN.omf
 share/omf/gucharmap/gucharmap-zh_TW.omf
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gucharmap/*.schemas > /dev/null
+share/schemas/gucharmap/
+share/schemas/gucharmap/gucharmap.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gucharmap/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/scrollkeeper-update -q

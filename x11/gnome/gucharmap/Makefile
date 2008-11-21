@@ -1,32 +1,31 @@
-# $OpenBSD: Makefile,v 1.10 2008/06/02 17:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2008/11/21 18:30:23 jasper Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
-GNOME_VERSION=		1.10.2
-SHARED_LIBS +=	gucharmap            0.2      # .6.3
-PKGNAME=		${DISTNAME}p2
+GNOME_VERSION=		2.24.1.1
+SHARED_LIBS +=	gucharmap            1.0      # .7.0
 
 HOMEPAGE=		http://live.gnome.org/Gucharmap
 
-# GPL/LGPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
-		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 atk-1.0 audiofile bonobo-2 bonobo-activation \
-		bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 esd expat \
-		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
-		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
-		pthread ssl util xml2 z
+# XXX: To be fixed
+MASTER_SITES=           ${MASTER_SITE_GNOME:=sources/gucharmap/2.24/}
 
-BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils
-LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui
+WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
+		dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pcre pixman-1 png pthread z
+
+BUILD_DEPENDS=		:gnome-doc-utils-*:x11/gnome/doc-utils
+LIB_DEPENDS=		gconf-2::devel/gconf2
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -35,8 +34,10 @@ USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--with-gconf-schema-file-dir="${LOCALBASE}/share/schemas/gucharmap" \
+			--disable-schemas-install \
 			--disable-scrollkeeper \
-			--enable-gnome
+			--disable-python-bindings
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
