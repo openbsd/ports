@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2008/10/18 07:39:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2008/11/21 18:25:49 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,13 +6,13 @@ COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		samba module for gnome-vfs2
 
 GNOME_PROJECT=		gnome-vfs
-GNOME_VERSION=		2.20.1
+GNOME_VERSION=		2.24.0
 PKGNAME=		gnome-vfs2-${VERSION}
-PKGNAME-main=		gnome-vfs2-${VERSION}p9
-PKGNAME-smb=		gnome-vfs2-smb-${VERSION}p9
+PKGNAME-main=		gnome-vfs2-${VERSION}
+PKGNAME-smb=		gnome-vfs2-smb-${VERSION}
 MULTI_PACKAGES=		-main -smb
 
-SHARED_LIBS +=	gnomevfs-2       2000.0       # .2000.0
+SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -41,7 +41,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 WANTLIB-smb=		${WANTLIB}
 LIB_DEPENDS-smb=	${LIB_DEPENDS} \
 			smbclient::net/samba \
-			gnomevfs-2.>=2000::x11/gnome/vfs2
+			gnomevfs-2.>=2400::x11/gnome/vfs2
 RUN_DEPENDS-smb=	${RUN_DEPENDS}
 
 USE_X11=		Yes

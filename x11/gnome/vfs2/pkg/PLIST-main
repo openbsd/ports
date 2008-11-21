@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/06/13 21:37:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/11/21 18:25:49 jasper Exp $
 @pkgpath x11/gnome/vfs2
 @bin bin/gnomevfs-cat
 @bin bin/gnomevfs-copy
@@ -192,6 +192,7 @@ share/gtk-doc/html/gnome-vfs-2.0/volumes.html
 share/locale/af/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/as/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -225,11 +226,13 @@ share/locale/is/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ka/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/kn/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/li/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/mai/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/mg/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -254,8 +257,8 @@ share/locale/sk/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/sr/LC_MESSAGES/gnome-vfs-2.0.mo
-share/locale/sr@Latn/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/sr@ije/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/te/LC_MESSAGES/gnome-vfs-2.0.mo
