@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2008/11/18 13:36:26 landry Exp $
+# $OpenBSD: Makefile,v 1.74 2008/11/21 17:04:02 jasper Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -70,6 +70,7 @@
      SUBDIR += scan
      SUBDIR += seahorse
      SUBDIR += session
+     SUBDIR += settings-daemon
      SUBDIR += speech
      SUBDIR += ssh-askpass
      SUBDIR += terminal
