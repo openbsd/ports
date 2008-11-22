@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2008/11/21 18:24:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2008/11/22 11:38:45 ajacoutot Exp $
 
 COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		2.24.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=  gdict-1.0      6.0      # .6.3
 
 # GPLv3
@@ -40,7 +41,10 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-schemas-install \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-utils \
 			--disable-hal \
-			--with-grep="/usr/bin/grep"
+			--with-grep="/usr/bin/grep" \
+			--enable-gfloppy=no \
+			--enable-console-helper=no \
+			--enable-ipv6=yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
