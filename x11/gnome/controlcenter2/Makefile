@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2008/11/21 19:55:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2008/11/22 20:22:06 ajacoutot Exp $
 
-# XXX fix gconftool-2 calls in PLIST (remove 2>&1)
-# WARNING: Failed to parse default value `??????????? ??????
+# XXX
+# fix gconftool-2 calls in PLIST (remove 2>&1 ; also in gnome-settings-daemon)
+# WARNING: Failed to parse default value `??????????? ??????...`
 
 COMMENT=		GNOME control center
 
