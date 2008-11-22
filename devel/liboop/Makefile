@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2008/11/22 09:37:43 jasper Exp $
 
 COMMENT=		low-level event loop management library
 
 DISTNAME=		liboop-1.0
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		oop		4.1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://liboop.ofb.net/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
