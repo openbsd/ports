@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/11/21 17:12:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2008/11/22 15:15:54 ajacoutot Exp $
 
 COMMENT=		universal search and navigation for GNOME
 
-GNOME_VERSION=		2.24.1
+GNOME_VERSION=		2.24.2
 GNOME_PROJECT=		deskbar-applet
 CATEGORIES=		sysutils
 
@@ -37,7 +37,8 @@ BUILD_DEPENDS=		::x11/dbus-python \
 RUN_DEPENDS=		::lang/python/${MODPY_VERSION},-bz2 \
 			::mail/evolution \
 			::x11/dbus-python \
-			::x11/gnome/py-gnome-desktop
+			::x11/gnome/py-gnome-desktop \
+			::devel/py-simplejson
 LIB_DEPENDS=		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server
 
 MODGNOME_HELP_FILES=	Yes
