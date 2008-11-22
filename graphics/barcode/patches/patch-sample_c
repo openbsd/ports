@@ -1,0 +1,10 @@
+$OpenBSD: patch-sample_c,v 1.1 2008/11/22 09:39:10 jasper Exp $
+--- sample.c.orig	Fri Nov 21 14:34:09 2008
++++ sample.c	Fri Nov 21 14:34:20 2008
+@@ -1,5 +1,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ #include "barcode.h"
+ 
