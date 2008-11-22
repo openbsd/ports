@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/04/29 19:13:33 jasper Exp $
-bin/wnckprop
+@comment $OpenBSD: PLIST,v 1.16 2008/11/22 11:19:32 jasper Exp $
+@bin bin/wnckprop
 include/libwnck-1.0/
 include/libwnck-1.0/libwnck/
 include/libwnck-1.0/libwnck/application.h
@@ -101,7 +101,6 @@ share/locale/en_GB/LC_MESSAGES/libwnck.mo
 share/locale/eo/LC_MESSAGES/libwnck.mo
 share/locale/es/LC_MESSAGES/libwnck.mo
 share/locale/et/LC_MESSAGES/libwnck.mo
-share/locale/eu/
 share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/libwnck.mo
 share/locale/fa/
@@ -196,9 +195,9 @@ share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/libwnck.mo
 share/locale/sr/LC_MESSAGES/libwnck.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
-share/locale/sr@Latn/LC_MESSAGES/libwnck.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/libwnck.mo
 share/locale/sv/LC_MESSAGES/libwnck.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
