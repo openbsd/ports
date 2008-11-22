@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/02/24 21:53:37 uwe Exp $
+# $OpenBSD: Makefile,v 1.7 2008/11/22 14:05:37 uwe Exp $
 
 COMMENT=		bluetooth network libraries
-DISTNAME=		bluetooth-libs-20080217
+DISTNAME=		bluetooth-libs-20081122
 SHARED_LIBS=		bluetooth 2.0 \
-			sdp 2.0
+			sdp 2.1
 
 CATEGORIES=		devel net
 MAINTAINER=		Uwe Stuehler <uwe@openbsd.org>
