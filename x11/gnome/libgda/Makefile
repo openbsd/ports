@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/21 18:35:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/11/22 23:53:47 ajacoutot Exp $
 
 # XXX: use system sqlite3
 
 COMMENT-main=		GNOME Data Access library
-COMMENT-db4=		BerkeleyDB backend for libgda
 COMMENT-ldap=		LDAP backend for libgda
 COMMENT-mdb=		MS Access MDB backend for libgda
 COMMENT-mysql=		MySQL backend for libgda
@@ -12,12 +11,11 @@ COMMENT-pgsql=		PostreSQL backend for libgda
 GNOME_PROJECT=		libgda
 GNOME_VERSION=		3.1.5
 
-PKGNAME-main=		${DISTNAME}
-PKGNAME-db4=		libgda-db4-${GNOME_VERSION}
-PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
-PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}
-PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
-PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
+PKGNAME-main=		${DISTNAME}p0
+PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}p0
+PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}p0
+PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}p0
+PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}p0
 
 CATEGORIES=		databases
 
@@ -28,7 +26,6 @@ SHARED_LIBS +=	gda-3.0              1.0      # .3.0
 SHARED_LIBS +=	gda-report-3.0       1.0      # .3.0
 SHARED_LIBS +=  gda-xslt-3.0         0.0      # .0.0
 
-
 HOMEPAGE=		http://www.gnome-db.org/
 
 # library: LGPLv2
@@ -38,21 +35,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		crypto m pcre rpcsvc ssl stdc++ util z
-WANTLIB-main=		${WANTLIB} curses c pthread gpg-error \
-			readline xml2
+WANTLIB=	crypto m rpcsvc ssl stdc++ util z ORBit-2 dbus-1 \
+		dbus-glib-1 fam gconf-2 glib-2.0 gmodule-2.0 \
+		gobject-2.0 gpg-error gthread-2.0 pcre xml2
+
+WANTLIB-main=	${WANTLIB} c curses pthread readline
 
 MODULES=		devel/gettext \
 			x11/gnome
 
 SUBST_VARS=		GDA_MAJOR
 
-PSEUDO_FLAVORS=		no_db4 no_ldap no_mdb no_mysql no_pgsql
+PSEUDO_FLAVORS=		no_ldap no_mdb no_mysql no_pgsql
 FLAVOR?=
 
 MULTI_PACKAGES=		-main
 
-LIB_DEPENDS-main=	xslt::textproc/libxslt
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			xslt::textproc/libxslt \
+			db.>=5::databases/db/v4
 
 LIB_DEPENDS=		gcrypt::security/libgcrypt \
 			gnomevfs-2::x11/gnome/vfs2
@@ -61,6 +62,7 @@ REGRESS_DEPENDS=	::devel/check
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
+			--with-bdb="${LOCALBASE}" \
 			--without-firebird \
 			--without-ibmdb2 \
 			--without-mSQL \
@@ -76,22 +78,11 @@ FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 # XXX configuration checks for freetds fail in mysterious ways
 CONFIGURE_ARGS+=	--without-tds
 
-.if ${FLAVOR:L:Mno_db4}
-CONFIGURE_ARGS+=	--without-bdb
-.else
-MULTI_PACKAGES+=	-db4
-WANTLIB-db4=		${WANTLIB}
-LIB_DEPENDS-db4=	${LIB_DEPENDS} \
-			gda-3.0,gdasql-3.0::x11/gnome/libgda \
-			db::databases/db/v4
-CONFIGURE_ARGS+=	--with-bdb="${LOCALBASE}"
-.endif
-
 .if ${FLAVOR:L:Mno_ldap}
 CONFIGURE_ARGS+=	--without-ldap
 .else
 MULTI_PACKAGES+=	-ldap
-WANTLIB-ldap=		${WANTLIB} asn1 com_err crypto gssapi krb5 sasl2 ssl
+WANTLIB-ldap=		${WANTLIB} asn1 com_err db gssapi krb5 sasl2
 LIB_DEPENDS-ldap=	${LIB_DEPENDS} \
 			gda-3.0,gdasql-3.0::x11/gnome/libgda \
 			lber.>=9,ldap::databases/openldap
@@ -102,10 +93,10 @@ CONFIGURE_ARGS+=	--with-ldap="${LOCALBASE}"
 CONFIGURE_ARGS+=	--without-mdb
 .else
 MULTI_PACKAGES+=	-mdb
-WANTLIB-mdb=		${WANTLIB}
+WANTLIB-mdb=		${WANTLIB} db
 LIB_DEPENDS-mdb=	${LIB_DEPENDS} \
 			gda-3.0,gdasql-3.0::x11/gnome/libgda \
-			mdb.>=1,mdbsql::databases/mdbtools/snapshot
+			mdb.>=1::databases/mdbtools/snapshot
 CONFIGURE_ARGS+=	--with-mdb="${LOCALBASE}"
 .endif
 
@@ -113,7 +104,7 @@ CONFIGURE_ARGS+=	--with-mdb="${LOCALBASE}"
 CONFIGURE_ARGS+=	--without-mysql
 .else
 MULTI_PACKAGES+=	-mysql
-WANTLIB-mysql=		${WANTLIB} crypto ssl
+WANTLIB-mysql=		${WANTLIB} db
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
 			gda-3.0,gdasql-3.0::x11/gnome/libgda \
 			mysqlclient::databases/mysql
@@ -124,7 +115,7 @@ CONFIGURE_ARGS+=	--with-mysql="${LOCALBASE}"
 CONFIGURE_ARGS+=	--without-postgresql
 .else
 MULTI_PACKAGES+=	-pgsql
-WANTLIB-pgsql=		${WANTLIB}
+WANTLIB-pgsql=		${WANTLIB} db
 LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
 			gda-3.0,gdasql-3.0::x11/gnome/libgda \
 			pq::databases/postgresql
