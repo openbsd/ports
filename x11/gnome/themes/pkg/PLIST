@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2008/11/21 18:22:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2008/11/22 12:29:27 ajacoutot Exp $
 @conflict gtk2-clearlooks-engine-*
 share/icons/Crux/
 share/icons/Crux/16x16/
@@ -2739,8 +2739,6 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/gnome-themes.mo
 share/locale/fi/LC_MESSAGES/gnome-themes.mo
 share/locale/fr/LC_MESSAGES/gnome-themes.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-themes.mo
 share/locale/ga/LC_MESSAGES/gnome-themes.mo
 share/locale/gl/LC_MESSAGES/gnome-themes.mo
@@ -3304,6 +3302,8 @@ share/themes/Simple/gtk-2.0/
 share/themes/Simple/gtk-2.0/gtkrc
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Crux 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Crux 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrast 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrast 2> /dev/null || true
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrast-SVG 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrast-SVG 2> /dev/null || true
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastInverse 2> /dev/null || true
@@ -3321,6 +3321,7 @@ share/themes/Simple/gtk-2.0/gtkrc
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Mist 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Mist 2> /dev/null || true
 @unexec-delete rm -f %D/share/icons/Crux/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/HighContrast-SVG/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/HighContrastInverse/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/HighContrastLargePrint/icon-theme.cache
