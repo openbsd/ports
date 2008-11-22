@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/18 18:05:27 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2008/11/22 19:29:02 jasper Exp $
 
-COMMENT=	C# implementation of dbus - GLib integration
+COMMENT=	C\# implementation of dbus - GLib integration
 DISTNAME=	ndesk-dbus-glib-0.4.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	sysutils
 
 MASTER_SITES=	http://www.ndesk.org/archive/ndesk-dbus/
