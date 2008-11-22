@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.70 2008/11/22 09:58:03 steven Exp $
+# $OpenBSD: libtool,v 1.71 2008/11/22 10:04:19 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1226,7 +1226,7 @@ sub internal_parse_linkargs
 
 	foreach my $a (@$args) {
 		Trace::debug {"  processing $a\n"};
-		if ($a eq '' || $a =~ m/^\s+$/) {
+		if (!$a || $a eq '' || $a =~ m/^\s+$/) {
 			# skip empty arguments
 		} elsif ($a eq '-lc') {	
 			# don't link explicitly with libc (just remove -lc)
@@ -1235,16 +1235,16 @@ sub internal_parse_linkargs
 			push @$deplibs, $a;
 			$seen_pthread = 1;
 			push(@$result, $a);
-		} elsif ($a && $a =~ m/^-L(.*)/) {
+		} elsif ($a =~ m/^-L(.*)/) {
 			if (!exists $dirs->{$1}) {
 				$dirs->{$1} = 1;
 				push @$deplibs, $a;
 			}
-		} elsif ($a && $a =~ m/^-R(.*)/) {
+		} elsif ($a =~ m/^-R(.*)/) {
 			# -R options originating from .la resolution
 			# those from @ARGV are in @Ropts
 			push @$Rresolved, $1;
-		} elsif ($a && $a =~ m/^-l(.*)/) {
+		} elsif ($a =~ m/^-l(.*)/) {
 			my @largs = ();
 			my $key = $1;
 			if (!exists $libstofind->{$key}) {
@@ -1283,7 +1283,7 @@ sub internal_parse_linkargs
 			} else {
 				push @$orderedlibs, $key;
 			}
-		} elsif ($a && $a =~ m/(\S+\/)*(\S+)\.a$/) {
+		} elsif ($a =~ m/(\S+\/)*(\S+)\.a$/) {
 			my $key = $2;
 			$key =~ s/^lib//;
 			$libs->{$key} = $a;
@@ -1292,7 +1292,7 @@ sub internal_parse_linkargs
 			} else {
 				push @$orderedlibs, $key;
 			}
-		} elsif ($a && $a =~ m/(\S+\/)*(\S+)\.la$/) {
+		} elsif ($a =~ m/(\S+\/)*(\S+)\.la$/) {
 			my $key = $2;
 			$key =~ s/^lib//;
 			my $d = abs_path(dirname($a));
