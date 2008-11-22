@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2008/11/21 19:04:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2008/11/22 11:02:14 jasper Exp $
 
 COMMENT=		GNOME shell and file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		2.24.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 CATEGORIES=		x11
 
@@ -46,7 +47,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-beagle \
 			--disable-schemas-install \
 			--disable-update-mimedb
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${WRKBUILD}/libnautilus/.libs \
 				-L${WRKBUILD}/libnautilus-adapter/.libs \
 				-L${WRKBUILD}/libnautilus-private/.libs \
