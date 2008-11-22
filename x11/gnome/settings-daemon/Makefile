@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/11/22 10:57:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/11/22 19:45:50 jasper Exp $
 
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,7 +31,9 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		notify::devel/libnotify \
 			gnome-desktop-2.>=6::x11/gnome/desktop \
 			gnomekbd::x11/gnome/libgnomekbd
+BUILD_DEPENDS=		::multimedia/gstreamer-0.10/plugins-base,-gnome
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
+			::multimedia/gstreamer-0.10/plugins-base,-gnome \
 			::multimedia/gstreamer-0.10/plugins-good,-esd \
 			::multimedia/gstreamer-0.10/plugins-good,-gconf
 
