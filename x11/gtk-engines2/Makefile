@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2008/11/22 11:51:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2008/11/22 12:23:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		collection of theme engines for GTK+2
 V=			2.16.1
 GNOME_PROJECT=		gtk-engines
 GNOME_VERSION=		${V}
-PKGNAME=		gtk-engines2-${V}
+PKGNAME=		gtk-engines2-${V}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gnome.org/
@@ -30,10 +30,17 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 USE_X11=		Yes
+
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS= 	--disable-lua
+CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
+			--disable-lua
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+post-install:
+	cd ${WRKBUILD}/po && \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
+			-f ${MAKE_FILE} ${FAKE_TARGET}
 
 NO_REGRESS=	       Yes
 

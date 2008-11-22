@@ -1,12 +1,2 @@
-This package provides several theme engines for GTK+2 including:
-
-* Clearlooks: Clean and simple theme engine.
-
-* HC: High Contrast engine.
-
-* Mist: Minimalistic engine, designed to provide a simple UI.
-
-* Redmond95: A simple theme engine that looks a bit like 
-  Microsoft Windows95.
-
-* Smooth: Very flexible engine, yet very fast.
+This package provides a central location for commonly used GTK engines:
+Clearlooks, Crux, Glide, HC, Industrial, Mist, Redmond and Thinice.
