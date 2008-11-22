@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.53 2008/11/22 17:23:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2008/11/22 18:56:13 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
+COMMENT-fam=		fam(3) gio module
 
 VERSION=		2.18.2
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}p0
+PKGNAME-main=		glib2-${VERSION}p1
 PKGNAME-docs=		glib2-docs-${VERSION}p0
+PKGNAME-fam=		glib2-fam-${VERSION}
+
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org/
@@ -26,7 +29,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/2.18/}
 EXTRACT_SUFX=		.tar.bz2
 
-MULTI_PACKAGES=		-main -docs
+MULTI_PACKAGES=		-main -docs -fam
 
 MODULES=		devel/gettext
 
@@ -35,10 +38,14 @@ WANTLIB-main=		c
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			pcre:pcre->=7.2:devel/pcre
 
-
 PKG_ARCH-docs=		*
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
+
+LIB_DEPENDS-fam=	${LIB_DEPENDS-main} \
+			gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0::${BASE_PKGPATH},-main \
+			fam::sysutils/fam
+WANTLIB-fam=		m rpcsvc stdc++
 
 # disable optimization on powerpc because it can lead to a
 # segfault under some circumstances
@@ -51,14 +58,12 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
+			--enable-fam \
 			--with-pcre=system \
 			--disable-selinux \
 			--disable-xattr
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-# XXX enable by default or multi-package?
-CONFIGURE_ARGS+=	--disable-fam
 
 # don't hardcode (+fix) paths
 pre-configure:

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-fam,v 1.1 2008/11/22 18:56:13 ajacoutot Exp $
+lib/gio/modules/libgiofam.so

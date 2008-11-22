@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-fam,v 1.1 2008/11/22 18:56:13 ajacoutot Exp $
+%%SHARED%%
+lib/gio/modules/libgiofam.a
+lib/gio/modules/libgiofam.la
