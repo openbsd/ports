@@ -1,7 +1,15 @@
-$OpenBSD: patch-nix_machine_c,v 1.1 2002/12/23 07:29:30 pvalchev Exp $
---- nix/machine.c.orig	Wed Jan 11 23:53:00 1995
-+++ nix/machine.c	Mon Dec 23 00:26:56 2002
-@@ -336,7 +336,7 @@ char *md_timestring(unsigned long t) {
+$OpenBSD: patch-nix_machine_c,v 1.2 2008/11/22 09:36:20 jasper Exp $
+--- nix/machine.c.orig	Thu Jan 12 07:53:00 1995
++++ nix/machine.c	Sat Nov 22 00:23:49 2008
+@@ -20,6 +20,7 @@
+ ***********************************************************************/
+ 
+ #include <stdlib.h>
++#include <string.h>
+ #include <ctype.h>
+ #include <stdio.h>
+ #include <sys/types.h>
+@@ -336,7 +337,7 @@ char *md_timestring(unsigned long t) {
      static char ts[22];
      struct tm *tim;	
      
@@ -10,7 +18,7 @@ $OpenBSD: patch-nix_machine_c,v 1.1 2002/12/23 07:29:30 pvalchev Exp $
      sprintf(ts,"%04d-%02d-%02d  %02d:%02d",tim->tm_year+1900,tim->tm_mon+1,
  	    tim->tm_mday,tim->tm_hour,tim->tm_min);
      return ts;	
-@@ -417,7 +417,7 @@ char *md_stripname(char *mdfullpath) {
+@@ -417,7 +418,7 @@ char *md_stripname(char *mdfullpath) {
      if (plainname!=NULL) free(plainname),plainname=NULL;
      if ((plainname=malloc(strlen(mdfullpath)+1))==NULL) 
        error(1,ERR_MEM,"md_stripname()");
