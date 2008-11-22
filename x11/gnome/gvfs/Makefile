@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/11/21 15:34:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/11/22 18:57:57 ajacoutot Exp $
 
 COMMENT=		GNOME virtual file system
 
 GNOME_PROJECT=		gvfs
 GNOME_VERSION=		1.0.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=	gvfscommon           1.0      # .0.0
-
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,6 +24,7 @@ LIB_DEPENDS=		archive::archivers/libarchive \
 			soup-2.4.>=1::devel/libsoup \
 			smbclient::net/samba \
 			gnome-keyring::x11/gnome/keyring
+RUN_DEPENDS=		:glib2-fam-*:devel/glib2,-fam
 
 CONFIGURE_ARGS+=	--disable-gtk-doc \
 			--disable-avahi \
