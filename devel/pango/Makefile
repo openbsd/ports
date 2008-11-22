@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2008/11/13 20:17:01 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2008/11/22 15:08:11 jasper Exp $
 
 COMMENT=		library for layout and rendering of text
 
 DISTNAME=		pango-1.22.2
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS += pango-1.0	   1800.0    # .2202.0
 SHARED_LIBS += pangox-1.0	   1800.0    # .2202.0
 SHARED_LIBS += pangoft2-1.0	   1800.0    # .2202.0
@@ -26,7 +27,7 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext
 
 LIB_DEPENDS=		glib-2.0.>=1800.0,gmodule-2.0.>=1800.0,gobject-2.0.>=1800.0::devel/glib2 \
-			cairo.>=3::graphics/cairo
+			cairo.>=9::graphics/cairo
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
