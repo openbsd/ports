@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/13 22:18:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/22 23:55:08 ajacoutot Exp $
+include/pygda-3.0/
+include/pygda-3.0/pygdavalue_conversions.h
 lib/pkgconfig/gnome-python-extras-2.0.pc
+lib/pkgconfig/pygda-3.0.pc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/__init__.pyc
@@ -8,6 +11,8 @@ lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/recent.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/recent.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/trayicon.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/trayicon.so
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gda.la
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gda.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gdl.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gdl.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gksu2/
@@ -53,6 +58,10 @@ share/gtk-doc/html/pygtkspell/gtkspell-class-reference.html
 share/gtk-doc/html/pygtkspell/index.html
 share/gtk-doc/html/pygtkspell/index.sgml
 share/gtk-doc/html/pygtkspell/pygtkspell.devhelp
+share/pygtk/2.0/argtypes/gda-arg-types.py
+share/pygtk/2.0/argtypes/gda-arg-types.pyc
+share/pygtk/2.0/argtypes/gda-arg-types.pyo
+share/pygtk/2.0/defs/gda.defs
 share/pygtk/2.0/defs/gtkhtml2.defs
 share/pygtk/2.0/defs/gtkmozembed.defs
 share/pygtk/2.0/defs/trayicon.defs
