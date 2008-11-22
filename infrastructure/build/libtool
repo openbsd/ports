@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.69 2008/11/19 21:11:17 steven Exp $
+# $OpenBSD: libtool,v 1.70 2008/11/22 09:58:03 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -454,6 +454,8 @@ sub compile
 {
 	my ($self, $prog, $odir, $args) = @_;
 
+	my $ltdir = $main::ltdir;
+	mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
 	my @compiler = split /\s+/, $prog;
 	if (defined $self->{picobj}) {
 		my @cmd = @compiler;
@@ -768,7 +770,6 @@ if ($mode eq 'compile') {
 	(my $nonpicobj = $ofile) =~ s/\.lo$/.o/;
 	my $picobj = "$ltdir/$nonpicobj";
 
-	mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
 	my $lofile = LoFile->new;
 	$lofile->{picobj} = $picobj if $pic;
 	$lofile->{nonpicobj} = $nonpicobj if $nonpic;
@@ -1301,9 +1302,6 @@ sub internal_parse_linkargs
 			my $dlname = $lainfo->{'dlname'};
 			my $oldlib = $lainfo->{'old_library'};
 			my $libdir = $lainfo->{'libdir'};
-			if ($d !~ m/\Q$ltdir\E$/ && $lainfo->{'installed'} eq 'no') {
-				$d .= "/$ltdir";
-			}
 			if ($libdir ne '' && $la) {
 				push @$deplibs, $fulla;
 			}
@@ -1316,6 +1314,9 @@ sub internal_parse_linkargs
 			# get the name we need (this may include a -release)
 			if (!$dlname && !$oldlib) {
 				die "neither static nor shared library found in $a\n";
+			}
+			if ($d !~ m/\Q$ltdir\E$/ && $lainfo->{'installed'} eq 'no') {
+				$d .= "/$ltdir";
 			}
 			# XXX in some cases there are multiple libs with the same name
 			# so probably need to use a different key
