@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.15 2008/10/27 21:28:01 landry Exp $
+@comment $OpenBSD: PLIST-docs,v 1.16 2008/11/22 17:23:15 ajacoutot Exp $
 @conflict glib2-<2.4.6
 share/gtk-doc/
 share/gtk-doc/html/
@@ -48,8 +48,8 @@ share/gtk-doc/html/gio/ch14.html
 share/gtk-doc/html/gio/ch15.html
 share/gtk-doc/html/gio/ch15s02.html
 share/gtk-doc/html/gio/ch15s03.html
-share/gtk-doc/html/gio/extending.html
 share/gtk-doc/html/gio/extending-gio.html
+share/gtk-doc/html/gio/extending.html
 share/gtk-doc/html/gio/file_mon.html
 share/gtk-doc/html/gio/file_ops.html
 share/gtk-doc/html/gio/gio-Desktop-file-based-GAppInfo.html

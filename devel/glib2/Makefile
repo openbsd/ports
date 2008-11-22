@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2008/10/27 21:28:01 landry Exp $
+# $OpenBSD: Makefile,v 1.53 2008/11/22 17:23:14 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
 VERSION=		2.18.2
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}
-PKGNAME-docs=		glib2-docs-${VERSION}
+PKGNAME-main=		glib2-${VERSION}p0
+PKGNAME-docs=		glib2-docs-${VERSION}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org/
@@ -52,12 +52,19 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
 			--with-pcre=system \
-			--disable-fam
+			--disable-selinux \
+			--disable-xattr
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-# Port has "/usr/local" hardcoded, we prefer ${LOCALBASE}
-pre-build:
-	perl -pi -e "s,/usr/local,${LOCALBASE},g" ${WRKSRC}/glib/gutils.c
+# XXX enable by default or multi-package?
+CONFIGURE_ARGS+=	--disable-fam
+
+# don't hardcode (+fix) paths
+pre-configure:
+	perl -pi -e "s,/usr/local,${LOCALBASE},g;" \
+		-e "s,/usr/share,${LOCALBASE}/share,g;" \
+		-e "s,/etc/xdg,${SYSCONFDIR}/xdg,g" \
+		${WRKSRC}/glib/gutils.c ${WRKSRC}/gio/xdgmime/xdgmime.c
 
 .include <bsd.port.mk>
