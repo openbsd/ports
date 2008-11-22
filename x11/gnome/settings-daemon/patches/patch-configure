@@ -1,0 +1,27 @@
+$OpenBSD: patch-configure,v 1.1 2008/11/22 10:57:26 jasper Exp $
+
+There is no --disable-pulseaudio switch, but we don't want to pick it up.
+So forse it the hard way.
+
+--- configure.orig	Tue Sep 23 11:43:04 2008
++++ configure	Sat Nov 22 11:36:59 2008
+@@ -27675,7 +27675,7 @@ fi
+ # ---------------------------------------------------------------------------
+ # Enable Legacy Sound Preference
+ # ---------------------------------------------------------------------------
+-
++if false; then # Don't just pickup pulseaudio.
+ pkg_failed=no
+ { $as_echo "$as_me:$LINENO: checking for PULSEAUDIO" >&5
+ $as_echo_n "checking for PULSEAUDIO... " >&6; }
+@@ -27742,6 +27742,10 @@ else
+ $as_echo "yes" >&6; }
+ 	have_pulseaudio=yes
+ fi
++
++fi # Don't just pickup pulseaudio.
++have_pulseaudio=no
++
+ if test x$have_pulseaudio = xyes; then
+ 	default_enable_legacy_sound_pref=no
+ else
