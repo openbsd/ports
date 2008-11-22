@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/11/22 11:38:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2008/11/22 19:09:45 ajacoutot Exp $
 %%SHARED%%
 @bin bin/baobab
 @bin bin/gnome-dictionary
@@ -514,8 +514,6 @@ share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-utils-2.0.mo
-share/locale/be@latin/
-share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/bn/LC_MESSAGES/gnome-utils-2.0.mo
@@ -586,13 +584,9 @@ share/locale/sk/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/sr/LC_MESSAGES/gnome-utils-2.0.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-utils-2.0.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-utils-2.0.mo
