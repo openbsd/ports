@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Makefile_elf-lib,v 1.4 2006/02/20 16:51:46 aanriot Exp $
+$OpenBSD: patch-lib_Makefile_elf-lib,v 1.5 2008/11/22 11:06:15 ajacoutot Exp $
 --- lib/Makefile.elf-lib.orig	Sun Feb 24 22:03:59 2002
-+++ lib/Makefile.elf-lib	Sun Feb 19 17:20:00 2006
-@@ -23,14 +23,13 @@ ELF_SONAME = $(ELF_IMAGE).so.$(ELF_SO_VE
++++ lib/Makefile.elf-lib	Sat Nov 22 11:56:10 2008
+@@ -23,14 +23,13 @@ ELF_SONAME = $(ELF_IMAGE).so.$(ELF_SO_VERSION)
  
  image:		$(ELF_LIB)
  

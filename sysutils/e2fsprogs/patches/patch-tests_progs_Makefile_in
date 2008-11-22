@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_progs_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
---- tests/progs/Makefile.in.orig	2003-11-16 18:10:23.000000000 +0100
-+++ tests/progs/Makefile.in	2003-11-16 18:10:33.000000000 +0100
-@@ -22,7 +22,7 @@ TEST_ICOUNT_OBJS=	test_icount.o test_ico
+$OpenBSD: patch-tests_progs_Makefile_in,v 1.2 2008/11/22 11:06:15 ajacoutot Exp $
+--- tests/progs/Makefile.in.orig	Sun Feb 24 22:04:04 2002
++++ tests/progs/Makefile.in	Sat Nov 22 11:56:10 2008
+@@ -22,7 +22,7 @@ TEST_ICOUNT_OBJS=	test_icount.o test_icount_cmds.o
  SRCS=	$(srcdir)/test_rel.c 
  
  LIBS= $(LIBEXT2FS) $(LIBSS) $(LIBCOM_ERR)

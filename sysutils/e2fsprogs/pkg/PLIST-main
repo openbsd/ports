@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2007/01/07 19:13:49 espie Exp $
-bin/chattr
-bin/lsattr
+@comment $OpenBSD: PLIST-main,v 1.2 2008/11/22 11:06:15 ajacoutot Exp $
+@bin bin/chattr
+@bin bin/lsattr
 include/ext2fs/
 include/ext2fs/bitops.h
 include/ext2fs/brel.h
@@ -39,19 +39,19 @@ lib/libss.a
 @man man/man8/pfsck.8
 @man man/man8/resize2fs.8
 @man man/man8/tune2fs.8
-sbin/badblocks
-sbin/debugfs
-sbin/dumpe2fs
-sbin/e2fsck
-sbin/e2image
-sbin/e2label
-sbin/fsck.ext2
-sbin/fsck.ext3
-sbin/mke2fs
-sbin/mkfs.ext2
-sbin/mkfs.ext3
-sbin/mklost+found
-sbin/pfsck
-sbin/resize2fs
-sbin/tune2fs
+@bin sbin/badblocks
+@bin sbin/debugfs
+@bin sbin/dumpe2fs
+@bin sbin/e2fsck
+@bin sbin/e2image
+@bin sbin/e2label
+@bin sbin/fsck.ext2
+@bin sbin/fsck.ext3
+@bin sbin/mke2fs
+@bin sbin/mkfs.ext2
+@bin sbin/mkfs.ext3
+@bin sbin/mklost+found
+@bin sbin/pfsck
+@bin sbin/resize2fs
+@bin sbin/tune2fs
 %%SHARED%%

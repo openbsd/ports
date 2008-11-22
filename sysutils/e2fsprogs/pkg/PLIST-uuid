@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-uuid,v 1.1 2007/01/07 19:13:49 espie Exp $
-bin/uuidgen
+@comment $OpenBSD: PLIST-uuid,v 1.2 2008/11/22 11:06:15 ajacoutot Exp $
+@bin bin/uuidgen
 include/uuid/
 include/uuid/uuid.h
 include/uuid/uuidP.h

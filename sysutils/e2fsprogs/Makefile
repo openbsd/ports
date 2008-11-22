@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2008/11/22 11:06:15 ajacoutot Exp $
 # $FreeBSD: ports/sysutils/e2fsprogs/Makefile,v 1.8 2003/02/20 19:00:47 knu Exp $
 
 COMMENT-main=		utilities to manipulate ext2 filesystems
 COMMENT-uuid=		unique id generator library
 
-DISTNAME=		e2fsprogs-1.27
-PKGNAME-main=		${DISTNAME}p5
-PKGNAME-uuid=		e2fs-uuid-1.27
+V=			1.27
+DISTNAME=		e2fsprogs-${V}
+PKGNAME-main=		${DISTNAME}p6
+PKGNAME-uuid=		e2fs-uuid-${V}p0
 CATEGORIES-uuid=	devel
 CATEGORIES=		sysutils
 SHARED_LIBS=		e2p		2.3 \
