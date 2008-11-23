@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/11/21 18:12:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2008/11/23 22:59:08 jasper Exp $
 
 COMMENT=		GNOME media utilities
 
@@ -12,9 +12,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-# XXX: To be fixed
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-media/2.24/}
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \

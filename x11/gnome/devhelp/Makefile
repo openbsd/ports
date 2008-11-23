@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/09/08 18:11:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2008/11/23 22:59:08 jasper Exp $
 
 COMMENT=		API documentation browser for GNOME
 
@@ -21,9 +21,6 @@ WANTLIB=	ICE ORBit-2 SM X11 XRes Xau Xcomposite Xcursor Xdamage \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 plc4 plds4 png pthread xml2 z
-
-# XXX: To be fixed
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION}/}
 
 MODULES=		devel/gettext \
 			lang/python \

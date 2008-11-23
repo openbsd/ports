@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/08/20 16:14:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2008/11/23 22:59:08 jasper Exp $
 
 COMMENT=		Jabber client for the GNOME desktop
 
@@ -25,9 +25,6 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gtk-x11-2.0 jpeg krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread \
 		smime3 softokn3 ssl ssl3 util xml2 z
-
-# XXX: To be fixed
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gossip/0.31/}
 
 MODULES=		devel/gettext \
 			x11/gnome
