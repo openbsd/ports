@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/23 11:17:53 sthen Exp $
+bin/iplayer-dl
+@comment bin/iplayer-dl-gui
+lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/
+lib/ruby/site_ruby/${MODRUBY_REV}/iplayer.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/browser.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/downloader.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/errors.rb
+@comment lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/gui/
+@comment lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/gui/app.rb
+@comment lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/gui/main_frame.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/javascript/
+lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/javascript.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/javascript/parser.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/javascript/tokenizer.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/metadata.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/preferences.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/iplayer/version.rb

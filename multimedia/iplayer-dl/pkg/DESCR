@@ -1,0 +1,9 @@
+The BBC launched an iPhone-specific version of the streaming iPlayer
+service in March 2008. As the iPhone does not support Flash video,
+this variant of the service uses browser sniffing to serve h.264
+(`MP4') video to clients.
+
+By pretending to be an iPhone, it's possible to download the MP4
+files for offline viewing. You can find out more about the history
+of this, and of the BBC's repeated attempts to prevent this, on the
+Beebhack Wiki, http://beebhack.wikia.com/wiki/IPhone_H.264_version.
