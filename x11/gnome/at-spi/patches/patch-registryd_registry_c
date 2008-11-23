@@ -1,0 +1,12 @@
+$OpenBSD: patch-registryd_registry_c,v 1.1 2008/11/23 12:45:47 jasper Exp $
+--- registryd/registry.c.orig	Sun Nov 23 13:43:06 2008
++++ registryd/registry.c	Sun Nov 23 13:44:23 2008
+@@ -36,6 +36,8 @@
+ #include "../libspi/spi-private.h"
+ #include "registry.h"
+ 
++#include <gdk/gdk.h>
++
+ /* Our parent GObject type  */
+ #define PARENT_TYPE SPI_LISTENER_TYPE
+ 
