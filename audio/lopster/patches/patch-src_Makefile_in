@@ -1,6 +1,6 @@
 --- src/Makefile.in.orig	Sun Aug 29 20:38:42 2004
-+++ src/Makefile.in	Thu Jan 20 12:13:03 2005
-@@ -72,7 +72,7 @@
++++ src/Makefile.in	Sun Nov 23 01:33:25 2008
+@@ -72,7 +72,7 @@ INCLUDES =  	@GTK_CFLAGS@ @ADD_CFLAGS@
  
  bin_PROGRAMS = lopster
  
