@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/11/22 23:55:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/11/23 00:10:56 ajacoutot Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
 GNOME_PROJECT=	gnome-python-extras
 GNOME_VERSION=	2.19.1
-PKGNAME=	py-gnome-extras-${VERSION}p2
+PKGNAME=	py-gnome-extras-${VERSION}p3
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -32,14 +32,16 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			:xulrunner-devel->=1.8:devel/xulrunner,-devel
+			:xulrunner-devel->=1.8:devel/xulrunner,-devel \
+			::sysutils/libgksuui
 LIB_DEPENDS=		xulrunner/gtkembedmoz,xulrunner/xpcom:xulrunner->=1.8:devel/xulrunner \
 			gksu2::sysutils/libgksu \
 			gtkspell::textproc/gtkspell \
 			gdl-1::x11/gnome/gdl \
 			gtkhtml-2::x11/gnome/libgtkhtml \
 			gda-3.0.>=1,gdasql-3.0::x11/gnome/libgda
-RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome
+RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome \
+			::sysutils/libgksuui
 REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
 
 USE_X11=		Yes
