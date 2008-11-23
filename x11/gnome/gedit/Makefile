@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2008/11/21 17:37:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2008/11/23 18:26:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		2.24.1
+GNOME_VERSION=		2.24.2
 CATEGORIES=		editors
 
 HOMEPAGE=		http://www.gnome.org/projects/gedit/
@@ -15,16 +15,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xcomposite \
-		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
-		art_lgpl_2 atk-1.0 audiofile bonobo-2 bonobo-activation \
-		bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 esd expat \
-		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 \
-		gdk_pixbuf-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
-		gnome-2 gnome-keyring gnomecanvas-2 \
-		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
-		pthread ssl stdc++ util xml2 z
+
+WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage \
+		Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c \
+		cairo dbus-1 dbus-glib-1 expat fontconfig freetype \
+		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
+		glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
+		png pthread stdc++ util xml2 z
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -36,7 +34,6 @@ BUILD_DEPENDS=		:iso-codes-*:devel/iso-codes \
 			::x11/py-gtksourceview \
 			:py-gtk2->=2.12.0:x11/py-gtk2
 LIB_DEPENDS=		enchant::textproc/enchant \
-			gnomeui-2::x11/gnome/libgnomeui \
 			gtksourceview-2.0::x11/gtksourceview \
 			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
