@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2008/11/22 20:20:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.77 2008/11/23 07:34:45 sturm Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -51,7 +51,7 @@
      SUBDIR += libgnomeprintui
      SUBDIR += libgtkhtml
      SUBDIR += librsvg
-     SUBIDR += libgweather
+     SUBDIR += libgweather
      SUBDIR += libxklavier
      SUBDIR += mag
      SUBDIR += media
