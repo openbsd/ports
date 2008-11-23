@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2008/11/21 18:15:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2008/11/23 10:30:36 jasper Exp $
 
 COMMENT=		GNOME panel
 
 GNOME_PROJECT=		gnome-panel
 GNOME_VERSION=		2.24.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=	panel-applet-2       2.24      # .2.26
 CATEGORIES=		x11
 
@@ -31,9 +32,10 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
 RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
-LIB_DEPENDS= 		gnome-desktop-2.>=5::x11/gnome/desktop \
-			gnome-menu::x11/gnome/menus \
+LIB_DEPENDS= 		camel-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2::databases/evolution-data-server \
 			wnck-1.>=21::devel/libwnck \
+			gnome-desktop-2.>=5::x11/gnome/desktop \
+			gnome-menu::x11/gnome/menus \
 			gweather::x11/gnome/libgweather \
 			rsvg-2::x11/gnome/librsvg
 
