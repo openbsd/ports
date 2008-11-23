@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2008/10/28 15:20:50 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2008/11/23 18:18:51 jasper Exp $
 
 COMMENT =	gtk livejournal client
 
 DISTNAME =	logjam-4.5.3
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	misc x11
 
 HOMEPAGE =	http://logjam.danga.com/
@@ -22,7 +23,8 @@ WANTLIB =	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xcomposite \
 MASTER_SITES =	http://logjam.danga.com/download/
 EXTRACT_SUFX =	.tar.bz2
 
-MODULES =	devel/gettext
+MODULES =	devel/gettext \
+		textproc/intltool
 
 LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 		sqlite3::databases/sqlite3 \
@@ -35,7 +37,8 @@ USE_X11 =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--without-gnome \
 			--without-librsvg \
-			--without-gtkspell
+			--without-gtkspell \
+			--without-xmms
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
