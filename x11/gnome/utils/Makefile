@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2008/11/22 19:09:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2008/11/23 00:07:32 jasper Exp $
 
 COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS +=  gdict-1.0      6.0      # .6.3
 
 # GPLv3
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-gfloppy=no \
 			--enable-console-helper=no \
 			--enable-ipv6=yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
