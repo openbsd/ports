@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2008/11/19 23:29:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2008/11/23 00:28:53 ajacoutot Exp $
 
 COMMENT=	personal accounts manager
 
@@ -11,6 +11,7 @@ HOMEPAGE=	http://tnemeth.free.fr/projets/gAcc-en.html
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
