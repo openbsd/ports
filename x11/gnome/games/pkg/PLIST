@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/11/23 11:08:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/11/23 12:52:32 ajacoutot Exp $
 @bin bin/blackjack
 bin/glchess
 @mode g+s
@@ -635,6 +635,31 @@ share/gnome-games/scores/same-gnome.Small.scores
 @sample /var/games/same-gnome.Small.scores
 @mode
 @group
+share/gnome-games/sounds/
+share/gnome-games/sounds/appear.ogg
+share/gnome-games/sounds/bad.ogg
+share/gnome-games/sounds/bonus.ogg
+share/gnome-games/sounds/click.ogg
+share/gnome-games/sounds/crash.ogg
+share/gnome-games/sounds/die.ogg
+share/gnome-games/sounds/flip-piece.ogg
+share/gnome-games/sounds/gameover.ogg
+share/gnome-games/sounds/gnometris.ogg
+share/gnome-games/sounds/gobble.ogg
+share/gnome-games/sounds/land.ogg
+share/gnome-games/sounds/laughter.ogg
+share/gnome-games/sounds/life.ogg
+share/gnome-games/sounds/lines1.ogg
+share/gnome-games/sounds/lines2.ogg
+share/gnome-games/sounds/lines3.ogg
+share/gnome-games/sounds/pop.ogg
+share/gnome-games/sounds/reverse.ogg
+share/gnome-games/sounds/slide.ogg
+share/gnome-games/sounds/splat.ogg
+share/gnome-games/sounds/teleport.ogg
+share/gnome-games/sounds/turn.ogg
+share/gnome-games/sounds/victory.ogg
+share/gnome-games/sounds/yahoo.ogg
 share/gnome-sudoku/
 share/gnome-sudoku/print_games.glade
 share/gnome-sudoku/puzzle_generator.glade

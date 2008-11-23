@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/23 11:08:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/11/23 12:52:32 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://live.gnome.org/GnomeGames/
 
@@ -23,7 +23,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 \
 		gobject-2.0 gpg-error gsf-1 gthread-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png popt pthread ssl stdc++ util xml2 z
+		png popt pthread ssl stdc++ util xml2 z gstreamer-0.10
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -36,6 +36,8 @@ LIB_DEPENDS=		ggzcore,ggzmod::games/ggz/ggz-client-libs \
 			guile-ltdl,guile::lang/guile \
 			gnomeui-2::x11/gnome/libgnomeui \
 			rsvg-2.>=18.0::x11/gnome/librsvg
+RUN_DEPENDS=		::x11/gnome/py-gnome-desktop \
+			::multimedia/gstreamer-0.10/plugins-good
 REGRESS_DEPENDS=	::devel/check
 
 USE_X11=		Yes
@@ -47,10 +49,13 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-schemas-install \
 			--disable-scrollkeeper \
 			--disable-update-mimedb \
+			--disable-sdl-mixer \
 			--localstatedir="/var" \
 			--with-tls="OpenSSL" \
-			--enable-sound="gstreamer" \
+			--enable-sound=yes \
+			--with-sound=gstreamer \
 			--enable-scalable \
+			--without-ggz-server \
 			--with-gcrypt \
 			--with-scores-group="games"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
