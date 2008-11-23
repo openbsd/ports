@@ -1,10 +1,10 @@
-$OpenBSD: patch-noip2_c,v 1.6 2008/11/20 07:49:51 wilfried Exp $
---- noip2.c.orig	Fri Nov 14 04:11:44 2008
-+++ noip2.c	Thu Nov 20 08:39:55 2008
+$OpenBSD: patch-noip2_c,v 1.7 2008/11/23 09:36:30 wilfried Exp $
+--- noip2.c.orig	Fri Nov 21 23:19:54 2008
++++ noip2.c	Sun Nov 23 10:33:56 2008
 @@ -232,11 +232,8 @@
- #define NODNSGROUP		"@@NO_GROUP@@"
  #define HOST			1
  #define GROUP			2
+ #define DOMAIN			3
 -#ifndef PREFIX
 -  #define PREFIX		"/usr/local"
 -#endif
