@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2008/11/21 18:40:21 jolan Exp $
+# $OpenBSD: Makefile,v 1.32 2008/11/23 11:18:28 sthen Exp $
 
      SUBDIR += avidemux
      SUBDIR += devede
@@ -9,6 +9,7 @@
      SUBDIR += ffmpeg2theora
      SUBDIR += gstreamer-0.10
      SUBDIR += hdhomerun
+     SUBDIR += iplayer-dl
      SUBDIR += k3b
      SUBDIR += kaffeine
      SUBDIR += libdv
