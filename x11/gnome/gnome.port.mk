@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.18 2008/06/02 14:10:07 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.19 2008/11/23 12:16:03 jasper Exp $
 #
 # Module for GNOME related ports
 #
@@ -32,9 +32,3 @@ MASTER_SITES?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:R}
 EXTRACT_SUFX?=		.tar.bz2
 
 USE_GMAKE?=		Yes
-
-#ifdef notyet
-#CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/${PROJECT}/
-#			--disable-schemas-install \
-#			--disable-scrollkeeper
-#endif
