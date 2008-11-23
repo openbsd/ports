@@ -1,0 +1,8 @@
+To use dynagen, follow the documentation and sample files to
+create a configuration file, then start a dynamips hypervisor:
+
+$ dynamips -H 7200 &
+
+and start dynagen with the name of the configuration file:
+
+$ dynagen simple1.net

@@ -1,34 +1,42 @@
-$OpenBSD: patch-dynagen,v 1.1.1.1 2008/01/18 09:12:12 sthen Exp $
---- dynagen.orig	Tue Jan 15 21:42:17 2008
-+++ dynagen	Tue Jan 15 21:47:05 2008
-@@ -20,8 +20,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
- """
+$OpenBSD: patch-dynagen,v 1.2 2008/11/23 14:24:21 sthen Exp $
+--- dynagen.orig	Sun Nov 23 14:03:28 2008
++++ dynagen	Sun Nov 23 14:03:36 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!${MODPY_BIN}
+ # -*- coding: utf-8 -*-
  
- import sys, os, re, traceback
+ """
+@@ -25,8 +25,8 @@ import sys
+ import os
+ import re
+ import traceback
 -from console import Console
 -from dynamips_lib import Dynamips, PA_C7200_IO_FE, PA_A1, PA_FE_TX, PA_4T, PA_8T, \
 +from dynagen.console import Console
 +from dynagen.dynamips_lib import Dynamips, PA_C7200_IO_FE, PA_A1, PA_FE_TX, PA_4T, PA_8T, \
-     PA_4E, PA_8E, PA_POS_OC3, Router, C7200, C3600, Leopard_2FE, NM_1FE_TX, NM_1E, NM_4E, \
-     NM_16ESW, NM_4T, DynamipsError, DynamipsWarning, Bridge, FRSW, ATMSW, ETHSW, \
-     NIO_udp, NIO_linux_eth, NIO_gen_eth, NIO_tap, NIO_unix, NIO_vde, nosend, setdebug, \
-@@ -29,15 +29,15 @@ from dynamips_lib import Dynamips, PA_C7200_IO_FE, PA_
-     CISCO2600_MB_1E, CISCO2600_MB_2E, CISCO2600_MB_1FE, CISCO2600_MB_2FE, PA_2FE_TX, \
-     PA_GE, PA_C7200_IO_2FE, PA_C7200_IO_GE_E, C1700, CISCO1710_MB_1FE_1E, C1700_MB_1ETH, \
-     DEVICETUPLE, DynamipsVerError, DynamipsErrorHandled, WICS, NM_CIDS, NM_NAM
+      PA_4E, PA_8E, PA_POS_OC3, Router, C7200, C3600, Leopard_2FE, NM_1FE_TX, NM_1E, NM_4E, \
+      NM_16ESW, NM_4T, DynamipsError, DynamipsWarning, Bridge, FRSW, ATMSW, ETHSW, ATMBR, \
+      NIO_udp, NIO_linux_eth, NIO_gen_eth, NIO_tap, NIO_unix, NIO_vde, NIO_null, nosend, setdebug, \
+@@ -34,16 +34,16 @@ from dynamips_lib import Dynamips, PA_C7200_IO_FE, PA_
+      CISCO2600_MB_1E, CISCO2600_MB_2E, CISCO2600_MB_1FE, CISCO2600_MB_2FE, PA_2FE_TX, \
+      PA_GE, PA_C7200_IO_2FE, PA_C7200_IO_GE_E, C1700, CISCO1710_MB_1FE_1E, C1700_MB_1ETH, \
+      DEVICETUPLE, DynamipsVerError, DynamipsErrorHandled, NM_CIDS, NM_NAM, get_reverse_udp_nio
+-from pemu_lib import Pemu, FW, nosend_pemu
 -from validate import Validator
 -from configobj import ConfigObj, flatten_errors
++from dynagen.pemu_lib import Pemu, FW, nosend_pemu
 +from dynagen.validate import Validator
 +from dynagen.configobj import ConfigObj, flatten_errors
  from optparse import OptionParser
  
  # Constants
- VERSION = '0.10.1.090807'
--CONFIGSPECPATH = [ "/usr/share/dynagen", "/usr/local/share" ]
-+CONFIGSPECPATH = [ "%%PREFIX%%/share/dynagen" ]
+ VERSION = '0.11.0'
+-CONFIGSPECPATH = ['/usr/share/dynagen', '/usr/local/share']
++CONFIGSPECPATH = ['${LOCALBASE}/share/dynagen']
  CONFIGSPEC = 'configspec'
--INIPATH = [ "/etc", "/usr/local/etc" ]
-+INIPATH = [ "%%SYSCONFDIR%%" ]
+-INIPATH = ['/etc', '/usr/local/etc']
++INIPATH = ['${SYSCONFDIR}']
  INIFILE = 'dynagen.ini'
- MODELTUPLE = (C1700, C2600, C2691, C3725, C3745, C3600, C7200)             # A tuple of known model objects
- ADAPTER_TRANSFORM = {
+ MODELTUPLE = (  # A tuple of known model objects
+     C1700,

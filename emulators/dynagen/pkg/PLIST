@@ -1,18 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/18 09:12:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/23 14:24:21 sthen Exp $
 bin/dynagen
 lib/python${MODPY_VERSION}/site-packages/dynagen/
 lib/python${MODPY_VERSION}/site-packages/dynagen/__init__.py
+lib/python${MODPY_VERSION}/site-packages/dynagen/confConsole.py
 lib/python${MODPY_VERSION}/site-packages/dynagen/configobj.py
 lib/python${MODPY_VERSION}/site-packages/dynagen/console.py
 lib/python${MODPY_VERSION}/site-packages/dynagen/dynamips_lib.py
+lib/python${MODPY_VERSION}/site-packages/dynagen/pemu_lib.py
+lib/python${MODPY_VERSION}/site-packages/dynagen/pemubin.py
+lib/python${MODPY_VERSION}/site-packages/dynagen/pemuwrapper.py
 lib/python${MODPY_VERSION}/site-packages/dynagen/validate.py
 share/doc/dynagen/
 share/doc/dynagen/tutorial.htm
 share/doc/dynagen/tutorial_files/
 share/doc/dynagen/tutorial_files/image001.jpg
 share/doc/dynagen/tutorial_files/image002.gif
+share/doc/dynagen/tutorial_files/image002.jpg
 share/doc/dynagen/tutorial_files/image003.gif
+share/doc/dynagen/tutorial_files/image003.jpg
 share/doc/dynagen/tutorial_files/image004.gif
+share/doc/dynagen/tutorial_files/image004.jpg
 share/doc/dynagen/tutorial_files/image005.jpg
 share/doc/dynagen/tutorial_files/image006.jpg
 share/doc/dynagen/tutorial_files/image007.jpg
@@ -20,9 +27,13 @@ share/doc/dynagen/tutorial_files/image008.jpg
 share/doc/dynagen/tutorial_files/image009.jpg
 share/doc/dynagen/tutorial_files/image010.jpg
 share/doc/dynagen/tutorial_files/image011.gif
+share/doc/dynagen/tutorial_files/image011.jpg
 share/doc/dynagen/tutorial_files/image012.gif
+share/doc/dynagen/tutorial_files/image012.jpg
 share/doc/dynagen/tutorial_files/image013.gif
+share/doc/dynagen/tutorial_files/image013.jpg
 share/doc/dynagen/tutorial_files/image014.gif
+share/doc/dynagen/tutorial_files/image014.jpg
 share/doc/dynagen/tutorial_files/image015.gif
 share/doc/dynagen/tutorial_files/image016.gif
 share/doc/dynagen/tutorial_files/image017.gif
@@ -44,6 +55,8 @@ share/examples/dynagen/frame_relay/
 share/examples/dynagen/frame_relay/frame_relay1.net
 share/examples/dynagen/multiserver/
 share/examples/dynagen/multiserver/multiserver.net
+share/examples/dynagen/pix/
+share/examples/dynagen/pix/pixtest.net
 share/examples/dynagen/simple1/
 share/examples/dynagen/simple1/simple1.net
 share/examples/dynagen/simple2/

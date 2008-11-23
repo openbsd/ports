@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/18 09:12:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/23 14:24:21 sthen Exp $
 
 COMMENT=		front-end for dynamips cisco emulator
 
-DISTNAME=		dynagen-0.10.1
+DISTNAME=		dynagen-0.11.0
 CATEGORIES=		emulators
 
-HOMEPAGE=		http://dyna-gen.sourceforge.net/
+HOMEPAGE=		http://dynagen.org/
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
@@ -27,10 +27,10 @@ PKG_ARCH=		*
 post-extract:
 	@find ${WRKSRC} -type f -exec perl -pi -e 's:\x0d::' {} \;
 
+pre-configure:
+	@${SUBST_CMD} ${WRKSRC}/dynagen
+
 do-install:
-	@perl -pi -e 's:%%PREFIX%%:${TRUEPREFIX}:;' -e \
-	    's:%%SYSCONFDIR%%:${SYSCONFDIR}:;' -e \
-	    's:/usr/bin/env python:${MODPY_BIN}:' ${WRKSRC}/dynagen
 	${INSTALL_SCRIPT} ${WRKSRC}/dynagen ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${DESTDIR}${MODPY_SITEPKG}/dynagen
 	${INSTALL_SCRIPT} ${WRKSRC}/*.py* ${DESTDIR}${MODPY_SITEPKG}/dynagen
