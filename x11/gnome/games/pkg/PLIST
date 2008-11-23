@@ -1,27 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/22 23:42:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/23 11:08:07 jasper Exp $
 @bin bin/blackjack
 bin/glchess
+@mode g+s
 @group games
 @bin bin/glines
+@mode
 @group
 @bin bin/gnect
+@mode g+s
 @group games
 @bin bin/gnibbles
 @bin bin/gnobots2
+@mode
 @group
 @bin bin/gnome-gnuchess
 bin/gnome-sudoku
+@mode g+s
 @group games
 @bin bin/gnometris
 @bin bin/gnomine
 @bin bin/gnotravex
 @bin bin/gnotski
 @bin bin/gtali
+@mode
 @group
 @bin bin/iagno
+@mode g+s
 @group games
 @bin bin/mahjongg
 @bin bin/same-gnome
+@mode
 @group
 @bin bin/sol
 lib/gnome-games/
@@ -261,6 +269,9 @@ share/applications/iagno.desktop
 share/applications/mahjongg.desktop
 share/applications/same-gnome.desktop
 share/applications/sol.desktop
+share/examples/gnome-games/
+share/examples/gnome-games/ggz.modules
+@sample ${SYSCONFDIR}/ggz.modules
 share/ggz/
 share/ggz/gnome-games/
 share/ggz/gnome-games/about_bg.png
@@ -446,7 +457,7 @@ share/gnome-games/same-gnome/themes/2.10/
 share/gnome-games/same-gnome/themes/2.10/planets.png
 share/gnome-games/same-gnome/themes/2.10/stones.png
 share/gnome-games/scores/
-@mode 664
+@mode g+w
 @group games
 share/gnome-games/scores/glines.Large.scores
 @sample /var/games/glines.Large.scores

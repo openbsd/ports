@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/22 23:42:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/23 11:08:07 jasper Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.24.1
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://live.gnome.org/GnomeGames/
 
@@ -70,5 +71,10 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/glchess/src/glchess.in.in \
 		${WRKSRC}/glchess/src/lib/scene/opengl/png.py \
 		${WRKSRC}/gnome-sudoku/src/gnome-sudoku.in.in
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-games/
+	mv ${WRKINST}/${SYSCONFDIR}/ggz.modules \
+		${PREFIX}/share/examples/gnome-games
 
 .include <bsd.port.mk>
