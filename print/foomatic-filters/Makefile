@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/11/19 05:30:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/11/23 22:35:33 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD print filters
 
 DISTNAME=		foomatic-filters-3.0.2
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/
 
 RUN_DEPENDS=		::print/ghostscript/gnu \
-			::print/enscript
+			::print/a2ps
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CUPS="${LOCALBASE}/libexec/cups" \
