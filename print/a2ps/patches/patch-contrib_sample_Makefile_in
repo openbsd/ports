@@ -1,12 +1,12 @@
-$OpenBSD: patch-contrib_sample_Makefile_in,v 1.1 2005/02/11 19:45:04 alek Exp $
---- contrib/sample/Makefile.in.orig	Tue Feb  8 23:27:19 2005
-+++ contrib/sample/Makefile.in	Tue Feb  8 23:27:28 2005
-@@ -164,7 +164,7 @@ noinst_PROGRAMS = sample
- 
+$OpenBSD: patch-contrib_sample_Makefile_in,v 1.2 2008/11/23 20:28:32 ajacoutot Exp $
+--- contrib/sample/Makefile.in.orig	Wed Nov 19 19:28:30 2008
++++ contrib/sample/Makefile.in	Wed Nov 19 19:29:01 2008
+@@ -297,7 +297,7 @@ target_alias = @target_alias@
+ tex = @tex@
+ AUTOMAKE_OPTIONS = $(top_builddir)/lib/ansi2knr
  sample_SOURCES = main.c
- 
 -INCLUDES = -I. -I.. -I$(top_builddir) -I$(top_srcdir)/intl -I$(top_srcdir)/lib
 +INCLUDES = -I. -I.. -I$(top_builddir) -I$(top_srcdir)/lib
- sample_LDADD = $(top_builddir)/lib/liba2ps.la @INTLLIBS@ -lm
- DEFS = @DEFS@ -DLOCALEDIR=\"$(localedir)\" 
- subdir = contrib/sample
+ sample_LDADD = $(top_builddir)/lib/liba2ps.la @LIBINTL@ -lm
+ all: all-am
+ 

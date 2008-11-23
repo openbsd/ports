@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_Makefile_in,v 1.1 2008/11/23 20:28:32 ajacoutot Exp $
+--- etc/Makefile.in.orig	Wed Nov 19 19:29:08 2008
++++ etc/Makefile.in	Wed Nov 19 19:29:47 2008
+@@ -414,7 +414,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-pkgdataDATA
++install-data-am: install-pkgdataDATA
+ 
+ install-exec-am:
+ 

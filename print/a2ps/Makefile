@@ -1,23 +1,21 @@
-# $OpenBSD: Makefile,v 1.38 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.39 2008/11/23 20:28:32 ajacoutot Exp $
 
-COMMENT=	format ascii files for printing on PostScript printers
+COMMENT=	format files for printing on PostScript printers
 
-DISTNAME=	a2ps-4.13b
-PKGNAME=	${DISTNAME}p4
-WRKDIST=	${WRKDIR}/a2ps-4.13
+DISTNAME=	a2ps-4.14
 CATEGORIES=	print
 SHARED_LIBS=	a2ps	2.0
 MODGNU_SHARED_LIBS=a2ps	''
 
 HOMEPAGE=	http://www.gnu.org/software/a2ps/
 
-# License info.  There is some questionable Sun and
-# Adobe Copyrighted things in this source tree.  It
-# looks fine for FTP, but likely not for the CDROM.
-PERMIT_PACKAGE_CDROM=	No fee redistribution.
-PERMIT_DISTFILES_CDROM=	No fee redistribution.
+# GPLv3 or later, includes AFM files from Adobe with still unclear
+# terms (see ${WRKSRC}/afm/MustRead.html).
+PERMIT_PACKAGE_CDROM=	without charge
+PERMIT_DISTFILES_CDROM=	without charge
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c m
 
 MASTER_SITES=	${MASTER_SITE_GNU:=a2ps/}
@@ -27,6 +25,9 @@ MODULES=	devel/gettext
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/auxdir
+
+RUN_DEPENDS=	::print/psutils
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 FLAVORS=	a4 a4dj letter letterdj
 FLAVOR?=	letter
@@ -50,10 +51,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_prog_EMACS=no \
 		ac_cv_lib_paper_systempapername=no \
 		lispdir=${PREFIX}/share/a2ps/emacs
-.for p in bzip2 gv ghostview dvips pdf2ps acroread convert tex latex ps2pdf \
-	psselect psnup bzip
+
+.for p in bzip2 gv ghostview dvips pdf2ps acroread tex latex ps2pdf \
+	bzip distill netscape html2ps
 CONFIGURE_ENV+= ac_cv_prog_COM_$p=no
 .endfor
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure
 
 pre-build:
 	/usr/bin/touch $(WRKSRC)/doc/*.info

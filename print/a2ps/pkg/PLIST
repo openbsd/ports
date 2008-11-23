@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/12/24 09:14:43 espie Exp $
-bin/a2ps
+@comment $OpenBSD: PLIST,v 1.17 2008/11/23 20:28:32 ajacoutot Exp $
+@bin bin/a2ps
 bin/card
 bin/composeglyphs
-bin/fixnt
+@bin bin/fixnt
 bin/fixps
 bin/ogonkify
 bin/pdiff
@@ -28,6 +28,10 @@ share/a2ps/README
 share/a2ps/afm/
 share/a2ps/afm/fonts.map
 share/a2ps/afm/make_fonts_map.sh
+share/a2ps/afm/pagb.afm
+share/a2ps/afm/pagbo.afm
+share/a2ps/afm/pagd.afm
+share/a2ps/afm/pagdo.afm
 share/a2ps/afm/pbkd.afm
 share/a2ps/afm/pbkdi.afm
 share/a2ps/afm/pbkl.afm
@@ -60,9 +64,6 @@ share/a2ps/afm/ptmi.afm
 share/a2ps/afm/ptmr.afm
 share/a2ps/afm/pzcmi.afm
 share/a2ps/afm/pzdr.afm
-share/a2ps/emacs/
-share/a2ps/emacs/a2ps-print.el
-share/a2ps/emacs/a2ps.el
 share/a2ps/encoding/
 share/a2ps/encoding/ascii.edf
 share/a2ps/encoding/encoding.map
@@ -82,6 +83,7 @@ share/a2ps/encoding/iso9.edf
 share/a2ps/encoding/koi8.edf
 share/a2ps/encoding/mac.edf
 share/a2ps/encoding/ms-cp1250.edf
+share/a2ps/encoding/ms-cp1251.edf
 share/a2ps/etc/
 share/a2ps/etc/a2ps-site.cfg
 @sample ${SYSCONFDIR}/a2ps-site.cfg
@@ -101,6 +103,7 @@ share/a2ps/ps/bw.pro
 share/a2ps/ps/color.hdr
 share/a2ps/ps/color.pro
 share/a2ps/ps/diff.pro
+share/a2ps/ps/diffcolor.pro
 share/a2ps/ps/ehandler.ps
 share/a2ps/ps/fixed.pro
 share/a2ps/ps/gray.pro
@@ -126,6 +129,7 @@ share/a2ps/sheets/clisp.ssh
 share/a2ps/sheets/coqv.ssh
 share/a2ps/sheets/cpp.ssh
 share/a2ps/sheets/csh.ssh
+share/a2ps/sheets/csharp.ssh
 share/a2ps/sheets/cxx.ssh
 share/a2ps/sheets/dc_shell.ssh
 share/a2ps/sheets/eiffel.ssh
@@ -155,11 +159,13 @@ share/a2ps/sheets/lout.ssh
 share/a2ps/sheets/mail.ssh
 share/a2ps/sheets/make.ssh
 share/a2ps/sheets/maple.ssh
+share/a2ps/sheets/matlab.ssh
 share/a2ps/sheets/matlab4.ssh
 share/a2ps/sheets/mib.ssh
 share/a2ps/sheets/mly.ssh
 share/a2ps/sheets/modula2.ssh
 share/a2ps/sheets/modula3.ssh
+share/a2ps/sheets/nasm.ssh
 share/a2ps/sheets/o2c.ssh
 share/a2ps/sheets/oberon.ssh
 share/a2ps/sheets/objc.ssh
@@ -168,6 +174,8 @@ share/a2ps/sheets/octave.ssh
 share/a2ps/sheets/oracle.ssh
 share/a2ps/sheets/pascal.ssh
 share/a2ps/sheets/perl.ssh
+share/a2ps/sheets/php.ssh
+share/a2ps/sheets/pic16f84.ssh
 share/a2ps/sheets/plsql.ssh
 share/a2ps/sheets/pov.ssh
 share/a2ps/sheets/ppd.ssh
@@ -177,7 +185,10 @@ share/a2ps/sheets/prolog.ssh
 share/a2ps/sheets/promela.ssh
 share/a2ps/sheets/ps.ssh
 share/a2ps/sheets/python.ssh
+share/a2ps/sheets/rd.ssh
 share/a2ps/sheets/rexx.ssh
+share/a2ps/sheets/ruby.ssh
+share/a2ps/sheets/s.ssh
 share/a2ps/sheets/sather.ssh
 share/a2ps/sheets/scheme.ssh
 share/a2ps/sheets/sdl88.ssh
@@ -185,10 +196,14 @@ share/a2ps/sheets/sed.ssh
 share/a2ps/sheets/sh.ssh
 share/a2ps/sheets/sheets.map
 share/a2ps/sheets/shell.ssh
+share/a2ps/sheets/small.ssh
 share/a2ps/sheets/sml.ssh
+share/a2ps/sheets/specc.ssh
 share/a2ps/sheets/sql.ssh
 share/a2ps/sheets/sql92.ssh
 share/a2ps/sheets/ssh.ssh
+share/a2ps/sheets/st.ssh
+share/a2ps/sheets/stratego.ssh
 share/a2ps/sheets/symbols.ssh
 share/a2ps/sheets/tcl.ssh
 share/a2ps/sheets/tclx.ssh
@@ -214,9 +229,9 @@ share/locale/cs/LC_MESSAGES/a2ps.mo
 share/locale/da/LC_MESSAGES/a2ps.mo
 share/locale/de/LC_MESSAGES/a2ps.mo
 share/locale/es/LC_MESSAGES/a2ps.mo
-share/locale/et/LC_MESSAGES/a2ps.mo
 share/locale/fr/LC_MESSAGES/a2ps.mo
 share/locale/it/LC_MESSAGES/a2ps.mo
+share/locale/ja/LC_MESSAGES/a2ps.mo
 share/locale/ko/LC_MESSAGES/a2ps.mo
 share/locale/nl/LC_MESSAGES/a2ps.mo
 share/locale/no/LC_MESSAGES/a2ps.mo

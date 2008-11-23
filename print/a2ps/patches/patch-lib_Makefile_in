@@ -1,21 +1,21 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1 2005/02/11 19:45:04 alek Exp $
---- lib/Makefile.in.orig	Tue Feb  8 23:23:43 2005
-+++ lib/Makefile.in	Tue Feb  8 23:25:13 2005
-@@ -140,7 +140,7 @@ AUTOMAKE_OPTIONS = $(top_builddir)/lib/a
+$OpenBSD: patch-lib_Makefile_in,v 1.2 2008/11/23 20:28:32 ajacoutot Exp $
+--- lib/Makefile.in.orig	Wed Nov 19 19:29:56 2008
++++ lib/Makefile.in	Wed Nov 19 19:30:28 2008
+@@ -318,7 +318,7 @@ AUTOMAKE_OPTIONS = $(top_builddir)/lib/ansi2knr
+ # Definition of the local target
  #
  lib_LTLIBRARIES = liba2ps.la
- 
 -INCLUDES = -I$(top_builddir) -I$(top_builddir)/intl -I$(srcdir)
 +INCLUDES = -I$(top_builddir) -I$(srcdir)
- DEFS = @DEFS@ -DLOCALEDIR=\"$(datadir)/locale\" -DSYSCONFFILE=\"$(sysconfdir)/a2ps.cfg\"
- # --debug, --defines, --verbose
- YFLAGS = -dtv
-@@ -370,7 +370,7 @@ distclean-kr:
- maintainer-clean-kr:
- 
- liba2ps.la: $(liba2ps_la_OBJECTS) $(liba2ps_la_DEPENDENCIES)
+ # Use a struct, handle duplicates, produce ANSI-C
+ GPERFFLAGS = -t -D -L ANSI-C
+ BUILT_SOURCES = parseppd.c parseppd.h liba2ps.h confg.c
+@@ -441,7 +441,7 @@ clean-libLTLIBRARIES:
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+ liba2ps.la: $(liba2ps_la_OBJECTS) $(liba2ps_la_DEPENDENCIES) 
 -	$(LINK) -rpath $(libdir) $(liba2ps_la_LDFLAGS) $(liba2ps_la_OBJECTS) $(liba2ps_la_LIBADD) $(LIBS)
 +	$(LINK) -rpath $(libdir) $(liba2ps_la_LDFLAGS) $(liba2ps_la_OBJECTS) $(liba2ps_la_LIBADD)
- addext_.c: addext.c $(ANSI2KNR)
- 	$(CPP) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/addext.c; then echo $(srcdir)/addext.c; else echo addext.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > addext_.c
- alloca_.c: alloca.c $(ANSI2KNR)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
