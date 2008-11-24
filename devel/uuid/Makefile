@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2008/10/07 14:57:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2008/11/24 15:37:00 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,12 +13,17 @@ CATEGORIES=		devel
 SHARED_LIBS=		uuid	13.22 \
 			uuid++	14.21
 
+# Note there is a different libuuid in sysutils/e2fsprogs,-uuid.
+# If you are porting something which needs libuuid, you may need
+# to look there instead.
+
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.ossp.org/pkg/lib/uuid/
 
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/uuid/
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
