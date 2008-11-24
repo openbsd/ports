@@ -1,0 +1,4 @@
+GVFS is a replacement for GnomeVFS, the GNOME Virtual File System.
+
+This package provides the smb module for GVFS, which allows it to browse
+networks using the SMB/CIFS protocols (a.k.a. Microsoft Networks).

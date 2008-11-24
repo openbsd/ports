@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2008/11/12 22:45:26 jasper Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2008/11/24 16:15:42 ajacoutot Exp $
 lib/gio/modules/libgiogconf.so
 lib/gio/modules/libgioremote-volume-monitor.so
 lib/gio/modules/libgvfsdbus.so
