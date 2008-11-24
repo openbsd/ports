@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2008/10/18 11:20:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.222 2008/11/24 09:42:07 pirofti Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -178,6 +178,7 @@
      SUBDIR += roundcubemail
      SUBDIR += ruby-actionmailer
      SUBDIR += ruby-mailfactory
+     SUBDIR += ruby-mime
      SUBDIR += ruby-mime-types
      SUBDIR += ruby-rmail
      SUBDIR += signify
