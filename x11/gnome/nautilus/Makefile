@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2008/11/22 11:02:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2008/11/24 18:13:31 jasper Exp $
 
 COMMENT=		GNOME shell and file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		2.24.2
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 CATEGORIES=		x11
 
@@ -33,7 +32,7 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			:gnome-icon-theme-*:x11/gnome/icon-theme \
-			::x11/gnome/gvfs
+			:gvfs->=1.0.3:x11/gnome/gvfs
 LIB_DEPENDS=		exif::graphics/libexif \
 			gnome-desktop-2::x11/gnome/desktop \
 			eel-2.>=20.0::x11/gnome/eel \
