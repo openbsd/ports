@@ -1,0 +1,21 @@
+$OpenBSD: patch-hamster_hamster-applet_py,v 1.1.1.1 2008/11/24 23:15:54 jasper Exp $
+--- hamster/hamster-applet.py.orig	Tue Oct 28 20:56:08 2008
++++ hamster/hamster-applet.py	Mon Nov 24 21:43:57 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ # - coding: utf-8 -
+ 
+ # Copyright (C) 2007, 2008 Toms Bauģis <toms.baugis at gmail.com>
+@@ -50,11 +50,6 @@ gettext.bindtextdomain('hamster-applet', abspath(join(
+ if hasattr(gettext, 'bind_textdomain_codeset'):
+     gettext.bind_textdomain_codeset('hamster-applet','UTF-8')
+ gettext.textdomain('hamster-applet')
+-
+-locale.bindtextdomain('hamster-applet', abspath(join(hamster.defs.DATA_DIR, "locale")))
+-if hasattr(locale, 'bind_textdomain_codeset'):
+-    locale.bind_textdomain_codeset('hamster-applet','UTF-8')
+-locale.textdomain('hamster-applet')
+ 
+ hamster.__init_db()
+ import hamster.applet
