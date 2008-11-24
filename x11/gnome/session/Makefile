@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2008/11/21 18:18:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2008/11/24 22:19:33 jasper Exp $
 
 COMMENT=		GNOME session
 
@@ -56,10 +56,7 @@ USE_X11=		Yes
 DESKTOP_FILES=		Yes
 
 CONFIGURE_ARGS+= 	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-session/ \
-			--disable-rebuilds \
-			--with-rsh-command="ssh -T"
-#XXX
-#CONFIGURE_ARGS+=	--with-time-utility="foo"
+			--disable-rebuilds
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 
