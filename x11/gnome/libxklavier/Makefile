@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2008/11/21 18:57:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2008/11/24 11:15:03 jasper Exp $
 
 COMMENT=		utility library for XKB
 
 GNOME_PROJECT=		libxklavier
-GNOME_VERSION=		3.6
-SHARED_LIBS +=  xklavier             13.0     # .13.0
+GNOME_VERSION=		3.8
+SHARED_LIBS +=  xklavier             13.1     # .14.0
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/LibXklavier
 
@@ -13,10 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xau Xdmcp m pcre xkbfile z
-
-# XXX To be fixed
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libxklavier/3.6/}
+WANTLIB=		X11 Xau Xdmcp Xext Xi m pcre xkbfile z
 
 MODULES=		devel/gettext \
 			x11/gnome
