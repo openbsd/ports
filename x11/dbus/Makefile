@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2008/10/12 22:08:04 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2008/11/24 11:20:13 ajacoutot Exp $
 
 COMMENT=		message bus system
 
 DISTNAME=		dbus-1.2.4
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS+=		dbus-1	7.0
 CATEGORIES=		x11
 
@@ -18,15 +19,13 @@ WANTLIB=		ICE X11 Xau Xdmcp SM c expat pthread
 
 MASTER_SITES=		${HOMEPAGE}/releases/dbus/
 
-CFLAGS+=		-pthread
-
 SEPARATE_BUILD=		simple
 USE_LIBTOOL=		Yes
 USE_X11=		Yes
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.61
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 CONFIGURE_ARGS=		--localstatedir=/var \
 			--with-dbus-user=_dbus \
 			--with-xml=expat \
