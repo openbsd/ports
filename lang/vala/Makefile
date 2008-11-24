@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/10/26 17:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2008/11/24 19:30:11 jasper Exp $
 
 COMMENT=		compiler for the GObject type system
 
 GNOME_PROJECT=		vala
-GNOME_VERSION=		0.3.5
-SHARED_LIBS +=	vala                 0.2      # .0.0
+GNOME_VERSION=		0.5.1
+SHARED_LIBS +=	vala                 1.0      # .0.0
 CATEGORIES=		lang
 
 HOMEPAGE=		http://live.gnome.org/Vala
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
-		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
-		pthread z
+		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+		gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pcre pixman-1 png pthread z
 
 MODULES=		devel/gettext \
 			x11/gnome

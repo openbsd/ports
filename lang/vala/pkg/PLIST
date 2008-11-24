@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/26 17:24:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/11/24 19:30:11 jasper Exp $
 %%SHARED%%
 bin/vala-gen-introspect
 @bin bin/vala-gen-project
@@ -59,6 +59,7 @@ include/vala-1.0/ccode/valaccodewriter.h
 include/vala-1.0/gee/
 include/vala-1.0/gee/arraylist.h
 include/vala-1.0/gee/collection.h
+include/vala-1.0/gee/collectionobject.h
 include/vala-1.0/gee/hashmap.h
 include/vala-1.0/gee/hashset.h
 include/vala-1.0/gee/iterable.h
@@ -71,29 +72,28 @@ include/vala-1.0/gee/readonlymap.h
 include/vala-1.0/gee/readonlyset.h
 include/vala-1.0/gee/set.h
 include/vala-1.0/gobject/
-include/vala-1.0/gobject/valaccodearraycreationexpressionbinding.h
-include/vala-1.0/gobject/valaccodeassignmentbinding.h
-include/vala-1.0/gobject/valaccodebinding.h
-include/vala-1.0/gobject/valaccodeclassbinding.h
+include/vala-1.0/gobject/valaccodearraymodule.h
+include/vala-1.0/gobject/valaccodeassignmentmodule.h
+include/vala-1.0/gobject/valaccodebasemodule.h
 include/vala-1.0/gobject/valaccodecompiler.h
-include/vala-1.0/gobject/valaccodecreationmethodbinding.h
-include/vala-1.0/gobject/valaccodedynamicmethodbinding.h
-include/vala-1.0/gobject/valaccodedynamicpropertybinding.h
-include/vala-1.0/gobject/valaccodedynamicsignalbinding.h
-include/vala-1.0/gobject/valaccodeelementaccessbinding.h
-include/vala-1.0/gobject/valaccodeexpressionbinding.h
+include/vala-1.0/gobject/valaccodedelegatemodule.h
+include/vala-1.0/gobject/valaccodedynamicpropertymodule.h
+include/vala-1.0/gobject/valaccodedynamicsignalmodule.h
 include/vala-1.0/gobject/valaccodegenerator.h
-include/vala-1.0/gobject/valaccodegeneratorsignal.h
-include/vala-1.0/gobject/valaccodegeneratorsourcefile.h
-include/vala-1.0/gobject/valaccodegeneratorstruct.h
-include/vala-1.0/gobject/valaccodeinterfacebinding.h
-include/vala-1.0/gobject/valaccodeinvocationexpressionbinding.h
-include/vala-1.0/gobject/valaccodememberaccessbinding.h
-include/vala-1.0/gobject/valaccodemethodbinding.h
-include/vala-1.0/gobject/valaccodeobjecttypesymbolbinding.h
-include/vala-1.0/gobject/valaccodetypesymbolbinding.h
+include/vala-1.0/gobject/valaccodeinvocationexpressionmodule.h
+include/vala-1.0/gobject/valaccodememberaccessmodule.h
+include/vala-1.0/gobject/valaccodemethodmodule.h
+include/vala-1.0/gobject/valaccodemodule.h
+include/vala-1.0/gobject/valaccodestructmodule.h
 include/vala-1.0/gobject/valaclassregisterfunction.h
-include/vala-1.0/gobject/valagidlwriter.h
+include/vala-1.0/gobject/valadbusclientmodule.h
+include/vala-1.0/gobject/valadbusservermodule.h
+include/vala-1.0/gobject/valagasyncmodule.h
+include/vala-1.0/gobject/valagerrormodule.h
+include/vala-1.0/gobject/valagirwriter.h
+include/vala-1.0/gobject/valagobjectmodule.h
+include/vala-1.0/gobject/valagsignalmodule.h
+include/vala-1.0/gobject/valagtypemodule.h
 include/vala-1.0/gobject/valainterfaceregisterfunction.h
 include/vala-1.0/gobject/valatyperegisterfunction.h
 include/vala-1.0/vala/
@@ -106,7 +106,6 @@ include/vala-1.0/vala/valaarrayresizemethod.h
 include/vala-1.0/vala/valaarraytype.h
 include/vala-1.0/vala/valaassignment.h
 include/vala-1.0/vala/valaattribute.h
-include/vala-1.0/vala/valaattributeprocessor.h
 include/vala-1.0/vala/valabaseaccess.h
 include/vala-1.0/vala/valabasicblock.h
 include/vala-1.0/vala/valabinaryexpression.h
@@ -119,7 +118,6 @@ include/vala-1.0/vala/valacfgbuilder.h
 include/vala-1.0/vala/valacharacterliteral.h
 include/vala-1.0/vala/valaclass.h
 include/vala-1.0/vala/valaclasstype.h
-include/vala-1.0/vala/valacodebinding.h
 include/vala-1.0/vala/valacodecontext.h
 include/vala-1.0/vala/valacodegenerator.h
 include/vala-1.0/vala/valacodenode.h
@@ -176,9 +174,7 @@ include/vala-1.0/vala/valamemberaccess.h
 include/vala-1.0/vala/valamemberinitializer.h
 include/vala-1.0/vala/valamethod.h
 include/vala-1.0/vala/valamethodtype.h
-include/vala-1.0/vala/valanamedargument.h
 include/vala-1.0/vala/valanamespace.h
-include/vala-1.0/vala/valanamespacereference.h
 include/vala-1.0/vala/valanullchecker.h
 include/vala-1.0/vala/valanullliteral.h
 include/vala-1.0/vala/valanulltype.h
@@ -227,9 +223,11 @@ include/vala-1.0/vala/valatypesymbol.h
 include/vala-1.0/vala/valaunaryexpression.h
 include/vala-1.0/vala/valaunresolvedsymbol.h
 include/vala-1.0/vala/valaunresolvedtype.h
+include/vala-1.0/vala/valausingdirective.h
 include/vala-1.0/vala/valavaluetype.h
 include/vala-1.0/vala/valavoidtype.h
 include/vala-1.0/vala/valawhilestatement.h
+include/vala-1.0/vala/valayieldstatement.h
 lib/libvala.a
 lib/libvala.la
 lib/pkgconfig/vala-1.0.pc
@@ -282,12 +280,15 @@ share/vala/vapi/gio-unix-2.0.deps
 share/vala/vapi/gio-unix-2.0.vapi
 share/vala/vapi/glib-2.0.vapi
 share/vala/vapi/gmodule-2.0.vapi
+share/vala/vapi/gnet-2.0.vapi
 share/vala/vapi/gnome-desktop-2.0.deps
 share/vala/vapi/gnome-desktop-2.0.vapi
 share/vala/vapi/gnome-keyring-1.vapi
 share/vala/vapi/gnome-vfs-2.0.vapi
+share/vala/vapi/gobject-2.0.vapi
 share/vala/vapi/goocanvas.deps
 share/vala/vapi/goocanvas.vapi
+share/vala/vapi/gsl.vapi
 share/vala/vapi/gstreamer-0.10.deps
 share/vala/vapi/gstreamer-0.10.vapi
 share/vala/vapi/gstreamer-audio-0.10.deps
@@ -377,6 +378,7 @@ share/vala/vapi/sdl.vapi
 share/vala/vapi/sqlite3.vapi
 share/vala/vapi/taglib_c.vapi
 share/vala/vapi/tiff.vapi
+share/vala/vapi/tracker-indexer-module-1.0.vapi
 share/vala/vapi/unique-1.0.deps
 share/vala/vapi/unique-1.0.vapi
 share/vala/vapi/vala-1.0.vapi
