@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2008/11/21 17:28:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2008/11/24 19:32:29 jasper Exp $
 %%SHARED%%
 @bin bin/evolution
 include/evolution-${R}/
@@ -225,7 +225,6 @@ include/evolution-${R}/text/
 include/evolution-${R}/text/e-text-model-repos.h
 include/evolution-${R}/text/e-text-model.h
 include/evolution-${R}/text/e-text.h
-lib/bonobo/servers/
 lib/bonobo/servers/GNOME_Evolution_Addressbook.server
 lib/bonobo/servers/GNOME_Evolution_Calendar.server
 lib/bonobo/servers/GNOME_Evolution_Calendar_AlarmNotify.server
@@ -2065,7 +2064,6 @@ share/idl/evolution-${R}/Evolution.idl
 share/idl/evolution-${R}/evolution-calendar.idl
 share/locale/am/LC_MESSAGES/evolution-${R}.mo
 share/locale/ar/LC_MESSAGES/evolution-${R}.mo
-share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/evolution-${R}.mo
 share/locale/ast/
 share/locale/ast/LC_MESSAGES/
