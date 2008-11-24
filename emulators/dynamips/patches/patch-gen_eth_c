@@ -1,0 +1,20 @@
+$OpenBSD: patch-gen_eth_c,v 1.1 2008/11/24 23:29:48 claudio Exp $
+--- gen_eth.c.orig	Sat Nov 22 11:36:00 2008
++++ gen_eth.c	Sat Nov 22 11:41:33 2008
+@@ -47,6 +47,16 @@ pcap_t *gen_eth_init(char *device)
+ 
+    /* Accept only incoming packets */
+    pcap_setdirection(p,PCAP_D_IN);
++
++   /*
++    * on OpenBSD we need to force the bpf into non-blocking mode because
++    * userland threads need this (at the same time it will fuckup kthreads).
++    * Now pcap_open_live() would do this but it sets the device to non-blocking
++    * but resets the setting by issuing a BIOCSRTIMEOUT. So force it on again.
++    */
++   if (pcap_setnonblock(p, 1, pcap_errbuf) == -1)
++      goto pcap_error;
++
+ #else
+    p = pcap_open(device,2048,
+                  PCAP_OPENFLAG_PROMISCUOUS | 

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
-bin/dynamips
-bin/nvram_export
+@comment $OpenBSD: PLIST,v 1.2 2008/11/24 23:29:48 claudio Exp $
+@bin bin/dynamips
+@bin bin/nvram_export
 @man man/man1/dynamips.1
 @man man/man1/nvram_export.1
 @man man/man7/hypervisor_mode.7

@@ -1,3 +1,10 @@
 By default, a dynamips instance will take 100% of the host CPU. To
 avoid this, please read the "idle-pc" section in the README file
-(${PREFIX}/share/doc/dynamips/README).
+(${PREFIX}/share/doc/dynamips/README). The configuration generator
+"dynagen" (available separately) can help find a good value.
+
+You can greatly reduce startup times by uncompressing your IOS
+images with unzip.
+
+N.B. The just-in-time compiler, required for good performance,
+is currently only supported on i386.
