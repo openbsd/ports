@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/26 17:24:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/11/24 19:30:34 jasper Exp $
 
 COMMENT=		application markup language for GTK+Vala
 
-DISTNAME=		gtkaml-0.2.2.0
+DISTNAME=		gtkaml-0.2.2.1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://gtkaml.googlecode.com/
@@ -20,7 +20,7 @@ MODULES=		devel/gettext
 
 WANTLIB=		c glib-2.0 gobject-2.0 xml2
 
-LIB_DEPENDS=		vala::lang/vala
+LIB_DEPENDS=		vala.>=1::lang/vala
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes

@@ -1,23 +1,26 @@
-$OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.3 2008/10/26 17:24:46 jasper Exp $
---- src/GtkamlImplicitsStore.c.orig	Sun Aug 17 11:23:32 2008
-+++ src/GtkamlImplicitsStore.c	Sun Oct 26 17:09:37 2008
-@@ -67,7 +67,7 @@ enum  {
+$OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.4 2008/11/24 19:30:34 jasper Exp $
+
+Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
+
+--- src/GtkamlImplicitsStore.c.orig	Mon Nov 24 20:23:08 2008
++++ src/GtkamlImplicitsStore.c	Mon Nov 24 20:25:59 2008
+@@ -68,7 +68,7 @@ enum  {
  	GTKAML_KEY_FILE_WRAPPER_DUMMY_PROPERTY
  };
  static gboolean gtkaml_key_file_wrapper_has_key (GtkamlKeyFileWrapper* self, const char* group, const char* key);
 -static char** gtkaml_key_file_wrapper_get_string_list (GtkamlKeyFileWrapper* self, const char* group, const char* key, int* result_length1);
 +static char** gtkaml_key_file_wrapper_get_string_list (GtkamlKeyFileWrapper* self, const char* group, const char* key, gsize* result_length1);
+ static GtkamlKeyFileWrapper* gtkaml_key_file_wrapper_construct (GType object_type);
  static GtkamlKeyFileWrapper* gtkaml_key_file_wrapper_new (void);
  static GObject * gtkaml_key_file_wrapper_constructor (GType type, guint n_construct_properties, GObjectConstructParam * construct_properties);
- static gpointer gtkaml_key_file_wrapper_parent_class = NULL;
-@@ -151,14 +151,14 @@ static gboolean gtkaml_key_file_wrapper_has_key (Gtkam
+@@ -159,14 +159,14 @@ static gboolean gtkaml_key_file_wrapper_has_key (Gtkam
  }
  
  
 -static char** gtkaml_key_file_wrapper_get_string_list (GtkamlKeyFileWrapper* self, const char* group, const char* key, int* result_length1) {
 +static char** gtkaml_key_file_wrapper_get_string_list (GtkamlKeyFileWrapper* self, const char* group, const char* key, gsize* result_length1) {
  	GError * inner_error;
- 	g_return_val_if_fail (GTKAML_IS_KEY_FILE_WRAPPER (self), NULL);
+ 	g_return_val_if_fail (self != NULL, NULL);
  	g_return_val_if_fail (group != NULL, NULL);
  	g_return_val_if_fail (key != NULL, NULL);
  	inner_error = NULL;
@@ -27,7 +30,7 @@ $OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.3 2008/10/26 17:24:46 jasper Exp 
  		char** _tmp1;
  		_tmp1 = NULL;
  		return (_tmp1 = g_key_file_get_string_list (self->key_file, group, key, &_tmp0, &inner_error), (*result_length1) = _tmp0, _tmp1);
-@@ -335,15 +335,15 @@ GeeList* gtkaml_implicits_store_get_adds (GtkamlImplic
+@@ -348,15 +348,15 @@ GeeList* gtkaml_implicits_store_get_adds (GtkamlImplic
  			{
  				if (gtkaml_key_file_wrapper_has_key (kfw, class_name, "adds")) {
  					char** _tmp1;
@@ -46,7 +49,7 @@ $OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.3 2008/10/26 17:24:46 jasper Exp 
  						add_collection = kf_adds;
  						add_collection_length1 = kf_adds_length1;
  						for (add_it = 0; (kf_adds_length1 != -1 && add_it < kf_adds_length1) || (kf_adds_length1 == -1 && add_collection[add_it] != NULL); add_it = add_it + 1) {
-@@ -386,8 +386,8 @@ GeeList* gtkaml_implicits_store_get_method_parameters 
+@@ -399,8 +399,8 @@ GeeList* gtkaml_implicits_store_get_method_parameters 
  			{
  				if (gtkaml_key_file_wrapper_has_key (kfw, class_name, method_name)) {
  					char** _tmp1;
@@ -57,7 +60,7 @@ $OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.3 2008/10/26 17:24:46 jasper Exp 
  					char** kf_parameters;
  					GeeList* _tmp8;
  					_tmp1 = NULL;
-@@ -395,7 +395,7 @@ GeeList* gtkaml_implicits_store_get_method_parameters 
+@@ -408,7 +408,7 @@ GeeList* gtkaml_implicits_store_get_method_parameters 
  					{
  						char** parameter_collection;
  						int parameter_collection_length1;
