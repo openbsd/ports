@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2008/11/23 00:11:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2008/11/24 18:48:57 jasper Exp $
 
 COMMENT=		archive manager for GNOME
 
 GNOME_PROJECT=		file-roller
-GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		2.24.2
 CATEGORIES=		archivers
 
 # GPLv3
