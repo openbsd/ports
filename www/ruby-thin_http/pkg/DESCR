@@ -1,0 +1,4 @@
+ThinHTTP is a lightweight and user friendly HTTP client library. It
+sends both URL (application/x-www-form-urlencoded) and MIME
+(multipart/form-data) encoded data. This makes it useful for sending
+either simple GET requests or uploading files via POST.
