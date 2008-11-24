@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2008/10/30 17:10:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2008/11/24 09:52:47 ajacoutot Exp $
 
 COMMENT=	technical diagrams drawing tool
 
 DISTNAME=	dia-0.96.1
-PKGNAME=	${DISTNAME}p10
+PKGNAME=	${DISTNAME}p11
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://live.gnome.org/Dia/
@@ -22,7 +22,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png pthread z
+		pangoft2-1.0 pcre pixman-1 png pthread z gio-2.0
 
 BUILD_DEPENDS=	::textproc/xmlto \
 		::textproc/docbook
@@ -61,7 +61,7 @@ LIB_DEPENDS+=	gnomeui-2::x11/gnome/libgnomeui \
 WANTLIB+=	ICE ORBit-2 ORBitCosNaming-2 SM audiofile bonobo-2 \
 		bonobo-activation bonoboui-2 crypto dbus-1 dbus-glib-1 \
 		esd gailutil gconf-2 gnome-2 gnome-keyring \
-		gnomecanvas-2 gnomevfs-2 jpeg ssl util
+		gnomecanvas-2 gnomevfs-2 ssl util
 RUN_DEPENDS+=	:yelp-*:x11/gnome/yelp
 .else
 CONFIGURE_ARGS+=--disable-gnome \
