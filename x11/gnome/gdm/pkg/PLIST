@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/11/21 17:43:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2008/11/24 09:10:11 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
@@ -70,7 +70,7 @@ share/gdm/BuiltInSessions/
 share/gdm/BuiltInSessions/default.desktop
 share/gdm/applications/
 share/gdm/applications/gdmflexiserver-xnest.desktop
-share/gdm/applications/gdmflexiserver.desktop
+@comment share/gdm/applications/gdmflexiserver.desktop
 share/gdm/applications/gdmphotosetup.desktop
 share/gdm/applications/gdmsetup.desktop
 share/gdm/defaults.conf
