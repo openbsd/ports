@@ -1,0 +1,4 @@
+A library for building RFC compliant Multipurpose Internet Mail
+Extensions (MIME) messages. It can be used to construct standardized
+MIME messages for use in client/server communications, such as
+Internet mail or HTTP multipart/form-data transactions.
