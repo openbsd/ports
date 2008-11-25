@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2008/11/18 12:36:49 landry Exp $
-@pkgpath x11/gtk+2
+@comment $OpenBSD: PLIST-main,v 1.10 2008/11/25 13:14:08 jasper Exp $
 @conflict gail-*
+@pkgpath x11/gtk+2
 @bin bin/gdk-pixbuf-csource
 @bin bin/gdk-pixbuf-query-loaders
 bin/gtk-builder-convert
@@ -472,6 +472,10 @@ share/locale/ar/LC_MESSAGES/gtk20-properties.mo
 share/locale/ar/LC_MESSAGES/gtk20.mo
 share/locale/as/LC_MESSAGES/gtk20-properties.mo
 share/locale/as/LC_MESSAGES/gtk20.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/gtk20-properties.mo
+share/locale/ast/LC_MESSAGES/gtk20.mo
 share/locale/az/LC_MESSAGES/gtk20-properties.mo
 share/locale/az/LC_MESSAGES/gtk20.mo
 share/locale/az_IR/
