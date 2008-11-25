@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/25 13:30:49 jasper Exp $
-lib/epiphany/
+@comment $OpenBSD: PLIST,v 1.2 2008/11/25 15:03:31 ajacoutot Exp $
 lib/epiphany/${M}/
 lib/epiphany/${M}/extensions/
 lib/epiphany/${M}/extensions/actions.ephy-extension
@@ -192,7 +191,6 @@ lib/locale/zh_HK/LC_MESSAGES/epiphany-extensions-${M}.mo
 lib/locale/zh_TW/
 lib/locale/zh_TW/LC_MESSAGES/
 lib/locale/zh_TW/LC_MESSAGES/epiphany-extensions-${M}.mo
-share/epiphany/
 share/epiphany-extensions/
 share/epiphany-extensions/adblock-patterns
 share/epiphany-extensions/ephy-gestures.xml
@@ -322,10 +320,7 @@ share/omf/epiphany-extensions/epiphany-extensions-es.omf
 share/omf/epiphany-extensions/epiphany-extensions-oc.omf
 share/omf/epiphany-extensions/epiphany-extensions-sv.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/epiphany/*.schemas > /dev/null
-share/schemas/epiphany/
 share/schemas/epiphany/smart-bookmarks.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/epiphany/*.schemas > /dev/null
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/25 13:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/25 15:03:31 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		2.24.1
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		www
 
@@ -34,7 +35,6 @@ USE_X11=	Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 
 FAKE_FLAGS+=	PYTHON="${MODPY_BIN}"
@@ -43,12 +43,9 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
 		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/epiphany \
-		--with-engine=mozilla \
 		--with-gecko=xulrunner \
-		--enable-python \
 		--disable-schemas-install \
 		--disable-scrollkeeper \
-		--disable-gtk-doc \
 		--enable-opensp=no
 
 M=		${GNOME_VERSION:R}
