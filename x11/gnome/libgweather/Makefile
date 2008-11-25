@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/29 11:59:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/25 13:54:11 ajacoutot Exp $
 
 COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
-GNOME_VERSION=		2.24.1
-# shlib version is one higher than the one provided by gnome-applets
+GNOME_VERSION=		2.24.2
 SHARED_LIBS +=	gweather             2.0      # .3.0
 CATEGORIES=		net
 
