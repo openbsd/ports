@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.8 2008/10/26 23:42:24 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.9 2008/11/25 18:01:15 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -708,9 +708,9 @@ sub _add
 sub add_value
 {
 	my ($self, $ins, $value) = @_;
-	if ($value =~ m/^(.*)(\.(?:\>?\=)?\d+\.\d+)$/) {
+	if ($value =~ m/^(.*)(\.\>?\=\d+\.\d+)$/) {
 		$self->_add($ins, $1, $2);
-	} elsif ($value =~ m/^(.*)(\.(?:\>?\=)?\d+)$/) {
+	} elsif ($value =~ m/^(.*)(\.\>?\=\d+)$/) {
 		$self->_add($ins, $1, $2);
 	} else {
 		$self->_add($ins, $value, undef);
