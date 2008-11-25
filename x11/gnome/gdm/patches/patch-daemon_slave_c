@@ -1,6 +1,6 @@
-$OpenBSD: patch-daemon_slave_c,v 1.9 2008/11/21 17:43:02 jasper Exp $
---- daemon/slave.c.orig	Mon Jun 30 19:53:13 2008
-+++ daemon/slave.c	Tue Nov 18 22:55:23 2008
+$OpenBSD: patch-daemon_slave_c,v 1.10 2008/11/25 18:27:39 ajacoutot Exp $
+--- daemon/slave.c.orig	Wed Sep  3 20:36:08 2008
++++ daemon/slave.c	Tue Nov 25 17:18:20 2008
 @@ -2843,7 +2843,7 @@ gdm_slave_greeter (void)
  
  		exec_command (LIBEXECDIR "/gdmlogin", NULL);
@@ -10,7 +10,7 @@ $OpenBSD: patch-daemon_slave_c,v 1.9 2008/11/21 17:43:02 jasper Exp $
  
  		gdm_errorgui_error_box (d,
  			       GTK_MESSAGE_ERROR,
-@@ -3568,6 +3568,7 @@ session_child_run (struct passwd *pwent,
+@@ -3571,6 +3571,7 @@ session_child_run (struct passwd *pwent,
  	GString *fullexec = NULL;
  	const char *shell = NULL;
  	const char *greeter;
@@ -18,7 +18,7 @@ $OpenBSD: patch-daemon_slave_c,v 1.9 2008/11/21 17:43:02 jasper Exp $
  	gint result;
  	gchar **argv = NULL;
  
-@@ -3787,8 +3788,7 @@ session_child_run (struct passwd *pwent,
+@@ -3790,8 +3791,7 @@ session_child_run (struct passwd *pwent,
  	if (setusercontext (NULL, pwent, pwent->pw_uid,
  			    LOGIN_SETLOGIN | LOGIN_SETPATH |
  			    LOGIN_SETPRIORITY | LOGIN_SETRESOURCES |

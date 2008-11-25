@@ -1,15 +1,24 @@
-$OpenBSD: patch-configure,v 1.12 2008/11/21 17:43:02 jasper Exp $
---- configure.orig	Mon Jun 30 19:55:06 2008
-+++ configure	Tue Nov 18 22:55:22 2008
-@@ -30841,7 +30841,6 @@ if test x$with_tcp_wrappers = xno ; then
+$OpenBSD: patch-configure,v 1.13 2008/11/25 18:27:39 ajacoutot Exp $
+--- configure.orig	Wed Sep  3 20:49:49 2008
++++ configure	Tue Nov 25 17:28:13 2008
+@@ -30952,7 +30952,6 @@ fi
+ if test x$with_tcp_wrappers = xno ; then
+ 	echo "TCP wrappers disabled"
  else
-   { echo "$as_me:$LINENO: checking whether to use TCP wrappers" >&5
- echo $ECHO_N "checking whether to use TCP wrappers... $ECHO_C" >&6; }
 -  LIBWRAP_PATH=""
    case "$host" in
      *-*-solaris*)
- 	if test -f /usr/sfw/lib/libwrap.so; then
-@@ -31062,7 +31061,6 @@ else
+ 	if test -f /usr/lib/libwrap.so; then
+@@ -31007,6 +31006,8 @@ cat >>conftest.$ac_ext <<_ACEOF
+ #ifdef __cplusplus
+ extern "C"
+ #endif
++int allow_severity = 1;
++int deny_severity = 1;
+ char hosts_ctl ();
+ int
+ main ()
+@@ -31162,7 +31163,6 @@ else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
@@ -17,7 +26,7 @@ $OpenBSD: patch-configure,v 1.12 2008/11/21 17:43:02 jasper Exp $
  fi
  
  rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
-@@ -32842,7 +32840,7 @@ fi
+@@ -32942,7 +32942,7 @@ fi
  #
  # Define some variables to represent the directories we use.
  #
@@ -26,22 +35,7 @@ $OpenBSD: patch-configure,v 1.12 2008/11/21 17:43:02 jasper Exp $
  
  gdmlocaledir=${gdmconfdir}
  
-@@ -33556,11 +33554,11 @@ case "$host" in
- 	;;
- *)
- 	HOST_GDM_USER_PATH="/bin:/usr/bin"
--	HOST_HALT_COMMAND="/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
-+	HOST_HALT_COMMAND="/sbin/halt -p;/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
- 	HOST_REBOOT_COMMAND="/usr/bin/reboot;/sbin/reboot;/sbin/shutdown -r now;/usr/sbin/shutdown -r now"
--	HOST_SUSPEND_COMMAND=""
-+	HOST_SUSPEND_COMMAND="/usr/sbin/zzz"
- 	HOST_XSESSION_SHELL=/bin/sh
--	HOST_SOUND_PROGRAM=/usr/bin/play
-+	HOST_SOUND_PROGRAM=$(prefix)/bin/play
- 	HOST_GDMGNOMESESSIONCMD=gnome-session
- 	HOST_UTMP_LINE_ATTACHED="/dev/console"
- 	HOST_UTMP_LINE_REMOTE=""
-@@ -33663,6 +33661,12 @@ else
+@@ -33777,6 +33777,12 @@ else
     GDM_USER_PATH="$GDM_USER_PATH:/usr/bin/X11:/usr/X11R6/bin:/usr/local/bin:/opt/X11R6/bin"
     X_CONFIG_OPTIONS="-audit 0"
  fi
