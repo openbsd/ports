@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/11/21 19:05:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/11/25 09:20:33 jasper Exp $
 
 COMMENT=		assistive technology for people with visual impairments
 
-GNOME_VERSION=		2.24.1
+GNOME_VERSION=		2.24.2
 GNOME_PROJECT=		orca
 
 HOMEPAGE=		http://live.gnome.org/Orca
