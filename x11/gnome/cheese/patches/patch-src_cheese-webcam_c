@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cheese-webcam_c,v 1.2 2008/11/14 16:18:00 ajacoutot Exp $
---- src/cheese-webcam.c.orig	Mon Oct 20 18:01:47 2008
-+++ src/cheese-webcam.c	Fri Nov 14 17:08:41 2008
+$OpenBSD: patch-src_cheese-webcam_c,v 1.3 2008/11/25 10:33:57 ajacoutot Exp $
+--- src/cheese-webcam.c.orig	Tue Nov 25 00:03:19 2008
++++ src/cheese-webcam.c	Tue Nov 25 11:27:08 2008
 @@ -32,13 +32,25 @@
  #include <gst/gst.h>
  #include <gdk-pixbuf/gdk-pixbuf.h>
@@ -35,7 +35,7 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.2 2008/11/14 16:18:00 ajacoutot Exp $
  static void
  cheese_webcam_get_video_devices_from_hal (CheeseWebcam *webcam)
  {
-@@ -394,7 +407,55 @@ fallback:
+@@ -434,7 +447,55 @@ fallback:
      priv->webcam_devices[0].hal_udi = g_strdup ("cheese_fake_videodevice");
    }
  }
@@ -91,7 +91,7 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.2 2008/11/14 16:18:00 ajacoutot Exp $
  static void
  cheese_webcam_get_supported_framerates (CheeseVideoFormat *video_format, GstStructure *structure)
  {
-@@ -698,7 +759,11 @@ cheese_webcam_detect_webcam_devices (CheeseWebcam *web
+@@ -739,7 +800,11 @@ cheese_webcam_detect_webcam_devices (CheeseWebcam *web
  
    int i;
  
@@ -101,6 +101,6 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.2 2008/11/14 16:18:00 ajacoutot Exp $
 +#else
 +  cheese_webcam_get_video_devices_from_probe (webcam);
 +#endif
+ 
+   g_print ("Probing supported video formats...\n");
    for (i = 0; i < priv->num_webcam_devices; i++)
-   {
-     cheese_webcam_get_webcam_device_data (webcam, &(priv->webcam_devices[i]));
