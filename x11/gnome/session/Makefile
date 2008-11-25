@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2008/11/24 22:19:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2008/11/25 13:47:50 jasper Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.24.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 # GPLv2/LGPLv2/GFDLv1.1
@@ -26,6 +27,7 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS=	::textproc/scrollkeeper \
+		::textproc/xmlto \
 		::x11/gnome/controlcenter2
 LIB_DEPENDS=	execinfo::devel/libexecinfo \
 		gnomeui-2::x11/gnome/libgnomeui
