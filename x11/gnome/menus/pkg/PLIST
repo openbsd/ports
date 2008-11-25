@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/11/21 18:14:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2008/11/25 13:24:23 jasper Exp $
 bin/gmenu-simple-editor
 include/gnome-menus/
 include/gnome-menus/gmenu-tree.h
@@ -65,6 +65,7 @@ share/gnome-menus/glade/gmenu-simple-editor.glade
 share/locale/af/LC_MESSAGES/gnome-menus.mo
 share/locale/ar/LC_MESSAGES/gnome-menus.mo
 share/locale/as/LC_MESSAGES/gnome-menus.mo
+share/locale/ast/LC_MESSAGES/gnome-menus.mo
 share/locale/be/LC_MESSAGES/gnome-menus.mo
 share/locale/be@latin/LC_MESSAGES/gnome-menus.mo
 share/locale/bg/LC_MESSAGES/gnome-menus.mo
