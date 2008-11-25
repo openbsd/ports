@@ -1,11 +1,11 @@
-$OpenBSD: patch-mahjongg_Makefile_in,v 1.1.1.1 2008/11/22 23:42:56 jasper Exp $
+$OpenBSD: patch-mahjongg_Makefile_in,v 1.2 2008/11/25 09:52:57 jasper Exp $
 
 Install the .scores files into share/ , to @sample them
 into /var/games/ later.
 
---- mahjongg/Makefile.in.orig	Mon Nov 17 23:43:06 2008
-+++ mahjongg/Makefile.in	Mon Nov 17 23:43:32 2008
-@@ -356,7 +356,7 @@ psdir = @psdir@
+--- mahjongg/Makefile.in.orig	Tue Nov 25 01:50:16 2008
++++ mahjongg/Makefile.in	Tue Nov 25 10:27:12 2008
+@@ -363,7 +363,7 @@ psdir = @psdir@
  pyexecdir = @pyexecdir@
  pythondir = @pythondir@
  sbindir = @sbindir@
@@ -14,7 +14,7 @@ into /var/games/ later.
  scores_group = @scores_group@
  scores_user = @scores_user@
  setgid = @setgid@
-@@ -948,10 +948,7 @@ install-scorefiles-local:
+@@ -956,10 +956,7 @@ install-scorefiles-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	-for i in easy difficult confounding pyramid tictactoe cloud dragon bridges ziggurat; do \
  		touch $(DESTDIR)$(scoredir)/mahjongg.$$i.scores; \

@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/11/22 23:42:56 jasper Exp $
---- configure.orig	Mon Nov 17 17:18:41 2008
-+++ configure	Mon Nov 17 17:19:01 2008
-@@ -24684,7 +24684,7 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+$OpenBSD: patch-configure,v 1.2 2008/11/25 09:52:57 jasper Exp $
+--- configure.orig	Tue Nov 25 01:50:03 2008
++++ configure	Tue Nov 25 10:27:11 2008
+@@ -20244,7 +20244,7 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then
+   $as_echo_n "(cached) " >&6
  else
  
 -	for am_cv_pathless_PYTHON in python python2 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 python1.6 python1.5 none; do
