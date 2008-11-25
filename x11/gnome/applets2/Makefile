@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2008/11/21 17:50:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2008/11/25 08:19:43 ajacoutot Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
 
 GNOME_PROJECT=		gnome-applets
-GNOME_VERSION=		2.24.1
+GNOME_VERSION=		2.24.2
 
 PKGNAME-main=		gnome-applets2-${VERSION}
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}
@@ -75,7 +75,8 @@ WANTLIB-main=		${WANTLIB} \
 			soup-2.4 startup-notification-1 wnck-1
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
+	${SUBST_CMD} ${WRKSRC}/configure \
+		${WRKSRC}/invest-applet/invest/invest-chart
 
 .if !${FLAVOR:L:Mno_battstat}
 post-install:

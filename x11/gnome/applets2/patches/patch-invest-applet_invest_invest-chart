@@ -1,0 +1,18 @@
+$OpenBSD: patch-invest-applet_invest_invest-chart,v 1.1 2008/11/25 08:19:43 ajacoutot Exp $
+--- invest-applet/invest/invest-chart.orig	Wed Sep 24 01:47:18 2008
++++ invest-applet/invest/invest-chart	Tue Nov 25 09:18:34 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ 
+ import sys, invest.chart, gtk
+ 
+@@ -6,8 +6,6 @@ import sys, invest.chart, gtk
+ import gettext, locale
+ gettext.bindtextdomain(invest.defs.GETTEXT_PACKAGE, invest.defs.GNOMELOCALEDIR)
+ gettext.textdomain(invest.defs.GETTEXT_PACKAGE)
+-locale.bindtextdomain(invest.defs.GETTEXT_PACKAGE, invest.defs.GNOMELOCALEDIR)
+-locale.textdomain(invest.defs.GETTEXT_PACKAGE)
+ 
+ if __name__ == "__main__":
+ 	win = invest.chart.show_chart(sys.argv[1:])
