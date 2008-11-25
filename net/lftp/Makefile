@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2008/04/04 14:54:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2008/11/25 07:28:33 ajacoutot Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
 DISTNAME=	lftp-3.7.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://lftp.yar.ru/
@@ -21,13 +22,12 @@ MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
 		http://ftp.yars.free.net/pub/source/lftp/old/
 
 USE_LIBTOOL=	Yes
-USE_X11=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= gnu 
 CONFIGURE_ARGS=	--with-openssl \
 		--without-gnutls
-CONFIGURE_ENV=  CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MODULES=	devel/gettext
 
