@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_display_window_file_list_cc,v 1.1 2008/11/25 16:21:28 naddy Exp $
+--- src/display/window_file_list.cc.orig	Sun Nov 16 16:55:08 2008
++++ src/display/window_file_list.cc	Mon Nov 24 23:49:50 2008
+@@ -170,8 +170,8 @@ WindowFileList::redraw() {
+       m_canvas->print(0, pos, "%*c%-*s", 16, ' ', filenameWidth, "EMPTY");
+ 
+     } else if (itr.is_entering()) {
+-      m_canvas->print(0, pos, "%*c %ls", 16 + itr.depth(), '\\',
+-                      itr.depth() < (*itr)->path()->size() ? wstring_width((*itr)->path()->at(itr.depth()), filenameWidth - itr.depth() - 1).c_str() : L"UNKNOWN");
++      m_canvas->print(0, pos, "%*c %s", 16 + itr.depth(), '\\',
++                      itr.depth() < (*itr)->path()->size() ? (*itr)->path()->at(itr.depth()).c_str() : "UNKNOWN");
+ 
+     } else if (itr.is_leaving()) {
+       m_canvas->print(0, pos, "%*c %-*s", 16 + (itr.depth() - 1), '/', filenameWidth - (itr.depth() - 1), "");
+@@ -201,8 +201,8 @@ WindowFileList::redraw() {
+       else
+         m_canvas->print(8, pos, "%5.1f T", (double)val / (int64_t(1) << 40));
+ 
+-      m_canvas->print(15, pos, "%*c %ls", 1 + itr.depth(), '|',
+-                      itr.depth() < (*itr)->path()->size() ? wstring_width((*itr)->path()->at(itr.depth()), filenameWidth - itr.depth() - 1).c_str() : L"UNKNOWN");
++      m_canvas->print(15, pos, "%*c %s", 1 + itr.depth(), '|',
++                      itr.depth() < (*itr)->path()->size() ? (*itr)->path()->at(itr.depth()).c_str() : "UNKNOWN");
+ 
+     } else {
+       m_canvas->print(0, pos, "BORK BORK");

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_torrent_poll_kqueue_cc,v 1.1 2008/11/25 16:21:28 naddy Exp $
+--- src/torrent/poll_kqueue.cc.orig	Tue Oct 28 04:48:48 2008
++++ src/torrent/poll_kqueue.cc	Sun Nov 23 21:17:59 2008
+@@ -37,6 +37,7 @@
+ #include "config.h"
+ 
+ #include <cerrno>
++#include <cassert>
+ 
+ #include <algorithm>
+ #include <unistd.h>

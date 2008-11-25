@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/03/22 20:42:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/11/25 16:21:28 naddy Exp $
 %%SHARED%%
 include/torrent/
 include/torrent/bitfield.h
@@ -16,6 +16,7 @@ include/torrent/data/file_manager.h
 include/torrent/data/file_utils.h
 include/torrent/data/piece.h
 include/torrent/data/transfer_list.h
+include/torrent/dht_manager.h
 include/torrent/download.h
 include/torrent/error.h
 include/torrent/event.h
@@ -28,6 +29,7 @@ include/torrent/path.h
 include/torrent/peer/
 include/torrent/peer/client_info.h
 include/torrent/peer/client_list.h
+include/torrent/peer/connection_list.h
 include/torrent/peer/peer.h
 include/torrent/peer/peer_info.h
 include/torrent/peer/peer_list.h
@@ -37,6 +39,7 @@ include/torrent/poll_kqueue.h
 include/torrent/poll_select.h
 include/torrent/rate.h
 include/torrent/resume.h
+include/torrent/throttle.h
 include/torrent/torrent.h
 include/torrent/tracker.h
 include/torrent/tracker_list.h

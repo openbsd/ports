@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/30 04:42:36 jolan Exp $
-bin/rtorrent
+@comment $OpenBSD: PLIST,v 1.2 2008/11/25 16:21:28 naddy Exp $
+@bin bin/rtorrent
 @man man/man1/rtorrent.1
 share/doc/rtorrent/
 share/doc/rtorrent/README.OpenBSD

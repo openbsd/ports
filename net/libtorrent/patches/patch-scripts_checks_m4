@@ -1,0 +1,55 @@
+$OpenBSD: patch-scripts_checks_m4,v 1.1 2008/11/25 16:21:28 naddy Exp $
+--- scripts/checks.m4.orig	Tue Oct  7 14:48:07 2008
++++ scripts/checks.m4	Sun Nov 23 21:04:40 2008
+@@ -94,14 +94,27 @@ AC_DEFUN([TORRENT_CHECK_KQUEUE], [
+ ])
+ 
+ AC_DEFUN([TORRENT_CHECK_KQUEUE_SOCKET_ONLY], [
++  save_LIBS=$LIBS
++  AC_CHECK_FUNCS(posix_openpt, , [
++    AC_SEARCH_LIBS(openpty, util,
++      AC_DEFINE(HAVE_OPENPTY, 1,
++        [Define to 1 if you have the `openpty' function.])
++    )
++  ])
++
+   AC_MSG_CHECKING(whether kqueue supports pipes and ptys)
+ 
+   AC_RUN_IFELSE(
+-    [[#include <fcntl.h>
++    [[#include "confdefs.h"
++      #include <fcntl.h>
+       #include <stdlib.h>
+       #include <unistd.h>
+       #include <sys/event.h>
+       #include <sys/time.h>
++      #if HAVE_OPENPTY
++      #include <termios.h>
++      #include <util.h>
++      #endif
+       int main() {
+         struct kevent ev[2], ev_out[2];
+         struct timespec ts = { 0, 0 };
+@@ -110,8 +123,14 @@ AC_DEFUN([TORRENT_CHECK_KQUEUE_SOCKET_ONLY], [
+         if (pipe(pfd) == -1) return 1;
+         if (fcntl(pfd[1], F_SETFL, O_NONBLOCK) == -1) return 2;
+         while ((n = write(pfd[1], buffer, sizeof(buffer))) == sizeof(buffer));
++        #if HAVE_POSIX_OPENPT
+         if ((pty[0]=posix_openpt(O_RDWR | O_NOCTTY)) == -1) return 3;
+         if ((pty[1]=grantpt(pty[0])) == -1) return 4;
++        #elif HAVE_OPENPTY
++        if (openpty(&pty[0], &pty[1], NULL, NULL, NULL) == -1) return 3;
++        #else
++        return 3;
++        #endif
+         EV_SET(ev+0, pfd[1], EVFILT_WRITE, EV_ADD | EV_ENABLE, 0, 0, NULL);
+         EV_SET(ev+1, pty[1], EVFILT_READ, EV_ADD | EV_ENABLE, 0, 0, NULL);
+         if ((kfd = kqueue()) == -1) return 5;
+@@ -129,6 +148,7 @@ AC_DEFUN([TORRENT_CHECK_KQUEUE_SOCKET_ONLY], [
+       AC_DEFINE(KQUEUE_SOCKET_ONLY, 1, kqueue only supports sockets.)
+       AC_MSG_RESULT(no)
+     ])
++    LIBS=$save_LIBS
+ ])
+ 
+ AC_DEFUN([TORRENT_WITH_KQUEUE], [
