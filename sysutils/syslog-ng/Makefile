@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2008/11/16 20:33:10 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2008/11/26 20:09:35 steven Exp $
 
 COMMENT=	syslogd replacement
 
-DISTNAME=	syslog-ng-2.1.2
+DISTNAME=	syslog-ng-2.1.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
