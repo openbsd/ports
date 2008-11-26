@@ -1,0 +1,5 @@
+This module implements the Catalyst::Authentication API using
+Catalyst::Model::DBI.
+It uses DBI to let your application authenticate users against a
+database and it provides support for
+Catalyst::Plugin::Authorization::Roles.
