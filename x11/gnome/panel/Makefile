@@ -1,11 +1,17 @@
-# $OpenBSD: Makefile,v 1.41 2008/11/25 13:46:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2008/11/26 11:58:40 ajacoutot Exp $
 
 COMMENT=		GNOME panel
 
 GNOME_PROJECT=		gnome-panel
 GNOME_VERSION=		2.24.2
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=	panel-applet-2       2.24      # .2.26
 CATEGORIES=		x11
+
+# OpenBSD does not have policykit, so we need to fall back on the
+# previous gnome-panel and gdm interaction (bypassing gnome-session)
+MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
+PATCHFILES=	gnome-panel_nopolkit.diff:0
 
 # GPLv2/LGPLv2/GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
