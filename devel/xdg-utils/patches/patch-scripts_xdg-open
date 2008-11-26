@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_xdg-open,v 1.1 2008/11/01 19:30:07 ajacoutot Exp $
---- scripts/xdg-open.orig	Thu Oct 30 19:38:11 2008
-+++ scripts/xdg-open	Thu Oct 30 19:38:32 2008
-@@ -403,6 +403,15 @@ if [ -z "${url}" ] ; then
+$OpenBSD: patch-scripts_xdg-open,v 1.2 2008/11/26 17:49:39 ajacoutot Exp $
+--- scripts/xdg-open.orig	Sun Jun 24 21:58:01 2007
++++ scripts/xdg-open	Wed Nov 26 18:44:57 2008
+@@ -403,12 +403,21 @@ if [ -z "${url}" ] ; then
      exit_failure_syntax "file or URL argument missing"
  fi
  
@@ -17,3 +17,10 @@ $OpenBSD: patch-scripts_xdg-open,v 1.1 2008/11/01 19:30:07 ajacoutot Exp $
  detectDE
  
  if [ x"$DE" = x"" ]; then
+     # if BROWSER variable is not set, check some well known browsers instead
+     if [ x"$BROWSER" = x"" ]; then
+-        BROWSER=firefox:mozilla:netscape
++        BROWSER=firefox:seamonkey:epiphany:opera:mozilla:netscape
+     fi
+     DE=generic
+ fi
