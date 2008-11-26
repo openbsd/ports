@@ -19,4 +19,4 @@ fi
 and in /etc/rc.conf.local :
 
 cherokee_flags="-d"	# use -d to run in daemon mode
-cheroke_admin_flags=NO	# use -b if you want listen on ALL interfaces
+cherokee-admin_flags=NO	# use -b if you want listen on ALL interfaces

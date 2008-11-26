@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/05 11:19:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/26 09:05:31 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ COMMENT-mysql =	MySQL module for Cherokee web server
 VERSION =	0.8.1
 DISTNAME =	cherokee-${VERSION}
 
-PKGNAME-main =	${DISTNAME}
+PKGNAME-main =	${DISTNAME}p0
 PKGNAME-ldap=   cherokee-ldap-${VERSION}
 PKGNAME-mysql=  cherokee-mysql-${VERSION}
 PKGNAME-geoip=  cherokee-geoip-${VERSION}
