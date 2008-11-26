@@ -1,0 +1,12 @@
+$OpenBSD: patch-mnemosyne_core_mnemosyne_core_py,v 1.1 2008/11/26 13:32:31 ajacoutot Exp $
+--- mnemosyne/core/mnemosyne_core.py.orig	Wed Nov 26 14:28:20 2008
++++ mnemosyne/core/mnemosyne_core.py	Wed Nov 26 14:28:51 2008
+@@ -67,7 +67,7 @@ if sys.platform == 'darwin':
+ else:
+         
+     _old_basedir = None
+-    home = os.path.expanduser("~").decode(locale.getdefaultlocale()[1])
++    home = os.path.expanduser("~")
+     basedir = os.path.join(home, ".mnemosyne")
+ 
+ def get_basedir():
