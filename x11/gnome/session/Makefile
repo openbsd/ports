@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2008/11/25 13:47:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2008/11/26 09:11:30 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
-GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		2.24.2
 CATEGORIES=		x11
 
 # GPLv2/LGPLv2/GFDLv1.1
@@ -20,7 +19,7 @@ WANTLIB=       ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 	       fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
 	       gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 	       gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 \
-	       gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
+	       gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
 	       pixman-1 png popt pthread ssl startup-notification-1 util xml2 z
 
 MODULES=	devel/gettext \
@@ -34,30 +33,32 @@ LIB_DEPENDS=	execinfo::devel/libexecinfo \
 
 # Here we hang all the additional ports that will make up a satisfying
 # GNOME user experience :)
-RUN_DEPENDS+=	       ::textproc/gnome-spell \
-		       ::x11/gnome/alacarte \
-		       ::x11/gnome/applets2 \
-		       ::x11/gnome/backgrounds \
-		       ::x11/gnome/controlcenter2 \
-		       ::x11/gnome/devhelp \
-		       ::x11/gnome/file-roller \
-		       :gdm->=2.20.7:x11/gnome/gdm \
-		       ::x11/gnome/gedit \
-		       ::x11/gnome/media \
-		       ::x11/gnome/eog \
-		       ::x11/gnome/terminal \
-		       ::x11/gnome/themes \
-		       ::x11/gnome/themes-extras \
-		       ::x11/gnome/utils \
-		       ::x11/gnome/yelp \
-		       ::x11/xscreensaver,no_gle \
-		       ::x11/tango-icon-theme 
-#		       ::x11/gnome/bug-buddy
+RUN_DEPENDS+=		::textproc/gnome-spell \
+			::x11/gnome/alacarte \
+			::x11/gnome/applets2 \
+			::x11/gnome/backgrounds \
+			::x11/gnome/controlcenter2 \
+			::x11/gnome/devhelp \
+			::x11/gnome/file-roller \
+			:gdm->=2.20.7:x11/gnome/gdm \
+			::x11/gnome/gedit \
+			::x11/gnome/media \
+			::x11/gnome/eog \
+			::x11/gnome/terminal \
+			::x11/gnome/themes \
+			::x11/gnome/themes-extras \
+			::x11/gnome/utils \
+			::x11/gnome/yelp \
+			::x11/xscreensaver,no_gle \
+			::x11/tango-icon-theme 
+#			::x11/gnome/bug-buddy
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 
-CONFIGURE_ARGS+= 	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-session/ \
+CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
+			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-session/ \
+			--disable-schemas-install \
 			--disable-rebuilds
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
