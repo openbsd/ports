@@ -1,0 +1,14 @@
+nsf_init -> gstnsf_init to prevent symbol conflict with security/nss
+
+$OpenBSD: patch-gst_nsf_gstnsf_c,v 1.1 2008/11/27 12:34:01 ajacoutot Exp $
+--- gst/nsf/gstnsf.c.orig	Thu Nov 27 13:08:28 2008
++++ gst/nsf/gstnsf.c	Thu Nov 27 13:09:10 2008
+@@ -174,7 +174,7 @@ gst_nsfdec_class_init (GstNsfDec * klass)
+   GST_DEBUG_CATEGORY_INIT (nsfdec_debug, "nsfdec", 0,
+       "NES sound file (nsf) decoder");
+ 
+-  nsf_init ();
++  gstnsf_init ();
+ }
+ 
+ static void

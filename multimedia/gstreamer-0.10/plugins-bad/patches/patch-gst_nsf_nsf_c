@@ -1,0 +1,14 @@
+nsf_init -> gstnsf_init to prevent symbol conflict with security/nss
+
+$OpenBSD: patch-gst_nsf_nsf_c,v 1.1 2008/11/27 12:34:01 ajacoutot Exp $
+--- gst/nsf/nsf.c.orig	Thu Nov 27 13:08:14 2008
++++ gst/nsf/nsf.c	Thu Nov 27 13:08:46 2008
+@@ -376,7 +376,7 @@ nes_shutdown (nsf_t * nsf)
+ }
+ 
+ int
+-nsf_init (void)
++gstnsf_init (void)
+ {
+   nes6502_init ();
+   return 0;

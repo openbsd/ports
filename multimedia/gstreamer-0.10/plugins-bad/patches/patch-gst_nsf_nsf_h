@@ -1,0 +1,14 @@
+nsf_init -> gstnsf_init to prevent symbol conflict with security/nss
+
+$OpenBSD: patch-gst_nsf_nsf_h,v 1.1 2008/11/27 12:34:01 ajacoutot Exp $
+--- gst/nsf/nsf.h.orig	Thu Nov 27 13:08:22 2008
++++ gst/nsf/nsf.h	Thu Nov 27 13:08:56 2008
+@@ -132,7 +132,7 @@ struct nsf_loader_t {
+ };
+ 
+ /* Function prototypes */
+-extern int nsf_init(void);
++extern int gstnsf_init(void);
+ 
+ extern nsf_t * nsf_load_extended(struct nsf_loader_t * loader);
+ extern nsf_t *nsf_load(const char *filename, void *source, int length);
