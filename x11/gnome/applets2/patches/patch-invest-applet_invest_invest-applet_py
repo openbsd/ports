@@ -1,0 +1,18 @@
+$OpenBSD: patch-invest-applet_invest_invest-applet_py,v 1.1 2008/11/27 13:42:20 ajacoutot Exp $
+--- invest-applet/invest/invest-applet.py.orig	Wed Sep 24 01:47:18 2008
++++ invest-applet/invest/invest-applet.py	Thu Nov 27 14:21:02 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ #
+ 
+ import gobject
+@@ -25,8 +25,6 @@ import invest, invest.applet, invest.defs
+ import gettext, locale
+ gettext.bindtextdomain(invest.defs.GETTEXT_PACKAGE, invest.defs.GNOMELOCALEDIR)
+ gettext.textdomain(invest.defs.GETTEXT_PACKAGE)
+-locale.bindtextdomain(invest.defs.GETTEXT_PACKAGE, invest.defs.GNOMELOCALEDIR)
+-locale.textdomain(invest.defs.GETTEXT_PACKAGE)
+ 
+ from gettext import gettext as _
+ 
