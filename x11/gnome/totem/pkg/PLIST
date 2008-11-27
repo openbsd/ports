@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/13 11:00:28 ajacoutot Exp $
-bin/totem
-bin/totem-audio-preview
-bin/totem-video-indexer
-bin/totem-video-thumbnailer
-lib/nautilus/extensions-1.0/libtotem-properties-page.a
-lib/nautilus/extensions-1.0/libtotem-properties-page.la
-lib/nautilus/extensions-1.0/libtotem-properties-page.so
+@comment $OpenBSD: PLIST,v 1.2 2008/11/27 11:13:40 ajacoutot Exp $
+@bin bin/totem
+@bin bin/totem-audio-preview
+@bin bin/totem-video-indexer
+@bin bin/totem-video-thumbnailer
+lib/nautilus/
+lib/nautilus/extensions-2.0/
+lib/nautilus/extensions-2.0/libtotem-properties-page.a
+lib/nautilus/extensions-2.0/libtotem-properties-page.la
+lib/nautilus/extensions-2.0/libtotem-properties-page.so
 lib/totem/
 lib/totem/plugins/
 lib/totem/plugins/galago/
