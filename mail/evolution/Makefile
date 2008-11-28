@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2008/11/24 19:32:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2008/11/28 14:11:35 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
@@ -6,6 +6,7 @@ COMMENT=		integrated email and PIM software for GNOME
 # under mail/evolution-plugin-rss/Makefile (and bump)
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.24.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=    		mail
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
@@ -46,7 +47,6 @@ BUILD_DEPENDS=		::devel/bison \
 			::textproc/scrollkeeper \
 			::x11/gnome/doc-utils
 RUN_DEPENDS=		::devel/desktop-file-utils \
-			::textproc/gnome-spell \
 			::textproc/scrollkeeper \
 			::x11/gnome/controlcenter2 \
 			::x11/hicolor-icon-theme
