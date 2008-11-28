@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/10/28 14:07:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/11/28 13:31:46 ajacoutot Exp $
 %%SHARED%%
 lib/bonobo/
 lib/bonobo/servers/
@@ -36,6 +36,8 @@ share/locale/el/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/gnome-spell-${VERSION}.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/es/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/et/LC_MESSAGES/gnome-spell-${VERSION}.mo
@@ -71,6 +73,8 @@ share/locale/pl/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/pt/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/ru/LC_MESSAGES/gnome-spell-${VERSION}.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/sk/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/sl/LC_MESSAGES/gnome-spell-${VERSION}.mo
@@ -88,6 +92,8 @@ share/locale/ta/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/tr/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/uk/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/vi/LC_MESSAGES/gnome-spell-${VERSION}.mo
+share/locale/wa/
+share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gnome-spell-${VERSION}.mo
 share/locale/xh/
 share/locale/xh/LC_MESSAGES/
