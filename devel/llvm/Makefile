@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/11/13 08:29:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2008/11/28 10:23:39 sthen Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
@@ -12,6 +12,9 @@ PKGNAME =	llvm-${V:S/2.4/2.5/}
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.llvm.org/
+
+# not yet ported to these: probably some missing.
+NOT_FOR_ARCHS =	sparc64
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
