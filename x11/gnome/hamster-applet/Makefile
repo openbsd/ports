@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/24 23:15:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/28 15:34:26 ajacoutot Exp $
 
 COMMENT=		time tracker applet for GNOME
 
@@ -26,6 +26,7 @@ MODULES=		devel/gettext \
 
 USE_X11=		Yes
 
+# controlcenter2 is needed for custom keybindings
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:python-sqlite-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-sqlite \
 			::x11/gnome/controlcenter2 \
