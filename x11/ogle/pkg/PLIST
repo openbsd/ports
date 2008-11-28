@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/08/05 16:23:35 espie Exp $
-bin/ifo_dump
+@comment $OpenBSD: PLIST,v 1.14 2008/11/28 17:44:37 ajacoutot Exp $
+@bin bin/ifo_dump
 bin/ogle
 include/ogle/
 include/ogle/dvd.h
@@ -12,21 +12,21 @@ lib/ogle/libdvdcontrol.a
 lib/ogle/libdvdcontrol.la
 lib/ogle/libmsgevents.a
 lib/ogle/libmsgevents.la
-lib/ogle/ogle_ac3_p
-lib/ogle/ogle_audio
+@bin lib/ogle/ogle_ac3_p
+@bin lib/ogle/ogle_audio
 lib/ogle/ogle_audio_debug
-lib/ogle/ogle_cli
+@bin lib/ogle/ogle_cli
 lib/ogle/ogle_cli_debug
-lib/ogle/ogle_ctrl
+@bin lib/ogle/ogle_ctrl
 lib/ogle/ogle_ctrl_debug
 lib/ogle/ogle_gui_debug
-lib/ogle/ogle_mpeg_ps
+@bin lib/ogle/ogle_mpeg_ps
 lib/ogle/ogle_mpeg_ps_debug
-lib/ogle/ogle_mpeg_vs
+@bin lib/ogle/ogle_mpeg_vs
 lib/ogle/ogle_mpeg_vs_debug
-lib/ogle/ogle_nav
+@bin lib/ogle/ogle_nav
 lib/ogle/ogle_nav_debug
-lib/ogle/ogle_vout
+@bin lib/ogle/ogle_vout
 lib/ogle/ogle_vout_debug
 @man man/man1/ogle.1
 @man man/man5/oglerc.tbl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2007/09/15 20:04:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.36 2008/11/28 17:44:37 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64 amd64
 
@@ -6,7 +6,7 @@ CATEGORIES=	x11
 
 COMMENT=	DVD player
 DISTNAME=	ogle-0.9.2
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	dvdcontrol	11.0 \
 		msgevents	8.0
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
@@ -23,7 +23,9 @@ PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
-WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c iconv m z
+
+WANTLIB=	ICE SM X11 Xext Xinerama Xv Xxf86vm c iconv m z \
+		Xau Xdmcp
 
 LIB_DEPENDS=	a52::audio/liba52 \
 		dvdread.>=3.0::devel/libdvdread \
