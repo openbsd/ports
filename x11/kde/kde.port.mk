@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.29 2008/05/15 21:16:30 naddy Exp $
+# $OpenBSD: kde.port.mk,v 1.30 2008/11/28 19:36:14 steven Exp $
 
 SHARED_ONLY?=	Yes
 
@@ -85,7 +85,7 @@ LIB_DEPENDS+=lib/qt3/qt-mt.>=3.33::x11/qt3
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.5.7/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 LIB_DEPENDS+=lib/qt3/qt-mt.>=3.33::x11/qt3
-USE_LIBTOOL=	Yes
+USE_LIBTOOL?=	Yes
 USE_X11=	Yes
 LIBTOOL_FLAGS=--tag=disable-static
 .elif ${MODKDE_VERSION} == "2.2.2"
