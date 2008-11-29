@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.102 2008/11/20 13:29:56 okan Exp $
+# $OpenBSD: Makefile,v 1.103 2008/11/29 05:00:20 okan Exp $
 
 COMMENT=		image processing tools
 
 VER=			6.4.5
-DASHVER=		3
+DASHVER=		6
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 
@@ -45,6 +45,7 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16 \
 			--without-dps \
 			--without-fpx \
 			--without-gvc \
+			--without-lqr \
 			--without-modules \
 			--without-openexr \
 			--without-threads \
@@ -55,7 +56,7 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16 \
 			--disable-ltdl-install
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
+			LDFLAGS="-L${WRKBUILD}/magick/.libs -L${WRKBUILD}/wand/.libs -L${LOCALBASE}/lib" \
 			ac_cv_path_LaunchDelegate=no
 
 FLAVORS=		no_x11
