@@ -1,0 +1,107 @@
+$OpenBSD: patch-src_hci_lib_c,v 1.1.1.1 2008/11/29 09:54:49 jasper Exp $
+--- src/hci_lib.c.orig	Tue Aug 12 11:09:49 2008
++++ src/hci_lib.c	Tue Aug 12 11:09:49 2008
+@@ -71,6 +71,7 @@ static char *hci_bit2str(hci_map *m, unsigned int val)
+ 	return str;
+ }
+ 
++#if 0
+ static int hci_str2bit(hci_map *map, char *str, unsigned int *val)
+ {
+ 	char *t, *ptr;
+@@ -94,6 +95,7 @@ static int hci_str2bit(hci_map *map, char *str, unsign
+ 
+ 	return set;
+ }
++#endif
+ 
+ static char *hci_uint2str(hci_map *m, unsigned int val) 
+ {
+@@ -114,6 +116,7 @@ static char *hci_uint2str(hci_map *m, unsigned int val
+ 	return str;
+ }
+ 
++#if 0
+ static int hci_str2uint(hci_map *map, char *str, unsigned int *val)
+ {
+ 	char *t, *ptr;
+@@ -196,6 +199,7 @@ char *hci_dflagstostr(uint32_t flags)
+ 	} 	
+ 	return str;
+ }
++#endif
+ 
+ /* HCI packet type mapping */
+ static hci_map pkt_type_map[] = {
+@@ -217,6 +221,7 @@ static hci_map pkt_type_map[] = {
+ 	{ NULL }
+ };
+ 
++#if 0
+ static hci_map sco_ptype_map[] = {
+ 	{ "HV1",   0x0001   },
+ 	{ "HV2",   0x0002   },
+@@ -230,12 +235,14 @@ static hci_map sco_ptype_map[] = {
+ 	{ "3-EV5", HCI_3EV5 },
+ 	{ NULL }
+ };
++#endif
+ 
+ char *hci_ptypetostr(unsigned int ptype)
+ {
+ 	return hci_bit2str(pkt_type_map, ptype);
+ }
+ 
++#if 0
+ int hci_strtoptype(char *str, unsigned int *val)
+ {
+ 	return hci_str2bit(pkt_type_map, str, val);
+@@ -250,6 +257,7 @@ int hci_strtoscoptype(char *str, unsigned int *val)
+ {
+ 	return hci_str2bit(sco_ptype_map, str, val);
+ }
++#endif
+ 
+ /* Link policy mapping */
+ static hci_map link_policy_map[] = {
+@@ -266,6 +274,7 @@ char *hci_lptostr(unsigned int lp)
+ 	return hci_bit2str(link_policy_map, lp);
+ }
+ 
++#if 0
+ int hci_strtolp(char *str, unsigned int *val)
+ {
+ 	return hci_str2bit(link_policy_map, str, val);
+@@ -549,6 +558,7 @@ char *hci_commandstostr(uint8_t *commands, char *pref,
+ 
+ 	return str;
+ }
++#endif
+ 
+ /* Version mapping */
+ static hci_map ver_map[] = {
+@@ -565,16 +575,19 @@ char *hci_vertostr(unsigned int ver)
+ 	return hci_uint2str(ver_map, ver);
+ }
+ 
++#if 0
+ int hci_strtover(char *str, unsigned int *ver)
+ {
+ 	return hci_str2uint(ver_map, str, ver);
+ }
++#endif
+ 
+ char *lmp_vertostr(unsigned int ver)
+ {
+ 	return hci_uint2str(ver_map, ver);
+ }
+ 
++#if 0
+ int lmp_strtover(char *str, unsigned int *ver)
+ {
+ 	return hci_str2uint(ver_map, str, ver);
+@@ -2487,3 +2500,4 @@ int hci_remote_name(int dd, const bdaddr_t *bdaddr, in
+ {
+ 	return hci_read_remote_name(dd, bdaddr, len, name, to);
+ }
++#endif

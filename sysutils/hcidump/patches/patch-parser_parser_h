@@ -1,0 +1,12 @@
+$OpenBSD: patch-parser_parser_h,v 1.1.1.1 2008/11/29 09:54:49 jasper Exp $
+--- parser/parser.h.orig	Sat Feb 17 21:39:02 2007
++++ parser/parser.h	Tue Aug 12 11:09:49 2008
+@@ -35,7 +35,7 @@ struct frame {
+ 	uint32_t	data_len;
+ 	void		*ptr;
+ 	uint32_t	len;
+-	uint16_t	dev_id;
++	char		*dev_id;
+ 	uint8_t		in;
+ 	uint8_t		master;
+ 	uint16_t	handle;

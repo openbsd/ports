@@ -1,0 +1,35 @@
+$OpenBSD: patch-bluetooth_hci_h,v 1.1.1.1 2008/11/29 09:54:49 jasper Exp $
+--- bluetooth/hci.h.orig	Tue Aug 12 11:09:49 2008
++++ bluetooth/hci.h	Tue Aug 12 11:09:49 2008
+@@ -39,6 +39,7 @@ extern "C" {
+ #define HCI_MAX_EVENT_SIZE	260
+ #define HCI_MAX_FRAME_SIZE	(HCI_MAX_ACL_SIZE + 4)
+ 
++#if 0
+ /* HCI dev events */
+ #define HCI_DEV_REG	1
+ #define HCI_DEV_UNREG	2
+@@ -98,6 +99,7 @@ enum {
+ #define HCISETSECMGR	_IOW('H', 230, int)
+ 
+ #define HCIINQUIRY	_IOR('H', 240, int)
++#endif
+ 
+ #ifndef __NO_HCI_DEFS
+ 
+@@ -1720,6 +1722,7 @@ typedef struct {
+ 
+ #endif /* _NO_HCI_DEFS */
+ 
++#if 0
+ /* HCI Socket options */
+ #define HCI_DATA_DIR	1
+ #define HCI_FILTER	2
+@@ -1834,6 +1837,7 @@ struct hci_remotename_req {
+ 	bdaddr_t bdaddr;
+ 	uint8_t  name[248];
+ };
++#endif
+ 
+ #ifdef __cplusplus
+ }

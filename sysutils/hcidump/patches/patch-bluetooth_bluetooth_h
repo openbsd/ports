@@ -1,0 +1,76 @@
+$OpenBSD: patch-bluetooth_bluetooth_h,v 1.1.1.1 2008/11/29 09:54:49 jasper Exp $
+--- bluetooth/bluetooth.h.orig	Tue Aug 12 11:09:49 2008
++++ bluetooth/bluetooth.h	Tue Aug 12 11:20:21 2008
+@@ -30,6 +30,7 @@
+ extern "C" {
+ #endif
+ 
++#if 0
+ #include <stdio.h>
+ #include <stdint.h>
+ #include <string.h>
+@@ -86,7 +87,19 @@ enum {
+ #else
+ #error "Unknown byte order"
+ #endif
++#else
++#include <netbt/bluetooth.h>
++#include <netbt/hci.h>
++#include <string.h>
+ 
++#define SOL_HCI		BTPROTO_HCI
++
++#define htobs(d)	htole16(d)
++#define htobl(d)	htole32(d)
++#define btohs(d)	letoh16(d)
++#define btohl(d)	letoh32(d)
++#endif
++
+ /* Bluetooth unaligned access */
+ #define bt_get_unaligned(ptr)			\
+ ({						\
+@@ -104,6 +117,7 @@ do {						\
+ 	__p->__v = (val);			\
+ } while(0)
+ 
++#if 0
+ /* BD Address */
+ typedef struct {
+ 	uint8_t b[6];
+@@ -112,6 +126,7 @@ typedef struct {
+ #define BDADDR_ANY   (&(bdaddr_t) {{0, 0, 0, 0, 0, 0}})
+ #define BDADDR_ALL   (&(bdaddr_t) {{0xff, 0xff, 0xff, 0xff, 0xff, 0xff}})
+ #define BDADDR_LOCAL (&(bdaddr_t) {{0, 0, 0, 0xff, 0xff, 0xff}})
++#endif
+ 
+ /* Copy, swap, convert BD Address */
+ static inline int bacmp(const bdaddr_t *ba1, const bdaddr_t *ba2)
+@@ -124,9 +139,12 @@ static inline void bacpy(bdaddr_t *dst, const bdaddr_t
+ }
+ 
+ void baswap(bdaddr_t *dst, const bdaddr_t *src);
++#if 0
+ bdaddr_t *strtoba(const char *str);
+ char *batostr(const bdaddr_t *ba);
++#endif
+ int ba2str(const bdaddr_t *ba, char *str);
++#if 0
+ int str2ba(const char *str, bdaddr_t *ba);
+ int ba2oui(const bdaddr_t *ba, char *oui);
+ int bachk(const char *str);
+@@ -135,12 +153,15 @@ int baprintf(const char *format, ...);
+ int bafprintf(FILE *stream, const char *format, ...);
+ int basprintf(char *str, const char *format, ...);
+ int basnprintf(char *str, size_t size, const char *format, ...);
++#endif
+ 
+ void *bt_malloc(size_t size);
+ void bt_free(void *ptr);
+ 
++#if 0
+ int bt_error(uint16_t code);
+ char *bt_compidtostr(int id);
++#endif
+ 
+ #ifdef __cplusplus
+ }

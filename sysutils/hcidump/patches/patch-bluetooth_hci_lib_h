@@ -1,0 +1,49 @@
+$OpenBSD: patch-bluetooth_hci_lib_h,v 1.1.1.1 2008/11/29 09:54:49 jasper Exp $
+--- bluetooth/hci_lib.h.orig	Tue Aug 12 11:09:49 2008
++++ bluetooth/hci_lib.h	Tue Aug 12 11:09:49 2008
+@@ -30,6 +30,7 @@
+ extern "C" {
+ #endif
+ 
++#if 0
+ struct hci_request {
+ 	uint16_t ogf;
+ 	uint16_t ocf;
+@@ -122,21 +123,29 @@ int hci_get_route(bdaddr_t *bdaddr);
+ 
+ char *hci_dtypetostr(int type);
+ char *hci_dflagstostr(uint32_t flags);
++#endif
+ char *hci_ptypetostr(unsigned int ptype);
++#if 0
+ int hci_strtoptype(char *str, unsigned int *val);
+ char *hci_scoptypetostr(unsigned int ptype);
+ int hci_strtoscoptype(char *str, unsigned int *val);
++#endif
+ char *hci_lptostr(unsigned int ptype);
++#if 0
+ int hci_strtolp(char *str, unsigned int *val);
+ char *hci_lmtostr(unsigned int ptype);
+ int hci_strtolm(char *str, unsigned int *val);
+ 
+ char *hci_cmdtostr(unsigned int cmd);
+ char *hci_commandstostr(uint8_t *commands, char *pref, int width);
++#endif
+ 
+ char *hci_vertostr(unsigned int ver);
++#if 0
+ int hci_strtover(char *str, unsigned int *ver);
++#endif
+ char *lmp_vertostr(unsigned int ver);
++#if 0
+ int lmp_strtover(char *str, unsigned int *ver);
+ 
+ char *lmp_featurestostr(uint8_t *features, char *pref, int width);
+@@ -205,6 +214,7 @@ static inline int hci_filter_test_opcode(int opcode, s
+ {
+ 	return (f->opcode == opcode);
+ }
++#endif
+ 
+ #ifdef __cplusplus
+ }

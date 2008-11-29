@@ -1,0 +1,13 @@
+$OpenBSD: patch-parser_rfcomm_h,v 1.1.1.1 2008/11/29 09:54:49 jasper Exp $
+--- parser/rfcomm.h.orig	Sat Feb 17 21:39:02 2007
++++ parser/rfcomm.h	Tue Aug 12 11:09:49 2008
+@@ -25,7 +25,9 @@
+ #ifndef __RFCOMM_H
+ #define __RFCOMM_H
+ 
++#if 0
+ #include <endian.h>
++#endif
+ 
+ #define RFCOMM_PSM 3
+ 

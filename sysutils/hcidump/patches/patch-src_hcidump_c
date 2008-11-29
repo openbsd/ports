@@ -1,0 +1,229 @@
+$OpenBSD: patch-src_hcidump_c,v 1.1.1.1 2008/11/29 09:54:49 jasper Exp $
+--- src/hcidump.c.orig	Sat Jul 28 09:41:34 2007
++++ src/hcidump.c	Tue Aug 12 11:34:08 2008
+@@ -22,6 +22,8 @@
+  *
+  */
+ 
++#define VERSION "1.42"
++
+ #ifdef HAVE_CONFIG_H
+ #include <config.h>
+ #endif
+@@ -33,6 +35,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <getopt.h>
++#include <sys/uio.h>
+ #include <sys/poll.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
+@@ -50,6 +53,10 @@
+ #include "parser/parser.h"
+ #include "parser/sdp.h"
+ 
++#ifndef AI_ADDRCONFIG
++#define AI_ADDRCONFIG	0
++#endif
++
+ #if __BYTE_ORDER == __LITTLE_ENDIAN
+ static inline uint64_t ntoh64(uint64_t n)
+ {
+@@ -165,7 +172,7 @@ static inline int write_n(int fd, char *buf, int len)
+ 	return t;
+ }
+ 
+-static int process_frames(int dev, int sock, int fd, unsigned long flags)
++static int process_frames(char *dev, int sock, int fd, unsigned long flags)
+ {
+ 	struct cmsghdr *cmsg;
+ 	struct msghdr msg;
+@@ -207,10 +214,14 @@ static int process_frames(int dev, int sock, int fd, u
+ 		return -1;
+ 	}
+ 
++#if 0
+ 	if (dev == HCI_DEV_NONE)
+ 		printf("system: ");
+ 	else
+ 		printf("device: hci%d ", dev);
++#else
++	printf("device: %s ", (dev == NULL ? "all" : dev));
++#endif
+ 
+ 	printf("snap_len: %d filter: 0x%lx\n", snap_len, parser.filter);
+ 
+@@ -304,10 +315,10 @@ static int process_frames(int dev, int sock, int fd, u
+ 		cmsg = CMSG_FIRSTHDR(&msg);
+ 		while (cmsg) {
+ 			switch (cmsg->cmsg_type) {
+-			case HCI_CMSG_DIR:
++			case SCM_HCI_DIRECTION:
+ 				frm.in = *((int *) CMSG_DATA(cmsg));
+ 				break;
+-			case HCI_CMSG_TSTAMP:
++			case SCM_TIMESTAMP:
+ 				frm.ts = *((struct timeval *) CMSG_DATA(cmsg));
+ 				break;
+ 			}
+@@ -553,10 +564,13 @@ static int open_file(char *file, int mode, unsigned lo
+ 	return fd;
+ }
+ 
+-static int open_socket(int dev, unsigned long flags)
++static int open_socket(char *dev, unsigned long flags)
+ {
+-	struct sockaddr_hci addr;
++	struct sockaddr_bt addr;
+ 	struct hci_filter flt;
++#if 1
++	int sk, opt;
++#else
+ 	struct hci_dev_info di;
+ 	int sk, dd, opt;
+ 
+@@ -582,6 +596,7 @@ static int open_socket(int dev, unsigned long flags)
+ 
+ 		hci_close_dev(dd);
+ 	}
++#endif
+ 
+ 	/* Create HCI socket */
+ 	sk = socket(AF_BLUETOOTH, SOCK_RAW, BTPROTO_HCI);
+@@ -591,18 +606,19 @@ static int open_socket(int dev, unsigned long flags)
+ 	}
+ 
+ 	opt = 1;
+-	if (setsockopt(sk, SOL_HCI, HCI_DATA_DIR, &opt, sizeof(opt)) < 0) {
++	if (setsockopt(sk, BTPROTO_HCI, SO_HCI_DIRECTION, &opt, sizeof(opt)) < 0) {
+ 		perror("Can't enable data direction info");
+ 		return -1;
+ 	}
+ 
+ 	opt = 1;
+-	if (setsockopt(sk, SOL_HCI, HCI_TIME_STAMP, &opt, sizeof(opt)) < 0) {
++	if (setsockopt(sk, SOL_SOCKET, SO_TIMESTAMP, &opt, sizeof(opt)) < 0) {
+ 		perror("Can't enable time stamp");
+ 		return -1;
+ 	}
+ 
+ 	/* Setup filter */
++#if 0
+ 	hci_filter_clear(&flt);
+ 	hci_filter_all_ptypes(&flt);
+ 	hci_filter_all_events(&flt);
+@@ -610,12 +626,34 @@ static int open_socket(int dev, unsigned long flags)
+ 		perror("Can't set filter");
+ 		return -1;
+ 	}
++#else
++	memset(&flt, 0xff, sizeof(flt));
++	if (setsockopt(sk, BTPROTO_HCI, SO_HCI_EVT_FILTER, &flt, sizeof(flt)) < 0) {
++		perror("Can't set event filter");
++		exit(1);
++	}
+ 
++	if (setsockopt(sk, BTPROTO_HCI, SO_HCI_PKT_FILTER, &flt, sizeof(flt)) < 0) {
++		perror("Can't set packet filter");
++		exit(1);
++	}
++#endif
++
+ 	/* Bind socket to the HCI device */
++#if 0
+ 	addr.hci_family = AF_BLUETOOTH;
+ 	addr.hci_dev = dev;
++#else
++	memset(&addr, 0, sizeof(addr));
++	addr.bt_len = sizeof(addr);
++	addr.bt_family = AF_BLUETOOTH;
++	if (dev && !bt_devaddr(dev, &addr.bt_bdaddr)) {
++		perror("device");
++		exit(1);
++	}
++#endif
+ 	if (bind(sk, (struct sockaddr *) &addr, sizeof(addr)) < 0) {
+-		printf("Can't attach to device hci%d. %s(%d)\n", 
++		printf("Can't attach to device %s. %s(%d)\n", 
+ 					dev, strerror(errno), errno);
+ 		return -1;
+ 	}
+@@ -660,11 +698,13 @@ static int open_connection(char *addr, char *port)
+ 			((struct sockaddr_in *) &ss)->sin_addr.s_addr = htonl(INADDR_ANY);
+ 			((struct sockaddr_in *) &ss)->sin_port = 0;
+ 			break;
++#ifdef INET6
+ 		case AF_INET6:
+ 			memcpy(&((struct sockaddr_in6 *) &ss)->sin6_addr,
+ 						&in6addr_any, sizeof(in6addr_any));
+ 			((struct sockaddr_in6 *) &ss)->sin6_port = 0;
+ 			break;
++#endif
+ 		}
+ 
+ 		if (bind(sk, (struct sockaddr *) &ss, sizeof(ss)) < 0) {
+@@ -854,7 +894,7 @@ static int wait_connection(char *addr, char *port)
+ 	return -1;
+ }
+ 
+-static int run_server(int dev, char *addr, char *port, unsigned long flags)
++static int run_server(char *dev, char *addr, char *port, unsigned long flags)
+ {
+ 	while (1) {
+ 		int dd, sk;
+@@ -950,7 +990,9 @@ static void usage(void)
+ 	"  -Y, --novendor             No vendor commands or events\n"
+ 	"  -N, --noappend             No appending to existing files\n"
+ 	"  -4, --ipv4                 Use IPv4 as transport\n"
++#ifdef INET6
+ 	"  -6  --ipv6                 Use IPv6 as transport\n"
++#endif
+ 	"  -h, --help                 Give this help list\n"
+ 	"      --usage                Give a short usage message\n"
+ 	);
+@@ -983,7 +1025,9 @@ static struct option main_options[] = {
+ 	{ "nopermcheck",	0, 0, 'Z' },
+ 	{ "noappend",		0, 0, 'N' },
+ 	{ "ipv4",		0, 0, '4' },
++#ifdef INET6
+ 	{ "ipv6",		0, 0, '6' },
++#endif
+ 	{ "help",		0, 0, 'h' },
+ 	{ 0 }
+ };
+@@ -992,7 +1036,7 @@ int main(int argc, char *argv[])
+ {
+ 	unsigned long flags = 0;
+ 	unsigned long filter = 0;
+-	int device = 0;
++	char *device = NULL;
+ 	int defpsm = 0;
+ 	int defcompid = DEFAULT_COMPID;
+ 	int opt, pppdump_fd = -1, audio_fd = -1;
+@@ -1002,10 +1046,14 @@ int main(int argc, char *argv[])
+ 	while ((opt=getopt_long(argc, argv, "i:l:p:m:w:r:s:n:d:taxXRC:H:O:P:D:A:BVYZN46h", main_options, NULL)) != -1) {
+ 		switch(opt) {
+ 		case 'i':
++#if 0
+ 			if (strcasecmp(optarg, "none") && strcasecmp(optarg, "system"))
+ 				device = atoi(optarg + 3);
+ 			else
+ 				device = HCI_DEV_NONE;
++#else
++			device = optarg;
++#endif
+ 			break;
+ 
+ 		case 'l': 
+@@ -1113,9 +1161,11 @@ int main(int argc, char *argv[])
+ 			af = AF_INET;
+ 			break;
+ 
++#ifdef INET6
+ 		case '6':
+ 			af = AF_INET6;
+ 			break;
++#endif
+ 
+ 		case 'h':
+ 		default:
