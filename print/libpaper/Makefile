@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/04 17:32:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/29 09:49:03 ajacoutot Exp $
 
 COMMENT=	library for handling paper characteristics
 
 V=		1.1.21
 DISTNAME=	libpaper_${V}
-PKGNAME=	libpaper-${V}
+PKGNAME=	libpaper-${V}p0
 SHARED_LIBS+=	paper 0.0	# .2.2
 CATEGORIES=	print
 

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/04 17:32:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/11/29 09:49:03 ajacoutot Exp $
 %%SHARED%%
-bin/paperconf
+@bin bin/paperconf
 include/paper.h
 lib/libpaper.a
 lib/libpaper.la

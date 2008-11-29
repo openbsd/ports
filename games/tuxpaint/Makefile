@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/11/18 13:51:14 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2008/11/29 09:49:03 ajacoutot Exp $
 
 COMMENT=	drawing program for children
 
 DISTNAME=	tuxpaint-0.9.20
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 
-WANTLIB=	ORBit-2 SDL X11 Xau Xdmcp Xrender c cairo expat \
+WANTLIB=	SDL X11 Xau Xdmcp Xrender c cairo expat \
 		fontconfig freetype gdk_pixbuf-2.0 glib-2.0 glitz \
-		gmodule-2.0 gobject-2.0 gthread-2.0 m pixman-1 png \
+		gmodule-2.0 gobject-2.0 m pixman-1 png \
 		pthread z
 
 MODULES=	devel/gettext
@@ -30,9 +30,7 @@ LIB_DEPENDS=	SDL_image.>=2::devel/sdl-image \
 		rsvg-2.>=18::x11/gnome/librsvg \
 		paper::print/libpaper \
 		utf8.>=1::misc/libutf8 \
-		SDL_Pango::devel/sdl-pango \
-		gnomevfs-2::x11/gnome/vfs2 \
-		gconf-2.>=6::devel/gconf2
+		SDL_Pango::devel/sdl-pango
 RUN_DEPENDS=	::graphics/netpbm \
 		:desktop-file-utils-*:devel/desktop-file-utils
 
