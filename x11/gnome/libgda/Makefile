@@ -1,21 +1,25 @@
-# $OpenBSD: Makefile,v 1.3 2008/11/22 23:53:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/11/29 12:53:51 jasper Exp $
 
 # XXX: use system sqlite3
+
+SHARED_ONLY=		Yes
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda
 COMMENT-mdb=		MS Access MDB backend for libgda
 COMMENT-mysql=		MySQL backend for libgda
 COMMENT-pgsql=		PostreSQL backend for libgda
+COMMENT-tds=		FreeTDS backend for libgda
 
 GNOME_PROJECT=		libgda
 GNOME_VERSION=		3.1.5
 
-PKGNAME-main=		${DISTNAME}p0
-PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}p0
-PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}p0
-PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}p0
-PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}p0
+PKGNAME-main=		${DISTNAME}p1
+PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}p1
+PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}p1
+PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}p1
+PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}p1
+PKGNAME-tds=		libgda-tds-${GNOME_VERSION}
 
 CATEGORIES=		databases
 
@@ -46,7 +50,7 @@ MODULES=		devel/gettext \
 
 SUBST_VARS=		GDA_MAJOR
 
-PSEUDO_FLAVORS=		no_ldap no_mdb no_mysql no_pgsql
+PSEUDO_FLAVORS=		no_ldap no_mdb no_mysql no_pgsql no_tds
 FLAVOR?=
 
 MULTI_PACKAGES=		-main
@@ -60,7 +64,9 @@ LIB_DEPENDS=		gcrypt::security/libgcrypt \
 
 REGRESS_DEPENDS=	::devel/check
 
+LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--disable-static \
 			--disable-gtk-doc \
 			--with-bdb="${LOCALBASE}" \
 			--without-firebird \
@@ -119,7 +125,18 @@ WANTLIB-pgsql=		${WANTLIB} db
 LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
 			gda-3.0,gdasql-3.0::x11/gnome/libgda \
 			pq::databases/postgresql
-CONFIGURE_ARGS+=	--with-postgresql="${LOCALBASE}"
+CONFIGURE_ARGS+=	--with-postgres="${LOCALBASE}"
+.endif
+
+.if ${FLAVOR:L:Mno_tds}
+CONFIGURE_ARGS+=	--without-tds
+.else
+MULTI_PACKAGES+=	-tds
+WANTLIB-tds=		${WANTLIB} db
+LIB_DEPENDS-tds=        ${LIB_DEPENDS} \
+                        gda-3.0,gdasql-3.0::x11/gnome/libgda \
+                        tds::databases/freetds
+CONFIGURE_ARGS+=	--with-tds="${LOCALBASE}" 
 .endif
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-ldap,v 1.1.1.1 2008/08/21 10:27:25 jasper Exp $
-%%SHARED%%
-lib/libgda-${GDA_MAJOR}/providers/libgda-ldap.a
+@comment $OpenBSD: PLIST-ldap,v 1.2 2008/11/29 12:53:51 jasper Exp $
 lib/libgda-${GDA_MAJOR}/providers/libgda-ldap.la
+lib/libgda-${GDA_MAJOR}/providers/libgda-ldap.so
 lib/pkgconfig/libgda-ldap-${GDA_MAJOR}.pc
 share/libgda-${GDA_MAJOR}/ldap_specs_dsn.xml

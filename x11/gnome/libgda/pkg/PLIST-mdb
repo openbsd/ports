@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-mdb,v 1.1.1.1 2008/08/21 10:27:25 jasper Exp $
-%%SHARED%%
-lib/libgda-${GDA_MAJOR}/providers/libgda-mdb.a
+@comment $OpenBSD: PLIST-mdb,v 1.2 2008/11/29 12:53:51 jasper Exp $
 lib/libgda-${GDA_MAJOR}/providers/libgda-mdb.la
+lib/libgda-${GDA_MAJOR}/providers/libgda-mdb.so
 lib/pkgconfig/libgda-mdb-${GDA_MAJOR}.pc
 share/libgda-${GDA_MAJOR}/mdb_specs_dsn.xml
