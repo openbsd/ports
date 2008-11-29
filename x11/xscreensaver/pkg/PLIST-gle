@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-gle,v 1.1 2008/11/29 11:29:07 ajacoutot Exp $
+@bin libexec/xscreensaver/extrusion
+@man man/man6/extrusion.6
+share/applications/screensavers/extrusion.desktop
+share/xscreensaver/config/extrusion.xml

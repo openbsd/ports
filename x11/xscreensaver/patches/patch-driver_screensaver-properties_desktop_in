@@ -1,8 +1,12 @@
-$OpenBSD: patch-driver_screensaver-properties_desktop_in,v 1.4 2008/03/17 18:59:39 ajacoutot Exp $
+$OpenBSD: patch-driver_screensaver-properties_desktop_in,v 1.5 2008/11/29 11:29:07 ajacoutot Exp $
 --- driver/screensaver-properties.desktop.in.orig	Sun Jan 27 00:16:59 2008
-+++ driver/screensaver-properties.desktop.in	Mon Mar 17 10:52:02 2008
-@@ -5,4 +5,4 @@ Terminal=false
- _Name=Screensaver
++++ driver/screensaver-properties.desktop.in	Fri Nov 28 09:28:21 2008
+@@ -2,7 +2,7 @@
+ Exec=xscreensaver-demo
+ Icon=xscreensaver
+ Terminal=false
+-_Name=Screensaver
++_Name=Screensaver (Xscreensaver)
  _Comment=Change screensaver properties
  Type=Application
 -Categories=Settings;DesktopSettings;Security;

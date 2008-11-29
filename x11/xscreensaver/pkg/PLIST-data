@@ -1,18 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.27 2008/10/27 19:49:39 ajacoutot Exp $
-@conflict circuit-*
-@mode g+s
-@group auth
-bin/xscreensaver
-@mode
-@group
-@bin bin/xscreensaver-command
-@bin bin/xscreensaver-demo
-@bin bin/xscreensaver-getimage
-bin/xscreensaver-getimage-file
-bin/xscreensaver-getimage-video
-@bin bin/xscreensaver-gl-helper
-bin/xscreensaver-text
-lib/X11/app-defaults/XScreenSaver
+@comment $OpenBSD: PLIST-data,v 1.1 2008/11/29 11:29:07 ajacoutot Exp $
+@conflict xscreensaver-<5.07p3
+@conflict xscreensaver-<5.07p3-no_gle
 libexec/xscreensaver/
 @bin libexec/xscreensaver/abstractile
 @bin libexec/xscreensaver/anemone
@@ -44,7 +32,6 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/carousel
 @bin libexec/xscreensaver/ccurve
 @bin libexec/xscreensaver/celtic
-@bin libexec/xscreensaver/circuit
 @bin libexec/xscreensaver/cloudlife
 @bin libexec/xscreensaver/compass
 @bin libexec/xscreensaver/coral
@@ -69,7 +56,6 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/epicycle
 @bin libexec/xscreensaver/eruption
 @bin libexec/xscreensaver/euler2d
-!%%no_gle%%
 @bin libexec/xscreensaver/fadeplot
 @bin libexec/xscreensaver/fiberlamp
 @bin libexec/xscreensaver/fireworkx
@@ -222,6 +208,7 @@ libexec/xscreensaver/webcollage
 @bin libexec/xscreensaver/worm
 @bin libexec/xscreensaver/wormhole
 @bin libexec/xscreensaver/xanalogtv
+@bin libexec/xscreensaver/xcircuit
 @bin libexec/xscreensaver/xdeco
 @bin libexec/xscreensaver/xflame
 @bin libexec/xscreensaver/xjack
@@ -230,13 +217,6 @@ libexec/xscreensaver/webcollage
 @bin libexec/xscreensaver/xrayswarm
 @bin libexec/xscreensaver/xspirograph
 @bin libexec/xscreensaver/zoom
-@man man/man1/xscreensaver-command.1
-@man man/man1/xscreensaver-demo.1
-@man man/man1/xscreensaver-getimage-file.1
-@man man/man1/xscreensaver-getimage-video.1
-@man man/man1/xscreensaver-getimage.1
-@man man/man1/xscreensaver-text.1
-@man man/man1/xscreensaver.1
 @man man/man6/abstractile.6
 @man man/man6/anemone.6
 @man man/man6/anemotaxis.6
@@ -267,7 +247,6 @@ libexec/xscreensaver/webcollage
 @man man/man6/carousel.6
 @man man/man6/ccurve.6
 @man man/man6/celtic.6
-@man man/man6/circuit.6
 @man man/man6/cloudlife.6
 @man man/man6/compass.6
 @man man/man6/coral.6
@@ -292,7 +271,6 @@ libexec/xscreensaver/webcollage
 @man man/man6/epicycle.6
 @man man/man6/eruption.6
 @man man/man6/euler2d.6
-@man man/man6/extrusion.6
 @man man/man6/fadeplot.6
 @man man/man6/fiberlamp.6
 @man man/man6/fireworkx.6
@@ -442,6 +420,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/worm.6
 @man man/man6/wormhole.6
 @man man/man6/xanalogtv.6
+@man man/man6/xcircuit.6
 @man man/man6/xdeco.6
 @man man/man6/xflame.6
 @man man/man6/xjack.6
@@ -452,35 +431,223 @@ libexec/xscreensaver/webcollage
 @man man/man6/xspirograph.6
 @man man/man6/xsublim.6
 @man man/man6/zoom.6
-share/applications/xscreensaver-properties.desktop
-share/locale/ca/LC_MESSAGES/xscreensaver.mo
-share/locale/da/LC_MESSAGES/xscreensaver.mo
-share/locale/de/LC_MESSAGES/xscreensaver.mo
-share/locale/es/LC_MESSAGES/xscreensaver.mo
-share/locale/et/LC_MESSAGES/xscreensaver.mo
-share/locale/fi/LC_MESSAGES/xscreensaver.mo
-share/locale/fr/LC_MESSAGES/xscreensaver.mo
-share/locale/hu/LC_MESSAGES/xscreensaver.mo
-share/locale/it/LC_MESSAGES/xscreensaver.mo
-share/locale/ja/LC_MESSAGES/xscreensaver.mo
-share/locale/ko/LC_MESSAGES/xscreensaver.mo
-share/locale/nb/LC_MESSAGES/xscreensaver.mo
-share/locale/nl/LC_MESSAGES/xscreensaver.mo
-share/locale/no/LC_MESSAGES/xscreensaver.mo
-share/locale/pl/LC_MESSAGES/xscreensaver.mo
-share/locale/pt/LC_MESSAGES/xscreensaver.mo
-share/locale/pt_BR/LC_MESSAGES/xscreensaver.mo
-share/locale/ru/LC_MESSAGES/xscreensaver.mo
-share/locale/sk/LC_MESSAGES/xscreensaver.mo
-share/locale/sv/LC_MESSAGES/xscreensaver.mo
-share/locale/vi/LC_MESSAGES/xscreensaver.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
-share/locale/wa/LC_MESSAGES/xscreensaver.mo
-share/locale/zh_CN/LC_MESSAGES/xscreensaver.mo
-share/locale/zh_TW/LC_MESSAGES/xscreensaver.mo
-share/pixmaps/
-share/pixmaps/xscreensaver.xpm
+share/applications/
+share/applications/screensavers/
+share/applications/screensavers/abstractile.desktop
+share/applications/screensavers/anemone.desktop
+share/applications/screensavers/anemotaxis.desktop
+share/applications/screensavers/ant.desktop
+share/applications/screensavers/antinspect.desktop
+share/applications/screensavers/antmaze.desktop
+share/applications/screensavers/antspotlight.desktop
+share/applications/screensavers/apollonian.desktop
+share/applications/screensavers/apple2.desktop
+share/applications/screensavers/atlantis.desktop
+share/applications/screensavers/attraction.desktop
+share/applications/screensavers/atunnel.desktop
+share/applications/screensavers/barcode.desktop
+share/applications/screensavers/blaster.desktop
+share/applications/screensavers/blinkbox.desktop
+share/applications/screensavers/blitspin.desktop
+share/applications/screensavers/blocktube.desktop
+share/applications/screensavers/boing.desktop
+share/applications/screensavers/bouboule.desktop
+share/applications/screensavers/bouncingcow.desktop
+share/applications/screensavers/boxed.desktop
+share/applications/screensavers/boxfit.desktop
+share/applications/screensavers/braid.desktop
+share/applications/screensavers/bsod.desktop
+share/applications/screensavers/bubble3d.desktop
+share/applications/screensavers/bubbles.desktop
+share/applications/screensavers/bumps.desktop
+share/applications/screensavers/cage.desktop
+share/applications/screensavers/carousel.desktop
+share/applications/screensavers/ccurve.desktop
+share/applications/screensavers/celtic.desktop
+share/applications/screensavers/cloudlife.desktop
+share/applications/screensavers/compass.desktop
+share/applications/screensavers/coral.desktop
+share/applications/screensavers/crackberg.desktop
+share/applications/screensavers/critical.desktop
+share/applications/screensavers/crystal.desktop
+share/applications/screensavers/cube21.desktop
+share/applications/screensavers/cubenetic.desktop
+share/applications/screensavers/cubestorm.desktop
+share/applications/screensavers/cubicgrid.desktop
+share/applications/screensavers/cwaves.desktop
+share/applications/screensavers/cynosure.desktop
+share/applications/screensavers/dangerball.desktop
+share/applications/screensavers/decayscreen.desktop
+share/applications/screensavers/deluxe.desktop
+share/applications/screensavers/demon.desktop
+share/applications/screensavers/discrete.desktop
+share/applications/screensavers/distort.desktop
+share/applications/screensavers/dnalogo.desktop
+share/applications/screensavers/drift.desktop
+share/applications/screensavers/endgame.desktop
+share/applications/screensavers/engine.desktop
+share/applications/screensavers/epicycle.desktop
+share/applications/screensavers/eruption.desktop
+share/applications/screensavers/euler2d.desktop
+share/applications/screensavers/fadeplot.desktop
+share/applications/screensavers/fiberlamp.desktop
+share/applications/screensavers/fireworkx.desktop
+share/applications/screensavers/flag.desktop
+share/applications/screensavers/flame.desktop
+share/applications/screensavers/flipflop.desktop
+share/applications/screensavers/flipscreen3d.desktop
+share/applications/screensavers/fliptext.desktop
+share/applications/screensavers/flow.desktop
+share/applications/screensavers/fluidballs.desktop
+share/applications/screensavers/flurry.desktop
+share/applications/screensavers/flyingtoasters.desktop
+share/applications/screensavers/fontglide.desktop
+share/applications/screensavers/forest.desktop
+share/applications/screensavers/fuzzyflakes.desktop
+share/applications/screensavers/galaxy.desktop
+share/applications/screensavers/gears.desktop
+share/applications/screensavers/gflux.desktop
+share/applications/screensavers/glblur.desktop
+share/applications/screensavers/glcells.desktop
+share/applications/screensavers/gleidescope.desktop
+share/applications/screensavers/glforestfire.desktop
+share/applications/screensavers/glhanoi.desktop
+share/applications/screensavers/glknots.desktop
+share/applications/screensavers/glmatrix.desktop
+share/applications/screensavers/glplanet.desktop
+share/applications/screensavers/glschool.desktop
+share/applications/screensavers/glslideshow.desktop
+share/applications/screensavers/glsnake.desktop
+share/applications/screensavers/gltext.desktop
+share/applications/screensavers/goop.desktop
+share/applications/screensavers/grav.desktop
+share/applications/screensavers/greynetic.desktop
+share/applications/screensavers/halftone.desktop
+share/applications/screensavers/halo.desktop
+share/applications/screensavers/helix.desktop
+share/applications/screensavers/hopalong.desktop
+share/applications/screensavers/hyperball.desktop
+share/applications/screensavers/hypercube.desktop
+share/applications/screensavers/hypertorus.desktop
+share/applications/screensavers/hypnowheel.desktop
+share/applications/screensavers/ifs.desktop
+share/applications/screensavers/imsmap.desktop
+share/applications/screensavers/interaggregate.desktop
+share/applications/screensavers/interference.desktop
+share/applications/screensavers/intermomentary.desktop
+share/applications/screensavers/jigglypuff.desktop
+share/applications/screensavers/jigsaw.desktop
+share/applications/screensavers/juggle.desktop
+share/applications/screensavers/juggler3d.desktop
+share/applications/screensavers/julia.desktop
+share/applications/screensavers/kaleidescope.desktop
+share/applications/screensavers/klein.desktop
+share/applications/screensavers/kumppa.desktop
+share/applications/screensavers/lament.desktop
+share/applications/screensavers/laser.desktop
+share/applications/screensavers/lavalite.desktop
+share/applications/screensavers/lcdscrub.desktop
+share/applications/screensavers/lightning.desktop
+share/applications/screensavers/lisa.desktop
+share/applications/screensavers/lissie.desktop
+share/applications/screensavers/lmorph.desktop
+share/applications/screensavers/lockward.desktop
+share/applications/screensavers/loop.desktop
+share/applications/screensavers/m6502.desktop
+share/applications/screensavers/maze.desktop
+share/applications/screensavers/memscroller.desktop
+share/applications/screensavers/menger.desktop
+share/applications/screensavers/metaballs.desktop
+share/applications/screensavers/mirrorblob.desktop
+share/applications/screensavers/mismunch.desktop
+share/applications/screensavers/moebius.desktop
+share/applications/screensavers/moebiusgears.desktop
+share/applications/screensavers/moire.desktop
+share/applications/screensavers/moire2.desktop
+share/applications/screensavers/molecule.desktop
+share/applications/screensavers/morph3d.desktop
+share/applications/screensavers/mountain.desktop
+share/applications/screensavers/munch.desktop
+share/applications/screensavers/nerverot.desktop
+share/applications/screensavers/noof.desktop
+share/applications/screensavers/noseguy.desktop
+share/applications/screensavers/pacman.desktop
+share/applications/screensavers/pedal.desktop
+share/applications/screensavers/penetrate.desktop
+share/applications/screensavers/penrose.desktop
+share/applications/screensavers/petri.desktop
+share/applications/screensavers/phosphor.desktop
+share/applications/screensavers/piecewise.desktop
+share/applications/screensavers/pinion.desktop
+share/applications/screensavers/pipes.desktop
+share/applications/screensavers/polyhedra.desktop
+share/applications/screensavers/polyominoes.desktop
+share/applications/screensavers/polytopes.desktop
+share/applications/screensavers/pong.desktop
+share/applications/screensavers/providence.desktop
+share/applications/screensavers/pulsar.desktop
+share/applications/screensavers/pyro.desktop
+share/applications/screensavers/qix.desktop
+share/applications/screensavers/queens.desktop
+share/applications/screensavers/rd-bomb.desktop
+share/applications/screensavers/rdbomb.desktop
+share/applications/screensavers/ripples.desktop
+share/applications/screensavers/rocks.desktop
+share/applications/screensavers/rorschach.desktop
+share/applications/screensavers/rotor.desktop
+share/applications/screensavers/rotzoomer.desktop
+share/applications/screensavers/rubik.desktop
+share/applications/screensavers/sballs.desktop
+share/applications/screensavers/shadebobs.desktop
+share/applications/screensavers/sierpinski.desktop
+share/applications/screensavers/sierpinski3d.desktop
+share/applications/screensavers/skytentacles.desktop
+share/applications/screensavers/slidescreen.desktop
+share/applications/screensavers/slip.desktop
+share/applications/screensavers/sonar.desktop
+share/applications/screensavers/speedmine.desktop
+share/applications/screensavers/sphere.desktop
+share/applications/screensavers/spheremonics.desktop
+share/applications/screensavers/spiral.desktop
+share/applications/screensavers/spotlight.desktop
+share/applications/screensavers/sproingies.desktop
+share/applications/screensavers/squiral.desktop
+share/applications/screensavers/stairs.desktop
+share/applications/screensavers/starfish.desktop
+share/applications/screensavers/starwars.desktop
+share/applications/screensavers/stonerview.desktop
+share/applications/screensavers/strange.desktop
+share/applications/screensavers/substrate.desktop
+share/applications/screensavers/superquadrics.desktop
+share/applications/screensavers/swirl.desktop
+share/applications/screensavers/t3d.desktop
+share/applications/screensavers/tangram.desktop
+share/applications/screensavers/thornbird.desktop
+share/applications/screensavers/timetunnel.desktop
+share/applications/screensavers/topblock.desktop
+share/applications/screensavers/triangle.desktop
+share/applications/screensavers/truchet.desktop
+share/applications/screensavers/twang.desktop
+share/applications/screensavers/vermiculate.desktop
+share/applications/screensavers/vidwhacker.desktop
+share/applications/screensavers/vines.desktop
+share/applications/screensavers/voronoi.desktop
+share/applications/screensavers/wander.desktop
+share/applications/screensavers/webcollage.desktop
+share/applications/screensavers/whirlwindwarp.desktop
+share/applications/screensavers/whirlygig.desktop
+share/applications/screensavers/worm.desktop
+share/applications/screensavers/wormhole.desktop
+share/applications/screensavers/xanalogtv.desktop
+share/applications/screensavers/xcircuit.desktop
+share/applications/screensavers/xdeco.desktop
+share/applications/screensavers/xflame.desktop
+share/applications/screensavers/xjack.desktop
+share/applications/screensavers/xlyap.desktop
+share/applications/screensavers/xmatrix.desktop
+share/applications/screensavers/xrayswarm.desktop
+share/applications/screensavers/xspirograph.desktop
+share/applications/screensavers/zoom.desktop
 share/xscreensaver/
 share/xscreensaver/config/
 share/xscreensaver/config/README
@@ -514,7 +681,6 @@ share/xscreensaver/config/cage.xml
 share/xscreensaver/config/carousel.xml
 share/xscreensaver/config/ccurve.xml
 share/xscreensaver/config/celtic.xml
-share/xscreensaver/config/circuit.xml
 share/xscreensaver/config/cloudlife.xml
 share/xscreensaver/config/compass.xml
 share/xscreensaver/config/coral.xml
@@ -539,7 +705,6 @@ share/xscreensaver/config/engine.xml
 share/xscreensaver/config/epicycle.xml
 share/xscreensaver/config/eruption.xml
 share/xscreensaver/config/euler2d.xml
-share/xscreensaver/config/extrusion.xml
 share/xscreensaver/config/fadeplot.xml
 share/xscreensaver/config/fiberlamp.xml
 share/xscreensaver/config/fireworkx.xml
@@ -690,6 +855,7 @@ share/xscreensaver/config/whirlygig.xml
 share/xscreensaver/config/worm.xml
 share/xscreensaver/config/wormhole.xml
 share/xscreensaver/config/xanalogtv.xml
+share/xscreensaver/config/xcircuit.xml
 share/xscreensaver/config/xdeco.xml
 share/xscreensaver/config/xflame.xml
 share/xscreensaver/config/xjack.xml
@@ -698,13 +864,3 @@ share/xscreensaver/config/xmatrix.xml
 share/xscreensaver/config/xrayswarm.xml
 share/xscreensaver/config/xspirograph.xml
 share/xscreensaver/config/zoom.xml
-share/xscreensaver/glade/
-share/xscreensaver/glade/screensaver-cmndln.png
-share/xscreensaver/glade/screensaver-colorselector.png
-share/xscreensaver/glade/screensaver-diagnostic.png
-share/xscreensaver/glade/screensaver-locking.png
-share/xscreensaver/glade/screensaver-power.png
-share/xscreensaver/glade/screensaver-snap.png
-share/xscreensaver/glade/xscreensaver-demo.glade2
-@exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database

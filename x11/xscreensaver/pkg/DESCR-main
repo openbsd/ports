@@ -18,7 +18,3 @@ xautolock programs is the ease with which new graphics hacks can be
 installed.  You don't need to recompile (or even re-run) the
 xscreensaver program to add a new display mode, you just change a config
 file.
-
-Available flavor:
-	no_gle - Build without OpenGL "extrusion" library support
-	         (this is the default)
