@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 18:01:01 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2008/11/29 11:32:26 ajacoutot Exp $
 
 COMMENT=	finish-the-cycle logic puzzle
 CATEGORIES=	games
@@ -6,9 +6,8 @@ CATEGORIES=	games
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 DISTNAME=	circuit-0.1.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 MASTER_SITES=	ftp://quatramaran.ens.fr/pub/cigaes/circuit/
-
 
 # BSD
 PERMIT_PACKAGE_FTP=	Yes
@@ -27,7 +26,5 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/circuit ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/circuit.6 ${PREFIX}/man/man6
-
-
 
 .include <bsd.port.mk>
