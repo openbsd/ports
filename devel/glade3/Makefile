@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/11 23:11:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/11/30 09:25:55 ajacoutot Exp $
 
 COMMENT=		user interface builder for the GTK2+ toolkit
 
 GNOME_VERSION =		3.5.2
 GNOME_PROJECT = 	glade3
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		devel
 SHARED_LIBS +=  gladeui-1            0.0      # .8.0
 
@@ -34,14 +35,16 @@ LIB_DEPENDS=            dbus-glib-1::x11/dbus-glib \
 			gnomeui-2::x11/gnome/libgnomeui
 BUILD_DEPENDS=          :scrollkeeper->=0.3.12:textproc/scrollkeeper \
 			::x11/gnome/doc-utils
-RUN_DEPENDS=            :scrollkeeper->=0.3.12:textproc/scrollkeeper
+RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper \
+			::x11/gnome/devhelp
 
 DESKTOP_FILES = 	Yes
 MODGNOME_HELP_FILES =	Yes
 USE_X11 =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS+=	--disable-scrollkeeper
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--disable-scrollkeeper
 CONFIGURE_ENV=          CPPFLAGS="-pthread -I${LOCALBASE}/include"      \
                         LDFLAGS="-pthread -L${LOCALBASE}/lib"
 
