@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/10/21 20:57:58 steven Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/11/30 18:45:27 steven Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @unexec texlinks -u
@@ -480,7 +480,6 @@ share/texmf/texconfig/x/xterm
 @comment share/texmf/web2c/
 share/texmf/web2c/fmtutil.cnf-full
 share/texmf/web2c/fmtutil.cnf-minimal
-share/texmf/web2c/fmtutil.cnf-tetex
 share/texmf/web2c/mktex.opt
 share/texmf/web2c/mktexdir
 share/texmf/web2c/mktexdir.opt

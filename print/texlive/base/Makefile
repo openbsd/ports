@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2008/11/15 20:08:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2008/11/30 18:45:27 steven Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DIST_V = 		20080816
 DISTNAME =		texlive-${DIST_V}-source
-PKGNAME =		texlive_base-${V}p2
+PKGNAME =		texlive_base-${V}p3
 SHARED_LIBS =		kpathsea	1.0
 
 WANTLIB =		m X11 ICE freetype Xt pthread c Xext fontconfig \
@@ -76,11 +76,7 @@ do-extract:
 	find ${WRKDIST} -name '*.orig' | xargs rm
 
 post-install:
-	#mv ${PREFIX}/share/texmf/web2c/fmtutil.cnf \
-	#	${PREFIX}/share/texmf/web2c/fmtutil.cnf-full
 	${INSTALL_DATA} ${FILESDIR}/fmtutil.cnf-minimal \
-		${PREFIX}/share/texmf/web2c
-	${INSTALL_DATA} ${FILESDIR}/fmtutil.cnf-tetex \
 		${PREFIX}/share/texmf/web2c
 	${INSTALL_DATA} ${FILESDIR}/fmtutil.cnf-full \
 		${PREFIX}/share/texmf/web2c

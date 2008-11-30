@@ -3,4 +3,4 @@ comprehensive TeX system which includes all the major TeX-related
 programs, macro packages, and fonts that are free software, including
 support for many languages around the world.
 
-This package contains a plain TeX only subset of the TeXLive texmf.
+This package contains a teTeX-like subset of the TeXLive texmf.
