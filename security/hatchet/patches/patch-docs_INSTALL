@@ -1,12 +1,12 @@
-$OpenBSD: patch-docs_INSTALL,v 1.2 2008/07/03 12:32:30 jdixon Exp $
---- docs/INSTALL.orig	Mon Jun 23 21:39:14 2008
-+++ docs/INSTALL	Mon Jun 23 21:39:47 2008
+$OpenBSD: patch-docs_INSTALL,v 1.3 2008/11/30 22:33:30 jdixon Exp $
+--- docs/INSTALL.orig	Sun Nov 30 00:29:12 2008
++++ docs/INSTALL	Sun Nov 30 00:52:21 2008
 @@ -15,7 +15,7 @@
  1) Install the Hatchet directory
  
- 	$ tar zxvf hatchet-0.9.1.tar.gz
--	$ sudo mv hatchet-0.9.1 /var/www/hatchet
-+	$ sudo mv hatchet-0.9.1 ${PREFIX}/hatchet
+ 	$ tar zxvf hatchet-0.9.2.tar.gz
+-	$ sudo mv hatchet-0.9.2 /var/www/hatchet
++	$ sudo mv hatchet-0.9.2 ${PREFIX}/hatchet
  
  2) Install the following Perl modules
  
