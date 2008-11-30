@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2007/12/16 11:22:29 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2008/11/30 22:24:54 steven Exp $
 bin/7z
 bin/7za
 bin/7zr
 lib/p7zip/
-lib/p7zip/7z
+@bin lib/p7zip/7z
 lib/p7zip/7z.so
-lib/p7zip/7zCon.sfx
-lib/p7zip/7za
-lib/p7zip/7zr
+@bin lib/p7zip/7zCon.sfx
+@bin lib/p7zip/7za
+@bin lib/p7zip/7zr
 lib/p7zip/Codecs/
 @man man/man1/7z.1
 @man man/man1/7za.1
