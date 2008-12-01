@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_protocols_c,v 1.1 2008/12/01 16:09:01 ajacoutot Exp $
+--- lib/protocols.c.orig	Tue Mar  4 13:28:42 2008
++++ lib/protocols.c	Mon Dec  1 14:54:31 2008
+@@ -459,9 +459,11 @@ gftp_get_next_file (gftp_request * request, const char
+ 
+       if (ret >= 0 && fle->file != NULL)
+         {
++#if GLIB_MAJOR_VERSION > 1
+           if (g_utf8_validate (fle->file, -1, NULL))
+             fle->filename_utf8_encoded = 1;
+           else
++#endif
+             {
+               utf8 = gftp_filename_to_utf8 (request, fle->file, &destlen);
+               if (utf8 != NULL)

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2008/06/12 21:58:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2008/12/01 16:09:01 ajacoutot Exp $
 
 COMMENT=	multithreaded gtk2 file transfer client
 
-DISTNAME=	gftp-2.0.18
-PKGNAME=	${DISTNAME}p10
+DISTNAME=	gftp-2.0.19
 CATEGORIES=	net
 
 HOMEPAGE=	http://gftp.seul.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
@@ -20,8 +19,6 @@ MASTER_SITES=	${HOMEPAGE} \
 		ftp://www.gftp.org/pub/gftp/old-releases/
 
 WANTLIB=	readline c m ncurses util
-
-EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE=gnu
 
@@ -34,17 +31,20 @@ CONFIGURE_ARGS=	--with-readline \
 FLAVORS=	no_x11
 FLAVOR?=
 
+MODULES=	devel/gettext
+
+BUILD_DEPENDS=	::devel/bison
+
 .if ${FLAVOR:L:Mno_x11}
 BUILD_DEPENDS=	::devel/gettext
 LIB_DEPENDS=	glib.>=1::devel/glib
 CONFIGURE_ARGS+=--disable-gtkport --disable-gtk20
 .else
 USE_X11=	Yes
-MODULES=	devel/gettext
 LIB_DEPENDS=	gtk-x11-2.0.>=600.10,gdk_pixbuf-2.0.>=600.0,gdk-x11-2.0.>=600.0::x11/gtk+2
 RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 WANTLIB+=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xcomposite Xdamage pixman-1 \
+		Xcomposite Xdamage pixman-1 gio-2.0 \
 		Xrender atk-1.0 cairo expat fontconfig freetype \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread z

@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_sample_gftp_gftprc,v 1.1 2006/08/12 15:17:04 naddy Exp $
---- docs/sample.gftp/gftprc.orig	Thu Aug 10 21:56:56 2006
-+++ docs/sample.gftp/gftprc	Thu Aug 10 21:57:03 2006
-@@ -80,7 +80,7 @@ trans_blksize=20480
+$OpenBSD: patch-docs_sample_gftp_gftprc,v 1.2 2008/12/01 16:09:01 ajacoutot Exp $
+--- docs/sample.gftp/gftprc.orig	Thu Jan 24 14:56:55 2008
++++ docs/sample.gftp/gftprc	Mon Dec  1 17:03:43 2008
+@@ -83,7 +83,7 @@ trans_blksize=20480
  default_protocol=FTP
  
  # Enable IPv6 support
