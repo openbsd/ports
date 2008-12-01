@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2008/11/29 10:04:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2008/12/01 01:32:40 kevlo Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
@@ -45,7 +45,8 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		::devel/bison \
 			::textproc/scrollkeeper \
-			::x11/gnome/doc-utils
+			::x11/gnome/doc-utils \
+			::misc/shared-mime-info
 RUN_DEPENDS=		::devel/desktop-file-utils \
 			::textproc/scrollkeeper \
 			::x11/hicolor-icon-theme
