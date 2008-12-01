@@ -1,0 +1,8 @@
+$OpenBSD: patch-Mowitz_MwFilesel_h,v 1.1 2008/12/01 19:16:39 jasper Exp $
+--- Mowitz/MwFilesel.h.orig	Mon Dec  1 13:18:42 2008
++++ Mowitz/MwFilesel.h	Mon Dec  1 13:19:28 2008
+@@ -18,3 +18,4 @@
+ */
+ 
+ int MwFileselInput(Widget, char *, char *, char **, char *, char *, int);
++size_t strnlen (const char *, size_t);

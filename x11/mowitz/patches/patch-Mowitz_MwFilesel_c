@@ -1,7 +1,23 @@
-$OpenBSD: patch-Mowitz_MwFilesel_c,v 1.1 2007/11/20 21:05:30 jasper Exp $
+$OpenBSD: patch-Mowitz_MwFilesel_c,v 1.2 2008/12/01 19:16:39 jasper Exp $
 --- Mowitz/MwFilesel.c.orig	Thu Jan 16 21:31:13 2003
-+++ Mowitz/MwFilesel.c	Tue Nov 20 21:54:19 2007
-@@ -80,7 +80,7 @@ getdirent(char ***ldirp, int *ndirp, char ***lfilep, i
++++ Mowitz/MwFilesel.c	Mon Dec  1 13:19:37 2008
+@@ -64,6 +64,15 @@ static Widget fsel_pshell, fsel_form, fsel_topframe, f
+ 	fsel_okbutton, fsel_cancelbutton, fsel_findbutton,
+ 	fsel_helpbutton, fsel_extra[10], below;
+ 
++
++size_t
++strnlen (const char *string, size_t maxlen)
++{
++	const char *end = memchr (string, '\0', maxlen);
++	return end ? (size_t) (end - string) : maxlen;
++}
++
++
+ static int nextra;
+ static int ch_ext;
+ 
+@@ -80,7 +89,7 @@ getdirent(char ***ldirp, int *ndirp, char ***lfilep, i
  {
  	DIR *dird;
  	struct dirent *dire;
@@ -10,7 +26,7 @@ $OpenBSD: patch-Mowitz_MwFilesel_c,v 1.1 2007/11/20 21:05:30 jasper Exp $
  	struct stat buf;
  	char **ldir = NULL, **lfile = NULL;
  	int ndir = 0, mdir = 0, nfile = 0, mfile = 0;
-@@ -90,7 +90,10 @@ getdirent(char ***ldirp, int *ndirp, char ***lfilep, i
+@@ -90,7 +99,10 @@ getdirent(char ***ldirp, int *ndirp, char ***lfilep, i
  		return 1;
  	}
  	while ((dire = readdir(dird))) {
@@ -22,7 +38,7 @@ $OpenBSD: patch-Mowitz_MwFilesel_c,v 1.1 2007/11/20 21:05:30 jasper Exp $
  		if ((stat(fn, &buf))) {
  			fprintf(stderr, "Can't stat %s\n", fn);
  			continue;
-@@ -169,13 +172,17 @@ static void make_dirmenu(char *);
+@@ -169,13 +181,17 @@ static void make_dirmenu(char *);
  static void fsel_scan(void)
  {
  	String string;
@@ -42,7 +58,7 @@ $OpenBSD: patch-Mowitz_MwFilesel_c,v 1.1 2007/11/20 21:05:30 jasper Exp $
  	strcpy(dir, MwLabelGet(fsel_dirbutton));
  	string = MwLabelGet(fsel_formatbutton);
  	pst = strchr(string, '(');
-@@ -183,15 +190,20 @@ static void fsel_scan(void)
+@@ -183,15 +199,20 @@ static void fsel_scan(void)
  		/* apparently no pattern here; use foolproof default */
  		strcpy(pattern, "*");
  	} else {
@@ -65,7 +81,7 @@ $OpenBSD: patch-Mowitz_MwFilesel_c,v 1.1 2007/11/20 21:05:30 jasper Exp $
  	make_dirmenu(dir);
  }
  
-@@ -248,22 +260,24 @@ static void file_select(Widget w, XtPointer client_dat
+@@ -248,22 +269,24 @@ static void file_select(Widget w, XtPointer client_dat
  
  static void dir_select(Widget w, XtPointer client_data, XtPointer call_data)
  {
@@ -102,7 +118,7 @@ $OpenBSD: patch-Mowitz_MwFilesel_c,v 1.1 2007/11/20 21:05:30 jasper Exp $
  }
  
  static void make_menu(char **menu_entry_names, Widget menu)
-@@ -299,17 +313,14 @@ static struct {
+@@ -299,17 +322,14 @@ static struct {
  
  static void change_dir(Widget w, XtPointer client_data, XtPointer call_data)
  {
@@ -127,7 +143,7 @@ $OpenBSD: patch-Mowitz_MwFilesel_c,v 1.1 2007/11/20 21:05:30 jasper Exp $
  }
  
  static void make_dirmenu(char *dir)
-@@ -357,16 +368,33 @@ static int status;
+@@ -357,16 +377,33 @@ static int status;
  
  static void fsel_done(Widget w, XtPointer client_data, XtPointer call_data)
  {
@@ -167,7 +183,7 @@ $OpenBSD: patch-Mowitz_MwFilesel_c,v 1.1 2007/11/20 21:05:30 jasper Exp $
  		MwLabelSet(fsel_dirbutton, newpath);
  		XtVaSetValues(fsel_filetext,
  			XtNstring, "", (char *)0);
-@@ -690,7 +718,7 @@ int MwFileselInput(Widget pw, char *path, char *name, 
+@@ -690,7 +727,7 @@ int MwFileselInput(Widget pw, char *path, char *name, 
  	String string;
  	XtAppContext app_context = XtWidgetToApplicationContext(pw);
  	int i;
@@ -176,16 +192,8 @@ $OpenBSD: patch-Mowitz_MwFilesel_c,v 1.1 2007/11/20 21:05:30 jasper Exp $
  
  	if (!realpath(path, newpath))
  		getcwd(newpath, sizeof newpath);
-@@ -744,5 +772,12 @@ int MwFileselInput(Widget pw, char *path, char *name, 
- 	strcpy(path, MwLabelGet(fsel_dirbutton));
+@@ -745,4 +782,3 @@ int MwFileselInput(Widget pw, char *path, char *name, 
  	strcpy(fmt, MwLabelGet(fsel_formatbutton));
  	return status;
-+}
-+
-+size_t
-+strnlen (const char *string, size_t maxlen)
-+{
-+	const char *end = memchr (string, '\0', maxlen);
-+	return end ? (size_t) (end - string) : maxlen;
  }
- 
+-

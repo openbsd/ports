@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/20 21:05:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2008/12/01 19:16:39 jasper Exp $
 
 COMMENT=		widgets library
 
 DISTNAME=		Mowitz-0.3.0
-PKGNAME=		${DISTNAME:L}p1
+PKGNAME=		${DISTNAME:L}p2
 SHARED_LIBS +=	Mowitz               3.0      # .3.0
 CATEGORIES=		x11 devel
 
 HOMEPAGE=		http://siag.nu/mowitz/
 
-# GPL
+# GPLv2/LGPLv2/MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
