@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/12/01 20:26:01 jasper Exp $
+lib/glade3/modules/libgladegnomedb.so
+lib/libglade/2.0/libgnomedb-3.0.so
+@lib lib/libgnomedb-3.0.so.${LIBgnomedb-3.0_VERSION}
+lib/libgnomedb/plugins/libgnomedb_entry_builtin_plugins.so
+@lib lib/libgnomedb_extra-3.0.so.${LIBgnomedb_extra-3.0_VERSION}
+@lib lib/libgnomedb_graph-3.0.so.${LIBgnomedb_graph-3.0_VERSION}
