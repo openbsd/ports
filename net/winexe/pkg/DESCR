@@ -1,0 +1,8 @@
+winexe connects to the IPC$ share on a Windows host, copies an executable
+file if it's not already available, and starts it as a service to create a
+pipe over which programs can be run remotely.
+
+No special configuration is required on the Windows host. Providing you
+have credentials giving a suitable level of access to the relevant system,
+you can use this to provide an interactive command shell, or otherwise
+execute programs remotely (also suitable for script-based use).

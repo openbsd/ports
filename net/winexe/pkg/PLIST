@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/01 21:47:19 sthen Exp $
+@bin bin/winexe
