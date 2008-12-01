@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/01 20:26:01 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2008/12/01 22:06:06 jasper Exp $
 @bin bin/gnome-database-properties-3.0
 @bin bin/gnome-db-browser
 @bin bin/gnome-db-demo
@@ -79,29 +78,32 @@ include/libgnomedb-3.0/libgnomedb/gnome-db-transaction-status.h
 include/libgnomedb-3.0/libgnomedb/gnome-db-util.h
 include/libgnomedb-3.0/libgnomedb/libgnomedb.h
 include/libgnomedb-3.0/libgnomedb/marshal.h
-lib/glade3/
 lib/glade3/modules/
 lib/glade3/modules/libgladegnomedb.a
 lib/glade3/modules/libgladegnomedb.la
-lib/libglade/
+lib/glade3/modules/libgladegnomedb.so
 lib/libglade/2.0/
 lib/libglade/2.0/libgnomedb-3.0.a
 lib/libglade/2.0/libgnomedb-3.0.la
+lib/libglade/2.0/libgnomedb-3.0.so
 lib/libgnomedb/
 lib/libgnomedb-3.0.a
 lib/libgnomedb-3.0.la
+@lib lib/libgnomedb-3.0.so.${LIBgnomedb-3.0_VERSION}
 lib/libgnomedb/plugins/
 lib/libgnomedb/plugins/libgnomedb_entry_builtin_plugins.a
 lib/libgnomedb/plugins/libgnomedb_entry_builtin_plugins.la
+lib/libgnomedb/plugins/libgnomedb_entry_builtin_plugins.so
 lib/libgnomedb_extra-3.0.a
 lib/libgnomedb_extra-3.0.la
+@lib lib/libgnomedb_extra-3.0.so.${LIBgnomedb_extra-3.0_VERSION}
 lib/libgnomedb_graph-3.0.a
 lib/libgnomedb_graph-3.0.la
+@lib lib/libgnomedb_graph-3.0.so.${LIBgnomedb_graph-3.0_VERSION}
 lib/pkgconfig/libgnomedb-3.0.pc
 lib/pkgconfig/libgnomedb-extra-3.0.pc
 lib/pkgconfig/libgnomedb-graph-3.0.pc
 share/applications/database-properties-3.0.desktop
-share/glade3/
 share/glade3/catalogs/
 share/glade3/catalogs/gnomedb.xml
 share/glade3/catalogs/gnomedb.xml.in
@@ -182,7 +184,6 @@ share/gnome-db/gnome-db-entry-string-number.xml
 share/gnome-db/gnome-db-entry-string-string.xml
 share/gnome-db/import_encodings.xml
 share/gnome-db/server_operation.glade
-share/gtk-doc/html/
 share/gtk-doc/html/libgnomedb-3.0/
 share/gtk-doc/html/libgnomedb-3.0/Form_Grid.png
 share/gtk-doc/html/libgnomedb-3.0/Form_Grid_example.png
@@ -307,29 +308,23 @@ share/gtk-doc/html/libgnomedb-3.0/sampleapp4.png
 share/gtk-doc/html/libgnomedb-3.0/style.css
 share/gtk-doc/html/libgnomedb-3.0/up.png
 share/gtk-doc/html/libgnomedb-3.0/viewchanges.html
-share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/be/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/ca/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/cs/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/da/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/de/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/dz/
 share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/el/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/es/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/eu/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/fa/
 share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/fi/LC_MESSAGES/libgnomedb-3.0.mo
@@ -340,21 +335,16 @@ share/locale/hr/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/hu/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/it/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/ja/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/ko/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/ml/
 share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/nb/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/ne/
 share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/nl/LC_MESSAGES/libgnomedb-3.0.mo
@@ -362,19 +352,15 @@ share/locale/pl/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/pt/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/pt_BR/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/ru/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/sk/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/sl/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/sr/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/sv/LC_MESSAGES/libgnomedb-3.0.mo
-share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/tr/LC_MESSAGES/libgnomedb-3.0.mo
@@ -385,7 +371,6 @@ share/locale/zh_HK/LC_MESSAGES/libgnomedb-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomedb-3.0.mo
 share/omf/libgnomedb/
 share/omf/libgnomedb/libgnomedb-3.0-C.omf
-share/pixmaps/
 share/pixmaps/gnome-db.png
 share/pixmaps/libgnomedb-3.0/
 share/pixmaps/libgnomedb-3.0/gnome-db-aggregates_16x16.png
@@ -422,7 +407,6 @@ share/pixmaps/libgnomedb-3.0/gnome-db-types_24x24.png
 share/pixmaps/libgnomedb-3.0/gnome-db-views_16x16.png
 share/pixmaps/libgnomedb-3.0/gnome-db-within-transaction_24x24.png
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/libgnomedb/*.schemas > /dev/null
-share/schemas/
 share/schemas/libgnomedb/
 share/schemas/libgnomedb/libgnomedb-3.0.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/libgnomedb/*.schemas > /dev/null
