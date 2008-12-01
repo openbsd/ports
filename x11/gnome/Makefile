@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2008/11/29 11:35:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2008/12/01 20:26:51 jasper Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -47,6 +47,7 @@
      SUBDIR += libgnomecanvas
      SUBDIR += libgnomecanvasmm
      SUBDIR += libgnomecups
+     SUBDIR += libgnomedb
      SUBDIR += libgnomekbd
      SUBDIR += libgnomeui
      SUBDIR += libgnomeuimm
