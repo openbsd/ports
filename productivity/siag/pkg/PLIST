@@ -1,28 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/08/30 07:48:26 jasper Exp $
-bin/egon
-bin/gvu
+@comment $OpenBSD: PLIST,v 1.5 2008/12/01 19:23:55 jasper Exp $
+@bin bin/egon
+@bin bin/gvu
 bin/mgptotxt
-bin/pw
-bin/runcmd
-bin/siag
+@bin bin/pw
+@bin bin/runcmd
+@bin bin/siag
 bin/siaghelp
 bin/siagrun
-bin/tsiag
-bin/xedplus
-bin/xfiler
+@bin bin/tsiag
+@bin bin/xedplus
+@bin bin/xfiler
 lib/siag/
 lib/siag/o3read/
-lib/siag/o3read/dbtohtml
-lib/siag/o3read/o3tohtml
-lib/siag/o3read/utf8tolatin1
+@bin lib/siag/o3read/dbtohtml
+@bin lib/siag/o3read/o3tohtml
+@bin lib/siag/o3read/utf8tolatin1
 lib/siag/plugins/
-lib/siag/plugins/clipart
-lib/siag/plugins/dummy
-lib/siag/plugins/form
-lib/siag/plugins/hello
-lib/siag/plugins/image
-lib/siag/plugins/plot
-lib/siag/plugins/text
+@bin lib/siag/plugins/clipart
+@bin lib/siag/plugins/dummy
+@bin lib/siag/plugins/form
+@bin lib/siag/plugins/hello
+@bin lib/siag/plugins/image
+@bin lib/siag/plugins/plot
+@bin lib/siag/plugins/text
 @man man/man1/dummy_plugin.1
 @man man/man1/egon.1
 @man man/man1/gvu.1

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/04 21:25:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2008/12/01 19:23:54 jasper Exp $
 
 COMMENT=		tightly integrated, free office package
 
 VERSION=		3.6.1
 DISTNAME=		siag-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://siag.nu/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

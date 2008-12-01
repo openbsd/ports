@@ -1,0 +1,11 @@
+$OpenBSD: patch-xfiler_tycoon_c,v 1.1 2008/12/01 19:23:55 jasper Exp $
+--- xfiler/tycoon.c.orig	Mon Dec  1 13:33:51 2008
++++ xfiler/tycoon.c	Mon Dec  1 13:34:14 2008
+@@ -1,6 +1,7 @@
+ #include <X11/Intrinsic.h>
+ #include <X11/Xatom.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ extern void ExecExternalApplication(Display *dpy, int x, int y, char *label, 
+ 				    char *icon,char *cmd,char *drop,char *dir);
