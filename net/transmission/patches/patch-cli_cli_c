@@ -1,0 +1,20 @@
+$OpenBSD: patch-cli_cli_c,v 1.1 2008/12/02 15:29:07 naddy Exp $
+--- cli/cli.c.orig	Mon Nov 10 16:52:35 2008
++++ cli/cli.c	Tue Dec  2 14:14:50 2008
+@@ -211,6 +211,8 @@ scrapeDoneFunc( tr_session   * session UNUSED,
+                  (char*)host );
+ 
+     --leftToScrape;
++
++    tr_free( host );
+ }
+ 
+ static void
+@@ -433,7 +435,6 @@ main( int     argc,
+                     tr_httpParseURL( scrape, -1, &host, NULL, NULL );
+                     ++leftToScrape;
+                     tr_webRun( h, url, NULL, scrapeDoneFunc, host );
+-                    tr_free( host );
+                     tr_free( url );
+                 }
+             }

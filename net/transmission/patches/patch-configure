@@ -1,14 +1,14 @@
-$OpenBSD: patch-configure,v 1.9 2008/07/09 19:43:42 naddy Exp $
---- configure.orig	Fri May  9 21:02:35 2008
-+++ configure	Wed May 14 17:31:53 2008
-@@ -20832,10 +20832,6 @@ else
+$OpenBSD: patch-configure,v 1.10 2008/12/02 15:29:07 naddy Exp $
+--- configure.orig	Thu Nov 27 21:20:39 2008
++++ configure	Thu Nov 27 21:21:19 2008
+@@ -21453,10 +21453,6 @@ else
  fi
  
  
 -if test "x$GCC" = "xyes" ; then
--    CFLAGS="-g -Wall -W -O3 -funroll-loops"
--    CXXFLAGS="-g -Wall -W -O3 -funroll-loops"
+-    CFLAGS="-g -Wall -Wformat-security -W -Wmissing-prototypes -Wdeclaration-after-statement -O3 -funroll-loops"
+-    CXXFLAGS="-g -Wall -Wformat-security -W -O3 -funroll-loops"
 -fi
- { echo "$as_me:$LINENO: checking for ANSI C header files" >&5
- echo $ECHO_N "checking for ANSI C header files... $ECHO_C" >&6; }
- if test "${ac_cv_header_stdc+set}" = set; then
+ 
+ { $as_echo "$as_me:$LINENO: checking for ANSI C header files" >&5
+ $as_echo_n "checking for ANSI C header files... " >&6; }

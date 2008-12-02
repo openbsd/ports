@@ -1,23 +1,14 @@
-$OpenBSD: patch-gtk_tr-prefs_c,v 1.1 2008/07/09 19:43:42 naddy Exp $
---- gtk/tr-prefs.c.orig	Sat Jun 14 00:00:43 2008
-+++ gtk/tr-prefs.c	Thu Jun 19 15:38:51 2008
-@@ -298,8 +298,8 @@ updateBlocklistText( GtkWidget * w, TrCore * core )
-     const int n = tr_blocklistGetRuleCount( tr_core_handle( core ) );
-     char buf[512];
+$OpenBSD: patch-gtk_tr-prefs_c,v 1.2 2008/12/02 15:29:07 naddy Exp $
+--- gtk/tr-prefs.c.orig	Mon Nov 10 16:52:26 2008
++++ gtk/tr-prefs.c	Thu Nov 27 22:33:20 2008
+@@ -431,8 +431,8 @@ updateBlocklistText( GtkWidget * w,
+     char      buf[512];
+ 
      g_snprintf( buf, sizeof( buf ),
--                ngettext( "Ignore the %'d _blocklisted peer",
--                          "Ignore the %'d _blocklisted peers", n ), n );
-+                ngettext( "Ignore the %d _blocklisted peer",
-+                          "Ignore the %d _blocklisted peers", n ), n );
+-                ngettext( "Enable _blocklist (contains %'d rule)",
+-                          "Enable _blocklist (contains %'d rules)", n ), n );
++                ngettext( "Enable _blocklist (contains %d rule)",
++                          "Enable _blocklist (contains %d rules)", n ), n );
      gtk_button_set_label( GTK_BUTTON( w ), buf );
  }
- static gboolean
-@@ -390,7 +390,7 @@ got_blocklist( tr_handle   * handle         UNUSED,
-     if( ok && !data->abortFlag )
-     {
-         g_snprintf( data->secondary, sizeof( data->secondary ),
--                    _( "Blocklist updated with %'d entries" ), rules );
-+                    _( "Blocklist updated with %d entries" ), rules );
-         g_idle_add( blocklistDialogSetSecondary, data );
-         g_idle_add( blocklistDialogAllowClose, data->dialog );
-         g_idle_add( updateBlocklistTextFromData, data );
+ 

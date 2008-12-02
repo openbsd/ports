@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-gui,v 1.11 2008/07/09 19:43:42 naddy Exp $
-bin/transmission
+@comment $OpenBSD: PLIST-gui,v 1.12 2008/12/02 15:29:07 naddy Exp $
+@bin bin/transmission
 @man man/man1/transmission.1
 share/applications/transmission.desktop
 share/icons/
@@ -27,11 +27,26 @@ share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/transmission.mo
 share/locale/bg/LC_MESSAGES/transmission.mo
 share/locale/ca/LC_MESSAGES/transmission.mo
+share/locale/ckb/
+share/locale/ckb/LC_MESSAGES/
+share/locale/ckb/LC_MESSAGES/transmission.mo
 share/locale/cs/LC_MESSAGES/transmission.mo
 share/locale/da/LC_MESSAGES/transmission.mo
 share/locale/de/LC_MESSAGES/transmission.mo
 share/locale/el/LC_MESSAGES/transmission.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
+share/locale/en_AU/LC_MESSAGES/transmission.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
+share/locale/en_CA/LC_MESSAGES/transmission.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/transmission.mo
+share/locale/eo/LC_MESSAGES/transmission.mo
 share/locale/es/LC_MESSAGES/transmission.mo
+share/locale/et/LC_MESSAGES/transmission.mo
+share/locale/eu/LC_MESSAGES/transmission.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/transmission.mo
@@ -41,17 +56,31 @@ share/locale/ga/LC_MESSAGES/transmission.mo
 share/locale/gl/LC_MESSAGES/transmission.mo
 share/locale/he/LC_MESSAGES/transmission.mo
 share/locale/hu/LC_MESSAGES/transmission.mo
+share/locale/id/LC_MESSAGES/transmission.mo
+share/locale/is/
+share/locale/is/LC_MESSAGES/
+share/locale/is/LC_MESSAGES/transmission.mo
 share/locale/it/LC_MESSAGES/transmission.mo
 share/locale/ja/LC_MESSAGES/transmission.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/transmission.mo
+share/locale/ku/
+share/locale/ku/LC_MESSAGES/
+share/locale/ku/LC_MESSAGES/transmission.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/transmission.mo
+share/locale/lv/LC_MESSAGES/transmission.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/transmission.mo
+share/locale/ml/
+share/locale/ml/LC_MESSAGES/
+share/locale/ml/LC_MESSAGES/transmission.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/transmission.mo
 share/locale/mt/
 share/locale/mt/LC_MESSAGES/
 share/locale/mt/LC_MESSAGES/transmission.mo
@@ -65,8 +94,13 @@ share/locale/ro/LC_MESSAGES/transmission.mo
 share/locale/ru/LC_MESSAGES/transmission.mo
 share/locale/sk/LC_MESSAGES/transmission.mo
 share/locale/sl/LC_MESSAGES/transmission.mo
+share/locale/sr/LC_MESSAGES/transmission.mo
 share/locale/sv/LC_MESSAGES/transmission.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/transmission.mo
 share/locale/tr/LC_MESSAGES/transmission.mo
+share/locale/uk/LC_MESSAGES/transmission.mo
 share/locale/zh_CN/LC_MESSAGES/transmission.mo
 share/locale/zh_TW/LC_MESSAGES/transmission.mo
 share/pixmaps/

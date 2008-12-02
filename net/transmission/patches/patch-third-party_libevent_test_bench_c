@@ -1,6 +1,6 @@
-$OpenBSD: patch-third-party_libevent_test_bench_c,v 1.1 2008/07/09 19:43:42 naddy Exp $
---- third-party/libevent/test/bench.c.orig	Wed Jul  9 21:22:08 2008
-+++ third-party/libevent/test/bench.c	Wed Jul  9 21:22:27 2008
+$OpenBSD: patch-third-party_libevent_test_bench_c,v 1.2 2008/12/02 15:29:07 naddy Exp $
+--- third-party/libevent/test/bench.c.orig	Mon Nov 10 16:52:42 2008
++++ third-party/libevent/test/bench.c	Thu Nov 27 22:29:11 2008
 @@ -68,7 +68,7 @@ static struct event *events;
  static void
  read_cb(int fd, short which, void *arg)

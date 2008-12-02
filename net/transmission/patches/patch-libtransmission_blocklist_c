@@ -1,0 +1,21 @@
+$OpenBSD: patch-libtransmission_blocklist_c,v 1.1 2008/12/02 15:29:07 naddy Exp $
+--- libtransmission/blocklist.c.orig	Mon Nov 10 16:52:25 2008
++++ libtransmission/blocklist.c	Thu Nov 27 22:33:18 2008
+@@ -105,7 +105,7 @@ blocklistLoad( tr_blocklist * b )
+ 
+     {
+         char * base = tr_basename( b->filename );
+-        tr_inf( _( "Blocklist \"%s\" contains %'zu entries" ), base, b->ruleCount );
++        tr_inf( _( "Blocklist \"%s\" contains %zu entries" ), base, b->ruleCount );
+         tr_free( base );
+     }
+ }
+@@ -293,7 +293,7 @@ _tr_blocklistSetContent( tr_blocklist * b,
+ 
+     {
+         char * base = tr_basename( b->filename );
+-        tr_inf( _( "Blocklist \"%1$s\" updated with %2$'d entries" ), base, lineCount );
++        tr_inf( _( "Blocklist \"%1$s\" updated with %2$d entries" ), base, lineCount );
+         tr_free( base );
+     }
+ 

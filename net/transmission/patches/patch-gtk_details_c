@@ -1,26 +1,21 @@
-$OpenBSD: patch-gtk_details_c,v 1.2 2008/07/09 19:43:42 naddy Exp $
---- gtk/details.c.orig	Fri May  9 21:00:55 2008
-+++ gtk/details.c	Wed May 14 17:50:12 2008
-@@ -407,7 +407,7 @@ fmtpeercount (GtkWidget * l, int count)
-     gtk_label_set_text( GTK_LABEL(l), "?" );
-   } else {
-     char str[16];
--    g_snprintf( str, sizeof str, "%'d", count );
-+    g_snprintf( str, sizeof str, "%d", count );
-     gtk_label_set_text( GTK_LABEL(l), str );
-   }
+$OpenBSD: patch-gtk_details_c,v 1.3 2008/12/02 15:29:07 naddy Exp $
+--- gtk/details.c.orig	Mon Nov 10 16:52:26 2008
++++ gtk/details.c	Thu Nov 27 22:33:20 2008
+@@ -500,7 +500,7 @@ fmtpeercount( GtkWidget * l,
+     else
+     {
+         char str[16];
+-        g_snprintf( str, sizeof str, "%'d", count );
++        g_snprintf( str, sizeof str, "%d", count );
+         gtk_label_set_text( GTK_LABEL( l ), str );
+     }
  }
-@@ -733,10 +733,10 @@ info_page_new (tr_torrent * tor)
+@@ -907,7 +907,7 @@ info_page_new( tr_torrent * tor )
+     hig_workarea_add_section_title ( t, &row, _( "Details" ) );
  
-     tr_strlsize( sizeStr, info->pieceSize, sizeof(sizeStr) );
+     g_snprintf( countStr, sizeof( countStr ),
+-                ngettext( "%'d Piece", "%'d Pieces", info->pieceCount ),
++                ngettext( "%d Piece", "%d Pieces", info->pieceCount ),
+                 info->pieceCount );
+     tr_strlsize( sizeStr, info->pieceSize, sizeof( sizeStr ) );
      g_snprintf( buf, sizeof( buf ),
--                /* %1$'d is number of pieces
-+                /* %1$d is number of pieces
-                    %2$s is how big each piece is */
--                ngettext( "%1$'d Piece @ %2$s",
--                          "%1$'d Pieces @ %2$s",
-+                ngettext( "%1$d Piece @ %2$s",
-+                          "%1$d Pieces @ %2$s",
-                           info->pieceCount ),
-                 info->pieceCount, sizeStr );
-     l = gtk_label_new (buf);

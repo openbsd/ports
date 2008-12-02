@@ -1,0 +1,47 @@
+$OpenBSD: patch-daemon_remote_c,v 1.1 2008/12/02 15:29:07 naddy Exp $
+--- daemon/remote.c.orig	Mon Nov 10 16:52:35 2008
++++ daemon/remote.c	Thu Nov 27 22:33:20 2008
+@@ -572,11 +572,11 @@ strlratio( char * buf,
+     {
+         const double ratio = numerator / denominator;
+         if( ratio < 10.0 )
+-            tr_snprintf( buf, buflen, "%'.2f", ratio );
++            tr_snprintf( buf, buflen, "%.2f", ratio );
+         else if( ratio < 100.0 )
+-            tr_snprintf( buf, buflen, "%'.1f", ratio );
++            tr_snprintf( buf, buflen, "%.1f", ratio );
+         else
+-            tr_snprintf( buf, buflen, "%'.0f", ratio );
++            tr_snprintf( buf, buflen, "%.0f", ratio );
+     }
+     else if( numerator )
+         tr_strlcpy( buf, "Infinity", buflen );
+@@ -593,24 +593,24 @@ strlsize( char *  buf,
+     if( !size )
+         tr_strlcpy( buf, "None", buflen );
+     else if( size < (int64_t)KILOBYTE_FACTOR )
+-        tr_snprintf( buf, buflen, "%'" PRId64 " bytes", (int64_t)size );
++        tr_snprintf( buf, buflen, "%" PRId64 " bytes", (int64_t)size );
+     else
+     {
+         double displayed_size;
+         if( size < (int64_t)MEGABYTE_FACTOR )
+         {
+             displayed_size = (double) size / KILOBYTE_FACTOR;
+-            tr_snprintf( buf, buflen, "%'.1f KB", displayed_size );
++            tr_snprintf( buf, buflen, "%.1f KB", displayed_size );
+         }
+         else if( size < (int64_t)GIGABYTE_FACTOR )
+         {
+             displayed_size = (double) size / MEGABYTE_FACTOR;
+-            tr_snprintf( buf, buflen, "%'.1f MB", displayed_size );
++            tr_snprintf( buf, buflen, "%.1f MB", displayed_size );
+         }
+         else
+         {
+             displayed_size = (double) size / GIGABYTE_FACTOR;
+-            tr_snprintf( buf, buflen, "%'.1f GB", displayed_size );
++            tr_snprintf( buf, buflen, "%.1f GB", displayed_size );
+         }
+     }
+     return buf;

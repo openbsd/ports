@@ -1,12 +1,52 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2008/04/22 16:50:43 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2008/12/02 15:29:07 naddy Exp $
 @pkgpath net/transmission
-bin/benc2php
-bin/transmission-daemon
-bin/transmission-proxy
-bin/transmission-remote
-bin/transmissioncli
+@bin bin/transmission-daemon
+@bin bin/transmission-remote
+@bin bin/transmissioncli
 @man man/man1/transmission-daemon.1
-@man man/man1/transmission-proxy.1
 @man man/man1/transmission-remote.1
 @man man/man1/transmissioncli.1
 @comment share/applications/
+share/transmission/
+share/transmission/web/
+share/transmission/web/LICENSE
+share/transmission/web/images/
+share/transmission/web/images/buttons/
+share/transmission/web/images/buttons/info_activity.png
+share/transmission/web/images/buttons/info_general.png
+share/transmission/web/images/buttons/tab_backgrounds.png
+share/transmission/web/images/buttons/toolbar_buttons.png
+share/transmission/web/images/buttons/torrent_buttons.png
+share/transmission/web/images/favicon.ico
+share/transmission/web/images/favicon.png
+share/transmission/web/images/graphics/
+share/transmission/web/images/graphics/browser_firefox.gif
+share/transmission/web/images/graphics/browser_opera.gif
+share/transmission/web/images/graphics/browser_safari.gif
+share/transmission/web/images/graphics/chrome.png
+share/transmission/web/images/graphics/filter_bar.png
+share/transmission/web/images/graphics/filter_icon.png
+share/transmission/web/images/graphics/iphone_chrome.png
+share/transmission/web/images/graphics/logo.png
+share/transmission/web/images/graphics/transfer_arrows.png
+share/transmission/web/images/progress/
+share/transmission/web/images/progress/progress.png
+share/transmission/web/images/webclip-icon.png
+share/transmission/web/index.html
+share/transmission/web/javascript/
+share/transmission/web/javascript/common.js
+share/transmission/web/javascript/dialog.js
+share/transmission/web/javascript/jquery/
+share/transmission/web/javascript/jquery/jquery.contextmenu.min.js
+share/transmission/web/javascript/jquery/jquery.dimensions.min.js
+share/transmission/web/javascript/jquery/jquery.form.min.js
+share/transmission/web/javascript/jquery/jquery.min.js
+share/transmission/web/javascript/jquery/jquery.transmenu.min.js
+share/transmission/web/javascript/jquery/json.min.js
+share/transmission/web/javascript/menu.js
+share/transmission/web/javascript/torrent.js
+share/transmission/web/javascript/transmission.js
+share/transmission/web/javascript/transmission.remote.js
+share/transmission/web/stylesheets/
+share/transmission/web/stylesheets/common.css
+share/transmission/web/stylesheets/iphone.css

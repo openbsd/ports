@@ -1,27 +1,25 @@
-$OpenBSD: patch-gtk_makemeta-ui_c,v 1.2 2008/07/09 19:43:42 naddy Exp $
---- gtk/makemeta-ui.c.orig	Fri May  9 21:00:55 2008
-+++ gtk/makemeta-ui.c	Wed May 14 17:50:12 2008
-@@ -212,9 +212,9 @@ refreshFromBuilder( MakeMetaUI * ui )
-         tr_strlsize( sizeStr, builder->totalSize, sizeof(sizeStr) );
-         g_snprintf( buf, sizeof( buf ),
-                     /* %1$s is the torrent size
--                       %2$'d is its number of files */
--                    ngettext( "<i>%1$s; %2$'d File</i>",
--                              "<i>%1$s; %2$'d Files</i>", builder->fileCount ),
-+                       %2$d is its number of files */
-+                    ngettext( "<i>%1$s; %2$d File</i>",
-+                              "<i>%1$s; %2$d Files</i>", builder->fileCount ),
-                     sizeStr, builder->fileCount );
+$OpenBSD: patch-gtk_makemeta-ui_c,v 1.3 2008/12/02 15:29:07 naddy Exp $
+--- gtk/makemeta-ui.c.orig	Mon Nov 10 16:52:26 2008
++++ gtk/makemeta-ui.c	Thu Nov 27 22:33:20 2008
+@@ -268,9 +268,9 @@ refreshFromBuilder( MakeMetaUI * ui )
+     else {
+         tr_strlsize( sizeStr, builder->totalSize, sizeof( sizeStr ) );
+         buf = g_strdup_printf( /* %1$s is the torrent size
+-                                  %2$'d is its number of files */
+-                               ngettext( "<i>%1$s; %2$'d File</i>",
+-                                         "<i>%1$s; %2$'d Files</i>",
++                                  %2$d is its number of files */
++                               ngettext( "<i>%1$s; %2$d File</i>",
++                                         "<i>%1$s; %2$d Files</i>",
+                                          builder->fileCount ),
+                                sizeStr, builder->fileCount );
      }
-     gtk_label_set_markup ( GTK_LABEL(ui->size_lb), buf );
-@@ -226,8 +226,8 @@ refreshFromBuilder( MakeMetaUI * ui )
-         g_snprintf( buf, sizeof( buf ),
-                     /* %1$'s is number of pieces;
-                        %2$s is how big each piece is */
--                    ngettext( "<i>%1$'d Piece @ %2$s</i>",
--                              "<i>%1$'d Pieces @ %2$s</i>",
-+                    ngettext( "<i>%1$d Piece @ %2$s</i>",
-+                              "<i>%1$d Pieces @ %2$s</i>",
-                               builder->pieceCount ),
-                     builder->pieceCount, sizeStr );
-     }
+@@ -281,7 +281,7 @@ refreshFromBuilder( MakeMetaUI * ui )
+     if( !filename )
+         buf = g_strdup( "" );
+     else {
+-        char * countStr = g_strdup_printf( ngettext( "%'d Piece", "%'d Pieces",
++        char * countStr = g_strdup_printf( ngettext( "%d Piece", "%d Pieces",
+                                                      builder->pieceCount ),
+                                            builder->pieceCount );
+         tr_strlsize( sizeStr, builder->pieceSize, sizeof( sizeStr ) );

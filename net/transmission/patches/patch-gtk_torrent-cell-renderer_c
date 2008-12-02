@@ -1,25 +1,25 @@
-$OpenBSD: patch-gtk_torrent-cell-renderer_c,v 1.2 2008/07/09 19:43:42 naddy Exp $
---- gtk/torrent-cell-renderer.c.orig	Fri May  9 21:00:55 2008
-+++ gtk/torrent-cell-renderer.c	Wed May 14 17:50:12 2008
-@@ -196,8 +196,8 @@ getStatusString( const tr_stat * torStat )
+$OpenBSD: patch-gtk_torrent-cell-renderer_c,v 1.3 2008/12/02 15:29:07 naddy Exp $
+--- gtk/torrent-cell-renderer.c.orig	Mon Nov 10 16:52:26 2008
++++ gtk/torrent-cell-renderer.c	Thu Nov 27 22:33:20 2008
+@@ -202,8 +202,8 @@ getStatusString( const tr_stat * torStat )
  
-         case TR_STATUS_DOWNLOAD:
-             g_string_append_printf( gstr,
--                ngettext( "Downloading from %1$'d of %2$'d connected peer",
--                          "Downloading from %1$'d of %2$'d connected peers",
-+                ngettext( "Downloading from %1$d of %2$d connected peer",
-+                          "Downloading from %1$d of %2$d connected peers",
-                           torStat->peersConnected ),
-                 torStat->peersSendingToUs,
-                 torStat->peersConnected );
-@@ -205,8 +205,8 @@ getStatusString( const tr_stat * torStat )
+             case TR_STATUS_DOWNLOAD:
+                 g_string_append_printf( gstr,
+-                    ngettext( "Downloading from %1$'d of %2$'d connected peer",
+-                              "Downloading from %1$'d of %2$'d connected peers",
++                    ngettext( "Downloading from %1$d of %2$d connected peer",
++                              "Downloading from %1$d of %2$d connected peers",
+                               torStat->peersConnected ),
+                     torStat->peersSendingToUs +
+                     torStat->webseedsSendingToUs,
+@@ -213,8 +213,8 @@ getStatusString( const tr_stat * torStat )
  
-         case TR_STATUS_SEED:
-             g_string_append_printf( gstr,
--                ngettext( "Seeding to %1$'d of %2$'d connected peer",
--                          "Seeding to %1$'d of %2$'d connected peers",
-+                ngettext( "Seeding to %1$d of %2$d connected peer",
-+                          "Seeding to %1$d of %2$d connected peers",
-                           torStat->peersConnected ),
-                 torStat->peersGettingFromUs,
-                 torStat->peersConnected );
+             case TR_STATUS_SEED:
+                 g_string_append_printf( gstr,
+-                    ngettext( "Seeding to %1$'d of %2$'d connected peer",
+-                              "Seeding to %1$'d of %2$'d connected peers",
++                    ngettext( "Seeding to %1$d of %2$d connected peer",
++                              "Seeding to %1$d of %2$d connected peers",
+                               torStat->peersConnected ),
+                     torStat->peersGettingFromUs,
+                     torStat->peersConnected );

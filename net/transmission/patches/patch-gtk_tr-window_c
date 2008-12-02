@@ -1,21 +1,21 @@
-$OpenBSD: patch-gtk_tr-window_c,v 1.2 2008/07/09 19:43:42 naddy Exp $
---- gtk/tr-window.c.orig	Fri May  9 21:00:55 2008
-+++ gtk/tr-window.c	Wed May 14 17:50:12 2008
-@@ -590,13 +590,13 @@ updateTorrentCount( PrivateData * p )
-         const int visibleCount = gtk_tree_model_iter_n_children( p->filter_model, NULL );
+$OpenBSD: patch-gtk_tr-window_c,v 1.3 2008/12/02 15:29:07 naddy Exp $
+--- gtk/tr-window.c.orig	Mon Nov 10 16:52:26 2008
++++ gtk/tr-window.c	Thu Nov 27 22:33:20 2008
+@@ -706,13 +706,13 @@ updateTorrentCount( PrivateData * p )
  
          if( torrentCount != visibleCount )
--            g_snprintf( buf, sizeof( buf ), ngettext( "%1$'d of %2$'d Torrent",
--                                                      "%1$'d of %2$'d Torrents",
-+            g_snprintf( buf, sizeof( buf ), ngettext( "%1$d of %2$d Torrent",
-+                                                      "%1$d of %2$d Torrents",
-                                                       torrentCount ),
-                                             visibleCount, torrentCount );
+             g_snprintf( buf, sizeof( buf ),
+-                        ngettext( "%1$'d of %2$'d Torrent",
+-                                  "%1$'d of %2$'d Torrents",
++                        ngettext( "%1$d of %2$d Torrent",
++                                  "%1$d of %2$d Torrents",
+                                   torrentCount ),
+                         visibleCount, torrentCount );
          else
 -            g_snprintf( buf, sizeof( buf ), ngettext( "%'d Torrent",
 -                                                      "%'d Torrents",
 +            g_snprintf( buf, sizeof( buf ), ngettext( "%d Torrent",
 +                                                      "%d Torrents",
                                                        torrentCount ),
-                                             torrentCount );
+                         torrentCount );
          gtk_label_set_text( GTK_LABEL( p->gutter_lb ), buf );
