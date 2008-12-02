@@ -1,28 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/04/17 08:10:10 ajacoutot Exp $
-bin/mail-notification
-lib/bonobo/
-lib/bonobo/servers/
-lib/bonobo/servers/GNOME_MailNotification.server
-share/applications/
+@comment $OpenBSD: PLIST,v 1.7 2008/12/02 09:11:15 ajacoutot Exp $
+@bin bin/mail-notification
+etc/
 share/applications/mail-notification-properties.desktop
 share/examples/mail-notification/
-share/examples/mail-notification/gnome/
-share/examples/mail-notification/gnome/xdg/
-share/examples/mail-notification/gnome/xdg/autostart/
-share/examples/mail-notification/gnome/xdg/autostart/mail-notification.desktop
-share/gnome/
-share/gnome/help/
+share/examples/mail-notification/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/mail-notification/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/mail-notification/xdg/autostart/mail-notification.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/mail-notification.desktop
 share/gnome/help/mail-notification/
 share/gnome/help/mail-notification/C/
 share/gnome/help/mail-notification/C/documentation-license.xml
 share/gnome/help/mail-notification/C/figures/
 share/gnome/help/mail-notification/C/figures/mail.png
-share/gnome/help/mail-notification/C/figures/mailbox-emblem-error.png
-share/gnome/help/mail-notification/C/figures/mailbox-emblem-polled.png
-share/gnome/help/mail-notification/C/figures/mailbox-emblem-unknown.png
 share/gnome/help/mail-notification/C/mail-notification.xml
 share/gnome/help/mail-notification/C/software-license.xml
-share/icons/hicolor/
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/mail-notification.png
@@ -45,6 +38,7 @@ share/locale/bg/LC_MESSAGES/mail-notification.mo
 share/locale/ca/LC_MESSAGES/mail-notification.mo
 share/locale/cs/LC_MESSAGES/mail-notification.mo
 share/locale/de/LC_MESSAGES/mail-notification.mo
+share/locale/es/LC_MESSAGES/mail-notification.mo
 share/locale/fr/LC_MESSAGES/mail-notification.mo
 share/locale/ja/LC_MESSAGES/mail-notification.mo
 share/locale/nl/LC_MESSAGES/mail-notification.mo
@@ -56,15 +50,14 @@ share/locale/sr/LC_MESSAGES/mail-notification.mo
 share/locale/sr@Latn/LC_MESSAGES/mail-notification.mo
 share/locale/sv/LC_MESSAGES/mail-notification.mo
 share/mail-notification/
-share/mail-notification/ui/
-share/mail-notification/ui/gmail.png
-share/mail-notification/ui/logo.png
-share/mail-notification/ui/mailbox-properties-dialog.glade
-share/mail-notification/ui/properties-dialog.glade
+share/mail-notification/gmail.png
+share/mail-notification/logo.png
+share/mail-notification/mailbox-properties-dialog.glade
+share/mail-notification/new-mail.wav
+share/mail-notification/properties-dialog.glade
 share/omf/mail-notification/
 share/omf/mail-notification/mail-notification-C.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/mail-notification/*.schemas > /dev/null
-share/schemas/
 share/schemas/mail-notification/
 share/schemas/mail-notification/mail-notification.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/mail-notification/*.schemas > /dev/null

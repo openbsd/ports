@@ -1,0 +1,19 @@
+$OpenBSD: patch-jb,v 1.1 2008/12/02 09:11:15 ajacoutot Exp $
+--- jb.orig	Sun Nov 30 19:18:47 2008
++++ jb	Sun Nov 30 19:19:05 2008
+@@ -23,7 +23,6 @@ maintainer_cflags="-g -fstrict-aliasing -Wall -Werror 
+ -Wno-format-zero-length \
+ -Wno-unused-parameter \
+ -Wfloat-equal \
+--Wdeclaration-after-statement \
+ -Wendif-labels \
+ -Wpointer-arith \
+ -Wcast-align \
+@@ -34,7 +33,6 @@ maintainer_cflags="-g -fstrict-aliasing -Wall -Werror 
+ -Wredundant-decls \
+ -Wnested-externs \
+ -Winline \
+--Wno-pointer-sign \
+ -Wshadow"
+ 
+ if test -z $jb_cc; then

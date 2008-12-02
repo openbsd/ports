@@ -1,0 +1,12 @@
+$OpenBSD: patch-jbsrc_jb_c,v 1.1 2008/12/02 09:11:15 ajacoutot Exp $
+--- jbsrc/jb.c.orig	Sun Nov 30 21:49:07 2008
++++ jbsrc/jb.c	Sun Nov 30 21:49:30 2008
+@@ -365,8 +365,6 @@ jb_package_add_resources (void)
+     jb_group_add_data_file(group, "hotmail.png", "$pkgdatadir");
+ 
+   rule = jb_rule_new();
+-  jb_rule_set_install_message(rule, "updating the GTK+ icon cache");
+-  jb_rule_add_install_command(rule, "-gtk-update-icon-cache -f -t $datadir/icons/hicolor");
+   jb_group_add_resource(group, JB_GROUP_RESOURCE(rule));
+ 
+   jb_group_add(group);
