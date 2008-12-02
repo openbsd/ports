@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2008/10/30 14:07:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2008/12/02 19:54:16 jasper Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -7,7 +7,7 @@ COMMENT=	fast and customizable WWW browser
 V=		9.62
 OPERA_BUILD=	2466
 DISTNAME=	opera-${V}.gcc4-static-qt3.i386
-PKGNAME=	opera-${V}
+PKGNAME=	opera-${V}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.opera.com/
@@ -34,7 +34,8 @@ MASTER_SITES_OPERA=	ftp://ftp.opera.com/pub/opera/ \
 MASTER_SITES=	${MASTER_SITES_OPERA:=linux/${V:S/.//}/final/en/i386/static/}
 EXTRACT_SUFX=	.tar.bz2
 
-RUN_DEPENDS=	::emulators/fedora/base
+RUN_DEPENDS=	::devel/desktop-file-utils \
+		::emulators/fedora/base
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
@@ -55,5 +56,12 @@ do-install:
 	    ${PREFIX}/share/examples/opera/opera6rc
 	${INSTALL_DATA} ${FILESDIR}/operarc.fixed \
 	    ${PREFIX}/share/examples/opera/opera6rc.fixed
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons
+	cd ${WRKSRC}/usr/share/icons/; tar cf - * | tar xf - -C ${PREFIX}/share/icons/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${SUBST_CMD} -c ${FILESDIR}/opera.desktop \
+		${PREFIX}/share/applications/opera.desktop
+	chown ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/share/applications/opera.desktop
 
 .include <bsd.port.mk>

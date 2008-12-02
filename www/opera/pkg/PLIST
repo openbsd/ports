@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2008/10/21 15:32:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2008/12/02 19:54:16 jasper Exp $
 bin/opera
 lib/opera/
 lib/opera/plugins/
@@ -9,6 +9,7 @@ libexec/operapluginwrapper
 libexec/spellcheck.so
 libexec/works
 @man man/man1/opera.1
+share/applications/opera.desktop
 share/doc/opera/
 share/doc/opera/LGPL
 share/doc/opera/LICENSE
@@ -17,6 +18,20 @@ share/examples/opera/opera6rc
 @sample /etc/opera6rc
 share/examples/opera/opera6rc.fixed
 @sample /etc/opera6rc.fixed
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/opera.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/opera.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/opera.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/opera.png
 share/opera/
 share/opera/encoding.bin
 share/opera/html40_entities.dtd
@@ -300,3 +315,7 @@ share/opera/svg-sabd.dat
 share/opera/svg-se.dat
 share/opera/svg-sebd.dat
 @sysctl kern.emul.linux=1
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

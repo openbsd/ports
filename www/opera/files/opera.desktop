@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Opera Web Browser
+GenericName=Web Browser
+Comment=Browse the web
+Exec=opera %u
+Icon=${TRUEPREFIX}/share/icons/hicolor/32x32/apps/opera.png
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Application;Network;
+MimeType=text/html;text/xml;application/xhtml+xml;
