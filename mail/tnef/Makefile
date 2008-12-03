@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/16 00:17:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2008/12/03 14:25:03 pea Exp $
 
 COMMENT=	decode MS-TNEF MIME attachments
 
-DISTNAME=	tnef-1.4.3
+DISTNAME=	tnef-1.4.5
 CATEGORIES=	mail
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tnef/}
