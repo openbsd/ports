@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/06/14 16:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2008/12/03 23:44:44 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,12 +6,10 @@ COMMENT=		circuit drawing and schematic capture
 
 BASEVER=		3.4
 DISTNAME=		xcircuit-${BASEVER}.27
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		cad
 
 HOMEPAGE=		http://opencircuitdesign.com/xcircuit/
-
-MAINTAINER=		Zvezdan Petkovic <zpetkovic@acm.org>
 
 # GPL 
 PERMIT_PACKAGE_CDROM=	Yes

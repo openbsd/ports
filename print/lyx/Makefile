@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2008/11/05 18:08:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2008/12/03 23:44:44 sthen Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 DISTNAME=	lyx-1.4.3
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.lyx.org/
@@ -11,8 +11,6 @@ HOMEPAGE=	http://www.lyx.org/
 EXTRACT_SUFX?=	.tar.bz2
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/1.4.x/ \
 		ftp://ftp.lip6.fr/pub/lyx/stable/1.4.x/
-
-MAINTAINER=	Zvezdan Petkovic <zpetkovic@acm.org>
 
 # In XForms flavor: quasi-GPL (linked to closed source library)
 # In Qt flavor: GPL (this should be preferred for CD distribution)

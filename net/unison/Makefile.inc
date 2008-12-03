@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.6 2008/02/13 23:13:27 okan Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2008/12/03 23:44:44 sthen Exp $
 
 DISTNAME=	unison-$V
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.cis.upenn.edu/~bcpierce/unison/
-
-MAINTAINER=	Zvezdan Petkovic <zpetkovic@acm.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
