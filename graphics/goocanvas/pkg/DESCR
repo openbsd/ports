@@ -1,0 +1,2 @@
+GooCanvas is a canvas widget for GTK+ that uses the cairo 2D library for
+drawing. 
