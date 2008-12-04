@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/08/20 08:31:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/12/04 19:51:34 ajacoutot Exp $
 %%SHARED%%
 include/gtkspell-2.0/
 include/gtkspell-2.0/gtkspell/
@@ -9,6 +9,7 @@ lib/pkgconfig/
 lib/pkgconfig/gtkspell-2.0.pc
 share/locale/be/LC_MESSAGES/gtkspell.mo
 share/locale/cs/LC_MESSAGES/gtkspell.mo
+share/locale/da/LC_MESSAGES/gtkspell.mo
 share/locale/de/LC_MESSAGES/gtkspell.mo
 share/locale/el/LC_MESSAGES/gtkspell.mo
 share/locale/eo/LC_MESSAGES/gtkspell.mo
