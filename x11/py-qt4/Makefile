@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/24 18:44:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2008/12/04 14:55:30 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-docs=	py-qt4 documentation
 V=		4.3.3
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
-PKGNAME-main=	py-qt4-${V}p0
+PKGNAME-main=	py-qt4-${V}p1
 PKGNAME-docs=	py-qt4-docs-${V}
 
 CATEGORIES=	x11 devel
@@ -23,9 +23,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	GL GLU ICE SM X11 Xcursor Xext Xfixes Xi Xinerama \
-		Xrandr Xrender c crypto dbus-1 fontconfig freetype \
-		glib-2.0 gthread-2.0 iconv intl m png pthread ssl \
+WANTLIB=	GL GLU ICE SM X11 Xext Xi Xinerama \
+		Xrandr Xrender c dbus-1 fontconfig freetype \
+		glib-2.0 gthread-2.0 iconv intl m png pthread \
 		stdc++ z
 
 MULTI_PACKAGES=	-main -docs
@@ -38,7 +38,8 @@ PKG_ARCH-docs=	*
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/py-sip \
 		::x11/dbus-python
-LIB_DEPENDS=	QtAssistantClient,QtDesigner,QtGui,QtNetwork,QtOpenGL,QtScript,QtSql,QtSvg,QtTest,QtXml::x11/qt4
+LIB_DEPENDS=	QtAssistantClient,QtDesigner,QtGui,QtNetwork,QtOpenGL,QtScript,QtSql,QtSvg,QtTest,QtXml::x11/qt4 \
+		${MODPY_LIB_DEPENDS}
 
 NO_REGRESS=	Yes
 
