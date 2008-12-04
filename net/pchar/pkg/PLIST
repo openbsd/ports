@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/12/04 10:33:40 sthen Exp $
 @man man/man8/pchar.8
-sbin/pchar
+@bin sbin/pchar
 share/doc/pchar/
 share/doc/pchar/FAQ
 share/doc/pchar/README

@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 22:36:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2008/12/04 10:33:40 sthen Exp $
 # $FreeBSD: ports/net/pchar/Makefile,v 1.1.1.1 1999/11/04 08:33:26 obrien Exp $
 
 COMMENT=	Sandia Internet path characterization tool
 
-V=		1.4
-DISTNAME=	pchar-${V}
-PKGNAME=	pchar-${V}p2
+DISTNAME=	pchar-1.5
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}
@@ -16,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m pcap stdc++ 
 
-HOMEPAGE=	http://www.employees.org/~bmah/Software/pchar/
+HOMEPAGE=	http://www.kitchenlab.org/www/bmah/Software/pchar/
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-ipv6 --with-pcap
@@ -27,9 +25,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pchar ${PREFIX}/sbin
 	@/usr/bin/perl -pi.orig -e 's/pchar 1/pchar 8/g' ${WRKSRC}/pchar.8
 	${INSTALL_MAN} ${WRKSRC}/pchar.8 ${PREFIX}/man/man8/pchar.8
-.if !defined(NOPORTDOCS)
-	@mkdir -p ${PREFIX}/share/doc/pchar
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pchar
 	cd ${WRKSRC} ; ${INSTALL_DATA} README FAQ ${PREFIX}/share/doc/pchar
-.endif
 
 .include <bsd.port.mk>
