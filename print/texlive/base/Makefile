@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2008/11/30 18:45:27 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2008/12/04 22:29:06 steven Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DIST_V = 		20080816
 DISTNAME =		texlive-${DIST_V}-source
-PKGNAME =		texlive_base-${V}p3
+PKGNAME =		texlive_base-${V}p4
 SHARED_LIBS =		kpathsea	1.0
 
 WANTLIB =		m X11 ICE freetype Xt pthread c Xext fontconfig \
@@ -65,8 +65,7 @@ CONFIGURE_ARGS +=	--with-fontconfig=${X11BASE} \
 			--without-t1utils \
 			--disable-threads \
 			--with-old-mac-fonts \
-			--without-xindy \
-			--without-luatex
+			--without-xindy
 
 # Could do with bsd.port.mk understanding lzma
 # Also annoyingly loads of .orig files confuse update-patches

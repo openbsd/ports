@@ -1,15 +1,48 @@
-$OpenBSD: patch-libs_lua51_Makefile,v 1.1 2008/10/21 20:57:57 steven Exp $
+$OpenBSD: patch-libs_lua51_Makefile,v 1.2 2008/12/04 22:29:06 steven Exp $
 --- libs/lua51/Makefile.orig	Mon Mar 24 15:47:15 2008
-+++ libs/lua51/Makefile	Sun Oct 12 12:27:43 2008
-@@ -20,9 +20,9 @@ MYLIBS=
++++ libs/lua51/Makefile	Sun Oct 26 15:30:26 2008
+@@ -8,7 +8,7 @@
+ PLAT= none
  
- # ++ Coco =========
- # Default: autodetect gccasm/setjmp/ucontext/fibers context switch method.
--COCOCFLAGS=
-+#COCOCFLAGS=
- # Force use of setjmp (instead of gccasm).
--#COCOCFLAGS= -DCOCO_USE_SETJMP
-+COCOCFLAGS= -DCOCO_USE_SETJMP
- # Force use of ucontext (instead of gccasm or setjmp).
- #COCOCFLAGS= -DCOCO_USE_UCONTEXT
- # Uncomment this if you want to disable support for Coco.
+ CC= gcc
+-CFLAGS= -g -O2 -Wall $(XCFLAGS) $(MYCFLAGS) $(COCOFLAGS)
++LOCALCFLAGS= -g -O2 -Wall $(MYCFLAGS) $(COCOCFLAGS)
+ AR= ar rcu
+ RANLIB= ranlib
+ RM= rm -f
+@@ -77,12 +77,14 @@ clean:
+ 	$(RM) $(ALL_T) $(ALL_O)
+ 
+ depend:
+-	@$(CC) $(CFLAGS) -MM l*.c print.c
++	@$(CC) $(LOCALCFLAGS) $(CFLAGS) $(XCFLAGS) -MM l*.c print.c
+ 
+ echo:
+ 	@echo "PLAT = $(PLAT)"
+ 	@echo "CC = $(CC)"
++	@echo "LOCALCFLAGS = $(LOCALCFLAGS)"
+ 	@echo "CFLAGS = $(CFLAGS)"
++	@echo "XCFLAGS = $(XCFLAGS)"
+ 	@echo "AR = $(AR)"
+ 	@echo "RANLIB = $(RANLIB)"
+ 	@echo "RM = $(RM)"
+@@ -96,7 +98,7 @@ none:
+ 	@echo "Please choose a platform: $(PLATS)"
+ 
+ aix:
+-	$(MAKE) a CC="xlc" CFLAGS="-O2 -DLUA_USE_POSIX -DLUA_USE_DLOPEN" MYLIBS="-ldl" MYLDFLAGS="-brtl -bexpall"
++	$(MAKE) a CC="xlc" LOCALCFLAGS="-O2 -DLUA_USE_POSIX -DLUA_USE_DLOPEN" MYLIBS="-ldl" MYLDFLAGS="-brtl -bexpall"
+ 
+ ansi:
+ 	$(MAKE) a MYCFLAGS=-DLUA_ANSI
+@@ -130,6 +132,10 @@ posix:
+ 
+ solaris:
+ 	$(MAKE) a MYCFLAGS="-DLUA_USE_POSIX -DLUA_USE_DLOPEN" MYLIBS="-ldl"
++
++.c.o:
++	$(CC) $(LOCALCFLAGS) $(CFLAGS) $(XCFLAGS) -c $<
++
+ 
+ # list targets that do not create files (but not all makes understand .PHONY)
+ .PHONY: all $(PLATS) default o a clean depend echo none
