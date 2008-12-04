@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.38 2008/10/28 12:18:36 steven Exp $
+# $OpenBSD: Makefile,v 1.39 2008/12/04 14:11:16 jasper Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
 V=		3.6.4
 DISTNAME=	sqlite-${V}
-PKGNAME-main=	sqlite3-${V}
+PKGNAME-main=	sqlite3-${V}p0
 PKGNAME-tcl=	sqlite3-tcl-${V}p0
 CATEGORIES=	databases
-SHARED_LIBS +=	sqlite3              12.0      # .8.6
+SHARED_LIBS +=	sqlite3              12.1      # .8.6
 SHARED_LIBS +=	tclsqlite3           11.0      # .8.6
 
 MASTER_SITES=	${HOMEPAGE}
@@ -24,6 +24,7 @@ WANTLIB-main=	c ncurses pthread readline
 
 USE_LIBTOOL=	Yes
 
+CFLAGS+=	-DSQLITE_ENABLE_COLUMN_METADATA
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-threads-override-locks
