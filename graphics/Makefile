@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2008/12/01 18:19:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.224 2008/12/04 22:23:12 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -62,6 +62,7 @@
      SUBDIR += glut
      SUBDIR += gmt
      SUBDIR += gocr
+     SUBDIR += goocanvas
      SUBDIR += gphoto
      SUBDIR += gphoto2
      SUBDIR += gpicview
@@ -154,6 +155,7 @@
      SUBDIR += py-cairo
      SUBDIR += py-dot
      SUBDIR += py-gd
+     SUBDIR += py-goocanvas
      SUBDIR += py-matplotlib
      SUBDIR += py-pyx
      SUBDIR += pycha
