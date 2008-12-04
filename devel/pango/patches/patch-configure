@@ -1,18 +1,18 @@
-$OpenBSD: patch-configure,v 1.16 2008/04/09 13:13:40 jasper Exp $
---- configure.orig	Mon Mar 10 16:22:40 2008
-+++ configure	Wed Mar 12 23:31:16 2008
-@@ -21818,7 +21818,7 @@ if test -n "$PKG_CONFIG"; then
+$OpenBSD: patch-configure,v 1.17 2008/12/04 15:05:38 jasper Exp $
+--- configure.orig	Sun Nov 23 15:07:08 2008
++++ configure	Thu Dec  4 15:32:23 2008
+@@ -22447,7 +22447,7 @@ if test -n "$FONTCONFIG_LIBS"; then
    ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; then
 -  pkg_cv_FONTCONFIG_LIBS=`$PKG_CONFIG --libs "fontconfig >= 1.0.1" 2>/dev/null`
 +  pkg_cv_FONTCONFIG_LIBS="`$PKG_CONFIG --libs "fontconfig >= 1.0.1" 2>/dev/null ` -lexpat"
  else
    pkg_failed=yes
  fi
-@@ -21995,7 +21995,7 @@ if test -n "$PKG_CONFIG"; then
+@@ -22616,7 +22616,7 @@ if test -n "$XFT_LIBS"; then
    ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; then
 -  pkg_cv_XFT_LIBS=`$PKG_CONFIG --libs "xft >= 2.0.0 xrender" 2>/dev/null`
 +  pkg_cv_XFT_LIBS="`$PKG_CONFIG --libs "xft >= 2.0.0 xrender" 2>/dev/null` -lexpat"
