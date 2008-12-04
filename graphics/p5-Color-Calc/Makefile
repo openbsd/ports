@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/22 16:05:18 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2008/12/04 00:04:13 simon Exp $
 
 COMMENT=	simple calculations with RGB colors
 
 MODULES=	cpan
-DISTNAME=	Color-Calc-1.04
+DISTNAME=	Color-Calc-1.05
 CATEGORIES=	graphics
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

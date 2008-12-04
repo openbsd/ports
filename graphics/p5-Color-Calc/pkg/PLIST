@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 16:05:18 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/12/04 00:04:13 simon Exp $
 ${P5SITE}/Color/
 ${P5SITE}/Color/Calc/
 ${P5SITE}/Color/Calc.pm
@@ -9,3 +9,4 @@ ${P5SITE}/Color/Calc/object.pm
 ${P5SITE}/Color/Calc/pdf.pm
 ${P5SITE}/Color/Calc/tuple.pm
 @man man/man3p/Color::Calc.3p
+@man man/man3p/Color::Calc::WWW.3p
