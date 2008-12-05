@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/03 13:38:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/12/05 10:43:30 simon Exp $
 
 COMMENT=		determine file types
 
 DISTNAME=		File-MimeInfo-0.15
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		devel
 
 # perl
@@ -12,9 +13,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-CPAN_AUTHOR=		PARDUS/File-MimeInfo
 
-RUN_DEPENDS=		::devel/p5-File-BaseDir
+RUN_DEPENDS=		::devel/p5-File-BaseDir \
+			::misc/shared-mime-info
 REGRESS_DEPENDS=	::devel/p5-File-DesktopEntry
 
 CONFIGURE_STYLE=	modbuild
