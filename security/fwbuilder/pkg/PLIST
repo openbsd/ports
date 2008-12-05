@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/11/05 20:38:50 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/12/05 21:50:57 steven Exp $
 @bin bin/fwb_iosacl
 @bin bin/fwb_ipf
 @bin bin/fwb_ipfw
@@ -37,8 +37,11 @@ ${SHARE}/
 ${SHARE}/help/
 ${SHARE}/help/iptAdvancedDialog_en_US.html
 ${SHARE}/help/linux24AdvancedDialog_en_US.html
+${SHARE}/help/main_en_US.html
 ${SHARE}/help/pfAdvancedDialog_en_US.html
 ${SHARE}/locale/
+${SHARE}/locale/fwbuilder_ja.qm
+${SHARE}/locale/fwbuilder_ru.qm
 ${SHARE}/objects_init.xml
 ${SHARE}/os/
 ${SHARE}/os/freebsd.xml

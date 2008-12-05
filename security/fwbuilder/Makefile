@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2008/11/05 20:38:50 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2008/12/05 21:50:57 steven Exp $
 
 COMMENT=	firewall GUI
-DISTNAME=	fwbuilder-3.0.1
+DISTNAME=	fwbuilder-3.0.2
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.fwbuilder.org/
@@ -35,15 +35,15 @@ COPTS=		-g
 
 MODULES=	x11/qt4
 DESTDIRNAME=	INSTALL_ROOT
-LIB_DEPENDS=	fwcompiler.>=10,fwbuilder.>=10::security/libfwbuilder \
+LIB_DEPENDS=	fwcompiler.>=11,fwbuilder.>=11::security/libfwbuilder \
 		QtGui,QtNetwork::x11/qt4
 		
 NO_REGRESS=	Yes
 USE_X11=	Yes
 
-WANTLIB=	ICE SM X11 Xext Xi Xinerama Xrandr Xrender \
-		c fontconfig freetype glib-2.0 gthread-2.0 iconv intl \
-		m netsnmp png pthread stdc++ util xml2 xslt z
+WANTLIB=	ICE SM X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender \
+		c crypto fontconfig freetype glib-2.0 gthread-2.0 iconv intl \
+		m netsnmp png pthread ssl stdc++ util xml2 xslt z
 
 post-install:
 	chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/*

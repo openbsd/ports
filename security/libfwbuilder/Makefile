@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2008/11/05 20:37:48 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2008/12/05 21:50:57 steven Exp $
 
 COMMENT=	libraries for fwbuilder
-DISTNAME=	libfwbuilder-3.0.1
+DISTNAME=	libfwbuilder-3.0.2
 CATEGORIES=	net security
-SHARED_LIBS=	fwbuilder	10.0 \
-		fwcompiler	10.0
+SHARED_LIBS=	fwbuilder	11.0 \
+		fwcompiler	11.0
 
 INCLUDE=	include/fwb-3
 SHARE=		share/libfwbuilder
