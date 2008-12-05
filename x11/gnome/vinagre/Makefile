@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/11/14 16:19:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/12/05 19:45:20 ajacoutot Exp $
 
 COMMENT=		VNC Client for the GNOME Desktop
 
-GNOME_VERSION=		0.5.1
+GNOME_VERSION=		0.5.2
 GNOME_PROJECT=		vinagre
-PKGNAME=		${DISTNAME}p2
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.gnome.org/projects/vinagre/
@@ -37,8 +36,10 @@ LIB_DEPENDS=		gnome-keyring::x11/gnome/keyring \
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
-CONFIGURE_ARGS+= 	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/vinagre \
-			--disable-schemas-install
+CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
+			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/vinagre \
+			--disable-schemas-install \
+			--enable-avahi=no
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
