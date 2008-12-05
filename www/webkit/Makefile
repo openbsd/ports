@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/26 12:59:01 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2008/12/05 19:56:53 ajacoutot Exp $
 
 COMMENT =	open source web browser engine
 
@@ -20,6 +20,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
+
+VMEM_WARNING =	Yes
 
 USE_X11 =	Yes
 USE_GMAKE =	Yes
