@@ -1,11 +1,13 @@
-$OpenBSD: patch-ipguard_h,v 1.1 2008/11/21 13:57:31 sthen Exp $
---- ipguard.h.orig	Thu Nov 20 09:49:55 2008
-+++ ipguard.h	Thu Nov 20 09:50:05 2008
-@@ -51,7 +51,7 @@
+$OpenBSD: patch-ipguard_h,v 1.2 2008/12/05 22:07:07 sthen Exp $
+--- ipguard.h.orig	Fri Nov 28 13:45:11 2008
++++ ipguard.h	Fri Nov 28 13:49:18 2008
+@@ -50,8 +50,8 @@
+ #define MAIL            "sead at deep.perm.ru"
  
  #define ETHERSFILE      ETHERS
- #define LOGNAME         "/var/log/ipguard/ipguard"
+-#define LOGNAME         "/var/log/ipguard"
 -#define PIDNAME         "/var/run/ipguard"
++#define LOGNAME         "/var/log/ipguard/ipguard"
 +#define PIDNAME         "/var/run/ipguard/ipguard"
  #define FAKEMAC         "de:ad:xx:xx:xx:xx"
  #define PCAP_FILTER     "arp"

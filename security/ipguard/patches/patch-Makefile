@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.2 2008/11/21 13:57:31 sthen Exp $
---- Makefile.orig	Thu Nov 20 06:07:30 2008
-+++ Makefile	Thu Nov 20 09:38:39 2008
-@@ -10,12 +10,12 @@ NAME=ipguard
- VERSION=1.00-r1
+$OpenBSD: patch-Makefile,v 1.3 2008/12/05 22:07:07 sthen Exp $
+--- Makefile.orig	Mon Nov 24 18:03:11 2008
++++ Makefile	Fri Nov 28 13:42:13 2008
+@@ -9,12 +9,12 @@ PREFIX?=/usr/local
+ ETHERS?=/etc/ethers
  
  ## FreeBSD
 -LOCALBASE=/usr/local

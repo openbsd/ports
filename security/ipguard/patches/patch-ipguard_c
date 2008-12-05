@@ -1,7 +1,7 @@
-$OpenBSD: patch-ipguard_c,v 1.1 2008/11/21 13:57:31 sthen Exp $
---- ipguard.c.orig	Thu Nov 13 21:12:51 2008
-+++ ipguard.c	Thu Nov 20 10:13:27 2008
-@@ -74,6 +74,7 @@ int main(int argc, char *argv[]) {
+$OpenBSD: patch-ipguard_c,v 1.2 2008/12/05 22:07:07 sthen Exp $
+--- ipguard.c.orig	Mon Nov 24 18:46:11 2008
++++ ipguard.c	Fri Nov 28 13:42:13 2008
+@@ -72,6 +72,7 @@ int main(int argc, char *argv[]) {
      srand((unsigned int) getpid());
  
      iface[0] = fmac[0] = log_name[0] = pid_name[0] = suser[0] = '\0';
