@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/09/04 23:31:36 espie Exp $
-bin/edsio-comp
-bin/xdelta
+@comment $OpenBSD: PLIST,v 1.6 2008/12/06 03:47:45 pvalchev Exp $
+@bin bin/xdelta
 bin/xdelta-config
 include/edsio.h
 include/edsio_edsio.h
 include/xd_edsio.h
 include/xdelta.h
-@info info/xdelta.info
 lib/libedsio.a
 lib/libedsio.la
 lib/libxdelta.a
