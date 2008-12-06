@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_mrxvt_1,v 1.1 2007/11/24 10:55:27 ajacoutot Exp $
---- doc/mrxvt.1.orig	Sat Nov 24 11:38:48 2007
-+++ doc/mrxvt.1	Sat Nov 24 11:36:51 2007
+$OpenBSD: patch-doc_mrxvt_1,v 1.2 2008/12/06 19:17:28 ajacoutot Exp $
+--- doc/mrxvt.1.orig	Sat Dec  6 10:25:35 2008
++++ doc/mrxvt.1	Sat Dec  6 10:41:52 2008
 @@ -137,7 +137,7 @@ X display name, the X server to contact
  geometry at startup
  .Op Cm geometry
@@ -34,7 +34,7 @@ $OpenBSD: patch-doc_mrxvt_1,v 1.1 2007/11/24 10:55:27 ajacoutot Exp $
  Tabbar background image. Pseudo transparency must be turned off.
  .Op Cm tabbarPixmap
  .
-@@ -843,7 +843,7 @@ Greek keyboard mapping:
+@@ -835,7 +835,7 @@ Greek keyboard mapping:
  .
  .Bl -tag -width 4n
  .
@@ -43,7 +43,7 @@ $OpenBSD: patch-doc_mrxvt_1,v 1.1 2007/11/24 10:55:27 ajacoutot Exp $
  Menubar definition file.
  .Op Cm menu
  .
-@@ -1616,7 +1616,7 @@ and not
+@@ -1630,7 +1630,7 @@ and not
  as you would with the argument of
  .Fl blc .
  .\" ------------------------------------------------------------
@@ -52,16 +52,16 @@ $OpenBSD: patch-doc_mrxvt_1,v 1.1 2007/11/24 10:55:27 ajacoutot Exp $
  Open a new tab.
  .Ar N
  specifies the profile number. If omitted, profile 0 is used. If only
-@@ -1693,7 +1693,7 @@ Copy selection into clipboard (not implemented).
+@@ -1732,7 +1732,7 @@ the system bell. Additionally it is possible to execut
+ .Ic monitorCommand
+ option.
  .\" ------------------------------------------------------------
- .It Ic Paste
- Pasete selection into active tab.
 -.It Ic ToggleSubwin Op Oo Ar + Ns | Ns Ar - Oc Ns Op Ar b Ns | Ns Ar m Ns | Ns Ar s Ns | Ns Ar t
 +.It Ic ToggleSubwin Ar [[+|-][b|m|s|t]]
  Toggle visibility of sub-windows. If the argument begins with a
  .Sq +
  the subwindow is shown. If it begins with a
-@@ -1706,7 +1706,7 @@ and
+@@ -1745,7 +1745,7 @@ and
  .Sq Ar t
  represent the tabbar buttons, menubar, scrollbar and tabbar respectively. NOTE: Currently you can only toggle one subwindow at a time.
  .\" ------------------------------------------------------------
@@ -70,7 +70,7 @@ $OpenBSD: patch-doc_mrxvt_1,v 1.1 2007/11/24 10:55:27 ajacoutot Exp $
  Resize the font. With Xft,
  .Ar N
  represents the size increment of the xft font. Without Xft,
-@@ -1777,7 +1777,7 @@ should be
+@@ -1824,7 +1824,7 @@ should be
  .Sy 0 , 1 , -1
  to disable, enable or toggle respectively.
  .\" ------------------------------------------------------------

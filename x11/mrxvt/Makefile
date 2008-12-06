@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2008/10/28 14:29:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2008/12/06 19:17:28 ajacoutot Exp $
 
 COMMENT=	multi-tabbed terminal emulator
 
-DISTNAME=	mrxvt-0.5.3
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	mrxvt-0.5.4
 CATEGORIES=	x11
 
 HOMEPAGE=	http://materm.sourceforge.net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=materm/}
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
-
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
