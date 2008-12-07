@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Driver_sql_php,v 1.2 2008/11/08 11:23:07 mbalmer Exp $
+$OpenBSD: patch-lib_Driver_sql_php,v 1.3 2008/12/07 12:36:06 mbalmer Exp $
 --- lib/Driver/sql.php.orig	Wed Sep  3 22:29:54 2008
-+++ lib/Driver/sql.php	Sat Nov  8 12:21:21 2008
-@@ -307,17 +307,17 @@ class Kronolith_Driver_sql extends Kronolith_Driver {
++++ lib/Driver/sql.php	Sun Dec  7 13:33:33 2008
+@@ -307,16 +307,16 @@ class Kronolith_Driver_sql extends Kronolith_Driver {
          $etime = sprintf('%04d-%02d-%02d 00:00:00', $endInterval->year, $endInterval->month, $endInterval->mday);
          if (isset($startInterval)) {
              $stime = sprintf('%04d-%02d-%02d 00:00:00', $startInterval->year, $startInterval->month, $startInterval->mday);
@@ -18,9 +18,7 @@ $OpenBSD: patch-lib_Driver_sql_php,v 1.2 2008/11/08 11:23:07 mbalmer Exp $
              $values[] = $stime;
          }
 -        $q .= 'event_start <= ?' .
--            ' AND event_recurtype <> ?))';
 +        $q .= 'event_start <= CAST(? as timestamp)' .
-+            ' AND event_recurtype <> CAST(? as varchar)))';
+             ' AND event_recurtype <> ?))';
          array_push($values, $etime, HORDE_DATE_RECUR_NONE);
  
-         /* Log the query at a DEBUG log level. */
