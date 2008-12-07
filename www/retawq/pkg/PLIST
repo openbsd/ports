@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/07 22:03:28 okan Exp $
+@bin bin/retawq
+@man man/man1/retawq.1
+share/doc/retawq/
+share/doc/retawq/arg.html
+share/doc/retawq/changes.html
+share/doc/retawq/coding_style.html
+share/doc/retawq/contrib.html
+share/doc/retawq/credits.html
+share/doc/retawq/ctconfig.html
+share/doc/retawq/custom_conn.html
+share/doc/retawq/feature.html
+share/doc/retawq/index.html
+share/doc/retawq/key.html
+share/doc/retawq/keymap.html
+share/doc/retawq/msg.html
+share/doc/retawq/notion.html
+share/doc/retawq/patent.html
+share/doc/retawq/raq.html
+share/doc/retawq/report.html
+share/doc/retawq/rfc.html
+share/doc/retawq/rtconfig.html
+share/doc/retawq/runmode.html
+share/doc/retawq/scheme.html
+share/doc/retawq/session.html
+share/doc/retawq/tls.html
+share/doc/retawq/user_guide.html
+share/doc/retawq/wk.html
+share/examples/retawq/
+share/examples/retawq/example-config

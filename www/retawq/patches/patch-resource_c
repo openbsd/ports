@@ -1,0 +1,12 @@
+$OpenBSD: patch-resource_c,v 1.1.1.1 2008/12/07 22:03:28 okan Exp $
+--- resource.c.orig	Mon Oct  6 09:43:22 2008
++++ resource.c	Mon Oct  6 09:43:39 2008
+@@ -9,6 +9,8 @@
+ #include "stuff.h"
+ #include "resource.h"
+ #include "parser.h"
++#include <netinet/in.h>
++#include <sys/socket.h>
+ 
+ #if CAN_HANDLE_SIGNALS
+ #include <signal.h>

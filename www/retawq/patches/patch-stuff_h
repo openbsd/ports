@@ -1,0 +1,22 @@
+$OpenBSD: patch-stuff_h,v 1.1.1.1 2008/12/07 22:03:28 okan Exp $
+--- stuff.h.orig	Sun Mar 19 12:51:21 2006
++++ stuff.h	Fri Nov 14 20:46:15 2008
+@@ -133,6 +133,7 @@
+ #if HAVE_SYS_TYPES_H
+ #include <sys/types.h>
+ #endif
++#include <inttypes.h>
+ 
+ #if STDC_HEADERS
+ #include <stdlib.h>
+@@ -894,8 +895,8 @@ typedef signed short tMbsIndex;
+ 
+ /* CHECKME: use a sizeof() test with configure to avoid (_bogus_!) compiler
+    warnings on 64-bit machines! */
+-#define MY_INT_TO_POINTER(x) ( (void*) ((int) (x)) )
+-#define MY_POINTER_TO_INT(x) ((int) (x))
++#define MY_INT_TO_POINTER(x) ( (void*) ((uintptr_t) (x)) )
++#define MY_POINTER_TO_INT(x) ((uintptr_t) (x))
+ 
+ /* Suppress _bogus_ compiler warnings about uninitialized variables (in order
+    to make all "real" warnings more visible): */

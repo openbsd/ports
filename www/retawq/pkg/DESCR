@@ -1,0 +1,5 @@
+retawq is an interactive, multi-threaded web browser for text terminals.
+It is written in C, fast, small, nicely configurable, and comfortable.
+The low-level network communications are performed in a non-blocking
+way, and you can keep open as many "virtual windows" as you want and
+work simultaneously in two of them in a split-screen mode.

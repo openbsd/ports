@@ -1,0 +1,10 @@
+$OpenBSD: patch-docu_retawq_1,v 1.1.1.1 2008/12/07 22:03:28 okan Exp $
+--- docu/retawq.1.orig	Sun Mar 19 02:21:22 2006
++++ docu/retawq.1	Sat Oct 18 15:06:54 2008
+@@ -29,5 +29,5 @@ Seriously: this early release of retawq has several kn
+ Arne Thomassen <arne@arne-thomassen.de>
+ .SH SEE ALSO
+ Extensive documentation about retawq is available in HTML form by way of the file
+-.I retawq/docu/index.html
++.I ${PREFIX}/share/doc/retawq/index.html
+ in the release package.

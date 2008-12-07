@@ -1,0 +1,48 @@
+$OpenBSD: patch-docu_example-config,v 1.1.1.1 2008/12/07 22:03:28 okan Exp $
+--- docu/example-config.orig	Sat Oct 18 15:01:06 2008
++++ docu/example-config	Sat Oct 18 15:06:06 2008
+@@ -13,11 +13,11 @@
+ # leave it out; retawq then applies a default behavior.
+ #
+ # Also note that some of these options only work if the respective compile-time
+-# configuration options have been enabled (cf. retawq/docu/ctconfig.html), some
++# configuration options have been enabled (cf. ctconfig.html), some
+ # of which are disabled by default. You might get warning messages otherwise.
+ #
+ # All run-time configuration options are explained in the documentation file
+-# retawq/docu/rtconfig.html.
++# rtconfig.html.
+ 
+ 
+ # Options Part I: User Interface
+@@ -55,7 +55,7 @@ jumps:
+  h2 www.home-of-employer.com
+  0 local:~/nothing.html
+  3la local:/usr/three-letter-acronyms/
+- help local:/usr/local/doc/retawq/index.html
++ help local:${PREFIX}/share/doc/retawq/index.html
+ 
+ # OR: an example with a URL _pattern_ for a search engine which allows to
+ # specify the search string within the URL (technobabble: the search engine
+@@ -71,8 +71,8 @@ jumps:
+ # just a fictitious example.
+ 
+ # A keymap list for mapping some keys to command actions; for simplicity, the
+-# following rules show some default mappings as documented in docu/key.html and
+-# docu/keymap.html; this example shall just give an idea how this option could
++# following rules show some default mappings as documented in key.html and
++# keymap.html; this example shall just give an idea how this option could
+ # be used:
+ keymap command
+  Q quit
+@@ -82,8 +82,8 @@ keymap command
+  cursor-left view-back
+ 
+ # A keymap list for mapping keys to line input mode actions; for simplicity,
+-# the following rules show some default mappings as documented in docu/key.html
+-# and docu/keymap.html; this example shall just give an idea how this option
++# the following rules show some default mappings as documented in key.html
++# and keymap.html; this example shall just give an idea how this option
+ # could be used:
+ keymap line-input
+  cursor-left to-left
