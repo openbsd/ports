@@ -1,0 +1,12 @@
+$OpenBSD: patch-gtk_Makefile_in,v 1.11 2008/12/07 21:37:53 naddy Exp $
+--- gtk/Makefile.in.orig	Sun Dec  7 22:11:29 2008
++++ gtk/Makefile.in	Sun Dec  7 22:12:17 2008
+@@ -473,7 +473,7 @@ SUBDIRS = theme-bits . tests
+ DIST_SUBDIRS = theme-bits tests
+ @HAVE_CUPS_FALSE@GTK_PRINT_BACKENDS = file,lpr
+ 
+-@HAVE_CUPS_TRUE@GTK_PRINT_BACKENDS = file,cups
++@HAVE_CUPS_TRUE@GTK_PRINT_BACKENDS = file,cups,lpr
+ 
+ INCLUDES = \
+ 	-DG_LOG_DOMAIN=\"Gtk\"				\
