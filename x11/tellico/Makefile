@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/02/08 15:30:54 okan Exp $
+# $OpenBSD: Makefile,v 1.8 2008/12/07 18:28:50 okan Exp $
 
 COMMENT=	organizer for book/dvd/music collections
 
-DISTNAME=	tellico-1.2.14
+DISTNAME=	tellico-1.3.4
 CATEGORIES=	x11 databases
 
 HOMEPAGE=	http://www.periapsis.org/tellico/
@@ -10,15 +10,16 @@ MASTER_SITES=	${HOMEPAGE}download/
 
 MAINTAINER=	Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB+=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c crypto
+WANTLIB+=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c
 WANTLIB+=	exslt gcrypt gpg-error iconv idn intl jpeg m pcre pcreposix
-WANTLIB+=	png pthread ssl stdc++ util xml2 xslt z fam rpcsvc
+WANTLIB+=	png pthread stdc++ util xml2 xslt z fam rpcsvc
+WANTLIB+=	expat fontconfig freetype
 
 MODULES=	x11/kde \
 		lang/python
@@ -35,12 +36,15 @@ CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS} \
 
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
+		:shared-mime-info->=0.21:misc/shared-mime-info
 
 LIB_DEPENDS=	${MODQT_LIB_DEPENDS} \
-		kdecore.>=6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,knewstuff,kparts,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \
-		kcal,ktnef::x11/kde/pim3 \
+		exempi::textproc/exempi \
+		kcal,ktnef,kmime::x11/kde/pim3 \
 		kcddb::x11/kde/multimedia3 \
+		kdecore.>=6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,knewstuff,kparts,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \
+		poppler-qt.>=3,poppler::print/poppler,-qt \
 		tag::audio/taglib \
 		yaz::net/yaz
 
