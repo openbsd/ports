@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/02/03 15:59:19 okan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/12/07 18:26:43 okan Exp $
 %%SHARED%%
 bin/yaz-asncomp
-bin/yaz-client
+@bin bin/yaz-client
 bin/yaz-config
-bin/yaz-iconv
-bin/yaz-icu
-bin/yaz-illclient
-bin/yaz-marcdump
-bin/yaz-ztest
-bin/zoomsh
+@bin bin/yaz-iconv
+@bin bin/yaz-icu
+@bin bin/yaz-illclient
+@bin bin/yaz-marcdump
+@bin bin/yaz-ztest
+@bin bin/zoomsh
 include/yaz/
 include/yaz/backend.h
 include/yaz/ccl.h
@@ -17,6 +17,7 @@ include/yaz/charneg.h
 include/yaz/comstack.h
 include/yaz/copy_types.h
 include/yaz/cql.h
+include/yaz/daemon.h
 include/yaz/diagbib1.h
 include/yaz/diagsru_update.h
 include/yaz/diagsrw.h
@@ -29,6 +30,7 @@ include/yaz/log.h
 include/yaz/logrpn.h
 include/yaz/marcdisp.h
 include/yaz/match_glob.h
+include/yaz/matchstr.h
 include/yaz/mutex.h
 include/yaz/nmem.h
 include/yaz/nmem_xml.h
@@ -48,6 +50,8 @@ include/yaz/querytowrbuf.h
 include/yaz/readconf.h
 include/yaz/record_conv.h
 include/yaz/retrieval.h
+include/yaz/rpn2cql.h
+include/yaz/sc.h
 include/yaz/snprintf.h
 include/yaz/soap.h
 include/yaz/sortspec.h

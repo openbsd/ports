@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2008/02/03 15:59:19 okan Exp $
+# $OpenBSD: Makefile,v 1.5 2008/12/07 18:26:43 okan Exp $
 
 COMMENT=		Z39.50/SR client and API library
-DISTNAME=		yaz-3.0.24
+DISTNAME=		yaz-3.0.38
 CATEGORIES=		net
 
-SHARED_LIBS+=		yaz		1.0	# 3.0
-SHARED_LIBS+=		yaz_icu		1.1	# 3.0
-SHARED_LIBS+=		yaz_server	1.0	# 3.0
+SHARED_LIBS+=		yaz		1.1	# 3.0
+SHARED_LIBS+=		yaz_icu		1.2	# 3.0
+SHARED_LIBS+=		yaz_server	1.1	# 3.0
 
 HOMEPAGE=		http://www.indexdata.dk/yaz/
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=		Yes
 
-WANTLIB=		c crypto m ncurses pthread readline ssl z iconv intl
+WANTLIB=		c m ncurses pthread readline z iconv intl
 
 MASTER_SITES=		http://ftp.indexdata.dk/pub/yaz/ \
 			ftp://ftp.indexdata.dk/pub/yaz/
@@ -32,5 +32,6 @@ LIB_DEPENDS=		xml2::textproc/libxml \
 			icudata,icui18n,icuuc::textproc/icu4c
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--without-gnutls
 
 .include <bsd.port.mk>
