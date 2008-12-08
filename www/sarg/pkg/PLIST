@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/05/16 15:59:23 aanriot Exp $
-bin/sarg
+@comment $OpenBSD: PLIST,v 1.4 2008/12/08 08:35:46 sthen Exp $
+@bin bin/sarg
 @man man/man1/sarg.1
 share/examples/sarg/
 @sample ${SYSCONFDIR}/sarg/

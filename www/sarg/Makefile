@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.9 2008/03/31 06:54:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2008/12/08 08:35:46 sthen Exp $
 
 COMMENT=		Squid Analysis Report Generator
 
 DISTNAME=		sarg-2.2.5
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www
 
 HOMEPAGE=	 	http://sarg.sourceforge.net/
 
 MAINTAINER=		Douglas Santos <dsantos@hydroxyl.org>
 
-# GPL
-PERMIT_PACKAGE_CDROM=	Yes 
+# GPLv2+
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=   	${MASTER_SITE_SOURCEFORGE:=sarg/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sarg/}
 
 WANTLIB=		c
 
-CONFIGURE_STYLE=  	gnu
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-bindir=${LOCALBASE}/bin \
 			--enable-sysconfdir=${SYSCONFDIR}/sarg \
 			--enable-htmldir=/var/www/htdocs/sarg \
@@ -30,7 +31,7 @@ EXAMPLESDIR=		${PREFIX}/share/examples/sarg
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/cfgaux
 
 post-extract:
-	@chmod 755 ${WRKSRC}/sarg-php/locale	
+	@chmod 755 ${WRKSRC}/sarg-php/locale
 
 post-build:
 	@perl -pi -e \
@@ -51,7 +52,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/exclude_codes ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/images/* ${EXAMPLESDIR}/images/
 	${INSTALL_DATA} ${WRKSRC}/sarg.conf ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/fonts/FreeSans.ttf ${EXAMPLESDIR}/fonts/ 
+	${INSTALL_DATA} ${WRKSRC}/fonts/FreeSans.ttf ${EXAMPLESDIR}/fonts/
 	${INSTALL_DATA} ${WRKSRC}/languages/* ${EXAMPLESDIR}/languages/
 	${INSTALL_DATA} ${WRKSRC}/sarg-php/*php ${EXAMPLESDIR}/sarg-php/
 	cp -R ${WRKSRC}/sarg-php/locale ${EXAMPLESDIR}/sarg-php/

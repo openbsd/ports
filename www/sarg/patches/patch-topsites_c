@@ -1,0 +1,12 @@
+$OpenBSD: patch-topsites_c,v 1.1 2008/12/08 08:35:46 sthen Exp $
+--- topsites.c.orig	Tue Dec  2 14:58:52 2008
++++ topsites.c	Tue Dec  2 14:59:05 2008
+@@ -216,7 +216,7 @@ void topsites()
+ 
+       sprintf(wwork1,"%s",fixnum(twork1,1));
+       sprintf(wwork2,"%s",fixnum(twork2,1));
+-      sprintf(wwork3,"%s",fixtime(twork3,1));
++      sprintf(wwork3,"%s",fixtime(twork3));
+ 
+       if(strlen(BlockIt) > 0)
+          sprintf(BlockImage,"<a href=\"%s%s?url=%s\"><img src=\"../images/sarg-squidguard-block.png\" border=\"0\"></a>&nbsp;",wwwDocumentRoot,BlockIt,url);

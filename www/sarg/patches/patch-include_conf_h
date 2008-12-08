@@ -1,0 +1,22 @@
+$OpenBSD: patch-include_conf_h,v 1.1 2008/12/08 08:35:46 sthen Exp $
+--- include/conf.h.orig	Tue Dec  2 13:48:59 2008
++++ include/conf.h	Tue Dec  2 14:46:38 2008
+@@ -86,7 +86,17 @@ gdPoint points[4];
+ 
+ 
+ #define MAXLEN 20000
+-long long int my_atoll (const char *nptr);
++/* from util.c */
++char *getword2(char *, char *, int);
++long long int my_atoll (const char *);
++char *fixnum(long long int, int );
++char *fixnum2(long long int, int);
++char *buildtime(long long int);
++char *fixtime(long int);
++char *strup(char *);
++char *subs(char *, char *, char *);
++char *strlow(char *);
++
+ 
+ FILE *fp_tt; 
+ 
