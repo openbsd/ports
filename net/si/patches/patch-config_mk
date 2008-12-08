@@ -1,0 +1,29 @@
+$OpenBSD: patch-config_mk,v 1.1.1.1 2008/12/08 11:23:08 bernd Exp $
+--- config.mk.orig	Mon Nov  3 17:45:30 2008
++++ config.mk	Mon Nov  3 17:45:32 2008
+@@ -1,9 +1,9 @@
+ # customize to fit your system
+ 
+ # paths
+-PREFIX      = /usr/local
++PREFIX      ?= /usr/local
+ BINDIR      = ${PREFIX}/bin
+-MANDIR      = ${PREFIX}/share/man
++MANDIR      = ${PREFIX}/man
+ MAN1DIR     = ${MANDIR}/man1
+ DOCDIR      = ${PREFIX}/share/doc/si
+ 
+@@ -14,9 +14,9 @@ LIBS        = `pkg-config --libs silc silcclient`
+ VERSION=0.3
+ 
+ ## change DESTDIR to install to a different root
+-DESTDIR =
++DESTDIR ?=
+ 
+ # # compiler
+-CC          = gcc
+-CFLAGS      = -ggdb -O0 -W ${INCLUDES} -DVERSION=\"${VERSION}\" -DSILC_DIST_SKR -DSILC_DIST_TMA 
+-LDFLAGS     = ${LIBS}
++CC          ?= gcc
++CFLAGS      += -W ${INCLUDES} -DVERSION=\"${VERSION}\" -DSILC_DIST_SKR -DSILC_DIST_TMA 
++LDFLAGS     += ${LIBS}
