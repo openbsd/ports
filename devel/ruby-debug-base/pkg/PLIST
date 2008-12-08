@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/27 19:16:10 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/12/08 11:08:43 pirofti Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -184,6 +184,9 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/ruby_debug.h
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/ruby_debug.o
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/ruby_debug.so
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/win32/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/win32/Makefile
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/win32/breakpoint.o
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/win32/ruby_debug.o
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/win32/ruby_debug.so
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/ChangeLog
