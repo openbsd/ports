@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/14 23:54:16 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2008/12/08 11:04:54 pirofti Exp $
 
 COMMENT =		pure-Ruby implementation of the SCP protocol
 
-DISTNAME =		net-scp-1.0.0
-PKGNAME =		ruby-${DISTNAME}p0
+DISTNAME =		net-scp-1.0.1
+PKGNAME =		ruby-${DISTNAME}
 CATEGORIES =		net
 
 # MIT
@@ -22,5 +22,9 @@ RUN_DEPENDS =		:ruby-net-ssh->=2.0.0:net/ruby-net-ssh
 CONFIGURE_STYLE =	ruby gem
 
 PKG_ARCH =		*
+
+REGRESS_DEPENDS =	:ruby-mocha-*:devel/ruby-mocha
+do-regress:
+	@cd ${WRKBUILD} && ${RUBY} -rubygems -Ilib test/test_all.rb
 
 .include <bsd.port.mk>

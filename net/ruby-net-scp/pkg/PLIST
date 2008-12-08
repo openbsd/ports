@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/09 18:52:19 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/12/08 11:04:55 pirofti Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -7,15 +7,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP.src/M000005.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP.src/M000006.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP.src/M000007.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP.src/M000008.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP.src/M000009.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP.src/M000010.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP.src/M000011.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP.src/M000012.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP/Download.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP/Error.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SCP/Upload.html
@@ -25,17 +16,13 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Connection/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Connection.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Connection/Session.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Connection/Session.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Connection/Session.src/M000004.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/URI/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/URI.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/URI/SCP.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/URI/SCP.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/URI/SCP.src/M000001.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/URI/SCP.src/M000002.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/URI/SCP.src/M000003.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/CHANGELOG_rdoc.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/README_rdoc.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/net/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/net/scp/
