@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2007/09/22 10:38:11 simon Exp $
+@comment $OpenBSD: PLIST,v 1.17 2008/12/08 15:18:20 simon Exp $
 ${P5ARCH}/XML/LibXML.pm
 ${P5ARCH}/XML/LibXML.pod
 ${P5ARCH}/XML/LibXML/Attr.pod
@@ -10,6 +10,10 @@ ${P5ARCH}/XML/LibXML/Document.pod
 ${P5ARCH}/XML/LibXML/DocumentFragment.pod
 ${P5ARCH}/XML/LibXML/Dtd.pod
 ${P5ARCH}/XML/LibXML/Element.pod
+${P5ARCH}/XML/LibXML/ErrNo.pm
+${P5ARCH}/XML/LibXML/ErrNo.pod
+${P5ARCH}/XML/LibXML/Error.pm
+${P5ARCH}/XML/LibXML/Error.pod
 ${P5ARCH}/XML/LibXML/InputCallback.pod
 ${P5ARCH}/XML/LibXML/Literal.pm
 ${P5ARCH}/XML/LibXML/Namespace.pod
@@ -18,6 +22,7 @@ ${P5ARCH}/XML/LibXML/NodeList.pm
 ${P5ARCH}/XML/LibXML/Number.pm
 ${P5ARCH}/XML/LibXML/PI.pod
 ${P5ARCH}/XML/LibXML/Parser.pod
+${P5ARCH}/XML/LibXML/Pattern.pod
 ${P5ARCH}/XML/LibXML/Reader.pm
 ${P5ARCH}/XML/LibXML/Reader.pod
 ${P5ARCH}/XML/LibXML/RelaxNG.pod
@@ -32,6 +37,7 @@ ${P5ARCH}/XML/LibXML/Schema.pod
 ${P5ARCH}/XML/LibXML/Text.pod
 ${P5ARCH}/XML/LibXML/XPathContext.pm
 ${P5ARCH}/XML/LibXML/XPathContext.pod
+${P5ARCH}/XML/LibXML/XPathExpression.pod
 ${P5ARCH}/auto/XML/LibXML/LibXML.bs
 ${P5ARCH}/auto/XML/LibXML/LibXML.so
 @man man/man3p/XML::LibXML.3p
@@ -44,6 +50,8 @@ ${P5ARCH}/auto/XML/LibXML/LibXML.so
 @man man/man3p/XML::LibXML::DocumentFragment.3p
 @man man/man3p/XML::LibXML::Dtd.3p
 @man man/man3p/XML::LibXML::Element.3p
+@man man/man3p/XML::LibXML::ErrNo.3p
+@man man/man3p/XML::LibXML::Error.3p
 @man man/man3p/XML::LibXML::InputCallback.3p
 @man man/man3p/XML::LibXML::Literal.3p
 @man man/man3p/XML::LibXML::Namespace.3p
@@ -52,6 +60,7 @@ ${P5ARCH}/auto/XML/LibXML/LibXML.so
 @man man/man3p/XML::LibXML::Number.3p
 @man man/man3p/XML::LibXML::PI.3p
 @man man/man3p/XML::LibXML::Parser.3p
+@man man/man3p/XML::LibXML::Pattern.3p
 @man man/man3p/XML::LibXML::Reader.3p
 @man man/man3p/XML::LibXML::RelaxNG.3p
 @man man/man3p/XML::LibXML::SAX.3p
@@ -60,3 +69,4 @@ ${P5ARCH}/auto/XML/LibXML/LibXML.so
 @man man/man3p/XML::LibXML::Schema.3p
 @man man/man3p/XML::LibXML::Text.3p
 @man man/man3p/XML::LibXML::XPathContext.3p
+@man man/man3p/XML::LibXML::XPathExpression.3p
