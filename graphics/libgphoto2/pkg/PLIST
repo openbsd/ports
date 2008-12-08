@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/06/18 11:43:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2008/12/08 14:20:10 ajacoutot Exp $
 bin/gphoto2-config
 bin/gphoto2-port-config
 include/gphoto2/
@@ -63,6 +63,8 @@ lib/libgphoto2/${VERSION}/jamcam.a
 lib/libgphoto2/${VERSION}/jamcam.la
 lib/libgphoto2/${VERSION}/jd11.a
 lib/libgphoto2/${VERSION}/jd11.la
+lib/libgphoto2/${VERSION}/jl2005a.a
+lib/libgphoto2/${VERSION}/jl2005a.la
 lib/libgphoto2/${VERSION}/kodak_dc120.a
 lib/libgphoto2/${VERSION}/kodak_dc120.la
 lib/libgphoto2/${VERSION}/kodak_dc210.a
@@ -137,6 +139,8 @@ lib/libgphoto2/${VERSION}/stv0680.a
 lib/libgphoto2/${VERSION}/stv0680.la
 lib/libgphoto2/${VERSION}/sx330z.a
 lib/libgphoto2/${VERSION}/sx330z.la
+lib/libgphoto2/${VERSION}/topfield.a
+lib/libgphoto2/${VERSION}/topfield.la
 lib/libgphoto2/${VERSION}/toshiba_pdrm11.a
 lib/libgphoto2/${VERSION}/toshiba_pdrm11.la
 @bin lib/libgphoto2/print-camera-list
@@ -155,9 +159,9 @@ lib/libgphoto2_port/0.8.0/usb.la
 lib/pkgconfig/
 lib/pkgconfig/libgphoto2.pc
 lib/pkgconfig/libgphoto2_port.pc
-@comment lib/udev/
 @comment @bin lib/udev/check-mtp-device
 @comment lib/udev/check-ptp-camera
+@comment lib/udev/
 @man man/man3/libgphoto2.3
 @man man/man3/libgphoto2_port.3
 share/doc/libgphoto2/
@@ -176,6 +180,7 @@ share/doc/libgphoto2/camlibs/README.enigma13
 share/doc/libgphoto2/camlibs/README.gsmart300
 share/doc/libgphoto2/camlibs/README.iclick
 share/doc/libgphoto2/camlibs/README.jamcam
+share/doc/libgphoto2/camlibs/README.jl2005a
 share/doc/libgphoto2/camlibs/README.konica
 share/doc/libgphoto2/camlibs/README.largan-lmini
 share/doc/libgphoto2/camlibs/README.lg_gsm
@@ -211,7 +216,6 @@ share/locale/de/LC_MESSAGES/libgphoto2-2.mo
 share/locale/de/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/es/LC_MESSAGES/libgphoto2-2.mo
 share/locale/es/LC_MESSAGES/libgphoto2_port-0.mo
-share/locale/eu/
 share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/libgphoto2-2.mo
 share/locale/eu/LC_MESSAGES/libgphoto2_port-0.mo
@@ -231,6 +235,7 @@ share/locale/pl/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/pt_BR/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/ru/LC_MESSAGES/libgphoto2-2.mo
 share/locale/ru/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/sk/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/sl/LC_MESSAGES/libgphoto2-2.mo
 share/locale/sl/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/sv/LC_MESSAGES/libgphoto2-2.mo

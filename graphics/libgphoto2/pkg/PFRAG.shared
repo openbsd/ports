@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2007/10/19 12:57:52 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2008/12/08 14:20:10 ajacoutot Exp $
 @lib lib/libgphoto2.so.${LIBgphoto2_VERSION}
 lib/libgphoto2/${VERSION}/adc65.so
 lib/libgphoto2/${VERSION}/agfa_cl20.so
@@ -19,6 +19,7 @@ lib/libgphoto2/${VERSION}/hp215.so
 lib/libgphoto2/${VERSION}/iclick.so
 lib/libgphoto2/${VERSION}/jamcam.so
 lib/libgphoto2/${VERSION}/jd11.so
+lib/libgphoto2/${VERSION}/jl2005a.so
 lib/libgphoto2/${VERSION}/kodak_dc120.so
 lib/libgphoto2/${VERSION}/kodak_dc210.so
 lib/libgphoto2/${VERSION}/kodak_dc240.so
@@ -56,6 +57,7 @@ lib/libgphoto2/${VERSION}/sq905.so
 lib/libgphoto2/${VERSION}/stv0674.so
 lib/libgphoto2/${VERSION}/stv0680.so
 lib/libgphoto2/${VERSION}/sx330z.so
+lib/libgphoto2/${VERSION}/topfield.so
 lib/libgphoto2/${VERSION}/toshiba_pdrm11.so
 @lib lib/libgphoto2_port.so.${LIBgphoto2_port_VERSION}
 lib/libgphoto2_port/0.8.0/disk.so
