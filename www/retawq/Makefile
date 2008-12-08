@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/12/07 22:03:28 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2008/12/08 18:04:52 pirofti Exp $
 
 COMMENT =		interactive, multi-threaded text mode web browser
 
 DISTNAME =		retawq-0.2.6c
+PKGNAME = 		${DISTNAME}p0
 CATEGORIES =		www
 
 HOMEPAGE =		http://retawq.sourceforge.net
@@ -16,10 +17,10 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes 
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c pthread ncurses
+WANTLIB =		c crypto pthread ncurses ssl
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS = 	--enable-ipv6
+CONFIGURE_ARGS = 	--enable-ipv6 --set-tls=2
 
 NO_REGRESS =		Yes
 
