@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2008/04/17 08:35:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2008/12/09 23:34:29 martynas Exp $
 
 COMMENT= 		billiard game
 CATEGORIES=		x11 x11/kde games
 DISTNAME=		kbilliards-0.8.7b
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://www.hostnotfound.it/kbilliards.php
 MASTER_SITES=		http://www.hostnotfound.it/kbilliards/
@@ -35,8 +35,6 @@ AUTOCONF_VERSION=	2.59
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_X11=		Yes
-
-CFLAGS+=		-Dsqrtl=sqrt
 
 PORTHOME?=		${WRKDIR}
 
