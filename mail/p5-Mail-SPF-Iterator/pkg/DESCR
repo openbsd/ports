@@ -1,0 +1,6 @@
+This module provides an iterative resolving of SPF records.  Contrary
+to Mail::SPF, which does blocking DNS lookups, this module just
+returns the DNS queries and later expects the responses.
+
+Lookup of the DNS records will be done outside of the module and
+can be done in a event driven way.

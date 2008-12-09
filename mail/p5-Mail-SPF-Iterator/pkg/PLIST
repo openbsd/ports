@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/09 21:04:48 bluhm Exp $
+${P5SITE}/Mail/
+${P5SITE}/Mail/SPF/
+${P5SITE}/Mail/SPF/Iterator.pm
+@man man/man3p/Mail::SPF::Iterator.3p
