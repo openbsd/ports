@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.1 2007/10/26 20:49:32 ajacoutot Exp $
---- configure.orig	Mon Dec 27 00:11:38 1999
-+++ configure	Fri Oct 26 22:47:34 2007
-@@ -2604,6 +2604,7 @@ s%@X_CFLAGS@%$X_CFLAGS%g
- s%@X_PRE_LIBS@%$X_PRE_LIBS%g
- s%@X_LIBS@%$X_LIBS%g
- s%@X_EXTRA_LIBS@%$X_EXTRA_LIBS%g
-+s%@X_INC@%$x_includes%g
- 
+$OpenBSD: patch-configure,v 1.2 2008/12/09 10:46:35 jasper Exp $
+--- configure.orig	Tue Dec  9 11:39:03 2008
++++ configure	Tue Dec  9 11:39:05 2008
+@@ -6053,6 +6053,7 @@ s,@X_CFLAGS@,$X_CFLAGS,;t t
+ s,@X_PRE_LIBS@,$X_PRE_LIBS,;t t
+ s,@X_LIBS@,$X_LIBS,;t t
+ s,@X_EXTRA_LIBS@,$X_EXTRA_LIBS,;t t
++s,@X_INC@,$x_includes,;t t
+ s,@LIBOBJS@,$LIBOBJS,;t t
+ s,@LTLIBOBJS@,$LTLIBOBJS,;t t
  CEOF
- EOF

@@ -1,6 +1,6 @@
-$OpenBSD: patch-we_fl_unix_c,v 1.1 2007/10/26 20:49:32 ajacoutot Exp $
---- we_fl_unix.c.orig	Mon Dec 27 00:11:38 1999
-+++ we_fl_unix.c	Fri Oct 26 22:47:35 2007
+$OpenBSD: patch-we_fl_unix_c,v 1.2 2008/12/09 10:46:35 jasper Exp $
+--- we_fl_unix.c.orig	Tue Dec  9 11:35:46 2008
++++ we_fl_unix.c	Tue Dec  9 11:36:54 2008
 @@ -12,6 +12,9 @@
  #include <sys/types.h>
  #include <sys/stat.h>
@@ -11,18 +11,17 @@ $OpenBSD: patch-we_fl_unix_c,v 1.1 2007/10/26 20:49:32 ajacoutot Exp $
  
  struct dirfile *e_make_win_list(FENSTER * f);
  extern char    *e_tmp_dir;
-@@ -3546,7 +3549,13 @@ struct dirfile *e_make_funct(char *man)
-   if(getenv("MANPATH"))
-     strcpy(manpath, getenv("MANPATH"));
-   if(manpath[0] == '\0')
--    strcpy(manpath, "/usr/man:/usr/local/man");
-+    strcpy(manpath,
+@@ -3532,7 +3535,12 @@ struct dirfile *e_make_funct(char *man)
+  }
+  if ((!manpath) || (manpath[0] == '\0'))
+  {
+-  manpath = strdup("/usr/man:/usr/share/man:/usr/X11R6/man:/usr/local/man");
++  manpath = strdup(
 +#if (defined(BSD) && (BSD >= 199306)) || (defined(sun) && defined(__svr4__))
 +               "/usr/share/man:/usr/local/man");
 +#else
 +               "/usr/man:/usr/local/man");
 +#endif
-+         
-   while(manpath[i])
-   {
-     for(n = 0; (subpath[n] = manpath[i]) && manpath[i] != PTHD; i++, n++);
+  }
+  /* Allocate the maximum possible rather than continually realloc. */
+  sustr = malloc(strlen(manpath) + 10);
