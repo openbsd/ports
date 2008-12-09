@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2008/12/09 16:00:17 jasper Exp $
 
 COMMENT=		convert ASCII files to PostScript
 
 DISTNAME=		enscript-1.6.3
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=     	print
 
 HOMEPAGE=		http://www.codento.com/people/mtr/genscript/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
