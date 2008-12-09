@@ -1,46 +1,39 @@
-$OpenBSD: patch-configure_in,v 1.11 2008/04/05 05:45:19 sturm Exp $
---- configure.in.orig	Wed Sep  5 10:38:41 2007
-+++ configure.in	Wed Sep  5 10:39:20 2007
-+@@ -325,13 +325,13 @@ AC_CHECK_LIB(m, sin)
-+
-+ dnl Check for resolver routines.
-+ dnl Need to check for both res_search and __res_search
-+-dnl in -lc, -lbind, -lresolv and -lsocket
-+-PHP_CHECK_FUNC(res_search, resolv, bind, socket)
-++dnl in -lc, -lresolv and -lsocket
-++PHP_CHECK_FUNC(res_search, resolv, socket)
-+
-+ dnl Check for inet_aton and dn_skipname
-+-dnl in -lc, -lbind and -lresolv
-+-PHP_CHECK_FUNC(inet_aton, resolv, bind)
-+-PHP_CHECK_FUNC(dn_skipname, resolv, bind)
-++dnl in -lc and -lresolv
-++PHP_CHECK_FUNC(inet_aton, resolv)
-++PHP_CHECK_FUNC(dn_skipname, resolv)
-+
-+
-+ dnl Then headers.
-@@ -893,7 +893,7 @@ enable_static=yes
+--- configure.in.orig	Tue Dec  9 22:04:42 2008
++++ configure.in	Tue Dec  9 22:07:03 2008
+@@ -354,8 +354,8 @@
+ 
+ dnl Check for resolver routines.
+ dnl Need to check for both res_search and __res_search
+-dnl in -lc, -lbind, -lresolv and -lsocket
+-PHP_CHECK_FUNC(res_search, resolv, bind, socket)
++dnl in -lc, -lresolv and -lsocket
++PHP_CHECK_FUNC(res_search, resolv, socket)
+ 
+ dnl Check for inet_aton and dn_skipname
+ dnl in -lc, -lbind and -lresolv
+@@ -931,7 +931,7 @@
  
  case $php_build_target in
- program|static)
+   program|static)
 -    standard_libtool_flag='-prefer-non-pic -static'
 +    standard_libtool_flag=''
-     if test -z "$PHP_MODULES"; then
+     if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
          enable_shared=no
      fi
-@@ -901,8 +901,8 @@ program|static)
- shared)
+@@ -940,10 +940,10 @@
      enable_static=no
      case $with_pic in
--      yes) standard_libtool_flag='-prefer-pic';;
--      no)  standard_libtool_flag='-prefer-non-pic';;
-+      yes) standard_libtool_flag='';;
-+      no)  standard_libtool_flag='';;
+       yes)
+-        standard_libtool_flag='-prefer-pic'
++        standard_libtool_flag=''
+         ;;
+       no)
+-        standard_libtool_flag='-prefer-non-pic'
++        standard_libtool_flag=''
+         ;;
      esac
      EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version -module"
- ;;
-@@ -1095,7 +1095,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+@@ -1136,7 +1136,7 @@
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
@@ -49,16 +42,17 @@ $OpenBSD: patch-configure_in,v 1.11 2008/04/05 05:45:19 sturm Exp $
  
  exec_prefix=$old_exec_prefix
  libdir=$old_libdir
-@@ -1278,7 +1278,7 @@ CFLAGS="\$(CFLAGS_CLEAN) $standard_libtool_flag"
+@@ -1344,7 +1344,8 @@
  INLINE_CFLAGS="$INLINE_CFLAGS $standard_libtool_flag"
  CXXFLAGS="$CXXFLAGS $standard_libtool_flag"
  
--all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_CLI_TARGET)"
+-all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET)"
 +all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_CLI_TARGET) \$(PHP_CGI_TARGET)"
++
  install_targets="$install_modules install-build install-headers install-programs $install_pear"
  
  case $PHP_SAPI in
-@@ -1322,7 +1322,7 @@ esac
+@@ -1388,7 +1389,7 @@
  PHP_ADD_SOURCES(Zend, \
      zend_language_parser.c zend_language_scanner.c \
      zend_ini_parser.c zend_ini_scanner.c \
@@ -67,7 +61,7 @@ $OpenBSD: patch-configure_in,v 1.11 2008/04/05 05:45:19 sturm Exp $
      zend_execute_API.c zend_highlight.c zend_llist.c \
      zend_opcode.c zend_operators.c zend_ptr_stack.c zend_stack.c \
      zend_variables.c zend.c zend_API.c zend_extensions.c zend_hash.c \
-@@ -1344,6 +1344,7 @@ else
+@@ -1409,6 +1410,7 @@
  fi
  
  PHP_ADD_SOURCES_X(Zend, zend_execute.c,,PHP_GLOBAL_OBJS,,$flag)

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile.inc,v 1.21 2008/10/07 14:01:42 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2008/12/09 21:52:31 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
-V=			5.2.6
-SUHOSIN_V=		0.9.20
-SUHOSIN_P_V=		0.9.6.2
+V=			5.2.8
+SUHOSIN_V=		0.9.27
+SUHOSIN_P_V=		0.9.6.3
 
 DISTNAME?=		php-${V}
 CATEGORIES=		www lang
@@ -18,7 +18,8 @@ MASTER_SITES=		http://us2.php.net/distributions/ \
 			http://se.php.net/distributions/ \
 			http://no.php.net/distributions/ \
 			http://uk.php.net/distributions/
-MASTER_SITES0=		http://download.suhosin.org/
+MASTER_SITES0=		http://blade2k.humppa.hu/ \
+			http://download.suhosin.org/
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
@@ -72,10 +73,13 @@ PSEUDO_FLAVORS+=	no_suhosin
 FLAVOR?=
 .if ${FLAVOR:L:Mno_suhosin}
 SUPDISTFILES=		suhosin-${SUHOSIN_V}.tgz:0 \
-			suhosin-patch-${V}-${SUHOSIN_P_V}.patch.gz:0
+			suhosin-unoffical-patch-${V}-${SUHOSIN_P_V}.patch.gz:0
 .else
 DISTFILES+=		suhosin-${SUHOSIN_V}.tgz:0
-PATCHFILES=		suhosin-patch-${V}-${SUHOSIN_P_V}.patch.gz:0
+PATCHFILES=		suhosin-unoffical-patch-${V}-${SUHOSIN_P_V}.patch.gz:0
 PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=	--enable-suhosin
+
+post-patch:
+	mv ${WRKDIR}/suhosin-${SUHOSIN_V} ${WRKSRC}/ext/suhosin
 .endif

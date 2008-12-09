@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2008/03/20 23:06:53 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2008/12/09 21:52:31 robert Exp $
 @conflict php4-core-*
 @pkgpath www/php5/core
 @pkgpath www/php5/core,hardened
 %%SHARED%%
-bin/php
+@bin bin/php
 bin/php-config
 bin/phpize
 lib/php/
@@ -123,6 +123,7 @@ share/php5/include/ext/hash/php_hash_whirlpool.h
 share/php5/include/ext/iconv/
 share/php5/include/ext/iconv/php_have_bsd_iconv.h
 share/php5/include/ext/iconv/php_have_glibc_iconv.h
+share/php5/include/ext/iconv/php_have_ibm_iconv.h
 share/php5/include/ext/iconv/php_have_iconv.h
 share/php5/include/ext/iconv/php_have_libiconv.h
 share/php5/include/ext/iconv/php_iconv.h
@@ -138,7 +139,6 @@ share/php5/include/ext/pcre/pcrelib/pcre.h
 share/php5/include/ext/pcre/pcrelib/pcre_internal.h
 share/php5/include/ext/pcre/pcrelib/pcreposix.h
 share/php5/include/ext/pcre/pcrelib/ucp.h
-share/php5/include/ext/pcre/pcrelib/ucpinternal.h
 share/php5/include/ext/pcre/pcrelib/ucptable.h
 share/php5/include/ext/pcre/php_pcre.h
 share/php5/include/ext/pdo/
