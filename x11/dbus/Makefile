@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/12/09 14:12:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2008/12/09 14:14:45 jasper Exp $
 
 COMMENT=		message bus system
 
@@ -21,8 +21,7 @@ MASTER_SITES=		${HOMEPAGE}/releases/dbus/
 SEPARATE_BUILD=		simple
 USE_LIBTOOL=		Yes
 USE_X11=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.61
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 CONFIGURE_ARGS=		--localstatedir=/var \
