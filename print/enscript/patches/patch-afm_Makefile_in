@@ -1,7 +1,7 @@
-$OpenBSD: patch-afm_Makefile_in,v 1.1 2005/02/11 17:57:31 naddy Exp $
+$OpenBSD: patch-afm_Makefile_in,v 1.2 2008/12/09 15:23:55 jasper Exp $
 --- afm/Makefile.in.orig	Thu Jan 24 08:39:24 2002
-+++ afm/Makefile.in	Fri Feb 11 18:47:55 2005
-@@ -227,14 +227,14 @@ maintainer-clean-generic clean mostlycle
++++ afm/Makefile.in	Tue Dec  9 16:23:25 2008
+@@ -227,14 +227,14 @@ maintainer-clean-generic clean mostlyclean distclean m
  
  
  install-data-local:

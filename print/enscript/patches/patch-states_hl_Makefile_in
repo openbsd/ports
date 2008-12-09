@@ -1,7 +1,7 @@
-$OpenBSD: patch-states_hl_Makefile_in,v 1.1 2005/02/11 17:57:31 naddy Exp $
+$OpenBSD: patch-states_hl_Makefile_in,v 1.2 2008/12/09 15:23:55 jasper Exp $
 --- states/hl/Makefile.in.orig	Thu Jan 24 08:39:40 2002
-+++ states/hl/Makefile.in	Fri Feb 11 18:48:57 2005
-@@ -234,14 +234,14 @@ maintainer-clean-generic clean mostlycle
++++ states/hl/Makefile.in	Tue Dec  9 16:23:25 2008
+@@ -234,14 +234,14 @@ maintainer-clean-generic clean mostlyclean distclean m
  
  
  install-data-local:

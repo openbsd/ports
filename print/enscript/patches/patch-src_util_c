@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_util_c,v 1.1 2005/02/11 19:12:42 naddy Exp $
---- src/util.c.orig	Fri Feb 11 20:01:12 2005
-+++ src/util.c	Fri Feb 11 20:01:25 2005
+$OpenBSD: patch-src_util_c,v 1.2 2008/12/09 15:23:55 jasper Exp $
+--- src/util.c.orig	Fri Sep 17 17:26:51 1999
++++ src/util.c	Tue Dec  9 16:23:25 2008
 @@ -1239,6 +1239,8 @@ escape_string (char *string)
  
    /* Create result. */
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_util_c,v 1.1 2005/02/11 19:12:42 naddy Exp $
    for (i = 0, j = 0; string[i]; i++)
      switch (string[i])
        {
-@@ -1879,6 +1881,7 @@ is_open (InputStream *is, FILE *fp, char
+@@ -1879,6 +1881,7 @@ is_open (InputStream *is, FILE *fp, char *fname, char 
        char *cmd = NULL;
        int cmdlen;
        int i, pos;
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_util_c,v 1.1 2005/02/11 19:12:42 naddy Exp $
  
        is->is_pipe = 1;
  
-@@ -1902,12 +1905,16 @@ is_open (InputStream *is, FILE *fp, char
+@@ -1902,12 +1905,16 @@ is_open (InputStream *is, FILE *fp, char *fname, char 
  		{
  		case 's':
  		  /* Expand cmd-buffer. */

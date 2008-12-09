@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_c,v 1.1 2005/02/11 19:12:42 naddy Exp $
---- src/main.c.orig	Fri Feb 11 20:01:12 2005
-+++ src/main.c	Fri Feb 11 20:01:25 2005
-@@ -1546,9 +1546,13 @@ name             width\theight\tllx\tlly
+$OpenBSD: patch-src_main_c,v 1.2 2008/12/09 15:23:55 jasper Exp $
+--- src/main.c.orig	Thu Jan 24 08:35:45 2002
++++ src/main.c	Tue Dec  9 16:23:25 2008
+@@ -1546,9 +1546,13 @@ name             width\theight\tllx\tlly\turx\tury\n\
        buffer_append (&cmd, intbuf);
        buffer_append (&cmd, " ");
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_main_c,v 1.1 2005/02/11 19:12:42 naddy Exp $
  
        buffer_append (&cmd, "-Dtoc=");
        buffer_append (&cmd, toc ? "1" : "0");
-@@ -1565,8 +1569,14 @@ name             width\theight\tllx\tlly
+@@ -1565,8 +1569,14 @@ name             width\theight\tllx\tlly\turx\tury\n\
        /* Append input files. */
        for (i = optind; i < argc; i++)
  	{
@@ -35,7 +35,7 @@ $OpenBSD: patch-src_main_c,v 1.1 2005/02/11 19:12:42 naddy Exp $
  	}
  
        /* And do the job. */
-@@ -1627,7 +1637,7 @@ name             width\theight\tllx\tlly
+@@ -1627,7 +1637,7 @@ name             width\theight\tllx\tlly\turx\tury\n\
  				 buffer_ptr (opts), buffer_len (opts));
  	    }
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gsint_h,v 1.1 2005/02/11 19:12:42 naddy Exp $
---- src/gsint.h.orig	Fri Feb 11 20:01:12 2005
-+++ src/gsint.h	Fri Feb 11 20:01:25 2005
-@@ -701,4 +701,9 @@ FILE *printer_open ___P ((char *cmd, cha
+$OpenBSD: patch-src_gsint_h,v 1.2 2008/12/09 15:23:55 jasper Exp $
+--- src/gsint.h.orig	Tue Jul 11 17:28:06 2000
++++ src/gsint.h	Tue Dec  9 16:23:25 2008
+@@ -701,4 +701,9 @@ FILE *printer_open ___P ((char *cmd, char *options, ch
   */
  void printer_close ___P ((void *context));
  

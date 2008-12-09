@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_psgen_c,v 1.1 2005/02/11 19:12:42 naddy Exp $
---- src/psgen.c.orig	Fri Feb 11 20:01:12 2005
-+++ src/psgen.c	Fri Feb 11 20:01:25 2005
-@@ -2034,8 +2034,9 @@ dump_ps_page_header (char *fname, int em
+$OpenBSD: patch-src_psgen_c,v 1.2 2008/12/09 15:23:55 jasper Exp $
+--- src/psgen.c.orig	Thu Jan 24 08:38:58 2002
++++ src/psgen.c	Tue Dec  9 16:23:25 2008
+@@ -2034,8 +2034,9 @@ dump_ps_page_header (char *fname, int empty)
    else
      {
        ftail++;
