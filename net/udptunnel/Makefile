@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2008/12/10 22:33:37 jasper Exp $
 
 COMMENT=	UDP tunnel utility
 
-VERSION=	1.1
-DISTNAME=	udptunnel-${VERSION}
+DISTNAME=	udptunnel-1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/lennox/udptunnel/ 
@@ -12,6 +12,7 @@ HOMEPAGE=	http://www.cs.columbia.edu/~lennox/udptunnel/
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
+# 3-clause BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
