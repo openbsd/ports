@@ -1,4 +1,4 @@
-$OpenBSD: patch-qemu-doc_texi,v 1.4 2008/06/19 05:51:17 todd Exp $
+$OpenBSD: patch-qemu-doc_texi,v 1.5 2008/12/10 23:30:33 todd Exp $
 --- qemu-doc.texi.orig	Sun Jan  6 13:38:42 2008
 +++ qemu-doc.texi	Tue Jun 17 19:48:00 2008
 @@ -632,7 +632,7 @@ or @file{C:\WINNT\SYSTEM32\DRIVERS\ETC\LMHOSTS} (Windo
@@ -6,7 +6,7 @@ $OpenBSD: patch-qemu-doc_texi,v 1.4 2008/06/19 05:51:17 todd Exp $
  
  Note that a SAMBA server must be installed on the host OS in
 -@file{/usr/sbin/smbd}. QEMU was tested successfully with smbd version
-+@file{!!LOCALBASE!!/libexec/smbd}. QEMU was tested successfully with smbd version
++@file{${LOCALBASE}/libexec/smbd}. QEMU was tested successfully with smbd version
  2.2.7a from the Red Hat 9 and version 3.0.10-1.fc3 from Fedora Core 3.
  
  @item -redir [tcp|udp]:@var{host-port}:[@var{guest-host}]:@var{guest-port}

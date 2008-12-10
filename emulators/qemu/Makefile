@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2008/09/22 15:17:54 mpf Exp $
+# $OpenBSD: Makefile,v 1.38 2008/12/10 23:30:33 todd Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=		amd64 i386 powerpc
 COMMENT=		multi system emulator
 
 DISTNAME=		qemu-0.9.1
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://bellard.org/qemu/
@@ -49,7 +49,7 @@ WANTLIB+=		pthread
 .endif
 
 pre-configure:
-	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g;" ${WRKSRC}/vl.c ${WRKSRC}/qemu-doc.texi
+	@${SUBST_CMD} ${WRKSRC}/vl.c ${WRKSRc}/qemu-doc.texi
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu
@@ -57,5 +57,6 @@ post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown ${PREFIX}/share/examples/qemu
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qemu
 	@${INSTALL_SCRIPT} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/qemu
+	@${SUBST_CMD} ${PREFIX}/share/doc/qemu/README.OpenBSD
 
 .include <bsd.port.mk>

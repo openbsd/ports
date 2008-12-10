@@ -19,7 +19,7 @@ README for OpenBSD users
 
   By default, qemu sets up the equivalent of the following networking:
 
-	-net nic,vlan=0,model=ne2k_pci,macaddr=52:54:00:12:34:56
+	-net nic,vlan=0,model=rtl8139,macaddr=52:54:00:12:34:56
 	-net user,vlan=0
 
   Also, inside this virtual usermode network, it uses the 10.0.2.0/24 and
@@ -34,9 +34,6 @@ README for OpenBSD users
   makes userland network calls for tcp/udp operations. icmp and other things
   are not possible in this mode.
 
-  It is recommended to use this if at all possible, because other options
-  involve running qemu as root.
-
   Note: If you use one '-net' cmdline argument, qemu assumes you know what you
   want and clears defaults for the rest of the -net defaults.
 
@@ -48,11 +45,35 @@ README for OpenBSD users
 2.  tap mode
 
   Sometimes it is desirable to configure qemu to access a network via layer2
-  directly.  This has the side effect that currently it requires root
-  privileges to open and configure /dev/tunN.  There is no way to drop from
-  root privileges at this point.
+  directly. One way of doing this without having to run qemu as root is to
+  let root open /dev/tunN and pass the file descriptor to qemu. The tun(4)
+  interface should preferrably be configured before starting qemu:
 
-  %SYSCONFDIR%/qemu-ifup contains some default settings that permit one to do
+       $ sudo ifconfig tun0 192.168.0.254 link0
+
+  The interface can also be configured as part of a bridge(4), in which case
+  the ip address can be omitted:
+
+       $ sudo ifconfig tun0 link0
+       $ sudo ifconfig bridge0 create
+       $ sudo brconfig bridge0 add tun0 add em0 up
+
+  The tunnel and bridge interfaces can also be configured at system startup by
+  editing ${SYSCONFDIR}/hostname.tunN and ${SYSCONFDIR}/bridgename.bridgeN,
+  respectively (see hostname.if(5)).
+
+  After configuring the virtual network we can use sudo to let root open the
+  tunnel device and then use sudo again to drop privileges and start qemu:
+
+       $ sudo sh -c "sudo -u $USER qemu -nographic -net nic -net tap,fd=3 \
+             virtual.hd 3<>/dev/tun0"
+
+  An alternative to the procedure described above is to have qemu set up the
+  network via ${SYSCONFDIR}/qemu-ifup. This is not recommended however, since
+  you would have to run qemu as root, and there is no way to drop from root
+  privileges at this point.
+
+  ${SYSCONFDIR}/qemu-ifup contains some default settings that permit one to do
   the following:
 
 	# qemu -net nic -net tap virtual.hd
@@ -155,13 +176,13 @@ README for OpenBSD users
    is a complete example that may be cut-and-pasted into rc.local:
 
     hddir=/var/vm
-    if [ -x /usr/local/bin/qemu ]; then
+    if [ -x ${TRUEPREFIX}/bin/qemu ]; then
         echo -n 'Qemu: vmi386'
         (
             export ETHER=trunk101
             export BRIDGE=bridge101
 
-            /usr/local/bin/qemu \
+            ${TRUEPREFIX}/bin/qemu \
                 -daemonize \
                 -nographic \
                 -net nic,vlan=0,model=rtl8139,macaddr=52:54:00:4e:62:8f \
