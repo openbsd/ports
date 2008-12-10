@@ -1,4 +1,4 @@
-EasyTAG is an utility for viewing, editing and writing easily and
-quickly the ID3 tags of your MP3 files, using a nice GTK+ interface. It
-manages the ID3v1.x and ID3v2 tags (using id3lib) and offers a lot of
-functions to manipulate them.
+EasyTAG is an utility for viewing and editing tags for MP3, MP4/AAC,
+FLAC, Ogg Vorbis using a nice GTK+ interface. It manages the ID3v1.x and
+ID3v2 tags (using id3lib) and offers a lot of functions to manipulate
+them.

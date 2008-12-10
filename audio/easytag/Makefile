@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2008/10/07 21:47:48 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2008/12/10 23:15:24 jasper Exp $
 
 COMMENT=		tag editor for various audio file formats
 
 DISTNAME=		easytag-2.1
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://easytag.sourceforge.net/
