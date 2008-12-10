@@ -1,21 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/04/28 22:52:38 todd Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/12/10 23:38:52 todd Exp $
 @pkgpath emulators/qemu,kqemu
-bin/qemu
-bin/qemu-img
-bin/qemu-system-arm
-bin/qemu-system-cris
-bin/qemu-system-m68k
-bin/qemu-system-mips
-bin/qemu-system-mips64
-bin/qemu-system-mips64el
-bin/qemu-system-mipsel
-bin/qemu-system-ppc
-bin/qemu-system-ppc64
-bin/qemu-system-ppcemb
-bin/qemu-system-sh4
-bin/qemu-system-sh4eb
-bin/qemu-system-sparc
-bin/qemu-system-x86_64
+@bin bin/qemu
+@bin bin/qemu-img
+@bin bin/qemu-system-arm
+@bin bin/qemu-system-cris
+@bin bin/qemu-system-m68k
+@bin bin/qemu-system-mips
+@bin bin/qemu-system-mips64
+@bin bin/qemu-system-mips64el
+@bin bin/qemu-system-mipsel
+@bin bin/qemu-system-ppc
+@bin bin/qemu-system-ppc64
+@bin bin/qemu-system-ppcemb
+@bin bin/qemu-system-sh4
+@bin bin/qemu-system-sh4eb
+@bin bin/qemu-system-sparc
+@bin bin/qemu-system-x86_64
 @man man/man1/qemu-img.1
 @man man/man1/qemu.1
 share/doc/qemu/
@@ -31,7 +31,6 @@ share/examples/qemu/qemu-ifup
 @mode 755
 @sample ${SYSCONFDIR}/qemu-ifup
 @mode
-share/nls/pl_PL.ISO_8859-2/
 share/qemu/
 share/qemu/bios.bin
 share/qemu/keymaps/
