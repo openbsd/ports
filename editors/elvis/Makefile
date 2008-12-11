@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/12/11 13:58:14 jasper Exp $
 
 COMMENT=	clone of the ex/vi text editor
 
-DISTNAME=	elvis-2.1_4
-PKGNAME=	${DISTNAME:S/_/./}p2
+DISTNAME=	elvis-2.2_0
+PKGNAME=	${DISTNAME:S/_/./}
 CATEGORIES=	editors
 HOMEPAGE=	http://elvis.the-little-red-haired-girl.org/
 
-# Artistic
+# Clarified Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -21,25 +21,32 @@ FLAVORS=	no_x11
 FLAVOR?=
 
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --datadir=${PREFIX}/share/elvis
+CONFIGURE_ARGS=	--bindir=${PREFIX}/bin \
+		--datadir=${PREFIX}/share/elvis
+
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --with-x=no
 .else
-CONFIGURE_ARGS+= --with-x --x-includes=${X11BASE}/include \
-		 --x-libraries=${X11BASE}/lib
+CONFIGURE_ARGS+= --with-x \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
+CFLAGS+=	-I${X11BASE}/include/freetype2
 USE_X11=	Yes
-WANTLIB+=	X11
+WANTLIB+=	X11 Xft Xpm
 .endif
 
 NO_REGRESS=	Yes
 
 do-install:
+	@rm -f ${WRKSRC}/doc/ctags.man.orig
 	${INSTALL_DATA_DIR} ${PREFIX}/share/elvis
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/share/elvis
-.for prog in elvis elvtags ref
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/elvis
+.for prog in elvfmt elvis ref
 	${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/lib/${prog}.man ${PREFIX}/man/man1/${prog}.1
-	rm -f ${PREFIX}/share/elvis/${prog}.man
+	${INSTALL_MAN} ${WRKSRC}/doc/${prog}.man ${PREFIX}/man/man1/${prog}.1
 .endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/elvtags ${PREFIX}/bin
+	cd ${WRKSRC}/data/ && pax -rw . ${PREFIX}/share/elvis
+	cd ${WRKSRC}/doc/ && pax -rw . ${PREFIX}/share/doc/elvis
 
 .include <bsd.port.mk>

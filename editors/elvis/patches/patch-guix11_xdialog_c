@@ -1,0 +1,51 @@
+$OpenBSD: patch-guix11_xdialog_c,v 1.1 2008/12/11 13:58:14 jasper Exp $
+
+Prevent symbol clash with stdio.h .
+
+--- guix11/xdialog.c.orig	Tue Dec  9 23:32:39 2008
++++ guix11/xdialog.c	Tue Dec  9 23:33:34 2008
+@@ -387,7 +387,7 @@ static void parsespec(dia)
+ 			  case 'o': ft = FT_ONEOF, limit = scan;	break;
+ 			  case 'n': ft = FT_NUMBER, limit = scan;	break;
+ 			  case 's': ft = FT_STRING;			break;
+-			  case 'f': ft = FT_FILE;			break;
++			  case 'f': ft = ELV_FT_FILE;			break;
+ 			  case 'l': ft = FT_LOCKED;			break;
+ 			}
+ 
+@@ -556,7 +556,7 @@ void x_dl_add(xw, name, desc, excmd, spec)
+ 			break;
+ 
+ 		  case FT_STRING:
+-		  case FT_FILE:
++		  case ELV_FT_FILE:
+ 			button = addbutton(dia, "<", 'l', ELVCTRL('L'));
+ 			button->y = dia->y0 + dia->rowh * i;
+ 			button->x = dia->x0 + 3;
+@@ -1111,7 +1111,7 @@ static void keystroke(dia, key)
+ 			newvalue = keystring(dia, key);
+ 			break;
+ 
+-		  case FT_FILE:
++		  case ELV_FT_FILE:
+ #ifdef FEATURE_COMPLETE
+ 			if (key == '\t')
+ 			{
+@@ -1179,7 +1179,7 @@ static void exposerow(dia, row, fromscratch)
+ 	switch (dia->field[row].ft)
+ 	{
+ 	  case FT_STRING:
+-	  case FT_FILE:
++	  case ELV_FT_FILE:
+ 	  case FT_NUMBER:
+ 	  case FT_LOCKED:
+ 		drawtext(dia, row);
+@@ -1207,7 +1207,7 @@ static void exposerow(dia, row, fromscratch)
+ 			break;
+ 
+ 		  case FT_STRING:
+-		  case FT_FILE:
++		  case ELV_FT_FILE:
+ 			if (button->shape == 'l')
+ 				if (row == dia->current
+ 				    ? dia->shift > 0

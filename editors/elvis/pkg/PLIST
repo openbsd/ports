@@ -1,45 +1,111 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/09/05 12:14:36 espie Exp $
-bin/elvis
-bin/elvtags
-bin/ref
+@comment $OpenBSD: PLIST,v 1.4 2008/12/11 13:58:14 jasper Exp $
+@bin bin/elvfmt
+@bin bin/elvis
+@bin bin/elvtags
+@bin bin/ref
+@man man/man1/elvfmt.1
 @man man/man1/elvis.1
-@man man/man1/elvtags.1
 @man man/man1/ref.1
+share/doc/elvis/
+share/doc/elvis/bugs.txt
+share/doc/elvis/ctags.man
+share/doc/elvis/doexec.txt
+share/doc/elvis/elvfmt.man
+share/doc/elvis/elvis.html
+share/doc/elvis/elvis.man
+share/doc/elvis/elviscut.html
+share/doc/elvis/elvisdm.html
+share/doc/elvis/elvisex.html
+share/doc/elvis/elvisexp.html
+share/doc/elvis/elvisgui.html
+share/doc/elvis/elvisinp.html
+share/doc/elvis/elvismsg.html
+share/doc/elvis/elvisnet.html
+share/doc/elvis/elvisopt.html
+share/doc/elvis/elvisos.html
+share/doc/elvis/elvisqr.html
+share/doc/elvis/elvisre.html
+share/doc/elvis/elvisses.html
+share/doc/elvis/elvistag.html
+share/doc/elvis/elvistip.html
+share/doc/elvis/elvistrs.msg
+share/doc/elvis/elvisvi.html
+share/doc/elvis/fmt.man
+share/doc/elvis/howto.html
+share/doc/elvis/license.html
+share/doc/elvis/printdoc.bat
+share/doc/elvis/ref.man
 share/elvis/
-@comment share/elvis/ctags.man
-@comment share/elvis/ctags.man.orig
-share/elvis/doexec.txt
 share/elvis/elvis.ali
 share/elvis/elvis.arf
+share/elvis/elvis.awf
 share/elvis/elvis.brf
 share/elvis/elvis.bro
 share/elvis/elvis.bwf
-share/elvis/elvis.html
+share/elvis/elvis.clr
+share/elvis/elvis.glade
+share/elvis/elvis.gnome
 share/elvis/elvis.ini
 share/elvis/elvis.lat
 share/elvis/elvis.msg
 share/elvis/elvis.pc8
 share/elvis/elvis.ps
+share/elvis/elvis.rc
+share/elvis/elvis.spe
 share/elvis/elvis.syn
 share/elvis/elvis.x11
-share/elvis/elviscut.html
-share/elvis/elvisdm.html
-share/elvis/elvisex.html
-share/elvis/elvisexp.html
-share/elvis/elvisgui.html
-share/elvis/elvisinp.html
-share/elvis/elvismsg.html
-share/elvis/elvisnet.html
-share/elvis/elvisopt.html
-share/elvis/elvisos.html
-share/elvis/elvisqr.html
-share/elvis/elvisre.html
-share/elvis/elvisses.html
-share/elvis/elvistag.html
-share/elvis/elvistip.html
-share/elvis/elvistrs.msg
-share/elvis/elvisvi.html
-@comment share/elvis/fmt.man
-share/elvis/howto.html
-share/elvis/license
-share/elvis/printdoc.bat
+share/elvis/icons/
+share/elvis/icons/elvis.xpm
+share/elvis/icons/elvis1.xpm
+share/elvis/icons/elvis2.xpm
+share/elvis/icons/elvis3.xpm
+share/elvis/icons/kde.xpm
+share/elvis/icons/mini.xpm
+share/elvis/icons/normal.xpm
+share/elvis/icons/presley.xpm
+share/elvis/icons/small.xpm
+share/elvis/scripts/
+share/elvis/scripts/align.ex
+share/elvis/scripts/augz.ex
+share/elvis/scripts/cb.ex
+share/elvis/scripts/cursor.ex
+share/elvis/scripts/decode.ex
+share/elvis/scripts/define.ex
+share/elvis/scripts/dict.ex
+share/elvis/scripts/ellipse.ex
+share/elvis/scripts/find.ex
+share/elvis/scripts/fontsize.ex
+share/elvis/scripts/html.ex
+share/elvis/scripts/info.ex
+share/elvis/scripts/info2.ex
+share/elvis/scripts/inregion.ex
+share/elvis/scripts/isearch.ex
+share/elvis/scripts/life.ex
+share/elvis/scripts/likevim.ex
+share/elvis/scripts/mailto.ex
+share/elvis/scripts/makehtml.ex
+share/elvis/scripts/match.ex
+share/elvis/scripts/pig.ex
+share/elvis/scripts/reverse.ex
+share/elvis/scripts/rot13.ex
+share/elvis/scripts/sfb.ex
+share/elvis/scripts/shade.ex
+share/elvis/scripts/show.ex
+share/elvis/scripts/since.ex
+share/elvis/scripts/tags.ex
+share/elvis/scripts/wc.ex
+share/elvis/scripts/whois.ex
+share/elvis/scripts/xbuf.ex
+share/elvis/stubs/
+share/elvis/stubs/ansistub.c
+share/elvis/stubs/gdkstub.c
+share/elvis/stubs/glibstub.c
+share/elvis/stubs/gtkstub.c
+share/elvis/stubs/pthread.c
+share/elvis/stubs/unixstub.c
+share/elvis/stubs/xftstub.c
+share/elvis/stubs/xlibstub.c
+share/elvis/stubs/xpmstub.c
+share/elvis/themes/
+share/elvis/themes/sand.ex
+share/elvis/themes/sand.xpm

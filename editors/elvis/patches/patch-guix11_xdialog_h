@@ -1,0 +1,15 @@
+$OpenBSD: patch-guix11_xdialog_h,v 1.1 2008/12/11 13:58:14 jasper Exp $
+
+Prevent symbol clash with stdio.h .
+
+--- guix11/xdialog.h.orig	Tue Dec  9 23:32:51 2008
++++ guix11/xdialog.h	Tue Dec  9 23:33:01 2008
+@@ -5,7 +5,7 @@ typedef enum {
+ 	FT_ONEOF,	/* one of a preset list; includes boolean */
+ 	FT_NUMBER,	/* numeric field */
+ 	FT_STRING,	/* string field */
+-	FT_FILE,	/* string field where <Tab> does filename completion */
++	ELV_FT_FILE,	/* string field where <Tab> does filename completion */
+ 	FT_LOCKED	/* non-editable field */
+ } X_FIELDTYPE;
+ typedef struct

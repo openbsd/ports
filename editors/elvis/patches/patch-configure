@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2008/12/11 13:58:14 jasper Exp $
+--- configure.orig	Tue Dec  9 12:08:27 2008
++++ configure	Tue Dec  9 12:08:32 2008
+@@ -794,8 +794,6 @@ case "$SYS" in
+ 	why "For OpenBSD, we ignore the <sys/select.h> file"
+ 	NEED_SELECT_H="undef"
+ 	TLIBS="-lcurses"
+-	who "   To support X11, it also requires -lipc"
+-	XLIBS=" -lipc"
+ 	;;
+ 
+   *netbsd*)

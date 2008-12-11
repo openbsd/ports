@@ -1,8 +1,8 @@
-The elvis text editor is intended to be a modern replacement for
-the classic ex/vi editor of unix fame.  It supports many new features,
+The elvis text editor is intended to be a modern replacement for the
+classic ex/vi editor of unix fame.  It supports many new features,
 including multiple edit buffers, multiple windows, multiple user
-interfaces, and a variety of display modes including plain text,
-syntax highlighting, hex dump, HTML and man page formatter.
+interfaces, and a variety of display modes including plain text, syntax
+highlighting, hex dump, HTML and man page formatter.
 
 Available flavors:
-	no_x11  - build without X11 support
+        no_x11  - build without X11 support

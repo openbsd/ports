@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_ctags_man,v 1.1 2008/12/11 13:58:14 jasper Exp $
+--- doc/ctags.man.orig	Tue Dec  9 12:05:48 2008
++++ doc/ctags.man	Tue Dec  9 12:06:12 2008
+@@ -1,8 +1,8 @@
+-.TH CTAGS 1
++.TH ELVCTAGS 1
+ .SH NAME
+-ctags - Generates "tags" and (optionally) "refs" files
++elvctags - Generates "tags" and (optionally) "refs" files
+ .SH SYNOPSIS
+-.B ctags
++.B elvctags
+ .RB [ -D
+ .IR word ]
+ .RB [ -FBNgitvshlpdxra ]
