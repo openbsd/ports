@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2008/11/21 19:31:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2008/12/11 12:36:31 jasper Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
 
-V=			0.3.6
+V=			0.3.8
 DISTNAME=		gtk-vnc-${V}
-PKGNAME-main=		${DISTNAME}p2
-PKGNAME-plugin=		gtk-vnc-plugin-${V}p1
+PKGNAME-main=		${DISTNAME}
+PKGNAME-plugin=		gtk-vnc-plugin-${V}
 
-SHARED_LIBS +=	gtk-vnc-1.0          0.0      # .0.1
+SHARED_LIBS +=	gtk-vnc-1.0          1.0      # .0.1
 CATEGORIES=		x11 net
 
 HOMEPAGE=		http://gtk-vnc.sourceforge.net/
@@ -24,12 +24,12 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gtk-vnc/}
 MODULES=		devel/gettext \
 			lang/python
 
-WANTLIB=	GL GLU ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-		Xext Xfixes Xi Xinerama Xmu Xrandr Xrender Xt atk-1.0 \
-		cairo expat fontconfig freetype gcrypt gdk-x11-2.0 \
-		gdk_pixbuf-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		gpg-error gthread-2.0 gtk-x11-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pangox-1.0 pcre pixman-1 png z
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
+		freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
+		glib-2.0 glitz gmodule-2.0 gobject-2.0 gpg-error gthread-2.0 \
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pcre pixman-1 png tasn1 z
 WANTLIB-main=	${WANTLIB} c pthread
 
 MULTI_PACKAGES=		-main
@@ -38,8 +38,7 @@ FLAVOR?=
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::x11/py-gtk2
-LIB_DEPENDS=		gnutls.>=13::security/gnutls \
-			gdkglext-x11-1.0,gtkglext-x11-1.0::x11/gtkglext
+LIB_DEPENDS=		gnutls.>=13::security/gnutls
 LIB_DEPENDS-plugin=	${LIB_DEPENDS} \
 			gtk-vnc-1.0::${BASE_PKGPATH}
 

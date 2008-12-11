@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugin_Makefile_in,v 1.2 2008/07/13 17:16:25 jasper Exp $
---- plugin/Makefile.in.orig	Mon May  5 22:54:31 2008
-+++ plugin/Makefile.in	Sat Jul 12 14:17:21 2008
-@@ -232,7 +232,7 @@ target_os = @target_os@
+$OpenBSD: patch-plugin_Makefile_in,v 1.3 2008/12/11 12:36:31 jasper Exp $
+--- plugin/Makefile.in.orig	Sun Dec  7 20:44:34 2008
++++ plugin/Makefile.in	Wed Dec 10 23:19:36 2008
+@@ -465,7 +465,7 @@ target_os = @target_os@
  target_vendor = @target_vendor@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -10,7 +10,7 @@ $OpenBSD: patch-plugin_Makefile_in,v 1.2 2008/07/13 17:16:25 jasper Exp $
  @ENABLE_PLUGIN_TRUE@plugin_LTLIBRARIES = gtk-vnc-plugin.la
  @ENABLE_PLUGIN_TRUE@gtk_vnc_plugin_la_SOURCES = \
  @ENABLE_PLUGIN_TRUE@	gtk-vnc-plugin.c gtk-vnc-plugin.h npshell.c npunix.c
-@@ -285,12 +285,12 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
+@@ -518,12 +518,12 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
  	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
  install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
  	@$(NORMAL_INSTALL)
@@ -26,7 +26,7 @@ $OpenBSD: patch-plugin_Makefile_in,v 1.2 2008/07/13 17:16:25 jasper Exp $
  	  else :; fi; \
  	done
  
-@@ -298,8 +298,8 @@ uninstall-pluginLTLIBRARIES:
+@@ -531,8 +531,8 @@ uninstall-pluginLTLIBRARIES:
  	@$(NORMAL_UNINSTALL)
  	@list='$(plugin_LTLIBRARIES)'; for p in $$list; do \
  	  p=$(am__strip_dir) \
@@ -37,7 +37,7 @@ $OpenBSD: patch-plugin_Makefile_in,v 1.2 2008/07/13 17:16:25 jasper Exp $
  	done
  
  clean-pluginLTLIBRARIES:
-@@ -449,7 +449,7 @@ check: check-am
+@@ -682,7 +682,7 @@ check: check-am
  @ENABLE_PLUGIN_FALSE@all-local:
  all-am: Makefile $(LTLIBRARIES) all-local
  installdirs:

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gvnc_c,v 1.1.1.1 2008/05/10 08:35:31 jasper Exp $
---- src/gvnc.c.orig	Fri May  9 23:53:22 2008
-+++ src/gvnc.c	Fri May  9 23:54:48 2008
-@@ -169,6 +169,10 @@ struct gvnc
+$OpenBSD: patch-src_gvnc_c,v 1.2 2008/12/11 12:36:31 jasper Exp $
+--- src/gvnc.c.orig	Sun Dec  7 20:35:14 2008
++++ src/gvnc.c	Wed Dec 10 23:19:36 2008
+@@ -188,6 +188,10 @@ struct gvnc
  #define nibhi(a) (((a) >> 4) & 0x0F)
  #define niblo(a) ((a) & 0x0F)
  
