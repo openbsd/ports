@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_pgsql_drv_c,v 1.4 2007/12/21 14:42:23 todd Exp $
+$OpenBSD: patch-src_pgsql_drv_c,v 1.5 2008/12/11 00:46:01 todd Exp $
 --- src/pgsql_drv.c.orig	Sat Jul 29 15:38:48 2006
 +++ src/pgsql_drv.c	Sun Apr 29 17:57:52 2007
 @@ -1146,7 +1146,7 @@ _ds_get_signature (DSPAM_CTX * CTX, struct _ds_spam_si
@@ -10,6 +10,15 @@ $OpenBSD: patch-src_pgsql_drv_c,v 1.4 2007/12/21 14:42:23 todd Exp $
        return EFAILURE;
      }
      username = strdup(p->pw_name);
+@@ -1241,7 +1241,7 @@
+   mem = PQescapeBytea(SIG->data, SIG->length, &length);
+ 
+   snprintf (scratch, sizeof (scratch),
+-            "INSERT INTO dspam_signature_data (uid, signature, length, created_on, data) VALUES (%d, '%s', %ld, CURRENT_DATE, '",
++            "INSERT INTO dspam_signature_data (uid, signature, length, created_on, data) VALUES (%d, '%s', %ld, CURRENT_DATE, E'",
+             (int)p->pw_uid, signature, SIG->length);
+   buffer_cat (query, scratch);
+   buffer_cat (query, (const char *) mem);
 @@ -1405,7 +1405,7 @@ _ds_get_nextuser (DSPAM_CTX * CTX)
          virtual_username,
          virtual_table);
