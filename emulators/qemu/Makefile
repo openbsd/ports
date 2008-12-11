@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2008/12/11 09:17:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2008/12/11 09:47:06 ajacoutot Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=		amd64 i386 powerpc
 COMMENT=		multi system emulator
 
 DISTNAME=		qemu-0.9.1
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://bellard.org/qemu/
@@ -56,7 +56,8 @@ post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup ${PREFIX}/share/examples/qemu
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown ${PREFIX}/share/examples/qemu
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qemu
-	@${INSTALL_SCRIPT} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/qemu
-	@${SUBST_CMD} ${PREFIX}/share/doc/qemu/README.OpenBSD
+	@${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/doc/qemu/README.OpenBSD
+	@chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/qemu/README.OpenBSD
 
 .include <bsd.port.mk>
