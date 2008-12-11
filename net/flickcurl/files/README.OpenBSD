@@ -1,0 +1,26 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2008/12/11 22:35:42 jasper Exp $
+
+You will need to have a ~/.flickcurl.conf .
+
+1. Get an API key if you don't already have one.
+
+Go to http://www.flickr.com/services/api/keys/ and obtain a "mobile" app
+key You will be give an "api key", "shared secret" and an
+authentication URL.
+
+2. Create a ~/.flickcurl.conf file. For example:
+
+[flickr]
+api_key=<your api key>
+secret=<your shared secret>
+
+3. Get a frob
+Visit your authentication url in a web browser to get a "frob".
+
+4. Exchange the frob for an authentication token
+
+flickcurl -a <your frob>
+
+flickcurl will save the token in yor config file. Don't be fooled by
+'Try `flickcurl --help' for more information.'. Unless you see errors,
+it worked.

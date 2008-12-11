@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/12/11 22:35:42 jasper Exp $
+@lib lib/libflickcurl.so.${LIBflickcurl_VERSION}
