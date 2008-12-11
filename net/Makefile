@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.548 2008/12/08 11:24:15 bernd Exp $
+# $OpenBSD: Makefile,v 1.549 2008/12/11 22:37:07 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -81,6 +81,7 @@
      SUBDIR += farsight
      SUBDIR += filezilla
      SUBDIR += firewalk
+     SUBDIR += flickcurl
      SUBDIR += flow-tools
      SUBDIR += flowd
      SUBDIR += fmirror
