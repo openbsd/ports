@@ -59,7 +59,7 @@ README for OpenBSD users
        $ sudo brconfig bridge0 add tun0 add em0 up
 
   The tunnel and bridge interfaces can also be configured at system startup by
-  editing ${SYSCONFDIR}/hostname.tunN and ${SYSCONFDIR}/bridgename.bridgeN,
+  editing /etc/hostname.tunN and /etc/bridgename.bridgeN,
   respectively (see hostname.if(5)).
 
   After configuring the virtual network we can use sudo to let root open the
