@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/12/11 23:03:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/12/11 23:05:26 jasper Exp $
 
 COMMENT=		synchronization application for GNOME
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=		::devel/gettext \
 			::textproc/py-vobject \
 			::x11/dbus-python \
 			::x11/gnome/tomboy \
-#			::x11/gnome/totem
+			::x11/gnome/totem
 
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
