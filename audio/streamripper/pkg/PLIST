@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/09/05 20:19:58 fgsch Exp $
-bin/streamripper
+@comment $OpenBSD: PLIST,v 1.5 2008/12/11 08:40:25 pea Exp $
+@bin bin/streamripper
 @man man/man1/streamripper.1
