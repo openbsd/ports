@@ -1,0 +1,9 @@
+$OpenBSD: patch-conduit_conduit_real,v 1.1.1.1 2008/12/11 23:03:11 jasper Exp $
+--- conduit/conduit.real.orig	Thu Dec  4 22:20:48 2008
++++ conduit/conduit.real	Thu Dec  4 22:21:03 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!${MODPY_BIN}
+ """
+ This module tests whether conduit appears 
+ to be running from the source directory.

@@ -1,0 +1,9 @@
+$OpenBSD: patch-tools_conduit-client,v 1.1.1.1 2008/12/11 23:03:11 jasper Exp $
+--- tools/conduit-client.orig	Thu Dec  4 22:21:30 2008
++++ tools/conduit-client	Thu Dec  4 22:21:38 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ import os, os.path
+ import sys
+ import getopt

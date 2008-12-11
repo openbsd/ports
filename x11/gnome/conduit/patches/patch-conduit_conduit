@@ -1,0 +1,14 @@
+$OpenBSD: patch-conduit_conduit,v 1.1.1.1 2008/12/11 23:03:11 jasper Exp $
+--- conduit/conduit.orig	Thu Dec  4 22:13:29 2008
++++ conduit/conduit	Thu Dec  4 22:15:39 2008
+@@ -8,8 +8,8 @@
+ # Run mozilla takes care of settin up the appropriate environment variables
+ # to run a program using mozilla libs
+ 
+-for d in `ls -d /usr/lib*/firefox* /usr/lib*/mozilla-firefox* 2> /dev/null | sort -r`
+-do
++d="${LOCALBASE}/mozilla-firefox/"
++
+     if [ -x $d/run-mozilla.sh ]; then
+         echo INFO: FOUND FIREFOX LIBS AT $d
+         $d/run-mozilla.sh `dirname $0`/conduit.real $*
