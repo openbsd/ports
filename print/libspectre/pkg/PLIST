@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/12 16:02:51 ajacoutot Exp $
+%%SHARED%%
+include/libspectre/
+include/libspectre/spectre-document.h
+include/libspectre/spectre-exporter.h
+include/libspectre/spectre-macros.h
+include/libspectre/spectre-page.h
+include/libspectre/spectre-render-context.h
+include/libspectre/spectre-status.h
+include/libspectre/spectre-version.h
+include/libspectre/spectre.h
+lib/libspectre.a
+lib/libspectre.la
+lib/pkgconfig/
+lib/pkgconfig/libspectre.pc
