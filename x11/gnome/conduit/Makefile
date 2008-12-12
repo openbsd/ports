@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/12/11 23:05:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/12/12 08:40:27 ajacoutot Exp $
 
 COMMENT=		synchronization application for GNOME
 
 GNOME_PROJECT=		conduit
 GNOME_VERSION=		0.3.15
+PKGNAME=		${DISTNAME}p0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,13 +22,12 @@ RUN_DEPENDS=		::devel/gettext \
 			::graphics/py-goocanvas \
 			:python-sqlite-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-sqlite \
 			::textproc/py-vobject \
-			::x11/dbus-python \
-			::x11/gnome/tomboy \
-			::x11/gnome/totem
+			::x11/dbus-python
 
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
+
 CONFIGURE_ARGS+= 	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/conduit \
 			--disable-schemas-install \
 			--disable-scrollkeeper \
