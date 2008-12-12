@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/12/11 22:35:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/12/12 08:04:29 ajacoutot Exp $
 
 COMMENT =		flickr API library and utility
 
 DISTNAME =		flickcurl-1.5
+PKGNAME =		${DISTNAME}p0
 SHARED_LIBS +=  flickcurl            0.0      # .0.0
 CATEGORIES =		net
 
@@ -28,7 +29,8 @@ LIB_DEPENDS =		curl.>=10::net/curl \
 			xml2.>=9::textproc/libxml,-main \
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS = 	--without-raptor
+CONFIGURE_ARGS = 	${CONFIGURE_SHARED} \
+			--without-raptor
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/flickcurl
