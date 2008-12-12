@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/12/12 08:40:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2008/12/12 09:15:45 ajacoutot Exp $
 
 COMMENT=		synchronization application for GNOME
 
 GNOME_PROJECT=		conduit
 GNOME_VERSION=		0.3.15
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,6 +17,7 @@ MODULES=		lang/python \
 
 BUILD_DEPENDS=		::x11/gnome/doc-utils \
 			${RUN_DEPENDS}
+# XXX needs avahi for network sync
 RUN_DEPENDS=		::devel/gettext \
 			::devel/xdg-utils \
 			::graphics/py-goocanvas \
@@ -47,6 +48,6 @@ pre-configure:
 			-e 's,/usr/bin/env python,${MODPY_BIN},g;' \
 			-e 's,/usr/bin/python,${MODPY_BIN},g'
 	${SUBST_CMD} ${WRKSRC}/conduit/conduit ${WRKSRC}/conduit/conduit.real \
-		${WRKSRC}/tools/conduit-client
+		${WRKSRC}/tools/conduit-client ${WRKSRC}/conduit/gtkui/UI.py
 
 .include <bsd.port.mk>

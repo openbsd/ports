@@ -1,0 +1,16 @@
+$OpenBSD: patch-conduit_gtkui_UI_py,v 1.1 2008/12/12 09:15:45 ajacoutot Exp $
+--- conduit/gtkui/UI.py.orig	Fri Dec 12 10:03:24 2008
++++ conduit/gtkui/UI.py	Fri Dec 12 10:03:53 2008
+@@ -425,11 +425,7 @@ class MainWindow:
+         """
+         Display help
+         """
+-        if conduit.IS_INSTALLED:
+-            uri = "ghelp:conduit"
+-        else:
+-            #if we are not installed then launch the ghelp uri with a full path
+-            uri = "ghelp:%s" % os.path.join(conduit.DIRECTORY,"help","C","conduit.xml")
++        uri = "ghelp:%s" % os.path.join("${PREFIX}/share/gnome","help","conduit","C","conduit.xml")
+         log.debug("Launching help: %s" % uri)
+         gobject.spawn_async(
+                     argv=("xdg-open",uri),
