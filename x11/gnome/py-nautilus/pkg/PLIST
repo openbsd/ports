@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/12 09:55:03 ajacoutot Exp $
+lib/nautilus/
+lib/nautilus-python/
+lib/nautilus-python/nautilus.la
+lib/nautilus-python/nautilus.so
+lib/nautilus/extensions-2.0/
+lib/nautilus/extensions-2.0/libnautilus-python.la
+lib/nautilus/extensions-2.0/libnautilus-python.so
+lib/pkgconfig/nautilus-python.pc
+share/doc/py-nautilus/
+share/doc/py-nautilus/README
+share/doc/py-nautilus/documentation.py
+share/examples/py-nautilus/
+share/examples/py-nautilus/background-image.py
+share/examples/py-nautilus/block-size-column.py
+share/examples/py-nautilus/md5sum-property-page.py
+share/examples/py-nautilus/open-terminal.py
+share/examples/py-nautilus/submenu.py
