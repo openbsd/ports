@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/02/13 12:07:01 sthen Exp $
-bin/pgadmin3
-bin/pgagent
+@comment $OpenBSD: PLIST,v 1.5 2008/12/12 12:25:16 pea Exp $
+@bin bin/pgadmin3
+@bin bin/pgagent
 share/pgadmin3/
 share/pgadmin3/branding/
 share/pgadmin3/branding/branding.ini
@@ -123,7 +123,9 @@ share/pgadmin3/docs/en_US/password.html
 share/pgadmin3/docs/en_US/pgadmin3.css
 share/pgadmin3/docs/en_US/pgadmin3.hhc
 share/pgadmin3/docs/en_US/pgadmin3.hhp
+@mode 666
 share/pgadmin3/docs/en_US/pgadmin3.hhp.cached
+@mode
 share/pgadmin3/docs/en_US/pgagent-install.html
 share/pgadmin3/docs/en_US/pgagent-jobs.html
 share/pgadmin3/docs/en_US/pgagent-schedules.html

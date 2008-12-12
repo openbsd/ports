@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2008/02/13 12:07:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2008/12/12 12:25:16 pea Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
-VERSION=	1.8.2
+VERSION=	1.8.4
 DISTNAME=	pgadmin3-${VERSION}
 CATEGORIES=	databases devel
 
 HOMEPAGE=	http://www.pgadmin.org/
 
-MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # Artistic license
 PERMIT_PACKAGE_CDROM=	Yes
