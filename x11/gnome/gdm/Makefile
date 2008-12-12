@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2008/11/25 18:27:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2008/12/12 12:59:28 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.8
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
@@ -59,11 +60,5 @@ FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples \
 			dmconfdir=${PREFIX}/share/examples/dm
 post-patch:
 	ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm; \
-	find ${PREFIX}/share/examples/gdm -type d -exec chmod 555 {} \;
-	find ${PREFIX}/share/examples/gdm ! -type d -exec chmod 444 {} \;
-	chmod 644 ${PREFIX}/share/examples/gdm/custom.conf
 
 .include <bsd.port.mk>

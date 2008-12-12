@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2008/11/24 09:10:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2008/12/12 12:59:28 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
@@ -32,39 +32,59 @@ share/examples/gdm/
 share/examples/gdm/Init/
 @sample ${SYSCONFDIR}/X11/gdm/Init/
 share/examples/gdm/Init/Default
+@mode 555
 @sample ${SYSCONFDIR}/X11/gdm/Init/Default
+@mode
 share/examples/gdm/PostLogin/
 @sample ${SYSCONFDIR}/X11/gdm/PostLogin/
 share/examples/gdm/PostLogin/Default.sample
+@mode 555
 @sample ${SYSCONFDIR}/X11/gdm/PostLogin/Default.sample
+@mode
 share/examples/gdm/PostSession/
 @sample ${SYSCONFDIR}/X11/gdm/PostSession/
 share/examples/gdm/PostSession/Default
+@mode 555
 @sample ${SYSCONFDIR}/X11/gdm/PostSession/Default
+@mode
 share/examples/gdm/PreSession/
 @sample ${SYSCONFDIR}/X11/gdm/PreSession/
 share/examples/gdm/PreSession/Default
+@mode 555
 @sample ${SYSCONFDIR}/X11/gdm/PreSession/Default
+@mode
 share/examples/gdm/XKeepsCrashing
+@mode 555
 @sample ${SYSCONFDIR}/X11/gdm/XKeepsCrashing
+@mode
 share/examples/gdm/Xsession
-@mode 711
+@mode 555
 @sample ${SYSCONFDIR}/X11/gdm/Xsession
 @mode
 share/examples/gdm/custom.conf
 @sample ${SYSCONFDIR}/X11/gdm/custom.conf
 share/examples/gdm/locale.alias
+@mode 444
 @sample ${SYSCONFDIR}/X11/gdm/locale.alias
+@mode
 share/examples/gdm/modules/
 @sample ${SYSCONFDIR}/X11/gdm/modules/
 share/examples/gdm/modules/AccessDwellMouseEvents
+@mode 444
 @sample ${SYSCONFDIR}/X11/gdm/modules/AccessDwellMouseEvents
+@mode
 share/examples/gdm/modules/AccessKeyMouseEvents
+@mode 444
 @sample ${SYSCONFDIR}/X11/gdm/modules/AccessKeyMouseEvents
+@mode
 share/examples/gdm/modules/factory-AccessDwellMouseEvents
+@mode 444
 @sample ${SYSCONFDIR}/X11/gdm/modules/factory-AccessDwellMouseEvents
+@mode
 share/examples/gdm/modules/factory-AccessKeyMouseEvents
+@mode 444
 @sample ${SYSCONFDIR}/X11/gdm/modules/factory-AccessKeyMouseEvents
+@mode
 share/gdm/
 share/gdm/BuiltInSessions/
 share/gdm/BuiltInSessions/default.desktop
