@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/11/16 21:19:23 kili Exp $
+@comment $OpenBSD: PLIST,v 1.18 2008/12/12 16:14:57 giovanni Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 %%SHARED%%
 bin/gimp
@@ -998,6 +998,7 @@ share/gimp/2.0/scripts/old-photo.scm
 share/gimp/2.0/scripts/paste-as-brush.scm
 share/gimp/2.0/scripts/paste-as-pattern.scm
 share/gimp/2.0/scripts/perspective-shadow.scm
+share/gimp/2.0/scripts/plug-in-compat.init
 share/gimp/2.0/scripts/predator.scm
 share/gimp/2.0/scripts/pupi-button.scm
 share/gimp/2.0/scripts/rendermap.scm
