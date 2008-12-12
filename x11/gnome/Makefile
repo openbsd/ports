@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2008/12/12 09:17:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2008/12/12 09:55:52 ajacoutot Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -72,6 +72,7 @@
      SUBDIR += py-gnome
      SUBDIR += py-gnome-desktop
      SUBDIR += py-gnome-extras
+     SUBDIR += py-nautilus
      SUBDIR += scan
      SUBDIR += screensaver
      SUBDIR += seahorse
