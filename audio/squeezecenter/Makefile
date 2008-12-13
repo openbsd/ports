@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/17 12:31:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2008/12/13 10:37:28 sthen Exp $
 
 COMMENT =	streaming audio server for Squeezebox network music players
 
@@ -93,6 +93,7 @@ pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/Slim/Utils/OSDetect.pm
 
 NO_BUILD =	yes
+NO_REGRESS =	yes
 PMDIR =		libdata/perl5/site_perl/Slim
 SSLIBDIR =	libdata/squeezecenter
 SSSHAREDIR =	share/squeezecenter
