@@ -1,0 +1,13 @@
+bug-buddy is a graphical bug reporting tool.  It can extract debugging
+information from a crashed application and create either a stacktrace or
+a minidump file to send to the GNOME bug tracker.
+
+bug-buddy uses gdb to collect the stacktrace from the crashed
+application, and google-breakpad to create a minidump if the stacktrace
+doesn't contain enough debugging information.  Stacktraces are then sent
+to the GNOME Bugzilla, while minidumps go to the GNOME Socorro server,
+where they get filed with the missing debug information and, if needed,
+eventually forwarded to Bugzilla.
+
+A GTK+ module, called gnomebreakpad, allows bug-buddy to come up
+automatically every time a GTK+ application crashes.

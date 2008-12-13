@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/12/13 16:58:34 ajacoutot Exp $
+lib/gtk-2.0/modules/libgnomebreakpad.so
