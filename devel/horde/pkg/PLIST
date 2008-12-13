@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2008/10/30 09:41:07 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.17 2008/12/13 08:43:21 mbalmer Exp $
 horde/
 horde/COPYING
 horde/README
@@ -79,6 +79,7 @@ horde/docs/UPGRADING
 horde/index.php
 horde/js/
 horde/js/QuickFinder.js
+horde/js/accesskeys.js
 horde/js/addEvent.php
 horde/js/colorpicker.js
 horde/js/controls.js
@@ -108,6 +109,7 @@ horde/js/slider.js
 horde/js/sorter.js
 horde/js/src/
 horde/js/src/QuickFinder.js
+horde/js/src/accesskeys.js
 horde/js/src/colorpicker.js
 horde/js/src/controls.js
 horde/js/src/dhtmlHistory.js
@@ -393,12 +395,19 @@ horde/lib/Horde/Kolab/Format/XML/event.php
 horde/lib/Horde/Kolab/Format/XML/hprefs.php
 horde/lib/Horde/Kolab/Format/XML/note.php
 horde/lib/Horde/Kolab/Format/XML/task.php
+horde/lib/Horde/Kolab/IMAP/
+horde/lib/Horde/Kolab/IMAP.php
+horde/lib/Horde/Kolab/IMAP/cclient.php
+horde/lib/Horde/Kolab/IMAP/pear.php
+horde/lib/Horde/Kolab/IMAP/test.php
 horde/lib/Horde/Kolab/Server/
 horde/lib/Horde/Kolab/Server.php
 horde/lib/Horde/Kolab/Server/Object/
 horde/lib/Horde/Kolab/Server/Object.php
 horde/lib/Horde/Kolab/Server/Object/address.php
 horde/lib/Horde/Kolab/Server/Object/administrator.php
+horde/lib/Horde/Kolab/Server/Object/adminrole.php
+horde/lib/Horde/Kolab/Server/Object/distlist.php
 horde/lib/Horde/Kolab/Server/Object/domainmaintainer.php
 horde/lib/Horde/Kolab/Server/Object/group.php
 horde/lib/Horde/Kolab/Server/Object/maintainer.php
@@ -407,19 +416,18 @@ horde/lib/Horde/Kolab/Server/Object/sharedfolder.php
 horde/lib/Horde/Kolab/Server/Object/user.php
 horde/lib/Horde/Kolab/Server/ldap.php
 horde/lib/Horde/Kolab/Server/test.php
+horde/lib/Horde/Kolab/Session.php
 horde/lib/Horde/Kolab/Storage/
 horde/lib/Horde/Kolab/Storage.php
 horde/lib/Horde/Kolab/Storage/Cache.php
 horde/lib/Horde/Kolab/Storage/Data.php
 horde/lib/Horde/Kolab/Storage/Folder.php
-horde/lib/Horde/Kolab/Storage/IMAP/
-horde/lib/Horde/Kolab/Storage/IMAP.php
-horde/lib/Horde/Kolab/Storage/IMAP/cclient.php
-horde/lib/Horde/Kolab/Storage/IMAP/pear.php
-horde/lib/Horde/Kolab/Storage/IMAP/test.php
 horde/lib/Horde/Kolab/Storage/List.php
 horde/lib/Horde/Kolab/Storage/Perms.php
-horde/lib/Horde/Kolab/Storage/Session.php
+horde/lib/Horde/Kolab/Test/
+horde/lib/Horde/Kolab/Test.php
+horde/lib/Horde/Kolab/Test/Server.php
+horde/lib/Horde/Kolab/Test/Storage.php
 horde/lib/Horde/LDAP.php
 horde/lib/Horde/Lens/
 horde/lib/Horde/Lens.php
@@ -1034,7 +1042,9 @@ horde/scripts/cookie_login.php
 horde/scripts/get_login.php
 horde/scripts/horde.logrotate
 horde/scripts/http_login_refer.php
+horde/scripts/import_squirrelmail_file_prefs.php
 horde/scripts/import_squirrelmail_prefs.php
+horde/scripts/import_squirrelmail_sql_prefs.php
 horde/scripts/ldap/
 horde/scripts/ldap/horde.prefs.acl
 horde/scripts/ldap/horde.schema
@@ -1951,6 +1961,7 @@ horde/templates/javascript/open_html_helper.js
 horde/templates/javascript/print.js
 horde/templates/javascript/tree.js
 horde/templates/login/
+horde/templates/login/header.inc
 horde/templates/login/login.inc
 horde/templates/login/mobile.inc
 horde/templates/maintenance/
