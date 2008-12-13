@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2008/10/02 20:36:04 simon Exp $
+# $OpenBSD: Makefile,v 1.28 2008/12/13 22:52:55 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	module to interface with the GD graphics library
 
-DISTNAME=	GD-2.30
-PKGNAME=	p5-${DISTNAME}p3
+DISTNAME=	GD-2.41
 CATEGORIES=	graphics
-
-HOMEPAGE=	http://stein.cshl.org/WWW/software/GD
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
