@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2008/12/13 16:59:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2008/12/13 17:53:38 ajacoutot Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -65,6 +65,7 @@
      SUBDIR += metacity
      SUBDIR += mime-data
      SUBDIR += mono-gnome
+     SUBDIR += mousetweaks
      SUBDIR += nautilus
      SUBDIR += orca
      SUBDIR += panel
