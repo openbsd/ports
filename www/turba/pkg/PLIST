@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/10/30 09:45:50 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.12 2008/12/13 08:48:20 mbalmer Exp $
 horde/turba/
 horde/turba/LICENSE
 horde/turba/README
@@ -124,12 +124,13 @@ horde/turba/lib/tests/ApiTest.php
 horde/turba/lib/tests/BrowsePageTest.php
 horde/turba/lib/tests/DriverTest.php
 horde/turba/lib/tests/GroupTest.php
+horde/turba/lib/tests/KolabTest.php
+horde/turba/lib/tests/KolabTestBase.php
 horde/turba/lib/tests/ListTest.php
 horde/turba/lib/tests/ListViewTest.php
 horde/turba/lib/tests/TestBase.php
 horde/turba/lib/tests/ViewBrowseTest.php
 horde/turba/lib/tests/az.png
-horde/turba/lib/tests/bug5476.phpt
 horde/turba/lib/tests/bug_6518.phpt
 horde/turba/lib/tests/import.ldif
 horde/turba/lib/tests/importCRLF.ldif
@@ -310,7 +311,8 @@ horde/turba/po/zh_TW.po
 horde/turba/scripts/
 horde/turba/scripts/.htaccess
 horde/turba/scripts/Turba.reg
-horde/turba/scripts/import_squirrelmail_abook.php
+horde/turba/scripts/import_squirrelmail_file_abook.php
+horde/turba/scripts/import_squirrelmail_sql_abook.php
 horde/turba/scripts/import_vcards.php
 horde/turba/scripts/ldap/
 horde/turba/scripts/ldap/addou
@@ -333,6 +335,7 @@ horde/turba/scripts/upgrades/2.1_to_2.2_add_sql_share_tables.oci8.sql
 horde/turba/scripts/upgrades/2.1_to_2.2_add_sql_share_tables.pgsql.sql
 horde/turba/scripts/upgrades/2.1_to_2.2_add_sql_share_tables.sql
 horde/turba/scripts/upgrades/2.1_to_2.2_sql_schema.php
+horde/turba/scripts/upgrades/2.2.1_to_2.3.pgsql.sql
 horde/turba/scripts/upgrades/2.2.1_to_2.3.sql
 horde/turba/scripts/upgrades/2007-06-17_flatten_shares.php
 horde/turba/scripts/upgrades/2008-09-23_fix_group_uid.sql
