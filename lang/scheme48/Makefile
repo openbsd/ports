@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2008/08/19 22:20:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/12/14 21:30:27 sthen Exp $
 
 COMMENT=	Scheme Underground's implementation of R5RS
 
 V=		1.8
 DISTNAME=	scheme48-$V
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.s48.org/
 
-MAINTAINER=	Aaron Hsu <arcfide@sacrificumdeo.net>
+MAINTAINER=	Aaron Hsu <arcfide@sacrideo.us>
 
 # 3-clause BSD
 PERMIT_PACKAGE_CDROM=	Yes
