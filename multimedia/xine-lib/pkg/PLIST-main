@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2008/06/18 01:26:41 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2008/12/14 23:57:34 brad Exp $
 @pkgpath multimedia/xine-lib
 %%i386%%
 bin/xine-config
@@ -59,6 +59,7 @@ lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_visualizations.so
 @comment lib/xine/plugins/${XINEAPI_REV}/vidix/
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_file.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_none.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_sndio.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_sun.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_a52.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_bitplane.so

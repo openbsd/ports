@@ -1,0 +1,105 @@
+$OpenBSD: patch-configure_ac,v 1.1 2008/12/14 23:57:34 brad Exp $
+--- configure.ac.orig	Wed Aug 13 12:26:38 2008
++++ configure.ac	Wed Dec 10 23:54:45 2008
+@@ -206,6 +206,10 @@ AC_PROG_GMSGFMT_PLURAL
+ 
+ AC_CHECK_FUNCS([nl_langinfo])
+ 
++LIBICONV=$LTLIBICONV
++LIBINTL=$LTLIBINTL
++INTLLIBS=$LTLIBINTL
++
+ dnl ---------------------------------------------
+ dnl Checks for typedefs, structures, and compiler characteristics.
+ dnl ---------------------------------------------
+@@ -537,9 +541,9 @@ t q
+ b
+ :q
+ q"
+-x_lib_location="`ls -1 "${x_libraries:-/usr/local/lib}/libX11.so"* "${x_libraries:-/usr/lib}/libX11.so"* 2>/dev/null | sed -e \"${soname_script}\"`"
++x_lib_location="`ls -1 "${x_libraries:-/usr/local/lib}/libX11.so"* "${x_libraries:-/usr/lib}/libX11.so"* 2>/dev/null | sed 1q`"
+ AC_DEFINE_UNQUOTED([LIBX11_SO], "${x_lib_location:-libX11.so}", [The soname of libX11, needed for dlopen()])
+-x_lib_location="`ls -1 "${x_libraries:-/usr/local/lib}/libXv.so"*  "${x_libraries:-/usr/lib}/libXv.so"*  2>/dev/null | sed -e \"${soname_script}\"`"
++x_lib_location="`ls -1 "${x_libraries:-/usr/local/lib}/libXv.so"*  "${x_libraries:-/usr/lib}/libXv.so"*  2>/dev/null | sed 1q`"
+ AC_DEFINE_UNQUOTED([LIBXV_SO],  "${x_lib_location:-libXv.so}",  [The soname of libXv, needed for dlopen()])
+ 
+ 
+@@ -1264,7 +1268,7 @@ if test "x$enable_a52dec" = "xno"; then
+   AC_MSG_RESULT([a52dec support disabled])
+ elif test "x$external_a52dec" = "xyes"; then
+   have_a52="yes"
+-  AC_CHECK_HEADERS([a52dec/a52.h a52dec/a52_internal.h],, have_a52="no",
++  AC_CHECK_HEADERS([a52dec/a52.h],, have_a52="no",
+ [
+   #ifdef HAVE_SYS_TYPES_H
+   # include <sys/types.h>
+@@ -1355,9 +1359,10 @@ if test "x$with_mng" = "xyes"; then
+   AC_CHECK_LIB(mng, mng_initialize,
+ 	[ AC_CHECK_HEADER(libmng.h,
+ 		[ have_libmng=yes
+-		  MNG_LIBS="-lmng" ], 
++		  MNG_LIBS="-lmng -llcms -ljpeg -lz -lm" ], 
+ 		AC_MSG_RESULT([*** All libmng dependent parts will be disabled ***]))],
+-	AC_MSG_RESULT([*** All libmng dependent parts will be disabled ***]))
++	AC_MSG_RESULT([*** All libmng dependent parts will be disabled ***]),
++	[-llcms -ljpeg -lz -lm])
+   AC_SUBST(MNG_LIBS)
+ else
+   have_libmng=no
+@@ -1550,6 +1555,28 @@ AM_CONDITIONAL([HAVE_JACK], [test "x$have_jack" = "xye
+ 
+ 
+ dnl ---------------------------------------------
++dnl sndio support
++dnl ---------------------------------------------
++
++AC_ARG_WITH([sndio],
++	AS_HELP_STRING([--without-sndio], [Build without sndio support]))
++
++if test "x$with_sndio" != "xno"; then
++   AC_CHECK_LIB(sndio, sio_open, [SNDIO_LIBS=-lsndio; have_sndio=yes],
++     [have_sndio=no])
++
++   if test "x$with_sndio" = "xyes" && test "x$have_sndio" = "xno"; then
++      AC_MSG_ERROR([sndio support requested, but sndio not found])
++   fi
++fi
++
++AM_CONDITIONAL([HAVE_SNDIO], [test "x$have_sndio" = "xyes"])
++
++AC_SUBST([SNDIO_CFLAGS])
++AC_SUBST([SNDIO_LIBS])
++
++
++dnl ---------------------------------------------
+ dnl gnome-vfs support
+ dnl ---------------------------------------------
+ 
+@@ -2513,7 +2540,7 @@ dnl ---------------------------------------------
+ 
+ XINE_BUILD_CC="`$CC -v 2>&1 | tail -1 2>/dev/null`"
+ XINE_BUILD_OS="`uname -s -r -m`"
+-XINE_BUILD_DATE="`date \"+%a %d %b %Y %T\"`"
++XINE_BUILD_DATE="`date "+%a %d %b %Y %T"`"
+ AC_SUBST(XINE_BUILD_CC)
+ AC_SUBST(XINE_BUILD_OS)
+ AC_SUBST(XINE_BUILD_DATE)
+@@ -2651,7 +2678,7 @@ case $host in
+      dnl FreeBSD (et al.) does not complete linking for shared objects when pthreads
+      dnl are requested, as different implementations are present; to avoid problems
+      dnl use -Wl,-z,defs only for those platform not behaving this way.
+-     *-freebsd*) ;;
++     *-freebsd*|*-openbsd*) ;;
+      *)
+ 	AC_TRY_LDFLAGS([-Wl,-z,defs], [NOUNDEF="-Wl,-z,defs"])
+ 	;;
+@@ -3173,6 +3200,9 @@ if test "x$have_pulseaudio" = "xyes"; then
+ fi
+ if test "x$have_jack" = "xyes"; then
+   echo "   - Jack"
++fi
++if test "x$have_sndio" = "xyes"; then
++  echo "   - sndio"
+ fi
+ echo "---"
+ 

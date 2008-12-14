@@ -1,7 +1,69 @@
-$OpenBSD: patch-src_audio_out_Makefile_in,v 1.10 2008/07/02 01:02:42 brad Exp $
---- src/audio_out/Makefile.in.orig	Sun Jun 29 13:13:02 2008
-+++ src/audio_out/Makefile.in	Sun Jun 29 20:54:11 2008
-@@ -632,7 +632,7 @@ xineplug_ao_out_sun_la_LDFLAGS = -avoid-version -modul
+$OpenBSD: patch-src_audio_out_Makefile_in,v 1.11 2008/12/14 23:57:34 brad Exp $
+--- src/audio_out/Makefile.in.orig	Thu Aug 14 17:18:39 2008
++++ src/audio_out/Makefile.in	Thu Dec 11 00:23:10 2008
+@@ -170,6 +170,18 @@ xineplug_ao_out_jack_la_LINK = $(LIBTOOL) --tag=CC $(A
+ 	$(xineplug_ao_out_jack_la_LDFLAGS) $(LDFLAGS) -o $@
+ @HAVE_JACK_TRUE@am_xineplug_ao_out_jack_la_rpath = -rpath \
+ @HAVE_JACK_TRUE@	$(xineplugdir)
++xineplug_ao_out_sndio_la_DEPENDENCIES = $(XINE_LIB) \
++	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
++am_xineplug_ao_out_sndio_la_OBJECTS =  \
++	xineplug_ao_out_sndio_la-audio_sndio_out.lo
++xineplug_ao_out_sndio_la_OBJECTS =  \
++	$(am_xineplug_ao_out_sndio_la_OBJECTS)
++xineplug_ao_out_sndio_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
++	$(LIBTOOLFLAGS) --mode=link $(CCLD) \
++	$(xineplug_ao_out_sndio_la_CFLAGS) $(CFLAGS) \
++	$(xineplug_ao_out_sndio_la_LDFLAGS) $(LDFLAGS) -o $@
++@HAVE_SNDIO_TRUE@am_xineplug_ao_out_sndio_la_rpath = -rpath \
++@HAVE_SNDIO_TRUE@	$(xineplugdir)
+ xineplug_ao_out_none_la_DEPENDENCIES = $(XINE_LIB) \
+ 	$(am__DEPENDENCIES_1)
+ am_xineplug_ao_out_none_la_OBJECTS =  \
+@@ -233,6 +245,7 @@ SOURCES = $(xineplug_ao_out_alsa_la_SOURCES) \
+ 	$(xineplug_ao_out_file_la_SOURCES) \
+ 	$(xineplug_ao_out_fusionsound_la_SOURCES) \
+ 	$(xineplug_ao_out_jack_la_SOURCES) \
++	$(xineplug_ao_out_sndio_la_SOURCES) \
+ 	$(xineplug_ao_out_none_la_SOURCES) \
+ 	$(xineplug_ao_out_oss_la_SOURCES) \
+ 	$(xineplug_ao_out_pulseaudio_la_SOURCES) \
+@@ -246,6 +259,7 @@ DIST_SOURCES = $(xineplug_ao_out_alsa_la_SOURCES) \
+ 	$(xineplug_ao_out_file_la_SOURCES) \
+ 	$(xineplug_ao_out_fusionsound_la_SOURCES) \
+ 	$(xineplug_ao_out_jack_la_SOURCES) \
++	$(xineplug_ao_out_sndio_la_SOURCES) \
+ 	$(xineplug_ao_out_none_la_SOURCES) \
+ 	$(xineplug_ao_out_oss_la_SOURCES) \
+ 	$(xineplug_ao_out_pulseaudio_la_SOURCES) \
+@@ -355,6 +369,8 @@ IRIXAL_LIBS = @IRIXAL_LIBS@
+ IRIXAL_STATIC_LIB = @IRIXAL_STATIC_LIB@
+ JACK_CFLAGS = @JACK_CFLAGS@
+ JACK_LIBS = @JACK_LIBS@
++SNDIO_CFLAGS = @SNDIO_CFLAGS@
++SNDIO_LIBS = @SNDIO_LIBS@
+ KSTAT_LIBS = @KSTAT_LIBS@
+ LDFLAGS = @LDFLAGS@
+ LIBCDIO_CFLAGS = @LIBCDIO_CFLAGS@
+@@ -583,6 +599,7 @@ EXTRA_DIST = audio_irixal_out.c
+ @HAVE_PULSEAUDIO_TRUE@pulseaudio_module = xineplug_ao_out_pulseaudio.la
+ @HAVE_FUSIONSOUND_TRUE@fusionsound_module = xineplug_ao_out_fusionsound.la
+ @HAVE_JACK_TRUE@jack_module = xineplug_ao_out_jack.la
++@HAVE_SNDIO_TRUE@sndio_module = xineplug_ao_out_sndio.la
+ 
+ # IMPORTANT:
+ # ---------
+@@ -600,7 +617,8 @@ xineplug_LTLIBRARIES = xineplug_ao_out_none.la xineplu
+ 	$(pulseaudio_module) \
+ 	$(directx2_module)	\
+ 	$(fusionsound_module) \
+-	$(jack_module)
++	$(jack_module) \
++	$(sndio_module)
+ 
+ xineplug_ao_out_none_la_SOURCES = audio_none_out.c
+ xineplug_ao_out_none_la_LIBADD = $(XINE_LIB) $(LTLIBINTL)
+@@ -632,7 +650,7 @@ xineplug_ao_out_sun_la_LDFLAGS = -avoid-version -modul
  #xineplug_ao_out_irixal_la_CFLAGS = $(VISIBILITY_FLAG) $(IRIXAL_CFLAGS)
  #xineplug_ao_out_irixal_la_LDFLAGS = -avoid-version -module
  xineplug_ao_out_arts_la_SOURCES = audio_arts_out.c
@@ -10,3 +72,45 @@ $OpenBSD: patch-src_audio_out_Makefile_in,v 1.10 2008/07/02 01:02:42 brad Exp $
  xineplug_ao_out_arts_la_CFLAGS = $(VISIBILITY_FLAG) $(ARTS_CFLAGS)
  xineplug_ao_out_arts_la_LDFLAGS = -avoid-version -module
  xineplug_ao_out_directx_la_SOURCES = audio_directx_out.c
+@@ -667,6 +685,10 @@ xineplug_ao_out_jack_la_SOURCES = audio_jack_out.c
+ xineplug_ao_out_jack_la_LIBADD = $(XINE_LIB) $(JACK_LIBS) $(LTLIBINTL)
+ xineplug_ao_out_jack_la_CFLAGS = $(VISIBILITY_FLAG) $(JACK_CFLAGS)
+ xineplug_ao_out_jack_la_LDFLAGS = -avoid-version -module
++xineplug_ao_out_sndio_la_SOURCES = audio_sndio_out.c
++xineplug_ao_out_sndio_la_LIBADD = $(XINE_LIB) $(SNDIO_LIBS)
++xineplug_ao_out_sndio_la_CFLAGS = $(VISIBILITY_FLAG) $(SNDIO_CFLAGS)
++xineplug_ao_out_sndio_la_LDFLAGS = -avoid-version -module
+ all: all-am
+ 
+ .SUFFIXES:
+@@ -745,6 +767,8 @@ xineplug_ao_out_fusionsound.la: $(xineplug_ao_out_fusi
+ 	$(xineplug_ao_out_fusionsound_la_LINK) $(am_xineplug_ao_out_fusionsound_la_rpath) $(xineplug_ao_out_fusionsound_la_OBJECTS) $(xineplug_ao_out_fusionsound_la_LIBADD) $(LIBS)
+ xineplug_ao_out_jack.la: $(xineplug_ao_out_jack_la_OBJECTS) $(xineplug_ao_out_jack_la_DEPENDENCIES) 
+ 	$(xineplug_ao_out_jack_la_LINK) $(am_xineplug_ao_out_jack_la_rpath) $(xineplug_ao_out_jack_la_OBJECTS) $(xineplug_ao_out_jack_la_LIBADD) $(LIBS)
++xineplug_ao_out_sndio.la: $(xineplug_ao_out_sndio_la_OBJECTS) $(xineplug_ao_out_sndio_la_DEPENDENCIES)
++	$(xineplug_ao_out_sndio_la_LINK) $(am_xineplug_ao_out_sndio_la_rpath) $(xineplug_ao_out_sndio_la_OBJECTS) $(xineplug_ao_out_sndio_la_LIBADD) $(LIBS)
+ xineplug_ao_out_none.la: $(xineplug_ao_out_none_la_OBJECTS) $(xineplug_ao_out_none_la_DEPENDENCIES) 
+ 	$(xineplug_ao_out_none_la_LINK) -rpath $(xineplugdir) $(xineplug_ao_out_none_la_OBJECTS) $(xineplug_ao_out_none_la_LIBADD) $(LIBS)
+ xineplug_ao_out_oss.la: $(xineplug_ao_out_oss_la_OBJECTS) $(xineplug_ao_out_oss_la_DEPENDENCIES) 
+@@ -769,6 +793,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xineplug_ao_out_file_la-audio_file_out.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xineplug_ao_out_fusionsound_la-audio_fusionsound_out.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xineplug_ao_out_jack_la-audio_jack_out.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xineplug_ao_out_sndio_la-audio_sndio_out.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xineplug_ao_out_none_la-audio_none_out.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xineplug_ao_out_oss_la-audio_oss_out.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xineplug_ao_out_pulseaudio_la-audio_pulse_out.Plo@am__quote@
+@@ -857,6 +882,13 @@ xineplug_ao_out_jack_la-audio_jack_out.lo: audio_jack_
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='audio_jack_out.c' object='xineplug_ao_out_jack_la-audio_jack_out.lo' libtool=yes @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(xineplug_ao_out_jack_la_CFLAGS) $(CFLAGS) -c -o xineplug_ao_out_jack_la-audio_jack_out.lo `test -f 'audio_jack_out.c' || echo '$(srcdir)/'`audio_jack_out.c
++
++xineplug_ao_out_sndio_la-audio_sndio_out.lo: audio_sndio_out.c
++@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(xineplug_ao_out_sndio_la_CFLAGS) $(CFLAGS) -MT xineplug_ao_out_sndio_la-audio_sndio_out.lo -MD -MP -MF $(DEPDIR)/xineplug_ao_out_sndio_la-audio_sndio_out.Tpo -c -o xineplug_ao_out_sndio_la-audio_sndio_out.lo `test -f 'audio_sndio_out.c' || echo '$(srcdir)/'`audio_sndio_out.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/xineplug_ao_out_sndio_la-audio_sndio_out.Tpo $(DEPDIR)/xineplug_ao_out_sndio_la-audio_sndio_out.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='audio_sndio_out.c' object='xineplug_ao_out_sndio_la-audio_sndio_out.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(xineplug_ao_out_sndio_la_CFLAGS) $(CFLAGS) -c -o xineplug_ao_out_sndio_la-audio_sndio_out.lo `test -f 'audio_sndio_out.c' || echo '$(srcdir)/'`audio_sndio_out.c
+ 
+ xineplug_ao_out_none_la-audio_none_out.lo: audio_none_out.c
+ @am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(xineplug_ao_out_none_la_CFLAGS) $(CFLAGS) -MT xineplug_ao_out_none_la-audio_none_out.lo -MD -MP -MF $(DEPDIR)/xineplug_ao_out_none_la-audio_none_out.Tpo -c -o xineplug_ao_out_none_la-audio_none_out.lo `test -f 'audio_none_out.c' || echo '$(srcdir)/'`audio_none_out.c

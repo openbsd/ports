@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2008/09/25 20:43:09 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2008/12/14 23:57:34 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-jack=		jackd audio output module for xine-lib
 
 V=			1.1.15
 DISTNAME=		xine-lib-${V}
-PKGNAME-main=		${DISTNAME}p4
+PKGNAME-main=		${DISTNAME}p5
 PKGNAME-esd=		xine-lib-esd-${V}
 PKGNAME-arts=		xine-lib-arts-${V}
 PKGNAME-jack=		xine-lib-jack-${V}
@@ -32,7 +32,7 @@ MULTI_PACKAGES=		-main -esd -arts -jack
 
 WANTLIB=		expat fontconfig freetype m z
 WANTLIB-main=		${WANTLIB} X11 Xau Xdmcp Xext Xinerama Xrandr \
-			Xrender Xv c jpeg lcms pthread usbhid
+			Xrender Xv c jpeg lcms pthread sndio usbhid
 WANTLIB-esd=		${WANTLIB}
 WANTLIB-arts=		${WANTLIB} pcre stdc++ glib-2.0 \
 			gmodule-2.0 gthread-2.0
@@ -87,7 +87,8 @@ MAKE_FLAGS+=		TOMSMOCOMP_LINKS=
 MAKE_FLAGS+=		TOMSMOCOMP_LINKS=\#
 .endif
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS+=	--disable-optimizations \
 			--disable-mlib \
 			--disable-opengl \
@@ -134,6 +135,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			ac_cv_member_audio_info_t_output_muted=yes
 
 post-extract:
+	@cp ${FILESDIR}/audio_sndio_out.c ${WRKSRC}/src/audio_out
 .if ${MACHINE_ARCH} == "i386"
 	@cp ${FILESDIR}/i386_set_ldt.c ${WRKSRC}/src/libw32dll/wine
 .endif
