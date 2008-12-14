@@ -1,7 +1,7 @@
-$OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2008/11/11 22:22:41 jasper Exp $
---- data/Makefile.in.orig	Tue Nov 11 22:16:32 2008
-+++ data/Makefile.in	Tue Nov 11 22:17:49 2008
-@@ -270,7 +270,7 @@ schemas_in_files = \
+$OpenBSD: patch-data_Makefile_in,v 1.2 2008/12/14 18:46:46 ajacoutot Exp $
+--- data/Makefile.in.orig	Tue Nov 25 00:21:31 2008
++++ data/Makefile.in	Sun Dec 14 17:36:34 2008
+@@ -276,7 +276,7 @@ schemas_in_files = \
  	$(NULL)
  
  schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
