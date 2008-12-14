@@ -1,3 +1,5 @@
+/*	$OpenBSD: audio_sndio_out.c,v 1.2 2008/12/14 23:58:46 brad Exp $	*/
+
 /*
  * Copyright (c) 2008 Brad Smith <brad@comstyle.com>
  *
