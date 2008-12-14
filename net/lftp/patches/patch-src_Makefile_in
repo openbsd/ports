@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2008/12/14 13:04:19 kevlo Exp $
+--- src/Makefile.in.orig	Thu Nov 27 16:19:51 2008
++++ src/Makefile.in	Sun Dec 14 14:17:51 2008
+@@ -118,7 +118,7 @@ libLTLIBRARIES_INSTALL = $(INSTALL)
+ pkgverlibLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES) \
+ 	$(pkgverlib_LTLIBRARIES)
+-cmd_mirror_la_LIBADD =
++cmd_mirror_la_LIBADD = $(GNULIB)
+ am_cmd_mirror_la_OBJECTS = MirrorJob.lo
+ cmd_mirror_la_OBJECTS = $(am_cmd_mirror_la_OBJECTS)
+ cmd_mirror_la_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \

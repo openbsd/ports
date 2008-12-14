@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.19 2008/11/25 07:28:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2008/12/14 13:04:19 kevlo Exp $
 @bin bin/lftp
 bin/lftpget
+@comment lib/charset.alias
 lib/lftp/
 lib/liblftp-jobs.a
 lib/liblftp-jobs.la

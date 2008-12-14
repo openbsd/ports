@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.72 2008/11/25 07:28:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2008/12/14 13:04:19 kevlo Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
-DISTNAME=	lftp-3.7.0
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	lftp-3.7.7
 CATEGORIES=	net
 
 HOMEPAGE=	http://lftp.yar.ru/
@@ -25,7 +24,8 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= gnu 
 CONFIGURE_ARGS=	--with-openssl \
-		--without-gnutls
+		--without-gnutls \
+		--disable-shared
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
