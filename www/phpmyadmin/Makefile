@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2008/11/14 03:44:23 kevlo Exp $ 
+# $OpenBSD: Makefile,v 1.28 2008/12/14 11:10:50 kevlo Exp $ 
 
 COMMENT=	tool to handle the administration of MySQL over the web
 
-V=		2.11.9.3
+V=		2.11.9.4
 DISTNAME=	phpMyAdmin-${V}
 CATEGORIES=	www
 HOMEPAGE=	http://www.phpmyadmin.net/
