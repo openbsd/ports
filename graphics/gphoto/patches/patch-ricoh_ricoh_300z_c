@@ -1,7 +1,15 @@
-$OpenBSD: patch-ricoh_ricoh_300z_c,v 1.1 2004/05/15 18:37:53 naddy Exp $
---- ricoh/ricoh_300z.c.orig	2004-05-15 19:28:40.000000000 +0200
-+++ ricoh/ricoh_300z.c	2004-05-15 19:29:10.000000000 +0200
-@@ -914,12 +914,12 @@ char *ricoh_300z_summary() {
+$OpenBSD: patch-ricoh_ricoh_300z_c,v 1.2 2008/12/14 19:18:02 ajacoutot Exp $
+--- ricoh/ricoh_300z.c.orig	Sun Oct  3 01:41:37 1999
++++ ricoh/ricoh_300z.c	Sat Dec 13 15:44:23 2008
+@@ -4,6 +4,7 @@
+ #include <jpeglib.h>
+ #include <setjmp.h>
+ #include <time.h>
++#include <string.h>
+ #include "../src/gphoto.h"
+ #include "../src/util.h"
+ 
+@@ -914,12 +915,12 @@ char *ricoh_300z_summary() {
  char *ricoh_300z_description() {
  
  	return(

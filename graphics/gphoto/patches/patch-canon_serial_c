@@ -1,0 +1,11 @@
+$OpenBSD: patch-canon_serial_c,v 1.1 2008/12/14 19:18:02 ajacoutot Exp $
+--- canon/serial.c.orig	Sat Dec 13 13:22:26 2008
++++ canon/serial.c	Sat Dec 13 13:23:06 2008
+@@ -19,6 +19,7 @@
+ #include <sys/time.h>
+ #include <errno.h>
+ #include <sys/ioctl.h>
++#include <string.h>
+ 
+ #include "util.h"
+ 

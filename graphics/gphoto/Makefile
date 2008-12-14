@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.24 2008/12/14 19:18:02 ajacoutot Exp $
 
 COMMENT=	universal digital camera picture control tool
 
 DISTNAME=	gphoto-0.4.3
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 SHARED_LIBS=	gphoto_canon		0.0	\
 		gphoto_casio_qv		0.0	\
 		gphoto_coolpix600	0.0	\
@@ -29,6 +29,7 @@ HOMEPAGE=	http://www.gphoto.org/
 
 LIB_DEPENDS=	gdk_imlib::graphics/imlib
 
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

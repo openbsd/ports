@@ -1,0 +1,11 @@
+$OpenBSD: patch-mustek_core_c,v 1.1 2008/12/14 19:18:02 ajacoutot Exp $
+--- mustek/core.c.orig	Sat Dec 13 13:24:52 2008
++++ mustek/core.c	Sat Dec 13 13:25:02 2008
+@@ -27,6 +27,7 @@
+ #include <termios.h>
+ #include <sys/time.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include "print.h"
+ #include "device.h"
+ 

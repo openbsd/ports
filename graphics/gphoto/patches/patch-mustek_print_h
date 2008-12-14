@@ -1,0 +1,11 @@
+$OpenBSD: patch-mustek_print_h,v 1.1 2008/12/14 19:18:02 ajacoutot Exp $
+--- mustek/print.h.orig	Sat Dec 13 14:58:47 2008
++++ mustek/print.h	Sat Dec 13 14:58:57 2008
+@@ -5,6 +5,7 @@
+ #ifndef DEFINE_PRINT_H
+ #define DEFINE_PRINT_H
+ #include <stdio.h>
++#include <string.h>
+ 
+ /* Message or Errors from the gphoto API */
+ #define printAPINote			if (1) printf 

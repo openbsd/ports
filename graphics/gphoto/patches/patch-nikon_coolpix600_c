@@ -1,0 +1,11 @@
+$OpenBSD: patch-nikon_coolpix600_c,v 1.1 2008/12/14 19:18:02 ajacoutot Exp $
+--- nikon/coolpix600.c.orig	Sat Dec 13 15:43:26 2008
++++ nikon/coolpix600.c	Sat Dec 13 15:43:40 2008
+@@ -61,6 +61,7 @@
+ #include<setjmp.h>
+ #include<sys/time.h>
+ #include<signal.h>
++#include <string.h>
+ #include "../src/gphoto.h"
+ #include "../src/util.h"
+ 

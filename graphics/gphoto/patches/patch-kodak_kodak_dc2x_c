@@ -1,7 +1,7 @@
-$OpenBSD: patch-kodak_kodak_dc2x_c,v 1.1 2004/05/15 18:37:53 naddy Exp $
---- kodak/kodak_dc2x.c.orig	2004-05-15 19:25:03.000000000 +0200
-+++ kodak/kodak_dc2x.c	2004-05-15 19:25:18.000000000 +0200
-@@ -357,15 +357,15 @@ dc20_info->model, dc20_info->pic_taken, 
+$OpenBSD: patch-kodak_kodak_dc2x_c,v 1.2 2008/12/14 19:18:02 ajacoutot Exp $
+--- kodak/kodak_dc2x.c.orig	Sun Dec  5 19:48:53 1999
++++ kodak/kodak_dc2x.c	Sat Dec 13 13:22:12 2008
+@@ -357,15 +357,15 @@ dc20_info->model, dc20_info->pic_taken, dc20_info->pic
  char *kodak_dc2x_description() {
  
  	return(
