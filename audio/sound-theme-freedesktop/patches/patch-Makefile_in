@@ -1,0 +1,16 @@
+There is not potfile yet, so the intltool-merge command is started
+without argument which gives an error ; it does not break the build
+itself although it looks like it does.
+
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/12/14 18:42:36 ajacoutot Exp $
+--- Makefile.in.orig	Sun Dec 14 14:23:08 2008
++++ Makefile.in	Sun Dec 14 14:23:22 2008
+@@ -685,7 +685,7 @@ uninstall-am: uninstall-themeDATA
+ 
+ 
+ %.theme: %.theme.in
+-	$(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
++	$(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
+ 
+ # Creating ChangeLog from git log (taken from cairo/Makefile.am):
+ 
