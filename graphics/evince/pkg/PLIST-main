@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/05/21 22:13:35 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/12/14 19:33:49 ajacoutot Exp $
 @pkgpath graphics/evince
-bin/evince
-bin/evince-thumbnailer
+@bin bin/evince
+@bin bin/evince-thumbnailer
 include/evince-2.20/
 include/evince-2.20/evince/
 include/evince-2.20/evince/ev-async-renderer.h
@@ -24,28 +24,24 @@ include/evince-2.20/evince/ev-image.h
 include/evince-2.20/evince/ev-link-action.h
 include/evince-2.20/evince/ev-link-dest.h
 include/evince-2.20/evince/ev-link.h
+include/evince-2.20/evince/ev-page.h
 include/evince-2.20/evince/ev-render-context.h
 include/evince-2.20/evince/ev-selection.h
 include/evince-2.20/evince/ev-transition-effect.h
 lib/evince/
 lib/evince/backends/
-lib/evince/backends/libpdfdocument.a
 lib/evince/backends/libpdfdocument.la
 lib/evince/backends/libpdfdocument.so
-lib/evince/backends/libpixbufdocument.a
 lib/evince/backends/libpixbufdocument.la
 lib/evince/backends/libpixbufdocument.so
-lib/evince/backends/libpsdocument.a
 lib/evince/backends/libpsdocument.la
 lib/evince/backends/libpsdocument.so
-lib/evince/backends/libtiffdocument.a
 lib/evince/backends/libtiffdocument.la
 lib/evince/backends/libtiffdocument.so
 lib/evince/backends/pdfdocument.evince-backend
 lib/evince/backends/pixbufdocument.evince-backend
 lib/evince/backends/psdocument.evince-backend
 lib/evince/backends/tiffdocument.evince-backend
-lib/libevbackend.a
 lib/libevbackend.la
 @lib lib/libevbackend.so.${LIBevbackend_VERSION}
 @man man/man1/evince.1
@@ -101,6 +97,10 @@ share/gnome/help/evince/ca/
 share/gnome/help/evince/ca/evince.xml
 share/gnome/help/evince/ca/figures/
 share/gnome/help/evince/ca/figures/evince_start_window.png
+share/gnome/help/evince/de/
+share/gnome/help/evince/de/evince.xml
+share/gnome/help/evince/de/figures/
+share/gnome/help/evince/de/figures/evince_start_window.png
 share/gnome/help/evince/el/
 share/gnome/help/evince/el/evince.xml
 share/gnome/help/evince/el/figures/
@@ -157,13 +157,16 @@ share/gnome/help/evince/uk/
 share/gnome/help/evince/uk/evince.xml
 share/gnome/help/evince/uk/figures/
 share/gnome/help/evince/uk/figures/evince_start_window.png
+share/gnome/help/evince/vi/
+share/gnome/help/evince/vi/evince.xml
+share/gnome/help/evince/vi/figures/
+share/gnome/help/evince/vi/figures/evince_start_window.png
 share/gnome/help/evince/zh_CN/
 share/gnome/help/evince/zh_CN/evince.xml
 share/gnome/help/evince/zh_CN/figures/
 share/gnome/help/evince/zh_CN/figures/evince_start_window.png
 share/gtk-doc/html/evince/
 share/gtk-doc/html/evince/EvAttachment.html
-share/gtk-doc/html/evince/EvJobPrint.html
 share/gtk-doc/html/evince/EvNavigationAction.html
 share/gtk-doc/html/evince/EvNavigationActionWidget.html
 share/gtk-doc/html/evince/EvPageAction.html
@@ -171,6 +174,7 @@ share/gtk-doc/html/evince/EvPageActionWidget.html
 share/gtk-doc/html/evince/EvWindow.html
 share/gtk-doc/html/evince/evince-EvHistory.html
 share/gtk-doc/html/evince/evince-EvImage.html
+share/gtk-doc/html/evince/evince-EvJobFind.html
 share/gtk-doc/html/evince/evince-EvPasswordDialog.html
 share/gtk-doc/html/evince/evince-EvPasswordView.html
 share/gtk-doc/html/evince/evince-EvRenderContext.html
@@ -193,7 +197,6 @@ share/gtk-doc/html/evince/evince-ev-document-transition.html
 share/gtk-doc/html/evince/evince-ev-document.html
 share/gtk-doc/html/evince/evince-ev-file-exporter.html
 share/gtk-doc/html/evince/evince-ev-file-helpers.html
-share/gtk-doc/html/evince/evince-ev-job-queue.html
 share/gtk-doc/html/evince/evince-ev-link-action.html
 share/gtk-doc/html/evince/evince-ev-link-dest.html
 share/gtk-doc/html/evince/evince-ev-link.html
@@ -263,6 +266,9 @@ share/locale/ja/LC_MESSAGES/evince.mo
 share/locale/ka/LC_MESSAGES/evince.mo
 share/locale/kn/LC_MESSAGES/evince.mo
 share/locale/ko/LC_MESSAGES/evince.mo
+share/locale/ks/
+share/locale/ks/LC_MESSAGES/
+share/locale/ks/LC_MESSAGES/evince.mo
 share/locale/ku/LC_MESSAGES/evince.mo
 share/locale/lt/LC_MESSAGES/evince.mo
 share/locale/lv/LC_MESSAGES/evince.mo
@@ -278,6 +284,7 @@ share/locale/oc/LC_MESSAGES/evince.mo
 share/locale/or/LC_MESSAGES/evince.mo
 share/locale/pa/LC_MESSAGES/evince.mo
 share/locale/pl/LC_MESSAGES/evince.mo
+share/locale/ps/LC_MESSAGES/evince.mo
 share/locale/pt/LC_MESSAGES/evince.mo
 share/locale/pt_BR/LC_MESSAGES/evince.mo
 share/locale/ro/LC_MESSAGES/evince.mo
@@ -288,7 +295,7 @@ share/locale/sk/LC_MESSAGES/evince.mo
 share/locale/sl/LC_MESSAGES/evince.mo
 share/locale/sq/LC_MESSAGES/evince.mo
 share/locale/sr/LC_MESSAGES/evince.mo
-share/locale/sr@Latn/LC_MESSAGES/evince.mo
+share/locale/sr@latin/LC_MESSAGES/evince.mo
 share/locale/sv/LC_MESSAGES/evince.mo
 share/locale/ta/LC_MESSAGES/evince.mo
 share/locale/te/LC_MESSAGES/evince.mo
@@ -304,6 +311,7 @@ share/omf/evince/
 share/omf/evince/evince-C.omf
 share/omf/evince/evince-bg.omf
 share/omf/evince/evince-ca.omf
+share/omf/evince/evince-de.omf
 share/omf/evince/evince-el.omf
 share/omf/evince/evince-en_GB.omf
 share/omf/evince/evince-es.omf
@@ -318,6 +326,7 @@ share/omf/evince/evince-ru.omf
 share/omf/evince/evince-sr.omf
 share/omf/evince/evince-sv.omf
 share/omf/evince/evince-uk.omf
+share/omf/evince/evince-vi.omf
 share/omf/evince/evince-zh_CN.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/evince/*.schemas > /dev/null
 share/schemas/evince/

@@ -1,11 +1,11 @@
-$OpenBSD: patch-data_evince_desktop_in_in,v 1.1 2008/05/21 22:13:35 bernd Exp $
+$OpenBSD: patch-data_evince_desktop_in_in,v 1.2 2008/12/14 19:33:48 ajacoutot Exp $
 
 - We want to see the evince application in the menu.
 - The Office menu is more appropriate.
 
---- data/evince.desktop.in.in.orig	Mon Apr  7 23:05:37 2008
-+++ data/evince.desktop.in.in	Thu May 15 19:20:36 2008
-@@ -8,11 +8,11 @@ StartupNotify=true
+--- data/evince.desktop.in.in.orig	Fri Dec 12 17:29:54 2008
++++ data/evince.desktop.in.in	Fri Dec 12 17:30:08 2008
+@@ -8,7 +8,7 @@ StartupNotify=true
  Terminal=false
  Type=Application
  Icon=evince
@@ -14,8 +14,3 @@ $OpenBSD: patch-data_evince_desktop_in_in,v 1.1 2008/05/21 22:13:35 bernd Exp $
  X-GNOME-DocPath=
  X-GNOME-Bugzilla-Bugzilla=GNOME
  X-GNOME-Bugzilla-Product=evince
- X-GNOME-Bugzilla-Component=general
- X-GNOME-Bugzilla-Version=@VERSION@
--Categories=GNOME;GTK;Graphics;VectorGraphics;Viewer;
-+Categories=GNOME;GTK;Office;VectorGraphics;Viewer;
- MimeType=@EVINCE_MIME_TYPES@
