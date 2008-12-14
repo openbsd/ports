@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/11/19 08:06:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/12/14 15:10:15 ajacoutot Exp $
 %%SHARED%%
 @bin bin/canberra-gtk-play
 include/canberra-gtk.h
@@ -29,7 +29,6 @@ share/gnome/autostart/
 share/gnome/autostart/libcanberra-login-sound.desktop
 share/gnome/shutdown/
 share/gnome/shutdown/libcanberra-logout-sound.sh
-share/gtk-doc/html/
 share/gtk-doc/html/libcanberra/
 share/gtk-doc/html/libcanberra/ch01.html
 share/gtk-doc/html/libcanberra/home.png

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/11/19 08:06:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/12/14 15:10:15 ajacoutot Exp $
 
 COMMENT=		implementation of the Freedesktop sound theme spec.
 
 DISTNAME=		libcanberra-0.10
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=  canberra             0.1      # .1.3
 SHARED_LIBS +=  canberra-gtk         0.0      # .0.4
 CATEGORIES=		audio devel
@@ -40,7 +40,12 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/libcanberra \
 			--disable-schemas-install \
-			--localstatedir="/var"
+			--localstatedir="/var" \
+			--enable-gstreamer \
+			--enable-oss \
+			--disable-alsa \
+			--disable-pulse \
+			--disable-tdb
 CONFIGURE_ENV+=         LDFLAGS="-L${LOCALBASE}/lib" \
                         CPPFLAGS="-I${LOCALBASE}/include"
 
