@@ -1,10 +1,9 @@
-#$OpenBSD: Makefile,v 1.18 2008/07/21 18:48:45 sthen Exp $
+#$OpenBSD: Makefile,v 1.19 2008/12/14 19:30:45 ajacoutot Exp $
 
 COMMENT=	Image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	2.10.8
-PKGNAME=	${DISTNAME}p2
+GNOME_VERSION=	2.10.10
 
 SHARED_LIBS=	gthumb	0.0	# .0.0
 
@@ -30,17 +29,18 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 jpeg ltdl m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png popt pthread ssl tiff \
-		usb util xml2 z
+		usb util xml2 z gio-2.0
 
-MODULES=	x11/gnome devel/gettext
+MODULES=	x11/gnome \
+		devel/gettext
 
 BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils
 LIB_DEPENDS=	gnomeui-2.>=2000::x11/gnome/libgnomeui \
 		gphoto2.>=3,gphoto2_port.>=6::graphics/libgphoto2
 RUN_DEPENDS=	::misc/shared-mime-info \
-		:scrollkeeper-*:textproc/scrollkeeper \
-		:yelp-*:x11/gnome/yelp
+		:scrollkeeper-*:textproc/scrollkeeper
 
+MODGNOME_HELP_FILES= Yes
 DESKTOP_FILES=	Yes
 USE_X11=	Yes
 
