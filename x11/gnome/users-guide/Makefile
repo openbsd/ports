@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2008/11/21 18:26:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2008/12/15 22:07:35 jasper Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		general GNOME User Documentation
 
 GNOME_PROJECT=		gnome-user-docs
-GNOME_VERSION=		2.24.0
+GNOME_VERSION=		2.24.1
 PKGNAME=		gnome2-user-docs-${VERSION}
 
 # GFDLv1.1
