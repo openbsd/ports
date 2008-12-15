@@ -1,5 +1,6 @@
---- configure.old	Mon Sep 29 17:11:48 2008
-+++ configure	Mon Sep 29 17:13:03 2008
+$OpenBSD: patch-configure,v 1.48 2008/12/15 21:30:07 naddy Exp $
+--- configure.orig	Sun Oct  7 21:49:33 2007
++++ configure	Mon Dec 15 18:43:58 2008
 @@ -76,7 +76,7 @@ cc_check() {
  }
  
