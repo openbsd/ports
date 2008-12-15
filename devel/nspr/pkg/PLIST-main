@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/07/25 00:42:34 martynas Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/12/15 21:26:04 martynas Exp $
 @pkgpath devel/nspr
 bin/nspr-config
 include/nspr/
@@ -31,6 +31,7 @@ include/nspr/md/_scoos.cfg
 include/nspr/md/_solaris.cfg
 include/nspr/md/_sony.cfg
 include/nspr/md/_sunos4.cfg
+include/nspr/md/_symbian.cfg
 include/nspr/md/_unixware.cfg
 include/nspr/md/_unixware7.cfg
 include/nspr/md/_win16.cfg
