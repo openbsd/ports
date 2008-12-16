@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/12/16 20:31:10 pea Exp $
+--- configure.orig	Fri Sep 19 10:10:21 2008
++++ configure	Fri Sep 19 10:12:23 2008
+@@ -5028,7 +5028,7 @@ if test "${ac_cv_lib_ofx_ofx_set_status_cb+set}" = set
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lofx  $LIBS"
++LIBS="`pkg-config --libs libofx`  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -5087,7 +5087,7 @@ if test $ac_cv_lib_ofx_ofx_set_status_cb = yes; then
+   OFX_0_7="-DOFX_0_7"
+ fi
+ 
+-        DEPS_LIBS="-lofx ${DEPS_LIBS}"
++        DEPS_LIBS="`pkg-config --libs libofx` ${DEPS_LIBS}"
+         CFLAGS="${CFLAGS} $OFX_0_7"
+     else
+         noofx=true
