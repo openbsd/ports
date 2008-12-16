@@ -1,12 +1,12 @@
-$OpenBSD: patch-KeyRing_Makefile_in,v 1.5 2008/06/01 15:27:46 ajacoutot Exp $
---- KeyRing/Makefile.in.orig	Sun Jun  1 16:01:22 2008
-+++ KeyRing/Makefile.in	Sun Jun  1 16:01:42 2008
-@@ -245,7 +245,7 @@ EXTRA_DIST = README.txt
+$OpenBSD: patch-KeyRing_Makefile_in,v 1.6 2008/12/16 08:06:14 ajacoutot Exp $
+--- KeyRing/Makefile.in.orig	Tue Dec 16 08:15:23 2008
++++ KeyRing/Makefile.in	Tue Dec 16 08:15:42 2008
+@@ -249,7 +249,7 @@ EXTRA_DIST = README
  @MAKE_KEYRING_TRUE@lib_LTLIBRARIES = libkeyring.la
  @MAKE_KEYRING_TRUE@libkeyring_la_SOURCES = keyring.c
- @MAKE_KEYRING_TRUE@libkeyring_la_CFLAGS = @PILOT_FLAGS@ @GTK_CFLAGS@ -I$(top_srcdir)
--@MAKE_KEYRING_TRUE@libkeyring_la_LDFLAGS = -lcrypto @GTK_LIBS@
-+@MAKE_KEYRING_TRUE@libkeyring_la_LDFLAGS = -lcrypto @GTK_LIBS@ -module -avoid-version
+ @MAKE_KEYRING_TRUE@libkeyring_la_CFLAGS = @PILOT_FLAGS@ @GTK_CFLAGS@ @LIBGCRYPT_CFLAGS@ -I$(top_srcdir)
+-@MAKE_KEYRING_TRUE@libkeyring_la_LDFLAGS = @OPENSSL_LIBS@ @GTK_LIBS@ @LIBGCRYPT_LIBS@
++@MAKE_KEYRING_TRUE@libkeyring_la_LDFLAGS = @OPENSSL_LIBS@ @GTK_LIBS@ @LIBGCRYPT_LIBS@ -module -avoid-version
  all: all-am
  
  .SUFFIXES:
