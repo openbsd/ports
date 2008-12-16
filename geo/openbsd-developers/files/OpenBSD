@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.32 2008/12/06 03:30:58 jacekm Exp $
+# $OpenBSD: OpenBSD,v 1.33 2008/12/16 15:01:08 dhill Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -30,6 +30,7 @@
 42.26		26.06		"pirofti"	# Paul Irofti
 42.2731		-83.782		"aaron"		# Aaron Campbell
 42.49538	-82.89954	"nick"		# Nick Holland
+43.0277		-86.13		"dhill"		# David Hill
 43.064216	-89.406185	"wcmaier"	# Will Maier
 43.084950	-89.361468	"jolan"		# Jolan Luff
 43.240537 	5.384159	"pea"		# Pierre-Emmanuel Andre
