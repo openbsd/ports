@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.8 2008/11/20 23:41:32 martynas Exp $
+$OpenBSD: README.OpenBSD,v 1.9 2008/12/16 22:33:27 naddy Exp $
 
 If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is
@@ -57,17 +57,8 @@ Value column changes to true.
 
 Using CUPS and LPR for printing
 
-Since version 3, Firefox uses standard printing dialog from gtk+2.
-In order to use CUPS for printing, you will need to install cups
+Since version 3, Firefox uses the standard printing dialog from gtk+2.
+In order to use CUPS for printing, you will need to install the cups
 subpackage of gtk+2, i.e.:
 
 # pkg_add gtk+2-cups
-
-Gtk+2 doesn't try to use LPR printing backend by default.  In order
-to use LPR for printing, create ~/.gtkrc-2.0 with the following
-contents:
-
-gtk-print-backends = "file,lpr,cups"
-
-If you want to make this change available for all users, use
-/etc/gtkrc instead of ~/.gtkrc-2.0.
