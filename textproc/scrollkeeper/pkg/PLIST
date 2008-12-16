@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.15 2007/12/17 20:33:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2008/12/16 10:41:56 jasper Exp $
+@conflict rarian-*
 %%SHARED%%
 bin/scrollkeeper-config
 bin/scrollkeeper-extract
