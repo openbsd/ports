@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.24 2008/10/27 00:02:27 ajacoutot Exp $
+# $OpenBSD: python.port.mk,v 1.25 2008/12/16 06:32:27 fgsch Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -33,7 +33,9 @@ REGRESS_TARGET?=	test
 .endif
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
+.if ${MODPY_VERSION} != "2.6"
 MODPY_EXPAT_DEPENDS=	:python-expat-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-expat	
+.endif
 MODPY_TKINTER_DEPENDS=	:python-tkinter-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-tkinter
 .endif
 
