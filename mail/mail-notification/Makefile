@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2008/12/02 09:11:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2008/12/16 13:16:37 jasper Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-5.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		mail
 
 EXTRACT_SUFX=		.tar.bz2
@@ -71,5 +72,6 @@ do-install:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mail-notification
 	mv ${PREFIX}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/mail-notification
+	rm -fr ${PREFIX}${SYSCONFDIR}
 
 .include <bsd.port.mk>
