@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2008/12/16 18:47:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2008/12/16 19:00:56 naddy Exp $
 
 COMMENT=	mh-e like mail user agent
 
 DISTNAME=	cue-snap-20050502
-PKGNAME=	cue-20050502
+PKGNAME=	cue-20050502p0
 CATEGORIES=	mail
 
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/cue/snap/
