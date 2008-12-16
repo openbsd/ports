@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2008/09/19 21:51:00 rui Exp $
---- configure.orig	Tue Aug  5 10:42:21 2008
-+++ configure	Tue Aug  5 10:42:57 2008
-@@ -19341,7 +19341,7 @@ LOCALSTATEDIR=`eval echo $localstatedir`
+$OpenBSD: patch-configure,v 1.9 2008/12/16 21:04:06 rui Exp $
+--- configure.orig	Thu Nov 20 22:34:53 2008
++++ configure	Sun Dec 14 14:52:42 2008
+@@ -19473,7 +19473,7 @@ LOCALSTATEDIR=`eval echo $localstatedir`
  # Set CFLAGS _after_ all the above checks, since our warnings are stricter
  # than autoconf's macros like.
  if test "$ac_cv_c_compiler_gnu" = yes; then
