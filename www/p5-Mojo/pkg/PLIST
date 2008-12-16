@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/12 17:23:04 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/12/16 07:52:43 simon Exp $
 bin/mojo
 bin/mojolicious
 ${P5SITE}/Mojo/
@@ -25,10 +25,12 @@ ${P5SITE}/Mojo/Headers.pm
 ${P5SITE}/Mojo/HelloWorld.pm
 ${P5SITE}/Mojo/Home.pm
 ${P5SITE}/Mojo/Loader.pm
+${P5SITE}/Mojo/Log.pm
 ${P5SITE}/Mojo/Manual/
 ${P5SITE}/Mojo/Manual.pod
 ${P5SITE}/Mojo/Manual/CodingGuidelines.pod
 ${P5SITE}/Mojo/Manual/Cookbook.pod
+${P5SITE}/Mojo/Manual/Deployment.pod
 ${P5SITE}/Mojo/Manual/FAQ.pod
 ${P5SITE}/Mojo/Manual/FrameworkBuilding.pod
 ${P5SITE}/Mojo/Manual/GettingStarted.pod
@@ -64,6 +66,7 @@ ${P5SITE}/Mojo/Transaction.pm
 ${P5SITE}/Mojo/URL.pm
 ${P5SITE}/Mojo/Upload.pm
 ${P5SITE}/MojoX/
+${P5SITE}/MojoX/Context.pm
 ${P5SITE}/MojoX/Dispatcher/
 ${P5SITE}/MojoX/Dispatcher/Routes/
 ${P5SITE}/MojoX/Dispatcher/Routes.pm
@@ -112,9 +115,11 @@ ${P5SITE}/Test/Mojo/Server.pm
 @man man/man3p/Mojo::HelloWorld.3p
 @man man/man3p/Mojo::Home.3p
 @man man/man3p/Mojo::Loader.3p
+@man man/man3p/Mojo::Log.3p
 @man man/man3p/Mojo::Manual.3p
 @man man/man3p/Mojo::Manual::CodingGuidelines.3p
 @man man/man3p/Mojo::Manual::Cookbook.3p
+@man man/man3p/Mojo::Manual::Deployment.3p
 @man man/man3p/Mojo::Manual::FAQ.3p
 @man man/man3p/Mojo::Manual::FrameworkBuilding.3p
 @man man/man3p/Mojo::Manual::GettingStarted.3p
@@ -144,6 +149,7 @@ ${P5SITE}/Test/Mojo/Server.pm
 @man man/man3p/Mojo::Transaction.3p
 @man man/man3p/Mojo::URL.3p
 @man man/man3p/Mojo::Upload.3p
+@man man/man3p/MojoX::Context.3p
 @man man/man3p/MojoX::Dispatcher::Routes.3p
 @man man/man3p/MojoX::Dispatcher::Routes::Context.3p
 @man man/man3p/MojoX::Dispatcher::Routes::Controller.3p
