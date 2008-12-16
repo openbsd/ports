@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
+--- configure.orig	Tue Dec 16 15:51:41 2008
++++ configure	Tue Dec 16 15:53:47 2008
+@@ -6091,7 +6091,7 @@ ac_cv_env_path=$ENV_PATH
+ 
+                     ac_config_files="$ac_config_files bin/nslogin bin/nsrancid"
+ 
+-          ac_config_files="$ac_config_files bin/prancid"
++          ac_config_files="$ac_config_files bin/prancid bin/fnlogin"
+ 
+                     ac_config_files="$ac_config_files bin/rivlogin bin/rivrancid"
+ 
+@@ -6700,6 +6700,7 @@ do
+   "bin/htrancid" ) CONFIG_FILES="$CONFIG_FILES bin/htrancid" ;;
+   "bin/mrancid" ) CONFIG_FILES="$CONFIG_FILES bin/mrancid" ;;
+   "bin/nlogin" ) CONFIG_FILES="$CONFIG_FILES bin/nlogin" ;;
++  "bin/fnlogin" ) CONFIG_FILES="$CONFIG_FILES bin/fnlogin" ;;
+   "bin/nrancid" ) CONFIG_FILES="$CONFIG_FILES bin/nrancid" ;;
+   "bin/nslogin" ) CONFIG_FILES="$CONFIG_FILES bin/nslogin" ;;
+   "bin/nsrancid" ) CONFIG_FILES="$CONFIG_FILES bin/nsrancid" ;;
+@@ -7134,6 +7135,7 @@ s,@INSTALL@,$ac_INSTALL,;t t
+     bin/htrancid ) chmod a+x $ac_file ;;
+     bin/mrancid ) chmod a+x $ac_file ;;
+     bin/nlogin ) chmod a+x $ac_file ;;
++    bin/fnlogin ) chmod a+x $ac_file ;;
+     bin/nrancid ) chmod a+x $ac_file ;;
+     bin/nslogin ) chmod a+x $ac_file ;;
+     bin/nsrancid ) chmod a+x $ac_file ;;

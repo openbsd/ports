@@ -1,0 +1,11 @@
+$OpenBSD: patch-bin_rancid-fe_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
+--- bin/rancid-fe.in.orig	Tue Dec 16 14:16:01 2008
++++ bin/rancid-fe.in	Tue Dec 16 14:16:34 2008
+@@ -38,6 +38,7 @@ elsif ($vendor =~ /^erx$/i)		{ exec('jerancid', $route
+ elsif ($vendor =~ /^extreme$/i)		{ exec('xrancid', $router); }
+ elsif ($vendor =~ /^ezt3$/i)		{ exec('erancid', $router); }
+ elsif ($vendor =~ /^force10$/i)		{ exec('f10rancid', $router); }
++elsif ($vendor =~ /^fortinet$/i)	{ exec('fnrancid', $router); }
+ elsif ($vendor =~ /^foundry$/i)		{ exec('francid', $router); }
+ elsif ($vendor =~ /^hitachi$/i)		{ exec('htrancid', $router); }
+ elsif ($vendor =~ /^hp$/i)		{ exec('hrancid', $router); }
