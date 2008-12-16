@@ -1,4 +1,7 @@
-$OpenBSD: patch-pdns_Makefile_in,v 1.1.1.1 2008/10/02 18:40:41 jasper Exp $
+$OpenBSD: patch-pdns_Makefile_in,v 1.2 2008/12/16 10:30:27 jasper Exp $
+
+Remove target that we take care of in post-install.
+
 --- pdns/Makefile.in.orig	Mon Sep 22 12:46:55 2008
 +++ pdns/Makefile.in	Mon Sep 22 12:50:20 2008
 @@ -1042,8 +1042,7 @@ info-am:

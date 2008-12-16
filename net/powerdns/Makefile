@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/28 15:21:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2008/12/16 10:30:27 jasper Exp $
 
 COMMENT-main=		modern authoritative nameserver
 COMMENT-mysql=		mysql database access emodule for powerdns
@@ -6,10 +6,10 @@ COMMENT-pgsql=		pgsql database access module for powerdns
 COMMENT-sqlite=		sqlite database access module for powerdns
 COMMENT-sqlite3=	sqlite3 database access module for powerdns
 
-V=			2.9.21.1
+V=			2.9.21.2
 DISTNAME=		pdns-${V}
 PKGNAME=		powerdns-${V}
-PKGNAME-main=		powerdns-${V}p1
+PKGNAME-main=		powerdns-${V}
 PKGNAME-mysql=		powerdns-mysql-${V}
 PKGNAME-pgsql=		powerdns-pgsql-${V}
 PKGNAME-sqlite= 	powerdns-sqlite-${V}
@@ -92,7 +92,11 @@ BACKENDS+=		gsqlite3
 
 USE_LIBTOOL=		Yes
 
-CONFIGURE_STYLE=	gnu
+BUILD_DEPENDS+=          ${MODGNU_AUTOCONF_DEPENDS}
+
+AUTOCONF_VERSION=	2.61
+
+CONFIGURE_STYLE=	gnu autoconf
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-dynmodules="${BACKENDS}" \

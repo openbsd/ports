@@ -1,4 +1,7 @@
-$OpenBSD: patch-pdns_dns_hh,v 1.1.1.1 2008/10/02 18:40:41 jasper Exp $
+$OpenBSD: patch-pdns_dns_hh,v 1.2 2008/12/16 10:30:27 jasper Exp $
+
+Missing header.
+
 --- pdns/dns.hh.orig	Sat Apr 21 23:56:36 2007
 +++ pdns/dns.hh	Sun Aug  3 11:52:57 2008
 @@ -173,6 +173,8 @@ typedef enum  {
