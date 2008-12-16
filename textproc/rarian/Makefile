@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/12/16 10:01:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2008/12/16 19:54:02 jasper Exp $
 
 COMMENT=		documentation metadata library
 
 GNOME_PROJECT=		rarian
 GNOME_VERSION=		0.8.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	rarian               0.0      # .0.0
 CATEGORIES=		textproc
 

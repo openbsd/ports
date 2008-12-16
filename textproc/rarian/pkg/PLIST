@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/16 10:01:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/12/16 19:54:02 jasper Exp $
 @conflict scrollkeeper-*
 %%SHARED%%
 @bin bin/rarian-example
@@ -38,7 +38,8 @@ lib/librarian.a
 lib/librarian.la
 lib/pkgconfig/rarian.pc
 share/help/
-share/help/rarian.document
+share/help/rarian/
+share/help/rarian/rarian.document
 share/librarian/
 share/librarian/Templates/
 share/librarian/Templates/C/
