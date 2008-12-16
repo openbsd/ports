@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2008/12/16 18:47:51 naddy Exp $
 
 COMMENT=	mh-e like mail user agent
 
@@ -16,7 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c crypto z
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.13
+CONFIGURE_STYLE=	autoconf no-autoheader
 CONFIGURE_ARGS=		--enable-ipv6 \
 			--without-canna \
 			--with-openssl=/usr \

@@ -1,0 +1,33 @@
+$OpenBSD: patch-smime_c,v 1.1 2008/12/16 18:47:51 naddy Exp $
+--- smime.c.orig	Thu Feb 12 23:19:04 2004
++++ smime.c	Tue Dec 16 19:42:21 2008
+@@ -126,7 +126,13 @@ smime_decrypt(struct state *state)
+ 	p = CP(&fdb->buf_body);
+ 	ep = CE(&fdb->buf_body);
+ 	decode_text(&p, ep, &cbuf, fdb->flags | FDB_NOCONV);
+-	p7 = d2i_PKCS7(NULL, (u_char **)&cbuf.ptr, cbuf.len);
++	p7bio = BIO_new_mem_buf(cbuf.ptr, cbuf.len);
++	if (p7bio == NULL) {
++		strlcpy(state->status, "no more memory", sizeof(state->status));
++		return -1;
++	}
++	p7 = d2i_PKCS7_bio(p7bio, NULL);
++	BIO_free(p7bio);
+ 	if (p7 == NULL) {
+ 		strlcpy(state->status, "Invalid pkcs7 data",
+ 		    sizeof(state->status));
+@@ -451,7 +457,13 @@ smime_verify(struct state *state)
+ #ifdef SMIME_DEBUG
+  { FILE *fp; fp = fopen("/tmp/smime.p7s", "w"); fwrite(cbuf.ptr, cbuf.len, 1, fp); fclose(fp); }
+ #endif
+-	p7 = d2i_PKCS7(NULL, (u_char **)&cbuf.ptr, cbuf.len);
++	p7bio = BIO_new_mem_buf(cbuf.ptr, cbuf.len);
++	if (p7bio == NULL) {
++		strlcpy(state->status, "no more memory", sizeof(state->status));
++		return -1;
++	}
++	p7 = d2i_PKCS7_bio(p7bio, NULL);
++	BIO_free(p7bio);
+ 	if (p7 == NULL) {
+ 		strlcpy(state->status, "Invalid sign", sizeof(state->status));
+ 		return -1;
