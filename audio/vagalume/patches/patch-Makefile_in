@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/12/16 09:12:53 jasper Exp $
+
+Fix location of .svg icons.
+
+--- Makefile.in.orig	Tue Dec 16 01:09:16 2008
++++ Makefile.in	Tue Dec 16 01:09:37 2008
+@@ -350,7 +350,7 @@ appdata_DATA = data/cover/$(SCR_RESOLUTION)/cover.png
+ @MAEMO_PLATFORM_TRUE@backupconf_DATA = data/vagalume.conf
+ @MAEMO_PLATFORM_TRUE@restoresettingsexecscriptdir = @RESTORE_SETTINGS_SCRIPTS_DIR@
+ @MAEMO_PLATFORM_TRUE@restoresettingsexecscript_SCRIPTS = data/vagalume-rfs.sh
+-@MAEMO_PLATFORM_FALSE@themeicondir = $(appdatadir)/icons/hicolor/scalable/actions
++@MAEMO_PLATFORM_FALSE@themeicondir = $(datadir)/icons/hicolor/scalable/actions
+ @MAEMO_PLATFORM_FALSE@themeicon_DATA = data/buttons/big/*.svg data/buttons/small/*.svg
+ @MAEMO_PLATFORM_FALSE@man1_MANS = $(manpages)
+ edit = sed -e 's,@BINDIR\@,$(bindir),g' -e 's,@PIXMAPDIR\@,$(pixmapdir),g'

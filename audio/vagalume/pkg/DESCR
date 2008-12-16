@@ -1,0 +1,15 @@
+Vagalume is a Last.fm client for GNOME.
+Its main features are:
+
+    * It plays Last.fm radio streams (using protocol v1.2)
+    * Support for different radio stations (personal, neighbours, loved tracks,
+      or any lastfm:// URL)
+    * It supports marking tracks as loved or banned
+    * It can tag artists, tracks and albums
+    * It can send recommendations to other users
+    * It can add tracks to your playlist
+    * It can download free tracks to your hard disk
+    * It can scrobble tracks so they appear in your Last.fm webpage
+    * It sends Now Playing information following the Audioscrobbler Realtime
+      Submission Protocol v1.2.
+    * Supports discovery mode
