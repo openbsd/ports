@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/18 21:26:53 simon Exp $
-bin/beediff
+@comment $OpenBSD: PLIST,v 1.2 2008/12/16 08:14:54 jasper Exp $
+@bin bin/beediff
