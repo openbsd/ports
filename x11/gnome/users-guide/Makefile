@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2008/12/15 22:07:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2008/12/16 07:58:18 ajacoutot Exp $
+
+# This port does not run_depends on devhelp on purpose, as it would
+# create a cyclic dependency.
 
 PKG_ARCH=		*
 
