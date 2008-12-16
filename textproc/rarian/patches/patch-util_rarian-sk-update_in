@@ -1,0 +1,25 @@
+$OpenBSD: patch-util_rarian-sk-update_in,v 1.1.1.1 2008/12/16 10:01:38 jasper Exp $
+
+Fix location to rarian's localstatedir.
+Use the full path to gnugetopt
+
+--- util/rarian-sk-update.in.orig	Sat Nov 22 16:58:05 2008
++++ util/rarian-sk-update.in	Sat Nov 22 16:58:26 2008
+@@ -19,7 +19,7 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ bindir=@bindir@
+-statedir=@localstatedir@/lib/rarian
++statedir=@localstatedir@/db/rarian
+ convert_dir=@CONVERT_DIR@
+ datarootdir=@datarootdir@
+ datadir=@datadir@
+@@ -264,7 +264,7 @@ process_directory ()
+ # They are inherited from scrollkeeper :(
+ 
+ # We use TEMP as set -- seems to nuke the return value of getopt
+-TEMP=`getopt -u -n$(basename $0) -o "o:r:p:vqnhV" \
++TEMP=`${prefix}/bin/gnugetopt -u -n$(basename $0) -o "o:r:p:vqnhV" \
+     	     -- "$@"` \
+     || print_usage
+ 

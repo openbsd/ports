@@ -1,0 +1,12 @@
+$OpenBSD: patch-librarian_rarian-main_c,v 1.1.1.1 2008/12/16 10:01:38 jasper Exp $
+--- librarian/rarian-main.c.orig	Sat Nov 22 17:04:05 2008
++++ librarian/rarian-main.c	Sat Nov 22 17:04:19 2008
+@@ -215,7 +215,7 @@ past:
+     path = getenv ("XDG_DATA_DIRS");
+ 
+     if (!path || !strcmp (path, "")) {
+-        path = "/usr/local/share/:/usr/share/";
++        path = "${PREFIX}/share:/usr/share/";
+     }
+     cur_path = path;
+ 

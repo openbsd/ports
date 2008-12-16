@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/12/16 10:01:38 jasper Exp $
+@lib lib/librarian.so.${LIBrarian_VERSION}

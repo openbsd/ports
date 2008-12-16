@@ -1,0 +1,15 @@
+$OpenBSD: patch-util_rarian-sk-rebuild_in,v 1.1.1.1 2008/12/16 10:01:38 jasper Exp $
+
+Fix location to rarian's localstatedir.
+
+--- util/rarian-sk-rebuild.in.orig	Sat Nov 22 16:51:42 2008
++++ util/rarian-sk-rebuild.in	Sat Nov 22 16:51:59 2008
+@@ -9,7 +9,7 @@ exec_prefix=@exec_prefix@
+ bindir=@bindir@
+ convert_dir=@CONVERT_DIR@
+ datarootdir=@datarootdir@
+-statedir=@localstatedir@/lib/rarian
++statedir=@localstatedir@/db/rarian
+ datadir=@datadir@
+ output_dir=${datadir}/help
+ package_version=@PACKAGE_VERSION@
