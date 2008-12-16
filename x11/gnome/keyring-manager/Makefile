@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/11/14 17:59:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/12/16 12:27:11 jasper Exp $
 
 COMMENT=		keyring management program for the GNOME desktop
 
 GNOME_PROJECT=		gnome-keyring-manager
 GNOME_VERSION=		2.20.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 CATEGORIES=		x11
 
@@ -27,9 +27,9 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		::textproc/scrollkeeper \
-			::x11/gnome/doc-utils
-RUN_DEPENDS=		::x11/gnome/themes-extras
+BUILD_DEPENDS=		::x11/gnome/doc-utils
+RUN_DEPENDS=		::textproc/scrollkeeper \
+			::x11/gnome/themes-extras
 LIB_DEPENDS= 		gnomeui-2::x11/gnome/libgnomeui \
 			gnome-keyring::x11/gnome/keyring
 
