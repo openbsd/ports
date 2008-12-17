@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.15 2008/12/16 14:36:44 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.16 2008/12/17 10:38:59 jasper Exp $
 The OpenBSD/GNOME desktop
 
 * Introduction
@@ -37,6 +37,7 @@ you can install. The most important ones will be mentioned by category:
 
  - Development
    * gedit-plugins - plugins for Gedit
+   * glade3 - user interface builder
    * gnome-devel-docs - developer documentation
 
  - Utilities
