@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2008/12/17 10:38:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2008/12/17 18:47:58 jasper Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.24.2
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 
 CATEGORIES=		x11
 
@@ -27,7 +27,7 @@ WANTLIB=       ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	::textproc/scrollkeeper \
+BUILD_DEPENDS=	::textproc/rarian \
 		::textproc/xmlto \
 		::x11/gnome/controlcenter2
 LIB_DEPENDS=	execinfo::devel/libexecinfo \

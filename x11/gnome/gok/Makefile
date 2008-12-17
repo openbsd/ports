@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/11/21 18:27:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2008/12/17 18:47:57 jasper Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
 GNOME_PROJECT=		gok
 GNOME_VERSION=		2.24.0
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://live.gnome.org/Gok
 
@@ -28,7 +29,7 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS+= 	${RUN_DEPENDS}
-RUN_DEPENDS+=		::textproc/scrollkeeper
+RUN_DEPENDS+=		::textproc/rarian
 LIB_DEPENDS=		wnck-1::devel/libwnck \
 			cspi,loginhelper,spi::x11/gnome/at-spi \
 			gnomeui-2::x11/gnome/libgnomeui \

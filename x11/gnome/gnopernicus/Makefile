@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/11/14 16:14:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2008/12/17 18:47:57 jasper Exp $
 
 COMMENT=		screen reader and magnifier for GNOME desktop
 
 GNOME_PROJECT=		gnopernicus
 GNOME_VERSION=		1.1.2
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 SHARED_LIBS +=  srutil               0.0      # .2.0
 SHARED_LIBS +=  srconf               0.0      # .2.0
 SHARED_LIBS +=  brl                  0.0      # .2.0
@@ -35,9 +35,9 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png popt pthread spi ssl util xml2 z
 
-BUILD_DEPENDS=		::textproc/scrollkeeper \
+BUILD_DEPENDS=		::textproc/rarian \
 			::x11/gnome/libgail-gnome
-RUN_DEPENDS=		::textproc/scrollkeeper \
+RUN_DEPENDS=		::textproc/rarian \
 			::x11/gnome/libgail-gnome
 LIB_DEPENDS=		gnome-mag::x11/gnome/mag \
 			gnomespeech::x11/gnome/speech

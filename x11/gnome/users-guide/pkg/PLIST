@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/12/15 22:07:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2008/12/17 18:47:58 jasper Exp $
 share/gnome/
 share/gnome/help/
 share/gnome/help/gnome-access-guide/
@@ -2129,6 +2129,7 @@ share/gnome/help/user-guide/zh_CN/gospanel.xml
 share/gnome/help/user-guide/zh_CN/gosstartsession.xml
 share/gnome/help/user-guide/zh_CN/gostools.xml
 share/gnome/help/user-guide/zh_CN/user-guide.xml
+share/omf/
 share/omf/gnome-access-guide/
 share/omf/gnome-access-guide/gnome-access-guide-C.omf
 share/omf/gnome-access-guide/gnome-access-guide-de.omf
@@ -2179,5 +2180,5 @@ share/omf/user-guide/user-guide-ru.omf
 share/omf/user-guide/user-guide-sv.omf
 share/omf/user-guide/user-guide-th.omf
 share/omf/user-guide/user-guide-zh_CN.omf
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update

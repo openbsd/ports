@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/11/20 01:41:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2008/12/17 18:47:58 jasper Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
 GNOME_VERSION=	0.12.1
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	x11
 
 # LGPLv2.1
@@ -36,7 +36,7 @@ RUN_DEPENDS=	::lang/mono \
 		::sysutils/ndesk-dbus-glib \
 		::x11/gnome/mono-gnome \
 		:shared-mime-info->=0.21:misc/shared-mime-info \
-		:scrollkeeper-*:textproc/scrollkeeper \
+		::textproc/rarian \
 		:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme \
 
 CONFIGURE_ARGS=	--disable-schemas-install \

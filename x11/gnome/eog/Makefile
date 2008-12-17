@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2008/11/24 22:27:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2008/12/17 18:47:57 jasper Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		2.24.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		graphics
 
 # GPLv2
@@ -32,7 +33,7 @@ LIB_DEPENDS=		gnome-desktop-2.>=5::x11/gnome/desktop \
 			exif::graphics/libexif \
 			lcms.>=1::graphics/lcms
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
-			:scrollkeeper-*:textproc/scrollkeeper \
+			::textproc/rarian \
 			:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
 
 MODGNOME_HELP_FILES=	Yes

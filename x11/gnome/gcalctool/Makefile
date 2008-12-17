@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2008/11/24 23:29:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2008/12/17 18:47:57 jasper Exp $
 
 COMMENT=		GTK2 desktop calculator
 
 GNOME_PROJECT=		gcalctool
 GNOME_VERSION=		5.24.2
+PKGNAME=		${DISTNAME}p0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +23,6 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		::devel/bison \
 			::devel/gconf2 \
-			::textproc/scrollkeeper \
 			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2008/11/21 16:56:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2008/12/17 18:47:57 jasper Exp $
 
 COMMENT=		easy GNOME menu editing tool
 
 GNOME_PROJECT=		alacarte
 GNOME_VERSION=		0.11.6
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 # LGPLv2
@@ -22,7 +23,7 @@ RUN_DEPENDS=		::devel/gettext \
 			:py-gtk2->=2.8.6:x11/py-gtk2 \
 			:gnome-menus-*:x11/gnome/menus \
 			:py-gnome-*:x11/gnome/py-gnome \
-			::textproc/scrollkeeper
+			::textproc/rarian
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes

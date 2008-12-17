@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2008/11/21 19:20:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2008/12/17 18:47:58 jasper Exp $
 
 COMMENT=		dialogs for GNOME
 
 GNOME_PROJECT=		zenity
 GNOME_VERSION=		2.24.0
+PKGNAME=		${DISTNAME}p0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,8 +23,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:gnome-doc-utils-*:x11/gnome/doc-utils \
-			:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=		:gnome-doc-utils-*:x11/gnome/doc-utils
 LIB_DEPENDS=		dbus-glib-1.>=3::x11/dbus-glib \
 			gnomecanvas-2::x11/gnome/libgnomecanvas \
 			notify::devel/libnotify

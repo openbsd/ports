@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2008/11/25 13:46:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.30 2008/12/17 18:47:58 jasper Exp $
 %%SHARED%%
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
@@ -714,7 +714,7 @@ share/schemas/gnome-panel/workspace-switcher.schemas
 @exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --load %D/share/schemas/gnome-panel/panel-default-setup.entries > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-battstat,v 1.17 2008/11/25 08:19:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-battstat,v 1.18 2008/12/17 18:47:57 jasper Exp $
 lib/bonobo/servers/GNOME_BattstatApplet.server
 @bin libexec/battstat-applet-2
 share/examples/gnome-applets2/
@@ -139,8 +139,8 @@ share/omf/battstat/battstat-uk.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gnome-applets2/battstat.schemas > /dev/null
 share/schemas/gnome-applets2/battstat.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-applets2/battstat.schemas > /dev/null
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update
 @extraunexec rmdir %D/gnome/sound/events 2>/dev/null || true
 @extraunexec rmdir %D/gnome/sound 2>/dev/null || true
 @extraunexec rmdir %D/gnome 2>/dev/null || true

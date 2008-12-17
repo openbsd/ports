@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/07/26 10:39:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/12/17 18:47:57 jasper Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	2.0.12
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 
 CATEGORIES=	net multimedia
 
@@ -33,9 +33,9 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
+BUILD_DEPENDS=	::textproc/rarian \
 		::x11/gnome/doc-utils
-RUN_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=	::textproc/rarian
 LIB_DEPENDS=	gnomeui-2.>=2000::x11/gnome/libgnomeui \
 		opal::net/opal \
 		SDL.>=8::devel/sdl \

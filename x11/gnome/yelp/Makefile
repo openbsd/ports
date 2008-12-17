@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2008/06/02 17:58:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2008/12/17 18:47:58 jasper Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		2.18.1
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,8 +26,7 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		::devel/xulrunner,-devel \
 			:gnome-doc-utils-*:x11/gnome/doc-utils
-RUN_DEPENDS=		:scrollkeeper->=0.3.14:textproc/scrollkeeper \
-			:docbook-dsssl-*:textproc/docbook-dsssl \
+RUN_DEPENDS=		:docbook-dsssl-*:textproc/docbook-dsssl \
 			:gnome2-user-docs-*:x11/gnome/users-guide \
 			:gnome-doc-utils-*:x11/gnome/doc-utils
 LIB_DEPENDS=		startup-notification-1::devel/startup-notification \

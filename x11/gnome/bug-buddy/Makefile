@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/12/13 16:58:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/12/17 18:47:57 jasper Exp $
 
 COMMENT=	graphical bug reporting tool for GNOME
 
 GNOME_PROJECT=	bug-buddy
 GNOME_VERSION=	2.24.2
+PKGNAME=	${DISTNAME}p0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,7 +28,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	::textproc/scrollkeeper
+BUILD_DEPENDS=	::textproc/rarian
 LIB_DEPENDS=	camel-1.2,ebook-1.2,edataserver-1.2,smime3.>=22,softokn3::databases/evolution-data-server \
 		gnome-menu.>=4::x11/gnome/menus \
 		gnomeui-2.>=2400::x11/gnome/libgnomeui \

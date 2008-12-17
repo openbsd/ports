@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/21 14:15:29 ajacoutot Exp $
-bin/ekiga
+@comment $OpenBSD: PLIST,v 1.2 2008/12/17 18:47:57 jasper Exp $
+@bin bin/ekiga
 bin/ekiga-config-tool
-bin/ekiga-helper
+@bin bin/ekiga-helper
 lib/bonobo/
 lib/bonobo/servers/
 lib/bonobo/servers/ekiga.server
@@ -308,7 +308,7 @@ share/sounds/ekiga/dialtone.wav
 share/sounds/ekiga/newmessage.wav
 share/sounds/ekiga/ring.wav
 share/sounds/ekiga/voicemail.wav
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

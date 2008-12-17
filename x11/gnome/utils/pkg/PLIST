@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2008/11/22 19:09:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2008/12/17 18:47:58 jasper Exp $
 %%SHARED%%
 @bin bin/baobab
 @bin bin/gnome-dictionary
@@ -667,8 +667,8 @@ share/schemas/gnome-utils/gnome-screenshot.schemas
 share/schemas/gnome-utils/gnome-search-tool.schemas
 share/schemas/gnome-utils/logview.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-utils/*.schemas > /dev/null
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

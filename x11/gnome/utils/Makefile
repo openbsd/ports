@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2008/11/23 00:07:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2008/12/17 18:47:58 jasper Exp $
 
 COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS +=  gdict-1.0      6.0      # .6.3
 
 # GPLv3
@@ -29,7 +29,7 @@ LIB_DEPENDS=		gtop-2.0.>=7::devel/libgtop2 \
 			gnomeui-2.>=1800::x11/gnome/libgnomeui \
 			panel-applet-2::x11/gnome/panel
 RUN_DEPENDS=		:fam-*:sysutils/fam \
-			:scrollkeeper->=0.3.12:textproc/scrollkeeper \
+			::textproc/rarian \
 			::x11/gnome/gvfs
 
 MODULES=		devel/gettext \

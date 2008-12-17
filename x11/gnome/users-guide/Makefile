@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2008/12/16 07:58:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2008/12/17 18:47:58 jasper Exp $
 
 # This port does not run_depends on devhelp on purpose, as it would
 # create a cyclic dependency.
@@ -9,7 +9,7 @@ COMMENT=		general GNOME User Documentation
 
 GNOME_PROJECT=		gnome-user-docs
 GNOME_VERSION=		2.24.1
-PKGNAME=		gnome2-user-docs-${VERSION}
+PKGNAME=		gnome2-user-docs-${VERSION}p0
 
 # GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,9 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		x11/gnome
 
-RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			:gnome-doc-utils-*:x11/gnome/doc-utils
+RUN_DEPENDS=		::textproc/rarian
+BUILD_DEPENDS=		::x11/gnome/doc-utils
 
 USE_LIBTOOL=		No
 CONFIGURE_ARGS= 	--disable-scrollkeeper

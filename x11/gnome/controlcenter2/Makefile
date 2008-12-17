@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2008/12/14 19:22:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2008/12/17 18:47:57 jasper Exp $
 
 # XXX
 # fix gconftool-2 calls in PLIST (remove 2>&1 ; also in gnome-settings-daemon)
@@ -8,7 +8,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		control-center2-${VERSION}p1
+PKGNAME=		control-center2-${VERSION}p2
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
 
@@ -47,12 +47,12 @@ LIB_DEPENDS=		canberra,canberra-gtk:libcanberra->=0.10p0:audio/libcanberra \
 			metacity-private::x11/gnome/metacity \
 			panel-applet-2::x11/gnome/panel
 BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
-			::textproc/scrollkeeper \
+			::textproc/rarian \
 			::x11/gnome/settings-daemon
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			::multimedia/gstreamer-0.10/plugins-good,-esd \
 			::multimedia/gstreamer-0.10/plugins-good,-gconf \
-			::textproc/scrollkeeper \
+			::textproc/rarian \
 			::x11/gnome/settings-daemon \
 			::audio/sound-theme-freedesktop
 

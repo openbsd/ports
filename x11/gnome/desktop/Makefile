@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2008/11/25 13:26:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2008/12/17 18:47:57 jasper Exp $
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 GNOME_VERSION=		2.24.2
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=  gnome-desktop-2      5.8      # .5.16
 SHARED_LIBS +=  gnome-desktop-2      6.0      # .9.4
 
@@ -29,7 +30,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
-RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
+RUN_DEPENDS=		::textproc/rarian \
 			::x11/gnome/py-gnome
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			startup-notification-1::devel/startup-notification

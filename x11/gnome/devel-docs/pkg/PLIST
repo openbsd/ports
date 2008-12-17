@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/12/15 22:03:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/12/17 18:47:57 jasper Exp $
 share/gnome/help/gdp-handbook/
 share/gnome/help/gdp-handbook/C/
 share/gnome/help/gdp-handbook/C/builddocs.xml
@@ -402,5 +402,5 @@ share/omf/platform-overview/platform-overview-fr.omf
 share/omf/platform-overview/platform-overview-it.omf
 share/omf/platform-overview/platform-overview-oc.omf
 share/omf/platform-overview/platform-overview-ru.omf
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update

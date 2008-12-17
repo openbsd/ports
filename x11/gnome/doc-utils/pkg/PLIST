@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/04/25 09:53:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/12/17 18:47:57 jasper Exp $
 bin/gnome-doc-prepare
 bin/gnome-doc-tool
 bin/xml2po
@@ -83,8 +83,6 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/es/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/et/LC_MESSAGES/gnome-doc-utils.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/fi/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/fr/LC_MESSAGES/gnome-doc-utils.mo
@@ -148,6 +146,8 @@ share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/sr/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/sv/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ta/
@@ -166,10 +166,9 @@ share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-doc-utils.mo
-share/locale/zh_HK/
-share/locale/zh_HK/LC_MESSAGES/
 share/locale/zh_HK/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-doc-utils.mo
+share/omf/
 share/omf/gnome-doc-make/
 share/omf/gnome-doc-make/gnome-doc-make-C.omf
 share/omf/gnome-doc-xslt/
@@ -230,5 +229,5 @@ share/xml2po/gs.pyc
 @comment share/xml2po/ubuntu.pyc
 share/xml2po/xhtml.py
 share/xml2po/xhtml.pyc
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update
