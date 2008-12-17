@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2008/12/16 10:41:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2008/12/17 18:38:17 jasper Exp $
+
+IGNORE= 		superseded by rarian
 
 COMMENT=		Scrollkeeper Open Documentation Cataloging System
 

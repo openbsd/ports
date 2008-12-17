@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.248 2008/12/06 13:40:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.249 2008/12/17 18:38:17 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -217,6 +217,7 @@
      SUBDIR += py-vobject
      SUBDIR += py-xml
      SUBDIR += py-yaml
+     SUBDIR += rarian
      SUBDIR += rman
      SUBDIR += ruby-builder
      SUBDIR += ruby-erubis
