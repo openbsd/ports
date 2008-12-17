@@ -1,0 +1,12 @@
+$OpenBSD: patch-policy_Makefile_in,v 1.1.1.1 2008/12/17 01:34:53 kevlo Exp $
+--- policy/Makefile.in.orig	Mon Dec 15 12:43:31 2008
++++ policy/Makefile.in	Mon Dec 15 12:43:44 2008
+@@ -436,7 +436,7 @@ install-data-hook:
+ 	$(INSTALL_DATA) smb-rw.bif.bro $(DESTDIR)${bropolicydir}/smb-rw.bif.bro
+ 	$(INSTALL_DATA) smtp-rw.bif.bro $(DESTDIR)${bropolicydir}/smtp-rw.bif.bro
+ 	$(INSTALL_DATA) strings.bif.bro $(DESTDIR)${bropolicydir}/strings.bif.bro
+-	test -d ${bropolicydir}/site || mkdir ${bropolicydir}/site
++	test -d $(DESTDIR)${bropolicydir}/site || mkdir $(DESTDIR)${bropolicydir}/site
+ 
+ uninstall-local:
+ 	rm -f ${bropolicydir}/bro.bif.bro

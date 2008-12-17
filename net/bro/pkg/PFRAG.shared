@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/12/17 01:34:53 kevlo Exp $
+@lib lib/libbroccoli.so.${LIBbroccoli_VERSION}
