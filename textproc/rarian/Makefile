@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/12/16 19:54:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/12/17 18:25:40 jasper Exp $
 
 COMMENT=		documentation metadata library
 
 GNOME_PROJECT=		rarian
 GNOME_VERSION=		0.8.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=	rarian               0.0      # .0.0
 CATEGORIES=		textproc
 
@@ -29,7 +29,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--localstatedir="/var" \
 			--with-xml-catalog="/var/db/xmlcatalog" \
-			--with-omfdirs="${LOCALBASE}/share/omf" \
+			--with-omfdirs="${PREFIX}/share/omf" \
 			--enable-installed \
 			--enable-scrollkeeper-compat \
 			--enable-omf-read \
