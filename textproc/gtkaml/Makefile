@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/11/24 19:30:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2008/12/17 13:55:02 ajacoutot Exp $
 
-COMMENT=		application markup language for GTK+Vala
+COMMENT=		XML parser that extends the Vala.Parser
 
-DISTNAME=		gtkaml-0.2.2.1
+DISTNAME=		gtkaml-0.2.2.2
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://gtkaml.googlecode.com/
