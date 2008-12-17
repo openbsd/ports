@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/06 10:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2008/12/17 12:25:59 ajacoutot Exp $
 
 COMMENT=		send small notifications to your desktop
 
-DISTNAME=		notification-daemon-0.3.7
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		notification-daemon-0.4.0
 CATEGORIES=		sysutils net
 
 HOMEPAGE=		http://www.galago-project.org/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE ORBit-2 SM X11 XRes Xau Xcursor Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 expat \
-		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
-		glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png pthread startup-notification-1 xml2 z Xcomposite Xdamage
+WANTLIB=	ICE ORBit-2 SM X11 XRes Xau Xcomposite Xcursor Xdamage \
+		Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c \
+		cairo dbus-1 dbus-glib-1 expat fontconfig freetype \
+		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz \
+		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
+		png pthread startup-notification-1 xml2 z
 
 MASTER_SITES=		${HOMEPAGE}/files/releases/source/notification-daemon/
 EXTRACT_SUFX=		.tar.bz2
@@ -27,19 +27,25 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext \
 			textproc/intltool
 
+LIB_DEPENDS=		gconf-2::devel/gconf2 \
+			notify.>=2::devel/libnotify \
+			glade-2.0.>=1::devel/libglade2 \
+			gstreamer-0.10::multimedia/gstreamer-0.10/core \
+			wnck-1::devel/libwnck \
+			sexy::x11/libsexy
+RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
+
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_X11=		Yes
+
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-dbus-sys="${SYSCONFDIR}/dbus-1/system.d" \
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--with-dbus-sys="${SYSCONFDIR}/dbus-1/system.d" \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/notification-daemon \
 			--disable-schemas-install \
+			--enable-sound=gstreamer
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-LIB_DEPENDS=		gconf-2::devel/gconf2 \
-			wnck-1::devel/libwnck \
-			dbus-glib-1::x11/dbus-glib \
-			sexy::x11/libsexy
 
 .include <bsd.port.mk>
