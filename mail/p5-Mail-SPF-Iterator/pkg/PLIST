@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/09 21:04:48 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/12/17 00:20:35 bluhm Exp $
+bin/spflookup
 ${P5SITE}/Mail/
 ${P5SITE}/Mail/SPF/
 ${P5SITE}/Mail/SPF/Iterator.pm

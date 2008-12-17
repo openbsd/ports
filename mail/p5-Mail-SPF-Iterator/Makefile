@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/12/09 21:04:48 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2008/12/17 00:20:35 bluhm Exp $
 
 COMMENT =		iterative SPF lookup
 
-DISTNAME =		Mail-SPF-Iterator-1.02
+DISTNAME =		Mail-SPF-Iterator-1.03
 
 CATEGORIES =		mail
 
@@ -18,5 +18,8 @@ MODULES =		cpan
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		:p5-Net-DNS->=0.62:net/p5-Net-DNS ::www/p5-URI
 REGRESS_DEPENDS =	::net/p5-Socket6 ::net/p5-IO-INET6
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/samples/spflookup.pl ${PREFIX}/bin/spflookup
 
 .include <bsd.port.mk>
