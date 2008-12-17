@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/12/01 22:06:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/12/17 18:45:36 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	database widget library with data bound widgets
 
 GNOME_PROJECT=	libgnomedb
 GNOME_VERSION=	3.0.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=  gnomedb-3.0          0.0      # .4.0
 SHARED_LIBS +=  gnomedb_extra-3.0    0.0      # .4.0
 SHARED_LIBS +=  gnomedb_graph-3.0    0.0      # .4.0
@@ -34,9 +34,8 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png pthread rpcsvc ssl stdc++ util xml2 z
 
-BUILD_DEPENDS=		::textproc/scrollkeeper \
-			::x11/gnome/doc-utils
-RUN_DEPENDS=		::textproc/scrollkeeper
+BUILD_DEPENDS=		::x11/gnome/doc-utils
+RUN_DEPENDS=		::textproc/rarian
 LIB_DEPENDS=		gladeui-1::devel/glade3 \
 			gdasql-3.0,gda-3.0::x11/gnome/libgda
 

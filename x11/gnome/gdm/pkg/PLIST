@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2008/12/12 12:59:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2008/12/17 18:45:36 jasper Exp $
 %%SHARED%%
 @bin bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
@@ -287,8 +287,8 @@ share/pixmaps/nohost.png
 share/xsessions/
 share/xsessions/gnome.desktop
 share/xsessions/ssh.desktop
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

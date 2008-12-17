@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2008/12/12 12:59:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2008/12/17 18:45:36 jasper Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.8
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
@@ -23,11 +23,10 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png util wrap xml2 z
 
-BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
-			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
+BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
 			::x11/gnome/zenity
 RUN_DEPENDS=		:sox-*:audio/sox \
-			:scrollkeeper-*:textproc/scrollkeeper \
+			:rarian-*:textproc/rarian \
 			:gnome-audio-*:x11/gnome/audio \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme \
 			::x11/gnome/zenity

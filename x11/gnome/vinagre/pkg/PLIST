@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/12/05 19:45:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/12/17 18:45:36 jasper Exp $
 @bin bin/vinagre
 @man man/man1/vinagre.1
 share/applications/vinagre-file.desktop
@@ -141,8 +141,8 @@ share/schemas/vinagre/vinagre.schemas
 share/vinagre/
 share/vinagre/vinagre-ui.xml
 share/vinagre/vinagre.glade
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
 @exec %D/bin/update-mime-database %D/share/mime

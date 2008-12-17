@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2008/11/23 18:26:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2008/12/17 18:45:36 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		2.24.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		editors
 
 HOMEPAGE=		http://www.gnome.org/projects/gedit/
@@ -29,14 +30,13 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS=		:iso-codes-*:devel/iso-codes \
-			:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-doc-utils-*:x11/gnome/doc-utils \
 			::x11/py-gtksourceview \
 			:py-gtk2->=2.12.0:x11/py-gtk2
 LIB_DEPENDS=		enchant::textproc/enchant \
 			gtksourceview-2.0::x11/gtksourceview \
 			${MODPY_LIB_DEPENDS}
-RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
+RUN_DEPENDS=		::textproc/rarian \
 			:gnome-doc-utils-*:x11/gnome/doc-utils \
 			:py-gtk2->=2.12.0:x11/py-gtk2 \
 			::x11/py-gtksourceview \

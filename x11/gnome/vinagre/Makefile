@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/12/11 12:36:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2008/12/17 18:45:36 jasper Exp $
 
 COMMENT=		VNC Client for the GNOME Desktop
 
 GNOME_VERSION=		0.5.2
 GNOME_PROJECT=		vinagre
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.gnome.org/projects/vinagre/
@@ -26,10 +26,9 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png pthread tasn1 xml2 z
 
-BUILD_DEPENDS=		::x11/gnome/doc-utils \
-			::textproc/scrollkeeper
+BUILD_DEPENDS=		::x11/gnome/doc-utils
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
-			::textproc/scrollkeeper
+			::textproc/rarian
 LIB_DEPENDS=		gnome-keyring::x11/gnome/keyring \
 			gtk-vnc-1.0.>=1::x11/gtk-vnc
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/11/21 19:12:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/12/17 18:45:36 jasper Exp $
 %%SHARED%%
 @bin bin/seahorse
 @mode 4555
@@ -174,14 +174,24 @@ share/gnome/help/seahorse/vi/figures/seahorse-window.png
 share/gnome/help/seahorse/vi/figures/signature.png
 share/gnome/help/seahorse/vi/figures/text-editor.png
 share/gnome/help/seahorse/vi/seahorse.xml
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/seahorse-preferences.png
 share/icons/hicolor/16x16/apps/seahorse.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/seahorse-preferences.png
 share/icons/hicolor/22x22/apps/seahorse.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/seahorse-preferences.png
 share/icons/hicolor/24x24/apps/seahorse.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/seahorse-preferences.png
 share/icons/hicolor/32x32/apps/seahorse.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/seahorse-preferences.png
 share/icons/hicolor/48x48/apps/seahorse.png
 share/locale/ar/LC_MESSAGES/seahorse.mo
@@ -224,6 +234,8 @@ share/locale/nb/LC_MESSAGES/seahorse.mo
 share/locale/ne/LC_MESSAGES/seahorse.mo
 share/locale/nl/LC_MESSAGES/seahorse.mo
 share/locale/nn/LC_MESSAGES/seahorse.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/seahorse.mo
 share/locale/or/LC_MESSAGES/seahorse.mo
 share/locale/pa/LC_MESSAGES/seahorse.mo
@@ -232,12 +244,15 @@ share/locale/pt/LC_MESSAGES/seahorse.mo
 share/locale/pt_BR/LC_MESSAGES/seahorse.mo
 share/locale/ru/LC_MESSAGES/seahorse.mo
 share/locale/rw/LC_MESSAGES/seahorse.mo
+share/locale/si/
 share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/seahorse.mo
 share/locale/sk/LC_MESSAGES/seahorse.mo
 share/locale/sl/LC_MESSAGES/seahorse.mo
 share/locale/sq/LC_MESSAGES/seahorse.mo
 share/locale/sr/LC_MESSAGES/seahorse.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/seahorse.mo
 share/locale/sv/LC_MESSAGES/seahorse.mo
 share/locale/ta/LC_MESSAGES/seahorse.mo
@@ -326,8 +341,8 @@ share/seahorse/glade/seahorse-ssh-key-properties.glade
 share/seahorse/glade/seahorse-ssh-upload.glade
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

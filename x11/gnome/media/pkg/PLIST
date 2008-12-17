@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/11/21 18:12:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/12/17 18:45:36 jasper Exp $
 %%SHARED%%
 @bin bin/gnome-audio-profiles-properties
 @bin bin/gnome-sound-recorder
@@ -153,7 +153,6 @@ share/gstreamer-properties/glade/
 share/gstreamer-properties/glade/gstreamer-properties.glade
 share/gstreamer-properties/icons/
 share/gstreamer-properties/icons/gstreamer-properties.png
-share/icons/hicolor/
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gnome-sound-recorder.png
@@ -193,9 +192,7 @@ share/locale/be@latin/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/bn/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-media-2.0.mo
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/gnome-media-2.0.mo
-share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-media-2.0.mo
@@ -209,7 +206,6 @@ share/locale/en_GB/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/et/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/eu/LC_MESSAGES/gnome-media-2.0.mo
-share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-media-2.0.mo
@@ -226,7 +222,6 @@ share/locale/ja/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ka/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/kn/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-media-2.0.mo
-share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-media-2.0.mo
@@ -235,7 +230,6 @@ share/locale/mk/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/mr/LC_MESSAGES/gnome-media-2.0.mo
-share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/nb/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ne/LC_MESSAGES/gnome-media-2.0.mo
@@ -275,7 +269,6 @@ share/locale/tr/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-media-2.0.mo
-share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-media-2.0.mo
@@ -317,8 +310,8 @@ share/schemas/gnome-media/gnome-audio-profiles.schemas
 share/schemas/gnome-media/gnome-sound-recorder.schemas
 share/schemas/gnome-media/gnome-volume-control.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-media/*.schemas > /dev/null
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

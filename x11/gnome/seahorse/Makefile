@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2008/11/21 19:12:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2008/12/17 18:45:36 jasper Exp $
 
 COMMENT=		manage encryption keys
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		2.24.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	cryptui              0.0      # .0.0
 CATEGORIES=		security
 
@@ -25,10 +26,9 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		png pthread sasl2 ssl xml2 z
 
 BUILD_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
-			::textproc/scrollkeeper \
 			::x11/gnome/doc-utils
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
-			::textproc/scrollkeeper
+			::textproc/rarian
 LIB_DEPENDS=		lber,ldap::databases/openldap \
 			notify::devel/libnotify \
 			soup-2.4::devel/libsoup \

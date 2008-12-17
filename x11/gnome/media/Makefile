@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2008/11/23 22:59:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2008/12/17 18:45:36 jasper Exp $
 
 COMMENT=		GNOME media utilities
 
 GNOME_PROJECT=		gnome-media
 GNOME_VERSION=		2.24.0.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	gnome-media-profiles 0.0      # .0.0
 CATEGORIES=		x11
 
@@ -25,8 +26,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		::textproc/scrollkeeper \
-			::multimedia/gstreamer-0.10/plugins-good,-gconf \
+BUILD_DEPENDS=		::multimedia/gstreamer-0.10/plugins-good,-gconf \
 			::x11/gnome/doc-utils
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			bonoboui-2::x11/gnome/libbonoboui \
@@ -35,7 +35,7 @@ LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			gstreamer-0.10,gstbase-0.10::multimedia/gstreamer-0.10/core \
 			gstinterfaces-0.10,gstaudio-0.10::multimedia/gstreamer-0.10/plugins-base \
 			pango-1.0,pangocairo-1.0,pangoft2-1.0::devel/pango
-RUN_DEPENDS=		::textproc/scrollkeeper
+RUN_DEPENDS=		::textproc/rarian
 
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
