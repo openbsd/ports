@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2008/11/23 22:59:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2008/12/17 18:43:13 jasper Exp $
 
 COMMENT=	GTK C code documentation system
 
 GNOME_VERSION=	1.11
 GNOME_PROJECT=	gtk-doc
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	textproc devel
 
 HOMEPAGE=	http://www.gtk.org/gtk-doc/
@@ -27,7 +28,7 @@ RUN_DEPENDS=		::textproc/openjade \
 			::textproc/docbook \
 			::textproc/docbook-xsl \
 			::textproc/libxslt \
-			::textproc/scrollkeeper	\
+			::textproc/rarian	\
 			::x11/gnome/yelp
 
 NO_REGRESS=		Yes

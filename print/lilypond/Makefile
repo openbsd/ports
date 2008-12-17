@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/12/18 16:05:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2008/12/17 18:43:13 jasper Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -11,7 +11,7 @@ COMMENT-docs=		lilypond documentation
 VERSION=		2.10.33
 DISTNAME=		lilypond-${VERSION}
 DISTNAME-docs=		${DISTNAME}-1.documentation
-PKGNAME-main=		lilypond-${VERSION}p1
+PKGNAME-main=		lilypond-${VERSION}p2
 PKGNAME-docs=		lilypond-docs-${VERSION}
 CATEGORIES=		print
 
@@ -70,7 +70,7 @@ BUILD_DEPENDS= 		::print/mftrace \
 			:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
 			${RUN_DEPENDS}
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
-			:scrollkeeper-*:textproc/scrollkeeper
+			::textproc/rarian
 
 SUBST_VARS+=		VERSION
 

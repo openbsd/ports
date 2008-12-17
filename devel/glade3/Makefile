@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/30 09:25:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/12/17 18:40:57 jasper Exp $
 
 COMMENT=		user interface builder for the GTK2+ toolkit
 
 GNOME_VERSION =		3.5.2
 GNOME_PROJECT = 	glade3
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 CATEGORIES =		devel
 SHARED_LIBS +=  gladeui-1            0.0      # .8.0
 
@@ -33,9 +33,9 @@ MODULES=		devel/gettext \
     
 LIB_DEPENDS=            dbus-glib-1::x11/dbus-glib \
 			gnomeui-2::x11/gnome/libgnomeui
-BUILD_DEPENDS=          :scrollkeeper->=0.3.12:textproc/scrollkeeper \
+BUILD_DEPENDS=          ::textproc/rarian \
 			::x11/gnome/doc-utils
-RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper \
+RUN_DEPENDS=		::textproc/rarian \
 			::x11/gnome/devhelp
 
 DESKTOP_FILES = 	Yes

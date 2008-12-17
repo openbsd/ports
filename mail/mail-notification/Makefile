@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2008/12/16 13:16:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2008/12/17 18:42:31 jasper Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-5.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		mail
 
 EXTRACT_SUFX=		.tar.bz2
@@ -31,9 +31,9 @@ MASTER_SITES=	http://savannah.nongnu.org/download/mailnotify/
 MODULES=	devel/gettext \
 		textproc/intltool
 
-BUILD_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper
-RUN_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper \
-		:desktop-file-utils-*:devel/desktop-file-utils \
+BUILD_DEPENDS=	::textproc/rarian
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
+		::textproc/rarian \
 		:yelp-*:x11/gnome/yelp \
 		:notification-daemon-*|notification-daemon-xfce-*:sysutils/notification-daemon
 LIB_DEPENDS=	gnomeui-2.>=2400::x11/gnome/libgnomeui \

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2008/11/21 16:54:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2008/12/17 18:40:57 jasper Exp $
 
 COMMENT=		editor for the GConf configuration system
 
 GNOME_PROJECT=		gconf-editor
 GNOME_VERSION=		2.24.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/projects/gconf/
@@ -24,9 +25,9 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
 		pthread ssl util xml2 z
 
-BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
+BUILD_DEPENDS=		::textproc/rarian \
 			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
-RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=		::textproc/rarian
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			dbus-1::x11/dbus \
 			dbus-glib-1::x11/dbus-glib \

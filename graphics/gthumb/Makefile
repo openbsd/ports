@@ -1,9 +1,10 @@
-#$OpenBSD: Makefile,v 1.19 2008/12/14 19:30:45 ajacoutot Exp $
+#$OpenBSD: Makefile,v 1.20 2008/12/17 18:41:51 jasper Exp $
 
 COMMENT=	Image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	2.10.10
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS=	gthumb	0.0	# .0.0
 
@@ -38,7 +39,7 @@ BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils
 LIB_DEPENDS=	gnomeui-2.>=2000::x11/gnome/libgnomeui \
 		gphoto2.>=3,gphoto2_port.>=6::graphics/libgphoto2
 RUN_DEPENDS=	::misc/shared-mime-info \
-		:scrollkeeper-*:textproc/scrollkeeper
+		::textproc/rarian
 
 MODGNOME_HELP_FILES= Yes
 DESKTOP_FILES=	Yes

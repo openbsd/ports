@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2008/12/16 11:05:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2008/12/17 18:41:51 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ GNOME_VERSION=	2.24.2
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}p1
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 
@@ -40,7 +40,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
 		pixman-1 png xml2 z
 
-BUILD_DEPENDS=	:scrollkeeper-*:textproc/scrollkeeper
+BUILD_DEPENDS=		::textproc/rarian
 
 WANTLIB-main=		${WANTLIB} ICE ORBit-2 SM c dbus-1 dbus-glib-1 \
 			gconf-2 glade-2.0 gnome-keyring gs gthread-2.0 \
@@ -48,7 +48,7 @@ WANTLIB-main=		${WANTLIB} ICE ORBit-2 SM c dbus-1 dbus-glib-1 \
 LIB_DEPENDS-main=	poppler.>=3,poppler-glib.>=3::print/poppler \
 			spectre::print/libspectre \
 			${MODGETTEXT_LIB_DEPENDS}
-RUN_DEPENDS-main=	:scrollkeeper-*:textproc/scrollkeeper \
+RUN_DEPENDS-main=	::textproc/rarian \
 			:shared-mime-info-*:misc/shared-mime-info \
 			:ghostscript-*:print/ghostscript/gnu \
 			::x11/gnome/icon-theme \

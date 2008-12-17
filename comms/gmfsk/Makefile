@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2008/09/10 17:25:26 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2008/12/17 18:40:13 jasper Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
 DISTNAME=	gmfsk-0.6
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://gmfsk.connect.fi/
@@ -27,9 +27,9 @@ WANTLIB +=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 		bonobo-activation bonoboui-2 gconf-2 gnome-2 \
 		gnome-keyring gnomecanvas-2 gnomevfs-2 pixman-1 popt xml2
 
-RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
+RUN_DEPENDS=		::textproc/rarian \
 			:yelp-*:x11/gnome/yelp
-BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
+BUILD_DEPENDS=		::textproc/rarian
 LIB_DEPENDS=		fftw.>=2::math/fftw \
 			gtk-x11-2.0,gdk_pixbuf-2.0,gdk-x11-2.0::x11/gtk+2 \
 			hamlib.>=2::comms/hamlib \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/06/22 21:28:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/12/17 18:41:33 jasper Exp $
 @conflict gnocatan-*
 @pkgpath games/gnocatan
 @bin bin/pioneers
@@ -186,7 +186,7 @@ share/pixmaps/pioneers/style-human-7.png
 share/pixmaps/pioneers/style-human.png
 share/pixmaps/pioneers/trade.png
 share/pixmaps/pioneers/wool.png
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

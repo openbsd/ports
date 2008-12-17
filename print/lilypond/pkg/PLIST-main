@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2007/12/18 16:05:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2008/12/17 18:43:13 jasper Exp $
 @pkgpath print/lilypond
 bin/abc2ly
 bin/convert-ly
 bin/etf2ly
-bin/lilypond
+@bin bin/lilypond
 bin/lilypond-book
 bin/lilypond-invoke-editor
 bin/midi2ly
 bin/musicxml2ly
-@info info/lilypond/
+info/lilypond/
 @info info/lilypond/lilypond-internals.info
 @info info/lilypond/lilypond.info
 @info info/lilypond/music-glossary.info
@@ -367,5 +367,5 @@ share/omf/lilypond/${VERSION}/lilypond.html.omf
 share/omf/lilypond/${VERSION}/lilypond.pdf.omf
 share/omf/lilypond/${VERSION}/music-glossary.html.omf
 share/omf/lilypond/${VERSION}/music-glossary.pdf.omf
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update

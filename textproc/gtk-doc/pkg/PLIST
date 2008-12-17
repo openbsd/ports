@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/11/18 11:59:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/12/17 18:43:13 jasper Exp $
 bin/gtkdoc-check
 bin/gtkdoc-depscan
 bin/gtkdoc-fixxref
@@ -36,5 +36,5 @@ share/omf/gtk-doc-manual/
 share/omf/gtk-doc-manual/gtk-doc-manual-C.omf
 share/sgml/gtk-doc/
 share/sgml/gtk-doc/gtk-doc.cat
-@exec %D/bin/scrollkeeper-update -q
-@unexec %D/bin/scrollkeeper-update -q
+@exec %D/bin/rarian-sk-update
+@unexec %D/bin/rarian-sk-update
