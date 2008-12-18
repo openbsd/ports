@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2008/12/17 18:38:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.250 2008/12/18 13:23:05 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -233,7 +233,6 @@
      SUBDIR += ruby-rubigen
      SUBDIR += rxp
      SUBDIR += sablotron
-     SUBDIR += scrollkeeper
      SUBDIR += sgmlformat
      SUBDIR += sphinx
      SUBDIR += sim
