@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2008/12/18 12:06:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2008/12/18 19:38:26 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.8
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
@@ -47,7 +47,9 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-secureremote=yes \
 			--enable-console-helper=no \
 			--disable-scrollkeeper \
-			--with-console-kit=no
+			--with-console-kit=no \
+			--with-xevie=no \
+			--with-libaudit=no
 			
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
