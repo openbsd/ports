@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/12/17 18:47:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/12/18 19:37:50 ajacoutot Exp $
 bin/tomboy
 bin/tomboy-panel
 lib/bonobo/
@@ -108,6 +108,27 @@ share/gnome/help/tomboy/de/figures/tomboy-preferences-synchronization.png
 share/gnome/help/tomboy/de/figures/tomboy-tools.png
 share/gnome/help/tomboy/de/legal.xml
 share/gnome/help/tomboy/de/tomboy.xml
+share/gnome/help/tomboy/el/
+share/gnome/help/tomboy/el/figures/
+share/gnome/help/tomboy/el/figures/add-notebook-search.png
+share/gnome/help/tomboy/el/figures/add-to-notebook.png
+share/gnome/help/tomboy/el/figures/delete-notebook.png
+share/gnome/help/tomboy/el/figures/move-notes-search.png
+share/gnome/help/tomboy/el/figures/new-notebook.png
+share/gnome/help/tomboy/el/figures/note-template.png
+share/gnome/help/tomboy/el/figures/notebook-icon.png
+share/gnome/help/tomboy/el/figures/tomboy-main-menu.png
+share/gnome/help/tomboy/el/figures/tomboy-new-note.png
+share/gnome/help/tomboy/el/figures/tomboy-panel.png
+share/gnome/help/tomboy/el/figures/tomboy-pindown.png
+share/gnome/help/tomboy/el/figures/tomboy-pinup.png
+share/gnome/help/tomboy/el/figures/tomboy-preferences-add-ins.png
+share/gnome/help/tomboy/el/figures/tomboy-preferences-editing.png
+share/gnome/help/tomboy/el/figures/tomboy-preferences-hotkeys.png
+share/gnome/help/tomboy/el/figures/tomboy-preferences-synchronization.png
+share/gnome/help/tomboy/el/figures/tomboy-tools.png
+share/gnome/help/tomboy/el/legal.xml
+share/gnome/help/tomboy/el/tomboy.xml
 share/gnome/help/tomboy/en_GB/
 share/gnome/help/tomboy/en_GB/figures/
 share/gnome/help/tomboy/en_GB/figures/add-notebook-search.png
@@ -369,6 +390,9 @@ share/locale/ja/LC_MESSAGES/tomboy.mo
 share/locale/kn/LC_MESSAGES/tomboy.mo
 share/locale/ko/LC_MESSAGES/tomboy.mo
 share/locale/ku/LC_MESSAGES/tomboy.mo
+share/locale/la/
+share/locale/la/LC_MESSAGES/
+share/locale/la/LC_MESSAGES/tomboy.mo
 share/locale/lt/LC_MESSAGES/tomboy.mo
 share/locale/lv/LC_MESSAGES/tomboy.mo
 share/locale/mai/
@@ -418,6 +442,7 @@ share/omf/tomboy/
 share/omf/tomboy/tomboy-C.omf
 share/omf/tomboy/tomboy-ca.omf
 share/omf/tomboy/tomboy-de.omf
+share/omf/tomboy/tomboy-el.omf
 share/omf/tomboy/tomboy-en_GB.omf
 share/omf/tomboy/tomboy-es.omf
 share/omf/tomboy/tomboy-fr.omf
