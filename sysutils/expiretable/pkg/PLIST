@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/15 16:13:24 jolan Exp $
-@man man/man1/expiretable.1
-sbin/expiretable
