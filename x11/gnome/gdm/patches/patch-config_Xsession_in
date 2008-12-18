@@ -1,7 +1,16 @@
-$OpenBSD: patch-config_Xsession_in,v 1.7 2008/11/21 17:43:02 jasper Exp $
---- config/Xsession.in.orig	Tue Nov 18 22:52:07 2008
-+++ config/Xsession.in	Tue Nov 18 22:53:30 2008
-@@ -225,7 +225,10 @@ if [ "x$command" = "xdefault" ] ; then
+$OpenBSD: patch-config_Xsession_in,v 1.8 2008/12/18 12:06:09 ajacoutot Exp $
+--- config/Xsession.in.orig	Wed Sep  3 20:36:08 2008
++++ config/Xsession.in	Thu Dec 18 12:46:13 2008
+@@ -23,6 +23,8 @@
+ # based on:
+ # $XConsortium: Xsession /main/10 1995/12/18 18:21:28 gildea $
+ 
++PATH=$PATH:${LOCALBASE}/bin
++
+ command="$@"
+ 
+ # this will go into the .xsession-errors along with all other echo's
+@@ -225,7 +227,10 @@ if [ "x$command" = "xdefault" ] ; then
  	disptext=`gettextfunc "System has no Xclients file, so starting a failsafe xterm session.  Windows will have focus only if the mouse pointer is above them.  To get out of this mode type 'exit' in the window."`
        "$zenity" --info --text "$disptext"
      else
@@ -13,7 +22,7 @@ $OpenBSD: patch-config_Xsession_in,v 1.7 2008/11/21 17:43:02 jasper Exp $
      fi
      exec xterm -geometry 80x24+0+0
    fi
-@@ -233,7 +236,7 @@ fi
+@@ -233,7 +238,7 @@ fi
  
  # add ssh-agent if found
  sshagent="`gdmwhich ssh-agent`"

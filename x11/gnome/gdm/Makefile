@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2008/12/17 18:45:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2008/12/18 12:06:09 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.8
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
@@ -59,5 +59,9 @@ FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples \
 			dmconfdir=${PREFIX}/share/examples/dm
 post-patch:
 	ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
+
+pre-configure:
+	${SUBST_CMD} \
+		${WRKSRC}/config/{Init.in,PostSession.in,PreSession.in,Xsession.in,XKeepsCrashing}
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_PreSession_in,v 1.1 2008/12/18 12:06:09 ajacoutot Exp $
+--- config/PreSession.in.orig	Thu Dec 18 12:03:56 2008
++++ config/PreSession.in	Thu Dec 18 12:04:08 2008
+@@ -2,7 +2,7 @@
+ #
+ # Note that output goes into the .xsession-errors file for easy debugging
+ #
+-PATH="@X_PATH@:$PATH:/bin:/usr/bin"
++PATH="@X_PATH@:$PATH:/bin:/usr/bin:${LOCALBASE}/bin"
+ OLD_IFS=$IFS
+ 
+ gdmwhich () {

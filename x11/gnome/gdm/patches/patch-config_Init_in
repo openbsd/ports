@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_Init_in,v 1.1 2008/12/18 12:06:09 ajacoutot Exp $
+--- config/Init.in.orig	Thu Dec 18 12:01:48 2008
++++ config/Init.in	Thu Dec 18 12:03:21 2008
+@@ -3,7 +3,7 @@
+ # Plus a lot of fun stuff added
+ #  -George
+ 
+-PATH=@X_PATH@:$PATH
++PATH=@X_PATH@:$PATH:${LOCALBASE}/bin
+ OLD_IFS=$IFS
+ 
+ gdmwhich () {

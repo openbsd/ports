@@ -1,0 +1,11 @@
+$OpenBSD: patch-config_PostSession_in,v 1.1 2008/12/18 12:06:09 ajacoutot Exp $
+--- config/PostSession.in.orig	Thu Dec 18 12:02:40 2008
++++ config/PostSession.in	Thu Dec 18 12:03:37 2008
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-PATH="@X_PATH@:$PATH:/bin:/usr/bin"
++PATH="@X_PATH@:$PATH:/bin:/usr/bin:${LOCALBASE}/bin"
+ OLD_IFS=$IFS
+ 
+ gdmwhich () {

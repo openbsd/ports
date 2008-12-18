@@ -1,0 +1,11 @@
+$OpenBSD: patch-config_XKeepsCrashing,v 1.1 2008/12/18 12:06:09 ajacoutot Exp $
+--- config/XKeepsCrashing.orig	Thu Dec 18 12:42:57 2008
++++ config/XKeepsCrashing	Thu Dec 18 12:43:21 2008
+@@ -1,5 +1,7 @@
+ #!/bin/sh
+ 
++PATH=$PATH:${LOCALBASE}/bin
++
+ if test "x$UNSAFE_TO_TRANSLATE" = "xyes" ; then
+   LANG=C
+   unset LC_ALL
