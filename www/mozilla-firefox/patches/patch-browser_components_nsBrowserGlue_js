@@ -1,37 +1,96 @@
-$OpenBSD: patch-browser_components_nsBrowserGlue_js,v 1.1 2008/11/20 23:41:32 martynas Exp $
---- browser/components/nsBrowserGlue.js.orig	Tue Sep 16 22:07:25 2008
-+++ browser/components/nsBrowserGlue.js	Tue Sep 23 20:40:15 2008
-@@ -175,33 +175,6 @@ BrowserGlue.prototype = {
-   // profile startup handler (contains profile initialization routines)
-   _onProfileStartup: function() 
+$OpenBSD: patch-browser_components_nsBrowserGlue_js,v 1.2 2008/12/18 19:27:13 martynas Exp $
+--- browser/components/nsBrowserGlue.js.orig	Wed Dec 17 07:51:28 2008
++++ browser/components/nsBrowserGlue.js	Wed Dec 17 07:45:42 2008
+@@ -221,10 +221,6 @@ BrowserGlue.prototype = {
+   // Browser startup complete. All initial windows have opened.
+   _onBrowserStartup: function()
    {
--    // Check to see if the EULA must be shown on startup
+-    // Show about:rights notification, if needed.
+-    if (this._shouldShowRights())
+-      this._showRightsNotification();
 -
--    var prefBranch = Cc["@mozilla.org/preferences-service;1"].
--                     getService(Ci.nsIPrefBranch);
--    var mustDisplayEULA = false;
+     var prefBranch = Cc["@mozilla.org/preferences-service;1"].
+                      getService(Ci.nsIPrefBranch);
+     // If new add-ons were installed during startup open the add-ons manager.
+@@ -363,81 +359,6 @@ BrowserGlue.prototype = {
+       }
+       break;
+     }
+-  },
+-
+-  /*
+-   * _shouldShowRights - Determines if the user should be shown the
+-   * about:rights notification. The notification should *not* be shown if
+-   * we've already shown the current version, or if the override pref says to
+-   * never show it. The notification *should* be shown if it's never been seen
+-   * before, if a newer version is available, or if the override pref says to
+-   * always show it.
+-   */
+-  _shouldShowRights : function () {
+-    // Look for an unconditional override pref. If set, do what it says.
+-    // (true --> never show, false --> always show)
 -    try {
--      mustDisplayEULA = !prefBranch.getBoolPref("browser.EULA.override");
--    } catch (e) {
--      // Pref might not exist
--    }
+-      return !this._prefs.getBoolPref("browser.rights.override");
+-    } catch (e) { }
+-    // Ditto, for the legacy EULA pref.
+-    try {
+-      return !this._prefs.getBoolPref("browser.EULA.override");
+-    } catch (e) { }
 -
--    // Make sure it hasn't already been accepted
--    if (mustDisplayEULA) {
--      try {
--        var EULAVersion = prefBranch.getIntPref("browser.EULA.version");
--        mustDisplayEULA = !prefBranch.getBoolPref("browser.EULA." + EULAVersion + ".accepted");
--      } catch(ex) {
--      }
--    }
+-#ifndef OFFICIAL_BUILD
+-    // Non-official builds shouldn't shouldn't show the notification.
+-    return false;
+-#endif
 -
--    if (mustDisplayEULA) {
--      var ww2 = Cc["@mozilla.org/embedcomp/window-watcher;1"].
--                getService(Ci.nsIWindowWatcher);
--      ww2.openWindow(null, "chrome://browser/content/EULA.xul", 
--                     "_blank", "chrome,centerscreen,modal,resizable=yes", null);
--    }
+-    // Look to see if the user has seen the current version or not.
+-    var currentVersion = this._prefs.getIntPref("browser.rights.version");
+-    try {
+-      return !this._prefs.getBoolPref("browser.rights." + currentVersion + ".shown");
+-    } catch (e) { }
 -
-     this.Sanitizer.onStartup();
-     // check if we're in safe mode
-     var app = Cc["@mozilla.org/xre/app-info;1"].getService(Ci.nsIXULAppInfo).
+-    // Legacy: If the user accepted a EULA, we won't annoy them with the
+-    // equivalent about:rights page until the version changes.
+-    try {
+-      return !this._prefs.getBoolPref("browser.EULA." + currentVersion + ".accepted");
+-    } catch (e) { }
+-
+-    // We haven't shown the notification before, so do so now.
+-    return true;
+-  },
+-
+-  _showRightsNotification : function () {
+-    // Stick the notification onto the selected tab of the active browser window.
+-    var win = this._getMostRecentBrowserWindow();
+-    var browser = win.gBrowser; // for closure in notification bar callback
+-    var notifyBox = browser.getNotificationBox();
+-
+-    var bundleService = Cc["@mozilla.org/intl/stringbundle;1"].
+-                        getService(Ci.nsIStringBundleService);
+-    var brandBundle  = bundleService.createBundle("chrome://branding/locale/brand.properties");
+-    var rightsBundle = bundleService.createBundle("chrome://browser/locale/aboutRights.properties");
+-
+-    var buttonLabel     = rightsBundle.GetStringFromName("buttonLabel");
+-    var buttonAccessKey = rightsBundle.GetStringFromName("buttonAccessKey");
+-    var productName     = brandBundle.GetStringFromName("brandFullName");
+-    var notifyText      = rightsBundle.formatStringFromName("notifyText", [productName], 1);
+-    
+-    var buttons = [
+-                    {
+-                      label:     buttonLabel,
+-                      accessKey: buttonAccessKey,
+-                      popup:     null,
+-                      callback: function(aNotificationBar, aButton) {
+-                        browser.selectedTab = browser.addTab("about:rights");
+-                      }
+-                    }
+-                  ];
+-
+-    // Set pref to indicate we've shown the notification.
+-    var currentVersion = this._prefs.getIntPref("browser.rights.version");
+-    this._prefs.setBoolPref("browser.rights." + currentVersion + ".shown", true);
+-
+-    var box = notifyBox.appendNotification(notifyText, "about-rights", null, notifyBox.PRIORITY_INFO_LOW, buttons);
+-    box.persistence = 3; // // arbitrary number, just so bar sticks around for a bit
+   },
+ 
+   // returns the (cached) Sanitizer constructor

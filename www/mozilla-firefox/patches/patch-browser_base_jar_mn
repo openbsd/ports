@@ -1,7 +1,7 @@
-$OpenBSD: patch-browser_base_jar_mn,v 1.1 2008/11/20 23:41:32 martynas Exp $
---- browser/base/jar.mn.orig	Sun Apr 13 00:26:19 2008
-+++ browser/base/jar.mn	Fri Jul 18 00:54:00 2008
-@@ -21,9 +21,6 @@ browser.jar:
+$OpenBSD: patch-browser_base_jar_mn,v 1.2 2008/12/18 19:27:13 martynas Exp $
+--- browser/base/jar.mn.orig	Sun Nov 16 08:46:26 2008
++++ browser/base/jar.mn	Wed Dec 17 07:41:26 2008
+@@ -22,9 +22,6 @@ browser.jar:
  *       content/browser/browser.js                    (content/browser.js)
  *       content/browser/browser.xul                   (content/browser.xul)
  *       content/browser/credits.xhtml                 (content/credits.xhtml)

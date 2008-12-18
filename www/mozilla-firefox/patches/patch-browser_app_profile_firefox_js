@@ -1,6 +1,6 @@
-$OpenBSD: patch-browser_app_profile_firefox_js,v 1.1 2008/11/20 23:41:32 martynas Exp $
---- browser/app/profile/firefox.js.orig	Mon Jul 21 21:47:20 2008
-+++ browser/app/profile/firefox.js	Wed Oct 15 23:41:06 2008
+$OpenBSD: patch-browser_app_profile_firefox_js,v 1.2 2008/12/18 19:27:13 martynas Exp $
+--- browser/app/profile/firefox.js.orig	Tue Nov 18 23:36:20 2008
++++ browser/app/profile/firefox.js	Wed Dec 17 07:47:36 2008
 @@ -89,7 +89,7 @@ pref("browser.dictionaries.download.url", "https://%LO
  // App-specific update preferences
  
@@ -22,4 +22,16 @@ $OpenBSD: patch-browser_app_profile_firefox_js,v 1.1 2008/11/20 23:41:32 martyna
 +pref("browser.safebrowsing.malware.enabled", false);
  
  // Non-enhanced mode (local url lists) URL list to check for updates
- pref("browser.safebrowsing.provider.0.updateURL", "http://safebrowsing.clients.google.com/safebrowsing/downloads?client={moz:client}&appver={moz:version}&pver=2.1");
+ pref("browser.safebrowsing.provider.0.updateURL", "http://safebrowsing.clients.google.com/safebrowsing/downloads?client={moz:client}&appver={moz:version}&pver=2.2");
+@@ -658,10 +658,8 @@ pref("browser.EULA.version", 3);
+ pref("browser.rights.version", 3);
+ pref("browser.rights.3.shown", false);
+ 
+-#ifdef DEBUG
+-// Don't show the about:rights notification in debug builds.
++// Don't show the about:rights notification
+ pref("browser.rights.override", true);
+-#endif
+ 
+ pref("browser.sessionstore.enabled", true);
+ pref("browser.sessionstore.resume_from_crash", true);

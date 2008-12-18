@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2008/11/20 23:41:32 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.22 2008/12/18 19:27:13 martynas Exp $
 @conflict firefox3-*
 @conflict mozilla-firebird-*
 @pkgpath www/firefox3
@@ -38,6 +38,7 @@ mozilla-firefox/components/FeedConverter.js
 mozilla-firefox/components/FeedProcessor.js
 mozilla-firefox/components/FeedWriter.js
 mozilla-firefox/components/WebContentConverter.js
+mozilla-firefox/components/aboutRights.js
 mozilla-firefox/components/aboutRobots.js
 mozilla-firefox/components/accessibility.xpt
 mozilla-firefox/components/alerts.xpt
