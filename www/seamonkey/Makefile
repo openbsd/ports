@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2008/11/13 17:35:44 martynas Exp $
+# $OpenBSD: Makefile,v 1.30 2008/12/18 21:05:59 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	integrated mozilla application suite
 
-VER=		1.1.13
+VER=		1.1.14
 DISTNAME=	seamonkey-${VER}.source
 PKGNAME=	seamonkey-${VER}
 
@@ -45,27 +45,27 @@ MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${V
 	0 1.1.2 \
 	1 1.1.8 \
 	2 1.1.9 \
-	3 1.1.10 \
 	4 1.1.11 \
 	5 1.1.12 \
-	6 1.1.13
+	6 1.1.13 \
+	7 1.1.14
 MASTER_SITES${id}+=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${version}/contrib-localized/
 .endfor
 
 LANGUAGES=	be-BY 2 1.1.9 \
 		ca-AD 1 1.1.8 \
-		cs-CZ 5 1.1.12 \
-		de-AT 6 1.1.13 \
+		cs-CZ 7 1.1.14 \
+		de-AT 7 1.1.14 \
 		el-GR 0 1.1.2 \
-		es-ES 3 1.1.10 \
-		fr-FR 5 1.1.12 \
+		es-ES 6 1.1.13 \
+		fr-FR 6 1.1.13 \
 		he-IL 0 1.1.2 \
 		hu-HU 4 1.1.11 \
 		it-IT 4 1.1.11 \
 		lt-LT 5 1.1.12 \
 		nl-NL 6 1.1.13 \
-		pl-PL 6 1.1.13 \
-		pt-BR 5 1.1.12 \
+		pl-PL 7 1.1.14 \
+		pt-BR 7 1.1.14 \
 		ru-RU 6 1.1.13 \
 		ur-PK 2 1.1.9 \
 		sv-SE 5 1.1.12
