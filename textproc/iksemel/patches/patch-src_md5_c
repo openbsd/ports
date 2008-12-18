@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_md5_c,v 1.1.1.1 2007/09/04 15:05:27 sthen Exp $
---- src/md5.c.orig	Tue Sep  4 15:24:44 2007
-+++ src/md5.c	Tue Sep  4 15:41:02 2007
+$OpenBSD: patch-src_md5_c,v 1.2 2008/12/18 23:45:37 sthen Exp $
+--- src/md5.c.orig	Thu Aug  2 11:45:10 2007
++++ src/md5.c	Thu Dec 18 23:04:19 2008
 @@ -4,72 +4,20 @@
  ** modify it under the terms of GNU Lesser General Public License.
  */
@@ -48,7 +48,7 @@ $OpenBSD: patch-src_md5_c,v 1.1.1.1 2007/09/04 15:05:27 sthen Exp $
 +	MD5_CTX context;
  };
  
--static unsigned long int T[] =
+-static const unsigned long int T[] =
 -	{ 0xd76aa478, 0xe8c7b756, 0x242070db, 0xc1bdceee,
 -	  0xf57c0faf, 0x4787c62a, 0xa8304613, 0xfd469501,
 -	  0x698098d8, 0x8b44f7af, 0xffff5bb1, 0x895cd7be,
@@ -124,7 +124,7 @@ $OpenBSD: patch-src_md5_c,v 1.1.1.1 2007/09/04 15:05:27 sthen Exp $
  }
  
  void iks_md5_delete(iksmd5 *md5)
-@@ -129,22 +43,12 @@ void iks_md5_delete(iksmd5 *md5)
+@@ -129,61 +43,20 @@ void iks_md5_delete(iksmd5 *md5)
  
  void iks_md5_digest(iksmd5 *md5, unsigned char *digest)
  {
@@ -149,8 +149,11 @@ $OpenBSD: patch-src_md5_c,v 1.1.1.1 2007/09/04 15:05:27 sthen Exp $
  }
  
  void iks_md5(const char *data, char *buf)
-@@ -154,36 +58,5 @@ void iks_md5(const char *data, char *buf)
- 	iks_md5_hash(md5, data, strlen(data), 1);
+ {
+ 	iksmd5 *md5 = iks_md5_new();
+ 
+-	iks_md5_hash(md5, (const unsigned char*)data, strlen(data), 1);
++	iks_md5_hash(md5, data, strlen(data), 1);
  	iks_md5_print(md5, buf);
  	iks_md5_delete(md5);
 -}
