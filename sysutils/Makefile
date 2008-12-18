@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2008/12/16 21:10:25 pea Exp $
+# $OpenBSD: Makefile,v 1.163 2008/12/18 20:46:03 sthen Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -27,7 +27,6 @@
      SUBDIR += dwdiff
      SUBDIR += e2fsprogs
      SUBDIR += eventlog
-     SUBDIR += expiretable
      SUBDIR += fam
      SUBDIR += fdupes
      SUBDIR += filelight
