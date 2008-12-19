@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/12/19 09:58:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/12/19 11:23:33 ajacoutot Exp $
 
 COMMENT=		graphical predictive text input system
 
 GNOME_PROJECT=		dasher
 GNOME_VERSION=		4.9.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		x11
 
@@ -26,7 +26,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
-		pthread ssl stdc++ util xml2 z
+		pthread ssl stdc++ util xml2 z sndio
 
 BUILD_DEPENDS=		::x11/gnome/doc-utils
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
@@ -37,7 +37,7 @@ USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/dasher/ \
-			--disable-schema-install \
+			--enable-schemas-install \
 			--disable-scrollkeeper \
 			--with-cairo \
 			--with-gnome \

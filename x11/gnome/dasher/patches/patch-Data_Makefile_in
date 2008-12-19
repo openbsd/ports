@@ -1,0 +1,14 @@
+$OpenBSD: patch-Data_Makefile_in,v 1.1 2008/12/19 11:23:33 ajacoutot Exp $
+--- Data/Makefile.in.orig	Fri Dec 19 11:55:15 2008
++++ Data/Makefile.in	Fri Dec 19 11:56:16 2008
+@@ -686,8 +686,8 @@ uninstall-am: uninstall-desktopDATA uninstall-iconDATA
+ @GCONF_SCHEMAS_INSTALL_TRUE@	echo "done.";
+ 
+ @GCONF_SCHEMAS_INSTALL_TRUE@install-schemas: dasher.schemas
+-@GCONF_SCHEMAS_INSTALL_TRUE@	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
+-@GCONF_SCHEMAS_INSTALL_TRUE@	gconftool-2 --makefile-install-rule dasher.schemas
++@GCONF_SCHEMAS_INSTALL_TRUE@	#GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
++@GCONF_SCHEMAS_INSTALL_TRUE@	#gconftool-2 --makefile-install-rule dasher.schemas
+ @GCONF_SCHEMAS_INSTALL_FALSE@install-data-local:
+ 
+ install-data-hook: update-icon-cache
