@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/11/23 12:45:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2008/12/19 08:34:50 ajacoutot Exp $
 
 COMMENT=		GNOME accessibility interface
 
 GNOME_PROJECT=		at-spi
-GNOME_VERSION=		1.24.0
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		1.24.1
 SHARED_LIBS +=	spi                  0.0      # .10.11
 SHARED_LIBS +=	loginhelper          0.0      # .0.0
 SHARED_LIBS +=	cspi                 0.0      # .10.11
@@ -32,10 +31,17 @@ LIB_DEPENDS=		bonobo-2.>=1,bonobo-activation.>=5::x11/gnome/libbonobo \
 			gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 USE_X11=		Yes
-CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/at-spi \
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/at-spi \
 			--enable-xevie
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			PYTHON=${MODPY_BIN}
+
+# The regression tests require a running instance of X.
+# You will also need to set the XAUTHORITY environment variable to point
+# to the appropriate .Xauthority file.
+REGRESS_IS_INTERACTIVE=	Yes
+REGRESS_FLAGS=		DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 
 .include <bsd.port.mk>

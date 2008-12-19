@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/11/21 17:00:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/12/19 08:34:51 ajacoutot Exp $
 %%SHARED%%
 include/at-spi-1.0/
 include/at-spi-1.0/cspi/
@@ -126,7 +126,8 @@ share/doc/at-spi/reference/html/Accessibility__Text_8idl.html
 share/doc/at-spi/reference/html/Accessibility__Value_8idl-source.html
 share/doc/at-spi/reference/html/Accessibility__Value_8idl.html
 share/doc/at-spi/reference/html/annotated.html
-share/doc/at-spi/reference/html/dir_1de6d41b6eb4399279fd277c65315d64.html
+share/doc/at-spi/reference/html/classes.html
+share/doc/at-spi/reference/html/dir_1c420e5db3d0f51c9ee20dd290d39df0.html
 share/doc/at-spi/reference/html/dirs.html
 share/doc/at-spi/reference/html/doxygen.css
 share/doc/at-spi/reference/html/doxygen.png
@@ -368,4 +369,4 @@ share/locale/zh_TW/LC_MESSAGES/at-spi.mo
 share/schemas/
 share/schemas/at-spi/
 share/schemas/at-spi/at-spi.schemas
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/at-spi/*.schemas > /dev/null
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/at-spi/*.schemas > /dev/null
