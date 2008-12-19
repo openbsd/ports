@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2008/06/09 22:59:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2008/12/19 10:00:28 ajacoutot Exp $
 
 COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.11.5
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 CATEGORIES=		audio
 
@@ -47,7 +48,8 @@ RUN_DEPENDS=		:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugin
 			:gstreamer-plugins-good->=0.10.8:multimedia/gstreamer-0.10/plugins-good,-flac \
 			:gstreamer-plugins-good->=0.10.8:multimedia/gstreamer-0.10/plugins-good,-gconf \
 			:gstreamer-plugins-ugly->=0.10.7:multimedia/gstreamer-0.10/plugins-ugly,-mad \
-			::x11/gnome/icon-theme
+			::x11/gnome/icon-theme \
+			::textproc/rarian
 REGRESS_DEPENDS=	::devel/check
 
 USE_X11=		Yes

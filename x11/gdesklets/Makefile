@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/11/18 13:42:55 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2008/12/19 10:04:16 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		mini programs for your desktop
 
 DISTNAME=		gDesklets-0.35.4
-PKGNAME=		${DISTNAME:L}p3
+PKGNAME=		${DISTNAME:L}p4
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gdesklets.de/
@@ -39,7 +39,8 @@ LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::devel/desktop-file-utils \
 			::misc/shared-mime-info \
-			::x11/gnome/py-gnome
+			::x11/gnome/py-gnome \
+			::textproc/rarian
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

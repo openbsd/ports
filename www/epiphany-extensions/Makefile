@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/25 15:03:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/12/19 10:02:46 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		www
 
@@ -23,11 +23,11 @@ WANTLIB=	nspr4 pcre plc4 plds4
 
 BUILD_DEPENDS=	:gettext-*:devel/gettext \
 		:xulrunner-devel->=1.8.1:devel/xulrunner,-devel \
-		:scrollkeeper-*:textproc/scrollkeeper \
+		::textproc/rarian \
 		:epiphany->=2.24.2:www/epiphany \
 		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
 RUN_DEPENDS=	:gettext-*:devel/gettext \
-		:scrollkeeper-*:textproc/scrollkeeper \
+		::textproc/rarian \
 		:epiphany->=2.24.2:www/epiphany
 LIB_DEPENDS=	xulrunner/gtkembedmoz,xulrunner/mozjs,xulrunner/xpcom:xulrunner->=1.8.1:devel/xulrunner
 
