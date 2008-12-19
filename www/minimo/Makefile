@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2008/11/13 17:01:56 martynas Exp $
+# $OpenBSD: Makefile,v 1.51 2008/12/19 11:48:26 martynas Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	small, simple, and powerful web browser for mobile devices
-DISTNAME=	minimo-1.8.1.18
+DISTNAME=	minimo-1.8.1.19
 PKGNAME=	${DISTNAME}v0
 
 CATEGORIES=	www
