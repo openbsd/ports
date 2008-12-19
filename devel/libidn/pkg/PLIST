@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/09/26 05:05:40 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/12/19 20:10:59 naddy Exp $
 %%SHARED%%
-bin/idn
+@bin bin/idn
 include/idn-free.h
 include/idn-int.h
 include/idna.h
@@ -61,21 +61,22 @@ lib/pkgconfig/libidn.pc
 @man man/man3/tld_get_table.3
 @man man/man3/tld_get_z.3
 @man man/man3/tld_strerror.3
+share/emacs/site-lisp/idna.el
+share/emacs/site-lisp/punycode.el
+share/locale/cs/LC_MESSAGES/libidn.mo
 share/locale/da/LC_MESSAGES/libidn.mo
 share/locale/de/LC_MESSAGES/libidn.mo
 share/locale/en@boldquot/LC_MESSAGES/libidn.mo
 share/locale/en@quot/LC_MESSAGES/libidn.mo
 share/locale/eo/LC_MESSAGES/libidn.mo
+share/locale/fi/LC_MESSAGES/libidn.mo
 share/locale/fr/LC_MESSAGES/libidn.mo
+share/locale/id/LC_MESSAGES/libidn.mo
 share/locale/it/LC_MESSAGES/libidn.mo
 share/locale/ja/LC_MESSAGES/libidn.mo
 share/locale/nl/LC_MESSAGES/libidn.mo
 share/locale/pl/LC_MESSAGES/libidn.mo
 share/locale/ro/LC_MESSAGES/libidn.mo
-share/locale/rw/
-share/locale/rw/LC_MESSAGES/
-share/locale/rw/LC_MESSAGES/libidn.mo
 share/locale/sr/LC_MESSAGES/libidn.mo
-share/locale/sv/LC_MESSAGES/libidn.mo
 share/locale/vi/LC_MESSAGES/libidn.mo
 share/locale/zh_CN/LC_MESSAGES/libidn.mo
