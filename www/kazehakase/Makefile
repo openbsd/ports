@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/11/13 12:29:24 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2008/12/19 11:51:32 sthen Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -26,7 +26,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=	-main -gecko -webkit
+MULTI_PACKAGES=	-main -gecko
+
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "i386" || \
+    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "amd64"
+# XXX give -gecko a chance to build on systems where webkit is not built
+MULTI_PACKAGES += -webkit
+.endif
 
 MODULES=	devel/gettext \
 		textproc/intltool
