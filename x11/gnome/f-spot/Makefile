@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/11/29 11:31:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2008/12/19 09:58:29 ajacoutot Exp $
 
 COMMENT=		personal photo management application for GNOME
 
 GNOME_VERSION=		0.5.0.2
 GNOME_PROJECT=		f-spot
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS +=	fspoteog             0.0      # .0.0
 SHARED_LIBS +=	fspotjpegtran        0.0      # .0.0
 SHARED_LIBS +=	fspot                0.0      # .0.0
@@ -28,10 +28,10 @@ DESKTOP_FILES=		Yes
 
 WANTLIB=		jpeg m
 
-BUILD_DEPENDS=		::lang/mono
-RUN_DEPENDS=		${BUILD_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
-BUILD_DEPENDS+=		::sysutils/ndesk-dbus-glib \
+RUN_DEPENDS=		::lang/mono \
+			::sysutils/ndesk-dbus-glib \
 			::x11/gnome/screensaver \
 			::x11/gnome/doc-utils \
 			::x11/gnome/mono-gnome \

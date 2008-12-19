@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2008/11/24 18:37:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2008/12/19 09:58:29 ajacoutot Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
 GNOME_VERSION=		2.24.2
+PKGNAME=		${DISTNAME}p0
+
 SHARED_LIBS +=	gucharmap            1.0      # .7.0
 
 HOMEPAGE=		http://live.gnome.org/Gucharmap
@@ -23,6 +25,7 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 
 BUILD_DEPENDS=		:gnome-doc-utils-*:x11/gnome/doc-utils
 LIB_DEPENDS=		gconf-2::devel/gconf2
+RUN_DEPENDS=		::textproc/rarian
 
 MODULES=		devel/gettext \
 			x11/gnome

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/11/25 09:52:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2008/12/19 09:58:29 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.24.2
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://live.gnome.org/GnomeGames/
 
@@ -36,7 +37,8 @@ LIB_DEPENDS=		ggzcore,ggzmod::games/ggz/ggz-client-libs \
 			gnomeui-2::x11/gnome/libgnomeui \
 			rsvg-2.>=18.0::x11/gnome/librsvg
 RUN_DEPENDS=		::x11/gnome/py-gnome-desktop \
-			::multimedia/gstreamer-0.10/plugins-good
+			::multimedia/gstreamer-0.10/plugins-good \
+			::textproc/rarian
 REGRESS_DEPENDS=	::devel/check
 
 USE_X11=		Yes
