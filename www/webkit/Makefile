@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/12/05 19:56:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2008/12/19 11:52:55 sthen Exp $
 
 COMMENT =	open source web browser engine
 
@@ -29,6 +29,7 @@ USE_LIBTOOL =	Yes
 
 .if ${MACHINE_ARCH} == "sparc64"
 BROKEN =	SIGBUS at runtime, being worked on
+# please update list in www/kazehakase if fixed
 .endif
 
 MODULES =	converters/libiconv \
