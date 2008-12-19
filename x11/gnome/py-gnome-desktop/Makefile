@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/11/21 19:08:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/12/19 18:43:39 ajacoutot Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
-GNOME_VERSION=		2.24.0
+GNOME_VERSION=		2.24.1
 PKGNAME=		py-gnome-desktop-${VERSION}
 
 HOMEPAGE=		http://www.pygtk.org/
@@ -31,7 +31,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite \
 		gthread-2.0 gtk-x11-2.0 krb5 kvm m nspr4 nss3 pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4 \
 		png popt smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 \
-		startup-notification-1 util wnck-1 xml2 z
+		startup-notification-1 util wnck-1 xml2 z sndio
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome
@@ -48,7 +48,8 @@ LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			PYTHON="${MODPY_BIN}"
-CONFIGURE_ARGS=		--enable-metacity
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--enable-metacity
 
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \

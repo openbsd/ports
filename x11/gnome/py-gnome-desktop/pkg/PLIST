@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/11/21 19:08:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/12/19 18:43:39 ajacoutot Exp $
 lib/pkgconfig/gnome-python-desktop-2.0.pc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.pyc
@@ -66,8 +66,8 @@ share/examples/py-gnome-desktop/gnomeprint/example_10.py
 share/examples/py-gnome-desktop/gnomeprint/example_11.py
 share/examples/py-gnome-desktop/gnomeprint/sample-image.png
 share/examples/py-gnome-desktop/gnomeprint/test-print.py
-@comment share/examples/py-gnome-desktop/gtksourceview
-@comment share/examples/py-gnome-desktop/gtksourceview/test-widget.py
+share/examples/py-gnome-desktop/gtksourceview/
+share/examples/py-gnome-desktop/gtksourceview/test-widget.py
 share/examples/py-gnome-desktop/keyring-async.py
 share/examples/py-gnome-desktop/keyring.py
 share/examples/py-gnome-desktop/mediaprofiles/
