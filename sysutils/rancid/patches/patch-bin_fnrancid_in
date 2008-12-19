@@ -1,35 +1,23 @@
-$OpenBSD: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
+$OpenBSD: patch-bin_fnrancid_in,v 1.2 2008/12/19 12:57:53 pea Exp $
 --- bin/fnrancid.in.orig	Sun Jan 11 04:49:13 2004
-+++ bin/fnrancid.in	Tue Dec 16 15:40:23 2008
-@@ -1,8 +1,9 @@
- #! @PERLV_PATH@
- ##
--## $Id: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
-+## $Id: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
++++ bin/fnrancid.in	Fri Dec 19 11:46:52 2008
+@@ -4,3 +4,4 @@
  ##
 -## Copyright (C) 1997-2004 by Terrapin Communications, Inc.
 +## rancid 2.3.2a7
 +## Copyright (C) 1997-2006 by Terrapin Communications, Inc.
  ## All rights reserved.
- ##
- ## This software may be freely copied, modified and redistributed
-@@ -20,11 +21,11 @@
- ##
- #
+@@ -22,3 +23,3 @@
  # A library built on Stephen Gill's Netscreen stuff to accomodate
 -#  the Fortinet product line.  [d_pfleger@juniper.net] 
 +#  the Fortinet product line.  [d_pfleger@juniper.net]
  #
- #  RANCID - Really Awesome New Cisco confIg Differ
+@@ -26,3 +27,3 @@
  #
 -# usage: rancid [-d] [-l] [-f filename | $host]
 +# usage: rancid [-dV] [-l] [-f filename | hostname]
  #
- use Getopt::Std;
- getopts('dfl');
-@@ -34,15 +35,16 @@ $debug = $opt_d;
- $file = $opt_f;
- $host = $ARGV[0];
+@@ -36,5 +37,6 @@ $host = $ARGV[0];
  $found_end = 0;
 -$timeo = 90;			# nlogin timeout in seconds
 +$timeo = 90;				# fnlogin timeout in seconds
@@ -38,7 +26,7 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
 +my(@commandtable, %commands, @commands);# command lists
 +my(%filter_pwds);			# password filtering mode
  
- # This routine is used to print out the router configuration
+@@ -42,5 +44,5 @@ my(%filter_pwds);		# password filtering mode
  sub ProcessHistory {
 -    my($new_hist_tag,$new_command,$command_string,@string)=(@_);
 -    if((($new_hist_tag ne $hist_tag) || ($new_command ne $command))
@@ -47,11 +35,7 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
 +    if ((($new_hist_tag ne $hist_tag) || ($new_command ne $command))
 +	&& defined %history) {
  	print eval "$command \%history";
- 	undef %history;
-     }
-@@ -64,10 +66,10 @@ sub ProcessHistory {
- 
- sub numerically { $a <=> $b; }
+@@ -66,6 +68,6 @@ sub numerically { $a <=> $b; }
  
 -# This is a sort routing that will sort numerically on the
 +# This is a sort routine that will sort numerically on the
@@ -60,11 +44,7 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
 -    local(%lines)=@_;
 +    local(%lines) = @_;
      local($i) = 0;
-     local(@sorted_lines);
-     foreach $key (sort numerically keys(%lines)) {
-@@ -77,10 +79,10 @@ sub keynsort {
-     @sorted_lines;
- }
+@@ -79,6 +81,6 @@ sub keynsort {
  
 -# This is a sort routing that will sort on the
 +# This is a sort routine that will sort on the
@@ -73,11 +53,7 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
 -    local(%lines)=@_;
 +    local(%lines) = @_;
      local($i) = 0;
-     local(@sorted_lines);
-     foreach $key (sort keys(%lines)) {
-@@ -90,22 +92,22 @@ sub keysort {
-     @sorted_lines;
- }
+@@ -92,6 +94,6 @@ sub keysort {
  
 -# This is a sort routing that will sort on the
 +# This is a sort routine that will sort on the
@@ -86,15 +62,14 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
 -    local(%lines)=@_;
 +    local(%lines) = @_;
      local($i) = 0;
-     local(@sorted_lines);
+@@ -99,4 +101,4 @@ sub valsort{
      foreach $key (sort values %lines) {
 -        $sorted_lines[$i] = $key;
 -        $i++;
 +	$sorted_lines[$i] = $key;
 +	$i++;
      }
-     @sorted_lines;
- }
+@@ -105,5 +107,5 @@ sub valsort{
  
 -# This is a numerical sort routing (ascending).
 +# This is a numerical sort routine (ascending).
@@ -102,41 +77,29 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
 -    local(%lines)=@_;
 +    local(%lines) = @_;
      local($i) = 0;
-     local(@sorted_lines);
-     foreach $num (sort {$a <=> $b} keys %lines) {
-@@ -119,7 +121,7 @@ sub numsort {
- # ip address when the ip address is anywhere in
- # the strings.
+@@ -121,3 +123,3 @@ sub numsort {
  sub ipsort {
 -    local(%lines)=@_;
 +    local(%lines) = @_;
      local($i) = 0;
-     local(@sorted_lines);
-     foreach $addr (sort sortbyipaddr keys %lines) {
-@@ -132,7 +134,7 @@ sub ipsort {
- # These two routines will sort based upon IP addresses
- sub ipaddrval {
+@@ -134,3 +136,3 @@ sub ipaddrval {
      my(@a) = ($_[0] =~ m#^(\d+)\.(\d+)\.(\d+)\.(\d+)$#);
 -    $a[3]+256*($a[2]+256*($a[1]+256*$a[0]));
 +    $a[3] + 256 * ($a[2] + 256 * ($a[1] +256 * $a[0]));
  }
- sub sortbyipaddr {
-     &ipaddrval($a) <=> &ipaddrval($b);
-@@ -146,7 +148,7 @@ sub GetSystem {
+@@ -146,5 +148,6 @@ sub GetSystem {
  	tr/\015//d;
++	s/exit//gi ;
  	next if /^\s*$/;
  	last if(/$prompt/);
 -	ProcessHistory("","","","$_"); 
 +	ProcessHistory("","","","!$_");
  	#print STDOUT "$_";
-     }
-     print STDOUT "Vendor: $vendor";
-@@ -167,12 +169,11 @@ sub GetConf {
-     print STDERR "    In GetConf: $_" if ($debug);
-     while (<INPUT>) {
+@@ -169,2 +172,3 @@ sub GetConf {
  	tr/\015//d;
--	next if /^\s*$/;
- 	last if(/$prompt/);
++	s/exit//gi ;
+ 	next if /^\s*$/;
+@@ -172,5 +176,5 @@ sub GetConf {
  	if (/(^set.*)('Enc .*')(.*)/) {
 -            ProcessHistory("ENC","","","!$1 'Enc **encoding removed**' $3\n");
 -            next;
@@ -145,11 +108,7 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
 +	    next;
 +	}
  	ProcessHistory("","","","$_");
- 	#print STDOUT "$_";
-     }
-@@ -184,19 +185,27 @@ sub GetConf {
- sub DoNothing {print STDOUT;}
- 
+@@ -186,12 +190,11 @@ sub DoNothing {print STDOUT;}
  # Main
 -%commands=(
 -	'get system status'	=> "GetSystem",
@@ -170,7 +129,7 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
 +%commands = map(%$_, @commandtable);
 +
  $cisco_cmds=join(";",@commands);
- $cmds_regexp=join("|",@commands);
+@@ -199,2 +202,11 @@ $cmds_regexp=join("|",@commands);
  
 +if (length($host) == 0) {
 +    if ($file) {
@@ -182,11 +141,7 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
 +    }
 +}
  open(OUTPUT,">$host.new") || die "Can't open $host.new for writing: $!\n";
- select(OUTPUT);
- # make OUTPUT unbuffered if debugging
-@@ -206,19 +215,19 @@ if ($file) {
-     print STDERR "opening file $host\n" if ($debug);
-     print STDOUT "opening file $host\n" if ($log);
+@@ -208,9 +220,9 @@ if ($file) {
      open(INPUT,"<$host") || die "open failed for $host: $!\n"; } else {
 -    print STDERR "executing nlogin -t $timeo -c\"$cisco_cmds\" $host\n" if ($debug);
 -    print STDOUT "executing nlogin -t $timeo -c\"$cisco_cmds\" $host\n" if ($log);
@@ -200,18 +155,12 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
 -	open(INPUT,"nlogin -t $timeo -c \"$cisco_cmds\" $host </dev/null |") || die "nlogin failed for $host: $!\n";
 +	open(INPUT,"fnlogin -t $timeo -c \"$cisco_cmds\" $host </dev/null |") || die "nlogin failed for $host: $!\n";
      }
- }
- 
- # determine password filtering mode
+@@ -220,3 +232,3 @@ if ($file) {
  if ($ENV{"FILTER_PWDS"} =~ /no/i) {
 -	$filter_pwds = 0;  
 +	$filter_pwds = 0;
  } elsif ($ENV{"FILTER_PWDS"} =~ /all/i) {
- 	$filter_pwds = 2;
- } else {
-@@ -229,13 +238,32 @@ ProcessHistory("","","","!RANCID-CONTENT-TYPE: Fortiga
- TOP: while(<INPUT>) {
-     tr/\015//d;
+@@ -231,9 +243,28 @@ TOP: while(<INPUT>) {
      if (/^Error:/) {
 -	print STDOUT ("$host nlogin error: $_");
 -	print STDERR ("$host nlogin error: $_") if ($debug);
@@ -245,5 +194,3 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
 +		    }
 +		}
  	print STDERR ("HIT COMMAND:$_") if ($debug);
- 	if (!defined($commands{$cmd})) {
- 	    print STDERR "$host: found unexpected command - \"$cmd\"\n";

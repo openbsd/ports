@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2008/12/19 12:57:53 pea Exp $
 
 On OpenBSD, RANCID lives and works in /var/rancid, with user id _rancid.
 
@@ -12,8 +12,8 @@ Quick Installation Guide (an example):
 2) Create /var/rancid/.cloginrc, with read/write permissions only for
    the _rancid user, e.g. 0600 or 0640.
 
-   Review ${TRUEPREFIX}/share/examples/rancid/cloginc.sample for examples 
-   and a good starting point.  See also cloginc(5).
+   Review ${TRUEPREFIX}/share/examples/rancid/cloginrc.sample for examples 
+   and a good starting point.  See also cloginrc(5).
 
    Test to make sure that you can login to every router.
 
