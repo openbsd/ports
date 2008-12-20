@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2007/10/27 23:44:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2008/12/20 21:15:56 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD data for hpijs
 
 DISTNAME=		foomatic-db-hpijs-20070820
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
 
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

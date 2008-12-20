@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/09/11 19:24:23 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2008/12/20 21:15:56 ajacoutot Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
@@ -6,9 +6,9 @@ COMMENT-gimp=		Gimp print plug-in
 
 V=			5.0.1
 DISTNAME=		gutenprint-${V}
-PKGNAME-main=		${DISTNAME}p4
-PKGNAME-foomatic=	foomatic-db-${DISTNAME}
-PKGNAME-gimp=		gutenprint-gimp-${V}p1
+PKGNAME-main=		${DISTNAME}p5
+PKGNAME-foomatic=	foomatic-db-${DISTNAME}p0
+PKGNAME-gimp=		gutenprint-gimp-${V}p2
 CATEGORIES=		print
 
 EXTRACT_SUFX=		.tar.bz2
@@ -17,7 +17,7 @@ SHARED_LIBS+=		gutenprintui2	0.0	# .1.0
 
 HOMEPAGE=		http://gimp-print.sourceforge.net/
 
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

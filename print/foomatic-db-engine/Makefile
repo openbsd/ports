@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2008/09/18 13:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2008/12/20 21:15:56 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD generator
 
 V=			20070919
 DISTNAME=		foomatic-db-engine-3.0-${V}
-PKGNAME=		foomatic-db-engine-3.0.${V}
+PKGNAME=		foomatic-db-engine-3.0.${V}p0
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
 
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

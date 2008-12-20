@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2008/11/23 22:35:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/12/20 21:15:56 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD print filters
 
 DISTNAME=		foomatic-filters-3.0.2
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
 
-MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
