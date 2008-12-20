@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/12/19 09:58:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/12/20 17:41:01 ajacoutot Exp $
 bin/conduit
 bin/conduit-client
 bin/conduit.real
@@ -210,10 +210,10 @@ lib/conduit/modules/GoogleModule/gdata/youtube/service.pyc
 lib/conduit/modules/GoogleModule/gdata/youtube/service.pyo
 lib/conduit/modules/GoogleModule/picasa-config.glade
 lib/conduit/modules/GoogleModule/youtube-config.glade
-lib/conduit/modules/N800Module/
-lib/conduit/modules/N800Module/N800Module.py
-lib/conduit/modules/N800Module/N800Module.pyc
-lib/conduit/modules/N800Module/N800Module.pyo
+@comment lib/conduit/modules/N800Module/
+@comment lib/conduit/modules/N800Module/N800Module.py
+@comment lib/conduit/modules/N800Module/N800Module.pyc
+@comment lib/conduit/modules/N800Module/N800Module.pyo
 lib/conduit/modules/NetworkModule/
 lib/conduit/modules/NetworkModule/Client.py
 lib/conduit/modules/NetworkModule/Client.pyc
@@ -270,11 +270,11 @@ lib/conduit/modules/ZotoModule.py/zoto.glade
 lib/conduit/modules/__init__.py
 lib/conduit/modules/__init__.pyc
 lib/conduit/modules/__init__.pyo
-lib/conduit/modules/iPodModule/
-lib/conduit/modules/iPodModule/config.glade
-lib/conduit/modules/iPodModule/iPodModule.py
-lib/conduit/modules/iPodModule/iPodModule.pyc
-lib/conduit/modules/iPodModule/iPodModule.pyo
+@comment lib/conduit/modules/iPodModule/
+@comment lib/conduit/modules/iPodModule/config.glade
+@comment lib/conduit/modules/iPodModule/iPodModule.py
+@comment lib/conduit/modules/iPodModule/iPodModule.pyc
+@comment lib/conduit/modules/iPodModule/iPodModule.pyo
 lib/pkgconfig/conduit.pc
 lib/python${MODPY_VERSION}/site-packages/conduit/
 lib/python${MODPY_VERSION}/site-packages/conduit/Conduit.py
