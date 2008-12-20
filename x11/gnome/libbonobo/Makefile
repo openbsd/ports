@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2008/11/21 18:31:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2008/12/20 15:24:35 ajacoutot Exp $
 
 COMMENT=		GNOME component and compound document system
 
 GNOME_PROJECT=		libbonobo
 GNOME_VERSION=		2.24.0
+PKGNAME=		${DISTNAME}p0
+
 SHARED_LIBS +=	bonobo-activation    6.0      # .4.0
 SHARED_LIBS +=	bonobo-2             2.0      # .0.0
 CATEGORIES=		devel
@@ -32,9 +34,10 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/libbonobo; \
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/gnome/* ${PREFIX}/share/examples/libbonobo/
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/libbonobo
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/activation-server/bonobo-activation-server.1
 
 .include <bsd.port.mk>
 
