@@ -1,0 +1,13 @@
+from upstream cvs, fixes bug 46889, memory leak in strtotime()
+
+$OpenBSD: patch-ext_date_lib_timelib_h,v 1.1 2008/12/20 21:35:38 sthen Exp $
+--- ext/date/lib/timelib.h.orig	Fri Feb 22 09:48:18 2008
++++ ext/date/lib/timelib.h	Fri Dec 19 20:42:27 2008
+@@ -28,6 +28,7 @@
+ 
+ #define TIMELIB_NONE             0x00
+ #define TIMELIB_OVERRIDE_TIME    0x01
++#define TIMELIB_NO_CLONE         0x02
+ 
+ #define TIMELIB_SPECIAL_WEEKDAY  0x01
+ 
