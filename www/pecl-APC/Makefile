@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2008/09/18 13:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2008/12/20 01:06:50 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Alternative PHP Cache
 
 DISTNAME=	APC-3.0.19
-PKGNAME=	pecl-${DISTNAME}
+PKGNAME=	pecl-${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://pecl.php.net/package/APC
@@ -41,6 +41,7 @@ CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 PREFIX=		/var/www
 DESTDIRNAME=	INSTALL_ROOT
 
+# needs PHP CLI sapi to run
 NO_REGRESS=	Yes
 
 USE_LIBTOOL=	Yes
