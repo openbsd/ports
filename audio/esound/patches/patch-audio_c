@@ -1,39 +1,12 @@
-$OpenBSD: patch-audio_c,v 1.5 2008/03/31 01:05:54 jakemsr Exp $
---- audio.c.orig	Thu Apr 19 17:43:59 2007
-+++ audio.c	Sat Jun  2 23:15:49 2007
-@@ -20,34 +20,7 @@ static int esd_audio_fd = -1;
- /*******************************************************************/
- /* returns audio_fd for use by main prog - platform dependent */
- 
--/* ALSA before OSS as ALSA is OSS compatible */
--#if defined(DRIVER_ALSA_09)
--#  include "audio_alsa09.c"
--#elif defined(DRIVER_ALSA) || defined(DRIVER_NEWALSA) 
--#  include "audio_alsa.c"
--#elif defined(DRIVER_OSS)
--#  include "audio_oss.c"
--#elif defined(DRIVER_AIX)
--#  include "audio_aix.c"
--#elif defined(DRIVER_IRIX)
--#  include "audio_irix.c"
--#elif defined(DRIVER_HPUX)
--#  include "audio_hpux.c"
--#elif defined(DRIVER_OSF)
--#  include "audio_osf.c"
--#elif defined(DRIVER_SOLARIS)
--#  include "audio_solaris.c"
--#elif defined(DRIVER_MKLINUX)
--#  include "audio_mklinux.c"
--#elif defined(DRIVER_DART)
--#  include "audio_dart.c"
--#elif defined(DRIVER_COREAUDIO)
--#  include "audio_coreaudio.c"
--#elif defined(DRIVER_ARTS)
--#  include "audio_arts.c"
--#else
--#  include "audio_none.c"
--#endif
-+#include "audio_sun.c"
- 
- /*******************************************************************/
- /* display available devices */
+$OpenBSD: patch-audio_c,v 1.6 2008/12/20 08:58:32 jakemsr Exp $
+--- audio.c.orig	Sat Dec 20 00:19:22 2008
++++ audio.c	Sat Dec 20 00:19:22 2008
+@@ -31,6 +31,8 @@ static int esd_write_size = ESD_BUF_SIZE;
+ #  include "audio_alsa.c"
+ #elif defined(DRIVER_OSS)
+ #  include "audio_oss.c"
++#elif defined(DRIVER_SNDIO)
++#  include "audio_sndio.c"
+ #elif defined(DRIVER_AIX)
+ #  include "audio_aix.c"
+ #elif defined(DRIVER_IRIX)

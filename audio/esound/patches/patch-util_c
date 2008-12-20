@@ -1,6 +1,6 @@
-$OpenBSD: patch-util_c,v 1.5 2008/03/31 01:05:54 jakemsr Exp $
---- util.c.orig	Thu Apr 19 17:43:59 2007
-+++ util.c	Sat Jun  2 23:38:31 2007
+$OpenBSD: patch-util_c,v 1.6 2008/12/20 08:58:32 jakemsr Exp $
+--- util.c.orig	Sun Dec 14 13:35:48 2008
++++ util.c	Sun Dec 14 13:39:45 2008
 @@ -1,5 +1,8 @@
  #include "config.h"
  #include "esd.h"
@@ -10,34 +10,32 @@ $OpenBSD: patch-util_c,v 1.5 2008/03/31 01:05:54 jakemsr Exp $
  #include <sys/types.h>
  #include <sys/socket.h>
  #include <stdlib.h>
-@@ -23,38 +26,31 @@ have_ipv6(void) {
+@@ -24,36 +27,31 @@ have_ipv6(void) {
  const char*
  esd_get_socket_dirname (void) 
  {
--	const char *audiodev;
+-	const char *audiodev = NULL;
 -	static char *dirname = NULL;
 +	static char *sockdir = NULL, sockdirbuf[PATH_MAX];
 +	struct passwd *pw;
  
--	if (dirname == NULL) {
--		if (!(audiodev = getenv("AUDIODEV"))) {
--			audiodev = "";
--		} else {
--			char *newdev = strrchr(audiodev, '/');
--			if (newdev != NULL) {
--				audiodev = newdev++;
--			}
--		}
--		dirname = malloc(strlen(audiodev) + sizeof("/tmp/.esd"));
--		strcpy(dirname, "/tmp/.esd");
--		strcat(dirname, audiodev);
+-        if (dirname == NULL) {
+-            if ((audiodev = getenv("AUDIODEV"))) {
+-                    char *newdev = strrchr(audiodev, '/');
+-                    if (newdev != NULL) {
+-                            audiodev = newdev++;
+-                    }
+-            } else
+-                audiodev = "";
+-            dirname = malloc(strlen(audiodev) +  40);
+-            sprintf (dirname, "/tmp/.esd%s-%i", audiodev, getuid());
 +	if (sockdir != NULL)
 +		return sockdir;
 +	pw = getpwuid(getuid());
 +	if (pw == NULL || pw->pw_dir == NULL) {
 +		fprintf(stderr, "esd: could not find home directory\n");
 +		exit(1);
- 	}
+         }
 -
 -	return dirname;
 +	snprintf(sockdirbuf, sizeof(sockdirbuf), "%s/.esd", pw->pw_dir);

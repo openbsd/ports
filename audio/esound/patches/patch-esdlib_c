@@ -1,10 +1,10 @@
-$OpenBSD: patch-esdlib_c,v 1.1 2008/03/31 01:05:54 jakemsr Exp $
---- esdlib.c.orig	Thu Apr 19 07:43:59 2007
-+++ esdlib.c	Sun Mar  9 23:39:06 2008
-@@ -769,7 +769,7 @@ int esd_open_sound( const char *host )
- 
- 		sprintf(cmd, "%s/esd %s -spawnfd %d", SERVERDIR, esd_spawn_options?esd_spawn_options:"", esd_pipe[1]);
- 
+$OpenBSD: patch-esdlib_c,v 1.2 2008/12/20 08:58:32 jakemsr Exp $
+--- esdlib.c.orig	Sun Dec 14 13:35:12 2008
++++ esdlib.c	Sun Dec 14 13:35:42 2008
+@@ -935,7 +935,7 @@ int esd_open_sound( const char *rhost )
+ 		 * not included in the waiting time
+ 		 */
+ 		setsid();
 -		execl("/bin/sh", "/bin/sh", "-c", cmd, NULL);
 +		execl("/bin/sh", "/bin/sh", "-c", cmd, (char *)NULL);
  		perror("execl");

@@ -1,7 +1,28 @@
-$OpenBSD: patch-configure_ac,v 1.3 2008/03/31 01:05:54 jakemsr Exp $
---- configure.ac.orig	Thu May  3 13:47:30 2007
-+++ configure.ac	Sun Mar  9 20:03:26 2008
-@@ -301,21 +301,16 @@ if test "x$enable_local_sound" = "xyes"; then
+$OpenBSD: patch-configure_ac,v 1.4 2008/12/20 08:58:32 jakemsr Exp $
+--- configure.ac.orig	Sat Dec 20 00:22:32 2008
++++ configure.ac	Sat Dec 20 00:22:38 2008
+@@ -202,6 +202,7 @@ if test "x$enable_local_sound" = "xyes"; then
+    echo "---------------------------------------------------------------------"
+    echo "--- Checking to see which audio header files your system uses.";
+    echo "--- Most of these checks should fail. Do not be alarmed.";
++   AC_CHECK_HEADERS(sndio.h)
+    AC_CHECK_HEADERS(soundcard.h sys/soundcard.h machine/soundcard.h sys/audio.h)
+    AC_CHECK_HEADERS(sys/audioio.h sys/audio.io.h sun/audioio.h)
+    AC_CHECK_HEADERS(dmedia/audio.h sys/soundlib.h sys/asoundlib.h alsa/asoundlib.h)
+@@ -215,6 +216,12 @@ if test "x$enable_local_sound" = "xyes"; then
+ 
+    dnl Define the driver needed based on the first header file found
+ 
++   if test "${ac_cv_header_sndio_h}" = "yes"; then
++      found_sound=yes
++      AC_DEFINE(DRIVER_SNDIO, 1, [Defined if libsndio backend is enabled])
++      SOUND_LIBS="-lsndio"
++   fi
++
+    if test x"$enable_oss" = xyes ; then
+      if test "${ac_cv_header_sys_soundcard_h}" = "yes" || \
+         test "${ac_cv_header_soundcard_h}" = "yes" || \
+@@ -299,7 +306,7 @@ if test "x$enable_local_sound" = "xyes"; then
       if test "x$HAVE_ARTS" = "xyes"; then
         found_sound=yes
         CFLAGS="$CFLAGS $ARTSC_CFLAGS"
@@ -10,21 +31,18 @@ $OpenBSD: patch-configure_ac,v 1.3 2008/03/31 01:05:54 jakemsr Exp $
         AC_DEFINE(DRIVER_ARTS, 1, [Defined if Arts backend is enabled])
       fi
     fi
- 
--   if test "$found_sound" = "no"; then
--      AC_MSG_ERROR([Could not find a support sound driver])
--   fi
--
-    dnl Check for additional audio libs needed
- 
+@@ -313,7 +320,9 @@ if test "x$enable_local_sound" = "xyes"; then
     echo "---------------------------------------------------------------------"
     echo "--- Checking to see which audio libraries are required for linking.";
     echo "--- Most of these checks should also fail. Do not be alarmed.";
 -   AC_CHECK_FUNC(_oss_ioctl,,[AC_CHECK_LIB(ossaudio,_oss_ioctl)])
++   if test "x$enable_oss" = "xyes"; then
++     AC_CHECK_FUNC(_oss_ioctl,,[AC_CHECK_LIB(ossaudio,_oss_ioctl)])
++   fi
     AC_CHECK_FUNC(ALnewconfig,,[AC_CHECK_LIB(audio,ALnewconfig)])
     if test "x$enable_alsa" = "xyes"; then
        AC_CHECK_FUNC(snd_cards,,[AC_CHECK_LIB(sound,snd_cards)])
-@@ -393,7 +388,8 @@ if test "x$with_libwrap" = "xyes"; then
+@@ -391,7 +400,8 @@ if test "x$with_libwrap" = "xyes"; then
  
     wrap_ok=no
     AC_TRY_LINK(
@@ -34,7 +52,7 @@ $OpenBSD: patch-configure_ac,v 1.3 2008/03/31 01:05:54 jakemsr Exp $
  #include <syslog.h>
  int allow_severity = LOG_INFO;
  int deny_severity = LOG_WARNING;],
-@@ -403,7 +399,8 @@ int deny_severity = LOG_WARNING;],
+@@ -401,7 +411,8 @@ int deny_severity = LOG_WARNING;],
         wrap_ok=yes],
        [LIBS="$LIBS -lnsl"
         AC_TRY_LINK(

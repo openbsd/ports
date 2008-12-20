@@ -1,9 +1,9 @@
-$OpenBSD: patch-test-script,v 1.5 2008/03/31 01:05:54 jakemsr Exp $
+$OpenBSD: patch-test-script,v 1.6 2008/12/20 08:58:32 jakemsr Exp $
 --- test-script.orig	Thu Apr 19 07:43:59 2007
 +++ test-script	Sun Mar  9 16:23:07 2008
 @@ -1,4 +1,4 @@
 -#!/bin/tcsh
-+#!/usr/local/bin/tcsh
++#!${LOCALBASE}/bin/tcsh
  echo welcome to the test.
  
  echo ""
