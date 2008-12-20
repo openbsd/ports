@@ -1,6 +1,9 @@
 HomeBank is free software. Use it to manage your personal accounts.
-It is designed to easy to use. Analyse your finances in detail using 
+It is designed for ease of use. Analyse your finances in detail using 
 powerful filtering tools and graphs.
 HomeBank benefits from more than 10 years of user experience and feedback.
 Its development started in 1995 on Amiga computers. It is now available on
 GNU/Linux, FreeBSD, MacOSX and Amiga.
+
+Be sure to correctly edit your preferences in "Edit -> Preferences ->
+Display Format" to have a correct display.
