@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/02/19 08:46:52 bernd Exp $
---- configure.orig	Mon Feb 11 20:24:37 2008
-+++ configure	Mon Feb 11 20:24:37 2008
-@@ -20429,7 +20429,7 @@ echo "${ECHO_T}$am_cv_python_pyexecdir" >&6; }
+$OpenBSD: patch-configure,v 1.2 2008/12/21 10:36:30 ajacoutot Exp $
+--- configure.orig	Fri Oct 31 09:53:24 2008
++++ configure	Sat Dec 20 16:09:27 2008
+@@ -20465,7 +20465,6 @@ echo "${ECHO_T}no" >&6; }
+ fi
+ 
+ 
+-CFLAGS="-Os -g"
+ 
+ # Check whether --enable-debug was given.
+ if test "${enable_debug+set}" = set; then
+@@ -20694,7 +20693,7 @@ echo "${ECHO_T}$am_cv_python_pyexecdir" >&6; }
    fi
  
  

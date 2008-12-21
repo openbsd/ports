@@ -6,3 +6,6 @@ are really endless and they are always there to serve you whenever you
 need them, just one key-press away. The system is not restricted to
 one desktop environment, but currently works on most of the modern
 Unix desktops (including GNOME, KDE, Xfce).
+
+Only a few sample desklets are included by default but many more are
+available for download at ${HOMEPAGE}.

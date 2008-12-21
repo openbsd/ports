@@ -1,0 +1,12 @@
+$OpenBSD: patch-display_Display_py,v 1.1 2008/12/21 10:36:30 ajacoutot Exp $
+--- display/Display.py.orig	Sun Dec 21 11:26:42 2008
++++ display/Display.py	Sun Dec 21 11:28:34 2008
+@@ -1085,7 +1085,7 @@ class Display(gtk.HBox, Observable):
+ 
+         from config import settings
+ 
+-        os.system("%s \"%s\" & disown" % (settings.editor, self.__display_file))
++        os.system("%s \"%s\" & " % (settings.editor, self.__display_file))
+ 
+ 
+     def __handle_restart(self, *args):
