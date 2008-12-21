@@ -1,0 +1,16 @@
+$OpenBSD: patch-gio_gfile_c,v 1.1 2008/12/21 14:02:40 ajacoutot Exp $
+
+Lower bufer size to prevent memory access issues.
+See GNOME bugzilla #561939.
+
+--- gio/gfile.c.orig	Sat Dec 20 21:45:00 2008
++++ gio/gfile.c	Sat Dec 20 21:45:17 2008
+@@ -2194,7 +2194,7 @@ copy_stream_with_progress (GInputStream           *in,
+ {
+   gssize n_read, n_written;
+   goffset current_size;
+-  char buffer[1024*64], *p;
++  char buffer[1024*4], *p;
+   gboolean res;
+   goffset total_size;
+   GFileInfo *info;
