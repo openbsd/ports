@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2008/10/22 16:02:24 kurt Exp $
+# $OpenBSD: Makefile,v 1.54 2008/12/21 03:59:44 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -62,7 +62,7 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 			CXX="${CXX}" \
 			DEFAULT_LD_LIBRARY_PATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
 			USER="${USER}" \
-			HOTSPOT_BUILD_JOBS=${MAKE_JOBS}
+			HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}
 
 # Error message for distfile.
 FETCH_MANUALLY=		"You must manually fetch the distribution files, place"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/10/22 16:02:24 kurt Exp $
+# $OpenBSD: Makefile,v 1.20 2008/12/21 03:59:44 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -63,7 +63,7 @@ MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		CC="${CC}" \
 		CXX="${CXX}" \
 		USERNAME=${USER} \
-		HOTSPOT_BUILD_JOBS=${MAKE_JOBS}
+		HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}
 
 #ALL_TARGET=	debug_build
 
