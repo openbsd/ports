@@ -1,4 +1,4 @@
-/*	$OpenBSD: audio_sndio_out.c,v 1.2 2008/12/14 23:58:46 brad Exp $	*/
+/*	$OpenBSD: audio_sndio_out.c,v 1.3 2008/12/21 07:56:47 jakemsr Exp $	*/
 
 /*
  * Copyright (c) 2008 Brad Smith <brad@comstyle.com>
@@ -89,9 +89,14 @@ static int ao_sndio_open(ao_driver_t *this_gen,
            "audio_sndio_out: ao_sndio_open bits=%d rate=%d, mode=%d\n",
            bits, rate, mode);
 
+  if (this->hdl != NULL) {
+    sio_close (this->hdl);
+    this->hdl = NULL;
+  }
+
   this->hdl = sio_open(NULL, SIO_PLAY, 0);
   if (this->hdl == NULL)
-    return 0;
+    goto bad;
 
   sio_initpar(&par);
 
@@ -114,7 +119,7 @@ static int ao_sndio_open(ao_driver_t *this_gen,
     xprintf (this->xine, XINE_VERBOSITY_DEBUG,
              "audio_sndio_out: ao_sndio_open does not support the requested mode: 0x%X\n",
 	     mode);
-    return 0;
+    goto bad;
   }
 
   switch (bits) {
@@ -126,33 +131,29 @@ static int ao_sndio_open(ao_driver_t *this_gen,
     par.bits = 16;
     par.sig = 1;
     break;
-  case 24:
-    par.bits = 24;
-    par.sig = 1;
-    break;
   default:
     xprintf (this->xine, XINE_VERBOSITY_DEBUG,
              "audio_sndio_out: ao_sndio_open bits per sample not supported: %d\n", bits);
-    return 0;
+    goto bad;
   }
 
   par.rate = rate;
-  par.bufsz = par.rate * 250 / 1000; /* 250ms buffer */
+  par.appbufsz = par.rate * 250 / 1000; /* 250ms buffer */
 
   if (!sio_setpar(this->hdl, &par)) {
     xprintf (this->xine, XINE_VERBOSITY_DEBUG,
              "audio_sndio_out: ao_sndio_open could not set params\n");
-    return 0;
+    goto bad;
   }
 
   if (!sio_getpar(this->hdl, &par)) {
     xprintf (this->xine, XINE_VERBOSITY_DEBUG,
              "audio_sndio_out: ao_sndio_open could not get params\n");
-    return 0;
+    goto bad;
   }
 
   xprintf (this->xine, XINE_VERBOSITY_DEBUG,
-           "audio_esd_out: ao_sndio_open %d channels output\n",
+           "audio_sndio_out: ao_sndio_open %d channels output\n",
            par.pchan);
 
   this->num_channels           = par.pchan;
@@ -164,12 +165,16 @@ static int ao_sndio_open(ao_driver_t *this_gen,
   if (!sio_start(this->hdl)) {
     xprintf (this->xine, XINE_VERBOSITY_DEBUG,
              "audio_sndio_out: ao_sndio_open could not start\n");
-    return 0;
+    goto bad;
   }
 
   return par.rate;
-}
 
+bad:
+  if (this->hdl != NULL)
+    sio_close(this->hdl);
+  return 0;
+}
 
 static int ao_sndio_num_channels(ao_driver_t *this_gen)
 {
@@ -222,10 +227,16 @@ static void ao_sndio_close(ao_driver_t *this_gen)
 {
   sndio_driver_t *this = (sndio_driver_t *) this_gen;
 
+  xprintf (this->xine, XINE_VERBOSITY_DEBUG,
+           "audio_sndio_out: ao_sndio_close called\n");
+
   if (!sio_stop(this->hdl)) {
     xprintf (this->xine, XINE_VERBOSITY_DEBUG,
              "audio_sndio_out: ao_sndio_close could not stop\n");
   }
+
+  sio_close(this->hdl);
+  this->hdl = NULL;
 }
 
 static uint32_t ao_sndio_get_capabilities (ao_driver_t *this_gen)
@@ -239,7 +250,10 @@ static void ao_sndio_exit(ao_driver_t *this_gen)
 {
   sndio_driver_t *this = (sndio_driver_t *) this_gen;
 
-  if (this->hdl)
+  xprintf (this->xine, XINE_VERBOSITY_DEBUG,
+           "audio_sndio_out: ao_sndio_exit called\n");
+
+  if (this->hdl != NULL)
     sio_close(this->hdl);
 }
 
@@ -263,6 +277,9 @@ static int ao_sndio_set_property (ao_driver_t *this_gen, int property, int value
 {
   sndio_driver_t *this = (sndio_driver_t *) this_gen;
   int vol;
+
+  if (this->hdl == NULL)
+    return 0;
 
   switch(property) {
   case AO_PROP_MIXER_VOL:
@@ -321,7 +338,7 @@ static ao_driver_t *open_plugin (audio_driver_class_t *class_gen, const void *da
     AO_CAP_MODE_4CHANNEL | AO_CAP_MODE_4_1CHANNEL |
     AO_CAP_MODE_5CHANNEL | AO_CAP_MODE_5_1CHANNEL |
     AO_CAP_MIXER_VOL | AO_CAP_MUTE_VOL | AO_CAP_8BITS |
-    AO_CAP_16BITS | AO_CAP_24BITS;
+    AO_CAP_16BITS;
 
   this->ao_driver.get_capabilities  = ao_sndio_get_capabilities;
   this->ao_driver.get_property      = ao_sndio_get_property;
