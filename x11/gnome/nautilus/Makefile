@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2008/11/27 10:27:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2008/12/21 13:53:06 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -8,6 +8,8 @@ COMMENT=		GNOME shell and file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		2.24.2
+PKGNAME=		${DISTNAME}p0
+
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 CATEGORIES=		x11
 
@@ -55,6 +57,18 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 				-L${WRKBUILD}/libnautilus-adapter/.libs \
 				-L${WRKBUILD}/libnautilus-private/.libs \
 				-L${LOCALBASE}/lib"
+
+# fix a locale related display bug (which can lead to a crash)
+BROKEN_LOCALE=	src/file-manager/fm-directory-view.c \
+		libnautilus-private/nautilus-file.c \
+		src/file-manager/fm-directory-view.c \
+		src/file-manager/fm-properties-window.c \
+		libnautilus-private/nautilus-progress-info.c \
+		libnautilus-private/nautilus-file-operations.c
+pre-configure:
+	for i in ${BROKEN_LOCALE}; do \
+		perl -pi -e "s,%\'d,%d,g;" -e "s,%\'u,%u,g;" \
+			${WRKSRC}/$${i}; done
 
 # The regression tests require a running instance of X.
 # You will also need to set the XAUTHORITY environment variable to point
