@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 03:07:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/12/21 11:51:01 kevlo Exp $
 
 COMMENT=	interactive tutorial for algorithms and data structures
 
-DISTNAME=	algotutor-0.8.5
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	algotutor-0.8.6
 CATEGORIES=	education math
 
-HOMEPAGE=	http://www.ofset.org/~ckhung/p/algotutor/
+HOMEPAGE=	http://people.ofset.org/~ckhung/p/algotutor/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.cyut.edu.tw/~ckhung/dl/
+MASTER_SITES=	http://people.ofset.org/~ckhung/dl/
 EXTRACT_SUFX=	.tgz
 
 RUN_DEPENDS=	:p5-Tk-*:x11/p5-Tk
@@ -27,14 +26,15 @@ P5SITE=		libdata/perl5/site_perl
 P5INST=		${PREFIX}/${P5SITE}
 SUBST_VARS=	P5SITE
 
-do-configure:
-	@perl -i -pe 's@%%P5INST%%@${P5INST}@g' ${WRKSRC}/algotutor
+DOCS=	ChangeLog gpl.html
 
-pre-install:
-	${INSTALL_DATA_DIR} ${P5INST}/algotutor
+do-configure:
+	${SUBST_CMD} ${WRKSRC}/algotutor
 
 do-install:
+	${INSTALL_DATA_DIR} ${P5INST}/algotutor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/algotutor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/algotutor
 	${INSTALL_DATA} ${WRKSRC}/etc/algotutor \
 		${PREFIX}/share/examples/algotutor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/algotutor
@@ -42,6 +42,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gen_at_graph ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/algotutor.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/gen_at_graph.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/doc/*.{php,png,css} \
+		${PREFIX}/share/doc/algotutor
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${DOCS} \
+		${PREFIX}/share/doc/algotutor
 	cp -R ${WRKSRC}/cgeom ${P5INST}/algotutor
 	cp -R ${WRKSRC}/data ${PREFIX}/share/algotutor
 	cp -R ${WRKSRC}/dp ${P5INST}/algotutor

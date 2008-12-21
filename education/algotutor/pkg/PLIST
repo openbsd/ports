@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/06/09 01:19:36 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/12/21 11:51:02 kevlo Exp $
 bin/algotutor
 bin/gen_at_graph
 ${P5SITE}/algotutor/
@@ -10,12 +10,15 @@ ${P5SITE}/algotutor/DCEdge.pm
 ${P5SITE}/algotutor/Edge.pm
 ${P5SITE}/algotutor/Graph.pm
 ${P5SITE}/algotutor/Heap.pm
+${P5SITE}/algotutor/Line.pm
 ${P5SITE}/algotutor/PQueue.pm
 ${P5SITE}/algotutor/RBTree.pm
 ${P5SITE}/algotutor/RecCanvas.pm
 ${P5SITE}/algotutor/RecDialog.pm
 ${P5SITE}/algotutor/TreeNode.pm
 ${P5SITE}/algotutor/Vector.pm
+${P5SITE}/algotutor/Vector2.pm
+${P5SITE}/algotutor/Vector3.pm
 ${P5SITE}/algotutor/Vertex.pm
 ${P5SITE}/algotutor/basic.pl
 ${P5SITE}/algotutor/cgeom/
@@ -41,5 +44,26 @@ share/algotutor/data/randgrid.gr
 share/algotutor/data/simple.gr
 share/algotutor/data/trc.gr
 share/algotutor/data/tt.gr
+share/doc/algotutor/
+share/doc/algotutor/ChangeLog
+share/doc/algotutor/algotutor.php
+share/doc/algotutor/algowriter.php
+share/doc/algotutor/bst.png
+share/doc/algotutor/core.css
+share/doc/algotutor/developer.php
+share/doc/algotutor/dijk.png
+share/doc/algotutor/footer.en.php
+share/doc/algotutor/gen_at_graph.php
+share/doc/algotutor/gpl.html
+share/doc/algotutor/header.en.php
+share/doc/algotutor/index.php
+share/doc/algotutor/index.tw.php
+share/doc/algotutor/light.css
+share/doc/algotutor/q6.en.php
+share/doc/algotutor/q6.php
+share/doc/algotutor/q61.png
+share/doc/algotutor/q62.png
+share/doc/algotutor/q63.png
+share/doc/algotutor/user.php
 share/examples/algotutor/
 share/examples/algotutor/algotutor
