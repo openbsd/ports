@@ -1,10 +1,21 @@
 set_program_name(domain) requires newer py-gtk2, but is kept back
 due to implied py-Nummeric update.
 
-$OpenBSD: patch-system-config-printer_py,v 1.5 2008/10/27 13:29:13 ajacoutot Exp $
+$OpenBSD: patch-system-config-printer_py,v 1.6 2008/12/21 11:40:40 ajacoutot Exp $
 --- system-config-printer.py.orig	Tue Oct 21 11:02:45 2008
-+++ system-config-printer.py	Mon Oct 27 14:30:20 2008
-@@ -333,7 +333,7 @@ class GUI(GtkGUI, monitor.Watcher):
++++ system-config-printer.py	Sun Dec 21 12:29:27 2008
+@@ -98,10 +98,6 @@ busy_cursor = gtk.gdk.Cursor(gtk.gdk.WATCH)
+ ready_cursor = gtk.gdk.Cursor(gtk.gdk.LEFT_PTR)
+ ellipsis = unichr(0x2026)
+ 
+-TEXT_start_firewall_tool = _("To do this, select "
+-                             "System->Administration->Firewall "
+-                             "from the main menu.")
+-
+ try:
+     try_CUPS_SERVER_REMOTE_ANY = cups.CUPS_SERVER_REMOTE_ANY
+ except AttributeError:
+@@ -333,7 +329,7 @@ class GUI(GtkGUI, monitor.Watcher):
          np.NewPrinterWindow.set_transient_for(self.MainWindow)
  
          # Set up "About" dialog
@@ -13,7 +24,7 @@ $OpenBSD: patch-system-config-printer_py,v 1.5 2008/10/27 13:29:13 ajacoutot Exp
          self.AboutDialog.set_version(config.VERSION)
          self.AboutDialog.set_icon_name('printer')
  
-@@ -377,7 +377,7 @@ class GUI(GtkGUI, monitor.Watcher):
+@@ -377,7 +373,7 @@ class GUI(GtkGUI, monitor.Watcher):
          self.dests_iconview.set_item_width (145)
          self.dests_iconview.set_pixbuf_column (1)
          self.dests_iconview.set_text_column (2)
@@ -22,7 +33,33 @@ $OpenBSD: patch-system-config-printer_py,v 1.5 2008/10/27 13:29:13 ajacoutot Exp
          self.dests_iconview.connect ('item-activated',
                                       self.dests_iconview_item_activated)
          self.dests_iconview.connect ('selection-changed',
-@@ -3707,7 +3707,7 @@ class NewPrinterGUI(GtkGUI):
+@@ -2479,25 +2475,6 @@ class GUI(GtkGUI, monitor.Watcher):
+         self.changed = set()
+         self.setDataButtonState()
+ 
+-        old_setting = self.server_settings.get (cups.CUPS_SERVER_SHARE_PRINTERS,
+-                                                '0')
+-        new_setting = setting_dict.get (cups.CUPS_SERVER_SHARE_PRINTERS, '0')
+-        if (old_setting == '0' and new_setting != '0'):
+-            # We have just enabled print queue sharing.
+-            # Ideally, this is the time we would check the firewall
+-            # settings on this machine and request that the IPP TCP port
+-            # be unblocked.  Unfortunately, this is not yet possible
+-            # (bug #440469).  However, we can display a dialog to suggest
+-            # that now might be a good time to review the firewall settings.
+-            show_info_dialog (_("Review Firewall"),
+-                              _("You may need to adjust the firewall "
+-                                "to allow network printing to this "
+-                                "computer.") + '\n\n' +
+-                              TEXT_start_firewall_tool,
+-                              parent=self.ServerSettingsDialog)
+-
+-        time.sleep(1) # give the server a chance to process our request
+-
+         # Now reconnect, in case the server needed to reload.
+         self.reconnect ()
+ 
+@@ -3707,7 +3684,7 @@ class NewPrinterGUI(GtkGUI):
          # Try to get make and model via SNMP
          if host:
              os.environ["HOST"] = host
@@ -31,7 +68,7 @@ $OpenBSD: patch-system-config-printer_py,v 1.5 2008/10/27 13:29:13 ajacoutot Exp
              debugprint (host + ": " + cmd)
              stdout = None
              try:
-@@ -5098,7 +5098,7 @@ class NewPrinterGUI(GtkGUI):
+@@ -5098,7 +5075,7 @@ class NewPrinterGUI(GtkGUI):
                  try:
                      # We want this to be in the current natural language,
                      # so we intentionally don't set LC_ALL=C here.

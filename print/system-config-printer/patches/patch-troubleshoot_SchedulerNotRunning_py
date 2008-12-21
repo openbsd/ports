@@ -1,0 +1,17 @@
+$OpenBSD: patch-troubleshoot_SchedulerNotRunning_py,v 1.1 2008/12/21 11:40:40 ajacoutot Exp $
+--- troubleshoot/SchedulerNotRunning.py.orig	Sun Dec 21 12:29:40 2008
++++ troubleshoot/SchedulerNotRunning.py	Sun Dec 21 12:33:10 2008
+@@ -26,10 +26,9 @@ class SchedulerNotRunning(Question):
+         Question.__init__ (self, troubleshooter, "Scheduler not running?")
+         page = self.initial_vbox (_("CUPS Service Stopped"),
+                                   _("The CUPS print spooler does not appear "
+-                                    "to be running.  To correct this, choose "
+-                                    "System->Administration->Services from "
+-                                    "the main menu and look for the `cups' "
+-                                    "service."))
++                                    "to be running.  To correct this, run "
++                                    "'${LOCALBASE}/sbin/cupsd' "))
++                                    "as root in a terminal."))
+         troubleshooter.new_page (page, self)
+ 
+     def display (self):
