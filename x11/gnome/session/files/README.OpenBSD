@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.16 2008/12/17 10:38:59 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.17 2008/12/22 23:03:12 jasper Exp $
 The OpenBSD/GNOME desktop
 
 * Introduction
@@ -47,7 +47,7 @@ you can install. The most important ones will be mentioned by category:
    * gnome-scan - scanning application
    * gnomebaker - CD/DVD burning application
    * gucharmap - Unicode character map
-   * keyring-manager - Keyring password management
+   * gnome-keyring-manager - Keyring password management
    * pessulus - lockdown editor for desktop
    * planner - project management
    * seahorse - encryption keys manager
