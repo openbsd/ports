@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.41 2008/12/17 18:43:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2008/12/22 22:26:18 jasper Exp $
 
 COMMENT=	GNOME web browser based on gecko
 
 V=		2.0.3
 DISTNAME=	galeon-${V}
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	www
 
 HOMEPAGE=	http://galeon.sourceforge.net/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -25,7 +25,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		plds4 png popt pthread ssl startup-notification-1 stdc++ \
 		util z \
 		freebl3 nss3 nssckbi smime3 softokn3 ssl3 \
-		Xcomposite Xdamage gailutil pcre
+		Xcomposite Xdamage gailutil pcre gio-2.0 pixman-1
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galeon/}
 
@@ -58,13 +58,12 @@ CONFIGURE_ARGS=	--with-mozilla=xulrunner \
 		--disable-schemas-install \
 		--disable-gtkhtml
 
-WRKDIST=	${WRKDIR}/galeon-${V}/
-
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/galeon/sound/events
-	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/sound/events/galeon.soundlist ${PREFIX}/share/examples/galeon/sound/events/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/galeon/
+	mv ${WRKINST}${SYSCONFDIR}/sound/ \
+		${PREFIX}/share/examples/galeon/sound/
 
 .include <bsd.port.mk>
