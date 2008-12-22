@@ -1,0 +1,45 @@
+$OpenBSD: patch-jdk_make_sun_splashscreen_FILES_c_gmk,v 1.1 2008/12/22 13:22:12 kurt Exp $
+--- jdk/make/sun/splashscreen/FILES_c.gmk.orig	Sun Dec 21 22:11:05 2008
++++ jdk/make/sun/splashscreen/FILES_c.gmk	Sun Dec 21 22:11:53 2008
+@@ -49,20 +49,6 @@ FILES_c = \
+ 	dgif_lib.c \
+ 	gif_err.c \
+ 	gifalloc.c \
+-	compress.c \
+-	deflate.c \
+-	gzio.c \
+-	infblock.c \
+-	infcodes.c \
+-	inffast.c \
+-	inflate.c \
+-	inftrees.c \
+-	infutil.c \
+-	trees.c \
+-	uncompr.c \
+-	zadler32.c \
+-	zcrc32.c \
+-	zutil.c \
+ 	jcomapi.c \
+ 	jdapimin.c \
+ 	jdapistd.c \
+@@ -108,3 +94,20 @@ FILES_c = \
+ 	jfdctfst.c \
+ 	jfdctint.c
+ 
++ifneq ($(SYSTEM_ZLIB),true)
++FILES_c += \
++	compress.c \
++	deflate.c \
++	gzio.c \
++	infblock.c \
++	infcodes.c \
++	inffast.c \
++	inflate.c \
++	inftrees.c \
++	infutil.c \
++	trees.c \
++	uncompr.c \
++	zadler32.c \
++	zcrc32.c \
++	zutil.c
++endif

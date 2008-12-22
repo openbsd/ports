@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_launcher_make,v 1.1 2008/12/22 13:22:12 kurt Exp $
+--- hotspot/build/bsd/makefiles/launcher.make.orig	Sun Dec 21 08:48:16 2008
++++ hotspot/build/bsd/makefiles/launcher.make	Sun Dec 21 01:27:05 2008
+@@ -48,7 +48,7 @@ else
+   LIBS_LAUNCHER             += -l$(JVM) $(LIBS)
+ endif
+ 
+-LINK_LAUNCHER = $(LINK.c)
++LINK_LAUNCHER = $(LINK.CC)
+ 
+ LINK_LAUNCHER/PRE_HOOK  = $(LINK_LIB.CC/PRE_HOOK)
+ LINK_LAUNCHER/POST_HOOK = $(LINK_LIB.CC/POST_HOOK)

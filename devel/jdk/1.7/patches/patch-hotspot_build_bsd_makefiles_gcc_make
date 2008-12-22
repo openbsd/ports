@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.3 2008/05/05 02:51:20 kurt Exp $
---- hotspot/build/bsd/makefiles/gcc.make.orig	Sun May  4 09:11:04 2008
-+++ hotspot/build/bsd/makefiles/gcc.make	Sun May  4 09:13:28 2008
+$OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.4 2008/12/22 13:22:12 kurt Exp $
+--- hotspot/build/bsd/makefiles/gcc.make.orig	Sat Dec 20 22:26:49 2008
++++ hotspot/build/bsd/makefiles/gcc.make	Sat Dec 20 23:52:53 2008
 @@ -25,9 +25,10 @@
  #------------------------------------------------------------------------
  # CC, CPP & AS
@@ -45,19 +45,7 @@ $OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.3 2008/05/05 02:51:20 k
  # Except for a few acceptable ones
  ACCEPTABLE_WARNINGS = -Wpointer-arith -Wconversion -Wsign-compare
  CFLAGS_WARN/DEFAULT = $(WARNINGS_ARE_ERRORS) $(ACCEPTABLE_WARNINGS)
-@@ -129,6 +123,11 @@ endif
- # Enable linker optimization
- LFLAGS += -Xlinker -O1
- 
-+# XXXBSD: need this until j2se is ported and libfontmanager/libjavaplugin_nscp
-+# can be linked with needed libs (supc++ etc). For now it is getting some symbols
-+# from libjvm.
-+LDNOMAP = true
-+
- # Use $(MAPFLAG:FILENAME=real_file_name) to specify a map file.
- MAPFLAG = -Xlinker --version-script=FILENAME
- 
-@@ -136,7 +135,7 @@ MAPFLAG = -Xlinker --version-script=FILENAME
+@@ -136,7 +130,7 @@ MAPFLAG = -Xlinker --version-script=FILENAME
  SONAMEFLAG = -Xlinker -soname=SONAME
  
  # Build shared library

@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
---- jdk/make/common/Defs-bsd.gmk.orig	Wed Nov  7 14:40:30 2007
-+++ jdk/make/common/Defs-bsd.gmk	Wed Nov  7 14:50:22 2007
+$OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.2 2008/12/22 13:22:12 kurt Exp $
+--- jdk/make/common/Defs-bsd.gmk.orig	Sat Dec 20 22:26:51 2008
++++ jdk/make/common/Defs-bsd.gmk	Sat Dec 20 23:03:00 2008
 @@ -43,12 +43,6 @@
  # Get shared JDK settings
  include $(JDK_MAKE_SHARED_DIR)/Defs.gmk
@@ -101,3 +101,18 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp 
  override OTHER_M4FLAGS           = -D__GLIBC__ -DGNU_ASSEMBLER
  override SUN_CMM_SUBDIR          =
  override THREADS_FLAG            = native
+@@ -317,6 +279,14 @@ override USE_EXECNAME            = true
+ # HAVE_DPS should only be "no" if the platform has no DPS headers or libs
+ # DPS (Displayable PostScript) is available on Solaris machines
+ HAVE_DPS = no
++
++ifeq ($(OS_VENDOR), FreeBSD)
++  SYSTEM_ZLIB = true
++endif
++
++ifeq ($(OS_VENDOR), OpenBSD)
++  SYSTEM_ZLIB = true
++endif
+ 
+ #
+ # Japanese manpages
