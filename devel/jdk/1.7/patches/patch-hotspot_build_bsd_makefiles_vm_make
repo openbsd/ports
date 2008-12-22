@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.4 2008/03/19 18:05:43 kurt Exp $
---- hotspot/build/bsd/makefiles/vm.make.orig	Wed Nov  7 12:41:30 2007
-+++ hotspot/build/bsd/makefiles/vm.make	Wed Nov  7 12:41:35 2007
+$OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.5 2008/12/22 14:56:40 kurt Exp $
+--- hotspot/build/bsd/makefiles/vm.make.orig	Mon Dec 22 08:43:34 2008
++++ hotspot/build/bsd/makefiles/vm.make	Mon Dec 22 08:59:19 2008
 @@ -84,6 +84,10 @@ CPPFLAGS =           \
    ${JRE_VERSION}     \
    ${VM_DISTRO}
@@ -21,12 +21,43 @@ $OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.4 2008/03/19 18:05:43 ku
  
  # By default, link the *.o into the library, not the executable.
  LINK_INTO$(LINK_INTO) = LIBJVM
-@@ -122,7 +126,7 @@ mapfile_reorder : mapfile $(REORDERFILE)
+@@ -122,32 +126,14 @@ mapfile_reorder : mapfile $(REORDERFILE)
  	rm -f $@
  	cat $^ > $@
  
 -STATIC_CXX = true
 +STATIC_CXX = false
  
- ifeq ($(LINK_INTO),AOUT)
-   LIBJVM.o                 =
+-ifeq ($(LINK_INTO),AOUT)
+-  LIBJVM.o                 =
+-  LIBJVM_MAPFILE           =
+-  LIBS_VM                  = $(LIBS)
+-else
+-  LIBJVM.o                 = $(JVM_OBJ_FILES)
+-  LIBJVM_MAPFILE$(LDNOMAP) = mapfile_reorder
+-  LFLAGS_VM$(LDNOMAP)      += $(MAPFLAG:FILENAME=$(LIBJVM_MAPFILE))
+-  LFLAGS_VM                += $(SONAMEFLAG:SONAME=$(LIBJVM))
+-
+-  # JVM is statically linked with libgcc[_s] and libstdc++; this is needed to
+-  # get around library dependency and compatibility issues. Must use gcc not
+-  # g++ to link.
+-  ifeq ($(STATIC_CXX), true)
+-    LFLAGS_VM              += $(STATIC_LIBGCC)
+-    LIBS_VM                += $(STATIC_STDCXX)
+-  else
+-    LIBS_VM                += -lstdc++
+-  endif
+-
+-  LIBS_VM                  += $(LIBS)
+-endif
+-
+-LINK_VM = $(LINK_LIB.c)
++LIBJVM.o                 = $(JVM_OBJ_FILES)
++LIBJVM_MAPFILE$(LDNOMAP) = mapfile_reorder
++LFLAGS_VM$(LDNOMAP)      += $(MAPFLAG:FILENAME=$(LIBJVM_MAPFILE))
++LFLAGS_VM                += $(SONAMEFLAG:SONAME=$(LIBJVM))
++LIBS_VM                  += $(LIBS)
++LINK_VM = $(LINK_LIB.CC)
+ 
+ # rule for building precompiled header
+ $(PRECOMPILED_HEADER): $(Precompiled_Files)
