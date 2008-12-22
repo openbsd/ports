@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/17 18:33:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2008/12/22 22:57:45 jasper Exp $
 
 COMMENT=		GGZ Gaming Zone - base library
 
 DISTNAME=		libggz-$V
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	ggz                  0.0      # .5.0
 
 CONFIGURE_ARGS+=	--with-gcrypt \
@@ -15,5 +16,12 @@ MODULES=		devel/gettext
 WANTLIB=		crypto gpg-error ssl
 
 LIB_DEPENDS=		gcrypt::security/libgcrypt
+
+# compiler takes insane amounts of time to compile
+.if ${MACHINE_ARCH} == "sparc64"
+EXTRA_CFLAGS=	-O1
+.endif
+
+MAKE_FLAGS+=	EXTRA_CFLAGS=${EXTRA_CFLAGS}
 
 .include <bsd.port.mk>

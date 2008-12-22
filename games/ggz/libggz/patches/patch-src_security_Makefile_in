@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_security_Makefile_in,v 1.1 2008/12/22 22:57:45 jasper Exp $
+
+Append extra CFLAGS if needed (fixes build on sparc64).
+
+--- src/security/Makefile.in.orig	Fri Dec  5 18:56:39 2008
++++ src/security/Makefile.in	Fri Dec  5 18:57:04 2008
+@@ -56,19 +56,20 @@ am_libggzsecurity_la_OBJECTS = libggzsecurity_la-hashf
+ 	libggzsecurity_la-ggz_tls_none.lo
+ libggzsecurity_la_OBJECTS = $(am_libggzsecurity_la_OBJECTS)
+ libggzsecurity_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+-	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
++	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(EXTRA_CFLAGS) \
+ 	$(libggzsecurity_la_LDFLAGS) $(LDFLAGS) -o $@
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+-	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(EXTRA_CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+-	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(EXTRA_CFLAGS)
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
++	$(EXTRA_CFLAGS) \
+ 	$(LDFLAGS) -o $@
+ SOURCES = $(libggzsecurity_la_SOURCES)
+ DIST_SOURCES = $(libggzsecurity_la_SOURCES)
