@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2008/11/11 20:35:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2008/12/22 20:55:49 naddy Exp $
 
 COMMENT=	MPEG-1/2 audio layer 1, 2, and 3 player
 
-DISTNAME=	mpg123-1.6.1
-SHARED_LIBS=	mpg123	0.0	# .11.2
+DISTNAME=	mpg123-1.6.3
+SHARED_LIBS=	mpg123	0.1	# .11.3
 CATEGORIES=	audio
 HOMEPAGE=	http://www.mpg123.de/
 
@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \
 		--with-audio=sndio \
 		--with-optimization=0
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${WRKBUILD}/src/libmpg123/.libs -L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build
 
 .if   ${MACHINE_ARCH} == "arm"

@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.1 2008/11/11 20:35:49 naddy Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2008/12/22 20:55:49 naddy Exp $
 --- configure.ac.orig	Mon Nov 10 00:43:42 2008
 +++ configure.ac	Mon Nov 10 20:32:05 2008
 @@ -308,6 +308,7 @@ AC_ARG_WITH([default-audio], [
@@ -9,15 +9,6 @@ $OpenBSD: patch-configure_ac,v 1.1 2008/11/11 20:35:49 naddy Exp $
    --with-default-audio=sun        Use Sun as default audio output sub-system (/dev/audio)
    --with-default-audio=arts       Use aRts as default audio output sub-system (KDE sound server)
  ])
-@@ -448,7 +449,7 @@ if test x"$fifo" = xenabled; then
- fi
- 
- AC_CHECK_FUNCS( getaddrinfo, [ have_ipv6=yes ], [ have_ipv6=no ] )
--if test x"$ipv6" = xautox; then
-+if test x"$ipv6" = xauto; then
- 	if test x"$have_ipv6" = xyes; then
- 		ipv6=enabled
- 	else
 @@ -793,7 +794,7 @@ fi
  dnl ############## Output module choice
  
