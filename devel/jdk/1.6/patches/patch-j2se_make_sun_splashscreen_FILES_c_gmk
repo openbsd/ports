@@ -1,0 +1,45 @@
+$OpenBSD: patch-j2se_make_sun_splashscreen_FILES_c_gmk,v 1.1 2008/12/22 13:16:56 kurt Exp $
+--- j2se/make/sun/splashscreen/FILES_c.gmk.orig	Sun Dec 21 18:17:04 2008
++++ j2se/make/sun/splashscreen/FILES_c.gmk	Sun Dec 21 18:22:34 2008
+@@ -27,20 +27,6 @@ FILES_c = \
+ 	$(CTARGDIR)dgif_lib.c \
+ 	$(CTARGDIR)gif_err.c \
+ 	$(CTARGDIR)gifalloc.c \
+-	$(CTARGDIR)compress.c \
+-	$(CTARGDIR)deflate.c \
+-	$(CTARGDIR)gzio.c \
+-	$(CTARGDIR)infblock.c \
+-	$(CTARGDIR)infcodes.c \
+-	$(CTARGDIR)inffast.c \
+-	$(CTARGDIR)inflate.c \
+-	$(CTARGDIR)inftrees.c \
+-	$(CTARGDIR)infutil.c \
+-	$(CTARGDIR)trees.c \
+-	$(CTARGDIR)uncompr.c \
+-	$(CTARGDIR)zadler32.c \
+-	$(CTARGDIR)zcrc32.c \
+-	$(CTARGDIR)zutil.c \
+ 	$(CTARGDIR)jcomapi.c \
+ 	$(CTARGDIR)jdapimin.c \
+ 	$(CTARGDIR)jdapistd.c \
+@@ -86,3 +72,20 @@ FILES_c = \
+ 	$(CTARGDIR)jfdctfst.c \
+ 	$(CTARGDIR)jfdctint.c
+ 
++ifneq ($(SYSTEM_ZLIB),true)
++FILES_c += \
++	$(CTARGDIR)compress.c \
++	$(CTARGDIR)deflate.c \
++	$(CTARGDIR)gzio.c \
++	$(CTARGDIR)infblock.c \
++	$(CTARGDIR)infcodes.c \
++	$(CTARGDIR)inffast.c \
++	$(CTARGDIR)inflate.c \
++	$(CTARGDIR)inftrees.c \
++	$(CTARGDIR)infutil.c \
++	$(CTARGDIR)trees.c \
++	$(CTARGDIR)uncompr.c \
++	$(CTARGDIR)zadler32.c \
++	$(CTARGDIR)zcrc32.c \
++	$(CTARGDIR)zutil.c
++endif

@@ -1,0 +1,18 @@
+$OpenBSD: patch-j2se_make_common_Defs-bsd_gmk,v 1.1 2008/12/22 13:16:56 kurt Exp $
+--- j2se/make/common/Defs-bsd.gmk.orig	Sat Dec 20 23:00:33 2008
++++ j2se/make/common/Defs-bsd.gmk	Sat Dec 20 23:01:56 2008
+@@ -347,6 +347,14 @@ override WRITE_LIBVERSION        = false
+ # installation area.
+ override USE_EXECNAME            = true
+ 
++ifeq ($(OS_VENDOR), FreeBSD)
++  SYSTEM_ZLIB = true
++endif
++
++ifeq ($(OS_VENDOR), OpenBSD)
++  SYSTEM_ZLIB = true
++endif
++
+ #
+ # Japanese manpages
+ #
