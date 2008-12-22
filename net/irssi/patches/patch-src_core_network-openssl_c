@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_core_network-openssl_c,v 1.1 2008/12/22 19:40:33 matthieu Exp $
+--- src/core/network-openssl.c.orig	Sat Oct  6 11:38:20 2007
++++ src/core/network-openssl.c	Wed Dec  3 23:21:23 2008
+@@ -40,6 +40,8 @@ typedef struct
+ 	SSL_CTX *ctx;
+ 	unsigned int verify:1;
+ } GIOSSLChannel;
++
++void irssi_redraw(void);
+ 	
+ static SSL_CTX *ssl_ctx = NULL;
+ 
+@@ -201,6 +203,17 @@ static GIOFuncs irssi_ssl_channel_funcs = {
+     irssi_ssl_get_flags
+ };
+ 
++static int getpass_cb(char *buf, int size, int rwflag, void *keyname)
++{
++	char *pp, prompt[256];
++	snprintf(prompt, 256, "Enter Passphrase for %s:", keyname);
++	pp = getpass(prompt);
++	strncpy(buf, pp, size);
++	buf[size - 1] = '\0';
++	irssi_redraw();
++	return(strlen(buf));
++}
++
+ static gboolean irssi_ssl_init(void)
+ {
+ 	SSL_library_init();
+@@ -242,6 +255,8 @@ static GIOChannel *irssi_ssl_get_iochannel(GIOChannel 
+ 		scert = convert_home(mycert);
+ 		if (mypkey && *mypkey)
+ 			spkey = convert_home(mypkey);
++		SSL_CTX_set_default_passwd_cb(ctx, getpass_cb);
++		SSL_CTX_set_default_passwd_cb_userdata(ctx, mypkey?mypkey:mycert);
+ 		if (! SSL_CTX_use_certificate_file(ctx, scert, SSL_FILETYPE_PEM))
+ 			g_warning("Loading of client certificate '%s' failed", mycert);
+ 		else if (! SSL_CTX_use_PrivateKey_file(ctx, spkey ? spkey : scert, SSL_FILETYPE_PEM))

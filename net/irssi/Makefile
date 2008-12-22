@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2008/10/02 20:32:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2008/12/22 19:40:33 matthieu Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	modular IRC client with many features (ipv6,socks,proxy)
 
 DISTNAME=	irssi-0.8.12
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.irssi.org/

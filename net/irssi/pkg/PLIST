@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.16 2007/10/10 18:09:56 jasper Exp $
-bin/irssi
+@comment $OpenBSD: PLIST,v 1.17 2008/12/22 19:40:33 matthieu Exp $
+@bin bin/irssi
 lib/irssi/
 lib/irssi/modules/
 lib/irssi/modules/libirc_proxy.la

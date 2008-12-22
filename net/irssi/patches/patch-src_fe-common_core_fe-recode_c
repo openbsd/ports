@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_fe-common_core_fe-recode_c,v 1.1 2007/05/16 19:29:11 martynas Exp $
---- src/fe-common/core/fe-recode.c.orig	Wed Apr 25 21:13:56 2007
-+++ src/fe-common/core/fe-recode.c	Wed May 16 16:20:20 2007
-@@ -182,8 +182,8 @@ static void read_settings(void)
+$OpenBSD: patch-src_fe-common_core_fe-recode_c,v 1.2 2008/12/22 19:40:33 matthieu Exp $
+--- src/fe-common/core/fe-recode.c.orig	Sat Oct  6 11:38:19 2007
++++ src/fe-common/core/fe-recode.c	Wed Dec  3 21:35:58 2008
+@@ -181,8 +181,8 @@ static void read_settings(void)
  		g_free(term_charset);
  #if defined (HAVE_NL_LANGINFO) && defined(CODESET)
  		term_charset = is_valid_charset(old_term_charset) ? g_strdup(old_term_charset) : 
