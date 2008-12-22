@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2008/12/22 14:56:40 kurt Exp $
+# $OpenBSD: Makefile,v 1.23 2008/12/22 15:06:39 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -10,8 +10,8 @@ B=		b24
 DISTFILES=	openjdk7-${B}.tar.bz2 \
 		jdk-7-icedtea-plugs-1.6.tar.gz
 PKGNAME=	jdk-${V}
-PKGNAME-main=	jdk-${V}${B}p5
-PKGNAME-jre=	jre-${V}${B}p5
+PKGNAME-main=	jdk-${V}${B}p6
+PKGNAME-jre=	jre-${V}${B}p6
 
 CATEGORIES=	devel/jdk java
 
@@ -49,7 +49,7 @@ BUILD_DEPENDS+=	::devel/apache-ant \
 		::archivers/unzip \
 		::print/cups
 MODULES=	converters/libiconv
-WANTLIB=	X11 Xext Xi Xtst c freetype m ossaudio pthread stdc++
+WANTLIB=	X11 Xext Xi Xtst c freetype m ossaudio pthread stdc++ z
 
 USE_GMAKE=	Yes
 
