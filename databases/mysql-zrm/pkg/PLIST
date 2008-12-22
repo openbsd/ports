@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/17 23:05:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/12/22 14:44:26 giovanni Exp $
 bin/mysql-zrm
 bin/mysql-zrm-abort-backup
 bin/mysql-zrm-backup
@@ -6,6 +6,7 @@ bin/mysql-zrm-check
 bin/mysql-zrm-extract-backup
 bin/mysql-zrm-getconf
 bin/mysql-zrm-list
+bin/mysql-zrm-manage-backup
 bin/mysql-zrm-migrate-file-ownership
 bin/mysql-zrm-parse-binlogs
 bin/mysql-zrm-purge
@@ -35,6 +36,7 @@ man/cat1/mysql-zrm-backup.1
 man/cat1/mysql-zrm-check.1
 man/cat1/mysql-zrm-extract-backup.1
 man/cat1/mysql-zrm-list.1
+man/cat1/mysql-zrm-manage-backup.1
 man/cat1/mysql-zrm-parse-binlogs.1
 man/cat1/mysql-zrm-purge.1
 man/cat1/mysql-zrm-reporter.1

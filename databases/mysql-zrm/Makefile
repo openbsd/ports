@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/17 23:05:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2008/12/22 14:44:26 giovanni Exp $
 
 COMMENT =	MySQL backup scripts
 
-DISTNAME =	MySQL-zrm-2.0
+V =		2.1
+DISTNAME =	MySQL-zrm-$V
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	databases perl5
 
 HOMEPAGE =	http://www.zmanda.com/
 
-MAINTAINER =	Giovanni Bechis <g.bechis@snb.it>
+MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	http://www.zmanda.com/downloads/community/ZRM-MySQL/2.0/Source/
+MASTER_SITES =	http://www.zmanda.com/downloads/community/ZRM-MySQL/$V/Source/
 
 RUN_DEPENDS =	::archivers/gtar \
 		::databases/p5-DBD-mysql \

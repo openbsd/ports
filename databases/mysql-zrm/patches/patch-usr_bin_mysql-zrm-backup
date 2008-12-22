@@ -1,6 +1,6 @@
-$OpenBSD: patch-usr_bin_mysql-zrm-backup,v 1.1.1.1 2008/10/17 23:05:41 sthen Exp $
---- usr/bin/mysql-zrm-backup.orig	Mon Oct 13 19:26:13 2008
-+++ usr/bin/mysql-zrm-backup	Mon Oct 13 19:26:33 2008
+$OpenBSD: patch-usr_bin_mysql-zrm-backup,v 1.2 2008/12/22 14:44:26 giovanni Exp $
+--- usr/bin/mysql-zrm-backup.orig	Fri Dec  5 01:46:01 2008
++++ usr/bin/mysql-zrm-backup	Fri Dec 19 11:05:27 2008
 @@ -38,7 +38,7 @@ use ZRM::MySQL;
  
  $SIG{'TERM'} = sub { $abort_flag = 1; };
@@ -10,7 +10,7 @@ $OpenBSD: patch-usr_bin_mysql-zrm-backup,v 1.1.1.1 2008/10/17 23:05:41 sthen Exp
  my $MAILCMD="mail";
  
  #Neither mysqlhotcopy not mysqldump will do a --flush-logs 
-@@ -1504,7 +1504,7 @@ sub totalSize()
+@@ -1585,7 +1585,7 @@ sub totalSize()
  				    $inputs{"synchronous-checksum"} == 1 ){
  					my $file = $File::Find::fullname;
  					if( -f $file ){
