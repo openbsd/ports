@@ -1,0 +1,12 @@
+$OpenBSD: patch-glib_m4,v 1.1 2008/12/22 20:28:18 naddy Exp $
+--- glib.m4.orig	Mon Dec 22 21:11:30 2008
++++ glib.m4	Mon Dec 22 21:11:42 2008
+@@ -5,7 +5,7 @@ dnl AM_PATH_GLIB([MINIMUM-VERSION, [ACTION-IF-FOUND [,
+ dnl Test for GLIB, and define GLIB_CFLAGS and GLIB_LIBS, if "gmodule" or 
+ dnl gthread is specified in MODULES, pass to glib-config
+ dnl
+-AC_DEFUN(AM_PATH_GLIB,
++AC_DEFUN([AM_PATH_GLIB],
+ [dnl 
+ dnl Get the cflags and libraries from the glib-config script
+ dnl

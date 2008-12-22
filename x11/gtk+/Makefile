@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.65 2007/09/15 20:04:20 merdely Exp $
+# $OpenBSD: Makefile,v 1.66 2008/12/22 20:28:18 naddy Exp $
 
 COMMENT=	General Toolkit for X11 GUI
 
 DISTNAME=	gtk+-1.2.10
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 SHARED_LIBS=	gdk 3.0 \
 		gtk 3.0
 CATEGORIES=	x11 devel

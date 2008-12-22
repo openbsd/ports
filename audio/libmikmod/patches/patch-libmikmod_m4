@@ -1,0 +1,12 @@
+$OpenBSD: patch-libmikmod_m4,v 1.1 2008/12/22 20:28:18 naddy Exp $
+--- libmikmod.m4.orig	Mon Dec 22 21:02:20 2008
++++ libmikmod.m4	Mon Dec 22 21:02:37 2008
+@@ -8,7 +8,7 @@ dnl AM_PATH_LIBMIKMOD([MINIMUM-VERSION, [ACTION-IF-FOU
+ dnl Test for libmikmod, and define LIBMIKMOD_CFLAGS, LIBMIKMOD_LIBS and
+ dnl LIBMIKMOD_LDADD
+ dnl
+-AC_DEFUN(AM_PATH_LIBMIKMOD,
++AC_DEFUN([AM_PATH_LIBMIKMOD],
+ [dnl 
+ dnl Get the cflags and libraries from the libmikmod-config script
+ dnl
