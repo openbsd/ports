@@ -1,10 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/26 18:38:31 eric Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/12/22 23:43:11 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/web/
 lib/python${MODPY_VERSION}/site-packages/web.py-${VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/web/__init__.py
 lib/python${MODPY_VERSION}/site-packages/web/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/web/cheetah.py
-lib/python${MODPY_VERSION}/site-packages/web/cheetah.pyc
+lib/python${MODPY_VERSION}/site-packages/web/application.py
+lib/python${MODPY_VERSION}/site-packages/web/application.pyc
+lib/python${MODPY_VERSION}/site-packages/web/browser.py
+lib/python${MODPY_VERSION}/site-packages/web/browser.pyc
+lib/python${MODPY_VERSION}/site-packages/web/contrib/
+lib/python${MODPY_VERSION}/site-packages/web/contrib/__init__.py
+lib/python${MODPY_VERSION}/site-packages/web/contrib/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/web/contrib/template.py
+lib/python${MODPY_VERSION}/site-packages/web/contrib/template.pyc
 lib/python${MODPY_VERSION}/site-packages/web/db.py
 lib/python${MODPY_VERSION}/site-packages/web/db.pyc
 lib/python${MODPY_VERSION}/site-packages/web/debugerror.py
@@ -17,14 +24,18 @@ lib/python${MODPY_VERSION}/site-packages/web/httpserver.py
 lib/python${MODPY_VERSION}/site-packages/web/httpserver.pyc
 lib/python${MODPY_VERSION}/site-packages/web/net.py
 lib/python${MODPY_VERSION}/site-packages/web/net.pyc
-lib/python${MODPY_VERSION}/site-packages/web/request.py
-lib/python${MODPY_VERSION}/site-packages/web/request.pyc
+lib/python${MODPY_VERSION}/site-packages/web/session.py
+lib/python${MODPY_VERSION}/site-packages/web/session.pyc
 lib/python${MODPY_VERSION}/site-packages/web/template.py
 lib/python${MODPY_VERSION}/site-packages/web/template.pyc
+lib/python${MODPY_VERSION}/site-packages/web/test.py
+lib/python${MODPY_VERSION}/site-packages/web/test.pyc
 lib/python${MODPY_VERSION}/site-packages/web/utils.py
 lib/python${MODPY_VERSION}/site-packages/web/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/web/webapi.py
 lib/python${MODPY_VERSION}/site-packages/web/webapi.pyc
+lib/python${MODPY_VERSION}/site-packages/web/webopenid.py
+lib/python${MODPY_VERSION}/site-packages/web/webopenid.pyc
 lib/python${MODPY_VERSION}/site-packages/web/wsgi.py
 lib/python${MODPY_VERSION}/site-packages/web/wsgi.pyc
 lib/python${MODPY_VERSION}/site-packages/web/wsgiserver/

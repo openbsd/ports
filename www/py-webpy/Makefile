@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2008/03/26 18:38:30 eric Exp $
+# $OpenBSD: Makefile,v 1.3 2008/12/22 23:43:11 jasper Exp $
 
 COMMENT=	web framework for python
 
-VERSION=	0.23
+VERSION=	0.31
 DISTNAME=	web.py-${VERSION}
 PKGNAME=	py-webpy-${VERSION}
 CATEGORIES=	www
 
 MAINTAINER=	Benoit Chesneau <benoitc@metavers.net>
 
-MASTER_SITES=	http://webpy.org/static/
+MASTER_SITES=	${HOMEPAGE}/static/
 HOMEPAGE=	http://webpy.org
 
 # Public Domain, except wsgiserver
