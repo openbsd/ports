@@ -1,3 +1,4 @@
+$OpenBSD: patch-gdk_Makefile_in,v 1.5 2008/12/22 20:19:00 naddy Exp $
 --- gdk/Makefile.in.orig	Mon Apr  2 05:14:11 2001
 +++ gdk/Makefile.in	Thu May  5 00:30:41 2005
 @@ -135,7 +135,7 @@ lib_LTLIBRARIES = libgdk.la

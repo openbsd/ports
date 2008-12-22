@@ -1,7 +1,7 @@
-$OpenBSD: patch-po_Makefile_in_in,v 1.2 2001/03/07 22:59:16 brad Exp $
---- po/Makefile.in.in.orig	Wed Mar  7 10:46:52 2001
-+++ po/Makefile.in.in	Wed Mar  7 10:47:36 2001
-@@ -71,7 +71,7 @@
+$OpenBSD: patch-po_Makefile_in_in,v 1.3 2008/12/22 20:19:00 naddy Exp $
+--- po/Makefile.in.in.orig	Wed Mar 28 23:11:42 2001
++++ po/Makefile.in.in	Mon Dec 22 21:17:53 2008
+@@ -71,7 +71,7 @@ INSTOBJEXT = @INSTOBJEXT@
  	$(MSGFMT) -o $@ $<
  
  .po.gmo:
