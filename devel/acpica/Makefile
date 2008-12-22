@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/07/07 04:08:00 phessler Exp $
+# $OpenBSD: Makefile,v 1.3 2008/12/22 22:43:02 phessler Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -17,9 +17,9 @@ WANTLIB =		c
 # Intel License
 # http://www.acpica.org/downloads/unix_source_code.php
 PERMIT_PACKAGE_CDROM =	export restrictions
-PERMIT_PACKAGE_FTP =	export restrictions
+PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =export restrictions
-PERMIT_DISTFILES_FTP =	export restrictions
+PERMIT_DISTFILES_FTP =	Yes
 
 USE_GMAKE =		Yes
 NO_REGRESS = 		Yes
