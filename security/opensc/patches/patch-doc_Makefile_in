@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2008/12/23 19:10:33 jasper Exp $
+--- doc/Makefile.in.orig	Tue Dec 23 20:00:55 2008
++++ doc/Makefile.in	Tue Dec 23 20:01:07 2008
+@@ -224,7 +224,7 @@ libdir = @libdir@
+ libexecdir = @libexecdir@
+ localedir = @localedir@
+ localstatedir = @localstatedir@
+-mandir = @mandir@
++mandir = @prefix@/man/
+ mkdir_p = @mkdir_p@
+ oldincludedir = @oldincludedir@
+ openscincludedir = @openscincludedir@

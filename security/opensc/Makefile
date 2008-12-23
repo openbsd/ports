@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2008/12/23 19:10:33 jasper Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
-DISTNAME=	opensc-0.9.6
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	opensc-0.11.6
 CATEGORIES=	security
-SHARED_LIBS=	opensc		1.0 \
-		pkcs15init	1.0 \
-		scam		1.0 \
-		scconf		1.0 \
-		pkcs11		1.0
+SHARED_LIBS +=  scconf               2.0      # .1.0
+SHARED_LIBS +=  opensc               2.0      # .1.0
+SHARED_LIBS +=  pkcs15init           2.0      # .1.0
+SHARED_LIBS +=  opensc               2.0      # .1.0
+SHARED_LIBS +=  pkcs15init           2.0      # .1.0
 MODGNU_SHARED_LIBS=opensc	'' \
 		pkcs15init	'' \
 		scam		'' \
@@ -20,7 +19,7 @@ HOMEPAGE=	http://www.opensc-project.org/
 
 MAINTAINER=	Douglas Santos <dsantos@hydroxyl.org>
 
-# GPL
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes 
@@ -28,7 +27,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/files/opensc/
 
-WANTLIB=	readline crypto termcap c pthread
+WANTLIB=	c crypto ltdl ncurses readline z
 
 LIB_DEPENDS=	openct.>=1::security/openct
 
@@ -40,7 +39,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
 		--sysconfdir=${SYSCONFDIR} \
 		--disable-ldap
-CONFIGURE_ENV=	PTHREAD_LIBS=-pthread
+CONFIGURE_ENV=	PTHREAD_LIBS=-pthread \
+		LTLIB_CFLAGS="-I${LOCALBASE}/include" \
+		LTLIB_LIBS="-L${LOCALBASE}/lib -lltdl" 
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opensc

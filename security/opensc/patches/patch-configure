@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2005/11/27 11:01:14 alek Exp $
---- configure.orig	Sat Nov 26 19:09:05 2005
-+++ configure	Sat Nov 26 19:09:10 2005
-@@ -20282,9 +20282,6 @@ fi
+$OpenBSD: patch-configure,v 1.2 2008/12/23 19:10:33 jasper Exp $
+--- configure.orig	Wed Aug 27 08:27:00 2008
++++ configure	Tue Dec 23 19:58:18 2008
+@@ -21306,9 +21306,6 @@ fi
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
  
