@@ -1,0 +1,19 @@
+$OpenBSD: patch-core_email_queue_api_php,v 1.1 2008/12/23 10:51:02 mbalmer Exp $
+--- core/email_queue_api.php.orig	Tue Dec 23 11:42:11 2008
++++ core/email_queue_api.php	Tue Dec 23 11:42:21 2008
+@@ -104,7 +104,7 @@
+ 					)";
+ 		db_query( $query );
+ 
+-		return db_insert_id( $t_email_table );
++		return db_insert_id( $t_email_table, "email_id" );
+ 	}
+ 
+ 	# --------------------
+@@ -176,4 +176,4 @@
+ 
+ 		return $t_ids;
+ 	}
+-?>
+\ No newline at end of file
++?>

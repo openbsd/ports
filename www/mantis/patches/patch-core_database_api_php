@@ -1,0 +1,17 @@
+$OpenBSD: patch-core_database_api_php,v 1.1 2008/12/23 10:51:02 mbalmer Exp $
+--- core/database_api.php.orig	Tue Dec 23 11:40:48 2008
++++ core/database_api.php	Tue Dec 23 11:41:35 2008
+@@ -248,11 +248,12 @@
+ 
+ 	# --------------------
+ 	# return the last inserted id
+-	function db_insert_id($p_table = null) {
++	function db_insert_id($p_table = null,$p_column = "id") {
+ 		global $g_db;
+ 
+ 		if ( isset($p_table) && db_is_pgsql() ) {
+ 			$query = "SELECT currval('".$p_table."_id_seq')";
++			$query = "SELECT currval('" . $p_table . "_" . $p_column . "_seq')"; 
+ 			$result = db_query( $query );
+ 			return db_result($result);
+ 		}

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/12/07 16:03:09 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.6 2008/12/23 10:51:02 mbalmer Exp $
 @group daemon
-@mode 644
 mantis/
 @comment mantis/.gitignore
 mantis/account_delete.php
@@ -320,6 +319,7 @@ mantis/core/bug_group_action_api.php
 mantis/core/bugnote_api.php
 mantis/core/category_api.php
 mantis/core/checkin.php
+mantis/core/checkincurl.php
 mantis/core/class.RSSBuilder.inc.php
 mantis/core/class.period.php
 mantis/core/class.urlmatch.php
