@@ -1,12 +1,12 @@
-@comment $OpenBSD: PFRAG.xlib,v 1.1 2008/09/05 18:29:43 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.xlib,v 1.2 2008/12/23 15:25:51 ajacoutot Exp $
 @pkgpath x11/gnustep/back
 @bin bin/font_cacher
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/English.lproj/
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/English.lproj/nfontFaceNames.strings
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/Info-gnustep.plist
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/Swedish.lproj/
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/Resources/Swedish.lproj/nfontFaceNames.strings
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/libgnustep-back-014.so
-lib/GNUstep/Bundles/libgnustep-back-014.bundle/stamp.make
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/English.lproj/
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/English.lproj/nfontFaceNames.strings
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/Swedish.lproj/
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/Swedish.lproj/nfontFaceNames.strings
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/libgnustep-back-${BACKENDV}.so
+lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/stamp.make

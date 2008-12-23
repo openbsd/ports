@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2008/10/03 07:21:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2008/12/23 15:25:51 ajacoutot Exp $
 
 COMMENT=	GNUstep gui backend
 
-DISTNAME=	gnustep-back-0.14.0
+V=		0.16.0
+DISTNAME=	gnustep-back-${V}
 CATEGORIES=	devel
+
+# XXX
+BACKENDV=	${V:C/([0-9])*[.]([0-9]*).*/\1\2/1}
+SUBST_VARS=	BACKENDV
 
 HOMEPAGE=	http://www.gnustep.org/
 
