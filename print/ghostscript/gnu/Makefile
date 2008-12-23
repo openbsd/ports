@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2008/11/19 09:59:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2008/12/23 00:18:01 jolan Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -160,8 +160,8 @@ post-install:
 		ln -sf ps2pdf.1 ps2pdf13.1 && \
 		ln -sf ps2pdf.1 ps2pdf14.1 && \
 		ln -sf ps2ps.1 eps2eps.1
-	mv ${DESTDIR}/etc/cups/* ${PREFIX}/share/ghostscript/${VERSION}/examples
-	rm -rf ${DESTDIR}/etc/cups
+	mv ${DESTDIR}/${SYSCONFDIR}/cups/* ${PREFIX}/share/ghostscript/${VERSION}/examples
+	rm -rf ${DESTDIR}/${SYSCONFDIR}/cups
 
 # Device list based on configure.ac:
 # X_DEVS (skipping x11_ and x11alt_, since those are dependencies of
