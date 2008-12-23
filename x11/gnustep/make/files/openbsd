@@ -1,8 +1,8 @@
-# $OpenBSD: openbsd,v 1.1.1.1 2007/05/29 03:00:34 ajacoutot Exp $
+# $OpenBSD: openbsd,v 1.2 2008/12/23 15:25:04 ajacoutot Exp $
 #
 # OpenBSD filesystem layout
 
-GNUSTEP_DEFAULT_PREFIX=!!PREFIX!!
+GNUSTEP_DEFAULT_PREFIX=${PREFIX}
 
 GNUSTEP_SYSTEM_USERS_DIR=/home
 GNUSTEP_NETWORK_USERS_DIR=/home

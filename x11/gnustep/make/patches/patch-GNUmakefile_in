@@ -1,6 +1,6 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.3 2008/05/05 09:31:30 ajacoutot Exp $
---- GNUmakefile.in.orig	Mon May  5 11:09:29 2008
-+++ GNUmakefile.in	Mon May  5 11:11:33 2008
+$OpenBSD: patch-GNUmakefile_in,v 1.4 2008/12/23 15:25:04 ajacoutot Exp $
+--- GNUmakefile.in.orig	Tue Oct 21 16:45:48 2008
++++ GNUmakefile.in	Tue Dec 23 13:47:10 2008
 @@ -98,7 +98,7 @@ export GNUSTEP_TARGET_LDIR
  export MAYBE_LIBRARY_COMBO
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.3 2008/05/05 09:31:30 ajacoutot Exp $
  	 $(EC)(echo "Installing gnustep-make support software")
  	 $(EC)(for f in config.guess config.sub install-sh mkinstalldirs \
  		clean_cpu.sh clean_os.sh \
-@@ -223,17 +219,11 @@ install: generated-files
+@@ -221,17 +217,11 @@ install: generated-files
  	  "$(srcdir)/mkinstalldirs" "$(mandir)/man1" \
  	                          "$(mandir)/man7"; \
  	  $(INSTALL_DATA) "$(srcdir)/Documentation/debugapp.1" "$(mandir)/man1"; \

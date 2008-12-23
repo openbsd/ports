@@ -1,4 +1,4 @@
-# $OpenBSD: README.OpenBSD,v 1.5 2007/12/16 12:39:52 ajacoutot Exp $
+# $OpenBSD: README.OpenBSD,v 1.6 2008/12/23 15:25:04 ajacoutot Exp $
 
 #
 # post-install optionnal steps
@@ -6,17 +6,17 @@
 
 To take advantage of all the features from the GNUstep framework, you
 should add the following lines to your ~/.xsession or ~/.xinitrc:
- . !!PREFIX!!/share/GNUstep/Makefiles/GNUstep.sh # (from gnustep-base)
- !!PREFIX!!/bin/gdnc # notifications daemon (from gnustep-base)
- !!PREFIX!!/bin/gpbs # clipboard/pasteboard daemon (from gnustep-back)
- !!PREFIX!!/bin/make_services # update service cache (from gnustep-gui)
+ . ${TRUEPREFIX}/share/GNUstep/Makefiles/GNUstep.sh # (from gnustep-make)
+ ${TRUEPREFIX}/bin/gdnc # notifications daemon (from gnustep-base)
+ ${TRUEPREFIX}/bin/gpbs # clipboard/pasteboard daemon (from gnustep-back)
+ ${TRUEPREFIX}/bin/make_services # update service cache (from gnustep-gui)
 
 To enable gdomap(8), the distributed objects lookup daemon (from
 gnustep-base), add the following lines to services(5):
  gdomap 538/tcp # GNUstep distrib objects
  gdomap 538/udp # GNUstep distrib objects
 
-Then see rc(8) to have "!!PREFIX!!/bin/gdomap -p" launched at boot time.
+Then see rc(8) to have "${TRUEPREFIX}/bin/gdomap -p" launched at boot time.
 
 For more Information regarding the GNUstep services see their respective
 manual pages: GNUstep(7), gdnc(1), gpbs(1), make_services(1), gdomap(8)
@@ -27,15 +27,15 @@ manual pages: GNUstep(7), gdnc(1), gpbs(1), make_services(1), gdomap(8)
 #
 
 While opening GNUstep applications using their complete path is possible
-(i.e. !!PREFIX!!/libexec/GNUstep/ApplicationName.app/ApplicationName),
+(i.e. ${TRUEPREFIX}/libexec/GNUstep/ApplicationName.app/ApplicationName),
 you're advised to use the "openapp" wrapper to do so.
 For instance, to start the Calculator application, you would use:
- !!PREFIX!!/bin/openapp Calculator
+ ${TRUEPREFIX}/bin/openapp Calculator
 
 According to your display, you may find the fonts to be too large/small
 for your taste.
 To change the default fonts size ("9"), use the following command:
- !!PREFIX!!/bin/defaults write NSGlobalDomain NSFontSize <fontsize>
+ ${TRUEPREFIX}/bin/defaults write NSGlobalDomain NSFontSize <fontsize>
 
 
 #
@@ -44,7 +44,7 @@ To change the default fonts size ("9"), use the following command:
 
 In case you do not want stripped libraries and binaries, you have to
 remove the -s flag from the definition of INSTALL_PROGRAM in the 
-!!PREFIX!!/share/GNUstep/Makefiles/config.make file.
+${TRUEPREFIX}/share/GNUstep/Makefiles/config.make file.
 
 
 #

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/10/03 07:21:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2008/12/23 15:25:04 ajacoutot Exp $
 
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
@@ -6,7 +6,7 @@ PKG_ARCH=	*
 
 COMMENT=	GNUstep makefile package
 
-DISTNAME=	gnustep-make-2.0.6
+DISTNAME=	gnustep-make-2.0.7
 CATEGORIES=	devel x11/gnustep
 
 HOMEPAGE=	http://www.gnustep.org/
@@ -32,13 +32,14 @@ CONFIGURE_ARGS=	--with-layout=openbsd \
 		--with-thread-lib="-pthread"
 
 pre-configure:
-	@perl -p -e 's,!!PREFIX!!,${PREFIX},g' files/openbsd \
-		> ${WRKSRC}/FilesystemLayouts/openbsd
+	${SUBST_CMD} -c ${FILESDIR}/openbsd \
+		${WRKSRC}/FilesystemLayouts/openbsd
 
 post-install:
-	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
-		< ${FILESDIR}/README.OpenBSD > ${PREFIX}/share/GNUstep/README.OpenBSD
-	${INSTALL_DATA} ${WRKSRC}/GNUstep.conf \
-		${PREFIX}/share/GNUstep/GNUstep.conf
+	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/GNUstep/README.OpenBSD
+	chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/GNUstep/README.OpenBSD
+	${INSTALL_DATA} ${WRKSRC}/{GNUstep.conf,installation-domains.conf} \
+		${PREFIX}/share/GNUstep/
 
 .include <bsd.port.mk>
