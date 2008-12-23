@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/11/20 23:06:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2008/12/23 19:09:32 jasper Exp $
+@newgroup _openct:614
+@newuser _openct:614:_openct:daemon:OpenCT:/nonexistent:/sbin/nologin
 %%SHARED%%
 @bin bin/openct-tool
 include/openct/
@@ -12,6 +14,7 @@ include/openct/error.h
 include/openct/ifd.h
 include/openct/logging.h
 include/openct/openct.h
+include/openct/path.h
 include/openct/protocol.h
 include/openct/server.h
 include/openct/socket.h
@@ -27,6 +30,10 @@ lib/pkgconfig/libopenct.pc
 @bin sbin/ifdhandler
 @bin sbin/ifdproxy
 @bin sbin/openct-control
+share/doc/openct/
+share/doc/openct/NEWS
+share/doc/openct/README
+share/doc/openct/api/
 share/examples/openct/
 share/examples/openct/openct.conf
 @mode 644

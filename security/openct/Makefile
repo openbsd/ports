@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2008/11/20 23:06:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2008/12/23 19:09:32 jasper Exp $
 
 COMMENT=	drivers for several smart card readers
 
-DISTNAME=	openct-0.6.6
-PKGNAME=	${DISTNAME}p4
+DISTNAME=	openct-0.6.15
 CATEGORIES=	security
-SHARED_LIBS=	openct	1.0
+SHARED_LIBS=	openct	1.1
 
 HOMEPAGE=	http://www.opensc-project.org/openct/
 
 MAINTAINER=	Douglas Santos <dsantos@hydroxyl.org>
 
-# BSD
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=   Yes 
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -30,8 +29,14 @@ CONFIGURE_STYLE=gnu old
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
 		--sysconfdir=${SYSCONFDIR} \
-		--with-common-dir=${LOCALBASE}
-CONFIGURE_ENV=	PTHREAD_LIBS=-pthread
+		--with-common-dir=${LOCALBASE} \
+		--enable-usb \
+		--with-daemon-user=_openct \
+		--with-daemon-groups=_openct
+	
+CONFIGURE_ENV=	PTHREAD_LIBS=-pthread \
+		LTLIB_CFLAGS="-I${LOCALBASE}/include" \
+		LTLIB_LIBS="-L${LOCALBASE}/lib -lltdl"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openct

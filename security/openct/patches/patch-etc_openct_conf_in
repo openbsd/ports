@@ -1,12 +1,11 @@
-$OpenBSD: patch-etc_openct_conf_in,v 1.1 2006/01/08 13:33:22 alek Exp $
---- etc/openct.conf.in.orig	Sun Jan  8 14:13:06 2006
-+++ etc/openct.conf.in	Sun Jan  8 14:13:09 2006
+--- etc/openct.conf.in.orig	Wed Dec 17 14:19:03 2008
++++ etc/openct.conf.in	Wed Dec 17 14:19:12 2008
 @@ -2,7 +2,7 @@
  debug	= 0;
  #
  # Enable hot plugging
 -hotplug	= yes;
 +hotplug	= no;
+ 
  #
  # Path to ifdhandler
- ifdhandler = SBINDIR/ifdhandler;

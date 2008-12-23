@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tools_Makefile_in,v 1.1 2008/12/23 19:09:32 jasper Exp $
+--- src/tools/Makefile.in.orig	Tue Dec 23 19:52:07 2008
++++ src/tools/Makefile.in	Tue Dec 23 19:52:57 2008
+@@ -207,7 +207,7 @@ libdir = @libdir@
+ libexecdir = @libexecdir@
+ localedir = @localedir@
+ localstatedir = @localstatedir@
+-mandir = @mandir@
++mandir = @prefix@/man
+ mkdir_p = @mkdir_p@
+ oldincludedir = @oldincludedir@
+ openctincludedir = @openctincludedir@
