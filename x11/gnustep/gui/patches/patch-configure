@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2007/11/05 22:52:58 ajacoutot Exp $
---- configure.orig	Mon Nov  5 23:48:54 2007
-+++ configure	Mon Nov  5 23:50:00 2007
-@@ -7088,7 +7088,7 @@ if test "${ac_cv_lib_cups_cupsServer+set}" = set; then
+$OpenBSD: patch-configure,v 1.2 2008/12/23 15:26:16 ajacoutot Exp $
+--- configure.orig	Tue Aug 12 06:58:04 2008
++++ configure	Tue Dec 23 14:08:12 2008
+@@ -7365,7 +7365,7 @@ if test "${ac_cv_lib_cups_cupsServer+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS

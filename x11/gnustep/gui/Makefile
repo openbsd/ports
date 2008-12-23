@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/10/03 07:21:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2008/12/23 15:26:16 ajacoutot Exp $
 
 COMMENT=	GNUstep gui library
 
-DISTNAME=	gnustep-gui-0.14.0
-SHARED_LIBS=	gnustep-gui 0.14	# .0.14.0
+DISTNAME=	gnustep-gui-0.16.0
+SHARED_LIBS=	gnustep-gui 0.15	# .0.15.0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnustep.org/
@@ -20,10 +20,12 @@ LIB_DEPENDS=	aspell.>=16::textproc/aspell/core \
 		jpeg.>=62::graphics/jpeg \
 		png.>=5::graphics/png \
 		ungif.>=5::graphics/libungif
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::audio/portaudio-svn
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib -lstdc++ -lm"
+		LDFLAGS="-L${LOCALBASE}/lib -lstdc++ -lm -pthread"
 CONFIGURE_ARGS=	--disable-gsnd --with-x
 
 pre-configure:
