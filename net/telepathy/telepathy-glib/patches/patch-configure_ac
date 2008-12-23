@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.4 2008/12/22 23:52:18 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2008/12/23 00:05:21 jasper Exp $
 --- configure.ac.orig	Sun Dec 14 20:20:25 2008
 +++ configure.ac	Tue Dec 23 00:21:19 2008
 @@ -185,7 +185,7 @@ if test -z "$XSLTPROC"; then
@@ -6,7 +6,7 @@ $OpenBSD: patch-configure_ac,v 1.4 2008/12/22 23:52:18 jasper Exp $
  fi
  PYTHON=
 -AC_CHECK_PROGS([PYTHON], [python2.3 python2.4 python2.5 python])
-+AC_CHECK_PROGS([PYTHON], [python2.5])
++AC_CHECK_PROGS([PYTHON], [python${MODPY_VERSION}])
  if test -z "$PYTHON"; then
    AC_MSG_ERROR([Python is required to compile this package])
  fi

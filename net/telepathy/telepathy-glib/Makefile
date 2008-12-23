@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/12/22 23:52:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2008/12/23 00:05:21 jasper Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
@@ -21,5 +21,8 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu autoconf
 AUTOCONF_VERSION=	2.61
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>
