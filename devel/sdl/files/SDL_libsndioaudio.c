@@ -205,7 +205,7 @@ static int LIBSNDIO_OpenAudio(_THIS, SDL_AudioSpec *spec)
 
 	/* bufsz is in frames, size is in bytes.  they both are counts
 	   of the total buffer size (total latency desired) */
-	par.bufsz = spec->size / par.pchan / (par.bits / 8);
+	par.appbufsz = spec->size / par.pchan / (par.bits / 8);
 
 	if (sio_setpar(hdl, &par) == 0) {
 		SDL_SetError("sio_setpar() failed");
