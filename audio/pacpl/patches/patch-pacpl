@@ -1,52 +1,26 @@
-$OpenBSD: patch-pacpl,v 1.1.1.1 2006/12/12 06:21:34 steven Exp $
---- pacpl.orig	Sun Oct 29 17:04:27 2006
-+++ pacpl	Sun Dec 10 22:13:32 2006
-@@ -29,7 +29,7 @@ use File::Copy;
- use File::Basename;
- use Ogg::Vorbis::Header; 
+$OpenBSD: patch-pacpl,v 1.2 2008/12/23 15:52:42 ajacoutot Exp $
+--- pacpl.orig	Sun Aug 17 05:31:57 2008
++++ pacpl	Fri Nov 14 09:25:49 2008
+@@ -131,8 +131,12 @@ my %config = (
  
--use Cwd 'abs_path';
-+use Cwd qw(abs_path getcwd);
+ # location of configuration file
+ my $conf_path = "/etc/pacpl";
+-my $po_dir    = "/usr/share/pacpl/locale";
++my $po_dir    = "${PREFIX}/share/pacpl/locale";
+ my $mod_dir   = "$conf_path/modules";
++my $language  = "en";
++if ($ENV{LANG}) {
++	$language = "$ENV{LANG}";
++}
  
- # Current Name & Version
- my $name     = "Perl Audio Converter";
-@@ -224,7 +224,7 @@ my @conf_opts;
- # Location of configuration file (Check Global, and then Current Directory)
- my $conf_path     = "/etc/pacpl";
- my $conf_global   = "$conf_path/pacpl.conf";
--my $conf_pwd      = "$ENV{'PWD'}/pacpl.conf";
-+my $conf_pwd      = getcwd()."/pacpl.conf";
+ my $conf_file;
  
- my $conf_file = $conf_global;
-    $conf_file = $conf_pwd if not -e $conf_global;
-@@ -2147,8 +2147,9 @@ if (@file) {
-          }
-                 
-        if ($koutdir eq '1' and $gui and not $get_out_directory and not $out_dir) { 
-- 
--           $out_dir = `$kdialog --title \"$name - $version - $lang{$mylang}{file_destination}\" --getexistingdirectory $ENV{'PWD'}`; 
-+
-+           my $cmd = "$kdialog --title \"$name - $version - $lang{$mylang}{file_destination}\" --getexistingdirectory ".getcwd(); 
-+           $out_dir = `$cmd`;
-            chomp($out_dir); 
-     
-            $get_out_directory = 1;   
-@@ -2241,7 +2242,7 @@ if ($recursive and not $conv_to and not 
-          
-   } else {
-                                       
--    my $pwd = $ENV{PWD};
-+    my $pwd = getcwd();
+@@ -203,7 +207,7 @@ sub load_codecs {
+ # load po file and store in %lang hash
+ sub load_lang {
  
-        foreach my $audio_dir (@dir) {
- 
-@@ -2273,7 +2274,8 @@ if ($recursive and not $conv_to and not 
-      
-      if ($gui and not $get_out_directory and $koutdir eq 1 and not $out_dir) {
- 
--         $out_dir = `$kdialog --title \"PAC $version - $lang{$mylang}{file_destination}\" --getexistingdirectory $ENV{'PWD'}`;
-+         my $cmd = "$kdialog --title \"PAC $version - $lang{$mylang}{file_destination}\" --getexistingdirectory ".getcwd();
-+         $out_dir = `$cmd`;
-          chomp($out_dir);
- 
-          $get_out_directory = 1;
+-    my $po = "$po_dir/$ENV{LANG}.po";
++    my $po = "$po_dir/$language.po";
+        $po =~ s/\.UTF-8//i      if $po =~ /UTF-8/i; 
+        $po =~ s/\.utf8//i       if $po =~ /utf8/i;  
+        $po =~ s/_\w+//          if not -e $po;      

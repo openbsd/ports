@@ -1,11 +1,37 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/09/20 09:14:19 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2008/12/23 15:52:42 ajacoutot Exp $
 bin/pacpl
 @man man/man1/pacpl.1
 share/doc/pacpl/
-share/doc/pacpl/FAQ
+share/doc/pacpl/AUTHORS
 share/doc/pacpl/README
+share/doc/pacpl/TODO
+share/doc/pacpl/extra/
+share/doc/pacpl/extra/README.extra
+share/doc/pacpl/extra/README.module
+share/doc/pacpl/extra/pacpl-gui.kmdr
+share/doc/pacpl/extra/sample.m
 share/examples/pacpl/
 @sample ${SYSCONFDIR}/pacpl/
-@group wheel
+share/examples/pacpl/codecs.conf
+@sample ${SYSCONFDIR}/pacpl/codecs.conf
+share/examples/pacpl/modules/
+@sample ${SYSCONFDIR}/pacpl/modules/
+share/examples/pacpl/modules/sample.m
+@sample ${SYSCONFDIR}/pacpl/modules/sample.m
 share/examples/pacpl/pacpl.conf
 @sample ${SYSCONFDIR}/pacpl/pacpl.conf
+share/mimelnk/
+share/mimelnk/audio/x-rm.desktop
+share/pacpl/
+share/pacpl/locale/
+share/pacpl/locale/ca.po
+share/pacpl/locale/de.po
+share/pacpl/locale/en_US.po
+share/pacpl/locale/es.po
+share/pacpl/locale/et.po
+share/pacpl/locale/fr_FR.po
+share/pacpl/locale/pl.po
+share/pacpl/locale/pt.po
+share/pacpl/locale/ru_RU.po
+share/pacpl/locale/tr.po
+share/pacpl/locale/zh_CN.po
