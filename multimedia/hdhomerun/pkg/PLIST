@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/21 18:39:32 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/12/23 00:08:38 jolan Exp $
 @bin bin/hdhomerun_config
 share/hdhomerun/
-share/hdhomerun/hdhomerun_atsc_firmware_20081002.bin
+share/hdhomerun/hdhomerun_atsc_firmware_20081222.bin
+share/hdhomerun/hdhomerun_dvbt_firmware_20081222.bin

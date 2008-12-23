@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2008/11/21 18:39:32 jolan Exp $
---- Makefile.orig	Thu Sep 25 18:36:15 2008
-+++ Makefile	Thu Nov 20 11:18:21 2008
+$OpenBSD: patch-Makefile,v 1.2 2008/12/23 00:08:38 jolan Exp $
+--- Makefile.orig	Fri Dec 12 16:35:15 2008
++++ Makefile	Mon Dec 22 15:50:48 2008
 @@ -7,8 +7,8 @@ LIBSRCS += hdhomerun_control.c
  LIBSRCS += hdhomerun_video.c
  LIBSRCS += hdhomerun_device.c
@@ -9,14 +9,14 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2008/11/21 18:39:32 jolan Exp $
 -LDFLAGS += -lpthread
 +CFLAGS += -Wall -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wpointer-arith
 +LDFLAGS += -pthread
+ SHARED = -shared -Wl,-soname,libhdhomerun$(LIBEXT)
  
  ifeq ($(OS),Windows_NT)
-   BINEXT := .exe
-@@ -24,7 +24,6 @@ endif
+@@ -31,7 +31,6 @@ all : hdhomerun_config$(BINEXT) libhdhomerun$(LIBEXT)
  
  hdhomerun_config$(BINEXT) : hdhomerun_config.c $(LIBSRCS)
  	$(CC) $(CFLAGS) $+ $(LDFLAGS) -o $@
 -	strip $@
  
  libhdhomerun$(LIBEXT) : $(LIBSRCS)
- 	$(CC) $(CFLAGS) -fPIC -DDLL_EXPORT -shared -Wl,-soname,libhdhomerun$(LIBEXT) $+ $(LDFLAGS) -o $@
+ 	$(CC) $(CFLAGS) -fPIC -DDLL_EXPORT $(SHARED) $+ $(LDFLAGS) -o $@
