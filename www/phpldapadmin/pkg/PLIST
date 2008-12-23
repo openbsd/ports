@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/01/09 10:56:53 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/12/23 12:37:01 mbalmer Exp $
+@group daemon
 phpldapadmin-${VERSION}/
 @comment phpldapadmin-${VERSION}/.cvsignore
-@group daemon
 phpldapadmin-${VERSION}/INSTALL
 phpldapadmin-${VERSION}/LICENSE
 phpldapadmin-${VERSION}/VERSION
@@ -21,6 +21,7 @@ phpldapadmin-${VERSION}/doc/ldif-example-com
 phpldapadmin-${VERSION}/doc/ldif-example.com
 phpldapadmin-${VERSION}/doc/phpldapadmin-demo.conf
 phpldapadmin-${VERSION}/doc/pla-test-i18n.ldif
+phpldapadmin-${VERSION}/doc/uidpool.schema
 phpldapadmin-${VERSION}/hooks/
 phpldapadmin-${VERSION}/hooks/classes/
 phpldapadmin-${VERSION}/hooks/classes/README
@@ -260,8 +261,8 @@ phpldapadmin-${VERSION}/htdocs/images/light-big.png
 phpldapadmin-${VERSION}/htdocs/images/light.png
 phpldapadmin-${VERSION}/htdocs/images/locality.png
 phpldapadmin-${VERSION}/htdocs/images/lock.png
-phpldapadmin-${VERSION}/htdocs/images/logo.jpg
-phpldapadmin-${VERSION}/htdocs/images/logo_small.jpg
+phpldapadmin-${VERSION}/htdocs/images/logo-small.png
+phpldapadmin-${VERSION}/htdocs/images/logo.png
 phpldapadmin-${VERSION}/htdocs/images/logout.png
 phpldapadmin-${VERSION}/htdocs/images/mail.png
 phpldapadmin-${VERSION}/htdocs/images/mail_account.png
@@ -442,7 +443,6 @@ phpldapadmin-${VERSION}/htdocs/search.php
 phpldapadmin-${VERSION}/htdocs/server_info.php
 phpldapadmin-${VERSION}/htdocs/show_cache.php
 phpldapadmin-${VERSION}/htdocs/template_engine.php
-phpldapadmin-${VERSION}/htdocs/timeout.php
 phpldapadmin-${VERSION}/htdocs/update.php
 phpldapadmin-${VERSION}/htdocs/update_confirm.php
 phpldapadmin-${VERSION}/htdocs/view_jpeg_photo.php
@@ -613,4 +613,4 @@ phpldapadmin-${VERSION}/tools/po/make_po_hu
 phpldapadmin-${VERSION}/tools/po/make_po_it
 phpldapadmin-${VERSION}/tools/po/make_po_ja
 phpldapadmin-${VERSION}/tools/po/messages.header
-phpldapadmin-${VERSION}/tools/unit_test.php
+phpldapadmin-${VERSION}/tools/unserialize.php
