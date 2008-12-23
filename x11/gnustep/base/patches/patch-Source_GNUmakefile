@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_GNUmakefile,v 1.1.1.1 2007/05/29 03:01:35 ajacoutot Exp $
---- Source/GNUmakefile.orig	Wed May 23 15:49:24 2007
-+++ Source/GNUmakefile	Wed May 23 15:49:33 2007
-@@ -91,11 +91,6 @@ GSLocale.m \
+$OpenBSD: patch-Source_GNUmakefile,v 1.2 2008/12/23 15:25:31 ajacoutot Exp $
+--- Source/GNUmakefile.orig	Mon Dec 22 01:01:27 2008
++++ Source/GNUmakefile	Tue Dec 23 14:00:22 2008
+@@ -89,11 +89,6 @@ GSLocale.m \
  preface.m \
  mframe.m
  

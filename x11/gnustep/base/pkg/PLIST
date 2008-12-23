@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/11/15 14:05:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2008/12/23 15:25:31 ajacoutot Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -136,6 +136,7 @@ include/GNUstepBase/GSObjCRuntime.h
 include/GNUstepBase/GSUnion.h
 include/GNUstepBase/GSVersionMacros.h
 include/GNUstepBase/GSXML.h
+include/GNUstepBase/NSTask+GS.h
 include/GNUstepBase/Unicode.h
 include/GNUstepBase/behavior.h
 include/GNUstepBase/objc-gnu2next.h
@@ -157,6 +158,7 @@ include/gnustep/base/GSObjCRuntime.h
 include/gnustep/base/GSUnion.h
 include/gnustep/base/GSVersionMacros.h
 include/gnustep/base/GSXML.h
+include/gnustep/base/NSTask+GS.h
 include/gnustep/base/Unicode.h
 include/gnustep/base/behavior.h
 include/gnustep/base/objc-gnu2next.h

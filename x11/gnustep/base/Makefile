@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2008/11/15 14:05:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2008/12/23 15:25:31 ajacoutot Exp $
 
 COMMENT=	GNUstep base library
 
-DISTNAME=	gnustep-base-1.16.4
-SHARED_LIBS=	gnustep-base 2.0	# .1.16.4
+DISTNAME=	gnustep-base-1.18.0
+SHARED_LIBS=	gnustep-base 2.1	# .1.16.4
 CATEGORIES=	devel
 
 LIBDIR=		lib/GNUstep/Libraries/gnustep-base/Versions/${LIBgnustep-base_VERSION}
@@ -11,7 +11,7 @@ SUBST_VARS=	LIBDIR
 
 HOMEPAGE=	http://www.gnustep.org/
 
-WANTLIB=	c crypto gcrypt gpg-error iberty m objc pthread ssl tasn1 xml2 z
+WANTLIB=	c crypto gcrypt gpg-error m objc pthread ssl tasn1 xml2 z
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
