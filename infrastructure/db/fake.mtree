@@ -2,6 +2,7 @@
 .
     etc
 	firmware
+	..
     ..
     usr
 	local
