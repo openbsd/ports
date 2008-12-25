@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/25 10:43:29 mglocker Exp $
+firmware/malo-info
+firmware/malo8335-h
+firmware/malo8335-m
+firmware/malo8338
+firmware/malo8385-h
+firmware/malo8385-m
