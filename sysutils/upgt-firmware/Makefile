@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/12/25 10:48:10 mglocker Exp $
+# $OpenBSD: Makefile,v 1.2 2008/12/25 19:17:18 mglocker Exp $
 
 COMMENT=		Firmware binary images for upgt driver
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.nazgul.ch/upgt/
 
 MAINTAINER=		Marcus Glocker <mglocker@openbsd.org>
 
-# BSD
+# Proprietary
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
