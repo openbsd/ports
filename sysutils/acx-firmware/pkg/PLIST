@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/25 10:39:12 mglocker Exp $
+firmware/tiacx-info
+firmware/tiacx100
+firmware/tiacx100r0D
+firmware/tiacx100r11
+firmware/tiacx111
+firmware/tiacx111c16
+firmware/tiacx111r16
