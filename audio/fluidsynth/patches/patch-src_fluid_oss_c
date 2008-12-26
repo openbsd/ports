@@ -1,147 +1,46 @@
-$OpenBSD: patch-src_fluid_oss_c,v 1.2 2008/04/20 11:19:20 jakemsr Exp $
+$OpenBSD: patch-src_fluid_oss_c,v 1.3 2008/12/26 08:45:12 jakemsr Exp $
 --- src/fluid_oss.c.orig	Tue Sep 18 23:10:57 2007
-+++ src/fluid_oss.c	Sun Apr 20 03:40:45 2008
-@@ -32,8 +32,13 @@
++++ src/fluid_oss.c	Sat Dec 20 17:57:57 2008
+@@ -34,6 +34,9 @@
  
- #if OSS_SUPPORT
- 
-+#ifdef HAVE_SYS_SOUNDCARD_H
  #include <sys/soundcard.h>
-+#endif
  #include <sys/ioctl.h>
-+#ifdef HAVE_SOUNDCARD_H
-+#include <soundcard.h>
-+#endif
++
++#endif /*#if OSS_SUPPORT */
++
  #include <sys/time.h>
  #include <sys/types.h>
  #include <sys/stat.h>
-@@ -103,7 +108,7 @@ static void* fluid_oss_midi_run(void* d);
+@@ -49,6 +52,8 @@
+ #define OSS_PCM_SCHED_PRIORITY 90
+ #define OSS_MIDI_SCHED_PRIORITY 90
+ 
++#if OSS_SUPPORT
++
+ /** fluid_oss_audio_driver_t
+  *
+  * This structure should not be accessed directly. Use audio port
+@@ -82,6 +87,7 @@ static int fluid_oss_get_sample_formats(fluid_oss_audi
+ static void* fluid_oss_audio_run(void* d);
+ static void* fluid_oss_audio_run2(void* d);
+ 
++#endif /*#if OSS_SUPPORT */
+ 
+ typedef struct {
+   fluid_midi_driver_t driver;
+@@ -99,6 +105,7 @@ int delete_fluid_oss_midi_driver(fluid_midi_driver_t* 
+ int fluid_oss_midi_driver_status(fluid_midi_driver_t* p);
+ static void* fluid_oss_midi_run(void* d);
+ 
++#if OSS_SUPPORT
+ 
  void
  fluid_oss_audio_driver_settings(fluid_settings_t* settings)
- {
--  fluid_settings_register_str(settings, "audio.oss.device", "/dev/dsp", 0, NULL, NULL);
-+  fluid_settings_register_str(settings, "audio.oss.device", DEVOSSAUDIO, 0, NULL, NULL);
+@@ -639,10 +646,11 @@ fluid_oss_audio_run2(void* d)
+   return 0; /* not reached */
  }
  
- /*
-@@ -122,8 +127,10 @@ new_fluid_oss_audio_driver(fluid_settings_t* settings,
-   int format;
-   pthread_attr_t attr;
-   int err;
-+#if !defined(__OpenBSD__)
-   int sched = SCHED_FIFO;
-   struct sched_param priority;
-+#endif
- 
-   dev = FLUID_NEW(fluid_oss_audio_driver_t);
-   if (dev == NULL) {
-@@ -146,7 +153,11 @@ new_fluid_oss_audio_driver(fluid_settings_t* settings,
- 
-   if (fluid_settings_str_equal(settings, "audio.sample-format", "16bits")) {
-     sample_size = 16;
-+#ifdef WORDS_BIGENDIAN
-+    oss_format = AFMT_S16_BE;
-+#else
-     oss_format = AFMT_S16_LE;
-+#endif
-     dev->read = fluid_synth_write_s16;
-     dev->buffer_byte_size = dev->buffer_size * 4;
- 
-@@ -168,7 +179,7 @@ new_fluid_oss_audio_driver(fluid_settings_t* settings,
-   }
- 
-   if (!fluid_settings_getstr(settings, "audio.oss.device", &devname)) {
--    devname = "/dev/dsp";
-+    devname = DEVOSSAUDIO;
-   }
- 
-   if (stat(devname, &devstat) == -1) {
-@@ -229,6 +240,13 @@ new_fluid_oss_audio_driver(fluid_settings_t* settings,
-     goto error_recovery;
-   }
- 
-+#if defined(__OpenBSD__)
-+  err = pthread_create(&dev->thread, &attr, fluid_oss_audio_run, (void*) dev);
-+  if (err) {
-+    FLUID_LOG(FLUID_ERR, "Couldn't create audio thread");
-+    goto error_recovery;
-+  }
-+#else
-   /* the pthread_create man page explains that
-      pthread_attr_setschedpolicy returns an error if the user is not
-      permitted the set SCHED_FIFO. it seems however that no error is
-@@ -264,6 +282,7 @@ new_fluid_oss_audio_driver(fluid_settings_t* settings,
-     }
-     break;
-   }
-+#endif /* __OpenBSD__ */
- 
-   return (fluid_audio_driver_t*) dev;
- 
-@@ -285,8 +304,10 @@ new_fluid_oss_audio_driver2(fluid_settings_t* settings
-   int format;
-   pthread_attr_t attr;
-   int err;
-+#if !defined(__OpenBSD__)
-   int sched = SCHED_FIFO;
-   struct sched_param priority;
-+#endif
- 
-   dev = FLUID_NEW(fluid_oss_audio_driver_t);
-   if (dev == NULL) {
-@@ -311,7 +332,7 @@ new_fluid_oss_audio_driver2(fluid_settings_t* settings
- 
- 
-   if (!fluid_settings_getstr(settings, "audio.oss.device", &devname)) {
--    devname = "/dev/dsp";
-+    devname = DEVOSSAUDIO;
-   }
-   if (stat(devname, &devstat) == -1) {
-     FLUID_LOG(FLUID_ERR, "Device <%s> does not exists", devname);
-@@ -335,12 +356,20 @@ new_fluid_oss_audio_driver2(fluid_settings_t* settings
-     goto error_recovery;
-   }
- 
-+#ifdef WORDS_BIGENDIAN
-+  format = AFMT_S16_BE;
-+#else
-   format = AFMT_S16_LE;
-+#endif
-   if (ioctl(dev->dspfd, SNDCTL_DSP_SETFMT, &format) < 0) {
-     FLUID_LOG(FLUID_ERR, "Can't set the sample format");
-     goto error_recovery;
-   }
-+#ifdef WORDS_BIGENDIAN
-+  if (format != AFMT_S16_BE) {
-+#else
-   if (format != AFMT_S16_LE) {
-+#endif
-     FLUID_LOG(FLUID_ERR, "Can't set the sample format");
-     goto error_recovery;
-   }
-@@ -380,6 +409,13 @@ new_fluid_oss_audio_driver2(fluid_settings_t* settings
-     goto error_recovery;
-   }
- 
-+#if defined(__OpenBSD__)
-+  err = pthread_create(&dev->thread, &attr, fluid_oss_audio_run2, (void*) dev);
-+  if (err) {
-+    FLUID_LOG(FLUID_ERR, "Couldn't create audio2 thread");
-+    goto error_recovery;
-+  }
-+#else
-   /* the pthread_create man page explains that
-      pthread_attr_setschedpolicy returns an error if the user is not
-      permitted the set SCHED_FIFO. it seems however that no error is
-@@ -415,6 +451,7 @@ new_fluid_oss_audio_driver2(fluid_settings_t* settings
-     }
-     break;
-   }
-+#endif /* __OpenBSD__ */
- 
-   return (fluid_audio_driver_t*) dev;
- 
-@@ -642,7 +679,7 @@ fluid_oss_audio_run2(void* d)
++#endif /*#if OSS_SUPPORT */
  
  void fluid_oss_midi_driver_settings(fluid_settings_t* settings)
  {
@@ -150,7 +49,7 @@ $OpenBSD: patch-src_fluid_oss_c,v 1.2 2008/04/20 11:19:20 jakemsr Exp $
  }
  
  /*
-@@ -655,8 +692,10 @@ new_fluid_oss_midi_driver(fluid_settings_t* settings,
+@@ -655,8 +663,10 @@ new_fluid_oss_midi_driver(fluid_settings_t* settings,
    int err;
    fluid_oss_midi_driver_t* dev;
    pthread_attr_t attr;
@@ -161,7 +60,7 @@ $OpenBSD: patch-src_fluid_oss_c,v 1.2 2008/04/20 11:19:20 jakemsr Exp $
    char* device;
  
    /* not much use doing anything */
-@@ -687,7 +726,7 @@ new_fluid_oss_midi_driver(fluid_settings_t* settings,
+@@ -687,7 +697,7 @@ new_fluid_oss_midi_driver(fluid_settings_t* settings,
    /* get the device name. if none is specified, use the default device. */
    fluid_settings_getstr(settings, "midi.oss.device", &device);
    if (device == NULL) {
@@ -170,7 +69,7 @@ $OpenBSD: patch-src_fluid_oss_c,v 1.2 2008/04/20 11:19:20 jakemsr Exp $
    }
  
    /* open the default hardware device. only use midi in. */
-@@ -704,6 +743,14 @@ new_fluid_oss_midi_driver(fluid_settings_t* settings,
+@@ -704,6 +714,14 @@ new_fluid_oss_midi_driver(fluid_settings_t* settings,
      FLUID_LOG(FLUID_ERR, "Couldn't initialize midi thread attributes");
      goto error_recovery;
    }
@@ -185,7 +84,7 @@ $OpenBSD: patch-src_fluid_oss_c,v 1.2 2008/04/20 11:19:20 jakemsr Exp $
    /* use fifo scheduling. if it fails, use default scheduling. */
    while (1) {
      err = pthread_attr_setschedpolicy(&attr, sched);
-@@ -735,6 +782,7 @@ new_fluid_oss_midi_driver(fluid_settings_t* settings,
+@@ -735,6 +753,7 @@ new_fluid_oss_midi_driver(fluid_settings_t* settings,
      }
      break;
    }
@@ -193,3 +92,8 @@ $OpenBSD: patch-src_fluid_oss_c,v 1.2 2008/04/20 11:19:20 jakemsr Exp $
    return (fluid_midi_driver_t*) dev;
  
   error_recovery:
+@@ -833,4 +852,3 @@ fluid_oss_midi_driver_status(fluid_midi_driver_t* p)
+   return dev->status;
+ }
+ 
+-#endif /*#if OSS_SUPPORT */

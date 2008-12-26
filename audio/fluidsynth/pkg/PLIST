@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/06 22:42:11 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/12/26 08:45:12 jakemsr Exp $
 %%SHARED%%
-bin/fluidsynth
+@bin bin/fluidsynth
 include/fluidsynth/
 include/fluidsynth.h
 include/fluidsynth/audio.h

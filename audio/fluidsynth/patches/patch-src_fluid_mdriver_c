@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_fluid_mdriver_c,v 1.1 2008/12/26 08:45:12 jakemsr Exp $
+--- src/fluid_mdriver.c.orig	Sat Dec 20 17:42:12 2008
++++ src/fluid_mdriver.c	Sat Dec 20 17:43:01 2008
+@@ -38,13 +38,13 @@ void fluid_alsa_seq_driver_settings(fluid_settings_t* 
+ #endif
+ 
+ /* OSS */
+-#if OSS_SUPPORT
++/* #if OSS_SUPPORT */
+ fluid_midi_driver_t* new_fluid_oss_midi_driver(fluid_settings_t* settings,
+ 					     handle_midi_event_func_t handler,
+ 					     void* event_handler_data);
+ int delete_fluid_oss_midi_driver(fluid_midi_driver_t* p);
+ void fluid_oss_midi_driver_settings(fluid_settings_t* settings);
+-#endif
++/* #endif */
+ 
+ /* Windows MIDI service */
+ #if WINMIDI_SUPPORT
+@@ -78,12 +78,12 @@ struct fluid_mdriver_definition_t {
+ 
+ 
+ struct fluid_mdriver_definition_t fluid_midi_drivers[] = {
+-#if OSS_SUPPORT
++/* #if OSS_SUPPORT */
+   { "oss",
+     new_fluid_oss_midi_driver,
+     delete_fluid_oss_midi_driver,
+     fluid_oss_midi_driver_settings },
+-#endif
++/* #endif */
+ #if ALSA_SUPPORT
+   { "alsa_raw",
+     new_fluid_alsa_rawmidi_driver,
