@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2008/01/14 01:16:37 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.59 2008/12/26 06:34:45 jakemsr Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-esd=		Esound output plugin for XMMS
@@ -10,7 +10,7 @@ SHARED_ONLY=		Yes
 
 VERSION=		1.2.11
 DISTNAME=		xmms-${VERSION}
-PKGNAME-main=		xmms-${VERSION}p1
+PKGNAME-main=		xmms-${VERSION}p2
 PKGNAME-esd=		xmms-esd-${VERSION}p0
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}p0
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}p0
@@ -21,7 +21,7 @@ HOMEPAGE=		http://www.xmms.org
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
-# GPL
+# GPL v2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -34,30 +34,16 @@ MASTER_SITES=		${HOMEPAGE}/files/$V/ \
 			ftp://ftp.sunet.se/pub/multimedia/xmms/$V/ \
 			ftp://ftp.stealth.net/xmms/$V/
 
-PSEUDO_FLAVORS=		no_esd no_vorbis no_mikmod no_mp3
-FLAVOR?=
-
-MULTI_PACKAGES=		-main
-.if !${FLAVOR:L:Mno_esd}
-MULTI_PACKAGES+=	-esd
-.endif
-.if !${FLAVOR:L:Mno_vorbis}
-MULTI_PACKAGES+=	-vorbis
-.endif
-.if !${FLAVOR:L:Mno_mikmod}
-MULTI_PACKAGES+=	-mikmod
-.endif
-.if !${FLAVOR:L:Mno_mp3}
-MULTI_PACKAGES+=	-mp3
-.endif
+MULTI_PACKAGES=		-main -esd -vorbis -mikmod -mp3
 
 .if ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	patch-* gcc-*
 .endif
 
-WANTLIB-main=		${WANTLIB} GL ICE c Xxf86vm SM pthread
+WANTLIB-main=		${WANTLIB} GL ICE c Xxf86vm SM pthread sndio
 
 MODULES=		devel/gettext
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} ${MODGNU_AUTOMAKE_DEPENDS}
 RUN_DEPENDS=		:unzip-*:archivers/unzip
 LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
 			gthread.>=1.2::devel/glib
@@ -65,10 +51,15 @@ LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.59
+AUTOMAKE_VERSION=	1.9
 CONFIGURE_ARGS=		--without-gnome \
-			--enable-ipv6
+			--enable-ipv6 \
+			--with-esd-prefix=${LOCALBASE} \
+			--with-ogg-prefix=${LOCALBASE} \
+			--with-vorbis-prefix=${LOCALBASE} \
+			--with-mikmod-prefix=${LOCALBASE}
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			CFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -76,9 +67,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 DOCS=			README NEWS FAQ
 
-LIB_DEPENDS-esd=	${LIB_DEPENDS} esd.>=2::audio/esound
+LIB_DEPENDS-esd=	${LIB_DEPENDS} esd::audio/esound
 RUN_DEPENDS-esd=	::audio/xmms
-WANTLIB-esd=		${WANTLIB} audiofile
+WANTLIB-esd=		${WANTLIB} audiofile sndio
 
 LIB_DEPENDS-vorbis=	${LIB_DEPENDS} vorbis,vorbisfile.>=1::audio/libvorbis
 RUN_DEPENDS-vorbis=	::audio/xmms
@@ -92,27 +83,19 @@ PERMIT_DISTFILES_CDROM-mp3= 	patent issues
 LIB_DEPENDS-mp3=	${LIB_DEPENDS} xmms.>=4:xmms-${VERSION}*:${BUILD_PKGPATH}
 WANTLIB-mp3=		${WANTLIB} z
 
-.if ${MULTI_PACKAGES:M-esd}
-CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--disable-esd
-.endif
-
-.if ${MULTI_PACKAGES:M-vorbis}
-CONFIGURE_ARGS+=	--with-ogg-prefix=${LOCALBASE}	\
-			--with-vorbis-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--disable-vorbis
-.endif
-
-.if ${MULTI_PACKAGES:M-mikmod}
-CONFIGURE_ARGS+=	--with-mikmod-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--disable-mikmod
-.endif
-
-pre-configure:
-	@cd ${WRKSRC}/libxmms && ${LOCALBASE}/bin/autoconf-${AUTOCONF_VERSION}
+post-patch:
+	@mkdir -p ${WRKSRC}/Output/sndio
+	@cp ${FILESDIR}/{Makefile.am,audio_sndio.c} ${WRKSRC}/Output/sndio
+.for dir in $${WRKSRC} $${WRKSRC}/libxmms
+	cd ${dir} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
+	cd ${dir} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoheader
+	cd ${dir} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
+	cd ${dir} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoconf
+.endfor
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmms

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/12/08 21:54:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2008/12/26 06:34:45 jakemsr Exp $
 @pkgpath audio/xmms
-bin/wmxmms
-bin/xmms
+@bin bin/wmxmms
+@bin bin/xmms
 bin/xmms-config
 include/xmms/
 include/xmms/configfile.h
@@ -43,6 +43,8 @@ lib/xmms/Output/
 @comment lib/xmms/Output/libdisk_writer.la
 lib/xmms/Output/libdisk_writer.so
 @comment lib/xmms/Output/libesdout.la
+@comment lib/xmms/Output/libsndioout.la
+lib/xmms/Output/libsndioout.so
 @comment lib/xmms/Output/libsun.la
 lib/xmms/Output/libsun.so
 lib/xmms/Visualization/

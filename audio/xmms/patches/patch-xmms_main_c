@@ -1,7 +1,18 @@
-$OpenBSD: patch-xmms_main_c,v 1.8 2007/12/08 21:54:57 ajacoutot Exp $
+$OpenBSD: patch-xmms_main_c,v 1.9 2008/12/26 06:34:45 jakemsr Exp $
 --- xmms/main.c.orig	Sun Jul 16 06:40:04 2006
-+++ xmms/main.c	Sat Dec  8 12:42:03 2007
-@@ -4192,11 +4192,12 @@ int main(int argc, char **argv)
++++ xmms/main.c	Tue Dec 23 23:47:01 2008
+@@ -501,7 +501,9 @@ static void read_config(void)
+ 		cfg.gentitle_format = g_strdup("%p - %t");
+ 	if (cfg.outputplugin == NULL)
+ 	{
+-#ifdef HAVE_OSS
++#if defined(HAVE_SNDIO)
++		cfg.outputplugin = g_strdup_printf("%s/%s/libsndioout.so", PLUGIN_DIR, plugin_dir_list[0]);
++#elif defined(HAVE_OSS)
+ 		cfg.outputplugin = g_strdup_printf("%s/%s/libOSS.so", PLUGIN_DIR, plugin_dir_list[0]);
+ #elif defined(sun)
+ 		cfg.outputplugin = g_strdup_printf("%s/%s/libSolaris.so", PLUGIN_DIR, plugin_dir_list[0]);
+@@ -4192,11 +4194,12 @@ int main(int argc, char **argv)
  
  	signal(SIGPIPE, SIG_IGN); /* for controlsocket.c */
  	signal(SIGSEGV, segfault_handler);
