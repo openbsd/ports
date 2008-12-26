@@ -1,3 +1,0 @@
-A set of TeX macros to process the output from the Jade/OpenJade
-DSSSL tex backend.  It can output to DVI format, or directly to PDF
-via the 'pdfjadetex' command.
