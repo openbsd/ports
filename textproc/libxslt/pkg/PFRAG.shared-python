@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-python,v 1.1 2008/12/26 10:54:21 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/libxsltmod.so
