@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/10/07 10:42:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2008/12/26 09:50:54 ajacoutot Exp $
 timetrex/
 timetrex/INSTALL.txt
 timetrex/LICENSE
@@ -364,6 +364,7 @@ timetrex/classes/modules/install/InstallSchema_1006T.class.php
 timetrex/classes/modules/install/InstallSchema_1007A.class.php
 timetrex/classes/modules/install/InstallSchema_1007T.class.php
 timetrex/classes/modules/install/InstallSchema_1008A.class.php
+timetrex/classes/modules/install/InstallSchema_1008T.class.php
 timetrex/classes/modules/install/InstallSchema_1009A.class.php
 timetrex/classes/modules/install/InstallSchema_1010A.class.php
 timetrex/classes/modules/install/InstallSchema_1011A.class.php
@@ -404,6 +405,7 @@ timetrex/classes/modules/install/sql/mysql/1006T.sql
 timetrex/classes/modules/install/sql/mysql/1007A.sql
 timetrex/classes/modules/install/sql/mysql/1007T.sql
 timetrex/classes/modules/install/sql/mysql/1008A.sql
+timetrex/classes/modules/install/sql/mysql/1008T.sql
 timetrex/classes/modules/install/sql/mysql/1009A.sql
 timetrex/classes/modules/install/sql/mysql/1010A.sql
 timetrex/classes/modules/install/sql/mysql/1011A.sql
@@ -442,6 +444,7 @@ timetrex/classes/modules/install/sql/postgresql/1006T.sql
 timetrex/classes/modules/install/sql/postgresql/1007A.sql
 timetrex/classes/modules/install/sql/postgresql/1007T.sql
 timetrex/classes/modules/install/sql/postgresql/1008A.sql
+timetrex/classes/modules/install/sql/postgresql/1008T.sql
 timetrex/classes/modules/install/sql/postgresql/1009A.sql
 timetrex/classes/modules/install/sql/postgresql/1010A.sql
 timetrex/classes/modules/install/sql/postgresql/1011A.sql
@@ -1885,6 +1888,8 @@ timetrex/interface/images/nav_up.gif
 timetrex/interface/images/nav_up_sm.gif
 timetrex/interface/images/nebs_cheque_9085.jpg
 timetrex/interface/images/nebs_cheque_9209P.jpg
+timetrex/interface/images/nebs_cheque_dlt103.jpg
+timetrex/interface/images/nebs_cheque_dlt104.jpg
 timetrex/interface/images/paging_first.gif
 timetrex/interface/images/paging_first_grey.gif
 timetrex/interface/images/paging_first_off.gif
@@ -2475,7 +2480,11 @@ timetrex/tools/import/punch_column_map.txt
 timetrex/tools/import/user_column_map.txt
 timetrex/tools/set_admin_permissions.php
 timetrex/unit_tests/
-timetrex/unit_tests/CAPayrollDeductionTest.php
+timetrex/unit_tests/CAPayrollDeductionTest2006.php
+timetrex/unit_tests/CAPayrollDeductionTest2007.php
+timetrex/unit_tests/CAPayrollDeductionTest2008.php
+timetrex/unit_tests/CAPayrollDeductionTest2009.csv
+timetrex/unit_tests/CAPayrollDeductionTest2009.php
 timetrex/unit_tests/CRPayrollDeductionTest.php
 timetrex/unit_tests/DateTimeTest.php
 timetrex/unit_tests/DependencyTreeTest.php
@@ -2484,7 +2493,11 @@ timetrex/unit_tests/PayPeriodScheduleTest.php
 timetrex/unit_tests/PayStubCalculationTest.php
 timetrex/unit_tests/PayStubTest.php
 timetrex/unit_tests/PremiumPolicyTest.php
-timetrex/unit_tests/USPayrollDeductionTest.php
+timetrex/unit_tests/USPayrollDeductionTest2006.php
+timetrex/unit_tests/USPayrollDeductionTest2007.php
+timetrex/unit_tests/USPayrollDeductionTest2008.php
+timetrex/unit_tests/USPayrollDeductionTest2009.csv
+timetrex/unit_tests/USPayrollDeductionTest2009.php
 @owner www
 @sample timetrex/log/
 @sample timetrex/storage/
