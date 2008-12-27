@@ -1,4 +1,4 @@
-# $OpenBSD: FS.pm,v 1.5 2008/11/01 14:49:51 espie Exp $
+# $OpenBSD: FS.pm,v 1.6 2008/12/27 09:16:43 espie Exp $
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -154,10 +154,9 @@ sub is_info
 	open my $fh, '<', $filename or return 0;
 	my $tag = <$fh>;
 	return 0 unless defined $tag;
-	chomp $tag;
-	$tag.=<$fh>;
+	$tag .= <$fh>;
 	close $fh;
-	if ($tag =~ /^This is .*, produced by [Mm]akeinfo(?: version |-)?.*[\d\s]from/) {
+	if ($tag =~ /^This\sis\s.*,\sproduced\sby\s[Mm]akeinfo(?:\sversion\s|\-)?.*[\d\s]from/s) {
 		return 1;
 	} else {
 		return 0;
