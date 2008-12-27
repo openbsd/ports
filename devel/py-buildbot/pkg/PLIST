@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/23 00:36:45 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2008/12/27 15:32:54 fgsch Exp $
 bin/buildbot
 lib/python${MODPY_VERSION}/site-packages/buildbot/
-lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/buildbot/__init__.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/buildbot.png
@@ -73,6 +78,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/process/factory.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/process/factory.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/process/process_twisted.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/process/process_twisted.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/process/properties.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/process/properties.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/process/step_twisted2.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/process/step_twisted2.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/scheduler.py
@@ -141,6 +148,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/builder.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/changes.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/changes.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/classic.css
+lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/grid.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/grid.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/index.html
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/logs.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/logs.pyc

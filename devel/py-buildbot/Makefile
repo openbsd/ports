@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/23 00:36:45 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2008/12/27 15:32:54 fgsch Exp $
 
 COMMENT =	system to automate the compile/test cycle
 
-MODPY_EGG_VERSION =	0.7.7
+MODPY_EGG_VERSION =	0.7.9
 DISTNAME =	buildbot-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -21,6 +21,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=buildbot/}
 
 MODULES =	lang/python
+
+MODPY_SETUPTOOLS = Yes
 
 RUN_DEPENDS =	::devel/py-twisted/core \
 		::devel/py-twisted/conch \
