@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2008/08/29 17:27:57 ajacoutot Exp $
---- configure.orig	Thu Aug 28 14:28:46 2008
-+++ configure	Fri Aug 29 19:23:09 2008
-@@ -6736,13 +6736,13 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+$OpenBSD: patch-configure,v 1.5 2008/12/27 15:15:44 ajacoutot Exp $
+--- configure.orig	Sat Dec 27 11:31:21 2008
++++ configure	Sat Dec 27 16:06:36 2008
+@@ -6898,13 +6898,13 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
  #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
  
@@ -18,12 +18,3 @@ $OpenBSD: patch-configure,v 1.4 2008/08/29 17:27:57 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -7062,7 +7062,7 @@ done
- #-------------------------------------------------------------------------------
- #                                                            Compilation options
- #-------------------------------------------------------------------------------
--CFLAGS="-O2 -Wall -g"
-+#CFLAGS="-O2 -Wall -g"
- #-------------------------------------------------------------------------------
- #                                                               Create Makefiles
- #-------------------------------------------------------------------------------
