@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.124 2008/10/17 21:57:22 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.125 2008/12/27 11:00:51 steven Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -230,7 +230,8 @@ MASTER_SITE_APACHE+= \
 	ftp://ftp.uni-erlangen.de/pub/mirrors/apache/ \
 	ftp://ftp.planetmirror.com/pub/apache/dist/ \
 	http://apache.sunsite.ualberta.ca/ \
-	http://www.apache.org/dist/
+	http://www.apache.org/dist/ \
+	http://archive.apache.org/dist/
 
 MASTER_SITE_BERLIOS+=	\
 	http://download.berlios.de/ \
