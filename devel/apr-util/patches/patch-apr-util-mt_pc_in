@@ -1,0 +1,17 @@
+$OpenBSD: patch-apr-util-mt_pc_in,v 1.1 2008/12/27 15:33:04 sturm Exp $
+--- apr-util-mt.pc.in.orig	Thu Dec 25 10:20:05 2008
++++ apr-util-mt.pc.in	Thu Dec 25 10:20:47 2008
+@@ -0,0 +1,13 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++APRUTIL_MAJOR_VERSION=@APRUTIL_MAJOR_VERSION@
++includedir=@includedir@
++
++Name: APR Utils
++Description: Companion library for APR
++Version: @APRUTIL_DOTTED_VERSION@
++# assume that apr-util requires libapr of same major version
++Requires: apr-@APRUTIL_MAJOR_VERSION@
++Libs: -L${libdir} -l@APRUTIL_LIBNAME@-mt @APRUTIL_EXPORT_LIBS@
++Cflags: -I${includedir}

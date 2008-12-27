@@ -1,0 +1,27 @@
+$OpenBSD: patch-apu-config_in,v 1.1 2008/12/27 15:33:04 sturm Exp $
+
+permit substitution in post-install
+
+--- apu-config.in.orig	Thu Dec 25 10:56:57 2008
++++ apu-config.in	Thu Dec 25 11:03:51 2008
+@@ -148,9 +148,9 @@ while test $# -gt 0; do
+     --link-ld)
+     if test "$location" = "installed"; then
+         ### avoid using -L if libdir is a "standard" location like /usr/lib
+-        flags="$flags -L$libdir -l$APRUTIL_LIBNAME"
++        flags="$flags -L$libdir -l${APRUTIL_LIBNAME}"
+     else
+-        flags="$flags -L$APU_BUILD_DIR -l$APRUTIL_LIBNAME"
++        flags="$flags -L$APU_BUILD_DIR -l${APRUTIL_LIBNAME}"
+     fi
+     ;;
+     --link-libtool)
+@@ -164,7 +164,7 @@ while test $# -gt 0; do
+         ### avoid using -L if libdir is a "standard" location like /usr/lib
+         # Since the user is specifying they are linking with libtool, we
+         # *know* that -R will be recognized by libtool.
+-        flags="$flags -L$libdir -R$libdir -l$APRUTIL_LIBNAME"
++        flags="$flags -L$libdir -R$libdir -l${APRUTIL_LIBNAME}"
+     else
+         flags="$flags $LA_FILE"
+     fi

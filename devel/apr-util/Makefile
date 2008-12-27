@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2008/07/27 10:47:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2008/12/27 15:33:04 sturm Exp $
 
 COMMENT=	companion library to APR
 
 V=		1.2.10
 DISTNAME=	apr-util-$V
-FULLPKGNAME=	apr-util${MT}-$Vp1${FLAVOR_EXT:S/-mt//}
+FULLPKGNAME=	apr-util${MT}-$Vp2${FLAVOR_EXT:S/-mt//}
 SHARED_LIBS +=	aprutil-1${MT}          2.11     # .2.11
 
 CATEGORIES=	devel
@@ -49,6 +49,7 @@ WANTLIB+=		asn1 com_err crypto gssapi krb5 sasl2 ssl
 MT?=
 .if ${FLAVOR:L:Mmt}
 MT=-mt
+CONFIGURE_ENV+=	APRUTIL_EXPORT_LIBS=-pthread
 LIB_DEPENDS+=	apr-1-mt.=3:apr-mt-1.2.11:devel/apr,mt
 
 post-install:

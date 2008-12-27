@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2008/12/27 15:33:04 sturm Exp $
+--- configure.in.orig	Thu Dec 25 10:47:07 2008
++++ configure.in	Thu Dec 25 10:47:31 2008
+@@ -193,7 +193,7 @@ for d in include include/private; do
+ done
+ 
+ AC_CONFIG_FILES([Makefile export_vars.sh
+-                 build/pkg/pkginfo apr-util.pc
++                 build/pkg/pkginfo apr-util.pc apr-util-mt.pc
+                  apu-$APRUTIL_MAJOR_VERSION-config:apu-config.in
+                  include/private/apu_select_dbm.h
+                  include/apr_ldap.h
