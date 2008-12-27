@@ -1,6 +1,6 @@
-$OpenBSD: patch-libtransmission_blocklist_c,v 1.1 2008/12/02 15:29:07 naddy Exp $
---- libtransmission/blocklist.c.orig	Mon Nov 10 16:52:25 2008
-+++ libtransmission/blocklist.c	Thu Nov 27 22:33:18 2008
+$OpenBSD: patch-libtransmission_blocklist_c,v 1.2 2008/12/27 15:54:43 naddy Exp $
+--- libtransmission/blocklist.c.orig	Tue Dec  9 02:39:03 2008
++++ libtransmission/blocklist.c	Tue Dec  9 15:46:57 2008
 @@ -105,7 +105,7 @@ blocklistLoad( tr_blocklist * b )
  
      {
@@ -10,7 +10,7 @@ $OpenBSD: patch-libtransmission_blocklist_c,v 1.1 2008/12/02 15:29:07 naddy Exp 
          tr_free( base );
      }
  }
-@@ -293,7 +293,7 @@ _tr_blocklistSetContent( tr_blocklist * b,
+@@ -297,7 +297,7 @@ _tr_blocklistSetContent( tr_blocklist * b,
  
      {
          char * base = tr_basename( b->filename );

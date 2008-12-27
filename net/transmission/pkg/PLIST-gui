@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.12 2008/12/02 15:29:07 naddy Exp $
+@comment $OpenBSD: PLIST-gui,v 1.13 2008/12/27 15:54:43 naddy Exp $
 @bin bin/transmission
 @man man/man1/transmission.1
 share/applications/transmission.desktop
@@ -94,6 +94,9 @@ share/locale/ro/LC_MESSAGES/transmission.mo
 share/locale/ru/LC_MESSAGES/transmission.mo
 share/locale/sk/LC_MESSAGES/transmission.mo
 share/locale/sl/LC_MESSAGES/transmission.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/transmission.mo
 share/locale/sr/LC_MESSAGES/transmission.mo
 share/locale/sv/LC_MESSAGES/transmission.mo
 share/locale/te/

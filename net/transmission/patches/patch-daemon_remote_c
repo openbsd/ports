@@ -1,22 +1,22 @@
-$OpenBSD: patch-daemon_remote_c,v 1.1 2008/12/02 15:29:07 naddy Exp $
---- daemon/remote.c.orig	Mon Nov 10 16:52:35 2008
-+++ daemon/remote.c	Thu Nov 27 22:33:20 2008
-@@ -572,11 +572,11 @@ strlratio( char * buf,
-     {
-         const double ratio = numerator / denominator;
-         if( ratio < 10.0 )
--            tr_snprintf( buf, buflen, "%'.2f", ratio );
-+            tr_snprintf( buf, buflen, "%.2f", ratio );
-         else if( ratio < 100.0 )
--            tr_snprintf( buf, buflen, "%'.1f", ratio );
-+            tr_snprintf( buf, buflen, "%.1f", ratio );
-         else
--            tr_snprintf( buf, buflen, "%'.0f", ratio );
-+            tr_snprintf( buf, buflen, "%.0f", ratio );
-     }
-     else if( numerator )
-         tr_strlcpy( buf, "Infinity", buflen );
-@@ -593,24 +593,24 @@ strlsize( char *  buf,
+$OpenBSD: patch-daemon_remote_c,v 1.2 2008/12/27 15:54:43 naddy Exp $
+--- daemon/remote.c.orig	Wed Dec  3 00:44:08 2008
++++ daemon/remote.c	Thu Dec  4 17:58:32 2008
+@@ -575,11 +575,11 @@ strlratio2( char * buf, double ratio, size_t buflen )
+     else if( (int)ratio == TR_RATIO_INF )
+         tr_strlcpy( buf, "Inf", buflen );
+     else if( ratio < 10.0 )
+-        tr_snprintf( buf, buflen, "%'.2f", ratio );
++        tr_snprintf( buf, buflen, "%.2f", ratio );
+     else if( ratio < 100.0 )
+-        tr_snprintf( buf, buflen, "%'.1f", ratio );
++        tr_snprintf( buf, buflen, "%.1f", ratio );
+     else
+-        tr_snprintf( buf, buflen, "%'.0f", ratio );
++        tr_snprintf( buf, buflen, "%.0f", ratio );
+     return buf;
+ }
+ 
+@@ -609,24 +609,24 @@ strlsize( char *  buf,
      if( !size )
          tr_strlcpy( buf, "None", buflen );
      else if( size < (int64_t)KILOBYTE_FACTOR )
