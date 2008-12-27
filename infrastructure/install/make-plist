@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.140 2008/11/17 11:20:44 sthen Exp $
+# $OpenBSD: make-plist,v 1.141 2008/12/27 12:44:02 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -900,6 +900,10 @@ sub handle_file
 			my $item = $haystack->{$dir}[0];
 			next if $item->isa("OpenBSD::PackingElement::Sampledir");
 			my $p = $item->{plist}->{replacement};
+			if ($file->type eq 'directory' && 
+			    $p->{mtree}->{$file->path}) {
+				next;
+			}
 			my $short = short_name($file, $p);
 			my $o = create_object($file->type, $short, undef);
 			if (!defined $o) {
