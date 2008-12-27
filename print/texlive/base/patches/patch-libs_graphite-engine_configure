@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_graphite-engine_configure,v 1.1 2008/12/27 16:01:44 steven Exp $
+--- libs/graphite-engine/configure.orig	Sat Dec 27 13:26:27 2008
++++ libs/graphite-engine/configure	Sat Dec 27 13:26:35 2008
+@@ -21034,7 +21034,7 @@ fi
+ 
+ # Enable final
+ if test "$enable_final" = yes; then
+-  build_flags="$build_flags -O3 -DNDEBUG"
++  build_flags="$build_flags -DNDEBUG"
+ fi
+ 
+ # Enable profile
