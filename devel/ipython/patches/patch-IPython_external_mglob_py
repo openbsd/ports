@@ -1,0 +1,15 @@
+$OpenBSD: patch-IPython_external_mglob_py,v 1.1 2008/12/27 15:29:55 fgsch Exp $
+--- IPython/external/mglob.py.orig	Sun Jul 13 07:00:22 2008
++++ IPython/external/mglob.py	Mon Dec 15 03:12:11 2008
+@@ -73,7 +73,10 @@ __version__ = "0.2"
+ 
+ 
+ import os,glob,fnmatch,sys,re
+-from sets import Set as set
++try:
++    set
++except NameError:
++    from sets import Set as set
+ 
+                 
+ def expand(flist,exp_dirs = False):

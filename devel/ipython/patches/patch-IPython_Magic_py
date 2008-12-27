@@ -1,0 +1,35 @@
+$OpenBSD: patch-IPython_Magic_py,v 1.1 2008/12/27 15:29:55 fgsch Exp $
+--- IPython/Magic.py.orig	Fri Aug 15 00:59:40 2008
++++ IPython/Magic.py	Mon Dec 15 03:12:11 2008
+@@ -35,8 +35,12 @@ import textwrap
+ from cStringIO import StringIO
+ from getopt import getopt,GetoptError
+ from pprint import pprint, pformat
+-from sets import Set
+ 
++try:
++    set
++except NameError:
++    from sets import Set as set
++
+ # cProfile was added in Python2.5
+ try:
+     import cProfile as profile
+@@ -75,7 +79,7 @@ def compress_dhist(dh):
+     head, tail = dh[:-10], dh[-10:]
+ 
+     newhead = []
+-    done = Set()
++    done = set()
+     for h in head:
+         if h in done:
+             continue
+@@ -149,7 +153,7 @@ python-profiler package from non-free.""")
+                  filter(inst_magic,self.__dict__.keys()) + \
+                  filter(inst_bound_magic,self.__class__.__dict__.keys())
+         out = []
+-        for fn in Set(magics):
++        for fn in set(magics):
+             out.append(fn.replace('magic_','',1))
+         out.sort()
+         return out

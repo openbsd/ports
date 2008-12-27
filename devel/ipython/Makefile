@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2008/06/03 23:30:28 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.11 2008/12/27 15:29:54 fgsch Exp $
 
 COMMENT=		enhanced interactive Python shell
 
-MODPY_EGG_VERSION=	0.8.4
+MODPY_EGG_VERSION=	0.9.1
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
-HOMEPAGE=		http://ipython.scipy.org/
+HOMEPAGE=		http://ipython.scipy.org/moin/
 
 MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 
@@ -22,20 +22,11 @@ MASTER_SITES=	http://ipython.scipy.org/dist/
 
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=	::devel/py-pexpect
-
-DOC_DIR=	${PREFIX}/share/doc/ipython
-EXAMPLE_DIR=	${PREFIX}/share/examples/ipython
-
 post-extract:
-	@cd ${WRKSRC}/doc && gunzip *.1.gz
+	@cd ${WRKSRC}/docs/man && gunzip *.1.gz
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${DOC_DIR}
-	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
-	@cd ${WRKSRC}/doc/manual && pax -rw . ${DOC_DIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/examples/* ${EXAMPLE_DIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ipython.el ${EXAMPLE_DIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/emacs/ipython.el \
+	    ${PREFIX}/share/examples/ipython
 
 .include <bsd.port.mk>

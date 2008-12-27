@@ -1,0 +1,15 @@
+$OpenBSD: patch-IPython_Extensions_pickleshare_py,v 1.1 2008/12/27 15:29:55 fgsch Exp $
+--- IPython/Extensions/pickleshare.py.orig	Mon Jun  2 08:40:12 2008
++++ IPython/Extensions/pickleshare.py	Mon Dec 15 03:12:11 2008
+@@ -40,7 +40,10 @@ import UserDict
+ import warnings
+ import glob
+ 
+-from sets import Set as set
++try:
++    set
++except NameError:
++    from sets import Set as set
+ 
+ def gethashfile(key):
+     return ("%02x" % abs(hash(key) % 256))[-2:]

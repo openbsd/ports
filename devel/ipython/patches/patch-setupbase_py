@@ -1,0 +1,24 @@
+$OpenBSD: patch-setupbase_py,v 1.1 2008/12/27 15:29:55 fgsch Exp $
+--- setupbase.py.orig	Sun Sep 14 22:26:16 2008
++++ setupbase.py	Mon Dec 15 03:12:11 2008
+@@ -188,16 +188,16 @@ def find_data_files():
+     """
+     
+     docdirbase  = 'share/doc/ipython'
+-    manpagebase = 'share/man/man1'
++    manpagebase = 'man/man1'
+ 
+     # Simple file lists can be made by hand
+-    manpages  = filter(isfile, glob('docs/man/*.1.gz'))
++    manpages  = filter(isfile, glob('docs/man/*.1'))
+     igridhelpfiles = filter(isfile, glob('IPython/Extensions/igrid_help.*'))
+ 
+     # For nested structures, use the utility above
+     example_files = make_dir_struct('data','docs/examples',
+-                                    pjoin(docdirbase,'examples'))
+-    manual_files = make_dir_struct('data','docs/dist',pjoin(docdirbase,'manual'))
++                                    pjoin('share/examples/ipython'))
++    manual_files = make_dir_struct('data','docs/dist',pjoin(docdirbase))
+ 
+     # And assemble the entire output list
+     data_files = [ ('data',manpagebase, manpages),
