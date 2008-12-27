@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.32 2008/10/23 02:55:43 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2008/12/27 20:48:00 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-protocol instant messaging client
 
-DISTNAME=	pidgin-2.5.2
+DISTNAME=	pidgin-2.5.3
 CATEGORIES=	net
 
 SHARED_LIBS+=	jabber		0.0
 SHARED_LIBS+=	oscar		0.0
-SHARED_LIBS+=	purple		4.2
-SHARED_LIBS+=	purple-client	4.2
-SHARED_LIBS+=	gnt		4.2
+SHARED_LIBS+=	purple		4.3
+SHARED_LIBS+=	purple-client	4.3
+SHARED_LIBS+=	gnt		4.3
 
 HOMEPAGE=	http://pidgin.im/
 
@@ -25,8 +25,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 			Xext Xfixes Xi Xinerama Xrandr Xrender Xss atk-1.0 \
 			c cairo crypto dbus-1 expat fontconfig freetype \
-			glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
-			m ncurses panel pango-1.0 pangocairo-1.0 \
+			gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+			gthread-2.0 m ncurses panel pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pcre pixman-1 png pthread ssl stdc++ z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
@@ -43,7 +43,7 @@ LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		startup-notification-1::devel/startup-notification \
 		silc.>=7,silcclient.>=5::devel/silc-toolkit \
 		meanwhile::net/meanwhile \
-		gadu::net/libgadu \
+		gadu.>=4::net/libgadu \
 		xml2::textproc/libxml \
 		dbus-glib-1::x11/dbus-glib
 
@@ -94,7 +94,7 @@ INSTALL_STRIP=
 
 .if ${FLAVOR:L:Mgtkspell}
 LIB_DEPENDS+=	gtkspell::textproc/gtkspell
-WANTLIB+=	aspell
+WANTLIB+=	enchant
 .else
 CONFIGURE_ARGS+=--disable-gtkspell
 .endif

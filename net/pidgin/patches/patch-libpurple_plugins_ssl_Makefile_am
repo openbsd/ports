@@ -1,6 +1,6 @@
-$OpenBSD: patch-libpurple_plugins_ssl_Makefile_am,v 1.2 2007/10/01 22:03:29 merdely Exp $
---- libpurple/plugins/ssl/Makefile.am.orig	Sat Sep 29 12:39:06 2007
-+++ libpurple/plugins/ssl/Makefile.am	Sat Sep 29 20:53:53 2007
+$OpenBSD: patch-libpurple_plugins_ssl_Makefile_am,v 1.3 2008/12/27 20:48:00 steven Exp $
+--- libpurple/plugins/ssl/Makefile.am.orig	Sat Dec 20 19:38:16 2008
++++ libpurple/plugins/ssl/Makefile.am	Mon Dec 22 00:09:09 2008
 @@ -4,6 +4,7 @@ EXTRA_DIST = \
  plugindir = $(libdir)/purple-$(PURPLE_MAJOR_VERSION)
  
@@ -9,8 +9,23 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_am,v 1.2 2007/10/01 22:03:29 merd
  ssl_gnutls_la_LDFLAGS = -module -avoid-version
  ssl_nss_la_LDFLAGS    = -module -avoid-version
  
-@@ -15,10 +16,12 @@ plugin_LTLIBRARIES = \
- 	ssl-nss.la
+@@ -13,6 +14,11 @@ if PLUGINS
+ #   if USE_GNUTLS && USE_NSS
+ # but only support testing a single variable. Hence:
+ 
++if USE_OPENSSL
++plugin_LTLIBRARIES = \
++	ssl.la           \
++	ssl-openssl.la
++else
+ if USE_GNUTLS
+ if USE_NSS
+ plugin_LTLIBRARIES = \
+@@ -34,12 +40,15 @@ plugin_LTLIBRARIES = \
+ 	ssl.la
+ endif
+ endif
++endif
  
  ssl_la_SOURCES        = ssl.c
 +ssl_openssl_la_SOURCES = ssl-openssl.c
@@ -22,7 +37,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_am,v 1.2 2007/10/01 22:03:29 merd
  ssl_gnutls_la_LIBADD = $(GLIB_LIBS) $(GNUTLS_LIBS)
  ssl_nss_la_LIBADD    = $(GLIB_LIBS) $(NSS_LIBS)
  
-@@ -33,5 +36,6 @@ AM_CPPFLAGS = \
+@@ -54,5 +63,6 @@ AM_CPPFLAGS = \
  	$(GLIB_CFLAGS) \
  	$(PLUGIN_CFLAGS)
  

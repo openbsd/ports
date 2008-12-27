@@ -1,12 +1,12 @@
-$OpenBSD: patch-libpurple_protocols_gg_Makefile_in,v 1.12 2008/10/23 02:55:44 brad Exp $
---- libpurple/protocols/gg/Makefile.in.orig	Sun Oct 19 10:38:01 2008
-+++ libpurple/protocols/gg/Makefile.in	Tue Oct 21 20:18:41 2008
-@@ -529,7 +529,7 @@ libgg_la_LDFLAGS = -module -avoid-version
- @STATIC_GG_TRUE@libgg_a_CFLAGS = $(AM_CFLAGS)
- @STATIC_GG_TRUE@libgg_a_LIBADD = $(GADU_LIBS)
+$OpenBSD: patch-libpurple_protocols_gg_Makefile_in,v 1.13 2008/12/27 20:48:00 steven Exp $
+--- libpurple/protocols/gg/Makefile.in.orig	Sat Dec 20 19:38:43 2008
++++ libpurple/protocols/gg/Makefile.in	Sun Dec 21 23:52:11 2008
+@@ -507,7 +507,7 @@ libgg_la_LDFLAGS = -module -avoid-version
  @STATIC_GG_FALSE@libgg_la_SOURCES = $(GGSOURCES)
+ @STATIC_GG_TRUE@libgg_la_SOURCES = $(GGSOURCES)
+ @STATIC_GG_TRUE@libgg_la_CFLAGS = $(AM_CFLAGS)
 -@STATIC_GG_FALSE@libgg_la_LIBADD = $(GLIB_LIBS) $(GADU_LIBS)
 +@STATIC_GG_FALSE@libgg_la_LIBADD = $(GLIB_LIBS) $(GADU_LIBS) $(LIBGADU_LIBS)
+ @STATIC_GG_TRUE@libgg_la_LIBADD = $(GADU_LIBS)
+ @STATIC_GG_FALSE@pkg_LTLIBRARIES = libgg.la
  AM_CPPFLAGS = \
- 	-I$(top_srcdir)/libpurple \
- 	-I$(top_builddir)/libpurple \
