@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/10 23:37:21 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2008/12/27 16:36:16 fgsch Exp $
 
 COMMENT =	toolkit for generation of output for the web
 
-MODPY_EGG_VERSION =	0.5
+MODPY_EGG_VERSION =	0.5.1
 DISTNAME =	Genshi-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
@@ -22,8 +22,7 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =		\
-	:python-expat-${MODPY_VERSION}.*:lang/python/${MODPY_VERSION},-expat
+BUILD_DEPENDS =		${MODPY_EXPAT_DEPENDS}
 REGRESS_DEPENDS =	${BUILD_DEPENDS}
 
 post-install:
