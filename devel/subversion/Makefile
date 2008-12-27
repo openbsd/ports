@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2008/11/18 23:08:01 steven Exp $
+# $OpenBSD: Makefile,v 1.53 2008/12/27 19:20:36 steven Exp $
 
 COMMENT-main=	subversion revision control system
 COMMENT-perl=	perl interface to subversion
@@ -6,14 +6,14 @@ COMMENT-python=	python interface to subversion
 COMMENT-ruby=	ruby interface to subversion
 COMMENT-ap2=	apache2 subversion modules
 
-VERSION=	1.5.4
+VERSION=	1.5.5
 DISTNAME=	subversion-${VERSION}
 PKGNAME=	${DISTNAME}
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}
 PKGNAME-perl=	p5-SVN-${VERSION}
-PKGNAME-python=	py-subversion-${VERSION}p0
-PKGNAME-ruby=	ruby-subversion-${VERSION}p0
-PKGNAME-ap2=	ap2-subversion-${VERSION}p0
+PKGNAME-python=	py-subversion-${VERSION}
+PKGNAME-ruby=	ruby-subversion-${VERSION}
+PKGNAME-ap2=	ap2-subversion-${VERSION}
 
 SO_VERSION=	1.1
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -57,17 +57,25 @@ RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
 
 CONTRIB_HOOK_SCRIPTS=	case-insensitive.py pre-commit-check.py \
 	check-mime-type.pl pre-lock-require-needs-lock.py \
-	commit-block-joke.py remove-zombie-locks.py detect-merge-conflicts.sh \
+	commit-block-joke.py remove-zombie-locks.py \
 	syntax-check.sh
-# There's also 'enforcer', but it has its own subdir in contrib/hook-scripts/
-# So we handle it separately, see post-install
+# There's also 'enforcer', but we handle it separately, see post-install
 
 TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
-	commit-access-control.pl svn2feed.py commit-access-control.pl.in \
-	svnperms.conf.example commit-email.pl svnperms.py commit-email.pl.in \
-	verify-po.py commit-email.rb
-# There's also 'mailer', but it has its own subdir in contrib/hook-scripts/
-# So we handle it separately, see post-install
+	commit-access-control.pl commit-email.pl commit-email.rb \
+	log-police.py svn2feed.py svnperms.conf.example \
+	svnperms.py verify-po.py
+# There's also 'mailer', but we handle it separately, see post-install
+
+CONTRIB_CLIENT_SIDE_SCRIPTS=	incremental-update.py search-svnlog.pl \
+	svn-clean svn-merge-vendor.py svn_apply_autoprops.py \
+	svn_export_empty_files.py
+
+CONTRIB_SERVER_SIDE_SCRIPTS=	authz_svn_group.py fsfsverify.py \
+	svn-fast-backup svn-tweak-author.py
+
+TOOLS_CLIENT_SIDE_SCRIPTS=	bash_completion change-svn-wc-format.py \
+	server-version.py showchange.pl svn-graph.pl
 
 .if !${FLAVOR:L:Mno_ap2}
 MULTI_PACKAGES+=	-ap2
@@ -75,7 +83,7 @@ WANTLIB-ap2=		${WANTLIB} apr-1 aprutil-1 expat
 LIB_DEPENDS-ap2=	${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in svn_delta-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 \
 	svn_fs_util-1 svn_repos-1 svn_subr-1
-LIB_DEPENDS-ap2+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
+LIB_DEPENDS-ap2+=	${_lib}.>=${SO_VERSION}:${PKGNAME}:devel/subversion,-main
 .  endfor
 BUILD_DEPENDS+=		::www/apache-httpd
 RUN_DEPENDS-ap2=	::www/apache-httpd
@@ -90,7 +98,7 @@ RUN_DEPENDS-perl=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in svn_diff-1 svn_ra-1 svn_delta-1 svn_subr-1 svn_fs-1 \
 	svn_repos-1 svn_wc-1 svn_client-1
-LIB_DEPENDS-perl+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
+LIB_DEPENDS-perl+=	${_lib}.>=${SO_VERSION}:${PKGNAME}:devel/subversion,-main
 .  endfor
 
 WANTLIB-python=	${WANTLIB} apr-1 aprutil-1 crypto neon sasl2 ssl \
@@ -98,7 +106,7 @@ WANTLIB-python=	${WANTLIB} apr-1 aprutil-1 crypto neon sasl2 ssl \
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
-LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
+LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:${PKGNAME}:devel/subversion,-main
 .  endfor
 
 WANTLIB-ruby=	${WANTLIB} apr-1 aprutil-1 crypto neon sasl2 ssl \
@@ -106,7 +114,7 @@ WANTLIB-ruby=	${WANTLIB} apr-1 aprutil-1 crypto neon sasl2 ssl \
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	ruby.>=2::lang/ruby ${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
-LIB_DEPENDS-ruby+=	${_lib}.>=${SO_VERSION}:subversion-${VERSION}:devel/subversion,-main
+LIB_DEPENDS-ruby+=	${_lib}.>=${SO_VERSION}:${PKGNAME}:devel/subversion,-main
 .  endfor
 
 MODULES+=	lang/ruby
@@ -155,20 +163,30 @@ REGRESS_DEPENDS+=	:${PKGNAME-python}:devel/subversion,-python \
 pre-build:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} clean-swig
+.endif
 
 post-build:
+.if !${FLAVOR:L:Mno_bindings}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} swig-py
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} swig-pl
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} swig-rb
+.endif
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${MAKE_FLAGS} svnmucc
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${MAKE_FLAGS} svnauthz-validate
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${MAKE_FLAGS} svn-populate-node-origins-index
 
 do-regress:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_REGRESS_FLAGS} check FS_TYPE=bdb
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_REGRESS_FLAGS} check FS_TYPE=fsfs
+.if !${FLAVOR:L:Mno_bindings}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_REGRESS_FLAGS} TMPDIR=${WRKBUILD} check-swig-pl
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
@@ -186,34 +204,75 @@ post-install:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_FAKE_FLAGS} install-swig-rb
 .endif
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/backup
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/
+	${INSTALL_DATA} ${FILESDIR}/config \
+			${PREFIX}/share/examples/subversion/config
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/client-side
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/server-side
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/cgi
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/client-side/emacs
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/client-side/svn2cl
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts/mailer
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts/mailer/tests
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts/enforcer
-	${INSTALL_DATA} ${FILESDIR}/config \
-			${PREFIX}/share/examples/subversion/config
-	${INSTALL_DATA} ${WRKBUILD}/tools/backup/hot-backup.py \
-			${PREFIX}/share/examples/subversion/backup/
-	${INSTALL_DATA} ${WRKSRC}/tools/server-side/svn-backup-dumps.py \
-			${PREFIX}/share/examples/subversion/backup/
-	${INSTALL_DATA} ${WRKSRC}/contrib/server-side/svn-fast-backup \
-			${PREFIX}/share/examples/subversion/backup/svn-fast-backup
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/server-side/mod_dontdothat
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/xslt
+	${INSTALL_DATA} ${WRKSRC}/contrib/cgi/* \
+			${PREFIX}/share/examples/subversion/cgi
+	${INSTALL_DATA} ${WRKSRC}/contrib/client-side/emacs/* \
+			${PREFIX}/share/examples/subversion/client-side/emacs
+	${INSTALL_DATA} ${WRKSRC}/contrib/client-side/svn2cl/* \
+			${PREFIX}/share/examples/subversion/client-side/svn2cl
+	${INSTALL_DATA} ${WRKSRC}/contrib/server-side/mod_dontdothat/* \
+			${PREFIX}/share/examples/subversion/server-side/mod_dontdothat
+.for _script in ${CONTRIB_CLIENT_SIDE_SCRIPTS}
+	${INSTALL_DATA} ${WRKSRC}/contrib/client-side/${_script} \
+			${PREFIX}/share/examples/subversion/client-side
+.endfor
+.for _script in ${CONTRIB_SERVER_SIDE_SCRIPTS}
+	${INSTALL_DATA} ${WRKSRC}/contrib/server-side/${_script} \
+			${PREFIX}/share/examples/subversion/server-side
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/contrib/hook-scripts/enforcer/enforcer \
 			${PREFIX}/share/examples/subversion/hook-scripts/enforcer/
 	${INSTALL_DATA} ${WRKSRC}/contrib/hook-scripts/enforcer/enforcer.conf \
 			${PREFIX}/share/examples/subversion/hook-scripts/enforcer/
-.for hook_script in ${CONTRIB_HOOK_SCRIPTS}
-	${INSTALL_DATA} ${WRKSRC}/contrib/hook-scripts/${hook_script} \
+.for _hook_script in ${CONTRIB_HOOK_SCRIPTS}
+	${INSTALL_DATA} ${WRKSRC}/contrib/hook-scripts/${_hook_script} \
 			${PREFIX}/share/examples/subversion/hook-scripts/
 .endfor
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${ALL_FAKE_FLAGS} install-tools
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/backup
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/bdb
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/xslt
+	${INSTALL_DATA} ${WRKBUILD}/tools/backup/hot-backup.py \
+			${PREFIX}/share/examples/subversion/backup
+	${INSTALL_DATA} ${WRKSRC}/tools/bdb/* \
+		${PREFIX}/share/examples/subversion/bdb
+	${INSTALL_DATA} ${WRKSRC}/tools/examples/* \
+		${PREFIX}/share/examples/subversion
+.for _script in ${TOOLS_CLIENT_SIDE_SCRIPTS}
+	${INSTALL_DATA} ${WRKSRC}/tools/client-side/${_script} \
+			${PREFIX}/share/examples/subversion/client-side
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/tools/server-side/fsfs-reshard.py \
+			${PREFIX}/share/examples/subversion/server-side
+	${INSTALL_DATA} ${WRKSRC}/tools/server-side/svn-backup-dumps.py \
+			${PREFIX}/share/examples/subversion/server-side
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/server-side/svn-populate-node-origins-index.c \
+		${PREFIX}/share/examples/subversion/server-side
 	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/README \
 			${PREFIX}/share/examples/subversion/hook-scripts/
-.for hook_script in ${TOOLS_HOOK_SCRIPTS}
-	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/${hook_script} \
+	${INSTALL_DATA} ${WRKSRC}/tools/xslt/* \
+		${PREFIX}/share/examples/subversion/xslt
+.for _hook_script in ${TOOLS_HOOK_SCRIPTS}
+	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/${_hook_script} \
 			${PREFIX}/share/examples/subversion/hook-scripts/
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/mailer/mailer.conf.example \
+			${PREFIX}/share/examples/subversion/hook-scripts/mailer
 	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/mailer/mailer.conf.example \
 			${PREFIX}/share/examples/subversion/hook-scripts/mailer
 	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/mailer/mailer.py \
@@ -223,5 +282,7 @@ post-install:
 	find ${PREFIX}/share/examples/subversion -type f | xargs perl -pi \
 		-e "s,.*/usr/bin/python.*,#!${MODPY_BIN},;" \
 		-e "s,.*env python.*,#!${MODPY_BIN},;"
+	find ${PREFIX}/share/examples/subversion -type f -name '*\.orig' \
+		-exec rm -f {} \;
 
 .include <bsd.port.mk>
