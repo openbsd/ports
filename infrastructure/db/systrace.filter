@@ -2,6 +2,7 @@
 	native-__semctl: permit
 	native-__sysctl: permit
 	native-accept: permit
+	native-bind: sockaddr eq "inet-[0.0.0.0]:0" then deny[eacces]
 	native-bind: sockaddr match "/tmp" then permit
 	native-bind: sockaddr match "/var/tmp" then permit
 	native-bind: sockaddr match "${TMPDIR}" then permit
