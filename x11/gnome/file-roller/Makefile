@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2008/12/17 18:47:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2008/12/27 10:50:54 ajacoutot Exp $
 
 COMMENT=		archive manager for GNOME
 
 GNOME_PROJECT=		file-roller
 GNOME_VERSION=		2.24.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		archivers
 
 # GPLv3
@@ -21,7 +21,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 		gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png popt pthread ssl util \
+		pangoft2-1.0 pcre pixman-1 png popt pthread sndio ssl util \
 		xml2 z
 
 MODULES=		devel/gettext \
@@ -31,7 +31,9 @@ RUN_DEPENDS=		::textproc/rarian \
 			:gtar-*:archivers/gtar \
 			:lzma-*:archivers/lzma \
 			:unzip-*:archivers/unzip \
-			:zip-*:archivers/zip
+			:zip-*:archivers/zip \
+			::archivers/gcpio \
+			:rpm2cpio-*|rpm-*:converters/rpm2cpio
 LIB_DEPENDS=		gnomeui-2.>=1800::x11/gnome/libgnomeui \
 			nautilus-extension.>=1::x11/gnome/nautilus
 

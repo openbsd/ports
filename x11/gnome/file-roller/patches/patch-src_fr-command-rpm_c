@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_fr-command-rpm_c,v 1.1 2008/12/27 10:50:54 ajacoutot Exp $
+--- src/fr-command-rpm.c.orig	Sat Dec 27 11:27:49 2008
++++ src/fr-command-rpm.c	Sat Dec 27 11:28:06 2008
+@@ -175,7 +175,7 @@ fr_command_rpm_list (FrCommand *comm)
+ 
+ 	fr_process_begin_command (comm->process, "sh");
+ 	fr_process_add_arg (comm->process, "-c");
+-	fr_process_add_arg_concat (comm->process, "rpm2cpio ", comm->e_filename, " | cpio -itv", NULL);
++	fr_process_add_arg_concat (comm->process, "rpm2cpio ", comm->e_filename, " | gcpio -itv", NULL);
+ 	fr_process_end_command (comm->process);
+ 	fr_process_start (comm->process);
+ }
+@@ -200,7 +200,7 @@ fr_command_rpm_extract (FrCommand  *comm,
+ 
+ 	cmd = g_string_new ("rpm2cpio ");
+ 	g_string_append (cmd, comm->e_filename);
+-	g_string_append (cmd, " | cpio -idu ");
++	g_string_append (cmd, " | gcpio -idu ");
+ 	for (scan = file_list; scan; scan = scan->next) {
+ 		char *filename = g_shell_quote (scan->data);
+ 		g_string_append (cmd, filename);

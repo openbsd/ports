@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/12/17 18:47:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2008/12/27 10:50:54 ajacoutot Exp $
 %%SHARED%%
 @bin bin/file-roller
 lib/nautilus/
@@ -168,7 +168,6 @@ share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/file-roller.mo
 share/locale/az/LC_MESSAGES/file-roller.mo
 share/locale/be/LC_MESSAGES/file-roller.mo
-share/locale/be@latin/
 share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/file-roller.mo
 share/locale/bg/LC_MESSAGES/file-roller.mo
