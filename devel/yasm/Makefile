@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/09/12 14:26:00 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2008/12/28 22:11:59 okan Exp $
 
 COMMENT=	complete rewrite of the NASM assembler
 
-DISTNAME=	yasm-0.7.1
+DISTNAME=	yasm-0.7.2
 CATEGORIES=	devel lang
 
 MAINTAINER=	Shaun Amott <shaun@inerd.com>
