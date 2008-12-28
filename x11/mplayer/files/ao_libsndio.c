@@ -31,7 +31,7 @@
 
 static ao_info_t info = {
 	"libsndio audio output",
-	"libsndio",
+	"sndio",
 	"Alexandre Ratchov <alex@caoua.org>",
 	""
 };
@@ -110,7 +110,8 @@ static int init(int rate, int channels, int format, int flags)
 	}
 	par.rate = rate;
 	par.pchan = channels;
-	par.bufsz = par.rate * 250 / 1000; /* 250ms buffer */
+	par.appbufsz = par.rate * 250 / 1000;	/* 250ms buffer */
+	par.round = par.rate * 10 / 1000;	/*  10ms block size */
 	if (!sio_setpar(hdl, &par)) {
 		mp_msg(MSGT_AO, MSGL_ERR, "ao2: couldn't set params\n");
 		return 0;
@@ -135,7 +136,7 @@ static int init(int rate, int channels, int format, int flags)
 	ao_data.channels = par.pchan;
 	ao_data.format = format;
 	ao_data.bps = bpf * par.rate;
-	ao_data.buffersize = par.bufsz * bpf;
+	ao_data.buffersize = par.appbufsz * bpf;
 	ao_data.outburst = par.round * bpf;
 	sio_onmove(hdl, movecb, NULL);
 	realpos = playpos = 0;
@@ -242,7 +243,7 @@ static void audio_resume(void)
 {
 	int n, count, todo;
 
-	todo = par.bufsz * par.pchan * par.bps;
+	todo = par.appbufsz * par.pchan * par.bps;
 
 	/*
 	 * libsndio starts automatically if enough data is available;
