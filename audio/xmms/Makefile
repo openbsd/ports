@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.59 2008/12/26 06:34:45 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.60 2008/12/28 22:31:51 jakemsr Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
-COMMENT-esd=		Esound output plugin for XMMS
 COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
 COMMENT-mikmod=		Mikmod input plugin for XMMS
 COMMENT-mp3=		MP3 input plugin for XMMS
@@ -10,8 +9,7 @@ SHARED_ONLY=		Yes
 
 VERSION=		1.2.11
 DISTNAME=		xmms-${VERSION}
-PKGNAME-main=		xmms-${VERSION}p2
-PKGNAME-esd=		xmms-esd-${VERSION}p0
+PKGNAME-main=		xmms-${VERSION}p3
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}p0
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}p0
 PKGNAME-mp3=		xmms-mp3-${VERSION}p0
@@ -21,7 +19,7 @@ HOMEPAGE=		http://www.xmms.org
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
-# GPL v2
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -34,7 +32,7 @@ MASTER_SITES=		${HOMEPAGE}/files/$V/ \
 			ftp://ftp.sunet.se/pub/multimedia/xmms/$V/ \
 			ftp://ftp.stealth.net/xmms/$V/
 
-MULTI_PACKAGES=		-main -esd -vorbis -mikmod -mp3
+MULTI_PACKAGES=		-main -vorbis -mikmod -mp3
 
 .if ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	patch-* gcc-*
@@ -55,8 +53,9 @@ CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.59
 AUTOMAKE_VERSION=	1.9
 CONFIGURE_ARGS=		--without-gnome \
+			--disable-esd \
+			--disable-oss \
 			--enable-ipv6 \
-			--with-esd-prefix=${LOCALBASE} \
 			--with-ogg-prefix=${LOCALBASE} \
 			--with-vorbis-prefix=${LOCALBASE} \
 			--with-mikmod-prefix=${LOCALBASE}
@@ -66,10 +65,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 DOCS=			README NEWS FAQ
-
-LIB_DEPENDS-esd=	${LIB_DEPENDS} esd::audio/esound
-RUN_DEPENDS-esd=	::audio/xmms
-WANTLIB-esd=		${WANTLIB} audiofile sndio
 
 LIB_DEPENDS-vorbis=	${LIB_DEPENDS} vorbis,vorbisfile.>=1::audio/libvorbis
 RUN_DEPENDS-vorbis=	::audio/xmms

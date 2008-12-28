@@ -5,7 +5,6 @@ visualization plugins.
 
 Note that you need to install the following subpackages to gain
 the appropriate functionality:
-	-esd	XMMS output plugin for the Enlightened Sound Daemon
 	-mikmod	to play modules from XMMS through the MikMod library
 	-mp3	to play MP3/MPEG 1/2 audio files and HTTP streams
 	-vorbis	to play OGG audio files and HTTP streams
