@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.27 2008/08/24 08:40:03 brad Exp $
+@comment $OpenBSD: PLIST-tests,v 1.28 2008/12/28 19:45:17 sthen Exp $
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1
@@ -186,6 +186,7 @@ share/mysql-test/r/ctype_cp932_binlog.result
 share/mysql-test/r/ctype_create.result
 share/mysql-test/r/ctype_eucjpms.result
 share/mysql-test/r/ctype_euckr.result
+share/mysql-test/r/ctype_filesystem.result
 share/mysql-test/r/ctype_gb2312.result
 share/mysql-test/r/ctype_gbk.result
 share/mysql-test/r/ctype_hebrew.result
@@ -344,12 +345,14 @@ share/mysql-test/r/information_schema_db.result
 share/mysql-test/r/information_schema_inno.result
 share/mysql-test/r/init_connect.result
 share/mysql-test/r/init_file.result
+share/mysql-test/r/innodb-autoinc-optimize.result
 share/mysql-test/r/innodb-big.result
 share/mysql-test/r/innodb-deadlock.result
 share/mysql-test/r/innodb-lock.result
 share/mysql-test/r/innodb-replace.result
 share/mysql-test/r/innodb-ucs2.result
 share/mysql-test/r/innodb.result
+share/mysql-test/r/innodb_bug35220.result
 share/mysql-test/r/innodb_cache.result
 share/mysql-test/r/innodb_gis.result
 share/mysql-test/r/innodb_handler.result
@@ -398,6 +401,7 @@ share/mysql-test/r/metadata.result
 share/mysql-test/r/mix_innodb_myisam_binlog.result
 share/mysql-test/r/multi_statement.result
 share/mysql-test/r/multi_update.result
+share/mysql-test/r/multi_update2.result
 share/mysql-test/r/multi_update_tiny_hash.result
 share/mysql-test/r/myisam-blob.result
 share/mysql-test/r/myisam.result
@@ -484,6 +488,8 @@ share/mysql-test/r/overflow.result
 share/mysql-test/r/packet.result
 share/mysql-test/r/parser.result
 share/mysql-test/r/parser_precedence.result
+share/mysql-test/r/parser_stack.result
+share/mysql-test/r/perror-win.result
 share/mysql-test/r/perror.result
 share/mysql-test/r/preload.result
 share/mysql-test/r/profiling.result
@@ -659,6 +665,7 @@ share/mysql-test/r/ssl_8k_key.result
 share/mysql-test/r/ssl_compress.result
 share/mysql-test/r/ssl_connect.result
 share/mysql-test/r/status.result
+share/mysql-test/r/status2.result
 share/mysql-test/r/strict.result
 share/mysql-test/r/strict_autoinc_1myisam.result
 share/mysql-test/r/strict_autoinc_2innodb.result
@@ -1452,6 +1459,8 @@ share/mysql-test/t/ctype_cp932_binlog.test
 share/mysql-test/t/ctype_create.test
 share/mysql-test/t/ctype_eucjpms.test
 share/mysql-test/t/ctype_euckr.test
+share/mysql-test/t/ctype_filesystem-master.opt
+share/mysql-test/t/ctype_filesystem.test
 share/mysql-test/t/ctype_gb2312.test
 share/mysql-test/t/ctype_gbk.test
 share/mysql-test/t/ctype_hebrew.test
@@ -1588,6 +1597,7 @@ share/mysql-test/t/init_connect-master.opt
 share/mysql-test/t/init_connect.test
 share/mysql-test/t/init_file-master.opt
 share/mysql-test/t/init_file.test
+share/mysql-test/t/innodb-autoinc-optimize.test
 share/mysql-test/t/innodb-big.test
 share/mysql-test/t/innodb-deadlock.test
 share/mysql-test/t/innodb-lock.test
@@ -1595,6 +1605,7 @@ share/mysql-test/t/innodb-master.opt
 share/mysql-test/t/innodb-replace.test
 share/mysql-test/t/innodb-ucs2.test
 share/mysql-test/t/innodb.test
+share/mysql-test/t/innodb_bug35220.test
 share/mysql-test/t/innodb_cache-master.opt
 share/mysql-test/t/innodb_cache.test
 share/mysql-test/t/innodb_gis.test
@@ -1658,6 +1669,8 @@ share/mysql-test/t/multi_statement-master.opt
 share/mysql-test/t/multi_statement.test
 share/mysql-test/t/multi_update-master.opt
 share/mysql-test/t/multi_update.test
+share/mysql-test/t/multi_update2-master.opt
+share/mysql-test/t/multi_update2.test
 share/mysql-test/t/multi_update_tiny_hash-master.opt
 share/mysql-test/t/multi_update_tiny_hash.test
 share/mysql-test/t/myisam-blob-master.opt
@@ -1753,6 +1766,8 @@ share/mysql-test/t/overflow.test
 share/mysql-test/t/packet.test
 share/mysql-test/t/parser.test
 share/mysql-test/t/parser_precedence.test
+share/mysql-test/t/parser_stack.test
+share/mysql-test/t/perror-win.test
 share/mysql-test/t/perror.test
 share/mysql-test/t/preload.test
 share/mysql-test/t/profiling.test
@@ -1958,7 +1973,6 @@ share/mysql-test/t/rpl_user.test
 share/mysql-test/t/rpl_user_variables.test
 share/mysql-test/t/rpl_variables-master.opt
 share/mysql-test/t/rpl_variables.test
-share/mysql-test/t/rpl_view-slave.opt
 share/mysql-test/t/rpl_view.test
 share/mysql-test/t/schema.test
 share/mysql-test/t/select.test
@@ -1994,6 +2008,7 @@ share/mysql-test/t/ssl_8k_key.test
 share/mysql-test/t/ssl_compress.test
 share/mysql-test/t/ssl_connect.test
 share/mysql-test/t/status.test
+share/mysql-test/t/status2.test
 share/mysql-test/t/strict.test
 share/mysql-test/t/strict_autoinc_1myisam.test
 share/mysql-test/t/strict_autoinc_2innodb.test

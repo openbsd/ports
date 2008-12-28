@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2008/08/24 08:40:03 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2008/12/28 19:45:17 sthen Exp $
 @pkgpath databases/mysql
 @bin bin/mysql
 @bin bin/mysql_client_test
@@ -63,7 +63,5 @@ lib/mysql/libmysqlclient_r.la
 @man man/man1/mysqldump.1
 @man man/man1/mysqlimport.1
 @man man/man1/mysqlman.1
-@man man/man1/mysqlmanager-pwgen.1
-@man man/man1/mysqlmanagerc.1
 @man man/man1/mysqlshow.1
 @man man/man1/mysqltest.1
