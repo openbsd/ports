@@ -1,4 +1,4 @@
-$OpenBSD: patch-driver_Makefile_in,v 1.4 2008/10/27 19:49:39 ajacoutot Exp $
+$OpenBSD: patch-driver_Makefile_in,v 1.5 2008/12/28 15:45:31 ajacoutot Exp $
 --- driver/Makefile.in.orig	Mon Aug 11 07:11:59 2008
 +++ driver/Makefile.in	Thu Oct 23 15:51:54 2008
 @@ -10,7 +10,7 @@ VPATH		= @srcdir@
@@ -10,13 +10,3 @@ $OpenBSD: patch-driver_Makefile_in,v 1.4 2008/10/27 19:49:39 ajacoutot Exp $
  prefix		= @prefix@
  exec_prefix	= @exec_prefix@
  bindir		= @bindir@
-@@ -108,6 +108,9 @@ PAM_OBJS	= passwd-pam.o
- 
- PWHELPER_SRCS	= passwd-helper.c
- PWHELPER_OBJS	= passwd-helper.o
-+
-+BSD_AUTH_SRCS	= passwd-bsd_auth.c
-+BSD_AUTH_OBJS	= passwd-bsd_auth.o
- 
- LOCK_SRCS_1	= lock.c passwd.c
- LOCK_OBJS_1	= lock.o passwd.o

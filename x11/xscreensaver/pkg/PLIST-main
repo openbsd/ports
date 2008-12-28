@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/11/29 11:29:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/12/28 15:45:31 ajacoutot Exp $
 @pkgpath x11/xscreensaver,no_gle
 @pkgpath x11/xscreensaver
-@mode g+s
-@group auth
+@mode 4755
 bin/xscreensaver
 @mode
-@group
 @bin bin/xscreensaver-command
 @bin bin/xscreensaver-demo
 @bin bin/xscreensaver-getimage

@@ -1,4 +1,0 @@
-xscreensaver is not installed setuid anymore which will prevent
-unlocking the screen using the root password.  If you need this behavior
-back, you can add the setuid bit to the xscreensaver binary.  As root:
-  chmod u+s ${PREFIX}/bin/xscreensaver
