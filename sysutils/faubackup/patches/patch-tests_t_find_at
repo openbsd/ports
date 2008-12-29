@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_t_find_at,v 1.1.1.1 2008/12/29 19:51:09 sturm Exp $
+--- tests/t_find.at.orig	Tue Dec  2 12:20:01 2008
++++ tests/t_find.at	Tue Dec  2 12:20:22 2008
+@@ -47,7 +47,7 @@ AT_CHECK(cd testdir && faubackup-find, , [stdout])
+ # if faubackup-find reports too much, it will fail
+ # if faubackup-find misses something, then the directory will not be emptied
+ # rmdir foo/. does not work, so it must be checked separately
+-AT_CHECK(xargs -0 -n 1 -i <stdout \
++AT_CHECK(xargs -0 -n 1 -I {} -x <stdout \
+  sh -c 'if test -d "checkdir/{}"; then \
+ 		if test "{}" != .; then rmdir "checkdir/{}"; fi; \
+ 	else rm "checkdir/{}"; fi')

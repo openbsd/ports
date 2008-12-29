@@ -1,0 +1,4 @@
+faubackup uses a filesystem on a hard drive for incremental and full backups.
+All backups can easily be accessed by standard filesystem tools. Later backups
+to the same filesystem will automatically be incremental, as unchanged files
+are only hard-linked with the existing version of the file.

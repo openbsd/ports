@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_faubackup-gather_c,v 1.1.1.1 2008/12/29 19:51:09 sturm Exp $
+--- src/faubackup-gather.c.orig	Sun Dec 28 13:00:40 2008
++++ src/faubackup-gather.c	Sun Dec 28 13:02:58 2008
+@@ -56,8 +56,8 @@ send_buf(void *_buf, size_t len)
+ 	while( len > 0 ) {
+ 		ret = fwrite( buf, 1, len, stdout );
+ 		if( ferror(stdout) ) {
+-			fprintf( stderr, "%s: stdout fwrite %d bytes: %s\n",
+-					progname, len, strerror(errno));
++			fprintf( stderr, "%s: stdout fwrite %lu bytes: %s\n",
++					progname, (unsigned long) len, strerror(errno));
+ 			exit(1);
+ 		}
+ 		buf += ret;

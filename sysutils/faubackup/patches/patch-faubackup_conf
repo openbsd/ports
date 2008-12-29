@@ -1,0 +1,12 @@
+$OpenBSD: patch-faubackup_conf,v 1.1.1.1 2008/12/29 19:51:09 sturm Exp $
+--- faubackup.conf.orig	Sat Nov 29 13:13:59 2008
++++ faubackup.conf	Sat Nov 29 13:14:22 2008
+@@ -23,7 +23,7 @@ $keepdays	= 7;
+ #@ignore = qw( **.o **/cache **/Cache **/nobackup );
+ 
+ # use this command for remote commands
+-$rsh		= "rsh";
++$rsh		= "ssh";
+ 
+ 
+ # make perl happy

@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/29 19:51:09 sturm Exp $
+@man man/man5/faubackup.conf.5
+@man man/man8/faubackup-find.8
+@man man/man8/faubackup-gather.8
+@man man/man8/faubackup-scatter.8
+@man man/man8/faubackup.8
+sbin/faubackup
+sbin/faubackup-find
+@bin sbin/faubackup-gather
+@bin sbin/faubackup-scatter
+share/examples/faubackup/
+share/examples/faubackup/faubackup.conf
+@sample ${SYSCONFDIR}/faubackup.conf
