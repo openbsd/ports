@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_audio_out_Makefile_in,v 1.11 2008/12/14 23:57:34 brad Exp $
+$OpenBSD: patch-src_audio_out_Makefile_in,v 1.12 2008/12/29 23:26:21 jakemsr Exp $
 --- src/audio_out/Makefile.in.orig	Thu Aug 14 17:18:39 2008
-+++ src/audio_out/Makefile.in	Thu Dec 11 00:23:10 2008
++++ src/audio_out/Makefile.in	Sat Dec 27 20:50:00 2008
 @@ -170,6 +170,18 @@ xineplug_ao_out_jack_la_LINK = $(LIBTOOL) --tag=CC $(A
  	$(xineplug_ao_out_jack_la_LDFLAGS) $(LDFLAGS) -o $@
  @HAVE_JACK_TRUE@am_xineplug_ao_out_jack_la_rpath = -rpath \
@@ -63,15 +63,6 @@ $OpenBSD: patch-src_audio_out_Makefile_in,v 1.11 2008/12/14 23:57:34 brad Exp $
  
  xineplug_ao_out_none_la_SOURCES = audio_none_out.c
  xineplug_ao_out_none_la_LIBADD = $(XINE_LIB) $(LTLIBINTL)
-@@ -632,7 +650,7 @@ xineplug_ao_out_sun_la_LDFLAGS = -avoid-version -modul
- #xineplug_ao_out_irixal_la_CFLAGS = $(VISIBILITY_FLAG) $(IRIXAL_CFLAGS)
- #xineplug_ao_out_irixal_la_LDFLAGS = -avoid-version -module
- xineplug_ao_out_arts_la_SOURCES = audio_arts_out.c
--xineplug_ao_out_arts_la_LIBADD = $(XINE_LIB) $(ARTS_LIBS)
-+xineplug_ao_out_arts_la_LIBADD = $(XINE_LIB) $(ARTS_LIBS) -lstdc++
- xineplug_ao_out_arts_la_CFLAGS = $(VISIBILITY_FLAG) $(ARTS_CFLAGS)
- xineplug_ao_out_arts_la_LDFLAGS = -avoid-version -module
- xineplug_ao_out_directx_la_SOURCES = audio_directx_out.c
 @@ -667,6 +685,10 @@ xineplug_ao_out_jack_la_SOURCES = audio_jack_out.c
  xineplug_ao_out_jack_la_LIBADD = $(XINE_LIB) $(JACK_LIBS) $(LTLIBINTL)
  xineplug_ao_out_jack_la_CFLAGS = $(VISIBILITY_FLAG) $(JACK_CFLAGS)

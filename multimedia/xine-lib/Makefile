@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.44 2008/12/21 07:56:47 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.45 2008/12/29 23:26:21 jakemsr Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		multimedia decoding library
-COMMENT-esd=		esound audio output module for xine-lib
-COMMENT-arts=		artsd audio output module for xine-lib
 COMMENT-jack=		jackd audio output module for xine-lib
 
 V=			1.1.15
 DISTNAME=		xine-lib-${V}
-PKGNAME-main=		${DISTNAME}p6
-PKGNAME-esd=		xine-lib-esd-${V}
-PKGNAME-arts=		xine-lib-arts-${V}
+PKGNAME-main=		${DISTNAME}p7
 PKGNAME-jack=		xine-lib-jack-${V}
-
-EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xine/}
+EXTRACT_SUFX=		.tar.bz2
+
 SHARED_LIBS=		xine	23.0
 
 HOMEPAGE=		http://xinehq.de/
@@ -26,16 +23,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xine/}
-
-MULTI_PACKAGES=		-main -esd -arts -jack
+MULTI_PACKAGES=		-main -jack
 
 WANTLIB=		expat fontconfig freetype m z
 WANTLIB-main=		${WANTLIB} X11 Xau Xdmcp Xext Xinerama Xrandr \
 			Xrender Xv c jpeg lcms pthread sndio usbhid
-WANTLIB-esd=		${WANTLIB}
-WANTLIB-arts=		${WANTLIB} pcre stdc++ glib-2.0 \
-			gmodule-2.0 gthread-2.0
 WANTLIB-jack=		${WANTLIB}
 
 .if ${MACHINE_ARCH} == "i386"
@@ -59,15 +51,6 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			speex.>=3::audio/speex \
 			theora.>=1::multimedia/libtheora
 
-LIB_DEPENDS-esd=	${LIB_DEPENDS} \
-			esd.>=2::audio/esound \
-			audiofile.>=0::devel/libaudiofile \
-			xine::${BUILD_PKGPATH}
-RUN_DEPENDS-esd=	${RUN_DEPENDS}
-LIB_DEPENDS-arts=	${LIB_DEPENDS} \
-			artsc.>=1::x11/kde/arts3 \
-			xine::${BUILD_PKGPATH}
-RUN_DEPENDS-arts=	${RUN_DEPENDS}
 LIB_DEPENDS-jack=	${LIB_DEPENDS} \
 			jack::audio/jack \
 			xine::${BUILD_PKGPATH}
@@ -104,8 +87,7 @@ CONFIGURE_ARGS+=	--disable-optimizations \
 			--without-pulseaudio \
 			--disable-oss \
 			--without-alsa \
-			--with-esound \
-			--with-arts \
+			--without-esound \
 			--with-jack \
 			--without-imagemagick \
 			--disable-samba \
