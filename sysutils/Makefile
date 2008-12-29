@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2008/12/25 10:51:12 mglocker Exp $
+# $OpenBSD: Makefile,v 1.165 2008/12/29 19:52:53 sturm Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -30,6 +30,7 @@
      SUBDIR += e2fsprogs
      SUBDIR += eventlog
      SUBDIR += fam
+     SUBDIR += faubackup
      SUBDIR += fdupes
      SUBDIR += filelight
      SUBDIR += findlib
