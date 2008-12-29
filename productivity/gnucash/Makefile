@@ -1,90 +1,68 @@
-# $OpenBSD: Makefile,v 1.18 2007/10/25 21:05:33 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2008/12/29 17:03:46 sturm Exp $
 
-BROKEN= 	needs an update
+SHARED_ONLY =	Yes
 
-NOT_FOR_ARCHS=	${LP64_ARCHS}
+COMMENT =	personal and small-business financial-accounting software	
 
-COMMENT=	Quicken-like money and finance manager
-DISTNAME=	gnucash-1.8.12
-PKGNAME=	${DISTNAME}p3
-DOCVER=		1.8.5
-CATEGORIES=	x11/gnome productivity
+GNOME_PROJECT =	gnucash
+GNOME_VERSION =	2.2.8
 
+SHARED_LIBS +=	gnc-backend-file-utils	0.0	# .0.0
+SHARED_LIBS +=	gnc-business-ledger	0.0	# .0.0
+SHARED_LIBS +=	gnc-core-utils		0.0	# .0.0
+SHARED_LIBS +=	gnc-gnome		0.0	# .0.0
+SHARED_LIBS +=	gnc-module		0.0	# .0.0
+SHARED_LIBS +=	gnc-qof			1.4	# .1.4
+SHARED_LIBS +=	gncmod-qif		0.0	# .0.0
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+CATEGORIES =	productivity
 
-MASTER_SITE_GNUCASH=	http://www.gnucash.org/pub/gnucash/ \
-		http://www.linas.org/pub/gnucash/gnucash/
-MASTER_SITES= ${MASTER_SITE_GNUCASH:=sources/stable/} \
-		${MASTER_SITE_GNOME:=sources/gnucash/1.8/} \
-		 ${MASTER_SITE_SOURCEFORGE:=gnucash/}
+HOMEPAGE =	http://www.gnucash.org/
 
-HOMEPAGE=	http://www.gnucash.org/
+MAINTAINER =	Nikolay Sturm <sturm@genua.de>
 
-SHARED_LIBS=	gnc-app-file-gnome	0.0
+# GPLv2
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
+WANTLIB =	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
+		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender art_lgpl_2 atk-1.0 audiofile bonobo-2 \
+		bonobo-activation bonoboui-2 bz2 c cairo crypto dbus-1 \
+		dbus-glib-1 enchant esd expat fontconfig freetype gailutil \
+		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 \
+		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
+		gnomeui-2 gnomevfs-2 gobject-2.0 gsf-1 gsf-gnome-1 gthread-2.0 \
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
+		pixman-1 png popt pthread ssl stdc++ util xml2 z
 
-WANTLIB=	db gnomesupport wrap gnomecanvaspixbuf 
-WANTLIB+=	ORBitCosNaming ICE glib audiofile IIOP jpeg z
-WANTLIB+=	ORBit ungif X11 oaf freetype gconf-1 gmodule SM
-WANTLIB+=	Xext esd tiff xml png gdk_imlib guile guile-ltdl Xi
-WANTLIB+=	gconf-gtk-1 art_lgpl ORBitutil gtk gdk ltdl m ghttp gnomeui
-WANTLIB+=	gdk_pixbuf gnomeprint gtkhtml-1.1 popt bonobo bonobox
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnucash/} \
+		${HOMEPAGE}pub/gnucash/sources/stable/
 
-MAINTAINER=	Todd T. Fries <todd@OpenBSD.org>
+MODULES =	devel/gettext \
+		x11/gnome
+DESKTOP_FILES =	Yes
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=		Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-
-MODULES=	devel/gettext
-
-CONFIGURE_STYLE= gnu
-
-USE_X11=	Yes
-USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
-LIBTOOL_FLAGS+=	--tag=disable-static
-CONFIGURE_ARGS+= ${ENABLE_SHARED} \
-		--with-glib-config=${LOCALBASE}/bin/glib-config \
-		--enable-nls \
-		--without-included-gettext \
-		--disable-guppi \
-		--disable-xim \
-		--with-libglade-config=${LOCALBASE}/bin/libglade-config
-CONFIGURE_ENV+=  CPPFLAGS="${CFLAGS}" CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		LIBS="${LDFLAGS}"
-
-LIB_DEPENDS=	glade.>=4,glade-gnome::devel/libglade,gnome \
-		gnome.>=36::x11/gnome/libs \
-		gal.>=16::devel/gal \
-		gnomeprint.>=16::x11/gnome/print \
-		gdk_pixbuf.>=2::graphics/gdk-pixbuf \
-		lib/db4/db.>=4:db-4.*:databases/db/v4 \
-		gwrap-glib,gwrap-wct::devel/g-wrap \
-		gtkhtml-1.1.>=3.5::www/gtkhtml
-BUILD_DEPENDS=	::devel/swig \
-		::x11/gnome/print \
-		::graphics/Guppi \
-		::databases/db/v4 \
+BUILD_DEPENDS =	::devel/slib \
+		::devel/slib-guile
+RUN_DEPENDS =	::devel/slib \
 		::devel/slib-guile \
-		::devel/libtool \
-		::lang/guile
+		::productivity/gnucash-docs
+LIB_DEPENDS =	goffice-0.6::devel/goffice \
+		guile,guile-ltdl::lang/guile \
+		gtkhtml-3.14::www/gtkhtml3
 
-RUN_DEPENDS+=	::devel/slib \
-		::devel/slib-guile \
-		::devel/libtool \
-		::lang/guile
-
-CFLAGS=-I${LOCALBASE}/include -I${X11BASE}/include -I${LOCALBASE}/share/libtool/libltdl -I${LOCALBASE}/include/libgtkhtml-1.1
-LDFLAGS=-pthread -L${LOCALBASE}/lib -L${X11BASE}/lib -lintl -liconv
-
-LIBPATH=/usr/lib:/usr/X11R6/lib:${LOCALBASE}/lib
-
-MAKE_FLAGS += DB_LIBS=-ldb LDFLAGS="${LDFLAGS}" LIBS="${LDFLAGS}"
-MAKE_ENV += LIBRARY_PATH="${LIBPATH}"
-MAKE_ENV += LD_LIBRARY_PATH="${LIBPATH}"
+USE_X11 =		Yes
+CONFIGURE_STYLE =	gnu
+# --disable-ofx until libofx/libsp is fixed to work with .so
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--disable-doxygen \
+			--disable-ofx \
+			--disable-schemas-install \
+			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnucash
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

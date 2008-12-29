@@ -1,26 +1,19 @@
-$OpenBSD: patch-configure,v 1.2 2006/02/17 14:07:44 todd Exp $
---- configure.orig	Wed Oct 19 15:26:29 2005
-+++ configure	Fri Feb 17 06:17:32 2006
-@@ -9710,12 +9710,11 @@ cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
- int
- main ()
- {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
-+return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
-   ;
-   return 0;
- }
-@@ -23177,7 +23176,7 @@ echo $ECHO_N "checking for gtkhtml >= 1.
+$OpenBSD: patch-configure,v 1.3 2008/12/29 17:03:46 sturm Exp $
+
+OpenBSD uses /var/db/gconf which is detected correctly by other code.
+
+--- configure.orig	Sun Dec 14 04:41:47 2008
++++ configure	Sat Dec 20 09:08:43 2008
+@@ -4232,12 +4232,6 @@ fi
  
-     fi
  
--    if test "x$GTKHTML_LIBS" != x; then
-+    if test "x$GTKHTML_LIBS" != "xNO"; then
- 	echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6
- 	# check for gtkhtml and enable it via HAVE_LIBGTKHTML if found
+ 
+-# Override gconf default install locations.  The default is to always
+-# put them into /etc.  This change puts them into $(prefix)/etc.
+-if test "x$GCONF_SCHEMA_INSTALL_SOURCE" = "x"; then
+-  GCONF_SCHEMA_CONFIG_SOURCE="xml::${sysconfdir}/gconf/gconf.xml.defaults"
+-fi
+-GCONF_SCHEMA_CONFIG_SOURCE_DIRONLY=`echo $GCONF_SCHEMA_CONFIG_SOURCE | cut -d ':' -f 3`
+ 
+ 
+ 
