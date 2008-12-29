@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/12/26 09:50:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2008/12/29 16:48:51 ajacoutot Exp $
 timetrex/
 timetrex/INSTALL.txt
 timetrex/LICENSE
@@ -2448,11 +2448,14 @@ timetrex/templates/users/UserList.tpl
 timetrex/templates/users/UserSearch.tpl
 timetrex/templates/users/UserTitleList.tpl
 timetrex/templates/users/UserWageList.tpl
-@owner www
+@mode 775
+@group www
 timetrex/templates_c/
+@mode 664
 timetrex/timetrex.ini.php-example_linux
 @sample timetrex/timetrex.ini.php
-@owner
+@mode
+@group
 timetrex/timetrex.ini.php-example_windows
 timetrex/tools/
 timetrex/tools/export/
@@ -2498,11 +2501,13 @@ timetrex/unit_tests/USPayrollDeductionTest2007.php
 timetrex/unit_tests/USPayrollDeductionTest2008.php
 timetrex/unit_tests/USPayrollDeductionTest2009.csv
 timetrex/unit_tests/USPayrollDeductionTest2009.php
-@owner www
+@mode 775
+@group www
 @sample timetrex/log/
 @sample timetrex/storage/
 @sample timetrex/tmp/
-@owner
+@mode
+@group
 @sample var/
 @sample var/www/
 @sample var/www/timetrex/
