@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/09/21 15:39:14 rui Exp $
+# $OpenBSD: Makefile,v 1.20 2008/12/29 19:17:36 rui Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,15 +8,15 @@ COMMENT-mysql=		freeradius mysql rlm addon
 COMMENT-pgsql=		freeradius pgsql rlm addon
 COMMENT-ldap=		freeradius ldap rlm addon
 
-V=			2.1.0
+V=			2.1.3
 DISTNAME=		freeradius-server-$V
 PKGNAME-main=		freeradius-$V
 PKGNAME-iodbc=		freeradius-iodbc-$V
 PKGNAME-mysql=		freeradius-mysql-$V
 PKGNAME-pgsql=		freeradius-pgsql-$V
 PKGNAME-ldap=		freeradius-ldap-$V
-SHARED_LIBS=		freeradius-eap	2.0 \
-			freeradius-radius 2.0
+SHARED_LIBS=		freeradius-eap	3.0 \
+			freeradius-radius 3.0
 
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
@@ -113,7 +113,7 @@ RUN_DEPENDS-mysql=	::net/freeradius
 WANTLIB-mysql=		crypto m pthread ssl z
 LIB_DEPENDS-pgsql=	pq.>=2:postgresql-client-*:databases/postgresql
 RUN_DEPENDS-pgsql=	::net/freeradius
-WANTLIB-main=		c com_err crypto krb5 pcap pthread ssl
+WANTLIB-main=		c com_err crypto krb5 pcap pthread readline ssl termcap
 
 post-configure:
 	@perl -pi -e 's,/etc/raddb,${SYSCONFDIR}/raddb,g' ${WRKSRC}/man/*/*

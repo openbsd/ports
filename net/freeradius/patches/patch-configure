@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2008/09/21 15:39:14 rui Exp $
---- configure.orig	Fri Sep  5 14:27:57 2008
-+++ configure	Fri Sep 19 17:29:38 2008
+$OpenBSD: patch-configure,v 1.7 2008/12/29 19:17:36 rui Exp $
+--- configure.orig	Sun Dec 28 00:27:47 2008
++++ configure	Sun Dec 28 00:36:56 2008
 @@ -4862,7 +4862,7 @@ fi
      LTDLINCL='-I${top_srcdir}/''libltdl'
    else
@@ -70,25 +70,7 @@ $OpenBSD: patch-configure,v 1.6 2008/09/21 15:39:14 rui Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -21096,7 +21092,7 @@ if test "${ac_cv_lib_readline_readline+set}" = set; th
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lreadline  $LIBS"
-+LIBS="-lreadline -lncurses $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -21152,7 +21148,7 @@ fi
- { echo "$as_me:$LINENO: result: $ac_cv_lib_readline_readline" >&5
- echo "${ECHO_T}$ac_cv_lib_readline_readline" >&6; }
- if test $ac_cv_lib_readline_readline = yes; then
--   LIBREADLINE="-lreadline"
-+   LIBREADLINE="-lreadline -lncurses"
- fi
- 
- 
-@@ -23035,7 +23031,7 @@ _ACEOF
+@@ -23411,7 +23407,7 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -97,7 +79,7 @@ $OpenBSD: patch-configure,v 1.6 2008/09/21 15:39:14 rui Exp $
  #ifdef HAVE_NETINET_IN_H
  #include <netinet/in.h>
  #endif
-@@ -23102,7 +23098,7 @@ _ACEOF
+@@ -23478,7 +23474,7 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */

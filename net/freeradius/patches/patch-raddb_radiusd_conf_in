@@ -1,6 +1,6 @@
-$OpenBSD: patch-raddb_radiusd_conf_in,v 1.9 2008/09/21 15:39:14 rui Exp $
---- raddb/radiusd.conf.in.orig	Fri Sep 19 11:59:05 2008
-+++ raddb/radiusd.conf.in	Fri Sep 19 12:07:53 2008
+$OpenBSD: patch-raddb_radiusd_conf_in,v 1.10 2008/12/29 19:17:36 rui Exp $
+--- raddb/radiusd.conf.in.orig	Fri Dec  5 16:37:56 2008
++++ raddb/radiusd.conf.in	Sun Dec 28 00:26:19 2008
 @@ -54,7 +54,7 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
@@ -10,7 +10,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.9 2008/09/21 15:39:14 rui Exp $
  sbindir = @sbindir@
  logdir = @logdir@
  raddbdir = @raddbdir@
-@@ -99,7 +99,7 @@ db_dir = ${raddbdir}
+@@ -103,7 +103,7 @@ db_dir = ${raddbdir}
  #	make
  #	make install
  #
@@ -19,7 +19,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.9 2008/09/21 15:39:14 rui Exp $
  
  #  pidfile: Where to place the PID of the RADIUS server.
  #
-@@ -160,8 +160,8 @@ pidfile = ${run_dir}/radiusd.pid
+@@ -164,8 +164,8 @@ pidfile = ${run_dir}/${name}.pid
  #  It will join all groups where "user" is a member.  This can allow
  #  for some finer-grained access controls.
  #
@@ -30,7 +30,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.9 2008/09/21 15:39:14 rui Exp $
  
  #  max_request_time: The maximum time (in seconds) to handle a request.
  #
-@@ -501,8 +501,8 @@ security {
+@@ -522,8 +522,8 @@ security {
  #
  #  allowed values: {no, yes}
  #
@@ -41,7 +41,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.9 2008/09/21 15:39:14 rui Exp $
  
  
  # CLIENTS CONFIGURATION
-@@ -518,7 +518,7 @@ $INCLUDE proxy.conf
+@@ -539,7 +539,7 @@ $INCLUDE proxy.conf
  #  Anything listed in 'clients.conf' will take precedence over the
  #  information from the old-style configuration files.
  #
@@ -50,7 +50,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.9 2008/09/21 15:39:14 rui Exp $
  
  
  # THREAD POOL CONFIGURATION
-@@ -635,12 +635,12 @@ modules {
+@@ -656,12 +656,12 @@ modules {
  	#  For all EAP related authentications.
  	#  Now in another file, because it is very large.
  	#
@@ -65,7 +65,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.9 2008/09/21 15:39:14 rui Exp $
  
  	#
  	#  This module is an SQL enabled version of the counter module.
-@@ -652,16 +652,16 @@ modules {
+@@ -673,16 +673,16 @@ modules {
  	#  totally dependent on the SQL module to process Accounting
  	#  packets.
  	#
@@ -86,7 +86,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.9 2008/09/21 15:39:14 rui Exp $
  
  }
  
-@@ -732,7 +732,7 @@ instantiate {
+@@ -753,7 +753,7 @@ instantiate {
  #	to multiple times.
  #
  ######################################################################

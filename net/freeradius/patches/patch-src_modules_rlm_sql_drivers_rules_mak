@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_modules_rlm_sql_drivers_rules_mak,v 1.5 2008/07/28 21:51:10 rui Exp $
---- src/modules/rlm_sql/drivers/rules.mak.orig	Fri May  9 15:38:54 2008
-+++ src/modules/rlm_sql/drivers/rules.mak	Tue Jul 15 08:43:37 2008
+$OpenBSD: patch-src_modules_rlm_sql_drivers_rules_mak,v 1.6 2008/12/29 19:17:36 rui Exp $
+--- src/modules/rlm_sql/drivers/rules.mak.orig	Fri Dec  5 16:37:56 2008
++++ src/modules/rlm_sql/drivers/rules.mak	Sun Dec 28 00:26:20 2008
 @@ -101,9 +101,9 @@ build-module: $(TARGET).la
- 	@cp $< $(top_builddir)/src/modules/lib
+ 	done
  
  $(TARGET).la: $(LT_OBJS)
 -	$(LIBTOOL) --mode=link $(CC) -release $(RADIUSD_VERSION) \

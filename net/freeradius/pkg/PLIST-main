@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2008/09/21 15:39:14 rui Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2008/12/29 19:17:36 rui Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
 @newgroup _freeradius:559
 @newuser _freeradius:559:559:daemon:Freeradius:/nonexistent:/sbin/nologin
 @bin bin/radclient
+@bin bin/radconf2xml
 @bin bin/radeapclient
 bin/radlast
 @bin bin/radsniff
@@ -298,6 +299,8 @@ share/doc/freeradius/rfc/rfc4849.txt
 share/doc/freeradius/rfc/rfc5080.txt
 share/doc/freeradius/rfc/rfc5090.txt
 share/doc/freeradius/rfc/rfc5176.txt
+share/doc/freeradius/rfc/rfc5247.txt
+share/doc/freeradius/rfc/rfc5281.txt
 share/doc/freeradius/rlm_dbm
 share/doc/freeradius/rlm_eap
 share/doc/freeradius/rlm_expiration
@@ -386,8 +389,8 @@ share/examples/freeradius/modules/digest
 @sample ${SYSCONFDIR}/raddb/modules/digest
 share/examples/freeradius/modules/echo
 @sample ${SYSCONFDIR}/raddb/modules/echo
-share/examples/freeradius/modules${SYSCONFDIR}_group
-@sample ${SYSCONFDIR}/raddb/modules/${SYSCONFDIR}_group
+share/examples/freeradius/modules/etc_group
+@sample ${SYSCONFDIR}/raddb/modules/etc_group
 share/examples/freeradius/modules/exec
 @sample ${SYSCONFDIR}/raddb/modules/exec
 share/examples/freeradius/modules/expiration
@@ -420,6 +423,8 @@ share/examples/freeradius/modules/pap
 @sample ${SYSCONFDIR}/raddb/modules/pap
 share/examples/freeradius/modules/passwd
 @sample ${SYSCONFDIR}/raddb/modules/passwd
+share/examples/freeradius/modules/perl
+@sample ${SYSCONFDIR}/raddb/modules/perl
 share/examples/freeradius/modules/policy
 @sample ${SYSCONFDIR}/raddb/modules/policy
 share/examples/freeradius/modules/preprocess
@@ -432,6 +437,8 @@ share/examples/freeradius/modules/smbpasswd
 @sample ${SYSCONFDIR}/raddb/modules/smbpasswd
 share/examples/freeradius/modules/sql_log
 @sample ${SYSCONFDIR}/raddb/modules/sql_log
+share/examples/freeradius/modules/sqlcounter_expire_on_login
+@sample ${SYSCONFDIR}/raddb/modules/sqlcounter_expire_on_login
 share/examples/freeradius/modules/sradutmp
 @sample ${SYSCONFDIR}/raddb/modules/sradutmp
 share/examples/freeradius/modules/unix
@@ -497,6 +504,9 @@ share/examples/freeradius/sql/mysql/ippool.conf
 share/examples/freeradius/sql/mysql/ippool.sql
 share/examples/freeradius/sql/mysql/nas.sql
 share/examples/freeradius/sql/mysql/schema.sql
+share/examples/freeradius/sql/mysql/wimax.conf
+@sample ${SYSCONFDIR}/raddb/sql/mysql/wimax.conf
+share/examples/freeradius/sql/mysql/wimax.sql
 share/examples/freeradius/sql/oracle/
 @sample ${SYSCONFDIR}/raddb/sql/oracle/
 share/examples/freeradius/sql/oracle/dialup.conf
@@ -584,6 +594,7 @@ share/freeradius/dictionary.itk
 share/freeradius/dictionary.jradius
 share/freeradius/dictionary.juniper
 share/freeradius/dictionary.karlnet
+share/freeradius/dictionary.lancom
 share/freeradius/dictionary.livingston
 share/freeradius/dictionary.localweb
 share/freeradius/dictionary.lucent
@@ -594,6 +605,7 @@ share/freeradius/dictionary.mikrotik
 share/freeradius/dictionary.motorola
 share/freeradius/dictionary.navini
 share/freeradius/dictionary.netscreen
+share/freeradius/dictionary.networkphysics
 share/freeradius/dictionary.nexans
 share/freeradius/dictionary.nokia
 share/freeradius/dictionary.nokia.conflict
