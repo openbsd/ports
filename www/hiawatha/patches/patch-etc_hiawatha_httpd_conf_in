@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_hiawatha_httpd_conf_in,v 1.4 2008/10/30 11:43:30 ajacoutot Exp $
+$OpenBSD: patch-etc_hiawatha_httpd_conf_in,v 1.5 2008/12/29 17:17:15 ajacoutot Exp $
 --- etc/hiawatha/httpd.conf.in.orig	Fri Oct  3 08:07:40 2008
 +++ etc/hiawatha/httpd.conf.in	Thu Oct 30 12:22:44 2008
 @@ -4,7 +4,7 @@
@@ -15,7 +15,7 @@ $OpenBSD: patch-etc_hiawatha_httpd_conf_in,v 1.4 2008/10/30 11:43:30 ajacoutot E
  # tool to start PHP as a FastCGI daemon.
  #
 -#CGIhandler = /usr/bin/php-cgi:php
-+#CGIhandler = ${LOCALBASE}/bin/php-cgi:php
++#CGIhandler = ${LOCALBASE}/bin/php-fastcgi:php
  #CGIhandler = /usr/bin/perl:pl
 -#CGIhandler = /usr/bin/python:py
 +#CGIhandler = ${LOCALBASE}/bin/python:py

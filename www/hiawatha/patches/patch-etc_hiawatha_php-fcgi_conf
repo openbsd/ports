@@ -1,0 +1,15 @@
+$OpenBSD: patch-etc_hiawatha_php-fcgi_conf,v 1.1 2008/12/29 17:17:15 ajacoutot Exp $
+--- etc/hiawatha/php-fcgi.conf.orig	Mon Dec 29 17:57:07 2008
++++ etc/hiawatha/php-fcgi.conf	Mon Dec 29 17:59:33 2008
+@@ -13,7 +13,7 @@
+ 
+ # Server = <php-cgi executable>;<binding>;<UID>[:<GIDs>][;<PHP configuration file>]
+ #
+-#Server = /usr/bin/php5-cgi ; 127.0.0.1:2005 ; www-data
+-#Server = /usr/bin/php5-cgi ; 127.0.0.1:2005 ; 1000:100,101
+-#Server = /usr/bin/php5-cgi ; 127.0.0.1:2005 ; www-data ; /etc/php5/cgi/php.ini
+-#Server = /usr/chroot|usr/bin/php5-cgi ; 127.0.0.1:2005 ; www-data
++#Server = ${LOCALBASE}/bin/php-fastcgi ; 127.0.0.1:2005 ; _hiawatha
++#Server = ${LOCALBASE}/bin/php-fastcgi ; 127.0.0.1:2005 ; 579:579,67
++#Server = ${LOCALBASE}/bin/php-fastcgi ; 127.0.0.1:2005 ; _hiawatha ; /var/www/conf/php.ini
++#Server = /var/chroot|${LOCALBASE}/bin/php-fastcgi ; 127.0.0.1:2005 ; _hiawatha
