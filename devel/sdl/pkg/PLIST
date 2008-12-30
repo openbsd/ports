@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.13 2007/12/09 13:40:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2008/12/30 22:17:54 sthen Exp $
 @pkgpath ${BASE_PKGPATH},sun
+@pkgpath ${BASE_PKGPATH},esd
 bin/sdl-config
 include/SDL/
 include/SDL/SDL.h
