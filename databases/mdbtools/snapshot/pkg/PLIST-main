@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 10:32:38 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2008/12/30 20:56:41 sthen Exp $
 @pkgpath databases/mdbtools/snapshot
 %%SHARED%%
-bin/mdb-array
-bin/mdb-export
-bin/mdb-header
-bin/mdb-hexdump
-bin/mdb-parsecsv
-bin/mdb-prop
-bin/mdb-schema
-bin/mdb-sql
-bin/mdb-tables
-bin/mdb-ver
+@bin bin/mdb-array
+@bin bin/mdb-export
+@bin bin/mdb-header
+@bin bin/mdb-hexdump
+@bin bin/mdb-parsecsv
+@bin bin/mdb-prop
+@bin bin/mdb-schema
+@bin bin/mdb-sql
+@bin bin/mdb-tables
+@bin bin/mdb-ver
 include/gmdb.h
 include/mdbodbc.h
 include/mdbprivate.h

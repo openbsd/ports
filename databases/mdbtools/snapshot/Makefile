@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2008/10/28 13:34:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2008/12/30 20:56:41 sthen Exp $
 
 COMMENT-main=	read microsoft Access MDB
 COMMENT-gmdb=	graphical interface to MDB tools
 DATE=		20070603
 DISTNAME=	mdbtools-${DATE}
-PKGNAME-main=	mdbtools-${DATE}p1
-PKGNAME-gmdb=	gmdb-${DATE}p2
+PKGNAME-main=	mdbtools-${DATE}p2
+PKGNAME-gmdb=	gmdb-${DATE}p3
 HOMEPAGE=	http://mdbtools.sourceforge.net/
 
 CATEGORIES=	databases converters
@@ -17,7 +17,7 @@ MULTI_PACKAGES=	-main -gmdb
 SHARED_LIBS +=	mdb                  1.0      # .1.0
 SHARED_LIBS +=	mdbsql               1.0      # .1.0
 
-# LGPL
+# GPLv2+, LGPL v2+
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -39,24 +39,21 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS-gmdb=${LIB_DEPENDS} \
 		gnomeui-2::x11/gnome/libgnomeui \
+		gio-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
 		mdb,mdbsql::databases/mdbtools/snapshot
 RUN_DEPENDS-gmdb=${RUN_DEPENDS} \
 		:yelp-*:x11/gnome/yelp
 
 WANTLIB-gmdb=	${WANTLIB} \
-		audiofile bonobo-activation popt ORBit-2 pthread \
-		bonoboui-2  atk-1.0 gobject-2.0 m jpeg \
-		SM esd fontconfig ssl z cairo glitz png \
-		gthread-2.0 art_lgpl_2 X11 glade-2.0 \
-		gconf-2 ICE Xrender gmodule-2.0 \
-		pango-1.0 pangoft2-1.0 \
-		gnomecanvas-2 gdk-x11-2.0 xml2 gnome-2 \
-		gnome-keyring freetype crypto gtk-x11-2.0 \
-		pangocairo-1.0 gdk_pixbuf-2.0 bonobo-2 \
-		gnomevfs-2 ORBitCosNaming-2 Xau Xdmcp expat \
-		Xcursor Xext Xfixes Xi Xinerama Xrandr dbus-1 dbus-glib-1 \
-		util Xcomposite Xdamage gailutil pixman-1
-
+		ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
+		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
+		Xrender art_lgpl_2 atk-1.0 audiofile bonobo-2 \
+		bonobo-activation bonoboui-2 cairo crypto dbus-1 \
+		dbus-glib-1 esd expat fontconfig freetype gailutil \
+		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 glitz \
+		gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 \
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pixman-1 png popt pthread ssl util xml2 z
 
 WANTLIB-main=	${WANTLIB} readline termcap
 

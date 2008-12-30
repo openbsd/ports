@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-gmdb,v 1.1.1.1 2006/05/01 09:55:33 espie Exp $
-bin/gmdb2
+@comment $OpenBSD: PLIST-gmdb,v 1.2 2008/12/30 20:56:41 sthen Exp $
+@bin bin/gmdb2
 share/gmdb/
 share/gmdb/glade/
 share/gmdb/glade/code.xpm
