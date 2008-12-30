@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/30 13:56:39 pirofti Exp $
+@bin bin/ocat
+include/ocat.h
+include/strlcat.c
+include/strlcpy.c
+share/doc/onioncat/
+share/doc/onioncat/README
