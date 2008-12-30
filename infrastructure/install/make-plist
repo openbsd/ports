@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.141 2008/12/27 12:44:02 espie Exp $
+# $OpenBSD: make-plist,v 1.142 2008/12/30 13:28:20 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -552,17 +552,27 @@ sub cwd
 	return ${$self->{cwd}};
 }
 
-sub add_to_haystack
+sub add_this_name_to_haystack
 {
-	my ($self, $plist, $haystack) = @_;
+	my ($self, $name, $haystack) = @_;
 
-	$self->SUPER::add_to_haystack($plist, $haystack);
-	my $fullname = File::Spec->canonpath($self->{name});
+	my $fullname = File::Spec->canonpath($name);
 	if ($fullname !~ m|^/|o && $self->cwd ne '.') {
 		$fullname = $self->cwd."/".$fullname;
 	}
 	my $n = $main::subst->do($fullname);
 	push(@{$haystack->{$n}}, $self);
+}
+
+sub add_to_haystack
+{
+	my ($self, $plist, $haystack) = @_;
+
+	$self->SUPER::add_to_haystack($plist, $haystack);
+	$self->add_this_name_to_haystack($self->{name}, $haystack);
+	if ($self->{name} =~ m/^\@\S+\s*(.*)$/o) {
+		$self->add_this_name_to_haystack($1, $haystack);
+	}
 }
 
 sub copy_annotations
@@ -692,7 +702,7 @@ sub create_object
 	my ($type, $short, $item) = @_;
 
 	if (defined $item && $item->isa("OpenBSD::PackingElement::Comment")) {
-		return OpenBSD::PackingElement::Comment->new($short);
+		return $item->clone;
 	}
 	if ($type eq "directory") {
 		if (defined $item) {
@@ -861,7 +871,6 @@ sub handle_file
 	my ($file, $haystack, $allplists, $shared_only) = @_;
 
 	my $foundit;
-	my $default = $allplists->[0];
 	if (defined $haystack->{$file->path}) {
 	    for my $item (@{$haystack->{$file->path}}) {
 	    	next if $item->isa("OpenBSD::PackingElement::State");
@@ -927,6 +936,7 @@ sub handle_file
 
 	my $short;
 	my $p;
+	my $default = $allplists->[0];
 
 	my $possible = possible_subpackages($file->path);
 	if (@$possible == 0) {
