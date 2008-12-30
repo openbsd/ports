@@ -1,0 +1,33 @@
+$OpenBSD: patch-tests_testsuite_at,v 1.1 2008/12/30 17:37:05 naddy Exp $
+--- tests/testsuite.at.orig	Thu Jul 31 08:57:51 2008
++++ tests/testsuite.at	Tue Dec 30 18:19:43 2008
+@@ -21,6 +21,7 @@
+ # We need a recent Autotest.
+ m4_version_prereq([2.52g])
+ 
++m4_define([AT_TAR_CHECK_HOOK])
+ m4_define([AT_TAR_CHECK],[
+   AT_XFAIL_IF(test -f $[]XFAILFILE)
+   m4_foreach([FMT],
+@@ -33,9 +34,20 @@ export TEST_TAR_FORMAT
+ TAR_OPTIONS="-H FMT"
+ export TAR_OPTIONS
+ rm -rf *
+-$1)],$2,$3,$4,$5,$6)])
++$1)],$2,$3,$4,$5,$6)
++              AT_TAR_CHECK_HOOK])
+ ])
+ 
++m4_define([AT_TAR_WITH_HOOK],[
++  m4_pushdef([AT_TAR_CHECK_HOOK],[$1])
++  $2
++  
++  m4_popdef([AT_TAR_CHECK_HOOK])])
++
++m4_define([TAR_IGNREC_HOOK],[
++  AT_CHECK([grep -v '^.*tar: Record size = ' stderr; exit 0])
++])
++  
+ m4_define([RE_CHECK],[
+ AT_DATA([$1.re],[$2])
+ awk '{print NR " " $[]0}' $1 > $[]$.1

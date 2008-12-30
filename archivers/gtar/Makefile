@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2008/04/18 14:52:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2008/12/30 17:37:05 naddy Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
-DISTNAME=	tar-1.20
+DISTNAME=	tar-1.21
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	http://www.gnu.org/software/tar/
@@ -19,8 +19,10 @@ MASTER_SITES=	${MASTER_SITE_GNU:=tar/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext
-RUN_DEPENDS=	::archivers/bzip2 ::archivers/lzma
+BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION}	# autom4te
+RUN_DEPENDS=	::archivers/bzip2 ::archivers/lzma ::archivers/lzop
 
+AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -28,6 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		DEFAULT_ARCHIVE=/dev/rst0 \
 		DEFAULT_RMT_COMMAND=/etc/rmt
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
+
+MAKE_ENV=	AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 FLAVORS=	static
 FLAVOR?=
