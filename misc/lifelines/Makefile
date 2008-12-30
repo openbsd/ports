@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/16 15:41:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2008/12/30 10:33:39 sthen Exp $
 
 COMMENT=		genealogical database and programming system
 DISTNAME=		lifelines-3.0.60
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lifelines/}
 
 HOMEPAGE=		http://lifelines.sourceforge.net/
-
-MAINTAINER=		James Prevatt <jprevatt+bsd@paunix.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
