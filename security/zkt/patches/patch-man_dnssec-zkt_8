@@ -1,7 +1,7 @@
-$OpenBSD: patch-dnssec-zkt_8,v 1.2 2008/01/09 14:57:31 ajacoutot Exp $
---- dnssec-zkt.8.orig	Wed Nov 21 14:31:38 2007
-+++ dnssec-zkt.8	Wed Jan  9 15:37:07 2008
-@@ -424,12 +424,12 @@ Specifies the name of the default global configuration
+$OpenBSD: patch-man_dnssec-zkt_8,v 1.1 2008/12/30 21:53:37 jakob Exp $
+--- man/dnssec-zkt.8.orig	Sun Dec 28 23:15:21 2008
++++ man/dnssec-zkt.8	Tue Dec 30 19:32:50 2008
+@@ -439,12 +439,12 @@ Specifies the name of the default global configuration
  
  .SH FILES
  .TP
