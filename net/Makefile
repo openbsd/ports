@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.551 2008/12/17 01:35:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.552 2008/12/30 13:59:10 pirofti Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -209,6 +209,7 @@
      SUBDIR += oidentd
      SUBDIR += oinkmaster
      SUBDIR += olsrd
+     SUBDIR += onioncat
      SUBDIR += opal
      SUBDIR += openafs
      SUBDIR += openh323
