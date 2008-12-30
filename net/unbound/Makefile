@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/12/15 22:41:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2008/12/30 10:40:13 jakob Exp $
 
 COMMENT=	validating DNS resolver
 
 DISTNAME=	unbound-1.1.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	net
 
