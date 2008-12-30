@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/12/30 13:56:39 pirofti Exp $
+$OpenBSD: patch-configure,v 1.2 2008/12/30 14:42:32 pirofti Exp $
 --- configure.orig	Sun Jun 22 11:15:19 2008
-+++ configure	Mon Dec 29 17:16:24 2008
++++ configure	Tue Dec 30 16:40:14 2008
 @@ -2169,7 +2169,6 @@ am__tar='${AMTAR} chof - "$$tardir"'; am__untar='${AMT
  ac_config_headers="$ac_config_headers config.h"
  
@@ -9,7 +9,15 @@ $OpenBSD: patch-configure,v 1.1.1.1 2008/12/30 13:56:39 pirofti Exp $
  
  
  # Checks for programs.
-@@ -3273,7 +3272,7 @@ if test "${ac_cv_lib_pthread_pthread_create+set}" = se
+@@ -3267,13 +3266,13 @@ fi
+ # Checks for libraries.
+ 
+ 
+-{ echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
