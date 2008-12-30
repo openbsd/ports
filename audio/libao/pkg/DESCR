@@ -5,5 +5,4 @@ it currently supports:
    * raw output
    * AU files
    * WAV files
-   * sun
    * sndio (OpenBSD's native sound system)

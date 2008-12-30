@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.13 2008/12/30 21:59:55 naddy Exp $
+lib/ao/
+lib/ao/plugins-2/
+@comment lib/ao/plugins-2/libsndio.la
+lib/ao/plugins-2/libsndio.so
+@lib lib/libao.so.${LIBao_VERSION}
