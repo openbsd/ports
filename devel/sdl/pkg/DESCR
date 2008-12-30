@@ -5,14 +5,8 @@ software, emulators, and many popular games.
 
 Packages can be built with additional FLAVORs:
 
-  esd:	SDL built with the esound package.
-	This FLAVOR requires the esound package.
-
   caca:	SDL built with colour ASCII art support.
 	This FLAVOR requires the libcaca package.
-
-  arts:	SDL built with ARTS support.
-	This FLAVOR requires the kdelibs package.
 
   aa:   SDL built with ASCII art support.
 	This FLAVOR requires the aalib package.

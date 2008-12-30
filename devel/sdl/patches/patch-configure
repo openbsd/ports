@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.18 2008/11/02 14:53:51 jakemsr Exp $
+$OpenBSD: patch-configure,v 1.19 2008/12/30 02:15:20 jakemsr Exp $
 --- configure.orig	Sun Dec 30 21:09:39 2007
 +++ configure	Mon Sep 22 20:13:46 2008
 @@ -25411,6 +25411,20 @@ _ACEOF
@@ -22,15 +22,6 @@ $OpenBSD: patch-configure,v 1.18 2008/11/02 14:53:51 jakemsr Exp $
  CheckPulseAudio()
  {
      # Check whether --enable-pulseaudio was given.
-@@ -25578,7 +25592,7 @@ fi
-             : # arts isn't installed
-         else
-             ARTS_CFLAGS=`$ARTSCONFIG --cflags`
--            ARTS_LIBS=`$ARTSCONFIG --libs`
-+            ARTS_LIBS="`$ARTSCONFIG --libs` -lstdc++"
-             ARTS_PREFIX=`$ARTSCONFIG --arts-prefix`
-             { echo "$as_me:$LINENO: checking for aRts development environment" >&5
- echo $ECHO_N "checking for aRts development environment... $ECHO_C" >&6; }
 @@ -26333,9 +26347,6 @@ echo "${ECHO_T}$CompileNASM_ret" >&6; }
                win32)
                    NASMFLAGS="-f win32"

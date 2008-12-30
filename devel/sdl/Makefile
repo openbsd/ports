@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2008/12/23 07:45:32 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.69 2008/12/30 02:15:20 jakemsr Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.13
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p7
+PKGNAME=	${DISTNAME:L}p8
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -27,7 +27,7 @@ MASTER_SITES0=	http://dev.beastie.hu/ \
 BUILD_DEPENDS+=	:yasm-*:devel/yasm
 .endif
 
-FLAVORS=	esd arts aa caca no_x11 altivec
+FLAVORS=	aa caca no_x11 altivec
 FLAVOR?=
 
 USE_LIBTOOL=	Yes
@@ -47,28 +47,14 @@ CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
 		ac_cv_header_usb_h=no
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
+		 --disable-arts \
+		 --disable-esd \
 		 --disable-oss \
 		 --disable-ltdl \
 		 --disable-pulseaudio \
 		 --enable-nasm \
 		 --enable-pthread-sem \
 		 --enable-sunaudio
-
-.if ${FLAVOR:L:Mesd}
-# used via dlopen()
-LIB_DEPENDS+=	esd.>=2::audio/esound
-CONFIGURE_ARGS+= --enable-esd
-.else
-CONFIGURE_ARGS+= --disable-esd
-.endif
-
-.if ${FLAVOR:L:Marts}
-LIB_DEPENDS+=	artsc::x11/kde/arts3
-WANTLIB+=	glib-2.0 gmodule-2.0 gthread-2.0 intl pcre stdc++
-CONFIGURE_ARGS+= --enable-arts --disable-arts-shared
-.else
-CONFIGURE_ARGS+= --disable-arts
-.endif
 
 .if ${FLAVOR:L:Maa}
 LIB_DEPENDS+=	aa::graphics/aalib
