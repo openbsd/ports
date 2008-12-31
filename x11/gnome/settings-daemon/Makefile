@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/12/14 18:46:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2008/12/31 14:56:47 ajacoutot Exp $
 
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
