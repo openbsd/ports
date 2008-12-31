@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/12/31 14:56:47 ajacoutot Exp $
-@conflict control-center2-=<2.22
+@comment $OpenBSD: PLIST,v 1.5 2008/12/31 15:40:28 ajacoutot Exp $
+@conflict control-center2-<=2.22
 %%SHARED%%
 include/gnome-settings-daemon-2.0/
 include/gnome-settings-daemon-2.0/gnome-settings-daemon/
