@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/18 10:50:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2008/12/31 12:15:45 pea Exp $
 
 COMMENT=	YAML 1.1 parser and emitter written in C
 
-DISTNAME=	yaml-0.1.1
+DISTNAME=	yaml-0.1.2
 PKGNAME=	lib${DISTNAME}
 CATEGORIES=	devel
 
@@ -11,7 +11,7 @@ SHARED_LIBS+=	yaml	0.0	# 1.0
 
 HOMEPAGE=	http://pyyaml.org/wiki/LibYAML
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
