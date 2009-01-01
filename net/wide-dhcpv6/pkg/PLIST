@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/01 19:01:14 stsp Exp $
+@man man/man5/dhcp6c.conf.5
+@man man/man5/dhcp6s.conf.5
+@man man/man8/dhcp6c.8
+@man man/man8/dhcp6ctl.8
+@man man/man8/dhcp6relay.8
+@man man/man8/dhcp6s.8
+@bin sbin/dhcp6c
+@bin sbin/dhcp6ctl
+@bin sbin/dhcp6relay
+@bin sbin/dhcp6s
+share/examples/wide-dhcpv6/
+share/examples/wide-dhcpv6/dhcp6c.conf.sample
+share/examples/wide-dhcpv6/dhcp6s.conf.sample

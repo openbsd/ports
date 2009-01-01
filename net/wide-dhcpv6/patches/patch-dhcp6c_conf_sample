@@ -1,0 +1,58 @@
+$OpenBSD: patch-dhcp6c_conf_sample,v 1.1.1.1 2009/01/01 19:01:14 stsp Exp $
+--- dhcp6c.conf.sample.orig	Thu Dec  1 07:35:11 2005
++++ dhcp6c.conf.sample	Thu Jul 17 22:32:18 2008
+@@ -1,11 +1,30 @@
+-# The followings are a sample configuration for requiring the "stateless"
+-# DHCPv6 service.
++# The following is an example for use with IPv6 auto-configuration.
++# The "information-only" statement makes dhcp6c exchange informational
++# configuration parameters with servers. A list of DNS server addresses
++# is an example of such parameters. This statement is useful when the
++# client does not need stateful configuration parameters such as IPv6
++# addresses or prefixes.
++
+ interface ne0 {
+ 	information-only;
+ };
+ 
++# The following is a sample configuration for a client on a LAN
++# where IPv6 addresses are assigned via DHCPv6 ("stateful address
++# assignment"). Use this if you want the client to query the
++# DHCPv6 server for an IPv6 address and for DNS servers, as in
++# traditional IPv4 DHCP.
+ 
+-# The followings are a sample configuration to be delegated an IPv6 prefix
++interface em0 {
++	send ia-na 0;
++	send rapid-commit;
++	send domain-name-servers;
++};
++
++id-assoc na {
++};
++
++# The following is an example configuration for delegation of an IPv6 prefix
+ # from an upstream service provider.  With this configuration dhcp6c will
+ # send solicit messages containing an IA_PD option, with an IAID 0, on to
+ # an upstream PPP link, ppp0.  After receiving some prefixes from a server,
+@@ -22,3 +41,20 @@ id-assoc pd {
+                 sla-id 1;
+         };
+ };
++
++# If a shared secret was to be configured in both the client and the server
++# for DHCPv6 authentication, it would be specified in this file as follows:
++
++keyinfo kame-key {
++     realm "kame.net";
++     keyid 1;
++     secret "5pvW2g48OHPvkYMJSw0vZA==";
++};
++
++# And the interface statement would be modified as follows:
++
++interface ppp0 {
++     send ia-pd 0;
++     send authentication kame;
++};
++

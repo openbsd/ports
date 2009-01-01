@@ -1,0 +1,71 @@
+$OpenBSD: patch-dhcp6s_conf_sample,v 1.1.1.1 2009/01/01 19:01:14 stsp Exp $
+--- dhcp6s.conf.sample.orig	Thu Jul 17 22:07:54 2008
++++ dhcp6s.conf.sample	Thu Jul 17 22:26:35 2008
+@@ -1,5 +1,5 @@
+-# The followings are a sample configuration to provide a DNS server address
+-# for every client as well as to delegate a permanent IPv6 prefix
++# The following is an example configuration which provides a DNS server
++# address to every client, and also delegates a permanent IPv6 prefix
+ # 2001:db8:1111::/48 to a client whose DUID is 00:01:00:01:aa:bb.
+ 
+ option domain-name-servers 2001:db8::35;
+@@ -9,13 +9,29 @@ host kame {
+ 	prefix 2001:db8:1111::/48 infinity;
+ };
+ 
+-# The followings are a sample configuration to provide an IPv6 address
+-# from an address pool 2001:db8:1:2::1000-2000 for 3600[s].
+-# Note. You have to send an RA to fxp0; otherwise a client cannot be sure 
+-# about the prefix-length and the default router.  If you want to prevent
+-# stateless address configuration via RA, please set the autonomous-flag to
+-# OFF in your RA configuration.
++# If a shared secret was to be configured in both the server and the client
++# for DHCPv6 authentication, it would be specified in this file as follows:
+ 
++keyinfo kame {
++     realm "kame.net";
++     keyid 1;
++     secret "5pvW2g48OHPvkYMJSw0vZA==";
++};
++
++# And the host statement would be modified as follows:
++
++host kame {
++     duid 00:01:00:01:aa:bb;
++     prefix 2001:db8:1111::/48 infinity;
++     delayedkey kame;
++};
++
++# The following is an example configuration which provides an IPv6 address
++# from an address pool (2001:db8:1:2::1000-2000) with a lease time of 3600
++# seconds to any client attached to the fxp0 interface. Note that you have
++# to send router advertisements on fxp0, i.e. run rtadvd(8) on that interface.
++# Otherwise a client cannot know the prefix-length and the default router.
++
+ interface fxp0 {
+ 	address-pool pool1 3600;
+ };
+@@ -23,3 +39,23 @@ interface fxp0 {
+ pool pool1 {
+ 	range 2001:db8:1:2::1000 to 2001:db8:1:2::2000 ;
+ };
++
++# The following is an example configuration which provides fixed IPv6
++# addresses to two known clients. It also provides every client with a
++# DNS server. Note that you have to send router advertisements on fxp0,
++# i.e. run rtadvd(8) on the interface the clients are attached to.
++# Otherwise a client cannot know the prefix-length and the default router.
++
++option domain-name-servers 2001:db8::35;
++
++host puffy {
++        duid 00:01:00:01:0f:5b:29:7f:00:04:5a:35:1e:a1;
++        address 2001:db8:111::180 infinity;
++};
++
++host tux {
++        duid  00:01:00:01:0f:36:5f:31:00:0a:e4:3e:f2:4e;
++        address 2001:db8:111::181 infinity;
++};
++
++
