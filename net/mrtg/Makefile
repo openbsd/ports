@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2008/05/23 19:41:45 fgsch Exp $
+# $OpenBSD: Makefile,v 1.60 2009/01/01 15:23:41 bluhm Exp $
 
 COMMENT=	multi-router traffic grapher
 
 DISTNAME=	mrtg-2.15.2
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	net
 
 HOMEPAGE=	http://oss.oetiker.ch/mrtg/
@@ -19,7 +19,7 @@ WANTLIB=	c jpeg m png z
 MASTER_SITES=	${HOMEPAGE}pub/ \
 		${HOMEPAGE}pub/old
 
-RUN_DEPENDS=	::net/p5-IO-INET6 \
+RUN_DEPENDS=	::net/p5-IO-Socket-INET6 \
 		::net/p5-Net-SNMP \
 		::net/p5-SNMP_Session
 LIB_DEPENDS=	gd.>=18::graphics/gd

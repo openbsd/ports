@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.552 2008/12/30 13:59:10 pirofti Exp $
+# $OpenBSD: Makefile,v 1.553 2009/01/01 15:23:41 bluhm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -222,8 +222,8 @@
      SUBDIR += p5-Event-RPC
      SUBDIR += p5-Filesys-Virtual-DAAP
      SUBDIR += p5-Geo-IP
-     SUBDIR += p5-IO-INET6
      SUBDIR += p5-IO-Interface
+     SUBDIR += p5-IO-Socket-INET6
      SUBDIR += p5-IO-Socket-Multicast
      SUBDIR += p5-Net-Amazon
      SUBDIR += p5-Net-BGP

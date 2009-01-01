@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:43 espie Exp $
-${P5SITE}/IO/
-${P5SITE}/IO/Socket/
-${P5SITE}/IO/Socket/INET6.pm
-@man man/man3p/IO::Socket::INET6.3p
