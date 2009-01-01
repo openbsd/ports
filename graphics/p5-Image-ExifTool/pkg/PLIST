@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/05/18 06:00:21 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/01/01 15:52:30 sthen Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -13,6 +13,7 @@ ${P5SITE}/Image/ExifTool/APE.pm
 ${P5SITE}/Image/ExifTool/APP12.pm
 ${P5SITE}/Image/ExifTool/ASF.pm
 ${P5SITE}/Image/ExifTool/BMP.pm
+${P5SITE}/Image/ExifTool/BZZ.pm
 ${P5SITE}/Image/ExifTool/BigTIFF.pm
 ${P5SITE}/Image/ExifTool/BuildTagLookup.pm
 ${P5SITE}/Image/ExifTool/Canon.pm
@@ -22,6 +23,8 @@ ${P5SITE}/Image/ExifTool/CanonVRD.pm
 ${P5SITE}/Image/ExifTool/Casio.pm
 ${P5SITE}/Image/ExifTool/DICOM.pm
 ${P5SITE}/Image/ExifTool/DNG.pm
+${P5SITE}/Image/ExifTool/DjVu.pm
+${P5SITE}/Image/ExifTool/EXE.pm
 ${P5SITE}/Image/ExifTool/Exif.pm
 ${P5SITE}/Image/ExifTool/FLAC.pm
 ${P5SITE}/Image/ExifTool/Fixup.pm
@@ -70,6 +73,7 @@ ${P5SITE}/Image/ExifTool/PrintIM.pm
 ${P5SITE}/Image/ExifTool/QuickTime.pm
 ${P5SITE}/Image/ExifTool/README
 ${P5SITE}/Image/ExifTool/RIFF.pm
+${P5SITE}/Image/ExifTool/Rawzor.pm
 ${P5SITE}/Image/ExifTool/Real.pm
 ${P5SITE}/Image/ExifTool/Ricoh.pm
 ${P5SITE}/Image/ExifTool/Sanyo.pm
@@ -92,6 +96,8 @@ ${P5SITE}/Image/ExifTool/WritePostScript.pl
 ${P5SITE}/Image/ExifTool/WriteXMP.pl
 ${P5SITE}/Image/ExifTool/Writer.pl
 ${P5SITE}/Image/ExifTool/XMP.pm
+${P5SITE}/Image/ExifTool/XMP2.pm
+${P5SITE}/Image/ExifTool/ZIP.pm
 @man man/man1/exiftool.1
 @man man/man3p/File::RandomAccess.3p
 @man man/man3p/Image::ExifTool.3p
@@ -101,6 +107,7 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::APP12.3p
 @man man/man3p/Image::ExifTool::ASF.3p
 @man man/man3p/Image::ExifTool::BMP.3p
+@man man/man3p/Image::ExifTool::BZZ.3p
 @man man/man3p/Image::ExifTool::BigTIFF.3p
 @man man/man3p/Image::ExifTool::BuildTagLookup.3p
 @man man/man3p/Image::ExifTool::Canon.3p
@@ -110,6 +117,8 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::Casio.3p
 @man man/man3p/Image::ExifTool::DICOM.3p
 @man man/man3p/Image::ExifTool::DNG.3p
+@man man/man3p/Image::ExifTool::DjVu.3p
+@man man/man3p/Image::ExifTool::EXE.3p
 @man man/man3p/Image::ExifTool::Exif.3p
 @man man/man3p/Image::ExifTool::FLAC.3p
 @man man/man3p/Image::ExifTool::Fixup.3p
@@ -157,6 +166,7 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::PrintIM.3p
 @man man/man3p/Image::ExifTool::QuickTime.3p
 @man man/man3p/Image::ExifTool::RIFF.3p
+@man man/man3p/Image::ExifTool::Rawzor.3p
 @man man/man3p/Image::ExifTool::Real.3p
 @man man/man3p/Image::ExifTool::Ricoh.3p
 @man man/man3p/Image::ExifTool::Sanyo.3p
@@ -179,3 +189,5 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 @man man/man3p/Image::ExifTool::WriteXMP.3p
 @man man/man3p/Image::ExifTool::Writer.3p
 @man man/man3p/Image::ExifTool::XMP.3p
+@man man/man3p/Image::ExifTool::XMP2.3p
+@man man/man3p/Image::ExifTool::ZIP.3p
