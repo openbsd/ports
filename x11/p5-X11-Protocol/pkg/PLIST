@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/01 04:38:49 kevlo Exp $
+${P5SITE}/X11/
+${P5SITE}/X11/Auth.pm
+${P5SITE}/X11/Keysyms.pm
+${P5SITE}/X11/Protocol/
+${P5SITE}/X11/Protocol.pm
+${P5SITE}/X11/Protocol/Connection/
+${P5SITE}/X11/Protocol/Connection.pm
+${P5SITE}/X11/Protocol/Connection/FileHandle.pm
+${P5SITE}/X11/Protocol/Connection/INETFH.pm
+${P5SITE}/X11/Protocol/Connection/INETSocket.pm
+${P5SITE}/X11/Protocol/Connection/Socket.pm
+${P5SITE}/X11/Protocol/Connection/UNIXFH.pm
+${P5SITE}/X11/Protocol/Connection/UNIXSocket.pm
+${P5SITE}/X11/Protocol/Constants.pm
+${P5SITE}/X11/Protocol/Ext/
+${P5SITE}/X11/Protocol/Ext/BIG_REQUESTS.pm
+${P5SITE}/X11/Protocol/Ext/DPMS.pm
+${P5SITE}/X11/Protocol/Ext/RENDER.pm
+${P5SITE}/X11/Protocol/Ext/SHAPE.pm
+${P5SITE}/X11/Protocol/Ext/XC_MISC.pm
+${P5SITE}/X11/Protocol/Ext/XFree86_Misc.pm
+@man man/man3p/X11::Auth.3p
+@man man/man3p/X11::Keysyms.3p
+@man man/man3p/X11::Protocol.3p
+@man man/man3p/X11::Protocol::Connection.3p
+@man man/man3p/X11::Protocol::Connection::FileHandle.3p
+@man man/man3p/X11::Protocol::Connection::INETFH.3p
+@man man/man3p/X11::Protocol::Connection::INETSocket.3p
+@man man/man3p/X11::Protocol::Connection::Socket.3p
+@man man/man3p/X11::Protocol::Connection::UNIXFH.3p
+@man man/man3p/X11::Protocol::Connection::UNIXSocket.3p
+@man man/man3p/X11::Protocol::Ext::BIG_REQUESTS.3p
+@man man/man3p/X11::Protocol::Ext::DPMS.3p
+@man man/man3p/X11::Protocol::Ext::RENDER.3p
+@man man/man3p/X11::Protocol::Ext::SHAPE.3p
+@man man/man3p/X11::Protocol::Ext::XC_MISC.3p
+@man man/man3p/X11::Protocol::Ext::XFree86_Misc.3p
