@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/12/17 00:20:35 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/01 16:02:18 bluhm Exp $
 
 COMMENT =		iterative SPF lookup
 
@@ -16,8 +16,10 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		:p5-Net-DNS->=0.62:net/p5-Net-DNS ::www/p5-URI
-REGRESS_DEPENDS =	::net/p5-Socket6 ::net/p5-IO-INET6
+RUN_DEPENDS =		:p5-Net-DNS->=0.62:net/p5-Net-DNS \
+			::www/p5-URI
+REGRESS_DEPENDS =	::net/p5-IO-Socket-INET6 \
+			::net/p5-Socket6
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/samples/spflookup.pl ${PREFIX}/bin/spflookup
