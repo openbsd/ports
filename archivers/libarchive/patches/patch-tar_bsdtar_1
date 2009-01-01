@@ -1,6 +1,6 @@
-$OpenBSD: patch-tar_bsdtar_1,v 1.3 2008/07/05 20:38:09 naddy Exp $
---- tar/bsdtar.1.orig	Thu May 29 07:27:45 2008
-+++ tar/bsdtar.1	Sat Jul  5 21:21:17 2008
+$OpenBSD: patch-tar_bsdtar_1,v 1.4 2009/01/01 16:46:25 naddy Exp $
+--- tar/bsdtar.1.orig	Sun Dec 28 21:08:12 2008
++++ tar/bsdtar.1	Tue Dec 30 23:23:57 2008
 @@ -28,7 +28,7 @@
  .Dt BSDTAR 1
  .Os
@@ -22,7 +22,7 @@ $OpenBSD: patch-tar_bsdtar_1,v 1.3 2008/07/05 20:38:09 naddy Exp $
  .It Fl H
  (c and r mode only)
  Symbolic links named on the command line will be followed; the
-@@ -479,7 +479,7 @@ for more information.
+@@ -475,7 +475,7 @@ for more information.
  .El
  .Sh FILES
  .Bl -tag -width ".Ev BLOCKSIZE"

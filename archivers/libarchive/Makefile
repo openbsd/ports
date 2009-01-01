@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/07/05 20:38:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/01 16:46:25 naddy Exp $
 
 COMMENT=	library for reading and writing streaming archives
 
-V=		2.5.5
+V=		2.6.0
 DISTNAME=	libarchive-$V
-SHARED_LIBS +=  archive              2.0      # .7.5
+SHARED_LIBS +=  archive              3.0      # .8.0
 CATEGORIES=	archivers
 HOMEPAGE=	http://people.freebsd.org/~kientzle/libarchive/
 
@@ -22,7 +22,8 @@ DISTFILES=	libarchive-$V.tar.gz \
 		libarchive-catpages-$V.tar.gz:0
 
 WANTLIB=	c z
-LIB_DEPENDS=	bz2.>=10::archivers/bzip2
+LIB_DEPENDS=	bz2.>=10::archivers/bzip2 \
+		lzmadec.>=0::archivers/lzma
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
@@ -31,6 +32,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config.aux
+
+# Our groff is too old.  We need to format the man pages on a
+# FreeBSD system.
 
 MAN_fragment= \
 	MAN=`(printf 'mans:\n\t@echo $$(man_MANS)\n'; cat Makefile) | \
@@ -50,9 +54,10 @@ update-catpages:
 	@cd ${WRKSRC}; \
 	${MAN_fragment}; \
 	for m in $$MAN; do \
-		echo "Formatting $$m ..."; \
+		echo -n "Formatting $$m ..."; \
 		ssh ${FREEBSDHOST} nroff -mdoc <$$m >$${m%.[1-9]}.0 ; \
 		CAT="$$CAT $${m%.[1-9]}.0" ; \
+		echo " done." ; \
 	done; \
 	pax -w -s ',^,${DISTNAME}/,' $$CAT | \
 	    gzip >${FULLDISTDIR}/libarchive-catpages-$V.tar.gz
