@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.63 2008/12/16 14:54:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2009/01/01 22:31:43 pvalchev Exp $
 
 COMMENT=	list information about open files
 
-VERSION=	4.77
+VERSION=	4.81
 DISTNAME=	lsof_${VERSION}
-PKGNAME=	${DISTNAME:S/_/-/}p2
+PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://www.mirrorservice.org/sites/vic.cc.purdue.edu/pub/tools/unix/lsof/ \
-		ftp://ftp.tau.ac.il/pub/unix/admin/ \
-		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/ \
-		http://nedbsd.eu/~jasper/distfiles/
+MASTER_SITES=	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/ \
+		ftp://ftp.fu-berlin.de/pub/unix/tools/lsof/ \
+		ftp://www.mirrorservice.org/sites/vic.cc.purdue.edu/pub/tools/unix/lsof/
+
 MAINTAINER=     Peter Valchev <pvalchev@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
