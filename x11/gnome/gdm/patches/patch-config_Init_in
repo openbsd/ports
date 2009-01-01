@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_Init_in,v 1.1 2008/12/18 12:06:09 ajacoutot Exp $
---- config/Init.in.orig	Thu Dec 18 12:01:48 2008
-+++ config/Init.in	Thu Dec 18 12:03:21 2008
+$OpenBSD: patch-config_Init_in,v 1.2 2009/01/01 12:01:20 ajacoutot Exp $
+--- config/Init.in.orig	Wed Sep  3 20:36:09 2008
++++ config/Init.in	Thu Jan  1 12:54:44 2009
 @@ -3,7 +3,7 @@
  # Plus a lot of fun stuff added
  #  -George
@@ -10,3 +10,12 @@ $OpenBSD: patch-config_Init_in,v 1.1 2008/12/18 12:06:09 ajacoutot Exp $
  OLD_IFS=$IFS
  
  gdmwhich () {
+@@ -22,7 +22,7 @@ gdmwhich () {
+   echo "$OUTPUT"
+ }
+ 
+-sysresources=/etc/X11/Xresources
++sysresources=/etc/X11/xdm/Xresources
+ 
+ # merge in defaults
+ if [ -f "$sysresources" ]; then
