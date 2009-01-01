@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.553 2009/01/01 15:23:41 bluhm Exp $
+# $OpenBSD: Makefile,v 1.554 2009/01/01 19:03:07 stsp Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -443,6 +443,7 @@
      SUBDIR += weex
      SUBDIR += wget
      SUBDIR += wide-dhcp
+     SUBDIR += wide-dhcpv6
      SUBDIR += winexe
      SUBDIR += wmifinfo
      SUBDIR += wmnet
