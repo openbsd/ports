@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.25 2008/12/16 06:32:27 fgsch Exp $
+# $OpenBSD: python.port.mk,v 1.26 2009/01/01 21:03:27 djm Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -33,9 +33,6 @@ REGRESS_TARGET?=	test
 .endif
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
-.if ${MODPY_VERSION} != "2.6"
-MODPY_EXPAT_DEPENDS=	:python-expat-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-expat	
-.endif
 MODPY_TKINTER_DEPENDS=	:python-tkinter-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-tkinter
 .endif
 
@@ -55,7 +52,8 @@ MODPY_DISTUTILS_INSTALL?=	install --prefix=${LOCALBASE} \
 				--root=${DESTDIR} \
 				--single-version-externally-managed
 .else
-MODPY_DISTUTILS_INSTALL?=	install --prefix=${PREFIX}
+MODPY_DISTUTILS_INSTALL?=	install --prefix=${LOCALBASE} \
+				--root=${DESTDIR}
 .endif
 
 MAKE_ENV+=	CC=${CC}

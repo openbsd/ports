@@ -1,7 +1,7 @@
-$OpenBSD: patch-Lib_test_regrtest_py,v 1.1 2008/10/18 12:03:56 djm Exp $
---- Lib/test/regrtest.py.orig	Sat Jul 19 00:26:35 2008
-+++ Lib/test/regrtest.py	Sun Sep 28 05:12:36 2008
-@@ -1073,6 +1073,7 @@ _expectations = {
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.2 2009/01/01 21:03:27 djm Exp $
+--- Lib/test/regrtest.py.orig	Tue Sep 30 10:15:45 2008
++++ Lib/test/regrtest.py	Sun Dec 21 10:00:44 2008
+@@ -1074,6 +1074,7 @@ _expectations = {
          test_epoll
          test_gdbm
          test_locale
@@ -9,7 +9,7 @@ $OpenBSD: patch-Lib_test_regrtest_py,v 1.1 2008/10/18 12:03:56 djm Exp $
          test_normalization
          test_ossaudiodev
          test_pep277
-@@ -1098,6 +1099,8 @@ _expectations['freebsd5'] = _expectations['freebsd4']
+@@ -1101,6 +1102,8 @@ _expectations['freebsd5'] = _expectations['freebsd4']
  _expectations['freebsd6'] = _expectations['freebsd4']
  _expectations['freebsd7'] = _expectations['freebsd4']
  _expectations['freebsd8'] = _expectations['freebsd4']

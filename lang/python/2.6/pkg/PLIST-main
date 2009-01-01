@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/10/18 12:03:56 djm Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/01/01 21:03:27 djm Exp $
 @option no-default-conflict
-@conflict python->=2.6,<2.6
+@conflict python->=2.6,<2.7
+@conflict python-bz2->=2.6,<2.7
 @pkgpath lang/python/2.6
 bin/2to3
 @comment bin/pydoc
@@ -139,15 +140,20 @@ lib/python2.6/SocketServer.pyo
 lib/python2.6/StringIO.py
 lib/python2.6/StringIO.pyc
 lib/python2.6/StringIO.pyo
+lib/python2.6/Tools/
+lib/python2.6/Tools/buildbot/
 lib/python2.6/Tools/buildbot/README.tcltk-AMD64
 lib/python2.6/Tools/buildbot/build-amd64.bat
 lib/python2.6/Tools/buildbot/clean-amd64.bat
 lib/python2.6/Tools/buildbot/external-amd64.bat
 lib/python2.6/Tools/buildbot/external-common.bat
 lib/python2.6/Tools/buildbot/test-amd64.bat
+lib/python2.6/Tools/msi/
 lib/python2.6/Tools/msi/crtlicense.txt
 lib/python2.6/Tools/msi/merge.py
+lib/python2.6/Tools/pybench/
 lib/python2.6/Tools/pybench/With.py
+lib/python2.6/Tools/scripts/
 lib/python2.6/Tools/scripts/2to3
 lib/python2.6/Tools/scripts/patchcheck.py
 lib/python2.6/Tools/scripts/win_add2path.py
@@ -1235,7 +1241,7 @@ lib/python2.6/keyword.py
 lib/python2.6/keyword.pyc
 lib/python2.6/keyword.pyo
 lib/python2.6/lib-dynload/
-lib/python2.6/lib-dynload/Python-2.6-py2.6.egg-info
+lib/python2.6/lib-dynload/Python-2.6.1-py2.6.egg-info
 lib/python2.6/lib-dynload/_bisect.so
 lib/python2.6/lib-dynload/_bytesio.so
 lib/python2.6/lib-dynload/_codecs_cn.so
@@ -1270,6 +1276,7 @@ lib/python2.6/lib-dynload/array.so
 lib/python2.6/lib-dynload/audioop.so
 lib/python2.6/lib-dynload/binascii.so
 lib/python2.6/lib-dynload/bsddb185.so
+lib/python2.6/lib-dynload/bz2.so
 lib/python2.6/lib-dynload/cPickle.so
 lib/python2.6/lib-dynload/cStringIO.so
 lib/python2.6/lib-dynload/cmath.so
@@ -1299,9 +1306,9 @@ lib/python2.6/lib-dynload/zlib.so
 lib/python2.6/lib-old/
 lib/python2.6/lib2to3/
 lib/python2.6/lib2to3/Grammar.txt
-lib/python2.6/lib2to3/Grammar2.6.0.final.0.pickle
+lib/python2.6/lib2to3/Grammar2.6.1.final.0.pickle
 lib/python2.6/lib2to3/PatternGrammar.txt
-lib/python2.6/lib2to3/PatternGrammar2.6.0.final.0.pickle
+lib/python2.6/lib2to3/PatternGrammar2.6.1.final.0.pickle
 lib/python2.6/lib2to3/__init__.py
 lib/python2.6/lib2to3/__init__.pyc
 lib/python2.6/lib2to3/__init__.pyo
@@ -1348,6 +1355,9 @@ lib/python2.6/lib2to3/fixes/fix_funcattrs.pyo
 lib/python2.6/lib2to3/fixes/fix_future.py
 lib/python2.6/lib2to3/fixes/fix_future.pyc
 lib/python2.6/lib2to3/fixes/fix_future.pyo
+lib/python2.6/lib2to3/fixes/fix_getcwdu.py
+lib/python2.6/lib2to3/fixes/fix_getcwdu.pyc
+lib/python2.6/lib2to3/fixes/fix_getcwdu.pyo
 lib/python2.6/lib2to3/fixes/fix_has_key.py
 lib/python2.6/lib2to3/fixes/fix_has_key.pyc
 lib/python2.6/lib2to3/fixes/fix_has_key.pyo
@@ -1417,6 +1427,9 @@ lib/python2.6/lib2to3/fixes/fix_renames.pyo
 lib/python2.6/lib2to3/fixes/fix_repr.py
 lib/python2.6/lib2to3/fixes/fix_repr.pyc
 lib/python2.6/lib2to3/fixes/fix_repr.pyo
+lib/python2.6/lib2to3/fixes/fix_set_literal.py
+lib/python2.6/lib2to3/fixes/fix_set_literal.pyc
+lib/python2.6/lib2to3/fixes/fix_set_literal.pyo
 lib/python2.6/lib2to3/fixes/fix_standarderror.py
 lib/python2.6/lib2to3/fixes/fix_standarderror.pyc
 lib/python2.6/lib2to3/fixes/fix_standarderror.pyo

@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2008/10/18 12:01:25 djm Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2009/01/01 21:03:27 djm Exp $
 @option no-default-conflict
 @conflict python->=2.5,<2.6
+@conflict python-bz2->=2.5,<2.6
+@conflict python-expat->=2.5,<2.6
+@conflict python-sqlite->=2.5,<2.6
 @pkgpath lang/python/2.5
 bin/pydoc2.5
 @comment bin/python-config
@@ -1170,7 +1173,7 @@ lib/python2.5/keyword.py
 lib/python2.5/keyword.pyc
 lib/python2.5/keyword.pyo
 lib/python2.5/lib-dynload/
-lib/python2.5/lib-dynload/Python-2.5.2-py2.5.egg-info
+lib/python2.5/lib-dynload/Python-2.5.4-py2.5.egg-info
 lib/python2.5/lib-dynload/_bisect.so
 lib/python2.5/lib-dynload/_codecs_cn.so
 lib/python2.5/lib-dynload/_codecs_hk.so
@@ -1181,6 +1184,7 @@ lib/python2.5/lib-dynload/_codecs_tw.so
 lib/python2.5/lib-dynload/_csv.so
 lib/python2.5/lib-dynload/_curses.so
 lib/python2.5/lib-dynload/_curses_panel.so
+lib/python2.5/lib-dynload/_elementtree.so
 lib/python2.5/lib-dynload/_functools.so
 lib/python2.5/lib-dynload/_hashlib.so
 lib/python2.5/lib-dynload/_heapq.so
@@ -1190,6 +1194,7 @@ lib/python2.5/lib-dynload/_lsprof.so
 lib/python2.5/lib-dynload/_multibytecodec.so
 lib/python2.5/lib-dynload/_random.so
 lib/python2.5/lib-dynload/_socket.so
+lib/python2.5/lib-dynload/_sqlite3.so
 lib/python2.5/lib-dynload/_ssl.so
 lib/python2.5/lib-dynload/_struct.so
 lib/python2.5/lib-dynload/_testcapi.so
@@ -1198,6 +1203,7 @@ lib/python2.5/lib-dynload/array.so
 lib/python2.5/lib-dynload/audioop.so
 lib/python2.5/lib-dynload/binascii.so
 lib/python2.5/lib-dynload/bsddb185.so
+lib/python2.5/lib-dynload/bz2.so
 lib/python2.5/lib-dynload/cPickle.so
 lib/python2.5/lib-dynload/cStringIO.so
 lib/python2.5/lib-dynload/cmath.so
@@ -1212,7 +1218,9 @@ lib/python2.5/lib-dynload/math.so
 lib/python2.5/lib-dynload/mmap.so
 lib/python2.5/lib-dynload/nis.so
 lib/python2.5/lib-dynload/operator.so
+lib/python2.5/lib-dynload/ossaudiodev.so
 lib/python2.5/lib-dynload/parser.so
+lib/python2.5/lib-dynload/pyexpat.so
 lib/python2.5/lib-dynload/readline.so
 lib/python2.5/lib-dynload/resource.so
 lib/python2.5/lib-dynload/select.so
@@ -1426,6 +1434,38 @@ lib/python2.5/sndhdr.pyo
 lib/python2.5/socket.py
 lib/python2.5/socket.pyc
 lib/python2.5/socket.pyo
+lib/python2.5/sqlite3/
+lib/python2.5/sqlite3/__init__.py
+lib/python2.5/sqlite3/__init__.pyc
+lib/python2.5/sqlite3/__init__.pyo
+lib/python2.5/sqlite3/dbapi2.py
+lib/python2.5/sqlite3/dbapi2.pyc
+lib/python2.5/sqlite3/dbapi2.pyo
+lib/python2.5/sqlite3/test/
+lib/python2.5/sqlite3/test/__init__.py
+lib/python2.5/sqlite3/test/__init__.pyc
+lib/python2.5/sqlite3/test/__init__.pyo
+lib/python2.5/sqlite3/test/dbapi.py
+lib/python2.5/sqlite3/test/dbapi.pyc
+lib/python2.5/sqlite3/test/dbapi.pyo
+lib/python2.5/sqlite3/test/factory.py
+lib/python2.5/sqlite3/test/factory.pyc
+lib/python2.5/sqlite3/test/factory.pyo
+lib/python2.5/sqlite3/test/hooks.py
+lib/python2.5/sqlite3/test/hooks.pyc
+lib/python2.5/sqlite3/test/hooks.pyo
+lib/python2.5/sqlite3/test/regression.py
+lib/python2.5/sqlite3/test/regression.pyc
+lib/python2.5/sqlite3/test/regression.pyo
+lib/python2.5/sqlite3/test/transactions.py
+lib/python2.5/sqlite3/test/transactions.pyc
+lib/python2.5/sqlite3/test/transactions.pyo
+lib/python2.5/sqlite3/test/types.py
+lib/python2.5/sqlite3/test/types.pyc
+lib/python2.5/sqlite3/test/types.pyo
+lib/python2.5/sqlite3/test/userfunctions.py
+lib/python2.5/sqlite3/test/userfunctions.pyc
+lib/python2.5/sqlite3/test/userfunctions.pyo
 lib/python2.5/sre.py
 lib/python2.5/sre.pyc
 lib/python2.5/sre.pyo

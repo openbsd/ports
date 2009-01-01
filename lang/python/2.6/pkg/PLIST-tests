@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.1 2008/10/18 12:03:56 djm Exp $
+@comment $OpenBSD: PLIST-tests,v 1.2 2009/01/01 21:03:28 djm Exp $
 @option no-default-conflict
 @conflict python-tests->=2.6,<2.6
 lib/python2.6/test/
@@ -678,6 +678,9 @@ lib/python2.6/test/test_future3.pyo
 lib/python2.6/test/test_future4.py
 lib/python2.6/test/test_future4.pyc
 lib/python2.6/test/test_future4.pyo
+lib/python2.6/test/test_future5.py
+lib/python2.6/test/test_future5.pyc
+lib/python2.6/test/test_future5.pyo
 lib/python2.6/test/test_future_builtins.py
 lib/python2.6/test/test_future_builtins.pyc
 lib/python2.6/test/test_future_builtins.pyo

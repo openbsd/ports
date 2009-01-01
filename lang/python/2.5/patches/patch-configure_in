@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure_in,v 1.5 2008/06/30 00:29:32 djm Exp $
---- configure.in.orig	Wed Feb 13 20:17:17 2008
-+++ configure.in	Wed Jun 18 17:59:12 2008
+$OpenBSD: patch-configure_in,v 1.6 2009/01/01 21:03:27 djm Exp $
+--- configure.in.orig	Sun Dec 14 01:13:52 2008
++++ configure.in	Mon Dec 15 20:13:14 2008
 @@ -201,7 +201,7 @@ case $ac_sys_system/$ac_sys_release in
    # On OpenBSD, select(2) is not available if _XOPEN_SOURCE is defined,
    # even though select is a POSIX function. Reported by J. Ribbens.
    # Reconfirmed for OpenBSD 3.3 by Zachary Hamm, for 3.4 by Jason Ish.
--  OpenBSD/2.* | OpenBSD/3.@<:@0123456789@:>@ | OpenBSD/4.@<:@0@:>@) 
+-  OpenBSD/2.* | OpenBSD/3.@<:@0123456789@:>@ | OpenBSD/4.@<:@0123@:>@) 
 +  OpenBSD*)
      define_xopen_source=no
      # OpenBSD undoes our definition of __BSD_VISIBLE if _XOPEN_SOURCE is
      # also defined. This can be overridden by defining _BSD_SOURCE
-@@ -1526,19 +1526,7 @@ then
+@@ -1522,19 +1522,7 @@ then
  			LDSHARED="ld -Bshareable ${LDFLAGS}"
  		fi;;
  	OpenBSD*)
@@ -31,7 +31,7 @@ $OpenBSD: patch-configure_in,v 1.5 2008/06/30 00:29:32 djm Exp $
  	NetBSD*|DragonFly*) LDSHARED="cc -shared ${LDFLAGS}";;
  	OpenUNIX*|UnixWare*)
  		if test "$GCC" = "yes"
-@@ -1682,9 +1670,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-U
+@@ -1678,9 +1666,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-U
  
  # only check for sem_ini if thread support is requested
  if test "$with_threads" = "yes" -o -z "$with_threads"; then
@@ -43,27 +43,3 @@ $OpenBSD: patch-configure_in,v 1.5 2008/06/30 00:29:32 djm Exp $
  fi
  
  # check if we need libintl for locale functions
-@@ -3104,7 +3093,7 @@ fi
- # check for readline 2.1
- AC_CHECK_LIB(readline, rl_callback_handler_install,
- 	AC_DEFINE(HAVE_RL_CALLBACK, 1,
--        [Define if you have readline 2.1]), , )
-+        [Define if you have readline 2.1]), ,curses)
- 
- # check for readline 2.2
- AC_TRY_CPP([#include <readline/readline.h>],
-@@ -3120,12 +3109,12 @@ fi
- # check for readline 4.0
- AC_CHECK_LIB(readline, rl_pre_input_hook,
- 	AC_DEFINE(HAVE_RL_PRE_INPUT_HOOK, 1,
--        [Define if you have readline 4.0]), , )
-+        [Define if you have readline 4.0]), ,curses)
- 
- # check for readline 4.2
- AC_CHECK_LIB(readline, rl_completion_matches,
- 	AC_DEFINE(HAVE_RL_COMPLETION_MATCHES, 1,
--        [Define if you have readline 4.2]), , )
-+        [Define if you have readline 4.2]), ,curses)
- 
- # also in readline 4.2
- AC_TRY_CPP([#include <readline/readline.h>],

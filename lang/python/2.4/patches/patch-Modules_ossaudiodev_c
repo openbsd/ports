@@ -1,0 +1,82 @@
+$OpenBSD: patch-Modules_ossaudiodev_c,v 1.1 2009/01/01 21:03:27 djm Exp $
+--- Modules/ossaudiodev.c.orig	Wed Oct  4 20:23:57 2006
++++ Modules/ossaudiodev.c	Fri Dec 26 12:44:22 2008
+@@ -30,7 +30,7 @@
+ #endif
+ 
+ #include <sys/ioctl.h>
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ 
+ #if defined(linux)
+ 
+@@ -1028,6 +1028,7 @@ initossaudiodev(void)
+ 
+     /* Expose all the ioctl numbers for masochists who like to do this
+        stuff directly. */
++#ifdef SNDCTL_COPR_HALT
+     _EXPORT_INT(m, SNDCTL_COPR_HALT);
+     _EXPORT_INT(m, SNDCTL_COPR_LOAD);
+     _EXPORT_INT(m, SNDCTL_COPR_RCODE);
+@@ -1038,6 +1039,7 @@ initossaudiodev(void)
+     _EXPORT_INT(m, SNDCTL_COPR_SENDMSG);
+     _EXPORT_INT(m, SNDCTL_COPR_WCODE);
+     _EXPORT_INT(m, SNDCTL_COPR_WDATA);
++#endif
+ #ifdef SNDCTL_DSP_BIND_CHANNEL
+     _EXPORT_INT(m, SNDCTL_DSP_BIND_CHANNEL);
+ #endif
+@@ -1080,18 +1082,25 @@ initossaudiodev(void)
+     _EXPORT_INT(m, SNDCTL_DSP_STEREO);
+     _EXPORT_INT(m, SNDCTL_DSP_SUBDIVIDE);
+     _EXPORT_INT(m, SNDCTL_DSP_SYNC);
++#ifdef SNDCTL_FM_4OP_ENABLE
+     _EXPORT_INT(m, SNDCTL_FM_4OP_ENABLE);
+     _EXPORT_INT(m, SNDCTL_FM_LOAD_INSTR);
++#endif
++#ifdef SNDCTL_MIDI_INFO
+     _EXPORT_INT(m, SNDCTL_MIDI_INFO);
+     _EXPORT_INT(m, SNDCTL_MIDI_MPUCMD);
+     _EXPORT_INT(m, SNDCTL_MIDI_MPUMODE);
+     _EXPORT_INT(m, SNDCTL_MIDI_PRETIME);
++#endif
++#ifdef SNDCTL_SEQ_CTRLRATE
+     _EXPORT_INT(m, SNDCTL_SEQ_CTRLRATE);
+     _EXPORT_INT(m, SNDCTL_SEQ_GETINCOUNT);
+     _EXPORT_INT(m, SNDCTL_SEQ_GETOUTCOUNT);
++#endif
+ #ifdef SNDCTL_SEQ_GETTIME
+     _EXPORT_INT(m, SNDCTL_SEQ_GETTIME);
+ #endif
++#ifdef SNDCTL_SEQ_NRMIDIS
+     _EXPORT_INT(m, SNDCTL_SEQ_NRMIDIS);
+     _EXPORT_INT(m, SNDCTL_SEQ_NRSYNTHS);
+     _EXPORT_INT(m, SNDCTL_SEQ_OUTOFBAND);
+@@ -1102,17 +1111,21 @@ initossaudiodev(void)
+     _EXPORT_INT(m, SNDCTL_SEQ_SYNC);
+     _EXPORT_INT(m, SNDCTL_SEQ_TESTMIDI);
+     _EXPORT_INT(m, SNDCTL_SEQ_THRESHOLD);
++#endif
+ #ifdef SNDCTL_SYNTH_CONTROL
+     _EXPORT_INT(m, SNDCTL_SYNTH_CONTROL);
+ #endif
+ #ifdef SNDCTL_SYNTH_ID
+     _EXPORT_INT(m, SNDCTL_SYNTH_ID);
+ #endif
++#ifdef SNDCTL_SYNTH_INFO
+     _EXPORT_INT(m, SNDCTL_SYNTH_INFO);
+     _EXPORT_INT(m, SNDCTL_SYNTH_MEMAVL);
++#endif
+ #ifdef SNDCTL_SYNTH_REMOVESAMPLE
+     _EXPORT_INT(m, SNDCTL_SYNTH_REMOVESAMPLE);
+ #endif
++#ifdef SNDCTL_TMR_CONTINUE
+     _EXPORT_INT(m, SNDCTL_TMR_CONTINUE);
+     _EXPORT_INT(m, SNDCTL_TMR_METRONOME);
+     _EXPORT_INT(m, SNDCTL_TMR_SELECT);
+@@ -1121,4 +1134,5 @@ initossaudiodev(void)
+     _EXPORT_INT(m, SNDCTL_TMR_STOP);
+     _EXPORT_INT(m, SNDCTL_TMR_TEMPO);
+     _EXPORT_INT(m, SNDCTL_TMR_TIMEBASE);
++#endif
+ }

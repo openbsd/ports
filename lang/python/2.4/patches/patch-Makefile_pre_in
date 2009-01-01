@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.3 2006/11/01 20:38:37 alek Exp $
---- Makefile.pre.in.orig	Sun Oct  8 19:41:25 2006
-+++ Makefile.pre.in	Sat Oct 21 15:06:35 2006
-@@ -315,7 +315,7 @@ all:		$(BUILDPYTHON) oldsharedmods share
+$OpenBSD: patch-Makefile_pre_in,v 1.4 2009/01/01 21:03:27 djm Exp $
+--- Makefile.pre.in.orig	Mon Oct  9 03:41:25 2006
++++ Makefile.pre.in	Fri Dec 26 12:27:16 2008
+@@ -315,7 +315,7 @@ all:		$(BUILDPYTHON) oldsharedmods sharedmods
  $(BUILDPYTHON):	Modules/$(MAINOBJ) $(LIBRARY) $(LDLIBRARY)
  		$(LINKCC) $(LDFLAGS) $(LINKFORSHARED) -o $@ \
  			Modules/$(MAINOBJ) \

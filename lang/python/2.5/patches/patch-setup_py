@@ -1,18 +1,30 @@
-$OpenBSD: patch-setup_py,v 1.4 2008/02/27 00:30:47 djm Exp $
---- setup.py.orig	Tue Feb  5 10:41:02 2008
-+++ setup.py	Tue Feb 19 23:59:33 2008
-@@ -244,8 +244,8 @@ class PyBuildExt(build_ext):
+$OpenBSD: patch-setup_py,v 1.5 2009/01/01 21:03:27 djm Exp $
+--- setup.py.orig	Fri Oct 17 04:58:19 2008
++++ setup.py	Fri Dec 26 12:42:10 2008
+@@ -17,6 +17,11 @@ from distutils.command.install_lib import install_lib
+ # This global variable is used to hold the list of modules to be disabled.
+ disabled_module_list = []
+ 
++def usrlocal(p):
++    return os.path.join(os.environ['LOCALBASE'], p)
++def usrx11r6(p):
++    return os.path.join(os.environ['X11BASE'], p)
++
+ def add_dir_to_list(dirlist, dir):
+     """Add the directory 'dir' to the list 'dirlist' (at the front) if
+     1) 'dir' is not already in 'dirlist'
+@@ -244,8 +249,8 @@ class PyBuildExt(build_ext):
  
      def detect_modules(self):
          # Ensure that /usr/local is always used
 -        add_dir_to_list(self.compiler.library_dirs, '/usr/local/lib')
 -        add_dir_to_list(self.compiler.include_dirs, '/usr/local/include')
-+        add_dir_to_list(self.compiler.library_dirs, '!!LOCALBASE!!/lib')
-+        add_dir_to_list(self.compiler.include_dirs, '!!LOCALBASE!!/include')
++        add_dir_to_list(self.compiler.library_dirs, usrlocal('lib'))
++        add_dir_to_list(self.compiler.include_dirs, usrlocal('include'))
  
          # Add paths specified in the environment variables LDFLAGS and
          # CPPFLAGS for header and library files.
-@@ -521,8 +521,6 @@ class PyBuildExt(build_ext):
+@@ -522,8 +527,6 @@ class PyBuildExt(build_ext):
                                 depends = ['socketmodule.h']) )
          # Detect SSL support for the socket module (via _ssl)
          search_for_ssl_incs_in = [
@@ -21,399 +33,153 @@ $OpenBSD: patch-setup_py,v 1.4 2008/02/27 00:30:47 djm Exp $
                               ]
          ssl_incs = find_file('openssl/ssl.h', inc_dirs,
                               search_for_ssl_incs_in
-@@ -533,9 +531,7 @@ class PyBuildExt(build_ext):
+@@ -534,9 +537,7 @@ class PyBuildExt(build_ext):
              if krb5_h:
                  ssl_incs += krb5_h
          ssl_libs = find_library_file(self.compiler, 'ssl',lib_dirs,
 -                                     ['/usr/local/ssl/lib',
 -                                      '/usr/contrib/ssl/lib/'
 -                                     ] )
-+                                     [ ] )
++                                     [])
  
          if (ssl_incs is not None and
              ssl_libs is not None):
-@@ -592,223 +588,15 @@ class PyBuildExt(build_ext):
-             exts.append( Extension('_sha256', ['sha256module.c']) )
-             exts.append( Extension('_sha512', ['sha512module.c']) )
+@@ -609,12 +610,12 @@ class PyBuildExt(build_ext):
+         # a release.  Most open source OSes come with one or more
+         # versions of BerkeleyDB already installed.
  
--
--        # Modules that provide persistent dictionary-like semantics.  You will
--        # probably want to arrange for at least one of them to be available on
--        # your machine, though none are defined by default because of library
--        # dependencies.  The Python module anydbm.py provides an
--        # implementation independent wrapper for these; dumbdbm.py provides
--        # similar functionality (but slower of course) implemented in Python.
--
--        # Sleepycat^WOracle Berkeley DB interface.
--        #  http://www.oracle.com/database/berkeley-db/db/index.html
--        #
--        # This requires the Sleepycat^WOracle DB code. The supported versions
--        # are set below.  Visit the URL above to download
--        # a release.  Most open source OSes come with one or more
--        # versions of BerkeleyDB already installed.
--
 -        max_db_ver = (4, 5)
--        # NOTE: while the _bsddb.c code links against BerkeleyDB 4.6.x
--        # we leave that version disabled by default as it has proven to be
--        # quite a buggy library release on many platforms.
--        min_db_ver = (3, 3)
++        max_db_ver = (4, 7)
+         # NOTE: while the _bsddb.c code links against BerkeleyDB 4.6.x
+         # we leave that version disabled by default as it has proven to be
+         # quite a buggy library release on many platforms.
+         min_db_ver = (3, 3)
 -        db_setup_debug = False   # verbose debug prints from this script?
--
--        # construct a list of paths to look for the header file in on
--        # top of the normal inc_dirs.
--        db_inc_paths = [
--            '/usr/include/db4',
--            '/usr/local/include/db4',
--            '/opt/sfw/include/db4',
--            '/sw/include/db4',
--            '/usr/include/db3',
--            '/usr/local/include/db3',
--            '/opt/sfw/include/db3',
--            '/sw/include/db3',
--        ]
--        # 4.x minor number specific paths
--        for x in range(max_db_ver[1]+1):
--            db_inc_paths.append('/usr/include/db4%d' % x)
--            db_inc_paths.append('/usr/include/db4.%d' % x)
--            db_inc_paths.append('/usr/local/BerkeleyDB.4.%d/include' % x)
--            db_inc_paths.append('/usr/local/include/db4%d' % x)
--            db_inc_paths.append('/pkg/db-4.%d/include' % x)
--            db_inc_paths.append('/opt/db-4.%d/include' % x)
--        # 3.x minor number specific paths
--        for x in (3,):
--            db_inc_paths.append('/usr/include/db3%d' % x)
--            db_inc_paths.append('/usr/local/BerkeleyDB.3.%d/include' % x)
--            db_inc_paths.append('/usr/local/include/db3%d' % x)
--            db_inc_paths.append('/pkg/db-3.%d/include' % x)
--            db_inc_paths.append('/opt/db-3.%d/include' % x)
--
--        # Add some common subdirectories for Sleepycat DB to the list,
--        # based on the standard include directories. This way DB3/4 gets
--        # picked up when it is installed in a non-standard prefix and
--        # the user has added that prefix into inc_dirs.
--        std_variants = []
--        for dn in inc_dirs:
--            std_variants.append(os.path.join(dn, 'db3'))
--            std_variants.append(os.path.join(dn, 'db4'))
--            for x in range(max_db_ver[1]+1):
--                std_variants.append(os.path.join(dn, "db4%d"%x))
--                std_variants.append(os.path.join(dn, "db4.%d"%x))
--            for x in (2,3):
--                std_variants.append(os.path.join(dn, "db3%d"%x))
--                std_variants.append(os.path.join(dn, "db3.%d"%x))
--
--        db_inc_paths = std_variants + db_inc_paths
--
--
--        db_ver_inc_map = {}
--
--        class db_found(Exception): pass
--        try:
--            # See whether there is a Sleepycat header in the standard
--            # search path.
--            for d in inc_dirs + db_inc_paths:
--                f = os.path.join(d, "db.h")
--                if db_setup_debug: print "db: looking for db.h in", f
--                if os.path.exists(f):
--                    f = open(f).read()
--                    m = re.search(r"#define\WDB_VERSION_MAJOR\W(\d+)", f)
--                    if m:
--                        db_major = int(m.group(1))
--                        m = re.search(r"#define\WDB_VERSION_MINOR\W(\d+)", f)
--                        db_minor = int(m.group(1))
--                        db_ver = (db_major, db_minor)
--
--                        # Avoid 4.6 prior to 4.6.21 due to a BerkeleyDB bug
--                        if db_ver == (4, 6):
--                            m = re.search(r"#define\WDB_VERSION_PATCH\W(\d+)", f)
--                            db_patch = int(m.group(1))
--                            if db_patch < 21:
--                                print "db.h:", db_ver, "patch", db_patch,
--                                print "being ignored (4.6.x must be >= 4.6.21)"
--                                continue
--
--                        if ( (not db_ver_inc_map.has_key(db_ver)) and
--                           (db_ver <= max_db_ver and db_ver >= min_db_ver) ):
--                            # save the include directory with the db.h version
--                            # (first occurrance only)
--                            db_ver_inc_map[db_ver] = d
--                            print "db.h: found", db_ver, "in", d
--                        else:
--                            # we already found a header for this library version
--                            if db_setup_debug: print "db.h: ignoring", d
--                    else:
--                        # ignore this header, it didn't contain a version number
++        db_setup_debug = True   # verbose debug prints from this script?
+ 
+         # construct a list of paths to look for the header file in on
+         # top of the normal inc_dirs.
+@@ -660,6 +661,7 @@ class PyBuildExt(build_ext):
+                 std_variants.append(os.path.join(dn, "db3.%d"%x))
+ 
+         db_inc_paths = std_variants + db_inc_paths
++        db_inc_paths = [ usrlocal('include/db4') ]
+ 
+ 
+         db_ver_inc_map = {}
+@@ -700,7 +702,7 @@ class PyBuildExt(build_ext):
+                             if db_setup_debug: print "db.h: ignoring", d
+                     else:
+                         # ignore this header, it didn't contain a version number
 -                        if db_setup_debug: print "db.h: unsupported version", db_ver, "in", d
--
--            db_found_vers = db_ver_inc_map.keys()
--            db_found_vers.sort()
--
--            while db_found_vers:
--                db_ver = db_found_vers.pop()
--                db_incdir = db_ver_inc_map[db_ver]
--
--                # check lib directories parallel to the location of the header
--                db_dirs_to_check = [
--                    os.path.join(db_incdir, '..', 'lib64'),
--                    os.path.join(db_incdir, '..', 'lib'),
--                    os.path.join(db_incdir, '..', '..', 'lib64'),
--                    os.path.join(db_incdir, '..', '..', 'lib'),
--                ]
--                db_dirs_to_check = filter(os.path.isdir, db_dirs_to_check)
--
--                # Look for a version specific db-X.Y before an ambiguoius dbX
--                # XXX should we -ever- look for a dbX name?  Do any
--                # systems really not name their library by version and
--                # symlink to more general names?
--                for dblib in (('db-%d.%d' % db_ver),
--                              ('db%d%d' % db_ver),
--                              ('db%d' % db_ver[0])):
--                    dblib_file = self.compiler.find_library_file(
--                                    db_dirs_to_check + lib_dirs, dblib )
--                    if dblib_file:
--                        dblib_dir = [ os.path.abspath(os.path.dirname(dblib_file)) ]
--                        raise db_found
--                    else:
--                        if db_setup_debug: print "db lib: ", dblib, "not found"
--
--        except db_found:
--            print "db lib: using", db_ver, dblib
--            if db_setup_debug: print "db: lib dir", dblib_dir, "inc dir", db_incdir
--            db_incs = [db_incdir]
--            dblibs = [dblib]
--            # We add the runtime_library_dirs argument because the
--            # BerkeleyDB lib we're linking against often isn't in the
--            # system dynamic library search path.  This is usually
--            # correct and most trouble free, but may cause problems in
--            # some unusual system configurations (e.g. the directory
--            # is on an NFS server that goes away).
-+        if !!USE_BSDDB!!:
-             exts.append(Extension('_bsddb', ['_bsddb.c'],
--                                  library_dirs=dblib_dir,
--                                  runtime_library_dirs=dblib_dir,
--                                  include_dirs=db_incs,
--                                  libraries=dblibs))
--        else:
--            if db_setup_debug: print "db: no appropriate library found"
--            db_incs = None
--            dblibs = []
--            dblib_dir = None
-+                                  library_dirs=["!!LOCALBASE!!/lib/db4"],
-+                                  runtime_library_dirs=["!!LOCALBASE!!/lib/db4"],
-+                                  include_dirs=["!!LOCALBASE!!/include/db4"],
-+                                  libraries=["db"]))
++                        if db_setup_debug: print "db.h: no version in", d
  
--        # The sqlite interface
--        sqlite_setup_debug = False # verbose debug prints from this script?
+             db_found_vers = db_ver_inc_map.keys()
+             db_found_vers.sort()
+@@ -717,12 +719,14 @@ class PyBuildExt(build_ext):
+                     os.path.join(db_incdir, '..', '..', 'lib'),
+                 ]
+                 db_dirs_to_check = filter(os.path.isdir, db_dirs_to_check)
++                db_dirs_to_check = [ usrlocal('lib/db4') ]
  
--        # We hunt for #define SQLITE_VERSION "n.n.n"
--        # We need to find >= sqlite version 3.0.8
--        sqlite_incdir = sqlite_libdir = None
--        sqlite_inc_paths = [ '/usr/include',
--                             '/usr/include/sqlite',
--                             '/usr/include/sqlite3',
--                             '/usr/local/include',
--                             '/usr/local/include/sqlite',
--                             '/usr/local/include/sqlite3',
--                           ]
--        MIN_SQLITE_VERSION_NUMBER = (3, 0, 8)
--        MIN_SQLITE_VERSION = ".".join([str(x)
--                                    for x in MIN_SQLITE_VERSION_NUMBER])
--
--        # Scan the default include directories before the SQLite specific
--        # ones. This allows one to override the copy of sqlite on OSX,
--        # where /usr/include contains an old version of sqlite.
--        for d in inc_dirs + sqlite_inc_paths:
--            f = os.path.join(d, "sqlite3.h")
--            if os.path.exists(f):
--                if sqlite_setup_debug: print "sqlite: found %s"%f
--                incf = open(f).read()
--                m = re.search(
--                    r'\s*.*#\s*.*define\s.*SQLITE_VERSION\W*"(.*)"', incf)
--                if m:
--                    sqlite_version = m.group(1)
--                    sqlite_version_tuple = tuple([int(x)
--                                        for x in sqlite_version.split(".")])
--                    if sqlite_version_tuple >= MIN_SQLITE_VERSION_NUMBER:
--                        # we win!
--                        print "%s/sqlite3.h: version %s"%(d, sqlite_version)
--                        sqlite_incdir = d
--                        break
--                    else:
--                        if sqlite_setup_debug:
--                            print "%s: version %d is too old, need >= %s"%(d,
--                                        sqlite_version, MIN_SQLITE_VERSION)
--                elif sqlite_setup_debug:
--                    print "sqlite: %s had no SQLITE_VERSION"%(f,)
--
--        if sqlite_incdir:
--            sqlite_dirs_to_check = [
--                os.path.join(sqlite_incdir, '..', 'lib64'),
--                os.path.join(sqlite_incdir, '..', 'lib'),
--                os.path.join(sqlite_incdir, '..', '..', 'lib64'),
--                os.path.join(sqlite_incdir, '..', '..', 'lib'),
--            ]
--            sqlite_libfile = self.compiler.find_library_file(
--                                sqlite_dirs_to_check + lib_dirs, 'sqlite3')
--            sqlite_libdir = [os.path.abspath(os.path.dirname(sqlite_libfile))]
--
--        if sqlite_incdir and sqlite_libdir:
-+        if !!USE_SQLITE!!:
-             sqlite_srcs = ['_sqlite/cache.c',
-                 '_sqlite/connection.c',
-                 '_sqlite/cursor.c',
-@@ -818,31 +606,14 @@ class PyBuildExt(build_ext):
-                 '_sqlite/row.c',
-                 '_sqlite/statement.c',
-                 '_sqlite/util.c', ]
--
-             sqlite_defines = []
--            if sys.platform != "win32":
--                sqlite_defines.append(('MODULE_NAME', '"sqlite3"'))
--            else:
--                sqlite_defines.append(('MODULE_NAME', '\\"sqlite3\\"'))
--
--
--            if sys.platform == 'darwin':
--                # In every directory on the search path search for a dynamic
--                # library and then a static library, instead of first looking
--                # for dynamic libraries on the entiry path.
--                # This way a staticly linked custom sqlite gets picked up
--                # before the dynamic library in /usr/lib.
--                sqlite_extra_link_args = ('-Wl,-search_paths_first',)
--            else:
--                sqlite_extra_link_args = ()
--
-+            sqlite_defines.append(('MODULE_NAME', '"sqlite3"'))
-             exts.append(Extension('_sqlite3', sqlite_srcs,
-                                   define_macros=sqlite_defines,
-                                   include_dirs=["Modules/_sqlite",
--                                                sqlite_incdir],
--                                  library_dirs=sqlite_libdir,
--                                  runtime_library_dirs=sqlite_libdir,
--                                  extra_link_args=sqlite_extra_link_args,
-+                                                "!!LOCALBASE!!/include"],
-+                                  library_dirs=["!!LOCALBASE!!/lib"],
-+                                  runtime_library_dirs=["!!LOCALBASE!!/lib"],
-                                   libraries=["sqlite3",]))
- 
-         # Look for Berkeley db 1.85.   Note that it is built as a different
-@@ -856,6 +627,7 @@ class PyBuildExt(build_ext):
-         # we do not build this one.  Otherwise this build will pick up
+                 # Look for a version specific db-X.Y before an ambiguoius dbX
+                 # XXX should we -ever- look for a dbX name?  Do any
+                 # systems really not name their library by version and
+                 # symlink to more general names?
+                 for dblib in (('db-%d.%d' % db_ver),
++                              ('db'),
+                               ('db%d%d' % db_ver),
+                               ('db%d' % db_ver[0])):
+                     dblib_file = self.compiler.find_library_file(
+@@ -768,6 +772,7 @@ class PyBuildExt(build_ext):
+                              '/usr/local/include/sqlite',
+                              '/usr/local/include/sqlite3',
+                            ]
++        sqlite_inc_paths = [ usrlocal('include') ]
+         MIN_SQLITE_VERSION_NUMBER = (3, 0, 8)
+         MIN_SQLITE_VERSION = ".".join([str(x)
+                                     for x in MIN_SQLITE_VERSION_NUMBER])
+@@ -805,6 +810,7 @@ class PyBuildExt(build_ext):
+                 os.path.join(sqlite_incdir, '..', '..', 'lib64'),
+                 os.path.join(sqlite_incdir, '..', '..', 'lib'),
+             ]
++            sqlite_dirs_to_check = [ usrlocal('lib') ]
+             sqlite_libfile = self.compiler.find_library_file(
+                                 sqlite_dirs_to_check + lib_dirs, 'sqlite3')
+             sqlite_libdir = [os.path.abspath(os.path.dirname(sqlite_libfile))]
+@@ -858,7 +864,7 @@ class PyBuildExt(build_ext):
          # the more recent berkeleydb's db.h file first in the include path
          # when attempting to compile and it will fail.
-+        db_incs = []
          f = "/usr/include/db.h"
-         if os.path.exists(f) and not db_incs:
+-        if os.path.exists(f) and not db_incs:
++        if os.path.exists(f):
              data = open(f).read()
-@@ -897,8 +669,7 @@ class PyBuildExt(build_ext):
-                                                       ('DB_DBM_HSEARCH',None)],
-                                        libraries=dblibs))
- 
--        # Anthony Baxter's gdbm module.  GNU dbm(3) will require -lgdbm:
--        if (self.compiler.find_library_file(lib_dirs, 'gdbm')):
-+	if !!USE_GDBM!!:
-             exts.append( Extension('gdbm', ['gdbmmodule.c'],
-                                    libraries = ['gdbm'] ) )
- 
-@@ -989,53 +760,35 @@ class PyBuildExt(build_ext):
-                                            libraries = ['z'],
-                                            extra_link_args = zlib_extra_link_args))
- 
--        # Gustavo Niemeyer's bz2 module.
--        if (self.compiler.find_library_file(lib_dirs, 'bz2')):
--            if sys.platform == "darwin":
--                bz2_extra_link_args = ('-Wl,-search_paths_first',)
--            else:
--                bz2_extra_link_args = ()
-+        if !!USE_BZ2!!:
-             exts.append( Extension('bz2', ['bz2module.c'],
--                                   libraries = ['bz2'],
--                                   extra_link_args = bz2_extra_link_args) )
-+                                   libraries = ['bz2']) )
- 
--        # Interface to the Expat XML parser
--        #
--        # Expat was written by James Clark and is now maintained by a
--        # group of developers on SourceForge; see www.libexpat.org for
--        # more information.  The pyexpat module was written by Paul
--        # Prescod after a prototype by Jack Jansen.  The Expat source
--        # is included in Modules/expat/.  Usage of a system
--        # shared libexpat.so/expat.dll is not advised.
--        #
--        # More information on Expat can be found at www.libexpat.org.
--        #
--        expatinc = os.path.join(os.getcwd(), srcdir, 'Modules', 'expat')
--        define_macros = [
--            ('HAVE_EXPAT_CONFIG_H', '1'),
--        ]
--
--        exts.append(Extension('pyexpat',
--                              define_macros = define_macros,
--                              include_dirs = [expatinc],
--                              sources = ['pyexpat.c',
+             m = re.search(r"#s*define\s+HASHVERSION\s+2\s*", data)
+             if m is not None:
+@@ -1020,10 +1026,8 @@ class PyBuildExt(build_ext):
+                               define_macros = define_macros,
+                               include_dirs = [expatinc],
+                               sources = ['pyexpat.c',
 -                                         'expat/xmlparse.c',
 -                                         'expat/xmlrole.c',
 -                                         'expat/xmltok.c',
 -                                         ],
--                              ))
--
--        # Fredrik Lundh's cElementTree module.  Note that this also
--        # uses expat (via the CAPI hook in pyexpat).
--
--        if os.path.isfile(os.path.join(srcdir, 'Modules', '_elementtree.c')):
--            define_macros.append(('USE_PYEXPAT_CAPI', None))
--            exts.append(Extension('_elementtree',
-+        if !!USE_EXPAT!!:
-+            expatinc = os.path.join(os.getcwd(), srcdir, 'Modules', 'expat')
-+            define_macros = [
-+                ('HAVE_EXPAT_CONFIG_H', '1'),
-+            ]
-+           
-+            exts.append(Extension('pyexpat',
-                                   define_macros = define_macros,
--                                  include_dirs = [expatinc],
--                                  sources = ['_elementtree.c'],
-+                                  include_dirs = ["!!X11BASE!!/include", expatinc],
-+                                  library_dirs = ["!!X11BASE!!/lib"],
-+                                  sources = ['pyexpat.c'],
-+                                  libraries = ['expat'],
-                                   ))
++                              ],
++                              libraries = ['expat'],
+                               ))
  
-+            # Fredrik Lundh's cElementTree module.  Note that this also
-+            # uses expat (via the CAPI hook in pyexpat).
-+            
-+            if os.path.isfile(os.path.join(srcdir, 'Modules', '_elementtree.c')):
-+                define_macros.append(('USE_PYEXPAT_CAPI', None))
-+                exts.append(Extension('_elementtree',
-+                                      define_macros = define_macros,
-+                                      include_dirs = [expatinc],
-+                                      sources = ['_elementtree.c'],
-+                                      ))
-+
-         # Hye-Shik Chang's CJKCodecs modules.
-         if have_unicode:
-             exts.append(Extension('_multibytecodec',
-@@ -1151,8 +904,16 @@ class PyBuildExt(build_ext):
+         # Fredrik Lundh's cElementTree module.  Note that this also
+@@ -1063,6 +1067,9 @@ class PyBuildExt(build_ext):
+         if platform in ('linux2', 'freebsd4', 'freebsd5', 'freebsd6',
+                         'freebsd7'):
+             exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
++        elif platform in ('openbsd4'):
++            exts.append( Extension('ossaudiodev', ['ossaudiodev.c'],
++                                   libraries = ['ossaudio'],) )
  
-         self.extensions.extend(exts)
+         if platform == 'sunos5':
+             # SunOS specific modules
+@@ -1195,7 +1202,7 @@ class PyBuildExt(build_ext):
+         # For 8.4a2, the X11 headers are not included. Rather than include a
+         # complicated search, this is a hard-coded path. It could bail out
+         # if X11 libs are not found...
+-        include_dirs.append('/usr/X11R6/include')
++        include_dirs.append(usrx11r6('include'))
+         frameworks = ['-framework', 'Tcl', '-framework', 'Tk']
  
--        # Call the method for detecting whether _tkinter can be compiled
--        self.detect_tkinter(inc_dirs, lib_dirs)
-+        if !!USE_TKINTER!!:
-+           ext = Extension('_tkinter', ['_tkinter.c', 'tkappinit.c'],
-+                           define_macros=[('WITH_APPINIT', 1)],
-+                           include_dirs = ["!!LOCALBASE!!/include/tcl8.4", 
-+                                           "!!LOCALBASE!!/include/tk8.4",
-+                                           "!!X11BASE!!/include"],
-+                           libraries = ["tk84", "tcl84", "X11"],
-+                           library_dirs = ["!!LOCALBASE!!/lib", "!!X11BASE!!/lib"],
-+                           )
-+           self.extensions.append(ext)
+         ext = Extension('_tkinter', ['_tkinter.c', 'tkappinit.c'],
+@@ -1224,8 +1231,7 @@ class PyBuildExt(build_ext):
+         # The versions with dots are used on Unix, and the versions without
+         # dots on Windows, for detection by cygwin.
+         tcllib = tklib = tcl_includes = tk_includes = None
+-        for version in ['8.5', '85', '8.4', '84', '8.3', '83', '8.2',
+-                        '82', '8.1', '81', '8.0', '80']:
++        for version in ['84']:
+             tklib = self.compiler.find_library_file(lib_dirs, 'tk' + version)
+             tcllib = self.compiler.find_library_file(lib_dirs, 'tcl' + version)
+             if tklib and tcllib:
+@@ -1266,17 +1272,9 @@ class PyBuildExt(build_ext):
+         if platform == 'sunos5':
+             include_dirs.append('/usr/openwin/include')
+             added_lib_dirs.append('/usr/openwin/lib')
+-        elif os.path.exists('/usr/X11R6/include'):
+-            include_dirs.append('/usr/X11R6/include')
+-            added_lib_dirs.append('/usr/X11R6/lib64')
+-            added_lib_dirs.append('/usr/X11R6/lib')
+-        elif os.path.exists('/usr/X11R5/include'):
+-            include_dirs.append('/usr/X11R5/include')
+-            added_lib_dirs.append('/usr/X11R5/lib')
+-        else:
+-            # Assume default location for X11
+-            include_dirs.append('/usr/X11/include')
+-            added_lib_dirs.append('/usr/X11/lib')
++        elif True:
++            include_dirs.append(usrx11r6('include'))
++            added_lib_dirs.append(usrx11r6('lib'))
  
-     def detect_tkinter_darwin(self, inc_dirs, lib_dirs):
-         # The _tkinter module, using frameworks. Since frameworks are quite
-@@ -1535,8 +1296,7 @@ def main():
+         # If Cygwin, then verify that X is installed before proceeding
+         if platform == 'cygwin':
+@@ -1536,8 +1534,7 @@ def main():
            ext_modules=[Extension('_struct', ['_struct.c'])],
  
            # Scripts to install

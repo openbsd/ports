@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 20:48:23 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/01/01 21:03:27 djm Exp $
 @option no-default-conflict
 @conflict python->=2.4,<2.5
+@conflict python-bz2->=2.4,<2.5
+@conflict python-expat->=2.4,<2.5
 @pkgpath lang/python/2.4
 %%mm%%
 bin/pydoc2.4
-bin/python2.4
+@bin bin/python2.4
 include/python2.4/
 include/python2.4/Python-ast.h
 include/python2.4/Python.h
@@ -1117,6 +1119,7 @@ lib/python2.4/lib-dynload/array.so
 lib/python2.4/lib-dynload/audioop.so
 lib/python2.4/lib-dynload/binascii.so
 lib/python2.4/lib-dynload/bsddb185.so
+lib/python2.4/lib-dynload/bz2.so
 lib/python2.4/lib-dynload/cPickle.so
 lib/python2.4/lib-dynload/cStringIO.so
 lib/python2.4/lib-dynload/cmath.so
@@ -1132,7 +1135,9 @@ lib/python2.4/lib-dynload/md5.so
 lib/python2.4/lib-dynload/mmap.so
 lib/python2.4/lib-dynload/nis.so
 lib/python2.4/lib-dynload/operator.so
+lib/python2.4/lib-dynload/ossaudiodev.so
 lib/python2.4/lib-dynload/parser.so
+lib/python2.4/lib-dynload/pyexpat.so
 lib/python2.4/lib-dynload/readline.so
 lib/python2.4/lib-dynload/regex.so
 lib/python2.4/lib-dynload/resource.so

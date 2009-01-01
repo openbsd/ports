@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.5 2008/06/09 12:34:55 espie Exp $
---- Makefile.pre.in.orig	Wed Dec  5 21:43:57 2007
-+++ Makefile.pre.in	Mon Jun  9 14:23:39 2008
+$OpenBSD: patch-Makefile_pre_in,v 1.6 2009/01/01 21:03:27 djm Exp $
+--- Makefile.pre.in.orig	Mon Sep 22 10:22:44 2008
++++ Makefile.pre.in	Mon Dec 15 20:13:03 2008
 @@ -332,6 +332,8 @@ LIBRARY_OBJS=	\
  #########################################################################
  # Rules
@@ -20,7 +20,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.5 2008/06/09 12:34:55 espie Exp $
  	$(RUNSHARED) ./$(BUILDPYTHON) -E -c 'import sys ; from distutils.util import get_platform ; print get_platform()+"-"+sys.version[0:3]' >platform
 @@ -376,6 +379,11 @@ libpython$(VERSION).so: $(LIBRARY_OBJS)
  libpython$(VERSION).sl: $(LIBRARY_OBJS)
- 	$(LDSHARED) -o $@ $(LIBRARY_OBJS) $(SHLIBS) $(LIBC) $(LIBM)
+ 	$(LDSHARED) $(LDFLAGS) -o $@ $(LIBRARY_OBJS) $(SHLIBS) $(LIBC) $(LIBM) $(LDLAST)
  
 +# This rule for OpenBSD...
 +$(LDLIBRARY):      $(LIBRARY)
