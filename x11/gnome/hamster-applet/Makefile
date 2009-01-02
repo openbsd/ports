@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/28 15:34:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/02 13:07:37 djm Exp $
 
 COMMENT=		time tracker applet for GNOME
 
 GNOME_PROJECT=		hamster-applet
 GNOME_VERSION=		2.24.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		productivity
 
 HOMEPAGE=		http://live.gnome.org/ProjectHamster
@@ -28,8 +29,7 @@ USE_X11=		Yes
 
 # controlcenter2 is needed for custom keybindings
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:python-sqlite-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-sqlite \
-			::x11/gnome/controlcenter2 \
+RUN_DEPENDS=		::x11/gnome/controlcenter2 \
 			::x11/gnome/py-gnome-desktop
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

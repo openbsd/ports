@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/12/21 13:58:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/01/02 13:07:37 djm Exp $
 
 # XXX the following modules are commented in PLIST
 # iPodModule ===> needs py-gpod which we don't provide
@@ -8,7 +8,7 @@ COMMENT=		synchronization application for GNOME
 
 GNOME_PROJECT=		conduit
 GNOME_VERSION=		0.3.15
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,7 +25,6 @@ BUILD_DEPENDS=		::x11/gnome/doc-utils \
 RUN_DEPENDS=		::devel/gettext \
 			::devel/xdg-utils \
 			::graphics/py-goocanvas \
-			:python-sqlite-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-sqlite \
 			::textproc/py-vobject \
 			::x11/dbus-python \
 			::textproc/rarian \

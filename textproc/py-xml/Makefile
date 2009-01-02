@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2008/12/16 04:55:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.35 2009/01/02 13:07:37 djm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ MODPY_EGG_VERSION=0.8.4
 
 VERSION=	${MODPY_EGG_VERSION}
 DISTNAME=	PyXML-${VERSION}
-PKGNAME=	py-xml-${VERSION}p5
+PKGNAME=	py-xml-${VERSION}p6
 CATEGORIES=	textproc devel
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyxml/}
@@ -28,13 +28,8 @@ MODPY_DISTUTILS_BUILDARGS=	--with-libexpat=${X11BASE} --with-xslt
 
 # pyexpat - use our own pyexpat.so
 # otherwise use the python-expat version
-
 FLAVORS=pyexpat
 FLAVOR?=
-
-.if !${FLAVOR:L:Mpyexpat}
-BUILD_DEPENDS=	${MODPY_EXPAT_DEPENDS}
-.endif
 
 REGRESS_DEPENDS= :python-tests-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-tests
 

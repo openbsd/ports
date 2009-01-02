@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/28 09:28:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/02 13:07:37 djm Exp $
 
 COMMENT=	Python-based build system
 
 DISTNAME=	waf-1.4.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 EXTRACT_SUFX=	.tar.bz2
 
@@ -20,10 +21,6 @@ MODULES=	lang/python
 NO_REGRESS=	Yes
 
 SUBST_VARS=	MODPY_SITEPKG
-
-# waf needs bz2 subpackage
-RUN_DEPENDS =	::lang/python/${MODPY_VERSION},-bz2
-BUILD_DEPENDS =	${RUN_DEPENDS}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/waf ${WRKSRC}/wscript

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/12/19 09:58:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/01/02 13:07:37 djm Exp $
 
 COMMENT=		universal search and navigation for GNOME
 
@@ -7,6 +7,7 @@ GNOME_PROJECT=		deskbar-applet
 PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		sysutils
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://projects.gnome.org/deskbar-applet/
 
@@ -36,8 +37,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 BUILD_DEPENDS=		::x11/dbus-python \
 			::x11/gnome/doc-utils \
 			::x11/gnome/py-gnome-desktop
-RUN_DEPENDS=		::lang/python/${MODPY_VERSION},-bz2 \
-			::mail/evolution \
+RUN_DEPENDS=		::mail/evolution \
 			::x11/dbus-python \
 			::x11/gnome/py-gnome-desktop \
 			::devel/py-simplejson \

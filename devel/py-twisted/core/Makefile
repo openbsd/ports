@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2008/10/28 09:28:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/01/02 13:07:37 djm Exp $
 
 COMMENT=	event-based Python framework (core module)
 
 VERSION=	8.1.0
 DISTNAME=	TwistedCore-${VERSION}
-PKGNAME=	py-twisted-core-${VERSION}p0
+PKGNAME=	py-twisted-core-${VERSION}p1
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedCore
 
@@ -12,7 +12,6 @@ MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Core/${VERSION:R}/
 
 RUN_DEPENDS=	:py-zopeinterface-*:devel/py-zopeinterface \
 		:py-openssl-*:security/py-openssl
-REGRESS_DEPENDS=:python-bz2-*:lang/python/${MODPY_VERSION},-bz2
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-twisted-core

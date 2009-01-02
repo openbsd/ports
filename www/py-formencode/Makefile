@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2008/04/15 09:35:18 martynas Exp $
+# $OpenBSD: Makefile,v 1.9 2009/01/02 13:07:37 djm Exp $
 
 COMMENT=		HTML form validation, generation, and conversion
 
 MODPY_EGG_VERSION=	1.0.1
 DISTNAME=		FormEncode-${MODPY_EGG_VERSION}
-PKGNAME=		py-formencode-${MODPY_EGG_VERSION}
+PKGNAME=		py-formencode-${MODPY_EGG_VERSION}p0
 
 CATEGORIES=		www
 
@@ -24,8 +24,7 @@ MODULES=		devel/gettext \
 			lang/python
 
 RUN_DEPENDS=		::devel/py-ruledispatch
-REGRESS_DEPENDS=	:python-expat-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-expat \
-			::www/py-formencode \
+REGRESS_DEPENDS=	::www/py-formencode \
 			::devel/py-py \
 			::devel/py-ruledispatch \
 			::devel/py-nose

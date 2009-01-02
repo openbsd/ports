@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/09/17 11:57:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/01/02 13:07:37 djm Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		CUPS bindings for Python
 
 VERSION=		1.9.42
 DISTNAME=		pycups-${VERSION}
-PKGNAME=		py-cups-${VERSION}
+PKGNAME=		py-cups-${VERSION}p0
 CATEGORIES=		print
 
 HOMEPAGE=		http://cyberelk.net/tim/software/pycups/
@@ -23,7 +23,6 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		converters/libiconv \
 			lang/python
 
-RUN_DEPENDS=		:python-bz2-*:lang/python/${MODPY_VERSION},-bz2
 LIB_DEPENDS=		cups::print/cups
 
 CFLAGS+=		-I${LOCALBASE}/include -DVERSION=\"${VERSION}\"

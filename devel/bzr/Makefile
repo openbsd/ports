@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/28 09:28:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/01/02 13:07:37 djm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	distributed version control system by Canonical
 
 MODPY_EGG_VERSION=1.3
 DISTNAME=	bzr-${MODPY_EGG_VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://bazaar-vcs.org/
@@ -20,9 +21,7 @@ MASTER_SITES=	${HOMEPAGE}releases/src/
 
 MODULES=	lang/python
 
-RUN_DEPENDS+=	::lang/python/${MODPY_VERSION},-bz2 \
-		::lang/python/${MODPY_VERSION},-expat \
-		::net/py-curl \
+RUN_DEPENDS+=	::net/py-curl \
 		::security/py-paramiko \
 		::textproc/gdiff
 

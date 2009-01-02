@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/10/28 13:40:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/02 13:07:37 djm Exp $
 
 COMMENT=	suite of educational games for young children
 
 DISTNAME=	childsplay-0.85.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	games education
@@ -21,8 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=childsplay/}
 
 MODULES=	lang/python
-RUN_DEPENDS=	:pygame->=1.7:devel/pygame \
-		:python-expat-${MODPY_VERSION}.*:lang/python/${MODPY_VERSION},-expat
+RUN_DEPENDS=	:pygame->=1.7:devel/pygame
 
 PKG_ARCH=	*
 NO_BUILD=	Yes
