@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2009/01/02 22:28:21 sthen Exp $
+--- src/Makefile.in.orig	Sat Sep 13 04:15:02 2008
++++ src/Makefile.in	Sat Sep 13 04:20:10 2008
+@@ -60,7 +60,7 @@ am_pdnsd_OBJECTS = pdnsd-conf-parser.$(OBJEXT) pdnsd-c
+ 	pdnsd-thread.$(OBJEXT) pdnsd-cache.$(OBJEXT) \
+ 	pdnsd-hash.$(OBJEXT)
+ pdnsd_OBJECTS = $(am_pdnsd_OBJECTS)
+-pdnsd_LDADD = $(LDADD)
++pdnsd_LDADD = $(LDADD) @thread_CFLAGS@
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles

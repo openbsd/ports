@@ -1,6 +1,7 @@
---- Makefile.in.orig	Sat Sep  2 16:24:27 2006
-+++ Makefile.in	Tue Oct 31 07:44:41 2006
-@@ -531,7 +531,7 @@ info-am:
+$OpenBSD: patch-Makefile_in,v 1.5 2009/01/02 22:28:21 sthen Exp $
+--- Makefile.in.orig	Thu Sep  4 12:20:38 2008
++++ Makefile.in	Fri Sep 12 04:41:24 2008
+@@ -546,7 +546,7 @@ info-am:
  
  install-data-am:
  	@$(NORMAL_INSTALL)
@@ -9,7 +10,7 @@
  
  install-exec-am:
  
-@@ -584,7 +584,7 @@ install-data-hook:
+@@ -599,7 +599,7 @@ install-data-hook:
  	$(mkinstalldirs) $(DESTDIR)$(cachedir)
  	test -f $(DESTDIR)$(cachedir)/pdnsd.cache || \
  	  touch $(DESTDIR)$(cachedir)/pdnsd.cache

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/11/25 10:45:39 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/01/02 22:28:21 sthen Exp $
 @newgroup _pdnsd:510
 @newuser _pdnsd:510:_pdnsd:daemon:Proxy DNS Server:/nonexistent:/sbin/nologin
 @man man/man5/pdnsd.conf.5
 @man man/man8/pdnsd-ctl.8
 @man man/man8/pdnsd.8
-sbin/pdnsd
-sbin/pdnsd-ctl
+@bin sbin/pdnsd
+@bin sbin/pdnsd-ctl
 share/doc/pdnsd/
 share/doc/pdnsd/faq.txt
 share/doc/pdnsd/intro.txt

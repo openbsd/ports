@@ -1,0 +1,55 @@
+$OpenBSD: patch-doc_pdnsd_8_in,v 1.1 2009/01/02 22:28:21 sthen Exp $
+--- doc/pdnsd.8.in.orig	Mon Aug 20 08:24:51 2007
++++ doc/pdnsd.8.in	Sat Sep 13 04:33:54 2008
+@@ -11,7 +11,7 @@ This man page is an extract of the documentation of \f
+ For complete, current documentation, refer to the HTML (or plain text)
+ documentation (which you can find in the \fBdoc/\fP subdirectory of the
+ source or in a standard documentation directory, typically
+-\fB/usr/share/doc/pdnsd/\fP if you are using a binary package).
++\fB@prefix@/share/doc/pdnsd/\fP if you are using a binary package).
+ 
+ .SH DESCRIPTION
+ .PP
+@@ -157,7 +157,7 @@ server {
+ Note the opening and closing braces. Add more such \fBserver\fP
+ sections for each set of DNS servers you want \fBpdnsd\fP to query.
+ Of course the configuration options shown here are just examples.
+-More examples can be found in \fB@sysconfdir@/pdnsd.conf.sample\fP
++More examples can be found in \fB@prefix@/share/examples/pdnsd/pdnsd.conf\fP
+ or the pdnsd.conf in the documentation directory.
+ See the
+ .BR pdnsd.conf (5)
+@@ -192,7 +192,7 @@ man page for details.
+ The file format and configuration options are described in the
+ .BR pdnsd.conf (5)
+ man page. You can find examples of almost all options in
+-\fB@sysconfdir@/pdnsd.conf.sample\fP.
++\fB@prefix@/share/examples/pdnsd/pdnsd.conf\fP.
+ .PP
+ \fB@cachedir@/pdnsd.cache\fP
+ .PP
+@@ -286,7 +286,7 @@ pdnsd and save cache and executable space):
+ .BR resolv.conf (5)
+ .PP
+ More documentation is available in the \fBdoc/\fP subdirectory of the source,
+-or in \fB/usr/share/doc/pdnsd/\fP if you are using a binary package.
++or in \fB@prefix@/share/doc/pdnsd/\fP if you are using a binary package.
+ 
+ .SH AUTHORS
+ 
+@@ -301,13 +301,13 @@ and was extensively revised by Paul Rombouts
+ (for versions 1.1.8b1\-par and later).
+ .PP
+ Several others have contributed to \fBpdnsd\fP; see files in the
+-source or \fB/usr/share/doc/pdnsd/\fP directory.
++source or \fB@prefix@/share/doc/pdnsd/\fP directory.
+ .PP
+ This man page was written by Mahesh T. Pai
+ .UR
+ <paivakil@yahoo.co.in>
+ .UE
+-using the documents in \fB/usr/share/docs/pdnsd/\fP directory for Debian,
++using the documents in \fB@prefix@/share/docs/pdnsd/\fP directory for Debian,
+ but can be used on other distributions too.
+ .PP
+ Last revised: 22 Jul 2007 by Paul Rombouts.
