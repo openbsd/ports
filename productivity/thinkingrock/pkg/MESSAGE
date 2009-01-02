@@ -1,0 +1,3 @@
+Users need their data size limit increased in /etc/login.conf in order to
+run Thinking Rock. They need at least 700MB, for heavy users, 900MB are a
+better choice.
