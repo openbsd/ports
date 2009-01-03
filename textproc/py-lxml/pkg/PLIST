@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/03 11:31:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/01/03 21:34:01 kili Exp $
 lib/python${MODPY_VERSION}/site-packages/lxml/
-lib/python${MODPY_VERSION}/site-packages/lxml-2.0.3-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/lxml-2.0.3-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/lxml-2.0.3-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/lxml-2.0.3-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/lxml-2.0.3-py${MODPY_VERSION}.egg-info/native_libs.txt
-lib/python${MODPY_VERSION}/site-packages/lxml-2.0.3-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/lxml-2.0.3-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/lxml/ElementInclude.py
 lib/python${MODPY_VERSION}/site-packages/lxml/ElementInclude.pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/__init__.py
@@ -339,7 +338,7 @@ share/doc/py-lxml/html/api/toc-lxml.usedoctest-module.html
 share/doc/py-lxml/html/api/toc.html
 share/doc/py-lxml/html/build.html
 share/doc/py-lxml/html/capi.html
-share/doc/py-lxml/html/changes-2.0.3.html
+share/doc/py-lxml/html/changes-${MODPY_EGG_VERSION}.html
 share/doc/py-lxml/html/compatibility.html
 share/doc/py-lxml/html/cssselect.html
 share/doc/py-lxml/html/element_classes.html
