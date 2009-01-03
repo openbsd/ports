@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/10/27 13:15:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/01/03 14:58:42 ajacoutot Exp $
 @bin bin/gegl
 include/gegl-0.0/
 include/gegl-0.0/gegl-buffer.h
 include/gegl-0.0/gegl-chant.h
 include/gegl-0.0/gegl-color.h
 include/gegl-0.0/gegl-curve.h
+include/gegl-0.0/gegl-matrix.h
 include/gegl-0.0/gegl-paramspecs.h
+include/gegl-0.0/gegl-path.h
 include/gegl-0.0/gegl-plugin.h
 include/gegl-0.0/gegl-simd.h
 include/gegl-0.0/gegl-utils.h
@@ -79,8 +81,6 @@ lib/gegl-0.0/dst-over.so
 lib/gegl-0.0/dst.so
 @comment lib/gegl-0.0/exclusion.la
 lib/gegl-0.0/exclusion.so
-@comment lib/gegl-0.0/fill.la
-lib/gegl-0.0/fill.so
 @comment lib/gegl-0.0/fractal-explorer.la
 lib/gegl-0.0/fractal-explorer.so
 @comment lib/gegl-0.0/gamma.la
@@ -129,6 +129,8 @@ lib/gegl-0.0/open-buffer.so
 lib/gegl-0.0/over.so
 @comment lib/gegl-0.0/overlay.la
 lib/gegl-0.0/overlay.so
+@comment lib/gegl-0.0/path.la
+lib/gegl-0.0/path.so
 @comment lib/gegl-0.0/pixbuf.la
 lib/gegl-0.0/pixbuf.so
 @comment lib/gegl-0.0/plus.la

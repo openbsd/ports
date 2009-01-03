@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2008/11/18 13:45:41 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2009/01/03 14:58:42 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	graph based image processing framework
 COMMENT-plugins=gegl plugins
 
-V=		0.0.20
+V=		0.0.22
 DISTNAME=	gegl-${V}
 CATEGORIES=	graphics devel
 
-PKGNAME-main=	gegl-${V}p1
-PKGNAME-plugins=gegl-plugins-${V}p0
+PKGNAME-main=	gegl-${V}
+PKGNAME-plugins=gegl-plugins-${V}
 
-SHARED_LIBS=	gegl-0.0	1.1 # .20.0
+SHARED_LIBS=	gegl-0.0	2.0 # .22.0
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -49,7 +49,8 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		babl-0.0::graphics/babl
 
 WANTLIB-plugins=${WANTLIB} Half Iex IlmThread Imath SDL a52 bz2 faac faad \
-		mp3lame ogg stdc++ theora usbhid vorbis vorbisenc x264
+		mp3lame ogg sndio stdc++ theora usbhid vorbis vorbisenc \
+		x264
 RUN_DEPENDS-plugins= ::${BUILD_PKGPATH},-main
 LIB_DEPENDS-plugins= ${LIB_DEPENDS} \
 		IlmImf.>=4::graphics/openexr \
@@ -61,10 +62,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_path_ASCIIDOC="no" \
 		ac_cv_path_W3M="no" \
 		ac_cv_path_ENSCRIPT="no" \
-		ac_cv_path_GRAPHVIZ="no"
+		ac_cv_prog_RUBY=""
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
 		--disable-docs \
-		--disable-gtk-doc
+		--disable-gtk-doc \
+		--with-libopenraw=no \
+		--with-graphviz=no \
+		--with-libv4l=no \
+		--with-libspiro=no
 
 .include <bsd.port.mk>
