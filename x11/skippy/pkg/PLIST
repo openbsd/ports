@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/15 18:50:18 fgsch Exp $
-bin/skippy
+@comment $OpenBSD: PLIST,v 1.2 2009/01/03 23:02:57 jasper Exp $
+@bin bin/skippy
 share/doc/skippy/
 share/doc/skippy/README.OpenBSD
 share/examples/skippy/

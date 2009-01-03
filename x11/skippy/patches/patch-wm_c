@@ -1,5 +1,5 @@
---- wm.c.orig	Wed May 19 18:23:49 2004
-+++ wm.c	Wed Jul 13 16:43:40 2005
+--- wm.c.orig	Wed May 19 23:23:49 2004
++++ wm.c	Sat Jan  3 23:56:53 2009
 @@ -258,7 +258,7 @@ wm_get_stack(Display *dpy)
  		return 0;
  	
@@ -31,7 +31,7 @@
  	XFree(data);
  	
  	return desktop;
-@@ -479,7 +479,7 @@ wm_validate_window(Display *dpy, Window 
+@@ -479,7 +479,7 @@ wm_validate_window(Display *dpy, Window win)
  		
  		return result;
  	} else {
@@ -40,7 +40,7 @@
  		
  		status = XGetWindowProperty(dpy, win, _WIN_STATE,
  		                  0L, 1L, False, XA_CARDINAL, &real_type, &real_format,
-@@ -490,7 +490,7 @@ wm_validate_window(Display *dpy, Window 
+@@ -490,7 +490,7 @@ wm_validate_window(Display *dpy, Window win)
  				XFree(data);
  			return 0;
  		}
@@ -49,7 +49,7 @@
  		                             WIN_STATE_SHADED |
  		                             WIN_STATE_HIDDEN);
  		if(attr)
-@@ -510,7 +510,7 @@ wm_validate_window(Display *dpy, Window 
+@@ -510,7 +510,7 @@ wm_validate_window(Display *dpy, Window win)
  					XFree(data);
  				return 1; /* If there's no _WIN_HINTS, assume it's 0, thus valid */
  			}
@@ -58,7 +58,7 @@
  			if(attr & WIN_HINTS_SKIP_TASKBAR)
  				result = 0;
  			XFree(data);
-@@ -520,14 +520,14 @@ wm_validate_window(Display *dpy, Window 
+@@ -520,14 +520,14 @@ wm_validate_window(Display *dpy, Window win)
  	}
  }
  
@@ -75,7 +75,7 @@
  	
  	if(WM_PERSONALITY == WM_PERSONALITY_GNOME)
  	{
-@@ -537,7 +537,7 @@ wm_get_window_desktop(Display *dpy, Wind
+@@ -537,7 +537,7 @@ wm_get_window_desktop(Display *dpy, Window win)
  		if(status == Success)
  		{
  			if(items_read)
@@ -84,7 +84,7 @@
  			
  			XFree(data);
  			
-@@ -555,7 +555,7 @@ wm_get_window_desktop(Display *dpy, Wind
+@@ -555,7 +555,7 @@ wm_get_window_desktop(Display *dpy, Window win)
  		return wm_get_current_desktop(dpy);
  	
  	if(items_read)

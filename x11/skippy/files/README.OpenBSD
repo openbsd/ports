@@ -1,6 +1,6 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2004/10/15 18:50:18 fgsch Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2009/01/03 23:02:57 jasper Exp $
 
-Copy the sample @SAMPLEDIR@skippyrc-default to
+Copy the sample ${TRUEPREFIX}/share/examples/skippy/skippyrc-default to
 your home directory as .skippyrc before running it.
 
 If you encounter any BadAccess errors change the keysym value
