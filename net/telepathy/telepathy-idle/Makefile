@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/12/30 22:50:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/01/03 21:27:25 kili Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
 DISTNAME=		telepathy-idle-0.1.2
-PKGNAME= 		${DISTNAME}p1
+PKGNAME= 		${DISTNAME}p2
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-idle}
 
@@ -14,8 +14,7 @@ MODULES=		devel/gettext \
 			lang/python
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		${MODPY_EXPAT_DEPENDS} \
-			::textproc/libxslt
+RUN_DEPENDS=		::textproc/libxslt
 LIB_DEPENDS=		telepathy-glib::net/telepathy/telepathy-glib
 
 USE_GMAKE=		Yes

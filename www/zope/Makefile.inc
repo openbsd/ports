@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2008/03/20 11:37:47 winiger Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2009/01/03 21:27:25 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.zope.org/
 
 MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
-# Zope Public License
+# Zope Public License 2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,8 +22,6 @@ EXTRACT_SUFX=	.tgz
 
 MODPY_VERSION=	2.4
 MODULES=	lang/python
-
-RUN_DEPENDS+=	${MODPY_EXPAT_DEPENDS}
 
 BUILD_ARGS=	--build-base=${WRKSRC} \
 		--build-lib="${WRKSRC}/build-lib" \

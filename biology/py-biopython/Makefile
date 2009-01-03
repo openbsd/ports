@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2008/01/12 02:00:24 okan Exp $
+# $OpenBSD: Makefile,v 1.13 2009/01/03 21:27:25 kili Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	Python tools for computational molecular biology
 
 DISTNAME=	biopython-1.44
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	biology
 
 HOMEPAGE=	http://www.biopython.org/
@@ -24,11 +24,9 @@ PY_FLAVOR=	python${MODPY_VERSION}
 
 WANTLIB+=	stdc++
 
-BUILD_DEPENDS=	${MODPY_EXPAT_DEPENDS} \
-		::math/py-Numeric \
+BUILD_DEPENDS=	::math/py-Numeric \
 		::devel/swig
-RUN_DEPENDS=	${MODPY_EXPAT_DEPENDS} \
-		:py-mxDateTime-*-${PY_FLAVOR}:devel/py-mxDateTime,${PY_FLAVOR} \
+RUN_DEPENDS=	:py-mxDateTime-*-${PY_FLAVOR}:devel/py-mxDateTime,${PY_FLAVOR} \
 		:py-Numeric-*:math/py-Numeric \
 		:py-reportlab-*:print/py-reportlab/reportlab
 REGRESS_DEPENDS=${RUN_DEPENDS}

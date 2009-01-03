@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/11/25 15:17:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/01/03 21:27:25 kili Exp $
 bin/gajim
 bin/gajim-remote
 lib/gajim/
@@ -10,7 +10,6 @@ lib/gajim/trayicon.la
 lib/gajim/trayicon.so
 @man man/man1/gajim-remote.1
 @man man/man1/gajim.1
-share/applications/
 share/applications/gajim.desktop
 share/doc/gajim/
 share/doc/gajim/AUTHORS
@@ -865,6 +864,8 @@ share/locale/pt_BR/LC_MESSAGES/gajim.mo
 share/locale/ru/LC_MESSAGES/gajim.mo
 share/locale/sk/LC_MESSAGES/gajim.mo
 share/locale/sr/LC_MESSAGES/gajim.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/gajim.mo
 share/locale/sv/LC_MESSAGES/gajim.mo
 share/locale/zh_CN/LC_MESSAGES/gajim.mo

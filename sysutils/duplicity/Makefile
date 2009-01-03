@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/09/17 02:40:27 okan Exp $
+# $OpenBSD: Makefile,v 1.4 2009/01/03 21:27:25 kili Exp $
 
 COMMENT =	encrypted backup using rsync algorithm
 
 MODPY_EGG_VERSION = 0.5.01
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.nongnu.org/duplicity/
@@ -33,8 +34,7 @@ LIB_DEPENDS +=	rsync::net/librsync
 RUN_DEPENDS +=	::devel/py-pexpect \
 		::net/py-boto \
 		::net/ncftp \
-		::security/py-gnupg \
-		${MODPY_EXPAT_DEPENDS}
+		::security/py-gnupg
 
 MAKE_ENV +=	LIBRSYNC_DIR=${LOCALBASE}
 
