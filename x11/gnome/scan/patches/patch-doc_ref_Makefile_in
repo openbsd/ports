@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_ref_Makefile_in,v 1.1.1.1 2008/04/14 12:38:02 ajacoutot Exp $
---- doc/ref/Makefile.in.orig	Thu Apr 10 16:05:08 2008
-+++ doc/ref/Makefile.in	Thu Apr 10 16:05:40 2008
-@@ -232,7 +232,7 @@ AUTOMAKE_OPTIONS = 1.9
+$OpenBSD: patch-doc_ref_Makefile_in,v 1.2 2009/01/03 15:00:24 ajacoutot Exp $
+--- doc/ref/Makefile.in.orig	Sat Dec  6 15:22:08 2008
++++ doc/ref/Makefile.in	Sat Jan  3 13:55:10 2009
+@@ -230,7 +230,7 @@ AUTOMAKE_OPTIONS = 1.9
  # of using the various options.
  
  # The name of the module, e.g. 'glib'.

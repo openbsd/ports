@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/11/19 14:18:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/03 15:00:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,11 +6,11 @@ COMMENT-main=	easy-to-use scanning application for GNOME
 COMMENT-gimp=	flegita GIMP plugin for gnome-scan
 
 GNOME_PROJECT=	gnome-scan
-GNOME_VERSION=	0.6
+GNOME_VERSION=	0.6.1
 CATEGORIES=	graphics
 
-PKGNAME-main=	${DISTNAME}p4
-PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}p2
+PKGNAME-main=	${DISTNAME}
+PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}
 
 SHARED_LIBS=	gnomescan	0.0 # .0.0
 
@@ -25,8 +25,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION}/}
 
 WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 babl-0.0 c \
@@ -47,7 +45,7 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		gegl-0.0::graphics/gegl \
 		gconf-2.>=6::devel/gconf2
 
-WANTLIB-gimp=	${WANTLIB} gegl-0.0
+WANTLIB-gimp=	${WANTLIB} gconf-2 gegl-0.0
 LIB_DEPENDS-gimp= ${LIB_DEPENDS} \
 		gnomescan::${BUILD_PKGPATH},-main \
 		gimp-2.0.>=245,gimpbase-2.0,gimpcolor-2.0,gimpconfig-2.0,gimpmath-2.0,gimpmodule-2.0,gimpui-2.0,gimpwidgets-2.0::graphics/gimp/stable
