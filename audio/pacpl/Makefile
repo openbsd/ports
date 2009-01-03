@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/12/23 15:52:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/01/03 14:50:24 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -8,8 +8,8 @@ COMMENT-amarok=		PAC Amarok plugin
 
 V=			4.0.3
 DISTNAME=		pacpl-${V}
-PKGNAME-main=		pacpl-${V}
-PKGNAME-konqueror=	pacpl-konqueror-${V}
+PKGNAME-main=		pacpl-${V}p0
+PKGNAME-konqueror=	pacpl-konqueror-${V}p0
 PKGNAME-amarok=		pacpl-amarok-${V}
 CATEGORIES=		audio converters perl5
 

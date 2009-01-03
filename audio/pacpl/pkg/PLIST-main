@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/12/23 15:52:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/01/03 14:50:24 ajacoutot Exp $
+@conflict pacpl-konqueror-<4.0.3p0
 bin/pacpl
 @man man/man1/pacpl.1
 share/doc/pacpl/
@@ -20,8 +21,6 @@ share/examples/pacpl/modules/sample.m
 @sample ${SYSCONFDIR}/pacpl/modules/sample.m
 share/examples/pacpl/pacpl.conf
 @sample ${SYSCONFDIR}/pacpl/pacpl.conf
-share/mimelnk/
-share/mimelnk/audio/x-rm.desktop
 share/pacpl/
 share/pacpl/locale/
 share/pacpl/locale/ca.po
