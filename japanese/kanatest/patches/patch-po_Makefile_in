@@ -1,0 +1,25 @@
+$OpenBSD: patch-po_Makefile_in,v 1.1 2009/01/04 08:25:48 fgsch Exp $
+--- po/Makefile.in.orig	Wed Dec 17 17:15:20 2008
++++ po/Makefile.in	Wed Dec 17 17:28:03 2008
+@@ -128,9 +128,9 @@ top_srcdir = @top_srcdir@
+ var = @var@
+ DOMAIN = kanatest
+ POTFILES = $(wildcard ../src/*.c ../src/*.h)
+-MSGFMT = /usr/bin/msgfmt
+-XGETTEXT = /usr/bin/xgettext
+-MSGMERGE = /usr/bin/msgmerge
++MSGFMT = msgfmt
++XGETTEXT = xgettext
++MSGMERGE = msgmerge
+ XGETTEXT_OPTS = --keyword=_ --keyword=N_ --keyword=X_ --add-comments=TRANSLATORS: 
+ POFILES = de.po fr.po hu.po pl.po pt.po ru.po
+ MOFILES = $(POFILES:.po=.mo)
+@@ -301,7 +301,7 @@ all: $(MOFILES)
+ 
+ update-po: $(DOMAIN).pot $(POFILES) $(MOFILES)
+ 
+-%.mo: skip
++$(MOFILES): skip
+ 	@po=$(@:.mo=.po); if test $$po -nt $@ ; then $(MSGFMT) -c --statistics $$po -o $@; echo "$@ updated."; fi
+ 
+ %.po: $(DOMAIN).pot

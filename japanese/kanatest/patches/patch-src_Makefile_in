@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2009/01/04 08:25:48 fgsch Exp $
+--- src/Makefile.in.orig	Wed Dec 17 17:36:08 2008
++++ src/Makefile.in	Wed Dec 17 17:36:24 2008
+@@ -146,7 +146,7 @@ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ var = @var@
+-REVISION := $(shell if test -e .svn; then echo -DREV=\"`LC_ALL=C svn info | sed -n '/^Rev/p'| sed -e 's/^Revision:\ //'`\"; fi;)
++REVISION := `if test -e .svn; then echo -DREV=\"\`LC_ALL=C svn info | sed -n '/^Rev/p'| sed -e 's/^Revision:\ //'\`\"; fi;`
+ AM_CPPFLAGS = -DLOCALEDIR=\"$(datadir)/locale\" $(REVISION)
+ kanatest_SOURCES = about.c about.h \
+ 				   chart.c chart.h \
