@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/02/13 13:48:22 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/01/04 23:28:59 kurt Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/jakarta-tomcat/v5
 @pkgpath www/tomcat/v5
@@ -163,6 +163,7 @@ tomcat/server/webapps/manager/WEB-INF/
 tomcat/server/webapps/manager/WEB-INF/lib/
 tomcat/server/webapps/manager/WEB-INF/lib/catalina-manager.jar
 tomcat/server/webapps/manager/WEB-INF/lib/commons-fileupload-1.2.jar
+tomcat/server/webapps/manager/WEB-INF/lib/commons-io-1.4.jar
 tomcat/server/webapps/manager/WEB-INF/web.xml
 tomcat/server/webapps/manager/html-manager-howto.html
 tomcat/server/webapps/manager/images/

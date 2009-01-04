@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.4 2008/02/13 13:48:22 kurt Exp $
+@comment $OpenBSD: PLIST-examples,v 1.5 2009/01/04 23:28:59 kurt Exp $
 @pkgpath www/jakarta-tomcat/v5,-examples
 @owner _tomcat
 @group _tomcat
@@ -801,6 +801,7 @@ webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/ResourceEntry.h
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/StandardClassLoader.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/StandardClassLoaderMBean.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappClassLoader.PrivilegedFindResource.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappClassLoader.PrivilegedGetClassLoader.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappClassLoader.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappLoader.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/package-frame.html
@@ -1466,11 +1467,13 @@ webapps/tomcat-docs/config/printer/realm.html
 webapps/tomcat-docs/config/printer/resources.html
 webapps/tomcat-docs/config/printer/server.html
 webapps/tomcat-docs/config/printer/service.html
+webapps/tomcat-docs/config/printer/systemprops.html
 webapps/tomcat-docs/config/printer/valve.html
 webapps/tomcat-docs/config/realm.html
 webapps/tomcat-docs/config/resources.html
 webapps/tomcat-docs/config/server.html
 webapps/tomcat-docs/config/service.html
+webapps/tomcat-docs/config/systemprops.html
 webapps/tomcat-docs/config/valve.html
 webapps/tomcat-docs/connectors.html
 webapps/tomcat-docs/default-servlet.html
