@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.210 2008/12/11 14:33:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.211 2009/01/04 14:05:26 kevlo Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -21,6 +21,7 @@
      SUBDIR += cgichk
      SUBDIR += chrootuid
      SUBDIR += clamav
+     SUBDIR += clusterssh
      SUBDIR += cops
      SUBDIR += corkscrew
      SUBDIR += crack
