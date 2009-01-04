@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/04 14:04:10 kevlo Exp $
+bin/crsh
+bin/cssh
+bin/ctel
+@man man/man1/cssh.1
