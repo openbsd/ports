@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/12/11 23:40:53 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/01/04 23:28:02 kurt Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/jakarta-tomcat/v4
 @pkgpath www/tomcat/v4
@@ -68,6 +68,7 @@ share/examples/tomcat/web.xml
 tomcat/
 tomcat/BUILDING.txt
 tomcat/LICENSE
+tomcat/NOTICE
 tomcat/README.OpenBSD
 tomcat/README.txt
 tomcat/RELEASE-NOTES-4.1.txt
@@ -87,22 +88,13 @@ tomcat/bin/tool-wrapper.sh
 tomcat/common/
 tomcat/common/classes/
 tomcat/common/endorsed/
-tomcat/common/endorsed/xercesImpl.jar
-tomcat/common/endorsed/xml-apis.jar
 tomcat/common/lib/
-tomcat/common/lib/activation.jar
 tomcat/common/lib/ant-launcher.jar
 tomcat/common/lib/ant.jar
 tomcat/common/lib/commons-collections-3.2.jar
-tomcat/common/lib/commons-dbcp-1.2.1.jar
-tomcat/common/lib/commons-logging-api-1.1.jar
-tomcat/common/lib/commons-pool-1.3.jar
+tomcat/common/lib/commons-logging-api-1.1.1.jar
 tomcat/common/lib/jasper-compiler.jar
 tomcat/common/lib/jasper-runtime.jar
-tomcat/common/lib/jdbc2_0-stdext.jar
-tomcat/common/lib/jndi.jar
-tomcat/common/lib/jta.jar
-tomcat/common/lib/mail.jar
 tomcat/common/lib/naming-common.jar
 tomcat/common/lib/naming-factory.jar
 tomcat/common/lib/naming-resources.jar
@@ -114,12 +106,11 @@ tomcat/server/lib/catalina-ant.jar
 tomcat/server/lib/catalina.jar
 tomcat/server/lib/commons-beanutils.jar
 tomcat/server/lib/commons-digester-1.8.jar
-tomcat/server/lib/commons-fileupload-1.1.1.jar
+tomcat/server/lib/commons-fileupload-1.2.jar
 tomcat/server/lib/commons-io-1.3.jar
-tomcat/server/lib/commons-logging-1.1.jar
-tomcat/server/lib/commons-modeler-2.0.jar
-tomcat/server/lib/jaas.jar
-tomcat/server/lib/jakarta-regexp-1.4.jar
+tomcat/server/lib/commons-logging-1.1.1.jar
+tomcat/server/lib/commons-modeler-2.0.1.jar
+tomcat/server/lib/jakarta-regexp-1.5.jar
 tomcat/server/lib/mx4j.jar
 tomcat/server/lib/mx4j.license
 tomcat/server/lib/servlets-cgi.renametojar
