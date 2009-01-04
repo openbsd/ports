@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 02:53:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/04 10:05:40 jasper Exp $
 
 COMMENT=	module for reading .ini-style configuration files
 
 MODULES=	cpan
-DISTNAME=	Config-IniFiles-2.39
-PKGNAME=	p5-${DISTNAME}p1
+DISTNAME=	Config-IniFiles-2.45
 CATEGORIES=	devel
-CPAN_AUTHOR=	GCARLS
+CPAN_AUTHOR=	SHLOMIF
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
