@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/05 09:44:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/04 16:54:09 kili Exp $
 
 COMMENT=	PDF-generating toolkit for Python
 
 VERSION=	2.1
 DISTNAME=	ReportLab_${VERSION:S/./_/}
-PKGNAME=	py-reportlab-${VERSION}
+PKGNAME=	py-reportlab-${VERSION}p0
 CATEGORIES=	print graphics
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.reportlab.org/rl_toolkit.html
 
 MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
-# BSD - LGPL
+# BSD, LGPLv2, MPL1.0, MIT
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -26,8 +26,7 @@ EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	:py-Imaging-*:graphics/py-Imaging \
-		${MODPY_EXPAT_DEPENDS}
+RUN_DEPENDS=	:py-Imaging-*:graphics/py-Imaging
 
 WRKDIST=	${WRKDIR}/reportlab_${VERSION:S/./_/}
 WRKSRC=		${WRKDIST}/reportlab
