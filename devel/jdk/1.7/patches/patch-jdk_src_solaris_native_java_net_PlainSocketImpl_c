@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_net_PlainSocketImpl_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/java/net/PlainSocketImpl.c.orig	Tue Dec  4 04:05:20 2007
-+++ jdk/src/solaris/native/java/net/PlainSocketImpl.c	Thu Dec  6 15:44:09 2007
-@@ -528,9 +528,11 @@ Java_java_net_PlainSocketImpl_socketConnect(JNIEnv *en
+$OpenBSD: patch-jdk_src_solaris_native_java_net_PlainSocketImpl_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/src/solaris/native/java/net/PlainSocketImpl.c.orig	Thu Sep 11 03:44:53 2008
++++ jdk/src/solaris/native/java/net/PlainSocketImpl.c	Fri Sep 12 17:45:12 2008
+@@ -467,9 +467,11 @@ Java_java_net_PlainSocketImpl_socketConnect(JNIEnv *en
          if (connect_rv == JVM_IO_INTR) {
              JNU_ThrowByName(env, JNU_JAVAIOPKG "InterruptedIOException",
                              "operation interrupted");

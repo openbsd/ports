@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/java/net/net_util_md.c.orig	Tue Dec  4 04:05:20 2007
-+++ jdk/src/solaris/native/java/net/net_util_md.c	Fri Dec  7 17:33:12 2007
+$OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/src/solaris/native/java/net/net_util_md.c.orig	Thu Sep 11 03:44:53 2008
++++ jdk/src/solaris/native/java/net/net_util_md.c	Fri Sep 12 17:45:12 2008
 @@ -34,6 +34,15 @@
  #include <stdlib.h>
  #include <dlfcn.h>
@@ -42,7 +42,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.1 2008/03/19 1
  
  void
  NET_AllocSockaddr(struct sockaddr **him, int *len) {
-@@ -689,6 +707,10 @@ NET_InetAddressToSockaddr(JNIEnv *env, jobject iaObj, 
+@@ -688,6 +706,10 @@ NET_InetAddressToSockaddr(JNIEnv *env, jobject iaObj, 
          him6->sin6_family = AF_INET6;
          *len = sizeof(struct sockaddr_in6) ;
  
@@ -53,7 +53,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.1 2008/03/19 1
          /*
           * On Linux if we are connecting to a link-local address
           * we need to specify the interface in the scope_id (2.4 kernel only)
-@@ -1133,6 +1155,20 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
+@@ -1141,6 +1163,20 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
  #define IPTOS_PREC_MASK 0xe0
  #endif
  
@@ -74,7 +74,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.1 2008/03/19 1
      /*
       * IPPROTO/IP_TOS :-
       * 1. IPv6 on Solaris: no-op and will be set in flowinfo
-@@ -1165,6 +1201,10 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
+@@ -1173,6 +1209,10 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
          *iptos &= (IPTOS_TOS_MASK | IPTOS_PREC_MASK);
      }
  
@@ -85,7 +85,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.1 2008/03/19 1
      /*
       * SOL_SOCKET/{SO_SNDBUF,SO_RCVBUF} - On Solaris need to
       * ensure that value is <= max_buf as otherwise we get
-@@ -1209,6 +1249,83 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
+@@ -1217,6 +1257,83 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
          if (*bufsize < 1024) {
              *bufsize = 1024;
          }

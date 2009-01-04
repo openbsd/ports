@@ -1,6 +1,6 @@
-$OpenBSD: patch-corba_make_common_shared_Defs-utils_gmk,v 1.1 2008/03/19 18:05:43 kurt Exp $
---- corba/make/common/shared/Defs-utils.gmk.orig	Tue Feb 26 21:56:19 2008
-+++ corba/make/common/shared/Defs-utils.gmk	Tue Feb 26 22:06:55 2008
+$OpenBSD: patch-corba_make_common_shared_Defs-utils_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- corba/make/common/shared/Defs-utils.gmk.orig	Thu Oct 23 03:40:16 2008
++++ corba/make/common/shared/Defs-utils.gmk	Mon Dec 22 16:26:52 2008
 @@ -53,6 +53,13 @@ ifeq ($(PLATFORM),linux)
    UTILS_DEVTOOL_PATH=$(USRBIN_PATH)
  endif
@@ -9,57 +9,35 @@ $OpenBSD: patch-corba_make_common_shared_Defs-utils_gmk,v 1.1 2008/03/19 18:05:4
 +  UTILS_COMMAND_PATH=$(UNIXCOMMAND_PATH)
 +  UTILS_USR_BIN_PATH=$(USRBIN_PATH)
 +  UTILS_CCS_BIN_PATH=$(USRBIN_PATH)
-+  UTILS_DEVTOOL_PATH=$(USRBIN_PATH)
++  UTILS_DEVTOOL_PATH=$(DEVTOOLS_PATH)
 +endif
 +
  ifeq ($(PLATFORM),solaris)
    UTILS_COMMAND_PATH=$(UNIXCOMMAND_PATH)
    UTILS_USR_BIN_PATH=$(UNIXCOMMAND_PATH)
-@@ -81,7 +88,11 @@ FINDBUGS = $(FINDBUGS_HOME)/bin/findbugs
- ADB            = $(UTILS_COMMAND_PATH)adb
- AR             = $(UTILS_CCS_BIN_PATH)ar
- AS             = $(UTILS_CCS_BIN_PATH)as
+@@ -189,6 +196,25 @@ ifeq ($(PLATFORM),linux)
+   NM             = $(UTILS_USR_BIN_PATH)nm
+   STRIP          = $(UTILS_USR_BIN_PATH)strip
+   YACC           = $(UTILS_USR_BIN_PATH)yacc
++endif
++
++# BSD specific
 +ifeq ($(PLATFORM),bsd)
 +BASENAME       = $(UTILS_USR_BIN_PATH)basename
-+else
- BASENAME       = $(UTILS_COMMAND_PATH)basename
-+endif
- CAT            = $(UTILS_COMMAND_PATH)cat
- CHMOD          = $(UTILS_COMMAND_PATH)chmod
- CMP            = $(UTILS_USR_BIN_PATH)cmp
-@@ -96,7 +107,11 @@ DIFF           = $(UTILS_USR_BIN_PATH)diff
- DIRNAME        = $(UTILS_USR_BIN_PATH)dirname
- ECHO           = $(UTILS_COMMAND_PATH)echo
- EGREP          = $(UTILS_COMMAND_PATH)egrep
-+ifeq ($(PLATFORM),bsd)
++EGREP          = $(UTILS_USR_BIN_PATH)egrep
 +EXPR           = $(UTILS_COMMAND_PATH)expr
-+else
- EXPR           = $(UTILS_USR_BIN_PATH)expr
-+endif
- FILE           = $(UTILS_USR_BIN_PATH)file
- FIND           = $(UTILS_USR_BIN_PATH)find
- FMT            = $(UTILS_COMMAND_PATH)fmt
-@@ -127,7 +142,11 @@ RMDIR          = $(UTILS_COMMAND_PATH)rmdir
- RPM            = $(UTILS_COMMAND_PATH)rpm
- RPMBUILD       = $(UTILS_COMMAND_PATH)rpmbuild
- SCCS           = $(UTILS_CCS_BIN_PATH)sccs
-+ifeq ($(PLATFORM),bsd)
++FMT            = $(UTILS_USR_BIN_PATH)fmt
++GREP           = $(UTILS_USR_BIN_PATH)grep
++GUNZIP         = $(UTILS_USR_BIN_PATH)gunzip
++ID             = $(UTILS_USR_BIN_PATH)id
++MSGFMT         = $(UTILS_DEVTOOL_PATH)msgfmt
 +SED            = $(UTILS_USR_BIN_PATH)sed
-+else
- SED            = $(UTILS_COMMAND_PATH)sed
-+endif
- SH             = $(UTILS_COMMAND_PATH)sh
- SHOWREV        = $(UTILS_USR_BIN_PATH)showrev
- SORT           = $(UTILS_COMMAND_PATH)sort
-@@ -135,7 +154,11 @@ STRIP          = $(UTILS_CCS_BIN_PATH)strip
- TAIL           = $(UTILS_USR_BIN_PATH)tail
- TAR            = $(UTILS_COMMAND_PATH)tar
- TEST           = $(UTILS_USR_BIN_PATH)test
-+ifeq ($(PLATFORM),bsd)
++SORT           = $(UTILS_USR_BIN_PATH)sort
 +TOUCH          = $(UTILS_USR_BIN_PATH)touch
-+else
- TOUCH          = $(UTILS_COMMAND_PATH)touch
-+endif
- TR             = $(UTILS_USR_BIN_PATH)tr
- TRUE           = $(UTILS_COMMAND_PATH)true
- UNAME          = $(UTILS_COMMAND_PATH)uname
++TEST           = $(UTILS_COMMAND_PATH)test
++TRUE           = $(UTILS_USR_BIN_PATH)true
++UNAME          = $(UTILS_USR_BIN_PATH)uname
++UNZIP          = $(UTILS_DEVTOOL_PATH)unzip
+ endif
+ 
+ # Solaris specific

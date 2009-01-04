@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_io_UnixFileSystem_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/java/io/UnixFileSystem_md.c.orig	Tue Dec  4 04:05:20 2007
-+++ jdk/src/solaris/native/java/io/UnixFileSystem_md.c	Wed Dec  5 17:37:36 2007
+$OpenBSD: patch-jdk_src_solaris_native_java_io_UnixFileSystem_md_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/src/solaris/native/java/io/UnixFileSystem_md.c.orig	Thu Jul 17 03:43:47 2008
++++ jdk/src/solaris/native/java/io/UnixFileSystem_md.c	Sat Aug  2 17:07:49 2008
 @@ -27,7 +27,8 @@
  #include <sys/types.h>
  #include <sys/time.h>
@@ -16,88 +16,22 @@ $OpenBSD: patch-jdk_src_solaris_native_java_io_UnixFileSystem_md_c,v 1.1 2008/03
  #include "java_io_UnixFileSystem.h"
  
 +#if defined(_ALLBSD_SOURCE)
-+#define HAVE_LARGEFILE
 +#define dirent64 dirent
 +#define readdir64 readdir
++#define stat64 stat
 +#endif
  
  /* -- Field IDs -- */
  
-@@ -61,6 +67,8 @@ Java_java_io_UnixFileSystem_initIDs(JNIEnv *env, jclas
- 
- /* -- Large-file support -- */
- 
-+#ifndef HAVE_LARGEFILE
-+
- /* LINUX_FIXME: ifdef __solaris__ here is wrong.  We need to move the
-  * definition of stat64 into a solaris_largefile.h and create a
-  * linux_largefile.h with a good stat64 structure to compile on
-@@ -121,6 +129,7 @@ static void init64IO(void) {
-     dlclose(handle);
- }
- 
-+#endif /* HAVE_LARGEFILE */
- 
- /* -- Path operations -- */
- 
-@@ -151,13 +160,16 @@ Java_java_io_UnixFileSystem_canonicalize0(JNIEnv *env,
- static jboolean
- statMode(const char *path, int *mode)
- {
-+#ifndef HAVE_LARGEFILE
-     if (stat64_ptr) {
-         struct stat64 sb;
-         if (((*stat64_ptr)(path, &sb)) == 0) {
-             *mode = sb.st_mode;
-             return JNI_TRUE;
-         }
--    } else {
-+    } else
-+#endif
-+    {
-         struct stat sb;
-         if (stat(path, &sb) == 0) {
-             *mode = sb.st_mode;
-@@ -266,17 +278,21 @@ Java_java_io_UnixFileSystem_getLastModifiedTime(JNIEnv
-     jlong rv = 0;
- 
-     WITH_FIELD_PLATFORM_STRING(env, file, ids.path, path) {
-+#ifndef HAVE_LARGEFILE
-         if (stat64_ptr) {
-             struct stat64 sb;
-             if (((*stat64_ptr)(path, &sb)) == 0) {
-                 rv = 1000 * (jlong)sb.st_mtime;
-             }
-         } else {
-+#endif
-             struct stat sb;
-             if (stat(path, &sb) == 0) {
-                 rv = 1000 * (jlong)sb.st_mtime;
-             }
-+#ifndef HAVE_LARGEFILE
-         }
-+#endif
-     } END_PLATFORM_STRING(env, path);
+@@ -140,7 +146,6 @@ Java_java_io_UnixFileSystem_checkAccess(JNIEnv *env, j
      return rv;
  }
-@@ -289,12 +305,15 @@ Java_java_io_UnixFileSystem_getLength(JNIEnv *env, job
-     jlong rv = 0;
  
-     WITH_FIELD_PLATFORM_STRING(env, file, ids.path, path) {
-+#ifndef HAVE_LARGEFILE
-         if (stat64_ptr) {
-             struct stat64 sb;
-             if (((*stat64_ptr)(path, &sb)) == 0) {
-                 rv = sb.st_size;
-             }
--        } else {
-+        } else
-+#endif
-+        {
-             struct stat sb;
-             if (stat(path, &sb) == 0) {
-                 rv = sb.st_size;
-@@ -378,6 +397,9 @@ Java_java_io_UnixFileSystem_list(JNIEnv *env, jobject 
+-
+ JNIEXPORT jboolean JNICALL
+ Java_java_io_UnixFileSystem_setPermission(JNIEnv *env, jobject this,
+                                           jobject file,
+@@ -292,6 +297,9 @@ Java_java_io_UnixFileSystem_list(JNIEnv *env, jobject 
      if (rv == NULL) goto error;
  
      /* Scan the directory */
@@ -107,16 +41,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_io_UnixFileSystem_md_c,v 1.1 2008/03
      while ((readdir64_r(dir, ptr, &result) == 0)  && (result != NULL)) {
          jstring name;
          if (!strcmp(ptr->d_name, ".") || !strcmp(ptr->d_name, ".."))
-@@ -483,7 +505,7 @@ Java_java_io_UnixFileSystem_setLastModifiedTime(JNIEnv
- #endif
- 
-         /* Preserve access time */
--#ifdef __linux__
-+#if defined(__linux__) || defined(_ALLBSD_SOURCE)
-         struct stat sb;
- 
-         if (stat(path, &sb) == 0) {
-@@ -534,20 +556,20 @@ Java_java_io_UnixFileSystem_getSpace(JNIEnv *env, jobj
+@@ -414,20 +422,20 @@ Java_java_io_UnixFileSystem_getSpace(JNIEnv *env, jobj
      jlong rv = 0L;
  
      WITH_FIELD_PLATFORM_STRING(env, file, ids.path, path) {

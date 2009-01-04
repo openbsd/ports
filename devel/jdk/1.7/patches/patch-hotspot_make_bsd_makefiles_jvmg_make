@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_jvmg_make,v 1.1.1.1 2007/05/08 17:06:18 kurt Exp $
---- hotspot/build/bsd/makefiles/jvmg.make.orig	Mon Apr 30 09:47:42 2007
-+++ hotspot/build/bsd/makefiles/jvmg.make	Mon Apr 30 09:49:03 2007
+$OpenBSD: patch-hotspot_make_bsd_makefiles_jvmg_make,v 1.1 2009/01/04 23:25:16 kurt Exp $
+--- hotspot/make/bsd/makefiles/jvmg.make.orig	Sat Aug  2 16:12:30 2008
++++ hotspot/make/bsd/makefiles/jvmg.make	Sat Aug  2 16:15:29 2008
 @@ -24,6 +24,8 @@
  
  # Sets make macros for making debug version of VM

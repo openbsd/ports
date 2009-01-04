@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_lang_UNIXProcess_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/java/lang/UNIXProcess_md.c.orig	Tue Dec  4 04:05:20 2007
-+++ jdk/src/solaris/native/java/lang/UNIXProcess_md.c	Wed Dec  5 17:46:43 2007
+$OpenBSD: patch-jdk_src_solaris_native_java_lang_UNIXProcess_md_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/src/solaris/native/java/lang/UNIXProcess_md.c.orig	Thu Jul 17 03:43:47 2008
++++ jdk/src/solaris/native/java/lang/UNIXProcess_md.c	Sat Aug  2 17:10:19 2008
 @@ -40,7 +40,11 @@
  #include <stdlib.h>
  #include <sys/types.h>
@@ -157,8 +157,8 @@ $OpenBSD: patch-jdk_src_solaris_native_java_lang_UNIXProcess_md_c,v 1.1 2008/03/
  
  static void
  moveDescriptor(int fd_from, int fd_to)
-@@ -479,10 +603,15 @@ closeSafely(int fd)
-         close(fd);
+@@ -510,10 +634,15 @@ readFully(int fd, void *buf, size_t nbyte)
+     }
  }
  
 +#if defined(__FreeBSD__)
@@ -173,7 +173,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_lang_UNIXProcess_md_c,v 1.1 2008/03/
  
  JNIEXPORT jint JNICALL
  Java_java_lang_UNIXProcess_forkAndExec(JNIEnv *env,
-@@ -544,6 +673,28 @@ Java_java_lang_UNIXProcess_forkAndExec(JNIEnv *env,
+@@ -578,6 +707,28 @@ Java_java_lang_UNIXProcess_forkAndExec(JNIEnv *env,
      if (resultPid == 0) {
          /* Child process */
  
@@ -199,6 +199,6 @@ $OpenBSD: patch-jdk_src_solaris_native_java_lang_UNIXProcess_md_c,v 1.1 2008/03/
 +    }
 +#endif
 + 
-         /* Close the parent sides of the pipe.
-            Give the child sides of the pipes the right fileno's.
+         /* Close the parent sides of the pipes.
             Closing pipe fds here is redundant, since closeDescriptors()
+            would do it anyways, but a little paranoia is a good thing. */

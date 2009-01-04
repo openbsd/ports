@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2008/12/22 15:06:39 kurt Exp $
+# $OpenBSD: Makefile,v 1.24 2009/01/04 23:25:15 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -6,12 +6,12 @@ ONLY_FOR_ARCHS=	i386 amd64
 COMMENT-main=	Java2(TM) SE Dev Kit v${V} Early Access ${B}
 COMMENT-jre=	Java2(TM) SE Runtime Environment v${V} Early Access ${B}
 V=		1.7.0.00
-B=		b24
-DISTFILES=	openjdk7-${B}.tar.bz2 \
-		jdk-7-icedtea-plugs-1.6.tar.gz
+B=		b42
+DISTFILES=	openjdk-7-ea-src-${B}-19_dec_2008.zip \
+		jdk-7-icedtea-plugs-1.6a.tar.gz:0
 PKGNAME=	jdk-${V}
-PKGNAME-main=	jdk-${V}${B}p6
-PKGNAME-jre=	jre-${V}${B}p6
+PKGNAME-main=	jdk-${V}${B}
+PKGNAME-jre=	jre-${V}${B}
 
 CATEGORIES=	devel/jdk java
 
@@ -23,7 +23,8 @@ FLAVOR?=
 
 HOMEPAGE=	https://jdk7.dev.java.net/
 
-MASTER_SITES=	http://www.intricatesoftware.com/distfiles/
+MASTER_SITES=	http://www.java.net/download/openjdk/jdk7/promoted/${B}/
+MASTER_SITES0=	http://www.intricatesoftware.com/distfiles/
 
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
@@ -57,6 +58,7 @@ MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		ALT_FREETYPE_HEADERS_PATH=${X11BASE}/include \
 		ALT_FREETYPE_LIB_PATH=${X11BASE}/lib \
 		ALT_BINARY_PLUGS_PATH=${WRKDIR}/jdk-7-icedtea-plugs \
+		ALT_DEVTOOLS_PATH=${LOCALBASE}/bin \
 		ANT_HOME=${LOCALBASE} \
 		DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
 		NO_DOCS=true \
@@ -76,7 +78,7 @@ JREHOME=	jre-1.7.0
 
 SUBST_VARS=	JDKHOME JREHOME
 
-WRKDIST=	${WRKDIR}/openjdk7-${B}
+WRKDIST=	${WRKDIR}/openjdk
 JVMARCH=	${MACHINE_ARCH:S/i386/i586/}
 BUILDDIR=	${WRKDIST}/build/bsd-${JVMARCH}
 JDKIMAGEDIR=	${BUILDDIR}/j2sdk-image
@@ -91,8 +93,8 @@ PKG_ARGS+=	-Dclient_vm=0
 COPYDIRS=	hotspot/src/os/linux/launcher \
 		hotspot/src/os/linux/vm \
 		hotspot/src/os_cpu/linux_x86/vm \
-		hotspot/build/linux \
-		hotspot/build/linux/makefiles \
+		hotspot/make/linux \
+		hotspot/make/linux/makefiles \
 		jdk/src/linux/doc/man
 
 COPYFILES=	corba/make/common/Defs-linux.gmk \

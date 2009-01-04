@@ -1,0 +1,9 @@
+$OpenBSD: patch-hotspot_make_bsd_platform_sparc,v 1.1 2009/01/04 23:25:16 kurt Exp $
+--- hotspot/make/bsd/platform_sparc.orig	Fri Aug  8 12:46:51 2008
++++ hotspot/make/bsd/platform_sparc	Fri Aug  8 12:46:59 2008
+@@ -12,4 +12,4 @@ lib_arch = sparc
+ 
+ compiler = gcc
+ 
+-sysdefs = -DLINUX -D_GNU_SOURCE -DSPARC
++sysdefs = -D_ALLBSD_SOURCE -D_GNU_SOURCE -DSPARC

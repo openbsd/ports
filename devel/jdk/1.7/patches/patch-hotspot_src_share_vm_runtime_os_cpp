@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_share_vm_runtime_os_cpp,v 1.2 2008/03/19 18:05:43 kurt Exp $
---- hotspot/src/share/vm/runtime/os.cpp.orig	Tue Oct 30 05:00:52 2007
-+++ hotspot/src/share/vm/runtime/os.cpp	Wed Nov  7 15:26:54 2007
-@@ -152,7 +152,11 @@ char* os::iso8601_time(char* buffer, size_t buffer_len
+$OpenBSD: patch-hotspot_src_share_vm_runtime_os_cpp,v 1.3 2009/01/04 23:25:16 kurt Exp $
+--- hotspot/src/share/vm/runtime/os.cpp.orig	Thu Jul 17 03:40:34 2008
++++ hotspot/src/share/vm/runtime/os.cpp	Sat Aug  2 16:12:52 2008
+@@ -81,7 +81,11 @@ char* os::iso8601_time(char* buffer, size_t buffer_len
    }
    // Save the results of localtime
    const struct tm time_struct = *time_struct_temp;

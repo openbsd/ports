@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_src_share_native_common_check_code_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/share/native/common/check_code.c.orig	Tue Oct 30 05:03:37 2007
-+++ jdk/src/share/native/common/check_code.c	Wed Nov  7 19:09:39 2007
-@@ -1069,7 +1069,7 @@ verify_method(context_type *context, jclass cb, int me
+$OpenBSD: patch-jdk_src_share_native_common_check_code_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/src/share/native/common/check_code.c.orig	Thu Sep 11 03:44:46 2008
++++ jdk/src/share/native/common/check_code.c	Fri Sep 12 17:36:40 2008
+@@ -1066,7 +1066,7 @@ verify_method(context_type *context, jclass cb, int me
   * Make sure that branches don't go into the middle of nowhere.
   */
  
@@ -10,23 +10,23 @@ $OpenBSD: patch-jdk_src_share_native_common_check_code_c,v 1.1 2008/03/19 18:05:
  {
      unsigned char *p = (unsigned char *)&n;
      return (p[0] << 24) | (p[1] << 16) | (p[2] << 8) | p[3];
-@@ -1148,26 +1148,26 @@ verify_opcode_operands(context_type *context, unsigned
+@@ -1145,26 +1145,26 @@ verify_opcode_operands(context_type *context, unsigned
              }
          }
-         if (opcode == opc_tableswitch) {
+         if (opcode == JVM_OPC_tableswitch) {
 -            keys = ntohl(lpc[2]) -  ntohl(lpc[1]) + 1;
-+	    keys = _ck_ntohl(lpc[2]) -  _ck_ntohl(lpc[1]) + 1;
++            keys = _ck_ntohl(lpc[2]) -  _ck_ntohl(lpc[1]) + 1;
              delta = 1;
          } else {
 -            keys = ntohl(lpc[1]); /* number of pairs */
-+	    keys = _ck_ntohl(lpc[1]); /* number of pairs */
++            keys = _ck_ntohl(lpc[1]); /* number of pairs */
              delta = 2;
              /* Make sure that the tableswitch items are sorted */
              for (k = keys - 1, lptr = &lpc[2]; --k >= 0; lptr += 2) {
 -                int this_key = ntohl(lptr[0]);  /* NB: ntohl may be unsigned */
 -                int next_key = ntohl(lptr[2]);
-+		int this_key = _ck_ntohl(lptr[0]);	/* NB: _ck_ntohl may be unsigned */
-+		int next_key = _ck_ntohl(lptr[2]);
++                int this_key = _ck_ntohl(lptr[0]);  /* NB: ntohl may be unsigned */
++                int next_key = _ck_ntohl(lptr[2]);
                  if (this_key >= next_key) {
                      CCerror(context, "Unsorted lookup switch");
                  }
@@ -34,17 +34,17 @@ $OpenBSD: patch-jdk_src_share_native_common_check_code_c,v 1.1 2008/03/19 18:05:
          }
          saved_operand = NEW(int, keys + 2);
 -        if (!isLegalTarget(context, offset + ntohl(lpc[0])))
-+	if (!isLegalTarget(context, offset + _ck_ntohl(lpc[0]))) 
++        if (!isLegalTarget(context, offset + _ck_ntohl(lpc[0])))
              CCerror(context, "Illegal default target in switch");
 -        saved_operand[keys + 1] = code_data[offset + ntohl(lpc[0])];
-+	saved_operand[keys + 1] = code_data[offset + _ck_ntohl(lpc[0])];
++        saved_operand[keys + 1] = code_data[offset + _ck_ntohl(lpc[0])];
          for (k = keys, lptr = &lpc[3]; --k >= 0; lptr += delta) {
 -            int target = offset + ntohl(lptr[0]);
-+	    int target = offset + _ck_ntohl(lptr[0]);
++            int target = offset + _ck_ntohl(lptr[0]);
              if (!isLegalTarget(context, target))
-                 CCerror(context, "Illegal branch in opc_tableswitch");
+                 CCerror(context, "Illegal branch in tableswitch");
              saved_operand[k + 1] = code_data[target];
-@@ -1615,7 +1615,7 @@ static int instruction_length(unsigned char *iptr, uns
+@@ -1613,7 +1613,7 @@ static int instruction_length(unsigned char *iptr, uns
              if (lpc + 2 >= (int *)end) {
                  return -1; /* do not read pass the end */
              }
@@ -53,7 +53,7 @@ $OpenBSD: patch-jdk_src_share_native_common_check_code_c,v 1.1 2008/03/19 18:05:
              if ((index < 0) || (index > 65535)) {
                  return -1;      /* illegal */
              } else {
-@@ -1628,7 +1628,7 @@ static int instruction_length(unsigned char *iptr, uns
+@@ -1626,7 +1626,7 @@ static int instruction_length(unsigned char *iptr, uns
              int npairs;
              if (lpc + 1 >= (int *)end)
                  return -1; /* do not read pass the end */

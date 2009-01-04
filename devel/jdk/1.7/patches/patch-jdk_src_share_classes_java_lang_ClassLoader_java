@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_share_classes_java_lang_ClassLoader_java,v 1.1 2008/03/19 18:05:45 kurt Exp $
---- jdk/src/share/classes/java/lang/ClassLoader.java.orig	Tue Oct 30 05:01:08 2007
-+++ jdk/src/share/classes/java/lang/ClassLoader.java	Wed Nov  7 18:53:13 2007
+$OpenBSD: patch-jdk_src_share_classes_java_lang_ClassLoader_java,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/src/share/classes/java/lang/ClassLoader.java.orig	Thu Jul 17 03:43:19 2008
++++ jdk/src/share/classes/java/lang/ClassLoader.java	Fri Aug  8 16:13:51 2008
 @@ -27,6 +27,7 @@ package java.lang;
  import java.io.InputStream;
  import java.io.IOException;
@@ -9,7 +9,7 @@ $OpenBSD: patch-jdk_src_share_classes_java_lang_ClassLoader_java,v 1.1 2008/03/1
  import java.lang.reflect.Constructor;
  import java.lang.reflect.InvocationTargetException;
  import java.net.MalformedURLException;
-@@ -47,6 +48,7 @@ import java.util.Set;
+@@ -48,6 +49,7 @@ import java.util.Set;
  import java.util.Stack;
  import java.util.Map;
  import java.util.Vector;
@@ -17,13 +17,13 @@ $OpenBSD: patch-jdk_src_share_classes_java_lang_ClassLoader_java,v 1.1 2008/03/1
  import sun.misc.ClassFileTransformer;
  import sun.misc.CompoundEnumeration;
  import sun.misc.Resource;
-@@ -1699,18 +1701,43 @@ public abstract class ClassLoader {
+@@ -1706,18 +1708,42 @@ public abstract class ClassLoader {
      }
  
      private static boolean loadLibrary0(Class fromClass, final File file) {
--        Boolean exists = (Boolean)
-+	File libfile = (File)
-             AccessController.doPrivileged(new PrivilegedAction() {
+-        boolean exists = AccessController.doPrivileged(
++	File libfile = (File) AccessController.doPrivileged(
+             new PrivilegedAction<Object>() {
 +		class LibraryFileFilter implements FilenameFilter {
 +		    String lib_name;
 +		    LibraryFileFilter(String lib_name) { this.lib_name = lib_name; }
@@ -36,7 +36,10 @@ $OpenBSD: patch-jdk_src_share_classes_java_lang_ClassLoader_java,v 1.1 2008/03/1
 +		}
 +
                  public Object run() {
--                    return new Boolean(file.exists());
+-                    return file.exists() ? Boolean.TRUE : null;
+-                }})
+-            != null;
+-        if (!exists) {
 +		    if (file.exists())
 +			return file;
 +		    // if file is unversioned, check for a versioned one in same dir
@@ -52,16 +55,14 @@ $OpenBSD: patch-jdk_src_share_classes_java_lang_ClassLoader_java,v 1.1 2008/03/1
 +			}
 +		    }
 +		    return null;
-                 }
-             });
--        if (!exists.booleanValue()) {
++                }});
 +	if (libfile == null) {
              return false;
          }
          String name;
          try {
 -            name = file.getCanonicalPath();
-+	    name = libfile.getCanonicalPath();
++            name = libfile.getCanonicalPath();
          } catch (IOException e) {
              return false;
          }

@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.4 2008/12/22 13:22:12 kurt Exp $
---- hotspot/build/bsd/makefiles/gcc.make.orig	Sat Dec 20 22:26:49 2008
-+++ hotspot/build/bsd/makefiles/gcc.make	Sat Dec 20 23:52:53 2008
+$OpenBSD: patch-hotspot_make_bsd_makefiles_gcc_make,v 1.1 2009/01/04 23:25:16 kurt Exp $
+--- hotspot/make/bsd/makefiles/gcc.make.orig	Mon Dec 22 21:13:31 2008
++++ hotspot/make/bsd/makefiles/gcc.make	Mon Dec 22 23:13:24 2008
 @@ -25,9 +25,10 @@
  #------------------------------------------------------------------------
  # CC, CPP & AS
@@ -15,19 +15,7 @@ $OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.4 2008/12/22 13:22:12 k
  
  # -dumpversion in gcc-2.91 shows "egcs-2.91.66". In later version, it only
  # prints the numbers (e.g. "2.95", "3.2.1")
-@@ -50,19 +51,12 @@ PICFLAG = -fPIC
- 
- VM_PICFLAG/LIBJVM = $(PICFLAG)
- VM_PICFLAG/AOUT   =
--
--ifneq ($(BUILDARCH), i486)
- VM_PICFLAG        = $(VM_PICFLAG/$(LINK_INTO))
--else
--# PIC has significant overhead on x86, build nonpic VM for now.
--# Link JVM at a "good" base location to avoid unnecessary .text patching.
--JVM_BASE_ADDR     = 0x06000000
--endif
- 
+@@ -55,7 +56,7 @@ VM_PICFLAG        = $(VM_PICFLAG/$(LINK_INTO))
  CFLAGS += $(VM_PICFLAG)
  CFLAGS += -fno-rtti
  CFLAGS += -fno-exceptions
@@ -36,16 +24,16 @@ $OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.4 2008/12/22 13:22:12 k
  CFLAGS += -fcheck-new
  
  ARCHFLAG = $(ARCHFLAG/$(BUILDARCH))
-@@ -90,7 +84,7 @@ else
+@@ -83,7 +84,7 @@ else
  endif
  
  # Compiler warnings are treated as errors
 -WARNINGS_ARE_ERRORS = -Werror
 +#WARNINGS_ARE_ERRORS = -Werror
+ 
  # Except for a few acceptable ones
- ACCEPTABLE_WARNINGS = -Wpointer-arith -Wconversion -Wsign-compare
- CFLAGS_WARN/DEFAULT = $(WARNINGS_ARE_ERRORS) $(ACCEPTABLE_WARNINGS)
-@@ -136,7 +130,7 @@ MAPFLAG = -Xlinker --version-script=FILENAME
+ # Since GCC 4.3, -Wconversion has changed its meanings to warn these implicit
+@@ -138,7 +139,7 @@ MAPFLAG = -Xlinker --version-script=FILENAME
  SONAMEFLAG = -Xlinker -soname=SONAME
  
  # Build shared library

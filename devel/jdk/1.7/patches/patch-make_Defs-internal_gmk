@@ -1,7 +1,7 @@
-$OpenBSD: patch-make_Defs-internal_gmk,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- make/Defs-internal.gmk.orig	Thu Feb 28 13:30:52 2008
-+++ make/Defs-internal.gmk	Thu Feb 28 13:31:16 2008
-@@ -208,7 +208,6 @@ endif
+$OpenBSD: patch-make_Defs-internal_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- make/Defs-internal.gmk.orig	Thu Sep 11 03:40:08 2008
++++ make/Defs-internal.gmk	Fri Sep 12 17:45:13 2008
+@@ -215,7 +215,6 @@ endif
  
  # Common make arguments (supplied to all component builds)
  COMMON_BUILD_ARGUMENTS = \

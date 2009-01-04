@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_share_transport_socket_socketTransport_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/share/transport/socket/socketTransport.c.orig	Tue Oct 30 05:03:55 2007
-+++ jdk/src/share/transport/socket/socketTransport.c	Wed Nov  7 19:18:45 2007
+$OpenBSD: patch-jdk_src_share_transport_socket_socketTransport_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/src/share/transport/socket/socketTransport.c.orig	Thu Sep 11 03:44:51 2008
++++ jdk/src/share/transport/socket/socketTransport.c	Fri Sep 12 18:07:24 2008
 @@ -65,6 +65,9 @@ static jdwpTransportEnv single_env = (jdwpTransportEnv
  #define HEADER_SIZE     11
  #define MAX_DATA_SIZE 1000
@@ -11,25 +11,25 @@ $OpenBSD: patch-jdk_src_share_transport_socket_socketTransport_c,v 1.1 2008/03/1
  /*
   * Record the last error for this thread.
   */
-@@ -153,7 +156,7 @@ handshake(int fd, jlong timeout) {
+@@ -154,7 +157,7 @@ handshake(int fd, jlong timeout) {
          }
          buf = b;
          buf += received;
--        n = dbgsysRecv(fd, buf, strlen(hello)-received, 0);
-+	n = recv_fully(fd, buf, strlen(hello)-received);
+-        n = dbgsysRecv(fd, buf, (int)strlen(hello)-received, 0);
++        n = recv_fully(fd, buf, (int)strlen(hello)-received);
          if (n == 0) {
              setLastError(0, "handshake failed - connection prematurally closed");
              return JDWPTRANSPORT_ERROR_IO_ERROR;
-@@ -179,7 +182,7 @@ handshake(int fd, jlong timeout) {
+@@ -180,7 +183,7 @@ handshake(int fd, jlong timeout) {
          }
      }
  
--    if (dbgsysSend(fd, hello, strlen(hello), 0) != (int)strlen(hello)) {
-+    if (send_fully(fd, hello, strlen(hello)) != (int)strlen(hello)) {
+-    if (dbgsysSend(fd, hello, (int)strlen(hello), 0) != (int)strlen(hello)) {
++    if (send_fully(fd, hello, (int)strlen(hello)) != (int)strlen(hello)) {
          RETURN_IO_ERROR("send failed during handshake");
      }
      return JDWPTRANSPORT_ERROR_NONE;
-@@ -554,19 +557,19 @@ socketTransport_writePacket(jdwpTransportEnv* env, con
+@@ -555,19 +558,19 @@ socketTransport_writePacket(jdwpTransportEnv* env, con
      /* Do one send for short packets, two for longer ones */
      if (data_len <= MAX_DATA_SIZE) {
          memcpy(header + HEADER_SIZE, data, data_len);
@@ -53,7 +53,7 @@ $OpenBSD: patch-jdk_src_share_transport_socket_socketTransport_c,v 1.1 2008/03/1
              RETURN_IO_ERROR("send failed");
          }
      }
-@@ -574,13 +577,33 @@ socketTransport_writePacket(jdwpTransportEnv* env, con
+@@ -575,13 +578,33 @@ socketTransport_writePacket(jdwpTransportEnv* env, con
      return JDWPTRANSPORT_ERROR_NONE;
  }
  

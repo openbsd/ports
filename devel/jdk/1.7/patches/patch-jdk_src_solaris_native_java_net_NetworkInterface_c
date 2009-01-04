@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/java/net/NetworkInterface.c.orig	Sat Dec  1 00:00:00 2007
-+++ jdk/src/solaris/native/java/net/NetworkInterface.c	Tue Feb 26 18:50:58 2008
+$OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/src/solaris/native/java/net/NetworkInterface.c.orig	Thu Sep 11 03:44:53 2008
++++ jdk/src/solaris/native/java/net/NetworkInterface.c	Fri Sep 12 17:45:12 2008
 @@ -23,13 +23,13 @@
   * have any questions.
   */
@@ -37,7 +37,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.1 2008/03
  
  #ifdef __linux__
  #define ifr_index ifr_ifindex
-@@ -584,6 +597,7 @@ static netif *enumInterfaces(JNIEnv *env) {
+@@ -583,6 +596,7 @@ static netif *enumInterfaces(JNIEnv *env) {
  }
  
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.1 2008/03
  /*
   * Enumerates and returns all IPv4 interfaces
   */
-@@ -694,7 +708,177 @@ static netif *enumIPv4Interfaces(JNIEnv *env, netif *i
+@@ -693,7 +707,177 @@ static netif *enumIPv4Interfaces(JNIEnv *env, netif *i
      return ifs;
  }
  
@@ -223,7 +223,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.1 2008/03
  #if defined(__solaris__) && defined(AF_INET6)
  /*
   * Enumerates and returns all IPv6 interfaces on Solaris
-@@ -1014,7 +1198,13 @@ netif *addif(JNIEnv *env, netif *ifs, char *if_name, i
+@@ -1010,7 +1194,13 @@ netif *addif(JNIEnv *env, netif *ifs, char *if_name, i
              JNU_ThrowOutOfMemoryError(env, "heap allocation failed");
              return ifs;
          }
@@ -237,7 +237,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.1 2008/03
          currif->addr = NULL;
          currif->childs = NULL;
          currif->virtual = isVirtual;
-@@ -1302,6 +1492,31 @@ int getMacAddress(JNIEnv *env, const struct in_addr* a
+@@ -1321,6 +1511,31 @@ int getMacAddress(JNIEnv *env, const struct in_addr* a
     * All bytes to 0 means no hardware address.
     */
    return -1;
@@ -269,7 +269,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.1 2008/03
  #else
    struct arpreq arpreq;
    struct sockaddr_in* sin;
-@@ -1467,7 +1682,7 @@ JNIEXPORT jint JNICALL Java_java_net_NetworkInterface_
+@@ -1486,7 +1701,7 @@ JNIEXPORT jint JNICALL Java_java_net_NetworkInterface_
                                   "Socket creation failed");
    } else {
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_make_jpda_transport_socket_Makefile,v 1.1 2008/03/19 18:05:45 kurt Exp $
---- jdk/make/jpda/transport/socket/Makefile.orig	Tue Oct 30 05:04:24 2007
-+++ jdk/make/jpda/transport/socket/Makefile	Wed Nov  7 18:08:26 2007
-@@ -45,6 +45,11 @@ ifeq ($(PLATFORM), linux)
+$OpenBSD: patch-jdk_make_jpda_transport_socket_Makefile,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/make/jpda/transport/socket/Makefile.orig	Mon Aug  4 03:43:02 2008
++++ jdk/make/jpda/transport/socket/Makefile	Wed Aug 13 13:39:37 2008
+@@ -40,6 +40,11 @@ ifeq ($(PLATFORM), linux)
    OTHER_LDLIBS += -lnsl $(LIBSOCKET) -lpthread
  endif
  

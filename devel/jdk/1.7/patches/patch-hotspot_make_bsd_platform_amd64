@@ -1,0 +1,9 @@
+$OpenBSD: patch-hotspot_make_bsd_platform_amd64,v 1.1 2009/01/04 23:25:16 kurt Exp $
+--- hotspot/make/bsd/platform_amd64.orig	Fri Aug  8 12:45:41 2008
++++ hotspot/make/bsd/platform_amd64	Fri Aug  8 12:46:04 2008
+@@ -12,4 +12,4 @@ lib_arch = amd64
+ 
+ compiler = gcc
+ 
+-sysdefs = -DLINUX -D_GNU_SOURCE -DAMD64
++sysdefs = -D_ALLBSD_SOURCE -D_GNU_SOURCE -DAMD64

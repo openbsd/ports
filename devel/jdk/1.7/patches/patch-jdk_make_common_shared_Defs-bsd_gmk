@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_common_shared_Defs-bsd_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
---- jdk/make/common/shared/Defs-bsd.gmk.orig	Wed Nov  7 14:40:30 2007
-+++ jdk/make/common/shared/Defs-bsd.gmk	Wed Nov  7 14:53:08 2007
+$OpenBSD: patch-jdk_make_common_shared_Defs-bsd_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/make/common/shared/Defs-bsd.gmk.orig	Mon Dec 22 14:34:15 2008
++++ jdk/make/common/shared/Defs-bsd.gmk	Mon Dec 22 16:25:06 2008
 @@ -54,7 +54,7 @@ $(shell if [ "$1" != "" -a -d "$1" ]; then (cd $1 && p
  endef
  
@@ -10,6 +10,15 @@ $OpenBSD: patch-jdk_make_common_shared_Defs-bsd_gmk,v 1.1 2008/03/19 18:05:45 ku
  
  # UNIXCOMMAND_PATH: path to where the most common Unix commands are.
  #  NOTE: Must end with / so that it could be empty, allowing PATH usage.
+@@ -107,7 +107,7 @@ endif
+ ifneq "$(origin ALT_DEVTOOLS_PATH)" "undefined"
+   DEVTOOLS_PATH :=$(call PrefixPath,$(ALT_DEVTOOLS_PATH))
+ else
+-  DEVTOOLS_PATH =/usr/bin/
++  DEVTOOLS_PATH =/usr/local/bin/
+ endif
+ 
+ # _BOOTDIR1: First choice for a Bootstrap JDK, previous released JDK.
 @@ -121,15 +121,7 @@ endif
  BUILD_HEADLESS = true
  LIBM=-lm

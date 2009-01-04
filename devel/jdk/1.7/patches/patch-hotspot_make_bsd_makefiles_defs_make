@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_defs_make,v 1.3 2008/03/19 18:05:43 kurt Exp $
---- hotspot/build/bsd/makefiles/defs.make.orig	Wed Nov  7 12:41:30 2007
-+++ hotspot/build/bsd/makefiles/defs.make	Wed Nov  7 12:51:17 2007
+$OpenBSD: patch-hotspot_make_bsd_makefiles_defs_make,v 1.1 2009/01/04 23:25:16 kurt Exp $
+--- hotspot/make/bsd/makefiles/defs.make.orig	Sat Aug  2 16:12:30 2008
++++ hotspot/make/bsd/makefiles/defs.make	Sat Aug  2 16:15:29 2008
 @@ -79,6 +79,31 @@ ifeq ($(ARCH), x86_64) 
    endif
  endif

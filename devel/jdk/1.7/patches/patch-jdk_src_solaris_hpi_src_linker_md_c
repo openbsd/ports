@@ -1,20 +1,21 @@
-$OpenBSD: patch-jdk_src_solaris_hpi_src_linker_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/hpi/src/linker_md.c.orig	Tue Oct 30 05:04:03 2007
-+++ jdk/src/solaris/hpi/src/linker_md.c	Wed Nov  7 18:16:19 2007
-@@ -45,12 +45,6 @@
+$OpenBSD: patch-jdk_src_solaris_hpi_src_linker_md_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/src/solaris/hpi/src/linker_md.c.orig	Thu Jul 17 03:43:47 2008
++++ jdk/src/solaris/hpi/src/linker_md.c	Sat Aug  2 17:00:24 2008
+@@ -44,11 +44,13 @@
+ #include "threads_md.h"
  #endif
  
++#ifndef _ALLBSD_SOURCE
  /*
-- * This lock protects the dl wrappers, assuring that two threads aren't
-- * in libdl at the same time.
-- */
--sys_mon_t _dl_lock;
--
--/*
-  * glibc-2.0 libdl is not MT safe.  If you are building with any glibc,
-  * chances are you might want to run the generated bits against glibc-2.0
-  * libdl.so, so always use locking for any version of glibc.
-@@ -66,7 +60,15 @@ sys_mon_t _dl_lock;
+  * This lock protects the dl wrappers, assuring that two threads aren't
+  * in libdl at the same time.
+  */
+ sys_mon_t _dl_lock;
++#endif
+ 
+ /*
+  * Solaris green threads needs to lock around libdl.so.
+@@ -57,7 +59,15 @@ sys_mon_t _dl_lock;
      #define NEED_DL_LOCK
  #endif
  
@@ -30,7 +31,7 @@ $OpenBSD: patch-jdk_src_solaris_hpi_src_linker_md_c,v 1.1 2008/03/19 18:05:46 ku
   * create a string for the JNI native function name by adding the
   * appropriate decorations.
   */
-@@ -102,7 +104,7 @@ sysBuildLibName(char *holder, int holderlen, char *pna
+@@ -93,7 +103,7 @@ sysBuildLibName(char *holder, int holderlen, char *pna
  }
  
  
@@ -39,7 +40,7 @@ $OpenBSD: patch-jdk_src_solaris_hpi_src_linker_md_c,v 1.1 2008/03/19 18:05:46 ku
      static int thr_main(void)
      {
          return -1;
-@@ -120,10 +122,10 @@ sysLoadLibrary(const char *name, char *err_buf, int er
+@@ -111,10 +121,10 @@ sysLoadLibrary(const char *name, char *err_buf, int er
  
  #ifdef NEED_DL_LOCK
      sysMonitorEnter(sysThreadSelf(), &_dl_lock);

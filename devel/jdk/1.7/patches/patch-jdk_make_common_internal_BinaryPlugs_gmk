@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_common_internal_BinaryPlugs_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
---- jdk/make/common/internal/BinaryPlugs.gmk.orig	Tue Mar 18 15:47:00 2008
-+++ jdk/make/common/internal/BinaryPlugs.gmk	Tue Mar 18 15:47:09 2008
+$OpenBSD: patch-jdk_make_common_internal_BinaryPlugs_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/make/common/internal/BinaryPlugs.gmk.orig	Thu Sep 11 03:44:06 2008
++++ jdk/make/common/internal/BinaryPlugs.gmk	Fri Sep 12 17:05:54 2008
 @@ -51,8 +51,6 @@ PLUG_JMF_CLASS_NAMES = \
  com/sun/jmx/snmp/SnmpDataTypeEnums.class \
  com/sun/jmx/snmp/SnmpDefinitions.class \
@@ -29,32 +29,22 @@ $OpenBSD: patch-jdk_make_common_internal_BinaryPlugs_gmk,v 1.1 2008/03/19 18:05:
  
  PLUG_SOUND_CLASS_NAMES = \
  com/sun/media/sound/AbstractPlayer.class \
-@@ -130,9 +120,6 @@ PLUG_AWT_CLASS_NAMES = \
- java/awt/color/CMMException.class \
- java/awt/color/ColorSpace.class \
- java/awt/color/ICC_ColorSpace.class \
--java/awt/color/ICC_Profile\$$1.class \
--java/awt/color/ICC_Profile\$$2.class \
--java/awt/color/ICC_Profile\$$3.class \
- java/awt/color/ICC_Profile.class \
- java/awt/color/ICC_ProfileGray.class \
- java/awt/color/ICC_ProfileRGB.class \
-@@ -160,10 +147,12 @@ java/awt/image/renderable/RenderableImageOp.class \
- java/awt/image/renderable/RenderableImageProducer.class \
- java/awt/image/renderable/RenderedImageFactory.class
+@@ -126,10 +116,12 @@ com/sun/media/sound/SimpleInputDeviceProvider\$$1.clas
+ com/sun/media/sound/SimpleInputDeviceProvider\$$InputDeviceInfo.class \
+ com/sun/media/sound/SimpleInputDeviceProvider.class
  
 +PLUG_GNU_CLASS_NAMES = gnu
 +
  # Class list temp files (used by both import and export of plugs)
  
  PLUG_TEMPDIR=$(ABS_TEMPDIR)/plugs
--PLUG_CLASS_AREAS = jmf sound awt
-+PLUG_CLASS_AREAS = jmf sound awt gnu
+-PLUG_CLASS_AREAS = jmf sound
++PLUG_CLASS_AREAS = jmf sound gnu
  PLUG_CLISTS = $(PLUG_CLASS_AREAS:%=$(PLUG_TEMPDIR)/%.clist)
  
  # Create jargs file command
-@@ -191,6 +180,11 @@ $(PLUG_TEMPDIR)/awt.clist:
- 	@for i in $(PLUG_AWT_CLASS_NAMES) ; do \
+@@ -152,6 +144,11 @@ $(PLUG_TEMPDIR)/sound.clist:
+ 	@for i in $(PLUG_SOUND_CLASS_NAMES) ; do \
  	  $(ECHO) "$$i" >> $@ ; \
  	done
 +$(PLUG_TEMPDIR)/gnu.clist:
@@ -65,31 +55,19 @@ $OpenBSD: patch-jdk_make_common_internal_BinaryPlugs_gmk,v 1.1 2008/03/19 18:05:
  $(PLUG_TEMPDIR)/all.clist: $(PLUG_CLISTS)
  	@$(prep-target)
  	$(CAT) $(PLUG_CLISTS) > $@
-@@ -200,6 +194,8 @@ $(PLUG_TEMPDIR)/sound.jargs: $(PLUG_TEMPDIR)/sound.cli
+@@ -159,6 +156,8 @@ $(PLUG_TEMPDIR)/jmf.jargs: $(PLUG_TEMPDIR)/jmf.clist
  	$(plug-create-jargs)
- $(PLUG_TEMPDIR)/awt.jargs: $(PLUG_TEMPDIR)/awt.clist
+ $(PLUG_TEMPDIR)/sound.jargs: $(PLUG_TEMPDIR)/sound.clist
  	$(plug-create-jargs)
 +$(PLUG_TEMPDIR)/gnu.jargs: $(PLUG_TEMPDIR)/gnu.clist
 +	$(plug-create-jargs)
  $(PLUG_TEMPDIR)/all.jargs: $(PLUG_TEMPDIR)/all.clist
  	$(plug-create-jargs)
  
-@@ -224,9 +220,9 @@ endef # import-binary-plug-file
- # Import classes command
- 
- define import-binary-plug-classes
--@$(MKDIR) -p $(CLASSDESTDIR)
-+$(MKDIR) -p $(CLASSDESTDIR)
- @$(CAT) $1 | $(SED) -e 's/^/PLUG IMPORT: /'
--($(CD) $(CLASSDESTDIR) && $(BOOT_JAR_CMD) xf $(PLUG_IMPORT_JARFILE) @$1)
-+($(CD) $(CLASSDESTDIR) && $(BOOT_JAR_CMD) xf $(PLUG_IMPORT_JARFILE) `$(CAT) $1`)
- endef # import-binary-plug-classes
- 
- # Import specific area classes (the classes are always created)
-@@ -237,13 +233,16 @@ import-binary-plug-sound-classes: $(PLUG_IMPORT_JARFIL
+@@ -195,12 +194,15 @@ import-binary-plug-jmf-classes: $(PLUG_IMPORT_JARFILE)
+ 	$(call import-binary-plug-classes,$(PLUG_TEMPDIR)/jmf.clist)
+ import-binary-plug-sound-classes: $(PLUG_IMPORT_JARFILE) $(PLUG_TEMPDIR)/sound.clist
  	$(call import-binary-plug-classes,$(PLUG_TEMPDIR)/sound.clist)
- import-binary-plug-awt-classes: $(PLUG_IMPORT_JARFILE) $(PLUG_TEMPDIR)/awt.clist
- 	$(call import-binary-plug-classes,$(PLUG_TEMPDIR)/awt.clist)
 +import-binary-plug-gnu-classes: $(PLUG_IMPORT_JARFILE) $(PLUG_TEMPDIR)/gnu.clist
 +	$(call import-binary-plug-classes,$(PLUG_TEMPDIR)/gnu.clist)
  
@@ -97,14 +75,13 @@ $OpenBSD: patch-jdk_make_common_internal_BinaryPlugs_gmk,v 1.1 2008/03/19 18:05:
  
  import-binary-plug-jar: \
  	     import-binary-plug-jmf-classes \
- 	     import-binary-plug-sound-classes \
--	     import-binary-plug-awt-classes
-+	     import-binary-plug-awt-classes \
+-	     import-binary-plug-sound-classes
++	     import-binary-plug-sound-classes \
 +	     import-binary-plug-gnu-classes
  
  # Import native libraries
  
-@@ -266,14 +265,12 @@ import-binary-plugs-completed:
+@@ -223,14 +225,12 @@ import-binary-plugs-completed:
  
  # Import lib files (only if they don't exist already)
  

@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST-jre,v 1.3 2008/06/28 12:34:58 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.4 2009/01/04 23:25:16 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.7,<1.8
 ${JREHOME}/
 ${JREHOME}/ASSEMBLY_EXCEPTION
 ${JREHOME}/LICENSE
-${JREHOME}/README.html
 ${JREHOME}/THIRD_PARTY_README
 ${JREHOME}/bin/
 @bin ${JREHOME}/bin/java
@@ -27,6 +26,8 @@ ${JREHOME}/lib/classlist
 ${JREHOME}/lib/cmm/
 ${JREHOME}/lib/cmm/CIEXYZ.pf
 ${JREHOME}/lib/cmm/GRAY.pf
+${JREHOME}/lib/cmm/LINEAR_RGB.pf
+${JREHOME}/lib/cmm/PYCC.pf
 ${JREHOME}/lib/cmm/sRGB.pf
 ${JREHOME}/lib/content-types.properties
 ${JREHOME}/lib/currency.data
@@ -60,6 +61,7 @@ ${JREHOME}/lib/${MACHINE_ARCH}/libjava_crw_demo.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjawt.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjdwp.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjpeg.so
+${JREHOME}/lib/${MACHINE_ARCH}/libjsdt.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsig.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsound.so
 ${JREHOME}/lib/${MACHINE_ARCH}/liblcms.so
@@ -116,6 +118,8 @@ ${JREHOME}/lib/security/cacerts
 ${JREHOME}/lib/security/java.policy
 ${JREHOME}/lib/security/java.security
 ${JREHOME}/lib/security/local_policy.jar
+${JREHOME}/lib/servicetag/
+${JREHOME}/lib/servicetag/jdk_header.png
 ${JREHOME}/lib/sound.properties
 ${JREHOME}/lib/zi/
 ${JREHOME}/lib/zi/Africa/
@@ -185,6 +189,7 @@ ${JREHOME}/lib/zi/America/Argentina/La_Rioja
 ${JREHOME}/lib/zi/America/Argentina/Mendoza
 ${JREHOME}/lib/zi/America/Argentina/Rio_Gallegos
 ${JREHOME}/lib/zi/America/Argentina/San_Juan
+${JREHOME}/lib/zi/America/Argentina/San_Luis
 ${JREHOME}/lib/zi/America/Argentina/Tucuman
 ${JREHOME}/lib/zi/America/Argentina/Ushuaia
 ${JREHOME}/lib/zi/America/Aruba
@@ -286,6 +291,7 @@ ${JREHOME}/lib/zi/America/Recife
 ${JREHOME}/lib/zi/America/Regina
 ${JREHOME}/lib/zi/America/Resolute
 ${JREHOME}/lib/zi/America/Rio_Branco
+${JREHOME}/lib/zi/America/Santarem
 ${JREHOME}/lib/zi/America/Santiago
 ${JREHOME}/lib/zi/America/Santo_Domingo
 ${JREHOME}/lib/zi/America/Sao_Paulo
@@ -332,7 +338,6 @@ ${JREHOME}/lib/zi/Asia/Bangkok
 ${JREHOME}/lib/zi/Asia/Beirut
 ${JREHOME}/lib/zi/Asia/Bishkek
 ${JREHOME}/lib/zi/Asia/Brunei
-${JREHOME}/lib/zi/Asia/Calcutta
 ${JREHOME}/lib/zi/Asia/Choibalsan
 ${JREHOME}/lib/zi/Asia/Chongqing
 ${JREHOME}/lib/zi/Asia/Colombo
@@ -343,6 +348,7 @@ ${JREHOME}/lib/zi/Asia/Dubai
 ${JREHOME}/lib/zi/Asia/Dushanbe
 ${JREHOME}/lib/zi/Asia/Gaza
 ${JREHOME}/lib/zi/Asia/Harbin
+${JREHOME}/lib/zi/Asia/Ho_Chi_Minh
 ${JREHOME}/lib/zi/Asia/Hong_Kong
 ${JREHOME}/lib/zi/Asia/Hovd
 ${JREHOME}/lib/zi/Asia/Irkutsk
@@ -354,6 +360,7 @@ ${JREHOME}/lib/zi/Asia/Kamchatka
 ${JREHOME}/lib/zi/Asia/Karachi
 ${JREHOME}/lib/zi/Asia/Kashgar
 ${JREHOME}/lib/zi/Asia/Katmandu
+${JREHOME}/lib/zi/Asia/Kolkata
 ${JREHOME}/lib/zi/Asia/Krasnoyarsk
 ${JREHOME}/lib/zi/Asia/Kuala_Lumpur
 ${JREHOME}/lib/zi/Asia/Kuching
@@ -377,7 +384,6 @@ ${JREHOME}/lib/zi/Asia/Riyadh
 ${JREHOME}/lib/zi/Asia/Riyadh87
 ${JREHOME}/lib/zi/Asia/Riyadh88
 ${JREHOME}/lib/zi/Asia/Riyadh89
-${JREHOME}/lib/zi/Asia/Saigon
 ${JREHOME}/lib/zi/Asia/Sakhalin
 ${JREHOME}/lib/zi/Asia/Samarkand
 ${JREHOME}/lib/zi/Asia/Seoul

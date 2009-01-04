@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_java_redist_Makefile,v 1.1 2008/03/19 18:05:45 kurt Exp $
---- jdk/make/java/redist/Makefile.orig	Tue Oct 30 05:04:23 2007
-+++ jdk/make/java/redist/Makefile	Wed Nov  7 18:01:59 2007
+$OpenBSD: patch-jdk_make_java_redist_Makefile,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/make/java/redist/Makefile.orig	Thu Oct 23 03:44:05 2008
++++ jdk/make/java/redist/Makefile	Mon Dec 22 14:34:19 2008
 @@ -85,6 +85,11 @@ ifeq ($(SA_EXISTS), false)
    INCLUDE_SA := false
  endif
@@ -13,21 +13,3 @@ $OpenBSD: patch-jdk_make_java_redist_Makefile,v 1.1 2008/03/19 18:05:45 kurt Exp
  ifeq ($(INCLUDE_SA), true)
    IMPORT_LIST += $(LIBDIR)/sa-jdi.jar \
                   $(LIB_LOCATION)/$(SALIB_NAME)
-@@ -309,7 +314,7 @@ $(LIBDIR)/fonts/%.ttf: $(CLOSED_SRC)/share/lib/fonts/%
- $(FONTSDIRFILE): $(PLATFORM_SRC)/classes/sun/awt/motif/java.fonts.dir
- 	$(install-file)
- 
--ifeq ($(PLATFORM), linux)
-+ifneq (,$(findstring $(PLATFORM), linux bsd))
- 
- # The oblique fonts are only needed/wanted on Linux.
- 
-@@ -323,7 +328,7 @@ $(LIBDIR)/oblique-fonts/%.ttf: $(CLOSED_SRC)/share/lib
- $(OBLFONTSDIRFILE): $(PLATFORM_SRC)/classes/sun/awt/motif/java.oblique-fonts.dir
- 	$(install-file)
- 
--endif # linux
-+endif # linux || bsd
- endif # !OPENJDK
- 
- # Import internal files (ones that are stashed in this source tree)

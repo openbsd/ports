@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_share_vm_includeDB_compiler2,v 1.4 2008/03/19 18:05:43 kurt Exp $
---- hotspot/src/share/vm/includeDB_compiler2.orig	Tue Oct 30 05:00:39 2007
-+++ hotspot/src/share/vm/includeDB_compiler2	Wed Nov  7 12:41:35 2007
+$OpenBSD: patch-hotspot_src_share_vm_includeDB_compiler2,v 1.5 2009/01/04 23:25:16 kurt Exp $
+--- hotspot/src/share/vm/includeDB_compiler2.orig	Thu Nov 20 03:41:04 2008
++++ hotspot/src/share/vm/includeDB_compiler2	Tue Dec 23 07:16:15 2008
 @@ -140,6 +140,7 @@ c2_globals_<os_family>.hpp              globalDefiniti
  c2_globals_<os_family>.hpp              macros.hpp
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-hotspot_src_share_vm_includeDB_compiler2,v 1.4 2008/03/19 18:05:
  callGenerator.hpp                       type.hpp
  
  callnode.cpp                            callnode.hpp
-@@ -477,6 +479,7 @@ graphKit.hpp                            cfgnode.hpp
+@@ -480,6 +482,7 @@ graphKit.hpp                            cfgnode.hpp
  graphKit.hpp                            ciEnv.hpp
  graphKit.hpp                            compile.hpp
  graphKit.hpp                            deoptimization.hpp
@@ -25,7 +25,7 @@ $OpenBSD: patch-hotspot_src_share_vm_includeDB_compiler2,v 1.4 2008/03/19 18:05:
  graphKit.hpp                            phaseX.hpp
  graphKit.hpp                            type.hpp
  
-@@ -521,6 +524,7 @@ indexSet.cpp                            regmask.hpp
+@@ -525,6 +528,7 @@ indexSet.cpp                            regmask.hpp
  
  indexSet.hpp                            allocation.hpp
  indexSet.hpp                            compile.hpp
@@ -33,7 +33,7 @@ $OpenBSD: patch-hotspot_src_share_vm_includeDB_compiler2,v 1.4 2008/03/19 18:05:
  indexSet.hpp                            regmask.hpp
  indexSet.hpp                            resourceArea.hpp
  
-@@ -833,6 +837,7 @@ parseHelper.cpp                         systemDictiona
+@@ -839,6 +843,7 @@ parseHelper.cpp                         systemDictiona
  phase.cpp                               compile.hpp
  phase.cpp                               compileBroker.hpp
  phase.cpp                               nmethod.hpp

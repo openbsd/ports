@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_make_common_shared_Sanity_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
---- jdk/make/common/shared/Sanity.gmk.orig	Tue Oct 30 05:04:22 2007
-+++ jdk/make/common/shared/Sanity.gmk	Wed Nov  7 14:51:33 2007
-@@ -95,6 +95,11 @@ ifeq ($(PLATFORM), windows)
+$OpenBSD: patch-jdk_make_common_shared_Sanity_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/make/common/shared/Sanity.gmk.orig	Thu Jul 17 03:43:08 2008
++++ jdk/make/common/shared/Sanity.gmk	Sat Aug  2 16:12:53 2008
+@@ -96,6 +96,11 @@ ifeq ($(PLATFORM), windows)
      $(EGREP) "\#define" | $(NAWK) '{print $$3}')
  endif
  

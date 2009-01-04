@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_share_vm_runtime_globals_hpp,v 1.3 2008/03/19 18:05:43 kurt Exp $
---- hotspot/src/share/vm/runtime/globals.hpp.orig	Tue Oct 30 05:00:51 2007
-+++ hotspot/src/share/vm/runtime/globals.hpp	Wed Nov  7 12:41:35 2007
-@@ -291,7 +291,7 @@ class CommandLineFlags {
+$OpenBSD: patch-hotspot_src_share_vm_runtime_globals_hpp,v 1.4 2009/01/04 23:25:16 kurt Exp $
+--- hotspot/src/share/vm/runtime/globals.hpp.orig	Thu Nov 20 03:41:06 2008
++++ hotspot/src/share/vm/runtime/globals.hpp	Tue Dec 23 07:16:15 2008
+@@ -312,7 +312,7 @@ class CommandLineFlags {
    /* UseMembar is theoretically a temp flag used for memory barrier         \
     * removal testing.  It was supposed to be removed before FCS but has     \
     * been re-added (see 6401008) */                                         \

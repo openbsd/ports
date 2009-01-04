@@ -1,14 +1,15 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c.orig	Tue Dec  4 04:05:47 2007
-+++ jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c	Thu Feb 14 18:00:10 2008
-@@ -29,12 +29,17 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c.orig	Thu Jul 17 03:43:48 2008
++++ jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c	Sat Aug  2 17:11:47 2008
+@@ -29,6 +29,7 @@
  #include "jlong.h"
  #include <sys/mman.h>
  #include <sys/stat.h>
 +#include <fcntl.h>
  #include "sun_nio_ch_FileChannelImpl.h"
  #include "java_lang_Integer.h"
- #include "nio.h"
+ #include "java_lang_Long.h"
+@@ -36,6 +37,10 @@
  #include "nio_util.h"
  #include <dlfcn.h>
  
@@ -19,7 +20,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.1 2008/0
  static jfieldID chan_fd;        /* jobject 'fd' in sun.io.FileChannelImpl */
  
  #ifdef __solaris__
-@@ -59,6 +64,10 @@ sendfile_func* my_sendfile_func = NULL;
+@@ -60,6 +65,10 @@ sendfile_func* my_sendfile_func = NULL;
  typedef ssize_t sendfile64_func(int out_fd, int in_fd, off64_t *offset, size_t count);
  
  sendfile64_func* my_sendfile64_func = NULL;
@@ -30,7 +31,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.1 2008/0
  #endif
  
  JNIEXPORT jlong JNICALL
-@@ -278,6 +287,58 @@ Java_sun_nio_ch_FileChannelImpl_transferTo0(JNIEnv *en
+@@ -279,6 +288,58 @@ Java_sun_nio_ch_FileChannelImpl_transferTo0(JNIEnv *en
          return result;
      }
  #endif
@@ -89,7 +90,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.1 2008/0
  }
  
  JNIEXPORT jint JNICALL
-@@ -329,6 +390,23 @@ Java_sun_nio_ch_FileChannelImpl_release0(JNIEnv *env, 
+@@ -338,6 +399,23 @@ Java_sun_nio_ch_FileChannelImpl_release0(JNIEnv *env, 
      fl.l_start = (off64_t)pos;
      fl.l_type = F_UNLCK;
      lockResult = fcntl(fd, cmd, &fl);

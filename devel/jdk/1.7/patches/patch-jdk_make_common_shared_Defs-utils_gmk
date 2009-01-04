@@ -1,0 +1,43 @@
+$OpenBSD: patch-jdk_make_common_shared_Defs-utils_gmk,v 1.1 2009/01/04 23:25:16 kurt Exp $
+--- jdk/make/common/shared/Defs-utils.gmk.orig	Mon Dec 22 16:16:45 2008
++++ jdk/make/common/shared/Defs-utils.gmk	Mon Dec 22 16:20:56 2008
+@@ -53,6 +53,13 @@ ifeq ($(PLATFORM),linux)
+   UTILS_DEVTOOL_PATH=$(USRBIN_PATH)
+ endif
+ 
++ifeq ($(PLATFORM),bsd)
++  UTILS_COMMAND_PATH=$(UNIXCOMMAND_PATH)
++  UTILS_USR_BIN_PATH=$(USRBIN_PATH)
++  UTILS_CCS_BIN_PATH=$(USRBIN_PATH)
++  UTILS_DEVTOOL_PATH=$(DEVTOOLS_PATH)
++endif
++
+ ifeq ($(PLATFORM),solaris)
+   UTILS_COMMAND_PATH=$(UNIXCOMMAND_PATH)
+   UTILS_USR_BIN_PATH=$(UNIXCOMMAND_PATH)
+@@ -191,6 +198,25 @@ ifeq ($(PLATFORM),linux)
+   NM             = $(UTILS_USR_BIN_PATH)nm
+   STRIP          = $(UTILS_USR_BIN_PATH)strip
+   YACC           = $(UTILS_USR_BIN_PATH)yacc
++endif
++
++# BSD Specific
++ifeq ($(PLATFORM),bsd)
++BASENAME       = $(UTILS_USR_BIN_PATH)basename
++EGREP          = $(UTILS_USR_BIN_PATH)egrep
++EXPR           = $(UTILS_COMMAND_PATH)expr
++FMT            = $(UTILS_USR_BIN_PATH)fmt
++GREP           = $(UTILS_USR_BIN_PATH)grep
++GUNZIP         = $(UTILS_USR_BIN_PATH)gunzip
++ID             = $(UTILS_USR_BIN_PATH)id
++MSGFMT         = $(UTILS_DEVTOOL_PATH)msgfmt
++SED            = $(UTILS_USR_BIN_PATH)sed
++SORT           = $(UTILS_USR_BIN_PATH)sort
++TOUCH          = $(UTILS_USR_BIN_PATH)touch
++TEST           = $(UTILS_COMMAND_PATH)test
++TRUE           = $(UTILS_USR_BIN_PATH)true
++UNAME          = $(UTILS_USR_BIN_PATH)uname
++UNZIP          = $(UTILS_DEVTOOL_PATH)unzip
+ endif
+ 
+ # Solaris specific

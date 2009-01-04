@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_net_PlainDatagramSocketImpl_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c.orig	Sat Dec  1 00:00:00 2007
-+++ jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Tue Feb 26 21:06:27 2008
+$OpenBSD: patch-jdk_src_solaris_native_java_net_PlainDatagramSocketImpl_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c.orig	Thu Sep 11 03:44:53 2008
++++ jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Fri Sep 12 17:45:12 2008
 @@ -23,12 +23,12 @@
   * have any questions.
   */
@@ -16,7 +16,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_PlainDatagramSocketImpl_c,v 1.1 
  
  #ifdef __solaris__
  #include <fcntl.h>
-@@ -335,7 +335,7 @@ Java_java_net_PlainDatagramSocketImpl_disconnect0(JNIE
+@@ -331,7 +331,7 @@ Java_java_net_PlainDatagramSocketImpl_disconnect0(JNIE
      /* The fdObj'fd */
      jint fd;
  
@@ -25,7 +25,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_PlainDatagramSocketImpl_c,v 1.1 
      SOCKADDR addr;
      int len;
  #endif
-@@ -345,26 +345,39 @@ Java_java_net_PlainDatagramSocketImpl_disconnect0(JNIE
+@@ -341,26 +341,39 @@ Java_java_net_PlainDatagramSocketImpl_disconnect0(JNIE
      }
      fd = (*env)->GetIntField(env, fdObj, IO_fd_fdID);
  
@@ -65,7 +65,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_PlainDatagramSocketImpl_c,v 1.1 
          // After disconnecting a UDP socket, Linux kernel will set
          // local port to zero if the port number comes from implicit
          // bind. Successive send/recv on the same socket will fail.
-@@ -387,6 +400,7 @@ Java_java_net_PlainDatagramSocketImpl_disconnect0(JNIE
+@@ -383,6 +396,7 @@ Java_java_net_PlainDatagramSocketImpl_disconnect0(JNIE
              NET_Bind(fd, (struct sockaddr *)&addr, len);
          }
      }
@@ -73,7 +73,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_PlainDatagramSocketImpl_c,v 1.1 
  #else
      JVM_Connect(fd, 0, 0);
  #endif
-@@ -2374,18 +2388,30 @@ static void mcast_join_leave(JNIEnv *env, jobject this
+@@ -2364,18 +2378,30 @@ static void mcast_join_leave(JNIEnv *env, jobject this
              mname6.ipv6mr_interface = idx;
          }
  

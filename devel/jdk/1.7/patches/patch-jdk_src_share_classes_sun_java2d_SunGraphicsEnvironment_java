@@ -1,16 +1,16 @@
-$OpenBSD: patch-jdk_src_share_classes_sun_java2d_SunGraphicsEnvironment_java,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/share/classes/sun/java2d/SunGraphicsEnvironment.java.orig	Tue Oct 30 05:02:49 2007
-+++ jdk/src/share/classes/sun/java2d/SunGraphicsEnvironment.java	Wed Nov  7 18:56:38 2007
-@@ -76,7 +76,7 @@ import sun.font.NativeFont;
+$OpenBSD: patch-jdk_src_share_classes_sun_java2d_SunGraphicsEnvironment_java,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/src/share/classes/sun/java2d/SunGraphicsEnvironment.java.orig	Thu Sep 11 03:44:33 2008
++++ jdk/src/share/classes/sun/java2d/SunGraphicsEnvironment.java	Fri Sep 12 17:05:58 2008
+@@ -77,7 +77,7 @@ import sun.font.NativeFont;
  public abstract class SunGraphicsEnvironment extends GraphicsEnvironment
      implements FontSupport, DisplayChangedListener {
  
 -    public static boolean isLinux;
 +    public static boolean isLinuxOrBSD;
      public static boolean isSolaris;
+     public static boolean isOpenSolaris;
      public static boolean isWindows;
-     public static boolean noType1Font;
-@@ -164,7 +164,13 @@ public abstract class SunGraphicsEnvironment extends G
+@@ -166,7 +166,13 @@ public abstract class SunGraphicsEnvironment extends G
              public Object run() {
                  String osName = System.getProperty("os.name");
                  if ("Linux".equals(osName)) {
@@ -24,8 +24,8 @@ $OpenBSD: patch-jdk_src_share_classes_sun_java2d_SunGraphicsEnvironment_java,v 1
 +                    isLinuxOrBSD = true;
                  } else if ("SunOS".equals(osName)) {
                      isSolaris = true;
-                 } else if ("Windows".equals(osName)) {
-@@ -227,8 +233,8 @@ public abstract class SunGraphicsEnvironment extends G
+                     String version = System.getProperty("os.version", "0.0");
+@@ -242,8 +248,8 @@ public abstract class SunGraphicsEnvironment extends G
                   * Pass "true" to registerFonts method as on-screen these
                   * JRE fonts always go through the T2K rasteriser.
                   */

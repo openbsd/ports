@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.3 2008/03/19 18:05:43 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.hpp.orig	Wed Nov  7 12:41:29 2007
-+++ hotspot/src/os/bsd/vm/os_bsd.hpp	Wed Nov  7 12:41:35 2007
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.4 2009/01/04 23:25:16 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.hpp.orig	Wed Dec 24 10:02:07 2008
++++ hotspot/src/os/bsd/vm/os_bsd.hpp	Wed Dec 24 10:04:07 2008
 @@ -47,6 +47,7 @@ class Bsd {
    static int sigflags[MAXSIGNUM];
  
@@ -9,13 +9,15 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.3 2008/03/19 18:05:43 kurt 
    static int (*_pthread_getcpuclockid)(pthread_t, clockid_t *);
  
    static address   _initial_thread_stack_bottom;
-@@ -58,42 +59,78 @@ class Bsd {
+@@ -58,6 +59,7 @@ class Bsd {
    static bool _is_floating_stack;
    static bool _is_NPTL;
    static bool _supports_fast_thread_cpu_time;
 +#endif
  
-  protected:
+   static GrowableArray<int>* _cpu_to_node;
+ 
+@@ -65,38 +67,73 @@ class Bsd {
  
    static julong _physical_memory;
    static pthread_t _main_thread;
@@ -29,8 +31,8 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.3 2008/03/19 18:05:43 kurt 
    static void initialize_system_info();
  
 +#ifndef _ALLBSD_SOURCE
-   static void set_glibc_version(char *s)      { _glibc_version = s; }
-   static void set_libpthread_version(char *s) { _libpthread_version = s; }
+   static void set_glibc_version(const char *s)      { _glibc_version = s; }
+   static void set_libpthread_version(const char *s) { _libpthread_version = s; }
 +#endif
  
    static bool supports_variable_stack_size();
@@ -41,8 +43,9 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.3 2008/03/19 18:05:43 kurt 
    static void set_is_floating_stack()         { _is_floating_stack = true; }
 +#endif
  
+   static void rebuild_cpu_to_node_map();
+   static GrowableArray<int>* cpu_to_node()    { return _cpu_to_node; }
   public:
- 
 +#ifdef _ALLBSD_SOURCE
 +//XXXBSD: ported from solaris version
 +  enum {
@@ -88,23 +91,23 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.3 2008/03/19 18:05:43 kurt 
    static bool is_initial_thread(void);
  
    static int page_size(void)                                        { return _page_size; }
-@@ -130,6 +167,7 @@ class Bsd {
+@@ -133,6 +170,7 @@ class Bsd {
    static struct sigaction *get_chained_signal_action(int sig);
    static bool chained_handler(int sig, siginfo_t* siginfo, void* context);
  
 +#ifndef _ALLBSD_SOURCE
    // GNU libc and libpthread version strings
-   static char *glibc_version()                { return _glibc_version; }
-   static char *libpthread_version()           { return _libpthread_version; }
-@@ -143,6 +181,7 @@ class Bsd {
+   static const char *glibc_version()          { return _glibc_version; }
+   static const char *libpthread_version()     { return _libpthread_version; }
+@@ -146,6 +184,7 @@ class Bsd {
    static bool is_floating_stack()             { return _is_floating_stack; }
  
    static void libpthread_init();
 +#endif
+   static bool libnuma_init();
  
    // Minimum stack size a thread can be created with (allowing
-   // the VM to completely create the thread and enter user code)
-@@ -152,17 +191,21 @@ class Bsd {
+@@ -156,17 +195,21 @@ class Bsd {
    static size_t default_stack_size(os::ThreadType thr_type);
    static size_t default_guard_size(os::ThreadType thr_type);
  
@@ -126,7 +129,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.3 2008/03/19 18:05:43 kurt 
  
    static bool supports_monotonic_clock() {
      return _clock_gettime != NULL;
-@@ -172,6 +215,7 @@ class Bsd {
+@@ -176,6 +219,7 @@ class Bsd {
      return _clock_gettime ? _clock_gettime(clock_id, tp) : -1;
    }
  
@@ -134,7 +137,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.3 2008/03/19 18:05:43 kurt 
    static int pthread_getcpuclockid(pthread_t tid, clockid_t *clock_id) {
      return _pthread_getcpuclockid ? _pthread_getcpuclockid(tid, clock_id) : -1;
    }
-@@ -181,6 +225,7 @@ class Bsd {
+@@ -185,6 +229,7 @@ class Bsd {
    }
  
    static jlong fast_thread_cpu_time(clockid_t clockid);

@@ -1,34 +1,16 @@
-$OpenBSD: patch-jdk_make_sun_awt_mawt_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
---- jdk/make/sun/awt/mawt.gmk.orig	Tue Oct 30 05:04:26 2007
-+++ jdk/make/sun/awt/mawt.gmk	Wed Nov  7 18:13:36 2007
-@@ -139,7 +139,7 @@ CFLAGS += -DMOTIF_VERSION=$(MOTIF_VERSION)
- 
- ifeq ($(STATIC_MOTIF),true)
-     LIBXM = $(MOTIF_LIB)/libXm.a -lXp -lXmu
--    ifeq ($(PLATFORM), linux)
-+    ifneq (,$(findstring $(PLATFORM), linux bsd))
- 	ifeq ($(ARCH_DATA_MODEL), 64)
-             LIBXT = -lXt
-         else
-@@ -154,7 +154,7 @@ ifeq ($(STATIC_MOTIF),true)
-     endif
- else
-     LIBXM = -L$(MOTIF_LIB) -lXm -lXp
--    ifeq ($(PLATFORM), linux)
-+    ifneq (,$(findstring $(PLATFORM), linux bsd))
- 	LIBXT = -lXt
- 	LIBSM = 
- 	LIBICE = 
-@@ -172,7 +172,7 @@ ifeq ($(PLATFORM), solaris)
- OTHER_LDLIBS = $(LIBXM) -lXt -lXext $(LIBXTST) $(LIBXMU) -lX11 -lXi
+$OpenBSD: patch-jdk_make_sun_awt_mawt_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- jdk/make/sun/awt/mawt.gmk.orig	Thu Oct 23 03:44:06 2008
++++ jdk/make/sun/awt/mawt.gmk	Mon Dec 22 16:54:06 2008
+@@ -167,7 +167,7 @@ ifeq ($(PLATFORM), solaris)
+ OTHER_LDLIBS = -lXt -lXext $(LIBXTST) $(LIBXMU) -lX11 -lXi
  endif
  
 -ifeq ($(PLATFORM), linux)
 +ifneq (,$(findstring $(PLATFORM), linux bsd))
  OTHER_CFLAGS += -DMLIB_NO_LIBSUNMATH
- OTHER_CFLAGS += -DMOTIF_VERSION=2
+ # XXX what is this define below? Isn't it motif-related?
  OTHER_CFLAGS += -DXMSTRINGDEFINES=1
-@@ -183,8 +183,12 @@ endif
+@@ -178,8 +178,12 @@ endif
  # !HEADLESS
  
  OTHER_LDLIBS += $(JVMLIB) $(LIBCXX) \
@@ -42,23 +24,7 @@ $OpenBSD: patch-jdk_make_sun_awt_mawt_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
  #
  # Sun CC with -Xa misdefines __STDC__ to 0 (zero).
  # The following will force checking of X11 prototypes.
-@@ -196,15 +200,6 @@ endif
- #
- # Other extra flags needed for compiling.
- #
--CPPFLAGS += -I$(CUPS_HEADERS_PATH)
--
--ifndef HEADLESS
--CPPFLAGS += -I$(MOTIF_DIR)/include \
--            -I$(OPENWIN_HOME)/include 
--LDFLAGS  += -L$(MOTIF_LIB) -L$(OPENWIN_LIB)
--
--endif # !HEADLESS
--
- CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
-             -I$(SHARE_SRC)/native/$(PKGDIR)/../font \
-             -I$(PLATFORM_SRC)/native/$(PKGDIR)/../font \
-@@ -227,10 +222,24 @@ CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
+@@ -221,10 +225,24 @@ CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
          -I$(PLATFORM_SRC)/native/$(PKGDIR) \
          $(EVENT_MODEL)
  

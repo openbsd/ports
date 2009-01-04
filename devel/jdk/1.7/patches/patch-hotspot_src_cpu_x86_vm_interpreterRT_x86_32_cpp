@@ -1,12 +1,12 @@
-$OpenBSD: patch-hotspot_src_cpu_x86_vm_interpreterRT_x86_32_cpp,v 1.1 2008/03/19 18:05:43 kurt Exp $
---- hotspot/src/cpu/x86/vm/interpreterRT_x86_32.cpp.orig	Wed Nov  7 15:23:57 2007
-+++ hotspot/src/cpu/x86/vm/interpreterRT_x86_32.cpp	Wed Nov  7 15:24:10 2007
-@@ -110,7 +110,7 @@ class SlowSignatureHandler: public NativeSignatureIter
-   virtual void pass_object() {
-     // pass address of from
-     intptr_t from_addr = (intptr_t)(_from + Interpreter::local_offset_in_bytes(0));
--    *_to++ = (*(intptr_t*)from_addr == 0) ? NULL : from_addr;
-+    *_to++ = (*(intptr_t*)from_addr == 0) ? NULL_WORD : from_addr;
-     debug_only(verify_tag(frame::TagReference));
-     _from -= Interpreter::stackElementSize();
-    }
+$OpenBSD: patch-hotspot_src_cpu_x86_vm_interpreterRT_x86_32_cpp,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- hotspot/src/cpu/x86/vm/interpreterRT_x86_32.cpp.orig	Fri Dec 19 03:42:04 2008
++++ hotspot/src/cpu/x86/vm/interpreterRT_x86_32.cpp	Sun Dec 28 19:22:14 2008
+@@ -54,7 +54,7 @@ void InterpreterRuntime::SignatureHandlerGenerator::bo
+   __ cmpptr(Address(from(), Interpreter::local_offset_in_bytes(from_offset)), (int32_t)NULL_WORD); // do not use temp() to avoid AGI
+   Label L;
+   __ jcc(Assembler::notZero, L);
+-  __ movptr(temp(), ((int32_t)NULL_WORD));
++  __ movptr(temp(), NULL_WORD);
+   __ bind(L);
+   __ movptr(Address(to(), to_offset * wordSize), temp());
+ }

@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_share_vm_utilities_ostream_cpp,v 1.1 2008/03/19 18:05:43 kurt Exp $
---- hotspot/src/share/vm/utilities/ostream.cpp.orig	Mon Mar  3 11:40:44 2008
-+++ hotspot/src/share/vm/utilities/ostream.cpp	Mon Mar  3 12:25:16 2008
-@@ -777,7 +777,7 @@ bufferedStream::~bufferedStream() {
+$OpenBSD: patch-hotspot_src_share_vm_utilities_ostream_cpp,v 1.2 2009/01/04 23:25:16 kurt Exp $
+--- hotspot/src/share/vm/utilities/ostream.cpp.orig	Thu Nov 20 03:41:06 2008
++++ hotspot/src/share/vm/utilities/ostream.cpp	Tue Dec 23 07:16:15 2008
+@@ -821,7 +821,7 @@ bufferedStream::~bufferedStream() {
  
  #ifndef PRODUCT
  
@@ -10,12 +10,3 @@ $OpenBSD: patch-hotspot_src_share_vm_utilities_ostream_cpp,v 1.1 2008/03/19 18:0
  #include <sys/types.h>
  #include <sys/socket.h>
  #include <netinet/in.h>
-@@ -829,7 +829,7 @@ bool networkStream::connect(const char *ip, short port
-   server.sin_port = htons(port);
- 
-   server.sin_addr.s_addr = inet_addr(ip);
--  if (server.sin_addr.s_addr == (unsigned long)-1) {
-+  if (server.sin_addr.s_addr == (in_addr_t)-1) {
- #ifdef _WINDOWS
-     struct hostent* host = hpi::get_host_by_name((char*)ip);
- #else

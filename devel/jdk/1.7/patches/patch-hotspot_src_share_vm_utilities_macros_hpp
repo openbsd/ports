@@ -1,8 +1,8 @@
-$OpenBSD: patch-hotspot_src_share_vm_utilities_macros_hpp,v 1.5 2008/03/19 18:05:43 kurt Exp $
---- hotspot/src/share/vm/utilities/macros.hpp.orig	Tue Oct 30 05:00:54 2007
-+++ hotspot/src/share/vm/utilities/macros.hpp	Wed Nov  7 12:41:35 2007
-@@ -144,6 +144,14 @@
- #define NOT_WINDOWS(code) code
+$OpenBSD: patch-hotspot_src_share_vm_utilities_macros_hpp,v 1.6 2009/01/04 23:25:16 kurt Exp $
+--- hotspot/src/share/vm/utilities/macros.hpp.orig	Fri Dec 19 03:42:12 2008
++++ hotspot/src/share/vm/utilities/macros.hpp	Wed Dec 24 10:02:13 2008
+@@ -154,6 +154,14 @@
+ #define X86_ONLY(code)
  #endif
  
 +#if defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__)
