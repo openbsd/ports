@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2008/11/16 21:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/01/04 21:41:16 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python bindings for glib2 gobject
 
-V=		2.15.4
+V=		2.16.0
 DISTNAME=	pygobject-${V}
 PKGNAME=	py-gobject-${V}
 SHARED_LIBS +=  pyglib-2.0       0.0             # .0.0
