@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.35 2008/12/25 17:21:55 michele Exp $
+# $OpenBSD: OpenBSD,v 1.36 2009/01/04 00:34:41 stsp Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -77,6 +77,7 @@
 51.6		-114.1		"deraadt"	# Theo de Raadt
 51.67938	5.1194		"weerd"		# Paul de Weerd
 51.86681	-0.1875		"jacekm"	# Jacek Masiulaniec
+51.897222	-8.47		"stsp"		# Stefan Sperling
 52.2		12.75		"uwe"		# Uwe Stuehler
 52.26		4.63		"camield"	# Camiel Dobbelaar
 52.28083	10.57271	"kili"		# Matthias Kilian
