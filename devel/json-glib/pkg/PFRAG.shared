@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/01/05 18:11:06 jasper Exp $
+@lib lib/libjson-glib-1.0.so.${LIBjson-glib-1.0_VERSION}
