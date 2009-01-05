@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.958 2008/11/18 11:45:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.959 2009/01/05 12:43:49 ajacoutot Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2737,11 +2737,11 @@ _print-package-args:
 		${_flavor_fragment}; \
 		libspecs='';comma=''; \
 		if default=`eval $$toset ${MAKE} _print-packagename`; then \
-			case "X$$pkg" in X) pkg=`echo $$default|${_version2default}`;; \
+			case "X$$pkg" in X) pkg=`echo "$$default" |${_version2default}`;; \
 			esac; \
-			if ${_PKG_QUERY} $$pkg -q; then \
+			if ${_PKG_QUERY} "$$pkg" -q; then \
 				listlibs='echo ${DEPDIR}$$shdir/lib*'; \
-				case $$dir in ${PKGPATH}) \
+				case "$$dir" in ${PKGPATH}) \
 					listlibs="$$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}; $$listlibs";; \
 				esac; \
 			else \
