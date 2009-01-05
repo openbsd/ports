@@ -3,7 +3,8 @@ address or hostname originates from. It uses a file based database that is
 accurate as of October 2004. This database simply contains IP blocks as keys,
 and countries as values. This database should be more complete and accurate
 than using reverse DNS lookups. Commercial databases and automatic update
-services are available from http://www.maxmind.com/
+services are available from http://www.maxmind.com/. Updated free databases
+are available from http://geolite.maxmind.com/download/geoip/database/.
 
 This module can be used to automatically select the geographically closest
 mirror, to analyze your web server logs to determine the countries of your
