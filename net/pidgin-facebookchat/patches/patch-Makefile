@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/01/05 21:18:24 steven Exp $
+--- Makefile.orig	Sat Jan  3 13:24:29 2009
++++ Makefile	Sat Jan  3 13:24:37 2009
+@@ -17,21 +17,13 @@ WIN32_LIBS = -L${WIN32_DEV_DIR}/gtk_2_0/lib -L${WIN32_
+ DEB_PACKAGE_DIR = ./debdir
+ 
+ FACEBOOK_SOURCES = \
+-	libfacebook.h \
+ 	libfacebook.c \
+-	fb_blist.h \
+ 	fb_blist.c \
+-	fb_connection.h \
+ 	fb_connection.c \
+-	fb_info.h \
+ 	fb_info.c \
+-	fb_managefriends.h \
+ 	fb_managefriends.c \
+-	fb_messages.h \
+ 	fb_messages.c \
+-	fb_notifications.h \
+ 	fb_notifications.c \
+-	fb_search.h \
+ 	fb_search.c
+ 
+ #Standard stuff here
