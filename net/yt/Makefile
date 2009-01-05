@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2008/11/04 04:14:50 jsg Exp $
+# $OpenBSD: Makefile,v 1.22 2009/01/05 18:44:37 martynas Exp $
 
 COMMENT=	customizable script to fetch youtube videos
 
-PKGNAME=	yt-9p0
+PKGNAME=	yt-9p1
 CATEGORIES=	net
 DISTFILES=
 

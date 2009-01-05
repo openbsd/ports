@@ -1,5 +1,5 @@
 #!/usr/local/bin/lua
--- $OpenBSD: yt.lua,v 1.15 2008/11/04 04:14:50 jsg Exp $
+-- $OpenBSD: yt.lua,v 1.16 2009/01/05 18:44:37 martynas Exp $
 -- Fetch videos from YouTube.com and convert them to MPEG.
 -- Written by Pedro Martelletto in August 2006. Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -47,7 +47,7 @@ e_flv = string.format("%q", flv)
 e_mp4 = string.format("%q", mp4)
 
 -- Look for the video ID.
-pattern = "/watch_fullscreen%?.*video_id=(.-)&"
+pattern = "/watch_fullscreen%?.*video_id=([^&\"]*)"
 video_id = string.match(body, pattern)
 
 -- check for error such as "This video is not available in your country."
@@ -60,7 +60,7 @@ end
 
 if video_id then
 	--- Look for the additional video ID.
-	pattern = "/watch_fullscreen%?.*&t=(.-)&"
+	pattern = "/watch_fullscreen%?.*&t=([^&\"]*)"
 	t = assert(string.match(body, pattern))
 	url = string.format("%q", base_url .. "?video_id=" .. video_id
 		.. "&t=" .. t .. fmt)
