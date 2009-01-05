@@ -4,4 +4,4 @@ microkernel, but the emulator can be used for many other things. While
 some simulators only simulate a CPU, GXemul also simulates other
 hardware components, making it possible to use the emulator to run
 unmodified operating systems, such as NetBSD, OpenBSD, or Linux.
-Currently emulated CPUs are: ARM, MIPS, and PowerPC.
+Currently emulated CPUs are: ARM, M88k, MIPS, and PowerPC.

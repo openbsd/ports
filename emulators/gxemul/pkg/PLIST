@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2008/06/28 13:05:39 brad Exp $
+@comment $OpenBSD: PLIST,v 1.13 2009/01/05 21:14:03 grange Exp $
 @bin bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -71,10 +71,10 @@ share/doc/gxemul/20070308-linux-dreamcast-2.png
 share/doc/gxemul/20070308-linux-dreamcast-2_small.png
 share/doc/gxemul/20070318-netbsd-macppc.png
 share/doc/gxemul/20070318-netbsd-macppc_small.png
-share/doc/gxemul/20070419-openbsd-landisk.png
-share/doc/gxemul/20070419-openbsd-landisk_small.png
 share/doc/gxemul/20070616-netbsd-pmppc-diskless.png
 share/doc/gxemul/20070616-netbsd-pmppc-diskless_small.png
+share/doc/gxemul/20081103-openbsd-landisk-small.png
+share/doc/gxemul/20081103-openbsd-landisk.png
 share/doc/gxemul/configfiles.html
 share/doc/gxemul/debian-1-small.png
 share/doc/gxemul/debian-1.png
@@ -123,3 +123,4 @@ share/doc/gxemul/technical.html
 share/doc/gxemul/translation.html
 share/doc/gxemul/ultrix4.5-20040706.png
 share/doc/gxemul/ultrix4.5-20040706_small.png
+share/doc/gxemul/unsupported.html
