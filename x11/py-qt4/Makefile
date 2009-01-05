@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/12/04 14:55:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/01/05 15:47:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-docs=	py-qt4 documentation
 V=		4.3.3
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
-PKGNAME-main=	py-qt4-${V}p1
+PKGNAME-main=	py-qt4-${V}p2
 PKGNAME-docs=	py-qt4-docs-${V}
 
 CATEGORIES=	x11 devel
@@ -17,7 +17,7 @@ HOMEPAGE=	http://www.riverbankcomputing.co.uk/pyqt/index.php
 
 MAINTAINER=	Lars Hansson <lars@unet.net.ph>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -52,7 +52,8 @@ USE_X11=	Yes
 
 CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=${MODPY_BIN} configure.py
-CONFIGURE_ARGS=	--qmake=${LOCALBASE}/bin/qmake4 \
+CONFIGURE_ARGS=	--verbose \
+		--qmake=${LOCALBASE}/bin/qmake4 \
 		--bindir=${PREFIX}/bin \
 		--destdir=${MODPY_SITEPKG} \
 		--sipdir=${PREFIX}/share/sip \
@@ -60,7 +61,7 @@ CONFIGURE_ARGS=	--qmake=${LOCALBASE}/bin/qmake4 \
 		--vendorid-libdir=${MODPY_LIBDIR} \
 		--no-qsci-api \
 		INCDIR_QT=${MODQT_INCDIR} \
-		LIBDIR=${LOCALBASE}/lib \
+		LIBDIR="${X11BASE}/lib ${LOCALBASE}/lib" \
 		LIBDIR_QT=${MODQT_LIBDIR} \
 		CC=${CC} \
 		CXX=${CXX} \
