@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_sorter_1,v 1.1 2008/02/18 18:19:36 rui Exp $
---- man/sorter.1.orig	Tue Dec 18 22:43:30 2007
-+++ man/sorter.1	Sat Feb 16 14:24:00 2008
-@@ -73,7 +73,7 @@ have priority over the standard files.  
+$OpenBSD: patch-man_sorter_1,v 1.2 2009/01/05 22:15:56 rui Exp $
+--- man/sorter.1.orig	Mon Sep 29 00:02:46 2008
++++ man/sorter.1	Sun Dec 28 14:02:02 2008
+@@ -76,7 +76,7 @@ have priority over the standard files.  
  .IP "-C config"
  Specify the location of the ONLY configuration file.  The standard config
  files will not be loaded if this option is given.  For example, in the
@@ -10,7 +10,7 @@ $OpenBSD: patch-man_sorter_1,v 1.1 2008/02/18 18:19:36 rui Exp $
  contains only rules about graphic images.  If it is specified with -C, then
  only images will be saved about the image.  
  .IP "-m mnt"
-@@ -198,7 +198,7 @@ file systems will produce data from this step).  
+@@ -201,7 +201,7 @@ file systems will produce data from this step).  
  Configuration files are used to define what file types belong in which
  categories and what extensions belong to what file types.  Configuration
  files are distributed with the 'sorter' tool and are located in the
@@ -19,7 +19,7 @@ $OpenBSD: patch-man_sorter_1,v 1.1 2008/02/18 18:19:36 rui Exp $
  
  The 'default.sort' file is used by any file system type.  It contains
  entries for common file types.  A specific operating system file also
-@@ -273,7 +273,7 @@ To include the NSRL, an exclude, and an alert hash dat
+@@ -276,7 +276,7 @@ To include the NSRL, an exclude, and an alert hash dat
  
  To just identify images using the supplied 'images.sort' file:
  

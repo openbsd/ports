@@ -1,63 +1,64 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/02/18 18:19:36 rui Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/01/05 22:15:56 rui Exp $
 @conflict ja-jvim-*
-bin/dcalc
-bin/dcat
+@bin bin/blkcalc
+@bin bin/blkcat
+@bin bin/blkls
+@bin bin/blkstat
 @comment bin/disk_sreset
 @comment bin/disk_stat
-bin/dls
-bin/dstat
-bin/ffind
-bin/fls
-bin/fsstat
-bin/hfind
-bin/icat
-bin/ifind
-bin/ils
-bin/img_cat
-bin/img_stat
-bin/istat
-bin/jcat
-bin/jls
+@bin bin/ffind
+@bin bin/fls
+@bin bin/fsstat
+@bin bin/hfind
+@bin bin/icat
+@bin bin/ifind
+@bin bin/ils
+@bin bin/img_cat
+@bin bin/img_stat
+@bin bin/istat
+@bin bin/jcat
+@bin bin/jls
 bin/mactime
-bin/mmls
-bin/mmstat
-bin/sigfind
+@bin bin/mmcat
+@bin bin/mmls
+@bin bin/mmstat
+@bin bin/sigfind
 bin/sorter
-bin/srch_strings
-include/tsk/
-include/tsk/base/
-include/tsk/base/tsk_base.h
-include/tsk/base/tsk_os.h
-include/tsk/fs/
-include/tsk/fs/tsk_ext2fs.h
-include/tsk/fs/tsk_fatfs.h
-include/tsk/fs/tsk_ffs.h
-include/tsk/fs/tsk_fs.h
-include/tsk/fs/tsk_hfs.h
-include/tsk/fs/tsk_iso9660.h
-include/tsk/fs/tsk_ntfs.h
-include/tsk/hashdb/
-include/tsk/hashdb/tsk_hashdb.h
-include/tsk/img/
-include/tsk/img/tsk_img.h
-include/tsk/libtsk.h
-include/tsk/tsk_incs.h
-include/tsk/vs/
-include/tsk/vs/tsk_bsd.h
-include/tsk/vs/tsk_dos.h
-include/tsk/vs/tsk_gpt.h
-include/tsk/vs/tsk_mac.h
-include/tsk/vs/tsk_sun.h
-include/tsk/vs/tsk_vs.h
-lib/libtsk.a
-lib/libtsk.la
-@lib lib/libtsk.so.${LIBtsk_VERSION}
-@man man/man1/dcalc.1
-@man man/man1/dcat.1
+@bin bin/srch_strings
+include/tsk3/
+include/tsk3/base/
+include/tsk3/base/tsk_base.h
+include/tsk3/base/tsk_os.h
+include/tsk3/fs/
+include/tsk3/fs/tsk_ext2fs.h
+include/tsk3/fs/tsk_fatfs.h
+include/tsk3/fs/tsk_ffs.h
+include/tsk3/fs/tsk_fs.h
+include/tsk3/fs/tsk_hfs.h
+include/tsk3/fs/tsk_iso9660.h
+include/tsk3/fs/tsk_ntfs.h
+include/tsk3/hashdb/
+include/tsk3/hashdb/tsk_hashdb.h
+include/tsk3/img/
+include/tsk3/img/tsk_img.h
+include/tsk3/libtsk.h
+include/tsk3/tsk_incs.h
+include/tsk3/vs/
+include/tsk3/vs/tsk_bsd.h
+include/tsk3/vs/tsk_dos.h
+include/tsk3/vs/tsk_gpt.h
+include/tsk3/vs/tsk_mac.h
+include/tsk3/vs/tsk_sun.h
+include/tsk3/vs/tsk_vs.h
+lib/libtsk3.a
+lib/libtsk3.la
+@lib lib/libtsk3.so.${LIBtsk3_VERSION}
+@man man/man1/blkcalc.1
+@man man/man1/blkcat.1
+@man man/man1/blkls.1
+@man man/man1/blkstat.1
 @man man/man1/disk_sreset.1
 @man man/man1/disk_stat.1
-@man man/man1/dls.1
-@man man/man1/dstat.1
 @man man/man1/ffind.1
 @man man/man1/fls.1
 @man man/man1/fsstat.1
@@ -71,20 +72,17 @@ lib/libtsk.la
 @man man/man1/jcat.1
 @man man/man1/jls.1
 @man man/man1/mactime.1
+@man man/man1/mmcat.1
 @man man/man1/mmls.1
 @man man/man1/mmstat.1
 @man man/man1/sigfind.1
 @man man/man1/sorter.1
-share/tsk/
-share/tsk/lib/
-share/tsk/lib/Date/
-share/tsk/lib/Date/Manip.pm
-share/tsk/lib/Date/Manip.pod
-share/tsk/sorter/
-share/tsk/sorter/default.sort
-share/tsk/sorter/freebsd.sort
-share/tsk/sorter/images.sort
-share/tsk/sorter/linux.sort
-share/tsk/sorter/openbsd.sort
-share/tsk/sorter/solaris.sort
-share/tsk/sorter/windows.sort
+share/tsk3/
+share/tsk3/sorter/
+share/tsk3/sorter/default.sort
+share/tsk3/sorter/freebsd.sort
+share/tsk3/sorter/images.sort
+share/tsk3/sorter/linux.sort
+share/tsk3/sorter/openbsd.sort
+share/tsk3/sorter/solaris.sort
+share/tsk3/sorter/windows.sort

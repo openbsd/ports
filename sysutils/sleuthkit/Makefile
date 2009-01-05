@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2008/05/05 19:50:17 rui Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/05 22:15:56 rui Exp $
 
 COMMENT=		forensic toolkit based on TCT
 
-DISTNAME=		sleuthkit-2.52
+DISTNAME=		sleuthkit-3.0.0
 CATEGORIES=		sysutils security
 
-SHARED_LIBS=		tsk 1.2
+SHARED_LIBS=		tsk3 4.2
 
 HOMEPAGE=		http://www.sleuthkit.org/
 
