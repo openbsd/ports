@@ -1,7 +1,60 @@
-$OpenBSD: patch-configure,v 1.4 2005/05/22 09:34:39 alek Exp $
---- configure.orig	Tue Feb  1 15:50:26 2005
-+++ configure	Tue May 10 06:32:47 2005
-@@ -206,16 +206,9 @@ fi
+$OpenBSD: patch-configure,v 1.5 2009/01/05 22:10:06 rui Exp $
+--- configure.orig	Fri Jan 20 13:44:15 2006
++++ configure	Sat Jan  3 13:50:44 2009
+@@ -96,52 +96,6 @@ if [ "$SSL_IPATH" = "/usr/include" ]; then
+     SSL_IPATH=""
+ fi
+ 
+-echo "Checking for Postgres (libpq) ..."
+-for i in  $LIBDIRS /lib  /usr/lib /usr/local/lib /opt/local/lib .
+-do
+-    if [ "X" = "X$POSTGRES_PATH" ]; then
+-        if [ -f "$i/libpq.so" -o -f "$i/libpq.dylib" ]; then
+-            POSTGRES_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$POSTGRES_PATH" ]; then
+-        TMP_LIB=`/bin/ls $i/libpq.so* /bin/cygpq*.dll 2> /dev/null | grep pq`
+-        if [ -n "$TMP_LIB" ]; then
+-          POSTGRES_PATH="$i"
+-        fi
+-    fi
+-done
+-if [ -n "$POSTGRES_PATH" ]; then
+-    echo "                              ... found"
+-fi
+-if [ "X" = "X$POSTGRES_PATH" ]; then
+-    echo "                              ... NOT found, module postgres disabled"
+-fi
+-
+-echo "Checking for SVN (ibsvn_client-1 libapr-0.so libaprutil-0.so) ..."
+-for i in  $LIBDIRS /lib  /usr/lib /usr/local/lib /opt/local/lib .
+-do
+-    if [ "X" = "X$SVN_PATH" ]; then
+-        if [ -f "$i/libsvn_client-1.so" ]&&[ -f "$i/libapr-0.so" ]&&[ -f "$i/libaprutil-0.so" ]; then
+-            SVN_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$SVN_PATH" ]; then
+-        TMP_LIB=`/bin/ls $i/libsvn_client*.so* 2> /dev/null | grep libsvn_client.`
+-        if [ -n "$TMP_LIB" ]; then
+-          SVN_PATH="$i"
+-        fi
+-    fi
+-    
+-    
+-done
+-if [ -n "$SVN_PATH" ]; then
+-    echo "                              ... found"
+-fi
+-if [ "X" = "X$SVN_PATH" ]; then
+-    echo "                              ... NOT found, module svn disabled"
+-fi
+-
+ echo "Checking for SAP/R3 (librfc/saprfc.h) ..."
+ for i in  $LIBDIRS /lib  /usr/lib /usr/local/lib /opt/local/lib .
+ do
+@@ -294,17 +248,9 @@ fi
  
  echo
  XDEFINES=""
@@ -10,12 +63,13 @@ $OpenBSD: patch-configure,v 1.4 2005/05/22 09:34:39 alek Exp $
  XLIBPATHS=""
  XIPATHS=""
 -
--SYS=`uname -o`
+-# ignore errors if this uname call fails
+-SYS=`uname -o 2>/dev/null`
 -if [ "$SYS" = "Cygwin" ]; then
 -    echo "Cygwin detected, enabling compability options ..."
 -    XDEFINES="-DCYGWIN"
 -    echo
 -fi
  
- if [ -n "$SSL_PATH" -o -n "$CRYPTO_PATH" -o -n "$NSL_PATH" -o -n "$SOCKET_PATH" -o -n "$RESOLV_PATH" -o -n "$SAPR3_PATH" -o -n "$SSH_PATH" ]; then
+ if [ -n "$SSL_PATH" -o -n "$CRYPTO_PATH" -o -n "$NSL_PATH" -o -n "$SOCKET_PATH" -o -n "$RESOLV_PATH" -o -n "$SAPR3_PATH" -o -n "$SSH_PATH" -o -n "$POSTGRES_PATH" -o -n "$SVN_PATH" ]; then
      XLIBPATHS="-L/usr/lib -L/usr/local/lib -L/lib"

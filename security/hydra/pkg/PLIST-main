@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 08:55:18 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/01/05 22:10:06 rui Exp $
 @pkgpath security/hydra
-bin/hydra
-bin/pw-inspector
+@bin bin/hydra
+@bin bin/pw-inspector
 share/doc/hydra/
 share/doc/hydra/README

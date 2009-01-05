@@ -1,6 +1,6 @@
-$OpenBSD: patch-hydra-gtk_src_callbacks_c,v 1.2 2006/01/04 02:03:46 pvalchev Exp $
---- hydra-gtk/src/callbacks.c.orig	Tue Feb  1 07:56:25 2005
-+++ hydra-gtk/src/callbacks.c	Tue Jan  3 18:06:55 2006
+$OpenBSD: patch-hydra-gtk_src_callbacks_c,v 1.3 2009/01/05 22:10:06 rui Exp $
+--- hydra-gtk/src/callbacks.c.orig	Thu Sep 22 16:19:27 2005
++++ hydra-gtk/src/callbacks.c	Sun May 13 13:48:10 2007
 @@ -34,7 +34,7 @@ char tasks[10];
  char timeout[10];
  char smbntparm[4];
@@ -10,6 +10,50 @@ $OpenBSD: patch-hydra-gtk_src_callbacks_c,v 1.2 2006/01/04 02:03:46 pvalchev Exp
  char passLoginNull[4];
   
  
+@@ -69,21 +69,6 @@ int hydra_get_options(char *options[]) {
+ 
+ 	options[0] = HYDRA_BIN;
+ 
+-	/* get the target, or target list */
+-	widget = lookup_widget(GTK_WIDGET(wndMain), "radioTarget1");
+-	if ( gtk_toggle_button_get_active((GtkToggleButton *) widget) ){	
+-		widget = lookup_widget(GTK_WIDGET(wndMain), "entTarget");
+-		options[i++] = (char *) gtk_entry_get_text((GtkEntry *) widget);
+-	} else {
+-		options[i++] = "-M";
+-		widget = lookup_widget(GTK_WIDGET(wndMain), "entTargetFile");
+-		options[i++] = (char *) gtk_entry_get_text((GtkEntry *) widget);
+-	}
+-
+-	/* get the service */
+-	widget = lookup_widget(GTK_WIDGET(wndMain), "entProtocol");
+-	options[i++] = (char *) gtk_entry_get_text((GtkEntry *) widget);
+-	
+ 	/* get the port */
+ 	widget = lookup_widget(GTK_WIDGET(wndMain), "spnPort");
+ 	j = gtk_spin_button_get_value_as_int((GtkSpinButton *) widget);
+@@ -317,6 +302,21 @@ int hydra_get_options(char *options[]) {
+ 		}
+ 	}		
+ 
++        /* get the target, or target list */
++        widget = lookup_widget(GTK_WIDGET(wndMain), "radioTarget1");
++        if ( gtk_toggle_button_get_active((GtkToggleButton *) widget) ){
++                widget = lookup_widget(GTK_WIDGET(wndMain), "entTarget");
++                options[i++] = (char *) gtk_entry_get_text((GtkEntry *) widget);
++        } else {
++                options[i++] = "-M";
++                widget = lookup_widget(GTK_WIDGET(wndMain), "entTargetFile");
++                options[i++] = (char *) gtk_entry_get_text((GtkEntry *) widget);
++        }
++
++        /* get the service */
++        widget = lookup_widget(GTK_WIDGET(wndMain), "entProtocol");
++        options[i++] = (char *) gtk_entry_get_text((GtkEntry *) widget);
++
+ 	options[i] = NULL;
+ 	return i;
+ }
 @@ -482,9 +482,9 @@ static void close_pipe(int *pipe) {
  int *popen_re_unbuffered(char *command) {
  	static int p_r[2] = {-1, -1}, p_e[2] = {-1, -1};
@@ -21,7 +65,7 @@ $OpenBSD: patch-hydra-gtk_src_callbacks_c,v 1.2 2006/01/04 02:03:46 pvalchev Exp
  	update_statusbar();
  
  	/* only allocate once */
-@@ -504,6 +504,7 @@ int *popen_re_unbuffered(char *command) 
+@@ -504,6 +504,7 @@ int *popen_re_unbuffered(char *command) {
  		g_warning("popen_rw_unbuffered: Error forking!");
  		return NULL;
  	} else if (hydra_pid == 0) { /* child */
@@ -29,7 +73,7 @@ $OpenBSD: patch-hydra-gtk_src_callbacks_c,v 1.2 2006/01/04 02:03:46 pvalchev Exp
  		if (setpgid(getpid(), getpid()) < 0)
  			g_warning("popen_rw_unbuffered: setpgid() failed");
  		if (close(p_r[0]) < 0)
-@@ -527,7 +528,6 @@ int *popen_re_unbuffered(char *command) 
+@@ -527,7 +528,6 @@ int *popen_re_unbuffered(char *command) {
  		execv(HYDRA_BIN, options);
  
  		g_warning("%s %i: popen_rw_unbuffered: execv() returned", __FILE__, __LINE__);

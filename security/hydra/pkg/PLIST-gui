@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-gui,v 1.1 2005/05/22 09:34:39 alek Exp $
-bin/xhydra
+@comment $OpenBSD: PLIST-gui,v 1.2 2009/01/05 22:10:06 rui Exp $
+@bin bin/xhydra
