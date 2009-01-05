@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/12 20:36:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/01/05 18:07:28 jasper Exp $
 
 COMMENT=		Gameboy Advance emulator
 
 VERSION=		1.7.2
 DISTNAME=		VisualBoyAdvance-src-${VERSION}
-PKGNAME=		vba-${VERSION}p1
+PKGNAME=		vba-${VERSION}p2
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://vba.ngemu.com/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xcomposite Xdamage \
 		Xrender atk-1.0 atkmm-1.6 c cairomm-1.0 expat fontconfig \
@@ -21,6 +22,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		glib-2.0 glibmm-2.4 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
 		gtkmm-2.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 \
 		pixman-1 pthread sigc-2.0 stdc++ xml2 z
+
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=vba/}
 
@@ -34,10 +36,10 @@ USE_LIBTOOL=		Yes
 USE_X11=		Yes
 USE_GMAKE=		Yes
 
-LIB_DEPENDS=		SDL::devel/sdl \
-			png::graphics/png \
-			glademm-2.4::devel/libglademm \
-			cairo::graphics/cairo
+LIB_DEPENDS=		glademm-2.4::devel/libglademm \
+			SDL::devel/sdl \
+			cairo::graphics/cairo \
+			png::graphics/png
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng \
@@ -45,11 +47,11 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng \
 			LDFLAGS="-L${LOCALBASE}/lib -lm" \
 			LIBS+="-lintl"
 CONFIGURE_ARGS= 	--disable-profiling \
-			--without-mmx \
 			--with-x \
 			--enable-gtk=2.4
 
 .if ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS+= 	::devel/nasm
 CONFIGURE_ARGS+=	--enable-c-core
 .endif
 
