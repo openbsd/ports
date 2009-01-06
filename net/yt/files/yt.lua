@@ -1,5 +1,5 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.17 2009/01/06 12:35:27 sthen Exp $
+-- $OpenBSD: yt.lua,v 1.18 2009/01/06 18:48:17 martynas Exp $
 -- Fetch videos from YouTube.com and convert them to MPEG.
 -- Written by Pedro Martelletto in August 2006. Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -30,8 +30,9 @@ pattern = "<title>(.-)</title>"
 title = assert(string.match(body, pattern))
 
 -- Fetch high quality if available
-if (string.match(body, "yt.VideoQualityConstants.HIGH") ~= nil) then
-	fmt = "&fmt=6"
+if (string.match(body, "yt.VideoQualityConstants.HIGH") ~= nil) and
+   (string.match(body, "/watch_fullscreen%?.*fmt_map=[^&]*6[^&]*&") ~= nil) then
+	fmt = "%&fmt=6"
 else
 	fmt = ""
 end
