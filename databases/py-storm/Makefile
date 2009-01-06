@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/08/28 16:53:41 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.4 2009/01/06 13:12:14 eric Exp $
 
 COMMENT=		generic object relational mapper for Python
 
-MODPY_EGG_VERSION=	0.12
+MODPY_EGG_VERSION=	0.13
 DISTNAME=		storm-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		https://launchpad.net/storm/trunk/${MODPY_EGG_VERSION}/+download/
+MASTER_SITES=		http://launchpad.net/storm/trunk/${MODPY_EGG_VERSION}/+download/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		lang/python
