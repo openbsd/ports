@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2008/11/11 17:19:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2009/01/06 09:01:21 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	c++ cross-platform GUI toolkit
 
 DISTNAME=	wxWidgets-2.8.7
-PKGNAME=	wxWidgets-gtk2-2.8.7p0
+PKGNAME=	wxWidgets-gtk2-2.8.7p1
 SHARED_LIBS=	wx_base			1.0	\
 		wx_base_net		1.0	\
 		wx_base_odbc		1.0	\
