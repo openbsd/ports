@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/08/02 06:18:37 steven Exp $
-bin/fdm
+@comment $OpenBSD: PLIST,v 1.5 2009/01/06 22:00:19 jasper Exp $
+@bin bin/fdm
 @man man/man1/fdm.1
 @man man/man5/fdm.conf.5
 share/doc/fdm/
@@ -8,6 +8,7 @@ share/doc/fdm/README
 share/examples/fdm/
 share/examples/fdm/f-terbeck.conf
 share/examples/fdm/g-lando.conf
+share/examples/fdm/n-marriott-old.conf
 share/examples/fdm/n-marriott.conf
 share/examples/fdm/t-ulmer.conf
 share/examples/fdm/w-maier.conf

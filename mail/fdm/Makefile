@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/05/01 21:05:04 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2009/01/06 22:00:19 jasper Exp $
 
 COMMENT=	fetch, filter and deliver mail
 
-DISTNAME=	fdm-1.5
+DISTNAME=	fdm-1.6
 CATEGORIES=	mail
 
 HOMEPAGE=       http://fdm.sourceforge.net/
