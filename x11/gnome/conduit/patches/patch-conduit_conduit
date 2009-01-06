@@ -1,7 +1,7 @@
-$OpenBSD: patch-conduit_conduit,v 1.1.1.1 2008/12/11 23:03:11 jasper Exp $
---- conduit/conduit.orig	Thu Dec  4 22:13:29 2008
-+++ conduit/conduit	Thu Dec  4 22:15:39 2008
-@@ -8,8 +8,8 @@
+$OpenBSD: patch-conduit_conduit,v 1.2 2009/01/06 10:48:57 ajacoutot Exp $
+--- conduit/conduit.orig	Tue Oct 21 09:49:00 2008
++++ conduit/conduit	Tue Jan  6 11:41:20 2009
+@@ -8,14 +8,13 @@
  # Run mozilla takes care of settin up the appropriate environment variables
  # to run a program using mozilla libs
  
@@ -12,3 +12,9 @@ $OpenBSD: patch-conduit_conduit,v 1.1.1.1 2008/12/11 23:03:11 jasper Exp $
      if [ -x $d/run-mozilla.sh ]; then
          echo INFO: FOUND FIREFOX LIBS AT $d
          $d/run-mozilla.sh `dirname $0`/conduit.real $*
+         exit
+     fi
+-done
+ 
+ echo "WARNING: COULD NOT FIND FIREFOX LIBRARIES"
+ echo "WARNING: CONDUIT MAY CRASH UNEXPECTEDLY"
