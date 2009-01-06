@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/05/19 09:06:49 kili Exp $
-bin/xplanet
+@comment $OpenBSD: PLIST,v 1.6 2009/01/06 09:24:48 jasper Exp $
+@bin bin/xplanet
 @man man/man1/xplanet.1
 share/xplanet/
 share/xplanet/arcs/
