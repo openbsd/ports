@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/12/17 18:43:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/01/06 09:52:49 ajacoutot Exp $
 @bin bin/epiphany
 include/epiphany/
 include/epiphany/${M}/
 include/epiphany/${M}/epiphany/
 include/epiphany/${M}/epiphany/ephy-adblock-manager.h
 include/epiphany/${M}/epiphany/ephy-adblock.h
+include/epiphany/${M}/epiphany/ephy-base-embed.h
 include/epiphany/${M}/epiphany/ephy-bookmarks-type-builtins.h
 include/epiphany/${M}/epiphany/ephy-bookmarks.h
 include/epiphany/${M}/epiphany/ephy-command-manager.h
 include/epiphany/${M}/epiphany/ephy-cookie-manager.h
 include/epiphany/${M}/epiphany/ephy-dbus.h
 include/epiphany/${M}/epiphany/ephy-dialog.h
+include/epiphany/${M}/epiphany/ephy-embed-container.h
 include/epiphany/${M}/epiphany/ephy-embed-event.h
 include/epiphany/${M}/epiphany/ephy-embed-factory.h
 include/epiphany/${M}/epiphany/ephy-embed-persist.h
@@ -18,9 +20,11 @@ include/epiphany/${M}/epiphany/ephy-embed-prefs.h
 include/epiphany/${M}/epiphany/ephy-embed-shell.h
 include/epiphany/${M}/epiphany/ephy-embed-single.h
 include/epiphany/${M}/epiphany/ephy-embed-type-builtins.h
+include/epiphany/${M}/epiphany/ephy-embed-utils.h
 include/epiphany/${M}/epiphany/ephy-embed.h
 include/epiphany/${M}/epiphany/ephy-extension.h
 include/epiphany/${M}/epiphany/ephy-extensions-manager.h
+include/epiphany/${M}/epiphany/ephy-history-item.h
 include/epiphany/${M}/epiphany/ephy-history.h
 include/epiphany/${M}/epiphany/ephy-lib-type-builtins.h
 include/epiphany/${M}/epiphany/ephy-link.h
@@ -34,13 +38,12 @@ include/epiphany/${M}/epiphany/ephy-session.h
 include/epiphany/${M}/epiphany/ephy-shell.h
 include/epiphany/${M}/epiphany/ephy-state.h
 include/epiphany/${M}/epiphany/ephy-statusbar.h
-include/epiphany/${M}/epiphany/ephy-tab.h
 include/epiphany/${M}/epiphany/ephy-type-builtins.h
+include/epiphany/${M}/epiphany/ephy-version.h
 include/epiphany/${M}/epiphany/ephy-window.h
 lib/epiphany/
 lib/epiphany/${M}/
 lib/epiphany/${M}/plugins/
-lib/epiphany/${M}/plugins/libdesktopfileplugin.a
 lib/epiphany/${M}/plugins/libdesktopfileplugin.la
 lib/epiphany/${M}/plugins/libdesktopfileplugin.so
 lib/pkgconfig/epiphany-${M}.pc
@@ -53,10 +56,10 @@ share/epiphany/
 share/epiphany/about.ini
 share/epiphany/art/
 share/epiphany/chrome/
+share/epiphany/chrome/app-chrome.manifest
 share/epiphany/chrome/branding/
 share/epiphany/chrome/branding/brand.dtd
 share/epiphany/chrome/branding/brand.properties
-share/epiphany/chrome/epiphany.manifest
 share/epiphany/chrome/global/
 share/epiphany/chrome/global/about.xhtml
 share/epiphany/default-prefs.js
@@ -80,42 +83,55 @@ share/epiphany/icons/hicolor/
 share/epiphany/icons/hicolor/16x16/
 share/epiphany/icons/hicolor/16x16/actions/
 share/epiphany/icons/hicolor/16x16/actions/bookmark-view.png
-share/epiphany/icons/hicolor/16x16/actions/bookmark-web.png
-share/epiphany/icons/hicolor/16x16/actions/download.png
 share/epiphany/icons/hicolor/16x16/actions/history-view.png
 share/epiphany/icons/hicolor/16x16/actions/location-entry.png
+share/epiphany/icons/hicolor/16x16/places/
+share/epiphany/icons/hicolor/16x16/places/bookmark-web.png
 share/epiphany/icons/hicolor/16x16/status/
+share/epiphany/icons/hicolor/16x16/status/lock-broken.png
+share/epiphany/icons/hicolor/16x16/status/lock-insecure.png
+share/epiphany/icons/hicolor/16x16/status/lock-secure-checked.png
+share/epiphany/icons/hicolor/16x16/status/lock-secure.png
 share/epiphany/icons/hicolor/16x16/status/popup-hidden.png
 share/epiphany/icons/hicolor/22x22/
 share/epiphany/icons/hicolor/22x22/actions/
 share/epiphany/icons/hicolor/22x22/actions/bookmark-view.png
-share/epiphany/icons/hicolor/22x22/actions/bookmark-web.png
-share/epiphany/icons/hicolor/22x22/actions/download.png
 share/epiphany/icons/hicolor/22x22/actions/history-view.png
 share/epiphany/icons/hicolor/22x22/actions/location-entry.png
+share/epiphany/icons/hicolor/22x22/places/
+share/epiphany/icons/hicolor/22x22/places/bookmark-web.png
 share/epiphany/icons/hicolor/22x22/status/
 share/epiphany/icons/hicolor/22x22/status/popup-hidden.png
 share/epiphany/icons/hicolor/24x24/
 share/epiphany/icons/hicolor/24x24/actions/
 share/epiphany/icons/hicolor/24x24/actions/bookmark-view.png
-share/epiphany/icons/hicolor/24x24/actions/bookmark-web.png
-share/epiphany/icons/hicolor/24x24/actions/download.png
 share/epiphany/icons/hicolor/24x24/actions/history-view.png
 share/epiphany/icons/hicolor/24x24/actions/location-entry.png
+share/epiphany/icons/hicolor/24x24/places/
+share/epiphany/icons/hicolor/24x24/places/bookmark-web.png
 share/epiphany/icons/hicolor/24x24/status/
+share/epiphany/icons/hicolor/24x24/status/lock-broken.png
+share/epiphany/icons/hicolor/24x24/status/lock-insecure.png
+share/epiphany/icons/hicolor/24x24/status/lock-secure-checked.png
+share/epiphany/icons/hicolor/24x24/status/lock-secure.png
 share/epiphany/icons/hicolor/24x24/status/popup-hidden.png
 share/epiphany/icons/hicolor/32x32/
 share/epiphany/icons/hicolor/32x32/actions/
 share/epiphany/icons/hicolor/32x32/actions/bookmark-view.png
-share/epiphany/icons/hicolor/32x32/actions/download.png
 share/epiphany/icons/hicolor/32x32/actions/history-view.png
 share/epiphany/icons/hicolor/32x32/actions/location-entry.png
+share/epiphany/icons/hicolor/32x32/actions/location-entry.svg
 share/epiphany/icons/hicolor/32x32/status/
 share/epiphany/icons/hicolor/32x32/status/popup-hidden.png
+share/epiphany/icons/hicolor/48x48/
+share/epiphany/icons/hicolor/48x48/status/
+share/epiphany/icons/hicolor/48x48/status/lock-broken.png
+share/epiphany/icons/hicolor/48x48/status/lock-insecure.png
+share/epiphany/icons/hicolor/48x48/status/lock-secure-checked.png
+share/epiphany/icons/hicolor/48x48/status/lock-secure.png
 share/epiphany/icons/hicolor/scalable/
 share/epiphany/icons/hicolor/scalable/actions/
 share/epiphany/icons/hicolor/scalable/actions/bookmark-view.svg
-share/epiphany/icons/hicolor/scalable/actions/download.svg
 share/epiphany/icons/hicolor/scalable/actions/history-view.svg
 share/epiphany/icons/hicolor/scalable/actions/location-entry.svg
 share/epiphany/icons/hicolor/scalable/status/
@@ -137,6 +153,27 @@ share/gnome/help/epiphany/bg/figures/ephy-addressbar-smartbookmark-screenshot.pn
 share/gnome/help/epiphany/bg/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
 share/gnome/help/epiphany/bg/figures/ephy-history-window-screenshot.png
 share/gnome/help/epiphany/bg/figures/ephy-screenshot.png
+share/gnome/help/epiphany/ca/
+share/gnome/help/epiphany/ca/epiphany.xml
+share/gnome/help/epiphany/ca/figures/
+share/gnome/help/epiphany/ca/figures/ephy-addressbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/ca/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/ca/figures/ephy-history-window-screenshot.png
+share/gnome/help/epiphany/ca/figures/ephy-screenshot.png
+share/gnome/help/epiphany/cs/
+share/gnome/help/epiphany/cs/epiphany.xml
+share/gnome/help/epiphany/cs/figures/
+share/gnome/help/epiphany/cs/figures/ephy-addressbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/cs/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/cs/figures/ephy-history-window-screenshot.png
+share/gnome/help/epiphany/cs/figures/ephy-screenshot.png
+share/gnome/help/epiphany/de/
+share/gnome/help/epiphany/de/epiphany.xml
+share/gnome/help/epiphany/de/figures/
+share/gnome/help/epiphany/de/figures/ephy-addressbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/de/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/de/figures/ephy-history-window-screenshot.png
+share/gnome/help/epiphany/de/figures/ephy-screenshot.png
 share/gnome/help/epiphany/el/
 share/gnome/help/epiphany/el/epiphany.xml
 share/gnome/help/epiphany/el/figures/
@@ -200,6 +237,13 @@ share/gnome/help/epiphany/nl/figures/ephy-addressbar-smartbookmark-screenshot.pn
 share/gnome/help/epiphany/nl/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
 share/gnome/help/epiphany/nl/figures/ephy-history-window-screenshot.png
 share/gnome/help/epiphany/nl/figures/ephy-screenshot.png
+share/gnome/help/epiphany/oc/
+share/gnome/help/epiphany/oc/epiphany.xml
+share/gnome/help/epiphany/oc/figures/
+share/gnome/help/epiphany/oc/figures/ephy-addressbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/oc/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/oc/figures/ephy-history-window-screenshot.png
+share/gnome/help/epiphany/oc/figures/ephy-screenshot.png
 share/gnome/help/epiphany/ru/
 share/gnome/help/epiphany/ru/epiphany.xml
 share/gnome/help/epiphany/ru/figures/
@@ -225,7 +269,6 @@ share/gtk-doc/html/epiphany/
 share/gtk-doc/html/epiphany/EphyCommandManager.html
 share/gtk-doc/html/epiphany/EphyEmbed.html
 share/gtk-doc/html/epiphany/EphyNodeDb.html
-share/gtk-doc/html/epiphany/EphyTab.html
 share/gtk-doc/html/epiphany/EphyWindow.html
 share/gtk-doc/html/epiphany/ch01.html
 share/gtk-doc/html/epiphany/ch02.html
@@ -248,11 +291,25 @@ share/gtk-doc/html/epiphany/left.png
 share/gtk-doc/html/epiphany/right.png
 share/gtk-doc/html/epiphany/style.css
 share/gtk-doc/html/epiphany/up.png
+share/icons/HighContrastLargePrint/48x48/apps/gnome-web-browser.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-web-browser.png
+share/icons/LowContrastLargePrint/
+share/icons/LowContrastLargePrint/48x48/
+share/icons/LowContrastLargePrint/48x48/apps/
+share/icons/LowContrastLargePrint/48x48/apps/gnome-web-browser.png
+share/icons/hicolor/16x16/apps/gnome-web-browser.png
+share/icons/hicolor/22x22/apps/gnome-web-browser.png
+share/icons/hicolor/24x24/apps/gnome-web-browser.png
+share/icons/hicolor/32x32/apps/gnome-web-browser.png
 share/icons/hicolor/48x48/apps/epiphany-bookmarks.png
+share/icons/hicolor/scalable/apps/gnome-web-browser.svg
 share/locale/am/LC_MESSAGES/epiphany.mo
 share/locale/ar/LC_MESSAGES/epiphany.mo
+share/locale/as/LC_MESSAGES/epiphany.mo
+share/locale/ast/LC_MESSAGES/epiphany.mo
 share/locale/az/LC_MESSAGES/epiphany.mo
 share/locale/be/LC_MESSAGES/epiphany.mo
+share/locale/be@latin/LC_MESSAGES/epiphany.mo
 share/locale/bg/LC_MESSAGES/epiphany.mo
 share/locale/bn/LC_MESSAGES/epiphany.mo
 share/locale/bn_IN/LC_MESSAGES/epiphany.mo
@@ -284,6 +341,7 @@ share/locale/is/LC_MESSAGES/epiphany.mo
 share/locale/it/LC_MESSAGES/epiphany.mo
 share/locale/ja/LC_MESSAGES/epiphany.mo
 share/locale/ka/LC_MESSAGES/epiphany.mo
+share/locale/kn/LC_MESSAGES/epiphany.mo
 share/locale/ko/LC_MESSAGES/epiphany.mo
 share/locale/ku/LC_MESSAGES/epiphany.mo
 share/locale/li/LC_MESSAGES/epiphany.mo
@@ -309,11 +367,12 @@ share/locale/pt_BR/LC_MESSAGES/epiphany.mo
 share/locale/ro/LC_MESSAGES/epiphany.mo
 share/locale/ru/LC_MESSAGES/epiphany.mo
 share/locale/rw/LC_MESSAGES/epiphany.mo
+share/locale/si/LC_MESSAGES/epiphany.mo
 share/locale/sk/LC_MESSAGES/epiphany.mo
 share/locale/sl/LC_MESSAGES/epiphany.mo
 share/locale/sq/LC_MESSAGES/epiphany.mo
 share/locale/sr/LC_MESSAGES/epiphany.mo
-share/locale/sr@Latn/LC_MESSAGES/epiphany.mo
+share/locale/sr@latin/LC_MESSAGES/epiphany.mo
 share/locale/sv/LC_MESSAGES/epiphany.mo
 share/locale/ta/LC_MESSAGES/epiphany.mo
 share/locale/te/LC_MESSAGES/epiphany.mo
@@ -329,6 +388,9 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 share/omf/epiphany/
 share/omf/epiphany/epiphany-C.omf
 share/omf/epiphany/epiphany-bg.omf
+share/omf/epiphany/epiphany-ca.omf
+share/omf/epiphany/epiphany-cs.omf
+share/omf/epiphany/epiphany-de.omf
 share/omf/epiphany/epiphany-el.omf
 share/omf/epiphany/epiphany-en_GB.omf
 share/omf/epiphany/epiphany-es.omf
@@ -338,9 +400,11 @@ share/omf/epiphany/epiphany-fr.omf
 share/omf/epiphany/epiphany-it.omf
 share/omf/epiphany/epiphany-ja.omf
 share/omf/epiphany/epiphany-nl.omf
+share/omf/epiphany/epiphany-oc.omf
 share/omf/epiphany/epiphany-ru.omf
 share/omf/epiphany/epiphany-sv.omf
 share/omf/epiphany/epiphany-uk.omf
+share/pygtk/2.0/defs/epiphany.defs
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/epiphany/*.schemas > /dev/null
 share/schemas/epiphany/
 share/schemas/epiphany/epiphany-fonts.schemas
@@ -352,3 +416,9 @@ share/schemas/epiphany/epiphany.schemas
 @unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastLargePrint 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastLargePrint 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/LowContrastLargePrint 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/LowContrastLargePrint 2> /dev/null || true
