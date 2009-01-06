@@ -1,0 +1,4 @@
+KirbyBase is a small, plain-text, DBMS written in Ruby. It can be used
+in an embedded or client/server configuration. It aims to be as
+"Ruby-ish" as possible. For example, queries are specified using Ruby
+code blocks, rather than SQL strings.
