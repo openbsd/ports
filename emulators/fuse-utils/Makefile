@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2007/11/13 14:54:30 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2009/01/07 18:00:20 grange Exp $
 
 COMMENT=		Free Unix Spectrum Emulator utilities
 
-DISTNAME=		fuse-utils-0.7.0
-PKGNAME=		${DISTNAME}p2
+DISTNAME=		fuse-utils-0.10.0.1
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 
@@ -15,11 +14,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext
 
-WANTLIB=		c z gcrypt bz2 glib-2.0 gpg-error pcre
+WANTLIB=		c m stdc++ z gcrypt bz2 glib-2.0 gpg-error pcre \
+			audiofile
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
-LIB_DEPENDS=		spectrum.>=3::devel/libspectrum
+LIB_DEPENDS=		spectrum.>=5::devel/libspectrum
 
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes

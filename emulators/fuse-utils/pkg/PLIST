@@ -1,22 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/09/24 18:17:33 grange Exp $
-bin/createhdf
-bin/listbasic
-bin/rzxcheck
-bin/rzxdump
-bin/rzxtool
-bin/scl2trd
-bin/snap2tzx
-bin/snapconv
-bin/tapeconv
-bin/tzxlist
+@comment $OpenBSD: PLIST,v 1.6 2009/01/07 18:00:20 grange Exp $
+@bin bin/audio2tape
+@bin bin/createhdf
+@bin bin/listbasic
+@bin bin/profile2map
+@bin bin/raw2hdf
+@bin bin/rzxcheck
+@bin bin/rzxdump
+@bin bin/rzxtool
+@bin bin/scl2trd
+@bin bin/snap2tzx
+@bin bin/snapconv
+@bin bin/tape2wav
+@bin bin/tapeconv
+@bin bin/tzxlist
+@man man/man1/audio2tape.1
 @man man/man1/createhdf.1
 @man man/man1/fuse-utils.1
 @man man/man1/listbasic.1
+@man man/man1/profile2map.1
+@man man/man1/raw2hdf.1
 @man man/man1/rzxcheck.1
 @man man/man1/rzxdump.1
 @man man/man1/rzxtool.1
 @man man/man1/scl2trd.1
 @man man/man1/snap2tzx.1
 @man man/man1/snapconv.1
+@man man/man1/tape2wav.1
 @man man/man1/tapeconv.1
 @man man/man1/tzxlist.1
