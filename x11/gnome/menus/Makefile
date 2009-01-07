@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2008/11/25 13:24:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2009/01/07 19:46:05 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		implementation of the FreeDesktop Desktop Menu Spec
 
 GNOME_PROJECT=		gnome-menus
 GNOME_VERSION=		2.24.2
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	gnome-menu           4.0      # .4.8
 
 # GPLv2/LGPLv2
@@ -29,10 +30,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			PYTHON="${MODPY_BIN}"
 
 pre-configure:
-	perl -pi -e 's,!!MODPY_BIN!!,${MODPY_BIN},' \
-		${WRKSRC}/simple-editor/gmenu-simple-editor.in
-	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
-		${WRKSRC}/layout/applications.menu
+	${SUBST_CMD} ${WRKSRC}/layout/applications.menu
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-menus

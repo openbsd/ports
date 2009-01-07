@@ -1,4 +1,4 @@
-$OpenBSD: patch-layout_applications_menu,v 1.1 2008/02/06 11:36:54 ajacoutot Exp $
+$OpenBSD: patch-layout_applications_menu,v 1.2 2009/01/07 19:46:05 jasper Exp $
 --- layout/applications.menu.orig	Mon Jan  7 23:27:42 2008
 +++ layout/applications.menu	Wed Feb  6 11:18:13 2008
 @@ -8,8 +8,8 @@
@@ -7,8 +7,8 @@ $OpenBSD: patch-layout_applications_menu,v 1.1 2008/02/06 11:36:54 ajacoutot Exp
    <KDELegacyDirs/>
 -  <LegacyDir>/etc/X11/applnk</LegacyDir>
 -  <LegacyDir>/usr/share/gnome/apps</LegacyDir>
-+  <LegacyDir>!!LOCALBASE!!/share/applnk</LegacyDir>
-+  <LegacyDir>!!LOCALBASE!!/share/gnome/apps</LegacyDir>
++  <LegacyDir>${LOCALBASE}/share/applnk</LegacyDir>
++  <LegacyDir>${LOCALBASE}/share/gnome/apps</LegacyDir>
  
    <!-- Read standard .directory and .desktop file locations -->
    <DefaultAppDirs/>
