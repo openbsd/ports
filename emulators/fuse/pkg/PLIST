@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/09/24 18:23:25 grange Exp $
-bin/fuse
+@comment $OpenBSD: PLIST,v 1.8 2009/01/07 17:59:40 grange Exp $
+!%%gtk%%
+@bin bin/fuse
 @man man/man1/fuse.1
 share/fuse/
 share/fuse/128-0.rom
@@ -12,8 +13,12 @@ share/fuse/256s-2.rom
 share/fuse/256s-3.rom
 share/fuse/48.rom
 share/fuse/cassette.bmp
-share/fuse/disk_plus3.z80
+share/fuse/disk_plus3.szx
+share/fuse/gluck.rom
+share/fuse/if1-1.rom
+share/fuse/if1-2.rom
 share/fuse/keyboard.scr
+share/fuse/microdrive.bmp
 share/fuse/plus2-0.rom
 share/fuse/plus2-1.rom
 share/fuse/plus3-0.rom
@@ -25,18 +30,22 @@ share/fuse/plus3e-0.rom
 share/fuse/plus3e-1.rom
 share/fuse/plus3e-2.rom
 share/fuse/plus3e-3.rom
+share/fuse/plusd.rom
 share/fuse/se-0.rom
 share/fuse/se-1.rom
-share/fuse/tape_128.z80
-share/fuse/tape_16.z80
-share/fuse/tape_2048.z80
-share/fuse/tape_2068.z80
-share/fuse/tape_48.z80
-share/fuse/tape_pentagon.z80
-share/fuse/tape_plus2.z80
-share/fuse/tape_plus2a.z80
-share/fuse/tape_plus3.z80
-share/fuse/tape_scorpion.z80
+share/fuse/tape_128.szx
+share/fuse/tape_16.szx
+share/fuse/tape_2048.szx
+share/fuse/tape_2068.szx
+share/fuse/tape_48.szx
+share/fuse/tape_pentagon.szx
+share/fuse/tape_plus2.szx
+share/fuse/tape_plus2a.szx
+share/fuse/tape_plus3.szx
+share/fuse/tape_plus3e.szx
+share/fuse/tape_scorpion.szx
+share/fuse/tape_se.szx
+share/fuse/tape_ts2068.szx
 share/fuse/tc2048.rom
 share/fuse/tc2068-0.rom
 share/fuse/tc2068-1.rom

@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/16 00:45:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2009/01/07 17:59:40 grange Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
-DISTNAME=		fuse-0.7.0
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		fuse-0.10.0.1
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 
@@ -12,7 +11,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xext bz2 c dsk m z
+WANTLIB=		X11 Xext Xau Xdmcp audiofile gcrypt gpg-error pcre \
+			bz2 c m z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
@@ -20,8 +20,7 @@ USE_X11=		Yes
 
 MODULES=		devel/gettext
 LIB_DEPENDS=		glib-2.0.>=0.8::devel/glib2 \
-			spectrum.>=3::devel/libspectrum \
-			765.>=3::devel/lib765 \
+			spectrum.>=5::devel/libspectrum \
 			png.>=3::graphics/png \
 			xml2.>=7::textproc/libxml
 
@@ -34,11 +33,12 @@ FLAVORS=gtk
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgtk}
-LIB_DEPENDS+=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS+=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+			gio-2.0,gmodule-2.0,gobject-2.0::devel/glib2
 CONFIGURE_ARGS=		--with-gtk2
-WANTLIB+=		Xrender atk-1.0 fontconfig freetype gmodule-2.0 \
-			gobject-2.0 pango-1.0 pangoft2-1.0 pangocairo-1.0 \
-			cairo glitz png z
+WANTLIB+=		Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
+			Xrender atk-1.0 cairo expat fontconfig freetype glitz \
+			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 .else
 CONFIGURE_ARGS=		--without-gtk
 WANTLIB+=		ICE SM
