@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2009/01/02 13:07:37 djm Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/07 21:36:52 naddy Exp $
 
 COMMENT=		universal search and navigation for GNOME
 
 GNOME_VERSION=		2.24.2
 GNOME_PROJECT=		deskbar-applet
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		sysutils
-PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://projects.gnome.org/deskbar-applet/
 
