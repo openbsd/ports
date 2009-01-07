@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/20 06:23:15 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/07 09:18:39 jasper Exp $
 
 COMMENT=	identify or delete duplicates
 
 DISTNAME=	fdupes-1.40
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	sysutils
 
 MAINTAINER=	Antti Harri <iku@openbsd.fi>
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
+
+NO_REGRESS=	Yes
 
 ALL_TARGET=
 

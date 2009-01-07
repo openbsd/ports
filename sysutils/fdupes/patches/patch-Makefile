@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
---- Makefile.orig	Thu Mar 15 04:49:11 2001
-+++ Makefile	Fri May 30 13:50:55 2008
+$OpenBSD: patch-Makefile,v 1.2 2009/01/07 09:18:39 jasper Exp $
+--- Makefile.orig	Thu Mar 15 03:49:11 2001
++++ Makefile	Tue Jan  6 23:23:06 2009
 @@ -20,22 +20,45 @@ VERSION = "1.40"
  # built in MD5 message digest routines) uncomment the following
  # line (try this if you're having trouble with built in code).
@@ -27,7 +27,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
  
 -fdupes: fdupes.c md5/md5.c	
 -	gcc fdupes.c md5/md5.c -Wall -o fdupes -DVERSION=\"$(VERSION)\" $(EXTERNAL_MD5) $(EXPERIMENTAL_RBTREE)
-+CFLAGS = -Wall -DVERSION=\"$(VERSION)\"
++CFLAGS += -Wall -DVERSION=\"$(VERSION)\"
 +LDFLAGS =
 +SRC_FILES = fdupes.c
 +
@@ -47,7 +47,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2008/06/20 06:03:43 ckuethe Exp $
 +.endif
 +
 +fdupes: $(SRC_FILES)
-+	gcc $(CFLAGS) $(SRC_FILES) $(LDFLAGS) -o fdupes
++	$(CC) $(CFLAGS) $(SRC_FILES) $(LDFLAGS) -o fdupes
  
  install: fdupes
  	cp fdupes $(INSTALLDIR)
