@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2008/05/18 09:17:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/07 22:12:08 sthen Exp $
 
 COMMENT =	simple and fast image viewer for X
 
-DISTNAME =	gpicview-0.1.9
-PKGNAME =	${DISTNAME}p0
+DISTNAME =	gpicview-0.1.11
 
 CATEGORIES =	graphics x11
 
-HOMEPAGE =	http://lxde.org/gpicview/
+HOMEPAGE =	http://lxde.org/
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 jpeg
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread z
+WANTLIB += gio-2.0 pthread z
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
