@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.660 2009/01/07 18:17:19 grange Exp $
+# $OpenBSD: Makefile,v 1.661 2009/01/07 21:53:52 matthieu Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -141,6 +141,7 @@
      SUBDIR += libelf
      SUBDIR += libexecinfo
      SUBDIR += libfmt
+     SUBDIR += libftdi
      SUBDIR += libglade2
      SUBDIR += libglademm
      SUBDIR += libgsf
