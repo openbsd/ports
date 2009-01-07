@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2008/12/28 19:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2009/01/07 22:54:15 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -91,8 +91,6 @@ WANTLIB-main=		${WANTLIB} ncurses readline
 
 PKG_ARCH-tests=	*
 WANTLIB-tests=
-
-MAKE_FLAGS=	mkdir_p='mkdir -p --'
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql
