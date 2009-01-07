@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/12/22 13:16:56 kurt Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/07 13:34:21 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -70,12 +70,11 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 FETCH_MANUALLY=		"You must manually fetch the distribution files, place"
 FETCH_MANUALLY+=	"them in ${FULLDISTDIR} and then run make again."
 FETCH_MANUALLY+=	"Get the JDK 6u3 Source file:"
-FETCH_MANUALLY+=	" ${JRLSRC}"
+FETCH_MANUALLY+=	" http://download.java.net/jdk6/6u3/promoted/b05/${JRLSRC}"
 FETCH_MANUALLY+=	"and the JDK Binaries file:"
-FETCH_MANUALLY+=	" ${JRLBIN}"
+FETCH_MANUALLY+=	" http://download.java.net/jdk6/6u3/promoted/b05/${JRLBIN}"
 FETCH_MANUALLY+=	"and the Mozilla Binaries file:"
-FETCH_MANUALLY+=	" ${JRLMOZ}"
-FETCH_MANUALLY+=	"from http://download.java.net/jdk6/6u3/promoted/b05/index.html"
+FETCH_MANUALLY+=	" http://download.java.net/jdk6/6u3/promoted/b05/${JRLMOZ}"
 FETCH_MANUALLY+=	""
 FETCH_MANUALLY+=	"Get the BSD patchset file:"
 FETCH_MANUALLY+=	" ${PATCHSET}"
