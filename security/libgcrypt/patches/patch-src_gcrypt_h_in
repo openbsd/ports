@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gcrypt_h_in,v 1.1 2009/01/07 17:56:40 grange Exp $
+gcc-3.3.5 workaround: g++ doesn't understand attributes on enums.
+--- src/gcrypt.h.in.orig	Wed Jan  7 20:42:00 2009
++++ src/gcrypt.h.in	Wed Jan  7 20:42:37 2009
+@@ -175,7 +175,7 @@ gcry_err_code_t gcry_error_from_errno (int err);
+ enum gcry_thread_option
+   {
+     _GCRY_THREAD_OPTION_DUMMY
+-  } _GCRY_GCC_ATTR_DEPRECATED;
++  };
+ 
+ 
+ /* Constants defining the thread model to use.  Used with the OPTION
