@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2008/11/18 13:25:43 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2009/01/07 18:06:19 jasper Exp $
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
 %%SHARED%%
@@ -68,7 +68,6 @@ lib/python${MODPY_VERSION}/site-packages/gsf/__init__.pyo
 @man man/man1/gsf-office-thumbnailer.1
 @man man/man1/gsf-vba-dump.1
 @man man/man1/gsf.1
-share/gtk-doc/html/
 share/gtk-doc/html/gsf/
 share/gtk-doc/html/gsf/GsfClipData.html
 share/gtk-doc/html/gsf/api.html
@@ -115,3 +114,4 @@ share/locale/oc/LC_MESSAGES/libgsf.mo
 share/locale/sv/LC_MESSAGES/libgsf.mo
 share/locale/zh_HK/LC_MESSAGES/libgsf.mo
 share/locale/zh_TW/LC_MESSAGES/libgsf.mo
+share/schemas/
