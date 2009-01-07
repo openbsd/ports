@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/12/17 18:47:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2009/01/07 09:59:41 jasper Exp $
+@conflict gnome2-user-docs-*
+@pkgpath x11/gnome/users-guide
 share/gnome/
 share/gnome/help/
 share/gnome/help/gnome-access-guide/
