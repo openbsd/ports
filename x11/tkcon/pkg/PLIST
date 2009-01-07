@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/07 11:16:56 sthen Exp $
+bin/tkcon
+share/doc/tkcon/
+share/doc/tkcon/README.txt
+share/doc/tkcon/docs/
+share/doc/tkcon/docs/bindings.html
+share/doc/tkcon/docs/changes.txt
+share/doc/tkcon/docs/demopic.gif
+share/doc/tkcon/docs/dump.html
+share/doc/tkcon/docs/idebug.html
+share/doc/tkcon/docs/index.html
+share/doc/tkcon/docs/license.terms
+share/doc/tkcon/docs/limits.html
+share/doc/tkcon/docs/nontcl.html
+share/doc/tkcon/docs/observe.html
+share/doc/tkcon/docs/perl.txt
+share/doc/tkcon/docs/plugin.html
+share/doc/tkcon/docs/procs.html
+share/doc/tkcon/docs/purpose.html
+share/doc/tkcon/docs/start.html
+share/doc/tkcon/docs/style.css
+share/doc/tkcon/docs/tkcon.html
+share/doc/tkcon/docs/todo.html
+share/doc/tkcon/index.html

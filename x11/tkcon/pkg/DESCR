@@ -1,0 +1,17 @@
+A replacement for the standard console that comes with Tk, tkcon
+provides many more features than the standard console and works on all
+platforms where Tcl/Tk is available.  It is meant primarily to aid one
+when working with the little details inside Tcl and Tk and to give Unix
+users the GUI console provided by default in the Mac and Windows Tk.
+
+Features:
+  Command history.
+  Path (Unix style) / Proc / Variable name expansion.
+  Multiple and tabbed consoles, each with its own state.
+  Captures stdout and stderr to console window.
+  Hot errors (click on error result to see stack trace).
+  Electric character matching (a la emacs).
+  Electric proc highlighting.
+  Enhanced history searching.
+  Configurable Cut / Copy / Paste between windows.
+  Communication between consoles and other Tk interpreters.
