@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.361 2009/01/01 04:39:50 kevlo Exp $
+# $OpenBSD: Makefile,v 1.362 2009/01/07 11:18:25 sthen Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -212,6 +212,7 @@
      SUBDIR += tilda
      SUBDIR += tint
      SUBDIR += tk
+     SUBDIR += tkcon
      SUBDIR += tktable
      SUBDIR += transset-df
      SUBDIR += trayer
