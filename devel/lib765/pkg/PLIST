@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:38:13 espie Exp $
-include/765.h
-lib/lib765.a
-lib/lib765.la
-share/doc/lib765/
-share/doc/lib765/765.txt
-%%SHARED%%

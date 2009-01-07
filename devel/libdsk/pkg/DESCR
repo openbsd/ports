@@ -1,3 +1,0 @@
-libdsk is a library intended to give transparent access to
-floppy drives and to the disk image files used by emulators
-to represent floppy drives.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.659 2009/01/05 18:14:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.660 2009/01/07 18:17:19 grange Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -124,7 +124,6 @@
      SUBDIR += json-glib
      SUBDIR += kdbg
      SUBDIR += lam
-     SUBDIR += lib765
      SUBDIR += libIDL
      SUBDIR += libJudy
      SUBDIR += libassetml
@@ -137,7 +136,6 @@
      SUBDIR += libconfuse
      SUBDIR += libdaemon
      SUBDIR += libdockapp
-     SUBDIR += libdsk
      SUBDIR += libdvdplay
      SUBDIR += libdvdread
      SUBDIR += libelf
