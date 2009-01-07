@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1 2009/01/07 21:35:59 matthieu Exp $
+%%SHARED%%
+@bin bin/bitbang
+@bin bin/bitbang2
+@bin bin/bitbang_cbus
+@bin bin/bitbang_ft2232
+@bin bin/find_all
+bin/libftdi-config
+@bin bin/simple
+include/ftdi.h
+lib/libftdi.a
+lib/libftdi.la
+lib/pkgconfig/
+lib/pkgconfig/libftdi.pc
