@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_quotearg_c,v 1.1 2009/01/07 17:51:16 jasper Exp $
+--- lib/quotearg.c.orig	Wed Jan  7 18:33:26 2009
++++ lib/quotearg.c	Wed Jan  7 18:34:52 2009
+@@ -67,6 +67,10 @@
+ # define mbstate_t int
+ #endif
+ 
++#if HAVE_WCTYPE_H
++# include <wctype.h>
++#endif
++
+ #define INT_BITS (sizeof (int) * CHAR_BIT)
+ 
+ struct quoting_options

@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_obstack_c,v 1.1 2009/01/07 17:51:16 jasper Exp $
+--- lib/obstack.c.orig	Wed Jan  7 18:35:58 2009
++++ lib/obstack.c	Wed Jan  7 18:36:48 2009
+@@ -43,6 +43,9 @@
+ #endif
+ #endif
+ 
++#if HAVE_STDLIB_H
++# include <stdlib.h>
++#endif
+ 
+ #ifndef ELIDE_CODE
+ 
