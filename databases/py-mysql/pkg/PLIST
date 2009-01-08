@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/06/25 17:12:29 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/01/08 20:06:48 sturm Exp $
 lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/native_libs.txt
 lib/python${MODPY_VERSION}/site-packages/MySQL_python-1.2.2-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/__init__.py
