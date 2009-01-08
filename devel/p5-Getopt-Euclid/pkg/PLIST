@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/08 12:17:57 jasper Exp $
+${P5SITE}/Getopt/
+${P5SITE}/Getopt/Euclid/
+${P5SITE}/Getopt/Euclid.pm
+${P5SITE}/Getopt/Euclid/HierDemo.pm
+@man man/man3p/Getopt::Euclid.3p
+@man man/man3p/Getopt::Euclid::HierDemo.3p
