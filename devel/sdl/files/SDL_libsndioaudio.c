@@ -188,6 +188,25 @@ static int LIBSNDIO_OpenAudio(_THIS, SDL_AudioSpec *spec)
 		par.sig = 1;
 		par.le = 1;
 		break;
+	case AUDIO_S16MSB:
+		par.bits = 16;
+		par.sig = 1;
+		par.le = 0;
+		break;
+	case AUDIO_S8:
+		par.bits = 8;
+		par.sig = 1;
+		break;
+	case AUDIO_U16LSB:
+		par.bits = 16;
+		par.sig = 0;
+		par.le = 1;
+		break;
+	case AUDIO_U16MSB:
+		par.bits = 16;
+		par.sig = 0;
+		par.le = 0;
+		break;
 	case AUDIO_U8:
 		par.bits = 8;
 		par.sig = 0;
@@ -238,11 +257,18 @@ static int LIBSNDIO_OpenAudio(_THIS, SDL_AudioSpec *spec)
 		return(-1);
 	}
 
-	if (par.bits == 16 && par.sig == 1 && par.le == 1)
-		spec->format = AUDIO_S16LSB;
-	else if (par.bits == 8 && par.sig == 0)
-		spec->format = AUDIO_U8;
-	else {
+	if (par.bits == 16) {
+		if (par.sig && par.le) {
+			spec->format = AUDIO_S16LSB;
+		} else if (par.sig && !par.le) {
+			spec->format = AUDIO_S16MSB;
+		} else if (!par.sig && par.le) {
+			spec->format = AUDIO_U16LSB;
+		} else 
+			spec->format = AUDIO_U16MSB;
+	} else if (par.bits == 8) {
+		spec->format = par.sig ? AUDIO_S8 : AUDIO_U8;
+	} else {
 		SDL_SetError("LIBSNDIO couldn't configure a suitable format");
 		return(-1);
 	}
