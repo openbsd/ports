@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/02 22:25:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/01/08 12:05:12 jasper Exp $
 
 COMMENT=		complete MPD client library
 
-DISTNAME=		POE-Component-Client-MPD-0.9.0
+DISTNAME=		POE-Component-Client-MPD-0.9.1
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
 
-RUN_DEPENDS=		::audio/p5-Audio-MPD-Common \
+RUN_DEPENDS=		:p5-Audio-MPD-Common->=0.1.4:audio/p5-Audio-MPD-Common \
 			::devel/p5-Class-Accessor \
 			::devel/p5-List-MoreUtils \
 			::devel/p5-POE \
