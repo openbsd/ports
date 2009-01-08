@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2008/12/17 18:41:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2009/01/08 20:09:33 sturm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ GNOME_VERSION=	2.24.2
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}p2
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 
@@ -28,7 +28,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils \
+BUILD_DEPENDS=	::textproc/rarian \
+		:gnome-doc-utils-*:x11/gnome/doc-utils \
 		::x11/gnome/icon-theme
 
 MULTI_PACKAGES=	-main -djvu -dvi
@@ -40,13 +41,12 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
 		pixman-1 png xml2 z
 
-BUILD_DEPENDS=		::textproc/rarian
-
 WANTLIB-main=		${WANTLIB} ICE ORBit-2 SM c dbus-1 dbus-glib-1 \
 			gconf-2 glade-2.0 gnome-keyring gs gthread-2.0 \
 			jpeg pthread tiff
 LIB_DEPENDS-main=	poppler.>=3,poppler-glib.>=3::print/poppler \
 			spectre::print/libspectre \
+			gnome-keyring::x11/gnome/keyring \
 			${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-main=	::textproc/rarian \
 			:shared-mime-info-*:misc/shared-mime-info \
