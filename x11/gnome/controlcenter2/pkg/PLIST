@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.24 2008/12/17 18:47:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2009/01/08 15:26:01 jasper Exp $
 @conflict control-center-1*
+@conflict control-center2-*
+@pkgpath x11/gnome/controlcenter2
 %%SHARED%%
 @bin bin/gnome-about-me
 @bin bin/gnome-appearance-properties

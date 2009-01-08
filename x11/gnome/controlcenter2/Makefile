@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2008/12/17 18:47:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2009/01/08 15:26:01 jasper Exp $
 
 # XXX
 # fix gconftool-2 calls in PLIST (remove 2>&1 ; also in gnome-settings-daemon)
@@ -8,7 +8,6 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		control-center2-${VERSION}p2
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
 
