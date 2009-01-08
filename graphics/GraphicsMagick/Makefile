@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2008/12/07 18:13:01 okan Exp $
+# $OpenBSD: Makefile,v 1.9 2009/01/08 19:57:36 okan Exp $
 
 COMMENT=	image processing tools with stable ABI
 
-DISTNAME=	GraphicsMagick-1.1.14
+DISTNAME=	GraphicsMagick-1.3.3
 CATEGORIES=	graphics devel
 
-SHARED_LIBS +=	GraphicsMagick       0.3      # .1.14
-SHARED_LIBS +=	GraphicsMagick++     0.2      # .0.4
-SHARED_LIBS +=	GraphicsMagickWand   0.2      # .1.3
+SHARED_LIBS +=	GraphicsMagick       1.0      # .3.3
+SHARED_LIBS +=	GraphicsMagick++     1.0      # .3.0
+SHARED_LIBS +=	GraphicsMagickWand   1.0      # .2.1
 
 HOMEPAGE=	http://www.graphicsmagick.org/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
@@ -29,12 +29,9 @@ LIB_DEPENDS=		bz2.>=10::archivers/bzip2 \
 			xml2.>=9::textproc/libxml
 
 USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.61
-USE_LIBTOOL=		Yes
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-quantum-depth=16 \
-			--without-dot \
 			--without-dps \
 			--without-fpx \
 			--without-modules \
@@ -74,5 +71,13 @@ CONFIGURE_ARGS+=	--with-wmf
 # due to the absence of freetype
 
 REGRESS_DEPENDS=	:${PKGNAME}:${BASE_PKGPATH}
+
+post-install:
+	@perl -pi -e s,'-L${WRKBUILD}/(magick|wand)/.libs','',g \
+		${PREFIX}/bin/GraphicsMagick{,++}-config 
+.for f in GraphicsMagick++ GraphicsMagick GraphicsMagickWand
+	@perl -pi -e s,'-L${WRKBUILD}/(magick|wand)/.libs','',g \
+		${PREFIX}/lib/lib${f}.la
+.endfor
 
 .include <bsd.port.mk>
