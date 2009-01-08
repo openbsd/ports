@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2008/12/30 22:17:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2009/01/08 20:38:11 ratchov Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.13
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p9
+PKGNAME=	${DISTNAME:L}p10
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
