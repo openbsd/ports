@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.11 2008/08/20 02:07:04 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.12 2009/01/08 12:07:03 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _dovecot:518
 @newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
@@ -99,6 +99,7 @@ share/doc/dovecot/securecoding.txt
 share/doc/dovecot/wiki/
 share/doc/dovecot/wiki/ACL.txt
 share/doc/dovecot/wiki/AixPluginsSupport.txt
+share/doc/dovecot/wiki/AuthDatabase.CheckPassword.txt
 share/doc/dovecot/wiki/AuthDatabase.LDAP.txt
 share/doc/dovecot/wiki/AuthDatabase.Passwd.txt
 share/doc/dovecot/wiki/AuthDatabase.PasswdFile.txt
@@ -189,7 +190,6 @@ share/doc/dovecot/wiki/Namespaces.txt
 share/doc/dovecot/wiki/OSCompatibility.txt
 share/doc/dovecot/wiki/POP3Server.txt
 share/doc/dovecot/wiki/PasswordDatabase.BSDAuth.txt
-share/doc/dovecot/wiki/PasswordDatabase.CheckPassword.txt
 share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.AllowNets.txt
 share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.Host.txt
 share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.NoDelay.txt
@@ -201,12 +201,20 @@ share/doc/dovecot/wiki/PasswordDatabase.PAM.txt
 share/doc/dovecot/wiki/PasswordDatabase.Shadow.txt
 share/doc/dovecot/wiki/PasswordDatabase.txt
 share/doc/dovecot/wiki/PerformanceTuning.txt
+share/doc/dovecot/wiki/Plugins.Autocreate.txt
 share/doc/dovecot/wiki/Plugins.Convert.txt
 share/doc/dovecot/wiki/Plugins.Expire.txt
+share/doc/dovecot/wiki/Plugins.FTS.Lucene.txt
+share/doc/dovecot/wiki/Plugins.FTS.Solr.txt
+share/doc/dovecot/wiki/Plugins.FTS.Squat.txt
 share/doc/dovecot/wiki/Plugins.FTS.txt
 share/doc/dovecot/wiki/Plugins.Lazyexpunge.txt
+share/doc/dovecot/wiki/Plugins.Listescape.txt
 share/doc/dovecot/wiki/Plugins.MailLog.txt
+share/doc/dovecot/wiki/Plugins.MboxSnarf.txt
 share/doc/dovecot/wiki/Plugins.Trash.txt
+share/doc/dovecot/wiki/Plugins.Virtual.txt
+share/doc/dovecot/wiki/Plugins.Zlib.txt
 share/doc/dovecot/wiki/Plugins.txt
 share/doc/dovecot/wiki/PostLoginScripting.txt
 share/doc/dovecot/wiki/QuickConfiguration.txt
@@ -224,13 +232,13 @@ share/doc/dovecot/wiki/SSL.txt
 share/doc/dovecot/wiki/Sasl.txt
 share/doc/dovecot/wiki/SecurityTuning.txt
 share/doc/dovecot/wiki/SharedMailboxes.txt
-share/doc/dovecot/wiki/ShellEasyConf.txt
 share/doc/dovecot/wiki/SystemUsers.txt
 share/doc/dovecot/wiki/TestInstallation.txt
 share/doc/dovecot/wiki/TestPop3Installation.txt
 share/doc/dovecot/wiki/TimeMovedBackwards.txt
 share/doc/dovecot/wiki/Upgrading.1.0.txt
 share/doc/dovecot/wiki/Upgrading.1.1.txt
+share/doc/dovecot/wiki/Upgrading.1.2.txt
 share/doc/dovecot/wiki/Upgrading.txt
 share/doc/dovecot/wiki/UserDatabase.ExtraFields.txt
 share/doc/dovecot/wiki/UserDatabase.NSS.txt
