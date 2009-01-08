@@ -1,10 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/09 15:58:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/01/08 19:48:21 naddy Exp $
+@pkgpath audio/sox,mp3
+@pkgpath audio/sox,mp3,vorbis
+@pkgpath audio/sox,vorbis
+%%SHARED%%
 bin/play
 bin/rec
-bin/sox
-bin/soxmix
+@bin bin/sox
+bin/soxi
+include/sox.h
+include/soxstdint.h
+lib/libsox.a
+lib/libsox.la
+lib/pkgconfig/
+lib/pkgconfig/sox.pc
+@comment lib/sox/
 @man man/man1/play.1
 @man man/man1/rec.1
 @man man/man1/sox.1
-@man man/man1/soxexam.1
-@man man/man1/soxmix.1
+@man man/man1/soxi.1
+@man man/man3/libsox.3
+@man man/man7/soxeffect.7
+@man man/man7/soxformat.7

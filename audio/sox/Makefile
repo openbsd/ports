@@ -1,45 +1,65 @@
-# $OpenBSD: Makefile,v 1.37 2008/07/08 15:03:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2009/01/08 19:48:21 naddy Exp $
 
-COMMENT=	SOund eXchange - universal sound sample translator
+COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
-DISTNAME=	sox-12.18.2
-PKGNAME=	${DISTNAME}	# also see below
+DISTNAME=	sox-14.2.0
+SHARED_LIBS +=  sox                  0.0      # .0.0
+SHARED_LIBS +=  sfx                  0.0      # .0.0
 CATEGORIES=	audio
 HOMEPAGE=	http://sox.sourceforge.net/
 
-MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
-
-# gsm library has bad license
+# GPLv2, but the included gsm library was originally distributed with an
+# incomplete license.
 PERMIT_PACKAGE_CDROM=	no redistribution
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	no redistribution
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sox/}
 
-CONFIGURE_STYLE=gnu dest
-CONFIGURE_ARGS=	--disable-oss-dsp
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ENV=	PLAY_SUPPORT=1
+# see CONFIGURE_ARGS below
+LIB_DEPENDS=	vorbis.>=6,vorbisenc.>=2,vorbisfile.>=5::audio/libvorbis \
+		FLAC.>=9::audio/flac \
+		magic.>=1::devel/libmagic \
+		mad.>=2::audio/libmad \
+		id3tag.>=3::audio/libid3tag \
+		mp3lame.>=2::audio/lame \
+		png.>=8::graphics/png \
+		samplerate.>=2::audio/libsamplerate
+WANTLIB=	c m ogg z
 
-FLAVORS=	mp3 vorbis
-FLAVOR?=
+USE_LIBTOOL=	Yes
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-silent-libtool
 
-.if ${FLAVOR:L:Mvorbis}
-LIB_DEPENDS+=	vorbis.>=3,vorbisenc.>=2,vorbisfile.>=4::audio/libvorbis
-WANTLIB+=	ogg
-.else
-CONFIGURE_ARGS+= --disable-ogg-vorbis
-.endif
+# Don't use modules
+CONFIGURE_ARGS+=--without-libltdl
 
-.if ${FLAVOR:L:Mmp3}
-PKGNAME=	${DISTNAME}p0
-LIB_DEPENDS+=	mad.>=2::audio/libmad mp3lame::audio/lame
-.else
-CONFIGURE_ARGS+= --disable-mad --disable-lame
-.endif
+# Sound drivers
+CONFIGURE_ARGS+=--disable-libao \
+		--disable-oss \
+		--enable-sun-audio
+
+# Additional file formats
+CONFIGURE_ARGS+=--without-sndfile \
+		--with-ogg \
+		--with-flac \
+		--without-ffmpeg \
+		--with-magic \
+		--with-mad \
+		--with-id3tag \
+		--with-lame \
+		--without-amr-wb \
+		--without-amr-nb \
+		--without-wavpack \
+		--with-png \
+		--with-samplerate \
+		--without-ladspa
+
+CONFIGURE_ENV= \
+	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+	LDFLAGS="-L${LOCALBASE}/lib"
 
 do-regress:
 	@cd ${WRKSRC}/src && ./tests.sh && ./testall.sh
