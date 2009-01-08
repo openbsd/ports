@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2008/10/07 09:57:52 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2009/01/08 21:04:02 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict app_conference-<=20070710
 @newgroup _asterisk:545
@@ -729,9 +729,7 @@ share/doc/asterisk/datastores.txt
 share/doc/asterisk/digium-mib.txt
 share/doc/asterisk/dundi.txt
 share/doc/asterisk/enum.txt
-@owner _asterisk
 share/doc/asterisk/extconfig.txt
-@owner
 share/doc/asterisk/extensions.txt
 share/doc/asterisk/externalivr.txt
 share/doc/asterisk/freetds.txt
