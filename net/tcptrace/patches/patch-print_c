@@ -1,6 +1,5 @@
-$OpenBSD: patch-print_c,v 1.1 2002/10/17 18:21:29 naddy Exp $
---- print.c.orig	Mon Dec  3 10:58:49 2001
-+++ print.c	Wed Oct 16 21:53:19 2002
+--- print.c.orig	Wed Nov 19 15:38:05 2003
++++ print.c	Wed Jan  7 18:30:33 2009
 @@ -137,8 +137,8 @@ static void
  printeth_packet(
      struct ether_header *pep)
@@ -30,17 +29,3 @@ $OpenBSD: patch-print_c,v 1.1 2002/10/17 18:21:29 naddy Exp $
  
  /* represent the sequence numbers absolute or relative to 0 */
  /* N.B.: will fail will sequence space wraps around more than once */
-@@ -776,11 +776,11 @@ PrintSeqRep(
-     
-     if (ptcb && print_seq_zero && (ptcb->syn_count>0)) {
- 	/* Relative form */
--	sprintf(buf,hex?"0x%08x(R)":"%d(R)",
-+	snprintf(buf, sizeof(buf), hex?"0x%08x(R)":"%d(R)",
- 		seq - ptcb->syn);
-     } else {
- 	/* Absolute form */
--	sprintf(buf,hex?"0x%08x":"%d",seq);
-+	snprintf(buf, sizeof(buf), hex?"0x%08x":"%d", seq);
-     }
-     return(buf);
- }

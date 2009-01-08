@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcptrace_h,v 1.1 2002/10/17 18:21:29 naddy Exp $
---- tcptrace.h.orig	Wed Oct 16 21:21:39 2002
-+++ tcptrace.h	Wed Oct 16 21:23:12 2002
-@@ -711,7 +711,7 @@ int finite(double);
+$OpenBSD: patch-tcptrace_h,v 1.2 2009/01/08 09:03:15 giovanni Exp $
+--- tcptrace.h.orig	Thu Nov  4 22:55:38 2004
++++ tcptrace.h	Wed Jan  7 18:30:33 2009
+@@ -773,7 +773,7 @@ int finite(double);
  /* note that many machines have an ether_ntoa, but the output differs, as does
     the prototype, so we'll include our own and change the name to avoid conflicts
     with local prototypes if they exist and differ */

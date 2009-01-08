@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:46 espie Exp $
-bin/tcptrace
+@comment $OpenBSD: PLIST,v 1.5 2009/01/08 09:03:16 giovanni Exp $
+@bin bin/tcptrace
 @man man/man1/tcptrace.1
 share/doc/tcptrace/
 share/doc/tcptrace/ARGS

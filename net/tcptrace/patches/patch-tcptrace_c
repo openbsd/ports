@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcptrace_c,v 1.1 2002/10/17 18:21:29 naddy Exp $
---- tcptrace.c.orig	Wed Jul 24 00:33:18 2002
-+++ tcptrace.c	Wed Oct 16 22:12:48 2002
-@@ -594,7 +594,7 @@ Dump File Names\n\
+$OpenBSD: patch-tcptrace_c,v 1.2 2009/01/08 09:03:15 giovanni Exp $
+--- tcptrace.c.orig	Fri Oct  1 23:42:34 2004
++++ tcptrace.c	Wed Jan  7 18:30:33 2009
+@@ -639,7 +639,7 @@ Dump File Names\n\
  	char buf[256];		/* plenty large, but checked below with strncpy */
  	struct ext_var_op *pvop = &extended_vars[i];
  	strncpy(buf,pvop->var_optname,sizeof(buf)-10);

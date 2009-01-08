@@ -1,29 +1,30 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2009/01/08 09:03:15 giovanni Exp $
 
-COMMENT=	TCP dump file analysis tool
+COMMENT=		TCP dump file analysis tool
 
-DISTNAME=	tcptrace-6.2.0
-PKGNAME=	${DISTNAME}p0
-CATEGORIES=	net
-HOMEPAGE=	http://masaka.cs.ohiou.edu/software/tcptrace/
-MASTER_SITES=	${HOMEPAGE}download/ \
-		${HOMEPAGE}download/old/6.2.0/
+DISTNAME=		tcptrace-6.6.7
+PKGNAME=		${DISTNAME}
+CATEGORIES=		net
+HOMEPAGE=		http://masaka.cs.ohiou.edu/software/tcptrace/
+MASTER_SITES=		${HOMEPAGE}download/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m pcap 
 
-BUILD_DEPENDS=  :bison-*:devel/bison
+BUILD_DEPENDS=  	:bison-*:devel/bison
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	YACC=bison
+RUN_DEPENDS+=           ::archivers/bzip2
 
-ALL_TARGET=	tcptrace
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		YACC=bison
 
-NO_REGRESS=	Tes
+ALL_TARGET=		tcptrace
+
+NO_REGRESS=		Yes
 
 DOCFILES=	ARGS COPYRIGHT FAQ README README.mailing_list README.modules \
 		README.tput_graphs WWW dot_tcptracerc
