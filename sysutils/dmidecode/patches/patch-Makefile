@@ -1,6 +1,5 @@
-$OpenBSD: patch-Makefile,v 1.2 2007/11/04 19:51:29 aanriot Exp $
---- Makefile.orig	Fri Feb 16 12:00:12 2007
-+++ Makefile	Sat Oct 27 13:33:42 2007
+--- Makefile.orig	Sat Feb 16 19:55:52 2008
++++ Makefile	Wed Jan  7 12:11:35 2009
 @@ -8,25 +8,25 @@
  #	Licensed under the GNU Public License.
  #
@@ -36,7 +35,7 @@ $OpenBSD: patch-Makefile,v 1.2 2007/11/04 19:51:29 aanriot Exp $
  
  INSTALL         := install
  INSTALL_DATA    := $(INSTALL) -m 644
-@@ -100,28 +100,28 @@ install : install-bin install-man install-doc
+@@ -100,28 +100,28 @@
  uninstall : uninstall-bin uninstall-man uninstall-doc
  
  install-bin : $(PROGRAMS)
@@ -59,7 +58,7 @@ $OpenBSD: patch-Makefile,v 1.2 2007/11/04 19:51:29 aanriot Exp $
  
  uninstall-man :
  	for program in $(PROGRAMS) ; do \
- 	$(RM) $(DESTDIR)$(man8dir)/$$program.8
+ 	$(RM) $(DESTDIR)$(man8dir)/$$program.8 ; done
  
  install-doc :
 -	$(INSTALL_DIR) $(DESTDIR)$(docdir)
