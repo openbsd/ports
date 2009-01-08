@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2008/10/25 10:39:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.18 2009/01/08 21:33:58 jcs Exp $
 
 COMMENT=	object relation model implementation for ruby
 
 DISTNAME=	activerecord-2.1.2
-PKGNAME=	ruby-${DISTNAME}
+PKGNAME=	ruby-${DISTNAME}p0
 CATEGORIES=	databases
 
 # MIT License

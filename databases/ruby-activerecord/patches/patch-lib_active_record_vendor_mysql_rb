@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_active_record_vendor_mysql_rb,v 1.1 2009/01/08 21:33:58 jcs Exp $
+--- lib/active_record/vendor/mysql.rb.orig	Thu Jan  8 14:17:05 2009
++++ lib/active_record/vendor/mysql.rb	Thu Jan  8 14:17:09 2009
+@@ -14,7 +14,7 @@ class Mysql
+   MAX_PACKET_LENGTH = 256*256*256-1
+   MAX_ALLOWED_PACKET = 1024*1024*1024
+ 
+-  MYSQL_UNIX_ADDR = "/tmp/mysql.sock"
++  MYSQL_UNIX_ADDR = "/var/run/mysql/mysql.sock"
+   MYSQL_PORT = 3306
+   PROTOCOL_VERSION = 10
+ 
