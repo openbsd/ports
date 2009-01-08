@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/11/21 17:23:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/01/08 20:32:18 sturm Exp $
 
 # (empathy:10245): Gtk-WARNING **: could not load image: Icon 'im-xmpp' not present in theme
 
@@ -6,6 +6,7 @@ COMMENT= 		telepathy based messenger for the Gnome desktop
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.24.1
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	empathy              1.0      # .16.4
 SHARED_LIBS +=	empathy-gtk          1.0      # .15.6
 CATEGORIES=		net
@@ -18,16 +19,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
+WANTLIB=	ICE SM ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
-		asn1 atk-1.0 audiofile bonobo-2 bonobo-activation c \
-		cairo com_err crypto dbus-1 dbus-glib-1 esd expat fontconfig \
-		freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
-		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnomevfs-2 \
+		art_lgpl_2 asn1 atk-1.0 audiofile bonobo-2 bonobo-activation \
+		bonoboui-2 c cairo com_err crypto dbus-1 dbus-glib-1 esd \
+		expat fontconfig freetype gailutil gconf-2 gdk-x11-2.0 \
+		gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
+		gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
 		gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4 \
 		nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		plc4 plds4 png popt pthread smime3 softokn3 soup-2.4 \
-		sqlite3 ssl ssl3 stdc++ telepathy telepathy-glib util xml2 z
+		plc4 plds4 png popt pthread smime3 sndio softokn3 soup-2.4 \
+		sqlite3 ssl ssl3 telepathy telepathy-glib util xml2 z
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -37,7 +39,8 @@ BUILD_DEPENDS=		::devel/iso-codes \
 			::x11/gnome/doc-utils \
 			::x11/py-gtk2
 LIB_DEPENDS=		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
-			missioncontrol-client::net/telepathy/telepathy-mission-control
+			missioncontrol-client::net/telepathy/telepathy-mission-control \
+			panel-applet-2::x11/gnome/panel
 RUN_DEPENDS=		::net/telepathy/telepathy-butterfly \
 			::net/telepathy/telepathy-gabble \
 			::x11/hicolor-icon-theme \
