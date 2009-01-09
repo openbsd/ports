@@ -1,7 +1,7 @@
-$OpenBSD: patch-gdk_imlib_utils_c,v 1.1 2003/06/20 14:53:12 avsm Exp $
---- gdk_imlib/utils.c.orig	Wed Jun 18 15:46:18 2003
-+++ gdk_imlib/utils.c	Wed Jun 18 15:46:51 2003
-@@ -1336,7 +1336,7 @@ gdk_imlib_create_image_from_xpm_data(cha
+$OpenBSD: patch-gdk_imlib_utils_c,v 1.2 2009/01/09 16:21:42 naddy Exp $
+--- gdk_imlib/utils.c.orig	Fri Mar 22 15:43:29 2002
++++ gdk_imlib/utils.c	Fri Jan  9 17:20:41 2009
+@@ -1336,7 +1336,7 @@ gdk_imlib_create_image_from_xpm_data(char **data)
  		{
  		  if (line[k] != ' ')
  		    {
