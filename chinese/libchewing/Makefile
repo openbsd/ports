@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/04 09:16:11 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2009/01/09 07:33:51 kevlo Exp $
 
 COMMENT=	intelligent phonetic input method library
 
-DISTNAME=	libchewing-0.3.1
+DISTNAME=	libchewing-0.3.2
 PKGNAME=	zh-${DISTNAME}
 
 SHARED_LIBS=	chewing	0.0	# .3.1
