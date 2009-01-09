@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/12/14 15:10:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/01/09 17:34:32 jakemsr Exp $
 %%SHARED%%
 @bin bin/canberra-gtk-play
 include/canberra-gtk.h
@@ -18,8 +18,8 @@ lib/libcanberra/libcanberra-multi.a
 lib/libcanberra/libcanberra-multi.la
 lib/libcanberra/libcanberra-null.a
 lib/libcanberra/libcanberra-null.la
-lib/libcanberra/libcanberra-oss.a
-lib/libcanberra/libcanberra-oss.la
+lib/libcanberra/libcanberra-sndio.a
+lib/libcanberra/libcanberra-sndio.la
 lib/pkgconfig/libcanberra-gtk.pc
 lib/pkgconfig/libcanberra.pc
 share/doc/libcanberra/

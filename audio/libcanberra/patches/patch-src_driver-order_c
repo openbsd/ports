@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_driver-order_c,v 1.1 2008/12/14 15:10:15 ajacoutot Exp $
---- src/driver-order.c.orig	Sun Dec 14 15:02:39 2008
-+++ src/driver-order.c	Sun Dec 14 15:02:56 2008
-@@ -34,11 +34,11 @@ const char* const ca_driver_order[] = {
+$OpenBSD: patch-src_driver-order_c,v 1.2 2009/01/09 17:34:32 jakemsr Exp $
+--- src/driver-order.c.orig	Wed Aug 27 15:24:53 2008
++++ src/driver-order.c	Fri Dec 26 16:38:44 2008
+@@ -28,17 +28,20 @@
+ #include "driver-order.h"
+ 
+ const char* const ca_driver_order[] = {
++#ifdef HAVE_SNDIO
++    "sndio",
++#endif
+ #ifdef HAVE_PULSE
+     "pulse",
+ #endif
  #ifdef HAVE_ALSA
      "alsa",
  #endif

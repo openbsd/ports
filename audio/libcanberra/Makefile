@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/12/14 15:10:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/01/09 17:34:32 jakemsr Exp $
 
 COMMENT=		implementation of the Freedesktop sound theme spec.
 
 DISTNAME=		libcanberra-0.10
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS +=  canberra             0.1      # .1.3
 SHARED_LIBS +=  canberra-gtk         0.0      # .0.4
 CATEGORIES=		audio devel
@@ -22,11 +22,15 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png pthread xml2 z
+		pcre pixman-1 png pthread sndio xml2 z
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+AUTOCONF_VERSION=	2.62
+AUTOMAKE_VERSION=	1.9
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 RUN_DEPENDS=		::devel/gconf2
 LIB_DEPENDS=		vorbis,vorbisfile::audio/libvorbis \
 			ltdl::devel/libtool,-ltdl \
@@ -41,12 +45,24 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/libcanberra \
 			--disable-schemas-install \
 			--localstatedir="/var" \
+			--enable-sndio \
 			--enable-gstreamer \
-			--enable-oss \
+			--disable-oss \
 			--disable-alsa \
 			--disable-pulse \
 			--disable-tdb
 CONFIGURE_ENV+=         LDFLAGS="-L${LOCALBASE}/lib" \
                         CPPFLAGS="-I${LOCALBASE}/include"
+
+post-patch:
+	cp ${FILESDIR}/sndio.c ${WRKSRC}/src
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal -I m4
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoconf
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoheader
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
 
 .include <bsd.port.mk>

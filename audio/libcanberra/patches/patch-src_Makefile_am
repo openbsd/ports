@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2009/01/09 17:34:32 jakemsr Exp $
+--- src/Makefile.am.orig	Fri Dec 26 14:40:20 2008
++++ src/Makefile.am	Fri Dec 26 15:06:49 2008
+@@ -207,6 +207,36 @@ libcanberra_oss_la_LDFLAGS = \
+ endif
+ endif
+ 
++if HAVE_SNDIO
++if BUILTIN_SNDIO
++
++libcanberra_la_SOURCES += \
++	sndio.c
++libcanberra_la_LIBADD += \
++	$(SNDIO_LIBS)
++
++else
++
++plugin_LTLIBRARIES += \
++	libcanberra-sndio.la
++
++libcanberra_sndio_la_SOURCES = \
++	sndio.c
++libcanberra_sndio_la_CFLAGS = \
++	 -Ddriver_open=sndio_driver_open \
++	 -Ddriver_destroy=sndio_driver_destroy \
++	 -Ddriver_change_device=sndio_driver_change_device \
++	 -Ddriver_change_props=sndio_driver_change_props \
++	 -Ddriver_play=sndio_driver_play \
++	 -Ddriver_cancel=sndio_driver_cancel \
++	 -Ddriver_cache=sndio_driver_cache
++libcanberra_sndio_la_LIBADD = \
++	libcanberra.la $(SNDIO_LIBS)
++libcanberra_sndio_la_LDFLAGS = \
++	-avoid-version -module -export-dynamic
++endif
++endif
++
+ if HAVE_GSTREAMER
+ if BUILTIN_GSTREAMER
+ 

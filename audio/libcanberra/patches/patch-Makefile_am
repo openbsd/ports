@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2009/01/09 17:34:32 jakemsr Exp $
+--- Makefile.am.orig	Fri Dec 26 16:32:45 2008
++++ Makefile.am	Fri Dec 26 16:32:45 2008
+@@ -19,7 +19,7 @@
+ dist_doc_DATA = README
+ 
+ EXTRA_DIST = bootstrap.sh autogen.sh LGPL libcanberra.schemas
+-SUBDIRS = src gtkdoc libltdl doc
++SUBDIRS = src gtkdoc doc
+ 
+ MAINTAINERCLEANFILES = README
+ noinst_DATA = README
