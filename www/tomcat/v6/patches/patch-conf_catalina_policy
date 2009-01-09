@@ -1,0 +1,29 @@
+$OpenBSD: patch-conf_catalina_policy,v 1.1.1.1 2009/01/09 21:38:43 kurt Exp $
+--- conf/catalina.policy.orig	Sun Jan  4 22:50:39 2009
++++ conf/catalina.policy	Sun Jan  4 22:51:48 2009
+@@ -158,21 +158,21 @@ grant { 
+ // the NOAA web server.  You might create a "grant" entries like this:
+ //
+ // The permissions granted to the context root directory apply to JSP pages.
+-// grant codeBase "file:${catalina.home}/webapps/examples/-" {
++// grant codeBase "file:${catalina.base}/webapps/examples/-" {
+ //      permission java.net.SocketPermission "dbhost.mycompany.com:5432", "connect";
+ //      permission java.net.SocketPermission "*.noaa.gov:80", "connect";
+ // };
+ //
+ // The permissions granted to the context WEB-INF/classes directory
+-// grant codeBase "file:${catalina.home}/webapps/examples/WEB-INF/classes/-" {
++// grant codeBase "file:${catalina.base}/webapps/examples/WEB-INF/classes/-" {
+ // };
+ //
+ // The permission granted to your JDBC driver
+-// grant codeBase "jar:file:${catalina.home}/webapps/examples/WEB-INF/lib/driver.jar!/-" {
++// grant codeBase "jar:file:${catalina.base}/webapps/examples/WEB-INF/lib/driver.jar!/-" {
+ //      permission java.net.SocketPermission "dbhost.mycompany.com:5432", "connect";
+ // };
+ // The permission granted to the scrape taglib
+-// grant codeBase "jar:file:${catalina.home}/webapps/examples/WEB-INF/lib/scrape.jar!/-" {
++// grant codeBase "jar:file:${catalina.base}/webapps/examples/WEB-INF/lib/scrape.jar!/-" {
+ //      permission java.net.SocketPermission "*.noaa.gov:80", "connect";
+ // };
+ 

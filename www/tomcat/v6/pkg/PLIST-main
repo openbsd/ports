@@ -1,0 +1,147 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/01/09 21:38:43 kurt Exp $
+@conflict jakarta-tomcat-*
+@pkgpath www/tomcat/v6
+@newgroup _tomcat:526
+@newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
+share/examples/tomcat/
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/
+@owner
+@group
+share/examples/tomcat/catalina.policy
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/catalina.policy
+@owner
+@group
+share/examples/tomcat/catalina.properties
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/catalina.properties
+@owner
+@group
+share/examples/tomcat/context.xml
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/context.xml
+@owner
+@group
+share/examples/tomcat/logging.properties
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/logging.properties
+@owner
+@group
+share/examples/tomcat/manager.xml
+share/examples/tomcat/server.xml
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/server.xml
+@owner
+@group
+share/examples/tomcat/tomcat-users.xml
+@mode 600
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/tomcat-users.xml
+@mode
+@owner
+@group
+share/examples/tomcat/tomcat.rc
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/tomcat.rc
+@owner
+@group
+share/examples/tomcat/web.xml
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/web.xml
+@sample ${CATALINA_BASE}/
+@sample ${CATALINA_BASE}/logs/
+@sample ${CATALINA_BASE}/shared/
+@sample ${CATALINA_BASE}/shared/classes/
+@sample ${CATALINA_BASE}/shared/lib/
+@sample ${CATALINA_BASE}/temp/
+@sample ${CATALINA_BASE}/webapps/
+@sample ${CATALINA_BASE}/work/
+@exec if [ ! -e ${CATALINA_BASE}/conf ]; then ln -sf ${CONFDIR} ${CATALINA_BASE}/conf; fi
+@unexec if [ -h ${CATALINA_BASE}/conf ]; then rm ${CATALINA_BASE}/conf; fi
+@owner
+@group
+tomcat/
+tomcat/LICENSE
+tomcat/NOTICE
+tomcat/README.OpenBSD
+tomcat/RELEASE-NOTES
+tomcat/RUNNING.txt
+tomcat/bin/
+tomcat/bin/bootstrap.jar
+tomcat/bin/catalina-tasks.xml
+tomcat/bin/catalina.sh
+tomcat/bin/commons-daemon.jar
+tomcat/bin/digest.sh
+tomcat/bin/jsvc.tar.gz
+tomcat/bin/setclasspath.sh
+tomcat/bin/shutdown.sh
+tomcat/bin/startup.sh
+tomcat/bin/tomcat-juli.jar
+tomcat/bin/tomcat-native.tar.gz
+tomcat/bin/tool-wrapper.sh
+tomcat/bin/version.sh
+tomcat/lib/
+tomcat/lib/annotations-api.jar
+tomcat/lib/catalina-ant.jar
+tomcat/lib/catalina-ha.jar
+tomcat/lib/catalina-tribes.jar
+tomcat/lib/catalina.jar
+tomcat/lib/el-api.jar
+tomcat/lib/jasper-el.jar
+tomcat/lib/jasper-jdt.jar
+tomcat/lib/jasper.jar
+tomcat/lib/jsp-api.jar
+tomcat/lib/servlet-api.jar
+tomcat/lib/tomcat-coyote.jar
+tomcat/lib/tomcat-dbcp.jar
+tomcat/lib/tomcat-i18n-es.jar
+tomcat/lib/tomcat-i18n-fr.jar
+tomcat/lib/tomcat-i18n-ja.jar
+tomcat/webapps/
+tomcat/webapps/host-manager/
+tomcat/webapps/host-manager/META-INF/
+tomcat/webapps/host-manager/META-INF/context.xml
+tomcat/webapps/host-manager/WEB-INF/
+tomcat/webapps/host-manager/WEB-INF/web.xml
+tomcat/webapps/host-manager/images/
+tomcat/webapps/host-manager/images/add.gif
+tomcat/webapps/host-manager/images/asf-logo.gif
+tomcat/webapps/host-manager/images/code.gif
+tomcat/webapps/host-manager/images/design.gif
+tomcat/webapps/host-manager/images/docs.gif
+tomcat/webapps/host-manager/images/fix.gif
+tomcat/webapps/host-manager/images/tomcat.gif
+tomcat/webapps/host-manager/images/update.gif
+tomcat/webapps/host-manager/images/void.gif
+tomcat/webapps/host-manager/manager.xml
+tomcat/webapps/manager/
+tomcat/webapps/manager/401.jsp
+tomcat/webapps/manager/META-INF/
+tomcat/webapps/manager/META-INF/context.xml
+tomcat/webapps/manager/WEB-INF/
+tomcat/webapps/manager/WEB-INF/web.xml
+tomcat/webapps/manager/images/
+tomcat/webapps/manager/images/add.gif
+tomcat/webapps/manager/images/asf-logo.gif
+tomcat/webapps/manager/images/code.gif
+tomcat/webapps/manager/images/design.gif
+tomcat/webapps/manager/images/docs.gif
+tomcat/webapps/manager/images/fix.gif
+tomcat/webapps/manager/images/tomcat.gif
+tomcat/webapps/manager/images/update.gif
+tomcat/webapps/manager/images/void.gif
+tomcat/webapps/manager/sessionDetail.jsp
+tomcat/webapps/manager/sessionsList.jsp
+tomcat/webapps/manager/status.xsd
+tomcat/webapps/manager/xform.xsl
+@extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*

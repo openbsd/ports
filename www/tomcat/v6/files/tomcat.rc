@@ -1,0 +1,20 @@
+# $OpenBSD: tomcat.rc,v 1.1.1.1 2009/01/09 21:38:43 kurt Exp $
+#
+# Start tomcat with following command:
+# $ sudo -u _tomcat %%PREFIX%%/tomcat/bin/startup.sh
+#
+
+# javaPathHelper will pickup JAVA_HOME from the env or the
+# path. If it is not set it will default the jdk that
+# satisfied the RUN_DEPEND.
+JAVA_HOME=$(javaPathHelper -h tomcat)
+JAVA_OPTS=-server
+
+# override other environment options:
+#CATALINA_HOME=%%PREFIX%%/tomcat
+#CATALINA_BASE=%%CATALINA_BASE%%
+#CATALINA_TMPDIR=$CATALINA_BASE/temp
+#JAVA_OPTS="-server -Djava.net.preferIPv4Stack=true"
+#JPDA_TRANSPORT=
+#JPDA_ADDRESS=
+#JSSE_HOME=
