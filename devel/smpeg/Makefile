@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2008/11/07 00:39:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2009/01/09 17:43:38 naddy Exp $
 
 COMMENT=	mpeg video player library with sound support
 
 DISTNAME=	smpeg-0.4.4
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 SHARED_LIBS=	smpeg 2.0
 CATEGORIES=	devel graphics
 

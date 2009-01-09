@@ -1,0 +1,12 @@
+$OpenBSD: patch-gtkgl_m4,v 1.1 2009/01/09 17:43:39 naddy Exp $
+--- gtkgl.m4.orig	Fri Jan  9 17:18:57 2009
++++ gtkgl.m4	Fri Jan  9 17:19:20 2009
+@@ -3,7 +3,7 @@
+ 
+ 
+ # AM_PATH_GTKGL([ACTION-IF-FOUND [,ACTION-IF-NOT-FOUND]])
+-AC_DEFUN(AM_PATH_GTKGL,
++AC_DEFUN([AM_PATH_GTKGL],
+ [
+ AC_REQUIRE([AM_PATH_GTK])
+ AC_PROVIDE([AM_PATH_GTKGL])

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2001/06/28 00:56:58 pvalchev Exp $
---- configure.orig	Tue Apr 24 13:25:46 2001
-+++ configure	Wed Jun 27 18:30:06 2001
+$OpenBSD: patch-configure,v 1.2 2009/01/09 17:43:38 naddy Exp $
+--- configure.orig	Tue Apr 24 21:25:46 2001
++++ configure	Fri Jan  9 18:32:40 2009
 @@ -2001,12 +2001,13 @@ else
    cat > conftest.$ac_ext <<EOF
  #line 2003 "configure"
@@ -36,7 +36,7 @@ $OpenBSD: patch-configure,v 1.1 2001/06/28 00:56:58 pvalchev Exp $
    no_sdl=""
    if test "$SDL_CONFIG" = "no" ; then
      no_sdl=yes
-@@ -2194,7 +2195,7 @@ echo "configure:2174: checking for SDL -
+@@ -2194,7 +2195,7 @@ echo "configure:2174: checking for SDL - version >= $m
    echo $ac_n "cross compiling; assumed OK... $ac_c"
  else
    cat > conftest.$ac_ext <<EOF
@@ -216,7 +216,7 @@ $OpenBSD: patch-configure,v 1.1 2001/06/28 00:56:58 pvalchev Exp $
    no_gtk=""
    if test "$GTK_CONFIG" = "no" ; then
      no_gtk=yes
-@@ -2697,7 +2698,7 @@ echo "configure:2678: checking for GTK -
+@@ -2697,7 +2698,7 @@ echo "configure:2678: checking for GTK - version >= $m
    echo $ac_n "cross compiling; assumed OK... $ac_c"
  else
    cat > conftest.$ac_ext <<EOF
@@ -252,7 +252,7 @@ $OpenBSD: patch-configure,v 1.1 2001/06/28 00:56:58 pvalchev Exp $
    rm -rf conftest*
     echo "*** The test program compiled, but did not run. This usually means"
            echo "*** that the run-time linker is not finding GTK or finding the wrong"
-@@ -2894,7 +2895,7 @@ if test x$enable_opengl_player = xyes; t
+@@ -2894,7 +2895,7 @@ if test x$enable_opengl_player = xyes; then
              ;;
          *)
              echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6

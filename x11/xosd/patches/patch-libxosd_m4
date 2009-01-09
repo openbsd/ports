@@ -1,0 +1,12 @@
+$OpenBSD: patch-libxosd_m4,v 1.1 2009/01/09 17:43:39 naddy Exp $
+--- libxosd.m4.orig	Fri Jan  9 17:37:13 2009
++++ libxosd.m4	Fri Jan  9 17:37:27 2009
+@@ -6,7 +6,7 @@
+ dnl AM_PATH_LIBXOSD([ACTION-IF-FOUND [, ACTION-IF-NOT-FOUND]])
+ dnl Test to see if libxosd is installed, and define LIBXOSD_CFLAGS, LIBXOSDLIBS
+ dnl
+-AC_DEFUN(AM_PATH_LIBXOSD,
++AC_DEFUN([AM_PATH_LIBXOSD],
+ [dnl
+ dnl Get the cflags and libraries from the xosd-config script
+ dnl

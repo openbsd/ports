@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2004/11/11 05:16:29 jcs Exp $
---- configure.orig	Mon Sep 13 20:05:56 2004
-+++ configure	Wed Nov 10 23:09:18 2004
-@@ -20708,7 +20708,7 @@
+$OpenBSD: patch-configure,v 1.2 2009/01/09 17:43:39 naddy Exp $
+--- configure.orig	Tue Sep 14 03:05:56 2004
++++ configure	Fri Jan  9 17:36:13 2009
+@@ -20708,7 +20708,7 @@ done
    ;;
  esac
  fi
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/11/11 05:16:29 jcs Exp $
  
  if test -n "$GTK_CONFIG"; then
    echo "$as_me:$LINENO: result: $GTK_CONFIG" >&5
-@@ -22143,7 +22143,7 @@
+@@ -22143,7 +22143,7 @@ done
    ;;
  esac
  fi
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/11/11 05:16:29 jcs Exp $
  
  if test -n "$XMMS_CONFIG"; then
    echo "$as_me:$LINENO: result: $XMMS_CONFIG" >&5
-@@ -22380,7 +22380,7 @@
+@@ -22380,7 +22380,7 @@ done
    ;;
  esac
  fi

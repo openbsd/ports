@@ -1,7 +1,7 @@
-$OpenBSD: patch-sigc++_Makefile_am,v 1.2 2001/10/24 12:54:37 shell Exp $
---- sigc++/Makefile.am.orig	Wed Oct 24 18:32:01 2001
-+++ sigc++/Makefile.am	Wed Oct 24 18:32:11 2001
-@@ -14,7 +14,7 @@
+$OpenBSD: patch-sigc++_Makefile_am,v 1.3 2009/01/09 17:43:38 naddy Exp $
+--- sigc++/Makefile.am.orig	Thu Oct 18 22:55:08 2001
++++ sigc++/Makefile.am	Fri Jan  9 18:29:19 2009
+@@ -14,7 +14,7 @@ libsigc_la_SOURCES= \
  EXTRA_libsigc_la_SOURCES = sigc_res.rc
  
  libsigc_la_LDFLAGS = -version-info $(LIBSIGC_SO_VERSION) \

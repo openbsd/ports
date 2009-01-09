@@ -1,0 +1,12 @@
+$OpenBSD: patch-sigc++_m4,v 1.1 2009/01/09 17:43:38 naddy Exp $
+--- sigc++.m4.orig	Fri Jan  9 18:30:18 2009
++++ sigc++.m4	Fri Jan  9 18:30:34 2009
+@@ -5,7 +5,7 @@ dnl Test for Libsigc++, and define SIGC_CFLAGS and SIG
+ dnl   to be used as follows:
+ dnl AM_PATH_SIGC(MINIMUM-VERSION, [ACTION-IF-FOUND [, ACTION-IF-NOT-FOUND]])
+ dnl
+-AC_DEFUN(AM_PATH_SIGC,
++AC_DEFUN([AM_PATH_SIGC],
+ [dnl 
+ dnl Get the cflags and libraries from the sigc-config script
+ dnl

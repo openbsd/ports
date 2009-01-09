@@ -1,0 +1,12 @@
+$OpenBSD: patch-atlas_m4,v 1.1 2009/01/09 17:43:38 naddy Exp $
+--- atlas.m4.orig	Fri Jan  9 17:04:25 2009
++++ atlas.m4	Fri Jan  9 17:04:42 2009
+@@ -9,7 +9,7 @@
+ dnl AM_PATH_ATLAS([MINIMUM-VERSION, [ACTION-IF-FOUND [, ACTION-IF-NOT-FOUND]]])
+ dnl Test for Atlas, and define ATLAS_CFLAGS and ATLAS_LIBS
+ dnl
+-AC_DEFUN(AM_PATH_ATLAS,
++AC_DEFUN([AM_PATH_ATLAS],
+ [dnl 
+ dnl Get the cflags and libraries from the atlas-config script
+ dnl

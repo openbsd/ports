@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2009/01/09 17:43:39 naddy Exp $
 
 COMMENT=	interface to access block/stream encryption algorithms
 
 DISTNAME=	libmcrypt-2.5.7
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	security
 SHARED_LIBS=	mcrypt	8.7
 MODGNU_SHARED_LIBS=mcrypt	''

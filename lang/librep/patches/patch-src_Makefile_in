@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2006/01/03 22:19:26 alek Exp $
---- src/Makefile.in.orig	Mon Jan  2 23:32:03 2006
-+++ src/Makefile.in	Mon Jan  2 23:32:21 2006
-@@ -57,7 +57,7 @@ all : librep.la $(DL_OBJS) check-dl rep 
+$OpenBSD: patch-src_Makefile_in,v 1.2 2009/01/09 17:43:39 naddy Exp $
+--- src/Makefile.in.orig	Tue Dec 18 05:23:55 2001
++++ src/Makefile.in	Fri Jan  9 17:38:46 2009
+@@ -57,7 +57,7 @@ all : librep.la $(DL_OBJS) check-dl rep rep-config rep
  
  librep.la : $(OBJS) $(LIBOBJS) $(ALLOCA)
  	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) \

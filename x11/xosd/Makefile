@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:04:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2009/01/09 17:43:39 naddy Exp $
 
 COMMENT=	displays text on your screen
 
 DISTNAME=	xosd-2.2.12
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	xosd 4.12
 CATEGORIES=	x11 graphics
 HOMEPAGE=	http://www.ignavus.net/software.html

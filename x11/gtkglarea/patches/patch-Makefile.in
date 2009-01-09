@@ -1,6 +1,7 @@
---- Makefile.in.orig	Tue Feb 22 13:34:06 2000
-+++ Makefile.in	Wed Mar 15 09:39:20 2000
-@@ -80,7 +80,7 @@
+$OpenBSD: patch-Makefile.in,v 1.2 2009/01/09 17:43:39 naddy Exp $
+--- Makefile.in.orig	Tue Feb 22 19:34:06 2000
++++ Makefile.in	Fri Jan  9 17:17:02 2009
+@@ -80,7 +80,7 @@ PACKAGE = @PACKAGE@
  RANLIB = @RANLIB@
  VERSION = @VERSION@
  
