@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2002/11/14 21:03:41 marcm Exp $
---- Makefile.in.orig	Sat Sep 28 01:10:27 2002
-+++ Makefile.in	Mon Oct  7 17:21:51 2002
-@@ -491,6 +491,9 @@ gdk_pixbufConf.sh: gdk_pixbufConf.sh.in 
+$OpenBSD: patch-Makefile_in,v 1.6 2009/01/09 16:13:22 naddy Exp $
+--- Makefile.in.orig	Wed Dec 18 23:19:32 2002
++++ Makefile.in	Fri Jan  9 17:12:25 2009
+@@ -491,6 +491,9 @@ gdk_pixbufConf.sh: gdk_pixbufConf.sh.in Makefile
  	     -e 's?\@GDK_PIXBUF_INCLUDEDIR\@?$(GDK_PIXBUF_INCLUDEDIR)?g' \
  	     -e 's?\@VERSION\@?$(VERSION)?g' \
  	     -e 's?\@GDK_PIXBUF_LIBS\@?$(GDK_PIXBUF_LIBS)?g' \
@@ -11,7 +11,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2002/11/14 21:03:41 marcm Exp $
  	        < $(srcdir)/gdk_pixbufConf.sh.in > gdk_pixbufConf.tmp \
  	&& mv gdk_pixbufConf.tmp gdk_pixbufConf.sh
  
-@@ -499,6 +502,9 @@ gdk_pixbuf_xlibConf.sh: gdk_pixbuf_xlibC
+@@ -499,6 +502,9 @@ gdk_pixbuf_xlibConf.sh: gdk_pixbuf_xlibConf.sh.in Make
  	     -e 's?\@GDK_PIXBUF_XLIB_INCLUDEDIR\@?$(GDK_PIXBUF_XLIB_INCLUDEDIR)?g' \
  	     -e 's?\@VERSION\@?$(VERSION)?g' \
  	     -e 's?\@GDK_PIXBUF_XLIB_LIBS\@?$(GDK_PIXBUF_XLIB_LIBS)?g' \
@@ -21,7 +21,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2002/11/14 21:03:41 marcm Exp $
  	        < $(srcdir)/gdk_pixbuf_xlibConf.sh.in > gdk_pixbuf_xlibConf.tmp \
  	&& mv gdk_pixbuf_xlibConf.tmp gdk_pixbuf_xlibConf.sh
  
-@@ -507,6 +513,9 @@ gnomecanvaspixbufConf.sh: gnomecanvaspix
+@@ -507,6 +513,9 @@ gnomecanvaspixbufConf.sh: gnomecanvaspixbufConf.sh.in 
  	     -e 's?\@GNOMECANVASPIXBUF_INCLUDEDIR\@?$(GNOMECANVASPIXBUF_INCLUDEDIR)?g' \
  	     -e 's?\@VERSION\@?$(VERSION)?g' \
  	     -e 's?\@GNOMECANVASPIXBUF_LIBS\@?$(GNOMECANVASPIXBUF_LIBS)?g' \
