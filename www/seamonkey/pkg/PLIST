@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/10/24 21:06:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/01/09 15:54:31 martynas Exp $
 @pkgpath www/seamonkey,-main
 bin/seamonkey
 @man man/man1/seamonkey.1
@@ -623,10 +623,8 @@ seamonkey/searchplugins/google.src
 seamonkey/searchplugins/jeeves.gif
 seamonkey/searchplugins/jeeves.src
 share/applications/seamonkey.desktop
-@exec rm -rf /tmp/.mozilla
-@exec cd %D/seamonkey && env HOME=/tmp LD_LIBRARY_PATH=%D/seamonkey ./regchrome
-@exec cd %D/seamonkey && env HOME=/tmp LD_LIBRARY_PATH=%D/seamonkey ./regxpcom
-@exec rm -rf /tmp/.mozilla
+@exec TEMP=`mktemp -d` && cd %D/seamonkey && env HOME=$TEMP LD_LIBRARY_PATH=%D/seamonkey ./regchrome && rm -fr $TEMP
+@exec TEMP=`mktemp -d` && cd %D/seamonkey && env HOME=$TEMP LD_LIBRARY_PATH=%D/seamonkey ./regxpcom && rm -fr $TEMP
 @unexec rm -f %D/seamonkey/chrome/chrome.rdf
 @unexec rm -f %D/seamonkey/chrome/overlays.rdf
 @unexec rm -f %D/seamonkey/chrome/stylesheets.rdf

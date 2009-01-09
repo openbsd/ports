@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2008/12/18 19:27:13 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.23 2009/01/09 15:54:31 martynas Exp $
 @conflict firefox3-*
 @conflict mozilla-firebird-*
 @pkgpath www/firefox3
@@ -404,8 +404,6 @@ mozilla-firefox/searchplugins/yahoo.xml
 share/applications/firefox.desktop
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
-@exec rm -rf /tmp/.mozilla
-@exec cd %D/mozilla-firefox && env HOME=/tmp LD_LIBRARY_PATH=%D/mozilla-firefox ./regxpcom
-@exec rm -rf /tmp/.mozilla
+@exec TEMP=`mktemp -d` && cd %D/mozilla-firefox && env HOME=$TEMP LD_LIBRARY_PATH=%D/mozilla-firefox ./regxpcom && rm -fr $TEMP
 @unexec rm -f %D/mozilla-firefox/components/compreg.dat
 @unexec rm -f %D/mozilla-firefox/components/xpti.dat

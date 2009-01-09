@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2008/12/18 19:27:13 martynas Exp $
+# $OpenBSD: Makefile,v 1.108 2009/01/09 15:54:31 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		3.0.5
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}
+PKGNAME=	mozilla-firefox-${VER}p0
 SO_VERSION=	20.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.

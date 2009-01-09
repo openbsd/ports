@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2008/07/05 16:00:29 martynas Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2009/01/09 15:54:31 martynas Exp $
 @unexec xulrunner --unregister-global
 %%SHARED%%
 bin/xulrunner
@@ -363,9 +363,7 @@ xulrunner/run-mozilla.sh
 @bin xulrunner/xulrunner-stub
 @sample ${SYSCONFDIR}/gre.d/
 @exec xulrunner --register-global
-@exec rm -rf /tmp/.mozilla
-@exec cd %D/xulrunner && env HOME=/tmp LD_LIBRARY_PATH=%D/xulrunner ./regxpcom
-@exec rm -rf /tmp/.mozilla
+@exec TEMP=`mktemp -d` && cd %D/xulrunner && env HOME=$TEMP LD_LIBRARY_PATH=%D/xulrunner ./regxpcom && rm -fr $TEMP
 @unexec rm -f %D/xulrunner/components/compreg.dat
 @unexec rm -f %D/xulrunner/components/xpti.dat
 @unexec rm -rf %D/xulrunner/extensions

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/07/24 10:10:34 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.15 2009/01/09 15:54:31 martynas Exp $
 %%SHARED%%
 bin/mozilla-thunderbird
 bin/thunderbird
@@ -426,9 +426,7 @@ mozilla-thunderbird/run-mozilla.sh
 share/applications/thunderbird.desktop
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
-@exec rm -rf /tmp/.mozilla
-@exec cd %D/mozilla-thunderbird && env HOME=/tmp LD_LIBRARY_PATH=%D/mozilla-thunderbird ./regxpcom
-@exec rm -rf /tmp/.mozilla
+@exec TEMP=`mktemp -d` && cd %D/mozilla-thunderbird && env HOME=$TEMP LD_LIBRARY_PATH=%D/mozilla-thunderbird ./regxpcom && rm -fr $TEMP
 @unexec rm -f %D/mozilla-thunderbird/components/compreg.dat
 @unexec rm -f %D/mozilla-thunderbird/components/xpti.dat
 @unexec rm -f %D/mozilla-thunderbird/chrome/chrome.rdf
