@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/10 13:22:41 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.2 2009/01/10 12:01:06 sthen Exp $
 
 COMMENT =		client for the Windows Live Messenger chat network
 
-MODPY_EGG_VERSION =	1.0
+MODPY_EGG_VERSION =	1.0.1
 DISTNAME =		emesene-${MODPY_EGG_VERSION}
 CATEGORIES =		net
 
@@ -20,7 +20,6 @@ RUN_DEPENDS =		::x11/py-gtk2 \
     			::multimedia/gstreamer-0.10/py-gstreamer \
 			:dbus-python-*:x11/dbus-python \
 			::devel/py-notify
-WRKDIST =		${WRKDIR}/emesene
 
 SUBST_VARS =		MODPY_SITEPKG
 
