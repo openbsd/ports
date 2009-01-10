@@ -1,7 +1,7 @@
-$OpenBSD: patch-swatch,v 1.5 2007/03/25 13:01:35 steven Exp $
---- swatch.orig	Fri Jul 21 22:55:00 2006
-+++ swatch	Sun Mar 25 14:59:31 2007
-@@ -148,7 +148,7 @@ sub parse_command_line {
+$OpenBSD: patch-swatch,v 1.6 2009/01/10 21:47:38 rui Exp $
+--- swatch.orig	Tue Jul  1 19:18:31 2008
++++ swatch	Wed Jan  7 20:00:12 2009
+@@ -151,7 +151,7 @@ sub parse_command_line {
  sub dprint {
      my $msg_lev = shift;
      my $msg = shift;
