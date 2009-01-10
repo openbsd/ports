@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.3 2007/10/01 21:30:06 merdely Exp $
---- lib/Makefile.in.orig	Sun Sep  9 11:01:58 2007
-+++ lib/Makefile.in	Tue Sep 18 18:36:23 2007
-@@ -281,7 +281,7 @@ AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
+$OpenBSD: patch-lib_Makefile_in,v 1.4 2009/01/10 01:30:54 sthen Exp $
+--- lib/Makefile.in.orig	Thu Jan  8 09:29:31 2009
++++ lib/Makefile.in	Fri Jan  9 18:39:43 2009
+@@ -283,7 +283,7 @@ AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
  # SILC Library dirs
  SILCLIB_DIRS = contrib	silccore	silcutil	silcapputil	silccrypt	silcskr	silcmath	silcsim	silcasn1	silcske	silchttp	silcsftp	silcvcard
  @SILC_ENABLE_SHARED_FALSE@LIBTOOL_OPTS = 

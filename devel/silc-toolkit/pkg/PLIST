@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/10/26 19:07:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2009/01/10 01:30:54 sthen Exp $
 @conflict silc-client-<=1.0.1
 include/silc/
 include/silc/client.h
@@ -105,6 +105,7 @@ share/doc/silc/
 @comment share/doc/silc/BSD
 @comment share/doc/silc/COPYING
 @comment share/doc/silc/CREDITS
+@comment share/doc/silc/ChangeLog
 @comment share/doc/silc/CodingStyle
 @comment share/doc/silc/FAQ
 @comment share/doc/silc/GPL
@@ -112,7 +113,7 @@ share/doc/silc/
 @comment share/doc/silc/README
 @comment share/doc/silc/README.CVS
 @comment share/doc/silc/README.MACOSX
-share/doc/silc/README.SYMBIAN
+@comment share/doc/silc/README.SYMBIAN
 @comment share/doc/silc/README.WIN32
 @comment share/doc/silc/TODO
 share/doc/silc/draft-riikonen-presence-attrs-04.txt
