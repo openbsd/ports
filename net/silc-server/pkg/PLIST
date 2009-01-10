@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/06/22 18:27:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2009/01/10 01:04:06 sthen Exp $
 @newgroup _silcd:512
 @newuser _silcd:512:_silcd:daemon:Silc-server Account:/nonexistent:/sbin/nologin
 @man man/man5/silcd.conf.5
@@ -7,6 +7,7 @@
 share/doc/silcd/
 @comment share/doc/silcd/COPYING
 @comment share/doc/silcd/CREDITS
+@comment share/doc/silcd/ChangeLog
 share/doc/silcd/FAQ
 @comment share/doc/silcd/INSTALL
 share/doc/silcd/README
