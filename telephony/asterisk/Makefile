@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2009/01/08 21:04:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2009/01/10 00:58:15 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -13,9 +13,10 @@ HOMEPAGE=		http://www.asterisk.org/
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
-# GPLv2 except iaxy.bin (freely redistributable, see LICENSE)
-# "Specific permission is also granted to link Asterisk with OpenSSL
-# and OpenH323 and distribute the resulting binary files."
+# Mostly GPL v2 (only). "Specific permission is also granted to link
+# Asterisk with OpenSSL and OpenH323 and distribute the resulting binary
+# files." iaxy.bin (firmware) is freely redistributable, see LICENSE.
+# core-sounds-en-gsm: GPLv2/CC-BY-SA, http://bugs.digium.com/view.php?id=10144
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
