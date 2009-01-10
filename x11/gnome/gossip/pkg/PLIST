@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/12/17 18:47:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/01/10 17:28:57 ajacoutot Exp $
 @bin bin/gossip
 lib/bonobo/
 lib/bonobo/servers/
@@ -12,7 +12,7 @@ share/examples/gossip/sound/
 share/examples/gossip/sound/events/
 @sample ${SYSCONFDIR}/gnome/sound/events/
 share/examples/gossip/sound/events/gossip.soundlist
-@sample ${SYSCONFDIR}/gnome/sound/gossip.soundlist
+@sample ${SYSCONFDIR}/gnome/sound/events/gossip.soundlist
 share/gossip/
 share/gossip/GNOME_Peekaboo_Applet.xml
 share/gossip/chat.glade
