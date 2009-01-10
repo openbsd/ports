@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2008/12/17 20:28:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2009/01/10 17:20:06 ajacoutot Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -6,8 +6,8 @@ COMMENT-battstat=	GNOME applet for monitoring battery level
 GNOME_PROJECT=		gnome-applets
 GNOME_VERSION=		2.24.2
 
-PKGNAME-main=		gnome-applets2-${VERSION}p2
-PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}p1
+PKGNAME-main=		gnome-applets2-${VERSION}p3
+PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}p2
 CATEGORIES=		x11
 
 # LGPLv2/GFDLv1.1
@@ -24,7 +24,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 		gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png popt pthread ssl util xml2 z
+		pcre pixman-1 png popt pthread ssl util xml2 z sndio
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -74,16 +74,12 @@ WANTLIB-main=		${WANTLIB} \
 			XRes kvm xkbfile gnome-desktop-2 gweather \
 			soup-2.4 startup-notification-1 wnck-1
 
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-applets2
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure \
 		${WRKSRC}/invest-applet/invest/invest-chart \
 		${WRKSRC}/invest-applet/invest/invest-applet.py
-
-.if !${FLAVOR:L:Mno_battstat}
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-applets2
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/gnome/* ${PREFIX}/share/examples/gnome-applets2/
-.endif
 
 .include <bsd.port.mk>
 
