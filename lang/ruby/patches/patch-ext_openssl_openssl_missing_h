@@ -1,0 +1,15 @@
+$OpenBSD: patch-ext_openssl_openssl_missing_h,v 1.1 2009/01/10 17:03:34 naddy Exp $
+--- ext/openssl/openssl_missing.h.orig	Sat Jan 10 17:25:55 2009
++++ ext/openssl/openssl_missing.h	Sat Jan 10 17:33:20 2009
+@@ -117,11 +117,6 @@ int X509_CRL_set_version(X509_CRL *x, long version);
+ int X509_CRL_set_issuer_name(X509_CRL *x, X509_NAME *name);
+ int X509_CRL_sort(X509_CRL *c);
+ int X509_CRL_add0_revoked(X509_CRL *crl, X509_REVOKED *rev);
+-int BN_mod_sqr(BIGNUM *r, const BIGNUM *a, const BIGNUM *m, BN_CTX *ctx);
+-int BN_mod_add(BIGNUM *r, const BIGNUM *a, const BIGNUM *b, const BIGNUM *m, BN_CTX *ctx);
+-int BN_mod_sub(BIGNUM *r, const BIGNUM *a, const BIGNUM *b, const BIGNUM *m, BN_CTX *ctx);
+-int BN_rand_range(BIGNUM *r, BIGNUM *range);
+-int BN_pseudo_rand_range(BIGNUM *r, BIGNUM *range);
+ char *CONF_get1_default_config_file(void);
+ int PEM_def_callback(char *buf, int num, int w, void *key);
+ 
