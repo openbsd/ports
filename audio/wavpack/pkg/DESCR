@@ -1,0 +1,16 @@
+WavPack is a completely open audio compression format providing
+lossless, high-quality lossy, and a unique hybrid compression mode.
+The compression ratio depends on the source material, but generally
+is between 30% and 70%.
+
+The hybrid mode provides all the advantages of lossless compression
+with an additional bonus. Instead of creating a single file, this
+mode creates both a relatively small, high-quality lossy file that
+can be used all by itself, and a "correction" file that (when
+combined with the lossy file) provides full lossless restoration.
+
+WavPack employs only well known, public domain techniques (i.e.,
+linear prediction with LMS adaptation, Elias and Golomb codes) in
+its implementation. Methods and algorithms that have ever been
+patented (e.g., arithmetic coding, LZW compression) are specifically
+avoided.
