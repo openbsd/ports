@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2009/01/08 19:48:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2009/01/11 17:33:56 naddy Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
 DISTNAME=	sox-14.2.0
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=  sox                  0.0      # .0.0
 SHARED_LIBS +=  sfx                  0.0      # .0.0
 CATEGORIES=	audio
@@ -24,6 +25,7 @@ LIB_DEPENDS=	vorbis.>=6,vorbisenc.>=2,vorbisfile.>=5::audio/libvorbis \
 		mad.>=2::audio/libmad \
 		id3tag.>=3::audio/libid3tag \
 		mp3lame.>=2::audio/lame \
+		wavpack.>=0::audio/wavpack \
 		png.>=8::graphics/png \
 		samplerate.>=2::audio/libsamplerate
 WANTLIB=	c m ogg z
@@ -52,7 +54,7 @@ CONFIGURE_ARGS+=--without-sndfile \
 		--with-lame \
 		--without-amr-wb \
 		--without-amr-nb \
-		--without-wavpack \
+		--with-wavpack \
 		--with-png \
 		--with-samplerate \
 		--without-ladspa
