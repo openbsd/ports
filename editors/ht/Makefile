@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2008/06/02 19:38:09 okan Exp $
+# $OpenBSD: Makefile,v 1.12 2009/01/11 17:02:09 pirofti Exp $
 
 COMMENT=		file editor/viewer/analyzer for executables
 
-DISTNAME=		ht-2.0.14
+DISTNAME=		ht-2.0.15
 CATEGORIES=		editors
 
 HOMEPAGE=		http://hte.sourceforge.net/
@@ -40,7 +40,11 @@ CONFIGURE_ARGS+=	--enable-x11-textmode
 WANTLIB+=		X11
 .endif
 
+do-install:
+	chmod +x ${WRKSRC}/install-sh
+	 
 post-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/ht ${PREFIX}/bin/hte
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ht
 	${INSTALL_DATA} ${WRKSRC}/doc/{README,ht.html} ${PREFIX}/share/doc/ht
 

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/05/04 20:43:55 okan Exp $
-bin/hte
+@comment $OpenBSD: PLIST,v 1.5 2009/01/11 17:02:09 pirofti Exp $
+@bin bin/hte
 share/doc/ht/
 share/doc/ht/README
 share/doc/ht/ht.html
