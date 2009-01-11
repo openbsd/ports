@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.21 2008/09/08 15:02:41 brad Exp $
+@comment $OpenBSD: PLIST,v 1.22 2009/01/11 02:03:55 martynas Exp $
 @bin bin/silc
 @man man/man1/silc.1
 share/doc/silc/
 @comment share/doc/silc/COPYING
 @comment share/doc/silc/CREDITS
+@comment share/doc/silc/ChangeLog
 share/doc/silc/FAQ
 @comment share/doc/silc/INSTALL
 share/doc/silc/README

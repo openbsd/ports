@@ -1,7 +1,17 @@
-$OpenBSD: patch-configure_ac,v 1.4 2008/01/23 16:06:40 todd Exp $
---- configure.ac.orig	Tue Nov  6 09:45:06 2007
-+++ configure.ac	Sat Nov 10 00:58:14 2007
-@@ -613,8 +613,8 @@ if test -n "$with_silc_includes" || test -n "$with_sil
+$OpenBSD: patch-configure_ac,v 1.5 2009/01/11 02:03:55 martynas Exp $
+--- configure.ac.orig	Sat Jan 10 18:11:36 2009
++++ configure.ac	Sat Jan 10 18:27:58 2009
+@@ -50,6 +50,9 @@ case "$target" in
+   *-*-netbsd*)
+     check_threads=true
+     ;;
++  *-*-openbsd*)
++    check_threads=true
++    ;;
+   *-*-*bsd*)
+     check_threads=false
+     ;;
+@@ -613,8 +616,8 @@ if test -n "$with_silc_includes" || test -n "$with_sil
  
  else
    # pkg-config check
