@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2008/11/20 18:24:20 okan Exp $
+# $OpenBSD: Makefile,v 1.8 2009/01/11 22:59:42 landry Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.46
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	graphics
 
 MAINTAINER=	Benoit Chesneau <benoitc@metavers.net>
@@ -37,7 +37,8 @@ LIB_DEPENDS=	gc.>=3::devel/boehm-gc \
 		png::graphics/png \
 		xslt::textproc/libxslt \
 		poppler,poppler-glib::print/poppler \
-		atkmm-1.6,gdkmm-2.4,gtkmm-2.4,pangomm-1.4::x11/gtk2mm \
+		atkmm-1.6,gdkmm-2.4,gtkmm-2.4::x11/gtk2mm \
+		pangomm-1.4::devel/pangomm \
 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		gtkspell::textproc/gtkspell
 

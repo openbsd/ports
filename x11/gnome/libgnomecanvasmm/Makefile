@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2008/06/02 17:58:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2009/01/11 23:01:09 landry Exp $
 
 COMMENT=		C++ interface to the graphics library for GNOME
 
 GNOME_PROJECT=		libgnomecanvasmm
 GNOME_VERSION=		2.20.0
 SHARED_LIBS=		gnomecanvasmm-2.6	0.0	# .1.6
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,7 +25,8 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		glibmm-2.4:glib2mm->=2.8:devel/glib2mm \
 			sigc-2.0:libsigc++-2.*:devel/libsigc++-2 \
-			gtkmm-2.4.>=3,gdkmm-2.4.>=3,atkmm-1.6.>=3,pangomm-1.4.>=3::x11/gtk2mm \
+			gtkmm-2.4.>=3,gdkmm-2.4.>=3,atkmm-1.6.>=3::x11/gtk2mm \
+			pangomm-1.4::devel/pangomm \
 			gnomecanvas-2::x11/gnome/libgnomecanvas
 
 USE_X11=		Yes
