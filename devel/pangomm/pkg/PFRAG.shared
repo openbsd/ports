@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/01/11 22:50:34 landry Exp $
+@lib lib/libpangomm-1.4.so.${LIBpangomm-1.4_VERSION}
