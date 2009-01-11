@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/11/24 16:15:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/01/11 18:38:31 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
 @bin bin/gvfs-cat
@@ -33,7 +33,7 @@ lib/libgvfscommon.a
 lib/libgvfscommon.la
 @bin libexec/gvfsd
 @bin libexec/gvfsd-archive
-@bin libexec/gvfsd-burn
+@comment @bin libexec/gvfsd-burn
 @bin libexec/gvfsd-computer
 @bin libexec/gvfsd-dav
 @bin libexec/gvfsd-ftp
@@ -51,7 +51,7 @@ share/gvfs/gvfs-bash-completion.sh
 @sample ${SYSCONFDIR}/profile.d/gvfs-bash-completion.sh
 share/gvfs/mounts/
 share/gvfs/mounts/archive.mount
-share/gvfs/mounts/burn.mount
+@comment share/gvfs/mounts/burn.mount
 share/gvfs/mounts/computer.mount
 share/gvfs/mounts/dav.mount
 share/gvfs/mounts/ftp.mount
