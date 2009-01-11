@@ -1,7 +1,7 @@
-$OpenBSD: patch-apps_irssi_src_fe-common_core_Makefile_in,v 1.1 2007/11/18 17:36:18 martynas Exp $
---- apps/irssi/src/fe-common/core/Makefile.in.orig	Thu Nov  8 21:45:14 2007
-+++ apps/irssi/src/fe-common/core/Makefile.in	Thu Nov  8 21:45:45 2007
-@@ -266,11 +266,11 @@ noinst_LIBRARIES = libfe_common_core.a
+$OpenBSD: patch-apps_irssi_src_fe-common_core_Makefile_in,v 1.2 2009/01/11 02:05:54 martynas Exp $
+--- apps/irssi/src/fe-common/core/Makefile.in.orig	Sat Jan 10 18:11:36 2009
++++ apps/irssi/src/fe-common/core/Makefile.in	Sat Jan 10 23:25:47 2009
+@@ -268,11 +268,11 @@ noinst_LIBRARIES = libfe_common_core.a
  #
  # INCLUDE defines
  #

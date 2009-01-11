@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2008/10/26 14:51:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2009/01/11 02:05:54 martynas Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	SILC plugin for irssi
 
-VERSION=	1.1.6
+VERSION=	1.1.7
 DISTNAME=	silc-client-${VERSION}
 PKGNAME=	irssi-silc-${VERSION}
 
@@ -47,12 +47,12 @@ CONFIGURE_ENV+= ac_cv_path_NASM=no YASM=${LOCALBASE}/bin/yasm
 .endif
 CONFIGURE_ARGS+=  --docdir=${PREFIX}/share/doc/irssi/silc \
 		  --enable-ipv6 \
+		  --enable-shared=no \
 		  --with-iconv=${LOCALBASE} \
 		  --with-perl \
 		  --with-perl-lib=${PREFIX}/libdata/perl5/site_perl \
 		  --with-pic \
-		  --with-silc-plugin=${PREFIX}/lib/irssi \
-		  --without-libtoolfix
+		  --with-silc-plugin=${PREFIX}/lib/irssi
 
 .if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+=  --disable-asm

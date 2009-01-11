@@ -1,7 +1,7 @@
-$OpenBSD: patch-apps_irssi_src_silc_core_Makefile_in,v 1.1 2007/11/18 17:36:18 martynas Exp $
---- apps/irssi/src/silc/core/Makefile.in.orig	Thu Nov 15 18:04:13 2007
-+++ apps/irssi/src/silc/core/Makefile.in	Thu Nov 15 18:11:14 2007
-@@ -656,7 +656,6 @@ clean-local:
+$OpenBSD: patch-apps_irssi_src_silc_core_Makefile_in,v 1.2 2009/01/11 02:05:54 martynas Exp $
+--- apps/irssi/src/silc/core/Makefile.in.orig	Sat Jan 10 18:11:36 2009
++++ apps/irssi/src/silc/core/Makefile.in	Sat Jan 10 23:25:47 2009
+@@ -657,7 +657,6 @@ clean-local:
  	-rm -f libsilc_core.a
  
  libsilc_core.a: libsilc_core.la
