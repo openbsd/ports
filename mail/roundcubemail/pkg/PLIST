@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/09/22 13:53:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/01/11 19:45:41 jolan Exp $
 roundcubemail/
 roundcubemail/.htaccess
 roundcubemail/CHANGELOG
@@ -9,7 +9,6 @@ roundcubemail/SQL/
 roundcubemail/SQL/mssql.initial.sql
 roundcubemail/SQL/mysql.initial.sql
 roundcubemail/SQL/mysql.update.sql
-roundcubemail/SQL/mysql5.initial.sql
 roundcubemail/SQL/postgres.initial.sql
 roundcubemail/SQL/postgres.update.sql
 roundcubemail/SQL/sqlite.initial.sql
@@ -17,10 +16,12 @@ roundcubemail/SQL/sqlite.update.sql
 roundcubemail/UPGRADING
 roundcubemail/bin/
 roundcubemail/bin/html2text.php
+roundcubemail/bin/killcache.php
 roundcubemail/bin/modcss.php
 roundcubemail/bin/msgexport.sh
 roundcubemail/bin/msgimport.sh
 roundcubemail/bin/quotaimg.php
+roundcubemail/bin/update.sh
 roundcubemail/config/
 roundcubemail/config/.htaccess
 roundcubemail/config/db.inc.php.dist
@@ -61,11 +62,15 @@ roundcubemail/program/include/rcube_vcard.php
 roundcubemail/program/include/session.inc
 roundcubemail/program/js/
 roundcubemail/program/js/app.js
+roundcubemail/program/js/app.js.src
 roundcubemail/program/js/common.js
+roundcubemail/program/js/common.js.src
 roundcubemail/program/js/editor.js
 roundcubemail/program/js/editor_images.js
 roundcubemail/program/js/googiespell.js
+roundcubemail/program/js/googiespell.js.src
 roundcubemail/program/js/list.js
+roundcubemail/program/js/list.js.src
 roundcubemail/program/js/tiny_mce/
 roundcubemail/program/js/tiny_mce/langs/
 roundcubemail/program/js/tiny_mce/langs/ar.js
@@ -710,6 +715,9 @@ roundcubemail/program/localization/ca_ES/messages.inc
 roundcubemail/program/localization/cs_CZ/
 roundcubemail/program/localization/cs_CZ/labels.inc
 roundcubemail/program/localization/cs_CZ/messages.inc
+roundcubemail/program/localization/cy_GB/
+roundcubemail/program/localization/cy_GB/labels.inc
+roundcubemail/program/localization/cy_GB/messages.inc
 roundcubemail/program/localization/da_DK/
 roundcubemail/program/localization/da_DK/labels.inc
 roundcubemail/program/localization/da_DK/messages.inc
@@ -886,6 +894,8 @@ roundcubemail/program/steps/addressbook/show.inc
 roundcubemail/program/steps/error.inc
 roundcubemail/program/steps/mail/
 roundcubemail/program/steps/mail/addcontact.inc
+roundcubemail/program/steps/mail/attachments.inc
+roundcubemail/program/steps/mail/autocomplete.inc
 roundcubemail/program/steps/mail/check_recent.inc
 roundcubemail/program/steps/mail/compose.inc
 roundcubemail/program/steps/mail/folders.inc
@@ -904,7 +914,6 @@ roundcubemail/program/steps/mail/show.inc
 roundcubemail/program/steps/mail/spell.inc
 roundcubemail/program/steps/mail/spell_googie.inc
 roundcubemail/program/steps/mail/spell_pspell.inc
-roundcubemail/program/steps/mail/upload.inc
 roundcubemail/program/steps/mail/viewsource.inc
 roundcubemail/program/steps/settings/
 roundcubemail/program/steps/settings/delete_identity.inc
@@ -921,6 +930,7 @@ roundcubemail/skins/default/addresses.css
 roundcubemail/skins/default/colorpicker.css
 roundcubemail/skins/default/common.css
 roundcubemail/skins/default/editor_content.css
+roundcubemail/skins/default/functions.js
 roundcubemail/skins/default/googiespell.css
 roundcubemail/skins/default/images/
 roundcubemail/skins/default/images/blank.gif
@@ -974,8 +984,6 @@ roundcubemail/skins/default/images/buttons/inbox_sel.png
 roundcubemail/skins/default/images/buttons/last_act.png
 roundcubemail/skins/default/images/buttons/last_pas.png
 roundcubemail/skins/default/images/buttons/last_sel.png
-roundcubemail/skins/default/images/buttons/ldap_act.png
-roundcubemail/skins/default/images/buttons/ldap_pas.png
 roundcubemail/skins/default/images/buttons/logout.gif
 roundcubemail/skins/default/images/buttons/logout.png
 roundcubemail/skins/default/images/buttons/mail.gif
@@ -1025,6 +1033,7 @@ roundcubemail/skins/default/images/googiespell/spellc.gif
 roundcubemail/skins/default/images/icons/
 roundcubemail/skins/default/images/icons/abcard.png
 roundcubemail/skins/default/images/icons/attachment.png
+roundcubemail/skins/default/images/icons/blank.gif
 roundcubemail/skins/default/images/icons/collapsed.png
 roundcubemail/skins/default/images/icons/deleted.png
 roundcubemail/skins/default/images/icons/dot.png
@@ -1041,6 +1050,7 @@ roundcubemail/skins/default/images/icons/folder-sent.png
 roundcubemail/skins/default/images/icons/folder-trash.png
 roundcubemail/skins/default/images/icons/forwarded.png
 roundcubemail/skins/default/images/icons/forwarded_replied.png
+roundcubemail/skins/default/images/icons/minus.gif
 roundcubemail/skins/default/images/icons/plus.gif
 roundcubemail/skins/default/images/icons/remove-attachment.png
 roundcubemail/skins/default/images/icons/rename.png
@@ -1055,7 +1065,6 @@ roundcubemail/skins/default/images/listheader_dark.gif
 roundcubemail/skins/default/images/listheader_light.gif
 roundcubemail/skins/default/images/mailbox_list.gif
 roundcubemail/skins/default/images/mailbox_selected.gif
-roundcubemail/skins/default/images/rcube_watermark.png
 roundcubemail/skins/default/images/roundcube_logo.gif
 roundcubemail/skins/default/images/roundcube_logo.png
 roundcubemail/skins/default/images/roundcube_logo_print.gif
@@ -1065,11 +1074,10 @@ roundcubemail/skins/default/images/sort_desc.gif
 roundcubemail/skins/default/images/tab_act.gif
 roundcubemail/skins/default/images/tab_pas.gif
 roundcubemail/skins/default/images/taskbar.gif
+roundcubemail/skins/default/images/watermark.gif
 roundcubemail/skins/default/includes/
 roundcubemail/skins/default/includes/header.html
-roundcubemail/skins/default/includes/ldapscripts.html
 roundcubemail/skins/default/includes/links.html
-roundcubemail/skins/default/includes/settingscripts.html
 roundcubemail/skins/default/includes/settingstabs.html
 roundcubemail/skins/default/includes/taskbar.html
 roundcubemail/skins/default/mail.css
