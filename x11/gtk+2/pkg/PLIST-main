@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2008/11/25 13:14:08 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2009/01/11 17:04:47 ajacoutot Exp $
 @conflict gail-*
 @pkgpath x11/gtk+2
 @bin bin/gdk-pixbuf-csource
@@ -411,6 +411,11 @@ lib/pkgconfig/gtk+-x11-2.0.pc
 @man man/man1/gtk-query-immodules-2.0.1
 @man man/man1/gtk-update-icon-cache.1
 share/aclocal/gtk-2.0.m4
+share/examples/gtk+2/
+share/examples/gtk+2/gtk-2.0/
+@sample ${SYSCONFDIR}/gtk-2.0/
+share/examples/gtk+2/gtk-2.0/im-multipress.conf
+@sample ${SYSCONFDIR}/gtk-2.0/im-multipress.conf
 share/gtk-2.0/
 share/gtk-2.0/demo/
 share/gtk-2.0/demo/alphatest.png

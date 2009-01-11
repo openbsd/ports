@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2008/12/20 19:37:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2009/01/11 17:04:47 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -6,9 +6,9 @@ COMMENT-main=			multi-platform graphical toolkit
 COMMENT-docs=           	gtk+2 documentation
 COMMENT-cups=			gtk+2 CUPS print backend
 
-VERSION=			2.14.5
+VERSION=			2.14.7
 DISTNAME=			gtk+-${VERSION}
-PKGNAME-main=			gtk+2-${VERSION}p1
+PKGNAME-main=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 PKGNAME-cups=			gtk+2-cups-${VERSION}
 CATEGORIES=			x11 devel
@@ -71,6 +71,8 @@ CONFIGURE_ARGS+=		--disable-gtk-doc \
 				--with-xinput=yes
 CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 				LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gtk+2
 
 # The regression tests require a running instance of X.
 # You will also need to set the XAUTHORITY environment variable to point
