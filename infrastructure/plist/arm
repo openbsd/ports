@@ -1,4 +1,4 @@
-# $OpenBSD: arm,v 1.19 2008/08/25 17:20:49 pvalchev Exp $
+# $OpenBSD: arm,v 1.20 2009/01/11 13:23:51 sthen Exp $
 # This is the master list of subdirs used to choose arm packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -12,6 +12,7 @@ net/nmap
 sysutils/cdrtools
 mail/procmail
 mail/fetchmail
+misc/tmux
 misc/screen
 graphics/gif2png
 devel/autoconf/2.59
@@ -24,14 +25,14 @@ mail/offlineimap
 mail/mutt/stable
 mail/mutt/snapshot
 mail/mutt/snapshot,sasl
-audio/libao,-esd
+audio/libao
 audio/vorbis-tools
 audio/mpg321
 audio/waveplay
 net/curl
 net/ircII
 devel/id-utils
-www/konqueror-embedded
+# www/konqueror-embedded
 textproc/antiword
 textproc/xpdf
 x11/rdesktop
@@ -44,6 +45,9 @@ benchmarks/tcpblast
 www/links+
 www/links+,no_x11
 devel/git
+devel/mercurial
+devel/bzr
+devel/subversion
 graphics/gqview
 net/epic4
 security/bsd-airtools
@@ -52,9 +56,12 @@ editors/ldapvi
 editors/leafpad
 editors/nano
 net/lftp
+net/arp-scan
 net/ncftp
 net/snort
 net/ettercap
+emulators/fuse
+emulators/fuse-utils
 security/stunnel
 net/silc-client
 graphics/xfig
@@ -104,6 +111,8 @@ misc/dtach
 #x11/kde/base3
 net/ssvnc
 telephony/pjsua
+databases/sqlite
+databases/sqlite3
 databases/postgresql
 security/pwsafe
 archivers/lzma
@@ -120,6 +129,8 @@ converters/p5-DateManip
 converters/mpack
 net/irssi
 net/irssi-icb
+net/irssi-silc
+net/bitlbee
 misc/gpsd
 misc/screen,static
 x11/x2x
@@ -139,15 +150,25 @@ games/wtf
 math/moo
 net/bluetooth-tools
 net/darkstat
+net/dnsmasq
+net/dnstop
 net/dsocks
+net/fping
 net/gotthard
 net/igmpproxy
 net/iodine
 net/ipcalc
+net/ipv6calc
+net/mtr
+net/mtr,no_x11
 net/netrate
 net/netsed
 net/ngrep
 net/no-ip
+net/nsd
+net/unbound
+net/ldns/drill
+net/ladvd
 net/nslint
 net/nsping
 net/nssl
@@ -174,7 +195,6 @@ net/scapy6
 net/sharity-light
 net/sing
 net/sipsak
-net/sniffit
 net/softflowd
 net/ssldump
 net/tcpdpriv
@@ -193,6 +213,7 @@ net/unworkable
 net/vicq
 net/vsftpd
 net/wol
+www/kazehakase
 databases/mdbtools/snapshot
 databases/luasqlite3
 devel/luaalarm
@@ -251,6 +272,7 @@ security/vpnc
 security/whisker
 security/wpa_supplicant
 sysutils/anacron
+sysutils/bacula,no_bat,sqlite3
 sysutils/clusterit
 sysutils/colortail
 sysutils/conky
@@ -266,9 +288,11 @@ sysutils/monitord
 sysutils/multitail
 sysutils/nut
 sysutils/pftop
+sysutils/pkg_mgr
 sysutils/pscpug
 sysutils/pstree
 sysutils/rtty
+sysutils/ruby-puppet
 sysutils/sdd
 sysutils/sec
 sysutils/setquota
@@ -309,6 +333,8 @@ x11/evilwm
 x11/gromit
 x11/liberation-fonts
 x11/openbox
+x11/aterm
+x11/aterm,lite
 x11/py-gtk2
 x11/obmenu
 x11/oroborus
@@ -326,6 +352,7 @@ x11/xtattr
 x11/xtermset
 x11/xtoolwait
 x11/yeahlaunch
+archivers/p7zip
 games/wesnoth,tinygui
 games/micropolis
 www/mozilla-firefox
