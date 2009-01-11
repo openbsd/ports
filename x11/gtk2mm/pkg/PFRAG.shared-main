@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/24 18:42:20 steven Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2009/01/11 22:58:37 landry Exp $
 @lib lib/libatkmm-1.6.so.${LIBatkmm-1.6_VERSION}
 @lib lib/libgdkmm-2.4.so.${LIBgdkmm-2.4_VERSION}
 @lib lib/libgtkmm-2.4.so.${LIBgtkmm-2.4_VERSION}
-@lib lib/libpangomm-1.4.so.${LIBpangomm-1.4_VERSION}

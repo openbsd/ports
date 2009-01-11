@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.25 2008/10/02 22:55:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2009/01/11 22:58:37 landry Exp $
+
+BROKEN=			needs a pending libstdc++ fix
 
 COMMENT-main=		C++ interface for gtk2+
 COMMENT-docs=		C++ interface for gtk2+ documentation
 
 GNOME_PROJECT=		gtkmm
-GNOME_VERSION=		2.12.7
-PKGNAME-main=		gtk2mm-${VERSION}p0
-PKGNAME-docs=		gtk2mm-docs-${VERSION}p1
+GNOME_VERSION=		2.14.3
+PKGNAME-main=		gtk2mm-${VERSION}
+PKGNAME-docs=		gtk2mm-docs-${VERSION}
 CATEGORIES=		devel x11
 
-SHARED_LIBS=		atkmm-1.6	6.1 \
-			gdkmm-2.4	6.1 \
-			gtkmm-2.4	6.1 \
-			pangomm-1.4	6.1
+SHARED_LIBS=		atkmm-1.6	7.0 \
+			gdkmm-2.4	7.0 \
+			gtkmm-2.4	7.0
 
 HOMEPAGE=		http://www.gtkmm.org/
 
@@ -27,14 +28,16 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=		-main -docs
 
 WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-			Xcomposite Xdamage Xrender atk-1.0 cairo expat \
-			fontconfig freetype pcre pixman-1 \
+			Xcomposite Xdamage Xrender atk-1.0 c cairo expat \
+			fontconfig freetype pcre pixman-1 gio-2.0 \
 			glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
-			pangocairo-1.0 pangoft2-1.0 png sigc-2.0 z
+			pangocairo-1.0 pangoft2-1.0 png sigc-2.0 stdc++ z
 MODULES=		devel/gettext \
 			x11/gnome
-LIB_DEPENDS=		glibmm-2.4:glib2mm->=2.14.2:devel/glib2mm \
-			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0:gtk+2->=2.12:x11/gtk+2 \
+
+LIB_DEPENDS=		giomm-2.4,glibmm-2.4:glib2mm->=2.18.1:devel/glib2mm \
+			pangomm-1.4::devel/pangomm \
+			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0:gtk+2->=2.14:x11/gtk+2 \
 			cairomm-1.0::graphics/cairomm
 
 PKG_ARCH-docs=		*
