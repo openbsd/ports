@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_FFmpeg_h,v 1.1 2009/01/11 09:29:36 jakemsr Exp $
+--- src/FFmpeg.h.orig	Sat Oct 25 05:14:27 2008
++++ src/FFmpeg.h	Thu Nov 13 22:52:01 2008
+@@ -159,8 +159,8 @@ class FFmpegLibs (public)
+    void              (*av_log_default_callback)       (void* ptr, int level, const char* fmt, va_list vl);
+    void              (*av_free)                       (void *ptr);
+    unsigned          (*avcodec_version)               (void);
+-   unsigned          (*avformat_version)              (void);
+-   unsigned          (*avutil_version)                (void);
++   //unsigned          (*avformat_version)              (void);
++   //unsigned          (*avutil_version)                (void);
+    void              (*avcodec_init)                  (void);
+    AVCodec*          (*avcodec_find_encoder)          (enum CodecID id);
+    AVCodec*          (*avcodec_find_encoder_by_name)  (const char *name);
+@@ -263,17 +263,17 @@ class FFmpegLibs (public)
+ #else //__WXMSW__
+    wxString GetLibraryTypeString()
+    {
+-      return _("Only avformat.so|*avformat*.so*|Dynamically Linked Libraries (*.so)|*.so|All Files (*)|*");
++      return _("libavformat.so.X.Y|libavformat.so*|Dynamically Linked Libraries (*.so)|*.so|All Files (*)|*");
+    }
+ 
+    wxString GetLibAVFormatPath()
+    {
+-      return wxT("");
++      return wxT(LIBDIR);
+    }
+ 
+    wxString GetLibAVFormatName()
+    {
+-      return (wxT("avformat-") wxT(AV_STRINGIFY(LIBAVFORMAT_VERSION_MAJOR)) wxT(".dll"));
++      return (wxT("libavformat.so.0"));
+    }
+ #endif //__WXMSW__
+ 

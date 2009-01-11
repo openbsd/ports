@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_Audacity_h,v 1.1 2009/01/11 09:29:36 jakemsr Exp $
+--- src/Audacity.h.orig	Thu Nov 13 18:17:39 2008
++++ src/Audacity.h	Thu Nov 13 18:24:04 2008
+@@ -91,8 +91,9 @@ void QuitAudacity();
+ #endif //_MSC_VER
+ 
+ /* The GCC-elf implementation */
+-#ifdef HAVE_VISIBILITY // this is provided by the configure script, is only
++#if defined HAVE_VISIBILITY // this is provided by the configure script, is only
+ // enabled for suitable GCC versions
++#if HAVE_VISIBILITY
+ /* The incantation is a bit weird here because it uses ELF symbol stuff. If we 
+  * make a symbol "default" it makes it visible (for import or export). Making it
+  * "hidden" means it is invisible outside the shared object. */
+@@ -103,6 +104,9 @@ void QuitAudacity();
+          #define AUDACITY_DLL_API __attribute__((visibility("default")))
+       #endif
+    #endif
++#else
++  #define AUDACITY_DLL_API
++#endif
+ #endif
+ 
+ /* The GCC-win32 implementation */

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Sequence_cpp,v 1.3 2007/06/06 09:35:18 ajacoutot Exp $
---- src/Sequence.cpp.orig	Wed Mar 28 09:53:34 2007
-+++ src/Sequence.cpp	Wed Mar 28 09:55:16 2007
-@@ -877,7 +877,8 @@ bool Sequence::Get(samplePtr buffer, sampleFormat form
+$OpenBSD: patch-src_Sequence_cpp,v 1.4 2009/01/11 09:29:36 jakemsr Exp $
+--- src/Sequence.cpp.orig	Sat Oct 25 05:14:27 2008
++++ src/Sequence.cpp	Thu Nov 13 15:24:26 2008
+@@ -893,7 +893,8 @@ bool Sequence::Get(samplePtr buffer, sampleFormat form
                     sampleCount start, sampleCount len) const
  {
     if (start < 0 || start > mNumSamples ||
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_Sequence_cpp,v 1.3 2007/06/06 09:35:18 ajacoutot Exp $
        return false;
     int b = FindBlock(start);
  
-@@ -911,6 +912,7 @@ bool Sequence::Set(samplePtr buffer, sampleFormat form
+@@ -927,6 +928,7 @@ bool Sequence::Set(samplePtr buffer, sampleFormat form
     if (format != mSampleFormat) {
        temp = NewSamples(mMaxSamples, mSampleFormat);
        wxASSERT(temp);
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_Sequence_cpp,v 1.3 2007/06/06 09:35:18 ajacoutot Exp $
     }
  
     samplePtr silence = NULL;
-@@ -918,6 +920,7 @@ bool Sequence::Set(samplePtr buffer, sampleFormat form
+@@ -934,6 +936,7 @@ bool Sequence::Set(samplePtr buffer, sampleFormat form
        silence = NewSamples(mMaxSamples, format);
        wxASSERT(silence);
        ClearSamples(silence, format, 0, mMaxSamples);

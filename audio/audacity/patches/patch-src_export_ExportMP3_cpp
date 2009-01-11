@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_export_ExportMP3_cpp,v 1.6 2007/12/08 11:08:38 ajacoutot Exp $
---- src/export/ExportMP3.cpp.orig	Tue Nov 13 23:01:42 2007
-+++ src/export/ExportMP3.cpp	Sat Nov 24 12:19:09 2007
-@@ -520,8 +520,8 @@ class FindDialog : public wxDialog (public)
+$OpenBSD: patch-src_export_ExportMP3_cpp,v 1.7 2009/01/11 09:29:36 jakemsr Exp $
+--- src/export/ExportMP3.cpp.orig	Wed May  7 14:19:50 2008
++++ src/export/ExportMP3.cpp	Fri May  9 13:13:16 2008
+@@ -575,8 +575,8 @@ class FindDialog : public wxDialog (public)
                 mPathText = S.AddTextBox(wxT(""), mLibPath.GetFullPath(), 0);
              }
              S.Id(ID_BROWSE).AddButton(_("Browse..."), wxALIGN_RIGHT);
@@ -12,20 +12,11 @@ $OpenBSD: patch-src_export_ExportMP3_cpp,v 1.6 2007/12/08 11:08:38 ajacoutot Exp
           }
           S.EndMultiColumn();
  
-@@ -1497,7 +1497,7 @@ class LameExporter : public MP3Exporter (public)
- 
-    wxString GetLibraryPath()
-    {
--      return wxT("/usr/lib");
-+      return wxT("!!LOCALBASE!!/lib");
-    }
- 
-    wxString GetLibraryName()
-@@ -1507,7 +1507,7 @@ class LameExporter : public MP3Exporter (public)
+@@ -1564,7 +1564,7 @@ class LameExporter : public MP3Exporter (public)
  
     wxString GetLibraryTypeString()
     {
--      return wxString(_("Only libmp3lame.so|libmp3lame.so|Primary Shared Object files (*.so)|*.so|Extended Libraries (*.so*)|*.so*|All Files (*)|*"));
+-      return wxString(_("Only libmp3lame.so.0|libmp3lame.so.0|Primary Shared Object files (*.so)|*.so|Extended Libraries (*.so*)|*.so*|All Files (*)|*"));
 +      return wxString(_("libmp3lame.so.X.Y|libmp3lame.so.*|libmp3lame.so|Primary Shared Object files (*.so)|*.so|Extended Libraries (*.so*)|*.so*|All Files (*)|*"));
     }
  
