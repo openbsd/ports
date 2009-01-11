@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2009/01/10 02:09:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.214 2009/01/11 09:24:13 jakemsr Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -175,6 +175,7 @@
      SUBDIR += tremor
      SUBDIR += tremor-tools
      SUBDIR += vagalume
+     SUBDIR += vamp-plugin-sdk
      SUBDIR += vlorb
      SUBDIR += vorbis-tools
      SUBDIR += vorbisgain
