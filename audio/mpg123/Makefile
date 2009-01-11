@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2008/12/22 20:55:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2009/01/11 17:36:34 naddy Exp $
 
 COMMENT=	MPEG-1/2 audio layer 1, 2, and 3 player
 
-DISTNAME=	mpg123-1.6.3
+DISTNAME=	mpg123-1.6.4
 SHARED_LIBS=	mpg123	0.1	# .11.3
 CATEGORIES=	audio
 HOMEPAGE=	http://www.mpg123.de/
