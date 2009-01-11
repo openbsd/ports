@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/11 09:22:08 jakemsr Exp $
+%%SHARED%%
+include/vamp/
+include/vamp-sdk/
+include/vamp-sdk/Plugin.h
+include/vamp-sdk/PluginAdapter.h
+include/vamp-sdk/PluginBase.h
+include/vamp-sdk/PluginHostAdapter.h
+include/vamp-sdk/RealTime.h
+include/vamp-sdk/hostext/
+include/vamp-sdk/hostext/PluginBufferingAdapter.h
+include/vamp-sdk/hostext/PluginChannelAdapter.h
+include/vamp-sdk/hostext/PluginInputDomainAdapter.h
+include/vamp-sdk/hostext/PluginLoader.h
+include/vamp-sdk/hostext/PluginWrapper.h
+include/vamp/vamp.h
+lib/libvamp-hostsdk.a
+lib/libvamp-hostsdk.la
+lib/libvamp-sdk.a
+lib/libvamp-sdk.la
+lib/pkgconfig/
+lib/pkgconfig/vamp-hostsdk.pc
+lib/pkgconfig/vamp-sdk.pc
+lib/pkgconfig/vamp.pc
+lib/vamp/

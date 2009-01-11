@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/01/11 09:22:08 jakemsr Exp $
+@lib lib/libvamp-hostsdk.so.${LIBvamp-hostsdk_VERSION}
+@lib lib/libvamp-sdk.so.${LIBvamp-sdk_VERSION}
+lib/vamp/vamp-example-plugins.so
