@@ -1,0 +1,11 @@
+$OpenBSD: patch-drivers_netjack_Makefile_am,v 1.1 2009/01/11 10:51:46 jakemsr Exp $
+--- drivers/netjack/Makefile.am.orig	Fri Jan  9 23:44:10 2009
++++ drivers/netjack/Makefile.am	Fri Jan  9 23:44:37 2009
+@@ -1,6 +1,6 @@
+ MAINTAINCLEANFILES = Makefile.in
+ 
+-AM_CFLAGS = $(JACK_CFLAGS) 
++AM_CFLAGS = $(JACK_CFLAGS) $(SAMPLERATE_CFLAGS)
+ 
+ if HAVE_SAMPLERATE
+ 

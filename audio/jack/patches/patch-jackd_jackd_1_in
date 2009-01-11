@@ -1,0 +1,68 @@
+$OpenBSD: patch-jackd_jackd_1_in,v 1.1 2009/01/11 10:51:46 jakemsr Exp $
+--- jackd/jackd.1.in.orig	Sat Jan 10 02:52:33 2009
++++ jackd/jackd.1.in	Sat Jan 10 02:58:02 2009
+@@ -35,8 +35,9 @@ For the latest JACK information, please consult the we
+ .br
+ Select the audio interface backend.  The current list of supported
+ backends is: \fBalsa\fR, \fBcoreaudio\fR, \fBdummy\fR, \fBfreebob\fR,
+-\fBoss\fR \fBsun\fR and \fBportaudio\fR.  They are not all available
+-on all platforms.  All \fIbackend\-parameters\fR are optional.
++\fBoss\fR \fBsun\fR \fBsndio\fR and \fBportaudio\fR.  They are not
++all available on all platforms.  All \fIbackend\-parameters\fR are
++optional.
+ 
+ .TP
+ \fB\-h, \-\-help\fR
+@@ -348,6 +349,43 @@ Specify output device for playback (default: /dev/audi
+ .TP
+ \fB\-b, \-\-ignorehwbuf \fIboolean\fR
+ Specify, whether to ignore hardware period size (default: false)
++.SS SNDIO BACKEND PARAMETERS
++.TP
++\fB\-r, \-\-rate \fIint\fR
++Specify the sample rate.  The default is 44100.
++.TP
++\fB\-p, \-\-period \fIint\fR
++Specify the number of frames between JACK \fBprocess()\fR calls.  This
++value must be a power of 2, and the default is 1024.  If you need low 
++latency, set \fB\-p\fR as low as you can go without seeing xruns.  A larger 
++period size yields higher latency, but makes xruns less likely.  The JACK 
++capture latency in seconds is \fB\-\-period\fR divided by \fB\-\-rate\fR.
++Note that this value is mostly advisory when aucat server is running
++and may be updated internally.
++.TP
++\fB\-n, \-\-nperiods \fIint\fR
++Specify the number of periods in the hardware buffer.  The default is
++2.  The period size (\fB\-p\fR) times \fB\-\-nperiods\fR times four
++(assuming 2 channels 16-bit samples) is the JACK buffer size in bytes.
++The JACK output latency in seconds is \fB\-\-nperiods\fR times
++\fB\-\-period\fR divided by \fB\-\-rate\fR.
++Note that this value is mostly advisory when aucat server is running
++and may be updated internally.
++.TP
++\fB\-w, \-\-wordlength \fIint\fR
++Specify the sample size in bits. The default is 16.
++.TP
++\fB\-i, \-\-inchannels \fIint\fR
++Specify how many channels to capture (default: 2)
++.TP
++\fB\-o, \-\-outchannels \fIint\fR
++Specify number of playback channels (default: 2)
++.TP
++\fB\-d, \-\-device \fIdevice_file\fR
++Specify device for capture and playback (default: NULL)
++.TP
++\fB\-b, \-\-ignorehwbuf \fIboolean\fR
++Specify, whether to ignore hardware period size (default: false)
+ .SS PORTAUDIO BACKEND PARAMETERS
+ .TP
+ \fB\-c \-\-channel\fR
+@@ -394,6 +432,8 @@ Print usage message for the parameters specific to eac
+ \fBjackd \-d oss \-\-help\fR
+ .br
+ \fBjackd \-d sun \-\-help\fR
++.br
++\fBjackd \-d sndio \-\-help\fR
+ .br
+ \fBjackd \-d portaudio \-\-help\fR
+ .PP

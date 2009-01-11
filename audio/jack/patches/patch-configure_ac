@@ -1,20 +1,59 @@
-$OpenBSD: patch-configure_ac,v 1.3 2008/06/28 05:49:30 jakemsr Exp $
---- configure.ac.orig	Sat Jun 14 16:46:11 2008
-+++ configure.ac	Sun Jun 15 11:24:47 2008
-@@ -94,6 +94,7 @@ case "${host_os}" in
-     USE_BARRIER="no"
-     # need small realtime stack
-     JACK_THREAD_STACK_TOUCH=10000
-+    HOST_DEFAULT_TMP_DIR=/tmp
-     ;;
-   darwin*)
-     JACK_THREAD_STACK_TOUCH=10000	# need small realtime stack
-@@ -393,7 +394,7 @@ AC_ARG_ENABLE(dynsimd,
- if test "x$enable_dynsimd" = xyes; then
- 	AC_DEFINE(USE_DYNSIMD, 1, [Define to 1 to use dynamic SIMD selection.])
- 	dnl This needs update once there's more than x86/x86-64 supported
--	SIMD_CFLAGS="-msse -msse2 -m3dnow"
-+	SIMD_CFLAGS="" # "-msse -msse2 -m3dnow"
- 	AC_SUBST(SIMD_CFLAGS)
+$OpenBSD: patch-configure_ac,v 1.4 2009/01/11 10:51:46 jakemsr Exp $
+--- configure.ac.orig	Sat Dec  6 01:32:50 2008
++++ configure.ac	Sat Jan 10 00:00:08 2009
+@@ -655,9 +655,6 @@ HAVE_SAMPLERATE=false
+ PKG_CHECK_MODULES(SAMPLERATE, samplerate >= 0.1.2,[HAVE_SAMPLERATE=true], [true])
+ if test x$HAVE_SAMPLERATE = xfalse; then
+         AC_MSG_WARN([*** the NetJack backend and internal client will not be built])
+-else
+-	CFLAGS="$CFLAGS $SAMPLERATE_CFLAGS"
+-	LIBS="$LIBS $SAMPLERATE_LIBS"
  fi
  
+ # Celt low-latency audio codec. netjack transmission via internet.
+@@ -680,7 +677,7 @@ fi
+ 
+ # Check which backend drivers can be built.  The last one successfully
+ # configured becomes the default JACK driver; so the order of
+-# precedence is: alsa, sun, oss, coreaudio, portaudio, dummy.
++# precedence is: alsa, sun, sndio, oss, coreaudio, portaudio, dummy.
+ 
+ JACK_DEFAULT_DRIVER=\"dummy\"
+ 
+@@ -740,6 +737,20 @@ then
+ fi
+ AM_CONDITIONAL(HAVE_SUN, $HAVE_SUN)
+ 
++AC_ARG_ENABLE(sndio, AC_HELP_STRING([--disable-sndio],[ignore sndio driver ]),
++			TRY_SNDIO=$enableval , TRY_SNDIO=yes ) 
++HAVE_SNDIO="false"
++if test "x$TRY_SNDIO" = "xyes"
++then
++	# check for sndio audio API
++	AC_CHECK_HEADER([sndio.h],
++	     [HAVE_SNDIO="true"
++              JACK_DEFAULT_DRIVER=\"sndio\"])
++	SNDIO_LIBS="-lsndio"
++	AC_SUBST([SNDIO_LIBS])
++fi
++AM_CONDITIONAL(HAVE_SNDIO, $HAVE_SNDIO)
++
+ AC_ARG_ENABLE(freebob, AC_HELP_STRING([--disable-freebob],[ignore FreeBob driver ]),
+ 			TRY_FREEBOB=$enableval , TRY_FREEBOB=yes ) 
+ HAVE_FREEBOB="false"
+@@ -871,6 +882,7 @@ drivers/alsa-midi/Makefile
+ drivers/dummy/Makefile
+ drivers/oss/Makefile
+ drivers/sun/Makefile
++drivers/sndio/Makefile
+ drivers/portaudio/Makefile
+ drivers/coreaudio/Makefile
+ drivers/freebob/Makefile
+@@ -900,6 +912,7 @@ echo \| Build with old FireWire \(FreeBob\) support...
+ echo \| Build with new FireWire \(FFADO\) support............... : $HAVE_FIREWIRE
+ echo \| Build with OSS support................................ : $HAVE_OSS
+ echo \| Build with Sun audio support.......................... : $HAVE_SUN
++echo \| Build with sndio support.............................. : $HAVE_SNDIO
+ echo \| Build with CoreAudio support.......................... : $HAVE_COREAUDIO
+ echo \| Build with PortAudio support.......................... : $HAVE_PA
+ echo \| Build with NetJack support............................ : $HAVE_SAMPLERATE

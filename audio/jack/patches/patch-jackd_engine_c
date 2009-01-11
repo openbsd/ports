@@ -1,4 +1,4 @@
-$OpenBSD: patch-jackd_engine_c,v 1.5 2009/01/02 22:47:45 ajacoutot Exp $
+$OpenBSD: patch-jackd_engine_c,v 1.6 2009/01/11 10:51:46 jakemsr Exp $
 --- jackd/engine.c.orig	Sun Jun 15 01:46:11 2008
 +++ jackd/engine.c	Wed Dec 31 14:51:46 2008
 @@ -1383,7 +1383,7 @@ handle_external_client_request (jack_engine_t *engine,
@@ -6,17 +6,7 @@ $OpenBSD: patch-jackd_engine_c,v 1.5 2009/01/02 22:47:45 ajacoutot Exp $
  	    < (ssize_t) sizeof (req)) {
  		if (r == 0) {
 -#ifdef JACK_USE_MACH_THREADS
-+#if defined(JACK_USE_MACH_THREADS) || defined __OpenBSD__
++#if defined(JACK_USE_MACH_THREADS) || defined(__OpenBSD__)
  			/* poll is implemented using
  			   select (see the macosx/fakepoll
  			   code). When the socket is closed
-@@ -2178,8 +2178,7 @@ jack_run_one_cycle (jack_engine_t *engine, jack_nframe
- 
-   unlock:
- 	jack_unlock_graph (engine);
--	DEBUG("cycle finished, status = %d, graph locked = %d", 
--	      ret, leave_graph_locked);
-+	DEBUG("cycle finished, status = %d", ret);
- 
- 	return ret;
- }

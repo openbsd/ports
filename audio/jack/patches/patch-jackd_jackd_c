@@ -1,0 +1,12 @@
+$OpenBSD: patch-jackd_jackd_c,v 1.1 2009/01/11 10:51:46 jakemsr Exp $
+--- jackd/jackd.c.orig	Sat Jan 10 02:52:18 2009
++++ jackd/jackd.c	Sat Jan 10 02:51:34 2009
+@@ -377,7 +377,7 @@ static void usage (FILE *file) 
+ "             [ --nozombies OR -Z ]\n"
+ "         -d backend [ ... backend args ... ]\n"
+ "             The backend can be `alsa', `coreaudio', `dummy',\n"
+-"                                `freebob', `oss', `sun', or `portaudio'.\n\n"
++"                                `freebob', `oss', `sun', `sndio', or `portaudio'.\n\n"
+ "       jackd -d backend --help\n"
+ "             to display options for each backend\n\n");
+ }	

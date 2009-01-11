@@ -1,0 +1,24 @@
+$OpenBSD: patch-drivers_Makefile_am,v 1.1 2009/01/11 10:51:46 jakemsr Exp $
+--- drivers/Makefile.am.orig	Fri Jan  9 23:37:37 2009
++++ drivers/Makefile.am	Fri Jan  9 23:38:30 2009
+@@ -24,6 +24,12 @@ else
+ SUN_DIR =
+ endif
+ 
++if HAVE_SNDIO
++SNDIO_DIR = sndio
++else
++SNDIO_DIR =
++endif
++
+ if HAVE_PA
+ PA_DIR = portaudio
+ else
+@@ -48,5 +54,5 @@ else
+ FIREWIRE_DIR =
+ endif
+ 
+-SUBDIRS = $(ALSA_MIDI_DIR) $(ALSA_DIR) dummy $(OSS_DIR) $(SUN_DIR) $(PA_DIR) $(CA_DIR) $(FREEBOB_DIR) $(FIREWIRE_DIR) netjack
+-DIST_SUBDIRS = alsa alsa-midi dummy oss sun portaudio coreaudio freebob firewire netjack
++SUBDIRS = $(ALSA_MIDI_DIR) $(ALSA_DIR) dummy $(OSS_DIR) $(SUN_DIR) $(SNDIO_DIR) $(PA_DIR) $(CA_DIR) $(FREEBOB_DIR) $(FIREWIRE_DIR) netjack
++DIST_SUBDIRS = alsa alsa-midi dummy oss sun sndio portaudio coreaudio freebob firewire netjack

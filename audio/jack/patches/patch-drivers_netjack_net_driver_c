@@ -1,0 +1,12 @@
+$OpenBSD: patch-drivers_netjack_net_driver_c,v 1.1 2009/01/11 10:51:46 jakemsr Exp $
+--- drivers/netjack/net_driver.c.orig	Sat Dec  6 02:43:36 2008
++++ drivers/netjack/net_driver.c	Fri Dec 19 05:27:28 2008
+@@ -493,7 +493,7 @@ net_driver_write (net_driver_t* driver, jack_nframes_t
+     {
+ 	int r;
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ 	static const int flag = 0;
+ #else
+ 	static const int flag = MSG_CONFIRM;
