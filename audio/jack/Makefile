@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/01/11 10:51:45 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/12 10:45:01 jakemsr Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,7 @@ COMMENT =		low latency sound server
 
 V =			0.116.1
 DISTNAME =		jack-audio-connection-kit-${V}
-PKGNAME =		jack-${V}
+PKGNAME =		jack-${V}p0
 
 SHARED_LIBS +=		jack		0.0	# 0.28
 SHARED_LIBS +=		jackserver	0.0	# 0.28
@@ -16,7 +16,7 @@ HOMEPAGE =		http://jackaudio.org/
 
 MAINTAINER =		Jacob Meuser <jakemsr@openbsd.org>
 
-# GPL
+# LGPLv2/GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
@@ -40,8 +40,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-default-tmpdir=/var/tmp \
 			--disable-portaudio \
-			--disable-optimize \
-			--enable-dynsimd
+			--disable-optimize
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \

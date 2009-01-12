@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.4 2009/01/11 10:51:46 jakemsr Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2009/01/12 10:45:01 jakemsr Exp $
 --- configure.ac.orig	Sat Dec  6 01:32:50 2008
-+++ configure.ac	Sat Jan 10 00:00:08 2009
++++ configure.ac	Mon Jan 12 02:27:57 2009
 @@ -655,9 +655,6 @@ HAVE_SAMPLERATE=false
  PKG_CHECK_MODULES(SAMPLERATE, samplerate >= 0.1.2,[HAVE_SAMPLERATE=true], [true])
  if test x$HAVE_SAMPLERATE = xfalse; then
