@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/11/29 09:29:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/01/12 13:04:09 ajacoutot Exp $
 %%SHARED%%
 @bin bin/enchant
 @bin bin/enchant-lsmod
@@ -13,7 +13,6 @@ lib/enchant/libenchant_ispell.a
 lib/enchant/libenchant_ispell.la
 lib/libenchant.a
 lib/libenchant.la
-lib/pkgconfig/
 lib/pkgconfig/enchant.pc
 @man man/man1/enchant.1
 share/enchant/

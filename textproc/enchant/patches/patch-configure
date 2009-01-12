@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.4 2008/11/24 18:43:35 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.5 2009/01/12 13:04:09 ajacoutot Exp $
 --- configure.orig	Mon May  5 22:27:23 2008
 +++ configure	Mon Nov 24 12:03:08 2008
 @@ -22660,7 +22660,7 @@ if test $ac_cv_lib_aspell_get_aspell_dict_info_list = 
@@ -6,7 +6,7 @@ $OpenBSD: patch-configure,v 1.4 2008/11/24 18:43:35 ajacoutot Exp $
  
  
 -       ASPELL_CFLAGS+=" -DHAVE_PSPELL_H"
-+       ASPELL_CFLAGS=" -DHAVE_PSPELL_H"
++       ASPELL_CFLAGS="${ASPELL_CFLAGS} -DHAVE_PSPELL_H"
     elif test -f "$aspell_prefix/include/aspell.h"; then
         { echo "$as_me:$LINENO: result: yes (aspell)" >&5
  echo "${ECHO_T}yes (aspell)" >&6; }
