@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/12/17 18:45:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/01/12 14:36:12 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-audio-profiles-properties
 @bin bin/gnome-sound-recorder
@@ -186,8 +186,6 @@ share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-media-2.0.mo
-share/locale/be@latin/
-share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/bn/LC_MESSAGES/gnome-media-2.0.mo
