@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.12 2008/11/04 21:32:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2009/01/12 21:17:07 sthen Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
-V=			2.4.3
+V=			2.4.4
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
-PKGNAME-server=		bacula-server-$Vp0
+PKGNAME-server=		bacula-server-$V
 FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
-
-PATCHFILES=		2.4.3-orphaned-jobs.patch
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
 HOMEPAGE=		http://www.bacula.org/
@@ -161,7 +159,7 @@ LIB_DEPENDS-main=
 CONFIGURE_ARGS+=	--disable-bat
 .else
 CONFIGURE_ARGS+=	--enable-bat
-WANTLIB-bat=		${WANTLIB} ICE SM X11 Xcursor Xext Xfixes
+WANTLIB-bat=		${WANTLIB} ICE SM X11 Xext
 WANTLIB-bat+=		Xi Xinerama Xrandr Xrender fontconfig freetype
 WANTLIB-bat+=		glib-2.0 gthread-2.0 iconv intl png
 MULTI_PACKAGES+=	-bat

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.4 2008/10/19 03:44:42 merdely Exp $
+@comment $OpenBSD: PLIST-server,v 1.5 2009/01/12 21:17:07 sthen Exp $
 @conflict bacula-<2.2.7
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
@@ -61,16 +61,17 @@ sbin/btraceback
 @bin sbin/dbcheck
 share/doc/bacula/
 share/doc/bacula/README-server.OpenBSD
-share/examples/bacula/
 @mode 750
 @owner _bacula
 @group _bacula
 @sample ${BACULACONF}/
 @mode 770
 @sample ${BACULASTATE}/
-@mode 644
+@mode
 @owner
 @group
+share/examples/bacula/
+@mode 644
 share/examples/bacula/bacula-dir.conf
 @mode 640
 @owner _bacula
