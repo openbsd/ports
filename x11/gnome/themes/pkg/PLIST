@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2008/11/22 12:29:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2009/01/12 17:48:59 jasper Exp $
 @conflict gtk2-clearlooks-engine-*
 share/icons/Crux/
 share/icons/Crux/16x16/
@@ -2850,7 +2850,6 @@ share/locale/zh_CN/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-themes.mo
 share/themes/
-share/themes/Clearlooks/
 share/themes/Clearlooks/index.theme
 share/themes/Clearlooks/metacity-1/
 share/themes/Clearlooks/metacity-1/metacity-theme-1.xml
@@ -2859,7 +2858,6 @@ share/themes/ClearlooksClassic/gtk-2.0/
 share/themes/ClearlooksClassic/gtk-2.0/gtkrc
 share/themes/ClearlooksClassic/metacity-1/
 share/themes/ClearlooksClassic/metacity-1/metacity-theme-1.xml
-share/themes/Crux/
 share/themes/Crux/index.theme
 share/themes/Glider/
 share/themes/Glider/gtk-2.0/
@@ -3293,7 +3291,6 @@ share/themes/LowContrastLargePrint/pixmaps/volume-medium.png
 share/themes/LowContrastLargePrint/pixmaps/volume-min.png
 share/themes/LowContrastLargePrint/pixmaps/volume-mute.png
 share/themes/LowContrastLargePrint/pixmaps/volume-zero.png
-share/themes/Mist/
 share/themes/Mist/index.theme
 share/themes/Mist/metacity-1/
 share/themes/Mist/metacity-1/metacity-theme-1.xml
