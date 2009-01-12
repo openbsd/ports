@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2008/12/28 23:08:55 jakemsr Exp $
-COMMENT=	Decoding Library for KDE Multimedia
+# $OpenBSD: Makefile,v 1.13 2009/01/12 11:43:43 ajacoutot Exp $
+
+COMMENT=	decoding library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 SHARED_LIBS +=	akode                2.1      # .2.0
 
 CATEGORIES=	audio multimedia x11/kde
@@ -13,7 +14,7 @@ MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 EXTRACT_SUFX=	.tar.bz2
 DISTFILES=	30375-${DISTNAME}${EXTRACT_SUFX}
 
-# LGPL
+# LGPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -27,8 +28,8 @@ LIB_DEPENDS=	FLAC.>=8::audio/flac \
 		avcodec.>=10,avformat.>=10,avutil.>=3::graphics/ffmpeg \
 		jack::audio/jack
 
-WANTLIB=	a52 bz2 c faac faad m mp3lame \
-		ogg pthread stdc++ theora x264 z
+WANTLIB=	a52 bz2 c faac faad samplerate m mp3lame ogg pthread \
+		stdc++ theora x264 z
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -42,7 +43,6 @@ CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib \
 			--with-jack \
 			--without-polyaudio \
-			--without-libsamplerate \
 			--without-oss
 
 .include <bsd.port.mk>
