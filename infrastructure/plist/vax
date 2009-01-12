@@ -1,4 +1,4 @@
-# $OpenBSD: vax,v 1.17 2008/08/25 17:20:49 pvalchev Exp $
+# $OpenBSD: vax,v 1.18 2009/01/12 19:12:23 sthen Exp $
 # This is the master list of subdirs used to choose vax packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -24,7 +24,7 @@ devel/bison
 sysutils/colorls
 archivers/gtar
 mail/mutt/stable
-audio/libao,-esd
+audio/libao
 audio/vorbis-tools
 audio/mpg321
 net/curl
