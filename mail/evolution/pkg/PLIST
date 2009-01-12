@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2008/12/17 18:42:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2009/01/12 16:13:42 jasper Exp $
 %%SHARED%%
 @bin bin/evolution
 include/evolution-${R}/
@@ -529,6 +529,8 @@ share/evolution/${R}/help/
 share/evolution/${R}/help/quickref/
 share/evolution/${R}/help/quickref/C/
 share/evolution/${R}/help/quickref/C/quickref.pdf
+share/evolution/${R}/help/quickref/cs/
+share/evolution/${R}/help/quickref/cs/quickref.pdf
 share/evolution/${R}/help/quickref/de/
 share/evolution/${R}/help/quickref/de/quickref.pdf
 share/evolution/${R}/help/quickref/es/
@@ -2075,8 +2077,6 @@ share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/evolution-${R}.mo
 share/locale/az/LC_MESSAGES/evolution-${R}.mo
 share/locale/be/LC_MESSAGES/evolution-${R}.mo
-share/locale/be@latin/
-share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/evolution-${R}.mo
 share/locale/bg/LC_MESSAGES/evolution-${R}.mo
 share/locale/bn/LC_MESSAGES/evolution-${R}.mo
