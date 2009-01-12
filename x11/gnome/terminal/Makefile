@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2008/12/17 18:47:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2009/01/12 19:44:38 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	2.24.2
-PKGNAME=	${DISTNAME}p0
+GNOME_VERSION=	2.24.3
 
 # GPLv2/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
