@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2008/11/24 18:14:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2009/01/12 16:13:18 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		2.24.2
+GNOME_VERSION=		2.24.3
 CATEGORIES=		databases
 SHARED_LIBS +=	edataserver-1.2      10.0     # .11.0
 SHARED_LIBS +=	ebackend-1.2           0.0       # .0.0

@@ -1,6 +1,6 @@
-$OpenBSD: patch-calendar_libical_src_libical_icaltz-util_c,v 1.5 2008/11/24 18:14:29 jasper Exp $
---- calendar/libical/src/libical/icaltz-util.c.orig	Mon Oct 13 10:11:30 2008
-+++ calendar/libical/src/libical/icaltz-util.c	Mon Nov 24 17:41:27 2008
+$OpenBSD: patch-calendar_libical_src_libical_icaltz-util_c,v 1.6 2009/01/12 16:13:18 jasper Exp $
+--- calendar/libical/src/libical/icaltz-util.c.orig	Mon Dec 22 10:49:23 2008
++++ calendar/libical/src/libical/icaltz-util.c	Mon Jan 12 14:41:02 2009
 @@ -23,6 +23,14 @@
  #include <string.h>
  #if defined(sun) && defined(__SVR4)
@@ -13,10 +13,19 @@ $OpenBSD: patch-calendar_libical_src_libical_icaltz-util_c,v 1.5 2008/11/24 18:1
 +#define bswap_16	swap16
 +#define bswap_32	swap32
 +#define bswap_64	swap64
- #else
- #ifdef _WIN32
+ #elif defined(_WIN32)
  #define BIG_ENDIAN 'B'
-@@ -347,7 +355,10 @@ icaltzutil_fetch_timezone (const char *location)
+ #define LITTLE_ENDIAN 'l'
+@@ -98,6 +106,8 @@ decode (const void *ptr)
+     else if (BYTE_ORDER == LITTLE_ENDIAN && sizeof (int) == 4)
+ #ifdef __linux__
+         return bswap_32 (*(const int *) ptr);
++#elif __OpenBSD__
++	return swap32 (*(const uint32_t *) ptr);
+ #else
+          return bswap32 (*(const uint32_t *) ptr);
+ #endif
+@@ -351,7 +361,10 @@ icaltzutil_fetch_timezone (const char *location)
  		icalprop = icalproperty_new_tzname (types [zidx].zname);
  		icalcomponent_add_property (std_comp, icalprop);
  
@@ -28,7 +37,7 @@ $OpenBSD: patch-calendar_libical_src_libical_icaltz-util_c,v 1.5 2008/11/24 18:1
  		icaltime = icaltime_from_timet (trans, 0);
  		dtstart = icaltime;
  		dtstart.year = 1970;
-@@ -388,7 +399,10 @@ icaltzutil_fetch_timezone (const char *location)
+@@ -392,7 +405,10 @@ icaltzutil_fetch_timezone (const char *location)
  		icalprop = icalproperty_new_tzname (types [zidx].zname);
  		icalcomponent_add_property (dst_comp, icalprop);
  
