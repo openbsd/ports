@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2008/11/24 10:23:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/01/12 11:34:07 ajacoutot Exp $
 
 COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		gtkhtml
-GNOME_VERSION=		3.24.2
+GNOME_VERSION=		3.24.3
 API_VERSION=		3.14
 PKGNAME=		gtkhtml3-${VERSION}
 SHARED_LIBS +=	gtkhtml-3.14         3.0      # .20.0
@@ -25,7 +25,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png popt pthread ssl stdc++ \
-		util xml2 z
+		util xml2 z sndio
 
 MODULES=		devel/gettext \
 			x11/gnome
