@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_libwavpack_cpp,v 1.1.1.1 2009/01/12 16:41:37 naddy Exp $
+--- src/libwavpack.cpp.orig	Fri May  2 07:15:31 2008
++++ src/libwavpack.cpp	Sun Jan 11 19:39:37 2009
+@@ -21,7 +21,7 @@ extern "C" {
+ #define M_LN10   2.3025850929940456840179914546843642
+ #endif
+ 
+-#define DBG(format, args...) fprintf(stderr, format, ## args)
++#define DBG(format, args...) //fprintf(stderr, format, ## args)
+ #define BUFFER_SIZE 256 // read buffer size, in samples
+ 
+ extern "C" InputPlugin * get_iplugin_info(void);
+@@ -148,7 +148,7 @@ class WavpackDecoder (public)
+         int tsamples = num_samples * num_channels;
+ 
+         if (!(WavpackGetMode (ctx) & MODE_FLOAT)) {
+-            float scaler = (float) (1.0 / ((unsigned int32_t) 1 << (bytes_per_sample * 8 - 1)));
++            float scaler = (float) (1.0 / ((uint32_t) 1 << (bytes_per_sample * 8 - 1)));
+             float *fptr = (float *) input;
+             int32_t *lptr = input;
+             int cnt = tsamples;
