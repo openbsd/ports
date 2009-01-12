@@ -1,0 +1,48 @@
+$OpenBSD: patch-apps_silcd_packet_receive_c,v 1.1 2009/01/12 00:31:45 sthen Exp $
+--- apps/silcd/packet_receive.c.orig	Fri Jan  9 22:23:46 2009
++++ apps/silcd/packet_receive.c	Fri Jan  9 22:27:18 2009
+@@ -326,6 +326,8 @@ static void silc_server_notify_process(SilcServer serv
+       tmp_len = 128;
+ 
+     /* Update statistics */
++    SILC_LOG_DEBUG(("stat.clients %d->%d", server->stat.clients,
++		    server->stat.clients - 1));
+     SILC_VERIFY(server->stat.clients > 0);
+     server->stat.clients--;
+     if (server->stat.cell_clients)
+@@ -1246,6 +1248,8 @@ static void silc_server_notify_process(SilcServer serv
+ 	    }
+ 
+ 	    /* Update statistics */
++	    SILC_LOG_DEBUG(("stat.clients %d->%d", server->stat.clients,
++			    server->stat.clients - 1));
+ 	    SILC_VERIFY(server->stat.clients > 0);
+ 	    server->stat.clients--;
+ 	    if (server->stat.cell_clients)
+@@ -1492,6 +1496,8 @@ static void silc_server_notify_process(SilcServer serv
+       }
+ 
+       /* Update statistics */
++      SILC_LOG_DEBUG(("stat.clients %d->%d", server->stat.clients,
++		      server->stat.clients - 1));
+       SILC_VERIFY(server->stat.clients > 0);
+       server->stat.clients--;
+       if (server->stat.cell_clients)
+@@ -2686,6 +2692,8 @@ static void silc_server_new_id_real(SilcServer server,
+ 
+       if (idata->conn_type == SILC_CONN_SERVER)
+ 	server->stat.cell_clients++;
++      SILC_LOG_DEBUG(("stat.clients %d->%d", server->stat.clients,
++		      server->stat.clients + 1));
+       server->stat.clients++;
+ 
+       /* Check if anyone is watching this nickname */
+@@ -3742,6 +3750,8 @@ void silc_server_resume_client(SilcServer server,
+        we decremented the count already during detach, thus we'd be undoing
+        that operation. */
+     detached_client->local_detached = FALSE;
++    SILC_LOG_DEBUG(("stat.clients %d->%d", server->stat.clients,
++		    server->stat.clients - 1));
+     SILC_VERIFY(server->stat.clients > 0);
+     server->stat.clients--;
+     if (server->stat.cell_clients)

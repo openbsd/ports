@@ -1,0 +1,12 @@
+$OpenBSD: patch-apps_silcd_command_reply_c,v 1.1 2009/01/12 00:31:45 sthen Exp $
+--- apps/silcd/command_reply.c.orig	Fri Jan  9 22:23:02 2009
++++ apps/silcd/command_reply.c	Fri Jan  9 22:23:38 2009
+@@ -1242,6 +1242,8 @@ SILC_SERVER_CMD_REPLY_FUNC(stats)
+ 			 SILC_STR_END);
+   }
+ 
++  SILC_LOG_DEBUG(("stat.clients = %d\n", server->stat.clients));
++
+  out:
+   SILC_SERVER_PENDING_EXEC(cmd, SILC_COMMAND_STATS);
+  err:
