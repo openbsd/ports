@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.250 2008/12/18 13:23:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.251 2009/01/12 13:48:20 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -22,7 +22,6 @@
      SUBDIR += exempi
      SUBDIR += gdiff
      SUBDIR += glimpse
-     SUBDIR += gnome-spell
      SUBDIR += gnuvd
      SUBDIR += gonzui
      SUBDIR += gsed
