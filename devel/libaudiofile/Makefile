@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.36 2008/12/22 20:28:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2009/01/12 16:15:03 jasper Exp $
 
 COMMENT=	SGI audiofile library clone
 
 DISTNAME=	audiofile-0.2.6
-PKGNAME=	lib${DISTNAME}p1
+PKGNAME=	lib${DISTNAME}p2
 SHARED_LIBS +=	audiofile            0.2      # .0.2
 CATEGORIES=	devel audio
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/audiofile/0.2/}
 
 HOMEPAGE=	http://www.68k.org/~michael/audiofile/
 
-# GPL/LGPL
+# GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

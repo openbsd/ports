@@ -1,0 +1,27 @@
+$OpenBSD: patch-libaudiofile_modules_msadpcm_c,v 1.1 2009/01/12 16:15:03 jasper Exp $
+
+Security fix for CVE-2008-5824
+Patch taken from the Debian bug report, #510205. 
+
+--- libaudiofile/modules/msadpcm.c.orig	Mon Jan 12 17:05:16 2009
++++ libaudiofile/modules/msadpcm.c	Mon Jan 12 17:06:05 2009
+@@ -129,8 +129,7 @@ static int ms_adpcm_decode_block (ms_adpcm_data *msadp
+ 	ms_adpcm_state	*state[2];
+ 
+ 	/* Calculate the number of bytes needed for decoded data. */
+-	outputLength = msadpcm->samplesPerBlock * sizeof (int16_t) *
+-		msadpcm->track->f.channelCount;
++	outputLength = msadpcm->samplesPerBlock * sizeof (int16_t);
+ 
+ 	channelCount = msadpcm->track->f.channelCount;
+ 
+@@ -180,8 +179,7 @@ static int ms_adpcm_decode_block (ms_adpcm_data *msadp
+ 		The first two samples have already been 'decoded' in
+ 		the block header.
+ 	*/
+-	samplesRemaining = (msadpcm->samplesPerBlock - 2) *
+-		msadpcm->track->f.channelCount;
++	samplesRemaining = msadpcm->samplesPerBlock - 2;
+ 
+ 	while (samplesRemaining > 0)
+ 	{
