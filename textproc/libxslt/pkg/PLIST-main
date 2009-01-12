@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/12/26 10:54:21 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/01/12 15:46:20 ajacoutot Exp $
 @pkgpath textproc/libxslt
 %%SHARED%%
 bin/xslt-config
@@ -32,10 +32,8 @@ lib/libexslt.a
 lib/libexslt.la
 lib/libxslt.a
 lib/libxslt.la
-lib/pkgconfig/
 lib/pkgconfig/libexslt.pc
 lib/pkgconfig/libxslt.pc
-lib/python${MODPY_VERSION}/site-packages/libxsltmod.so
 lib/xsltConf.sh
 @man man/man1/xsltproc.1
 @man man/man3/libexslt.3

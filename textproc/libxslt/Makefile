@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2008/12/26 10:54:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2009/01/12 15:46:20 ajacoutot Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
 
 VERSION=		1.1.24
 DISTNAME=		libxslt-${VERSION}
-PKGNAME-main=		libxslt-${VERSION}p0
+PKGNAME-main=		libxslt-${VERSION}p1
 PKGNAME-python= 	py-libxslt-${VERSION}
 SHARED_LIBS=		exslt	9.7 \
 			xslt	3.7
@@ -33,7 +33,8 @@ FLAVOR?=
 MULTI_PACKAGES=		-main
 
 WANTLIB-main=		${WANTLIB} c
-LIB_DEPENDS-main=	xml2.>=9:libxml->=2.6.27:textproc/libxml \
+LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
+			xml2.>=9:libxml->=2.6.27:textproc/libxml \
 			gcrypt.>=12::security/libgcrypt
 
 USE_LIBTOOL=		Yes
