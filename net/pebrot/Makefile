@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2007/10/08 08:22:42 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2009/01/12 09:37:12 kevlo Exp $
 
 COMMENT=	text-based MSN messenger client
 
 DISTNAME=	pebrot-0.8.8
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 
 HOMEPAGE=	http://pebrot.sourceforge.net/
@@ -20,7 +20,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pebrot/}
 
 NO_REGRESS=	Yes
 
-MODPY_VERSION=	2.4
 MODULES=	lang/python
 
 .include <bsd.port.mk>
