@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2008/12/17 18:47:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2009/01/13 18:08:20 ajacoutot Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
 GNOME_PROJECT=		gok
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://live.gnome.org/Gok
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite \
-		Xcursor Xdamage Xdmcp Xevie Xext Xfixes Xi Xinerama \
+		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama \
 		Xrandr Xrender Xtst art_lgpl_2 atk-1.0 audiofile bonobo-2 \
 		bonobo-activation bonoboui-2 c cairo crypto dbus-1 \
 		dbus-glib-1 esd expat fontconfig freetype gailutil \
@@ -23,7 +23,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
-		pthread ssl startup-notification-1 util xml2 z
+		pthread ssl startup-notification-1 util xml2 z sndio
 
 MODULES=	devel/gettext \
 		x11/gnome
@@ -41,11 +41,11 @@ DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gok \
 			--disable-schemas-install \
-			--disable-scrollkeeper \
-			--enable-xevie
+			--disable-scrollkeeper
+# XXX X Window System Error ('BadLenght...')
+CONFIGURE_ARGS+=	--disable-xevie
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			XEVIE_LIBS="-lXext -lXevie"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 # The regression tests require a running instance of X.
 # You will also need to set the XAUTHORITY environment variable to point 
