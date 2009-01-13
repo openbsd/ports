@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/01/11 22:58:37 landry Exp $
-
-BROKEN=			needs a pending libstdc++ fix
+# $OpenBSD: Makefile,v 1.27 2009/01/13 21:55:40 landry Exp $
 
 COMMENT-main=		C++ interface for gtk2+
 COMMENT-docs=		C++ interface for gtk2+ documentation
