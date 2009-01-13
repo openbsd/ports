@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.17 2008/12/22 23:03:12 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.18 2009/01/13 08:27:47 jasper Exp $
 The OpenBSD/GNOME desktop
 
 * Introduction
@@ -44,10 +44,11 @@ you can install. The most important ones will be mentioned by category:
    * conduit - all-in-one synchronization application
    * evince - document viewer for multiple document formats
    * gcalctool - desktop calculator
+   * gconf-editor - editor for GConf settings
+   * gnome-keyring-manager - keyring password management
    * gnome-scan - scanning application
    * gnomebaker - CD/DVD burning application
    * gucharmap - Unicode character map
-   * gnome-keyring-manager - Keyring password management
    * pessulus - lockdown editor for desktop
    * planner - project management
    * seahorse - encryption keys manager
