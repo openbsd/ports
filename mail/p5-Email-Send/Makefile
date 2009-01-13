@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/11/07 15:09:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2009/01/13 14:41:13 simon Exp $
 
 COMMENT= 	simply sending email
 
 MODULES=	cpan
 
-DISTNAME=	Email-Send-2.192
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Email-Send-2.194
 CATEGORIES=	mail
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
