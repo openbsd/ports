@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2008/12/17 18:47:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2009/01/13 08:41:04 jasper Exp $
 %%SHARED%%
 bin/gnome-about
 include/gnome-desktop-2.0/
@@ -132,19 +132,13 @@ share/gtk-doc/html/gnome-desktop/right.png
 share/gtk-doc/html/gnome-desktop/style.css
 share/gtk-doc/html/gnome-desktop/up.png
 share/locale/af/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/am/
-share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ast/
 share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/az/
-share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/be@latin/
-share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/bn/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -167,8 +161,6 @@ share/locale/eu/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/fa/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -185,8 +177,6 @@ share/locale/is/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ka/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/kn/
-share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -211,8 +201,6 @@ share/locale/ne/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nso/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/or/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/pa/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -225,20 +213,14 @@ share/locale/pt_BR/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ro/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ru/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/rw/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/si/
-share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/sr/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/tk/
