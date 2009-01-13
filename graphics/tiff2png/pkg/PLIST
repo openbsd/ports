@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/10 00:19:37 brad Exp $
-bin/tiff2png
+@comment $OpenBSD: PLIST,v 1.2 2009/01/13 18:46:19 giovanni Exp $
+@bin bin/tiff2png

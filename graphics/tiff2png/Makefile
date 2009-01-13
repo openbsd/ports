@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 20:09:43 simon Exp $
+# $OpenBSD: Makefile,v 1.13 2009/01/13 18:46:19 giovanni Exp $
 
 COMMENT=	converts TIFF images to PNG format
 
-DISTNAME=	tiff2png-0.81c
+DISTNAME=	tiff2png-0.91
 CATEGORIES=	graphics
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=png-mng/}
 
 HOMEPAGE=	http://www.libpng.org/pub/png/apps/tiff2png.html
 
+MAINTAINER=	Benoit Lecocq <blq@arcane-labs.net>
+
 LIB_DEPENDS=	tiff.>=35::graphics/tiff \
 		png.>=2::graphics/png
 
+# custom, see tiff2png.c
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
