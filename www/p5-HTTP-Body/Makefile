@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2008/07/20 22:14:07 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/13 14:37:16 simon Exp $
 
 COMMENT=	HTTP Body Parser
 
-DISTNAME=	HTTP-Body-1.04
+DISTNAME=	HTTP-Body-1.05
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
