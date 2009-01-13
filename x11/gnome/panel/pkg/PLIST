@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2008/12/17 18:47:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.31 2009/01/13 08:57:19 jasper Exp $
 %%SHARED%%
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
@@ -310,6 +310,8 @@ share/gnome/help/window-list/oc/
 share/gnome/help/window-list/oc/window-list.xml
 share/gnome/help/window-list/pa/
 share/gnome/help/window-list/pa/window-list.xml
+share/gnome/help/window-list/pt_BR/
+share/gnome/help/window-list/pt_BR/window-list.xml
 share/gnome/help/window-list/ru/
 share/gnome/help/window-list/ru/window-list.xml
 share/gnome/help/window-list/sv/
@@ -479,16 +481,12 @@ share/idl/gnome-panel-2.0/GNOME_Panel.idl
 share/locale/af/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/as/
-share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ast/
 share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/be@latin/
-share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/bn/LC_MESSAGES/gnome-panel-2.0.mo
@@ -514,8 +512,6 @@ share/locale/eu/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-panel-2.0.mo
@@ -559,8 +555,6 @@ share/locale/ne/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nso/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/or/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pa/LC_MESSAGES/gnome-panel-2.0.mo
@@ -573,8 +567,6 @@ share/locale/pt_BR/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ro/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ru/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/rw/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/si/
-share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-panel-2.0.mo
@@ -583,13 +575,9 @@ share/locale/sr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sr@ije/
 share/locale/sr@ije/LC_MESSAGES/
 share/locale/sr@ije/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-panel-2.0.mo
@@ -674,6 +662,7 @@ share/omf/window-list/window-list-it.omf
 share/omf/window-list/window-list-ko.omf
 share/omf/window-list/window-list-oc.omf
 share/omf/window-list/window-list-pa.omf
+share/omf/window-list/window-list-pt_BR.omf
 share/omf/window-list/window-list-ru.omf
 share/omf/window-list/window-list-sv.omf
 share/omf/window-list/window-list-uk.omf
