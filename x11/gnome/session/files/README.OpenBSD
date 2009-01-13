@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.18 2009/01/13 08:27:47 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.19 2009/01/13 20:01:38 ajacoutot Exp $
 The OpenBSD/GNOME desktop
 
 * Introduction
@@ -52,8 +52,8 @@ you can install. The most important ones will be mentioned by category:
    * pessulus - lockdown editor for desktop
    * planner - project management
    * seahorse - encryption keys manager
-   * totem - multimedia player
    * tomboy - desktop note-taking
+   * totem - multimedia player
 
 * Startup and more documentation
 One can log in using the login manager, GDM. Or by using the 'startx' command.
