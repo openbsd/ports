@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/06/20 19:32:44 jakob Exp $
-sbin/usbctl
-sbin/usbdebug
-sbin/usbgen
-sbin/usbstats
+@comment $OpenBSD: PLIST,v 1.3 2009/01/14 00:58:39 sthen Exp $
+@man man/cat8/usbgen.0
+@bin sbin/usbctl
+@bin sbin/usbdebug
+@bin sbin/usbgen
+@bin sbin/usbstats
