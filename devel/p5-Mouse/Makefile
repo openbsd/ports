@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/08/20 13:44:33 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2009/01/14 18:17:33 simon Exp $
 
 COMMENT =	Moose minus the antlers
 
 MODULES =	cpan
-DISTNAME =	Mouse-0.06
+DISTNAME =	Mouse-0.14
 CATEGORIES =	devel
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
