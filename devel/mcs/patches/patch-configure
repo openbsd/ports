@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure,v 1.1 2009/01/14 21:07:17 fgsch Exp $
+--- configure.orig	Sun Jan  4 09:43:57 2009
++++ configure	Sun Jan  4 09:44:18 2009
+@@ -3028,14 +3028,14 @@ echo "${ECHO_T}Win32" >&6; }
+ echo "${ECHO_T}POSIX" >&6; }
+ 			LIB_CPPFLAGS='-DPIC'
+ 			LIB_CFLAGS='-fPIC'
+-			LIB_LDFLAGS='-shared -fPIC -Wl,-soname=${LIB}.${LIB_MAJOR}'
++			LIB_LDFLAGS='-shared -fPIC -Wl,-soname=${LIB}'
+ 			LIB_PREFIX='lib'
+ 			LIB_SUFFIX='.so'
+ 			PLUGIN_CPPFLAGS='-DPIC'
+ 			PLUGIN_CFLAGS='-fPIC'
+ 			PLUGIN_LDFLAGS='-shared -fPIC'
+ 			PLUGIN_SUFFIX='.so'
+-			INSTALL_LIB='${INSTALL} -m 755 $$i ${DESTDIR}${libdir}/$$i.${LIB_MAJOR}.${LIB_MINOR}.0 && ${LN_S} -f $$i.${LIB_MAJOR}.${LIB_MINOR}.0 ${DESTDIR}${libdir}/$$i.${LIB_MAJOR} && ${LN_S} -f $$i.${LIB_MAJOR}.${LIB_MINOR}.0 ${DESTDIR}${libdir}/$$i'
++			INSTALL_LIB='${INSTALL} -m 755 $$i ${DESTDIR}${libdir}/$$i'
+ 			UNINSTALL_LIB='rm -f ${DESTDIR}${libdir}/$$i ${DESTDIR}${libdir}/$$i.${LIB_MAJOR} ${DESTDIR}${libdir}/$$i.${LIB_MAJOR}.${LIB_MINOR}.0'
+ 			CLEAN_LIB=''
+ 			;;
