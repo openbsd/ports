@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/14 21:16:14 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/01/14 21:06:39 fgsch Exp $
 %%SHARED%%
 include/libmowgli/
 include/libmowgli/mowgli.h
 include/libmowgli/mowgli_alloc.h
+include/libmowgli/mowgli_allocation_policy.h
+include/libmowgli/mowgli_allocator.h
 include/libmowgli/mowgli_argstack.h
 include/libmowgli/mowgli_assert.h
 include/libmowgli/mowgli_bitvector.h
@@ -26,6 +28,7 @@ include/libmowgli/mowgli_object.h
 include/libmowgli/mowgli_object_class.h
 include/libmowgli/mowgli_object_messaging.h
 include/libmowgli/mowgli_object_metadata.h
+include/libmowgli/mowgli_patricia.h
 include/libmowgli/mowgli_queue.h
 include/libmowgli/mowgli_random.h
 include/libmowgli/mowgli_signal.h

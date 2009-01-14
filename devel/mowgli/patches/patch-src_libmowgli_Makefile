@@ -1,22 +1,9 @@
-$OpenBSD: patch-src_libmowgli_Makefile,v 1.1.1.1 2007/09/14 21:16:14 steven Exp $
---- src/libmowgli/Makefile.orig	Fri Sep 14 22:56:43 2007
-+++ src/libmowgli/Makefile	Fri Sep 14 22:57:10 2007
-@@ -3,8 +3,7 @@ include ../../mk/init.mk
- 
- PICLDFLAGS = $(LIBLDFLAGS)
- 
--OBJECTIVE_LIBS = libmowgli$(SHARED_SUFFIX)
--OBJECTIVE_SONAME_SUFFIX = 1
-+OBJECTIVE_LIBS = libmowgli$(SHARED_SUFFIX).${LIBmowgli_VERSION}
- 
- LIBADD += $(DYNAMIC_LD_LIBS)
- 
-@@ -77,8 +76,3 @@ HEADERS = \
- include ../../mk/objective.mk
- 
- install-posthook:
--	@mv ${DESTDIR}/${LIBDIR}/libmowgli$(SHARED_SUFFIX) ${DESTDIR}/${LIBDIR}/libmowgli$(SHARED_SUFFIX).1.0.0
--	@ln -sf libmowgli$(SHARED_SUFFIX).1.0.0 \
--		${DESTDIR}/${LIBDIR}/libmowgli$(SHARED_SUFFIX).1
--	@ln -sf libmowgli$(SHARED_SUFFIX).1 \
--		${DESTDIR}/${LIBDIR}/libmowgli$(SHARED_SUFFIX)
+$OpenBSD: patch-src_libmowgli_Makefile,v 1.2 2009/01/14 21:06:39 fgsch Exp $
+--- src/libmowgli/Makefile.orig	Tue Jan  6 21:03:01 2009
++++ src/libmowgli/Makefile	Tue Jan  6 21:03:47 2009
+@@ -1,4 +1,4 @@
+-LIB = ${LIB_PREFIX}mowgli${LIB_SUFFIX}
++LIB = ${LIB_PREFIX}mowgli${LIB_SUFFIX}.${LIBmowgli_VERSION}
+ LIB_MAJOR = 2
+ LIB_MINOR = 0
+ DISTCLEAN = mowgli_config.h
