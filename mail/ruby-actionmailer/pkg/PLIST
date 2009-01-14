@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/06/17 22:54:19 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/01/14 22:20:07 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -14,6 +14,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Base.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Base.src/M000368.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Base.src/M000369.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Base.src/M000370.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Base.src/M000371.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Helpers/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Helpers/ClassMethods.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Helpers/ClassMethods.src/
@@ -44,7 +45,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/TestHelpe
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/TestHelper.src/M000347.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MailHelper.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MailHelper.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MailHelper.src/M000371.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MailHelper.src/M000372.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/TMail/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/TMail.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/TMail.src/
@@ -495,6 +496,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Base/mailer_name-i.
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Base/receive-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Base/register_template_extension-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Base/template_root%3d-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Base/template_root-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Helpers/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Helpers/ClassMethods/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Helpers/ClassMethods/cdesc-ClassMethods.yaml
@@ -1021,6 +1023,11 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/abstract_unit.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/delivery_method_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/auto_layout_mailer/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/auto_layout_mailer/hello.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/explicit_layout_mailer/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/explicit_layout_mailer/logout.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/explicit_layout_mailer/signup.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/first_mailer/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/first_mailer/share.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/helper_mailer/
@@ -1030,6 +1037,9 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/helper_mailer/use_he
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/helper_mailer/use_mail_helper.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/helpers/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/helpers/example_helper.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/layouts/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/layouts/auto_layout_mailer.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/layouts/spam.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/path.with.dots/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/path.with.dots/funky_path_mailer/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/path.with.dots/funky_path_mailer/multipart_with_template_path_with_dots.erb
@@ -1055,6 +1065,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/templates/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/templates/signed_up.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test_mailer/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test_mailer/_subtemplate.text.plain.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test_mailer/body_ivar.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test_mailer/custom_templating_extension.text.html.haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test_mailer/custom_templating_extension.text.plain.haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test_mailer/implicitly_multipart_example.ignored.erb
@@ -1065,9 +1076,10 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test_mailer/implicit
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test_mailer/included_subtemplate.text.plain.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test_mailer/rxml_template.builder
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test_mailer/rxml_template.rxml
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test_mailer/signed_up.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test_mailer/signed_up.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/test_mailer/signed_up_with_url.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/mail_helper_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/mail_layout_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/mail_render_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/mail_service_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/quoting_test.rb
