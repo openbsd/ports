@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2008/10/08 21:31:31 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2009/01/14 17:52:10 simon Exp $
 
 COMMENT=	visitor-style traversal of Perl data structures
 
 MODULES=	cpan
-DISTNAME=	Data-Visitor-0.21
+DISTNAME=	Data-Visitor-0.22
 CATEGORIES=	devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
