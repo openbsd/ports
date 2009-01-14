@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2007/11/10 14:17:09 jasper Exp $
---- configure.orig	Fri Sep 14 14:04:47 2007
-+++ configure	Sat Oct 27 00:10:40 2007
-@@ -19993,7 +19993,7 @@ fi
+$OpenBSD: patch-configure,v 1.5 2009/01/14 10:38:33 jasper Exp $
+--- configure.orig	Wed Jan 14 10:07:55 2009
++++ configure	Wed Jan 14 10:09:23 2009
+@@ -20474,7 +20474,7 @@ fi
  # Make these available to both PKG_CHECK_MODULES and the .pc.in file:
  GLIBMM_VERSION_NEEDED=2.6.4
  
@@ -10,51 +10,21 @@ $OpenBSD: patch-configure,v 1.4 2007/11/10 14:17:09 jasper Exp $
  
  GCONF_VERSION_NEEDED=2.4.0
  
-@@ -20234,47 +20234,6 @@ fi
+@@ -20709,7 +20709,7 @@ fi
  
  
+ 
+-
++if false; then	# Don't pull in gtkmm, just for some examples
  pkg_failed=no
--{ echo "$as_me:$LINENO: checking for GCONFMM_EXAMPLES" >&5
--echo $ECHO_N "checking for GCONFMM_EXAMPLES... $ECHO_C" >&6; }
--
--if test -n "$PKG_CONFIG"; then
--    if test -n "$GCONFMM_EXAMPLES_CFLAGS"; then
--        pkg_cv_GCONFMM_EXAMPLES_CFLAGS="$GCONFMM_EXAMPLES_CFLAGS"
--    else
--        if test -n "$PKG_CONFIG" && \
--    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"gtkmm-2.4 >= \$GTKMM_VERSION_NEEDED gconf-2.0 >= \$GCONF_VERSION_NEEDED\"") >&5
--  ($PKG_CONFIG --exists --print-errors "gtkmm-2.4 >= $GTKMM_VERSION_NEEDED gconf-2.0 >= $GCONF_VERSION_NEEDED") 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; then
--  pkg_cv_GCONFMM_EXAMPLES_CFLAGS=`$PKG_CONFIG --cflags "gtkmm-2.4 >= $GTKMM_VERSION_NEEDED gconf-2.0 >= $GCONF_VERSION_NEEDED" 2>/dev/null`
--else
--  pkg_failed=yes
--fi
--    fi
--else
--	pkg_failed=untried
--fi
--if test -n "$PKG_CONFIG"; then
--    if test -n "$GCONFMM_EXAMPLES_LIBS"; then
--        pkg_cv_GCONFMM_EXAMPLES_LIBS="$GCONFMM_EXAMPLES_LIBS"
--    else
--        if test -n "$PKG_CONFIG" && \
--    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"gtkmm-2.4 >= \$GTKMM_VERSION_NEEDED gconf-2.0 >= \$GCONF_VERSION_NEEDED\"") >&5
--  ($PKG_CONFIG --exists --print-errors "gtkmm-2.4 >= $GTKMM_VERSION_NEEDED gconf-2.0 >= $GCONF_VERSION_NEEDED") 2>&5
--  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; then
--  pkg_cv_GCONFMM_EXAMPLES_LIBS=`$PKG_CONFIG --libs "gtkmm-2.4 >= $GTKMM_VERSION_NEEDED gconf-2.0 >= $GCONF_VERSION_NEEDED" 2>/dev/null`
--else
--  pkg_failed=yes
--fi
--    fi
--else
--	pkg_failed=untried
--fi
--
--
+ { $as_echo "$as_me:$LINENO: checking for GCONFMM_EXAMPLES" >&5
+ $as_echo_n "checking for GCONFMM_EXAMPLES... " >&6; }
+@@ -20817,7 +20817,7 @@ $as_echo "yes" >&6; }
+ 	:
+ fi
  
- if test $pkg_failed = yes; then
+-
++fi
  
+ GLIBMM_LIBDIR=`pkg-config --variable=libdir glibmm-2.4`
+ GMM_PROCDIR=$GLIBMM_LIBDIR/glibmm-2.4/proc
