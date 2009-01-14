@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.3 2007/11/10 14:44:50 jasper Exp $
+@comment $OpenBSD: PLIST-docs,v 1.4 2009/01/14 10:39:43 jasper Exp $
 share/devhelp/
 share/devhelp/books/
 share/devhelp/books/libglademm-2.4/
@@ -10,17 +10,17 @@ share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/annotated.html
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGlib_1_1Exception.html
-share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGlib_1_1Exception__inherit__graph.png
+share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGlib_1_1Exception__inherit__graph.dot
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGlib_1_1Object.html
-share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGlib_1_1Object__inherit__graph.png
+share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGlib_1_1Object__inherit__graph.dot
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGnome_1_1Glade_1_1VariablesMap-members.html
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGnome_1_1Glade_1_1VariablesMap.html
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGnome_1_1Glade_1_1Xml-members.html
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGnome_1_1Glade_1_1Xml.html
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGnome_1_1Glade_1_1XmlError-members.html
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGnome_1_1Glade_1_1XmlError.html
-share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGnome_1_1Glade_1_1XmlError__inherit__graph.png
-share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGnome_1_1Glade_1_1Xml__inherit__graph.png
+share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGnome_1_1Glade_1_1XmlError__inherit__graph.dot
+share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classGnome_1_1Glade_1_1Xml__inherit__graph.dot
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/classes.html
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/doxygen.css
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/doxygen.png
@@ -31,12 +31,9 @@ share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/functions_type.html
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/functions_vars.html
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/graph_legend.dot
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/graph_legend.html
-share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/graph_legend.png
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/hierarchy.html
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/index.html
-share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/inherit__graph__0.png
-share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/inherit__graph__1.png
-share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/inherit__graph__2.png
+share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/inherit__graph__0.dot
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/inherits.html
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/init_8h.html
 share/doc/gnomemm-2.6/libglademm-2.4/docs/reference/html/namespaceGlib.html
