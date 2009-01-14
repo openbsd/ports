@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.33 2008/12/27 20:48:00 steven Exp $
+# $OpenBSD: Makefile,v 1.34 2009/01/14 10:34:21 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-protocol instant messaging client
 
-DISTNAME=	pidgin-2.5.3
+DISTNAME=	pidgin-2.5.4
 CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 
 SHARED_LIBS+=	jabber		0.0
 SHARED_LIBS+=	oscar		0.0
-SHARED_LIBS+=	purple		4.3
-SHARED_LIBS+=	purple-client	4.3
-SHARED_LIBS+=	gnt		4.3
+SHARED_LIBS+=	purple		4.4
+SHARED_LIBS+=	purple-client	4.4
+SHARED_LIBS+=	gnt		4.4
 
 HOMEPAGE=	http://pidgin.im/
 
@@ -28,8 +29,6 @@ WANTLIB=		ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 			gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 			gthread-2.0 m ncurses panel pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pcre pixman-1 png pthread ssl stdc++ z
-
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 
 MODULES=	devel/gettext textproc/intltool
 
@@ -60,6 +59,7 @@ CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61
 CONFIGURE_ARGS+= --with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/pidgin \
 		 --disable-avahi \
+		 --disable-doxygen \
 		 --disable-gevolution \
 		 --disable-gnutls \
 		 --disable-nm \
