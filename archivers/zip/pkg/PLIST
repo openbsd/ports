@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/07/30 17:33:40 naddy Exp $
-bin/zip
-bin/zipcloak
-bin/zipnote
-bin/zipsplit
+@comment $OpenBSD: PLIST,v 1.10 2009/01/14 16:59:51 sturm Exp $
+@bin bin/zip
+@bin bin/zipcloak
+@bin bin/zipnote
+@bin bin/zipsplit
 @man man/man1/zip.1
+@man man/man1/zipcloak.1
+@man man/man1/zipnote.1
+@man man/man1/zipsplit.1

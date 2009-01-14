@@ -1,43 +1,28 @@
-$OpenBSD: patch-unix_configure,v 1.1 2006/07/30 17:33:40 naddy Exp $
---- unix/configure.orig	Sun Jul 30 19:28:24 2006
-+++ unix/configure	Sun Jul 30 19:28:40 2006
-@@ -15,39 +15,6 @@ CC=${1-cc}
- CFLAGS=${2-"-I. -DUNIX"}
- LFLAGS1=""
- LN="ln -s"
--echo "Check C compiler type (optimization option)"
--cat > conftest.c << _EOF_
--int main()
--{
--#ifndef __SUNPRO_C
--   bad code
--#endif
--   return 0;
--}
--_EOF_
--$CC $CFLAGS -c conftest.c > /dev/null 2>/dev/null
--if test $? -eq 0; then
--  echo '  Sun C (-xO3)'
--  CFLAGS="${CFLAGS} -xO3"
--else
--  cat > conftest.c << _EOF_
--int main()
--{
--#ifndef __DECC
--   bad code
--#endif
--   return 0;
--}
--_EOF_
--  $CC $CFLAGS -c conftest.c > /dev/null 2>/dev/null
--  if test $? -eq 0; then
--    echo '  DEC C (-O3)'
--    CFLAGS="${CFLAGS} -O3"
--  else
--    echo '  Other (gcc?) (-O2)'
--    CFLAGS="${CFLAGS} -O2"
--  fi
--fi
- 
- echo Check for the C preprocessor
- # on SVR4, cc -E does not produce correct assembler files. Need /lib/cpp.
+$OpenBSD: patch-unix_configure,v 1.2 2009/01/14 16:59:51 sturm Exp $
+--- unix/configure.orig	Fri Dec 12 22:58:30 2008
++++ unix/configure	Fri Dec 12 22:59:38 2008
+@@ -98,7 +98,6 @@ int main()
+ _EOF_
+       $CC $CFLAGS -c conftest.c > /dev/null 2>/dev/null
+       if test $? -eq 0; then
+-        CFLAGS_OPT='-O3'
+         echo "  GNU C ($CFLAGS_OPT)"
+         # Special Mac OS X shared library "ld" option?
+         if test ` uname -s 2> /dev/null ` = 'Darwin'; then
+@@ -110,7 +109,6 @@ _EOF_
+           rm -f conftest
+         fi
+       else
+-        CFLAGS_OPT='-O'
+         echo "  Other-unknown C ($CFLAGS_OPT)"
+       fi
+     fi
+@@ -244,7 +242,7 @@ if eval "$CPP match.S > _match.s 2>/dev/null"; then
+     echo "int foo() { return 0;}" > conftest.c
+     $CC -c conftest.c >/dev/null 2>/dev/null
+     echo Check if compiler generates underlines
+-    nm conftest.o | grep "(^|[^_])foo" >/dev/null 2>/dev/null
++    nm conftest.o | egrep "(^|[^_])foo" >/dev/null 2>/dev/null
+     [ $? -eq 0 ] && CPP="${CPP} -DNO_UNDERLINE"
+     if eval "$CPP crc_i386.S > _crc_i386.s 2>/dev/null"; then
+       if eval "$CC -c _crc_i386.s >/dev/null 2>/dev/null" && [ -f _crc_i386.o ]

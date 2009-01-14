@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.36 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2009/01/14 16:59:51 sturm Exp $
 
 COMMENT=	create/update ZIP files compatible with PKZip(tm)
 
-DISTNAME=	zip-2.32
+VERSION=	3.0
+DISTNAME=	zip${VERSION:S/.//}
+PKGNAME=	zip-${VERSION}
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=tools/zip/info-zip/src/} \
-		ftp://ftp.info-zip.org/pub/infozip/src/ \
-		${MASTER_SITE_SOURCEFORGE:=infozip/} \
-		http://mirror.switch.ch/ftp/mirror/infozip/src/		
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=infozip/}
 
-DISTFILES=	zip232.tar.gz zcrypt29.zip
-
-HOMEPAGE=	http://www.ctan.org/tex-archive/tools/zip/info-zip/Zip.html
+HOMEPAGE=	http://infozip.sourceforge.net/
 
 # Conditional
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,15 +18,15 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS_NOOPT="${CFLAGS} -I. -DUNIX"
-FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"
 
 MAKE_FILE=	unix/Makefile
-
 ALL_TARGET=	generic
-
-post-extract:
-	@mv -f ${WRKDIR}/crypt.[ch] ${WRKSRC}
-
 NO_REGRESS=	Yes
+
+do-install:
+.for prog in zip zipcloak zipnote zipsplit
+	${INSTALL_PROGRAM} ${WRKBUILD}/${prog} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIST}/man/${prog}.1 ${PREFIX}/man/man1
+.endfor
 
 .include <bsd.port.mk>
