@@ -1,0 +1,12 @@
+$OpenBSD: patch-fea_data_plane_io_Makefile_in,v 1.1 2009/01/15 10:14:19 sthen Exp $
+--- fea/data_plane/io/Makefile.in.orig	Tue Jan 13 11:53:23 2009
++++ fea/data_plane/io/Makefile.in	Tue Jan 13 11:53:12 2009
+@@ -299,6 +299,8 @@ distclean-compile:
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCXX_FALSE@	$(LTCXXCOMPILE) -c -o $@ $<
+ 
++io_ip_socket.lo io_tcpudp_socket.lo: CXXFLAGS := $(filter-out -Wcast-align,$(CXXFLAGS))
++
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+ 

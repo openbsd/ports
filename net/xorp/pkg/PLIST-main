@@ -1,19 +1,39 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/03/22 17:19:09 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/01/15 10:14:19 sthen Exp $
 @pkgpath net/xorp
+share/examples/xorp/
+share/examples/xorp/README
+share/examples/xorp/bgp.boot
+share/examples/xorp/click.boot
+share/examples/xorp/interfaces.boot
+share/examples/xorp/multicast4.boot
+share/examples/xorp/multicast6.boot
+share/examples/xorp/ospfv2.boot
+share/examples/xorp/ospfv3.boot
+share/examples/xorp/rip.boot
+share/examples/xorp/ripng.boot
+share/examples/xorp/snmp.boot
+share/examples/xorp/static.boot
 xorp/
 xorp/bgp/
 xorp/bgp/tools/
-xorp/bgp/tools/xorpsh_print_peers
-xorp/bgp/tools/xorpsh_print_routes
-xorp/bgp/xorp_bgp
+@bin xorp/bgp/tools/xorpsh_print_peers
+@bin xorp/bgp/tools/xorpsh_print_routes
+@bin xorp/bgp/xorp_bgp
 xorp/bin/
-xorp/bin/call_xrl
-xorp/bin/xorp_profiler
-xorp/bin/xorp_rtrmgr
-xorp/bin/xorpsh
+@bin xorp/bin/call_xrl
+@bin xorp/bin/xorp_profiler
+@bin xorp/bin/xorp_rtrmgr
+@bin xorp/bin/xorpsh
 xorp/cli/
 xorp/cli/tools/
-xorp/cli/tools/send_cli_processor_xrl
+@bin xorp/cli/tools/cli_generic
+@bin xorp/cli/tools/send_cli_processor_xrl
+xorp/contrib/
+xorp/contrib/olsr/
+xorp/contrib/olsr/tools/
+@bin xorp/contrib/olsr/tools/clear_database
+@bin xorp/contrib/olsr/tools/print_databases
+@bin xorp/contrib/olsr/xorp_olsr4
 xorp/etc/
 xorp/etc/templates/
 xorp/etc/templates/bgp.cmds
@@ -21,6 +41,7 @@ xorp/etc/templates/bgp.tp
 xorp/etc/templates/fea.cmds
 xorp/etc/templates/fea.tp
 xorp/etc/templates/fib2mrib.tp
+xorp/etc/templates/firewall.tp
 xorp/etc/templates/host.cmds
 xorp/etc/templates/igmp.cmds
 xorp/etc/templates/igmp.tp
@@ -32,6 +53,8 @@ xorp/etc/templates/mfea6.tp
 xorp/etc/templates/misc.cmds
 xorp/etc/templates/mld.cmds
 xorp/etc/templates/mld.tp
+xorp/etc/templates/olsr4.cmds
+xorp/etc/templates/olsr4.tp
 xorp/etc/templates/ospfv2.cmds
 xorp/etc/templates/ospfv2.tp
 xorp/etc/templates/ospfv3.cmds
@@ -47,6 +70,7 @@ xorp/etc/templates/rib.cmds
 xorp/etc/templates/rib.tp
 xorp/etc/templates/rip.cmds
 xorp/etc/templates/rip.tp
+xorp/etc/templates/ripng.cmds
 xorp/etc/templates/ripng.tp
 xorp/etc/templates/rtrmgr.tp
 xorp/etc/templates/snmp.tp
@@ -54,47 +78,50 @@ xorp/etc/templates/static_routes.tp
 xorp/etc/templates/xorpsh.cmds
 xorp/fea/
 xorp/fea/tools/
-xorp/fea/tools/show_interfaces
-xorp/fea/xorp_fea
+@bin xorp/fea/tools/show_interfaces
+@bin xorp/fea/xorp_fea
 xorp/fea/xorp_fea_click_config_generator
-xorp/fea/xorp_fea_dummy
+@bin xorp/fea/xorp_fea_dummy
 xorp/fib2mrib/
-xorp/fib2mrib/xorp_fib2mrib
+@bin xorp/fib2mrib/xorp_fib2mrib
 xorp/libxipc/
-xorp/libxipc/xorp_finder
+@bin xorp/libxipc/xorp_finder
 xorp/mld6igmp/
-xorp/mld6igmp/xorp_igmp
-xorp/mld6igmp/xorp_mld
+@bin xorp/mld6igmp/xorp_igmp
+@bin xorp/mld6igmp/xorp_mld
 xorp/ospf/
 xorp/ospf/tools/
-xorp/ospf/tools/print_lsas
-xorp/ospf/tools/print_neighbours
-xorp/ospf/xorp_ospfv2
-xorp/ospf/xorp_ospfv3
+@bin xorp/ospf/tools/clear_database
+@bin xorp/ospf/tools/print_lsas
+@bin xorp/ospf/tools/print_neighbours
+@bin xorp/ospf/xorp_ospfv2
+@bin xorp/ospf/xorp_ospfv3
 xorp/pim/
-xorp/pim/xorp_pimsm4
-xorp/pim/xorp_pimsm6
+@bin xorp/pim/xorp_pimsm4
+@bin xorp/pim/xorp_pimsm6
 xorp/policy/
-xorp/policy/xorp_policy
+@bin xorp/policy/xorp_policy
 xorp/rib/
 xorp/rib/tools/
-xorp/rib/tools/show_routes
-xorp/rib/xorp_rib
+@bin xorp/rib/tools/show_distances
+@bin xorp/rib/tools/show_routes
+@bin xorp/rib/xorp_rib
 xorp/rip/
 xorp/rip/tools/
-xorp/rip/tools/show_peer_stats
-xorp/rip/tools/show_stats
-xorp/rip/xorp_rip
-xorp/rip/xorp_ripng
+@bin xorp/rip/tools/show_peer_stats
+@bin xorp/rip/tools/show_stats
+@bin xorp/rip/xorp_rip
+@bin xorp/rip/xorp_ripng
 xorp/static_routes/
-xorp/static_routes/xorp_static_routes
+@bin xorp/static_routes/xorp_static_routes
+xorp/vrrp/
+@bin xorp/vrrp/xorp_vrrp
 xorp/xrl/
 xorp/xrl/targets/
 xorp/xrl/targets/bgp.xrls
 xorp/xrl/targets/bgp4_mib.xrls
 xorp/xrl/targets/cli.xrls
 xorp/xrl/targets/coord.xrls
-xorp/xrl/targets/demo_fea_ifmgr_client.xrls
 xorp/xrl/targets/fea.xrls
 xorp/xrl/targets/fea_ifmgr_mirror.xrls
 xorp/xrl/targets/fib2mrib.xrls
@@ -102,9 +129,9 @@ xorp/xrl/targets/finder.xrls
 xorp/xrl/targets/finder_client.xrls
 xorp/xrl/targets/mfea.xrls
 xorp/xrl/targets/mld6igmp.xrls
+xorp/xrl/targets/olsr4.xrls
 xorp/xrl/targets/ospfv2.xrls
 xorp/xrl/targets/ospfv3.xrls
-xorp/xrl/targets/packet_acl.xrls
 xorp/xrl/targets/pim.xrls
 xorp/xrl/targets/policy.xrls
 xorp/xrl/targets/profiler.xrls
@@ -113,15 +140,17 @@ xorp/xrl/targets/ribclient.xrls
 xorp/xrl/targets/rip.xrls
 xorp/xrl/targets/ripng.xrls
 xorp/xrl/targets/rtrmgr.xrls
+xorp/xrl/targets/show_distances.xrls
 xorp/xrl/targets/show_routes.xrls
-xorp/xrl/targets/socket_server.xrls
 xorp/xrl/targets/static_routes.xrls
 xorp/xrl/targets/test.xrls
 xorp/xrl/targets/test_fea_ifmgr_mirror.xrls
+xorp/xrl/targets/test_fea_rawlink.xrls
 xorp/xrl/targets/test_finder_events.xrls
 xorp/xrl/targets/test_peer.xrls
 xorp/xrl/targets/test_socket4.xrls
 xorp/xrl/targets/test_socket6.xrls
 xorp/xrl/targets/test_xrls.xrls
+xorp/xrl/targets/vrrp.xrls
 xorp/xrl/targets/xorp_if_mib.xrls
 xorp/xrl/targets/xorpsh.xrls
