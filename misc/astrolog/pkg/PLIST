@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 17:54:15 espie Exp $
-bin/astrolog
+@comment $OpenBSD: PLIST,v 1.5 2009/01/15 15:32:24 ajacoutot Exp $
+@bin bin/astrolog
 lib/astrolog/
 lib/astrolog/CHI_24
 lib/astrolog/CPJV_24
 lib/astrolog/LRZ5_24
 lib/astrolog/astrolog.dat
 share/doc/astrolog/
-share/doc/astrolog/Helpfile.530
-share/doc/astrolog/README.530
-share/doc/astrolog/Update.530
+share/doc/astrolog/Helpfile.${_V}
+share/doc/astrolog/README.${_V}
+share/doc/astrolog/Update.${_V}

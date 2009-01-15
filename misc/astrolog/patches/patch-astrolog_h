@@ -1,20 +1,5 @@
-$OpenBSD: patch-astrolog_h,v 1.1 2007/10/26 22:00:31 ajacoutot Exp $
---- astrolog.h.orig	Fri Oct 26 23:52:30 2007
-+++ astrolog.h	Fri Oct 26 23:52:33 2007
-@@ -82,11 +82,11 @@
- #define ENVIRON /* Comment out this #define if your system doesn't have  */
-                 /* environment variables or can't compile calls to them. */
- 
--#define ATOF /* Comment out this #define if you have a system in which  */
-+/*#define ATOF /* Comment out this #define if you have a system in which  */
-              /* 'atof' and related functions aren't defined in stdio.h, */
-              /* such as most PC's, Linux, VMS compilers, and NeXT's.    */
- 
--/*#define PROTO /* Comment out this #define if you have an older compiler   */
-+#define PROTO /* Comment out this #define if you have an older compiler   */
-               /* which doesn't allow full Ansi function prototypes. This  */
-               /* is for programmers only and has no effect on executable. */
- 
+--- astrolog.h.orig	Sun Jan 11 21:19:47 2009
++++ astrolog.h	Sun Jan 11 21:19:48 2009
 @@ -131,7 +131,9 @@
  */
  
