@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2008/11/13 20:22:13 landry Exp $
---- src/Makefile.in.orig	Fri Oct 31 13:53:46 2008
-+++ src/Makefile.in	Fri Oct 31 13:54:07 2008
-@@ -1400,7 +1400,7 @@ cairo.def: cairo-features.h $(enabled_cairo_headers)
+$OpenBSD: patch-src_Makefile_in,v 1.2 2009/01/15 10:57:53 eric Exp $
+--- src/Makefile.in.orig	Sun Dec 14 15:56:02 2008
++++ src/Makefile.in	Sun Dec 28 11:54:35 2008
+@@ -1412,7 +1412,7 @@ cairo.def: cairo-features.h $(enabled_cairo_headers)
  	) >$@
  	@ ! grep -q cairo_ERROR $@ || ($(RM) $@; false)
  
