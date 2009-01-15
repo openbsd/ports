@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2008/08/30 02:10:13 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2009/01/15 23:08:08 djm Exp $
 
 COMMENT=		database toolkit for Python
 
-MODPY_EGG_VERSION=	0.4.7p1
+MODPY_EGG_VERSION=	0.5.0
 DISTNAME=		SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME=		py-sqlalchemy-${MODPY_EGG_VERSION}
 
@@ -22,6 +22,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sqlalchemy/}
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
+PKG_ARCH=		*
 
 # Other DB connectors would work, too.
 REGRESS_DEPENDS=	::databases/py-sqlite2
