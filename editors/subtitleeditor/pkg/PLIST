@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/28 22:49:54 ajacoutot Exp $
-bin/subtitleeditor
+@comment $OpenBSD: PLIST,v 1.2 2009/01/15 11:42:43 ajacoutot Exp $
+@bin bin/subtitleeditor
 @man man/man1/subtitleeditor.1
-share/applications/
 share/applications/subtitleeditor.desktop
 share/locale/ca/LC_MESSAGES/subtitleeditor.mo
 share/locale/cs/LC_MESSAGES/subtitleeditor.mo
