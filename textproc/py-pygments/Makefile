@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2008/07/29 08:50:16 djm Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/15 23:10:17 djm Exp $
 COMMENT=	Python syntax highlighter
 
-DISTNAME=	Pygments-0.9
+DISTNAME=	Pygments-1.0
 PKGNAME=	${DISTNAME:L:S/^/py-/}
 CATEGORIES=    	textproc devel
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://pypi.python.org/packages/source/P/Pygments/
 
 MODPY_SETUPTOOLS=	Yes
+REGRESS_DEPENDS=	::devel/py-nose
 
 do-regress: fake
 	@cd ${WRKSRC}/tests && ${MAKE_ENV} \
