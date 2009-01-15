@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/12/17 18:47:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/15 18:01:25 jasper Exp $
 
 COMMENT=	graphical bug reporting tool for GNOME
 
@@ -28,7 +28,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	::textproc/rarian
+BUILD_DEPENDS=	::textproc/rarian \
+		::x11/gnome/doc-utils
 LIB_DEPENDS=	camel-1.2,ebook-1.2,edataserver-1.2,smime3.>=22,softokn3::databases/evolution-data-server \
 		gnome-menu.>=4::x11/gnome/menus \
 		gnomeui-2.>=2400::x11/gnome/libgnomeui \
