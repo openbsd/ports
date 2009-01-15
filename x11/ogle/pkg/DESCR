@@ -46,7 +46,6 @@ You will need to crank them up.
 Starting with OpenBSD 3.3, sysctl(8) can modify the shared memory 
 parameters.  A reasonable choice would be:
 
-kern.shminfo.shmseg=32
 kern.shminfo.shmall=32768
 
 (to add to /etc/sysctl.conf, or to tweak manually with sysctl).
