@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:17:45 espie Exp $
-bin/pure-pw
-bin/pure-pwconvert
-bin/pure-statsdecode
+@comment $OpenBSD: PLIST,v 1.9 2009/01/15 10:04:24 sthen Exp $
+@bin bin/pure-pw
+@bin bin/pure-pwconvert
+@bin bin/pure-statsdecode
 @man man/man8/pure-authd.8
 @man man/man8/pure-ftpd.8
 @man man/man8/pure-ftpwho.8
@@ -11,13 +11,13 @@ bin/pure-statsdecode
 @man man/man8/pure-quotacheck.8
 @man man/man8/pure-statsdecode.8
 @man man/man8/pure-uploadscript.8
-sbin/pure-authd
+@bin sbin/pure-authd
 sbin/pure-config.pl
-sbin/pure-ftpd
-sbin/pure-ftpwho
-sbin/pure-mrtginfo
-sbin/pure-quotacheck
-sbin/pure-uploadscript
+@bin sbin/pure-ftpd
+@bin sbin/pure-ftpwho
+@bin sbin/pure-mrtginfo
+@bin sbin/pure-quotacheck
+@bin sbin/pure-uploadscript
 share/doc/pure-ftpd/
 share/doc/pure-ftpd/README
 share/doc/pure-ftpd/README.Authentication-Modules
