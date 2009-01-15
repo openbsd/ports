@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2009/01/04 10:11:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/01/15 19:13:52 jasper Exp $
 
 COMMENT=	Scalable Vector Graphics (SVG) in perl
 
-DISTNAME=	SVG-2.47
+DISTNAME=	SVG-2.48
 CATEGORIES=	graphics devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
