@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2009/01/07 23:07:53 kili Exp $
+# $OpenBSD: Makefile,v 1.184 2009/01/15 21:48:57 naddy Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -191,7 +191,6 @@
      SUBDIR += xscorch
      SUBDIR += xscrabble
      SUBDIR += xskat
-     SUBDIR += xsol
      SUBDIR += xsoldier
      SUBDIR += xteddy
      SUBDIR += xwelltris

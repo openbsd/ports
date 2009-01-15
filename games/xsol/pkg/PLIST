@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:12 espie Exp $
-bin/xsol
-@man man/cat6/xsol.0
