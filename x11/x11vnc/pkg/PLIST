@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/28 01:44:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/01/16 02:46:22 sthen Exp $
 @bin bin/x11vnc
 @man man/man1/x11vnc.1
+share/applications/
+share/applications/x11vnc.desktop
 share/doc/x11vnc/
 share/doc/x11vnc/README
 share/x11vnc/
@@ -18,3 +20,5 @@ share/x11vnc/classes/ssl/proxy.vnc
 share/x11vnc/classes/ssl/ss_vncviewer
 share/x11vnc/classes/ssl/ultra.vnc
 share/x11vnc/classes/ssl/ultrasigned.vnc
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
