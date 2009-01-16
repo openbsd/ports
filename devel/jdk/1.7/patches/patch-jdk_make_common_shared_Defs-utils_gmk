@@ -1,8 +1,8 @@
-$OpenBSD: patch-jdk_make_common_shared_Defs-utils_gmk,v 1.1 2009/01/04 23:25:16 kurt Exp $
---- jdk/make/common/shared/Defs-utils.gmk.orig	Mon Dec 22 16:16:45 2008
-+++ jdk/make/common/shared/Defs-utils.gmk	Mon Dec 22 16:20:56 2008
-@@ -53,6 +53,13 @@ ifeq ($(PLATFORM),linux)
-   UTILS_DEVTOOL_PATH=$(USRBIN_PATH)
+$OpenBSD: patch-jdk_make_common_shared_Defs-utils_gmk,v 1.2 2009/01/16 16:49:29 kurt Exp $
+--- jdk/make/common/shared/Defs-utils.gmk.orig	Fri Dec 19 03:45:14 2008
++++ jdk/make/common/shared/Defs-utils.gmk	Wed Jan 14 12:26:34 2009
+@@ -67,6 +67,13 @@ ifeq ($(PLATFORM),windows)
+   UTILS_DEVTOOL_PATH=$(DEVTOOLS_PATH)
  endif
  
 +ifeq ($(PLATFORM),bsd)
@@ -12,32 +12,39 @@ $OpenBSD: patch-jdk_make_common_shared_Defs-utils_gmk,v 1.1 2009/01/04 23:25:16 
 +  UTILS_DEVTOOL_PATH=$(DEVTOOLS_PATH)
 +endif
 +
- ifeq ($(PLATFORM),solaris)
-   UTILS_COMMAND_PATH=$(UNIXCOMMAND_PATH)
-   UTILS_USR_BIN_PATH=$(UNIXCOMMAND_PATH)
-@@ -191,6 +198,25 @@ ifeq ($(PLATFORM),linux)
-   NM             = $(UTILS_USR_BIN_PATH)nm
-   STRIP          = $(UTILS_USR_BIN_PATH)strip
-   YACC           = $(UTILS_USR_BIN_PATH)yacc
-+endif
-+
-+# BSD Specific
-+ifeq ($(PLATFORM),bsd)
-+BASENAME       = $(UTILS_USR_BIN_PATH)basename
-+EGREP          = $(UTILS_USR_BIN_PATH)egrep
-+EXPR           = $(UTILS_COMMAND_PATH)expr
-+FMT            = $(UTILS_USR_BIN_PATH)fmt
-+GREP           = $(UTILS_USR_BIN_PATH)grep
-+GUNZIP         = $(UTILS_USR_BIN_PATH)gunzip
-+ID             = $(UTILS_USR_BIN_PATH)id
-+MSGFMT         = $(UTILS_DEVTOOL_PATH)msgfmt
-+SED            = $(UTILS_USR_BIN_PATH)sed
-+SORT           = $(UTILS_USR_BIN_PATH)sort
-+TOUCH          = $(UTILS_USR_BIN_PATH)touch
-+TEST           = $(UTILS_COMMAND_PATH)test
-+TRUE           = $(UTILS_USR_BIN_PATH)true
-+UNAME          = $(UTILS_USR_BIN_PATH)uname
-+UNZIP          = $(UTILS_DEVTOOL_PATH)unzip
+ # Utilities
+ ADB            = $(UTILS_COMMAND_PATH)adb
+ AR             = $(UTILS_CCS_BIN_PATH)ar
+@@ -201,3 +208,32 @@ ifeq ($(PLATFORM),solaris)
+   ECHO           = /usr/bin/echo
  endif
  
- # Solaris specific
++# BSD specific
++ifeq ($(PLATFORM),bsd)
++  BASENAME     = $(UTILS_USR_BIN_PATH)basename
++  EGREP        = $(UTILS_USR_BIN_PATH)egrep
++  EXPR         = $(UTILS_COMMAND_PATH)expr
++  FMT          = $(UTILS_USR_BIN_PATH)fmt
++  GREP         = $(UTILS_USR_BIN_PATH)grep
++  GUNZIP       = $(UTILS_USR_BIN_PATH)gunzip
++  ID           = $(UTILS_USR_BIN_PATH)id
++  MSGFMT       = $(UTILS_DEVTOOL_PATH)msgfmt
++  SED          = $(UTILS_USR_BIN_PATH)sed
++  SORT         = $(UTILS_USR_BIN_PATH)sort
++  TEST         = $(UTILS_COMMAND_PATH)test
++  TOUCH        = $(UTILS_USR_BIN_PATH)touch
++  TRUE         = $(UTILS_USR_BIN_PATH)true
++  UNAME        = $(UTILS_USR_BIN_PATH)uname
++  # BSD OS_VENDOR specific
++  ifeq ($(OS_VENDOR), Apple)
++    NAWK       = $(UTILS_USR_BIN_PATH)awk
++    UNZIPSFX   = $(UTILS_USR_BIN_PATH)unzipsfx
++    ZIPEXE     = $(UTILS_USR_BIN_PATH)zip
++  else
++    UNZIP      = $(UTILS_DEVTOOL_PATH)unzip
++  endif
++  ifneq ($(OS_VENDOR), OpenBSD)
++    CPIO       = $(UTILS_USR_BIN_PATH)cpio
++    TAR        = $(UTILS_USR_BIN_PATH)tar
++  endif
++endif

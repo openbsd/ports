@@ -1,7 +1,32 @@
-$OpenBSD: patch-corba_make_common_Defs_gmk,v 1.1 2008/03/19 18:05:43 kurt Exp $
---- corba/make/common/Defs.gmk.orig	Thu Nov  8 11:46:42 2007
-+++ corba/make/common/Defs.gmk	Thu Nov  8 11:47:38 2007
-@@ -97,6 +97,9 @@ ifdef PROGRAM
+$OpenBSD: patch-corba_make_common_Defs_gmk,v 1.2 2009/01/16 16:49:29 kurt Exp $
+--- corba/make/common/Defs.gmk.orig	Fri Dec 19 03:41:17 2008
++++ corba/make/common/Defs.gmk	Sun Jan 11 21:40:13 2009
+@@ -53,6 +53,24 @@ endif
+ 
+ _OUTPUTDIR=$(TOPDIR)/build/$(PLATFORM)-$(ARCH)
+ 
++ifneq ($(PLATFORM), windows)
++  ifdef ALT_X11_PATH
++    X11_PATH = $(ALT_X11_PATH)
++  else
++    X11_PATH = /usr/X11R6
++  endif 
++
++  ifdef ALT_PACKAGE_PATH
++    PACKAGE_PATH = $(ALT_PACKAGE_PATH)
++  else
++    ifeq ($(PLATFORM), linux)
++      PACKAGE_PATH = /usr
++    else
++      PACKAGE_PATH = /usr/local
++    endif
++  endif
++endif
++
+ #
+ # Get platform definitions
+ #
+@@ -97,6 +115,9 @@ ifdef PROGRAM
      LDLIBS_COMMON = -ldl
    endif
  

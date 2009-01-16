@@ -1,12 +1,12 @@
-$OpenBSD: patch-corba_make_common_shared_Defs-bsd_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- corba/make/common/shared/Defs-bsd.gmk.orig	Mon Dec 22 14:34:15 2008
-+++ corba/make/common/shared/Defs-bsd.gmk	Mon Dec 22 16:02:53 2008
+$OpenBSD: patch-corba_make_common_shared_Defs-bsd_gmk,v 1.3 2009/01/16 16:49:29 kurt Exp $
+--- corba/make/common/shared/Defs-bsd.gmk.orig	Sun Jan 11 21:36:06 2009
++++ corba/make/common/shared/Defs-bsd.gmk	Sun Jan 11 21:41:48 2009
 @@ -54,7 +54,7 @@ $(shell if [ "$1" != "" -a -d "$1" ]; then (cd $1 && p
  endef
  
  # Location on system where jdk installs might be
 -USRJDKINSTANCES_PATH =/opt/java
-+USRJDKINSTANCES_PATH =/usr/lock
++USRJDKINSTANCES_PATH =$(PACKAGE_PATH)
  
  # UNIXCOMMAND_PATH: path to where the most common Unix commands are.
  #  NOTE: Must end with / so that it could be empty, allowing PATH usage.
@@ -15,7 +15,7 @@ $OpenBSD: patch-corba_make_common_shared_Defs-bsd_gmk,v 1.2 2009/01/04 23:25:16 
    DEVTOOLS_PATH :=$(call PrefixPath,$(ALT_DEVTOOLS_PATH))
  else
 -  DEVTOOLS_PATH =/usr/bin/
-+  DEVTOOLS_PATH =/usr/local/bin/
++  DEVTOOLS_PATH =$(PACKAGE_PATH)/bin/
  endif
  
  # _BOOTDIR1: First choice for a Bootstrap JDK, previous released JDK.

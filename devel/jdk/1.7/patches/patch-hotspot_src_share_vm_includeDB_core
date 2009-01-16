@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_share_vm_includeDB_core,v 1.6 2009/01/04 23:25:16 kurt Exp $
+$OpenBSD: patch-hotspot_src_share_vm_includeDB_core,v 1.7 2009/01/16 16:49:29 kurt Exp $
 --- hotspot/src/share/vm/includeDB_core.orig	Fri Dec 19 03:42:10 2008
-+++ hotspot/src/share/vm/includeDB_core	Wed Dec 24 10:02:13 2008
++++ hotspot/src/share/vm/includeDB_core	Fri Jan 16 09:38:20 2009
 @@ -473,7 +473,7 @@ cardTableModRefBS.cpp                   cardTableRS.hp
  cardTableModRefBS.cpp                   java.hpp
  cardTableModRefBS.cpp                   mutexLocker.hpp
@@ -10,53 +10,20 @@ $OpenBSD: patch-hotspot_src_share_vm_includeDB_core,v 1.6 2009/01/04 23:25:16 ku
  cardTableModRefBS.cpp                   universe.hpp
  cardTableModRefBS.cpp                   virtualspace.hpp
  
-@@ -1036,15 +1036,14 @@ compactPermGen.hpp                      permGen.hpp
- compactingPermGenGen.cpp                compactingPermGenGen.hpp
- compactingPermGenGen.cpp                filemap.hpp
- compactingPermGenGen.cpp                genOopClosures.inline.hpp
--compactingPermGenGen.cpp                generation.inline.hpp
- compactingPermGenGen.cpp                generationSpec.hpp
- compactingPermGenGen.cpp                java.hpp
- compactingPermGenGen.cpp                oop.inline.hpp
- compactingPermGenGen.cpp                symbolTable.hpp
- compactingPermGenGen.cpp                systemDictionary.hpp
+@@ -2014,7 +2014,7 @@ instanceKlass.cpp                       verifier.hpp
+ instanceKlass.cpp                       vmSymbols.hpp
  
-+compactingPermGenGen.hpp                generation.inline.hpp
- compactingPermGenGen.hpp                generationCounters.hpp
--compactingPermGenGen.hpp                space.hpp
+ instanceKlass.hpp                       accessFlags.hpp
+-instanceKlass.hpp                       bitMap.hpp
++instanceKlass.hpp                       bitMap.inline.hpp
+ instanceKlass.hpp                       constMethodOop.hpp
+ instanceKlass.hpp                       constantPoolOop.hpp
+ instanceKlass.hpp                       handles.hpp
+@@ -3771,6 +3771,7 @@ spaceDecorator.hpp                      space.hpp
  
- compilationPolicy.cpp                   compilationPolicy.hpp
- compilationPolicy.cpp                   compiledIC.hpp
-@@ -1810,7 +1809,7 @@ generation.hpp                          watermark.hpp
+ spaceDecorator.cpp                      copy.hpp
+ spaceDecorator.cpp                      spaceDecorator.hpp
++spaceDecorator.cpp                      space.inline.hpp
  
- generation.inline.hpp                   genCollectedHeap.hpp
- generation.inline.hpp                   generation.hpp
--generation.inline.hpp                   space.hpp
-+generation.inline.hpp                   space.inline.hpp
- 
- genOopClosures.hpp                      oop.hpp
- 
-@@ -2533,6 +2532,7 @@ klass.hpp                               specialized_oo
- 
- klass.inline.hpp                        klass.hpp
- klass.inline.hpp                        markOop.hpp
-+klass.inline.hpp                        markOop.inline.hpp
- 
- klassKlass.cpp                          collectedHeap.hpp
- klassKlass.cpp                          collectedHeap.inline.hpp
-@@ -3752,6 +3752,7 @@ space.hpp                               blockOffsetTab
- space.hpp                               cardTableModRefBS.hpp
- space.hpp                               iterator.hpp
- space.hpp                               markOop.hpp
-+space.hpp                               markOop.inline.hpp
- space.hpp                               memRegion.hpp
- space.hpp                               mutexLocker.hpp
- space.hpp                               os_<os_family>.inline.hpp
-@@ -3963,6 +3964,7 @@ synchronizer.cpp                        vmSymbols.hpp
- 
- synchronizer.hpp                        handles.hpp
- synchronizer.hpp                        markOop.hpp
-+synchronizer.hpp                        markOop.inline.hpp
- synchronizer.hpp                        perfData.hpp
- synchronizer.hpp                        top.hpp
- 
+ specialized_oop_closures.cpp            ostream.hpp
+ specialized_oop_closures.cpp            specialized_oop_closures.hpp

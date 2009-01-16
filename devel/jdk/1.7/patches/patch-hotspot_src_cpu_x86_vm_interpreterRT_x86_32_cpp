@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_cpu_x86_vm_interpreterRT_x86_32_cpp,v 1.2 2009/01/04 23:25:16 kurt Exp $
+$OpenBSD: patch-hotspot_src_cpu_x86_vm_interpreterRT_x86_32_cpp,v 1.3 2009/01/16 16:49:29 kurt Exp $
 --- hotspot/src/cpu/x86/vm/interpreterRT_x86_32.cpp.orig	Fri Dec 19 03:42:04 2008
-+++ hotspot/src/cpu/x86/vm/interpreterRT_x86_32.cpp	Sun Dec 28 19:22:14 2008
++++ hotspot/src/cpu/x86/vm/interpreterRT_x86_32.cpp	Wed Jan 14 12:04:27 2009
 @@ -54,7 +54,7 @@ void InterpreterRuntime::SignatureHandlerGenerator::bo
    __ cmpptr(Address(from(), Interpreter::local_offset_in_bytes(from_offset)), (int32_t)NULL_WORD); // do not use temp() to avoid AGI
    Label L;
@@ -10,3 +10,12 @@ $OpenBSD: patch-hotspot_src_cpu_x86_vm_interpreterRT_x86_32_cpp,v 1.2 2009/01/04
    __ bind(L);
    __ movptr(Address(to(), to_offset * wordSize), temp());
  }
+@@ -110,7 +110,7 @@ class SlowSignatureHandler: public NativeSignatureIter
+   virtual void pass_object() {
+     // pass address of from
+     intptr_t from_addr = (intptr_t)(_from + Interpreter::local_offset_in_bytes(0));
+-    *_to++ = (*(intptr_t*)from_addr == 0) ? NULL : from_addr;
++    *_to++ = (*(intptr_t*)from_addr == 0) ? NULL_WORD : from_addr;
+     debug_only(verify_tag(frame::TagReference));
+     _from -= Interpreter::stackElementSize();
+    }

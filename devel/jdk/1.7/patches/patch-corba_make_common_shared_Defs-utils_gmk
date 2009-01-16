@@ -1,6 +1,6 @@
-$OpenBSD: patch-corba_make_common_shared_Defs-utils_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- corba/make/common/shared/Defs-utils.gmk.orig	Thu Oct 23 03:40:16 2008
-+++ corba/make/common/shared/Defs-utils.gmk	Mon Dec 22 16:26:52 2008
+$OpenBSD: patch-corba_make_common_shared_Defs-utils_gmk,v 1.3 2009/01/16 16:49:29 kurt Exp $
+--- corba/make/common/shared/Defs-utils.gmk.orig	Fri Dec 19 03:41:17 2008
++++ corba/make/common/shared/Defs-utils.gmk	Wed Jan 14 12:26:56 2009
 @@ -53,6 +53,13 @@ ifeq ($(PLATFORM),linux)
    UTILS_DEVTOOL_PATH=$(USRBIN_PATH)
  endif
@@ -15,29 +15,36 @@ $OpenBSD: patch-corba_make_common_shared_Defs-utils_gmk,v 1.2 2009/01/04 23:25:1
  ifeq ($(PLATFORM),solaris)
    UTILS_COMMAND_PATH=$(UNIXCOMMAND_PATH)
    UTILS_USR_BIN_PATH=$(UNIXCOMMAND_PATH)
-@@ -189,6 +196,25 @@ ifeq ($(PLATFORM),linux)
-   NM             = $(UTILS_USR_BIN_PATH)nm
-   STRIP          = $(UTILS_USR_BIN_PATH)strip
-   YACC           = $(UTILS_USR_BIN_PATH)yacc
-+endif
-+
-+# BSD specific
-+ifeq ($(PLATFORM),bsd)
-+BASENAME       = $(UTILS_USR_BIN_PATH)basename
-+EGREP          = $(UTILS_USR_BIN_PATH)egrep
-+EXPR           = $(UTILS_COMMAND_PATH)expr
-+FMT            = $(UTILS_USR_BIN_PATH)fmt
-+GREP           = $(UTILS_USR_BIN_PATH)grep
-+GUNZIP         = $(UTILS_USR_BIN_PATH)gunzip
-+ID             = $(UTILS_USR_BIN_PATH)id
-+MSGFMT         = $(UTILS_DEVTOOL_PATH)msgfmt
-+SED            = $(UTILS_USR_BIN_PATH)sed
-+SORT           = $(UTILS_USR_BIN_PATH)sort
-+TOUCH          = $(UTILS_USR_BIN_PATH)touch
-+TEST           = $(UTILS_COMMAND_PATH)test
-+TRUE           = $(UTILS_USR_BIN_PATH)true
-+UNAME          = $(UTILS_USR_BIN_PATH)uname
-+UNZIP          = $(UTILS_DEVTOOL_PATH)unzip
+@@ -199,3 +206,32 @@ ifeq ($(PLATFORM),solaris)
+   ECHO           = /usr/bin/echo
  endif
  
- # Solaris specific
++# BSD specific
++ifeq ($(PLATFORM),bsd)
++  BASENAME     = $(UTILS_USR_BIN_PATH)basename
++  EGREP        = $(UTILS_USR_BIN_PATH)egrep
++  EXPR         = $(UTILS_COMMAND_PATH)expr
++  FMT          = $(UTILS_USR_BIN_PATH)fmt
++  GREP         = $(UTILS_USR_BIN_PATH)grep
++  GUNZIP       = $(UTILS_USR_BIN_PATH)gunzip
++  ID           = $(UTILS_USR_BIN_PATH)id
++  MSGFMT       = $(UTILS_DEVTOOL_PATH)msgfmt
++  SED          = $(UTILS_USR_BIN_PATH)sed
++  SORT         = $(UTILS_USR_BIN_PATH)sort
++  TEST         = $(UTILS_COMMAND_PATH)test
++  TOUCH        = $(UTILS_USR_BIN_PATH)touch
++  TRUE         = $(UTILS_USR_BIN_PATH)true
++  UNAME        = $(UTILS_USR_BIN_PATH)uname
++  # BSD OS_VENDOR specific
++  ifeq ($(OS_VENDOR), Apple)
++    NAWK       = $(UTILS_USR_BIN_PATH)awk
++    UNZIPSFX   = $(UTILS_USR_BIN_PATH)unzipsfx
++    ZIPEXE     = $(UTILS_USR_BIN_PATH)zip
++  else
++    UNZIP      = $(UTILS_DEVTOOL_PATH)unzip
++  endif
++  ifneq ($(OS_VENDOR), OpenBSD)
++    CPIO       = $(UTILS_USR_BIN_PATH)cpio
++    TAR        = $(UTILS_USR_BIN_PATH)tar
++  endif
++endif

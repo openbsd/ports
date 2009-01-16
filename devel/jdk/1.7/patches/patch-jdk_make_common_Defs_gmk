@@ -1,7 +1,32 @@
-$OpenBSD: patch-jdk_make_common_Defs_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/make/common/Defs.gmk.orig	Thu Jul 17 03:43:08 2008
-+++ jdk/make/common/Defs.gmk	Sat Aug  2 16:12:53 2008
-@@ -207,6 +207,7 @@ DEVTOOLS_FT_DIR_EXISTS = $(shell \
+$OpenBSD: patch-jdk_make_common_Defs_gmk,v 1.3 2009/01/16 16:49:29 kurt Exp $
+--- jdk/make/common/Defs.gmk.orig	Fri Dec 19 03:45:14 2008
++++ jdk/make/common/Defs.gmk	Sun Jan 11 21:46:07 2009
+@@ -172,6 +172,24 @@ ifdef OPENJDK
+   endif
+ endif # OPENJDK
+ 
++ifneq ($(PLATFORM), windows)
++  ifdef ALT_X11_PATH
++    X11_PATH = $(ALT_X11_PATH)
++  else
++    X11_PATH = /usr/X11R6
++  endif 
++
++  ifdef ALT_PACKAGE_PATH
++    PACKAGE_PATH = $(ALT_PACKAGE_PATH)
++  else
++    ifeq ($(PLATFORM), linux)
++      PACKAGE_PATH = /usr
++    else
++      PACKAGE_PATH = /usr/local
++    endif
++  endif
++endif
++
+ #
+ # Get platform definitions
+ #
+@@ -207,6 +225,7 @@ DEVTOOLS_FT_DIR_EXISTS = $(shell \
  
    ifdef ALT_FREETYPE_LIB_PATH
      FREETYPE_LIB_PATH = $(ALT_FREETYPE_LIB_PATH)
@@ -9,7 +34,7 @@ $OpenBSD: patch-jdk_make_common_Defs_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
    else
      ifeq ($(DEVTOOLS_FT_DIR_EXISTS), true)
        FREETYPE_LIB_PATH = $(DEVTOOLS_FT_DIR)/lib
-@@ -269,6 +270,10 @@ ifdef PROGRAM
+@@ -269,6 +288,10 @@ ifdef PROGRAM
  
    ifeq ($(PLATFORM), linux)
      LDLIBS_COMMON = -ldl

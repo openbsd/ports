@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.7 2009/01/04 23:25:16 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Wed Dec 24 10:02:07 2008
-+++ hotspot/src/os/bsd/vm/os_bsd.cpp	Wed Dec 24 10:02:13 2008
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.8 2009/01/16 16:49:29 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Wed Jan 14 13:01:37 2009
++++ hotspot/src/os/bsd/vm/os_bsd.cpp	Wed Jan 14 13:03:52 2009
 @@ -47,13 +47,26 @@
  # include <semaphore.h>
  # include <fcntl.h>
@@ -389,10 +389,10 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.7 2009/01/04 23:25:16 kurt 
  void os::Bsd::clock_init() {
 +  struct timespec res;
 +  struct timespec tp;
-+  if (clock_getres(CLOCK_MONOTONIC, &res) == 0 &&
-+      clock_gettime(CLOCK_MONOTONIC, &tp)  == 0) {
++  if (::clock_getres(CLOCK_MONOTONIC, &res) == 0 &&
++      ::clock_gettime(CLOCK_MONOTONIC, &tp)  == 0) {
 +    // yes, monotonic clock is supported
-+    _clock_gettime = clock_gettime;
++    _clock_gettime = ::clock_gettime;
 +  }
 +}
 +#else
