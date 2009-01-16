@@ -383,7 +383,7 @@ gst_libsndiosrc_prepare (GstAudioSrc * asrc, GstRingBufferSpec * spec)
   spec_bpf = ((spec->width / 8) * spec->channels);
 
   par.round = spec->segsize / spec_bpf;
-  par.bufsz = (spec->segsize * spec->segtotal) / spec_bpf;
+  par.appbufsz = (spec->segsize * spec->segtotal) / spec_bpf;
 
   if (!sio_setpar(libsndiosrc->hdl, &par))
     goto cannot_configure;

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2008/11/03 23:24:09 jakemsr Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2009/01/16 02:44:17 jakemsr Exp $
 @conflict gstreamer-plugins-bad-<0.10.7
 lib/gstreamer-${VERSION}/libgstalaw.la
 lib/gstreamer-${VERSION}/libgstalaw.so
@@ -48,8 +48,8 @@ lib/gstreamer-${VERSION}/libgstmultifile.la
 lib/gstreamer-${VERSION}/libgstmultifile.so
 lib/gstreamer-${VERSION}/libgstmultipart.la
 lib/gstreamer-${VERSION}/libgstmultipart.so
-lib/gstreamer-${VERSION}/libgstossaudio.la
-lib/gstreamer-${VERSION}/libgstossaudio.so
+@comment lib/gstreamer-${VERSION}/libgstossaudio.la
+@comment lib/gstreamer-${VERSION}/libgstossaudio.so
 lib/gstreamer-${VERSION}/libgstqtdemux.la
 lib/gstreamer-${VERSION}/libgstqtdemux.so
 lib/gstreamer-${VERSION}/libgstrtp.la

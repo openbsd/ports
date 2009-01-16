@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/11/03 23:24:08 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.26 2009/01/16 02:44:17 jakemsr Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -18,7 +18,7 @@ COMMENT-soup =		multimedia framework - libsoup plugin
 
 V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
-PKGNAME-main =		gstreamer-plugins-good-$Vp5
+PKGNAME-main =		gstreamer-plugins-good-$Vp6
 PKGNAME-aalib =		gstreamer-aalib-$Vp0
 PKGNAME-cairo =		gstreamer-cairo-$Vp1
 PKGNAME-gconf =		gstreamer-confelements-$Vp0
@@ -33,7 +33,6 @@ PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp1
 PKGNAME-caca =		gstreamer-libcaca-$Vp0
 PKGNAME-shout =		gstreamer-shoutcast-$Vp0
 PKGNAME-soup =		gstreamer-libsoup-$Vp0
-
 
 MULTI_PACKAGES =	-main -aalib -cairo -gconf -esd -flac -speex \
 			-taglib -dv -jpeg -png -gdk -caca -shout -soup
@@ -50,7 +49,7 @@ WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10:$P/core
 
 WANTLIB-main =		${WANTLIB} \
-			ICE SM X11 Xdamage Xext Xfixes ossaudio sndio \
+			ICE SM X11 Xdamage Xext Xfixes sndio \
 			gstcontroller-0.10 gstbase-0.10 Xau Xdmcp
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			oil-0.3::devel/liboil \
@@ -69,12 +68,12 @@ LIB_DEPENDS-cairo =	${LIB_DEPENDS} \
 			cairo::graphics/cairo
 
 WANTLIB-gconf =		${WANTLIB} \
-			ORBit-2
+			ORBit-2 dbus-1 dbus-glib-1
 LIB_DEPENDS-gconf =	${LIB_DEPENDS} \
 			gconf-2::devel/gconf2
 
 WANTLIB-esd =		${WANTLIB} \
-			audiofile gstbase-0.10
+			audiofile gstbase-0.10 sndio
 
 LIB_DEPENDS-esd=	${LIB_DEPENDS} \
 			esd::audio/esound \
@@ -120,7 +119,7 @@ LIB_DEPENDS-png =	${LIB_DEPENDS} \
 
 WANTLIB-gdk =		${WANTLIB} \
 			X11 Xcomposite Xdamage Xext Xrender atk-1.0 \
-			cairo fontconfig freetype glitz pango-1.0 \
+			cairo fontconfig freetype gio-2.0 glitz pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 pixman-1 png gstbase-0.10 \
 			Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat
 

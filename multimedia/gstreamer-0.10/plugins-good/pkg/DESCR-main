@@ -33,7 +33,7 @@ dependencies.
 * mulaw           MuLaw audio encoder/decoder
 * multipart       multipart stream manipulation (mux/demux)
 * navigationtest  Template for a navigation video filter
-* ossaudio        default audio sink on OpenBSD.
+* libsndio        default audio sink on OpenBSD
 * rtp             Real-time protocol plugins: asterisk, rtp, gsm, h263...
 * rtsp            transfer data via RTSP
 * smpte           Apply the standard SMPTE transitions on video images
