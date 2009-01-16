@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2008/12/28 22:31:51 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.61 2009/01/16 04:15:46 jakemsr Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
@@ -9,7 +9,7 @@ SHARED_ONLY=		Yes
 
 VERSION=		1.2.11
 DISTNAME=		xmms-${VERSION}
-PKGNAME-main=		xmms-${VERSION}p3
+PKGNAME-main=		xmms-${VERSION}p4
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}p0
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}p0
 PKGNAME-mp3=		xmms-mp3-${VERSION}p0

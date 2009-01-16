@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008 Thomas Pfaff <tpfaff@tp76.info>
+ * Copyright (c) 2008,2009 Thomas Pfaff <tpfaff@tp76.info>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -14,23 +14,23 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include <gtk/gtk.h>
-
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <sndio.h>
-
-#include <xmms/plugin.h>
-#include <xmms/i18n.h>
 #include <libxmms/util.h>
 #include <libxmms/configfile.h>
+#include <pthread.h>
+#include <sndio.h>
+#include <xmms/i18n.h>
+#include <xmms/plugin.h>
 
+#define VERSION "1.0"
 #define XMMS_MAXVOL 100
 
-static void op_about (void);
 static void op_init (void);
+static void op_about (void);
 static void op_configure (void);
 static void op_get_volume (int *, int *);
 static void op_set_volume (int, int);
@@ -57,6 +57,7 @@ static long long wrpos;
 static int paused;
 static int volume = XMMS_MAXVOL;
 static long bytes_per_sec;
+static pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
 static GtkWidget *configure_win;
 static GtkWidget *adevice_entry;
@@ -65,7 +66,7 @@ static gchar *audiodev;
 static OutputPlugin sndio_op = {
 	NULL,
 	NULL,
-	"sndio Output Plugin",
+	"sndio Output Plugin " VERSION,
 	op_init,
 	op_about,
 	op_configure,
@@ -98,7 +99,7 @@ op_about (void)
 
 	about = xmms_show_message (
 		"About sndio Output Plugin",
-		"XMMS sndio Output Plugin\n\n"
+		"XMMS sndio Output Plugin " VERSION "\n\n"
 		"Written by Thomas Pfaff <tpfaff@tp76.info>\n",
 		"Ok", FALSE, NULL, NULL);
 
@@ -122,16 +123,20 @@ op_init (void)
 static void
 op_get_volume (int *left, int *right)
 {
+	pthread_mutex_lock (&mutex);
 	*left = *right = volume;
+	pthread_mutex_unlock (&mutex);
 }
 
 static void
 op_set_volume (int left, int right)
 {
 	/* Ignore balance control, so use unattenuated channel. */
+	pthread_mutex_lock (&mutex);
 	volume = left > right ? left : right;
 	if (hdl != NULL)
 		sio_setvol (hdl, volume * SIO_MAXVOL / XMMS_MAXVOL);
+	pthread_mutex_unlock (&mutex);
 }
 
 static int
@@ -139,13 +144,12 @@ op_open (AFormat fmt, int rate, int nch)
 {
 	struct sio_par askpar;
 
-	if (strlen(audiodev) == 0)
-		hdl = sio_open (NULL, SIO_PLAY, 0);
-	else
-		hdl = sio_open (audiodev, SIO_PLAY, 0);
+	pthread_mutex_lock (&mutex);
+
+	hdl = sio_open (strlen (audiodev) > 0 ? audiodev : NULL, SIO_PLAY, 0);
 	if (hdl == NULL) {
 		fprintf (stderr, "%s: failed to open audio device\n", __func__);
-		return 0;
+		goto error;
 	}
 
 	sio_initpar (&par);
@@ -189,8 +193,7 @@ op_open (AFormat fmt, int rate, int nch)
 		break;
 	default:
 		fprintf (stderr, "%s: unknown format requested\n", __func__);
-		op_close ();
-		return 0;
+		goto error;
 	}
 	par.pchan = nch;
 	par.rate = rate;
@@ -201,8 +204,7 @@ op_open (AFormat fmt, int rate, int nch)
 	askpar = par;
 	if (!sio_setpar (hdl, &par) || !sio_getpar (hdl, &par)) {
 		fprintf (stderr, "%s: failed to set parameters\n", __func__);
-		op_close ();
-		return 0;
+		goto error;
 	}
 
 	if ((par.bits == 16 && par.le != askpar.le) ||
@@ -215,50 +217,65 @@ op_open (AFormat fmt, int rate, int nch)
 			"format that is not supported by the audio device.\n\n"
 			"Please try again with the aucat(1) server running.",
 			"OK", FALSE, NULL, NULL);
-		op_close ();
-		return 0;
+		goto error;
 	}
 
-	wrpos = 0;
 	rdpos = 0;
+	wrpos = 0;
 	sio_onmove (hdl, onmove_cb, NULL);
-
-	op_set_volume (volume, volume);
 
 	paused = 0;
 	if (!sio_start (hdl)) {
 		fprintf (stderr, "%s: failed to start audio device\n",
 			__func__);
-		op_close ();
-		return 0;
+		goto error;
 	}
 
 	bytes_per_sec = par.bps * par.pchan * par.rate;
-	return 1;
+	pthread_mutex_unlock (&mutex);
+	op_set_volume (volume, volume);
+	return TRUE;
+
+error:
+	pthread_mutex_unlock (&mutex);
+	op_close ();
+	return FALSE;
 }
 
 static void
 op_write (void *ptr, int len)
 {
-	if (!paused)
-		wrpos += sio_write (hdl, ptr, len);
+	if (!paused) {
+		/* Do not lock sio_write as this will cause the GUI thread
+		   to block waiting for a blocked sio_write to return. */
+		int bytes = sio_write (hdl, ptr, len);
+		pthread_mutex_lock (&mutex);
+		wrpos += bytes;
+		pthread_mutex_unlock (&mutex);
+	}
 }
 
 static void
 op_close (void)
 {
+	pthread_mutex_lock (&mutex);
 	if (hdl != NULL) {
 		sio_close (hdl);
 		hdl = NULL;
 	}
+	pthread_mutex_unlock (&mutex);
 }
 
 static void
 op_seek (int time_ms)
 {
-	int bufused = (rdpos < 0) ? wrpos : wrpos - rdpos;
+	int bufused;
+
+	pthread_mutex_lock (&mutex);
+	bufused = (rdpos < 0) ? wrpos : wrpos - rdpos;
 	rdpos = time_ms / 1000 * bytes_per_sec;
 	wrpos = rdpos + bufused;
+	pthread_mutex_unlock (&mutex);
 }
 
 static void
@@ -283,22 +300,35 @@ op_playing (void)
 static int
 op_get_output_time (void)
 {
-	return hdl ? rdpos * 1000 / bytes_per_sec : 0;
+	int time_ms;
+
+	pthread_mutex_lock (&mutex);
+	time_ms = hdl ? rdpos * 1000 / bytes_per_sec : 0;
+	pthread_mutex_unlock (&mutex);
+	return time_ms;
 }
 
 static int
 op_get_written_time (void)
 {
-	return hdl ? wrpos * 1000 / bytes_per_sec : 0;
+	int time_ms;
+
+	pthread_mutex_lock (&mutex);
+	time_ms = hdl ? wrpos * 1000 / bytes_per_sec : 0;
+	pthread_mutex_unlock (&mutex);
+	return time_ms;
 }
 
 static void
 onmove_cb (void *addr, int delta)
 {
+	pthread_mutex_lock (&mutex);
 	rdpos += delta * (int)(par.bps * par.pchan);
+	pthread_mutex_unlock (&mutex);
 }
 
-static void op_configure(void)
+static void
+op_configure(void)
 {
 	GtkWidget *dev_vbox;
 	GtkWidget *adevice_frame, *adevice_text, *adevice_vbox;
