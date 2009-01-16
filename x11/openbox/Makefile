@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.44 2008/09/17 15:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2009/01/16 07:52:50 ajacoutot Exp $
 
 COMMENT=	small, fast & usable window manager
 
 DISTNAME=	openbox-3.4.7.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS+=	obparser	8.0 # .21.2
 SHARED_LIBS+=	obrender	8.0 # .21.2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://icculus.org/openbox/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Benoit Lecocq <blq@arcane-labs.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

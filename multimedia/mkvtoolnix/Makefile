@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2008/12/05 20:48:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/01/16 07:52:50 ajacoutot Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
 DISTNAME=	mkvtoolnix-2.4.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia x11
 
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.bunkus.org/videotools/mkvtoolnix/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Benoit Lecocq <blq@arcane-labs.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

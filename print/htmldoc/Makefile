@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2009/01/16 07:52:50 ajacoutot Exp $
 
 COMMENT=	convert HTML pages to PDF/PS format
 
 V=			1.8.27
 DISTNAME=		htmldoc-${V}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=     	print www
 
 HOMEPAGE=		http://www.htmldoc.org/
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Benoit Lecocq <blq@arcane-labs.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c crypto m ssl z
 
 DISTFILES=		${DISTNAME}-source${EXTRACT_SUFX}
