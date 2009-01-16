@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/06/09 15:45:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/01/16 08:14:58 ajacoutot Exp $
 
 COMMENT=	genealogical research and analysis management program system
 
-DISTNAME=	gramps-3.0.1
+DISTNAME=	gramps-3.0.4
 CATEGORIES=	misc x11
 
 HOMEPAGE=	http://www.gramps-project.org/
@@ -27,7 +27,8 @@ RUN_DEPENDS=	:py-gnome-*:x11/gnome/py-gnome \
 		:desktop-file-utils-*:devel/desktop-file-utils \
 		::x11/gnome/py-gnome-extras \
 		::x11/gnome/py-gnome-desktop \
-		:librsvg-*-!no_gnome:x11/gnome/librsvg
+		::x11/gnome/librsvg \
+		::devel/xdg-utils
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
