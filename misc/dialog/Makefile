@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2008/06/30 12:58:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2009/01/16 07:40:34 ajacoutot Exp $
 
 COMMENT =	format the display of a shell script
 
-V =		1.1-20080316
+V =		1.1-20080819
 DISTNAME = 	dialog-${V}
 PKGNAME = 	dialog-${V:S/-/./}
 
