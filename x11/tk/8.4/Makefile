@@ -1,54 +1,81 @@
-# $OpenBSD: Makefile,v 1.15 2008/05/02 13:17:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2009/01/16 00:02:32 sthen Exp $
 
-COMMENT=	graphical toolkit for Tcl
+COMMENT =		graphical toolkit for Tcl
 
-VERSION=	8.4.7
+V =			8.4.19
+DISTNAME =		tk${V}
+PKGNAME =		tk-${V}
 
-DISTNAME=	tk${VERSION}-src
-PKGNAME=	tk-${VERSION}p2
-SHARED_LIBS=	tk84 1.0
-CATEGORIES=	x11 x11/tk
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}
+SHARED_LIBS =		tk84 1.1
 
-HOMEPAGE=	http://www.tcl.tk/
+CATEGORIES =		x11 x11/tk
 
-# BSD 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 c m
+HOMEPAGE =		http://www.tcl.tk/
 
-LIB_DEPENDS=    tcl84:tcl-8.4.*:lang/tcl/8.4
+MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
-MAKE_FLAGS=	CFLAGS="${CFLAGS}"
-FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \
-		BASE_INCLUDE_DIR='$$(prefix)/include/tk$$(VERSION)' \
-		INCLUDE_INSTALL_DIR='$$(INSTALL_ROOT)$$(BASE_INCLUDE_DIR)' \
-		GENERIC_INCLUDE_INSTALL_DIR='$$(BASE_INCLUDE_DIR)/generic' \
-		UNIX_INCLUDE_INSTALL_DIR='$$(BASE_INCLUDE_DIR)/unix' \
-		MAN_INSTALL_DIR='$${INSTALL_ROOT}$$(TK_LIBRARY)/man'
+# BSD
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-SEPARATE_BUILD=	simple
-USE_X11=	Yes
-AUTOCONF_VERSION=2.13
-CONFIGURE_STYLE=autoconf no-autoheader
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-tcl="${LOCALBASE}/lib/tcl8.4"
-CONFIGURE_ENV=  PORTSDIR="${PORTSDIR}" \
-		LIBtk84_VERSION="${LIBtk84_VERSION}"
+WANTLIB =		X11 c m
 
-WRKDIST=	${WRKDIR}/tk${VERSION}/unix
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
+DISTFILES =		${DISTNAME}-src.tar.gz
 
-REGRESS_TARGET=test
-REGRESS_DEPENDS=::lang/tcl/8.4:regress
-REGRESS_FLAGS=TCL_BIN_DIR=`cd ${PORTSDIR}/lang/tcl/8.4 && ${MAKE} show=WRKBUILD`
+LIB_DEPENDS =           tcl84:tcl-${V}:lang/tcl/8.4
+
+.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
+MAKE_FLAGS +=		TK_BUILD_EXP_FILE="libtk84.a" \
+			TK_EXP_FILE="libtk84.a"
+.endif
+
+FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
+			INSTALL_LIBRARY="${INSTALL_DATA}" \
+			INSTALL_DATA="${INSTALL_DATA}" \
+			INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+
+REGRESS_FLAGS =		HOME=${TESTHOME} \
+			DISPLAY=${DISPLAY} \
+			XAUTHORITY=${XAUTHORITY}
+
+SEPARATE_BUILD =	concurrent
+USE_X11 =		Yes
+
+AUTOCONF_VERSION =	2.13
+CONFIGURE_STYLE =	autoconf no-autoheader old
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--includedir="${LOCALBASE}/include/tk8.4" \
+			--mandir="${LOCALBASE}/lib/tk8.4/man" \
+			--sysconfdir="${SYSCONFDIR}" \
+			--enable-man-symlinks \
+			--with-tcl="${LOCALBASE}/lib/tcl8.4"
+
+CONFIGURE_ENV +=	SHLIB_VERSION="${LIBtk84_VERSION}" \
+			CFLAGS=""
+
 # This regression test wants an X11 display
-REGRESS_FLAGS+=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
-REGRESS_IS_INTERACTIVE=Yes
+REGRESS_IS_INTERACTIVE =Yes
+
+WRKSRC =		${WRKDIST}/unix
+REGRESS_TARGET =	test
+
+TESTHOME =		${WRKDIR}/testhome
+
+pre-regress:
+.for t in DISPLAY XAUTHORITY
+.  if !defined($t)
+	@echo "$t needs to be set to run regress"; exit 1
+.  endif
+.endfor
+	@mkdir -p ${TESTHOME}
 
 post-install:
-	@strip ${PREFIX}/bin/wish8.4
+.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
+	ln -s libtk84.a ${PREFIX}/lib/libtk84_pic.a
 	ln -s libtkstub84.a ${PREFIX}/lib/libtkstub84_pic.a
+.endif
 
 .include <bsd.port.mk>

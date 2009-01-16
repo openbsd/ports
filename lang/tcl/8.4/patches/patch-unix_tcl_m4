@@ -1,0 +1,37 @@
+$OpenBSD: patch-unix_tcl_m4,v 1.1 2009/01/16 00:02:13 sthen Exp $
+--- unix/tcl.m4.orig	Thu Apr 17 16:29:49 2008
++++ unix/tcl.m4	Sat Sep 27 21:50:01 2008
+@@ -1501,21 +1501,15 @@ dnl AC_CHECK_TOOL(AR, ar)
+ 		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
+ 		;;
+ 	    *)
+-		# OpenBSD/SPARC[64] needs -fPIC, -fpic will not do.
+-		case `machine` in
+-		sparc|sparc64)
+-		    SHLIB_CFLAGS="-fPIC";;
+-	        *)
+-		    SHLIB_CFLAGS="-fpic";;
+-	        esac
++		SHLIB_CFLAGS="-fPIC"
+ 		SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
+ 		SHLIB_LD_LIBS='${LIBS}'
+ 		SHLIB_SUFFIX=".so"
+ 		DL_OBJS="tclLoadDl.o"
+ 		DL_LIBS=""
+-		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
++		CC_SEARCH_FLAGS=''
+ 		LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
++		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.${SHLIB_VERSION}'
+ 		AC_CACHE_CHECK([for ELF], tcl_cv_ld_elf, [
+ 		    AC_EGREP_CPP(yes, [
+ #ifdef __ELF__
+@@ -1530,6 +1524,8 @@ dnl AC_CHECK_TOOL(AR, ar)
+ 		;;
+ 	    esac
+ 
++	    CFLAGS_WARNING="-Wall"
++	    CFLAGS_OPTIMIZE="-O2"
+ 	    # OpenBSD doesn't do version numbers with dots.
+ 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
+ 	    TCL_LIB_VERSIONS_OK=nodots

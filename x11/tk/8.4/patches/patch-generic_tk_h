@@ -1,0 +1,38 @@
+$OpenBSD: patch-generic_tk_h,v 1.1 2009/01/16 00:02:32 sthen Exp $
+# Tk bug #2010422
+--- generic/tk.h.orig	Mon Apr  7 15:17:54 2008
++++ generic/tk.h	Sun Oct 19 10:43:52 2008
+@@ -12,7 +12,7 @@
+  * See the file "license.terms" for information on usage and redistribution
+  * of this file, and for a DISCLAIMER OF ALL WARRANTIES.
+  *
+- * RCS: @(#) $Id: patch-generic_tk_h,v 1.1 2009/01/16 00:02:32 sthen Exp $
++ * RCS: @(#) $Id: patch-generic_tk_h,v 1.1 2009/01/16 00:02:32 sthen Exp $
+  */
+ 
+ #ifndef _TK
+@@ -635,18 +635,16 @@ typedef struct Tk_GeomMgr {
+  *
+  *---------------------------------------------------------------------------
+  */
+-#define VirtualEvent	    (LASTEvent)
+-#define ActivateNotify	    (LASTEvent + 1)
+-#define DeactivateNotify    (LASTEvent + 2)
+-#define MouseWheelEvent     (LASTEvent + 3)
+-#define TK_LASTEVENT	    (LASTEvent + 4)
+ 
+-#define MouseWheelMask	    (1L << 28)
++#define VirtualEvent	    (MappingNotify + 1)
++#define ActivateNotify	    (MappingNotify + 2)
++#define DeactivateNotify    (MappingNotify + 3)
++#define MouseWheelEvent     (MappingNotify + 4)
++#define TK_LASTEVENT	    (MappingNotify + 5)
+ 
++#define MouseWheelMask	    (1L << 28)
+ #define ActivateMask	    (1L << 29)
+ #define VirtualEventMask    (1L << 30)
+-#define TK_LASTEVENT	    (LASTEvent + 4)
+-
+ 
+ /*
+  * A virtual event shares most of its fields with the XKeyEvent and

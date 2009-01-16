@@ -1,34 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/01/31 15:12:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/01/16 00:02:13 sthen Exp $
 @option no-default-conflict
 @conflict tcl->=8.4,<8.5
-bin/tclsh8.4
+%%SHARED%%
+@bin bin/tclsh8.4
 include/tcl8.4/
 include/tcl8.4/generic/
-include/tcl8.4/generic/regcustom.h
-include/tcl8.4/generic/regerrs.h
-include/tcl8.4/generic/regex.h
-include/tcl8.4/generic/regguts.h
 include/tcl8.4/generic/tcl.h
-include/tcl8.4/generic/tclCompile.h
 include/tcl8.4/generic/tclDecls.h
-include/tcl8.4/generic/tclIO.h
-include/tcl8.4/generic/tclInitScript.h
 include/tcl8.4/generic/tclInt.h
 include/tcl8.4/generic/tclIntDecls.h
 include/tcl8.4/generic/tclIntPlatDecls.h
 include/tcl8.4/generic/tclMath.h
 include/tcl8.4/generic/tclPlatDecls.h
 include/tcl8.4/generic/tclPort.h
-include/tcl8.4/generic/tclRegexp.h
 include/tcl8.4/tcl.h
 include/tcl8.4/tclDecls.h
 include/tcl8.4/tclPlatDecls.h
 include/tcl8.4/unix/
 include/tcl8.4/unix/tclUnixPort.h
-include/tcl8.4/unix/tclUnixThrd.h
 lib/libtcl84.a
 lib/libtclstub84.a
-lib/libtclstub84_pic.a
 lib/tcl8.4/
 lib/tcl8.4/auto.tcl
 lib/tcl8.4/encoding/
@@ -114,100 +105,15 @@ lib/tcl8.4/history.tcl
 lib/tcl8.4/http1.0/
 lib/tcl8.4/http1.0/http.tcl
 lib/tcl8.4/http1.0/pkgIndex.tcl
-lib/tcl8.4/http2.4/
-lib/tcl8.4/http2.4/http.tcl
-lib/tcl8.4/http2.4/pkgIndex.tcl
+lib/tcl8.4/http2.5/
+lib/tcl8.4/http2.5/http.tcl
+lib/tcl8.4/http2.5/pkgIndex.tcl
 lib/tcl8.4/init.tcl
-lib/tcl8.4/ldAix
 lib/tcl8.4/ldAout.tcl
 @mandir lib/tcl8.4/man/
 lib/tcl8.4/man/man1/
 @man lib/tcl8.4/man/man1/tclsh.1
 lib/tcl8.4/man/man3/
-@man lib/tcl8.4/man/man3/Access.3
-@man lib/tcl8.4/man/man3/AddErrInfo.3
-@man lib/tcl8.4/man/man3/Alloc.3
-@man lib/tcl8.4/man/man3/AllowExc.3
-@man lib/tcl8.4/man/man3/AppInit.3
-@man lib/tcl8.4/man/man3/AssocData.3
-@man lib/tcl8.4/man/man3/Async.3
-@man lib/tcl8.4/man/man3/BackgdErr.3
-@man lib/tcl8.4/man/man3/Backslash.3
-@man lib/tcl8.4/man/man3/BoolObj.3
-@man lib/tcl8.4/man/man3/ByteArrObj.3
-@man lib/tcl8.4/man/man3/CallDel.3
-@man lib/tcl8.4/man/man3/ChnlStack.3
-@man lib/tcl8.4/man/man3/CmdCmplt.3
-@man lib/tcl8.4/man/man3/Concat.3
-@man lib/tcl8.4/man/man3/CrtChannel.3
-@man lib/tcl8.4/man/man3/CrtChnlHdlr.3
-@man lib/tcl8.4/man/man3/CrtCloseHdlr.3
-@man lib/tcl8.4/man/man3/CrtCommand.3
-@man lib/tcl8.4/man/man3/CrtFileHdlr.3
-@man lib/tcl8.4/man/man3/CrtInterp.3
-@man lib/tcl8.4/man/man3/CrtMathFnc.3
-@man lib/tcl8.4/man/man3/CrtObjCmd.3
-@man lib/tcl8.4/man/man3/CrtSlave.3
-@man lib/tcl8.4/man/man3/CrtTimerHdlr.3
-@man lib/tcl8.4/man/man3/CrtTrace.3
-@man lib/tcl8.4/man/man3/DString.3
-@man lib/tcl8.4/man/man3/DetachPids.3
-@man lib/tcl8.4/man/man3/DoOneEvent.3
-@man lib/tcl8.4/man/man3/DoWhenIdle.3
-@man lib/tcl8.4/man/man3/DoubleObj.3
-@man lib/tcl8.4/man/man3/DumpActiveMemory.3
-@man lib/tcl8.4/man/man3/Encoding.3
-@man lib/tcl8.4/man/man3/Environment.3
-@man lib/tcl8.4/man/man3/Eval.3
-@man lib/tcl8.4/man/man3/Exit.3
-@man lib/tcl8.4/man/man3/ExprLong.3
-@man lib/tcl8.4/man/man3/ExprLongObj.3
-@man lib/tcl8.4/man/man3/FileSystem.3
-@man lib/tcl8.4/man/man3/FindExec.3
-@man lib/tcl8.4/man/man3/GetCwd.3
-@man lib/tcl8.4/man/man3/GetHostName.3
-@man lib/tcl8.4/man/man3/GetIndex.3
-@man lib/tcl8.4/man/man3/GetInt.3
-@man lib/tcl8.4/man/man3/GetOpnFl.3
-@man lib/tcl8.4/man/man3/GetStdChan.3
-@man lib/tcl8.4/man/man3/GetTime.3
-@man lib/tcl8.4/man/man3/GetVersion.3
-@man lib/tcl8.4/man/man3/Hash.3
-@man lib/tcl8.4/man/man3/Init.3
-@man lib/tcl8.4/man/man3/InitStubs.3
-@man lib/tcl8.4/man/man3/IntObj.3
-@man lib/tcl8.4/man/man3/Interp.3
-@man lib/tcl8.4/man/man3/LinkVar.3
-@man lib/tcl8.4/man/man3/ListObj.3
-@man lib/tcl8.4/man/man3/Macintosh.3
-@man lib/tcl8.4/man/man3/Notifier.3
-@man lib/tcl8.4/man/man3/Object.3
-@man lib/tcl8.4/man/man3/ObjectType.3
-@man lib/tcl8.4/man/man3/OpenFileChnl.3
-@man lib/tcl8.4/man/man3/OpenTcp.3
-@man lib/tcl8.4/man/man3/Panic.3
-@man lib/tcl8.4/man/man3/ParseCmd.3
-@man lib/tcl8.4/man/man3/PkgRequire.3
-@man lib/tcl8.4/man/man3/Preserve.3
-@man lib/tcl8.4/man/man3/PrintDbl.3
-@man lib/tcl8.4/man/man3/RecEvalObj.3
-@man lib/tcl8.4/man/man3/RecordEval.3
-@man lib/tcl8.4/man/man3/RegExp.3
-@man lib/tcl8.4/man/man3/SaveResult.3
-@man lib/tcl8.4/man/man3/SetErrno.3
-@man lib/tcl8.4/man/man3/SetRecLmt.3
-@man lib/tcl8.4/man/man3/SetResult.3
-@man lib/tcl8.4/man/man3/SetVar.3
-@man lib/tcl8.4/man/man3/Signal.3
-@man lib/tcl8.4/man/man3/Sleep.3
-@man lib/tcl8.4/man/man3/SourceRCFile.3
-@man lib/tcl8.4/man/man3/SplitList.3
-@man lib/tcl8.4/man/man3/SplitPath.3
-@man lib/tcl8.4/man/man3/StaticPkg.3
-@man lib/tcl8.4/man/man3/StdChannels.3
-@man lib/tcl8.4/man/man3/StrMatch.3
-@man lib/tcl8.4/man/man3/StringObj.3
-@man lib/tcl8.4/man/man3/SubstObj.3
 @man lib/tcl8.4/man/man3/TCL_MEM_DEBUG.3
 @man lib/tcl8.4/man/man3/Tcl_Access.3
 @man lib/tcl8.4/man/man3/Tcl_AddErrorInfo.3
@@ -252,6 +158,7 @@ lib/tcl8.4/man/man3/
 @man lib/tcl8.4/man/man3/Tcl_ChannelOutputProc.3
 @man lib/tcl8.4/man/man3/Tcl_ChannelSeekProc.3
 @man lib/tcl8.4/man/man3/Tcl_ChannelSetOptionProc.3
+@man lib/tcl8.4/man/man3/Tcl_ChannelThreadActionProc.3
 @man lib/tcl8.4/man/man3/Tcl_ChannelVersion.3
 @man lib/tcl8.4/man/man3/Tcl_ChannelWatchProc.3
 @man lib/tcl8.4/man/man3/Tcl_ChannelWideSeekProc.3
@@ -701,15 +608,6 @@ lib/tcl8.4/man/man3/
 @man lib/tcl8.4/man/man3/Tcl_WriteObj.3
 @man lib/tcl8.4/man/man3/Tcl_WriteRaw.3
 @man lib/tcl8.4/man/man3/Tcl_WrongNumArgs.3
-@man lib/tcl8.4/man/man3/Thread.3
-@man lib/tcl8.4/man/man3/ToUpper.3
-@man lib/tcl8.4/man/man3/TraceCmd.3
-@man lib/tcl8.4/man/man3/TraceVar.3
-@man lib/tcl8.4/man/man3/Translate.3
-@man lib/tcl8.4/man/man3/UniCharIsAlpha.3
-@man lib/tcl8.4/man/man3/UpVar.3
-@man lib/tcl8.4/man/man3/Utf.3
-@man lib/tcl8.4/man/man3/WrongNumArgs.3
 @man lib/tcl8.4/man/man3/attemptckalloc.3
 @man lib/tcl8.4/man/man3/attemptckrealloc.3
 @man lib/tcl8.4/man/man3/ckalloc.3
@@ -769,7 +667,6 @@ lib/tcl8.4/man/mann/
 @man lib/tcl8.4/man/mann/interp.n
 @man lib/tcl8.4/man/mann/join.n
 @man lib/tcl8.4/man/mann/lappend.n
-@man lib/tcl8.4/man/mann/library.n
 @man lib/tcl8.4/man/mann/lindex.n
 @man lib/tcl8.4/man/mann/linsert.n
 @man lib/tcl8.4/man/mann/list.n
@@ -785,11 +682,9 @@ lib/tcl8.4/man/mann/
 @man lib/tcl8.4/man/mann/namespace.n
 @man lib/tcl8.4/man/mann/open.n
 @man lib/tcl8.4/man/mann/package.n
-@man lib/tcl8.4/man/mann/packagens.n
 @man lib/tcl8.4/man/mann/parray.n
 @man lib/tcl8.4/man/mann/pid.n
 @man lib/tcl8.4/man/mann/pkg::create.n
-@man lib/tcl8.4/man/mann/pkgMkIndex.n
 @man lib/tcl8.4/man/mann/pkg_mkIndex.n
 @man lib/tcl8.4/man/mann/proc.n
 @man lib/tcl8.4/man/mann/puts.n
@@ -802,7 +697,6 @@ lib/tcl8.4/man/mann/
 @man lib/tcl8.4/man/mann/rename.n
 @man lib/tcl8.4/man/mann/resource.n
 @man lib/tcl8.4/man/mann/return.n
-@man lib/tcl8.4/man/mann/safe.n
 @man lib/tcl8.4/man/mann/scan.n
 @man lib/tcl8.4/man/mann/seek.n
 @man lib/tcl8.4/man/mann/set.n
@@ -847,6 +741,3 @@ lib/tcl8.4/tcltest2.2/
 lib/tcl8.4/tcltest2.2/pkgIndex.tcl
 lib/tcl8.4/tcltest2.2/tcltest.tcl
 lib/tcl8.4/word.tcl
-share/aclocal/
-share/aclocal/tcl.m4
-%%SHARED%%

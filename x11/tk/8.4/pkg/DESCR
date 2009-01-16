@@ -1,8 +1,11 @@
-This is Tk version 8.4, a GUI toolkit for Tcl. It provides the means 
-to write simple scripts to create and manipulate X window system 
-windows with the various manipulators available in X11 libraries.
+Tk is a graphical user interface toolkit that takes developing desktop
+applications to a higher level than conventional approaches. Tk is the
+standard GUI not only for Tcl, but for many other dynamic languages, and
+can produce rich, native applications that run unchanged across most
+platforms.
 
-The best way to get started with Tcl and Tk is to read ``Tcl and the Tk
-Toolkit, 4th ed'' by John K. Ousterhout, Addison-Wesley, ISBN 0-13-038560-3.
-
-A full set of manual pages is also provided with this package.
+Tcl/Tk resources:
+  Newsgroup: comp.lang.tcl
+  Wiki: http://wiki.tcl.tk
+  Book: Practical Programming in Tcl and Tk, 4th Edition
+        ISBN: 0-13-038560-3

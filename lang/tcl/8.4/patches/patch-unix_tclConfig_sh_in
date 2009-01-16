@@ -1,0 +1,12 @@
+$OpenBSD: patch-unix_tclConfig_sh_in,v 1.1 2009/01/16 00:02:13 sthen Exp $
+--- unix/tclConfig.sh.in.orig	Sat Sep 27 14:26:16 2008
++++ unix/tclConfig.sh.in	Sat Sep 27 14:26:48 2008
+@@ -146,7 +146,7 @@ TCL_UNSHARED_LIB_SUFFIX='@CFG_TCL_UNSHARED_LIB_SUFFIX@
+ # different place than the directory containing the source files, this
+ # points to the location of the sources, not the location where Tcl was
+ # compiled.
+-TCL_SRC_DIR='@TCL_SRC_DIR@'
++TCL_SRC_DIR='@includedir@'
+ 
+ # List of standard directories in which to look for packages during
+ # "package require" commands.  Contains the "prefix" directory plus also

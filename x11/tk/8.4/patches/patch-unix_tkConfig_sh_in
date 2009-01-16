@@ -1,0 +1,12 @@
+$OpenBSD: patch-unix_tkConfig_sh_in,v 1.1 2009/01/16 00:02:32 sthen Exp $
+--- unix/tkConfig.sh.in.orig	Sun Sep 28 15:46:41 2008
++++ unix/tkConfig.sh.in	Sun Sep 28 15:47:38 2008
+@@ -69,7 +69,7 @@ TK_INCLUDE_SPEC='@TK_INCLUDE_SPEC@'
+ # different place than the directory containing the source files, this
+ # points to the location of the sources, not the location where Tk was
+ # compiled.
+-TK_SRC_DIR='@TK_SRC_DIR@'
++TK_SRC_DIR='@includedir@'
+ 
+ # Needed if you want to make a 'fat' shared library library
+ # containing tk objects or link a different wish.

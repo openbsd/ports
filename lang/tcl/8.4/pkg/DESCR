@@ -1,14 +1,20 @@
-This is Tcl8.4, an embeddable tool command language. It is an easy-to-use
-scripting language with clear syntax. Because it is a scripting
-language, programs written in it are easily portable to other operating 
-systems. Feature include networking functionality, string and number
-manipulation, and regular expression support.
+Tcl (Tool Command Language) is a very powerful but easy to learn dynamic
+programming language, suitable for a very wide range of uses, including
+web and desktop applications, networking, administration, testing and
+many more. Open source and business-friendly, Tcl is a mature yet
+evolving language that is truly cross platform, easily deployed and
+highly extensible.
 
-A rich set of extensions to the language are available, as well.
+Tcl/Tk resources:
+  Newsgroup: comp.lang.tcl
+  Wiki: http://wiki.tcl.tk
+  Book: Practical Programming in Tcl and Tk, 4th Edition
+        ISBN: 0-13-038560-3
 
-The best way to get started with Tcl is to read ``Practical Programming in
-TCL and Tk, 4th Edition'' by Brent Welch and Ken Jones, Prentice Hall PTR,
-ISBN 0-13-038560-3.  There's also the collectable ``Tcl and the Tk
-Toolkit'' by John K. Ousterhout, Addison-Wesley, ISBN 0-20-163337-X.
-
-A full set of manual pages is also provided with this package.
+"Routine maintenance of Tcl/Tk 8.4 has now come to an end.  We intend
+Tcl/Tk 8.4.19 to be the final 8.4.* releases.  The current stable
+releases of Tcl/Tk are 8.5.2, and development has begun on Tcl/Tk 8.6.
+It is possible that a bug fix of great enough importance or severity
+might prompt a release of 8.4.20, but there is no plan for that at the
+moment.  Even that level of support will fade away quickly."
+- Tcl/Tk 8.4.19 Release Announcement April 18, 2008

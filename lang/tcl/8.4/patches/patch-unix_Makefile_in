@@ -1,0 +1,113 @@
+$OpenBSD: patch-unix_Makefile_in,v 1.1 2009/01/16 00:02:13 sthen Exp $
+--- unix/Makefile.in.orig	Thu Apr 17 16:29:49 2008
++++ unix/Makefile.in	Sun Sep 28 01:04:05 2008
+@@ -485,6 +485,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+ 	rm -f $@
+ 	@MAKE_STUB_LIB@
+ 
++${TCL_BUILD_EXP_FILE}: ${OBJS}
++	rm -f $@
++	${STLIB_LD} $@ ${OBJS} ; ${RANLIB} $@
++
+ # Make target which outputs the list of the .o contained in the Tcl lib
+ # usefull to build a single big shared library containing Tcl and other
+ # extensions.  used for the Tcl Plugin.  -- dl
+@@ -620,30 +624,26 @@ install-strip:
+ # possible (e.g. if installing as root).
+ 
+ install-binaries: binaries
+-	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
++	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) $(SCRIPT_INSTALL_DIR) ; \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+ 		echo "Making directory $$i"; \
+-		mkdir -p $$i; \
+-		chmod 755 $$i; \
++		${INSTALL_DATA_DIR} $$i; \
+ 		else true; \
+ 		fi; \
+ 	    done;
+-	@if test ! -x $(SRC_DIR)/install-sh; then \
+-	    chmod +x $(SRC_DIR)/install-sh; \
+-	    fi
+ 	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
+ 	@@INSTALL_LIB@
+-	@chmod 555 $(LIB_INSTALL_DIR)/$(LIB_FILE)
+ 	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
+ 	    echo "Installing $(TCL_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
+ 	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
+ 			$(LIB_INSTALL_DIR)/$(TCL_EXP_FILE); \
++	    (cd $(LIB_INSTALL_DIR) ; $(RANLIB) $(TCL_EXP_FILE)); \
+ 	    fi
+ 	@echo "Installing tclsh as $(BIN_INSTALL_DIR)/tclsh$(VERSION)"
+ 	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
+-	@echo "Installing tclConfig.sh to $(LIB_INSTALL_DIR)/"
+-	@$(INSTALL_DATA) tclConfig.sh $(LIB_INSTALL_DIR)/tclConfig.sh
++	@echo "Installing tclConfig.sh to $(SCRIPT_INSTALL_DIR)/"
++	@$(INSTALL_DATA) tclConfig.sh $(SCRIPT_INSTALL_DIR)/tclConfig.sh
+ 	@if test "$(STUB_LIB_FILE)" != "" ; then \
+ 	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
+ 	    @INSTALL_STUB_LIB@ ; \
+@@ -651,12 +651,12 @@ install-binaries: binaries
+ 	@EXTRA_INSTALL_BINARIES@
+ 
+ install-libraries: libraries
+-	@for i in $(INCLUDE_INSTALL_DIR) $(SCRIPT_INSTALL_DIR); \
++	@for i in $(INCLUDE_INSTALL_DIR) $(SCRIPT_INSTALL_DIR) \
++		$(INCLUDE_INSTALL_DIR)/generic $(INCLUDE_INSTALL_DIR)/unix; \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+ 		echo "Making directory $$i"; \
+-		mkdir -p $$i; \
+-		chmod 755 $$i; \
++		${INSTALL_DATA_DIR} $$i; \
+ 		else true; \
+ 		fi; \
+ 	    done;
+@@ -664,23 +664,30 @@ install-libraries: libraries
+ 	    do \
+ 	    if [ ! -d $(SCRIPT_INSTALL_DIR)/$$i ] ; then \
+ 		echo "Making directory $(SCRIPT_INSTALL_DIR)/$$i"; \
+-		mkdir -p $(SCRIPT_INSTALL_DIR)/$$i; \
+-		chmod 755 $(SCRIPT_INSTALL_DIR)/$$i; \
++		${INSTALL_DATA_DIR} $(SCRIPT_INSTALL_DIR)/$$i; \
+ 		else true; \
+ 		fi; \
+ 	    done;
+-	@if test ! -x $(SRC_DIR)/install-sh; then \
+-	    chmod +x $(SRC_DIR)/install-sh; \
+-	    fi
+ 	@echo "Installing header files";
+ 	@for i in $(GENERIC_DIR)/tcl.h $(GENERIC_DIR)/tclDecls.h \
+ 		$(GENERIC_DIR)/tclPlatDecls.h; \
+ 	    do \
+ 	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
++	    cd $(INCLUDE_INSTALL_DIR)/generic && ln -sf ../`basename $$i` ./`basename $$i`; \
+ 	    done;
++	@for i in $(GENERIC_DIR)/tclInt.h $(GENERIC_DIR)/tclIntDecls.h \
++		$(GENERIC_DIR)/tclIntPlatDecls.h $(GENERIC_DIR)/tclMath.h \
++		$(GENERIC_DIR)/tclPort.h ; \
++	    do \
++	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR)/generic; \
++	    done;
++	@for i in $(UNIX_DIR)/tclUnixPort.h; \
++	    do \
++	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR)/unix; \
++	    done;
+ 	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
+ 	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex \
+-		$(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix @DTRACE_SRC@; \
++		$(UNIX_DIR)/tclAppInit.c @DTRACE_SRC@; \
+ 	    do \
+ 	    $(INSTALL_DATA) $$i $(SCRIPT_INSTALL_DIR); \
+ 	    done;
+@@ -722,8 +729,7 @@ install-doc: doc
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+ 		echo "Making directory $$i"; \
+-		mkdir -p $$i; \
+-		chmod 755 $$i; \
++		${INSTALL_DATA_DIR} $$i; \
+ 		else true; \
+ 		fi; \
+ 	    done;

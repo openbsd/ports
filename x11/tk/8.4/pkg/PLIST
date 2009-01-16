@@ -1,44 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/01/31 17:06:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/01/16 00:02:32 sthen Exp $
 @option no-default-conflict
 @conflict tk->=8.4,<8.5
-bin/wish8.4
+@bin bin/wish8.4
 include/tk8.4/
 include/tk8.4/generic/
-include/tk8.4/generic/default.h
-include/tk8.4/generic/ks_names.h
 include/tk8.4/generic/tk.h
-include/tk8.4/generic/tk3d.h
-include/tk8.4/generic/tkButton.h
-include/tk8.4/generic/tkCanvas.h
-include/tk8.4/generic/tkColor.h
 include/tk8.4/generic/tkDecls.h
-include/tk8.4/generic/tkFileFilter.h
-include/tk8.4/generic/tkFont.h
-include/tk8.4/generic/tkInitScript.h
 include/tk8.4/generic/tkInt.h
 include/tk8.4/generic/tkIntDecls.h
 include/tk8.4/generic/tkIntPlatDecls.h
-include/tk8.4/generic/tkIntXlibDecls.h
-include/tk8.4/generic/tkMenu.h
-include/tk8.4/generic/tkMenubutton.h
 include/tk8.4/generic/tkPlatDecls.h
 include/tk8.4/generic/tkPort.h
-include/tk8.4/generic/tkScale.h
-include/tk8.4/generic/tkScrollbar.h
-include/tk8.4/generic/tkSelect.h
-include/tk8.4/generic/tkText.h
-include/tk8.4/generic/tkUndo.h
 include/tk8.4/tk.h
 include/tk8.4/tkDecls.h
-include/tk8.4/tkIntXlibDecls.h
 include/tk8.4/tkPlatDecls.h
 include/tk8.4/unix/
-include/tk8.4/unix/tkUnixDefault.h
 include/tk8.4/unix/tkUnixInt.h
 include/tk8.4/unix/tkUnixPort.h
 lib/libtk84.a
 lib/libtkstub84.a
-lib/libtkstub84_pic.a
 lib/tk8.4/
 lib/tk8.4/bgerror.tcl
 lib/tk8.4/button.tcl
@@ -135,86 +115,6 @@ lib/tk8.4/listbox.tcl
 lib/tk8.4/man/man1/
 @man lib/tk8.4/man/man1/wish.1
 lib/tk8.4/man/man3/
-@man lib/tk8.4/man/man3/3DBorder.3
-@man lib/tk8.4/man/man3/AddOption.3
-@man lib/tk8.4/man/man3/BindTable.3
-@man lib/tk8.4/man/man3/CanvPsY.3
-@man lib/tk8.4/man/man3/CanvTkwin.3
-@man lib/tk8.4/man/man3/CanvTxtInfo.3
-@man lib/tk8.4/man/man3/Clipboard.3
-@man lib/tk8.4/man/man3/ClrSelect.3
-@man lib/tk8.4/man/man3/ConfigWidg.3
-@man lib/tk8.4/man/man3/ConfigWind.3
-@man lib/tk8.4/man/man3/CoordToWin.3
-@man lib/tk8.4/man/man3/CrtCmHdlr.3
-@man lib/tk8.4/man/man3/CrtErrHdlr.3
-@man lib/tk8.4/man/man3/CrtGenHdlr.3
-@man lib/tk8.4/man/man3/CrtImgType.3
-@man lib/tk8.4/man/man3/CrtItemType.3
-@man lib/tk8.4/man/man3/CrtPhImgFmt.3
-@man lib/tk8.4/man/man3/CrtSelHdlr.3
-@man lib/tk8.4/man/man3/CrtWindow.3
-@man lib/tk8.4/man/man3/DeleteImg.3
-@man lib/tk8.4/man/man3/DrawFocHlt.3
-@man lib/tk8.4/man/man3/EventHndlr.3
-@man lib/tk8.4/man/man3/FindPhoto.3
-@man lib/tk8.4/man/man3/FontId.3
-@man lib/tk8.4/man/man3/FreeXId.3
-@man lib/tk8.4/man/man3/GeomReq.3
-@man lib/tk8.4/man/man3/GetAnchor.3
-@man lib/tk8.4/man/man3/GetBitmap.3
-@man lib/tk8.4/man/man3/GetCapStyl.3
-@man lib/tk8.4/man/man3/GetClrmap.3
-@man lib/tk8.4/man/man3/GetColor.3
-@man lib/tk8.4/man/man3/GetCursor.3
-@man lib/tk8.4/man/man3/GetDash.3
-@man lib/tk8.4/man/man3/GetFont.3
-@man lib/tk8.4/man/man3/GetGC.3
-@man lib/tk8.4/man/man3/GetHINSTANCE.3
-@man lib/tk8.4/man/man3/GetHWND.3
-@man lib/tk8.4/man/man3/GetImage.3
-@man lib/tk8.4/man/man3/GetJoinStl.3
-@man lib/tk8.4/man/man3/GetJustify.3
-@man lib/tk8.4/man/man3/GetOption.3
-@man lib/tk8.4/man/man3/GetPixels.3
-@man lib/tk8.4/man/man3/GetPixmap.3
-@man lib/tk8.4/man/man3/GetRelief.3
-@man lib/tk8.4/man/man3/GetRootCrd.3
-@man lib/tk8.4/man/man3/GetScroll.3
-@man lib/tk8.4/man/man3/GetSelect.3
-@man lib/tk8.4/man/man3/GetUid.3
-@man lib/tk8.4/man/man3/GetVRoot.3
-@man lib/tk8.4/man/man3/GetVisual.3
-@man lib/tk8.4/man/man3/Grab.3
-@man lib/tk8.4/man/man3/HWNDToWindow.3
-@man lib/tk8.4/man/man3/HandleEvent.3
-@man lib/tk8.4/man/man3/IdToWindow.3
-@man lib/tk8.4/man/man3/ImgChanged.3
-@man lib/tk8.4/man/man3/InternAtom.3
-@man lib/tk8.4/man/man3/MainLoop.3
-@man lib/tk8.4/man/man3/MainWin.3
-@man lib/tk8.4/man/man3/MaintGeom.3
-@man lib/tk8.4/man/man3/ManageGeom.3
-@man lib/tk8.4/man/man3/MapWindow.3
-@man lib/tk8.4/man/man3/MeasureChar.3
-@man lib/tk8.4/man/man3/MoveToplev.3
-@man lib/tk8.4/man/man3/Name.3
-@man lib/tk8.4/man/man3/NameOfImg.3
-@man lib/tk8.4/man/man3/OwnSelect.3
-@man lib/tk8.4/man/man3/ParseArgv.3
-@man lib/tk8.4/man/man3/QWinEvent.3
-@man lib/tk8.4/man/man3/Restack.3
-@man lib/tk8.4/man/man3/RestrictEv.3
-@man lib/tk8.4/man/man3/SetAppName.3
-@man lib/tk8.4/man/man3/SetCaret.3
-@man lib/tk8.4/man/man3/SetClass.3
-@man lib/tk8.4/man/man3/SetClassProcs.3
-@man lib/tk8.4/man/man3/SetGrid.3
-@man lib/tk8.4/man/man3/SetOptions.3
-@man lib/tk8.4/man/man3/SetVisual.3
-@man lib/tk8.4/man/man3/StrictMotif.3
-@man lib/tk8.4/man/man3/TextLayout.3
-@man lib/tk8.4/man/man3/TkInitStubs.3
 @man lib/tk8.4/man/man3/Tk_3DBorderColor.3
 @man lib/tk8.4/man/man3/Tk_3DBorderGC.3
 @man lib/tk8.4/man/man3/Tk_3DHorizontalBevel.3
@@ -470,7 +370,6 @@ lib/tk8.4/man/man3/
 @man lib/tk8.4/man/man3/Tk_WindowId.3
 @man lib/tk8.4/man/man3/Tk_X.3
 @man lib/tk8.4/man/man3/Tk_Y.3
-@man lib/tk8.4/man/man3/WindowId.3
 lib/tk8.4/man/mann/
 @man lib/tk8.4/man/mann/bell.n
 @man lib/tk8.4/man/mann/bind.n
@@ -479,21 +378,16 @@ lib/tk8.4/man/mann/
 @man lib/tk8.4/man/mann/button.n
 @man lib/tk8.4/man/mann/canvas.n
 @man lib/tk8.4/man/mann/checkbutton.n
-@man lib/tk8.4/man/mann/chooseColor.n
-@man lib/tk8.4/man/mann/chooseDirectory.n
 @man lib/tk8.4/man/mann/clipboard.n
 @man lib/tk8.4/man/mann/colors.n
 @man lib/tk8.4/man/mann/console.n
 @man lib/tk8.4/man/mann/cursors.n
 @man lib/tk8.4/man/mann/destroy.n
-@man lib/tk8.4/man/mann/dialog.n
 @man lib/tk8.4/man/mann/entry.n
 @man lib/tk8.4/man/mann/event.n
 @man lib/tk8.4/man/mann/focus.n
-@man lib/tk8.4/man/mann/focusNext.n
 @man lib/tk8.4/man/mann/font.n
 @man lib/tk8.4/man/mann/frame.n
-@man lib/tk8.4/man/mann/getOpenFile.n
 @man lib/tk8.4/man/mann/grab.n
 @man lib/tk8.4/man/mann/grid.n
 @man lib/tk8.4/man/mann/image.n
@@ -504,20 +398,15 @@ lib/tk8.4/man/mann/
 @man lib/tk8.4/man/mann/loadTk.n
 @man lib/tk8.4/man/mann/lower.n
 @man lib/tk8.4/man/mann/menu.n
-@man lib/tk8.4/man/mann/menubar.n
 @man lib/tk8.4/man/mann/menubutton.n
 @man lib/tk8.4/man/mann/message.n
-@man lib/tk8.4/man/mann/messageBox.n
 @man lib/tk8.4/man/mann/option.n
-@man lib/tk8.4/man/mann/optionMenu.n
 @man lib/tk8.4/man/mann/options.n
 @man lib/tk8.4/man/mann/pack-old.n
 @man lib/tk8.4/man/mann/pack.n
-@man lib/tk8.4/man/mann/palette.n
 @man lib/tk8.4/man/mann/panedwindow.n
 @man lib/tk8.4/man/mann/photo.n
 @man lib/tk8.4/man/mann/place.n
-@man lib/tk8.4/man/mann/popup.n
 @man lib/tk8.4/man/mann/radiobutton.n
 @man lib/tk8.4/man/mann/raise.n
 @man lib/tk8.4/man/mann/scale.n
@@ -564,14 +453,17 @@ lib/tk8.4/msgs/en_gb.msg
 lib/tk8.4/msgs/eo.msg
 lib/tk8.4/msgs/es.msg
 lib/tk8.4/msgs/fr.msg
+lib/tk8.4/msgs/hu.msg
 lib/tk8.4/msgs/it.msg
 lib/tk8.4/msgs/nl.msg
 lib/tk8.4/msgs/pl.msg
+lib/tk8.4/msgs/pt.msg
 lib/tk8.4/msgs/ru.msg
 lib/tk8.4/obsolete.tcl
 lib/tk8.4/optMenu.tcl
 lib/tk8.4/palette.tcl
 lib/tk8.4/panedwindow.tcl
+lib/tk8.4/pkgIndex.tcl
 lib/tk8.4/prolog.ps
 lib/tk8.4/safetk.tcl
 lib/tk8.4/scale.tcl
