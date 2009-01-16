@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.48 2008/12/15 21:30:07 naddy Exp $
---- configure.orig	Sun Oct  7 21:49:33 2007
-+++ configure	Mon Dec 15 18:43:58 2008
+$OpenBSD: patch-configure,v 1.49 2009/01/16 02:39:53 jakemsr Exp $
+--- configure.orig	Sun Oct  7 15:49:33 2007
++++ configure	Tue Dec 30 03:29:05 2008
 @@ -76,7 +76,7 @@ cc_check() {
  }
  
@@ -89,15 +89,6 @@ $OpenBSD: patch-configure,v 1.48 2008/12/15 21:30:07 naddy Exp $
    _vosrc="$_vosrc vo_png.c"
    _vomodules="png $_vomodules"
  else
-@@ -5054,7 +5062,7 @@ if test "$_arts" = yes ; then
-   _def_arts='#define USE_ARTS 1'
-   _aosrc="$_aosrc ao_arts.c"
-   _aomodules="arts $_aomodules"
--  _libs_mplayer="$_libs_mplayer `artsc-config --libs`"
-+  _libs_mplayer="$_libs_mplayer `artsc-config --libs` -lstdc++"
-   _inc_extra="$_inc_extra `artsc-config --cflags`"
- else
-   _noaomodules="arts $_noaomodules"
 @@ -5129,7 +5137,8 @@ fi
  echocheck "JACK"
  if test "$_jack" = auto ; then
@@ -108,15 +99,7 @@ $OpenBSD: patch-configure,v 1.48 2008/12/15 21:30:07 naddy Exp $
  cat > $TMPC << EOF
  #include <jack/jack.h>
  int main(void) { jack_client_new("test"); return 0; }
-@@ -5144,6 +5153,7 @@ EOF
-   fi
- fi
- 
-+
- if test "$_jack" = yes ; then
-   _def_jack='#define USE_JACK 1'
-   _aosrc="$_aosrc ao_jack.c"
-@@ -5303,6 +5313,27 @@ fi
+@@ -5303,6 +5312,27 @@ fi
  echores "$_sunaudio"
  
  
@@ -144,7 +127,7 @@ $OpenBSD: patch-configure,v 1.48 2008/12/15 21:30:07 naddy Exp $
  if sunos; then
  echocheck "Sun mediaLib"
  if test "$_mlib" = auto ; then
-@@ -5343,7 +5374,7 @@ fi #if irix
+@@ -5343,7 +5373,7 @@ fi #if irix
  
  
  echocheck "VCD support"
@@ -153,7 +136,7 @@ $OpenBSD: patch-configure,v 1.48 2008/12/15 21:30:07 naddy Exp $
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
    _vcd="yes"
-@@ -5592,7 +5623,7 @@ int main()
+@@ -5592,7 +5622,7 @@ int main()
  }
  EOF
    _fontconfig=no
@@ -162,7 +145,7 @@ $OpenBSD: patch-configure,v 1.48 2008/12/15 21:30:07 naddy Exp $
      _ld_tmp="-lfontconfig $_ld_tmp"
      cc_check $_ld_tmp && _fontconfig=yes && _ld_extra="$_ld_extra $_ld_tmp" && break
    done
-@@ -5704,10 +5735,10 @@ cat > $TMPC << EOF
+@@ -5704,10 +5734,10 @@ cat > $TMPC << EOF
  int main(void) { (void) inflate(0, Z_NO_FLUSH); return 0; }
  EOF
  _zlib=no
@@ -175,7 +158,7 @@ $OpenBSD: patch-configure,v 1.48 2008/12/15 21:30:07 naddy Exp $
  else
    _def_zlib='#undef HAVE_ZLIB'
    _libavdecoders=`echo $_libavdecoders | sed -e s/FLASHSV_DECODER// -e s/PNG_DECODER// -e s/ZMBV_DECODER// -e s/DXA_DECODER// `
-@@ -6207,7 +6238,7 @@ if test "$_real" = auto ; then
+@@ -6207,7 +6237,7 @@ if test "$_real" = auto ; then
    _real=no
    _res_comment="dynamic loader support needed"
    if test "$_dl" = yes || test "$_win32dll" = yes &&
@@ -184,7 +167,7 @@ $OpenBSD: patch-configure,v 1.48 2008/12/15 21:30:07 naddy Exp $
      _real=yes
    fi
  fi
-@@ -8151,6 +8182,7 @@ $_def_openal_h
+@@ -8151,6 +8181,7 @@ $_def_openal_h
  $_def_sys_asoundlib_h
  $_def_alsa_asoundlib_h
  $_def_sunaudio
