@@ -1,15 +1,7 @@
-$OpenBSD: patch-modules_audio_output_Makefile_in,v 1.5 2008/07/15 16:19:15 brad Exp $
+$OpenBSD: patch-modules_audio_output_Makefile_in,v 1.6 2009/01/16 04:11:18 jakemsr Exp $
 --- modules/audio_output/Makefile.in.orig	Tue Jul  8 17:35:44 2008
-+++ modules/audio_output/Makefile.in	Sun Jul 13 03:38:04 2008
-@@ -717,6 +717,7 @@ libarts_plugin_la_LDFLAGS = `$(VLC_CONFIG) --libs plug
- 	-rpath '$(libvlcdir)' -avoid-version -module -shrext $(LIBEXT)
- 
- libarts_plugin_la_LIBADD = $(LTLIBVLC)
-+libarts_plugin_la_EXTRALIBS = -lstdc++
- libarts_a_SOURCES = $(SOURCES_arts)
- libarts_builtin_la_SOURCES = $(SOURCES_arts)
- libarts_a_CFLAGS = `$(VLC_CONFIG) --cflags builtin pic arts`
-@@ -2069,7 +2070,7 @@ all-modules:
++++ modules/audio_output/Makefile.in	Tue Dec 30 03:57:22 2008
+@@ -2069,7 +2069,7 @@ all-modules:
  
  # Build a plugin with the adequate linker and linker's flags
  _plugin.a_plugin$(LIBEXT):

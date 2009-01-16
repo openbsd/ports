@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-esd,v 1.1 2007/11/11 01:37:54 jakemsr Exp $
-lib/vlc/audio_output/libesd_plugin.so

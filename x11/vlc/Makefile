@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2008/09/15 22:14:23 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.78 2009/01/16 04:11:18 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	videolan client; multimedia player
 
 V=		0.8.6i
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -48,7 +48,7 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 WANTLIB-main=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
 		pthread stdc++ usbhid z Xau Xdmcp Xrandr Xrender \
-		SDL jpeg tiff bz2 ogg vorbis vorbisenc faac mp3lame
+		SDL jpeg tiff bz2 ogg vorbis vorbisenc faac mp3lame sndio
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.61
@@ -166,7 +166,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 MULTI_PACKAGES=-main
 
 FLAVORS=altivec
-PSEUDO_FLAVORS=no_web no_arts no_esd no_jack
+PSEUDO_FLAVORS=no_web no_jack
 FLAVOR?=
 
 .if !${FLAVOR:L:Mno_web}
@@ -184,32 +184,6 @@ WANTLIB-web=	ICE SM X11 Xau Xdmcp Xext Xinerama Xt Xv Xxf86vm dvbpsi m \
 		ogg theora
 .else
 CONFIGURE_ARGS+=--disable-mozilla
-.endif
-
-.if !${FLAVOR:L:Mno_arts}
-MULTI_PACKAGES+=-arts
-COMMENT-arts=	artsd audio output module for vlc
-FULLPKGNAME-arts=vlc-arts-${V}
-CONFIGURE_ARGS+=--enable-arts
-LIB_DEPENDS-arts=${LIB_DEPENDS} artsc.>=1::x11/kde/arts3
-# any FLAVOR of vlc will do
-RUN_DEPENDS-arts=::x11/vlc
-WANTLIB-arts=	glib-2.0 gmodule-2.0 gthread-2.0 stdc++ pcre
-.else
-CONFIGURE_ARGS+=--disable-arts
-.endif
-
-.if !${FLAVOR:L:Mno_esd}
-MULTI_PACKAGES+=-esd
-COMMENT-esd=	esound audio output module for vlc
-FULLPKGNAME-esd=vlc-esd-${V}
-CONFIGURE_ARGS+=--enable-esd
-LIB_DEPENDS-esd=esd.>=2::audio/esound
-# any FLAVOR of vlc will do
-RUN_DEPENDS-esd=::x11/vlc
-WANTLIB-esd=	audiofile m
-.else
-CONFIGURE_ARGS+=--disable-esd
 .endif
 
 .if !${FLAVOR:L:Mno_jack}
