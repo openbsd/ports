@@ -1,0 +1,89 @@
+$OpenBSD: patch-lib_paxnames_c,v 1.1 2009/01/16 16:58:05 naddy Exp $
+--- lib/paxnames.c.orig	Wed Jun 27 15:49:45 2007
++++ lib/paxnames.c	Fri Jan 16 17:45:04 2009
+@@ -36,15 +36,27 @@ hash_string_compare (void const *name1, void const *na
+   return strcmp (name1, name2) == 0;
+ }
+ 
+-/* Return zero if TABLE contains a copy of STRING; otherwise, insert a
+-   copy of STRING to TABLE and return 1.  */
+-bool
+-hash_string_insert (Hash_table **table, char const *string)
++/* Return zero if TABLE contains a LEN-character long prefix of STRING,
++   otherwise, insert a newly allocated copy of this prefix to TABLE and
++   return 1.  If RETURN_PREFIX is not NULL, point it to the allocated
++   copy. */
++static bool
++hash_string_insert_prefix (Hash_table **table, char const *string, size_t len,
++			   const char **return_prefix)
+ {
+   Hash_table *t = *table;
+-  char *s = xstrdup (string);
++  char *s;
+   char *e;
+ 
++  if (len)
++    {
++      s = xmalloc (len + 1);
++      memcpy (s, string, len);
++      s[len] = 0;
++    }
++  else
++    s = xstrdup (string);
++  
+   if (! ((t
+ 	  || (*table = t = hash_initialize (0, 0, hash_string_hasher,
+ 					    hash_string_compare, 0)))
+@@ -52,7 +64,11 @@ hash_string_insert (Hash_table **table, char const *st
+     xalloc_die ();
+ 
+   if (e == s)
+-    return 1;
++    {
++      if (return_prefix)
++	*return_prefix = s;
++      return 1;
++    }
+   else
+     {
+       free (s);
+@@ -60,6 +76,14 @@ hash_string_insert (Hash_table **table, char const *st
+     }
+ }
+ 
++/* Return zero if TABLE contains a copy of STRING; otherwise, insert a
++   copy of STRING to TABLE and return 1.  */
++bool
++hash_string_insert (Hash_table **table, char const *string)
++{
++  return hash_string_insert_prefix (table, string, 0, NULL);
++}
++
+ /* Return 1 if TABLE contains STRING.  */
+ bool
+ hash_string_lookup (Hash_table const *table, char const *string)
+@@ -88,7 +112,8 @@ removed_prefixes_p (void)
+    If ABSOLUTE_NAMES is 0, strip filesystem prefix from the file name. */
+ 
+ char *
+-safer_name_suffix (char const *file_name, bool link_target, bool absolute_names)
++safer_name_suffix (char const *file_name, bool link_target,
++		   bool absolute_names)
+ {
+   char const *p;
+ 
+@@ -121,11 +146,9 @@ safer_name_suffix (char const *file_name, bool link_ta
+ 
+       if (prefix_len)
+ 	{
+-	  char *prefix = alloca (prefix_len + 1);
+-	  memcpy (prefix, file_name, prefix_len);
+-	  prefix[prefix_len] = '\0';
+-
+-	  if (hash_string_insert (&prefix_table[link_target], prefix))
++	  const char *prefix;
++	  if (hash_string_insert_prefix (&prefix_table[link_target], file_name,
++					 prefix_len, &prefix))
+ 	    {
+ 	      static char const *const diagnostic[] =
+ 	      {

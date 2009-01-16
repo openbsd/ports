@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/07/09 17:38:42 naddy Exp $
-bin/gcpio
+@comment $OpenBSD: PLIST,v 1.7 2009/01/16 16:58:05 naddy Exp $
+@bin bin/gcpio
 @info info/cpio.info
 @man man/man1/gcpio.1
 @comment @man man/man1/gmt.1
