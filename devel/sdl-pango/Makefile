@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2008/11/07 00:47:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/01/16 08:06:26 ajacoutot Exp $
 
 COMMENT=	SDL wrapper around the Pango library
 
 V=		0.1.2
 DISTNAME=	SDL_Pango-${V}
-PKGNAME=	sdl-pango-${V}p3
+PKGNAME=	sdl-pango-${V}p4
 SHARED_LIBS=	SDL_Pango 0.0	# .2.0
 CATEGORIES=	devel x11
 
 HOMEPAGE=	http://sdlpango.sourceforge.net/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

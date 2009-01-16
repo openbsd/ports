@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/15 14:07:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/01/16 08:06:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lightweight panel written in Python and C for X11
 
 DISTNAME=	PyPanel-2.4
-PKGNAME=	${DISTNAME:L}p3
+PKGNAME=	${DISTNAME:L}p4
 CATEGORIES=	x11
 
 HOMEPAGE=	http://pypanel.sourceforge.net/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

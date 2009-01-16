@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2008/02/09 09:28:33 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2009/01/16 08:06:26 ajacoutot Exp $
 
 COMMENT=	configuration utility for openbox
 
 DISTNAME=	obconf-2.0.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://icculus.org/openbox/index.php/Obconf
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

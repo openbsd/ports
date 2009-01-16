@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/28 12:42:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/01/16 08:06:26 ajacoutot Exp $
 
 COMMENT=	visualize and manipulate mathematical models
 
 DISTNAME=	k3dsurf-0.6.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics math
 
 HOMEPAGE=	http://k3dsurf.sourceforge.net/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

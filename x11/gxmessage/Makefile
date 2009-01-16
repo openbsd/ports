@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/01 21:38:27 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2009/01/16 08:06:26 ajacoutot Exp $
 
 COMMENT=	GTK2 based xmessage clone
 
 DISTNAME=	gxmessage-2.6.2
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	x11
 
 HOMEPAGE=	http://homepages.ihug.co.nz/~trmusson/programs.html\#gxmessage
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
