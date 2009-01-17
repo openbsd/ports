@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/06/17 14:45:40 ajacoutot Exp $
-@newgroup ${GNUGK_ID}:586
-@newuser ${GNUGK_ID}:586:586:daemon:Gatekeeper Daemon:/var/empty:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.6 2009/01/17 11:42:03 ajacoutot Exp $
+@newgroup _gnugk:586
+@newuser _gnugk:586:586:daemon:Gatekeeper Daemon:/var/empty:/sbin/nologin
 @bin bin/addpasswd
 @bin bin/gnugk
 @man man/man1/gnugk.1
@@ -9,6 +9,7 @@ share/doc/gnugk/identifiers.txt
 share/doc/gnugk/keepalive.txt
 share/doc/gnugk/known_bugs.txt
 share/doc/gnugk/performance.txt
+share/doc/gnugk/pwlib_bugs.txt
 share/doc/gnugk/radauth.txt
 share/doc/gnugk/trace_levels.txt
 share/examples/gnugk/
@@ -19,7 +20,7 @@ share/examples/gnugk/enum.ini
 share/examples/gnugk/fileacct.ini
 share/examples/gnugk/gnugk.ini
 @mode 640
-@group ${GNUGK_ID}
+@group _gnugk
 @sample ${SYSCONFDIR}/gatekeeper.ini
 @mode
 @group
@@ -28,6 +29,8 @@ share/examples/gnugk/ipauth.ini
 share/examples/gnugk/mysql.ini
 share/examples/gnugk/nat.ini
 share/examples/gnugk/neighbor.ini
+share/examples/gnugk/odbc.ini
+share/examples/gnugk/p2pnat.ini
 share/examples/gnugk/proxy.ini
 share/examples/gnugk/qos.ini
 share/examples/gnugk/radacct.ini
@@ -40,5 +43,5 @@ share/examples/gnugk/status.ini
 share/examples/gnugk/syslog.ini
 share/examples/gnugk/uri.ini
 share/examples/gnugk/vqueue.ini
-@owner ${GNUGK_ID}
+@owner _gnugk
 @sample /var/log/gnugk/

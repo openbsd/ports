@@ -1,5 +1,9 @@
-To start the gatekeeper as the unpriviledged ${GNUGK_ID} user, as root:
+To start gnugk on boot-up, add the following lines to /etc/rc.local:
 
- install -d -o _gnugk /var/run/gnugk
- ${PREFIX}/bin/gnugk -t -c ${SYSCONFDIR}/gatekeeper.ini -u _gnugk \
-	-o /var/log/gnugk/gnugk.log --pid /var/run/gnugk/gnugk.pid 1> /dev/null &
+if [ -x ${PREFIX}/bin/gnugk ]; then
+	install -d -o _gnugk /var/run/gnugk
+	echo -n ' gnugk'
+	${PREFIX}/bin/gnugk -t -c ${SYSCONFDIR}/gatekeeper.ini \
+		-u _gnugk -o /var/log/gnugk/gnugk.log \
+		--pid /var/run/gnugk/gnugk.pid 1> /dev/null &
+fi
