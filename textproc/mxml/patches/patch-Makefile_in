@@ -1,40 +1,40 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/10/01 18:40:11 jakemsr Exp $
---- Makefile.in.orig	Sun Apr 24 16:23:59 2005
-+++ Makefile.in	Sat Sep 29 18:26:28 2007
-@@ -148,13 +148,13 @@ install-libmxml.a:
- 	$(INSTALL_DIR) $(BUILDROOT)$(libdir)
+$OpenBSD: patch-Makefile_in,v 1.2 2009/01/17 20:28:28 jakemsr Exp $
+--- Makefile.in.orig	Tue Nov 18 06:25:18 2008
++++ Makefile.in	Tue Nov 18 07:55:52 2008
+@@ -143,13 +143,13 @@ install-libmxml.a:
  	$(INSTALL_LIB) libmxml.a $(BUILDROOT)$(libdir)
+ 	$(RANLIB) $(BUILDROOT)$(libdir)/libmxml.a
  
--install-libmxml.so.1.0:
+-install-libmxml.so.1.4:
 +install-libmxml.so.$(LIBmxml_VERSION):
  	$(INSTALL_DIR) $(BUILDROOT)$(libdir)
--	$(INSTALL_LIB) libmxml.so.1.0 $(BUILDROOT)$(libdir)
+-	$(INSTALL_LIB) libmxml.so.1.4 $(BUILDROOT)$(libdir)
 -	$(RM) $(BUILDROOT)$(libdir)/libmxml.so
--	$(LN) libmxml.so.1.0 $(BUILDROOT)$(libdir)/libmxml.so
+-	$(LN) libmxml.so.1.4 $(BUILDROOT)$(libdir)/libmxml.so
 -	$(RM) $(BUILDROOT)$(libdir)/libmxml.so.1
--	$(LN) libmxml.so.1.0 $(BUILDROOT)$(libdir)/libmxml.so.1
+-	$(LN) libmxml.so.1.4 $(BUILDROOT)$(libdir)/libmxml.so.1
 +	$(INSTALL_LIB) libmxml.so.$(LIBmxml_VERSION) $(BUILDROOT)$(libdir)
 +#	$(RM) $(BUILDROOT)$(libdir)/libmxml.so
-+#	$(LN) libmxml.so.1.0 $(BUILDROOT)$(libdir)/libmxml.so
++#	$(LN) libmxml.so.1.4 $(BUILDROOT)$(libdir)/libmxml.so
 +#	$(RM) $(BUILDROOT)$(libdir)/libmxml.so.1
-+#	$(LN) libmxml.so.1.0 $(BUILDROOT)$(libdir)/libmxml.so.1
++#	$(LN) libmxml.so.1.4 $(BUILDROOT)$(libdir)/libmxml.so.1
  
  install-libmxml.sl.1:
  	$(INSTALL_DIR) $(BUILDROOT)$(libdir)
-@@ -261,11 +261,11 @@ $(LIBOBJS):	mxml.h
- # libmxml.so.1.0
+@@ -244,11 +244,11 @@ mxml-entity.o mxml-file.o mxml-private.o: mxml-private
+ # libmxml.so.1.4
  #
  
--libmxml.so.1.0:	$(LIBOBJS)
--	$(DSO) $(DSOFLAGS) -o libmxml.so.1.0 $(LIBOBJS)
+-libmxml.so.1.4:	$(LIBOBJS)
+-	$(DSO) $(DSOFLAGS) -o libmxml.so.1.4 $(LIBOBJS)
 -	$(RM) libmxml.so libmxml.so.1
--	$(LN) libmxml.so.1.0 libmxml.so
--	$(LN) libmxml.so.1.0 libmxml.so.1
+-	$(LN) libmxml.so.1.4 libmxml.so
+-	$(LN) libmxml.so.1.4 libmxml.so.1
 +libmxml.so.$(LIBmxml_VERSION):	$(LIBOBJS)
 +	$(DSO) $(DSOFLAGS) -o libmxml.so.$(LIBmxml_VERSION) $(LIBOBJS)
 +#	$(RM) libmxml.so libmxml.so.1
-+#	$(LN) libmxml.so.1.0 libmxml.so
-+#	$(LN) libmxml.so.1.0 libmxml.so.1
++#	$(LN) libmxml.so.1.4 libmxml.so
++#	$(LN) libmxml.so.1.4 libmxml.so.1
  
  
  #
