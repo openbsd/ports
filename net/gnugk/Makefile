@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2009/01/17 11:42:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/17 14:14:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
 
 DISTNAME=	gnugk-2.2.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net telephony
 
 HOMEPAGE=	http://www.gnugk.org/
@@ -19,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 
-WANTLIB=	SDL avutil c crypto expat lber ldap ldap_r m ossaudio \
+WANTLIB=	SDL avutil c crypto expat lber ldap ldap_r m \
 		pt pthread sasl2 ssl stdc++
 
 LIB_DEPENDS=	h323.>=2::net/openh323 \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/09/08 17:17:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/17 14:14:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 IP telephony endpoint
 
 DISTNAME=	ohphone-1.4.5
-PKGNAME=	${DISTNAME}p1v0
+PKGNAME=	${DISTNAME}p2v0
 CATEGORIES=	telephony net
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/
 
 WANTLIB=	SDL X11 Xext avutil c crypto expat lber ldap ldap_r m \
-		ossaudio pt pthread sasl2 ssl stdc++
+		pt pthread sasl2 ssl stdc++
 
 LIB_DEPENDS=	h323.>=2::net/openh323
 
