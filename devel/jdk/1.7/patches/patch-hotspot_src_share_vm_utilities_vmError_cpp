@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_share_vm_utilities_vmError_cpp,v 1.4 2009/01/04 23:25:16 kurt Exp $
---- hotspot/src/share/vm/utilities/vmError.cpp.orig	Thu Jul 17 03:40:35 2008
-+++ hotspot/src/share/vm/utilities/vmError.cpp	Sat Aug  2 16:12:53 2008
+$OpenBSD: patch-hotspot_src_share_vm_utilities_vmError_cpp,v 1.5 2009/01/17 11:37:42 kurt Exp $
+--- hotspot/src/share/vm/utilities/vmError.cpp.orig	Thu Jan 15 03:41:24 2009
++++ hotspot/src/share/vm/utilities/vmError.cpp	Fri Jan 16 12:16:44 2009
 @@ -31,7 +31,7 @@ const char *env_list[] = {
    "JAVA_HOME", "JRE_HOME", "JAVA_TOOL_OPTIONS", "_JAVA_OPTIONS", "CLASSPATH",
    "JAVA_COMPILER", "PATH", "USERNAME",
@@ -27,7 +27,7 @@ $OpenBSD: patch-hotspot_src_share_vm_utilities_vmError_cpp,v 1.4 2009/01/04 23:2
    // If the crash is in native code, encourage user to submit a bug to the
    // provider of that code.
    if (thread && thread->is_Java_thread() &&
-@@ -792,7 +799,7 @@ void VMError::report_and_die() {
+@@ -794,7 +801,7 @@ void VMError::report_and_die() {
      const char* ptr = OnError;
      while ((cmd = next_OnError_command(buffer, sizeof(buffer), &ptr)) != NULL){
        out.print_raw   ("#   Executing ");

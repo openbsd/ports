@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_src_solaris_classes_sun_awt_X11GraphicsEnvironment_java,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/src/solaris/classes/sun/awt/X11GraphicsEnvironment.java.orig	Thu Oct 23 03:44:44 2008
-+++ jdk/src/solaris/classes/sun/awt/X11GraphicsEnvironment.java	Tue Dec 23 01:09:55 2008
-@@ -418,7 +418,7 @@ public class X11GraphicsEnvironment
+$OpenBSD: patch-jdk_src_solaris_classes_sun_awt_X11GraphicsEnvironment_java,v 1.3 2009/01/17 11:37:42 kurt Exp $
+--- jdk/src/solaris/classes/sun/awt/X11GraphicsEnvironment.java.orig	Thu Jan 15 03:44:44 2009
++++ jdk/src/solaris/classes/sun/awt/X11GraphicsEnvironment.java	Fri Jan 16 12:16:51 2009
+@@ -419,7 +419,7 @@ public class X11GraphicsEnvironment
          if (fontID != null) {
              fileName = (String)fontNameMap.get(fontID);
              /* On Linux check for the Lucida Oblique fonts */
@@ -10,7 +10,7 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_awt_X11GraphicsEnvironment_java,v 1.
                  if (oblmap == null) {
                      initObliqueLucidaFontMap();
                  }
-@@ -654,7 +654,7 @@ public class X11GraphicsEnvironment
+@@ -655,7 +655,7 @@ public class X11GraphicsEnvironment
          if (fontConfigDirs == null) {
              return;
          }
@@ -19,7 +19,7 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_awt_X11GraphicsEnvironment_java,v 1.
              fontConfigDirs.add(jreLibDirName+File.separator+"oblique-fonts");
          }
          fontdirs = (String[])fontConfigDirs.toArray(new String[0]);
-@@ -935,7 +935,7 @@ public class X11GraphicsEnvironment
+@@ -936,7 +936,7 @@ public class X11GraphicsEnvironment
           */
          FontConfiguration mFontConfig = new MFontConfiguration(this);
          if (isOpenSolaris ||

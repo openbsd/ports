@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.8 2009/01/16 16:49:29 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Wed Jan 14 13:01:37 2009
-+++ hotspot/src/os/bsd/vm/os_bsd.cpp	Wed Jan 14 13:03:52 2009
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.9 2009/01/17 11:37:42 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Fri Jan 16 12:16:37 2009
++++ hotspot/src/os/bsd/vm/os_bsd.cpp	Fri Jan 16 12:52:29 2009
 @@ -47,13 +47,26 @@
  # include <semaphore.h>
  # include <fcntl.h>
@@ -976,7 +976,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.8 2009/01/16 16:49:29 kurt 
                  status, "cond_timedwait");
  
  #ifdef ASSERT
-@@ -4705,28 +5039,19 @@ void Parker::unpark() {
+@@ -4705,14 +5039,6 @@ void Parker::unpark() {
  
  extern char** environ;
  
@@ -991,13 +991,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.8 2009/01/16 16:49:29 kurt 
  // Run the specified command in a separate process. Return its exit value,
  // or -1 on failure (e.g. can't fork a new process).
  // Unlike system(), this function can be called from signal handler. It
- // doesn't block SIGINT et al.
- int os::fork_and_exec(char* cmd) {
--  const char * argv[4] = {"sh", "-c", cmd, NULL};
-+  char * const argv[4] = {"sh", "-c", cmd, NULL};
- 
-   // fork() in BsdThreads/NPTL is not async-safe. It needs to run
-   // pthread_atfork handlers and reset pthread library. All we need is a
+@@ -4725,8 +5051,7 @@ int os::fork_and_exec(char* cmd) {
    // separate process to execve. Make a direct syscall to fork process.
    // On IA64 there's no fork syscall, we have to use fork() and hope for
    // the best...
@@ -1013,7 +1007,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.8 2009/01/16 16:49:29 kurt 
      // above.
 -    NOT_IA64(syscall(__NR_execve, "/bin/sh", argv, environ);)
 -    IA64_ONLY(execve("/bin/sh", (char* const*)argv, environ);)
-+    execve("/bin/sh", argv, environ);
++    execve("/bin/sh", (char* const*)argv, environ);
  
      // execve failed
      _exit(-1);
