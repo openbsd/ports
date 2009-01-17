@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/05/22 19:25:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/01/17 12:30:08 jakemsr Exp $
 @pkgpath ${BASE_PKGPATH},ldap
 @pkgpath ${BASE_PKGPATH},ldap,sasl
 @pkgpath ${BASE_PKGPATH},ldap,sasl,sdl
@@ -174,8 +174,7 @@ include/ptlib/videoio1394dc.h
 lib/pwlib/
 lib/pwlib/devices/
 lib/pwlib/devices/sound/
-lib/pwlib/devices/sound/esd_pwplugin.so
-lib/pwlib/devices/sound/oss_pwplugin.so
+lib/pwlib/devices/sound/libsndio_pwplugin.so
 lib/pwlib/devices/videoinput/
 lib/pwlib/devices/videoinput/bsdvideo_pwplugin.so
 lib/pwlib/devices/videoinput/v4l2_pwplugin.so

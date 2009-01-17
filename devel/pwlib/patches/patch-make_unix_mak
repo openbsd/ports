@@ -1,16 +1,16 @@
-$OpenBSD: patch-make_unix_mak,v 1.3 2008/09/08 17:17:10 ajacoutot Exp $
---- make/unix.mak.orig	Fri Oct 19 08:22:33 2007
-+++ make/unix.mak	Mon Sep  8 18:05:20 2008
+$OpenBSD: patch-make_unix_mak,v 1.4 2009/01/17 12:30:08 jakemsr Exp $
+--- make/unix.mak.orig	Thu Oct 18 23:22:33 2007
++++ make/unix.mak	Sat Jan 17 03:54:23 2009
 @@ -454,7 +454,7 @@ endif # P_SHAREDLIB
  
  
  STATIC_LIBS	:= libstdc++.a libg++.a libm.a libc.a
 -SYSLIBDIR	:= $(shell $(PWLIBDIR)/make/ptlib-config --libdir)
-+SYSLIBDIR	:= $(shell !!PREFIX!!/bin/ptlib-config --libdir)
++SYSLIBDIR	:= $(shell /usr/local/bin/ptlib-config --libdir)
  
  endif # linux
  
-@@ -481,7 +481,7 @@ endif # FreeBSD
+@@ -481,14 +481,13 @@ endif # FreeBSD
  ifeq ($(OSTYPE),OpenBSD)
  
  ifeq ($(MACHTYPE),x86)
@@ -18,8 +18,8 @@ $OpenBSD: patch-make_unix_mak,v 1.3 2008/09/08 17:17:10 ajacoutot Exp $
 +#STDCCFLAGS	+= -m486
  endif
  
- LDLIBS		+= -lossaudio
-@@ -489,6 +489,7 @@ LDLIBS		+= -lossaudio
+-LDLIBS		+= -lossaudio
+-
  P_USE_RANLIB		:= 1
  #STDCCFLAGS      += -DP_USE_PRAGMA		# migrated to configure
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-make_unix_mak,v 1.3 2008/09/08 17:17:10 ajacoutot Exp $
  
  endif # OpenBSD
  
-@@ -503,7 +504,7 @@ endif
+@@ -503,7 +502,7 @@ endif
  
  LDLIBS		+= -lossaudio
  
@@ -36,7 +36,7 @@ $OpenBSD: patch-make_unix_mak,v 1.3 2008/09/08 17:17:10 ajacoutot Exp $
  
  # enable the USE_PTH line to compile using pth
  # enable the USE_NATIVE_THREADS line to compile using native threads
-@@ -908,11 +909,11 @@ LIB_SUFFIX	= $(SHAREDLIBEXT)
+@@ -908,11 +907,11 @@ LIB_SUFFIX	= $(SHAREDLIBEXT)
  LIB_TYPE	=
  else   
  LIB_SUFFIX	= a 
@@ -50,7 +50,7 @@ $OpenBSD: patch-make_unix_mak,v 1.3 2008/09/08 17:17:10 ajacoutot Exp $
  endif
  
  ifndef INSTALLBIN_DIR
-@@ -950,8 +951,10 @@ endif
+@@ -950,8 +949,10 @@ endif
  PW_LIBDIR	= $(PWLIBDIR)/lib
  
  # set name of the PT library
@@ -62,7 +62,7 @@ $OpenBSD: patch-make_unix_mak,v 1.3 2008/09/08 17:17:10 ajacoutot Exp $
  PT_OBJBASE	= obj_$(PLATFORM_TYPE)_$(OBJDIR_SUFFIX)
  PT_OBJDIR	= $(PW_LIBDIR)/$(PT_OBJBASE)
  
-@@ -983,7 +986,7 @@ ifneq ($(OSTYPE),Darwin)
+@@ -983,7 +984,7 @@ ifneq ($(OSTYPE),Darwin)
    ifeq ($(OSTYPE),solaris)
      OPTCCFLAGS	+= -O3 
    else

@@ -1,0 +1,19 @@
+$OpenBSD: patch-plugins_Makefile_in,v 1.1 2009/01/17 12:30:08 jakemsr Exp $
+--- plugins/Makefile.in.orig	Sat Oct 18 23:00:39 2008
++++ plugins/Makefile.in	Sat Oct 18 23:02:10 2008
+@@ -31,6 +31,15 @@ DEFAULT_SOUND	= sound_esd
+ endif
+ endif
+ 
++HAS_LIBSNDIO	= @HAS_LIBSNDIO@
++
++ifeq (1,$(HAS_LIBSNDIO))
++SUBDIRS += sound_libsndio
++ifeq (,$(DEFAULT_SOUND))
++DEFAULT_SOUND	= sound_libsndio
++endif
++endif
++
+ HAS_SUNAUDIO = @HAS_SUNAUDIO@
+ 
+ ifeq (1,$(HAS_SUNAUDIO))

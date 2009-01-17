@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure,v 1.4 2008/06/17 13:54:09 ajacoutot Exp $
---- configure.orig	Fri Oct 19 08:22:39 2007
-+++ configure	Tue Jun 17 15:52:24 2008
-@@ -2163,7 +2163,7 @@ case "$target_cpu" in
+$OpenBSD: patch-configure,v 1.5 2009/01/17 12:30:08 jakemsr Exp $
+--- configure.orig	Thu Oct 18 23:22:39 2007
++++ configure	Sat Jan 17 04:00:57 2009
+@@ -2102,7 +2102,6 @@ case "$target_os" in
+   openbsd* )       OSTYPE=OpenBSD ;
+ 		   OS_TAG="P_OPENBSD" ;
+                    OSRELEASE="`sysctl -n kern.osrevision`" ;
+-		   ENDLDLIBS="-lossaudio" ;
+                    need_pragma=yes ;
+ 		   ;;
+ 
+@@ -2163,7 +2162,7 @@ case "$target_cpu" in
     x86 | i686 | i586 | i486 | i386 ) MACHTYPE=x86
                     ;;
  
@@ -10,7 +18,7 @@ $OpenBSD: patch-configure,v 1.4 2008/06/17 13:54:09 ajacoutot Exp $
  		   P_64BIT=1 ;
                     LIB64=1 ;
  		   ;;
-@@ -2175,6 +2175,11 @@ case "$target_cpu" in
+@@ -2175,6 +2174,11 @@ case "$target_cpu" in
     sparc )         MACHTYPE=sparc ;
  		   ;;
  
@@ -22,7 +30,7 @@ $OpenBSD: patch-configure,v 1.4 2008/06/17 13:54:09 ajacoutot Exp $
     powerpc )       MACHTYPE=ppc ;
  		   ;;
  
-@@ -4683,13 +4688,13 @@ fi
+@@ -4683,13 +4687,13 @@ fi
  
  
  
@@ -39,7 +47,7 @@ $OpenBSD: patch-configure,v 1.4 2008/06/17 13:54:09 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -4754,8 +4759,12 @@ else
+@@ -4754,8 +4758,12 @@ else
  fi
  
  if test ${HAS_PTHREADS} = yes ; then
@@ -54,7 +62,7 @@ $OpenBSD: patch-configure,v 1.4 2008/06/17 13:54:09 ajacoutot Exp $
  else
    if test ${OSTYPE} = FreeBSD ; then
      HAS_PTHREADS=yes
-@@ -4837,13 +4846,13 @@ _ACEOF
+@@ -4837,13 +4845,13 @@ _ACEOF
  echo "${ECHO_T}no" >&6
    fi
  
@@ -71,7 +79,7 @@ $OpenBSD: patch-configure,v 1.4 2008/06/17 13:54:09 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -5691,22 +5700,12 @@ fi
+@@ -5691,22 +5699,12 @@ fi
  
  
  
@@ -94,7 +102,7 @@ $OpenBSD: patch-configure,v 1.4 2008/06/17 13:54:09 ajacoutot Exp $
  # Check whether --enable-resolver or --disable-resolver was given.
  if test "${enable_resolver+set}" = set; then
    enableval="$enable_resolver"
-@@ -8189,7 +8188,7 @@ if test "${ac_cv_lib_SDL_SDL_CreateYUVOverlay+set}" = 
+@@ -8189,7 +8187,7 @@ if test "${ac_cv_lib_SDL_SDL_CreateYUVOverlay+set}" = 
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
