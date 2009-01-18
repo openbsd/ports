@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_ta_po,v 1.1 2009/01/18 19:16:42 ajacoutot Exp $
+--- po/ta.po.orig	Sun Jan 18 20:01:45 2009
++++ po/ta.po	Sun Jan 18 20:02:03 2009
+@@ -3215,7 +3215,7 @@ msgstr "பணி பெயர் கட்டுப�
+ msgid ""
+ "[Change Theme;gtk-theme-selector.desktop,Set Preferred Applications;default-"
+ "applications.desktop,Add Printer;gnome-cups-manager.desktop]"
+-msgstr "கருப்பொருளை மாற்று ;gtk-theme-selector.desktop,முன்னிருப்பு பயன்பாடுகள் அமை;default-"
++msgstr "[கருப்பொருளை மாற்று ;gtk-theme-selector.desktop,முன்னிருப்பு பயன்பாடுகள் அமை;default-"
+ "applications.desktop,அச்சுப்பொறி சேர்;gnome-cups-manager.desktop]"
+ 
+ #: ../shell/control-center.schemas.in.h:14
