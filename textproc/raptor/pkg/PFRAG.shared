@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/01/18 19:07:05 robert Exp $
+@lib lib/libraptor.so.${LIBraptor_VERSION}
