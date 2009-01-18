@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_cddb_c,v 1.1 2009/01/18 23:34:05 jasper Exp $
+
+Security fix for CVE-2008-5030
+Patch extracted from Debian's 02-cddb-bufferoverflow.dpatch
+
+--- src/cddb.c.orig	Tue Jan 13 17:38:52 2009
++++ src/cddb.c	Tue Jan 13 17:40:28 2009
+@@ -1052,7 +1052,7 @@ cddb_query(int cd_desc, int sock,
+     }
+ 	   
+     query->query_matches = 0;
+-    while(!cddb_read_line(sock, inbuffer, 256)) {
++    while(query->query_matches < MAX_INEXACT_MATCHES && !cddb_read_line(sock, inbuffer, 256)) {
+       slashed = 0;
+       if(strchr(inbuffer, '/') != NULL && parse_disc_artist) {
+ 	index = 0;
+@@ -1679,7 +1679,7 @@ cddb_read_disc_data(int cd_desc, struct disc_data *out
+       free(file);
+ 	 
+       while(!feof(cddb_data)) {
+-	fgets(inbuffer, 512, cddb_data);			   
++	fgets(inbuffer, 256, cddb_data);			   
+ 	cddb_process_line(inbuffer, data);
+       }
+ 	 

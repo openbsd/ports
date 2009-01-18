@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2008/01/30 14:08:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2009/01/18 23:34:04 jasper Exp $
 
 COMMENT=	multi-platform cd player development library
 DISTNAME=	libcdaudio-0.99.12
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	cdaudio              1.1      # .1.0
 CATEGORIES=	audio
 
@@ -9,6 +10,7 @@ HOMEPAGE=	http://libcdaudio.sourceforge.net/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# LGPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
