@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.664 2009/01/11 22:51:51 landry Exp $
+# $OpenBSD: Makefile,v 1.665 2009/01/18 20:05:12 djm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -635,6 +635,7 @@
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
      SUBDIR += py-asn1
+     SUBDIR += py-babel
      SUBDIR += py-buildbot
      SUBDIR += py-cheetah
      SUBDIR += py-configobj
@@ -645,6 +646,7 @@
      SUBDIR += py-fpconst
      SUBDIR += py-gdata
      SUBDIR += py-gobject
+     SUBDIR += py-html5lib
      SUBDIR += py-kid
      SUBDIR += py-logilab-astng
      SUBDIR += py-logilab-common
