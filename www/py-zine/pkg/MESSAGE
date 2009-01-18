@@ -1,0 +1,5 @@
+Various server adapters (CGI, FastCGI, WSGI) are available under
+${LOCALBASE}/share/zine/servers/
+
+To run zine as a standalone dedicated server for testing, use
+${LOCALBASE}/share/zine/scripts/server
