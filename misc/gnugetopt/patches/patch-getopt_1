@@ -1,6 +1,6 @@
-$OpenBSD: patch-getopt_1,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
+$OpenBSD: patch-getopt_1,v 1.2 2009/01/18 23:19:15 jasper Exp $
 --- getopt.1.orig	Mon Nov  7 23:16:38 2005
-+++ getopt.1	Thu Nov  2 15:21:45 2006
++++ getopt.1	Mon Jan 19 00:17:18 2009
 @@ -1,14 +1,14 @@
 -.TH GETOPT 1 "May 31, 1997" Linux ""
 +.TH GNUGETOPT 1 "May 31, 1997" Linux ""
@@ -77,7 +77,7 @@ $OpenBSD: patch-getopt_1,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
  that does not start with
  a 
  .RB ` \- ' 
-@@ -121,10 +121,10 @@ options are parsed and output is generat
+@@ -121,10 +121,10 @@ options are parsed and output is generated (see sectio
  .B SCANNING MODES
  for details).
  .IP "\-q, \-\-quiet"
@@ -90,7 +90,7 @@ $OpenBSD: patch-getopt_1,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
  unless you also use 
  .IR \-q .
  .IP "\-s, \-\-shell shell"
-@@ -144,7 +144,7 @@ characters can cause havoc in this mode 
+@@ -144,7 +144,7 @@ characters can cause havoc in this mode (like they do 
  implementations).
  .IP "\-T \-\-test"
  Test if your 
@@ -108,7 +108,7 @@ $OpenBSD: patch-getopt_1,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
  (the 
  .I parameters 
  in the 
-@@ -170,7 +170,7 @@ generated. These parameters were typical
+@@ -170,7 +170,7 @@ generated. These parameters were typically the paramet
  was called with. 
  Care must be taken that each parameter the shell function was
  called with corresponds to exactly one parameter in the parameter list of
@@ -117,7 +117,7 @@ $OpenBSD: patch-getopt_1,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
  (see the 
  .BR EXAMPLES ). 
  All parsing is done by the GNU 
-@@ -355,14 +355,14 @@ parameter is still generated, but it wil
+@@ -355,14 +355,14 @@ parameter is still generated, but it will always be th
  this mode.
  .SH COMPATIBILITY
  This version of 

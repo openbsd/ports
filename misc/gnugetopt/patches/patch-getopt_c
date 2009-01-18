@@ -1,6 +1,6 @@
-$OpenBSD: patch-getopt_c,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
+$OpenBSD: patch-getopt_c,v 1.2 2009/01/18 23:19:15 jasper Exp $
 --- getopt.c.orig	Mon Nov  7 23:17:01 2005
-+++ getopt.c	Fri Nov  3 14:18:16 2006
++++ getopt.c	Mon Jan 19 00:17:18 2009
 @@ -88,7 +88,7 @@ void *our_malloc(size_t size)
  {
  	void *ret=malloc(size);
@@ -10,7 +10,7 @@ $OpenBSD: patch-getopt_c,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
  		exit(3);
  	}
  	return(ret);
-@@ -98,7 +98,7 @@ void *our_realloc(void *ptr, size_t size
+@@ -98,7 +98,7 @@ void *our_realloc(void *ptr, size_t size)
  {
  	void *ret=realloc(ptr,size);
  	if (! ret && size) {
@@ -19,7 +19,7 @@ $OpenBSD: patch-getopt_c,v 1.1.1.1 2006/11/03 13:25:02 bernd Exp $
  		exit(3);
  	}
  	return(ret);
-@@ -231,8 +231,8 @@ int generate_output(char * argv[],int ar
+@@ -231,8 +231,8 @@ int generate_output(char * argv[],int argc,const char 
  void parse_error(const char *message)
  {
  	if (message)
