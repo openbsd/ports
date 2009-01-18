@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.6 2008/06/12 01:14:06 kurt Exp $
+@comment $OpenBSD: PLIST-c++,v 1.7 2009/01/18 18:47:05 robert Exp $
 bin/ec++
 bin/eg++
 bin/${CONFIG}-ec++
@@ -176,6 +176,7 @@ include/c++/${V}/ext/memory
 include/c++/${V}/ext/mt_allocator.h
 include/c++/${V}/ext/new_allocator.h
 include/c++/${V}/ext/numeric
+include/c++/${V}/ext/numeric_traits.h
 include/c++/${V}/ext/pb_ds/
 include/c++/${V}/ext/pb_ds/assoc_container.hpp
 include/c++/${V}/ext/pb_ds/detail/

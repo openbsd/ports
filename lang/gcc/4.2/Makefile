@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2008/09/11 19:22:05 martynas Exp $
+# $OpenBSD: Makefile,v 1.24 2009/01/18 18:47:05 robert Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -8,9 +8,9 @@ DATE=20070307
 FULL_VERSION=4.2-${DATE}
 FULL_PKGVERSION=4.2.${DATE}
 
-PKGNAME-main=  gcc-${FULL_PKGVERSION}p8
-PKGNAME-c++ =  g++-${FULL_PKGVERSION}p7
-PKGNAME-estdc= libstdc++-${FULL_PKGVERSION}p4
+PKGNAME-main=  gcc-${FULL_PKGVERSION}p9
+PKGNAME-c++ =  g++-${FULL_PKGVERSION}p8
+PKGNAME-estdc= libstdc++-${FULL_PKGVERSION}p5
 PKGNAME-g77=   g77-${FULL_PKGVERSION}p4
 PKGNAME-f95=   g95-${FULL_PKGVERSION}p7
 PKGNAME-java=  gcj-${FULL_PKGVERSION}p3
@@ -55,7 +55,6 @@ REGRESS_DEPENDS=::devel/dejagnu
 
 
 DISTNAME=   	gcc-${FULL_VERSION}
-
 
 
 MASTER_SITES=	${MASTER_SITE_GCC:=snapshots/$(FULL_VERSION)/}
@@ -131,16 +130,12 @@ CONFIGURE_ARGS+= \
 	--with-ld=/usr/bin/ld \
 	--with-gnu-ld \
 	--with-gnu-as \
+	--enable-sjlj-exceptions \
 	--enable-languages=${LANGS}
 
 # This is needed, as internal cpp is no longer compatible with the
 # visible beast
 CONFIGURE_ARGS+=--enable-cpp
-
-.if ${FLAVOR:L:Mjava}
-CONFIGURE_ARGS+=--enable-sjlj-exceptions
-.endif
-
 
 # if you wish to try your luck
 #CONFIGURE_ARGS+= --enable-threads=posix
