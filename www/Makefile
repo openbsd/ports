@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.373 2009/01/06 12:05:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.374 2009/01/18 20:14:26 djm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -285,6 +285,7 @@
      SUBDIR += py-formencode
      SUBDIR += py-genshi
      SUBDIR += py-httplib2
+     SUBDIR += py-jinja2
      SUBDIR += py-jonpy
      SUBDIR += py-nevow
      SUBDIR += py-paste
@@ -293,6 +294,8 @@
      SUBDIR += py-quixote
      SUBDIR += py-turbogears
      SUBDIR += py-webpy
+     SUBDIR += py-werkzeug
+     SUBDIR += py-zine
      SUBDIR += pyblosxom
      SUBDIR += raggle
      SUBDIR += ratproxy
