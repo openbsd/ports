@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2008/11/16 21:45:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/01/18 18:49:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
-GNOME_VERSION=	0.6.5
+GNOME_VERSION=	0.6.6
 V=		${GNOME_VERSION}
 SHARED_LIBS +=	goffice-0.6          1.0      # .6.5
 CATEGORIES=	devel
@@ -24,7 +24,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 		gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 \
 		gsf-1 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png popt ssl util xml2 z
+		pangoft2-1.0 pcre pixman-1 png popt ssl util xml2 z sndio
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -36,6 +36,9 @@ LIB_DEPENDS=		glade-2.0.>=0.6::devel/libglade2 \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--enable-gtk-doc=no
+
 SUBST_VARS=		V
 
 .include <bsd.port.mk>
