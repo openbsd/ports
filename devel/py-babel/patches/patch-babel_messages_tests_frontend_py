@@ -1,0 +1,16 @@
+$OpenBSD: patch-babel_messages_tests_frontend_py,v 1.1.1.1 2009/01/18 20:01:41 djm Exp $
+--- babel/messages/tests/frontend.py.orig	Thu Jan 15 15:15:22 2009
++++ babel/messages/tests/frontend.py	Thu Jan 15 15:17:47 2009
+@@ -141,12 +141,6 @@ msgid_plural "foobars"
+ msgstr[0] ""
+ msgstr[1] ""
+ 
+-#: project/CVS/this_wont_normally_be_here.py:11
+-msgid "FooBar"
+-msgid_plural "FooBars"
+-msgstr[0] ""
+-msgstr[1] ""
+-
+ """ % {'version': VERSION,
+        'year': time.strftime('%Y'),
+        'date': format_datetime(datetime.now(LOCALTZ), 'yyyy-MM-dd HH:mmZ',

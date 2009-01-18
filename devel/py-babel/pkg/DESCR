@@ -1,0 +1,4 @@
+Babel is composed of two major parts: tools to build and work with
+gettext message catalogs, and a Python interface to the CLDR (Common
+Locale Data Repository), providing access to various locale display
+names, localized number and date formatting, etc.
