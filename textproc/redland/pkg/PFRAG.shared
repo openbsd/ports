@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/01/18 19:05:35 robert Exp $
+@lib lib/librasqal.so.${LIBrasqal_VERSION}
+@lib lib/librdf.so.${LIBrdf_VERSION}

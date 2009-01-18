@@ -1,0 +1,117 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/18 19:05:35 robert Exp $
+%%SHARED%%
+bin/rasqal-config
+@bin bin/rdfproc
+bin/redland-config
+@bin bin/redland-db-upgrade
+@bin bin/roqet
+include/librdf.h
+include/rasqal/
+include/rasqal/rasqal.h
+include/rdf_concepts.h
+include/rdf_digest.h
+include/rdf_hash.h
+include/rdf_init.h
+include/rdf_iterator.h
+include/rdf_log.h
+include/rdf_model.h
+include/rdf_node.h
+include/rdf_parser.h
+include/rdf_query.h
+include/rdf_serializer.h
+include/rdf_statement.h
+include/rdf_storage.h
+include/rdf_stream.h
+include/rdf_uri.h
+include/rdf_utf8.h
+include/redland.h
+lib/librasqal.a
+lib/librasqal.la
+lib/librdf.a
+lib/librdf.la
+lib/pkgconfig/
+lib/pkgconfig/rasqal.pc
+lib/pkgconfig/redland.pc
+lib/redland/
+@man man/man1/rasqal-config.1
+@man man/man1/rdfproc.1
+@man man/man1/redland-config.1
+@man man/man1/redland-db-upgrade.1
+@man man/man1/roqet.1
+@man man/man3/librasqal.3
+@man man/man3/redland.3
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/rasqal/
+share/gtk-doc/html/rasqal/home.png
+share/gtk-doc/html/rasqal/index.html
+share/gtk-doc/html/rasqal/index.sgml
+share/gtk-doc/html/rasqal/ix01.html
+share/gtk-doc/html/rasqal/left.png
+share/gtk-doc/html/rasqal/pt01.html
+share/gtk-doc/html/rasqal/rasqal-section-data.html
+share/gtk-doc/html/rasqal/rasqal-section-expression.html
+share/gtk-doc/html/rasqal/rasqal-section-general.html
+share/gtk-doc/html/rasqal/rasqal-section-graph-pattern.html
+share/gtk-doc/html/rasqal/rasqal-section-literal.html
+share/gtk-doc/html/rasqal/rasqal-section-prefix.html
+share/gtk-doc/html/rasqal/rasqal-section-query-results-formatter.html
+share/gtk-doc/html/rasqal/rasqal-section-query-results.html
+share/gtk-doc/html/rasqal/rasqal-section-query.html
+share/gtk-doc/html/rasqal/rasqal-section-triple.html
+share/gtk-doc/html/rasqal/rasqal-section-triples-source.html
+share/gtk-doc/html/rasqal/rasqal-section-variable.html
+share/gtk-doc/html/rasqal/rasqal-section-xsd.html
+share/gtk-doc/html/rasqal/rasqal.devhelp
+share/gtk-doc/html/rasqal/rasqal.devhelp2
+share/gtk-doc/html/rasqal/rasqal.html
+share/gtk-doc/html/rasqal/right.png
+share/gtk-doc/html/rasqal/style.css
+share/gtk-doc/html/rasqal/up.png
+share/gtk-doc/html/redland/
+share/gtk-doc/html/redland/home.png
+share/gtk-doc/html/redland/index.html
+share/gtk-doc/html/redland/index.sgml
+share/gtk-doc/html/redland/indexes.html
+share/gtk-doc/html/redland/introduction.html
+share/gtk-doc/html/redland/left.png
+share/gtk-doc/html/redland/objects.html
+share/gtk-doc/html/redland/redland-concepts.html
+share/gtk-doc/html/redland/redland-digest.html
+share/gtk-doc/html/redland/redland-files.html
+share/gtk-doc/html/redland/redland-hash.html
+share/gtk-doc/html/redland/redland-heuristics.html
+share/gtk-doc/html/redland/redland-iterator.html
+share/gtk-doc/html/redland/redland-list.html
+share/gtk-doc/html/redland/redland-log.html
+share/gtk-doc/html/redland/redland-model.html
+share/gtk-doc/html/redland/redland-node.html
+share/gtk-doc/html/redland/redland-parser.html
+share/gtk-doc/html/redland/redland-query-results.html
+share/gtk-doc/html/redland/redland-query.html
+share/gtk-doc/html/redland/redland-serializer.html
+share/gtk-doc/html/redland/redland-statement.html
+share/gtk-doc/html/redland/redland-storage-module-file.html
+share/gtk-doc/html/redland/redland-storage-module-hashes.html
+share/gtk-doc/html/redland/redland-storage-module-memory.html
+share/gtk-doc/html/redland/redland-storage-module-mysql.html
+share/gtk-doc/html/redland/redland-storage-module-postgresql.html
+share/gtk-doc/html/redland/redland-storage-module-sqlite.html
+share/gtk-doc/html/redland/redland-storage-module-tstore.html
+share/gtk-doc/html/redland/redland-storage-module-uri.html
+share/gtk-doc/html/redland/redland-storage-modules.html
+share/gtk-doc/html/redland/redland-storage.html
+share/gtk-doc/html/redland/redland-stream.html
+share/gtk-doc/html/redland/redland-unicode.html
+share/gtk-doc/html/redland/redland-uri.html
+share/gtk-doc/html/redland/redland-world.html
+share/gtk-doc/html/redland/redland.devhelp
+share/gtk-doc/html/redland/redland.devhelp2
+share/gtk-doc/html/redland/redland.html
+share/gtk-doc/html/redland/reference-manual.html
+share/gtk-doc/html/redland/right.png
+share/gtk-doc/html/redland/style.css
+share/gtk-doc/html/redland/tutorial.html
+share/gtk-doc/html/redland/up.png
+share/redland/
+share/redland/Redland.i
