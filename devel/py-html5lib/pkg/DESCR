@@ -1,0 +1,2 @@
+A python based HTML parser/tokenizer based on the WHATWG HTML5
+specification for maximum compatibility with major desktop web browsers.
