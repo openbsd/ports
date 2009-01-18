@@ -1,14 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2009/01/17 14:36:10 ajacoutot Exp $
-
-# XXX
-# fix gconftool-2 calls in PLIST (remove 2>&1 ; also in gnome-settings-daemon)
-# WARNING: Failed to parse default value `??????????? ??????...`
+# $OpenBSD: Makefile,v 1.47 2009/01/18 18:11:09 ajacoutot Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11

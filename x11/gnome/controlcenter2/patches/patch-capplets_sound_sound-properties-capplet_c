@@ -1,12 +1,12 @@
-$OpenBSD: patch-capplets_sound_sound-properties-capplet_c,v 1.2 2009/01/17 14:36:10 ajacoutot Exp $
+$OpenBSD: patch-capplets_sound_sound-properties-capplet_c,v 1.3 2009/01/18 18:11:09 ajacoutot Exp $
 --- capplets/sound/sound-properties-capplet.c.orig	Wed Sep 24 18:36:23 2008
 +++ capplets/sound/sound-properties-capplet.c	Mon Jan 12 15:32:13 2009
 @@ -845,6 +845,8 @@ setup_devices (void)
  	}
  	add_device (AUDIO_PLAYBACK, "pulsesink", _("PulseAudio Sound Server"), NULL);
  	add_device (AUDIO_CAPTURE, "pulsesrc", _("PulseAudio Sound Server"), NULL);
-+	add_device (AUDIO_PLAYBACK, "libsndiosink", _("LIBSNDIO - OpenBSD libsndio"), NULL);
-+	add_device (AUDIO_CAPTURE, "libsndiosrc", _("LIBSNDIO - OpenBSD libsndio"), NULL);
++	add_device (AUDIO_PLAYBACK, "libsndiosink", _("SNDIO - OpenBSD libsndio"), NULL);
++	add_device (AUDIO_CAPTURE, "libsndiosrc", _("SNDIO - OpenBSD libsndio"), NULL);
  	add_device (AUDIO_CAPTURE, "audiotestsrc wave=triangle is-live=true", _("Test Sound"), NULL);
  	add_device (AUDIO_CAPTURE, "audiotestsrc wave=silence is-live=true", _("Silence"), NULL);
  
