@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/11/23 20:40:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2009/01/18 17:06:15 wcmaier Exp $
 
 COMMENT=	terminal multiplexer
 
-DISTNAME=	tmux-0.5
+DISTNAME=	tmux-0.6
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.sourceforge.net/projects/tmux/
@@ -24,5 +24,9 @@ NO_REGRESS=	Yes
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tmux
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/tmux
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tmux
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/tmux
+	${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/doc/tmux
+	${INSTALL_DATA} ${WRKSRC}/NOTES ${PREFIX}/share/doc/tmux
 
 .include <bsd.port.mk>
