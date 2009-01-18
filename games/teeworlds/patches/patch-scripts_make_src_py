@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_make_src_py,v 1.1.1.1 2009/01/18 17:53:36 ajacoutot Exp $
+--- scripts/make_src.py.orig	Fri Jan 16 17:17:44 2009
++++ scripts/make_src.py	Fri Jan 16 17:18:15 2009
+@@ -34,7 +34,7 @@ os.chdir(root_dir)
+ if 1:
+ 	os.system("svn export svn://svn.teeworlds.com/teeworlds/%s teeworlds" % svn_tree)
+ 	os.chdir("teeworlds")
+-	os.system("python scripts/make_release.py %s src" % version)
++	os.system("${MODPY_BIN} scripts/make_release.py %s src" % version)
+ 	os.chdir(root_dir)
+ 	for f in os.listdir("teeworlds"):
+ 		if "teeworlds" in f and "src" in f and (".zip" in f or ".tar.gz" in f):

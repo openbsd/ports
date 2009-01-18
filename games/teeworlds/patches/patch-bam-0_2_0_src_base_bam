@@ -1,0 +1,12 @@
+$OpenBSD: patch-bam-0_2_0_src_base_bam,v 1.1.1.1 2009/01/18 17:53:36 ajacoutot Exp $
+--- bam-0.2.0/src/base.bam.orig	Fri Jan 16 18:46:07 2009
++++ bam-0.2.0/src/base.bam	Fri Jan 16 18:46:33 2009
+@@ -589,7 +589,7 @@ end
+ @END]]--
+ function OptFindCompiler()
+ 	local check = function(option, settings)
+-		if ExecuteSilent("g++ -v") == 0 then
++		if ExecuteSilent("${CXX} -v") == 0 then
+ 			option.value = "gcc"
+ 		elseif ExecuteSilent("cl") == 0 then
+ 			option.value = "cl"

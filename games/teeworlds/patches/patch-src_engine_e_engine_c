@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_engine_e_engine_c,v 1.1.1.1 2009/01/18 17:53:36 ajacoutot Exp $
+--- src/engine/e_engine.c.orig	Fri Jan 16 17:15:42 2009
++++ src/engine/e_engine.c	Fri Jan 16 17:16:30 2009
+@@ -13,7 +13,7 @@
+ #include "e_linereader.h"
+ 
+ /* compiled-in data-dir path */
+-#define DATA_DIR "data"
++#define DATA_DIR "${PREFIX}/share/teeworlds/data"
+ 
+ static JOBPOOL hostlookuppool;
+ static int engine_find_datadir(char *argv0);

@@ -1,0 +1,21 @@
+$OpenBSD: patch-default_bam,v 1.1.1.1 2009/01/18 17:53:36 ajacoutot Exp $
+--- default.bam.orig	Tue Jan 13 20:36:11 2009
++++ default.bam	Fri Jan 16 18:41:00 2009
+@@ -15,7 +15,7 @@ function Script(name)
+ 	if family == "windows" then
+ 		return str_replace(name, "/", "\\")
+ 	end
+-	return "python " .. name
++	return "${MODPY_BIN} " .. name
+ end
+ 
+ function CHash(output, ...)
+@@ -132,7 +132,7 @@ function build(settings)
+ 		else
+ 			glfw_platform = "x11"
+ 			pa_platform = "unix"
+-			settings.link.libs:Add("pthread")
++			settings.link.flags:Add("-pthread")
+ 		end
+ 	elseif family == "windows" then
+ 		glfw_platform = "win32"
