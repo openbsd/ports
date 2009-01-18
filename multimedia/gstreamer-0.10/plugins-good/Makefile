@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/01/16 02:44:17 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.27 2009/01/18 09:05:19 sturm Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -21,15 +21,15 @@ DISTNAME =		gst-plugins-good-$V
 PKGNAME-main =		gstreamer-plugins-good-$Vp6
 PKGNAME-aalib =		gstreamer-aalib-$Vp0
 PKGNAME-cairo =		gstreamer-cairo-$Vp1
-PKGNAME-gconf =		gstreamer-confelements-$Vp0
-PKGNAME-esd =		gstreamer-esd-$Vp0
+PKGNAME-gconf =		gstreamer-confelements-$Vp1
+PKGNAME-esd =		gstreamer-esd-$Vp1
 PKGNAME-flac =		gstreamer-flac-$Vp0
 PKGNAME-speex =		gstreamer-speex-$Vp0
 PKGNAME-taglib =	gstreamer-taglib-$Vp0
 PKGNAME-dv =		gstreamer-dv-$Vp0
 PKGNAME-jpeg =		gstreamer-jpeg-$Vp0
 PKGNAME-png =		gstreamer-png-$Vp0
-PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp1
+PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp2
 PKGNAME-caca =		gstreamer-libcaca-$Vp0
 PKGNAME-shout =		gstreamer-shoutcast-$Vp0
 PKGNAME-soup =		gstreamer-libsoup-$Vp0
