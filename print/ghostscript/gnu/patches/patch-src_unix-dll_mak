@@ -1,7 +1,18 @@
-$OpenBSD: patch-src_unix-dll_mak,v 1.6 2008/04/01 20:37:01 kili Exp $
+$OpenBSD: patch-src_unix-dll_mak,v 1.7 2009/01/19 12:46:23 kili Exp $
 --- src/unix-dll.mak.orig	Tue Nov 27 23:58:40 2007
-+++ src/unix-dll.mak	Sat Mar 22 22:28:22 2008
-@@ -47,9 +47,9 @@ GS_SONAME_BASE=lib$(GS)
++++ src/unix-dll.mak	Sun Jan 18 13:00:33 2009
+@@ -39,7 +39,9 @@ GSSOC=$(BINDIR)/$(SOBINRELDIR)/$(GSSOC_XENAME)
+ # loader suporting display device using Gtk+
+ GSSOX_XENAME=$(GS)x$(XE)
+ GSSOX_XE=$(BINDIR)/$(GSSOX_XENAME)
+-GSSOX=$(BINDIR)/$(SOBINRELDIR)/$(GSSOX_XENAME)
++GSSOX-Yes=$(BINDIR)/$(SOBINRELDIR)/$(GSSOX_XENAME)
++GSSOX-No=
++GSSOX=$(GSSOX-$(USE_GTK))
+ 
+ # shared library
+ GS_SONAME_BASE=lib$(GS)
+@@ -47,9 +49,9 @@ GS_SONAME_BASE=lib$(GS)
  # GNU/Linux
  GS_SOEXT=so
  GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
@@ -14,7 +25,7 @@ $OpenBSD: patch-src_unix-dll_mak,v 1.6 2008/04/01 20:37:01 kili Exp $
  
  # MacOS X
  #GS_SOEXT=dylib
-@@ -78,11 +78,12 @@ $(GS_SO_MAJOR): $(GS_SO_MAJOR_MINOR)
+@@ -78,11 +80,12 @@ $(GS_SO_MAJOR): $(GS_SO_MAJOR_MINOR)
  
  # Build the small Ghostscript loaders, with Gtk+ and without
  
@@ -31,7 +42,7 @@ $OpenBSD: patch-src_unix-dll_mak,v 1.6 2008/04/01 20:37:01 kili Exp $
  	-L$(BINDIR) -l$(GS) $(SOC_LIBS)
  
  # ------------------------- Recursive make targets ------------------------- #
-@@ -100,7 +101,7 @@ SODEFS=LDFLAGS='$(LDFLAGS) $(LDFLAGS_SO)'\
+@@ -100,7 +103,7 @@ SODEFS=LDFLAGS='$(LDFLAGS) $(LDFLAGS_SO)'\
  
  # Normal shared object
  so: SODIRS
@@ -40,8 +51,11 @@ $OpenBSD: patch-src_unix-dll_mak,v 1.6 2008/04/01 20:37:01 kili Exp $
  
  # Debug shared object
  # Note that this is in the same directory as the normal shared
-@@ -119,10 +120,6 @@ install-so: so
+@@ -117,12 +120,9 @@ install-so: so
+ 	-mkdir -p $(DESTDIR)$(libdir)
+ 	-mkdir -p $(DESTDIR)$(gsincludedir)
  	$(INSTALL_PROGRAM) $(GSSOC) $(DESTDIR)$(bindir)/$(GSSOC_XENAME)
++	[ "$(USE_GTK)" = No ] || \
  	$(INSTALL_PROGRAM) $(GSSOX) $(DESTDIR)$(bindir)/$(GSSOX_XENAME)
  	$(INSTALL_PROGRAM) $(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR_MINOR)
 -	$(RM_) $(DESTDIR)$(libdir)/$(GS_SONAME)

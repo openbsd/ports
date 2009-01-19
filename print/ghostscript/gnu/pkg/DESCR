@@ -4,5 +4,5 @@ many different printers, file formats and some displays.
 
 Flavors:
        a4 - Build with support for A4 page size
-      gtk - Build with Gtk+ support
+      gtk - Build with Gtk+ support (display driver)
    no_x11 - Build without X support

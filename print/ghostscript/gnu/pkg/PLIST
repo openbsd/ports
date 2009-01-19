@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.16 2008/11/19 09:59:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2009/01/19 12:46:23 kili Exp $
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 @pkgpath print/ghostscript/gnu${FLAVOR_STRING},cups
+%%SHARED%%
 bin/bdftops
 bin/dumphint
 bin/dvipdf
@@ -670,4 +671,3 @@ share/ghostscript/${VERSION}/lib/winmaps.ps
 share/ghostscript/${VERSION}/lib/wrfont.ps
 share/ghostscript/${VERSION}/lib/xlatmap
 share/ghostscript/${VERSION}/lib/zeroline.ps
-%%gtk%%
