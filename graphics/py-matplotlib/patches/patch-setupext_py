@@ -1,17 +1,17 @@
-$OpenBSD: patch-setupext_py,v 1.8 2007/10/12 11:07:43 djm Exp $
---- setupext.py.orig	Mon Feb 26 19:30:45 2007
-+++ setupext.py	Wed Sep  5 21:57:56 2007
-@@ -44,6 +44,8 @@ WIN32 - VISUAL STUDIO 7.1 (2003)
- import os
+$OpenBSD: patch-setupext_py,v 1.9 2009/01/19 07:10:28 djm Exp $
+--- setupext.py.orig	Fri Dec 19 15:34:22 2008
++++ setupext.py	Mon Jan 19 16:48:43 2009
+@@ -46,6 +46,8 @@ import re
+ import subprocess
  
  basedir = {
 +    'openbsd3'  : [os.getenv('X11BASE') or '/usr/X11R6', os.getenv('LOCALBASE') or '/usr/local', '/usr',],
 +    'openbsd4'  : [os.getenv('X11BASE') or '/usr/X11R6', os.getenv('LOCALBASE') or '/usr/local', '/usr',],
      'win32'  : ['win32_static',],
-     'linux2' : ['/usr/local', '/usr',],
+     'linux2' : ['/usr/local', '/usr'],
      'linux'  : ['/usr/local', '/usr',],
-@@ -127,6 +129,8 @@ def add_base_flags(module):
- 
+@@ -317,6 +319,8 @@ def check_for_libpng():
+ def add_base_flags(module):
      incdirs = filter(os.path.exists,
                       [os.path.join(p, 'include') for p in basedir[sys.platform] ])
 +    if os.getenv('EXTRA_INCLUDES') is not None:
@@ -19,14 +19,53 @@ $OpenBSD: patch-setupext_py,v 1.8 2007/10/12 11:07:43 djm Exp $
      libdirs = filter(os.path.exists,
                       [os.path.join(p, 'lib')     for p in basedir[sys.platform] ]+
                       [os.path.join(p, 'lib64')     for p in basedir[sys.platform] ] )
-@@ -227,7 +231,9 @@ def add_pygtk_flags(module):
-     pygtkIncludes = getoutput('pkg-config --cflags-only-I pygtk-2.0').split()
-     gtkIncludes = getoutput('pkg-config --cflags-only-I gtk+-2.0').split()
-     includes = pygtkIncludes + gtkIncludes
--    module.include_dirs.extend([include[2:] for include in includes])
-+    list = []
-+    list.extend([include[2:] for include in includes])
-+    module.include_dirs = list + module.include_dirs
+@@ -560,14 +564,16 @@ def check_for_gtk():
+     gotit = False
+     explanation = None
+     try:
+-        import gtk
++	# the following import requires X11 at build time
++        #import gtk
++	gotit = True
+     except ImportError:
+         explanation = 'Building for Gtk+ requires pygtk; you must be able to "import gtk" in your build/install environment'
+     except RuntimeError:
+         explanation = 'pygtk present but import failed'
+     else:
+         version = (2,2,0)
+-        if gtk.pygtk_version < version:
++        if False:
+             explanation = "Error: GTK backend requires PyGTK %d.%d.%d (or later), " \
+                   "%d.%d.%d was detected." % (
+                 version + gtk.pygtk_version)
+@@ -593,8 +599,8 @@ def check_for_gtk():
+         else:
+             pygobject_version = '[pre-pygobject]'
+         print_status("Gtk+", "gtk+: %s, glib: %s, pygtk: %s, pygobject: %s" %
+-                     (ver2str(gtk.gtk_version), ver2str(gobject.glib_version),
+-                      ver2str(gtk.pygtk_version), pygobject_version))
++                     ("unknown", ver2str(gobject.glib_version),
++                      "unknown", pygobject_version))
+     else:
+         print_status("Gtk+", "no")
  
-     pygtkLinker = getoutput('pkg-config --libs pygtk-2.0').split()
-     gtkLinker =  getoutput('pkg-config --libs gtk+-2.0').split()
+@@ -635,7 +641,8 @@ def add_pygtk_flags(module):
+         pygtkIncludes = getoutput('pkg-config --cflags-only-I pygtk-2.0').split()
+         gtkIncludes = getoutput('pkg-config --cflags-only-I gtk+-2.0').split()
+         includes = pygtkIncludes + gtkIncludes
+-        module.include_dirs.extend([include[2:] for include in includes])
++	module.include_dirs = [include[2:] for include in includes] + \
++	    module.include_dirs
+ 
+         pygtkLinker = getoutput('pkg-config --libs pygtk-2.0').split()
+         gtkLinker =  getoutput('pkg-config --libs gtk+-2.0').split()
+@@ -1051,7 +1058,8 @@ so that setup can determine where your libraries are l
+         tcl_lib, tcl_inc, tk_lib, tk_inc = result
+         module.include_dirs.extend([tcl_inc, tk_inc])
+         module.library_dirs.extend([tcl_lib, tk_lib])
+-        module.libraries.extend(['tk' + tk_ver, 'tcl' + tk_ver])
++        module.libraries.extend(['tk' + tk_ver.replace('.', ''),
++	                         'tcl' + tk_ver.replace('.', '')])
+ 
+     return message
+ 
