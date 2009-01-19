@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.9 2008/12/11 15:51:50 martynas Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/19 07:11:42 djm Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT=	fast array and numeric programming library for Python
+COMMENT=		fast array and numeric programming library for Python
 
-DISTNAME=	numpy-1.0.4
-PKGNAME=	py-${DISTNAME}p1
-CATEGORIES=	math devel
+MODPY_EGG_VERSION=	1.2.1
+DISTNAME=		numpy-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME}
+CATEGORIES=		math devel
 
-MAINTAINER=	Damien Miller <djm@openbsd.org>
+HOMEPAGE=		http://numeric.scipy.org/
+
+MAINTAINER=		Damien Miller <djm@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,10 +20,10 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=numpy/}
-HOMEPAGE=	http://numeric.scipy.org/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=numpy/}
 
-MODULES=	lang/python
+MODULES=		lang/python
+MODPY_SETUPTOOLS=	Yes
 
 pre-build:
 	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg
@@ -28,6 +31,5 @@ pre-build:
 do-regress: fake
 	${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
 	    'import numpy ; numpy.testing.NumpyTest(numpy).test(10)'
-
 
 .include <bsd.port.mk>
