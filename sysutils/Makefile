@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2008/12/29 19:52:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.166 2009/01/19 17:05:50 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -22,6 +22,7 @@
      SUBDIR += colortail
      SUBDIR += conky
      SUBDIR += contool
+     SUBDIR += d-feet
      SUBDIR += dmassage
      SUBDIR += dmidecode
      SUBDIR += duplicity
