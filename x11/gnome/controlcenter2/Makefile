@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2009/01/19 09:54:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2009/01/19 16:26:07 ajacoutot Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
@@ -47,7 +47,6 @@ BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
 			::textproc/rarian \
 			::x11/gnome/settings-daemon
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
-			::multimedia/gstreamer-0.10/plugins-good,-esd \
 			::multimedia/gstreamer-0.10/plugins-good,-gconf \
 			::textproc/rarian \
 			::x11/gnome/settings-daemon \
