@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/11/22 21:33:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/01/19 18:50:10 ajacoutot Exp $
 
 COMMENT=		graphical frontend to su (library to the interface)
 
 V=			1.0.7
 DISTNAME=		libgksuui1.0-$V
-PKGNAME=		libgksuui-$Vp1
+PKGNAME=		libgksuui-$Vp2
 SHARED_LIBS=		gksuui1.0         0.0            # .1.0
 CATEGORIES=		sysutils
 
@@ -29,10 +29,12 @@ LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
+
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS= 	--disable-gtk-doc
+CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
+			--enable-gtk-doc=no
 
 post-extract:
 	@perl -pi -e 's,/bin/su,/usr/bin/su,g' ${WRKSRC}/po/*.po
