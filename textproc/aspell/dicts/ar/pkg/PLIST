@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/19 14:16:10 jasper Exp $
+lib/aspell/ar.dat
+lib/aspell/ar_affix.dat
+lib/aspell/l-ar.cmap
+lib/aspell/l-ar.cset
+share/aspell/ar.multi
+share/aspell/ar.rws
+share/aspell/arabic.alias
