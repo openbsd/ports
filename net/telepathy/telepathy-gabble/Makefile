@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2009/01/19 08:57:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/19 10:57:32 jasper Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
 DISTNAME=		telepathy-gabble-0.7.17
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-gabble/}
 
-WANTLIB=	c dbus-1 dbus-glib-1 gcrypt glib-2.0 gobject-2.0 gnutls \
-		gpg-error idn pcre pthread z
+WANTLIB=		c crypto dbus-1 dbus-glib-1 glib-2.0 gobject-2.0 \
+			idn pcre pthread ssl
 
 MODULES=		devel/gettext \
 			lang/python
@@ -17,7 +17,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::devel/py-twisted/words \
 			::net/py-xmpp
 RUN_DEPENDS=		::textproc/libxslt
-LIB_DEPENDS=		loudmouth-1.>=2::net/loudmouth \
+LIB_DEPENDS=		loudmouth-1.>=3::net/loudmouth \
 			telepathy-glib.>=3::net/telepathy/telepathy-glib
 
 USE_GMAKE=		Yes
