@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/19 14:16:46 jasper Exp $
+lib/aspell/fa.dat
+lib/aspell/l-fa.cmap
+lib/aspell/l-fa.cset
+share/aspell/fa-common.multi
+share/aspell/fa-common.rws
+share/aspell/fa-generic.multi
+share/aspell/fa-generic.rws
+share/aspell/fa-scientific.multi
+share/aspell/fa-scientific.rws
+share/aspell/fa.multi
+share/aspell/farsi-common.alias
+share/aspell/farsi-generic.alias
+share/aspell/farsi-scientific.alias
+share/aspell/farsi.alias
+share/aspell/persian-common.alias
+share/aspell/persian-generic.alias
+share/aspell/persian-scientific.alias
+share/aspell/persian.alias
