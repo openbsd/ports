@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 10:23:48 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/01/19 08:01:34 pea Exp $
 @pkgpath net/tightvnc
-bin/Xvnc
-bin/vncconnect
-bin/vncpasswd
+@bin bin/Xvnc
+@bin bin/vncconnect
+@bin bin/vncpasswd
 bin/vncserver
 @man man/man1/Xvnc.1
 @man man/man1/vncconnect.1
@@ -12,10 +12,12 @@ share/vnc/
 share/vnc/classes/
 share/vnc/classes/AuthPanel.class
 share/vnc/classes/ButtonPanel.class
+share/vnc/classes/CapabilityInfo.class
+share/vnc/classes/CapsContainer.class
 share/vnc/classes/ClipboardFrame.class
 share/vnc/classes/DesCipher.class
-share/vnc/classes/HTTPConnectSocket.class
-share/vnc/classes/HTTPConnectSocketFactory.class
+share/vnc/classes/InStream.class
+share/vnc/classes/MemInStream.class
 share/vnc/classes/OptionsFrame.class
 share/vnc/classes/RecordingFrame.class
 share/vnc/classes/ReloginPanel.class
@@ -23,6 +25,8 @@ share/vnc/classes/RfbProto.class
 share/vnc/classes/SessionRecorder.class
 share/vnc/classes/SocketFactory.class
 share/vnc/classes/VncCanvas.class
+share/vnc/classes/VncCanvas2.class
 share/vnc/classes/VncViewer.class
 share/vnc/classes/VncViewer.jar
+share/vnc/classes/ZlibInStream.class
 share/vnc/classes/index.vnc

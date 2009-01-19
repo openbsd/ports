@@ -1,7 +1,7 @@
-$OpenBSD: patch-Xvnc_programs_Xserver_cfb_stipsprc32_s,v 1.1 2003/11/18 22:02:09 sturm Exp $
---- Xvnc/programs/Xserver/cfb/stipsprc32.s.orig	2003-11-18 22:41:28.000000000 +0100
-+++ Xvnc/programs/Xserver/cfb/stipsprc32.s	2003-11-18 22:41:38.000000000 +0100
-@@ -81,7 +81,7 @@ in this Software without prior written a
+$OpenBSD: patch-Xvnc_programs_Xserver_cfb_stipsprc32_s,v 1.2 2009/01/19 08:01:34 pea Exp $
+--- Xvnc/programs/Xserver/cfb/stipsprc32.s.orig	Wed Mar 20 06:16:03 2002
++++ Xvnc/programs/Xserver/cfb/stipsprc32.s	Fri Dec  5 12:37:36 2008
+@@ -81,7 +81,7 @@ in this Software without prior written authorization f
  #define ForEachBits	LY4
  #define NextBits	LY5
  

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2007/11/17 20:39:03 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2009/01/19 08:01:34 pea Exp $
 
 COMMENT-main=	cross-platform remote desktop access
 COMMENT-viewer=	client for cross-platform remote desktop access
 
-VERSION=	1.2.9
-PKGNAME-main=	tightvnc-${VERSION}p1
-PKGNAME-viewer=	tightvnc-viewer-${VERSION}p0
+VERSION=	1.3.9
+PKGNAME-main=	tightvnc-${VERSION}
+PKGNAME-viewer=	tightvnc-viewer-${VERSION}
 DISTNAME=	tightvnc-${VERSION}_unixsrc
 CATEGORIES=	net
 
@@ -40,6 +40,9 @@ LIB_DEPENDS-viewer=	jpeg.>=62.::graphics/jpeg
 
 RUN_DEPENDS-main=	:tightvnc-viewer-${VERSION}:net/tightvnc,-viewer
 WANTLIB-main=		${WANTLIB} m
+
+MAKE_FLAGS=		CC=${CC} \
+			CCOPTIONS="${CFLAGS}"
 
 DOCUMENTATION=	vncserver.man vncpasswd/vncpasswd.man vncconnect/vncconnect.man \
 		Xvnc/programs/Xserver/Xvnc.man vncviewer/vncviewer.man
