@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/12/17 18:47:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/01/19 16:09:06 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.22.2
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	multimedia
 
 HOMEPAGE=	http://www.gnome.org/projects/totem/
@@ -86,7 +86,6 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mxine}
 LIB_DEPENDS+=	xine.>=20::multimedia/xine-lib
-RUN_DEPENDS+=	:xine-lib-esd-*:multimedia/xine-lib,-esd
 CONFIGURE_ARGS+=--enable-xine \
 		--disable-gstreamer
 .else
