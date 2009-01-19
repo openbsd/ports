@@ -1,0 +1,18 @@
+$OpenBSD: patch-loudmouth_lm-ssl-openssl_c,v 1.1 2009/01/19 10:54:27 jasper Exp $
+--- loudmouth/lm-ssl-openssl.c.orig	Mon Jan 19 11:50:51 2009
++++ loudmouth/lm-ssl-openssl.c	Mon Jan 19 11:51:45 2009
+@@ -305,6 +305,14 @@ _lm_ssl_initialize (LmSSL *ssl) 
+ 		g_warning ("SSL_CTX_new() == NULL");
+ 		abort();
+ 	}
++	/* Set the NO_TICKET option on the context to allow for talk to Google Talk 
++	 * which apparently seems to be having a problem handling empty session 
++	 * tickets due to a bug in Java.
++	 *
++	 * See http://twistedmatrix.com/trac/ticket/3463 and
++	 * Loudmouth [#28].
++	 */
++	SSL_CTX_set_options (ssl->ssl_ctx, SSL_OP_NO_TICKET);
+ 	/*if (access("/etc/ssl/cert.pem", R_OK) == 0)
+ 		cert_file = "/etc/ssl/cert.pem";
+ 	if (!SSL_CTX_load_verify_locations(ssl->ssl_ctx,
