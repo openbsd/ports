@@ -1,0 +1,2 @@
+In case of disconnection / frequent reconnections, you should try to 
+disable keep-alive in your account preferences.
