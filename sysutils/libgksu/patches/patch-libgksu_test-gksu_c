@@ -1,4 +1,4 @@
-$OpenBSD: patch-libgksu_test-gksu_c,v 1.1 2008/02/02 20:42:04 jasper Exp $
+$OpenBSD: patch-libgksu_test-gksu_c,v 1.2 2009/01/19 17:42:50 ajacoutot Exp $
 --- libgksu/test-gksu.c.orig	Thu Jan 31 21:00:44 2008
 +++ libgksu/test-gksu.c	Thu Jan 31 21:01:04 2008
 @@ -63,12 +63,12 @@ main (int argc, char **argv)
@@ -6,13 +6,13 @@ $OpenBSD: patch-libgksu_test-gksu_c,v 1.1 2008/02/02 20:42:04 jasper Exp $
  
    context->debug = TRUE;
 -  context->command = g_strdup ("/usr/bin/xterm");
-+  context->command = g_strdup ("/usr/X11R6/bin/xterm");
++  context->command = g_strdup ("${X11BASE}/bin/xterm");
  
    if (try_su)
      {
        printf ("Testing gksu_su...\n");
 -      gksu_su ("/usr/bin/xterm", &error);
-+      gksu_su ("/usr/X11R6/bin/xterm", &error);
++      gksu_su ("${X11BASE}/bin/xterm", &error);
        if (error)
  	fprintf (stderr, "gksu_su failed: %s\n", error->message);
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-libgksu_test-gksu_c,v 1.1 2008/02/02 20:42:04 jasper Exp $
        printf ("Testing gksu_sudo...\n");
        error = NULL;
 -      gksu_sudo ("/usr/bin/xterm", &error);
-+      gksu_sudo ("/usr/X11R6/bin/xterm", &error);
++      gksu_sudo ("${X11BASE}/bin/xterm", &error);
        if (error)
  	fprintf (stderr, "gksu_sudo failed: %s\n", error->message);
  
@@ -30,7 +30,7 @@ $OpenBSD: patch-libgksu_test-gksu_c,v 1.1 2008/02/02 20:42:04 jasper Exp $
        printf ("Testing gksu_run...\n");
        error = NULL;
 -      gksu_run ("/usr/bin/xterm", &error);
-+      gksu_run ("/usr/X11R6/bin/xterm", &error);
++      gksu_run ("${X11BASE}/bin/xterm", &error);
        if (error)
  	fprintf (stderr, "gksu_run failed: %s\n", error->message);
  

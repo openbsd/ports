@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/11/18 11:29:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/01/19 17:42:50 ajacoutot Exp $
 
 COMMENT=		library providing su and sudo functionality
 
 DISTNAME=		libgksu-2.0.7
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		gksu2		0.1	# .0.2
 CATEGORIES=             sysutils
 
@@ -38,12 +39,14 @@ USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gksu2 \
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/libgksu \
 			--enable-gtk-doc="no"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-post-extract:
+pre-configure:
 	@perl -pi -e 's,/bin/su,/usr/bin/su,g' ${WRKSRC}/po/*.po
+	${SUBST_CMD} ${WRKSRC}/libgksu/test-gksu.c
 
 .include <bsd.port.mk>
