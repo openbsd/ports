@@ -1,0 +1,64 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/19 17:03:32 jasper Exp $
+bin/d-feet
+lib/python${MODPY_VERSION}/site-packages/d_feet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/dfeet/
+lib/python${MODPY_VERSION}/site-packages/dfeet/DFeetApp.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/DFeetApp.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/__init__.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/_introspect_parser.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/_introspect_parser.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/__init__.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/addconnectiondialog.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/addconnectiondialog.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busbox.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busbox.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busnamebox.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busnamebox.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busnameinfobox.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busnameinfobox.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busnameview.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/busnameview.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/executemethoddialog.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/executemethoddialog.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/uiloader.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/uiloader.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/wnck_utils.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/_ui/wnck_utils.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/_util.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/_util.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/dbus_introspector.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/dbus_introspector.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/dbus_utils.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/dbus_utils.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/introspect_data.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/introspect_data.pyc
+lib/python${MODPY_VERSION}/site-packages/dfeet/settings.py
+lib/python${MODPY_VERSION}/site-packages/dfeet/settings.pyc
+share/applications/dfeet.desktop
+share/dfeet/
+share/dfeet/addconnectiondialog.ui
+share/dfeet/default-actiongroup.ui
+share/dfeet/executedialog.ui
+share/dfeet/filterbox.ui
+share/dfeet/introspectview.ui
+share/dfeet/mainwindow.ui
+share/dfeet/test-actions.ui
+share/icons/hicolor/16x16/apps/dfeet-icon-default-service.png
+share/icons/hicolor/16x16/apps/dfeet-method-category.png
+share/icons/hicolor/16x16/apps/dfeet-method.png
+share/icons/hicolor/16x16/apps/dfeet-object.png
+share/icons/hicolor/16x16/apps/dfeet-property-category.png
+share/icons/hicolor/16x16/apps/dfeet-property.png
+share/icons/hicolor/16x16/apps/dfeet-read-property.png
+share/icons/hicolor/16x16/apps/dfeet-readwrite-property.png
+share/icons/hicolor/16x16/apps/dfeet-signal-category.png
+share/icons/hicolor/16x16/apps/dfeet-signal.png
+share/icons/hicolor/16x16/apps/dfeet-write-property.png
+share/icons/hicolor/48x48/apps/dfeet-icon.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
