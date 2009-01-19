@@ -1,7 +1,9 @@
-It's either that or we use gcc4.  Revoming this yelds to:
-undefined reference to `std::char_traits<unsigned char>::assign(unsigned char&, unsigned char const&)'
+$OpenBSD: patch-Makefile_in,v 1.2 2009/01/19 09:40:51 ajacoutot Exp $
 
-$OpenBSD: patch-Makefile_in,v 1.1 2008/10/28 11:27:28 ajacoutot Exp $
+main.cc: In function `void <unnamed>::show_examples()':
+main.cc:40: error: no matching function for call to `Glib::ustring::format(
+   std::ios_base&(&)(std::ios_base&), std::_Setprecision, double)'
+
 --- Makefile.in.orig	Mon Oct 27 23:15:21 2008
 +++ Makefile.in	Mon Oct 27 23:15:31 2008
 @@ -207,7 +207,7 @@ target_alias = @target_alias@
