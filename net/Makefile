@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.557 2009/01/20 09:23:24 simon Exp $
+# $OpenBSD: Makefile,v 1.558 2009/01/20 19:06:09 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -331,6 +331,7 @@
      SUBDIR += powerdns
      SUBDIR += proxy-suite
      SUBDIR += psi
+     SUBDIR += ptpd
      SUBDIR += pure-ftpd
      SUBDIR += pure-ftpd,ldap
      SUBDIR += pure-ftpd,mysql
