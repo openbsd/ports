@@ -1,0 +1,2 @@
+The Danga::Socket module provides an event loop and event-driven async
+socket base class which allows you to create high-performance servers.
