@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2008/11/21 18:36:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2009/01/20 23:11:11 ajacoutot Exp $
 
 COMMENT=		libraries for the GNOME project
 
 GNOME_PROJECT=		libgnome
 GNOME_VERSION=		2.24.1
+PKGNAME=		${DISTNAME}p0
+
 SHARED_LIBS +=	gnome-2              2400.1   # .2400.1
 
 # LGPLv2
@@ -19,21 +21,19 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 c crypto dbus-1 dbus-glib-1 \
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		esd.>=2.26::audio/esound \
-			audiofile.>=0::devel/libaudiofile \
-			bonobo-2.>=1,bonobo-activation.>=5::x11/gnome/libbonobo \
+LIB_DEPENDS=		bonobo-2.>=1,bonobo-activation.>=5::x11/gnome/libbonobo \
 			gnomevfs-2.>=1799::x11/gnome/vfs2 \
 			popt::devel/popt
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/libgnome \
-			--disable-schemas-install
+			--disable-schemas-install \
+			--disable-esd \
+			--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/libgnome
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/gnome/* ${PREFIX}/share/examples/libgnome/
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/libgnome/
 
 .include <bsd.port.mk>
 
