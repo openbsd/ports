@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_bytestream-socks5_h,v 1.1 2009/01/20 10:28:28 jasper Exp $
+--- src/bytestream-socks5.h.orig	Tue Jan 20 11:10:53 2009
++++ src/bytestream-socks5.h	Tue Jan 20 11:11:28 2009
+@@ -20,6 +20,13 @@
+ #ifndef __GABBLE_BYTESTREAM_SOCKS5_H__
+ #define __GABBLE_BYTESTREAM_SOCKS5_H__
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
++
++#include <netdb.h>
++
++#include <netinet/in.h>
++
+ #include <stdlib.h>
+ 
+ #include <glib-object.h>

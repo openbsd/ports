@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_gibber_gibber-fd-transport_h,v 1.1 2009/01/20 10:28:28 jasper Exp $
+--- lib/gibber/gibber-fd-transport.h.orig	Tue Jan 20 10:56:59 2009
++++ lib/gibber/gibber-fd-transport.h	Tue Jan 20 11:01:25 2009
+@@ -23,8 +23,12 @@
+ 
+ #include <glib-object.h>
+ 
++#include <sys/types.h>
+ #include <sys/socket.h>
++
+ #include <netdb.h>
++
++#include <netinet/in.h>
+ 
+ #include "gibber-transport.h"
+ 
