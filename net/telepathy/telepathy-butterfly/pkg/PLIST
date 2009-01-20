@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/27 00:04:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/01/20 10:27:15 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/butterfly/
 lib/python${MODPY_VERSION}/site-packages/butterfly/__init__.py
 lib/python${MODPY_VERSION}/site-packages/butterfly/__init__.pyc
@@ -37,6 +37,9 @@ lib/python${MODPY_VERSION}/site-packages/butterfly/handle.pyo
 lib/python${MODPY_VERSION}/site-packages/butterfly/presence.py
 lib/python${MODPY_VERSION}/site-packages/butterfly/presence.pyc
 lib/python${MODPY_VERSION}/site-packages/butterfly/presence.pyo
+lib/python${MODPY_VERSION}/site-packages/butterfly/simple_presence.py
+lib/python${MODPY_VERSION}/site-packages/butterfly/simple_presence.pyc
+lib/python${MODPY_VERSION}/site-packages/butterfly/simple_presence.pyo
 lib/python${MODPY_VERSION}/site-packages/butterfly/util/
 lib/python${MODPY_VERSION}/site-packages/butterfly/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/butterfly/util/__init__.pyc
