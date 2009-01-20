@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2008/12/17 18:47:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/01/20 23:13:31 ajacoutot Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
+
 CATEGORIES=		x11
 
 SHARED_LIBS +=  planner-1            0.0      # .0.0
@@ -18,13 +19,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
-		audiofile bonobo-2 bonobo-activation c cairo crypto \
-		dbus-1 dbus-glib-1 esd expat fontconfig freetype gconf-2 \
+		bonobo-2 bonobo-activation c cairo crypto \
+		dbus-1 dbus-glib-1 expat fontconfig freetype gconf-2 \
 		gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 glib-2.0 \
 		glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomeprint-2-2 gnomevfs-2 gobject-2.0 gpg-error gthread-2.0 \
-		gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		png popt pthread ssl util xml2 z
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		png popt pthread ssl util xml2 z Xcomposite Xdamage gailutil \
+		gio-2.0 pcre pixman-1
 
 MODULES=		devel/gettext \
 			lang/python \

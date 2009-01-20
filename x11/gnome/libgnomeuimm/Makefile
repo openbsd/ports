@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2009/01/14 10:43:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/20 23:13:31 ajacoutot Exp $
 
 COMMENT=		C++ interface for libgnomeui
 
 GNOME_PROJECT=		libgnomeuimm
 GNOME_VERSION=		2.24.0
+PKGNAME=		${DISTNAME}p0
+
 SHARED_LIBS +=	gnomeuimm-2.6        0.0      # .1.4
 
 HOMEPAGE=		http://gtkmm.sourceforge.net/
@@ -16,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 atk-1.0 atkmm-1.6 audiofile bonobo-2 \
+		Xrender art_lgpl_2 atk-1.0 atkmm-1.6 bonobo-2 \
 		bonobo-activation bonoboui-2 cairo cairomm-1.0 crypto \
-		dbus-1 dbus-glib-1 esd expat fontconfig freetype gailutil \
+		dbus-1 dbus-glib-1 expat fontconfig freetype gailutil \
 		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 \
 		giomm-2.4 glade-2.0 glib-2.0 glibmm-2.4 glitz gmodule-2.0 \
 		gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 \

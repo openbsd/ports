@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/01/13 09:18:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/20 23:13:30 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.24.3
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://live.gnome.org/GnomeGames/
 
@@ -15,9 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 atk-1.0 audiofile bonobo-2 bonobo-activation \
+		Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation \
 		bonoboui-2 bz2 c cairo croco-0.6 crypto dbus-1 dbus-glib-1 \
-		esd expat fontconfig freetype gailutil gconf-2 gcrypt \
+		expat fontconfig freetype gailutil gconf-2 gcrypt \
 		gdk-x11-2.0 gdk_pixbuf-2.0 ggz gio-2.0 glib-2.0 glitz \
 		gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 \
 		gobject-2.0 gpg-error gsf-1 gthread-2.0 gtk-x11-2.0 \

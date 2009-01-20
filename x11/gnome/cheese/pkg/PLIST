@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/12 15:22:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/01/20 23:13:30 ajacoutot Exp $
 @bin bin/cheese
 libexec/cheese/
 libexec/cheese/cheese-bugreport.sh
@@ -165,8 +165,6 @@ share/locale/mr/LC_MESSAGES/cheese.mo
 share/locale/nb/LC_MESSAGES/cheese.mo
 share/locale/nl/LC_MESSAGES/cheese.mo
 share/locale/nn/LC_MESSAGES/cheese.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/cheese.mo
 share/locale/or/LC_MESSAGES/cheese.mo
 share/locale/pa/LC_MESSAGES/cheese.mo
@@ -181,13 +179,9 @@ share/locale/ru/LC_MESSAGES/cheese.mo
 share/locale/sl/LC_MESSAGES/cheese.mo
 share/locale/sq/LC_MESSAGES/cheese.mo
 share/locale/sr/LC_MESSAGES/cheese.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/cheese.mo
 share/locale/sv/LC_MESSAGES/cheese.mo
 share/locale/ta/LC_MESSAGES/cheese.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/cheese.mo
 share/locale/th/LC_MESSAGES/cheese.mo
 share/locale/tr/LC_MESSAGES/cheese.mo

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2009/01/19 09:54:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/01/20 23:13:31 ajacoutot Exp $
 
 COMMENT=		GNOME media utilities
 
 GNOME_PROJECT=		gnome-media
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
+
 SHARED_LIBS +=	gnome-media-profiles 0.0      # .0.0
 CATEGORIES=		x11
 
@@ -16,11 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 atk-1.0 audiofile bonobo-2 bonobo-activation \
-		c cairo crypto dbus-1 dbus-glib-1 esd expat fontconfig \
+		Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation \
+		c cairo crypto dbus-1 dbus-glib-1 expat fontconfig \
 		freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
-		gobject-2.0 gthread-2.0 gtk-x11-2.0 sndio m pcre pixman-1 png \
+		gobject-2.0 gthread-2.0 gtk-x11-2.0 m pcre pixman-1 png \
 		popt pthread ssl util xml2 z
 
 MODULES=		devel/gettext \

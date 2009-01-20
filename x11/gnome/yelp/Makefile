@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.33 2009/01/12 17:37:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2009/01/20 23:13:31 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		2.24.0
+PKGNAME=		${DISTNAME}p0
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -13,14 +14,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcursor Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
-		audiofile bonobo-2 bonobo-activation bonoboui-2 bz2 \
-		c cairo crypto dbus-1 dbus-glib-1 esd expat fontconfig \
+		bonobo-2 bonobo-activation bonoboui-2 bz2 \
+		c cairo crypto dbus-1 dbus-glib-1 expat fontconfig \
 		freetype gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gpg-error gthread-2.0 \
 		gtk-x11-2.0 m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 plc4 plds4 png popt pthread ssl stdc++ util xml2 z \
-		Xcomposite Xdamage gailutil gio-2.0 pcre rarian sndio
+		Xcomposite Xdamage gailutil gio-2.0 pcre rarian
 
 MODULES=		devel/gettext \
 			x11/gnome
