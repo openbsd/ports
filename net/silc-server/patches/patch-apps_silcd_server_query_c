@@ -1,0 +1,23 @@
+$OpenBSD: patch-apps_silcd_server_query_c,v 1.1 2009/01/20 22:31:09 sthen Exp $
+--- apps/silcd/server_query.c.orig	Fri Jan 16 22:20:24 2009
++++ apps/silcd/server_query.c	Fri Jan 16 22:22:01 2009
+@@ -396,6 +396,7 @@ void silc_server_query_send_router_reply(void *context
+     /* If this was nick@server query, retry to @serv if the primary router
+        returned error. */
+     if (query->nick_server[0] && !query->dynamic_retry &&
++	server->config->dynamic_server &&
+ 	!silc_server_num_sockets_by_remote(server, query->nick_server,
+ 					   query->nick_server, 706, type)) {
+       SILC_LOG_DEBUG(("Retry query by connecting to %s:%d",
+@@ -936,6 +937,11 @@ void silc_server_query_process(SilcServer server, Silc
+   SilcServerEntry *servers = NULL;
+   SilcUInt32 clients_count = 0, channels_count = 0, servers_count = 0;
+   int i;
++
++  if (!idata) {
++    silc_server_query_free(query);
++    return;
++  }
+ 
+   SILC_LOG_DEBUG(("Processing %s query",
+ 		  silc_get_command_name(query->querycmd)));
