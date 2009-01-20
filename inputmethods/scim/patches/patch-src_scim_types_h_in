@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_scim_types_h_in,v 1.1 2009/01/20 09:25:17 kevlo Exp $
+--- src/scim_types.h.in.orig	Tue Jan 20 13:36:13 2009
++++ src/scim_types.h.in	Tue Jan 20 13:36:41 2009
+@@ -45,7 +45,7 @@ typedef @UINT16@ uint16;
+ typedef @UINT32@ uint32;
+ typedef @UINT64@ uint64;
+ 
+-#ifdef __STDC_ISO_10646__
++#if defined(__STDC_ISO_10646__) || defined(__OpenBSD__)
+     typedef wchar_t ucs4_t;
+ #else
+     typedef uint32 ucs4_t;
