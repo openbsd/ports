@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.556 2009/01/20 08:12:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.557 2009/01/20 09:23:24 simon Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -220,6 +220,7 @@
      SUBDIR += osrtspproxy
      SUBDIR += p5-Chatbot-Eliza
      SUBDIR += p5-DNS-ZoneParse
+     SUBDIR += p5-Danga-Socket
      SUBDIR += p5-Event-RPC
      SUBDIR += p5-Filesys-Virtual-DAAP
      SUBDIR += p5-Geo-IP
