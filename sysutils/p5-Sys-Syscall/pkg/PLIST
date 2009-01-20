@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/20 09:19:23 simon Exp $
+${P5SITE}/Sys/
+${P5SITE}/Sys/Syscall.pm
+@man man/man3p/Sys::Syscall.3p
