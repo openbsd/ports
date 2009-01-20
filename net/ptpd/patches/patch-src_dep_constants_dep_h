@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_dep_constants_dep_h,v 1.1.1.1 2009/01/20 19:05:23 naddy Exp $
+--- src/dep/constants_dep.h.orig	Wed Mar 28 00:09:06 2007
++++ src/dep/constants_dep.h	Sun Oct 26 16:14:54 2008
+@@ -5,7 +5,8 @@
+ 
+ /* platform dependent */
+ 
+-#if !defined(linux) && !defined(__NetBSD__) && !defined(__FreeBSD__)
++#if !defined(linux) && !defined(__NetBSD__) && !defined(__FreeBSD__) && \
++    !defined(__OpenBSD__)
+ #error Not ported to this architecture, please update.
+ #endif
+ 
+@@ -27,7 +28,7 @@
+ #endif /* linux */
+ 
+ 
+-#if defined(__NetBSD__) || defined(__FreeBSD__)
++#if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ # include <sys/types.h>
+ # include <sys/socket.h>
+ # include <netinet/in.h>
+@@ -37,14 +38,21 @@
+ # if defined(__FreeBSD__)
+ #  include <net/ethernet.h>
+ #  include <sys/uio.h>
+-# else
++# endif
++# if defined(__NetBSD__)
+ #  include <net/if_ether.h>
+ # endif
++# if defined(__OpenBSD__)
++#  include <netinet/if_ether.h>
++#  include <sys/uio.h>
++# endif
+ # include <ifaddrs.h>
+ # define IFACE_NAME_LENGTH         IF_NAMESIZE
+ # define NET_ADDRESS_LENGTH        INET_ADDRSTRLEN
+ 
+ # define IFCONF_LENGTH 10
++
++# define BSD_INTERFACE_FUNCTIONS
+ 
+ # define adjtimex ntp_adjtime
+ 

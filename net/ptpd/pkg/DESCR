@@ -1,0 +1,3 @@
+The PTP daemon (PTPd) implements the Precision Time protocol (PTP) as
+defined by the IEEE 1588 standard. PTP was developed to provide very
+precise time coordination of LAN connected computers.

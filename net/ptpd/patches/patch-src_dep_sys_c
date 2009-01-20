@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_dep_sys_c,v 1.1.1.1 2009/01/20 19:05:23 naddy Exp $
+--- src/dep/sys.c.orig	Wed Mar 28 00:09:06 2007
++++ src/dep/sys.c	Tue Oct 28 12:46:32 2008
+@@ -98,16 +98,26 @@ UInteger16 getRand(UInteger32 *seed)
+ 
+ Boolean adjFreq(Integer32 adj)
+ {
++#if defined(__OpenBSD__)
++  int64_t freq;
++#else
+   struct timex t;
++#endif
+   
+   if(adj > ADJ_FREQ_MAX)
+     adj = ADJ_FREQ_MAX;
+   else if(adj < -ADJ_FREQ_MAX)
+     adj = -ADJ_FREQ_MAX;
+   
++#if defined(__OpenBSD__)
++  freq = (int64_t)adj << 32;
++
++  return !adjfreq(&freq, NULL);
++#else
+   t.modes = MOD_FREQUENCY;
+   t.freq = adj*((1<<16)/1000);
+   
+   return !adjtimex(&t);
++#endif
+ }
+ 

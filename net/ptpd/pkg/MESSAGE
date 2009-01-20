@@ -1,0 +1,6 @@
+In order to start ptpd at boot time, add the following lines to
+/etc/rc.local:
+
+if [ -x ${PREFIX}/sbin/ptpd ]; then
+        echo -n ' ptpd';       ${PREFIX}/sbin/ptpd
+fi

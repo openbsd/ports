@@ -1,0 +1,70 @@
+$OpenBSD: patch-src_dep_net_c,v 1.1.1.1 2009/01/20 19:05:23 naddy Exp $
+--- src/dep/net.c.orig	Mon Apr  2 23:57:44 2007
++++ src/dep/net.c	Sun Oct 26 13:38:49 2008
+@@ -8,26 +8,26 @@ Boolean lookupSubdomainAddress(Octet *subdomainName, O
+   
+   /* set multicast group address based on subdomainName */
+   if (!memcmp(subdomainName, DEFAULT_PTP_DOMAIN_NAME, PTP_SUBDOMAIN_NAME_LENGTH))
+-    memcpy(subdomainAddress, DEFAULT_PTP_DOMAIN_ADDRESS, NET_ADDRESS_LENGTH);
++    strncpy(subdomainAddress, DEFAULT_PTP_DOMAIN_ADDRESS, NET_ADDRESS_LENGTH);
+   else if(!memcmp(subdomainName, ALTERNATE_PTP_DOMAIN1_NAME, PTP_SUBDOMAIN_NAME_LENGTH))
+-    memcpy(subdomainAddress, ALTERNATE_PTP_DOMAIN1_ADDRESS, NET_ADDRESS_LENGTH);
++    strncpy(subdomainAddress, ALTERNATE_PTP_DOMAIN1_ADDRESS, NET_ADDRESS_LENGTH);
+   else if(!memcmp(subdomainName, ALTERNATE_PTP_DOMAIN2_NAME, PTP_SUBDOMAIN_NAME_LENGTH))
+-    memcpy(subdomainAddress, ALTERNATE_PTP_DOMAIN2_ADDRESS, NET_ADDRESS_LENGTH);
++    strncpy(subdomainAddress, ALTERNATE_PTP_DOMAIN2_ADDRESS, NET_ADDRESS_LENGTH);
+   else if(!memcmp(subdomainName, ALTERNATE_PTP_DOMAIN3_NAME, PTP_SUBDOMAIN_NAME_LENGTH))
+-    memcpy(subdomainAddress, ALTERNATE_PTP_DOMAIN3_ADDRESS, NET_ADDRESS_LENGTH);
++    strncpy(subdomainAddress, ALTERNATE_PTP_DOMAIN3_ADDRESS, NET_ADDRESS_LENGTH);
+   else
+   {
+     h = crc_algorithm(subdomainName, PTP_SUBDOMAIN_NAME_LENGTH) % 3;
+     switch(h)
+     {
+     case 0:
+-      memcpy(subdomainAddress, ALTERNATE_PTP_DOMAIN1_ADDRESS, NET_ADDRESS_LENGTH);
++      strncpy(subdomainAddress, ALTERNATE_PTP_DOMAIN1_ADDRESS, NET_ADDRESS_LENGTH);
+       break;
+     case 1:
+-      memcpy(subdomainAddress, ALTERNATE_PTP_DOMAIN2_ADDRESS, NET_ADDRESS_LENGTH);
++      strncpy(subdomainAddress, ALTERNATE_PTP_DOMAIN2_ADDRESS, NET_ADDRESS_LENGTH);
+       break;
+     case 2:
+-      memcpy(subdomainAddress, ALTERNATE_PTP_DOMAIN3_ADDRESS, NET_ADDRESS_LENGTH);
++      strncpy(subdomainAddress, ALTERNATE_PTP_DOMAIN3_ADDRESS, NET_ADDRESS_LENGTH);
+       break;
+     default:
+       ERROR("handle out of range for '%s'!\n", subdomainName);
+@@ -229,6 +229,7 @@ Boolean netInit(NetPath *netPath, RunTimeOpts *rtOpts,
+   struct in_addr interfaceAddr, netAddr;
+   struct sockaddr_in addr;
+   struct ip_mreq imr;
++  unsigned char c;
+   char addrStr[NET_ADDRESS_LENGTH];
+   char *s;
+   
+@@ -332,18 +333,18 @@ Boolean netInit(NetPath *netPath, RunTimeOpts *rtOpts,
+   }
+ 
+   /* set socket time-to-live to 1 */
+-  temp = 1;
+-  if( setsockopt(netPath->eventSock, IPPROTO_IP, IP_MULTICAST_TTL, &temp, sizeof(int)) < 0
+-    || setsockopt(netPath->generalSock, IPPROTO_IP, IP_MULTICAST_TTL, &temp, sizeof(int)) < 0 )
++  c = 1;
++  if( setsockopt(netPath->eventSock, IPPROTO_IP, IP_MULTICAST_TTL, &c, sizeof(c)) < 0
++    || setsockopt(netPath->generalSock, IPPROTO_IP, IP_MULTICAST_TTL, &c, sizeof(c)) < 0 )
+   {
+     PERROR("failed to set the multi-cast time-to-live");
+     return FALSE;
+   }
+   
+   /* enable loopback */
+-  temp = 1;
+-  if( setsockopt(netPath->eventSock, IPPROTO_IP, IP_MULTICAST_LOOP, &temp, sizeof(int)) < 0
+-    || setsockopt(netPath->generalSock, IPPROTO_IP, IP_MULTICAST_LOOP, &temp, sizeof(int)) < 0 )
++  c = 1;
++  if( setsockopt(netPath->eventSock, IPPROTO_IP, IP_MULTICAST_LOOP, &c, sizeof(c)) < 0
++    || setsockopt(netPath->generalSock, IPPROTO_IP, IP_MULTICAST_LOOP, &c, sizeof(c)) < 0 )
+   {
+     PERROR("failed to enable multi-cast loopback");
+     return FALSE;
