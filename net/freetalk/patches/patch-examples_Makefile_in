@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_Makefile_in,v 1.1.1.1 2009/01/20 08:11:34 kevlo Exp $
+--- examples/Makefile.in.orig	Tue Jan 20 14:58:44 2009
++++ examples/Makefile.in	Tue Jan 20 15:00:48 2009
+@@ -177,7 +177,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ EXTRA = freetalk.scm daemon.ft hello-world.ft mimic.ft
+ EXTRA_DIST = $(EXTRA)
+-Examplesdir = $(docdir)/examples
++Examplesdir = $(prefix)/share/examples/freetalk
+ Examples_DATA = $(EXTRA)
+ CLEANFILES = *~
+ DISTCLEANFILES = .deps/*.P

@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/20 08:11:34 kevlo Exp $
+@bin bin/freetalk
+@info info/freetalk.info
+@man man/man1/freetalk.1
+share/examples/freetalk/
+share/examples/freetalk/daemon.ft
+share/examples/freetalk/freetalk.scm
+share/examples/freetalk/hello-world.ft
+share/examples/freetalk/mimic.ft
+share/freetalk/
+share/freetalk/extensions/
+share/freetalk/extensions/beep.scm
+share/freetalk/extensions/broadcast.scm
+share/freetalk/extensions/color.scm
+share/freetalk/extensions/connection.scm
+share/freetalk/extensions/dict-buddy.scm
+share/freetalk/extensions/dyn-commands.scm
+share/freetalk/extensions/file-transfer.scm
+share/freetalk/extensions/first-time-run.sh
+share/freetalk/extensions/hacker-romance.scm
+share/freetalk/extensions/history.scm
+share/freetalk/extensions/init.scm
+share/freetalk/extensions/login.scm
+share/freetalk/extensions/loudscream.scm
+share/freetalk/extensions/mr-oxford.scm
+share/freetalk/extensions/pipe.scm
+share/freetalk/extensions/proud-of-freetalk.scm
+share/freetalk/extensions/roster.scm
+share/freetalk/extensions/shell.scm
+share/freetalk/extensions/state.scm
+share/freetalk/extensions/url.scm
+share/freetalk/extensions/utils.scm
+share/locale/en@boldquot/LC_MESSAGES/freetalk.mo
+share/locale/en@quot/LC_MESSAGES/freetalk.mo

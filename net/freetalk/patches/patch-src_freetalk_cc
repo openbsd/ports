@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_freetalk_cc,v 1.1.1.1 2009/01/20 08:11:34 kevlo Exp $
+--- src/freetalk.cc.orig	Tue Jan 20 15:05:10 2009
++++ src/freetalk.cc	Tue Jan 20 15:33:22 2009
+@@ -278,7 +278,8 @@ int ft_msg_iq_last_cb(LmMessage *msg)
+   LmMessageNode *query;
+   
+   char seconds[256];
+-  snprintf( seconds, sizeof(seconds)-1, "%ld", time(NULL) - state.last );
++  snprintf( seconds, sizeof(seconds)-1, "%ld", 
++	    (long int)(time(NULL) - state.last) );
+ 
+   send_msg = lm_message_new_with_sub_type (from,
+ 				      LM_MESSAGE_TYPE_IQ,
