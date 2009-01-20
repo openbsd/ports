@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.555 2009/01/05 21:19:35 steven Exp $
+# $OpenBSD: Makefile,v 1.556 2009/01/20 08:12:55 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -88,6 +88,7 @@
      SUBDIR += fmirror
      SUBDIR += fping
      SUBDIR += freeradius
+     SUBDIR += freetalk
      SUBDIR += ftpcopy
      SUBDIR += ftpsesame
      SUBDIR += gajim
