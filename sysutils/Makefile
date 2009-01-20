@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2009/01/19 17:05:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.167 2009/01/20 09:19:27 simon Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -83,6 +83,7 @@
      SUBDIR += p5-Proc-ProcessTable
      SUBDIR += p5-Proc-Queue
      SUBDIR += p5-Quota
+     SUBDIR += p5-Sys-Syscall
      SUBDIR += p5-UPS-Nut
      SUBDIR += p5-Unix-PID
      SUBDIR += p5-Unix-Statgrab
