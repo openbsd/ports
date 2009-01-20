@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/10/27 16:18:53 jasper Exp $
-@lib lib/libtelepathy-glib.so.${LIBtelepathy-glib_VERSION}

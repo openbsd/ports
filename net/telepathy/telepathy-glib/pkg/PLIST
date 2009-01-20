@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/20 10:24:49 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2009/01/20 10:43:53 jasper Exp $
 include/telepathy-1.0/
 include/telepathy-1.0/telepathy-glib/
 include/telepathy-1.0/telepathy-glib/_gen/
@@ -64,6 +63,7 @@ include/telepathy-1.0/telepathy-glib/text-mixin.h
 include/telepathy-1.0/telepathy-glib/util.h
 lib/libtelepathy-glib.a
 lib/libtelepathy-glib.la
+@lib lib/libtelepathy-glib.so.${LIBtelepathy-glib_VERSION}
 lib/pkgconfig/telepathy-glib.pc
 share/gtk-doc/html/telepathy-glib/
 share/gtk-doc/html/telepathy-glib/TpBaseConnection.html

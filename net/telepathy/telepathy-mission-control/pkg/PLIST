@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/03 21:27:25 kili Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2009/01/20 10:43:53 jasper Exp $
 @bin bin/mc-account
 include/libmcclient/
 include/libmcclient/_gen/
@@ -61,10 +60,13 @@ include/mission-control/mcd-proxy.h
 include/mission-control/mcd-service.h
 lib/libmcclient.a
 lib/libmcclient.la
+@lib lib/libmcclient.so.${LIBmcclient_VERSION}
 lib/libmissioncontrol-client.a
 lib/libmissioncontrol-client.la
+@lib lib/libmissioncontrol-client.so.${LIBmissioncontrol-client_VERSION}
 lib/libmissioncontrol-server.a
 lib/libmissioncontrol-server.la
+@lib lib/libmissioncontrol-server.so.${LIBmissioncontrol-server_VERSION}
 lib/pkgconfig/libmcclient.pc
 lib/pkgconfig/libmissioncontrol.pc
 lib/pkgconfig/mission-control.pc

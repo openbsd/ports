@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/30 22:51:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/20 10:43:54 jasper Exp $
 
 BROKEN= 		needs avahi
 
 COMMENT=		flexible communications framework, local-link component
 
 DISTNAME=		telepathy-salut-0.1.5
+PKGNAME=		${DISTNAME}p0
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-salut/}
 

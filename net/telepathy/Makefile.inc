@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.3 2008/06/26 08:49:37 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2009/01/20 10:43:53 jasper Exp $
+
+SHARED_ONLY?=	Yes
 
 CATEGORIES +=	net/telepathy
 
