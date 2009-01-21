@@ -1,7 +1,7 @@
-$OpenBSD: patch-dynl_c,v 1.1 2004/09/15 19:13:34 espie Exp $
---- dynl.c.orig	Sat Jan 25 16:41:11 2003
-+++ dynl.c	Sun Sep  5 11:41:31 2004
-@@ -424,7 +424,23 @@ SCM l_dyn_call(symb, shl)
+$OpenBSD: patch-dynl_c,v 1.2 2009/01/21 18:30:16 kili Exp $
+--- dynl.c.orig	Thu Jan 31 02:48:03 2008
++++ dynl.c	Sat Nov 29 15:26:11 2008
+@@ -400,7 +400,23 @@ SCM l_dyn_call(symb, shl)
    ASRTER(NIMP(symb) && STRINGP(symb), symb, ARG1, s_call);
    ASRTER(NIMP(shl) && CAR(shl)==tc16_shl, shl, ARG2, s_call);
    DEFER_INTS;
@@ -26,7 +26,7 @@ $OpenBSD: patch-dynl_c,v 1.1 2004/09/15 19:13:34 espie Exp $
    if (!func) {
      char *dlr = dlerror();
      ALLOW_INTS;
-@@ -453,7 +469,23 @@ SCM l_dyn_main_call(symb, shl, args)
+@@ -429,7 +445,23 @@ SCM l_dyn_main_call(symb, shl, args)
    ASRTER(NIMP(symb) && STRINGP(symb), symb, ARG1, s_main_call);
    ASRTER(NIMP(shl) && CAR(shl)==tc16_shl, shl, ARG2, s_main_call);
    DEFER_INTS;
