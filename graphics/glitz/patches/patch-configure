@@ -1,0 +1,48 @@
+$OpenBSD: patch-configure,v 1.1 2009/01/21 12:05:29 ajacoutot Exp $
+--- configure.orig	Wed Jan 21 09:01:59 2009
++++ configure	Wed Jan 21 09:02:21 2009
+@@ -21714,7 +21714,7 @@ echo "${ECHO_T}$xthreads" >&6
+ 
+     if test "x$xthreads" = "xyes"
+     then
+-      GLX_LIBS="$GLX_LIBS -lpthread"
++      GLX_LIBS="$GLX_LIBS -pthread"
+       cat >>confdefs.h <<\_ACEOF
+ #define XTHREADS 1
+ _ACEOF
+@@ -21830,7 +21830,7 @@ echo "${ECHO_T}$use_agl" >&6
+ 
+   if test "x$use_agl" = "xyes"; then
+     save_libs="$LIBS"
+-    LIBS="-lpthread"
++    LIBS="-pthread"
+ 
+     echo "$as_me:$LINENO: checking for PTHREADS" >&5
+ echo $ECHO_N "checking for PTHREADS... $ECHO_C" >&6
+@@ -21892,7 +21892,7 @@ rm -f conftest.err conftest.$ac_objext \
+ 
+     if test "x$use_pthreads" = "xyes"
+     then
+-      AGL_LIBS="$AGL_LIBS -lpthread"
++      AGL_LIBS="$AGL_LIBS -pthread"
+       cat >>confdefs.h <<\_ACEOF
+ #define PTHREADS 1
+ _ACEOF
+@@ -21945,7 +21945,7 @@ if test "x$use_egl" = "xyes"; then
+   EGL_CFLAGS="$EGL_CFLAGS"
+ 
+   save_libs="$LIBS"
+-  LIBS="-lpthread"
++  LIBS="-pthread"
+ 
+   echo "$as_me:$LINENO: checking for PTHREADS" >&5
+ echo $ECHO_N "checking for PTHREADS... $ECHO_C" >&6
+@@ -22007,7 +22007,7 @@ rm -f conftest.err conftest.$ac_objext \
+ 
+   if test "x$use_pthreads" = "xyes"
+   then
+-    EGL_LIBS="$EGL_LIBS -lpthread"
++    EGL_LIBS="$EGL_LIBS -pthread"
+     cat >>confdefs.h <<\_ACEOF
+ #define PTHREADS 1
+ _ACEOF
