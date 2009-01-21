@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.1 2008/10/30 19:25:31 naddy Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2009/01/21 15:14:27 naddy Exp $
 --- configure.ac.orig	Thu May 24 12:51:05 2007
-+++ configure.ac	Wed Oct 29 17:25:35 2008
++++ configure.ac	Wed Jan 21 15:58:57 2009
 @@ -90,9 +90,9 @@ else
                  PROFILE="-g -pg -D__NO_MATH_INLINES -fsigned-char -Ddlsym=dlsym_auto_underscore" ;;
          *)
@@ -14,7 +14,18 @@ $OpenBSD: patch-configure_ac,v 1.1 2008/10/30 19:25:31 naddy Exp $
          esac
  fi
  CFLAGS="$CFLAGS $cflags_save"
-@@ -300,6 +300,11 @@ dnl Check for Sun audio
+@@ -122,10 +122,6 @@ dnl ==============================
+ dnl Check for libraries
+ dnl ==============================
+ 
+-# we link to libpthread just in case one of our plugins does
+-# in which case this is required to avoid problems on dlclose()
+-AC_CHECK_LIB(pthread, pthread_kill)
+-
+ dnl ==============================
+ dnl Checks for header files
+ dnl ==============================
+@@ -300,6 +296,11 @@ dnl Check for Sun audio
  AC_CHECK_HEADERS(sys/audioio.h)
  AM_CONDITIONAL(HAVE_SUN_AUDIO,test "${ac_cv_header_sys_audioio_h}" = yes)
  
@@ -26,7 +37,7 @@ $OpenBSD: patch-configure_ac,v 1.1 2008/10/30 19:25:31 naddy Exp $
  dnl Check for AIX audio
  
  case $host in
-@@ -415,4 +420,4 @@ dnl Plugins get special LDFLAGS
+@@ -415,4 +416,4 @@ dnl Plugins get special LDFLAGS
  AC_SUBST(PLUGIN_LDFLAGS)
  
  
