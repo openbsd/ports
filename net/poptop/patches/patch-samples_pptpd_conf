@@ -1,0 +1,18 @@
+$OpenBSD: patch-samples_pptpd_conf,v 1.1 2009/01/21 16:07:15 giovanni Exp $
+--- samples/pptpd.conf.orig	Tue Mar  4 10:00:06 2008
++++ samples/pptpd.conf	Tue Mar  4 10:00:19 2008
+@@ -31,12 +31,12 @@ option /etc/ppp/options.pptpd
+ #       Suppress the passing of the client's IP address to PPP, which is
+ #       done by default otherwise.
+ #
+-#noipparam
++noipparam
+ 
+ # TAG: logwtmp
+ #	Use wtmp(5) to record client connections and disconnections.
+ #
+-logwtmp
++# logwtmp
+ 
+ # TAG: bcrelay <if>
+ #	Turns on broadcast relay to clients from interface <if>

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2008/01/08 16:50:27 naddy Exp $
---- Makefile.in.orig	Wed Aug  3 09:47:42 2005
-+++ Makefile.in	Tue Jan  8 17:40:03 2008
-@@ -37,7 +37,7 @@ NORMAL_UNINSTALL = :
+$OpenBSD: patch-Makefile_in,v 1.2 2009/01/21 16:07:15 giovanni Exp $
+--- Makefile.in.orig	Mon Apr 16 03:10:27 2007
++++ Makefile.in	Wed Oct  8 09:26:23 2008
+@@ -35,7 +35,7 @@ NORMAL_UNINSTALL = :
  PRE_UNINSTALL = :
  POST_UNINSTALL = :
  EXTRA_PROGRAMS =
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2008/01/08 16:50:27 naddy Exp $
  subdir = .
  DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
  	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
-@@ -77,8 +77,8 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+@@ -75,8 +75,8 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
@@ -21,7 +21,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2008/01/08 16:50:27 naddy Exp $
  man5dir = $(mandir)/man5
  man8dir = $(mandir)/man8
  NROFF = nroff
-@@ -106,7 +106,7 @@ AUTOMAKE = @AUTOMAKE@
+@@ -104,7 +104,7 @@ AUTOMAKE = @AUTOMAKE@
  AWK = @AWK@
  CC = @CC@
  CCDEPMODE = @CCDEPMODE@
@@ -30,3 +30,25 @@ $OpenBSD: patch-Makefile_in,v 1.1 2008/01/08 16:50:27 naddy Exp $
  CPP = @CPP@
  CPPFLAGS = @CPPFLAGS@
  CYGPATH_W = @CYGPATH_W@
+@@ -167,11 +167,11 @@ libdir = @libdir@
+ libexecdir = @libexecdir@
+ localedir = @localedir@
+ localstatedir = @localstatedir@
+-mandir = @mandir@
++mandir = ${PREFIX}/man
+ mkdir_p = @mkdir_p@
+ oldincludedir = @oldincludedir@
+ pdfdir = @pdfdir@
+-prefix = @prefix@
++prefix = ${PREFIX}
+ program_transform_name = @program_transform_name@
+ psdir = @psdir@
+ sbindir = @sbindir@
+@@ -213,7 +213,6 @@ pptpctrl_SOURCES = \
+ pptpd_LDADD = $(XTRALIBS_MGR)
+ pptpctrl_LDADD = $(XTRALIBS_CTRL)
+ bcrelay_SOURCES = bcrelay.c defaults.h our_syslog.h our_getopt.h
+-subdirs = plugins
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 
