@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/18 20:12:01 djm Exp $
+# $OpenBSD: Makefile,v 1.2 2009/01/21 20:31:18 djm Exp $
 
 COMMENT=		personal publishing platform / weblog engine
 
@@ -23,6 +23,7 @@ MODPY_SETUPTOOLS=	Yes
 PKG_ARCH=		*
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--prefix=${LOCALBASE} --python=${MODPY_BIN}
+CONFIGURE_SCRIPT=	${MODPY_BIN} ${WRKSRC}/configure
 
 LIB_DEPENDS=		::databases/py-sqlalchemy \
 			::devel/py-simplejson \
