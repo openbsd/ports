@@ -1,0 +1,11 @@
+$OpenBSD: patch-source_linux_gtksourceview_gtksourceview_Makefile_in,v 1.1 2009/01/21 17:41:59 ajacoutot Exp $
+--- source/linux/gtksourceview/gtksourceview/Makefile.in.orig	Wed Jan 21 17:18:57 2009
++++ source/linux/gtksourceview/gtksourceview/Makefile.in	Wed Jan 21 17:19:13 2009
+@@ -203,7 +203,6 @@ INCLUDES = \
+ 	-DDATADIR=\""$(datadir)"\" 	\
+ 	-DG_LOG_DOMAIN=\"GtkSourceView\"\
+ 	-DG_DISABLE_DEPRECATED 		\
+-	-DGTK_DISABLE_DEPRECATED 	\
+ 	-DGDK_DISABLE_DEPRECATED 	\
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED	\
+ 	-I$(top_srcdir) -I$(srcdir) 	\

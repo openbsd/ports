@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2008/06/04 10:25:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/01/21 17:41:59 ajacoutot Exp $
 
 COMMENT=	visual query tool for MySQL
 
 DISTNAME=	mysql-gui-tools-5.0r12
-PKGNAME=	mysql-query-browser-1.2.12p4
+PKGNAME=	mysql-query-browser-1.2.12p5
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/query-browser/
@@ -18,30 +18,29 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://mysql.serenitynet.com/Downloads/MySQLGUITools/
 
-WANTLIB=	ICE ORBit-2 SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
-		Xcomposite Xdamage \
-		Xrandr Xrender art_lgpl_2 atk-1.0 atkmm-1.6 audiofile \
-		bonobo-2 bonobo-activation bonoboui-2 c cairo cairomm-1.0 \
-		crypto esd expat fontconfig freetype gailutil gconf-2 \
-		gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 glibmm-2.4 glitz \
-		gnome-2 gnomecanvas-2 gnomeui-2 gnome-keyring \
-		gnomevfs-2 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pangomm-1.4 pixman-1 png popt pthread sigc-2.0 ssl stdc++ z
+WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage \
+		Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
+		art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation\
+		bonoboui-2 c cairo cairomm-1.0 crypto dbus-1 expat \
+		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 \
+		gdk_pixbuf-2.0 gio-2.0 giomm-2.4 glade-2.0 glib-2.0 \
+		glibmm-2.4 glitz gmodule-2.0 gnome-2 gnome-keyring \
+		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 \
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pangomm-1.4 pcre pixman-1 png popt pthread sigc-2.0 \
+		ssl stdc++ xml2 z
 
 MODULES=	devel/gettext \
 		textproc/intltool
-BUILD_DEPENDS=	:mysql-gui-common->=5:devel/mysql-gui-common
+BUILD_DEPENDS=	:mysql-gui-common->=5:devel/mysql-gui-common \
+		::x11/gnome/libgnomeprintui # ${WRKSRC}/source/linux/gtksourceview
 RUN_DEPENDS=	:mysql-gui-common->=5:devel/mysql-gui-common \
 		:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	pcre::devel/pcre \
+LIB_DEPENDS=	gtkmm-2.4,atkmm-1.6,gdkmm-2.4::x11/gtk2mm \
+		gnomeui-2.>=2400::x11/gnome/libgnomeui \
+		enchant.>=5::textproc/enchant \
 		mysqlclient_r::databases/mysql \
-		glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0:glib2->=2.6.2:devel/glib2 \
-		glade-2.0::devel/libglade2 \
-		gtkmm-2.4::x11/gtk2mm \
-		xml2.>=6:libxml->=2.6.2:textproc/libxml \
-		gtkhtml-3.14:gtkhtml3->=3.14:www/gtkhtml3 \
-		gnomeprint-2-2.>=1.0::x11/gnome/libgnomeprint \
-		gnomeprintui-2-2.>=1.0::x11/gnome/libgnomeprintui
+		gtkhtml-3.14:gtkhtml3->=3.14:www/gtkhtml3
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -50,7 +49,7 @@ AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--disable-dependency-tracking \
-		 --with-gtkhtml=libgtkhtml-3.14
+		--with-gtkhtml=libgtkhtml-3.14
 CONFIGURE_ENV+= CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ENV+= LDFLAGS=-L${LOCALBASE}/lib
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} \

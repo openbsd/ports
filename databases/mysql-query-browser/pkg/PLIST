@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/12/15 19:18:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/01/21 17:41:59 ajacoutot Exp $
 bin/mysql-query-browser
-bin/mysql-query-browser-bin
-share/applications/
+@bin bin/mysql-query-browser-bin
 share/applications/MySQLQueryBrowser.desktop
 share/mysql-gui/MySQLIcon_QueryBrowser_16x16.png
 share/mysql-gui/MySQLIcon_QueryBrowser_32x32.png
