@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2008/11/22 09:23:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/01/21 15:10:18 ajacoutot Exp $
 
 COMMENT=		themes collection for GNOME
 
@@ -7,6 +7,7 @@ GNOME_VERSION=		2.22.0
 PKGNAME=		${DISTNAME}p4
 CATEGORIES=		x11
 
+# ${WRKSRC}/icon-themes/Neu/scalable/apps/PaxHeaders.6151/
 TAR=			${LOCALBASE}/bin/gtar
 
 # LGPL
