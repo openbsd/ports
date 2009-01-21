@@ -1,0 +1,12 @@
+$OpenBSD: patch-gal_e-table_e-table-utils_c,v 1.1 2009/01/21 13:25:59 ajacoutot Exp $
+--- gal/e-table/e-table-utils.c.orig	Wed Jan 21 14:04:26 2009
++++ gal/e-table/e-table-utils.c	Wed Jan 21 14:04:39 2009
+@@ -25,6 +25,8 @@
+ 
+ #include <libintl.h>		/* This file uses dgettext() but no _() */
+ 
++#include <gtk/gtk.h>
++
+ #include "gal/util/e-util.h"
+ #include "gal/widgets/e-unicode.h"
+ 

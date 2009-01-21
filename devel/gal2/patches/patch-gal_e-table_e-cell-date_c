@@ -1,0 +1,11 @@
+$OpenBSD: patch-gal_e-table_e-cell-date_c,v 1.1 2009/01/21 13:25:59 ajacoutot Exp $
+--- gal/e-table/e-cell-date.c.orig	Wed Jan 21 14:03:39 2009
++++ gal/e-table/e-cell-date.c	Wed Jan 21 14:03:52 2009
+@@ -26,6 +26,7 @@
+ #include <time.h>
+ #include <unistd.h>
+ #include <string.h>
++#include <gtk/gtk.h>
+ 
+ #include "gal/util/e-i18n.h"
+ #include "gal/util/e-util.h"

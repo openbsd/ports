@@ -1,0 +1,11 @@
+$OpenBSD: patch-gal_widgets_e-categories-master-list-array_c,v 1.1 2009/01/21 13:25:59 ajacoutot Exp $
+--- gal/widgets/e-categories-master-list-array.c.orig	Wed Jan 21 14:02:17 2009
++++ gal/widgets/e-categories-master-list-array.c	Wed Jan 21 14:02:32 2009
+@@ -28,6 +28,7 @@
+ #include <libxml/tree.h>
+ #include <libxml/parser.h>
+ #include <libxml/xmlmemory.h>
++#include <gtk/gtk.h>
+ 
+ #include "gal/util/e-i18n.h"
+ #include "gal/util/e-util.h"

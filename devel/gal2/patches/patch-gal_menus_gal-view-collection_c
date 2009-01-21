@@ -1,0 +1,11 @@
+$OpenBSD: patch-gal_menus_gal-view-collection_c,v 1.1 2009/01/21 13:25:59 ajacoutot Exp $
+--- gal/menus/gal-view-collection.c.orig	Wed Jan 21 14:16:45 2009
++++ gal/menus/gal-view-collection.c	Wed Jan 21 14:16:57 2009
+@@ -30,6 +30,7 @@
+ #include <glib.h>
+ #include <libxml/parser.h>
+ #include <libgnome/gnome-util.h>
++#include <gtk/gtk.h>
+ 
+ #include "gal/util/e-i18n.h"
+ #include "gal/util/e-util.h"
