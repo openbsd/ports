@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/20 23:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/01/21 14:15:05 ajacoutot Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
 GNOME_VERSION=		2.24.1
-PKGNAME=		py-gnome-desktop-${VERSION}p0
+PKGNAME=		py-gnome-desktop-${VERSION}p1
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -34,7 +34,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite \
 		startup-notification-1 util wnck-1 xml2 z
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome
+RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome \
+			::x11/gnome/bug-buddy
 LIB_DEPENDS=		gtop-2.0::devel/libgtop2 \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui \
 			rsvg-2.>=20::x11/gnome/librsvg \
