@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zenmap,v 1.6 2008/09/17 18:09:54 kili Exp $
+@comment $OpenBSD: PLIST-zenmap,v 1.7 2009/01/21 17:58:48 giovanni Exp $
 bin/nmapfe
 bin/xnmap
 bin/zenmap
@@ -216,7 +216,6 @@ lib/python${MODPY_VERSION}/site-packages/zenmapGUI/higwidgets/higwindows.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/higwidgets/utils.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/higwidgets/utils.pyc
 @man man/man1/zenmap.1
-share/applications/
 share/applications/zenmap-root.desktop
 share/applications/zenmap.desktop
 share/zenmap/

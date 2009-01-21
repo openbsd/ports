@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2008/09/17 18:09:54 kili Exp $
+# $OpenBSD: Makefile,v 1.82 2009/01/21 17:58:48 giovanni Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
@@ -6,7 +6,7 @@ COMMENT-zenmap=	graphical frontend for nmap
 MODPY_EGG_VERSION=	4.76
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
-PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
+PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}p0
 
 CATEGORIES=	net security
 MASTER_SITES=	http://download.insecure.org/nmap/dist/
@@ -49,6 +49,7 @@ LIB_DEPENDS-zenmap=
 RUN_DEPENDS-main=
 RUN_DEPENDS-zenmap=	::x11/py-gtk2 \
 			::databases/py-sqlite2 \
+			::devel/desktop-file-utils \
 			::net/nmap
 
 NO_REGRESS=	Yes
