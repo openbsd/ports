@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2009/01/20 23:13:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2009/01/21 17:14:42 ajacoutot Exp $
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 SHARED_LIBS +=  gnome-desktop-2      5.8      # .5.16
 SHARED_LIBS +=  gnome-desktop-2      6.0      # .9.4
@@ -44,6 +44,11 @@ CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports" \
 			--disable-scrollkeeper
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# stop systrace spam by avoiding xsltproc to access net
+pre-configure:
+	find ${WRKSRC}/desktop-docs/ -name Makefile.in \
+		-exec perl -pi -e 's,xsltproc,xsltproc --nonet,g' {} \;
 
 .include <bsd.port.mk>
 
