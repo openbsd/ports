@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2008/10/28 13:59:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2009/01/21 10:50:12 ajacoutot Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -17,7 +17,7 @@ PKGNAME-main=	uim-$Vp0
 PKGNAME-gtk=	uim-gtk-$Vp0
 PKGNAME-qt=	uim-qt-$Vp0
 PKGNAME-kde=	uim-kde-$Vp0
-PKGNAME-gnome=	uim-gnome-$Vp0
+PKGNAME-gnome=	uim-gnome-$Vp1
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -85,8 +85,8 @@ LIB_DEPENDS-gnome=uim,gcroots,uim-scm::inputmethods/uim \
 		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 		panel-applet-2::x11/gnome/panel
 WANTLIB-gnome=	${WANTLIB-gtk} ICE SM crypto gthread-2.0 jpeg pthread ssl \
-		ORBit-2 ORBitCosNaming-2 art_lgpl_2 audiofile bonobo-2 \
-		bonobo-activation esd gconf-2 glade-2.0 gnome-2 gnomecanvas-2 \
+		ORBit-2 ORBitCosNaming-2 art_lgpl_2 bonobo-2 \
+		bonobo-activation gconf-2 glade-2.0 gnome-2 gnomecanvas-2 \
 		popt xml2 bonoboui-2 gnome-keyring gnomeui-2 gnomevfs-2 \
 		Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
 		dbus-1 dbus-glib-1 gailutil pcre pixman-1 util

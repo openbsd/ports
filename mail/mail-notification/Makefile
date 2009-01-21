@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2008/12/17 18:42:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2009/01/21 10:50:12 ajacoutot Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-5.4
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		mail
 
 EXTRACT_SUFX=		.tar.bz2
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage \
 		Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
-		art_lgpl_2 atk-1.0 audiofile bonobo-2 \
+		art_lgpl_2 atk-1.0 bonobo-2 \
 		bonobo-activation bonoboui-2 c cairo crypto dbus-1 \
-		dbus-glib-1 esd expat fontconfig freetype gailutil \
+		dbus-glib-1 expat fontconfig freetype gailutil \
 		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 \

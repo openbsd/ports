@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2009/01/19 10:01:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2009/01/21 10:50:12 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.8.4
+PKGNAME=		${DISTNAME}p0
+
 SHARED_LIBS +=	spreadsheet     0.0
 CATEGORIES=    		math
 
@@ -18,13 +20,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender atk-1.0 audiofile bonobo-2 bonobo-activation \
-		bonoboui-2 bz2 c cairo crypto dbus-1 dbus-glib-1 esd \
+		Xrender atk-1.0 bonobo-2 bonobo-activation \
+		bonoboui-2 bz2 c cairo crypto dbus-1 dbus-glib-1 \
 		expat fontconfig freetype gailutil gconf-2 gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 		gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 \
-		gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre perl pixman-1 png popt pthread sndio ssl util z
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pcre perl pixman-1 png popt pthread ssl util z
 
 MODULES=		devel/gettext \
 			x11/gnome

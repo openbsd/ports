@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2008/12/30 20:56:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2009/01/21 10:50:12 ajacoutot Exp $
 
 COMMENT-main=	read microsoft Access MDB
 COMMENT-gmdb=	graphical interface to MDB tools
@@ -47,9 +47,9 @@ RUN_DEPENDS-gmdb=${RUN_DEPENDS} \
 WANTLIB-gmdb=	${WANTLIB} \
 		ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 atk-1.0 audiofile bonobo-2 \
+		Xrender art_lgpl_2 atk-1.0 bonobo-2 \
 		bonobo-activation bonoboui-2 cairo crypto dbus-1 \
-		dbus-glib-1 esd expat fontconfig freetype gailutil \
+		dbus-glib-1 expat fontconfig freetype gailutil \
 		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 glitz \
 		gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \

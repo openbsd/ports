@@ -1,10 +1,10 @@
-#$OpenBSD: Makefile,v 1.20 2008/12/17 18:41:51 jasper Exp $
+#$OpenBSD: Makefile,v 1.21 2009/01/21 10:50:12 ajacoutot Exp $
 
 COMMENT=	Image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	2.10.10
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS=	gthumb	0.0	# .0.0
 
@@ -22,9 +22,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender Xtst Xxf86vm art_lgpl_2 atk-1.0 audiofile \
+		Xrender Xtst Xxf86vm art_lgpl_2 atk-1.0 \
 		bonobo-2 bonobo-activation bonoboui-2 c cairo crypto \
-		dbus-1 dbus-glib-1 esd exif expat fontconfig freetype \
+		dbus-1 dbus-glib-1 exif expat fontconfig freetype \
 		gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 \

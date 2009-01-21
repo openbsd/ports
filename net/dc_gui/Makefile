@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2008/08/25 15:15:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/01/21 10:50:12 ajacoutot Exp $
 
 COMMENT=		GUI for dctc (Direct Connect Text Clone)
 
 V=			0.80
 DISTNAME=		dc_gui2-$V
-PKGNAME=		dc_gui-$V
+PKGNAME=		dc_gui-$Vp0
 CATEGORIES=		net x11
 HOMEPAGE=		http://ac2i.homelinux.com/dctc/
 
@@ -18,12 +18,12 @@ MASTER_SITES=		${HOMEPAGE}
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 atk-1.0 audiofile bonobo-2 bonobo-activation \
-		bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 esd expat \
+		Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation \
+		bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 expat \
 		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
-		idn jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
+		idn m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
 		pixman-1 png popt pthread ssl util xml2 z
 
 MODULES=		devel/gettext
@@ -38,6 +38,7 @@ LIB_DEPENDS=		db:db-4.*:databases/db/v4 \
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
+VMEM_WARNING=		Yes
 
 AUTOCONF_VERSION=	2.57
 
