@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/10/30 09:27:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/01/21 18:28:22 kili Exp $
 @info info/slib.info
 share/slib/
 share/slib/ANNOUNCE
 share/slib/Bev2slib.scm
-share/slib/DrScheme.init
 share/slib/FAQ
 share/slib/README
 share/slib/RScheme.init
@@ -44,6 +43,7 @@ share/slib/dbutil.scm
 share/slib/debug.scm
 share/slib/defmacex.scm
 share/slib/determ.scm
+share/slib/dft.scm
 share/slib/differ.scm
 share/slib/dirs.scm
 share/slib/dwindtst.scm
@@ -52,7 +52,6 @@ share/slib/dynwind.scm
 share/slib/elk.init
 share/slib/eval.scm
 share/slib/factor.scm
-share/slib/fft.scm
 share/slib/fluidlet.scm
 share/slib/format.scm
 share/slib/formatst.scm
@@ -69,23 +68,30 @@ share/slib/html4each.scm
 share/slib/htmlform.scm
 share/slib/http-cgi.scm
 share/slib/jscheme.init
+share/slib/kawa.init
+share/slib/limit.scm
 share/slib/lineio.scm
+share/slib/linterp.scm
 share/slib/logical.scm
 share/slib/macrotst.scm
 share/slib/macwork.scm
 share/slib/manifest.scm
 share/slib/matfile.scm
+share/slib/math-integer.scm
+share/slib/math-real.scm
 share/slib/mbe.scm
 share/slib/minimize.scm
 share/slib/mitscheme.init
 share/slib/mkclrnam.scm
 share/slib/mklibcat.scm
+share/slib/mkpltcat.scm
 share/slib/modular.scm
 share/slib/mulapply.scm
 share/slib/mularg.scm
 share/slib/mwdenote.scm
 share/slib/mwexpand.scm
 share/slib/mwsynrul.scm
+share/slib/mzscheme.init
 share/slib/ncbi-dna.scm
 share/slib/null.scm
 share/slib/obj2str.scm
@@ -93,7 +99,6 @@ share/slib/object.scm
 share/slib/paramlst.scm
 share/slib/peanosfc.scm
 share/slib/phil-spc.scm
-share/slib/plottest.scm
 share/slib/pnm.scm
 share/slib/pp.scm
 share/slib/ppfile.scm
@@ -133,11 +138,15 @@ share/slib/scsh.init
 share/slib/selfset.scm
 share/slib/sierpinski.scm
 share/slib/simetrix.scm
+share/slib/sisc.init
 share/slib/solid.scm
 share/slib/sort.scm
 share/slib/soundex.scm
 share/slib/srfi-1.scm
+share/slib/srfi-11.scm
 share/slib/srfi-2.scm
+share/slib/srfi-23.scm
+share/slib/srfi-61.scm
 share/slib/srfi-8.scm
 share/slib/srfi-9.scm
 share/slib/srfi.scm
@@ -168,4 +177,5 @@ share/slib/vscm.init
 share/slib/withfile.scm
 share/slib/wttest.scm
 share/slib/wttree.scm
+share/slib/xml-parse.scm
 share/slib/yasyn.scm

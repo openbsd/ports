@@ -1,12 +1,21 @@
-$OpenBSD: patch-guile_init,v 1.1 2005/12/05 14:46:01 espie Exp $
---- guile.init.orig	Mon Dec  5 15:31:51 2005
-+++ guile.init	Mon Dec  5 15:32:07 2005
-@@ -124,7 +124,8 @@
- 		   ((NOSVE) ".")
- 		   ((MACOS THINKC) ":")
- 		   ((MS-DOS WINDOWS ATARIST OS/2) "\\")
--		   ((UNIX COHERENT PLAN9 AMIGA) "/"))))
-+		   ((UNIX COHERENT PLAN9 AMIGA) "/")
+$OpenBSD: patch-guile_init,v 1.2 2009/01/21 18:28:22 kili Exp $
+--- guile.init.orig	Mon Dec 24 05:33:08 2007
++++ guile.init	Wed Jan 21 19:10:57 2009
+@@ -68,7 +68,7 @@
+             (and path (substring path 0 (- (string-length path) 10))))
+ 	  ;; Use this path if your scheme does not support GETENV
+ 	  ;; or if SCHEME_LIBRARY_PATH is not set.
+-	  "/usr/lib/slib/"
++	  "${LOCALBASE}/share/slib/"
+ 	  (in-vicinity (implementation-vicinity) "slib/"))))
+     (lambda () library-path)))
+ 
+@@ -131,7 +131,8 @@
+ 		   ((nosve) ".")
+ 		   ((macos thinkc) ":")
+ 		   ((ms-dos windows atarist os/2) "\\")
+-		   ((unix coherent plan9 amiga) "/"))))
++		   ((unix coherent plan9 amiga) "/")
 +		   (else "/"))))
  	    (lambda (vic name)
  	      (string-append vic name *vicinity-suffix*))))))
