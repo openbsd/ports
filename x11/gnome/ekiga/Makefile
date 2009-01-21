@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/01/20 23:13:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/01/21 15:37:24 ajacoutot Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	2.0.12
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 
 CATEGORIES=	net multimedia
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 asn1 atk-1.0 bonobo-2 \
+		Xrender art_lgpl_2 asn1 atk-1.0 audiofile bonobo-2 \
 		bonobo-activation bonoboui-2 c cairo com_err crypto \
 		dbus-1 dbus-glib-1 expat fontconfig freetype \
 		gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
@@ -40,7 +40,8 @@ RUN_DEPENDS=	::textproc/rarian
 LIB_DEPENDS=	gnomeui-2.>=2000::x11/gnome/libgnomeui \
 		opal::net/opal \
 		SDL.>=8::devel/sdl \
-		camel-1.2.>=10,ebook-1.2,edataserver-1.2::databases/evolution-data-server
+		camel-1.2.>=10,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
+		esd.>=2::audio/esound
 
 USE_X11=	Yes
 DESKTOP_FILES=	Yes
