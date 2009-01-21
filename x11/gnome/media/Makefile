@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/01/20 23:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/01/21 14:18:45 ajacoutot Exp $
 
 COMMENT=		GNOME media utilities
 
 GNOME_PROJECT=		gnome-media
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 
 SHARED_LIBS +=	gnome-media-profiles 0.0      # .0.0
 CATEGORIES=		x11
@@ -42,13 +42,12 @@ MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-media \
-			--disable-schemas-install
+			--disable-schemas-install \
+			--disable-esound
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			CDROM_HOST="bsd"
-
-CFLAGS+=		-O0
 
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
