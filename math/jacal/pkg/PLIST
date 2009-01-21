@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/30 11:13:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/01/21 18:31:42 kili Exp $
 bin/jacal
 @info info/jacal.info
 lib/jacal/
@@ -16,7 +16,6 @@ lib/jacal/ff.scm
 lib/jacal/func.scm
 lib/jacal/go.scm
 lib/jacal/grammar.scm
-lib/jacal/guile.scm
 lib/jacal/hensel.scm
 lib/jacal/hist.scm
 lib/jacal/info.scm

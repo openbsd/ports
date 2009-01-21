@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2008/01/04 17:48:36 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2009/01/21 18:31:42 kili Exp $
 
 COMMENT=	symbolics math system
 
 CATEGORIES=	math
 
-V=1b5
-DISTNAME=	jacal$V
-PKGNAME=	jacal-$V
+DISTNAME=	jacal-1b9
 EXTRACT_SUFX=	.zip
 
-HOMEPAGE=	http://swissnet.ai.mit.edu/~jaffer/SCM.html
+HOMEPAGE=	http://people.csail.mit.edu/jaffer/JACAL
 
-MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/scm/
+MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
+		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
 
-# GPL
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
