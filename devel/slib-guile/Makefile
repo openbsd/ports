@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/21 18:32:51 kili Exp $
 
 COMMENT=	slib guile adapter
 
 CATEGORIES=	devel
 
 DISTFILES=
-DISTNAME=	slib-guile-0.0
+DISTNAME=	slib-guile-1.0
 
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
@@ -24,8 +24,9 @@ BUILD_DEPENDS=	::devel/slib \
 		::lang/guile
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/guile
+	${INSTALL_DATA_DIR} ${PREFIX}/share/guile/site
 	# This will fail after generating the correct file...
-	-DESTDIR=${WRKINST} ${LOCALBASE}/bin/guile -c "(use-modules (ice-9 slib)) (require 'new-catalog)"
+	-DESTDIR=${WRKINST} ${LOCALBASE}/bin/guile \
+		-c "(use-modules (ice-9 slib)) (require 'new-catalog)"
 
 .include <bsd.port.mk>
