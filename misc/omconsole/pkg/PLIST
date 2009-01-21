@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1 2009/01/21 20:43:23 matthieu Exp $
+@bin bin/omconsole
+@man man/cat1/omconsole.0
