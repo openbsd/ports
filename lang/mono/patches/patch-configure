@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure,v 1.1 2009/01/21 16:06:59 ajacoutot Exp $
+--- configure.orig	Wed Jan 21 15:49:57 2009
++++ configure	Wed Jan 21 15:50:25 2009
+@@ -29044,13 +29044,13 @@ fi
+ 
+ 		;;
+ 		*)
+-			{ echo "$as_me:$LINENO: checking for main in -lpthread" >&5
+-echo $ECHO_N "checking for main in -lpthread... $ECHO_C" >&6; }
++			{ echo "$as_me:$LINENO: checking for main in -pthread" >&5
++echo $ECHO_N "checking for main in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_main+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -29100,7 +29100,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_main" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_main" >&6; }
+ if test $ac_cv_lib_pthread_main = yes; then
+-  LIBS="$LIBS -lpthread"
++  LIBS="$LIBS -pthread"
+ fi
+ 
+ 		;;

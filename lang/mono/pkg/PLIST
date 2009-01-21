@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/24 07:06:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/01/21 16:06:59 ajacoutot Exp $
 %%SHARED%%
 bin/al
 bin/al1
@@ -977,22 +977,34 @@ lib/pkgconfig/smcs.pc
 @man man/man5/mono-config.5
 share/examples/mono/
 @sample ${SYSCONFDIR}/mono/
+share/examples/mono/1.0/
+@sample ${SYSCONFDIR}/mono/1.0/
+share/examples/mono/1.0/DefaultWsdlHelpGenerator.aspx
+@sample ${SYSCONFDIR}/mono/1.0/DefaultWsdlHelpGenerator.aspx
+share/examples/mono/1.0/machine.config
+@sample ${SYSCONFDIR}/mono/1.0/machine.config
+share/examples/mono/2.0/
+@sample ${SYSCONFDIR}/mono/2.0/
+share/examples/mono/2.0/Browsers/
+@sample ${SYSCONFDIR}/mono/2.0/Browsers/
+share/examples/mono/2.0/Browsers/Compat.browser
+@sample ${SYSCONFDIR}/mono/2.0/Browsers/Compat.browser
+share/examples/mono/2.0/DefaultWsdlHelpGenerator.aspx
+@sample ${SYSCONFDIR}/mono/2.0/DefaultWsdlHelpGenerator.aspx
+share/examples/mono/2.0/machine.config
+@sample ${SYSCONFDIR}/mono/2.0/machine.config
+share/examples/mono/2.0/settings.map
+@sample ${SYSCONFDIR}/mono/2.0/settings.map
+share/examples/mono/2.0/web.config
+@sample ${SYSCONFDIR}/mono/2.0/web.config
 share/examples/mono/browscap.ini
 @sample ${SYSCONFDIR}/mono/browscap.ini
 share/examples/mono/config
 @sample ${SYSCONFDIR}/mono/config
-share/examples/mono/net_1_1/
-@sample ${SYSCONFDIR}/mono/1.0/
-share/examples/mono/net_1_1/DefaultWsdlHelpGenerator.aspx
-@sample ${SYSCONFDIR}/mono/1.0/DefaultWsdlHelpGenerator.aspx
-share/examples/mono/net_1_1/machine.config
-@sample ${SYSCONFDIR}/mono/1.0/machine.config
-share/examples/mono/net_2_0/
-@sample ${SYSCONFDIR}/mono/2.0/
-share/examples/mono/net_2_0/DefaultWsdlHelpGenerator.aspx
-@sample ${SYSCONFDIR}/mono/2.0/DefaultWsdlHelpGenerator.aspx
-share/examples/mono/net_2_0/machine.config
-@sample ${SYSCONFDIR}/mono/2.0/machine.config
+share/examples/mono/mconfig/
+@sample ${SYSCONFDIR}/mono/mconfig/
+share/examples/mono/mconfig/config.xml
+@sample ${SYSCONFDIR}/mono/mconfig/config.xml
 share/jay/
 share/jay/ACKNOWLEDGEMENTS
 share/jay/NEW_FEATURES

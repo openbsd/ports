@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/10/24 07:06:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/21 16:06:59 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	cross platform, open source .NET developement framework
 
 DISTNAME=	mono-2.0
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	lang devel
 SHARED_LIBS=	mono-profiler-aot	0.0 \
 		mono-profiler-cov	0.0 \
@@ -36,7 +36,6 @@ BUILD_DEPENDS=	:bison-*:devel/bison \
 RUN_DEPENDS=	::x11/libgdiplus
 LIB_DEPENDS=	gc::devel/boehm-gc
 
-
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
@@ -50,21 +49,6 @@ REGRESS_TARGET=check
 DLLMAP_FILES=	mcs/class/Managed.Windows.Forms/System.Windows.Forms/MimeIcon.cs \
 		mcs/tools/mono-shlib-cop/mono-shlib-cop.exe.config
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mono
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mono/net_1_1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mono/net_2_0
-
-	${INSTALL_DATA} ${WRKSRC}/data/config \
-		${WRKSRC}/data/browscap.ini \
-		${PREFIX}/share/examples/mono/
-
-	${INSTALL_DATA} ${WRKSRC}/data/net_1_1/DefaultWsdlHelpGenerator.aspx \
-		${WRKSRC}/data/net_1_1/machine.config \
-		${PREFIX}/share/examples/mono/net_1_1/
-
-	${INSTALL_DATA} ${WRKSRC}/data/net_2_0/DefaultWsdlHelpGenerator.aspx \
-		${WRKSRC}/data/net_2_0/machine.config \
-		${PREFIX}/share/examples/mono/net_2_0/
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 
 .include <bsd.port.mk>
