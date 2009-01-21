@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.374 2009/01/18 20:14:26 djm Exp $
+# $OpenBSD: Makefile,v 1.375 2009/01/21 17:35:40 simon Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -179,6 +179,7 @@
      SUBDIR += p5-HTML-Embperl
      SUBDIR += p5-HTML-FillInForm
      SUBDIR += p5-HTML-Format
+     SUBDIR += p5-HTML-FormatText-WithLinks
      SUBDIR += p5-HTML-FromText
      SUBDIR += p5-HTML-Highlight
      SUBDIR += p5-HTML-Lint
