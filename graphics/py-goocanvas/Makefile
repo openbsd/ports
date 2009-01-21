@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2009/01/21 15:13:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/21 15:35:52 jasper Exp $
 
 COMMENT=		Python bindings for goocanvas
 
-V=			0.10.0
-DISTNAME=		pygoocanvas-$V
-PKGNAME=		py-goocanvas-$Vp0
+GNOME_PROJECT=		pygoocanvas
+GNOME_VERSION=		0.12.0
+PKGNAME=		py-goocanvas-${VERSION}
 
 CATEGORIES=		graphics
-
-HOMEPAGE=		http://developer.berlios.de/projects/pygoocanvas/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,10 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=           ${MASTER_SITE_BERLIOS:=pygoocanvas/}
-
 MODULES=		devel/gettext \
-			lang/python
+			lang/python \
+			x11/gnome
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
@@ -31,8 +28,6 @@ BUILD_DEPENDS=		::textproc/libxslt \
 			::x11/py-gtk2
 RUN_DEPENDS=		::x11/py-gtk2
 LIB_DEPENDS=		goocanvas::graphics/goocanvas
-
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-docs
