@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2009/01/20 23:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/01/21 14:36:08 ajacoutot Exp $
 
 COMMENT=	.NET language bindings for assorted GNOME libraries
 
 GNOME_PROJECT=	gnome-sharp
 GNOME_VERSION=	2.20.0
-PKGNAME=	mono-gnome-${VERSION}p6
+PKGNAME=	mono-gnome-${VERSION}p7
 
 CATEGORIES=	x11
 
@@ -39,5 +39,7 @@ DLLMAP_FILES=	art/art-sharp.dll.config \
 		gnome/gnome-sharp.dll.config \
 		gconf/GConf/gconf-sharp.dll.config \
 		gnomevfs/gnome-vfs-sharp.dll.config
+
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
