@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/04/04 02:21:29 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/01/21 13:54:52 merdely Exp $
 @newgroup _privoxy:516
 @newuser _privoxy:516:_privoxy:daemon:Privoxy Account:/nonexistent:/sbin/nologin
 @man man/man1/privoxy.1
-sbin/privoxy
+@bin sbin/privoxy
 share/doc/privoxy/
 share/doc/privoxy/README
 share/examples/privoxy/
@@ -247,6 +247,7 @@ share/examples/privoxy/templates/untrusted
 @sample ${SYSCONFDIR}/privoxy/templates/untrusted
 @owner
 @group
+share/examples/privoxy/templates/url-info-osd.xml
 share/examples/privoxy/user.action
 @owner _privoxy
 @group _privoxy
