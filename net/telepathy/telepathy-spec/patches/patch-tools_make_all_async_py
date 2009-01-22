@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_make_all_async_py,v 1.1.1.1 2007/10/27 16:18:54 jasper Exp $
+$OpenBSD: patch-tools_make_all_async_py,v 1.2 2009/01/22 16:06:05 jasper Exp $
 --- tools/make_all_async.py.orig	Fri Oct 12 16:44:55 2007
 +++ tools/make_all_async.py	Fri Oct 12 16:45:46 2007
 @@ -1,4 +1,4 @@
 -#!/usr/bin/python2.4
-+#!!!MODPY_BIN!!
++#!${MODPY_BIN}
  
  import sys
  
