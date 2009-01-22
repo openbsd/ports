@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/10/27 16:18:54 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2009/01/22 17:14:24 jasper Exp $
 --- configure.orig	Sat Oct 27 16:43:14 2007
 +++ configure	Sat Oct 27 16:43:29 2007
 @@ -21747,7 +21747,7 @@ echo "$as_me: error: dbus-binding-tool (from dbus-glib
@@ -6,7 +6,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/10/27 16:18:54 jasper Exp $
  fi
  PYTHON=
 -for ac_prog in python2.3 python2.4 python2.5 python
-+for ac_prog in python2.5
++for ac_prog in python${MODPY_VERSION}
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2

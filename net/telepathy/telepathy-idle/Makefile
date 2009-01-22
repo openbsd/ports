@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/01/20 10:43:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/22 17:14:24 jasper Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
 DISTNAME=		telepathy-idle-0.1.2
-PKGNAME= 		${DISTNAME}p3
+PKGNAME= 		${DISTNAME}p4
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-idle}
 
@@ -25,5 +25,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			OPENSSL_LIBS="-L/usr/lib -lssl -lcrypto" \
 			OPENSSL_CFLAGS="-I/usr/include" \
 			PYTHON="${MODPY_BIN}"
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>
