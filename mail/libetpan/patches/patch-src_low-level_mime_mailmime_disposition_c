@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_low-level_mime_mailmime_disposition_c,v 1.1 2009/01/22 20:07:20 jasper Exp $
+--- src/low-level/mime/mailmime_disposition.c.orig	Thu Jan 22 20:52:23 2009
++++ src/low-level/mime/mailmime_disposition.c	Thu Jan 22 20:52:33 2009
+@@ -42,6 +42,7 @@
+ 
+ #include <ctype.h>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ static int
+ mailmime_disposition_parm_parse(const char * message, size_t length,
