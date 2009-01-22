@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/19 07:11:42 djm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/01/22 19:23:10 wcmaier Exp $
 bin/f2py${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/numpy/
-lib/python${MODPY_VERSION}/site-packages/numpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/numpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/numpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/numpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/numpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/numpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/numpy/COMPATIBILITY
 lib/python${MODPY_VERSION}/site-packages/numpy/DEV_README.txt
 lib/python${MODPY_VERSION}/site-packages/numpy/INSTALL.txt

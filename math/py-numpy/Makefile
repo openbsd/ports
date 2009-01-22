@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/01/19 07:11:42 djm Exp $
+# $OpenBSD: Makefile,v 1.11 2009/01/22 19:23:10 wcmaier Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		fast array and numeric programming library for Python
 
 MODPY_EGG_VERSION=	1.2.1
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
+PKGNAME=		py-${DISTNAME}p0
 CATEGORIES=		math devel
 
 HOMEPAGE=		http://numeric.scipy.org/
@@ -24,6 +24,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=numpy/}
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
+MODPY_SETUP=		setupegg.py
 
 pre-build:
 	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg
