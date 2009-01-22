@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/01/20 23:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/22 18:41:17 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.22.2
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 CATEGORIES=	multimedia
 
 HOMEPAGE=	http://www.gnome.org/projects/totem/
@@ -47,6 +47,9 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		galago::net/libgalago \
 		gnomeui-2::x11/gnome/libgnomeui \
 		nautilus-extension::x11/gnome/nautilus
+
+# gst-inspect-0.10 needs to access ${HOME}
+PORTHOME=	${WRKDIR}
 
 USE_X11=	Yes
 DESKTOP_FILES=	Yes
@@ -93,20 +96,28 @@ WANTLIB+=	gstbase-0.10 gstreamer-0.10
 LIB_DEPENDS+=	gstaudio-0.10,gstinterfaces-0.10,gstpbutils-0.10,gstvideo-0.10::multimedia/gstreamer-0.10/plugins-base
 # while the following are not "required" for totem to run, there's no
 # point in using a media player that can't play most modern media files
+BUILD_DEPENDS+=	:gstreamer-confelements-*:multimedia/gstreamer-0.10/plugins-good,-gconf
 RUN_DEPENDS+=	:gstreamer-vorbis-*:multimedia/gstreamer-0.10/plugins-base,-vorbis \
 		:gstreamer-ogg-*:multimedia/gstreamer-0.10/plugins-base,-ogg \
 		:gstreamer-xvid-*:multimedia/gstreamer-0.10/plugins-bad,-xvid \
 		:gstreamer-jpeg-*:multimedia/gstreamer-0.10/plugins-good,-jpeg \
+		:gstreamer-confelements-*:multimedia/gstreamer-0.10/plugins-good,-gconf \
 		:gstreamer-a52-*:multimedia/gstreamer-0.10/plugins-ugly,-a52 \
 		:gstreamer-mpeg2-*:multimedia/gstreamer-0.10/plugins-ugly,-mpeg2 \
 		:gstreamer-dvdread-*:multimedia/gstreamer-0.10/plugins-ugly,-dvdread \
-		:gstreamer-mad-*:multimedia/gstreamer-0.10/plugins-ugly,-mad \
-		:gstreamer-ffmpeg-*:multimedia/gstreamer-0.10/plugins-ffmpeg
+		:gstreamer-mad-*:multimedia/gstreamer-0.10/plugins-ugly,-mad
+# XXX gstreamer-ffmpeg does not work
+#		:gstreamer-ffmpeg-*:multimedia/gstreamer-0.10/plugins-ffmpeg
 CONFIGURE_ARGS+=--enable-gstreamer \
 		--disable-xine
 .endif
 
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
+
+# stop systrace spam by avoiding xsltproc to access net
+pre-configure:
+	perl -pi -e 's,xsltproc,xsltproc --nonet,g' \
+		${WRKSRC}/help/Makefile.in
 
 .include <bsd.port.mk>
