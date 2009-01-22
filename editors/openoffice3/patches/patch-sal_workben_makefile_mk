@@ -1,7 +1,7 @@
-$OpenBSD: patch-sal_workben_makefile_mk,v 1.1.1.1 2008/10/30 18:51:06 robert Exp $
---- sal/workben/makefile.mk.orig.port	Mon Mar 26 16:27:56 2007
-+++ sal/workben/makefile.mk	Thu Oct 25 16:23:47 2007
-@@ -355,7 +355,7 @@ APP4DEPN=	$(SLB)$/sal.lib
+$OpenBSD: patch-sal_workben_makefile_mk,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- sal/workben/makefile.mk.orig.port	Fri Aug  1 07:32:28 2008
++++ sal/workben/makefile.mk	Thu Jan 15 14:47:50 2009
+@@ -351,7 +351,7 @@ APP4DEPN=	$(SLB)$/sal.lib
  # tgetpwnam
  #
  .IF "$(TESTAPP)" == "tgetpwnam"

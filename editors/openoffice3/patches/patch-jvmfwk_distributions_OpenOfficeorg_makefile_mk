@@ -1,6 +1,6 @@
---- jvmfwk/distributions/OpenOfficeorg/makefile.mk.orig.port	Fri Apr 11 12:16:59 2008
-+++ jvmfwk/distributions/OpenOfficeorg/makefile.mk	Sat Oct 25 14:27:38 2008
-@@ -45,7 +45,7 @@
+--- jvmfwk/distributions/OpenOfficeorg/makefile.mk.orig.port	Fri Aug  1 07:26:48 2008
++++ jvmfwk/distributions/OpenOfficeorg/makefile.mk	Thu Jan 15 14:47:50 2009
+@@ -45,7 +45,7 @@ $(BIN)$/javavendors.xml: javavendors_unx.xml javavendo
  .IF "$(GUI)"=="UNX"
  .IF "$(OS)"=="MACOSX"
  	-$(COPY) javavendors_macosx.xml $(BIN)$/javavendors.xml

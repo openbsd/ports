@@ -1,6 +1,6 @@
---- sal/inc/osl/endian.h.orig.port	Thu Nov  1 18:14:36 2007
-+++ sal/inc/osl/endian.h	Wed Apr 23 15:24:06 2008
-@@ -174,7 +174,8 @@ extern "C" {
+--- sal/inc/osl/endian.h.orig.port	Fri Aug  1 07:32:14 2008
++++ sal/inc/osl/endian.h	Thu Jan 15 14:47:50 2009
+@@ -167,7 +167,8 @@ extern "C" {
      !defined(LINUX)   && !defined(NETBSD) && !defined(SCO)   && \
  	!defined(AIX)     && !defined(HPUX)   && \
  	!defined(SOLARIS) && !defined(IRIX)   && \

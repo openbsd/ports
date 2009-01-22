@@ -1,7 +1,7 @@
-$OpenBSD: patch-sal_inc_rtl_uuid_h,v 1.1.1.1 2008/10/30 18:51:06 robert Exp $
---- sal/inc/rtl/uuid.h.orig.port	Wed Jan 17 09:35:34 2007
-+++ sal/inc/rtl/uuid.h	Tue Feb  6 23:13:34 2007
-@@ -208,6 +208,8 @@ void SAL_CALL rtl_createNamedUuid(
+$OpenBSD: patch-sal_inc_rtl_uuid_h,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- sal/inc/rtl/uuid.h.orig.port	Fri Aug  1 07:32:15 2008
++++ sal/inc/rtl/uuid.h	Thu Jan 15 14:47:50 2009
+@@ -203,6 +203,8 @@ void SAL_CALL rtl_createNamedUuid(
  #define UUID_SYSTEM_TIME_RESOLUTION_100NS_TICKS 100000
  #elif IRIX
  #define UUID_SYSTEM_TIME_RESOLUTION_100NS_TICKS 10

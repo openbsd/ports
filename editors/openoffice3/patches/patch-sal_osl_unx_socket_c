@@ -1,7 +1,7 @@
-$OpenBSD: patch-sal_osl_unx_socket_c,v 1.1.1.1 2008/10/30 18:51:06 robert Exp $
---- sal/osl/unx/socket.c.orig.port	Wed Jul 19 05:39:22 2006
-+++ sal/osl/unx/socket.c	Fri Aug 18 15:47:44 2006
-@@ -56,7 +56,7 @@
+$OpenBSD: patch-sal_osl_unx_socket_c,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- sal/osl/unx/socket.c.orig.port	Fri Aug  1 07:32:17 2008
++++ sal/osl/unx/socket.c	Thu Jan 15 14:47:50 2009
+@@ -48,7 +48,7 @@
  #undef HAVE_POLL_H
  #endif
  

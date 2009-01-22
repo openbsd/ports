@@ -1,7 +1,7 @@
-$OpenBSD: patch-sal_rtl_source_alloc_c,v 1.1.1.1 2008/10/30 18:51:06 robert Exp $
---- sal/rtl/source/alloc.c.orig.port	Tue Jun 20 00:28:13 2006
-+++ sal/rtl/source/alloc.c	Fri Aug 18 15:47:44 2006
-@@ -85,7 +85,7 @@ typedef pthread_mutex_t mutex_type;
+$OpenBSD: patch-sal_rtl_source_alloc_c,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- sal/rtl/source/alloc.c.orig.port	Fri Aug  1 07:32:23 2008
++++ sal/rtl/source/alloc.c	Thu Jan 15 14:47:50 2009
+@@ -72,7 +72,7 @@ typedef pthread_mutex_t mutex_type;
  #define RTL_MUTEX_ACQUIRE(a)  pthread_mutex_lock((a))
  #define RTL_MUTEX_RELEASE(a)  pthread_mutex_unlock((a))
  

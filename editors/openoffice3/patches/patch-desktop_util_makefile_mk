@@ -1,7 +1,7 @@
-$OpenBSD: patch-desktop_util_makefile_mk,v 1.1.1.1 2008/10/30 18:51:05 robert Exp $
---- desktop/util/makefile.mk.orig.port	Tue Feb 26 19:05:11 2008
-+++ desktop/util/makefile.mk	Wed Apr 23 15:24:05 2008
-@@ -102,7 +102,7 @@ LIB1OBJFILES += $(OBJ)$/copyright_ascii_sun.obj
+$OpenBSD: patch-desktop_util_makefile_mk,v 1.2 2009/01/22 17:44:38 robert Exp $
+--- desktop/util/makefile.mk.orig.port	Sat Jan 10 18:10:53 2009
++++ desktop/util/makefile.mk	Thu Jan 15 14:47:49 2009
+@@ -61,7 +61,7 @@ RCFILES=ooverinfo2.rc
  LINKFLAGSAPPGUI!:=	$(LINKFLAGSAPPGUI:s/-bind_at_load//)
  .ENDIF # MACOSX
  

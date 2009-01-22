@@ -1,7 +1,7 @@
-$OpenBSD: patch-sal_typesconfig_typesconfig_c,v 1.1.1.1 2008/10/30 18:51:06 robert Exp $
---- sal/typesconfig/typesconfig.c.orig.port	Thu Sep  8 12:49:50 2005
-+++ sal/typesconfig/typesconfig.c	Tue Oct 24 17:12:30 2006
-@@ -167,6 +167,16 @@ void SignalHdl( int sig )
+$OpenBSD: patch-sal_typesconfig_typesconfig_c,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- sal/typesconfig/typesconfig.c.orig.port	Fri Aug  1 07:32:27 2008
++++ sal/typesconfig/typesconfig.c	Thu Jan 15 14:47:50 2009
+@@ -162,6 +162,16 @@ void SignalHdl( int sig )
  int check( TestFunc func, Type eT, void* p )
  {
  #ifdef USE_FORK_TO_CHECK

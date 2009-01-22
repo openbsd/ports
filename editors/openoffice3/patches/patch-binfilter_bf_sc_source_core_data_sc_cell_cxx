@@ -1,7 +1,7 @@
-$OpenBSD: patch-binfilter_bf_sc_source_core_data_sc_cell_cxx,v 1.1.1.1 2008/10/30 18:51:05 robert Exp $
---- binfilter/bf_sc/source/core/data/sc_cell.cxx.orig.port	Thu Sep  6 12:31:14 2007
-+++ binfilter/bf_sc/source/core/data/sc_cell.cxx	Wed Apr 23 15:24:05 2008
-@@ -50,7 +50,7 @@
+$OpenBSD: patch-binfilter_bf_sc_source_core_data_sc_cell_cxx,v 1.2 2009/01/22 17:44:38 robert Exp $
+--- binfilter/bf_sc/source/core/data/sc_cell.cxx.orig.port	Fri Aug  1 07:18:01 2008
++++ binfilter/bf_sc/source/core/data/sc_cell.cxx	Thu Jan 15 14:47:49 2009
+@@ -45,7 +45,7 @@
  #include <mac_end.h>
  #endif
  

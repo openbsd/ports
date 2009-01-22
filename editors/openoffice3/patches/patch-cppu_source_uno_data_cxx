@@ -1,6 +1,6 @@
---- cppu/source/uno/data.cxx.orig.port	Fri Nov  2 13:53:59 2007
-+++ cppu/source/uno/data.cxx	Tue Apr  1 14:20:54 2008
-@@ -368,7 +368,7 @@ sal_Bool SAL_CALL uno_type_isAssignableFromData(
+--- cppu/source/uno/data.cxx.orig.port	Fri Aug  1 07:20:03 2008
++++ cppu/source/uno/data.cxx	Thu Jan 15 14:47:49 2009
+@@ -363,7 +363,7 @@ sal_Bool SAL_CALL uno_type_isAssignableFromData(
  
  #if defined(INTEL) \
      && (defined(__GNUC__) && (defined(LINUX) || defined(FREEBSD) || defined(OS2)) || defined(MACOSX) \

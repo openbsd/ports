@@ -1,6 +1,6 @@
---- extensions/source/nsplugin/source/makefile.mk.orig.port	Mon Jun  9 14:31:47 2008
-+++ extensions/source/nsplugin/source/makefile.mk	Sat Oct 25 12:19:29 2008
-@@ -53,7 +53,7 @@
+--- extensions/source/nsplugin/source/makefile.mk.orig.port	Fri Aug  1 07:22:47 2008
++++ extensions/source/nsplugin/source/makefile.mk	Thu Jan 15 14:47:49 2009
+@@ -53,7 +53,7 @@ dummy:
  	@echo GTK disabled - nothing to build
  
  .ELSE           # "$(ENABLE_GTK)"==""

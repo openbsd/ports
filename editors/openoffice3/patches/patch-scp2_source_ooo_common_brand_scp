@@ -1,0 +1,12 @@
+$OpenBSD: patch-scp2_source_ooo_common_brand_scp,v 1.1 2009/01/22 17:44:39 robert Exp $
+--- scp2/source/ooo/common_brand.scp.orig.port	Sun Jan 18 20:18:45 2009
++++ scp2/source/ooo/common_brand.scp	Sun Jan 18 21:44:12 2009
+@@ -346,7 +346,7 @@ Unixlink gid_Brand_Unixlink_BasisLink
+     // Styles = (LAYERLINK);
+     Name = "basis-link";
+     Dir = gid_Dir_Brand_Root;
+-    Target = "../${UNIXBASISROOTNAME}/basis${OOOBASEVERSION}";
++    Target = ".";
+ End
+ #endif
+ 

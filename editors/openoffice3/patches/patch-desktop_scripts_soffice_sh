@@ -1,12 +1,6 @@
---- desktop/scripts/soffice.sh.orig.port	Wed Aug  6 19:44:36 2008
-+++ desktop/scripts/soffice.sh	Sat Oct 25 12:13:25 2008
-@@ -1,4 +1,4 @@
--#!/bin/sh
-+bin/sh
- #*************************************************************************
- #
- # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-@@ -43,6 +43,11 @@
+--- desktop/scripts/soffice.sh.orig.port	Fri Aug  8 07:39:58 2008
++++ desktop/scripts/soffice.sh	Mon Jan 19 11:36:14 2009
+@@ -43,6 +43,11 @@ export SAL_ENABLE_FILE_LOCKING
  # working on your system.
  # SAL_NOOPENGL=true; export SAL_NOOPENGL
  
@@ -18,7 +12,18 @@
  # the following test is needed on Linux PPC with IBM j2sdk142
  if [ "`uname -s`" = "Linux" -a "`uname -m`" = "ppc" ] ; then
      JITC_PROCESSOR_TYPE=6
-@@ -91,38 +96,10 @@
+@@ -73,6 +78,10 @@ do
+   esac
+ done
+ 
++# XXX Hack to set corrent library path(s)
++LD_LIBRARY_PATH=/usr/local/openoffice/ure/lib:/usr/local/openoffice/program:${LD_LIBRARY_PATH+:$LD_LIBRARY_PATH}
++export LD_LIBRARY_PATH
++
+ # extend the ld_library_path for java: javaldx checks the sofficerc for us
+ if [ -x "$sd_prog/../basis-link/ure-link/bin/javaldx" ] ; then
+     my_path=`"$sd_prog/../basis-link/ure-link/bin/javaldx" $BOOTSTRAPVARS \
+@@ -91,38 +100,10 @@ unset XENVIRONMENT
  # uncomment line below if you encounter problems starting soffice on your system
  # SAL_NO_XINITTHREADS=true; export SAL_NO_XINITTHREADS
  

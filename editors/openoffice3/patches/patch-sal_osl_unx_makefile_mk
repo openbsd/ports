@@ -1,6 +1,6 @@
---- sal/osl/unx/makefile.mk.orig.port	Wed Aug  6 17:28:18 2008
-+++ sal/osl/unx/makefile.mk	Sat Oct 25 14:29:34 2008
-@@ -116,7 +116,7 @@
+--- sal/osl/unx/makefile.mk.orig.port	Fri Aug  8 07:56:09 2008
++++ sal/osl/unx/makefile.mk	Thu Jan 15 14:47:50 2009
+@@ -116,7 +116,7 @@ OBJFILES=   $(OBJ)$/conditn.obj  \
  SLOFILES += $(SLO)$/osxlocale.obj
  .ENDIF
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-store_source_fileunx_hxx,v 1.1.1.1 2008/10/30 18:51:07 robert Exp $
---- store/source/fileunx.hxx.orig.port	Mon Jun 19 20:32:01 2006
-+++ store/source/fileunx.hxx	Fri Aug 18 15:47:45 2006
-@@ -46,7 +46,7 @@
+$OpenBSD: patch-store_source_fileunx_hxx,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- store/source/fileunx.hxx.orig.port	Fri Aug  1 07:34:57 2008
++++ store/source/fileunx.hxx	Thu Jan 15 14:47:50 2009
+@@ -41,7 +41,7 @@
  #include <sys/stat.h>
  #include <sys/types.h>
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-store_source_fileunx_hxx,v 1.1.1.1 2008/10/30 18:51:07 robert Ex
  #define EDEADLOCK EDEADLK
  #endif /* FREEBSD || NETBSD || MACOSX */
  
-@@ -86,7 +86,7 @@ inline sal_Int32 __store_errno (void)
+@@ -81,7 +81,7 @@ inline sal_Int32 __store_errno (void)
  /*
   * __store_malign.
   */

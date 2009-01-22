@@ -1,7 +1,7 @@
-$OpenBSD: patch-odk_configure_pl,v 1.1.1.1 2008/10/30 18:51:05 robert Exp $
---- odk/configure.pl.orig.port	Wed Nov  9 04:28:37 2005
-+++ odk/configure.pl	Wed Apr 18 03:46:25 2007
-@@ -28,6 +28,10 @@ if ( $main::operatingSystem =~ /freebsd/ )
+$OpenBSD: patch-odk_configure_pl,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- odk/configure.pl.orig.port	Fri Aug  1 07:27:04 2008
++++ odk/configure.pl	Thu Jan 15 14:47:50 2009
+@@ -42,6 +42,10 @@ if ( $main::operatingSystem =~ m/freebsd/ )
  {
      $main::makeName = "gmake";
  }

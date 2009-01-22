@@ -1,12 +1,12 @@
-$OpenBSD: patch-store_util_makefile_mk,v 1.1.1.1 2008/10/30 18:51:07 robert Exp $
---- store/util/makefile.mk.orig.port	Wed Dec 12 14:23:13 2007
-+++ store/util/makefile.mk	Wed Apr 23 15:24:06 2008
-@@ -80,7 +80,7 @@ SHL1STDLIBS+=$(LIBSTLPORT)
+$OpenBSD: patch-store_util_makefile_mk,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- store/util/makefile.mk.orig.port	Fri Aug  1 07:34:57 2008
++++ store/util/makefile.mk	Sat Jan 17 22:21:48 2009
+@@ -76,7 +76,7 @@ SHL1STDLIBS+=$(LIBSTLPORT)
  .IF "$(GUI)"=="WNT"
  SHL1STDLIBS+= 	-lsupc++
  .ELSE
 -.IF "$(OS)"=="NETBSD"
-+.IF "$(OS)"=="NETBSD" || "$(OS)"=="OPENBSD"
++.IF "$(OS)"=="NETBSD" || "$(OS)"=="OOOOPENBSD"
  SHL1STDLIBS+= 	-lsupc++
  .ELIF "$(OS)"=="MACOSX"
  .IF "$(CCNUMVER)"<="000399999999"

@@ -1,6 +1,6 @@
---- transex3/source/gsicheck.cxx.orig.port	Sat Oct 25 18:55:21 2008
-+++ transex3/source/gsicheck.cxx	Sat Oct 25 18:56:14 2008
-@@ -444,7 +444,7 @@
+--- transex3/source/gsicheck.cxx.orig.port	Fri Aug  1 07:38:09 2008
++++ transex3/source/gsicheck.cxx	Thu Jan 15 14:47:51 2009
+@@ -444,7 +444,7 @@ BOOL GSIBlock::IsUTF8( const ByteString &aTestee, BOOL
              }
          }
  

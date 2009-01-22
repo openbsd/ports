@@ -1,6 +1,6 @@
---- shell/source/unix/sysshell/makefile.mk.orig.port	Fri Apr 11 10:12:17 2008
-+++ shell/source/unix/sysshell/makefile.mk	Sat Oct 25 14:39:13 2008
-@@ -44,6 +44,11 @@
+--- shell/source/unix/sysshell/makefile.mk.orig.port	Fri Aug  1 07:34:22 2008
++++ shell/source/unix/sysshell/makefile.mk	Thu Jan 15 14:47:50 2009
+@@ -44,6 +44,11 @@ ENABLE_EXCEPTIONS=TRUE
  CFLAGS+=-DSYSTEM_EXPAT
  .ENDIF
  
@@ -12,7 +12,7 @@
  # --- Files --------------------------------------------------------
  
  .IF "$(OS)" != "MACOSX"
-@@ -74,7 +79,7 @@
+@@ -74,7 +79,7 @@ SHL1STDLIBS=$(EXPATASCII3RDLIB)\
  SHL1LIBS=$(SLB)$/xmlparser.lib
  SHL1OBJS=$(SLOFILES)
  SHL1VERSIONMAP=recfile.map

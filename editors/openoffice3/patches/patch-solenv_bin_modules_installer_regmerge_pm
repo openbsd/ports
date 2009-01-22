@@ -1,7 +1,7 @@
-$OpenBSD: patch-solenv_bin_modules_installer_regmerge_pm,v 1.1.1.1 2008/10/30 18:51:06 robert Exp $
---- solenv/bin/modules/installer/regmerge.pm.orig.port	Thu Sep  8 05:09:09 2005
-+++ solenv/bin/modules/installer/regmerge.pm	Fri Aug 18 15:47:45 2006
-@@ -219,7 +219,13 @@ sub merge_files
+$OpenBSD: patch-solenv_bin_modules_installer_regmerge_pm,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- solenv/bin/modules/installer/regmerge.pm.orig.port	Fri Aug  1 07:34:40 2008
++++ solenv/bin/modules/installer/regmerge.pm	Thu Jan 15 14:47:50 2009
+@@ -215,7 +215,13 @@ sub merge_files
  	my $databasename = $databasefile->{'Name'};
  	my $databasedest = $databasedir . $installer::globals::separator . $databasename;
  

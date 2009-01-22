@@ -1,16 +1,16 @@
-$OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.1.1.1 2008/10/30 18:51:07 robert Exp $
---- solenv/inc/unxobsd.mk.orig.port	Sat Oct 27 12:50:07 2007
-+++ solenv/inc/unxobsd.mk	Sat Oct 27 15:12:51 2007
-@@ -0,0 +1,237 @@
+$OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- solenv/inc/unxobsd.mk.orig.port	Fri Jan 16 18:49:26 2009
++++ solenv/inc/unxobsd.mk	Sat Jan 17 19:31:57 2009
+@@ -0,0 +1,239 @@
 +#*************************************************************************
 +#
 +#   OpenOffice.org - a multi-platform office productivity suite
 +#
 +#   $RCSfile: patch-solenv_inc_unxobsd_mk,v $
 +#
-+#   $Revision: 1.1.1.1 $
++#   $Revision: 1.2 $
 +#
-+#   last change: $Author: robert $ $Date: 2008/10/30 18:51:07 $
++#   last change: $Author: robert $ $Date: 2009/01/22 17:44:39 $
 +#
 +#   The Contents of this file are made available subject to
 +#   the terms of GNU Lesser General Public License Version 2.1.
@@ -111,6 +111,8 @@ $OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.1.1.1 2008/10/30 18:51:07 robert Exp $
 +CFLAGSCXX += -fvisibility-inlines-hidden
 +.ENDIF # "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
 +
++CFLAGSCXX += -fno-use-cxa-atexit
++
 +# Compiler flags for compiling static object in single threaded environment with graphical user interface
 +CFLAGSOBJGUIST=
 +# Compiler flags for compiling static object in single threaded environment with character user interface
@@ -188,7 +190,7 @@ $OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.1.1.1 2008/10/30 18:51:07 robert Exp $
 +
 +# Sequence of libs does matter !
 +
-+STDLIBCPP=-lstdc++
++STDLIBCPP=-lestdc++
 +
 +# default objectfilenames to link
 +STDOBJVCL=$(L)$/salmain.o

@@ -1,6 +1,6 @@
---- autodoc/source/mkinc/fullcpp.mk.orig.port	Tue Sep 18 16:06:38 2007
-+++ autodoc/source/mkinc/fullcpp.mk	Tue Apr  1 14:01:47 2008
-@@ -43,7 +43,7 @@
+--- autodoc/source/mkinc/fullcpp.mk.orig.port	Fri Aug  1 07:17:37 2008
++++ autodoc/source/mkinc/fullcpp.mk	Thu Jan 15 14:47:49 2009
+@@ -39,7 +39,7 @@
  .IF "$(GUI)"=="WNT"
  CFLAGS+= -GR
  .ENDIF

@@ -1,7 +1,7 @@
-$OpenBSD: patch-dtrans_source_X11_X11_selection_cxx,v 1.1.1.1 2008/10/30 18:51:05 robert Exp $
---- dtrans/source/X11/X11_selection.cxx.orig.port	Fri Dec  1 18:53:09 2006
-+++ dtrans/source/X11/X11_selection.cxx	Mon Dec 11 22:27:37 2006
-@@ -45,7 +45,7 @@
+$OpenBSD: patch-dtrans_source_X11_X11_selection_cxx,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- dtrans/source/X11/X11_selection.cxx.orig.port	Fri Aug  1 07:22:35 2008
++++ dtrans/source/X11/X11_selection.cxx	Thu Jan 15 14:47:49 2009
+@@ -40,7 +40,7 @@
  #include <X11/Xlib.h>
  #include <X11/X.h>
  #include <X11/Xutil.h>

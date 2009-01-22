@@ -1,5 +1,6 @@
---- lpsolve/lp_solve_5.5.patch.port.orig	Sat Oct 25 18:33:36 2008
-+++ lpsolve/lp_solve_5.5.patch	Sat Oct 25 18:40:23 2008
+$OpenBSD: patch-lpsolve_lp_solve_5_5_patch,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- lpsolve/lp_solve_5.5.patch.orig.port	Fri Aug  1 07:27:01 2008
++++ lpsolve/lp_solve_5.5.patch	Thu Jan 15 14:47:50 2009
 @@ -1,5 +1,5 @@
  --- misc/lp_solve_5.5/lpsolve55/ccc	Sat Jun 11 21:27:18 2005
 -+++ misc/build/lp_solve_5.5/lpsolve55/ccc	Wed May 21 17:19:56 2008

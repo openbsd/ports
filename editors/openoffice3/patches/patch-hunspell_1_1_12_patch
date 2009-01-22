@@ -1,5 +1,5 @@
---- hunspell/hunspell-1.1.12.patch.orig.port	Sat Oct 25 18:22:10 2008
-+++ hunspell/hunspell-1.1.12.patch	Sat Oct 25 18:30:48 2008
+--- hunspell/hunspell-1.1.12.patch.orig.port	Fri Aug  1 07:26:16 2008
++++ hunspell/hunspell-1.1.12.patch	Thu Jan 22 01:02:02 2009
 @@ -316,8 +316,8 @@
   //    pass in address of array of char * pointers
   // onlycompoundsug: probably bad suggestions (need for ngram sugs, too)

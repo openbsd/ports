@@ -1,7 +1,7 @@
-$OpenBSD: patch-shell_source_unix_misc_makefile_mk,v 1.1.1.1 2008/10/30 18:51:06 robert Exp $
---- shell/source/unix/misc/makefile.mk.orig.port	Tue Aug  1 07:26:32 2006
-+++ shell/source/unix/misc/makefile.mk	Thu Oct 19 10:47:54 2006
-@@ -59,7 +59,7 @@ APP1TARGET = gnome-open-url.bin
+$OpenBSD: patch-shell_source_unix_misc_makefile_mk,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- shell/source/unix/misc/makefile.mk.orig.port	Fri Aug  1 07:34:21 2008
++++ shell/source/unix/misc/makefile.mk	Thu Jan 15 14:47:50 2009
+@@ -55,7 +55,7 @@ APP1TARGET = gnome-open-url.bin
  APP1OBJS = \
  	$(OBJ)$/gnome-open-url.obj
  APP1LIBS =

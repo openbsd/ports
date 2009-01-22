@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-java,v 1.1.1.1 2008/10/30 18:51:13 robert Exp $
+@comment $OpenBSD: PLIST-java,v 1.2 2009/01/22 17:44:39 robert Exp $
 %%SHARED%%
-openoffice/program/JREProperties.class
 openoffice/program/classes/
+openoffice/program/classes/LuceneHelpWrapper.jar
 openoffice/program/classes/ScriptFramework.jar
 openoffice/program/classes/ScriptProviderForBeanShell.jar
 openoffice/program/classes/ScriptProviderForJava.jar
@@ -18,31 +18,24 @@ openoffice/program/classes/commonwizards.jar
 openoffice/program/classes/fax.jar
 openoffice/program/classes/form.jar
 openoffice/program/classes/hsqldb.jar
-openoffice/program/classes/java_uno.jar
 openoffice/program/classes/js.jar
-openoffice/program/classes/juh.jar
-openoffice/program/classes/jurt.jar
 openoffice/program/classes/jut.jar
 openoffice/program/classes/letter.jar
+openoffice/program/classes/lucene-analyzers-2.3.jar
+openoffice/program/classes/lucene-core-2.3.jar
 openoffice/program/classes/officebean.jar
 openoffice/program/classes/pexcel.jar
 openoffice/program/classes/pocketword.jar
 openoffice/program/classes/query.jar
 openoffice/program/classes/report.jar
-openoffice/program/classes/ridl.jar
 openoffice/program/classes/sandbox.jar
+openoffice/program/classes/saxon9.jar
 openoffice/program/classes/sdbc_hsqldb.jar
-openoffice/program/classes/serializer.jar
 openoffice/program/classes/table.jar
 openoffice/program/classes/unoil.jar
-openoffice/program/classes/unoloader.jar
 openoffice/program/classes/web.jar
 openoffice/program/classes/writer2latex.jar
-openoffice/program/classes/xalan.jar
-openoffice/program/classes/xercesImpl.jar
 openoffice/program/classes/xmerge.jar
-openoffice/program/classes/xml-apis.jar
-@bin openoffice/program/javaldx
 openoffice/share/Scripts/java/
 openoffice/share/Scripts/java/HelloWorld/
 openoffice/share/Scripts/java/HelloWorld/HelloWorld.jar
@@ -56,10 +49,16 @@ openoffice/share/Scripts/java/MemoryUsage/
 openoffice/share/Scripts/java/MemoryUsage/MemoryUsage.jar
 openoffice/share/Scripts/java/MemoryUsage/MemoryUsage.java
 openoffice/share/Scripts/java/MemoryUsage/parcel-descriptor.xml
-openoffice/share/config/javavendors.xml
 openoffice/share/registry/modules/org/openoffice/TypeDetection/Filter/fcfg_palm_filters.xcu
 openoffice/share/registry/modules/org/openoffice/TypeDetection/Filter/fcfg_pocketexcel_filters.xcu
 openoffice/share/registry/modules/org/openoffice/TypeDetection/Filter/fcfg_pocketword_filters.xcu
 openoffice/share/registry/modules/org/openoffice/TypeDetection/Types/fcfg_palm_types.xcu
 openoffice/share/registry/modules/org/openoffice/TypeDetection/Types/fcfg_pocketexcel_types.xcu
 openoffice/share/registry/modules/org/openoffice/TypeDetection/Types/fcfg_pocketword_types.xcu
+@bin openoffice/ure/bin/javaldx
+openoffice/ure/share/java/
+openoffice/ure/share/java/java_uno.jar
+openoffice/ure/share/java/juh.jar
+openoffice/ure/share/java/jurt.jar
+openoffice/ure/share/java/ridl.jar
+openoffice/ure/share/java/unoloader.jar

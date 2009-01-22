@@ -1,7 +1,7 @@
-$OpenBSD: patch-ucb_source_ucp_ftp_ftpurl_cxx,v 1.1.1.1 2008/10/30 18:51:07 robert Exp $
---- ucb/source/ucp/ftp/ftpurl.cxx.orig.port	Tue Jun  5 20:01:46 2007
-+++ ucb/source/ucp/ftp/ftpurl.cxx	Thu Oct 25 16:23:47 2007
-@@ -591,11 +591,11 @@ rtl::OUString FTPURL::net_title() const
+$OpenBSD: patch-ucb_source_ucp_ftp_ftpurl_cxx,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- ucb/source/ucp/ftp/ftpurl.cxx.orig.port	Fri Aug  1 07:38:13 2008
++++ ucb/source/ucp/ftp/ftpurl.cxx	Thu Jan 15 14:47:51 2009
+@@ -586,11 +586,11 @@ rtl::OUString FTPURL::net_title() const
                  aNetTitle = aNetTitle.copy(1+index1);
              }
              try_more = false;

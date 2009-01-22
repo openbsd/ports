@@ -1,6 +1,6 @@
---- stlport/makefile.mk.orig.port	Tue Jul 22 18:55:24 2008
-+++ stlport/makefile.mk	Sat Oct 25 15:02:56 2008
-@@ -118,7 +118,7 @@
+--- stlport/makefile.mk.orig.port	Fri Aug  1 07:34:52 2008
++++ stlport/makefile.mk	Thu Jan 15 14:47:50 2009
+@@ -118,7 +118,7 @@ TAR_EXCLUDES=*/SC5/*
  .ENDIF          # "$(USE_SHELL)"=="4nt"
  
  ADDITIONAL_FILES=src$/gcc-3.0.mak src$/gcc-3.0-macosx.mak src$/gcc-3.0-freebsd.mak src$/sunpro8.mak src$/sunpro11.mak src$/gcc-3.0-mingw.mak \
@@ -9,7 +9,7 @@
  
  
  CONFIGURE_ACTION=none
-@@ -146,6 +146,8 @@
+@@ -146,6 +146,8 @@ BUILD_FLAGS=-f vc7.mak EXFLAGS="/EHa /Zc:wchar_t-" CCN
  			BUILD_FLAGS=-f gcc-3.0-os2.mak
  		.ELIF "$(GUI)"=="WNT"
  			BUILD_FLAGS=-f gcc-3.0-mingw.mak

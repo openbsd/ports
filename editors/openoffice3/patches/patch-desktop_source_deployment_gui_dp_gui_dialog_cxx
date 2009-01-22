@@ -1,6 +1,6 @@
---- desktop/source/deployment/gui/dp_gui_dialog.cxx.orig.port	Sun Oct 26 20:01:00 2008
-+++ desktop/source/deployment/gui/dp_gui_dialog.cxx	Mon Oct 27 13:28:08 2008
-@@ -1280,9 +1280,7 @@
+--- desktop/source/deployment/gui/dp_gui_dialog.cxx.orig.port	Fri Aug  1 07:22:05 2008
++++ desktop/source/deployment/gui/dp_gui_dialog.cxx	Thu Jan 15 14:47:49 2009
+@@ -1280,9 +1280,7 @@ void DialogImpl::checkUpdates( bool selected, bool sho
          pParent = GetParent();
  
      pUpdateDialog = new UpdateDialog( m_xComponentContext, pParent,

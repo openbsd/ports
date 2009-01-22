@@ -1,7 +1,7 @@
-$OpenBSD: patch-sal_osl_unx_backtrace_h,v 1.1.1.1 2008/10/30 18:51:06 robert Exp $
---- sal/osl/unx/backtrace.h.orig.port	Thu Feb  9 12:05:59 2006
-+++ sal/osl/unx/backtrace.h	Wed Apr 18 03:46:26 2007
-@@ -34,7 +34,7 @@
+$OpenBSD: patch-sal_osl_unx_backtrace_h,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- sal/osl/unx/backtrace.h.orig.port	Fri Aug  8 07:56:09 2008
++++ sal/osl/unx/backtrace.h	Thu Jan 15 14:47:50 2009
+@@ -29,7 +29,7 @@
   ************************************************************************/
  
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-sal_osl_unx_backtrace_h,v 1.1.1.1 2008/10/30 18:51:06 robert Exp
  
  #ifdef __cplusplus
  extern "C" {
-@@ -47,7 +47,7 @@ int backtrace( void **buffer, int max_frames );
+@@ -42,7 +42,7 @@ int backtrace( void **buffer, int max_frames );
  void backtrace_symbols_fd( void **buffer, int size, int fd );
  
  /* no frame.h on FreeBSD */

@@ -1,5 +1,5 @@
---- stlport/STLport-4.5.patch.orig.port	Sun Oct 26 14:39:49 2008
-+++ stlport/STLport-4.5.patch	Sun Oct 26 14:46:03 2008
+--- stlport/STLport-4.5.patch.orig.port	Fri Aug  1 07:34:52 2008
++++ stlport/STLport-4.5.patch	Sun Jan 18 13:55:10 2009
 @@ -367,6 +367,69 @@
  +#	$(CXX) $(CXXFLAGS) -O4 -S -pto $<  -o $@
  +
@@ -27,7 +27,7 @@
 ++# guts for common stuff
 ++#
 ++LINK=ar cr
-++DYN_LINK=${CXX} ${PTHREAD_LIBS} -fPIC -lstdc++ --fexceptions -shared -o
+++DYN_LINK=${CXX} ${PTHREAD_LIBS} -fPIC -lestdc++ --fexceptions -shared -o
 ++
 ++OBJEXT=o
 ++DYNEXT=so

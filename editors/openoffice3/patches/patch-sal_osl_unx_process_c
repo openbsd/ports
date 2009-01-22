@@ -1,7 +1,7 @@
-$OpenBSD: patch-sal_osl_unx_process_c,v 1.1.1.1 2008/10/30 18:51:06 robert Exp $
---- sal/osl/unx/process.c.orig.port	Wed Mar 14 14:17:17 2007
-+++ sal/osl/unx/process.c	Thu Oct 25 16:23:47 2007
-@@ -497,7 +497,7 @@ static void ChildStatusProc(void *pData)
+$OpenBSD: patch-sal_osl_unx_process_c,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- sal/osl/unx/process.c.orig.port	Fri Aug  1 07:32:17 2008
++++ sal/osl/unx/process.c	Thu Jan 15 14:47:50 2009
+@@ -474,7 +474,7 @@ static void ChildStatusProc(void *pData)
  
  			if (! INIT_GROUPS(data.m_name, data.m_gid) || (setuid(data.m_uid) != 0))
  				OSL_TRACE("Failed to change uid and guid, errno=%d (%s)\n", errno, strerror(errno));

@@ -1,7 +1,7 @@
-$OpenBSD: patch-cppu_test_alignment_diagnose_h,v 1.1.1.1 2008/10/30 18:51:05 robert Exp $
---- cppu/test/alignment/diagnose.h.orig.port	Thu Sep  8 05:00:29 2005
-+++ cppu/test/alignment/diagnose.h	Tue Oct 24 16:53:06 2006
-@@ -38,7 +38,7 @@
+$OpenBSD: patch-cppu_test_alignment_diagnose_h,v 1.2 2009/01/22 17:44:38 robert Exp $
+--- cppu/test/alignment/diagnose.h.orig.port	Fri Aug  1 07:20:04 2008
++++ cppu/test/alignment/diagnose.h	Thu Jan 15 14:47:49 2009
+@@ -33,7 +33,7 @@
  #include <sal/types.h>
  #include <stdio.h>
  

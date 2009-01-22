@@ -1,7 +1,7 @@
-$OpenBSD: patch-sal_inc_sal_alloca_h,v 1.1.1.1 2008/10/30 18:51:06 robert Exp $
---- sal/inc/sal/alloca.h.orig.port	Thu Sep  8 10:46:27 2005
-+++ sal/inc/sal/alloca.h	Fri Aug 18 15:47:43 2006
-@@ -43,7 +43,7 @@
+$OpenBSD: patch-sal_inc_sal_alloca_h,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- sal/inc/sal/alloca.h.orig.port	Fri Aug  1 07:32:15 2008
++++ sal/inc/sal/alloca.h	Thu Jan 15 14:47:50 2009
+@@ -38,7 +38,7 @@
  #define INCLUDED_ALLOCA_H
  #endif
  

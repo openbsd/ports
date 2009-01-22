@@ -1,7 +1,7 @@
-$OpenBSD: patch-vcl_unx_source_gdi_salogl_cxx,v 1.1.1.1 2008/10/30 18:51:07 robert Exp $
---- vcl/unx/source/gdi/salogl.cxx.orig.port	Fri Dec  1 18:58:04 2006
-+++ vcl/unx/source/gdi/salogl.cxx	Mon Dec 11 22:27:45 2006
-@@ -67,7 +67,7 @@ using namespace rtl;
+$OpenBSD: patch-vcl_unx_source_gdi_salogl_cxx,v 1.2 2009/01/22 17:44:39 robert Exp $
+--- vcl/unx/source/gdi/salogl.cxx.orig.port	Fri Aug  1 07:38:44 2008
++++ vcl/unx/source/gdi/salogl.cxx	Thu Jan 15 14:47:51 2009
+@@ -50,7 +50,7 @@ using namespace rtl;
  #ifdef MACOSX
  #define OGL_LIBNAME "libGL.dylib"
  #else

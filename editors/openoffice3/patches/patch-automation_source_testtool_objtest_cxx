@@ -1,6 +1,6 @@
---- automation/source/testtool/objtest.cxx.orig.port	Fri Apr 11 12:12:26 2008
-+++ automation/source/testtool/objtest.cxx	Sat Oct 25 11:53:46 2008
-@@ -521,6 +521,8 @@
+--- automation/source/testtool/objtest.cxx.orig.port	Fri Aug  1 07:17:40 2008
++++ automation/source/testtool/objtest.cxx	Thu Jan 15 14:47:49 2009
+@@ -521,6 +521,8 @@ void TestToolObj::LoadIniFile()				// Laden der IniEin
      abGP.Append( "20" );  // Linux ia64
  #elif defined LINUX && defined S390
      abGP.Append( "21" );  // Linux S390

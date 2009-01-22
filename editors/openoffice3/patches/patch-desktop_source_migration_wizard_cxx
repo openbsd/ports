@@ -1,7 +1,7 @@
-$OpenBSD: patch-desktop_source_migration_wizard_cxx,v 1.1.1.1 2008/10/30 18:51:05 robert Exp $
---- desktop/source/migration/wizard.cxx.orig.port	Thu Jan 24 16:51:48 2008
-+++ desktop/source/migration/wizard.cxx	Wed Apr 23 15:24:05 2008
-@@ -122,6 +122,7 @@ FirstStartWizard::FirstStartWizard( Window* pParent, s
+$OpenBSD: patch-desktop_source_migration_wizard_cxx,v 1.2 2009/01/22 17:44:38 robert Exp $
+--- desktop/source/migration/wizard.cxx.orig.port	Fri Aug  1 07:22:09 2008
++++ desktop/source/migration/wizard.cxx	Thu Jan 15 14:47:49 2009
+@@ -116,6 +116,7 @@ FirstStartWizard::FirstStartWizard( Window* pParent, s
      ,m_bAutomaticUpdChk(sal_True)
      ,m_aLicensePath( rLicensePath )
  {
@@ -9,7 +9,7 @@ $OpenBSD: patch-desktop_source_migration_wizard_cxx,v 1.1.1.1 2008/10/30 18:51:0
      // ---
      // FreeResource();
  //	enableState(STATE_USER, sal_False);
-@@ -384,7 +385,7 @@ void FirstStartWizard::overrideCheck(sal_Bool bOverrid
+@@ -373,7 +374,7 @@ sal_Bool FirstStartWizard::onFinish(sal_Int32 _nResult
  
  short FirstStartWizard::Execute()
  {

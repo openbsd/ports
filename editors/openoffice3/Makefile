@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/30 18:51:05 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2009/01/22 17:44:38 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,9 +6,9 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of OpenOffice to the KDE environment
 COMMENT-java=	optional integration of OpenOffice java features
 
-VERSION=	3.0.0
+VERSION=	3.0.1rc1
 DISTNAME=	OOo_${VERSION}
-WRKDIST=	${WRKDIR}/OOO300_m9
+WRKDIST=	${WRKDIR}/ooo_OOO300_m15_src
 PKGNAME=	openoffice-${VERSION}
 PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
@@ -33,9 +33,10 @@ MASTER_SITES0=	http://www.bsd.hu/~robert/ooo/ \
 		http://humppa.hu/ooo/
 
 DISTFILES=	ooo-desktop-0.1.tar.gz:0
-.for dfile in binfilter core extensions l10n system
-DISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
-.endfor
+#.for dfile in binfilter core extensions l10n system
+#DISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
+#.endfor
+DISTFILES+=	OOo_OOO300_m15_source.tar.gz
 
 DIST_SUBDIR=	openoffice
 
@@ -86,7 +87,9 @@ LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.
 		neon.>=24::net/neon \
 		wpd.>=8::textproc/libwpd \
 		icuuc.>=0::textproc/icu4c \
-		::devel/gperf
+		::devel/gperf \
+		::textproc/raptor \
+		::textproc/redland
 WANTLIB-main=	ICE SM X11 Xau Xcomposite Xdamage Xdmcp Xext Xrender Xcursor \
 		Xfixes Xi Xinerama Xrandr atk-1.0 c cairo crypto expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
@@ -153,6 +156,7 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-system-libwpd \
 		--with-system-openssl \
 		--with-system-icu \
+		--with-system-redland \
 		--with-epm=internal \
 		--with-alloc=system \
 		--with-java \
@@ -161,6 +165,14 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-ant-home=${LOCALBASE}/ant/lib \
 		--with-db-jar=${LOCALBASE}/lib/db4/db.jar \
 		--with-lang="en-US ${LANGS}"
+
+# Some cool OpenOffice.Org extensions
+#CONFIGURE_ARGS+=	--enable-minimizer \
+#			--enable-presenter-console \
+#			--enable-pdfimport
+#EXTENSIONS=		minimizer/sun-presentation-minimizer.oxt \
+#			presenter/presenter-screen.oxt \
+#			pdfimport/pdfimport.oxt
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=	--enable-symbols \

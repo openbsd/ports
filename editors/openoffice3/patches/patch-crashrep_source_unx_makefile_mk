@@ -1,6 +1,6 @@
---- crashrep/source/unx/makefile.mk.orig.port	Wed Aug  6 17:24:20 2008
-+++ crashrep/source/unx/makefile.mk	Sat Oct 25 13:49:11 2008
-@@ -63,7 +63,7 @@
+--- crashrep/source/unx/makefile.mk.orig.port	Fri Aug  8 07:36:44 2008
++++ crashrep/source/unx/makefile.mk	Thu Jan 15 14:47:49 2009
+@@ -63,7 +63,7 @@ APP1RPATH=BRAND
  .IF "$(OS)" != "MACOSX"
  APP1STDLIBS=$(DYNAMIC) -lXext -lX11
  .ENDIF
