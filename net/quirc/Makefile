@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2008/08/20 15:32:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/01/22 13:43:00 kevlo Exp $
 
 COMMENT=	irc client that uses Tcl/Tk
 
 DISTNAME=	quirc-0.9.84
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 
 HOMEPAGE=	http://quirc.sourceforge.net/
@@ -22,6 +22,8 @@ LIB_DEPENDS=	tk84:tk-8.4.*:x11/tk/8.4
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--with-tcl-include-dir=${LOCALBASE}/include/tcl8.4 \
+		--with-tk-include-dir=${LOCALBASE}/include/tk8.4
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/quirc/common
