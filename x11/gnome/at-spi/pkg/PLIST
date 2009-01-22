@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/12/19 08:34:51 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2009/01/22 18:40:13 jasper Exp $
 include/at-spi-1.0/
 include/at-spi-1.0/cspi/
 include/at-spi-1.0/cspi/spi-impl.h
@@ -41,16 +40,22 @@ include/at-spi-1.0/login-helper/login-helper.h
 lib/bonobo/servers/Accessibility_Registry.server
 lib/gtk-2.0/modules/libatk-bridge.a
 lib/gtk-2.0/modules/libatk-bridge.la
+lib/gtk-2.0/modules/libatk-bridge.so
 lib/libcspi.a
 lib/libcspi.la
+@lib lib/libcspi.so.${LIBcspi_VERSION}
 lib/libloginhelper.a
 lib/libloginhelper.la
+@lib lib/libloginhelper.so.${LIBloginhelper_VERSION}
 lib/libspi.a
 lib/libspi.la
+@lib lib/libspi.so.${LIBspi_VERSION}
 lib/orbit-2.0/Accessibility_LoginHelper_module.a
 lib/orbit-2.0/Accessibility_LoginHelper_module.la
+lib/orbit-2.0/Accessibility_LoginHelper_module.so
 lib/orbit-2.0/Accessibility_module.a
 lib/orbit-2.0/Accessibility_module.la
+lib/orbit-2.0/Accessibility_module.so
 lib/pkgconfig/cspi-1.0.pc
 lib/pkgconfig/libloginhelper-1.0.pc
 lib/pkgconfig/libspi-1.0.pc

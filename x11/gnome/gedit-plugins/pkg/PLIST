@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/11/21 17:35:04 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2009/01/22 18:40:13 jasper Exp $
 lib/gedit-2/plugins/bracketcompletion.gedit-plugin
 lib/gedit-2/plugins/bracketcompletion.py
 lib/gedit-2/plugins/bracketcompletion.pyc
@@ -27,8 +26,10 @@ lib/gedit-2/plugins/joinlines.pyc
 lib/gedit-2/plugins/joinlines.pyo
 lib/gedit-2/plugins/libcharmap.a
 lib/gedit-2/plugins/libcharmap.la
+lib/gedit-2/plugins/libcharmap.so
 lib/gedit-2/plugins/libshowtabbar.a
 lib/gedit-2/plugins/libshowtabbar.la
+lib/gedit-2/plugins/libshowtabbar.so
 lib/gedit-2/plugins/sessionsaver/
 lib/gedit-2/plugins/sessionsaver.gedit-plugin
 lib/gedit-2/plugins/sessionsaver/__init__.py

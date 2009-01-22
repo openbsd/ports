@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/11/18 13:36:32 jasper Exp $
-lib/gtk-2.0/modules/libatk-bridge.so
-@lib lib/libcspi.so.${LIBcspi_VERSION}
-@lib lib/libloginhelper.so.${LIBloginhelper_VERSION}
-@lib lib/libspi.so.${LIBspi_VERSION}
-lib/orbit-2.0/Accessibility_LoginHelper_module.so
-lib/orbit-2.0/Accessibility_module.so

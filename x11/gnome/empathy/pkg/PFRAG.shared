@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/12/11 21:40:41 jasper Exp $
-@lib lib/libempathy-gtk.so.${LIBempathy-gtk_VERSION}
-@lib lib/libempathy.so.${LIBempathy_VERSION}
-lib/python${MODPY_VERSION}/site-packages/empathy.so
-lib/python${MODPY_VERSION}/site-packages/empathygtk.so

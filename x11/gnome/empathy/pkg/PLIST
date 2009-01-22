@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/22 16:30:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/01/22 18:40:13 jasper Exp $
 %%SHARED%%
 @bin bin/empathy
 @bin bin/empathy-logs
@@ -68,14 +68,18 @@ lib/bonobo/servers/GNOME_Megaphone_Applet.server
 lib/bonobo/servers/GNOME_NotHere_Applet.server
 lib/libempathy-gtk.a
 lib/libempathy-gtk.la
+@lib lib/libempathy-gtk.so.${LIBempathy-gtk_VERSION}
 lib/libempathy.a
 lib/libempathy.la
+@lib lib/libempathy.so.${LIBempathy_VERSION}
 lib/pkgconfig/libempathy-gtk.pc
 lib/pkgconfig/libempathy.pc
 lib/python${MODPY_VERSION}/site-packages/empathy.a
 lib/python${MODPY_VERSION}/site-packages/empathy.la
+lib/python${MODPY_VERSION}/site-packages/empathy.so
 lib/python${MODPY_VERSION}/site-packages/empathygtk.a
 lib/python${MODPY_VERSION}/site-packages/empathygtk.la
+lib/python${MODPY_VERSION}/site-packages/empathygtk.so
 @bin libexec/megaphone-applet
 @bin libexec/nothere-applet
 @man man/man1/empathy.1
