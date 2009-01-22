@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/01/12 20:13:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2009/01/22 19:06:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GNOME web browser based on mozilla
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	2.24.3
+PKGNAME=	${DISTNAME}p0
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
@@ -43,15 +44,15 @@ MODULES=	devel/gettext \
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 atk-1.0 audiofile bonobo-2 \
+		Xrender art_lgpl_2 atk-1.0 bonobo-2 \
 		bonobo-activation bonoboui-2 c cairo crypto dbus-1 \
-		dbus-glib-1 esd expat fontconfig freebl3 freetype \
+		dbus-glib-1 expat fontconfig freebl3 freetype \
 		gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 		gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 ltdl m nspr4 nss3 nssckbi ogg \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		plc4 plds4 png popt pthread smime3 sndio softokn3 ssl \
+		plc4 plds4 png popt pthread smime3 softokn3 ssl \
 		ssl3 startup-notification-1 stdc++ util vorbis \
 		vorbisfile z
 
