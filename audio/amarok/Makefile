@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2008/08/26 17:24:38 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2009/01/23 17:42:14 jasper Exp $
 
 CATEGORIES =	audio x11 x11/kde
 COMMENT =	music player for KDE
@@ -7,7 +7,7 @@ HOMEPAGE =	http://amarok.kde.org/
 V =		1.4.10
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME =	amarok-$V
-PKGNAME =	${DISTNAME}
+PKGNAME =	${DISTNAME}p0
 EXTRACT_SUFX =	.tar.bz2
 
 # GPLv2/LGPLv2/GFDL
@@ -34,7 +34,7 @@ WANTLIB =	stdc++ Xext Xrender z X11 Xau Xdmcp util m SM c \
 		pthread ICE idn expat fontconfig freetype \
 		iconv pcre pcreposix \
 		jpeg png art_lgpl_2 intl usb \
-		gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
+		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		fam rpcsvc expat fontconfig
 
 SHARED_LIBS +=	amarok               0.0      # .0.0
