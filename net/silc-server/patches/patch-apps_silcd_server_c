@@ -1,6 +1,6 @@
-$OpenBSD: patch-apps_silcd_server_c,v 1.3 2009/01/12 00:31:45 sthen Exp $
---- apps/silcd/server.c.orig	Fri Jan  9 22:27:45 2009
-+++ apps/silcd/server.c	Fri Jan  9 22:39:18 2009
+$OpenBSD: patch-apps_silcd_server_c,v 1.4 2009/01/23 11:01:06 sthen Exp $
+--- apps/silcd/server.c.orig	Thu Jan  8 04:20:01 2009
++++ apps/silcd/server.c	Sat Jan 17 08:00:12 2009
 @@ -228,8 +228,10 @@ SILC_TASK_CALLBACK(silc_server_packet_error_timeout)
    SilcPacketStream stream = context;
    SilcIDListData idata = silc_packet_get_context(stream);
@@ -42,7 +42,27 @@ $OpenBSD: patch-apps_silcd_server_c,v 1.3 2009/01/12 00:31:45 sthen Exp $
    /* In case we get here many times, register only one timeout */
    silc_schedule_task_del_by_all(server->schedule, 0,
  				silc_server_packet_error_timeout, stream);
-@@ -2345,6 +2353,8 @@ silc_server_accept_auth_compl(SilcConnAuth connauth, S
+@@ -310,10 +318,17 @@ static void silc_server_packet_parse_type(SilcServer s
+ {
+   SilcPacketType type = packet->type;
+   SilcIDListData idata = silc_packet_get_context(sock);
++#ifdef SILC_DEBUG
++  const char *ip;
++  SilcUInt16 port;
+ 
+-  SILC_LOG_DEBUG(("Received %s packet [flags %d]",
+-		  silc_get_packet_name(type), packet->flags));
++  silc_socket_stream_get_info(silc_packet_stream_get_stream(sock),
++			      NULL, NULL, &ip, &port);
++#endif /* SILC_DEBUG */
+ 
++  SILC_LOG_DEBUG(("Received %s packet [flags %d] from %s:%d",
++		  silc_get_packet_name(type), packet->flags, ip, port));
++
+   /* Parse the packet type */
+   switch (type) {
+   case SILC_PACKET_NOTIFY:
+@@ -2345,6 +2360,8 @@ silc_server_accept_auth_compl(SilcConnAuth connauth, S
        entry->data.conn_type = SILC_CONN_CLIENT;
  
        /* Statistics */
@@ -51,7 +71,7 @@ $OpenBSD: patch-apps_silcd_server_c,v 1.3 2009/01/12 00:31:45 sthen Exp $
        server->stat.my_clients++;
        server->stat.clients++;
        server->stat.cell_clients++;
-@@ -3090,7 +3100,8 @@ void silc_server_disconnect_remote(SilcServer server,
+@@ -3090,7 +3107,8 @@ void silc_server_disconnect_remote(SilcServer server,
    if (!sock)
      return;
  
@@ -61,7 +81,7 @@ $OpenBSD: patch-apps_silcd_server_c,v 1.3 2009/01/12 00:31:45 sthen Exp $
  
    va_start(ap, status);
    cp = va_arg(ap, char *);
-@@ -3154,6 +3165,8 @@ void silc_server_free_client_data(SilcServer server,
+@@ -3154,6 +3172,8 @@ void silc_server_free_client_data(SilcServer server,
    /* Local detached clients aren't counted. */
    if (!client->local_detached)
      server->stat.my_clients--;
@@ -70,7 +90,7 @@ $OpenBSD: patch-apps_silcd_server_c,v 1.3 2009/01/12 00:31:45 sthen Exp $
    SILC_VERIFY(server->stat.clients > 0);
    server->stat.clients--;
    if (server->stat.cell_clients)
-@@ -3215,11 +3228,13 @@ void silc_server_free_sock_user_data(SilcServer server
+@@ -3215,11 +3235,13 @@ void silc_server_free_sock_user_data(SilcServer server
      if (idata->sconn && idata->sconn->op) {
        SILC_LOG_DEBUG(("Abort active protocol"));
        silc_async_abort(idata->sconn->op, NULL, NULL);
@@ -84,3 +104,14 @@ $OpenBSD: patch-apps_silcd_server_c,v 1.3 2009/01/12 00:31:45 sthen Exp $
      }
    }
  
+@@ -5030,6 +5052,10 @@ void silc_server_save_users_on_channel(SilcServer serv
+       }
+ 
+       client->data.status |= SILC_IDLIST_STATUS_REGISTERED;
++
++      SILC_LOG_DEBUG(("stat.clients %d->%d", server->stat.clients,
++		      server->stat.clients + 1));
++      server->stat.clients++;
+     }
+ 
+     if (!(client->data.status & SILC_IDLIST_STATUS_REGISTERED)) {

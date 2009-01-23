@@ -1,6 +1,17 @@
-$OpenBSD: patch-apps_silcd_server_util_c,v 1.3 2009/01/12 00:31:45 sthen Exp $
---- apps/silcd/server_util.c.orig	Fri Jan  9 22:30:28 2009
-+++ apps/silcd/server_util.c	Fri Jan  9 22:32:09 2009
+$OpenBSD: patch-apps_silcd_server_util_c,v 1.4 2009/01/23 11:01:06 sthen Exp $
+--- apps/silcd/server_util.c.orig	Thu Jan  8 04:20:01 2009
++++ apps/silcd/server_util.c	Sat Jan 17 08:01:18 2009
+@@ -42,8 +42,8 @@ silc_server_remove_clients_channels(SilcServer server,
+   if (!client)
+     return;
+ 
+-  SILC_LOG_DEBUG(("Remove client %s from all channels",
+-		 client->nickname ? client->nickname :
++  SILC_LOG_DEBUG(("Remove client  %p %s from all channels",
++		  client, client->nickname ? client->nickname :
+ 		  (unsigned char *)""));
+ 
+   if (silc_hash_table_find(clients, client, NULL, NULL))
 @@ -205,6 +205,8 @@ SilcBool silc_server_remove_clients_by_server(SilcServ
        }
  
