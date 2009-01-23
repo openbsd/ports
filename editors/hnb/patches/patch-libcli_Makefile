@@ -1,0 +1,9 @@
+$OpenBSD: patch-libcli_Makefile,v 1.1 2009/01/23 16:13:50 jasper Exp $
+--- libcli/Makefile.orig	Fri Jan 23 17:11:28 2009
++++ libcli/Makefile	Fri Jan 23 17:11:31 2009
+@@ -1,4 +1,4 @@
+-CFLAGS = -Wall
++CFLAGS += -Wall
+ 
+ OBJS = cli.o cli_history.o cli_tokenize.o
+ 

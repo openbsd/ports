@@ -1,0 +1,10 @@
+$OpenBSD: patch-Makefile,v 1.1 2009/01/23 16:13:50 jasper Exp $
+--- Makefile.orig	Fri Jan 23 17:09:46 2009
++++ Makefile	Fri Jan 23 17:10:15 2009
+@@ -1,5 +1,5 @@
+ LIBS=-lncurses libcli/libcli.a
+-CFLAGS=-I.. -Ilibcli -DHAVE_CONFIG_H -Wall -pedantic -g
++CFLAGS+=-I.. -Ilibcli -DHAVE_CONFIG_H -Wall -pedantic -g
+ 
+ CFILES=$(wildcard *.c)
+ OBJS=$(patsubst %.c,%.o,$(CFILES))

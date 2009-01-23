@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/23 16:13:50 jasper Exp $
 
 COMMENT=	hierarchical notebook
 
 DISTNAME=	hnb-1.9.17
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	editors
 
 HOMEPAGE=	http://hnb.sourceforge.net/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

@@ -1,0 +1,12 @@
+$OpenBSD: patch-expanded_c,v 1.1 2009/01/23 16:13:50 jasper Exp $
+--- expanded.c.orig	Fri Jan 23 17:08:42 2009
++++ expanded.c	Fri Jan 23 17:09:16 2009
+@@ -18,6 +18,8 @@
+  * Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+  */
+ 
++#include <string.h>
++
+ #include "tree.h"
+ #include "cli.h"
+ #define NULL 0
