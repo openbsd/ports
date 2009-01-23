@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/22 18:40:13 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2009/01/23 12:46:36 ajacoutot Exp $
 @bin bin/empathy
 @bin bin/empathy-logs
 include/libempathy/
