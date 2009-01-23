@@ -1,7 +1,7 @@
-$OpenBSD: patch-dkim-filter_dkim-filter_8,v 1.5 2008/08/28 08:23:09 jakob Exp $
---- dkim-filter/dkim-filter.8.orig	Thu Aug 28 08:00:17 2008
-+++ dkim-filter/dkim-filter.8	Thu Aug 28 10:14:36 2008
-@@ -318,6 +318,7 @@ and primary group ID of the named
+$OpenBSD: patch-dkim-filter_dkim-filter_8,v 1.6 2009/01/23 06:43:07 jasper Exp $
+--- dkim-filter/dkim-filter.8.orig	Mon Jul 28 01:53:57 2008
++++ dkim-filter/dkim-filter.8	Thu Jan 22 23:28:54 2009
+@@ -322,6 +322,7 @@ and primary group ID of the named
  unless an alternate
  .I group
  is specified.

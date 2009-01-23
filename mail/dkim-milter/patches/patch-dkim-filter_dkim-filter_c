@@ -1,7 +1,7 @@
-$OpenBSD: patch-dkim-filter_dkim-filter_c,v 1.9 2008/08/28 08:23:09 jakob Exp $
---- dkim-filter/dkim-filter.c.orig	Thu Aug 28 08:00:17 2008
-+++ dkim-filter/dkim-filter.c	Thu Aug 28 10:14:36 2008
-@@ -7743,7 +7743,7 @@ main(int argc, char **argv)
+$OpenBSD: patch-dkim-filter_dkim-filter_c,v 1.10 2009/01/23 06:43:07 jasper Exp $
+--- dkim-filter/dkim-filter.c.orig	Tue Jan  6 19:39:08 2009
++++ dkim-filter/dkim-filter.c	Thu Jan 22 23:28:54 2009
+@@ -8906,7 +8906,7 @@ main(int argc, char **argv)
  	unsigned long tmpl;
  	const char *args = CMDLINEOPTS;
  	FILE *f;

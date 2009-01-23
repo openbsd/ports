@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/17 10:59:37 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/01/23 06:43:08 jasper Exp $
 @newgroup _dkim-milter:569
 @newuser _dkim-milter:569:_dkim-milter:daemon:dkim-milter Account:/nonexistent:/sbin/nologin
 bin/dkim-genkey
-bin/dkim-testkey
-bin/dkim-testssp
-libexec/dkim-filter
+@bin bin/dkim-testkey
+@bin bin/dkim-testssp
+@bin libexec/dkim-filter
 @man man/man8/dkim-filter.8
 @man man/man8/dkim-genkey.8
 @man man/man8/dkim-testkey.8
