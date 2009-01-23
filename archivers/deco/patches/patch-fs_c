@@ -1,0 +1,19 @@
+$OpenBSD: patch-fs_c,v 1.1.1.1 2009/01/23 02:30:20 kevlo Exp $
+--- fs.c.orig	Thu Jan 22 15:44:22 2009
++++ fs.c	Thu Jan 22 15:55:17 2009
+@@ -25,8 +25,13 @@ enum type file_type(bool follow, const char *path)
+ 	{
+ 	struct stat st;
+ 
+-	if ((follow ? stat : lstat)(path, &st) == 0)
+-		return S_ISDIR(st.st_mode) ? Dir : Other;
++	if (follow) {
++		if (stat(path, &st) == 0)
++			return S_ISDIR(st.st_mode) ? Dir : Other;
++	} else {
++		if (lstat(path, &st) == 0)
++			return S_ISDIR(st.st_mode) ? Dir : Other;
++	}
+ 	return errno == ENOENT ? None : (err(MSG_STAT, true, path), Unknown);
+ 	}
+ 
