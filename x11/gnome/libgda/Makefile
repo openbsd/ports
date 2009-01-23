@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/11/29 12:53:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/01/23 18:13:25 jasper Exp $
 
 # XXX: use system sqlite3
 
@@ -14,12 +14,12 @@ COMMENT-tds=		FreeTDS backend for libgda
 GNOME_PROJECT=		libgda
 GNOME_VERSION=		3.1.5
 
-PKGNAME-main=		${DISTNAME}p1
-PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}p1
-PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}p1
-PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}p1
-PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}p1
-PKGNAME-tds=		libgda-tds-${GNOME_VERSION}
+PKGNAME-main=		${DISTNAME}p2
+PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}p2
+PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}p2
+PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}p2
+PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}p2
+PKGNAME-tds=		libgda-tds-${GNOME_VERSION}p0
 
 CATEGORIES=		databases
 
@@ -57,7 +57,7 @@ MULTI_PACKAGES=		-main
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			xslt::textproc/libxslt \
-			db.>=5::databases/db/v4
+			db:db-4.*:databases/db/v4
 
 LIB_DEPENDS=		gcrypt::security/libgcrypt \
 			gnomevfs-2::x11/gnome/vfs2
