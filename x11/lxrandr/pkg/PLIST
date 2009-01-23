@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/23 15:53:27 ajacoutot Exp $
+@bin bin/lxrandr
+share/applications/lxrandr.desktop
+share/locale/hu/LC_MESSAGES/lxrandr.mo
+share/locale/zh_TW/LC_MESSAGES/lxrandr.mo
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

@@ -1,0 +1,105 @@
+$OpenBSD: patch-src_lxrandr_c,v 1.1.1.1 2009/01/23 15:53:27 ajacoutot Exp $
+--- src/lxrandr.c.orig	Fri Jan  2 16:25:04 2009
++++ src/lxrandr.c	Fri Jan  2 16:23:24 2009
+@@ -62,10 +62,12 @@ static const char* get_human_readable_name( Monitor* m
+         return _("Laptop LCD Monitor");
+     else if( g_str_has_prefix( m->name, "VGA" ) || g_str_has_prefix( m->name, "Analog" ) )
+         return _( LVDS ? "External VGA Monitor" : "VGA Monitor");
+-    else if( g_str_has_prefix( m->name, "DVI" ) || g_str_has_prefix(m->name, "TMDS") || g_str_has_prefix(m->name, "Digital") )
++    else if( g_str_has_prefix( m->name, "DVI" ) || g_str_has_prefix(m->name, "TMDS") || g_str_has_prefix(m->name, "Digital") || g_str_has_prefix(m->name, "LVDS") )
+         return _( LVDS ? "External DVI Monitor" : "DVI Monitor");
+     else if( g_str_has_prefix( m->name, "TV" ) || g_str_has_prefix(m->name, "S-Video") )
+         return _("TV");
++    else if( strcmp( m->name, "default" ) == 0 )
++        return _( "Default Monitor");
+ 
+     return m->name;
+ }
+@@ -91,7 +93,7 @@ static gboolean get_xrandr_info()
+         return FALSE;
+     }
+ 
+-    regex = g_regex_new( "([A-Z]+[-0-9]*) +connected .*((\n +[0-9]+x[0-9]+[^\n]+)+)",
++    regex = g_regex_new( "([a-zA-Z]+[-0-9]*) +connected .*((\n +[0-9]+x[0-9]+[^\n]+)+)",
+                          0, 0, NULL );
+     if( g_regex_match( regex, output, 0, &match ) )
+     {
+@@ -125,8 +127,13 @@ static gboolean get_xrandr_info()
+                     {
+                         char *star, *plus;
+                         str = g_strdup( str );
+-                        g_ptr_array_add( strv, str );
+ 
++                        // sometimes, + goes after a space
++                        if( 0 == strcmp( str, "+" ) )
++                            --irate;
++                        else
++                            g_ptr_array_add( strv, str );
++
+                         if( star = strchr( str, '*' ) )
+                         {
+                             m->active_mode = imode;
+@@ -141,7 +148,7 @@ static gboolean get_xrandr_info()
+                             *star = '\0';
+                         if( plus )
+                             *plus = '\0';
+-                        ++imode;
++                        ++irate;
+                     }
+                 }
+                 g_ptr_array_add( strv, NULL );
+@@ -266,6 +273,12 @@ static void set_xrandr_info()
+     g_string_free( cmd, TRUE );
+ }
+ 
++static void choose_max_resolution( Monitor* m )
++{
++    if( gtk_tree_model_iter_n_children( gtk_combo_box_get_model(m->res_combo), NULL ) > 1 )
++        gtk_combo_box_set_active( m->res_combo, 1 );
++}
++
+ static void on_quick_option( GtkButton* btn, gpointer data )
+ {
+     GSList* l;
+@@ -276,6 +289,7 @@ static void on_quick_option( GtkButton* btn, gpointer 
+         for( l = monitors; l; l = l->next )
+         {
+             Monitor* m = (Monitor*)l->data;
++            choose_max_resolution( m );
+             gtk_toggle_button_set_active( m->enable, TRUE );
+         }
+         break;
+@@ -283,6 +297,7 @@ static void on_quick_option( GtkButton* btn, gpointer 
+         for( l = monitors; l; l = l->next )
+         {
+             Monitor* m = (Monitor*)l->data;
++            choose_max_resolution( m );
+             gtk_toggle_button_set_active( m->enable, m != LVDS );
+         }
+         break;
+@@ -290,6 +305,7 @@ static void on_quick_option( GtkButton* btn, gpointer 
+         for( l = monitors; l; l = l->next )
+         {
+             Monitor* m = (Monitor*)l->data;
++            choose_max_resolution( m );
+             gtk_toggle_button_set_active( m->enable, m == LVDS );
+         }
+         break;
+@@ -351,7 +367,7 @@ int main(int argc, char** argv)
+                                        GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, NULL );
+     g_signal_connect( dlg, "response", G_CALLBACK(on_response), NULL );
+     gtk_container_set_border_width( (GtkContainer*)dlg, 8 );
+-    gtk_dialog_set_alternative_button_order( dlg, GTK_RESPONSE_OK, GTK_RESPONSE_CANCEL );
++    gtk_dialog_set_alternative_button_order( dlg, GTK_RESPONSE_OK, GTK_RESPONSE_CANCEL, -1 );
+ 
+     btn = gtk_button_new_from_stock( GTK_STOCK_ABOUT );
+     gtk_box_pack_start( GTK_DIALOG(dlg)->action_area, btn, FALSE, TRUE, 0 );
+@@ -415,7 +431,7 @@ int main(int argc, char** argv)
+ 
+         // turn off screen is not allowed since there should be at least one monitor available.
+         if( g_slist_length( monitors ) == 1 )
+-            gtk_widget_hide( m->enable );
++            gtk_widget_set_sensitive( m->enable, FALSE );
+ 
+         gtk_box_pack_start( hbox, check, FALSE, TRUE, 6 );
+         if( m->active_mode >= 0 )

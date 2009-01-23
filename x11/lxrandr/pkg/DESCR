@@ -1,0 +1,12 @@
+LXRandR is a very basic monitor config tool utilizing X RandR extension.
+It's a GUI frontend of the command line program xrandr. LXRandR can let
+you change the screen resolution on the fly. Besides, when you run
+lxrandr with external monitor connected, its GUI will change, and show
+you some quick options to get your projector working correctly.
+
+This tool doesn't aim to be a full xrandr frontend. It's utility for
+grandma, not for geeks.  LXRandR only gives you some easy and quick
+options which are intuitive. It's very suitable for laptop users who
+frequently uses projectors or external monitor and just want to get
+their work done without reading a lot of "geek-centered" manuals or
+command line tutorials.
