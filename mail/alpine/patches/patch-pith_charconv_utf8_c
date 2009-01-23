@@ -1,0 +1,13 @@
+$OpenBSD: patch-pith_charconv_utf8_c,v 1.1 2009/01/23 11:41:29 ajacoutot Exp $
+--- pith/charconv/utf8.c.orig	Thu Apr  3 00:09:20 2008
++++ pith/charconv/utf8.c	Fri Jan 23 12:38:46 2009
+@@ -2141,7 +2141,8 @@ nl_langinfo_codeset_wrapper(void)
+ 	if(!strcmp("ANSI_X3.4-1968", ret)
+ 	   || !strcmp("ASCII", ret)
+ 	   || !strcmp("C", ret)
+-	   || !strcmp("POSIX", ret))
++	   || !strcmp("POSIX", ret)
++	   || !strcmp("646", ret))
+ 	  ret = "US-ASCII";
+ 	else if(!strucmp(ret, "UTF8"))
+ 	  ret = "UTF-8";
