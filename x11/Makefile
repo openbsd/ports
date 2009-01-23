@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.363 2009/01/16 02:39:53 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.364 2009/01/23 15:55:05 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -118,6 +118,7 @@
      SUBDIR += libgdiplus
      SUBDIR += libsexy
      SUBDIR += lupe
+     SUBDIR += lxrandr
      SUBDIR += matchbox
      SUBDIR += mlterm
      SUBDIR += mono-gtk2
