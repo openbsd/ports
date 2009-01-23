@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 23:54:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2009/01/23 09:11:57 sthen Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/03/27 11:56:44 tg Exp $
 
 COMMENT=	Demos Commander, a free Norton Commander clone
 
 DISTNAME=	deco383
-PKGNAME=	deco-3.8.3p0
+PKGNAME=	deco-3.8.3p1
 CATEGORIES=	misc
 MASTER_SITES=	http://humppa.nl/distfiles/
 EXTRACT_SUFX=	.tgz
