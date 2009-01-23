@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 17:54:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/01/23 02:33:17 kevlo Exp $
+@conflict deco-*
 bin/deco
 @man man/man1/deco.1
 share/deco/
