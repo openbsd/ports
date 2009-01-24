@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/14 23:55:46 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2009/01/24 18:06:37 bernd Exp $
 
 COMMENT=	execute commands in parallel on multiple remote machines
 
-DISTNAME=	capistrano-2.3.0
-PKGNAME=	ruby-${DISTNAME}p0
+DISTNAME=	capistrano-2.5.3
+PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.capify.org/
@@ -27,8 +27,7 @@ RUN_DEPENDS=		::net/ruby-net-ssh \
 			::net/ruby-net-sftp \
 			::net/ruby-net-scp \
 			::net/ruby-net-ssh-gateway \
-			::devel/ruby-highline \
-			::devel/ruby-fastthread
+			::devel/ruby-highline
 
 PKG_ARCH=		*
 
