@@ -1,38 +1,24 @@
-$OpenBSD: patch-ext_ffmpeg_gstffmpegcodecmap_c,v 1.3 2008/07/09 02:22:59 jakemsr Exp $
---- ext/ffmpeg/gstffmpegcodecmap.c.orig	Mon May 19 12:58:09 2008
-+++ ext/ffmpeg/gstffmpegcodecmap.c	Fri Jun 27 17:59:27 2008
-@@ -27,8 +27,8 @@
+$OpenBSD: patch-ext_ffmpeg_gstffmpegcodecmap_c,v 1.4 2009/01/24 12:39:11 ajacoutot Exp $
+--- ext/ffmpeg/gstffmpegcodecmap.c.orig	Sat Jan 24 12:24:37 2009
++++ ext/ffmpeg/gstffmpegcodecmap.c	Sat Jan 24 12:25:50 2009
+@@ -26,7 +26,8 @@
+ #ifdef HAVE_FFMPEG_UNINSTALLED
  #include <avcodec.h>
- #include <libswscale/swscale.h>
  #else
--#include <ffmpeg/swscale.h>
 -#include <ffmpeg/avcodec.h>
 +#include <libswscale/swscale.h>
 +#include <libavcodec/avcodec.h>
  #endif
  #include <string.h>
  
-@@ -326,6 +326,10 @@ gst_ffmpeg_codecid_to_caps (enum CodecID codec_id,
-       caps = gst_ff_aud_caps_new (context, codec_id, "audio/x-dts", NULL);
-       break;
+@@ -360,6 +361,10 @@ gst_ffmpeg_codecid_to_caps (enum CodecID codec_id,
  
-+    case CODEC_ID_VORBIS:
-+      caps = gst_ff_aud_caps_new (context, codec_id, "audio/x-vorbis", NULL);
+     case CODEC_ID_DTS:
+       caps = gst_ff_aud_caps_new (context, codec_id, "audio/x-dts", NULL);
 +      break;
 +
-     case CODEC_ID_APE:
-       caps =
-           gst_ff_aud_caps_new (context, codec_id, "audio/x-ffmpeg-parsed-ape",
-@@ -3306,10 +3310,10 @@ gst_ffmpeg_img_convert (AVPicture * dst, int dst_pix_f
-   struct SwsContext *ctx;
-   int res;
++    case CODEC_ID_VORBIS:
++      caps = gst_ff_aud_caps_new (context, codec_id, "audio/x-vorbis", NULL);
+       break;
  
--  ctx = sws_getContext (src_width, src_height, src_pix_fmt, src_width, src_height, dst_pix_fmt, 2,      /* flags : bicubic */
-+  ctx = sws_getContext (src_width, src_height, src_pix_fmt, src_width, src_height, dst_pix_fmt, 0,      /* flags : bicubic */
-       NULL, NULL, NULL);
-   res = sws_scale (ctx, (uint8_t **) src->data, (int *) src->linesize,
--      2, src_width, dst->data, dst->linesize);
-+      0, src_height, dst->data, dst->linesize);
-   sws_freeContext (ctx);
-   return res;
- }
+     case CODEC_ID_APE:
