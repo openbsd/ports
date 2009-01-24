@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/12/17 13:56:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/01/24 16:50:45 ajacoutot Exp $
 %%SHARED%%
 bin/vala-gen-introspect
 @bin bin/valac
@@ -97,7 +97,6 @@ include/vala-1.0/gobject/valainterfaceregisterfunction.h
 include/vala-1.0/gobject/valastructregisterfunction.h
 include/vala-1.0/gobject/valatyperegisterfunction.h
 include/vala-1.0/vala/
-include/vala-1.0/vala/vala.h
 include/vala-1.0/vala/valaaddressofexpression.h
 include/vala-1.0/vala/valaarraycreationexpression.h
 include/vala-1.0/vala/valaarraylengthfield.h
@@ -111,6 +110,7 @@ include/vala-1.0/vala/valabasicblock.h
 include/vala-1.0/vala/valabinaryexpression.h
 include/vala-1.0/vala/valablock.h
 include/vala-1.0/vala/valabooleanliteral.h
+include/vala-1.0/vala/valabooleantype.h
 include/vala-1.0/vala/valabreakstatement.h
 include/vala-1.0/vala/valacastexpression.h
 include/vala-1.0/vala/valacatchclause.h
@@ -141,6 +141,7 @@ include/vala-1.0/vala/valaelementaccess.h
 include/vala-1.0/vala/valaemptystatement.h
 include/vala-1.0/vala/valaenum.h
 include/vala-1.0/vala/valaenumvalue.h
+include/vala-1.0/vala/valaenumvaluetype.h
 include/vala-1.0/vala/valaerrorcode.h
 include/vala-1.0/vala/valaerrordomain.h
 include/vala-1.0/vala/valaerrortype.h
@@ -148,6 +149,7 @@ include/vala-1.0/vala/valaexpression.h
 include/vala-1.0/vala/valaexpressionstatement.h
 include/vala-1.0/vala/valafield.h
 include/vala-1.0/vala/valafieldprototype.h
+include/vala-1.0/vala/valafloatingtype.h
 include/vala-1.0/vala/valaflowanalyzer.h
 include/vala-1.0/vala/valaforeachstatement.h
 include/vala-1.0/vala/valaformalparameter.h
@@ -209,6 +211,7 @@ include/vala-1.0/vala/valastatement.h
 include/vala-1.0/vala/valastatementlist.h
 include/vala-1.0/vala/valastringliteral.h
 include/vala-1.0/vala/valastruct.h
+include/vala-1.0/vala/valastructvaluetype.h
 include/vala-1.0/vala/valaswitchlabel.h
 include/vala-1.0/vala/valaswitchsection.h
 include/vala-1.0/vala/valaswitchstatement.h
@@ -232,6 +235,7 @@ include/vala-1.0/vala/valawhilestatement.h
 include/vala-1.0/vala/valayieldstatement.h
 lib/libvala.a
 lib/libvala.la
+lib/pkgconfig/
 lib/pkgconfig/vala-1.0.pc
 lib/vala/
 @bin lib/vala/gen-introspect
@@ -360,12 +364,15 @@ share/vala/vapi/libwnck-1.0.deps
 share/vala/vapi/libwnck-1.0.vapi
 share/vala/vapi/libxml-2.0.vapi
 share/vala/vapi/loudmouth-1.0.vapi
+share/vala/vapi/lua.vapi
+share/vala/vapi/mysql.vapi
 share/vala/vapi/pango.deps
 share/vala/vapi/pango.vapi
 share/vala/vapi/pangocairo.deps
 share/vala/vapi/pangocairo.vapi
 share/vala/vapi/poppler-glib.deps
 share/vala/vapi/poppler-glib.vapi
+share/vala/vapi/posix.vapi
 share/vala/vapi/raptor.vapi
 share/vala/vapi/rasqal.vapi
 share/vala/vapi/sdl-gfx.vapi
