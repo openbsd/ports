@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/01/24 18:31:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/24 19:04:04 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
 GNOME_VERSION=	0.12.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
 # LGPLv2.1
@@ -46,7 +46,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-DLLMAP_FILES=	Tomboy/Tomboy.exe.config
+DLLMAP_FILES=	Tomboy/Tomboy.exe.config.in
 
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
