@@ -1,38 +1,28 @@
---- src/archive.c.orig	2009-01-23 15:52:58.000000000 +0100
-+++ src/archive.c	2009-01-23 15:53:49.000000000 +0100
-@@ -84,7 +84,7 @@
-     parentdir = g_build_path(G_DIR_SEPARATOR_S, dir, "..", NULL);
+--- src/archive.c.orig	Fri Jan 11 19:22:11 2008
++++ src/archive.c	Sat Jan 24 12:57:36 2009
+@@ -173,18 +173,17 @@ static gchar* install_theme_to(const gchar *file, cons
  
-     argv = g_new(gchar*, 9);
--    argv[0] = g_strdup("tar");
-+    argv[0] = g_strdup("gtar");
-     argv[1] = g_strdup("-c");
-     argv[2] = g_strdup("-z");
-     argv[3] = g_strdup("-f");
-@@ -103,7 +103,7 @@
- 
-     }
-     else
--        gtk_msg(GTK_MESSAGE_ERROR, _("Unable to run the \"tar\" command: %s"),
-+        gtk_msg(GTK_MESSAGE_ERROR, _("Unable to run the \"gtar\" command: %s"),
-                 e->message);
- 
-     g_strfreev(argv);
-@@ -174,7 +174,7 @@
      glob = g_strdup_printf("*/openbox-3/", name);
  
-     argv = g_new(gchar*, 11);
--    argv[0] = g_strdup("tar");
-+    argv[0] = g_strdup("gtar");
+-    argv = g_new(gchar*, 11);
++    argv = g_new(gchar*, 10);
+     argv[0] = g_strdup("tar");
      argv[1] = g_strdup("-x");
      argv[2] = g_strdup("-v");
      argv[3] = g_strdup("-z");
-@@ -187,7 +187,7 @@
-     argv[10] = NULL;
+-    argv[4] = g_strdup("--wildcards");
+-    argv[5] = g_strdup("-f");
+-    argv[6] = g_strdup(file);
+-    argv[7] = g_strdup("-C");
+-    argv[8] = g_strdup(to);
+-    argv[9] = g_strdup(glob);
+-    argv[10] = NULL;
++    argv[4] = g_strdup("-f");
++    argv[5] = g_strdup(file);
++    argv[6] = g_strdup("-C");
++    argv[7] = g_strdup(to);
++    argv[8] = g_strdup(glob);
++    argv[9] = NULL;
      if (!g_spawn_sync(NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL,
                        &outtxt, &errtxt, &exitcode, &e))
--        gtk_msg(GTK_MESSAGE_ERROR, _("Unable to run the \"tar\" command: %s"),
-+        gtk_msg(GTK_MESSAGE_ERROR, _("Unable to run the \"gtar\" command: %s"),
-                 e->message);
-     g_strfreev(argv);
-     if (e) g_error_free(e);
+         gtk_msg(GTK_MESSAGE_ERROR, _("Unable to run the \"tar\" command: %s"),
