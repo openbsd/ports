@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_comix_py,v 1.1 2009/01/24 11:07:04 landry Exp $
+
+point python to where comix modules are installed
+
+--- src/comix.py.orig	Sat Nov 15 22:42:12 2008
++++ src/comix.py	Sat Jan 24 11:45:35 2009
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ 
+ """Comix - GTK Comic Book Viewer
+ 
+@@ -24,6 +24,9 @@ Copyright (C) 2005-2008 Pontus Ekberg
+ import os
+ import sys
+ import gettext
++
++# add path for comix python modules
++sys.path.insert(0, '${PREFIX}/share/comix/src')
+ 
+ import deprecated
+ import main

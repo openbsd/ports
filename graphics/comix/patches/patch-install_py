@@ -1,12 +1,67 @@
-$OpenBSD: patch-install_py,v 1.1 2007/11/20 18:53:21 mgrimm Exp $
---- install.py.orig	Mon Nov 19 19:36:30 2007
-+++ install.py	Mon Nov 19 19:38:08 2007
-@@ -156,7 +156,7 @@ if args == ["install"]:
-     check_dependencies()
-     print "Installing Comix in", install_dir, "...\n"
-     install("comix", "bin/comix")
--    install("comix.1.gz", "share/man/man1/comix.1.gz")
-+    install("comix.1", "man/man1/comix.1")
-     install("comix.desktop", "share/applications/comix.desktop")
-     install("images/logo/comix.png", "share/pixmaps/comix.png")
-     install("images/logo/comix.png", "share/icons/hicolor/48x48/apps/comix.png")
+$OpenBSD: patch-install_py,v 1.2 2009/01/24 11:07:04 landry Exp $
+
+install files in the right place, and don't try to run
+update-mime-database and gconftool-2, will be done in fake.
+
+--- install.py.orig	Fri Jan  2 00:07:54 2009
++++ install.py	Wed Jan 21 22:58:26 2009
+@@ -35,7 +35,8 @@ TRANSLATIONS = ('ca', 'cs', 'es', 'hr', 'id', 'ja', 'k
+ # 'de', 'it', 'nl', 'fr', 'el', 'hu', 'fa'
+ 
+ # Files to be installed, as (source file, destination directory)
+-FILES = (('src/about.py', 'share/comix/src'),
++FILES = (('comix', 'bin'),
++         ('src/about.py', 'share/comix/src'),
+          ('src/about.pyc', 'share/comix/src'),
+          ('src/archive.py', 'share/comix/src'),
+          ('src/archive.pyc', 'share/comix/src'),
+@@ -123,7 +124,7 @@ FILES = (('src/about.py', 'share/comix/src'),
+          ('images/tango-archive.png', 'share/comix/images'),
+          ('images/tango-enhance-image.png', 'share/comix/images'),
+          ('images/tango-image.png', 'share/comix/images'),
+-         ('comix.1.gz', 'share/man/man1'),
++         ('comix.1', 'man/man1'),
+          ('comix.desktop', 'share/applications'),
+          ('images/16x16/comix.png', 'share/icons/hicolor/16x16/apps'),
+          ('images/22x22/comix.png', 'share/icons/hicolor/22x22/apps'),
+@@ -132,12 +133,9 @@ FILES = (('src/about.py', 'share/comix/src'),
+          ('images/48x48/comix.png', 'share/icons/hicolor/48x48/apps'),
+          ('images/comix.svg', 'share/icons/hicolor/scalable/apps'))
+ 
+-# Symlinks to be created, as (target, symlink)
+-LINKS = (('../share/comix/src/comix.py', 'bin/comix'),)
+-
+ # Mime files to be installed, as (source file, destination directory)
+ MIME_FILES = (('mime/comicthumb', 'bin'),
+-              ('mime/comicthumb.1.gz', 'share/man/man1'),
++              ('mime/comicthumb.1', 'man/man1'),
+               ('mime/comix.xml', 'share/mime/packages'),
+               ('mime/icons/16x16/application-x-cbz.png',
+                 'share/icons/hicolor/16x16/mimetypes'),
+@@ -304,26 +302,11 @@ if args == ['install']:
+     for lang in TRANSLATIONS:
+         install(os.path.join('messages', lang, 'LC_MESSAGES/comix.mo'),
+             os.path.join('share/locale/', lang, 'LC_MESSAGES'))
+-    for src, link in LINKS:
+-        make_link(src, link)
+     if install_mime:
+         for src, dst in MIME_FILES:
+             install(src, dst)
+         for src, link in MIME_LINKS:
+             make_link(src, link)
+-        os.popen('update-mime-database "%s"' % 
+-            os.path.join(install_dir, 'share/mime'))
+-        print '\nUpdated mime database (added .cbz, .cbr and .cbt file types.)'
+-        schema = os.path.join(source_dir, 'mime/comicbook.schemas')
+-        os.popen('GCONF_CONFIG_SOURCE=$(gconftool-2 --get-default-source) '
+-                 'gconftool-2 --makefile-install-rule "%s" 2>/dev/null' %
+-                    schema)
+-        print '\nRegistered comic archive thumbnailer in gconf (if available).'
+-        print 'The thumbnailer is only supported by some file managers,',
+-        print 'such as Nautilus'
+-        print 'and Thunar.'
+-        print 'You might have to restart the file manager for the thumbnailer',
+-        print 'to be activated.'
+     os.utime(os.path.join(install_dir, 'share/icons/hicolor'), None)
+ # ---------------------------------------------------------------------------
+ # Uninstall Comix.
