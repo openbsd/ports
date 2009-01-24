@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_f-spot_exe_config_in,v 1.1 2009/01/24 19:55:00 ajacoutot Exp $
+--- src/f-spot.exe.config.in.orig	Sat Jan 24 20:42:37 2009
++++ src/f-spot.exe.config.in	Sat Jan 24 20:43:06 2009
+@@ -13,5 +13,5 @@
+   <dllmap dll="GL" target="libGL.so.1"/>
+   <dllmap dll="libXcomposite.dll" target="libXcomposite.so.1"/>
+   <dllmap dll="liblcms-1.0.0.dll" target="liblcms.so.1"/>
+-  <dllmap dll="libexif.dll" target="libexif.so.@EXIF_SOVERSION@"/>
++  <dllmap dll="libexif.dll" target="libexif.so"/>
+ </configuration>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/12/19 09:58:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/01/24 19:55:00 ajacoutot Exp $
 
 COMMENT=		personal photo management application for GNOME
 
 GNOME_VERSION=		0.5.0.2
 GNOME_PROJECT=		f-spot
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 SHARED_LIBS +=	fspoteog             0.0      # .0.0
 SHARED_LIBS +=	fspotjpegtran        0.0      # .0.0
 SHARED_LIBS +=	fspot                0.0      # .0.0
@@ -47,8 +47,15 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 
-DLLMAP_FILES=		src/f-spot.exe.config \
-			src/Cms.dll.config \
-			src/FSpot.Utils.dll.config
+DLLMAP_FILES=	Tao/Tao.OpenGl.Glu/Tao.OpenGl.Glu.dll.config \
+		Tao/Tao.OpenGl.ExtensionLoader/Tao.OpenGl.ExtensionLoader.dll.config \
+		Tao/Tao.OpenGl/Tao.OpenGl.dll.config \
+		libgphoto2-sharp/libgphoto2-sharp.dll.config \
+		dbus-sharp-glib/NDesk.DBus.GLib.dll.config \
+		src/FSpot.Utils.dll.config \
+		src/f-spot.exe.config.in \
+		src/Cms.dll.config.in \
+		gio-sharp/gio/gio-sharp.dll.config.in \
+		mono-addins/Mono.Addins/Mono.Addins.dll.config
 
 .include <bsd.port.mk>
