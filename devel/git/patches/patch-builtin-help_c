@@ -1,0 +1,51 @@
+$OpenBSD: patch-builtin-help_c,v 1.1 2009/01/24 14:31:29 bernd Exp $
+
+Fix "warning: missing sentinel in function call" on 64bit archs.
+
+--- builtin-help.c.orig	Fri Jan 23 09:33:07 2009
++++ builtin-help.c	Fri Jan 23 09:34:57 2009
+@@ -123,7 +123,7 @@ static void exec_woman_emacs(const char* path, const c
+ 		if (!path)
+ 			path = "emacsclient";
+ 		strbuf_addf(&man_page, "(woman \"%s\")", page);
+-		execlp(path, "emacsclient", "-e", man_page.buf, NULL);
++		execlp(path, "emacsclient", "-e", man_page.buf, (void *)NULL);
+ 		warning("failed to exec '%s': %s", path, strerror(errno));
+ 	}
+ }
+@@ -151,7 +151,7 @@ static void exec_man_konqueror(const char* path, const
+ 		} else
+ 			path = "kfmclient";
+ 		strbuf_addf(&man_page, "man:%s(1)", page);
+-		execlp(path, filename, "newTab", man_page.buf, NULL);
++		execlp(path, filename, "newTab", man_page.buf, (void *)NULL);
+ 		warning("failed to exec '%s': %s", path, strerror(errno));
+ 	}
+ }
+@@ -160,7 +160,7 @@ static void exec_man_man(const char* path, const char 
+ {
+ 	if (!path)
+ 		path = "man";
+-	execlp(path, "man", page, NULL);
++	execlp(path, "man", page, (void *)NULL);
+ 	warning("failed to exec '%s': %s", path, strerror(errno));
+ }
+ 
+@@ -168,7 +168,7 @@ static void exec_man_cmd(const char *cmd, const char *
+ {
+ 	struct strbuf shell_cmd = STRBUF_INIT;
+ 	strbuf_addf(&shell_cmd, "%s %s", cmd, page);
+-	execl("/bin/sh", "sh", "-c", shell_cmd.buf, NULL);
++	execl("/bin/sh", "sh", "-c", shell_cmd.buf, (void *)NULL);
+ 	warning("failed to exec '%s': %s", cmd, strerror(errno));
+ }
+ 
+@@ -376,7 +376,7 @@ static void show_info_page(const char *git_cmd)
+ {
+ 	const char *page = cmd_to_page(git_cmd);
+ 	setenv("INFOPATH", GIT_INFO_PATH, 1);
+-	execlp("info", "info", "gitman", page, NULL);
++	execlp("info", "info", "gitman", page, (void *)NULL);
+ }
+ 
+ static void get_html_page_path(struct strbuf *page_path, const char *page)

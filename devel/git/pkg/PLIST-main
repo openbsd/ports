@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2008/12/09 09:53:33 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2009/01/24 14:31:29 bernd Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -57,7 +57,9 @@ libexec/git/git-filter-branch
 @bin libexec/git/git-gc
 @bin libexec/git/git-get-tar-commit-id
 @bin libexec/git/git-grep
+libexec/git/git-gui--askpass
 @bin libexec/git/git-hash-object
+@bin libexec/git/git-help
 @bin libexec/git/git-http-fetch
 @bin libexec/git/git-http-push
 @bin libexec/git/git-imap-send
@@ -124,6 +126,7 @@ libexec/git/git-sh-setup
 @bin libexec/git/git-show-branch
 @bin libexec/git/git-show-index
 @bin libexec/git/git-show-ref
+@bin libexec/git/git-stage
 libexec/git/git-stash
 @bin libexec/git/git-status
 @bin libexec/git/git-stripspace
@@ -251,6 +254,7 @@ libexec/git/git-web--browse
 @man man/man1/git-show-index.1
 @man man/man1/git-show-ref.1
 @man man/man1/git-show.1
+@man man/man1/git-stage.1
 @man man/man1/git-stash.1
 @man man/man1/git-status.1
 @man man/man1/git-stripspace.1
@@ -285,6 +289,7 @@ libexec/git/git-web--browse
 @man man/man7/gitglossary.7
 @man man/man7/gittutorial-2.7
 @man man/man7/gittutorial.7
+@man man/man7/gitworkflows.7
 share/doc/git/
 share/doc/git/RelNotes-1.5.0.1.txt
 share/doc/git/RelNotes-1.5.0.2.txt
@@ -322,25 +327,30 @@ share/doc/git/RelNotes-1.5.4.3.txt
 share/doc/git/RelNotes-1.5.4.4.txt
 share/doc/git/RelNotes-1.5.4.5.txt
 share/doc/git/RelNotes-1.5.4.6.txt
+share/doc/git/RelNotes-1.5.4.7.txt
 share/doc/git/RelNotes-1.5.4.txt
 share/doc/git/RelNotes-1.5.5.1.txt
 share/doc/git/RelNotes-1.5.5.2.txt
 share/doc/git/RelNotes-1.5.5.3.txt
 share/doc/git/RelNotes-1.5.5.4.txt
 share/doc/git/RelNotes-1.5.5.5.txt
+share/doc/git/RelNotes-1.5.5.6.txt
 share/doc/git/RelNotes-1.5.5.txt
 share/doc/git/RelNotes-1.5.6.1.txt
 share/doc/git/RelNotes-1.5.6.2.txt
 share/doc/git/RelNotes-1.5.6.3.txt
 share/doc/git/RelNotes-1.5.6.4.txt
 share/doc/git/RelNotes-1.5.6.5.txt
+share/doc/git/RelNotes-1.5.6.6.txt
 share/doc/git/RelNotes-1.5.6.txt
 share/doc/git/RelNotes-1.6.0.1.txt
 share/doc/git/RelNotes-1.6.0.2.txt
 share/doc/git/RelNotes-1.6.0.3.txt
 share/doc/git/RelNotes-1.6.0.4.txt
 share/doc/git/RelNotes-1.6.0.5.txt
+share/doc/git/RelNotes-1.6.0.6.txt
 share/doc/git/RelNotes-1.6.0.txt
+share/doc/git/RelNotes-1.6.1.txt
 share/doc/git/blame-options.txt
 share/doc/git/cmds-ancillaryinterrogators.txt
 share/doc/git/cmds-ancillarymanipulators.txt
@@ -572,6 +582,8 @@ share/doc/git/git-show-ref.html
 share/doc/git/git-show-ref.txt
 share/doc/git/git-show.html
 share/doc/git/git-show.txt
+share/doc/git/git-stage.html
+share/doc/git/git-stage.txt
 share/doc/git/git-stash.html
 share/doc/git/git-stash.txt
 share/doc/git/git-status.html
@@ -642,15 +654,17 @@ share/doc/git/gittutorial-2.html
 share/doc/git/gittutorial-2.txt
 share/doc/git/gittutorial.html
 share/doc/git/gittutorial.txt
+share/doc/git/gitworkflows.html
+share/doc/git/gitworkflows.txt
 share/doc/git/glossary-content.txt
 share/doc/git/howto/
 share/doc/git/howto-index.html
 share/doc/git/howto-index.txt
 share/doc/git/howto/maintain-git.txt
-share/doc/git/howto/rebase-and-edit.txt
 share/doc/git/howto/rebase-from-internal-branch.txt
 share/doc/git/howto/rebuild-from-update-hook.txt
 share/doc/git/howto/recover-corrupted-blob-object.txt
+share/doc/git/howto/revert-a-faulty-merge.txt
 share/doc/git/howto/revert-branch-rebase.html
 share/doc/git/howto/revert-branch-rebase.txt
 share/doc/git/howto/separating-topic-branches.txt

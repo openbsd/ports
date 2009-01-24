@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-x11,v 1.4 2008/09/27 21:47:20 bernd Exp $
+@comment $OpenBSD: PLIST-x11,v 1.5 2009/01/24 14:31:29 bernd Exp $
 @conflict git-<=1.5.4.2p0
 bin/gitk
 libexec/git/git-citool
@@ -38,22 +38,29 @@ share/git-gui/lib/git-gui.ico
 share/git-gui/lib/index.tcl
 share/git-gui/lib/logo.tcl
 share/git-gui/lib/merge.tcl
+share/git-gui/lib/mergetool.tcl
 share/git-gui/lib/msgs/
 share/git-gui/lib/msgs/de.msg
 share/git-gui/lib/msgs/fr.msg
 share/git-gui/lib/msgs/hu.msg
 share/git-gui/lib/msgs/it.msg
 share/git-gui/lib/msgs/ja.msg
+share/git-gui/lib/msgs/nb.msg
 share/git-gui/lib/msgs/ru.msg
 share/git-gui/lib/msgs/sv.msg
 share/git-gui/lib/msgs/zh_cn.msg
 share/git-gui/lib/option.tcl
 share/git-gui/lib/remote.tcl
+share/git-gui/lib/remote_add.tcl
 share/git-gui/lib/remote_branch_delete.tcl
+share/git-gui/lib/search.tcl
 share/git-gui/lib/shortcut.tcl
 share/git-gui/lib/spellcheck.tcl
+share/git-gui/lib/sshkey.tcl
 share/git-gui/lib/status_bar.tcl
 share/git-gui/lib/tclIndex
+share/git-gui/lib/tools.tcl
+share/git-gui/lib/tools_dlg.tcl
 share/git-gui/lib/transport.tcl
 share/git-gui/lib/win32.tcl
 share/git-gui/lib/win32_shortcut.js

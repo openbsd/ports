@@ -1,0 +1,15 @@
+$OpenBSD: patch-imap-send_c,v 1.1 2009/01/24 14:31:29 bernd Exp $
+
+Fix "warning: missing sentinel in function call" on 64bit archs.
+
+--- imap-send.c.orig	Fri Jan 23 09:42:51 2009
++++ imap-send.c	Fri Jan 23 09:43:04 2009
+@@ -1009,7 +1009,7 @@ static struct store *imap_open_store(struct imap_serve
+ 				_exit(127);
+ 			close(a[0]);
+ 			close(a[1]);
+-			execl("/bin/sh", "sh", "-c", srvc->tunnel, NULL);
++			execl("/bin/sh", "sh", "-c", srvc->tunnel, (void *)NULL);
+ 			_exit(127);
+ 		}
+ 

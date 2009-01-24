@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Sep 13 04:29:50 2008
-+++ Makefile	Sat Sep 13 16:03:31 2008
-@@ -164,7 +164,7 @@ uname_P := $(shell sh -c 'uname -p 2>/dev/null || echo
+--- Makefile.orig	Thu Dec 25 06:33:25 2008
++++ Makefile	Sat Jan 24 15:30:26 2009
+@@ -170,7 +170,7 @@ uname_V := $(shell sh -c 'uname -v 2>/dev/null || echo
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -9,7 +9,7 @@
  LDFLAGS =
  ALL_CFLAGS = $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
-@@ -180,11 +180,11 @@ STRIP ?= strip
+@@ -186,11 +186,11 @@ STRIP ?= strip
  # runtime figures out where they are based on the path to the executable.
  # This can help installing the suite in a relocatable way.
  
@@ -24,7 +24,7 @@
  sharedir = $(prefix)/share
  template_dir = $(sharedir)/git-core/templates
  htmldir=$(sharedir)/doc/git-doc
-@@ -194,7 +194,7 @@ else
+@@ -200,7 +200,7 @@ else
  sysconfdir = $(prefix)/etc
  endif
  lib = lib
@@ -33,7 +33,7 @@
  # DESTDIR=
  
  # default configuration for gitweb
-@@ -217,15 +217,15 @@ GITWEB_SITE_FOOTER =
+@@ -223,16 +223,16 @@ GITWEB_SITE_FOOTER =
  
  export prefix bindir sharedir htmldir sysconfdir
  
@@ -47,13 +47,15 @@
  RPMBUILD = rpmbuild
 -TCL_PATH = tclsh
 -TCLTK_PATH = wish
+-PTHREAD_LIBS = -lpthread
 +TCL_PATH ?= tclsh
 +TCLTK_PATH ?= wish
++PTHREAD_LIBS = -pthread
  
  export TCL_PATH TCLTK_PATH
  
-@@ -681,11 +681,10 @@ ifeq ($(uname_S),FreeBSD)
- 	COMPAT_OBJS += compat/regex/regex.o
+@@ -703,11 +703,10 @@ ifeq ($(uname_S),FreeBSD)
+ 	endif
  endif
  ifeq ($(uname_S),OpenBSD)
 -	NO_STRCASESTR = YesPlease
@@ -63,10 +65,10 @@
 -	BASIC_LDFLAGS += -L/usr/local/lib
 +	BASIC_CFLAGS += -I${X11BASE}/include -I${LOCALBASE}/include
 +	BASIC_LDFLAGS += -L${X11BASE}/lib -L${LOCALBASE}/lib
+ 	THREADED_DELTA_SEARCH = YesPlease
  endif
  ifeq ($(uname_S),NetBSD)
- 	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -762,7 +761,7 @@ ifneq (,$(findstring MINGW,$(uname_S)))
+@@ -793,7 +792,7 @@ ifneq (,$(findstring MINGW,$(uname_S)))
  	COMPAT_OBJS += compat/mingw.o compat/fnmatch/fnmatch.o compat/regex/regex.o compat/winansi.o
  	EXTLIBS += -lws2_32
  	X = .exe
@@ -75,8 +77,8 @@
  	template_dir = ../share/git-core/templates/
  	ETC_GITCONFIG = ../etc/gitconfig
  endif
-@@ -832,7 +831,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
- 	PROGRAMS += git-shell$X
+@@ -864,7 +863,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
+ 	PROGRAMS += git-imap-send$X
  endif
  ifndef NO_OPENSSL
 -	OPENSSL_LIBSSL = -lssl
@@ -84,7 +86,7 @@
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
-@@ -1311,7 +1310,7 @@ all:: $(TEST_PROGRAMS)
+@@ -1363,7 +1362,7 @@ all:: $(TEST_PROGRAMS)
  
  export NO_SVN_TESTS
  
