@@ -32,14 +32,14 @@
 #include "SDL_libsndioaudio.h"
 
 /* The tag name used by libsndio audio */
-#define LIBSNDIO_DRIVER_NAME         "libsndio"
+#define SNDIO_DRIVER_NAME         "sndio"
 
 /* Audio driver functions */
-static int LIBSNDIO_OpenAudio(_THIS, SDL_AudioSpec *spec);
-static void LIBSNDIO_WaitAudio(_THIS);
-static void LIBSNDIO_PlayAudio(_THIS);
-static Uint8 *LIBSNDIO_GetAudioBuf(_THIS);
-static void LIBSNDIO_CloseAudio(_THIS);
+static int SNDIO_OpenAudio(_THIS, SDL_AudioSpec *spec);
+static void SNDIO_WaitAudio(_THIS);
+static void SNDIO_PlayAudio(_THIS);
+static Uint8 *SNDIO_GetAudioBuf(_THIS);
+static void SNDIO_CloseAudio(_THIS);
 
 /* Audio driver bootstrap functions */
 
@@ -83,11 +83,11 @@ static SDL_AudioDevice *Audio_CreateDevice(int devindex)
 	SDL_memset(this->hidden, 0, (sizeof *this->hidden));
 
 	/* Set the function pointers */
-	this->OpenAudio = LIBSNDIO_OpenAudio;
-	this->WaitAudio = LIBSNDIO_WaitAudio;
-	this->PlayAudio = LIBSNDIO_PlayAudio;
-	this->GetAudioBuf = LIBSNDIO_GetAudioBuf;
-	this->CloseAudio = LIBSNDIO_CloseAudio;
+	this->OpenAudio = SNDIO_OpenAudio;
+	this->WaitAudio = SNDIO_WaitAudio;
+	this->PlayAudio = SNDIO_PlayAudio;
+	this->GetAudioBuf = SNDIO_GetAudioBuf;
+	this->CloseAudio = SNDIO_CloseAudio;
 
 	this->free = Audio_DeleteDevice;
 
@@ -96,18 +96,16 @@ static SDL_AudioDevice *Audio_CreateDevice(int devindex)
 	return this;
 }
 
-AudioBootStrap LIBSNDIO_bootstrap = {
-	LIBSNDIO_DRIVER_NAME, "libsndio",
+AudioBootStrap SNDIO_bootstrap = {
+	SNDIO_DRIVER_NAME, "sndio",
 	Audio_Available, Audio_CreateDevice
 };
 
 
 
 /* This function waits until it is possible to write a full sound buffer */
-static void LIBSNDIO_WaitAudio(_THIS)
+static void SNDIO_WaitAudio(_THIS)
 {
-	Sint32 ticks;
-
 	/* Check to see if the thread-parent process is still alive */
 	{ static int cnt = 0;
 		/* Note that this only works with thread implementations 
@@ -119,26 +117,15 @@ static void LIBSNDIO_WaitAudio(_THIS)
 			}
 		}
 	}
-
-	/* Use timer for general audio synchronization */
-	ticks = ((Sint32)(next_frame - SDL_GetTicks()))-FUDGE_TICKS;
-	if ( ticks > 0 ) {
-		SDL_Delay(ticks);
-	}
 }
 
-static void LIBSNDIO_PlayAudio(_THIS)
+static void SNDIO_PlayAudio(_THIS)
 {
 	int written;
 
 	/* Write the audio data */
 	written = sio_write(hdl, mixbuf, mixlen);
 	
-	/* If timer synchronization is enabled, set the next write frame */
-	if ( frame_ticks ) {
-		next_frame += frame_ticks;
-	}
-
 	/* If we couldn't write, assume fatal error for now */
 	if ( written == 0 ) {
 		this->enabled = 0;
@@ -148,12 +135,12 @@ static void LIBSNDIO_PlayAudio(_THIS)
 #endif
 }
 
-static Uint8 *LIBSNDIO_GetAudioBuf(_THIS)
+static Uint8 *SNDIO_GetAudioBuf(_THIS)
 {
 	return(mixbuf);
 }
 
-static void LIBSNDIO_CloseAudio(_THIS)
+static void SNDIO_CloseAudio(_THIS)
 {
 	if ( mixbuf != NULL ) {
 		SDL_FreeAudioMem(mixbuf);
@@ -165,13 +152,10 @@ static void LIBSNDIO_CloseAudio(_THIS)
 	}
 }
 
-static int LIBSNDIO_OpenAudio(_THIS, SDL_AudioSpec *spec)
+static int SNDIO_OpenAudio(_THIS, SDL_AudioSpec *spec)
 {
-	struct sio_par par;
-
-	/* Reset the timer synchronization flag */
-	frame_ticks = 0.0;
-	next_frame = 0;
+	struct sio_par par, reqpar;
+	int newrate;
 
 	mixbuf = NULL;
 
@@ -212,19 +196,16 @@ static int LIBSNDIO_OpenAudio(_THIS, SDL_AudioSpec *spec)
 		par.sig = 0;
 		break;
 	default:
-		SDL_SetError("LIBSNDIO unknown format");
+		SDL_SetError("SNDIO unknown format");
 		return(-1);
 	}
 
 	par.rate = spec->freq;
 	par.pchan = spec->channels;
+	par.round = spec->samples;
+	par.appbufsz = par.round * 2;
 
-	/* Calculate the final parameters for this audio specification */
-	SDL_CalculateAudioSpec(spec);
-
-	/* bufsz is in frames, size is in bytes.  they both are counts
-	   of the total buffer size (total latency desired) */
-	par.appbufsz = spec->size / par.pchan / (par.bits / 8);
+	reqpar = par;
 
 	if (sio_setpar(hdl, &par) == 0) {
 		SDL_SetError("sio_setpar() failed");
@@ -238,17 +219,23 @@ static int LIBSNDIO_OpenAudio(_THIS, SDL_AudioSpec *spec)
 
 	/* if wanted rate not found, find a multiple/factor */
 	if (par.rate != spec->freq) {
-		if ((par.rate > spec->freq && par.rate % spec->freq != 0) ||
-		     (par.rate < spec->freq && spec->freq % par.rate != 0)) {
+		newrate = par.rate;
+		if ((newrate > spec->freq && newrate % spec->freq != 0) ||
+		     (newrate < spec->freq && spec->freq % newrate != 0)) {
 			if ((spec->freq < 44100 && 44100 % spec->freq == 0) ||
 			     (spec->freq > 44100 && spec->freq % 44100 == 0)) {
-				sio_initpar(&par);
-				par.rate = 44100;
-				if (sio_setpar(hdl, &par) == 0) {
-					SDL_SetError("sio_setpar() failed");
-					return(-1);
-				}
+				newrate = 44100;
 			}
+		}
+		/* only change sample rate */
+		par = reqpar;
+		par.rate = newrate;
+		/* keep same latency */
+		par.round = spec->samples * par.rate / reqpar.rate;
+		par.appbufsz = par.round * 2;
+		if (sio_setpar(hdl, &par) == 0) {
+			SDL_SetError("sio_setpar() failed");
+			return(-1);
 		}
 	}
 
@@ -269,19 +256,15 @@ static int LIBSNDIO_OpenAudio(_THIS, SDL_AudioSpec *spec)
 	} else if (par.bits == 8) {
 		spec->format = par.sig ? AUDIO_S8 : AUDIO_U8;
 	} else {
-		SDL_SetError("LIBSNDIO couldn't configure a suitable format");
+		SDL_SetError("SNDIO couldn't configure a suitable format");
 		return(-1);
 	}
 
 	spec->freq = par.rate;
 	spec->channels = par.pchan;
+	spec->samples = par.round;
 
-	/* tell SDL we want to write in par.round sized blocks */
-	/* this is problematic for some applications, don't do it now.
-	   maybe in SDL-1.3.
-	spec->size = par.bufsz * par.pchan * par.bps;
-	frame_ticks = (float)par.bufsz / par.rate;
-	*/
+	SDL_CalculateAudioSpec(spec);
 
 	/* Allocate mixing buffer */
 	mixlen = spec->size;

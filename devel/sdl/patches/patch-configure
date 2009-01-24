@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.19 2008/12/30 02:15:20 jakemsr Exp $
+$OpenBSD: patch-configure,v 1.20 2009/01/24 10:56:11 jakemsr Exp $
 --- configure.orig	Sun Dec 30 21:09:39 2007
 +++ configure	Mon Sep 22 20:13:46 2008
 @@ -25411,6 +25411,20 @@ _ACEOF
@@ -6,12 +6,12 @@ $OpenBSD: patch-configure,v 1.19 2008/12/30 02:15:20 jakemsr Exp $
  }
  
 +
-+CheckLibsndio()
++CheckSndio()
 +{
-+	if [ x"$WITH_LIBSNDIO" = x"Yes" ]; then
++	if [ x"$WITH_SNDIO" = x"Yes" ]; then
 +
 +                cat >>confdefs.h <<\_ACEOF
-+#define SDL_AUDIO_DRIVER_LIBSNDIO 1
++#define SDL_AUDIO_DRIVER_SNDIO 1
 +_ACEOF
 +                SOURCES="$SOURCES $srcdir/src/audio/libsndio/*.c"
 +		EXTRA_LDFLAGS="$EXTRA_LDFLAGS -lsndio"
@@ -36,7 +36,7 @@ $OpenBSD: patch-configure,v 1.19 2008/12/30 02:15:20 jakemsr Exp $
          CheckALSA
          CheckARTSC
          CheckESD
-+        CheckLibsndio
++        CheckSndio
          CheckPulseAudio
          CheckNAS
          CheckX11

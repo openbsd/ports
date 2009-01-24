@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2009/01/08 20:38:11 ratchov Exp $
+# $OpenBSD: Makefile,v 1.72 2009/01/24 10:56:11 jakemsr Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.13
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p10
+PKGNAME=	${DISTNAME:L}p11
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -40,7 +40,7 @@ SHARED_LIBS=	SDL	8.0
 CONFIGURE_ENV+=	X11BASE="${X11BASE}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		WITH_LIBSNDIO="Yes"
+		WITH_SNDIO="Yes"
 
 # in case devel/usb is installed, don't pick it up.
 CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \

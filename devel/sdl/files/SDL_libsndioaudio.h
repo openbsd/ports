@@ -38,19 +38,13 @@ struct SDL_PrivateAudioData {
 	Uint8 *mixbuf;
 	int    mixlen;
 
-	/* Support for audio timing using a timer, in addition to select() */
-	float frame_ticks;
-	float next_frame;
 };
-#define FUDGE_TICKS	10	/* The scheduler overhead ticks per frame */
 
 /* Old variable names */
 #define stream			(this->hidden->stream)
 #define parent			(this->hidden->parent)
 #define mixbuf			(this->hidden->mixbuf)
 #define mixlen			(this->hidden->mixlen)
-#define frame_ticks		(this->hidden->frame_ticks)
-#define next_frame		(this->hidden->next_frame)
 #define hdl			(this->hidden->hdl)
 
 #endif /* _SDL_libsaaudio_h */
