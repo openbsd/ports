@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/11/20 13:33:00 okan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/01/24 17:41:48 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
@@ -245,6 +245,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/skewx.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/skewy.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/smile.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/solarize.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/sparse_color.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/splice.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/spread.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/ex/stegano.rb
@@ -333,9 +334,13 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/RMagick2.so
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/extconf.h
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/extconf.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/mkmf.log
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmagick.c
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmagick.h
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmagick.o
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmdraw.c
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmdraw.o
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmenum.c
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmenum.o
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmfill.c
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmfill.o
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmilist.c
@@ -346,6 +351,12 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rminfo.c
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rminfo.o
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmmain.c
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmmain.o
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmmontage.c
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmmontage.o
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmpixel.c
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmpixel.o
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmstruct.c
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmstruct.o
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmutil.c
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/RMagick/rmutil.o
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
