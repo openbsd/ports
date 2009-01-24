@@ -1,0 +1,26 @@
+$OpenBSD: patch-ffplay_c,v 1.1 2009/01/24 11:00:41 jakemsr Exp $
+--- ffplay.c.orig	Thu Jan 22 02:43:05 2009
++++ ffplay.c	Thu Jan 22 03:31:11 2009
+@@ -1684,7 +1684,7 @@ static int stream_component_open(VideoState *is, int s
+     AVFormatContext *ic = is->ic;
+     AVCodecContext *enc;
+     AVCodec *codec;
+-    SDL_AudioSpec wanted_spec, spec;
++    SDL_AudioSpec wanted_spec;
+ 
+     if (stream_index < 0 || stream_index >= ic->nb_streams)
+         return -1;
+@@ -1725,11 +1725,11 @@ static int stream_component_open(VideoState *is, int s
+         wanted_spec.samples = SDL_AUDIO_BUFFER_SIZE;
+         wanted_spec.callback = sdl_audio_callback;
+         wanted_spec.userdata = is;
+-        if (SDL_OpenAudio(&wanted_spec, &spec) < 0) {
++        if (SDL_OpenAudio(&wanted_spec, NULL) < 0) {
+             fprintf(stderr, "SDL_OpenAudio: %s\n", SDL_GetError());
+             return -1;
+         }
+-        is->audio_hw_buf_size = spec.size;
++        is->audio_hw_buf_size = wanted_spec.size;
+     }
+ 
+     if(thread_count>1)
