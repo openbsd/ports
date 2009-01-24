@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.37 2009/01/24 12:44:28 sobrado Exp $
+# $OpenBSD: OpenBSD,v 1.38 2009/01/24 22:42:53 grange Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -98,6 +98,7 @@
 54.869288       83.08799	"form"		# Oleg Safiullin
 55.16		23.88		"martynas"	# Martynas Venckus
 55.599		-2.4324		"jmc"		# Jason McIntyre
+55.747502	37.985557	"grange"	# Alexander Yurchenko
 55.8589		13.0837		"wilfried"	# Peter Stromberg
 57.698		11.967		"jakob"		# Jakob Schlyter
 57.717		11.967		"niklas"	# Niklas Hallqvist
