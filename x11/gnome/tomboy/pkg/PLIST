@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/12/18 19:37:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/01/24 18:31:18 ajacoutot Exp $
 bin/tomboy
 bin/tomboy-panel
 lib/bonobo/
@@ -358,8 +358,6 @@ share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/tomboy.svg
 share/locale/ar/LC_MESSAGES/tomboy.mo
-share/locale/as/
-share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/tomboy.mo
 share/locale/be/LC_MESSAGES/tomboy.mo
 share/locale/be@latin/LC_MESSAGES/tomboy.mo
@@ -405,8 +403,6 @@ share/locale/nb/LC_MESSAGES/tomboy.mo
 share/locale/ne/LC_MESSAGES/tomboy.mo
 share/locale/nl/LC_MESSAGES/tomboy.mo
 share/locale/nn/LC_MESSAGES/tomboy.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/tomboy.mo
 share/locale/or/LC_MESSAGES/tomboy.mo
 share/locale/pa/LC_MESSAGES/tomboy.mo
@@ -416,20 +412,14 @@ share/locale/pt_BR/LC_MESSAGES/tomboy.mo
 share/locale/ro/LC_MESSAGES/tomboy.mo
 share/locale/ru/LC_MESSAGES/tomboy.mo
 share/locale/rw/LC_MESSAGES/tomboy.mo
-share/locale/si/
-share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/tomboy.mo
 share/locale/sk/LC_MESSAGES/tomboy.mo
 share/locale/sl/LC_MESSAGES/tomboy.mo
 share/locale/sq/LC_MESSAGES/tomboy.mo
 share/locale/sr/LC_MESSAGES/tomboy.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/tomboy.mo
 share/locale/sv/LC_MESSAGES/tomboy.mo
 share/locale/ta/LC_MESSAGES/tomboy.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/tomboy.mo
 share/locale/th/LC_MESSAGES/tomboy.mo
 share/locale/tr/LC_MESSAGES/tomboy.mo
