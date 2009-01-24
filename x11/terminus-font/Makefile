@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/01/05 00:58:07 ray Exp $
+# $OpenBSD: Makefile,v 1.19 2009/01/24 17:58:44 sthen Exp $
 
 COMMENT=		fixed width fonts especially for long hacking sessions
 
@@ -11,7 +11,7 @@ DISTFILES=		${DISTNAME}.tar.gz
 
 MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
