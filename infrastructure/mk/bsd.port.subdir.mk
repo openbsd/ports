@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.89 2007/08/25 07:56:04 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.90 2009/01/24 11:32:43 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -73,7 +73,7 @@ _FULLSUBDIR := ${SUBDIR:S@^@${PKGPATH}/@g}
 
 _SKIP_STUFF = case "$${subdir}" in
 .for i in ${SKIPDIR}
-_SKIP_STUFF += $i) eval $${echo_msg} "===\> $i skipped"; continue;; 
+_SKIP_STUFF += $i) eval $${echo_msg} "===\> $${subdir} skipped"; continue;; 
 .endfor
 _SKIP_STUFF += *) ;; esac
 
