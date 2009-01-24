@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/10/24 22:31:36 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2009/01/24 15:29:45 bernd Exp $
 
 COMMENT=		Ruby timezone library
 
-VERSION=		0.3.11
+VERSION=		0.3.12
 DISTNAME=		tzinfo-${VERSION}
 PKGNAME=		ruby-tzinfo-${VERSION}
 CATEGORIES=		devel

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/24 22:31:36 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/01/24 15:29:45 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -423,6 +423,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Arg
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Argentina/La_Rioja.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Argentina/Mendoza.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Argentina/Rio_Gallegos.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Argentina/Salta.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Argentina/San_Juan.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Argentina/San_Luis.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Argentina/Tucuman.rb
