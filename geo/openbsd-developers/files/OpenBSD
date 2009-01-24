@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.36 2009/01/04 00:34:41 stsp Exp $
+# $OpenBSD: OpenBSD,v 1.37 2009/01/24 12:44:28 sobrado Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -35,6 +35,7 @@
 43.084950	-89.361468	"jolan"		# Jolan Luff
 43.240537 	5.384159	"pea"		# Pierre-Emmanuel Andre
 43.30		5.37		"aanriot"	# Alexandre Anriot
+43.355902	-5.849892	"sobrado"	# Igor Sobrado
 43.5312		13.2519		"giovanni"	# Giovanni Bechis
 43.61495	1.44094		"matthieu"	# Matthieu Herrb
 43.5826		1.4376		"miod"		# Miod Vallat
