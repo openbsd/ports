@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2008/12/13 02:58:00 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.43 2009/01/24 10:31:15 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
@@ -111,6 +111,10 @@ MAKE_FLAGS=		${VERSION_FLAGS} \
 
 FAKE_FLAGS=		${VERSION_FLAGS} \
 			LDCONFIG=true
+
+.ifdef DEBUG
+CONFIGURE_ARGS+=	--disable-stripping
+.endif
 
 # regression tests incompatible with libswscale
 #REGRESS_TARGET=	codectest
