@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/02/27 10:46:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/01/24 15:34:10 ajacoutot Exp $
 %%SHARED%%
 bin/Adie.stx
-bin/PathFinder
-bin/adie
-bin/calculator
+@bin bin/PathFinder
+@bin bin/adie
+@bin bin/calculator
 bin/fox-config
-bin/reswrap
-bin/shutterbug
+@bin bin/reswrap
+@bin bin/shutterbug
 include/${FOX}/
 include/${FOX}/FX4Splitter.h
 include/${FOX}/FX7Segment.h

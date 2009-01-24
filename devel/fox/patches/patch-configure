@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure,v 1.1 2009/01/24 15:34:10 ajacoutot Exp $
+--- configure.orig	Thu Jan 22 09:20:35 2009
++++ configure	Thu Jan 22 09:21:03 2009
+@@ -22140,13 +22140,13 @@ fi
+ 
+ PTHREAD_LIBS=notfound
+ if test "x$PTHREAD_LIBS" = xnotfound; then
+-echo "$as_me:$LINENO: checking for pthread_exit in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_exit in -lpthread... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for pthread_exit in -pthread" >&5
++echo $ECHO_N "checking for pthread_exit in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_pthread_exit+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -22205,7 +22205,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_exit" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_exit" >&6
+ if test $ac_cv_lib_pthread_pthread_exit = yes; then
+-  PTHREAD_LIBS="-lpthread"
++  PTHREAD_LIBS="-pthread"
+ fi
+ 
+ fi
