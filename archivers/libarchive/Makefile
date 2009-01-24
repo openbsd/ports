@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/01 16:46:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2009/01/24 18:32:07 naddy Exp $
 
 COMMENT=	library for reading and writing streaming archives
 
-V=		2.6.0
+V=		2.6.1
 DISTNAME=	libarchive-$V
 SHARED_LIBS +=  archive              3.0      # .8.0
 CATEGORIES=	archivers
-HOMEPAGE=	http://people.freebsd.org/~kientzle/libarchive/
+HOMEPAGE=	http://code.google.com/p/libarchive/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}src/
+MASTER_SITES=	http://libarchive.googlecode.com/files/
 MASTER_SITES0=	http://shell.uugrn.org/~naddy/
 DISTFILES=	libarchive-$V.tar.gz \
 		libarchive-catpages-$V.tar.gz:0
