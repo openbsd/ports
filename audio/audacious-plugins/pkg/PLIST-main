@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/05/19 15:22:49 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/01/25 02:07:06 fgsch Exp $
 lib/audacious/
 lib/audacious/Container/
 lib/audacious/Container/m3u.so
@@ -6,6 +6,7 @@ lib/audacious/Container/pls.so
 lib/audacious/Container/xspf.so
 lib/audacious/Effect/
 lib/audacious/Effect/audiocompress.so
+lib/audacious/Effect/crystalizer.so
 lib/audacious/Effect/echo.so
 lib/audacious/Effect/ladspa.so
 lib/audacious/Effect/sndstretch.so
@@ -38,13 +39,12 @@ lib/audacious/Input/tonegen.so
 lib/audacious/Input/tta.so
 lib/audacious/Input/vorbis.so
 lib/audacious/Input/vtx.so
+lib/audacious/Input/wavpack.so
 lib/audacious/Input/wma.so
 lib/audacious/Output/
-lib/audacious/Output/ESD.so
-lib/audacious/Output/OSS.so
 lib/audacious/Output/filewriter.so
-lib/audacious/Output/jackout.so
 lib/audacious/Output/null.so
+lib/audacious/Output/sndio.so
 lib/audacious/Output/sun.so
 lib/audacious/Transport/
 lib/audacious/Transport/lastfm.so

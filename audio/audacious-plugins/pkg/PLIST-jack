@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-jack,v 1.1 2009/01/25 02:07:06 fgsch Exp $
+lib/audacious/Output/jackout.so

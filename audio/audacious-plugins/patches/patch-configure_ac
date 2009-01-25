@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.1 2008/04/02 00:39:19 fgsch Exp $
---- configure.ac.orig	Thu Mar 13 22:22:35 2008
-+++ configure.ac	Mon Mar 31 23:08:49 2008
+$OpenBSD: patch-configure_ac,v 1.2 2009/01/25 02:07:06 fgsch Exp $
+--- configure.ac.orig	Fri May 23 23:44:19 2008
++++ configure.ac	Wed Jan 21 00:43:22 2009
 @@ -811,13 +811,21 @@ AC_ARG_ENABLE( jack,
                  [enable_jack="yes"])
  
- if test "x$enable_jack" = xyes; then
+ if test "x$enable_jack" = "xyes"; then
 -        AM_PATH_JACK(have_jack=yes, have_jack=no)
 +	PKG_CHECK_MODULES(JACK, jack >= 0.109.10, , [AC_MSG_WARN(
 +	[*** Cannot find jack 0.109.10 or newer, jack will not be built ***])
@@ -15,18 +15,39 @@ $OpenBSD: patch-configure_ac,v 1.1 2008/04/02 00:39:19 fgsch Exp $
 +        enable_jack=no
  fi
  
--if test "$have_jack" = yes; then
+-if test "x$have_jack" = "xyes"; then
 +if test "x$enable_jack" = xyes; then
-+	PKG_CHECK_MODULES(SAMPLERATE, samplerate >= 0.0.15, , [AC_MSG_WARN(
-+	[Could not find libsamplerate, necessary for jack output plugin.])
-+	enable_jack=no])
++       PKG_CHECK_MODULES(SAMPLERATE, samplerate >= 0.0.15, , [AC_MSG_WARN(
++       [Could not find libsamplerate, necessary for jack output plugin.])
++       enable_jack=no])
 +fi
 +
 +if test "x$enable_jack" = xyes; then
  	OUTPUT_PLUGINS="$OUTPUT_PLUGINS jack"
  fi
  
-@@ -1636,7 +1644,7 @@ echo "  Open Sound System (oss):                $have_
+@@ -1549,6 +1557,20 @@ fi
+ AC_SUBST(FILEWRITER_CFLAGS)
+ AC_SUBST(FILEWRITER_LIBS)
+ 
++dnl *** sndio
++
++AC_ARG_ENABLE(sndio,
++    [  --enable-sndio          enable sndio output plugin (default=disabled) ],
++    [have_sndio=$enableval],
++    [have_sndio=no]
++)
++
++if test "x$have_sndio" = "xyes"; then
++	OUTPUT_PLUGINS="$OUTPUT_PLUGINS sndio"
++else
++	have_sndio=no
++fi
++
+ dnl *** End of all plugin checks ***
+ 
+ AC_SUBST(ARCH_DEFINES)
+@@ -1636,7 +1658,7 @@ echo "  Open Sound System (oss):                $have_
  echo "  Open Sound System v4 (oss4):            $have_oss4"
  echo "  Advanced Linux Sound Arch. (alsa):      $have_alsa"
  echo "  Enlightenment Sound Daemon (esd):       $have_esd"
@@ -35,3 +56,11 @@ $OpenBSD: patch-configure_ac,v 1.1 2008/04/02 00:39:19 fgsch Exp $
  echo "  Analog Realtime Synthesizer (arts):     $have_arts"
  echo "  BSD/SUN audio output (sun):             $have_sun"
  echo "  PulseAudio sound server (pulse_audio):  $have_pulse"
+@@ -1646,6 +1668,7 @@ echo "    -> FileWriter MP3 output part:        $have_
+ echo "    -> FileWriter Vorbis output part:     $have_vorbisenc"
+ echo "    -> FileWriter FLAC output part:       $have_writer_flac"
+ echo "  Null Audio output (null):               yes"
++echo "  Sndio Audio output (sndio):             $have_sndio"
+ echo
+ echo "  Input Plugins"
+ echo "  -------------"
