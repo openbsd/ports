@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/11/09 17:56:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/01/25 02:02:19 fgsch Exp $
 @bin bin/audacious
 @bin bin/audtool
 include/audacious/
+include/audacious/audconfig.h
 include/audacious/audctrl.h
 include/audacious/auddrct.h
 include/audacious/configdb.h
@@ -11,7 +12,6 @@ include/audacious/dbus.h
 include/audacious/discovery.h
 include/audacious/eventqueue.h
 include/audacious/flow.h
-include/audacious/formatter.h
 include/audacious/hook.h
 include/audacious/i18n.h
 include/audacious/id3tag.h
