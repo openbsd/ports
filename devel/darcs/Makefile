@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2008/10/18 18:58:06 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2009/01/25 18:53:33 kili Exp $
 
 COMMENT=	advanced revision control system written in Haskell
 
-DISTNAME=	darcs-2.1.0
+DISTNAME=	darcs-2.2.0
 
 CATEGORIES=	devel
 HOMEPAGE=	http://www.darcs.net/
@@ -22,15 +22,15 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--libexecdir=${PREFIX}/libexec/darcs \
 		--mandir=${PREFIX}/man \
 		--sysconfdir=${PREFIX}/share/darcs \
-		--with-curl-pipelining \
 		--without-manual
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" CFLAGS="" \
+		HOME=/nonexistent \
 		AWK=/usr/bin/awk DIFF=/usr/bin/diff GREP=/usr/bin/grep
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
-INSTALL_TARGET=	install installserver installdocs
+INSTALL_TARGET=	install installserver install-html install-examples
 MAKE_ENV+= 	DARCS=${WRKSRC}/darcs
 MAKE_FLAGS+=	VERBOSE=Yes
 REGRESS_TARGET=	check
