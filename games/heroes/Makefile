@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 18:01:01 simon Exp $
+# $OpenBSD: Makefile,v 1.16 2009/01/25 01:30:16 jakemsr Exp $
 
 COMMENT=	graphically improved game of yore
 
@@ -7,6 +7,7 @@ DATAVERSION=	1.5
 SOUNDVERSION=	1.0
 MUSICVERSION=	1.0
 DISTNAME=	heroes-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
