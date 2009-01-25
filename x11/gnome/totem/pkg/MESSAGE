@@ -1,4 +1,0 @@
-As shipped, totem cannot descramble DVDs (i.e. it cannot read protected
-DVDs).  However, it will recognize and use a descrambling library such
-as libdvd or libdvdcss when available.  (see converters/libdvd and
-converters/libdvdcss).
