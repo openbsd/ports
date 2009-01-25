@@ -1,12 +1,11 @@
-$OpenBSD: patch-TclTutor_tcl,v 1.2 2008/10/21 21:49:46 steven Exp $
+$OpenBSD: patch-TclTutor_tcl,v 1.3 2009/01/25 20:47:48 steven Exp $
 --- TclTutor.tcl.orig	Sat Aug  2 05:04:40 2008
-+++ TclTutor.tcl	Tue Oct 21 23:46:14 2008
++++ TclTutor.tcl	Sun Jan 25 21:42:14 2009
 @@ -1,8 +1,8 @@
 -package provide app-tcltutor 1.0
  #!/bin/sh 
  # \
--exec wish "$0" "$@"
-+exec ${MODTK_BIN} "$0" "$@"
+ exec wish "$0" "$@"
  
 +package provide app-tcltutor 1.0
  package require Tk

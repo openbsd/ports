@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/21 21:49:46 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/25 20:47:48 steven Exp $
 
 COMMENT =		learn Tcl interactively
 
 DISTNAME =		tcltutor-30b2
+PKGNAME =		${DISTNAME}p0
 
 CATEGORIES =		lang lang/tcl
 
@@ -35,7 +36,10 @@ TT_LSN_DIR =		${PREFIX}/share/doc/tcltutor
 SUBST_VARS =		TT_LIB_DIR TT_LSN_DIR
 
 do-configure:
-	@${SUBST_CMD} ${WRKSRC}/TclTutor.tcl
+	${SUBST_CMD} ${WRKSRC}/TclTutor.tcl
+	perl -pi \
+	-e ';$$. == 3 && s!exec wish.*$$!exec wish${MODTK_VERSION} "\$$0" \$${1+"\$$@"}!' \
+	${WRKSRC}/TclTutor.tcl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/TclTutor.tcl ${PREFIX}/bin/tcltutor
