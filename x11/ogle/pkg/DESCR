@@ -11,12 +11,6 @@ that play more video formats, and can play mpeg2 video
 from the disk, but ogle currently has better synchronization
 and extensive menu support.
 
-As shipped, ogle cannot descramble DVDs. There are
-a few DVDs out there with no scramble protection.
-However, ogle will recognize and use an installed
-descrambling library (see converters/libdvd in the
-ports tree).
-
 As shipped, ogle has a text-based interface. 
 The ogle_gui, okle, and goggles yield alternative 
 GUI interfaces.
