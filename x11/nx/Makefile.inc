@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile.inc,v 1.2 2008/11/25 19:06:09 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2009/01/25 19:23:49 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 CATEGORIES+=	x11/nx
 
 HOMEPAGE?=	http://www.nomachine.com/
+
+MAJOR_VERSION?=		3.2.0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM?=	Yes

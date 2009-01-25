@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/13 17:12:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/01/25 19:23:49 jasper Exp $
 
 COMMENT=		library to compress the standard X protocol
 
-VERSION=		3.2.0
 DASHVERSION=		6
-DISTNAME=		nxcomp-${VERSION}-${DASHVERSION}
-PKGNAME=		nxcomp-${VERSION}.${DASHVERSION}
+DISTNAME=		nxcomp-${MAJOR_VERSION}-${DASHVERSION}
+PKGNAME=		nxcomp-${MAJOR_VERSION}.${DASHVERSION}
 SHARED_LIBS=		Xcomp	0.0
 
 WANTLIB=		z
