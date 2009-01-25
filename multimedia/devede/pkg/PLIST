@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/08/20 08:30:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/01/25 16:14:25 ajacoutot Exp $
 bin/devede
 lib/python${MODPY_VERSION}/site-packages/devede/
 lib/python${MODPY_VERSION}/site-packages/devede/devede_bincue.py
@@ -9,6 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/devede/devede_disctype.py
 lib/python${MODPY_VERSION}/site-packages/devede/devede_dvd.py
 lib/python${MODPY_VERSION}/site-packages/devede/devede_dvdmenu.py
 lib/python${MODPY_VERSION}/site-packages/devede/devede_executor.py
+lib/python${MODPY_VERSION}/site-packages/devede/devede_fonts.py
 lib/python${MODPY_VERSION}/site-packages/devede/devede_help.py
 lib/python${MODPY_VERSION}/site-packages/devede/devede_loadsave.py
 lib/python${MODPY_VERSION}/site-packages/devede/devede_main.py
@@ -30,6 +31,11 @@ share/devede/devede.glade
 share/devede/devede.svg
 share/devede/devedesans.ttf
 share/devede/estira.png
+share/devede/icon_cvd.png
+share/devede/icon_divx.png
+share/devede/icon_dvd.png
+share/devede/icon_svcd.png
+share/devede/icon_vcd.png
 share/devede/silence.mp3
 share/doc/devede/
 share/doc/devede/changelog.Debian
@@ -73,6 +79,7 @@ share/doc/devede/html/title_prop.jpg
 share/doc/devede/html/versions.html
 share/locale/ca/LC_MESSAGES/devede.mo
 share/locale/cs/LC_MESSAGES/devede.mo
+share/locale/da/LC_MESSAGES/devede.mo
 share/locale/de_DE/
 share/locale/de_DE/LC_MESSAGES/
 share/locale/de_DE/LC_MESSAGES/devede.mo

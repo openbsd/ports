@@ -1,10 +1,10 @@
-$OpenBSD: patch-devede_py,v 1.6 2008/08/24 22:02:26 ajacoutot Exp $
---- devede.py.orig	Sun Aug 24 23:55:02 2008
-+++ devede.py	Sun Aug 24 23:56:45 2008
+$OpenBSD: patch-devede_py,v 1.7 2009/01/25 16:14:25 ajacoutot Exp $
+--- devede.py.orig	Sun Jan 25 17:09:52 2009
++++ devede.py	Sun Jan 25 17:11:10 2009
 @@ -36,13 +36,13 @@ import pickle
  import cairo
  
- print "DeVeDe 3.11"
+ print "DeVeDe 3.12"
 -if sys.platform!="win32":
 +if sys.platform!="win32" and not sys.platform.startswith('openbsd'):
  	print "Locale: "+str(os.environ["LANG"])
@@ -12,32 +12,29 @@ $OpenBSD: patch-devede_py,v 1.6 2008/08/24 22:02:26 ajacoutot Exp $
  # append the directories where we install the devede's own modules
  tipo=-1
  try:
--	fichero=open("/usr/local/share/devede/devede.glade","r")
+-	fichero=open("/usr/share/devede/devede.glade","r")
 +	fichero=open("${PREFIX}/share/devede/devede.glade","r")
  	fichero.close()
- 	tipo=1
+ 	tipo=0
  	found=True
-@@ -94,15 +94,15 @@ elif tipo==1:
- 	#gtk.glade.bindtextdomain("devede","/usr/share/locale")
- 	#arbol=gtk.glade.XML("/usr/local/share/devede/devede.glade",domain="devede")
+@@ -76,13 +76,13 @@ if tipo==0:
+ 	#arbol=gtk.glade.XML("/usr/share/devede/devede.glade",domain="devede")
+ 	# append the directories where we install the devede's own modules
  
--	share_locale="/usr/share/locale" # Are you sure?
-+	share_locale="${PREFIX}/share/locale" # Are you sure?
- 	# if the files aren't at /usr, try with /usr/local
--	glade="/usr/local/share/devede/devede.glade"
--	sys.path.append("/usr/local/lib/devede")
--	font_path="/usr/local/share/devede"
--	pic_path="/usr/local/share/devede"
--	other_path="/usr/local/share/devede"
--	help_path="/usr/local/share/doc/devede"
--	print "Using local-installed files"
+-	share_locale="/usr/share/locale"
+-	glade="/usr/share/devede/devede.glade"
+-	sys.path.append("/usr/lib/devede")
+-	font_path="/usr/share/devede"
+-	pic_path="/usr/share/devede"
+-	other_path="/usr/share/devede"
+-	help_path="/usr/share/doc/devede"
++	share_locale="${PREFIX}/share/locale"
 +	glade="${PREFIX}/share/devede/devede.glade"
 +	sys.path.append("${MODPY_SITEPKG}/devede")
 +	font_path="${PREFIX}/share/devede"
 +	pic_path="${PREFIX}/share/devede"
 +	other_path="${PREFIX}/share/devede"
 +	help_path="${PREFIX}/share/doc/devede"
-+        print "Using local-installed files"
+ 	print "Using package-installed files"
  	
- elif tipo==2:
- 	# if the files aren't at /usr/local, try with ./
+ elif tipo==1:

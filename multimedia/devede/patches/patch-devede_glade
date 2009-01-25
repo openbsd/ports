@@ -1,7 +1,7 @@
-$OpenBSD: patch-devede_glade,v 1.7 2008/08/24 22:02:26 ajacoutot Exp $
---- devede.glade.orig	Sun Aug 24 20:12:09 2008
-+++ devede.glade	Sun Aug 24 23:57:02 2008
-@@ -4238,7 +4238,7 @@ V. Fotiadis</property>
+$OpenBSD: patch-devede_glade,v 1.8 2009/01/25 16:14:25 ajacoutot Exp $
+--- devede.glade.orig	Sun Jan 25 01:26:40 2009
++++ devede.glade	Sun Jan 25 16:55:17 2009
+@@ -4239,7 +4239,7 @@ V. Fotiadis</property>
                  <property name="width_request">330</property>
                  <property name="height_request">89</property>
                  <property name="visible">True</property>
