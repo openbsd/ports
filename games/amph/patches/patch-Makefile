@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.6 2003/01/21 21:59:51 pvalchev Exp $
---- Makefile.orig	Mon Mar 25 12:11:27 2002
-+++ Makefile	Tue Jan 21 14:50:05 2003
+$OpenBSD: patch-Makefile,v 1.7 2009/01/25 01:27:23 jakemsr Exp $
+--- Makefile.orig	Mon Mar 25 11:11:27 2002
++++ Makefile	Thu Jan 22 02:39:13 2009
 @@ -3,14 +3,13 @@
  #===============
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-Makefile,v 1.6 2003/01/21 21:59:51 pvalchev Exp $
  SDL_LIBS := $(shell $(SDL_CONFIG) --libs)
  
  #=======================================================
-@@ -26,19 +25,19 @@ SEARCHDIRS := -I${MYCODEDIR} ${SDL_HEADE
+@@ -26,19 +25,19 @@ SEARCHDIRS := -I${MYCODEDIR} ${SDL_HEADERS}
  
  # makemake variables
  
@@ -43,7 +43,7 @@ $OpenBSD: patch-Makefile,v 1.6 2003/01/21 21:59:51 pvalchev Exp $
  
  %.o : %.cpp
  	${CXX} ${CPPFLAGS} -c $< ${CXXFLAGS} -o $@
-@@ -47,7 +46,7 @@ CXXFLAGS  = ${DEPENDFLAGS} -O9 -funroll-
+@@ -47,7 +46,7 @@ CXXFLAGS  = ${DEPENDFLAGS} -O9 -funroll-loops -fomit-f
  	${CXX} ${CPPFLAGS} -c $< ${CXXFLAGS}
  
  # C preprocessor (C, C++, FORTRAN)
