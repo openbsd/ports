@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/25 21:54:43 landry Exp $
+@bin bin/extsmail
+@bin bin/extsmaild
+@man man/cat1/extsmail.0
+@man man/cat1/extsmail.conf.0
+@man man/cat1/extsmail.externals.0
+@man man/cat1/extsmaild.0
