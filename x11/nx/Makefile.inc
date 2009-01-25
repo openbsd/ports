@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2009/01/25 19:23:49 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2009/01/25 19:44:37 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
-MASTER_SITES?=		http://64.34.161.181/download/${VERSION}/sources/
+MASTER_SITES?=		http://64.34.161.181/download/${MAJOR_VERSION}/sources/
 DIST_SUBDIR=		nx
 
 USE_GMAKE?=		Yes
