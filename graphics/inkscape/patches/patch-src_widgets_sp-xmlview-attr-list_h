@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_widgets_sp-xmlview-attr-list_h,v 1.1 2009/01/25 00:29:03 stsp Exp $
+--- src/widgets/sp-xmlview-attr-list.h.orig	Sat Jan 24 12:24:43 2009
++++ src/widgets/sp-xmlview-attr-list.h	Sat Jan 24 12:26:02 2009
+@@ -13,7 +13,7 @@
+  */
+ 
+ #include <stdio.h>
+-#include <gtk/gtkclist.h>
++#include <gtk/gtk.h>
+ #include "../xml/repr.h"
+ 
+ #include <glib.h>
