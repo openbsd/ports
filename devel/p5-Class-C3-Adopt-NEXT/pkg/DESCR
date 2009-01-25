@@ -1,0 +1,5 @@
+This module is intended as a drop-in replacement for NEXT, supporting
+the same interface, but using Class::C3 to do the hard work.  You can
+then write new code without NEXT, and migrate individual source files to
+use Class::C3 or method modifiers as appropriate, at whatever pace
+you're comfortable with.
