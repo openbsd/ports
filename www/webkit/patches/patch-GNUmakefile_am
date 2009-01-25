@@ -1,0 +1,28 @@
+$OpenBSD: patch-GNUmakefile_am,v 1.1 2009/01/25 22:16:40 landry Exp $
+--- GNUmakefile.am.orig	Mon Dec 22 06:55:15 2008
++++ GNUmakefile.am	Wed Jan 21 21:24:49 2009
+@@ -121,9 +121,10 @@ libJavaScriptCore_la_SOURCES = \
+ 
+ libJavaScriptCore_la_LIBADD = \
+ 	$(UNICODE_LIBS) \
+-	$(GLOBALDEPS_LIBS) \
+-	-lpthread
++	$(GLOBALDEPS_LIBS)
+ 
++libJavaScriptCore_la_LDFLAGS = -pthread
++
+ libJavaScriptCore_la_CXXFLAGS = \
+ 	$(global_cxxflags) \
+ 	$(libJavaScriptCore_la_CFLAGS)
+@@ -209,8 +210,9 @@ libWebCore_la_LIBADD = \
+ 	$(LIBXSLT_LIBS) \
+ 	$(HILDON_LIBS) \
+ 	$(JPEG_LIBS) \
+-	$(PNG_LIBS) \
+-	-lpthread
++	$(PNG_LIBS)
++
++libWebCore_la_LDFLAGS = -pthread
+ 
+ # WebKit
+ webkitgtk_h_api :=

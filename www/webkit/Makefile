@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/12/19 11:52:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/25 22:16:40 landry Exp $
 
 COMMENT =	open source web browser engine
 
-V = 37790
+V = 40000
 DISTNAME =	WebKit-r${V}
 PKGNAME =	webkit-${V}
 CATEGORIES =	www
@@ -13,7 +13,8 @@ MASTER_SITES =	http://builds.nightly.webkit.org/files/trunk/src/
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
-SHARED_LIBS =	webkit-1.0	0.0
+SHARED_LIBS =	webkit-1.0	0.0 \
+		testnetscapeplugin	0.0
 
 # LGPLv2 / BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -27,11 +28,6 @@ USE_X11 =	Yes
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
 
-.if ${MACHINE_ARCH} == "sparc64"
-BROKEN =	SIGBUS at runtime, being worked on
-# please update list in www/kazehakase if fixed
-.endif
-
 MODULES =	converters/libiconv \
 		textproc/intltool \
 		gcc4
@@ -42,11 +38,14 @@ AUTOMAKE_VERSION =	1.9
 AUTOCONF_VERSION =	2.59
 CONFIGURE_STYLE =	gnu
 
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -lX11"
+
 MAKE_FILE =	GNUmakefile
 
 WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c crypto \
-		expat fontconfig freetype glib-2.0 glitz gmodule-2.0 \
+		expat fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 idn intl jpeg m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pthread ssl z cairo pixman-1 png xml2
 
