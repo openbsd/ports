@@ -1,7 +1,43 @@
-$OpenBSD: patch-audio_MPEGaudio_cpp,v 1.1 2002/06/08 09:21:19 pvalchev Exp $
---- audio/MPEGaudio.cpp.orig	Wed Apr  4 15:42:40 2001
-+++ audio/MPEGaudio.cpp	Sat Jun  8 04:15:54 2002
-@@ -200,9 +200,11 @@ void
+$OpenBSD: patch-audio_MPEGaudio_cpp,v 1.2 2009/01/25 01:25:39 jakemsr Exp $
+--- audio/MPEGaudio.cpp.orig	Wed Apr  4 13:42:40 2001
++++ audio/MPEGaudio.cpp	Sat Jan 24 04:31:08 2009
+@@ -54,10 +54,16 @@ MPEGaudio:: MPEGaudio(MPEGstream *stream, bool initSDL
+         if ( sdl_audio ) {
+             /* Open the audio, get actual audio hardware format and convert */
+             bool audio_active;
++#ifdef DISABLE_SDL_CONVERSIONS
+             SDL_AudioSpec actual;
+             audio_active = (SDL_OpenAudio(&wanted, &actual) == 0);
+             if ( audio_active ) {
+                 ActualSpec(&actual);
++#else
++            audio_active = (SDL_OpenAudio(&wanted, NULL) == 0);
++            if ( audio_active ) {
++                ActualSpec(&wanted);
++#endif
+                 valid_stream = true;
+             } else {
+                 SetError(SDL_GetError());
+@@ -112,6 +118,8 @@ MPEGaudio:: WantedSpec(SDL_AudioSpec *wanted)
+ void
+ MPEGaudio:: ActualSpec(const SDL_AudioSpec *actual)
+ {
++#ifdef DISABLE_SDL_CONVERSIONS
++
+     /* Splay can optimize some of the conversion */
+     if ( actual->channels == 1 && outputstereo ) {
+         forcetomonoflag = true;
+@@ -131,6 +139,9 @@ MPEGaudio:: ActualSpec(const SDL_AudioSpec *actual)
+ 	;
+ #endif
+     }
++
++#endif	/* DISABLE_SDL_CONVERSIONS */
++
+ #if SDL_BYTEORDER == SDL_LIL_ENDIAN
+     if ( actual->format != AUDIO_S16LSB)
+ #else
+@@ -200,9 +211,11 @@ void
  MPEGaudio:: Stop(void)
  {
      if ( valid_stream ) {
