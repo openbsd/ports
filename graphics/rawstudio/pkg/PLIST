@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/01/11 20:39:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/01/26 16:25:18 sthen Exp $
 @bin bin/rawstudio
-share/applications/
 share/applications/rawstudio.desktop
 share/icons/
 share/icons/rawstudio.png
@@ -34,3 +33,5 @@ share/pixmaps/rawstudio/transform_mirror.png
 share/rawstudio/
 share/rawstudio/rawstudio.gtkrc
 share/rawstudio/ui.xml
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

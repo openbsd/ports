@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/11 22:52:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2009/01/26 16:25:18 sthen Exp $
 
 COMMENT =	tool for working with RAW images
 
 DISTNAME =	rawstudio-1.1.1
+PKGNAME =	${DISTNAME}p0
 
 CATEGORIES =	graphics
 
@@ -40,6 +41,7 @@ LIB_DEPENDS +=	dbus-1::x11/dbus \
 		tiff::graphics/tiff \
 		xml2::textproc/libxml
 
+RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
 NO_REGRESS =	Yes
 
 .include <bsd.port.mk>
