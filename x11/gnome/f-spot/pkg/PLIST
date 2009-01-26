@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/24 19:55:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/01/26 14:40:58 ajacoutot Exp $
 %%SHARED%%
 bin/f-spot
 bin/f-spot-import
@@ -39,6 +39,7 @@ lib/f-spot/extensions/FacebookExport.dll
 lib/f-spot/extensions/FlickrExport.dll
 lib/f-spot/extensions/FolderExport.dll
 lib/f-spot/extensions/GalleryExport.dll
+lib/f-spot/extensions/HashJob.dll
 lib/f-spot/extensions/MergeDb.dll
 lib/f-spot/extensions/PicasaWebExport.dll
 lib/f-spot/extensions/RawPlusJpeg.dll
