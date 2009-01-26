@@ -1,13 +1,20 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 21:23:19 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/01/26 23:26:02 naddy Exp $
 @pkgpath net/ntp
-sbin/ntp-keygen
+@man man/man1/ntp-keygen.1
+@man man/man1/ntpd.1
+@man man/man1/ntpdc.1
+@comment man/man1/ntpdsim.1
+@man man/man1/ntpq.1
+@man man/man1/sntp.1
+@bin sbin/ntp-keygen
 sbin/ntp-wait
-sbin/ntpd
-sbin/ntpdate
-sbin/ntpdc
-sbin/ntpq
+@bin sbin/ntpd
+@bin sbin/ntpdate
+@bin sbin/ntpdc
+@bin sbin/ntpq
 sbin/ntptrace
-sbin/tickadj
+@bin sbin/sntp
+@bin sbin/tickadj
 share/examples/ntp/
 share/examples/ntp/README
 share/examples/ntp/README.OpenBSD

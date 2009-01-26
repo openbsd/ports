@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2009/01/26 23:26:02 naddy Exp $
+--- configure.ac.orig	Wed Jan  7 23:45:12 2009
++++ configure.ac	Wed Jan  7 23:55:55 2009
+@@ -1104,7 +1104,7 @@ esac])
+ case "$host" in
+  *-pc-cygwin*)
+     ;;
+- *) AC_CHECK_FUNCS(getuid)
++ *) AC_CHECK_FUNCS(getuid geteuid)
+     ;;
+ esac
+ AC_CHECK_FUNCS(hstrerror)

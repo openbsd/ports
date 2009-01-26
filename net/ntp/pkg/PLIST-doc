@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-doc,v 1.7 2004/07/27 14:39:31 danh Exp $
+@comment $OpenBSD: PLIST-doc,v 1.8 2009/01/26 23:26:02 naddy Exp $
 share/doc/ntp/
 share/doc/ntp/accopt.html
 share/doc/ntp/assoc.html
@@ -65,8 +65,6 @@ share/doc/ntp/drivers/driver19.html
 share/doc/ntp/drivers/driver2.html
 share/doc/ntp/drivers/driver20.html
 share/doc/ntp/drivers/driver22.html
-share/doc/ntp/drivers/driver23.html
-share/doc/ntp/drivers/driver24.html
 share/doc/ntp/drivers/driver26.html
 share/doc/ntp/drivers/driver27.html
 share/doc/ntp/drivers/driver28.html
@@ -99,7 +97,10 @@ share/doc/ntp/drivers/oncore-shmem.html
 share/doc/ntp/drivers/scripts/
 share/doc/ntp/drivers/scripts/footer.txt
 share/doc/ntp/drivers/scripts/style.css
+share/doc/ntp/drivers/tf582_4.html
 share/doc/ntp/extern.html
+share/doc/ntp/gadget.html
+share/doc/ntp/groups.html
 share/doc/ntp/howto.html
 share/doc/ntp/icons/
 share/doc/ntp/icons/home.gif
@@ -115,10 +116,12 @@ share/doc/ntp/monopt.html
 share/doc/ntp/msyslog.html
 share/doc/ntp/mx4200data.html
 share/doc/ntp/notes.html
+share/doc/ntp/ntp_conf.html
 share/doc/ntp/ntpd.html
 share/doc/ntp/ntpdate.html
 share/doc/ntp/ntpdc.html
 share/doc/ntp/ntpdsim.html
+share/doc/ntp/ntpdsim_new.html
 share/doc/ntp/ntpq.html
 share/doc/ntp/ntptime.html
 share/doc/ntp/ntptrace.html
@@ -168,7 +171,7 @@ share/doc/ntp/pic/pogo4.gif
 share/doc/ntp/pic/pogo5.gif
 share/doc/ntp/pic/pogo6.gif
 share/doc/ntp/pic/pogo8.gif
-share/doc/ntp/pic/pzf509.jpg
+share/doc/ntp/pic/pzf511.jpg
 share/doc/ntp/pic/rabbit.gif
 share/doc/ntp/pic/radio2.jpg
 share/doc/ntp/pic/sheepb.jpg

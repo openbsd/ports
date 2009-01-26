@@ -1,16 +1,22 @@
-# $OpenBSD: Makefile,v 1.36 2008/07/01 16:41:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2009/01/26 23:26:02 naddy Exp $
 
 COMMENT-main=	network time protocol implementation
 COMMENT-doc=	network time protocol documentation
 
-NTP_VERSION=	4.2.0a
-DISTNAME=	ntp-stable-${NTP_VERSION}-20050303
-PKGNAME-main=	ntp-${NTP_VERSION}p5
-PKGNAME-doc=	ntp-doc-${NTP_VERSION}p2
+# ISC's NTP has a 'pN' in its version number, which we don't want
+# to confuse with the ports system's 'pN' convention, so we
+# convert it to 'pl' for local use.
+
+NTP_VERSION=	4.2.4p5
+NTP_PKG_VERSION=${NTP_VERSION:S/p/pl/}
+DISTNAME=	ntp-${NTP_VERSION}
+PKGNAME-main=	ntp-${NTP_PKG_VERSION}
+PKGNAME-doc=	ntp-doc-${NTP_PKG_VERSION}
 CATEGORIES=	net
-MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/snapshots/ntp-stable/2005/03/ \
-		ftp://ftp.udel.edu/pub/ntp/ntp4/snapshots/ntp-stable/2005/03/ \
-		ftp://ftp.cs.umn.edu/ftp00/ftp.udel.edu/pub/ntp/ntp4/snapshots/ntp-stable/2005/03/
+MASTER_SITES=   ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-4.2/ \
+		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
+		ftp://archive.ntp.org/ntp4/ntp-4.2/ \
+		http://archive.ntp.org/ntp4/ntp-4.2/
 
 HOMEPAGE=	http://www.ntp.org/
 
@@ -26,11 +32,12 @@ MULTI_PACKAGES=	-main -doc
 PKG_ARCH-doc=	*
 WANTLIB-main=	c crypto curses kvm m readline 
 
-SEPARATE_BUILD=	concurrent
-AUTOCONF_VERSION= 2.58
+SEPARATE_BUILD=	simple
+USE_LIBTOOL=	Yes
+AUTOCONF_VERSION= 2.59
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DHAVE_IPV6"
 CONFIGURE_ARGS+= --bindir='${PREFIX}/sbin' \
+		--with-binsubdir=sbin \
 	 	--enable-accurate-adjtime --disable-IRIG \
 		--enable-parse-clocks \
 		--with-openssl-libdir=/usr/lib \
@@ -42,9 +49,7 @@ post-install:
 	@cd ${WRKSRC}/html && pax -rw * ${PREFIX}/share/doc/ntp
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ntp
 	@cd ${WRKSRC}/conf && pax -rw * ${PREFIX}/share/examples/ntp
-	@sed -e s#!!PREFIX!!#${TRUEPREFIX}#g \
-	    -e s#!!SYSCONFDIR!!#${SYSCONFDIR}#g \
-	    ${FILESDIR}/README.OpenBSD > ${WRKBUILD}/README.OpenBSD
+	@${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${WRKBUILD}/README.OpenBSD
 	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
 	    ${PREFIX}/share/examples/ntp/
 
