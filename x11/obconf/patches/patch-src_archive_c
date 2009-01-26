@@ -1,8 +1,15 @@
---- src/archive.c.orig	Fri Jan 11 19:22:11 2008
-+++ src/archive.c	Sat Jan 24 12:57:36 2009
-@@ -173,18 +173,17 @@ static gchar* install_theme_to(const gchar *file, cons
+$OpenBSD: patch-src_archive_c,v 1.3 2009/01/26 10:20:39 jasper Exp $
+
+Fix GNU-ism unsupported by our tar(1).
+
+--- src/archive.c.orig	Mon Jan 26 11:15:29 2009
++++ src/archive.c	Mon Jan 26 11:16:04 2009
+@@ -171,20 +171,19 @@ static gchar* install_theme_to(const gchar *file, cons
+     GError *e = NULL;
+     gchar *name = NULL;
  
-     glob = g_strdup_printf("*/openbox-3/", name);
+-    glob = g_strdup_printf("*/openbox-3/", name);
++    glob = g_strdup_printf("*/openbox-3/*", name);
  
 -    argv = g_new(gchar*, 11);
 +    argv = g_new(gchar*, 10);

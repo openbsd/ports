@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/02/09 09:28:33 bernd Exp $
-bin/obconf
+@comment $OpenBSD: PLIST,v 1.7 2009/01/26 10:20:39 jasper Exp $
+@bin bin/obconf
 share/applications/obconf.desktop
 share/locale/cs/LC_MESSAGES/obconf.mo
 share/locale/en@boldquot/LC_MESSAGES/obconf.mo
