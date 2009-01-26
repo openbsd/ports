@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/10/16 12:44:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/01/26 10:59:14 ajacoutot Exp $
 @conflict smstools-*
 %%SHARED%%
 !%%no_x11%%
-bin/gnokii
+@bin bin/gnokii
 bin/ppm2nokia
 bin/sendsms
 bin/todologo
-bin/waitcall
+@bin bin/waitcall
 include/gnokii/
 include/gnokii.h
 include/gnokii/bitmaps.h
@@ -27,8 +27,8 @@ lib/libgnokii.la
 lib/pkgconfig/
 lib/pkgconfig/gnokii.pc
 @man man/man1/gnokii.1
-sbin/gnokiid
-sbin/mgnokiidev
+@bin sbin/gnokiid
+@bin sbin/mgnokiidev
 share/doc/gnokii/
 share/doc/gnokii/gnapplet.sis
 share/examples/gnokii/

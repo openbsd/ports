@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.1 2007/10/17 14:37:34 ajacoutot Exp $
---- configure.orig	Wed Oct 17 13:24:31 2007
-+++ configure	Wed Oct 17 13:25:45 2007
+$OpenBSD: patch-configure,v 1.2 2009/01/26 10:59:14 ajacoutot Exp $
+--- configure.orig	Mon Aug 28 00:37:13 2006
++++ configure	Mon Jan 26 11:47:19 2009
+@@ -27413,7 +27413,7 @@ fi;
+ USE_LIBICAL="no"
+ OLD_LIBS="$LIBS"
+ OLD_CFLAGS="$CFLAGS"
+-LIBS="$LIBS $ICAL_LIBS -lpthread -lical"
++LIBS="$LIBS $ICAL_LIBS -pthread -lical"
+ CFLAGS="$CFLAGS $ICAL_CFLAGS"
+ echo "$as_me:$LINENO: checking whether libical is installed" >&5
+ echo $ECHO_N "checking whether libical is installed... $ECHO_C" >&6
 @@ -32748,7 +32748,7 @@ s,@LIBOBJS@,$LIBOBJS,;t t
  s,@SET_RELOCATABLE@,$SET_RELOCATABLE,;t t
  s,@RELOCATABLE_VIA_LD_TRUE@,$RELOCATABLE_VIA_LD_TRUE,;t t

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.4 2008/06/01 17:33:36 ajacoutot Exp $
-bin/xgnokii
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.5 2009/01/26 10:59:14 ajacoutot Exp $
+@bin bin/xgnokii
 lib/pkgconfig/xgnokii.pc
 @man man/man1/xgnokii.1
 share/applications/xgnokii.desktop
