@@ -1,15 +1,46 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/08/22 11:41:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/01/26 10:57:03 ajacoutot Exp $
 @bin bin/tmw
 @man man/man6/tmw.6
 share/applications/tmw.desktop
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/tmw.mo
+share/locale/ca/LC_MESSAGES/tmw.mo
+share/locale/cs/LC_MESSAGES/tmw.mo
+share/locale/da/LC_MESSAGES/tmw.mo
+share/locale/de/LC_MESSAGES/tmw.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/tmw.mo
+share/locale/eo/LC_MESSAGES/tmw.mo
+share/locale/es/LC_MESSAGES/tmw.mo
+share/locale/fi/LC_MESSAGES/tmw.mo
+share/locale/fr/LC_MESSAGES/tmw.mo
+share/locale/he/LC_MESSAGES/tmw.mo
+share/locale/hr/LC_MESSAGES/tmw.mo
+share/locale/id/LC_MESSAGES/tmw.mo
+share/locale/it/LC_MESSAGES/tmw.mo
+share/locale/ja/LC_MESSAGES/tmw.mo
+share/locale/nl/LC_MESSAGES/tmw.mo
+share/locale/pl/LC_MESSAGES/tmw.mo
+share/locale/pt/LC_MESSAGES/tmw.mo
+share/locale/pt_BR/LC_MESSAGES/tmw.mo
+share/locale/ru/LC_MESSAGES/tmw.mo
+share/locale/sk/LC_MESSAGES/tmw.mo
+share/locale/sv/LC_MESSAGES/tmw.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
+share/locale/th/LC_MESSAGES/tmw.mo
 share/pixmaps/
 share/pixmaps/tmw.png
 share/tmw/
 share/tmw/data/
+share/tmw/data/fonts/
+share/tmw/data/fonts/dejavusans.ttf
 share/tmw/data/graphics/
 share/tmw/data/graphics/gui/
 share/tmw/data/graphics/gui/bg_quad_dis.png
-share/tmw/data/graphics/gui/browserfont.png
+share/tmw/data/graphics/gui/bubble.png
 share/tmw/data/graphics/gui/button.png
 share/tmw/data/graphics/gui/button_disabled.png
 share/tmw/data/graphics/gui/buttonhi.png
@@ -38,9 +69,10 @@ share/tmw/data/graphics/gui/radioin.png
 share/tmw/data/graphics/gui/radioout.png
 share/tmw/data/graphics/gui/resize.png
 share/tmw/data/graphics/gui/rpgfont_wider.png
-share/tmw/data/graphics/gui/sansserif8.png
 share/tmw/data/graphics/gui/selection.png
 share/tmw/data/graphics/gui/slider.png
+share/tmw/data/graphics/gui/tab.png
+share/tmw/data/graphics/gui/tabselected.png
 share/tmw/data/graphics/gui/target-cursor-blue-l.png
 share/tmw/data/graphics/gui/target-cursor-blue-m.png
 share/tmw/data/graphics/gui/target-cursor-blue-s.png
