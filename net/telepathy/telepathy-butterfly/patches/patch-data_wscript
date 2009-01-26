@@ -1,0 +1,19 @@
+$OpenBSD: patch-data_wscript,v 1.1 2009/01/26 19:49:25 landry Exp $
+--- data/wscript.orig	Fri Dec 19 18:52:53 2008
++++ data/wscript	Fri Jan 23 00:28:05 2009
+@@ -1,12 +1,11 @@
+ #!/usr/bin/env python
+ 
+ def build(bld):
+-	import Common
+-	obj_rep = bld.create_obj('subst')
++	obj_rep = bld.new_task_gen('subst')
+ 	obj_rep.source = 'org.freedesktop.Telepathy.ConnectionManager.butterfly.service.in'
+ 	obj_rep.target = 'org.freedesktop.Telepathy.ConnectionManager.butterfly.service'
+ 
+-	Common.install_files('DATADIR', 'telepathy/managers/', 'butterfly.manager')
+-	Common.install_files('DATADIR', 'dbus-1/services/',
++	bld.install_files('${DATADIR}/telepathy/managers/', 'butterfly.manager')
++	bld.install_files('${DATADIR}/dbus-1/services/',
+ 	        'org.freedesktop.Telepathy.ConnectionManager.butterfly.service')
+ 

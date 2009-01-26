@@ -1,19 +1,36 @@
-$OpenBSD: patch-wscript,v 1.1 2008/10/27 00:04:23 jasper Exp $
---- wscript.orig	Mon Oct 27 00:12:33 2008
-+++ wscript	Mon Oct 27 00:13:15 2008
-@@ -15,12 +15,15 @@ Scripting.g_excludes.extend(['pymsn', 'telepathy', 'di
+$OpenBSD: patch-wscript,v 1.2 2009/01/26 19:49:25 landry Exp $
+--- wscript.orig	Tue Jan  6 13:46:52 2009
++++ wscript	Fri Jan 23 00:27:35 2009
+@@ -6,26 +6,23 @@ APPNAME = 'telepathy-butterfly'
+ srcdir = '.'
+ blddir = '_build_'
+ 
+-import Scripting
+-
+-Scripting.g_gz = 'gz'
+-Scripting.g_excludes.extend(['pymsn', 'telepathy', 'dist'])
+-
+-
  def set_options(opt):
      opt.tool_options('python')
-     opt.tool_options('gnu_dirs', 'tools')
+-    opt.tool_options('gnu_dirs', 'tools')
++    opt.tool_options('gnu_dirs')
 +    opt.tool_options ('compiler_cc')
  
  def configure(conf):
      conf.check_tool('python misc')
-     conf.check_tool('gnu_dirs', 'tools')
+-    conf.check_tool('gnu_dirs', 'tools')
++    conf.check_tool('gnu_dirs')
  
      conf.check_python_version()
-+
-+    conf.check_tool ('compiler_cc')
  
++    conf.check_tool ('compiler_cc')
++
      conf.define('VERSION', VERSION)
      conf.define('PACKAGE', APPNAME)
+ 
+ def build(bld):
+     bld.add_subdirs('butterfly data')
+-    install_files('LIBEXECDIR', '', 'telepathy-butterfly', chmod=0755)
++    bld.install_files('${LIBEXECDIR}', 'telepathy-butterfly', chmod=0755)
+ 
