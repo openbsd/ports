@@ -1,5 +1,5 @@
 --- Makefile.orig	Thu Dec 25 06:33:25 2008
-+++ Makefile	Sat Jan 24 15:30:26 2009
++++ Makefile	Mon Jan 26 09:09:19 2009
 @@ -170,7 +170,7 @@ uname_V := $(shell sh -c 'uname -v 2>/dev/null || echo
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
@@ -54,7 +54,7 @@
  
  export TCL_PATH TCLTK_PATH
  
-@@ -703,11 +703,10 @@ ifeq ($(uname_S),FreeBSD)
+@@ -703,12 +703,11 @@ ifeq ($(uname_S),FreeBSD)
  	endif
  endif
  ifeq ($(uname_S),OpenBSD)
@@ -63,11 +63,13 @@
  	NEEDS_LIBICONV = YesPlease
 -	BASIC_CFLAGS += -I/usr/local/include
 -	BASIC_LDFLAGS += -L/usr/local/lib
+-	THREADED_DELTA_SEARCH = YesPlease
 +	BASIC_CFLAGS += -I${X11BASE}/include -I${LOCALBASE}/include
 +	BASIC_LDFLAGS += -L${X11BASE}/lib -L${LOCALBASE}/lib
- 	THREADED_DELTA_SEARCH = YesPlease
++	NO_PTHREADS = YesPlease
  endif
  ifeq ($(uname_S),NetBSD)
+ 	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
 @@ -793,7 +792,7 @@ ifneq (,$(findstring MINGW,$(uname_S)))
  	COMPAT_OBJS += compat/mingw.o compat/fnmatch/fnmatch.o compat/regex/regex.o compat/winansi.o
  	EXTLIBS += -lws2_32

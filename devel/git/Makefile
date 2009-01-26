@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2009/01/24 14:31:28 bernd Exp $
+# $OpenBSD: Makefile,v 1.40 2009/01/26 08:58:43 bernd Exp $
 
 COMMENT-main=		GIT - Tree History Storage Tool
 COMMENT-svn=		GIT - subversion interoperability tools
@@ -6,7 +6,7 @@ COMMENT-x11=		GIT - graphical tools
 
 V=			1.6.1
 DISTNAME=		git-${V}
-PKGNAME-main=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 PKGNAME-svn=		git-svn-${V}
 PKGNAME-x11=		git-x11-${V}
 CATEGORIES=		devel
@@ -39,7 +39,7 @@ BUILD_DEPENDS=		::archivers/gtar \
 
 MULTI_PACKAGES=		-main -svn -x11
 
-WANTLIB-main=		c expat crypto pthread ssl z
+WANTLIB-main=		c expat crypto ssl z
 RUN_DEPENDS-main=	::net/rsync \
 			::devel/p5-Error \
 			${MODLIBICONV_RUN_DEPENDS}
