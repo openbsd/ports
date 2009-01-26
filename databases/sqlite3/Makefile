@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.39 2008/12/04 14:11:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2009/01/26 14:44:37 bernd Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
+COMMENT-lemon=	LEMON LALR(1) parser generator
 V=		3.6.4
 DISTNAME=	sqlite-${V}
 PKGNAME-main=	sqlite3-${V}p0
 PKGNAME-tcl=	sqlite3-tcl-${V}p0
+PKGNAME-lemon=	lemon-${V}
 CATEGORIES=	databases
 SHARED_LIBS +=	sqlite3              12.1      # .8.6
 SHARED_LIBS +=	tclsqlite3           11.0      # .8.6
@@ -21,6 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main=	c ncurses pthread readline
+WANTLIB-lemon=	c
 
 USE_LIBTOOL=	Yes
 
@@ -41,7 +44,7 @@ FLAVOR?=
 FLAVOR=	no_tcl
 .endif
 
-MULTI_PACKAGES=-main
+MULTI_PACKAGES=-main -lemon
 .if !${FLAVOR:L:Mno_tcl}
 MULTI_PACKAGES+=-tcl
 MODULES+=	lang/tcl
@@ -71,5 +74,8 @@ NO_REGRESS=	Yes
 post-install:
 	perl -pi -e s,'\-pthread','',g ${PREFIX}/lib/libsqlite3.la \
 		${PREFIX}/lib/pkgconfig/sqlite3.pc
+	${INSTALL_DATA_DIR} ${PREFIX}/share/lemon
+	${INSTALL_DATA} ${WRKBUILD}/tool/lempar.c ${PREFIX}/share/lemon
+	${INSTALL_PROGRAM} ${WRKBUILD}/lemon ${PREFIX}/bin
 
 .include <bsd.port.mk>
