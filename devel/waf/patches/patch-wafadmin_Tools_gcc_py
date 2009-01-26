@@ -1,0 +1,15 @@
+$OpenBSD: patch-wafadmin_Tools_gcc_py,v 1.1 2009/01/26 19:47:12 landry Exp $
+
+Workaround a stupid cc version check, cc --version doesn't output 'gcc'
+
+--- wafadmin/Tools/gcc.py.orig	Mon Dec 22 00:30:44 2008
++++ wafadmin/Tools/gcc.py	Mon Jan 19 09:34:45 2009
+@@ -18,7 +18,7 @@ def find_gcc(conf):
+ 	if not cc: cc = conf.find_program('cc', var='CC')
+ 	if not cc: conf.fatal('gcc was not found')
+ 	try:
+-		if Utils.cmd_output('%s --version' % cc).find('gcc') < 0:
++		if Utils.cmd_output('%s --version' % cc).find('GCC') < 0:
+ 			conf.fatal('gcc was not found, see the result of gcc --version')
+ 	except ValueError:
+ 		conf.fatal('gcc --version could not be executed')

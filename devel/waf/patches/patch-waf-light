@@ -1,13 +1,16 @@
-$OpenBSD: patch-waf,v 1.1.1.1 2008/09/23 19:55:02 landry Exp $
---- waf.orig	Wed Aug 27 15:01:03 2008
-+++ waf	Wed Aug 27 15:09:26 2008
+$OpenBSD: patch-waf-light,v 1.1 2009/01/26 19:47:12 landry Exp $
+
+trick waf-light to make it found installed version
+
+--- waf-light.orig	Mon Dec 22 00:31:57 2008
++++ waf-light	Sun Jan 18 23:44:38 2009
 @@ -1,4 +1,4 @@
--#! /usr/bin/env python
+-#!/usr/bin/env python
 +#!${MODPY_BIN}
  # encoding: utf-8
  # Thomas Nagy, 2005-2008
  
-@@ -109,16 +109,7 @@ def find_lib():
+@@ -102,16 +102,7 @@ def find_lib():
  		if w: return w
  		err("waf-light requires wafadmin -> export WAFDIR=/folder")
  
