@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/01/19 21:39:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2009/01/26 22:09:19 landry Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -10,7 +10,7 @@ FULL_PKGVERSION=4.2.${DATE}
 
 PKGNAME-main=  gcc-${FULL_PKGVERSION}p10
 PKGNAME-c++ =  g++-${FULL_PKGVERSION}p8
-PKGNAME-estdc= libstdc++-${FULL_PKGVERSION}p5
+PKGNAME-estdc= libstdc++-${FULL_PKGVERSION}p6
 PKGNAME-g77=   g77-${FULL_PKGVERSION}p4
 PKGNAME-f95=   g95-${FULL_PKGVERSION}p7
 PKGNAME-java=  gcj-${FULL_PKGVERSION}p3
@@ -179,6 +179,7 @@ RUN_DEPENDS=		:gcc-${FULL_PKGVERSION}:${PKGPATH}
 WANTLIB=		c
 
 RUN_DEPENDS-main=
+RUN_DEPENDS-estdc=
 
 RUN_DEPENDS-c++ =	${RUN_DEPENDS} ::${PKGPATH},-estdc
 WANTLIB-estdc=		c m
