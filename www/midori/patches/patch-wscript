@@ -1,13 +1,15 @@
-$OpenBSD: patch-wscript,v 1.1 2008/10/26 13:06:29 landry Exp $
+$OpenBSD: patch-wscript,v 1.2 2009/01/26 19:52:49 landry Exp $
 We don't need those files installed..
---- wscript.orig	Sat Oct 25 13:18:15 2008
-+++ wscript	Sat Oct 25 13:18:32 2008
-@@ -175,8 +175,6 @@ def build (bld):
+--- wscript.orig	Mon Jan 19 00:18:58 2009
++++ wscript	Mon Jan 19 00:19:05 2009
+@@ -267,10 +267,6 @@ def build (bld):
+     if option_enabled ('addons'):
+         bld.add_subdirs ('extensions')
  
-     bld.add_subdirs ('katze midori icons')
- 
--    install_files ('DOCDIR', '/midori/', 'AUTHORS ChangeLog COPYING README')
+-    if option_enabled ('docs'):
+-        bld.install_files ('${DOCDIR}/' + APPNAME + '/', \
+-            'AUTHORS ChangeLog COPYING EXPAT README TRANSLATE')
 -
-     if bld.env ()['RST2HTML']:
+     if bld.env['RST2HTML']:
          # FIXME: Build only if needed
          if not os.access (blddir, os.F_OK):
