@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 14:45:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/01/26 20:19:18 simon Exp $
 ${P5SITE}/Config/
 ${P5SITE}/Config/Any/
 ${P5SITE}/Config/Any.pm
+${P5SITE}/Config/Any/Base.pm
 ${P5SITE}/Config/Any/General.pm
 ${P5SITE}/Config/Any/INI.pm
 ${P5SITE}/Config/Any/JSON.pm
@@ -9,6 +10,7 @@ ${P5SITE}/Config/Any/Perl.pm
 ${P5SITE}/Config/Any/XML.pm
 ${P5SITE}/Config/Any/YAML.pm
 @man man/man3p/Config::Any.3p
+@man man/man3p/Config::Any::Base.3p
 @man man/man3p/Config::Any::General.3p
 @man man/man3p/Config::Any::INI.3p
 @man man/man3p/Config::Any::JSON.3p
