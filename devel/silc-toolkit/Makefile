@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2009/01/10 01:30:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2009/01/26 12:04:35 ajacoutot Exp $
 
 COMMENT=	toolkit for the development of SILC applications
 
 DISTNAME=	silc-toolkit-1.1.9
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 SHARED_LIBS=	silc		9.0	\
 		silcclient	7.0	\

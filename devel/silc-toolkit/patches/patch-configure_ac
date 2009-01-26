@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.1 2009/01/10 02:03:50 sthen Exp $
---- configure.ac.orig	Thu Jan  8 14:29:31 2009
-+++ configure.ac	Sat Jan 10 01:58:18 2009
+$OpenBSD: patch-configure_ac,v 1.2 2009/01/26 12:04:35 ajacoutot Exp $
+--- configure.ac.orig	Thu Jan  8 15:29:31 2009
++++ configure.ac	Mon Jan 26 11:08:04 2009
 @@ -50,6 +50,9 @@ case "$target" in
    *-*-netbsd*)
      check_threads=true
@@ -11,3 +11,21 @@ $OpenBSD: patch-configure_ac,v 1.1 2009/01/10 02:03:50 sthen Exp $
    *-*-*bsd*)
      check_threads=false
      ;;
+@@ -1010,7 +1013,7 @@ if test x$check_threads = xtrue; then
+   AC_MSG_RESULT(yes)
+   AC_CHECK_HEADERS(pthread.h,
+     [
+-      LIBS="$LIBS -lpthread"
++      LIBS="$LIBS -pthread"
+       AC_CHECK_LIB(pthread, pthread_attr_init, has_threads=true,
+         [
+           # FreeBSD
+@@ -1044,7 +1047,7 @@ if test x$check_threads = xtrue; then
+ 
+           AC_CHECK_HEADERS(pthread.h,
+             [
+-              LIBS="$LIBS -lpthread"
++              LIBS="$LIBS -pthread"
+               AC_CHECK_LIB(pthread, pthread_attr_init, has_threads=true,
+                 [
+                   has_threads=false
