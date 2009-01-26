@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/04/14 21:42:55 simon Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/01/26 17:10:00 simon Exp $
 @conflict p5-Catalyst-Manual-<5.701003
 bin/catalyst.pl
 ${P5SITE}/Catalyst/
@@ -8,7 +8,6 @@ ${P5SITE}/Catalyst/ActionChain.pm
 ${P5SITE}/Catalyst/ActionContainer.pm
 ${P5SITE}/Catalyst/AttrContainer.pm
 ${P5SITE}/Catalyst/Base.pm
-${P5SITE}/Catalyst/Build.pm
 ${P5SITE}/Catalyst/Component.pm
 ${P5SITE}/Catalyst/Controller.pm
 ${P5SITE}/Catalyst/DispatchType/
@@ -52,7 +51,6 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::ActionContainer.3p
 @man man/man3p/Catalyst::AttrContainer.3p
 @man man/man3p/Catalyst::Base.3p
-@man man/man3p/Catalyst::Build.3p
 @man man/man3p/Catalyst::Component.3p
 @man man/man3p/Catalyst::Controller.3p
 @man man/man3p/Catalyst::DispatchType.3p
