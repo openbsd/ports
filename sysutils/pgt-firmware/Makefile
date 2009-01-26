@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/12/25 19:17:18 mglocker Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/26 10:37:46 ajacoutot Exp $
 
-COMMENT=		Firmware binary images for pgt driver
+COMMENT=		firmware binary images for pgt driver
 
 DISTNAME=		pgt-firmware-1.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils
 MASTER_SITES=		${HOMEPAGE}
 

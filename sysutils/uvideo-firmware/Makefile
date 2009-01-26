@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/12/25 10:32:13 mglocker Exp $
+# $OpenBSD: Makefile,v 1.2 2009/01/26 10:37:46 ajacoutot Exp $
 
-COMMENT=		Firmware binary images for uvideo driver
+COMMENT=		firmware binary images for uvideo driver
 
 DISTNAME=		uvideo-firmware-1.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils
 MASTER_SITES=		${HOMEPAGE}	
 
