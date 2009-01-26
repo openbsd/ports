@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.45 2009/01/08 12:07:03 sthen Exp $
---- dovecot-example.conf.orig	Mon Jan  5 15:49:58 2009
-+++ dovecot-example.conf	Wed Jan  7 16:14:02 2009
+$OpenBSD: patch-dovecot-example_conf,v 1.46 2009/01/26 14:47:02 sthen Exp $
+--- dovecot-example.conf.orig	Tue Jan 13 16:51:40 2009
++++ dovecot-example.conf	Fri Jan 16 14:55:17 2009
 @@ -10,13 +10,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -173,9 +173,9 @@ $OpenBSD: patch-dovecot-example_conf,v 1.45 2009/01/08 12:07:03 sthen Exp $
 -  #sendmail_path = /usr/lib/sendmail
 +  #sendmail_path = /usr/sbin/sendmail
  
-   # Human readable error message for rejection mails. Use can use variables:
-   #  %n = CRLF, %r = reason, %s = subject, %t = recipient
-@@ -693,7 +693,7 @@ protocol lda {
+   # Subject: header to use for rejection mails. You can use the same variables
+   # as for rejection_reason below.
+@@ -697,7 +697,7 @@ protocol lda {
  ##
  
  # Executable location
@@ -184,7 +184,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.45 2009/01/08 12:07:03 sthen Exp $
  
  # Set max. process size in megabytes.
  #auth_process_size = 256
-@@ -826,7 +826,7 @@ auth default {
+@@ -830,7 +830,7 @@ auth default {
    # database (passwd usually), you can use static userdb.
    # REMEMBER: You'll need /etc/pam.d/dovecot file created for PAM
    # authentication to actually work. <doc/wiki/PasswordDatabase.PAM.txt>
@@ -193,7 +193,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.45 2009/01/08 12:07:03 sthen Exp $
      # [session=yes] [setcred=yes] [failure_show_msg=yes]
      # [cache_key=<key>] [<service name>]
      #
-@@ -855,7 +855,7 @@ auth default {
+@@ -859,7 +859,7 @@ auth default {
      #   args = session=yes %Ls
      #   args = cache_key=%u dovecot
      #args = dovecot
@@ -202,7 +202,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.45 2009/01/08 12:07:03 sthen Exp $
  
    # System users (NSS, /etc/passwd, or similiar)
    # In many systems nowadays this uses Name Service Switch, which is
-@@ -875,10 +875,10 @@ auth default {
+@@ -879,10 +879,10 @@ auth default {
  
    # PAM-like authentication for OpenBSD.
    # <doc/wiki/PasswordDatabase.BSDAuth.txt>

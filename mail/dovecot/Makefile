@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2009/01/08 12:07:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.111 2009/01/26 14:47:02 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,12 +6,12 @@ COMMENT-server= compact IMAP/POP3 server
 COMMENT-sieve=	Sieve mail filtering for Dovecot
 
 V_MAJOR=	1.1
-V_DOVECOT=	1.1.8
+V_DOVECOT=	1.1.9
 V_SIEVE=	1.1.6
 
 PKGNAME=	dovecot-${V_DOVECOT}
 PKGNAME-server=	dovecot-${V_DOVECOT}
-FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}
+FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}p0
 
 DISTNAME=	dovecot-${V_DOVECOT}
 CATEGORIES=	mail
@@ -25,7 +25,7 @@ HOMEPAGE=	http://www.dovecot.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
-# MIT/LGPL
+# MIT/LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -41,7 +41,7 @@ MULTI_PACKAGES=	-server
 SUBPACKAGE?=	-server
 
 PSEUDO_FLAVORS=	no_sieve
-FLAVORS=	ldap mysql postgresql sqlite
+FLAVORS=	bdb ldap mysql postgresql sqlite
 FLAVOR?=
 
 CFLAGS+=	-I/usr/include/kerberosV -I${LOCALBASE}/include
@@ -62,6 +62,12 @@ SIEVE_DIR=		${WRKDIR}/dovecot-sieve-${V_SIEVE}
 AUTOCONF_DIR+=		${WRKSRC} ${SIEVE_DIR}
 RUN_DEPENDS-sieve=	::${BUILD_PKGPATH}
 LIB_DEPENDS-sieve=	${MODLIBICONV_LIB_DEPENDS}
+.endif
+
+.if ${FLAVOR:L:Mbdb}
+CONFIGURE_ARGS+=	--with-db
+LIB_DEPENDS+=		db.>=5::databases/db/v4
+CFLAGS+=		-I${LOCALBASE}/include/db4
 .endif
 
 .if ${FLAVOR:L:Mldap}

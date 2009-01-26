@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.15 2009/01/08 12:07:03 sthen Exp $
---- configure.in.orig	Tue Jan  6 08:53:19 2009
-+++ configure.in	Wed Jan  7 16:14:09 2009
+$OpenBSD: patch-configure_in,v 1.16 2009/01/26 14:47:02 sthen Exp $
+--- configure.in.orig	Thu Jan 15 18:02:47 2009
++++ configure.in	Fri Jan 16 14:55:25 2009
 @@ -13,6 +13,7 @@ AC_PROG_CXX # lucene plugin needs this
  AC_HEADER_STDC
  AC_C_INLINE
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure_in,v 1.15 2009/01/08 12:07:03 sthen Exp $
  AM_ICONV
  
  AC_CHECK_HEADERS(strings.h stdint.h unistd.h dirent.h malloc.h inttypes.h \
-@@ -1784,74 +1785,15 @@ fi
+@@ -1797,74 +1798,15 @@ fi
  
  have_gssapi=no
  if test $want_gssapi != no; then
