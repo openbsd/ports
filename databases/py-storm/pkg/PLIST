@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/06 13:12:14 eric Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/01/26 16:31:15 eric Exp $
 %%SHARED%%
 lib/python${MODPY_VERSION}/site-packages/storm/
 lib/python${MODPY_VERSION}/site-packages/storm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -25,6 +25,18 @@ lib/python${MODPY_VERSION}/site-packages/storm/databases/postgres.py
 lib/python${MODPY_VERSION}/site-packages/storm/databases/postgres.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/databases/sqlite.py
 lib/python${MODPY_VERSION}/site-packages/storm/databases/sqlite.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/django/
+lib/python${MODPY_VERSION}/site-packages/storm/django/__init__.py
+lib/python${MODPY_VERSION}/site-packages/storm/django/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/django/backend/
+lib/python${MODPY_VERSION}/site-packages/storm/django/backend/__init__.py
+lib/python${MODPY_VERSION}/site-packages/storm/django/backend/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/django/backend/base.py
+lib/python${MODPY_VERSION}/site-packages/storm/django/backend/base.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/django/middleware.py
+lib/python${MODPY_VERSION}/site-packages/storm/django/middleware.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/django/stores.py
+lib/python${MODPY_VERSION}/site-packages/storm/django/stores.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/event.py
 lib/python${MODPY_VERSION}/site-packages/storm/event.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/exceptions.py
