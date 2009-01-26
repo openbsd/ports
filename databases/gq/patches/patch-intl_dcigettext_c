@@ -1,3 +1,4 @@
+$OpenBSD: patch-intl_dcigettext_c,v 1.3 2009/01/26 18:17:25 jasper Exp $
 --- intl/dcigettext.c.orig	Sat May  4 18:10:13 2002
 +++ intl/dcigettext.c	Sun Oct 12 17:01:58 2008
 @@ -57,11 +57,6 @@ extern int errno;

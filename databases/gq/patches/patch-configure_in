@@ -1,3 +1,4 @@
+$OpenBSD: patch-configure_in,v 1.5 2009/01/26 18:17:25 jasper Exp $
 --- configure.in.orig	Mon Nov  3 23:56:14 2003
 +++ configure.in	Sun Oct 12 17:02:00 2008
 @@ -278,9 +278,9 @@ AC_CHECK_LIB(lber, ber_alloc,

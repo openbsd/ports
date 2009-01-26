@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.5 2009/01/26 18:17:25 jasper Exp $
+--- src/Makefile.in.orig	Mon Jan 26 15:54:51 2009
++++ src/Makefile.in	Mon Jan 26 15:55:28 2009
+@@ -251,7 +251,7 @@ EXTRA_DIST = \
+ 	gq.desktop COPYING.c
+ 
+ 
+-sysdir = $(datadir)/gnome/apps/Internet
++sysdir = $(datadir)/applications/
+ sys_DATA = gq.desktop
+ subdir = src
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

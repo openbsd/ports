@@ -1,9 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/10/12 17:36:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/01/26 18:17:25 jasper Exp $
 @bin bin/gq
-share/gnome/
-share/gnome/apps/
-share/gnome/apps/Internet/
-share/gnome/apps/Internet/gq.desktop
+share/applications/gq.desktop
 share/pixmaps/
 share/pixmaps/gq/
 share/pixmaps/gq/bomb.xpm
@@ -13,3 +10,5 @@ share/pixmaps/gq/logo.xpm
 share/pixmaps/gq/new.xpm
 share/pixmaps/gq/textarea.xpm
 share/pixmaps/gq/warning.xpm
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
