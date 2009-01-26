@@ -1,12 +1,11 @@
-$OpenBSD: patch-bindings_Makefile_in,v 1.1 2007/09/12 14:34:36 msf Exp $
---- bindings/Makefile.in.orig	Wed May  2 19:06:59 2007
-+++ bindings/Makefile.in	Tue Sep 11 14:31:11 2007
-@@ -550,7 +550,7 @@ ruby: 
+--- bindings/Makefile.in.orig	Wed Jul 23 14:56:19 2008
++++ bindings/Makefile.in	Thu Dec 11 11:22:50 2008
+@@ -560,7 +560,7 @@ ruby: 
  
  # rules for buildung the pyton module
  python:
--	cd python && env LIBDIR=../../src/.libs $(PYTHON) setup.py build
-+	cd python && env LIBDIR=../../src/.libs INCDIR=../../src $(PYTHON) setup.py build
+-	cd python && env BUILDLIBDIR=../../src/.libs $(PYTHON) setup.py build_ext --rpath=$(libdir) && env LIBDIR=../../src/.libs $(PYTHON) setup.py build
++	cd python && env BUILDLIBDIR=../../src/.libs INCDIR=../../src $(PYTHON) setup.py build_ext --rpath=$(libdir) && env LIBDIR=../../src/.libs $(PYTHON) setup.py build
  
  # rules for building the perl module
  perl_piped: perl-piped/Makefile

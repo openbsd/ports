@@ -1,0 +1,20 @@
+$OpenBSD: patch-rrd_config_h_in,v 1.1 2009/01/26 21:26:32 sthen Exp $
+--- rrd_config.h.in.orig	Wed Jul 23 15:56:17 2008
++++ rrd_config.h.in	Sat Nov 22 14:09:31 2008
+@@ -283,12 +283,12 @@
+ # include <errno.h>
+ #endif
+ 
+-#if defined(HAVE_SYS_MMAN_H)
+-#include <sys/mman.h>
+-#endif
+-
+ #ifdef HAVE_SYS_TYPES_H
+ # include <sys/types.h>
++#endif
++
++#if defined(HAVE_SYS_MMAN_H)
++#include <sys/mman.h>
+ #endif
+ 
+ #ifdef HAVE_SYS_PARAM_H

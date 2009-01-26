@@ -1,2 +1,5 @@
-@comment $OpenBSD: PLIST-python,v 1.1 2007/09/12 14:34:37 msf Exp $
+@comment $OpenBSD: PLIST-python,v 1.2 2009/01/26 21:26:32 sthen Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/py_rrdtool-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/rrdtoolmodule.so

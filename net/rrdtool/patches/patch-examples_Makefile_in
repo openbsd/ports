@@ -1,7 +1,7 @@
-OpenBSD$
---- examples/Makefile.in.orig	Thu May  3 03:07:00 2007
-+++ examples/Makefile.in	Wed Jun 20 08:48:25 2007
-@@ -219,7 +219,7 @@ target_cpu = @target_cpu@
+$OpenBSD: patch-examples_Makefile_in,v 1.7 2009/01/26 21:26:32 sthen Exp $
+--- examples/Makefile.in.orig	Wed Jul 23 15:56:19 2008
++++ examples/Makefile.in	Sat Nov 22 14:09:31 2008
+@@ -227,7 +227,7 @@ target_cpu = @target_cpu@
  target_os = @target_os@
  target_vendor = @target_vendor@
  EXTRA_DIST = cgi-demo.cgi.in

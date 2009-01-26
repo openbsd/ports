@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2007/09/12 14:34:37 msf Exp $
-bin/rrdcgi
-bin/rrdtool
-bin/rrdupdate
+@comment $OpenBSD: PLIST-main,v 1.2 2009/01/26 21:26:32 sthen Exp $
+@bin bin/rrdcgi
+@bin bin/rrdtool
+@bin bin/rrdupdate
 include/rrd.h
 lib/librrd.a
 lib/librrd.la
