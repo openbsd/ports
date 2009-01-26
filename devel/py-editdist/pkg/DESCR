@@ -1,0 +1,2 @@
+py-editdist is a Python module to calculate the Levenshtein edit
+distance between two strings.
