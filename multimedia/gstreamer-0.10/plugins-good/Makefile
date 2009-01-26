@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2009/01/25 18:55:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2009/01/26 12:32:43 jasper Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -18,7 +18,7 @@ COMMENT-soup =		multimedia framework - libsoup plugin
 
 V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
-PKGNAME-main =		gstreamer-plugins-good-$Vp7
+PKGNAME-main =		gstreamer-plugins-good-$Vp8
 PKGNAME-aalib =		gstreamer-aalib-$Vp0
 PKGNAME-cairo =		gstreamer-cairo-$Vp1
 PKGNAME-gconf =		gstreamer-confelements-$Vp1
