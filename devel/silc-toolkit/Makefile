@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.21 2009/01/26 12:04:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/01/26 12:46:12 sthen Exp $
 
 COMMENT=	toolkit for the development of SILC applications
 
 DISTNAME=	silc-toolkit-1.1.9
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
+MASTER_SITES=	http://www.silcnet.org/download/toolkit/sources/
+
 SHARED_LIBS=	silc		9.0	\
 		silcclient	7.0	\
 
-MASTER_SITES=	http://www.silcnet.org/download/toolkit/sources/
-
 HOMEPAGE=	http://www.silcnet.org/software/developers/toolkit/
+
+MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes
