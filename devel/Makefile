@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.668 2009/01/27 08:27:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.669 2009/01/27 21:33:16 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -110,6 +110,7 @@
      SUBDIR += hmake
      SUBDIR += horde
      SUBDIR += hs-newbinary
+     SUBDIR += hscolour
      SUBDIR += hudson
      SUBDIR += id-utils
      SUBDIR += idoc
