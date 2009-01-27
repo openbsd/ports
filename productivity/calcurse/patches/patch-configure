@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2008/12/27 15:15:44 ajacoutot Exp $
---- configure.orig	Sat Dec 27 11:31:21 2008
-+++ configure	Sat Dec 27 16:06:36 2008
-@@ -6898,13 +6898,13 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+$OpenBSD: patch-configure,v 1.6 2009/01/27 08:14:38 ajacoutot Exp $
+--- configure.orig	Sat Jan 24 18:59:35 2009
++++ configure	Tue Jan 27 09:14:19 2009
+@@ -7453,13 +7453,13 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
  #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
  
