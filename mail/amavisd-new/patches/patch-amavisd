@@ -1,16 +1,16 @@
-$OpenBSD: patch-amavisd,v 1.5 2008/09/23 21:39:21 kili Exp $
---- amavisd.orig	Sun Jun 29 02:37:58 2008
-+++ amavisd	Wed Sep  3 20:40:21 2008
-@@ -213,7 +213,7 @@ BEGIN {
+$OpenBSD: patch-amavisd,v 1.6 2009/01/27 17:59:05 giovanni Exp $
+--- amavisd.orig	Mon Dec 15 01:50:09 2008
++++ amavisd	Tue Jan 27 13:21:17 2009
+@@ -215,7 +215,7 @@ BEGIN {
      File::Glob->import(':globally');  # use the same module as Perl 5.8 uses
    }
    fetch_modules('REQUIRED BASIC MODULES', 1, qw(
 -    Exporter POSIX Fcntl Socket Errno Carp Time::HiRes
 +    Exporter POSIX Fcntl Socket Errno Carp Carp::Heavy Time::HiRes
      IO::Handle IO::File IO::Socket IO::Socket::UNIX IO::Socket::INET
-     IO::Wrap IO::Stringy Digest::MD5 Unix::Syslog File::Basename
+     IO::Stringy Digest::MD5 Unix::Syslog File::Basename
      Compress::Zlib MIME::Base64 MIME::QuotedPrint MIME::Words
-@@ -20210,6 +20210,7 @@ sub initializeSpamAssassin {
+@@ -21039,6 +21039,7 @@ sub initializeSpamAssassin {
      stop_at_threshold => 0,
      need_tags         => 'TIMING,LANGUAGES,RELAYCOUNTRY,ASN,ASNCIDR',
  #   LOCAL_STATE_DIR   => '/var/lib',

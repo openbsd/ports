@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/09/23 21:39:21 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/01/27 17:59:05 giovanni Exp $
 @newgroup _vscan:530
 @newuser _vscan:530:_vscan::Amavisd-new Daemon:/var/empty:/sbin/nologin
 bin/amavisd-agent
 bin/amavisd-nanny
 bin/amavisd-release
+libdata/perl5/site_perl/JpegTester.pm
 sbin/amavisd
 share/doc/amavisd-new/
 share/doc/amavisd-new/AAAREADME.first
 share/doc/amavisd-new/INSTALL
+share/doc/amavisd-new/LDAP.ldif
 share/doc/amavisd-new/LDAP.schema
 share/doc/amavisd-new/LICENSE
 share/doc/amavisd-new/MANIFEST

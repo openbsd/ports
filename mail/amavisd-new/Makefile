@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2008/09/29 18:53:38 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2009/01/27 17:59:05 giovanni Exp $
 
 COMMENT=		interface between mailer MTA and content checkers
 
-DISTNAME=		amavisd-new-2.6.1
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		amavisd-new-2.6.2
 CATEGORIES=		mail security
 
 HOMEPAGE=		http://www.ijs.si/software/amavisd/
-MAINTAINER=		Giovanni Bechis <g.bechis@snb.it>
+MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -56,11 +55,14 @@ do-install:
 			${PREFIX}/bin/amavisd-nanny
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-release \
 			${PREFIX}/bin/amavisd-release
+	${INSTALL_DATA} ${WRKSRC}/JpegTester.pm \
+			${PREFIX}/libdata/perl5/site_perl/JpegTester.pm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/amavisd-new
 	${INSTALL_DATA} ${WRKSRC}/AAAREADME.first \
 			${PREFIX}/share/doc/amavisd-new
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/amavisd-new
 	${INSTALL_DATA} ${WRKSRC}/LDAP.schema ${PREFIX}/share/doc/amavisd-new
+	${INSTALL_DATA} ${WRKSRC}/LDAP.ldif ${PREFIX}/share/doc/amavisd-new
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/amavisd-new
 	${INSTALL_DATA} ${WRKSRC}/MANIFEST ${PREFIX}/share/doc/amavisd-new
 	${INSTALL_DATA} ${WRKSRC}/README_FILES/README.* \
