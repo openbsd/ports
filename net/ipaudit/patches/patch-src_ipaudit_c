@@ -1,0 +1,68 @@
+$OpenBSD: patch-src_ipaudit_c,v 1.1 2009/01/27 01:01:16 sthen Exp $
+--- src/ipaudit.c.orig	Thu Jan 25 21:04:00 2001
++++ src/ipaudit.c	Tue Jan 27 00:36:02 2009
+@@ -40,6 +40,8 @@ Include Files
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <sys/types.h>
++#include <sys/socket.h>
++#include <net/if.h>
+ #include <string.h>
+ #include <pcap.h>
+ #include <signal.h>
+@@ -50,7 +52,13 @@ Include Files
+ #include <netinet/in.h>
+ #include "hash.h"
+ 
++#ifdef DLT_PFLOG
++#include <net/if_pflog.h>
++#endif
+ 
++#ifdef DLT_ENC
++#include <net/if_enc.h>
++#endif
+ 
+ /*
+ ------------------------------------------------------------------------
+@@ -434,6 +442,18 @@ if (debug_m) {
+ 				printf ("DataLinkType = %s\n", "DLT_RAW"); break;
+ 			case DLT_ATM_RFC1483: 
+ 				printf ("DataLinkType = %s\n", "DLT_ATM_RFC1483"); break;
++			case DLT_LOOP:
++				printf ("DataLinkType = %s\n", "DLT_LOOP"); break;
++			case DLT_ENC:
++				printf ("DataLinkType = %s\n", "DLT_ENC"); break;
++			case DLT_PPP_ETHER: 
++				printf ("DataLinkType = %s\n", "DLT_PPP_ETHER"); break;
++			case DLT_OLD_PFLOG: 
++				printf ("DataLinkType = %s\n", "DLT_OLD_PFLOG"); break;
++			case DLT_PFLOG: 
++				printf ("DataLinkType = %s\n", "DLT_PFLOG"); break;
++			case DLT_PFSYNC: 
++				printf ("DataLinkType = %s\n", "DLT_PFSYNC"); break;
+ 			default:
+ 				printf ("DataLinkType = %d\n", DataLinkType);
+ 		}
+@@ -1278,6 +1298,22 @@ int get_packetoffset (int DataLinkType) {
+ 		case DLT_NULL:
+ 			PacketOffset = POFF_NULL;
+ 			break;
++		case DLT_LOOP:
++		case DLT_PFSYNC:
++			PacketOffset = 4;
++			break;
++		case DLT_PPP_ETHER:
++			PacketOffset = 8;
++			break;
++		case DLT_OLD_PFLOG:
++			PacketOffset = 28;
++			break;
++		case DLT_ENC:
++			PacketOffset = ENC_HDRLEN;
++                        break;
++		case DLT_PFLOG:
++			PacketOffset = PFLOG_HDRLEN;
++                        break;
+ 		/*  Currently only know ethernet, ppp, for others we guess  */
+ 		default:
+ 			PacketOffset = 0;
