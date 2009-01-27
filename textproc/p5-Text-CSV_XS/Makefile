@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2008/10/02 20:41:32 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/27 16:38:01 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	comma-separated values manipulation routines
 
 MODULES=	cpan
-DISTNAME=	Text-CSV_XS-0.23
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Text-CSV_XS-0.59
 CATEGORIES=	textproc
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Chris Kuethe <ckuethe@ualberta.ca>
 
