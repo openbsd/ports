@@ -1,0 +1,4 @@
+hscolour is a small Haskell script to colourise Haskell code. It
+currently has five output formats: ANSI terminal codes, HTML 3.2
+with <font> tags, HTML 4.01 with CSS, LaTeX, and mIRC chat client
+codes.
