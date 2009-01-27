@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/04 22:12:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/01/27 01:03:38 sthen Exp $
+@newgroup _iftop:615
+@newuser _iftop:615:_iftop::iftop user:/nonexistent:/sbin/nologin
 bin/iftop
 @man man/man8/iftop.8
