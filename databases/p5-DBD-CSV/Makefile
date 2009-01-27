@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2009/01/27 16:39:16 simon Exp $
 
 COMMENT=	perl DBI driver for CSV files
 
-DISTNAME=	DBD-CSV-0.21
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	DBD-CSV-0.22
 CATEGORIES=	databases
 MODULES=	cpan
 
