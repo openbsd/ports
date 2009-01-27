@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 23:30:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2009/01/27 02:04:57 okan Exp $
 
 COMMENT=	PGP packet visualizer
 
-DISTNAME=	pgpdump-0.20
-CATEGORIES=    	security
+DISTNAME=	pgpdump-0.26
+CATEGORIES=	security
 
-HOMEPAGE=	http://pgp.iijlab.net/pgpdump.html
+HOMEPAGE=	http://www.mew.org/~kazu/proj/pgpdump/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,13 +14,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c z
 
-MASTER_SITES=	ftp://pgp.iijlab.net/pub/pgp/tools/
+MASTER_SITES=	${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu dest
 
 NO_REGRESS=	Yes
 
-post-install:
-	@strip ${PREFIX}/bin/pgpdump
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/pgpdump ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pgpdump.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -1,14 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2003/11/02 02:28:25 margarida Exp $
---- Makefile.in.orig	2002-06-27 08:28:34.000000000 +0200
-+++ Makefile.in	2003-08-13 14:40:52.000000000 +0200
-@@ -4,7 +4,9 @@ bindir = @bindir@
+$OpenBSD: patch-Makefile_in,v 1.5 2009/01/27 02:04:58 okan Exp $
+--- Makefile.in.orig	Wed Jan 28 22:17:01 2004
++++ Makefile.in	Sun Jan 25 15:52:01 2009
+@@ -3,7 +3,7 @@ exec_prefix = @exec_prefix@
+ bindir = @bindir@
  mandir = @mandir@/man1
  LIBS = @LIBS@
+-CFLAGS  = @CFLAGS@ -O
++CFLAGS  = @CFLAGS@
+ LDFLAGS = @LDFLAGS@
  
--CFLAGS = -O
-+DESTDIR=
-+
-+CFLAGS = @CFLAGS@
  RM = rm -f
- INSTALL  = install -c -m
- 
