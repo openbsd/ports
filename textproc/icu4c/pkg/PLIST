@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/10/31 09:56:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/01/27 22:11:15 landry Exp $
 @bin bin/derb
 @bin bin/genbrk
 @bin bin/gencnval
@@ -7,7 +7,6 @@
 bin/icu-config
 @bin bin/makeconv
 @bin bin/pkgdata
-@bin bin/uconv
 include/layout/
 include/layout/LEFontInstance.h
 include/layout/LEGlyphFilter.h
@@ -25,6 +24,8 @@ include/layout/playout.h
 include/layout/plruns.h
 include/unicode/
 include/unicode/basictz.h
+include/unicode/bms.h
+include/unicode/bmsearch.h
 include/unicode/brkiter.h
 include/unicode/calendar.h
 include/unicode/caniter.h
@@ -32,6 +33,7 @@ include/unicode/chariter.h
 include/unicode/choicfmt.h
 include/unicode/coleitr.h
 include/unicode/coll.h
+include/unicode/colldata.h
 include/unicode/curramt.h
 include/unicode/currunit.h
 include/unicode/datefmt.h
@@ -150,8 +152,8 @@ include/unicode/utypes.h
 include/unicode/uversion.h
 include/unicode/vtzone.h
 lib/icu/
-lib/icu/4.0/
-lib/icu/4.0/Makefile.inc
+lib/icu/${VERSION}/
+lib/icu/${VERSION}/Makefile.inc
 lib/icu/Makefile.inc
 lib/icu/current
 @lib lib/libicudata.so.${LIBicudata_VERSION}
@@ -169,7 +171,6 @@ lib/icu/current
 @man man/man1/icu-config.1
 @man man/man1/makeconv.1
 @man man/man1/pkgdata.1
-@man man/man1/uconv.1
 @man man/man8/genccode.8
 @man man/man8/gencmn.8
 @man man/man8/gensprep.8
@@ -182,9 +183,9 @@ lib/icu/current
 @bin sbin/icupkg
 @bin sbin/icuswap
 share/icu/
-share/icu/4.0/
-share/icu/4.0/config/
-share/icu/4.0/config/mh-bsd-gcc
-share/icu/4.0/license.html
-@comment share/icu/4.0/install-sh
-@comment share/icu/4.0/mkinstalldirs
+share/icu/${VERSION}/
+share/icu/${VERSION}/config/
+share/icu/${VERSION}/config/mh-bsd-gcc
+@comment share/icu/${VERSION}/install-sh
+share/icu/${VERSION}/license.html
+@comment share/icu/${VERSION}/mkinstalldirs

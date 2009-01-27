@@ -1,0 +1,62 @@
+$OpenBSD: patch-source_layout_LESwaps_h,v 1.1 2009/01/27 22:11:15 landry Exp $
+
+Suggested by jasper. workaround for broken font tables.
+
+--- source/layout/LESwaps.h.orig	Mon Sep 22 21:04:12 2008
++++ source/layout/LESwaps.h	Sun Nov 16 15:12:06 2008
+@@ -2,6 +2,7 @@
+ /*
+  *
+  * (C) Copyright IBM Corp. 1998-2008 - All Rights Reserved
++ * with additions by Sun Microsystems 2002-2006
+  *
+  */
+ 
+@@ -17,12 +18,21 @@
+ 
+ U_NAMESPACE_BEGIN
+ 
++// There exist popular font file which contain unaligned tables
++// (e.g. "Watanabe Gothic"'s "mort" table)
++// On some platforms unaligned memory accesses cause a crash.
++// The ALLOW_UNALIGNED hack prevents these crashes by assuming that
++// every use of the SWAPx macros in ICU's layout engine is intended
++// for loading a big endian value and replaces them appropriately.
++#define ALLOW_UNALIGNED_HACK
++
+ /**
+  * A convenience macro which invokes the swapWord member function
+  * from a concise call.
+  *
+  * @stable ICU 2.8
+  */
++#ifndef ALLOW_UNALIGNED_HACK
+ #define SWAPW(value) LESwaps::swapWord((const le_uint16 &) (value))
+ 
+ /**
+@@ -32,6 +42,25 @@ U_NAMESPACE_BEGIN
+  * @stable ICU 2.8
+  */
+ #define SWAPL(value) LESwaps::swapLong((const le_uint32 &) (value))
++
++#else // ALLOW_UNALIGNED_HACK
++
++#define SWAPW(rValue) loadBigEndianWord(reinterpret_cast<const le_uint16&>(rValue))
++#define SWAPL(rValue) loadBigEndianLong(reinterpret_cast<const le_uint32&>(rValue))
++
++inline le_uint16 loadBigEndianWord( const le_uint16& rValue )
++{
++    const le_uint8* p = reinterpret_cast<const le_uint8*>(&rValue);
++    return ((p[0] << 8) + p[1]);
++}
++
++inline le_uint32 loadBigEndianLong( const le_uint32& rValue )
++{
++    const le_uint8* p = reinterpret_cast<const le_uint8*>(&rValue);
++    return ((p[0]<<24) + (p[1]<<16) + (p[2]<<8) +p[3]);
++}
++
++#endif // ALLOW_UNALIGNED_HACK
+ 
+ /**
+  * This class is used to access data which stored in big endian order

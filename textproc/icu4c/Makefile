@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 2008/10/31 09:56:15 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/27 22:11:15 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		International Components for Unicode
 
-DISTNAME=		icu4c-4_0-src
-PKGNAME=		icu4c-4.0
-SO_VERSION=		1.0
+VERSION=		4.0.1
+DISTNAME=		icu4c-${VERSION:S/./_/g}-src
+PKGNAME=		icu4c-${VERSION}
+SO_VERSION=		1.1
 .for _lib in icudata icui18n icuio icule iculx icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
+SUBST_VARS+=		VERSION
 CATEGORIES=		textproc devel
 
 HOMEPAGE=		http://www.icu-project.org
@@ -24,18 +26,27 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m pthread stdc++
 
-MASTER_SITES=		ftp://ftp.software.ibm.com/software/globalization/icu/4.0/ \
+MASTER_SITES=		http://download.icu-project.org/files/icu4c/${VERSION}/ \
 			${MASTER_SITE_SOURCEFORGE:=icu/}
 EXTRACT_SUFX=		.tgz
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-renaming
+			--disable-renaming \
+			--disable-extras \
+			--disable-samples
+
+SEPARATE_BUILD=		concurrent
 
 WRKDIST=		${WRKDIR}/icu
 WRKSRC=			${WRKDIST}/source
 
-MAKE_FLAGS=		SO_TARGET_VERSION=${SO_VERSION}
+MAKE_FLAGS+=		SO_TARGET_VERSION=${SO_VERSION} \
+			SO_TARGET_VERSION_MAJOR=${SO_VERSION:R} \
+			PKGDATA_INVOKE_OPTS="SO_TARGET_VERSION=${SO_VERSION} SO_TARGET_VERSION_MAJOR=${SO_VERSION:R}"
+
+post-install:
+	find ${PREFIX}/lib -type l -name 'libicu*.so*' -exec rm '{}' \;
 
 .include <bsd.port.mk>
