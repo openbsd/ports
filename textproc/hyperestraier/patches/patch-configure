@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2007/04/30 17:30:39 bernd Exp $
---- configure.orig	Mon Mar  5 01:29:42 2007
-+++ configure	Thu Apr 12 12:58:39 2007
+$OpenBSD: patch-configure,v 1.3 2009/01/27 17:17:09 ajacoutot Exp $
+--- configure.orig	Tue Dec 25 02:47:49 2007
++++ configure	Tue Jan 27 10:03:06 2009
 @@ -2395,7 +2395,7 @@ then
    fi
    if uname | egrep -i 'BSD' > /dev/null 2>&1
@@ -10,3 +10,29 @@ $OpenBSD: patch-configure,v 1.2 2007/04/30 17:30:39 bernd Exp $
    fi
    if gcc --version | egrep -i '^2\.(8|9)' > /dev/null 2>&1
    then
+@@ -2960,13 +2960,13 @@ fi
+ 
+ 
+ # For libraries of pthreads
+-echo "$as_me:$LINENO: checking for main in -lpthread" >&5
+-echo $ECHO_N "checking for main in -lpthread... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for main in -pthread" >&5
++echo $ECHO_N "checking for main in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_main+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -3019,7 +3019,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_main" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_main" >&6
+ if test $ac_cv_lib_pthread_main = yes; then
+-  MYMTLIBS="-lpthread $MYMTLIBS"
++  MYMTLIBS="-pthread $MYMTLIBS"
+ fi
+ 
+ 

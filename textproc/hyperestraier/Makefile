@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/12 15:16:07 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2009/01/27 17:17:09 ajacoutot Exp $
 
 COMMENT=		high performance full-text search system
 
 DISTNAME=		hyperestraier-1.4.13
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		textproc
 SHARED_LIBS=		estraier	8.38
 
