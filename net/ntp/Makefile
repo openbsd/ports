@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.37 2009/01/26 23:26:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2009/01/27 10:21:38 naddy Exp $
 
-COMMENT-main=	network time protocol implementation
-COMMENT-doc=	network time protocol documentation
+COMMENT=	Network Time Protocol reference implementation
 
 # ISC's NTP has a 'pN' in its version number, which we don't want
 # to confuse with the ports system's 'pN' convention, so we
 # convert it to 'pl' for local use.
 
-NTP_VERSION=	4.2.4p5
-NTP_PKG_VERSION=${NTP_VERSION:S/p/pl/}
-DISTNAME=	ntp-${NTP_VERSION}
-PKGNAME-main=	ntp-${NTP_PKG_VERSION}
-PKGNAME-doc=	ntp-doc-${NTP_PKG_VERSION}
+VERSION=	4.2.4p6
+DISTNAME=	ntp-${VERSION}
+PKGNAME=	ntp-${VERSION:S/p/pl/}
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-4.2/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
@@ -27,10 +24,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=	-main -doc
-
-PKG_ARCH-doc=	*
-WANTLIB-main=	c crypto curses kvm m readline 
+WANTLIB=	c crypto curses kvm m readline 
 
 SEPARATE_BUILD=	simple
 USE_LIBTOOL=	Yes

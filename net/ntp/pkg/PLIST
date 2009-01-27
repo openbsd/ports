@@ -1,4 +1,21 @@
-@comment $OpenBSD: PLIST-doc,v 1.8 2009/01/26 23:26:02 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.14 2009/01/27 10:21:38 naddy Exp $
+@pkgpath net/ntp,-main
+@conflict ntp-doc-*
+@man man/man1/ntp-keygen.1
+@man man/man1/ntpd.1
+@man man/man1/ntpdc.1
+@comment man/man1/ntpdsim.1
+@man man/man1/ntpq.1
+@man man/man1/sntp.1
+@bin sbin/ntp-keygen
+sbin/ntp-wait
+@bin sbin/ntpd
+@bin sbin/ntpdate
+@bin sbin/ntpdc
+@bin sbin/ntpq
+sbin/ntptrace
+@bin sbin/sntp
+@bin sbin/tickadj
 share/doc/ntp/
 share/doc/ntp/accopt.html
 share/doc/ntp/assoc.html
@@ -194,3 +211,13 @@ share/doc/ntp/scripts/links9.txt
 share/doc/ntp/scripts/style.css
 share/doc/ntp/sntp.html
 share/doc/ntp/tickadj.html
+share/examples/ntp/
+share/examples/ntp/README
+share/examples/ntp/README.OpenBSD
+share/examples/ntp/baldwin.conf
+share/examples/ntp/beauregard.conf
+share/examples/ntp/grundoon.conf
+share/examples/ntp/malarky.conf
+share/examples/ntp/pogo.conf
+share/examples/ntp/rackety.conf
+@extra ${SYSCONFDIR}/ntp.conf
