@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/01/27 21:12:02 martynas Exp $
+# $OpenBSD: Makefile,v 1.13 2009/01/27 21:46:53 martynas Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		fast array and numeric programming library for Python
 
 MODPY_EGG_VERSION=	1.2.1
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}p0
+PKGNAME=		py-${DISTNAME}p1
 CATEGORIES=		math devel
 
 HOMEPAGE=		http://numeric.scipy.org/
