@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/10/08 21:06:44 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/01/27 21:28:51 martynas Exp $
 %%SHARED%%
 lib/python${MODPY_VERSION}/site-packages/simplejson/
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -18,6 +18,8 @@ lib/python${MODPY_VERSION}/site-packages/simplejson/scanner.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_check_circular.py
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_check_circular.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_decode.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_decode.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_default.py
@@ -49,19 +51,25 @@ lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_unicode.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tool.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tool.pyc
 share/doc/py-simplejson/
-share/doc/py-simplejson/class-simplejson.JSONDecoder.html
-share/doc/py-simplejson/class-simplejson.JSONEncoder.html
-share/doc/py-simplejson/class_to_source.js
+share/doc/py-simplejson/_sources/
+share/doc/py-simplejson/_sources/index.txt
+share/doc/py-simplejson/_static/
+share/doc/py-simplejson/_static/contents.png
+share/doc/py-simplejson/_static/default.css
+share/doc/py-simplejson/_static/doctools.js
+share/doc/py-simplejson/_static/file.png
+share/doc/py-simplejson/_static/interface.js
+share/doc/py-simplejson/_static/jquery.js
+share/doc/py-simplejson/_static/minus.png
+share/doc/py-simplejson/_static/navigation.png
+share/doc/py-simplejson/_static/plus.png
+share/doc/py-simplejson/_static/pygments.css
+share/doc/py-simplejson/_static/rightsidebar.css
+share/doc/py-simplejson/_static/searchtools.js
+share/doc/py-simplejson/_static/sphinxdoc.css
+share/doc/py-simplejson/_static/stickysidebar.css
+share/doc/py-simplejson/_static/traditional.css
+share/doc/py-simplejson/genindex.html
 share/doc/py-simplejson/index.html
-share/doc/py-simplejson/layout.css
-share/doc/py-simplejson/module-index.html
-share/doc/py-simplejson/module-simplejson-index.html
-share/doc/py-simplejson/module-simplejson.html
-share/doc/py-simplejson/pudge.css
-share/doc/py-simplejson/rst.css
-share/doc/py-simplejson/simplejson/
-share/doc/py-simplejson/simplejson/__init__.py.html
-share/doc/py-simplejson/simplejson/decoder.py.html
-share/doc/py-simplejson/simplejson/encoder.py.html
-share/doc/py-simplejson/simplejson/jsonfilter.py.html
-share/doc/py-simplejson/simplejson/scanner.py.html
+share/doc/py-simplejson/search.html
+share/doc/py-simplejson/searchindex.json
