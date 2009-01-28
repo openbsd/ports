@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2009/01/20 23:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2009/01/28 16:36:41 ajacoutot Exp $
 
 COMMENT=		GNOME panel
 
 GNOME_PROJECT=		gnome-panel
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 SHARED_LIBS=	panel-applet-2       2.24      # .2.26
 CATEGORIES=		x11
