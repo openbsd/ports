@@ -1,0 +1,184 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+@conflict bnc-*
+@conflict irc-*
+@newgroup _ircd-hybrid:616
+@newuser _ircd-hybrid:616:616:daemon:IRC Daemon:/var/empty:/sbin/nologin
+%%SHARED%%
+@bin bin/encspeed
+@bin bin/ircd
+@bin bin/mkpasswd
+@bin bin/servlink
+lib/ircd-hybrid/
+lib/ircd-hybrid/modules/
+lib/ircd-hybrid/modules/autoload/
+@man man/man8/ircd.8
+share/examples/ircd-hybrid/
+@sample ${SYSCONFDIR}/ircd-hybrid/
+share/examples/ircd-hybrid/cresv.conf
+@sample ${SYSCONFDIR}/ircd-hybrid/cresv.conf
+share/examples/ircd-hybrid/dline.conf
+@sample ${SYSCONFDIR}/ircd-hybrid/dline.conf
+share/examples/ircd-hybrid/example.conf
+@sample ${SYSCONFDIR}/ircd-hybrid/ircd.conf
+share/examples/ircd-hybrid/ircd.motd
+@sample ${SYSCONFDIR}/ircd-hybrid/ircd.motd
+share/examples/ircd-hybrid/kline.conf
+@sample ${SYSCONFDIR}/ircd-hybrid/kline.conf
+share/examples/ircd-hybrid/nresv.conf
+@sample ${SYSCONFDIR}/ircd-hybrid/nresv.conf
+share/examples/ircd-hybrid/rkline.conf
+@sample ${SYSCONFDIR}/ircd-hybrid/rkline.conf
+share/examples/ircd-hybrid/rxline.conf
+@sample ${SYSCONFDIR}/ircd-hybrid/rxline.conf
+share/examples/ircd-hybrid/xline.conf
+@sample ${SYSCONFDIR}/ircd-hybrid/xline.conf
+share/ircd-hybrid/
+share/ircd-hybrid/help/
+share/ircd-hybrid/help/opers/
+share/ircd-hybrid/help/opers/accept
+share/ircd-hybrid/help/opers/admin
+share/ircd-hybrid/help/opers/away
+share/ircd-hybrid/help/opers/capab
+share/ircd-hybrid/help/opers/cburst
+share/ircd-hybrid/help/opers/challenge
+share/ircd-hybrid/help/opers/client
+share/ircd-hybrid/help/opers/close
+share/ircd-hybrid/help/opers/cmode
+share/ircd-hybrid/help/opers/connect
+share/ircd-hybrid/help/opers/cryptlink
+share/ircd-hybrid/help/opers/die
+share/ircd-hybrid/help/opers/dline
+share/ircd-hybrid/help/opers/drop
+share/ircd-hybrid/help/opers/eob
+share/ircd-hybrid/help/opers/error
+share/ircd-hybrid/help/opers/etrace
+share/ircd-hybrid/help/opers/gline
+share/ircd-hybrid/help/opers/hash
+share/ircd-hybrid/help/opers/help
+share/ircd-hybrid/help/opers/index
+share/ircd-hybrid/help/opers/info
+share/ircd-hybrid/help/opers/invite
+share/ircd-hybrid/help/opers/ison
+share/ircd-hybrid/help/opers/join
+share/ircd-hybrid/help/opers/kick
+share/ircd-hybrid/help/opers/kill
+share/ircd-hybrid/help/opers/kline
+share/ircd-hybrid/help/opers/knock
+share/ircd-hybrid/help/opers/knockll
+share/ircd-hybrid/help/opers/links
+share/ircd-hybrid/help/opers/list
+share/ircd-hybrid/help/opers/lljoin
+share/ircd-hybrid/help/opers/llnick
+share/ircd-hybrid/help/opers/locops
+share/ircd-hybrid/help/opers/lusers
+share/ircd-hybrid/help/opers/map
+share/ircd-hybrid/help/opers/modlist
+share/ircd-hybrid/help/opers/modload
+share/ircd-hybrid/help/opers/modrestart
+share/ircd-hybrid/help/opers/modunload
+share/ircd-hybrid/help/opers/motd
+share/ircd-hybrid/help/opers/names
+share/ircd-hybrid/help/opers/nburst
+share/ircd-hybrid/help/opers/nick
+share/ircd-hybrid/help/opers/notice
+share/ircd-hybrid/help/opers/omotd
+share/ircd-hybrid/help/opers/oper
+share/ircd-hybrid/help/opers/operwall
+share/ircd-hybrid/help/opers/part
+share/ircd-hybrid/help/opers/pass
+share/ircd-hybrid/help/opers/ping
+share/ircd-hybrid/help/opers/pong
+share/ircd-hybrid/help/opers/post
+share/ircd-hybrid/help/opers/privmsg
+share/ircd-hybrid/help/opers/quit
+share/ircd-hybrid/help/opers/rehash
+share/ircd-hybrid/help/opers/restart
+share/ircd-hybrid/help/opers/resv
+share/ircd-hybrid/help/opers/rkline
+share/ircd-hybrid/help/opers/rxline
+share/ircd-hybrid/help/opers/server
+share/ircd-hybrid/help/opers/set
+share/ircd-hybrid/help/opers/sjoin
+share/ircd-hybrid/help/opers/squit
+share/ircd-hybrid/help/opers/stats
+share/ircd-hybrid/help/opers/svinfo
+share/ircd-hybrid/help/opers/testgecos
+share/ircd-hybrid/help/opers/testline
+share/ircd-hybrid/help/opers/testmask
+share/ircd-hybrid/help/opers/time
+share/ircd-hybrid/help/opers/topic
+share/ircd-hybrid/help/opers/trace
+share/ircd-hybrid/help/opers/uhelp
+share/ircd-hybrid/help/opers/umode
+share/ircd-hybrid/help/opers/undline
+share/ircd-hybrid/help/opers/ungline
+share/ircd-hybrid/help/opers/unkline
+share/ircd-hybrid/help/opers/unresv
+share/ircd-hybrid/help/opers/unxline
+share/ircd-hybrid/help/opers/user
+share/ircd-hybrid/help/opers/userhost
+share/ircd-hybrid/help/opers/users
+share/ircd-hybrid/help/opers/version
+share/ircd-hybrid/help/opers/wallops
+share/ircd-hybrid/help/opers/who
+share/ircd-hybrid/help/opers/whois
+share/ircd-hybrid/help/opers/whowas
+share/ircd-hybrid/help/opers/xline
+share/ircd-hybrid/help/users/
+share/ircd-hybrid/help/users/accept
+share/ircd-hybrid/help/users/admin
+share/ircd-hybrid/help/users/away
+share/ircd-hybrid/help/users/challenge
+share/ircd-hybrid/help/users/cmode
+share/ircd-hybrid/help/users/error
+share/ircd-hybrid/help/users/help
+share/ircd-hybrid/help/users/index
+share/ircd-hybrid/help/users/info
+share/ircd-hybrid/help/users/invite
+share/ircd-hybrid/help/users/ison
+share/ircd-hybrid/help/users/join
+share/ircd-hybrid/help/users/kick
+share/ircd-hybrid/help/users/knock
+share/ircd-hybrid/help/users/links
+share/ircd-hybrid/help/users/list
+share/ircd-hybrid/help/users/lusers
+share/ircd-hybrid/help/users/map
+share/ircd-hybrid/help/users/motd
+share/ircd-hybrid/help/users/names
+share/ircd-hybrid/help/users/nick
+share/ircd-hybrid/help/users/notice
+share/ircd-hybrid/help/users/oper
+share/ircd-hybrid/help/users/part
+share/ircd-hybrid/help/users/pass
+share/ircd-hybrid/help/users/ping
+share/ircd-hybrid/help/users/pong
+share/ircd-hybrid/help/users/privmsg
+share/ircd-hybrid/help/users/quit
+share/ircd-hybrid/help/users/stats
+share/ircd-hybrid/help/users/time
+share/ircd-hybrid/help/users/topic
+share/ircd-hybrid/help/users/umode
+share/ircd-hybrid/help/users/user
+share/ircd-hybrid/help/users/userhost
+share/ircd-hybrid/help/users/users
+share/ircd-hybrid/help/users/version
+share/ircd-hybrid/help/users/who
+share/ircd-hybrid/help/users/whois
+share/ircd-hybrid/help/users/whowas
+share/ircd-hybrid/messages/
+share/ircd-hybrid/messages/ayb.lang
+share/ircd-hybrid/messages/custom.lang
+share/ircd-hybrid/messages/ircd-brazilian_pt.lang
+share/ircd-hybrid/messages/ircd-croatian.lang
+share/ircd-hybrid/messages/ircd-danish.lang
+share/ircd-hybrid/messages/ircd-dutch.lang
+share/ircd-hybrid/messages/ircd-french.lang
+share/ircd-hybrid/messages/ircd-german.lang
+share/ircd-hybrid/messages/ircd-italian.lang
+share/ircd-hybrid/messages/ircd-norwegian.lang
+share/ircd-hybrid/messages/ircd-polish.lang
+share/ircd-hybrid/messages/ircd-russian.lang
+share/ircd-hybrid/messages/ircd-spanish.lang
+share/ircd-hybrid/messages/ircd-swedish.lang
+@owner _ircd-hybrid
+@sample /var/log/ircd-hybrid/

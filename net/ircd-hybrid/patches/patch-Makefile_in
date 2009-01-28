@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+--- Makefile.in.orig	Tue Jan 27 20:55:15 2009
++++ Makefile.in	Tue Jan 27 20:55:03 2009
+@@ -23,9 +23,9 @@ RM          = @RM@
+ 
+ # Default make flags - you may want to uncomment this on a multicpu machine
+ #MFLAGS   = -j 4
+-DEPEND_DIRS  = lib modules src servlink
++DEPEND_DIRS  = modules src servlink
+ BUILD_DIRS   = ${DEPEND_DIRS} tools
+-INSTALL_DIRS = ${BUILD_DIRS} etc doc help
++INSTALL_DIRS = ${BUILD_DIRS} etc doc help messages
+ CLEAN_DIRS   = ${BUILD_DIRS} contrib
+ # Anywhere that we can make install, we obviously can rm -f Makefile
+ DISTCLEAN_DIRS = ${INSTALL_DIRS} contrib messages

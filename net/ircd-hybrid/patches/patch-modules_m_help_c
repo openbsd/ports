@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_m_help_c,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+--- modules/m_help.c.orig	Mon Apr 14 10:58:13 2008
++++ modules/m_help.c	Mon Apr 14 10:58:49 2008
+@@ -36,8 +36,8 @@
+ #include "modules.h"
+ #include "irc_string.h"
+ 
+-#define HPATH  IRCD_PREFIX "/help/opers"
+-#define UHPATH IRCD_PREFIX "/help/users"
++#define HPATH  IRCD_PREFIX "/share/ircd-hybrid/help/opers"
++#define UHPATH IRCD_PREFIX "/share/ircd-hybrid/help/users"
+ #define HELPLEN 400
+ 
+ static void m_help(struct Client *, struct Client *, int, char *[]);

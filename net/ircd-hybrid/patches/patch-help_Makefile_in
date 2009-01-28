@@ -1,0 +1,31 @@
+$OpenBSD: patch-help_Makefile_in,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+--- help/Makefile.in.orig	Wed Feb 28 05:17:47 2007
++++ help/Makefile.in	Tue Jan 27 20:47:38 2009
+@@ -8,8 +8,8 @@ RM		= @RM@
+ prefix		= @prefix@
+ exec_prefix	= @execprefix@
+ datarootdir	= $(DESTDIR)@datarootdir@
+-uhelpdir	= ${prefix}/help/users
+-ohelpdir	= ${prefix}/help/opers
++uhelpdir	= ${datarootdir}/ircd-hybrid/help/users
++ohelpdir	= ${datarootdir}/ircd-hybrid/help/opers
+ 
+ SYMLINKS	= topic accept cmode admin names links away whowas \
+ 		version kick who invite quit join list nick oper part \
+@@ -22,14 +22,8 @@ depend:
+ 
+ install: 
+ 	@echo installing help files...
+-	-@if test ! -d $(prefix)/help; then \
+-		echo "mkdir $(prefix)/help"; \
+-		mkdir $(prefix)/help; \
+-		echo "mkdir $(prefix)/help/users"; \
+-		mkdir $(prefix)/help/users; \
+-		echo "mkdir $(prefix)/help/opers"; \
+-		mkdir $(prefix)/help/opers; \
+-	fi
++	$(BSD_INSTALL_DATA_DIR) $(uhelpdir)
++	$(BSD_INSTALL_DATA_DIR) $(ohelpdir)
+ 	@for help in opers/*; do \
+ 	if [ -f $$help ]; then \
+ 		${INSTALL_DATA} $$help $(ohelpdir); \

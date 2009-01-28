@@ -1,0 +1,12 @@
+$OpenBSD: patch-messages_Makefile_in,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+--- messages/Makefile.in.orig	Tue Jan 27 21:15:57 2009
++++ messages/Makefile.in	Tue Jan 27 21:16:17 2009
+@@ -5,7 +5,7 @@ MV		= @MV@
+ INSTALL		= @INSTALL@
+ INSTALL_DATA	= @INSTALL_DATA@
+ prefix		= $(DESTDIR)@prefix@
+-messagedir	= $(prefix)/messages
++messagedir	= $(prefix)/share/ircd-hybrid/messages
+ datarootdir	= $(DESTDIR)@datarootdir@
+ 
+ CLOBBER		= @CLOBBER@

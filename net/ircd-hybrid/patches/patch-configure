@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+--- configure.orig	Mon Apr 14 15:04:02 2008
++++ configure	Mon Apr 14 15:04:06 2008
+@@ -720,9 +720,9 @@ x_libraries=NONE
+ # by default will actually change.
+ # Use braces instead of parens because sh, perl, etc. also accept them.
+ # (The list follows the same order as the GNU Coding Standards.)
+-bindir='${exec_prefix}/bin'
+-sbindir='${exec_prefix}/sbin'
+-libexecdir='${exec_prefix}/libexec'
++bindir='${prefix}/bin'
++sbindir='${prefix}/sbin'
++libexecdir='${prefix}/libexec'
+ datarootdir='${prefix}/share'
+ datadir='${datarootdir}'
+ sysconfdir='${prefix}/etc'

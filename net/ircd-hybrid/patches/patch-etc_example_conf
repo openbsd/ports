@@ -1,0 +1,50 @@
+$OpenBSD: patch-etc_example_conf,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+--- etc/example.conf.orig	Wed Feb 28 04:17:53 2007
++++ etc/example.conf	Tue Jan 27 09:45:27 2009
+@@ -102,7 +102,7 @@ serverinfo {
+ 	 *	chmod 0600 rsa.key
+ 	 *	chmod 0644 rsa.pub
+ 	 */
+-	#rsa_private_key_file = "/usr/local/ircd/etc/rsa.key";
++	#rsa_private_key_file = "${SYSCONFDIR}/ircd-hybrid/rsa.key";
+ 
+ 	/*
+ 	 * ssl certificate: the path to the file containing our ssl certificate
+@@ -122,7 +122,7 @@ serverinfo {
+ 	 *	Common Name: irc.someirc.net
+ 	 *	E-mail: you@domain.com
+ 	 */
+-	#ssl_certificate_file = "/usr/local/ircd/etc/cert.pem";
++	#ssl_certificate_file = "${SYSCONFDIR}/ircd-hybrid/cert.pem";
+ };
+ 
+ /*
+@@ -379,7 +379,7 @@ operator {
+ 	 * A password should not be defined when this is used, see 
+ 	 * doc/challenge.txt for more information.
+ 	 */
+-#	rsa_public_key_file = "/usr/local/ircd/etc/oper.pub";
++#	rsa_public_key_file = "${SYSCONFDIR}/ircd-hybrid/oper.pub";
+ 
+ 	/* class: the class the oper joins when they successfully /oper */
+ 	class = "opers";
+@@ -1190,7 +1190,7 @@ general {
+ 	 *
+ 	 * only define if servlink is not in same directory as ircd itself.
+ 	 */
+-	#servlink_path = "/usr/local/ircd/bin/servlink";
++	#servlink_path = "${TRUEPREFIX}/bin/servlink";
+ 
+ 	/*
+ 	 * default_cipher_preference: default cipher to use for cryptlink when none is
+@@ -1276,8 +1276,8 @@ modules {
+ 	 * module path: other paths to search for modules specified below
+ 	 * and in /modload.
+ 	 */
+-	path = "/usr/local/ircd/modules";
+-	path = "/usr/local/ircd/modules/autoload";
++	path = "${TRUEPREFIX}/lib/ircd-hybrid/modules";
++	path = "${TRUEPREFIX}/lib/ircd-hybrid/modules/autoload";
+ 
+ 	/* module: the name of a module to load on startup/rehash */
+ 	#module = "some_module.so";

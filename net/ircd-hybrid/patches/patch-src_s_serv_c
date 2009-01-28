@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_s_serv_c,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+
+Prevent warning on unsigned-char arches.
+
+"warning: comparison is always true due to limited range of data type"
+
+--- src/s_serv.c.orig	Tue Jan 27 09:26:50 2009
++++ src/s_serv.c	Tue Jan 27 09:27:17 2009
+@@ -2324,7 +2324,7 @@ cryptlink_error(struct Client *client_p, const char *t
+ static char base64_chars[] =
+         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+ 
+-static char base64_values[] =
++static signed char base64_values[] =
+ {
+ /* 00-15   */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+ /* 16-31   */ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,

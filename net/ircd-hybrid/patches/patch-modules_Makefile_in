@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_Makefile_in,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+--- modules/Makefile.in.orig	Tue Jan 27 21:13:38 2009
++++ modules/Makefile.in	Tue Jan 27 21:13:46 2009
+@@ -27,7 +27,7 @@ datarootdir	= $(DESTDIR)@datarootdir@
+ moduledir       = ${prefix}/modules
+ automoduledir   = ${moduledir}/autoload
+ 
+-INCLUDES	= -I../include -I../lib/pcre $(SSL_INCLUDES)
++INCLUDES	= -I../include $(SSL_INCLUDES)
+ CPPFLAGS	= ${INCLUDES} @CPPFLAGS@
+ 
+ CORE_SRCS = \

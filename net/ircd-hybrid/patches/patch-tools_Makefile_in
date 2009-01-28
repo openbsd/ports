@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_Makefile_in,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+--- tools/Makefile.in.orig	Mon Apr 14 15:16:48 2008
++++ tools/Makefile.in	Mon Apr 14 15:16:57 2008
+@@ -18,7 +18,7 @@ CRYPT_LIB	= @CRYPT_LIB@
+ 
+ INCLUDES	= -I../include $(SSL_INCLUDES)
+ 
+-prefix		= $(DESTDIR)@prefix@
++prefix		= @prefix@
+ exec_prefix	= $(DESTDIR)@exec_prefix@
+ bindir		= $(DESTDIR)@bindir@
+ datarootdir	= $(DESTDIR)@datarootdir@

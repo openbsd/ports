@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_Makefile_in,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+--- etc/Makefile.in.orig	Wed Feb 28 05:17:53 2007
++++ etc/Makefile.in	Mon Apr 14 15:23:40 2008
+@@ -10,7 +10,7 @@ TEST		= @TEST@
+ CLOBBER=@CLOBBER@
+ 
+ prefix		= $(DESTDIR)@prefix@
+-sysconfdir	= $(DESTDIR)@sysconfdir@
++sysconfdir	= $(DESTDIR)@prefix@/share/examples/ircd-hybrid
+ exec_prefix	= $(DESTDIR)@exec_prefix@
+ datarootdir	= $(DESTDIR)@datarootdir@
+ 

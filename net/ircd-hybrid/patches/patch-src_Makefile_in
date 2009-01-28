@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+--- src/Makefile.in.orig	Wed Feb 28 05:17:46 2007
++++ src/Makefile.in	Tue Jan 27 21:09:42 2009
+@@ -35,8 +35,8 @@ PROGS		= ircd
+ 
+ SSL_LIBS	= @SSL_LIBS@
+ SSL_INCLUDES	= @SSL_INCLUDES@
+-IRCDLIBS	= @MODULES_LIBS@ @LIBS@ ../lib/pcre/libpcre.a $(SSL_LIBS)
+-INCLUDES	= -I../include -I../lib/pcre $(SSL_INCLUDES)
++IRCDLIBS	= @MODULES_LIBS@ @LIBS@ $(SSL_LIBS) -lpcre
++INCLUDES	= -I../include $(SSL_INCLUDES)
+ CPPFLAGS	= ${INCLUDES} @CPPFLAGS@
+  
+ default:	all
+@@ -111,17 +111,14 @@ all: .depend ircd
+ 
+ build: all
+ 
+-ircd: @MODULES_LIBS@ ../lib/libpcre.a $(OBJS)
++ircd: @MODULES_LIBS@ $(OBJS)
+ 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ ${OBJS} ${IRCDLIBS}
+ 
+ ../modules/libmodules.a:
+ 	cd ../modules && ${MAKE} ${MFLAGS}
+-../lib/libpcre.a:
+-	cd ../lib/pcre && ${MAKE} ${MFLAGS}
+ 
+ install-mkdirs:
+-	mkdir -p $(DESTDIR)$(prefix) $(exec_prefix) $(bindir) $(sysconfdir) \
+-		$(localstatedir)/logs
++	mkdir -p $(DESTDIR)$(prefix) $(exec_prefix) $(bindir) $(sysconfdir)
+ 
+ install: install-mkdirs build
+ 	@for i in $(PROGS); do \
