@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.13 2008/11/25 18:27:39 ajacoutot Exp $
---- configure.orig	Wed Sep  3 20:49:49 2008
-+++ configure	Tue Nov 25 17:28:13 2008
-@@ -30952,7 +30952,6 @@ fi
+$OpenBSD: patch-configure,v 1.14 2009/01/28 16:39:01 ajacoutot Exp $
+--- configure.orig	Wed Dec 10 23:26:30 2008
++++ configure	Wed Jan 28 14:49:12 2009
+@@ -31009,7 +31009,6 @@ fi
  if test x$with_tcp_wrappers = xno ; then
  	echo "TCP wrappers disabled"
  else
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.13 2008/11/25 18:27:39 ajacoutot Exp $
    case "$host" in
      *-*-solaris*)
  	if test -f /usr/lib/libwrap.so; then
-@@ -31007,6 +31006,8 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -31064,6 +31063,8 @@ cat >>conftest.$ac_ext <<_ACEOF
  #ifdef __cplusplus
  extern "C"
  #endif
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.13 2008/11/25 18:27:39 ajacoutot Exp $
  char hosts_ctl ();
  int
  main ()
-@@ -31162,7 +31163,6 @@ else
+@@ -31219,7 +31220,6 @@ else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-configure,v 1.13 2008/11/25 18:27:39 ajacoutot Exp $
  fi
  
  rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
-@@ -32942,7 +32942,7 @@ fi
+@@ -32999,7 +32999,7 @@ fi
  #
  # Define some variables to represent the directories we use.
  #
@@ -35,7 +35,7 @@ $OpenBSD: patch-configure,v 1.13 2008/11/25 18:27:39 ajacoutot Exp $
  
  gdmlocaledir=${gdmconfdir}
  
-@@ -33777,6 +33777,12 @@ else
+@@ -33834,6 +33834,12 @@ else
     GDM_USER_PATH="$GDM_USER_PATH:/usr/bin/X11:/usr/X11R6/bin:/usr/local/bin:/opt/X11R6/bin"
     X_CONFIG_OPTIONS="-audit 0"
  fi

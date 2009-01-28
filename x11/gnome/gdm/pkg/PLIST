@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2008/12/17 18:45:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2009/01/28 16:39:01 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
@@ -225,6 +225,8 @@ share/locale/sk/LC_MESSAGES/gdm.mo
 share/locale/sl/LC_MESSAGES/gdm.mo
 share/locale/sq/LC_MESSAGES/gdm.mo
 share/locale/sr/LC_MESSAGES/gdm.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/gdm.mo
 share/locale/sv/LC_MESSAGES/gdm.mo
 share/locale/ta/LC_MESSAGES/gdm.mo
