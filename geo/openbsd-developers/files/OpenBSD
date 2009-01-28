@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.38 2009/01/24 22:42:53 grange Exp $
+# $OpenBSD: OpenBSD,v 1.39 2009/01/28 11:54:43 bluhm Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -56,6 +56,7 @@
 48.111761	-1.680265	"landry"	# Landry Breuil
 48.1247		11.5975		"mpf"		# Marco Pfatschbacher
 48.1248		11.5972		"mickey"	# Michael Shalayeff
+48.13254	11.76704	"bluhm"		# Alexander Bluhm
 48.137970	11.542279	"markus"	# Markus Friedl
 48.2		16.367		"martin"	# Martin Reindl
 48.35		7.46		"couderc"	# Damien Couderc
