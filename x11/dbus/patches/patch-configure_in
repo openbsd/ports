@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_in,v 1.1 2009/01/28 19:05:23 ajacoutot Exp $
+--- configure.in.orig	Tue Jan 27 03:51:27 2009
++++ configure.in	Tue Jan 27 03:52:10 2009
+@@ -282,10 +282,6 @@ if test "x$GCC" = "xyes"; then
+   *[\ \	]-Wno-sign-compare[\ \	]*) ;;
+   *) CFLAGS="$CFLAGS -Wno-sign-compare" ;;
+   esac
+-  case " $CFLAGS " in
+-  *[\ \	]-Wno-pointer-sign[\ \	]*) ;;
+-  *) CFLAGS="$CFLAGS -Wno-pointer-sign" ;;
+-  esac  
+   
+   # http://bugs.freedesktop.org/show_bug.cgi?id=19195
+   case " $CFLAGS " in
