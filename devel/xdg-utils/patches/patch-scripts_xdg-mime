@@ -1,6 +1,21 @@
-$OpenBSD: patch-scripts_xdg-mime,v 1.2 2008/11/01 19:30:07 ajacoutot Exp $
+$OpenBSD: patch-scripts_xdg-mime,v 1.3 2009/01/28 09:53:02 ajacoutot Exp $
+
+The file(1) call needs to be changed because the '-i' switch does not
+exist under OpenBSD.
+
 --- scripts/xdg-mime.orig	Sun Jun 24 21:57:57 2007
-+++ scripts/xdg-mime	Fri Oct 31 01:02:11 2008
++++ scripts/xdg-mime	Wed Jan 28 10:54:32 2009
+@@ -483,8 +483,8 @@ info_gnome()
+ 
+ info_generic()
+ {
+-    DEBUG 1 "Running /usr/bin/file -i \"$1\"" 
+-    /usr/bin/file -i "$1" 2> /dev/null | cut -d ":" -f 2 | sed s/"^ "//
++    DEBUG 1 "Running /usr/bin/file -bNs \"$1\""
++    /usr/bin/file -bNs "$1" 2> /dev/null | cut -d "," -f 1 | sed s/"^ "//
+ 
+     exit_success
+ }
 @@ -557,7 +557,7 @@ defapp_generic()
      [ -n "$xdg_user_dir" ] || xdg_user_dir="$HOME/.local/share"
      xdg_user_dir="$xdg_user_dir/$xdg_dir_name"

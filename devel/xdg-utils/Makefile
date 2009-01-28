@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/01/02 17:05:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/01/28 09:53:02 ajacoutot Exp $
 
 COMMENT=	utilities to assist desktop integration tasks
 
 DISTNAME=	xdg-utils-1.0.2
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://portland.freedesktop.org/wiki/
