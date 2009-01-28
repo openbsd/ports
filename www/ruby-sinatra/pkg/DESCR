@@ -1,0 +1,4 @@
+Sinatra is a Domain Specific Language (DSL) for quickly creating
+web-applications in Ruby.
+It keeps a minimal feature set, leaving the developer to use the
+tools that best suit them and their application.
