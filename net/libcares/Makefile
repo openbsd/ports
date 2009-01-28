@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2008/04/23 09:57:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/28 17:08:49 sthen Exp $
 
 COMMENT =	asynchronous resolver library
 
-V =		1.5.1
+V =		1.6.0
 DISTNAME =	c-ares-${V}
-PKGNAME =	libcares-${V}p0
+PKGNAME =	libcares-${V}
 CATEGORIES =	net devel
 
-SHARED_LIBS =	cares 0.0	# .2.0
+SHARED_LIBS =	cares 1.0
 
 HOMEPAGE =	http://daniel.haxx.se/projects/c-ares/
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	${HOMEPAGE}
 
 USE_LIBTOOL =		Yes
-
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
