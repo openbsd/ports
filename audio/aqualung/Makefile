@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/01/28 23:18:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/28 23:50:47 ajacoutot Exp $
 
 COMMENT=	advanced music player
 
 DISTNAME=	aqualung-0.9beta9.1
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	audio
 
 HOMEPAGE=	http://aqualung.factorial.hu/
@@ -79,8 +79,8 @@ CONFIGURE_ARGS=	--with-flac \
 post-install:
 	mv ${PREFIX}/share/aqualung/doc ${PREFIX}/share/doc/aqualung
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FILESDIR}/aqualung.desktop \
-	    ${PREFIX}/share/applications
-	@${SUBST_CMD} ${PREFIX}/share/applications/aqualung.desktop
+	@${SUBST_CMD} -c ${FILESDIR}/aqualung.desktop \
+		${PREFIX}/share/applications/aqualung.desktop
+	@chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/applications/aqualung.desktop
 
 .include <bsd.port.mk>
