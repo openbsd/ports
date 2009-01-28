@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/01/28 13:20:23 pyr Exp $
+lib/swmhack.so
