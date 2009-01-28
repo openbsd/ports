@@ -1,0 +1,12 @@
+$OpenBSD: patch-Config_h,v 1.1.1.1 2009/01/28 10:12:35 sthen Exp $
+--- Config.h.orig	Tue Jan 27 21:59:35 2009
++++ Config.h	Tue Jan 27 21:59:47 2009
+@@ -51,7 +51,7 @@
+ 
+ 
+ #ifndef INSTALL_BASE_PATH
+-#  define INSTALL_BASE_PATH "/usr/share/numptyphysics"
++#  define INSTALL_BASE_PATH "${TRUEPREFIX}/share/numptyphysics"
+ #endif
+ #define DEFAULT_LEVEL_PATH INSTALL_BASE_PATH
+ #define DEFAULT_RESOURCE_PATH DEFAULT_LEVEL_PATH

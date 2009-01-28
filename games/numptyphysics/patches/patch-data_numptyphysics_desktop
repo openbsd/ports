@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_numptyphysics_desktop,v 1.1.1.1 2009/01/28 10:12:35 sthen Exp $
+--- data/numptyphysics.desktop.orig	Tue Jan 27 21:21:18 2009
++++ data/numptyphysics.desktop	Tue Jan 27 21:22:00 2009
+@@ -4,10 +4,9 @@ Version=1.0
+ Type=Application
+ Name=Numpty Physics
+ Categories=Game;LogicGame;
+-Exec=/usr/bin/numptyphysics
++Exec=numptyphysics
+ StartupWMClass=NPhysics
+ Icon=numptyphysics
+-X-Icon-path=/usr/share/pixmaps
+ X-Window-Icon=numptyphysics
+ X-Window-Icon-Dimmed=numptyphysics
+ X-HildonDesk-ShowInToolbar=true

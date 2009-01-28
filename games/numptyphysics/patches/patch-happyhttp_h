@@ -1,0 +1,11 @@
+$OpenBSD: patch-happyhttp_h,v 1.1.1.1 2009/01/28 10:12:35 sthen Exp $
+--- happyhttp.h.orig	Mon Jan 26 16:06:47 2009
++++ happyhttp.h	Mon Jan 26 16:07:01 2009
+@@ -28,6 +28,7 @@
+ #ifndef HAPPYHTTP_H
+ #define HAPPYHTTP_H
+ 
++#include <unistd.h>
+ 
+ #include <string>
+ #include <map>

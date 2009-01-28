@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2009/01/28 10:12:35 sthen Exp $
+--- configure.in.orig	Tue Jan 27 21:57:05 2009
++++ configure.in	Tue Jan 27 21:57:14 2009
+@@ -47,7 +47,7 @@ if test "x${enable_hildon}" = "xyes" ; then
+    AC_SUBST(HILDON_CFLAGS)
+    AC_SUBST(HILDON_LIBS)
+ else
+-   desktopentrydir=/usr/share/applications
++   desktopentrydir=$datadir/applications
+    serviceentrydir=$datadir/numptyphysics
+    icon_26x26dir=$datadir/icons/hicolor/26x26/apps
+    icon_34x34dir=$datadir/icons/hicolor/34x34/apps
