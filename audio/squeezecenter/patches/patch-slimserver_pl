@@ -1,7 +1,7 @@
-$OpenBSD: patch-slimserver_pl,v 1.1.1.1 2008/10/17 09:59:26 sthen Exp $
---- slimserver.pl.orig	Fri Oct 10 17:01:36 2008
-+++ slimserver.pl	Fri Oct 10 17:02:12 2008
-@@ -814,7 +814,7 @@ sub changeEffectiveUserAndGroup {
+$OpenBSD: patch-slimserver_pl,v 1.2 2009/01/28 01:36:00 sthen Exp $
+--- slimserver.pl.orig	Tue Jan 20 02:35:56 2009
++++ slimserver.pl	Wed Jan 21 01:28:36 2009
+@@ -821,7 +821,7 @@ sub changeEffectiveUserAndGroup {
  	# MySQL can't be run as root, and it's generally a bad idea anyways.
  	# Try starting as 'slimserver' instead.
  	if (!defined($user)) {

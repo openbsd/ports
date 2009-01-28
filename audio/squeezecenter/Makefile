@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2008/12/13 10:37:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/01/28 01:36:00 sthen Exp $
 
 COMMENT =	streaming audio server for Squeezebox network music players
 
-V =		7.2.1
+V =		7.3.2
 PKGNAME =	squeezecenter-${V}
 DISTNAME =	squeezecenter-${V}-noCPAN
 CATEGORIES =	audio net
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
-HOMEPAGE =	http://www.slimdevices.com/
+HOMEPAGE =	http://www.slimdevices.com/pi_features.html
 
 # Main software is GPLv2, supplied with some CPAN modules packaged,
 # but unfortunately also with proprietary (required) firmware, also
@@ -28,6 +28,7 @@ WRKDIST =	${WRKDIR}/${DISTNAME:S/.no-cpan-arch//}
 
 RUN_DEPENDS =	::audio/flac \
 		::audio/lame \
+		::audio/wavpack \
 		:mysql-server-*:databases/mysql,-server \
 		:p5-Cache-Cache->=1.04:devel/p5-Cache-Cache \
 		:p5-Carp-Clan->=5.3:devel/p5-Carp-Clan \
@@ -90,7 +91,8 @@ pre-configure:
 	@ln -s ${TRUEPREFIX}/share/mysql/english/errmsg.sys \
 	    ${WRKSRC}/MySQL/errmsg.sys  
 	@rm -rf ${WRKSRC}/CPAN
-	@${SUBST_CMD} ${WRKSRC}/Slim/Utils/OSDetect.pm
+	@${SUBST_CMD} -c ${FILESDIR}/Custom.pm \
+	    ${WRKSRC}/Slim/Utils/OS/Custom.pm
 
 NO_BUILD =	yes
 NO_REGRESS =	yes

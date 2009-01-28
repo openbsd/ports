@@ -1,30 +1,21 @@
-$OpenBSD: patch-convert_conf,v 1.1.1.1 2008/10/17 09:59:26 sthen Exp $
---- convert.conf.orig	Fri Mar 28 16:04:54 2008
-+++ convert.conf	Sat May 24 22:52:44 2008
-@@ -88,7 +88,7 @@ ogg ogg * *
- 	-
- 
- ogg aif * *
--	[sox] -t ogg $FILE$ -t raw -r 44100 -c 2 -w -s $-x$ -
-+	[oggdec] -Q -o - $FILE$
- 
- wma wav * *
- 	[wmadec] -r 44100 -b 16 -n 2 $FILE$ 
-@@ -110,7 +110,7 @@ wvp wav * *
- 
+$OpenBSD: patch-convert_conf,v 1.2 2009/01/28 01:36:00 sthen Exp $
+--- convert.conf.orig	Tue Jan 20 02:35:56 2009
++++ convert.conf	Wed Jan 21 02:05:04 2009
+@@ -160,7 +160,7 @@ wvp wav * *
  ## you can comment this out if you want to use LAME to transcode AAC/MOV files to MP3.
  mov aif * *
+ 	# FR
 -	[mov123] $FILE$
 +	[faad] -w -f 2 $FILE$
  
- wma wma squeezebox2 *
+ wma wma * *
  	-
-@@ -142,7 +142,7 @@ ape flc * *
- 	[mac] $FILE$ - -d | [flac] -cs --totally-silent --compression-level-0 -
+@@ -199,7 +199,7 @@ ape flc * *
  
  mov flc * *
+ 	# FR
 -	[mov123] $FILE$ | [flac] -cs --totally-silent --compression-level-0 --endian big --sign signed --channels 2 --bps 16 --sample-rate 44100 -
 +	[faad] -w -f 2 $FILE$ | [flac] -cs --totally-silent --compression-level-0 --endian big --sign signed --channels 2 --bps 16 --sample-rate 44100 -
  
  alc flc * *
- 	[alac] $FILE$ | [flac] -cs --totally-silent --compression-level-0 --endian big --sign signed --channels 2 --bps 16 --sample-rate 44100 -
+ 	# F

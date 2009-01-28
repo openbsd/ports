@@ -1,7 +1,7 @@
-$OpenBSD: patch-Slim_Music_Import_pm,v 1.1.1.1 2008/10/17 09:59:26 sthen Exp $
---- Slim/Music/Import.pm.orig	Fri Oct 10 16:40:15 2008
-+++ Slim/Music/Import.pm	Fri Oct 10 16:40:31 2008
-@@ -276,9 +276,11 @@ sub setIsScanning {
+$OpenBSD: patch-Slim_Music_Import_pm,v 1.2 2009/01/28 01:36:00 sthen Exp $
+--- Slim/Music/Import.pm.orig	Tue Jan 20 02:35:13 2009
++++ Slim/Music/Import.pm	Wed Jan 21 01:28:36 2009
+@@ -264,9 +264,11 @@ sub setIsScanning {
  
  	my $autoCommit = Slim::Schema->storage->dbh->{'AutoCommit'};
  
