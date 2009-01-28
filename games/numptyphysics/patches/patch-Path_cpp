@@ -1,0 +1,24 @@
+--- Path.cpp.orig	Thu Oct 23 09:51:17 2008
++++ Path.cpp	Wed Jan 28 14:23:19 2009
+@@ -80,8 +80,8 @@ Path& Path::rotate(const b2Mat22& rot) 
+ 
+   for (int i=0;i<size();i++) {
+     //at(i) = b2Mul( rot, at(i) );
+-    at(i) = Vec2( j1 * at(i).x + j2 * at(i).y,
+-		  k1 * at(i).x + k2 * at(i).y );
++    at(i) = Vec2( static_cast<int>(j1 * at(i).x + j2 * at(i).y),
++		   static_cast<int>(k1 * at(i).x + k2 * at(i).y) );
+   }
+   return *this;
+ }
+@@ -89,8 +89,8 @@ Path& Path::rotate(const b2Mat22& rot) 
+ Path& Path::scale(float32 factor)
+ {
+   for (int i=0;i<size();i++) {
+-    at(i).x = at(i).x * factor;
+-    at(i).y = at(i).y * factor;
++    at(i).x = static_cast<int>(at(i).x * factor);
++    at(i).y = static_cast<int>(at(i).y * factor);
+   }
+   return *this;
+ }

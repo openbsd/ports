@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/28 10:12:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/01/28 15:14:55 sthen Exp $
 
-COMMENT =	Drawing physics-based puzzle game
+COMMENT =	physics-based drawing puzzle game
 
 DISTNAME =	numptyphysics-0.3.r20090104
+PKGNAME =	${DISTNAME}p0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	games
 

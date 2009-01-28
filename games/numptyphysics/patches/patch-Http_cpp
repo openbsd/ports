@@ -1,6 +1,6 @@
-$OpenBSD: patch-Http_cpp,v 1.1.1.1 2009/01/28 10:12:35 sthen Exp $
+$OpenBSD: patch-Http_cpp,v 1.2 2009/01/28 15:14:55 sthen Exp $
 --- Http.cpp.orig	Thu Oct 23 09:51:17 2008
-+++ Http.cpp	Tue Jan 27 13:47:09 2009
++++ Http.cpp	Wed Jan 28 14:23:33 2009
 @@ -60,7 +60,7 @@ static bool parseUri( const char * uri,
    if ( strncmp(uri,"http://",strlen("http://"))==0 ) {
      uri += strlen("http://");
@@ -19,3 +19,11 @@ $OpenBSD: patch-Http_cpp,v 1.1.1.1 2009/01/28 10:12:35 sthen Exp $
    fprintf(stderr,"Http::get host=%s port=%d file=%s\n",outHost,*outPort,outPath);
    return true;
  }
+@@ -103,7 +103,6 @@ bool Http::get( const char* uri,
+   }
+ 
+   fclose ( m_file );
+-  free( host );
+   return m_size > 0;
+ }
+ 
