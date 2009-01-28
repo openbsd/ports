@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2009/01/19 11:56:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/01/28 14:16:19 jasper Exp $
 
 COMMENT=		message bus system
 
-DISTNAME=		dbus-1.2.6
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		dbus-1.2.12
 SHARED_LIBS+=		dbus-1	7.0
 CATEGORIES=		x11
 
@@ -22,7 +21,8 @@ MASTER_SITES=		${HOMEPAGE}/releases/dbus/
 SEPARATE_BUILD=		simple
 USE_LIBTOOL=		Yes
 USE_X11=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.62
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 CONFIGURE_ARGS=		--localstatedir=/var \

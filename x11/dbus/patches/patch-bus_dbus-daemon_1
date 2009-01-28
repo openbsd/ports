@@ -1,6 +1,6 @@
-$OpenBSD: patch-bus_dbus-daemon_1,v 1.2 2008/10/12 22:08:04 brad Exp $
---- bus/dbus-daemon.1.orig	Wed Aug  6 15:43:48 2008
-+++ bus/dbus-daemon.1	Thu Aug  7 15:05:14 2008
+$OpenBSD: patch-bus_dbus-daemon_1,v 1.3 2009/01/28 14:16:19 jasper Exp $
+--- bus/dbus-daemon.1.orig	Tue Jan  6 19:31:07 2009
++++ bus/dbus-daemon.1	Tue Jan 27 03:38:09 2009
 @@ -30,9 +30,9 @@ a different configuration file.
  
  .PP
@@ -33,7 +33,7 @@ $OpenBSD: patch-bus_dbus-daemon_1,v 1.2 2008/10/12 22:08:04 brad Exp $
  this message and allowed the printer daemon user to send it.
  
  .TP
-@@ -312,7 +312,7 @@ otherwise try your favorite search engine.
+@@ -319,7 +319,7 @@ otherwise try your favorite search engine.
  .PP
  The <standard_session_servicedirs/> option is only relevant to the
  per-user-session bus daemon defined in
@@ -42,7 +42,7 @@ $OpenBSD: patch-bus_dbus-daemon_1,v 1.2 2008/10/12 22:08:04 brad Exp $
  configuration file would probably be nonsense.
  
  .TP
-@@ -321,12 +321,12 @@ configuration file would probably be nonsense.
+@@ -328,12 +328,12 @@ configuration file would probably be nonsense.
  .PP
  <standard_system_servicedirs/> specifies the standard system-wide
  activation directories that should be searched for service files.
@@ -57,7 +57,7 @@ $OpenBSD: patch-bus_dbus-daemon_1,v 1.2 2008/10/12 22:08:04 brad Exp $
  configuration file would probably be nonsense.
  
  .TP
-@@ -339,7 +339,7 @@ the dbus-daemon-launch-helper executable in located in
+@@ -346,7 +346,7 @@ the dbus-daemon-launch-helper executable in located in
  
  .PP
  The <servicehelper/> option is only relevant to the per-system bus daemon

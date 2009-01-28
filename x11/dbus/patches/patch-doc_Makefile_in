@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.3 2008/12/09 14:12:08 jasper Exp $
---- doc/Makefile.in.orig	Fri Dec  5 17:53:44 2008
-+++ doc/Makefile.in	Tue Dec  9 13:23:40 2008
-@@ -415,16 +415,16 @@ uninstall-am:
+$OpenBSD: patch-doc_Makefile_in,v 1.4 2009/01/28 14:16:19 jasper Exp $
+--- doc/Makefile.in.orig	Tue Jan  6 19:30:42 2009
++++ doc/Makefile.in	Tue Jan 27 03:38:09 2009
+@@ -410,16 +410,16 @@ uninstall-am:
  @DBUS_XML_DOCS_ENABLED_TRUE@all-local: $(HTML_FILES)
  
  @DBUS_XML_DOCS_ENABLED_TRUE@dbus-specification.html: dbus-specification.xml
