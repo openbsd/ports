@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2007/11/13 14:54:31 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2009/01/28 16:56:41 sthen Exp $
 
-COMMENT=	graphical multiplayer 3-d tank war game
+COMMENT=	graphical multiplayer 3D tank war game
+
 DISTNAME=	bzflag-2.0.8
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 
 HOMEPAGE=	http://www.bzflag.org/
 
-# LGPL
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -20,15 +21,20 @@ USE_X11=	Yes
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	SDL.>=4::devel/sdl curl.>=3::net/curl
+LIB_DEPENDS=	SDL.>=4::devel/sdl \
+		curl.>=3::net/curl
 
 WANTLIB=	GL GLU ICE SM X11 Xau Xdmcp Xext Xrandr Xrender \
-		c crypto idn m ncurses pthread ssl stdc++ usbhid z
+		c crypto idn m ncurses pthread sndio ssl stdc++ \
+		usbhid z
 
 AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE=gnu autoconf
-CONFIGURE_ARGS+=--disable-adns --enable-debug
-CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${LOCALBASE}/include"
+CONFIGURE_ARGS+=--enable-debug
+CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/include" \
+		ac_cv_lib_cares_ares_init=no \
+		ac_cv_lib_bind_gethostent=no
 
 pre-build:
 	@sed -e 's|@LINUX_TRUE@||g ; s|@LINUX_FALSE@|#|g' \
