@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2008/11/07 15:10:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2009/01/28 23:18:22 simon Exp $
 
 COMMENT= 	catalyst plugin to Config::Any
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-ConfigLoader-0.21
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Catalyst-Plugin-ConfigLoader-0.22
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -17,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	::devel/p5-Config-Any \
 		::devel/p5-Data-Visitor \
+		::devel/p5-MRO-Compat \
 		::www/p5-Catalyst-Runtime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
