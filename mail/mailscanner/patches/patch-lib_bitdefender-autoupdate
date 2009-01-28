@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_bitdefender-autoupdate,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
---- lib/bitdefender-autoupdate.orig	Mon Mar 20 17:48:20 2006
-+++ lib/bitdefender-autoupdate	Mon Mar 20 17:48:20 2006
+$OpenBSD: patch-lib_bitdefender-autoupdate,v 1.2 2009/01/28 15:16:17 sthen Exp $
+--- lib/bitdefender-autoupdate.orig	Thu Dec 11 06:57:04 2008
++++ lib/bitdefender-autoupdate	Sat Jan 10 21:16:03 2009
 @@ -107,7 +107,7 @@ use IO::File;
  use Archive::Zip qw(:ERROR_CODES);
  use Sys::Syslog;
@@ -8,5 +8,5 @@ $OpenBSD: patch-lib_bitdefender-autoupdate,v 1.1.1.1 2008/02/20 03:47:18 todd Ex
 -my $PackageDir = shift || "/opt/bdc";
 +my $PackageDir = shift || "%PREFIX%/bdc";
  
- # This is the maximum time allowed for the bdc --update command to run.
- my $MaximumTime = 60*20; # 20 minutes
+ $LockFile = shift || "/var/spool/MailScanner/incoming/Locks/bitdefenderBusy.lock";
+ 

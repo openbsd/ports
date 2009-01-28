@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_css-autoupdate,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
---- lib/css-autoupdate.orig	Mon Mar 20 17:48:20 2006
-+++ lib/css-autoupdate	Mon Mar 20 17:48:20 2006
+$OpenBSD: patch-lib_css-autoupdate,v 1.2 2009/01/28 15:16:17 sthen Exp $
+--- lib/css-autoupdate.orig	Thu Dec 11 06:57:18 2008
++++ lib/css-autoupdate	Sat Jan 10 21:16:03 2009
 @@ -2,7 +2,7 @@
  
  use Sys::Syslog;
@@ -9,4 +9,4 @@ $OpenBSD: patch-lib_css-autoupdate,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
 +$CSSDir = shift || "%PREFIX%/SYMCScan";
  $CSSUpdateCommand="$CSSDir/bin/liveupdate.sh";
  
- $LockFile = "/tmp/SYMCScan.lock";
+ $LockFile = shift || "/var/spool/MailScanner/incoming/Locks/cssBusy.lock";

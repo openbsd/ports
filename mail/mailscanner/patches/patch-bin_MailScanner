@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_MailScanner,v 1.5 2008/11/07 02:33:58 brad Exp $
---- bin/MailScanner.orig	Sat Nov  1 15:03:52 2008
-+++ bin/MailScanner	Thu Nov  6 20:24:55 2008
+$OpenBSD: patch-bin_MailScanner,v 1.6 2009/01/28 15:16:17 sthen Exp $
+--- bin/MailScanner.orig	Thu Jan  8 14:11:44 2009
++++ bin/MailScanner	Sun Jan 11 13:34:41 2009
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -I/opt/MailScanner/lib
 +#!/usr/bin/perl -I%PREFIX%/lib/MailScanner
@@ -55,3 +55,21 @@ $OpenBSD: patch-bin_MailScanner,v 1.5 2008/11/07 02:33:58 brad Exp $
      Virus Scanners = clamav
  Then download
      http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/install-Clam-SA.tar.gz
+@@ -382,7 +381,7 @@ if ($WantLintOnly || $WantLintLiteOnly) {
+   }
+   my $cluid = MailScanner::Config::QuickPeek($ConfFile, 'runasuser');
+   my $clgid = MailScanner::Config::QuickPeek($ConfFile, 'runasgroup');
+-  my $clr = system("/opt/MailScanner/bin/mailscanner_create_locks \"$lockdir\" \"$cluid\" \"$clgid\"");
++  my $clr = system("%PREFIX%/bin/mailscanner_create_locks \"$lockdir\" \"$cluid\" \"$clgid\"");
+   print STDERR "Error: Attempt to create locks in $lockdir failed!\n"
+     if ($clr>>8) != 0;
+ 
+@@ -675,7 +674,7 @@ if ($locksdir eq "" || $locksdir =~ /tmp$/i) {
+   print STDERR "Please move your \"Lockfile Dir\" setting in MailScanner.conf.\n";
+   print STDERR "It should point outside /tmp, preferably /var/spool/MailScanner/incoming/Locks\n";
+ }
+-my $cl = system("/opt/MailScanner/bin/mailscanner_create_locks \"$locksdir\" \"$uname\" \"$gname\"");
++my $cl = system("%PREFIX%/bin/mailscanner_create_locks \"$locksdir\" \"$uname\" \"$gname\"");
+ print STDERR "Error: Attempt to create locks in $locksdir failed!\n"
+  if ($cl>>8) != 0;
+ 

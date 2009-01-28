@@ -1,0 +1,14 @@
+$OpenBSD: patch-bin_mailscanner_create_locks,v 1.1 2009/01/28 15:16:17 sthen Exp $
+--- bin/mailscanner_create_locks.orig	Sun Jan 11 13:38:38 2009
++++ bin/mailscanner_create_locks	Sun Jan 11 13:38:58 2009
+@@ -26,8 +26,8 @@ unless (-d _) {
+ 
+ # Now work through all the virus scanner autoupdate names, building Lock files.
+ my($dh, $fh, $updatename, $lockname, @updatenames, @locknames);
+-$dh = new DirHandle "/opt/MailScanner/lib";
+-die "Can't read dir /opt/MailScanner/lib to build list of -autoupdate scripts, $!" unless $dh;
++$dh = new DirHandle "%PREFIX%/libexec/MailScanner";
++die "Can't read dir %PREFIX%/libexec/MailScanner to build list of -autoupdate scripts, $!" unless $dh;
+ while (defined($updatename = $dh->read)) {
+   next unless $updatename =~ s/-autoupdate$//;
+   next unless $updatename =~ /^[a-z0-9_-]+$/i; # No nasty chars thanks!
