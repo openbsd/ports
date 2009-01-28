@@ -1,0 +1,17 @@
+$OpenBSD: patch-gio_xdgmime_xdgmimecache_h,v 1.1 2009/01/28 09:24:38 jasper Exp $
+
+Fix XDG conflicting symbols, from FreeBSD's
+devel/glib20/files/patch-gio_xdgmime_xdgmimecache.h
+
+--- gio/xdgmime/xdgmimecache.h.orig	Tue Jan 27 18:49:55 2009
++++ gio/xdgmime/xdgmimecache.h	Tue Jan 27 18:50:32 2009
+@@ -46,6 +46,9 @@ typedef struct _XdgMimeCache XdgMimeCache;
+ #define _xdg_mime_cache_get_icon                      XDG_RESERVED_ENTRY(cache_get_icon)
+ #define _xdg_mime_cache_get_generic_icon              XDG_RESERVED_ENTRY(cache_get_generic_icon)
+ #define _xdg_mime_cache_glob_dump                     XDG_RESERVED_ENTRY(cache_glob_dump)
++#define _xdg_mime_cache_is_valid_mime_type            XDG_RESERVED_ENTRY(cache_is_valid_mime_type)
++#define _xdg_mime_cache_mime_type_equal               XDG_RESERVED_ENTRY(cache_mime_type_equal)
++#define _xdg_mime_cache_media_type_equal              XDG_RESERVED_ENTRY(cache_media_type_equal)
+ #endif
+ 
+ extern XdgMimeCache **_caches;
