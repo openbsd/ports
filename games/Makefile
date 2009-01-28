@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2009/01/18 17:54:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.186 2009/01/28 10:13:11 sthen Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -93,6 +93,7 @@
      SUBDIR += netris
      SUBDIR += neverball
      SUBDIR += newvox
+     SUBDIR += numptyphysics
      SUBDIR += oilwar
      SUBDIR += omega
      SUBDIR += openarena
