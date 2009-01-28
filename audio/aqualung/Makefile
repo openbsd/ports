@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/01/28 00:20:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/01/28 23:18:56 sthen Exp $
 
 COMMENT=	advanced music player
 
@@ -79,7 +79,8 @@ CONFIGURE_ARGS=	--with-flac \
 post-install:
 	mv ${PREFIX}/share/aqualung/doc ${PREFIX}/share/doc/aqualung
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	@${SUBST_CMD} -c ${FILESDIR}/aqualung.desktop \
-		${PREFIX}/share/applications/aqualung.desktop
+	${INSTALL_DATA} ${FILESDIR}/aqualung.desktop \
+	    ${PREFIX}/share/applications
+	@${SUBST_CMD} ${PREFIX}/share/applications/aqualung.desktop
 
 .include <bsd.port.mk>
