@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/12/16 00:04:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2009/01/28 20:03:40 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	BitTorrent client for KDE
 
 VERSION=	2.2.8
 DISTNAME=	ktorrent-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net x11 x11/kde
 EXTRACT_SUFX=	.tar.bz2
 

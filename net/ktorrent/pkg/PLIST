@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/12/16 00:04:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/01/28 20:03:40 naddy Exp $
 @bin bin/ktcachecheck
 @bin bin/ktorrent
 bin/ktshell
@@ -20,8 +20,8 @@ ${KDE}/ktschedulerplugin.la
 ${KDE}/ktschedulerplugin.so
 ${KDE}/ktsearchplugin.la
 ${KDE}/ktsearchplugin.so
-@comment ${KDE}/ktstatsplugin.la
-@comment ${KDE}/ktstatsplugin.so
+${KDE}/ktstatsplugin.la
+${KDE}/ktstatsplugin.so
 ${KDE}/ktupnpplugin.la
 ${KDE}/ktupnpplugin.so
 ${KDE}/ktwebinterfaceplugin.la
@@ -388,7 +388,7 @@ share/config.kcfg/ktrssfeedplugin.kcfg
 share/config.kcfg/ktscanfolderplugin.kcfg
 share/config.kcfg/ktschedulerplugin.kcfg
 share/config.kcfg/ktsearchplugin.kcfg
-@comment share/config.kcfg/ktstatsplugin.kcfg
+share/config.kcfg/ktstatsplugin.kcfg
 share/config.kcfg/ktupnpplugin.kcfg
 share/config.kcfg/ktwebinterfaceplugin.kcfg
 share/icons/hicolor/128x128/apps/ktorrent.png
@@ -457,7 +457,7 @@ share/services/ktrssfeedplugin.desktop
 share/services/ktscanfolderplugin.desktop
 share/services/ktschedulerplugin.desktop
 share/services/ktsearchplugin.desktop
-@comment share/services/ktstatsplugin.desktop
+share/services/ktstatsplugin.desktop
 share/services/ktupnpplugin.desktop
 share/services/ktwebinterfaceplugin.desktop
 share/services/ktzeroconfplugin.desktop
