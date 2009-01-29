@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2008/04/04 21:41:27 okan Exp $
+# $OpenBSD: Makefile,v 1.14 2009/01/29 19:07:06 pea Exp $
 
 COMMENT=		client for Cisco 3000 VPN concentrators
 
-DISTNAME=		vpnc-0.5.1
+DISTNAME=		vpnc-0.5.3
 CATEGORIES=		security net
 
 HOMEPAGE=		http://www.unix-ag.uni-kl.de/~massar/vpnc/
 
-# GPL
+# GPLv2 / BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -23,11 +23,12 @@ NO_REGRESS=		Yes
 
 do-configure:
 	@perl -pi -e "s,/etc,${SYSCONFDIR},g" ${WRKSRC}/{README,config.c}
-	@sed -e "s,%%PREFIX%%,${PREFIX},g" ${FILESDIR}/vpnc.sh > ${WRKBUILD}/vpnc.sh
-	@sed -e "s,%%PREFIX%%,${PREFIX},g" ${FILESDIR}/split.sh > ${WRKBUILD}/split.sh
+	@cp ${FILESDIR}/split.sh ${WRKBUILD}/split.sh
+	${SUBST_CMD} -c ${FILESDIR}/vpnc.sh ${WRKBUILD}/vpnc.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/vpnc ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKBUILD}/vpnc-disconnect ${PREFIX}/sbin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vpnc
 	${INSTALL_DATA} ${WRKBUILD}/README ${PREFIX}/share/doc/vpnc
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vpnc

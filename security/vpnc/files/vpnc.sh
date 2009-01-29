@@ -1,10 +1,9 @@
 #! /bin/sh
 
-# $OpenBSD: vpnc.sh,v 1.3 2005/05/05 10:54:48 sturm Exp $
+# $OpenBSD: vpnc.sh,v 1.4 2009/01/29 19:07:06 pea Exp $
 
 TUN_IF=tun0
 PHYS_IF=wi0
-PREFIX=%%PREFIX%%
 VPNGATEWAY=192.168.0.1
 
 case "$1" in
