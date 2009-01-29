@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.365 2009/01/28 13:21:35 pyr Exp $
+# $OpenBSD: Makefile,v 1.366 2009/01/29 16:14:27 sthen Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -36,6 +36,7 @@
      SUBDIR += dbus-glib
      SUBDIR += dbus-python
      SUBDIR += dclock
+     SUBDIR += dejavu-fonts
      SUBDIR += devilspie
      SUBDIR += dmenu
      SUBDIR += driconf
