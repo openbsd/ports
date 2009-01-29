@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2009/01/28 10:11:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.226 2009/01/29 20:11:21 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -155,6 +155,7 @@
      SUBDIR += py-dot
      SUBDIR += py-gd
      SUBDIR += py-goocanvas
+     SUBDIR += py-graphics
      SUBDIR += py-matplotlib
      SUBDIR += py-pyx
      SUBDIR += pycha
