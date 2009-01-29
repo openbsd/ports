@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 17:14:51 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/01/29 20:07:05 ajacoutot Exp $
 @pkgpath print/acroread
 Acrobat7/
 Acrobat7/Browser/
@@ -306,4 +306,5 @@ Acrobat7/Resource/Support/vnd.fdf.desktop
 Acrobat7/bin/
 Acrobat7/bin/acroread
 bin/acroread
+share/applications/AdobeReader.desktop
 @sysctl kern.emul.linux=1

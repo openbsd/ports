@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2007/09/15 21:36:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.34 2009/01/29 20:07:05 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
@@ -8,7 +8,7 @@ COMMENT-plugins=further plugins for acrobat reader
 
 V=		7.0.9
 DISTNAME=	AdobeReader_enu-${V}-1.i386
-PKGNAME-main=	acroread-${V}
+PKGNAME-main=	acroread-${V}p0
 PKGNAME-plugins=acroread-plugins-${V}
 CATEGORIES=	print
 SHARED_LIBS=	ACE	2.07 \
@@ -21,8 +21,6 @@ SHARED_LIBS=	ACE	2.07 \
 		agli18n	28.0 \
 		agluc	28.0
 
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
-
 PERMIT_PACKAGE_CDROM=	commercial software
 PERMIT_PACKAGE_FTP=	commercial software
 PERMIT_DISTFILES_CDROM=	commercial software
@@ -32,7 +30,8 @@ MULTI_PACKAGES=	-main -plugins
 
 MASTER_SITES=	http://ardownload.adobe.com/pub/adobe/reader/unix/7x/7.0.9/enu/
 
-RUN_DEPENDS=	::emulators/fedora/base
+RUN_DEPENDS=	::emulators/fedora/base \
+		:desktop-file-utils-*:devel/desktop-file-utils
 
 RUN_DEPENDS-plugins=	${RUN_DEPENDS} :${PKGNAME-main}:print/acroread
 
@@ -51,5 +50,11 @@ post-install:
 	  perl -pi -e "s,%%TRUEPREFIX%%,${TRUEPREFIX}," acroread && \
 	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat7/bin/acroread \
 	     ${PREFIX}/bin/acroread
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} \
+		${PREFIX}/Acrobat7/Resource/Support/AdobeReader_KDE.desktop \
+		${PREFIX}/share/applications/AdobeReader.desktop
+	echo "Icon=${TRUEPREFIX}/Acrobat7/Resource/Icons/AdobeReader.png" \
+		>> ${PREFIX}/share/applications/AdobeReader.desktop
 
 .include <bsd.port.mk>
