@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2009/01/29 17:44:27 sthen Exp $
+--- setup.py.orig	Mon Jan 19 19:19:52 2009
++++ setup.py	Mon Jan 19 19:20:13 2009
+@@ -191,7 +191,7 @@ class coverage_cmd(Command):
+             100.0 * (total_lines - bad_lines) / float(total_lines))
+ 
+ if os.name == "posix":
+-    data_files = [('share/man/man1', glob.glob("man/*.1"))]
++    data_files = [('man/man1', glob.glob("man/*.1"))]
+ else:
+     data_files = []
+ 

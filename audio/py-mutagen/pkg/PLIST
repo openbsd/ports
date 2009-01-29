@@ -1,0 +1,57 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/29 17:44:27 sthen Exp $
+bin/mid3iconv
+bin/mid3v2
+bin/moggsplit
+bin/mutagen-inspect
+bin/mutagen-pony
+lib/python${MODPY_VERSION}/site-packages/mutagen/
+lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/mutagen/__init__.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/_constants.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/_constants.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/_util.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/_util.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/_vorbis.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/_vorbis.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/apev2.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/apev2.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/asf.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/asf.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/easyid3.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/easyid3.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/flac.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/flac.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/m4a.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/m4a.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/monkeysaudio.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/monkeysaudio.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp3.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp3.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/musepack.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/musepack.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/ogg.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/ogg.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/oggflac.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/oggflac.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/oggspeex.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/oggspeex.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/oggtheora.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/oggtheora.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/oggvorbis.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/oggvorbis.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/optimfrog.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/optimfrog.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/trueaudio.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/trueaudio.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/wavpack.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/wavpack.pyc
+@man man/man1/mid3iconv.1
+@man man/man1/mid3v2.1
+@man man/man1/moggsplit.1
+@man man/man1/mutagen-inspect.1
+@man man/man1/mutagen-pony.1
