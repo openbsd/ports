@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.669 2009/01/27 21:33:16 kili Exp $
+# $OpenBSD: Makefile,v 1.670 2009/01/29 20:08:42 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -165,7 +165,6 @@
      SUBDIR += libsigsegv
      SUBDIR += libslang
      SUBDIR += libsoup
-     SUBDIR += libsoup,ssl
      SUBDIR += libspectrum
      SUBDIR += libstdc++-man
      SUBDIR += libtool
