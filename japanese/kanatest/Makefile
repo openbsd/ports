@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/01/04 08:25:48 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2009/01/29 17:37:57 ajacoutot Exp $
 
 COMMENT =	beginner's drill tool to learn Japanese kana characters 
 
 DISTNAME =	kanatest-0.4.6
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	japanese
 
 HOMEPAGE =	http://clay.ll.pl/kanatest/
@@ -24,6 +25,7 @@ MASTER_SITES =	${HOMEPAGE}
 
 MODULES =	devel/gettext
 
+RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS =	gdk-x11-2.0.>=600.0,gdk_pixbuf-2.0.>=600.0,gtk-x11-2.0.>=600.0::x11/gtk+2 \
 		xml2.::textproc/libxml
 

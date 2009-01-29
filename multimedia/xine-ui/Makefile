@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2008/06/01 08:21:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2009/01/29 17:37:57 ajacoutot Exp $
 
 COMMENT=		multimedia player
 
 DISTNAME=		xine-ui-0.99.5
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://xinehq.de/
@@ -18,6 +18,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xine/}
 
 MODULES=		devel/gettext
 
+RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=		xine.>=14::multimedia/xine-lib \
 			curl.>=2::net/curl \
 			png.>=4::graphics/png

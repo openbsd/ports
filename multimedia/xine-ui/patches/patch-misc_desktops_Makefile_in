@@ -1,0 +1,12 @@
+$OpenBSD: patch-misc_desktops_Makefile_in,v 1.1 2009/01/29 17:37:57 ajacoutot Exp $
+--- misc/desktops/Makefile.in.orig	Thu Jan 29 17:54:11 2009
++++ misc/desktops/Makefile.in	Thu Jan 29 17:54:27 2009
+@@ -271,7 +271,7 @@ icon22_DATA = icons/22/xine.png
+ icon32_DATA = icons/32/xine.png
+ icon48_DATA = icons/48/xine.png
+ pixmap_DATA = xine.xpm
+-desktopdir = $(datadir)/xine/desktop
++desktopdir = $(datadir)/applications
+ desktop_DATA = xine.desktop
+ all: all-am
+ 
