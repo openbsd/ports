@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2009/01/16 02:39:53 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.144 2009/01/29 17:28:13 sthen Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -9,7 +9,7 @@ V=			1.0rc2
 N=			mplayer
 DISTNAME=		MPlayer-${V}
 DIST_SUBDIR=		${N}
-PKGNAME=		${N}-${V}p17
+PKGNAME=		${N}-${V}p18
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -134,9 +134,9 @@ USE_X11=	Yes
 LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 WANTLIB+=	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xv Xxf86dga Xxf86vm \
-		atk-1.0 cairo expat fontconfig freetype glib-2.0 glitz \
-		gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1
+		atk-1.0 cairo expat fontconfig freetype gio-2.0 \
+		glib-2.0 glitz gmodule-2.0 gobject-2.0 pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pixman-1
 MODULES=	devel/gettext
 .endif
 
