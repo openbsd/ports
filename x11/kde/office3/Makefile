@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2009/01/08 19:57:49 kili Exp $
+# $OpenBSD: Makefile,v 1.55 2009/01/29 22:28:58 jakemsr Exp $
 
 COMMENT=		office suite for KDE
 
@@ -8,7 +8,7 @@ VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
 
 DISTNAME=	koffice-${VERSION}
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 
 MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
 PATCHFILES=		koffice-xpdf-CVE-2007-3387.diff:0 \
@@ -93,9 +93,9 @@ LIB_DEPENDS=	kdecore.>=4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kpart
 
 
 WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
-		esd freetype glib-2.0 gmodule-2.0 gobject-2.0 \
+		freetype glib-2.0 gmodule-2.0 gobject-2.0 \
 		gsf-1 gthread-2.0 iconv intl jasper jpeg kmedia2_idl lcms \
-		m mad mcop ogg ossaudio pcre pcreposix png pthread qtmcop \
+		m mad mcop ogg pcre pcreposix png pthread qtmcop sndio \
 		soundserver_idl stdc++ tiff util vorbis vorbisenc vorbisfile \
 		xml2 xslt z Xt termcap Xi fontconfig crypto readline ssl \
 		IlmImf Half Imath Iex idn GL GLU poppler \

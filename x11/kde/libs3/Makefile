@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2008/08/26 16:52:29 espie Exp $
+# $OpenBSD: Makefile,v 1.96 2009/01/29 22:28:58 jakemsr Exp $
 
 COMMENT-main =		K Desktop Environment, libraries
 COMMENT-cups =		K Desktop Environment, cups support
@@ -7,7 +7,7 @@ VERSION =		3.5.10
 DISTNAME =		kdelibs-${VERSION}
 MASTER_SITES0 =  	ftp://ftp.kde.org/pub/kde/security_patches/
 
-PKGNAME-main =		${DISTNAME}
+PKGNAME-main =		${DISTNAME}p0
 PKGNAME-cups =		kdecups-${VERSION}
 MODKDE_VERSION =		3.5.8
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
@@ -77,9 +77,9 @@ LIB_DEPENDS-main =	\
 
 WANTLIB-main =	${WANTLIB} \
 		Half Iex IlmThread Imath \
-		audiofile esd glib-2.0 \
+		audiofile glib-2.0 \
 		gmodule-2.0 gthread-2.0 mad ogg \
-		ossaudio vorbisenc vorbis vorbisfile \
+		sndio vorbisenc vorbis vorbisfile \
 		xml2 krb5 gssapi crypto asn1
 
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2008/08/26 16:52:29 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2009/01/29 22:28:58 jakemsr Exp $
 
 COMMENT =		K Desktop Environment, edutainment
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeedu-${VERSION}
-PKGNAME =		${DISTNAME}
+PKGNAME =		${DISTNAME}p0
 MODKDE_VERSION ?=	3.5.8
 FLAVORS =	debug
 SHARED_LIBS +=	kdeeducore           4.0      # .3.0
@@ -22,11 +22,11 @@ CONFIGURE_ARGS +=	--disable-kig-python-scripting
 
 WANTLIB =	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg katepartinterfaces \
 		knewstuff ktexteditor m pcre pcreposix png pthread stdc++ util \
-		z ossaudio qtmcop soundserver_idl artskde kmedia2_idl \
-		artsflow vorbis ogg esd mcop \
+		z qtmcop soundserver_idl artskde kmedia2_idl \
+		artsflow vorbis ogg mcop \
 		intl iconv artsflow_idl audiofile mad vorbisfile vorbisenc \
 		gthread-2.0.>=800.0 gmodule-2.0.>=800.0 glib-2.0.>=800.0 idn \
-		Xau Xdmcp fam rpcsvc
+		Xau Xdmcp fam rpcsvc sndio
 
 
 .include <bsd.port.mk>

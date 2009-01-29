@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2008/08/29 11:27:43 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2009/01/29 22:28:58 jakemsr Exp $
 
 COMMENT =		K Desktop Environment, addons
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeaddons-${VERSION}
-PKGNAME =		${DISTNAME}
+PKGNAME =		${DISTNAME}p0
 MODKDE_VERSION =	3.5.8
 
 RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
@@ -24,9 +24,9 @@ LIB_DEPENDS = 	kdecore.>=6,kdnssd,knewstuff,DCOP,artskde,kabc,katepartinterfaces
 SEPARATE_BUILD =	flavored
 
 WANTLIB =	ICE SM X11 Xext Xi Xrender art_lgpl_2 artsflow artsflow_idl \
-		audiofile c esd glib glib-2.0 gmodule gmodule-2.0 \
+		audiofile c glib glib-2.0 gmodule gmodule-2.0 \
 		iconv intl jpeg kimproxy kmedia2_idl m mad mcop ogg \
-		ossaudio pcre pcreposix png pthread qtmcop soundserver_idl \
+		pcre pcreposix png pthread qtmcop sndio soundserver_idl \
 		stdc++ usbhid util vorbis vorbisenc vorbisfile z \
 		gthread-2.0 idn Xau Xdmcp fam rpcsvc Xrandr
 
