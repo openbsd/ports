@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/01/28 19:45:59 stsp Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/29 13:47:41 jakemsr Exp $
 
 COMMENT =		audio plugin API
 
 DISTNAME =		vamp-plugin-sdk-1.3
-PKGNAME = 		${DISTNAME}p0
+PKGNAME = 		${DISTNAME}p1
 
 SHARED_LIBS +=		vamp-sdk	0.0
 SHARED_LIBS +=		vamp-hostsdk	0.0
@@ -19,6 +19,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
+
+WANTLIB =		stdc++
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vamp/}
 

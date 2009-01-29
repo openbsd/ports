@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2009/01/11 09:22:08 jakemsr Exp $
+$OpenBSD: patch-Makefile,v 1.2 2009/01/29 13:47:41 jakemsr Exp $
 --- Makefile.orig	Wed Jul  9 03:42:49 2008
-+++ Makefile	Thu Nov 13 23:12:58 2008
++++ Makefile	Thu Jan 29 05:27:08 2009
 @@ -28,7 +28,7 @@ default:	all
  
  # Compile flags
@@ -9,6 +9,15 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2009/01/11 09:22:08 jakemsr Exp $
 +CXXFLAGS	:= $(CXXFLAGS) -Wall -I. -fPIC
  
  # ar, ranlib
+ #
+@@ -41,7 +41,7 @@ RANLIB		:= ranlib
+ # compatibility problems.)
+ #
+ #PLUGIN_LIBS	= $(SDKDIR)/libvamp-sdk.a
+-PLUGIN_LIBS	= $(SDKDIR)/libvamp-sdk.a $(shell g++ -print-file-name=libstdc++.a)
++PLUGIN_LIBS	= $(SDKDIR)/libvamp-sdk.a -lstdc++
+ 
+ # File extension for a dynamically loadable object
  #
 @@ -51,27 +51,27 @@ PLUGIN_EXT	= .so
  
