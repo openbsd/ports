@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2009/01/12 16:42:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.216 2009/01/29 17:48:09 sthen Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -140,6 +140,7 @@
      SUBDIR += py-eyed3
      SUBDIR += py-id3
      SUBDIR += py-mpd
+     SUBDIR += py-mutagen
      SUBDIR += py-ogg
      SUBDIR += py-tagger
      SUBDIR += py-xmms
