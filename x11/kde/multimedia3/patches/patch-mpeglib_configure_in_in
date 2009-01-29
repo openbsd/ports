@@ -1,5 +1,5 @@
---- mpeglib/configure.in.in.orig	Mon Oct  8 11:48:54 2007
-+++ mpeglib/configure.in.in	Wed Oct 24 11:58:58 2007
+--- mpeglib/configure.in.in.orig	Mon Oct  8 02:48:54 2007
++++ mpeglib/configure.in.in	Sun Dec 28 13:40:17 2008
 @@ -164,6 +164,9 @@ case "$OS_TYPE" in
    NetBSD)
      kde_mpeglib_compiles=yes
@@ -10,23 +10,16 @@
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -194,6 +197,12 @@ case "$OS_TYPE" in
-     AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
-     ;;
+@@ -192,6 +195,12 @@ case "$OS_TYPE" in
  
+   Linux)
+     AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
++    ;;
++
 +  OpenBSD)
 +    OS_TYPE="BSD"
 +    AC_CHECK_LIB(c_r, pthread_create, [LIBPTHREAD="-pthread"])
 +    AC_DEFINE(OS_BSD,1,[Define if you have BSD pthread])
-+    ;;
-+
-   FreeBSD | DragonFly)
-     OS_TYPE="BSD"
-     AC_DEFINE(OS_BSD,1,[Define if you have BSD pthread])
-@@ -237,5 +246,5 @@ KDE_MPEGLIB_COMPILES
+     ;;
  
- THIS_LIB_LIBS="-lX11 -lXext -lm ${XVLIBS} ${DGALIBS} "
- THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "
--THIS_LIB_LIBS="${THIS_LIB_LIBS} ${OGG_VORBISLIBS} ${LIBPTHREAD}"
-+THIS_LIB_LIBS="${THIS_LIB_LIBS} ${OGG_VORBISLIBS} ${LIBPTHREAD} ${LIBOSSAUDIO}"
- AC_SUBST(THIS_LIB_LIBS)
+   FreeBSD | DragonFly)

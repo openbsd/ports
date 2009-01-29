@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.32 2008/04/13 09:48:57 espie Exp $
+$OpenBSD: patch-configure_in,v 1.33 2009/01/29 22:37:21 jakemsr Exp $
 --- configure.in.orig	Wed Feb 13 16:06:50 2008
 +++ configure.in	Sun Apr 13 06:31:48 2008
 @@ -164,22 +164,22 @@ AC_DEFUN([KDE_CHECK_OGGVORBIS],
@@ -142,15 +142,6 @@ $OpenBSD: patch-configure_in,v 1.32 2008/04/13 09:48:57 espie Exp $
    FreeBSD | DragonFly)
      OS_TYPE="BSD"
      AC_DEFINE(OS_BSD,1,[Define if you have BSD pthread])
-@@ -1389,7 +1382,7 @@ KDE_MPEGLIB_COMPILES
- 
- THIS_LIB_LIBS="-lX11 -lXext -lm ${XVLIBS} ${DGALIBS} "
- THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "
--THIS_LIB_LIBS="${THIS_LIB_LIBS} ${OGG_VORBISLIBS} ${LIBPTHREAD}"
-+THIS_LIB_LIBS="${THIS_LIB_LIBS} ${OGG_VORBISLIBS} ${LIBPTHREAD} ${LIBOSSAUDIO}"
- AC_SUBST(THIS_LIB_LIBS)
- dnl =======================================================
- dnl FILE: ./mpeglib/lib/mpegplay/configure.in.in
 @@ -1768,7 +1761,7 @@ dnl Check for new internal xine symbol names
  KDE_CHECK_LIB(xine, _x_ao_new_port, :, 
  [
