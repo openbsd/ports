@@ -1,0 +1,103 @@
+$OpenBSD: patch-flow_Makefile_in,v 1.3 2009/01/29 22:34:33 jakemsr Exp $
+--- flow/Makefile.in.orig	Wed Aug 20 09:07:21 2008
++++ flow/Makefile.in	Sat Dec 27 20:56:52 2008
+@@ -76,11 +76,11 @@ am_libartsflow_la_OBJECTS = synth_play_impl.lo gslsche
+ 	bytestreamtoaudio_impl.lo stereovolumecontrol_impl.lo \
+ 	stereoeffectstack_impl.lo fft.lo stereofftscope_impl.lo \
+ 	virtualports.lo bus.lo audiomanager_impl.lo \
+-	synth_record_impl.lo resample.lo audioio.lo audioiooss.lo \
++	synth_record_impl.lo resample.lo audioio.lo audioiosndio.lo \
+ 	audioioalsa.lo audioioalsa9.lo audioionull.lo \
+ 	audioiolibaudioio.lo audioioesd.lo audioiojack.lo \
+ 	audioiosun.lo audioioaix.lo audioionas.lo cpuinfo.lo \
+-	audioioossthreaded.lo audiotobytestream_impl.lo audioiosgi.lo \
++	audiotobytestream_impl.lo audioiosgi.lo \
+ 	audioiocsl.lo audioiomas.lo datahandle_impl.lo
+ #>- libartsflow_la_OBJECTS = $(am_libartsflow_la_OBJECTS)
+ #>+ 17
+@@ -93,11 +93,11 @@ libartsflow_la_nofinal_OBJECTS = synth_play_impl.lo gs
+ 	bytestreamtoaudio_impl.lo stereovolumecontrol_impl.lo \
+ 	stereoeffectstack_impl.lo fft.lo stereofftscope_impl.lo \
+ 	virtualports.lo bus.lo audiomanager_impl.lo \
+-	synth_record_impl.lo resample.lo audioio.lo audioiooss.lo \
++	synth_record_impl.lo resample.lo audioio.lo audioiosndio.lo \
+ 	audioioalsa.lo audioioalsa9.lo audioionull.lo \
+ 	audioiolibaudioio.lo audioioesd.lo audioiojack.lo \
+ 	audioiosun.lo audioioaix.lo audioionas.lo cpuinfo.lo \
+-	audioioossthreaded.lo audiotobytestream_impl.lo audioiosgi.lo \
++	audiotobytestream_impl.lo audioiosgi.lo \
+ 	audioiocsl.lo audioiomas.lo datahandle_impl.lo
+ @KDE_USE_FINAL_FALSE@libartsflow_la_OBJECTS = $(libartsflow_la_nofinal_OBJECTS)
+ @KDE_USE_FINAL_TRUE@libartsflow_la_OBJECTS = $(libartsflow_la_final_OBJECTS)
+@@ -280,7 +280,7 @@ LIBICE = @LIBICE@
+ LIBJPEG = @LIBJPEG@
+ LIBMAS = @LIBMAS@
+ LIBOBJS = @LIBOBJS@
+-LIBOSSAUDIO = @LIBOSSAUDIO@
++LIBSNDIO = -lsndio
+ LIBPNG = @LIBPNG@
+ LIBPOSIX4 = @LIBPOSIX4@
+ LIBPTHREAD = @LIBPTHREAD@
+@@ -419,7 +419,7 @@ lib_LTLIBRARIES = libartsflow_idl.la libartsflow.la
+ libartsflow_idl_la_SOURCES = artsflow.cc
+ libartsflow_idl_la_LDFLAGS = -no-undefined -version-info 1:0 $(all_libraries)
+ libartsflow_idl_la_LIBADD = $(top_builddir)/mcop/libmcop.la $(LIBPOSIX4)
+-libartsflow_la_LIBADD = $(top_builddir)/mcop/libmcop.la libartsflow_idl.la $(top_builddir)/flow/gslpp/libgslpp.la $(LIBAUDIOFILE) $(LIBASOUND) $(LIBAUDIOIO) $(LIBOSSAUDIO) $(LIBAUDIONAS) $(LIBCSL) $(SGILIBAUDIO) $(LIBESD) $(LIBMAS) $(JACK_LIBADD) -lm \
++libartsflow_la_LIBADD = $(top_builddir)/mcop/libmcop.la libartsflow_idl.la $(top_builddir)/flow/gslpp/libgslpp.la $(LIBAUDIOFILE) $(LIBASOUND) $(LIBAUDIOIO) $(LIBSNDIO) $(LIBAUDIONAS) $(LIBCSL) $(SGILIBAUDIO) $(LIBESD) $(LIBMAS) $(JACK_LIBADD) -lm \
+   $(top_builddir)/flow/gsl/libgsl.la
+ 
+ libartsflow_la_LDFLAGS = $(MAS_LDFLAGS) $(JACK_LDFLAGS) $(LIBAUDIOFILE_LDFLAGS) $(LIBAUDIONAS_LDFLAGS) $(LIBESD_LDFLAGS) -no-undefined -version-info 1:0
+@@ -432,10 +432,10 @@ libartsflow_la_SOURCES = synth_play_impl.cc \
+   bytestreamtoaudio_impl.cc stereovolumecontrol_impl.cc \
+   stereoeffectstack_impl.cc fft.c stereofftscope_impl.cc virtualports.cc \
+   bus.cc audiomanager_impl.cc synth_record_impl.cc resample.cc \
+-  audioio.cc audioiooss.cc audioioalsa.cc audioioalsa9.cc \
++  audioio.cc audioiosndio.cc audioioalsa.cc audioioalsa9.cc \
+   audioionull.cc audioiolibaudioio.cc audioioesd.cc audioiojack.cc \
+   audioiosun.cc audioioaix.cc audioionas.cc cpuinfo.cc \
+-  audioioossthreaded.cc audiotobytestream_impl.cc audioiosgi.cc \
++  audiotobytestream_impl.cc audioiosgi.cc \
+   audioiocsl.cc audioiomas.cc datahandle_impl.cc
+ 
+ artsincludedir = $(includedir)/arts
+@@ -548,8 +548,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audioiomas.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audioionas.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audioionull.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audioiooss.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audioioossthreaded.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audioiosndio.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audioiosgi.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audioiosun.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audiomanager_impl.Plo@am__quote@
+@@ -1008,11 +1007,11 @@ bcheck-am:
+ 
+ 
+ #>+ 11
+-libartsflow_la.all_cc.cc: $(srcdir)/Makefile.in $(srcdir)/synth_play_impl.cc $(srcdir)/gslschedule.cc $(srcdir)/audiosubsys.cc $(srcdir)/pipebuffer.cc $(srcdir)/convert.cc $(srcdir)/synth_wave_sin_impl.cc $(srcdir)/synth_frequency_impl.cc $(srcdir)/synth_multi_add_impl.cc $(srcdir)/synth_add_impl.cc $(srcdir)/synth_mul_impl.cc $(srcdir)/synth_play_wav_impl.cc $(srcdir)/stdsynthmodule.cc $(srcdir)/cache.cc $(srcdir)/asyncschedule.cc $(srcdir)/bytestreamtoaudio_impl.cc $(srcdir)/stereovolumecontrol_impl.cc $(srcdir)/stereoeffectstack_impl.cc $(srcdir)/stereofftscope_impl.cc $(srcdir)/virtualports.cc $(srcdir)/bus.cc $(srcdir)/audiomanager_impl.cc $(srcdir)/synth_record_impl.cc $(srcdir)/resample.cc $(srcdir)/audioio.cc $(srcdir)/audioiooss.cc $(srcdir)/audioioalsa.cc $(srcdir)/audioioalsa9.cc $(srcdir)/audioionull.cc $(srcdir)/audioiolibaudioio.cc $(srcdir)/audioioesd.cc $(srcdir)/audioiojack.cc $(srcdir)/audioiosun.cc $(srcdir)/audioioaix.cc $(srcdir)/audioionas.cc $(srcdir)/cpuinfo.cc $(srcdir)/audioioossthreaded.cc $(srcdir)/audiotobytestream_impl.cc $(srcdir)/audioiosgi.cc $(srcdir)/audioiocsl.cc $(srcdir)/audioiomas.cc $(srcdir)/datahandle_impl.cc 
++libartsflow_la.all_cc.cc: $(srcdir)/Makefile.in $(srcdir)/synth_play_impl.cc $(srcdir)/gslschedule.cc $(srcdir)/audiosubsys.cc $(srcdir)/pipebuffer.cc $(srcdir)/convert.cc $(srcdir)/synth_wave_sin_impl.cc $(srcdir)/synth_frequency_impl.cc $(srcdir)/synth_multi_add_impl.cc $(srcdir)/synth_add_impl.cc $(srcdir)/synth_mul_impl.cc $(srcdir)/synth_play_wav_impl.cc $(srcdir)/stdsynthmodule.cc $(srcdir)/cache.cc $(srcdir)/asyncschedule.cc $(srcdir)/bytestreamtoaudio_impl.cc $(srcdir)/stereovolumecontrol_impl.cc $(srcdir)/stereoeffectstack_impl.cc $(srcdir)/stereofftscope_impl.cc $(srcdir)/virtualports.cc $(srcdir)/bus.cc $(srcdir)/audiomanager_impl.cc $(srcdir)/synth_record_impl.cc $(srcdir)/resample.cc $(srcdir)/audioio.cc $(srcdir)/audioiosndio.cc $(srcdir)/audioioalsa.cc $(srcdir)/audioioalsa9.cc $(srcdir)/audioionull.cc $(srcdir)/audioiolibaudioio.cc $(srcdir)/audioioesd.cc $(srcdir)/audioiojack.cc $(srcdir)/audioiosun.cc $(srcdir)/audioioaix.cc $(srcdir)/audioionas.cc $(srcdir)/cpuinfo.cc $(srcdir)/audiotobytestream_impl.cc $(srcdir)/audioiosgi.cc $(srcdir)/audioiocsl.cc $(srcdir)/audioiomas.cc $(srcdir)/datahandle_impl.cc
+ 	@echo 'creating libartsflow_la.all_cc.cc ...'; \
+ 	rm -f libartsflow_la.all_cc.files libartsflow_la.all_cc.final; \
+ 	echo "#define KDE_USE_FINAL 1" >> libartsflow_la.all_cc.final; \
+-	for file in synth_play_impl.cc gslschedule.cc audiosubsys.cc pipebuffer.cc convert.cc synth_wave_sin_impl.cc synth_frequency_impl.cc synth_multi_add_impl.cc synth_add_impl.cc synth_mul_impl.cc synth_play_wav_impl.cc stdsynthmodule.cc cache.cc asyncschedule.cc bytestreamtoaudio_impl.cc stereovolumecontrol_impl.cc stereoeffectstack_impl.cc stereofftscope_impl.cc virtualports.cc bus.cc audiomanager_impl.cc synth_record_impl.cc resample.cc audioio.cc audioiooss.cc audioioalsa.cc audioioalsa9.cc audioionull.cc audioiolibaudioio.cc audioioesd.cc audioiojack.cc audioiosun.cc audioioaix.cc audioionas.cc cpuinfo.cc audioioossthreaded.cc audiotobytestream_impl.cc audioiosgi.cc audioiocsl.cc audioiomas.cc datahandle_impl.cc ; do \
++	for file in synth_play_impl.cc gslschedule.cc audiosubsys.cc pipebuffer.cc convert.cc synth_wave_sin_impl.cc synth_frequency_impl.cc synth_multi_add_impl.cc synth_add_impl.cc synth_mul_impl.cc synth_play_wav_impl.cc stdsynthmodule.cc cache.cc asyncschedule.cc bytestreamtoaudio_impl.cc stereovolumecontrol_impl.cc stereoeffectstack_impl.cc stereofftscope_impl.cc virtualports.cc bus.cc audiomanager_impl.cc synth_record_impl.cc resample.cc audioio.cc audioiosndio.cc audioioalsa.cc audioioalsa9.cc audioionull.cc audioiolibaudioio.cc audioioesd.cc audioiojack.cc audioiosun.cc audioioaix.cc audioionas.cc cpuinfo.cc audiotobytestream_impl.cc audioiosgi.cc audioiocsl.cc audioiomas.cc datahandle_impl.cc ; do \
+ 	  echo "#include \"$$file\"" >> libartsflow_la.all_cc.files; \
+ 	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libartsflow_la.all_cc.final; \
+ 	done; \
+@@ -1056,7 +1055,7 @@ $(srcdir)/audioioalsa9.cc: artsflow.h 
+ $(srcdir)/cache.cc: artsflow.h 
+ $(srcdir)/cpuinfo.cc: artsflow.h 
+ $(srcdir)/stereofftscope_impl.cc: artsflow.h 
+-$(srcdir)/audioiooss.cc: artsflow.h 
++$(srcdir)/audioiosndio.cc: artsflow.h 
+ $(srcdir)/audioiosun.cc: artsflow.h 
+ $(srcdir)/audioioesd.cc: artsflow.h 
+ $(srcdir)/fft.c: artsflow.h 
+@@ -1066,7 +1065,6 @@ $(srcdir)/convert.cc: artsflow.h 
+ $(srcdir)/synth_wave_sin_impl.cc: artsflow.h 
+ $(srcdir)/audioioalsa.cc: artsflow.h 
+ $(srcdir)/audioiolibaudioio.cc: artsflow.h 
+-$(srcdir)/audioioossthreaded.cc: artsflow.h 
+ $(srcdir)/synth_multi_add_impl.cc: artsflow.h 
+ $(srcdir)/stdsynthmodule.cc: artsflow.h 
+ $(srcdir)/audioiomas.cc: artsflow.h 
