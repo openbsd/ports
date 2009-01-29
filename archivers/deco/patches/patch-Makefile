@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1 2009/01/29 10:28:06 kevlo Exp $
+--- Makefile.orig	Sat Jan 24 22:30:50 2009
++++ Makefile	Sat Jan 24 22:31:03 2009
+@@ -6,7 +6,7 @@ deco: $(OBJECTS)
+ 	$(CC) $(LDFLAGS) -o $@ $(OBJECTS)
+ 
+ .c.o:
+-	$(CC) -D _XOPEN_SOURCE=600 -D SHARE=\"$(SHARE)\" $(CFLAGS) -c $<
++	$(CC) -D SHARE=\"$(SHARE)\" $(CFLAGS) -c $<
+ 
+ clean:
+ 	rm -f deco *.o
