@@ -1,0 +1,11 @@
+The DejaVu fonts are a font family based on the Bitstream Vera fonts.
+Their purpose is to provide a wider range of characters while
+maintaining the original look and feel.
+
+The DejaVu fonts family contains the following styles.
+
+-- Sans: Book, Bold, Oblique, Bold Oblique, Condensed, Condensed
+   Bold, Condensed Oblique and Condensed Bold Oblique
+-- Serif: Book, Bold, Italic, Bold Italic, Condensed, Condensed Bold,
+   Condensed Italic and Condensed Bold Italic
+-- Mono: Book, Bold, Oblique, Bold Oblique 

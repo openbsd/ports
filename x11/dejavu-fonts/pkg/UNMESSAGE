@@ -1,0 +1,8 @@
+If you have created the following symbolic links, then don't forget to
+remove them:
+/etc/fonts/conf.d/20-unhint-small-dejavu-sans-mono.conf
+/etc/fonts/conf.d/20-unhint-small-dejavu-sans.conf
+/etc/fonts/conf.d/20-unhint-small-dejavu-serif.conf
+/etc/fonts/conf.d/57-dejavu-sans-mono.conf
+/etc/fonts/conf.d/57-dejavu-sans.conf
+/etc/fonts/conf.d/57-dejavu-serif.conf

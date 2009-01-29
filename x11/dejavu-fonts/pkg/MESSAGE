@@ -1,0 +1,14 @@
+You may wish to create the following symbolic links:
+ln -fs \
+  ${PREFIX}/share/examples/dejavu-fonts/20-unhint-small-dejavu-sans-mono.conf \
+  ${PREFIX}/share/examples/dejavu-fonts/20-unhint-small-dejavu-sans.conf \
+  ${PREFIX}/share/examples/dejavu-fonts/20-unhint-small-dejavu-serif.conf \
+  /etc/fonts/conf.d
+
+If you wish to make the DejaVu fonts the default fontconfig fonts, then
+create the following symbolic links:
+ln -fs \
+  ${PREFIX}/share/examples/dejavu-fonts/57-dejavu-sans-mono.conf \
+  ${PREFIX}/share/examples/dejavu-fonts/57-dejavu-sans.conf \
+  ${PREFIX}/share/examples/dejavu-fonts/57-dejavu-serif.conf \
+  /etc/fonts/conf.d
