@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/01/28 23:18:22 simon Exp $
+# $OpenBSD: Makefile,v 1.13 2009/01/29 22:02:44 simon Exp $
 
 COMMENT= 	catalyst plugin to Config::Any
 
@@ -21,5 +21,7 @@ RUN_DEPENDS=	::devel/p5-Config-Any \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=Yes
+
+CONFIGURE_ARGS=	--skipdeps
 
 .include <bsd.port.mk>
