@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/04/17 08:35:16 ajacoutot Exp $
-bin/kbilliards
+@comment $OpenBSD: PLIST,v 1.5 2009/01/29 22:41:33 jakemsr Exp $
+@bin bin/kbilliards
 share/applnk/
 share/applnk/Games/
 share/applnk/Games/kbilliards.desktop
