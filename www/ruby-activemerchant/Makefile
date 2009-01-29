@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/15 00:01:25 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2009/01/29 18:51:11 bernd Exp $
 
 COMMENT=	ruby library for handling credit card processor merchants
 
-DISTNAME=	activemerchant-1.3.2
-PKGNAME=	ruby-${DISTNAME}p1
+DISTNAME=	activemerchant-1.4.1
+PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.activemerchant.org/
