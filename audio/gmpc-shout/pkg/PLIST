@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/15 13:16:16 landry Exp $
-share/gmpc/plugins/
-share/gmpc/plugins/shoutplugin.a
-share/gmpc/plugins/shoutplugin.la
-share/gmpc/plugins/shoutplugin.so
+@comment $OpenBSD: PLIST,v 1.3 2009/01/30 22:51:39 landry Exp $
+lib/gmpc/
+lib/gmpc/plugins/
+lib/gmpc/plugins/shoutplugin.a
+lib/gmpc/plugins/shoutplugin.la
+lib/gmpc/plugins/shoutplugin.so
