@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.377 2009/01/30 00:37:53 bernd Exp $
+# $OpenBSD: Makefile,v 1.378 2009/01/30 13:06:55 pea Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -71,6 +71,7 @@
      SUBDIR += mod_auth_kerb
      SUBDIR += mod_auth_ldap
      SUBDIR += mod_auth_mysql
+     SUBDIR += mod_auth_pgsql
      SUBDIR += mod_auth_radius
      SUBDIR += mod_bandwidth
      SUBDIR += mod_dav
