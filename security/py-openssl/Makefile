@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2008/04/15 11:00:52 eric Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/30 16:13:54 eric Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
-VERSION=	0.7
+VERSION=	0.8
 DISTNAME=	pyOpenSSL-${VERSION}
 PKGNAME=        py-openssl-${VERSION}
 CATEGORIES=    	security devel
@@ -35,8 +35,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/simple/* ${EXAMPLESDIR}/simple
 
-do-regress: fake
-	PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${LOCALBASE}/bin/trial \
-		--temp-directory=${WRKBUILD} OpenSSL.test
+do-regress: install
+	${LOCALBASE}/bin/trial --temp-directory=${WRKBUILD} OpenSSL.test
 
 .include <bsd.port.mk>
