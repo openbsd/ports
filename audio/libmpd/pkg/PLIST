@@ -1,16 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/03/23 23:40:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/01/30 22:45:10 landry Exp $
 %%SHARED%%
-include/libmpd/
-include/libmpd/debug_printf.h
-include/libmpd/libmpd-database.h
-include/libmpd/libmpd-internal.h
-include/libmpd/libmpd-player.h
-include/libmpd/libmpd-playlist.h
-include/libmpd/libmpd-status.h
-include/libmpd/libmpd-strfsong.h
-include/libmpd/libmpd-version.h
-include/libmpd/libmpd.h
-include/libmpd/libmpdclient.h
+include/libmpd-1.0/
+include/libmpd-1.0/libmpd/
+include/libmpd-1.0/libmpd/debug_printf.h
+include/libmpd-1.0/libmpd/libmpd-database.h
+include/libmpd-1.0/libmpd/libmpd-internal.h
+include/libmpd-1.0/libmpd/libmpd-player.h
+include/libmpd-1.0/libmpd/libmpd-playlist.h
+include/libmpd-1.0/libmpd/libmpd-status.h
+include/libmpd-1.0/libmpd/libmpd-strfsong.h
+include/libmpd-1.0/libmpd/libmpd-version.h
+include/libmpd-1.0/libmpd/libmpd.h
+include/libmpd-1.0/libmpd/libmpdclient.h
 lib/libmpd.a
 lib/libmpd.la
 lib/pkgconfig/
