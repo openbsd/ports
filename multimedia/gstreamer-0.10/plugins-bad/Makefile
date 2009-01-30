@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/11/27 12:34:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/01/30 00:47:54 sthen Exp $
 
 COMMENT-main =		multimedia framework - plugins bad
 COMMENT-tremor =	multimedia framework - tremor plugin
@@ -26,7 +26,7 @@ PKGNAME-musepack =	gstreamer-musepack-$Vp1
 PKGNAME-faac =		gstreamer-faac-$Vp1
 PKGNAME-faad =		gstreamer-faad-$Vp1
 PKGNAME-xvid =		gstreamer-xvid-$Vp1
-PKGNAME-sdl =		gstreamer-sdl-$Vp2
+PKGNAME-sdl =		gstreamer-sdl-$Vp3
 PKGNAME-bz2 =		gstreamer-bz2-$Vp1
 PKGNAME-gsm =		gstreamer-gsm-$Vp1
 PKGNAME-ladspa =	gstreamer-ladspa-$Vp1
@@ -92,7 +92,8 @@ LIB_DEPENDS-xvid =	${LIB_DEPENDS} \
 			xvidcore::multimedia/xvidcore
 
 WANTLIB-sdl =		${WANTLIB} \
-			X11 Xext gstbase-0.10 usbhid Xau Xdmcp Xrandr Xrender
+			X11 Xext gstbase-0.10 usbhid Xau Xdmcp Xrandr \
+			Xrender sndio
 LIB_DEPENDS-sdl =	${LIB_DEPENDS} \
 			gstaudio-0.10,gstinterfaces-0.10,gstvideo-0.10::$P/plugins-base \
 			SDL::devel/sdl
