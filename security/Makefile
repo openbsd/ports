@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.211 2009/01/04 14:05:26 kevlo Exp $
+# $OpenBSD: Makefile,v 1.212 2009/01/30 02:09:34 bernd Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -167,6 +167,7 @@
      SUBDIR += radiusniff
      SUBDIR += rarcrack
      SUBDIR += rdp
+     SUBDIR += ruby-bcrypt
      SUBDIR += ruby-ezcrypto
      SUBDIR += ruby-openid
      SUBDIR += ruby-yadis
