@@ -1,6 +1,6 @@
-$OpenBSD: patch-rubynative_Makefile_in,v 1.2 2007/04/30 17:30:40 bernd Exp $
---- rubynative/Makefile.in.orig	Wed Feb 21 01:06:29 2007
-+++ rubynative/Makefile.in	Thu Apr 12 14:44:05 2007
+$OpenBSD: patch-rubynative_Makefile_in,v 1.3 2009/01/30 21:15:05 ajacoutot Exp $
+--- rubynative/Makefile.in.orig	Wed Feb 21 10:06:29 2007
++++ rubynative/Makefile.in	Fri Jan 30 22:13:09 2009
 @@ -29,7 +29,7 @@ DESTDIR =
  # Building binaries
  RUBY = @RUBY@
@@ -25,3 +25,39 @@ $OpenBSD: patch-rubynative_Makefile_in,v 1.2 2007/04/30 17:30:40 bernd Exp $
  	@printf '\n'
  	@printf '#================================================================\n'
  	@printf '# Thanks for using Hyper Estraier for Ruby.\n'
+@@ -82,21 +82,21 @@ distclean : clean
+ 
+ check :
+ 	rm -rf casket
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb put casket ../misc/test001.est
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb put casket ../misc/test002.est
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb put casket ../misc/test003.est
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb put casket ../misc/test004.est
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb put casket ../misc/test005.est
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb put casket ../misc/test006.est
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb edit casket 1 "@title" "java"
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb get casket 1
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb get casket 1 "@title"
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb out casket 1
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb inform casket
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb optimize casket
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb search \
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb put casket ../misc/test001.est
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb put casket ../misc/test002.est
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb put casket ../misc/test003.est
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb put casket ../misc/test004.est
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb put casket ../misc/test005.est
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb put casket ../misc/test006.est
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb edit casket 1 "@title" "java"
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb get casket 1
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb get casket 1 "@title"
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb out casket 1
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb inform casket
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb optimize casket
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb search \
+ 	  -vf -cd casket "estraier" > check.out
+-	$(RUNENV) $(RUBY) -I./src -w -d estcmd.rb search \
++	LD_PRELOAD=/usr/lib/libpthread.so $(RUNENV) $(RUBY) -I./src -w -d estcmd.rb search \
+ 	  -vs -gs -attr "@uri" -ord "@mdate NUMD" -max 1 casket "estraier OR mikio" > check.out
+ 	rm -rf casket
+ 

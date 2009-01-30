@@ -1,6 +1,6 @@
-$OpenBSD: patch-rubynative_src_extconf_rb,v 1.1.1.1 2007/01/18 10:38:47 bernd Exp $
---- rubynative/src/extconf.rb.orig	Fri Jan  5 19:08:25 2007
-+++ rubynative/src/extconf.rb	Fri Jan  5 19:08:47 2007
+$OpenBSD: patch-rubynative_src_extconf_rb,v 1.2 2009/01/30 21:15:05 ajacoutot Exp $
+--- rubynative/src/extconf.rb.orig	Thu Apr 12 03:52:50 2007
++++ rubynative/src/extconf.rb	Fri Jan 30 21:57:25 2009
 @@ -3,12 +3,9 @@ require "mkmf"
  dir_config('estraier')
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-rubynative_src_extconf_rb,v 1.1.1.1 2007/01/18 10:38:47 bernd Ex
 -$LDFLAGS = "#{$LDFLAGS} -L. -L.. -L../.. #{estldflags}"
 -$libs = "#{$libs} #{estlibs}"
 +$CFLAGS = "#{$CFLAGS} -fomit-frame-pointer -fforce-addr"
-+$LDFLAGS = "#{$LDFLAGS}"
++$LDFLAGS = "#{$LDFLAGS} -pthread"
 +$libs = "#{$libs}"
  
  if have_header('estraier.h') and have_library('estraier')
