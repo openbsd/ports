@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2009/01/29 20:40:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.31 2009/01/30 02:18:53 sthen Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -15,6 +15,7 @@ COMMENT-gdk =		multimedia framework - gdk pixbuf plugin
 COMMENT-caca =		multimedia framework - libcaca plugin
 COMMENT-shout =		multimedia framework - shoutcast plugin
 COMMENT-soup =		multimedia framework - libsoup plugin
+COMMENT-wavpack =	multimedia framework - wavpack plugin
 
 V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
@@ -33,9 +34,11 @@ PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp2
 PKGNAME-caca =		gstreamer-libcaca-$Vp0
 PKGNAME-shout =		gstreamer-shoutcast-$Vp0
 PKGNAME-soup =		gstreamer-libsoup-$Vp1
+PKGNAME-wavpack =	gstreamer-wavpack-$V
 
 MULTI_PACKAGES =	-main -aalib -cairo -gconf -esd -flac -speex \
-			-taglib -dv -jpeg -png -gdk -caca -shout -soup
+			-taglib -dv -jpeg -png -gdk -caca -shout -soup \
+			-wavpack
 SHARED_LIBS =
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-good/}
@@ -147,6 +150,12 @@ WANTLIB-soup =		${WANTLIB} \
 
 LIB_DEPENDS-soup =	${LIB_DEPENDS} \
 			soup-2.4::devel/libsoup
+
+WANTLIB-wavpack =	${WANTLIB}
+
+LIB_DEPENDS-wavpack =	${LIB_DEPENDS} \
+			wavpack::audio/wavpack \
+			gstaudio-0.10,gstbase-0.10,gstinterfaces-0.10::$P/plugins-base
 
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} 

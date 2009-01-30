@@ -29,14 +29,17 @@ dependencies.
 * icydemux        Demux ICY tags from a stream
 * id3demux        Demux ID3v1 and ID3v2 tags from a file
 * level           RMS/Peak/Decaying Peak Level messager for audio/raw
+* libsndio        default audio sink on OpenBSD
 * matroska        Matroska containers stream handling (muxer/demuxer)
 * mulaw           MuLaw audio encoder/decoder
+* multifile       save to sequentially named files
 * multipart       multipart stream manipulation (mux/demux)
 * navigationtest  Template for a navigation video filter
-* libsndio        default audio sink on OpenBSD
+* qtdemux         Quicktime stream demuxer
 * rtp             Real-time protocol plugins: asterisk, rtp, gsm, h263...
 * rtsp            transfer data via RTSP
 * smpte           Apply the standard SMPTE transitions on video images
+* spectrum        run an FFT on signal and output spectrum data
 * udp             transfer data via UDP
 * videobalance    Hue/saturation/brightness/contrast of video stream
 * videobox        resize a video: borders/cropping
@@ -62,9 +65,9 @@ The following plugins are in specific packages because of dependencies:
 * soup
 * speex
 * taglib
+* wavpack
 
 The following plugins are not built:
 * 1394 (no firewire support yet)
 * cdio (not ported, cdparanoia is enough)
 * halelements (hal library not ported)
-* ladspa (moved to bad plugins)
