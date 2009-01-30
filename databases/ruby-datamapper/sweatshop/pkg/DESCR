@@ -1,0 +1,3 @@
+dm-sweatshop is a model factory for DataMapper.  It makes it
+easy & painless to crank out complex pseudo random models --
+useful for tests and seed data.

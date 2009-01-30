@@ -1,0 +1,2 @@
+dm-serializer allows DataMapper models and collections to be serialized
+to a variety of formats (currently JSON, XML, YAML and CSV).
