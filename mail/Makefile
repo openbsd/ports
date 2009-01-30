@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2009/01/26 14:53:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.226 2009/01/30 15:31:34 sthen Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -43,6 +43,7 @@
      SUBDIR += drac
      SUBDIR += dspam
      SUBDIR += dspam,hash
+     SUBDIR += dspam,hash,domainscale
      SUBDIR += dspam,ldap
      SUBDIR += dspam,mysql
      SUBDIR += dspam,pgsql
