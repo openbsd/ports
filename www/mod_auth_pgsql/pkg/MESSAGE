@@ -1,0 +1,11 @@
+To finish the install of mod_auth_pgsql, you need
+to enable the module using the following command
+
+  ${PREFIX}/sbin/${MODAPACHE_ENABLE}
+
+You should also read
+  ${PREFIX}/share/doc/mod_auth_pgsql/mod_auth_pgsql.html
+
+If you already have Apache running on your machine,
+you should not use "apachectl restart" - instead,
+you should fully stop and then restart the server.

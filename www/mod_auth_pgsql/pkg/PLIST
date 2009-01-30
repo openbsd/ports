@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/30 12:50:39 pea Exp $
+lib/${MODAPACHE_MODULE}
+@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+sbin/${MODAPACHE_ENABLE}
+share/doc/mod_auth_pgsql/
+share/doc/mod_auth_pgsql/mod_auth_pgsql.html
+@unexec-delete rm -f ${MODAPACHE_FINAL}

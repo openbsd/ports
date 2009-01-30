@@ -1,0 +1,15 @@
+This module allows user authentication (and can log authenthication
+requests) against information stored in a PostgreSQL database.
+
+    * Authentication
+        One database, and one (or two) tables.  One table holds the
+        username and the encryped (or plain) password.  The other table
+        holds the username and the names of the group to which the user
+        belongs.  It is possible to have username, groupname and
+        password in the same table.
+
+    * Access Logging
+        Every authentication access is logged in the same database of
+        the authentication table, but in different table.  User name and
+        date of the request are logged.  As option, it can log password,
+        ip address, request line.
