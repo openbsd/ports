@@ -1,59 +1,59 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/01/26 02:10:26 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/01/30 00:41:24 sthen Exp $
 @conflict mplex-*
 %%quicktime%%
 bin/anytovcd.sh
-bin/glav
-bin/jpeg2yuv
+@bin bin/glav
+@bin bin/jpeg2yuv
 bin/lav2avi.sh
 bin/lav2mpeg
-bin/lav2wav
-bin/lav2yuv
-bin/lavaddwav
-bin/lavinfo
-bin/lavpipe
-bin/lavplay
+@bin bin/lav2wav
+@bin bin/lav2yuv
+@bin bin/lavaddwav
+@bin bin/lavinfo
+@bin bin/lavpipe
+@bin bin/lavplay
 bin/lavtc.sh
-bin/lavtrans
-bin/matteblend.flt
-bin/mjpeg_simd_helper
-bin/mp2enc
-bin/mpeg2enc
+@bin bin/lavtrans
+@bin bin/matteblend.flt
+@bin bin/mjpeg_simd_helper
+@bin bin/mp2enc
+@bin bin/mpeg2enc
 bin/mpegtranscode
-bin/mplex
-bin/multiblend.flt
-bin/pgmtoy4m
-bin/png2yuv
-bin/pnmtoy4m
-bin/ppmtoy4m
-bin/transist.flt
-bin/y4mblack
-bin/y4mcolorbars
-bin/y4mdenoise
-bin/y4mhist
-bin/y4minterlace
-bin/y4mivtc
-bin/y4mshift
-bin/y4mspatialfilter
-bin/y4mstabilizer
-bin/y4mtopnm
-bin/y4mtoppm
-bin/y4mtoyuv
-bin/y4munsharp
-bin/ypipe
-bin/yuv2lav
-bin/yuv4mpeg
-bin/yuvcorrect
-bin/yuvcorrect_tune
-bin/yuvdeinterlace
-bin/yuvdenoise
-bin/yuvfps
-bin/yuvinactive
-bin/yuvkineco
-bin/yuvmedianfilter
-bin/yuvplay
-bin/yuvscaler
-bin/yuvycsnoise
-bin/yuyvtoy4m
+@bin bin/mplex
+@bin bin/multiblend.flt
+@bin bin/pgmtoy4m
+@bin bin/png2yuv
+@bin bin/pnmtoy4m
+@bin bin/ppmtoy4m
+@bin bin/transist.flt
+@bin bin/y4mblack
+@bin bin/y4mcolorbars
+@bin bin/y4mdenoise
+@bin bin/y4mhist
+@bin bin/y4minterlace
+@bin bin/y4mivtc
+@bin bin/y4mshift
+@bin bin/y4mspatialfilter
+@bin bin/y4mstabilizer
+@bin bin/y4mtopnm
+@bin bin/y4mtoppm
+@bin bin/y4mtoyuv
+@bin bin/y4munsharp
+@bin bin/ypipe
+@bin bin/yuv2lav
+@bin bin/yuv4mpeg
+@bin bin/yuvcorrect
+@bin bin/yuvcorrect_tune
+@bin bin/yuvdeinterlace
+@bin bin/yuvdenoise
+@bin bin/yuvfps
+@bin bin/yuvinactive
+@bin bin/yuvkineco
+@bin bin/yuvmedianfilter
+@bin bin/yuvplay
+@bin bin/yuvscaler
+@bin bin/yuvycsnoise
+@bin bin/yuyvtoy4m
 include/mjpegtools/
 include/mjpegtools/audiolib.h
 include/mjpegtools/avilib.h
