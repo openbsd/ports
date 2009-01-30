@@ -1,0 +1,12 @@
+$OpenBSD: patch-dvtm_c,v 1.1 2009/01/30 01:33:00 sthen Exp $
+--- dvtm.c.orig	Thu Jan 29 19:52:03 2009
++++ dvtm.c	Thu Jan 29 19:52:05 2009
+@@ -839,7 +839,7 @@ setup() {
+ 	signal(SIGWINCH, sigwinch_handler);
+ 	signal(SIGCHLD, sigchld_handler);
+ 	signal(SIGTERM, sigterm_handler);
+-	set_escdelay(esc_delay);
++	ESCDELAY = esc_delay;
+ }
+ 
+ static void
