@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/04/15 11:04:27 eric Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/01/30 16:22:09 eric Exp $
 @conflict cftp-*
 bin/cftp
 bin/ckeygen
@@ -25,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/default.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/default.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/direct.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/direct.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/knownhosts.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/knownhosts.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/options.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/options.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/client/unix.py
@@ -120,10 +122,14 @@ lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/keydata.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/keydata.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_agent.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_agent.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_cftp.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_cftp.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_channel.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_channel.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_checkers.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_checkers.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_conch.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_conch.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_connection.py
@@ -136,10 +142,14 @@ lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_insults.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_insults.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_keys.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_keys.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_knownhosts.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_knownhosts.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_manhole.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_manhole.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_mixin.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_mixin.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_openssh_compat.py
+lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_openssh_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_recvline.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_recvline.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/test/test_ssh.py

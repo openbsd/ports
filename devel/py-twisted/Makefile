@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/07/29 14:37:37 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2009/01/30 16:22:08 eric Exp $
 
      SUBDIR += core
      SUBDIR += conch
@@ -8,7 +8,7 @@
      SUBDIR += news
      SUBDIR += runner
      SUBDIR += web
-     SUBDIR += web2
+#     SUBDIR += web2
      SUBDIR += words
 
 .include <bsd.port.subdir.mk>

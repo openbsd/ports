@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/06/12 06:46:40 eric Exp $
+# $OpenBSD: Makefile,v 1.8 2009/01/30 16:22:09 eric Exp $
 
 COMMENT=	documentation generator
 
-VERSION=	8.1.0
+VERSION=	8.2.0
 DISTNAME=	TwistedLore-${VERSION}
 PKGNAME=	py-twisted-lore-${VERSION}
 
@@ -13,9 +13,6 @@ MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Lore/${VERSION:R}/
 REGRESS_DEPENDS=:py-twisted-lore-*:devel/py-twisted/lore
 RUN_DEPENDS=	:py-twisted-web-*:devel/py-twisted/web
 
-do-regress:
-	${LOCALBASE}/bin/trial \
-		--temp-directory=${WRKBUILD} \
-		twisted.lore
+TRIAL_TARGET=	twisted.lore
 
 .include <bsd.port.mk>

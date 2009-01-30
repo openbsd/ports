@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/04/15 11:04:27 eric Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/30 16:22:09 eric Exp $
 
 COMMENT=	process management module for Twisted
 
-VERSION=	8.0.0
+VERSION=	8.2.0
 DISTNAME=	TwistedRunner-${VERSION}
 PKGNAME=	py-twisted-runner-${VERSION}
 
@@ -12,9 +12,6 @@ MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Runner/${VERSION:R}/
 
 REGRESS_DEPENDS=:py-twisted-runner-*:devel/py-twisted/runner
 
-do-regress:
-	${LOCALBASE}/bin/trial \
-		--temp-directory=${WRKBUILD} \
-		twisted.runner
+TRIAL_TARGET=	twisted.runner
 
 .include <bsd.port.mk>
