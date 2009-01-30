@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/01/21 10:50:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/01/30 10:16:10 sturm Exp $
 
 COMMENT=		lightweight calendar
 
 DISTNAME=		dates-0.4.6
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		misc x11
 
 HOMEPAGE=		http://pimlico-project.org/dates.html
@@ -20,11 +20,11 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender atk-1.0 bonobo-2 bonobo-activation c \
 		cairo crypto dbus-1 dbus-glib-1 expat \
-		fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glib-2.0 glitz gmodule-2.0 gnome-2 gnomevfs-2 \
-		gobject-2.0 gthread-2.0 gtk-x11-2.0 m nspr4 pango-1.0 \
+		fontconfig freetype gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 \
+		glib-2.0 glitz gmodule-2.0 gnome-2 gnomevfs-2 gnutls \
+		gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0 m nspr4 pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4 \
-		png popt pthread ssl util xml2 z gio-2.0 soup-2.4
+		png popt pthread ssl tasn1 util xml2 z gio-2.0 soup-2.4
 
 MODULES=		devel/gettext \
 			textproc/intltool
