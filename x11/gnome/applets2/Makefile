@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2009/01/25 18:57:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2009/01/30 11:30:41 sturm Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -6,7 +6,7 @@ COMMENT-battstat=	GNOME applet for monitoring battery level
 GNOME_PROJECT=		gnome-applets
 GNOME_VERSION=		2.24.3.1
 
-PKGNAME-main=		gnome-applets2-${VERSION}p1
+PKGNAME-main=		gnome-applets2-${VERSION}p2
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}p0
 
 CATEGORIES=		x11
@@ -21,11 +21,11 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation \
 		bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 expat \
-		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
+		fontconfig freetype gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
-		gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 \
+		gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gnutls gobject-2.0 gpg-error \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png popt pthread ssl util xml2 z
+		pcre pixman-1 png popt pthread ssl tasn1 util xml2 z
 
 MODULES=		devel/gettext \
 			lang/python \

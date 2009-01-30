@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/01/21 15:37:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/01/30 11:30:42 sturm Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	2.0.12
-PKGNAME=	${DISTNAME}p9
+PKGNAME=	${DISTNAME}p10
 
 CATEGORIES=	net multimedia
 
@@ -23,12 +23,12 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xrender art_lgpl_2 asn1 atk-1.0 audiofile bonobo-2 \
 		bonobo-activation bonoboui-2 c cairo com_err crypto \
 		dbus-1 dbus-glib-1 expat fontconfig freetype \
-		gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
+		gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
 		glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
-		gnomevfs-2 gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0 \
-		krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 \
+		gnomevfs-2 gnutls gobject-2.0 gpg-error gssapi gthread-2.0 \
+		gtk-x11-2.0 krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pt pthread \
-		smime3 softokn3 ssl ssl3 stdc++ usbhid util xml2 z \
+		smime3 softokn3 ssl ssl3 stdc++ tasn1 usbhid util xml2 z \
 		gio-2.0 sndio soup-2.4 sqlite3
 
 MODULES=	devel/gettext \
