@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2009/01/20 23:13:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2009/01/30 18:15:59 jasper Exp $
 
 COMMENT=		Eazel Extensions Library
 
 GNOME_PROJECT=		eel
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 SHARED_LIBS +=	eel-2                22.0     # .26.1
 CATEGORIES=		devel
