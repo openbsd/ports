@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/01/21 14:15:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/01/30 20:49:41 sturm Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
 GNOME_VERSION=		2.24.1
-PKGNAME=		py-gnome-desktop-${VERSION}p1
+PKGNAME=		py-gnome-desktop-${VERSION}p2
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -24,14 +24,15 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite \
 		bonobo-activation bonoboui-2 bz2 cairo camel-1.2 com_err \
 		croco-0.6 crypto dbus-1 dbus-glib-1 ebook-1.2 ecal-1.2 \
 		edataserver-1.2 expat fontconfig freetype gailutil \
-		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 \
+		gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-desktop-2 \
 		gnome-keyring gnomecanvas-2 gnomeprint-2-2 gnomeui-2 \
-		gnomevfs-2 gobject-2.0 gsf-1 gssapi gstreamer-0.10 \
+		gnomevfs-2 gnutls gobject-2.0 gpg-error gsf-1 gssapi \
+		gstreamer-0.10 \
 		gthread-2.0 gtk-x11-2.0 krb5 kvm m nspr4 nss3 pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4 \
 		png popt smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 \
-		startup-notification-1 util wnck-1 xml2 z
+		startup-notification-1 tasn1 util wnck-1 xml2 z
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome \

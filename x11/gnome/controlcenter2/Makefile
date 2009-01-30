@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2009/01/20 23:13:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2009/01/30 20:49:41 sturm Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
@@ -20,14 +20,14 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xrender Xss art_lgpl_2 asn1 atk-1.0 bonobo-2 \
 		bonobo-activation bonoboui-2 bz2 c cairo com_err crypto \
 		dbus-1 dbus-glib-1 expat fontconfig freetype gailutil \
-		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 \
+		gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-desktop-2 \
-		gnome-keyring gnome-menu gnomecanvas-2 gnomeui-2 gnomevfs-2 \
-		gobject-2.0 gsf-1 gssapi gstbase-0.10 gstreamer-0.10 \
+		gnome-keyring gnome-menu gnomecanvas-2 gnomeui-2 gnomevfs-2 gnutls \
+		gobject-2.0 gpg-error gsf-1 gssapi gstbase-0.10 gstreamer-0.10 \
 		gthread-2.0 gtk-x11-2.0 krb5 ltdl m nspr4 nss3 ogg \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 \
 		pcre pixman-1 plc4 plds4 png popt pthread smime3 softokn3 \
-		soup-2.4 sqlite3 ssl ssl3 startup-notification-1 util \
+		soup-2.4 sqlite3 ssl ssl3 startup-notification-1 tasn1 util \
 		vorbis vorbisfile xkbfile xml2 z
 
 MODULES=		devel/gettext \

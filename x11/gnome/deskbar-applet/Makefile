@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/01/20 23:13:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/01/30 20:49:41 sturm Exp $
 
 COMMENT=		universal search and navigation for GNOME
 
 GNOME_VERSION=		2.24.3
 GNOME_PROJECT=		deskbar-applet
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		sysutils
 
@@ -25,13 +25,14 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xrender art_lgpl_2 asn1 atk-1.0 bonobo-2 \
 		bonobo-activation bonoboui-2 cairo com_err crypto dbus-1 \
 		dbus-glib-1 expat fontconfig freetype gailutil \
-		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
+		gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		glitz gmodule-2.0 gnome-2 gnome-desktop-2 gnome-keyring \
-		gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gssapi \
+		gnomecanvas-2 gnomeui-2 gnomevfs-2 gnutls gobject-2.0 \
+		gpg-error gssapi \
 		gthread-2.0 gtk-x11-2.0 krb5 m nspr4 nss3 pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4 \
 		png popt smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 \
-		startup-notification-1 util xml2 z
+		startup-notification-1 tasn1 util xml2 z
 
 BUILD_DEPENDS=		::x11/dbus-python \
 			::x11/gnome/doc-utils \
