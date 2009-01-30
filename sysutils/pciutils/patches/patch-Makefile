@@ -1,13 +1,20 @@
-$OpenBSD: patch-Makefile,v 1.2 2006/12/30 14:55:25 matthieu Exp $
---- Makefile.orig	Sat Sep  9 14:57:03 2006
-+++ Makefile	Wed Nov 22 22:43:48 2006
+--- Makefile.orig	Sun Nov  9 21:28:18 2008
++++ Makefile	Wed Jan  7 13:41:39 2009
 @@ -1,8 +1,7 @@
  # Makefile for The PCI Utilities
- # (c) 1998--2006 Martin Mares <mj@ucw.cz>
+ # (c) 1998--2008 Martin Mares <mj@ucw.cz>
  
 -OPT=-O2
 -CFLAGS=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
 +CFLAGS+= -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
  
- VERSION=2.2.4
- DATE=2006-09-09
+ VERSION=3.0.3
+ DATE=2008-11-09
+@@ -97,7 +96,6 @@
+ 	$(INSTALL) -c -m 755 update-pciids $(DESTDIR)$(SBINDIR)
+ 	$(INSTALL) -c -m 644 $(PCI_IDS) $(DESTDIR)$(IDSDIR)
+ 	$(INSTALL) -c -m 644 lspci.8 setpci.8 update-pciids.8 $(DESTDIR)$(MANDIR)/man8
+-	$(INSTALL) -c -m 644 pcilib.7 $(DESTDIR)$(MANDIR)/man7
+ ifeq ($(SHARED),yes)
+ 	$(DIRINSTALL) -m 755 $(DESTDIR)$(LIBDIR)
+ 	$(INSTALL) -c -m 644 lib/$(PCILIB) $(DESTDIR)$(LIBDIR)

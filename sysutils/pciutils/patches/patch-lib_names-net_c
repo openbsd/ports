@@ -1,0 +1,20 @@
+--- lib/names-net.c.ori	Wed Jan  7 12:50:25 2009
++++ lib/names-net.c	Wed Jan  7 12:52:26 2009
+@@ -194,7 +194,7 @@
+       resolver_inited = 1;
+       res_init();
+     }
+-  res = res_query(dnsname, ns_c_in, ns_t_txt, answer, sizeof(answer));
++  res = res_query(dnsname, C_IN, T_TXT, answer, sizeof(answer));
+   if (res < 0)
+     {
+       a->debug("\tfailed, h_errno=%d\n", h_errno);
+@@ -208,7 +208,7 @@
+   dns_init_section(&ds, DNS_SEC_ANSWER);
+   while (dns_parse_rr(&ds) > 0)
+     {
+-      if (ds.rr_class != ns_c_in || ds.rr_type != ns_t_txt)
++      if (ds.rr_class != C_IN || ds.rr_type != T_TXT)
+ 	{
+ 	  a->debug("\tUnexpected RR in answer: class %d, type %d\n", ds.rr_class, ds.rr_type);
+ 	  continue;
