@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2009/01/30 20:26:17 naddy Exp $
+--- Makefile.in.orig	Mon Sep 22 18:57:55 2008
++++ Makefile.in	Tue Jan 27 14:54:50 2009
+@@ -23,7 +23,7 @@ SRCS = actions.c ansi.c apl.c c3270.c charset.c child.
+ 	unicode.c unicode_dbcs.c utf8.c util.c xio.c XtGlue.c
+ VOBJS = actions.o ansi.o apl.o c3270.o charset.o child.o ctlr.o fallbacks.o \
+ 	ft.o ft_cut.o ft_dft.o glue.o help.o host.o icmd.o idle.o keymap.o \
+-	kybd.o macros.o print.o printer.o proxy.o resolver.c resources.o \
++	kybd.o macros.o print.o printer.o proxy.o resolver.o resources.o \
+ 	rpq.o screen.o see.o sf.o tables.o telnet.o toggles.o trace_ds.o \
+ 	unicode.o unicode_dbcs.o utf8.o util.o xio.o XtGlue.o
+ OBJS1 = $(VOBJS) version.o
