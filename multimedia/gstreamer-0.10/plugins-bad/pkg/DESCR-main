@@ -6,15 +6,11 @@ Those plugins for gstreamer-${VERSION} are deemed low quality for now.
 * h264parse                Parse raw h264 streams
 * modplug                  various .mod audio decoding
 * nsfdec                   decode .nsf files
-* qtdemux                  Quicktime stream demuxer
 * replaygain               ReplayGain analysis
 * rfbsrc                   connect to vnc
-* multifile                save to sequentially named files
-* spectrum                 run an FFT on signal and output spectrum data
 * speed                    set speed/pitch on audio/raw streams (resampler)
 * tta                      TTA lossless audio format handling
 * videocrop                Crops video into a user-defined region
-* xingheader               Add a xing header to mp3 encoded data
 * y4menc                   yuv4mpeg video encoder
 
 The following plugins are in specific packages because of dependencies:
@@ -46,4 +42,3 @@ The following plugins are not built:
 * soundtouch (no libsoundtouch)
 * spcdec (no library)
 * swfdec (library is out-of-date)
-* wavpack (no wavpack library)

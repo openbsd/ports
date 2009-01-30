@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/01/30 00:47:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2009/01/30 01:11:03 sthen Exp $
 
 COMMENT-main =		multimedia framework - plugins bad
 COMMENT-tremor =	multimedia framework - tremor plugin
@@ -20,7 +20,7 @@ COMMENT-mplex =		multimedia framework - mplex plugin
 
 V =			0.10.7
 DISTNAME =		gst-plugins-bad-$V
-PKGNAME-main =		gstreamer-plugins-bad-${V}p4
+PKGNAME-main =		gstreamer-plugins-bad-${V}p5
 PKGNAME-tremor =	gstreamer-tremor-$Vp1
 PKGNAME-musepack =	gstreamer-musepack-$Vp1
 PKGNAME-faac =		gstreamer-faac-$Vp1
