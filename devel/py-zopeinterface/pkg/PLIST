@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/03/26 20:35:52 eric Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/01/30 16:18:10 eric Exp $
 lib/python${MODPY_VERSION}/site-packages/zope/
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -23,6 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/zope/interface/_zope_interface_coptimiz
 lib/python${MODPY_VERSION}/site-packages/zope/interface/_zope_interface_coptimizations.so
 lib/python${MODPY_VERSION}/site-packages/zope/interface/adapter.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/adapter.pyc
+lib/python${MODPY_VERSION}/site-packages/zope/interface/adapter.ru.txt
 lib/python${MODPY_VERSION}/site-packages/zope/interface/adapter.txt
 lib/python${MODPY_VERSION}/site-packages/zope/interface/advice.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/advice.pyc
@@ -44,6 +45,8 @@ lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/basemapping
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/basemapping.pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/test_idatetime.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/test_idatetime.pyc
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/test_import_interfaces.py
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/test_import_interfaces.pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/declarations.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/declarations.pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/document.py
