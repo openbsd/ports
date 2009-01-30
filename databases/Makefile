@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2009/01/06 13:29:30 pirofti Exp $
+# $OpenBSD: Makefile,v 1.154 2009/01/30 02:42:44 bernd Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -130,6 +130,9 @@
      SUBDIR += qt3-sqlite3-plugin
      SUBDIR += ruby-activerecord
      SUBDIR += ruby-bdb
+     SUBDIR += ruby-datamapper
+     SUBDIR += ruby-data_objects
+     SUBDIR += ruby-do_sqlite3
      SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap
      SUBDIR += ruby-mysql
