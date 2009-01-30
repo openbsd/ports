@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.376 2009/01/29 00:00:27 bernd Exp $
+# $OpenBSD: Makefile,v 1.377 2009/01/30 00:37:53 bernd Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -306,6 +306,7 @@
      SUBDIR += rt
      SUBDIR += ruby-activemerchant
      SUBDIR += ruby-activeresource
+     SUBDIR += ruby-addressable
      SUBDIR += ruby-fcgi
      SUBDIR += ruby-merb
      SUBDIR += ruby-mongrel
