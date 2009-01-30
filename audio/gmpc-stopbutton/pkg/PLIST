@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/15 13:17:05 landry Exp $
-share/gmpc/plugins/
-share/gmpc/plugins/libstopbutton.a
-share/gmpc/plugins/libstopbutton.la
-share/gmpc/plugins/libstopbutton.so
