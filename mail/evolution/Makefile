@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2009/01/20 23:15:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2009/01/30 21:36:48 sturm Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
@@ -6,7 +6,7 @@ COMMENT=		integrated email and PIM software for GNOME
 # in mail/evolution-plugin-rss/Makefile (and bump).
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=    		mail
 
@@ -34,12 +34,13 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xrender art_lgpl_2 asn1 atk-1.0 bonobo-2 \
 		bonobo-activation bonoboui-2 c cairo com_err crypto \
 		db dbus-1 dbus-glib-1 enchant expat fontconfig freetype \
-		gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
+		gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
-		gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gssapi \
-		gthread-2.0 gtk-x11-2.0 krb5 m nspr4 pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4 \
-		png popt pthread sasl2 sqlite3 ssl ssl3 stdc++ util xml2 z
+		gnomecanvas-2 gnomeui-2 gnomevfs-2 gnutls gobject-2.0 \
+		gpg-error gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4 \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
+		plc4 plds4 png popt pthread sasl2 sqlite3 ssl ssl3 stdc++ \
+		tasn1 util xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
