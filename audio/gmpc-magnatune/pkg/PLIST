@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/15 13:14:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/01/30 22:54:59 landry Exp $
+lib/gmpc/
+lib/gmpc/plugins/
+lib/gmpc/plugins/magnatuneplugin.a
+lib/gmpc/plugins/magnatuneplugin.la
+lib/gmpc/plugins/magnatuneplugin.so
 share/gmpc/plugins/
 share/gmpc/plugins/magnatune/
 share/gmpc/plugins/magnatune/magnatune.png
-share/gmpc/plugins/magnatune/xdg-open
-share/gmpc/plugins/magnatuneplugin.a
-share/gmpc/plugins/magnatuneplugin.la
-share/gmpc/plugins/magnatuneplugin.so

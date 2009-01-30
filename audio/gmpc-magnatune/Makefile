@@ -1,38 +1,40 @@
-# $OpenBSD: Makefile,v 1.8 2008/06/15 00:04:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/01/30 22:54:59 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		magnatune browser, for gmpc
 
-VERSION=		0.15.5.0
+VERSION=		0.17.0
 DISTNAME=		gmpc-magnatune-${VERSION}
-PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-HOMEPAGE=		http://sarine.nl/gmpc-plugins-magnatune
+HOMEPAGE=		http://gmpcwiki.sarine.nl/index.php?title=Magnatune
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xrender atk-1.0 cairo expat fontconfig \
 		Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr \
-		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 glib-2.0 \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 gio-2.0 glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m mpd pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png xml2 z
 
-MASTER_SITES=		http://download.sarine.nl/gmpc-${VERSION:S/.0//}/ \
-			http://humppa.nl/distfiles/gmpc/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=musicpd/}
 
 MODULES=		devel/gettext
-RUN_DEPENDS=		:gmpc->=${VERSION}:audio/gmpc
+RUN_DEPENDS=		:gmpc->=${VERSION}:audio/gmpc \
+			::devel/xdg-utils
 BUILD_DEPENDS=		${RUN_DEPENDS}
 USE_LIBTOOL=		Yes
 USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
+
+post-configure:
+	${SUBST_CMD} ${WRKSRC}/src/plugin.c
 
 .include <bsd.port.mk>
