@@ -1,0 +1,2 @@
+This plugin exposes three new controller methods which allows to
+simply and flexibly filter the parameters available within the controller.
