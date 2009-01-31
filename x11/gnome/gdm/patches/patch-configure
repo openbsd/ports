@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.14 2009/01/28 16:39:01 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.15 2009/01/31 12:09:49 ajacoutot Exp $
 --- configure.orig	Wed Dec 10 23:26:30 2008
-+++ configure	Wed Jan 28 14:49:12 2009
++++ configure	Sat Jan 31 10:48:03 2009
 @@ -31009,7 +31009,6 @@ fi
  if test x$with_tcp_wrappers = xno ; then
  	echo "TCP wrappers disabled"
@@ -35,6 +35,19 @@ $OpenBSD: patch-configure,v 1.14 2009/01/28 16:39:01 ajacoutot Exp $
  
  gdmlocaledir=${gdmconfdir}
  
+@@ -33715,9 +33715,9 @@ case "$host" in
+ 	;;
+ *openbsd*)
+ 	HOST_GDM_USER_PATH="/bin:/usr/bin"
+-	HOST_HALT_COMMAND="/sbin/halt -p;/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
+-	HOST_REBOOT_COMMAND="/usr/bin/reboot;/sbin/reboot;/sbin/shutdown -r now;/usr/sbin/shutdown -r now"
+-	HOST_SUSPEND_COMMAND="/usr/bin/zzz"
++	HOST_HALT_COMMAND="/sbin/halt -p;/sbin/shutdown -hp now"
++	HOST_REBOOT_COMMAND="/sbin/reboot;/sbin/shutdown -r now"
++	HOST_SUSPEND_COMMAND="/usr/sbin/zzz"
+ 	HOST_XSESSION_SHELL=/bin/sh
+ 	HOST_SOUND_PROGRAM="$real_gdm_prefix/bin/play"
+ 	HOST_GDMGNOMESESSIONCMD=gnome-session
 @@ -33834,6 +33834,12 @@ else
     GDM_USER_PATH="$GDM_USER_PATH:/usr/bin/X11:/usr/X11R6/bin:/usr/local/bin:/opt/X11R6/bin"
     X_CONFIG_OPTIONS="-audit 0"

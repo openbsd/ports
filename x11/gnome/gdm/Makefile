@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2009/01/28 16:39:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2009/01/31 12:09:49 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.9
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
