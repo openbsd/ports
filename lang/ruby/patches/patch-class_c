@@ -1,0 +1,21 @@
+$OpenBSD: patch-class_c,v 1.1 2009/01/31 09:54:31 bernd Exp $
+
+Fix usage of short-named constants.
+
+http://svn.ruby-lang.org/cgi-bin/viewvc.cgi?view=rev&revision=18485
+https://bugs.launchpad.net/ubuntu/+source/ruby1.8/+bug/282302
+
+--- class.c.orig	Sat Jun 28 12:27:21 2008
++++ class.c	Tue Jan 27 09:46:14 2009
+@@ -62,7 +62,10 @@ clone_method(mid, body, data)
+     NODE *fbody = body->nd_body;
+ 
+     if (fbody && nd_type(fbody) == NODE_SCOPE) {
+-	fbody = rb_copy_node_scope(fbody, ruby_cref);
++	NODE *cref = (NODE*)fbody->nd_rval;
++
++	if (cref) cref = cref->nd_next;
++	fbody = rb_copy_node_scope(fbody, NEW_CREF(data->klass, cref));
+     }
+     st_insert(data->tbl, mid, (st_data_t)NEW_METHOD(fbody, body->nd_noex));
+     return ST_CONTINUE;
