@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2009/01/30 21:36:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.57 2009/01/31 08:32:35 jasper Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
 # in mail/evolution-plugin-rss/Makefile (and bump).
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p1
+GNOME_VERSION=		2.24.4
 
 CATEGORIES=    		mail
 
@@ -49,10 +48,9 @@ BUILD_DEPENDS=		::devel/bison \
 			::textproc/rarian \
 			::x11/gnome/doc-utils \
 			::misc/shared-mime-info
-RUN_DEPENDS=		::devel/desktop-file-utils \
-			::textproc/rarian \
+RUN_DEPENDS=		::textproc/rarian \
 			::x11/hicolor-icon-theme
-LIB_DEPENDS=		camel-1.2,camel-provider-1.2,ebackend-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2,egroupwise-1.2,exchange-storage-1.2,gdata-1.2,gdata-google-1.2::databases/evolution-data-server \
+LIB_DEPENDS=		camel-1.2,camel-provider-1.2,ebackend-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2,egroupwise-1.2,exchange-storage-1.2,gdata-1.2,gdata-google-1.2:evolution-data-server->=2.24.3:databases/evolution-data-server \
 			lber.>=7,ldap.>=7::databases/openldap \
 			notify.>=2::devel/libnotify \
 			soup-2.4::devel/libsoup \
@@ -80,9 +78,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib/evolution/${R}/components:${LOCALBASE}/lib/evolution/${R}:${LOCALBASE}/lib -Z"
 
-# XXX
-#R=			${GNOME_VERSION:R}
-R=			2.24
+# Only get the first x.y which is needed in the PLIST.
+R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		R
 
 post-patch:
