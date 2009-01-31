@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2009/01/28 16:56:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2009/01/31 10:11:38 jakemsr Exp $
 
 COMMENT=	graphical multiplayer 3D tank war game
 
 DISTNAME=	bzflag-2.0.8
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 

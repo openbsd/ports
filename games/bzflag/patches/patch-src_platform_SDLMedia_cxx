@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_platform_SDLMedia_cxx,v 1.1 2009/01/31 10:11:38 jakemsr Exp $
+--- src/platform/SDLMedia.cxx.orig	Sat Jan 24 06:56:49 2009
++++ src/platform/SDLMedia.cxx	Sat Jan 24 15:59:52 2009
+@@ -68,8 +68,7 @@ bool			SDLMedia::openAudio()
+ 
+   // how big a fragment to use?  we want to hold at around 1/10th of
+   // a second.
+-  // probably SDL is using multiple buffering, make it a 3rd
+-  int fragmentSize = (int)(0.03f * (float)audioOutputRate);
++  int fragmentSize = (int)(0.1f * (float)audioOutputRate);
+   int n;
+ 
+   n = 0;
