@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: soffice.sh,v 1.1.1.1 2008/10/30 18:51:05 robert Exp $
+# $OpenBSD: soffice.sh,v 1.2 2009/01/31 01:06:20 robert Exp $
 #
 
 # Since the openoffice-java package may not exist
@@ -20,29 +20,29 @@ fi
 case "$0"
 in
 	*swriter)
-		exec %%LOCALBASE%%/openoffice/program/soffice -writer "$@"
+		exec %%LOCALBASE%%/openoffice.org3/program/soffice -writer "$@"
 		;;
 	*scalc)
-		exec %%LOCALBASE%%/openoffice/program/soffice -calc "$@"
+		exec %%LOCALBASE%%/openoffice.org3/program/soffice -calc "$@"
 		;;
 	*sdraw)
-		exec %%LOCALBASE%%/openoffice/program/soffice -draw "$@"
+		exec %%LOCALBASE%%/openoffice.org3/program/soffice -draw "$@"
 		;;
 	*simpress)
-		exec %%LOCALBASE%%/openoffice/program/soffice -impress "$@"
+		exec %%LOCALBASE%%/openoffice.org3/program/soffice -impress "$@"
 		;;
 	*sbase)
-		exec %%LOCALBASE%%/openoffice/program/soffice -base "$@"
+		exec %%LOCALBASE%%/openoffice.org3/program/soffice -base "$@"
 		;;
 	*smath)
-		exec %%LOCALBASE%%/openoffice/program/soffice -math "$@"
+		exec %%LOCALBASE%%/openoffice.org3/program/soffice -math "$@"
 		;;
 	*spadmin)
-		exec %%LOCALBASE%%/openoffice/program/spadmin "$@"
+		exec %%LOCALBASE%%/openoffice.org3/program/spadmin "$@"
 		;;
 	*setofficelang)
-		exec %%LOCALBASE%%/openoffice/program/setofficelang "$@"
+		exec %%LOCALBASE%%/openoffice.org/basis3.0/program/setofficelang "$@"
 		;;
 	*)
-		exec %%LOCALBASE%%/openoffice/program/soffice "$@"
+		exec %%LOCALBASE%%/openoffice.org3/program/soffice "$@"
 esac

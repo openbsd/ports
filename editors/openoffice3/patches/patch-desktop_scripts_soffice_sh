@@ -1,5 +1,5 @@
---- desktop/scripts/soffice.sh.orig.port	Fri Aug  8 07:39:58 2008
-+++ desktop/scripts/soffice.sh	Mon Jan 19 11:36:14 2009
+--- desktop/scripts/soffice.sh.orig.port	Wed Aug  6 18:44:36 2008
++++ desktop/scripts/soffice.sh	Thu Jan 29 15:37:19 2009
 @@ -43,6 +43,11 @@ export SAL_ENABLE_FILE_LOCKING
  # working on your system.
  # SAL_NOOPENGL=true; export SAL_NOOPENGL
@@ -12,53 +12,20 @@
  # the following test is needed on Linux PPC with IBM j2sdk142
  if [ "`uname -s`" = "Linux" -a "`uname -m`" = "ppc" ] ; then
      JITC_PROCESSOR_TYPE=6
-@@ -73,6 +78,10 @@ do
+@@ -72,6 +77,16 @@ do
+        -env:*) BOOTSTRAPVARS=$BOOTSTRAPVARS" ""$arg";;
    esac
  done
- 
-+# XXX Hack to set corrent library path(s)
-+LD_LIBRARY_PATH=/usr/local/openoffice/ure/lib:/usr/local/openoffice/program:${LD_LIBRARY_PATH+:$LD_LIBRARY_PATH}
-+export LD_LIBRARY_PATH
 +
++# this is a temporary hack until we can live with the default search paths
++case "`uname -s`" in
++OpenBSD)
++	sd_prog1="$sd_prog/../basis-link/program"
++	sd_prog2="$sd_prog/../basis-link/ure-link/lib"
++	LD_LIBRARY_PATH=$sd_prog1:$sd_prog2${LD_LIBRARY_PATH+:${LD_LIBRARY_PATH}}
++	export LD_LIBRARY_PATH
++	;;
++esac
+ 
  # extend the ld_library_path for java: javaldx checks the sofficerc for us
  if [ -x "$sd_prog/../basis-link/ure-link/bin/javaldx" ] ; then
-     my_path=`"$sd_prog/../basis-link/ure-link/bin/javaldx" $BOOTSTRAPVARS \
-@@ -91,38 +100,10 @@ unset XENVIRONMENT
- # uncomment line below if you encounter problems starting soffice on your system
- # SAL_NO_XINITTHREADS=true; export SAL_NO_XINITTHREADS
- 
--# pagein
--for sd_arg in ${1+"$@"} ; do
--    case ${sd_arg} in
--    -calc)
--        sd_pagein_args="${sd_pagein_args:+${sd_pagein_args} }@pagein-calc"
--        break;
--        ;;
--    -draw)
--        sd_pagein_args="${sd_pagein_args:+${sd_pagein_args} }@pagein-draw"
--        break;
--        ;;
--    -impress)
--        sd_pagein_args="${sd_pagein_args:+${sd_pagein_args} }@pagein-impress"
--        break;
--        ;;
--    -writer)
--        sd_pagein_args="${sd_pagein_args:+${sd_pagein_args} }@pagein-writer"
--        break;
--        ;;
--    *)
--        ;;
--    esac
--done
--
- # read database entries for Adabas D
- if [ -f /etc/adabasrc ]; then
-   . /etc/adabasrc
- fi
--
--sd_pagein_args="${sd_pagein_args:+${sd_pagein_args} }@pagein-common"
--"$sd_prog/../basis-link/program/pagein" -L"$sd_prog/../basis-link/program" \
--    ${sd_pagein_args}
- 
- # Set PATH so that crash_report is found:
- PATH=$sd_prog${PATH+:$PATH}

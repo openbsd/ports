@@ -1,0 +1,20 @@
+$OpenBSD: patch-desktop_scripts_unopkg_sh,v 1.1 2009/01/31 01:06:20 robert Exp $
+--- desktop/scripts/unopkg.sh.orig.port	Thu Jan 29 17:34:40 2009
++++ desktop/scripts/unopkg.sh	Thu Jan 29 17:35:24 2009
+@@ -56,6 +56,16 @@ do
+   esac
+ done
+ 
++# this is a temporary hack until we can live with the default search paths
++case "`uname -s`" in
++OpenBSD)
++	sd_prog1="$sd_prog/../basis-link/program"
++	sd_prog2="$sd_prog/../basis-link/ure-link/lib"
++	LD_LIBRARY_PATH=$sd_prog1:$sd_prog2${LD_LIBRARY_PATH+:${LD_LIBRARY_PATH}}
++	export LD_LIBRARY_PATH
++	;;
++esac
++
+ # extend the ld_library_path for java: javaldx checks the sofficerc for us
+ if [ -x "$sd_prog/../basis-link/ure-link/bin/javaldx" ] ; then
+     my_path=`"$sd_prog/../basis-link/ure-link/bin/javaldx" $BOOTSTRAPVARS \

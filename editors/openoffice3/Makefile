@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/01/22 17:44:38 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/31 01:06:20 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,9 +6,9 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of OpenOffice to the KDE environment
 COMMENT-java=	optional integration of OpenOffice java features
 
-VERSION=	3.0.1rc1
+VERSION=	3.0.1
 DISTNAME=	OOo_${VERSION}
-WRKDIST=	${WRKDIR}/ooo_OOO300_m15_src
+WRKDIST=	${WRKDIR}/OOO300_m15
 PKGNAME=	openoffice-${VERSION}
 PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
@@ -20,7 +20,8 @@ SHARED_LIBS=	stlport_gcc	4.5
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.openoffice.org/
-MASTER_SITES=	http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Sources/ \
+MASTER_SITES=	http://vlaai.snt.utwente.nl/pub/software/openoffice/stable/${VERSION}/ \
+		http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Sources/ \
 		http://humppa.hu/ooo/ \
 		ftp://ftp.ussg.iu.edu/pub/openoffice/stable/${VERSION}/ \
 		ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/stable/${VERSION}/ \
@@ -33,10 +34,9 @@ MASTER_SITES0=	http://www.bsd.hu/~robert/ooo/ \
 		http://humppa.hu/ooo/
 
 DISTFILES=	ooo-desktop-0.1.tar.gz:0
-#.for dfile in binfilter core extensions l10n system
-#DISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
-#.endfor
-DISTFILES+=	OOo_OOO300_m15_source.tar.gz
+.for dfile in binfilter core extensions l10n system
+DISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
+.endfor
 
 DIST_SUBDIR=	openoffice
 
@@ -78,6 +78,10 @@ BUILD_DEPENDS+=	:zip-*:archivers/zip \
 		:db-java-4.*:databases/db/v4,-java,java \
 		::devel/boost
 
+LIB_DEPENDS:   raptor.2 from raptor-1.4.18 (/usr/local/openoffice.org/basis3.0/program/libunordf.so)
+LIB_DEPENDS:   rasqal.1 from redland-1.0.8 (/usr/local/openoffice.org/basis3.0/program/libunordf.so)
+LIB_DEPENDS:   rdf.0 from redland-1.0.8 (/usr/local/openoffice.org/basis3.0/program/libunordf.so)
+
 MODULES+=	lang/python
 LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
@@ -88,13 +92,13 @@ LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.
 		wpd.>=8::textproc/libwpd \
 		icuuc.>=0::textproc/icu4c \
 		::devel/gperf \
-		::textproc/raptor \
-		::textproc/redland
+		raptor.>=2::textproc/raptor \
+		rdf.>=0::textproc/redland
 WANTLIB-main=	ICE SM X11 Xau Xcomposite Xdamage Xdmcp Xext Xrender Xcursor \
 		Xfixes Xi Xinerama Xrandr atk-1.0 c cairo crypto expat \
-		fontconfig freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+		fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 iconv intl jpeg m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 png pthread stdc++ ssl util xml2 z icui18n icule 
+		pangoft2-1.0 pixman-1 png pthread rasqal ssl util xml2 z icui18n icule 
 RUN_DEPENDS-main=	::java/javaPathHelper \
 			:desktop-file-utils-*:devel/desktop-file-utils
 
@@ -102,7 +106,7 @@ MODULES+=		x11/qt3
 RUN_DEPENDS-kde=	::editors/openoffice
 LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
 			kabc,kdecore,kdeui,kio::x11/kde/libs3
-WANTLIB-kde=		X11 Xext m
+WANTLIB-kde=		X11 Xau Xdmcp Xext Xrandr Xrender m
 
 MODULES+=		java
 MODJAVA_VER=		1.4+
@@ -111,14 +115,12 @@ LIB_DEPENDS-java=
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
 			::editors/openoffice \
 			:db-java-4.*:databases/db/v4,-java,java
-WANTLIB-java=		c m pthread stdc++
+WANTLIB-java=		c m pthread
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 VMEM_WARNING=	Yes
-
-#PATCHFILES=	build-java-target-2.4.0.diff:0
 
 PATCHORIG=	.orig.port
 WRKCONF=	${WRKSRC}/config_office
@@ -160,19 +162,19 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-epm=internal \
 		--with-alloc=system \
 		--with-java \
-		--with-java-target-version=1.4 \
 		--with-jdk-home=${JAVA_HOME} \
 		--with-ant-home=${LOCALBASE}/ant/lib \
 		--with-db-jar=${LOCALBASE}/lib/db4/db.jar \
+		--with-vba-package-format="builtin" \
 		--with-lang="en-US ${LANGS}"
 
 # Some cool OpenOffice.Org extensions
-#CONFIGURE_ARGS+=	--enable-minimizer \
-#			--enable-presenter-console \
-#			--enable-pdfimport
-#EXTENSIONS=		minimizer/sun-presentation-minimizer.oxt \
-#			presenter/presenter-screen.oxt \
-#			pdfimport/pdfimport.oxt
+CONFIGURE_ARGS+=	--enable-minimizer \
+			--enable-presenter-console \
+			--enable-pdfimport
+EXTENSIONS=		minimizer/sun-presentation-minimizer.oxt \
+			presenter/presenter-screen.oxt \
+			pdfimport/pdfimport.oxt
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=	--enable-symbols \
@@ -204,6 +206,9 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${TCSH} -c 'limit descriptors 256 && source OpenBSDEnv.Set && ${BUILD_CMD}' 
 
 do-install:
+	@rm -Rf ${WRKDIR}/tmp
+	@mkdir ${WRKDIR}/tmp
+
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/openoffice
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/48x48/apps
 
@@ -218,21 +223,20 @@ do-install:
 
 	cd ${WRKSRC}/instsetoo_native/unxobsd.pro/OpenOffice/portable/install/en-US*/openbsd-* && \
 		for SW in `ls -1 *.sw`; do \
-			${TAR} xf $$SW -C ${PREFIX}; \
+			${TAR} xf $$SW -C ${WRKDIR}/tmp; \
 		done
 
 .for l in ${LANGS}
 	cd ${WRKSRC}/instsetoo_native/unxobsd.pro/OpenOffice_languagepack/portable/install/$l/openbsd-* && \
 		for SW in `ls -1 *.sw`; do \
-			${TAR} xf $$SW -C ${PREFIX}; \
+			${TAR} xf $$SW -C ${WRKDIR}/tmp; \
 		done
 .endfor
 
-	cd ${WRKSRC}/bridges/unxobsd.pro/lib && \
-		for UNOLIB in `ls -1 *.so`; do \
-			${INSTALL_DATA} $$UNOLIB \
-				${PREFIX}/openoffice/program; \
-		done
+	cd ${WRKDIR}/tmp/opt ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}
+
+	cd ${WRKSRC}/solver/300/unxobsd.pro/bin && \
+		${INSTALL_DATA}	${EXTENSIONS} ${PREFIX}/openoffice.org3/share/extension/install
 
 	${INSTALL_SCRIPT} ${FILESDIR}/soffice.sh ${PREFIX}/bin/soffice
 	perl -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g; \
