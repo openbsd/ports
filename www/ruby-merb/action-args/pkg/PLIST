@@ -1,17 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/05/09 17:33:16 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/01/31 12:40:06 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/GetArgs.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/GetArgs.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/GetArgs.src/M000001.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/GetArgs.src/M000005.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/GetArgs.src/M000006.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/GetArgs.src/M000007.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AbstractController.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AbstractController.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AbstractController.src/M000002.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AbstractController.src/M000003.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AbstractController.src/M000008.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/AbstractController.src/M000009.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Method.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ParseTreeArray.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ParseTreeArray.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ParseTreeArray.src/M000001.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ParseTreeArray.src/M000002.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ParseTreeArray.src/M000003.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ParseTreeArray.src/M000004.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnboundMethod.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/LICENSE.html
@@ -21,6 +31,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/merb-action-args/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/merb-action-args/abstract_controller_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/merb-action-args/get_args_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/merb-action-args/jruby_args_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/merb-action-args_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/fr_class_index.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/fr_file_index.html
@@ -29,6 +40,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/index.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/rdoc-style.css
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/GetArgs/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/GetArgs/build_args-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/GetArgs/cdesc-GetArgs.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/GetArgs/get_args-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/
@@ -40,7 +52,11 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/cdesc-Merb.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Method/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Method/cdesc-Method.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ParseTreeArray/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ParseTreeArray/arg_nodes-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ParseTreeArray/cdesc-ParseTreeArray.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ParseTreeArray/deep_array_node-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ParseTreeArray/get_args-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ParseTreeArray/translate-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UnboundMethod/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UnboundMethod/cdesc-UnboundMethod.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
@@ -54,6 +70,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-action-args/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-action-args.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-action-args/abstract_controller.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-action-args/get_args.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/merb-action-args/jruby_args.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/action_args_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/controllers/

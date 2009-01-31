@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/14 23:59:37 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/01/31 12:40:06 bernd Exp $
 
-COMMENT=	plugin for Merb that provides different view helpers
+COMMENT =	plugin for Merb that provides different view helpers
 
-DISTNAME=	merb_helpers-${VERSION}
-PKGNAME=	ruby-${DISTNAME}p0
+DISTNAME =	merb-helpers-${VERSION}
 
-RUN_DEPENDS=	::www/ruby-merb/core
+RUN_DEPENDS =	::www/ruby-merb/core
 
 .include <bsd.port.mk>
