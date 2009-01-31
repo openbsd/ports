@@ -1,0 +1,2 @@
+merb-auth-more provides stuff that's useful, but not core to the functionality of
+merb-auth. Strategies and "User" object mixins are here.
