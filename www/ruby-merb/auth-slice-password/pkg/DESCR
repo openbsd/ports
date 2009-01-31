@@ -1,0 +1,3 @@
+A slice for the Merb framework that uses the merb-auth-core authentication
+framework. This slice provides a basic login and logout function. By default
+it also include the form based password logins and basic authentication.
