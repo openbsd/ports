@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/02 13:07:37 djm Exp $
+# $OpenBSD: Makefile,v 1.6 2009/01/31 12:36:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		CUPS bindings for Python
 
-VERSION=		1.9.42
+VERSION=		1.9.45
 DISTNAME=		pycups-${VERSION}
-PKGNAME=		py-cups-${VERSION}p0
+PKGNAME=		py-cups-${VERSION}
 CATEGORIES=		print
 
 HOMEPAGE=		http://cyberelk.net/tim/software/pycups/
