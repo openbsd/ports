@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2009/01/31 09:25:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.89 2009/01/31 22:47:29 jasper Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -64,6 +64,7 @@
      SUBDIR += mag
      SUBDIR += media
      SUBDIR += menus
+     SUBDIR += mergeant
      SUBDIR += metacity
      SUBDIR += mime-data
      SUBDIR += mono-gnome
