@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.40 2009/01/26 14:44:37 bernd Exp $
+# $OpenBSD: Makefile,v 1.41 2009/01/31 15:49:34 simon Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
 COMMENT-lemon=	LEMON LALR(1) parser generator
-V=		3.6.4
+V=		3.6.10
 DISTNAME=	sqlite-${V}
-PKGNAME-main=	sqlite3-${V}p0
-PKGNAME-tcl=	sqlite3-tcl-${V}p0
+PKGNAME-main=	sqlite3-${V}
+PKGNAME-tcl=	sqlite3-tcl-${V}
 PKGNAME-lemon=	lemon-${V}
 CATEGORIES=	databases
-SHARED_LIBS +=	sqlite3              12.1      # .8.6
-SHARED_LIBS +=	tclsqlite3           11.0      # .8.6
+SHARED_LIBS +=	sqlite3              13.0      # .8.6
+SHARED_LIBS +=	tclsqlite3           12.0      # .8.6
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -60,9 +60,6 @@ REGRESS_TARGET=	test
 
 pre-configure:
 	@perl -pi -e s,'tclsh',${MODTCL_BIN},g ${WRKSRC}/Makefile.in
-# XXX libtool issue
-pre-install:
-	@cp -p ${WRKSRC}/.libs/libtclsqlite3.so.$(LIBtclsqlite3_VERSION) ${WRKSRC}/.libs/libtclsqlite3.so
 
 .else
 CONFIGURE_ARGS+=--disable-tcl

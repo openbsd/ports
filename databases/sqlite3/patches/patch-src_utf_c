@@ -1,16 +1,18 @@
-$OpenBSD: patch-src_utf_c,v 1.1 2008/07/23 17:31:17 martynas Exp $
---- src/utf.c.orig	Tue May 13 15:52:22 2008
-+++ src/utf.c	Sat Jul 19 15:10:45 2008
-@@ -40,12 +40,6 @@
+$OpenBSD: patch-src_utf_c,v 1.2 2009/01/31 15:49:34 simon Exp $
+--- src/utf.c.orig	Tue Jan 27 10:24:52 2009
++++ src/utf.c	Tue Jan 27 10:25:02 2009
+@@ -39,14 +39,6 @@
+ #include <assert.h>
  #include "vdbeInt.h"
  
- /*
+-#ifndef SQLITE_AMALGAMATION
+-/*
 -** The following constant value is used by the SQLITE_BIGENDIAN and
 -** SQLITE_LITTLEENDIAN macros.
 -*/
 -const int sqlite3one = 1;
+-#endif /* SQLITE_AMALGAMATION */
 -
--/*
+ /*
  ** This lookup table is used to help decode the first byte of
  ** a multi-byte UTF8 character.
- */

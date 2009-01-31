@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_sqliteInt_h,v 1.2 2008/10/27 17:14:18 simon Exp $
---- src/sqliteInt.h.orig	Sat Oct 25 19:43:37 2008
-+++ src/sqliteInt.h	Sat Oct 25 19:45:37 2008
+$OpenBSD: patch-src_sqliteInt_h,v 1.3 2009/01/31 15:49:34 simon Exp $
+--- src/sqliteInt.h.orig	Thu Jan 15 15:01:47 2009
++++ src/sqliteInt.h	Tue Jan 27 10:20:56 2009
 @@ -35,11 +35,6 @@
- #pragma warn -spa /* Suspicous pointer arithmetic */
+ #pragma warn -spa /* Suspicious pointer arithmetic */
  #endif
  
 -/* Needed for various definitions... */
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_sqliteInt_h,v 1.2 2008/10/27 17:14:18 simon Exp $
  /*
  ** Include standard header files as necessary
  */
-@@ -378,33 +373,26 @@ typedef INT16_TYPE i16;            /* 2-byte signed in
+@@ -416,33 +411,26 @@ typedef INT16_TYPE i16;            /* 2-byte signed in
  typedef UINT8_TYPE u8;             /* 1-byte unsigned integer */
  typedef INT8_TYPE i8;              /* 1-byte signed integer */
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_sqliteInt_h,v 1.2 2008/10/27 17:14:18 simon Exp $
 -** evaluated at runtime.
 -*/
 -#ifdef SQLITE_AMALGAMATION
--const int sqlite3one;
+-const int sqlite3one = 1;
 +#include <sys/endian.h>
 +#if _BYTE_ORDER == _BIG_ENDIAN
 +#define SQLITE_BIGENDIAN	1
