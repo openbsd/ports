@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/22 17:14:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/01/31 09:25:33 jasper Exp $
+
+BROKEN= 		too many issues with setting this up
 
 COMMENT=		flexible communications framework, IRC component
 
