@@ -1,0 +1,2 @@
+Templater is a system for generating files. Templater has the ability to
+both copy files from A to B and also to render templates using ERB.
