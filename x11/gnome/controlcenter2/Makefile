@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2009/01/30 20:49:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.53 2009/01/31 12:23:29 jasper Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		${DISTNAME}p7
+PKGNAME=		${DISTNAME}p8
 
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
@@ -50,7 +50,8 @@ RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			::multimedia/gstreamer-0.10/plugins-good,-gconf \
 			::textproc/rarian \
 			::x11/gnome/settings-daemon \
-			::audio/sound-theme-freedesktop
+			::audio/sound-theme-freedesktop \
+			::x11/gnome/terminal
 
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
