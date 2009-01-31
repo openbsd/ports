@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2009/01/31 16:06:26 jasper Exp $
+
+Don't build drivemount applet.
+
+-- Makefile.in.orig	Sat Jan 31 16:52:54 2009
++++ Makefile.in	Sat Jan 31 16:53:07 2009
+@@ -345,7 +345,6 @@ modemlights_applets = \
+ @BUILD_INVEST_APPLET_TRUE@invest_applet_SUBDIR = invest-applet
+ always_built_SUBDIRS = \
+ 	charpick	\
+-	drivemount	\
+ 	geyes		\
+ 	mini-commander	\
+ 	gkb-new		\
+@@ -371,7 +370,6 @@ DIST_SUBDIRS = \
+ 	po		\
+ 	mixer		\
+ 	modemlights	\
+-	drivemount	\
+ 	charpick	\
+ 	geyes		\
+ 	mini-commander	\

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2008/12/17 18:47:57 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2009/01/31 16:06:26 jasper Exp $
 @conflict libgweather-<2.24.1
 @pkgpath x11/gnome/applets2
 @pkgpath x11/gnome/applets2,no_battstat
@@ -6,7 +6,6 @@ bin/invest-chart
 lib/bonobo/servers/GNOME_AccessxStatusApplet.server
 lib/bonobo/servers/GNOME_CDPlayerApplet.server
 lib/bonobo/servers/GNOME_CharpickerApplet.server
-lib/bonobo/servers/GNOME_DriveMountApplet.server
 lib/bonobo/servers/GNOME_GWeatherApplet_Factory.server
 lib/bonobo/servers/GNOME_GeyesApplet.server
 lib/bonobo/servers/GNOME_GtikApplet.server
@@ -47,7 +46,6 @@ lib/python${MODPY_VERSION}/site-packages/invest/widgets.pyc
 lib/python${MODPY_VERSION}/site-packages/invest/widgets.pyo
 @bin libexec/accessx-status-applet
 @bin libexec/charpick_applet2
-@bin libexec/drivemount_applet2
 @bin libexec/geyes_applet2
 @bin libexec/gnome-keyboard-applet
 @bin libexec/gweather-applet-2
@@ -59,7 +57,6 @@ libexec/invest-applet
 @bin libexec/trashapplet
 share/gnome-2.0/ui/GNOME_AccessxApplet.xml
 share/gnome-2.0/ui/GNOME_CharpickerApplet.xml
-share/gnome-2.0/ui/GNOME_DriveMountApplet.xml
 share/gnome-2.0/ui/GNOME_GSwitchItApplet.xml
 share/gnome-2.0/ui/GNOME_GWeatherApplet.xml
 share/gnome-2.0/ui/GNOME_GeyesApplet.xml
@@ -421,120 +418,6 @@ share/gnome/help/char-palette/uk/figures/charpalette_applet.png
 share/gnome/help/char-palette/uk/figures/charpalette_chargroup.png
 share/gnome/help/char-palette/uk/figures/charpick-preferences.png
 share/gnome/help/char-palette/uk/figures/charpick_characters.png
-share/gnome/help/drivemount/
-share/gnome/help/drivemount/C/
-share/gnome/help/drivemount/C/drivemount.xml
-share/gnome/help/drivemount/C/figures/
-share/gnome/help/drivemount/C/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/C/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/C/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/C/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/C/figures/drivemount-applet_status.png
-share/gnome/help/drivemount/C/legal.xml
-share/gnome/help/drivemount/de/
-share/gnome/help/drivemount/de/drivemount.xml
-share/gnome/help/drivemount/de/figures/
-share/gnome/help/drivemount/de/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/de/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/de/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/de/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/de/figures/drivemount-applet_status.png
-share/gnome/help/drivemount/en_GB/
-share/gnome/help/drivemount/en_GB/drivemount.xml
-share/gnome/help/drivemount/en_GB/figures/
-share/gnome/help/drivemount/en_GB/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/en_GB/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/en_GB/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/en_GB/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/en_GB/figures/drivemount-applet_status.png
-share/gnome/help/drivemount/es/
-share/gnome/help/drivemount/es/drivemount.xml
-share/gnome/help/drivemount/es/figures/
-share/gnome/help/drivemount/es/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/es/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/es/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/es/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/es/figures/drivemount-applet_status.png
-share/gnome/help/drivemount/fi/
-share/gnome/help/drivemount/fi/drivemount.xml
-share/gnome/help/drivemount/fi/figures/
-share/gnome/help/drivemount/fi/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/fi/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/fi/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/fi/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/fi/figures/drivemount-applet_status.png
-share/gnome/help/drivemount/fr/
-share/gnome/help/drivemount/fr/drivemount.xml
-share/gnome/help/drivemount/fr/figures/
-share/gnome/help/drivemount/fr/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/fr/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/fr/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/fr/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/fr/figures/drivemount-applet_status.png
-share/gnome/help/drivemount/it/
-share/gnome/help/drivemount/it/drivemount.xml
-share/gnome/help/drivemount/it/figures/
-share/gnome/help/drivemount/it/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/it/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/it/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/it/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/it/figures/drivemount-applet_status.png
-share/gnome/help/drivemount/ko/
-share/gnome/help/drivemount/ko/drivemount.xml
-share/gnome/help/drivemount/ko/figures/
-share/gnome/help/drivemount/ko/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/ko/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/ko/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/ko/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/ko/figures/drivemount-applet_status.png
-share/gnome/help/drivemount/oc/
-share/gnome/help/drivemount/oc/drivemount.xml
-share/gnome/help/drivemount/oc/figures/
-share/gnome/help/drivemount/oc/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/oc/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/oc/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/oc/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/oc/figures/drivemount-applet_status.png
-share/gnome/help/drivemount/pa/
-share/gnome/help/drivemount/pa/drivemount.xml
-share/gnome/help/drivemount/pa/figures/
-share/gnome/help/drivemount/pa/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/pa/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/pa/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/pa/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/pa/figures/drivemount-applet_status.png
-share/gnome/help/drivemount/ru/
-share/gnome/help/drivemount/ru/drivemount.xml
-share/gnome/help/drivemount/ru/figures/
-share/gnome/help/drivemount/ru/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/ru/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/ru/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/ru/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/ru/figures/drivemount-applet_status.png
-share/gnome/help/drivemount/sv/
-share/gnome/help/drivemount/sv/drivemount.xml
-share/gnome/help/drivemount/sv/figures/
-share/gnome/help/drivemount/sv/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/sv/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/sv/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/sv/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/sv/figures/drivemount-applet_status.png
-share/gnome/help/drivemount/uk/
-share/gnome/help/drivemount/uk/drivemount.xml
-share/gnome/help/drivemount/uk/figures/
-share/gnome/help/drivemount/uk/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/uk/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/uk/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/uk/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/uk/figures/drivemount-applet_status.png
-share/gnome/help/drivemount/zh_CN/
-share/gnome/help/drivemount/zh_CN/drivemount.xml
-share/gnome/help/drivemount/zh_CN/figures/
-share/gnome/help/drivemount/zh_CN/figures/drivemount-applet_eject.png
-share/gnome/help/drivemount/zh_CN/figures/drivemount-applet_example.png
-share/gnome/help/drivemount/zh_CN/figures/drivemount-applet_mount.png
-share/gnome/help/drivemount/zh_CN/figures/drivemount-applet_open.png
-share/gnome/help/drivemount/zh_CN/figures/drivemount-applet_status.png
 share/gnome/help/geyes/
 share/gnome/help/geyes/C/
 share/gnome/help/geyes/C/figures/
@@ -1381,21 +1264,6 @@ share/omf/char-palette/char-palette-pt_BR.omf
 share/omf/char-palette/char-palette-ru.omf
 share/omf/char-palette/char-palette-sv.omf
 share/omf/char-palette/char-palette-uk.omf
-share/omf/drivemount/
-share/omf/drivemount/drivemount-C.omf
-share/omf/drivemount/drivemount-de.omf
-share/omf/drivemount/drivemount-en_GB.omf
-share/omf/drivemount/drivemount-es.omf
-share/omf/drivemount/drivemount-fi.omf
-share/omf/drivemount/drivemount-fr.omf
-share/omf/drivemount/drivemount-it.omf
-share/omf/drivemount/drivemount-ko.omf
-share/omf/drivemount/drivemount-oc.omf
-share/omf/drivemount/drivemount-pa.omf
-share/omf/drivemount/drivemount-ru.omf
-share/omf/drivemount/drivemount-sv.omf
-share/omf/drivemount/drivemount-uk.omf
-share/omf/drivemount/drivemount-zh_CN.omf
 share/omf/geyes/
 share/omf/geyes/geyes-C.omf
 share/omf/geyes/geyes-bg.omf
@@ -1561,7 +1429,6 @@ share/pixmaps/stickynotes/unlocked.png
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gnome-applets2/*.schemas > /dev/null
 share/schemas/gnome-applets2/
 share/schemas/gnome-applets2/charpick.schemas
-share/schemas/gnome-applets2/drivemount.schemas
 share/schemas/gnome-applets2/geyes.schemas
 share/schemas/gnome-applets2/mixer.schemas
 share/schemas/gnome-applets2/multiload.schemas
