@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/15 18:33:24 espie Exp $
-bin/xrus
-bin/xrusmodmap
+@comment $OpenBSD: PLIST,v 1.11 2009/01/31 21:48:31 ajacoutot Exp $
+@bin bin/xrus
+@bin bin/xrusmodmap
 @man man/man1/xrus.1
 share/doc/xruskb/
 share/doc/xruskb/README

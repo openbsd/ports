@@ -1,6 +1,6 @@
-$OpenBSD: patch-com_gw_c,v 1.2 2005/12/24 08:20:40 pvalchev Exp $
---- com_gw.c.orig	Thu Feb  8 17:34:55 2001
-+++ com_gw.c	Fri Dec 23 23:43:42 2005
+$OpenBSD: patch-com_gw_c,v 1.3 2009/01/31 21:48:31 ajacoutot Exp $
+--- com_gw.c.orig	Fri Feb  9 01:34:55 2001
++++ com_gw.c	Sat Jan 31 22:32:17 2009
 @@ -9,7 +9,7 @@
  #endif
  #include <sys/types.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-com_gw_c,v 1.2 2005/12/24 08:20:40 pvalchev Exp $
  #include <unistd.h> 
  #include <string.h>
  #include <stdlib.h>
-@@ -169,7 +169,7 @@ simpleServerPipe(int netfd, encoding *en
+@@ -169,7 +169,7 @@ simpleServerPipe(int netfd, encoding *enc)
    int  cnt = 0; \
    while(cnt < ENTLEN && *from && *from!=';' && !isspace(*from)) \
       {\
@@ -19,7 +19,7 @@ $OpenBSD: patch-com_gw_c,v 1.2 2005/12/24 08:20:40 pvalchev Exp $
          cnt++;\
       }\
       *to='\0';\
-@@ -222,12 +222,15 @@ EmailGateway (int fromfile,int tofile, c
+@@ -222,12 +222,15 @@ EmailGateway (int fromfile,int tofile, char *charset, 
      if(!strncasecmp(buf,"Content-Type:",13))
        {
  	parseContentType(buf+13,ctype,ocharset,garbage);

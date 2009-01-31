@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/07/07 15:24:40 grange Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/01/31 21:48:31 ajacoutot Exp $
+share/texmf-local/
 share/texmf-local/doc/
 share/texmf-local/doc/fonts/
 share/texmf-local/doc/fonts/pscyr/
@@ -51,6 +52,17 @@ share/texmf-local/fonts/afm/public/pscyr/times.afm
 share/texmf-local/fonts/afm/public/pscyr/timesbd.afm
 share/texmf-local/fonts/afm/public/pscyr/timesbi.afm
 share/texmf-local/fonts/afm/public/pscyr/timesi.afm
+share/texmf-local/fonts/enc/
+share/texmf-local/fonts/enc/dvips/
+share/texmf-local/fonts/enc/dvips/pscyr/
+share/texmf-local/fonts/enc/dvips/pscyr/t2a.enc
+share/texmf-local/fonts/map/
+share/texmf-local/fonts/map/dvipdfm/
+share/texmf-local/fonts/map/dvipdfm/pscyr/
+share/texmf-local/fonts/map/dvipdfm/pscyr/pscyr2.map
+share/texmf-local/fonts/map/dvips/
+share/texmf-local/fonts/map/dvips/pscyr/
+share/texmf-local/fonts/map/dvips/pscyr/pscyr.map
 share/texmf-local/fonts/tfm/
 share/texmf-local/fonts/tfm/public/
 share/texmf-local/fonts/tfm/public/pscyr/
@@ -305,17 +317,6 @@ share/texmf-local/fonts/vf/public/pscyr/ftxr7t.vf
 share/texmf-local/fonts/vf/public/pscyr/ftxrc6a.vf
 share/texmf-local/fonts/vf/public/pscyr/ftxri7t.vf
 share/texmf-local/fonts/vf/public/pscyr/ftxro7t.vf
-share/texmf-local/fonts/map/
-share/texmf-local/fonts/map/dvips/
-share/texmf-local/fonts/map/dvips/pscyr/
-share/texmf-local/fonts/map/dvips/pscyr/pscyr.map
-share/texmf-local/fonts/map/dvipdfm/
-share/texmf-local/fonts/map/dvipdfm/pscyr/
-share/texmf-local/fonts/map/dvipdfm/pscyr/pscyr2.map
-share/texmf-local/fonts/enc/
-share/texmf-local/fonts/enc/dvips/
-share/texmf-local/fonts/enc/dvips/pscyr/
-share/texmf-local/fonts/enc/dvips/pscyr/t2a.enc
 share/texmf-local/tex/
 share/texmf-local/tex/latex/
 share/texmf-local/tex/latex/pscyr/

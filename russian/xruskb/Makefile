@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.38 2007/09/15 21:23:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.39 2009/01/31 21:48:31 ajacoutot Exp $
 
 COMMENT=	english-russian keyboard switcher for X11
 
 DISTNAME=	xruskb-1.15.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	russian x11
 MASTER_SITES=	ftp://ftp.yars.free.net/unix/X11/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		ICE SM X11 Xext Xmu Xt c 
 
 USE_X11=	Yes

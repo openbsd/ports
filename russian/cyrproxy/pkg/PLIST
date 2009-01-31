@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/08/16 17:40:59 steven Exp $
-bin/cyrtrans
+@comment $OpenBSD: PLIST,v 1.7 2009/01/31 21:48:31 ajacoutot Exp $
+@bin bin/cyrtrans
 bin/discover
-libexec/cyrproxy
-libexec/tcpspy
+@bin libexec/cyrproxy
+@bin libexec/tcpspy
 share/cyrproxy/
 share/cyrproxy/alt-iso
 share/cyrproxy/alt-koi8
 share/cyrproxy/alt-win
 share/cyrproxy/cyrproxy.conf.sample
 @sample ${SYSCONFDIR}/cyrproxy.conf
-share/cyrproxy/cyrwww
+@bin share/cyrproxy/cyrwww
 @sample /var/www/cgi-bin/cyrwww
 share/cyrproxy/iso-alt
 share/cyrproxy/iso-koi8
