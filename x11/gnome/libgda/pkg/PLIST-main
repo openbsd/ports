@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/11/29 12:53:51 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/01/31 22:13:37 jasper Exp $
 @conflict libgda-db4-*
 @bin bin/gda-author-dict-file-${GDA_MAJOR}
 @bin bin/gda-bdb-test
@@ -148,7 +148,6 @@ share/examples/libgda/config
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/config
 share/examples/libgda/sales_test.db
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/sales_test.db
-share/gtk-doc/html/
 share/gtk-doc/html/libgda-${GDA_MAJOR}/
 share/gtk-doc/html/libgda-${GDA_MAJOR}/DataModels.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaBlobOp.html
@@ -351,24 +350,18 @@ share/libgda-${GDA_MAJOR}/sqlite_specs_drop_index.xml
 share/libgda-${GDA_MAJOR}/sqlite_specs_drop_table.xml
 share/libgda-${GDA_MAJOR}/sqlite_specs_dsn.xml
 share/libgda-${GDA_MAJOR}/sqlite_specs_rename_table.xml
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ca/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/cs/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/da/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/de/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/el/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/es/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/eu/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/fi/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/fr/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
@@ -379,34 +372,24 @@ share/locale/hu/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/it/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ja/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ko/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/nb/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/nl/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/pl/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/pt/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/pt_BR/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ru/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sk/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sl/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sr/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sv/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/tr/LC_MESSAGES/libgda-${GDA_MAJOR}.mo

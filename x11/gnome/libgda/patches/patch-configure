@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2008/11/29 12:53:51 jasper Exp $
+$OpenBSD: patch-configure,v 1.5 2009/01/31 22:13:37 jasper Exp $
 --- configure.orig	Tue Jul 22 16:00:07 2008
-+++ configure	Thu Nov 27 19:53:55 2008
++++ configure	Sat Jan 31 22:26:54 2009
 @@ -19951,7 +19951,7 @@ fi
  
  
@@ -28,3 +28,69 @@ $OpenBSD: patch-configure,v 1.4 2008/11/29 12:53:51 jasper Exp $
  		if test "x$freetdsvercheck" = "x"
  		then
  			{ $as_echo "$as_me:$LINENO: WARNING: freetds version check failed - backend not used" >&5
+@@ -21560,9 +21560,9 @@ fi
+ $as_echo "Installed SQLite was not compiled with the SQLITE_ENABLE_COLUMN_METADATA, using embedded SQLite" >&6; }
+                 	have_sqlite=no
+         	else
+-			{ $as_echo "$as_me:$LINENO: checking for sqlite3CreateFunc in -lsqlite3" >&5
+-$as_echo_n "checking for sqlite3CreateFunc in -lsqlite3... " >&6; }
+-if test "${ac_cv_lib_sqlite3_sqlite3CreateFunc+set}" = set; then
++			{ $as_echo "$as_me:$LINENO: checking for sqlite3_create_function in -lsqlite3" >&5
++$as_echo_n "checking for sqlite3_create_function in -lsqlite3... " >&6; }
++if test "${ac_cv_lib_sqlite3_sqlite3_create_function+set}" = set; then
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+@@ -21580,11 +21580,11 @@ cat >>conftest.$ac_ext <<_ACEOF
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char sqlite3CreateFunc ();
++char sqlite3_create_function ();
+ int
+ main ()
+ {
+-return sqlite3CreateFunc ();
++return sqlite3_create_function ();
+   ;
+   return 0;
+ }
+@@ -21610,12 +21610,12 @@ $as_echo "$ac_try_echo") >&5
+ 	 test "$cross_compiling" = yes ||
+ 	 $as_test_x conftest$ac_exeext
+        }; then
+-  ac_cv_lib_sqlite3_sqlite3CreateFunc=yes
++  ac_cv_lib_sqlite3_sqlite3_create_function=yes
+ else
+   $as_echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-	ac_cv_lib_sqlite3_sqlite3CreateFunc=no
++	ac_cv_lib_sqlite3_sqlite3_create_function=no
+ fi
+ 
+ rm -rf conftest.dSYM
+@@ -21623,9 +21623,9 @@ rm -f core conftest.err conftest.$ac_objext conftest_i
+       conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:$LINENO: result: $ac_cv_lib_sqlite3_sqlite3CreateFunc" >&5
+-$as_echo "$ac_cv_lib_sqlite3_sqlite3CreateFunc" >&6; }
+-if test $ac_cv_lib_sqlite3_sqlite3CreateFunc = yes; then
++{ $as_echo "$as_me:$LINENO: result: $ac_cv_lib_sqlite3_sqlite3_create_function" >&5
++$as_echo "$ac_cv_lib_sqlite3_sqlite3_create_function" >&6; }
++if test $ac_cv_lib_sqlite3_sqlite3_create_function = yes; then
+   sqlite3_api=1
+ else
+   sqlite3_api=0
+@@ -21633,8 +21633,8 @@ fi
+ 
+ 			if test $sqlite3_api = 0
+ 			then
+-				{ $as_echo "$as_me:$LINENO: result: Could not find the sqlite3CreateFunc symbol in installed SQLite library, using embedded SQLite" >&5
+-$as_echo "Could not find the sqlite3CreateFunc symbol in installed SQLite library, using embedded SQLite" >&6; }
++				{ $as_echo "$as_me:$LINENO: result: Could not find the sqlite3_create_function symbol in installed SQLite library, using embedded SQLite" >&5
++$as_echo "Could not find the sqlite3_create_function symbol in installed SQLite library, using embedded SQLite" >&6; }
+                 		have_sqlite=no
+ 			else
+                 		{ $as_echo "$as_me:$LINENO: result: Using this version of SQLite" >&5

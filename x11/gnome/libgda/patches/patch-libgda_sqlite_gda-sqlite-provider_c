@@ -1,0 +1,21 @@
+$OpenBSD: patch-libgda_sqlite_gda-sqlite-provider_c,v 1.1 2009/01/31 22:13:37 jasper Exp $
+--- libgda/sqlite/gda-sqlite-provider.c.orig	Sat Jan 31 17:39:37 2009
++++ libgda/sqlite/gda-sqlite-provider.c	Sat Jan 31 17:41:03 2009
+@@ -281,7 +281,7 @@ add_g_list_row (gpointer data, GdaDataModelArray *recs
+ 
+ #ifndef G_OS_WIN32
+ #ifdef HAVE_SQLITE
+-int sqlite3CreateFunc (sqlite3 *db, const char *name, int nArg, int eTextRep, void *data,
++int sqlite3_create_function (sqlite3 *db, const char *name, int nArg, int eTextRep, void *data,
+ 		       void (*xFunc)(sqlite3_context*,int,sqlite3_value **),
+ 		       void (*xStep)(sqlite3_context*,int,sqlite3_value **), void (*xFinal)(sqlite3_context*))
+ {
+@@ -298,7 +298,7 @@ int sqlite3CreateFunc (sqlite3 *db, const char *name, 
+ 		func = (int (*) (sqlite3 *, const char *, int, int, void *,
+ 				 void (*)(sqlite3_context*,int,sqlite3_value **),
+ 				 void (*)(sqlite3_context*,int,sqlite3_value **), 
+-				 void (*)(sqlite3_context*))) dlsym (RTLD_NEXT, "sqlite3CreateFunc");
++				 void (*)(sqlite3_context*))) dlsym (RTLD_NEXT, "sqlite3_create_function");
+ 
+ 	/* try to find which SQLITEcnc this concerns */
+ 	if (db_connections_hash) 
