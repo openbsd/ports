@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/14 23:57:18 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2009/01/31 13:13:43 bernd Exp $
 
 COMMENT=		iCalendar support for Ruby
 
-DISTNAME=		icalendar-1.0.2
-PKGNAME=		ruby-${DISTNAME}p0
+DISTNAME=		icalendar-1.1.0
+PKGNAME=		ruby-${DISTNAME}
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://icalendar.rubyforge.org/
@@ -25,6 +25,6 @@ PKG_ARCH=		*
 REGRESS_DEPENDS=	::devel/ruby-rake
 
 do-regress:
-	@cd ${WRKDIST} && ${LOCALBASE}/bin/rake test
+	@cd ${WRKDIST} && ${SETENV} TZ=GMT ${LOCALBASE}/bin/rake test
 
 .include <bsd.port.mk>
