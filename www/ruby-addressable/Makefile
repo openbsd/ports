@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/30 00:36:58 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/01/31 12:48:46 bernd Exp $
 
 COMMENT =	replacement for Ruby's URI implementation
 
-DISTNAME = 	addressable-2.0.1
+DISTNAME = 	addressable-2.0.2
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	www
 
