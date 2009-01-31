@@ -1,0 +1,16 @@
+$OpenBSD: patch-tools_Makefile_in,v 1.1 2009/01/31 09:15:33 jasper Exp $
+
+The f-spot-import script needs HAL to work, which we don't have.
+
+--- tools/Makefile.in.orig	Sat Jan 31 09:53:44 2009
++++ tools/Makefile.in	Sat Jan 31 09:53:53 2009
+@@ -288,8 +288,7 @@ DISTCLEANFILES = \
+ 
+ saverdir = @GNOME_SCREENSAVER_SAVERDIR@
+ saver_SCRIPTS = f-spot-screensaver
+-bin_SCRIPTS = f-spot-import	\
+-	f-spot-sqlite-upgrade
++bin_SCRIPTS = f-spot-sqlite-upgrade
+ 
+ all: all-am
+ 

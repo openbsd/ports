@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/26 14:40:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/01/31 09:15:33 jasper Exp $
 %%SHARED%%
 bin/f-spot
-bin/f-spot-import
 bin/f-spot-sqlite-upgrade
 lib/f-spot/
 lib/f-spot/Cms.dll

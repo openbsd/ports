@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/01/26 14:40:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/01/31 09:15:33 jasper Exp $
 
 BROKEN=			segfault on startup
 
@@ -6,6 +6,7 @@ COMMENT=		personal photo management application for GNOME
 
 GNOME_VERSION=		0.5.0.3
 GNOME_PROJECT=		f-spot
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	fspoteog             0.0      # .0.0
 SHARED_LIBS +=	fspotjpegtran        0.0      # .0.0
 SHARED_LIBS +=	fspot                0.0      # .0.0
@@ -26,17 +27,18 @@ MODULES=		devel/gettext \
 USE_X11=		Yes
 
 DESKTOP_FILES=		Yes
+MODGNOME_HELP_FILES=	Yes
 
 WANTLIB=		jpeg m
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-RUN_DEPENDS=		::lang/mono \
+RUN_DEPENDS=		::graphics/libgphoto2 \
+			::lang/mono \
 			::sysutils/ndesk-dbus-glib \
-			::x11/gnome/screensaver \
 			::x11/gnome/doc-utils \
 			::x11/gnome/mono-gnome \
-			::graphics/libgphoto2
+			::x11/gnome/screensaver
 LIB_DEPENDS+=		exif::graphics/libexif \
 			lcms::graphics/lcms
 
