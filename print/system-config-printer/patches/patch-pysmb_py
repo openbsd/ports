@@ -1,7 +1,7 @@
-$OpenBSD: patch-pysmb_py,v 1.4 2008/10/27 13:29:13 ajacoutot Exp $
---- pysmb.py.orig	Tue Oct 21 11:02:45 2008
-+++ pysmb.py	Mon Oct 27 14:30:20 2008
-@@ -187,13 +187,13 @@ import os
+$OpenBSD: patch-pysmb_py,v 1.5 2009/01/31 12:37:30 ajacoutot Exp $
+--- pysmb.py.orig	Fri Jan 16 10:50:57 2009
++++ pysmb.py	Sat Jan 31 12:11:42 2009
+@@ -194,13 +194,13 @@ import os
  import sys
  import re
  

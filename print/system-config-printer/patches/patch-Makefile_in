@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2008/09/17 12:00:56 ajacoutot Exp $
---- Makefile.in.orig	Fri Aug 29 12:33:56 2008
-+++ Makefile.in	Wed Sep 17 13:46:48 2008
+$OpenBSD: patch-Makefile_in,v 1.5 2009/01/31 12:37:30 ajacoutot Exp $
+--- Makefile.in.orig	Fri Jan 16 11:37:10 2009
++++ Makefile.in	Sat Jan 31 12:11:42 2009
 @@ -308,7 +308,7 @@ man_MANS = \
  dbus_DATA = \
  	newprinternotification.conf
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2008/09/17 12:00:56 ajacoutot Exp $
  desktop_DATA = \
  	system-config-printer.desktop \
  	print-applet.desktop \
-@@ -1033,7 +1033,6 @@ install-desktopDATA: $(desktop_DATA)
+@@ -1042,7 +1042,6 @@ install-desktopDATA: $(desktop_DATA)
  	mkdir -p $(DESTDIR)$(desktopdir)
  	desktop-file-install --vendor redhat	\
  	  --dir $(DESTDIR)$(desktopdir)		\
@@ -18,7 +18,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2008/09/17 12:00:56 ajacoutot Exp $
  	  --add-category System			\
  	  --add-category Settings		\
  	  --add-category HardwareSettings	\
-@@ -1042,25 +1041,16 @@ install-desktopDATA: $(desktop_DATA)
+@@ -1051,25 +1050,16 @@ install-desktopDATA: $(desktop_DATA)
  	  system-config-printer.desktop
  	desktop-file-install --vendor redhat	\
  	  --dir $(DESTDIR)$(desktopdir)		\

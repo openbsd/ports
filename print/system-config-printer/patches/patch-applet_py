@@ -1,6 +1,6 @@
-$OpenBSD: patch-applet_py,v 1.4 2008/10/27 13:29:13 ajacoutot Exp $
---- applet.py.orig	Tue Oct 21 11:02:45 2008
-+++ applet.py	Mon Oct 27 14:30:20 2008
+$OpenBSD: patch-applet_py,v 1.5 2009/01/31 12:37:30 ajacoutot Exp $
+--- applet.py.orig	Sat Jan 31 12:09:28 2009
++++ applet.py	Sat Jan 31 12:10:37 2009
 @@ -43,7 +43,7 @@ except locale.Error, e:
      os.environ['LC_ALL'] = 'C'
      locale.setlocale (locale.LC_ALL, "")
@@ -14,7 +14,7 @@ $OpenBSD: patch-applet_py,v 1.4 2008/10/27 13:29:13 ajacoutot Exp $
      STATUS_GENERIC_DRIVER = 2
      STATUS_NO_DRIVER = 3
  
--    INSTALL_PACKAGES_COMMAND="/usr/bin/system-install-packages"
+-    INSTALL_PACKAGES_COMMAND="/usr/bin/gpk-install-package-name"
 +    INSTALL_PACKAGES_COMMAND="/usr/bin/true"
  
      def __init__ (self, bus):
