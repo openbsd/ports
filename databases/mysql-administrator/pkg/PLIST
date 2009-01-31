@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/10/18 14:25:58 wilfried Exp $
-bin/mabackup
+@comment $OpenBSD: PLIST,v 1.3 2009/01/31 21:59:03 sthen Exp $
+@bin bin/mabackup
 bin/mysql-administrator
-bin/mysql-administrator-bin
+@bin bin/mysql-administrator-bin
 share/applications/
 share/applications/MySQLAdministrator.desktop
 share/mysql-gui/MySQLIcon_Admin_16x16.png
@@ -131,3 +131,5 @@ share/mysql-gui/administrator/user_administration.glade
 share/mysql-gui/administrator/variable.png
 share/mysql-gui/administrator/variable_disabled.png
 share/mysql-gui/administrator/variable_editable.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
