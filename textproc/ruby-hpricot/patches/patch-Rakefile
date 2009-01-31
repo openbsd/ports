@@ -1,21 +1,12 @@
-$OpenBSD: patch-Rakefile,v 1.1.1.1 2008/04/19 17:21:27 bernd Exp $
+$OpenBSD: patch-Rakefile,v 1.2 2009/01/31 13:04:22 bernd Exp $
 --- Rakefile.orig	Thu Jan  1 01:00:00 1970
-+++ Rakefile	Wed Jan  9 11:19:35 2008
-@@ -11,7 +11,7 @@ REV = `svn info`[/Revision: (\d+)/, 1] rescue nil
++++ Rakefile	Sat Jan 31 13:59:23 2009
+@@ -13,7 +13,7 @@ REV = (`#{ENV['GIT'] || "git"} rev-list HEAD`.split.le
  VERS = ENV['VERSION'] || "0.6" + (REV ? ".#{REV}" : "")
  PKG = "#{NAME}-#{VERS}"
- BIN = "*.{bundle,jar,so,obj,pdb,lib,def,exp}"
+ BIN = "*.{bundle,jar,so,obj,pdb,lib,def,exp,class}"
 -ARCHLIB = "lib/#{::Config::CONFIG['arch']}"
 +ARCHLIB = "lib"
- CLEAN.include ["ext/hpricot_scan/#{BIN}", "lib/**/#{BIN}", 'ext/hpricot_scan/Makefile', 
-                '**/.*.sw?', '*.gem', '.config']
- RDOC_OPTS = ['--quiet', '--title', 'The Hpricot Reference', '--main', 'README', '--inline-source']
-@@ -127,7 +127,7 @@ end
- ### Win32 Packages ###
- 
- Win32Spec = SPEC.dup
--Win32Spec.platform = Gem::Platform::WIN32
-+Win32Spec.platform = Gem::Platform::CURRENT
- Win32Spec.files = PKG_FILES + ["#{ARCHLIB}/hpricot_scan.so"]
- Win32Spec.extensions = []
-   
+ CLEAN.include ["ext/hpricot_scan/#{BIN}", "ext/fast_xs/#{BIN}", "lib/**/#{BIN}", ARCHLIB,
+                'ext/fast_xs/Makefile', 'ext/hpricot_scan/Makefile', 
+                '**/.*.sw?', '*.gem', '.config', 'pkg']
