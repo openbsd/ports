@@ -1,0 +1,4 @@
+Merb-Slices is a Merb plugin for using and creating application 'slices' which
+help you modularize your application. Usually these are reusable extractions
+from your main app. In effect, a Slice is just like a regular Merb MVC
+application, both in functionality as well as in structure.
