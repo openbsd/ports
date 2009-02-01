@@ -1,43 +1,15 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2008/06/13 05:33:52 landry Exp $
---- Makefile.orig	Sun Jun  1 23:58:53 2008
-+++ Makefile	Thu Jun 12 23:16:56 2008
-@@ -1,14 +1,14 @@
--PREFIX=/usr/local
--INSTALLBIN=/usr/local/bin
--INSTALLMAN=/usr/local/man
-+PREFIX?=/usr/local
-+INSTALLBIN=${PREFIX}/bin
-+INSTALLMAN=${PREFIX}/man
- 
--WARNFLAGS+=-pedantic -Wall -W -Wno-missing-field-initializers -Wundef \
-+WARNFLAGS+=-pedantic -Wall -W -Wundef \
+$OpenBSD: patch-Makefile,v 1.2 2009/02/01 13:38:19 landry Exp $
+--- Makefile.orig	Mon Jan 26 11:54:16 2009
++++ Makefile	Sun Feb  1 14:32:51 2009
+@@ -6,9 +6,9 @@ WARNFLAGS+=-pedantic -Wall -W -Wundef \
             -Wendif-labels -Wshadow -Wpointer-arith -Wbad-function-cast \
             -Wcast-align -Wwrite-strings -Wstrict-prototypes \
             -Wmissing-prototypes -Wnested-externs -Winline \
-            -Wdisabled-optimization
+-           -Wdisabled-optimization -Wno-missing-field-initializers
++           -Wdisabled-optimization
  
 -CFLAGS=-pipe -std=c99 $(WARNFLAGS)
 +CFLAGS+=-pipe -std=c99 $(WARNFLAGS)
  
  DEFAULT_LIBS=-L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXtst
  DEFAULT_INC=-I/usr/X11R6/include -I/usr/local/include
-@@ -40,16 +40,16 @@ clean:
- 	rm -f *.o xdotool xdotool.1 || true
- 
- xdo.o: xdo.c
--	gcc $(CFLAGS) -c xdo.c
-+	$(CC) $(CFLAGS) -c xdo.c
- 
- xdotool.o: xdotool.c
--	gcc $(CFLAGS) -c xdotool.c
-+	$(CC) $(CFLAGS) -c xdotool.c
- 
- xdo.c: xdo.h
- xdotool.c: xdo.h
- 
- xdotool: xdotool.o xdo.o
--	gcc $(CFLAGS) $(LDFLAGS) xdotool.o xdo.o -o $@
-+	$(CC) $(CFLAGS) $(LDFLAGS) xdotool.o xdo.o -o $@
- 
- xdotool.1: xdotool.pod
- 	pod2man -c "" -r "" xdotool.pod > $@
