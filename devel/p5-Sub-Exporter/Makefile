@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/03 13:40:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/02/01 00:58:47 simon Exp $
 
 COMMENT=	exporter on steroids
 
 MODULES=	cpan
-DISTNAME=	Sub-Exporter-0.980
+DISTNAME=	Sub-Exporter-0.982
 CATEGORIES=	devel
 
 # perl
