@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/01 17:13:42 steven Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/SSH/
+${P5SITE}/Net/SSH/Expect.pm
+${P5SITE}/Net/SSH/Expect.pod
+@man man/man3p/Net::SSH::Expect.3p

@@ -1,0 +1,2 @@
+Net::SSH::Expect is a wrapper to the ssh executable that is available in your
+system's $PATH. Use this module to execute commands on a remote SSH server.
