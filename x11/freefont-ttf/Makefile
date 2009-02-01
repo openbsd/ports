@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/16 18:02:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/01 11:13:34 jasper Exp $
 
 COMMENT=		free UCS outline fonts
 
-V=			20080912
+V=			20090104
 DISTNAME=		freefont-ttf-$V
 CATEGORIES=		x11
 
