@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/11/16 17:43:24 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/02/01 19:49:59 wcmaier Exp $
 lib/python${MODPY_VERSION}/site-packages/curl/
 lib/python${MODPY_VERSION}/site-packages/curl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/curl/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pycurl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pycurl.so
 share/doc/py-curl/
 share/doc/py-curl/callbacks.html
@@ -31,11 +36,15 @@ share/examples/py-curl/tests/test_multi3.py
 share/examples/py-curl/tests/test_multi4.py
 share/examples/py-curl/tests/test_multi5.py
 share/examples/py-curl/tests/test_multi6.py
+share/examples/py-curl/tests/test_multi_socket.py
+share/examples/py-curl/tests/test_multi_socket_select.py
+share/examples/py-curl/tests/test_multi_timer.py
 share/examples/py-curl/tests/test_multi_vs_thread.py
 share/examples/py-curl/tests/test_post.py
 share/examples/py-curl/tests/test_post2.py
 share/examples/py-curl/tests/test_post3.py
 share/examples/py-curl/tests/test_share.py
+share/examples/py-curl/tests/test_socketopen.py
 share/examples/py-curl/tests/test_stringio.py
 share/examples/py-curl/tests/test_xmlrpc.py
 share/examples/py-curl/tests/util.py
