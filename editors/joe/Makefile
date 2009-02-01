@@ -1,9 +1,9 @@
 # $RuOBSD: Makefile,v 1.3 2002/04/10 05:14:52 form Exp $
-# $OpenBSD: Makefile,v 1.36 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2009/02/01 09:45:09 sturm Exp $
 
 COMMENT=		Joe's Own Editor
 
-DISTNAME=		joe-3.5
+DISTNAME=		joe-3.7
 CATEGORIES=		editors
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=joe-editor/}
 
