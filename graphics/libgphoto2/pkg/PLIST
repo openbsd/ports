@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/12/08 14:20:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/02/01 11:04:11 ajacoutot Exp $
 bin/gphoto2-config
 bin/gphoto2-port-config
 include/gphoto2/
@@ -181,6 +181,7 @@ share/doc/libgphoto2/camlibs/README.gsmart300
 share/doc/libgphoto2/camlibs/README.iclick
 share/doc/libgphoto2/camlibs/README.jamcam
 share/doc/libgphoto2/camlibs/README.jl2005a
+share/doc/libgphoto2/camlibs/README.jl2005c
 share/doc/libgphoto2/camlibs/README.konica
 share/doc/libgphoto2/camlibs/README.largan-lmini
 share/doc/libgphoto2/camlibs/README.lg_gsm
@@ -216,7 +217,6 @@ share/locale/de/LC_MESSAGES/libgphoto2-2.mo
 share/locale/de/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/es/LC_MESSAGES/libgphoto2-2.mo
 share/locale/es/LC_MESSAGES/libgphoto2_port-0.mo
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/libgphoto2-2.mo
 share/locale/eu/LC_MESSAGES/libgphoto2_port-0.mo
 share/locale/fr/LC_MESSAGES/libgphoto2-2.mo
