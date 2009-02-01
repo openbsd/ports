@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/07/11 10:01:16 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/02/01 19:13:40 jakob Exp $
 @man man/man5/nsd.conf.5
 @man man/man8/nsd-checkconf.8
 @man man/man8/nsd-notify.8
@@ -18,13 +18,13 @@ share/examples/nsd/
 @mode 770
 @group named
 @sample ${SYSCONFDIR}/nsd/
-@group
 @mode
+@group
 share/examples/nsd/nsd.conf
 @group named
 @mode 640
-@sample ${SYSCONFDIR}/nsd/nsd.conf
 @group named
+@sample ${SYSCONFDIR}/nsd/nsd.conf
 @mode 770
 @sample /var/nsd/
 @sample /var/nsd/zones/
