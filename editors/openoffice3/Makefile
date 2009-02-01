@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/02/01 12:56:30 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/01 17:35:26 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -10,7 +10,7 @@ VERSION=	3.0.1
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOO300_m15
 PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}p0
+PKGNAME-main=	openoffice-${VERSION}p1
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
@@ -76,13 +76,10 @@ BUILD_DEPENDS+=	:zip-*:archivers/zip \
 		:db-java-4.*:databases/db/v4,-java,java \
 		::devel/boost
 
-LIB_DEPENDS:   raptor.2 from raptor-1.4.18 (/usr/local/openoffice.org/basis3.0/program/libunordf.so)
-LIB_DEPENDS:   rasqal.1 from redland-1.0.8 (/usr/local/openoffice.org/basis3.0/program/libunordf.so)
-LIB_DEPENDS:   rdf.0 from redland-1.0.8 (/usr/local/openoffice.org/basis3.0/program/libunordf.so)
-
 MODULES+=	lang/python
 LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
+		estdc++.>=7::lang/gcc/4.2,-estdc \
 		db.>=4:db-4.*:databases/db/v4 \
 		xslt.>=3::textproc/libxslt \
 		curl.>=7::net/curl \
