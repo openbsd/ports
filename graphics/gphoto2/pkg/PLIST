@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/12/08 14:21:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/02/01 11:04:43 ajacoutot Exp $
 @bin bin/gphoto2
 @man man/man1/gphoto2.1
 share/doc/gphoto2/
@@ -13,7 +13,6 @@ share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gphoto2.mo
 share/locale/es/LC_MESSAGES/gphoto2.mo
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/gphoto2.mo
 share/locale/fi/LC_MESSAGES/gphoto2.mo
 share/locale/fr/LC_MESSAGES/gphoto2.mo
