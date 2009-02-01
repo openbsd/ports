@@ -1,0 +1,8 @@
+Net::Netmask parses and understands IPv4 CIDR blocks.  It's built with
+an object-oriented interface and provides nearly all bits of information
+about a network block that you might want.
+
+There are also functions to put a network block into a table and look it
+up by IP address, turn an IP address range into a list of CIDR blocks,
+turn a list of CIDR blocks into a list of IP addresses, and a function
+for sorting by text IP address.
