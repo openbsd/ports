@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2009/01/07 22:54:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.147 2009/02/02 15:54:19 jasper Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -14,7 +14,7 @@ V=		MySQL-5.0
 SHARED_LIBS +=	mysqlclient_r		19.0
 SHARED_LIBS +=	mysqlclient		19.0
 
-MASTER_SITES=	http://mysql.serenitynet.com/Downloads/$V/
+MASTER_SITES=	${MASTER_SITES_MYSQL:=Downloads/$V/}
 
 HOMEPAGE=	http://www.mysql.com/
 

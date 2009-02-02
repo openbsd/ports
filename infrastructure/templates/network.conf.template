@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.126 2009/01/07 11:11:14 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.127 2009/02/02 15:54:19 jasper Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -240,3 +240,20 @@ MASTER_SITE_BERLIOS+=	\
 MASTER_SITE_RUBYFORGE+= \
 	http://files.rubyforge.mmmultiworks.com/ \
 	http://files.rubyforge.vm.bytemark.co.uk/
+
+MASTER_SITES_MYSQL+= \
+	ftp://ftp.easynet.be/mysql/ \
+	ftp://ftp.gwdg.de/pub/misc/mysql/ \
+	ftp://ftp.fh-wolfenbuettel.de/pub/database/mysql/ \
+	ftp://ftp.fi.muni.cz/pub/mysql/ \
+	http://mysql.mirrors.cybercity.dk/ \
+	http://mirrors.ntua.gr/MySQL/ \
+	ftp://ftp.ntua.gr/pub/databases/mysql/ \
+	http://mysql.sote.hu/ \
+	ftp://ftp.rhnet.is/pub/mysql/ \
+	ftp://mirror.switch.ch/mirror/mysql/ \
+	ftp://mirror.services.wisc.edu/mirrors/mysql/ \
+	http://mysql.mirrors.pair.com/ \
+	ftp://ftp.linorg.usp.br/mysql/ \
+	ftp://ftp.cbn.net.id/mirror/mysql/ \
+	http://download.softagency.net/MySQL/
