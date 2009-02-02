@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/02 00:58:02 simon Exp $
+${P5SITE}/B/
+${P5SITE}/B/Hooks/
+${P5SITE}/B/Hooks/EndOfScope.pm
+@man man/man3p/B::Hooks::EndOfScope.3p
