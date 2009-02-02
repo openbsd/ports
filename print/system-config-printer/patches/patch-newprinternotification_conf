@@ -1,0 +1,27 @@
+$OpenBSD: patch-newprinternotification_conf,v 1.1 2009/02/02 23:10:05 ajacoutot Exp $
+
+Allow anyone to listen to the new printer notification dbus signal.
+cf. Debian bug #486613.
+
+--- newprinternotification.conf.orig	Tue Feb  3 00:00:38 2009
++++ newprinternotification.conf	Tue Feb  3 00:01:27 2009
+@@ -2,10 +2,6 @@
+  "-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN"
+  "http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
+ <busconfig>
+-	<policy at_console="true">
+-		<allow own="com.redhat.NewPrinterNotification"/>
+-	</policy>
+-
+ 	<policy user="root">
+ 		<allow own="com.redhat.NewPrinterNotification"/>
+ 	</policy>
+@@ -16,7 +12,7 @@
+ 	</policy>
+ 	
+         <policy context="default">
+-                <deny own="com.redhat.NewPrinterNotification"/>
++                <allow own="com.redhat.NewPrinterNotification"/>
+ 
+                 <deny send_destination="com.redhat.NewPrinterNotification"/>
+                 <deny send_interface="com.redhat.NewPrinterNotification"/>
