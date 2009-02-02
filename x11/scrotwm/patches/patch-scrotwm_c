@@ -1,12 +1,12 @@
-$OpenBSD: patch-scrotwm_c,v 1.1.1.1 2009/01/28 13:20:23 pyr Exp $
---- scrotwm.c.orig	Wed Jan 28 12:56:55 2009
-+++ scrotwm.c	Wed Jan 28 12:57:10 2009
-@@ -129,7 +129,7 @@ u_int32_t		swm_debug = 0
- #define HEIGHT(r)	(r)->g.h
+$OpenBSD: patch-scrotwm_c,v 1.2 2009/02/02 21:21:19 pyr Exp $
+--- scrotwm.c.orig	Mon Feb  2 21:19:36 2009
++++ scrotwm.c	Mon Feb  2 21:20:11 2009
+@@ -134,7 +134,7 @@ u_int32_t		swm_debug = 0
+ #define HEIGHT(r)		(r)->g.h
  
  #ifndef SWM_LIB
--#define SWM_LIB		"/usr/X11R6/lib/swmhack.so"
-+#define SWM_LIB		"${PREFIX}/lib/swmhack.so"
+-#define SWM_LIB			"/usr/X11R6/lib/swmhack.so"
++#define SWM_LIB			"${PREFIX}/lib/swmhack.so"
  #endif
  
- #define SWM_PROPLEN	(16)
+ char			**start_argv;

@@ -1,6 +1,6 @@
-$OpenBSD: patch-scrotwm_conf,v 1.1.1.1 2009/01/28 13:20:23 pyr Exp $
---- scrotwm.conf.orig	Wed Jan 28 11:24:01 2009
-+++ scrotwm.conf	Wed Jan 28 11:48:38 2009
+$OpenBSD: patch-scrotwm_conf,v 1.2 2009/02/02 21:21:19 pyr Exp $
+--- scrotwm.conf.orig	Sun Feb  1 05:04:02 2009
++++ scrotwm.conf	Mon Feb  2 22:10:58 2009
 @@ -10,7 +10,7 @@ bar_border[1]		= rgb:00/80/80
  bar_color[1]		= black
  bar_font_color[1]	= rgb:a0/a0/a0
@@ -10,9 +10,12 @@ $OpenBSD: patch-scrotwm_conf,v 1.1.1.1 2009/01/28 13:20:23 pyr Exp $
  #bar_delay		= 1
  
  # spawn app
-@@ -21,4 +21,4 @@ dialog_ratio		= 0.6
+@@ -19,6 +19,6 @@ spawn_term		= xterm
+ # dialog box size ratio .3 >= r < 1
+ dialog_ratio		= 0.6
  
- # screen shots
+-# screen shots
++# screen shots (requires the scrot package)
  # screenshot_enabled	= 1
 -# screenshot_app	= screenshot.sh
 +# screenshot_app	= ${PREFIX}/share/scrotwm/screenshot.sh

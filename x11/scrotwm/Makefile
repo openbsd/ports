@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/28 13:20:23 pyr Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/02 21:21:19 pyr Exp $
 
 COMMENT=		small tiling window manager
 
-DISTNAME=		scrotwm-0.6
+DISTNAME=		scrotwm-0.7
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.peereboom.us/scrotwm/
@@ -19,9 +19,7 @@ MASTER_SITES=   http://spootnik.org/scrotwm/
 NO_REGRESS=     Yes
 WANTLIB=        c X11 Xrandr util
 
-RUN_DEPENDS=	:dmenu->=3.9:x11/dmenu \
-		::x11/terminus-font \
-		::graphics/scrot
+RUN_DEPENDS=	:dmenu->=3.9:x11/dmenu
 		
 MAKE_FLAGS=	BINDIR="${TRUEPREFIX}/bin" \
 		MANDIR="${TRUEPREFIX}/man/cat"
