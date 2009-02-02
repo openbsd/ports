@@ -1,0 +1,14 @@
+$OpenBSD: patch-check_py,v 1.1 2009/02/02 10:47:11 ajacoutot Exp $
+--- check.py.orig	Mon Feb  2 10:51:57 2009
++++ check.py	Mon Feb  2 10:52:05 2009
+@@ -370,8 +370,8 @@ try:
+             log.info("HPLIP %s currently installed in '%s'." % (v, home))
+ 
+             log.info("")
+-            log.info(log.bold("Current contents of '/etc/hp/hplip.conf' file:"))
+-            output = file('/etc/hp/hplip.conf', 'r').read()
++            log.info(log.bold("Current contents of '${SYSCONFDIR}/hp/hplip.conf' file:"))
++            output = file('${SYSCONFDIR}/hp/hplip.conf', 'r').read()
+             log.info(output)
+ 
+         else:

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.1.1.1 2007/11/02 15:48:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.2 2009/02/02 10:47:12 ajacoutot Exp $
 @pkgpath print/hpijs
-bin/hpijs
+@bin bin/hpijs
 lib/libhpip.la
 @lib lib/libhpip.so.${LIBhpip_VERSION}
 lib/libhpmud.la

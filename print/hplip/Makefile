@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/05 19:10:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/02 10:47:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,9 +8,9 @@ COMMENT-docs=	html documentation for HPLIP
 
 V=		2.7.12
 DISTNAME=	hplip-${V}
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}p1
 PKGNAME-hpijs=	hpijs-${V}
-PKGNAME-docs=	hplip-docs-${V}
+PKGNAME-docs=	hplip-docs-${V}p0
 
 SHARED_LIBS+=	hpmud		0.0	# .0.0
 SHARED_LIBS+=	hpip		0.0	# .0.1
@@ -79,10 +79,16 @@ post-extract:
 pre-configure:
 	@find ${WRKSRC} -name \*.py | \
 		xargs perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g'
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
-		${WRKSRC}/installer/{core_install,dcheck}.py
-	@perl -pi -e 's,!!MODPY_BIN!!,${MODPY_BIN},g' \
-		${WRKSRC}/base/service.py
+	${SUBST_CMD} ${WRKSRC}/prnt/hpijs/globals.cpp \
+		${WRKSRC}/base/g.py \
+		${WRKSRC}/base/service.py \
+		${WRKSRC}/installer/core_install.py \
+		${WRKSRC}/installer/dcheck.py \
+		${WRKSRC}/fax/backend/hpfax.py \
+		${WRKSRC}/hpssd.py \
+		${WRKSRC}/check.py \
+		${WRKSRC}/doc/release_notes.html \
+		${WRKSRC}/doc/tech_docs/man_pages/hpssd.html
 
 post-install:
 	@ln -s ${TRUEPREFIX}/share/hplip/hpssd.py ${PREFIX}/sbin/hpssd

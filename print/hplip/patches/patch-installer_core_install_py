@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_core_install_py,v 1.2 2008/03/15 10:18:30 ajacoutot Exp $
---- installer/core_install.py.orig	Fri Mar  7 09:28:37 2008
-+++ installer/core_install.py	Fri Mar  7 09:32:04 2008
+$OpenBSD: patch-installer_core_install_py,v 1.3 2009/02/02 10:47:12 ajacoutot Exp $
+--- installer/core_install.py.orig	Tue Dec 11 19:41:47 2007
++++ installer/core_install.py	Mon Feb  2 10:51:04 2009
 @@ -184,7 +184,7 @@ class CoreInstall(object):
              'reportlab':        (False, ['fax'], "Reportlab - PDF library for Python", self.check_reportlab), 
              'python23':         (True,  ['fax'], "Python 2.3 or greater - Required for fax functionality", self.check_python23),
@@ -22,7 +22,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.2 2008/03/15 10:18:30 ajacoutot Ex
              return False
  
 -        return len(locate_file_contains("usb.h", '/usr/include', 'usb_init(void)')) > 0
-+        return len(locate_file_contains("usb.h", '!!LOCALBASE!!/include', 'usb_init(void)')) > 0
++        return len(locate_file_contains("usb.h", '${LOCALBASE}/include', 'usb_init(void)')) > 0
  
  
      def check_libjpeg(self):
@@ -43,7 +43,16 @@ $OpenBSD: patch-installer_core_install_py,v 1.2 2008/03/15 10:18:30 ajacoutot Ex
  
      def check_sane_devel(self):
 -        return len(locate_file_contains("sane.h", '/usr/include', 'extern SANE_Status sane_init')) > 0
-+        return len(locate_file_contains("sane.h", '!!LOCALBASE!!/include', 'extern SANE_Status sane_init')) > 0
++        return len(locate_file_contains("sane.h", '${LOCALBASE}/include', 'extern SANE_Status sane_init')) > 0
  
      def check_xsane(self):
          if os.getenv('DISPLAY'):
+@@ -683,7 +683,7 @@ class CoreInstall(object):
+ 
+     def check_hplip(self):
+         log.debug("Checking for HPLIP...")
+-        return check_ps(['hpiod', 'hpssd']) and locate_files('hplip.conf', '/etc/hp')
++        return check_ps(['hpiod', 'hpssd']) and locate_files('hplip.conf', '${SYSCONFDIR}/hp')
+ 
+     def check_hpssd(self):
+         log.debug("Checking for hpssd...")

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/06/05 19:10:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/02/02 10:47:12 ajacoutot Exp $
 bin/hp-align
 bin/hp-check
 bin/hp-clean
@@ -33,7 +33,7 @@ lib/sane/libsane-hpaio.la
 lib/sane/libsane-hpaio.so
 libexec/cups/
 libexec/cups/backend/
-libexec/cups/backend/hp
+@bin libexec/cups/backend/hp
 libexec/cups/backend/hpfax
 sbin/hpssd
 share/applications/hplip.desktop

@@ -1,0 +1,12 @@
+$OpenBSD: patch-prnt_hpijs_globals_cpp,v 1.1 2009/02/02 10:47:12 ajacoutot Exp $
+--- prnt/hpijs/globals.cpp.orig	Mon Feb  2 10:50:06 2009
++++ prnt/hpijs/globals.cpp	Mon Feb  2 10:50:17 2009
+@@ -225,7 +225,7 @@ void *LoadPlugin (char *szPluginName)
+     void    *ptemp = NULL;
+     char    *p = NULL;
+     int     bFound = 0;
+-    if ((fp = fopen ("/etc/hp/hplip.conf", "r")) == NULL)
++    if ((fp = fopen ("${SYSCONFDIR}/hp/hplip.conf", "r")) == NULL)
+     {
+         return NULL;
+     }
