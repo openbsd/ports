@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.103 2009/01/29 23:25:45 bernd Exp $
+$OpenBSD: user.list,v 1.104 2009/02/02 12:21:57 martynas Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -125,3 +125,4 @@ id  user		group		port options
 614 _openct		_openct		security/openct
 615 _iftop		_iftop		net/iftop
 616 _ircd-hybrid	_ircd-hybrid	net/ircd-hybrid
+617 _tinyproxy		_tinyproxy	www/tinyproxy
