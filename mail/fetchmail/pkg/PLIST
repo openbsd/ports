@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.16 2007/01/09 10:35:42 bernd Exp $
-bin/fetchmail
+@comment $OpenBSD: PLIST,v 1.17 2009/02/02 11:42:13 bernd Exp $
+@bin bin/fetchmail
 bin/fetchmailconf
 libexec/fetchmailconf.bin
 @man man/man1/fetchmail.1

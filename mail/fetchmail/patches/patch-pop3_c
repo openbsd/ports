@@ -1,0 +1,16 @@
+$OpenBSD: patch-pop3_c,v 1.1 2009/02/02 11:42:13 bernd Exp $
+
+Fix stunnel usage with TLS1 encryption.
+https://lists.berlios.de/pipermail/fetchmail-users/2007-December/001396.html
+
+--- pop3.c.orig	Sun Mar 18 02:13:45 2007
++++ pop3.c	Mon Feb  2 12:37:35 2009
+@@ -449,7 +449,7 @@ static int pop3_getauth(int sock, struct query *ctl, c
+ 			report(stderr, GT_("TLS is mandatory for this session, but server refused CAPA command.\n"));
+ 			report(stderr, GT_("The CAPA command is however necessary for TLS.\n"));
+ 			return ok;
+-		    } else {
++		    } else if (maybe_tls(ctl)) {
+ 			/* defeat opportunistic STLS */
+ 			xfree(ctl->sslproto);
+ 			ctl->sslproto = xstrdup("");
