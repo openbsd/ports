@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2008/02/05 20:45:06 okan Exp $
+# $OpenBSD: Makefile,v 1.11 2009/02/02 22:14:55 okan Exp $
 
 COMMENT=	simple event correlator
 
-DISTNAME=	sec-2.4.2
+DISTNAME=	sec-2.5.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=simple-evcorr/}
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.estpak.ee/~risto/sec/
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
