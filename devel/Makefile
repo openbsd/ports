@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.672 2009/01/31 18:21:15 bernd Exp $
+# $OpenBSD: Makefile,v 1.673 2009/02/02 00:58:12 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -226,6 +226,7 @@
      SUBDIR += p5-Array-Window
      SUBDIR += p5-B-Deobfuscate
      SUBDIR += p5-B-Graph
+     SUBDIR += p5-B-Hooks-EndOfScope
      SUBDIR += p5-B-Keywords
      SUBDIR += p5-BFD
      SUBDIR += p5-BSD-Resource
@@ -601,6 +602,7 @@
      SUBDIR += p5-Universal-moniker
      SUBDIR += p5-Universal-require
      SUBDIR += p5-VCP-autrijus
+     SUBDIR += p5-Variable-Magic
      SUBDIR += p5-Want
      SUBDIR += p5-WeakRef
      SUBDIR += p5-YAML
