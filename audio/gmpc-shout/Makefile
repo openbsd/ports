@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/30 22:51:39 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2009/02/02 20:30:48 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		shoutcast support, for gmpc
 
 VERSION=		0.17.0
 DISTNAME=		gmpc-shout-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://gmpcwiki.sarine.nl/index.php?title=Shout
