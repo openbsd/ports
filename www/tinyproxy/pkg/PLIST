@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/29 10:02:57 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/02/02 12:29:16 martynas Exp $
+@newgroup _tinyproxy:617
+@newuser _tinyproxy:617:_tinyproxy:daemon:tinyproxy:/nonexistent:/sbin/nologin
 @man man/man8/tinyproxy.8
 sbin/tinyproxy
 share/doc/tinyproxy/

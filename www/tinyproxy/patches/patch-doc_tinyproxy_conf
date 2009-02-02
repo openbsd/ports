@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_tinyproxy_conf,v 1.1 2009/02/02 12:29:16 martynas Exp $
+--- doc/tinyproxy.conf.orig	Fri Aug  6 19:23:48 2004
++++ doc/tinyproxy.conf	Mon Feb  2 06:41:40 2009
+@@ -6,8 +6,8 @@
+ # Name of the user the tinyproxy daemon should switch to after the port
+ # has been bound.
+ #
+-User nobody
+-Group nogroup
++User "_tinyproxy"
++Group "_tinyproxy"
+ 
+ #
+ # Port to listen on.

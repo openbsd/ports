@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2009/02/02 12:29:16 martynas Exp $
 
 COMMENT=		lightweight HTTP/SSL proxy
 
 VERSION=		1.6.3
 DISTNAME=		tinyproxy-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		www net
 
 HOMEPAGE=		http://tinyproxy.sourceforge.net/
