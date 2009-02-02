@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/16 02:46:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/02/02 23:27:48 ajacoutot Exp $
 @bin bin/x11vnc
 @man man/man1/x11vnc.1
-share/applications/
 share/applications/x11vnc.desktop
 share/doc/x11vnc/
 share/doc/x11vnc/README
