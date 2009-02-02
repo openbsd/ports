@@ -1,0 +1,78 @@
+$OpenBSD: patch-gnome-settings-daemon_gnome-settings-module_c,v 1.1 2009/02/02 15:13:08 ajacoutot Exp $
+--- gnome-settings-daemon/gnome-settings-module.c.orig	Tue Nov 25 00:02:42 2008
++++ gnome-settings-daemon/gnome-settings-module.c	Mon Feb  2 12:11:54 2009
+@@ -24,6 +24,11 @@
+ 
+ #include <gmodule.h>
+ 
++#include <string.h>
++
++#include <gdk/gdk.h>
++#include <gdk/gdkx.h>
++
+ typedef struct _GnomeSettingsModuleClass GnomeSettingsModuleClass;
+ 
+ struct _GnomeSettingsModuleClass
+@@ -56,33 +61,44 @@ gnome_settings_module_load (GTypeModule *gmodule)
+ 
+         g_debug ("Loading %s", module->path);
+ 
+-        module->library = g_module_open (module->path, 0);
++        char const *vendor = ServerVendor (GDK_DISPLAY ());
+ 
+-        if (module->library == NULL) {
+-                g_warning (g_module_error ());
++	/*
++	  do not load the keyboard pluging on VNC-like displays:
++	  it makes gnome-settings-daemon crash
++	*/ 
++	if (strcmp(module->path, "${PREFIX}/lib/gnome-settings-daemon-2.0/libkeyboard.so") == 0 && strcmp(vendor, "The X.Org Foundation") != 0 ) {
++		g_debug ("Running under a VNC or alike display, disabling %s", module->path);
++		return FALSE;
++	} else {
++        	module->library = g_module_open (module->path, 0);
+ 
+-                return FALSE;
+-        }
++        	if (module->library == NULL) {
++                	g_warning (g_module_error ());
+ 
+-        /* extract symbols from the lib */
+-        res = g_module_symbol (module->library, "register_gnome_settings_plugin", (void *) &register_func);
+-        if (! res) {
+-                g_warning (g_module_error ());
+-                g_module_close (module->library);
++                	return FALSE;
++        	}
+ 
+-                return FALSE;
+-        }
++        	/* extract symbols from the lib */
++        	res = g_module_symbol (module->library, "register_gnome_settings_plugin", (void *) &register_func);
++        	if (! res) {
++                	g_warning (g_module_error ());
++                	g_module_close (module->library);
+ 
+-        g_assert (register_func);
++                	return FALSE;
++        	}
+ 
+-        module->type = register_func (gmodule);
++        	g_assert (register_func);
+ 
+-        if (module->type == 0) {
+-                g_warning ("Invalid gnome settings plugin in module %s", module->path);
+-                return FALSE;
+-        }
++        	module->type = register_func (gmodule);
+ 
++        	if (module->type == 0) {
++                	g_warning ("Invalid gnome settings plugin in module %s", module->path);
++                	return FALSE;
++        	}
+         return TRUE;
++
++	}
+ }
+ 
+ static void

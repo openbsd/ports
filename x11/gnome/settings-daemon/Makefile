@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/01/20 23:12:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/02/02 15:13:08 ajacoutot Exp $
 
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -50,5 +50,8 @@ CONFIGURE_ARGS+=	--enable-gstreamer
 
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/gnome-settings-daemon/gnome-settings-module.c
 
 .include <bsd.port.mk>
