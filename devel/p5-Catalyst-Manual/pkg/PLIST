@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/11/21 21:10:53 simon Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/02/02 00:30:56 simon Exp $
 ${P5SITE}/Catalyst/
 ${P5SITE}/Catalyst/Manual/
+@comment ${P5SITE}/Catalyst/Manual.pm
 ${P5SITE}/Catalyst/Manual/About.pod
 ${P5SITE}/Catalyst/Manual/Actions.pod
 ${P5SITE}/Catalyst/Manual/Cookbook.pod
@@ -11,7 +12,10 @@ ${P5SITE}/Catalyst/Manual/Intro.pod
 ${P5SITE}/Catalyst/Manual/Plugins.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/
 ${P5SITE}/Catalyst/Manual/Tutorial.pod
+${P5SITE}/Catalyst/Manual/Tutorial/AdvancedCRUD/
 ${P5SITE}/Catalyst/Manual/Tutorial/AdvancedCRUD.pod
+${P5SITE}/Catalyst/Manual/Tutorial/AdvancedCRUD/FormBuilder.pod
+${P5SITE}/Catalyst/Manual/Tutorial/AdvancedCRUD/FormFu.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/Appendices.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/Authentication.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/Authorization.pod
@@ -19,9 +23,10 @@ ${P5SITE}/Catalyst/Manual/Tutorial/BasicCRUD.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/CatalystBasics.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/Debugging.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/Intro.pod
+${P5SITE}/Catalyst/Manual/Tutorial/MoreCatalystBasics.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/Testing.pod
 ${P5SITE}/Catalyst/Manual/WritingPlugins.pod
-${P5SITE}/Catalyst/ManualPlaceholder.pm
+@comment @man man/man3p/Catalyst::Manual.3p
 @man man/man3p/Catalyst::Manual::About.3p
 @man man/man3p/Catalyst::Manual::Actions.3p
 @man man/man3p/Catalyst::Manual::Cookbook.3p
@@ -32,6 +37,8 @@ ${P5SITE}/Catalyst/ManualPlaceholder.pm
 @man man/man3p/Catalyst::Manual::Plugins.3p
 @man man/man3p/Catalyst::Manual::Tutorial.3p
 @man man/man3p/Catalyst::Manual::Tutorial::AdvancedCRUD.3p
+@man man/man3p/Catalyst::Manual::Tutorial::AdvancedCRUD::FormBuilder.3p
+@man man/man3p/Catalyst::Manual::Tutorial::AdvancedCRUD::FormFu.3p
 @man man/man3p/Catalyst::Manual::Tutorial::Appendices.3p
 @man man/man3p/Catalyst::Manual::Tutorial::Authentication.3p
 @man man/man3p/Catalyst::Manual::Tutorial::Authorization.3p
@@ -39,6 +46,6 @@ ${P5SITE}/Catalyst/ManualPlaceholder.pm
 @man man/man3p/Catalyst::Manual::Tutorial::CatalystBasics.3p
 @man man/man3p/Catalyst::Manual::Tutorial::Debugging.3p
 @man man/man3p/Catalyst::Manual::Tutorial::Intro.3p
+@man man/man3p/Catalyst::Manual::Tutorial::MoreCatalystBasics.3p
 @man man/man3p/Catalyst::Manual::Tutorial::Testing.3p
 @man man/man3p/Catalyst::Manual::WritingPlugins.3p
-@man man/man3p/Catalyst::ManualPlaceholder.3p
