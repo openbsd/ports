@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/11/05 18:28:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/02/02 11:19:21 sthen Exp $
 lib/X11/fonts/
 @fontdir lib/X11/fonts/terminus/
 lib/X11/fonts/terminus/fonts.alias-terminus
-lib/X11/fonts/terminus/ter-112b.pcf.gz
 lib/X11/fonts/terminus/ter-112n.pcf.gz
 lib/X11/fonts/terminus/ter-114b.pcf.gz
 lib/X11/fonts/terminus/ter-114n.pcf.gz
@@ -16,7 +15,6 @@ lib/X11/fonts/terminus/ter-128b.pcf.gz
 lib/X11/fonts/terminus/ter-128n.pcf.gz
 lib/X11/fonts/terminus/ter-132b.pcf.gz
 lib/X11/fonts/terminus/ter-132n.pcf.gz
-lib/X11/fonts/terminus/ter-212b.pcf.gz
 lib/X11/fonts/terminus/ter-212n.pcf.gz
 lib/X11/fonts/terminus/ter-214b.pcf.gz
 lib/X11/fonts/terminus/ter-214n.pcf.gz
@@ -30,7 +28,6 @@ lib/X11/fonts/terminus/ter-228b.pcf.gz
 lib/X11/fonts/terminus/ter-228n.pcf.gz
 lib/X11/fonts/terminus/ter-232b.pcf.gz
 lib/X11/fonts/terminus/ter-232n.pcf.gz
-lib/X11/fonts/terminus/ter-512b.pcf.gz
 lib/X11/fonts/terminus/ter-512n.pcf.gz
 lib/X11/fonts/terminus/ter-514b.pcf.gz
 lib/X11/fonts/terminus/ter-514n.pcf.gz
@@ -44,7 +41,6 @@ lib/X11/fonts/terminus/ter-528b.pcf.gz
 lib/X11/fonts/terminus/ter-528n.pcf.gz
 lib/X11/fonts/terminus/ter-532b.pcf.gz
 lib/X11/fonts/terminus/ter-532n.pcf.gz
-lib/X11/fonts/terminus/ter-712b.pcf.gz
 lib/X11/fonts/terminus/ter-712n.pcf.gz
 lib/X11/fonts/terminus/ter-714b.pcf.gz
 lib/X11/fonts/terminus/ter-714n.pcf.gz
@@ -58,7 +54,6 @@ lib/X11/fonts/terminus/ter-728b.pcf.gz
 lib/X11/fonts/terminus/ter-728n.pcf.gz
 lib/X11/fonts/terminus/ter-732b.pcf.gz
 lib/X11/fonts/terminus/ter-732n.pcf.gz
-lib/X11/fonts/terminus/ter-912b.pcf.gz
 lib/X11/fonts/terminus/ter-912n.pcf.gz
 lib/X11/fonts/terminus/ter-914b.pcf.gz
 lib/X11/fonts/terminus/ter-914n.pcf.gz
@@ -72,7 +67,6 @@ lib/X11/fonts/terminus/ter-928b.pcf.gz
 lib/X11/fonts/terminus/ter-928n.pcf.gz
 lib/X11/fonts/terminus/ter-932b.pcf.gz
 lib/X11/fonts/terminus/ter-932n.pcf.gz
-lib/X11/fonts/terminus/ter-c12b.pcf.gz
 lib/X11/fonts/terminus/ter-c12n.pcf.gz
 lib/X11/fonts/terminus/ter-c14b.pcf.gz
 lib/X11/fonts/terminus/ter-c14n.pcf.gz
@@ -86,7 +80,6 @@ lib/X11/fonts/terminus/ter-c28b.pcf.gz
 lib/X11/fonts/terminus/ter-c28n.pcf.gz
 lib/X11/fonts/terminus/ter-c32b.pcf.gz
 lib/X11/fonts/terminus/ter-c32n.pcf.gz
-lib/X11/fonts/terminus/ter-d12b.pcf.gz
 lib/X11/fonts/terminus/ter-d12n.pcf.gz
 lib/X11/fonts/terminus/ter-d14b.pcf.gz
 lib/X11/fonts/terminus/ter-d14n.pcf.gz
@@ -100,7 +93,6 @@ lib/X11/fonts/terminus/ter-d28b.pcf.gz
 lib/X11/fonts/terminus/ter-d28n.pcf.gz
 lib/X11/fonts/terminus/ter-d32b.pcf.gz
 lib/X11/fonts/terminus/ter-d32n.pcf.gz
-lib/X11/fonts/terminus/ter-f12b.pcf.gz
 lib/X11/fonts/terminus/ter-f12n.pcf.gz
 lib/X11/fonts/terminus/ter-f14b.pcf.gz
 lib/X11/fonts/terminus/ter-f14n.pcf.gz
@@ -114,7 +106,6 @@ lib/X11/fonts/terminus/ter-f28b.pcf.gz
 lib/X11/fonts/terminus/ter-f28n.pcf.gz
 lib/X11/fonts/terminus/ter-f32b.pcf.gz
 lib/X11/fonts/terminus/ter-f32n.pcf.gz
-lib/X11/fonts/terminus/ter-g12b.pcf.gz
 lib/X11/fonts/terminus/ter-g12n.pcf.gz
 lib/X11/fonts/terminus/ter-g14b.pcf.gz
 lib/X11/fonts/terminus/ter-g14n.pcf.gz
@@ -128,7 +119,6 @@ lib/X11/fonts/terminus/ter-g28b.pcf.gz
 lib/X11/fonts/terminus/ter-g28n.pcf.gz
 lib/X11/fonts/terminus/ter-g32b.pcf.gz
 lib/X11/fonts/terminus/ter-g32n.pcf.gz
-lib/X11/fonts/terminus/ter-k12b.pcf.gz
 lib/X11/fonts/terminus/ter-k12n.pcf.gz
 lib/X11/fonts/terminus/ter-k14b.pcf.gz
 lib/X11/fonts/terminus/ter-k14n.pcf.gz
@@ -142,7 +132,6 @@ lib/X11/fonts/terminus/ter-k28b.pcf.gz
 lib/X11/fonts/terminus/ter-k28n.pcf.gz
 lib/X11/fonts/terminus/ter-k32b.pcf.gz
 lib/X11/fonts/terminus/ter-k32n.pcf.gz
-lib/X11/fonts/terminus/ter-p12b.pcf.gz
 lib/X11/fonts/terminus/ter-p12n.pcf.gz
 lib/X11/fonts/terminus/ter-p14b.pcf.gz
 lib/X11/fonts/terminus/ter-p14n.pcf.gz
@@ -156,7 +145,6 @@ lib/X11/fonts/terminus/ter-p28b.pcf.gz
 lib/X11/fonts/terminus/ter-p28n.pcf.gz
 lib/X11/fonts/terminus/ter-p32b.pcf.gz
 lib/X11/fonts/terminus/ter-p32n.pcf.gz
-lib/X11/fonts/terminus/ter-u12b.pcf.gz
 lib/X11/fonts/terminus/ter-u12n.pcf.gz
 lib/X11/fonts/terminus/ter-u14b.pcf.gz
 lib/X11/fonts/terminus/ter-u14n.pcf.gz
@@ -170,7 +158,6 @@ lib/X11/fonts/terminus/ter-u28b.pcf.gz
 lib/X11/fonts/terminus/ter-u28n.pcf.gz
 lib/X11/fonts/terminus/ter-u32b.pcf.gz
 lib/X11/fonts/terminus/ter-u32n.pcf.gz
-lib/X11/fonts/terminus/ter-x12b.pcf.gz
 lib/X11/fonts/terminus/ter-x12n.pcf.gz
 lib/X11/fonts/terminus/ter-x14b.pcf.gz
 lib/X11/fonts/terminus/ter-x14n.pcf.gz

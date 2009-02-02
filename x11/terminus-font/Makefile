@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2009/01/24 17:58:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2009/02/02 11:19:21 sthen Exp $
 
 COMMENT=		fixed width fonts especially for long hacking sessions
 
 DISTNAME=		terminus-font-4.28
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.is-vn.bg/hamster/
@@ -23,7 +23,7 @@ CONFIGURE_STYLE=	simple
 NO_REGRESS=		Yes
 USE_X11=		Yes
 
-ALL_TARGET=		pcf
+ALL_TARGET=		n12
 
 FONTDIR=		${PREFIX}/lib/X11/fonts/terminus
 
