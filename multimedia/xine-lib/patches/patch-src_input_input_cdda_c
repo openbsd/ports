@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_input_input_cdda_c,v 1.6 2008/08/31 00:35:08 brad Exp $
---- src/input/input_cdda.c.orig	Wed Aug 13 12:33:05 2008
-+++ src/input/input_cdda.c	Wed Aug 27 19:50:47 2008
+$OpenBSD: patch-src_input_input_cdda_c,v 1.7 2009/02/02 22:00:42 sthen Exp $
+--- src/input/input_cdda.c.orig	Sun Jan  4 10:47:28 2009
++++ src/input/input_cdda.c	Thu Jan  8 01:02:34 2009
 @@ -72,7 +72,7 @@
  #elif defined(WIN32)
  #define DEFAULT_CDDA_DEVICE "d:\\"
@@ -10,15 +10,6 @@ $OpenBSD: patch-src_input_input_cdda_c,v 1.6 2008/08/31 00:35:08 brad Exp $
  #endif
  
  #define CDDB_SERVER             "freedb.freedb.org"
-@@ -136,7 +136,7 @@ typedef struct {
-     char              *disc_category;
- 
-     int                fd;
--    unsigned long      disc_id;
-+    uint32_t           disc_id;
- 
-     int                disc_length;
-     trackinfo_t       *track;
 @@ -611,7 +611,7 @@ static int read_cdrom_frames(cdda_input_plugin_t *this
    return 0;
  }
@@ -82,21 +73,3 @@ $OpenBSD: patch-src_input_input_cdda_c,v 1.6 2008/08/31 00:35:08 brad Exp $
      scsireq_t req;
      int nblocks = 1;
  
-@@ -1902,7 +1902,7 @@ static unsigned int _cdda_cddb_sum(int n) {
-   }
-   return ret;
- }
--static unsigned long _cdda_calc_cddb_id(cdda_input_plugin_t *this) {
-+static uint32_t _cdda_calc_cddb_id(cdda_input_plugin_t *this) {
-   int i, tsum = 0;
-   
-   if(this == NULL || (this->cddb.num_tracks <= 0))
-@@ -1959,7 +1959,7 @@ static void _cdda_cdindex(cdda_input_plugin_t *this, c
- /*
-  * return cbbd disc id.
-  */
--static unsigned long _cdda_get_cddb_id(cdda_input_plugin_t *this) {
-+static uint32_t _cdda_get_cddb_id(cdda_input_plugin_t *this) {
- 
-   if(this == NULL || (this->cddb.num_tracks <= 0))
-     return 0;

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-jack,v 1.1 2008/03/24 03:26:34 jakemsr Exp $
-lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_jack.so

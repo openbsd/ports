@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_input_input_http_c,v 1.5 2008/07/02 01:02:42 brad Exp $
---- src/input/input_http.c.orig	Wed Jun 25 09:04:09 2008
-+++ src/input/input_http.c	Sun Jun 29 20:54:12 2008
+$OpenBSD: patch-src_input_input_http_c,v 1.6 2009/02/02 22:00:42 sthen Exp $
+--- src/input/input_http.c.orig	Wed Jan  7 11:14:32 2009
++++ src/input/input_http.c	Thu Jan  8 01:02:34 2009
 @@ -409,7 +409,7 @@ static off_t http_plugin_read_int (http_input_plugin_t
    
  error:
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.5 2008/07/02 01:02:42 brad Exp $
    xine_log (this->stream->xine, XINE_LOG_MSG, _("input_http: read error %d\n"), errno);
    return read_bytes;
  }
-@@ -671,7 +671,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -679,7 +679,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
        if (http_plugin_basicauth (this_class->proxyuser,
  			         this_class->proxypassword,
  				 this->proxyauth, BUFSIZE)) {
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.5 2008/07/02 01:02:42 brad Exp $
  	return 0;
        }
      }
-@@ -680,7 +680,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -688,7 +688,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
    
    if (!_x_parse_url(this->mrl, &this->proto, &this->host, &this->port,
                      &this->user, &this->password, &this->uri)) {
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.5 2008/07/02 01:02:42 brad Exp $
      return 0;
    }
    use_proxy = use_proxy && _x_use_proxy(this_class, this->host);
-@@ -690,7 +690,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -698,7 +698,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
    
    if (this->user && strlen(this->user)) {
      if (http_plugin_basicauth (this->user, this->password, this->auth, BUFSIZE)) {
@@ -37,7 +37,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.5 2008/07/02 01:02:42 brad Exp $
        return -1;
      }
    }
-@@ -744,7 +744,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -752,7 +752,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
      } while ((res == XIO_TIMEOUT) && (progress <= 100000));
  
      if (res != XIO_READY) {
@@ -46,7 +46,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.5 2008/07/02 01:02:42 brad Exp $
        return -3;
      }
    }
-@@ -784,7 +784,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -792,7 +792,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
  		     "\015\012",
  		     VERSION);
    if (_x_io_tcp_write (this->stream, this->fh, this->buf, buflen) != buflen) {
@@ -55,7 +55,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.5 2008/07/02 01:02:42 brad Exp $
      xprintf(this_class->xine, XINE_VERBOSITY_DEBUG, "input_http: couldn't send request\n");
      return -4;
    }
-@@ -828,7 +828,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -836,7 +836,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
  	    (sscanf(this->buf, "ICY %d %50[^\015\012]", /* icecast 1 ? */
  		    &httpcode, httpstatus) != 2)
  	   ) {
@@ -64,7 +64,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.5 2008/07/02 01:02:42 brad Exp $
  	    xine_log (this->stream->xine, XINE_LOG_MSG, 
  		      _("input_http: invalid http answer\n"));
  	    return -6;
-@@ -839,20 +839,20 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -847,20 +847,20 @@ static int http_plugin_open (input_plugin_t *this_gen 
  		    _("input_http: 3xx redirection: >%d %s<\n"),
  		    httpcode, httpstatus);
  	} else if (httpcode == 404) {
@@ -88,7 +88,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.5 2008/07/02 01:02:42 brad Exp $
        	  xine_log (this->stream->xine, XINE_LOG_MSG,
  		    _("input_http: http status not 2xx: >%d %s<\n"),
  		    httpcode, httpstatus);
-@@ -949,7 +949,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -957,7 +957,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
      } else
        len ++;
      if ( len >= BUFSIZE ) {

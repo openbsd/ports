@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_demuxers_demux_qt_c,v 1.6 2008/06/18 01:26:41 brad Exp $
---- src/demuxers/demux_qt.c.orig	Sat Jun 14 19:15:00 2008
-+++ src/demuxers/demux_qt.c	Mon Jun 16 02:30:50 2008
-@@ -3022,7 +3022,7 @@ static demux_plugin_t *open_plugin (demux_class_t *cla
+$OpenBSD: patch-src_demuxers_demux_qt_c,v 1.7 2009/02/02 22:00:42 sthen Exp $
+--- src/demuxers/demux_qt.c.orig	Wed Jan  7 11:14:32 2009
++++ src/demuxers/demux_qt.c	Thu Jan  8 01:02:34 2009
+@@ -3049,7 +3049,7 @@ static demux_plugin_t *open_plugin (demux_class_t *cla
        /* special consideration for DRM-protected files */
        if (this->qt->last_error == QT_DRM_NOT_SUPPORTED)
          _x_message (this->stream, XINE_MSG_ENCRYPTED_SOURCE,

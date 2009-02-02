@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.i386-main,v 1.3 2008/03/27 01:35:02 jakemsr Exp $
+@comment $OpenBSD: PFRAG.i386,v 1.3 2009/02/02 22:00:42 sthen Exp $
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_tvtime.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_qt.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_w32dll.so

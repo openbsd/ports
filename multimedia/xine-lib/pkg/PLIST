@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2008/12/29 23:26:21 jakemsr Exp $
-@pkgpath multimedia/xine-lib
+@comment $OpenBSD: PLIST,v 1.5 2009/02/02 22:00:42 sthen Exp $
+@pkgpath ${BASE_PKGPATH},jack
 %%i386%%
 bin/xine-config
 @bin bin/xine-list-1.1
@@ -125,6 +125,9 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_raw.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_sdl.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xshm.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xv.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xvmc.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xxmc.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_wavpack.so
 @man man/man1/xine-config.1
 @man man/man1/xine-list-1.1.1
 @man man/man5/xine.5
@@ -135,16 +138,16 @@ share/doc/xine-lib/
 @comment share/doc/xine-lib/ChangeLog
 @comment share/doc/xine-lib/NEWS
 share/doc/xine-lib/README
-share/doc/xine-lib/README.MINGWCROSS
-share/doc/xine-lib/README.WIN32
-share/doc/xine-lib/README.dvb
-share/doc/xine-lib/README.dxr3
-share/doc/xine-lib/README.freebsd
-share/doc/xine-lib/README.irix
-share/doc/xine-lib/README.network_dvd
-share/doc/xine-lib/README.opengl
-share/doc/xine-lib/README.solaris
-share/doc/xine-lib/README.syncfb
+@comment share/doc/xine-lib/README.MINGWCROSS
+@comment share/doc/xine-lib/README.WIN32
+@comment share/doc/xine-lib/README.dvb
+@comment share/doc/xine-lib/README.dxr3
+@comment share/doc/xine-lib/README.freebsd
+@comment share/doc/xine-lib/README.irix
+@comment share/doc/xine-lib/README.network_dvd
+@comment share/doc/xine-lib/README.opengl
+@comment share/doc/xine-lib/README.solaris
+@comment share/doc/xine-lib/README.syncfb
 share/doc/xine-lib/README_xxmc.html
 @comment share/doc/xine-lib/TODO
 share/doc/xine-lib/faq.html

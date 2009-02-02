@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_input_mms_c,v 1.6 2008/06/18 01:26:41 brad Exp $
---- src/input/mms.c.orig	Sat Jun 14 19:15:00 2008
-+++ src/input/mms.c	Mon Jun 16 02:30:50 2008
+$OpenBSD: patch-src_input_mms_c,v 1.7 2009/02/02 22:00:42 sthen Exp $
+--- src/input/mms.c.orig	Sun Jan  4 10:47:28 2009
++++ src/input/mms.c	Thu Jan  8 01:06:20 2009
 @@ -48,6 +48,7 @@
  #include <iconv.h>
  #include <locale.h>
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_input_mms_c,v 1.6 2008/06/18 01:26:41 brad Exp $
  
  #ifdef USE_ICONV
  static iconv_t string_utf16_open() {
--    return iconv_open("UTF-16LE", nl_langinfo(CODESET));
+-    return iconv_open("UTF-16LE", "UTF-8");
 +    return iconv_open("UTF-16LE", locale_charset());
  }
  
