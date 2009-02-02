@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2009/02/02 16:39:17 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.21 2009/02/02 18:32:20 giovanni Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 %%SHARED%%
 bin/gimp
@@ -2183,4 +2183,4 @@ share/locale/zh_TW/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-tips.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-databas
+@unexec %D/bin/update-desktop-database
