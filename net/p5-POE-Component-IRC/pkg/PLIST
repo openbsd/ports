@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/09/01 09:57:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/02/03 22:58:43 jasper Exp $
 ${P5SITE}/POE/Component/IRC/
 ${P5SITE}/POE/Component/IRC.pm
 ${P5SITE}/POE/Component/IRC/Common.pm
@@ -8,7 +8,9 @@ ${P5SITE}/POE/Component/IRC/Cookbook.pod
 ${P5SITE}/POE/Component/IRC/Cookbook/BasicBot.pod
 ${P5SITE}/POE/Component/IRC/Cookbook/Disconnecting.pod
 ${P5SITE}/POE/Component/IRC/Cookbook/MegaHAL.pod
+${P5SITE}/POE/Component/IRC/Cookbook/Reload.pod
 ${P5SITE}/POE/Component/IRC/Cookbook/Resolver.pod
+${P5SITE}/POE/Component/IRC/Cookbook/Seen.pod
 ${P5SITE}/POE/Component/IRC/Cookbook/Translator.pod
 ${P5SITE}/POE/Component/IRC/Plugin/
 ${P5SITE}/POE/Component/IRC/Plugin.pm
@@ -34,9 +36,6 @@ ${P5SITE}/POE/Component/IRC/Qnet/
 ${P5SITE}/POE/Component/IRC/Qnet.pm
 ${P5SITE}/POE/Component/IRC/Qnet/State.pm
 ${P5SITE}/POE/Component/IRC/State.pm
-${P5SITE}/POE/Component/IRC/Test/
-${P5SITE}/POE/Component/IRC/Test/Harness.pm
-${P5SITE}/POE/Component/IRC/Test/Plugin.pm
 ${P5SITE}/POE/Filter/IRC/
 ${P5SITE}/POE/Filter/IRC.pm
 ${P5SITE}/POE/Filter/IRC/Compat.pm
@@ -47,7 +46,9 @@ ${P5SITE}/POE/Filter/IRC/Compat.pm
 @man man/man3p/POE::Component::IRC::Cookbook::BasicBot.3p
 @man man/man3p/POE::Component::IRC::Cookbook::Disconnecting.3p
 @man man/man3p/POE::Component::IRC::Cookbook::MegaHAL.3p
+@man man/man3p/POE::Component::IRC::Cookbook::Reload.3p
 @man man/man3p/POE::Component::IRC::Cookbook::Resolver.3p
+@man man/man3p/POE::Component::IRC::Cookbook::Seen.3p
 @man man/man3p/POE::Component::IRC::Cookbook::Translator.3p
 @man man/man3p/POE::Component::IRC::Plugin.3p
 @man man/man3p/POE::Component::IRC::Plugin::AutoJoin.3p
@@ -71,8 +72,6 @@ ${P5SITE}/POE/Filter/IRC/Compat.pm
 @man man/man3p/POE::Component::IRC::Qnet.3p
 @man man/man3p/POE::Component::IRC::Qnet::State.3p
 @man man/man3p/POE::Component::IRC::State.3p
-@man man/man3p/POE::Component::IRC::Test::Harness.3p
-@man man/man3p/POE::Component::IRC::Test::Plugin.3p
 @man man/man3p/POE::Filter::IRC.3p
 @man man/man3p/POE::Filter::IRC::Compat.3p
 share/doc/p5-POE-Component-IRC/
