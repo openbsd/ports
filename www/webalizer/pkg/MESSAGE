@@ -5,4 +5,8 @@ most notably detailed http 404 error reports and IPv6 support.
 
 The webalizer.current file format has changed, please remove any
 existing such files from your statistics directories if you are using
-the webalizer in incremental mode.
+the webalizer in incremental mode or convert them with the following
+command:
+
+echo -e "0\n# -notfounderrors- \n# End Of Table - notfounderrors" >> \
+    webalizer.current
