@@ -1,0 +1,23 @@
+$OpenBSD: patch-code_qcommon_vm_interpreted_c,v 1.1 2009/02/03 19:48:42 kili Exp $
+--- code/qcommon/vm_interpreted.c.orig	Sat Aug  9 18:28:20 2008
++++ code/qcommon/vm_interpreted.c	Sat Jan 10 21:23:02 2009
+@@ -532,8 +532,8 @@ nextInstruction2:
+ 
+ //VM_LogSyscalls( (int *)&image[ programStack + 4 ] );
+ 				{
+-					intptr_t* argptr = (intptr_t *)&image[ programStack + 4 ];
+-				#if __WORDSIZE == 64
++					intptr_t* argptr;
++				#if LONG_BIT == 64
+ 				// the vm has ints on the stack, we expect
+ 				// longs so we have to convert it
+ 					intptr_t argarr[16];
+@@ -542,6 +542,8 @@ nextInstruction2:
+ 						argarr[i] = *(int*)&image[ programStack + 4 + 4*i ];
+ 					}
+ 					argptr = argarr;
++				#else
++					argptr = (intptr_t *)&image[ programStack + 4 ];
+ 				#endif
+ 					r = vm->systemCall( argptr );
+ 				}
