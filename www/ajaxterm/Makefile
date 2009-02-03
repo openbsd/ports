@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/02/03 10:53:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2009/02/03 13:00:58 jasper Exp $
 
 COMMENT = 		web-based SSH client
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		http://antony.lesuisse.org/software/ajaxterm/files/
+MASTER_SITES =		${HOMEPAGE}/files/
 
 NO_BUILD =		Yes
 
