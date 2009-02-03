@@ -1,11 +1,12 @@
-$OpenBSD: patch-docs_reference_camel_Makefile_in,v 1.4 2009/01/31 08:30:52 jasper Exp $
---- docs/reference/camel/Makefile.in.orig	Fri Jan 30 21:54:13 2009
-+++ docs/reference/camel/Makefile.in	Fri Jan 30 22:19:00 2009
-@@ -704,7 +704,9 @@ install-data-local:
- 	    mv -f $${installdir}/$(DOC_MODULE).devhelp \
- 	      $${installdir}/$(DOC_MODULE)-$(DOC_MODULE_VERSION).devhelp; \
- 	  fi; \
--	  $(GTKDOC_REBASE) --relative --dest-dir=$(DESTDIR) --html-dir=$${installdir}; \
+$OpenBSD: patch-docs_reference_camel_Makefile_in,v 1.5 2009/02/03 11:50:59 jasper Exp $
+--- docs/reference/camel/Makefile.in.orig	Tue Feb  3 10:42:35 2009
++++ docs/reference/camel/Makefile.in	Tue Feb  3 10:46:19 2009
+@@ -686,8 +686,9 @@ install-data-local:
+ 	  done; \
+ 	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
+ 	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR) || :; \
+-	  which gtkdoc-rebase >/dev/null && \
+-	    gtkdoc-rebase --relative --dest-dir=$(DESTDIR) --html-dir=$(DESTDIR)$(TARGET_DIR) ; \
 +	  if test "`whereis gtkdoc-rebase`" != ""; then \
 +	    gtkdoc-rebase --relative --dest-dir=$(DESTDIR) --html-dir=$${installdir}; \
 +	  fi \

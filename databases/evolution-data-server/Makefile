@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2009/01/31 08:30:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2009/02/03 11:50:58 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		2.24.4
+GNOME_VERSION=		2.24.4.1
 
 CATEGORIES=		databases
 
@@ -74,7 +74,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-R=			${GNOME_VERSION:R}
+# Only get the first x.y which is needed in the PLIST.
+R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		R
 
 post-extract:
