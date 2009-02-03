@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.228 2009/02/03 12:40:11 pirofti Exp $
+# $OpenBSD: Makefile,v 1.229 2009/02/03 14:58:06 sthen Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -171,6 +171,7 @@
      SUBDIR += s10sh
      SUBDIR += sane-backends
      SUBDIR += sane-frontends
+     SUBDIR += scratch
      SUBDIR += scrot
      SUBDIR += smpeg-xmms
      SUBDIR += sng
