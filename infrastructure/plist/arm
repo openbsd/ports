@@ -1,4 +1,4 @@
-# $OpenBSD: arm,v 1.20 2009/01/11 13:23:51 sthen Exp $
+# $OpenBSD: arm,v 1.21 2009/02/03 23:15:01 sthen Exp $
 # This is the master list of subdirs used to choose arm packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -134,7 +134,9 @@ net/bitlbee
 misc/gpsd
 misc/screen,static
 x11/x2x
+x11/dmenu
 x11/dwm
+x11/scrotwm
 x11/wmii
 x11/awesome
 x11/rxvt
@@ -235,6 +237,7 @@ print/ghostview
 print/detex
 print/pdfjam
 graphics/dcraw
+graphics/tgif
 productivity/calcurse
 productivity/devtodo
 productivity/gtimer
@@ -317,6 +320,7 @@ www/dansguardian
 www/http_ping
 www/nginx
 www/nostromo
+www/ntlmaps
 www/surfraw
 www/lighttpd
 www/thttpd
@@ -328,10 +332,15 @@ www/w3m
 www/w3m,image
 www/w3mir
 x11/devilspie
-x11/dmenu
 x11/evilwm
 x11/gromit
+x11/dejavu-fonts
+x11/ecoliercourt-fonts
+x11/freefonts
+x11/freefont-ttf
+x11/jmk-fonts
 x11/liberation-fonts
+x11/wqy-bitmapfont
 x11/openbox
 x11/aterm
 x11/aterm,lite
@@ -343,6 +352,7 @@ x11/root-tail
 x11/slock
 x11/vdesk
 x11/x2vnc
+x11/x11vnc
 x11/xarchive
 x11/xkeycaps
 x11/xloadimage
