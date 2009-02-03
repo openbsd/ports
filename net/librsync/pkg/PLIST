@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/08/31 09:56:58 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/02/03 13:15:01 jsg Exp $
 %%SHARED%%
-bin/rdiff
+@bin bin/rdiff
 include/librsync-config.h
 include/librsync.h
 lib/librsync.a
