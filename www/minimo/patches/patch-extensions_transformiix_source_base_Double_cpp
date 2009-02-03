@@ -1,7 +1,18 @@
-$OpenBSD: patch-extensions_transformiix_source_base_Double_cpp,v 1.4 2006/12/27 16:21:59 jolan Exp $
---- extensions/transformiix/source/base/Double.cpp.orig	Thu Jun 17 02:12:42 2004
-+++ extensions/transformiix/source/base/Double.cpp	Sat Sep 10 09:47:31 2005
-@@ -115,17 +115,19 @@ typedef union txdpun {
+$OpenBSD: patch-extensions_transformiix_source_base_Double_cpp,v 1.5 2009/02/03 22:22:11 martynas Exp $
+--- extensions/transformiix/source/base/Double.cpp.orig	Thu Jun 22 22:13:00 2006
++++ extensions/transformiix/source/base/Double.cpp	Mon Feb  2 20:20:46 2009
+@@ -72,8 +72,10 @@ fp_except_t oldmask = fpsetmask(~allmask);
+  */
+ 
+ #if defined(__arm) || defined(__arm32__) || defined(_arm26__) || defined(__arm__)
++#ifndef __OpenBSD__ /* Armel ABI */
+ #define CPU_IS_ARM
+ #endif
++#endif
+ 
+ #if (__GNUC__ == 2 && __GNUC_MINOR__ > 95) || __GNUC__ > 2
+ /**
+@@ -115,17 +117,19 @@ typedef union txdpun {
  #define TX_DOUBLE_HI32_EXPMASK   0x7ff00000
  #define TX_DOUBLE_HI32_MANTMASK  0x000fffff
  

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2008/12/19 11:48:26 martynas Exp $
+# $OpenBSD: Makefile,v 1.52 2009/02/03 22:22:11 martynas Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	small, simple, and powerful web browser for mobile devices
 DISTNAME=	minimo-1.8.1.19
-PKGNAME=	${DISTNAME}v0
+PKGNAME=	${DISTNAME}p0v0
 
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~martynas/mozilla/minimo/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2009/02/03 22:23:19 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Mozilla's C implementation of JavaScript
 
 V=		1.60
 DISTNAME=	js-${V}
-PKGNAME=	spidermonkey-${V}p2
+PKGNAME=	spidermonkey-${V}p3
 SHARED_LIBS=	js 2.0
 CATEGORIES=     lang
 
