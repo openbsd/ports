@@ -1,0 +1,30 @@
+--- files.c.orig	27 Aug 2007 20:48:58 -0000	1.23
++++ files.c	31 Dec 2008 22:17:48 -0000	1.25
+@@ -31,7 +31,7 @@ char *open_file = NULL;
+ 
+ int saveState(char *filename)
+ {				       /*{{{ */
+-    int fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC,
++    int fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC | O_EXCL,
+ 		  S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+     int return_error = 0;
+ 
+@@ -208,12 +208,17 @@ int storeVar(const char *variable)
+ {				       /*{{{ */
+     int fd, retval = 0, return_error = 0;
+     char filename[PATH_MAX];
++    const char *preloadfile = "/.wcalc_preload";
+ 
+     if (!varexists(variable)) {
+ 	report_error("Variable is not defined.");
+ 	return -1;
+     }
+-    snprintf(filename, PATH_MAX, "%s/.wcalc_preload", getenv("HOME"));
++    if (strlen(getenv("HOME")) > PATH_MAX - strlen(preloadfile) - 1) {
++	report_error("HOME environment variable is too long.");
++	return -1;
++    }
++    snprintf(filename, PATH_MAX, "%s%s", getenv("HOME"), preloadfile);
+     fd = open(filename, O_WRONLY | O_CREAT | O_APPEND,
+ 	      S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+     if (fd >= 0) {

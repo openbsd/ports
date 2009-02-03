@@ -1,0 +1,132 @@
+--- main.c.orig	26 Oct 2008 20:02:21 -0000	1.93
++++ main.c	31 Dec 2008 22:08:35 -0000	1.94
+@@ -332,6 +332,9 @@ int main(int argc, char *argv[])
+ #else
+     char readme[BIG_STRING];
+ #endif
++#ifdef HAVE_READLINE_HISTORY
++    char * historyfile = "/.wcalc_history";
++#endif
+     int tty, i;
+     short cmdline_input = 0;
+ 
+@@ -375,13 +378,24 @@ int main(int argc, char *argv[])
+ 	}
+ 
+ 	if (foundflag == 0) {
+-	    snprintf(filename, PATH_MAX, "%s/.wcalcrc", getenv("HOME"));
+-	    if (read_prefs(filename)) {
+-		perror("Writing Preferences");
+-	    }
+-	    snprintf(filename, PATH_MAX, "%s/.wcalc_preload", getenv("HOME"));
+-	    if (read_preload(filename)) {
+-		perror("Reading Preload File");
++	    char * home = getenv("HOME");
++	    char * rcfile = "/.wcalcrc";
++	    char * preloadfile = "/.wcalc_preload";
++	    if (strlen(home) < PATH_MAX - strlen(rcfile) - 1) {
++		snprintf(filename, PATH_MAX, "%s%s", home, rcfile);
++		if (read_prefs(filename)) {
++		    perror("Writing Preferences");
++		}
++	    } else {
++		perror("HOME is too long to read preferences");
++	    }
++	    if (strlen(home) < PATH_MAX - strlen(preloadfile) - 1) {
++		snprintf(filename, PATH_MAX, "%s%s", home, preloadfile);
++		if (read_preload(filename)) {
++		    perror("Reading Preload File");
++		}
++	    } else {
++		perror("HOME is too long to read preload file");
+ 	    }
+ 	}
+     }
+@@ -542,13 +556,16 @@ int main(int argc, char *argv[])
+ 	    if (!cmdline_input) {
+ #ifdef HAVE_READLINE_HISTORY
+ 		char filename[PATH_MAX];
++		char * home = getenv("HOME");
+ 
+ 		using_history();
+-		snprintf(filename, PATH_MAX, "%s/.wcalc_history",
+-			 getenv("HOME"));
+-		if (read_history(filename)) {
+-		    if (errno != ENOENT) {
+-			perror("Reading History");
++		if (strlen(home) < PATH_MAX - strlen(historyfile) - 1) {
++		    snprintf(filename, PATH_MAX, "%s%s",
++			    home, historyfile);
++		    if (read_history(filename)) {
++			if (errno != ENOENT) {
++			    perror("Reading History");
++			}
+ 		    }
+ 		}
+ #endif
+@@ -581,13 +598,16 @@ int main(int argc, char *argv[])
+ 	if (envinput) {
+ #ifdef HAVE_READLINE_HISTORY
+ 	    char filename[PATH_MAX];
++	    char * home = getenv("HOME");
+ 
+ 	    using_history();
+-	    snprintf(filename, PATH_MAX, "%s/.wcalc_history",
+-		    getenv("HOME"));
+-	    if (read_history(filename)) {
+-		if (errno != ENOENT) {
+-		    perror("Reading History");
++	    if (strlen(home) < PATH_MAX - strlen(historyfile) - 1) {
++		snprintf(filename, PATH_MAX, "%s%s",
++			home, historyfile);
++		if (read_history(filename)) {
++		    if (errno != ENOENT) {
++			perror("Reading History");
++		    }
+ 		}
+ 	    }
+ #endif
+@@ -616,13 +636,16 @@ int main(int argc, char *argv[])
+     if (cmdline_input) {
+ #ifdef HAVE_READLINE_HISTORY
+ 	char filename[PATH_MAX];
++	char * home = getenv("HOME");
+ 
+-	snprintf(filename, PATH_MAX, "%s/.wcalc_history", getenv("HOME"));
+-	if (write_history(filename))
+-	    perror("Saving History");
+-	if (conf.history_limit) {
+-	    if (history_truncate_file(filename, conf.history_limit_len))
+-		perror("Truncating History");
++	if (strlen(home) < PATH_MAX - strlen(historyfile) - 1) {
++	    snprintf(filename, PATH_MAX, "%s%s", home, historyfile);
++	    if (write_history(filename))
++		perror("Saving History");
++	    if (conf.history_limit) {
++		if (history_truncate_file(filename, conf.history_limit_len))
++		    perror("Truncating History");
++	    }
+ 	}
+ #endif
+ 	clearHistory();
+@@ -637,12 +660,15 @@ int main(int argc, char *argv[])
+ 	/* if stdin is a keyboard or terminal, then use readline and prompts */
+ #ifdef HAVE_READLINE_HISTORY
+ 	char filename[PATH_MAX];
++	char * home = getenv("HOME");
+ 
+-	snprintf(filename, PATH_MAX, "%s/.wcalc_history", getenv("HOME"));
+-	using_history();
+-	if (read_history(filename)) {
+-	    if (errno != ENOENT) {
+-		perror("Reading History");
++	if (strlen(home) < PATH_MAX - strlen(historyfile) - 1) {
++	    snprintf(filename, PATH_MAX, "%s%s", home, historyfile);
++	    using_history();
++	    if (read_history(filename)) {
++		if (errno != ENOENT) {
++		    perror("Reading History");
++		}
+ 	    }
+ 	}
+ #endif
