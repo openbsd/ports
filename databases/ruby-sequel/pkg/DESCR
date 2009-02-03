@@ -1,0 +1,6 @@
+Sequel is an ORM framework for Ruby. Sequel provides thread safety,
+connection pooling, and a concise DSL for constructing queries and
+table schemas.
+
+Sequel makes it easy to deal with multiple records without having
+to break your teeth on SQL.
