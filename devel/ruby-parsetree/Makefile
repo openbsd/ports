@@ -1,35 +1,35 @@
-# $OpenBSD: Makefile,v 1.4 2008/11/19 14:36:36 pirofti Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/03 12:22:21 pirofti Exp $
 
-COMMENT=	extracts the parse tree for an entire class or a method
+COMMENT =	extracts the parse tree for an entire class or a method
 
-DISTNAME=	ParseTree-3.0.2
-PKGNAME=	ruby-${DISTNAME:L}
-CATEGORIES=	devel
+DISTNAME =	ParseTree-3.0.3
+PKGNAME =	ruby-${DISTNAME:L}
+CATEGORIES =	devel
 
-HOMEPAGE=	http://www.zenspider.com/ZSS/Products/ParseTree/
+HOMEPAGE =	http://www.zenspider.com/ZSS/Products/ParseTree/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=		${MASTER_SITE_RUBYFORGE:=parsetree/}
+MASTER_SITES =		${MASTER_SITE_RUBYFORGE:=parsetree/}
 
-MODULES=		lang/ruby
+MODULES =		lang/ruby
 
-CONFIGURE_STYLE=	ruby gem
+CONFIGURE_STYLE =	ruby gem
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:ruby-rubyinline->=3.7.0:devel/ruby-rubyinline \
+BUILD_DEPENDS =		${RUN_DEPENDS}
+RUN_DEPENDS =		:ruby-rubyinline->=3.7.0:devel/ruby-rubyinline \
 			:ruby-sexp_processor->=3.0.0:devel/ruby-sexp_processor \
 
-GEM_SKIPDEPENDS=	hoe
+GEM_SKIPDEPENDS =	hoe
 
 REGRESS_DEPENDS =	::devel/ruby-ruby2ruby \
 			::devel/ruby-zentest
 
-PKG_ARCH=		*
+PKG_ARCH =		*
 
 do-regress:
 	@cd ${WRKBUILD} && ${RUBY} -Ilib test/test_all.rb
