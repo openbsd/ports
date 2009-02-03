@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/11/19 14:34:55 pirofti Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/03 12:23:05 pirofti Exp $
 
 COMMENT=	generating pure Ruby code easily from ParseTree's Sexps
 
-DISTNAME=	ruby2ruby-1.2.1
+DISTNAME=	ruby2ruby-1.2.2
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	devel
 
