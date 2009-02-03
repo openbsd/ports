@@ -1,0 +1,1 @@
+cd ${HOME}/Scratch && exec squeak Scratch.image

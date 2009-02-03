@@ -1,0 +1,5 @@
+SCRATCH_DIR=${HOME}/Scratch
+mkdir ${SCRATCH_DIR}
+gunzip < ${PREFIX}/lib/scratch/Scratch.image.gz > ${SCRATCH_DIR}/Scratch.image
+for i in Help locale ; do ln -s ${PREFIX}/lib/scratch/$i ${SCRATCH_DIR}; done
+for i in Media Projects ; do ln -s ${PREFIX}/share/scratch/$i ${SCRATCH_DIR}; done

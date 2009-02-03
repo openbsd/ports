@@ -1,0 +1,4 @@
+Scratch needs to be set up in a user's home directory.
+Run the following once to setup Scratch:
+$ sh ${PREFIX}/share/scratch/iniscratch
+Afterwards, simply run 'scratch'.
