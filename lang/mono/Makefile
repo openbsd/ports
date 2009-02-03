@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/21 16:06:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/02/03 09:41:40 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	cross platform, open source .NET developement framework
 
 DISTNAME=	mono-2.0
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	lang devel
+
 SHARED_LIBS=	mono-profiler-aot	0.0 \
 		mono-profiler-cov	0.0 \
 		mono			0.0
@@ -21,7 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-WANTLIB=	c glib-2.0 gmodule-2.0 gthread-2.0 intl \
+WANTLIB=	c glib-2.0 gmodule-2.0 gthread-2.0 \
 		m pcre pthread z
 
 MASTER_SITES=	ftp://ftp.novell.com/pub/mono/sources/mono/
@@ -30,7 +31,8 @@ EXTRACT_SUFX=	.tar.bz2
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
-MODULES=	converters/libiconv lang/mono
+MODULES=	devel/gettext \
+		lang/mono
 BUILD_DEPENDS=	:bison-*:devel/bison \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	::x11/libgdiplus
