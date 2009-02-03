@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/03 10:52:36 espie Exp $
+@newgroup _ajaxterm:618
+@newuser _ajaxterm:618:_ajaxterm:daemon:Ajaxterm Account:/nonexistent:/sbin/nologin
+bin/ajaxterm
+@man man/man1/ajaxterm.1
+share/ajaxterm/
+share/ajaxterm/ajaxterm.css
+share/ajaxterm/ajaxterm.html
+share/ajaxterm/ajaxterm.js
+share/ajaxterm/qweb.py
+share/ajaxterm/sarissa.js
+share/ajaxterm/sarissa_dhtml.js

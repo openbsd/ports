@@ -1,0 +1,44 @@
+$OpenBSD: patch-ajaxterm_py,v 1.1.1.1 2009/02/03 10:52:36 espie Exp $
+--- ajaxterm.py.orig	Sun Oct 29 03:52:39 2006
++++ ajaxterm.py	Tue Dec  9 11:31:25 2008
+@@ -4,9 +4,10 @@
+ 
+ import array,cgi,fcntl,glob,mimetypes,optparse,os,pty,random,re,signal,select,sys,threading,time,termios,struct,pwd
+ 
+-os.chdir(os.path.normpath(os.path.dirname(__file__)))
++os.chdir(os.path.normpath(os.path.dirname(__file__)+'/../share/ajaxterm'))
++print(os.path.normpath(os.path.dirname(__file__)+'/../share/ajaxterm'))
+ # Optional: Add QWeb in sys path
+-sys.path[0:0]=glob.glob('../../python')
++sys.path[0:0]=glob.glob('.');
+ 
+ import qweb
+ 
+@@ -394,7 +395,7 @@ class Multiplex:
+ 			if self.cmd:
+ 				cmd=['/bin/sh','-c',self.cmd]
+ 			elif os.getuid()==0:
+-				cmd=['/bin/login']
++				cmd=['/usr/bin/login']
+ 			else:
+ 				sys.stdout.write("Login: ")
+ 				login=sys.stdin.readline().strip()
+@@ -415,7 +416,7 @@ class Multiplex:
+ 		else:
+ 			fcntl.fcntl(fd, fcntl.F_SETFL, os.O_NONBLOCK)
+ 			# python bug http://python.org/sf/1112949 on amd64
+-			fcntl.ioctl(fd, struct.unpack('i',struct.pack('I',termios.TIOCSWINSZ))[0], struct.pack("HHHH",h,w,0,0))
++			fcntl.ioctl(fd, long(struct.unpack('i',struct.pack('l', termios.TIOCSWINSZ))[0]), struct.pack("HHHH",h,w,0,0))
+ 			self.proc[fd]={'pid':pid,'term':Terminal(w,h),'buf':'','time':time.time()}
+ 			return fd
+ 	def die(self):
+@@ -532,8 +533,7 @@ def main():
+ 	if o.daemon:
+ 		pid=os.fork()
+ 		if pid == 0:
+-			#os.setsid() ?
+-			os.setpgrp()
++			os.setsid()
+ 			nullin = file('/dev/null', 'r')
+ 			nullout = file('/dev/null', 'w')
+ 			os.dup2(nullin.fileno(), sys.stdin.fileno())
