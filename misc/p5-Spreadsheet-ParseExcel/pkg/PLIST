@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/09/25 18:50:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/02/03 23:12:04 jasper Exp $
 ${P5SITE}/Spreadsheet/
 ${P5SITE}/Spreadsheet/ParseExcel/
 ${P5SITE}/Spreadsheet/ParseExcel.pm
@@ -18,8 +18,20 @@ ${P5SITE}/Spreadsheet/ParseExcel/Utility.pm
 ${P5SITE}/Spreadsheet/ParseExcel/Workbook.pm
 ${P5SITE}/Spreadsheet/ParseExcel/Worksheet.pm
 @man man/man3p/Spreadsheet::ParseExcel.3p
+@man man/man3p/Spreadsheet::ParseExcel::Cell.3p
+@man man/man3p/Spreadsheet::ParseExcel::Dump.3p
+@man man/man3p/Spreadsheet::ParseExcel::FmtDefault.3p
+@man man/man3p/Spreadsheet::ParseExcel::FmtJapan.3p
+@man man/man3p/Spreadsheet::ParseExcel::FmtJapan2.3p
+@man man/man3p/Spreadsheet::ParseExcel::FmtUnicode.3p
+@man man/man3p/Spreadsheet::ParseExcel::Font.3p
+@man man/man3p/Spreadsheet::ParseExcel::Format.3p
 @man man/man3p/Spreadsheet::ParseExcel::SaveParser.3p
+@man man/man3p/Spreadsheet::ParseExcel::SaveParser::Workbook.3p
+@man man/man3p/Spreadsheet::ParseExcel::SaveParser::Worksheet.3p
 @man man/man3p/Spreadsheet::ParseExcel::Utility.3p
+@man man/man3p/Spreadsheet::ParseExcel::Workbook.3p
+@man man/man3p/Spreadsheet::ParseExcel::Worksheet.3p
 share/examples/p5-Spreadsheet-ParseExcel/
 share/examples/p5-Spreadsheet-ParseExcel/Ilya.pl
 share/examples/p5-Spreadsheet-ParseExcel/chkFmt.pl
