@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/03/08 22:42:35 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/02/03 11:58:40 kevlo Exp $
 @conflict py-pebrot-*
 bin/pebrot
+lib/python${MODPY_VERSION}/site-packages/pebrot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pypebrot/
 lib/python${MODPY_VERSION}/site-packages/pypebrot/MSN.py
 lib/python${MODPY_VERSION}/site-packages/pypebrot/MSN.pyc
@@ -18,6 +19,8 @@ share/doc/pebrot/README
 share/doc/pebrot/logos/
 share/doc/pebrot/logos/moo.txt
 share/doc/pebrot/logos/pebrot.txt
+share/doc/pebrot/logos/python.txt
+share/doc/pebrot/logos/python2.txt
 share/doc/pebrot/logos/readme
 share/doc/pebrot/pebrotrc
 share/doc/pebrot/utils/
