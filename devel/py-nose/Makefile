@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/07/09 17:46:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.7 2009/02/03 01:04:57 martynas Exp $
 
 COMMENT=		discovery-based unittest extension
 
-VERSION=		0.10.3
-DISTNAME=		nose-${VERSION}
+MODPY_EGG_VERSION=	0.10.4
+DISTNAME=		nose-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		devel
@@ -23,8 +23,6 @@ MASTER_SITES=		http://somethingaboutorange.com/mrl/projects/nose/
 MODULES=		lang/python
 REGRESS_DEPENDS=	::devel/py-nose \
 			::devel/py-twisted/core
-
-SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 
