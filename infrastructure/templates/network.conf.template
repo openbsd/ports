@@ -1,7 +1,7 @@
-# $OpenBSD: network.conf.template,v 1.127 2009/02/02 15:54:19 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.128 2009/02/03 22:17:36 jasper Exp $
 
 #
-# NEVER EDIT THIS FILE DIRECTLY!!!! 
+# NEVER EDIT THIS FILE DIRECTLY!!!!
 # ALWAYS COPY IT TO ../db/network.conf FIRST.
 #
 
@@ -204,11 +204,9 @@ MASTER_SITE_PACKETSTORM+=	\
 	http://packetstorm.setnine.com/ \
 	http://packetstorm.wowhacker.com/ \
 	http://packetstorm.offensive-security.com/ \
-	http://packetstorm.blackroute.net/ \
 	http://packetstorm.austin2600.net/ \
-	http://packetstorm.iamthebrain.com/ \
+	http://packetstorm.sub7.be/ \
 	http://packetstorm.foofus.com/ \
-	http://packetstorm.syrex.com/ \
 	http://packetstorm.ussrback.com/ \
 	http://packetstorm.unixteacher.org/ \
 	http://packetstormsecurity.org/ \
