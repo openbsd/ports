@@ -1,0 +1,5 @@
+Archive::Tar::Minitar is a pure-Ruby library and command-line utility 
+that provides the ability to deal with POSIX tar(1) archive files. The 
+implementation is based heavily on Mauricio Fernández's implementation 
+in rpa-base, but has been reorganised to promote reuse in other
+projects.
