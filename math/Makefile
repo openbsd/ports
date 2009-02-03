@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2008/10/16 00:19:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2009/02/03 22:48:14 martynas Exp $
 #
 
      SUBDIR += R
@@ -76,6 +76,7 @@
      SUBDIR += qtoctave
      SUBDIR += sc
      SUBDIR += umfpack
+     SUBDIR += wcalc
      SUBDIR += wmcalc
      SUBDIR += xspread
      SUBDIR += yorick
