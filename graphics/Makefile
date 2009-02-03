@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2009/01/29 20:11:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.227 2009/02/03 12:34:26 pirofti Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -161,6 +161,7 @@
      SUBDIR += pycha
      SUBDIR += qiv
      SUBDIR += rawstudio
+     SUBDIR += ruby-color
      SUBDIR += ruby-gd2
      SUBDIR += ruby-gdk-imlib
      SUBDIR += ruby-gdk-pixbuf
