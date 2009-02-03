@@ -1,0 +1,2 @@
+A ruby wrapper for ImageMagick command line. MiniMagick gives you access to all
+the commandline options ImageMagick has.
