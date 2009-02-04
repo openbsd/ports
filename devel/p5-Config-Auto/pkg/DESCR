@@ -1,0 +1,5 @@
+This module was written after having to write Yet Another Config File
+Parser for some variety of colon-separated config.  Config::Auto can
+examine a config file to automatically determine what format it's in.
+The module understands colon separated, space separated, equals
+separated, XML, Perl code, and Windows INI formats.
