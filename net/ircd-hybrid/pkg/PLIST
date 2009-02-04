@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/02/04 10:24:07 ajacoutot Exp $
 @conflict bnc-*
 @conflict irc-*
 @newgroup _ircd-hybrid:616
@@ -14,14 +14,18 @@ lib/ircd-hybrid/modules/autoload/
 @man man/man8/ircd.8
 share/examples/ircd-hybrid/
 @sample ${SYSCONFDIR}/ircd-hybrid/
+@mode 640
+@owner _ircd-hybrid
 share/examples/ircd-hybrid/cresv.conf
 @sample ${SYSCONFDIR}/ircd-hybrid/cresv.conf
 share/examples/ircd-hybrid/dline.conf
 @sample ${SYSCONFDIR}/ircd-hybrid/dline.conf
 share/examples/ircd-hybrid/example.conf
 @sample ${SYSCONFDIR}/ircd-hybrid/ircd.conf
+@mode 644
 share/examples/ircd-hybrid/ircd.motd
 @sample ${SYSCONFDIR}/ircd-hybrid/ircd.motd
+@mode 640
 share/examples/ircd-hybrid/kline.conf
 @sample ${SYSCONFDIR}/ircd-hybrid/kline.conf
 share/examples/ircd-hybrid/nresv.conf
@@ -32,6 +36,8 @@ share/examples/ircd-hybrid/rxline.conf
 @sample ${SYSCONFDIR}/ircd-hybrid/rxline.conf
 share/examples/ircd-hybrid/xline.conf
 @sample ${SYSCONFDIR}/ircd-hybrid/xline.conf
+@mode
+@owner
 share/ircd-hybrid/
 share/ircd-hybrid/help/
 share/ircd-hybrid/help/opers/

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
---- configure.orig	Mon Apr 14 15:04:02 2008
-+++ configure	Mon Apr 14 15:04:06 2008
+$OpenBSD: patch-configure,v 1.2 2009/02/04 10:24:07 ajacoutot Exp $
+--- configure.orig	Wed Feb 28 05:17:54 2007
++++ configure	Wed Feb  4 10:08:07 2009
 @@ -720,9 +720,9 @@ x_libraries=NONE
  # by default will actually change.
  # Use braces instead of parens because sh, perl, etc. also accept them.
@@ -14,3 +14,20 @@ $OpenBSD: patch-configure,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
  datarootdir='${prefix}/share'
  datadir='${datarootdir}'
  sysconfdir='${prefix}/etc'
+@@ -2872,14 +2872,14 @@ echo $ECHO_N "checking if $CC is Apple GCC... $ECHO_C"
+ 	{ echo "$as_me:$LINENO: result: $AppleGCC" >&5
+ echo "${ECHO_T}$AppleGCC" >&6; }
+ 
+-	IRC_CFLAGS="$IRC_CFLAGS -Wall -O2"
++	IRC_CFLAGS="$IRC_CFLAGS -Wall"
+ fi
+ 
+ if test "$ac_cv_prog_cc_g" = yes; then
+ 		if test "$Tru" = yes; then
+ 		IRC_CFLAGS="$IRC_CFLAGS -g3"
+ 	else
+-		IRC_CFLAGS="$IRC_CFLAGS -g"
++		IRC_CFLAGS="$IRC_CFLAGS"
+ 	fi
+ fi
+ 
