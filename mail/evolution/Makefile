@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2009/02/03 15:54:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2009/02/04 15:43:32 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
@@ -6,7 +6,7 @@ COMMENT=		integrated email and PIM software for GNOME
 # in mail/evolution-plugin-rss/Makefile (and bump).
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.24.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=    		mail
 
@@ -50,7 +50,8 @@ BUILD_DEPENDS=		::devel/bison \
 			::x11/gnome/doc-utils \
 			::misc/shared-mime-info
 RUN_DEPENDS=		::textproc/rarian \
-			::x11/hicolor-icon-theme
+			::x11/hicolor-icon-theme \
+			::x11/gnome/icon-theme
 LIB_DEPENDS=		camel-1.2,camel-provider-1.2,ebackend-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2,egroupwise-1.2,exchange-storage-1.2,gdata-1.2,gdata-google-1.2:evolution-data-server->=2.24.3:databases/evolution-data-server \
 			lber.>=7,ldap.>=7::databases/openldap \
 			notify.>=2::devel/libnotify \
