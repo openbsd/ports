@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/29 13:47:41 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/04 06:39:24 jakemsr Exp $
 
 COMMENT =		audio plugin API
 
@@ -34,5 +34,6 @@ FAKE_FLAGS =		PREFIX="${TRUEPREFIX}"
 USE_GMAKE =		Yes
 
 REGRESS_TARGET =	test
+REGRESS_DEPENDS =	::audio/libsndfile
 
 .include <bsd.port.mk>
