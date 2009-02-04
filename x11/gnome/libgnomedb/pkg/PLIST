@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/31 15:19:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/02/04 18:34:04 ajacoutot Exp $
 @bin bin/gnome-database-properties-${API_VERSION}
 @bin bin/gnome-db-browser
 @bin bin/gnome-db-demo
@@ -392,8 +392,7 @@ share/pixmaps/gnome-db-${API_VERSION}/gnome-db-types_16x16.png
 share/pixmaps/gnome-db-${API_VERSION}/gnome-db-types_24x24.png
 share/pixmaps/gnome-db-${API_VERSION}/gnome-db-views_16x16.png
 share/pixmaps/gnome-db-${API_VERSION}/gnome-db-within-transaction_24x24.png
-share/pixmaps/libgnomedb-${API_VERSION}/
-share/pixmaps/libgnomedb-${API_VERSION}/gnome-db.png
+share/pixmaps/gnome-db.png
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/libgnomedb/*.schemas > /dev/null
 share/schemas/libgnomedb/
 share/schemas/libgnomedb/libgnomedb-${API_VERSION}.schemas
