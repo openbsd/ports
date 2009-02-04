@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.381 2009/02/03 10:54:59 espie Exp $
+# $OpenBSD: Makefile,v 1.382 2009/02/04 09:31:45 simon Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -265,6 +265,7 @@
      SUBDIR += pear-SOAP
      SUBDIR += pecl-APC
      SUBDIR += pecl-memcache
+     SUBDIR += pecl-swish
      SUBDIR += php5
      SUBDIR += phpicalendar
      SUBDIR += phpldapadmin
