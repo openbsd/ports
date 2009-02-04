@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/10/02 23:10:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/02/04 10:44:59 jasper Exp $
 # Original from: Andy Lester <andy@petdance.com>
 
 COMMENT=		check for HTML errors in a string or file
 
 MODULES=		cpan
-DISTNAME=		HTML-Lint-2.04
+DISTNAME=		HTML-Lint-2.06
 CATEGORIES=		www
 
 # perl
