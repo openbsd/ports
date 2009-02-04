@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2007/07/26 18:59:39 simon Exp $
+@comment $OpenBSD: PLIST,v 1.18 2009/02/04 10:40:47 jasper Exp $
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/DNS/
 ${P5ARCH}/Net/DNS.pm
@@ -12,6 +12,9 @@ ${P5ARCH}/Net/DNS/RR.pm
 ${P5ARCH}/Net/DNS/RR/A.pm
 ${P5ARCH}/Net/DNS/RR/AAAA.pm
 ${P5ARCH}/Net/DNS/RR/AFSDB.pm
+${P5ARCH}/Net/DNS/RR/APL/
+${P5ARCH}/Net/DNS/RR/APL.pm
+${P5ARCH}/Net/DNS/RR/APL/ApItem.pm
 ${P5ARCH}/Net/DNS/RR/CERT.pm
 ${P5ARCH}/Net/DNS/RR/CNAME.pm
 ${P5ARCH}/Net/DNS/RR/DNAME.pm
@@ -66,6 +69,8 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::RR::A.3p
 @man man/man3p/Net::DNS::RR::AAAA.3p
 @man man/man3p/Net::DNS::RR::AFSDB.3p
+@man man/man3p/Net::DNS::RR::APL.3p
+@man man/man3p/Net::DNS::RR::APL::ApItem.3p
 @man man/man3p/Net::DNS::RR::CERT.3p
 @man man/man3p/Net::DNS::RR::CNAME.3p
 @man man/man3p/Net::DNS::RR::DNAME.3p
