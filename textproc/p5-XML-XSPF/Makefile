@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/26 14:34:01 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/04 12:58:39 jasper Exp $
 
 COMMENT=	parser and generator for XSPF playlists
 
 MODULES=	cpan
-DISTNAME=	XML-XSPF-0.6
+DISTNAME=	XML-XSPF-0.7
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.xspf.org/
 
 RUN_DEPENDS=	::devel/p5-Class-Accessor \
 		::devel/p5-Time-TimeDate \
-		::www/p5-HTML-Parser \
 		::textproc/p5-XML-Parser \
-		::textproc/p5-XML-Writer
+		::textproc/p5-XML-Writer \
+		::www/p5-HTML-Parser
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
