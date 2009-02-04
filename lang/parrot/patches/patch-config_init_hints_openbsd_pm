@@ -1,0 +1,23 @@
+$OpenBSD: patch-config_init_hints_openbsd_pm,v 1.1 2009/02/04 10:15:14 simon Exp $
+
+Prevent linking with -lpthread, ticket filed upstream at
+https://trac.parrot.org/parrot/ticket/265
+
+--- config/init/hints/openbsd.pm.orig	Mon Dec 29 11:15:20 2008
++++ config/init/hints/openbsd.pm	Mon Dec 29 11:16:20 2008
+@@ -15,11 +15,15 @@ sub runstep {
+     }
+     $conf->data->set( ccflags => $ccflags );
+ 
++=for comment
++
+     my $libs = $conf->data->get('libs');
+     if ( $libs !~ /-lpthread/ ) {
+         $libs .= ' -lpthread';
+     }
+     $conf->data->set( libs => $libs );
++
++=cut
+ 
+     if ( ( split( m/-/, $conf->data->get_p5('archname'), 2 ) )[0] eq 'powerpc' ) {
+         $conf->data->set( as => 'as -mregnames' );
