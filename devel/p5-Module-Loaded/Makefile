@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/15 21:39:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/04 08:48:20 jasper Exp $
+
+COMES_WITH=	4.5
 
 COMMENT=	mark modules as loaded or unloaded
 

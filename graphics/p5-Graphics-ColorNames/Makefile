@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2008/09/29 22:53:57 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2009/02/04 08:48:20 jasper Exp $
 
 COMMENT=	defines RGB values for common color names
 
 DISTNAME=	Graphics-ColorNames-2.11
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	graphics
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-RUN_DEPENDS=	::devel/p5-Module-Loaded \
-		::devel/p5-Test-Exception
+RUN_DEPENDS=	::devel/p5-Test-Exception
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODULES=	cpan
