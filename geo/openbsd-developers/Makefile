@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2009/01/28 11:54:43 bluhm Exp $
+# $OpenBSD: Makefile,v 1.40 2009/02/04 14:39:35 landry Exp $
 
 CATEGORIES=		geo
 COMMENT=		geographic location of OpenBSD developers
 
 DISTNAME=		openbsd-developers-1.0
-PKGNAME=		${DISTNAME}p36
+PKGNAME=		${DISTNAME}p37
 DISTFILES=
 HOMEPAGE=		http://www.openbsd.org/
 

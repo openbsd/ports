@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.39 2009/01/28 11:54:43 bluhm Exp $
+# $OpenBSD: OpenBSD,v 1.40 2009/02/04 14:39:35 landry Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -45,6 +45,7 @@
 44.01		-79.93		"ian"		# Ian Darwin
 45.43		12.13		"michele"	# Michele Marchetto
 45.4745		-73.6556	"msf"		# Mathieu Sauve-Frankel
+45.69296	3.25642		"landry"	# Landry Breuil
 47.29		19.3		"robert"	# Robert Nagy
 47.3154		7.3526		"mglocker"	# Marcus Glocker
 47.50		7.60		"dhartmei"	# Daniel Hartmeier
@@ -53,7 +54,6 @@
 47.837768	35.211241	"av"		# Alexey Vatchenko
 48.0718		11.9582		"grunk"		# Alexander von Gernler
 48.08		11.31		"sturm"		# Nikolay Sturm
-48.111761	-1.680265	"landry"	# Landry Breuil
 48.1247		11.5975		"mpf"		# Marco Pfatschbacher
 48.1248		11.5972		"mickey"	# Michael Shalayeff
 48.13254	11.76704	"bluhm"		# Alexander Bluhm
