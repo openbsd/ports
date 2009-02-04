@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/04 09:31:41 simon Exp $
+@comment conf/php5.sample/
+conf/php5.sample/swish.ini
+lib/
+lib/php/
+lib/php/modules/
+@comment lib/php/modules/swish.a
+@group bin
+lib/php/modules/swish.so
+@group
+share/
+share/examples/
+share/examples/pecl-swish/
+share/examples/pecl-swish/swish.php

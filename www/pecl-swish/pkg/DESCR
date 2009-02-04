@@ -1,0 +1,3 @@
+The swish extension is an object oriented PHP interface to the swish-e C
+library.  This can be used to access search indexes from your PHP code
+avoiding the need to run the swish-e binary for searching.
