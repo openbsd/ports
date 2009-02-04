@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/01/06 12:05:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/02/04 08:23:17 jasper Exp $
 bin/sqlt
 bin/sqlt-diagram
 bin/sqlt-diff
+bin/sqlt-diff-old
 bin/sqlt-dumper
 bin/sqlt-graph
 ${P5SITE}/SQL/
@@ -43,8 +44,18 @@ ${P5SITE}/SQL/Translator/Parser/YAML.pm
 ${P5SITE}/SQL/Translator/Parser/xSV.pm
 ${P5SITE}/SQL/Translator/Producer/
 ${P5SITE}/SQL/Translator/Producer.pm
+${P5SITE}/SQL/Translator/Producer/ClassDBI.pm
 ${P5SITE}/SQL/Translator/Producer/DB2.pm
+${P5SITE}/SQL/Translator/Producer/DiaUml/
 ${P5SITE}/SQL/Translator/Producer/DiaUml.pm
+${P5SITE}/SQL/Translator/Producer/DiaUml/diagram.tt2
+${P5SITE}/SQL/Translator/Producer/DiaUml/layer.tt2
+${P5SITE}/SQL/Translator/Producer/DiaUml/schema.tt2
+${P5SITE}/SQL/Translator/Producer/DiaUml/uml-attribute.tt2
+${P5SITE}/SQL/Translator/Producer/DiaUml/uml-class-all.tt2
+${P5SITE}/SQL/Translator/Producer/DiaUml/uml-class-end.tt2
+${P5SITE}/SQL/Translator/Producer/DiaUml/uml-class-start.tt2
+${P5SITE}/SQL/Translator/Producer/DiaUml/uml-class.tt2
 ${P5SITE}/SQL/Translator/Producer/Diagram.pm
 ${P5SITE}/SQL/Translator/Producer/Dumper.pm
 ${P5SITE}/SQL/Translator/Producer/GraphViz.pm
@@ -90,11 +101,13 @@ ${P5SITE}/Test/
 ${P5SITE}/Test/SQL/
 ${P5SITE}/Test/SQL/Translator.pm
 @man man/man1/sqlt-diagram.1
+@man man/man1/sqlt-diff-old.1
 @man man/man1/sqlt-diff.1
 @man man/man1/sqlt-dumper.1
 @man man/man1/sqlt-graph.1
 @man man/man1/sqlt.1
 @man man/man3p/SQL::Translator.3p
+@man man/man3p/SQL::Translator::Diff.3p
 @man man/man3p/SQL::Translator::Filter::DefaultExtra.3p
 @man man/man3p/SQL::Translator::Filter::Globals.3p
 @man man/man3p/SQL::Translator::Filter::Names.3p
@@ -122,6 +135,7 @@ ${P5SITE}/Test/SQL/Translator.pm
 @man man/man3p/SQL::Translator::Parser::YAML.3p
 @man man/man3p/SQL::Translator::Parser::xSV.3p
 @man man/man3p/SQL::Translator::Producer.3p
+@man man/man3p/SQL::Translator::Producer::ClassDBI.3p
 @man man/man3p/SQL::Translator::Producer::DB2.3p
 @man man/man3p/SQL::Translator::Producer::DiaUml.3p
 @man man/man3p/SQL::Translator::Producer::Diagram.3p
