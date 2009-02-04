@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/08/20 19:26:06 simon Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/02/04 12:53:39 jasper Exp $
 ${P5SITE}/XML/
 ${P5SITE}/XML/RSS/
 ${P5SITE}/XML/RSS.pm
@@ -32,6 +32,9 @@ share/examples/p5-XML-RSS/1.0/create_rss_1.0.pl
 share/examples/p5-XML-RSS/1.0/rss1.0.rdf
 share/examples/p5-XML-RSS/1.0/slash.rdf
 share/examples/p5-XML-RSS/1.0/update_rss_1.0.pl
+share/examples/p5-XML-RSS/2.0/
+share/examples/p5-XML-RSS/2.0/flickr-rss-with-both-desc-and-media-desc.xml
+share/examples/p5-XML-RSS/2.0/rss-2.0-sample-from-rssboard-multiple-skip-days-and-hours.xml
 share/examples/p5-XML-RSS/README
 share/examples/p5-XML-RSS/convert.pl
 share/examples/p5-XML-RSS/create_rss_multiple.pl
