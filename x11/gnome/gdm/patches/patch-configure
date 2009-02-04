@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.15 2009/01/31 12:09:49 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.16 2009/02/04 18:50:02 ajacoutot Exp $
 --- configure.orig	Wed Dec 10 23:26:30 2008
 +++ configure	Sat Jan 31 10:48:03 2009
 @@ -31009,7 +31009,6 @@ fi
@@ -26,15 +26,6 @@ $OpenBSD: patch-configure,v 1.15 2009/01/31 12:09:49 ajacoutot Exp $
  fi
  
  rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
-@@ -32999,7 +32999,7 @@ fi
- #
- # Define some variables to represent the directories we use.
- #
--authdir=${localstatedir}/gdm
-+authdir=${localstatedir}/db/gdm
- 
- gdmlocaledir=${gdmconfdir}
- 
 @@ -33715,9 +33715,9 @@ case "$host" in
  	;;
  *openbsd*)

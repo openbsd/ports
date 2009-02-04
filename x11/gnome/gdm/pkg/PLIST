@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2009/01/28 16:39:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2009/02/04 18:50:02 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
@@ -299,4 +299,4 @@ share/xsessions/ssh.desktop
 @sample /var/log/gdm/
 @mode 1770
 @group _x11
-@sample /var/db/gdm/
+@sample /var/gdm/
