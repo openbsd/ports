@@ -1,0 +1,27 @@
+$OpenBSD: patch-libjack_client_c,v 1.4 2009/02/04 00:02:16 merdely Exp $
+--- libjack/client.c.orig	Thu Dec  4 03:30:27 2008
++++ libjack/client.c	Tue Feb  3 16:49:16 2009
+@@ -974,10 +974,7 @@ jack_client_open_aux (const char *client_name,
+ 	}
+ 
+ 	/* parse variable arguments */
+-	if (ap)
+         jack_varargs_parse(options, ap, &va);
+-    else
+-        jack_varargs_init(&va);
+ 
+ 	/* External clients need to know where the tmpdir used for
+ 	   communication with the server lives
+@@ -1119,10 +1116,11 @@ jack_client_t* jack_client_open(const char* ext_client
+ jack_client_t *
+ jack_client_new (const char *client_name)
+ {
++	va_list va;
+ 	jack_options_t options = JackUseExactName;
+ 	if (getenv("JACK_START_SERVER") == NULL)
+ 		options |= JackNoStartServer;
+-	return jack_client_open_aux (client_name, options, NULL, NULL);
++	return jack_client_open_aux (client_name, options, NULL, va);
+ }
+ 
+ char *
