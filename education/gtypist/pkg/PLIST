@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/05/28 16:09:06 naddy Exp $
-bin/gtypist
+@comment $OpenBSD: PLIST,v 1.10 2009/02/04 21:04:42 naddy Exp $
+@bin bin/gtypist
 bin/typefortune
 @info info/gtypist.info
 @man man/man1/gtypist.1
@@ -33,6 +33,7 @@ share/gtypist/v.typ
 share/locale/cs/LC_MESSAGES/gtypist.mo
 share/locale/de/LC_MESSAGES/gtypist.mo
 share/locale/es/LC_MESSAGES/gtypist.mo
+share/locale/eu/LC_MESSAGES/gtypist.mo
 share/locale/fi/LC_MESSAGES/gtypist.mo
 share/locale/fr/LC_MESSAGES/gtypist.mo
 share/locale/nl/LC_MESSAGES/gtypist.mo
