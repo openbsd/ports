@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/05 22:05:07 simon Exp $
+${P5SITE}/Captcha/
+${P5SITE}/Captcha/reCAPTCHA.pm
+@man man/man3p/Captcha::reCAPTCHA.3p
