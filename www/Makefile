@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.383 2009/02/05 18:00:22 simon Exp $
+# $OpenBSD: Makefile,v 1.384 2009/02/05 22:05:27 simon Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -138,6 +138,7 @@
      SUBDIR += p5-Catalyst-Component-ACCEPT_CONTEXT
      SUBDIR += p5-Catalyst-Component-InstancePerContext
      SUBDIR += p5-Catalyst-Controller-FormBuilder
+     SUBDIR += p5-Catalyst-Controller-HTML-FormFu
      SUBDIR += p5-Catalyst-Devel
      SUBDIR += p5-Catalyst-Engine-Apache
      SUBDIR += p5-Catalyst-Engine-HTTP-POE
@@ -181,6 +182,7 @@
      SUBDIR += p5-HTML-Copy
      SUBDIR += p5-HTML-Embperl
      SUBDIR += p5-HTML-FillInForm
+     SUBDIR += p5-HTML-FormFu
      SUBDIR += p5-HTML-Format
      SUBDIR += p5-HTML-FormatText-WithLinks
      SUBDIR += p5-HTML-FromText
@@ -205,6 +207,7 @@
      SUBDIR += p5-HTML-Template-Expr
      SUBDIR += p5-HTML-Template-JIT
      SUBDIR += p5-HTML-Tidy
+     SUBDIR += p5-HTML-Tiny
      SUBDIR += p5-HTML-TokeParser-Simple
      SUBDIR += p5-HTML-Tree
      SUBDIR += p5-HTML-TreeBuilder-XPath
