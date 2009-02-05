@@ -1,6 +1,6 @@
-$OpenBSD: patch-butterfly_wscript,v 1.1 2009/01/26 19:49:25 landry Exp $
+$OpenBSD: patch-butterfly_wscript,v 1.2 2009/02/05 22:22:33 landry Exp $
 --- butterfly/wscript.orig	Fri Dec 19 18:52:53 2008
-+++ butterfly/wscript	Fri Jan 23 00:54:26 2009
++++ butterfly/wscript	Thu Feb  5 21:44:07 2009
 @@ -5,7 +5,7 @@ import os.path
  def build(bld):
      src_loc = ['.', 'util', 'channel']
@@ -10,5 +10,5 @@ $OpenBSD: patch-butterfly_wscript,v 1.1 2009/01/26 19:49:25 landry Exp $
 -        obj.inst_dir = os.path.join('butterfly', loc)
 +        obj = bld.new_task_gen('py')
 +        obj.find_sources_in_dirs(loc, exts=['.py'])
-+        obj.install_path = os.path.join('${PREFIX}/lib/python${MODPY_VERSION}/site-packages/butterfly', loc)
++        obj.install_path = os.path.join(bld.env['PYTHONDIR'], 'butterfly', loc)
  
