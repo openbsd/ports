@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/02/03 19:48:41 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/05 20:33:12 kili Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -14,7 +14,7 @@ V =			0.8.1
 
 PKGNAME-main =		openarena-${V}
 PKGNAME-server =	openarena-server-${V}
-PKGNAME-data =		openarena-data-${V}
+PKGNAME-data =		openarena-data-${V}p0
 
 PKG_ARCH-data =		amd64,i386,macppc
 
