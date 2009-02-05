@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2009/02/03 14:58:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.230 2009/02/05 22:05:22 simon Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -120,6 +120,7 @@
      SUBDIR += openexr
      SUBDIR += openjpeg
      SUBDIR += p5-Cairo
+     SUBDIR += p5-Captcha-reCAPTCHA
      SUBDIR += p5-Chart
      SUBDIR += p5-Color-Calc
      SUBDIR += p5-GD
