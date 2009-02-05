@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/05 22:05:02 simon Exp $
+${P5SITE}/Regexp/
+${P5SITE}/Regexp/Assemble.pm
+@man man/man3p/Regexp::Assemble.3p

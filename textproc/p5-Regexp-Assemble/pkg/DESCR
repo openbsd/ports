@@ -1,0 +1,8 @@
+Regexp::Assemble takes an arbitrary number of regular expressions and
+assembles them into a single regular expression (or RE) that matches all
+that the individual REs match.
+
+As a result, instead of having a large list of expressions to loop over,
+a target string only needs to be tested against one expression.  This is
+interesting when you have several thousand patterns to deal with.
+Serious effort is made to produce the smallest pattern possible.
