@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.382 2009/02/04 09:31:45 simon Exp $
+# $OpenBSD: Makefile,v 1.383 2009/02/05 18:00:22 simon Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -136,6 +136,7 @@
      SUBDIR += p5-CSS-Tiny
      SUBDIR += p5-Catalyst-Action-RenderView
      SUBDIR += p5-Catalyst-Component-ACCEPT_CONTEXT
+     SUBDIR += p5-Catalyst-Component-InstancePerContext
      SUBDIR += p5-Catalyst-Controller-FormBuilder
      SUBDIR += p5-Catalyst-Devel
      SUBDIR += p5-Catalyst-Engine-Apache
