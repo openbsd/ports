@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/03/18 22:03:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/05 09:47:02 jasper Exp $
 
 COMMENT=		generic CSS parsing library for GNOME project
 
 GNOME_PROJECT=		libcroco
-GNOME_VERSION=		0.6.1
-PKGNAME=		${DISTNAME}p0
-SHARED_LIBS +=	croco-0.6            3.1      # .3.1
+GNOME_VERSION=		0.6.2
+SHARED_LIBS +=	croco-0.6            4.0      # .3.1
 CATEGORIES=		www devel
 
 HOMEPAGE=		http://www.freespiders.org/projects/libcroco/

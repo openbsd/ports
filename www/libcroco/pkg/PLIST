@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/16 22:47:27 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/02/05 09:47:02 jasper Exp $
 %%SHARED%%
 bin/croco-0.6-config
-bin/csslint-0.6
+@bin bin/csslint-0.6
 include/libcroco-0.6/
 include/libcroco-0.6/libcroco/
 include/libcroco-0.6/libcroco/cr-additional-sel.h
