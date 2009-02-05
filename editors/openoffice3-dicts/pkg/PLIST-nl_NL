@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-nl_NL,v 1.1 2009/02/05 23:26:53 robert Exp $
+@pkgpath editors/openoffice3-dicts-i18n
+@pkgpath editors/openoffice3-dicts-i18n,-main
+openoffice.org3/share/extension/install/nl_NL.oxt
+@exec %D/openoffice.org3/program/unopkg add --shared %D/openoffice.org3/share/extension/install/nl_NL.oxt > /dev/null 2>&1
+@unexec %D/openoffice.org3/program/unopkg remove --shared org.openoffice.nl.hunspell.dictionaries > /dev/null 2>&1

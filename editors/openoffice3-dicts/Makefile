@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/05 21:32:48 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/05 23:26:52 robert Exp $
 
 PKG_ARCH=	*
 
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://blade2k.humppa.hu/openoffice3-dicts/
 
-LANGUAGES=	de_DE en_GB en_US hu_HU
+LANGUAGES=	ar_AR de_DE en_GB en_US fr_FR hu_HU nl_NL \
+		sl_SL
 
 EXTRACT_CASES=	*.oxt) break;; 
 
