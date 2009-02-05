@@ -1,0 +1,2 @@
+This module provides basic Boolean support, by defining two special
+objects: true and false.
