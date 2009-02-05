@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/01/30 02:18:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2009/02/05 20:32:08 sthen Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -19,7 +19,7 @@ COMMENT-wavpack =	multimedia framework - wavpack plugin
 
 V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
-PKGNAME-main =		gstreamer-plugins-good-$Vp8
+PKGNAME-main =		gstreamer-plugins-good-$Vp9
 PKGNAME-aalib =		gstreamer-aalib-$Vp0
 PKGNAME-cairo =		gstreamer-cairo-$Vp1
 PKGNAME-gconf =		gstreamer-confelements-$Vp1
