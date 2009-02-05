@@ -1,0 +1,296 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/05 22:05:10 simon Exp $
+bin/html_formfu_deploy.pl
+bin/html_formfu_dumpconf.pl
+${P5SITE}/HTML/FormFu/
+${P5SITE}/HTML/FormFu.pm
+${P5SITE}/HTML/FormFu/Attribute.pm
+${P5SITE}/HTML/FormFu/Constants.pm
+${P5SITE}/HTML/FormFu/Constraint/
+${P5SITE}/HTML/FormFu/Constraint.pm
+${P5SITE}/HTML/FormFu/Constraint/ASCII.pm
+${P5SITE}/HTML/FormFu/Constraint/AllOrNone.pm
+${P5SITE}/HTML/FormFu/Constraint/AutoSet.pm
+${P5SITE}/HTML/FormFu/Constraint/Bool.pm
+${P5SITE}/HTML/FormFu/Constraint/Callback.pm
+${P5SITE}/HTML/FormFu/Constraint/CallbackOnce.pm
+${P5SITE}/HTML/FormFu/Constraint/DateTime.pm
+${P5SITE}/HTML/FormFu/Constraint/DependOn.pm
+${P5SITE}/HTML/FormFu/Constraint/Email.pm
+${P5SITE}/HTML/FormFu/Constraint/Equal.pm
+${P5SITE}/HTML/FormFu/Constraint/File/
+${P5SITE}/HTML/FormFu/Constraint/File.pm
+${P5SITE}/HTML/FormFu/Constraint/File/MIME.pm
+${P5SITE}/HTML/FormFu/Constraint/File/MaxSize.pm
+${P5SITE}/HTML/FormFu/Constraint/File/MinSize.pm
+${P5SITE}/HTML/FormFu/Constraint/File/Size.pm
+${P5SITE}/HTML/FormFu/Constraint/Integer.pm
+${P5SITE}/HTML/FormFu/Constraint/Length.pm
+${P5SITE}/HTML/FormFu/Constraint/MaxLength.pm
+${P5SITE}/HTML/FormFu/Constraint/MaxRange.pm
+${P5SITE}/HTML/FormFu/Constraint/MinLength.pm
+${P5SITE}/HTML/FormFu/Constraint/MinMaxFields.pm
+${P5SITE}/HTML/FormFu/Constraint/MinRange.pm
+${P5SITE}/HTML/FormFu/Constraint/Number.pm
+${P5SITE}/HTML/FormFu/Constraint/Printable.pm
+${P5SITE}/HTML/FormFu/Constraint/Range.pm
+${P5SITE}/HTML/FormFu/Constraint/Regex.pm
+${P5SITE}/HTML/FormFu/Constraint/Required.pm
+${P5SITE}/HTML/FormFu/Constraint/Set.pm
+${P5SITE}/HTML/FormFu/Constraint/SingleValue.pm
+${P5SITE}/HTML/FormFu/Constraint/Word.pm
+${P5SITE}/HTML/FormFu/Constraint/_others.pm
+${P5SITE}/HTML/FormFu/Constraint/reCAPTCHA.pm
+${P5SITE}/HTML/FormFu/Deflator/
+${P5SITE}/HTML/FormFu/Deflator.pm
+${P5SITE}/HTML/FormFu/Deflator/CompoundDateTime.pm
+${P5SITE}/HTML/FormFu/Deflator/CompoundSplit.pm
+${P5SITE}/HTML/FormFu/Deflator/Strftime.pm
+${P5SITE}/HTML/FormFu/Deploy.pm
+${P5SITE}/HTML/FormFu/Element/
+${P5SITE}/HTML/FormFu/Element.pm
+${P5SITE}/HTML/FormFu/Element/Blank.pm
+${P5SITE}/HTML/FormFu/Element/Block.pm
+${P5SITE}/HTML/FormFu/Element/Button.pm
+${P5SITE}/HTML/FormFu/Element/Checkbox.pm
+${P5SITE}/HTML/FormFu/Element/Checkboxgroup.pm
+${P5SITE}/HTML/FormFu/Element/ComboBox.pm
+${P5SITE}/HTML/FormFu/Element/ContentButton.pm
+${P5SITE}/HTML/FormFu/Element/Date.pm
+${P5SITE}/HTML/FormFu/Element/DateTime.pm
+${P5SITE}/HTML/FormFu/Element/Fieldset.pm
+${P5SITE}/HTML/FormFu/Element/File.pm
+${P5SITE}/HTML/FormFu/Element/Hidden.pm
+${P5SITE}/HTML/FormFu/Element/Hr.pm
+${P5SITE}/HTML/FormFu/Element/Image.pm
+${P5SITE}/HTML/FormFu/Element/Multi.pm
+${P5SITE}/HTML/FormFu/Element/Password.pm
+${P5SITE}/HTML/FormFu/Element/Radio.pm
+${P5SITE}/HTML/FormFu/Element/Radiogroup.pm
+${P5SITE}/HTML/FormFu/Element/Repeatable.pm
+${P5SITE}/HTML/FormFu/Element/Reset.pm
+${P5SITE}/HTML/FormFu/Element/Select.pm
+${P5SITE}/HTML/FormFu/Element/SimpleTable.pm
+${P5SITE}/HTML/FormFu/Element/Src.pm
+${P5SITE}/HTML/FormFu/Element/Submit.pm
+${P5SITE}/HTML/FormFu/Element/Text.pm
+${P5SITE}/HTML/FormFu/Element/Textarea.pm
+${P5SITE}/HTML/FormFu/Element/_Field.pm
+${P5SITE}/HTML/FormFu/Element/_Group.pm
+${P5SITE}/HTML/FormFu/Element/_Input.pm
+${P5SITE}/HTML/FormFu/Element/_MultiElement.pm
+${P5SITE}/HTML/FormFu/Element/_MultiSelect.pm
+${P5SITE}/HTML/FormFu/Element/_MultiText.pm
+${P5SITE}/HTML/FormFu/Element/_NonBlock.pm
+${P5SITE}/HTML/FormFu/Element/reCAPTCHA.pm
+${P5SITE}/HTML/FormFu/Exception/
+${P5SITE}/HTML/FormFu/Exception.pm
+${P5SITE}/HTML/FormFu/Exception/Constraint.pm
+${P5SITE}/HTML/FormFu/Exception/Inflator.pm
+${P5SITE}/HTML/FormFu/Exception/Input.pm
+${P5SITE}/HTML/FormFu/Exception/Transformer.pm
+${P5SITE}/HTML/FormFu/Exception/Validator.pm
+${P5SITE}/HTML/FormFu/FakeQuery.pm
+${P5SITE}/HTML/FormFu/Filter/
+${P5SITE}/HTML/FormFu/Filter.pm
+${P5SITE}/HTML/FormFu/Filter/Callback.pm
+${P5SITE}/HTML/FormFu/Filter/CompoundJoin.pm
+${P5SITE}/HTML/FormFu/Filter/CompoundSprintf.pm
+${P5SITE}/HTML/FormFu/Filter/CopyValue.pm
+${P5SITE}/HTML/FormFu/Filter/Encode.pm
+${P5SITE}/HTML/FormFu/Filter/HTMLEscape.pm
+${P5SITE}/HTML/FormFu/Filter/HTMLScrubber.pm
+${P5SITE}/HTML/FormFu/Filter/LowerCase.pm
+${P5SITE}/HTML/FormFu/Filter/NonNumeric.pm
+${P5SITE}/HTML/FormFu/Filter/Regex.pm
+${P5SITE}/HTML/FormFu/Filter/Split.pm
+${P5SITE}/HTML/FormFu/Filter/TrimEdges.pm
+${P5SITE}/HTML/FormFu/Filter/UpperCase.pm
+${P5SITE}/HTML/FormFu/Filter/Whitespace.pm
+${P5SITE}/HTML/FormFu/Filter/_Compound.pm
+${P5SITE}/HTML/FormFu/I18N/
+${P5SITE}/HTML/FormFu/I18N.pm
+${P5SITE}/HTML/FormFu/I18N/da.pm
+${P5SITE}/HTML/FormFu/I18N/de.pm
+${P5SITE}/HTML/FormFu/I18N/en.pm
+${P5SITE}/HTML/FormFu/I18N/es.pm
+${P5SITE}/HTML/FormFu/I18N/fr.pm
+${P5SITE}/HTML/FormFu/I18N/it.pm
+${P5SITE}/HTML/FormFu/I18N/ja.pm
+${P5SITE}/HTML/FormFu/I18N/pt_br.pm
+${P5SITE}/HTML/FormFu/I18N/pt_pt.pm
+${P5SITE}/HTML/FormFu/I18N/ro.pm
+${P5SITE}/HTML/FormFu/I18N/ru.pm
+${P5SITE}/HTML/FormFu/I18N/ua.pm
+${P5SITE}/HTML/FormFu/Inflator/
+${P5SITE}/HTML/FormFu/Inflator.pm
+${P5SITE}/HTML/FormFu/Inflator/CompoundDateTime.pm
+${P5SITE}/HTML/FormFu/Inflator/DateTime.pm
+${P5SITE}/HTML/FormFu/Literal.pm
+${P5SITE}/HTML/FormFu/Localize.pm
+${P5SITE}/HTML/FormFu/Manual/
+${P5SITE}/HTML/FormFu/Manual/Cookbook.pod
+${P5SITE}/HTML/FormFu/Manual/Unicode.pod
+${P5SITE}/HTML/FormFu/Model.pm
+${P5SITE}/HTML/FormFu/MultiForm.pm
+${P5SITE}/HTML/FormFu/ObjectUtil.pm
+${P5SITE}/HTML/FormFu/OutputProcessor/
+${P5SITE}/HTML/FormFu/OutputProcessor.pm
+${P5SITE}/HTML/FormFu/OutputProcessor/Indent.pm
+${P5SITE}/HTML/FormFu/OutputProcessor/StripWhitespace.pm
+${P5SITE}/HTML/FormFu/Plugin/
+${P5SITE}/HTML/FormFu/Plugin.pm
+${P5SITE}/HTML/FormFu/Plugin/StashValid.pm
+${P5SITE}/HTML/FormFu/Preload.pm
+${P5SITE}/HTML/FormFu/Processor.pm
+${P5SITE}/HTML/FormFu/QueryType/
+${P5SITE}/HTML/FormFu/QueryType/CGI/
+${P5SITE}/HTML/FormFu/QueryType/CGI.pm
+${P5SITE}/HTML/FormFu/QueryType/CGI/Simple.pm
+${P5SITE}/HTML/FormFu/QueryType/Catalyst.pm
+${P5SITE}/HTML/FormFu/Transformer/
+${P5SITE}/HTML/FormFu/Transformer.pm
+${P5SITE}/HTML/FormFu/Transformer/Callback.pm
+${P5SITE}/HTML/FormFu/Upload.pm
+${P5SITE}/HTML/FormFu/UploadParam.pm
+${P5SITE}/HTML/FormFu/Util.pm
+${P5SITE}/HTML/FormFu/Validator/
+${P5SITE}/HTML/FormFu/Validator.pm
+${P5SITE}/HTML/FormFu/Validator/Callback.pm
+${P5SITE}/HTML/FormFu/base.pm
+${P5SITE}/auto/share/dist/HTML-FormFu/
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/block
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/checkboxgroup
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/checkboxgroup_tag
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/content_button
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/end_block
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/end_form
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/field
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/form
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/input
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/input_tag
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/label
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/multi
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/non_block
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/recaptcha
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/repeatable
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/select_tag
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/start_block
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/start_form
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/textarea_tag
+@man man/man1/html_formfu_deploy.pl.1
+@man man/man1/html_formfu_dumpconf.pl.1
+@man man/man3p/HTML::FormFu.3p
+@man man/man3p/HTML::FormFu::Attribute.3p
+@man man/man3p/HTML::FormFu::Constraint.3p
+@man man/man3p/HTML::FormFu::Constraint::ASCII.3p
+@man man/man3p/HTML::FormFu::Constraint::AllOrNone.3p
+@man man/man3p/HTML::FormFu::Constraint::AutoSet.3p
+@man man/man3p/HTML::FormFu::Constraint::Bool.3p
+@man man/man3p/HTML::FormFu::Constraint::Callback.3p
+@man man/man3p/HTML::FormFu::Constraint::CallbackOnce.3p
+@man man/man3p/HTML::FormFu::Constraint::DateTime.3p
+@man man/man3p/HTML::FormFu::Constraint::DependOn.3p
+@man man/man3p/HTML::FormFu::Constraint::Email.3p
+@man man/man3p/HTML::FormFu::Constraint::Equal.3p
+@man man/man3p/HTML::FormFu::Constraint::File.3p
+@man man/man3p/HTML::FormFu::Constraint::File::MIME.3p
+@man man/man3p/HTML::FormFu::Constraint::File::MaxSize.3p
+@man man/man3p/HTML::FormFu::Constraint::File::MinSize.3p
+@man man/man3p/HTML::FormFu::Constraint::File::Size.3p
+@man man/man3p/HTML::FormFu::Constraint::Integer.3p
+@man man/man3p/HTML::FormFu::Constraint::Length.3p
+@man man/man3p/HTML::FormFu::Constraint::MaxLength.3p
+@man man/man3p/HTML::FormFu::Constraint::MaxRange.3p
+@man man/man3p/HTML::FormFu::Constraint::MinLength.3p
+@man man/man3p/HTML::FormFu::Constraint::MinMaxFields.3p
+@man man/man3p/HTML::FormFu::Constraint::MinRange.3p
+@man man/man3p/HTML::FormFu::Constraint::Number.3p
+@man man/man3p/HTML::FormFu::Constraint::Printable.3p
+@man man/man3p/HTML::FormFu::Constraint::Range.3p
+@man man/man3p/HTML::FormFu::Constraint::Regex.3p
+@man man/man3p/HTML::FormFu::Constraint::Required.3p
+@man man/man3p/HTML::FormFu::Constraint::Set.3p
+@man man/man3p/HTML::FormFu::Constraint::SingleValue.3p
+@man man/man3p/HTML::FormFu::Constraint::Word.3p
+@man man/man3p/HTML::FormFu::Constraint::_others.3p
+@man man/man3p/HTML::FormFu::Constraint::reCAPTCHA.3p
+@man man/man3p/HTML::FormFu::Deflator.3p
+@man man/man3p/HTML::FormFu::Deflator::CompoundDateTime.3p
+@man man/man3p/HTML::FormFu::Deflator::CompoundSplit.3p
+@man man/man3p/HTML::FormFu::Deflator::Strftime.3p
+@man man/man3p/HTML::FormFu::Element.3p
+@man man/man3p/HTML::FormFu::Element::Blank.3p
+@man man/man3p/HTML::FormFu::Element::Block.3p
+@man man/man3p/HTML::FormFu::Element::Button.3p
+@man man/man3p/HTML::FormFu::Element::Checkbox.3p
+@man man/man3p/HTML::FormFu::Element::Checkboxgroup.3p
+@man man/man3p/HTML::FormFu::Element::ComboBox.3p
+@man man/man3p/HTML::FormFu::Element::ContentButton.3p
+@man man/man3p/HTML::FormFu::Element::Date.3p
+@man man/man3p/HTML::FormFu::Element::DateTime.3p
+@man man/man3p/HTML::FormFu::Element::Fieldset.3p
+@man man/man3p/HTML::FormFu::Element::File.3p
+@man man/man3p/HTML::FormFu::Element::Hidden.3p
+@man man/man3p/HTML::FormFu::Element::Hr.3p
+@man man/man3p/HTML::FormFu::Element::Image.3p
+@man man/man3p/HTML::FormFu::Element::Multi.3p
+@man man/man3p/HTML::FormFu::Element::Password.3p
+@man man/man3p/HTML::FormFu::Element::Radio.3p
+@man man/man3p/HTML::FormFu::Element::Radiogroup.3p
+@man man/man3p/HTML::FormFu::Element::Repeatable.3p
+@man man/man3p/HTML::FormFu::Element::Reset.3p
+@man man/man3p/HTML::FormFu::Element::Select.3p
+@man man/man3p/HTML::FormFu::Element::SimpleTable.3p
+@man man/man3p/HTML::FormFu::Element::Src.3p
+@man man/man3p/HTML::FormFu::Element::Submit.3p
+@man man/man3p/HTML::FormFu::Element::Text.3p
+@man man/man3p/HTML::FormFu::Element::Textarea.3p
+@man man/man3p/HTML::FormFu::Element::_Field.3p
+@man man/man3p/HTML::FormFu::Element::_Group.3p
+@man man/man3p/HTML::FormFu::Element::_Input.3p
+@man man/man3p/HTML::FormFu::Element::_MultiElement.3p
+@man man/man3p/HTML::FormFu::Element::_MultiSelect.3p
+@man man/man3p/HTML::FormFu::Element::_MultiText.3p
+@man man/man3p/HTML::FormFu::Element::_NonBlock.3p
+@man man/man3p/HTML::FormFu::Element::reCAPTCHA.3p
+@man man/man3p/HTML::FormFu::Filter.3p
+@man man/man3p/HTML::FormFu::Filter::Callback.3p
+@man man/man3p/HTML::FormFu::Filter::CompoundJoin.3p
+@man man/man3p/HTML::FormFu::Filter::CompoundSprintf.3p
+@man man/man3p/HTML::FormFu::Filter::CopyValue.3p
+@man man/man3p/HTML::FormFu::Filter::Encode.3p
+@man man/man3p/HTML::FormFu::Filter::HTMLEscape.3p
+@man man/man3p/HTML::FormFu::Filter::HTMLScrubber.3p
+@man man/man3p/HTML::FormFu::Filter::LowerCase.3p
+@man man/man3p/HTML::FormFu::Filter::NonNumeric.3p
+@man man/man3p/HTML::FormFu::Filter::Regex.3p
+@man man/man3p/HTML::FormFu::Filter::Split.3p
+@man man/man3p/HTML::FormFu::Filter::TrimEdges.3p
+@man man/man3p/HTML::FormFu::Filter::UpperCase.3p
+@man man/man3p/HTML::FormFu::Filter::Whitespace.3p
+@man man/man3p/HTML::FormFu::Filter::_Compound.3p
+@man man/man3p/HTML::FormFu::Inflator.3p
+@man man/man3p/HTML::FormFu::Inflator::CompoundDateTime.3p
+@man man/man3p/HTML::FormFu::Inflator::DateTime.3p
+@man man/man3p/HTML::FormFu::Manual::Cookbook.3p
+@man man/man3p/HTML::FormFu::Manual::Unicode.3p
+@man man/man3p/HTML::FormFu::Model.3p
+@man man/man3p/HTML::FormFu::MultiForm.3p
+@man man/man3p/HTML::FormFu::OutputProcessor.3p
+@man man/man3p/HTML::FormFu::OutputProcessor::Indent.3p
+@man man/man3p/HTML::FormFu::OutputProcessor::StripWhitespace.3p
+@man man/man3p/HTML::FormFu::Plugin.3p
+@man man/man3p/HTML::FormFu::Plugin::StashValid.3p
+@man man/man3p/HTML::FormFu::Processor.3p
+@man man/man3p/HTML::FormFu::QueryType::CGI.3p
+@man man/man3p/HTML::FormFu::QueryType::CGI::Simple.3p
+@man man/man3p/HTML::FormFu::QueryType::Catalyst.3p
+@man man/man3p/HTML::FormFu::Transformer.3p
+@man man/man3p/HTML::FormFu::Transformer::Callback.3p
+@man man/man3p/HTML::FormFu::Upload.3p
+@man man/man3p/HTML::FormFu::UploadParam.3p
+@man man/man3p/HTML::FormFu::Validator.3p
+@man man/man3p/HTML::FormFu::Validator::Callback.3p
