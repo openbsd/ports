@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/05 22:05:13 simon Exp $
+${P5SITE}/Catalyst/Controller/
+${P5SITE}/Catalyst/Controller/HTML/
+${P5SITE}/Catalyst/Controller/HTML/FormFu/
+${P5SITE}/Catalyst/Controller/HTML/FormFu.pm
+${P5SITE}/Catalyst/Controller/HTML/FormFu/Action/
+${P5SITE}/Catalyst/Controller/HTML/FormFu/Action/Form.pm
+${P5SITE}/Catalyst/Controller/HTML/FormFu/Action/FormConfig.pm
+${P5SITE}/Catalyst/Controller/HTML/FormFu/Action/FormMethod.pm
+${P5SITE}/Catalyst/Controller/HTML/FormFu/Action/MultiForm.pm
+${P5SITE}/Catalyst/Controller/HTML/FormFu/Action/MultiFormConfig.pm
+${P5SITE}/Catalyst/Controller/HTML/FormFu/Action/MultiFormMethod.pm
+${P5SITE}/Catalyst/Helper/
+${P5SITE}/Catalyst/Helper/HTML/
+${P5SITE}/Catalyst/Helper/HTML/FormFu.pm
+@man man/man3p/Catalyst::Controller::HTML::FormFu.3p
+@man man/man3p/Catalyst::Helper::HTML::FormFu.3p
