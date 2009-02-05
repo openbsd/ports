@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.674 2009/02/04 08:37:09 simon Exp $
+# $OpenBSD: Makefile,v 1.675 2009/02/05 22:05:20 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -330,6 +330,7 @@
      SUBDIR += p5-DateTime-Format-ISO8601
      SUBDIR += p5-DateTime-Format-Mail
      SUBDIR += p5-DateTime-Format-MySQL
+     SUBDIR += p5-DateTime-Format-Natural
      SUBDIR += p5-DateTime-Format-Pg
      SUBDIR += p5-DateTime-Format-Strptime
      SUBDIR += p5-DateTime-Format-W3CDTF
@@ -553,6 +554,7 @@
      SUBDIR += p5-Test-Memory-Cycle
      SUBDIR += p5-Test-MockModule
      SUBDIR += p5-Test-MockObject
+     SUBDIR += p5-Test-MockTime
      SUBDIR += p5-Test-NoTabs
      SUBDIR += p5-Test-NoWarnings
      SUBDIR += p5-Test-Object
@@ -609,6 +611,7 @@
      SUBDIR += p5-YAML
      SUBDIR += p5-YAML-Syck
      SUBDIR += p5-accessors
+     SUBDIR += p5-boolean
      SUBDIR += p5-capitalization
      SUBDIR += p5-enum
      SUBDIR += p5-libintl
