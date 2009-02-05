@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2009/01/30 11:30:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2009/02/05 22:09:04 jasper Exp $
+
+BROKEN= 	does not work after changes in the UVC layer
 
 COMMENT=	PhotoBooth inspired application
 
