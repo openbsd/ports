@@ -1,0 +1,7 @@
+To configure a dictionary for OpenOffice.Org 3, Open Tools ->
+Options -> Language Settings -> Languages. 
+
+From the drop-down menus select your Locale Language to the
+one you want.
+(If spell checking is available for a language you are going
+to see an icon prefixing the language name.)

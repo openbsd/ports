@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-hu_HU,v 1.1.1.1 2009/02/05 21:32:48 robert Exp $
+@pkgpath editors/openoffice3-dicts-i18n
+@pkgpath editors/openoffice3-dicts-i18n,-main
+openoffice.org3/share/extension/install/hu_HU.oxt
+@exec %D/openoffice.org3/program/unopkg add --shared %D/openoffice.org3/share/extension/install/hu_HU.oxt > /dev/null 2>&1
+@unexec %D/openoffice.org3/program/unopkg remove --shared org.openoffice.hu.hunspell.dictionaries > /dev/null 2>&1
