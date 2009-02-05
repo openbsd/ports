@@ -1,0 +1,2 @@
+This module helps to implement Catalyst components that return a new
+instance on each request.
