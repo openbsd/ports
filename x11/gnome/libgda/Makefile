@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/01/31 22:13:37 jasper Exp $
-
-# XXX: use system sqlite3
+# $OpenBSD: Makefile,v 1.7 2009/02/05 09:50:31 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -14,7 +12,7 @@ COMMENT-tds=		FreeTDS backend for libgda
 GNOME_PROJECT=		libgda
 GNOME_VERSION=		3.1.5
 
-PKGNAME-main=		${DISTNAME}p3
+PKGNAME-main=		${DISTNAME}p4
 PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}p3
 PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}p3
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}p3
