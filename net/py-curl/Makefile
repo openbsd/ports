@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/02/01 19:49:58 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.27 2009/02/05 20:50:51 wcmaier Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ CATEGORIES=    	net
 
 HOMEPAGE=	http://pycurl.sourceforge.net/
 
-# LGPL
+# dual: LGPL or MIT-like
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
