@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-ru_RU,v 1.1 2009/02/06 21:16:02 robert Exp $
+@pkgpath editors/openoffice3-dicts-i18n
+@pkgpath editors/openoffice3-dicts-i18n,-main
+openoffice.org3/share/extension/install/ru_RU.oxt
+@exec %D/openoffice.org3/program/unopkg add --shared %D/openoffice.org3/share/extension/install/ru_RU.oxt > /dev/null 2>&1
+@unexec %D/openoffice.org3/program/unopkg remove --shared org.openoffice.ro.dictionaries.ru-RU > /dev/null 2>&1
+
