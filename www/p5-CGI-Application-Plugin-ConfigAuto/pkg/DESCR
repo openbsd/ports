@@ -1,0 +1,6 @@
+CGI::Application::Plugin::ConfigAuto adds easy access to config file
+variables to your CGI::Application modules.  Lazy loading is used to
+prevent the config file from being parsed if no configuration variables
+are accessed during the request.  In other words, the config file is not
+parsed until it is actually needed.  The Config::Auto package provides
+the framework for this plugin.
