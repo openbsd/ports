@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/12/17 12:25:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/06 15:05:06 ajacoutot Exp $
 
 COMMENT=		send small notifications to your desktop
 
 DISTNAME=		notification-daemon-0.4.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils net
 
 HOMEPAGE=		http://www.galago-project.org/
@@ -33,7 +34,8 @@ LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			gstreamer-0.10::multimedia/gstreamer-0.10/core \
 			wnck-1::devel/libwnck \
 			sexy::x11/libsexy
-RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
+			:gstreamer-confelements-*:multimedia/gstreamer-0.10/plugins-good,-gconf
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
