@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/02/01 17:35:26 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2009/02/06 23:06:27 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -70,6 +70,7 @@ BUILD_DEPENDS+=	:zip-*:archivers/zip \
 		:unzip-*:archivers/unzip \
 		:bison-*:devel/bison \
 		:tcsh-*:shells/tcsh \
+		:bash-*:shells/bash \
 		:p5-Archive-Zip-*:archivers/p5-Archive-Zip \
 		::print/cups \
 		::devel/apache-ant \
