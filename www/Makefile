@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.384 2009/02/05 22:05:27 simon Exp $
+# $OpenBSD: Makefile,v 1.385 2009/02/06 22:09:16 simon Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -122,6 +122,8 @@
      SUBDIR += p5-CGI-Ajax
      SUBDIR += p5-CGI-Application
      SUBDIR += p5-CGI-Application-Generator
+     SUBDIR += p5-CGI-Application-Plugin-ConfigAuto
+     SUBDIR += p5-CGI-Application-Plugin-ValidateRM
      SUBDIR += p5-CGI-Cookie-Splitter
      SUBDIR += p5-CGI-Deurl
      SUBDIR += p5-CGI-FormBuilder
