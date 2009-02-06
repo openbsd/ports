@@ -1,17 +1,19 @@
-$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.12 2008/11/09 13:38:29 ajacoutot Exp $
---- src/sysdeps/openbsd.c.orig	Sat Oct  4 02:46:45 2008
-+++ src/sysdeps/openbsd.c	Sun Nov  9 13:26:45 2008
-@@ -65,41 +65,71 @@ gkrellm_sys_main_cleanup(void)
- #include <sys/dkstat.h>
- #include <kvm.h>
+$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.13 2009/02/06 12:55:48 ajacoutot Exp $
+--- src/sysdeps/openbsd.c.orig	Fri Oct  3 17:46:45 2008
++++ src/sysdeps/openbsd.c	Wed Feb  4 14:48:56 2009
+@@ -62,85 +62,96 @@ gkrellm_sys_main_cleanup(void)
+ /* ===================================================================== */
+ /* CPU monitor interface */
  
--extern	kvm_t	*kvmd;
+-#include <sys/dkstat.h>
+-#include <kvm.h>
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
 +#include <sys/sched.h>
  
+-extern	kvm_t	*kvmd;
 +static gint ncpus;
-+
+ 
 +static gint get_ncpus(void);
 +
  void
@@ -93,7 +95,116 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.12 2008/11/09 13:38:29 ajacoutot Exp $
  /* ===================================================================== */
  /* Proc monitor interface */
  
-@@ -271,41 +301,122 @@ gkrellm_sys_mem_init(void)
+-#include <sys/proc.h>
+ #include <sys/sysctl.h>
+-#include <uvm/uvm_extern.h>
+-#include <kvm.h>
++#include <sys/vmmeter.h>
+ 
+ #include <utmp.h>
+ 
+-extern	kvm_t	*kvmd;
+-
+ void
+ gkrellm_sys_proc_read_data(void)
+ {
+-   static int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_ALL };
++   static int proc_mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_ALL };
++   static int fork_mib[] = { CTL_KERN, KERN_FORKSTAT };
+    double avenrun;
+ 	guint	n_forks = 0, n_processes = 0;
+-   struct uvmexp *uvmexp;
+-   int i;
+    size_t len;
++   struct forkstat forkstat;
+ 
+-	static struct nlist nl[] = {
+-#define X_UVM_EXP    0
+-	   { "_uvmexp" },
+-	   { NULL }
+-	};
+-
+-
+-   if (sysctl(mib, 3, NULL, &len, NULL, 0) >= 0) {
++   if (sysctl(proc_mib, 3, NULL, &len, NULL, 0) >= 0) {
+       n_processes = len / sizeof(struct kinfo_proc);
+    }
+ 
+-   /* get name list if it is not done yet */
+-   if (kvmd == NULL) return;
+-   if (nl[0].n_type == 0) kvm_nlist(kvmd, nl);
+-
+-   if (nl[0].n_type != 0) {
+-      uvmexp = (struct uvmexp *)nl[X_UVM_EXP].n_value;
+-      if (kvm_read(kvmd, (u_long)&uvmexp->forks, &i, sizeof(i)) == sizeof(i))
+-	 n_forks = i;
++   len = sizeof(forkstat);
++   if (sysctl(fork_mib, 2, &forkstat, &len, NULL, 0) >= 0) {
++      n_forks = forkstat.cntfork + forkstat.cntvfork + forkstat.cntrfork;
+    }
+ 
+    if (getloadavg(&avenrun, 1) <= 0)
+@@ -187,7 +198,6 @@ gkrellm_sys_proc_init(void)
+ #include <sys/vmmeter.h>
+ #include <sys/sysctl.h>
+ #include <uvm/uvm_extern.h>
+-#include <kvm.h>
+ 
+ static gulong	swapin,
+ 				swapout;
+@@ -197,32 +207,22 @@ static guint64	swap_total,
+ void
+ gkrellm_sys_mem_read_data(void)
+ {
+-   static int mib[] = { CTL_VM, VM_METER };
++   static int vmtotal_mib[] = { CTL_VM, VM_METER };
++   static int uvmexp_mib[] = { CTL_VM, VM_UVMEXP };
+    static int pgout, pgin;
+    unsigned long	total, used, x_used, free, shared, buffers, cached;
+    struct vmtotal vmt;
+    struct uvmexp uvmexp;
+    size_t len;
+-   static struct nlist nl[] = {
+-#define X_UVM_EXP    0
+-   { "_uvmexp" },
+-   { NULL }
+-};
+ 
+-
+-   if (kvmd == NULL) return;
+-
+-   /* get the name list if it's not done yet */
+-   if (nl[0].n_type == 0) kvm_nlist(kvmd, nl);
+-
+-   if (nl[0].n_type != 0)
+-      if (kvm_read(kvmd, nl[X_UVM_EXP].n_value,
+-		   &uvmexp, sizeof(uvmexp)) != sizeof(uvmexp))
+-	 memset(&uvmexp, 0, sizeof(uvmexp));
+-
+-   if (sysctl(mib, 2, &vmt, &len, NULL, 0) < 0)
++   len = sizeof(vmt);
++   if (sysctl(vmtotal_mib, 2, &vmt, &len, NULL, 0) < 0)
+       memset(&vmt, 0, sizeof(vmt));
+ 
++   len = sizeof(uvmexp);
++   if (sysctl(uvmexp_mib, 2, &uvmexp, &len, NULL, 0) < 0)
++      memset(&uvmexp, 0, sizeof(uvmexp));
++
+    total = (uvmexp.npages - uvmexp.wired) << uvmexp.pageshift;
+ 
+    /* not sure of what must be computed */
+@@ -240,8 +240,8 @@ gkrellm_sys_mem_read_data(void)
+    gkrellm_mem_assign_data(total, used, free, shared, buffers, cached);
+ 
+    /* show only the pages located on the disk and not in memory */
+-   swap_total = (guint64) (uvmexp.swpages << uvmexp.pageshift);
+-   swap_used = (guint64) (uvmexp.swpgonly << uvmexp.pageshift);
++   swap_total = (guint64)uvmexp.swpages << uvmexp.pageshift;
++   swap_used = (guint64)uvmexp.swpgonly << uvmexp.pageshift;
+ 
+    /* For page in/out operations, uvmexp struct doesn't seem to be reliable */
+ 
+@@ -271,41 +271,122 @@ gkrellm_sys_mem_init(void)
  
  
  /* ===================================================================== */
@@ -228,21 +339,137 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.12 2008/11/09 13:38:29 ajacoutot Exp $
  
  #include <machine/apmvar.h>
  #define	APMDEV		"/dev/apm"
-@@ -417,7 +528,7 @@ gkrellm_sys_disk_read_data(void)
- 		/* Separate read/write stats were implemented in NetBSD 1.6K.
- 		*/
+@@ -357,24 +438,10 @@ gkrellm_sys_battery_init()
+ /* ===================================================================== */
+ /* Disk monitor interface */
+ 
+-#include <sys/dkstat.h>
++#include <sys/sysctl.h>
+ #include <sys/disk.h>
+-#include <kvm.h>
++#include <errno.h>
+ 
+-static struct nlist nl_disk[] = {
+-#define X_DISK_COUNT    0
+-   { "_disk_count" },      /* number of disks */
+-#define X_DISKLIST      1
+-   { "_disklist" },        /* TAILQ of disks */
+-   { NULL },
+-};
+-
+-static struct disk *dkdisks;	/* kernel disk list head */
+-
+-extern	kvm_t	*kvmd;
+-
+-static gint	n_disks;
+-
+ gchar *
+ gkrellm_sys_disk_name_from_device(gint device_number, gint unit_number,
+ 			gint *order)
+@@ -389,68 +456,52 @@ gkrellm_sys_disk_order_from_name(gchar *name)
+ 	}
+ 
+ 
+-void
+-gkrellm_sys_disk_read_data(void)
++static int
++get_diskinfo(struct diskstats **ret)
+ {
+-   struct disk	d, *p;
+-   gint			i;
+-   char			buf[20];
+-   guint64		rbytes, wbytes;
++	static int mib[] = { CTL_HW, HW_DISKSTATS };
++	static void *buf;
++	static size_t buflen;
++	size_t len;
++	void *newbuf;
+ 
+-   if (kvmd == NULL) return;
+-   if (n_disks <= 0) return;		/* computed by register_disks() */
+-   if (nl_disk[0].n_type == 0) return;	/* ditto. */
++	buf = NULL;
++	buflen = 0;
++	for (;;) {
++		len = buflen;
++		if (NULL != buf) {
++			if (sysctl(mib, 2, buf, &len, NULL, 0) >= 0) {
++				*ret = buf;
++				return len / sizeof(struct diskstats);
++			}
++			if (ENOMEM != errno)
++				return (-1);
++		}
+ 
+-   for (i = 0, p = dkdisks; i < n_disks; p = d.dk_link.tqe_next, ++i)
+-	{
+-	if (kvm_read(kvmd, (u_long)p, &d, sizeof(d)) == sizeof(d))
+-		{
+-		if (kvm_read(kvmd, (u_long)d.dk_name, buf, sizeof(buf)) != sizeof(buf))
+-			/* fallback to default name if kvm_read failed */
+-			sprintf(buf, "%s%c", _("Disk"), 'A' + i);
+-	 
+-		/* It seems impossible to get the read and write transfers
+-		 * separately. Its just a matter of choice to put the total in
+-		 * the rbytes member but I like the blue color so much.
+-		*/
++		if (sysctl(mib, 2, NULL, &len, NULL, 0) < 0)
++			return (-1);
++		len += sizeof(struct diskstats);
++		if (NULL == (newbuf = realloc(buf, len)))
++			return (-1);
++		buf = newbuf;
++		buflen = len;
++	}
++}
+ 
+-		/* Separate read/write stats were implemented in NetBSD 1.6K.
+-		*/
++void
++gkrellm_sys_disk_read_data(void)
++{
++	int diskcount, ii;
++	struct diskstats *disks;
  
 -#if __NetBSD_Version__ >= 106110000
-+#if __NetBSD_Version__ >= 106110000 || defined(__OpenBSD__)
- 		rbytes = d.dk_rbytes;
- 		wbytes = d.dk_wbytes;
- #else
-@@ -425,7 +536,7 @@ gkrellm_sys_disk_read_data(void)
- 		wbytes = 0;
- #endif
- 
+-		rbytes = d.dk_rbytes;
+-		wbytes = d.dk_wbytes;
+-#else
+-		rbytes = d.dk_bytes;
+-		wbytes = 0;
+-#endif
+-
 -		gkrellm_disk_assign_data_by_name(buf, rbytes, wbytes);
-+		gkrellm_disk_assign_data_by_name(buf, rbytes, wbytes, FALSE);
- 		}
- 	}
+-		}
+-	}
++	diskcount = get_diskinfo(&disks);
++	for (ii = 0; diskcount > ii; ii++)
++		gkrellm_disk_assign_data_by_name(disks[ii].ds_name,
++		    disks[ii].ds_rbytes, disks[ii].ds_wbytes, FALSE);
+ }
+ 
+ gboolean
+ gkrellm_sys_disk_init(void)
+ {
+-   struct disklist_head head;
+-
+-
+-   if (kvmd == NULL) return FALSE;
+-
+-   /* get disk count */
+-   if (kvm_nlist(kvmd, nl_disk) >= 0 && nl_disk[0].n_type != 0)
+-      if (kvm_read(kvmd, nl_disk[X_DISK_COUNT].n_value,
+-		   (char *)&n_disks, sizeof(n_disks)) != sizeof(n_disks))
+-	 n_disks = 0;
+-
+-   /* get first disk */
+-   if (n_disks > 0) {
+-      if (kvm_read(kvmd, nl_disk[X_DISKLIST].n_value, 
+-		   &head, sizeof(head)) != sizeof(head))
+-	 n_disks = 0;
+-
+-      dkdisks = head.tqh_first;
+-   }
+-   return TRUE;
++	return TRUE;
  }
