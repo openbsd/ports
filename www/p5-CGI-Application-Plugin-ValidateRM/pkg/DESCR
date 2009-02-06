@@ -1,0 +1,2 @@
+CGI::Application::Plugin::ValidateRM helps to validate web forms when
+using the CGI::Application framework and the Data::FormValidator module.
