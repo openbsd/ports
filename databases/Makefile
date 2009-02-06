@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2009/02/03 21:27:17 bernd Exp $
+# $OpenBSD: Makefile,v 1.156 2009/02/06 22:03:55 simon Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -32,6 +32,7 @@
      SUBDIR += openldap
      SUBDIR += p5-AsciiDB-TagFile
      SUBDIR += p5-BerkeleyDB
+     SUBDIR += p5-CGI-Application-Plugin-DBH
      SUBDIR += p5-Catalyst-Controller-Rose
      SUBDIR += p5-Catalyst-Model-CDBI
      SUBDIR += p5-Catalyst-Model-DBI
