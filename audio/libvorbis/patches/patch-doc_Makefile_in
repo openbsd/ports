@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.7 2007/07/30 15:29:36 naddy Exp $
---- doc/Makefile.in.orig	Sun Jul 29 17:14:45 2007
-+++ doc/Makefile.in	Sun Jul 29 17:15:06 2007
+$OpenBSD: patch-doc_Makefile_in,v 1.8 2009/02/07 16:07:53 naddy Exp $
+--- doc/Makefile.in.orig	Wed Jul 25 18:46:35 2007
++++ doc/Makefile.in	Fri Feb  6 21:13:36 2009
 @@ -162,7 +162,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
@@ -10,3 +10,12 @@ $OpenBSD: patch-doc_Makefile_in,v 1.7 2007/07/30 15:29:36 naddy Exp $
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
+@@ -249,7 +249,7 @@ SPEC_PDF = xifish.pdf
+ # FIXME: also needed here
+ #	white-xifish.png 
+ built_docs = Vorbis_I_spec.html Vorbis_I_spec.pdf
+-@BUILD_DOCS_FALSE@doc_DATA = $(static_docs) $(SPEC_PNG)
++@BUILD_DOCS_FALSE@doc_DATA = $(static_docs) $(SPEC_PNG) $(built_docs)
+ 
+ # conditionally make the generated documentation
+ @BUILD_DOCS_TRUE@doc_DATA = $(static_docs) $(SPEC_PNG) $(built_docs)

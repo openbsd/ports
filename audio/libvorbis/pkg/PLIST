@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/07/30 15:29:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/02/07 16:07:53 naddy Exp $
 include/vorbis/
 include/vorbis/codec.h
 include/vorbis/vorbisenc.h
@@ -16,6 +16,8 @@ lib/pkgconfig/vorbisfile.pc
 share/aclocal/
 share/aclocal/vorbis.m4
 share/doc/libvorbis/
+share/doc/libvorbis/Vorbis_I_spec.html
+share/doc/libvorbis/Vorbis_I_spec.pdf
 share/doc/libvorbis/components.png
 share/doc/libvorbis/draft-ietf-avt-rtp-vorbis-06.txt
 share/doc/libvorbis/draft-ietf-avt-rtp-vorbis-06.xml
@@ -48,13 +50,20 @@ share/doc/libvorbis/vorbis-errors.txt
 share/doc/libvorbis/vorbis-fidelity.html
 share/doc/libvorbis/vorbis.html
 share/doc/libvorbis/vorbisenc/
+share/doc/libvorbis/vorbisenc/changes.html
+share/doc/libvorbis/vorbisenc/examples.html
 share/doc/libvorbis/vorbisenc/index.html
+share/doc/libvorbis/vorbisenc/ov_ectl_ratemanage2_arg.html
+share/doc/libvorbis/vorbisenc/ov_ectl_ratemanage_arg.html
 share/doc/libvorbis/vorbisenc/overview.html
 share/doc/libvorbis/vorbisenc/reference.html
 share/doc/libvorbis/vorbisenc/style.css
 share/doc/libvorbis/vorbisenc/vorbis_encode_ctl.html
 share/doc/libvorbis/vorbisenc/vorbis_encode_init.html
 share/doc/libvorbis/vorbisenc/vorbis_encode_init_vbr.html
+share/doc/libvorbis/vorbisenc/vorbis_encode_setup_init.html
+share/doc/libvorbis/vorbisenc/vorbis_encode_setup_managed.html
+share/doc/libvorbis/vorbisenc/vorbis_encode_setup_vbr.html
 share/doc/libvorbis/vorbisenc/vorbis_info.html
 share/doc/libvorbis/vorbisfile/
 share/doc/libvorbis/vorbisfile/OggVorbis_File.html
@@ -75,6 +84,7 @@ share/doc/libvorbis/vorbisfile/ov_callbacks.html
 share/doc/libvorbis/vorbisfile/ov_clear.html
 share/doc/libvorbis/vorbisfile/ov_comment.html
 share/doc/libvorbis/vorbisfile/ov_crosslap.html
+share/doc/libvorbis/vorbisfile/ov_fopen.html
 share/doc/libvorbis/vorbisfile/ov_info.html
 share/doc/libvorbis/vorbisfile/ov_open.html
 share/doc/libvorbis/vorbisfile/ov_open_callbacks.html
