@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2009/01/12 17:48:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2009/02/07 15:59:03 ajacoutot Exp $
 
 COMMENT=		themes collection for GNOME
 
 GNOME_PROJECT=		gnome-themes
 GNOME_VERSION=		2.24.3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 # LGPLv2.1
@@ -22,5 +23,9 @@ RUN_DEPENDS=		:gettext-*:devel/gettext \
 USE_X11=		Yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# remove file already provided by gtk2-clearlooks-engine
+post-install:
+	rm -f ${PREFIX}/share/themes/Clearlooks/index.theme
 
 .include <bsd.port.mk>
