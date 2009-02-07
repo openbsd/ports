@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2008/10/30 00:10:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.48 2009/02/07 02:38:54 form Exp $
 
     SUBDIR += BasiliskII
     SUBDIR += bochs
@@ -30,6 +30,7 @@
     SUBDIR += vgb
     SUBDIR += x48
     SUBDIR += xcopilot
+    SUBDIR += xhomer
     SUBDIR += xmame
     SUBDIR += zsnes
 
