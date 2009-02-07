@@ -1,0 +1,45 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/07 02:37:42 form Exp $
+@comment $RuOBSD: PLIST,v 1.2 2009/02/05 06:30:27 form Exp $
+@bin bin/xhomer
+share/doc/xhomer/
+share/doc/xhomer/LICENSE
+share/doc/xhomer/README
+share/doc/xhomer/html/
+share/doc/xhomer/html/battery_backed_ram.html
+share/doc/xhomer/html/building.html
+share/doc/xhomer/html/change_log.html
+share/doc/xhomer/html/configuration_file.html
+share/doc/xhomer/html/contact.gif
+share/doc/xhomer/html/control_menu.html
+share/doc/xhomer/html/display.html
+share/doc/xhomer/html/emulated_hardware.html
+share/doc/xhomer/html/floppy_drive.html
+share/doc/xhomer/html/hard_drive.html
+share/doc/xhomer/html/index.html
+share/doc/xhomer/html/lk201_mapping.html
+share/doc/xhomer/html/performance.html
+share/doc/xhomer/html/pro_software.html
+share/doc/xhomer/html/problems.html
+share/doc/xhomer/html/running.html
+share/doc/xhomer/html/rx50_floppies.html
+share/doc/xhomer/html/screen1.gif
+share/doc/xhomer/html/screen10.gif
+share/doc/xhomer/html/screen11.gif
+share/doc/xhomer/html/screen2.gif
+share/doc/xhomer/html/screen3.gif
+share/doc/xhomer/html/screen4.gif
+share/doc/xhomer/html/screen5.gif
+share/doc/xhomer/html/screen6.gif
+share/doc/xhomer/html/screen7.gif
+share/doc/xhomer/html/screen8.gif
+share/doc/xhomer/html/screen9.gif
+share/doc/xhomer/html/screen_shots.html
+share/doc/xhomer/html/serial_devices.html
+share/doc/xhomer/html/title.gif
+share/doc/xhomer/html/topics.html
+share/doc/xhomer/html/xhomer.html
+share/doc/xhomer/html/xhomer.html.head
+share/doc/xhomer/html/xhomer.html.middle
+share/doc/xhomer/html/xhomer.html.tail
+share/examples/xhomer/
+share/examples/xhomer/xhomer.cfg

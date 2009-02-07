@@ -1,0 +1,19 @@
+$OpenBSD: patch-xhomer_cfg,v 1.1.1.1 2009/02/07 02:37:42 form Exp $
+$RuOBSD: patch-xhomer_cfg,v 1.1 2009/02/05 06:30:26 form Exp $
+--- xhomer.cfg.orig	Sun Sep 17 12:35:02 2006
++++ xhomer.cfg	Thu Feb  5 12:12:01 2009
+@@ -97,10 +97,10 @@ framebuffers = 0
+ # (/dev/ptys*) have been known to work.
+ # ********************************************************************
+ 
+-serial0 = /dev/ttyS0
+-serial1 = /dev/lp0
+-serial2 = /dev/ttyS2
+-serial3 = /dev/ttys2
++serial0 = /dev/tty00
++serial1 = /dev/lpt0
++serial2 = /dev/tty01
++serial3 = /dev/tty02
+ 
+ # ********************************************************************
+ # Pseudo devices:
