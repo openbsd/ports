@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lib-storage_index_maildir_maildir-sync-index_c,v 1.1 2009/02/08 14:54:21 sthen Exp $
+--- src/lib-storage/index/maildir/maildir-sync-index.c.orig	Thu Feb  5 16:19:12 2009
++++ src/lib-storage/index/maildir/maildir-sync-index.c	Thu Feb  5 16:19:48 2009
+@@ -336,7 +336,7 @@ maildir_sync_mail_keywords(struct maildir_index_sync_c
+ 	   ones. we can get these lists easily by removing common elements
+ 	   from old and new keywords. */
+ 	new_indexes = array_get_modifiable(&ctx->keywords, &new_count);
+-	for (i = 0; i < old_count && j < new_count; ) {
++	for (i = j = 0; i < old_count && j < new_count; ) {
+ 		diff = (int)old_indexes[i] - (int)new_indexes[j];
+ 		if (diff == 0) {
+ 			array_delete(&ctx->keywords, j, 1);
