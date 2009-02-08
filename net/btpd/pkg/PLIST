@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/03 08:39:50 robert Exp $
-bin/btcli
-bin/btinfo
-bin/btpd
+@comment $OpenBSD: PLIST,v 1.2 2009/02/08 14:36:01 sthen Exp $
+@bin bin/btcli
+@bin bin/btinfo
+@bin bin/btpd
 share/doc/btpd/
 share/doc/btpd/README
