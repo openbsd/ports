@@ -1,0 +1,27 @@
+$OpenBSD: patch-bgs_c,v 1.1 2009/02/08 20:41:22 merdely Exp $
+--- bgs.c.orig	Sun Feb  8 15:14:04 2009
++++ bgs.c	Sun Feb  8 15:16:44 2009
+@@ -87,17 +87,19 @@ drawbg(void) {
+ 		}
+ 		imlib_context_set_image(buffer);
+ 		if(center) {
+-			nw = (monitors[i].w - w) / 2;
+-			nh = (monitors[i].h - h) / 2;
++			nw = w;
++			nh = h;
++			nx = (monitors[i].w - w) / 2;
++			ny = (monitors[i].h - h) / 2;
+ 		}
+ 		else {
+ 			factor = MAX((double)w / monitors[i].w,
+ 					(double)h / monitors[i].h);
+ 			nw = w / factor;
+ 			nh = h / factor;
++			nx = monitors[i].x + (monitors[i].w - nw) / 2;
++			ny = monitors[i].y + (monitors[i].h - nh) / 2;
+ 		}
+-		nx = monitors[i].x + (monitors[i].w - nw) / 2;
+-		ny = monitors[i].y + (monitors[i].h - nh) / 2;
+ 		imlib_blend_image_onto_image(tmpimg, 0, 0, 0, w, h,
+ 				nx, ny, nw, nh);
+ 		imlib_context_set_image(tmpimg);

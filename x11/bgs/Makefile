@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/16 16:16:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/08 20:41:22 merdely Exp $
 
 COMMENT =		simple background setter
 
-VERSION =		0.4
+VERSION =		0.5
 DISTNAME =		bgs-${VERSION}
 CATEGORIES =		x11 graphics
 
