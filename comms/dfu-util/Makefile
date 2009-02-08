@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/08 22:32:40 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/08 22:38:28 ajacoutot Exp $
 
 COMMENT =		device firmware update (DFU) USB programmer
 
 DISTNAME =		dfu-util-svn-4900
-PKGNAME =		dfu-util-0.1
+PKGNAME =		dfu-util-0.1p0
 
 CATEGORIES =		comms
 
@@ -17,11 +17,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c usb
+WANTLIB =		c
 
 MASTER_SITES =		http://lodoss.net/
 
-LIB_DEPENDS =		::devel/libusb
+LIB_DEPENDS =		usb::devel/libusb
 
 CONFIGURE_STYLE =	gnu
 
