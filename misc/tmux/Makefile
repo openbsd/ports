@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/18 17:06:15 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.6 2009/02/08 14:56:32 wcmaier Exp $
 
 COMMENT=	terminal multiplexer
 
-DISTNAME=	tmux-0.6
+DISTNAME=	tmux-0.7
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.sourceforge.net/projects/tmux/
