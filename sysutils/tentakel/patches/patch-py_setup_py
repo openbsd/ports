@@ -1,16 +1,16 @@
-$OpenBSD: patch-py_setup_py,v 1.1 2004/04/18 19:14:38 xsa Exp $
---- py/setup.py.orig	2004-01-17 19:54:19.000000000 +0100
-+++ py/setup.py	2004-04-11 01:42:54.000000000 +0200
-@@ -18,8 +18,8 @@ setup(
- 	packages = ["lekatnet"],
+$OpenBSD: patch-py_setup_py,v 1.2 2009/02/08 22:42:56 sthen Exp $
+--- py/setup.py.orig	Sun Feb  8 12:23:08 2009
++++ py/setup.py	Sun Feb  8 12:24:10 2009
+@@ -16,9 +16,8 @@ setup(
+ 	packages = ["lekatnet", "lekatnet.plugins"],
  	scripts = ["tentakel"],
  	data_files = [	("man/man1", ["../tentakel.1"]),
 -			("share/doc/tentakel", ["../tentakel.conf.example",
 -						"../README",
--						"../TODO",
--						"../tentakel.1.html"]) ]
++			("share/examples/tentakel", ["../tentakel.conf.example"]),
 +			("share/doc/tentakel", ["../README",
-+						"../TODO"]),
-+			("share/examples/tentakel", 
-+				["../tentakel.conf.example"]) ]
+ 						"../TODO",
+-						"../PLUGINS",
+-						"../tentakel.1.html"]) ]
++						"../PLUGINS"]) ]
  )
