@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2007/11/28 21:18:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2009/02/08 22:35:15 ian Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR += birda
@@ -6,6 +6,7 @@
      SUBDIR += c3270
      SUBDIR += colrdx
      SUBDIR += conserver
+     SUBDIR += dfu-util
      SUBDIR += efax
      SUBDIR += flipit
      SUBDIR += gmfsk
