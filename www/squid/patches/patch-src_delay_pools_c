@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_delay_pools_c,v 1.1 2009/02/08 15:04:33 sthen Exp $
+--- src/delay_pools.c.orig	Fri Feb  6 11:13:00 2009
++++ src/delay_pools.c	Fri Feb  6 11:15:07 2009
+@@ -106,9 +106,9 @@ delayIdPtrHash(const void *key, unsigned int n)
+      * least significant bytes.
+      */
+     const char *ptr = (char *) &key;
+-#if SIZEOF_VOID_P == 4
++#if SIZEOF_VOID__ == 4
+     return (ptr[1] ^ ptr[2]) & (n - 1);
+-#elif SIZEOF_VOID_P == 8
++#elif SIZEOF_VOID__ == 8
+ #if WORDS_BIGENDIAN
+     return (ptr[5] ^ ptr[6]) & (n - 1);
+ #else

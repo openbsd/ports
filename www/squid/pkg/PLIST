@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2008/07/16 21:18:28 brad Exp $
+@comment $OpenBSD: PLIST,v 1.30 2009/02/08 15:04:33 sthen Exp $
 @pkgpath www/squid,transparent
 @pkgpath www/squid,snmp,transparent
 @newgroup _squid:515
@@ -2205,5 +2205,5 @@ share/examples/squid/squid.conf
 @sample ${SQUIDDIR}/logs/
 @exec ln -sf ${SQUIDDIR}/logs/squid.pid /var/run/squid.pid
 @unexec rm -f /var/run/squid.pid
-@comment share/examples/squid/squid.conf.default
 @extraunexec rm -rf ${SQUIDDIR}
+@comment share/examples/squid/squid.conf.default
