@@ -1,0 +1,37 @@
+$OpenBSD: patch-bam-0_2_0_src_main_c,v 1.1 2009/02/08 16:54:54 ajacoutot Exp $
+--- bam-0.2.0/src/main.c.orig	Sun Feb  8 18:09:12 2009
++++ bam-0.2.0/src/main.c	Sun Feb  8 18:10:27 2009
+@@ -986,8 +986,8 @@ int register_lua_globals(struct CONTEXT *context)
+ 	
+ 	/* set paths */
+ 	{
+-		char cwd[512];
+-		getcwd(cwd, 512);
++		char cwd[1024];
++		getcwd(cwd, 1024);
+ 		
+ 		lua_pushstring(context->lua, CONTEXT_LUA_PATH);
+ 		lua_pushstring(context->lua, context->script_directory);
+@@ -1131,17 +1131,17 @@ static int bam(const char *scriptfile, const char **ta
+ 	
+ 	/* fetch script directory */
+ 	{
+-		char cwd[512];
+-		char path[512];
++		char cwd[1024];
++		char path[1024];
+ 
+-		getcwd(cwd, 512);
+-		if(path_directory(context.filename, path, 512))
++		getcwd(cwd, 1024);
++		if(path_directory(context.filename, path, 1024))
+ 		{
+ 			printf("crap error1\n");
+ 			*((int*)0) = 0;
+ 		}
+ 		
+-		if(path_join(cwd, path, context.script_directory, 512))
++		if(path_join(cwd, path, context.script_directory, 1024))
+ 		{
+ 			printf("crap error2\n");
+ 			*((int*)0) = 0;

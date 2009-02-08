@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/18 17:53:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/08 16:54:54 ajacoutot Exp $
 
 COMMENT =	platform game featuring buggers equipped with weapons
 
 V =		0.5.0
 DISTNAME =	teeworlds-${V}-src
-PKGNAME =	teeworlds-${V}
+PKGNAME =	teeworlds-${V}p0
 CATEGORIES =	games
 
 MAINTAINER =	Jonathan Armani <dbd@asystant.net>

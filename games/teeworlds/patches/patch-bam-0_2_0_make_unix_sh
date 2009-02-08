@@ -1,10 +1,10 @@
-$OpenBSD: patch-bam-0_2_0_make_unix_sh,v 1.1.1.1 2009/01/18 17:53:36 ajacoutot Exp $
---- bam-0.2.0/make_unix.sh.orig	Fri Jan 16 18:43:39 2009
-+++ bam-0.2.0/make_unix.sh	Fri Jan 16 18:44:16 2009
+$OpenBSD: patch-bam-0_2_0_make_unix_sh,v 1.2 2009/02/08 16:54:54 ajacoutot Exp $
+--- bam-0.2.0/make_unix.sh.orig	Thu Jan  8 13:07:44 2009
++++ bam-0.2.0/make_unix.sh	Sun Feb  8 18:11:29 2009
 @@ -1,4 +1,4 @@
  #!/bin/sh
 -gcc -Wall -ansi -pedantic src/tools/txt2c.c -o src/tools/txt2c
-+${CC} -Wall -ansi -pedantic src/tools/txt2c.c -o src/tools/txt2c
++${CC} ${CFLAGS} -Wall -ansi -pedantic src/tools/txt2c.c -o src/tools/txt2c
  src/tools/txt2c src/base.bam src/driver_gcc.bam src/driver_cl.bam > src/internal_base.h
 -gcc -Wall -ansi -pedantic src/lua/*.c src/*.c -o src/bam -I src/lua -lm -lpthread -O2 $*
-+${CC} -Wall -ansi -pedantic src/lua/*.c src/*.c -o src/bam -I src/lua -lm -pthread ${CFLAGS} $*
++${CC} ${CFLAGS} -Wall -ansi -pedantic src/lua/*.c src/*.c -o src/bam -I src/lua -lm -pthread $*
