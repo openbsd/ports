@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2008/07/11 17:46:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2009/02/08 21:56:18 ajacoutot Exp $
 @bin bin/icehelp
 @bin bin/icesh
 @bin bin/icewm
@@ -347,7 +347,4 @@ share/locale/tr/LC_MESSAGES/icewm.mo
 share/locale/uk/LC_MESSAGES/icewm.mo
 share/locale/vi/LC_MESSAGES/icewm.mo
 share/locale/zh_CN/LC_MESSAGES/icewm.mo
-share/locale/zh_TW.Big5/
-share/locale/zh_TW.Big5/LC_MESSAGES/
-share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
 share/locale/zh_TW/LC_MESSAGES/icewm.mo

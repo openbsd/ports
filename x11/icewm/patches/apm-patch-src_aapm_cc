@@ -1,4 +1,4 @@
-$OpenBSD: apm-patch-src_aapm_cc,v 1.1 2006/11/10 09:31:28 ajacoutot Exp $
+$OpenBSD: apm-patch-src_aapm_cc,v 1.2 2009/02/08 21:56:18 ajacoutot Exp $
 --- src/aapm.cc.orig	Tue Oct 24 12:38:18 2006
 +++ src/aapm.cc	Tue Oct 24 12:39:12 2006
 @@ -34,7 +34,7 @@
@@ -10,7 +10,7 @@ $OpenBSD: apm-patch-src_aapm_cc,v 1.1 2006/11/10 09:31:28 ajacoutot Exp $
  #include <sys/file.h>
  #include <sys/ioctl.h>
  #include <sys/types.h>
-@@ -64,7 +64,7 @@ static YColor *taskBarBg = 0;
+@@ -65,7 +65,7 @@ static YColor *taskBarBg = 0;
  void ApmStr(char *s, bool Tool) {
  #ifdef __FreeBSD__
      struct apm_info ai;
@@ -19,7 +19,7 @@ $OpenBSD: apm-patch-src_aapm_cc,v 1.1 2006/11/10 09:31:28 ajacoutot Exp $
      struct apm_power_info ai;
  #else
      char buf[80];
-@@ -105,7 +105,7 @@ void ApmStr(char *s, bool Tool) {
+@@ -106,7 +106,7 @@ void ApmStr(char *s, bool Tool) {
      BATlife = ai.ai_batt_life;
      BATtime = ai.ai_batt_time == 0 ? -1 : ai.ai_batt_time;
      strcpy(units, "sec");

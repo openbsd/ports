@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2008/08/21 07:34:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2009/02/08 21:56:18 ajacoutot Exp $
 
-COMMENT=	small, fast window manager
+COMMENT=	small and fast window manager
 
-DISTNAME=	icewm-1.2.35
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	icewm-1.2.37
 CATEGORIES=	x11	
 
 HOMEPAGE=	http://www.icewm.org/
@@ -46,6 +45,8 @@ CONFIGURE_ARGS=	--with-imlib=${PREFIX}/bin \
 		--enable-gradients \
 		--enable-corefonts \
 		--enable-i18n
+# XXX TODO
+#CONFIGURE_ARGS+=--with-icesound=sndio
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
