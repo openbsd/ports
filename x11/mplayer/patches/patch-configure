@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.49 2009/01/16 02:39:53 jakemsr Exp $
---- configure.orig	Sun Oct  7 15:49:33 2007
-+++ configure	Tue Dec 30 03:29:05 2008
+$OpenBSD: patch-configure,v 1.50 2009/02/08 20:25:09 naddy Exp $
+--- configure.orig	Sun Oct  7 21:49:33 2007
++++ configure	Sun Feb  8 19:48:58 2009
 @@ -76,7 +76,7 @@ cc_check() {
  }
  
@@ -175,3 +175,12 @@ $OpenBSD: patch-configure,v 1.49 2009/01/16 02:39:53 jakemsr Exp $
  $_def_sgiaudio
  $_def_win32waveout
  $_def_nas
+@@ -8240,7 +8271,7 @@ $_def_vcd
+ #define DEFAULT_CDROM_DEVICE    "/dev/disk1"
+ #define DEFAULT_DVD_DEVICE	"/dev/rdiskN"
+ #elif defined(__OpenBSD__)
+-#define DEFAULT_CDROM_DEVICE	"/dev/rcd0a"
++#define DEFAULT_CDROM_DEVICE	"/dev/rcd0c"
+ #define DEFAULT_DVD_DEVICE	DEFAULT_CDROM_DEVICE
+ #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+ #define DEFAULT_CDROM_DEVICE	"/dev/acd0"
