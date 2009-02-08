@@ -1,0 +1,11 @@
+$OpenBSD: patch-utils_unittest_Makefile,v 1.1 2009/02/08 22:55:43 sthen Exp $
+--- utils/unittest/Makefile.orig	Thu Feb  5 16:07:40 2009
++++ utils/unittest/Makefile	Thu Feb  5 16:07:46 2009
+@@ -8,6 +8,6 @@
+ ##===----------------------------------------------------------------------===##
+ 
+ LEVEL = ../..
+-PARALLEL_DIRS = googletest
++#PARALLEL_DIRS = googletest
+ 
+ include $(LEVEL)/Makefile.common

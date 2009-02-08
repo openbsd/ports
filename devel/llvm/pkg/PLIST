@@ -1,12 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/11/12 15:46:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/02/08 22:55:43 sthen Exp $
 Headers/
 @comment Headers/.dir
+Headers/emmintrin.h
+Headers/float.h
 Headers/iso646.h
+Headers/mm_malloc.h
 Headers/mmintrin.h
 Headers/stdarg.h
 Headers/stdbool.h
 Headers/stddef.h
 @comment bin/.dir
+Headers/xmmintrin.h
 @bin bin/bugpoint
 bin/ccc
 bin/ccc-analyzer
@@ -28,7 +32,7 @@ bin/llvm-config
 @bin bin/llvm-prof
 @bin bin/llvm-ranlib
 @bin bin/llvm-stub
-@bin bin/llvmc2
+@bin bin/llvmc
 @bin bin/opt
 bin/scan-build
 include/llvm/
@@ -61,6 +65,7 @@ include/llvm/ADT/ImmutableSet.h
 include/llvm/ADT/IndexedMap.h
 include/llvm/ADT/IntrusiveRefCntPtr.h
 include/llvm/ADT/OwningPtr.h
+include/llvm/ADT/PointerIntPair.h
 include/llvm/ADT/PostOrderIterator.h
 include/llvm/ADT/PriorityQueue.h
 include/llvm/ADT/SCCIterator.h
@@ -95,11 +100,12 @@ include/llvm/Analysis/AliasAnalysis.h
 include/llvm/Analysis/AliasSetTracker.h
 include/llvm/Analysis/CFGPrinter.h
 include/llvm/Analysis/CallGraph.h
+include/llvm/Analysis/CaptureTracking.h
 include/llvm/Analysis/ConstantFolding.h
 include/llvm/Analysis/ConstantsScanner.h
+include/llvm/Analysis/DebugInfo.h
 include/llvm/Analysis/DominatorInternals.h
 include/llvm/Analysis/Dominators.h
-include/llvm/Analysis/EscapeAnalysis.h
 include/llvm/Analysis/FindUsedTypes.h
 include/llvm/Analysis/Interval.h
 include/llvm/Analysis/IntervalIterator.h
@@ -142,6 +148,7 @@ include/llvm/Bitcode/ReaderWriter.h
 include/llvm/Bitcode/Serialization.h
 include/llvm/Bitcode/SerializationFwd.h
 include/llvm/Bitcode/Serialize.h
+include/llvm/CMakeLists.txt
 include/llvm/CallGraphSCCPass.h
 include/llvm/CallingConv.h
 include/llvm/CodeGen/
@@ -149,6 +156,7 @@ include/llvm/CodeGen/AsmPrinter.h
 include/llvm/CodeGen/BreakCriticalMachineEdge.h
 include/llvm/CodeGen/CallingConvLower.h
 include/llvm/CodeGen/DAGISelHeader.h
+include/llvm/CodeGen/DebugLoc.h
 include/llvm/CodeGen/DwarfWriter.h
 include/llvm/CodeGen/ELFRelocation.h
 include/llvm/CodeGen/FastISel.h
@@ -158,6 +166,7 @@ include/llvm/CodeGen/GCMetadataPrinter.h
 include/llvm/CodeGen/GCStrategy.h
 include/llvm/CodeGen/GCs.h
 include/llvm/CodeGen/IntrinsicLowering.h
+include/llvm/CodeGen/LatencyPriorityQueue.h
 include/llvm/CodeGen/LinkAllAsmWriterComponents.h
 include/llvm/CodeGen/LinkAllCodegenComponents.h
 include/llvm/CodeGen/LiveInterval.h
@@ -190,6 +199,9 @@ include/llvm/CodeGen/RegisterCoalescer.h
 include/llvm/CodeGen/RegisterScavenging.h
 include/llvm/CodeGen/RuntimeLibcalls.h
 include/llvm/CodeGen/ScheduleDAG.h
+include/llvm/CodeGen/ScheduleDAGInstrs.h
+include/llvm/CodeGen/ScheduleDAGSDNodes.h
+include/llvm/CodeGen/ScheduleHazardRecognizer.h
 include/llvm/CodeGen/SchedulerRegistry.h
 include/llvm/CodeGen/SelectionDAG.h
 include/llvm/CodeGen/SelectionDAGISel.h
@@ -202,7 +214,6 @@ include/llvm/CompilerDriver/Common.td
 include/llvm/CompilerDriver/CompilationGraph.h
 include/llvm/CompilerDriver/Plugin.h
 include/llvm/CompilerDriver/Tool.h
-include/llvm/CompilerDriver/Tools.td
 include/llvm/Config/
 include/llvm/Config/alloca.h
 include/llvm/Config/config.h
@@ -241,6 +252,7 @@ include/llvm/IntrinsicsAlpha.td
 include/llvm/IntrinsicsCellSPU.td
 include/llvm/IntrinsicsPowerPC.td
 include/llvm/IntrinsicsX86.td
+include/llvm/IntrinsicsXCore.td
 include/llvm/LinkAllPasses.h
 include/llvm/LinkAllVMCore.h
 include/llvm/Linker.h
@@ -269,7 +281,6 @@ include/llvm/Support/DataFlow.h
 include/llvm/Support/DataTypes.h
 include/llvm/Support/DataTypes.h.cmake
 include/llvm/Support/Debug.h
-include/llvm/Support/DebugInfoBuilder.h
 include/llvm/Support/Dwarf.h
 include/llvm/Support/DynamicLinker.h
 include/llvm/Support/ELF.h
@@ -291,9 +302,11 @@ include/llvm/Support/OutputBuffer.h
 include/llvm/Support/PassNameParser.h
 include/llvm/Support/PatternMatch.h
 include/llvm/Support/PluginLoader.h
+include/llvm/Support/PredIteratorCache.h
 include/llvm/Support/Recycler.h
 include/llvm/Support/RecyclingAllocator.h
 include/llvm/Support/Registry.h
+include/llvm/Support/RegistryParser.h
 include/llvm/Support/SlowOperationInformer.h
 include/llvm/Support/StableBasicBlockNumbering.h
 include/llvm/Support/Streams.h
@@ -323,13 +336,16 @@ include/llvm/Target/
 include/llvm/Target/DarwinTargetAsmInfo.h
 include/llvm/Target/ELFTargetAsmInfo.h
 include/llvm/Target/SubtargetFeature.h
+include/llvm/Target/Target.td
 include/llvm/Target/TargetAsmInfo.h
+include/llvm/Target/TargetCallingConv.td
 include/llvm/Target/TargetData.h
 include/llvm/Target/TargetELFWriterInfo.h
 include/llvm/Target/TargetFrameInfo.h
 include/llvm/Target/TargetInstrDesc.h
 include/llvm/Target/TargetInstrInfo.h
 include/llvm/Target/TargetInstrItineraries.h
+include/llvm/Target/TargetIntrinsicInfo.h
 include/llvm/Target/TargetJITInfo.h
 include/llvm/Target/TargetLowering.h
 include/llvm/Target/TargetMachOWriterInfo.h
@@ -337,6 +353,8 @@ include/llvm/Target/TargetMachine.h
 include/llvm/Target/TargetMachineRegistry.h
 include/llvm/Target/TargetOptions.h
 include/llvm/Target/TargetRegisterInfo.h
+include/llvm/Target/TargetSchedule.td
+include/llvm/Target/TargetSelectionDAG.td
 include/llvm/Target/TargetSubtarget.h
 include/llvm/Transforms/
 include/llvm/Transforms/IPO/
@@ -365,10 +383,11 @@ include/llvm/ValueSymbolTable.h
 @comment lib/.dir
 lib/LLVMARMAsmPrinter.o
 lib/LLVMARMCodeGen.o
-lib/LLVMAlpha.o
+lib/LLVMAlphaAsmPrinter.o
+lib/LLVMAlphaCodeGen.o
 lib/LLVMCBackend.o
-lib/LLVMCBase.o
-lib/LLVMCellSPU.o
+lib/LLVMCellSPUAsmPrinter.o
+lib/LLVMCellSPUCodeGen.o
 lib/LLVMCppBackend.o
 lib/LLVMExecutionEngine.o
 lib/LLVMIA64.o
@@ -379,9 +398,11 @@ lib/LLVMMips.o
 lib/LLVMPIC16.o
 lib/LLVMPowerPCAsmPrinter.o
 lib/LLVMPowerPCCodeGen.o
-lib/LLVMSparc.o
+lib/LLVMSparcAsmPrinter.o
+lib/LLVMSparcCodeGen.o
 lib/LLVMX86AsmPrinter.o
 lib/LLVMX86CodeGen.o
+lib/LLVMXCore.o
 lib/libLLVMAnalysis.a
 lib/libLLVMArchive.a
 lib/libLLVMAsmParser.a
@@ -410,6 +431,29 @@ lib/libclangLex.a
 lib/libclangParse.a
 lib/libclangRewrite.a
 lib/libclangSema.a
+lib/plugin_llvmc_Base.o
+lib/plugin_llvmc_Clang.o
+lib/python${MODPY_VERSION}/site-packages/ccclib/
+lib/python${MODPY_VERSION}/site-packages/ccclib/Arguments.py
+lib/python${MODPY_VERSION}/site-packages/ccclib/Arguments.pyc
+lib/python${MODPY_VERSION}/site-packages/ccclib/Driver.py
+lib/python${MODPY_VERSION}/site-packages/ccclib/Driver.pyc
+lib/python${MODPY_VERSION}/site-packages/ccclib/HostInfo.py
+lib/python${MODPY_VERSION}/site-packages/ccclib/HostInfo.pyc
+lib/python${MODPY_VERSION}/site-packages/ccclib/Jobs.py
+lib/python${MODPY_VERSION}/site-packages/ccclib/Jobs.pyc
+lib/python${MODPY_VERSION}/site-packages/ccclib/Phases.py
+lib/python${MODPY_VERSION}/site-packages/ccclib/Phases.pyc
+lib/python${MODPY_VERSION}/site-packages/ccclib/ToolChain.py
+lib/python${MODPY_VERSION}/site-packages/ccclib/ToolChain.pyc
+lib/python${MODPY_VERSION}/site-packages/ccclib/Tools.py
+lib/python${MODPY_VERSION}/site-packages/ccclib/Tools.pyc
+lib/python${MODPY_VERSION}/site-packages/ccclib/Types.py
+lib/python${MODPY_VERSION}/site-packages/ccclib/Types.pyc
+lib/python${MODPY_VERSION}/site-packages/ccclib/Util.py
+lib/python${MODPY_VERSION}/site-packages/ccclib/Util.pyc
+lib/python${MODPY_VERSION}/site-packages/ccclib/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ccclib/__init__.pyc
 share/doc/llvm/
 share/doc/llvm/html/
 share/doc/llvm/html.tar.gz
@@ -417,6 +461,7 @@ share/doc/llvm/html/AliasAnalysis.html
 share/doc/llvm/html/BitCodeFormat.html
 share/doc/llvm/html/Bugpoint.html
 share/doc/llvm/html/CFEBuildInstrs.html
+share/doc/llvm/html/CMake.html
 share/doc/llvm/html/CodeGenerator.html
 share/doc/llvm/html/CodingStandards.html
 share/doc/llvm/html/CommandGuide/
@@ -436,6 +481,7 @@ share/doc/llvm/html/CommandGuide/llvm-link.html
 share/doc/llvm/html/CommandGuide/llvm-nm.html
 share/doc/llvm/html/CommandGuide/llvm-prof.html
 share/doc/llvm/html/CommandGuide/llvm-ranlib.html
+share/doc/llvm/html/CommandGuide/llvmc.html
 share/doc/llvm/html/CommandGuide/llvmgcc.html
 share/doc/llvm/html/CommandGuide/llvmgxx.html
 share/doc/llvm/html/CommandGuide/manpage.css
@@ -443,6 +489,7 @@ share/doc/llvm/html/CommandGuide/opt.html
 share/doc/llvm/html/CommandGuide/tblgen.html
 share/doc/llvm/html/CommandLine.html
 share/doc/llvm/html/CompilerDriver.html
+share/doc/llvm/html/CompilerDriverTutorial.html
 share/doc/llvm/html/CompilerWriterInfo.html
 share/doc/llvm/html/DeveloperPolicy.html
 share/doc/llvm/html/ExceptionHandling.html
@@ -515,6 +562,7 @@ share/doc/llvm/ps/llvm-link.ps
 share/doc/llvm/ps/llvm-nm.ps
 share/doc/llvm/ps/llvm-prof.ps
 share/doc/llvm/ps/llvm-ranlib.ps
+share/doc/llvm/ps/llvmc.ps
 share/doc/llvm/ps/llvmgcc.ps
 share/doc/llvm/ps/llvmgxx.ps
 share/doc/llvm/ps/opt.ps
@@ -539,6 +587,7 @@ share/man/man1/
 @man share/man/man1/llvm-nm.1
 @man share/man/man1/llvm-prof.1
 @man share/man/man1/llvm-ranlib.1
+@man share/man/man1/llvmc.1
 @man share/man/man1/llvmgcc.1
 @man share/man/man1/llvmgxx.1
 @man share/man/man1/opt.1
