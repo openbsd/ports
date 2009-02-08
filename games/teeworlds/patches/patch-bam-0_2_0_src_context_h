@@ -1,0 +1,24 @@
+$OpenBSD: patch-bam-0_2_0_src_context_h,v 1.1 2009/02/08 22:31:58 ajacoutot Exp $
+
+Fix bus error on sparc64.
+
+--- bam-0.2.0/src/context.h.orig	Mon Feb  9 00:11:33 2009
++++ bam-0.2.0/src/context.h	Mon Feb  9 00:09:59 2009
+@@ -5,7 +5,7 @@ struct TARGET
+ {
+ 	struct NODE *node;
+ 	struct TARGET *next;
+-};
++} __attribute__((packed));
+ 
+ struct CONTEXT
+ {
+@@ -24,7 +24,7 @@ struct CONTEXT
+ 	
+ 	volatile int current_cmd_num;
+ 	int num_commands;
+-};
++} __attribute__((packed));
+ 
+ const char *context_get_path(lua_State *L);
+ struct CONTEXT *context_get_pointer(lua_State *L);

@@ -1,0 +1,24 @@
+$OpenBSD: patch-bam-0_2_0_src_node_h,v 1.1 2009/02/08 22:31:58 ajacoutot Exp $
+
+Fix bus error on sparc64.
+
+--- bam-0.2.0/src/node.h.orig	Mon Feb  9 00:11:20 2009
++++ bam-0.2.0/src/node.h	Mon Feb  9 00:10:15 2009
+@@ -9,7 +9,7 @@ struct DEPENDENCY
+ {
+ 	struct NODE *node;
+ 	struct DEPENDENCY *next;
+-};
++} __attribute__((packed));
+ 
+ #define USE_NODE_RB
+ 
+@@ -55,7 +55,7 @@ struct NODE
+ 	unsigned int counted:1;
+ 	
+ 	volatile unsigned int workstatus:2; /* 0 = undone, 1 = in the workings, 2 = done*/
+-};
++} __attribute__((packed));
+ 
+ struct HEAP;
+ struct GRAPH;
