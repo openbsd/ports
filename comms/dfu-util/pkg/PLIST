@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/08 22:32:40 ian Exp $
+@bin bin/dfu-util
+@comment bin/dfu-util_static
+@man man/man1/dfu-util.1

@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_main_c,v 1.1.1.1 2009/02/08 22:32:40 ian Exp $
+
+From Bug 672 in OpenMoko via Simon Moore
+
+--- src/main.c.orig	Fri Mar 30 13:21:03 2007
++++ src/main.c	Tue Aug  7 15:29:25 2007
+@@ -82,8 +82,8 @@ static int find_dfu_if(struct usb_device *dev, int (*h
+ 
+ 	memset(dfu_if, 0, sizeof(*dfu_if));
+ 	
+-	for (cfg_idx = 0; cfg_idx < dev->descriptor.bNumConfigurations;
+-	     cfg_idx++) {
++	for (cfg_idx = 0; NULL != dev->config &&
++		cfg_idx < dev->descriptor.bNumConfigurations; cfg_idx++) {
+ 		cfg = &dev->config[cfg_idx];
+ 		for (intf_idx = 0; intf_idx < cfg->bNumInterfaces;
+ 		     intf_idx++) {
