@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_ircd_c,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
+--- src/ircd.c.orig	Sun Feb  8 23:12:35 2009
++++ src/ircd.c	Sun Feb  8 23:15:04 2009
+@@ -242,7 +242,6 @@ make_daemon(void)
+ 	}
+ 	else if(pid > 0)
+ 	{
+-		print_startup(pid);
+ 		exit(EXIT_SUCCESS);
+ 	}
+ 
+@@ -535,8 +534,17 @@ ratbox_main(int argc, char *argv[])
+ #ifndef _WIN32
+ 	if(geteuid() == 0)
+ 	{
+-		fprintf(stderr, "Don't run ircd as root!!!\n");
+-		exit(EXIT_FAILURE);
++		struct passwd *pw;
++
++		if ((pw = getpwnam(IRCD_USER)) == NULL) {
++			fprintf(stderr, "Don't run ircd as root!!!\n");
++			exit(EXIT_FAILURE);
++		}
++
++		if (setusercontext(NULL, pw, pw->pw_uid, LOGIN_SETALL) < 0) {
++			fprintf(stderr, "Can's set user context to %s!\n", IRCD_USER);
++			exit(EXIT_FAILURE);
++		}
+ 	}
+ #endif
+ 	init_sys();

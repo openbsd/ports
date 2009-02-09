@@ -1,0 +1,264 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
+@conflict irc-*
+@conflict ircd-hybrid-*
+@newgroup _ircd-ratbox:619
+@newuser _ircd-ratbox:619:619:daemon:IRC Daemon:/var/empty:/sbin/nologin
+@bin bin/bantool
+@bin bin/ircd
+@bin bin/ratbox-mkpasswd
+lib/ircd-ratbox/
+lib/ircd-ratbox/modules/
+lib/ircd-ratbox/modules/autoload/
+lib/ircd-ratbox/modules/autoload/m_accept.so
+lib/ircd-ratbox/modules/autoload/m_admin.so
+lib/ircd-ratbox/modules/autoload/m_adminwall.so
+lib/ircd-ratbox/modules/autoload/m_away.so
+lib/ircd-ratbox/modules/autoload/m_cap.so
+lib/ircd-ratbox/modules/autoload/m_capab.so
+lib/ircd-ratbox/modules/autoload/m_close.so
+lib/ircd-ratbox/modules/autoload/m_cmessage.so
+lib/ircd-ratbox/modules/autoload/m_connect.so
+lib/ircd-ratbox/modules/autoload/m_dline.so
+lib/ircd-ratbox/modules/autoload/m_encap.so
+lib/ircd-ratbox/modules/autoload/m_gline.so
+lib/ircd-ratbox/modules/autoload/m_help.so
+lib/ircd-ratbox/modules/autoload/m_info.so
+lib/ircd-ratbox/modules/autoload/m_invite.so
+lib/ircd-ratbox/modules/autoload/m_ison.so
+lib/ircd-ratbox/modules/autoload/m_kline.so
+lib/ircd-ratbox/modules/autoload/m_knock.so
+lib/ircd-ratbox/modules/autoload/m_links.so
+lib/ircd-ratbox/modules/autoload/m_list.so
+lib/ircd-ratbox/modules/autoload/m_locops.so
+lib/ircd-ratbox/modules/autoload/m_lusers.so
+lib/ircd-ratbox/modules/autoload/m_map.so
+lib/ircd-ratbox/modules/autoload/m_monitor.so
+lib/ircd-ratbox/modules/autoload/m_motd.so
+lib/ircd-ratbox/modules/autoload/m_names.so
+lib/ircd-ratbox/modules/autoload/m_oper.so
+lib/ircd-ratbox/modules/autoload/m_operspy.so
+lib/ircd-ratbox/modules/autoload/m_pass.so
+lib/ircd-ratbox/modules/autoload/m_ping.so
+lib/ircd-ratbox/modules/autoload/m_pong.so
+lib/ircd-ratbox/modules/autoload/m_post.so
+lib/ircd-ratbox/modules/autoload/m_rehash.so
+lib/ircd-ratbox/modules/autoload/m_restart.so
+lib/ircd-ratbox/modules/autoload/m_resv.so
+@comment lib/ircd-ratbox/modules/autoload/m_services.a
+@comment lib/ircd-ratbox/modules/autoload/m_services.la
+lib/ircd-ratbox/modules/autoload/m_services.so
+lib/ircd-ratbox/modules/autoload/m_set.so
+lib/ircd-ratbox/modules/autoload/m_stats.so
+lib/ircd-ratbox/modules/autoload/m_svinfo.so
+lib/ircd-ratbox/modules/autoload/m_tb.so
+lib/ircd-ratbox/modules/autoload/m_testline.so
+lib/ircd-ratbox/modules/autoload/m_testmask.so
+lib/ircd-ratbox/modules/autoload/m_time.so
+lib/ircd-ratbox/modules/autoload/m_topic.so
+lib/ircd-ratbox/modules/autoload/m_trace.so
+lib/ircd-ratbox/modules/autoload/m_unreject.so
+lib/ircd-ratbox/modules/autoload/m_user.so
+lib/ircd-ratbox/modules/autoload/m_userhost.so
+lib/ircd-ratbox/modules/autoload/m_version.so
+lib/ircd-ratbox/modules/autoload/m_wallops.so
+lib/ircd-ratbox/modules/autoload/m_who.so
+lib/ircd-ratbox/modules/autoload/m_whois.so
+lib/ircd-ratbox/modules/autoload/m_whowas.so
+lib/ircd-ratbox/modules/autoload/m_xline.so
+lib/ircd-ratbox/modules/m_die.so
+lib/ircd-ratbox/modules/m_error.so
+lib/ircd-ratbox/modules/m_join.so
+lib/ircd-ratbox/modules/m_kick.so
+lib/ircd-ratbox/modules/m_kill.so
+lib/ircd-ratbox/modules/m_message.so
+lib/ircd-ratbox/modules/m_mode.so
+lib/ircd-ratbox/modules/m_nick.so
+lib/ircd-ratbox/modules/m_part.so
+lib/ircd-ratbox/modules/m_quit.so
+lib/ircd-ratbox/modules/m_server.so
+lib/ircd-ratbox/modules/m_squit.so
+@comment lib/libcore.a
+@comment lib/libcore.la
+lib/libcore.so
+@comment lib/libratbox.a
+@comment lib/libratbox.la
+lib/libratbox.so
+libexec/ircd-ratbox/
+@bin libexec/ircd-ratbox/bandb
+@bin libexec/ircd-ratbox/resolver
+@bin libexec/ircd-ratbox/ssld
+share/doc/ircd-ratbox/
+share/doc/ircd-ratbox/README.cidr_bans
+share/doc/ircd-ratbox/challenge.txt
+share/doc/ircd-ratbox/modeg.txt
+share/doc/ircd-ratbox/modes.txt
+share/doc/ircd-ratbox/monitor.txt
+share/doc/ircd-ratbox/server-version-info
+share/doc/ircd-ratbox/services.txt
+share/doc/ircd-ratbox/tgchange.txt
+share/examples/ircd-ratbox/
+@mode 700
+@owner _ircd-ratbox
+@group _ircd-ratbox
+@sample ${CONFDIR}/
+@mode
+@owner
+@group
+share/examples/ircd-ratbox/example.conf
+@mode 600
+@owner _ircd-ratbox
+@group _ircd-ratbox
+@sample ${CONFDIR}/ircd.conf
+@mode
+@owner
+@group
+share/examples/ircd-ratbox/example.efnet.conf
+share/examples/ircd-ratbox/genssl.sh
+share/examples/ircd-ratbox/ircd.motd
+@owner _ircd-ratbox
+@group _ircd-ratbox
+@sample ${CONFDIR}/ircd.motd
+@owner
+@group
+share/ircd-ratbox/
+share/ircd-ratbox/help/
+share/ircd-ratbox/help/opers/
+share/ircd-ratbox/help/opers/accept
+share/ircd-ratbox/help/opers/admin
+share/ircd-ratbox/help/opers/admindline
+share/ircd-ratbox/help/opers/adminkline
+share/ircd-ratbox/help/opers/adminresv
+share/ircd-ratbox/help/opers/adminwall
+share/ircd-ratbox/help/opers/adminxline
+share/ircd-ratbox/help/opers/away
+share/ircd-ratbox/help/opers/capab
+share/ircd-ratbox/help/opers/challenge
+share/ircd-ratbox/help/opers/chantrace
+share/ircd-ratbox/help/opers/close
+share/ircd-ratbox/help/opers/cmode
+share/ircd-ratbox/help/opers/cnotice
+share/ircd-ratbox/help/opers/connect
+share/ircd-ratbox/help/opers/cprivmsg
+share/ircd-ratbox/help/opers/credits
+share/ircd-ratbox/help/opers/die
+share/ircd-ratbox/help/opers/dline
+share/ircd-ratbox/help/opers/error
+share/ircd-ratbox/help/opers/etrace
+share/ircd-ratbox/help/opers/gline
+share/ircd-ratbox/help/opers/help
+share/ircd-ratbox/help/opers/index
+share/ircd-ratbox/help/opers/info
+share/ircd-ratbox/help/opers/invite
+share/ircd-ratbox/help/opers/ison
+share/ircd-ratbox/help/opers/join
+share/ircd-ratbox/help/opers/kick
+share/ircd-ratbox/help/opers/kill
+share/ircd-ratbox/help/opers/kline
+share/ircd-ratbox/help/opers/knock
+share/ircd-ratbox/help/opers/links
+share/ircd-ratbox/help/opers/list
+share/ircd-ratbox/help/opers/locops
+share/ircd-ratbox/help/opers/lusers
+share/ircd-ratbox/help/opers/map
+share/ircd-ratbox/help/opers/masktrace
+share/ircd-ratbox/help/opers/modlist
+share/ircd-ratbox/help/opers/modload
+share/ircd-ratbox/help/opers/modrestart
+share/ircd-ratbox/help/opers/modunload
+share/ircd-ratbox/help/opers/monitor
+share/ircd-ratbox/help/opers/motd
+share/ircd-ratbox/help/opers/names
+share/ircd-ratbox/help/opers/nick
+share/ircd-ratbox/help/opers/notice
+share/ircd-ratbox/help/opers/oper
+share/ircd-ratbox/help/opers/operspy
+share/ircd-ratbox/help/opers/operwall
+share/ircd-ratbox/help/opers/part
+share/ircd-ratbox/help/opers/pass
+share/ircd-ratbox/help/opers/ping
+share/ircd-ratbox/help/opers/pong
+share/ircd-ratbox/help/opers/post
+share/ircd-ratbox/help/opers/privmsg
+share/ircd-ratbox/help/opers/quit
+share/ircd-ratbox/help/opers/rehash
+share/ircd-ratbox/help/opers/restart
+share/ircd-ratbox/help/opers/resv
+share/ircd-ratbox/help/opers/server
+share/ircd-ratbox/help/opers/set
+share/ircd-ratbox/help/opers/sjoin
+share/ircd-ratbox/help/opers/squit
+share/ircd-ratbox/help/opers/stats
+share/ircd-ratbox/help/opers/svinfo
+share/ircd-ratbox/help/opers/testgecos
+share/ircd-ratbox/help/opers/testline
+share/ircd-ratbox/help/opers/testmask
+share/ircd-ratbox/help/opers/time
+share/ircd-ratbox/help/opers/topic
+share/ircd-ratbox/help/opers/trace
+share/ircd-ratbox/help/opers/uhelp
+share/ircd-ratbox/help/opers/umode
+share/ircd-ratbox/help/opers/undline
+share/ircd-ratbox/help/opers/ungline
+share/ircd-ratbox/help/opers/unkline
+share/ircd-ratbox/help/opers/unreject
+share/ircd-ratbox/help/opers/unresv
+share/ircd-ratbox/help/opers/unxline
+share/ircd-ratbox/help/opers/user
+share/ircd-ratbox/help/opers/userhost
+share/ircd-ratbox/help/opers/users
+share/ircd-ratbox/help/opers/version
+share/ircd-ratbox/help/opers/wallops
+share/ircd-ratbox/help/opers/who
+share/ircd-ratbox/help/opers/whois
+share/ircd-ratbox/help/opers/whowas
+share/ircd-ratbox/help/opers/xline
+share/ircd-ratbox/help/users/
+share/ircd-ratbox/help/users/accept
+share/ircd-ratbox/help/users/admin
+share/ircd-ratbox/help/users/away
+share/ircd-ratbox/help/users/challenge
+share/ircd-ratbox/help/users/cmode
+share/ircd-ratbox/help/users/cnotice
+share/ircd-ratbox/help/users/cprivmsg
+share/ircd-ratbox/help/users/credits
+share/ircd-ratbox/help/users/error
+share/ircd-ratbox/help/users/help
+share/ircd-ratbox/help/users/index
+share/ircd-ratbox/help/users/info
+share/ircd-ratbox/help/users/invite
+share/ircd-ratbox/help/users/ison
+share/ircd-ratbox/help/users/join
+share/ircd-ratbox/help/users/kick
+share/ircd-ratbox/help/users/knock
+share/ircd-ratbox/help/users/links
+share/ircd-ratbox/help/users/list
+share/ircd-ratbox/help/users/lusers
+share/ircd-ratbox/help/users/map
+share/ircd-ratbox/help/users/motd
+share/ircd-ratbox/help/users/names
+share/ircd-ratbox/help/users/nick
+share/ircd-ratbox/help/users/notice
+share/ircd-ratbox/help/users/oper
+share/ircd-ratbox/help/users/part
+share/ircd-ratbox/help/users/pass
+share/ircd-ratbox/help/users/ping
+share/ircd-ratbox/help/users/pong
+share/ircd-ratbox/help/users/privmsg
+share/ircd-ratbox/help/users/quit
+share/ircd-ratbox/help/users/stats
+share/ircd-ratbox/help/users/time
+share/ircd-ratbox/help/users/topic
+share/ircd-ratbox/help/users/trace
+share/ircd-ratbox/help/users/umode
+share/ircd-ratbox/help/users/user
+share/ircd-ratbox/help/users/userhost
+share/ircd-ratbox/help/users/users
+share/ircd-ratbox/help/users/version
+share/ircd-ratbox/help/users/who
+share/ircd-ratbox/help/users/whois
+share/ircd-ratbox/help/users/whowas
+@mode 700
+@owner _ircd-ratbox
+@group _ircd-ratbox
+@sample ${LOGDIR}/
+@sample /var/run/ircd-ratbox/

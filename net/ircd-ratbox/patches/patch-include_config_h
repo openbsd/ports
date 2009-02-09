@@ -1,0 +1,24 @@
+$OpenBSD: patch-include_config_h,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
+--- include/config.h.orig	Fri Sep 19 17:33:46 2008
++++ include/config.h	Sun Feb  8 23:21:33 2009
+@@ -45,6 +45,11 @@
+  * AUTOMODPATH = directory for autoloaded modules
+  */
+ 
++/* users */
++#ifndef IRCD_USER
++#define IRCD_USER "_ircd-ratbox"
++#endif
++
+ /* dirs */
+ #define DPATH   IRCD_PREFIX
+ #define BINPATH IRCD_PREFIX "/bin/"
+@@ -61,7 +66,7 @@
+ #define DBPATH   ETCPATH "/ban.db"
+ #define MPATH    ETCPATH "/ircd.motd"	/* MOTD file */
+ #define LPATH    LOGPATH "/ircd.log"	/* ircd logfile */
+-#define PPATH    ETCPATH "/ircd.pid"	/* pid file */
++#define PPATH    RUN_DIR "/ircd.pid"	/* pid file */
+ #define OPATH    ETCPATH "/opers.motd"	/* oper MOTD file */
+ 
+ /* HANGONGOODLINK and HANGONGOODLINK

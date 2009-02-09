@@ -1,0 +1,48 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
+--- configure.ac.orig	Wed Dec 10 15:26:42 2008
++++ configure.ac	Sat Feb  7 13:30:15 2009
+@@ -5,8 +5,8 @@ dnl TODO: clean up all the OpenSSL and shared module c
+ dnl the most major changes have already been made and it looks like
+ dnl said functions need to be just about as complex as they already are.
+ 
+-AC_PREREQ(2.63)
+-AUTOMAKE_OPTIONS = 1.10
++AC_PREREQ(2.62)
++AUTOMAKE_OPTIONS = 1.9
+ dnl Sneaky way to get an Id tag into the configure script
+ AC_COPYRIGHT([$Id: patch-configure_ac,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $])
+ AC_INIT([ircd-ratbox],[devel])
+@@ -83,7 +83,7 @@ AC_PROG_LIBTOOL
+ 
+ LIBTOOL="$LIBTOOL --silent"
+ 
+-AC_CONFIG_SUBDIRS(libltdl libratbox)
++AC_CONFIG_SUBDIRS(libratbox)
+ 
+ case "$host_os" in
+ *cygwin*)
+@@ -357,6 +357,24 @@ AC_HELP_STRING([--with-logdir=DIR],
+ 		 AC_MSG_RESULT(no)
+ 	         AC_DEFINE_DIR(LOG_DIR, logdir, [Prefix where to write logfiles.])
+ 	  	 AC_SUBST_DIR([logdir])]
++)
++
++dnl **********************************************************************
++dnl Check for --with-rundir
++dnl **********************************************************************
++
++AC_MSG_CHECKING([whether to modify rundir])
++AC_ARG_WITH(rundir, 
++AC_HELP_STRING([--with-rundir=DIR],
++	       [Directory where to write runtime files.]),
++	       [ rundir=`echo $withval | sed 's/\/$//'`
++		 AC_MSG_RESULT(yes)
++		 AC_DEFINE_DIR(RUN_DIR, rundir, [Prefix where to write runtime files.])
++		 AC_SUBST_DIR([rundir]) ],
++	       [ rundir='${localstatedir}/run'
++		 AC_MSG_RESULT(no)
++	         AC_DEFINE_DIR(RUN_DIR, rundir, [Prefix where to write runtime files.])
++	  	 AC_SUBST_DIR([rundir])]
+ )
+ 
+ dnl **********************************************************************

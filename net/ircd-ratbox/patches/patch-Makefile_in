@@ -1,0 +1,27 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
+--- Makefile.in.orig	Wed Dec 10 05:12:15 2008
++++ Makefile.in	Wed Feb  4 18:41:07 2009
+@@ -96,7 +96,7 @@ RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-
+   distclean-recursive maintainer-clean-recursive
+ ETAGS = etags
+ CTAGS = ctags
+-DIST_SUBDIRS = libratbox libltdl src modules tools doc help bandb ssld \
++DIST_SUBDIRS = libratbox src modules tools doc help bandb ssld \
+ 	resolver
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ distdir = $(PACKAGE)-$(VERSION)
+@@ -262,10 +262,10 @@ servicesdir = @moduledir@/autoload
+ AM_CFLAGS = $(WARNFLAGS)
+ ircd_SOURCES = main.c
+ @MINGW_TRUE@EXTRA_FLAGS = -no-undefined -Wl,--enable-runtime-pseudo-reloc -export-symbols-regex '*'
+-@STATIC_MODULES_FALSE@SUBDIRS = libratbox libltdl src modules tools doc help bandb ssld resolver
+-@STATIC_MODULES_TRUE@SUBDIRS = libratbox libltdl modules src tools doc help bandb ssld resolver
+-@STATIC_MODULES_FALSE@ircd_LDADD = libratbox/src/libratbox.la src/libcore.la $(LIBLTDL)
+-@STATIC_MODULES_TRUE@ircd_LDADD = libratbox/src/libratbox.la modules/libmodules.la src/libcore.la modules/static_modules.o $(LIBLTDL) $(DLOPEN)
++@STATIC_MODULES_FALSE@SUBDIRS = libratbox src modules tools doc help bandb ssld resolver
++@STATIC_MODULES_TRUE@SUBDIRS = libratbox modules src tools doc help bandb ssld resolver
++@STATIC_MODULES_FALSE@ircd_LDADD = libratbox/src/libratbox.la src/libcore.la
++@STATIC_MODULES_TRUE@ircd_LDADD = libratbox/src/libratbox.la modules/libmodules.la src/libcore.la modules/static_modules.o $(DLOPEN)
+ @STATIC_MODULES_FALSE@ircd_LDFLAGS = $(EXTRA_FLAGS) -dlopen self
+ all: all-recursive
+ 

@@ -1,0 +1,77 @@
+$OpenBSD: patch-doc_example_efnet_conf,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
+--- doc/example.efnet.conf.orig	Tue Dec 16 04:08:43 2008
++++ doc/example.efnet.conf	Sun Feb  8 23:55:43 2009
+@@ -101,21 +101,21 @@ serverinfo {
+ 	default_max_clients = 10000;
+ 
+ 	/* ssl_private_key: our ssl private key */
+-        ssl_private_key = "etc/test.key";
++        ssl_private_key = "${CONFDIR}/test.key";
+ 
+ 	/* ssl_cert: certificate for our ssl server */
+-        ssl_cert = "etc/test.cert";
++        ssl_cert = "${CONFDIR}/test.cert";
+ 
+ 	/* ssl_dh_params: DH parameters, generate with openssl dhparam -out dh.pem 1024 */
+-        ssl_dh_params = "etc/dh.pem";
++        ssl_dh_params = "${CONFDIR}/dh.pem";
+ 
+ 	/* ssld_count: number of ssld processes you want to start, if you have a really busy 
+ 	 * server, using N-1 where N is the number of cpu/cpu cores you have might be useful
+  	 */
+         ssld_count = 1;
+ 
+-	/* bandb: path to the ban database - default is PREFIX/etc/ban.db */
+-	bandb = "etc/ban.db";
++	/* bandb: path to the ban database - default is ${CONFDIR}/ban.db */
++	bandb = "${CONFDIR}/ban.db";
+ };
+ 
+ /* admin {}: contains admin information about the server. (OLD A:) */
+@@ -142,16 +142,16 @@ log {
+ 	 * - operspylog: operspy usage
+ 	 * - ioerrorlog: IO errors
+ 	 */
+-	fname_userlog = "logs/userlog";
+-	#fname_fuserlog = "logs/fuserlog";
+-	fname_operlog = "logs/operlog";
+-	#fname_foperlog = "logs/foperlog";
+-	fname_serverlog = "logs/serverlog";
+-	fname_glinelog = "logs/glinelog";
+-	#fname_klinelog = "logs/klinelog";
+-	fname_killlog = "logs/killlog";
+-	fname_operspylog = "logs/operspylog";
+-	#fname_ioerrorlog = "logs/ioerror";
++	fname_userlog = "${LOGDIR}/userlog";
++	#fname_fuserlog = "${LOGDIR}/fuserlog";
++	fname_operlog = "${LOGDIR}/operlog";
++	#fname_foperlog = "${LOGDIR}/foperlog";
++	fname_serverlog = "${LOGDIR}/serverlog";
++	fname_glinelog = "${LOGDIR}/glinelog";
++	#fname_klinelog = "${LOGDIR}/klinelog";
++	fname_killlog = "${LOGDIR}/killlog";
++	fname_operspylog = "${LOGDIR}/operspylog";
++	#fname_ioerrorlog = "${LOGDIR}/ioerror";
+ };
+ 
+ /* class {}: contain information about classes for users (OLD Y:) */
+@@ -355,7 +355,7 @@ operator "god" {
+ 	 * A password should not be defined when this is used, see 
+ 	 * doc/challenge.txt for more information.
+ 	 */
+-	#rsa_public_key_file = "/usr/local/ircd/etc/oper.pub";
++	#rsa_public_key_file = "${CONFDIR}/oper.pub";
+ 
+ 	/* umodes: the specific umodes this oper gets when they oper.
+ 	 * If this is specified an oper will not be given oper_umodes
+@@ -1029,8 +1029,8 @@ modules {
+ 	/* module path: paths to search for modules specified below and 
+ 	 * in /modload.
+ 	 */
+-	path = "/usr/local/ircd/modules";
+-	path = "/usr/local/ircd/modules/autoload";
++	path = "${PREFIX}/lib/ircd-ratbox/modules";
++	path = "${PREFIX}/lib/ircd-ratbox/modules/autoload";
+ 
+ 	/* module: the name of a module to load on startup/rehash */
+ 	#module = "some_module.so";
