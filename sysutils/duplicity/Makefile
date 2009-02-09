@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/01/03 21:27:25 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/09 00:28:33 sthen Exp $
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.5.01
+MODPY_EGG_VERSION = 0.5.08
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
-PKGNAME=	${DISTNAME}p0
+
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.nongnu.org/duplicity/
@@ -19,7 +19,7 @@ MASTER_SITES =	http://savannah.nongnu.org/download/duplicity/ \
 		http://www.de-mirrors.de/nongnu/duplicity/ \
 		http://ftp.cc.uoc.gr/mirrors/nongnu.org/duplicity/ \
 		http://ftp.twaren.net/Unix/NonGNU/duplicity/
-			
+
 MAINTAINER =	Bruno Bigras <bruno@burnbox.net>
 
 # GPLv3
@@ -31,8 +31,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =	lang/python
 
 LIB_DEPENDS +=	rsync::net/librsync
-RUN_DEPENDS +=	::devel/py-pexpect \
-		::net/py-boto \
+RUN_DEPENDS +=	::net/py-boto \
 		::net/ncftp \
 		::security/py-gnupg
 
