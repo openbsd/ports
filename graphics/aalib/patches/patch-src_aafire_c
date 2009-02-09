@@ -1,7 +1,13 @@
-$OpenBSD: patch-src_aafire_c,v 1.1 2008/04/03 12:42:45 jasper Exp $
---- src/aafire.c.orig	Wed Apr  2 00:42:06 2008
-+++ src/aafire.c	Wed Apr  2 00:44:03 2008
-@@ -48,6 +48,7 @@ static void
+$OpenBSD: patch-src_aafire_c,v 1.2 2009/02/09 10:48:51 simon Exp $
+--- src/aafire.c.orig	Thu Apr 26 17:30:03 2001
++++ src/aafire.c	Mon Feb  9 00:52:20 2009
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "aalib.h"
+ 
+ #define XSIZ aa_imgwidth(context)
+@@ -48,6 +49,7 @@ static void
  initialize (void)
  {
    int i;
@@ -9,7 +15,7 @@ $OpenBSD: patch-src_aafire_c,v 1.1 2008/04/03 12:42:45 jasper Exp $
    context = aa_autoinit (&aa_defparams);
    if (context == NULL)
      {
-@@ -114,20 +115,20 @@ drawfire (void)
+@@ -114,20 +116,20 @@ drawfire (void)
    height++;
    loop--;
    if (loop < 0)

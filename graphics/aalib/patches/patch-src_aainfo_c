@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_aainfo_c,v 1.1 2009/02/09 10:48:51 simon Exp $
+--- src/aainfo.c.orig	Mon Feb  9 00:50:47 2009
++++ src/aainfo.c	Mon Feb  9 00:51:05 2009
+@@ -1,4 +1,5 @@
+ 
++#include <stdlib.h>
+ #include "aalib.h"
+ #include "aaint.h"
+ int main(int argc, char **argv)

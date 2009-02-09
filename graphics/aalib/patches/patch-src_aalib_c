@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_aalib_c,v 1.1 2008/04/03 12:42:45 jasper Exp $
---- src/aalib.c.orig	Wed Apr  2 00:06:52 2008
-+++ src/aalib.c	Wed Apr  2 00:06:57 2008
-@@ -1,6 +1,5 @@
+$OpenBSD: patch-src_aalib_c,v 1.2 2009/02/09 10:48:51 simon Exp $
+--- src/aalib.c.orig	Thu Apr 26 16:37:31 2001
++++ src/aalib.c	Mon Feb  9 00:48:39 2009
+@@ -1,6 +1,6 @@
  #include <stdio.h>
  #include <string.h>
 -#include <malloc.h>
++#include <stdlib.h>
  #include "aalib.h"
  #include "aaint.h"
  
