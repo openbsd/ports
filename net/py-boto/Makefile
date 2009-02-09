@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/09/17 02:39:41 okan Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/09 00:28:01 sthen Exp $
 
 COMMENT =	Python interface to Amazon Web Services
 
-MODPY_EGG_VERSION = 1.4c
+MODPY_EGG_VERSION = 1.6b
 DISTNAME =	boto-${MODPY_EGG_VERSION}
 PKGNAME = 	py-${DISTNAME}
 CATEGORIES =	net
