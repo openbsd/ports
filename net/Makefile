@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.561 2009/02/01 17:14:37 steven Exp $
+# $OpenBSD: Makefile,v 1.562 2009/02/09 09:42:02 simon Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -130,6 +130,7 @@
      SUBDIR += ipv6calc
      SUBDIR += irc
      SUBDIR += ircd-hybrid
+     SUBDIR += ircd-ratbox
      SUBDIR += ircII
      SUBDIR += irssi
      SUBDIR += irssi,socks
