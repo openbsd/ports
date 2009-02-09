@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2009/01/20 23:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2009/02/09 15:18:10 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -46,12 +46,16 @@ LIB_DEPENDS=		exif::graphics/libexif \
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
+
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/nautilus \
 			--disable-tracker \
 			--disable-beagle \
 			--disable-schemas-install \
 			--disable-update-mimedb
+# XXX build error when textproc/exempi is installed
+CONFIGURE_ARGS+=	--enable-xmp=no
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${WRKBUILD}/libnautilus/.libs \
 				-L${WRKBUILD}/libnautilus-adapter/.libs \
