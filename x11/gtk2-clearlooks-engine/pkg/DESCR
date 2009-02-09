@@ -1,3 +1,5 @@
 Clearlooks is a GTK+ 2.x engine written in C that transforms your
 GNOME/XFCE desktop into a modern looking environment. It is fast and
 easy on the eyes.
+This package only provides the icons and themes for Clearlooks GTK+
+2.x, the engine itself is provided by the gtk-engines2 package.

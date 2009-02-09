@@ -1,9 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/02/07 15:57:50 ajacoutot Exp $
-@conflict gtk-engines2-<2.16.1p1
+@comment $OpenBSD: PLIST,v 1.6 2009/02/09 18:02:29 ajacoutot Exp $
+@conflict gtk-engines2-<2.16.1p2
 @conflict gnome-themes-<2.24.3p0
-lib/gtk-2.0/2.10.0/engines/libclearlooks.a
-lib/gtk-2.0/2.10.0/engines/libclearlooks.la
-lib/gtk-2.0/2.10.0/engines/libclearlooks.so
 share/icons/Clearlooks/
 share/icons/Clearlooks/16x16/
 share/icons/Clearlooks/16x16/gtk/
@@ -51,8 +48,6 @@ share/themes/Clearlooks-Olive/gtk-2.0/gtkrc
 share/themes/Clearlooks-Quicksilver/
 share/themes/Clearlooks-Quicksilver/gtk-2.0/
 share/themes/Clearlooks-Quicksilver/gtk-2.0/gtkrc
-share/themes/Clearlooks/gtk-2.0/
-share/themes/Clearlooks/gtk-2.0/gtkrc
 share/themes/Clearlooks/index.theme
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Clearlooks 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Clearlooks 2> /dev/null || true

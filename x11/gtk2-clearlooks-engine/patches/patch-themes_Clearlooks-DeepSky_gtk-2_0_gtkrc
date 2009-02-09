@@ -1,0 +1,14 @@
+$OpenBSD: patch-themes_Clearlooks-DeepSky_gtk-2_0_gtkrc,v 1.1 2009/02/09 18:02:29 ajacoutot Exp $
+--- themes/Clearlooks-DeepSky/gtk-2.0/gtkrc.orig	Fri Jun 10 15:21:47 2005
++++ themes/Clearlooks-DeepSky/gtk-2.0/gtkrc	Mon Feb  9 18:40:55 2009
+@@ -40,10 +40,6 @@ style "clearlooks-default"
+ 
+   engine "clearlooks" 
+   {
+-    menubarstyle      = 2       # 0 = flat, 1 = sunken, 2 = flat gradient
+-    menuitemstyle     = 1       # 0 = flat, 1 = 3d-ish (gradient), 2 = 3d-ish (button)
+-    listviewitemstyle = 1       # 0 = flat, 1 = 3d-ish (gradient)
+-    progressbarstyle  = 0       # 0 = candy bar, 1 = flat
+   }
+ }
+ 
