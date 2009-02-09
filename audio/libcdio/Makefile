@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/05/01 09:05:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/09 22:06:30 sthen Exp $
 
 COMMENT=		compact disk input and control library
 
@@ -8,17 +8,13 @@ CATEGORIES=		audio devel
 
 HOMEPAGE=		http://www.gnu.org/software/libcdio/
 
-SHARED_LIBS +=  cdio		0.1	# .8.1
-SHARED_LIBS +=  iso9660		0.1	# .6.0
-SHARED_LIBS +=  udf		0.1	# .0.0
-SHARED_LIBS +=  cdio_cdda	0.1	# .0.3
-SHARED_LIBS +=  cdio_paranoia 	0.1	# .0.2
-SHARED_LIBS +=  iso9660++	0.1	# .0.0
-SHARED_LIBS +=  cdio++		0.1	# .0.0
-SHARED_LIBS +=  iso9660		0.1	# .6.0
-SHARED_LIBS +=  udf		0.1	# .0.0
-SHARED_LIBS +=  cdio_cdda	0.1	# .0.3
-SHARED_LIBS +=  cdio_paranoia	0.1	# .0.2
+SHARED_LIBS +=  cdio		0.1
+SHARED_LIBS +=  cdio++		0.1
+SHARED_LIBS +=  cdio_cdda	0.1
+SHARED_LIBS +=  cdio_paranoia 	0.1
+SHARED_LIBS +=  iso9660		0.1
+SHARED_LIBS +=  iso9660++	0.1
+SHARED_LIBS +=  udf		0.1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
