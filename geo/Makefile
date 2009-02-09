@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2008/10/09 22:13:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2009/02/09 23:07:55 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 
+     SUBDIR += gdal
      SUBDIR += geos
      SUBDIR += globe
      SUBDIR += gpstk
