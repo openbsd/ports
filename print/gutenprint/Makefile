@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/12/20 21:15:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/02/09 11:25:12 ajacoutot Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
@@ -6,8 +6,8 @@ COMMENT-gimp=		Gimp print plug-in
 
 V=			5.0.1
 DISTNAME=		gutenprint-${V}
-PKGNAME-main=		${DISTNAME}p5
-PKGNAME-foomatic=	foomatic-db-${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p6
+PKGNAME-foomatic=	foomatic-db-${DISTNAME}p1
 PKGNAME-gimp=		gutenprint-gimp-${V}p2
 CATEGORIES=		print
 
@@ -19,7 +19,7 @@ HOMEPAGE=		http://gimp-print.sourceforge.net/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -52,14 +52,14 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
                         glitz iconv intl m pango-1.0 pangocairo-1.0 \
                         pangoft2-1.0 pcre pixman-1 png z
 
-WANTLIB-main=		${WANTLIB} ncurses readline
+WANTLIB-main=		${WANTLIB} gio-2.0 glib-2.0 gmodule-2.0 \
+			gobject-2.0 ncurses readline
 WANTLIB-foomatic=
 WANTLIB-gimp=		${WANTLIB} \
 			gdk_pixbuf-2.0 gobject-2.0 pthread gdk-x11-2.0 \
 			glib-2.0 gmodule-2.0 gthread-2.0 gtk-x11-2.0 
 
 LIB_DEPENDS-main=	ijs::print/ijs \
-			glib-2.0.>=1000,gmodule-2.0.>=1000,gobject-2.0.>=1000::devel/glib2 \
 			gdk-x11-2.0.>=802,gdk_pixbuf-2.0.>=802,gtk-x11-2.0.>=802::x11/gtk+2
 LIB_DEPENDS-gimp=	gutenprint,gutenprintui2::${BUILD_PKGPATH} \
 			gimp-2.0,gimpbase-2.0,gimpcolor-2.0,gimpconfig-2.0,gimpmath-2.0,gimpmodule-2.0,gimpui-2.0,gimpwidgets-2.0::graphics/gimp/stable

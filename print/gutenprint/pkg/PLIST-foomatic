@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-foomatic,v 1.1.1.1 2007/10/01 10:32:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-foomatic,v 1.2 2009/02/09 11:25:12 ajacoutot Exp $
 share/foomatic/
 share/foomatic/db/
 share/foomatic/db/source/
@@ -73,6 +73,7 @@ share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_enableinklimit.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_enablelightcyantransition.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_enablelightgraytransition.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_enablelightmagentatransition.xml
+share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_enablelightyellowtransition.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_enablemagentabalance.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_enablemagentadensity.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_enablemagentagamma.xml
@@ -95,6 +96,7 @@ share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_inklimit-2.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_inklimit-3.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_inklimit-4.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_inklimit-5.xml
+share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_inklimit-6.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_inkset.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_inktype.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_inputslot.xml
@@ -102,6 +104,7 @@ share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_laminate.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_lightcyantransition-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_lightgraytransition-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_lightmagentatransition-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_lightyellowtransition-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_linearcontrast.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_magentabalance-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.0-stp_magentadensity-1.xml
