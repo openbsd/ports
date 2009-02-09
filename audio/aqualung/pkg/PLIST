@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/28 00:20:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/02/09 22:13:39 sthen Exp $
 @bin bin/aqualung
 @man man/man1/aqualung.1
 @owner root
@@ -38,6 +38,7 @@ share/aqualung/skin/dark/btn_bg3.png
 share/aqualung/skin/dark/next.png
 share/aqualung/skin/dark/pause.png
 share/aqualung/skin/dark/play.png
+share/aqualung/skin/dark/play_pause.png
 share/aqualung/skin/dark/prev.png
 share/aqualung/skin/dark/rc
 share/aqualung/skin/dark/repeat.png
@@ -56,6 +57,7 @@ share/aqualung/skin/default/bg5.png
 share/aqualung/skin/default/next.png
 share/aqualung/skin/default/pause.png
 share/aqualung/skin/default/play.png
+share/aqualung/skin/default/play_pause.png
 share/aqualung/skin/default/prev.png
 share/aqualung/skin/default/rc
 share/aqualung/skin/default/repeat.png
@@ -72,6 +74,7 @@ share/aqualung/skin/metal/bg6.png
 share/aqualung/skin/metal/next.png
 share/aqualung/skin/metal/pause.png
 share/aqualung/skin/metal/play.png
+share/aqualung/skin/metal/play_pause.png
 share/aqualung/skin/metal/prev.png
 share/aqualung/skin/metal/rc
 share/aqualung/skin/metal/repeat.png
@@ -83,6 +86,7 @@ share/aqualung/skin/no_skin/
 share/aqualung/skin/no_skin/next.png
 share/aqualung/skin/no_skin/pause.png
 share/aqualung/skin/no_skin/play.png
+share/aqualung/skin/no_skin/play_pause.png
 share/aqualung/skin/no_skin/prev.png
 share/aqualung/skin/no_skin/rc
 share/aqualung/skin/no_skin/repeat.png
@@ -99,6 +103,7 @@ share/aqualung/skin/ocean/next.png
 share/aqualung/skin/ocean/pause.png
 share/aqualung/skin/ocean/pl.png
 share/aqualung/skin/ocean/play.png
+share/aqualung/skin/ocean/play_pause.png
 share/aqualung/skin/ocean/prev.png
 share/aqualung/skin/ocean/rc
 share/aqualung/skin/ocean/repeat.png
@@ -109,6 +114,7 @@ share/aqualung/skin/plain/
 share/aqualung/skin/plain/next.png
 share/aqualung/skin/plain/pause.png
 share/aqualung/skin/plain/play.png
+share/aqualung/skin/plain/play_pause.png
 share/aqualung/skin/plain/prev.png
 share/aqualung/skin/plain/rc
 share/aqualung/skin/plain/repeat.png
@@ -120,6 +126,7 @@ share/aqualung/skin/woody/next.png
 share/aqualung/skin/woody/pause.png
 share/aqualung/skin/woody/pine.png
 share/aqualung/skin/woody/play.png
+share/aqualung/skin/woody/play_pause.png
 share/aqualung/skin/woody/prev.png
 share/aqualung/skin/woody/rc
 share/aqualung/skin/woody/repeat.png
@@ -137,10 +144,30 @@ share/aqualung/skin/woody/wood6.png
 share/aqualung/tab-close.png
 share/doc/aqualung/
 share/doc/aqualung/README
+share/doc/aqualung/aqualung-doc.css
+share/doc/aqualung/aqualung-doc.dtd
+share/doc/aqualung/aqualung-doc.xml
+share/doc/aqualung/aqualung-latex.xsl
+share/doc/aqualung/aqualung-man.xsl
+share/doc/aqualung/aqualung-xhtml-multipage.xsl
+share/doc/aqualung/aqualung-xhtml-view.xsl
+share/doc/aqualung/aqualung-xhtml.xsl
+share/doc/aqualung/external.eps
+share/doc/aqualung/external.png
+share/doc/aqualung/jack.png
+share/doc/aqualung/main.png
+share/doc/aqualung/playlist.png
+share/doc/aqualung/settings.png
+share/doc/aqualung/split.sh
+share/doc/aqualung/store.png
+share/doc/aqualung/systray.png
+share/doc/aqualung/timer.eps
+share/doc/aqualung/timer.png
 share/locale/de/LC_MESSAGES/aqualung.mo
 share/locale/hu/LC_MESSAGES/aqualung.mo
 share/locale/it/LC_MESSAGES/aqualung.mo
 share/locale/ru/LC_MESSAGES/aqualung.mo
+share/locale/sv/LC_MESSAGES/aqualung.mo
 share/locale/uk/LC_MESSAGES/aqualung.mo
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

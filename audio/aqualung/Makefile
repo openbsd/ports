@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2009/01/28 23:50:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/02/09 22:13:39 sthen Exp $
 
 COMMENT=	advanced music player
 
-DISTNAME=	aqualung-0.9beta9.1
-PKGNAME=	${DISTNAME}p7
+DISTNAME=	aqualung-0.9beta10
 CATEGORIES=	audio
 
 HOMEPAGE=	http://aqualung.factorial.hu/
@@ -22,6 +21,7 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 		xml2::textproc/libxml \
+		lua::lang/lua \
 		mac::audio/mac \
 		mad::audio/libmad \
 		mpcdec::audio/libmpcdec \
@@ -57,12 +57,14 @@ CONFIGURE_ARGS=	--with-flac \
 		--with-lame \
 		--with-lavc \
 		--with-loop \
+		--with-lua \
 		--with-mac \
 		--with-mpc \
 		--with-mpeg \
 		--with-ogg \
 		--with-podcast \
 		--with-sndfile \
+		--with-sndio \
 		--with-src \
 		--with-systray \
 		--with-vorbisenc \
