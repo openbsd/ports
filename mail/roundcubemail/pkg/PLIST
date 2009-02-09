@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/01/11 19:45:41 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/02/09 16:45:38 sthen Exp $
 roundcubemail/
 roundcubemail/.htaccess
 roundcubemail/CHANGELOG
@@ -25,8 +25,31 @@ roundcubemail/bin/update.sh
 roundcubemail/config/
 roundcubemail/config/.htaccess
 roundcubemail/config/db.inc.php.dist
+@sample roundcubemail/config/db.inc.php
 roundcubemail/config/main.inc.php.dist
+@sample roundcubemail/config/main.inc.php
 roundcubemail/index.php
+@mode 700
+roundcubemail/installer/
+@mode 600
+roundcubemail/installer/check.php
+roundcubemail/installer/client.js
+roundcubemail/installer/config.php
+@mode 700
+roundcubemail/installer/images/
+@mode 600
+roundcubemail/installer/images/add.png
+roundcubemail/installer/images/banner_bg.gif
+roundcubemail/installer/images/banner_logo.gif
+roundcubemail/installer/images/banner_right.gif
+roundcubemail/installer/images/delete.png
+roundcubemail/installer/images/error.png
+roundcubemail/installer/index.php
+roundcubemail/installer/rcube_install.php
+roundcubemail/installer/styles.css
+roundcubemail/installer/test.php
+roundcubemail/installer/utils.php
+roundcubemail/installer/welcome.html
 @mode 770
 @group www
 roundcubemail/logs/
