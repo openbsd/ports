@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2008/07/04 19:57:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2009/02/09 20:48:23 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		Ruby extension library for GTK Toolkit
 
 VERSION=		0.34
 DISTNAME=		ruby-gtk-${VERSION}
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 CATEGORIES=		x11 devel
 
 HOMEPAGE=		http://ruby-gnome.sourceforge.net

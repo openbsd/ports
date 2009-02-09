@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2008/11/04 22:41:59 steven Exp $
+# $OpenBSD: Makefile,v 1.41 2009/02/09 20:48:23 naddy Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -8,6 +8,7 @@ COMMENT=	high-level language for numerical computations
 
 VERSION=	3.0.3
 DISTNAME=	octave-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	math
 
 SHARED_LIBS=	cruft		5.0 \

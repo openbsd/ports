@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2008/07/04 19:57:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2009/02/09 20:48:23 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Ruby binding to Gdk-imlib
 
 VERSION=	0.34
 DISTNAME=	ruby-gnome-all-${VERSION}
-PKGNAME=	ruby-gdk-imlib-${VERSION}p9
+PKGNAME=	ruby-gdk-imlib-${VERSION}p10
 CATEGORIES=	graphics devel
 
 HOMEPAGE=	http://ruby-gnome.sourceforge.net/

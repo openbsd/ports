@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/01/26 22:09:19 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2009/02/09 20:48:23 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -8,14 +8,14 @@ DATE=20070307
 FULL_VERSION=4.2-${DATE}
 FULL_PKGVERSION=4.2.${DATE}
 
-PKGNAME-main=  gcc-${FULL_PKGVERSION}p10
-PKGNAME-c++ =  g++-${FULL_PKGVERSION}p8
+PKGNAME-main=  gcc-${FULL_PKGVERSION}p11
+PKGNAME-c++ =  g++-${FULL_PKGVERSION}p9
 PKGNAME-estdc= libstdc++-${FULL_PKGVERSION}p6
 PKGNAME-g77=   g77-${FULL_PKGVERSION}p4
-PKGNAME-f95=   g95-${FULL_PKGVERSION}p7
+PKGNAME-f95=   g95-${FULL_PKGVERSION}p8
 PKGNAME-java=  gcj-${FULL_PKGVERSION}p3
-PKGNAME-objc=  gobjc-${FULL_PKGVERSION}p7
-PKGNAME-ada=   gnat-${FULL_PKGVERSION}p6
+PKGNAME-objc=  gobjc-${FULL_PKGVERSION}p8
+PKGNAME-ada=   gnat-${FULL_PKGVERSION}p7
 SHARED_LIBS=	estdc++		8.0 \
 		gfortran	2.0 \
 		-org-w3c-dom	1.0 \
