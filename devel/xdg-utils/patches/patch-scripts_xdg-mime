@@ -1,10 +1,11 @@
-$OpenBSD: patch-scripts_xdg-mime,v 1.3 2009/01/28 09:53:02 ajacoutot Exp $
+$OpenBSD: patch-scripts_xdg-mime,v 1.4 2009/02/09 13:32:10 ajacoutot Exp $
 
 The file(1) call needs to be changed because the '-i' switch does not
 exist under OpenBSD.
+Remove a bashism.
 
 --- scripts/xdg-mime.orig	Sun Jun 24 21:57:57 2007
-+++ scripts/xdg-mime	Wed Jan 28 10:54:32 2009
++++ scripts/xdg-mime	Mon Feb  9 13:54:06 2009
 @@ -483,8 +483,8 @@ info_gnome()
  
  info_generic()
@@ -43,3 +44,12 @@ exist under OpenBSD.
  [ -w $gnome_global_dir ] || gnome_global_dir=
  DEBUG 3 "gnome_user_dir: $gnome_user_dir"
  DEBUG 3 "gnome_global_dir: $gnome_global_dir"
+@@ -1076,7 +1076,7 @@ END {
+ 
+         # No quotes around $mimetypes
+         for x in $mimetypes ; do 
+-            if grep '^# Installed by xdg-mime' $kde_dir/$x.desktop &>/dev/null ; then
++            if grep '^# Installed by xdg-mime' $kde_dir/$x.desktop >/dev/null 2>&1; then
+                 DEBUG 1 "Removing $kde_dir/$x.desktop (KDE 3.x support)"
+                 rm -f $kde_dir/$x.desktop
+             fi
