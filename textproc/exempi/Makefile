@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/18 12:43:28 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/09 15:35:50 ajacoutot Exp $
 
 COMMENT =		implementation of XMP
 DISTNAME =		exempi-2.0.2
+PKGNAME =		${DISTNAME}p0
+
 CATEGORIES =		textproc
 
 SHARED_LIBS +=		exempi		1.0 # .4.4
@@ -16,10 +18,10 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += expat pthread
+WANTLIB += expat
 
+MODULES =		converters/libiconv
 MASTER_SITES =		http://libopenraw.freedesktop.org/download/
-LIB_DEPENDS =		iconv.>=4::converters/libiconv
 USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
@@ -27,7 +29,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-unittest=no
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			LIBS="-liconv -lpthread" \
+			LIBS="-liconv -pthread" \
 			ac_cv_tls=none
 
 .include <bsd.port.mk>
