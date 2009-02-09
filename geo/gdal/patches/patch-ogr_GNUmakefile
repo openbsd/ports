@@ -1,0 +1,12 @@
+$OpenBSD: patch-ogr_GNUmakefile,v 1.1.1.1 2009/02/09 23:07:05 pvalchev Exp $
+--- ogr/GNUmakefile.orig	Fri Dec  5 18:38:47 2008
++++ ogr/GNUmakefile	Fri Dec  5 18:40:20 2008
+@@ -15,7 +15,7 @@ CPPFLAGS	:=	-Iogrsf_frmts -I. $(GDAL_INCLUDE) $(PROJ_I
+ 
+ default:	lib
+ 
+-all:	sublibs apps test_ogrsf$(EXE) 
++all:	sublibs
+ 
+ clean:
+ 	rm -f html/*

@@ -1,0 +1,93 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/09 23:07:05 pvalchev Exp $
+%%SHARED%%
+bin/gdal-config
+@bin bin/gdal_contour
+@bin bin/gdal_grid
+@bin bin/gdal_rasterize
+@bin bin/gdal_translate
+@bin bin/gdaladdo
+@bin bin/gdalenhance
+@bin bin/gdalinfo
+@bin bin/gdalmanage
+@bin bin/gdaltindex
+@bin bin/gdaltransform
+@bin bin/gdalwarp
+@bin bin/nearblack
+@bin bin/ogr2ogr
+@bin bin/ogrinfo
+@bin bin/ogrtindex
+@bin bin/testepsg
+include/cpl_config.h
+include/cpl_conv.h
+include/cpl_csv.h
+include/cpl_error.h
+include/cpl_http.h
+include/cpl_list.h
+include/cpl_minixml.h
+include/cpl_multiproc.h
+include/cpl_odbc.h
+include/cpl_port.h
+include/cpl_string.h
+include/cpl_vsi.h
+include/cpl_vsi_virtual.h
+include/cpl_win32ce_api.h
+include/cpl_wince.h
+include/gdal.h
+include/gdal_alg.h
+include/gdal_frmts.h
+include/gdal_pam.h
+include/gdal_priv.h
+include/gdal_rat.h
+include/gdal_version.h
+include/gdal_vrt.h
+include/gdalgrid.h
+include/gdaljp2metadata.h
+include/gdalwarper.h
+include/gvgcpfit.h
+include/memdataset.h
+include/ogr_api.h
+include/ogr_core.h
+include/ogr_feature.h
+include/ogr_featurestyle.h
+include/ogr_geometry.h
+include/ogr_p.h
+include/ogr_spatialref.h
+include/ogr_srs_api.h
+include/ogrsf_frmts.h
+include/rawdataset.h
+include/thinplatespline.h
+include/vrtdataset.h
+lib/libgdal.a
+lib/libgdal.la
+share/gdal/
+share/gdal/GDALLogoBW.svg
+share/gdal/GDALLogoColor.svg
+share/gdal/GDALLogoGS.svg
+share/gdal/LICENSE.TXT
+share/gdal/cubewerx_extra.wkt
+share/gdal/ecw_cs.wkt
+share/gdal/ellipsoid.csv
+share/gdal/epsg.wkt
+share/gdal/esri_extra.wkt
+share/gdal/gcs.csv
+share/gdal/gcs.override.csv
+share/gdal/gdal_datum.csv
+share/gdal/gdalicon.png
+share/gdal/gt_datum.csv
+share/gdal/gt_ellips.csv
+share/gdal/pcs.csv
+share/gdal/pcs.override.csv
+share/gdal/prime_meridian.csv
+share/gdal/projop_wparm.csv
+share/gdal/s57agencies.csv
+share/gdal/s57attributes.csv
+share/gdal/s57attributes_aml.csv
+share/gdal/s57attributes_iw.csv
+share/gdal/s57expectedinput.csv
+share/gdal/s57objectclasses.csv
+share/gdal/s57objectclasses_aml.csv
+share/gdal/s57objectclasses_iw.csv
+share/gdal/seed_2d.dgn
+share/gdal/seed_3d.dgn
+share/gdal/stateplane.csv
+share/gdal/unit_of_measure.csv
