@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/03/16 22:27:45 martynas Exp $
-bin/ratpoison
+@comment $OpenBSD: PLIST,v 1.8 2009/02/09 18:36:49 martynas Exp $
+@bin bin/ratpoison
 bin/rpws
 @info info/ratpoison.info
 @man man/man1/ratpoison.1
