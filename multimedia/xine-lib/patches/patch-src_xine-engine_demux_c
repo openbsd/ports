@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_xine-engine_demux_c,v 1.1 2009/02/09 20:35:50 sthen Exp $
+
+changeset e3fa66d1aff4 from upstream; remove a break which causes
+some front ends to hang.
+
+--- src/xine-engine/demux.c.orig	Mon Feb  9 12:50:56 2009
++++ src/xine-engine/demux.c	Mon Feb  9 12:51:32 2009
+@@ -374,7 +374,7 @@ static void *demux_loop (void *stream_gen) {
+     pthread_cond_wait (&stream->counter_changed, &stream->counter_lock);
+ 
+     if (demux_unstick_ao_loop (stream))
+-      break;
++      /* break amarok */;
+   }
+   pthread_mutex_unlock (&stream->counter_lock);
+   
