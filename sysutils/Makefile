@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2009/01/30 03:01:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.169 2009/02/09 14:55:44 form Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -61,6 +61,7 @@
      SUBDIR += lsof
      SUBDIR += mac-robber
      SUBDIR += malo-firmware
+     SUBDIR += memtest86+
      SUBDIR += memtester
      SUBDIR += mencal
      SUBDIR += modlogan
