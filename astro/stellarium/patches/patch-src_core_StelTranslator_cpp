@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_core_StelTranslator_cpp,v 1.1 2009/02/09 18:25:25 ajacoutot Exp $
+--- src/core/StelTranslator.cpp.orig	Mon Feb  9 10:09:37 2009
++++ src/core/StelTranslator.cpp	Mon Feb  9 10:10:05 2009
+@@ -67,6 +67,7 @@ void StelTranslator::initSystemLanguage(void)
+ 	if (lang) systemLangName = lang;
+ 	else
+ 	{
++		setenv("LANG", "en_US", 0);
+ 		lang = getenv("LANG");
+ 		if (lang) systemLangName = lang;
+ 		else

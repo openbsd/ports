@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.1 2009/02/09 18:25:25 ajacoutot Exp $
+--- doc/CMakeLists.txt.orig	Mon Feb  9 10:33:16 2009
++++ doc/CMakeLists.txt	Mon Feb  9 10:33:22 2009
+@@ -20,7 +20,7 @@ ADD_CUSTOM_COMMAND(
+   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/stellarium.1
+ )
+ 
+-INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/stellarium.1 DESTINATION share/man/man1)
++INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/stellarium.1 DESTINATION man/man1)
+ 
+ ENDIF(UNIX AND NOT WIN32)
+ 

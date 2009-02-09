@@ -1,28 +1,20 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2008/01/18 09:52:34 ajacoutot Exp $
---- src/CMakeLists.txt.orig	Thu Jan 17 15:15:35 2008
-+++ src/CMakeLists.txt	Fri Jan 18 10:23:49 2008
-@@ -1,7 +1,7 @@
- ADD_SUBDIRECTORY( planetsephems ) 
- ADD_SUBDIRECTORY( stelutils ) 
+$OpenBSD: patch-src_CMakeLists_txt,v 1.3 2009/02/09 18:25:25 ajacoutot Exp $
+--- src/CMakeLists.txt.orig	Mon Feb  9 10:07:45 2009
++++ src/CMakeLists.txt	Mon Feb  9 10:08:50 2009
+@@ -1,6 +1,6 @@
  
--INCLUDE_DIRECTORIES( ${CMAKE_BINARY_DIR} ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/src/planetsephems ${CMAKE_SOURCE_DIR}/src/stelutils ${CMAKE_SOURCE_DIR}/intl ${CMAKE_SOURCE_DIR}/src/stelutils/iniparser ${FreeType2_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${CURL_INCLUDE_DIRS} ${JPEG_INCLUDE_DIR} ${Boost_INCLUDE_DIRS} ${SDL_INCLUDE_DIR} ${ICONV_INCLUDE_DIR} ${INTL_INCLUDE_DIR} ${SDLMIXER_INCLUDE_DIR} ${QT_INCLUDE_DIR}/QtScript ${QT_QTSCRIPT_INCLUDE_DIR})
-+INCLUDE_DIRECTORIES( ${CMAKE_BINARY_DIR} ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/src/planetsephems ${CMAKE_SOURCE_DIR}/src/stelutils ${CMAKE_SOURCE_DIR}/intl ${CMAKE_SOURCE_DIR}/src/stelutils/iniparser ${FreeType2_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${CURL_INCLUDE_DIRS} ${JPEG_INCLUDE_DIR} ${PNG_PNG_INCLUDE_DIR} ${Boost_INCLUDE_DIRS} ${SDL_INCLUDE_DIR} ${ICONV_INCLUDE_DIR} ${INTL_INCLUDE_DIR} ${SDLMIXER_INCLUDE_DIR} ${QT_INCLUDE_DIR}/QtScript ${QT_QTSCRIPT_INCLUDE_DIR})
+ 
+-INCLUDE_DIRECTORIES( ${CMAKE_BINARY_DIR} ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/src/core ${CMAKE_SOURCE_DIR}/src/gui ${CMAKE_SOURCE_DIR}/src/modules ${CMAKE_SOURCE_DIR}/src/planetsephems  ${CMAKE_SOURCE_DIR}/src/external ${CMAKE_SOURCE_DIR}/src/scripting ${CMAKE_SOURCE_DIR}/src/external/kfilter ${FreeType2_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${CURL_INCLUDE_DIRS} ${JPEG_INCLUDE_DIR} ${Boost_INCLUDE_DIRS} ${SDL_INCLUDE_DIR} ${ICONV_INCLUDE_DIR} ${INTL_INCLUDE_DIR} ${SDLMIXER_INCLUDE_DIR} ${QT_INCLUDE_DIR}/QtScript ${QT_QTSCRIPT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/src)
++INCLUDE_DIRECTORIES( ${CMAKE_BINARY_DIR} ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/src/core ${CMAKE_SOURCE_DIR}/src/gui ${CMAKE_SOURCE_DIR}/src/modules ${CMAKE_SOURCE_DIR}/src/planetsephems  ${CMAKE_SOURCE_DIR}/src/external ${CMAKE_SOURCE_DIR}/src/scripting ${CMAKE_SOURCE_DIR}/src/external/kfilter ${FreeType2_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${CURL_INCLUDE_DIRS} ${JPEG_INCLUDE_DIR} ${PNG_PNG_INCLUDE_DIR} ${Boost_INCLUDE_DIRS} ${SDL_INCLUDE_DIR} ${ICONV_INCLUDE_DIR} ${INTL_INCLUDE_DIR} ${SDLMIXER_INCLUDE_DIR} ${QT_INCLUDE_DIR}/QtScript ${QT_QTSCRIPT_INCLUDE_DIR} ${CMAKE_BINARY_DIR}/src)
  
  ########### next target ###############
  
-@@ -238,7 +238,7 @@ IF(MACOSX)
-     MacosxDirs.hpp)
- ENDIF(MACOSX)
+@@ -399,7 +399,7 @@ QT4_WRAP_CPP(stellarium_MOC_SRCS ${stellarium_MOC_HDRS
+ # Dummy target depending on ${stellarium_UIS_H} to trigger ui compilations
+ ADD_CUSTOM_TARGET(GenerateUiHeaders ALL DEPENDS ${stellarium_UIS_H})
  
 -SET(extLinkerOption ${QT_LIBRARIES} ${QT_QTSCRIPT_LIBRARY} ${FreeType2_LIBRARIES} ${JPEG_LIBRARIES} ${PNG_LIBRARIES} ${OPENGL_LIBRARIES} ${SDL_LIBRARY} ${ICONV_LIBRARIES} ${INTL_LIBRARIES} ${SDLMIXER_LIBRARY})
 +SET(extLinkerOption ${QT_LIBRARIES} ${QT_QTSCRIPT_LIBRARY} ${FreeType2_LIBRARIES} ${JPEG_LIBRARIES} ${PNG_LIBRARIES} ${OPENGL_LIBRARIES} ${SDL_LIBRARY} ${ICONV_LIBRARIES} ${INTL_LIBRARIES} ${SDLMIXER_LIBRARY} -pthread)
  
- IF(WIN32)
-  # On WIN32 we need to split the main binary into a small binary and a dll
-@@ -253,4 +253,4 @@ ELSE(WIN32)
-  TARGET_LINK_LIBRARIES(stellarium ${extLinkerOption})
- ENDIF(WIN32)
- 
--INSTALL(TARGETS stellarium DESTINATION bin)
-\ No newline at end of file
-+INSTALL(TARGETS stellarium DESTINATION bin)
+ IF(GENERATE_STELMAINLIB)
+  ADD_LIBRARY(stelMain SHARED ${stellarium_lib_SRCS} ${stellarium_MOC_SRCS} ${stellarium_RES_CXX})

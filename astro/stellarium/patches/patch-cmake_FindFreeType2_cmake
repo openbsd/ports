@@ -1,4 +1,4 @@
-$OpenBSD: patch-cmake_FindFreeType2_cmake,v 1.2 2008/01/18 09:52:34 ajacoutot Exp $
+$OpenBSD: patch-cmake_FindFreeType2_cmake,v 1.3 2009/02/09 18:25:25 ajacoutot Exp $
 --- cmake/FindFreeType2.cmake.orig	Fri Jan 18 09:36:22 2008
 +++ cmake/FindFreeType2.cmake	Fri Jan 18 09:37:15 2008
 @@ -15,14 +15,14 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-cmake_FindFreeType2_cmake,v 1.2 2008/01/18 09:52:34 ajacoutot Ex
      freetype/config/ftheader.h
      /usr/include/freetype2
 -    /usr/X11R6/include/freetype
-+    !!X11BASE!!/include/freetype2
++    ${X11BASE}/include/freetype2
      /usr/nekoware/include/freetype2
      /opt/local/include/freetype2
      )
@@ -14,7 +14,7 @@ $OpenBSD: patch-cmake_FindFreeType2_cmake,v 1.2 2008/01/18 09:52:34 ajacoutot Ex
    FIND_LIBRARY(FreeType2_LIBRARIES
      freetype
 -    /usr/X11R6/lib
-+    !!X11BASE!!/lib
++    ${X11BASE}/lib
      /usr/local/lib
      /usr/openwin/lib
      /usr/lib

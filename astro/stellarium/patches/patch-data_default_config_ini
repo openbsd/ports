@@ -1,8 +1,8 @@
-$OpenBSD: patch-data_default_config_ini,v 1.3 2008/01/18 09:52:34 ajacoutot Exp $
---- data/default_config.ini.orig	Thu Jan 17 15:15:35 2008
-+++ data/default_config.ini	Fri Jan 18 09:38:46 2008
+$OpenBSD: patch-data_default_config_ini,v 1.4 2009/02/09 18:25:25 ajacoutot Exp $
+--- data/default_config.ini.orig	Mon Feb  9 10:07:01 2009
++++ data/default_config.ini	Mon Feb  9 10:07:34 2009
 @@ -2,9 +2,9 @@
- version                        = 0.9.1
+ version                        = 0.10.1
  
  [video]
 -fullscreen                     = true
@@ -11,6 +11,6 @@ $OpenBSD: patch-data_default_config_ini,v 1.3 2008/01/18 09:52:34 ajacoutot Exp 
 +fullscreen                     = false
 +screen_w                       = 640
 +screen_h                       = 480
- bbp_mode                       = 32
  horizontal_offset              = 0
  vertical_offset                = 0
+ minimum_fps                    = 18
