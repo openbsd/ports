@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_S,v 1.1.1.1 2009/02/09 14:54:40 form Exp $
+$RuOBSD: patch-setup_S,v 1.1.1.1 2008/07/12 19:00:53 form Exp $
+--- setup.S.orig	Sun Nov 16 06:18:14 2008
++++ setup.S	Sun Feb  8 03:10:23 2009
+@@ -42,7 +42,10 @@ start:
+ 	jz	alt_a20_done
+ 	
+ 	/* set or clear bit1, the ALT_A20_GATE bit */
+-	movb	4(%esp), %ah
++
++	/* movb	4(%esp), %ah */
++	.byte	0x67, 0x8a, 0x64, 0x24
++
+ 	testb	%ah, %ah
+ 	jz	alt_a20_cont1
+ 	orb	$2, %al
