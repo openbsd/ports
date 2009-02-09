@@ -1,0 +1,36 @@
+$OpenBSD: patch-test_c,v 1.1.1.1 2009/02/09 14:42:32 form Exp $
+$RuOBSD: patch-test_c,v 1.1.1.1 2008/07/12 19:00:53 form Exp $
+--- test.c.orig	Thu Feb 21 17:26:05 2008
++++ test.c	Mon Mar 24 22:07:16 2008
+@@ -11,7 +11,7 @@
+ 
+ #include "test.h"
+ #include "config.h"
+-#include <sys/io.h>
++#include "io.h"
+ #include "dmi.h"
+ 
+ extern int segs, bail;
+@@ -1407,18 +1407,18 @@ void beep(unsigned int frequency)
+ 	unsigned int count = 1193180 / frequency;
+ 
+ 	// Switch on the speaker
+-	outb_p(inb_p(0x61)|3, 0x61);
++	outb(inb(0x61)|3, 0x61);
+ 
+ 	// Set command for counter 2, 2 byte write
+-	outb_p(0xB6, 0x43);
++	outb(0xB6, 0x43);
+ 
+ 	// Select desired Hz
+-	outb_p(count & 0xff, 0x42);
++	outb(count & 0xff, 0x42);
+ 	outb((count >> 8) & 0xff, 0x42);
+ 
+ 	// Block for 100 microseconds
+ 	sleep(100, 1);
+ 
+ 	// Switch off the speaker
+-	outb(inb_p(0x61)&0xFC, 0x61);
++	outb(inb(0x61)&0xFC, 0x61);
+ }
