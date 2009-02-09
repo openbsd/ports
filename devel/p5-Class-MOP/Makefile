@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/02/01 00:58:50 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2009/02/09 12:08:25 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	meta object protocol for perl 5
 
 MODULES=	cpan
-DISTNAME=	Class-MOP-0.75
+DISTNAME=	Class-MOP-0.76
 CATEGORIES=	devel
 
 # perl
