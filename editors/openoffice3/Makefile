@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/02/06 23:06:27 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2009/02/09 20:36:02 ian Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -11,8 +11,8 @@ DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOO300_m15
 PKGNAME=	openoffice-${VERSION}
 PKGNAME-main=	openoffice-${VERSION}p1
-PKGNAME-kde=	openoffice-kde-${VERSION}
-PKGNAME-java=	openoffice-java-${VERSION}
+PKGNAME-kde=	openoffice-kde-${VERSION}p1
+PKGNAME-java=	openoffice-java-${VERSION}p1
 CATEGORIES=	editors productivity
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -58,9 +58,9 @@ LANGS=			bg ca de es fa fi fr hu it ja ko \
 
 .for l in ${LANGS:L}
 MULTI_PACKAGES+=	-i18n-$l
-PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}
+PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}p1
 COMMENT-i18n-$l=	$l language pack for OpenOffice.Org
-RUN_DEPENDS-i18n-$l=	::editors/openoffice
+RUN_DEPENDS-i18n-$l=	::editors/openoffice3
 WANTLIB-i18n-$l=
 LIB_DEPENDS-i18n-$l=
 .endfor
@@ -99,7 +99,7 @@ RUN_DEPENDS-main=	::java/javaPathHelper \
 			:desktop-file-utils-*:devel/desktop-file-utils
 
 MODULES+=		x11/qt3
-RUN_DEPENDS-kde=	::editors/openoffice
+RUN_DEPENDS-kde=	::editors/openoffice3
 LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
 			kabc,kdecore,kdeui,kio::x11/kde/libs3
 WANTLIB-kde=		X11 Xau Xdmcp Xext Xrandr Xrender m
@@ -109,7 +109,7 @@ MODJAVA_VER=		1.4+
 MODJAVA_JRERUN=		Yes
 LIB_DEPENDS-java=
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
-			::editors/openoffice \
+			::editors/openoffice3 \
 			:db-java-4.*:databases/db/v4,-java,java
 WANTLIB-java=		c m pthread
 
