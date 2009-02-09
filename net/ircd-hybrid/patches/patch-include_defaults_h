@@ -1,7 +1,15 @@
-$OpenBSD: patch-include_defaults_h,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
---- include/defaults.h.orig	Wed Feb 28 05:17:43 2007
-+++ include/defaults.h	Tue Jan 27 21:23:01 2009
-@@ -50,11 +50,11 @@
+$OpenBSD: patch-include_defaults_h,v 1.2 2009/02/09 15:14:22 form Exp $
+--- include/defaults.h.orig	Wed Feb 28 10:17:43 2007
++++ include/defaults.h	Sun Feb  8 14:28:26 2009
+@@ -47,14 +47,19 @@
+  * AUTOMODPATH = directory for autoloaded modules
+  */
+ 
++/* users */
++#ifndef IRCD_USER
++#define IRCD_USER   "_ircd-hybrid"
++#endif
++
  /* dirs */
  #define DPATH       IRCD_PREFIX                                                     
  #define BINPATH     IRCD_PREFIX "/bin/"
@@ -18,7 +26,7 @@ $OpenBSD: patch-include_defaults_h,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
  
  /* files */
  #define SPATH   BINPATH "/ircd"                 /* ircd executable */
-@@ -70,7 +70,7 @@
+@@ -70,7 +75,7 @@
  #define RKPATH  ETCPATH "/rkline.conf"
  #define MPATH   ETCPATH "/ircd.motd"            /* MOTD file */
  #define LPATH   LOGPATH "/ircd.log"             /* ircd logfile */

@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_ircd_c,v 1.1 2009/02/09 15:14:22 form Exp $
+--- src/ircd.c.orig	Wed Feb 28 10:17:46 2007
++++ src/ircd.c	Sun Feb  8 14:30:08 2009
+@@ -168,7 +168,6 @@ make_daemon(void)
+   }
+   else if (pid > 0)
+   {
+-    print_startup(pid);
+     exit(EXIT_SUCCESS);
+   }
+ 
+@@ -544,8 +543,19 @@ main(int argc, char *argv[])
+ #ifndef _WIN32
+   if (geteuid() == 0)
+   {
+-    fprintf(stderr, "Don't run ircd as root!!!\n");
+-    return(-1);
++    struct passwd *pw;
++
++    if ((pw = getpwnam(IRCD_USER)) == NULL)
++    {
++      fprintf(stderr, "Don't run ircd as root!!!\n");
++      return(-1);
++    }
++
++    if (setusercontext(NULL, pw, pw->pw_uid, LOGIN_SETALL) < 0)
++    {
++      fprintf(stderr, "Can's set user context to %s!\n", IRCD_USER);
++      return (-1);
++    }
+   }
+ 
+   /* Setup corefile size immediately after boot -kre */
