@@ -1,4 +1,4 @@
-/* $OpenBSD */
+/* $OpenBSD: gnome-keyring-query.c,v 1.2 2009/02/10 21:01:23 ajacoutot Exp $ */
 
 /*
  * This file was found on:

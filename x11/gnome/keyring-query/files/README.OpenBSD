@@ -1,7 +1,7 @@
-gnome-keyring-query provides limited command-line access to the Gnome keyring.
+$OpenBSD: README.OpenBSD,v 1.2 2009/02/10 21:01:23 ajacoutot Exp $
+
+gnome-keyring-query provides limited command-line access to the GNOME keyring.
 It is mostly usefull for debugging purposes.
 
 For more information on how to use this tool, please refer to:
 http://gentoo-wiki.com/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases
-
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2008/05/12 21:56:32 jasper Exp $

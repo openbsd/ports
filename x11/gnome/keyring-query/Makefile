@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/30 12:26:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/02/10 21:01:23 ajacoutot Exp $
 
 COMMENT=		provide limited command-line access to the GNOME keyring
 
 GNOME_PROJECT=		gnome-keyring-query
 GNOME_VERSION=		0.0.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 DISTFILES=
 CATEGORIES=		sysutils
 
@@ -14,9 +14,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		x11/gnome
+MODULES=		x11/gnome \
+			devel/gettext
 
-WANTLIB=		c glib-2.0 iconv intl pthread
+WANTLIB=		c glib-2.0 pthread
 
 LIB_DEPENDS=		gnome-keyring::x11/gnome/keyring
 
