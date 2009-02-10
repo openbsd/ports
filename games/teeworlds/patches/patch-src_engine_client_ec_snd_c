@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_engine_client_ec_snd_c,v 1.1 2009/02/10 00:32:43 sthen Exp $
+--- src/engine/client/ec_snd.c.orig	Tue Jan 27 11:41:17 2009
++++ src/engine/client/ec_snd.c	Tue Jan 27 12:30:08 2009
+@@ -139,10 +139,19 @@ static int iabs(int i)
+ 
+ static void mix(short *final_out, unsigned frames)
+ {
+-	int mix_buffer[MAX_FRAMES*2] = {0};
+-	int i, s;
++	int *mix_buffer;
++	int i, s, mix_buffer_size;
+ 	int master_vol;
+ 
++	mix_buffer_size = frames * 2 * sizeof(int);
++	mix_buffer = malloc(mix_buffer_size);
++	if (mix_buffer == NULL)
++	{
++		printf("malloc failed");
++		return;
++	}
++	bzero(mix_buffer, mix_buffer_size);
++
+ 	/* aquire lock while we are mixing */
+ 	lock_wait(sound_lock);
+ 	
+@@ -239,6 +248,12 @@ static void mix(short *final_out, unsigned frames)
+ #if defined(CONF_ARCH_ENDIAN_BIG)
+ 	swap_endian(final_out, sizeof(short), frames * 2);
+ #endif
++
++	if(mix_buffer != NULL) {
++		free(mix_buffer);
++		mix_buffer = NULL;
++	}
++	
+ }
+ 
+ static void sdlcallback(void *unused, Uint8 *stream, int len)
