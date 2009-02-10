@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2009/02/10 20:04:08 jakob Exp $
 
 COMMENT=	tiny/turbo/throttling HTTP server
 
 DISTNAME=	thttpd-2.25b
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=    	www
 
 HOMEPAGE=	http://www.acme.com/software/thttpd/
@@ -26,5 +26,10 @@ NO_REGRESS=	Yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/thttpd ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/thttpd.8 ${PREFIX}/man/man8
+	${INSTALL_PROGRAM_DIR} ${PREFIX}/libexec/thttpd
+	${INSTALL_PROGRAM} ${WRKSRC}/cgi-src/ssi      ${PREFIX}/libexec/thttpd
+	${INSTALL_PROGRAM} ${WRKSRC}/cgi-src/redirect ${PREFIX}/libexec/thttpd
+	${INSTALL_MAN} ${WRKSRC}/cgi-src/ssi.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/cgi-src/redirect.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>

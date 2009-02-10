@@ -1,3 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/02/24 21:10:52 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/02/10 20:04:08 jakob Exp $
+libexec/thttpd/
+@bin libexec/thttpd/redirect
+@bin libexec/thttpd/ssi
+@man man/man8/redirect.8
+@man man/man8/ssi.8
 @man man/man8/thttpd.8
-sbin/thttpd
+@bin sbin/thttpd
