@@ -1,0 +1,16 @@
+$OpenBSD: patch-daemon_ui_Makefile_in,v 1.1 2009/02/10 18:06:28 ajacoutot Exp $
+
+gnome-keyring-ask will eventually need to dlopen(3) libgthread which
+needs libpthread.
+
+--- daemon/ui/Makefile.in.orig	Tue Feb 10 18:56:10 2009
++++ daemon/ui/Makefile.in	Tue Feb 10 18:56:20 2009
+@@ -287,7 +287,7 @@ gnome_keyring_ask_SOURCES = \
+ 
+ gnome_keyring_ask_LDADD = \
+ 	$(top_builddir)/common/libgkr-module-common.la \
+-	$(GTK_LIBS)
++	$(GTK_LIBS) -pthread
+ 
+ noinst_LTLIBRARIES = libgkr-ui.la
+ BUILT_SOURCES = \
