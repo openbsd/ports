@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2008/10/20 12:22:42 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2009/02/10 20:52:39 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,9 +8,9 @@ COMMENT-bogofilter=	bogofilter plugin
 COMMENT-clamav=		clamav plugin
 COMMENT-spamassassin=	spamassassin plugin
 
-V=			3.6.1
+V=			3.7.0
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=			${DISTNAME}p0
+PKGNAME-main=			${DISTNAME}
 FULLPKGNAME-docs=		claws-mail-docs-${V}
 FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}
 FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}
@@ -45,14 +45,18 @@ RUN_DEPENDS-spamassassin=::${BUILD_PKGPATH} \
 
 WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto curl \
-			expat fontconfig freetype glib-2.0 glitz gmodule-2.0 \
-			gobject-2.0 idn m pango-1.0 pangocairo-1.0 \
-			pangoft2-1.0 pcre pixman-1 png ssl z
+			expat fontconfig freetype gio-2.0 glib-2.0 glitz \
+			gmodule-2.0 gobject-2.0 idn m pango-1.0 pangocairo-1.0 \
+			pangoft2-1.0 pcre pixman-1 png ssl tasn1 z
 
 WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 gthread-2.0 gpg-error \
 			gcrypt pthread stdc++
 
-WANTLIB-docs=		
+WANTLIB-docs=
+
+WANTLIB-bogofilter=	${WANTLIB} gcrypt gnutls gpg-error
+
+WANTLIB-spamassassin=	${WANTLIB} gcrypt gnutls gpg-error
 
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 			etpan.>=13::mail/libetpan \
@@ -82,9 +86,7 @@ USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.61
-CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I/usr/include/openssl" \
-			OPENSSL_LIBS="-lssl -lcrypto" \
-			CPPFLAGS="-I${X11BASE}/include" \
+CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib"
 
 .if ${FLAVOR:L:Mjpilot}
@@ -140,9 +142,10 @@ TOOLS=		OOo2claws-mail.pl \
 		uudec uuooffice \
 		vcard2xml.py \
 		README \
-		kdeservicemenu/install.sh \
+		kdeservicemenu/claws-mail-attach-files.desktop.kde4template \
 		kdeservicemenu/claws-mail-attach-files.desktop.template \
 		kdeservicemenu/claws-mail-kdeservicemenu.pl \
+		kdeservicemenu/install.sh \
 		kdeservicemenu/README
 
 post-install:

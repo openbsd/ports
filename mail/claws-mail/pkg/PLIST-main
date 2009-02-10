@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2008/10/17 12:46:33 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2009/02/10 20:52:39 landry Exp $
 @pkgpath mail/sylpheed-claws,-main${FLAVOR_STRING}
 @pkgpath mail/sylpheed-claws${FLAVOR_STRING}
 @bin bin/claws-mail
@@ -268,6 +268,7 @@ share/claws-mail/tools/google_msgid.pl
 share/claws-mail/tools/google_search.pl
 share/claws-mail/tools/kdeservicemenu/
 share/claws-mail/tools/kdeservicemenu/README
+share/claws-mail/tools/kdeservicemenu/claws-mail-attach-files.desktop.kde4template
 share/claws-mail/tools/kdeservicemenu/claws-mail-attach-files.desktop.template
 share/claws-mail/tools/kdeservicemenu/claws-mail-kdeservicemenu.pl
 share/claws-mail/tools/kdeservicemenu/install.sh
@@ -302,6 +303,7 @@ share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/claws-mail.png
 share/locale/bg/LC_MESSAGES/claws-mail.mo
 share/locale/ca/LC_MESSAGES/claws-mail.mo
+share/locale/cs/LC_MESSAGES/claws-mail.mo
 share/locale/de/LC_MESSAGES/claws-mail.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
@@ -315,8 +317,6 @@ share/locale/nl/LC_MESSAGES/claws-mail.mo
 share/locale/pl/LC_MESSAGES/claws-mail.mo
 share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
 share/locale/ru/LC_MESSAGES/claws-mail.mo
-share/locale/sk/LC_MESSAGES/claws-mail.mo
-share/locale/sr/LC_MESSAGES/claws-mail.mo
 share/locale/sv/LC_MESSAGES/claws-mail.mo
 share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
 @exec %D/bin/update-desktop-database
