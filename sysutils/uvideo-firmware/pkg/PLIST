@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/25 10:32:13 mglocker Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/02/10 15:11:30 mglocker Exp $
 firmware/uvideo_isight_05ac-8300
 firmware/uvideo_r5u87x_05ca-1803
 firmware/uvideo_r5u87x_05ca-1810
 firmware/uvideo_r5u87x_05ca-1812
-firmware/uvideo_r5u87x_05ca-1830
-firmware/uvideo_r5u87x_05ca-1832
-firmware/uvideo_r5u87x_05ca-1833
-firmware/uvideo_r5u87x_05ca-1834
 firmware/uvideo_r5u87x_05ca-1835
 firmware/uvideo_r5u87x_05ca-1836
 firmware/uvideo_r5u87x_05ca-1837
@@ -15,5 +11,3 @@ firmware/uvideo_r5u87x_05ca-183a
 firmware/uvideo_r5u87x_05ca-183b
 firmware/uvideo_r5u87x_05ca-183e
 firmware/uvideo_r5u87x_05ca-1841
-firmware/uvideo_r5u87x_05ca-1870
-firmware/uvideo_r5u87x_05ca-1870_1
