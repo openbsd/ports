@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/10/07 17:01:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/02/10 10:31:33 simon Exp $
 ${P5SITE}/Moose/
 ${P5SITE}/Moose.pm
 ${P5SITE}/Moose/Cookbook/
@@ -39,6 +39,19 @@ ${P5SITE}/Moose/Error/Croak.pm
 ${P5SITE}/Moose/Error/Default.pm
 ${P5SITE}/Moose/Exporter.pm
 ${P5SITE}/Moose/Intro.pod
+${P5SITE}/Moose/Manual/
+${P5SITE}/Moose/Manual.pod
+${P5SITE}/Moose/Manual/Attributes.pod
+${P5SITE}/Moose/Manual/BestPractices.pod
+${P5SITE}/Moose/Manual/Classes.pod
+${P5SITE}/Moose/Manual/Concepts.pod
+${P5SITE}/Moose/Manual/Construction.pod
+${P5SITE}/Moose/Manual/Delegation.pod
+${P5SITE}/Moose/Manual/MOP.pod
+${P5SITE}/Moose/Manual/MethodModifiers.pod
+${P5SITE}/Moose/Manual/MooseX.pod
+${P5SITE}/Moose/Manual/Roles.pod
+${P5SITE}/Moose/Manual/Types.pod
 ${P5SITE}/Moose/Meta/
 ${P5SITE}/Moose/Meta/Attribute.pm
 ${P5SITE}/Moose/Meta/Class.pm
@@ -50,7 +63,7 @@ ${P5SITE}/Moose/Meta/Method/Augmented.pm
 ${P5SITE}/Moose/Meta/Method/Constructor.pm
 ${P5SITE}/Moose/Meta/Method/Delegation.pm
 ${P5SITE}/Moose/Meta/Method/Destructor.pm
-${P5SITE}/Moose/Meta/Method/Overriden.pm
+${P5SITE}/Moose/Meta/Method/Overridden.pm
 ${P5SITE}/Moose/Meta/Role/
 ${P5SITE}/Moose/Meta/Role.pm
 ${P5SITE}/Moose/Meta/Role/Application/
@@ -120,6 +133,18 @@ ${P5SITE}/oose.pm
 @man man/man3p/Moose::Error::Default.3p
 @man man/man3p/Moose::Exporter.3p
 @man man/man3p/Moose::Intro.3p
+@man man/man3p/Moose::Manual.3p
+@man man/man3p/Moose::Manual::Attributes.3p
+@man man/man3p/Moose::Manual::BestPractices.3p
+@man man/man3p/Moose::Manual::Classes.3p
+@man man/man3p/Moose::Manual::Concepts.3p
+@man man/man3p/Moose::Manual::Construction.3p
+@man man/man3p/Moose::Manual::Delegation.3p
+@man man/man3p/Moose::Manual::MOP.3p
+@man man/man3p/Moose::Manual::MethodModifiers.3p
+@man man/man3p/Moose::Manual::MooseX.3p
+@man man/man3p/Moose::Manual::Roles.3p
+@man man/man3p/Moose::Manual::Types.3p
 @man man/man3p/Moose::Meta::Attribute.3p
 @man man/man3p/Moose::Meta::Class.3p
 @man man/man3p/Moose::Meta::Instance.3p
@@ -129,7 +154,7 @@ ${P5SITE}/oose.pm
 @man man/man3p/Moose::Meta::Method::Constructor.3p
 @man man/man3p/Moose::Meta::Method::Delegation.3p
 @man man/man3p/Moose::Meta::Method::Destructor.3p
-@man man/man3p/Moose::Meta::Method::Overriden.3p
+@man man/man3p/Moose::Meta::Method::Overridden.3p
 @man man/man3p/Moose::Meta::Role.3p
 @man man/man3p/Moose::Meta::Role::Application.3p
 @man man/man3p/Moose::Meta::Role::Application::RoleSummation.3p
