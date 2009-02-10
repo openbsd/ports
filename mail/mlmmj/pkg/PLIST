@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/10/03 23:38:35 simon Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/02/10 19:45:42 merdely Exp $
 @bin bin/mlmmj-bounce
 @bin bin/mlmmj-list
 @bin bin/mlmmj-maintd
@@ -33,7 +33,6 @@ share/mlmmj/text.skel/cz/README
 share/mlmmj/text.skel/cz/access
 share/mlmmj/text.skel/cz/bounce-probe
 share/mlmmj/text.skel/cz/digest
-share/mlmmj/text.skel/cz/listfaq
 share/mlmmj/text.skel/cz/listhelp
 share/mlmmj/text.skel/cz/listsubs
 share/mlmmj/text.skel/cz/moderation
@@ -47,19 +46,13 @@ share/mlmmj/text.skel/cz/notintocc
 share/mlmmj/text.skel/cz/sub-confirm
 share/mlmmj/text.skel/cz/sub-confirm-digest
 share/mlmmj/text.skel/cz/sub-confirm-nomail
-share/mlmmj/text.skel/cz/sub-deny-digest
-share/mlmmj/text.skel/cz/sub-deny-nomail
 share/mlmmj/text.skel/cz/sub-ok
 share/mlmmj/text.skel/cz/sub-ok-digest
 share/mlmmj/text.skel/cz/sub-ok-nomail
-share/mlmmj/text.skel/cz/sub-subscribed
-share/mlmmj/text.skel/cz/submod-moderator
-share/mlmmj/text.skel/cz/submod-requester
 share/mlmmj/text.skel/cz/subonlypost
 share/mlmmj/text.skel/cz/unsub-confirm
 share/mlmmj/text.skel/cz/unsub-confirm-digest
 share/mlmmj/text.skel/cz/unsub-confirm-nomail
-share/mlmmj/text.skel/cz/unsub-notsubscribed
 share/mlmmj/text.skel/cz/unsub-ok
 share/mlmmj/text.skel/cz/unsub-ok-digest
 share/mlmmj/text.skel/cz/unsub-ok-nomail
@@ -102,7 +95,6 @@ share/mlmmj/text.skel/de/
 share/mlmmj/text.skel/de/access
 share/mlmmj/text.skel/de/bounce-probe
 share/mlmmj/text.skel/de/digest
-share/mlmmj/text.skel/de/listfaq
 share/mlmmj/text.skel/de/listhelp
 share/mlmmj/text.skel/de/listsubs
 share/mlmmj/text.skel/de/maxmailsize
@@ -117,8 +109,6 @@ share/mlmmj/text.skel/de/notintocc
 share/mlmmj/text.skel/de/sub-confirm
 share/mlmmj/text.skel/de/sub-confirm-digest
 share/mlmmj/text.skel/de/sub-confirm-nomail
-share/mlmmj/text.skel/de/sub-deny-digest
-share/mlmmj/text.skel/de/sub-deny-nomail
 share/mlmmj/text.skel/de/sub-ok
 share/mlmmj/text.skel/de/sub-ok-digest
 share/mlmmj/text.skel/de/sub-ok-nomail
@@ -186,14 +176,10 @@ share/mlmmj/text.skel/es/notintocc
 share/mlmmj/text.skel/es/sub-confirm
 share/mlmmj/text.skel/es/sub-confirm-digest
 share/mlmmj/text.skel/es/sub-confirm-nomail
-share/mlmmj/text.skel/es/sub-deny-digest
-share/mlmmj/text.skel/es/sub-deny-nomail
 share/mlmmj/text.skel/es/sub-ok
 share/mlmmj/text.skel/es/sub-ok-digest
 share/mlmmj/text.skel/es/sub-ok-nomail
 share/mlmmj/text.skel/es/sub-subscribed
-share/mlmmj/text.skel/es/submod-moderator
-share/mlmmj/text.skel/es/submod-requester
 share/mlmmj/text.skel/es/subonlypost
 share/mlmmj/text.skel/es/unsub-confirm
 share/mlmmj/text.skel/es/unsub-confirm-digest
@@ -206,7 +192,6 @@ share/mlmmj/text.skel/fr/
 share/mlmmj/text.skel/fr/access
 share/mlmmj/text.skel/fr/bounce-probe
 share/mlmmj/text.skel/fr/digest
-share/mlmmj/text.skel/fr/listfaq
 share/mlmmj/text.skel/fr/listhelp
 share/mlmmj/text.skel/fr/listsubs
 share/mlmmj/text.skel/fr/moderation
@@ -220,14 +205,10 @@ share/mlmmj/text.skel/fr/notintocc
 share/mlmmj/text.skel/fr/sub-confirm
 share/mlmmj/text.skel/fr/sub-confirm-digest
 share/mlmmj/text.skel/fr/sub-confirm-nomail
-share/mlmmj/text.skel/fr/sub-deny-digest
-share/mlmmj/text.skel/fr/sub-deny-nomail
 share/mlmmj/text.skel/fr/sub-ok
 share/mlmmj/text.skel/fr/sub-ok-digest
 share/mlmmj/text.skel/fr/sub-ok-nomail
 share/mlmmj/text.skel/fr/sub-subscribed
-share/mlmmj/text.skel/fr/submod-moderator
-share/mlmmj/text.skel/fr/submod-requester
 share/mlmmj/text.skel/fr/subonlypost
 share/mlmmj/text.skel/fr/unsub-confirm
 share/mlmmj/text.skel/fr/unsub-confirm-digest
@@ -243,6 +224,7 @@ share/mlmmj/text.skel/it/digest
 share/mlmmj/text.skel/it/listfaq
 share/mlmmj/text.skel/it/listhelp
 share/mlmmj/text.skel/it/listsubs
+share/mlmmj/text.skel/it/maxmailsize
 share/mlmmj/text.skel/it/moderation
 share/mlmmj/text.skel/it/notifysub
 share/mlmmj/text.skel/it/notifysub-digest
@@ -277,6 +259,7 @@ share/mlmmj/text.skel/nl/digest
 share/mlmmj/text.skel/nl/listfaq
 share/mlmmj/text.skel/nl/listhelp
 share/mlmmj/text.skel/nl/listsubs
+share/mlmmj/text.skel/nl/maxmailsize
 share/mlmmj/text.skel/nl/moderation
 share/mlmmj/text.skel/nl/notifysub
 share/mlmmj/text.skel/nl/notifysub-digest
@@ -304,3 +287,38 @@ share/mlmmj/text.skel/nl/unsub-notsubscribed
 share/mlmmj/text.skel/nl/unsub-ok
 share/mlmmj/text.skel/nl/unsub-ok-digest
 share/mlmmj/text.skel/nl/unsub-ok-nomail
+share/mlmmj/text.skel/ru/
+share/mlmmj/text.skel/ru/access
+share/mlmmj/text.skel/ru/bounce-probe
+share/mlmmj/text.skel/ru/digest
+share/mlmmj/text.skel/ru/listfaq
+share/mlmmj/text.skel/ru/listhelp
+share/mlmmj/text.skel/ru/listsubs
+share/mlmmj/text.skel/ru/maxmailsize
+share/mlmmj/text.skel/ru/moderation
+share/mlmmj/text.skel/ru/notifysub
+share/mlmmj/text.skel/ru/notifysub-digest
+share/mlmmj/text.skel/ru/notifysub-nomail
+share/mlmmj/text.skel/ru/notifyunsub
+share/mlmmj/text.skel/ru/notifyunsub-digest
+share/mlmmj/text.skel/ru/notifyunsub-nomail
+share/mlmmj/text.skel/ru/notintocc
+share/mlmmj/text.skel/ru/sub-confirm
+share/mlmmj/text.skel/ru/sub-confirm-digest
+share/mlmmj/text.skel/ru/sub-confirm-nomail
+share/mlmmj/text.skel/ru/sub-deny-digest
+share/mlmmj/text.skel/ru/sub-deny-nomail
+share/mlmmj/text.skel/ru/sub-ok
+share/mlmmj/text.skel/ru/sub-ok-digest
+share/mlmmj/text.skel/ru/sub-ok-nomail
+share/mlmmj/text.skel/ru/sub-subscribed
+share/mlmmj/text.skel/ru/submod-moderator
+share/mlmmj/text.skel/ru/submod-requester
+share/mlmmj/text.skel/ru/subonlypost
+share/mlmmj/text.skel/ru/unsub-confirm
+share/mlmmj/text.skel/ru/unsub-confirm-digest
+share/mlmmj/text.skel/ru/unsub-confirm-nomail
+share/mlmmj/text.skel/ru/unsub-notsubscribed
+share/mlmmj/text.skel/ru/unsub-ok
+share/mlmmj/text.skel/ru/unsub-ok-digest
+share/mlmmj/text.skel/ru/unsub-ok-nomail
