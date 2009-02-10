@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/07/11 08:51:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/02/10 10:11:00 ajacoutot Exp $
 @bin bin/avidemux2_cli
 @bin bin/avidemux2_gtk
+share/applications/avidemux2.desktop
 share/locale/ca/LC_MESSAGES/avidemux.mo
 share/locale/cs/LC_MESSAGES/avidemux.mo
 share/locale/de/LC_MESSAGES/avidemux.mo
@@ -15,3 +16,7 @@ share/locale/sr@latin/
 share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/avidemux.mo
 share/locale/tr/LC_MESSAGES/avidemux.mo
+share/pixmaps/
+share/pixmaps/avidemux.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

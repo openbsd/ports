@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2008/09/15 22:08:40 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.18 2009/02/10 10:11:00 ajacoutot Exp $
 
 COMMENT=	free video editor
 
-V=		2.4.3
+V=		2.4.4
 DISTNAME=	avidemux_${V}
-PKGNAME=	avidemux-${V}p0
+PKGNAME=	avidemux-${V}
 
 CATEGORIES=	multimedia
 
@@ -20,15 +20,16 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xcomposite Xdamage pcre audiofile esd \
-		Xrender Xv atk-1.0 c cairo expat fontconfig \
-		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		gthread-2.0 m ogg pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1 png pthread stdc++ z ossaudio
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xv atk-1.0 audiofile c cairo
+WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 m ogg ossaudio pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread sndio stdc++
+WANTLIB += z
 
 MODULES=	devel/gettext
 
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
 		:automake-${AUTOMAKE_VERSION}.*:devel/automake/${AUTOMAKE_VERSION}
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
@@ -39,7 +40,8 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		xml2.>=9::textproc/libxml \
 		xvidcore.>=4::multimedia/xvidcore \
 		x264::multimedia/x264 \
-		artsc.>=1::x11/kde/arts3
+		artsc.>=1::x11/kde/arts3 \
+		esd::audio/esound
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
@@ -75,7 +77,16 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 
 pre-configure:
 	@cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		${MAKE_PROGRAM} -f Makefile.dist
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/avidemux2.desktop \
+		${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/avidemux_icon.png \
+		${PREFIX}/share/pixmaps/avidemux.png
 
 .include <bsd.port.mk>

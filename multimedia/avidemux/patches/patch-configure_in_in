@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in_in,v 1.1 2008/03/19 09:21:37 ajacoutot Exp $
---- configure.in.in.orig	Mon Feb 18 09:35:13 2008
-+++ configure.in.in	Mon Feb 18 09:36:50 2008
-@@ -771,7 +771,7 @@ have_oss=no
+$OpenBSD: patch-configure_in_in,v 1.2 2009/02/10 10:11:00 ajacoutot Exp $
+--- configure.in.in.orig	Fri Feb  6 20:07:37 2009
++++ configure.in.in	Tue Feb 10 10:02:28 2009
+@@ -753,7 +753,7 @@ have_oss=no
  if test "x$with_oss" != "xno"; then
  	AC_MSG_CHECKING(for OSS support)
  	AC_TRY_COMPILE([
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in_in,v 1.1 2008/03/19 09:21:37 ajacoutot Exp $
  			#include <sys/ioccom.h>
  			#include <soundcard.h>
  		#else
-@@ -786,6 +786,7 @@ if test "x$with_oss" != "xno"; then
+@@ -768,6 +768,7 @@ if test "x$with_oss" != "xno"; then
  
  	if test "x$have_oss" = "xyes"; then
  		AC_DEFINE(OSS_SUPPORT,1,[OSS detected])
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure_in_in,v 1.1 2008/03/19 09:21:37 ajacoutot Exp $
  	fi
  fi
  
-@@ -1191,7 +1192,7 @@ case $host_cpu in
+@@ -1173,7 +1174,7 @@ case $host_cpu in
  		AC_DEFINE(ENABLE_MMX,0,[post proc])
  		AC_DEFINE(HAVE_FAST_64BIT,1,"FFMPEG")
  		;;
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure_in_in,v 1.1 2008/03/19 09:21:37 ajacoutot Exp $
  		have_little_endian=no;
  		LMPG_OPT="";
  		AC_DEFINE(FPM_PPC,1,[Mad ])       
-@@ -1200,9 +1201,6 @@ case $host_cpu in
+@@ -1182,9 +1183,6 @@ case $host_cpu in
  		AC_DEFINE(restrict,__restrict__,[roundup function])
  		AC_DEFINE(ADM_BIG_ENDIAN,1,[Big endian CPU - SPARC or PowerPC])
  		AC_DEFINE(ARCH_POWERPC,1,[Enable PowerPC optim])		
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure_in_in,v 1.1 2008/03/19 09:21:37 ajacoutot Exp $
  		AC_DEFINE(WORDS_BIGENDIAN,1,[Big endian CPU - SPARC or PowerPC])
  		AC_DEFINE(ENABLE_MMX,0,[post proc])       
  		;;
-@@ -1342,11 +1340,11 @@ if test "x$use_debug" = "xyes"; then
+@@ -1324,11 +1322,11 @@ if test "x$use_debug" = "xyes"; then
  else
  	dnl -- built-in means gcc3, for gcc 2 we stick to -O2 --
  	if test "x$use_builtin" = "xyes"; then
