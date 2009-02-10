@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2009/01/31 12:37:30 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.6 2009/02/10 17:19:42 ajacoutot Exp $
 --- Makefile.in.orig	Fri Jan 16 11:37:10 2009
-+++ Makefile.in	Sat Jan 31 12:11:42 2009
++++ Makefile.in	Tue Feb 10 17:40:25 2009
 @@ -308,7 +308,7 @@ man_MANS = \
  dbus_DATA = \
  	newprinternotification.conf
@@ -10,24 +10,30 @@ $OpenBSD: patch-Makefile_in,v 1.5 2009/01/31 12:37:30 ajacoutot Exp $
  desktop_DATA = \
  	system-config-printer.desktop \
  	print-applet.desktop \
-@@ -1042,7 +1042,6 @@ install-desktopDATA: $(desktop_DATA)
+@@ -1040,35 +1040,31 @@ clean-local:
+ install-desktopDATA: $(desktop_DATA)
  	mkdir -p $(DESTDIR)$(desktopdir)
- 	desktop-file-install --vendor redhat	\
+ 	mkdir -p $(DESTDIR)$(desktopdir)
+-	desktop-file-install --vendor redhat	\
++	desktop-file-install 			\
  	  --dir $(DESTDIR)$(desktopdir)		\
 -	  --add-category X-Red-Hat-Base		\
  	  --add-category System			\
  	  --add-category Settings		\
  	  --add-category HardwareSettings	\
-@@ -1051,25 +1050,16 @@ install-desktopDATA: $(desktop_DATA)
+ 	  --add-category Printing		\
+ 	  --add-category GTK			\
  	  system-config-printer.desktop
- 	desktop-file-install --vendor redhat	\
+-	desktop-file-install --vendor redhat	\
++	desktop-file-install 			\
  	  --dir $(DESTDIR)$(desktopdir)		\
 -	  --add-category X-Red-Hat-Base		\
  	  --add-category System			\
  	  --add-category Monitor		\
  	  --add-category GTK			\
  	  manage-print-jobs.desktop
- 	desktop-file-install --vendor redhat	\
+-	desktop-file-install --vendor redhat	\
++	desktop-file-install 			\
  	  --dir $(DESTDIR)$(desktopdir)		\
 -	  --add-category X-Red-Hat-Base		\
  	  --add-category Settings		\
@@ -40,7 +46,11 @@ $OpenBSD: patch-Makefile_in,v 1.5 2009/01/31 12:37:30 ajacoutot Exp $
 -	  --add-category System			\
 -	  --add-category Monitor		\
 -	  --add-category GTK			\
--	  print-applet.desktop
++	desktop-file-install			\
++	  --dir $(DESTDIR)$(autostartdir)       \
++	  --add-category System                 \
++	  --add-category Monitor                \
++	  --add-category GTK                    \
+ 	  print-applet.desktop
  
  uninstall-desktopDATA:
- 	rm -f $(DESTDIR)$(desktopdir)/redhat-system-config-printer.desktop
