@@ -1,9 +1,7 @@
-pdnsd is a proxy dns server with permanent caching (the cache
-contents are written to hard disk on exit) that is designed to cope
-with unreachable or down dns servers (for example in dial-in
-networking).
-
-pdnsd is configurable via a file and supports run-time configuration
-using the program pdnsd-ctl that comes with pdnsd.
+The PowerDNS daemon is a versatile nameserver which supports
+a large number of backends. These backends can either be plain
+zonefiles or be more dynamic in nature. Additionally, through
+use of clever programming techniques, PowerDNS offers very high
+domain resolution performance.
 
 This package contains the PostgreSQL-backend.
