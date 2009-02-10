@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.25 2008/07/25 20:25:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2009/02/10 23:23:27 ckuethe Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-motif=		motif-based test apps using gpsd
 COMMENT-php=		web-based gpsd monitor in php
 COMMENT-python=		python bindings for gpsd
 
-VERSION=		2.37
+VERSION=		2.38
 DISTNAME=		gpsd-${VERSION}
-PKGNAME-main=		gpsd-${VERSION}p2
+PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-motif=		gpsd-motif-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
-PKGNAME-python=		gpsd-python-${VERSION}p0
+PKGNAME-python=		gpsd-python-${VERSION}
 SHARED_LIBS=		gps	18.0
 CATEGORIES=		misc geo
 
@@ -49,8 +49,8 @@ WANTLIB-motif=		ICE Xaw Xau Xdmcp Xext Xft Xmu Xp Xrender X11 SM Xt \
 			c m pthread expat fontconfig freetype iconv z
 LIB_DEPENDS-motif=	Xm::x11/openmotif gps::misc/gpsd
 USE_X11=		Yes
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 .endif
 
 .if ${FLAVOR:L:Mno_python}
