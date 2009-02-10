@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2008/12/03 13:50:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/02/10 20:55:37 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	notification plugin for Claws-mail
 
-VERSION=	0.19
+VERSION=	0.20
 DISTNAME=	notification_plugin-${VERSION}
 PKGNAME=	claws-mail-notification-${VERSION}p0
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
@@ -36,7 +36,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 dbus-glib-1 \
 		expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
+		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png z
 
