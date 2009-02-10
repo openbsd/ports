@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/02/09 16:45:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/02/10 10:08:34 sthen Exp $
 roundcubemail/
 roundcubemail/.htaccess
 roundcubemail/CHANGELOG
@@ -16,12 +16,18 @@ roundcubemail/SQL/sqlite.update.sql
 roundcubemail/UPGRADING
 roundcubemail/bin/
 roundcubemail/bin/html2text.php
+@mode 600
 roundcubemail/bin/killcache.php
+@mode
 roundcubemail/bin/modcss.php
+@mode 600
 roundcubemail/bin/msgexport.sh
 roundcubemail/bin/msgimport.sh
+@mode
 roundcubemail/bin/quotaimg.php
+@mode 600
 roundcubemail/bin/update.sh
+@mode
 roundcubemail/config/
 roundcubemail/config/.htaccess
 roundcubemail/config/db.inc.php.dist
