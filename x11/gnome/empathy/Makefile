@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2009/01/29 22:23:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2009/02/10 21:10:37 ajacoutot Exp $
 
 # (empathy:10245): Gtk-WARNING **: could not load image: Icon 'im-xmpp' not present in theme
 
-COMMENT= 		telepathy based messenger for the Gnome desktop
+COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 SHARED_LIBS +=	empathy              1.0      # .16.4
 SHARED_LIBS +=	empathy-gtk          1.0      # .15.6

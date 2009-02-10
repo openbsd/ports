@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/20 23:13:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/02/10 21:10:38 ajacoutot Exp $
 
 COMMENT=		screen reader and magnifier for GNOME desktop
 
 GNOME_PROJECT=		gnopernicus
 GNOME_VERSION=		1.1.2
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 
 SHARED_LIBS +=  srutil               0.0      # .2.0
 SHARED_LIBS +=  srconf               0.0      # .2.0

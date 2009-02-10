@@ -1,4 +1,4 @@
-Gnome-terminal is a terminal emulator program that is part of the GNOME
-project.  Gnome-terminal supports color displays and provides mouse
+gnome-terminal is a terminal emulator program that is part of the GNOME
+project.  gnome-terminal supports color displays and provides mouse
 support to applications that are aware of mouse events for xterm-like
 terminals.
