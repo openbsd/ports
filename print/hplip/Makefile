@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/02/02 10:47:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/11 15:28:11 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-docs=	html documentation for HPLIP
 V=		2.7.12
 DISTNAME=	hplip-${V}
 PKGNAME-main=	${DISTNAME}p1
-PKGNAME-hpijs=	hpijs-${V}
+PKGNAME-hpijs=	hpijs-${V}p0
 PKGNAME-docs=	hplip-docs-${V}p0
 
 SHARED_LIBS+=	hpmud		0.0	# .0.0
