@@ -1,0 +1,16 @@
+$OpenBSD: patch-Input_cdaudio_cdaudio_h,v 1.1 2009/02/11 15:44:04 naddy Exp $
+--- Input/cdaudio/cdaudio.h.orig	Sat Feb  7 22:44:27 2009
++++ Input/cdaudio/cdaudio.h	Sat Feb  7 22:56:20 2009
+@@ -65,7 +65,11 @@
+ #include <sys/cdrio.h>
+ #endif
+ 
+-#if defined(CDROMREADAUDIO) || defined(CDIOCREADAUDIO) || defined(CDROMCDDA) || defined(CDRIOCSETBLOCKSIZE)
++#ifdef __OpenBSD__
++#include <sys/scsiio.h>
++#endif
++
++#if defined(CDROMREADAUDIO) || defined(CDIOCREADAUDIO) || defined(CDROMCDDA) || defined(CDRIOCSETBLOCKSIZE) || defined(SCIOCCOMMAND)
+ # define CDDA_HAS_READAUDIO
+ #endif
+ 

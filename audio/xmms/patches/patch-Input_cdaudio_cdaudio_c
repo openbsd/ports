@@ -1,6 +1,6 @@
-$OpenBSD: patch-Input_cdaudio_cdaudio_c,v 1.4 2007/12/08 21:54:57 ajacoutot Exp $
---- Input/cdaudio/cdaudio.c.orig	Fri Nov 23 16:18:35 2007
-+++ Input/cdaudio/cdaudio.c	Fri Nov 23 16:20:02 2007
+$OpenBSD: patch-Input_cdaudio_cdaudio_c,v 1.5 2009/02/11 15:44:04 naddy Exp $
+--- Input/cdaudio/cdaudio.c.orig	Fri Nov 16 22:51:24 2007
++++ Input/cdaudio/cdaudio.c	Sat Feb  7 23:13:08 2009
 @@ -819,6 +819,10 @@ static int get_current_frame(void)
  {
  	struct ioc_read_subchannel subchnl;
@@ -12,3 +12,42 @@ $OpenBSD: patch-Input_cdaudio_cdaudio_c,v 1.4 2007/12/08 21:54:57 ajacoutot Exp 
  	subchnl.address_format = CD_MSF_FORMAT;
  	subchnl.data_format = CD_CURRENT_POSITION;
  	subchnl.track = 0;
+@@ -891,6 +895,38 @@ int read_audio_data(int fd, int pos, int num, void *bu
+ 	return num;	 	
+ }
+ # endif /* CDIOCREADAUDIO */
++#endif
++
++#ifdef __OpenBSD__
++int read_audio_data(int fd, int pos, int num, void *buf)
++{
++	scsireq_t scr;
++	int lba;
++
++	memset(&scr, 0, sizeof(scr));
++
++	lba = pos - CDDA_MSF_OFFSET;
++	scr.cmd[0] = 0xbe;			/* READ CD */
++	scr.cmd[2] = (lba >> 24) & 0xff;
++	scr.cmd[3] = (lba >> 16) & 0xff;
++	scr.cmd[4] = (lba >> 8) & 0xff;
++	scr.cmd[5] = lba & 0xff;
++	scr.cmd[6] = (num >> 16) & 0xff;
++	scr.cmd[7] = (num >> 8) & 0xff;
++	scr.cmd[8] = num & 0xff;
++	scr.cmd[9] = 0x10;
++
++	scr.flags = SCCMD_ESCAPE | SCCMD_READ;
++	scr.databuf = buf;
++	scr.datalen = num * CD_FRAMESIZE_RAW;
++	scr.cmdlen = 12;
++	scr.timeout = 120000;
++	scr.senselen = SENSEBUFLEN;
++
++	if (ioctl(fd, SCIOCCOMMAND, &scr) == -1 || scr.retsts != SCCMD_OK)
++		return 0;
++	return num;
++}
+ #endif
+ 
+ #ifdef XMMS_CDROM_BSD_NETBSD /* NetBSD, OpenBSD */
