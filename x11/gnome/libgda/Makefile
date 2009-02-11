@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/02/05 09:50:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/02/11 15:20:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,23 +10,22 @@ COMMENT-pgsql=		PostreSQL backend for libgda
 COMMENT-tds=		FreeTDS backend for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		3.1.5
+GNOME_VERSION=		3.0.4
 
-PKGNAME-main=		${DISTNAME}p4
-PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}p3
-PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}p3
-PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}p3
-PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}p3
-PKGNAME-tds=		libgda-tds-${GNOME_VERSION}p1
+PKGNAME-main=		${DISTNAME}v0
+PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}v0
+PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}v0
+PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}v0
+PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}v0
+PKGNAME-tds=		libgda-tds-${GNOME_VERSION}v0
 
 CATEGORIES=		databases
 
 GDA_MAJOR=		3.0
 
-SHARED_LIBS +=	gdasql-3.0           1.0      # .3.0
-SHARED_LIBS +=	gda-3.0              1.0      # .3.0
-SHARED_LIBS +=	gda-report-3.0       1.0      # .3.0
-SHARED_LIBS +=  gda-xslt-3.0         0.0      # .0.0
+SHARED_LIBS +=	gdasql-3.0           2.0      # .3.0
+SHARED_LIBS +=	gda-3.0              2.0      # .3.0
+SHARED_LIBS +=	gda-report-3.0       2.0      # .3.0
 
 HOMEPAGE=		http://www.gnome-db.org/
 
@@ -37,11 +36,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	crypto m rpcsvc ssl stdc++ util z ORBit-2 dbus-1 \
-		dbus-glib-1 fam gconf-2 glib-2.0 gmodule-2.0 \
-		gobject-2.0 gpg-error gthread-2.0 pcre xml2
+WANTLIB=	m pcre rpcsvc stdc++ z
 
-WANTLIB-main=	${WANTLIB} c curses pthread readline
+WANTLIB-main=	${WANTLIB} c pthread
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -54,12 +51,12 @@ FLAVOR?=
 MULTI_PACKAGES=		-main
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			xslt::textproc/libxslt \
 			db:db-4.*:databases/db/v4 \
-			sqlite3::databases/sqlite
+			sqlite3::databases/sqlite3
 
-LIB_DEPENDS=		gcrypt::security/libgcrypt \
-			gnomevfs-2::x11/gnome/vfs2
+LIB_DEPENDS=		fam::sysutils/fam \
+			glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
+			xml2.>=10::textproc/libxml
 
 REGRESS_DEPENDS=	::devel/check
 
@@ -79,14 +76,11 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4/" \
 
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 
-# XXX configuration checks for freetds fail in mysterious ways
-CONFIGURE_ARGS+=	--without-tds
-
 .if ${FLAVOR:L:Mno_ldap}
 CONFIGURE_ARGS+=	--without-ldap
 .else
 MULTI_PACKAGES+=	-ldap
-WANTLIB-ldap=		${WANTLIB} asn1 com_err db gssapi krb5 sasl2 sqlite3
+WANTLIB-ldap=		${WANTLIB} asn1 com_err crypto gssapi krb5 sasl2 ssl
 LIB_DEPENDS-ldap=	${LIB_DEPENDS} \
 			gda-3.0,gdasql-3.0::x11/gnome/libgda \
 			lber.>=9,ldap::databases/openldap
@@ -97,10 +91,10 @@ CONFIGURE_ARGS+=	--with-ldap="${LOCALBASE}"
 CONFIGURE_ARGS+=	--without-mdb
 .else
 MULTI_PACKAGES+=	-mdb
-WANTLIB-mdb=		${WANTLIB} db sqlite3
+WANTLIB-mdb=		${WANTLIB}
 LIB_DEPENDS-mdb=	${LIB_DEPENDS} \
 			gda-3.0,gdasql-3.0::x11/gnome/libgda \
-			mdb.>=1::databases/mdbtools/snapshot
+			mdb.>=1,mdbsql::databases/mdbtools/snapshot
 CONFIGURE_ARGS+=	--with-mdb="${LOCALBASE}"
 .endif
 
@@ -108,7 +102,7 @@ CONFIGURE_ARGS+=	--with-mdb="${LOCALBASE}"
 CONFIGURE_ARGS+=	--without-mysql
 .else
 MULTI_PACKAGES+=	-mysql
-WANTLIB-mysql=		${WANTLIB} db sqlite3
+WANTLIB-mysql=		${WANTLIB} crypto ssl
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
 			gda-3.0,gdasql-3.0::x11/gnome/libgda \
 			mysqlclient::databases/mysql
@@ -119,7 +113,7 @@ CONFIGURE_ARGS+=	--with-mysql="${LOCALBASE}"
 CONFIGURE_ARGS+=	--without-postgresql
 .else
 MULTI_PACKAGES+=	-pgsql
-WANTLIB-pgsql=		${WANTLIB} db sqlite3
+WANTLIB-pgsql=		${WANTLIB}
 LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
 			gda-3.0,gdasql-3.0::x11/gnome/libgda \
 			pq::databases/postgresql
@@ -130,10 +124,10 @@ CONFIGURE_ARGS+=	--with-postgres="${LOCALBASE}"
 CONFIGURE_ARGS+=	--without-tds
 .else
 MULTI_PACKAGES+=	-tds
-WANTLIB-tds=		${WANTLIB} db sqlite3
-LIB_DEPENDS-tds=        ${LIB_DEPENDS} \
-                        gda-3.0,gdasql-3.0::x11/gnome/libgda \
-                        tds::databases/freetds
+WANTLIB-tds=		${WANTLIB}
+LIB_DEPENDS-tds=	${LIB_DEPENDS} \
+			gda-3.0,gdasql-3.0::x11/gnome/libgda \
+			tds::databases/freetds
 CONFIGURE_ARGS+=	--with-tds="${LOCALBASE}" 
 .endif
 

@@ -1,23 +1,30 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/01/31 22:13:37 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/02/11 15:20:20 ajacoutot Exp $
 @conflict libgda-db4-*
 @bin bin/gda-author-dict-file-${GDA_MAJOR}
-@bin bin/gda-bdb-test
 @bin bin/gda-diagnose-${GDA_MAJOR}
 @bin bin/gda-inspect-dict-file-${GDA_MAJOR}
 @bin bin/gda-list-config-${GDA_MAJOR}
-@bin bin/gda-list-server-op-${GDA_MAJOR}
-@bin bin/gda-sql-${GDA_MAJOR}
+@bin bin/gda-report-test-${GDA_MAJOR}
+@bin bin/gda-run-${GDA_MAJOR}
 @bin bin/gda-test-connection-${GDA_MAJOR}
 include/libgda-${GDA_MAJOR}/
 include/libgda-${GDA_MAJOR}/libgda/
 include/libgda-${GDA_MAJOR}/libgda-report/
-include/libgda-${GDA_MAJOR}/libgda-report/gda-report-docbook-document.h
 include/libgda-${GDA_MAJOR}/libgda-report/gda-report-document.h
-include/libgda-${GDA_MAJOR}/libgda-report/gda-report-engine.h
-include/libgda-${GDA_MAJOR}/libgda-report/gda-report-rml-document.h
-include/libgda-${GDA_MAJOR}/libgda-report/libgda-report.h
-include/libgda-${GDA_MAJOR}/libgda-xslt/
-include/libgda-${GDA_MAJOR}/libgda-xslt/libgda-xslt.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report-item-detail.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report-item-label.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report-item-pagefooter.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report-item-pageheader.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report-item-repfield.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report-item-report.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report-item-reportfooter.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report-item-reportheader.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report-item-sqlquery.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report-item.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report-result.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report-types.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report-valid.h
+include/libgda-${GDA_MAJOR}/libgda-report/gda-report.h
 include/libgda-${GDA_MAJOR}/libgda/gda-blob-op.h
 include/libgda-${GDA_MAJOR}/libgda/gda-client.h
 include/libgda-${GDA_MAJOR}/libgda/gda-column-index.h
@@ -30,8 +37,6 @@ include/libgda-${GDA_MAJOR}/libgda/gda-connection.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-access-wrapper.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-handler.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-model-array.h
-include/libgda-${GDA_MAJOR}/libgda/gda-data-model-bdb.h
-include/libgda-${GDA_MAJOR}/libgda/gda-data-model-dir.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-model-extra.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-model-filter-sql.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-model-hash.h
@@ -109,20 +114,10 @@ include/libgda-${GDA_MAJOR}/libgda/handlers/gda-handler-string.h
 include/libgda-${GDA_MAJOR}/libgda/handlers/gda-handler-time.h
 include/libgda-${GDA_MAJOR}/libgda/handlers/gda-handler-type.h
 include/libgda-${GDA_MAJOR}/libgda/libgda.h
-include/libgda-${GDA_MAJOR}/libgda/sqlite/
-include/libgda-${GDA_MAJOR}/libgda/sqlite/gda-sqlite-provider.h
 include/libgda-${GDA_MAJOR}/libsql/
 include/libgda-${GDA_MAJOR}/libsql/sql_parser.h
 include/libgda-${GDA_MAJOR}/sql-delimiter/
 include/libgda-${GDA_MAJOR}/sql-delimiter/gda-sql-delimiter.h
-include/libgda-${GDA_MAJOR}/virtual/
-include/libgda-${GDA_MAJOR}/virtual/gda-vconnection-data-model.h
-include/libgda-${GDA_MAJOR}/virtual/gda-vconnection-hub.h
-include/libgda-${GDA_MAJOR}/virtual/gda-virtual-connection.h
-include/libgda-${GDA_MAJOR}/virtual/gda-virtual-provider.h
-include/libgda-${GDA_MAJOR}/virtual/gda-vprovider-data-model.h
-include/libgda-${GDA_MAJOR}/virtual/gda-vprovider-hub.h
-include/libgda-${GDA_MAJOR}/virtual/libgda-virtual.h
 lib/libgda-${GDA_MAJOR}/
 lib/libgda-${GDA_MAJOR}.la
 @lib lib/libgda-${GDA_MAJOR}.so.${LIBgda-3.0_VERSION}
@@ -133,15 +128,11 @@ lib/libgda-${GDA_MAJOR}/providers/libgda-sqlite.la
 lib/libgda-${GDA_MAJOR}/providers/libgda-sqlite.so
 lib/libgda-report-${GDA_MAJOR}.la
 @lib lib/libgda-report-${GDA_MAJOR}.so.${LIBgda-report-3.0_VERSION}
-lib/libgda-xslt-${GDA_MAJOR}.la
-@lib lib/libgda-xslt-${GDA_MAJOR}.so.${LIBgda-xslt-3.0_VERSION}
 lib/libgdasql-${GDA_MAJOR}.la
 @lib lib/libgdasql-${GDA_MAJOR}.so.${LIBgdasql-3.0_VERSION}
 lib/pkgconfig/libgda-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-bdb-${GDA_MAJOR}.pc
-lib/pkgconfig/libgda-report-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-sqlite-${GDA_MAJOR}.pc
-lib/pkgconfig/libgda-xslt-${GDA_MAJOR}.pc
 share/examples/libgda/
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/
 share/examples/libgda/config
@@ -159,8 +150,6 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaConnectionEvent.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataAccessWrapper.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModel.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelArray.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelBdb.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelDir.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelFilterSQL.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelHash.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelImport.html
@@ -205,32 +194,21 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaQueryObject.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaQueryTarget.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaReferer.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaRenderer.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaReportDocbookDocument.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaReportDocument.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaReportEngine.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaReportRmlDocument.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaServerOperation.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaServerProvider.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaThreader.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaTransactionStatus.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaVconnectionDataModel.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaVconnectionHub.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaVirtualConnection.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaVirtualProvider.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaVproviderDataModel.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaVproviderHub.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaXmlStorage.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/architecture.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch05s03.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch06s02.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch06s03.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch08.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch13.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch14.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch15.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch16.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch17.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch18.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch19.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch28.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/compiling.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/connection.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/connections.html
@@ -238,7 +216,6 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/create-blob.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/data-model.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/data_conv.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/data_models.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ddl_example.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/fdl-section1.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/fdl-section10.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/fdl-section2.html
@@ -274,11 +251,24 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-Gda-Value.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaCommand.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaDataModelIndex.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaDictExtend.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaReportDocument.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaReportItem.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaReportItemDetail.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaReportItemLabel.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaReportItemPageFooter.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaReportItemPageHeader.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaReportItemRepField.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaReportItemReport.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaReportItemReportFooter.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaReportItemReportHeader.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaReportItemSqlQuery.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaReportResult.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-GdaReportValid.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-Libgda-Initialization.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-Logging.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-Quark-lists.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-Utility-functions.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-list-server-op.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-30-gda-report-types.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-provider-begin-transaction.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-provider-change-database.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-provider-class.html
@@ -302,8 +292,9 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-provider-string-to-handler.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-provider-supports-feature.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-provider-supports-operation.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-reports-introduction.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-sql.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-reports.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-tools-author-dict.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-tools-diagnose.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-tools-inspect-dict.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-tools-introduction.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-tools-list-config.html
@@ -314,10 +305,10 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/limitations_others.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/limitations_postgres.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/limitations_sqlite.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/main_example.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/manage-gdavalue.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/managing-errors.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/migration.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/misc.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/other_examples.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/part_begin.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/part_libgda-reports.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/part_libgda_api.html
@@ -333,7 +324,6 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/right.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/style.css
 share/gtk-doc/html/libgda-${GDA_MAJOR}/transactions.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/up.png
-share/gtk-doc/html/libgda-${GDA_MAJOR}/virtual_connection.html
 share/libgda-${GDA_MAJOR}/
 share/libgda-${GDA_MAJOR}/bdb_specs_dsn.xml
 share/libgda-${GDA_MAJOR}/dtd/
@@ -350,6 +340,11 @@ share/libgda-${GDA_MAJOR}/sqlite_specs_drop_index.xml
 share/libgda-${GDA_MAJOR}/sqlite_specs_drop_table.xml
 share/libgda-${GDA_MAJOR}/sqlite_specs_dsn.xml
 share/libgda-${GDA_MAJOR}/sqlite_specs_rename_table.xml
+share/libgda-${GDA_MAJOR}/xml/
+share/libgda-${GDA_MAJOR}/xml/gda-report-result.dtd
+share/libgda-${GDA_MAJOR}/xml/gda-report.dtd
+share/libgda-${GDA_MAJOR}/xml/gda-xml-query.dtd
+share/libgda-${GDA_MAJOR}/xml/gda-xml-query.xsl
 share/locale/ar/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/az/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ca/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
@@ -373,14 +368,11 @@ share/locale/it/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ja/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ko/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/lt/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/mk/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ml/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ms/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/nb/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ne/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/nl/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/oc/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/pa/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/pl/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/pt/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/pt_BR/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
@@ -390,6 +382,8 @@ share/locale/sk/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sl/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sq/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sr/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sv/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/tr/LC_MESSAGES/libgda-${GDA_MAJOR}.mo

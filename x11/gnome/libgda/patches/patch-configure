@@ -1,96 +1,38 @@
-$OpenBSD: patch-configure,v 1.5 2009/01/31 22:13:37 jasper Exp $
---- configure.orig	Tue Jul 22 16:00:07 2008
-+++ configure	Sat Jan 31 22:26:54 2009
-@@ -19951,7 +19951,7 @@ fi
+$OpenBSD: patch-configure,v 1.6 2009/02/11 15:20:19 ajacoutot Exp $
+--- configure.orig	Thu Apr 10 12:38:54 2008
++++ configure	Tue Feb 10 16:34:10 2009
+@@ -23474,7 +23474,6 @@ fi
  
  
  case $host_cpu in
--x86_64* | sparc64* | s390x* | ppc64* | powerpc64* ) lib="lib64";;
-+s390x* | ppc64* | powerpc64* ) lib="lib64";;
+-x86_64* | sparc64*) lib="lib64";;
  *) lib="lib";;
  esac
  
-@@ -20611,7 +20611,7 @@ then
- $as_echo_n "checking for freetds files... " >&6; }
+@@ -24123,7 +24122,7 @@ then
+ echo $ECHO_N "checking for freetds files... $ECHO_C" >&6; }
  	for d in $dir /usr/local/freetds /usr /opt/freetds /opt/packages/freetds /opt/freetds-0.50
  	do
 -		if test -f "$d/include/tds.h" -a -e "$d/$lib/libtds$libext" -a -f "$d/include/tdsver.h"
 +		if [ -f "$d/include/tds.h" ] && [ -f "$d/include/tdsver.h" ]
  		then
- 			{ $as_echo "$as_me:$LINENO: result: found freetds in $d" >&5
- $as_echo "found freetds in $d" >&6; }
-@@ -20634,7 +20634,7 @@ $as_echo "$as_me: WARNING: tds backend not used" >&2;}
+ 			{ echo "$as_me:$LINENO: result: found freetds in $d" >&5
+ echo "${ECHO_T}found freetds in $d" >&6; }
+@@ -24146,7 +24145,7 @@ echo "$as_me: WARNING: tds backend not used" >&2;}
  	else
- 		{ $as_echo "$as_me:$LINENO: checking for freetds version" >&5
- $as_echo_n "checking for freetds version... " >&6; }
+ 		{ echo "$as_me:$LINENO: checking for freetds version" >&5
+ echo $ECHO_N "checking for freetds version... $ECHO_C" >&6; }
 -		freetdsvercheck="`grep \"^#define \(VERSION_NO \|TDS_VERSION_NO \)\" $freetds_incdir/tdsver.h|sed 's|^.*".*v\(.*\)"|\1|'`"
 +		freetdsvercheck="`grep "#define TDS_VERSION_NO" $freetds_incdir/tdsver.h|sed 's|^.*".*v\(.*\)"|\1|'`"
  		if test "x$freetdsvercheck" = "x"
  		then
- 			{ $as_echo "$as_me:$LINENO: WARNING: freetds version check failed - backend not used" >&5
-@@ -21560,9 +21560,9 @@ fi
- $as_echo "Installed SQLite was not compiled with the SQLITE_ENABLE_COLUMN_METADATA, using embedded SQLite" >&6; }
-                 	have_sqlite=no
-         	else
--			{ $as_echo "$as_me:$LINENO: checking for sqlite3CreateFunc in -lsqlite3" >&5
--$as_echo_n "checking for sqlite3CreateFunc in -lsqlite3... " >&6; }
--if test "${ac_cv_lib_sqlite3_sqlite3CreateFunc+set}" = set; then
-+			{ $as_echo "$as_me:$LINENO: checking for sqlite3_create_function in -lsqlite3" >&5
-+$as_echo_n "checking for sqlite3_create_function in -lsqlite3... " >&6; }
-+if test "${ac_cv_lib_sqlite3_sqlite3_create_function+set}" = set; then
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
-@@ -21580,11 +21580,11 @@ cat >>conftest.$ac_ext <<_ACEOF
- #ifdef __cplusplus
- extern "C"
- #endif
--char sqlite3CreateFunc ();
-+char sqlite3_create_function ();
- int
- main ()
- {
--return sqlite3CreateFunc ();
-+return sqlite3_create_function ();
-   ;
-   return 0;
- }
-@@ -21610,12 +21610,12 @@ $as_echo "$ac_try_echo") >&5
- 	 test "$cross_compiling" = yes ||
- 	 $as_test_x conftest$ac_exeext
-        }; then
--  ac_cv_lib_sqlite3_sqlite3CreateFunc=yes
-+  ac_cv_lib_sqlite3_sqlite3_create_function=yes
- else
-   $as_echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
- 
--	ac_cv_lib_sqlite3_sqlite3CreateFunc=no
-+	ac_cv_lib_sqlite3_sqlite3_create_function=no
- fi
- 
- rm -rf conftest.dSYM
-@@ -21623,9 +21623,9 @@ rm -f core conftest.err conftest.$ac_objext conftest_i
-       conftest$ac_exeext conftest.$ac_ext
- LIBS=$ac_check_lib_save_LIBS
- fi
--{ $as_echo "$as_me:$LINENO: result: $ac_cv_lib_sqlite3_sqlite3CreateFunc" >&5
--$as_echo "$ac_cv_lib_sqlite3_sqlite3CreateFunc" >&6; }
--if test $ac_cv_lib_sqlite3_sqlite3CreateFunc = yes; then
-+{ $as_echo "$as_me:$LINENO: result: $ac_cv_lib_sqlite3_sqlite3_create_function" >&5
-+$as_echo "$ac_cv_lib_sqlite3_sqlite3_create_function" >&6; }
-+if test $ac_cv_lib_sqlite3_sqlite3_create_function = yes; then
-   sqlite3_api=1
- else
-   sqlite3_api=0
-@@ -21633,8 +21633,8 @@ fi
- 
- 			if test $sqlite3_api = 0
- 			then
--				{ $as_echo "$as_me:$LINENO: result: Could not find the sqlite3CreateFunc symbol in installed SQLite library, using embedded SQLite" >&5
--$as_echo "Could not find the sqlite3CreateFunc symbol in installed SQLite library, using embedded SQLite" >&6; }
-+				{ $as_echo "$as_me:$LINENO: result: Could not find the sqlite3_create_function symbol in installed SQLite library, using embedded SQLite" >&5
-+$as_echo "Could not find the sqlite3_create_function symbol in installed SQLite library, using embedded SQLite" >&6; }
-                 		have_sqlite=no
- 			else
-                 		{ $as_echo "$as_me:$LINENO: result: Using this version of SQLite" >&5
+ 			{ echo "$as_me:$LINENO: WARNING: freetds version check failed - backend not used" >&5
+@@ -24970,7 +24969,7 @@ then
+         microvers=`sqlite3 -version | cut -d '.' -f 3`
+         { echo "$as_me:$LINENO: checking for sqlite version" >&5
+ echo $ECHO_N "checking for sqlite version... $ECHO_C" >&6; }
+-        if test $microvers -lt 100
++        if test $microvers -lt 10
+         then
+                 { echo "$as_me:$LINENO: result: Version $realvers of SQLite does not implement required pragmas" >&5
+ echo "${ECHO_T}Version $realvers of SQLite does not implement required pragmas" >&6; }
