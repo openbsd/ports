@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_mk,v 1.4 2009/01/30 01:33:00 sthen Exp $
---- config.mk.orig	Mon Jan 26 18:26:24 2009
-+++ config.mk	Tue Jan 27 01:11:37 2009
-@@ -3,15 +3,15 @@ VERSION = 0.5
+$OpenBSD: patch-config_mk,v 1.5 2009/02/11 20:49:35 sthen Exp $
+--- config.mk.orig	Sun Feb  8 21:52:37 2009
++++ config.mk	Mon Feb  9 10:43:05 2009
+@@ -3,15 +3,15 @@ VERSION = 0.5.1
  
  # Customize below to fit your system
  
@@ -11,9 +11,11 @@ $OpenBSD: patch-config_mk,v 1.4 2009/01/30 01:33:00 sthen Exp $
 +MANPREFIX = ${PREFIX}/man
  
 -INCS = -I. -I/usr/include -I/usr/local/include 
+-LIBS = -lc -lutil -lncursesw
+-#LIBS = -lc -lutil -lncurses
 +INCS = -I. -I/usr/include
- LIBS = -lc -lutil -lncurses
- LIBS_UTF8 = -lc -lutil -lncursesw
++#LIBS = -lc -lutil -lncursesw
++LIBS = -lc -lutil -lncurses
  
 -CFLAGS += -std=c99 -Os ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG
 -LDFLAGS += -L/usr/lib -L/usr/local/lib ${LIBS}
