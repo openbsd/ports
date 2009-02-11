@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2009/02/11 15:33:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2009/02/11 15:47:50 jasper Exp $
 
 COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
 GNOME_VERSION=		0.22
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS +=	devhelp-1             1.0        # .0.0
 CATEGORIES=		textproc
 

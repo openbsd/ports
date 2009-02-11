@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/02/11 15:33:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/11 15:47:51 jasper Exp $
 
 COMMENT=	nautilus Python bindings
 
 GNOME_PROJECT=	nautilus-python
 GNOME_VERSION=	0.5.1
-PKGNAME=	py-nautilus-${GNOME_VERSION}p1
+PKGNAME=	py-nautilus-${GNOME_VERSION}p2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

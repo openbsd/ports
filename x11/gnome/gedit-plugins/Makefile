@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/02/11 15:33:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/02/11 15:47:50 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		2.22.5
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		editors
 
 HOMEPAGE=		http://live.gnome.org/Gedit/Plugins

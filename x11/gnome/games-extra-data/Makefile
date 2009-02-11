@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/02/11 15:33:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/02/11 15:47:50 jasper Exp $
 
 COMMENT=		extra themes and artwork for GNOME games
 
 GNOME_PROJECT=		gnome-games-extra-data
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://live.gnome.org/GnomeGames/
 

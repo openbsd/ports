@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/02/11 15:33:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/02/11 15:47:49 jasper Exp $
 
 COMMENT=	GNOME Build Framework (GBF)
 
 GNOME_PROJECT=	gnome-build
 GNOME_VERSION=	2.24.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 SHARED_LIBS +=  gbf-1                1.0      # .2.0
 SHARED_LIBS +=  gbf-widgets-1        1.0      # .2.0

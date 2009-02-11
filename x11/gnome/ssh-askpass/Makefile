@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/02/11 15:33:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/11 15:47:51 jasper Exp $
 
 COMMENT=	simple GNOME SSH passphrase grabber
 
 DISTNAME=	openssh-5.0p1
-PKGNAME=	gnome-ssh-askpass-5.0p1
+PKGNAME=	gnome-ssh-askpass-5.0p2
 CATEGORIES=	x11
 
 # BSD

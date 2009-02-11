@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/02/11 15:33:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/02/11 15:47:51 jasper Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
 GNOME_PROJECT=	gnome-python-extras
 GNOME_VERSION=	2.19.1
-PKGNAME=	py-gnome-extras-${VERSION}p6
+PKGNAME=	py-gnome-extras-${VERSION}p7
 
 HOMEPAGE=	http://www.pygtk.org/
 

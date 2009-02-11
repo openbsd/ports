@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/02/11 15:33:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/02/11 15:47:50 jasper Exp $
 
 COMMENT=		graphical predictive text input system
 
 GNOME_PROJECT=		dasher
 GNOME_VERSION=		4.9.0
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 CATEGORIES=		x11
 

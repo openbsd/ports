@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/02/11 15:33:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2009/02/11 15:47:51 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,16 +9,14 @@ GNOME_PROJECT=	gnome-scan
 GNOME_VERSION=	0.6.1
 CATEGORIES=	graphics
 
-PKGNAME-main=	${DISTNAME}p0
-PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}p0
+PKGNAME-main=	${DISTNAME}p1
+PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}p1
 
 SHARED_LIBS=	gnomescan	0.0 # .0.0
 
 EXTRACT_SUFX=	.tar.gz
 
 HOMEPAGE=	http://www.gnome.org/projects/gnome-scan/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
