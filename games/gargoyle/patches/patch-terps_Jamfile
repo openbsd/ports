@@ -1,0 +1,12 @@
+$OpenBSD: patch-terps_Jamfile,v 1.1.1.1 2009/02/11 13:30:44 sthen Exp $
+--- terps/Jamfile.orig	Wed Dec 10 11:08:14 2008
++++ terps/Jamfile	Wed Jan 21 14:29:26 2009
+@@ -156,7 +156,7 @@ if $(MAKE_GEAS) = yes
+         istring.cc readfile.cc
+         ;
+ 
+-    LINK on geas$(SUFEXE) = $(C++) ;
++    LINK on geas$(SUFEXE) = $(C++) -lstdc++ ;
+ 
+     APPS += geas ;
+ }

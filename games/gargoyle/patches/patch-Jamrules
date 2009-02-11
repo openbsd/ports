@@ -1,0 +1,47 @@
+$OpenBSD: patch-Jamrules,v 1.1.1.1 2009/02/11 13:30:44 sthen Exp $
+--- Jamrules.orig	Mon Dec 22 15:19:34 2008
++++ Jamrules	Wed Jan 21 14:29:25 2009
+@@ -7,8 +7,8 @@ BUILD ?= RELEASE ;
+ USESDL = yes ;
+ # USEFMOD = yes ;
+ 
+-CC      = gcc ;
+-C++     = g++ ;
++CC      ?= gcc ;
++C++     ?= g++ ;
+ 
+ if $(CROSS)
+ {
+@@ -57,6 +57,23 @@ switch $(OS)
+ 	    SHRLINKLIBS += -lSDL_mixer -lSDL -lsmpeg -lvorbisfile ;
+ 	}
+ 
++    case OPENBSD :
++        Echo "OS is OpenBSD (gtk+)" ;
++        SUFDLL  = .so.$(LIBgarglk_VERSION) ;
++        PKGCONFIG = "pkg-config freetype2 gtk+-2.0 gdk-x11-2.0 gobject-2.0" ;
++        #PKGCONFIG = "pkg-config freetype2 gtk+" ;
++        SHELLHEADER = "#!/bin/sh" ;		
++        GARGLKCCFLAGS = "`$(PKGCONFIG) --cflags`" -fPIC ;
++        SHRLINKLIBS = "`$(PKGCONFIG) --libs`" -ljpeg -lpng -lz ;
++        LINKLIBS = -L$(PREFIX)/lib -lz ;
++
++	if $(USESDL)
++	{
++	    GARGLKCCFLAGS += -I$(PREFIX)/include/SDL ;
++	    LINKLIBS += -pthread ;
++	    SHRLINKLIBS += -pthread -lSDL_mixer -lSDL_sound -lSDL -lsmpeg -lvorbisfile ;
++	}
++
+     case MACOSX :
+         Echo "OS is MACOSX (gtk+)" ;
+         SUFDLL = .dylib ;
+@@ -83,7 +100,7 @@ switch $(BUILD)
+ 
+     case RELEASE :
+         Echo "BUILD is RELEASE" ;
+-        OPTIM = -O2 ;
++        OPTIM = $(CFLAGS) ;
+ 
+     case TURBO :
+         Echo "BUILD is TURBO" ;

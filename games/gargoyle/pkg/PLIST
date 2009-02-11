@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/11 13:30:44 sthen Exp $
+bin/gargoyle
+lib/libgarglk.so
+libexec/gargoyle/
+@bin libexec/gargoyle/advsys
+@bin libexec/gargoyle/agility
+@bin libexec/gargoyle/alan2
+@bin libexec/gargoyle/alan3
+@bin libexec/gargoyle/frotz
+@bin libexec/gargoyle/geas
+@bin libexec/gargoyle/git
+@bin libexec/gargoyle/glulxe
+@bin libexec/gargoyle/hugo
+@bin libexec/gargoyle/jacl
+@bin libexec/gargoyle/level9
+@bin libexec/gargoyle/magnetic
+@bin libexec/gargoyle/nitfol
+@bin libexec/gargoyle/scare
+@bin libexec/gargoyle/tadsr
+share/doc/gargoyle/
+share/doc/gargoyle/CharterBT.txt
+share/doc/gargoyle/GNU General Public License.txt
+share/doc/gargoyle/HUGO License.txt
+share/doc/gargoyle/LUXI License.txt
+share/doc/gargoyle/License.txt
+share/doc/gargoyle/LuxiMono.txt
+share/doc/gargoyle/TADS License.txt
+share/examples/gargoyle/
+share/examples/gargoyle/garglk.ini
+@sample ${SYSCONFDIR/garglk.ini

@@ -1,0 +1,28 @@
+$OpenBSD: patch-tads_Jamfile,v 1.1.1.1 2009/02/11 13:30:44 sthen Exp $
+--- tads/Jamfile.orig	Mon Dec 22 15:04:02 2008
++++ tads/Jamfile	Wed Jan 21 14:29:25 2009
+@@ -26,6 +26,15 @@ if $(OS) = LINUX
+         ;
+ }
+ 
++if $(OS) = OPENBSD
++{
++    SubDirCcFlags
++        -DOS_USHORT_DEFINED
++        -DOS_UINT_DEFINED
++        -DOS_ULONG_DEFINED
++        ;
++}
++
+ SUBDIRC++FLAGS = $(SUBDIRCCFLAGS) ;
+ 
+ SEARCH_SOURCE = [ FDirName $(SUBDIR) tads2 ] ;
+@@ -74,7 +83,7 @@ Main tadsr :
+ 
+ LinkLibraries tadsr : libtads2 libtads3 ;
+ 
+-LINK on tadsr$(SUFEXE) = $(C++) ;
++LINK on tadsr$(SUFEXE) = $(C++) -lstdc++ ;
+ 
+ APPS += tadsr ;
+ 
