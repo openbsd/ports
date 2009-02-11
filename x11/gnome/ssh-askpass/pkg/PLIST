@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/02 14:07:46 bernd Exp $
-bin/gnome-ssh-askpass2
+@comment $OpenBSD: PLIST,v 1.2 2009/02/11 15:58:36 jasper Exp $
+@bin bin/gnome-ssh-askpass2
