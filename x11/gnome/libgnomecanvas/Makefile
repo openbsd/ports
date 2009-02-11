@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2009/02/11 15:47:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2009/02/11 15:50:30 jasper Exp $
 
 COMMENT=		graphics library for GNOME
 
@@ -8,7 +8,7 @@ SHARED_LIBS +=	gnomecanvas-2        2001.0   # .2001.0
 CATEGORIES=		x11
 PKGNAME=		${DISTNAME}p6
 
-# LGPL
+# LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
