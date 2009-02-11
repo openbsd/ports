@@ -1,0 +1,12 @@
+$OpenBSD: patch-proxy_tcl,v 1.1 2009/02/11 20:22:45 pea Exp $
+--- proxy.tcl.orig	Tue Jan 20 16:00:40 2009
++++ proxy.tcl	Tue Jan 20 16:00:50 2009
+@@ -9,7 +9,7 @@
+ ::Version::setSubversionId {$Id: patch-proxy_tcl,v 1.1 2009/02/11 20:22:45 pea Exp $}
+ 
+ package provide Proxy 0.1
+-package require http
++package require -exact http 2.4.4
+ 
+ # This should be converted to a proper package, to use with package require
+ source socks.tcl	;# SOCKS5 proxy support

@@ -1,0 +1,114 @@
+$OpenBSD: patch-utils_TkCximage_src_TkCximage_cpp,v 1.1 2009/02/11 20:22:45 pea Exp $
+--- utils/TkCximage/src/TkCximage.cpp.orig	Fri Jan  4 17:08:26 2008
++++ utils/TkCximage/src/TkCximage.cpp	Thu Jan 22 11:17:16 2009
+@@ -13,6 +13,64 @@
+ char currenttime[30];
+ FILE * logfile;
+ 
++#define AVAILABLE_FORMATS 6
++      Tk_PhotoImageFormat cximageFormats[] = {
++      {
++       "cximage",
++       (Tk_ImageFileMatchProc *) ChanMatch,
++       (Tk_ImageStringMatchProc *) ObjMatch,
++       (Tk_ImageFileReadProc *) ChanRead,
++       (Tk_ImageStringReadProc *) ObjRead,
++       (Tk_ImageFileWriteProc *) ChanWrite,
++       (Tk_ImageStringWriteProc *) StringWrite
++      },
++      {
++       "cxgif",
++       (Tk_ImageFileMatchProc *) ChanMatch,
++       (Tk_ImageStringMatchProc *) ObjMatch,
++       (Tk_ImageFileReadProc *) ChanRead,
++       (Tk_ImageStringReadProc *) ObjRead,
++       (Tk_ImageFileWriteProc *) ChanWrite,
++       (Tk_ImageStringWriteProc *) StringWrite
++      },
++      {
++	"cxpng",
++	(Tk_ImageFileMatchProc *) ChanMatch,
++	(Tk_ImageStringMatchProc *) ObjMatch,
++	(Tk_ImageFileReadProc *) ChanRead,
++	(Tk_ImageStringReadProc *) ObjRead,
++	(Tk_ImageFileWriteProc *) ChanWrite,
++      (Tk_ImageStringWriteProc *) StringWrite
++      },
++      {
++      "cxjpg",
++      (Tk_ImageFileMatchProc *) ChanMatch,
++      (Tk_ImageStringMatchProc *) ObjMatch,
++      (Tk_ImageFileReadProc *) ChanRead,
++      (Tk_ImageStringReadProc *) ObjRead,
++      (Tk_ImageFileWriteProc *) ChanWrite,
++      (Tk_ImageStringWriteProc *) StringWrite
++      },
++      {
++       "cxtga",
++      (Tk_ImageFileMatchProc *) ChanMatch,
++      (Tk_ImageStringMatchProc *) ObjMatch,
++      (Tk_ImageFileReadProc *) ChanRead,
++      (Tk_ImageStringReadProc *) ObjRead,
++      (Tk_ImageFileWriteProc *) ChanWrite,
++     (Tk_ImageStringWriteProc *) StringWrite
++     },
++     {
++      "cxbmp",
++      (Tk_ImageFileMatchProc *) ChanMatch,
++      (Tk_ImageStringMatchProc *) ObjMatch,
++      (Tk_ImageFileReadProc *) ChanRead,
++      (Tk_ImageStringReadProc *) ObjRead,
++      (Tk_ImageFileWriteProc *) ChanWrite,
++      (Tk_ImageStringWriteProc *) StringWrite
++     }
++};
++
+ int RGB2BGR(Tk_PhotoImageBlock *data, BYTE * pixelPtr) {
+   int i;
+   int size = data->height * data->width * data->pixelSize;
+@@ -254,10 +312,6 @@ int Tkcximage_Init (Tcl_Interp *interp ) {
+   INITLOGS(); //
+   LOG("---------------------------------"); //
+ 
+-
+-  int AvailableFromats = 6;
+-  const char *KnownFormats[] = {"cximage", "cxgif", "cxpng", "cxjpg", "cxtga", "cxbmp"};
+-
+   //Check Tcl version is 8.3 or higher
+   if (Tcl_InitStubs(interp, TCL_VERSION, 1) == NULL) {
+     return TCL_ERROR;
+@@ -271,16 +325,6 @@ int Tkcximage_Init (Tcl_Interp *interp ) {
+   }
+ 
+   LOG("Tk stub initialized"); //
+-
+-  Tk_PhotoImageFormat cximageFormats = {
+-    NULL,
+-    (Tk_ImageFileMatchProc *) ChanMatch,	
+-    (Tk_ImageStringMatchProc *) ObjMatch,	
+-    (Tk_ImageFileReadProc *) ChanRead,	
+-    (Tk_ImageStringReadProc *) ObjRead,	
+-    (Tk_ImageFileWriteProc *) ChanWrite,	
+-    (Tk_ImageStringWriteProc *) StringWrite
+-  };
+ 	
+   LOG("Creating commands"); //
+ 
+@@ -310,14 +354,9 @@ int Tkcximage_Init (Tcl_Interp *interp ) {
+ #endif
+ 
+   LOG("Adding format : "); //
+-  for (i = 0; i < AvailableFromats; i++) {
+-    delete cximageFormats.name;
+-    cximageFormats.name = new char[strlen(KnownFormats[i]) + 1];
+-    strcpy(cximageFormats.name, KnownFormats[i]);
+-    Tk_CreatePhotoImageFormat(&cximageFormats);
+-    APPENDLOG(cximageFormats.name); //
+-    delete cximageFormats.name;
+-    cximageFormats.name = NULL;
++  for (i = 0; i < AVAILABLE_FORMATS; i++) {
++     Tk_CreatePhotoImageFormat(&cximageFormats[i]);
++     APPENDLOG(cximageFormats[i].name);
+   }
+ 
+   // end of Initialisation

@@ -1,0 +1,12 @@
+$OpenBSD: patch-autoupdate_tcl,v 1.1 2009/02/11 20:22:45 pea Exp $
+--- autoupdate.tcl.orig	Tue Jan 20 16:00:03 2009
++++ autoupdate.tcl	Tue Jan 20 16:00:30 2009
+@@ -540,7 +540,7 @@ namespace eval ::autoupdate {
+ 	}
+ 
+ 	#///////////////////////////////////////////////////////////////////////
+-	package require http
++	package require -exact http 2.4.4
+ 
+ 	proc check_web_version { token } {
+ 		global version rcversion weburl
