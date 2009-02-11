@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/01 16:57:44 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/11 13:17:28 pea Exp $
 
 COMMENT =	Really Awesome New Cisco confIg Differ
 
-DISTNAME =	rancid-2.3.1
-PKGNAME = 	${DISTNAME}p1
+DISTNAME =	rancid-2.3.2a9
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.shrubbery.net/rancid/
@@ -16,7 +15,7 @@ PERMIT_DISTFILES_CDROM ="not for commercial use"
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	c
+WANTLIB =	c util
 
 MASTER_SITES =	ftp://ftp.shrubbery.net/pub/rancid/
 

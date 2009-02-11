@@ -1,18 +1,18 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
---- Makefile.in.orig	Sun Jun  6 06:12:08 2004
-+++ Makefile.in	Tue Dec  9 16:18:57 2008
-@@ -17,7 +17,7 @@
- srcdir = @srcdir@
- top_srcdir = @top_srcdir@
+$OpenBSD: patch-Makefile_in,v 1.2 2009/02/11 13:17:28 pea Exp $
+--- Makefile.in.orig	Wed Nov 12 08:54:12 2008
++++ Makefile.in	Tue Feb 10 14:13:21 2009
+@@ -15,7 +15,7 @@
+ @SET_MAKE@
+ 
  VPATH = @srcdir@
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/doc/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
- top_builddir = .
-@@ -176,7 +176,7 @@ sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+ am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+@@ -195,7 +195,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
 -pkgdata_DATA = COPYING CHANGES FAQ README README.lg UPGRADING cloginrc.sample
 +pkgdata_DATA = COPYING CHANGES FAQ README README.lg UPGRADING

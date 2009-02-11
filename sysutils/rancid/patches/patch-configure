@@ -1,28 +1,28 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
---- configure.orig	Tue Dec 16 15:51:41 2008
-+++ configure	Tue Dec 16 15:53:47 2008
-@@ -6091,7 +6091,7 @@ ac_cv_env_path=$ENV_PATH
+$OpenBSD: patch-configure,v 1.2 2009/02/11 13:17:28 pea Exp $
+--- configure.orig	Wed Nov 12 08:54:12 2008
++++ configure	Tue Feb 10 14:17:17 2009
+@@ -7259,7 +7259,7 @@ ac_config_files="$ac_config_files bin/nslogin bin/nsra
  
-                     ac_config_files="$ac_config_files bin/nslogin bin/nsrancid"
+ ac_config_files="$ac_config_files bin/nxrancid"
  
--          ac_config_files="$ac_config_files bin/prancid"
-+          ac_config_files="$ac_config_files bin/prancid bin/fnlogin"
+-ac_config_files="$ac_config_files bin/prancid"
++ac_config_files="$ac_config_files bin/prancid bin/fnlogin"
  
-                     ac_config_files="$ac_config_files bin/rivlogin bin/rivrancid"
+ ac_config_files="$ac_config_files bin/rivlogin bin/rivrancid"
  
-@@ -6700,6 +6700,7 @@ do
-   "bin/htrancid" ) CONFIG_FILES="$CONFIG_FILES bin/htrancid" ;;
-   "bin/mrancid" ) CONFIG_FILES="$CONFIG_FILES bin/mrancid" ;;
-   "bin/nlogin" ) CONFIG_FILES="$CONFIG_FILES bin/nlogin" ;;
-+  "bin/fnlogin" ) CONFIG_FILES="$CONFIG_FILES bin/fnlogin" ;;
-   "bin/nrancid" ) CONFIG_FILES="$CONFIG_FILES bin/nrancid" ;;
-   "bin/nslogin" ) CONFIG_FILES="$CONFIG_FILES bin/nslogin" ;;
-   "bin/nsrancid" ) CONFIG_FILES="$CONFIG_FILES bin/nsrancid" ;;
-@@ -7134,6 +7135,7 @@ s,@INSTALL@,$ac_INSTALL,;t t
-     bin/htrancid ) chmod a+x $ac_file ;;
-     bin/mrancid ) chmod a+x $ac_file ;;
-     bin/nlogin ) chmod a+x $ac_file ;;
-+    bin/fnlogin ) chmod a+x $ac_file ;;
-     bin/nrancid ) chmod a+x $ac_file ;;
-     bin/nslogin ) chmod a+x $ac_file ;;
-     bin/nsrancid ) chmod a+x $ac_file ;;
+@@ -7944,6 +7944,7 @@ do
+     "bin/mrvlogin") CONFIG_FILES="$CONFIG_FILES bin/mrvlogin" ;;
+     "bin/mrvrancid") CONFIG_FILES="$CONFIG_FILES bin/mrvrancid" ;;
+     "bin/nlogin") CONFIG_FILES="$CONFIG_FILES bin/nlogin" ;;
++    "bin/fnlogin") CONFIG_FILES="$CONFIG_FILES bin/fnlogin" ;;
+     "bin/nrancid") CONFIG_FILES="$CONFIG_FILES bin/nrancid" ;;
+     "bin/nslogin") CONFIG_FILES="$CONFIG_FILES bin/nslogin" ;;
+     "bin/nsrancid") CONFIG_FILES="$CONFIG_FILES bin/nsrancid" ;;
+@@ -8769,6 +8770,7 @@ done
+     "bin/mrvlogin":F) chmod a+x $ac_file ;;
+     "bin/mrvrancid":F) chmod a+x $ac_file ;;
+     "bin/nlogin":F) chmod a+x $ac_file ;;
++    "bin/fnlogin":F) chmod a+x $ac_file ;;
+     "bin/nrancid":F) chmod a+x $ac_file ;;
+     "bin/nslogin":F) chmod a+x $ac_file ;;
+     "bin/nsrancid":F) chmod a+x $ac_file ;;

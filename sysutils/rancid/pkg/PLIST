@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/16 21:07:55 pea Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/02/11 13:17:28 pea Exp $
 @newgroup _rancid:613
 @newuser _rancid:613:_rancid:daemon:Rancid user:/var/rancid:/bin/sh
+bin/agmrancid
 bin/alogin
 bin/arancid
+bin/avologin
+bin/avorancid
 bin/blogin
 bin/brancid
 bin/cat5rancid
@@ -27,10 +30,13 @@ bin/jrancid
 @comment bin/lg.cgi
 @comment bin/lgform.cgi
 bin/mrancid
+bin/mrvlogin
+bin/mrvrancid
 bin/nlogin
 bin/nrancid
 bin/nslogin
 bin/nsrancid
+bin/nxrancid
 bin/par
 bin/prancid
 bin/rancid
@@ -40,12 +46,20 @@ bin/rancid-run
 bin/rivlogin
 bin/rivrancid
 bin/rrancid
+bin/srancid
+bin/tlogin
 bin/tntlogin
 bin/tntrancid
+bin/trancid
 bin/xrancid
 bin/zrancid
+@man man/man1/agmrancid.1
 @man man/man1/alogin.1
+@man man/man1/arancid.1
+@man man/man1/avologin.1
+@man man/man1/avorancid.1
 @man man/man1/blogin.1
+@man man/man1/brancid.1
 @man man/man1/cat5rancid.1
 @man man/man1/clogin.1
 @man man/man1/control_rancid.1
@@ -69,6 +83,7 @@ bin/zrancid
 @man man/man1/nrancid.1
 @man man/man1/nslogin.1
 @man man/man1/nsrancid.1
+@man man/man1/nxrancid.1
 @man man/man1/par.1
 @man man/man1/prancid.1
 @man man/man1/rancid-cvs.1
@@ -77,8 +92,12 @@ bin/zrancid
 @man man/man1/rancid_intro.1
 @man man/man1/rivlogin.1
 @man man/man1/rivrancid.1
+@man man/man1/rrancid.1
+@man man/man1/srancid.1
+@man man/man1/tlogin.1
 @man man/man1/tntlogin.1
 @man man/man1/tntrancid.1
+@man man/man1/trancid.1
 @man man/man1/xrancid.1
 @man man/man1/zrancid.1
 @man man/man5/cloginrc.5

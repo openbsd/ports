@@ -1,136 +1,18 @@
-$OpenBSD: patch-bin_fnrancid_in,v 1.2 2008/12/19 12:57:53 pea Exp $
---- bin/fnrancid.in.orig	Sun Jan 11 04:49:13 2004
-+++ bin/fnrancid.in	Fri Dec 19 11:46:52 2008
-@@ -4,3 +4,4 @@
- ##
--## Copyright (C) 1997-2004 by Terrapin Communications, Inc.
-+## rancid 2.3.2a7
-+## Copyright (C) 1997-2006 by Terrapin Communications, Inc.
- ## All rights reserved.
-@@ -22,3 +23,3 @@
- # A library built on Stephen Gill's Netscreen stuff to accomodate
--#  the Fortinet product line.  [d_pfleger@juniper.net] 
-+#  the Fortinet product line.  [d_pfleger@juniper.net]
- #
-@@ -26,3 +27,3 @@
- #
--# usage: rancid [-d] [-l] [-f filename | $host]
-+# usage: rancid [-dV] [-l] [-f filename | hostname]
- #
-@@ -36,5 +37,6 @@ $host = $ARGV[0];
- $found_end = 0;
--$timeo = 90;			# nlogin timeout in seconds
-+$timeo = 90;				# fnlogin timeout in seconds
+$OpenBSD: patch-bin_fnrancid_in,v 1.3 2009/02/11 13:17:28 pea Exp $
+--- bin/fnrancid.in.orig	Fri Feb  8 10:59:08 2008
++++ bin/fnrancid.in	Tue Feb 10 14:21:53 2009
+@@ -172,6 +172,7 @@ sub GetSystem {
  
--my(%filter_pwds);		# password filtering mode
-+my(@commandtable, %commands, @commands);# command lists
-+my(%filter_pwds);			# password filtering mode
- 
-@@ -42,5 +44,5 @@ my(%filter_pwds);		# password filtering mode
- sub ProcessHistory {
--    my($new_hist_tag,$new_command,$command_string,@string)=(@_);
--    if((($new_hist_tag ne $hist_tag) || ($new_command ne $command))
--       && defined %history) {
-+    my($new_hist_tag,$new_command,$command_string,@string) = (@_);
-+    if ((($new_hist_tag ne $hist_tag) || ($new_command ne $command))
-+	&& defined %history) {
- 	print eval "$command \%history";
-@@ -66,6 +68,6 @@ sub numerically { $a <=> $b; }
- 
--# This is a sort routing that will sort numerically on the
-+# This is a sort routine that will sort numerically on the
- # keys of a hash as if it were a normal array.
- sub keynsort {
--    local(%lines)=@_;
-+    local(%lines) = @_;
-     local($i) = 0;
-@@ -79,6 +81,6 @@ sub keynsort {
- 
--# This is a sort routing that will sort on the
-+# This is a sort routine that will sort on the
- # keys of a hash as if it were a normal array.
- sub keysort {
--    local(%lines)=@_;
-+    local(%lines) = @_;
-     local($i) = 0;
-@@ -92,6 +94,6 @@ sub keysort {
- 
--# This is a sort routing that will sort on the
-+# This is a sort routine that will sort on the
- # values of a hash as if it were a normal array.
- sub valsort{
--    local(%lines)=@_;
-+    local(%lines) = @_;
-     local($i) = 0;
-@@ -99,4 +101,4 @@ sub valsort{
-     foreach $key (sort values %lines) {
--        $sorted_lines[$i] = $key;
--        $i++;
-+	$sorted_lines[$i] = $key;
-+	$i++;
-     }
-@@ -105,5 +107,5 @@ sub valsort{
- 
--# This is a numerical sort routing (ascending).
-+# This is a numerical sort routine (ascending).
- sub numsort {
--    local(%lines)=@_;
-+    local(%lines) = @_;
-     local($i) = 0;
-@@ -121,3 +123,3 @@ sub numsort {
- sub ipsort {
--    local(%lines)=@_;
-+    local(%lines) = @_;
-     local($i) = 0;
-@@ -134,3 +136,3 @@ sub ipaddrval {
-     my(@a) = ($_[0] =~ m#^(\d+)\.(\d+)\.(\d+)\.(\d+)$#);
--    $a[3]+256*($a[2]+256*($a[1]+256*$a[0]));
-+    $a[3] + 256 * ($a[2] + 256 * ($a[1] +256 * $a[0]));
- }
-@@ -146,5 +148,6 @@ sub GetSystem {
+     while (<INPUT>) {
  	tr/\015//d;
 +	s/exit//gi ;
  	next if /^\s*$/;
  	last if(/$prompt/);
--	ProcessHistory("","","","$_"); 
-+	ProcessHistory("","","","!$_");
- 	#print STDOUT "$_";
-@@ -169,2 +172,3 @@ sub GetConf {
- 	tr/\015//d;
-+	s/exit//gi ;
- 	next if /^\s*$/;
-@@ -172,5 +176,5 @@ sub GetConf {
- 	if (/(^set.*)('Enc .*')(.*)/) {
--            ProcessHistory("ENC","","","!$1 'Enc **encoding removed**' $3\n");
--            next;
--        }
-+	    ProcessHistory("ENC","","","!$1 'Enc **encoding removed**' $3\n");
-+	    next;
-+	}
  	ProcessHistory("","","","$_");
-@@ -186,12 +190,11 @@ sub DoNothing {print STDOUT;}
- # Main
--%commands=(
--	'get system status'	=> "GetSystem",
--	'get conf'		=> "GetConf"
-+@commandtable = (
-+	{'get system status'	=> 'GetSystem'},
-+	{'show'		=> 'GetConf'}
- );
--# keys() doesnt return things in the order entered and the order of the
--# cmds is important. pita
--@commands=(
--	"get system status",
--	"get conf"
--);
-+# Use an array to preserve the order of the commands and a hash for mapping
-+# commands to the subroutine and track commands that have been completed.
-+@commands = map(keys(%$_), @commandtable);
-+%commands = map(%$_, @commandtable);
-+
- $cisco_cmds=join(";",@commands);
-@@ -199,2 +202,11 @@ $cmds_regexp=join("|",@commands);
- 
+@@ -202,6 +203,15 @@ sub GetConf {
+ 	    next;
+ 	}
+ 	ProcessHistory("","","","$_");
 +if (length($host) == 0) {
 +    if ($file) {
 +	print(STDERR "Too few arguments: file name required\n");
@@ -140,8 +22,21 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.2 2008/12/19 12:57:53 pea Exp $
 +	exit(1);
 +    }
 +}
- open(OUTPUT,">$host.new") || die "Can't open $host.new for writing: $!\n";
-@@ -208,9 +220,9 @@ if ($file) {
+ 	#print STDOUT "$_";
+     }
+     $found_end=1;
+@@ -214,7 +224,7 @@ sub DoNothing {print STDOUT;}
+ # Main
+ @commandtable = (
+ 	{'get system status'	=> 'GetSystem'},
+-	{'get conf'		=> 'GetConf'}
++	{'show'		=> 'GetConf'}
+ );
+ # Use an array to preserve the order of the commands and a hash for mapping
+ # commands to the subroutine and track commands that have been completed.
+@@ -242,13 +252,13 @@ if ($file) {
+     print STDERR "opening file $host\n" if ($debug);
+     print STDOUT "opening file $host\n" if ($log);
      open(INPUT,"<$host") || die "open failed for $host: $!\n"; } else {
 -    print STDERR "executing nlogin -t $timeo -c\"$cisco_cmds\" $host\n" if ($debug);
 -    print STDOUT "executing nlogin -t $timeo -c\"$cisco_cmds\" $host\n" if ($log);
@@ -149,18 +44,18 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.2 2008/12/19 12:57:53 pea Exp $
 +    print STDOUT "executing fnlogin -t $timeo -c\"$cisco_cmds\" $host\n" if ($log);
      if (defined($ENV{NOPIPE})) {
 -	system "nlogin -t $timeo -c \"$cisco_cmds\" $host </dev/null > $host.raw 2>&1" || die "nlogin failed for $host: $!\n";
-+	system "fnlogin -t $timeo -c \"$cisco_cmds\" $host </dev/null > $host.raw 2>&1" || die "nlogin failed for $host: $!\n";
- 	open(INPUT, "< $host.raw") || die "nlogin failed for $host: $!\n";
+-	open(INPUT, "< $host.raw") || die "nlogin failed for $host: $!\n";
++	system "fnlogin -t $timeo -c \"$cisco_cmds\" $host </dev/null > $host.raw 2>&1" || die "fnlogin failed for $host: $!\n";
++	open(INPUT, "< $host.raw") || die "fnlogin failed for $host: $!\n";
      } else {
 -	open(INPUT,"nlogin -t $timeo -c \"$cisco_cmds\" $host </dev/null |") || die "nlogin failed for $host: $!\n";
-+	open(INPUT,"fnlogin -t $timeo -c \"$cisco_cmds\" $host </dev/null |") || die "nlogin failed for $host: $!\n";
++	open(INPUT,"fnlogin -t $timeo -c \"$cisco_cmds\" $host </dev/null |") || die "fnlogin failed for $host: $!\n";
      }
-@@ -220,3 +232,3 @@ if ($file) {
- if ($ENV{"FILTER_PWDS"} =~ /no/i) {
--	$filter_pwds = 0;  
-+	$filter_pwds = 0;
- } elsif ($ENV{"FILTER_PWDS"} =~ /all/i) {
-@@ -231,9 +243,28 @@ TOP: while(<INPUT>) {
+ }
+ 
+@@ -276,13 +286,32 @@ ProcessHistory("","","","!RANCID-CONTENT-TYPE: fortiga
+ TOP: while(<INPUT>) {
+     tr/\015//d;
      if (/^Error:/) {
 -	print STDOUT ("$host nlogin error: $_");
 -	print STDERR ("$host nlogin error: $_") if ($debug);
@@ -194,3 +89,5 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.2 2008/12/19 12:57:53 pea Exp $
 +		    }
 +		}
  	print STDERR ("HIT COMMAND:$_") if ($debug);
+ 	if (!defined($commands{$cmd})) {
+ 	    print STDERR "$host: found unexpected command - \"$cmd\"\n";
