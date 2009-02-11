@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/02/11 15:21:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/02/11 15:33:52 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	database widget library with data bound widgets
 
 GNOME_PROJECT=	libgnomedb
 GNOME_VERSION=	3.0.0
-PKGNAME=	${DISTNAME}v0
+PKGNAME=	${DISTNAME}p0v0
 
 SHARED_LIBS +=  gnomedb-3.0          1.0      # .4.0
 SHARED_LIBS +=  gnomedb_extra-3.0    1.0      # .4.0

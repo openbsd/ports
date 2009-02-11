@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/01/20 23:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/11 15:33:53 jasper Exp $
 
 COMMENT=		VNC server for remote acces to your GNOME desktop
 
 GNOME_PROJECT=		vino
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		net
 

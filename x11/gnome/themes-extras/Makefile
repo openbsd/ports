@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/01/21 15:10:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/02/11 15:33:53 jasper Exp $
 
 COMMENT=		themes collection for GNOME
 
 GNOME_PROJECT=		gnome-themes-extras
 GNOME_VERSION=		2.22.0
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		x11
 
 # ${WRKSRC}/icon-themes/Neu/scalable/apps/PaxHeaders.6151/

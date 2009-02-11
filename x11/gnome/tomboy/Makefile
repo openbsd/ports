@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/01/24 19:04:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/02/11 15:33:53 jasper Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
 GNOME_VERSION=	0.12.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 
 # LGPLv2.1

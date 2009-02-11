@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2008/11/24 11:15:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2009/02/11 15:33:52 jasper Exp $
 
 COMMENT=		utility library for XKB
 
 GNOME_PROJECT=		libxklavier
 GNOME_VERSION=		3.8
 SHARED_LIBS +=  xklavier             13.1     # .14.0
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/LibXklavier
 

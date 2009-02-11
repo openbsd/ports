@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/02/05 22:09:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/02/11 15:33:51 jasper Exp $
 
 BROKEN= 	does not work after changes in the UVC layer
 
@@ -6,7 +6,7 @@ COMMENT=	PhotoBooth inspired application
 
 GNOME_PROJECT=	cheese
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 CATEGORIES=	multimedia
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/01/20 23:13:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/02/11 15:33:52 jasper Exp $
 
 COMMENT=		keyring management program for the GNOME desktop
 
 GNOME_PROJECT=		gnome-keyring-manager
 GNOME_VERSION=		2.20.0
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 CATEGORIES=		x11
 

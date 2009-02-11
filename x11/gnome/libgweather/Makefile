@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/01/30 20:49:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/11 15:33:52 jasper Exp $
 
 COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=	gweather             2.0      # .3.0
 CATEGORIES=		net
 

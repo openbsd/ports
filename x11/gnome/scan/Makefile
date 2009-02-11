@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/03 15:00:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/02/11 15:33:52 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,8 +9,8 @@ GNOME_PROJECT=	gnome-scan
 GNOME_VERSION=	0.6.1
 CATEGORIES=	graphics
 
-PKGNAME-main=	${DISTNAME}
-PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}
+PKGNAME-main=	${DISTNAME}p0
+PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}p0
 
 SHARED_LIBS=	gnomescan	0.0 # .0.0
 

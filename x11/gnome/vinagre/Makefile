@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/12/17 18:45:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/02/11 15:33:53 jasper Exp $
 
 COMMENT=		VNC Client for the GNOME Desktop
 
 GNOME_VERSION=		0.5.2
 GNOME_PROJECT=		vinagre
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.gnome.org/projects/vinagre/

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/20 23:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/02/11 15:33:52 jasper Exp $
 
 COMMENT=		C++ interface for libgnomeui
 
 GNOME_PROJECT=		libgnomeuimm
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 SHARED_LIBS +=	gnomeuimm-2.6        0.0      # .1.4
 
