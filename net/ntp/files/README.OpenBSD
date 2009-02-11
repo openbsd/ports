@@ -3,7 +3,7 @@ Several steps need to be taken to properly configure the NTP daemon.
 1) First, create or update the file /etc/ntp.conf.  Several
    example configuration files can be found here:
 
-     /usr/obj/ntp-4.2.4p5/fake-amd64/usr/local/share/examples/ntp.
+     ${TRUEPREFIX}/share/examples/ntp
 
 2) Next, several command scripts for system startup need to be
    modified.
@@ -12,33 +12,33 @@ Several steps need to be taken to properly configure the NTP daemon.
 
        # Securelevel > 1 does not allow the clock to be set backwards
        if [ $securelevel -gt 1 -a X"${xntpdate_flags}" != X"NO" \
-	   -a -x /usr/obj/ntp-4.2.4p5/fake-amd64/usr/local/sbin/ntpdate ]; then
+	   -a -x ${TRUEPREFIX}/sbin/ntpdate ]; then
 	       echo -n ' ntpdate'
-	        /usr/obj/ntp-4.2.4p5/fake-amd64/usr/local/sbin/ntpdate -b ${xntpdate_flags} >/dev/null
+	        ${TRUEPREFIX}/sbin/ntpdate -b ${xntpdate_flags} >/dev/null
        fi
 
        # tickadj is not always needed
-       if [ X"${xntpd}" == X"YES" -a -x /usr/obj/ntp-4.2.4p5/fake-amd64/usr/local/sbin/tickadj \
+       if [ X"${xntpd}" == X"YES" -a -x ${TRUEPREFIX}/sbin/tickadj \
 	   -a -e /etc/ntp.conf ]; then
-	       echo -n ' tickadj';  /usr/obj/ntp-4.2.4p5/fake-amd64/usr/local/sbin/tickadj -Aq
+	       echo -n ' tickadj';  ${TRUEPREFIX}/sbin/tickadj -Aq
        fi
 
    (b) Add the following to /etc/rc.local:
 
        # run ntpdate prior to ntpd
        if [ $securelevel -le 1 -a X"${xntpdate_flags}" != X"NO" \
-	   -a -x /usr/obj/ntp-4.2.4p5/fake-amd64/usr/local/sbin/ntpdate ]; then
+	   -a -x ${TRUEPREFIX}/sbin/ntpdate ]; then
 	       echo -n ' ntpdate'
-	       /usr/obj/ntp-4.2.4p5/fake-amd64/usr/local/sbin/ntpdate -b ${xntpdate_flags} >/dev/null
+	       ${TRUEPREFIX}/sbin/ntpdate -b ${xntpdate_flags} >/dev/null
        fi
 
-       if [ X"${xntpd}" == X"YES" -a -x /usr/obj/ntp-4.2.4p5/fake-amd64/usr/local/sbin/ntpd \
+       if [ X"${xntpd}" == X"YES" -a -x ${TRUEPREFIX}/sbin/ntpd \
 	   -a -e /etc/ntp.conf ]; then
 	       xntpd_flags="-p /var/run/ntpd.pid"
 	       if [ $securelevel -ge 1 ]; then
 		   xntpd_flags="${xntpd_flags} -x"
 	       fi
-	       echo -n ' ntpd'; /usr/obj/ntp-4.2.4p5/fake-amd64/usr/local/sbin/ntpd ${xntpd_flags}
+	       echo -n ' ntpd'; ${TRUEPREFIX}/sbin/ntpd ${xntpd_flags}
        fi
 
    (c) Then, in /etc/rc.conf.local, set the following variables accordingly.
