@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_checks_c,v 1.1.1.1 2009/02/11 15:44:30 kevlo Exp $
+--- src/checks.c.orig	Sun Feb  1 12:58:30 2009
++++ src/checks.c	Sun Feb  1 13:00:07 2009
+@@ -149,7 +149,7 @@ void splt_check_if_new_filename_path_correct(splt_stat
+   splt_u_print_debug("We check if the new filename path is correct ",0,new_filename_path);
+ 
+   char current_directory[4] = { '\0' };
+-  snprintf(current_directory,4,"%c%c",'.',SPLT_DIRCHAR);
++  snprintf(current_directory,sizeof(current_directory),"%c%c",'.',SPLT_DIRCHAR);
+ 
+   //if the path equals "" or .DIRCHAR, then dont do the directory check,
+   //we will split in the current directory
+@@ -428,7 +428,8 @@ void splt_check_file_type(splt_state *state, int *erro
+     if (err != SPLT_OK)
+     {
+       char infos[2048] = { '\0' };
+-      snprintf(infos,2047," info: file matches the plugin '%s'\n",temp);
++      snprintf(infos,sizeof(infos),
++	    " info: file matches the plugin '%s'\n",temp);
+       splt_t_put_message_to_client(state, infos);
+     }
+     else

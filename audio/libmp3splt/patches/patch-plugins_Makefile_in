@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_Makefile_in,v 1.1.1.1 2009/02/11 15:44:30 kevlo Exp $
+--- plugins/Makefile.in.orig	Sun Jan 18 07:11:55 2009
++++ plugins/Makefile.in	Sat Jan 31 22:35:21 2009
+@@ -218,7 +218,7 @@ plugindir = $(libdir)/libmp3splt
+ plugin_LTLIBRARIES = $(am__append_1) $(am__append_3)
+ 
+ #ccommon_LDFLAGS = -module -export-dynamic -avoid-version
+-common_LDFLAGS = -L../src -L../src/.libs -L/lib -no-undefined -lmp3splt
++common_LDFLAGS = -module -avoid-version
+ @MP3_PLUGIN_TRUE@libsplt_mp3_la_SOURCES = mp3.c mp3.h
+ @MP3_PLUGIN_TRUE@libsplt_mp3_la_LDFLAGS = $(common_LDFLAGS)
+ @MP3_PLUGIN_TRUE@libsplt_mp3_la_LIBADD = -lmad $(am__append_2)

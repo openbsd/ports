@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/02/11 15:44:30 kevlo Exp $
+@lib lib/libmp3splt.so.${LIBmp3splt_VERSION}
+lib/libmp3splt/libsplt_mp3.so
+lib/libmp3splt/libsplt_ogg.so

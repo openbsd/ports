@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_plugins_c,v 1.1.1.1 2009/02/11 15:44:30 kevlo Exp $
+--- src/plugins.c.orig	Fri Dec 11 23:40:28 2009
++++ src/plugins.c	Fri Dec 11 23:41:47 2009
+@@ -31,6 +31,7 @@
+  *********************************************************/
+ 
+ #include <string.h>
++#include <sys/types.h>
+ #include <dirent.h>
+ #include <errno.h>
+ 
+@@ -228,7 +229,7 @@ int splt_p_set_default_plugins_scan_dirs(splt_state *s
+ #ifdef __WIN32__
+ static int splt_p_filter_plugin_files(const struct _wdirent *de)
+ #else
+-static int splt_p_filter_plugin_files(const struct dirent *de)
++static int splt_p_filter_plugin_files(struct dirent *de)
+ #endif
+ {
+ #ifdef __WIN32__

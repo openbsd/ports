@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/11 15:44:30 kevlo Exp $
+%%SHARED%%
+include/libmp3splt/
+include/libmp3splt/mp3splt.h
+lib/libmp3splt/
+lib/libmp3splt.a
+lib/libmp3splt.la
+lib/libmp3splt/libsplt_mp3.a
+lib/libmp3splt/libsplt_mp3.la
+lib/libmp3splt/libsplt_ogg.a
+lib/libmp3splt/libsplt_ogg.la

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_mp3splt_c,v 1.1.1.1 2009/02/11 15:44:30 kevlo Exp $
+--- src/mp3splt.c.orig	Sat Jan 31 18:51:37 2009
++++ src/mp3splt.c	Sat Jan 31 18:54:56 2009
+@@ -749,7 +749,8 @@ int mp3splt_split(splt_state *state)
+               && (split_type != SPLT_OPTION_SILENCE_MODE)
+               && (split_type != SPLT_OPTION_ERROR_MODE))
+           {
+-            snprintf(message, 2048, " Working with SILENCE AUTO-ADJUST (Threshold:"
++            snprintf(message, sizeof(message), 
++		" Working with SILENCE AUTO-ADJUST (Threshold:"
+                 " %.1f dB Gap: %d sec Offset: %.2f)\n",
+                 splt_t_get_float_option(state, SPLT_OPT_PARAM_THRESHOLD),
+                 splt_t_get_int_option(state, SPLT_OPT_PARAM_GAP),
