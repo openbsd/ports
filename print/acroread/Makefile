@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2009/01/29 20:07:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2009/02/11 15:37:16 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
@@ -9,7 +9,7 @@ COMMENT-plugins=further plugins for acrobat reader
 V=		7.0.9
 DISTNAME=	AdobeReader_enu-${V}-1.i386
 PKGNAME-main=	acroread-${V}p0
-PKGNAME-plugins=acroread-plugins-${V}
+PKGNAME-plugins=acroread-plugins-${V}p0
 CATEGORIES=	print
 SHARED_LIBS=	ACE	2.07 \
 		AGM	4.14 \
