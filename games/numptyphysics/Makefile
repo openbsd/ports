@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/01/28 15:14:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/02/11 01:43:44 sthen Exp $
 
 COMMENT =	physics-based drawing puzzle game
 
@@ -12,6 +12,10 @@ MAINTAINER =	David Coppa <dcoppa@gmail.com>
 HOMEPAGE =	http://numptyphysics.garage.maemo.org/
 
 MASTER_SITES =	http://mirror.amdmi3.ru/
+
+.if ${MACHINE_ARCH} == "sparc64"
+BROKEN =	SIGBUS on sparc64 when starting
+.endif
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
