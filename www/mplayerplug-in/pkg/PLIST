@@ -1,16 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/12 19:57:56 jasper Exp $
-mozilla-firefox/components/mplayerplug-in-dvx.xpt
-mozilla-firefox/components/mplayerplug-in-gmp.xpt
-mozilla-firefox/components/mplayerplug-in-qt.xpt
-mozilla-firefox/components/mplayerplug-in-rm.xpt
-mozilla-firefox/components/mplayerplug-in-wmp.xpt
-mozilla-firefox/components/mplayerplug-in.xpt
-mozilla-firefox/plugins/mplayerplug-in-dvx.so
-mozilla-firefox/plugins/mplayerplug-in-gmp.so
-mozilla-firefox/plugins/mplayerplug-in-qt.so
-mozilla-firefox/plugins/mplayerplug-in-rm.so
-mozilla-firefox/plugins/mplayerplug-in-wmp.so
-mozilla-firefox/plugins/mplayerplug-in.so
+@comment $OpenBSD: PLIST,v 1.2 2009/02/11 22:54:01 jasper Exp $
+lib/mozilla-plugins/
+lib/mozilla-plugins/mplayerplug-in-dvx.so
+lib/mozilla-plugins/mplayerplug-in-dvx.xpt
+lib/mozilla-plugins/mplayerplug-in-gmp.so
+lib/mozilla-plugins/mplayerplug-in-gmp.xpt
+lib/mozilla-plugins/mplayerplug-in-qt.so
+lib/mozilla-plugins/mplayerplug-in-qt.xpt
+lib/mozilla-plugins/mplayerplug-in-rm.so
+lib/mozilla-plugins/mplayerplug-in-rm.xpt
+lib/mozilla-plugins/mplayerplug-in-wmp.so
+lib/mozilla-plugins/mplayerplug-in-wmp.xpt
+lib/mozilla-plugins/mplayerplug-in.so
+lib/mozilla-plugins/mplayerplug-in.xpt
 share/examples/mplayerplug-in/
 @sample ${SYSCONFDIR}/mplayerplug-in/
 share/examples/mplayerplug-in/mplayerplug-in.conf
@@ -29,6 +30,7 @@ share/locale/hu/LC_MESSAGES/mplayerplug-in.mo
 share/locale/it/LC_MESSAGES/mplayerplug-in.mo
 share/locale/ja/LC_MESSAGES/mplayerplug-in.mo
 share/locale/ko/LC_MESSAGES/mplayerplug-in.mo
+share/locale/nb/LC_MESSAGES/mplayerplug-in.mo
 share/locale/nl/LC_MESSAGES/mplayerplug-in.mo
 share/locale/pl/LC_MESSAGES/mplayerplug-in.mo
 share/locale/pt_BR/LC_MESSAGES/mplayerplug-in.mo

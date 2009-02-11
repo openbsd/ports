@@ -1,0 +1,20 @@
+$OpenBSD: patch-Source_plugin-support_cpp,v 1.1 2009/02/11 22:54:01 jasper Exp $
+
+http://www.freebsd.org/cgi/cvsweb.cgi/ports/www/mplayer-plugin/files/patch-Source_plugin-support.cpp
+
+--- Source/plugin-support.cpp.orig	Wed May 28 15:50:46 2008
++++ Source/plugin-support.cpp	Mon Feb  9 11:32:08 2009
+@@ -505,9 +505,13 @@ void killmplayer(nsPluginInstance * instance)
+     if (instance->paused == 1)
+ 	sendCommand(instance, "pause\n");
+     sendCommand(instance, "quit\n");
++#ifndef BSD
+     pthread_mutex_lock(&(instance->read_mutex));
++#endif
+     instance->cancelled = 1;
++#ifndef BSD
+     pthread_mutex_unlock(&(instance->read_mutex));
++#endif
+ 
+ /*    count = 0;
+     while (count < 500) {

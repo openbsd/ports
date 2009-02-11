@@ -1,0 +1,21 @@
+$OpenBSD: patch-Source_plugin-threads_cpp,v 1.1 2009/02/11 22:54:01 jasper Exp $
+
+Fix mplayer zombie and firefox freeze when closing a movie,
+with mplayer still playing it.
+
+--- Source/plugin-threads.cpp.orig	Fri Jun 13 04:38:37 2008
++++ Source/plugin-threads.cpp	Wed Feb 11 01:58:54 2009
+@@ -14,8 +14,11 @@ extern int errno;
+ 
+ static void sig_child(int signo)
+ {
+-    // Not used, so commented out
+-    // wait(NULL);
++	pid_t pid;
++	int status;
++
++	pid = wait(&status);
++	return;
+ }
+ 
+ 
