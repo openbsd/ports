@@ -3,15 +3,39 @@ README for OpenBSD users
 
 ==> Quick Start
 
-1. get a bootable floppy image
-2. qemu-img create -f qcow2 virtual.hd 10G
-3. qemu -m 32 -fda floppy.fs -boot a -monitor stdio virtual.hd
-     (initial install to hard drive)
-4. qemu-img convert -c -O qcow2 virtual.hd tmp && mv tmp virtual.hd
-     (compress hard drive while qemu is not running)
-5. qemu -m 32 -monitor stdio virtual.hd
-     (normal boot from hard drive)
+NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
+      this, either run qemu as root by replacing
+	qemu -m 32 ..
+      in this quick start section with
+         sudo env ETHER=em0 qemu -net nic,model=rtl8139 -net tap -m 32 ..
+      or by reading the 'tap mode' section below.
 
+1. Get a bootable CDROM image
+
+    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/i386/cd45.iso
+
+2. Create a virtual disk image:
+
+    $ qemu-img create -f qcow2 virtual.img 10G
+
+3. Install the os:
+
+    $ qemu -m 32 -monitor stdio -no-fd-bootchk -hda virtual.img \
+	-cdrom cd45.iso -boot d
+
+   NOTE: start this inside an xterm or equivalent
+   NOTE: be sure to choose serial console during install
+   NOTE: -no-fd-bootchk permits booting faster when no floppy is in use
+
+4. Compress the virtual disk:
+
+    $ qemu-img convert -c -O qcow2 virtual.img v.tmp && mv v.tmp virtual.img
+
+   NOTE: do not do this while qemu is running / using this virtual disk
+
+5. Boot normally from the virtual disk:
+
+    $ qemu -m 32 -nographic -no-fd-bootchk -hda virtual.img 
 
 ==> Networking
 
@@ -34,13 +58,12 @@ README for OpenBSD users
   makes userland network calls for tcp/udp operations. icmp and other things
   are not possible in this mode.
 
-  Note: If you use one '-net' cmdline argument, qemu assumes you know what you
-  want and clears defaults for the rest of the -net defaults.
+  NOTE: If you use one '-net' cmdline argument, qemu assumes you know what you
+	want and clears defaults for the rest of the -net defaults.
 
-  Note: The guest mode networking does not currently support IPv6, and
-  qemu will complain that it cannot find a dns server if /etc/resolv.conf
-  contains only IPv6 dns servers.
-
+  NOTE: The guest mode networking does not currently support IPv6, and
+	qemu will complain that it cannot find a dns server if
+	/etc/resolv.conf contains only IPv6 dns servers.
 
 2.  tap mode
 
@@ -66,7 +89,15 @@ README for OpenBSD users
   tunnel device and then use sudo again to drop privileges and start qemu:
 
        $ sudo sh -c "sudo -u $USER qemu -nographic -net nic -net tap,fd=3 \
-             virtual.hd 3<>/dev/tun0"
+             -no-fd-bootchk -hda virtual.img 3<>/dev/tun0"
+
+  NOTE: sudo calls closefrom(2).  In order to have more than one fd passed
+	tap interface, a line to sudoers akin to:
+
+		Defaults closefrom_override
+
+        then calling sudo via 'sudo -C 5 -u $USER qemu ..' is required.
+	See sudoers(5) and sudo(8) for details.
 
   An alternative to the procedure described above is to have qemu set up the
   network via ${SYSCONFDIR}/qemu-ifup. This is not recommended however, since
@@ -76,7 +107,7 @@ README for OpenBSD users
   ${SYSCONFDIR}/qemu-ifup contains some default settings that permit one to do
   the following:
 
-	# qemu -net nic -net tap virtual.hd
+	# qemu -net nic -net tap -no-fd-bootchk -hda virtual.img
 
   It presumes you have a 'trunk0' interface you wish the tun(4) interface to
   talk to.  It presumes you want 'bridge0' to be used to bridge the two.
@@ -100,7 +131,7 @@ README for OpenBSD users
    # export BRIDGE=bridge101
    # qemu -net nic,vlan=0,model=rtl8139,macaddr=52:54:00:12:35:00 \
 	-net tap,vlan=0 -vnc :0 -localtime -usb -usbdevice tablet \
-	-m 256 -hda virtual.hd -monitor stdio
+	-m 256 -no-fd-bootchk -hda virtual.img -monitor stdio
    {tun0 (bridge101 <-> trunk101)brconfig: bridge101: No such process
    brconfig: bridge101: No such process
    }
@@ -119,15 +150,16 @@ README for OpenBSD users
                 port 6 ifpriority 0 ifcost 0
         Addresses (max cache: 100, timeout: 240):
 
-  Note: when running multiple qemu sessions simultaneously on the same bridge,
-  care must be taken because the network mac address defaults
-  to 52:54:00:12:34:56 for every qemu instance.  To change this, observe
-  the macaddr= syntax in the above example.
+  NOTE: When running multiple qemu sessions simultaneously on the same bridge,
+	care must be taken because the network mac address defaults to
+	52:54:00:12:34:56 for every qemu instance.  To change this, observe
+	the macaddr= syntax in the above example and choose a unique lladdr
+	per qemu nic.
 
 ==> Mice
 
-  Note: Certain m$ os's work so much better with the tablet usb device than
-  the normal ps2 mouse handling.  See the above example for usage.
+  NOTE: Certain OS's work much better with the tablet usb device than
+	the normal ps2 mouse handling.  See the above example for usage.
 
 ==> Serial Console
 
@@ -135,14 +167,14 @@ README for OpenBSD users
      be available, and so on.  There are two ways to accomplish this, both in
      effect the same solution:
 
-    a. qemu -vnc :0 -serial stdio .. virtual.hd -cdrom install43.iso -boot d
+    a. qemu -vnc :0 -serial stdio .. virtual.img -cdrom install43.iso -boot d
 
 	- this option permits you to use vnc from some system to connect to
 	  the qemu instance and 'set tty com0' at the 'boot>' prompt.
 	- you may then disconnect vnc and use the terminal from which you
 	  started qemu to do the install
 
-    b. qemu -nographic .. virtual.hd -fda floppy43.fs -boot a
+    b. qemu -nographic .. virtual.img -fda floppy45.fs -boot a
 
 	- this maps both the serial port and the (qemu) monitor prompt to
 	  the terminal qemu was started on
@@ -151,7 +183,7 @@ README for OpenBSD users
 	- preparation of the floppy image to force serial console mode is
 	  straightforward:
 
-		vnconfig svnd0 floppy43.fs
+		vnconfig svnd0 floppy45.fs
 		mount /dev/svnd0c /mnt
 		mkdir /mnt/etc
 		echo set tty com0 > /mnt/etc/boot.conf
@@ -160,12 +192,13 @@ README for OpenBSD users
 
      .. be sure to choose 'yes' for setting com0 to be the serial console.
 
-   Note: OpenBSD poweroff does work with qemu, which actually causes qemu
-   itself to exit.  This is a good thing, as it is currently not possible to
-   set what block device is booted from at runtime from qemu.  So if you start
-   an installation booting from a cdrom, you will always boot off a cdrom
-   every time you reboot that qemu session until you exit and start qemu
-   again booting off the virtual hard drive.
+  NOTE: OpenBSD poweroff does work with qemu, which actually causes qemu
+	itself to exit.  This is a good thing, as it is currently not
+	possible to set what block device is booted from at runtime from
+	qemu.  So if you start an installation booting from a cdrom, you
+	will always boot off a cdrom every time you reboot that qemu session
+	until you exit and start qemu again booting off the virtual hard
+	drive.
 
 ==> daemonized qemu
 
@@ -176,22 +209,29 @@ README for OpenBSD users
    is a complete example that may be cut-and-pasted into rc.local:
 
     hddir=/var/vm
+    USER=qemu
     if [ -x ${TRUEPREFIX}/bin/qemu ]; then
         echo -n 'Qemu: vmi386'
         (
-            export ETHER=trunk101
-            export BRIDGE=bridge101
+	    ifconfig tun0 link0
+	    ifconfig bridge101 create
+	    brconfig bridge101 add trunk101 add tun0 up
 
-            ${TRUEPREFIX}/bin/qemu \
+            sh -c "sudo -u $USER \
+		${TRUEPREFIX}/bin/qemu \
                 -daemonize \
                 -nographic \
                 -net nic,vlan=0,model=rtl8139,macaddr=52:54:00:4e:62:8f \
-                -net tap,vlan=0 \
+                -net tap,vlan=0,fd=3 \
                 -m 128 \
-                -hda $hddir/vmi386.hd \
+                -hda $hddir/virtual.img \
                 -serial telnet:127.0.0.1:1010,server,nowait \
-                -monitor telnet:127.0.0.1:1011,server,nowait
+                -monitor telnet:127.0.0.1:1011,server,nowait \
+		-no-fd-bootchk 3<>/dev/tun0"
         )
         echo "."
     fi
+
+    NOTE: this presumes the user `qemu' exists, create it or set USER= to an
+          existing user to use this example.
 
