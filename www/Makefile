@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.385 2009/02/06 22:09:16 simon Exp $
+# $OpenBSD: Makefile,v 1.386 2009/02/11 09:38:10 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -278,6 +278,7 @@
      SUBDIR += phplist
      SUBDIR += phpmyadmin
      SUBDIR += phppgadmin
+     SUBDIR += piwik
      SUBDIR += plans
      SUBDIR += plone
      SUBDIR += plone-formgen
