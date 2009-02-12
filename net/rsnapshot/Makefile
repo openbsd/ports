@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/09/27 11:54:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/02/12 08:43:08 ajacoutot Exp $
 
 COMMENT=		remote filesystem snapshot utility
 
 DISTNAME=		rsnapshot-1.3.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net sysutils
+
 HOMEPAGE=		http://www.rsnapshot.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -16,8 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.rsnapshot.org/downloads/
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::net/rsync
+BUILD_DEPENDS=		::net/rsync
+RUN_DEPENDS=		::net/rsync \
+			::devel/p5-Lchown
 
 PKG_ARCH=		*
 NO_REGRESS=		Yes
