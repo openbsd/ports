@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/02/03 23:02:18 pyr Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/12 16:22:14 pyr Exp $
 
 COMMENT=		small tiling window manager
 
-DISTNAME=		scrotwm-0.8
+DISTNAME=		scrotwm-0.9
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.peereboom.us/scrotwm/
