@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/06/02 18:13:15 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/02/12 09:58:11 sthen Exp $
 @newgroup _ejabberd:594
 @newuser _ejabberd:594:_ejabberd:daemon:ejabberd account:/var/db/ejabberd:/bin/sh
 %%SHARED%%
-@owner root
-@group wheel
 lib/ejabberd/
 lib/ejabberd/ebin/
 lib/ejabberd/ebin/ELDAPv3.beam
@@ -81,6 +79,7 @@ lib/ejabberd/ebin/mod_disco.beam
 lib/ejabberd/ebin/mod_echo.beam
 lib/ejabberd/ebin/mod_http_bind.beam
 lib/ejabberd/ebin/mod_http_fileserver.beam
+lib/ejabberd/ebin/mod_ip_blacklist.beam
 lib/ejabberd/ebin/mod_irc.beam
 lib/ejabberd/ebin/mod_irc_connection.beam
 lib/ejabberd/ebin/mod_last.beam
@@ -161,10 +160,8 @@ lib/ejabberd/priv/msgs/uk.msg
 lib/ejabberd/priv/msgs/vi.msg
 lib/ejabberd/priv/msgs/wa.msg
 lib/ejabberd/priv/msgs/zh.msg
-@group bin
 sbin/ejabberdctl
 @comment sbin/ejabberdctl.bak
-@group wheel
 share/doc/ejabberd/
 share/doc/ejabberd/README.OpenBSD
 @comment share/doc/ejabberd/api/
@@ -180,6 +177,7 @@ share/examples/ejabberd/
 @sample ${SYSCONFDIR}/ejabberd/
 share/examples/ejabberd/ejabberd.cfg
 @sample ${SYSCONFDIR}/ejabberd/ejabberd.cfg
+@comment share/examples/ejabberd/ejabberd.cfg.bak
 share/examples/ejabberd/ejabberdctl.cfg
 @sample ${SYSCONFDIR}/ejabberd/ejabberdctl.cfg
 share/examples/ejabberd/extauth/
@@ -210,4 +208,5 @@ share/examples/ejabberd/transport-configs/init-scripts/yahoo-transport-2
 @owner _ejabberd
 @group _ejabberd
 @sample /var/log/ejabberd/
+@mode 0750
 @sample /var/db/ejabberd/

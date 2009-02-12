@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ejabberdctl_template,v 1.1 2008/06/02 18:13:15 martynas Exp $
---- src/ejabberdctl.template.orig	Tue May 20 12:22:03 2008
-+++ src/ejabberdctl.template	Sun Jun  1 21:08:43 2008
+$OpenBSD: patch-src_ejabberdctl_template,v 1.2 2009/02/12 09:58:11 sthen Exp $
+--- src/ejabberdctl.template.orig	Sun Oct 19 22:00:39 2008
++++ src/ejabberdctl.template	Sun Oct 19 22:05:49 2008
 @@ -1,7 +1,7 @@
  #!/bin/sh
  
@@ -10,20 +10,21 @@ $OpenBSD: patch-src_ejabberdctl_template,v 1.1 2008/06/02 18:13:15 martynas Exp 
  SMP=auto
  ERL_MAX_PORTS=32000
  ERL_PROCESSES=250000
-@@ -9,15 +9,17 @@ ERL_MAX_ETS_TABLES=1400
+@@ -9,16 +9,18 @@ ERL_MAX_ETS_TABLES=1400
  
  # define default environment variables
  NODE=ejabberd
 -HOST=localhost
 +HOST=`hostname -s`
  ERLANG_NODE=$NODE@$HOST
+ ERL=@erl@
  ROOTDIR=@rootdir@
 -EJABBERD_CONFIG_PATH=$ROOTDIR/etc/ejabberd/ejabberd.cfg
 -LOGS_DIR=$ROOTDIR/var/log/ejabberd/
 -EJABBERD_DB=$ROOTDIR/var/lib/ejabberd/db/$NODE
 +EJABBERD_CONFIG_PATH=${SYSCONFDIR}/ejabberd/ejabberd.cfg
 +LOGS_DIR=${EJLOGDIR}
-+EJABBERD_DB=${EJDBDIR}/$NODE
++EJABBERD_DB=${EJDBDIR}/${NODE}
 +ID=`id -g`
 +EJID=`id -g ${JABBERDUSER}`
  
@@ -33,7 +34,7 @@ $OpenBSD: patch-src_ejabberdctl_template,v 1.1 2008/06/02 18:13:15 martynas Exp 
  [ -f "$CONFIG" ] && . "$CONFIG"
  
  # parse command line parameters
-@@ -36,23 +38,33 @@ while [ $# -ne 0 ] ; do
+@@ -37,23 +39,33 @@ while [ $# -ne 0 ] ; do
      esac
  done
  
@@ -56,18 +57,19 @@ $OpenBSD: patch-src_ejabberdctl_template,v 1.1 2008/06/02 18:13:15 martynas Exp 
 +EJABBERD_MSGS_PATH=${LOCALBASE}/lib/ejabberd/priv/msgs
 +EJABBERD_SO_PATH=${LOCALBASE}/lib/ejabberd/priv/lib
 +EJABBERD_BIN_PATH=${LOCALBASE}/lib/ejabberd/priv/bin
-+EJABBERD_LOG_PATH=$LOGS_DIR/${NODE}.log
-+SASL_LOG_PATH=$LOGS_DIR/${NODE}_sasl.log
++EJABBERD_LOG_PATH=${LOGS_DIR}/${NODE}.log
++SASL_LOG_PATH=${LOGS_DIR}/${NODE}_sasl.log
  DATETIME=`date "+%Y%m%d-%H%M%S"`
- ERL_CRASH_DUMP=$LOGS_DIR/erl_crash_$DATETIME.dump
+-ERL_CRASH_DUMP=$LOGS_DIR/erl_crash_$DATETIME.dump
 -ERL_INETRC=$ROOTDIR/etc/ejabberd/inetrc
 -HOME=$ROOTDIR/var/lib/ejabberd
++ERL_CRASH_DUMP=${LOGS_DIR}/erl_crash_${DATETIME}.dump
 +ERL_INETRC=${SYSCONFDIR}/ejabberd/inetrc
 +HOME=${EJDBDIR}
  
 +# make sure we execute commands as proper user
 +if [ $ID -eq 0 ]; then
-+	EXEC_CMD='sudo -u ${JABBERDUSER}'
++	EXEC_CMD='sudo -c - -u ${JABBERDUSER}'
 +else
 +	EXEC_CMD=''
 +fi
@@ -75,7 +77,7 @@ $OpenBSD: patch-src_ejabberdctl_template,v 1.1 2008/06/02 18:13:15 martynas Exp 
  # export global variables
  export EJABBERD_CONFIG_PATH
  export EJABBERD_MSGS_PATH
-@@ -63,23 +75,24 @@ export ERL_CRASH_DUMP
+@@ -64,23 +76,24 @@ export ERL_CRASH_DUMP
  export ERL_INETRC
  export ERL_MAX_PORTS
  export ERL_MAX_ETS_TABLES
@@ -91,8 +93,8 @@ $OpenBSD: patch-src_ejabberdctl_template,v 1.1 2008/06/02 18:13:15 martynas Exp 
  # start server
  start ()
  {
--    erl \
-+    $EXEC_CMD ${LOCALBASE}/bin/erl \
+-    $ERL \
++    ${EXEC_CMD} $ERL \
        $NAME $ERLANG_NODE \
        -noinput -detached \
        -pa $EJABBERD_EBIN \
@@ -104,23 +106,22 @@ $OpenBSD: patch-src_ejabberdctl_template,v 1.1 2008/06/02 18:13:15 martynas Exp 
        -sasl sasl_error_logger \{file,\"$SASL_LOG_PATH\"\} \
        $ERLANG_OPTS $ARGS "$@"
  }
-@@ -103,7 +116,7 @@ debug ()
+@@ -104,7 +117,7 @@ debug ()
      echo "Press any key to continue"
      read foo
      echo ""
--    erl \
-+    $EXEC_CMD ${LOCALBASE}/bin/erl \
+-    $ERL \
++    ${EXEC_CMD} $ERL \
        $NAME ${NODE}debug \
        -remsh $ERLANG_NODE \
        $ERLANG_OPTS $ARGS "$@"
-@@ -127,19 +140,22 @@ live ()
+@@ -128,18 +141,21 @@ live ()
      echo "Press any key to continue"
      read foo
      echo ""
--    erl \
-+    $EXEC_CMD ${LOCALBASE}/bin/erl \
+-    $ERL \
++    ${EXEC_CMD} $ERL \
        $NAME $ERLANG_NODE \
-       $ERLANG_OPTS \
        -pa $EJABBERD_EBIN \
 +      -kernel inetrc \"${ERL_INETRC}\" \
        -mnesia dir "\"$EJABBERD_DB\"" \
@@ -133,20 +134,12 @@ $OpenBSD: patch-src_ejabberdctl_template,v 1.1 2008/06/02 18:13:15 martynas Exp 
  # common control function
  ctl ()
  {
--    erl \
-+    $EXEC_CMD ${LOCALBASE}/bin/erl \
+-    $ERL \
++    ${EXEC_CMD} $ERL \
        $NAME ejabberdctl \
        -noinput \
        -pa $EJABBERD_EBIN \
-@@ -159,6 +175,7 @@ ctl ()
-         echo "  --ctl-config file  Config file of ejabberdctl: $CONFIG"
-         echo "  --logs dir         Directory for logs:         $LOGS_DIR"
-         echo "  --spool dir        Database spool dir:         $EJABBERD_DB"
-+        echo "  --node node_name   Ejabberd node name:         $ERLANG_NODE"
-         echo "";;
-     esac
-     return $result
-@@ -170,6 +187,20 @@ usage ()
+@@ -171,6 +187,20 @@ usage ()
      ctl
      exit
  }
