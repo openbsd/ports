@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.16 2008/02/12 14:13:32 rui Exp $
+@comment $OpenBSD: PLIST,v 1.17 2009/02/12 22:12:08 rui Exp $
 @newgroup _snort:557
 @newuser _snort:557:_snort:daemon:Snort Account:/nonexistent:/sbin/nologin
 %%prelude%%
 %%SHARED%%
-bin/snort
+@bin bin/snort
 lib/snort_dynamicengine/
 lib/snort_dynamicengine/libsf_engine.a
 @comment lib/snort_dynamicengine/libsf_engine.la
@@ -20,6 +20,8 @@ lib/snort_dynamicpreprocessor/libsf_smtp_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_smtp_preproc.la
 lib/snort_dynamicpreprocessor/libsf_ssh_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_ssh_preproc.la
+lib/snort_dynamicpreprocessor/libsf_ssl_preproc.a
+@comment lib/snort_dynamicpreprocessor/libsf_ssl_preproc.la
 lib/snort_dynamicrules/
 lib/snort_dynamicrules/lib_sfdynamic_example_rule.a
 @comment lib/snort_dynamicrules/lib_sfdynamic_example_rule.la
@@ -47,6 +49,7 @@ share/doc/snort/README.csv
 share/doc/snort/README.database
 share/doc/snort/README.dcerpc
 share/doc/snort/README.decode
+share/doc/snort/README.decoder_preproc_rules
 share/doc/snort/README.dns
 share/doc/snort/README.event_queue
 share/doc/snort/README.flow
@@ -54,11 +57,15 @@ share/doc/snort/README.flow-portscan
 share/doc/snort/README.flowbits
 share/doc/snort/README.frag3
 share/doc/snort/README.ftptelnet
+share/doc/snort/README.gre
 share/doc/snort/README.http_inspect
+share/doc/snort/README.ipip
 share/doc/snort/README.ipv6
+share/doc/snort/README.pcap_readmode
 share/doc/snort/README.ppm
 share/doc/snort/README.sfportscan
 share/doc/snort/README.ssh
+share/doc/snort/README.ssl
 share/doc/snort/README.stream4
 share/doc/snort/README.stream5
 share/doc/snort/README.tag
@@ -68,6 +75,11 @@ share/doc/snort/README.wireless
 share/doc/snort/TODO
 share/doc/snort/USAGE
 share/doc/snort/WISHLIST
+share/doc/snort/create_db2
+share/doc/snort/create_mssql
+share/doc/snort/create_mysql
+share/doc/snort/create_oracle.sql
+share/doc/snort/create_postgresql
 share/doc/snort/faq.pdf
 share/doc/snort/generators
 share/doc/snort/snort_manual.pdf

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dynamic-preprocessors_smtp_Makefile_in,v 1.2 2008/02/12 14:13:32 rui Exp $
---- src/dynamic-preprocessors/smtp/Makefile.in.orig	Wed Nov 14 15:32:47 2007
-+++ src/dynamic-preprocessors/smtp/Makefile.in	Thu Nov 29 12:07:53 2007
-@@ -390,7 +390,7 @@ distdir: $(DISTFILES)
+$OpenBSD: patch-src_dynamic-preprocessors_smtp_Makefile_in,v 1.3 2009/02/12 22:12:08 rui Exp $
+--- src/dynamic-preprocessors/smtp/Makefile.in.orig	Fri Jul 18 22:52:07 2008
++++ src/dynamic-preprocessors/smtp/Makefile.in	Fri Aug  8 14:57:44 2008
+@@ -393,7 +393,7 @@ distdir: $(DISTFILES)
  check-am: all-am
  check: $(BUILT_SOURCES)
  	$(MAKE) $(AM_MAKEFLAGS) check-am
@@ -9,4 +9,4 @@ $OpenBSD: patch-src_dynamic-preprocessors_smtp_Makefile_in,v 1.2 2008/02/12 14:1
 +all-am: Makefile $(LTLIBRARIES)
  installdirs:
  	for dir in "$(DESTDIR)$(libdir)"; do \
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \

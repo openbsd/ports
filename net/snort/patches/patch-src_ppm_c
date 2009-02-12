@@ -1,7 +1,25 @@
-$OpenBSD: patch-src_ppm_c,v 1.1 2008/02/12 14:13:32 rui Exp $
---- src/ppm.c.orig	Mon Aug 20 19:25:02 2007
-+++ src/ppm.c	Mon Nov 19 22:39:12 2007
-@@ -360,7 +360,7 @@ void ppm_rule_log( UINT64 pktcnt, Packet * p)
+$OpenBSD: patch-src_ppm_c,v 1.2 2009/02/12 22:12:08 rui Exp $
+--- src/ppm.c.orig	Mon Sep 15 16:41:26 2008
++++ src/ppm.c	Thu Oct 30 18:26:56 2008
+@@ -395,7 +395,7 @@ void ppm_rule_log( UINT64 pktcnt, Packet * p)
+         if( ppm_cfg.rule_log & PPM_LOG_MESSAGE )
+         {
+             if(!*timestamp)
+-                ts_print((struct timeval*)&p->pkth->ts, timestamp);
++                ts_print((struct timeval32*)&p->pkth->ts, timestamp);
+ 
+             for (i=0; i< ppm_n_crules; i++)
+             {
+@@ -451,7 +451,7 @@ void ppm_rule_log( UINT64 pktcnt, Packet * p)
+         if( ppm_cfg.rule_log & PPM_LOG_MESSAGE )
+         {
+             if(!*timestamp)
+-                ts_print((struct timeval*)&p->pkth->ts, timestamp);
++                ts_print((struct timeval32*)&p->pkth->ts, timestamp);
+ 
+             for (i=0; i< ppm_n_rules; i++)
+             {
+@@ -520,7 +520,7 @@ void ppm_rule_log( UINT64 pktcnt, Packet * p)
          if( ppm_cfg.rule_log & PPM_LOG_MESSAGE )
          {
              if(!*timestamp)
@@ -10,7 +28,7 @@ $OpenBSD: patch-src_ppm_c,v 1.1 2008/02/12 14:13:32 rui Exp $
  
              LogMessage(PPM_FMT_REENABLED,
                  otn->sigInfo.generator,
-@@ -423,7 +423,7 @@ void ppm_rule_log( UINT64 pktcnt, Packet * p)
+@@ -583,7 +583,7 @@ void ppm_rule_log( UINT64 pktcnt, Packet * p)
          if( ppm_cfg.rule_log & PPM_LOG_MESSAGE )
          {
              if(!*timestamp)
