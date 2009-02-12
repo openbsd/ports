@@ -4,5 +4,5 @@ as required and insert the following into /etc/rc.local.
 if [ -x ${TRUEPREFIX}/bin/ircd ]; then
 	echo -n ' ircd'
 	install -d -o _ircd-hybrid /var/run/ircd
-	${TRUEPREFIX}/bin/ircd >/dev/null
+	${TRUEPREFIX}/bin/ircd
 fi
