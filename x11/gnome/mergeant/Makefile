@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/12 10:17:02 ajacoutot Exp $
 
 COMMENT=		database administration GUI
 
 GNOME_PROJECT=		mergeant
 GNOME_VERSION=		0.67
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 CATEGORIES+=		databases
 
@@ -28,13 +28,10 @@ WANTLIB += pcre pixman-1 png pthread rpcsvc stdc++ xml2 z
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		::textproc/rarian
-RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
-			::textproc/rarian
+RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info
 LIB_DEPENDS=		gnomedb-3.0,gnomedb_extra-3.0,gnomedb_graph-3.0::x11/gnome/libgnomedb
 
 USE_X11=		Yes
-MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
@@ -43,5 +40,12 @@ CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			GMSGFMT="${LOCALBASE}/bin/msgfmt"
 
+# XXX disable help files as db2html is needed and we end-up
+# with empty or incomplete directories
+pre-configure:
+	 @ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-config
+post-install:
+	rm -rf ${PREFIX}/share/gnome/
+	rm -rf ${PREFIX}/share/omf/
 
 .include <bsd.port.mk>
