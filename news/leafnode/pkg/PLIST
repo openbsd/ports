@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/11/23 10:54:04 alek Exp $
+@comment $OpenBSD: PLIST,v 1.15 2009/02/12 13:33:07 giovanni Exp $
 @newuser _news:519:news::NNTP server:/var/spool/news:/sbin/nologin
-bin/leafnode-version
-bin/newsq
+@bin bin/leafnode-version
+@bin bin/newsq
 @man man/man1/leafnode-version.1
 @man man/man1/newsq.1
 @man man/man8/applyfilter.8
@@ -9,11 +9,11 @@ bin/newsq
 @man man/man8/fetchnews.8
 @man man/man8/leafnode.8
 @man man/man8/texpire.8
-sbin/applyfilter
-sbin/checkgroups
-sbin/fetchnews
-sbin/leafnode
-sbin/texpire
+@bin sbin/applyfilter
+@bin sbin/checkgroups
+@bin sbin/fetchnews
+@bin sbin/leafnode
+@bin sbin/texpire
 share/doc/leafnode/
 share/doc/leafnode/FAQ.txt
 share/doc/leafnode/INSTALL

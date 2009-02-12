@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2007/09/15 21:41:50 merdely Exp $
+# $OpenBSD: Makefile,v 1.48 2009/02/12 13:33:07 giovanni Exp $
 
 COMMENT=		USENET software package designed for small sites
 
-VERSION=		1.11.4
+VERSION=		1.11.6
 DISTNAME=		leafnode-${VERSION}
-PKGNAME=		${DISTNAME}p0
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		news
 
@@ -39,3 +38,4 @@ post-install:
 		${PREFIX}/share/examples/leafnode/
 
 .include <bsd.port.mk>
+CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}/leafnode

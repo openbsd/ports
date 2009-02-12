@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.19 2005/11/24 20:06:32 sturm Exp $
+$OpenBSD: patch-Makefile_in,v 1.20 2009/02/12 13:33:07 giovanni Exp $
 
---- Makefile.in.orig	Wed Nov 23 12:00:09 2005
-+++ Makefile.in	Thu Nov 24 21:00:10 2005
-@@ -1229,7 +1229,6 @@ info-am:
+--- Makefile.in.orig	Sat Mar 17 12:53:37 2007
++++ Makefile.in	Sun Feb  8 09:59:42 2009
+@@ -1264,7 +1264,6 @@ info-am:
  
  install-data-am: install-man
  	@$(NORMAL_INSTALL)

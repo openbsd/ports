@@ -1,7 +1,15 @@
-$OpenBSD: patch-INSTALL,v 1.11 2005/11/24 20:06:32 sturm Exp $
---- INSTALL.orig	Tue Jun  7 16:13:18 2005
-+++ INSTALL	Thu Nov 24 20:59:28 2005
-@@ -77,7 +77,7 @@ as sudo.
+$OpenBSD: patch-INSTALL,v 1.12 2009/02/12 13:33:07 giovanni Exp $
+--- INSTALL.orig	Sun Feb 25 12:28:08 2007
++++ INSTALL	Sun Feb  8 10:28:54 2009
+@@ -70,14 +70,14 @@ as sudo.
+     the lock file (defaults to leaf.node/lock.file below the spooldir).
+ 
+  ## Since 1.9.52, you can also configure the user and group account that
+- ## leafnode switches to when started as "news", by means of the --with-user
++ ## leafnode switches to when started as "_news", by means of the --with-user
+  ## and --with-group options. DO MAKE SURE that the --with-user is a member of
+  ## the group you give to the --with-group option (on most systems, the "id" or
+  ## "groups" command with a user account name should tell you what groups the
   ## user is in.)
  
      NOTE: DO MAKE SURE that the lock file is in a directory that is writable by
@@ -10,19 +18,22 @@ $OpenBSD: patch-INSTALL,v 1.11 2005/11/24 20:06:32 sturm Exp $
      to obtain the lock file, and it needs write access. The new default (as of
      1.9.37) should be fine in most cases.
  
-@@ -98,16 +98,16 @@ as sudo.
+@@ -100,11 +100,11 @@ as sudo.
  
-     All tests must pass, otherwise, ask on the leafnode mailing list for help.
+ 3a. (as root) Create a "news" group if you don't have one.
  
--3a. (as root) Create a "news" user if you don't have one.
-+3a. (as root) Create a "_news" user if you don't have one.
+-3b. (as root) Create a "news" user if you don't have one. Its primary group
++3b. (as root) Create a "_news" user if you don't have one. Its primary group
+     should be "news", with no supplemental groups.
  
- 3b. (as root) Create an alias in your mail system to forward mail addressed to
+ 3c. (as root) Create an alias in your mail system to forward mail addressed to
 -    "news" to the real user who looks after leafnode.
 +    "_news" to the real user who looks after leafnode.
  
      If you run qmail: get and install the fastforward package.
      It is available from qmail distribution sites.
+@@ -112,7 +112,7 @@ as sudo.
+     Common choices are Postfix, Exim and Courier.
  
      Find your aliases file (/etc/aliases or /etc/mail/aliases), add a line
 -    "news: joe" (assuming joe looks after your leafnode) and then type
@@ -30,7 +41,7 @@ $OpenBSD: patch-INSTALL,v 1.11 2005/11/24 20:06:32 sturm Exp $
  
  	newaliases.
  
-@@ -160,12 +160,12 @@ as sudo.
+@@ -165,17 +165,17 @@ as sudo.
      different postings clash and other troubles. See one of the README-FQDN*
      files for details.
  
@@ -40,12 +51,18 @@ $OpenBSD: patch-INSTALL,v 1.11 2005/11/24 20:06:32 sturm Exp $
  
      0 4 * * * /usr/local/sbin/texpire
  
--    I did "crontab -u news -e" as root to edit the crontab file, and added this
-+    I did "crontab -u _news -e" as root to edit the crontab file, and added this
-     line.  Substituting "1" for the third "*", thus:
+-    On some systems, you may need to allow the user "news" to install/edit
++    On some systems, you may need to allow the user "_news" to install/edit
+     crontabs, some of these use the file /etc/cron.allow to store this
+     information. Check the information for your cron system, man cron or man
+     crontab should provide you with details.
+ 
+-    I did "su news -c 'crontab -e'" as root to edit the crontab file, and added
++    I did "su _news -c 'crontab -e'" as root to edit the crontab file, and added
+     this line.  Substituting "1" for the third "*", thus:
  
      0 4 * * 1 /usr/local/sbin/texpire
-@@ -174,9 +174,9 @@ as sudo.
+@@ -184,9 +184,9 @@ as sudo.
      details.
  
  9.  Make sure fetchnews is run at the appropriate time.  If you have a
@@ -57,12 +74,12 @@ $OpenBSD: patch-INSTALL,v 1.11 2005/11/24 20:06:32 sturm Exp $
      probably run fetchnews from /etc/ppp/ip-up.local or /etc/ppp/ip-up.
  
  10. (as root) Edit /etc/hosts.deny to add a line:
-@@ -225,12 +225,11 @@ as sudo.
+@@ -236,12 +236,11 @@ as sudo.
      incoming NNTP connections.  Here is my inetd.conf line (insert it at the
      leftmost column, without leading spaces!):
  
 -    nntp stream tcp nowait news /usr/sbin/tcpd /usr/local/sbin/leafnode
-+    nntp stream tcp nowait _news /usr/sbin/tcpd /usr/local/sbin/leafnode
++    nntp stream tcp nowait _news /usr/libexec/tcpd /usr/local/sbin/leafnode
  
      This starts leafnode for all connections on the nntp port, subject to
 -    /etc/hosts.allow and /etc/hosts.deny screening.  If you don't have
@@ -73,25 +90,27 @@ $OpenBSD: patch-INSTALL,v 1.11 2005/11/24 20:06:32 sturm Exp $
      Using leafnode without tcpd is not supported and opens your computer to
      abuse (even happens on modem lines that are only connected during the
      fetch!)
-@@ -267,7 +266,7 @@ as sudo.
+@@ -278,8 +277,8 @@ as sudo.
  	    socket_type     = stream
  	    protocol        = tcp
  	    wait            = no
 -	    user            = news
+-	    server          = /usr/sbin/tcpd
 +	    user            = _news
- 	    server          = /usr/sbin/tcpd
++	    server          = /usr/libexec/tcpd
  	    server_args     = /usr/local/sbin/leafnode
  	    instances       = 7
-@@ -333,7 +332,7 @@ as sudo.
+ 	    per_source      = 3
+@@ -349,7 +348,7 @@ as sudo.
         #! /bin/sh
         exec 2>&1
         exec /usr/local/bin/tcpserver -c10 -l0 -H -v 127.0.0.1 119 \
 -       /usr/local/bin/setuidgid news /usr/local/bin/argv0 /usr/sbin/tcpd \
-+       /usr/local/bin/setuidgid _news /usr/local/bin/argv0 /usr/sbin/tcpd \
++       /usr/local/bin/setuidgid _news /usr/local/bin/argv0 /usr/libexec/tcpd \
         /usr/local/sbin/leafnode
  
         You may need to adjust the paths if your software is in a non-standard
-@@ -349,7 +348,7 @@ as sudo.
+@@ -365,7 +364,7 @@ as sudo.
         exec 2>&1
         exec /usr/local/bin/tcpserver -c10 -l0 -H -v -x nntp.cdb \
         127.0.0.1 119 \
@@ -100,7 +119,7 @@ $OpenBSD: patch-INSTALL,v 1.11 2005/11/24 20:06:32 sturm Exp $
  
         As above, adjust the paths and the IP.
  
-@@ -384,7 +383,7 @@ as sudo.
+@@ -400,7 +399,7 @@ as sudo.
      svscan should notice the new leafnode service within 5 seconds and
      start it.
  
@@ -109,7 +128,7 @@ $OpenBSD: patch-INSTALL,v 1.11 2005/11/24 20:06:32 sturm Exp $
      fetchnews reads a list of all newsgroups from your upstream server.  With
      an 28.8 modem, it can take as long as 60 minutes (depending on how many
      newsgroups your provider offers). To see fetchnews working, run it with
-@@ -411,7 +410,7 @@ as sudo.
+@@ -427,7 +426,7 @@ as sudo.
      After this, you should have empty files in
      /var/spool/news/interesting.groups/ for every group you want to read.
  
