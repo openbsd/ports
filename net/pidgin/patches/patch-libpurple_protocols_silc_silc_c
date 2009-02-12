@@ -1,6 +1,6 @@
-$OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.3 2008/08/21 05:59:01 brad Exp $
---- libpurple/protocols/silc/silc.c.orig	Wed Aug 20 00:48:35 2008
-+++ libpurple/protocols/silc/silc.c	Wed Aug 20 00:56:04 2008
+$OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.4 2009/02/12 03:07:59 sthen Exp $
+--- libpurple/protocols/silc/silc.c.orig	Mon Jan 12 14:05:38 2009
++++ libpurple/protocols/silc/silc.c	Wed Feb 11 18:20:43 2009
 @@ -671,31 +671,12 @@ silcpurple_close(PurpleConnection *gc)
  	SilcPurpleTask task;
  #endif /* __SILC_TOOLKIT_VERSION */
@@ -34,7 +34,34 @@ $OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.3 2008/08/21 05:59:01 brad E
  	if (sg->conn)
  		silc_client_close_connection(sg->client, sg->conn);
  
-@@ -1835,9 +1816,6 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
+@@ -1357,6 +1338,7 @@ silcpurple_send_im_resolved(SilcClient client,
+ 	char tmp[256];
+ 	SilcClientEntry client_entry;
+ 	SilcDList list;
++	gboolean free_list = FALSE;
+ 
+ 	convo = purple_find_conversation_with_account(PURPLE_CONV_TYPE_IM, im->nick,
+ 						      sg->account);
+@@ -1373,6 +1355,8 @@ silcpurple_send_im_resolved(SilcClient client,
+ 							im->nick, FALSE);
+ 		if (!clients)
+ 			goto err;
++
++		free_list = TRUE;
+ 	}
+ 
+ 	silc_dlist_start(clients);
+@@ -1413,6 +1397,9 @@ silcpurple_send_im_resolved(SilcClient client,
+ 	purple_conversation_write(convo, NULL, tmp, PURPLE_MESSAGE_SYSTEM, time(NULL));
+ 
+  out:
++	if (free_list) {
++		silc_client_list_free(client, conn, clients);
++	}
+ 	g_free(im->nick);
+ 	g_free(im->message);
+ 	silc_free(im);
+@@ -1835,9 +1822,6 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
  {
  	PurpleConnection *gc;
  	SilcPurple sg;
@@ -44,7 +71,7 @@ $OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.3 2008/08/21 05:59:01 brad E
  								   
  	gc = purple_conversation_get_gc(conv);
  
-@@ -1849,23 +1827,8 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
+@@ -1849,23 +1833,8 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
  	if (sg == NULL)
  		return PURPLE_CMD_RET_FAILED;
  
