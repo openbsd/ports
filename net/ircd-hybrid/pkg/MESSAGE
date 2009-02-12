@@ -2,7 +2,7 @@ To start ircd-hybrid at boot time, edit ${SYSCONFDIR}/ircd-hybrid/ircd.conf
 as required and insert the following into /etc/rc.local.
 
 if [ -x ${TRUEPREFIX}/bin/ircd ]; then
-    echo -n ' ircd'
-    install -d -o _ircd-hybrid /var/run/ircd
-    ${TRUEPREFIX}/bin/ircd
+	echo -n ' ircd'
+	install -d -o _ircd-hybrid /var/run/ircd
+	${TRUEPREFIX}/bin/ircd >/dev/null
 fi
