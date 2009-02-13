@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/01/08 20:09:33 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2009/02/13 21:42:55 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ GNOME_VERSION=	2.24.2
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 
@@ -42,11 +42,12 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		pixman-1 png xml2 z
 
 WANTLIB-main=		${WANTLIB} ICE ORBit-2 SM c dbus-1 dbus-glib-1 \
-			gconf-2 glade-2.0 gnome-keyring gs gthread-2.0 \
+			gconf-2 gnome-keyring gs gthread-2.0 \
 			jpeg pthread tiff
 LIB_DEPENDS-main=	poppler.>=3,poppler-glib.>=3::print/poppler \
 			spectre::print/libspectre \
 			gnome-keyring::x11/gnome/keyring \
+			glade-2.0::devel/libglade2 \
 			${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-main=	::textproc/rarian \
 			:shared-mime-info-*:misc/shared-mime-info \
