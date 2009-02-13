@@ -1,6 +1,6 @@
-$OpenBSD: patch-p0f_c,v 1.9 2006/05/03 07:17:44 aanriot Exp $
---- p0f.c.orig	Sun Apr 30 18:29:33 2006
-+++ p0f.c	Sun Apr 30 18:30:49 2006
+$OpenBSD: patch-p0f_c,v 1.10 2009/02/13 22:58:18 rui Exp $
+--- p0f.c.orig	Mon Aug 21 16:16:00 2006
++++ p0f.c	Thu Jan 29 04:24:17 2009
 @@ -36,12 +36,6 @@
  #include <pcap.h>
  #include <signal.h>
@@ -14,7 +14,7 @@ $OpenBSD: patch-p0f_c,v 1.9 2006/05/03 07:17:44 aanriot Exp $
  #include <time.h>
  #include <ctype.h>
  
-@@ -740,7 +734,7 @@ static _u8* lookup_link(_u16 mss,_u8 txt
+@@ -754,7 +748,7 @@ static _u8* lookup_link(_u16 mss,_u8 txt) {
  unknown:
  
    if (!txt) return 0;
@@ -23,7 +23,37 @@ $OpenBSD: patch-p0f_c,v 1.9 2006/05/03 07:17:44 aanriot Exp $
    return tmp;
  
  }
-@@ -1620,13 +1614,13 @@ int main(int argc,char** argv) {
+@@ -778,6 +772,7 @@ static _u8* lookup_tos(_u8 t) {
+ static void put_date(struct timeval tval) {
+   _u8* x;
+   struct tm *tmval;
++  time_t t;
+ 
+   switch (add_timestamp) {
+ 
+@@ -785,8 +780,9 @@ static void put_date(struct timeval tval) {
+ 
+     case 2: /* UTC */
+ 
+-      x = asctime((add_timestamp == 1) ? localtime(&tval.tv_sec) : 
+-                                         gmtime(&tval.tv_sec));
++      t = (time_t)tval.tv_sec;
++      x = asctime((add_timestamp == 1) ? localtime(&t) : 
++                                         gmtime(&t));
+ 
+       if (x[strlen(x)-1]=='\n') x[strlen(x)-1]=0;
+ 
+@@ -802,7 +798,8 @@ static void put_date(struct timeval tval) {
+     case 4: /* RFC3339 */
+     default:
+ 
+-      tmval = gmtime(&tval.tv_sec);
++      t = (time_t)tval.tv_sec;
++      tmval = gmtime(&t);
+ 
+       printf("<%04u-%02u-%02uT%02u:%02u:%02u.%06uZ> ",
+              tmval->tm_year + 1900, tmval->tm_mon + 1, tmval->tm_mday,
+@@ -1642,13 +1639,13 @@ int main(int argc,char** argv) {
    load_config(config_file);
  
    if (argv[optind] && *(argv[optind])) {

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2008/02/14 21:36:27 rui Exp $
+# $OpenBSD: Makefile,v 1.19 2009/02/13 22:58:18 rui Exp $
 
 COMMENT=		passive OS fingerprinting tool
 
 DISTNAME=		p0f-2.0.8
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 EXTRACT_SUFX=		.tgz
 CATEGORIES=     	security net
 
