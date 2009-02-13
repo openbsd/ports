@@ -1,0 +1,23 @@
+$OpenBSD: patch-snmplib_snmpUDPDomain_c,v 1.1 2009/02/13 09:39:38 jasper Exp $
+
+Fix for SA33884, which could disclose sensitive information.
+Patch taken from upstream svn, -r17367. 
+
+--- snmplib/snmpUDPDomain.c.orig	Fri Feb 13 10:20:08 2009
++++ snmplib/snmpUDPDomain.c	Fri Feb 13 10:21:07 2009
+@@ -104,12 +104,12 @@ netsnmp_udp_fmtaddr(netsnmp_transport *t, void *data, 
+ 	char tmp[64];
+         to = (struct sockaddr_in *) &(addr_pair->remote_addr);
+         if (to == NULL) {
+-            sprintf(tmp, "UDP: [%s]->unknown",
++            sprintf(tmp, "UDP: unknown->[%s]",
+                     inet_ntoa(addr_pair->local_addr));
+         } else {
+-            sprintf(tmp, "UDP: [%s]->", inet_ntoa(addr_pair->local_addr));
+-            sprintf(tmp + strlen(tmp), "[%s]:%hd",
++            sprintf(tmp, "UDP: [%s]:%hu->",
+                     inet_ntoa(to->sin_addr), ntohs(to->sin_port));
++	    sprintf(tmp + strlen(tmp), "[%s]", inet_ntoa(addr_pair->local_addr));
+         }
+         return strdup(tmp);
+     }
