@@ -1,0 +1,18 @@
+$OpenBSD: patch-tfont_c,v 1.1 2009/02/13 13:57:18 giovanni Exp $
+--- tfont.c.orig	Wed Feb 11 15:48:33 2009
++++ tfont.c	Wed Feb 11 15:52:30 2009
+@@ -597,8 +597,14 @@ CharToUnicode(code, registry)
+ 					if (mgp_charset)
+ 						regid = get_regid(mgp_charset) -1;
+ 				}
++#ifdef FREETYPE_CHARSET16
++				if (unicode_map[code])
++					code = unicode_map[code];
++#else
+ 				if (latin_unicode_map[regid][code])
+ 					code = latin_unicode_map[regid][code];
++#endif
++			
+ 			}
+ #endif
+ 
