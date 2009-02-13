@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/12 21:33:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/13 11:01:25 sthen Exp $
 
-COMMENT-main =	Graphical tools for the MetaGeek Wi-spy spectrum analyser
-COMMENT-utils =	Tools for the MetaGeek Wi-spy spectrum analyser
+COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
+COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
 
 V =		20080314
 DISTNAME =	spectools-$V
-PKGNAME =	spectrum-tools-$V
+PKGNAME =	spectrum-tools-$Vp0
 CATEGORIES =	net
 
-MASTER_SITES =	http://www.kismetwireless.net/code/
-MASTER_SITES =	http://spacehopper.org/mirrors/
+MASTER_SITES =	http://www.kismetwireless.net/code/ \
+		http://spacehopper.org/mirrors/
 
 HOMEPAGE =	http://www.kismetwireless.net/spectools/
 
