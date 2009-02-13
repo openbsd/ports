@@ -1,32 +1,31 @@
-# $OpenBSD: Makefile,v 1.16 2008/10/27 11:34:00 pirofti Exp $
+# $OpenBSD: Makefile,v 1.17 2009/02/13 14:59:01 pirofti Exp $
 
-COMMENT=		SMTP plugin for MUAs
+COMMENT =		SMTP plugin for MUAs
 
-DISTNAME=		msmtp-1.4.16
-PKGNAME=		${DISTNAME}p0
-CATEGORIES=		mail
+DISTNAME =		msmtp-1.4.17
+CATEGORIES =		mail
 
-HOMEPAGE=		http://msmtp.sourceforge.net/
+HOMEPAGE =		http://msmtp.sourceforge.net/
 
-MAINTAINER=		Paul Irofti <pirofti@openbsd.org>
+MAINTAINER =		Paul Irofti <pirofti@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto ssl
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =		Yes
+WANTLIB =		c crypto ssl
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=msmtp/}
-EXTRACT_SUFX=		.tar.bz2
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=msmtp/}
+EXTRACT_SUFX =		.tar.bz2
 
-LIB_DEPENDS=		idn::devel/libidn
+LIB_DEPENDS =		idn::devel/libidn
 
-MODULES=		devel/gettext
+MODULES =		devel/gettext
 
-SEPARATE_BUILD=		concurrent
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-libgsasl=no \
+SEPARATE_BUILD =	concurrent
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--with-libgsasl=no \
 			--with-libidn=yes \
 			--with-ssl=openssl
 

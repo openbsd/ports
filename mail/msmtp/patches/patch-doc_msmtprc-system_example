@@ -1,0 +1,16 @@
+$OpenBSD: patch-doc_msmtprc-system_example,v 1.1 2009/02/13 14:59:01 pirofti Exp $
+--- doc/msmtprc-system.example.orig	Sat Apr  7 18:20:34 2007
++++ doc/msmtprc-system.example	Fri Feb 13 16:53:09 2009
+@@ -6,10 +6,10 @@
+ account default
+ 
+ # The SMTP smarthost.
+-host mailhub.oursite.example
++host localhost
+ 
+ # Construct envelope-from addresses of the form "user@oursite.example".
+-#auto_from on
++auto_from on
+ #maildomain oursite.example
+ 
+ # Use TLS.
