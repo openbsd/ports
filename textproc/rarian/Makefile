@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/12/18 09:11:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/14 13:17:48 ajacoutot Exp $
 
 COMMENT=		documentation metadata library
 
 GNOME_PROJECT=		rarian
 GNOME_VERSION=		0.8.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS +=	rarian               0.0      # .0.0
 CATEGORIES=		textproc
 
@@ -20,16 +20,15 @@ WANTLIB=		c m stdc++
 
 MODULES=		x11/gnome
 
-RUN_DEPENDS=		::misc/gnugetopt \
-			::shells/bash \
+RUN_DEPENDS=		::shells/bash \
 			::textproc/docbook \
 			::textproc/libxslt
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--localstatedir="/var" \
-			--with-xml-catalog="/var/db/xmlcatalog" \
-			--with-omfdirs="${PREFIX}/share/omf" \
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--localstatedir=/var \
+			--with-convert-dir=${PREFIX}/share/omf \
 			--enable-installed \
 			--enable-scrollkeeper-compat \
 			--enable-omf-read \
@@ -43,7 +42,7 @@ post-extract:
 	@echo "" >> ${WRKSRC}/util/rarian-sk-*.in
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/librarian/rarian-man.c \
+	${SUBST_CMD} ${WRKSRC}/librarian/rarian-main.c \
 		${WRKSRC}/librarian/rarian-man.c \
 		${WRKSRC}/librarian/rarian-info.c
 

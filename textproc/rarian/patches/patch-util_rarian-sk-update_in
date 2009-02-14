@@ -1,10 +1,10 @@
-$OpenBSD: patch-util_rarian-sk-update_in,v 1.1.1.1 2008/12/16 10:01:38 jasper Exp $
+$OpenBSD: patch-util_rarian-sk-update_in,v 1.2 2009/02/14 13:17:48 ajacoutot Exp $
 
 Fix location to rarian's localstatedir.
-Use the full path to gnugetopt
+Only GNU getopt supports long options.
 
---- util/rarian-sk-update.in.orig	Sat Nov 22 16:58:05 2008
-+++ util/rarian-sk-update.in	Sat Nov 22 16:58:26 2008
+--- util/rarian-sk-update.in.orig	Mon Sep  1 20:40:21 2008
++++ util/rarian-sk-update.in	Sat Feb 14 13:45:07 2009
 @@ -19,7 +19,7 @@
  prefix=@prefix@
  exec_prefix=@exec_prefix@
@@ -14,12 +14,23 @@ Use the full path to gnugetopt
  convert_dir=@CONVERT_DIR@
  datarootdir=@datarootdir@
  datadir=@datadir@
-@@ -264,7 +264,7 @@ process_directory ()
+@@ -57,7 +57,7 @@ print_usage()
+ 	echo -e "\t\t\t\tscrolls.  If the directory doesn't exist, it"
+ 	echo -e "\t\t\t\twill be created at run time."
+ 	echo -e "\t\t\t\t Note: Multiple output paths are not supported"
+-	echo -e "--c\t\t\t\tRebuild the index entirely.  This will rebuild"
++	echo -e "-c\t\t\t\tRebuild the index entirely.  This will rebuild"
+ 	echo -e "\t\t\t\tall scroll files and may take a long time."
+ 	echo -e "-v\t\t\t\tTurn Verbosity on."
+ 	echo -e "-p\t\t\t\tSpecify a different place to store the mtimes file."
+@@ -264,9 +264,7 @@ process_directory ()
  # They are inherited from scrollkeeper :(
  
  # We use TEMP as set -- seems to nuke the return value of getopt
 -TEMP=`getopt -u -n$(basename $0) -o "o:r:p:vqnhV" \
-+TEMP=`${prefix}/bin/gnugetopt -u -n$(basename $0) -o "o:r:p:vqnhV" \
-     	     -- "$@"` \
-     || print_usage
+-    	     -- "$@"` \
+-    || print_usage
++TEMP=`getopt "o:r:p:cvqnhV" "$@"`
  
+ if [ $? != 0 ] ; then
+ 	print_usage
