@@ -1,0 +1,14 @@
+$OpenBSD: patch-glob_c,v 1.1 2009/02/14 09:46:59 jasper Exp $
+
+Fix potential 64-bit issue.
+
+--- glob.c.orig	Sat Feb 14 10:42:13 2009
++++ glob.c	Sat Feb 14 10:42:23 2009
+@@ -8,6 +8,7 @@
+ #include "config.h"
+ #endif
+ 
++#include <string.h>
+ #include <ctype.h>
+ #include "opennap.h"
+ 
