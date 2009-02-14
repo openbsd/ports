@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2002/08/10 01:14:04 naddy Exp $
---- Makefile.in.orig	Sun Sep 30 17:13:45 2001
-+++ Makefile.in	Tue Oct 16 18:14:04 2001
+$OpenBSD: patch-Makefile_in,v 1.2 2009/02/14 09:41:35 jasper Exp $
+--- Makefile.in.orig	Mon Oct  1 00:13:45 2001
++++ Makefile.in	Sat Feb 14 10:40:49 2009
 @@ -65,16 +65,15 @@ REGEX = @REGEX@
  SHAREDIR = @SHAREDIR@
  VERSION = @VERSION@
@@ -46,7 +46,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2002/08/10 01:14:04 naddy Exp $
  opennap_LDFLAGS = 
  metaserver_OBJECTS =  metaserver.o
  metaserver_LDADD = $(LDADD)
-@@ -119,6 +118,23 @@ DISTFILES = $(DIST_COMMON) $(SOURCES) $(
+@@ -119,6 +118,23 @@ DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEX
  
  TAR = tar
  GZIP_ENV = --best
@@ -242,7 +242,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2002/08/10 01:14:04 naddy Exp $
  	@echo "This command is intended for maintainers to use;"
  	@echo "it deletes files that may require special tools to rebuild."
  
-@@ -439,10 +423,12 @@ mostlyclean-sbinPROGRAMS distclean-sbinP
+@@ -439,10 +423,12 @@ mostlyclean-sbinPROGRAMS distclean-sbinPROGRAMS clean-
  maintainer-clean-sbinPROGRAMS uninstall-sbinPROGRAMS \
  install-sbinPROGRAMS mostlyclean-compile distclean-compile \
  clean-compile maintainer-clean-compile tags mostlyclean-tags \

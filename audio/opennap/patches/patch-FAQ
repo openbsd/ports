@@ -1,7 +1,7 @@
-$OpenBSD: patch-FAQ,v 1.1 2002/08/10 01:14:04 naddy Exp $
---- FAQ.orig	Thu Mar  8 17:55:02 2001
-+++ FAQ	Tue Oct 16 23:02:47 2001
-@@ -42,6 +42,16 @@ A:  Find the people who run the server y
+$OpenBSD: patch-FAQ,v 1.2 2009/02/14 09:41:35 jasper Exp $
+--- FAQ.orig	Fri Mar  9 00:55:02 2001
++++ FAQ	Sat Feb 14 10:40:49 2009
+@@ -42,6 +42,16 @@ A:  Find the people who run the server you want to lin
      with them.  If both parties agree you exchange a password and follow
      the directions in the README for linking up.
  

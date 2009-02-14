@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_am,v 1.1 2002/08/10 01:14:04 naddy Exp $
---- Makefile.am.orig	Tue Sep 25 23:59:56 2001
-+++ Makefile.am	Tue Oct 16 18:14:04 2001
+$OpenBSD: patch-Makefile_am,v 1.2 2009/02/14 09:41:35 jasper Exp $
+--- Makefile.am.orig	Wed Sep 26 06:59:56 2001
++++ Makefile.am	Sat Feb 14 10:40:49 2009
 @@ -1,5 +1,5 @@
 -sbin_PROGRAMS=opennap metaserver setup #mkpass
 -opennap_SOURCES=opennap.h main.c add_file.c search.c \
@@ -9,7 +9,7 @@ $OpenBSD: patch-Makefile_am,v 1.1 2002/08/10 01:14:04 naddy Exp $
  	motd.c hash.h hash.c privmsg.c browse.c \
  	debug.c debug.h login.c whois.c free_user.c \
  	join.c part.c public.c part_channel.c \
-@@ -14,17 +14,16 @@ opennap_SOURCES=opennap.h main.c add_fil
+@@ -14,17 +14,16 @@ opennap_SOURCES=opennap.h main.c add_file.c search.c \
  	napigator.c win32-support.h #fast_snprintf.c
  opennap_LDADD=$(REGEX)
  opennap_DEPENDENCIES=$(REGEX)

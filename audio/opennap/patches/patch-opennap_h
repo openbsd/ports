@@ -1,7 +1,7 @@
-$OpenBSD: patch-opennap_h,v 1.1 2002/08/10 01:14:04 naddy Exp $
---- opennap.h.orig	Sun Sep 30 17:12:37 2001
-+++ opennap.h	Tue Oct 16 18:14:04 2001
-@@ -143,8 +143,25 @@ struct _user
+$OpenBSD: patch-opennap_h,v 1.2 2009/02/14 09:41:35 jasper Exp $
+--- opennap.h.orig	Mon Oct  1 00:12:37 2001
++++ opennap.h	Sat Feb 14 10:40:49 2009
+@@ -143,9 +143,26 @@ struct _user
  				   NOTE. this is a pointer to an entry in
  				   Server_Names, and not malloc'd. */
  
@@ -19,14 +19,15 @@ $OpenBSD: patch-opennap_h,v 1.1 2002/08/10 01:14:04 naddy Exp $
 +    unsigned short conport;	/* remote port for connection to server */
 +    unsigned short totalup;	/* total number of uploads */
 +    unsigned short totaldown;	/* total number of downloads */
-+
+ 
 +    unsigned short shared;	/* # of shared files */
 +    unsigned short wantPong;	/* # of outstanding PONGs */
 +
 +    unsigned short yyy;		/* unused */
- 
++
      unsigned int level:3;	/* user level */
      unsigned int speed:4;	/* link speed */
+     unsigned int local:1;	/* nonzero if locally connected */
 @@ -154,20 +171,6 @@ struct _user
      unsigned int unsharing:1;
      unsigned int cloaked:1;
