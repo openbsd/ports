@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2008/05/07 17:34:33 simon Exp $
+# $OpenBSD: Makefile,v 1.21 2009/02/14 10:39:38 jasper Exp $
 
 COMMENT-main=		Quake/Quake-world client
 COMMENT-server=		Quake world server
 CATEGORIES=		games
 
-FULLPKGNAME-server=	quakeworld-server-20000101p2
-PKGNAME-main=		quake-20000101p4
+FULLPKGNAME-server=	quakeworld-server-20000101p3
+PKGNAME-main=		quake-20000101p5
 DISTNAME=		quake-v6-bsd-kame
 PATCHFILES=		quake6-00-v6-20000202b.diff.gz:0
 PATCH_DIST_STRIP=	-p1
@@ -59,9 +59,9 @@ BROKEN=			choose either sdl, ggi or x11
 WRKDIST=	${WRKDIR}/quakeforge
 
 post-extract:
-	cd ${WRKDIST}; rm config.cache config.log
-	cd ${WRKDIST}; find . -name \*.o |xargs rm
-	cp ${FILESDIR}/snd_openbsd.c ${WRKDIST}/common
+	@rm ${WRKDIST}/{config.cache,config.log}
+	@find ${WRKDIST} -name \*.o |xargs rm
+	@cp ${FILESDIR}/snd_openbsd.c ${WRKDIST}/common
 
 post-patch:
 	cd ${WRKDIST}; PATH=${PORTPATH} AUTOCONF_VERSION="${AUTOCONF_VERSION}" autoreconf

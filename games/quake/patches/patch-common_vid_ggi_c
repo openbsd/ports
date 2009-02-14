@@ -1,0 +1,15 @@
+$OpenBSD: patch-common_vid_ggi_c,v 1.1 2009/02/14 10:39:39 jasper Exp $
+
+Fix potential 64-bit issue.
+
+--- common/vid_ggi.c.orig	Sat Feb 14 11:17:12 2009
++++ common/vid_ggi.c	Sat Feb 14 11:17:32 2009
+@@ -22,6 +22,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ 
+ #define _BSD
+ 
++#include <sys/types.h>
++#include <unistd.h>
+ 
+ #include <ctype.h>
+ #include <stdlib.h>

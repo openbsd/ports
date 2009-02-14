@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-server,v 1.2 2004/07/30 23:54:10 jolan Exp $
-bin/qw-server
+@comment $OpenBSD: PLIST-server,v 1.3 2009/02/14 10:39:39 jasper Exp $
+@bin bin/qw-server

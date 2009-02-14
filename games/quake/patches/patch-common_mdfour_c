@@ -1,0 +1,15 @@
+$OpenBSD: patch-common_mdfour_c,v 1.1 2009/02/14 10:39:39 jasper Exp $
+
+Fix potential 64-bit issue.
+
+--- common/mdfour.c.orig	Sat Feb 14 11:16:05 2009
++++ common/mdfour.c	Sat Feb 14 11:16:37 2009
+@@ -27,6 +27,8 @@
+ #include "mdfour.h"
+ #endif	// _MDFOUR_H
+ 
++#include <string.h>
++
+ /* NOTE: This code makes no attempt to be fast! 
+ 
+    It assumes that a int is at least 32 bits long
