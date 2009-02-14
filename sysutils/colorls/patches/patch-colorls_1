@@ -1,6 +1,6 @@
-$OpenBSD: patch-colorls_1,v 1.10 2007/08/11 18:41:28 naddy Exp $
---- colorls.1.orig	Sat Aug 11 20:38:04 2007
-+++ colorls.1	Sat Aug 11 20:37:37 2007
+$OpenBSD: patch-colorls_1,v 1.11 2009/02/14 16:39:28 naddy Exp $
+--- colorls.1.orig	Sat Feb 14 17:29:39 2009
++++ colorls.1	Sat Feb 14 17:33:51 2009
 @@ -37,11 +37,11 @@
  .Dt COLORLS 1
  .Os
@@ -16,7 +16,7 @@ $OpenBSD: patch-colorls_1,v 1.10 2007/08/11 18:41:28 naddy Exp $
  .Op Ar file ...
  .Sh DESCRIPTION
  For each operand that names a
-@@ -112,6 +112,12 @@ and a vertical bar
+@@ -121,6 +121,12 @@ and a vertical bar
  after each that is a FIFO.
  .It Fl f
  Output is not sorted.
@@ -27,18 +27,18 @@ $OpenBSD: patch-colorls_1,v 1.10 2007/08/11 18:41:28 naddy Exp $
 +in the environment.
 +(See below.)
  .It Fl g
- The same as
+ List in long format as in
  .Fl l ,
-@@ -414,7 +420,7 @@ The
- .Nm
- utility exits 0 on success or \*(Gt0 if an error occurred.
+@@ -420,7 +426,7 @@ system immutable
+ .Pp
+ .Ex -std ls
  .Sh ENVIRONMENT
 -.Bl -tag -width BLOCKSIZE
 +.Bl -tag -width CLICOLOR_FORCE
  .It Ev BLOCKSIZE
  If the environment variable
  .Ev BLOCKSIZE
-@@ -424,6 +430,44 @@ option is not specified, the block counts
+@@ -430,6 +436,44 @@ option is not specified, the block counts
  (see
  .Fl s )
  will be displayed in units of that size block.
@@ -83,7 +83,7 @@ $OpenBSD: patch-colorls_1,v 1.10 2007/08/11 18:41:28 naddy Exp $
  .It COLUMNS
  If this variable contains a string representing a
  decimal integer, it is used as the
-@@ -436,6 +480,99 @@ many pathname text columns to display
+@@ -442,6 +486,99 @@ many pathname text columns to display
  based on the width provided
  (see
  .Fl C ) .
@@ -183,7 +183,7 @@ $OpenBSD: patch-colorls_1,v 1.10 2007/08/11 18:41:28 naddy Exp $
  .It Ev TZ
  The time zone to use when displaying dates.
  See
-@@ -445,24 +582,25 @@ for more information.
+@@ -451,24 +588,25 @@ for more information.
  .Sh EXAMPLES
  List the contents of the current working directory in long format:
  .Pp
@@ -212,8 +212,17 @@ $OpenBSD: patch-colorls_1,v 1.10 2007/08/11 18:41:28 naddy Exp $
  .Xr symlink 7 ,
  .Xr sticky 8
  .Sh STANDARDS
-@@ -492,6 +630,6 @@ flag differs between this implementation and
- .St -p1003.1-2004 .
+@@ -479,7 +617,7 @@ utility is compliant with the
+ specification.
+ .Pp
+ The flags
+-.Op Fl hT
++.Op Fl GhT
+ are extensions to that specification.
+ .Pp
+ Historically, the
+@@ -500,6 +638,6 @@ flags differs between this implementation and
+ .St -p1003.1-2008 .
  .Sh HISTORY
  An
 -.Nm

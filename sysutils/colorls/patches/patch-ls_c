@@ -1,7 +1,7 @@
-$OpenBSD: patch-ls_c,v 1.9 2007/08/11 17:52:11 naddy Exp $
---- ls.c.orig	Mon May  7 20:39:28 2007
-+++ ls.c	Sat Aug 11 19:28:48 2007
-@@ -62,6 +62,10 @@ static char rcsid[] = "$OpenBSD: ls.c,v 1.29 2007/05/0
+$OpenBSD: patch-ls_c,v 1.10 2009/02/14 16:39:28 naddy Exp $
+--- ls.c.orig	Sat Feb 14 17:24:38 2009
++++ ls.c	Sat Feb 14 17:28:28 2009
+@@ -62,6 +62,10 @@ static char rcsid[] = "$OpenBSD: ls.c,v 1.33 2008/12/3
  #include <string.h>
  #include <unistd.h>
  #include <util.h>
@@ -48,8 +48,8 @@ $OpenBSD: patch-ls_c,v 1.9 2007/08/11 17:52:11 naddy Exp $
 +	while ((ch = getopt(argc, argv, "1ACFGLRSTacdfghiklmnopqrstux")) != -1) {
  		switch (ch) {
  		/*
- 		 * The -1, -C and -l, -m and -x options all override each
-@@ -185,6 +203,9 @@ ls_main(int argc, char *argv[])
+ 		 * The -1, -C and -l, -m, -n and -x options all override each
+@@ -186,6 +204,9 @@ ls_main(int argc, char *argv[])
  		case 'F':
  			f_type = 1;
  			break;
@@ -59,7 +59,7 @@ $OpenBSD: patch-ls_c,v 1.9 2007/08/11 17:52:11 naddy Exp $
  		case 'L':
  			fts_options &= ~FTS_PHYSICAL;
  			fts_options |= FTS_LOGICAL;
-@@ -254,11 +275,46 @@ ls_main(int argc, char *argv[])
+@@ -255,11 +276,46 @@ ls_main(int argc, char *argv[])
  	if (f_grouponly == -1)
  		f_grouponly = 0;
  
