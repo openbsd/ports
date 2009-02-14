@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2009/01/11 12:42:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/02/14 14:50:46 ajacoutot Exp $
 
 COMMENT=	audio sample rate conversion library
 
-DISTNAME=	libsamplerate-0.1.5
+DISTNAME=	libsamplerate-0.1.7
 SHARED_LIBS=	samplerate	2.0	# .1.3
 CATEGORIES=	audio
 
