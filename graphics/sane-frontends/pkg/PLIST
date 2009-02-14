@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/03 15:30:12 alek Exp $
-bin/scanadf
-bin/xcam
-bin/xscanimage
+@comment $OpenBSD: PLIST,v 1.2 2009/02/14 10:05:21 jasper Exp $
+@bin bin/scanadf
+@bin bin/xcam
+@bin bin/xscanimage
 @man man/man1/scanadf.1
 @man man/man1/xcam.1
 @man man/man1/xscanimage.1
