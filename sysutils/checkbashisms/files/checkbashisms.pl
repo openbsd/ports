@@ -1,6 +1,10 @@
 #! /usr/bin/perl -w
-# $Id: checkbashisms.pl,v 1.1.1.1 2007/02/06 22:22:16 jasper Exp $
-
+# $OpenBSD: checkbashisms.pl,v 1.2 2009/02/14 08:53:21 jasper Exp $
+# This script is essentially copied from /usr/share/lintian/checks/scripts,
+# which is:
+#   Copyright (C) 1998 Richard Braakman
+#   Copyright (C) 2002 Josip Rodin
+# This version is
 #   Copyright (C) 2003 Julian Gilbey
 # 
 # This program is free software; you can redistribute it and/or modify
@@ -20,11 +24,14 @@
 # MA 02111-1307, USA.
 
 use strict;
+use Getopt::Long;
+
+sub init_hashes;
 
 (my $progname = $0) =~ s|.*/||;
 
 my $usage = <<"EOF";
-Usage: $progname script ...
+Usage: $progname [-n] [-f] [-x] script ...
    or: $progname --help
    or: $progname --version
 This script performs basic checks for the presence of bashisms
@@ -32,7 +39,7 @@ in /bin/sh scripts.
 EOF
 
 my $version = <<"EOF";
-This is $progname, from the Debian devscripts package, version 2.9.17
+This is $progname, from the Debian devscripts package, version ###VERSION###
 This code is copyright 2003 by Julian Gilbey <jdg\@debian.org>,
 based on original code which is copyright 1998 by Richard Braakman
 and copyright 2002 by Josip Rodin.
@@ -41,16 +48,51 @@ You are free to redistribute this code under the terms of the
 GNU General Public License, version 2, or (at your option) any later version.
 EOF
 
+my ($opt_echo, $opt_force, $opt_extra, $opt_posix);
+my ($opt_help, $opt_version);
+
 ##
 ## handle command-line options
 ##
-if (int(@ARGV) == 0 or $ARGV[0] =~ /^(--help|-h)$/) { print $usage; exit 0; }
-if (@ARGV and $ARGV[0] =~ /^(--version|-v)$/) { print $version; exit 0; }
+$opt_help = 1 if int(@ARGV) == 0;
 
+GetOptions("help|h" => \$opt_help,
+	   "version|v" => \$opt_version,
+	   "newline|n" => \$opt_echo,
+	   "force|f" => \$opt_force,
+	   "extra|x" => \$opt_extra,
+	   "posix|p" => \$opt_posix,
+           )
+    or die "Usage: $progname [options] filelist\nRun $progname --help for more details\n";
+
+if ($opt_help) { print $usage; exit 0; }
+if ($opt_version) { print $version; exit 0; }
+
+$opt_echo = 1 if $opt_posix;
 
 my $status = 0;
+my $makefile = 0;
+my (%bashisms, %string_bashisms, %singlequote_bashisms);
+
+init_hashes;
 
 foreach my $filename (@ARGV) {
+    my $check_lines_count = -1;
+
+    if (!$opt_force) {
+	$check_lines_count = script_is_evil_and_wrong($filename);
+    }
+
+    if ($check_lines_count == 0 or $check_lines_count == 1) {
+	warn "script $filename does not appear to be a /bin/sh script; skipping\n";
+	next;
+    }
+
+    if ($check_lines_count != -1) {
+	warn "script $filename appears to be a shell wrapper; only checking the first "
+	     . "$check_lines_count lines\n";
+    }
+
     unless (open C, "$filename") {
 	warn "cannot open script $filename for reading: $!\n";
 	$status |= 2;
@@ -58,17 +100,34 @@ foreach my $filename (@ARGV) {
     }
 
     my $cat_string = "";
+    my $quote_string = "";
+    my $last_continued = 0;
+    my $continued = 0;
+    my $found_rules = 0;
 
     while (<C>) {
+	next unless ($check_lines_count == -1 or $. <= $check_lines_count);
+
 	if ($. == 1) { # This should be an interpreter line
 	    if (m,^\#!\s*(\S+),) {
 		my $interpreter = $1;
+
+		if ($interpreter =~ m,/make$,) {
+		    init_hashes if !$makefile++;
+		    $makefile = 1;
+		} else {
+		    init_hashes if $makefile--;
+		    $makefile = 0;
+		}
+		next if $opt_force;
+
 		if ($interpreter =~ m,/bash$,) {
 		    warn "script $filename is already a bash script; skipping\n";
 		    $status |= 2;
 		    last;  # end this file
 		}
-		elsif ($interpreter !~ m,/(sh|ash|dash)$,) {
+		elsif ($interpreter !~ m,/(sh|posh)$,) {
+### ksh/zsh?
 		    warn "script $filename does not appear to be a /bin/sh script; skipping\n";
 		    $status |= 2;
 		    last;
@@ -78,17 +137,63 @@ foreach my $filename (@ARGV) {
 	    }
 	}
 
-	next if m,^\s*\#,;  # skip comment lines
 	chomp;
 	my $orig_line = $_;
 
-	s/(?<!\\)\#.*$//;   # eat comments
+	# We want to remove end-of-line comments, so need to skip
+	# comments that appear inside balanced pairs
+	# of single or double quotes
 
-	if (m/(?:^|\s+)cat\s*\<\<\s*(\w+)/) {
-	    $cat_string = $1;
+	# Remove comments in the "quoted" part of a line that starts
+	# in a quoted block? The problem is that we have no idea
+	# whether the program interpreting the block treats the
+	# quote character as part of the comment or as a quote
+	# terminator. We err on the side of caution and assume it
+	# will be treated as part of the comment.
+	# s/^(?:.*?[^\\])?$quote_string(.*)$/$1/ if $quote_string ne "";
+
+	next if m,^\s*\#,;  # skip comment lines
+
+	# Remove quoted strings so we can more easily ignore comments
+	# inside them
+	s/(^|[^\\](?:\\\\)*)\'(?:\\.|[^\\\'])+\'/$1''/g;
+	s/(^|[^\\](?:\\\\)*)\"(?:\\.|[^\\\"])+\"/$1""/g;
+
+	# If the remaining string contains what looks like a comment,
+	# eat it. In either case, swap the unmodified script line
+	# back in for processing.
+	if (m/(?:^|[^[\\])[\s\&;\(\)](\#.*$)/) {
+	    $_ = $orig_line;
+	    s/\Q$1\E//;  # eat comments
+	} else {
+	    $_ = $orig_line;
 	}
-	elsif ($cat_string ne "" and m/^$cat_string/) {
+
+	if ($makefile) {
+	    $last_continued = $continued;
+	    if (/[^\\]\\$/) {
+		$continued = 1;
+	    } else {
+		$continued = 0;
+	    }
+
+	    # Don't match lines that look like a rule if we're in a
+	    # continuation line before the start of the rules
+	    if (/^[\w%-]+:+\s.*?;?(.*)$/ and !($last_continued and !$found_rules)) {
+		$found_rules = 1;
+		$_ = $1 if $1;
+	    } 
+
+	    last if m%^(export )?SHELL\s*:?=\s*(/bin/)?bash\s*%;
+
+	    s/^\t//;
+	    s/(\$){2}/$1/;
+	    s/^[\s\t]*@//;
+	}
+
+	if ($cat_string ne "" and m/^\Q$cat_string\E$/) {
 	    $cat_string = "";
+	    next;
 	}
 	my $within_another_shell = 0;
 	if (m,(^|\s+)((/usr)?/bin/)?((b|d)?a|k|z|t?c)sh\s+-c\s*.+,) {
@@ -100,53 +205,173 @@ foreach my $filename (@ARGV) {
 	    my $found = 0;
 	    my $match = '';
 	    my $explanation = '';
-	    my %bashisms = (
-		'(?:^|\s+)function\s+\w+' =>   q<'function' is useless>,
-		'(?:^|\s+)select\s+\w+' =>     q<'select' is not POSIX>,
-		'(?:^|\s+)source\s+(?:\.\/|\/|\$)[^\s]+' =>
-		                               q<should be '.', not 'source'>,
-		'(\[|test|-o|-a)\s*[^\s]+\s+==\s' =>
-		                               q<should be 'b = a'>,
-		'\s\|\&' =>                    q<pipelining is not POSIX>,
-		'\$\[\w+\]' =>                 q<arithmetic not allowed>,
-		'\$\{\w+\:\d+(?::\d+)?\}' =>   q<${foo:3[:1]}>,
-		'\$\{\w+(/.+?){1,2}\}' =>      q<${parm/?/pat[/str]}>,
-		'[^\\\]\{([^\s]+?,)+[^\\\}\s]+\}' =>
-		                               q<brace expansion>,
-		'(?:^|\s+)\w+\[\d+\]=' =>      q<bash arrays, H[0]>,
-		'\$\{\#?\w+\[[0-9\*\@]+\]\}' => q<bash arrays, ${name[0|*|@]}>,
-		'(?:^|\s+)(read\s*(?:;|$))' => q<read without variable>,
-		'\$\(\([A-Za-z]' => q<cnt=$((cnt + 1)) does not work in dash>,
-		'echo\s+-[ne]' =>              q<echo -n/-e>,
-		'exec\s+-[acl]' =>             q<exec -c/-l/-a name>,
-		'\blet\s' =>                   q<let ...>,
-		'\$RANDOM\b' =>                q<$RANDOM>,
-		'(?<!\$)\(\(' =>               q<'((' should be '$(('>,
-	    );
+	    my $line = $_;
 
-	    while (my ($re,$expl) = each %bashisms) {
-		if (m/($re)/) {
-		    $found = 1;
-		    $match = $1;
-		    $explanation = $expl;
-		    last;
+	    # Remove "" / '' as they clearly aren't quoted strings
+	    # and not considering them makes the matching easier
+	    $line =~ s/(^|[^\\])(\'\')+/$1/g;
+	    $line =~ s/(^|[^\\])(\"\")+/$1/g;
+
+	    if ($quote_string ne "") {
+		my $otherquote = ($quote_string eq "\"" ? "\'" : "\"");
+		# Inside a quoted block
+		if ($line =~ /(?:^|^.*?[^\\])$quote_string(.*)$/) {
+		    my $rest = $1;
+		    my $templine = $line;
+
+		    # Remove quoted strings delimited with $otherquote
+		    $templine =~ s/(^|[^\\])$otherquote[^$quote_string]*?[^\\]$otherquote/$1/g;
+		    # Remove quotes that are themselves quoted
+		    # "a'b"
+		    $templine =~ s/(^|[^\\])$otherquote.*?$quote_string.*?[^\\]$otherquote/$1/g;
+		    # "\""
+		    $templine =~ s/(^|[^\\])$quote_string\\$quote_string$quote_string/$1/g;
+
+		    # After all that, were there still any quotes left?
+		    my $count = () = $templine =~ /(^|[^\\])$quote_string/g;
+		    next if $count == 0;
+
+		    $count = () = $rest =~ /(^|[^\\])$quote_string/g;
+		    if ($count % 2 == 0) {
+			# Quoted block ends on this line
+			# Ignore everything before the closing quote
+			$line = $rest || '';
+			$quote_string = "";
+		    } else {
+			next;
+		    }
+		} else {
+		    # Still inside the quoted block, skip this line
+		    next;
 		}
 	    }
+
+	    # Check even if we removed the end of a quoted block
+	    # in the previous check, as a single line can end one
+	    # block and begin another
+	    if ($quote_string eq "") {
+		# Possible start of a quoted block
+		for my $quote ("\"", "\'") {
+		    my $templine = $line;
+		    my $otherquote = ($quote eq "\"" ? "\'" : "\"");
+
+		    # Remove balanced quotes and their content
+		    $templine =~ s/(^|[^\\\"](?:\\\\)*)\'(?:\\.|[^\\\'])+\'/$1/g;
+		    $templine =~ s/(^|[^\\\'](?:\\\\)*)\"(?:\\.|[^\\\"])+\"/$1/g;
+
+		    # Don't flag quotes that are themselves quoted
+		    # "a'b"
+		    $templine =~ s/$otherquote.*?$quote.*?$otherquote//g;
+		    # "\""
+		    $templine =~ s/(^|[^\\])$quote\\$quote$quote/$1/g;
+		    my $count = () = $templine =~ /(^|[^\\])$quote/g;
+
+		    # If there's an odd number of non-escaped
+		    # quotes in the line it's almost certainly the
+		    # start of a quoted block.
+		    if ($count % 2 == 1) {
+			$quote_string = $quote;
+			$line =~ s/^(.*)$quote.*$/$1/;
+			last;
+		    }
+		}
+	    }
+
 	    # since this test is ugly, I have to do it by itself
 	    # detect source (.) trying to pass args to the command it runs
-	    if (not $found and m/^\s*(\.\s+[^\s]+\s+([^\s]+))/) {
-		if ($2 eq '&&' || $2 eq '||') {
+	    # The first expression weeds out '. "foo bar"'
+	    if (not $found and
+		not m/^\s*\.\s+(\"[^\"]+\"|\'[^\']+\')\s*(\&|\||\d?>|<|;|\Z)/
+		and m/^\s*(\.\s+[^\s;\`:]+\s+([^\s;]+))/) {
+		if ($2 =~ /^(\&|\||\d?>|<)/) {
 		    # everything is ok
 		    ;
 		} else {
 		    $found = 1;
 		    $match = $1;
+		    $explanation = "sourced script with arguments";
+		    output_explanation($filename, $orig_line, $explanation);
 		}
 	    }
-	    unless ($found == 0) {
-		warn "possible bashism in $filename line $. ($explanation):\n$orig_line\n";
-		$status |= 1;
+
+	    # Remove "quoted quotes". They're likely to be inside
+	    # another pair of quotes; we're not interested in
+	    # them for their own sake and removing them makes finding
+	    # the limits of the outer pair far easier.
+	    $line =~ s/(^|[^\\\'\"])\"\'\"/$1/g;
+	    $line =~ s/(^|[^\\\'\"])\'\"\'/$1/g;
+
+	    while (my ($re,$expl) = each %singlequote_bashisms) {
+		if ($line =~ m/($re)/) {
+		    $found = 1;
+		    $match = $1;
+		    $explanation = $expl;
+		    output_explanation($filename, $orig_line, $explanation);
+		}
 	    }
+
+	    my $re='(?<![\$\\\])\$\'[^\']+\'';
+	    if ($line =~ m/(.*)($re)/){
+		my $count = () = $1 =~ /(^|[^\\])\'/g;
+		if( $count % 2 == 0 ) {
+		    output_explanation($filename, $orig_line, q<$'...' should be "$(printf '...')">);
+		}
+	    }   
+
+	    # $cat_line contains the version of the line we'll check
+	    # for heredoc delimiters later. Initially, remove any
+	    # spaces between << and the delimiter to make the following
+	    # updates to $cat_line easier.
+	    my $cat_line = $line;
+	    $cat_line =~ s/(<\<-?)\s+/$1/g;
+
+	    # Ignore anything inside single quotes; it could be an
+	    # argument to grep or the like.
+	    $line =~ s/(^|[^\\\"](?:\\\\)*)\'(?:\\.|[^\\\'])+\'/$1''/g;
+
+	    # As above, with the exception that we don't remove the string
+	    # if the quote is immediately preceeded by a < or a -, so we
+	    # can match "foo <<-?'xyz'" as a heredoc later
+	    # The check is a little more greedy than we'd like, but the
+	    # heredoc test itself will weed out any false positives
+	    $cat_line =~ s/(^|[^<\\\"-](?:\\\\)*)\'(?:\\.|[^\\\'])+\'/$1''/g;
+
+	    $re='(?<![\$\\\])\$\"[^\"]+\"';
+	    if ($line =~ m/(.*)($re)/){
+		my $count = () = $1 =~ /(^|[^\\])\"/g;
+		if( $count % 2 == 0 ) {
+		    output_explanation($filename, $orig_line, q<$"foo" should be eval_gettext "foo">);
+		}
+	    }   
+
+	    while (my ($re,$expl) = each %string_bashisms) {
+		if ($line =~ m/($re)/) {
+		    $found = 1;
+		    $match = $1;
+		    $explanation = $expl;
+		    output_explanation($filename, $orig_line, $explanation);
+		}
+	    }
+
+	    # We've checked for all the things we still want to notice in
+	    # double-quoted strings, so now remove those strings as well.
+	    $line =~ s/(^|[^\\\'](?:\\\\)*)\"(?:\\.|[^\\\"])+\"/$1""/g;
+	    $cat_line =~ s/(^|[^<\\\'-](?:\\\\)*)\"(?:\\.|[^\\\"])+\"/$1""/g;
+	    while (my ($re,$expl) = each %bashisms) {
+	        if ($line =~ m/($re)/) {
+		    $found = 1;
+		    $match = $1;
+		    $explanation = $expl;
+		    output_explanation($filename, $orig_line, $explanation);
+		}
+	    }
+
+	    # Only look for the beginning of a heredoc here, after we've
+	    # stripped out quoted material, to avoid false positives.
+	    if ($cat_line =~ m/(?:^|[^<])\<\<\-?\s*(?:[\\]?(\w+)|[\'\"](.*?)[\'\"])/) {
+		$cat_string = $1;
+		$cat_string = $2 if not defined $cat_string;
+            }
 	}
     }
 
@@ -154,3 +379,197 @@ foreach my $filename (@ARGV) {
 }
 
 exit $status;
+
+sub output_explanation {
+    my ($filename, $line, $explanation) = @_;
+
+    warn "possible bashism in $filename line $. ($explanation):\n$line\n";
+    $status |= 1;
+}
+
+# Returns non-zero if the given file is not actually a shell script,
+# just looks like one.
+sub script_is_evil_and_wrong {
+    my ($filename) = @_;
+    my $ret = -1;
+    # lintian's version of this function aborts if the file
+    # can't be opened, but we simply return as the next
+    # test in the calling code handles reporting the error
+    # itself
+    open (IN, '<', $filename) or return $ret;
+    my $i = 0;
+    my $var = "0";
+    my $backgrounded = 0;
+    local $_;
+    while (<IN>) {
+        chomp;
+        next if /^#/o;
+        next if /^$/o;
+        last if (++$i > 55);
+        if (m~
+	    # the exec should either be "eval"ed or a new statement
+	    (^\s*|\beval\s*[\'\"]|(;|&&)\s*)
+
+	    # eat anything between the exec and $0
+	    exec\s*.+\s*
+
+	    # optionally quoted executable name (via $0)
+	    .?\$$var.?\s*
+
+	    # optional "end of options" indicator
+	    (--\s*)?
+
+	    # Match expressions of the form '${1+$@}', '${1:+"$@"',
+	    # '"${1+$@', "$@", etc where the quotes (before the dollar
+	    # sign(s)) are optional and the second (or only if the $1
+	    # clause is omitted) parameter may be $@ or $*. 
+	    # 
+	    # Finally the whole subexpression may be omitted for scripts
+	    # which do not pass on their parameters (i.e. after re-execing
+	    # they take their parameters (and potentially data) from stdin
+	    .?(\${1:?\+.?)?(\$(\@|\*))?~x) {
+            $ret = $. - 1;
+            last;
+        } elsif (/^\s*(\w+)=\$0;/) {
+	    $var = $1;
+	} elsif (m~
+	    # Match scripts which use "foo $0 $@ &\nexec true\n"
+	    # Program name
+	    \S+\s+
+
+	    # As above
+	    .?\$$var.?\s*
+	    (--\s*)?
+	    .?(\${1:?\+.?)?(\$(\@|\*))?.?\s*\&~x) {
+
+	    $backgrounded = 1;
+	} elsif ($backgrounded and m~
+	    # the exec should either be "eval"ed or a new statement
+	    (^\s*|\beval\s*[\'\"]|(;|&&)\s*)
+	    exec\s+true(\s|\Z)~x) {
+
+	    $ret = $. - 1;
+	    last;
+	}
+
+    }
+    close IN;
+    return $ret;
+}
+
+sub init_hashes {
+    my $LEADIN = qr'(?:(^|[`&;(|{])\s*|(if|then|do|while|shell)\s+)';
+
+    %bashisms = (
+	qr'(?:^|\s+)function \w+(\s|\(|\Z)' => q<'function' is useless>,
+	$LEADIN . qr'select\s+\w+' =>     q<'select' is not POSIX>,
+	qr'(test|-o|-a)\s*[^\s]+\s+==\s' =>
+	                               q<should be 'b = a'>,
+	qr'\[\s+[^\]]+\s+==\s' =>        q<should be 'b = a'>,
+	qr'\s\|\&' =>                    q<pipelining is not POSIX>,
+	qr'[^\\\$]\{([^\s\\\}]*?,)+[^\\\}\s]*\}' =>
+	                               q<brace expansion>,
+	qr'(?:^|\s+)\w+\[\d+\]=' =>      q<bash arrays, H[0]>,
+	$LEADIN . qr'read\s+(?:-[a-qs-zA-Z\d-]+)' => q<read with option other than -r>,
+	$LEADIN . qr'read\s*(?:-\w+\s*)*(?:\".*?\"|[\'].*?[\'])?\s*(?:;|$)'
+	    => q<read without variable>,
+	$LEADIN . qr'echo\s+(-n\s+)?-n?en?\s' =>      q<echo -e>,
+	$LEADIN . qr'exec\s+-[acl]' =>    q<exec -c/-l/-a name>,
+	$LEADIN . qr'let\s' =>            q<let ...>,
+	qr'(?<![\$\(])\(\(.*\)\)' =>     q<'((' should be '$(('>,
+	qr'\$\[[^][]+\]' =>	       q<'$[' should be '$(('>,
+	qr'(?:^|\s+)(\[|test)\s+-a' =>            q<test with unary -a (should be -e)>,
+	qr'\&>' =>	               q<should be \>word 2\>&1>,
+	qr'(<\&|>\&)\s*((-|\d+)[^\s;|)`&\\\\]|[^-\d\s]+)' =>
+				       q<should be \>word 2\>&1>,
+	$LEADIN . qr'kill\s+-[^sl]\w*' => q<kill -[0-9] or -[A-Z]>,
+	$LEADIN . qr'trap\s+["\']?.*["\']?\s+.*[1-9]' => q<trap with signal numbers>,
+	qr'\[\[(?!:)' => q<alternative test command ([[ foo ]] should be [ foo ])>,
+	qr'/dev/(tcp|udp)'	    => q</dev/(tcp|udp)>,
+	$LEADIN . qr'suspend\s' =>        q<suspend>,
+	$LEADIN . qr'caller\s' =>         q<caller>,
+	$LEADIN . qr'complete\s' =>       q<complete>,
+	$LEADIN . qr'compgen\s' =>        q<compgen>,
+	$LEADIN . qr'declare\s' =>        q<declare>,
+	$LEADIN . qr'typeset\s' =>        q<typeset>,
+	$LEADIN . qr'disown\s' =>         q<disown>,
+	$LEADIN . qr'builtin\s' =>        q<builtin>,
+	$LEADIN . qr'set\s+-[BHT]+' =>    q<set -[BHT]>,
+	$LEADIN . qr'alias\s+-p' =>       q<alias -p>,
+	$LEADIN . qr'unalias\s+-a' =>     q<unalias -a>,
+	$LEADIN . qr'local\s+-[a-zA-Z]+' => q<local -opt>,
+	qr'(?:^|\s+)\s*\(?\w*[^\(\w\s]+\S*?\s*\(\)\s*([\{|\(]|\Z)'
+		=> q<function names should only contain [a-z0-9_]>,
+	$LEADIN . qr'(push|pop)d(\s|\Z)' =>    q<(push|pod)d>,
+	$LEADIN . qr'export\s+-[^p]' =>  q<export only takes -p as an option>,
+	$LEADIN . qr'ulimit(\s|\Z)' =>         q<ulimit>,
+	$LEADIN . qr'shopt(\s|\Z)' =>          q<shopt>,
+	$LEADIN . qr'type\s' =>          q<type>,
+	$LEADIN . qr'time\s' =>          q<time>,
+	$LEADIN . qr'dirs(\s|\Z)' =>          q<dirs>,
+	qr'(?:^|\s+)[<>]\(.*?\)'	    => q<\<() process substituion>,
+	qr'(?:^|\s+)readonly\s+-[af]' => q<readonly -[af]>,
+	$LEADIN . qr'(sh|\$\{?SHELL\}?) -[rD]' => q<sh -[rD]>,
+	$LEADIN . qr'(sh|\$\{?SHELL\}?) --\w+' =>  q<sh --long-option>,
+	$LEADIN . qr'(sh|\$\{?SHELL\}?) [-+]O' =>  q<sh [-+]O>,
+    );
+
+    %string_bashisms = (
+	qr'\$\[\w+\]' =>                 q<arithmetic not allowed>,
+	qr'\$\{\w+\:\d+(?::\d+)?\}' =>   q<${foo:3[:1]}>,
+	qr'\$\{!\w+[\@*]\}' =>           q<${!prefix[*|@]>,
+	qr'\$\{!\w+\}' =>                q<${!name}>,
+	qr'\$\{\w+(/.+?){1,2}\}' =>      q<${parm/?/pat[/str]}>,
+	qr'\$\{\#?\w+\[[0-9\*\@]+\]\}' => q<bash arrays, ${name[0|*|@]}>,
+	qr'\$\{?RANDOM\}?\b' =>          q<$RANDOM>,
+	qr'\$\{?(OS|MACH)TYPE\}?\b'   => q<$(OS|MACH)TYPE>,
+	qr'\$\{?HOST(TYPE|NAME)\}?\b' => q<$HOST(TYPE|NAME)>,
+	qr'\$\{?DIRSTACK\}?\b'        => q<$DIRSTACK>,
+	qr'\$\{?EUID\}?\b'	      => q<$EUID should be "$(id -u)">,
+	qr'\$\{?UID\}?\b'	       => q<$UID should be "$(id -ru)">,
+	qr'\$\{?SECONDS\}?\b'	    => q<$SECONDS>,
+	qr'\$\{?BASH_[A-Z]+\}?\b'     => q<$BASH_SOMETHING>,
+	qr'\$\{?SHELLOPTS\}?\b'       => q<$SHELLOPTS>,
+	qr'\$\{?PIPESTATUS\}?\b'      => q<$PIPESTATUS>,
+	qr'\$\{?SHLVL\}?\b'           => q<$SHLVL>,
+	qr'<<<'                       => q<\<\<\< here string>,
+	$LEADIN . qr'echo\s+(?:-[^e\s]+\s+)?\"[^\"]*(\\[\\abcEfnrtv0])+.*?[\"]' => q<unsafe echo with backslash>,
+    );
+
+    %singlequote_bashisms = (
+	$LEADIN . qr'echo\s+(?:-[^e\s]+\s+)?\'[^\']*(\\[\\abcEfnrtv0])+.*?[\']' => q<unsafe echo with backslash>,
+	$LEADIN . qr'source\s+[\"\']?(?:\.\/|\/|\$|[\w.-])[^\s]+' =>
+	                               q<should be '.', not 'source'>,
+    );
+
+    if ($opt_echo) {
+	$bashisms{$LEADIN . qr'echo\s+-[A-Za-z]*n'} = q<echo -n>;
+    }
+    if ($opt_posix) {
+	$bashisms{$LEADIN . qr'local\s+\w+(\s+\W|\s*[;&|)]|$)'} = q<local foo>;
+	$bashisms{$LEADIN . qr'local\s+\w+='} = q<local foo=bar>;
+	$bashisms{$LEADIN . qr'local\s+\w+\s+\w+'} = q<local x y>;
+	$bashisms{$LEADIN . qr'((?:test|\[)\s+.+\s-[ao])\s'} = q<test -a/-o>;
+    }
+
+    if ($makefile) {
+	$string_bashisms{qr'(\$\(|\`)\s*\<\s*([^\s\)]{2,}|[^DF])\s*(\)|\`)'} =
+	    q<'$(\< foo)' should be '$(cat foo)'>;
+    } else {
+	$bashisms{$LEADIN . qr'\w+\+='} = q<should be VAR="${VAR}foo">;
+	$string_bashisms{qr'(\$\(|\`)\s*\<\s*\S+\s*(\)|\`)'} = q<'$(\< foo)' should be '$(cat foo)'>;
+    }
+	    
+    if ($opt_extra) {
+	$string_bashisms{qr'\$\{?BASH\}?\b'} = q<$BASH>;
+	$string_bashisms{qr'(?:^|\s+)RANDOM='} = q<RANDOM=>;
+	$string_bashisms{qr'(?:^|\s+)(OS|MACH)TYPE='} = q<(OS|MACH)TYPE=>;
+	$string_bashisms{qr'(?:^|\s+)HOST(TYPE|NAME)='} = q<HOST(TYPE|NAME)=>;
+	$string_bashisms{qr'(?:^|\s+)DIRSTACK='} = q<DIRSTACK=>;
+	$string_bashisms{qr'(?:^|\s+)EUID='} = q<EUID=>;
+	$string_bashisms{qr'(?:^|\s+)UID='} = q<UID=>;
+	$string_bashisms{qr'(?:^|\s+)BASH(_[A-Z]+)?='} = q<BASH(_SOMETHING)=>;
+	$string_bashisms{qr'(?:^|\s+)SHELLOPTS='} = q<SHELLOPTS=>;
+	$string_bashisms{qr'\$\{?POSIXLY_CORRECT\}?\b'} = q<$POSIXLY_CORRECT>;
+    }
+}

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 21:14:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/14 08:53:21 jasper Exp $
 
 COMMENT=		check shell scripts for bash-specific constructs
 
-DISTNAME=		checkbashisms-0.1
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		checkbashisms-0.2
 DISTFILES=
 CATEGORIES=		sysutils devel
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
