@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2008/09/05 15:45:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2009/02/14 15:03:38 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		simple GTK desktop news aggregator
 
 DISTNAME=		liferea-1.4.19
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www x11
 
 HOMEPAGE=		http://liferea.sourceforge.net/
@@ -61,6 +62,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-dbus \
 			--disable-gecko \
 			--disable-gtkhtml2 \
+			--disable-webkit \
 			--enable-xulrunner \
 			--enable-gnutls \
 			--with-gnutls-libs=${LOCALBASE}/lib \
