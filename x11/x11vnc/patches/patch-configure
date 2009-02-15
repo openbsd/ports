@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2008/10/28 01:44:01 sthen Exp $
---- configure.orig	Tue Sep 16 10:05:19 2008
-+++ configure	Sun Oct 19 23:27:50 2008
-@@ -8613,13 +8613,13 @@ fi
+$OpenBSD: patch-configure,v 1.3 2009/02/15 09:41:29 sthen Exp $
+--- configure.orig	Tue Dec  9 03:51:01 2008
++++ configure	Sun Feb 15 09:35:55 2009
+@@ -8618,13 +8618,13 @@ fi
  
  	if test ! -z "$HAVE_PTHREAD_H"; then
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.2 2008/10/28 01:44:01 sthen Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -8682,17 +8682,17 @@ if test $ac_cv_lib_pthread_pthread_mutex_lock = yes; t
+@@ -8687,17 +8687,17 @@ if test $ac_cv_lib_pthread_pthread_mutex_lock = yes; t
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  
