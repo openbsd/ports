@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/15 17:45:30 jasper Exp $
+include/clutter-${MAJOR}/clutter-gtk/
+include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-embed.h
+include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-util.h
+lib/libclutter-gtk-${MAJOR}.la
+@lib lib/libclutter-gtk-${MAJOR}.so.${LIBclutter-gtk-0.8_VERSION}
+lib/pkgconfig/clutter-gtk-${MAJOR}.pc
+share/gtk-doc/html/clutter-gtk/
+share/gtk-doc/html/clutter-gtk/GtkClutterEmbed.html
+share/gtk-doc/html/clutter-gtk/ch01.html
+share/gtk-doc/html/clutter-gtk/ch02.html
+share/gtk-doc/html/clutter-gtk/ch03.html
+share/gtk-doc/html/clutter-gtk/clutter-gtk-Utility-Functions.html
+share/gtk-doc/html/clutter-gtk/clutter-gtk.devhelp
+share/gtk-doc/html/clutter-gtk/clutter-gtk.devhelp2
+share/gtk-doc/html/clutter-gtk/home.png
+share/gtk-doc/html/clutter-gtk/index.html
+share/gtk-doc/html/clutter-gtk/index.sgml
+share/gtk-doc/html/clutter-gtk/left.png
+share/gtk-doc/html/clutter-gtk/license.html
+share/gtk-doc/html/clutter-gtk/right.png
+share/gtk-doc/html/clutter-gtk/style.css
+share/gtk-doc/html/clutter-gtk/up.png
