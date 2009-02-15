@@ -1,0 +1,15 @@
+Libchamplain is a C library aimed to provide a Gtk+ widget to display
+rasterized maps.
+
+ * Display a map (OpenStreetMap Mapnik, OpenAerialMap,
+   Maps For Free Relief);
+   o Tiles are downloaded and cached
+   o Downloaded tiles fade in
+ * You can drag to move (a la Google Maps)
+   o without or with kinetic scrolling (a la iPhone)
+   o with elastic edges (a la iPhone)
+ * You can zoom in / out
+ * You can center the map on coordinates (longitude, latitude)
+ * Add markers on the map with a mixed Clutter/Champlain API
+ * Add layers of markers
+ * You can animate markers
