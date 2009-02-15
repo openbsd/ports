@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/01/31 01:06:20 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/02/15 08:57:27 robert Exp $
 @pkgpath editors/openoffice
 %%SHARED%%
 bin/sbase
@@ -2056,12 +2056,8 @@ openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Common/
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Common/Common-UseOOoFileDialogs.xcu
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Common/Common-base.xcu
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Common/Common-calc.xcu
-openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Common/Common-cjk_ja.xcu
-openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Common/Common-cjk_ko.xcu
-openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Common/Common-ctl_fa.xcu
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Common/Common-draw.xcu
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Common/Common-impress.xcu
-openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Common/Common-korea.xcu
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Common/Common-math.xcu
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Common/Common-unx.xcu
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Common/Common-writer.xcu
@@ -2080,8 +2076,6 @@ openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Linguistic/
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Scripting/
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Scripting/Scripting-python.xcu
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Writer/
-openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Writer/Writer-cjk_ja.xcu
-openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Writer/Writer-cjk_ko.xcu
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Office/Writer/Writer-javamail.xcu
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Setup/
 openoffice.org/basis3.0/share/registry/modules/org/openoffice/Setup/Langpack-en-US.xcu
