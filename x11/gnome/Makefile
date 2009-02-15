@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2009/02/15 11:39:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2009/02/15 11:43:35 ajacoutot Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -23,7 +23,7 @@
      SUBDIR += empathy
      SUBDIR += eog
      SUBDIR += file-roller
-     #SUBDIR += f-spot
+     SUBDIR += f-spot
      SUBDIR += games
      SUBDIR += games-extra-data
      SUBDIR += gcalctool
