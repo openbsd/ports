@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.13 2008/12/27 15:54:43 naddy Exp $
+@comment $OpenBSD: PLIST-gui,v 1.14 2009/02/15 18:09:29 naddy Exp $
 @bin bin/transmission
 @man man/man1/transmission.1
 share/applications/transmission.desktop
@@ -26,6 +26,9 @@ share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/transmission.mo
 share/locale/bg/LC_MESSAGES/transmission.mo
+share/locale/br/
+share/locale/br/LC_MESSAGES/
+share/locale/br/LC_MESSAGES/transmission.mo
 share/locale/ca/LC_MESSAGES/transmission.mo
 share/locale/ckb/
 share/locale/ckb/LC_MESSAGES/
@@ -65,9 +68,16 @@ share/locale/ja/LC_MESSAGES/transmission.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/transmission.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/transmission.mo
+share/locale/ko/LC_MESSAGES/transmission.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/transmission.mo
+share/locale/li/
+share/locale/li/LC_MESSAGES/
+share/locale/li/LC_MESSAGES/transmission.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/transmission.mo
@@ -104,6 +114,7 @@ share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/transmission.mo
 share/locale/tr/LC_MESSAGES/transmission.mo
 share/locale/uk/LC_MESSAGES/transmission.mo
+share/locale/vi/LC_MESSAGES/transmission.mo
 share/locale/zh_CN/LC_MESSAGES/transmission.mo
 share/locale/zh_TW/LC_MESSAGES/transmission.mo
 share/pixmaps/

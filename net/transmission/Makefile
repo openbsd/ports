@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2008/12/27 15:54:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2009/02/15 18:09:29 naddy Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gui=	lightweight BitTorrent client with graphical interface
 
-VER=		1.42
+VER=		1.50
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gui=	transmission-gui-${VER}
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://download.m0k.org/transmission/files/
+MASTER_SITES=	http://mirrors.m0k.org/transmission/files/
 EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_gui

@@ -1,14 +1,36 @@
-$OpenBSD: patch-configure,v 1.10 2008/12/02 15:29:07 naddy Exp $
---- configure.orig	Thu Nov 27 21:20:39 2008
-+++ configure	Thu Nov 27 21:21:19 2008
-@@ -21453,10 +21453,6 @@ else
+$OpenBSD: patch-configure,v 1.11 2009/02/15 18:09:29 naddy Exp $
+--- configure.orig	Fri Feb 13 17:43:45 2009
++++ configure	Sat Feb 14 15:37:05 2009
+@@ -20147,8 +20147,8 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+ 
+ if test 0 = "0"; then
+   supported_build=yes
+-  CFLAGS="$CFLAGS -g -O3 -funroll-loops "
+-  CXXFLAGS="$CXXFLAGS -g -O3 -funroll-loops "
++  : CFLAGS="$CFLAGS -g -O3 -funroll-loops "
++  : CXXFLAGS="$CXXFLAGS -g -O3 -funroll-loops "
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define TR_STABLE_RELEASE 1
+@@ -20156,8 +20156,8 @@ _ACEOF
+ 
+ else
+   supported_build=no
+-  CFLAGS="$CFLAGS -g -O0"
+-  CXXFLAGS="$CXXFLAGS -g -O0"
++  : CFLAGS="$CFLAGS -g -O0"
++  : CXXFLAGS="$CXXFLAGS -g -O0"
+   if test 0 = "X"; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+@@ -21540,8 +21540,8 @@ _ACEOF
+ esac
+ 
+ if test "x$GCC" = "xyes" ; then
+-    CFLAGS="-std=gnu99 -ggdb3 -Wall -Wextra -Wredundant-decls -Wpointer-arith -Wformat-security -W -Wmissing-declarations -Wdeclaration-after-statement -Wcast-align -Winit-self -Wundef -Wnested-externs -Wmissing-format-attribute"
+-    CXXFLAGS="-Wall -Wformat-security -W"
++    : CFLAGS="-std=gnu99 -ggdb3 -Wall -Wextra -Wredundant-decls -Wpointer-arith -Wformat-security -W -Wmissing-declarations -Wdeclaration-after-statement -Wcast-align -Winit-self -Wundef -Wnested-externs -Wmissing-format-attribute"
++    : CXXFLAGS="-Wall -Wformat-security -W"
  fi
  
- 
--if test "x$GCC" = "xyes" ; then
--    CFLAGS="-g -Wall -Wformat-security -W -Wmissing-prototypes -Wdeclaration-after-statement -O3 -funroll-loops"
--    CXXFLAGS="-g -Wall -Wformat-security -W -O3 -funroll-loops"
--fi
- 
  { $as_echo "$as_me:$LINENO: checking for ANSI C header files" >&5
- $as_echo_n "checking for ANSI C header files... " >&6; }

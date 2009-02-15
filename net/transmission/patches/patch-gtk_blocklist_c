@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_blocklist_c,v 1.1 2008/12/02 15:29:07 naddy Exp $
---- gtk/blocklist.c.orig	Mon Nov 10 16:52:26 2008
-+++ gtk/blocklist.c	Thu Nov 27 22:33:20 2008
-@@ -145,7 +145,7 @@ blocklistThreadFunc( gpointer gcore )
+$OpenBSD: patch-gtk_blocklist_c,v 1.2 2009/02/15 18:09:29 naddy Exp $
+--- gtk/blocklist.c.orig	Thu Jan 29 19:29:04 2009
++++ gtk/blocklist.c	Fri Jan 30 12:03:27 2009
+@@ -146,7 +146,7 @@ blocklistThreadFunc( gpointer gcore )
      if( ok )
      {
          emitProgress( core, TRUE, _(
