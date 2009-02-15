@@ -1,0 +1,10 @@
+Gyrus is a small tool for the administration of mailboxes in IMAP/Cyrus
+servers.  The main idea behind it, is to provide mail server
+administrators with a better way to do the daily maintenance than a
+command line or a plain and boring telnet client.
+
+The main features gyrus includes are:
+	* Browsing, creation and deletion of mailboxes.
+	* Mailbox quotas control.
+	* Management of IMAP Access Control Lists.
+	* Creation of printable reports with over-quota mailboxes.
