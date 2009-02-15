@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-pl_PL,v 1.1 2009/02/15 10:29:58 robert Exp $
+@pkgpath editors/openoffice3-dicts
+@pkgpath editors/openoffice3-dicts,-main
+openoffice.org3/share/extension/install/pl_PL.oxt
+@exec %D/openoffice.org3/program/unopkg add --shared %D/openoffice.org3/share/extension/install/pl_PL.oxt > /dev/null 2>&1
+@unexec %D/openoffice.org3/program/unopkg remove --shared org.openoffice.pl.hunspell.dictionaries > /dev/null 2>&1

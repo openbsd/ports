@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-fr_FR,v 1.1 2009/02/05 23:26:53 robert Exp $
-@pkgpath editors/openoffice3-dicts-i18n
-@pkgpath editors/openoffice3-dicts-i18n,-main
+@comment $OpenBSD: PLIST-fr_FR,v 1.2 2009/02/15 10:29:58 robert Exp $
+@pkgpath editors/openoffice3-dicts
+@pkgpath editors/openoffice3-dicts,-main
 openoffice.org3/share/extension/install/fr_FR.oxt
 @exec %D/openoffice.org3/program/unopkg add --shared %D/openoffice.org3/share/extension/install/fr_FR.oxt > /dev/null 2>&1
 @unexec %D/openoffice.org3/program/unopkg remove --shared french.classic-and-reform1990-dictionary.from.Dicollecte.by.OlivierR > /dev/null 2>&1

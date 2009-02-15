@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/02/06 21:16:01 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/15 10:29:58 robert Exp $
 
 PKG_ARCH=	*
 
@@ -21,11 +21,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://blade2k.humppa.hu/openoffice3-dicts/
 
 LANGUAGES=	ar_AR de_DE en_GB en_US fr_FR hu_HU nl_NL \
-		ru_RU sl_SL
+		pl_PL ru_RU sl_SL
 
 EXTRACT_CASES=	*.oxt) break;; 
 
-RUN_DEPENDS=	openoffice::editors/openoffice3
+RUN_DEPENDS=	openoffice:openoffice->=3:editors/openoffice3
 
 DIST_SUBDIR=	${NAME}-${V}
 NO_EXTRACT=	Yes
@@ -38,10 +38,10 @@ SUBPACKAGE?=    -en_GB
 .for i in ${LANGUAGES}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.oxt
-PKGNAME-$i=	${NAME}-$i-${V}
+PKGNAME-$i=	${NAME}-$i-${V}p0
 COMMENT-$i=	$i dictionary for OpenOffice.Org 3
 .endfor
-PKGNAME-en_GB=  ${NAME}-en_GB-${V}
+PKGNAME-en_GB=  ${NAME}-en_GB-${V}p0
 
 # use the same for all subpackages
 MESSAGE=	${PKGDIR}/MESSAGE

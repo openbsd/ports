@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-en_US,v 1.1.1.1 2009/02/05 21:32:48 robert Exp $
-@pkgpath editors/openoffice3-dicts-i18n
-@pkgpath editors/openoffice3-dicts-i18n,-main
+@comment $OpenBSD: PLIST-en_US,v 1.2 2009/02/15 10:29:58 robert Exp $
+@pkgpath editors/openoffice3-dicts
+@pkgpath editors/openoffice3-dicts,-main
 openoffice.org3/share/extension/install/en_US.oxt
 @exec %D/openoffice.org3/program/unopkg add --shared %D/openoffice.org3/share/extension/install/en_US.oxt > /dev/null 2>&1
 @unexec %D/openoffice.org3/program/unopkg remove --shared org.openoffice.en-US.hunspell.dictionaries > /dev/null 2>&1

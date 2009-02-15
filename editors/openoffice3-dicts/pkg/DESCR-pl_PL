@@ -1,0 +1,8 @@
+Dictionary pack (pl_PL) for OpenOffice.Org 3.
+
+Polish Dictionary Pack for OpenOffice 3.0. Contains Polish spellchecker,
+hyphenation rules & thesaurus, as prepared by Polish Native-Lang Project.
+The spellchecker is based on Polish dictionary from sjp.pl, the thesaurus
+comes from synonimy.ux.pl, and the hyphenation rules are based on TeX
+hyphenation patterns. All are available under LGPL or public domain
+(hyphenation rules).
