@@ -1,0 +1,20 @@
+$OpenBSD: patch-clutter_x11_clutter-x11_pc_in,v 1.1.1.1 2009/02/15 17:41:13 jasper Exp $
+
+For some reason using ${requires} doesn't work as expected.
+
+--- clutter/x11/clutter-x11.pc.in.orig	Fri Feb 13 11:24:42 2009
++++ clutter/x11/clutter-x11.pc.in	Fri Feb 13 11:24:53 2009
+@@ -4,11 +4,10 @@ libdir=${exec_prefix}/lib
+ includedir=${prefix}/include
+ backend=@clutterbackend@
+ apiversion=@CLUTTER_API_VERSION@
+-requires=@CLUTTER_REQUIRES@
+ 
+ Name: Clutter
+ Description: Clutter Core Library (${backend} backend)
+ Version: @VERSION@
+ Libs: -L${libdir} -lclutter-${backend}-${apiversion}
+ Cflags: -I${includedir}/clutter-${apiversion}
+-Requires: ${requires}
+\ No newline at end of file
++Requires: @CLUTTER_REQUIRES@
