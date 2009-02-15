@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/15 11:39:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/15 12:16:35 ajacoutot Exp $
 
 COMMENT=	Cyrus imapd administration GUI
 
 GNOME_PROJECT=	gyrus
 GNOME_VERSION=	0.3.8
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	mail
 
@@ -38,7 +39,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	echo "Icon=${PREFIX}/share/gyrus/pixmaps/logo_gyrus.png" \
+	echo "Icon=${TRUEPREFIX}/share/gyrus/pixmaps/logo_gyrus.png" \
 		>> ${PREFIX}/share/applications/gyrus.desktop
 
 .include <bsd.port.mk>
