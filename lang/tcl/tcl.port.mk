@@ -1,4 +1,4 @@
-# $OpenBSD: tcl.port.mk,v 1.2 2008/07/08 04:32:06 steven Exp $
+# $OpenBSD: tcl.port.mk,v 1.3 2009/02/15 22:27:44 sthen Exp $
 
 CATEGORIES +=		lang/tcl
 
@@ -12,6 +12,21 @@ MODTCL_CONFIG ?=	${MODTCL_LIBDIR}/tclConfig.sh
 MODTCL_BUILD_DEPENDS ?=	:tcl-${MODTCL_VERSION}.*:lang/tcl/${MODTCL_VERSION}
 MODTCL_RUN_DEPENDS ?=	:tcl-${MODTCL_VERSION}.*:lang/tcl/${MODTCL_VERSION}
 MODTCL_LIB_DEPENDS ?=	tcl${MODTCL_VERSION:S/.//}:tcl-${MODTCL_VERSION}.*:lang/tcl/${MODTCL_VERSION}
+
+
+# Handle the two most commonly used methods
+# for starting up executable Tcl scripts.
+# See http://wiki.tcl.tk/812 for more information.
+
+# Set 'tclsh' for executable scripts (in-place modification).
+MODTCL_TCLSH_ADJ =	perl -pi \
+			-e '$$. == 1 && s!env (tclsh|wish).*$$!env tclsh${MODTCL_VERSION}!;' \
+			-e '$$. == 3 && s!exec (tclsh|wish).*$$!exec tclsh${MODTCL_VERSION} "\$$0" \$${1+"\$$@"}!;' \
+			-e 'close ARGV if eof;'
+
+# Set 'wish' for executable scripts (in-place modification).
+MODTCL_WISH_ADJ =	${MODTCL_TCLSH_ADJ:S/tclsh${MODTCL_VERSION}/wish${MODTCL_VERSION}/}
+
 
 SUBST_VARS +=		MODTCL_VERSION MODTCL_BIN
 
