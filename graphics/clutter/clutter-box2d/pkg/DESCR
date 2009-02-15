@@ -1,0 +1,3 @@
+A glue layer between clutter and box2d that provides a special group
+where the actors can be set to be static or dynamic in regard to a
+physics simulation.

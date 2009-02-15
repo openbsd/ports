@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/15 17:43:23 jasper Exp $
+include/clutter-${MAJOR}/clutter-box2d/
+include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-collision.h
+include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-contact.h
+include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-joint.h
+include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-marshal.h
+include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-util.h
+include/clutter-${MAJOR}/clutter-box2d/clutter-box2d.h
+lib/libclutter-box2d-${MAJOR}.la
+@lib lib/libclutter-box2d-${MAJOR}.so.${LIBclutter-box2d-0.8_VERSION}
+lib/pkgconfig/clutter-box2d-${MAJOR}.pc
+share/gtk-doc/html/clutter-box2d/
+share/gtk-doc/html/clutter-box2d/ClutterBox2D.html
+share/gtk-doc/html/clutter-box2d/ch01.html
+share/gtk-doc/html/clutter-box2d/ch02.html
+share/gtk-doc/html/clutter-box2d/clutter-box2d-ClutterBox2D-Actor.html
+share/gtk-doc/html/clutter-box2d/clutter-box2d-ClutterBox2D-Joint.html
+share/gtk-doc/html/clutter-box2d/clutter-box2d.devhelp
+share/gtk-doc/html/clutter-box2d/clutter-box2d.devhelp2
+share/gtk-doc/html/clutter-box2d/home.png
+share/gtk-doc/html/clutter-box2d/index.html
+share/gtk-doc/html/clutter-box2d/index.sgml
+share/gtk-doc/html/clutter-box2d/left.png
+share/gtk-doc/html/clutter-box2d/license.html
+share/gtk-doc/html/clutter-box2d/right.png
+share/gtk-doc/html/clutter-box2d/style.css
+share/gtk-doc/html/clutter-box2d/up.png
