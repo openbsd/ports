@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2009/02/03 11:50:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2009/02/15 17:33:52 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		2.24.4.1
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		databases
 
@@ -24,6 +25,9 @@ SHARED_LIBS +=	edata-cal-1.2        6.2      # .6.2
 SHARED_LIBS +=	edataserverui-1.2    9.0      # .9.0
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
+
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

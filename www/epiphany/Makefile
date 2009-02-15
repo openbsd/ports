@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2009/01/22 19:06:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2009/02/15 17:33:52 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,13 +6,16 @@ COMMENT=	GNOME web browser based on mozilla
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.gnome.org/projects/epiphany/
+
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

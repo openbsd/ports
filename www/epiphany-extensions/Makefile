@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/12 20:14:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/02/15 17:33:52 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		2.24.3
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		www
 
 HOMEPAGE=		http://projects.gnome.org/epiphany/extensions
+
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

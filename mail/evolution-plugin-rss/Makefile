@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/02/13 09:47:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2009/02/15 17:33:52 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,13 +6,17 @@ COMMENT=		RSS-reader plugin for GNOME
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.1.2
-PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}p1
+PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}p2
+
 CATEGORIES=    		mail
 
 EVO_VERSION=		2.24
 SUBST_VARS=		EVO_VERSION
 
 HOMEPAGE=		http://gnome.eu.org/evo/index.php/Evolution_RSS_Reader_Plugin
+
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
