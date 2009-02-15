@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2009/01/31 22:47:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.90 2009/02/15 11:39:45 ajacoutot Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -37,6 +37,7 @@
      SUBDIR += gossip
      SUBDIR += gucharmap
      SUBDIR += gvfs
+     SUBDIR += gyrus
      SUBDIR += hamster-applet
      SUBDIR += icon-theme
      SUBDIR += keyring
