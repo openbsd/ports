@@ -1,7 +1,7 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.75 2009/02/16 21:22:56 steven Exp $
+# $OpenBSD: libtool,v 1.76 2009/02/16 22:04:28 steven Exp $
 
-# Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
+# Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -1130,8 +1130,12 @@ sub parse_version_info
 {
 	my $vinfo = shift;
 
-	if ($vinfo =~ m/(\d+):(\d+):(\d+)/) {
+	if ($vinfo =~ m/^(\d+):(\d+):(\d+)$/) {
 		return ($1, $2, $3);
+	} elsif ($vinfo =~ m/^(\d+):(\d+)$/) {
+		return ($1, $2, 0);
+	} elsif ($vinfo =~ m/^(\d+)$/) {
+		return ($1, 0, 0);
 	} else {
 		die "error parsing -version-info $vinfo\n";
 	}
