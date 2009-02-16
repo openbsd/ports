@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.74 2009/02/16 20:02:42 steven Exp $
+# $OpenBSD: libtool,v 1.75 2009/02/16 21:22:56 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1338,6 +1338,14 @@ sub internal_parse_linkargs
 				$libs->{$key} = "$d/$dlname";
 			}
 			Trace::debug {"\$libs{$key} = ", $libs->{$key}, "\n"};
+		} elsif ($a =~ m/^-Wl,(\S+)/) {
+			# libtool accepts a list of -Wl options separated
+			# by commas, and possibly with a trailing comma
+			# which is not accepted by the linker
+			my @Wlflags = split(/,/, $1);
+			foreach my $f (@Wlflags) {
+				push(@$result, "-Wl,$f");
+			}
 		} else {
 			push(@$result, $a);
 		}
