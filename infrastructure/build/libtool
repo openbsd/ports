@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.73 2008/11/23 09:53:56 steven Exp $
+# $OpenBSD: libtool,v 1.74 2009/02/16 20:02:42 steven Exp $
 
 # Copyright (c) 2007-2008 Steven Mestdagh <steven@openbsd.org>
 #
@@ -328,6 +328,10 @@ sub link
 	my @cmd;
 	my $ltdir = $main::ltdir;
 	my $dst = ($odir eq '.') ? "$ltdir/$fname" : "$odir/$ltdir/$fname";
+	if ($la =~ m/\.a$/) {
+		# probably just a convenience library
+		$dst = ($odir eq '.') ? "$fname" : "$odir/$fname";
+	}
 	mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
 
 	Trace::debug {"argvstring (pre resolve_la): @ARGV\n"};
@@ -669,6 +673,7 @@ my $dirs = {};		# paths to find libraries
 # build static/shared objects?
 my $static = 1;
 my $shared = 0;
+my $convenience = 0;
 my $noshared = 0;
 if (grep { $_ eq $machine_arch } @no_shared_archs) {
 	$noshared = 1;
@@ -917,12 +922,8 @@ if ($mode eq 'compile') {
 
 	# what are we linking?
 	my $linkmode = PROGRAM;
-	if ($ofile =~ m/\.la$/) {
+	if ($ofile =~ m/\.l?a$/) {
 		$linkmode = LIBRARY;
-	} elsif ($ofile =~ s/\.a$/.la/) {
-		$outfile =~ s/\.a$/.la/;
-		$linkmode = LIBRARY;
-		$noshared = 1; $static = 1; # XXX improve!
 	}
 	Trace::debug {"linkmode: $linkmode\n"};
 
@@ -972,18 +973,27 @@ if ($mode eq 'compile') {
 		$program->write_wrapper($outfile);
 		chmod 0755, $outfile;
 	} elsif ($linkmode == LIBRARY) {
-		(my $libname = $ofile) =~ s/\.la$//;	# remove extension
+		$shared = 1 if ($opts{'version-info'} ||
+				$opts{'avoid-version'} ||
+				$opts{'module'});
+		if (!@RPopts) {
+			$convenience = 1;
+			$noshared = 1;
+			$static = 1;
+			$shared = 0;
+		} else {
+			$shared = 1;
+		}
+		if ($ofile =~ m/\.a$/ && !$convenience) {
+			$ofile =~ s/\.a$/.la/;
+			$outfile =~ s/\.a$/.la/;
+		}
+		(my $libname = $ofile) =~ s/\.l?a$//;	# remove extension
 		my $staticlib = $libname.'.a';
 		my $sharedlib = $libname.'.so';
 		my $sharedlib_symlink;
 
-		# XXX how is the creation of a shared library switched on?
-		# XXX to do: deal with -rpath correctly
-		$shared = 1 if ($opts{'version-info'} ||
-				$opts{'avoid-version'} ||
-				$opts{'module'} ||
-				@RPopts);
-		if ($opts{'static'} || !@RPopts) {
+		if ($opts{'static'}) {
 			$shared = 0;
 			$static = 1;
 		}
@@ -1036,7 +1046,7 @@ if ($mode eq 'compile') {
 		if ($static) {
 			$lainfo->{'old_library'} = $staticlib;
 			$lainfo->link($ltprog, $ofile, $staticlib, $odir, 0, ($allpicobj) ? \@sobjs : \@objs, $libs, $libstofind, \%opts);
-			Trace::debug {"staticlib: $staticlib\n"};
+			Trace::debug {($convenience ? "convenience" : "static")." lib: $staticlib\n"};
 		}
 		$lainfo->{'installed'} = 'no';
 		$lainfo->{'shouldnotlink'} = $opts{'module'} ? 'yes' : 'no';
@@ -1052,9 +1062,11 @@ if ($mode eq 'compile') {
 			}
 			$lainfo->{'libdir'} = $RPopts[0];
 		}
-		$lainfo->write($outfile, $ofile);
-		unlink("$odir/$ltdir/$ofile");
-		symlink("../$ofile", "$odir/$ltdir/$ofile");
+		if (!($convenience && $ofile =~ m/\.a$/)) {
+			$lainfo->write($outfile, $ofile);
+			unlink("$odir/$ltdir/$ofile");
+			symlink("../$ofile", "$odir/$ltdir/$ofile");
+		}
 		if ($shared) {
 			my $lai = "$odir/$ltdir/$ofile".'i';
 			my $pdeplibs = process_deplibs($finaldeplibs);
