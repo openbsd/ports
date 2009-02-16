@@ -1,7 +1,7 @@
-$OpenBSD: patch-greylist_conf_5,v 1.1 2007/11/19 09:18:42 jakob Exp $
---- greylist.conf.5.orig	Sun Oct 28 19:14:26 2007
-+++ greylist.conf.5	Wed Nov  7 11:35:21 2007
-@@ -802,7 +802,7 @@ This chooses the location of the greylist dump file, l
+$OpenBSD: patch-greylist_conf_5,v 1.2 2009/02/16 15:31:22 jakob Exp $
+--- greylist.conf.5.orig	Wed Feb  6 05:12:17 2008
++++ greylist.conf.5	Mon Feb 16 17:10:27 2009
+@@ -807,7 +807,7 @@ This chooses the location of the greylist dump file, l
  command line option does. The path must be absolute and enclosed in quotes.
  Example:
  .IP
@@ -10,7 +10,7 @@ $OpenBSD: patch-greylist_conf_5,v 1.1 2007/11/19 09:18:42 jakob Exp $
  .TP
  .I subnetmatch
  This is equivalent to the 
-@@ -831,7 +831,7 @@ to communicate with
+@@ -836,7 +836,7 @@ to communicate with
  It must be enclosed in quotes and can optionally be followed by a permission mode
  (valid values are 666, 660 or 600, other values cause an error):
  .IP

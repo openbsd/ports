@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/06/03 23:37:35 okan Exp $
+# $OpenBSD: Makefile,v 1.7 2009/02/16 15:31:21 jakob Exp $
 
 COMMENT=	greylist milter
 
-DISTNAME=	milter-greylist-4.0
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	milter-greylist-4.0.1
+PKGNAME=	${DISTNAME}
 CATEGORIES=	mail
 HOMEPAGE=	http://hcpnet.free.fr/milter-greylist/
 
