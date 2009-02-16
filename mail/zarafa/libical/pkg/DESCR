@@ -1,0 +1,3 @@
+libical implements basic iCAL protocols.
+This is a modified libical library for use with the Zarafa Outlook
+Sharing service.

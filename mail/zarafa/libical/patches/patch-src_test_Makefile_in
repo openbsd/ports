@@ -1,0 +1,86 @@
+$OpenBSD: patch-src_test_Makefile_in,v 1.1.1.1 2009/02/16 09:41:15 ajacoutot Exp $
+--- src/test/Makefile.in.orig	Wed Jan 28 21:51:47 2009
++++ src/test/Makefile.in	Wed Jan 28 21:54:01 2009
+@@ -82,7 +82,7 @@ python_val = @python_val@
+ 
+ noinst_PROGRAMS = copycluster regression parser storage stow recur testmime testvcal process testclassify
+ 
+-LDADD = ../libicalss/.libs/libicalss.a ../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a 
++LDADD = ../libicalss/.libs/libicalss-zarafa.a ../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a 
+ 
+ INCLUDES =         -I. 				       -I../libicalvcal 		       -I$(srcdir)/../libicalvcal 	       -I$(srcdir) 			       -I../libical 			       -I$(srcdir)/../libical 		       -I../libicalss 			       -I$(srcdir)/../libicalss           
+ 
+@@ -109,53 +109,53 @@ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ copycluster_OBJECTS =  copycluster.o
+ copycluster_LDADD = $(LDADD)
+-copycluster_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
+-../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
++copycluster_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
++../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
+ copycluster_LDFLAGS = 
+ regression_OBJECTS =  regression.o
+ regression_LDADD = $(LDADD)
+-regression_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
+-../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
++regression_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
++../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
+ regression_LDFLAGS = 
+ parser_OBJECTS =  icaltestparser.o
+ parser_LDADD = $(LDADD)
+-parser_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
+-../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
++parser_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
++../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
+ parser_LDFLAGS = 
+ storage_OBJECTS =  storage.o
+ storage_LDADD = $(LDADD)
+-storage_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
+-../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
++storage_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
++../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
+ storage_LDFLAGS = 
+ stow_OBJECTS =  stow.o
+ stow_LDADD = $(LDADD)
+-stow_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
+-../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
++stow_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
++../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
+ stow_LDFLAGS = 
+ recur_OBJECTS =  recur.o
+ recur_LDADD = $(LDADD)
+-recur_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
+-../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
++recur_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
++../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
+ recur_LDFLAGS = 
+ testmime_OBJECTS =  testmime.o
+ testmime_LDADD = $(LDADD)
+-testmime_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
+-../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
++testmime_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
++../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
+ testmime_LDFLAGS = 
+ testvcal_OBJECTS =  testvcal.o
+ testvcal_LDADD = $(LDADD)
+-testvcal_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
+-../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
++testvcal_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
++../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
+ testvcal_LDFLAGS = 
+ process_OBJECTS =  process.o
+ process_LDADD = $(LDADD)
+-process_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
+-../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
++process_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
++../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
+ process_LDFLAGS = 
+ testclassify_OBJECTS =  testclassify.o
+ testclassify_LDADD = $(LDADD)
+-testclassify_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
+-../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
++testclassify_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
++../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
+ testclassify_LDFLAGS = 
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

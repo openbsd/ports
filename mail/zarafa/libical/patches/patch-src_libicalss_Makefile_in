@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_libicalss_Makefile_in,v 1.1.1.1 2009/02/16 09:41:15 ajacoutot Exp $
+--- src/libicalss/Makefile.in.orig	Wed Jan 28 21:46:10 2009
++++ src/libicalss/Makefile.in	Wed Jan 28 21:47:50 2009
+@@ -80,7 +80,7 @@ VERSION = @VERSION@
+ YACC = @YACC@
+ python_val = @python_val@
+ 
+-lib_LTLIBRARIES = libicalss.la
++lib_LTLIBRARIES = libicalss-zarafa.la
+ 
+ YFLAGS = -d -v -p ss
+ LFLAGS = -Pss 
+@@ -209,7 +209,7 @@ distclean-libtool:
+ 
+ maintainer-clean-libtool:
+ 
+-libicalss.la: $(libicalss_la_OBJECTS) $(libicalss_la_DEPENDENCIES)
++libicalss-zarafa.la: $(libicalss_la_OBJECTS) $(libicalss_la_DEPENDENCIES)
+ 	$(LINK) -rpath $(libdir) $(libicalss_la_LDFLAGS) $(libicalss_la_OBJECTS) $(libicalss_la_LIBADD) $(LIBS)
+ .l.c:
+ 	$(LEX) $(AM_LFLAGS) $(LFLAGS) $< && mv $(LEX_OUTPUT_ROOT).c $@
