@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/28 13:15:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT=		command-line podcast downloader
 
@@ -8,7 +8,7 @@ CATEGORIES=		net
 
 HOMEPAGE=		http://www.nongnu.org/castget
 
-MASTER_SITES=          	http://savannah.nongnu.org/download/castget/
+MASTER_SITES=          	${MASTER_SITE_SAVANNAH:=castget/}
 
 MAINTAINER=		Gleydson Soares <gsoares@trusted.com.br>
 

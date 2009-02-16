@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/02/01 11:13:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT=		free UCS outline fonts
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download.savannah.gnu.org/releases/freefont/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH:=freefont/}
 
 WRKDIST=		${WRKDIR}/freefont-$V
 NO_BUILD=		Yes

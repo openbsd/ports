@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/08/29 03:58:43 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses readline termcap
 
-MASTER_SITES=		http://savannah.nongnu.org/download/avrdude/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=avrdude/}
 EXTRACT_ONLY=	avrdude-${V}${EXTRACT_SUFX}
 
 CONFIGURE_STYLE=	gnu

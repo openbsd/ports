@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/11/28 13:14:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/02/16 15:28:58 sthen Exp $
 
 # requires nvram(4) device
 ONLY_FOR_ARCHS=	amd64 i386
@@ -10,7 +10,7 @@ PKGNAME=	${DISTNAME}p2
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.nongnu.org/tpb/
-MASTER_SITES=	http://savannah.nongnu.org/download/tpb/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=tpb/}
 
 MAINTAINER=	joshua stein <jcs@openbsd.org>
 

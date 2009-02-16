@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2009/02/16 15:28:58 sthen Exp $
 
 BROKEN= requires update due to ocaml 3.08
 
@@ -19,7 +19,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 HOMEPAGE=http://savannah.nongnu.org/projects/mldonkey/
 
-MASTER_SITES=http://savannah.nongnu.org/download/mldonkey/
+MASTER_SITES=${MASTER_SITE_SAVANNAH:=mldonkey/}
 DISTNAME=mldonkey-2.5.22
 WRKDIST=${WRKDIR}/mldonkey-2.5.22
 

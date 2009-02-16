@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/04/11 20:37:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT=	ILM base libraries
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://download.savannah.nongnu.org/releases/openexr/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=openexr/}
 
 WANTLIB=	m stdc++
 

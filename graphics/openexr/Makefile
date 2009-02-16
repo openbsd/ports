@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/04/11 20:38:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download.savannah.nongnu.org/releases/openexr/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH:=openexr/}
 
 MULTI_PACKAGES= 	-main -tools -doc
 

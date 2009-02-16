@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/02/09 18:36:49 martynas Exp $
+# $OpenBSD: Makefile,v 1.17 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT=	minimal wm based on GNU screen
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xinerama Xtst c
 
-MASTER_SITES=	http://savannah.nongnu.org/download/ratpoison/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH:=ratpoison/}
 
 USE_X11=		Yes
 

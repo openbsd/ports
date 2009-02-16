@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/23 11:00:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT=	GNUstep address book
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://gap.nongnu.org/addresses/index.html
 
 WANTLIB=	c m objc pthread
 
-MASTER_SITES=	http://savannah.nongnu.org/download/gap/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=gap/}
 
 WRKDIST=	${WRKDIR}/Addresses
 

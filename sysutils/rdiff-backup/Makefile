@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.3 2007/10/08 08:22:42 steven Exp $
+#	$OpenBSD: Makefile,v 1.4 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT=	incremental backup
 DISTNAME=	rdiff-backup-1.0.5
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS+=		rsync::net/librsync
 
-MASTER_SITES=		http://savannah.nongnu.org/download/rdiff-backup/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH:=rdiff-backup/}
 
 MODULES=		lang/python
 

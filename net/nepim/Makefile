@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/26 09:57:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT=		network pipe meter
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB= c
 
-MASTER_SITES=		http://download.savannah.gnu.org/releases/nepim/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH:=nepim/}
 
 LIB_DEPENDS=		oop.>=4::devel/liboop
 

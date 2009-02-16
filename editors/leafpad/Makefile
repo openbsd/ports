@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2008/09/03 14:43:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT=	simple GTK+ text editor
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://savannah.nongnu.org/download/leafpad/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=leafpad/}
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \

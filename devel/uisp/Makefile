@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/12 08:29:39 martin Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 
-MASTER_SITES=		http://savannah.nongnu.org/download/uisp/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH:=uisp/}
 
 CONFIGURE_STYLE=	gnu
 .if ${MACHINE_ARCH} == "i386"

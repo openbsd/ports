@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2009/02/16 14:49:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT=	GUI toolkit for X11
 
@@ -11,7 +11,7 @@ CATEGORIES=	x11
 
 HOMEPAGE=	http://world.std.com/~xforms/
 
-MASTER_SITES=	http://savannah.nongnu.org/download/xforms/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=xforms/}
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

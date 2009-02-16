@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/12/26 08:45:12 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/16 15:28:57 sthen Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.0.8
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m ncurses pthread readline samplerate sndio
 
-MASTER_SITES =		http://download.savannah.gnu.org/releases/fluid/
+MASTER_SITES =		${MASTER_SITE_SAVANNAH:=fluid/}
 
 DEV_FLAGS =		-DDEVOSSAUDIO=\\\"/dev/audio\\\" \
 			-DDEVOSSMIDI=\\\"/dev/rmidi0\\\"

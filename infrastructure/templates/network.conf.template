@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.128 2009/02/03 22:17:36 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.129 2009/02/16 15:28:58 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -180,6 +180,27 @@ MASTER_SITE_KDE+=	\
  	ftp://ftp.sunet.se/pub/X11/kde/ \
  	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/ \
 	ftp://ftp.chg.ru/pub/X11/kde/
+
+MASTER_SITE_SAVANNAH+=	\
+	http://download.savannah.nongnu.org/releases/ \
+	http://download.savannah.nongnu.org/releases-noredirect/ \
+	http://ftp.cc.uoc.gr/mirrors/nongnu.org/ \
+	http://ftp.twaren.net/Unix/NonGNU/ \
+	http://mirror.csclub.uwaterloo.ca/nongnu/ \
+	http://mirror.dknss.com/nongnu/ \
+	http://mirror.publicns.net/pub/nongnu/ \
+	ftp://mirror.publicns.net/pub/nongnu/ \
+	ftp://mirrors.localhost.net.ar/pub/mirrors/savannah-nongnu/ \
+	http://mirrors.zerg.biz/nongnu/ \
+	http://nongnu.askapache.com/ \
+	http://nongnu.mirror.ironie.org/ \
+	http://piotrkosoft.net/pub/mirrors/savannah.gnu.org/ \
+	ftp://ftp.piotrkosoft.net/pub/mirrors/savannah.gnu.org/ \
+	http://savannah.c3sl.ufpr.br/ \
+	ftp://savannah.c3sl.ufpr.br/savannah-nongnu/ \
+	http://savannah.inetbridge.net/ \
+	http://savannah.releasenotes.org/ \
+	http://www.very-clever.com/download/nongnu/
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/ \

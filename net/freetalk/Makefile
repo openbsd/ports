@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/20 08:11:34 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT=	console based Jabber client
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c glib-2.0 idn m ncurses readline stdc++
 
-MASTER_SITES=	http://savannah.gnu.org/download/freetalk/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=freetalk/}
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	guile-ltdl,guile::lang/guile \

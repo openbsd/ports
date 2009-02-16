@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/01/21 10:50:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2009/02/16 15:28:58 sthen Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-5.4
@@ -26,7 +26,7 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 png popt pthread ssl xml2 z
 
-MASTER_SITES=	http://savannah.nongnu.org/download/mailnotify/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=mailnotify/}
 
 MODULES=	devel/gettext \
 		textproc/intltool
