@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/09/01 19:09:17 eric Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/02/16 14:45:34 eric Exp $
 bin/benchmark
 lib/python${MODPY_VERSION}/site-packages/Epsilon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/epsilon/
@@ -6,6 +6,10 @@ lib/python${MODPY_VERSION}/site-packages/epsilon/__init__.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/_version.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/_version.pyc
+lib/python${MODPY_VERSION}/site-packages/epsilon/ampauth.py
+lib/python${MODPY_VERSION}/site-packages/epsilon/ampauth.pyc
+lib/python${MODPY_VERSION}/site-packages/epsilon/amprouter.py
+lib/python${MODPY_VERSION}/site-packages/epsilon/amprouter.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/asplode.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/asplode.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/caseless.py
@@ -14,6 +18,8 @@ lib/python${MODPY_VERSION}/site-packages/epsilon/cooperator.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/cooperator.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/descriptor.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/descriptor.pyc
+lib/python${MODPY_VERSION}/site-packages/epsilon/expose.py
+lib/python${MODPY_VERSION}/site-packages/epsilon/expose.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/extime.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/extime.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/hotfix.py
@@ -29,6 +35,8 @@ lib/python${MODPY_VERSION}/site-packages/epsilon/hotfixes/filepath_copyTo.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/hotfixes/filepath_copyTo.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/hotfixes/internet_task_clock.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/hotfixes/internet_task_clock.pyc
+lib/python${MODPY_VERSION}/site-packages/epsilon/hotfixes/loopbackasync_reentrancy.py
+lib/python${MODPY_VERSION}/site-packages/epsilon/hotfixes/loopbackasync_reentrancy.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/hotfixes/plugin_package_paths.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/hotfixes/plugin_package_paths.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/hotfixes/proto_helpers_stringtransport.py
@@ -47,6 +55,8 @@ lib/python${MODPY_VERSION}/site-packages/epsilon/pending.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/pending.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/process.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/process.pyc
+lib/python${MODPY_VERSION}/site-packages/epsilon/react.py
+lib/python${MODPY_VERSION}/site-packages/epsilon/react.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/release.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/release.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/scripts/
@@ -71,6 +81,10 @@ lib/python${MODPY_VERSION}/site-packages/epsilon/test/iosim.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/iosim.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/mantissa-structure.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/mantissa-structure.pyc
+lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_ampauth.py
+lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_ampauth.pyc
+lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_amprouter.py
+lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_amprouter.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_benchmark.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_benchmark.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_caseless.py
@@ -79,12 +93,16 @@ lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_cooperator.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_cooperator.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_descriptor.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_descriptor.pyc
+lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_expose.py
+lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_expose.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_extime.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_extime.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_juice.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_juice.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_modes.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_modes.pyc
+lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_react.py
+lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_react.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_release.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_release.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_setuphelper.py
