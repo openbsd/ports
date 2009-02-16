@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/09/16 20:00:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/02/16 14:56:23 sthen Exp $
 COMMENT=	lightweight Gtk text editor with syntax highlighting
 
 DISTNAME=	beaver0_3_0_1
@@ -6,7 +6,9 @@ PKGNAME=	beaver-0.3.0.1
 CATEGORIES=	editors	
 
 HOMEPAGE=	http://www.nongnu.org/beaver/
-MASTER_SITES=	http://download.savannah.gnu.org/releases/beaver/0.3.0.1%20-%202008.06.26/
+# XXX should use ${MASTER_SITES_SAVANNAH:=beaver/} but % in the
+# XXX directory name causes a problem
+MASTER_SITES=	http://download.savannah.gnu.org/releases-noredirect/beaver/0.3.0.1%20-%202008.06.26/
 EXTRACT_SUFX=	.tgz
 
 # GPLv2
