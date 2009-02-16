@@ -1,5 +1,0 @@
-You can disable this module by removing the
-${PREFIX-php}/conf/php5/${MODULE_NAME}.ini symbolic link by
-issuing the following command: 
-
-rm -f ${PREFIX-php}/conf/php5/${MODULE_NAME}.ini
