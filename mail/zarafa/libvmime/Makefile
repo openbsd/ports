@@ -1,0 +1,33 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2009/02/16 09:42:47 ajacoutot Exp $
+
+COMMENT=	modified libvmime library for Zarafa
+
+DISTNAME=	libvmime-0.7.1
+PKGNAME=	zarafa-${DISTNAME}
+
+CATEGORIES=	mail devel
+
+# We patched the source to rename the libraries so that this package can
+# cohabitate with the "official" one (i.e. devel/libvmime).
+SHARED_LIBS+=	vmime-zarafa	0.0	# .7.1
+
+EXTRACT_SUFX=	.tar.bz2
+
+USE_LIBTOOL=	Yes
+USE_GMAKE=	Yes
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		EXTRA_CFLAGS="${CFLAGS}"
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--includedir=${PREFIX}/include/zarafa \
+		--enable-messaging \
+		--enable-messaging-proto-pop3 \
+		--enable-messaging-proto-smtp \
+		--enable-messaging-proto-imap \
+		--enable-messaging-proto-maildir \
+		--enable-messaging-proto-sendmail \
+		--enable-platform-posix
+
+.include <bsd.port.mk>
