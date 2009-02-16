@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/01/27 21:46:53 martynas Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.14 2009/02/16 10:10:09 eric Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
 MODPY_EGG_VERSION=	1.2.1
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}p1
+PKGNAME=		py-${DISTNAME}p2
 CATEGORIES=		math devel
 
 HOMEPAGE=		http://numeric.scipy.org/
@@ -18,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		m
+WANTLIB=		blas m g2c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=numpy/}
 
@@ -27,6 +25,9 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_SETUP=		setupegg.py
 
 REGRESS_DEPENDS=	::devel/py-nose
+
+LIB_DEPENDS=            lapack::math/lapack
+
 
 pre-build:
 	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg
