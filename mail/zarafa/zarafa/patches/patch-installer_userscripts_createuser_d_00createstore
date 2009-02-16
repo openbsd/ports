@@ -1,0 +1,11 @@
+$OpenBSD: patch-installer_userscripts_createuser_d_00createstore,v 1.1.1.1 2009/02/16 09:44:38 ajacoutot Exp $
+--- installer/userscripts/createuser.d/00createstore.orig	Sun Jan  4 15:21:30 2009
++++ installer/userscripts/createuser.d/00createstore	Sun Jan  4 15:27:05 2009
+@@ -3,6 +3,6 @@
+ # Create a Zarafa user for an already existing external user.  Create
+ # and initialize the user's stores.
+ 
+-PATH=$PATH:/sbin:/usr/local/sbin:/usr/sbin
++PATH=$PATH:${PREFIX}/bin
+ 
+ zarafa-admin --create-store "${ZARAFA_USER}" --lang "${ZARAFA_LANG}"

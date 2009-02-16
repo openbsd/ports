@@ -1,0 +1,23 @@
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
+--- provider/server/ECServer.cpp.orig	Thu Dec 11 22:35:42 2008
++++ provider/server/ECServer.cpp	Tue Dec 30 12:13:38 2008
+@@ -66,6 +66,10 @@
+ #include "ECSoapServerConnection.h"
+ #include <libintl.h>
+ 
++#ifdef __OpenBSD__
++#include <sys/resource.h>
++#endif
++
+ #ifdef _DEBUG
+ #define new DEBUG_NEW
+ #undef THIS_FILE
+@@ -447,7 +451,7 @@ int running_server(char *szName, char *szConfig)
+ 		{ "mysql_config_file",		"/etc/zarafa/my.cnf" },
+ #endif
+ 		{ "attachment_storage",		"database" },
+-		{ "attachment_path",		"/var/lib/zarafa" },
++		{ "attachment_path",		"/var/db/zarafa" },
+ 
+ 		// Log options
+ 		{ "log_method",				"file" },

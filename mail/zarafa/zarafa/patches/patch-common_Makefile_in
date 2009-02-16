@@ -1,0 +1,30 @@
+$OpenBSD: patch-common_Makefile_in,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
+--- common/Makefile.in.orig	Thu Dec 11 22:18:07 2008
++++ common/Makefile.in	Tue Dec 30 13:32:42 2008
+@@ -278,7 +278,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX \
+ 	-I${top_srcdir}/mapi4linux/include -I${top_srcdir}/provider/common \
+ 	-I${top_srcdir}/libfreebusy
+ 
+-libcommon_mapi_la_LDFLAGS = -static
++libcommon_mapi_la_LDFLAGS = -version-info $(ECCLIENT_LIBRARY_VERSION)
+ libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
+ 			rtfutil.cpp									\
+ 			codepage.cpp							\
+@@ -293,7 +293,7 @@ libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
+ 			ZarafaCode.cpp								\
+ 			RecurrenceState.cpp						
+ 
+-libcommon_util_la_LDFLAGS = -static
++libcommon_util_la_LDFLAGS = -version-info $(ECCLIENT_LIBRARY_VERSION)
+ libcommon_util_la_SOURCES = platform.cpp			\
+ 			platform.linux.cpp						\
+ 			md5.cpp									\
+@@ -309,7 +309,7 @@ libcommon_util_la_SOURCES = platform.cpp			\
+ 			str1252.cpp								\
+ 			SymmetricCrypt.cpp		
+ 
+-libcommon_ssl_la_LDFLAGS = -static
++libcommon_ssl_la_LDFLAGS = -version-info $(ECCLIENT_LIBRARY_VERSION)
+ libcommon_ssl_la_SOURCES = \
+ 			SSLUtil.cpp								\
+ 			ECChannel.cpp

@@ -1,0 +1,50 @@
+$OpenBSD: patch-provider_soap_stdsoap2_h,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
+--- provider/soap/stdsoap2.h.orig	Wed Dec 24 20:17:55 2008
++++ provider/soap/stdsoap2.h	Thu Jan  8 17:47:24 2009
+@@ -49,9 +49,15 @@ A commercial use license is available from Genivia, In
+ --------------------------------------------------------------------------------
+ */
+ 
++#if OPENBSD
++#include <sys/types.h>
++#undef FD_SETSIZE
++#define FD_SETSIZE 1024
++#else
+ #include <bits/types.h>
+ #undef __FD_SETSIZE
+ #define __FD_SETSIZE 8192
++#endif
+ 
+ #ifdef WITH_SOAPDEFS_H
+ # include "soapdefs.h"		/* include user-defined stuff */
+@@ -372,6 +378,21 @@ A commercial use license is available from Genivia, In
+ #  define HAVE_LOCALTIME_R
+ #  define HAVE_WCTOMB
+ #  define HAVE_MBTOWC
++#elif defined(OPENBSD) || defined(__OpenBSD__)
++#  define HAVE_STRRCHR
++#  define HAVE_STRTOD  
++#  define HAVE_SSCANF 
++#  define HAVE_STRTOL 
++#  define HAVE_STRTOUL
++#  define HAVE_GETTIMEOFDAY
++#  define HAVE_SYS_TIMEB_H
++#  define HAVE_FTIME  
++#  define HAVE_RAND_R
++#  define HAVE_GMTIME_R
++#  define HAVE_LOCALTIME_R
++#  define HAVE_WCTOMB
++#  define HAVE_MBTOWC
++#  define HAVE_ISNAN
+ # else
+ /* Default asumptions on supported functions */
+ #  define HAVE_STRRCHR
+@@ -543,7 +564,7 @@ extern "C" {
+ # define SOAP_SOCKLEN_T socklen_t
+ #elif defined(SOCKLEN_T)
+ # define SOAP_SOCKLEN_T SOCKLEN_T
+-#elif defined(__socklen_t_defined) || defined(_SOCKLEN_T) || defined(CYGWIN) || defined(FREEBSD) || defined(__FreeBSD__) || defined(__QNX__) || defined(QNX)
++#elif defined(__socklen_t_defined) || defined(_SOCKLEN_T) || defined(CYGWIN) || defined(FREEBSD) || defined(__FreeBSD__) || defined(__QNX__) || defined(QNX) || defined(OPENBSD) || defined(__OpenBSD__)
+ # define SOAP_SOCKLEN_T socklen_t
+ #elif defined(IRIX) || defined(WIN32) || defined(__APPLE__) || defined(HP_UX) || defined(SUN_OS) || defined(OPENSERVER) || defined(TRU64) || defined(VXWORKS)
+ # define SOAP_SOCKLEN_T int

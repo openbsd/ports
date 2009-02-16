@@ -1,0 +1,12 @@
+$OpenBSD: patch-perl_Makefile_in,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
+--- perl/Makefile.in.orig	Tue Oct 14 15:59:43 2008
++++ perl/Makefile.in	Tue Oct 14 16:00:15 2008
+@@ -527,7 +527,7 @@ uninstall-am: uninstall-info-am uninstall-libLTLIBRARI
+ 
+ 
+ .xs.cpp: typemap
+-	xsubpp -noprototypes -nolinenumbers -C++ -typemap /usr/share/perl/$(PVERSION)/ExtUtils/typemap $< > $@; \
++	xsubpp -noprototypes -nolinenumbers -C++ -typemap /usr/libdata/perl5/ExtUtils/typemap $< > $@; \
+ 	if [ $$? -ne 0 ]; then rm $@; fi
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,0 +1,12 @@
+$OpenBSD: patch-provider_libserver_ZarafaCmd_cpp,v 1.1.1.1 2009/02/16 09:44:38 ajacoutot Exp $
+--- provider/libserver/ZarafaCmd.cpp.orig	Fri Jan  9 16:29:11 2009
++++ provider/libserver/ZarafaCmd.cpp	Fri Jan  9 16:29:40 2009
+@@ -9080,7 +9080,7 @@ SOAP_ENTRY_START1(getLicenseCapa, lpsResponse->er, str
+     lpsResponse->sCapabilities.__size = lstCapabilities.size();
+     lpsResponse->sCapabilities.__ptr = s_alloc<char *>(soap, lstCapabilities.size());
+     
+-    for(int i=0; i<lstCapabilities.size(); i++) {
++    for(unsigned int i=0; i<lstCapabilities.size(); i++) {
+         lpsResponse->sCapabilities.__ptr[i] = s_strcpy(soap, lstCapabilities[i].c_str());
+     }
+ exit:

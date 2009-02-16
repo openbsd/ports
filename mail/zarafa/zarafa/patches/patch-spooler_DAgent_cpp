@@ -1,0 +1,14 @@
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
+--- spooler/DAgent.cpp.orig	Thu Dec 11 22:35:41 2008
++++ spooler/DAgent.cpp	Tue Dec 30 12:13:38 2008
+@@ -61,6 +61,10 @@
+ #include <sys/mman.h>
+ #include <pwd.h>
+ 
++#ifdef __OpenBSD__
++#include <sys/resource.h>
++#endif
++
+ /*
+   This is actually from sysexits.h
+   but since those windows lamers don't have it ..
