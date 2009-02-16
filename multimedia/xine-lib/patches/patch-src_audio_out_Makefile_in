@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_audio_out_Makefile_in,v 1.13 2009/02/02 22:00:42 sthen Exp $
---- src/audio_out/Makefile.in.orig	Wed Jan  7 11:16:50 2009
-+++ src/audio_out/Makefile.in	Thu Jan  8 01:02:34 2009
-@@ -171,6 +171,18 @@ xineplug_ao_out_jack_la_LINK = $(LIBTOOL) --tag=CC $(A
+$OpenBSD: patch-src_audio_out_Makefile_in,v 1.14 2009/02/16 01:24:24 sthen Exp $
+--- src/audio_out/Makefile.in.orig	Tue Feb 10 13:34:49 2009
++++ src/audio_out/Makefile.in	Wed Feb 11 00:55:39 2009
+@@ -174,6 +174,18 @@ xineplug_ao_out_jack_la_LINK = $(LIBTOOL) --tag=CC $(A
  	$(xineplug_ao_out_jack_la_LDFLAGS) $(LDFLAGS) -o $@
  @HAVE_JACK_TRUE@am_xineplug_ao_out_jack_la_rpath = -rpath \
  @HAVE_JACK_TRUE@	$(xineplugdir)
@@ -20,7 +20,7 @@ $OpenBSD: patch-src_audio_out_Makefile_in,v 1.13 2009/02/02 22:00:42 sthen Exp $
  xineplug_ao_out_none_la_DEPENDENCIES = $(XINE_LIB) \
  	$(am__DEPENDENCIES_1)
  am_xineplug_ao_out_none_la_OBJECTS =  \
-@@ -234,6 +246,7 @@ SOURCES = $(xineplug_ao_out_alsa_la_SOURCES) \
+@@ -237,6 +249,7 @@ SOURCES = $(xineplug_ao_out_alsa_la_SOURCES) \
  	$(xineplug_ao_out_file_la_SOURCES) \
  	$(xineplug_ao_out_fusionsound_la_SOURCES) \
  	$(xineplug_ao_out_jack_la_SOURCES) \
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_audio_out_Makefile_in,v 1.13 2009/02/02 22:00:42 sthen Exp $
  	$(xineplug_ao_out_none_la_SOURCES) \
  	$(xineplug_ao_out_oss_la_SOURCES) \
  	$(xineplug_ao_out_pulseaudio_la_SOURCES) \
-@@ -247,6 +260,7 @@ DIST_SOURCES = $(xineplug_ao_out_alsa_la_SOURCES) \
+@@ -250,6 +263,7 @@ DIST_SOURCES = $(xineplug_ao_out_alsa_la_SOURCES) \
  	$(xineplug_ao_out_file_la_SOURCES) \
  	$(xineplug_ao_out_fusionsound_la_SOURCES) \
  	$(xineplug_ao_out_jack_la_SOURCES) \
@@ -36,16 +36,16 @@ $OpenBSD: patch-src_audio_out_Makefile_in,v 1.13 2009/02/02 22:00:42 sthen Exp $
  	$(xineplug_ao_out_none_la_SOURCES) \
  	$(xineplug_ao_out_oss_la_SOURCES) \
  	$(xineplug_ao_out_pulseaudio_la_SOURCES) \
-@@ -358,6 +372,8 @@ IRIXAL_LIBS = @IRIXAL_LIBS@
+@@ -356,6 +370,8 @@ IRIXAL_LIBS = @IRIXAL_LIBS@
  IRIXAL_STATIC_LIB = @IRIXAL_STATIC_LIB@
  JACK_CFLAGS = @JACK_CFLAGS@
  JACK_LIBS = @JACK_LIBS@
 +SNDIO_CFLAGS = @SNDIO_CFLAGS@
 +SNDIO_LIBS = @SNDIO_LIBS@
  KSTAT_LIBS = @KSTAT_LIBS@
+ LD = @LD@
  LDFLAGS = @LDFLAGS@
- LDFLAGS_NOUNDEFINED = @LDFLAGS_NOUNDEFINED@
-@@ -586,6 +602,7 @@ EXTRA_DIST = audio_irixal_out.c
+@@ -587,6 +603,7 @@ EXTRA_DIST = audio_irixal_out.c
  @HAVE_PULSEAUDIO_TRUE@pulseaudio_module = xineplug_ao_out_pulseaudio.la
  @HAVE_FUSIONSOUND_TRUE@fusionsound_module = xineplug_ao_out_fusionsound.la
  @HAVE_JACK_TRUE@jack_module = xineplug_ao_out_jack.la
@@ -53,7 +53,7 @@ $OpenBSD: patch-src_audio_out_Makefile_in,v 1.13 2009/02/02 22:00:42 sthen Exp $
  
  # IMPORTANT:
  # ---------
-@@ -603,7 +620,8 @@ xineplug_LTLIBRARIES = xineplug_ao_out_none.la xineplu
+@@ -604,7 +621,8 @@ xineplug_LTLIBRARIES = xineplug_ao_out_none.la xineplu
  	$(pulseaudio_module) \
  	$(directx2_module)	\
  	$(fusionsound_module) \
@@ -63,7 +63,7 @@ $OpenBSD: patch-src_audio_out_Makefile_in,v 1.13 2009/02/02 22:00:42 sthen Exp $
  
  xineplug_ao_out_none_la_SOURCES = audio_none_out.c
  xineplug_ao_out_none_la_LIBADD = $(XINE_LIB) $(LTLIBINTL)
-@@ -670,6 +688,10 @@ xineplug_ao_out_jack_la_SOURCES = audio_jack_out.c
+@@ -671,6 +689,10 @@ xineplug_ao_out_jack_la_SOURCES = audio_jack_out.c
  xineplug_ao_out_jack_la_LIBADD = $(XINE_LIB) $(JACK_LIBS) $(LTLIBINTL)
  xineplug_ao_out_jack_la_CFLAGS = $(VISIBILITY_FLAG) $(JACK_CFLAGS)
  xineplug_ao_out_jack_la_LDFLAGS = -avoid-version -module
@@ -74,7 +74,7 @@ $OpenBSD: patch-src_audio_out_Makefile_in,v 1.13 2009/02/02 22:00:42 sthen Exp $
  all: all-am
  
  .SUFFIXES:
-@@ -748,6 +770,8 @@ xineplug_ao_out_fusionsound.la: $(xineplug_ao_out_fusi
+@@ -749,6 +771,8 @@ xineplug_ao_out_fusionsound.la: $(xineplug_ao_out_fusi
  	$(xineplug_ao_out_fusionsound_la_LINK) $(am_xineplug_ao_out_fusionsound_la_rpath) $(xineplug_ao_out_fusionsound_la_OBJECTS) $(xineplug_ao_out_fusionsound_la_LIBADD) $(LIBS)
  xineplug_ao_out_jack.la: $(xineplug_ao_out_jack_la_OBJECTS) $(xineplug_ao_out_jack_la_DEPENDENCIES) 
  	$(xineplug_ao_out_jack_la_LINK) $(am_xineplug_ao_out_jack_la_rpath) $(xineplug_ao_out_jack_la_OBJECTS) $(xineplug_ao_out_jack_la_LIBADD) $(LIBS)
@@ -83,7 +83,7 @@ $OpenBSD: patch-src_audio_out_Makefile_in,v 1.13 2009/02/02 22:00:42 sthen Exp $
  xineplug_ao_out_none.la: $(xineplug_ao_out_none_la_OBJECTS) $(xineplug_ao_out_none_la_DEPENDENCIES) 
  	$(xineplug_ao_out_none_la_LINK) -rpath $(xineplugdir) $(xineplug_ao_out_none_la_OBJECTS) $(xineplug_ao_out_none_la_LIBADD) $(LIBS)
  xineplug_ao_out_oss.la: $(xineplug_ao_out_oss_la_OBJECTS) $(xineplug_ao_out_oss_la_DEPENDENCIES) 
-@@ -772,6 +796,7 @@ distclean-compile:
+@@ -773,6 +797,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xineplug_ao_out_file_la-audio_file_out.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xineplug_ao_out_fusionsound_la-audio_fusionsound_out.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xineplug_ao_out_jack_la-audio_jack_out.Plo@am__quote@
@@ -91,7 +91,7 @@ $OpenBSD: patch-src_audio_out_Makefile_in,v 1.13 2009/02/02 22:00:42 sthen Exp $
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xineplug_ao_out_none_la-audio_none_out.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xineplug_ao_out_oss_la-audio_oss_out.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xineplug_ao_out_pulseaudio_la-audio_pulse_out.Plo@am__quote@
-@@ -860,6 +885,13 @@ xineplug_ao_out_jack_la-audio_jack_out.lo: audio_jack_
+@@ -861,6 +886,13 @@ xineplug_ao_out_jack_la-audio_jack_out.lo: audio_jack_
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='audio_jack_out.c' object='xineplug_ao_out_jack_la-audio_jack_out.lo' libtool=yes @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(xineplug_ao_out_jack_la_CFLAGS) $(CFLAGS) -c -o xineplug_ao_out_jack_la-audio_jack_out.lo `test -f 'audio_jack_out.c' || echo '$(srcdir)/'`audio_jack_out.c

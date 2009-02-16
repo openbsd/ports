@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_xine-engine_xine_c,v 1.7 2008/07/02 01:02:42 brad Exp $
---- src/xine-engine/xine.c.orig	Wed Jun 25 09:04:09 2008
-+++ src/xine-engine/xine.c	Sun Jun 29 20:54:15 2008
-@@ -1669,7 +1669,7 @@ static void config_save_cb (void *this_gen, xine_cfg_e
+$OpenBSD: patch-src_xine-engine_xine_c,v 1.8 2009/02/16 01:24:24 sthen Exp $
+--- src/xine-engine/xine.c.orig	Tue Feb 10 12:32:24 2009
++++ src/xine-engine/xine.c	Wed Feb 11 00:55:26 2009
+@@ -1671,7 +1671,7 @@ static void config_save_cb (void *this_gen, xine_cfg_e
      pthread_mutex_lock(&this->streams_lock);
      if ( (ite = xine_list_front(this->streams)) ) {
        stream = xine_list_get_value(this->streams, ite);

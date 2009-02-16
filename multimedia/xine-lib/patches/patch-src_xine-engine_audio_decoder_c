@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_xine-engine_audio_decoder_c,v 1.6 2008/01/15 00:36:46 jakemsr Exp $
---- src/xine-engine/audio_decoder.c.orig	Tue Jan  1 08:30:09 2008
-+++ src/xine-engine/audio_decoder.c	Wed Jan  9 01:50:22 2008
-@@ -461,7 +461,9 @@ static void *audio_decoder_loop (void *stream_gen) {
+$OpenBSD: patch-src_xine-engine_audio_decoder_c,v 1.7 2009/02/16 01:24:24 sthen Exp $
+--- src/xine-engine/audio_decoder.c.orig	Tue Feb 10 12:32:23 2009
++++ src/xine-engine/audio_decoder.c	Wed Feb 11 00:55:26 2009
+@@ -463,7 +463,9 @@ static void *audio_decoder_loop (void *stream_gen) {
  int _x_audio_decoder_init (xine_stream_t *stream) {
  
    pthread_attr_t       pth_attrs;
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_xine-engine_audio_decoder_c,v 1.6 2008/01/15 00:36:46 jakems
    int                  err;
  
    if (stream->audio_out == NULL) {
-@@ -499,10 +501,12 @@ int _x_audio_decoder_init (xine_stream_t *stream) {
+@@ -501,10 +503,12 @@ int _x_audio_decoder_init (xine_stream_t *stream) {
       */
  
      pthread_attr_init(&pth_attrs);
