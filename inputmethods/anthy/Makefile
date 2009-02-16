@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/07/25 09:43:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2009/02/16 15:29:43 sthen Exp $
 COMMENT-main=	japanese input method
 COMMENT-emacs=	emacs files for anthy
 
@@ -11,7 +11,7 @@ PKGNAME-main=	anthy-$V
 PKGNAME-emacs=	emacs-anthy-$V
 
 HOMEPAGE= 	http://anthy.sourceforge.jp/
-MASTER_SITES=	http://osdn.dl.sourceforge.jp/anthy/22565/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=anthy/22565/}
 
 # GPL, part LGPL
 

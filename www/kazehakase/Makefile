@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/12/19 11:51:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2009/02/16 15:29:43 sthen Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -13,9 +13,7 @@ DISTNAME=	kazehakase-${VERSION}
 PKGNAME-main=	kazehakase-common-${VERSION}
 PKGNAME-gecko=	${DISTNAME}
 PKGNAME-webkit=	kazehakase-webkit-${VERSION}
-MASTER_SITES=	http://osdn.dl.sourceforge.jp/kazehakase/33533/
-#doesn't work
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=kazehakase/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=kazehakase/33533/}
 
 HOMEPAGE=	http://kazehakase.sourceforge.jp/
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
