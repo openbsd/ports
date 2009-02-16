@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2008/09/24 13:56:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2009/02/16 00:44:24 sthen Exp $
 
 COMMENT=	PF to NetFlow converter
+
+BROKEN=		needs updating for pfsync changes
 
 DISTNAME=	pfflowd-0.7
 PKGNAME=	${DISTNAME}p0
