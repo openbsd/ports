@@ -1,0 +1,11 @@
+$OpenBSD: patch-installer_userscripts_createcompany_d_00createpublic,v 1.1.1.1 2009/02/16 09:35:46 ajacoutot Exp $
+--- installer/userscripts/createcompany.d/00createpublic.orig	Sun Jan  4 15:21:37 2009
++++ installer/userscripts/createcompany.d/00createpublic	Sun Jan  4 15:26:28 2009
+@@ -2,6 +2,6 @@
+ 
+ # Create a Zarafa Public store for the new company.
+ 
+-PATH=$PATH:/sbin:/usr/local/sbin:/usr/sbin
++PATH=$PATH:${PREFIX}/bin
+ 
+ zarafa-admin -s -I "${ZARAFA_COMPANY}"

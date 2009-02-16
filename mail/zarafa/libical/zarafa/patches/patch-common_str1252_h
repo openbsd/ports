@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_str1252_h,v 1.1.1.1 2009/02/16 09:35:46 ajacoutot Exp $
+--- common/str1252.h.orig	Thu Oct  9 17:01:27 2008
++++ common/str1252.h	Thu Oct  9 17:01:42 2008
+@@ -36,7 +36,7 @@
+ #ifndef STR1252_H
+ #define STR1252_H
+ 
+-#include <malloc.h>
++#include <stdlib.h>
+ 
+ void memxfrm_str1252(char *str, int len);
+ void strxfrm_str1252(char *str);

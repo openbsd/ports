@@ -1,0 +1,19 @@
+$OpenBSD: patch-common_platform_linux_h,v 1.1.1.1 2009/02/16 09:35:46 ajacoutot Exp $
+--- common/platform.linux.h.orig	Wed Dec 24 20:17:57 2008
++++ common/platform.linux.h	Fri Jan  9 15:09:32 2009
+@@ -48,8 +48,15 @@
+ #include <ctype.h>		/* 64bit int definition */
+ #include <dlfcn.h>
+ #include <stddef.h>
++#if defined(__OpenBSD__)
++#include <sys/endian.h>
++#ifndef MAX_PATH
++  #define MAX_PATH 1024
++#endif
++#else
+ #include <byteswap.h>
+ #include <endian.h>
++#endif
+ 
+ #ifdef HAVE_UNISTD_H
+   #include <unistd.h>

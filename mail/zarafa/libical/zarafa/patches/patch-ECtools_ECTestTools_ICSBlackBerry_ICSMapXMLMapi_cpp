@@ -1,0 +1,15 @@
+$OpenBSD: patch-ECtools_ECTestTools_ICSBlackBerry_ICSMapXMLMapi_cpp,v 1.1.1.1 2009/02/16 09:35:46 ajacoutot Exp $
+--- ECtools/ECTestTools/ICSBlackBerry/ICSMapXMLMapi.cpp.orig	Tue Oct 14 15:39:27 2008
++++ ECtools/ECTestTools/ICSBlackBerry/ICSMapXMLMapi.cpp	Tue Oct 14 15:41:06 2008
+@@ -33,7 +33,11 @@
+  * 
+  */
+ 
++#ifndef __OpenBSD__
+ #include <asm/errno.h>
++#else
++#include <errno.h>
++#endif
+ 
+ #include <mapicode.h>
+ #include <mapitags.h>

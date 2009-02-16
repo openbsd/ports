@@ -1,0 +1,10 @@
+$OpenBSD: patch-installer_linux_createuser_dotforward,v 1.1.1.1 2009/02/16 09:35:46 ajacoutot Exp $
+--- installer/linux/createuser.dotforward.orig	Mon Dec 29 20:11:02 2008
++++ installer/linux/createuser.dotforward	Mon Dec 29 20:11:50 2008
+@@ -10,5 +10,5 @@
+ 
+ HOMEDIR=`getent passwd $ZARAFA_USER | cut -d: -f6`
+ 
+-echo "\"| /usr/bin/zarafa-dagent $ZARAFA_USER\"" > $HOMEDIR/.forward
++echo "\"| ${PREFIX}/bin/zarafa-dagent $ZARAFA_USER\"" > $HOMEDIR/.forward
+ chown $ZARAFA_USER.$ZARAFA_USER $HOMEDIR/.forward

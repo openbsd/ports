@@ -1,0 +1,37 @@
+$OpenBSD: patch-php-mobile-webaccess_include_class_hierarchy_php,v 1.1.1.1 2009/02/16 09:35:44 ajacoutot Exp $
+--- php-mobile-webaccess/include/class.hierarchy.php.orig	Thu Jan  8 11:32:00 2009
++++ php-mobile-webaccess/include/class.hierarchy.php	Thu Jan  8 11:34:36 2009
+@@ -22,11 +22,11 @@ class hierarchy{
+ 		$this->store = $store;
+ 		$this->folders = array();
+ 		$this->properties = array();
+-		$this->properties["entryid"] =PR_ENTRYID;
+-		$this->properties["name"]=PR_DISPLAY_NAME;
+-		$this->properties["unread"]=PR_CONTENT_UNREAD;
+-		$this->properties["subfolders"] = PR_SUBFOLDERS;
+-		$this->properties["container_class"] = PR_CONTAINER_CLASS;
++		$this->properties["entryid"] = 'PR_ENTRYID';
++		$this->properties["name"] = 'PR_DISPLAY_NAME';
++		$this->properties["unread"] = 'PR_CONTENT_UNREAD';
++		$this->properties["subfolders"] = 'PR_SUBFOLDERS';
++		$this->properties["container_class"] = 'PR_CONTAINER_CLASS';
+ 		
+ 	}
+ 
+@@ -63,14 +63,14 @@ class hierarchy{
+ 	{
+ 		global $smarty;
+ 		//de properties van default messagestore
+-		$msgstore_props = mapi_getprops($this->store, array(PR_ENTRYID, PR_DISPLAY_NAME, PR_IPM_SUBTREE_ENTRYID, PR_IPM_OUTBOX_ENTRYID, PR_IPM_SENTMAIL_ENTRYID, PR_IPM_WASTEBASKET_ENTRYID));
++		$msgstore_props = mapi_getprops($this->store, array('PR_ENTRYID', 'PR_DISPLAY_NAME', 'PR_IPM_SUBTREE_ENTRYID', 'PR_IPM_OUTBOX_ENTRYID', 'PR_IPM_SENTMAIL_ENTRYID', 'PR_IPM_WASTEBASKET_ENTRYID'));
+ 		
+ 		//Open de tree onder de default messagestore
+ 		$folder= mapi_msgstore_openentry($this->store, $msgstore_props[PR_IPM_SUBTREE_ENTRYID]);
+ 		
+ 		//haal de table op
+ 		$table = mapi_folder_gethierarchytable($folder);
+-		mapi_table_sort($table, array(PR_DISPLAY_NAME => TABLE_SORT_ASCEND));
++		mapi_table_sort($table, array('PR_DISPLAY_NAME' => 'TABLE_SORT_ASCEND'));
+ 		
+ 		//mapi_folder_sort($folder, $sort);
+ 		

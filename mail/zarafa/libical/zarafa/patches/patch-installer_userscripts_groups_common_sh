@@ -1,0 +1,18 @@
+$OpenBSD: patch-installer_userscripts_groups_common_sh,v 1.1.1.1 2009/02/16 09:35:46 ajacoutot Exp $
+--- installer/userscripts/groups_common.sh.orig	Wed Dec 24 15:50:33 2008
++++ installer/userscripts/groups_common.sh	Sun Jan  4 15:26:38 2009
+@@ -1,7 +1,7 @@
+ #! /bin/sh
+ 
+ ZARAFA_LANG="--lang ${LC_MESSAGES:-en_EN}"
+-PATH=/bin:/usr/local/bin:/usr/bin
++PATH=$PATH:${PREFIX}/bin
+ 
+ if [ -z "${ZARAFA_GROUP_SCRIPTS}" ] ; then
+     exec >&2
+@@ -21,4 +21,4 @@ if [ -z "${ZARAFA_GROUP}" -a -z "${ZARAFA_GROUPID}" ] 
+     exit 1
+ fi
+ 
+-find ${ZARAFA_GROUP_SCRIPTS} -maxdepth 1 -type f -perm -u=x -not -name \*~ -not -name \#\* -exec {} \;
++find ${ZARAFA_GROUP_SCRIPTS} -maxdepth 1 -type f -perm -u=x -and ! -name \*~ -and ! -name \#\* -exec {} \;

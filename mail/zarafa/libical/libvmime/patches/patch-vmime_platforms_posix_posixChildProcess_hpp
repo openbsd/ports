@@ -1,0 +1,14 @@
+$OpenBSD: patch-vmime_platforms_posix_posixChildProcess_hpp,v 1.1.1.1 2009/02/16 09:35:44 ajacoutot Exp $
+--- vmime/platforms/posix/posixChildProcess.hpp.orig	Sun Oct 12 10:19:49 2008
++++ vmime/platforms/posix/posixChildProcess.hpp	Sun Oct 12 10:20:20 2008
+@@ -23,6 +23,10 @@
+ 
+ #include "vmime/utility/childProcess.hpp"
+ 
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#include <signal.h>
++#endif
+ 
+ namespace vmime {
+ namespace platforms {

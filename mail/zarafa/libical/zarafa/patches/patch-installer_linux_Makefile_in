@@ -1,0 +1,41 @@
+$OpenBSD: patch-installer_linux_Makefile_in,v 1.1.1.1 2009/02/16 09:35:46 ajacoutot Exp $
+--- installer/linux/Makefile.in.orig	Mon Sep 22 21:58:07 2008
++++ installer/linux/Makefile.in	Sun Oct 19 18:20:23 2008
+@@ -187,6 +187,7 @@ datadir = ${prefix}/share/zarafa
+ datarootdir = @datarootdir@
+ docdir = @docdir@
+ dvidir = @dvidir@
++egdir = ${prefix}/share/examples/zarafa
+ exec_prefix = @exec_prefix@
+ host = @host@
+ host_alias = @host_alias@
+@@ -215,12 +216,8 @@ target_alias = @target_alias@
+ dist_data_DATA = server.cfg unix.cfg ldap.openldap.cfg ldap.active-directory.cfg \
+ 	spooler.cfg gateway.cfg monitor.cfg dagent.cfg ical.cfg licensed.cfg \
+ 	zarafa.logrotate \
+-	zarafa-server.init.suse zarafa-spooler.init.suse zarafa-gateway.init.suse zarafa-monitor.init.suse zarafa-ical.init.suse \
+-	zarafa-server.init.fc zarafa-spooler.init.fc zarafa-gateway.init.fc zarafa-monitor.init.fc zarafa-ical.init.fc \
+-	zarafa-server.init.cbs4 zarafa-spooler.init.cbs4 zarafa-gateway.init.cbs4 zarafa-monitor.init.cbs4 zarafa-ical.init.cbs4 \
+ 	db-convert-4.1-to-4.2 db-convert-4.20-to-4.21 db-convert-4.20-to-innodb.sql db-calc-storesize db-convert-attachments-to-files \
+-	createuser.dotforward db-convert-4.2x-to-5.00 ssl-certificates.sh \
+-	zarafa-licensed.init.cbs4 zarafa-licensed.init.suse zarafa-licensed.init.fc
++	createuser.dotforward db-convert-4.2x-to-5.00 ssl-certificates.sh
+ 
+ dist_bin_SCRIPTS = zarafa-autorespond
+ dist_sysconf_DATA = ipsseg.crt
+@@ -287,12 +284,12 @@ distclean-libtool:
+ uninstall-info-am:
+ install-dist_dataDATA: $(dist_data_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(datadir)"
++	test -z "$(egdir)" || $(mkdir_p) "$(DESTDIR)$(egdir)"
+ 	@list='$(dist_data_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(dist_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(datadir)/$$f'"; \
+-	  $(dist_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(datadir)/$$f"; \
++	  echo " $(dist_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(egdir)/$$f'"; \
++	  $(dist_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(egdir)/$$f"; \
+ 	done
+ 
+ uninstall-dist_dataDATA:

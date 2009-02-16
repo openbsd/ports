@@ -1,0 +1,33 @@
+$OpenBSD: patch-installer_linux_spooler_cfg,v 1.1.1.1 2009/02/16 09:35:46 ajacoutot Exp $
+--- installer/linux/spooler.cfg.orig	Wed Dec 24 15:50:33 2008
++++ installer/linux/spooler.cfg	Sun Jan 11 14:45:21 2009
+@@ -8,16 +8,16 @@ smtp_server	=	localhost
+ server_socket	=	file:///var/run/zarafa
+ 
+ # drop privileges and run the process as this user
+-run_as_user = 
++run_as_user = _zarafa
+ 
+ # drop privileges and run the process as this group
+-run_as_group = 
++run_as_group = _zarafa
+ 
+-# create a pid file for stopping the service via the init.d scripts
++# write the process ID number to this file
+ pid_file = /var/run/zarafa-spooler.pid
+ 
+ # run server in this path (when not using the -F switch)
+-running_path = /
++running_path = /var/empty
+ 
+ ##############################################################
+ # SPOOLER LOG SETTINGS
+@@ -42,7 +42,7 @@ log_timestamp	=	1
+ #       to use this type of login method
+ 
+ # Login to the Zarafa server using this SSL Key
+-sslkey_file = /etc/zarafa/ssl/spooler.pem
++sslkey_file = ${SYSCONFDIR}/zarafa/ssl/spooler.pem
+ 
+ # The password of the SSL Key
+ sslkey_pass = replace-with-server-cert-password

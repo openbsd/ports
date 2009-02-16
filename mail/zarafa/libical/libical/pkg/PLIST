@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/16 09:35:44 ajacoutot Exp $
+include/zarafa/
+include/zarafa/ical.h
+include/zarafa/icalss.h
+include/zarafa/libicalvcal/
+include/zarafa/libicalvcal/icalvcal.h
+include/zarafa/libicalvcal/port.h
+include/zarafa/libicalvcal/vcaltmp.h
+include/zarafa/libicalvcal/vcc.h
+include/zarafa/libicalvcal/vobject.h
+lib/libical-zarafa.a
+lib/libical-zarafa.la
+@lib lib/libical-zarafa.so.${LIBical-zarafa_VERSION}
+lib/libicalss-zarafa.a
+lib/libicalss-zarafa.la
+@lib lib/libicalss-zarafa.so.${LIBicalss-zarafa_VERSION}
+lib/libicalvcal-zarafa.a
+lib/libicalvcal-zarafa.la
+@lib lib/libicalvcal-zarafa.so.${LIBicalvcal-zarafa_VERSION}

@@ -1,0 +1,9 @@
+Zarafa is a full-featured e-mail and groupware solution, focused
+towards clients using the MAPI standard.  As an MS Exchange replacement,
+the Zarafa suite provides the following features:
+ * Integration with existing Unix mailserver
+ * Native mobile phone support
+ * MS Outlook "Look & Feel" webaccess
+ * Stable MS Outlook sharing (100% MAPI)
+
+This package provides the Open Source version of Zarafa.

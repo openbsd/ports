@@ -1,0 +1,122 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2009/02/16 09:35:46 ajacoutot Exp $
+
+Post-install/update instructions for Zarafa
+===========================================
+
+By default the server is configured to accept SOAP connections on port
+236. If you wish to connect Outlook clients on port 80, please setup
+your web server to proxy HTTP requests with URI=/zarafa to
+http://localhost:236.
+
+
+Before Starting zarafa-server for the first time
+------------------------------------------------
+
+* a MySQL datatabase access needs to be configured in
+    ${SYSCONFDIR}/zarafa/server.cfg
+
+
+After zarafa-server was started for the first time
+--------------------------------------------------
+
+* Creating the public store.
+    # ${TRUEPREFIX}/bin/zarafa-admin -s
+
+* Adding an admin user -- see zarafa-admin(1).
+    # ${TRUEPREFIX}/bin/zarafa-admin -c zadmin -p secret -e zarafa.admin@domain.tld -f "John Doe" -a 2
+
+
+Starting Zarafa on boot-up
+--------------------------
+
+To start all zarafa services on boot-up, add the following lines to
+/etc/rc.local:
+
+if [ -x ${TRUEPREFIX}/bin/zarafa-server ]; then
+	echo -n ' zarafa-server' ; ${TRUEPREFIX}/bin/zarafa-server
+fi
+if [ -x ${TRUEPREFIX}/bin/zarafa-spooler ]; then
+	echo -n ' zarafa-spooler' ; ${TRUEPREFIX}/bin/zarafa-spooler
+fi
+if [ -x ${TRUEPREFIX}/bin/zarafa-monitor ]; then
+	echo -n ' zarafa-monitor' ; ${TRUEPREFIX}/bin/zarafa-monitor
+fi
+if [ -x ${TRUEPREFIX}/bin/zarafa-gateway ]; then
+	echo -n ' zarafa-gateway' ; ${TRUEPREFIX}/bin/zarafa-gateway
+fi
+if [ -x ${TRUEPREFIX}/bin/zarafa-ical ]; then
+	echo -n ' zarafa-ical' ; ${TRUEPREFIX}/bin/zarafa-ical
+fi
+
+
+Shutting down Zarafa
+--------------------
+
+zarafa-server may need some time to correctly shut down.
+It is advised you use something like the following at the end of your
+/etc/rc.shutdown file:
+
+echo "Shutting down Zarafa..."
+pkill zarafa-ical
+pkill zarafa-gateway
+pkill zarafa-monitor
+pkill zarafa-spooler
+pkill zarafa-server
+sleep 10
+i=0
+while [ $i -lt 60 ]
+do
+	if [ "`pgrep zarafa-server`" ]; then
+		pkill zarafa-server
+		sleep 10
+		i=`expr $i + 10`
+	else
+		i=60
+	fi
+done
+
+
+Mail delivery agent configuration
+---------------------------------
+
+The easiest way to use zarafa-dagent system-wide under a stock OpenBSD
+sendmail installation is to use procmail(1).
+See the following URL for other MTA integration:
+   http://www.zarafa.com/?q=en/faq/61
+
+First, install the procmail package and configure ${SYSCONFDIR}/procmailrc
+the following way:
+ 
+:0 w
+| ${TRUEPREFIX}/bin/zarafa-dagent $LOGNAME
+EXITCODE=$?
+
+Next, you need to add the following line to your sendmail.mc file then
+restart sendmail(8):
+   FEATURE(`local_procmail')dnl
+
+
+The PHP mapi module and OpenBSD Apache
+--------------------------------------
+
+When using the OpenBSD Apache server, the runtime loader will need to
+pre-load the pthread shared library. While the php binary is linked with
+-pthread, httpd is not and the PHP mapi module needs
+the pthread_mutex_init(3) function.
+To do so, we need to start httpd with LD_PRELOAD set in /etc/rc.local
+(do not set httpd_flags in rc.conf(8)).
+e.g:
+
+rm -f /var/www/logs/{ssl_mutex,httpd.lock,accept.lock}.*
+echo -n ' httpd'
+LD_PRELOAD=/usr/lib/libpthread.so /usr/sbin/httpd -DSSL
+
+
+Documentation and help
+----------------------
+
+Each zarafa-* command has its corresponding manpage.
+
+Some documentation is also available on the Internet:
+    http://www.zarafa.com/wiki/index.php/Main_Page
+    http://www.zarafa.com/content/documentation
