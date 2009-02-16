@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/02/15 17:23:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/02/16 00:42:53 ajacoutot Exp $
 
 COMMENT=		GNOME speech module
 
 GNOME_PROJECT=		gnome-speech
-GNOME_VERSION=		0.4.24
+GNOME_VERSION=		0.4.25
 SHARED_LIBS +=  gnomespeech          0.1      # .7.1
 
 # LGPLv2
