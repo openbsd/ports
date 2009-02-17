@@ -1,0 +1,12 @@
+$OpenBSD: patch-ccutil_debugwin_cpp,v 1.1 2009/02/17 09:19:04 ajacoutot Exp $
+--- ccutil/debugwin.cpp.orig	Tue Feb 17 10:03:04 2009
++++ ccutil/debugwin.cpp	Tue Feb 17 10:03:39 2009
+@@ -231,7 +231,7 @@ DEBUG_WIN::DEBUG_WIN(                    //constructor
+   length += sprintf (command + length, "trap \"\" 1 2 3 13 15\n");
+   length +=
+     sprintf (command + length,
+-    "/usr/bin/X11/xterm -sb -sl " INT32FORMAT " -geometry "
++    "${X11BASE}/bin/xterm -sb -sl " INT32FORMAT " -geometry "
+     INT32FORMAT "x" INT32FORMAT "", buflines, xsize / 8, ysize / 16);
+   if (xpos >= 0)
+     command[length++] = '+';

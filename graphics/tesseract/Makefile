@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/17 10:17:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/17 09:19:03 ajacoutot Exp $
 
 COMMENT-main=	OCR Engine developed at HP Labs.
 COMMENT-de=	German language data for tesseract
@@ -11,7 +11,7 @@ COMMENT-pt=	Portuguese (Brazilian) language data for tesseract
 DISTNAME=	tesseract-2.03
 CATEGORIES=	graphics textproc
 
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-de=	tesseract-de-2.00
 PKGNAME-es=	tesseract-es-2.00
 PKGNAME-fr=	tesseract-fr-2.00
@@ -64,6 +64,9 @@ MASTER_SITES=	http://tesseract-ocr.googlecode.com/files/
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/ccutil/debugwin.cpp
 
 post-install:
 	cp -R ${WRKDIR}/tessdata ${PREFIX}/share
