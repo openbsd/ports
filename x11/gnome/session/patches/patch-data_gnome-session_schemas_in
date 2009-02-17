@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_gnome-session_schemas_in,v 1.1 2009/02/17 10:22:02 ajacoutot Exp $
+
+Show splash screen by default.
+
+--- data/gnome-session.schemas.in.orig	Tue Feb 17 11:22:57 2009
++++ data/gnome-session.schemas.in	Tue Feb 17 11:23:10 2009
+@@ -7,7 +7,7 @@
+          <applyto>/apps/gnome-session/options/show_splash_screen</applyto>
+          <owner>gnome</owner>
+          <type>bool</type>
+-         <default>false</default>
++         <default>true</default>
+          <locale name="C">
+             <short>Show the splash screen</short>
+             <long>Show the splash screen when the session starts up</long>
