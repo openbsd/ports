@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.44 2009/02/11 14:09:27 pirofti Exp $
+# $OpenBSD: OpenBSD,v 1.45 2009/02/17 09:24:55 ajacoutot Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -12,7 +12,7 @@
 30.448		-97.684		"marco"		# Marco Peereboom
 35.5635277	-97.5437221	"todd"		# Todd T. Fries
 35.62		139.69		"mcbride"	# Ryan Thomas McBride
-35.67		139.75		"itojun"	# Jun-ichiro Itojun
+35.66834	139.719186	"itojun"	# Jun-ichiro Itojun
 36.134		-86.70		"david"		# David Krause
 37.3706		-122.0138	"ckuethe"	# Chris Kuethe
 37.515049	-122.339528	"marc"		# Marco S. Hyman
