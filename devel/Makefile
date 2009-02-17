@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.675 2009/02/05 22:05:20 simon Exp $
+# $OpenBSD: Makefile,v 1.676 2009/02/17 00:20:55 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -61,6 +61,7 @@
      SUBDIR += cvslock
      SUBDIR += cvsplot
      SUBDIR += cvsps
+     SUBDIR += cvstrac
      SUBDIR += cvsutils
      SUBDIR += cvsweb
      SUBDIR += cxxtools
