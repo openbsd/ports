@@ -1,4 +1,4 @@
-# $OpenBSD: README.chroot,v 1.4 2006/07/12 19:26:11 naddy Exp $
+# $OpenBSD: README.chroot,v 1.5 2009/02/17 09:04:07 giovanni Exp $
 # Author: Jolan Luff <jolan@openbsd.org>
 
 In order to make CVSweb operate in a chroot environment, it is
@@ -15,7 +15,7 @@ $ cd /var/www/usr
 # mkdir -p {bin,lib,libdata/perl5,libexec}
 
 $ cd /var/www/usr/libdata/perl5
-# mkdir -p {File,IPC,Time,warnings,`machine`-openbsd/5.8.8}
+# mkdir -p {File,IPC,Time,warnings,`machine`-openbsd/5.10.0}
 
 Now, the required binaries:
 
@@ -45,8 +45,8 @@ $ cd /var/www/usr/libdata/perl5
 # cp -p /usr/libdata/perl5/Time/Local.pm ./Time/
 # cp -p /usr/libdata/perl5/warnings/register.pm ./warnings/
 
-$ cd /var/www/usr/libdata/perl5/`machine`-openbsd/5.8.8
-# cp -p /usr/libdata/perl5/`machine`-openbsd/5.8.8/{Config,Cwd}.pm .
+$ cd /var/www/usr/libdata/perl5/`machine`-openbsd/5.10.0
+# cp -p /usr/libdata/perl5/`machine`-openbsd/5.10.0/{Config,Cwd}.pm .
 
 Editing cvsweb and cvsweb.conf
 ------------------------------
