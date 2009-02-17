@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.12 2007/04/13 13:22:25 bernd Exp $
---- configure.orig	Fri Apr  6 20:41:49 2007
-+++ configure	Sun Apr  8 10:04:06 2007
-@@ -8535,7 +8535,7 @@ _ACEOF
+$OpenBSD: patch-configure,v 1.13 2009/02/17 12:08:44 jasper Exp $
+--- configure.orig	Tue Feb 17 12:04:57 2009
++++ configure	Tue Feb 17 12:07:32 2009
+@@ -8085,7 +8085,7 @@ _ACEOF
  
  
  
@@ -10,16 +10,16 @@ $OpenBSD: patch-configure,v 1.12 2007/04/13 13:22:25 bernd Exp $
  
  
  
-@@ -13251,7 +13251,7 @@ cat >>confdefs.h <<\_ACEOF
+@@ -12192,7 +12192,7 @@ cat >>confdefs.h <<\_ACEOF
  _ACEOF
  
-   CEFLAGS="$CEFLAGS -I/usr/include/kerberosV"
+   CFLAGS="$CFLAGS -I/usr/include/kerberosV"
 -  LIBS="$LIBS -lasn1 -lkrb5 -lcom_err -lkafs"
 +  LIBS="$LIBS -lkrb5"
  elif krb5-config 2> /dev/null >/dev/null ; then
    krb5_prefix=`krb5-config --prefix krb5`
    { echo "$as_me:$LINENO: result: krb5-config points to kerberosV under $krb5_prefix" >&5
-@@ -16962,8 +16962,8 @@ pythondir!$pythondir$ac_delim
+@@ -15478,8 +15478,8 @@ pythondir!$pythondir$ac_delim
  pkgpythondir!$pkgpythondir$ac_delim
  pyexecdir!$pyexecdir$ac_delim
  pkgpyexecdir!$pkgpyexecdir$ac_delim
@@ -30,7 +30,7 @@ $OpenBSD: patch-configure,v 1.12 2007/04/13 13:22:25 bernd Exp $
  CC!$CC$ac_delim
  CFLAGS!$CFLAGS$ac_delim
  LDFLAGS!$LDFLAGS$ac_delim
-@@ -17037,10 +17037,10 @@ GMSGFMT!$GMSGFMT$ac_delim
+@@ -15553,10 +15553,10 @@ GMSGFMT!$GMSGFMT$ac_delim
  XGETTEXT!$XGETTEXT$ac_delim
  MSGMERGE!$MSGMERGE$ac_delim
  INTL_MACOSX_LIBS!$INTL_MACOSX_LIBS$ac_delim
