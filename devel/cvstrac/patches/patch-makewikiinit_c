@@ -1,0 +1,16 @@
+$OpenBSD: patch-makewikiinit_c,v 1.1.1.1 2009/02/17 00:16:04 sthen Exp $
+
+http://www.cvstrac.org/cvstrac/chngview?cn=969
+Use sqlite3_free() not free() on functions returning memory strings.
+
+--- makewikiinit.c.orig	Tue Feb 21 01:48:34 2006
++++ makewikiinit.c	Thu Aug  7 01:10:14 2008
+@@ -98,7 +98,7 @@ int main(int argc, char **argv){
+                          "SELECT name, text FROM wiki WHERE name='%s' LIMIT 1",
+                          azName[i]);
+     rc = sqlite3_exec(db,zSql,generate_page,0,&zErrMsg);
+-    free(zSql);
++    sqlite3_free(zSql);
+     if( rc!=SQLITE_OK ){
+       fprintf(stderr,"Database error: %s\n", zErrMsg);
+       exit(1);

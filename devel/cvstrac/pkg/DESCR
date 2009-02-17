@@ -1,0 +1,11 @@
+CVSTrac implements a patch-set and bug tracking system for CVS
+as a single self-contained executable, running as CGI, from inetd,
+or as a stand-alone web server.
+
+- Automatically generates a patch-set log from check-in comments
+- User-defined color-coded database queries
+- Built-in repository browser and Wiki
+- Minimal memory, disk and CPU requirements
+- Per-user access control
+- Uses SQLite, no heavy database engine dependency
+- Can be run from a chroot jail

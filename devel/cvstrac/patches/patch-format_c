@@ -1,0 +1,37 @@
+$OpenBSD: patch-format_c,v 1.1.1.1 2009/02/17 00:16:04 sthen Exp $
+
+http://www.cvstrac.org/cvstrac/chngview?cn=994
+Avoid using sqlite internal functions.
+
+--- format.c.orig	Sun Jan 28 22:50:24 2007
++++ format.c	Thu Aug  7 01:01:25 2008
+@@ -701,11 +701,10 @@ static int isAllowed(const char *zElem, int nElem){
+ ** Return TRUE if the HTML element given in the argument is a form of
+ ** external reference (i.e. A, IMG, etc).
+ */
+-extern int sqlite3StrNICmp(const char *, const char*, int);
+ static int isLinkTag(const char *zElem, int nElem){
+-  return (nElem==1 && 0==sqlite3StrNICmp(zElem,"A",nElem))
+-      || (nElem==3 && 0==sqlite3StrNICmp(zElem,"IMG",nElem))
+-      || (nElem==4 && 0==sqlite3StrNICmp(zElem,"CITE",nElem));
++  return (nElem==1 && 0==strncasecmp(zElem,"A",nElem))
++      || (nElem==3 && 0==strncasecmp(zElem,"IMG",nElem))
++      || (nElem==4 && 0==strncasecmp(zElem,"CITE",nElem));
+ }
+ 
+ /*
+@@ -713,12 +712,11 @@ static int isLinkTag(const char *zElem, int nElem){
+ ** before it ends, then return the number of characters through the end of
+ ** the </html>.  If the <html> or the </html> is missing, return 0.
+ */
+-extern int sqlite3StrNICmp(const char *, const char*, int);
+ static int is_html(const char *z){
+   int i;
+-  if( sqlite3StrNICmp(z, "<html>", 6) ) return 0;
++  if( strncasecmp(z, "<html>", 6) ) return 0;
+   for(i=6; z[i]; i++){
+-    if( z[i]=='<' && sqlite3StrNICmp(&z[i],"</html>",7)==0 ) return i+7;
++    if( z[i]=='<' && strncasecmp(&z[i],"</html>",7)==0 ) return i+7;
+   }
+   return 0;
+ }

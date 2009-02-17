@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/17 00:16:04 sthen Exp $
+@bin bin/cvstrac
+share/doc/cvstrac/
+share/doc/cvstrac/howitworks.html
+share/doc/cvstrac/index.html

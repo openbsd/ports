@@ -1,0 +1,42 @@
+$OpenBSD: patch-maketestdb_c,v 1.1.1.1 2009/02/17 00:16:04 sthen Exp $
+
+http://www.cvstrac.org/cvstrac/chngview?cn=969
+Use sqlite3_free() not free() on functions returning memory strings.
+
+--- maketestdb.c.orig	Tue Mar 28 02:38:54 2006
++++ maketestdb.c	Thu Aug  7 01:10:02 2008
+@@ -62,7 +62,7 @@ static void generate_chng(sqlite3 *db, time_t when, in
+     sprintf(zBase,"dir_%d",rand()%MAX_DIR);
+     zSql = sqlite3_mprintf("REPLACE INTO file VALUES(1,'%q','%q')",zBase,zDir);
+     sqlite3_exec(db,zSql,0,0,&zErrMsg);
+-    free(zSql);
++    sqlite3_free(zSql);
+     if(zDir[0]) strcat(zDir,"/");
+     strcat(zDir,zBase);
+   }
+@@ -74,14 +74,14 @@ static void generate_chng(sqlite3 *db, time_t when, in
+     sprintf(zBase,"file_%d.c",k);
+     zSql = sqlite3_mprintf("REPLACE INTO file VALUES(0,'%q','%q')",zBase,zDir);
+     sqlite3_exec(db,zSql,0,0,&zErrMsg);
+-    free(zSql);
++    sqlite3_free(zSql);
+ 
+     /* FIXME: this is definitely _not_ generating CVS version numbers */
+     zSql = sqlite3_mprintf("INSERT INTO filechng "
+                            "VALUES(%d,'%q/%q','%d',%d,%d)",
+                            cn,zDir,zBase,cn,rand()%10,rand()%10);
+     sqlite3_exec(db,zSql,0,0,&zErrMsg);
+-    free(zSql);
++    sqlite3_free(zSql);
+   }
+ 
+   zSql = sqlite3_mprintf("INSERT INTO chng "
+@@ -89,7 +89,7 @@ static void generate_chng(sqlite3 *db, time_t when, in
+                        "COMMIT",
+                        cn, when, cn, MAX_CHNG);
+   rc = sqlite3_exec(db,zSql,0,0,&zErrMsg);
+-  free(zSql);
++  sqlite3_free(zSql);
+ }
+ 
+ /***********************************************************************/

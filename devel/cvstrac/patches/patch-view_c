@@ -1,0 +1,25 @@
+$OpenBSD: patch-view_c,v 1.1.1.1 2009/02/17 00:16:04 sthen Exp $
+
+http://www.cvstrac.org/cvstrac/chngview?cn=994
+Avoid using sqlite internal functions.
+
+--- view.c.orig	Sat Jan 27 23:29:39 2007
++++ view.c	Thu Aug  7 01:01:25 2008
+@@ -219,8 +219,6 @@ static void view_add_functions(int tabs){
+ ** pointer to an error message string (obtained from malloc) if
+ ** there is a problem.
+ */
+-extern int sqlite3StrNICmp(const char*,const char*,int);
+-extern int sqlite3StrICmp(const char*,const char*);
+ char *verify_sql_statement(char *zSql){
+   int i;
+ 
+@@ -228,7 +226,7 @@ char *verify_sql_statement(char *zSql){
+   ** the first token is "SELECT" and that there are no unquoted semicolons.
+   */
+   for(i=0; isspace(zSql[i]); i++){}
+-  if( sqlite3StrNICmp(&zSql[i],"select",6)!=0 ){
++  if( strncasecmp(&zSql[i],"select",6)!=0 ){
+     return mprintf("The SQL must be a SELECT statement");
+   }
+   for(i=0; zSql[i]; i++){

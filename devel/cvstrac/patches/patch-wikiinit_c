@@ -1,0 +1,25 @@
+$OpenBSD: patch-wikiinit_c,v 1.1.1.1 2009/02/17 00:16:04 sthen Exp $
+--- wikiinit.c.orig	Tue Feb 17 00:12:21 2009
++++ wikiinit.c	Tue Feb 17 00:13:21 2009
+@@ -1093,10 +1093,10 @@ static const char zLocalizationOfCvstrac[] =
+ @ *: Create bash script to run CVSTrac in required locale.
+ @    Example : _uk-cvstrac_
+ @ 
+-@        #!/bin/bash
++@        #!/bin/sh
+ @        LC_ALL=uk_UA.KOI8-U
+ @        export LC_ALL
+-@        /usr/local/bin/cvstrac $*
++@        ${TRUEPREFIX}/bin/cvstrac $*
+ @ 
+ @ *: Replace "cvstrac" in your scripts by name of your new script
+ @    (uk-cvstrac, in my case).
+@@ -1106,7 +1106,7 @@ static const char zLocalizationOfCvstrac[] =
+ @ use the following command to find all files required by the
+ @ cvstrac binary.
+ @ 
+-@    strace -e file cvstrac 2>logfile ...
++@    ldd ${TRUEPREFIX}/bin/cvstrac
+ ;
+ static const char zMultipleCvsRepositories[] =
+ @ Many people are used to hosting multiple projects in a single
