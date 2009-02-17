@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.147 2009/02/02 15:54:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.148 2009/02/17 10:46:59 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite)
 
-VERSION=	5.0.75
+VERSION=	5.0.77
 DISTNAME=	mysql-${VERSION}
 PKGNAME-main=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
 PKGNAME-tests= 	mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.0
+MASTER_SITES=	${MASTER_SITES_MYSQL:=Downloads/$V/}
+
 SHARED_LIBS +=	mysqlclient_r		19.0
 SHARED_LIBS +=	mysqlclient		19.0
-
-MASTER_SITES=	${MASTER_SITES_MYSQL:=Downloads/$V/}
 
 HOMEPAGE=	http://www.mysql.com/
 
@@ -46,7 +46,8 @@ VMEM_WARNING=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.59
+# Should be 2.63
+AUTOCONF_VERSION= 2.62
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-thread-safe-client \
 		 --localstatedir="${DB_DIR}" \
