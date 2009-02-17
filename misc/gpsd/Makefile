@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/02/10 23:23:27 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.27 2009/02/17 07:45:11 jasper Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-motif=		motif-based test apps using gpsd
@@ -7,10 +7,10 @@ COMMENT-python=		python bindings for gpsd
 
 VERSION=		2.38
 DISTNAME=		gpsd-${VERSION}
-PKGNAME-main=		gpsd-${VERSION}
-PKGNAME-motif=		gpsd-motif-${VERSION}
+PKGNAME-main=		gpsd-${VERSION}p0
+PKGNAME-motif=		gpsd-motif-${VERSION}p0
 PKGNAME-php=		gpsd-php-${VERSION}
-PKGNAME-python=		gpsd-python-${VERSION}
+PKGNAME-python=		gpsd-python-${VERSION}p0
 SHARED_LIBS=		gps	18.0
 CATEGORIES=		misc geo
 
@@ -45,7 +45,7 @@ BUILD_DEPENDS=		::textproc/libxslt \
 CONFIGURE_ARGS+=	--without-x
 .else
 MULTI_PACKAGES+=	-motif
-WANTLIB-motif=		ICE Xaw Xau Xdmcp Xext Xft Xmu Xp Xrender X11 SM Xt \
+WANTLIB-motif=		ICE Xaw8 Xau Xdmcp Xext Xft Xmu Xp Xpm Xrender X11 SM Xt \
 			c m pthread expat fontconfig freetype iconv z
 LIB_DEPENDS-motif=	Xm::x11/openmotif gps::misc/gpsd
 USE_X11=		Yes
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-python
 MULTI_PACKAGES+=	-python
 MODULES=		lang/python
 LIB_DEPENDS-python=	gps::misc/gpsd
-WANTLIB-python=		c m pthread
+WANTLIB-python=
 RUN_DEPENDS-main=
 RUN_DEPENDS-motif=
 CONFIGURE_ENV+=		PYTHON="${MODPY_BIN}"

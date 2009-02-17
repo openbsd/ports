@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure,v 1.1 2009/02/17 07:45:11 jasper Exp $
+
+Prevent linking with -lpthread, and use -pthread instead.
+
+--- configure.orig	Mon Feb 16 11:19:56 2009
++++ configure	Mon Feb 16 11:20:23 2009
+@@ -20913,13 +20913,13 @@ if test $ac_cv_lib_c_open = yes; then
+ fi
+ 
+ 
+-{ echo "$as_me:$LINENO: checking for pthread_setcancelstate in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_setcancelstate in -lpthread... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for pthread_setcancelstate in -pthread" >&5
++echo $ECHO_N "checking for pthread_setcancelstate in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_setcancelstate+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -20975,7 +20975,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_setcancelstate" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_setcancelstate" >&6; }
+ if test $ac_cv_lib_pthread_pthread_setcancelstate = yes; then
+-  LIBPTHREAD="-lpthread"
++  LIBPTHREAD="-pthread"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_LIBPTHREAD
