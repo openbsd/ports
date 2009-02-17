@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/17 00:16:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/17 00:20:26 sthen Exp $
 
 COMMENT =	patch-set and bug tracking system for CVS
 
 DISTNAME =	cvstrac-2.0.1
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	devel www
 
 HOMEPAGE =	http://www.cvstrac.org/
@@ -27,6 +28,9 @@ MAKE_FLAGS =	BCC="${CC} ${CFLAGS} -I${LOCALBASE}/include" \
 		LIBSQLITE="`pkg-config --libs sqlite3` -lm"
 
 NO_REGRESS =	Yes
+
+pre-configure:
+	@${SUBST_CMD} ${WRKSRC}/wikiinit.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvstrac ${PREFIX}/bin/
