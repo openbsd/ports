@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/09/12 20:31:18 rui Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/02/18 00:37:53 sthen Exp $
 @conflict zebra-*
 @newgroup _quagga:525
 @newuser _quagga:525:_quagga:daemon:Quagga Account:/nonexistent:/sbin/nologin
 %%SHARED%%
-bin/vtysh
+@bin bin/vtysh
 include/quagga/
 include/quagga/quagga/
 include/quagga/quagga/buffer.h
@@ -66,13 +66,13 @@ lib/libzebra.la
 @man man/man8/ripd.8
 @man man/man8/ripngd.8
 @man man/man8/zebra.8
-sbin/bgpd
-sbin/ospf6d
-sbin/ospfd
-sbin/ripd
-sbin/ripngd
-sbin/watchquagga
-sbin/zebra
+@bin sbin/bgpd
+@bin sbin/ospf6d
+@bin sbin/ospfd
+@bin sbin/ripd
+@bin sbin/ripngd
+@bin sbin/watchquagga
+@bin sbin/zebra
 share/doc/quagga/
 share/doc/quagga/README
 share/doc/quagga/SERVICES

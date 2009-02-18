@@ -1,7 +1,7 @@
-$OpenBSD: patch-zebra_kernel_socket_c,v 1.4 2008/05/23 12:55:58 claudio Exp $
---- zebra/kernel_socket.c.orig	Wed Aug 22 18:22:57 2007
-+++ zebra/kernel_socket.c	Tue Oct  9 23:54:58 2007
-@@ -136,7 +136,7 @@ struct message rtm_type_str[] =
+$OpenBSD: patch-zebra_kernel_socket_c,v 1.5 2009/02/18 00:37:53 sthen Exp $
+--- zebra/kernel_socket.c.orig	Fri Sep  5 15:27:26 2008
++++ zebra/kernel_socket.c	Mon Nov 10 09:14:15 2008
+@@ -136,7 +136,7 @@ const struct message rtm_type_str[] =
    {RTM_REDIRECT, "RTM_REDIRECT"},
    {RTM_MISS,     "RTM_MISS"},
    {RTM_LOCK,     "RTM_LOCK"},
@@ -10,7 +10,7 @@ $OpenBSD: patch-zebra_kernel_socket_c,v 1.4 2008/05/23 12:55:58 claudio Exp $
    {RTM_OLDADD,   "RTM_OLDADD"},
  #endif /* RTM_OLDADD */
  #ifdef RTM_OLDDEL
-@@ -705,9 +705,7 @@ rtm_read_mesg (struct rt_msghdr *rtm,
+@@ -726,9 +726,7 @@ rtm_read_mesg (struct rt_msghdr *rtm,
  
    /* rt_msghdr version check. */
    if (rtm->rtm_version != RTM_VERSION) 

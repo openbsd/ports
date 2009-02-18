@@ -1,5 +1,3 @@
 Sample Quagga configuration files have been installed in
-${PREFIX}/share/examples/quagga You will need to create a ${CONFDIR}
-directory and install your configuration files there.
-
-You will also need to create a ${STATEDIR} directory for quagga runtime.
+${PREFIX}/share/examples/quagga. You will need to install your
+configuration files in the ${CONFDIR} directory.

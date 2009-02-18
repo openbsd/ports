@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.3 2007/09/12 20:31:18 rui Exp $
---- doc/Makefile.in.orig	Tue Sep 11 16:59:47 2007
-+++ doc/Makefile.in	Tue Sep 11 17:02:43 2007
+$OpenBSD: patch-doc_Makefile_in,v 1.4 2009/02/18 00:37:53 sthen Exp $
+--- doc/Makefile.in.orig	Thu Oct  2 09:31:38 2008
++++ doc/Makefile.in	Mon Nov 10 09:14:15 2008
 @@ -129,6 +129,7 @@ LIBS = @LIBS@
  LIBTOOL = @LIBTOOL@
  LIB_IPV6 = @LIB_IPV6@
@@ -9,7 +9,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.3 2007/09/12 20:31:18 rui Exp $
  LN_S = @LN_S@
  LTLIBOBJS = @LTLIBOBJS@
  MAKEINFO = @MAKEINFO@
-@@ -342,7 +343,7 @@ clean-libtool:
+@@ -344,7 +345,7 @@ clean-libtool:
  
  .texi.dvi:
  	TEXINPUTS="$(am__TEXINFO_TEX_DIR)$(PATH_SEPARATOR)$$TEXINPUTS" \
@@ -18,7 +18,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.3 2007/09/12 20:31:18 rui Exp $
  	$(TEXI2DVI) $<
  
  .texi.pdf:
-@@ -698,7 +699,7 @@ install-info-am: $(INFO_DEPS)
+@@ -700,7 +701,7 @@ install-info-am: $(INFO_DEPS)
  	  case $$file in \
  	    $(srcdir)/*) file=`echo "$$file" | sed "s|^$$srcdirstrip/||"`;; \
  	  esac; \
