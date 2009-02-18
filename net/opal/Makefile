@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/17 14:14:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/02/18 11:56:25 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Open Phone Abstraction Library
 
 DISTNAME=	opal-2.2.11
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	opal	0.0 # .2.2.11
 CATEGORIES=	net devel
 

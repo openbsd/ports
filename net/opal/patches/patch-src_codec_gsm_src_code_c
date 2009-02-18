@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_codec_gsm_src_code_c,v 1.1 2009/02/18 11:56:25 jasper Exp $
+
+Fix 64-bit issues.
+
+--- src/codec/gsm/src/code.c.orig	Wed Feb 18 12:32:11 2009
++++ src/codec/gsm/src/code.c	Wed Feb 18 12:43:53 2009
+@@ -17,6 +17,10 @@
+ 	extern char	* memcpy P((char *, char *, int));
+ #endif
+ 
++#ifdef HAS_STRING_H
++#include	<string.h>
++#endif
++
+ #include	"private.h"
+ #include	"gsm.h"
+ #include	"proto.h"
