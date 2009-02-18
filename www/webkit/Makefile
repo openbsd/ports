@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/25 22:16:40 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2009/02/18 22:09:47 landry Exp $
 
 COMMENT =	open source web browser engine
 
 V = 40000
 DISTNAME =	WebKit-r${V}
-PKGNAME =	webkit-${V}
+PKGNAME =	webkit-${V}p0
 CATEGORIES =	www
 EXTRACT_SUFX =	.tar.bz2
 
