@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/08 19:47:47 eric Exp $
-bin/pgsql2shp
-bin/shp2pgsql
+@comment $OpenBSD: PLIST,v 1.2 2009/02/18 12:04:14 jasper Exp $
+@bin bin/pgsql2shp
+@bin bin/shp2pgsql
 lib/postgresql/liblwgeom.so
 @comment lib/postgresql/liblwgeom.so.1
 libexec/postgis/
