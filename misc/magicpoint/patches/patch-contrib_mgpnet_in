@@ -1,0 +1,33 @@
+$OpenBSD: patch-contrib_mgpnet_in,v 1.1 2009/02/18 08:15:50 giovanni Exp $
+--- contrib/mgpnet.in.orig	Sun Feb 15 19:14:34 2009
++++ contrib/mgpnet.in	Sun Feb 15 19:15:32 2009
+@@ -256,20 +256,7 @@ sub httpserver {
+ 	$httpmethod = $httppath = $httpver = '';
+ 	($httpmethod, $httppath, $httpver) = split(/\s+/, $httpreq);
+ 	$httppath =~ s/http:\/\/[^:\/]+(:\d+)\//\//;
+-	if ($httpver eq '' || $httpver eq 'HTTP/1.0') {
+-		;	# ok
+-	} else {
+-		&httpheader(501, $cthtml) if ($httpver);
+ 
+-		print <<EOF;
+-<HEAD><TITLE>Version not implemented</TITLE></HEAD>
+-<BODY><H1>Version not implemented</H1>
+-HTTP protocol version $httpversion not supported.<P>
+-</BODY>
+-EOF
+-		return;
+-	}
+-
+ 	$httphost = "$hostname:$port";
+ 	if ($httpver) {
+ 		while (<NS>) {
+@@ -415,7 +402,7 @@ sub guessparam {
+ 'XXX4', 'SO_REUSEPORT',	'XXX5', 'SOCK_STREAM',	'XXX6', 'WNOHANG',
+ );
+ 	$tmpnam = &tmpname;
+-	open(CPP, "| @CPP@ >$tmpnam") || return;
++	open(CPP, "| @CPP@ - >$tmpnam") || return;
+ 	print CPP "#include <sys/socket.h>\n";
+ 	print CPP "#include <sys/wait.h>\n";
+ 	foreach $tmp (keys %varnames) {
