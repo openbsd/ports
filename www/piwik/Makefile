@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/11 09:36:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/18 13:49:23 jasper Exp $
 
 COMMENT=		open source web analytics software program
 
@@ -13,7 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://spacehopper.org/mirrors/
+MASTER_SITES=		http://spacehopper.org/mirrors/ \
+			http://nedbsd.eu/~jasper/
 EXTRACT_SUFX=		.zip
 
 WRKDIST=		${WRKDIR}/piwik/
