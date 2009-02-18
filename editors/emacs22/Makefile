@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/02/09 20:48:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/18 12:16:15 jasper Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
 
 VERSION=		22.2
 DISTNAME=		emacs-${VERSION}
-PKGNAME-main=		emacs-${VERSION}p1
+PKGNAME-main=		emacs-${VERSION}p2
 FULLPKGNAME-el=		emacs-el-${VERSION}p0
 FULLPKGPATH-el=		editors/emacs22,-el
 
@@ -32,7 +32,8 @@ FLAVOR?=
 
 GCCARCH=		${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.61
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		${GCCARCH} --with-pop --localstatedir=/var
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
