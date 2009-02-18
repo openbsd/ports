@@ -1,0 +1,14 @@
+$OpenBSD: patch-bin_makegeo_c,v 1.1 2009/02/18 11:09:18 jasper Exp $
+
+Fix 64-bit issues.
+
+--- bin/makegeo.c.orig	Wed Feb 18 12:07:15 2009
++++ bin/makegeo.c	Wed Feb 18 12:07:29 2009
+@@ -12,6 +12,7 @@
+ #include "geotiffio.h"
+ #include "xtiffio.h"
+ #include <stdlib.h>
++#include <string.h>
+ 
+ void SetUpTIFFDirectory(TIFF *tif);
+ void SetUpGeoKeys(GTIF *gtif);
