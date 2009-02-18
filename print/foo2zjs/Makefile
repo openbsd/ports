@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/09/18 13:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/18 14:06:45 sthen Exp $
 
 COMMENT=		driver for ZjStream wire protocol compatible printers
 
@@ -20,7 +20,7 @@ WANTLIB=		c
 
 MASTER_SITES=		http://bigio.snb.it/openbsd/distfiles/ \
 			http://openbsd.dead-parrot.de/distfiles/ \
-			http://spacehopper.org/m/ \
+			http://spacehopper.org/mirrors/ \
 			http://meta-planets.net/~openbsd/ \
 			http://www.phxbsd.com/OpenBSD/distfiles/
 

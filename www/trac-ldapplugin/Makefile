@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/01 16:11:47 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2009/02/18 14:06:45 sthen Exp $
 
 COMMENT=		ldap authentication plugin for trac
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://trac-hacks.org/wiki/LdapPlugin
 
 MASTER_SITES=		http://meta-planets.net/~openbsd/ \
 			http://www.phxbsd.com/OpenBSD/ \
-			http://spacehopper.org/m/
+			http://spacehopper.org/mirrors/
 
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes

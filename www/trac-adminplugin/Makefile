@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:43 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/18 14:06:45 sthen Exp $
 
 COMMENT=		web admin plugin for trac
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://trac.edgewall.org/wiki/WebAdmin
 
 MASTER_SITES=		http://meta-planets.net/~openbsd/ \
 			http://www.phxbsd.com/OpenBSD/ \
-			http://spacehopper.org/m/
+			http://spacehopper.org/mirrors/
 
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes

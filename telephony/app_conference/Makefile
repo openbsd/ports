@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/19 21:36:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2009/02/18 14:06:45 sthen Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	conferencing application for asterisk
 DISTNAME=	app_conference-20070809
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	telephony
-MASTER_SITES=	http://spacehopper.org/
+MASTER_SITES=	http://spacehopper.org/mirrors/
 
 HOMEPAGE=	http://sourceforge.net/projects/appconference/
 
