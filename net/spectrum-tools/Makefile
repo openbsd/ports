@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/02/13 11:01:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/02/18 15:42:38 sthen Exp $
 
 COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
 COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
@@ -6,6 +6,10 @@ COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
 V =		20080314
 DISTNAME =	spectools-$V
 PKGNAME =	spectrum-tools-$Vp0
+
+FULLPKGNAME-main =  spectrum-tools-$Vp0
+FULLPKGNAME-utils = spectrum-tools-utils-$V
+
 CATEGORIES =	net
 
 MASTER_SITES =	http://www.kismetwireless.net/code/ \
@@ -22,9 +26,6 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MULTI_PACKAGES =	-main -utils
-
-FULLPKGNAME-main =	spectrum-tools-$V
-FULLPKGNAME-utils =	spectrum-tools-utils-$V
 
 WANTLIB = 	c m pthread usb
 
