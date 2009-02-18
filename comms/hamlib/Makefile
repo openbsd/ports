@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/10/28 12:14:00 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2009/02/18 11:02:23 jasper Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -6,7 +6,7 @@ COMMENT-tcl=	tcl bindings for hamlib
 
 VERSION=	1.2.6
 DISTNAME=	hamlib-${VERSION}
-PKGNAME-main=	hamlib-${VERSION}p2
+PKGNAME-main=	hamlib-${VERSION}p3
 PKGNAME-python=	hamlib-python-${VERSION}p2
 PKGNAME-tcl=	hamlib-tcl-${VERSION}p2
 CATEGORIES=    	comms hamradio
@@ -22,6 +22,7 @@ MAINTAINER=	Jason Wright <jason@openbsd.org>
 
 MODULES=	lang/python lang/tcl
 
+# GPLv2/LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -39,7 +40,7 @@ LIB_DEPENDS-python=	hamlib::${BUILD_PKGPATH} \
 LIB_DEPENDS-tcl=	hamlib::${BUILD_PKGPATH} \
 			${MODTCL_LIB_DEPENDS}
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=hamlib/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hamlib/}
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

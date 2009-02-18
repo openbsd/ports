@@ -1,0 +1,14 @@
+$OpenBSD: patch-rpcrot_rpcrot_proc_c,v 1.1 2009/02/18 11:02:23 jasper Exp $
+
+Fix 64-bit issues.
+
+--- rpcrot/rpcrot_proc.c.orig	Wed Feb 18 11:55:21 2009
++++ rpcrot/rpcrot_proc.c	Wed Feb 18 11:56:01 2009
+@@ -25,6 +25,7 @@
+ #include "config.h"
+ #endif
+ 
++#include <string.h>
+ 
+ #include <rpc/rpc.h>
+ #include "rpcrot.h"
