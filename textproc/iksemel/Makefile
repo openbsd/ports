@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/12/18 23:45:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/02/18 13:53:12 sthen Exp $
 
 COMMENT=		XML parser designed for Jabber applications
 DISTNAME=		iksemel-1.3
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS=		iksemel		0.1	# .4.0
 
@@ -9,7 +10,7 @@ CATEGORIES=		textproc net
 
 HOMEPAGE=		http://code.google.com/p/iksemel/
 
-MAINTAINER=		Stuart Henderson <stu@spacehopper.org>
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
