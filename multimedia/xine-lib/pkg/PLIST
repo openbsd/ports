@@ -1,5 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/02/16 01:24:24 sthen Exp $
-@pkgpath ${BASE_PKGPATH},jack
+@comment $OpenBSD: PLIST,v 1.7 2009/02/21 21:48:10 kili Exp $
+@conflict xine-lib-arts-*
+@conflict xine-lib-esd-*
+@conflict xine-lib-jack-*
+@pkgpath ${BASE_PKGPATH},-arts
+@pkgpath ${BASE_PKGPATH},-esd
+@pkgpath ${BASE_PKGPATH},-jack
+@pkgpath ${BASE_PKGPATH},-main
 %%i386%%
 bin/xine-config
 @bin bin/xine-list-1.1
