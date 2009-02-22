@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/11/30 18:45:27 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2009/02/22 19:05:17 kili Exp $
 
 COMMENT-main =		texlive texmf for laTeX/PdfTeX 
 COMMENT-full =		texlive texmf for XeTeX/ConTeXt and extra macros
@@ -8,9 +8,9 @@ DIST_V = 		20080822
 DISTNAME =		texlive-${DIST_V}-texmf
 PKGNAME =		texlive_texmf-${V}
 
-PKGNAME-main = 		texlive_texmf-minimal-${V}p0
-PKGNAME-full = 		texlive_texmf-full-${V}p0
-PKGNAME-docs =	 	texlive_texmf-docs-${V}p0
+PKGNAME-main = 		texlive_texmf-minimal-${V}p1
+PKGNAME-full = 		texlive_texmf-full-${V}p1
+PKGNAME-docs =	 	texlive_texmf-docs-${V}p1
 
 EXTRACT_SUFX = 		.tar.lzma
 NO_BUILD =		Yes

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/12/04 22:29:06 steven Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/02/22 19:05:17 kili Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
+@conflict texlive_texmf-minimal-<2008p1
 @unexec texlinks -u
 %%SHARED%%
 bin/a2ping
