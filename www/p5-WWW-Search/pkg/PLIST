@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/04 20:30:50 jasper Exp $
+bin/AutoSearch
+bin/WebSearch
+${P5SITE}/WWW/Search/
+${P5SITE}/WWW/Search.pm
+${P5SITE}/WWW/Search/Null/
+${P5SITE}/WWW/Search/Null.pm
+${P5SITE}/WWW/Search/Null/Count.pm
+${P5SITE}/WWW/Search/Null/Empty.pm
+${P5SITE}/WWW/Search/Null/Error.pm
+${P5SITE}/WWW/Search/Null/NoVersion.pm
+${P5SITE}/WWW/Search/Result.pm
+${P5SITE}/WWW/Search/Simple.pm
+${P5SITE}/WWW/Search/Test.pm
+${P5SITE}/WWW/SearchResult.pm
+@man man/man1/AutoSearch.1
+@man man/man1/WebSearch.1
+@man man/man3p/WWW::Search.3p
+@man man/man3p/WWW::Search::Null.3p
+@man man/man3p/WWW::Search::Null::Count.3p
+@man man/man3p/WWW::Search::Null::Empty.3p
+@man man/man3p/WWW::Search::Null::Error.3p
+@man man/man3p/WWW::Search::Null::NoVersion.3p
+@man man/man3p/WWW::Search::Result.3p
+@man man/man3p/WWW::Search::Simple.3p
+@man man/man3p/WWW::Search::Test.3p
+@man man/man3p/WWW::SearchResult.3p
