@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2008/09/03 13:29:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2009/03/04 21:11:11 kili Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
 MODPY_EGG_VERSION=0.10.5
 DISTNAME=	trac-${MODPY_EGG_VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www devel
 
 MAINTAINER=	Ben Lovett <ben@tilderoot.com>
@@ -25,7 +25,7 @@ MODULES=	lang/python
 MY_DEPENDS=	::databases/py-sqlite2 \
 		::devel/subversion,-python \
 		::textproc/py-docutils \
-		::www/clearsilver,python
+		:clearsilver-*-python:www/clearsilver,python
 
 RUN_DEPENDS=	${MY_DEPENDS} \
 		::print/enscript
