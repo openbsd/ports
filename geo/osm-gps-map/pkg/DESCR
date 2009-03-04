@@ -1,0 +1,4 @@
+Gtk+ widget that when given GPS coordinates, draws a GPS track, and
+points of interest on a moving map display.  Downloads map data from a
+number of websites, including openstreetmap.org, openaerialmap.org and
+others.

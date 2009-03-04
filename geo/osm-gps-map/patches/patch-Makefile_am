@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile_am,v 1.1.1.1 2009/03/04 20:51:23 jasper Exp $
+
+Don't bother intalling bogues (and empty) files.
+
+--- Makefile.am.orig	Thu Jan 29 10:01:06 2009
++++ Makefile.am	Thu Feb 26 17:03:28 2009
+@@ -3,14 +3,8 @@
+ 
+ SUBDIRS = src
+ 
+-openstreetmap_gps_mapdocdir = ${prefix}/doc/openstreetmap-gps-map
+-openstreetmap_gps_mapdoc_DATA =                 \
+-	README                                      \
+-	COPYING                                     \
+-	AUTHORS                                     \
+-	ChangeLog                                   \
+-	INSTALL                                     \
+-	NEWS
++openstreetmap_gps_mapdocdir =
++openstreetmap_gps_mapdoc_DATA =
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = osmgpsmap.pc
