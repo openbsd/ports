@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/11/24 18:14:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2009/03/04 20:09:43 jasper Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/camel-address.h
@@ -566,6 +566,7 @@ share/gtk-doc/html/camel/camel-camel-net-utils.html
 share/gtk-doc/html/camel/camel-camel-operation.html
 share/gtk-doc/html/camel/camel-camel-process.html
 share/gtk-doc/html/camel/camel-camel-provider.html
+share/gtk-doc/html/camel/camel-camel-search-sql-sexp.html
 share/gtk-doc/html/camel/camel-camel-search-sql.html
 share/gtk-doc/html/camel/camel-camel-string-utils.html
 share/gtk-doc/html/camel/camel-camel-trie.html

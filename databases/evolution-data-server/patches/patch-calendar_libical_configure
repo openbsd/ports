@@ -1,7 +1,7 @@
-$OpenBSD: patch-calendar_libical_configure,v 1.3 2008/11/21 17:26:25 jasper Exp $
---- calendar/libical/configure.orig	Thu Oct 30 18:18:48 2008
-+++ calendar/libical/configure	Thu Oct 30 18:19:55 2008
-@@ -20994,13 +20994,13 @@ _ACEOF
+$OpenBSD: patch-calendar_libical_configure,v 1.4 2009/03/04 20:09:43 jasper Exp $
+--- calendar/libical/configure.orig	Wed Feb 25 03:39:19 2009
++++ calendar/libical/configure	Wed Feb 25 17:59:18 2009
+@@ -20970,13 +20970,13 @@ _ACEOF
  		PTHREAD_LIBS=-pthread;;
  
  	*)
@@ -18,7 +18,7 @@ $OpenBSD: patch-calendar_libical_configure,v 1.3 2008/11/21 17:26:25 jasper Exp 
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -21069,7 +21069,7 @@ cat >>confdefs.h <<\_ACEOF
+@@ -21045,7 +21045,7 @@ cat >>confdefs.h <<\_ACEOF
  #define HAVE_PTHREAD /**/
  _ACEOF
  
