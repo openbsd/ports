@@ -1,0 +1,15 @@
+$OpenBSD: patch-DSA_xs,v 1.1 2009/03/04 20:19:16 jasper Exp $
+
+Fix for Debian #511519.
+
+--- DSA.xs.orig	Wed Mar  4 21:13:41 2009
++++ DSA.xs	Wed Mar  4 21:14:19 2009
+@@ -139,6 +139,8 @@ do_verify(dsa, dgst, sig)
+     CODE:
+         dgst_pv = SvPV(dgst, dgst_len);
+         RETVAL = DSA_do_verify(dgst_pv, dgst_len, sig, dsa);
++	if (RETVAL == -1)
++        croak("Error in DSA_do_verify: %s",ERR_error_string(ERR_get_error(), NULL));
+     OUTPUT:
+         RETVAL
+ 

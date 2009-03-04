@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_Crypt_OpenSSL_DSA_pm,v 1.1 2009/03/04 20:19:16 jasper Exp $
+
+Fix for Debian #511519.
+
+--- lib/Crypt/OpenSSL/DSA.pm.orig	Wed Mar  4 21:15:39 2009
++++ lib/Crypt/OpenSSL/DSA.pm	Wed Mar  4 21:16:15 2009
+@@ -124,9 +124,13 @@ Verifies that the $sig signature for $message is valid
+ 
+ $dsa is the signer's public key.
+ 
++Note it croaks if the underlying library call returns error (-1).
++
+ =item $valid = $dsa->do_verify( $message, $sig_obj );
+ 
+ Similar to C<verify>, but uses a L<Crypt::OpenSSL::DSA::Signature> object.
++
++Note it croaks if the underlying library call returns error (-1).
+ 
+ =item $dsa->write_params( $filename );
+ 
