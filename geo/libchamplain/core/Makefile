@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/15 17:58:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/04 20:03:18 jasper Exp $
 
 COMMENT=		library to provide a Gtk+ widget to display maps
 
-DISTNAME=		libchamplain-0.2.8
+DISTNAME=		libchamplain-${VERSION}
 
-SHARED_LIBS +=  champlain-0.2       0.0          # .1.3
+SHARED_LIBS +=  champlain-0.2       1.0          # .1.3
 
 MODULES=		devel/gettext
 
@@ -17,5 +17,10 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png tasn1 xml2 z
 
 LIB_DEPENDS=		soup-2.4::devel/libsoup \
 			clutter-cairo-0.8::graphics/clutter/clutter-cairo
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/libchamplain/
+	${INSTALL_DATA} ${WRKSRC}/demos/*.c \
+		${PREFIX}/share/examples/libchamplain/
 
 .include <bsd.port.mk>

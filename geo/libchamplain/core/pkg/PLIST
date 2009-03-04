@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/15 17:58:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/04 20:03:18 jasper Exp $
 include/libchamplain-${API_VERSION}/
 include/libchamplain-${API_VERSION}/champlain/
 include/libchamplain-${API_VERSION}/champlain/champlain.h
@@ -8,12 +8,12 @@ include/libchamplain-${API_VERSION}/champlain/champlainmarker.h
 include/libchamplain-${API_VERSION}/champlain/champlainview.h
 lib/libchamplain-${API_VERSION}.la
 @lib lib/libchamplain-${API_VERSION}.so.${LIBchamplain-0.2_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/champlain-${API_VERSION}.pc
 share/champlain/
 share/champlain/error.svg
-share/gtk-doc/
-share/gtk-doc/html/
+share/examples/libchamplain/
+share/examples/libchamplain/animated-marker.c
+share/examples/libchamplain/launcher.c
 share/gtk-doc/html/libchamplain/
 share/gtk-doc/html/libchamplain/ChamplainView.html
 share/gtk-doc/html/libchamplain/ch01.html
