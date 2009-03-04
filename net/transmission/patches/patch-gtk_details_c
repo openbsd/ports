@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_details_c,v 1.5 2009/02/15 18:09:29 naddy Exp $
---- gtk/details.c.orig	Sat Jan 17 16:25:47 2009
-+++ gtk/details.c	Tue Jan 20 20:59:56 2009
-@@ -498,7 +498,7 @@ fmtpeercount( GtkWidget * l,
+$OpenBSD: patch-gtk_details_c,v 1.6 2009/03/04 20:59:52 naddy Exp $
+--- gtk/details.c.orig	Fri Feb 27 17:46:14 2009
++++ gtk/details.c	Sun Mar  1 17:10:43 2009
+@@ -499,7 +499,7 @@ fmtpeercount( GtkWidget * l,
      else
      {
          char str[16];
@@ -10,7 +10,7 @@ $OpenBSD: patch-gtk_details_c,v 1.5 2009/02/15 18:09:29 naddy Exp $
          gtk_label_set_text( GTK_LABEL( l ), str );
      }
  }
-@@ -909,7 +909,7 @@ info_page_new( tr_torrent * tor )
+@@ -911,7 +911,7 @@ info_page_new( tr_torrent * tor )
      hig_workarea_add_section_title ( t, &row, _( "Details" ) );
  
      g_snprintf( countStr, sizeof( countStr ),
