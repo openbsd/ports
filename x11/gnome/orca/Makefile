@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/04 19:59:42 jasper Exp $
 
 COMMENT=		assistive technology for people with visual impairments
 
-GNOME_VERSION=		2.24.3
+GNOME_VERSION=		2.24.4
 GNOME_PROJECT=		orca
-PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://live.gnome.org/Orca
 
