@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/11/09 19:11:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/03/04 20:01:29 jasper Exp $
 lib/pkgconfig/
 lib/pkgconfig/iso-codes.pc
 share/iso-codes/
@@ -20,6 +20,10 @@ share/locale/ar/LC_MESSAGES/iso_15924.mo
 share/locale/ar/LC_MESSAGES/iso_3166.mo
 share/locale/ar/LC_MESSAGES/iso_639.mo
 share/locale/ar/LC_MESSAGES/iso_639_3.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/iso_3166.mo
+share/locale/ast/LC_MESSAGES/iso_639.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/iso_3166.mo
@@ -210,8 +214,10 @@ share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/iso_3166.mo
 share/locale/id/
 share/locale/id/LC_MESSAGES/
+share/locale/id/LC_MESSAGES/iso_15924.mo
 share/locale/id/LC_MESSAGES/iso_3166.mo
 share/locale/id/LC_MESSAGES/iso_3166_2.mo
+share/locale/id/LC_MESSAGES/iso_4217.mo
 share/locale/id/LC_MESSAGES/iso_639.mo
 share/locale/id/LC_MESSAGES/iso_639_3.mo
 share/locale/is/
@@ -343,7 +349,10 @@ share/locale/nso/LC_MESSAGES/iso_639.mo
 share/locale/nso/LC_MESSAGES/iso_639_3.mo
 share/locale/oc/
 share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/iso_15924.mo
 share/locale/oc/LC_MESSAGES/iso_3166.mo
+share/locale/oc/LC_MESSAGES/iso_3166_2.mo
+share/locale/oc/LC_MESSAGES/iso_4217.mo
 share/locale/oc/LC_MESSAGES/iso_639.mo
 share/locale/oc/LC_MESSAGES/iso_639_3.mo
 share/locale/pa/
