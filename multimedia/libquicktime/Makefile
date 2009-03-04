@@ -1,31 +1,28 @@
-# $OpenBSD: Makefile,v 1.15 2008/07/09 02:13:01 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.16 2009/03/04 20:21:57 jasper Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		library for reading and writing quicktime files
 DISTNAME=		libquicktime-1.0.2
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		multimedia
 SHARED_LIBS=		quicktime	3.0
 
 HOMEPAGE=		http://libquicktime.sourceforge.net/
 
-# GPL
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		GL ICE SM X11 Xau Xaw Xcomposite Xcursor \
-			Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-			Xrender Xt Xv atk-1.0.>=1011.3 a52 c expat \
-			faac faad fontconfig freetype \
-			glib-2.0.>=800.3 gmodule-2.0.>=800.3 \
-			gobject-2.0.>=800.3 m ogg ossaudio \
-			pango-1.0.>=1001.1 pangocairo-1.0.>=1001.1 \
-			cairo glitz pangoft2-1.0.>=1001.1 pthread \
-			pcre pixman-1 theora x264 z
+WANTLIB += GL ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xv a52 atk-1.0
+WANTLIB += c cairo expat faac faad fontconfig freetype gio-2.0
+WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 m ogg ossaudio
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += pthread theora x264 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 

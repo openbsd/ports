@@ -1,12 +1,11 @@
-The MJPEG-tools are a basic set of utilities for editing, playing
-back, filtering and encoding video under UNIX-like operating systems.
+The MJPEG-tools are a basic set of utilities for editing, playing back,
+filtering and encoding video under UNIX-like operating systems.
 
 There are two FLAVORS for this port:
 
-  quicktime
-    builds the package with support for reading and writing quicktime
-    ".mov" files
+  quicktime - builds the package with support for reading and writing
+              quicktime ".mov" files
 
-  optimized
-    builds the package with SSE instructions.  packages built with
-    this FLAVOR might not run on systems that are not SSE capable.
+  optimized - builds the package with SSE instructions. Packages built
+              with this FLAVOR might not run on systems that are not SSE
+	      capable.

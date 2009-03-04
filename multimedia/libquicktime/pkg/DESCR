@@ -1,4 +1,4 @@
-This is libquicktime, a library for reading and writing quicktime
-files. It is based on, and compatible with, the quicktime4linux
-library.  This package also includes a program to play quicktime
-movies, and some other programs to work with quicktime files.
+This is libquicktime, a library for reading and writing quicktime files.
+It is based on, and compatible with, the quicktime4linux library.  This
+package also includes a program to play quicktime movies, and some other
+programs to work with quicktime files.

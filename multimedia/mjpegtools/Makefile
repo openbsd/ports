@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2009/01/30 00:41:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2009/03/04 20:21:57 jasper Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
 DISTNAME=		mjpegtools-1.9.0rc3
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		multimedia
 SHARED_LIBS=		lavfile		4.0 \
 			lavfile-1.9	4.0 \
@@ -46,7 +46,9 @@ USE_X11=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-x --with-libpng --with-libdv
+			--with-x \
+			--with-libpng \
+			--with-libdv
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib" \

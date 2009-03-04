@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.20 2008/07/09 02:13:01 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.21 2009/03/04 20:21:57 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		video stream processing tools
 
 DISTNAME=		transcode-1.0.5
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.transcoding.org/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		ICE SM X11 Xau Xaw Xdmcp Xext Xpm Xrandr \
 			Xrender Xt Xv c faac faad freetype m \
-			pthread usbhid x264 z
+			pthread sndio usbhid x264 z
 
 MASTER_SITES=		http://fromani.exit1.org/
 EXTRACT_SUFX=		.tar.bz2
