@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.60 2009/02/15 17:33:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2009/03/04 20:10:09 jasper Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
 # in mail/evolution-plugin-rss/Makefile (and bump).
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		2.24.4
-PKGNAME=		${DISTNAME}p2
+GNOME_VERSION=		2.24.5
 
 CATEGORIES=    		mail
 
