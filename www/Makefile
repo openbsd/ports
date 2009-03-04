@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.388 2009/03/04 20:33:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.389 2009/03/04 20:34:18 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -253,6 +253,7 @@
      SUBDIR += p5-WWW-Mechanize
      SUBDIR += p5-WWW-Robot
      SUBDIR += p5-WWW-Search
+     SUBDIR += p5-WWW-Search-Ebay
      SUBDIR += p5-WWW-Wikipedia
      SUBDIR += p5-Weather-Com
      SUBDIR += p5-WebService-Audioscrobbler
