@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/28 23:58:34 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/04 19:53:19 bernd Exp $
 
 COMMENT =	DSL for quickly creating web-applications in Ruby
 
-DISTNAME =	sinatra-0.9.0.4
+DISTNAME =	sinatra-0.9.1
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	www
 
@@ -24,5 +24,12 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		:ruby-rack->=0.9.1:www/ruby-rack
 
 PKG_ARCH =		*
+
+REGRESS_DEPENDS =	::devel/ruby-rake \
+			::textproc/ruby-haml \
+			::textproc/ruby-builder
+
+do-regress:
+	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
 
 .include <bsd.port.mk>
