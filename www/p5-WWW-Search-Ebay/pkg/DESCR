@@ -1,0 +1,11 @@
+This class is a Ebay specialization of WWW::Search. It handles making
+and interpreting Ebay searches.
+
+This class exports no public interface; all interaction should be done
+through WWW::Search objects.
+
+The search is done against CURRENT running AUCTIONS only. (NOT completed
+auctions, NOT eBay Stores items, NOT Buy-It-Now only items.) (If you
+want to search completed auctions, use the WWW::Search::Ebay::Completed
+module.) (If you want to search eBay Stores, use the
+WWW::Search::Ebay::Stores module.)
