@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2009/03/04 20:10:30 jasper Exp $
+--- configure.orig	Mon Mar  2 18:26:14 2009
++++ configure	Mon Mar  2 18:26:17 2009
+@@ -21263,7 +21263,7 @@ if test "${ac_cv_lib_gps_gps_open+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgps  $LIBS"
++LIBS="-lgps -pthread $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -21324,7 +21324,7 @@ fi
+ 
+ if test "x$libgps" = xyes; then
+ 	PROVIDER_SUBDIRS="$PROVIDER_SUBDIRS gpsd"
+-    GPSD_LIBS="-lgps"
++    GPSD_LIBS="-lgps -pthread"
+ else
+ 	NO_BUILD_PROVIDERS="$NO_BUILD_PROVIDERS gpsd"
+ fi
