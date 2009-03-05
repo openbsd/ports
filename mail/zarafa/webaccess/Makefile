@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/16 09:43:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/05 08:03:34 ajacoutot Exp $
 
 COMMENT=	zarafa webaccess frontend
 
-V=		6.20.1
+V=		6.20.2
 DISTNAME=	zarafa-webaccess-ajax-${V}
 PKGNAME=	zarafa-webaccess-${V}
 CATEGORIES=	mail www productivity
@@ -35,6 +35,8 @@ do-install:
 		${INSTDIR}/webaccess-mobile/config.php.dist
 	mv ${INSTDIR}/webaccess/debug.php \
 		${INSTDIR}/webaccess/debug.php.disabled
+	mv ${INSTDIR}/webaccess/client/layout/img/login.jpg \
+		${INSTDIR}/webaccess/client/layout/img/_login.jpg
 	mv ${INSTDIR}/webaccess-mobile/debug.php \
 		${INSTDIR}/webaccess-mobile/debug.php.disabled
 	${INSTALL_DATA} /dev/null ${INSTDIR}/webaccess/debug.txt 

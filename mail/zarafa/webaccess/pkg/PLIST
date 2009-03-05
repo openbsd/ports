@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/16 09:43:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/05 08:03:34 ajacoutot Exp $
 zarafa/
 zarafa/webaccess/
 zarafa/webaccess-mobile/
@@ -21,6 +21,7 @@ zarafa/webaccess-mobile/css/style.css
 zarafa/webaccess-mobile/debug.php.disabled
 @mode 664
 @group www
+@comment no checksum
 zarafa/webaccess-mobile/debug.txt
 @mode
 @group
@@ -218,6 +219,8 @@ zarafa/webaccess/client/layout/dialogs/standard/task.php
 zarafa/webaccess/client/layout/dialogs/utils.php
 zarafa/webaccess/client/layout/dialogs/window.php
 zarafa/webaccess/client/layout/img/
+zarafa/webaccess/client/layout/img/_login.jpg
+@sample zarafa/webaccess/client/layout/img/login.jpg
 zarafa/webaccess/client/layout/img/appointment_busy.gif
 zarafa/webaccess/client/layout/img/appointment_free.gif
 zarafa/webaccess/client/layout/img/appointment_outofoffice.gif
@@ -399,7 +402,6 @@ zarafa/webaccess/client/layout/img/label_special_date.gif
 zarafa/webaccess/client/layout/img/label_travel_required.gif
 zarafa/webaccess/client/layout/img/label_work.gif
 zarafa/webaccess/client/layout/img/loader.gif
-zarafa/webaccess/client/layout/img/login.jpg
 zarafa/webaccess/client/layout/img/menuarrow.gif
 zarafa/webaccess/client/layout/img/menuitem_seperator.gif
 zarafa/webaccess/client/layout/img/print.gif
