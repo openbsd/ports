@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2008/06/15 00:06:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2009/03/05 18:26:07 landry Exp $
 
 COMMENT=	small and lightweight IDE
 
-DISTNAME=	geany-0.13
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	geany-0.16
 CATEGORIES=	devel
 
 HOMEPAGE=	http://geany.uvena.de/
 
-MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
+MAINTAINER=	Jonathan Armani <dbd@asystant.net>
 
 # GPL + Scintilla License
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,7 +28,7 @@ USE_LIBTOOL=	Yes
 WANTLIB=	X11 Xext Xrender Xau Xcursor Xdmcp Xfixes Xi \
 		Xcomposite Xdamage pcre \
 		Xinerama Xrandr expat stdc++ c m z glitz png \
-		glib-2.0 gmodule-2.0 gobject-2.0 \
+		glib-2.0 gmodule-2.0 gobject-2.0 gio-2.0 \
 		fontconfig freetype atk-1.0 cairo \
 		pango-1.0 pangoft2-1.0 pangocairo-1.0 pixman-1
 

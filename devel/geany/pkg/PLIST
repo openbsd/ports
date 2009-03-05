@@ -1,8 +1,44 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/04/17 08:10:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/03/05 18:26:07 landry Exp $
 %%SHARED%%
-bin/geany
+@bin bin/geany
+include/geany/
+include/geany/dialogs.h
+include/geany/document.h
+include/geany/editor.h
+include/geany/encodings.h
+include/geany/filetypes.h
+include/geany/geany.h
+include/geany/geanyfunctions.h
+include/geany/highlighting.h
+include/geany/keybindings.h
+include/geany/msgwindow.h
+include/geany/plugindata.h
+include/geany/pluginmacros.h
+include/geany/plugins.h
+include/geany/prefs.h
+include/geany/project.h
+include/geany/scintilla/
+include/geany/scintilla/SciLexer.h
+include/geany/scintilla/Scintilla.h
+include/geany/scintilla/Scintilla.iface
+include/geany/scintilla/ScintillaWidget.h
+include/geany/sciwrappers.h
+include/geany/search.h
+include/geany/support.h
+include/geany/tagmanager/
+include/geany/tagmanager/tm_file_entry.h
+include/geany/tagmanager/tm_project.h
+include/geany/tagmanager/tm_source_file.h
+include/geany/tagmanager/tm_symbol.h
+include/geany/tagmanager/tm_tag.h
+include/geany/tagmanager/tm_tagmanager.h
+include/geany/tagmanager/tm_work_object.h
+include/geany/tagmanager/tm_workspace.h
+include/geany/templates.h
+include/geany/toolbar.h
+include/geany/ui_utils.h
+include/geany/utils.h
 lib/geany/
-lib/geany/autosave.a
 @comment lib/geany/autosave.la
 lib/geany/classbuilder.a
 @comment lib/geany/classbuilder.la
@@ -12,8 +48,14 @@ lib/geany/filebrowser.a
 @comment lib/geany/filebrowser.la
 lib/geany/htmlchars.a
 @comment lib/geany/htmlchars.la
+lib/geany/saveactions.a
+lib/geany/saveactions.la
+lib/geany/splitwindow.a
+lib/geany/splitwindow.la
 lib/geany/vcdiff.a
 @comment lib/geany/vcdiff.la
+lib/pkgconfig/
+lib/pkgconfig/geany.pc
 @man man/man1/geany.1
 share/applications/geany.desktop
 share/doc/geany/
@@ -23,10 +65,13 @@ share/doc/geany/html/
 share/doc/geany/html/images/
 share/doc/geany/html/images/find_dialog.png
 share/doc/geany/html/images/find_in_files_dialog.png
-share/doc/geany/html/images/pref_dialog_display.png
-share/doc/geany/html/images/pref_dialog_edit.png
+share/doc/geany/html/images/pref_dialog_edit_completions.png
+share/doc/geany/html/images/pref_dialog_edit_display.png
+share/doc/geany/html/images/pref_dialog_edit_features.png
+share/doc/geany/html/images/pref_dialog_edit_indentation.png
 share/doc/geany/html/images/pref_dialog_files.png
-share/doc/geany/html/images/pref_dialog_gen.png
+share/doc/geany/html/images/pref_dialog_gen_misc.png
+share/doc/geany/html/images/pref_dialog_gen_startup.png
 share/doc/geany/html/images/pref_dialog_interface.png
 share/doc/geany/html/images/pref_dialog_keys.png
 share/doc/geany/html/images/pref_dialog_printing.png
@@ -39,10 +84,12 @@ share/doc/geany/html/index.html
 share/doc/geany/manual.txt
 share/geany/
 share/geany/GPL-2
+share/geany/c99.tags
 share/geany/filetype_extensions.conf
 share/geany/filetypes.asm
 share/geany/filetypes.c
 share/geany/filetypes.caml
+share/geany/filetypes.cmake
 share/geany/filetypes.common
 share/geany/filetypes.conf
 share/geany/filetypes.cpp
@@ -51,9 +98,11 @@ share/geany/filetypes.css
 share/geany/filetypes.d
 share/geany/filetypes.diff
 share/geany/filetypes.docbook
+share/geany/filetypes.f77
 share/geany/filetypes.ferite
 share/geany/filetypes.fortran
 share/geany/filetypes.freebasic
+share/geany/filetypes.glsl
 share/geany/filetypes.haskell
 share/geany/filetypes.haxe
 share/geany/filetypes.html
@@ -62,24 +111,30 @@ share/geany/filetypes.javascript
 share/geany/filetypes.latex
 share/geany/filetypes.lua
 share/geany/filetypes.makefile
-share/geany/filetypes.oms
+share/geany/filetypes.matlab
+share/geany/filetypes.nsis
 share/geany/filetypes.pascal
 share/geany/filetypes.perl
 share/geany/filetypes.php
+share/geany/filetypes.po
 share/geany/filetypes.python
+share/geany/filetypes.r
 share/geany/filetypes.restructuredtext
 share/geany/filetypes.ruby
 share/geany/filetypes.sh
 share/geany/filetypes.sql
 share/geany/filetypes.tcl
+share/geany/filetypes.vala
 share/geany/filetypes.vhdl
 share/geany/filetypes.xml
-share/geany/global.tags
+share/geany/filetypes.yaml
 share/geany/html_entities.tags
 share/geany/latex.tags
 share/geany/pascal.tags
 share/geany/php.tags
+share/geany/python.tags
 share/geany/snippets.conf
+share/geany/ui_toolbar.xml
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/16x16/
@@ -107,11 +162,14 @@ share/locale/fr/LC_MESSAGES/geany.mo
 share/locale/hu/LC_MESSAGES/geany.mo
 share/locale/it/LC_MESSAGES/geany.mo
 share/locale/ja/LC_MESSAGES/geany.mo
+share/locale/ko/LC_MESSAGES/geany.mo
 share/locale/nl/LC_MESSAGES/geany.mo
 share/locale/pl/LC_MESSAGES/geany.mo
 share/locale/pt_BR/LC_MESSAGES/geany.mo
+share/locale/ro/LC_MESSAGES/geany.mo
 share/locale/ru/LC_MESSAGES/geany.mo
 share/locale/sv/LC_MESSAGES/geany.mo
+share/locale/tr/LC_MESSAGES/geany.mo
 share/locale/uk/LC_MESSAGES/geany.mo
 share/locale/vi/LC_MESSAGES/geany.mo
 share/locale/zh_CN/LC_MESSAGES/geany.mo
