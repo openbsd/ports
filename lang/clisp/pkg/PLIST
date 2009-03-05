@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/06/03 13:54:18 okan Exp $
-bin/clisp
+@comment $OpenBSD: PLIST,v 1.11 2009/03/05 23:44:38 martynas Exp $
+@bin bin/clisp
 lib/clisp/
 lib/clisp/base/
 lib/clisp/base/calls.o
@@ -8,7 +8,7 @@ lib/clisp/base/libavcall.a
 lib/clisp/base/libcallback.a
 lib/clisp/base/libnoreadline.a
 lib/clisp/base/lisp.a
-lib/clisp/base/lisp.run
+@bin lib/clisp/base/lisp.run
 lib/clisp/base/lispinit.mem
 lib/clisp/base/localcharset.o
 lib/clisp/base/makevars
@@ -31,7 +31,7 @@ lib/clisp/full/libavcall.a
 lib/clisp/full/libcallback.a
 lib/clisp/full/libnoreadline.a
 lib/clisp/full/lisp.a
-lib/clisp/full/lisp.run
+@bin lib/clisp/full/lisp.run
 lib/clisp/full/lispinit.mem
 lib/clisp/full/localcharset.o
 lib/clisp/full/makevars
