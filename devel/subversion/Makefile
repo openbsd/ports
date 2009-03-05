@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2009/02/09 20:48:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2009/03/05 23:14:07 stsp Exp $
 
 COMMENT-main=	subversion revision control system
 COMMENT-perl=	perl interface to subversion
@@ -6,7 +6,7 @@ COMMENT-python=	python interface to subversion
 COMMENT-ruby=	ruby interface to subversion
 COMMENT-ap2=	apache2 subversion modules
 
-VERSION=	1.5.5
+VERSION=	1.5.6
 DISTNAME=	subversion-${VERSION}
 PKGNAME=	${DISTNAME}
 PKGNAME-main=	${DISTNAME}
@@ -27,7 +27,7 @@ CATEGORIES=	devel
 
 HOMEPAGE=	http://subversion.tigris.org/
 
-MAINTAINER=	Stefan Sperling <stsp@stsp.name>
+MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 
 # BSD alike + Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
