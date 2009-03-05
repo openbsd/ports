@@ -1,6 +1,6 @@
-$OpenBSD: patch-dict_dawg_cpp,v 1.1.1.1 2008/09/17 10:17:27 ajacoutot Exp $
+$OpenBSD: patch-dict_dawg_cpp,v 1.2 2009/03/05 08:09:40 ajacoutot Exp $
 --- dict/dawg.cpp.orig	Mon Mar 17 21:22:09 2008
-+++ dict/dawg.cpp	Sun Sep  7 12:50:11 2008
++++ dict/dawg.cpp	Sat Feb 28 08:30:58 2009
 @@ -28,6 +28,9 @@
  #ifdef __MSW32__
  #include <windows.h>

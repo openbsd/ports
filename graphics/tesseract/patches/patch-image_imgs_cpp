@@ -1,0 +1,16 @@
+$OpenBSD: patch-image_imgs_cpp,v 1.1 2009/03/05 08:09:40 ajacoutot Exp $
+
+Fix crash -- cf. http://www.win.tue.nl/~aeb/linux/ocr/tesseract.html
+
+--- image/imgs.cpp.orig	Mon Mar 10 17:22:01 2008
++++ image/imgs.cpp	Sat Feb 28 08:28:16 2009
+@@ -250,7 +250,8 @@ inT32 check_legal_image_size(                     //ge
+   }
+   if (bits_per_pixel != 1 && bits_per_pixel != 2
+     && bits_per_pixel != 4 && bits_per_pixel != 5
+-  && bits_per_pixel != 6 && bits_per_pixel != 8 && bits_per_pixel != 24) {
++    && bits_per_pixel != 6 && bits_per_pixel != 8
++    && bits_per_pixel != 16 && bits_per_pixel != 24) {
+     BADBPP.error ("check_legal_image_size", TESSLOG, "%d", bits_per_pixel);
+     return -1;
+   }

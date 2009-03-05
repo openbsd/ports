@@ -1,0 +1,16 @@
+$OpenBSD: patch-dict_reduce_cpp,v 1.1 2009/03/05 08:09:40 ajacoutot Exp $
+
+Fix crash -- cf. http://www.win.tue.nl/~aeb/linux/ocr/tesseract.html
+
+--- dict/reduce.cpp.orig	Mon Mar 10 17:22:00 2008
++++ dict/reduce.cpp	Sat Feb 28 08:28:07 2009
+@@ -335,6 +335,9 @@ void reduce_node_input (EDGE_ARRAY dawg,
+     }
+   }
+ 
++  if (!edge_occupied(dawg,node))	/* aeb */
++    return;
++
+   qsort ((void *) &edge_of (dawg, node + forward_edges),
+          backward_edges,
+          sizeof (EDGE_RECORD),
