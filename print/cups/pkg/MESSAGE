@@ -5,6 +5,8 @@ To start cups at boot time, add the following to
 /etc/rc.local:
 
 if [ -x ${PREFIX}/sbin/cupsd ]; then
+	#chgrp _cups /dev/ulpt[0-1] # uncomment if using USB printer
+	echo y | ${PREFIX}/sbin/cups-enable > /dev/null
 	echo -n ' cupsd'; ${PREFIX}/sbin/cupsd
 fi
 
