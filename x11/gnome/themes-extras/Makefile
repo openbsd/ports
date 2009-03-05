@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2009/03/05 19:43:37 landry Exp $
 
 COMMENT=		themes collection for GNOME
 
 GNOME_PROJECT=		gnome-themes-extras
 GNOME_VERSION=		2.22.0
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 CATEGORIES=		x11
 
 # ${WRKSRC}/icon-themes/Neu/scalable/apps/PaxHeaders.6151/
@@ -22,7 +22,7 @@ MODULES=		x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::archivers/gtar \
-			:icon-naming-utils->=0.8.7:x11/icon-naming-utils
+			:icon-naming-utils->=0.8.90:x11/icon-naming-utils
 RUN_DEPENDS=		:gettext-*:devel/gettext \
 			:gtk-engines2->=2.11:x11/gtk-engines2
 

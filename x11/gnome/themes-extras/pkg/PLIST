@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/11/22 09:23:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/03/05 19:43:37 landry Exp $
 share/icons/Foxtrot/
 share/icons/Foxtrot/16x16/
 share/icons/Foxtrot/16x16/actions/
@@ -512,6 +512,10 @@ share/icons/Gion/128x128/devices/yast_HD.png
 share/icons/Gion/128x128/devices/yast_idetude.png
 share/icons/Gion/128x128/mimetypes/
 share/icons/Gion/128x128/mimetypes/application-certificate.png
+share/icons/Gion/128x128/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
+share/icons/Gion/128x128/mimetypes/application-vnd.ms-word.document.macroEnabled.12.png
+share/icons/Gion/128x128/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.png
+share/icons/Gion/128x128/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/Gion/128x128/mimetypes/ascii.png
 share/icons/Gion/128x128/mimetypes/audio-x-generic.png
 share/icons/Gion/128x128/mimetypes/deb.png
@@ -775,9 +779,7 @@ share/icons/Gion/16x16/apps/email.png
 share/icons/Gion/16x16/apps/evolution.png
 share/icons/Gion/16x16/apps/gnome-help.png
 share/icons/Gion/16x16/apps/gnome-terminal.png
-share/icons/Gion/16x16/apps/gtk-help.png
 share/icons/Gion/16x16/apps/help-browser.png
-share/icons/Gion/16x16/apps/help.png
 share/icons/Gion/16x16/apps/internet-mail.png
 share/icons/Gion/16x16/apps/internet-web-browser.png
 share/icons/Gion/16x16/apps/khelpcenter.png
@@ -787,7 +789,6 @@ share/icons/Gion/16x16/apps/music-player.png
 share/icons/Gion/16x16/apps/openterm.png
 share/icons/Gion/16x16/apps/redhat-email.png
 share/icons/Gion/16x16/apps/redhat-web-browser.png
-share/icons/Gion/16x16/apps/stock_help.png
 share/icons/Gion/16x16/apps/susehelpcenter.png
 share/icons/Gion/16x16/apps/terminal.png
 share/icons/Gion/16x16/apps/utilities-terminal.png
@@ -815,6 +816,10 @@ share/icons/Gion/16x16/devices/yast_HD.png
 share/icons/Gion/16x16/devices/yast_idetude.png
 share/icons/Gion/16x16/mimetypes/
 share/icons/Gion/16x16/mimetypes/application-certificate.png
+share/icons/Gion/16x16/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
+share/icons/Gion/16x16/mimetypes/application-vnd.ms-word.document.macroEnabled.12.png
+share/icons/Gion/16x16/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.png
+share/icons/Gion/16x16/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/Gion/16x16/mimetypes/ascii.png
 share/icons/Gion/16x16/mimetypes/audio-x-generic.png
 share/icons/Gion/16x16/mimetypes/deb.png
@@ -1094,6 +1099,10 @@ share/icons/Gion/22x22/devices/yast_HD.png
 share/icons/Gion/22x22/devices/yast_idetude.png
 share/icons/Gion/22x22/mimetypes/
 share/icons/Gion/22x22/mimetypes/application-certificate.png
+share/icons/Gion/22x22/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
+share/icons/Gion/22x22/mimetypes/application-vnd.ms-word.document.macroEnabled.12.png
+share/icons/Gion/22x22/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.png
+share/icons/Gion/22x22/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/Gion/22x22/mimetypes/ascii.png
 share/icons/Gion/22x22/mimetypes/audio-x-generic.png
 share/icons/Gion/22x22/mimetypes/deb.png
@@ -1358,9 +1367,7 @@ share/icons/Gion/24x24/apps/epiphany-bookmarks.png
 share/icons/Gion/24x24/apps/evolution.png
 share/icons/Gion/24x24/apps/gnome-help.png
 share/icons/Gion/24x24/apps/gnome-terminal.png
-share/icons/Gion/24x24/apps/gtk-help.png
 share/icons/Gion/24x24/apps/help-browser.png
-share/icons/Gion/24x24/apps/help.png
 share/icons/Gion/24x24/apps/internet-mail.png
 share/icons/Gion/24x24/apps/internet-web-browser.png
 share/icons/Gion/24x24/apps/khelpcenter.png
@@ -1370,7 +1377,6 @@ share/icons/Gion/24x24/apps/music-player.png
 share/icons/Gion/24x24/apps/openterm.png
 share/icons/Gion/24x24/apps/redhat-email.png
 share/icons/Gion/24x24/apps/redhat-web-browser.png
-share/icons/Gion/24x24/apps/stock_help.png
 share/icons/Gion/24x24/apps/susehelpcenter.png
 share/icons/Gion/24x24/apps/terminal.png
 share/icons/Gion/24x24/apps/utilities-terminal.png
@@ -1403,6 +1409,10 @@ share/icons/Gion/24x24/devices/yast_HD.png
 share/icons/Gion/24x24/devices/yast_idetude.png
 share/icons/Gion/24x24/mimetypes/
 share/icons/Gion/24x24/mimetypes/application-certificate.png
+share/icons/Gion/24x24/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
+share/icons/Gion/24x24/mimetypes/application-vnd.ms-word.document.macroEnabled.12.png
+share/icons/Gion/24x24/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.png
+share/icons/Gion/24x24/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/Gion/24x24/mimetypes/ascii.png
 share/icons/Gion/24x24/mimetypes/audio-x-generic.png
 share/icons/Gion/24x24/mimetypes/deb.png
@@ -1648,6 +1658,10 @@ share/icons/Gion/48x48/devices/yast_HD.png
 share/icons/Gion/48x48/devices/yast_idetude.png
 share/icons/Gion/48x48/mimetypes/
 share/icons/Gion/48x48/mimetypes/application-certificate.png
+share/icons/Gion/48x48/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
+share/icons/Gion/48x48/mimetypes/application-vnd.ms-word.document.macroEnabled.12.png
+share/icons/Gion/48x48/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.png
+share/icons/Gion/48x48/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/Gion/48x48/mimetypes/ascii.png
 share/icons/Gion/48x48/mimetypes/audio-x-generic.png
 share/icons/Gion/48x48/mimetypes/deb.png
@@ -1890,6 +1904,10 @@ share/icons/Gion/scalable/devices/yast_HD.svg
 share/icons/Gion/scalable/devices/yast_idetude.svg
 share/icons/Gion/scalable/mimetypes/
 share/icons/Gion/scalable/mimetypes/application-certificate.svg
+share/icons/Gion/scalable/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.svg
+share/icons/Gion/scalable/mimetypes/application-vnd.ms-word.document.macroEnabled.12.svg
+share/icons/Gion/scalable/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.svg
+share/icons/Gion/scalable/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg
 share/icons/Gion/scalable/mimetypes/ascii.svg
 share/icons/Gion/scalable/mimetypes/audio-x-generic.svg
 share/icons/Gion/scalable/mimetypes/deb.svg
@@ -2287,10 +2305,8 @@ share/icons/Neu/128x128/apps/gnome-window-manager.png
 share/icons/Neu/128x128/apps/graphics-image-editor.png
 share/icons/Neu/128x128/apps/graphics-image-viewer.png
 share/icons/Neu/128x128/apps/graphics-svg-editor.png
-share/icons/Neu/128x128/apps/gtk-help.png
 share/icons/Neu/128x128/apps/gucharmap.png
 share/icons/Neu/128x128/apps/help-browser.png
-share/icons/Neu/128x128/apps/help.png
 share/icons/Neu/128x128/apps/internet-group-chat.png
 share/icons/Neu/128x128/apps/internet-mail.png
 share/icons/Neu/128x128/apps/internet-web-browser.png
@@ -2326,7 +2342,6 @@ share/icons/Neu/128x128/apps/redhat-filemanager.png
 share/icons/Neu/128x128/apps/redhat-web-browser.png
 share/icons/Neu/128x128/apps/screensaver.png
 share/icons/Neu/128x128/apps/sound-juicer.png
-share/icons/Neu/128x128/apps/stock_help.png
 share/icons/Neu/128x128/apps/stock_proxy.png
 share/icons/Neu/128x128/apps/susehelpcenter.png
 share/icons/Neu/128x128/apps/system-config-users.png
@@ -2473,9 +2488,12 @@ share/icons/Neu/128x128/emblems/emblem-symbolic-link.png
 share/icons/Neu/128x128/emblems/emblem-system.png
 share/icons/Neu/128x128/emblems/emblem-unreadable.png
 share/icons/Neu/128x128/emblems/emblem-web.png
-share/icons/Neu/128x128/emblems/stock_mail-priority-high.png
 share/icons/Neu/128x128/mimetypes/
 share/icons/Neu/128x128/mimetypes/application-certificate.png
+share/icons/Neu/128x128/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
+share/icons/Neu/128x128/mimetypes/application-vnd.ms-word.document.macroEnabled.12.png
+share/icons/Neu/128x128/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.png
+share/icons/Neu/128x128/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/Neu/128x128/mimetypes/application-x-executable.png
 share/icons/Neu/128x128/mimetypes/ascii.png
 share/icons/Neu/128x128/mimetypes/audio-x-generic.png
@@ -2976,10 +2994,8 @@ share/icons/Neu/22x22/apps/gnome-terminal.png
 share/icons/Neu/22x22/apps/gnome-window-manager.png
 share/icons/Neu/22x22/apps/graphics-image-viewer.png
 share/icons/Neu/22x22/apps/graphics-svg-editor.png
-share/icons/Neu/22x22/apps/gtk-help.png
 share/icons/Neu/22x22/apps/gucharmap.png
 share/icons/Neu/22x22/apps/help-browser.png
-share/icons/Neu/22x22/apps/help.png
 share/icons/Neu/22x22/apps/internet-group-chat.png
 share/icons/Neu/22x22/apps/internet-mail.png
 share/icons/Neu/22x22/apps/internet-web-browser.png
@@ -3016,7 +3032,6 @@ share/icons/Neu/22x22/apps/redhat-filemanager.png
 share/icons/Neu/22x22/apps/redhat-web-browser.png
 share/icons/Neu/22x22/apps/screensaver.png
 share/icons/Neu/22x22/apps/sound-juicer.png
-share/icons/Neu/22x22/apps/stock_help.png
 share/icons/Neu/22x22/apps/stock_proxy.png
 share/icons/Neu/22x22/apps/susehelpcenter.png
 share/icons/Neu/22x22/apps/system-config-users.png
@@ -3157,9 +3172,12 @@ share/icons/Neu/22x22/emblems/emblem-important.png
 share/icons/Neu/22x22/emblems/emblem-symbolic-link.png
 share/icons/Neu/22x22/emblems/emblem-system.png
 share/icons/Neu/22x22/emblems/emblem-web.png
-share/icons/Neu/22x22/emblems/stock_mail-priority-high.png
 share/icons/Neu/22x22/mimetypes/
 share/icons/Neu/22x22/mimetypes/application-certificate.png
+share/icons/Neu/22x22/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
+share/icons/Neu/22x22/mimetypes/application-vnd.ms-word.document.macroEnabled.12.png
+share/icons/Neu/22x22/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.png
+share/icons/Neu/22x22/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/Neu/22x22/mimetypes/application-x-executable.png
 share/icons/Neu/22x22/mimetypes/ascii.png
 share/icons/Neu/22x22/mimetypes/audio-x-generic.png
@@ -3661,10 +3679,8 @@ share/icons/Neu/24x24/apps/gnome-terminal.png
 share/icons/Neu/24x24/apps/gnome-window-manager.png
 share/icons/Neu/24x24/apps/graphics-image-viewer.png
 share/icons/Neu/24x24/apps/graphics-svg-editor.png
-share/icons/Neu/24x24/apps/gtk-help.png
 share/icons/Neu/24x24/apps/gucharmap.png
 share/icons/Neu/24x24/apps/help-browser.png
-share/icons/Neu/24x24/apps/help.png
 share/icons/Neu/24x24/apps/internet-group-chat.png
 share/icons/Neu/24x24/apps/internet-mail.png
 share/icons/Neu/24x24/apps/internet-news-reader.png
@@ -3702,7 +3718,6 @@ share/icons/Neu/24x24/apps/redhat-filemanager.png
 share/icons/Neu/24x24/apps/redhat-web-browser.png
 share/icons/Neu/24x24/apps/screensaver.png
 share/icons/Neu/24x24/apps/sound-juicer.png
-share/icons/Neu/24x24/apps/stock_help.png
 share/icons/Neu/24x24/apps/stock_proxy.png
 share/icons/Neu/24x24/apps/susehelpcenter.png
 share/icons/Neu/24x24/apps/system-config-users.png
@@ -3840,6 +3855,10 @@ share/icons/Neu/24x24/devices/yast_mouse.png
 share/icons/Neu/24x24/devices/yast_printer.png
 share/icons/Neu/24x24/mimetypes/
 share/icons/Neu/24x24/mimetypes/application-certificate.png
+share/icons/Neu/24x24/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
+share/icons/Neu/24x24/mimetypes/application-vnd.ms-word.document.macroEnabled.12.png
+share/icons/Neu/24x24/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.png
+share/icons/Neu/24x24/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/Neu/24x24/mimetypes/application-x-executable.png
 share/icons/Neu/24x24/mimetypes/ascii.png
 share/icons/Neu/24x24/mimetypes/audio-x-generic.png
@@ -4341,10 +4360,8 @@ share/icons/Neu/48x48/apps/gnome-window-manager.png
 share/icons/Neu/48x48/apps/graphics-image-editor.png
 share/icons/Neu/48x48/apps/graphics-image-viewer.png
 share/icons/Neu/48x48/apps/graphics-svg-editor.png
-share/icons/Neu/48x48/apps/gtk-help.png
 share/icons/Neu/48x48/apps/gucharmap.png
 share/icons/Neu/48x48/apps/help-browser.png
-share/icons/Neu/48x48/apps/help.png
 share/icons/Neu/48x48/apps/internet-group-chat.png
 share/icons/Neu/48x48/apps/internet-mail.png
 share/icons/Neu/48x48/apps/internet-web-browser.png
@@ -4381,7 +4398,6 @@ share/icons/Neu/48x48/apps/redhat-filemanager.png
 share/icons/Neu/48x48/apps/redhat-web-browser.png
 share/icons/Neu/48x48/apps/screensaver.png
 share/icons/Neu/48x48/apps/sound-juicer.png
-share/icons/Neu/48x48/apps/stock_help.png
 share/icons/Neu/48x48/apps/stock_proxy.png
 share/icons/Neu/48x48/apps/susehelpcenter.png
 share/icons/Neu/48x48/apps/system-config-users.png
@@ -4528,9 +4544,12 @@ share/icons/Neu/48x48/emblems/emblem-symbolic-link.png
 share/icons/Neu/48x48/emblems/emblem-system.png
 share/icons/Neu/48x48/emblems/emblem-unreadable.png
 share/icons/Neu/48x48/emblems/emblem-web.png
-share/icons/Neu/48x48/emblems/stock_mail-priority-high.png
 share/icons/Neu/48x48/mimetypes/
 share/icons/Neu/48x48/mimetypes/application-certificate.png
+share/icons/Neu/48x48/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.png
+share/icons/Neu/48x48/mimetypes/application-vnd.ms-word.document.macroEnabled.12.png
+share/icons/Neu/48x48/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.png
+share/icons/Neu/48x48/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/Neu/48x48/mimetypes/application-x-executable.png
 share/icons/Neu/48x48/mimetypes/ascii.png
 share/icons/Neu/48x48/mimetypes/audio-x-generic.png
@@ -5031,10 +5050,8 @@ share/icons/Neu/scalable/apps/gnome-window-manager.svg
 share/icons/Neu/scalable/apps/graphics-image-editor.svg
 share/icons/Neu/scalable/apps/graphics-image-viewer.svg
 share/icons/Neu/scalable/apps/graphics-svg-editor.svg
-share/icons/Neu/scalable/apps/gtk-help.svg
 share/icons/Neu/scalable/apps/gucharmap.svg
 share/icons/Neu/scalable/apps/help-browser.svg
-share/icons/Neu/scalable/apps/help.svg
 share/icons/Neu/scalable/apps/internet-ftp-client.svg
 share/icons/Neu/scalable/apps/internet-group-chat.svg
 share/icons/Neu/scalable/apps/internet-mail.svg
@@ -5072,7 +5089,6 @@ share/icons/Neu/scalable/apps/redhat-filemanager.svg
 share/icons/Neu/scalable/apps/redhat-web-browser.svg
 share/icons/Neu/scalable/apps/screensaver.svg
 share/icons/Neu/scalable/apps/sound-juicer.svg
-share/icons/Neu/scalable/apps/stock_help.svg
 share/icons/Neu/scalable/apps/stock_proxy.svg
 share/icons/Neu/scalable/apps/susehelpcenter.svg
 share/icons/Neu/scalable/apps/system-config-users.svg
@@ -5219,9 +5235,12 @@ share/icons/Neu/scalable/emblems/emblem-symbolic-link.svg
 share/icons/Neu/scalable/emblems/emblem-system.svg
 share/icons/Neu/scalable/emblems/emblem-unreadable.svg
 share/icons/Neu/scalable/emblems/emblem-web.svg
-share/icons/Neu/scalable/emblems/stock_mail-priority-high.svg
 share/icons/Neu/scalable/mimetypes/
 share/icons/Neu/scalable/mimetypes/application-certificate.svg
+share/icons/Neu/scalable/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.svg
+share/icons/Neu/scalable/mimetypes/application-vnd.ms-word.document.macroEnabled.12.svg
+share/icons/Neu/scalable/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.svg
+share/icons/Neu/scalable/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg
 share/icons/Neu/scalable/mimetypes/application-x-executable.svg
 share/icons/Neu/scalable/mimetypes/ascii.svg
 share/icons/Neu/scalable/mimetypes/audio-x-generic.svg
