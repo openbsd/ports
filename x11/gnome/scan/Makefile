@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/03/05 07:50:52 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,11 +6,11 @@ COMMENT-main=	easy-to-use scanning application for GNOME
 COMMENT-gimp=	flegita GIMP plugin for gnome-scan
 
 GNOME_PROJECT=	gnome-scan
-GNOME_VERSION=	0.6.1
+GNOME_VERSION=	0.6.2
 CATEGORIES=	graphics
 
-PKGNAME-main=	${DISTNAME}p1
-PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}p1
+PKGNAME-main=	${DISTNAME}
+PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}
 
 SHARED_LIBS=	gnomescan	0.0 # .0.0
 
