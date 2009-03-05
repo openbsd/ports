@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/03/05 19:30:55 landry Exp $
+@lib lib/libgtksourceviewmm-2.0.so.${LIBgtksourceviewmm-2.0_VERSION}
