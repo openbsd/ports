@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/12/17 18:41:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/03/05 07:52:51 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gthumb
 lib/bonobo/
@@ -21,6 +21,7 @@ lib/gthumb/modules/libwebexporter.la
 lib/libgthumb.a
 lib/libgthumb.la
 @man man/man1/gthumb.1
+share/applications/gthumb-import.desktop
 share/applications/gthumb.desktop
 share/gnome/help/gthumb/
 share/gnome/help/gthumb/C/
@@ -31,6 +32,13 @@ share/gnome/help/gthumb/C/figures/nav-button.png
 share/gnome/help/gthumb/C/figures/preferences.png
 share/gnome/help/gthumb/C/gthumb.xml
 share/gnome/help/gthumb/C/legal.xml
+share/gnome/help/gthumb/de/
+share/gnome/help/gthumb/de/figures/
+share/gnome/help/gthumb/de/figures/comment.png
+share/gnome/help/gthumb/de/figures/main-win.png
+share/gnome/help/gthumb/de/figures/nav-button.png
+share/gnome/help/gthumb/de/figures/preferences.png
+share/gnome/help/gthumb/de/gthumb.xml
 share/gnome/help/gthumb/es/
 share/gnome/help/gthumb/es/figures/
 share/gnome/help/gthumb/es/figures/comment.png
@@ -195,8 +203,11 @@ share/locale/ro/LC_MESSAGES/gthumb.mo
 share/locale/ru/LC_MESSAGES/gthumb.mo
 share/locale/rw/LC_MESSAGES/gthumb.mo
 share/locale/sk/LC_MESSAGES/gthumb.mo
+share/locale/sl/LC_MESSAGES/gthumb.mo
 share/locale/sq/LC_MESSAGES/gthumb.mo
 share/locale/sr/LC_MESSAGES/gthumb.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/gthumb.mo
 share/locale/sv/LC_MESSAGES/gthumb.mo
 share/locale/th/LC_MESSAGES/gthumb.mo
@@ -209,6 +220,7 @@ share/locale/zh_HK/LC_MESSAGES/gthumb.mo
 share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 share/omf/gthumb/
 share/omf/gthumb/gthumb-C.omf
+share/omf/gthumb/gthumb-de.omf
 share/omf/gthumb/gthumb-es.omf
 share/omf/gthumb/gthumb-fr.omf
 share/omf/gthumb/gthumb-sv.omf

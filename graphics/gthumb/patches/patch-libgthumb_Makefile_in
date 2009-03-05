@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgthumb_Makefile_in,v 1.2 2008/12/14 19:30:45 ajacoutot Exp $
---- libgthumb/Makefile.in.orig	Mon Sep 22 21:23:08 2008
-+++ libgthumb/Makefile.in	Sat Dec 13 19:23:50 2008
-@@ -320,7 +320,7 @@ INCLUDES = \
+$OpenBSD: patch-libgthumb_Makefile_in,v 1.3 2009/03/05 07:52:51 ajacoutot Exp $
+--- libgthumb/Makefile.in.orig	Tue Feb 24 11:18:53 2009
++++ libgthumb/Makefile.in	Fri Feb 27 13:45:01 2009
+@@ -324,7 +324,7 @@ INCLUDES = \
  
  libgthumbdir = $(libdir)
  libgthumb_LTLIBRARIES = libgthumb.la
