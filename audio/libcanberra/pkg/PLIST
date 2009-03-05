@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/09 17:34:32 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/03/05 08:11:56 ajacoutot Exp $
 %%SHARED%%
 @bin bin/canberra-gtk-play
 include/canberra-gtk.h
@@ -6,20 +6,20 @@ include/canberra.h
 lib/gtk-2.0/
 lib/gtk-2.0/modules/
 lib/gtk-2.0/modules/libcanberra-gtk-module.a
-lib/gtk-2.0/modules/libcanberra-gtk-module.la
-lib/libcanberra/
+@comment lib/gtk-2.0/modules/libcanberra-gtk-module.la
+lib/libcanberra-0.11/
+lib/libcanberra-0.11/libcanberra-gstreamer.a
+@comment lib/libcanberra-0.11/libcanberra-gstreamer.la
+lib/libcanberra-0.11/libcanberra-multi.a
+@comment lib/libcanberra-0.11/libcanberra-multi.la
+lib/libcanberra-0.11/libcanberra-null.a
+@comment lib/libcanberra-0.11/libcanberra-null.la
+lib/libcanberra-0.11/libcanberra-sndio.a
+@comment lib/libcanberra-0.11/libcanberra-sndio.la
 lib/libcanberra-gtk.a
 lib/libcanberra-gtk.la
 lib/libcanberra.a
 lib/libcanberra.la
-lib/libcanberra/libcanberra-gstreamer.a
-lib/libcanberra/libcanberra-gstreamer.la
-lib/libcanberra/libcanberra-multi.a
-lib/libcanberra/libcanberra-multi.la
-lib/libcanberra/libcanberra-null.a
-lib/libcanberra/libcanberra-null.la
-lib/libcanberra/libcanberra-sndio.a
-lib/libcanberra/libcanberra-sndio.la
 lib/pkgconfig/libcanberra-gtk.pc
 lib/pkgconfig/libcanberra.pc
 share/doc/libcanberra/

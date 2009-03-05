@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/09 17:34:32 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/05 08:11:56 ajacoutot Exp $
 
 COMMENT=		implementation of the Freedesktop sound theme spec.
 
-DISTNAME=		libcanberra-0.10
-PKGNAME=		${DISTNAME}p2
-SHARED_LIBS +=  canberra             0.1      # .1.3
+DISTNAME=		libcanberra-0.11
+SHARED_LIBS +=  canberra             1.0      # .1.4
 SHARED_LIBS +=  canberra-gtk         0.0      # .0.4
 CATEGORIES=		audio devel
 
@@ -50,11 +49,15 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/libcanb
 			--disable-oss \
 			--disable-alsa \
 			--disable-pulse \
-			--disable-tdb
+			--disable-tdb \
+			--with-ltdl-include=${LOCALBASE}/include \
+			--with-ltdl-lib=${LOCALBASE}/lib \
+			--disable-ltdl-install \
+			--without-included-ltdl
 CONFIGURE_ENV+=         LDFLAGS="-L${LOCALBASE}/lib" \
                         CPPFLAGS="-I${LOCALBASE}/include"
 
-post-patch:
+pre-configure:
 	cp ${FILESDIR}/sndio.c ${WRKSRC}/src
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal -I m4
