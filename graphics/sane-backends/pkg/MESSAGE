@@ -1,6 +1,9 @@
 Before using this program, make sure you read the
 ${PREFIX}/share/doc/sane-backends/PROBLEMS file.
 
+Make sure your user has read+write access to the scanner device
+(e.g. /dev/uscanner0) or you will not be able to scan.
+
 With some USB backends, the OpenBSD uscanner driver does not support
 getting USB vendor and product ids. To make your scanner work with sane,
 you'll have to disable uscanner in your kernel - see config(8) - which
