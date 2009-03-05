@@ -1,11 +1,11 @@
 To switch the default backend in GNUstep to the corresponding FLAVOR,
-enter one of these lines:
+enter one of the following:
 
 * cairo:
-  defaults write NSGlobalDomain GSBackend libgnustep-cairo-${BACKENDV}
+  defaults write NSGlobalDomain GSBackend cairo
 
 * libart:
-  defaults write NSGlobalDomain GSBackend libgnustep-art-${BACKENDV}
+  defaults write NSGlobalDomain GSBackend art
 
 * xlib:
-  defaults write NSGlobalDomain GSBackend libgnustep-back-${BACKENDV}
+  defaults write NSGlobalDomain GSBackend back

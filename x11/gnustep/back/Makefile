@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2008/12/23 15:25:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/05 07:45:33 ajacoutot Exp $
 
 COMMENT=	GNUstep gui backend
 
 V=		0.16.0
 DISTNAME=	gnustep-back-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
-# XXX
 BACKENDV=	${V:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 SUBST_VARS=	BACKENDV
 
