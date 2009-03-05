@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2009/02/04 21:12:25 martynas Exp $
+# $OpenBSD: Makefile,v 1.35 2009/03/05 23:42:49 martynas Exp $
 
 PKG_ARCH=	*
 
-V=		3.0.6
+V=		3.0.7
 NAME=		firefox-i18n
 PKGNAME=	${NAME}-${V}
 
