@@ -8,4 +8,4 @@ implements that specific feature of a particular chip.
 If you're planning on programming *duino devices with avrdude, you'll want
 to invoke it something like this:
 
-	avrdude -b19200 -P /dev/cuaU0 -c avrisp -p m169 -U flash:w:blink.hex
+    avrdude -b19200 -P /dev/cuaU0 -c arduino -p atmega168 -U flash:w:blink.hex
