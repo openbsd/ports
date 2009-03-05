@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/12/29 16:48:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/03/05 07:57:03 ajacoutot Exp $
 timetrex/
 timetrex/INSTALL.txt
 timetrex/LICENSE
@@ -17,6 +17,7 @@ timetrex/classes/Image_Barcode/Barcode/postnet.php
 timetrex/classes/Image_Barcode/Barcode/upca.php
 timetrex/classes/adodb/
 timetrex/classes/adodb/adodb-active-record.inc.php
+timetrex/classes/adodb/adodb-active-recordx.inc.php
 timetrex/classes/adodb/adodb-csvlib.inc.php
 timetrex/classes/adodb/adodb-datadict.inc.php
 timetrex/classes/adodb/adodb-error.inc.php
@@ -25,6 +26,7 @@ timetrex/classes/adodb/adodb-errorpear.inc.php
 timetrex/classes/adodb/adodb-exceptions.inc.php
 timetrex/classes/adodb/adodb-iterator.inc.php
 timetrex/classes/adodb/adodb-lib.inc.php
+timetrex/classes/adodb/adodb-memcache.lib.inc.php
 timetrex/classes/adodb/adodb-pager.inc.php
 timetrex/classes/adodb/adodb-pear.inc.php
 timetrex/classes/adodb/adodb-perf.inc.php
@@ -43,6 +45,7 @@ timetrex/classes/adodb/datadict/datadict-generic.inc.php
 timetrex/classes/adodb/datadict/datadict-ibase.inc.php
 timetrex/classes/adodb/datadict/datadict-informix.inc.php
 timetrex/classes/adodb/datadict/datadict-mssql.inc.php
+timetrex/classes/adodb/datadict/datadict-mssqlnative.inc.php
 timetrex/classes/adodb/datadict/datadict-mysql.inc.php
 timetrex/classes/adodb/datadict/datadict-oci8.inc.php
 timetrex/classes/adodb/datadict/datadict-postgres.inc.php
@@ -64,12 +67,16 @@ timetrex/classes/adodb/drivers/adodb-informix.inc.php
 timetrex/classes/adodb/drivers/adodb-informix72.inc.php
 timetrex/classes/adodb/drivers/adodb-ldap.inc.php
 timetrex/classes/adodb/drivers/adodb-mssql.inc.php
+timetrex/classes/adodb/drivers/adodb-mssql_n.inc.php
+timetrex/classes/adodb/drivers/adodb-mssqlnative.inc.php
 timetrex/classes/adodb/drivers/adodb-mssqlpo.inc.php
 timetrex/classes/adodb/drivers/adodb-mysql.inc.php
 timetrex/classes/adodb/drivers/adodb-mysqli.inc.php
+timetrex/classes/adodb/drivers/adodb-mysqlpo.inc.php
 timetrex/classes/adodb/drivers/adodb-mysqlt.inc.php
 timetrex/classes/adodb/drivers/adodb-netezza.inc.php
 timetrex/classes/adodb/drivers/adodb-oci8.inc.php
+timetrex/classes/adodb/drivers/adodb-oci8.old.inc.php
 timetrex/classes/adodb/drivers/adodb-oci805.inc.php
 timetrex/classes/adodb/drivers/adodb-oci8po.inc.php
 timetrex/classes/adodb/drivers/adodb-odbc.inc.php
@@ -84,6 +91,7 @@ timetrex/classes/adodb/drivers/adodb-pdo_mssql.inc.php
 timetrex/classes/adodb/drivers/adodb-pdo_mysql.inc.php
 timetrex/classes/adodb/drivers/adodb-pdo_oci.inc.php
 timetrex/classes/adodb/drivers/adodb-pdo_pgsql.inc.php
+timetrex/classes/adodb/drivers/adodb-pdo_sqlite.inc.php
 timetrex/classes/adodb/drivers/adodb-postgres.inc.php
 timetrex/classes/adodb/drivers/adodb-postgres64.inc.php
 timetrex/classes/adodb/drivers/adodb-postgres7.inc.php
@@ -108,6 +116,7 @@ timetrex/classes/adodb/lang/adodb-de.inc.php
 timetrex/classes/adodb/lang/adodb-en.inc.php
 timetrex/classes/adodb/lang/adodb-es.inc.php
 timetrex/classes/adodb/lang/adodb-esperanto.inc.php
+timetrex/classes/adodb/lang/adodb-fa.inc.php
 timetrex/classes/adodb/lang/adodb-fr.inc.php
 timetrex/classes/adodb/lang/adodb-hu.inc.php
 timetrex/classes/adodb/lang/adodb-it.inc.php
@@ -118,6 +127,7 @@ timetrex/classes/adodb/lang/adodb-ro.inc.php
 timetrex/classes/adodb/lang/adodb-ru1251.inc.php
 timetrex/classes/adodb/lang/adodb-sv.inc.php
 timetrex/classes/adodb/lang/adodb-uk1251.inc.php
+timetrex/classes/adodb/lang/adodb_th.inc.php
 timetrex/classes/adodb/license.txt
 timetrex/classes/adodb/pear/
 timetrex/classes/adodb/pear/Auth/
@@ -128,6 +138,7 @@ timetrex/classes/adodb/perf/
 timetrex/classes/adodb/perf/perf-db2.inc.php
 timetrex/classes/adodb/perf/perf-informix.inc.php
 timetrex/classes/adodb/perf/perf-mssql.inc.php
+timetrex/classes/adodb/perf/perf-mssqlnative.inc.php
 timetrex/classes/adodb/perf/perf-mysql.inc.php
 timetrex/classes/adodb/perf/perf-oci8.inc.php
 timetrex/classes/adodb/perf/perf-postgres.inc.php
@@ -385,6 +396,8 @@ timetrex/classes/modules/install/InstallSchema_1025A.class.php
 timetrex/classes/modules/install/InstallSchema_1026A.class.php
 timetrex/classes/modules/install/InstallSchema_1027A.class.php
 timetrex/classes/modules/install/InstallSchema_1028A.class.php
+timetrex/classes/modules/install/InstallSchema_1029A.class.php
+timetrex/classes/modules/install/InstallSchema_1030A.class.php
 timetrex/classes/modules/install/InstallSchema_Base.class.php
 timetrex/classes/modules/install/sql/
 timetrex/classes/modules/install/sql/mysql/
@@ -426,6 +439,8 @@ timetrex/classes/modules/install/sql/mysql/1025A.sql
 timetrex/classes/modules/install/sql/mysql/1026A.sql
 timetrex/classes/modules/install/sql/mysql/1027A.sql
 timetrex/classes/modules/install/sql/mysql/1028A.sql
+timetrex/classes/modules/install/sql/mysql/1029A.sql
+timetrex/classes/modules/install/sql/mysql/1030A.sql
 timetrex/classes/modules/install/sql/postgresql/
 timetrex/classes/modules/install/sql/postgresql/1000A.sql
 timetrex/classes/modules/install/sql/postgresql/1000T.sql
@@ -465,11 +480,12 @@ timetrex/classes/modules/install/sql/postgresql/1025A.sql
 timetrex/classes/modules/install/sql/postgresql/1026A.sql
 timetrex/classes/modules/install/sql/postgresql/1027A.sql
 timetrex/classes/modules/install/sql/postgresql/1028A.sql
+timetrex/classes/modules/install/sql/postgresql/1029A.sql
+timetrex/classes/modules/install/sql/postgresql/1030A.sql
 timetrex/classes/modules/message/
 timetrex/classes/modules/message/MessageFactory.class.php
 timetrex/classes/modules/message/MessageListFactory.class.php
 timetrex/classes/modules/other/
-timetrex/classes/modules/other/Beanstream.php
 timetrex/classes/modules/other/DemoData.class.php
 timetrex/classes/modules/other/EFT.class.php
 timetrex/classes/modules/other/ROEFactory.class.php
@@ -565,6 +581,11 @@ timetrex/classes/modules/soap/
 timetrex/classes/modules/soap/TimeTrexSoapClient.class.php
 timetrex/classes/modules/soap/TimeTrexSoapServer.class.php
 timetrex/classes/modules/soap/TimeTrexSoapServerUnAuthenticated.class.php
+timetrex/classes/modules/tax_forms/
+timetrex/classes/modules/tax_forms/TaxForms.class.php
+timetrex/classes/modules/tax_forms/ca/
+timetrex/classes/modules/tax_forms/ca/T4.class.php
+timetrex/classes/modules/tax_forms/us/
 timetrex/classes/modules/users/
 timetrex/classes/modules/users/BankAccountFactory.class.php
 timetrex/classes/modules/users/BankAccountListFactory.class.php
@@ -1786,7 +1807,11 @@ timetrex/interface/forms/
 timetrex/interface/forms/ca/
 timetrex/interface/forms/ca/tax/
 timetrex/interface/forms/ca/tax/t4-sum-05b.pdf
+timetrex/interface/forms/ca/tax/t4-sum-08b.pdf
+timetrex/interface/forms/ca/tax/t4a-flat-08b.pdf
+timetrex/interface/forms/ca/tax/t4a-sum-08b.pdf
 timetrex/interface/forms/ca/tax/t4flat-05b.pdf
+timetrex/interface/forms/ca/tax/t4flat-06b.pdf
 timetrex/interface/forms/us/
 timetrex/interface/forms/us/tax/
 timetrex/interface/forms/us/tax/f1099misc.pdf
@@ -2024,6 +2049,10 @@ timetrex/interface/jscalendar/skins/aqua/theme.css
 timetrex/interface/jscalendar/skins/aqua/title-bg.gif
 timetrex/interface/jscalendar/skins/aqua/today-bg.gif
 timetrex/interface/locale/
+timetrex/interface/locale/da_DK/
+timetrex/interface/locale/da_DK/LC_MESSAGES/
+timetrex/interface/locale/da_DK/LC_MESSAGES/messages.mo
+timetrex/interface/locale/da_DK/LC_MESSAGES/messages.po
 timetrex/interface/locale/de_DE/
 timetrex/interface/locale/de_DE/LC_MESSAGES/
 timetrex/interface/locale/de_DE/LC_MESSAGES/messages.mo
@@ -2054,14 +2083,10 @@ timetrex/interface/locale/pt_PT/LC_MESSAGES/messages.mo
 timetrex/interface/locale/pt_PT/LC_MESSAGES/messages.po
 timetrex/interface/menu/
 timetrex/interface/menu.js.php
-timetrex/interface/menu/dmenu.js
-timetrex/interface/menu/dmenu4.js
-timetrex/interface/menu/dmenu_add.js
-timetrex/interface/menu/dmenu_ajax.js
-timetrex/interface/menu/dmenu_cf.js
-timetrex/interface/menu/dmenu_dyn.js
-timetrex/interface/menu/dmenu_key.js
-timetrex/interface/menu/dmenu_popup.js
+timetrex/interface/menu/milonic_menu_code.js
+timetrex/interface/menu/milonic_src.js
+timetrex/interface/menu/mmenudom.js
+timetrex/interface/menu/mmenuns4.js
 timetrex/interface/message/
 timetrex/interface/message/EditMessage.php
 timetrex/interface/message/EmbeddedMessageList.php
@@ -2127,6 +2152,7 @@ timetrex/interface/punch/EditPunch.php
 timetrex/interface/punch/EditUserAbsence.php
 timetrex/interface/punch/EditUserDateTotal.php
 timetrex/interface/punch/Punch.php
+timetrex/interface/punch/PunchList.php
 timetrex/interface/punch/UserDateTotalList.php
 timetrex/interface/punch/UserExceptionList.php
 timetrex/interface/report/
@@ -2144,6 +2170,7 @@ timetrex/interface/report/PayrollExport.php
 timetrex/interface/report/PunchSummary.php
 timetrex/interface/report/RemittanceSummary.php
 timetrex/interface/report/SystemLog.php
+timetrex/interface/report/T4ASummary.php
 timetrex/interface/report/T4Summary.php
 timetrex/interface/report/TimesheetDetail.php
 timetrex/interface/report/TimesheetSummary.php
@@ -2170,6 +2197,7 @@ timetrex/interface/schedule/EditRecurringScheduleTemplate.php
 timetrex/interface/schedule/EditSchedule.php
 timetrex/interface/schedule/RecurringScheduleControlList.php
 timetrex/interface/schedule/RecurringScheduleTemplateControlList.php
+timetrex/interface/schedule/ScheduleList.php
 timetrex/interface/schedule/ViewSchedule.php
 timetrex/interface/schedule/ViewScheduleCalendar.php
 timetrex/interface/schedule/ViewScheduleDay.php
@@ -2354,6 +2382,7 @@ timetrex/templates/punch/EditPunch.tpl
 timetrex/templates/punch/EditUserAbsence.tpl
 timetrex/templates/punch/EditUserDateTotal.tpl
 timetrex/templates/punch/Punch.tpl
+timetrex/templates/punch/PunchList.tpl
 timetrex/templates/punch/UserDateTotalList.tpl
 timetrex/templates/punch/UserExceptionList.tpl
 timetrex/templates/report/
@@ -2380,6 +2409,8 @@ timetrex/templates/report/RemittanceSummary.tpl
 timetrex/templates/report/RemittanceSummaryReport.tpl
 timetrex/templates/report/SystemLog.tpl
 timetrex/templates/report/SystemLogReport.tpl
+timetrex/templates/report/T4ASummary.tpl
+timetrex/templates/report/T4ASummaryReport.tpl
 timetrex/templates/report/T4Summary.tpl
 timetrex/templates/report/T4SummaryReport.tpl
 timetrex/templates/report/TimesheetDetail.tpl
@@ -2413,6 +2444,7 @@ timetrex/templates/schedule/EditRecurringScheduleTemplate.tpl
 timetrex/templates/schedule/EditSchedule.tpl
 timetrex/templates/schedule/RecurringScheduleControlList.tpl
 timetrex/templates/schedule/RecurringScheduleTemplateControlList.tpl
+timetrex/templates/schedule/ScheduleList.tpl
 timetrex/templates/schedule/ViewSchedule.tpl
 timetrex/templates/schedule/ViewScheduleCalendar.tpl
 timetrex/templates/schedule/ViewScheduleDay.tpl
@@ -2458,9 +2490,11 @@ timetrex/timetrex.ini.php-example_linux
 @group
 timetrex/timetrex.ini.php-example_windows
 timetrex/tools/
+timetrex/tools/convert_mysql_to_postgresql.php
 timetrex/tools/export/
 timetrex/tools/export/export_pay_stubs.php
 timetrex/tools/fix_hierarchy.php
+timetrex/tools/generate_payroll_deduction_test_csv.php
 timetrex/tools/i18n/
 timetrex/tools/i18n/README.i18n
 timetrex/tools/i18n/calc_l10n_stats.php

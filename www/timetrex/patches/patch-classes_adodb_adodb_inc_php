@@ -1,12 +1,12 @@
-$OpenBSD: patch-classes_adodb_adodb_inc_php,v 1.1.1.1 2008/09/17 10:08:23 ajacoutot Exp $
---- classes/adodb/adodb.inc.php.orig	Sat Sep 13 12:41:41 2008
-+++ classes/adodb/adodb.inc.php	Sat Sep 13 12:41:51 2008
-@@ -1625,7 +1625,7 @@
- 			
- 		if ($createdir && $notSafeMode && !file_exists($dir)) {
- 			$oldu = umask(0);
--			if (!mkdir($dir,0771)) 
-+			if (!mkdir($dir,0771,true)) 
- 				if ($this->debug) ADOConnection::outp( "Unable to mkdir $dir for $sql");
- 			umask($oldu);
- 		}
+$OpenBSD: patch-classes_adodb_adodb_inc_php,v 1.2 2009/03/05 07:57:03 ajacoutot Exp $
+--- classes/adodb/adodb.inc.php.orig	Fri Feb 27 06:16:47 2009
++++ classes/adodb/adodb.inc.php	Fri Feb 27 06:20:08 2009
+@@ -288,7 +288,7 @@
+ 			$dir = $this->getdirname($hash);
+ 			if ($this->notSafeMode && !file_exists($dir)) {
+ 				$oldu = umask(0);
+-				if (!@mkdir($dir,0771)) if(!is_dir($dir) && $debug) ADOConnection::outp("Cannot create $dir");
++				if (!@mkdir($dir,0771,true)) if(!is_dir($dir) && $debug) ADOConnection::outp("Cannot create $dir");
+ 				umask($oldu);
+ 			}
+ 		
