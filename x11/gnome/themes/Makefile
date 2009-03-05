@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2009/03/05 19:51:12 landry Exp $
 
 COMMENT=		themes collection for GNOME
 
 GNOME_PROJECT=		gnome-themes
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		x11
 
 # LGPLv2.1
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			:icon-naming-utils->=0.8.7:x11/icon-naming-utils
+			:icon-naming-utils->=0.8.90:x11/icon-naming-utils
 RUN_DEPENDS=		:gettext-*:devel/gettext
 
 # we get the Clearlooks index.theme file from gtk2-clearlooks-engine;

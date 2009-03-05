@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2009/02/07 15:59:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2009/03/05 19:51:12 landry Exp $
 @conflict gtk2-clearlooks-engine-<0.6.2p7
 share/icons/Crux/
 share/icons/Crux/16x16/
@@ -490,6 +490,7 @@ share/icons/HighContrast-SVG/scalable/actions/gtk-goto-first-rtl.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-goto-last-ltr.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-goto-last-rtl.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-goto-top.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-help.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-home.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-indent-ltr.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-indent-rtl.svg
@@ -543,6 +544,7 @@ share/icons/HighContrast-SVG/scalable/actions/gtk-zoom-out.svg
 share/icons/HighContrast-SVG/scalable/actions/help-about.svg
 share/icons/HighContrast-SVG/scalable/actions/help-contents.svg
 share/icons/HighContrast-SVG/scalable/actions/help-faq.svg
+share/icons/HighContrast-SVG/scalable/actions/help.svg
 share/icons/HighContrast-SVG/scalable/actions/history-view.svg
 share/icons/HighContrast-SVG/scalable/actions/insert-image.svg
 share/icons/HighContrast-SVG/scalable/actions/insert-link.svg
@@ -617,6 +619,7 @@ share/icons/HighContrast-SVG/scalable/actions/stock_down.svg
 share/icons/HighContrast-SVG/scalable/actions/stock_file-properites.svg
 share/icons/HighContrast-SVG/scalable/actions/stock_first.svg
 share/icons/HighContrast-SVG/scalable/actions/stock_fullscreen.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_help.svg
 share/icons/HighContrast-SVG/scalable/actions/stock_home.svg
 share/icons/HighContrast-SVG/scalable/actions/stock_last.svg
 share/icons/HighContrast-SVG/scalable/actions/stock_leave-fullscreen.svg
@@ -736,10 +739,8 @@ share/icons/HighContrast-SVG/scalable/apps/gnome-settings-font.svg
 share/icons/HighContrast-SVG/scalable/apps/gnome-settings-theme.svg
 share/icons/HighContrast-SVG/scalable/apps/gnome-terminal.svg
 share/icons/HighContrast-SVG/scalable/apps/gnome-window-manager.svg
-share/icons/HighContrast-SVG/scalable/apps/gtk-help.svg
 share/icons/HighContrast-SVG/scalable/apps/gucharmap.svg
 share/icons/HighContrast-SVG/scalable/apps/help-browser.svg
-share/icons/HighContrast-SVG/scalable/apps/help.svg
 share/icons/HighContrast-SVG/scalable/apps/internet-group-chat.svg
 share/icons/HighContrast-SVG/scalable/apps/internet-mail.svg
 share/icons/HighContrast-SVG/scalable/apps/internet-news-reader.svg
@@ -778,7 +779,6 @@ share/icons/HighContrast-SVG/scalable/apps/redhat-email.svg
 share/icons/HighContrast-SVG/scalable/apps/redhat-filemanager.svg
 share/icons/HighContrast-SVG/scalable/apps/redhat-web-browser.svg
 share/icons/HighContrast-SVG/scalable/apps/screensaver.svg
-share/icons/HighContrast-SVG/scalable/apps/stock_help.svg
 share/icons/HighContrast-SVG/scalable/apps/stock_proxy.svg
 share/icons/HighContrast-SVG/scalable/apps/style.svg
 share/icons/HighContrast-SVG/scalable/apps/susehelpcenter.svg
@@ -977,7 +977,6 @@ share/icons/HighContrast-SVG/scalable/emblems/emblem-photos.svg
 share/icons/HighContrast-SVG/scalable/emblems/emblem-readonly.svg
 share/icons/HighContrast-SVG/scalable/emblems/emblem-symbolic-link.svg
 share/icons/HighContrast-SVG/scalable/emblems/emblem-system.svg
-share/icons/HighContrast-SVG/scalable/emblems/stock_mail-priority-high.svg
 share/icons/HighContrast-SVG/scalable/emotes/
 share/icons/HighContrast-SVG/scalable/emotes/face-glasses.svg
 share/icons/HighContrast-SVG/scalable/emotes/face-plain.svg
@@ -995,6 +994,8 @@ share/icons/HighContrast-SVG/scalable/emotes/stock_smiley-6.svg
 share/icons/HighContrast-SVG/scalable/emotes/stock_smiley-7.svg
 share/icons/HighContrast-SVG/scalable/emotes/stock_smiley-8.svg
 share/icons/HighContrast-SVG/scalable/mimetypes/
+share/icons/HighContrast-SVG/scalable/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.svg
 share/icons/HighContrast-SVG/scalable/mimetypes/application-x-executable.svg
 share/icons/HighContrast-SVG/scalable/mimetypes/ascii.svg
 share/icons/HighContrast-SVG/scalable/mimetypes/audio-x-generic.svg
@@ -1331,11 +1332,9 @@ share/icons/HighContrastLargePrint/48x48/apps/gnotski-icon.png
 share/icons/HighContrastLargePrint/48x48/apps/gok.png
 share/icons/HighContrastLargePrint/48x48/apps/gswitchit-applet.png
 share/icons/HighContrastLargePrint/48x48/apps/gthumb.png
-share/icons/HighContrastLargePrint/48x48/apps/gtk-help.png
 share/icons/HighContrastLargePrint/48x48/apps/gtkam-camera.png
 share/icons/HighContrastLargePrint/48x48/apps/gucharmap.png
 share/icons/HighContrastLargePrint/48x48/apps/help-browser.png
-share/icons/HighContrastLargePrint/48x48/apps/help.png
 share/icons/HighContrastLargePrint/48x48/apps/hwbrowser.png
 share/icons/HighContrastLargePrint/48x48/apps/iagno.png
 share/icons/HighContrastLargePrint/48x48/apps/jDictionary.png
@@ -1395,7 +1394,6 @@ share/icons/HighContrastLargePrint/48x48/apps/smc.png
 share/icons/HighContrastLargePrint/48x48/apps/sound-capplet.png
 share/icons/HighContrastLargePrint/48x48/apps/sound-juicer.png
 share/icons/HighContrastLargePrint/48x48/apps/star.png
-share/icons/HighContrastLargePrint/48x48/apps/stock_help.png
 share/icons/HighContrastLargePrint/48x48/apps/stock_notes.png
 share/icons/HighContrastLargePrint/48x48/apps/stock_proxy.png
 share/icons/HighContrastLargePrint/48x48/apps/stock_timezone.png
@@ -1554,7 +1552,6 @@ share/icons/HighContrastLargePrint/48x48/emblems/emblem-noread.png
 share/icons/HighContrastLargePrint/48x48/emblems/emblem-personal.png
 share/icons/HighContrastLargePrint/48x48/emblems/emblem-special.png
 share/icons/HighContrastLargePrint/48x48/emblems/emblem-unreadable.png
-share/icons/HighContrastLargePrint/48x48/emblems/stock_mail-priority-high.png
 share/icons/HighContrastLargePrint/48x48/mimetypes/
 share/icons/HighContrastLargePrint/48x48/mimetypes/application-x-executable.png
 share/icons/HighContrastLargePrint/48x48/mimetypes/ascii.png
@@ -2002,11 +1999,9 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/gnotski-icon.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gok.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gswitchit-applet.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gthumb.png
-share/icons/HighContrastLargePrintInverse/48x48/apps/gtk-help.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gtkam-camera.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gucharmap.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/help-browser.png
-share/icons/HighContrastLargePrintInverse/48x48/apps/help.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/hwbrowser.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/iagno.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/jDictionary.png
@@ -2066,7 +2061,6 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/smc.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/sound-capplet.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/sound-juicer.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/star.png
-share/icons/HighContrastLargePrintInverse/48x48/apps/stock_help.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/stock_notes.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/stock_proxy.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/stock_timezone.png
@@ -2225,7 +2219,6 @@ share/icons/HighContrastLargePrintInverse/48x48/emblems/emblem-noread.png
 share/icons/HighContrastLargePrintInverse/48x48/emblems/emblem-personal.png
 share/icons/HighContrastLargePrintInverse/48x48/emblems/emblem-special.png
 share/icons/HighContrastLargePrintInverse/48x48/emblems/emblem-unreadable.png
-share/icons/HighContrastLargePrintInverse/48x48/emblems/stock_mail-priority-high.png
 share/icons/HighContrastLargePrintInverse/48x48/mimetypes/
 share/icons/HighContrastLargePrintInverse/48x48/mimetypes/application-x-executable.png
 share/icons/HighContrastLargePrintInverse/48x48/mimetypes/ascii.png
