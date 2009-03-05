@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/08/27 19:56:14 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/03/05 10:34:25 giovanni Exp $
 @bin bin/isomaster
 @man man/man1/isomaster.1
 share/applications/isomaster.desktop
@@ -10,6 +10,9 @@ share/isomaster/icons/extract2-kearone.png
 share/isomaster/icons/folder-new-kearone.png
 share/isomaster/icons/go-back-kearone.png
 share/isomaster/icons/isomaster.png
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/isomaster.mo
 share/locale/be@latin/
 share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/isomaster.mo

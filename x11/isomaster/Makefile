@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2008/08/27 19:56:14 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2009/03/05 10:34:24 giovanni Exp $
 
 COMMENT=		gui cd image editor
 
-DISTNAME=		isomaster-1.3.3
+DISTNAME=		isomaster-1.3.5
 CATEGORIES=		x11
 HOMEPAGE=		http://littlesvr.ca/isomaster/
 
-MAINTAINER=		Giovanni Bechis <g.bechis@snb.it>
+MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
