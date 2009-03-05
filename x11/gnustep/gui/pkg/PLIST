@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/12/23 15:26:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/03/05 07:47:19 ajacoutot Exp $
 @bin bin/gclose
 @bin bin/gcloseall
 @bin bin/gopen
@@ -423,34 +423,34 @@ lib/GNUstep/KeyBindings/
 lib/GNUstep/KeyBindings/DefaultKeyBindings.dict
 lib/GNUstep/Libraries/gnustep-gui/
 lib/GNUstep/Libraries/gnustep-gui/Versions/
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSDataLinkPanel.gorm/
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSDataLinkPanel.gorm/data.classes
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSDataLinkPanel.gorm/data.info
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSDataLinkPanel.gorm/objects.gorm
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSPageLayout.gorm/
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSPageLayout.gorm/data.classes
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSPageLayout.gorm/data.info
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSPageLayout.gorm/objects.gorm
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSPrintPanel.gorm/
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSPrintPanel.gorm/data.classes
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSPrintPanel.gorm/data.info
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSPrintPanel.gorm/objects.gorm
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSSpellPanel.gorm/
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSSpellPanel.gorm/data.classes
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/GSSpellPanel.gorm/objects.gorm
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/English.lproj/Localizable.strings
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/Esperanto.lproj/
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/Esperanto.lproj/Localizable.strings
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/German.lproj/
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/German.lproj/Localizable.strings
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/Info-gnustep.plist
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/Italian.lproj/
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/Italian.lproj/Localizable.strings
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/Lojban.lproj/
-lib/GNUstep/Libraries/gnustep-gui/Versions/0.15/Resources/Lojban.lproj/Localizable.strings
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSDataLinkPanel.gorm/
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSDataLinkPanel.gorm/data.classes
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSDataLinkPanel.gorm/data.info
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSDataLinkPanel.gorm/objects.gorm
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSPageLayout.gorm/
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSPageLayout.gorm/data.classes
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSPageLayout.gorm/data.info
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSPageLayout.gorm/objects.gorm
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSPrintPanel.gorm/
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSPrintPanel.gorm/data.classes
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSPrintPanel.gorm/data.info
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSPrintPanel.gorm/objects.gorm
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSSpellPanel.gorm/
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSSpellPanel.gorm/data.classes
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/GSSpellPanel.gorm/objects.gorm
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/English.lproj/Localizable.strings
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/Esperanto.lproj/
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/Esperanto.lproj/Localizable.strings
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/German.lproj/
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/German.lproj/Localizable.strings
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/Info-gnustep.plist
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/Italian.lproj/
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/Lojban.lproj/
+lib/GNUstep/Libraries/gnustep-gui/Versions/0.16/Resources/Lojban.lproj/Localizable.strings
 lib/GNUstep/PostScript/
 lib/GNUstep/PostScript/GSProlog.ps
 lib/GNUstep/PostScript/PPD/
