@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2008/12/27 20:48:00 steven Exp $
+@comment $OpenBSD: PLIST,v 1.19 2009/03/05 06:23:05 steven Exp $
 @conflict gaim-*
 @bin bin/finch
 @bin bin/pidgin
@@ -326,6 +326,9 @@ share/locale/id/LC_MESSAGES/pidgin.mo
 share/locale/it/LC_MESSAGES/pidgin.mo
 share/locale/ja/LC_MESSAGES/pidgin.mo
 share/locale/ka/LC_MESSAGES/pidgin.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/pidgin.mo
 share/locale/kn/LC_MESSAGES/pidgin.mo
 share/locale/ko/LC_MESSAGES/pidgin.mo
 share/locale/ku/LC_MESSAGES/pidgin.mo
@@ -899,6 +902,8 @@ share/pixmaps/pidgin/tray/48/tray-offline.png
 share/pixmaps/pidgin/tray/48/tray-online.png
 share/purple/
 share/purple/ca-certs/
+share/purple/ca-certs/AOL_Member_CA.pem
+share/purple/ca-certs/America_Online_Root_Certification_Authority_1.pem
 share/purple/ca-certs/CAcert_Class3.pem
 share/purple/ca-certs/CAcert_Root.pem
 share/purple/ca-certs/Equifax_Secure_CA.pem
@@ -907,6 +912,7 @@ share/purple/ca-certs/Microsoft_Internet_Authority.pem
 share/purple/ca-certs/Microsoft_Secure_Server_Authority.pem
 share/purple/ca-certs/StartCom_Free_SSL_CA.pem
 share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
+share/purple/ca-certs/VeriSign_International_Server_Class_3_CA.pem
 share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
 share/purple/ca-certs/Verisign_RSA_Secure_Server_CA.pem
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/pidgin/*.schemas > /dev/null

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.15 2008/12/27 20:48:00 steven Exp $
---- configure.ac.orig	Sat Dec 20 19:38:16 2008
-+++ configure.ac	Sun Dec 21 23:49:41 2008
+$OpenBSD: patch-configure_ac,v 1.16 2009/03/05 06:23:04 steven Exp $
+--- configure.ac.orig	Sun Mar  1 21:29:19 2009
++++ configure.ac	Mon Mar  2 02:09:11 2009
 @@ -671,6 +671,7 @@ if test "x$enable_consoleui" = "xyes"; then
  		# ncursesw was not found. Look for plain old ncurses
  		enable_consoleui=yes
@@ -132,7 +132,7 @@ $OpenBSD: patch-configure_ac,v 1.15 2008/12/27 20:48:00 steven Exp $
  if test "x$enable_gnutls" != "xno"; then
  	enable_gnutls="no"
  	prefix=`eval echo $prefix`
-@@ -1984,17 +2078,31 @@ fi
+@@ -2000,17 +2094,31 @@ fi
  
  AM_CONDITIONAL(USE_NSS, test "x$enable_nss" = "xyes")
  
