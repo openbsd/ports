@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/27 20:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/05 07:42:53 ajacoutot Exp $
 
 COMMENT=	clone of the classic Frog Bog game
 
-DISTNAME=	batrachians-0.1.1
+DISTNAME=	batrachians-0.1.2
 CATEGORIES=	games
 
 HOMEPAGE=	http://perso.b2b2c.ca/sarrazip/dev/batrachians.html
