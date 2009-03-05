@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2009/02/11 15:47:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2009/03/05 19:41:14 landry Exp $
 
 COMMENT=		base icon theme for GNOME
 
 GNOME_PROJECT=		gnome-icon-theme
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		x11
 
 # GPLv2
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		x11/gnome
 
 BUILD_DEPENDS=		:gettext-*:devel/gettext \
-			:icon-naming-utils->=0.8.7:x11/icon-naming-utils
+			:icon-naming-utils->=0.8.90:x11/icon-naming-utils
 
 USE_X11=		Yes
 USE_LIBTOOL=		No
