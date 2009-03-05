@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2009/02/15 11:43:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2009/03/05 08:15:47 ajacoutot Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -71,6 +71,7 @@
      SUBDIR += mono-gnome
      SUBDIR += mousetweaks
      SUBDIR += nautilus
+     SUBDIR += nautilus-sendto
      SUBDIR += orca
      SUBDIR += panel
      SUBDIR += pessulus
