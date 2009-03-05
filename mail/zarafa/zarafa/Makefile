@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/05 08:01:26 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-php=	MAPI extensions for php5
 
-V=		6.20.1
+V=		6.20.2
 DISTNAME=	zarafa-${V}
 
 PKGNAME-main=	${DISTNAME}
@@ -27,7 +27,8 @@ MULTI_PACKAGES=	-main -php
 MODULES=	devel/gettext
 
 BUILD_DEPENDS=	::www/php5/core \
-		::textproc/xmlto
+		::textproc/xmlto \
+		::net/curl
 
 WANTLIB-main=	asn1 c com_err crypto gssapi krb5 m pthread sasl2 ssl \
 		stdc++ z
@@ -86,6 +87,7 @@ pre-configure:
 			perl -pi -e 's/\r\n/\n/;' $$i; done
 	for i in ${SUB_SCRIPTS}; do \
 		${SUBST_CMD} ${WRKSRC}/installer/userscripts/$$i; done
+	${SUBST_CMD} ${WRKSRC}/php-ext/Makefile.in
 	perl -pi -e 's,/usr/share/zarafa,${PREFIX}/share/examples/zarafa,g;' \
 		-e 's,/etc/zarafa,${SYSCONFDIR}/zarafa,g;' \
 		-e 's,/usr/bin,${PREFIX}/bin,g;' \
@@ -96,9 +98,9 @@ pre-configure:
 post-install:
 	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/zarafa/README.OpenBSD
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/zarafa
-	${INSTALL_DATA_DIR} ${DESTDIR}/var/www/conf/php5.sample
+	${INSTALL_DATA_DIR} ${DESTDIR}/${PREFIX-php}/conf/php5.sample
 	echo "; Enable Zarafa mapi extension module\nextension=mapi.so" \
-		> ${WRKINST}/var/www/conf/php5.sample/${MODULE_NAME}.ini
+		> ${WRKINST}/${PREFIX-php}/conf/php5.sample/${MODULE_NAME}.ini
 	mv ${PREFIX}/share/doc/zarafa/zarafa.schema \
 		${PREFIX}/share/examples/zarafa/
 
