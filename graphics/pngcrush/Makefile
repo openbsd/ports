@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2009/01/14 13:41:41 giovanni Exp $
+# $OpenBSD: Makefile,v 1.32 2009/03/05 16:12:27 naddy Exp $
 # $FreeBSD: Makefile,v 1.1 1999/12/22 14:53:53 jedgar Exp $
 
 COMMENT=		optimizer for PNG files
 
-DISTNAME=		pngcrush-1.6.13
+DISTNAME=		pngcrush-1.6.15
 CATEGORIES=		graphics
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pmt/}
