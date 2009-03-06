@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/11/21 18:47:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2009/03/06 13:53:19 ajacoutot Exp $
 %%SHARED%%
 include/libgnomeui-2.0/
 include/libgnomeui-2.0/gnome.h
@@ -182,6 +182,9 @@ share/locale/ar/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/as/
 share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libgnomeui-2.0.mo
@@ -264,6 +267,9 @@ share/locale/ko/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/la/
+share/locale/la/LC_MESSAGES/
+share/locale/la/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/li/
 share/locale/li/LC_MESSAGES/
 share/locale/li/LC_MESSAGES/libgnomeui-2.0.mo
@@ -357,6 +363,9 @@ share/locale/tt/
 share/locale/tt/LC_MESSAGES/
 share/locale/tt/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/uk/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/uz@cyrillic/
+share/locale/uz@cyrillic/LC_MESSAGES/
+share/locale/uz@cyrillic/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/vi/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
