@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2005/12/28 13:43:07 jakemsr Exp $
---- configure.orig	Mon Nov 29 19:23:44 2004
-+++ configure	Fri Feb 11 01:22:37 2005
-@@ -20320,13 +20331,13 @@ fi
+$OpenBSD: patch-configure,v 1.5 2009/03/06 20:04:56 jasper Exp $
+--- configure.orig	Tue Nov 30 04:23:44 2004
++++ configure	Mon Mar  2 21:59:06 2009
+@@ -20320,13 +20320,13 @@ fi
  
  
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.4 2005/12/28 13:43:07 jakemsr Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -20385,17 +20396,17 @@ fi
+@@ -20385,17 +20385,17 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
  if test $ac_cv_lib_pthread_pthread_create = yes; then
@@ -42,7 +42,7 @@ $OpenBSD: patch-configure,v 1.4 2005/12/28 13:43:07 jakemsr Exp $
  
  
  
-@@ -20972,7 +20983,7 @@ fi
+@@ -20972,7 +20972,7 @@ fi
  
  
  for ac_header in fcntl.h sys/time.h unistd.h linux/videodev.h sys/soundcard.h \
