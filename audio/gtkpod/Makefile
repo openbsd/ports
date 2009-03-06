@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2008/10/13 14:55:14 martynas Exp $
+# $OpenBSD: Makefile,v 1.30 2009/03/06 20:44:24 ckuethe Exp $
 
 COMMENT=	GTK+2 program to synchronize an Apple iPod
-DISTNAME=	gtkpod-0.99.12
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	gtkpod-0.99.14
+PKGNAME=	${DISTNAME}
 CATEGORIES=	audio x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 
@@ -24,20 +24,18 @@ LIB_DEPENDS=	id3tag.>=2::audio/libid3tag \
 		gpod.>=600.0::audio/libgpod \
 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		glade-2.0.>=0.4::devel/libglade2 \
-		art_lgpl_2.>=5::graphics/libart \
 		curl.::net/curl \
 		gnomevfs-2::x11/gnome/vfs2 \
 		gconf-2.>=5::devel/gconf2 \
-		gnomecanvas-2::x11/gnome/libgnomecanvas \
 		ORBit-2.>=2::devel/ORBit2 \
 		mp4v2.>=3::multimedia/libmp4v2
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
 		Xcomposite Xdamage c cairo expat fontconfig freetype m \
-		pthread z gailutil \
+		pthread z \
 		xml2 glitz png glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-		pango-1.0 pangoft2-1.0 pangocairo-1.0 atk-1.0 art_lgpl_2 \
-		pixman-1
+		pango-1.0 pangoft2-1.0 pangocairo-1.0 atk-1.0 \
+		pixman-1 dbus-1 gio-2.0
 
 MODULES=	devel/gettext textproc/intltool
 

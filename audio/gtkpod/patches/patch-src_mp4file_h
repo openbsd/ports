@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_mp4file_h,v 1.3 2007/03/17 21:55:40 ckuethe Exp $
---- src/mp4file.h.orig	Thu Jun 22 08:24:35 2006
-+++ src/mp4file.h	Thu Mar 15 08:42:22 2007
+$OpenBSD: patch-src_mp4file_h,v 1.4 2009/03/06 20:44:24 ckuethe Exp $
+--- src/mp4file.h.orig	Sat Jan 17 22:52:32 2009
++++ src/mp4file.h	Thu Feb 26 23:12:48 2009
 @@ -35,4 +35,6 @@
  gboolean mp4_write_file_info (gchar *filename, Track *track);
  Track *mp4_get_file_info (gchar *name);

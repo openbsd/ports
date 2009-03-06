@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_file_convert_c,v 1.1 2007/11/22 22:46:42 ckuethe Exp $
---- src/file_convert.c.orig	Sun Nov 18 11:25:06 2007
-+++ src/file_convert.c	Sun Nov 18 11:34:35 2007
+$OpenBSD: patch-src_file_convert_c,v 1.2 2009/03/06 20:44:24 ckuethe Exp $
+--- src/file_convert.c.orig	Sat Jan 17 22:52:32 2009
++++ src/file_convert.c	Thu Feb 26 23:27:50 2009
 @@ -33,6 +33,10 @@
  #   include <config.h>
  #endif
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_file_convert_c,v 1.1 2007/11/22 22:46:42 ckuethe Exp $
  #include "display_itdb.h"
  #include "file_convert.h"
  #include "info.h"
-@@ -43,9 +47,6 @@
+@@ -44,9 +48,6 @@
  #include <glib/gstdio.h>
  #include <signal.h>
  #include <string.h>
@@ -22,16 +22,7 @@ $OpenBSD: patch-src_file_convert_c,v 1.1 2007/11/22 22:46:42 ckuethe Exp $
  #include <unistd.h>
  
  #undef DEBUG_CONV
-@@ -216,7 +217,7 @@ struct _ConvTrack
-     gchar *fname_root;      /* filename root of converted file          */
-     gchar *fname_extension; /* filename extension of converted file     */
-     GPid  pid;              /* PID of child doing the conversion        */
--    gint  stderr;           /* stderr of child doing the conversion     */
-+    gint  mystderr;         /* stderr of child doing the conversion     */
-     Track *track;           /* for reference, don't access inside threads! */
-     iTunesDB *itdb;         /* for reference, don't access inside threads! */
-     gint  threadnum;        /* number of thread working on this track   */
-@@ -624,6 +625,8 @@ static void conversion_prefs_changed (Conversion *conv
+@@ -645,6 +646,8 @@ static void conversion_prefs_changed (Conversion *conv
      gboolean background_transfer;
      gdouble maxsize;
      GList *gl;
@@ -40,7 +31,7 @@ $OpenBSD: patch-src_file_convert_c,v 1.1 2007/11/22 22:46:42 ckuethe Exp $
  
      g_return_if_fail (conv);
  
-@@ -645,13 +648,16 @@ static void conversion_prefs_changed (Conversion *conv
+@@ -666,13 +669,16 @@ static void conversion_prefs_changed (Conversion *conv
      }
  
      conv->max_threads_num = prefs_get_int (FILE_CONVERT_MAX_THREADS_NUM);
@@ -61,21 +52,3 @@ $OpenBSD: patch-src_file_convert_c,v 1.1 2007/11/22 22:46:42 ckuethe Exp $
  	}
      }
  
-@@ -2296,7 +2302,7 @@ static gboolean conversion_convert_track (Conversion *
- 				  &ctr->pid,    /* child's PID    */
- 				  NULL,         /* child's stdin  */
- 				  NULL,         /* child's stdout */
--				  &ctr->stderr, /* child's stderr */
-+				  &ctr->mystderr, /* child's stderr */
- 				  &error);
- 
- 	    child_pid = ctr->pid;
-@@ -2322,7 +2328,7 @@ static gboolean conversion_convert_track (Conversion *
- 		gint status;
- 
- 		/* set up i/o channel to main thread */
--		ctr->gio_channel = g_io_channel_unix_new (ctr->stderr);
-+		ctr->gio_channel = g_io_channel_unix_new (ctr->mystderr);
- 		g_io_channel_set_flags (ctr->gio_channel,
- 					G_IO_FLAG_NONBLOCK, NULL);
- 		g_io_channel_set_close_on_unref (ctr->gio_channel, TRUE);
