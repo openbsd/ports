@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2009/03/04 20:10:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2009/03/06 10:42:48 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
@@ -53,13 +53,15 @@ BUILD_DEPENDS=		::devel/bison \
 			::misc/shared-mime-info
 RUN_DEPENDS=		::textproc/rarian \
 			::x11/hicolor-icon-theme \
-			::x11/gnome/icon-theme
+			::x11/gnome/icon-theme \
+			::multimedia/gstreamer-0.10/plugins-good # audio-inline plugin
 LIB_DEPENDS=		camel-1.2,camel-provider-1.2,ebackend-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2,egroupwise-1.2,exchange-storage-1.2,gdata-1.2,gdata-google-1.2:evolution-data-server->=2.24.3:databases/evolution-data-server \
 			lber.>=7,ldap.>=7::databases/openldap \
 			notify.>=2::devel/libnotify \
 			soup-2.4::devel/libsoup \
 			nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss \
-			gtkhtml-3.14.>=1.0,gtkhtml-editor::www/gtkhtml3
+			gtkhtml-3.14.>=1.0,gtkhtml-editor::www/gtkhtml3 \
+			gstreamer-0.10::multimedia/gstreamer-0.10/core
 
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
@@ -73,7 +75,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-smime=yes \
 			--enable-default-binary \
 			--enable-exchange \
-			--enable-plugins=base \
+			--enable-plugins=all \
 			--disable-mono \
 			--with-openldap="${LOCALBASE}" \
 			--with-sub-version=" OpenBSD/Ports" \
