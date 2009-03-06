@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2009/01/31 23:05:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2009/03/06 20:42:59 ckuethe Exp $
 
 COMMENT=	library to access the contents of an iPod
-DISTNAME=	libgpod-0.6.0
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	gpod	600.0
+DISTNAME=	libgpod-0.7.0
+PKGNAME=	${DISTNAME}
+SHARED_LIBS=	gpod	700.0
 CATEGORIES=	audio
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 
@@ -24,8 +24,9 @@ MODULES=	devel/gettext \
 		textproc/intltool
 
 LIB_DEPENDS=	gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
-		gdk_pixbuf-2.0::x11/gtk+2
-WANTLIB=	m pcre
+		gdk_pixbuf-2.0::x11/gtk+2 \
+		xml2.>=9::textproc/libxml
+WANTLIB=	m z pcre
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-hal
