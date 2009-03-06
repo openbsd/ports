@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/12 05:26:04 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/06 17:02:15 sthen Exp $
 
 COMMENT=	DSP library for telephony
 
-DISTNAME=	spandsp-0.0.5pre4
+DISTNAME=	spandsp-0.0.6pre4
 CATEGORIES=	telephony
 MASTER_SITES=	${HOMEPAGE}downloads/spandsp/
 EXTRACT_SUFX=	.tgz
 
-SHARED_LIBS=	spandsp	2.0
-
-WRKDIST=	${WRKDIR}/spandsp-0.0.5
+SHARED_LIBS=	spandsp	3.0
 
 HOMEPAGE=	http://www.soft-switch.org/
 
@@ -21,6 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	jpeg m z
+
+WRKDIST=	${WRKDIR}/spandsp-0.0.6
 
 LIB_DEPENDS+=	tiff::graphics/tiff
 
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+= --enable-mmx
 .endif
 
 .if ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ARGS+= --enable-sse
+CONFIGURE_ARGS+= --enable-sse --enable-sse2
 .endif"
 
 # Test suite included, but requires many build dependencies
