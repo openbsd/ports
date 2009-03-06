@@ -3,13 +3,6 @@ To make dhclient play nice with adsuck, patching dhclient-script is necessary:
  cd /sbin
  patch -p0 < ${LOCALBASE}/share/adsuck/dhclient-script.diff
 
-Be sure to put:
-
- adsuck_flags="-c /var/adsuck -f /files/resolv.conf /files/hosts.small"
-
-in ${SYSCONFDIR}/rc.conf.local.
-
-Also, be sure to set ${SYSCONFDIR}/resolv.conf to contain only one
-nameserver line:
-
-  nameserver 127.0.0.1
+dhclient-script will then, providing adsuck exists and adsuck_flags != "NO"
+will avoid /etc/resolv.conf and write instead /var/adsuck/files/resolv.conf,
+and give adsuck a HUP to reload that file.
