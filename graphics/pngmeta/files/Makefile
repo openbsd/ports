@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/10/03 14:36:58 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/06 15:08:53 naddy Exp $
 
 PROG=	pngmeta
 SRCS=	pngmeta.c
 
 CFLAGS+=-I${LOCALBASE}/include/libpng -DVERSION=1.11
 DPADD=	${LIBM}
-LDADD=	-L${LOCALBASE}/lib -lm -lpng -lz
+LDADD=	-L${LOCALBASE}/lib -lpng -lz -lm
 
 MAN=	pngmeta.1	
 
