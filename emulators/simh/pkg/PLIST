@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2008/11/04 22:13:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.26 2009/03/06 10:33:23 form Exp $
 @bin bin/simh-altair
 @bin bin/simh-altairz80
 @bin bin/simh-eclipse
@@ -35,6 +35,7 @@ share/doc/simh/0readme_ethernet.txt
 share/doc/simh/altair.txt
 share/doc/simh/eclipse.txt
 share/doc/simh/haltguide.txt
+share/doc/simh/hp2100_bugfixes.txt
 share/doc/simh/hp2100_diag.txt
 share/doc/simh/i7094_bug_history.txt
 share/doc/simh/id_diag.txt
