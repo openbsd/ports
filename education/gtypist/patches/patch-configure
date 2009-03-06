@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2009/02/04 21:04:42 naddy Exp $
---- configure.orig	Tue Feb  3 17:01:12 2009
-+++ configure	Wed Feb  4 21:59:53 2009
-@@ -11101,7 +11101,7 @@ for ac_last_try in false false false false false :; do
+$OpenBSD: patch-configure,v 1.6 2009/03/06 15:49:34 naddy Exp $
+--- configure.orig	Wed Feb 18 17:19:47 2009
++++ configure	Thu Feb 19 03:10:53 2009
+@@ -11028,7 +11028,7 @@ for ac_last_try in false false false false false :; do
  host_vendor!$host_vendor$ac_delim
  host_os!$host_os$ac_delim
  GLIBC21!$GLIBC21$ac_delim
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.5 2009/02/04 21:04:42 naddy Exp $
  LTLIBICONV!$LTLIBICONV$ac_delim
  INTLBISON!$INTLBISON$ac_delim
  BUILD_INCLUDED_LIBINTL!$BUILD_INCLUDED_LIBINTL$ac_delim
-@@ -11113,7 +11113,7 @@ GENCAT!$GENCAT$ac_delim
+@@ -11040,7 +11040,7 @@ GENCAT!$GENCAT$ac_delim
  INTLOBJS!$INTLOBJS$ac_delim
  INTL_LIBTOOL_SUFFIX_PREFIX!$INTL_LIBTOOL_SUFFIX_PREFIX$ac_delim
  INTLLIBS!$INTLLIBS$ac_delim
