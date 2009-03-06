@@ -1,0 +1,7 @@
+To play nice with dhclient, read ${TRUEPREFIX}/share/doc/adsuck/README.dhclient
+To have adsuck start at boot time, put something
+like this in /etc/rc.local:
+
+ if [ "$adsuck_flags" != "NO" -a -x /usr/local/sbin/adsuck ]; then
+	echo -n ' adsuck'; /usr/local/sbin/adsuck $adsuck_flags
+ fi

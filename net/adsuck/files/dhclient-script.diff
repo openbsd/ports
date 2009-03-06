@@ -1,0 +1,75 @@
+--- dhclient-script.orig	Thu Feb 26 07:19:14 2009
++++ dhclient-script	Thu Mar  5 22:37:58 2009
+@@ -100,14 +100,65 @@ add_new_resolv_conf() {
+ 
+ 	rm -f /etc/resolv.conf.std
+ 
+-	if [ -n "$new_domain_name" ]; then
+-		echo "search $new_domain_name" >>/etc/resolv.conf.std
+-	fi
+-
+ 	if [ -n "$new_domain_name_servers" ]; then
+-		for nameserver in $new_domain_name_servers; do
+-			echo "nameserver $nameserver" >>/etc/resolv.conf.std
+-		done
++		named_dir=/var/named/etc
++		. /etc/rc.conf
++		if [ "$named_flags" != "${named_flags#*named-fwd}" ]; then
++			if [ ! "$(ps awwx | grep "named -c /etc/named-fwd.conf")" ]; then
++				pkill named
++				# sometimes named takes a little bit to exit
++				while pgrep named > /dev/null 2>&1; do sleep .5; done
++				NEEDNAMED=1
++			fi
++			ns=""
++			for n in $new_domain_name_servers; do
++				ns="$ns $n;"
++			done
++			sed 's/%FORWARDERS%/'"$ns"'/g' \
++				${named_dir}/named-fwd.template > \
++				${named_dir}/named-fwd.conf
++			if [ ! -f /etc/resolv.conf.std ] || \
++			   [ ! "$(egrep "nameserver (::1|127.0.0.1)" \
++				/etc/resolv.conf.std)" ]; then
++				echo nameserver ::1 >> /etc/resolv.conf.std
++			fi
++			if [ NEEDNAMED -eq 1 ]; then
++				/usr/sbin/named -c /etc/named-fwd.conf
++			else
++				rndc reconfig
++			fi
++		else
++			if [ "$adsuck_flags" != "NO" -a -x /usr/local/sbin/adsuck ]; then
++				adsuck_resconf="/var/adsuck/files/resolv.conf"
++				{
++				grep -v nameserver $adsuck_resconf
++				for nameserver in $new_domain_name_servers; do
++					echo "nameserver $nameserver"
++				done
++				} > ${adsuck_resconf}.tmp
++				mv ${adsuck_resconf}.tmp $adsuck_resconf
++				if pgrep adsuck > /dev/null; then
++					pkill -HUP adsuck
++				else
++					if pgrep syslogd > /dev/null; then
++						/usr/local/sbin/adsuck $adsuck_flags
++					fi
++				fi
++			else
++			    {
++				if [ -n "$new_domain_name" ]; then
++					echo "search $new_domain_name" 
++				else
++					egrep "^(search|domain)" /etc/resolv.conf
++				fi
++				egrep "^lookup" /etc/resolv.conf 
++			    } >> /etc/resolv.conf.std
++
++				for nameserver in $new_domain_name_servers; do
++					echo "nameserver $nameserver" >>/etc/resolv.conf.std
++				done
++			fi
++		fi
+ 	fi
+ 
+ 	if [ -f /etc/resolv.conf.std ]; then
