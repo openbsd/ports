@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2008/06/15 00:04:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2009/03/06 21:24:52 jasper Exp $
 
 COMMENT-main=	gtk+2 media player based on XMMS
 COMMENT-mp3=	MP3 input plugin for bmp
 COMMENT-vorbis=	Ogg Vorbis input plugin for bmp
 V=		0.9.7
 DISTNAME=	bmp-$V
-PKGNAME-main=	bmp-$Vp13
-PKGNAME-mp3=	bmp-mp3-$Vp12
-PKGNAME-vorbis=	bmp-vorbis-$Vp12
+PKGNAME-main=	bmp-$Vp14
+PKGNAME-mp3=	bmp-mp3-$Vp13
+PKGNAME-vorbis=	bmp-vorbis-$Vp13
 SHARED_LIBS +=	beep                 2.0      # .2.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beepmp/}
@@ -31,7 +31,7 @@ MODULES=	devel/gettext
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
-		freetype glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
+		freetype gio-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png z
 
 LIB_DEPENDS=	gdk_pixbuf-2.0.>=400.3,gdk-x11-2.0.>=400.3,gtk-x11-2.0.>=0.5::x11/gtk+2 \
@@ -73,7 +73,7 @@ LIB_DEPENDS-mp3=${LIB_DEPENDS} \
 WANTLIB-vorbis=	${WANTLIB} ogg
 
 RUN_DEPENDS-vorbis=	::${BUILD_PKGPATH}
-WANTLIB-main=	${WANTLIB} ICE SM pthread audiofile c
+WANTLIB-main=	${WANTLIB} ICE SM pthread audiofile c sndio
 
 WRKDIST=	${WRKDIR}/bmp-0.9.7
 

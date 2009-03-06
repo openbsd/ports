@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2008/08/21 14:11:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2009/03/06 21:24:52 jasper Exp $
 # Uses pthreads
 
 COMMENT=		Music tracking tool for X11
 
 VERSION=		0.6.6
 DISTNAME=		soundtracker-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		audio
 HOMEPAGE=		http://www.soundtracker.org/
 
@@ -44,6 +44,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if ${FLAVOR:L:Mesd}
 LIB_DEPENDS+=		esd.>=2::audio/esound
+WANTLIB += sndio
 .else
 CONFIGURE_ARGS+=	--disable-esd
 .endif
