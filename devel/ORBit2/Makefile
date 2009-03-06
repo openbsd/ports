@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2008/11/16 21:41:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2009/03/06 09:52:17 jasper Exp $
 
 COMMENT=		high-performance CORBA Object Request Broker
 
 GNOME_PROJECT=		ORBit2
-GNOME_VERSION=		2.14.16
+GNOME_VERSION=		2.14.17
 SHARED_LIBS +=	ORBit-2              3.0      # .1.0
 SHARED_LIBS +=	ORBitCosNaming-2     3.0      # .1.0
 SHARED_LIBS +=	ORBit-imodule-2      2.1      # .0.0
