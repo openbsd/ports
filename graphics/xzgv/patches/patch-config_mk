@@ -1,38 +1,28 @@
-$OpenBSD: patch-config_mk,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
---- config.mk.orig	Mon Jan  8 05:57:44 2001
-+++ config.mk	Sun May 22 13:21:39 2005
-@@ -6,8 +6,6 @@
+$OpenBSD: patch-config_mk,v 1.2 2009/03/06 08:54:22 jasper Exp $
+--- config.mk.orig	Sun Aug 12 12:14:42 2007
++++ config.mk	Wed Oct 29 14:46:43 2008
+@@ -6,8 +6,8 @@
  # Set the C compiler to use, and options for it.
  # This is likely to be what you'll want for most systems:
  #
 -CC=gcc
 -CFLAGS=-O2 -Wall
++#CC=gcc
++#CFLAGS=-O2 -Wall
  
  # Set the awk interpreter to use for a script used while compiling.
  # (This should be a `new' awk, such as gawk or mawk.)
-@@ -27,7 +25,7 @@ AWK=awk
- # On non-x86-based machines (e.g. Alpha, Sparc, PPC), you should
- # comment it out.
- #
--CFLAGS+=-DINTERP_MMX
-+#CFLAGS+=-DINTERP_MMX
- 
- # Set rendering backend to use. Currently only Imlib 1.x is properly
- # supported, so leave this alone. :-)
-@@ -45,7 +43,6 @@ BACKEND=IMLIB1
+@@ -24,10 +24,10 @@ AWK=awk
  # MANDIR to directory for man page.
  # Usually it will be simpler to just set PREFIX.
  #
 -PREFIX=/usr/local
++#PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
+-INFODIR=$(PREFIX)/share/info
+-MANDIR=$(PREFIX)/share/man/man1
++INFODIR=$(PREFIX)/info
++MANDIR=$(PREFIX)/man/man1
  
- # In theory it would be nice to put the info file and man page under
- # /usr/local/share. However, it's not clear if this is widely
-@@ -90,3 +87,8 @@ MANDIR=$(PREFIX)$(SHARE_INFIX)/man/man1
- # doc/Makefile isn't as smart about that as it should be. :-))
- #
- USE_A4_DEF=-t @afourpaper
-+
-+# -------------------- Adding missing include paths ---------------
-+
-+CFLAGS+=-I${LOCALBASE}/include
-+CFLAGS+=-I${LOCALBASE}/include/libpng
+ # -------------------- Miscellaneous options -----------------------
+ 

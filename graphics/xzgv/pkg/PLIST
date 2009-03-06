@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
-bin/xzgv
+@comment $OpenBSD: PLIST,v 1.2 2009/03/06 08:54:22 jasper Exp $
+@bin bin/xzgv
 @info info/xzgv.info
 @man man/man1/xzgv.1
