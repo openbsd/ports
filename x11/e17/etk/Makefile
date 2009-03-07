@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2007/12/19 20:09:36 laurent Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/07 13:54:21 jasper Exp $
 
 COMMENT=	toolkit based on the EFL
 DISTNAME=	etk-20071211
-PKGNAME=        ${DISTNAME}p1
+PKGNAME=        ${DISTNAME}p2
 SHARED_LIBS +=  etk                 0.0          # .1.0
 
 
@@ -14,9 +14,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext
 
-WANTLIB=	SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xinerama Xp Xrandr Xrender Xss c crypto curl eet evas \
-		expat fontconfig freetype idn jpeg m pthread ssl usbhid z
+WANTLIB += SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xinerama Xp Xrandr Xrender Xss c crypto curl eet evas
+WANTLIB += expat fontconfig freetype idn jpeg m pthread sndio
+WANTLIB += ssl usbhid z
 
 LIB_DEPENDS=		ecore,ecore_evas,ecore_file,ecore_job,ecore_txt,ecore_x,ecore_imf,ecore_imf_evas::x11/e17/ecore \
 			embryo::x11/e17/embryo \
