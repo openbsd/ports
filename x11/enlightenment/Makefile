@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2008/01/04 17:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2009/03/07 14:23:24 jasper Exp $
 
 COMMENT=	themed window manager
 
 DISTNAME=	e16-0.16.8.10
-PKGNAME=	enlightenment-0.16.8.10
+PKGNAME=	enlightenment-0.16.8.10p0
 DOCS=		e16-docs-0.16.8.0.1
 THEMES=		e16-themes-0.16.8.0.1
 
@@ -19,9 +19,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes \
-		Xft Xinerama Xrandr Xrender Xxf86vm audiofile c expat \
-		fontconfig freetype m z
+WANTLIB += ICE SM X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xft Xinerama Xrandr Xrender Xxf86vm audiofile c expat
+WANTLIB += fontconfig freetype m sndio z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
