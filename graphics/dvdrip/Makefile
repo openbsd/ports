@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2007/07/30 10:17:00 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2009/03/07 10:40:30 stsp Exp $
 
 COMMENT=	full featured DVD copy program
 
 VERSION=	0.98.6
 DISTNAME=	dvdrip-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics audio multimedia perl5
 
 HOMEPAGE=	http://www.exit1.org/dvdrip/

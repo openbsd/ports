@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/07/30 10:17:00 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/03/07 10:40:30 stsp Exp $
 bin/dvdrip
 bin/dvdrip-exec
 bin/dvdrip-master
@@ -94,8 +94,8 @@ ${P5SITE}/Video/DVDRip/splash.it.png
 ${P5SITE}/Video/DVDRip/splash.sr.png
 ${P5SITE}/Video/DVDRip/splash.sr@Latn.png
 ${P5SITE}/Video/DVDRip/translators.txt
-@man man/man1/dvdrip-progress.1
-@man man/man1/dvdrip-splitpipe.1
+@comment @man man/man1/dvdrip-progress.1
+@comment @man man/man1/dvdrip-splitpipe.1
 @man man/man1/dvdrip.1
 @man man/man3p/Video::DVDRip.3p
 @man man/man3p/Video::DVDRip::CPAN::Scanf.3p
