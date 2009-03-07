@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/03 21:26:08 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/07 12:22:21 bernd Exp $
 bin/sequel
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -56,6 +56,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Dataset/Argumen
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Dataset/Pagination.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Dataset/PreparedStatementMethods.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Dataset/QueryBlockCopy.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Dataset/SQLStandardDateFormat.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Dataset/StoredProcedureMethods.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Dataset/StoredProcedures.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Dataset/UnnumberedArgumentMapper.html
@@ -116,6 +117,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Model.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Model/Associations/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Model/Associations.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Model/Associations/AssociationReflection.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Model/Associations/DatasetMethods.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Model/Associations/EagerLoading.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Model/Associations/ManyToManyAssociationReflection.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/Model/Associations/ManyToOneAssociationReflection.html
@@ -174,6 +176,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/Blob.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/BooleanExpression.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/BooleanMethods.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/CaseExpression.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/Cast.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/CastMethods.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/ColumnAll.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/ComplexExpression.html
@@ -184,7 +187,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/GenericExpr
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/Identifier.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/IdentifierMethods.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/InequalityMethods.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/IrregularFunction.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/JoinClause.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/JoinOnClause.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sequel/SQL/JoinUsingClause.html
@@ -234,6 +236,24 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/advanced_association
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/cheat_sheet_rdoc.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/dataset_filtering_rdoc.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/prepared_statements_rdoc.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/1_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/1_1_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/1_3_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/1_4_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/1_5_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/2_0_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/2_10_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/2_11_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/2_1_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/2_2_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/2_3_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/2_4_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/2_5_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/2_6_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/2_7_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/2_8_0_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/release_notes/2_9_0_txt.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/schema_rdoc.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/doc/sharding_rdoc.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/
@@ -269,6 +289,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/adapters
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/adapters/shared/progress_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/adapters/shared/sqlite_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/adapters/sqlite_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/adapters/utils/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/adapters/utils/date_format_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/adapters/utils/stored_procedures_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/adapters/utils/unsupported_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/connection_pool_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/core_ext_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/core_sql_rb.html
@@ -283,8 +307,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/dataset/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/dataset/query_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/dataset/schema_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/dataset/sql_rb.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/dataset/stored_procedures_rb.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/dataset/unsupported_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/dataset_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/deprecated_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sequel_core/exceptions_rb.html
@@ -409,7 +431,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DB2/Database/test_connect
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DB2/Dataset/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DB2/Dataset/cdesc-Dataset.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DB2/Dataset/fetch_rows-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DB2/Dataset/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DB2/cdesc-DB2.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DBI/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DBI/Database/
@@ -422,7 +443,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DBI/Database/execute_dui-
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DBI/Dataset/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DBI/Dataset/cdesc-Dataset.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DBI/Dataset/fetch_rows-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DBI/Dataset/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DBI/cdesc-DBI.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DataObjects/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/DataObjects/MySQL/
@@ -556,6 +576,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/PreparedStatement
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/QueryBlockCopy/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/QueryBlockCopy/cdesc-QueryBlockCopy.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/QueryBlockCopy/clone-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/SQLStandardDateFormat/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/SQLStandardDateFormat/cdesc-SQLStandardDateFormat.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/StoredProcedureMethods/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/StoredProcedureMethods/call-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/StoredProcedureMethods/cdesc-StoredProcedureMethods.yaml
@@ -585,6 +607,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/as-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/avg-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/call-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/case_expression_sql-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/cast_sql-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/cdesc-Dataset.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/clone-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/column_all_sql-i.yaml
@@ -701,6 +724,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/upcase_identifier
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/update-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/update_sql-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/where-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Dataset/with_sql-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Deprecation/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Deprecation/cdesc-Deprecation.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Error/
@@ -751,7 +775,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Firebird/Dataset/insert-i
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Firebird/Dataset/insert_returning_pk_sql-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Firebird/Dataset/insert_returning_sql-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Firebird/Dataset/insert_select-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Firebird/Dataset/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Firebird/Dataset/select_clause_order-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Firebird/Dataset/select_limit_sql-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Firebird/cdesc-Firebird.yaml
@@ -767,7 +790,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Informix/Database/query-i
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Informix/Dataset/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Informix/Dataset/cdesc-Dataset.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Informix/Dataset/fetch_rows-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Informix/Dataset/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Informix/cdesc-Informix.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/H2/
@@ -778,7 +800,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/H2/DatabaseMethods/d
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/H2/DatabaseMethods/serial_primary_key_options-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/H2/Dataset/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/H2/Dataset/cdesc-Dataset.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/H2/Dataset/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/H2/cdesc-H2.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/JavaLang/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/JavaLang/cdesc-JavaLang.yaml
@@ -791,7 +812,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/MySQL/DatabaseMethod
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/MySQL/Dataset/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/MySQL/Dataset/cdesc-Dataset.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/MySQL/Dataset/insert-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/MySQL/Dataset/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/MySQL/Dataset/replace-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/MySQL/cdesc-MySQL.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/Oracle/
@@ -812,7 +832,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/Postgres/DatabaseMet
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/Postgres/DatabaseMethods/extended-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/Postgres/Dataset/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/Postgres/Dataset/cdesc-Dataset.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/Postgres/Dataset/literal-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/Postgres/Dataset/literal_string-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/Postgres/Dataset/prepare-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/Postgres/cdesc-Postgres.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/JDBC/SQLite/
@@ -834,7 +854,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MSSQL/DatasetMethods/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MSSQL/DatasetMethods/cdesc-DatasetMethods.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MSSQL/DatasetMethods/complex_expression_sql-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MSSQL/DatasetMethods/full_text_search-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MSSQL/DatasetMethods/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MSSQL/DatasetMethods/multi_insert_sql-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MSSQL/DatasetMethods/nolock-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MSSQL/DatasetMethods/quoted_identifier-i.yaml
@@ -888,6 +907,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/Associations/Associ
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/Associations/AssociationReflection/select-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/Associations/AssociationReflection/set_reciprocal_to_self%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/Associations/AssociationReflection/setter_method-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/Associations/DatasetMethods/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/Associations/DatasetMethods/cdesc-DatasetMethods.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/Associations/EagerLoading/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/Associations/EagerLoading/cdesc-EagerLoading.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/Associations/EagerLoading/eager-i.yaml
@@ -1038,6 +1059,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/validates_acceptanc
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/validates_confirmation_of-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/validates_each-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/validates_format_of-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/validates_inclusion_of-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/validates_length_of-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/validates_not_string-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Model/validates_numericality_of-c.yaml
@@ -1076,11 +1098,11 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/Dataset/cdesc-Datas
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/Dataset/delete-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/Dataset/fetch_rows-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/Dataset/insert-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/Dataset/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/Dataset/prepare-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/Dataset/replace-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/Dataset/update-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/DatasetMethods/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/DatasetMethods/cast_sql-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/DatasetMethods/cdesc-DatasetMethods.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/DatasetMethods/complex_expression_sql-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/DatasetMethods/delete_sql-i.yaml
@@ -1089,7 +1111,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/DatasetMethods/havi
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/DatasetMethods/insert_default_values_sql-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/DatasetMethods/join_table-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/DatasetMethods/join_type_sql-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/DatasetMethods/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/DatasetMethods/multi_insert_sql-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/DatasetMethods/quoted_identifier-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/MySQL/DatasetMethods/replace_sql-i.yaml
@@ -1108,7 +1129,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/ODBC/Database/transaction
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/ODBC/Dataset/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/ODBC/Dataset/cdesc-Dataset.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/ODBC/Dataset/fetch_rows-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/ODBC/Dataset/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/ODBC/cdesc-ODBC.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/OpenBase/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/OpenBase/Database/
@@ -1120,7 +1140,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/OpenBase/Database/execute
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/OpenBase/Dataset/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/OpenBase/Dataset/cdesc-Dataset.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/OpenBase/Dataset/fetch_rows-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/OpenBase/Dataset/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/OpenBase/cdesc-OpenBase.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Oracle/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Oracle/Database/
@@ -1137,7 +1156,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Oracle/DatabaseMethods/ta
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Oracle/Dataset/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Oracle/Dataset/cdesc-Dataset.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Oracle/Dataset/fetch_rows-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Oracle/Dataset/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Oracle/DatasetMethods/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Oracle/DatasetMethods/cdesc-DatasetMethods.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Oracle/DatasetMethods/empty%3f-i.yaml
@@ -1172,7 +1190,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Postgres/Dataset/Prepared
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Postgres/Dataset/call-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Postgres/Dataset/cdesc-Dataset.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Postgres/Dataset/fetch_rows-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Postgres/Dataset/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Postgres/Dataset/prepare-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Postgres/Dataset/prepared_arg_placeholder-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/Postgres/cdesc-Postgres.yaml
@@ -1200,6 +1217,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/BitwiseMethods/cdesc-
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/Blob/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/Blob/cdesc-Blob.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/Blob/to_blob-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/Blob/to_sequel_blob-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/BooleanExpression/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/BooleanExpression/cdesc-BooleanExpression.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/BooleanExpression/from_value_pairs-c.yaml
@@ -1211,6 +1229,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/CaseExpression/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/CaseExpression/cdesc-CaseExpression.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/CaseExpression/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/CaseExpression/to_s-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/Cast/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/Cast/cdesc-Cast.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/Cast/new-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/Cast/to_s-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/CastMethods/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/CastMethods/cast-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/CastMethods/cast_as-i.yaml
@@ -1253,10 +1275,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/IdentifierMethods/cde
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/IdentifierMethods/identifier-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/InequalityMethods/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/InequalityMethods/cdesc-InequalityMethods.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/IrregularFunction/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/IrregularFunction/cdesc-IrregularFunction.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/IrregularFunction/new-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/IrregularFunction/to_s-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/JoinClause/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/JoinClause/cdesc-JoinClause.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQL/JoinClause/new-c.yaml
@@ -1353,7 +1371,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQLite/Dataset/call-i.yam
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQLite/Dataset/cdesc-Dataset.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQLite/Dataset/explain-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQLite/Dataset/fetch_rows-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQLite/Dataset/literal-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQLite/Dataset/prepare-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQLite/DatasetMethods/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sequel/SQLite/DatasetMethods/cdesc-DatasetMethods.yaml
@@ -1472,6 +1489,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/titleize-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/to_blob-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/to_date-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/to_datetime-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/to_sequel_blob-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/to_sequel_time-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/to_sql-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/String/to_time-i.yaml
@@ -1499,6 +1517,24 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/advanced_associations.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/cheat_sheet.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/dataset_filtering.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/prepared_statements.rdoc
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/1.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/1.1.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/1.3.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/1.4.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/1.5.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/2.0.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/2.1.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/2.10.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/2.11.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/2.2.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/2.3.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/2.4.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/2.5.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/2.6.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/2.7.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/2.8.0.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/release_notes/2.9.0.txt
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/schema.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/sharding.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
@@ -1536,6 +1572,10 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/adapters/shared/po
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/adapters/shared/progress.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/adapters/shared/sqlite.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/adapters/sqlite.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/adapters/utils/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/adapters/utils/date_format.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/adapters/utils/stored_procedures.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/adapters/utils/unsupported.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/connection_pool.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/core_ext.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/core_sql.rb
@@ -1551,8 +1591,6 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/dataset/prepared_s
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/dataset/query.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/dataset/schema.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/dataset/sql.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/dataset/stored_procedures.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/dataset/unsupported.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/deprecated.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/exceptions.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sequel_core/migration.rb

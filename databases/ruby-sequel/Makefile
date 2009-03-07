@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/03 21:26:02 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/07 12:22:21 bernd Exp $
 
 COMMENT =		lightweight ORM library for Ruby
 
-DISTNAME =		sequel-2.10.0
+DISTNAME =		sequel-2.11.0
 PKGNAME =		ruby-${DISTNAME}
 CATEGORIES =		databases
 
@@ -25,7 +25,8 @@ CONFIGURE_STYLE =	ruby gem
 PKG_ARCH =		*
 
 REGRESS_DEPENDS =	::devel/ruby-rake \
-			::databases/ruby-sqlite3
+			::databases/ruby-sqlite3 \
+			::devel/ruby-rspec
 
 do-regress:
 	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake spec spec_sqlite integration
