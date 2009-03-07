@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/02/18 11:09:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/03/07 10:55:15 landry Exp $
 %%SHARED%%
 @bin bin/geotifcp
 @bin bin/listgeo
@@ -15,6 +15,7 @@ include/geo_config.h
 include/geo_ctrans.inc
 include/geo_keyp.h
 include/geo_normalize.h
+include/geo_simpletags.h
 include/geo_tiffp.h
 include/geokeys.h
 include/geokeys.inc
@@ -45,6 +46,7 @@ share/epsg_csv/gcs.csv
 share/epsg_csv/gcs.override.csv
 share/epsg_csv/naming_system.csv
 share/epsg_csv/pcs.csv
+share/epsg_csv/pcs.override.csv
 share/epsg_csv/prime_meridian.csv
 share/epsg_csv/projop_wparm.csv
 share/epsg_csv/stateplane.csv

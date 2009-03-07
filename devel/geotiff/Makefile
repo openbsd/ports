@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/02/18 11:09:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/03/07 10:55:15 landry Exp $
 
 COMMENT=	GIS TIFF interchange library
 
-DISTNAME=	libgeotiff-1.2.3
-PKGNAME=	${DISTNAME}p2
-CATEGORIES=    	devel geo
+DISTNAME=	libgeotiff-1.2.5
+CATEGORIES=	devel geo
 SHARED_LIBS=	geotiff 1.2
 
 HOMEPAGE=	http://trac.osgeo.org/geotiff/
@@ -17,9 +16,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.remotesensing.org/pub/geotiff/libgeotiff/ \
-			http://proj.maptools.org/dl/
+MASTER_SITES=		ftp://ftp.remotesensing.org/geotiff/libgeotiff/ \
+			http://download.osgeo.org/geotiff/libgeotiff/
 
+NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV +=	CFLAGS="-I${LOCALBASE}/include -fPIC" \
 			LDFLAGS=-L${LOCALBASE}/lib \
