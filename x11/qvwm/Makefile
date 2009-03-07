@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2008/07/01 16:41:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/07 15:37:38 jasper Exp $
 
 COMMENT=	Windows 95/98/NT like window manager
 
 DISTNAME=	qvwm-1.1.8
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=     x11
 MASTER_SITES=	ftp://ftp.qvwm.org/pub/qvwm/
 
@@ -31,7 +31,7 @@ post-patch:
 .if ${FLAVOR:L:Mesound}
 LIB_DEPENDS+=	esd.>=2::audio/esound
 CONFIGURE_ARGS+= --with-esd-prefix=${LOCALBASE}
-WANTLIB+=	audiofile
+WANTLIB+=	audiofile sndio
 .else
 CONFIGURE_ARGS+= --without-esd
 .endif

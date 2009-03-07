@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2009/01/06 09:01:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2009/03/07 15:37:39 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	c++ cross-platform GUI toolkit
 
 DISTNAME=	wxWidgets-2.8.7
-PKGNAME=	wxWidgets-gtk2-2.8.7p1
+PKGNAME=	wxWidgets-gtk2-2.8.7p2
 SHARED_LIBS=	wx_base			1.0	\
 		wx_base_net		1.0	\
 		wx_base_odbc		1.0	\
@@ -51,11 +51,12 @@ LIB_DEPENDS=	mspack::archivers/libmspack \
 		iodbc::databases/iodbc \
 		esd::audio/esound
 
-WANTLIB=	SM Xau Xcursor Xcomposite Xdamage Xdmcp Xfixes Xi Xrandr X11 \
-		Xext Xinerama Xxf86vm Xrender GL GLU fontconfig freetype \
-		pthread c m stdc++ z expat ossaudio jpeg png tiff glitz \
-		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-		pango-1.0 pangoft2-1.0 pixman-1 atk-1.0
+WANTLIB += GL GLU SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
+WANTLIB += c expat fontconfig freetype gio-2.0 glib-2.0 glitz
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m ossaudio
+WANTLIB += pango-1.0 pangoft2-1.0 pixman-1 png pthread stdc++
+WANTLIB += tiff z
 
 AUTOCONF_VERSION=2.59
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \

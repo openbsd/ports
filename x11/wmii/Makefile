@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2008/07/11 08:37:56 mcbride Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/07 15:37:39 jasper Exp $
 
 COMMENT=	dynamic window manager
 
 DISTNAME=	wmii-3.6
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.suckless.org
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
-WANTLIB=	X11 c m
+WANTLIB += X11 Xext c m
 
 LIB_DEPENDS=	ixp.>=0.4::devel/libixp \
 		iconv.>=4.0::converters/libiconv

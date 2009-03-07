@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 20:04:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2009/03/07 15:37:38 jasper Exp $
 
 COMMENT=	terminal application that embeds Konsole for KDE
 
 DISTNAME=	quadkonsole-2.0
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	x11 x11/kde
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -13,8 +13,10 @@ PERMIT_PACKAGE_CDROM=  Yes
 PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
-WANTLIB=	ICE c Xrender stdc++ SM Xext pthread art_lgpl_2.>=5 util \
-		jpeg m X11 z png iconv idn
+
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam
+WANTLIB += iconv idn intl jpeg m png pthread rpcsvc stdc++ util
+WANTLIB += z
 
 MASTER_SITES=	http://nomis80.org/quadkonsole/
 

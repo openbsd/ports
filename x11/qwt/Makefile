@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/01/04 17:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/07 15:37:38 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Qt Widgets for Technical Applications
 DISTNAME=		qwt-5.0.2
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		qwt 5.0
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
@@ -20,15 +21,15 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MODULES=		x11/qt4
+MODULES=		devel/gettext \
+			x11/qt4
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
 
 MAKE_FLAGS=		LIBqwt_VERSION=${LIBqwt_VERSION}
 
-WANTLIB+=		ICE SM X11 Xcursor Xext Xfixes Xi Xinerama Xrandr
-WANTLIB+=		Xrender fontconfig freetype glib-2.0 gthread-2.0 iconv
-WANTLIB+=		intl m png z
+WANTLIB += ICE SM X11 Xext Xi Xinerama Xrandr Xrender fontconfig
+WANTLIB += freetype glib-2.0 gthread-2.0 m png z
 
 LIB_DEPENDS=		QtDesigner.>=7,QtGui.>=8,QtScript,QtXml.>=7::x11/qt4
 
