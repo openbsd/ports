@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/07/26 10:05:07 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/03/07 12:32:09 bernd Exp $
 bin/erubis
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -215,7 +215,6 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/erubis/tiny.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/setup.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/assert-text-equal.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/assert-text-equal.rbc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/users-guide/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/users-guide/Example.ejava
@@ -315,23 +314,18 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/users-guide/printenabled
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/users-guide/printenabled-example.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/users-guide/printstatement_example.result
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/users-guide/simplify_example.result
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/users-guide/stderr.log
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/users-guide/stdout_exmple.result
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/users-guide/stringbuffer_example.result
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/users-guide/tail_260.result
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/users-guide/tailnewline.rhtml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/users-guide/template1.rhtml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/users-guide/template2.rhtml
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/hoge.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test-engines.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test-engines.rbc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test-enhancers.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test-erubis.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test-erubis.rbc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test-main.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test-users-guide.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test-users-guide.rbc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test.rbc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/testutil.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/testutil.rbc
 lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec
