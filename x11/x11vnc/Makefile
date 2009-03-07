@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/02/15 12:02:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/03/07 12:43:45 sthen Exp $
 
 COMMENT =		VNC server for real X displays
 
 DISTNAME =		x11vnc-0.9.6
-PKGNAME =		${DISTNAME}p3
+PKGNAME =		${DISTNAME}p4
 CATEGORIES =		x11
 HOMEPAGE =		http://www.karlrunge.com/x11vnc/
 
@@ -25,7 +25,7 @@ RUN_DEPENDS =		::devel/desktop-file-utils \
 LIB_DEPENDS =		jpeg::graphics/jpeg
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIURE_SHARED} \
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-x --without-avahi
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
