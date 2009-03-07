@@ -1,6 +1,8 @@
-$OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
---- GetLive.pl.orig	Mon Nov 10 14:39:12 2008
-+++ GetLive.pl	Mon Nov 10 14:41:25 2008
+Diff from GetLive CVS to incorporate Hotmail site changes.
+
+$OpenBSD: patch-GetLive_pl,v 1.5 2009/03/07 15:22:51 merdely Exp $
+--- GetLive.pl.orig	Sat Jul  5 16:27:36 2008
++++ GetLive.pl	Fri Mar  6 23:56:19 2009
 @@ -65,11 +65,12 @@ my $Password                = "";
  my $Domain                  = 'hotmail.com';
  my $CurlCommand             = 'curl -k';
@@ -57,8 +59,8 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
      Display("Delete must be 'No' when MoveToFolder is also specified in the configuration file.\n",stderr=>1);
      DisplayUsageAndExit(); 
    }
-+  if ($Mode !~ m/^(200809|200810)$/i) {
-+    Display("Mode must be oneof 200809 or 200810 as argument in the configuration file.\n",stderr=>1);
++  if ($Mode !~ m/^(200809|200810|200902)$/i) {
++    Display("Mode must be oneof 200809,200810,200902 as argument in the configuration file.\n",stderr=>1);
 +    DisplayUsageAndExit(); 
 +  }
  }
@@ -73,7 +75,38 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
  
    # We expect here a number of functions now (aug 2007) to be hidden in a javascript
    # that is loaded separately. Let's load and append.
-@@ -960,7 +973,7 @@ sub GetMessagesFromFolder($) {
+@@ -690,7 +703,9 @@ REENTRY_DARREN_QUIRK:
+ 
+   Display("LoginUrl 2 : '$LoginUrl'.\n",MinVerbosity => 10);
+   # Following the redirect : Third step of login.
+-	Display("Following redirect.\n",MinVerbosity => 2);
++  Display("Following redirect.\n",MinVerbosity => 2);
++
++LABEL_20090214:
+   ($LoginPageAsString,$GetPageUrl) = GetPage(Url => $LoginUrl,FollowForward => 1);
+ 
+   $LoginUrl = $GetPageUrl;
+@@ -716,6 +731,19 @@ REENTRY_DARREN_QUIRK:
+   } elsif ($LoginPageAsString =~ m/MSNPlatform\/browsercompat.js/) {
+     $LoggedIn = 1;
+   }
++
++  # Since 14/2/2009 we are not logged in anymore now ...
++
++  my $Tried20090214 = 0;
++  if (!$LoggedIn && !$Tried20090214) {
++    if ($LoginPageAsString !~ m/src=\"([^\"]*)\"/) {
++      die "Could not log in. Maybe structure has changed or was not foreseen.";
++    }
++    $LoginUrl = HtmlUnescape($1);
++    Display("Following link '$LoginUrl'.\n",MinVerbosity=>2);
++    $Tried20090214 = 1;
++    goto LABEL_20090214
++  }
+  
+   die "Could not log in. Maybe structure has changes or was not foreseen." unless $LoggedIn;
+     
+@@ -960,7 +988,7 @@ sub GetMessagesFromFolder($) {
  	    		      "au=$AuthUser&".
                  "ptid=0";
        my $PostData = "";
@@ -82,7 +115,7 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
          $PostData = "cn=Microsoft.Msn.Hotmail.Ui.Fpp.MailBox".
                      "&".
                      "mn=GetInboxData".
-@@ -971,7 +984,7 @@ sub GetMessagesFromFolder($) {
+@@ -971,7 +999,7 @@ sub GetMessagesFromFolder($) {
                      "v=1".
                      "&".
                      "mt=$MT";
@@ -91,7 +124,7 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
          $PostData = "cn=Microsoft.Msn.Hotmail.Ui.Fpp.MailBox".
                      "&".
                      "mn=GetInboxData".
-@@ -979,11 +992,37 @@ sub GetMessagesFromFolder($) {
+@@ -979,11 +1007,37 @@ sub GetMessagesFromFolder($) {
                      "d=true,true,{".uri_escape("\"$FolderId\"").",25,NextPage,0,Date,false,".
                        uri_escape("\"$pnAm\"") . "," .
                        uri_escape("\"$pnAd\"") . "," .
@@ -101,7 +134,7 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
                      "v=1".
                      "&".
                      "mt=$MT";
-+      } elsif ($Mode =~ m/200810/ && $Page == 1) {
++      } elsif ($Mode =~ m/(200810|200902)/ && $Page == 1) {
 +        $PostData = "cn=Microsoft.Msn.Hotmail.Ui.Fpp.MailBox".
 +                    "&".
 +                    "mn=GetInboxData".
@@ -114,7 +147,7 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
 +                      "v=1".
 +                      "&".
 +                    "mt=$MT";
-+      } elsif ($Mode =~ m/200810/) {
++      } elsif ($Mode =~ m/(200810|200902)/) {
 +        $PostData = "cn=Microsoft.Msn.Hotmail.Ui.Fpp.MailBox".
 +                    "&".
 +                    "mn=GetInboxData".
@@ -130,7 +163,7 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
        }
  
  	    ($PageAsString,$GetPageUrl) = GetPage(Url => $Url,CurlDataArg => $PostData); 
-@@ -1003,8 +1042,9 @@ sub GetMessagesFromFolder($) {
+@@ -1003,8 +1057,9 @@ sub GetMessagesFromFolder($) {
    
        # get the ID for the trash folder
        $TrashFolderId = $PageAsString;
@@ -141,7 +174,7 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
    
        # get the session variables as well as the request handler
        $PageAsString =~ m/fppCfg\s*?:\s*?{\s*?RequestHandler\s*?:\s*?\"(.*?)\".*?SessionId\s*?:\s*?\"(.*?)\".*?AuthUser\s*?:\s*?\"(.*?)\".*?}/si;
-@@ -1016,9 +1056,12 @@ sub GetMessagesFromFolder($) {
+@@ -1016,9 +1071,12 @@ sub GetMessagesFromFolder($) {
  
      # To start with we limit us to a MessagesArea between
      # <table class="dItemListContentTable"..>  ... </table..>
@@ -149,13 +182,13 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
 +    if ($Mode =~ m/200809/ && $PageAsString !~ m/<table class=\"d?ItemListContentTable[^>]*>(.*?)<\/table/si) {
        die "Could not correctly parse the messages table.";
      }
-+    if ($Mode =~ m/200810/ && $PageAsString !~ m/<table class=\"d?InboxTable[^>]*>(.*?)<\/table/si) {
++    if ($Mode =~ m/(200810|200902)/ && $PageAsString !~ m/<table class=\"d?InboxTable[^>]*>(.*?)<\/table/si) {
 +      die "Could not correctly parse the messages table.";
 +    }
      my $MessagesArea = $1;
  
      # In this message area there's the body of the table containing messages.
-@@ -1046,24 +1089,40 @@ sub GetMessagesFromFolder($) {
+@@ -1046,24 +1104,44 @@ sub GetMessagesFromFolder($) {
        my $MessageId = $1;
        my $MessageAd = $2;
        
@@ -164,7 +197,7 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
        my $TdLine = "";
 -      for (my $Idx=0;$Idx<4;$Idx++) {
 +      my $Column = 5;
-+      if ($Mode =~ m/200810/) { $Column = 4; }
++      if ($Mode =~ m/(200810|200902)/) { $Column = 4; }
 +      for (my $Idx=0;$Idx<($Column-1);$Idx++) {
          $MessagesArea =~ m/<td(.*?)>(.*?)<\/td\s*>/i;
          $MessagesArea = $';
@@ -178,7 +211,7 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
 +          die "Parse error for 'from'.";
 +        }
 +        $From = HtmlUnescape($3);
-+      } elsif ($Mode =~ /200810/ ) {
++      } elsif ($Mode =~ /(200810|200902)/ ) {
 +        if ($TdLine !~ m/(<[^>]+>)?(.*?)<[^>]+>/si) {
 +          die "Parse error for 'from'.";
 +        }
@@ -200,11 +233,15 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
 +        $MessagesArea =~ m/<td class=\"SubjectCol\">(.*?)<\/td\s*>/i;
 +        $MessagesArea = $';
 +        $TdLine = $1;
++      } elsif ($Mode =~ /200902/) {
++        $MessagesArea =~ m/<td class=\"Sbj\">(.*?)<\/td\s*>/i;
++        $MessagesArea = $';
++        $TdLine = $1;
 +      }
        if ($TdLine !~ m/<a href=\"(.*?)\"\s*>(.*?)<\/a>/si) {
          die "Parse error for 'subject'.";
        }
-@@ -1091,11 +1150,19 @@ sub GetMessagesFromFolder($) {
+@@ -1091,11 +1169,19 @@ sub GetMessagesFromFolder($) {
        Display("Search for one more page.\n",MinVerbosity => 10);
        # Search for 'next page' href 
        my $NextPageAd = "";
@@ -217,7 +254,7 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
 +          $NextPageAd = $1;
 +        }
 +        die "Could not find an expected next page href. Probably page structure changed." unless $NextPageAd;
-+      } elsif ($Mode =~ m/200810/) {
++      } elsif ($Mode =~ m/(200810|200902)/) {
 +        if ($PageAsString =~ 
 +          m/<li([^>]*)>\s*<a href=\"([^\"]+)\"[^>]*><img class=\"PageNavigationNext\".*?><\/a>/si) {
 +          $NextPageAd = $1;
@@ -228,7 +265,7 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
       
        if ($NextPageAd !~ m /pnAm=\"([^\"]*)/) {
          die "Could not find pnAm in '$NextPageAd'.";
-@@ -1111,7 +1178,7 @@ sub GetMessagesFromFolder($) {
+@@ -1111,7 +1197,7 @@ sub GetMessagesFromFolder($) {
        Display("Next page Ad : '$pnAd'.\n",MinVerbosity => 10);
        Display("Next page Am : '$pnAm'.\n",MinVerbosity => 10);
      }
@@ -237,7 +274,7 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
  }
  
  ########################################################################################################################
-@@ -1221,10 +1288,10 @@ sub GetFolders() {
+@@ -1221,10 +1307,10 @@ sub GetFolders() {
    # Scan the line for all folders, their href and title.
    # NrFolders on the fly;
    while ($FolderPageAsString =~ 
@@ -245,20 +282,20 @@ $OpenBSD: patch-GetLive_pl,v 1.4 2008/11/11 22:03:59 merdely Exp $
 -    $FolderHrefs[$NrFolders]      = $1;
 -    $FolderNames[$NrFolders]      = HtmlUnescape($2);
 -    $FolderNrMessages[$NrFolders] = $3;
-+         m/<td class=\"d?ManageFoldersFolderNameCol\"><a\s*(class=\"PrimaryTextColor\"\s*)?href=\"([^\"]*)\"\s*>(.*?)<\/a>\s*<\/td>\s*<td class=\"d?ManageFoldersTotalCountCol[^\"]*\">(\d+)<\/td>/gc) { 
++         m/<td class=\"d?ManageFoldersFolderNameCol\"><a\s*(class=\"PrimaryTextColor\"\s*)?href=\"([^\"]*)\"\s*>(.*?)<\/a>\s*<\/td>\s*(<td\s*class=\"ManageFoldersBufferCol\">[^<]*<\/td>\s*)?<td class=\"d?ManageFoldersTotalCountCol[^\"]*\">(\d+)<\/td>/gc) { 
 +    $FolderHrefs[$NrFolders]      = $2;
 +    $FolderNames[$NrFolders]      = HtmlUnescape($3);
-+    $FolderNrMessages[$NrFolders] = $4;
++    $FolderNrMessages[$NrFolders] = $5;
      if ( $FolderHrefs[$NrFolders] !~ m/FolderID=([^&]*)/ ) {
         die "Could not detect FolderId.";
      }
-@@ -1257,6 +1324,9 @@ GetFolders();
+@@ -1257,6 +1343,9 @@ GetFolders();
  
  for (my $FolderIdx=0;$FolderIdx<$NrFolders;$FolderIdx++) {
    next if (scalar keys %FoldersToProcess && not exists $FoldersToProcess{lc $FolderNames[$FolderIdx]});
 +  next if ( ($SkipTrash =~ m/^Yes$/i) && ($FolderIds[$FolderIdx] eq $TrashFolderId) );
 +  # JDLA hack. Drafts folder does not work, also not in real. Assuming 000-...-4 is the draft folder.
-+  next if ( ($Mode =~ m/200810/) && ($FolderIds[$FolderIdx] =~ m/^(0|-)*4$/));
++  next if ( ($Mode =~ m/(200810|200902)/) && ($FolderIds[$FolderIdx] =~ m/^(0|-)*4$/));
    Display("\nProcessing folder $FolderNames[$FolderIdx].\n",MinVerbosity => 1);
    GetMessagesFromFolder($FolderIdx);
    Display("$NrMessagesDetected/$NrMessagesUnread Messages/Unread.\n",MinVerbosity => 1);

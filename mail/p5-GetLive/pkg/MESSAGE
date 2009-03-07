@@ -6,5 +6,5 @@ ${PREFIX}/share/examples/GetLive.
 
 GetLive has been patched to deal with Hotmail changes.  Log into Hotmail
 through a browser and check the box so it never shows the 'changed' page
-again.  Then, add 'Mode=200810' to your config file.  You may also have
+again.  Then, add 'Mode=200902' to your config file.  You may also have
 to turn off 'reading panes'.
