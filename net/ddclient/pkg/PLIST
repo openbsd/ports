@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/03/23 10:48:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/03/07 13:43:42 jasper Exp $
 sbin/ddclient
 share/doc/ddclient/
 share/doc/ddclient/README
@@ -6,6 +6,7 @@ share/doc/ddclient/README.cisco
 share/doc/ddclient/README.ssl
 share/examples/ddclient/
 @sample ${SYSCONFDIR}/ddclient/
+share/examples/ddclient/sample-ddclient-wrapper.sh
 share/examples/ddclient/sample-etc_cron.d_ddclient
 share/examples/ddclient/sample-etc_ddclient.conf
 @sample ${SYSCONFDIR}/ddclient/ddclient.conf

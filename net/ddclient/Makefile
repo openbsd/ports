@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2007/08/02 15:50:26 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2009/03/07 13:43:42 jasper Exp $
 
 COMMENT=		Dynamic DNS service update client
 
-DISTNAME=		ddclient-3.7.2
+DISTNAME=		ddclient-3.8.0
 CATEGORIES=		net
 
 HOMEPAGE=		http://ddclient.sourceforge.net/
@@ -25,7 +25,7 @@ PKG_ARCH=		*
 
 SAMPLES=	sample-etc_cron.d_ddclient sample-etc_ddclient.conf \
 		sample-etc_dhclient-exit-hooks sample-etc_dhcpc_dhcpcd-eth0.exe \
-		sample-etc_ppp_ip-up.local
+		sample-etc_ppp_ip-up.local sample-ddclient-wrapper.sh
 
 post-extract:
 	@perl -pi -e "s,/var/cache/ddclient/,/var/db/ddclient/,g;" \
