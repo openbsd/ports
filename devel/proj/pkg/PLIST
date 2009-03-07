@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/26 19:09:01 jason Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/07 10:46:22 landry Exp $
 %%SHARED%%
-bin/cs2cs
-bin/geod
+@bin bin/cs2cs
+@bin bin/geod
 bin/invgeod
 bin/invproj
-bin/nad2bin
-bin/nad2nad
-bin/proj
+@bin bin/nad2bin
+@bin bin/nad2nad
+@bin bin/proj
 include/nad_list.h
 include/org_proj4_Projections.h
 include/proj_api.h
@@ -21,6 +21,7 @@ lib/libproj.la
 share/proj/
 share/proj/FL
 share/proj/GL27
+share/proj/IGNF
 share/proj/MD
 share/proj/TN
 share/proj/WI
@@ -29,12 +30,16 @@ share/proj/alaska
 share/proj/conus
 share/proj/epsg
 share/proj/esri
+share/proj/esri.extra
 share/proj/hawaii
 share/proj/nad.lst
 share/proj/nad27
 share/proj/nad83
+share/proj/ntf_r93.gsb
 share/proj/ntv1_can.dat
 share/proj/null
+share/proj/nzgd2kgrid0005.gsb
+share/proj/other.extra
 share/proj/proj_def.dat
 share/proj/prvi
 share/proj/stgeorge

@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:11 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/07 10:46:22 landry Exp $
 
 COMMENT=	cartographic projection utilities
 
-DISTNAME=	proj-4.4.9
+DISTNAME=	proj-4.6.1
 CATEGORIES=    	devel geo
-SHARED_LIBS=	proj 5.0
+SHARED_LIBS=	proj 5.5
 
-DATUMGRID=	proj-datumgrid-1.3.zip
+DATUMGRID=	proj-datumgrid-1.4.zip
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 DISTFILES=${DISTNAME}${EXTRACT_SUFX} ${DATUMGRID}
 
-HOMEPAGE=	http://www.remotesensing.org/proj/
+HOMEPAGE=	http://trac.osgeo.org/proj/
 
 MAINTAINER=	Jason Wright <jason@openbsd.org>
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.remotesensing.org/proj/ \
-			http://proj.maptools.org/dl/
+			http://download.osgeo.org/proj/
 
 CONFIGURE_STYLE=	gnu
 WANTLIB=		c m
