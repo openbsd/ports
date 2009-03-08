@@ -1,5 +1,0 @@
-A perl module for handling tar archives. Allows user to read a tar
-archive manipulate it in memory by adding or removing files and
-write it out to disk.
-
-Also supports gzip/zlib compressed archives.

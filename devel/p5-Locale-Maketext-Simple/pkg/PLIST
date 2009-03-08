@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/10 02:53:09 kevlo Exp $
-${P5SITE}/Locale/
-${P5SITE}/Locale/Maketext/
-${P5SITE}/Locale/Maketext/Simple.pm
-@man man/man3p/Locale::Maketext::Simple.3p

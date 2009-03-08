@@ -1,7 +1,0 @@
-See what modules are shipped with versions of Perl.
-
-Module::CoreList contains the hash of hashes %Module::CoreList::version,
-this is keyed on Perl version as indicated in $]. The second level hash
-is module => version pairs.
-It also contains %Module::CoreList::released hash, which has ISO
-formatted versions of the release dates, as gleaned from perlhist.

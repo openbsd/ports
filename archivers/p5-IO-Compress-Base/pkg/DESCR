@@ -1,2 +1,0 @@
-This module is the base class for all IO::Compress and IO::Uncompress
-modules. It is not intended for direct use in application code.

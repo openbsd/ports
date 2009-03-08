@@ -1,7 +1,0 @@
-The Compress::Zlib module provides a Perl interface to the zlib
-compression library (which is part of OpenBSD).  Most of the
-functionality provided by zlib is available in Compress::Zlib.
-
-The module can be split into two general areas of functionality,
-namely in-memory compression/decompression and read/write access
-to gzip files.

@@ -1,7 +1,0 @@
-This module provides things that are useful in decoding Pod E<...>
-sequences. It is intended to be used by Pod parsers and/or formatters.
-
-By default, Pod::Escapes exports none of its symbols. But you can
-request any of them to be exported. Either request them individually,
-as with use Pod::Escapes qw(symbolname symbolname2...);, or you can
-do use Pod::Escapes qw(:ALL); to get all exportable symbols.

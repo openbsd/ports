@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/10/24 13:25:50 sthen Exp $
-${P5SITE}/IO/Zlib.pm
-@man man/man3p/IO::Zlib.3p

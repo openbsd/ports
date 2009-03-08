@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/08 18:00:30 xsa Exp $
-bin/corelist
-${P5SITE}/Module/
-${P5SITE}/Module/CoreList.pm
-@man man/man1/corelist.1
-@man man/man3p/Module::CoreList.3p
