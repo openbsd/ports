@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/02/11 15:47:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2009/03/08 20:02:58 jasper Exp $
 
 COMMENT=		API documentation browser for GNOME
 
@@ -29,8 +29,7 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		::devel/xulrunner,-devel \
-			:gnome-doc-utils-*:x11/gnome/doc-utils
+BUILD_DEPENDS=		:gnome-doc-utils-*:x11/gnome/doc-utils
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			wnck-1::devel/libwnck \
 			startup-notification-1::devel/startup-notification \
