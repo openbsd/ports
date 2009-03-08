@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.563 2009/03/06 17:07:09 todd Exp $
+# $OpenBSD: Makefile,v 1.564 2009/03/08 12:56:30 steven Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -342,6 +342,7 @@
      SUBDIR += pure-ftpd,mysql
      SUBDIR += pure-ftpd,postgresql
      SUBDIR += putty
+     SUBDIR += py-GeoIP
      SUBDIR += py-IP
      SUBDIR += py-adns
      SUBDIR += py-boto
