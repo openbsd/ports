@@ -1,2 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2007/05/08 08:28:39 steven Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2009/03/08 17:11:44 landry Exp $
+lib/libglade/2.0/libxfce4.so
+@lib lib/libxfce4kbd-private.so.${LIBxfce4kbd-private_VERSION}
 @lib lib/libxfcegui4.so.${LIBxfcegui4_VERSION}

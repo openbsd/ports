@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/11/06 15:34:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/03/08 17:11:44 landry Exp $
 @conflict xfce4-panel-<4.4.1
 %%SHARED%%
 include/xfce4/
+include/xfce4/libxfce4kbd-private/
+include/xfce4/libxfce4kbd-private/xfce-shortcut-dialog.h
+include/xfce4/libxfce4kbd-private/xfce-shortcuts-grabber.h
+include/xfce4/libxfce4kbd-private/xfce-shortcuts-provider.h
+include/xfce4/libxfce4kbd-private/xfce-shortcuts.h
 include/xfce4/libxfcegui4/
 include/xfce4/libxfcegui4/dialogs.h
 include/xfce4/libxfcegui4/gtk_style.h
@@ -14,7 +19,6 @@ include/xfce4/libxfcegui4/libxfcegui4.h
 include/xfce4/libxfcegui4/netk-application.h
 include/xfce4/libxfcegui4/netk-class-group.h
 include/xfce4/libxfcegui4/netk-enum-types.h
-include/xfce4/libxfcegui4/netk-marshal.h
 include/xfce4/libxfcegui4/netk-pager.h
 include/xfce4/libxfcegui4/netk-screen.h
 include/xfce4/libxfcegui4/netk-tasklist.h
@@ -43,17 +47,30 @@ include/xfce4/libxfcegui4/xfce_decorbutton.h
 include/xfce4/libxfcegui4/xfce_decortoggle.h
 include/xfce4/libxfcegui4/xfce_framebox.h
 include/xfce4/libxfcegui4/xfce_iconbutton.h
-include/xfce4/libxfcegui4/xfce_marshal.h
 include/xfce4/libxfcegui4/xfce_menubutton.h
 include/xfce4/libxfcegui4/xfce_movehandler.h
 include/xfce4/libxfcegui4/xfce_scaled_image.h
 include/xfce4/libxfcegui4/xfce_systemtray.h
 include/xfce4/libxfcegui4/xfce_togglebutton.h
 include/xfce4/libxfcegui4/xinerama.h
+lib/libglade/
+lib/libglade/2.0/
+lib/libglade/2.0/libxfce4.a
+lib/libglade/2.0/libxfce4.la
+lib/libxfce4kbd-private.a
+lib/libxfce4kbd-private.la
 lib/libxfcegui4.a
 lib/libxfcegui4.la
 lib/pkgconfig/
+lib/pkgconfig/libxfce4kbd-private-1.0.pc
 lib/pkgconfig/libxfcegui4-1.0.pc
+share/examples/xfconf/
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/xfce4/
+@sample ${SYSCONFDIR}/xdg/xfce4/xfconf/
+@sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/
+share/examples/xfconf/xfce4-keyboard-shortcuts.xml
+@sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/libxfcegui4/
@@ -129,7 +146,6 @@ share/locale/en_GB/LC_MESSAGES/libxfcegui4.mo
 share/locale/eo/LC_MESSAGES/libxfcegui4.mo
 share/locale/es/LC_MESSAGES/libxfcegui4.mo
 share/locale/et/LC_MESSAGES/libxfcegui4.mo
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/libxfcegui4.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/
@@ -190,9 +206,6 @@ share/locale/sv/LC_MESSAGES/libxfcegui4.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/libxfcegui4.mo
-share/locale/th/
-share/locale/th/LC_MESSAGES/
-share/locale/th/LC_MESSAGES/libxfcegui4.mo
 share/locale/tr/LC_MESSAGES/libxfcegui4.mo
 share/locale/uk/LC_MESSAGES/libxfcegui4.mo
 share/locale/ur/
