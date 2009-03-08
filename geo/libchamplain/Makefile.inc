@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.2 2009/03/04 20:03:18 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2009/03/08 17:53:35 jasper Exp $
 
 SHARED_ONLY?=		Yes
 
 CATEGORIES+=		geo/libchamplain geo devel
 
-HOMEPAGE?=		http://blog.pierlux.com/projects/libchamplain/en/
+HOMEPAGE?=		http://projects.gnome.org/libchamplain/
 
 VERSION?=		0.2.9
 API_VERSION=		0.2

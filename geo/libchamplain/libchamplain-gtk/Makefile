@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/04 20:03:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/08 17:53:35 jasper Exp $
 
 COMMENT=		Gtk+-widget wraper around libchamplain's ClutterActor
 
 DISTNAME=		libchamplain-gtk-${VERSION}
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=  champlain-gtk-0.2    1.0      # .0.1
 
