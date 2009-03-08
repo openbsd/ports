@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2007/12/08 05:23:20 jakemsr Exp $
---- src/Makefile.in.orig	Sun Dec 31 08:24:19 2006
-+++ src/Makefile.in	Sat Jul 21 22:40:18 2007
-@@ -254,7 +254,7 @@ libccrtp1_la_SOURCES = rtppkt.cpp rtcppkt.cpp source.c
+$OpenBSD: patch-src_Makefile_in,v 1.2 2009/03/08 10:28:19 sthen Exp $
+--- src/Makefile.in.orig	Fri Feb  6 12:36:12 2009
++++ src/Makefile.in	Mon Feb 23 01:18:09 2009
+@@ -273,7 +273,7 @@ libccrtp1_la_SOURCES = rtppkt.cpp rtcppkt.cpp source.c
  	outqueue.cpp queue.cpp control.cpp members.cpp socket.cpp duplex.cpp pool.cpp \
  	CryptoContext.cxx $(srtp_src_g) $(srtp_src_o)
  
