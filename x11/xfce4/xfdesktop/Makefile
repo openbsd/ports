@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2008/11/06 15:34:46 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2009/03/08 17:21:13 landry Exp $
 
 COMMENT=	xfce4 desktop manager
 
@@ -17,17 +17,16 @@ CONFIGURE_ARGS=	--enable-thunarx \
 		--enable-exo
 
 LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
-		xfce4mcs-client.>=3::x11/xfce4/libxfce4mcs \
 		thunar-vfs-1.>=4,thunarx-1.>=4::x11/xfce4/thunar \
-
-RUN_DEPENDS=	::x11/xfce4/xfce-mcs-manager
+		xfce4menu-0.1::x11/xfce4/libxfce4menu \
+		xfconf-0::x11/xfce4/xfconf
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
+		Xfixes Xi Xinerama Xrandr Xrender XRes atk-1.0 c cairo dbus-1 \
 		dbus-glib-1 exo-0.3 expat fam fontconfig freetype gdk-x11-2.0 \
-		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
+		gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread rpcsvc \
-		startup-notification-1 stdc++ xfce4panel xfce4util z
+		startup-notification-1 stdc++ wnck-1 xfce4panel xfce4util xml2 z
 
 .include <bsd.port.mk>

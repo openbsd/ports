@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2007/05/08 16:10:48 steven Exp $
-lib/xfce4/mcs-plugins/backdrop_settings.so
+@comment $OpenBSD: PFRAG.shared,v 1.4 2009/03/08 17:21:13 landry Exp $
 lib/xfce4/modules/xfce4_desktop_menu.so
