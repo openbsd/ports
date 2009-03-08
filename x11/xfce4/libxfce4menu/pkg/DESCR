@@ -1,0 +1,4 @@
+This is libxfce4menu, a freedesktop.org compliant menu implementation for
+Xfce. 
+libxfce4menu already covers the most important parts of the menu specification. 
+It is however still in development and thus, neither stable nor complete.
