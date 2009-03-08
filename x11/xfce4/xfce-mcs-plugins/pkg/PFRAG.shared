@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2007/05/10 06:48:42 steven Exp $
-lib/xfce4/mcs-plugins/display_plugin.so
-lib/xfce4/mcs-plugins/fm_plugin.so
-lib/xfce4/mcs-plugins/keyboard_plugin.so
-lib/xfce4/mcs-plugins/mouse_plugin.so
-lib/xfce4/mcs-plugins/screensaver_plugin.so
-lib/xfce4/mcs-plugins/ui_plugin.so
