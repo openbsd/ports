@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2008/09/22 13:37:50 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2009/03/08 17:32:47 landry Exp $
 
      SUBDIR+= exo
      SUBDIR+= gtk-xfce-engine
-     SUBDIR+= libxfce4mcs
+     SUBDIR+= libxfce4menu
      SUBDIR+= libxfce4util
      SUBDIR+= libxfcegui4
      SUBDIR+= mousepad
@@ -13,8 +13,6 @@
      SUBDIR+= thunar
      SUBDIR+= thunar-media-tags
      SUBDIR+= thunar-thumbnailers
-     SUBDIR+= xfce-mcs-manager
-     SUBDIR+= xfce-mcs-plugins
      SUBDIR+= xfce-utils
      SUBDIR+= xfce4-appfinder
      SUBDIR+= xfce4-battery
@@ -33,6 +31,7 @@
      SUBDIR+= xfce4-places
      SUBDIR+= xfce4-session
      SUBDIR+= xfce4-screenshooter
+     SUBDIR+= xfce4-settings
      SUBDIR+= xfce4-smartbookmark
      SUBDIR+= xfce4-systemload
      SUBDIR+= xfce4-time-out
@@ -41,6 +40,7 @@
      SUBDIR+= xfce4-weather
      SUBDIR+= xfce4-wmdock
      SUBDIR+= xfce4-xkb
+     SUBDIR+= xfconf
      SUBDIR+= xfdesktop
      SUBDIR+= xfprint
      SUBDIR+= xfwm4
