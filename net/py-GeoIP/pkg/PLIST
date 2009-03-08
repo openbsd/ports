@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/08 12:55:58 steven Exp $
+lib/python${MODPY_VERSION}/site-packages/GeoIP.so
+lib/python${MODPY_VERSION}/site-packages/GeoIP_Python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+share/examples/py-GeoIP/
+share/examples/py-GeoIP/test.py
+share/examples/py-GeoIP/test_city.py
+share/examples/py-GeoIP/test_city_charset.py
+share/examples/py-GeoIP/test_org.py
+share/examples/py-GeoIP/test_region.py
