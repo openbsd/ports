@@ -1,8 +1,8 @@
-$OpenBSD: patch-getopt_c,v 1.2 2008/05/23 20:36:29 steven Exp $
---- getopt.c.orig	Sun Apr  6 21:17:00 2008
-+++ getopt.c	Fri May 23 20:44:03 2008
-@@ -84,7 +84,7 @@ int getoptions(int argc, char *argv[]) {
- 				symmgrid = 1;
+$OpenBSD: patch-getopt_c,v 1.3 2009/03/08 08:37:06 steven Exp $
+--- getopt.c.orig	Thu Feb 12 21:45:03 2009
++++ getopt.c	Sun Mar  8 09:12:51 2009
+@@ -97,7 +97,7 @@ int getoptions(int argc, char *argv[]) {
+ 				}
  				break;
  			case 't':
 -				nthread = sysconf(_SC_NPROCESSORS_ONLN);

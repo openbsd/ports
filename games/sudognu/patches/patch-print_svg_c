@@ -1,6 +1,6 @@
-$OpenBSD: patch-print_svg_c,v 1.1.1.1 2007/10/04 07:17:40 steven Exp $
---- print_svg.c.orig	Sat Sep 22 20:21:19 2007
-+++ print_svg.c	Sat Sep 29 15:29:03 2007
+$OpenBSD: patch-print_svg_c,v 1.2 2009/03/08 08:37:06 steven Exp $
+--- print_svg.c.orig	Thu Feb 12 21:45:03 2009
++++ print_svg.c	Sun Mar  8 09:27:14 2009
 @@ -7,6 +7,7 @@
  #include <stdlib.h>
  #include <stdio.h>
@@ -9,21 +9,24 @@ $OpenBSD: patch-print_svg_c,v 1.1.1.1 2007/10/04 07:17:40 steven Exp $
  #include "sudoku.h"
  
  /*
-@@ -35,6 +36,7 @@ void sudokus_to_svg(char *fn, t_sudoku sudokus[4]) {
+@@ -35,12 +36,16 @@ void sudokus_to_svg(char *filename, t_sudoku sudokus[4
  	float pagePadH   = (pageHeight - 6) - squareSize * (2*size+5);
  	
  	float x0, y0;
 +	FILE *f;
  	
  	// svg file name
- 	if (fn == NULL)
-@@ -42,7 +44,8 @@ void sudokus_to_svg(char *fn, t_sudoku sudokus[4]) {
- 	else
- 		strcat(fn,".svg");
- 	
+-	if (strlen(filename) != 0) strncpy(fn,filename,511);
+-	strcat(fn,".svg");
 -	FILE *f=fopen(fn,"w");
+-	
++	if (strlen(filename) != 0)
++		strlcpy(fn,filename,sizeof(fn));
++	if ((strstr(fn, ".svg")) == NULL)
++		strlcat(fn,".svg",sizeof(fn));
 +	if ((f=fopen(fn,"w")) == NULL)
 +		err(1, "fopen: %s", fn);
- 	
++
  	// print xml / svg head
  	fprintf(f,"<?xml version=\"1.0\" standalone=\"no\"?>\n\
+ 		<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\"\n\
