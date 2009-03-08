@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/25 22:16:40 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/03/08 20:00:41 landry Exp $
 %%SHARED%%
 @bin bin/jsc
 include/webkit-1.0/
@@ -38,6 +38,8 @@ share/webkit-1.0/webinspector/Breakpoint.js
 share/webkit-1.0/webinspector/BreakpointsSidebarPane.js
 share/webkit-1.0/webinspector/CallStackSidebarPane.js
 share/webkit-1.0/webinspector/Console.js
+share/webkit-1.0/webinspector/DOMStorage.js
+share/webkit-1.0/webinspector/DOMStorageItemsView.js
 share/webkit-1.0/webinspector/DataGrid.js
 share/webkit-1.0/webinspector/Database.js
 share/webkit-1.0/webinspector/DatabaseQueryView.js
@@ -71,6 +73,7 @@ share/webkit-1.0/webinspector/Images/disclosureTriangleSmallRightDownBlack.png
 share/webkit-1.0/webinspector/Images/disclosureTriangleSmallRightDownWhite.png
 share/webkit-1.0/webinspector/Images/disclosureTriangleSmallRightWhite.png
 share/webkit-1.0/webinspector/Images/dockButtons.png
+share/webkit-1.0/webinspector/Images/domStorage.png
 share/webkit-1.0/webinspector/Images/elementsIcon.png
 share/webkit-1.0/webinspector/Images/enableButtons.png
 share/webkit-1.0/webinspector/Images/errorIcon.png
