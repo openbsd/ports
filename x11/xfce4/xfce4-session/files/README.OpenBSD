@@ -4,11 +4,10 @@ Tips and tricks for a pleasant Xfce desktop environment experience
 - installation
 In order to have a basic Xfce desktop, you should install the
 following core packages (this will install the required libraries):
-$ sudo pkg_add xfce-mcs-manager xfce-mcs-plugins xfce-utils xfce4-panel
-xfce4-session thunar xfdesktop xfwm4
+$ sudo pkg_add xfce-utils xfce4-panel xfce4-session xfdesktop xfwm4
 
 You should also install some basic theme packages:
-$ sudo pkg_add xfce4-icon-theme xfwm4-themes gtk-xfce-engine
+$ sudo pkg_add xfwm4-themes gtk-xfce-engine
 
 And some cool xfce-companion apps for a nicer desktop:
 $ sudo pkg_add terminal orage notification-daemon-xfce ristretto

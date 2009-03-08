@@ -1,0 +1,12 @@
+$OpenBSD: patch-xfce4-tips_Makefile_in,v 1.1 2009/03/08 17:16:53 landry Exp $
+--- xfce4-tips/Makefile.in.orig	Mon Jan 12 22:18:46 2009
++++ xfce4-tips/Makefile.in	Mon Jan 19 22:11:56 2009
+@@ -309,7 +309,7 @@ xfce4_tips_CFLAGS = \
+ xfce4_tips_LDADD = \
+ 	@LIBXFCEGUI4_LIBS@
+ 
+-desktopdir = $(sysconfdir)/xdg/autostart
++desktopdir = $(prefix)/share/examples/xfce4-session
+ desktop_in_files = xfce4-tips-autostart.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ EXTRA_DIST = \
