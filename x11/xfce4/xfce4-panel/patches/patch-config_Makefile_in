@@ -1,12 +1,14 @@
-$OpenBSD: patch-config_Makefile_in,v 1.1 2007/05/10 06:21:27 steven Exp $
---- config/Makefile.in.orig	Thu May 10 08:02:39 2007
-+++ config/Makefile.in	Thu May 10 08:02:58 2007
-@@ -256,7 +256,7 @@ conf_in_files = \
- 	launcher-10.rc.in
+$OpenBSD: patch-config_Makefile_in,v 1.2 2009/03/08 17:22:41 landry Exp $
+--- config/Makefile.in.orig	Mon Jan 12 22:40:55 2009
++++ config/Makefile.in	Mon Jan 19 21:21:45 2009
+@@ -262,8 +262,8 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-confdir = \
+-	$(sysconfdir)/xdg/xfce4/panel
++confdir = $(prefix)/share/examples/xfce4-panel
++
  
- conf_files = $(conf_in_files:.rc.in=.rc)
--confdir = $(sysconfdir)/xdg/xfce4/panel
-+confdir = $(prefix)/share/examples/xfce4/panel
- conf_DATA = panels.xml systray-4.rc xfce4-menu-5.rc clock-14.rc $(conf_files)
- EXTRA_DIST = panels.xml systray-4.rc xfce4-menu-5.rc clock-14.rc $(conf_in_files)
- all: all-am
+ conf_in_files = \
+ 	launcher-7.rc.in						\
