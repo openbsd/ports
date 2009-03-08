@@ -1,0 +1,12 @@
+$OpenBSD: patch-syshead_h,v 1.1 2009/03/08 15:56:52 martin Exp $
+--- syshead.h.orig	Fri Mar  6 13:56:33 2009
++++ syshead.h	Fri Mar  6 13:56:47 2009
+@@ -37,7 +37,7 @@
+ #endif
+ 
+ /* branch prediction hints */
+-#if defined(__GNUC__)
++#if defined(__GNUC__) && __GNUC__ >= 3
+ # define likely(x)       __builtin_expect((x),1)
+ # define unlikely(x)     __builtin_expect((x),0)
+ #else
