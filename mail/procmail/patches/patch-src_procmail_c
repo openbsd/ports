@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_procmail_c,v 1.1 2009/03/08 10:34:10 sthen Exp $
+
+Fix searching body alone.
+
+--- src/procmail.c.orig	Sat Jun 30 21:50:32 2007
++++ src/procmail.c	Sat Jun 30 21:51:22 2007
+@@ -652,7 +652,7 @@ commint:do skipspace();					  /* skip whitespace */
+ 	      nrcond= -1;
+ 	   if(tolock)		 /* clear temporary buffer for lockfile name */
+ 	      free(tolock);
+-	   for(i=maxindex(flags);i;i--)			  /* clear the flags */
++	   for(i=maxindex(flags);i>=0;i--)		  /* clear the flags */
+ 	      flags[i]=0;
+ 	   for(tolock=0,locknext=0;;)
+ 	    { chp=skpspace(chp);
