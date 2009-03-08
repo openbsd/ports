@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2006/07/16 18:17:25 sturm Exp $
-bin/john
+@comment $OpenBSD: PLIST,v 1.13 2009/03/08 11:57:53 jasper Exp $
+@bin bin/john
 bin/mailer
 bin/unafs
 bin/unique

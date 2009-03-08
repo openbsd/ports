@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.37 2007/09/06 19:15:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2009/03/08 11:57:53 jasper Exp $
 
 COMMENT=		extremely fast password cracker
 
-DISTNAME=		john-1.7.0.2
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		john-1.7.3.1
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.openwall.com/john/
 
-MAINTAINER=		David Cathcart <cathcart@openbsd.org>
+MAINTAINER=		Benoit Lecocq <blq@arcane-labs.net>
 
 # GPL & Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
-MASTER_SITES=		${HOMEPAGE}f/
+MASTER_SITES=		${HOMEPAGE}/g/
 
 NO_REGRESS=		Yes
 
