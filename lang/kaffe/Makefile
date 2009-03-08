@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2008/07/25 20:25:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2009/03/08 23:05:12 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 COMMENT-main=	kaffe.org's Java JDK1.4 compiler, runtime and libs
 
 DISTNAME=	kaffe-1.1.7
-PKGNAME-main=	${DISTNAME}p6
+PKGNAME-main=	${DISTNAME}p7
 
 CATEGORIES=	lang
 
@@ -38,12 +38,11 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 RUN_DEPENDS=	::archivers/zip \
 		:jikes->=1.22p0:lang/jikes
 
-WANTLIB=	ICE SM X11 Xext Xrender Xtst Xrandr expat atk-1.0 c z \
-		Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
-		fontconfig freetype glib-2.0 gmodule-2.0 pcre \
-		gobject-2.0 gthread-2.0 m pango-1.0 \
-		pangoft2-1.0 pangocairo-1.0 cairo glitz png pixman-1 \
-		pthread
+WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 c cairo
+WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread sndio z
 
 SEPARATE_BUILD=	concurrent
 
