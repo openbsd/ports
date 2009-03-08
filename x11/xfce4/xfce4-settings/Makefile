@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/08 17:04:10 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/08 17:51:37 landry Exp $
 
 COMMENT=	settings helpers for xfce4
 
 XFCE_PROJECT=	xfce4-settings
+PKGNAME=	${DISTNAME}p0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -23,6 +24,4 @@ WANTLIB =	X11 Xcursor Xi Xrandr c cairo dbus-glib-1 gdk-x11-2.0 gdk_pixbuf-2.0 \
 		glade-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m \
 		pango-1.0 pthread xfce4util
 
-CFLAGS=-O0 -ggdb3
-CONFIGURE_ARGS+=--enable-debug
 .include <bsd.port.mk>
