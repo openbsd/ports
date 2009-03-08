@@ -1,4 +1,4 @@
-.\" $OpenBSD: pptp_8,v 1.6 2007/10/23 22:13:38 naddy Exp $
+.\" $OpenBSD: pptp_8,v 1.7 2009/03/08 21:57:24 stsp Exp $
 .\" Manual page for pptp-1.1.0
 .\" Information gleaned from USING file in the distribution
 .\" SH section heading
@@ -42,6 +42,8 @@ to negotiate the connection with MS-CHAP authentication.
 Because
 .Nm
 uses GRE, the net.inet.gre.allow sysctl needs to be enabled.
+.Nm
+will automatically try to enable this sysctl on startup.
 .Pp
 The
 .Ar hostname
@@ -67,12 +69,14 @@ to remote host as phone number.
 .It Fl -nolaunchpppd 
 Do not launch a ppp daemon, for use as a ppp daemon pty.
 .It Fl -quirks Ar quirk
-Work around a buggy PPTP implementation.
-The only currently recognised value is
-.Ar BEZEQ_ISRAEL .
-See the file
-.Pa PREFIX/share/doc/pptp/USING
-for details.
+Some ADSL providers and some ADSL hardware are buggy or not conforming
+to the RFC, and require special handling.  To this end,
+.Nm
+supports a 'quirks' mechanism.
+Currently, only '--quirks BEZEQ_ISRAEL' is defined, for connecting to
+Bezeq (the Israeli phone company) ADSL service.
+Only some of the equipment used by Bezeq needs this option, but even
+the equipment that does not need it works fine with it.
 .It Fl -debug
 Run in foreground (for debugging with gdb).
 .It Fl -sync
@@ -101,7 +105,9 @@ Bind to specified IP address instead of wildcard.
 Sets the debugging level (0=low, 1=default, 2=high).
 .Sh EXAMPLES
 .Ss PPTP on a stand-alone VPN client
-This example assumes that you want to use pptp to connect
+This example assumes that you want to use
+.Nm
+to connect
 to a VPN and use the VPN connection as your default route.
 Let us assume that the VPN server was called vpn-gateway.net.
 .Pp
@@ -148,7 +154,7 @@ host route to the VPN gateway. For example:
 .Bd -literal
 	#!/bin/sh
         gw=`netstat -rn -f inet | grep ^default | awk '{print $2};'`
-        route add -host vpn-gateway.net ${gw}
+        /sbin/route add -host vpn-gateway.net ${gw}
 .Ed
 .Pp
 Call the script from
@@ -237,7 +243,7 @@ For example:
 .Bd -literal
 	#!/bin/sh
         gw=`netstat -rn -f inet | grep ^default | awk '{print $2};'`
-        route add -host vpn-gateway.net ${gw}
+        /sbin/route add -host vpn-gateway.net ${gw}
 .Ed
 .Pp
 Call the script from
@@ -312,19 +318,20 @@ file in /var/run/tunX.pid, where X is the number of the tun device used.
 .Pa /var/run/pptp/<ip-address>
 is created as a socket.  It is used for communicating with an existing
 PPTP call manager for a given remote server host.
+.Sh CAVEATS
+The PPTP protocol is insecure.
 .Sh SEE ALSO
 .Xr ppp 8 ,
 .Xr gre 4 ,
 .Xr pf 4 ,
 .Xr pf.conf 5 ,
-.Pa PREFIX/share/doc/pptp/USING .
+.Pa PREFIX/share/doc/pptp/PROTOCOL-SECURITY .
 .Sh HISTORY
 This man page appeared first in 
 .Nx
 \'s pptp package.
 .Sh AUTHORS
-.An Stefan Sperling Aq stsp@stsp.name
-(detailed option description, EXAMPLES section),
+.An Stefan Sperling Aq stsp@openbsd.org
 .An C. Scott Ananian Aq cananian@alumni.princeton.edu ,
 .An John Kohl Aq jtk@NetBSD.org 
 (patches and original man page).

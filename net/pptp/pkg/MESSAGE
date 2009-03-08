@@ -1,12 +1,2 @@
-You will need to allow gre traffic for pptp to work:
-	sysctl net.inet.gre.allow=1
-pptp will automatically try to set this sysctl before opening a gre socket.
-
-See http://www.schneier.com/pptp-faq.html for a list of security flaws.
-==========================================================================
-ATTENTION:
-Alcatel ADSL modems contain default logins with easily computed passwords.
-See http://security.sdsc.edu/self-help/alcatel/ for more information.
-==========================================================================
-You may want to use TCP/IP packet filter rules to prevent unauthorized 
-access to your modem (from internal net or spoofed/bounced TCP/IP packets).
+PPTP IS NOT SECURE, see ${LOCALBASE}/share/doc/pptp/PROTOCOL-SECURITY
+and http://www.schneier.com/pptp.html for more information.

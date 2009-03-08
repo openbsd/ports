@@ -1,0 +1,12 @@
+$OpenBSD: patch-pptp_callmgr_c,v 1.1 2009/03/08 21:57:24 stsp Exp $
+--- pptp_callmgr.c.orig	Fri Mar  6 15:44:54 2009
++++ pptp_callmgr.c	Fri Mar  6 15:45:00 2009
+@@ -120,8 +120,6 @@ int callmgr_main(int argc, char **argv, char **envp)
+     phonenr = argc == 3 ? argv[2] : NULL;
+     if (inet_aton(argv[1], &inetaddr) == 0)
+         fatal("Invalid IP address: %s", argv[1]);
+-    routing_init(inet_ntoa(inetaddr));
+-    routing_start();
+     /* Step 1: Open sockets. */
+     if ((inet_sock = open_inetsock(inetaddr)) < 0)
+         fatal("Could not open control connection to %s", argv[1]);

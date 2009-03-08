@@ -1,9 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/11/11 16:23:26 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/03/08 21:57:24 stsp Exp $
 @man man/man8/pptp.8
 @bin sbin/pptp
 share/doc/pptp/
-share/doc/pptp/Documentation/
-share/doc/pptp/Documentation/DESIGN.CALLMGR
-share/doc/pptp/Documentation/DESIGN.PPTP
-share/doc/pptp/Documentation/PORTING
-share/doc/pptp/USING
+share/doc/pptp/PROTOCOL-SECURITY

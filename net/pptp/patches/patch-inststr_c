@@ -1,6 +1,6 @@
-$OpenBSD: patch-inststr_c,v 1.2 2007/10/23 22:13:38 naddy Exp $
---- inststr.c.orig	Mon Feb 13 04:07:42 2006
-+++ inststr.c	Tue Sep 18 07:24:08 2007
+$OpenBSD: patch-inststr_c,v 1.3 2009/03/08 21:57:24 stsp Exp $
+--- inststr.c.orig	Wed May 14 07:33:55 2008
++++ inststr.c	Thu Mar  5 23:07:12 2009
 @@ -20,7 +20,7 @@ inststr(int argc, char **argv, char **environ, char *s
  
          for (ptr = argv[0]; *ptr; *(ptr++) = '\0');
@@ -10,3 +10,14 @@ $OpenBSD: patch-inststr_c,v 1.2 2007/10/23 22:13:38 naddy Exp $
      } else
      {
          /* Stolen from the source to perl 4.036 (assigning to $0) */
+@@ -31,8 +31,9 @@ inststr(int argc, char **argv, char **environ, char *s
+         /* than lower numbered elements.                          */
+         char *ptr, *ptr2;
+         int count;
++        int aligned;
+         UL mask = ~(UL)(PTRSIZE == 4 ? 3 : PTRSIZE == 8 ? 7 : PTRSIZE == 16 ? 15 : 0);
+-        int aligned = (mask < ~(UL)0) && (((UL)(argv[0]) & mask) == (UL)(argv[0]));
++        aligned = (mask < ~(UL)0) && (((UL)(argv[0]) & mask) == (UL)(argv[0]));
+         ptr = argv[0] + strlen(argv[0]);
+         if (argv[argc - 1] >= argv[1]) {
+             /* argv pointers in ascending memory order */

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.6 2008/11/11 16:23:26 naddy Exp $
---- Makefile.orig	Wed May 14 08:33:55 2008
-+++ Makefile	Sat Sep 20 17:44:51 2008
+$OpenBSD: patch-Makefile,v 1.7 2009/03/08 21:57:24 stsp Exp $
+--- Makefile.orig	Wed May 14 07:33:55 2008
++++ Makefile	Fri Mar  6 15:45:41 2009
 @@ -4,19 +4,19 @@ RELEASE=
  
  #################################################################
@@ -24,3 +24,12 @@ $OpenBSD: patch-Makefile,v 1.6 2008/11/11 16:23:26 naddy Exp $
  LIBS	= -lutil
  # Solaris 10
  # LIBS	= -lnsl -lsocket -lresolv
+@@ -29,7 +29,7 @@ PPTP_BIN = pptp
+ PPTP_OBJS = pptp.o pptp_gre.o ppp_fcs.o \
+             pptp_ctrl.o dirutil.o vector.o \
+ 	    inststr.o util.o version.o test.o \
+-	    pptp_quirks.o orckit_quirks.o pqueue.o pptp_callmgr.o routing.o \
++	    pptp_quirks.o orckit_quirks.o pqueue.o pptp_callmgr.o \
+ 	    pptp_compat.o
+ 
+ PPTP_DEPS = pptp_callmgr.h pptp_gre.h ppp_fcs.h util.h test.h \

@@ -1,0 +1,33 @@
+$OpenBSD: patch-pptp_c,v 1.1 2009/03/08 21:57:24 stsp Exp $
+--- pptp.c.orig	Thu Mar  5 22:54:51 2009
++++ pptp.c	Thu Mar  5 22:56:53 2009
+@@ -193,6 +193,7 @@ int main(int argc, char **argv, char **envp)
+                           * '\0' */
+     char * volatile phonenr = NULL;
+     volatile int launchpppd = 1, debug = 0;
++    char *tty_name;
+ 
+     while(1){ 
+         /* structure with all recognised options for pptp */
+@@ -391,7 +392,7 @@ int main(int argc, char **argv, char **envp)
+         file2fd("/dev/null", "wb", STDERR_FILENO);
+     }
+ 
+-    char *tty_name = ttyname(tty_fd);
++    tty_name = ttyname(tty_fd);
+     snprintf(buf, sizeof(buf), "pptp: GRE-to-PPP gateway on %s",
+               tty_name ? tty_name : "(null)");
+ #ifdef PR_SET_NAME
+@@ -494,9 +495,11 @@ void launch_callmgr(struct in_addr inetaddr, char *pho
+ {
+       char *my_argv[3] = { argv[0], inet_ntoa(inetaddr), phonenr };
+       char buf[128];
+-      snprintf(buf, sizeof(buf), "pptp: call manager for %s", my_argv[1]);
+ #ifdef PR_SET_NAME
+       int rc;
++#endif
++      snprintf(buf, sizeof(buf), "pptp: call manager for %s", my_argv[1]);
++#ifdef PR_SET_NAME
+       rc = prctl(PR_SET_NAME, "pptpcm", 0, 0, 0);
+       if (rc != 0) perror("prctl");
+ #else
