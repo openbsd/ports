@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/11/06 15:34:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/03/08 17:34:02 landry Exp $
 @bin bin/xfce4-appfinder
 share/applications/xfce4-appfinder.desktop
 share/icons/
@@ -9,6 +9,9 @@ share/icons/hicolor/48x48/apps/xfce4-appfinder.png
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/be/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/bn_IN/
 share/locale/bn_IN/LC_MESSAGES/
@@ -52,6 +55,9 @@ share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ko/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/ku/
+share/locale/ku/LC_MESSAGES/
+share/locale/ku/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xfce4-appfinder.mo
@@ -80,6 +86,9 @@ share/locale/si/
 share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/sk/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/sv/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/tr/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/uk/LC_MESSAGES/xfce4-appfinder.mo
@@ -88,20 +97,6 @@ share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-appfinder.mo
-share/xfce4/
-share/xfce4/doc/
-share/xfce4/doc/C/
-share/xfce4/doc/C/images/
-share/xfce4/doc/C/images/appfinder-handle-popup.png
-share/xfce4/doc/C/images/appfinder-item-popup.png
-share/xfce4/doc/C/images/default_appfinder.png
-share/xfce4/doc/C/xfce4-appfinder.html
-share/xfce4/doc/fr/
-share/xfce4/doc/fr/images/
-share/xfce4/doc/fr/images/appfinder-handle-popup.png
-share/xfce4/doc/fr/images/appfinder-item-popup.png
-share/xfce4/doc/fr/images/default_appfinder.png
-share/xfce4/doc/fr/xfce4-appfinder.html
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
