@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2008/11/06 15:34:46 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2009/03/08 17:10:00 landry Exp $
 
 COMMENT=	basic utility library for xfce4
 
 XFCE_PROJECT=	libxfce4util
 
-SHARED_LIBS +=  xfce4util            1.10     # .4.2
+SHARED_LIBS +=  xfce4util            1.11     # .4.1
 
 HOMEPAGE=	http://www.xfce.org/projects/libraries/
 
@@ -18,7 +18,5 @@ MODULES=	x11/xfce4
 
 WANTLIB=	c pcre
 LIB_DEPENDS=	glib-2.0.>=1400,gobject-2.0.>=1400::devel/glib2
-
-CONFIGURE_ARGS+=--disable-gtk-doc
 
 .include <bsd.port.mk>
