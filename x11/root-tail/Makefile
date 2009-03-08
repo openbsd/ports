@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/07 15:37:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2009/03/08 16:30:00 naddy Exp $
 
 COMMENT=	tails a given file anywhere on your X11 root window
 
 DISTNAME=	root-tail-1.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
 HOMESITE=	http://www.goof.com/pcg/marc
