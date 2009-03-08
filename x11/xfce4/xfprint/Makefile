@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/11/06 15:34:46 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/08 17:21:56 landry Exp $
 
 COMMENT=	printing helper for xfce4
 
@@ -19,19 +19,17 @@ CONFIGURE_ARGS=	--enable-cups \
 		--enable-bsdlpr \
 		--with-printcap=/etc/printcap
 
-BUILD_DEPENDS=	::x11/xfce4/xfce-mcs-manager
-RUN_DEPENDS=	::x11/xfce4/xfce-mcs-manager \
-		::print/a2ps
+RUN_DEPENDS=	::print/a2ps
 
 LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
-		xfce4mcs-client.>=3,xfce4mcs-manager.>=3::x11/xfce4/libxfce4mcs \
+		xfconf-0::x11/xfce4/xfconf \
 		cups.>=3::print/cups
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo crypto \
-		expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
+		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo crypto dbus-1 \
+		dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
-		ssl startup-notification-1 xfce4util z
+		pthread ssl startup-notification-1 xfce4util z
 
 .include <bsd.port.mk>
