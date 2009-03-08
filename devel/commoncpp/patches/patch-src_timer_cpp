@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_timer_cpp,v 1.1 2009/03/08 10:28:00 sthen Exp $
+--- src/timer.cpp.orig	Mon Jun 23 09:02:09 2008
++++ src/timer.cpp	Mon Sep  1 04:28:20 2008
+@@ -117,7 +117,7 @@ void TimerPort::decTimer(timeout_t timeout)
+ 	active = true;
+ }
+ 
+-#ifdef	HAVE_HIRES_TIMER
++#if defined(HAVE_HIRES_TIMER) && defined(HAVE_CLOCK_NANOSLEEP)
+ void TimerPort::sleepTimer(void)
+ {
+ 	struct timespec ts;
