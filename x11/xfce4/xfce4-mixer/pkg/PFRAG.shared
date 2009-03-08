@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2007/05/10 06:39:04 steven Exp $
-@lib lib/libxfce4mixer.so.${LIBxfce4mixer_VERSION}
-lib/xfce4/mcs-plugins/sound_settings.so
