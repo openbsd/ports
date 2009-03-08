@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2007/05/08 08:56:44 steven Exp $
-lib/xfce4/mcs-plugins/wmtweaks_plugin.so
-lib/xfce4/mcs-plugins/workspaces_plugin.so
-lib/xfce4/mcs-plugins/xfwm4_plugin.so
