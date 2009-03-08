@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/11/06 15:34:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/03/08 17:13:31 landry Exp $
 @conflict xffm-*
 %%SHARED%%
 @bin bin/Thunar
 bin/thunar
+bin/thunar-settings
 include/thunar-vfs-1/
 include/thunar-vfs-1/thunar-vfs/
 include/thunar-vfs-1/thunar-vfs/thunar-vfs-config.h
@@ -49,6 +50,8 @@ lib/thunarx-1/thunar-sbr.a
 lib/thunarx-1/thunar-sbr.la
 lib/thunarx-1/thunar-uca.a
 lib/thunarx-1/thunar-uca.la
+lib/thunarx-1/thunar-wallpaper-plugin.a
+lib/thunarx-1/thunar-wallpaper-plugin.la
 libexec/ThunarBulkRename
 libexec/ThunarHelp
 @bin libexec/thunar-sendto-email
@@ -66,6 +69,7 @@ share/Thunar/sendto/thunar-sendto-email.desktop
 share/applications/Thunar-bulk-rename.desktop
 share/applications/Thunar-folder-handler.desktop
 share/applications/Thunar.desktop
+share/applications/thunar-settings.desktop
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/org.xfce.FileManager.service
@@ -261,6 +265,29 @@ share/doc/Thunar/html/ru/the-file-manager-window.html
 share/doc/Thunar/html/ru/using-removable-media.html
 share/doc/Thunar/html/ru/working-with-files-and-folders.html
 share/doc/Thunar/html/thunar.css
+share/doc/Thunar/html/tr/
+share/doc/Thunar/html/tr/advanced-topics.html
+share/doc/Thunar/html/tr/copyright.html
+share/doc/Thunar/html/tr/customizing-thunar.html
+share/doc/Thunar/html/tr/faq.html
+share/doc/Thunar/html/tr/images/
+share/doc/Thunar/html/tr/images/bulk-rename.png
+share/doc/Thunar/html/tr/images/file-manager-window.png
+share/doc/Thunar/html/tr/images/file-properties.png
+share/doc/Thunar/html/tr/images/preferences-advanced.png
+share/doc/Thunar/html/tr/images/preferences-behavior.png
+share/doc/Thunar/html/tr/images/preferences-side-pane.png
+share/doc/Thunar/html/tr/images/preferences-views.png
+share/doc/Thunar/html/tr/images/removable-drives-and-media.png
+share/doc/Thunar/html/tr/images/removable-media-unmount.png
+share/doc/Thunar/html/tr/images/sendto-menu.png
+share/doc/Thunar/html/tr/images/visible-columns.png
+share/doc/Thunar/html/tr/index.html
+share/doc/Thunar/html/tr/preferences.html
+share/doc/Thunar/html/tr/support.html
+share/doc/Thunar/html/tr/the-file-manager-window.html
+share/doc/Thunar/html/tr/using-removable-media.html
+share/doc/Thunar/html/tr/working-with-files-and-folders.html
 share/doc/Thunar/html/zh_TW/
 share/doc/Thunar/html/zh_TW/advanced-topics.html
 share/doc/Thunar/html/zh_TW/copyright.html
@@ -285,6 +312,7 @@ share/doc/Thunar/html/zh_TW/the-file-manager-window.html
 share/doc/Thunar/html/zh_TW/using-removable-media.html
 share/doc/Thunar/html/zh_TW/working-with-files-and-folders.html
 share/examples/Thunar/
+@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/Thunar/
 share/examples/Thunar/uca.xml
 @sample ${SYSCONFDIR}/xdg/Thunar/uca.xml

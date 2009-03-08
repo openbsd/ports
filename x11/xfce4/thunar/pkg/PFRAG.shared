@@ -1,6 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/05/08 15:14:23 steven Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2009/03/08 17:13:31 landry Exp $
 @lib lib/libthunar-vfs-1.so.${LIBthunar-vfs-1_VERSION}
 @lib lib/libthunarx-1.so.${LIBthunarx-1_VERSION}
 lib/thunarx-1/thunar-apr.so
 lib/thunarx-1/thunar-sbr.so
 lib/thunarx-1/thunar-uca.so
+lib/thunarx-1/thunar-wallpaper-plugin.so
