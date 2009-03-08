@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.677 2009/03/04 20:29:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.678 2009/03/08 20:38:48 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -360,9 +360,7 @@
      SUBDIR += p5-Expect-Simple
      SUBDIR += p5-Exporter-Lite
      SUBDIR += p5-Exporter-Tidy
-     SUBDIR += p5-ExtUtils-CBuilder
      SUBDIR += p5-ExtUtils-Depends
-     SUBDIR += p5-ExtUtils-ParseXS
      SUBDIR += p5-ExtUtils-PkgConfig
      SUBDIR += p5-ExtUtils-XSBuilder
      SUBDIR += p5-File-Attributes
@@ -430,7 +428,6 @@
      SUBDIR += p5-Locale-Maketext-Fuzzy
      SUBDIR += p5-Locale-Maketext-Gettext
      SUBDIR += p5-Locale-Maketext-Lexicon
-     SUBDIR += p5-Locale-Maketext-Simple
      SUBDIR += p5-Locale-PGettext
      SUBDIR += p5-Locale-US
      SUBDIR += p5-Locale-gettext
@@ -445,8 +442,6 @@
      SUBDIR += p5-MRO-Compat
      SUBDIR += p5-Module-Find
      SUBDIR += p5-Module-Install
-     SUBDIR += p5-Module-Loaded
-     SUBDIR += p5-Module-Pluggable
      SUBDIR += p5-Module-Pluggable-Fast
      SUBDIR += p5-Module-Refresh
      SUBDIR += p5-Module-ScanDeps
@@ -592,7 +587,6 @@
      SUBDIR += p5-Time-Duration-Parse
      SUBDIR += p5-Time-Format
      SUBDIR += p5-Time-Period
-     SUBDIR += p5-Time-Piece
      SUBDIR += p5-Time-Piece-MySQL
      SUBDIR += p5-Time-Progress
      SUBDIR += p5-Time-TimeDate
