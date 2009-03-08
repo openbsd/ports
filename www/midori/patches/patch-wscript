@@ -1,8 +1,8 @@
-$OpenBSD: patch-wscript,v 1.2 2009/01/26 19:52:49 landry Exp $
+$OpenBSD: patch-wscript,v 1.3 2009/03/08 20:01:18 landry Exp $
 We don't need those files installed..
---- wscript.orig	Mon Jan 19 00:18:58 2009
-+++ wscript	Mon Jan 19 00:19:05 2009
-@@ -267,10 +267,6 @@ def build (bld):
+--- wscript.orig	Mon Feb 23 14:08:30 2009
++++ wscript	Mon Feb 23 14:08:50 2009
+@@ -303,12 +303,8 @@ def build (bld):
      if option_enabled ('addons'):
          bld.add_subdirs ('extensions')
  
@@ -10,6 +10,9 @@ We don't need those files installed..
 -        bld.install_files ('${DOCDIR}/' + APPNAME + '/', \
 -            'AUTHORS ChangeLog COPYING EXPAT README TRANSLATE')
 -
+     # Install default configuration
+-    bld.install_files ('${SYSCONFDIR}/xdg/' + APPNAME + '/', 'data/search')
++    bld.install_files ('${DATADIR}/examples/' + APPNAME + '/', 'data/search')
+ 
      if bld.env['RST2HTML']:
          # FIXME: Build only if needed
-         if not os.access (blddir, os.F_OK):

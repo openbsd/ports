@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/29 20:08:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/08 20:01:18 landry Exp $
 
 COMMENT =	lightweight web browser
 
-XFCE_VERSION =	0.1.2
+XFCE_VERSION =	0.1.4
 XFCE_GOODIE =	midori
-PKGNAME =	${DISTNAME}p0
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 CATEGORIES =	www
@@ -19,8 +18,10 @@ MODULES =	x11/xfce4 devel/waf
 
 USE_X11 =	Yes
 DESKTOP_FILES =	Yes
+NO_REGRESS =	Yes
 
 LIB_DEPENDS =	webkit-1.0::www/webkit \
+		idn::devel/libidn \
 		sqlite3::databases/sqlite3 \
 		unique-1.0::devel/libunique \
 		soup-2.4:libsoup->=2.24.3p0:devel/libsoup
