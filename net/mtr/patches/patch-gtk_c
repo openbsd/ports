@@ -1,0 +1,14 @@
+$OpenBSD: patch-gtk_c,v 1.1 2009/03/08 18:15:45 jasper Exp $
+
+Fix 64-bit issue.
+
+--- gtk.c.orig	Sun Mar  8 19:13:24 2009
++++ gtk.c	Sun Mar  8 19:13:44 2009
+@@ -22,6 +22,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <sys/time.h>
+ #include <sys/types.h>
