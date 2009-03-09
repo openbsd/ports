@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2009/03/09 17:09:58 sthen Exp $
 
 COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
 
 DISTNAME=	libdnet-1.10
-PKGNAME-main=	${DISTNAME}p2
-PKGNAME-python= ${DISTNAME:S/^libdnet/py-libdnet/}p3
+PKGNAME-main=	${DISTNAME}p3
+PKGNAME-python= ${DISTNAME:S/^libdnet/py-libdnet/}p4
 SHARED_LIBS=	dnet	1.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libdnet/}
@@ -34,6 +34,7 @@ CONFIGURE_ARGS +=	--without-check
 .if ${FLAVOR:L:Mno_python}
 CONFIGURE_ARGS+=	--without-python
 .else
+MODPY_EGG_VERSION=	1.10
 MODULES+=		lang/python
 MULTI_PACKAGES+=	-python
 CONFIGURE_ARGS+=	--with-python

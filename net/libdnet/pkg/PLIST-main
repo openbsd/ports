@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/22 08:29:56 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/03/09 17:09:58 sthen Exp $
 @pkgpath net/libdnet
 @pkgpath net/libdnet,no_python
 %%SHARED%%
@@ -24,4 +24,4 @@ lib/libdnet.a
 lib/libdnet.la
 @man man/man3/dnet.3
 @man man/man8/dnet.8
-sbin/dnet
+@bin sbin/dnet
