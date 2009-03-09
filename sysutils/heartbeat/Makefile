@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/09/18 13:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/09 22:42:08 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,8 +9,8 @@ COMMENT-snmp=	snmp agent for heartbeat
 VERSION=	2.1.2-15
 DISTNAME=	obs-${VERSION}
 PKGNAME=	heartbeat-${VERSION}
-PKGNAME-main=	heartbeat-${VERSION}
-PKGNAME-gui=	heartbeat-gui-${VERSION}
+PKGNAME-main=	heartbeat-${VERSION}p0
+PKGNAME-gui=	heartbeat-gui-${VERSION}p0
 PKGNAME-snmp=	heartbeat-snmp-${VERSION}
 
 EXTRACT_SUFX=   .tar.bz2
@@ -44,7 +44,7 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		::devel/swig
 
-WANTLIB-main=	${WANTLIB} crypto gcrypt gpg-error idn ncurses ssl
+WANTLIB-main=	${WANTLIB} crypto gcrypt gpg-error idn ncurses ssl tasn1
 LIB_DEPENDS-main=${LIB_DEPENDS} \
 		uuid.>=1:e2fs-uuid-*:sysutils/e2fsprogs,-uuid \
 		gnutls.>=12::security/gnutls \
@@ -57,7 +57,7 @@ LIB_DEPENDS-main=${LIB_DEPENDS} \
 RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		::devel/p5-Time-TimeDate
 
-WANTLIB-gui=	gcrypt gpg-error m util xml2 z
+WANTLIB-gui=	gcrypt gpg-error m tasn1 util xml2 z
 LIB_DEPENDS-gui=${LIB_DEPENDS} \
 		bz2.>=10::archivers/bzip2 \
 		gnutls.>=12::security/gnutls \

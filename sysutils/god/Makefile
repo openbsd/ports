@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/16 19:40:31 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/09 22:42:08 sthen Exp $
 
 COMMENT=	system monitoring framework written in Ruby
 
 DISTNAME=	god-0.7.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	sysutils
 
 # mit
@@ -13,6 +13,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=god/}
+
+WANTLIB=	c m
+LIB_DEPENDS=	ruby::lang/ruby
 
 MODULES=	lang/ruby
 

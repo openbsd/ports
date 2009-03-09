@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2008/06/06 10:27:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2009/03/09 22:42:08 sthen Exp $
 
 COMMENT=	Volume dial for Gkrellm2
 
 V=		2.1.13
 DISTNAME=	gkrellm-volume-${V}
-PKGNAME=	gkrellmvolume-${V}p0
+PKGNAME=	gkrellmvolume-${V}p1
 CATEGORIES=	audio
 
 HOMEPAGE=	http://gkrellm.luon.net/volume.phtml
