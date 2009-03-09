@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.26 2009/01/01 21:03:27 djm Exp $
+# $OpenBSD: python.port.mk,v 1.27 2009/03/09 23:09:19 espie Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -8,10 +8,19 @@ SHARED_ONLY=		Yes
 CATEGORIES+=		lang/python
 
 MODPY_VERSION?=		2.5
+.if ${MODPY_VERSION} == 2.3
+MODPYSPEC=python->=${MODPY_VERSION},<2.4
+.elif ${MODPY_VERSION} == 2.4
+MODPYSPEC=python->=${MODPY_VERSION},<2.5
+.elif ${MODPY_VERSION} == 2.5
+MODPYSPEC=python->=${MODPY_VERSION},<2.6
+.elif ${MODPY_VERSION} == 2.6
+MODPYSPEC=python->=${MODPY_VERSION},<2.7
+.endif
 
-MODPY_RUN_DEPENDS=	:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION}
-MODPY_LIB_DEPENDS=	python${MODPY_VERSION}:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION}
-_MODPY_BUILD_DEPENDS=	:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION}
+MODPY_RUN_DEPENDS=	:${MODPYSPEC}:lang/python/${MODPY_VERSION}
+MODPY_LIB_DEPENDS=	python${MODPY_VERSION}:${MODPYSPEC}:lang/python/${MODPY_VERSION}
+_MODPY_BUILD_DEPENDS=	:${MODPYSPEC}:lang/python/${MODPY_VERSION}
 
 MODPY_RUNDEP?=		Yes
 

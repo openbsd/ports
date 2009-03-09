@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.57 2009/01/01 21:03:27 djm Exp $
+# $OpenBSD: Makefile.inc,v 1.58 2009/03/09 23:09:19 espie Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -56,12 +56,12 @@ WANTLIB-main=		ssl panel m crypto c util z readline pthread \
 LIB_DEPENDS-main+=	sqlite3::databases/sqlite3
 .endif
 
-LIB_DEPENDS-bsddb=	lib/db4/db.>=4:db-4.*:databases/db/v4
+LIB_DEPENDS-bsddb=	lib/db4/db.>=4:db->=4,<5:databases/db/v4
 LIB_DEPENDS-gdbm=	gdbm.>=3::databases/gdbm
 RUN_DEPENDS-idle=	${RUN_DEPENDS} \
 			::lang/python/${VERSION},-tkinter
-LIB_DEPENDS-tkinter=	tcl84:tcl-8.4.*:lang/tcl/8.4 \
-			tk84:tk-8.4.*:x11/tk/8.4
+LIB_DEPENDS-tkinter=	tcl84:tcl->=8.4,<8.5:lang/tcl/8.4 \
+			tk84:tk->=8.4,<8.5:x11/tk/8.4
 WANTLIB-tkinter=	X11
 
 FULLPKGNAME-bsddb=	python-bsddb-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
