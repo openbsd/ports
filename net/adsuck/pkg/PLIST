@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/06 16:55:26 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/09 03:57:39 todd Exp $
 @newgroup _adsuck:620
 @newuser _adsuck:620:_adsuck:daemon:adsuck Daemon:/var/empty:/sbin/nologin
 @man man/cat8/adsuck.0
@@ -11,9 +11,17 @@ share/doc/adsuck/README.dhclient
 share/examples/adsuck/
 @sample /var/adsuck/
 @sample /var/adsuck/files/
-share/examples/adsuck/hosts.big
-@sample /var/adsuck/files/hosts.big
+share/examples/adsuck/Hosts.blc
+@sample /var/adsuck/files/Hosts.blc
+share/examples/adsuck/Hosts.pub
+@sample /var/adsuck/files/Hosts.pub
+share/examples/adsuck/Hosts.rsk
+@sample /var/adsuck/files/Hosts.rsk
+share/examples/adsuck/Hosts.trc
+@sample /var/adsuck/files/Hosts.trc
 share/examples/adsuck/hosts.small
 @sample /var/adsuck/files/hosts.small
+share/examples/adsuck/regex
+@sample /var/adsuck/files/regex
 share/examples/adsuck/resolv.conf
 @sample /var/adsuck/files/resolv.conf

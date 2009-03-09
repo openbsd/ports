@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/06 23:57:44 todd Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/09 03:57:38 todd Exp $
 
 COMMENT=		dns relay for ad blocking
 
-DISTNAME=		adsuck-1.2
+DISTNAME=		adsuck-1.4
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.peereboom.us/adsuck/
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=   http://www.peereboom.us/adsuck/snapshot/
 
-NO_REGRESS=     Yes
 WANTLIB=        c ldns
 
 BUILD_DEPENDS=	::net/ldns/libldns
@@ -25,6 +24,10 @@ RUN_DEPENDS=	::net/ldns/libldns
 		
 MAKE_FLAGS=	BINDIR="${TRUEPREFIX}/sbin" \
 		MANDIR="${TRUEPREFIX}/man/cat"
+
+_files= Hosts.blc    Hosts.rsk     regex \
+	Hosts.pub    Hosts.trc    hosts.small  resolv.conf
+
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/adsuck
@@ -34,8 +37,8 @@ post-install:
 	${SUBST_CMD} -c ${FILESDIR}/README.dhclient ${WRKDIR}/README.dhclient
 	${INSTALL_DATA} ${WRKDIR}/README.dhclient ${PREFIX}/share/doc/adsuck/README.dhclient
 	${INSTALL_DATA} ${FILESDIR}/dhclient-script.diff ${PREFIX}/share/adsuck
-	${INSTALL_DATA} ${WRKSRC}/files/hosts.big ${PREFIX}/share/examples/adsuck
-	${INSTALL_DATA} ${WRKSRC}/files/hosts.small ${PREFIX}/share/examples/adsuck
-	${INSTALL_DATA} ${WRKSRC}/files/resolv.conf ${PREFIX}/share/examples/adsuck
+.for _f in ${_files}
+	${INSTALL_DATA} ${WRKSRC}/files/${_f} ${PREFIX}/share/examples/adsuck
+.endfor
 
 .include <bsd.port.mk>
