@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2008/06/15 00:08:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2009/03/09 18:36:30 rui Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
@@ -6,9 +6,9 @@ COMMENT-share=	shared data files for Freeciv
 
 VERSION=	2.1.4
 DISTNAME=	freeciv-${VERSION}
-PKGNAME-main=	freeciv-server-${VERSION}
-PKGNAME-client=	freeciv-client-${VERSION}p0
-PKGNAME-share=	freeciv-share-${VERSION}
+PKGNAME-main=	freeciv-server-${VERSION}p0
+PKGNAME-client=	freeciv-client-${VERSION}p1
+PKGNAME-share=	freeciv-share-${VERSION}p0
 CATEGORIES=	games
 HOMEPAGE=	http://www.freeciv.org/
 
@@ -32,15 +32,17 @@ MULTI_PACKAGES=	-main -share
 MODULES=	devel/gettext
 WANTLIB=	c m z ncurses readline
 
+CONFIGURE_ARGS=	--with-ggz-client=no
+
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=	Yes
 MULTI_PACKAGES+=-client
 
-CONFIGURE_ARGS=	--enable-client=gtk2 \
+CONFIGURE_ARGS+=--enable-client=gtk2 \
 		--disable-sdl-mixer \
 		--with-esd-prefix=${LOCALBASE}
 .else
-CONFIGURE_ARGS=	--enable-client=no
+CONFIGURE_ARGS+=--enable-client=no
 .endif
 
 PKG_ARCH-share=	*
