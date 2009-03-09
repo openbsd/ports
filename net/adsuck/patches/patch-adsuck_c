@@ -1,0 +1,12 @@
+$OpenBSD: patch-adsuck_c,v 1.1 2009/03/09 04:32:48 todd Exp $
+--- adsuck.c.orig	Sun Mar  8 23:30:34 2009
++++ adsuck.c	Sun Mar  8 23:30:48 2009
+@@ -45,7 +45,7 @@
+ 
+ #include "adsuck.h"
+ 
+-#define MAXLINE		(128)
++#define MAXLINE		(256)
+ #define INBUF_SIZE	(4096)
+ #define LOCALIP		"127.0.0.1"
+ #define ADSUCK_USER	"_adsuck"
