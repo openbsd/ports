@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2007/11/14 09:43:40 steven Exp $
+# $OpenBSD: Makefile,v 1.42 2009/03/09 21:32:22 sthen Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 # $RuOBSD: Makefile,v 1.4 2002/05/18 04:21:36 form Exp $
 
@@ -6,7 +6,7 @@ COMMENT=		xforms-based mail application for Unix
 
 V=			1.5.3
 DISTNAME=       	xfmail-${V}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS=		editor	1.0 \
 			mail	1.0
 MODGNU_SHARED_LIBS=	editor	'' \
@@ -48,7 +48,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mesd}
 CONFIGURE_ARGS+=	--with-esd-sound
 LIB_DEPENDS+=		esd.>=2::audio/esound
-WANTLIB+=		audiofile
+WANTLIB+=		audiofile sndio
 .else
 CONFIGURE_ARGS+=	--without-esd-sound
 .endif

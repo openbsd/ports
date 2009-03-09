@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.82 2008/11/15 10:41:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2009/03/09 21:32:22 sthen Exp $
 
 COMMENT=	mail/news client in gtk+
 
 MAJOR=		2.5
 VERSION=	${MAJOR}.0
 DISTNAME=	sylpheed-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	mail news x11
 HOMEPAGE=	http://sylpheed.sraoss.jp/en
 
@@ -19,13 +19,11 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	gtk-x11-2.0.>=0.9,gdk_pixbuf-2.0.>=0.9,gdk-x11-2.0.>=0.9::x11/gtk+2 \
 		gtkspell.>=1::textproc/gtkspell
 
-WANTLIB=	X11 Xau Xcomposite Xdamage Xdmcp Xrender \
-		Xcursor Xext Xfixes Xi Xinerama Xrandr \
-		atk-1.0 c cairo crypto expat fontconfig \
-		freetype glib-2.0 glitz gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pcre \
-		pthread pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png ssl z enchant stdc++
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo crypto enchant
+WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread ssl stdc++ z
 
 RUN_DEPENDS=	::devel/desktop-file-utils
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${MAJOR}/
