@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/04 07:33:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/10 21:52:44 espie Exp $
 
 COMMENT=		creates playlists from directory trees
 
 MODPY_EGG_VERSION= 	0.4.5
 DISTNAME=		mkplaylist-${MODPY_EGG_VERSION}
+PKGNAME =		${DISTNAME}p0
 CATEGORIES=		audio
 HOMEPAGE=		http://bj.spline.de/software.html
 
