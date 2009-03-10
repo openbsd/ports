@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.369 2009/03/05 19:31:33 landry Exp $
+# $OpenBSD: Makefile,v 1.370 2009/03/10 17:28:20 martynas Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -19,6 +19,7 @@
      SUBDIR += aterm,big5
      SUBDIR += aterm,big5,lite
      SUBDIR += aterm,lite
+     SUBDIR += autocutsel
      SUBDIR += awesome
      SUBDIR += bbdate
      SUBDIR += bbkeys
