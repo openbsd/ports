@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/04 19:53:19 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/10 10:37:35 bernd Exp $
 
 COMMENT =	DSL for quickly creating web-applications in Ruby
 
-DISTNAME =	sinatra-0.9.1
+DISTNAME =	sinatra-0.9.1.1
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	www
 
