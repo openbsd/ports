@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2009/02/11 15:47:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2009/03/10 13:12:42 jasper Exp $
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
-SHARED_LIBS +=  gnome-desktop-2      5.8      # .5.16
 SHARED_LIBS +=  gnome-desktop-2      6.0      # .9.4
 
 CATEGORIES=		x11
