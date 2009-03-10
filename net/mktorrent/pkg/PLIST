@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/10 13:43:05 stsp Exp $
+@bin bin/mktorrent
+share/doc/mktorrent/
+share/doc/mktorrent/LICENSE

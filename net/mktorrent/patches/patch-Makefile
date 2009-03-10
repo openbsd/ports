@@ -1,0 +1,31 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/03/10 13:43:05 stsp Exp $
+--- Makefile.orig	Thu Mar 27 18:38:06 2008
++++ Makefile	Tue Mar 10 12:21:21 2009
+@@ -1,24 +1,14 @@
+-CC=gcc
+-
+-# Default
+-CFLAGS = -w -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DFS64
+-LFLAGS =
++CFLAGS += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DFS64
+ LIBS = -lcrypto
+ 
+-# Default (no large file support)
+-#CFLAGS = -w -O2 
+-#LFLAGS =
+-#LIBS = -lcrypto
+-
+-
+ APPN = mktorrent
+ OBJS = mktorrent.o
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) -c $?
++	$(CC) $(CFLAGS) $(DEBUG) -c $?
+ 
+ all: $(OBJS)
+-	$(CC) $(LFLAGS) -o $(APPN) $(OBJS) $(LIBS)
++	$(CC) $(LDFLAGS) -o $(APPN) $(OBJS) $(LIBS)
+ 
+ clean:
+ 	rm *.o

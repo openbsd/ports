@@ -1,0 +1,2 @@
+mktorrent is a command-line .torrent file creator.
+It supports multi trackers (tier groups).

@@ -1,0 +1,124 @@
+$OpenBSD: patch-mktorrent_c,v 1.1.1.1 2009/03/10 13:43:05 stsp Exp $
+--- mktorrent.c.orig	Thu Mar 27 18:38:06 2008
++++ mktorrent.c	Tue Mar 10 11:53:08 2009
+@@ -50,8 +50,6 @@ char *path;
+ void *link;
+ };
+ 
+-static char str[1024];
+-
+ static char *name;
+ static char *announce;
+ static char *announce_list[AL_MAX+1];
+@@ -62,7 +60,7 @@ static int bs;
+ static int flags;
+ 
+ #define benc_raw(f,s) fprintf(f,"%s",s)
+-#define benc_str(f,s) fprintf(f,"%u:%s",strlen(s),s)
++#define benc_str(f,s) fprintf(f,"%zd:%s",strlen(s),s)
+ #define benc_int(f,i) fprintf(f,"i%de",i)
+ #define benc_int64(f,i) fprintf(f,"i%llde",i)
+ 
+@@ -301,7 +299,7 @@ if(totalsize%bs)
+ benc_str(fo,"pieces");
+ fprintf(fo,"%lld:",pieces*SHA_DIGEST_LENGTH);
+ 
+-printf("Creating torrent file...\n",out_fn);
++printf("Creating %s\n",out_fn);
+ if((f=open(file->fn,MO_RDONLY))==-1)
+   {
+   fclose(fo);
+@@ -312,7 +310,7 @@ if((f=open(file->fn,MO_RDONLY))==-1)
+   exit(1);
+   }
+ otm=time(0);
+-fprintf(stdout,"done: %3d%%",cps);
++fprintf(stdout,"done: %3ld%%",cps);
+ fflush(stdout);
+ while((r=read(f,buf,bs))>0)
+   {
+@@ -323,14 +321,14 @@ while((r=read(f,buf,bs))>0)
+   ctm=time(0);
+   if(ctm!=otm && cps!=ops)
+     {
+-    fprintf(stdout,"\rdone: %3d%%",cps);
++    fprintf(stdout,"\rdone: %3ld%%",cps);
+     fflush(stdout);
+     ops=cps;
+     otm=ctm;
+     }
+   }
+ close(f);
+-fprintf(stdout,"\rdone: %3d%%\n",cps);
++fprintf(stdout,"\rdone: %3ld%%\n",cps);
+ fflush(stdout);
+ if(r<0)
+   {
+@@ -446,9 +444,9 @@ if(totalsize%bs)
+ benc_str(fo,"pieces");
+ fprintf(fo,"%lld:",pieces*SHA_DIGEST_LENGTH);
+ 
+-printf("Creating torrent file...\n",out_fn);
++printf("Creating %s\n", out_fn);
+ otm=time(0);
+-fprintf(stdout,"done: %3d%%",cps);
++fprintf(stdout,"done: %3ld%%",cps);
+ fflush(stdout);
+ f=0;
+ ptr=filelist;
+@@ -472,7 +470,7 @@ while(ptr)
+     ctm=time(0);
+     if(ctm!=otm && cps!=ops)
+       {
+-      fprintf(stdout,"\rdone: %3d%%",cps);
++      fprintf(stdout,"\rdone: %3ld%%",cps);
+       fflush(stdout);
+       ops=cps;
+       otm=ctm;
+@@ -523,7 +521,7 @@ while(ptr)
+     ctm=time(0);
+     if(ctm!=otm && cps!=ops)
+       {
+-      fprintf(stdout,"\rdone: %3d%%",cps);
++      fprintf(stdout,"\rdone: %3ld%%",cps);
+       fflush(stdout);
+       ops=cps;
+       otm=ctm;
+@@ -532,7 +530,7 @@ while(ptr)
+   if(!f)
+     ptr=ptr->link;
+   }
+-fprintf(stdout,"\rdone: %3d%%\n",cps);
++fprintf(stdout,"\rdone: %3ld%%\n",cps);
+ fflush(stdout);
+ if(!(flags&F_PUB))
+   {
+@@ -547,9 +545,10 @@ free(sha);
+ free_files();
+ }
+ 
+-static char mycmpi(char *s1,char *s2)
++static int mycmpi(char *s1,char *s2)
+ {
+-char c1,c2,r;
++char c1,c2;
++int r;
+ 
+ while(*s1 && *s2)
+   {
+@@ -559,6 +558,7 @@ while(*s1 && *s2)
+     return r;
+   s1++,s2++;
+   }
++return 0;
+ }
+ 
+ static int mydcmpi(char *s1,char *s2)
+@@ -576,6 +576,7 @@ while(*s1 && *s2)
+     d++;
+   s1++,s2++;
+   }
++return d;
+ }
+ 
+ static void add_file(char *fn,char *tp,struct stat *st)
