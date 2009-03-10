@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2007/10/08 08:22:38 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/10 22:21:48 espie Exp $
 
 COMMENT=	read and manipulate ID3 tags on MP3 files with Python
 
 VERSION=	1.2
 DISTNAME=	id3-py_${VERSION}
-PKGNAME=	py-id3-${VERSION}p1
+PKGNAME=	py-id3-${VERSION}p2
 CATEGORIES=	audio
 
 HOMEPAGE=	http://id3-py.sourceforge.net/
