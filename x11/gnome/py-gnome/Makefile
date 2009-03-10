@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2009/03/10 19:33:32 naddy Exp $
 
 COMMENT=	GNOME Python bindings
 
 GNOME_PROJECT=	gnome-python
 GNOME_VERSION=	2.22.3
-PKGNAME=	py-gnome-${VERSION}p3
+PKGNAME=	py-gnome-${VERSION}p4
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -29,7 +29,7 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	python${MODPY_VERSION}:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION} \
+LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		gnomeui-2.>=1800::x11/gnome/libgnomeui
 RUN_DEPENDS=	:py-gtk2->=2.10.3:x11/py-gtk2 \
 		::devel/py-orbit
