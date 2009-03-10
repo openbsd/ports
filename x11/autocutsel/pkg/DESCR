@@ -1,0 +1,4 @@
+Autocutsel tracks changes in the server's cutbuffer and CLIPBOARD
+selection. When the CLIPBOARD is changed, it updates the cutbuffer.
+When the cutbuffer is changed, it owns the CLIPBOARD selection. The
+cutbuffer and CLIPBOARD selection are always synchronized.
