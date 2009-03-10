@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2007/11/13 12:44:23 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2009/03/10 23:21:15 espie Exp $
 
 COMMENT=	integer-only ogg vorbis command-line player
 DISTNAME=	vorbis-tools-1.0
@@ -20,8 +20,8 @@ USE_LIBTOOL=	Yes
 AUTOCONF_VERSION=2.59
 AUTOMAKE_VERSION=1.4
 
-BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}*:devel/autoconf/${AUTOCONF_VERSION} \
-		:automake-${AUTOMAKE_VERSION}.*:devel/automake/${AUTOMAKE_VERSION} \
+BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
+		:automake->=${AUTOMAKE_VERSION},<1.5:devel/automake/${AUTOMAKE_VERSION} \
 		::devel/metaauto
 LIB_DEPENDS=	ao.>=3::audio/libao \
 		ogg.>=5::audio/libogg \
