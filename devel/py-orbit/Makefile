@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2008/02/01 20:26:42 martynas Exp $
+# $OpenBSD: Makefile,v 1.14 2009/03/10 19:26:07 naddy Exp $
 
 COMMENT=	ORBit2 Python bindings
 
 V=		2.14.3
 DISTNAME=	pyorbit-${V}
-PKGNAME=	py-orbit-${V}p2
+PKGNAME=	py-orbit-${V}p3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.pygtk.org/
@@ -21,7 +21,7 @@ WANTLIB=	m util IDL-2 pcre glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0
 
 MODULES=	devel/gettext lang/python
-LIB_DEPENDS=	python${MODPY_VERSION}:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION} \
+LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		ORBit-2,ORBit-imodule-2::devel/ORBit2
 
 USE_GMAKE=	Yes
