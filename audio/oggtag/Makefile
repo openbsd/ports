@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:26:02 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/10 10:36:47 sthen Exp $
 COMMENT=	command-line editor for tags in Ogg Vorbis files
 
 DISTNAME=	oggtag_1.0
-PKGNAME=	${DISTNAME:S/_/-/}
+PKGNAME=	${DISTNAME:S/_/-/}p0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://oggtag.sourceforge.net/
 
-MAINTAINER=	Julian Leyh <oenone@oenone.de>
+MAINTAINER=	Julian Leyh <julian@vgai.de>
 
-# LGPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
