@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/07/09 21:27:50 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/03/10 11:00:57 martynas Exp $
 @conflict py-cherrypy2-*
 lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/cherrypy/
@@ -78,6 +78,8 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/process/win32.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/process/wspbus.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/process/wspbus.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/
+lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/__init__.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/example.conf
 lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/site.conf
 lib/python${MODPY_VERSION}/site-packages/cherrypy/scaffold/static/
@@ -93,6 +95,8 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/test/helper.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/helper.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/logtest.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/logtest.pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/modfcgid.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/test/modfcgid.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/modpy.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/modpy.pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/modwsgi.py
