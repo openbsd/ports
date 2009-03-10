@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/22 09:36:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/10 13:18:33 jasper Exp $
 bin/oggconvert
 lib/python${MODPY_VERSION}/site-packages/OggConvert/
 lib/python${MODPY_VERSION}/site-packages/OggConvert/__init__.py
@@ -9,6 +9,8 @@ lib/python${MODPY_VERSION}/site-packages/OggConvert/ocv_in_progress.py
 lib/python${MODPY_VERSION}/site-packages/OggConvert/ocv_in_progress.pyc
 lib/python${MODPY_VERSION}/site-packages/OggConvert/ocv_info.py
 lib/python${MODPY_VERSION}/site-packages/OggConvert/ocv_info.pyc
+lib/python${MODPY_VERSION}/site-packages/OggConvert/ocv_init.py
+lib/python${MODPY_VERSION}/site-packages/OggConvert/ocv_init.pyc
 lib/python${MODPY_VERSION}/site-packages/OggConvert/ocv_main.py
 lib/python${MODPY_VERSION}/site-packages/OggConvert/ocv_main.pyc
 lib/python${MODPY_VERSION}/site-packages/OggConvert/ocv_media_checker.py
@@ -18,20 +20,41 @@ lib/python${MODPY_VERSION}/site-packages/OggConvert/ocv_transcoder.pyc
 lib/python${MODPY_VERSION}/site-packages/OggConvert/ocv_util.py
 lib/python${MODPY_VERSION}/site-packages/OggConvert/ocv_util.pyc
 lib/python${MODPY_VERSION}/site-packages/OggConvert/oggcv.glade
-lib/python${MODPY_VERSION}/site-packages/oggconvert-0.3.0-py${MODPY_VERSION}.egg-info
-share/applications/
+lib/python${MODPY_VERSION}/site-packages/oggconvert-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 share/applications/oggconvert.desktop
 share/locale/bg/LC_MESSAGES/oggconvert.mo
+share/locale/ca/LC_MESSAGES/oggconvert.mo
+share/locale/cs/LC_MESSAGES/oggconvert.mo
 share/locale/de/LC_MESSAGES/oggconvert.mo
 share/locale/es/LC_MESSAGES/oggconvert.mo
+share/locale/fi/LC_MESSAGES/oggconvert.mo
 share/locale/fr/LC_MESSAGES/oggconvert.mo
+share/locale/frp/
+share/locale/frp/LC_MESSAGES/
+share/locale/frp/LC_MESSAGES/oggconvert.mo
+share/locale/he/LC_MESSAGES/oggconvert.mo
+share/locale/hu/LC_MESSAGES/oggconvert.mo
 share/locale/it/LC_MESSAGES/oggconvert.mo
 share/locale/ko/LC_MESSAGES/oggconvert.mo
+share/locale/lt/LC_MESSAGES/oggconvert.mo
+share/locale/ms/LC_MESSAGES/oggconvert.mo
+share/locale/mt/
+share/locale/mt/LC_MESSAGES/
+share/locale/mt/LC_MESSAGES/oggconvert.mo
+share/locale/nb/LC_MESSAGES/oggconvert.mo
 share/locale/nl/LC_MESSAGES/oggconvert.mo
+share/locale/oc/LC_MESSAGES/oggconvert.mo
 share/locale/pl/LC_MESSAGES/oggconvert.mo
+share/locale/pt/LC_MESSAGES/oggconvert.mo
 share/locale/pt_BR/LC_MESSAGES/oggconvert.mo
 share/locale/ru/LC_MESSAGES/oggconvert.mo
+share/locale/sk/LC_MESSAGES/oggconvert.mo
+share/locale/sr/LC_MESSAGES/oggconvert.mo
 share/locale/sv/LC_MESSAGES/oggconvert.mo
+share/locale/tr/LC_MESSAGES/oggconvert.mo
+share/locale/uk/LC_MESSAGES/oggconvert.mo
+share/locale/zh_CN/LC_MESSAGES/oggconvert.mo
+share/locale/zh_TW/LC_MESSAGES/oggconvert.mo
 share/pixmaps/
 share/pixmaps/oggconvert.svg
 @exec %D/bin/update-desktop-database
