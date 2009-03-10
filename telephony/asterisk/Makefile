@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.49 2009/01/24 11:22:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2009/03/10 21:12:37 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
 V=			1.4.22.2
 DISTNAME=		asterisk-$V
-FULLPKGNAME-main=	asterisk-$V
+FULLPKGNAME-main=	asterisk-$Vp0
+# N.B. overridden for h323 flavor below.
 
 CATEGORIES=		telephony
 
@@ -175,7 +176,7 @@ LIB_DEPENDS-main+=	h323::net/openh323 \
 CONFIGURE_ARGS+=	--with-pwlib=${LOCALBASE}/lib \
 			--with-h323=${LOCALBASE}/lib
 WANTLIB-main+=		SDL avutil expat lber ldap ldap_r sasl2
-FULLPKGNAME-main=	asterisk-$Vp0-h323
+FULLPKGNAME-main=	asterisk-$Vp1-h323
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE_PROGRAM} include/asterisk/buildopts.h
