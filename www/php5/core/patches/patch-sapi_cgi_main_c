@@ -1,0 +1,25 @@
+--- sapi/cgi/cgi_main.c.orig	Tue Mar 10 20:48:33 2009
++++ sapi/cgi/cgi_main.c	Tue Mar 10 21:02:07 2009
+@@ -1323,7 +1323,7 @@ int main(int argc, char *argv[])
+ 	char *orig_optarg = php_optarg;
+ 	char *script_file = NULL;
+ 	int ini_entries_len = 0;
+-
++	char *ini;
+ /* end of temporary locals */
+ #ifdef ZTS
+ 	void ***tsrm_ls;
+@@ -1375,8 +1375,12 @@ int main(int argc, char *argv[])
+ 	tsrm_ls = ts_resource(0);
+ #endif
+ 
++	if ((ini = getenv("PHP_INI_PATH"))) {
++		cgi_sapi_module.php_ini_path_override = ini;
++	} else {
++		cgi_sapi_module.php_ini_path_override = NULL;
++	}
+ 	sapi_startup(&cgi_sapi_module);
+-	cgi_sapi_module.php_ini_path_override = NULL;
+ 
+ #ifdef PHP_WIN32
+ 	_fmode = _O_BINARY; /* sets default for file streams to binary */

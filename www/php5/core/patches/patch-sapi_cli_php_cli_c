@@ -1,0 +1,24 @@
+$OpenBSD: patch-sapi_cli_php_cli_c,v 1.1 2009/03/10 22:07:22 robert Exp $
+--- sapi/cli/php_cli.c.orig	Tue Mar 10 17:02:10 2009
++++ sapi/cli/php_cli.c	Tue Mar 10 19:32:00 2009
+@@ -604,6 +604,7 @@ int main(int argc, char *argv[])
+ 	char *exec_direct=NULL, *exec_run=NULL, *exec_begin=NULL, *exec_end=NULL;
+ 	const char *param_error=NULL;
+ 	int hide_argv = 0;
++	char *ini;
+ /* end of temporary locals */
+ #ifdef ZTS
+ 	void ***tsrm_ls;
+@@ -647,7 +648,11 @@ int main(int argc, char *argv[])
+ #endif
+ 
+ 	cli_sapi_module.ini_defaults = sapi_cli_ini_defaults;
+-	cli_sapi_module.php_ini_path_override = NULL;
++	if ((ini = getenv("PHP_INI_PATH"))) {
++		cli_sapi_module.php_ini_path_override = strdup(ini);
++	} else {
++		cli_sapi_module.php_ini_path_override = NULL;
++	}
+ 	cli_sapi_module.phpinfo_as_text = 1;
+ 	sapi_startup(&cli_sapi_module);
+ 
