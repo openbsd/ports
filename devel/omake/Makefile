@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/11 21:21:17 avsm Exp $
 
 COMMENT=	build system designed for scalability and portability
 CATEGORIES=	devel
 
-V=		0.9.6.9-1
-DISTNAME=	omake-0.9.6.9-1
-PKGNAME=	omake-0.9.6.9pl1p2
-WRKDIST=	${WRKDIR}/omake-0.9.6.9
-MASTER_SITES=	http://omake.metaprl.org/downloads/
+V=		0.9.8.5
+VEXTRA=		3
+DISTNAME=	omake-${V}-${VEXTRA}
+PKGNAME=	omake-${V}pl${VEXTRA}
+WRKDIST=	${WRKDIR}/omake-${V}
+MASTER_SITES=	http://omake.metaprl.org/downloads/ \
+		http://www.ocaml-programming.de/godi-backup/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 HOMEPAGE=	http://omake.metaprl.org/
@@ -22,6 +24,16 @@ MODULES=	lang/ocaml
 NO_REGRESS=	Yes
 DESTDIRNAME=	INSTALL_ROOT
 
+MAKE_ENV=	MAN_ENABLED=Yes
 WANTLIB=	curses m pthread readline ncurses c
+
+DOC_DIR=	${PREFIX}/share/doc/omake
+DOC_FILES=	LICENSE LICENSE.OMake doc/txt/omake-doc.txt doc/ps/omake-doc.ps \
+		doc/ps/omake-doc.pdf CHANGELOG.txt ocamldep/LICENSE.ocamldep-omake \
+		doc/html
+
+post-install:
+	${INSTALL_DATA_DIR} ${DOC_DIR}
+	cd ${WRKSRC} && cp -R ${DOC_FILES} ${DOC_DIR}
 
 .include <bsd.port.mk>

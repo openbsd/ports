@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_exec_omake_exec_ml,v 1.1 2009/03/11 21:21:17 avsm Exp $
+--- src/exec/omake_exec.ml.orig	Thu Nov 27 14:20:45 2008
++++ src/exec/omake_exec.ml	Thu Nov 27 14:20:50 2008
+@@ -46,8 +46,6 @@ open Omake_exec_notify
+ open Omake_options
+ open Omake_command_type
+ 
+-external sync : unit -> unit = "caml_sync"
+-
+ module Exec =
+ struct
+    (*
