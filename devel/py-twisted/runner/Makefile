@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/30 16:22:09 eric Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/11 22:20:09 bernd Exp $
 
 COMMENT=	process management module for Twisted
 
 VERSION=	8.2.0
 DISTNAME=	TwistedRunner-${VERSION}
-PKGNAME=	py-twisted-runner-${VERSION}
+PKGNAME=	py-twisted-runner-${VERSION}p0
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedRunner
 
