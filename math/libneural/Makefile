@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/08 18:46:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/11 09:16:16 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		three layer backpropagation neural network library
 
 DISTNAME=		libneural-1.0.3
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	neural               0.0      # .0.0
 CATEGORIES=		math devel
 
@@ -17,6 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
+
+WANTLIB += m
 
 USE_LIBTOOL=		Yes
 
