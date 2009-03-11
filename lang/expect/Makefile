@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2007/09/16 00:27:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.49 2009/03/11 20:11:30 sthen Exp $
 
 COMMENT=	sophisticated scripter based on Tcl/Tk
 
 DISTNAME=	expect-5.43.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	expect543 1.2
 CATEGORIES=	lang
 MASTER_SITES=	http://expect.nist.gov/old/
@@ -17,24 +17,29 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c util m
 
-LIB_DEPENDS+=	tcl84:tcl-8.4.*:lang/tcl/8.4
-
 FLAVORS=	no_tk
 FLAVOR?=
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=--with-tclconfig="${LOCALBASE}/lib/tcl8.4"\
-		--with-tclinclude="${LOCALBASE}/include/tcl8.4"
+
+MODTCL_VERSION=	8.4
+MODTK_VERSION=	8.4
+
+CONFIGURE_ARGS+=--with-tclconfig="${MODTCL_LIBDIR}" \
+		--with-tclinclude="${MODTCL_INCDIR}"
 CONFIGURE_ENV=	LIBexpect543_VERSION=${LIBexpect543_VERSION}
 
 .if !${FLAVOR:L:Mno_tk}
-USE_X11=	Yes
-LIB_DEPENDS+=	tk84:tk-8.4.*:x11/tk/8.4
-CONFIGURE_ARGS+=--with-tkconfig="${LOCALBASE}/lib/tk8.4" \
-		--with-tkinclude="${LOCALBASE}/include/tk8.4"
+MODULES=	x11/tk
+LIB_DEPENDS+=	${MODTK_LIB_DEPENDS}
+CONFIGURE_ARGS+=--with-tkconfig="${MODTK_LIBDIR}" \
+		--with-tkinclude="${MODTK_INCDIR}"
 WANTLIB+=	X11
+.else
+MODULES=	lang/tcl
+LIB_DEPENDS+=	${MODTCL_LIB_DEPENDS}
 .endif
 
 REGRESS_TARGET=	test

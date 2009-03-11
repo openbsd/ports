@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.no-no_tk,v 1.5 2004/09/15 19:16:07 espie Exp $
-bin/expectk
+@comment $OpenBSD: PFRAG.no-no_tk,v 1.6 2009/03/11 20:11:30 sthen Exp $
+@bin bin/expectk
 bin/multixterm
 bin/tknewsbiff
 bin/tkpasswd

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.19 2005/06/12 12:04:00 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.20 2009/03/11 20:11:30 sthen Exp $
 bin/autoexpect
 bin/autopasswd
 bin/cryptdir
 bin/decryptdir
 bin/dislocate
-bin/expect
+@bin bin/expect
 bin/ftp-rfc
 bin/kibitz
 bin/lpunlock
