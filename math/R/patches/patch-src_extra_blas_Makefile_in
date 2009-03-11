@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_extra_blas_Makefile_in,v 1.1 2009/03/11 08:21:33 sthen Exp $
+--- src/extra/blas/Makefile.in.orig	Wed Mar 11 01:06:21 2009
++++ src/extra/blas/Makefile.in	Wed Mar 11 01:06:58 2009
+@@ -10,6 +10,7 @@ subdir = src/extra/blas
+ R_HOME = $(top_builddir)
+ 
+ include $(top_builddir)/Makeconf
++DYLIB_EXT=.so.$(LIBRblas_VERSION)
+ 
+ ALL_CFLAGS = $(ALL_CFLAGS_LO)
+ ALL_FFLAGS = $(ALL_FFLAGS_LO)

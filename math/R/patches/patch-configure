@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2008/10/26 23:04:00 mbalmer Exp $
---- configure.orig	Mon Oct 20 08:12:53 2008
-+++ configure	Sat Oct 25 22:43:34 2008
-@@ -60660,7 +60660,7 @@ LIBTHREAD!$LIBTHREAD$ac_delim
+$OpenBSD: patch-configure,v 1.10 2009/03/11 08:21:33 sthen Exp $
+--- configure.orig	Thu Dec 18 14:03:48 2008
++++ configure	Wed Mar 11 00:21:36 2009
+@@ -60283,7 +60283,7 @@ LIBTHREAD!$LIBTHREAD$ac_delim
  LTLIBTHREAD!$LTLIBTHREAD$ac_delim
  LIBMULTITHREAD!$LIBMULTITHREAD$ac_delim
  LTLIBMULTITHREAD!$LTLIBMULTITHREAD$ac_delim
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.9 2008/10/26 23:04:00 mbalmer Exp $
  LTLIBICONV!$LTLIBICONV$ac_delim
  INTLBISON!$INTLBISON$ac_delim
  GLIBC21!$GLIBC21$ac_delim
-@@ -60679,7 +60679,7 @@ GENCAT!$GENCAT$ac_delim
+@@ -60302,7 +60302,7 @@ GENCAT!$GENCAT$ac_delim
  INTLOBJS!$INTLOBJS$ac_delim
  INTL_LIBTOOL_SUFFIX_PREFIX!$INTL_LIBTOOL_SUFFIX_PREFIX$ac_delim
  INTLLIBS!$INTLLIBS$ac_delim
