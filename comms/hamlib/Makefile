@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/02/18 11:02:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/11 21:19:35 sthen Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -7,8 +7,8 @@ COMMENT-tcl=	tcl bindings for hamlib
 VERSION=	1.2.6
 DISTNAME=	hamlib-${VERSION}
 PKGNAME-main=	hamlib-${VERSION}p3
-PKGNAME-python=	hamlib-python-${VERSION}p2
-PKGNAME-tcl=	hamlib-tcl-${VERSION}p2
+PKGNAME-python=	hamlib-python-${VERSION}p3
+PKGNAME-tcl=	hamlib-tcl-${VERSION}p3
 CATEGORIES=    	comms hamradio
 
 MULTI_PACKAGES=	-main -python -tcl
