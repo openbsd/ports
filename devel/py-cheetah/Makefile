@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2008/01/13 17:39:39 martynas Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/11 21:08:53 bernd Exp $
 
 COMMENT=		Python-powered template engine and code generator
 
 VERSION=		2.0.1
 DISTNAME=		Cheetah-${VERSION}
-PKGNAME=		py-cheetah-${VERSION}
+PKGNAME=		py-cheetah-${VERSION}p0
 CATEGORIES=		devel textproc
 
 HOMEPAGE=		http://www.cheetahtemplate.org/
