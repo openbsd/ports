@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/01/30 16:13:54 eric Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/11 22:05:49 bernd Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
 VERSION=	0.8
 DISTNAME=	pyOpenSSL-${VERSION}
-PKGNAME=        py-openssl-${VERSION}
+PKGNAME=        py-openssl-${VERSION}p0
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://www.sourceforge.net/projects/pyopenssl/
