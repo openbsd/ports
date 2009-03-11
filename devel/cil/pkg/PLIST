@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/05/28 15:44:14 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/03/11 21:20:27 avsm Exp $
 bin/cilly
 bin/patcher
 lib/cil/
@@ -29,6 +29,7 @@ lib/cil/growArray.cmi
 lib/cil/inthash.cmi
 lib/cil/libperfcount.a
 lib/cil/logcalls.cmi
+lib/cil/longarray.cmi
 lib/cil/mergecil.cmi
 lib/cil/olf.cmi
 lib/cil/oneret.cmi
@@ -42,6 +43,7 @@ lib/cil/stats.cmi
 lib/cil/trace.cmi
 lib/cil/uref.cmi
 lib/cil/util.cmi
+lib/cil/whitetrack.cmi
 ${P5SITE}/CIL/
 ${P5SITE}/CIL/Cilly.pm
 ${P5SITE}/CIL/KeptFile.pm
@@ -49,9 +51,9 @@ ${P5SITE}/CIL/OutputFile.pm
 ${P5SITE}/CIL/TempFile.pm
 ${P5SITE}/CilConfig.pm
 libexec/cil/
-libexec/cil/cilly.asm.exe
-libexec/cil/cilly.byte.exe
-libexec/cil/machdep.exe
+@bin libexec/cil/cilly.asm.exe
+@bin libexec/cil/cilly.byte.exe
+@bin libexec/cil/machdep.exe
 @comment share/cil/
 @comment share/cil/Cilly.pm
 @comment share/cil/KeptFile.pm

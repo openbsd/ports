@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2009/03/11 21:20:27 avsm Exp $
+--- Makefile.in.orig	Thu Nov 27 12:50:50 2008
++++ Makefile.in	Thu Nov 27 12:51:41 2008
+@@ -273,7 +273,10 @@ $(OBJDIR)/libperfcount.a: %: %($(OBJDIR)/perfcount.$(C
+ ifeq ($(NATIVECAML),1)
+ $(OBJDIR)/libcil.a: $(OCAML_CIL_LIB_CMODULES:%=$(OBJDIR)/lib%.a) \
+                     $(OCAML_CIL_LIB_MODULES:%=$(OBJDIR)/%.$(CMO))
+-	ocamlopt -output-obj -o $@ $(CILLY_LIBS:%=%.cmxa) $^
++	ocamlopt -output-obj -o $(OBJDIR)/libcil.o unix.cmxa str.cmxa $^
++	rm -f $@
++	ar rcs $@ $(OBJDIR)/libcil.o
++	rm -f $(OBJDIR)/libcil.o
+ else
+ $(OBJDIR)/libcil.a:
+ 	@echo "Can only build $@ when NATIVECAML is 1."

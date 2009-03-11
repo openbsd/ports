@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.6 2006/05/28 15:44:14 avsm Exp $
---- configure.in.orig	Sun May 21 05:14:15 2006
-+++ configure.in	Sat May 27 18:33:20 2006
-@@ -85,7 +85,7 @@ binaryExists() {
+$OpenBSD: patch-configure_in,v 1.7 2009/03/11 21:20:27 avsm Exp $
+--- configure.in.orig	Mon Feb  5 21:10:29 2007
++++ configure.in	Thu Nov 27 12:26:42 2008
+@@ -80,7 +80,7 @@ binaryExists() {
  # this specifies the root of the source tree; it's just the
  # directory where ./configure runs, except on cygwin, which
  # overrides this below
@@ -10,9 +10,9 @@ $OpenBSD: patch-configure_in,v 1.6 2006/05/28 15:44:14 avsm Exp $
  
  DEFAULT_COMPILER=_GNUCC
  DEFAULT_CIL_MODE=GNUCC
-@@ -391,6 +391,13 @@ case "$target" in
-   # linux
-   *86*linux*|*86*freebsd*|*86*openbsd*|*86*darwin*)
+@@ -408,6 +408,13 @@ case "$target" in
+ 
+   *86*linux*)
      AC_MSG_RESULT(configuring for linux/x86)
 +
 +    ARCHOS=x86_LINUX

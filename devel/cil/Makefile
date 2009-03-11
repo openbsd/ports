@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2008/05/19 07:43:42 bernd Exp $
+# $OpenBSD: Makefile,v 1.16 2009/03/11 21:20:27 avsm Exp $
 
 # until tested on others, even though bytecode is produced
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
 COMMENT=	framework for analysis and transformation of C
 
-DISTNAME=	cil-1.3.5
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	cil-1.3.6
 CATEGORIES=	devel lang
 MASTER_SITES=	http://manju.cs.berkeley.edu/cil/distrib/
 
@@ -25,8 +24,8 @@ WRKDIST=	${WRKDIR}/cil
 
 OURFILES=	nullint kerneltrace randomvars
 
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.52
+CONFIGURE_STYLE= autoconf no-autoheader
+AUTOCONF_VERSION= 2.61
 USE_GMAKE= yes
 ALL_TARGET= setup
 CONFIGURE_ARGS= EXTRAFEATURES="${OURFILES}"
