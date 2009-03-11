@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2009/01/03 21:27:25 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/11 19:16:32 bernd Exp $
 
 VERSION=	2.9
 PATCHLEVEL=	.8
 
-PKGNAME=	${DISTNAME:S/-final//:L}p1
+PKGNAME=	${DISTNAME:S/-final//:L}p2
 
 .include <bsd.port.mk>
