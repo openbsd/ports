@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/01/02 13:07:37 djm Exp $
+# $OpenBSD: Makefile,v 1.12 2009/03/11 21:45:31 bernd Exp $
 
 COMMENT=	SQLite3 adapter for Python
 
 VERSION=	2.4.1
 DISTNAME=	pysqlite-${VERSION}
-PKGNAME=	py-sqlite2-${VERSION}p0
+PKGNAME=	py-sqlite2-${VERSION}p1
 CATEGORIES=	databases devel
 
 MAINTAINER=	Eric Faurot <eric@openbsd.org>
