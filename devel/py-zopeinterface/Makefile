@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/30 16:18:10 eric Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/11 22:00:27 bernd Exp $
 
 COMMENT=	zope.interface package from Zope 3
 
 VERSION=	3.5.0
 DISTNAME=	zope.interface-${VERSION}
-PKGNAME=	py-zopeinterface-${VERSION}
+PKGNAME=	py-zopeinterface-${VERSION}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://pypi.python.org/pypi/zope.interface
