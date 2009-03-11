@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2009/02/10 10:08:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2009/03/11 00:12:24 sthen Exp $
 
 COMMENT =	imap4 webmail client
 
-DISTNAME =	roundcubemail-0.2-stable
-PKGNAME =	roundcubemail-0.2sp2
+DISTNAME =	roundcubemail-0.2.1
 CATEGORIES =	mail www
 HOMEPAGE =	http://www.roundcube.net/
 
@@ -26,9 +25,11 @@ INSTDIR =	${PREFIX}/roundcubemail
 SUBST_VARS =	INSTDIR
 
 RUN_DEPENDS =	:php5-core-*:www/php5/core
+# pear-MDB2, using internal copy perhaps??
 
 do-install:
 	@cp -Rp ${WRKDIST} ${INSTDIR}
+	@mv ${INSTDIR}/config/mimetypes.php ${INSTDIR}/config/mimetypes.php.dist
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	@find ${INSTDIR} -name \*.orig -exec rm -f {} \;
 

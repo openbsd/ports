@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/02/10 10:08:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/03/11 00:12:24 sthen Exp $
 roundcubemail/
 roundcubemail/.htaccess
 roundcubemail/CHANGELOG
@@ -34,6 +34,8 @@ roundcubemail/config/db.inc.php.dist
 @sample roundcubemail/config/db.inc.php
 roundcubemail/config/main.inc.php.dist
 @sample roundcubemail/config/main.inc.php
+roundcubemail/config/mimetypes.php.dist
+@sample roundcubemail/config/mimetypes.php
 roundcubemail/index.php
 @mode 700
 roundcubemail/installer/
@@ -85,21 +87,18 @@ roundcubemail/program/include/rcube_result_set.php
 roundcubemail/program/include/rcube_shared.inc
 roundcubemail/program/include/rcube_smtp.inc
 roundcubemail/program/include/rcube_sqlite.inc
+roundcubemail/program/include/rcube_string_replacer.php
 roundcubemail/program/include/rcube_template.php
 roundcubemail/program/include/rcube_user.php
 roundcubemail/program/include/rcube_vcard.php
 roundcubemail/program/include/session.inc
 roundcubemail/program/js/
 roundcubemail/program/js/app.js
-roundcubemail/program/js/app.js.src
 roundcubemail/program/js/common.js
-roundcubemail/program/js/common.js.src
 roundcubemail/program/js/editor.js
 roundcubemail/program/js/editor_images.js
 roundcubemail/program/js/googiespell.js
-roundcubemail/program/js/googiespell.js.src
 roundcubemail/program/js/list.js
-roundcubemail/program/js/list.js.src
 roundcubemail/program/js/tiny_mce/
 roundcubemail/program/js/tiny_mce/langs/
 roundcubemail/program/js/tiny_mce/langs/ar.js
@@ -722,6 +721,7 @@ roundcubemail/program/lib/icl_commons.inc
 roundcubemail/program/lib/imap.inc
 roundcubemail/program/lib/magic
 roundcubemail/program/lib/mime.inc
+roundcubemail/program/lib/tnef_decoder.inc
 roundcubemail/program/lib/utf7.inc
 roundcubemail/program/lib/utf8.class.php
 roundcubemail/program/lib/washtml.php
@@ -729,12 +729,18 @@ roundcubemail/program/localization/
 roundcubemail/program/localization/ar_SA/
 roundcubemail/program/localization/ar_SA/labels.inc
 roundcubemail/program/localization/ar_SA/messages.inc
+roundcubemail/program/localization/ast/
+roundcubemail/program/localization/ast/labels.inc
+roundcubemail/program/localization/ast/messages.inc
 roundcubemail/program/localization/az_AZ/
 roundcubemail/program/localization/az_AZ/labels.inc
 roundcubemail/program/localization/az_AZ/messages.inc
 roundcubemail/program/localization/bg_BG/
 roundcubemail/program/localization/bg_BG/labels.inc
 roundcubemail/program/localization/bg_BG/messages.inc
+roundcubemail/program/localization/bn_BD/
+roundcubemail/program/localization/bn_BD/labels.inc
+roundcubemail/program/localization/bn_BD/messages.inc
 roundcubemail/program/localization/bs_BA/
 roundcubemail/program/localization/bs_BA/labels.inc
 roundcubemail/program/localization/bs_BA/messages.inc
@@ -768,6 +774,9 @@ roundcubemail/program/localization/en_US/messages.inc
 roundcubemail/program/localization/eo/
 roundcubemail/program/localization/eo/labels.inc
 roundcubemail/program/localization/eo/messages.inc
+roundcubemail/program/localization/es_AR/
+roundcubemail/program/localization/es_AR/labels.inc
+roundcubemail/program/localization/es_AR/messages.inc
 roundcubemail/program/localization/es_ES/
 roundcubemail/program/localization/es_ES/labels.inc
 roundcubemail/program/localization/es_ES/messages.inc
