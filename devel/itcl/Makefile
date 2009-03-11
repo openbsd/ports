@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/28 16:08:32 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/11 21:26:03 sthen Exp $
 
 COMMENT=	object-oriented extensions to Tcl
 
 VERSION=	3.3
 DISTNAME=	itcl${VERSION}
-PKGNAME=	itcl-${VERSION}p1
+PKGNAME=	itcl-${VERSION}p2
 SHARED_LIBS=	itcl33	0.0
 
-CATEGORIES=	devel lang/tcl
+CATEGORIES=	devel
 
 HOMEPAGE=	http://incrtcl.sourceforge.net/itcl/
 
