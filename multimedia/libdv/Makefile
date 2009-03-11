@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/06 20:04:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/03/11 09:29:33 sthen Exp $
 
 COMMENT=		Quasar DV codec
 
 DISTNAME=		libdv-0.104
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://libdv.sourceforge.net/
@@ -20,7 +20,7 @@ USE_LIBTOOL=		Yes
 
 SHARED_LIBS=		dv	4.2
 
-WANTLIB=		c m pthread
+WANTLIB += c m pthread sndio
 
 LIB_DEPENDS=		popt::devel/popt
 
