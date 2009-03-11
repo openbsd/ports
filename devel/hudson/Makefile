@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/22 20:03:08 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/11 23:22:00 sthen Exp $
 
 COMMENT =		continuous integration server
 
 VERSION =		1.227
 DISTNAME =		hudson # nonsensical versioning, alas.
-PKGNAME =		hudson-${VERSION}
+PKGNAME =		hudson-${VERSION}p0
 DIST_SUBDIR =		hudson-${VERSION}
 
 CATEGORIES =		devel

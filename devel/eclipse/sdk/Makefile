@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2008/10/28 13:39:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2009/03/11 23:22:00 sthen Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -11,7 +11,7 @@ COMMENT-browser=	HTML Browser Widget library for swt/eclipse
 ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
-PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p7
+PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p8
 PKGNAME-swt=		swt-${ECLIPSE_VER}p0
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}p1
 PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p0

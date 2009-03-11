@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/03/26 10:14:29 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/11 23:21:21 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -6,7 +6,7 @@ COMMENT=		database exploration/builder written in Java
 
 V=			1.0.0
 DISTNAME=		Architect-generic-${V}
-PKGNAME=		architect-${V}p0
+PKGNAME=		architect-${V}p1
 CATEGORIES=		databases
 WRKDIST=		${WRKDIR}	# no subdirectory
 
