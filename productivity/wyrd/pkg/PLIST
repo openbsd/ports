@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/29 21:57:28 avsm Exp $
-bin/wyrd
+@comment $OpenBSD: PLIST,v 1.2 2009/03/11 21:31:07 avsm Exp $
+@bin bin/wyrd
 @man man/man1/wyrd.1
 @man man/man5/wyrdrc.5
 share/examples/wyrd/
