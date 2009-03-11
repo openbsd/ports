@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-mon,v 1.11 2005/08/07 14:24:45 sturm Exp $
+@comment $OpenBSD: PLIST-mon,v 1.12 2009/03/11 01:55:07 sthen Exp $
 @conflict symon-*
 @newgroup _symon:535
 @newuser _symon:535:_symon:daemon:symon Account:/var/empty:/sbin/nologin
-libexec/symon
+@bin libexec/symon
 @man man/man8/symon.8
 share/examples/symon/
 share/examples/symon/symon.conf

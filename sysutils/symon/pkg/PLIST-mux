@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-mux,v 1.10 2005/08/07 14:24:45 sturm Exp $
+@comment $OpenBSD: PLIST-mux,v 1.11 2009/03/11 01:55:07 sthen Exp $
 @conflict symon-*
-libexec/symux
+@bin libexec/symux
 @man man/man8/symux.8
 share/examples/symon/
 share/examples/symon/symux.conf
