@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2009/03/11 21:16:06 bernd Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	set of Python modules designed for writing games
 
 DISTNAME=	pygame-1.7.1release
-PKGNAME=	${DISTNAME:S/release//}p1
+PKGNAME=	${DISTNAME:S/release//}p2
 CATEGORIES=	devel games
 HOMEPAGE=	http://www.pygame.org/
 
