@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2009/01/02 13:07:37 djm Exp $
+# $OpenBSD: Makefile,v 1.36 2009/03/11 21:36:37 bernd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ MODPY_EGG_VERSION=0.8.4
 
 VERSION=	${MODPY_EGG_VERSION}
 DISTNAME=	PyXML-${VERSION}
-PKGNAME=	py-xml-${VERSION}p6
+PKGNAME=	py-xml-${VERSION}p7
 CATEGORIES=	textproc devel
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyxml/}
