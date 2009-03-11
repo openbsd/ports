@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/08/31 09:04:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/11 14:48:54 sthen Exp $
 
 COMMENT=		automatically create timetables
 
 DISTNAME=		fet-5.2.13
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.lalescu.ro/liviu/fet/
@@ -12,9 +13,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=	ICE SM X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender \
-		c crypto fontconfig freetype glib-2.0 gthread-2.0 m \
-		png pthread ssl stdc++ z
+
+WANTLIB += ICE SM X11 Xext Xi Xinerama Xrandr Xrender c fontconfig
+WANTLIB += freetype glib-2.0 gthread-2.0 m png pthread stdc++
+WANTLIB += z
 
 MASTER_SITES=		${HOMEPAGE}/download/ \
 			http://timetabling.de/download/
