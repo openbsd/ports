@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/03/11 21:47:47 kili Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
 GNOME_VERSION=		2.24.1
-PKGNAME=		py-gnome-desktop-${VERSION}p4
+PKGNAME=		py-gnome-desktop-${VERSION}p5
 
 HOMEPAGE=		http://www.pygtk.org/
 
