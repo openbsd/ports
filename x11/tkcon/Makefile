@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/07 11:16:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/11 21:40:22 sthen Exp $
 
 COMMENT =		enhanced Tk console
 
 DISTNAME =		tkcon-2.4
+PKGNAME =		${DISTNAME}p0
 
 CATEGORIES =		x11 x11/tk
 

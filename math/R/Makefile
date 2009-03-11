@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2009/03/11 08:21:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2009/03/11 21:38:06 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	clone of S, a powerful math/statistics/graphics language
 DISTNAME=	R-2.8.1
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	Rlapack 29.0 \
 		Rblas	29.0
 

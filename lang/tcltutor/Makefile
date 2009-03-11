@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/25 20:47:48 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/11 21:37:27 sthen Exp $
 
 COMMENT =		learn Tcl interactively
 
 DISTNAME =		tcltutor-30b2
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 
 CATEGORIES =		lang lang/tcl
 
