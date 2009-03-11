@@ -1,6 +1,19 @@
-$OpenBSD: patch-config_configure_in,v 1.8 2007/09/17 20:51:22 rui Exp $
+$OpenBSD: patch-config_configure_in,v 1.9 2009/03/11 21:30:31 avsm Exp $
 --- config/configure.in.orig	Sun Sep  9 16:15:08 2007
-+++ config/configure.in	Fri Sep 14 17:47:27 2007
++++ config/configure.in	Thu Nov 27 11:24:05 2008
+@@ -279,9 +279,9 @@ if test ! -z "$SUB_VERSION3"; then
+   MLDONKEY_VERSION=$MLDONKEY_VERSION.$SUB_VERSION3
+ fi
+ 
+-REQUIRED_OCAML=3.10.0
+-DOWNLOAD_OCAML_MAJOR=3.10
+-DOWNLOAD_OCAML=3.10.0
++REQUIRED_OCAML=3.11.0
++DOWNLOAD_OCAML_MAJOR=3.11
++DOWNLOAD_OCAML=3.11.0
+ 
+ REQUIRED_LABLGTK=1.2.7
+ 
 @@ -850,7 +850,7 @@ if test "$GD" != "no"; then
        PNG_LDFLAGS=`$PNGLIBCONFIG --ldflags`
        LDFLAGS="$LDFLAGS $PNG_LDFLAGS"
