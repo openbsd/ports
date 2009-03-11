@@ -1,36 +1,29 @@
-$OpenBSD: patch-configure,v 1.10 2007/02/08 14:32:57 avsm Exp $
---- configure.orig	Tue Dec 26 23:30:01 2006
-+++ configure	Tue Dec 26 23:29:28 2006
-@@ -483,7 +483,7 @@ mksharedlibrpath=''
- 
- if test $withsharedlibs = "yes"; then
-   case "$host" in
--    *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-gnu*)
-+    *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-openbsd*|*-*-gnu*)
-       sharedcccompopts="-fPIC"
-       mksharedlib="$bytecc -shared -o"
-       bytecclinkopts="$bytecclinkopts -Wl,-E"
-@@ -566,6 +566,7 @@ case "$host" in
-   alpha*-*-freebsd*)            arch=alpha; system=freebsd;;
-   alpha*-*-netbsd*)             arch=alpha; system=netbsd;;
-   alpha*-*-openbsd*)            arch=alpha; system=openbsd;;
-+  amd64-*-openbsd*)		arch=amd64; system=openbsd;;
-   sparc*-*-sunos4.*)            arch=sparc; system=sunos;;
-   sparc*-*-solaris2.*)          arch=sparc; system=solaris;;
-   sparc*-*-*bsd*)               arch=sparc; system=bsd;;
-@@ -586,9 +587,11 @@ case "$host" in
-   hppa*-*-gnu*)                 arch=hppa; system=gnu;;
-   powerpc-*-linux*)             arch=power; model=ppc; system=elf;;
-   powerpc-*-netbsd*)            arch=power; model=ppc; system=bsd;;
-+  powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd;;
+$OpenBSD: patch-configure,v 1.11 2009/03/11 21:19:49 avsm Exp $
+--- configure.orig	Wed Dec 10 09:41:04 2008
++++ configure	Wed Dec 10 09:50:14 2008
+@@ -635,9 +635,12 @@ case "$host" in
+   powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
    powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
-   powerpc-*-darwin*)            arch=power; model=ppc; system=rhapsody;;
+   powerpc-*-darwin*)            arch=power; system=rhapsody
+-                                if $arch64; then model=ppc64; else model=ppc; fi;;
++                                if $arch64; then model=ppc64; else
++  model=ppc; fi;;
++  powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd;;
    arm*-*-linux*)                arch=arm; system=linux;;
-+  zaurus*-*-openbsd*)           arch=arm; system=openbsd;;
    arm*-*-gnu*)                  arch=arm; system=gnu;;
++  zaurus*-*-openbsd*)           arch=arm; system=openbsd;;
    ia64-*-linux*)                arch=ia64; system=linux;;
    ia64-*-gnu*)                  arch=ia64; system=gnu;;
-@@ -664,9 +667,13 @@ esac
+   ia64-*-freebsd*)              arch=ia64; system=freebsd;;
+@@ -647,6 +650,7 @@ case "$host" in
+   x86_64-*-netbsd*)             arch=amd64; system=netbsd;;
+   x86_64-*-openbsd*)            arch=amd64; system=openbsd;;
+   x86_64-*-darwin9.5)           arch=amd64; system=macosx;;
++  amd64-*-openbsd*)             arch=amd64; system=openbsd;;
+ esac
+ 
+ # Some platforms exist both in 32-bit and 64-bit variants, not distinguished
+@@ -734,11 +738,15 @@ if test -n "$asppoption"; then aspp="$asppoption"; fi
  cc_profile='-pg'
  case "$arch,$model,$system" in
    alpha,*,digital) profiling='prof';;
@@ -38,6 +31,8 @@ $OpenBSD: patch-configure,v 1.10 2007/02/08 14:32:57 avsm Exp $
    i386,*,linux_elf) profiling='prof';;
    i386,*,gnu) profiling='prof';;
    i386,*,bsd_elf) profiling='prof';;
+   amd64,*,macosx) profiling='prof';;
+   i386,*,macosx) profiling='prof';;
 +  amd64,*,openbsd) profiling='prof';;
 +  power,*,bsd) profiling='prof';;
 +  sparc,*,bsd) profiling='prof';;

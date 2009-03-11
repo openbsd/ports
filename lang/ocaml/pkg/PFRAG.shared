@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2007/02/08 14:32:57 avsm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2009/03/11 21:19:49 avsm Exp $
+lib/ocaml/libcamlrun_shared.so
 lib/ocaml/stublibs/dllbigarray.so
 lib/ocaml/stublibs/dllgraphics.so
 lib/ocaml/stublibs/dlllabltk.so

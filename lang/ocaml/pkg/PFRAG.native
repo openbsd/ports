@@ -1,12 +1,17 @@
-@comment $OpenBSD: PFRAG.native,v 1.7 2006/12/26 22:07:18 avsm Exp $
-bin/camlp4o.opt
-bin/camlp4r.opt
-bin/ocamlc.opt
-bin/ocamldep.opt
-bin/ocamldoc.opt
-bin/ocamllex.opt
+@comment $OpenBSD: PFRAG.native,v 1.8 2009/03/11 21:19:49 avsm Exp $
+@bin bin/camlp4o.opt
+@bin bin/camlp4r.opt
+@bin bin/ocamlc.opt
+@bin bin/ocamldep.opt
+@bin bin/ocamldoc.opt
+@bin bin/ocamllex.opt
+@bin bin/camlp4of.opt
+@bin bin/camlp4oof.opt
+@bin bin/camlp4orf.opt
+@bin bin/camlp4rf.opt
 bin/ocamlopt
-bin/ocamlopt.opt
+@bin bin/ocamlbuild.native
+@bin bin/ocamlopt.opt
 lib/ocaml/arg.cmx
 lib/ocaml/arg.p.cmx
 lib/ocaml/arith_flags.cmx
@@ -27,96 +32,6 @@ lib/ocaml/camlinternalMod.cmx
 lib/ocaml/camlinternalMod.p.cmx
 lib/ocaml/camlinternalOO.cmx
 lib/ocaml/camlinternalOO.p.cmx
-lib/ocaml/camlp4/argl.cmi
-lib/ocaml/camlp4/argl.cmo
-lib/ocaml/camlp4/ast2pt.cmx
-lib/ocaml/camlp4/ast2pt.o
-lib/ocaml/camlp4/camlp4.cma
-lib/ocaml/camlp4/extfold.o
-lib/ocaml/camlp4/extfun.o
-lib/ocaml/camlp4/fstream.o
-lib/ocaml/camlp4/gramext.o
-lib/ocaml/camlp4/grammar.o
-lib/ocaml/camlp4/pa_o_fast.o
-lib/ocaml/camlp4/pcaml.cmx
-lib/ocaml/camlp4/pcaml.o
-lib/ocaml/camlp4/plexer.o
-lib/ocaml/camlp4/quotation.cmx
-lib/ocaml/camlp4/quotation.o
-lib/ocaml/camlp4/reloc.cmx
-lib/ocaml/camlp4/reloc.o
-lib/ocaml/camlp4/spretty.cmx
-lib/ocaml/camlp4/spretty.o
-lib/ocaml/camlp4/stdpp.o
-lib/ocaml/camlp4/token.o
-lib/ocaml/camlp4/argl.cmx
-lib/ocaml/camlp4/argl.o
-lib/ocaml/camlp4/camlp4.a
-lib/ocaml/camlp4/camlp4.cmxa
-lib/ocaml/camlp4/extfold.cmx
-lib/ocaml/camlp4/extfun.cmx
-lib/ocaml/camlp4/fstream.cmx
-lib/ocaml/camlp4/gramext.cmx
-lib/ocaml/camlp4/gramlib.a
-lib/ocaml/camlp4/gramlib.cmxa
-lib/ocaml/camlp4/grammar.cmx
-lib/ocaml/camlp4/odyl.a
-lib/ocaml/camlp4/odyl.cmx
-lib/ocaml/camlp4/odyl.cmxa
-lib/ocaml/camlp4/odyl.o
-lib/ocaml/camlp4/pa_extend.cmx
-lib/ocaml/camlp4/pa_extend.o
-lib/ocaml/camlp4/pa_extend_m.cmx
-lib/ocaml/camlp4/pa_extend_m.o
-lib/ocaml/camlp4/pa_extfold.cmx
-lib/ocaml/camlp4/pa_extfold.o
-lib/ocaml/camlp4/pa_extfun.cmx
-lib/ocaml/camlp4/pa_extfun.o
-lib/ocaml/camlp4/pa_fstream.cmx
-lib/ocaml/camlp4/pa_fstream.o
-lib/ocaml/camlp4/pa_ifdef.cmx
-lib/ocaml/camlp4/pa_ifdef.o
-lib/ocaml/camlp4/pa_macro.cmx
-lib/ocaml/camlp4/pa_macro.o
-lib/ocaml/camlp4/pa_o.cmx
-lib/ocaml/camlp4/pa_o.o
-lib/ocaml/camlp4/pa_o_fast.cmi
-lib/ocaml/camlp4/pa_o_fast.cmx
-lib/ocaml/camlp4/pa_oop.cmx
-lib/ocaml/camlp4/pa_oop.o
-lib/ocaml/camlp4/pa_op.cmx
-lib/ocaml/camlp4/pa_op.o
-lib/ocaml/camlp4/pa_r.cmx
-lib/ocaml/camlp4/pa_r.o
-lib/ocaml/camlp4/pa_rp.cmx
-lib/ocaml/camlp4/pa_rp.o
-lib/ocaml/camlp4/pa_ru.cmx
-lib/ocaml/camlp4/pa_ru.o
-lib/ocaml/camlp4/plexer.cmx
-lib/ocaml/camlp4/pr_depend.cmx
-lib/ocaml/camlp4/pr_depend.o
-lib/ocaml/camlp4/pr_dump.cmx
-lib/ocaml/camlp4/pr_dump.o
-lib/ocaml/camlp4/pr_extend.cmx
-lib/ocaml/camlp4/pr_extend.o
-lib/ocaml/camlp4/pr_extfun.cmx
-lib/ocaml/camlp4/pr_extfun.o
-lib/ocaml/camlp4/pr_null.cmx
-lib/ocaml/camlp4/pr_null.o
-lib/ocaml/camlp4/pr_o.cmx
-lib/ocaml/camlp4/pr_o.o
-lib/ocaml/camlp4/pr_op.cmx
-lib/ocaml/camlp4/pr_op.o
-lib/ocaml/camlp4/pr_r.cmx
-lib/ocaml/camlp4/pr_r.o
-lib/ocaml/camlp4/pr_rp.cmx
-lib/ocaml/camlp4/pr_rp.o
-lib/ocaml/camlp4/q_MLast.cmx
-lib/ocaml/camlp4/q_MLast.o
-lib/ocaml/camlp4/q_phony.cmx
-lib/ocaml/camlp4/q_phony.o
-lib/ocaml/camlp4/stdpp.cmx
-lib/ocaml/camlp4/token.cmx
 lib/ocaml/char.cmx
 lib/ocaml/char.p.cmx
 lib/ocaml/complex.cmx
@@ -327,8 +242,133 @@ lib/ocaml/unix.cmxa
 lib/ocaml/unixLabels.cmx
 lib/ocaml/weak.cmx
 lib/ocaml/weak.p.cmx
-@man man/man1/camlp4o.opt.1
-@man man/man1/camlp4r.opt.1
 @man man/man1/ocamlc.opt.1
 @man man/man1/ocamlopt.1
 @man man/man1/ocamlopt.opt.1
+lib/ocaml/bigarray.cmxs
+lib/ocaml/dbm.cmxs
+lib/ocaml/graphics.cmxs
+lib/ocaml/nums.cmxs
+lib/ocaml/str.cmxs
+lib/ocaml/unix.cmxs
+lib/ocaml/camlp4/Camlp4Bin.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4AstLifter.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4ExceptionTracer.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4FoldGenerator.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4LocationStripper.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4MapGenerator.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4MetaGenerator.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4Profiler.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4TrashRemover.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4AstLoader.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4DebugParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4GrammarParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4ListComprehension.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4MacroParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlOriginalQuotationExpander.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlParserParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlReloadedParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedParserParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedQuotationExpander.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4QuotationCommon.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4QuotationExpander.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4AstDumper.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4AutoPrinter.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4NullDumper.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlAstDumper.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlPrinter.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlRevisedPrinter.o
+lib/ocaml/camlp4/Camlp4Top/Rprint.o
+lib/ocaml/camlp4/Camlp4Top/Top.o
+lib/ocaml/camlp4/camlp4prof.o
+lib/ocaml/ocamlbuild/ocamlbuild.o
+lib/ocaml/ocamlbuild/ocamlbuild_executor.o
+lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.o
+lib/ocaml/camlp4/camlp4fulllib.a
+lib/ocaml/camlp4/camlp4lib.a
+lib/ocaml/dynlink.a
+lib/ocaml/ocamlbuild/ocamlbuildlib.a
+@man man/man3/Arg.3o
+@man man/man3/Array.3o
+@man man/man3/ArrayLabels.3o
+@man man/man3/Bigarray.3o
+@man man/man3/Bigarray.Array1.3o
+@man man/man3/Bigarray.Array2.3o
+@man man/man3/Bigarray.Array3.3o
+@man man/man3/Bigarray.Genarray.3o
+@man man/man3/Buffer.3o
+@man man/man3/Callback.3o
+@man man/man3/CamlinternalLazy.3o
+@man man/man3/CamlinternalMod.3o
+@man man/man3/CamlinternalOO.3o
+@man man/man3/Char.3o
+@man man/man3/Complex.3o
+@man man/man3/Digest.3o
+@man man/man3/Filename.3o
+@man man/man3/Format.3o
+@man man/man3/Gc.3o
+@man man/man3/Genlex.3o
+@man man/man3/Hashtbl.3o
+@man man/man3/Hashtbl.HashedType.3o
+@man man/man3/Hashtbl.Make.3o
+@man man/man3/Hashtbl.S.3o
+@man man/man3/Int32.3o
+@man man/man3/Int64.3o
+@man man/man3/Lazy.3o
+@man man/man3/Lexing.3o
+@man man/man3/List.3o
+@man man/man3/ListLabels.3o
+@man man/man3/Map.3o
+@man man/man3/Map.Make.3o
+@man man/man3/Map.OrderedType.3o
+@man man/man3/Map.S.3o
+@man man/man3/Marshal.3o
+@man man/man3/MoreLabels.3o
+@man man/man3/MoreLabels.Hashtbl.3o
+@man man/man3/MoreLabels.Hashtbl.HashedType.3o
+@man man/man3/MoreLabels.Hashtbl.Make.3o
+@man man/man3/MoreLabels.Hashtbl.S.3o
+@man man/man3/MoreLabels.Map.3o
+@man man/man3/MoreLabels.Map.Make.3o
+@man man/man3/MoreLabels.Map.OrderedType.3o
+@man man/man3/MoreLabels.Map.S.3o
+@man man/man3/MoreLabels.Set.3o
+@man man/man3/MoreLabels.Set.Make.3o
+@man man/man3/MoreLabels.Set.OrderedType.3o
+@man man/man3/MoreLabels.Set.S.3o
+@man man/man3/Nativeint.3o
+@man man/man3/Num.3o
+@man man/man3/Obj.3o
+@man man/man3/Oo.3o
+@man man/man3/Parsing.3o
+@man man/man3/Pervasives.3o
+@man man/man3/Pervasives.LargeFile.3o
+@man man/man3/Printexc.3o
+@man man/man3/Printf.3o
+@man man/man3/Queue.3o
+@man man/man3/Random.3o
+@man man/man3/Random.State.3o
+@man man/man3/Scanf.3o
+@man man/man3/Scanf.Scanning.3o
+@man man/man3/Set.3o
+@man man/man3/Set.Make.3o
+@man man/man3/Set.OrderedType.3o
+@man man/man3/Set.S.3o
+@man man/man3/Sort.3o
+@man man/man3/Stack.3o
+@man man/man3/StdLabels.3o
+@man man/man3/StdLabels.Array.3o
+@man man/man3/StdLabels.List.3o
+@man man/man3/StdLabels.String.3o
+@man man/man3/Str.3o
+@man man/man3/Stream.3o
+@man man/man3/String.3o
+@man man/man3/StringLabels.3o
+@man man/man3/Sys.3o
+@man man/man3/Unix.3o
+@man man/man3/Unix.LargeFile.3o
+@man man/man3/Weak.3o
+@man man/man3/Weak.Make.3o
+@man man/man3/Weak.S.3o
