@@ -1,10 +1,12 @@
-# $OpenBSD: tcl.port.mk,v 1.4 2009/03/09 23:09:19 espie Exp $
+# $OpenBSD: tcl.port.mk,v 1.5 2009/03/11 20:10:14 sthen Exp $
 
 CATEGORIES +=		lang/tcl
 
 MODTCL_VERSION ?=	8.5
 
-.if ${MODTCL_VERSION} == 8.5
+.if ${MODTCL_VERSION} == 8.4
+_MODTCL_SPEC = tcl->=${MODTCL_VERSION},<8.5
+.elif ${MODTCL_VERSION} == 8.5
 _MODTCL_SPEC = tcl->=${MODTCL_VERSION},<8.6
 .endif
 
