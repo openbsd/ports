@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2009/03/11 11:37:47 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	universal unicode codec using iconv for Python
 
 DISTNAME=	iconvcodec-1.1.2
-PKGNAME=	py-${DISTNAME}p1
+PKGNAME=	py-${DISTNAME}p2
 CATEGORIES=	converters
 
 HOMEPAGE=	http://cjkpython.berlios.de/
