@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.24 2008/10/28 11:53:33 steven Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2009/03/11 21:28:45 bernd Exp $
 
 COMMENT-main=	Berkeley DB package, revision ${REVISION}
 COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REVISION}
 
 DISTNAME=	db-${VERSION}
-PKGNAME-tcl=	db-tcl-${VERSION}p4
 CATEGORIES=	databases
 HOMEPAGE=	http://www.oracle.com/technology/products/berkeley-db/
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
@@ -48,8 +47,7 @@ MODULES+=	lang/tcl
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 WANTLIB-tcl?=
-RUN_DEPENDS-tcl=	:db-${REVISION}.*:databases/db/v${REVISION} \
-			${MODTCL_RUN_DEPENDS}
+RUN_DEPENDS-tcl+=	${MODTCL_RUN_DEPENDS}
 
 BUILD_DEPENDS+=	${MODTCL_BUILD_DEPENDS}
 CFLAGS+=	-I${MODTCL_INCDIR}
