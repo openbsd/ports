@@ -1,5 +1,11 @@
 libixp is a stand-alone client/server 9P library including ixpc client. It
 consists of less than 2000 lines of code (including ixpc).
 
+9P is a network protocol developed at Bell Labs for the Plan 9 from Bell Labs
+distributed operating system as the means of accessing and manipulating
+resources and applications transparently in a distributed environment. 9P works
+both as a distributed file system and as a network transparent and language
+agnostic 'API'.
+
 libixp's server API is based heavily on that of Plan 9's lib9p, and the two
 libraries export virtually identical data structures. 

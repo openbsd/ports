@@ -1,0 +1,88 @@
+$OpenBSD: patch-cmd_ixpc_c,v 1.1 2009/03/11 19:41:03 martin Exp $
+--- cmd/ixpc.c.orig	Mon Nov  5 15:36:22 2007
++++ cmd/ixpc.c	Thu Mar  5 21:22:18 2009
+@@ -14,8 +14,7 @@
+ #define fatal(...) ixp_eprint("ixpc: fatal: " __VA_ARGS__); \
+ 
+ char *argv0;
+-#define ARGBEGIN int _argi, _argtmp, _inargv=0; char *_argv; \
+-		if(!argv0)argv0=ARGF(); _inargv=1; \
++#define ARGBEGIN if(!argv0)argv0=ARGF(); _inargv=1; \
+ 		while(argc && argv[0][0] == '-') { \
+ 			_argi=1; _argv=*argv++; argc--; \
+ 			while(_argv[_argi]) switch(_argv[_argi++])
+@@ -117,7 +116,8 @@ print_stat(Stat *s, int details) {
+ static int
+ xwrite(int argc, char *argv[]) {
+ 	IxpCFid *fid;
+-	char *file;
++	char *file, *_argv;
++	int _argi, _argtmp, _inargv=0;
+ 
+ 	ARGBEGIN{
+ 	default:
+@@ -136,8 +136,8 @@ xwrite(int argc, char *argv[]) {
+ static int
+ xawrite(int argc, char *argv[]) {
+ 	IxpCFid *fid;
+-	char *file, *buf, *arg;
+-	int nbuf, mbuf, len;
++	char *file, *buf, *arg, *_argv;
++	int nbuf, mbuf, len, _argi, _argtmp, _inargv=0;
+ 
+ 	ARGBEGIN{
+ 	default:
+@@ -173,7 +173,8 @@ xawrite(int argc, char *argv[]) {
+ static int
+ xcreate(int argc, char *argv[]) {
+ 	IxpCFid *fid;
+-	char *file;
++	char *file, *_argv;
++	int _argi, _argtmp, _inargv=0;
+ 
+ 	ARGBEGIN{
+ 	default:
+@@ -193,7 +194,8 @@ xcreate(int argc, char *argv[]) {
+ 
+ static int
+ xremove(int argc, char *argv[]) {
+-	char *file;
++	char *file, *_argv;
++	int _argi, _argtmp, _inargv=0;
+ 
+ 	ARGBEGIN{
+ 	default:
+@@ -209,8 +211,8 @@ xremove(int argc, char *argv[]) {
+ static int
+ xread(int argc, char *argv[]) {
+ 	IxpCFid *fid;
+-	char *file, *buf;
+-	int count;
++	char *file, *buf, *_argv;
++	int count, _argi, _argtmp, _inargv=0;
+ 
+ 	ARGBEGIN{
+ 	default:
+@@ -237,8 +239,8 @@ xls(int argc, char *argv[]) {
+ 	IxpMsg m;
+ 	Stat *stat;
+ 	IxpCFid *fid;
+-	char *file, *buf;
+-	int lflag, dflag, count, nstat, mstat, i;
++	char *file, *buf, *_argv;
++	int lflag, dflag, count, nstat, mstat, i, _argi, _argtmp, _inargv=0;
+ 
+ 	lflag = dflag = 0;
+ 
+@@ -313,9 +315,9 @@ struct exectab {
+ 
+ int
+ main(int argc, char *argv[]) {
+-	char *cmd, *address;
++	char *cmd, *address, *_argv;
+ 	exectab *tab;
+-	int ret;
++	int ret, _argi, _argtmp, _inargv=0;
+ 
+ 	address = getenv("IXP_ADDRESS");
+ 

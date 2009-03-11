@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_mk,v 1.2 2008/03/15 15:52:53 mcbride Exp $
+$OpenBSD: patch-config_mk,v 1.3 2009/03/11 19:41:03 martin Exp $
 --- config.mk.orig	Mon Nov  5 15:36:22 2007
-+++ config.mk	Sat Mar 15 15:07:30 2008
++++ config.mk	Tue Mar 10 23:02:26 2009
 @@ -11,9 +11,9 @@ RUBYINC = -I/usr/local/lib/ruby/1.8/i386-freebsd6
  TASKINC = -I${HOME}/libtask
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-config_mk,v 1.2 2008/03/15 15:52:53 mcbride Exp $
  ETC = ${PREFIX}/etc
  LIBDIR = ${PREFIX}/lib
  INCLUDE = ${PREFIX}/include
-@@ -24,13 +24,13 @@ LIBS = -L/usr/lib -lc
+@@ -24,15 +24,15 @@ LIBS = -L/usr/lib -lc
  
  # Flags
  include ${ROOT}/mk/gcc.mk
@@ -28,5 +28,8 @@ $OpenBSD: patch-config_mk,v 1.2 2008/03/15 15:52:53 mcbride Exp $
 -LD = cc
 +LD = !!CC!!
  # Other
- AR = ar crs
+-AR = ar crs
++AR = ar cr
  #AR = sh -c 'ar cr "$$@" && ranlib "$$@"'
+ 
+ # Solaris

@@ -1,0 +1,10 @@
+$OpenBSD: patch-mk_lib_mk,v 1.1 2009/03/11 19:41:03 martin Exp $
+--- mk/lib.mk.orig	Thu Mar  5 21:52:46 2009
++++ mk/lib.mk	Thu Mar  5 21:53:05 2009
+@@ -22,5 +22,6 @@ ${LIB}: ${OFILES}
+ 	echo AR $$($(ROOT)/util/cleanname $(BASE)/$@)
+ 	mkdir ${ROOT}/lib 2>/dev/null || true
+ 	${AR} $@ ${OFILES}
++	ranlib ${LIB}
+ 
+ include ${ROOT}/mk/common.mk
