@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2009/03/08 18:15:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2009/03/11 16:58:37 jakob Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool
 
-DISTNAME=	mtr-0.74
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	mtr-0.75
+PKGNAME=	${DISTNAME}
 CATEGORIES=	net
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
