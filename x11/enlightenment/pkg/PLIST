@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.11 2007/11/30 18:39:53 fgsch Exp $
-bin/e16
-bin/edox
-bin/eesh
-bin/epp
+@comment $OpenBSD: PLIST,v 1.12 2009/03/12 14:55:46 dhill Exp $
+@bin bin/e16
+@bin bin/edox
+@bin bin/eesh
+@bin bin/epp
 bin/starte16
+lib/e16/
 share/e16/
 share/e16/E-docs/
 share/e16/E-docs/E_app_menu.png
@@ -13,7 +14,6 @@ share/e16/E-docs/E_audio_settings.png
 share/e16/E-docs/E_autoraise_settings.png
 share/e16/E-docs/E_backgrounds_menu.png
 share/e16/E-docs/E_backgrounds_menu_view.png
-share/e16/E-docs/E_backgrounds_settings.pl.png
 share/e16/E-docs/E_backgrounds_settings.png
 share/e16/E-docs/E_border_selector.png
 share/e16/E-docs/E_deskarray.png
@@ -28,7 +28,6 @@ share/e16/E-docs/E_groups_menu.png
 share/e16/E-docs/E_iconbox.png
 share/e16/E-docs/E_iconbox_menu.png
 share/e16/E-docs/E_iconbox_settings.png
-share/e16/E-docs/E_kde_settings.png
 share/e16/E-docs/E_keyboard.png
 share/e16/E-docs/E_logo.png
 share/e16/E-docs/E_maint_menu.png
@@ -47,12 +46,10 @@ share/e16/E-docs/E_tooltip_settings.png
 share/e16/E-docs/E_tooltips.png
 share/e16/E-docs/E_virtual_desk_settings.png
 share/e16/E-docs/E_window.png
-share/e16/E-docs/E_window_diagram.pl.png
 share/e16/E-docs/E_window_diagram.png
 share/e16/E-docs/Edoc_bg.png
 share/e16/E-docs/MAIN
-share/e16/E-docs/Vera.ttf
-share/e16/E-docs/VeraBd.ttf
+share/e16/E-docs/bg.png
 share/e16/E-docs/exit1.png
 share/e16/E-docs/exit2.png
 share/e16/E-docs/next1.png
@@ -133,14 +130,24 @@ share/e16/config/pix/wait7.png
 share/e16/config/pix/wait8.png
 share/e16/config/pix/wait9.png
 share/e16/config/pix/world.png
+share/e16/fonts/
+share/e16/fonts/COPYRIGHT.Vera
+share/e16/fonts/Vera.ttf
+share/e16/fonts/VeraBd.ttf
+share/e16/fonts/bold.ttf
+share/e16/fonts/normal.ttf
 share/e16/misc/
 share/e16/misc/Xclients.e16-gnome.sh
 share/e16/misc/Xclients.e16-kde.sh
 share/e16/misc/Xclients.e16.sh
+share/e16/misc/e16-dbus-cmd
 share/e16/misc/e16-gnome.desktop
 share/e16/misc/e16-kde.desktop
 share/e16/misc/e16.desktop
 share/e16/misc/e16.png
+share/e16/misc/starte16
+share/e16/misc/starte16-gnome
+share/e16/misc/starte16-kde
 share/e16/scripts/
 share/e16/scripts/e_cache_clean
 share/e16/scripts/e_cache_query
@@ -152,7 +159,6 @@ share/e16/themes/BlueSteel/ABOUT/
 share/e16/themes/BlueSteel/ABOUT/MAIN
 share/e16/themes/BlueSteel/ABOUT/bg.png
 share/e16/themes/BlueSteel/ABOUT/logo.png
-share/e16/themes/BlueSteel/ABOUT/vixar.ttf
 share/e16/themes/BlueSteel/Eterm/
 share/e16/themes/BlueSteel/Eterm/Eterm.cfg
 share/e16/themes/BlueSteel/Eterm/images/
@@ -540,7 +546,6 @@ share/e16/themes/BrushedMetal-Tigert/
 share/e16/themes/BrushedMetal-Tigert/ABOUT/
 share/e16/themes/BrushedMetal-Tigert/ABOUT/Edoc_bg.png
 share/e16/themes/BrushedMetal-Tigert/ABOUT/MAIN
-share/e16/themes/BrushedMetal-Tigert/ABOUT/aircut3.ttf
 share/e16/themes/BrushedMetal-Tigert/ABOUT/title.png
 share/e16/themes/BrushedMetal-Tigert/README
 share/e16/themes/BrushedMetal-Tigert/backgrounds/
@@ -928,6 +933,8 @@ share/e16/themes/BrushedMetal-Tigert/tooltips/images/cloud1.png
 share/e16/themes/BrushedMetal-Tigert/tooltips/images/cloud2.png
 share/e16/themes/BrushedMetal-Tigert/tooltips/images/cloud_logo.png
 share/e16/themes/BrushedMetal-Tigert/tooltips/tooltips.cfg
+share/e16/themes/BrushedMetal-Tigert/ttfonts/
+share/e16/themes/BrushedMetal-Tigert/ttfonts/aircut3.ttf
 share/e16/themes/BrushedMetal-Tigert/windowmatches.cfg
 share/e16/themes/Ganymede/
 share/e16/themes/Ganymede/ABOUT/
@@ -936,7 +943,6 @@ share/e16/themes/Ganymede/ABOUT/background.png
 share/e16/themes/Ganymede/ABOUT/bullet.gif
 share/e16/themes/Ganymede/ABOUT/econtrol.png
 share/e16/themes/Ganymede/ABOUT/ganymede.png
-share/e16/themes/Ganymede/ABOUT/ganymede.ttf
 share/e16/themes/Ganymede/ABOUT/pulldowns.png
 share/e16/themes/Ganymede/ACTIVATE_BUTTONS
 share/e16/themes/Ganymede/BUTTON_CONFIG_HOWTO
@@ -1901,7 +1907,6 @@ share/e16/themes/Ganymede/menustyles/images/clicked_more.png
 share/e16/themes/Ganymede/menustyles/images/editor.png
 share/e16/themes/Ganymede/menustyles/images/ee.png
 share/e16/themes/Ganymede/menustyles/images/focus.png
-share/e16/themes/Ganymede/menustyles/images/focus.png.back
 share/e16/themes/Ganymede/menustyles/images/focused_more.png
 share/e16/themes/Ganymede/menustyles/images/gimp.png
 share/e16/themes/Ganymede/menustyles/images/mail.png
@@ -2055,7 +2060,6 @@ share/e16/themes/ShinyMetal/
 share/e16/themes/ShinyMetal/ABOUT/
 share/e16/themes/ShinyMetal/ABOUT/Edoc_bg.png
 share/e16/themes/ShinyMetal/ABOUT/MAIN
-share/e16/themes/ShinyMetal/ABOUT/aircut3.ttf
 share/e16/themes/ShinyMetal/README
 share/e16/themes/ShinyMetal/backgrounds/
 share/e16/themes/ShinyMetal/backgrounds/backgrounds.cfg
@@ -2084,6 +2088,7 @@ share/e16/themes/ShinyMetal/borders/TRANSIENT/border.cfg
 share/e16/themes/ShinyMetal/borders/borders.cfg
 share/e16/themes/ShinyMetal/borders/images.cfg
 share/e16/themes/ShinyMetal/borders/slideouts.cfg
+share/e16/themes/ShinyMetal/borders/textclasses.cfg
 share/e16/themes/ShinyMetal/coords/
 share/e16/themes/ShinyMetal/coords/coords.cfg
 share/e16/themes/ShinyMetal/cursors/
@@ -2418,7 +2423,6 @@ share/e16/themes/ShinyMetal/sound/samples/estart.wav
 share/e16/themes/ShinyMetal/sound/samples/rubberband.wav
 share/e16/themes/ShinyMetal/sound/samples/tink.wav
 share/e16/themes/ShinyMetal/sound/sound.cfg
-share/e16/themes/ShinyMetal/textclasses.cfg
 share/e16/themes/ShinyMetal/tooltips/
 share/e16/themes/ShinyMetal/tooltips.cfg
 share/e16/themes/ShinyMetal/tooltips/images/
@@ -2427,6 +2431,7 @@ share/e16/themes/ShinyMetal/tooltips/images/ttip_cloud_small.png
 share/e16/themes/ShinyMetal/tooltips/images/ttip_help.png
 share/e16/themes/ShinyMetal/tooltips/tooltips.cfg
 share/e16/themes/ShinyMetal/ttfonts/
+share/e16/themes/ShinyMetal/ttfonts/aircut3.ttf
 share/e16/themes/ShinyMetal/ttfonts/rothwell.ttf
 share/e16/themes/ShinyMetal/ttfonts/zirkle.ttf
 share/e16/themes/ShinyMetal/windowmatches.cfg
@@ -2434,7 +2439,6 @@ share/e16/themes/winter/
 share/e16/themes/winter/ABOUT/
 share/e16/themes/winter/ABOUT/MAIN
 share/e16/themes/winter/ABOUT/bg.png
-share/e16/themes/winter/ABOUT/vixar.ttf
 share/e16/themes/winter/README
 share/e16/themes/winter/backgrounds/
 share/e16/themes/winter/backgrounds/backgrounds.cfg
@@ -2767,11 +2771,6 @@ share/e16/themes/winter/tooltips/images/
 share/e16/themes/winter/tooltips/images/clear.png
 share/e16/themes/winter/tooltips/images/tooltipbg.png
 share/e16/themes/winter/tooltips/tooltips.cfg
-share/e16/themes/winter/ttfonts/
-share/e16/themes/winter/ttfonts/COPYRIGHT.Vera
-share/e16/themes/winter/ttfonts/LICENSE.Vera
-share/e16/themes/winter/ttfonts/Vera.ttf
-share/e16/themes/winter/ttfonts/VeraBd.ttf
 share/locale/bg/LC_MESSAGES/e16.mo
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
@@ -2786,8 +2785,8 @@ share/locale/fr/LC_MESSAGES/e16.mo
 share/locale/hu/LC_MESSAGES/e16.mo
 share/locale/ja/LC_MESSAGES/e16.mo
 share/locale/ko/LC_MESSAGES/e16.mo
+share/locale/nb/LC_MESSAGES/e16.mo
 share/locale/nl/LC_MESSAGES/e16.mo
-share/locale/no/LC_MESSAGES/e16.mo
 share/locale/pl/LC_MESSAGES/e16.mo
 share/locale/pt/LC_MESSAGES/e16.mo
 share/locale/pt_BR/LC_MESSAGES/e16.mo
