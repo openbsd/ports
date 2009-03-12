@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/09 23:07:05 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/12 20:55:09 sthen Exp $
 
 COMMENT=	translator library for raster geospatial data formats
 DISTNAME=	gdal-1.5.3
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	gdal 13.3
 CATEGORIES=	geo devel
 
@@ -45,6 +46,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-pg \
 		--without-odbc \
 		--without-oci \
+		--without-geos \
 		--without-grass \
 		--without-idb \
 		--without-sde \
