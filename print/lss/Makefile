@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/13 17:45:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/12 18:13:54 sthen Exp $
 
 COMMENT=		LaTeX symbols selector
 
 DISTNAME=		lss-0.1.6
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		print x11
 
 HOMEPAGE=		http://clay.ll.pl/lss/
@@ -17,10 +18,11 @@ MASTER_SITES=		${HOMEPAGE}
 
 MODULES=		devel/gettext
 
-WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
-		freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 png z
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
+WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
+WANTLIB += z
 
 LIB_DEPENDS=		xml2::textproc/libxml \
 			gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
