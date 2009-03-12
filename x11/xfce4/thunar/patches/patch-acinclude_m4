@@ -1,7 +1,7 @@
-$OpenBSD: patch-acinclude_m4,v 1.1 2008/04/22 23:33:01 fgsch Exp $
---- acinclude.m4.orig	Tue Apr 22 18:40:13 2008
-+++ acinclude.m4	Tue Apr 22 18:42:29 2008
-@@ -121,9 +121,9 @@ XDT_CHECK_PACKAGE([LIBFAM], [gamin], [0.1.0],
+$OpenBSD: patch-acinclude_m4,v 1.2 2009/03/12 18:09:13 landry Exp $
+--- acinclude.m4.orig	Tue Nov 11 14:44:54 2008
++++ acinclude.m4	Thu Mar 12 18:45:00 2009
+@@ -143,9 +143,9 @@ XDT_CHECK_PACKAGE([LIBFAM], [gamin], [0.1.0],
    [
      AC_CHECK_LIB([fam], [FAMOpen],
      [
