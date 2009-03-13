@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2009/03/13 21:33:43 jasper Exp $
+--- configure.orig	Mon Mar  2 08:16:29 2009
++++ configure	Mon Mar  2 08:16:53 2009
+@@ -23258,7 +23258,7 @@
+ #define OPENCT_MODULES_PATH "${ifddir}"
+ _ACEOF
+ 
+-OPENCT_SOCKET_PATH="${full_localstatedir}/run/openct"
++OPENCT_SOCKET_PATH="/var/run/openct"
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define OPENCT_SOCKET_PATH "${OPENCT_SOCKET_PATH}"
