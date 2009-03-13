@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:21 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/13 14:11:02 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -6,9 +6,9 @@ COMMENT=	Iwidgets Mega Widget Set
 
 VERSION=	4.0.1
 DISTNAME=	iwidgets${VERSION}
-PKGNAME=	iwidgets-${VERSION}
+PKGNAME=	iwidgets-${VERSION}p0
 
-CATEGORIES=	x11 x11/tk devel
+CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://incrtcl.sourceforge.net/iwidgets/
 
@@ -22,23 +22,25 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=incrtcl/}
 
-BUILD_DEPENDS=	:tk-${TK_VERSION}.*:x11/tk/${TK_VERSION}
-RUN_DEPENDS=	::x11/itk
+MODULES=	x11/tk
+BUILD_DEPENDS=	${MODTK_RUN_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		::x11/itk
 REGRESS_DEPENDS=${RUN_DEPENDS}
 # This regression test wants an X11 display
 REGRESS_IS_INTERACTIVE=	Yes
 
 NO_BUILD=	Yes
 
-TCL_VERSION=	8.4
-TK_VERSION=	8.4
+MODTCL_VERSION=	8.4
+MODTK_VERSION=	8.4
 ITK_VERSION=	3.3
 ITCL_VERSION=	3.3
 
 CONFIGURE_STYLE=gnu dest
 
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_VERSION} \
-		--with-tk=${LOCALBASE}/lib/tk${TK_VERSION}
+CONFIGURE_ARGS=	--with-tcl=${MODTCL_LIBDIR} \
+		--with-tk=${MODTK_LIBDIR}
 
 CONFIGURE_ENV=	ITCL_VERSION=${ITCL_VERSION}
 
@@ -47,6 +49,6 @@ pre-configure:
 
 do-regress:
 	cd ${WRKSRC} && env IWIDGETS_LIBRARY=${WRKSRC} \
-		${PREFIX}/bin/wish${TK_VERSION} tests/all.tcl 
+		${MODTK_BIN} tests/all.tcl 
 
 .include <bsd.port.mk>
