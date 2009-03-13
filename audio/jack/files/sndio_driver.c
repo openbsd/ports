@@ -152,7 +152,7 @@ set_period_size (sndio_driver_t *driver, jack_nframes_t new_period_size)
 static void
 sndio_driver_write_silence (sndio_driver_t *driver, jack_nframes_t nframes)
 {
-	size_t localsize, io_res;
+	size_t localsize, io_res, nbytes, offset;
 	void *localbuf;
 
 	localsize = nframes * driver->sample_bytes * driver->playback_channels;
@@ -164,13 +164,20 @@ sndio_driver_write_silence (sndio_driver_t *driver, jack_nframes_t nframes)
 		return;
 	}
 
+	offset = 0;
 	bzero(localbuf, localsize);
-	io_res = sio_write(driver->hdl, localbuf, localsize);
-	if (io_res < localsize)
+	nbytes = localsize;
+	while (nbytes > 0)
 	{
-		jack_error("sndio_driver: sio_write() failed: "
-			"count=%d/%d: %s@%i", io_res, localsize,
-			__FILE__, __LINE__);
+		io_res = sio_write(driver->hdl, localbuf, nbytes);
+		if (io_res == 0)
+		{
+			jack_error("sndio_driver: sio_write() failed: "
+				"count=%d/%d: %s@%i", io_res, localsize,
+				__FILE__, __LINE__);
+		}
+		offset += io_res;
+		nbytes -= io_res;
 	}
 	driver->playpos += nframes;
 	free(localbuf);
@@ -180,7 +187,7 @@ sndio_driver_write_silence (sndio_driver_t *driver, jack_nframes_t nframes)
 static void
 sndio_driver_read_silence (sndio_driver_t *driver, jack_nframes_t nframes)
 {
-	size_t localsize, io_res;
+	size_t localsize, io_res, nbytes, offset;
 	void *localbuf;
 
 	localsize = nframes * driver->sample_bytes * driver->capture_channels;
@@ -192,13 +199,19 @@ sndio_driver_read_silence (sndio_driver_t *driver, jack_nframes_t nframes)
 		return;
 	}
 
+	offset = 0;
 	bzero(localbuf, localsize);
-	io_res = sio_read(driver->hdl, localbuf, localsize);
-	if (io_res < localsize)
-	{
-		jack_error("sndio_driver: sio_read() failed: "
-			"count=%d/%d: %s@%i", io_res, localsize,
-			__FILE__, __LINE__);
+	nbytes = localsize;
+	while (nbytes > 0) {
+		io_res = sio_read(driver->hdl, localbuf + offset, nbytes);
+		if (io_res == 0) {
+			jack_error("sndio_driver: sio_read() failed: "
+				"count=%d/%d: %s@%i", io_res, nbytes,
+				__FILE__, __LINE__);
+			break;
+		}
+		offset +=- io_res;
+		nbytes -= io_res;
 	}
 	driver->cappos += nframes;
 	free(localbuf);
@@ -215,8 +228,9 @@ sndio_driver_start (sndio_driver_t *driver)
 	}
 
 	/* prime playback buffers */
-	sndio_driver_write_silence(driver,
-		driver->buffer_fill);
+	if (driver->playback_channels > 0) {
+		sndio_driver_write_silence(driver, driver->buffer_fill);
+	}
 
 	return 0;
 }
@@ -255,7 +269,6 @@ sndio_driver_set_parameters (sndio_driver_t *driver)
 	par.rate = driver->sample_rate;
 	par.appbufsz = driver->period_size * driver->nperiods;
 	par.round = driver->period_size;
-	// par.xrun = SIO_SYNC;
 
 	if (!sio_setpar(driver->hdl, &par))
 	{
@@ -368,13 +381,14 @@ sndio_driver_wait (sndio_driver_t *driver, int *status, float *iodelay)
 	jack_time_t poll_enter;
 	jack_time_t poll_ret;
 	int need_capture, need_playback;
-	int cap_avail, play_avail;
+	long long cap_avail, play_avail, used;
 	int events, revents;
 
-	*status = -1;
+	*status = 0;
 	*iodelay = 0;
 
 	need_capture = need_playback = 0;
+	cap_avail = play_avail = 0;
 
 	if (driver->capture_channels != 0)
 		need_capture = 1;
@@ -391,7 +405,7 @@ sndio_driver_wait (sndio_driver_t *driver, int *status, float *iodelay)
 
 	while (need_capture || need_playback)
 	{
-		events = 0;
+		events = revents = 0;
 		if (need_capture != 0)
 			events |= POLLIN;
 
@@ -402,10 +416,9 @@ sndio_driver_wait (sndio_driver_t *driver, int *status, float *iodelay)
 		if (snfds != sio_pollfd(driver->hdl, &pfd, events)) {
 			jack_error("sndio_driver: sio_pollfd failed: %s@%i",
 				__FILE__, __LINE__);
-			*status = -1;
+			*status = -3;
 			return 0;
 		}
-
 		nfds = poll(&pfd, snfds, driver->poll_timeout);
 		if (nfds == -1)
 		{
@@ -429,35 +442,55 @@ sndio_driver_wait (sndio_driver_t *driver, int *status, float *iodelay)
 		if (revents & POLLOUT)
 			need_playback = 0;
 
-		if (need_capture)
+		if (sio_eof(driver->hdl))
 		{
-			cap_avail = driver->realpos - driver->cappos;
+			jack_error("sndio_driver: sndio error");
+			*status = -5;	/* restart */
+			return 0;
+		}
 
-			if (cap_avail >= driver->buffer_fill)
+		if (driver->capture_channels > 0)
+		{
+			used = 0;
+			if (driver->realpos > driver->cappos)
+				used = driver->realpos - driver->cappos;
+			cap_avail = used;
+			if (cap_avail > driver->buffer_fill)
 			{
 				jack_error("sndio_driver: capture overrun");
-				*status = -5;
-				return 0;
-			}
-			else if (cap_avail >= driver->period_size)
-			{
-				need_capture = 0;
 			}
 		}
 
-		if (need_playback)
+		if (driver->playback_channels > 0)
 		{
-			play_avail = driver->playpos - driver->realpos;
-
-			if (play_avail >= driver->buffer_fill)
+			used = 0;
+			if (driver->playpos > driver->realpos)
+				used = driver->playpos - driver->realpos;
+			play_avail = driver->buffer_fill - used;
+			if (play_avail > driver->buffer_fill)
 			{
 				jack_error("sndio_driver: playback underrun");
+			}
+		}
+
+		if (driver->capture_channels > 0 &&
+		    driver->playback_channels > 0)
+		{
+			if ((driver->realpos > 0 &&
+				(play_avail != driver->period_size ||
+				  cap_avail != driver->period_size) &&
+				!(!play_avail && !cap_avail && !need_playback &&
+				  need_capture)) ||
+			    (driver->realpos == 0 &&
+				!play_avail && !cap_avail && need_playback &&
+				!need_capture))
+			{
+				jack_error("sndio_driver: out of sync: "
+					"rp=%lld pa=%lld ca=%lld np=%d nc=%d",
+					driver->realpos, play_avail, cap_avail,
+					need_playback, need_capture);
 				*status = -5;
 				return 0;
-			}
-			else if (play_avail >= driver->period_size)
-			{
-				need_playback = 0;
 			}
 		}
 	}
@@ -472,8 +505,6 @@ sndio_driver_wait (sndio_driver_t *driver, int *status, float *iodelay)
 	driver->engine->transport_cycle_start(driver->engine, poll_ret);
 
 	driver->last_wait_ust = poll_ret;
-
-	*status = 0;
 
 	return driver->period_size;
 }
@@ -504,8 +535,8 @@ sndio_driver_run_cycle (sndio_driver_t *driver)
 			sndio_driver_set_parameters(driver);
 			sndio_driver_start(driver);
 
-			now = jack_get_microseconds();
-			if (now > driver->poll_next)
+			if (driver->poll_next &&
+				(now = jack_get_microseconds()) > driver->poll_next)
 			{
 				iodelay = now - driver->poll_next;
 				driver->poll_next = now + driver->period_usecs;
@@ -732,7 +763,7 @@ sndio_driver_detach (sndio_driver_t *driver)
 static int
 sndio_driver_read (sndio_driver_t *driver, jack_nframes_t nframes)
 {
-	jack_nframes_t nbytes;
+	jack_nframes_t nbytes, offset;
 	int channel;
 	size_t io_res;
 	jack_sample_t *portbuf;
@@ -769,17 +800,18 @@ sndio_driver_read (sndio_driver_t *driver, jack_nframes_t nframes)
 		channel++;
 	}
 
+	io_res = offset = 0;
 	nbytes = nframes * driver->capture_channels * driver->sample_bytes;
-	io_res = 0;
 	while (nbytes > 0)
 	{
-		io_res = sio_read(driver->hdl, driver->capbuf, nbytes);
+		io_res = sio_read(driver->hdl, driver->capbuf + offset, nbytes);
 		if (io_res == 0)
 		{
 			jack_error("sndio_driver: sio_read() failed: %s@%i",
 				__FILE__, __LINE__);
 			break;
 		}
+		offset += io_res;
 		nbytes -= io_res;
 	}
 	driver->cappos += nframes;
@@ -793,7 +825,7 @@ sndio_driver_write (sndio_driver_t *driver, jack_nframes_t nframes)
 {
 	jack_nframes_t nbytes;
 	int channel;
-	size_t io_res;
+	size_t io_res, offset;
 	jack_sample_t *portbuf;
 	JSList *node;
 	jack_port_t *port;
@@ -832,16 +864,17 @@ sndio_driver_write (sndio_driver_t *driver, jack_nframes_t nframes)
 	}
 
 	nbytes = nframes * driver->playback_channels * driver->sample_bytes;
-	io_res = 0;
+	io_res = offset = 0;
 	while (nbytes > 0)
 	{
-		io_res = sio_write(driver->hdl, driver->playbuf, nbytes);
+		io_res = sio_write(driver->hdl, driver->playbuf + offset, nbytes);
 		if (io_res == 0)
 		{
 			jack_error("sndio_driver: sio_write() failed: %s@%i",
 				__FILE__, __LINE__);
 			break;
 		}
+		offset += io_res;
 		nbytes -= io_res;
 	}
 	driver->playpos += nframes;
