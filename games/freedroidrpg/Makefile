@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/21 17:07:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/13 21:53:49 ajacoutot Exp $
 
 COMMENT=	isometric RPG game
 
-DISTNAME=	freedroidrpg-0.11
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	freedroidrpg-0.12
 CATEGORIES=	games x11
 
 EXTRACT_SUFX=	.tar.bz2

@@ -1,16 +1,16 @@
-$OpenBSD: patch-po_Makefile_in,v 1.1 2008/10/03 14:33:53 ajacoutot Exp $
---- po/Makefile.in.orig	Sun Sep 14 15:07:26 2008
-+++ po/Makefile.in	Mon Sep 15 22:03:08 2008
-@@ -250,7 +250,7 @@ SRCFILES = ../src/BFont.c \
+$OpenBSD: patch-po_Makefile_in,v 1.2 2009/03/13 21:53:50 ajacoutot Exp $
+--- po/Makefile.in.orig	Fri Mar 13 20:27:47 2009
++++ po/Makefile.in	Fri Mar 13 20:29:17 2009
+@@ -201,7 +201,7 @@ SRCFILES = ../src/*.c\
  
  COPYRIGHT_HOLDER = Freedroid RPG Development Team
  MSGID_BUGS_ADDRESS = freedroid-discussion@lists.sourceforge.net
 -LOCALEDIR = $(DESTDIR)/$(pkgdatadir)/locale
 +LOCALEDIR = $(DESTDIR)/$(datadir)/locale
- EXTRA_DIST = freedroidrpg.pot freedroidrpg_data.pot freedroidrpg_dialogs.pot $(POFILES_SRC) $(POFILES_DAT) $(POFILES_DIA) CMakeLists.txt
- MSGMERGE_OPTIONS = --quiet --update
+ EXTRA_DIST = freedroidrpg.pot freedroidrpg_data.pot freedroidrpg_dialogs.pot $(POFILES_SRC) $(POFILES_DAT) $(POFILES_DIA) *.py
+ MSGMERGE_OPTIONS = --update
  XGETTEXT_OPTIONS = --keyword=_ --keyword=N_ --force-po
-@@ -444,7 +444,9 @@ install-data-local: install-data-local-@USE_NLS@
+@@ -403,7 +403,9 @@ install-data-local: install-data-local-@USE_NLS@
  install-data-local-no: all-local
  install-data-local-yes: all-local
  	for file in $(MOFILES_SRC) $(MOFILES_DAT) $(MOFILES_DIA); do \
