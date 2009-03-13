@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/13 19:34:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/13 22:32:51 jasper Exp $
 
 COMMENT=		avant window navigator
 
 V=			0.3.2
 DISTNAME=		avant-window-navigator-$V
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=	awn                  0.0      # .0.1
 CATEGORIES=		x11
 
@@ -40,8 +41,8 @@ RUN_DEPENDS=		::devel/desktop-file-utils \
 			::x11/py-gtk2
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			wnck-1::devel/libwnck \
-			python${MODPY_VERSION}:python->=${MODPY_VERSION}:lang/python/${MODPY_VERSION} \
-			gnome-desktop-2::x11/gnome/desktop
+			gnome-desktop-2::x11/gnome/desktop \
+			${MODPY_LIB_DEPENDS}
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
