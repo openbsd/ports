@@ -1,20 +1,23 @@
-$OpenBSD: patch-tkcvs_doinstall,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
---- tkcvs/doinstall.orig	Tue Jan  9 22:17:52 1996
-+++ tkcvs/doinstall	Fri Oct 26 22:41:26 2007
-@@ -2,10 +2,10 @@
+$OpenBSD: patch-tkcvs_doinstall,v 1.2 2009/03/13 13:36:57 sthen Exp $
+--- tkcvs/doinstall.orig	Tue Jan  9 21:17:52 1996
++++ tkcvs/doinstall	Fri Mar 13 13:28:27 2009
+@@ -2,39 +2,32 @@
  #
- # $Id: patch-tkcvs_doinstall,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
+ # $Id: patch-tkcvs_doinstall,v 1.2 2009/03/13 13:36:57 sthen Exp $
  #
 -
-+PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin
++PATH=/bin:/usr/bin:/sbin:/usr/sbin:${LOCALBASE}/bin
  # Some rational and reasonable defaults.
  
 -INSTALLDIR=/usr/local/lib
-+INSTALLDIR=/usr/local/libdata
- BINDIR=/usr/local/bin
- MANDIR=/usr/local/man/mann
+-BINDIR=/usr/local/bin
+-MANDIR=/usr/local/man/mann
++INSTALLDIR=${LOCALBASE}/libdata
++BINDIR=${LOCALBASE}/bin
++MANDIR=${LOCALBASE}/man/mann
  
-@@ -14,22 +14,32 @@ INSTALL_PROG=./install-sh
+ INSTALL_PROG=./install-sh
+ 
  # This must be an X based editor -- do NOT use vi except via an xterm
  # or shelltool.
  
@@ -25,20 +28,10 @@ $OpenBSD: patch-tkcvs_doinstall,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
   
 -WISH=`which wish4.0`
 -if [ ! -f $WISH ]; then
-+WISH=`which wish8.4`
-+if [ ! -f ${WISH} ]
-+then
-+  WISH=`which wish4.2`
-+fi
-+if [ ! -f ${WISH} ]
-+then
-   WISH=`which wish4.1`
- fi
+-  WISH=`which wish4.1`
+-fi
 -if [ ! -f $WISH ]; then
-+if [ ! -f ${WISH} ]
-+then
-+  WISH=`which wish4.0`
-+fi
++WISH=${MODTK_BIN}
 +if [ ! -f ${WISH} ]
 +then
    echo "I cant find a Tk interpreter on your system"
@@ -48,11 +41,16 @@ $OpenBSD: patch-tkcvs_doinstall,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
  # Find where the global bitmaps are.
  
 -for GDIR in /usr/include/X11/bitmaps /usr/openwin/include/X11/bitmaps /usr/X11/include/bitmaps /usr/include/bitmaps /usr/local/include/bitmaps
-+for GDIR in /usr/include/X11/bitmaps /usr/openwin/include/X11/bitmaps /usr/X11/include/bitmaps /usr/X11R6/include/bitmaps /usr/include/bitmaps /usr/local/include/bitmaps
- do
-   if [ -d "$GDIR" ]; then
-     break
-@@ -46,15 +56,15 @@ fi
+-do
+-  if [ -d "$GDIR" ]; then
+-    break
+-  fi
+-done
++GDIR=${X11BASE}/include/X11/bitmaps
+ if [ ! -d "$GDIR" ]; then
+   echo "Enter the directory where your X11 bitmaps are stored:"
+   GDIR=`line`
+@@ -46,15 +39,15 @@ fi
  
  # Find out where we want the system installed.
  
@@ -72,7 +70,7 @@ $OpenBSD: patch-tkcvs_doinstall,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
      echo "I cant write to that directory"
      exit 1
    fi
-@@ -62,25 +72,25 @@ fi
+@@ -62,25 +55,25 @@ fi
  
  # Some directories we have to create.
  
@@ -104,7 +102,7 @@ $OpenBSD: patch-tkcvs_doinstall,v 1.1 2007/10/26 20:44:35 ajacoutot Exp $
      echo "I cant write to that directory" 
      exit 1 
    fi
-@@ -94,21 +104,21 @@ do
+@@ -94,21 +87,21 @@ do
        -e "/GDIR/ s;;$GDIR;g" \
        -e "/EDITOR/ s;;$EDITOR;g" \
        -e "/TCDIR/ s;;$TCDIR;g" ${file}.blank >$file

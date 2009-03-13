@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2009/03/13 13:13:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2009/03/13 13:36:57 sthen Exp $
 
 COMMENT=	graphical frontend to CVS
 DISTNAME=	tkcvs-6.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	devel
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
@@ -20,6 +20,10 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+
+pre-configure:
+	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/tkcvs/cvscheck.blank
+	@${SUBST_CMD} ${WRKSRC}/tkcvs/doinstall
 
 do-install:
 	cd $(WRKSRC)/tkcvs; ./doinstall
