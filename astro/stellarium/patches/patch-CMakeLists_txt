@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2009/03/13 18:39:09 ajacoutot Exp $
+--- CMakeLists.txt.orig	Fri Mar 13 18:32:10 2009
++++ CMakeLists.txt	Fri Mar 13 18:32:30 2009
+@@ -22,8 +22,8 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+ ENDIF()
+ 
+ IF(UNIX AND NOT WIN32)
+- SET(CMAKE_C_FLAGS "-Wall -Wextra -Wno-unused-parameter")       # additional C compile flags
+- SET(CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-unused-parameter")     # additional CPP compile flags
++ SET(CMAKE_C_FLAGS "-Wall -Wno-unused-parameter")       # additional C compile flags
++ SET(CMAKE_CXX_FLAGS "-Wall -Wno-unused-parameter")     # additional CPP compile flags
+ ELSE()
+  SET(CMAKE_C_FLAGS "-Wall -fexceptions -fident -mthreads")
+  SET(CMAKE_CXX_FLAGS "-Wall -Wsign-promo -fexceptions -fident -mthreads")

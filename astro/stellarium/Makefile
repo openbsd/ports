@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/02/09 18:25:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/13 18:39:09 ajacoutot Exp $
 
 COMMENT=	free open source planetarium
 
-DISTNAME=	stellarium-0.10.1
+DISTNAME=	stellarium-0.10.2
 CATEGORIES=	astro x11
 
 HOMEPAGE=	http://www.stellarium.org/
