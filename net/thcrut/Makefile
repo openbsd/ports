@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2009/03/13 11:32:45 sthen Exp $
 
 COMMENT=	local network discovery tool
 
 DISTNAME=	thcrut-0.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}/releases/
 
 HOMEPAGE=	http://www.thehackerschoice.com/
 
-LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
+LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet->=1.0,<1.1:net/libnet/1.0
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	no license
+PERMIT_PACKAGE_FTP=	no license
+PERMIT_DISTFILES_CDROM=	no license
+PERMIT_DISTFILES_FTP=	no license
+
 WANTLIB=		c pcap 
 
 CONFIGURE_STYLE= gnu old
