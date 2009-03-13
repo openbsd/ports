@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/09 22:42:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/13 11:37:07 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-snmp=	snmp agent for heartbeat
 VERSION=	2.1.2-15
 DISTNAME=	obs-${VERSION}
 PKGNAME=	heartbeat-${VERSION}
-PKGNAME-main=	heartbeat-${VERSION}p0
+PKGNAME-main=	heartbeat-${VERSION}p1
 PKGNAME-gui=	heartbeat-gui-${VERSION}p0
 PKGNAME-snmp=	heartbeat-snmp-${VERSION}
 
@@ -48,7 +48,7 @@ WANTLIB-main=	${WANTLIB} crypto gcrypt gpg-error idn ncurses ssl tasn1
 LIB_DEPENDS-main=${LIB_DEPENDS} \
 		uuid.>=1:e2fs-uuid-*:sysutils/e2fsprogs,-uuid \
 		gnutls.>=12::security/gnutls \
-		lib/libnet-1.0/net:libnet-1.0.*:net/libnet/1.0 \
+		lib/libnet-1.0/net.=0:libnet->=1.0,<1.1:net/libnet/1.0 \
 		bz2.>=10::archivers/bzip2 \
 		xml2.>=9::textproc/libxml \
 		ltdl.>=4::devel/libtool,-ltdl \

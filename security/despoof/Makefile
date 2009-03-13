@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2009/03/13 11:34:17 sthen Exp $
 
 COMMENT=	command-line anti-spoofing detection utility
 
 DISTNAME=	despoof-0.9
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 CATEGORIES=	security
 MASTER_SITES=	http://www.bindview.com/Resources/RAZOR/Files/ \
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap
 
-LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
+LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet->=1.0,<1.1:net/libnet/1.0
 
 MAKE_FLAGS+=	CC='${CC}' CFLAGS='${CFLAGS}' \
 		DEFS='-I${LOCALBASE}/include/libnet-1.0 `libnet-config-1.0 --defines`' \

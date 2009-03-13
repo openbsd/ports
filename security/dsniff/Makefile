@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2008/07/16 02:42:07 brad Exp $
+# $OpenBSD: Makefile,v 1.44 2009/03/13 11:34:17 sthen Exp $
 
 COMMENT=	sniffing tools for penetration testing
 
 DISTNAME=	dsniff-2.3
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	security
 
 MASTER_SITES=	http://monkey.org/~dugsong/dsniff/
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.monkey.org/~dugsong/dsniff/
 
 BUILD_DEPENDS=	::net/libnids
 LIB_DEPENDS=	lib/db/db.=3:db-3.*:databases/db/v3 \
-		lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
+		lib/libnet-1.0/net.=0:libnet->=1.0,<1.1:net/libnet/1.0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

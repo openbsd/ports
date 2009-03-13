@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 23:30:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/13 11:34:17 sthen Exp $
 
 COMMENT=		voice over misconfigured internet telephones
 
 DISTNAME=		vomit-0.2
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p3
 
 CATEGORIES=		security
 
@@ -22,7 +22,7 @@ WRKDIST=		${WRKDIR}/vomit-lite
 
 MASTER_SITES=		${HOMEPAGE}
 
-LIB_DEPENDS=		lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
+LIB_DEPENDS=		lib/libnet-1.0/net.=0:libnet->=1.0,<1.1:net/libnet/1.0
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu

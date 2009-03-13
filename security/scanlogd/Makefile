@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.24 2008/07/16 02:42:07 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2009/03/13 11:34:17 sthen Exp $
 
 DISTNAME=	scanlogd-2.2.6
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	security
 COMMENT=	TCP port scan detection tool
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap
 
 BUILD_DEPENDS=	::net/libnids
-LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
+LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet->=1.0,<1.1:net/libnet/1.0
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 

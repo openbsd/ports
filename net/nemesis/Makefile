@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 22:36:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2009/03/13 11:34:17 sthen Exp $
 
 COMMENT=	command line arbitrary packet builder
 
 DISTNAME=	nemesis-1.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nemesis/}
 
 HOMEPAGE=	http://nemesis.sourceforge.net/
 
-LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
+LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet->=1.0,<1.1:net/libnet/1.0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 22:36:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2009/03/13 11:34:17 sthen Exp $
 
 DISTNAME=	arping-2.05
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/ \
 
 MAINTAINER=	joshua stein <jcs@openbsd.org>
 
-LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
+LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet->=1.0,<1.1:net/libnet/1.0
 
 ALL_TARGET=	openbsd
 NO_REGRESS=	Yes

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.27 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.28 2009/03/13 11:34:17 sthen Exp $
 
 COMMENT=	gateway acl scanner (via static-source port traceroute)
 
 DISTNAME=	firewalk-0.8
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=     net
 
 MASTER_SITES=	http://www.packetfactory.net/firewalk/dist/
 
 HOMEPAGE=	http://www.packetfactory.net/projects/firewalk/
 
-LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
+LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet->=1.0,<1.1:net/libnet/1.0
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
