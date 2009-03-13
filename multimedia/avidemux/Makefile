@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/02/10 10:11:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2009/03/13 13:23:54 ajacoutot Exp $
 
 COMMENT=	free video editor
 
@@ -54,6 +54,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib -logg -lm -lz"
+# XXX TODO:	remove arts, esd, oss
+#		add sndio
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-xv \
 		--with-x \
