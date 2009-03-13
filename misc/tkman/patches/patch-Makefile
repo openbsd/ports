@@ -1,14 +1,14 @@
-$OpenBSD: patch-Makefile,v 1.2 2003/12/27 23:38:02 jose Exp $
---- Makefile.orig	Thu Jun 22 16:39:42 2000
-+++ Makefile	Mon Dec 23 01:33:34 2002
-@@ -26,14 +26,12 @@ mintk = 8.3
+$OpenBSD: patch-Makefile,v 1.3 2009/03/13 22:36:38 sthen Exp $
+--- Makefile.orig	Thu Jun 22 23:39:42 2000
++++ Makefile	Fri Mar 13 22:27:07 2009
+@@ -26,14 +26,13 @@ mintk = 8.3
  ### you need to localize the paths on these lines
  
  #WISH = /usr/sww/tcl-8.3/bin/wish
 -WISH = /private/share/bin/wish
++WISH = wish
  #WISH = /private/share/bin/wish8.3
--#WISH = /usr/local/bin/wish8.3
-+WISH = /usr/local/bin/wish8.4
+ #WISH = /usr/local/bin/wish8.3
  
  # the executable `tkman' is placed in BINDIR
  # this should be a directory that's in your bin PATH
@@ -18,7 +18,7 @@ $OpenBSD: patch-Makefile,v 1.2 2003/12/27 23:38:02 jose Exp $
  
  
  # OPTIONAL
-@@ -81,9 +79,9 @@ rfcdir = ""
+@@ -81,9 +80,9 @@ rfcdir = ""
  # will examine for matches if a search in the usual locations fails while searching
  # for a man pages and displaying its associated binaries (if any).
  # Use this feature carefully as a large number of directories can slow down startup.
@@ -30,7 +30,7 @@ $OpenBSD: patch-Makefile,v 1.2 2003/12/27 23:38:02 jose Exp $
  #masterbin = "/usr/bin /usr/local/bin /usr/sww/bin /usr/sww/share/bin /usr/sww/share/X11R5/bin"
  
  
-@@ -114,7 +112,7 @@ dpis = "75 100"
+@@ -114,7 +113,7 @@ dpis = "75 100"
  # Lines are cached in .../man/cat<n>@<line-length>; 
  #   that is, the line length is appended to the usual cache directory names
  #manformat = {groff -te -Tascii -man /tmp/ll -}
@@ -39,7 +39,7 @@ $OpenBSD: patch-Makefile,v 1.2 2003/12/27 23:38:02 jose Exp $
  # Ultrix users should uncomment the following line (you don't have eqn)
  #manformat = {tbl | nroff -man }
  # HP-UX uses a number of macros that groff doesn't define, so use the builtin nroff
-@@ -122,7 +120,7 @@ manformat = {groff -te -Tlatin1 -man /tm
+@@ -122,7 +121,7 @@ manformat = {groff -te -Tlatin1 -man /tmp/ll -}
  #  space between the .de and the macro name, and groff doesn't like this.)
  #manformat = {tbl | neqn | nroff -man }
  # BSD macros (.Sh, .Ss, .PP, ...) need -mandoc
@@ -48,7 +48,7 @@ $OpenBSD: patch-Makefile,v 1.2 2003/12/27 23:38:02 jose Exp $
  # BSDI
  #manformat = {tbl | eqn -Tascii | nroff -man }
  # It's actually legal to leave this empty if all the pages you'll ever
-@@ -166,14 +164,14 @@ zlist = {gz z Z}
+@@ -166,14 +165,14 @@ zlist = {gz z Z}
  
  
  # pick a printing pipeline for which your platform has all the constituants
@@ -65,7 +65,7 @@ $OpenBSD: patch-Makefile,v 1.2 2003/12/27 23:38:02 jose Exp $
  # printing string for preformatted pages without [tn]roff source
  #catprint = lpr
  #catprint = "lpr -h"
-@@ -202,7 +200,7 @@ shortnames = 0
+@@ -202,7 +201,7 @@ shortnames = 0
  # the right-topmost menu's Rebuild Database/Glimpse Index menu choice.
  
  # BY DEFAULT ON (Boolean scope set to entire file)
@@ -74,7 +74,7 @@ $OpenBSD: patch-Makefile,v 1.2 2003/12/27 23:38:02 jose Exp $
  # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, you can disable it here
  #glimpse = ""
  # give the full path, if you'd like
-@@ -210,6 +208,7 @@ glimpse = "glimpse -W"
+@@ -210,6 +209,7 @@ glimpse = "glimpse -W"
  # variations (refer to the Glimpse manual page)
  # no characters treated as meta characters:
  #glimpse = "glimpse -Wk"
@@ -82,7 +82,7 @@ $OpenBSD: patch-Makefile,v 1.2 2003/12/27 23:38:02 jose Exp $
  # compressed manual pages are handled automatically; don't add -z to above
  
  # glimpseindex indexes the manual pages, for each component of one's MANPATH,
-@@ -462,7 +461,7 @@ install: tkman retkman
+@@ -462,7 +462,7 @@ install: tkman retkman
  	chmod +rx $(BINDIR)/tkman
  	$(CP) retkman $(BINDIR)
  	chmod +rx $(BINDIR)/retkman
