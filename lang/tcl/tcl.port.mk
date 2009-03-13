@@ -1,4 +1,4 @@
-# $OpenBSD: tcl.port.mk,v 1.5 2009/03/11 20:10:14 sthen Exp $
+# $OpenBSD: tcl.port.mk,v 1.6 2009/03/13 13:46:21 sthen Exp $
 
 CATEGORIES +=		lang/tcl
 
@@ -27,7 +27,7 @@ MODTCL_LIB_DEPENDS ?=	tcl${MODTCL_VERSION:S/.//}:${_MODTCL_SPEC}:lang/tcl/${MODT
 # Set 'tclsh' for executable scripts (in-place modification).
 MODTCL_TCLSH_ADJ =	perl -pi \
 			-e '$$. == 1 && s!env (tclsh|wish).*$$!env tclsh${MODTCL_VERSION}!;' \
-			-e '$$. == 3 && s!exec (tclsh|wish).*$$!exec tclsh${MODTCL_VERSION} "\$$0" \$${1+"\$$@"}!;' \
+			-e '$$. >= 3 && $$. <= 4 && s!exec (tclsh|wish).*$$!exec tclsh${MODTCL_VERSION} "\$$0" \$${1+"\$$@"}!;' \
 			-e 'close ARGV if eof;'
 
 # Set 'wish' for executable scripts (in-place modification).
