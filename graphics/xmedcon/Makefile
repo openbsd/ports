@@ -1,34 +1,46 @@
-# $OpenBSD: Makefile,v 1.12 2007/11/13 17:10:26 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/13 17:58:47 jasper Exp $
 
 COMMENT=	medical image conversion
 
-DISTNAME=	xmedcon-0.5.2
-PKGNAME=	${DISTNAME}p1
-SHARED_LIBS=	mdc	0.0
+DISTNAME=	xmedcon-0.10.4
+SHARED_LIBS=	mdc	2.1	# .2.1
 CATEGORIES=	graphics
-
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmedcon/}
 
 HOMEPAGE=	http://xmedcon.sourceforge.net
 
-MAINTAINER=	Tom Knienieder <tom@knienieder.com>
+MAINTAINER=	Benoit Lecocq <blq@arcane-labs.net>
 
-LIB_DEPENDS=	gtk.>=1.2::x11/gtk+ \
-		gdk_pixbuf::graphics/gdk-pixbuf
-		
+# GPLv2 - LGPLv2.1
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext Xi c gdk glib gmodule jpeg m png tiff z
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
+WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png z
+                           
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmedcon/}
 
 MODULES=	devel/gettext
 
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/xmedcon
+
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
+
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static 
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
+		 --enable-static \
+		 --with-png-prefix=${LOCALBASE} \
+		 --sysconfdir="${SYSCONFDIR}"
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+                         
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
