@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_BurgerSpaceEngine_cpp,v 1.1 2009/03/13 17:15:44 naddy Exp $
+--- src/BurgerSpaceEngine.cpp.orig	Mon Mar  9 15:41:20 2009
++++ src/BurgerSpaceEngine.cpp	Mon Mar  9 15:41:36 2009
+@@ -3350,7 +3350,7 @@ BurgerSpaceEngine::serialize(const Sprite &s) const
+ 			    speed.x, speed.y,
+ 			    collBoxPos.x, collBoxPos.y,
+ 			    collBoxSize.x, collBoxSize.y,
+-			    s.currentPixmapIndex,
++			    (int)s.currentPixmapIndex,
+ 			    encodePixmapArrayPointer(s.getPixmapArray()));
+     return temp;
+ }

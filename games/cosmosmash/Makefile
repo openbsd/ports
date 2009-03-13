@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2007/10/16 16:34:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/03/13 17:15:44 naddy Exp $
 
 COMMENT=	astrosmash clone for X
 
-DISTNAME=	cosmosmash-1.4.2
+DISTNAME=	cosmosmash-1.4.3
 CATEGORIES=	games
 
-HOMEPAGE=	http://perso.b2b2c.ca/sarrazip/dev/cosmosmash.html
+HOMEPAGE=	http://sarrazip.com/dev/cosmosmash.html
 
 MAINTAINER=	Serge Basterot <sb@wo-do.com>
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=		SDL c m pthread stdc++
 
-MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
+MASTER_SITES=	http://sarrazip.com/dev/
 
-LIB_DEPENDS=	flatzebra-0.1::devel/flatzebra \
+LIB_DEPENDS=	flatzebra-0.1.>=1.0::devel/flatzebra \
 		SDL_mixer::devel/sdl-mixer \
 		SDL_image::devel/sdl-image
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils

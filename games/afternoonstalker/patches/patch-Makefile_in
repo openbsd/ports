@@ -1,21 +1,21 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2007/10/16 15:46:22 ajacoutot Exp $
---- Makefile.in.orig	Sun May  2 07:13:49 2004
-+++ Makefile.in	Thu Oct 11 18:41:34 2007
-@@ -131,7 +131,7 @@ SUBDIRS = src
- 
- man_MANS = doc/$(PACKAGE).6
- 
+$OpenBSD: patch-Makefile_in,v 1.2 2009/03/13 17:15:44 naddy Exp $
+--- Makefile.in.orig	Mon Mar  9 16:01:51 2009
++++ Makefile.in	Mon Mar  9 16:02:34 2009
+@@ -152,7 +152,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
- doc_DATA = \
- 	AUTHORS \
- 	COPYING \
-@@ -575,7 +575,7 @@ info: info-recursive
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
+@@ -651,7 +651,7 @@ info: info-recursive
  
  info-am:
  
 -install-data-am: install-docDATA install-man
 +install-data-am: install-man
  
- install-exec-am:
+ install-dvi: install-dvi-recursive
  

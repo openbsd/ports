@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_AfternoonStalkerEngine_cpp,v 1.1 2009/03/13 17:15:44 naddy Exp $
+--- src/AfternoonStalkerEngine.cpp.orig	Mon Mar  9 16:12:59 2009
++++ src/AfternoonStalkerEngine.cpp	Mon Mar  9 16:19:00 2009
+@@ -679,7 +679,7 @@ AfternoonStalkerEngine::loadLevel() throw(string)
+     if (!setFile)
+ 	throw string("Could not open " + fullFilename);
+     
+-    size_t levelWidth = 0, levelHeight = 0;
++    unsigned levelWidth = 0, levelHeight = 0;
+     string line;
+ 
+ 
+@@ -2661,7 +2661,7 @@ AfternoonStalkerEngine::drawScoreBoard()
+ {
+     static const Couple fontdim = getFontDimensions();
+     char temp[256];
+-    snprintf(temp, sizeof(temp), "Score: %07ld    Bullets: %-3d  Lives: %-3u",
++    snprintf(temp, sizeof(temp), "Score: %07ld    Bullets: %-3zu  Lives: %-3zu",
+ 				    theScore, numPlayerBullets, numPlayerLives);
+     displayMessage(30, temp);
+ }

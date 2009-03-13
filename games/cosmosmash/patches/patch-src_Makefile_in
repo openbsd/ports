@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2007/10/16 16:28:36 ajacoutot Exp $
---- src/Makefile.in.orig	Tue Oct 16 18:23:58 2007
-+++ src/Makefile.in	Tue Oct 16 18:24:06 2007
-@@ -588,8 +588,8 @@ uninstall-am: uninstall-binPROGRAMS uninstall-desktope
+$OpenBSD: patch-src_Makefile_in,v 1.2 2009/03/13 17:15:44 naddy Exp $
+--- src/Makefile.in.orig	Fri Feb 27 04:31:47 2009
++++ src/Makefile.in	Mon Mar  9 16:36:46 2009
+@@ -607,8 +607,8 @@ uninstall-am: uninstall-binPROGRAMS uninstall-desktope
  
  check: all
  @HAVE_GETOPT_LONG_TRUE@	test "`./$(PACKAGE) --version`" = "$(PACKAGE) $(VERSION)"

@@ -1,17 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/10/16 17:07:43 ajacoutot Exp $
-bin/afternoonstalker
+@comment $OpenBSD: PLIST,v 1.6 2009/03/13 17:15:44 naddy Exp $
+@bin bin/afternoonstalker
 @man man/man6/afternoonstalker.6
 share/afternoonstalker/
 share/afternoonstalker/level1.set
 share/afternoonstalker/level2.set
-share/applications/
 share/applications/afternoonstalker.desktop
 share/pixmaps/
 share/pixmaps/afternoonstalker.png
 share/sounds/
 share/sounds/afternoonstalker/
 share/sounds/afternoonstalker/bat-killed.wav
-share/sounds/afternoonstalker/bomb-explodes.wav
 share/sounds/afternoonstalker/gun-pickup.wav
 share/sounds/afternoonstalker/new-life.wav
 share/sounds/afternoonstalker/player-bullet.wav

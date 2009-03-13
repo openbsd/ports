@@ -1,21 +1,21 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2007/10/16 16:28:36 ajacoutot Exp $
---- Makefile.in.orig	Thu Jun 21 03:58:29 2007
-+++ Makefile.in	Thu Oct 11 18:43:55 2007
-@@ -179,7 +179,7 @@ target_os = @target_os@
- target_vendor = @target_vendor@
- SUBDIRS = src
- man_MANS = doc/cosmosmash.6
+$OpenBSD: patch-Makefile_in,v 1.2 2009/03/13 17:15:44 naddy Exp $
+--- Makefile.in.orig	Mon Mar  9 16:36:09 2009
++++ Makefile.in	Mon Mar  9 16:36:33 2009
+@@ -145,7 +145,7 @@ build_alias = @build_alias@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
- doc_DATA = \
- 	AUTHORS \
- 	COPYING \
-@@ -638,7 +638,7 @@ info: info-recursive
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host_alias = @host_alias@
+@@ -634,7 +634,7 @@ info: info-recursive
  
  info-am:
  
 -install-data-am: install-docDATA install-man
 +install-data-am: install-man
  
- install-exec-am:
+ install-dvi: install-dvi-recursive
  
