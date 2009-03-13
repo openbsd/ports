@@ -1,6 +1,6 @@
 Documentation for the ports tree: ports(7), packages(7), mirroring-ports(7),
-bsd.port.mk(5).
+library-specs(7), bsd.port.mk(5), port-modules(5).
 
-See also http://www.openbsd.org/
+See also http://www.openbsd.org/porting.html
 
-$OpenBSD: README,v 1.17 2004/07/25 00:15:32 espie Exp $
+$OpenBSD: README,v 1.18 2009/03/13 10:03:29 giovanni Exp $
