@@ -1,0 +1,15 @@
+$OpenBSD: patch-libawn_awn-config-client-gconf_c,v 1.1.1.1 2009/03/13 19:34:00 jasper Exp $
+
+killall(1) doesn't exist on OpenBSD; use pkill(1) instead.
+
+--- libawn/awn-config-client-gconf.c.orig	Sat Feb 21 16:33:13 2009
++++ libawn/awn-config-client-gconf.c	Sat Feb 21 16:33:20 2009
+@@ -215,7 +215,7 @@ gboolean awn_config_client_entry_exists (AwnConfigClie
+ 
+ void awn_config_client_load_defaults_from_schema (AwnConfigClient *client, GError **err)
+ {
+-	(void)g_spawn_command_line_async ("killall -HUP gconfd-2", err);
++	(void)g_spawn_command_line_async ("pkill -HUP gconfd-2", err);
+ }
+ 
+ AwnConfigValueType awn_config_client_get_value_type (AwnConfigClient *client, const gchar *group, const gchar *key, GError **err)

@@ -1,0 +1,9 @@
+$OpenBSD: patch-awn-manager_awnManager_py_in,v 1.1.1.1 2009/03/13 19:34:00 jasper Exp $
+--- awn-manager/awnManager.py.in.orig	Sun Feb 22 15:35:34 2009
++++ awn-manager/awnManager.py.in	Sun Feb 22 15:35:43 2009
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!${MODPY_BIN}
+ #
+ #  Copyright (C) 2007 Neil Jagdish Patel <njpatel@gmail.com>
+ #

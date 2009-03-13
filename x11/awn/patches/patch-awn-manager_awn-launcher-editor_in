@@ -1,0 +1,10 @@
+$OpenBSD: patch-awn-manager_awn-launcher-editor_in,v 1.1.1.1 2009/03/13 19:34:00 jasper Exp $
+--- awn-manager/awn-launcher-editor.in.orig	Sat Feb 21 14:27:08 2009
++++ awn-manager/awn-launcher-editor.in	Sat Feb 21 14:27:21 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ PYTHONPATH="@PY_PLAT_PKG@:@PY_SITE_PKG@:@PKGDATADIR@/awn-manager" \
+-    python "@PKGDATADIR@/awn-manager/awnLauncherEditor.py" "$@"
++    ${MODPY_BIN} "@PKGDATADIR@/awn-manager/awnLauncherEditor.py" "$@"

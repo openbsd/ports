@@ -1,0 +1,7 @@
+Avant Window Navigator (Awn) is a dock-like bar which sits at the bottom
+of the screen. It has support for launchers, task lists, and third party
+applets.
+
+The Awn project is the development of the 'dock',
+avant-window-navigator, and its corresponding shared library 'libawn',
+which is used to develop applets.

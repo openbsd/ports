@@ -1,0 +1,9 @@
+$OpenBSD: patch-data_awn-applets-migration,v 1.1.1.1 2009/03/13 19:34:00 jasper Exp $
+--- data/awn-applets-migration.orig	Sat Feb 21 14:29:53 2009
++++ data/awn-applets-migration	Sat Feb 21 14:30:28 2009
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ #
+ #  Copyright (C) 2009 Julien Lavergne <julien.lavergne@gmail.com>
+ #

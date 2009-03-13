@@ -1,0 +1,9 @@
+In order for "avant-window-navigator" to run, you will need to have a
+compositing manager running. Examples of these are:
+
+  - xcompmgr
+  - metacity (x11/gnome/metacity)
+  - xfwm4 (x11/xfce4/xfwm4)
+
+avant-window-navigator has to be setup, you can do this by running
+"awn-manager" or by selecting "Awn Manager" from the menu.

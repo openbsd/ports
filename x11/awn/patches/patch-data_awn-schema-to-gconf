@@ -1,0 +1,9 @@
+$OpenBSD: patch-data_awn-schema-to-gconf,v 1.1.1.1 2009/03/13 19:34:00 jasper Exp $
+--- data/awn-schema-to-gconf.orig	Mon Feb  9 00:08:28 2009
++++ data/awn-schema-to-gconf	Sat Feb 21 13:50:51 2009
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ #
+ #  Copyright (C) 2007 Mark Lee <avant-wn@lazymalevolence.com>
+ #

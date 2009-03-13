@@ -1,0 +1,12 @@
+$OpenBSD: patch-awn-applet-activation_main_c,v 1.1.1.1 2009/03/13 19:34:00 jasper Exp $
+--- awn-applet-activation/main.c.orig	Fri Mar 13 19:26:39 2009
++++ awn-applet-activation/main.c	Fri Mar 13 19:37:53 2009
+@@ -325,7 +325,7 @@ launch_python(const gchar *file,
+   }
+ 
+ 
+-  cmd = g_strdup_printf("python %s --uid=%s --window=%" G_GINT64_FORMAT " "
++  cmd = g_strdup_printf("${MODPY_BIN} %s --uid=%s --window=%" G_GINT64_FORMAT " "
+                         " --orient=%d --height=%d",
+                         exec, uid, window, orient, height);
+   g_spawn_command_line_async(cmd, &err);
