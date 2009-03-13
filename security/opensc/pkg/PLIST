@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/12/23 19:10:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/03/13 21:33:06 jasper Exp $
 %%SHARED%%
-@bin bin/cardos-info
+bin/cardos-info
+@bin bin/cardos-tool
 @bin bin/cryptoflex-tool
 @bin bin/eidenv
 @bin bin/netkey-tool
@@ -47,7 +48,7 @@ lib/pkgconfig/
 lib/pkgconfig/libopensc.pc
 lib/pkgconfig/libpkcs15init.pc
 lib/pkgconfig/libscconf.pc
-@man man/man1/cardos-info.1
+@man man/man1/cardos-tool.1
 @man man/man1/cryptoflex-tool.1
 @man man/man1/netkey-tool.1
 @man man/man1/opensc-config.1
