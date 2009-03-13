@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.27 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.28 2009/03/13 15:17:02 sthen Exp $
 
 COMMENT=		Tcl/Tk interface to the MH mail system
 
 DISTNAME=		exmh-2.7.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	mail
 
 HOMEPAGE=		http://www.beedub.com/exmh/
 
 MAINTAINER=		Michael Paddon <michael@paddon.org>
 
+# custom BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,11 +19,15 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.funet.fi/pub/languages/tcl/tcl/exmh/ \
 			ftp://ftp.tcl.tk/pub/tcl/exmh/
 
-BUILD_DEPENDS=		:tcl-8.4.*:lang/tcl/8.4
+MODULES=		x11/tk
+# XXX broken fonts with 8.5
+MODTCL_VERSION=		8.4
+MODTK_VERSION=		8.4
+BUILD_DEPENDS=		${MODTCL_RUN_DEPENDS}
 RUN_DEPENDS=		:expect-*:lang/expect\
 			:nmh-*:mail/nmh\
 			:metamail-*:mail/metamail\
-			:tk-8.4.*:x11/tk/8.4
+			${MODTK_RUN_DEPENDS}
 USE_X11=		Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
@@ -30,6 +36,7 @@ PKG_ARCH=		*
 do-configure:
 	@cd ${WRKDIST} && LOCALBASE=${LOCALBASE} PREFIX=${PREFIX} \
 		WRKSRC=${WRKSRC} WRKBUILD=${WRKBUILD} \
+		MODTCL_BIN=${MODTCL_BIN} MODTK_BIN=${MODTK_BIN} \
 		perl ${FILESDIR}/configure
 
 do-install:
@@ -43,7 +50,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/exmh
 	cp -r ${WRKSRC}/lib/. ${PREFIX}/share/exmh
 	cd ${PREFIX}/share && echo 'auto_mkindex exmh'\
-		| ${LOCALBASE}/bin/tclsh8.4
+		| ${MODTCL_BIN}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/exmh
 	find ${PREFIX}/share/exmh -type d -print0 | xargs -0 chmod ${DIRMODE}
 	find ${PREFIX}/share/exmh -type f -print0 | xargs -0 chmod ${SHAREMODE}

@@ -12,10 +12,12 @@ my $domain = "";
 
 my $prefix = exists $ENV{"PREFIX"} ? $ENV{"PREFIX"} : "/usr/local";
 my $localbase = exists $ENV{"LOCALBASE"} ? $ENV{"LOCALBASE"} : "/usr/local";
+my $modtcl_bin = exists $ENV{"MODTCL_BIN"} ? $ENV{"MODTCL_BIN"} : "$localbase/bin/tclsh.4";
+my $modtk_bin = exists $ENV{"MODTK_BIN"} ? $ENV{"MODTK_BIN"} : "$localbase/bin/wish8.4";
 my $config = "
 # Saved state from exmh.install
 # Mon Mar 14 10:59:18 MST 2005
-set wish $localbase/bin/wish8.4
+set wish $modtk_bin
 set exmh(version) {version 2.7.2 01/07/2005}
 set exmh(name) exmh
 set exmh(maintainer) welch\@acm.org
@@ -60,8 +62,8 @@ while (my $name = $dir->read ()){
 
 	if (my $line = $in->getline ()){
 		$line =~ s|^#!expect|#!$localbase/bin/expect|;
-		$line =~ s|^#!tclsh|#!$localbase/bin/tclsh8.4|;
-		$line =~ s|^#!wish|#!$localbase/bin/wish8.4|;
+		$line =~ s|^#!tclsh|#!$modtcl_bin|;
+		$line =~ s|^#!wish|#!$modtk_bin|;
 		$out->print ($line) or die ("$dst: $!\n");
 
 		while ($line = $in->getline ()){
