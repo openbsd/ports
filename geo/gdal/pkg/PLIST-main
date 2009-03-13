@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/09 23:07:05 pvalchev Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2009/03/13 08:56:53 landry Exp $
 %%SHARED%%
 bin/gdal-config
 @bin bin/gdal_contour
@@ -21,22 +21,29 @@ include/cpl_config.h
 include/cpl_conv.h
 include/cpl_csv.h
 include/cpl_error.h
+include/cpl_hash_set.h
 include/cpl_http.h
 include/cpl_list.h
 include/cpl_minixml.h
+include/cpl_minizip_ioapi.h
+include/cpl_minizip_unzip.h
 include/cpl_multiproc.h
 include/cpl_odbc.h
 include/cpl_port.h
+include/cpl_quad_tree.h
 include/cpl_string.h
 include/cpl_vsi.h
 include/cpl_vsi_virtual.h
 include/cpl_win32ce_api.h
 include/cpl_wince.h
+include/cplkeywordparser.h
 include/gdal.h
 include/gdal_alg.h
+include/gdal_alg_priv.h
 include/gdal_frmts.h
 include/gdal_pam.h
 include/gdal_priv.h
+include/gdal_proxy.h
 include/gdal_rat.h
 include/gdal_version.h
 include/gdal_vrt.h
@@ -64,6 +71,7 @@ share/gdal/GDALLogoBW.svg
 share/gdal/GDALLogoColor.svg
 share/gdal/GDALLogoGS.svg
 share/gdal/LICENSE.TXT
+share/gdal/coordinate_axis.csv
 share/gdal/cubewerx_extra.wkt
 share/gdal/ecw_cs.wkt
 share/gdal/ellipsoid.csv

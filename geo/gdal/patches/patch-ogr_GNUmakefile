@@ -1,7 +1,7 @@
-$OpenBSD: patch-ogr_GNUmakefile,v 1.1.1.1 2009/02/09 23:07:05 pvalchev Exp $
---- ogr/GNUmakefile.orig	Fri Dec  5 18:38:47 2008
-+++ ogr/GNUmakefile	Fri Dec  5 18:40:20 2008
-@@ -15,7 +15,7 @@ CPPFLAGS	:=	-Iogrsf_frmts -I. $(GDAL_INCLUDE) $(PROJ_I
+$OpenBSD: patch-ogr_GNUmakefile,v 1.2 2009/03/13 08:56:53 landry Exp $
+--- ogr/GNUmakefile.orig	Fri Aug 22 18:57:53 2008
++++ ogr/GNUmakefile	Sun Feb 22 23:37:01 2009
+@@ -19,7 +19,7 @@ CPPFLAGS	:=	-Iogrsf_frmts -I. $(GDAL_INCLUDE) $(PROJ_I
  
  default:	lib
  

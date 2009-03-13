@@ -1,0 +1,12 @@
+$OpenBSD: patch-swig_python_setup_py,v 1.1 2009/03/13 08:56:53 landry Exp $
+--- swig/python/setup.py.orig	Mon Feb 23 10:21:13 2009
++++ swig/python/setup.py	Mon Feb 23 10:21:27 2009
+@@ -135,7 +135,7 @@ class gdal_ext(build_ext):
+ 
+ gdal_version = '1.6.0'
+ 
+-extra_link_args = []
++extra_link_args = ['-fPIC']
+ extra_compile_args = []
+ # might need to tweak for Python 2.4 on OSX to be these
+ #extra_compile_args = ['-g', '-arch', 'i386', '-isysroot','/']

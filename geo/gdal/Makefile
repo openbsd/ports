@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/12 20:55:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/13 08:56:52 landry Exp $
 
-COMMENT=	translator library for raster geospatial data formats
-DISTNAME=	gdal-1.5.3
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS=	gdal 13.3
+COMMENT-main=	translator library for geospatial data formats
+COMMENT-python=	python bindings and utilities for GDAL
+
+DISTNAME=	gdal-1.6.0
+
+PKGNAME-main=	${DISTNAME}
+PKGNAME-python=	py-${DISTNAME}
+
+SHARED_LIBS=	gdal 14.0
 CATEGORIES=	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -16,16 +21,33 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB =	c expat m stdc++ z
-
 MASTER_SITES =	http://download.osgeo.org/gdal/
 
-LIB_DEPENDS =	tiff::graphics/tiff \
+MODULES =	lang/python devel/gettext
+
+WANTLIB-main =	${WANTLIB} c crypto expat m ssl stdc++ z
+
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
+		tiff::graphics/tiff \
+		curl::net/curl \
+		pq:postgresql-client-*:databases/postgresql \
+		geos,geos_c::geo/geos \
+		idn::devel/libidn \
 		png::graphics/png \
 		gif::graphics/libungif \
 		jpeg::graphics/jpeg \
 		jasper::graphics/jasper \
 		geotiff::devel/geotiff
+
+LIB_DEPENDS-python=	gdal:${PKGNAME}:${BASE_PKGPATH},-main
+
+RUN_DEPENDS+=	::math/py-numpy
+BUILD_DEPENDS+=	${RUN_DEPENDS} ::devel/swig
+
+MULTI_PACKAGES=	-main -python
+
+MODPY_SETUPTOOLS=Yes
+MODPY_EGG_VERSION=1.6.0
 
 NO_REGRESS=	Yes
 MAKE_FILE=	GNUmakefile
@@ -35,18 +57,17 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PYTHON=${MODPY_BIN}
+
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--without-curl \
 		--without-cfitsio \
 		--without-netcdf \
 		--without-xerces \
 		--without-mysql \
 		--without-sqlite3 \
-		--without-pg \
 		--without-odbc \
 		--without-oci \
-		--without-geos \
 		--without-grass \
 		--without-idb \
 		--without-sde \
@@ -54,14 +75,20 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-perl \
 		--without-php \
 		--without-ruby \
-		--without-python \
 		--without-ogpython \
 		--without-threads \
 		--with-png-inc="${LOCALBASE}/include/libpng" \
 		--with-png-lib="${LOCALBASE}/lib" \
+		--with-pg=${LOCALBASE}/bin/pg_config \
+		--with-python \
+		--with-geos \
+		--with-curl=${LOCALBASE} \
 		--with-tiff=${LOCALBASE} \
 		--with-gif=${LOCALBASE} \
 		--with-jpeg=${LOCALBASE} \
 		--with-jasper=${LOCALBASE}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>

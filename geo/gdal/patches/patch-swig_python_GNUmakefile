@@ -1,0 +1,20 @@
+$OpenBSD: patch-swig_python_GNUmakefile,v 1.1 2009/03/13 08:56:53 landry Exp $
+tweak to build egg-info files during build stage
+--- swig/python/GNUmakefile.orig	Sat May 31 09:41:25 2008
++++ swig/python/GNUmakefile	Tue Feb 24 00:16:24 2009
+@@ -48,14 +48,12 @@ generate: ${WRAPPERS}
+ 
+ build:
+ 	$(PYTHON) setup.py build
+-
+-egg:
+ 	$(PYTHON) setup.py bdist_egg 
+ 	
+ install:
+ 
+ ifeq ($(PY_HAVE_SETUPTOOLS),1)
+-	$(PYTHON) setup.py install 
++	$(PYTHON) setup.py install --prefix=$(DESTDIR)$(prefix) --root=/ --single-version-externally-managed
+ else
+ 	$(PYTHON) setup.py install --prefix=$(DESTDIR)$(prefix)
+ endif

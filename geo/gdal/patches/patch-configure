@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1 2009/03/13 08:56:53 landry Exp $
+ensure MODPY_BIN is picked to try detecting setuptools
+--- configure.orig	Sun Feb 22 23:39:37 2009
++++ configure	Sun Feb 22 23:40:06 2009
+@@ -27327,7 +27327,7 @@ echo $ECHO_N "checking for python setuptools... $ECHO_
+   print 1
+ except ImportError:
+   pass'
+-  PY_HAVE_SETUPTOOLS=`python -c "$SETUPTEST"`
++  PY_HAVE_SETUPTOOLS=`${MODPY_BIN} -c "$SETUPTEST"`
+   if test "$PY_HAVE_SETUPTOOLS" = "1"; then
+     { echo "$as_me:$LINENO: result: found" >&5
+ echo "${ECHO_T}found" >&6; }
