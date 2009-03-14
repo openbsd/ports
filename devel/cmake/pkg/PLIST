@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/02/04 22:31:20 espie Exp $
-bin/ccmake
-bin/cmake
-bin/cpack
-bin/ctest
+@comment $OpenBSD: PLIST,v 1.7 2009/03/14 18:59:36 ajacoutot Exp $
+@bin bin/ccmake
+@bin bin/cmake
+@bin bin/cpack
+@bin bin/ctest
 @man man/man1/ccmake.1
 @man man/man1/cmake.1
 @man man/man1/ctest.1
