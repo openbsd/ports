@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/14 11:05:50 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/14 12:52:14 ajacoutot Exp $
 
 COMMENT-main=	translator library for geospatial data formats
 COMMENT-python=	python bindings and utilities for GDAL
@@ -9,7 +9,7 @@ DISTNAME=	gdal-${V}
 
 PKGNAME-main=	${DISTNAME}p0
 PKGNAME-python=	py-${DISTNAME}p0
-PKGNAME-perl=   p5-Geo-GDAL-${V}
+PKGNAME-perl=   p5-Geo-GDAL-${V}p0
 
 SHARED_LIBS=	gdal 14.0
 CATEGORIES=	geo devel
@@ -29,6 +29,8 @@ MASTER_SITES =	http://download.osgeo.org/gdal/
 MODULES =	perl lang/python devel/gettext
 
 WANTLIB-main =	${WANTLIB} c crypto expat m ssl stdc++ z
+WANTLIB-perl =	crypto curl expat geos_c geotiff gif idn jasper jpeg m \
+		png pq ssl tiff z
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 		tiff::graphics/tiff \
