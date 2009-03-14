@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/12/17 18:43:13 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/03/14 10:40:51 ajacoutot Exp $
 @pkgpath print/lilypond
 bin/abc2ly
 bin/convert-ly
@@ -367,5 +367,3 @@ share/omf/lilypond/${VERSION}/lilypond.html.omf
 share/omf/lilypond/${VERSION}/lilypond.pdf.omf
 share/omf/lilypond/${VERSION}/music-glossary.html.omf
 share/omf/lilypond/${VERSION}/music-glossary.pdf.omf
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update

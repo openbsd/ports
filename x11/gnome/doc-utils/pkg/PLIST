@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/01/12 17:36:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/03/14 10:40:52 ajacoutot Exp $
 bin/gnome-doc-prepare
 bin/gnome-doc-tool
 bin/xml2po
@@ -279,5 +279,3 @@ share/xml2po/gs.pyc
 @comment share/xml2po/ubuntu.pyc
 share/xml2po/xhtml.py
 share/xml2po/xhtml.pyc
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update

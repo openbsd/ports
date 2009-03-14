@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/01/12 19:44:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/03/14 10:40:53 ajacoutot Exp $
 %%SHARED%%
 bin/charmap
 bin/gnome-character-map
@@ -218,7 +218,5 @@ share/schemas/gucharmap/gucharmap.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gucharmap/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

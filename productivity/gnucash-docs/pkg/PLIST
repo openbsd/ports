@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/29 17:01:33 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/14 10:40:52 ajacoutot Exp $
 share/gnome/help/gnucash/
 share/gnome/help/gnucash/C/
 share/gnome/help/gnucash/C/Help_ch_Account-Actions.xml
@@ -250,5 +250,3 @@ share/omf/gnucash-docs/
 share/omf/gnucash-docs/gnucash-guide-C.omf
 share/omf/gnucash-docs/gnucash-help-C.omf
 share/omf/gnucash-docs/gnucash-help-de_DE.omf
-@exec %D/bin/rarian-sk-update -q
-@unexec %D/bin/rarian-sk-update -q

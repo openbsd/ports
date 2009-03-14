@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2008/12/17 18:43:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/14 10:40:52 ajacoutot Exp $
 
 COMMENT=	GTK C code documentation system
 
 GNOME_VERSION=	1.11
 GNOME_PROJECT=	gtk-doc
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+
 CATEGORIES=    	textproc devel
 
 HOMEPAGE=	http://www.gtk.org/gtk-doc/

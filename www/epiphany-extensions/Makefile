@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/02/15 17:33:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/03/14 10:40:52 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		www
 

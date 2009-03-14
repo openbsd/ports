@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/20 23:13:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/03/14 10:40:52 ajacoutot Exp $
 @bin bin/cheese
 libexec/cheese/
 libexec/cheese/cheese-bugreport.sh
@@ -208,7 +208,5 @@ share/schemas/cheese/cheese.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/cheese/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

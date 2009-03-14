@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2009/01/30 18:38:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2009/03/14 10:40:51 ajacoutot Exp $
 
 COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.11.5
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 CATEGORIES=		audio

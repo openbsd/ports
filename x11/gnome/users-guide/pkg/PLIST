@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/01/07 09:59:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2009/03/14 10:40:53 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/gnome/
@@ -2182,5 +2182,3 @@ share/omf/user-guide/user-guide-ru.omf
 share/omf/user-guide/user-guide-sv.omf
 share/omf/user-guide/user-guide-th.omf
 share/omf/user-guide/user-guide-zh_CN.omf
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update

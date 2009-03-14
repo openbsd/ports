@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/02/18 09:18:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/03/14 10:40:51 ajacoutot Exp $
 %%SHARED%%
 @bin bin/glade-3
 include/libgladeui-1.0/
@@ -534,8 +534,6 @@ share/omf/glade/glade-oc.omf
 share/omf/glade/glade-pt_BR.omf
 share/omf/glade/glade-ru.omf
 share/omf/glade/glade-sv.omf
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database

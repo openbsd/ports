@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/01/06 09:52:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2009/03/14 10:40:52 ajacoutot Exp $
 @bin bin/epiphany
 include/epiphany/
 include/epiphany/${M}/
@@ -412,8 +412,6 @@ share/schemas/epiphany/epiphany-lockdown.schemas
 share/schemas/epiphany/epiphany-pango.schemas
 share/schemas/epiphany/epiphany.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/epiphany/*.schemas > /dev/null
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

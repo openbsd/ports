@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/24 18:31:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/03/14 10:40:53 ajacoutot Exp $
 bin/tomboy
 bin/tomboy-panel
 lib/bonobo/
@@ -485,8 +485,6 @@ share/tomboy/icons/hicolor/48x48/actions/notebook-new.png
 share/tomboy/icons/hicolor/scalable/
 share/tomboy/icons/hicolor/scalable/actions/
 share/tomboy/icons/hicolor/scalable/actions/notebook-new.svg
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database

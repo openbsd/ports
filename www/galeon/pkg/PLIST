@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/12/23 11:36:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2009/03/14 10:40:52 ajacoutot Exp $
 @bin bin/galeon
 bin/galeon-config-tool
 lib/bonobo/
@@ -250,7 +250,5 @@ share/schemas/galeon/galeon.schemas
 share/sounds/
 share/sounds/galeon/
 share/sounds/galeon/clicked.wav
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

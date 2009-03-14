@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/01/13 00:00:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2009/03/14 10:40:54 ajacoutot Exp $
 bin/gdialog
 @bin bin/zenity
 @man man/man1/zenity.1
@@ -269,5 +269,3 @@ share/zenity/zenity-scale.png
 share/zenity/zenity-text.png
 share/zenity/zenity.glade
 share/zenity/zenity.png
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update

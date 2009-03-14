@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/02/18 09:18:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/03/14 10:40:51 ajacoutot Exp $
 
 COMMENT=		user interface builder for the GTK2+ toolkit
 
 GNOME_VERSION =		3.5.7
 GNOME_PROJECT = 	glade3
+PKGNAME =		${DISTNAME}p0
 
 CATEGORIES =		devel
 SHARED_LIBS +=  gladeui-1            0.1      # .9.1

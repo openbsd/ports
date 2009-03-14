@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2009/02/16 15:28:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2009/03/14 10:40:51 ajacoutot Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-5.4
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
+
 CATEGORIES=		mail
 
 EXTRACT_SUFX=		.tar.bz2

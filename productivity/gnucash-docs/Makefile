@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/12/29 17:01:33 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/14 10:40:52 ajacoutot Exp $
 
 COMMENT =	gnucash documentation
 
 GNOME_PROJECT =	gnucash-docs
 GNOME_VERSION =	2.2.0
+PKGNAME =	${DISTNAME}p0
 
 CATEGORIES =	productivity
 

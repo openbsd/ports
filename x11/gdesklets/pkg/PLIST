@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/12/21 10:36:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/03/14 10:40:52 ajacoutot Exp $
 bin/gdesklets
 lib/gdesklets/
 lib/gdesklets/Additions/
@@ -871,8 +871,6 @@ share/locale/zh_HK/LC_MESSAGES/gdesklets.mo
 share/locale/zh_TW/LC_MESSAGES/gdesklets.mo
 share/mime/packages/gdesklets.xml
 share/pixmaps/gdesklets.png
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime

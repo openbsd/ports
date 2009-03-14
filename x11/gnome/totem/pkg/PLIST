@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/12/17 18:47:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/03/14 10:40:53 ajacoutot Exp $
 @bin bin/totem
 @bin bin/totem-audio-preview
 @bin bin/totem-video-indexer
@@ -373,7 +373,5 @@ share/totem/uri.ui
 share/totem/video-list.ui
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

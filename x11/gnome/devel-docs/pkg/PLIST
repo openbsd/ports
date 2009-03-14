@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/12/17 18:47:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/03/14 10:40:52 ajacoutot Exp $
 share/gnome/help/gdp-handbook/
 share/gnome/help/gdp-handbook/C/
 share/gnome/help/gdp-handbook/C/builddocs.xml
@@ -402,5 +402,3 @@ share/omf/platform-overview/platform-overview-fr.omf
 share/omf/platform-overview/platform-overview-it.omf
 share/omf/platform-overview/platform-overview-oc.omf
 share/omf/platform-overview/platform-overview-ru.omf
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update

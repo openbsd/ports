@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/12 14:45:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/14 10:40:52 ajacoutot Exp $
 
 # XXX the following modules are commented in PLIST
 # iPodModule ===> needs py-gpod which we don't provide
@@ -8,7 +8,7 @@ COMMENT=		synchronization application for GNOME
 
 GNOME_PROJECT=		conduit
 GNOME_VERSION=		0.3.15
-PKGNAME=		${DISTNAME}p9
+PKGNAME=		${DISTNAME}p10
 
 HOMEPAGE=		http://www.conduit-project.org/
 

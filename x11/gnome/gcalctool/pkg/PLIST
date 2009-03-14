@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/01/26 12:45:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/03/14 10:40:53 ajacoutot Exp $
 @bin bin/gcalctool
 bin/gnome-calculator
 @man man/man1/gcalctool.1
@@ -240,7 +240,5 @@ share/omf/gcalctool/gcalctool-zh_TW.omf
 share/schemas/gcalctool/
 share/schemas/gcalctool/gcalctool.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gcalctool/*.schemas > /dev/null
-@exec %D/bin/rarian-sk-update
-@unexec %D/bin/rarian-sk-update
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
