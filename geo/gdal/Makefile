@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/13 08:56:52 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/14 11:05:50 landry Exp $
 
 COMMENT-main=	translator library for geospatial data formats
 COMMENT-python=	python bindings and utilities for GDAL
+COMMENT-perl=	perl bindings for GDAL
 
-DISTNAME=	gdal-1.6.0
+V=		1.6.0
+DISTNAME=	gdal-${V}
 
-PKGNAME-main=	${DISTNAME}
-PKGNAME-python=	py-${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
+PKGNAME-python=	py-${DISTNAME}p0
+PKGNAME-perl=   p5-Geo-GDAL-${V}
 
 SHARED_LIBS=	gdal 14.0
 CATEGORIES=	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
 
-MAINTAINER =	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES =	http://download.osgeo.org/gdal/
 
-MODULES =	lang/python devel/gettext
+MODULES =	perl lang/python devel/gettext
 
 WANTLIB-main =	${WANTLIB} c crypto expat m ssl stdc++ z
 
@@ -40,11 +43,12 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 		geotiff::devel/geotiff
 
 LIB_DEPENDS-python=	gdal:${PKGNAME}:${BASE_PKGPATH},-main
+LIB_DEPENDS-perl=	gdal:${PKGNAME}:${BASE_PKGPATH},-main
 
 RUN_DEPENDS+=	::math/py-numpy
 BUILD_DEPENDS+=	${RUN_DEPENDS} ::devel/swig
 
-MULTI_PACKAGES=	-main -python
+MULTI_PACKAGES=	-main -python -perl
 
 MODPY_SETUPTOOLS=Yes
 MODPY_EGG_VERSION=1.6.0
@@ -72,7 +76,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-idb \
 		--without-sde \
 		--without-libgrass \
-		--without-perl \
 		--without-php \
 		--without-ruby \
 		--without-ogpython \
@@ -81,6 +84,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-png-lib="${LOCALBASE}/lib" \
 		--with-pg=${LOCALBASE}/bin/pg_config \
 		--with-python \
+		--with-perl \
 		--with-geos \
 		--with-curl=${LOCALBASE} \
 		--with-tiff=${LOCALBASE} \

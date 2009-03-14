@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST-perl,v 1.1 2009/03/14 11:05:50 landry Exp $
+${P5ARCH}/
+${P5ARCH}/Geo/
+${P5ARCH}/Geo/GDAL/
+${P5ARCH}/Geo/GDAL.dox
+${P5ARCH}/Geo/GDAL.pm
+${P5ARCH}/Geo/GDAL/Const.dox
+${P5ARCH}/Geo/GDAL/Const.pm
+${P5ARCH}/Geo/OGR.dox
+${P5ARCH}/Geo/OGR.pm
+${P5ARCH}/Geo/OSR.dox
+${P5ARCH}/Geo/OSR.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Geo/
+${P5ARCH}/auto/Geo/GDAL/
+${P5ARCH}/auto/Geo/GDAL/Const/
+${P5ARCH}/auto/Geo/GDAL/Const/Const.bs
+${P5ARCH}/auto/Geo/GDAL/Const/Const.so
+${P5ARCH}/auto/Geo/GDAL/GDAL.bs
+${P5ARCH}/auto/Geo/GDAL/GDAL.so
+${P5ARCH}/auto/Geo/OGR/
+${P5ARCH}/auto/Geo/OGR/OGR.bs
+${P5ARCH}/auto/Geo/OGR/OGR.so
+${P5ARCH}/auto/Geo/OSR/
+${P5ARCH}/auto/Geo/OSR/OSR.bs
+${P5ARCH}/auto/Geo/OSR/OSR.so
