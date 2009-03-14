@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/03/14 10:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT=		archive manager for GNOME
 
@@ -28,8 +28,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=		devel/gettext \
 			x11/gnome
 
-RUN_DEPENDS=		::textproc/rarian \
-			:gtar-*:archivers/gtar \
+RUN_DEPENDS=		:gtar-*:archivers/gtar \
 			:lzma-*:archivers/lzma \
 			:unzip-*:archivers/unzip \
 			:zip-*:archivers/zip \

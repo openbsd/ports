@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2009/03/14 10:40:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2009/03/14 11:36:24 ajacoutot Exp $
 
 COMMENT=		editor for the GConf configuration system
 
 GNOME_PROJECT=		gconf-editor
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/projects/gconf/
@@ -28,7 +28,6 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 
 BUILD_DEPENDS=		::textproc/rarian \
 			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
-RUN_DEPENDS=		::textproc/rarian
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui
 
 MODULES=		devel/gettext \

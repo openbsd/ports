@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/14 10:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT =	gnucash documentation
 
 GNOME_PROJECT =	gnucash-docs
 GNOME_VERSION =	2.2.0
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 CATEGORIES =	productivity
 
@@ -25,8 +25,7 @@ EXTRACT_SUFX =	.tar.gz
 MODULES =		x11/gnome
 MODGNOME_HELP_FILES =	Yes
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		::textproc/rarian
+BUILD_DEPENDS =		::textproc/rarian
 
 CONFIGURE_STYLE =	gnu
 

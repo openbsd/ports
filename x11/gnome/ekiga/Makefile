@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/03/14 10:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	2.0.12
-PKGNAME=	${DISTNAME}p13
+PKGNAME=	${DISTNAME}p14
 
 CATEGORIES=	net multimedia
 
@@ -34,7 +34,6 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	::textproc/rarian \
 		::x11/gnome/doc-utils
-RUN_DEPENDS=	::textproc/rarian
 LIB_DEPENDS=	gnomeui-2.>=2000::x11/gnome/libgnomeui \
 		opal::net/opal \
 		SDL.>=8::devel/sdl \

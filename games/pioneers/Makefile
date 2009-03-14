@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/14 10:40:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/03/14 11:36:24 ajacoutot Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
 GNOME_PROJECT=	pioneers
 GNOME_VERSION=	0.12.2
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 
 CATEGORIES=	games
 
@@ -32,10 +32,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pio/}
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	::textproc/rarian \
-		::x11/gnome/librsvg
-RUN_DEPENDS=	::textproc/rarian \
-		::x11/gnome/librsvg
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		::textproc/rarian
+RUN_DEPENDS=	::x11/gnome/librsvg
 LIB_DEPENDS=	gnome-2.>=1900::x11/gnome/libgnome
 
 USE_X11=	Yes

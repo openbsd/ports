@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/14 10:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
 GNOME_PROJECT=		gnomebaker
 GNOME_VERSION=		0.6.4
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 CATEGORIES=		sysutils multimedia
 
 HOMEPAGE=		http://gnomebaker.sourceforge.net/
@@ -34,8 +34,7 @@ LIB_DEPENDS=		gstreamer-0.10::multimedia/gstreamer-0.10/core \
 			gnomeui-2::x11/gnome/libgnomeui
 
 BUILD_DEPENDS=		::textproc/rarian
-RUN_DEPENDS=		::textproc/rarian \
-			::misc/cdrdao \
+RUN_DEPENDS=		::misc/cdrdao \
 			::sysutils/cdrtools \
 			::sysutils/dvd+rw-tools
 

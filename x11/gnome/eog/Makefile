@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2009/03/14 10:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		2.24.3.1
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 CATEGORIES=		graphics
 
@@ -29,12 +29,12 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
+			::textproc/rarian \
 			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
 LIB_DEPENDS=		gnome-desktop-2.>=5::x11/gnome/desktop \
 			exif::graphics/libexif \
 			lcms.>=1::graphics/lcms
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
-			::textproc/rarian \
 			:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
 
 MODGNOME_HELP_FILES=	Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2009/03/14 10:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		${DISTNAME}p11
+PKGNAME=		${DISTNAME}p12
 
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
@@ -48,7 +48,6 @@ BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
 			::x11/gnome/settings-daemon
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			::multimedia/gstreamer-0.10/plugins-good,-gconf \
-			::textproc/rarian \
 			::x11/gnome/settings-daemon \
 			::audio/sound-theme-freedesktop \
 			::x11/gnome/terminal

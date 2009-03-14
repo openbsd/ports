@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/14 10:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/03/14 11:36:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	database widget library with data bound widgets
 
 GNOME_PROJECT=	libgnomedb
 GNOME_VERSION=	3.0.0
-PKGNAME=	${DISTNAME}p2v0
+PKGNAME=	${DISTNAME}p3v0
 
 SHARED_LIBS +=  gnomedb-3.0          1.0      # .4.0
 SHARED_LIBS +=  gnomedb_extra-3.0    1.0      # .4.0
@@ -36,8 +36,8 @@ WANTLIB += xml2 z
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		::x11/gnome/doc-utils
-RUN_DEPENDS=		::textproc/rarian
+BUILD_DEPENDS=		::x11/gnome/doc-utils \
+			::textproc/rarian
 LIB_DEPENDS=		gladeui-1::devel/glade3 \
 			gdasql-3.0,gda-3.0,gda-report-3.0::x11/gnome/libgda
 

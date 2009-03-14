@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/03/14 10:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.3
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 
 CATEGORIES=		x11
 
@@ -35,7 +35,6 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		:rarian-*:textproc/rarian \
 			:py-gtk2-*:x11/py-gtk2
 RUN_DEPENDS=		:py-gtk2-*:x11/py-gtk2 \
-    			:rarian-*:textproc/rarian  \
 			:shared-mime-info->=0.21:misc/shared-mime-info
 
 LIB_DEPENDS=		bonoboui-2::x11/gnome/libbonoboui \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/14 10:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT=		universal search and navigation for GNOME
 
 GNOME_VERSION=		2.24.3
 GNOME_PROJECT=		deskbar-applet
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 CATEGORIES=		sysutils
 
@@ -36,12 +36,12 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 
 BUILD_DEPENDS=		::x11/dbus-python \
 			::x11/gnome/doc-utils \
-			::x11/gnome/py-gnome-desktop
+			::x11/gnome/py-gnome-desktop \
+			::textproc/rarian
 RUN_DEPENDS=		::mail/evolution \
 			::x11/dbus-python \
 			::x11/gnome/py-gnome-desktop \
-			::devel/py-simplejson \
-			::textproc/rarian
+			::devel/py-simplejson
 LIB_DEPENDS=		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server
 
 MODGNOME_HELP_FILES=	Yes

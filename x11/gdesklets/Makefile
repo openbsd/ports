@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/14 10:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/03/14 11:36:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		mini programs for your desktop
 
 V=			0.36.1
 DISTNAME=		gdesklets-${V}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gdesklets.de/
@@ -35,11 +35,11 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 LIB_DEPENDS=		gtop-2.0::devel/libgtop2 \
 			rsvg-2::x11/gnome/librsvg
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			::textproc/rarian
 RUN_DEPENDS=		::devel/desktop-file-utils \
 			::misc/shared-mime-info \
-			::x11/gnome/py-gnome \
-			::textproc/rarian
+			::x11/gnome/py-gnome
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

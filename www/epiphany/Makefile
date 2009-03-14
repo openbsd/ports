@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2009/03/14 10:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2009/03/14 11:36:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME web browser based on mozilla
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
@@ -24,12 +24,12 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
+		::textproc/rarian \
 		:xulrunner-devel->=1.8.1:devel/xulrunner,-devel \
 		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
 RUN_DEPENDS=	:gnome-icon-theme-*:x11/gnome/icon-theme \
 		:gnome-themes-*:x11/gnome/themes \
 		:iso-codes-*:devel/iso-codes \
-		::textproc/rarian \
 		::x11/gnome/py-gnome
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		gnome-desktop-2::x11/gnome/desktop \

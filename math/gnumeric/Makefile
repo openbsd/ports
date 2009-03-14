@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2009/03/14 10:40:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2009/03/14 11:36:24 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.8.4
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 SHARED_LIBS +=	spreadsheet     0.0
 CATEGORIES=    		math
@@ -32,7 +32,6 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		::textproc/rarian
-RUN_DEPENDS=		::textproc/rarian
 LIB_DEPENDS=		art_lgpl_2.>=5.19::graphics/libart \
 			glade-2.0.>=0.8::devel/libglade2 \
 			gnomeui-2.>=1800::x11/gnome/libgnomeui \

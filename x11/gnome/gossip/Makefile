@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2009/03/14 10:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT=		Jabber client for the GNOME desktop
 
 GNOME_PROJECT=		gossip
 GNOME_VERSION=		0.31
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 CATEGORIES=		net
 
 HOMEPAGE=		http://developer.imendio.com/projects/gossip/
@@ -31,14 +31,14 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		::x11/gnome/doc-utils
+BUILD_DEPENDS=		::x11/gnome/doc-utils \
+			::textproc/rarian
 LIB_DEPENDS=		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
 			idn.>=16::devel/libidn \
 			notify::devel/libnotify \
 			loudmouth-1.>=3::net/loudmouth \
 			panel-applet-2::x11/gnome/panel
 RUN_DEPENDS=		::devel/iso-codes \
-			::textproc/rarian \
 			::x11/gnome/yelp \
 			::x11/hicolor-icon-theme
 

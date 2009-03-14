@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/14 10:40:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/14 11:36:24 ajacoutot Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
 DISTNAME=	gmfsk-0.6
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://gmfsk.connect.fi/
@@ -29,8 +29,7 @@ WANTLIB += z
 
 MODULES=		devel/gettext
 
-RUN_DEPENDS=		::textproc/rarian \
-			:yelp-*:x11/gnome/yelp
+RUN_DEPENDS=		:yelp-*:x11/gnome/yelp
 BUILD_DEPENDS=		::textproc/rarian
 LIB_DEPENDS=		fftw.>=2::math/fftw \
 			gailutil,gtk-x11-2.0,gdk_pixbuf-2.0,gdk-x11-2.0::x11/gtk+2 \

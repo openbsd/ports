@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2009/03/14 10:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.9
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
@@ -23,9 +23,9 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		pcre pixman-1 png pthread util wrap xml2 z
 
 BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
+			:rarian-*:textproc/rarian \
 			::x11/gnome/zenity
 RUN_DEPENDS=		:sox-*:audio/sox \
-			:rarian-*:textproc/rarian \
 			:gnome-audio-*:x11/gnome/audio \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme \
 			::x11/gnome/zenity

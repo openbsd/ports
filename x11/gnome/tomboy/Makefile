@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/14 10:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
 GNOME_VERSION=	0.12.2
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
+
 CATEGORIES=	x11
 
 # LGPLv2.1
@@ -30,13 +31,13 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		png xml2 z gio-2.0
 
 BUILD_DEPENDS=	::x11/gnome/doc-utils \
+		::textproc/rarian \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	::lang/mono \
 		::devel/mono-addins \
 		::sysutils/ndesk-dbus-glib \
 		::x11/gnome/mono-gnome \
 		:shared-mime-info->=0.21:misc/shared-mime-info \
-		::textproc/rarian \
 		:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme \
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

@@ -1,10 +1,10 @@
-#$OpenBSD: Makefile,v 1.23 2009/03/14 10:40:51 ajacoutot Exp $
+#$OpenBSD: Makefile,v 1.24 2009/03/14 11:36:24 ajacoutot Exp $
 
 COMMENT=	Image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	2.10.11
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS=	gthumb	0.0	# .0.0
 
@@ -35,11 +35,11 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=	x11/gnome \
 		devel/gettext
 
-BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils
+BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils \
+		::textproc/rarian
 LIB_DEPENDS=	gnomeui-2.>=2000::x11/gnome/libgnomeui \
 		gphoto2.>=3,gphoto2_port.>=6::graphics/libgphoto2
-RUN_DEPENDS=	::misc/shared-mime-info \
-		::textproc/rarian
+RUN_DEPENDS=	::misc/shared-mime-info
 
 MODGNOME_HELP_FILES= Yes
 DESKTOP_FILES=	Yes

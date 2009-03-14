@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2009/03/14 10:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT=		GNOME media utilities
 
 GNOME_PROJECT=		gnome-media
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		${DISTNAME}p11
+PKGNAME=		${DISTNAME}p12
 
 SHARED_LIBS +=	gnome-media-profiles 0.0      # .0.0
 CATEGORIES=		x11
@@ -28,7 +28,8 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		::multimedia/gstreamer-0.10/plugins-good,-gconf \
-			::x11/gnome/doc-utils
+			::x11/gnome/doc-utils \
+			::textproc/rarian
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			bonoboui-2::x11/gnome/libbonoboui \
 			gnomevfs-2::x11/gnome/vfs2 \
@@ -36,7 +37,6 @@ LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			gstreamer-0.10,gstbase-0.10::multimedia/gstreamer-0.10/core \
 			gstinterfaces-0.10,gstaudio-0.10::multimedia/gstreamer-0.10/plugins-base \
 			pango-1.0,pangocairo-1.0,pangoft2-1.0::devel/pango
-RUN_DEPENDS=		::textproc/rarian
 
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes

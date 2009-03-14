@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/14 10:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
 GNOME_PROJECT=	mousetweaks
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 
 HOMEPAGE=	http://live.gnome.org/Mousetweaks/Home
 
@@ -28,8 +28,7 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage \
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::textproc/rarian
+BUILD_DEPENDS=	::textproc/rarian
 LIB_DEPENDS=	panel-applet-2.>=2::x11/gnome/applets2 \
 		spi,cspi::x11/gnome/at-spi
 

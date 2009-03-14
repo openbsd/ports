@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2009/03/14 10:40:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2009/03/14 11:36:24 ajacoutot Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-5.4
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 CATEGORIES=		mail
 
@@ -34,7 +34,6 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	::textproc/rarian
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		::textproc/rarian \
 		:yelp-*:x11/gnome/yelp \
 		:notification-daemon-*|notification-daemon-xfce-*:sysutils/notification-daemon
 LIB_DEPENDS=	gnomeui-2.>=2400::x11/gnome/libgnomeui \

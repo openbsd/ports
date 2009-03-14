@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/14 10:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/03/14 11:36:25 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 CATEGORIES=		games
 
@@ -33,14 +33,14 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		::x11/gnome/doc-utils \
 			::x11/gnome/py-gnome-desktop \
-			::lang/guile
+			::lang/guile \
+			::textproc/rarian
 LIB_DEPENDS=		ggzcore,ggzmod::games/ggz/ggz-client-libs \
 			guile-ltdl,guile::lang/guile \
 			gnomeui-2::x11/gnome/libgnomeui \
 			rsvg-2.>=18.0::x11/gnome/librsvg
 RUN_DEPENDS=		::x11/gnome/py-gnome-desktop \
-			::multimedia/gstreamer-0.10/plugins-good \
-			::textproc/rarian
+			::multimedia/gstreamer-0.10/plugins-good
 REGRESS_DEPENDS=	::devel/check
 
 USE_X11=		Yes
