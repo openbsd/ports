@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/08/30 02:24:32 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/14 12:24:48 espie Exp $
 
 COMMENT =	declarative mapper for SQLAlchemy
 
 MODPY_EGG_VERSION =	0.6.1
 DISTNAME =	Elixir-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME:L}
+PKGNAME =	py-${DISTNAME:L}p0
 
 CATEGORIES =	databases
 
