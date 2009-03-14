@@ -1,0 +1,18 @@
+$OpenBSD: patch-august,v 1.1 2009/03/14 21:09:40 sthen Exp $
+--- august.orig	Sat Mar 14 21:00:28 2009
++++ august	Sat Mar 14 21:01:17 2009
+@@ -1,4 +1,4 @@
+-#!/usr/bin/wish
++#!/usr/bin/env wish
+ #   August - HTML Editor for UNIX by Johan Bengtsson 
+ #   Copyright (C) 1999-2001 Johan Bengtsson johanb@lls.se
+ #   Snail mail: Johan Bengtsson, Fangdammsvagen 10, 433 43 Partille, Sweden.
+@@ -1012,7 +1012,7 @@ set August(prcomm) "lpr"
+ set August(tpldialog) "yes"
+ set August(netscapepath) "netscape"
+ set August(identifypath) "identify"
+-set August(lynxterm) "rxvt"
++set August(lynxterm) "xterm"
+ set August(specchars) "none"
+ set August(font) "times"
+ set August(fontsize) "12"
