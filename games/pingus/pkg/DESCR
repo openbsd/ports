@@ -1,0 +1,9 @@
+Pingus is a free Lemmings-like game in 2D graphics.
+
+If you don't know Lemmings, here comes a short introduction. It's a
+puzzle game developed in 1991 by DMA Design. The player takes command in
+the game of a bunch of small animals and has to guide them around in
+levels. Since the animals walk on their own, the player can only
+influence them by giving them commands, like build a bridge, dig a hole
+or redirect all animals in the other direction. The goal of each level
+is to reach the exit, by combining multiple actions.

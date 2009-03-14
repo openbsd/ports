@@ -1,0 +1,12 @@
+$OpenBSD: patch-SConstruct,v 1.1.1.1 2009/03/14 14:08:38 ajacoutot Exp $
+--- SConstruct.orig	Sat Mar 14 14:47:21 2009
++++ SConstruct	Sat Mar 14 14:47:26 2009
+@@ -422,8 +422,6 @@ if ('configure' in COMMAND_LINE_TARGETS) or \
+     if os.environ.has_key('PKG_CONFIG_PATH'):
+         env['ENV']['PKG_CONFIG_PATH'] = os.environ['PKG_CONFIG_PATH']
+     
+-    env['CPPPATH'] += ['.', 'src/']
+-
+     config_h_defines = []      
+ 
+     config = env.Configure(custom_tests = {

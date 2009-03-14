@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_pingus_6,v 1.1.1.1 2009/03/14 14:08:38 ajacoutot Exp $
+--- doc/pingus.6.orig	Tue Mar 11 18:24:44 2008
++++ doc/pingus.6	Tue Mar 11 18:25:43 2008
+@@ -15,7 +15,7 @@ For a list of available options use:
+ .B % pingus --help
+ 
+ .SH "SEE ALSO"
+-/usr/share/doc/pingus
++${PREFIX}/share/doc/pingus
+ 
+ http://pingus.seul.org
+ 
