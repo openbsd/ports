@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_portaudio_h,v 1.1 2009/03/14 02:31:40 jakemsr Exp $
+--- include/portaudio.h.orig	Mon Feb 25 17:37:40 2008
++++ include/portaudio.h	Sun Mar  8 21:55:43 2009
+@@ -236,7 +236,8 @@ typedef enum PaHostApiTypeId
+     paWDMKS=11,
+     paJACK=12,
+     paWASAPI=13,
+-    paAudioScienceHPI=14
++    paAudioScienceHPI=14,
++    paSndio=15
+ } PaHostApiTypeId;
+ 
+ 

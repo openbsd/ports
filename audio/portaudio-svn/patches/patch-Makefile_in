@@ -1,7 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2008/03/24 05:26:46 jakemsr Exp $
---- Makefile.in.orig	Mon Feb 25 17:37:48 2008
-+++ Makefile.in	Mon Feb 25 18:19:08 2008
-@@ -136,7 +136,7 @@ SRC_DIRS = \
+--- Makefile.in.orig	Tue Feb 26 02:37:48 2008
++++ Makefile.in	Sun Jan 18 10:09:36 2009
+@@ -120,6 +120,7 @@ LTOBJS := $(OBJS:.o=.lo)
+ SRC_DIRS = \
+ 	src/common \
+ 	src/hostapi/alsa \
++	src/hostapi/sndio \
+ 	src/hostapi/asihpi \
+ 	src/hostapi/asio \
+ 	src/hostapi/coreaudio \
+@@ -136,7 +137,7 @@ SRC_DIRS = \
  SUBDIRS =
  @ENABLE_CXX_TRUE@SUBDIRS += bindings/cpp
  

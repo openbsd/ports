@@ -1,0 +1,57 @@
+--- configure.in.orig	Mon Feb 25 17:37:48 2008
++++ configure.in	Sun Mar  8 22:05:20 2009
+@@ -17,6 +17,10 @@ AC_ARG_WITH(alsa, 
+             [  --with-alsa (default=yes)],
+             with_alsa=$withval, with_alsa="yes")
+ 
++AC_ARG_WITH(sndio, 
++            [  --with-sndio (default=yes)],
++            with_sndio=$withval, with_sndio="yes")
++
+ AC_ARG_WITH(jack, 
+             [  --with-jack (default=yes)],
+             with_jack=$withval, with_jack="yes")
+@@ -88,6 +92,7 @@ dnl checks for various host APIs and arguments to conf
+ dnl turn them on or off
+ 
+ AC_CHECK_LIB(asound, snd_pcm_open, have_alsa=yes, have_alsa=no)
++AC_CHECK_LIB(sndio, sio_initpar, have_sndio=yes, have_sndio=no)
+ AC_CHECK_LIB(hpi, HPI_SubSysCreate, have_asihpi=yes, have_asihpi=no, -lm)
+ AC_CHECK_LIB(ossaudio, _oss_ioctl, have_libossaudio=yes, have_libossaudio=no)
+ 
+@@ -295,8 +300,8 @@ case "${host_os}" in
+   *)
+         dnl Unix configuration
+ 
+-        AC_CHECK_LIB(pthread, pthread_create,[have_pthread="yes"],
+-                AC_MSG_ERROR([libpthread not found!]))
++        dnl AC_CHECK_LIB(pthread, pthread_create,[have_pthread="yes"],
++        dnl        AC_MSG_ERROR([libpthread not found!]))
+ 
+         if [[ $have_alsa = "yes" ] && [ $with_alsa != "no" ]] ; then
+            DLL_LIBS="$DLL_LIBS -lasound"
+@@ -305,6 +310,13 @@ case "${host_os}" in
+            AC_DEFINE(PA_USE_ALSA)
+         fi
+ 
++        if [[ "$have_sndio" = "yes" -a "$with_sndio" != "no" ]] ; then
++           DLL_LIBS="$DLL_LIBS -lsndio"
++           LIBS="$LIBS -lsndio"
++           OTHER_OBJS="$OTHER_OBJS src/hostapi/sndio/pa_sndio.o"
++           AC_DEFINE(PA_USE_SNDIO)
++        fi
++
+         if [[ $have_jack = "yes" ] && [ $with_jack != "no" ]] ; then
+            DLL_LIBS="$DLL_LIBS $JACK_LIBS"
+            CFLAGS="$CFLAGS $JACK_CFLAGS"
+@@ -328,8 +340,8 @@ case "${host_os}" in
+            AC_DEFINE(PA_USE_ASIHPI)
+         fi
+ 
+-        DLL_LIBS="$DLL_LIBS -lm -lpthread"
+-        LIBS="$LIBS -lm -lpthread"
++        DLL_LIBS="$DLL_LIBS -lm -pthread"
++        LIBS="$LIBS -lm -pthread"
+         PADLL="libportaudio.so"
+ 
+         ## support sun cc compiler flags
