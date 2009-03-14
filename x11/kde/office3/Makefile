@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2009/01/29 22:28:58 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.56 2009/03/14 17:51:10 ajacoutot Exp $
 
 COMMENT=		office suite for KDE
 
@@ -8,7 +8,7 @@ VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
 
 DISTNAME=	koffice-${VERSION}
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 
 MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
 PATCHFILES=		koffice-xpdf-CVE-2007-3387.diff:0 \
@@ -78,7 +78,7 @@ AUTOCONF_VERSION=2.61
 
 RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	kdecore.>=4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kparts,kspell,kabc,kjs,kresources,ktexteditor,kutils,kwalletclient,vcard,kspell2,knewstuff,kmdi::x11/kde/libs3 \
-		python2.5:python-2.5.*:lang/python/2.5 \
+		python2.5:python->=2.5,<2.6:lang/python/2.5 \
 		art_lgpl_2.>=5::graphics/libart \
 		wv2::converters/wv2 \
 		MagickCore.>=1,MagickWand.>=1::graphics/ImageMagick \
