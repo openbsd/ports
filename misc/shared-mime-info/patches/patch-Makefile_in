@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2008/06/05 10:47:48 ajacoutot Exp $
---- Makefile.in.orig	Mon May 12 17:26:26 2008
-+++ Makefile.in	Thu Jun  5 12:40:15 2008
-@@ -266,7 +266,7 @@ EXTRA_DIST = \
+$OpenBSD: patch-Makefile_in,v 1.7 2009/03/14 10:48:12 ajacoutot Exp $
+--- Makefile.in.orig	Sat Feb 21 15:50:21 2009
++++ Makefile.in	Sat Mar 14 09:15:46 2009
+@@ -281,7 +281,7 @@ EXTRA_DIST = \
  
  CLEANFILES = freedesktop.org.xml po/stamp-it
  DISTCLEANFILES = intltool-extract intltool-merge intltool-update
@@ -10,3 +10,12 @@ $OpenBSD: patch-Makefile_in,v 1.6 2008/06/05 10:47:48 ajacoutot Exp $
  pkgconfig_DATA = shared-mime-info.pc
  all: config.h
  	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+@@ -956,7 +956,7 @@ uninstall-hook:
+ 	rm -f "$(DESTDIR)$(datadir)/mime/types"
+ 
+ all: check
+-	make -C po shared-mime-info.pot
++	$(MAKE) -C po shared-mime-info.pot
+ 
+ check: freedesktop.org.xml
+ 	if test -n $(XMLLINT) ; then \
