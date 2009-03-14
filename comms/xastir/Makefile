@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2008/11/20 21:14:27 okan Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/14 10:34:07 espie Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
 DISTNAME=	xastir-1.8.2
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=    	comms hamradio geo
 
 HOMEPAGE=	http://www.xastir.org/
@@ -46,7 +46,7 @@ LIB_DEPENDS=	curl::net/curl						\
 		shp::devel/shapelib					\
 		geotiff::devel/geotiff					\
 		MagickCore.>=1,MagickWand.>=1::graphics/ImageMagick	\
-		lib/db4/db.>=4:db-4.*:databases/db/v4			\
+		lib/db4/db.>=4:db->=4,<5:databases/db/v4		\
 		intl::devel/gettext					\
 		pcre::devel/pcre
 
