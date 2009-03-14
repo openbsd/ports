@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/30 08:14:33 steven Exp $
-@lib lib/libscrollkeeper.so.${LIBscrollkeeper_VERSION}
