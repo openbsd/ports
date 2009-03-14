@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/14 19:01:31 ajacoutot Exp $
 %%SHARED%%
-bin/xmlrpc
+@bin bin/xmlrpc
 bin/xmlrpc-c-config
-bin/xmlrpc_transport
+@bin bin/xmlrpc_transport
 include/XmlRpcCpp.h
 include/xmlrpc-c/
 include/xmlrpc-c/abyss.h
@@ -29,10 +29,10 @@ include/xmlrpc-c/transport.h
 include/xmlrpc-c/util.h
 include/xmlrpc-c/xml.hpp
 include/xmlrpc.h
+include/xmlrpc_abyss.h
 include/xmlrpc_cgi.h
 include/xmlrpc_client.h
 include/xmlrpc_server.h
-include/xmlrpc_server_abyss.h
 include/xmlrpc_server_w32httpsys.h
 lib/libxmlrpc++.a
 lib/libxmlrpc.a

@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_abyss_src_socket_unix_c,v 1.2 2008/03/15 10:35:54 ajacoutot Exp $
---- lib/abyss/src/socket_unix.c.orig	Sat Jun 10 18:51:46 2006
-+++ lib/abyss/src/socket_unix.c	Wed Jan 16 14:20:17 2008
+$OpenBSD: patch-lib_abyss_src_socket_unix_c,v 1.3 2009/03/14 19:01:31 ajacoutot Exp $
+--- lib/abyss/src/socket_unix.c.orig	Thu Mar 13 02:54:05 2008
++++ lib/abyss/src/socket_unix.c	Sat Mar 14 19:07:03 2009
 @@ -200,8 +200,8 @@ socketWrite(TSocket *             const socketP,
                  fprintf(stderr, "Abyss socket: send() failed.  "
                          "Socket closed.\n");
              else
 -                fprintf(stderr, "Abyss socket: sent %u bytes: '%.*s'\n",
--                        -rc, -rc, &buffer[len-bytesLeft]);
+-                        rc, rc, &buffer[len-bytesLeft]);
 +                fprintf(stderr, "Abyss socket: sent %lu bytes: '%.*s'\n",
 +                        (unsigned long)rc, rc, &buffer[len-bytesLeft]);
          }
