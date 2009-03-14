@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2009/01/30 15:31:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.227 2009/03/14 08:10:39 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -210,5 +210,6 @@
      SUBDIR += xfmail
      SUBDIR += xfmail,esd
      SUBDIR += xlbiff
+     SUBDIR += zarafa
 
 .include <bsd.port.subdir.mk>
