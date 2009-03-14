@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/14 10:38:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/14 23:13:34 espie Exp $
 
 COMMENT=		C++ interface to GConf
 
@@ -6,6 +6,7 @@ GNOME_PROJECT=		gconfmm
 GNOME_VERSION=		2.24.0
 SHARED_LIBS +=		gconfmm-2.6	0.1	# .1.6
 CATEGORIES=		devel
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://www.gtkmm.org/
 
@@ -23,7 +24,7 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		ORBit-2::devel/ORBit2 \
 			gconf-2.>=5::devel/gconf2 \
-			sigc-2.0:libsigc++-2.*:devel/libsigc++-2 \
+			sigc-2.0:libsigc++->=2,<3:devel/libsigc++-2 \
 			glibmm-2.4:glib2mm->=2.8:devel/glib2mm
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/14 23:13:34 espie Exp $
 
 COMMENT=		fast, incremental CVS to Mercurial conversion
 
@@ -8,7 +8,7 @@ VERSION=		20060714
 
 DISTNAME=		cvs20hg-${CHANGESET}
 EXTRACT_SUFX=		.tar.bz2
-PKGNAME=		cvs20hg-${VERSION}p0
+PKGNAME=		cvs20hg-${VERSION}p1
 CATEGORIES=     	devel
 
 PERMIT_PACKAGE_CDROM=	Yes
