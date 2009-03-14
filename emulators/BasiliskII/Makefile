@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/16 00:45:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2009/03/14 16:49:18 ajacoutot Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
 COMMENT=		open source 68k Macintosh emulator
 
 DISTNAME=		BasiliskII_src_31052001
-PKGNAME=		BasiliskII-0.9.1p1
+PKGNAME=		BasiliskII-0.9.1p2
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://basilisk.cebix.net/
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xi Xxf86dga Xxf86vm audiofile c \
-			glib gmodule iconv intl m pthread stdc++
+			glib gmodule iconv intl m pthread stdc++ sndio
 
 MASTER_SITES=		http://basilisk.cebix.net/downloads/
 
