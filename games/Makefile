@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2009/02/11 13:31:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.188 2009/03/14 14:09:18 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -100,6 +100,7 @@
      SUBDIR += openarena
      SUBDIR += openttd
      SUBDIR += pathological
+     SUBDIR += pingus
      SUBDIR += pioneers
      SUBDIR += pokerth
      SUBDIR += prboom
