@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/14 14:47:28 espie Exp $
 
 COMMENT=	gcc for arm-elf cross-development
 
@@ -30,7 +30,7 @@ MASTER_SITE_GCC=ftp://gcc.gnu.org/pub/gcc/ \
 
 MASTER_SITES= 	${MASTER_SITE_GCC:=snapshots/$(FULL_VERSION)/}
 
-BUILD_DEPENDS+=	:autoconf-2.13*:devel/autoconf/2.13	\
+BUILD_DEPENDS+=	:autoconf-2.13:devel/autoconf/2.13	\
 		::devel/bison				\
 		::devel/metaauto			\
 		::devel/arm-elf/binutils

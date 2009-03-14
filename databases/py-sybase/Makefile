@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/14 14:47:28 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python interface to the Sybase relational database system
 
 DISTNAME=	sybase-0.36
-PKGNAME=	py-${DISTNAME}p2
+PKGNAME=	py-${DISTNAME}p3
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.object-craft.com.au/projects/sybase/
