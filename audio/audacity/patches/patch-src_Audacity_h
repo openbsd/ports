@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Audacity_h,v 1.1 2009/01/11 09:29:36 jakemsr Exp $
---- src/Audacity.h.orig	Thu Nov 13 18:17:39 2008
-+++ src/Audacity.h	Thu Nov 13 18:24:04 2008
-@@ -91,8 +91,9 @@ void QuitAudacity();
+$OpenBSD: patch-src_Audacity_h,v 1.2 2009/03/14 03:49:43 jakemsr Exp $
+--- src/Audacity.h.orig	Tue Jan 27 12:50:58 2009
++++ src/Audacity.h	Tue Feb 10 03:21:35 2009
+@@ -89,8 +89,9 @@ void QuitAudacity();
  #endif //_MSC_VER
  
  /* The GCC-elf implementation */
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_Audacity_h,v 1.1 2009/01/11 09:29:36 jakemsr Exp $
  /* The incantation is a bit weird here because it uses ELF symbol stuff. If we 
   * make a symbol "default" it makes it visible (for import or export). Making it
   * "hidden" means it is invisible outside the shared object. */
-@@ -103,6 +104,9 @@ void QuitAudacity();
+@@ -101,6 +102,9 @@ void QuitAudacity();
           #define AUDACITY_DLL_API __attribute__((visibility("default")))
        #endif
     #endif

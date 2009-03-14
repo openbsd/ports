@@ -1,18 +1,7 @@
-$OpenBSD: patch-src_FFmpeg_cpp,v 1.1 2009/01/11 09:29:36 jakemsr Exp $
---- src/FFmpeg.cpp.orig	Sat Oct 25 05:14:27 2008
-+++ src/FFmpeg.cpp	Thu Nov 13 22:50:45 2008
-@@ -209,8 +209,10 @@ class FindFFmpegDialog : public wxDialog (public)
-                mPathText = S.AddTextBox(wxT(""), mLibPath.GetFullPath(), 0);
-             }
-             S.Id(ID_FFMPEG_BROWSE).AddButton(_("Browse..."), wxALIGN_RIGHT);
-+#if 0
-             S.AddVariableText(_("To get a free copy of FFmpeg, click here -->"), true);
-             S.Id(ID_FFMPEG_DLOAD).AddButton(_("Download..."), wxALIGN_RIGHT);
-+#endif
-          }
-          S.EndMultiColumn();
- 
-@@ -247,11 +249,13 @@ class FindFFmpegDialog : public wxDialog (public)
+$OpenBSD: patch-src_FFmpeg_cpp,v 1.2 2009/03/14 03:49:43 jakemsr Exp $
+--- src/FFmpeg.cpp.orig	Tue Jan 27 12:50:58 2009
++++ src/FFmpeg.cpp	Tue Feb 10 03:21:35 2009
+@@ -249,11 +249,13 @@ class FindFFmpegDialog : public wxDialog (public)
        }
     }
  
@@ -26,7 +15,7 @@ $OpenBSD: patch-src_FFmpeg_cpp,v 1.1 2009/01/11 09:29:36 jakemsr Exp $
  
     wxString GetLibPath()
     {
-@@ -273,7 +277,9 @@ class FindFFmpegDialog : public wxDialog (public)
+@@ -275,7 +277,9 @@ class FindFFmpegDialog : public wxDialog (public)
  
  BEGIN_EVENT_TABLE(FindFFmpegDialog, wxDialog)
     EVT_BUTTON(ID_FFMPEG_BROWSE, FindFFmpegDialog::OnBrowse)
@@ -36,25 +25,16 @@ $OpenBSD: patch-src_FFmpeg_cpp,v 1.1 2009/01/11 09:29:36 jakemsr Exp $
  END_EVENT_TABLE()
  
  
-@@ -596,7 +602,7 @@ bool FFmpegLibs::InitLibs(wxString libpath_format, boo
+@@ -565,7 +569,7 @@ bool FFmpegLibs::InitLibs(wxString libpath_format, boo
     INITDYN(avformat,av_init_packet);
     INITDYN(avformat,av_codec_get_id);
     INITDYN(avformat,av_codec_get_tag);
 -   INITDYN(avformat,avformat_version);
 +   // INITDYN(avformat,avformat_version);
  
-    INITDYN(avcodec,avcodec_init);
-    INITDYN(avcodec,avcodec_find_encoder);
-@@ -632,7 +638,7 @@ bool FFmpegLibs::InitLibs(wxString libpath_format, boo
-    INITDYN(avutil,av_malloc);
-    INITDYN(avutil,av_freep);
-    INITDYN(avutil,av_rescale_q);
--   INITDYN(avutil,avutil_version);
-+   // INITDYN(avutil,avutil_version);
- 
-    //FFmpeg initialization
-    wxLogMessage(wxT("All symbols loaded successfully. Initializing the library."));
-@@ -642,19 +648,19 @@ bool FFmpegLibs::InitLibs(wxString libpath_format, boo
+    INITDYN(codec,avcodec_init);
+    INITDYN(codec,avcodec_find_encoder);
+@@ -611,19 +615,19 @@ bool FFmpegLibs::InitLibs(wxString libpath_format, boo
     
     wxLogMessage(wxT("Retrieving library version."));
     int avcver = this->avcodec_version();

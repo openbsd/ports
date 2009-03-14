@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2009/01/11 09:29:36 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.20 2009/03/14 03:49:43 jakemsr Exp $
 
 COMMENT=	free audio editor
 
-V=		1.3.6
-DISTNAME=	audacity-src-${V}
+V=		1.3.7
+DISTNAME=	audacity-minsrc-${V}
 PKGNAME=	audacity-${V}
 CATEGORIES=	audio
 
@@ -21,8 +21,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	c m pthread stdc++ ogg expat sndfile glib-2.0 \
-		gobject-2.0 gtk-x11-2.0
+WANTLIB=	c expat glib-2.0 gobject-2.0 gtk-x11-2.0 \
+		m ogg pthread sndfile sndio stdc++
 
 BUILD_DEPENDS=	::archivers/zip
 LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_aui,wx_gtk2_html,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_qa,wx_base,wx_gtk2_core,wx_gtk2_richtext:wxWidgets-gtk2->=2.8.6:x11/wxWidgets \
@@ -33,7 +33,7 @@ LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_aui,wx_gtk2_html,wx_gtk2_adv,wx_gt
 		mad.>=2::audio/libmad \
 		portaudio::audio/portaudio-svn \
 		SoundTouch::audio/soundtouch \
-		vamp-hostsdk::audio/vamp-plugin-sdk
+		vamp-hostsdk.>=1::audio/vamp-plugin-sdk
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		:shared-mime-info-*:misc/shared-mime-info
 
@@ -78,6 +78,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-portaudio=system
 
 MAKE_FLAGS=		CC="${CC}"
+WRKDIST=		${WRKDIR}/audacity-src-${V}
 
 # Regression tests are in the source tarball but as of 2007, they have
 # not been updated for 3 years ; as they're completely out-of-sync with

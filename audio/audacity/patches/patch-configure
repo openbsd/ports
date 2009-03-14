@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.10 2009/01/11 09:29:36 jakemsr Exp $
---- configure.orig	Sat Oct 25 05:14:28 2008
-+++ configure	Thu Nov 13 20:06:11 2008
-@@ -6612,7 +6612,7 @@ if test "${ac_cv_lib_FLAC_FLAC__stream_decoder_new+set
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+$OpenBSD: patch-configure,v 1.11 2009/03/14 03:49:43 jakemsr Exp $
+--- configure.orig	Tue Jan 27 12:50:59 2009
++++ configure	Mon Mar  9 01:17:51 2009
+@@ -6809,7 +6809,7 @@ if test "${ac_cv_lib_FLAC_FLAC__stream_decoder_new+set
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lFLAC -lFLAC++ -lFLAC $LIBS"
@@ -10,16 +10,16 @@ $OpenBSD: patch-configure,v 1.10 2009/01/11 09:29:36 jakemsr Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -6809,7 +6809,7 @@ fi
+@@ -7012,7 +7012,7 @@ fi
  
     if test "x$lib_found" = "xyes" && test "x$header_found" = "xyes" ; then
        LIBFLAC_SYSTEM_AVAILABLE="yes"
 -      LIBFLAC_SYSTEM_LIBS="-lFLAC++ -lFLAC"
 +      LIBFLAC_SYSTEM_LIBS="-lFLAC++ -lFLAC -logg"
        LIBFLAC_SYSTEM_CPPSYMBOLS="USE_LIBFLAC"
-       { echo "$as_me:$LINENO: FLAC libraries are available as system libraries" >&5
- echo "$as_me: FLAC libraries are available as system libraries" >&6;}
-@@ -8787,7 +8787,7 @@ fi
+       { $as_echo "$as_me:$LINENO: FLAC libraries are available as system libraries" >&5
+ $as_echo "$as_me: FLAC libraries are available as system libraries" >&6;}
+@@ -8742,7 +8742,7 @@ fi
  if test "${with_portaudio+set}" = set; then
    withval=$with_portaudio; use_portaudio=$withval
  else
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.10 2009/01/11 09:29:36 jakemsr Exp $
  fi
  
  
-@@ -9316,7 +9316,7 @@ done
+@@ -9290,7 +9290,7 @@ done
           ;;
     esac
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.10 2009/01/11 09:29:36 jakemsr Exp $
        CXXFLAGS="-I\$(top_srcdir)/lib-src/portaudio/pa_common $CXXFLAGS"
  
     case "${host_os}" in
-@@ -9336,6 +9336,20 @@ else
+@@ -9310,6 +9310,18 @@ else
           EXTRAOBJS="$EXTRAOBJS ../lib-src/portaudio/pa_unix_oss/portaudio.a"
           ;;
     esac
@@ -52,13 +52,11 @@ $OpenBSD: patch-configure,v 1.10 2009/01/11 09:29:36 jakemsr Exp $
 +   LIBS="$LIBS -lportaudio"
 +   # EXTRAOBJS="$EXTRAOBJS ../lib-src/portaudio-v19/lib/libportaudio.a"
 +   # CXXFLAGS="-I\$(top_srcdir)/lib-src/portaudio-v19/include $CXXFLAGS"
-+   CFLAGS="$CFLAGS -DUSE_PORTAUDIO_V19"
-+   CXXFLAGS="$CXXFLAGS -DUSE_PORTAUDIO_V19"
 +
  fi
  
  
-@@ -9354,7 +9368,7 @@ _ACEOF
+@@ -9328,7 +9340,7 @@ _ACEOF
        subdirs="$subdirs lib-src/portmixer"
  
        ac_configure_args="$ac_configure_args --with-pa-include=../portaudio-v19/include"
@@ -67,7 +65,7 @@ $OpenBSD: patch-configure,v 1.10 2009/01/11 09:29:36 jakemsr Exp $
  
        CXXFLAGS="-I\$(top_srcdir)/lib-src/portmixer/px_common $CXXFLAGS"
        case "${host_os}" in
-@@ -9371,6 +9385,13 @@ _ACEOF
+@@ -9345,6 +9357,13 @@ _ACEOF
              EXTRAOBJS="$EXTRAOBJS ../lib-src/portmixer/px_unix_oss/portmixer.a"
              ;;
        esac
@@ -81,7 +79,7 @@ $OpenBSD: patch-configure,v 1.10 2009/01/11 09:29:36 jakemsr Exp $
     fi
  fi
  
-@@ -9575,7 +9596,7 @@ if [ "x$LIBEXPAT_USE_LOCAL" = "xyes" ]; then
+@@ -9536,7 +9555,7 @@ if [ "x$LIBEXPAT_USE_LOCAL" = "xyes" ]; then
     ac_config_files="$ac_config_files lib-src/expat/Makefile"
  
  fi
@@ -90,16 +88,16 @@ $OpenBSD: patch-configure,v 1.10 2009/01/11 09:29:36 jakemsr Exp $
     ac_config_files="$ac_config_files lib-src/portaudio/pa_unix_oss/Makefile"
  
  fi
-@@ -10962,7 +10983,7 @@ echo "$as_me: WARNING: no configuration information is
-       { echo "$as_me:$LINENO: running $SHELL $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&5
- echo "$as_me: running $SHELL $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&6;}
+@@ -10970,7 +10989,7 @@ $as_echo "$as_me: WARNING: no configuration informatio
+       { $as_echo "$as_me:$LINENO: running $SHELL $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&5
+ $as_echo "$as_me: running $SHELL $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&6;}
        # The eval makes quoting arguments work.
 -      eval "\$SHELL \"\$ac_sub_configure\" $ac_sub_configure_args \
 +      eval "\$SHELL \"\$ac_sub_configure\" $ac_sub_configure_args CFLAGS='"$CFLAGS"' CXXFLAGS='"$CXXFLAGS"' LDFLAGS='"$LDFLAGS"' \
  	   --cache-file=\"\$ac_sub_cache_file\" --srcdir=\"\$ac_srcdir\"" ||
- 	{ { echo "$as_me:$LINENO: error: $ac_sub_configure failed for $ac_dir" >&5
- echo "$as_me: error: $ac_sub_configure failed for $ac_dir" >&2;}
-@@ -10976,9 +10997,12 @@ fi
+ 	{ { $as_echo "$as_me:$LINENO: error: $ac_sub_configure failed for $ac_dir" >&5
+ $as_echo "$as_me: error: $ac_sub_configure failed for $ac_dir" >&2;}
+@@ -10988,9 +11007,12 @@ fi
  
  pa_libs=
  if [ "$use_portaudio" = "v19" ] ; then
@@ -107,10 +105,22 @@ $OpenBSD: patch-configure,v 1.10 2009/01/11 09:29:36 jakemsr Exp $
 +   # pa_libs=`grep 'Libs:' lib-src/portaudio-v19/portaudio-2.0.pc | sed -e 's/Libs://;s/-L${libdir}//;s/-lportaudio//'`
 +   pa_libs="`pkg-config --libs portaudio-2.0`"
 +elif [ "$use_portaudio" = "system" ] ; then
-+   pa_libs="-lportaudio"
++   pa_libs="`pkg-config --libs portaudio-2.0`"
  fi
 -sed -i -e "s/@PA_LIBS@/$pa_libs/" src/Makefile
 +perl -pi -e "s#\@PA_LIBS\@#$pa_libs#" src/Makefile
  
  echo ""
  echo "Finished configure:"
+@@ -11031,8 +11053,10 @@ case "${host_os}" in
+   *)
+     if [ "$use_portaudio" = "v19" ] ; then
+        echo "portaudio: v19"
+-    else
++    elif [ "$use_portaudio" = "v18" ] ; then
+        echo "portaudio: v18 (OSS only)"
++    else
++       echo "portaudio: system"
+     fi
+     ;;
+ esac

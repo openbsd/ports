@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/01/11 09:29:36 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/03/14 03:49:43 jakemsr Exp $
 @bin bin/audacity
 @man man/man1/audacity.1
 share/applications/audacity.desktop
@@ -49,10 +49,13 @@ share/locale/bg/LC_MESSAGES/audacity.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/audacity.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/audacity.mo
 share/locale/ca/LC_MESSAGES/audacity.mo
-share/locale/cb/
-share/locale/cb/LC_MESSAGES/
-share/locale/cb/LC_MESSAGES/audacity.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
+share/locale/ca@valencia/LC_MESSAGES/audacity.mo
 share/locale/cs/LC_MESSAGES/audacity.mo
 share/locale/cy/LC_MESSAGES/audacity.mo
 share/locale/da/LC_MESSAGES/audacity.mo
@@ -69,8 +72,15 @@ share/locale/ga/LC_MESSAGES/audacity.mo
 share/locale/gl/LC_MESSAGES/audacity.mo
 share/locale/he/LC_MESSAGES/audacity.mo
 share/locale/hu/LC_MESSAGES/audacity.mo
+share/locale/id/LC_MESSAGES/audacity.mo
 share/locale/it/LC_MESSAGES/audacity.mo
 share/locale/ja/LC_MESSAGES/audacity.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/audacity.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/audacity.mo
 share/locale/ko/LC_MESSAGES/audacity.mo
 share/locale/lt/LC_MESSAGES/audacity.mo
 share/locale/mk/
