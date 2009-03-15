@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.33 2008/12/04 15:05:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2009/03/15 13:34:35 ajacoutot Exp $
 
 COMMENT=		library for layout and rendering of text
 
-DISTNAME=		pango-1.22.3
+DISTNAME=		pango-1.22.4
 SHARED_LIBS += pango-1.0	   1800.0    # .2203.0
 SHARED_LIBS += pangox-1.0	   1800.0    # .2203.0
 SHARED_LIBS += pangoft2-1.0	   1800.0    # .2203.0
 SHARED_LIBS += pangoxft-1.0	   1800.0    # .2203.0
 SHARED_LIBS += pangocairo-1.0	   1800.0    # .2203.0
+
 CATEGORIES=		devel x11
 
 HOMEPAGE=		http://www.gtk.org/
@@ -34,14 +35,10 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pango; \
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/pango/* ${PREFIX}/share/examples/pango/
-
-do-regress:
-	cd ${WRKSRC}/tests && ${MAKE} check
+FAKE_FLAGS=		aliasdir=${PREFIX}/share/examples/pango \
+			sysconfdir=${PREFIX}/share/examples
 
 .include <bsd.port.mk>
