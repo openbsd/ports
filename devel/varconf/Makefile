@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/15 13:14:43 espie Exp $
 
 COMMENT=	configuration system for the STAGE server
 
 DISTNAME=	varconf-0.5.4
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	varconf 2.0
 CATEGORIES=	devel
 
@@ -22,7 +22,7 @@ MASTER_SITES=	http://purple.worldforge.org/wf/downloads/libs/varconf/ \
 		http://kafka.i-site.com/~novalis/mirrors/acorn/0.4/src/
 
 LIB_DEPENDS=	Atlas.>=1.1::devel/atlas \
-		sigc:libsigc++-1.*:devel/libsigc++
+		sigc:libsigc++->=1,<2:devel/libsigc++
 
 USE_LIBTOOL= Yes
 CONFIGURE_STYLE= gnu
