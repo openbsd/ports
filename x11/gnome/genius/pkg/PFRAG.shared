@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/03/15 11:50:10 ajacoutot Exp $
+lib/genius/libtestplugin.so
