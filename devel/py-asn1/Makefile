@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:39 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/15 12:49:35 espie Exp $
 
 COMMENT=	ASN.1 library for Python
 
 DISTNAME=	pyasn1-0.0.5a
-PKGNAME=	${DISTNAME:S/py/py-/}p0
+PKGNAME=	${DISTNAME:S/py/py-/}p1
 CATEGORIES=	devel
 PKG_ARCH=	*
 

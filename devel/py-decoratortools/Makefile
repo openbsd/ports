@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/13 17:15:14 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/15 12:49:35 espie Exp $
 
 COMMENT=		class and function decorators
 
 VERSION=		1.7
 DISTNAME=		DecoratorTools-${VERSION}
-PKGNAME=		py-decoratortools-${VERSION}
+PKGNAME=		py-decoratortools-${VERSION}p0
 
 CATEGORIES=		devel
 

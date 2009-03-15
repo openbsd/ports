@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/11/29 19:00:41 okan Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/15 12:49:36 espie Exp $
 
 COMMENT=	Python parsing module
 
 DISTNAME=	pyparsing-1.4.8
-PKGNAME=	${DISTNAME:S/py/py-/}
+PKGNAME=	${DISTNAME:S/py/py-/}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://pyparsing.wikispaces.com/
