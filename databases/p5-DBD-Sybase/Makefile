@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2008/10/02 20:34:39 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2009/03/15 11:45:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Sybase database driver for the DBI module
 
 DISTNAME=	DBD-Sybase-1.04
-PKGNAME=	p5-${DISTNAME}p3
+PKGNAME=	p5-${DISTNAME}p4
 CATEGORIES=	databases
 
 # GPL/Artistic License
@@ -13,9 +13,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		intl m
 
-MODULES=	devel/gettext	cpan
+WANTLIB=	m
+
+MODULES=	devel/gettext \
+		cpan
 
 LIB_DEPENDS=	ct.>=3::databases/freetds
 BUILD_DEPENDS=	${RUN_DEPENDS}

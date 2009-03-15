@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2009/03/15 11:45:08 ajacoutot Exp $
+--- setup.py.orig	Sun Mar 15 12:35:52 2009
++++ setup.py	Sun Mar 15 12:36:05 2009
+@@ -44,7 +44,7 @@ if os.name == 'posix':                  # unix
+     elif os.uname()[0] == 'AIX':
+         lib_names = ['blk', 'ct', 'cs', 'comn', 'tcl', 'intl', 'insck']
+     else:
+-        lib_names = ['blk', 'ct', 'cs', 'tcl', 'comn', 'intl']
++        lib_names = ['blk', 'ct', 'cs', 'tcl', 'comn', 'iconv', 'intl']
+     for name in lib_names:
+         lib_name = os.path.join(sybase, 'lib', 'lib%s.a' % name)
+         if os.access(lib_name, os.R_OK):

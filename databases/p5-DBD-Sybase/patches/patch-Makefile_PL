@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_PL,v 1.3 2004/07/20 07:46:18 xsa Exp $
+$OpenBSD: patch-Makefile_PL,v 1.4 2009/03/15 11:45:08 ajacoutot Exp $
 --- Makefile.PL.orig	Fri Jun 11 13:52:00 2004
-+++ Makefile.PL	Mon Jul  5 16:06:52 2004
++++ Makefile.PL	Sun Mar 15 12:31:05 2009
 @@ -24,7 +24,7 @@ GetOptions('--file' => \$file);
  
  configure();
@@ -15,7 +15,7 @@ $OpenBSD: patch-Makefile_PL,v 1.3 2004/07/20 07:46:18 xsa Exp $
  	    $lib_string = "-L$SYBASE/lib -lct -lcs -ltcl -lcomn -lintl $attr{EXTRA_LIBS} -ldl -lm";
  	} else {
 -	    $lib_string = "-L$SYBASE/lib -lct -lcs -ltcl -lcomn -lintl $extra -ldl -lm";
-+	    $lib_string = "-L$SYBASE/lib -lct -lintl $extra -lm";
++	    $lib_string = "-L$SYBASE/lib -lct -liconv -lintl $extra -lm";
  	}
  	if($newlibnames) {
  	    foreach (qw(ct cs tcl comn intl)) {

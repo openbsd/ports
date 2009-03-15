@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/15 11:45:08 ajacoutot Exp $
 
 COMMENT=	Objective Caml bindings for SQLite3
 CATEGORIES=	databases
 
 V=		0.2.0
 DISTNAME=	ocaml-sqlite3-${V}
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	http://metamatix.org/~ocaml/
 WRKDIST=	${WRKDIR}/ocaml-sqlite3
@@ -28,10 +28,10 @@ USE_GMAKE=	Yes
 
 CONFIGURE_ENV=	CFLAGG="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib -L."
 CONFIGURE_ARGS=	--with-sqlite3=${LOCALBASE}
-LIB_DEPENDS=	sqlite3.>=8::databases/sqlite3
 
-BUILD_DEPENDS=	::sysutils/findlib
-RUN_DEPENDS=	::sysutils/findlib
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::sysutils/findlib \
+		::databases/sqlite3
 
 SQOCAMLDIR=	${PREFIX}/lib/ocaml/site-lib/sqlite3
 

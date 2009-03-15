@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/05/09 13:51:35 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/03/15 11:45:08 ajacoutot Exp $
 lib/ocaml/
 lib/ocaml/postgresql/
 lib/ocaml/postgresql/libpostgresql_stubs.a
@@ -9,6 +9,7 @@ share/examples/ocaml-postgresql/
 share/examples/ocaml-postgresql/OCamlMakefile
 share/examples/ocaml-postgresql/cursor/
 share/examples/ocaml-postgresql/cursor/Makefile
+@comment share/examples/ocaml-postgresql/cursor/Makefile.orig
 share/examples/ocaml-postgresql/cursor/cursor.ml
 share/examples/ocaml-postgresql/dump/
 share/examples/ocaml-postgresql/dump/Makefile
