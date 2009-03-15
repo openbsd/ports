@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/03/15 20:11:01 landry Exp $
+--- configure.orig	Thu Jul 17 13:16:30 2008
++++ configure	Sat Feb 21 19:37:21 2009
+@@ -8354,7 +8354,7 @@ if test "${ac_cv_lib_ext2fs_ext2fs_open+set}" = set; t
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lext2fs  $LIBS"
++LIBS="-lext2fs  -lext2fs_com_err $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -8433,7 +8433,7 @@ if test "${ac_cv_lib_com_err_com_err+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lcom_err  $LIBS"
++LIBS="-lext2fs_com_err  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -8496,7 +8496,7 @@ cat >>confdefs.h <<\_ACEOF
+ _ACEOF
+ 
+       if test "${com_err_lib_a}" = ""; then
+-        LIBS="$LIBS -lcom_err"
++        LIBS="$LIBS -lext2fs_com_err"
+       else
+         LIBS="$LIBS ${com_err_lib_a}"
+       fi
