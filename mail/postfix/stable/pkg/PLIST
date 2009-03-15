@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2008/08/21 21:52:08 brad Exp $
+@comment $OpenBSD: PLIST,v 1.23 2009/03/15 19:38:05 jakob Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -293,4 +293,5 @@ share/examples/postfix/postfix-script
 share/examples/postfix/relocated
 share/examples/postfix/transport
 share/examples/postfix/virtual
-@exec-add PREFIX=%D SYSCONFDIR=${SYSCONFDIR} ${PREFIX}/sbin/postfix-install
+@exec-add PREFIX=%D SYSCONFDIR=${SYSCONFDIR} ${PREFIX}/sbin/postfix-install install
+@exec-update PREFIX=%D SYSCONFDIR=${SYSCONFDIR} ${PREFIX}/sbin/postfix-install upgrade
