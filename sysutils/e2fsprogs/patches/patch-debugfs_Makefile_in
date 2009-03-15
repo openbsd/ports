@@ -1,20 +1,60 @@
-$OpenBSD: patch-debugfs_Makefile_in,v 1.3 2008/11/22 11:06:15 ajacoutot Exp $
---- debugfs/Makefile.in.orig	Tue Mar  5 09:31:15 2002
-+++ debugfs/Makefile.in	Sat Nov 22 11:56:10 2008
-@@ -25,7 +25,7 @@ SRCS= debug_cmds.c $(srcdir)/debugfs.c $(srcdir)/util.
- 	$(srcdir)/htree.c
+$OpenBSD: patch-debugfs_Makefile_in,v 1.4 2009/03/15 19:59:31 landry Exp $
+--- debugfs/Makefile.in.orig	Wed Jun 18 05:53:42 2008
++++ debugfs/Makefile.in	Sun Feb 22 11:52:07 2009
+@@ -26,47 +26,39 @@ SRCS= debug_cmds.c $(srcdir)/debugfs.c $(srcdir)/util.
  
- LIBS= $(LIBEXT2FS) $(LIBE2P) $(LIBSS) $(LIBCOM_ERR)  $(LIBUUID)
--DEPLIBS= $(LIBEXT2FS) $(LIBE2P) $(LIBSS) $(LIBCOM_ERR)  $(DEPLIBUUID)
-+DEPLIBS= $(DEPLIBEXT2FS) $(DEPLIBE2P) $(DEPLIBSS) $(DEPLIBCOM_ERR)  $(DEPLIBUUID)
+ LIBS= $(LIBEXT2FS) $(LIBE2P) $(LIBSS) $(LIBCOM_ERR) $(LIBBLKID) \
+ 	$(LIBUUID)
+-DEPLIBS= $(LIBEXT2FS) $(LIBE2P) $(DEPLIBSS) $(LIBCOM_ERR) $(DEPLIBBLKID) $(DEPLIBUUID)
++DEPLIBS= $(DEPLIBEXT2FS) $(DEPLIBE2P) $(DEPLIBSS) $(DEPLIBCOM_ERR) $(DEPDEPLIBBLKID) $(DEPLIBUUID)
  
  .c.o:
- 	$(CC) -c $(ALL_CFLAGS) $< -o $@
-@@ -48,7 +48,6 @@ installdirs:
+-	@echo "	CC $<"
+-	@$(CC) -c $(ALL_CFLAGS) $< -o $@
++	$(CC) -c $(ALL_CFLAGS) $< -o $@
+ 
+ all:: $(PROGS) $(MANPAGES)
+ 
+ debugfs: $(DEBUG_OBJS) $(DEPLIBS)
+-	@echo "	LD $@"
+-	@$(CC) $(ALL_LDFLAGS) -o debugfs $(DEBUG_OBJS) $(LIBS)
++	$(CC) $(ALL_LDFLAGS) -o debugfs $(DEBUG_OBJS) $(LIBS)
+ 
+ debug_cmds.c debug_cmds.h: debug_cmds.ct
+-	@echo "	MK_CMDS $@"
+-	@$(MK_CMDS) $(srcdir)/debug_cmds.ct
++	$(MK_CMDS) $(srcdir)/debug_cmds.ct
+ 
+ debugfs.8: $(DEP_SUBSTITUTE) $(srcdir)/debugfs.8.in
+-	@echo "	SUBST $@"
+-	@$(SUBSTITUTE_UPTIME) $(srcdir)/debugfs.8.in debugfs.8
++	$(SUBSTITUTE_UPTIME) $(srcdir)/debugfs.8.in debugfs.8
+ 
+ installdirs:
+-	@echo "	MKINSTALLDIRS $(root_sbindir) $(man8dir)"
+-	@$(MKINSTALLDIRS) $(DESTDIR)$(root_sbindir) \
++	$(MKINSTALLDIRS) $(DESTDIR)$(root_sbindir) \
+ 		$(DESTDIR)$(man8dir)
+ 
  install: $(PROGS) $(MANPAGES) installdirs
- 	for i in $(PROGS); do \
+-	@for i in $(PROGS); do \
+-		echo "	INSTALL $(root_sbindir)/$$i"; \
++	for i in $(PROGS); do \
  		$(INSTALL_PROGRAM) $$i $(DESTDIR)$(root_sbindir)/$$i; \
--		$(STRIP) $(DESTDIR)$(root_sbindir)/$$i; \
  	done
- 	for i in $(MANPAGES); do \
- 		$(RM) -f $(DESTDIR)$(man8dir)/$$i.gz; \
+-	@for i in $(MANPAGES); do \
++	for i in $(MANPAGES); do \
+ 		for j in $(COMPRESS_EXT); do \
+ 			$(RM) -f $(DESTDIR)$(man8dir)/$$i.$$j; \
+ 		done; \
+-		echo "	INSTALL_DATA $(man8dir)/$$i"; \
+ 		$(INSTALL_DATA) $$i $(DESTDIR)$(man8dir)/$$i; \
+ 	done
+ 
+ install-strip: install
+-	@for i in $(PROGS); do \
+-		echo "	STRIP $(root_sbindir)/$$i"; \
++	for i in $(PROGS); do \
+ 		$(STRIP) $(DESTDIR)$(root_sbindir)/$$i; \
+ 	done
+ 

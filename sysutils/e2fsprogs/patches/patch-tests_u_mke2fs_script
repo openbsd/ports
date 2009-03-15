@@ -1,0 +1,23 @@
+$OpenBSD: patch-tests_u_mke2fs_script,v 1.1 2009/03/15 19:59:31 landry Exp $
+--- tests/u_mke2fs/script.orig	Sun Feb 22 12:52:58 2009
++++ tests/u_mke2fs/script	Sun Feb 22 12:53:14 2009
+@@ -11,16 +11,16 @@ dd if=/dev/zero of=$TMPFILE bs=1k count=512 > /dev/nul
+ 
+ echo mke2fs -q -F -o Linux -b 1024 test.img  > $OUT
+ $MKE2FS -F -o Linux -I 128 -b 1024 $TMPFILE  >> $OUT 2>&1
+-md5=`md5sum $TMPFILE | cut -d " " -f 1`
++md5=`md5 $TMPFILE | cut -d " " -f 1`
+ echo md5sum before mke2fs $md5 >> $OUT
+ 
+ echo using mke2fs to test e2undo >> $OUT
+ $MKE2FS -q -F -o Linux -I 256 -O uninit_bg -E lazy_itable_init=1 -b 1024 $TMPFILE  >> $OUT 2>&1
+-new_md5=`md5sum $TMPFILE | cut -d " " -f 1`
++new_md5=`md5 $TMPFILE | cut -d " " -f 1`
+ echo md5sum after mke2fs $new_md5 >> $OUT
+ 
+ $E2UNDO_EXE  $TDB_FILE $TMPFILE  >> $OUT 2>&1
+-new_md5=`md5sum $TMPFILE | cut -d " " -f 1`
++new_md5=`md5 $TMPFILE | cut -d " " -f 1`
+ echo md5sum after e2undo $new_md5 >> $OUT
+ 
+ if [ $md5 = $new_md5 ]; then

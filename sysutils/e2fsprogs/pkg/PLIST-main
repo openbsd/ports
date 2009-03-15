@@ -1,57 +1,140 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/11/22 11:06:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/03/15 19:59:31 landry Exp $
 @bin bin/chattr
+bin/compile_et
 @bin bin/lsattr
+bin/mk_cmds
+include/blkid/
+include/blkid/blkid.h
+include/blkid/blkid_types.h
+include/e2p/
+include/e2p/e2p.h
+include/et/
+include/et/com_err.h
 include/ext2fs/
 include/ext2fs/bitops.h
-include/ext2fs/brel.h
-include/ext2fs/dosio.h
-include/ext2fs/e2image.h
+include/ext2fs/ext2_err.h
 include/ext2fs/ext2_ext_attr.h
 include/ext2fs/ext2_fs.h
 include/ext2fs/ext2_io.h
+include/ext2fs/ext2_types.h
 include/ext2fs/ext2fs.h
-include/ext2fs/ext2fsP.h
-include/ext2fs/irel.h
-include/ext2fs/jfs_compat.h
-include/ext2fs/jfs_dat.h
-include/ext2fs/jfs_user.h
-include/ext2fs/kernel-jbd.h
-include/ext2fs/kernel-list.h
+include/ext2fs/ext3_extents.h
+include/ext2fs/tdb.h
+include/ss/
+include/ss/ss.h
+include/ss/ss_err.h
+%%SHARED%%
 @info info/libext2fs.info
+@bin lib/e2initrd_helper
+lib/libblkid.a
 lib/libe2p.a
 lib/libext2fs.a
 lib/libext2fs_com_err.a
 lib/libss.a
+lib/pkgconfig/
+lib/pkgconfig/blkid.pc
+lib/pkgconfig/com_err.pc
+lib/pkgconfig/e2p.pc
+lib/pkgconfig/ext2fs.pc
+lib/pkgconfig/ss.pc
 @man man/man1/chattr.1
+@man man/man1/compile_et.1
 @man man/man1/lsattr.1
+@man man/man1/mk_cmds.1
+@man man/man3/com_err.3
+@man man/man3/libblkid.3
+@man man/man5/e2fsck.conf.5
+@man man/man5/mke2fs.conf.5
 @man man/man8/badblocks.8
+@man man/man8/blkid.8
 @man man/man8/debugfs.8
 @man man/man8/dumpe2fs.8
 @man man/man8/e2fsck.8
 @man man/man8/e2image.8
 @man man/man8/e2label.8
+@man man/man8/e2undo.8
+@man man/man8/filefrag.8
+@man man/man8/findfs.8
 @man man/man8/fsck.ext2.8
 @man man/man8/fsck.ext3.8
+@man man/man8/fsck.ext4.8
+@man man/man8/fsck.ext4dev.8
+@man man/man8/fsck_ext2fs.8
+@man man/man8/logsave.8
 @man man/man8/mke2fs.8
 @man man/man8/mkfs.ext2.8
 @man man/man8/mkfs.ext3.8
+@man man/man8/mkfs.ext4.8
+@man man/man8/mkfs.ext4dev.8
 @man man/man8/mklost+found.8
-@man man/man8/pfsck.8
 @man man/man8/resize2fs.8
 @man man/man8/tune2fs.8
 @bin sbin/badblocks
+@bin sbin/blkid
 @bin sbin/debugfs
 @bin sbin/dumpe2fs
 @bin sbin/e2fsck
 @bin sbin/e2image
 @bin sbin/e2label
+@bin sbin/e2undo
+@bin sbin/filefrag
+@bin sbin/findfs
 @bin sbin/fsck.ext2
 @bin sbin/fsck.ext3
+@bin sbin/fsck.ext4
+@bin sbin/fsck.ext4dev
+@bin sbin/fsck_ext2fs
+@bin sbin/logsave
 @bin sbin/mke2fs
 @bin sbin/mkfs.ext2
 @bin sbin/mkfs.ext3
+@bin sbin/mkfs.ext4
+@bin sbin/mkfs.ext4dev
 @bin sbin/mklost+found
-@bin sbin/pfsck
 @bin sbin/resize2fs
 @bin sbin/tune2fs
-%%SHARED%%
+share/et/
+share/et/et_c.awk
+share/et/et_h.awk
+share/examples/mke2fs.conf
+@sample ${SYSCONFDIR}/mke2fs.conf
+share/locale/
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
+share/locale/ca/LC_MESSAGES/e2fsprogs.mo
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
+share/locale/cs/LC_MESSAGES/e2fsprogs.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
+share/locale/de/LC_MESSAGES/e2fsprogs.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
+share/locale/es/LC_MESSAGES/e2fsprogs.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
+share/locale/fr/LC_MESSAGES/e2fsprogs.mo
+share/locale/id/
+share/locale/id/LC_MESSAGES/
+share/locale/id/LC_MESSAGES/e2fsprogs.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
+share/locale/it/LC_MESSAGES/e2fsprogs.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
+share/locale/nl/LC_MESSAGES/e2fsprogs.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
+share/locale/pl/LC_MESSAGES/e2fsprogs.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
+share/locale/sv/LC_MESSAGES/e2fsprogs.mo
+share/locale/tr/
+share/locale/tr/LC_MESSAGES/
+share/locale/tr/LC_MESSAGES/e2fsprogs.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
+share/locale/vi/LC_MESSAGES/e2fsprogs.mo
+share/ss/
+share/ss/ct_c.awk
+share/ss/ct_c.sed

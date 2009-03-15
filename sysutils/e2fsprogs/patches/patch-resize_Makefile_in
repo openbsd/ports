@@ -1,20 +1,70 @@
-$OpenBSD: patch-resize_Makefile_in,v 1.2 2006/02/20 16:51:46 aanriot Exp $
---- resize/Makefile.in.orig	Fri Mar  8 07:05:02 2002
-+++ resize/Makefile.in	Sun Feb 19 18:15:12 2006
-@@ -26,7 +26,7 @@ SRCS= $(srcdir)/extent.c \
+$OpenBSD: patch-resize_Makefile_in,v 1.3 2009/03/15 19:59:31 landry Exp $
+--- resize/Makefile.in.orig	Sat Jun 30 14:58:35 2007
++++ resize/Makefile.in	Sun Feb 22 11:52:47 2009
+@@ -27,56 +27,47 @@ SRCS= $(srcdir)/extent.c \
  	$(srcdir)/sim_progress.c
  
- LIBS= $(LIBEXT2FS) $(LIBCOM_ERR)  
--DEPLIBS= $(LIBEXT2FS) $(LIBCOM_ERR)
-+DEPLIBS= $(DEPLIBEXT2FS) $(DEPLIBCOM_ERR)
+ LIBS= $(LIBE2P) $(LIBEXT2FS) $(LIBCOM_ERR) $(LIBINTL)
+-DEPLIBS= $(LIBE2P) $(LIBEXT2FS) $(LIBCOM_ERR)
++DEPLIBS= $(DEPLIBE2P) $(DEPLIBEXT2FS) $(DEPLIBCOM_ERR)
  
- STATIC_LIBS= $(STATIC_LIBEXT2FS) $(STATIC_LIBCOM_ERR) 
- STATIC_DEPLIBS= $(STATIC_LIBEXT2FS) $(STATIC_LIBCOM_ERR) 
-@@ -56,7 +56,6 @@ installdirs:
+ STATIC_LIBS= $(STATIC_LIBE2P) $(STATIC_LIBEXT2FS) $(STATIC_LIBCOM_ERR) \
+ 	$(LIBINTL)
+ STATIC_DEPLIBS= $(STATIC_LIBE2P) $(STATIC_LIBEXT2FS) $(STATIC_LIBCOM_ERR) 
+ 
+ .c.o:
+-	@echo "	CC $<"
+-	@$(CC) -c $(ALL_CFLAGS) $< -o $@
++	$(CC) -c $(ALL_CFLAGS) $< -o $@
+ 
+ all:: $(PROGS) $(TEST_PROGS) $(MANPAGES) 
+ 
+ resize2fs: $(RESIZE_OBJS) $(DEPLIBS)
+-	@echo "	LD $@"
+-	@$(CC) $(ALL_LDFLAGS) -o resize2fs $(RESIZE_OBJS) $(LIBS) 
++	$(CC) $(ALL_LDFLAGS) -o resize2fs $(RESIZE_OBJS) $(LIBS) 
+ 
+ resize2fs.static: $(RESIZE_OBJS)  $(STATIC_DEPLIBS)
+-	@echo "	LD $@"
+-	@$(LD) $(ALL_LDFLAGS) $(LDFLAG_STATIC) -o resize2fs.static \
++	$(LD) $(ALL_LDFLAGS) $(LDFLAG_STATIC) -o resize2fs.static \
+ 		$(RESIZE_OBJS) $(STATIC_LIBS) 
+ 
+ resize2fs.8: $(DEP_SUBSTITUTE) $(srcdir)/resize2fs.8.in
+-	@echo "	SUBST $@"
+-	@$(SUBSTITUTE_UPTIME) $(srcdir)/resize2fs.8.in resize2fs.8
++	$(SUBSTITUTE_UPTIME) $(srcdir)/resize2fs.8.in resize2fs.8
+ 
+ test_extent: $(TEST_EXTENT_OBJS)
+-	@echo "	LD $@"
+-	@$(CC) $(ALL_LDFLAGS) -o test_extent $(TEST_EXTENT_OBJS) $(LIBS) 
++	$(CC) $(ALL_LDFLAGS) -o test_extent $(TEST_EXTENT_OBJS) $(LIBS) 
+ 
+ installdirs:
+-	@echo "	MKINSTALLDIRS $(root_sbindir) $(man8dir)"
+-	@$(MKINSTALLDIRS) $(DESTDIR)$(root_sbindir) \
++	$(MKINSTALLDIRS) $(DESTDIR)$(root_sbindir) \
+ 		$(DESTDIR)$(man8dir)
+ 
  install: $(PROGS) $(MANPAGES) installdirs
- 	for i in $(PROGS); do \
+-	@for i in $(PROGS); do \
+-		echo "	INSTALL $(root_sbindir)/$$i"; \
++	for i in $(PROGS); do \
  		$(INSTALL_PROGRAM) $$i $(DESTDIR)$(root_sbindir)/$$i; \
--		$(STRIP) $(DESTDIR)$(root_sbindir)/$$i; \
  	done
- 	for i in $(MANPAGES); do \
- 		$(RM) -f $(DESTDIR)$(man8dir)/$$i.gz; \
+-	@for i in $(MANPAGES); do \
++	for i in $(MANPAGES); do \
+ 		for j in $(COMPRESS_EXT); do \
+ 			$(RM) -f $(DESTDIR)$(man8dir)/$$i.$$j; \
+ 		done; \
+-		echo "	INSTALL_DATA $(man8dir)/$$i"; \
+ 		$(INSTALL_DATA) $$i $(DESTDIR)$(man8dir)/$$i; \
+ 	done
+ 
+ install-strip: install
+-	@for i in $(PROGS); do \
+-		echo "	STRIP $(root_sbindir)/$$i"; \
++	for i in $(PROGS); do \
+ 		$(STRIP) $(DESTDIR)$(root_sbindir)/$$i; \
+ 	done
+ 

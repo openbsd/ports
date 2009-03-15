@@ -1,35 +1,69 @@
-$OpenBSD: patch-lib_Makefile_elf-lib,v 1.5 2008/11/22 11:06:15 ajacoutot Exp $
---- lib/Makefile.elf-lib.orig	Sun Feb 24 22:03:59 2002
-+++ lib/Makefile.elf-lib	Sat Nov 22 11:56:10 2008
-@@ -23,14 +23,13 @@ ELF_SONAME = $(ELF_IMAGE).so.$(ELF_SO_VERSION)
+$OpenBSD: patch-lib_Makefile_elf-lib,v 1.6 2009/03/15 19:59:31 landry Exp $
+--- lib/Makefile.elf-lib.orig	Tue Oct  7 16:22:39 2008
++++ lib/Makefile.elf-lib	Sun Feb 22 11:11:17 2009
+@@ -14,8 +14,7 @@
+ all:: image
  
+ real-subdirs:: Makefile
+-	@echo "	MKDIR elfshared"
+-	@mkdir -p elfshared
++	mkdir -p elfshared
+ 
+ ELF_LIB = $(ELF_IMAGE).so.$(ELF_VERSION)
+ ELF_SONAME = $(ELF_IMAGE).so.$(ELF_SO_VERSION)
+@@ -23,45 +22,28 @@ ELF_SONAME = $(ELF_IMAGE).so.$(ELF_SO_VERSION)
  image:		$(ELF_LIB)
  
--$(ELF_LIB): $(OBJS)
--	(cd elfshared; $(CC) --shared -o $(ELF_LIB) -Wl,-soname,$(ELF_SONAME) \
--		$(OBJS) $(ELF_OTHER_LIBS))
-+$(ELF_LIB) $(ELF_IMAGE).so: $(OBJS)
-+	(cd elfshared; $(CC) -shared -fPIC -o $(ELF_LIB) \
-+		$(OBJS))
- 	$(MV) elfshared/$(ELF_LIB) .
- 	$(RM) -f ../$(ELF_LIB) ../$(ELF_IMAGE).so ../$(ELF_SONAME)
- 	$(LN) $(ELF_LIB) ../$(ELF_LIB)
- 	$(LN) ../$(ELF_LIB) ../$(ELF_IMAGE).so
--	$(LN) ../$(ELF_LIB) ../$(ELF_SONAME)
+ $(ELF_LIB): $(OBJS)
+-	@echo "	GEN_ELF_SOLIB $(ELF_LIB)"
+-	@(cd elfshared; $(CC) --shared -o $(ELF_LIB) $(LDFLAGS) \
+-		-Wl,-soname,$(ELF_SONAME) $(OBJS) $(ELF_OTHER_LIBS))
+-	@$(MV) elfshared/$(ELF_LIB) .
+-	@$(RM) -f ../$(ELF_LIB) ../$(ELF_IMAGE).so ../$(ELF_SONAME)
+-	@$(LN) $(ELF_LIB) ../$(ELF_LIB)
+-	@$(LN) ../$(ELF_LIB) ../$(ELF_IMAGE).so
+-	@$(LN) ../$(ELF_LIB) ../$(ELF_SONAME)
++	(cd elfshared; $(CC) --shared -fPIC -o $(ELF_LIB) $(LDFLAGS) $(OBJS))
++	$(MV) elfshared/$(ELF_LIB) .
++	$(RM) -f ../$(ELF_LIB) ../$(ELF_IMAGE).so ../$(ELF_SONAME)
++	$(LN) $(ELF_LIB) ../$(ELF_LIB)
++	$(LN) ../$(ELF_LIB) ../$(ELF_IMAGE).so
  
  installdirs-elf-lib::
- 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(ELF_INSTALL_DIR) \
-@@ -40,12 +39,7 @@ installdirs:: installdirs-elf-lib
+-	@echo "	MKINSTALLDIRS $(ELF_INSTALL_DIR) $(libdir)"
+-	@$(MKINSTALLDIRS) $(DESTDIR)$(ELF_INSTALL_DIR) \
++	$(MKINSTALLDIRS) $(DESTDIR)$(ELF_INSTALL_DIR) \
+ 		$(DESTDIR)$(libdir)
+ 
+ installdirs:: installdirs-elf-lib
  
  install-shlibs install:: $(ELF_LIB) installdirs-elf-lib
- 	$(INSTALL_PROGRAM) $(ELF_LIB) $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_LIB)
--	$(STRIP) --strip-debug \
--		$(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_LIB)
--	$(LN_S) -f $(ELF_LIB) $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_SONAME)
--	$(LN_S) -f $(ELF_INSTALL_DIR)/$(ELF_SONAME) \
--		$(DESTDIR)$(libdir)/$(ELF_IMAGE).so
--	-$(LDCONFIG)
+-	@echo "	INSTALL-ELF-LIB $(ELF_INSTALL_DIR)/$(ELF_LIB)"
+-	@$(INSTALL_PROGRAM) $(ELF_LIB) $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_LIB)
+-	@echo "	SYMLINK $(ELF_INSTALL_DIR)/$(ELF_SONAME)"
+-	@$(LN_S) -f $(ELF_LIB) $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_SONAME)
+-	@echo "	SYMLINK $(libdir)/$(ELF_IMAGE).so"
+-	@if test "$(ELF_INSTALL_DIR)" = "$(libdir)"; then \
+-		$(LN_S) -f $(ELF_SONAME) $(DESTDIR)$(libdir)/$(ELF_IMAGE).so ; \
+-	else \
+-		$(LN_S) -f $(ELF_INSTALL_DIR)/$(ELF_SONAME) \
+-			$(DESTDIR)$(libdir)/$(ELF_IMAGE).so; \
+-	fi			
+-	@echo "	LDCONFIG"
+-	@-$(LDCONFIG)
++	$(INSTALL_PROGRAM) $(ELF_LIB) $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_LIB)
 +	$(INSTALL_DATA) $(ELF_IMAGE).a $(DESTDIR)$(ELF_INSTALL_DIR)/
  
+ install-strip: install
+-	@echo "	STRIP-LIB $(ELF_INSTALL_DIR)/$(ELF_LIB)"
+-	@$(STRIP) --strip-unneeded --remove-section=.comment \
++	$(STRIP) --strip-unneeded --remove-section=.comment \
+ 		--remove-section=.note $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_LIB)
+ 
+ install-shlibs-strip: install-shlibs
+-	@echo "	STRIP-LIB $(ELF_INSTALL_DIR)/$(ELF_LIB)"
+-	@$(STRIP) --strip-unneeded --remove-section=.comment \
++	$(STRIP) --strip-unneeded --remove-section=.comment \
+ 		--remove-section=.note $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_LIB)
+ 
  uninstall-shlibs uninstall::
- 	$(RM) -f $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_LIB) \

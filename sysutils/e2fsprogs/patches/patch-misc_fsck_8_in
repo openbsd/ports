@@ -1,6 +1,6 @@
-$OpenBSD: patch-misc_fsck_8_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
---- misc/fsck.8.in.orig	2004-02-20 20:42:54.000000000 +0100
-+++ misc/fsck.8.in	2004-02-20 20:43:50.000000000 +0100
+$OpenBSD: patch-misc_fsck_8_in,v 1.2 2009/03/15 19:59:31 landry Exp $
+--- misc/fsck.8.in.orig	Wed Apr  2 17:56:12 2008
++++ misc/fsck.8.in	Sat Feb 21 16:54:47 2009
 @@ -2,11 +2,11 @@
  .\" Copyright 1993, 1994, 1995 by Theodore Ts'o.  All Rights Reserved.
  .\" This file may be copied under the terms of the GNU Public License.
@@ -14,5 +14,5 @@ $OpenBSD: patch-misc_fsck_8_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
 -.B fsck
 +.B pfsck
  [
- .B \-sACVRTNP
+ .B \-sAVRTMNP
  ]

@@ -1,12 +1,12 @@
-$OpenBSD: patch-tests_progs_Makefile_in,v 1.2 2008/11/22 11:06:15 ajacoutot Exp $
---- tests/progs/Makefile.in.orig	Sun Feb 24 22:04:04 2002
-+++ tests/progs/Makefile.in	Sat Nov 22 11:56:10 2008
+$OpenBSD: patch-tests_progs_Makefile_in,v 1.3 2009/03/15 19:59:31 landry Exp $
+--- tests/progs/Makefile.in.orig	Wed Jun 18 05:53:42 2008
++++ tests/progs/Makefile.in	Sat Feb 21 17:12:42 2009
 @@ -22,7 +22,7 @@ TEST_ICOUNT_OBJS=	test_icount.o test_icount_cmds.o
  SRCS=	$(srcdir)/test_rel.c 
  
  LIBS= $(LIBEXT2FS) $(LIBSS) $(LIBCOM_ERR)
--DEPLIBS= $(LIBEXT2FS) $(LIBSS) $(LIBCOM_ERR)
+-DEPLIBS= $(LIBEXT2FS) $(DEPLIBSS) $(LIBCOM_ERR)
 +DEPLIBS= $(DEPLIBEXT2FS) $(DEPLIBSS) $(DEPLIBCOM_ERR)
  
  .c.o:
- 	$(CC) -c $(ALL_CFLAGS) $< -o $@
+ 	@echo "	CC $<"

@@ -1,11 +1,10 @@
-$OpenBSD: patch-e2fsck_journal_c,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
---- e2fsck/journal.c.orig	2002-03-08 07:05:02.000000000 +0100
-+++ e2fsck/journal.c	2003-11-16 17:07:37.000000000 +0100
-@@ -13,6 +13,8 @@
-  */
+$OpenBSD: patch-e2fsck_journal_c,v 1.2 2009/03/15 19:59:31 landry Exp $
+--- e2fsck/journal.c.orig	Fri Jan  2 17:10:48 2009
++++ e2fsck/journal.c	Sat Feb 21 17:17:46 2009
+@@ -14,6 +14,7 @@
  
  #ifdef HAVE_SYS_MOUNT_H
-+#include <sys/param.h>
+ #include <sys/param.h>
 +#include <sys/types.h>
  #include <sys/mount.h>
  #define MNT_FL (MS_MGC_VAL | MS_RDONLY)

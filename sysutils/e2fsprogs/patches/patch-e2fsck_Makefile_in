@@ -1,20 +1,183 @@
-$OpenBSD: patch-e2fsck_Makefile_in,v 1.2 2006/02/20 16:51:46 aanriot Exp $
---- e2fsck/Makefile.in.orig	Sun Feb 24 22:03:58 2002
-+++ e2fsck/Makefile.in	Sun Feb 19 18:14:04 2006
-@@ -17,7 +17,7 @@ MANPAGES=	e2fsck.8
- XTRA_CFLAGS=	-DRESOURCE_TRACK
+$OpenBSD: patch-e2fsck_Makefile_in,v 1.3 2009/03/15 19:59:31 landry Exp $
+--- e2fsck/Makefile.in.orig	Sat Nov 15 05:19:57 2008
++++ e2fsck/Makefile.in	Sun Feb 22 12:44:42 2009
+@@ -17,7 +17,7 @@ FMANPAGES=	e2fsck.conf.5
+ XTRA_CFLAGS=	-DRESOURCE_TRACK -I.
  
- LIBS= $(LIBEXT2FS) $(LIBCOM_ERR) $(LIBUUID)
--DEPLIBS= $(LIBEXT2FS) $(LIBCOM_ERR) $(DEPLIBUUID)
-+DEPLIBS= $(DEPLIBEXT2FS) $(DEPLIBCOM_ERR) $(DEPDEPLIBUUID)
+ LIBS= $(LIBEXT2FS) $(LIBCOM_ERR) $(LIBBLKID) $(LIBUUID) $(LIBINTL) $(LIBE2P)
+-DEPLIBS= $(LIBEXT2FS) $(LIBCOM_ERR) $(DEPLIBBLKID) $(DEPLIBUUID) $(DEPLIBE2P)
++DEPLIBS= $(DEPLIBEXT2FS) $(DEPLIBCOM_ERR) $(DEPLIBBLKID) $(DEPLIBUUID) $(DEPLIBE2P)
  
- STATIC_LIBS= $(STATIC_LIBEXT2FS) $(STATIC_LIBCOM_ERR) $(STATIC_LIBUUID)
- STATIC_DEPLIBS= $(STATIC_LIBEXT2FS) $(STATIC_LIBCOM_ERR) $(DEPSTATIC_LIBUUID)
-@@ -139,7 +139,6 @@ installdirs:
- install: $(PROGS) $(MANPAGES) installdirs
- 	for i in $(PROGS); do \
+ STATIC_LIBS= $(STATIC_LIBEXT2FS) $(STATIC_LIBCOM_ERR) $(STATIC_LIBBLKID) \
+ 	$(STATIC_LIBUUID) $(LIBINTL) $(STATIC_LIBE2P)
+@@ -32,8 +32,7 @@ PROFILED_DEPLIBS= $(PROFILED_LIBEXT2FS) $(PROFILED_LIB
+ COMPILE_ET=$(top_builddir)/lib/et/compile_et --build-tree
+ 
+ .c.o:
+-	@echo "	CC $<"
+-	@$(CC) -c $(ALL_CFLAGS) $< -o $@
++	$(CC) -c $(ALL_CFLAGS) $< -o $@
+ @PROFILE_CMT@	@$(CC) $(ALL_CFLAGS) -g -pg -o profiled/$*.o -c $<
+ 
+ #
+@@ -109,43 +108,35 @@ all:: profiled $(PROGS) e2fsck $(MANPAGES) $(FMANPAGES
+ @PROFILE_CMT@all:: e2fsck.profiled
+ 
+ prof_err.c prof_err.h: prof_err.et
+-	@echo "	COMPILE_ET prof_err.et"
+-	@$(COMPILE_ET) $(srcdir)/prof_err.et
++	$(COMPILE_ET) $(srcdir)/prof_err.et
+ 
+ e2fsck: $(OBJS)  $(DEPLIBS)
+-	@echo "	LD $@"
+-	@$(LD) $(ALL_LDFLAGS) -o e2fsck $(OBJS) $(LIBS) 
++	$(LD) $(ALL_LDFLAGS) -o e2fsck $(OBJS) $(LIBS) 
+ 
+ e2fsck.static: $(OBJS) $(STATIC_DEPLIBS)
+-	@echo "	LD $@"
+-	@$(LD) $(LDFLAGS_STATIC) -o e2fsck.static $(OBJS) $(STATIC_LIBS) 
++	$(LD) $(LDFLAGS_STATIC) -o e2fsck.static $(OBJS) $(STATIC_LIBS) 
+ 
+ e2fsck.profiled: $(PROFILED_OBJS)  $(PROFILED_DEPLIBS)
+-	@echo "	LD $@"
+-	@$(LD) $(ALL_LDFLAGS) -g -pg -o e2fsck.profiled $(PROFILED_OBJS) \
++	$(LD) $(ALL_LDFLAGS) -g -pg -o e2fsck.profiled $(PROFILED_OBJS) \
+ 		$(PROFILED_LIBS) 
+ 
+ gen_crc32table: $(srcdir)/gen_crc32table.c
+-	@echo "	CC $@"
+-	@$(BUILD_CC) $(BUILD_CFLAGS) -o gen_crc32table \
++	$(BUILD_CC) $(BUILD_CFLAGS) -o gen_crc32table \
+ 		$(srcdir)/gen_crc32table.c
+ 
+ crc32table.h: gen_crc32table
+-	@echo "	GEN32TABLE $@"
+-	@./gen_crc32table > crc32table.h
++	./gen_crc32table > crc32table.h
+ 
+-tst_crc32: $(srcdir)/crc32.c $(LIBEXT2FS)
+-	@$(CC) $(BUILD_LDFLAGS) $(ALL_CFLAGS) -o tst_crc32 $(srcdir)/crc32.c \
++tst_crc32: $(srcdir)/crc32.c $(DEPLIBEXT2FS)
++	$(CC) $(BUILD_LDFLAGS) $(ALL_CFLAGS) -o tst_crc32 $(srcdir)/crc32.c \
+ 		-DUNITTEST $(LIBEXT2FS) $(LIBCOM_ERR)
+ 
+ tst_refcount: ea_refcount.c
+-	@echo "	LD $@"
+-	@$(CC) -o tst_refcount $(srcdir)/ea_refcount.c \
++	$(CC) -o tst_refcount $(srcdir)/ea_refcount.c \
+ 		$(ALL_CFLAGS) -DTEST_PROGRAM $(LIBCOM_ERR) $(LIBEXT2FS) 
+ 
+ tst_region: region.c
+-	@echo "	LD $@"
+-	@$(CC) -o tst_region $(srcdir)/region.c \
++	$(CC) -o tst_region $(srcdir)/region.c \
+ 		$(ALL_CFLAGS) -DTEST_PROGRAM $(LIBCOM_ERR)
+ 
+ check:: tst_refcount tst_region tst_crc32
+@@ -154,21 +145,17 @@ check:: tst_refcount tst_region tst_crc32
+ 	LD_LIBRARY_PATH=$(LIB) DYLD_LIBRARY_PATH=$(LIB) ./tst_crc32
+ 
+ extend: extend.o
+-	@echo "	LD $@"
+-	@$(LD) $(ALL_LDFLAGS) -o extend extend.o $(CHECKLIB)
++	$(LD) $(ALL_LDFLAGS) -o extend extend.o $(CHECKLIB)
+ 
+ flushb: flushb.o
+-	@echo "	LD $@"
+-	@$(LD) $(ALL_LDFLAGS) -o flushb flushb.o $(CHECKLIB)
++	$(LD) $(ALL_LDFLAGS) -o flushb flushb.o $(CHECKLIB)
+ 
+ iscan: iscan.o util.o ehandler.o $(DEPLIBS)
+-	@echo "	LD $@"
+-	@$(LD) $(ALL_LDFLAGS) -o iscan iscan.o util.o ehandler.o $(LIBS)
++	$(LD) $(ALL_LDFLAGS) -o iscan iscan.o util.o ehandler.o $(LIBS)
+ 
+ test_profile: $(srcdir)/profile.c profile_helpers.o argv_parse.o \
+ 		prof_err.o profile.h $(STATIC_LIBCOM_ERR)
+-	@echo "	LD $@"
+-	@$(CC) -o test_profile -DDEBUG_PROGRAM $(srcdir)/profile.c prof_err.o \
++	$(CC) -o test_profile -DDEBUG_PROGRAM $(srcdir)/profile.c prof_err.o \
+ 		profile_helpers.o argv_parse.o $(STATIC_LIBCOM_ERR) \
+ 		$(ALL_CFLAGS)
+ 
+@@ -177,65 +164,50 @@ profiled:
+ @PROFILE_CMT@	@mkdir profiled
+ 
+ e2fsck.8: $(DEP_SUBSTITUTE) $(srcdir)/e2fsck.8.in
+-	@echo "	SUBST $@"
+-	@$(SUBSTITUTE_UPTIME) $(srcdir)/e2fsck.8.in e2fsck.8
++	$(SUBSTITUTE_UPTIME) $(srcdir)/e2fsck.8.in e2fsck.8
+ 
+ e2fsck.conf.5: $(DEP_SUBSTITUTE) $(srcdir)/e2fsck.conf.5.in
+-	@echo "	SUBST $@"
+-	@$(SUBSTITUTE_UPTIME) $(srcdir)/e2fsck.conf.5.in e2fsck.conf.5
++	$(SUBSTITUTE_UPTIME) $(srcdir)/e2fsck.conf.5.in e2fsck.conf.5
+ 
+ installdirs:
+-	@echo "	MKINSTALLDIRS $(root_sbindir) $(man8dir)"
+-	@$(MKINSTALLDIRS) $(DESTDIR)$(root_sbindir) \
++	$(MKINSTALLDIRS) $(DESTDIR)$(root_sbindir) \
+ 		$(DESTDIR)$(man8dir) $(DESTDIR)$(man5dir)
+ 
+ install: $(PROGS) $(MANPAGES) $(FMANPAGES) installdirs
+-	@for i in $(PROGS); do \
+-		echo "	INSTALL $(root_sbindir)/$$i"; \
++	for i in $(PROGS); do \
  		$(INSTALL_PROGRAM) $$i $(DESTDIR)$(root_sbindir)/$$i; \
--		$(STRIP) $(DESTDIR)$(root_sbindir)/$$i; \
  	done
- 	$(LN) -f $(DESTDIR)$(root_sbindir)/e2fsck \
+-	@echo "	LINK $(root_sbindir)/fsck.ext2"
+-	@$(LN) -f $(DESTDIR)$(root_sbindir)/e2fsck \
++	$(LN) -f $(DESTDIR)$(root_sbindir)/e2fsck \
  			$(DESTDIR)$(root_sbindir)/fsck.ext2
+-	@echo "	LINK $(root_sbindir)/fsck.ext3"
+-	@$(LN) -f $(DESTDIR)$(root_sbindir)/e2fsck \
++	$(LN) -f $(DESTDIR)$(root_sbindir)/e2fsck \
+ 			$(DESTDIR)$(root_sbindir)/fsck.ext3
+-	@echo "	LINK $(root_sbindir)/fsck.ext4"
+-	@$(LN) -f $(DESTDIR)$(root_sbindir)/e2fsck \
++	$(LN) -f $(DESTDIR)$(root_sbindir)/e2fsck \
+ 			$(DESTDIR)$(root_sbindir)/fsck.ext4
+-	@echo "	LINK $(root_sbindir)/fsck.ext4dev"
+-	@$(LN) -f $(DESTDIR)$(root_sbindir)/e2fsck \
++	$(LN) -f $(DESTDIR)$(root_sbindir)/e2fsck \
+ 			$(DESTDIR)$(root_sbindir)/fsck.ext4dev
+-	@for i in $(MANPAGES); do \
++	for i in $(MANPAGES); do \
+ 		for j in $(COMPRESS_EXT); do \
+ 			$(RM) -f $(DESTDIR)$(man8dir)/$$i.$$j; \
+ 		done; \
+-		echo "	INSTALL_DATA $(man8dir)/$$i"; \
+ 		$(INSTALL_DATA) $$i $(DESTDIR)$(man8dir)/$$i; \
+ 	done
+-	@for i in $(FMANPAGES); do \
++	for i in $(FMANPAGES); do \
+ 		for j in $(COMPRESS_EXT); do \
+ 			$(RM) -f $(DESTDIR)$(man5dir)/$$i.$$j; \
+ 		done; \
+-		echo "	INSTALL_DATA $(man5dir)/$$i"; \
+ 		$(INSTALL_DATA) $$i $(DESTDIR)$(man5dir)/$$i; \
+ 	done
+-	@echo "	LINK $(man8dir)/fsck.ext2.8"
+-	@$(LN) -f $(DESTDIR)$(man8dir)/e2fsck.8 \
++	$(LN) -f $(DESTDIR)$(man8dir)/e2fsck.8 \
+ 		$(DESTDIR)$(man8dir)/fsck.ext2.8
+-	@echo "	LINK $(man8dir)/fsck.ext3.8"
+-	@$(LN) -f $(DESTDIR)$(man8dir)/e2fsck.8 \
++	$(LN) -f $(DESTDIR)$(man8dir)/e2fsck.8 \
+ 		$(DESTDIR)$(man8dir)/fsck.ext3.8
+-	@echo "	LINK $(man8dir)/fsck.ext4.8"
+-	@$(LN) -f $(DESTDIR)$(man8dir)/e2fsck.8 \
++	$(LN) -f $(DESTDIR)$(man8dir)/e2fsck.8 \
+ 		$(DESTDIR)$(man8dir)/fsck.ext4.8
+-	@echo "	LINK $(man8dir)/fsck.ext4.8"
+-	@$(LN) -f $(DESTDIR)$(man8dir)/e2fsck.8 \
++	$(LN) -f $(DESTDIR)$(man8dir)/e2fsck.8 \
+ 		$(DESTDIR)$(man8dir)/fsck.ext4dev.8
+ 
+ install-strip: install
+-	@for i in $(PROGS); do \
+-		echo "	STRIP $(root_sbindir)/$$i"; \
++	for i in $(PROGS); do \
+ 		$(STRIP) $(DESTDIR)$(root_sbindir)/$$i; \
+ 	done
+ 

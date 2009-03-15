@@ -1,18 +1,128 @@
-$OpenBSD: patch-lib_ss_Makefile_in,v 1.2 2006/02/04 18:37:36 bernd Exp $
---- lib/ss/Makefile.in.orig	Sun Feb 24 21:04:00 2002
-+++ lib/ss/Makefile.in	Sat Feb  4 19:06:07 2006
-@@ -24,12 +24,12 @@ DLL_LIBS = -L../.. -lcom_err
- DLL_MYDIR = ss
- DLL_INSTALL_DIR = $(root_libdir)
+$OpenBSD: patch-lib_ss_Makefile_in,v 1.3 2009/03/15 19:59:31 landry Exp $
+--- lib/ss/Makefile.in.orig	Tue Oct  7 16:22:39 2008
++++ lib/ss/Makefile.in	Sun Feb 22 12:17:33 2009
+@@ -15,12 +15,12 @@ DLOPEN_LIB = @DLOPEN_LIB@
+ LIBRARY= libss
+ LIBDIR= ss
  
 -ELF_VERSION = 2.0
+-ELF_SO_VERSION = 2
 +ELF_VERSION = $(LIBss_VERSION)
- ELF_SO_VERSION = 2
++ELF_SO_VERSION = $(LIBss_VERSION)
  ELF_IMAGE = libss
  ELF_MYDIR = ss
  ELF_INSTALL_DIR = $(root_libdir)
--ELF_OTHER_LIBS = -L../.. -lcom_err
-+ELF_OTHER_LIBS = -L../.. -lext2fs_com_err
+-ELF_OTHER_LIBS = -L../.. -lcom_err $(DLOPEN_LIB)
++ELF_OTHER_LIBS = -L../.. -lext2fs_com_err $(DLOPEN_LIB)
  
  BSDLIB_VERSION = 1.0
  BSDLIB_IMAGE = libss
+@@ -37,8 +37,7 @@ MK_CMDS=_SS_DIR_OVERRIDE=. ./mk_cmds
+ XTRA_CFLAGS= -I$(srcdir)/../et
+ 
+ .c.o:
+-	@echo "	CC $<"
+-	@$(CC) $(ALL_CFLAGS) -c $<
++	$(CC) $(ALL_CFLAGS) -c $<
+ @PROFILE_CMT@	@$(CC) $(ALL_CFLAGS) -g -pg -o profiled/$*.o -c $<
+ @CHECKER_CMT@	@$(CC) $(ALL_CFLAGS) -checker -g -o checker/$*.o -c $<
+ @ELF_CMT@	@$(CC) $(ALL_CFLAGS) -DSHARED_ELF_LIB -fPIC -o elfshared/$*.o -c $<
+@@ -96,18 +95,15 @@ FILES=	$(SRCS) $(MKCMDSFILES) $(HFILES) \
+ all::	libss.a ss.pc # libss_p.a lint
+ 
+ std_rqs.c: std_rqs.ct mk_cmds
+-	@echo "	MK_CMDS $@"
+-	@DIR=$(srcdir) $(MK_CMDS) $(srcdir)/std_rqs.ct
++	DIR=$(srcdir) $(MK_CMDS) $(srcdir)/std_rqs.ct
+ 
+ std_rqs.o: ss_err.h
+ 
+ test_cmd.c: test_cmd.ct mk_cmds
+-	@echo "	MK_CMDS $@"
+-	@DIR=$(srcdir) $(MK_CMDS) $(srcdir)/test_cmd.ct
++	DIR=$(srcdir) $(MK_CMDS) $(srcdir)/test_cmd.ct
+ 
+ ss_err.c ss_err.h: ss_err.et
+-	@echo "	COMPILE_ET ss_err.et"
+-	@$(COMPILE_ET) $(srcdir)/ss_err.et
++	$(COMPILE_ET) $(srcdir)/ss_err.et
+ 
+ ct.tab.c ct.tab.h: ct.y
+ 	$(RM) -f ct.tab.* y.*
+@@ -120,42 +116,32 @@ ct.tab.c ct.tab.h: ct.y
+ #	$(CHMOD) -x $@
+ 
+ mk_cmds: $(DEP_SUBSTITUTE) $(srcdir)/mk_cmds.sh.in
+-	@echo "	SUBST $@"
+-	@$(SUBSTITUTE) $(srcdir)/mk_cmds.sh.in mk_cmds
+-	@$(CHMOD) +x mk_cmds
++	$(SUBSTITUTE) $(srcdir)/mk_cmds.sh.in mk_cmds
++	$(CHMOD) +x mk_cmds
+ 
+ ss.pc: $(srcdir)/ss.pc.in $(top_builddir)/config.status
+-	@echo "	CONFIG.STATUS $@"
+-	@cd $(top_builddir); CONFIG_FILES=lib/ss/ss.pc ./config.status
++	cd $(top_builddir); CONFIG_FILES=lib/ss/ss.pc ./config.status
+ 
+ installdirs::
+-	@echo "	MKINSTALLDIRS $(libdir) $(includedir)/ss $(datadir)/ss $(bindir)"
+-	@$(MKINSTALLDIRS) $(DESTDIR)$(libdir) \
++	$(MKINSTALLDIRS) $(DESTDIR)$(libdir) \
+ 		$(DESTDIR)$(includedir)/ss $(DESTDIR)$(datadir)/ss \
+ 		$(DESTDIR)$(bindir) $(DESTDIR)$(libdir)/pkgconfig
+ 
+ install:: libss.a $(INSTALL_HFILES) installdirs ss_err.h mk_cmds ss.pc
+-	@echo "	INSTALL_DATA $(DESTDIR)$(libdir)/libss.a"
+-	@$(INSTALL_DATA) libss.a $(DESTDIR)$(libdir)/libss.a
+-	@-$(RANLIB) $(DESTDIR)$(libdir)/libss.a
+-	@$(CHMOD) $(LIBMODE) $(DESTDIR)$(libdir)/libss.a
+-	@$(RM) -f $(DESTDIR)$(includedir)/ss/*
+-	@for i in $(INSTALL_HFILES); do \
+-		echo "	INSTALL_DATA $(DESTDIR)$(includedir)/ss/$$i"; \
++	$(INSTALL_DATA) libss.a $(DESTDIR)$(libdir)/libss.a
++	$(RANLIB) $(DESTDIR)$(libdir)/libss.a
++	$(CHMOD) $(LIBMODE) $(DESTDIR)$(libdir)/libss.a
++	$(RM) -f $(DESTDIR)$(includedir)/ss/*
++	for i in $(INSTALL_HFILES); do \
+ 		$(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(includedir)/ss/$$i; \
+ 	done
+-	@echo "	INSTALL_DATA $(includedir)/ss/ss_err.h"
+-	@$(INSTALL_DATA) ss_err.h $(DESTDIR)$(includedir)/ss/ss_err.h
+-	@for i in $(SHARE_FILES); do \
+-		echo "	INSTALL_DATA $(DESTDIR)$(datadir)/ss/$$i"; \
++	$(INSTALL_DATA) ss_err.h $(DESTDIR)$(includedir)/ss/ss_err.h
++	for i in $(SHARE_FILES); do \
+ 		$(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(datadir)/ss/$$i; \
+ 	done
+-	@echo "	INSTALL $(bindir)/mk_cmds"
+-	@$(INSTALL) mk_cmds $(DESTDIR)$(bindir)/mk_cmds
+-	@echo "	INSTALL_DATA $(man1dir)/mk_cmds.1"
+-	@$(INSTALL_DATA) $(srcdir)/mk_cmds.1 $(DESTDIR)$(man1dir)/mk_cmds.1
+-	@echo "	INSTALL_DATA $(libdir)/pkgconfig/ss.pc"
+-	@$(INSTALL_DATA) ss.pc $(DESTDIR)$(libdir)/pkgconfig/ss.pc
++	$(INSTALL) mk_cmds $(DESTDIR)$(bindir)/mk_cmds
++	$(INSTALL_DATA) $(srcdir)/mk_cmds.1 $(DESTDIR)$(man1dir)/mk_cmds.1
++	$(INSTALL_DATA) ss.pc $(DESTDIR)$(libdir)/pkgconfig/ss.pc
+ 
+ uninstall::
+ 	$(RM) -f $(DESTDIR)$(libdir)/libss.a $(DESTDIR)$(bindir)/mk_cmds \
+@@ -163,15 +149,13 @@ uninstall::
+ 		$(DESTDIR)$(man1dir)/mk_cmds.1 
+ 	$(RM) -rf $(DESTDIR)$(includedir)/ss $(DESTDIR)$(datadir)/ss
+ 
+-test_ss: test_ss.o test_cmd.o $(DEPLIBSS) $(LIBCOM_ERR)
+-	@echo "	LD $@"
+-	@$(CC) -o $@ test_ss.o test_cmd.o $(ALL_CFLAGS) \
++test_ss: test_ss.o test_cmd.o $(DEPLIBSS) $(DEPLIBCOM_ERR)
++	$(CC) -o $@ test_ss.o test_cmd.o $(ALL_CFLAGS) \
+ 		$(LIBSS) $(LIBCOM_ERR)
+ 
+ check:: all test_ss
+-	@echo "	RUN TEST test_ss"
+-	-@(LD_LIBRARY_PATH=$(LIB) DYLD_LIBRARY_PATH=$(LIB) ./test_ss -f $(srcdir)/test_script > test_out 2>&1; exit 0)
+-	@if diff test_out $(srcdir)/test_script_expected > test.diff; then \
++	(LD_LIBRARY_PATH=$(LIB) DYLD_LIBRARY_PATH=$(LIB) ./test_ss -f $(srcdir)/test_script > test_out 2>&1; exit 0)
++	if diff test_out $(srcdir)/test_script_expected > test.diff; then \
+ 		true ; else echo "Regression test for ss library failed!"; exit 1 ; fi
+ 
+ clean::
