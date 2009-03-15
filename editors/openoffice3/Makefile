@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/11 23:22:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/15 13:25:09 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -10,9 +10,9 @@ VERSION=	3.0.1
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOO300_m15
 PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}p2
+PKGNAME-main=	openoffice-${VERSION}p3
 PKGNAME-kde=	openoffice-kde-${VERSION}p1
-PKGNAME-java=	openoffice-java-${VERSION}p2
+PKGNAME-java=	openoffice-java-${VERSION}p3
 CATEGORIES=	editors productivity
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -74,14 +74,14 @@ BUILD_DEPENDS+=	:zip-*:archivers/zip \
 		:p5-Archive-Zip-*:archivers/p5-Archive-Zip \
 		::print/cups \
 		::devel/apache-ant \
-		:db-java-4.*:databases/db/v4,-java,java \
+		:db-java->=4,<5:databases/db/v4,-java,java \
 		::devel/boost
 
 MODULES+=	lang/python
 LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
 		estdc++.>=7::lang/gcc/4.2,-estdc \
-		db.>=4:db-4.*:databases/db/v4 \
+		db.>=4:db->=4,<5:databases/db/v4 \
 		xslt.>=3::textproc/libxslt \
 		curl.>=7::net/curl \
 		neon.>=24::net/neon \
@@ -110,7 +110,7 @@ MODJAVA_JRERUN=		Yes
 LIB_DEPENDS-java=
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
 			::editors/openoffice3 \
-			:db-java-4.*:databases/db/v4,-java,java
+			:db-java->=4,<5:databases/db/v4,-java,java
 WANTLIB-java=		c m pthread
 
 USE_X11=	Yes
