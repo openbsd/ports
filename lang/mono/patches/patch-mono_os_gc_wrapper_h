@@ -1,0 +1,16 @@
+$OpenBSD: patch-mono_os_gc_wrapper_h,v 1.1 2009/03/15 02:19:31 kurt Exp $
+--- mono/os/gc_wrapper.h.orig	Thu Mar 12 13:08:25 2009
++++ mono/os/gc_wrapper.h	Thu Mar 12 13:14:30 2009
+@@ -29,6 +29,12 @@
+ #       endif
+ #	endif
+ 
++	/*
++	 * In the case of multithreaded code, gc.h should be included
++	 * after the threads header file, and after defining GC_THREADS.
++	 */
++#	include <pthread.h>
++#	define GC_THREADS
+ #	ifdef HAVE_GC_GC_H
+ #		include <gc/gc.h>
+ #		include <gc/gc_typed.h>

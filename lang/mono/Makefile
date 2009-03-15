@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2009/02/03 09:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/03/15 02:19:31 kurt Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	cross platform, open source .NET developement framework
 
 DISTNAME=	mono-2.0
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	lang devel
 
 SHARED_LIBS=	mono-profiler-aot	0.0 \
@@ -44,7 +44,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-gc=boehm --with-glib=system --with-tls=pthread \
 		--with-jit=yes --with-interp=no --with-sigaltstack=no \
-		--with-libgdiplus=installed
+		--with-libgdiplus=installed --disable-shared-handles
 
 REGRESS_TARGET=check
 
