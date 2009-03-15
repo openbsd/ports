@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2007/12/12 15:14:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2009/03/15 18:29:31 espie Exp $
 
 COMMENT=	3D creation software
 
 DISTNAME=	blender-2.45
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.blender.org/
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	::graphics/tiff
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		SDL::devel/sdl \
-		python${PYTHON_VER}:python-${PYTHON_VER}.*:lang/python/${PYTHON_VER}
+		python${PYTHON_VER}:python->=${PYTHON_VER},<2.6:lang/python/${PYTHON_VER}
 
 WANTLIB=	GL GLU X11 Xi c m pthread stdc++ util z
 

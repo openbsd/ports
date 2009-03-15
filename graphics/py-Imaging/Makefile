@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2008/09/01 19:13:05 eric Exp $
+# $OpenBSD: Makefile,v 1.36 2009/03/15 18:29:31 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,9 +8,9 @@ COMMENT-bin=		binaries for the Python Imaging Library
 
 VERSION=		1.1.6
 DISTNAME=		Imaging-${VERSION}
-PKGNAME-main=		py-${DISTNAME}
-FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}
-FULLPKGNAME-bin=	py-Imaging-bin-${VERSION}
+PKGNAME-main=		py-${DISTNAME}p0
+FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}p0
+FULLPKGNAME-bin=	py-Imaging-bin-${VERSION}p0
 
 CATEGORIES=		graphics
 
@@ -33,7 +33,7 @@ RUN_DEPENDS-bin=	${RUN_DEPENDS} \
 			:py-Imaging:graphics/py-Imaging
 BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS-main=	jpeg.>=62::graphics/jpeg \
-			tk84:tk-8.4.*:x11/tk/8.4
+			tk84:tk->=8.4,<8.5:x11/tk/8.4
 
 FLAVORS=		python2.4 python2.5
 FLAVOR?=		python2.5
