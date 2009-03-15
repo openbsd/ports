@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/07 04:11:56 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/03/15 09:04:34 steven Exp $
 bin/scons
 bin/scons-${VERSION}
 bin/scons-time
@@ -93,6 +93,8 @@ lib/scons-${VERSION}/SCons/Scanner/LaTeX.py
 lib/scons-${VERSION}/SCons/Scanner/LaTeX.pyc
 lib/scons-${VERSION}/SCons/Scanner/Prog.py
 lib/scons-${VERSION}/SCons/Scanner/Prog.pyc
+lib/scons-${VERSION}/SCons/Scanner/RC.py
+lib/scons-${VERSION}/SCons/Scanner/RC.pyc
 lib/scons-${VERSION}/SCons/Scanner/__init__.py
 lib/scons-${VERSION}/SCons/Scanner/__init__.pyc
 lib/scons-${VERSION}/SCons/Script/
