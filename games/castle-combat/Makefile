@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2008/01/14 06:43:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2009/03/15 14:39:02 espie Exp $
 
 COMMENT=	Rampart arcade game clone for X11
 
 DISTNAME=	castle-combat-0.8.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.linux-games.com/castle-combat/

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/14 06:17:14 eric Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/15 14:39:02 espie Exp $
 
 COMMENT=		online multiplayer version of the Scotland Yard game
 
 MODPY_EGG_VERSION=	0.2.1
 DISTNAME=		londonlaw-${MODPY_EGG_VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		games
 
 HOMEPAGE=		http://www.eecs.umich.edu/~pelzlpj/londonlaw/

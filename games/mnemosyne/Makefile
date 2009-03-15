@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/01/02 13:07:37 djm Exp $
+# $OpenBSD: Makefile,v 1.9 2009/03/15 14:39:03 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	flash-card tool which optimises your learning process
 
 MODPY_EGG_VERSION=1.2
 DISTNAME=	mnemosyne-${MODPY_EGG_VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games education
 
 EXTRACT_SUFX=	.tgz

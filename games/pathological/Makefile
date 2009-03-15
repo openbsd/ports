@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2009/03/15 14:39:03 espie Exp $
 
 COMMENT=	enriched clone of the game Logical by Rainbow Arts
 
 DISTNAME=	pathological-1.1.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games
 HOMEPAGE=	http://pathological.sourceforge.net/
 

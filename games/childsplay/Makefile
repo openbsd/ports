@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/02 13:07:37 djm Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/15 14:39:02 espie Exp $
 
 COMMENT=	suite of educational games for young children
 
 DISTNAME=	childsplay-0.85.1
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	games education

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2008/11/29 09:49:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2009/03/15 14:39:02 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	educational game for children
 
 DISTNAME=	gcompris-8.4.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games education
 
 HOMEPAGE=	http://gcompris.net/
@@ -39,7 +39,7 @@ LIB_DEPENDS=	python${MODPY_VERSION}::lang/python/${MODPY_VERSION} \
 		gnet-2.0::net/gnet \
 		sqlite3::databases/sqlite3 \
 		gnomecanvas-2::x11/gnome/libgnomecanvas \
-		gstreamer-0.10:gstreamer-0.10.*:multimedia/gstreamer-0.10/core
+		gstreamer-0.10:gstreamer->=0.10,<0.11:multimedia/gstreamer-0.10/core
 RUN_DEPENDS=	::games/gnuchess \
 		::databases/py-sqlite2 \
 		::x11/py-gtk2 \
