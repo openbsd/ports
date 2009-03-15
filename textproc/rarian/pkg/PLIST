@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/03/14 10:40:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/03/15 16:09:05 ajacoutot Exp $
 @conflict scrollkeeper-*
 @pkgpath textproc/scrollkeeper
 %%SHARED%%
@@ -52,8 +52,6 @@ share/librarian/manual/rar-mdf.xhtml
 share/librarian/manual/rar-skcompat.xhtml
 share/librarian/rarian-sk-cl.xml
 @sample /var/db/rarian/
-@exec %D/share/libxml2/rebuild
-@unexec %D/share/libxml2/rebuild
 @extraunexec rm -rf %D/share/help/
 @extraunexec rm -rf /var/db/rarian/
 @extraunexec rm -rf /var/db/scrollkeeper/
