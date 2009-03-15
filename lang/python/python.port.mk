@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.27 2009/03/09 23:09:19 espie Exp $
+# $OpenBSD: python.port.mk,v 1.28 2009/03/15 13:03:41 espie Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -9,14 +9,15 @@ CATEGORIES+=		lang/python
 
 MODPY_VERSION?=		2.5
 .if ${MODPY_VERSION} == 2.3
-MODPYSPEC=python->=${MODPY_VERSION},<2.4
+MODPY_VSPEC = >=${MODPY_VERSION},<2.4
 .elif ${MODPY_VERSION} == 2.4
-MODPYSPEC=python->=${MODPY_VERSION},<2.5
+MODPY_VSPEC = >=${MODPY_VERSION},<2.5
 .elif ${MODPY_VERSION} == 2.5
-MODPYSPEC=python->=${MODPY_VERSION},<2.6
+MODPY_VSPEC = >=${MODPY_VERSION},<2.6
 .elif ${MODPY_VERSION} == 2.6
-MODPYSPEC=python->=${MODPY_VERSION},<2.7
+MODPY_VSPEC = >=${MODPY_VERSION},<2.7
 .endif
+MODPYSPEC = python-${MODPY_VSPEC}
 
 MODPY_RUN_DEPENDS=	:${MODPYSPEC}:lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS=	python${MODPY_VERSION}:${MODPYSPEC}:lang/python/${MODPY_VERSION}
@@ -42,7 +43,7 @@ REGRESS_TARGET?=	test
 .endif
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
-MODPY_TKINTER_DEPENDS=	:python-tkinter-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-tkinter
+MODPY_TKINTER_DEPENDS=	:python-tkinter-${MODPY_VSPEC}:lang/python/${MODPY_VERSION},-tkinter
 .endif
 
 MODPY_BIN=		${LOCALBASE}/bin/python${MODPY_VERSION}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:40 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/15 13:03:42 espie Exp $
 PKG_ARCH=	*
 
 COMMENT=	console user interface library for python
 DISTNAME=	urwid-0.9.7.1
-PKGNAME=	py-${DISTNAME}p1
+PKGNAME=	py-${DISTNAME}p2
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}
 

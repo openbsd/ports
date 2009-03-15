@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/13 17:25:17 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/15 13:03:42 espie Exp $
 
 COMMENT=		template plugin that supports Kid templates
 
 VERSION=		1.0.4
 DISTNAME=		TurboKid-${VERSION}
-PKGNAME=		py-turbokid-${VERSION}
+PKGNAME=		py-turbokid-${VERSION}p0
 
 CATEGORIES=		devel
 
