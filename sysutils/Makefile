@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2009/02/09 14:55:44 form Exp $
+# $OpenBSD: Makefile,v 1.170 2009/03/15 20:12:19 landry Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -130,6 +130,7 @@
      SUBDIR += tabled
      SUBDIR += tcplist
      SUBDIR += tentakel
+     SUBDIR += testdisk
      SUBDIR += tkdvd
      SUBDIR += tpb
      SUBDIR += tphdisk
