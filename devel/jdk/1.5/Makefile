@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2009/03/01 20:43:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2009/03/15 09:25:04 espie Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -10,7 +10,7 @@ PKGNAME=		jdk-${V}
 PKGNAME-main=		jdk-${V}p3
 PKGNAME-jre=		jre-${V}p3
 
-CATEGORIES=		devel/jdk java
+CATEGORIES=		devel devel/jdk java
 
 MULTI_PACKAGES= 	-main -jre
 

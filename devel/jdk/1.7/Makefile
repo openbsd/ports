@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/03/01 20:43:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2009/03/15 09:25:04 espie Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -37,10 +37,10 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_REGRESS=	Yes
 
 .if ${FLAVOR:L:Mnative_bootstrap}
-BUILD_DEPENDS+=	:jdk-1.7.0.*:devel/jdk/1.7
+BUILD_DEPENDS+=	:jdk->=1.7,<1.8:devel/jdk/1.7
 ALT_BOOTDIR=	${LOCALBASE}/jdk-1.7.0
 .else
-BUILD_DEPENDS+=	:jdk-1.6.0.*:devel/jdk/1.6
+BUILD_DEPENDS+=	:jdk->=1.6,<1.7:devel/jdk/1.6
 ALT_BOOTDIR=	${LOCALBASE}/jdk-1.6.0
 .endif
 

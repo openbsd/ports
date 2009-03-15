@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/01 20:43:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2009/03/15 09:25:04 espie Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -92,10 +92,10 @@ MAKE_ENV+=		DONT_ENABLE_IPV6=YES
 EXTRACT_CASES+=		*.jar) true ;;
 
 .if ${FLAVOR:L:Mnative_bootstrap}
-BUILD_DEPENDS+=		:jdk-1.6*:devel/jdk/1.6
+BUILD_DEPENDS+=		:jdk->=1.6,<1.7:devel/jdk/1.6
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
-BUILD_DEPENDS+=		:jdk-1.5*:devel/jdk/1.5
+BUILD_DEPENDS+=		:jdk->=1.5,<1.6:devel/jdk/1.5
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/jdk-1.5.0"
 .endif
 
