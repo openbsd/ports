@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/15 14:22:16 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/15 13:31:58 espie Exp $
 
 COMMENT=	powerful and simple GTK editor
 
 DISTNAME=	teagtk-17.6.5
+PKGNAME =	${DISTNAME}p0
 CATEGORIES=	editors x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tea-editor/}
 EXTRACT_SUFX=	.tar.bz2
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
-		gtksourceview-2.0:gtksourceview-2.*:x11/gtksourceview \
+		gtksourceview-2.0:gtksourceview->=2,<3:x11/gtksourceview \
 		aspell.>=16:aspell-*:textproc/aspell/core \
 		zzip.>=13::archivers/zziplib
 RUN_DEPENDS=	::textproc/antiword
