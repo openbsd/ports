@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/03/14 10:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/03/15 11:02:07 ajacoutot Exp $
 
 COMMENT=		GTK2 desktop calculator
 
 GNOME_PROJECT=		gcalctool
 GNOME_VERSION=		5.24.3.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,13 +27,13 @@ LIB_DEPENDS=		gconf-2.>=6::devel/gconf2 \
 			glade-2.0.>=1::devel/libglade2
 BUILD_DEPENDS=		::devel/bison \
 			::devel/gconf2 \
-			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
+			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
+			::textproc/rarian
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 
 USE_X11=		Yes
-USE_LIBTOOL=		No
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
