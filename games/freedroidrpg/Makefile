@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/13 21:53:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/03/15 15:28:29 ajacoutot Exp $
 
 COMMENT=	isometric RPG game
 
 DISTNAME=	freedroidrpg-0.12
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -27,10 +28,6 @@ USE_X11=	Yes
 LIB_DEPENDS=	SDL_image.>=2::devel/sdl-image \
 		SDL_mixer.>=3::devel/sdl-mixer \
 		execinfo::devel/libexecinfo
-
-.if ${MACHINE_ARCH} == "sparc64"
-BROKEN=		SIGBUS on startup under sparc64
-.endif
 
 # needed to avoid a SIGSEGV
 # (int i corruption in enemy.c line 2056:

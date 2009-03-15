@@ -1,4 +1,4 @@
-Note that while freedroid RPG supports OpenGL, you're advised to use
-SDL output and start the game in windowed mode for better gaming
+If your platform does not support accelerated OpenGL, you're advised to
+use the SDL output and start the game in windowed mode for better gaming
 experience.  To do so:
  ${PREFIX}/bin/freedroidRPG -wn
