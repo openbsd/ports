@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2009/02/09 20:48:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2009/03/16 10:24:28 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 m68k sparc sparc64 powerpc vax
 
 V=3.3.6
 FULL_VERSION=3.3.6
 FULL_PKGVERSION=3.3.6
-BOOTSTRAP_GEN = 6
+BOOTSTRAP_GEN = 7
 ADASTRAP = adastrap-i386-3.3.6-${BOOTSTRAP_GEN}.tgz
 
 PKGNAME-main=	gcc-${FULL_PKGVERSION}p13
@@ -37,7 +37,7 @@ FLAVOR?=c++ fortran objc
 FLAVOR+=c++
 .endif
 
-BUILD_DEPENDS=	:autoconf-2.13*:devel/autoconf/2.13
+BUILD_DEPENDS=	:autoconf-2.13:devel/autoconf/2.13
 BUILD_DEPENDS+=	::devel/metaauto
 
 # This can be patched out, apart from java that wants a pure parser.
