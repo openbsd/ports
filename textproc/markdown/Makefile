@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/06 15:45:16 okan Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/16 22:20:02 kili Exp $
 
 COMMENT=	text-to-HTML conversion tool
 
 DISTNAME=	markdown-1.6b
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.freewisdom.org/projects/python-markdown/

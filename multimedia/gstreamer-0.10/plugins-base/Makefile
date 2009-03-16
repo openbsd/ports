@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/10 01:21:22 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2009/03/16 22:20:02 kili Exp $
 
 COMMENT-main =		multimedia framework - plugins base
 COMMENT-gnome =		multimedia framework - gnome vfs plugin
@@ -11,7 +11,7 @@ COMMENT-pango =		multimedia framework - pango renderer
 V =			0.10.19
 DISTNAME =		gst-plugins-base-$V
 PKGNAME-main =		gstreamer-plugins-base-$Vp0
-PKGNAME-gnome =		gstreamer-gnome-$Vp1
+PKGNAME-gnome =		gstreamer-gnome-$Vp2
 PKGNAME-cdda =		gstreamer-cdda-$Vp1
 PKGNAME-ogg =		gstreamer-ogg-$Vp1
 PKGNAME-theora =	gstreamer-theora-$Vp1
