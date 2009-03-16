@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/25 21:05:33 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/16 11:40:24 espie Exp $
 
 COMMENT=		anti-spam SMTP server
 DISTNAME=		avenger-0.7.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.mailavenger.org/
@@ -20,7 +20,7 @@ WANTLIB=		c crypto m pcap ssl stdc++
 MASTER_SITES=		${HOMEPAGE}/dist/
 
 USE_LIBTOOL=		Yes
-LIB_DEPENDS=		lib/db4/db.>=4:db-4.*:databases/db/v4
+LIB_DEPENDS=		lib/db4/db.>=4:db->=4,<5:databases/db/v4
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu

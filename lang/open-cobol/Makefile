@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/10/24 16:36:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/03/16 11:40:24 espie Exp $
 
 COMMENT=	open source COBOL compiler
 
 DISTNAME=	open-cobol-1.0
+PKGNAME =	${DISTNAME}p0
 SHARED_LIBS +=	cob                  3.0      # .2.0
 CATEGORIES=	lang
 
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=open-cobol/}
 
-LIB_DEPENDS=	db:db-4.*:databases/db/v4 \
+LIB_DEPENDS=	db:db->=4,<5:databases/db/v4 \
 	 	gmp.>=6::devel/gmp
 
 MODULES=	devel/gettext
