@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2009/02/18 11:13:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/16 13:55:23 ajacoutot Exp $
 
 COMMENT=		last.fm client for GNOME
 
 V=			0.7
 DISTNAME=		vagalume_$V.orig
-PKGNAME=		vagalume-$Vp0
+PKGNAME=		vagalume-$Vp1
 CATEGORIES=		audio x11
 
-HOMEPAGE=		http://people.igalia.com/berto/
+HOMEPAGE=		http://vagalume.igalia.com/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
