@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.371 2009/03/13 19:36:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.372 2009/03/16 09:56:15 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -78,6 +78,7 @@
      SUBDIR += gentoo
      SUBDIR += gmrun
      SUBDIR += gnome
+     SUBDIR += gnome-mplayer
      SUBDIR += gnustep
      SUBDIR += gob2
      SUBDIR += goggles
