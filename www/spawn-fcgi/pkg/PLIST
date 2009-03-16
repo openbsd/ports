@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/16 17:10:36 sthen Exp $
+@conflict lighttpd-<=1.4.22
+@conflict cherokee-*
+@bin bin/spawn-fcgi
+@man man/man1/spawn-fcgi.1
