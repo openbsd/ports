@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2009/03/16 22:05:59 bernd Exp $
+--- Makefile.in.orig	Sun Mar  8 00:04:27 2009
++++ Makefile.in	Sun Mar  8 00:04:43 2009
+@@ -225,7 +225,7 @@ version_release = @version_release@
+ version_revision = @version_revision@
+ version_stage = @version_stage@
+ SUBDIRS = bin etc src share var
+-localdoc_DATA = AUTHORS.gz BUGS.gz CHANGES.gz NEWS.gz README.gz THANKS.gz
++localdoc_DATA = AUTHORS BUGS CHANGES NEWS README THANKS
+ DISTCLEANFILES = $(localdoc_DATA)
+ EXTRA_DIST = AUTHORS BUGS CHANGES LICENSE NEWS NOTICE README THANKS
+ all: config.h

@@ -1,0 +1,142 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/16 22:05:59 bernd Exp $
+@newgroup _couchdb:621
+@newuser _couchdb:621:_couchdb:daemon:CouchDB account:/var/couchdb:/bin/sh
+%%SHARED%%
+bin/couchdb
+bin/couchjs
+lib/couchdb/
+lib/couchdb/bin/
+@bin lib/couchdb/bin/couchjs
+lib/couchdb/erlang/
+lib/couchdb/erlang/lib/
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/cjson.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch.app
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_btree.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_db.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_db_update_notifier.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_doc.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_event_sup.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_file.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_ft_query.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_httpd.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_key_tree.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_log.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_query_servers.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_rep.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_server.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_server_sup.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_stream.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_util.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/ebin/couch_view.beam
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/include/
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/include/couch_db.hrl
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/lib/
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/lib/couch_erl_driver.a
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/lib/couch_erl_driver.la
+lib/couchdb/erlang/lib/mochiweb-r82/
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochifmt.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochifmt_records.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochifmt_std.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochihex.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochijson.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochijson2.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochinum.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb.app
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_app.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_charref.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_cookies.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_echo.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_headers.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_html.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_http.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_multipart.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_request.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_response.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_skel.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_socket_server.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_sup.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/mochiweb_util.beam
+lib/couchdb/erlang/lib/mochiweb-r82/ebin/reloader.beam
+@man man/man1/couchdb.1
+@man man/man1/couchjs.1
+share/couchdb/
+share/couchdb/server/
+share/couchdb/server/main.js
+share/couchdb/www/
+share/couchdb/www/browse/
+share/couchdb/www/browse/_compact_database.html
+share/couchdb/www/browse/_create_database.html
+share/couchdb/www/browse/_create_document.html
+share/couchdb/www/browse/_delete_database.html
+share/couchdb/www/browse/_delete_document.html
+share/couchdb/www/browse/_save_view_as.html
+share/couchdb/www/browse/database.html
+share/couchdb/www/browse/document.html
+share/couchdb/www/browse/index.html
+share/couchdb/www/couch_tests.html
+share/couchdb/www/favicon.ico
+share/couchdb/www/image/
+share/couchdb/www/image/add.gif
+share/couchdb/www/image/apply.gif
+share/couchdb/www/image/bg.png
+share/couchdb/www/image/cancel.gif
+share/couchdb/www/image/compact.gif
+share/couchdb/www/image/delete-mini.gif
+share/couchdb/www/image/delete.gif
+share/couchdb/www/image/grippie.gif
+share/couchdb/www/image/hgrad.gif
+share/couchdb/www/image/load.gif
+share/couchdb/www/image/logo.png
+share/couchdb/www/image/order-asc.gif
+share/couchdb/www/image/order-desc.gif
+share/couchdb/www/image/path.gif
+share/couchdb/www/image/progress.gif
+share/couchdb/www/image/run-mini.gif
+share/couchdb/www/image/run.gif
+share/couchdb/www/image/running.gif
+share/couchdb/www/image/save.gif
+share/couchdb/www/image/spinner.gif
+share/couchdb/www/image/test_failure.gif
+share/couchdb/www/image/test_success.gif
+share/couchdb/www/image/thead-key.gif
+share/couchdb/www/image/thead.gif
+share/couchdb/www/image/toggle-collapse.gif
+share/couchdb/www/image/toggle-expand.gif
+share/couchdb/www/image/twisty.gif
+share/couchdb/www/index.html
+share/couchdb/www/replicator.html
+share/couchdb/www/script/
+share/couchdb/www/script/browse.js
+share/couchdb/www/script/couch.js
+share/couchdb/www/script/couch_tests.js
+share/couchdb/www/script/jquery.cookies.js
+share/couchdb/www/script/jquery.couch.js
+share/couchdb/www/script/jquery.dialog.js
+share/couchdb/www/script/jquery.js
+share/couchdb/www/script/jquery.resizer.js
+share/couchdb/www/script/jquery.suggest.js
+share/couchdb/www/script/json2.js
+share/couchdb/www/script/pprint.js
+share/couchdb/www/style/
+share/couchdb/www/style/layout.css
+share/doc/couchdb/
+share/doc/couchdb/AUTHORS
+share/doc/couchdb/BUGS
+share/doc/couchdb/CHANGES
+share/doc/couchdb/NEWS
+share/doc/couchdb/README
+share/doc/couchdb/THANKS
+share/examples/couchdb/
+@sample ${SYSCONFDIR}/couchdb/
+share/examples/couchdb/couch.ini
+@sample ${SYSCONFDIR}/couchdb/couch.ini
+@mode 700
+@owner _couchdb
+@group _couchdb
+@sample /var/log/couchdb/
+@sample /var/couchdb/

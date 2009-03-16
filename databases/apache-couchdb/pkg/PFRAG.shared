@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/03/16 22:05:59 bernd Exp $
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/lib/couch_erl_driver.so

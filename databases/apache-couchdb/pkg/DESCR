@@ -1,0 +1,8 @@
+CouchDB is a distributed, document-oriented, Non-Relational DataBase
+Management Server (NRDBMS).
+
+It is accessible via a RESTful JSON API, and provides incremental
+replication with bi-directional conflict detection and management.
+Data is stored with a schema-free, flat address space, and may be
+queried via a table-oriented reporting engine that uses Javascript
+as a query language.

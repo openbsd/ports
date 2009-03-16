@@ -1,0 +1,18 @@
+To start CouchDB at boot and shut it down when the system goes down,
+add the following lines to /etc/rc.local and /etc/rc.shutdown, respectively:
+
+/etc/rc.local:
+
+if [ -x ${TRUEPREFIX}/bin/couchdb ]; then
+	echo -n ' couchdb'
+	install -d -o _couchdb /var/run/couchdb
+	su -l _couchdb -c "${TRUEPREFIX}/bin/couchdb -b -p \
+	    /var/run/couchdb/couchdb.pid" >/dev/null
+fi
+
+/etc/rc.shutdown:
+
+if [ -r /var/run/couchdb/couchdb.pid ]; then
+	su -l _couchdb -c "${TRUEPREFIX}/bin/couchdb -d -p \
+	    /var/run/couchdb/couchdb.pid" >/dev/null
+fi
