@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2009/02/12 20:00:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/16 10:42:06 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		embedded video player for mozilla
 
 DISTNAME=		mplayerplug-in-3.55
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		www
 
@@ -29,11 +29,10 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mplayerplug-in/}
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		:automake-1.4.*:devel/automake/1.4 \
+BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS} \
 			:xulrunner-devel-*:devel/xulrunner,-devel
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
-RUN_DEPENDS=		:mozilla-firefox-*|firefox3-*:www/mozilla-firefox \
-			::x11/mplayer
+RUN_DEPENDS=		::x11/mplayer
 
 USE_X11=		yes
 USE_GMAKE=		yes
