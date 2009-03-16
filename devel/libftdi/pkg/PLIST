@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1 2009/01/07 21:35:59 matthieu Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/16 14:27:24 espie Exp $
+@conflict cppunit-<1.12
 %%SHARED%%
 @bin bin/bitbang
 @bin bin/bitbang2
