@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2009/01/15 10:04:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2009/03/16 13:21:22 sthen Exp $
 
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
 DISTNAME=	pure-ftpd-1.0.21
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -37,7 +37,7 @@ FLAVORS=	ldap mysql postgresql no_banner virtual_chroot
 FLAVOR?=
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+= ldap.>=2,lber:openldap-client-2.*:databases/openldap
+LIB_DEPENDS+= ldap.>=2,lber:openldap-client->=2,<3:databases/openldap
 CONFIGURE_ARGS+= --with-ldap="${LOCALBASE}"
 DOCS+=	README.LDAP pureftpd.schema
 CONF_FILE+= pureftpd-ldap.conf
