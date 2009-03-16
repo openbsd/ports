@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.372 2009/03/16 09:56:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.373 2009/03/16 20:43:44 sturm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -248,6 +248,7 @@
      SUBDIR += wmitime
      SUBDIR += wmmenu
      SUBDIR += wmmenu,gdk_pixbuf
+     SUBDIR += wmname
      SUBDIR += wmpinboard
      SUBDIR += wmtheme
      SUBDIR += wmthemeinstall
