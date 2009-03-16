@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2008/08/19 23:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/16 11:19:12 espie Exp $
 
-COMMENT = embeddable common-lisp
-CATEGORIES = lang
+COMMENT = 	embeddable common-lisp
+CATEGORIES = 	lang
 
-DISTNAME = ecl-0.9l
-PKGNAME = ecl-0.9l
-WRKDIST = ${WRKDIR}/ecl-0.9l
-EXTRACT_SUFX = .tgz
+V =		8.12.0
+DISTNAME = 	ecl-$V
 MASTER_SITES = ${MASTER_SITE_SOURCEFORGE:=ecls/}
 HOMEPAGE = http://ecls.sourceforge.net/
+SUBST_VARS =	V
 
 # GPLv2 or later
 PERMIT_PACKAGE_CDROM = Yes
@@ -17,13 +16,15 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = Yes
 
 
-CONFIGURE_STYLE = gnu
-USE_GMAKE = Yes
-USE_LIBTOOL = Yes
-NO_REGRESS = Yes
+SHARED_LIBS +=		ecl	0.0
+CONFIGURE_STYLE = 	gnu
+USE_GMAKE = 		Yes
+USE_LIBTOOL = 		Yes
+NO_REGRESS = 		Yes
 CONFIGURE_ENV +=	LDFLAGS='-pthread -L${LOCALBASE}/lib' \
 			CPPFLAGS=-I${LOCALBASE}/include \
-			CFLAGS='${CFLAGS} -pthread'
+			CFLAGS='${CFLAGS} -pthread' \
+			ECLLIB_VERSION=${LIBecl_VERSION}
 
 CONFIGURE_ARGS += 	--enable-boehm=system \
 			--with-system-gmp \

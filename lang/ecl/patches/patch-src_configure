@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_configure,v 1.1 2009/03/16 11:19:12 espie Exp $
+--- src/configure.orig	Wed Dec 17 16:41:52 2008
++++ src/configure	Mon Mar 16 10:43:57 2009
+@@ -10964,13 +10964,14 @@ _ACEOF
+ 
+ fi
+ 
++: ${ECLLIB_VERSION:=8.12}
+ if test ${enable_shared} = "yes"; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define ENABLE_DLOPEN 1
+ _ACEOF
+ 
+-  LSP_LIBRARIES="${SHAREDPREFIX}ecl.${SHAREDEXT}"
++  LSP_LIBRARIES="${SHAREDPREFIX}ecl.${SHAREDEXT}.${ECLLIB_VERSION}"
+ 
+ LSP_FEATURES="(cons :wants-dlopen ${LSP_FEATURES})"
+ 

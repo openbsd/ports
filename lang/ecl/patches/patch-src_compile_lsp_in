@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_compile_lsp_in,v 1.1 2009/03/16 11:19:12 espie Exp $
+--- src/compile.lsp.in.orig	Mon Mar 16 10:45:42 2009
++++ src/compile.lsp.in	Mon Mar 16 10:50:38 2009
+@@ -48,19 +48,19 @@
+       "@LDFLAGS@ @LIBPREFIX@ecl.@LIBEXT@ @CORE_LIBS@ @LIBS@ @FASL_LIBS@")
+ #+(and :wants-dlopen (not nonstop))
+ (setf c::*ld-flags*
+-      "@LDFLAGS@ @SHAREDPREFIX@ecl.@SHAREDEXT@ @LIBS@"
++      "@LDFLAGS@ -L. -lecl @LIBS@"
+       c::*ld-shared-flags*
+-      "@SHARED_LDFLAGS@ @LDFLAGS@ @SHAREDPREFIX@ecl.@SHAREDEXT@ @LIBS@ @FASL_LIBS@"
++      "@SHARED_LDFLAGS@ @LDFLAGS@ -L. -lecl @LIBS@ @FASL_LIBS@"
+       c::*ld-bundle-flags*
+-      "@BUNDLE_LDFLAGS@ @LDFLAGS@ @SHAREDPREFIX@ecl.@SHAREDEXT@ @LIBS@ @FASL_LIBS@")
++      "@BUNDLE_LDFLAGS@ @LDFLAGS@ -L. -lecl @LIBS@ @FASL_LIBS@")
+ ;;; FIXME: The nonstop platform does not support soname
+ #+(and :wants-dlopen nonstop)
+ (setf c::*ld-flags*
+-      "@LDFLAGS@ -Wld=-l@SHAREDPREFIX@ecl.@SHAREDEXT@ @LIBS@"
++      "@LDFLAGS@ -Wld=-L.,-lecl @LIBS@"
+       c::*ld-shared-flags*
+-      "@SHARED_LDFLAGS@ @LDFLAGS@ -Wld=-l@SHAREDPREFIX@ecl.@SHAREDEXT@ @LIBS@ @FASL_LIBS@"
++      "@SHARED_LDFLAGS@ @LDFLAGS@ -Wld=-L.,-lecl @LIBS@ @FASL_LIBS@"
+       c::*ld-bundle-flags*
+-      "@BUNDLE_LDFLAGS@ @LDFLAGS@ -Wld=-l@SHAREDPREFIX@ecl.@SHAREDEXT@ @LIBS@ @FASL_LIBS@")
++      "@BUNDLE_LDFLAGS@ @LDFLAGS@ -Wld=-L.,-lecl @LIBS@ @FASL_LIBS@")
+ 
+ ;;;
+ ;;; * Avoid name clashes with user supplied code.
+@@ -103,7 +103,7 @@
+ ;;;
+ ;;; We do not need the -rpath flag for the library, nor -lecl.
+ ;;;
+-(let* ((c::*ld-shared-flags* #-msvc "@SHARED_LDFLAGS@ @LDFLAGS@ @SONAME_LDFLAGS@ @CORE_LIBS@ @LIBS@ @FASL_LIBS@"
++(let* ((c::*ld-shared-flags* #-msvc "@SHARED_LDFLAGS@ @LDFLAGS@ @CORE_LIBS@ @LIBS@ @FASL_LIBS@"
+ 			     #+msvc "@SHARED_LDFLAGS@ @LDFLAGS@ @STATICLIBS@ @CLIBS@")
+        (c::*cc-flags* (concatenate 'string "-DECL_API -I@true_builddir@/c " c::*cc-flags*))
+        (extra-args nil))

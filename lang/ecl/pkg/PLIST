@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/08/19 23:45:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/03/16 11:19:12 espie Exp $
 %%SHARED%%
 @bin bin/ecl
 bin/ecl-config
@@ -20,19 +20,19 @@ include/ecl/stacks.h
 include/ecl/unify.h
 @info info/ecl.info
 @info info/ecldev.info
-lib/ecl/
-lib/ecl/BUILD-STAMP
-lib/ecl/asdf.fas
-lib/ecl/cmp.fas
-lib/ecl/defsystem.fas
-lib/ecl/dpp
-lib/ecl/ecl_min
-lib/ecl/help.doc
-lib/ecl/profile.fas
-lib/ecl/rt.fas
-lib/ecl/serve-event.fas
-lib/ecl/sockets.fas
-lib/ecl/sysfun.lsp
+lib/ecl-${V}/
+lib/ecl-${V}/BUILD-STAMP
+lib/ecl-${V}/asdf.fas
+lib/ecl-${V}/cmp.fas
+lib/ecl-${V}/defsystem.fas
+lib/ecl-${V}/dpp
+lib/ecl-${V}/ecl_min
+lib/ecl-${V}/help.doc
+lib/ecl-${V}/profile.fas
+lib/ecl-${V}/rt.fas
+lib/ecl-${V}/serve-event.fas
+lib/ecl-${V}/sockets.fas
+lib/ecl-${V}/sysfun.lsp
 @man man/man1/ecl-config.1
 @man man/man1/ecl.1
 @comment share/doc/Copyright
