@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/09/05 11:19:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/03/16 17:11:42 sthen Exp $
 @newgroup _cherokee:608
 @newuser _cherokee:608:_cherokee:daemon:Cherokee HTTP Server:/var/empty:/sbin/nologin
+@conflict lighttpd-<=1.4.22
+@conflict spawn-fcgi-*
 @bin bin/cget
 bin/cherokee-config
 bin/cherokee-panic
