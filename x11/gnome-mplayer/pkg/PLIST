@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/16 09:53:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/16 11:27:21 ajacoutot Exp $
 @bin bin/gnome-mplayer
 share/applications/gnome-mplayer.desktop
 share/doc/gnome-mplayer/
@@ -17,6 +17,7 @@ share/locale/en/LC_MESSAGES/gnome-mplayer.mo
 share/locale/es/LC_MESSAGES/gnome-mplayer.mo
 share/locale/fr/LC_MESSAGES/gnome-mplayer.mo
 share/locale/it/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ja/LC_MESSAGES/gnome-mplayer.mo
 share/locale/ko/LC_MESSAGES/gnome-mplayer.mo
 share/locale/pl/LC_MESSAGES/gnome-mplayer.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-mplayer.mo

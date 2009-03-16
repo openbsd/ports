@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/16 09:53:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/16 11:27:21 ajacoutot Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
-DISTNAME =		gnome-mplayer-0.9.4
+DISTNAME =		gnome-mplayer-0.9.5
 CATEGORIES =		x11 multimedia
 
 MAINTAINER =		David Coppa <dcoppa@gmail.com>
@@ -16,12 +16,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-			Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
-			dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-			gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
-			gtk-x11-2.0 m neon pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-			pixman-1 png pthread z
+WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0 c cairo
+WANTLIB += crypto dbus-1 dbus-glib-1 expat fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0 idn krb5
+WANTLIB += m neon pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread ssl xml2 z
 
 MODULES =		devel/gettext
 
@@ -48,7 +49,8 @@ CONFIGURE_ARGS =	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-m
 			--with-gconf \
 			--with-libnotify \
 			--with-libgpod \
-			--with-libmusicbrainz3
+			--with-libmusicbrainz3 \
+			--disable-nautilus
 
 # don't install schemas configuration, @exec takes care of it
 post-patch:

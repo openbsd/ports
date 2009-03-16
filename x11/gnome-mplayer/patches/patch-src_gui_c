@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gui_c,v 1.1.1.1 2009/03/16 09:53:18 ajacoutot Exp $
---- src/gui.c.orig	Sat Jan 31 01:18:04 2009
-+++ src/gui.c	Fri Feb  6 11:26:59 2009
-@@ -3947,32 +3947,41 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+$OpenBSD: patch-src_gui_c,v 1.2 2009/03/16 11:27:21 ajacoutot Exp $
+--- src/gui.c.orig	Sun Mar  8 01:29:15 2009
++++ src/gui.c	Mon Mar 16 12:01:26 2009
+@@ -4104,32 +4104,41 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
      tooltip = gtk_tooltips_new();
      gtk_tooltips_set_tip(tooltip, config_ao,
                           _
