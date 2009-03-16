@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.391 2009/03/16 13:20:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.392 2009/03/16 17:14:13 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -333,6 +333,7 @@
      SUBDIR += sarg
      SUBDIR += seamonkey
      SUBDIR += snownews
+     SUBDIR += spawn-fcgi
      SUBDIR += squid
      SUBDIR += squid,ldap
      SUBDIR += squid,ldap,snmp
