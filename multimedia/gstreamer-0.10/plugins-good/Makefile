@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2009/03/10 23:19:17 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2009/03/16 12:03:18 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -178,6 +178,7 @@ CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 # #0  0x09b37a78 in plugin_info_init (pp=0x85e35000, nbVisuals=-2048700416)
 #    at /usr/obj/ports/gst-plugins-good-0.10.8/gst-plugins-good-0.10.8/gst/goom/plugin_info.c:92
 #        p = Cannot access memory at address 0x88f22290
+# XXX When fixed, remove x11/gnome/totem/patches/patch-configure
 CONFIGURE_ARGS +=	--disable-goom
 
 post-extract:
