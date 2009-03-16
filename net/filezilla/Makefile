@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/02 09:51:05 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/16 21:29:34 sthen Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
 V=		3.0.4
-PKGNAME=	filezilla-$Vp1
+PKGNAME=	filezilla-$Vp2
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m pthread stdc++ z gcrypt gpg-error
+WANTLIB += c gcrypt gpg-error m pthread stdc++ tasn1 z
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gnutls.>=13::security/gnutls \
