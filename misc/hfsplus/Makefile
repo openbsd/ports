@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2007/11/21 14:30:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/03/16 19:46:57 sthen Exp $
 
 COMMENT=	hfsplus filesystem access tool
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c
 
 AUTOCONF_VERSION=	2.59
-BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}*:devel/autoconf/${AUTOCONF_VERSION}
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
 LIB_DEPENDS=	utf8::misc/libutf8 
 
 USE_GMAKE=	Yes
