@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/02/09 20:48:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2009/03/16 20:08:48 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ PKGNAME-main=	${DISTNAME}p2
 PKGNAME-c++ =	plplot-c++-${VERSION}p1
 PKGNAME-f77=	plplot-f77-${VERSION}p1
 PKGNAME-octave=	plplot-octave-${VERSION}p7
-PKGNAME-tcl=	plplot-tcl-${VERSION}p2
+PKGNAME-tcl=	plplot-tcl-${VERSION}p3
 
 CATEGORIES=	math graphics
 
@@ -40,12 +40,12 @@ myWANTLIB=	m z freetype
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=plplot/}
 
-TCL_VERSION=	8.4
-TCLLIB=		tcl${TCL_VERSION:S/.//}
+MODULES=	lang/tcl converters/libiconv
+MODTCL_VERSION=	8.4
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
-BUILD_DEPENDS=	:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION} \
+BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS} \
 		::graphics/gd \
 		::print/ghostscript/gnu-fonts
 myRUN_DEPENDS=	::print/ghostscript/gnu-fonts
@@ -85,9 +85,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	F77=${FC} \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		TCLINCDIR="${LOCALBASE}/include/tcl${TCL_VERSION}" \
-		TCLLIBDIR="${LOCALBASE}/lib" \
-		TCLLIBSTR="-l${TCLLIB}"
+		TCLINCDIR="${MODTCL_INCDIR}" \
+		TCLLIBDIR="${MODTCL_LIBDIR}" \
+		TCLLIBSTR="-ltcl${MODTCL_VERSION:S/.//}"
 
 GCC_ARCH=       ${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
 GNU_ARCH=       ${GCC_ARCH:S/amd64/x86_64/}
@@ -106,8 +106,6 @@ CONFIGURE_ARGS+=--disable-octave
 MULTI_PACKAGES+=-octave
 .endif
 
-MODULES=		converters/libiconv
-
 WANTLIB-main=		${myWANTLIB} X11 Xau Xdmcp expat c fontconfig z png jpeg
 WANTLIB-c++ =		${myWANTLIB}
 WANTLIB-f77+=		${myWANTLIB} g2c
@@ -125,7 +123,7 @@ LIB_DEPENDS-octave=	plplotd,csirocsa::math/plplot,-main \
 			cruft,octave,octinterp::math/octave \
 			${myLIB_DEPENDS}
 LIB_DEPENDS-tcl=	plplotd,csirocsa::math/plplot,-main \
-			${TCLLIB}:tcl-${TCL_VERSION}.*:lang/tcl/${TCL_VERSION} \
+			${MODTCL_LIB_DEPENDS} \
 			${myLIB_DEPENDS}
 
 RUN_DEPENDS-main=	${MODLIBICONV_RUN_DEPENDS} ${myRUN_DEPENDS}
@@ -135,7 +133,7 @@ RUN_DEPENDS-octave=
 RUN_DEPENDS-tcl=
 
 pre-configure:
-	@perl -pi -e 's,tclsh,tclsh${TCL_VERSION},' ${WRKSRC}/scripts/mktclIndex
+	@perl -pi -e 's,tclsh,${MODTCL_BIN},' ${WRKSRC}/scripts/mktclIndex
 	@perl -pi -e 's/3plplot/3/g' ${DOCSRC}/*.3plplot
 	@cd ${DOCSRC} && for m in *.3plplot; do mv $$m $${m%\.3plplot}.3; done
 
