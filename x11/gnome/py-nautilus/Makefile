@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/16 12:50:14 sthen Exp $
 
 COMMENT=	nautilus Python bindings
 
 GNOME_PROJECT=	nautilus-python
 GNOME_VERSION=	0.5.1
-PKGNAME=	py-nautilus-${GNOME_VERSION}p2
+PKGNAME=	py-nautilus-${GNOME_VERSION}p3
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,7 +29,7 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	python${MODPY_VERSION}:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION} \
+LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		nautilus-extension.>=2::x11/gnome/nautilus
 RUN_DEPENDS=	::x11/gnome/py-gnome
 
