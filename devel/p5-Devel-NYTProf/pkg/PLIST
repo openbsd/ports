@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/21 14:55:19 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/16 23:52:24 bluhm Exp $
 bin/nytprofcsv
 bin/nytprofhtml
 ${P5ARCH}/
@@ -6,20 +6,28 @@ ${P5ARCH}/Devel/
 ${P5ARCH}/Devel/NYTProf/
 ${P5ARCH}/Devel/NYTProf.pm
 ${P5ARCH}/Devel/NYTProf/Apache.pm
+${P5ARCH}/Devel/NYTProf/Constants.pm
 ${P5ARCH}/Devel/NYTProf/Core.pm
 ${P5ARCH}/Devel/NYTProf/Data.pm
+${P5ARCH}/Devel/NYTProf/FileInfo.pm
 ${P5ARCH}/Devel/NYTProf/ReadStream.pm
 ${P5ARCH}/Devel/NYTProf/Reader.pm
+${P5ARCH}/Devel/NYTProf/SubInfo.pm
 ${P5ARCH}/Devel/NYTProf/Test.pm
 ${P5ARCH}/Devel/NYTProf/Util.pm
 ${P5ARCH}/Devel/NYTProf/js/
+${P5ARCH}/Devel/NYTProf/js/asc.png
+${P5ARCH}/Devel/NYTProf/js/bg.png
+${P5ARCH}/Devel/NYTProf/js/desc.png
 ${P5ARCH}/Devel/NYTProf/js/jquery.min.js
 ${P5ARCH}/Devel/NYTProf/js/jquery.tablesorter.min.js
+${P5ARCH}/Devel/NYTProf/js/style.tablesorter.css
 ${P5ARCH}/Devel/auto/
 ${P5ARCH}/Devel/auto/Devel/
 ${P5ARCH}/Devel/auto/Devel/NYTProf/
 ${P5ARCH}/Devel/auto/Devel/NYTProf/NYTProf.so
 ${P5ARCH}/Devel/benchmark.pl
+${P5ARCH}/Devel/perftest.pl
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/NYTProf/
