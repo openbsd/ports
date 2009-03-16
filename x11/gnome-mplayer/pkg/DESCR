@@ -1,0 +1,6 @@
+GNOME MPlayer is a simple GUI for MPlayer.
+It has a rich API that is exposed via DBus.  It is not highly dependent
+on the GNOME libraries, but its look and feel is based on the GNOME HIG.
+
+The player can be used to play media on websites when used 
+with Gecko Mediaplayer.

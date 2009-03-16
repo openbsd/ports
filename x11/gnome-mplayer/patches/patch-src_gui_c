@@ -1,0 +1,52 @@
+$OpenBSD: patch-src_gui_c,v 1.1.1.1 2009/03/16 09:53:18 ajacoutot Exp $
+--- src/gui.c.orig	Sat Jan 31 01:18:04 2009
++++ src/gui.c	Fri Feb  6 11:26:59 2009
+@@ -3947,32 +3947,41 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+     tooltip = gtk_tooltips_new();
+     gtk_tooltips_set_tip(tooltip, config_ao,
+                          _
+-                         ("mplayer audio output device\nalsa or oss should always work, try esd in gnome, arts in kde, or pulse on newer distributions"),
++                         ("mplayer audio output device\nOn Linux, alsa or oss should always work\nTry esd in gnome, arts in kde, or pulse on newer Linux distributions\nOn OpenBSD, use sndio"),
+                          NULL);
+     if (config_ao != NULL) {
+         gtk_combo_box_append_text(GTK_COMBO_BOX(config_ao), "alsa");
++        gtk_combo_box_append_text(GTK_COMBO_BOX(config_ao), "sndio");
++        gtk_combo_box_append_text(GTK_COMBO_BOX(config_ao), "sun");
+         gtk_combo_box_append_text(GTK_COMBO_BOX(config_ao), "arts");
+         gtk_combo_box_append_text(GTK_COMBO_BOX(config_ao), "esd");
+         gtk_combo_box_append_text(GTK_COMBO_BOX(config_ao), "jack");
+         gtk_combo_box_append_text(GTK_COMBO_BOX(config_ao), "oss");
+         gtk_combo_box_append_text(GTK_COMBO_BOX(config_ao), "pulse");
++        gtk_combo_box_append_text(GTK_COMBO_BOX(config_ao), "rtunes");
+         if (ao != NULL) {
+             if (strcmp(ao, "alsa") == 0)
+                 gtk_combo_box_set_active(GTK_COMBO_BOX(config_ao), 0);
+-            if (strcmp(ao, "arts") == 0)
++            if (strcmp(ao, "sndio") == 0)
+                 gtk_combo_box_set_active(GTK_COMBO_BOX(config_ao), 1);
+-            if (strcmp(ao, "esd") == 0)
++            if (strcmp(ao, "sun") == 0)
+                 gtk_combo_box_set_active(GTK_COMBO_BOX(config_ao), 2);
+-            if (strcmp(ao, "jack") == 0)
++            if (strcmp(ao, "arts") == 0)
+                 gtk_combo_box_set_active(GTK_COMBO_BOX(config_ao), 3);
+-            if (strcmp(ao, "oss") == 0)
++            if (strcmp(ao, "esd") == 0)
+                 gtk_combo_box_set_active(GTK_COMBO_BOX(config_ao), 4);
+-            if (strcmp(ao, "pulse") == 0)
++            if (strcmp(ao, "jack") == 0)
+                 gtk_combo_box_set_active(GTK_COMBO_BOX(config_ao), 5);
++            if (strcmp(ao, "oss") == 0)
++                gtk_combo_box_set_active(GTK_COMBO_BOX(config_ao), 6);
++            if (strcmp(ao, "pulse") == 0)
++                gtk_combo_box_set_active(GTK_COMBO_BOX(config_ao), 7);
++            if (strcmp(ao, "rtunes") == 0)
++                gtk_combo_box_set_active(GTK_COMBO_BOX(config_ao), 8);
+             if (gtk_combo_box_get_active(GTK_COMBO_BOX(config_ao))
+                 == -1) {
+                 gtk_combo_box_append_text(GTK_COMBO_BOX(config_ao), ao);
+-                gtk_combo_box_set_active(GTK_COMBO_BOX(config_ao), 6);
++                gtk_combo_box_set_active(GTK_COMBO_BOX(config_ao), 9);
+             }
+         }
+     }
