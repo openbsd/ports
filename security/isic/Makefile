@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2009/03/16 11:07:29 sthen Exp $
 
 COMMENT=	IP stack integrity checker
 
 DISTNAME=	isic-0.07
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
 
 HOMEPAGE=	http://isic.sourceforge.net/
@@ -17,7 +18,7 @@ WANTLIB=		c
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isic/}
 EXTRACT_SUFX=	.tgz
 
-LIB_DEPENDS=	lib/libnet-1.1/net.=11:libnet-1.1*:net/libnet/1.1
+LIB_DEPENDS=	lib/libnet-1.1/net.=11:libnet->=1.1,<1.2:net/libnet/1.1
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libnet-1.1 \
