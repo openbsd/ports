@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/25 21:05:33 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/16 22:55:31 sthen Exp $
 
 COMMENT=		filter, redirector and access controller for Squid
 
 DISTNAME=		squidGuard-1.2.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.squidguard.org/
 
 MAINTAINER=		Claudio Correa <correa@pucpcaldas.br>
 
-# GPL
+# GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -24,7 +24,7 @@ CONFIG_DIR=		${SYSCONFDIR}/squidguard
 CONFIG_FILE=		${CONFIG_DIR}/squidguard.conf
 SUBST_VARS=		SG_DIR CONFIG_DIR CONFIG_FILE
 
-LIB_DEPENDS=		lib/db4/db.>=4:db-4.*:databases/db/v4
+LIB_DEPENDS=		lib/db4/db.>=4:db->=4,<5:databases/db/v4
 RUN_DEPENDS=		::www/squid
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
