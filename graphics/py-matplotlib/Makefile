@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/01/19 07:10:28 djm Exp $
+# $OpenBSD: Makefile,v 1.28 2009/03/16 08:56:32 espie Exp $
 
 VMEM_WARNING=	Yes
 SHARED_ONLY=	Yes
@@ -6,7 +6,7 @@ SHARED_ONLY=	Yes
 COMMENT=	Python charting and plotting API
 
 DISTNAME=	matplotlib-0.98.5.2
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	graphics devel math
 
 HOMEPAGE=	http://matplotlib.sourceforge.net/
@@ -36,7 +36,7 @@ RUN_DEPENDS=	::math/py-numpy \
 		::devel/py-dateutil
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	png.>=3::graphics/png \
-		tk84.>=1::x11/tk/8.4
+		tk84.>=1:tk->=8.4,<8.5:x11/tk/8.4
 
 MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng" \
 		LDSHARED="${CC} -shared -fPIC"

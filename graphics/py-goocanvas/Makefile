@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/21 15:35:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/16 08:56:32 espie Exp $
 
 COMMENT=		Python bindings for goocanvas
 
 GNOME_PROJECT=		pygoocanvas
 GNOME_VERSION=		0.12.0
-PKGNAME=		py-goocanvas-${VERSION}
+PKGNAME=		py-goocanvas-${VERSION}p0
 
 CATEGORIES=		graphics
 
