@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/16 10:38:09 sthen Exp $
 
 COMMENT=		Tcl bindings for Curl
 SHARED_ONLY=		Yes
 
 DISTNAME=		TclCurl-0.10.5
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		net
 
 HOMEPAGE=		http://personal.iddeo.es/andresgarci/tclcurl/english/
@@ -18,12 +18,14 @@ WANTLIB=		crypto idn ssl z
 
 MASTER_SITES=		${HOMEPAGE}download/tarball/
 
+MODULES=		lang/tcl
+MODTCL_VERSION=		8.4
 LIB_DEPENDS=    	curl.>=2.2::net/curl \
-			tclstub84:tcl-8.4.*:lang/tcl/8.4
+			${MODTCL_LIB_DEPENDS:S/tcl/tclstub/}
 
 CONFIGURE_STYLE=	gnu dest
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
-			--with-tclinclude=${LOCALBASE}/include/tcl8.4/ 
+CONFIGURE_ARGS+=	--with-tcl=${MODTCL_LIBDIR} \
+			--with-tclinclude=${MODTCL_INCDIR}
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 
 # broken in this version
@@ -33,14 +35,14 @@ NO_REGRESS=		Yes
 MAN_FILES=		tclcurl.n tclcurl_multi.n
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/tcl8.4/tclcurl0.105
+	${INSTALL_DATA_DIR} ${WRKINST}/${MODTCL_LIBDIR}/tclcurl0.105
 	${INSTALL_DATA} ${WRKDIST}/libtclcurl0105.so \
-		${PREFIX}/lib/tcl8.4/tclcurl0.105
+		${WRKINST}/${MODTCL_LIBDIR}/tclcurl0.105
 	${INSTALL_DATA} ${WRKDIST}/generic/tclcurl.tcl \
-		${PREFIX}/lib/tcl8.4/tclcurl0.105
+		${WRKINST}/${MODTCL_LIBDIR}/tclcurl0.105
 	${INSTALL_MAN_DIR} ${PREFIX}/man/mann
 	${INSTALL_DATA} ${WRKDIST}/pkgIndex.tcl \
-		${PREFIX}/lib/tcl8.4/tclcurl0.105
+		${WRKINST}/${MODTCL_LIBDIR}/tclcurl0.105
 .for file in ${MAN_FILES}
 	${INSTALL_DATA} ${WRKDIST}/doc/${file} ${PREFIX}/man/mann
 .endfor
