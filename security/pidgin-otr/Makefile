@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/07/18 13:22:01 dhill Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/16 17:31:57 sthen Exp $
 
 COMMENT=	allows deniable private conversations using Pidgin
 
@@ -36,8 +36,8 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 
 AUTOCONF_VERSION=2.59
 AUTOMAKE_VERSION=1.9
-BUILD_DEPENDS+=	:autoconf-${AUTOCONF_VERSION}*:devel/autoconf/${AUTOCONF_VERSION} \
-		:automake-${AUTOMAKE_VERSION}*:devel/automake/${AUTOMAKE_VERSION}
+BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
