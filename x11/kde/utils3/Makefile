@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2008/08/27 13:39:27 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2009/03/16 12:53:03 sthen Exp $
 
 COMMENT = 		K Desktop Environment, utilities
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeutils-${VERSION}
-PKGNAME =		${DISTNAME}
+PKGNAME =		${DISTNAME}p0
 MODKDE_VERSION =		3.5.8
 SHARED_LIBS +=	khexeditcommon       1.0      # .0.0
 SHARED_LIBS +=	kcmlaptop            1.0      # .0.0
@@ -16,7 +16,7 @@ RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS =	DCOP,kabc,kdecore.>=6,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \
 		netsnmp::net/net-snmp \
 		gmp::devel/gmp \
-		python2.5:python-2.5.*:lang/python/2.5 \
+		python2.5:python->=2.5,<2.6:lang/python/2.5 \
 		xmms::audio/xmms \
 		gtk,gdk::x11/gtk+
 

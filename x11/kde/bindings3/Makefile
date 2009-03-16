@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2009/02/09 20:48:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2009/03/16 12:56:05 sthen Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN =			gcc spins on x_20.cpp
@@ -8,7 +8,7 @@ COMMENT = 		K Desktop Environment, extra language support
 CATEGORIES =		x11 x11/kde devel
 VERSION =		3.5.10
 DISTNAME =		kdebindings-${VERSION}
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	kjsembed             2.0      # .1.0
 SHARED_LIBS +=	smokeqt              4.0      # .3.2
@@ -25,7 +25,7 @@ WANTLIB =	GLU Xext stdc++ X11 util m ICE Xrender SM pthread \
 		Xau Xdmcp expat fam freetype rpcsvc intl
 
 PYTHON_VER =		2.5
-BUILD_DEPENDS =		:python-${PYTHON_VER}.*:lang/python/${PYTHON_VER}
+BUILD_DEPENDS =		:python->=${PYTHON_VER},<2.6:lang/python/${PYTHON_VER}
 #			::devel/tmake
 
 MAKE_FLAGS +=		TMAKEPATH=${LOCALBASE}/share/tmake/openbsd-g++/ \
