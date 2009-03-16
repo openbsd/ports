@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2007/12/16 22:20:52 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2009/03/16 22:44:19 sthen Exp $
 
 COMMENT=		GnuPG Made Easy
 
 DISTNAME=		gpgme-1.1.5
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	security devel
 SHARED_LIBS=		gpgme-pthread	17.0 \
 			gpgme		17.0
@@ -22,7 +23,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-gpgsm
 
 MODULES=		devel/gettext
-RUN_DEPENDS=		:gnupg->=1.4.*:security/gnupg
+RUN_DEPENDS=		:gnupg->=1.4,<1.5:security/gnupg
 BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		gpg-error:libgpg-error->=1.4:security/libgpg-error
 

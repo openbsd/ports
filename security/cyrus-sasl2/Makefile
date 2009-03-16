@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2008/05/14 07:38:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2009/03/16 22:44:19 sthen Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.22
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 SHARED_LIBS=	anonymous	2.22 \
 		crammd5		2.22 \
 		digestmd5	2.22 \
@@ -60,7 +60,7 @@ PKG_ARGS?=	-Dsql=0
 CONFIGURE_ARGS+=--with-dblib=berkeley \
 		--with-bdb-libdir="${LOCALBASE}/lib/db4" \
 		--with-bdb-incdir="${LOCALBASE}/include/db4"
-LIB_DEPENDS+=	lib/db4/db.>=4:db-4.*:databases/db/v4
+LIB_DEPENDS+=	lib/db4/db.>=4:db->=4,<5:databases/db/v4
 .else
 CONFIGURE_ARGS+=--with-dblib=ndbm \
 		--without-bdb-libdir \
@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=--with-dblib=ndbm \
 
 .if ${FLAVOR:L:Mldap}
 WANTLIB+=	ssl
-LIB_DEPENDS+=	ldap.>=2,lber:openldap-client-2.*:databases/openldap
+LIB_DEPENDS+=	ldap.>=2,lber:openldap-client->=2,<3:databases/openldap
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} \
 		--enable-ldapdb
 .else

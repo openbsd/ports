@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/04/01 09:59:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2009/03/16 22:44:19 sthen Exp $
 
 COMMENT=	encrypt and decrypt AES files and streams
 
@@ -25,7 +25,7 @@ FLAVORS=	emacs21
 FLAVOR?=
 
 .if ${FLAVOR:L:Memacs21}
-BUILD_DEPENDS=	:emacs-21.*:editors/emacs21
+BUILD_DEPENDS=	:emacs->=21,<22:editors/emacs21
 .endif
 
 .include <bsd.port.mk>
