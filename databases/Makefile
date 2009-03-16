@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.156 2009/02/06 22:03:55 simon Exp $
+# $OpenBSD: Makefile,v 1.157 2009/03/16 22:09:24 bernd Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
+     SUBDIR += apache-couchdb
      SUBDIR += db
      SUBDIR += dbh
      SUBDIR += directoryassistant
