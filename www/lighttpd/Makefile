@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2009/03/08 11:13:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2009/03/16 17:15:34 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
 DISTNAME=	lighttpd-1.4.22
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www net
 MASTER_SITES=	${HOMEPAGE}/download/
 
@@ -21,6 +22,7 @@ WANTLIB=		c crypto m ssl z
 
 LIB_DEPENDS+=	pcre::devel/pcre \
 		lua.>=5.1::lang/lua
+RUN_DEPENDS+=	:spawn-fcgi-*:www/spawn-fcgi
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
