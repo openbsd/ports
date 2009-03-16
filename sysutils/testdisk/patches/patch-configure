@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2009/03/15 20:11:01 landry Exp $
+$OpenBSD: patch-configure,v 1.2 2009/03/16 10:46:52 landry Exp $
 --- configure.orig	Thu Jul 17 13:16:30 2008
-+++ configure	Sat Feb 21 19:37:21 2009
++++ configure	Mon Mar 16 11:25:40 2009
 @@ -8354,7 +8354,7 @@ if test "${ac_cv_lib_ext2fs_ext2fs_open+set}" = set; t
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -28,3 +28,12 @@ $OpenBSD: patch-configure,v 1.1.1.1 2009/03/15 20:11:01 landry Exp $
        else
          LIBS="$LIBS ${com_err_lib_a}"
        fi
+@@ -8950,7 +8950,7 @@ fi
+ 
+ 
+ 
+-for ac_header in sys/uuid.h uuid/uuid.h uuid.h
++for ac_header in sys/uuid.h uuid/uuid.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
