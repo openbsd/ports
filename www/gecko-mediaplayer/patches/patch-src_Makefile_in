@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/03/16 13:00:19 ajacoutot Exp $
+--- src/Makefile.in.orig	Wed Feb 11 15:51:28 2009
++++ src/Makefile.in	Mon Mar 16 12:44:52 2009
+@@ -266,7 +266,7 @@ COMMONCODE = \
+ 	npp_gate.cpp \
+ 	npupp.h
+ 
+-install_libexecdir = $(libdir)/mozilla/plugins
++install_libexecdir = $(libdir)/mozilla-plugins
+ gecko_mediaplayer_so_SOURCES = \
+ 	plugin_types_std.cpp \
+ 	$(COMMONCODE)
