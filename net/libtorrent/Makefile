@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2008/11/25 16:21:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2009/03/16 11:05:54 sthen Exp $
 
 COMMENT=		BitTorrent library written in C++
 
 DISTNAME=		libtorrent-0.12.4
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=  	torrent              15.0     # .11.4
 CATEGORIES=		net devel
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}downloads/
 
 WANTLIB=		crypto
-LIB_DEPENDS=		sigc-2.0:libsigc++-2.*:devel/libsigc++-2
+LIB_DEPENDS=		sigc-2.0:libsigc++->=2,<3:devel/libsigc++-2
 
 USE_LIBTOOL=		Yes
 

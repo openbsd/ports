@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/01/21 10:50:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/16 11:05:54 sthen Exp $
 
 COMMENT=		GUI for dctc (Direct Connect Text Clone)
 
 V=			0.80
 DISTNAME=		dc_gui2-$V
-PKGNAME=		dc_gui-$Vp0
+PKGNAME=		dc_gui-$Vp1
 CATEGORIES=		net x11
 HOMEPAGE=		http://ac2i.homelinux.com/dctc/
 
@@ -32,7 +32,7 @@ BUILD_DEPENDS=		:dctc->=0.85.9:net/dctc
 RUN_DEPENDS=		::devel/desktop-file-utils \
 			:dctc->=0.85.9:net/dctc \
 			::x11/gnome/yelp
-LIB_DEPENDS=		db:db-4.*:databases/db/v4 \
+LIB_DEPENDS=		db:db->=4,<5:databases/db/v4 \
 			curl::net/curl \
 			gnomeui-2::x11/gnome/libgnomeui
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2008/08/31 16:29:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/16 11:05:54 sthen Exp $
 
 COMMENT=		Direct Connect clone
 
 DISTNAME=		dctc-0.85.9
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		net
 HOMEPAGE=		http://ac2i.homelinux.com/dctc/
 
@@ -19,7 +19,7 @@ MODULES=		devel/gettext
 
 WANTLIB=		c gpg-error m pcre pthread z
 
-LIB_DEPENDS=		db:db-4.*:databases/db/v4 \
+LIB_DEPENDS=		db:db->=4,<5:databases/db/v4 \
 			glib-2.0,gthread-2.0::devel/glib2 \
 			gcrypt::security/libgcrypt \
 			xml2::textproc/libxml
