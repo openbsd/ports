@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.390 2009/03/15 12:21:15 fgsch Exp $
+# $OpenBSD: Makefile,v 1.391 2009/03/16 13:20:41 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -33,6 +33,7 @@
      SUBDIR += ffproxy
      SUBDIR += firefox-i18n
      SUBDIR += galeon
+     SUBDIR += gecko-mediaplayer
      SUBDIR += gnash
      SUBDIR += gtkhtml3
      SUBDIR += havp
