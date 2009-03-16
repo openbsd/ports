@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.64 2008/02/03 20:39:11 fkr Exp $
+# $OpenBSD: Makefile,v 1.65 2009/03/16 17:52:52 sthen Exp $
 
 COMMENT=	Flexible mail transfer agent
 DISTNAME=	exim-4.69
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.exim.org/pub/exim/exim4/ \
 		http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/ \
@@ -60,7 +61,7 @@ EXIM_MAKECAT+=		"LOOKUP_LDAP=yes\n"
 EXIM_MAKECAT+=		"LDAP_LIB_TYPE=OPENLDAP2\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lldap -llber
-LIB_DEPENDS+=		ldap.>=2,lber:openldap-client-2.*:databases/openldap
+LIB_DEPENDS+=		ldap.>=2,lber:openldap-client->=2,<3:databases/openldap
 .endif
 
 .if ${FLAVOR:L:Miconv}

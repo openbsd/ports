@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/06/08 10:55:25 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/16 17:52:52 sthen Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -8,7 +8,7 @@ COMMENT-pgsql=	PostgreSQL backend for perdition mail proxy
 DISTVER=	1.17.1
 DISTNAME=	perdition-${DISTVER}
 PKGNAME-main=	${DISTNAME}
-PKGNAME-ldap=	perdition-ldap-${DISTVER}
+PKGNAME-ldap=	perdition-ldap-${DISTVER}p0
 PKGNAME-mysql=  perdition-mysql-${DISTVER}
 PKGNAME-pgsql=  perdition-pgsql-${DISTVER}
 
@@ -69,8 +69,8 @@ MULTI_PACKAGES+=	-ldap
 CONFIGURE_ARGS+=	--with-ldap-libraries=${LOCALBASE}/lib \
 			--with-ldap-includes=${LOCALBASE}/include \
 			--disable-ldap-doc
-LIB_DEPENDS-ldap=		sasl2::security/cyrus-sasl2 \
-			ldap.>=2,lber.>=2:openldap-client-2.*:databases/openldap
+LIB_DEPENDS-ldap=	sasl2::security/cyrus-sasl2 \
+			ldap.>=2,lber.>=2:openldap-client->=2,<3:databases/openldap
 WANTLIB-ldap= 		asn1 com_err crypto gssapi krb5 ssl util
 .endif
 
