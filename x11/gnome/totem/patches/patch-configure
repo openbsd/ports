@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2009/03/16 12:02:55 ajacoutot Exp $
+--- configure.orig	Mon Mar 16 12:54:09 2009
++++ configure	Mon Mar 16 12:54:14 2009
+@@ -22569,7 +22569,7 @@ echo "$as_me: error:
+ 		fi
+ 	done
+ 
+-		for good_element in gconfaudiosink gconfvideosink goom
++		for good_element in gconfaudiosink gconfvideosink
+ 	do
+ 		{ echo "$as_me:$LINENO: checking GStreamer 0.10 $good_element plugin" >&5
+ echo $ECHO_N "checking GStreamer 0.10 $good_element plugin... $ECHO_C" >&6; }
