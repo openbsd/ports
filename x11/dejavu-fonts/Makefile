@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/29 16:09:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/17 19:45:23 sthen Exp $
 
 COMMENT =		TrueType fonts based on the Bitstream Vera fonts
 
-DISTNAME =		dejavu-fonts-ttf-2.28
+DISTNAME =		dejavu-fonts-ttf-2.29
 PKGNAME =		${DISTNAME:S,-ttf,,}
 
 CATEGORIES =		x11
