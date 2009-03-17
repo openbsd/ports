@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/06 19:15:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2009/03/17 19:32:44 sthen Exp $
 
 COMMENT=	emacs interface to PGP and GnuPG
 
 DISTNAME=	mailcrypt-3.5.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=     mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mailcrypt/}
 
@@ -19,21 +19,21 @@ CONFIGURE_STYLE= gnu dest
 FLAVORS=	gnupg pgp pgp5 
 FLAVOR?=	gnupg
 
-BUILD_DEPENDS=	:emacs-21.*:editors/emacs21
+BUILD_DEPENDS=	:emacs->=21,<22:editors/emacs21
 
 .if ${FLAVOR:L:Mgnupg}
 RUN_DEPENDS=	:gnupg-*:security/gnupg
 .endif
 
 .if ${FLAVOR:L:Mpgp}
-RUN_DEPENDS=	:pgp-2.*:security/pgp
+RUN_DEPENDS=	:pgp->=2,<3:security/pgp
 .endif
 
 .if ${FLAVOR:L:Mpgp5}
-RUN_DEPENDS=	:pgp-5.*:security/pgp5
+RUN_DEPENDS=	:pgp->=5,<6:security/pgp5
 .endif
 
-REGRESS_DEPENDS=	:python-2.3*:lang/python/2.3
+REGRESS_DEPENDS=	:python->=2.3,<2.4:lang/python/2.3
 
 pre-regress:
 	@perl -i -pe 's:%%LOCALBASE%%:${LOCALBASE}:' \

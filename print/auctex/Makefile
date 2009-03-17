@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2008/05/07 05:10:30 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/17 19:32:44 sthen Exp $
 
 COMMENT=	extensible emacs interface for TeX
 
 DISTNAME=	auctex-11.14
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.gnu.org/software/auctex/
@@ -20,9 +20,9 @@ MASTER_SITES=	${MASTER_SITE_GNU:=auctex/11.14/}
 
 FAKE_FLAGS=	lispdir=${DESTDIR}${PREFIX}/share/emacs/site-lisp
 
-RUN_DEPENDS=	:emacs-21.*:editors/emacs21 \
+RUN_DEPENDS=	:emacs->=21,<22:editors/emacs21 \
 		::print/texlive/base
-BUILD_DEPENDS=	:emacs-21.*:editors/emacs21
+BUILD_DEPENDS=	:emacs->=21,<22:editors/emacs21
 
 post-install:
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/emacs/site-lisp/auctex
