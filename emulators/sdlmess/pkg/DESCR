@@ -1,0 +1,6 @@
+MESS stands for Multi Emulator Super System. It is an emulator for the
+hardware of many different games consoles (e.g. Sega, NES, SNES, etc.)
+as well as many different old games-oriented home computers (e.g. C64,
+C128, ZX80, etc.)
+
+SDLMESS is a port of MESS using the SDL library.

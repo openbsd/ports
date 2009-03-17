@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/17 19:58:21 landry Exp $
+@bin bin/dat2html
+@bin bin/imgtool
+@bin bin/sdlmess
+share/doc/sdlmess/
+share/doc/sdlmess/SDLMESS.txt
+share/doc/sdlmess/config.txt
+share/doc/sdlmess/credits.htm
+share/doc/sdlmess/faq.htm
+share/doc/sdlmess/imgtool.txt
+share/doc/sdlmess/license.txt
+share/doc/sdlmess/mame.txt
+share/doc/sdlmess/messnew.txt
+share/doc/sdlmess/newvideo.txt
+share/doc/sdlmess/sysinfo.dat
+share/sdlmess/
+share/sdlmess/keymaps/
+share/sdlmess/keymaps/km-be.txt
+share/sdlmess/keymaps/km-ch.txt
+share/sdlmess/keymaps/km-de.txt
+share/sdlmess/keymaps/km-fr.txt
+share/sdlmess/keymaps/km_it.txt
