@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/01/03 21:27:25 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/03/17 16:01:17 ajacoutot Exp $
 %%SHARED%%
 bin/libglade-convert
 include/libglade-2.0/
@@ -34,8 +34,8 @@ share/gtk-doc/html/libglade/right.png
 share/gtk-doc/html/libglade/style.css
 share/gtk-doc/html/libglade/up.png
 share/libxml2/libglade2.spec
-@exec %D/share/libxml2/rebuild
-@unexec %D/share/libxml2/rebuild
 share/xml/
 share/xml/libglade/
 share/xml/libglade/glade-2.0.dtd
+@exec %D/share/libxml2/rebuild
+@unexec %D/share/libxml2/rebuild
