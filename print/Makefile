@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.78 2008/12/15 14:07:21 sturm Exp $
+#	$OpenBSD: Makefile,v 1.79 2009/03/17 18:38:22 ajacoutot Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -58,6 +58,7 @@
     SUBDIR += py-cups
     SUBDIR += py-reportlab
     SUBDIR += scribus
+    SUBDIR += splix
     SUBDIR += system-config-printer
     SUBDIR += t1utils
     SUBDIR += texlive
