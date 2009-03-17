@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/01 19:48:46 steven Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/03/17 00:24:28 sthen Exp $
 @option no-default-conflict
 @conflict tk->=8.5,<8.6
 %%SHARED%%
 @bin bin/wish8.5
 include/tk8.5/
 include/tk8.5/generic/
+include/tk8.5/generic/default.h
 include/tk8.5/generic/tk.h
 include/tk8.5/generic/tkDecls.h
 include/tk8.5/generic/tkInt.h
@@ -19,6 +20,7 @@ include/tk8.5/tk.h
 include/tk8.5/tkDecls.h
 include/tk8.5/tkPlatDecls.h
 include/tk8.5/unix/
+include/tk8.5/unix/tkUnixDefault.h
 include/tk8.5/unix/tkUnixInt.h
 include/tk8.5/unix/tkUnixPort.h
 lib/libtk85.a

@@ -1,6 +1,6 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.3 2008/10/21 21:34:41 steven Exp $
---- unix/Makefile.in.orig	Tue Oct 14 21:44:45 2008
-+++ unix/Makefile.in	Tue Oct 21 23:26:45 2008
+$OpenBSD: patch-unix_Makefile_in,v 1.4 2009/03/17 00:24:28 sthen Exp $
+--- unix/Makefile.in.orig	Mon Dec 22 13:52:02 2008
++++ unix/Makefile.in	Wed Mar 11 13:18:07 2009
 @@ -92,6 +92,9 @@ HTML_DIR		= @HTML_DIR@
  # Directory in which to install html documentation:
  HTML_INSTALL_DIR	= $(INSTALL_ROOT)$(HTML_DIR)
@@ -11,17 +11,26 @@ $OpenBSD: patch-unix_Makefile_in,v 1.3 2008/10/21 21:34:41 steven Exp $
  # The directory containing the Tcl sources and headers appropriate
  # for this version of Tk ("srcdir" will be replaced or has already
  # been replaced by the configure script):
-@@ -547,8 +550,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
+@@ -537,7 +540,8 @@ AQUA_XLIB_HDRS = $(XLIB_DIR)/X11/*.h $(XLIB_DIR)/xbyte
  
+ AQUA_PRIVATE_HDRS = $(MAC_OSX_DIR)/tkMacOSXPort.h $(MAC_OSX_DIR)/tkMacOSXInt.h
+ 
+-X11_PRIVATE_HDRS = $(UNIX_DIR)/tkUnixPort.h $(UNIX_DIR)/tkUnixInt.h
++X11_PRIVATE_HDRS = $(UNIX_DIR)/tkUnixPort.h $(UNIX_DIR)/tkUnixInt.h \
++	$(UNIX_DIR)/tkUnixDefault.h
+ 
+ # Currently private, eventually public
+ TTK_HDRS = $(TTK_DIR)/ttkTheme.h $(TTK_DIR)/ttkDecls.h
+@@ -548,7 +552,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
  # The private headers we want installed for install-private-headers
  PRIVATE_HDRS = $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
--	$(GENERIC_DIR)/tkIntPlatDecls.h $(GENERIC_DIR)/tkPort.h \
+ 	$(GENERIC_DIR)/tkIntPlatDecls.h $(GENERIC_DIR)/tkPort.h \
 -	$(TTK_HDRS) $(@TK_WINDOWINGSYSTEM@_PRIVATE_HDRS)
-+	$(GENERIC_DIR)/tkIntPlatDecls.h $(GENERIC_DIR)/tkPort.h
++	$(GENERIC_DIR)/default.h
  
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
  
-@@ -560,7 +562,7 @@ SHELL_ENV = \
+@@ -560,7 +564,7 @@ SHELL_ENV = \
  
  all: binaries libraries doc
  
@@ -30,7 +39,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.3 2008/10/21 21:34:41 steven Exp $
  
  libraries:
  
-@@ -580,6 +582,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+@@ -580,6 +584,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
  
@@ -41,7 +50,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.3 2008/10/21 21:34:41 steven Exp $
  # Build Aqua resource files
  ${TK_RSRC_FILE}: $(AQUA_RESOURCES)
  	rm -f $@
-@@ -635,7 +641,6 @@ xttest: test.o tkTest.o tkSquare.o $(TK_LIB_FILE)
+@@ -635,7 +643,6 @@ xttest: test.o tkTest.o tkSquare.o $(TK_LIB_FILE)
  #	% make test TESTFLAGS="-verbose bps -file fileName.test"
  
  test: test-classic test-ttk
@@ -49,7 +58,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.3 2008/10/21 21:34:41 steven Exp $
  
  test-classic: tktest
  	$(SHELL_ENV) ./tktest $(TEST_DIR)/all.tcl -geometry +0+0 $(TESTFLAGS)
-@@ -688,18 +693,14 @@ install-strip:
+@@ -688,18 +695,14 @@ install-strip:
  # possible (e.g. if installing as root).
  
  install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
@@ -70,7 +79,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.3 2008/10/21 21:34:41 steven Exp $
  	@if test "x$(TK_SHARED_BUILD)" = "x1"; then \
  	    echo "Creating package index $(PKG_INDEX)"; \
  	    rm -f "$(PKG_INDEX)"; \
-@@ -709,19 +710,20 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+@@ -709,19 +712,20 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
  	    echo "package ifneeded Tk $(MAJOR_VERSION).$(MINOR_VERSION)$(PATCH_LEVEL)\
  		[list load [file join \$$dir $${relative}$(TK_LIB_FILE)] Tk]";\
  	    ) > "$(PKG_INDEX)"; \
@@ -94,7 +103,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.3 2008/10/21 21:34:41 steven Exp $
  	@if test "$(STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    @INSTALL_STUB_LIB@ ; \
-@@ -732,24 +734,35 @@ install-libraries: libraries
+@@ -732,24 +736,35 @@ install-libraries: libraries
  	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \
  	    XLIB_INCLUDE_INSTALL_DIR="$(INCLUDE_INSTALL_DIR)"/X11; fi; \
  	for i in "$(INCLUDE_INSTALL_DIR)" "$${XLIB_INCLUDE_INSTALL_DIR}" \
@@ -135,7 +144,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.3 2008/10/21 21:34:41 steven Exp $
  	@list='$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)'; for i in $$list ; \
  	    do \
  	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"/X11; \
-@@ -783,34 +796,33 @@ install-libraries: libraries
+@@ -783,34 +798,33 @@ install-libraries: libraries
  	    done;
  
  install-demos:
@@ -178,7 +187,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.3 2008/10/21 21:34:41 steven Exp $
  		fi; \
  	    done;
  
-@@ -822,8 +834,7 @@ install-doc:
+@@ -822,8 +836,7 @@ install-doc:
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \

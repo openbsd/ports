@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/12/26 23:36:27 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/17 00:24:28 sthen Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
 V =			8.5.6
 DISTNAME =		tk${V}
-PKGNAME =		tk-${V}
+PKGNAME =		tk-${V}p0
 
 SHARED_LIBS =		tk85 0.3
 
@@ -24,8 +24,6 @@ WANTLIB =		X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig freetype m z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
-
-LIB_DEPENDS =           tcl85:tcl-${V}:lang/tcl/8.5
 
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 MAKE_FLAGS +=		TK_BUILD_EXP_FILE="libtk85.a" \
@@ -68,6 +66,9 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mthreaded}
 CONFIGURE_ARGS +=	--enable-threads
 WANTLIB +=		pthread
+LIB_DEPENDS =		tcl85:tcl->=$V,<8.5.7-${FLAVOR}:lang/tcl/8.5
+.else
+LIB_DEPENDS =		tcl85:tcl->=$V,<8.5.7:lang/tcl/8.5
 .endif
 
 WRKSRC =		${WRKDIST}/unix
