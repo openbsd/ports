@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/01/10 01:04:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2009/03/17 15:35:37 sthen Exp $
 @newgroup _silcd:512
 @newuser _silcd:512:_silcd:daemon:Silc-server Account:/nonexistent:/sbin/nologin
 @man man/man5/silcd.conf.5
@@ -39,6 +39,6 @@ share/examples/silcd/silcd.conf
 @owner _silcd
 @group _silcd
 @sample ${CONFDIR}/silcd.conf
+@extraunexec rm -rf /var/log/silcd/*
 @comment share/examples/silcd/silcd.prv
 @comment share/examples/silcd/silcd.pub
-@extraunexec rm -rf /var/log/silcd/*
