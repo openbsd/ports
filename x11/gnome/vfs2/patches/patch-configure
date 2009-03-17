@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.11 2007/11/14 14:59:22 martynas Exp $
---- configure.orig	Mon Nov 12 11:30:09 2007
-+++ configure	Mon Nov 12 16:19:58 2007
-@@ -33671,7 +33671,7 @@ if test "${openssl_libs+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+$OpenBSD: patch-configure,v 1.12 2009/03/17 15:53:37 ajacoutot Exp $
+--- configure.orig	Tue Mar 17 14:55:00 2009
++++ configure	Tue Mar 17 16:44:51 2009
+@@ -34747,7 +34747,7 @@ if test "${openssl_libs+set}" = set; then
+   $as_echo_n "(cached) " >&6
  else
  
 -		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto -ldl"
@@ -10,8 +10,8 @@ $OpenBSD: patch-configure,v 1.11 2007/11/14 14:59:22 martynas Exp $
  		cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -33956,7 +33956,7 @@ if test "${openssl_libs+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -35041,7 +35041,7 @@ if test "${openssl_libs+set}" = set; then
+   $as_echo_n "(cached) " >&6
  else
  
 -		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto -ldl"
@@ -19,8 +19,8 @@ $OpenBSD: patch-configure,v 1.11 2007/11/14 14:59:22 martynas Exp $
  		cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -38615,7 +38615,7 @@ if test "${ac_cv_lib_fam_FAMOpen+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -39706,7 +39706,7 @@ if test "${ac_cv_lib_fam_FAMOpen+set}" = set; then
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lfam  $LIBS"
