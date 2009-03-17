@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:50:09 espie Exp $
-bin/gtksee
-share/locale/
-share/locale/zh_CN.EUC/
-share/locale/zh_CN.EUC/LC_MESSAGES/
-share/locale/zh_CN.EUC/LC_MESSAGES/gtksee.mo
