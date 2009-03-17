@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2009/03/14 10:40:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2009/03/17 12:39:16 ajacoutot Exp $
 %%SHARED%%
 @bin bin/evolution
 include/evolution-${R}/
@@ -2236,6 +2236,7 @@ share/omf/evolution/evolution-mk.omf
 share/omf/evolution/evolution-oc.omf
 share/omf/evolution/evolution-ru.omf
 share/omf/evolution/evolution-sv.omf
+@unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/evolution/eplugin/disabled
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/evolution/*.schemas > /dev/null
 share/schemas/evolution/
 share/schemas/evolution/apps-evolution-attachment-reminder.schemas
@@ -2249,6 +2250,7 @@ share/schemas/evolution/apps_evolution_shell.schemas
 share/schemas/evolution/bogo-junk-plugin.schemas
 share/schemas/evolution/evolution-mail.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/evolution/*.schemas > /dev/null
+@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --set --type list --list-type=string /apps/evolution/eplugin/disabled '[org.gnome.evolution.bbdb,org.gnome.evolution.mail.attachments.import.ics,org.gnome.evolution.plugin.templates,org.gnome.evolution.mail_subject_thread,org.gnome.evolution.save_calendar,org.gnome.evolution.select_one_source,org.gnome.evolution.plugin.preferPlain,org.gnome.evolution.mark_calendar_offline,org.gnome.plugin.mailing-list.actions,org.gnome.evolution.plugin.mailToTask,org.gnome.evolution.mail_notification,org.gnome.evolution.face,org.gnome.evolution.email-custom-header,org.gnome.evolution.default.mailer,org.gnome.evolution.plugin.copyTool,org.gnome.plugin.backup.restore,org.gnome.evolution.plugin.audioInline,org.gnome.evolution.attachment-reminder]'
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
