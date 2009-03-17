@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/03/17 19:55:09 landry Exp $
+@bin bin/sdlmame
+share/doc/sdlmame/
+share/doc/sdlmame/SDLMAME.txt
+share/doc/sdlmame/config.txt
+share/doc/sdlmame/license.txt
+share/doc/sdlmame/mame.txt
+share/doc/sdlmame/newvideo.txt
+share/sdlmame/
+share/sdlmame/keymaps/
+share/sdlmame/keymaps/km-be.txt
+share/sdlmame/keymaps/km-ch.txt
+share/sdlmame/keymaps/km-de.txt
+share/sdlmame/keymaps/km-fr.txt
+share/sdlmame/keymaps/km_it.txt

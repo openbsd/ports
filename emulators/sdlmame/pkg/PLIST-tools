@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-tools,v 1.1.1.1 2009/03/17 19:55:09 landry Exp $
+@bin bin/chdman
+@bin bin/jedutil
+@bin bin/ldresample
+@bin bin/ldverify
+@bin bin/romcmp
