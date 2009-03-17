@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2008/01/21 17:13:32 ian Exp $
+# $OpenBSD: Makefile,v 1.20 2009/03/17 21:30:14 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.3.4
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	print
 
 # These are actually internal modules, not generic shared libs
@@ -40,7 +40,7 @@ LIB_DEPENDS=	jpeg::graphics/jpeg \
 		art_lgpl_2::graphics/libart \
 		png::graphics/png \
 		tiff::graphics/tiff \
-		python${MODPY_VERSION}:python-${MODPY_VERSION}.*:lang/python/${MODPY_VERSION} \
+		${MODPY_LIB_DEPENDS} \
 		cups::print/cups \
 		xml2::textproc/libxml
 
