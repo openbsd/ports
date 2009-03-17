@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/03/14 10:40:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/03/17 11:53:01 ajacoutot Exp $
 @bin bin/gnomebaker
 share/applications/gnomebaker.desktop
 share/gnome/help/gnomebaker/
@@ -152,8 +152,6 @@ share/locale/st/
 share/locale/st/LC_MESSAGES/
 share/locale/st/LC_MESSAGES/gnomebaker.mo
 share/locale/sv/LC_MESSAGES/gnomebaker.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/gnomebaker.mo
 share/locale/tl/
 share/locale/tl/LC_MESSAGES/
@@ -174,16 +172,16 @@ share/locale/zh_HK/LC_MESSAGES/gnomebaker.mo
 share/locale/zh_TW/LC_MESSAGES/gnomebaker.mo
 share/omf/gnomebaker/
 share/omf/gnomebaker/gnomebaker-C.omf
-@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type int --set /apps/GnomeBaker/Devices/Device01/Capabilities 15 > /dev/null
-@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type string --set /apps/GnomeBaker/Devices/Device01/DeviceId /dev/rcd0c > /dev/null
-@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type string --set /apps/GnomeBaker/Devices/Device01/DeviceName CD_DVD_Writer > /dev/null
-@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type string --set /apps/GnomeBaker/Devices/Device01/DeviceNode /dev/rcd0c > /dev/null
-@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type string --set /apps/GnomeBaker/Devices/Device01/MountPoint /mnt > /dev/null
-@unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/GnomeBaker/Devices/Device01/Capabilities > /dev/null
-@unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/GnomeBaker/Devices/Device01/DeviceId > /dev/null
-@unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/GnomeBaker/Devices/Device01/DeviceName > /dev/null
-@unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/GnomeBaker/Devices/Device01/DeviceNode > /dev/null
-@unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/GnomeBaker/Devices/Device01/MountPoint > /dev/null
+@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type int --set /apps/GnomeBaker/Devices/Device01/Capabilities 15
+@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type string --set /apps/GnomeBaker/Devices/Device01/DeviceId /dev/rcd0c
+@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type string --set /apps/GnomeBaker/Devices/Device01/DeviceName CD_DVD_Writer
+@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type string --set /apps/GnomeBaker/Devices/Device01/DeviceNode /dev/rcd0c
+@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --type string --set /apps/GnomeBaker/Devices/Device01/MountPoint /mnt
+@unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/GnomeBaker/Devices/Device01/Capabilities
+@unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/GnomeBaker/Devices/Device01/DeviceId
+@unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/GnomeBaker/Devices/Device01/DeviceName
+@unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/GnomeBaker/Devices/Device01/DeviceNode
+@unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/GnomeBaker/Devices/Device01/MountPoint
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
