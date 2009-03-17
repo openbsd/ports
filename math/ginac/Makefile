@@ -1,16 +1,16 @@
-# $Id: Makefile,v 1.4 2008/10/29 16:26:14 pirofti Exp $
+# $Id: Makefile,v 1.5 2009/03/17 11:53:01 pirofti Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
-DISTNAME=	ginac-1.4.3
-SHARED_LIBS +=	ginac	1.0	# 0.3
+DISTNAME=	ginac-1.5.1
+SHARED_LIBS +=	ginac	1.5	# 0.3
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.ginac.de/
 
 MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -31,5 +31,7 @@ MODGCC3_LANGS=	c++
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
+
+REGRESS_TARGET=	check
 
 .include <bsd.port.mk>

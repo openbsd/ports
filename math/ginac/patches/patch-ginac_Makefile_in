@@ -1,9 +1,9 @@
-$OpenBSD: patch-ginac_Makefile_in,v 1.1 2008/10/29 16:26:14 pirofti Exp $
---- ginac/Makefile.in.orig	Sat Oct 25 17:15:37 2008
-+++ ginac/Makefile.in	Sat Oct 25 17:15:54 2008
-@@ -168,7 +168,7 @@ libginac_la_SOURCES = add.cpp archive.cpp basic.cpp cl
-   utils.cpp wildcard.cpp input_parser.yy input_lexer.ll \
-   input_lexer.h remember.h tostring.h utils.h compiler.h
+$OpenBSD: patch-ginac_Makefile_in,v 1.2 2009/03/17 11:53:01 pirofti Exp $
+--- ginac/Makefile.in.orig	Wed Feb 25 15:02:39 2009
++++ ginac/Makefile.in	Tue Mar 10 16:12:26 2009
+@@ -299,7 +299,7 @@ polynomial/primpart_content.cpp \
+ polynomial/smod_helpers.h \
+ polynomial/debug.h
  
 -libginac_la_LDFLAGS = -version-info $(LT_VERSION_INFO) -release $(LT_RELEASE)
 +libginac_la_LDFLAGS = -version-info $(LT_VERSION_INFO)

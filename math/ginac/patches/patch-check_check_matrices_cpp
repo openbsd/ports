@@ -1,7 +1,7 @@
-$OpenBSD: patch-check_check_matrices_cpp,v 1.1 2008/10/29 16:26:14 pirofti Exp $
---- check/check_matrices.cpp.orig	Wed Oct 29 13:29:30 2008
-+++ check/check_matrices.cpp	Wed Oct 29 13:14:30 2008
-@@ -216,7 +216,7 @@ unsigned check_matrices()
+$OpenBSD: patch-check_check_matrices_cpp,v 1.2 2009/03/17 11:53:01 pirofti Exp $
+--- check/check_matrices.cpp.orig	Tue Feb 17 14:39:22 2009
++++ check/check_matrices.cpp	Tue Mar 10 16:12:26 2009
+@@ -217,7 +217,7 @@ unsigned check_matrices()
  	result += rational_matrix_determinants();  cout << '.' << flush;
  	result += funny_matrix_determinants();  cout << '.' << flush;
  	result += compare_matrix_determinants();  cout << '.' << flush;
