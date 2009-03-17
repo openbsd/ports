@@ -1,0 +1,41 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/03/17 18:37:20 ajacoutot Exp $
+--- Makefile.orig	Fri Feb  6 12:49:10 2009
++++ Makefile	Tue Mar 17 18:22:12 2009
+@@ -55,8 +55,8 @@
+ # +--------------------------------------------------------------------------+
+ LANGUAGES	:= cpp c
+ 
+-CC		:= gcc
+-CXX		:= g++
++CC		:= ${CC}
++CXX		:= ${CXX}
+ RM		:= rm -f
+ AR		:= ar crs
+ LEX		:= flex
+@@ -74,8 +74,8 @@ comma           := ,
+ 
+ DEBUG_CFLAGS    := -O0 -g
+ DEBUG_CXXFLAGS  := -O0 -g
+-OPTIM_CFLAGS	:= -O2
+-OPTIM_CXXFLAGS	:= -O2
++OPTIM_CFLAGS	:= ${CFLAGS}
++OPTIM_CXXFLAGS	:= ${CXXFLAGS}
+ 
+ ARCHI           := $(shell uname -s)
+ 
+@@ -377,13 +377,13 @@ distclean: clean
+ $(DEFFILE): Makefile $(patsubst %, %/module.mk, $(SUBDIRS)) module.mk
+ 	@echo -n "     GEN               $(DEFFILE)"
+ 	@echo "" > $@
+-	@make -s -C ./ _depsreload
++	@${MAKE} -s -C ./ _depsreload
+ 
+ .PHONY: _depsreload
+ _depsreload:
+ 	@echo -n "."
+ 	@echo "DEFLOADED := 1" > $(DEFFILE)
+ 	@echo "_SUBDIRS := $(SUBDIRS)" >> $(DEFFILE)
+-	@if [ "$(SUBDIRS)" != "$(_SUBDIRS)" ]; then make -j 1 -s -C ./ _depsreload; \
++	@if [ "$(SUBDIRS)" != "$(_SUBDIRS)" ]; then ${MAKE} -j 1 -s -C ./ _depsreload; \
+ 		else echo "DEFDONE := 1" >> $(DEFFILE); echo ""; fi
+ 

@@ -1,0 +1,23 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2009/03/17 18:37:20 ajacoutot Exp $
+
+Enhancing printing output
+-------------------------
+
+Color printers needs color profile files to get better results.  These
+files are provided by your printer manufacturer and you have to install
+them manually.  To do that, download the linux official drivers and
+copy the "cms" directory under:
+  ${TRUEPREFIX}/share/cups/model/<manufacturer>/
+where <manufacturer> is either samsung, xerox or dell.
+
+Samsung color profile files are available at
+  http://splix.ap2c.org/samsung_cms.tar.bz2
+
+
+Upgrade notice
+--------------
+
+If you are upgrading your current version, you MUST delete your printer
+in the CUPS interface and install it again. This operation MUST be done
+since CUPS makes a copy of the PPD file and this file is modified
+between versions.

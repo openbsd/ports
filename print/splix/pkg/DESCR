@@ -1,0 +1,4 @@
+SpliX is a set of CUPS printer drivers for SPL (Samsung Printer
+Language) printers.  This driver is usable by all printer devices which
+understand the QPDL (Quick Page Description Language) language.  It
+covers several Samsung, Xerox, Dell and Ricoh printers.
