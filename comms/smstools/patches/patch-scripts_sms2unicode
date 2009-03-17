@@ -1,0 +1,43 @@
+$OpenBSD: patch-scripts_sms2unicode,v 1.1 2009/03/17 10:47:44 sthen Exp $
+--- scripts/sms2unicode.orig	Wed Mar 11 01:35:21 2009
++++ scripts/sms2unicode	Wed Mar 11 01:38:15 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # This script converts a received sms file into a pure unicode text file.
+ 
+@@ -13,7 +13,7 @@ else
+   ucs2=false
+ fi
+ 
+-echo -en "\xFE\xFF"
++printf "\xFE\xFF"
+ text=`od -t x1 $1 | cut -c8-99`
+ foundstart="false"
+ previous=""
+@@ -24,19 +24,19 @@ for character in $text; do
+       foundstart="true"
+     fi
+     if [ "$character" = "0a" ] && [ "$previous" != "0d" ]; then
+-      echo -en "\x00\x0d\x00\x$character"
++      printf "\x00\x0d\x00\x$character"
+     else  
+-      echo -en "\x00\x$character"
++      printf "\x00\x$character"
+     fi  
+   else
+     if [ "$ucs2" = "false" ]; then
+       if [ "$character" = "0a" ] && [ "$previous" != "0d" ]; then
+-        echo -en "\x00\x0d\x00\x$character"
++        printf "\x00\x0d\x00\x$character"
+       else
+-        echo -en "\x00\x$character"
++        printf "\x00\x$character"
+       fi
+     else
+-      echo -en "\x$character"
++      printf "\x$character"
+     fi  
+   fi
+   previous="$character"

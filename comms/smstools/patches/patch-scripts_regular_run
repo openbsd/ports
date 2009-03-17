@@ -1,0 +1,9 @@
+$OpenBSD: patch-scripts_regular_run,v 1.1 2009/03/17 10:47:44 sthen Exp $
+--- scripts/regular_run.orig	Wed Mar 11 01:35:07 2009
++++ scripts/regular_run	Wed Mar 11 01:38:11 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # SMS Server Tools 3.
+ # Sample script for using a regular run feature.
+ # See run.html for more details.

@@ -1,0 +1,22 @@
+$OpenBSD: patch-scripts_sms2html,v 1.1 2009/03/17 10:47:44 sthen Exp $
+--- scripts/sms2html.orig	Wed Mar 11 01:35:11 2009
++++ scripts/sms2html	Wed Mar 11 01:38:13 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # This script converts a received sms file into a html file. 
+ 
+@@ -43,10 +43,10 @@ if [ "$ucs2" = "true" ]; then
+     else
+       # Combine two bytes to one 16bit character in html syntax 
+       if [ "$position" = "first" ]; then
+-        echo -en "&#x$character"
++        echo -n "&#x$character"
+         position="second"
+       else
+-        echo -en "$character;"
++        echo -n "$character;"
+         position="first"
+       fi  
+     fi

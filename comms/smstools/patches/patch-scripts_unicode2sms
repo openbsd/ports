@@ -1,0 +1,24 @@
+$OpenBSD: patch-scripts_unicode2sms,v 1.1 2009/03/17 10:47:44 sthen Exp $
+--- scripts/unicode2sms.orig	Wed Mar 11 01:35:32 2009
++++ scripts/unicode2sms	Wed Mar 11 01:38:17 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # This script converts a pure unicode text file into an sms file for sending.
+ 
+@@ -19,12 +19,12 @@ position="first"
+ for character in $text; do
+   if [ "$position" = "first" ]; then
+     if [ "$foundstart" = "true" ]; then
+-      echo -en "\x$character"
++      printf "\x$character"
+     fi
+     position="second"
+   else
+     if [ "$character" != "ff" ]; then
+-      echo -en "\x$character"
++      printf "\x$character"
+     fi  
+     if [ "$foundstart" = "false" ] && [ "$character" = "0a" ] && [ "$previous" = "0a" ]; then
+       foundstart="true"
