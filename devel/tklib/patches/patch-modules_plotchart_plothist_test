@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_plotchart_plothist_test,v 1.1.1.1 2009/03/18 09:10:27 sthen Exp $
+--- modules/plotchart/plothist.test.orig	Wed Jan 21 23:00:46 2009
++++ modules/plotchart/plothist.test	Mon Feb  2 15:44:58 2009
+@@ -9,6 +9,7 @@ package require Plotchart
+ # plothist.test --
+ #     Testing histograms
+ #
++destroy .c
+     canvas .c -width 600 -height 400 -bg white
+     pack   .c -fill both
+     .c delete all

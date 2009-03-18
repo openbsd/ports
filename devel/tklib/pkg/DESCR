@@ -1,0 +1,4 @@
+A collection of pure-Tcl utility modules and widgets for Tk that provide
+a wide variety of functionality. The intent is to collect commonly used
+functions into a single library, which users can rely on to be available
+and stable.

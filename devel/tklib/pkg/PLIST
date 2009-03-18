@@ -1,0 +1,205 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/18 09:10:27 sthen Exp $
+lib/tklib/
+lib/tklib/autoscroll/
+lib/tklib/autoscroll/autoscroll.tcl
+lib/tklib/autoscroll/pkgIndex.tcl
+lib/tklib/canvas/
+lib/tklib/canvas/canvas_sqmap.tcl
+lib/tklib/canvas/canvas_zoom.tcl
+lib/tklib/canvas/pkgIndex.tcl
+lib/tklib/chatwidget/
+lib/tklib/chatwidget/chatwidget.tcl
+lib/tklib/chatwidget/pkgIndex.tcl
+lib/tklib/crosshair/
+lib/tklib/crosshair/crosshair.tcl
+lib/tklib/crosshair/pkgIndex.tcl
+lib/tklib/ctext/
+lib/tklib/ctext/ctext.tcl
+lib/tklib/ctext/pkgIndex.tcl
+lib/tklib/cursor/
+lib/tklib/cursor/cursor.tcl
+lib/tklib/cursor/pkgIndex.tcl
+lib/tklib/datefield/
+lib/tklib/datefield/datefield.tcl
+lib/tklib/datefield/pkgIndex.tcl
+lib/tklib/diagrams/
+lib/tklib/diagrams/draw_diagram.tcl
+lib/tklib/diagrams/pkgIndex.tcl
+lib/tklib/getstring/
+lib/tklib/getstring/pkgIndex.tcl
+lib/tklib/getstring/tk_getString.tcl
+lib/tklib/history/
+lib/tklib/history/history.tcl
+lib/tklib/history/pkgIndex.tcl
+lib/tklib/ico/
+lib/tklib/ico/ico.tcl
+lib/tklib/ico/ico0.tcl
+lib/tklib/ico/pkgIndex.tcl
+lib/tklib/ipentry/
+lib/tklib/ipentry/ipentry.tcl
+lib/tklib/ipentry/pkgIndex.tcl
+lib/tklib/khim/
+lib/tklib/khim/ROOT.msg
+lib/tklib/khim/cs.msg
+lib/tklib/khim/da.msg
+lib/tklib/khim/de.msg
+lib/tklib/khim/en.msg
+lib/tklib/khim/es.msg
+lib/tklib/khim/khim.tcl
+lib/tklib/khim/pkgIndex.tcl
+lib/tklib/khim/pl.msg
+lib/tklib/khim/ru.msg
+lib/tklib/khim/uk.msg
+lib/tklib/ntext/
+lib/tklib/ntext/ntext.tcl
+lib/tklib/ntext/pkgIndex.tcl
+lib/tklib/pkgIndex.tcl
+lib/tklib/plotchart/
+lib/tklib/plotchart/pkgIndex.tcl
+lib/tklib/plotchart/plot3d.tcl
+lib/tklib/plotchart/plotannot.tcl
+lib/tklib/plotchart/plotaxis.tcl
+lib/tklib/plotchart/plotbusiness.tcl
+lib/tklib/plotchart/plotchart.tcl
+lib/tklib/plotchart/plotconfig.tcl
+lib/tklib/plotchart/plotcontour.tcl
+lib/tklib/plotchart/plotgantt.tcl
+lib/tklib/plotchart/plotpack.tcl
+lib/tklib/plotchart/plotpriv.tcl
+lib/tklib/plotchart/scaling.tcl
+lib/tklib/style/
+lib/tklib/style/as.tcl
+lib/tklib/style/lobster.tcl
+lib/tklib/style/pkgIndex.tcl
+lib/tklib/style/style.tcl
+lib/tklib/swaplist/
+lib/tklib/swaplist/pkgIndex.tcl
+lib/tklib/swaplist/swaplist.tcl
+lib/tklib/tablelist/
+lib/tklib/tablelist/pkgIndex.tcl
+lib/tklib/tablelist/scripts/
+lib/tklib/tablelist/scripts/mwutil.tcl
+lib/tklib/tablelist/scripts/repair.tcl
+lib/tklib/tablelist/scripts/tablelistBind.tcl
+lib/tklib/tablelist/scripts/tablelistBitmaps.tcl
+lib/tklib/tablelist/scripts/tablelistConfig.tcl
+lib/tklib/tablelist/scripts/tablelistEdit.tcl
+lib/tklib/tablelist/scripts/tablelistMove.tcl
+lib/tklib/tablelist/scripts/tablelistSort.tcl
+lib/tklib/tablelist/scripts/tablelistThemes.tcl
+lib/tklib/tablelist/scripts/tablelistUtil.tcl
+lib/tklib/tablelist/scripts/tablelistWidget.tcl
+lib/tklib/tablelist/scripts/tclIndex
+lib/tklib/tablelist/tablelist.tcl
+lib/tklib/tablelist/tablelistPublic.tcl
+lib/tklib/tablelist/tablelist_tile.tcl
+lib/tklib/tkpiechart/
+lib/tklib/tkpiechart/boxlabel.tcl
+lib/tklib/tkpiechart/canlabel.tcl
+lib/tklib/tkpiechart/labarray.tcl
+lib/tklib/tkpiechart/objselec.tcl
+lib/tklib/tkpiechart/perilabel.tcl
+lib/tklib/tkpiechart/pie.tcl
+lib/tklib/tkpiechart/pielabel.tcl
+lib/tklib/tkpiechart/pkgIndex.tcl
+lib/tklib/tkpiechart/relirect.tcl
+lib/tklib/tkpiechart/selector.tcl
+lib/tklib/tkpiechart/slice.tcl
+lib/tklib/tkpiechart/tkpiechart.tcl
+lib/tklib/tooltip/
+lib/tklib/tooltip/pkgIndex.tcl
+lib/tklib/tooltip/tipstack.tcl
+lib/tklib/tooltip/tooltip.tcl
+lib/tklib/widget/
+lib/tklib/widget/calendar.tcl
+lib/tklib/widget/dateentry.tcl
+lib/tklib/widget/dialog.tcl
+lib/tklib/widget/mentry.tcl
+lib/tklib/widget/panelframe.tcl
+lib/tklib/widget/pkgIndex.tcl
+lib/tklib/widget/ruler.tcl
+lib/tklib/widget/scrollw.tcl
+lib/tklib/widget/statusbar.tcl
+lib/tklib/widget/stext.tcl
+lib/tklib/widget/superframe.tcl
+lib/tklib/widget/toolbar.tcl
+lib/tklib/widget/widget.tcl
+@man man/mann/autoscroll.n
+@man man/mann/canvas_sqmap.n
+@man man/mann/canvas_zoom.n
+@man man/mann/canvaslabel.n
+@man man/mann/chatwidget.n
+@man man/mann/crosshair.n
+@man man/mann/ctext.n
+@man man/mann/cursor.n
+@man man/mann/datefield.n
+@man man/mann/draw_diagram.n
+@man man/mann/ico.n
+@man man/mann/ipentry.n
+@man man/mann/khim.n
+@man man/mann/ntext.n
+@man man/mann/ntextBindings.n
+@man man/mann/ntextIndent.n
+@man man/mann/ntextWordBreak.n
+@man man/mann/pie.n
+@man man/mann/pieboxlabeler.n
+@man man/mann/pieperipherallabeler.n
+@man man/mann/plotchart.n
+@man man/mann/swaplist.n
+@man man/mann/tk_getString.n
+@man man/mann/tklib.n
+@man man/mann/tklib_history.n
+@man man/mann/tooltip.n
+@man man/mann/widget.n
+@man man/mann/widget_calendar.n
+@man man/mann/widget_toolbar.n
+share/examples/tklib/
+share/examples/tklib/canvas/
+share/examples/tklib/canvas/city.tcl
+share/examples/tklib/canvas/citygrid.tcl
+share/examples/tklib/canvas/locationmarks.gps
+share/examples/tklib/canvas/morgens.jpg
+share/examples/tklib/canvas/osm.tcl
+share/examples/tklib/canvas/puzzle.tcl
+share/examples/tklib/canvas/seawalk.gps
+share/examples/tklib/ntext/
+share/examples/tklib/ntext/ntextDemoBindings.tcl
+share/examples/tklib/ntext/ntextDemoIndent.tcl
+share/examples/tklib/ntext/ntextExample.tcl
+share/examples/tklib/plotchart/
+share/examples/tklib/plotchart/plotdemos1.tcl
+share/examples/tklib/plotchart/plotdemos2.tcl
+share/examples/tklib/plotchart/plotdemos3.tcl
+share/examples/tklib/plotchart/plotdemos4.tcl
+share/examples/tklib/plotchart/plotdemos5.tcl
+share/examples/tklib/plotchart/plotdemos6.tcl
+share/examples/tklib/plotchart/plotdemos7.tcl
+share/examples/tklib/plotchart/plotdemos8.tcl
+share/examples/tklib/plotchart/tcllogo.gif
+share/examples/tklib/tablelist/
+share/examples/tklib/tablelist/browse.tcl
+share/examples/tklib/tablelist/browse_tile.tcl
+share/examples/tklib/tablelist/bwidget.tcl
+share/examples/tklib/tablelist/bwidget_tile.tcl
+share/examples/tklib/tablelist/checked.gif
+share/examples/tklib/tablelist/comp.xbm
+share/examples/tklib/tablelist/config.tcl
+share/examples/tklib/tablelist/config_tile.tcl
+share/examples/tklib/tablelist/embeddedWindows.tcl
+share/examples/tklib/tablelist/embeddedWindows_tile.tcl
+share/examples/tklib/tablelist/iwidgets.tcl
+share/examples/tklib/tablelist/iwidgets_tile.tcl
+share/examples/tklib/tablelist/leaf.xbm
+share/examples/tklib/tablelist/miscWidgets.tcl
+share/examples/tklib/tablelist/miscWidgets_tile.tcl
+share/examples/tklib/tablelist/open.gif
+share/examples/tklib/tablelist/option.tcl
+share/examples/tklib/tablelist/option_tile.tcl
+share/examples/tklib/tablelist/styles.tcl
+share/examples/tklib/tablelist/styles_tile.tcl
+share/examples/tklib/tablelist/tileWidgets.tcl
+share/examples/tklib/tablelist/unchecked.gif
+share/examples/tklib/tkpiechart/
+share/examples/tklib/tkpiechart/demo.tcl
+share/examples/tklib/widget/
+share/examples/tklib/widget/screenruler.tcl

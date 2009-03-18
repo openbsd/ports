@@ -1,0 +1,37 @@
+$OpenBSD: patch-installer_tcl,v 1.1.1.1 2009/03/18 09:10:27 sthen Exp $
+--- installer.tcl.orig	Wed Jan 21 23:00:46 2009
++++ installer.tcl	Mon Feb  2 15:44:58 2009
+@@ -65,18 +65,25 @@ if {![package vsatisfies [package provide Tcl] 8.0]} {
+     puts  $index "unset maindir"
+     puts  $index ""
+     close $index
++    file attributes [file join $outdir pkgIndex.tcl] -owner root -group bin -permissions 0444
+     return
+ }
+ 
+ proc xcopyfile {src dest} {
+     # dest can be dir or file
+     run file copy -force $src $dest
++    if {[file isdirectory $dest]} {
++	set dest [file join $dest [file tail $src]]
++    }
++    file attributes $dest -owner root -group bin -permissions 0444
+     return
+ }
+ 
+ proc xcopy {src dest recurse {pattern *}} {
+     run file mkdir $dest
++    file attributes $dest -owner root -group bin -permissions 0755
+     foreach file [glob [file join $src $pattern]] {
++	if {[file extension $file] eq ".orig"} { continue }
+         set base [file tail $file]
+ 	set sub  [file join $dest $base]
+ 
+@@ -100,6 +107,7 @@ proc write_out {f text} {
+     catch {file delete -force $f}
+     puts -nonewline [set of [open $f w]] $text
+     close $of
++    file attributes $f -owner root -group bin -permissions 0444
+ }
+ 
+ 

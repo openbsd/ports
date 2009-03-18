@@ -1,0 +1,11 @@
+$OpenBSD: patch-examples_canvas_city_tcl,v 1.1.1.1 2009/03/18 09:10:27 sthen Exp $
+--- examples/canvas/city.tcl.orig	Thu Jan 29 18:19:20 2009
++++ examples/canvas/city.tcl	Thu Jan 29 18:19:26 2009
+@@ -13,7 +13,6 @@ exec tclsh "$0" ${1+"$@"}
+ set selfdir  [file dirname [file normalize [info script]]]
+ set modules [file join [file dirname [file dirname $selfdir]] modules]
+ 
+-source $modules/canvas/canvas_sqmap.tcl
+ source $selfdir/citygrid.tcl
+ 
+ # ### ### ### ######### ######### #########
