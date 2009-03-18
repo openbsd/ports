@@ -1,7 +1,7 @@
-$OpenBSD: patch-Data_Makefile_in,v 1.1 2008/12/19 11:23:33 ajacoutot Exp $
---- Data/Makefile.in.orig	Fri Dec 19 11:55:15 2008
-+++ Data/Makefile.in	Fri Dec 19 11:56:16 2008
-@@ -686,8 +686,8 @@ uninstall-am: uninstall-desktopDATA uninstall-iconDATA
+$OpenBSD: patch-Data_Makefile_in,v 1.2 2009/03/18 19:38:47 jasper Exp $
+--- Data/Makefile.in.orig	Mon Mar 16 18:03:23 2009
++++ Data/Makefile.in	Wed Mar 18 20:29:36 2009
+@@ -691,8 +691,8 @@ uninstall-am: uninstall-desktopDATA uninstall-iconDATA
  @GCONF_SCHEMAS_INSTALL_TRUE@	echo "done.";
  
  @GCONF_SCHEMAS_INSTALL_TRUE@install-schemas: dasher.schemas

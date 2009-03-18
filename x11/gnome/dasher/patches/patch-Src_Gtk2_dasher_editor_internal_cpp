@@ -1,0 +1,12 @@
+$OpenBSD: patch-Src_Gtk2_dasher_editor_internal_cpp,v 1.1 2009/03/18 19:38:47 jasper Exp $
+--- Src/Gtk2/dasher_editor_internal.cpp.orig	Wed Mar 18 20:33:51 2009
++++ Src/Gtk2/dasher_editor_internal.cpp	Wed Mar 18 20:34:04 2009
+@@ -2,6 +2,8 @@
+ #include <config.h>
+ #endif
+ 
++#include <unistd.h>
++
+ #include <cstring>
+ 
+ #include <glib/gi18n.h>
