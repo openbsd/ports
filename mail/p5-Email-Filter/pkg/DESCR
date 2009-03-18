@@ -1,0 +1,3 @@
+A Library for creating easy email filters. It's the successor to
+the Mail::Audit module from the same author and allows you to write
+programs describing how your mail should be filtered.
