@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2009/03/18 20:23:11 landry Exp $
 
 COMMENT-main=	emulates arcade machines and old home computers
 COMMENT-mame=	emulates a massive variety of arcade machines
@@ -7,9 +7,9 @@ COMMENT-mess=	emulates game consoles and old home computers
 VERSION=	0.104
 DISTNAME=	xmame-${VERSION}
 
-PKGNAME-main=	xmame+xmess-${VERSION}p2
-PKGNAME-mame=	xmame-${VERSION}p1
-PKGNAME-mess=	xmess-${VERSION}p1
+PKGNAME-main=	xmame+xmess-${VERSION}p3
+PKGNAME-mame=	xmame-${VERSION}p2
+PKGNAME-mess=	xmess-${VERSION}p2
 
 CATEGORIES=	emulators games
 MASTER_SITES=	ftp://xmame.kaupp.us/pub/xmame/ \

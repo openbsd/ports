@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/17 19:55:09 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/18 20:23:11 landry Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,10 +8,10 @@ MULTI_PACKAGES =	-main -tools
 COMMENT-main =		emulates a massive variety of arcades machines
 COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
-V =			130
-DISTNAME =		sdlmame0${V}
-PKGNAME-main =		sdlmame-0.${V}
-PKGNAME-tools =		sdlmame-tools-0.${V}
+V =			0.130
+DISTNAME =		sdlmame${V:S/.//}
+PKGNAME-main =		sdlmame-${V}p0
+PKGNAME-tools =		sdlmame-tools-${V}p0
 
 CATEGORIES =		emulators games
 
@@ -40,7 +40,7 @@ MODGCC4_LANG =		c
 
 LIB_DEPENDS =		SDL::devel/sdl gconf-2.>=5::devel/gconf2 \
 			gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
-RUN_DEPENDS-main =	:sdlmame-tools-0.${V}:emulators/sdlmame,-tools
+RUN_DEPENDS-main =	:${PKGNAME-tools}:emulators/sdlmame,-tools
 
 USE_GMAKE =		Yes
 USE_X11 =		Yes

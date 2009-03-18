@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-mess-sdl,v 1.6 2005/10/02 01:39:38 fgsch Exp $
+@comment $OpenBSD: PLIST-mess-sdl,v 1.7 2009/03/18 20:23:12 landry Exp $
+@conflict sdlmame-tools-*
+@conflict sdlmess-*
 @conflict xmame+xmess-*
 @conflict xmame-*
 bin/chdman

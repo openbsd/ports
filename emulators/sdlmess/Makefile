@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/17 19:58:21 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/18 20:23:11 landry Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		emulates game consoles and old home computers
 
-V =			130
-DISTNAME =		sdlmess0${V}
-PKGNAME =		sdlmess-0.${V}
+V =			0.130
+DISTNAME =		sdlmess${V:S/.//}
+PKGNAME =		sdlmess-${V}p0
 
 CATEGORIES =		emulators games
 
@@ -36,7 +36,7 @@ MODGCC4_LANG =		c
 
 LIB_DEPENDS =		SDL::devel/sdl gconf-2.>=5::devel/gconf2 \
 			gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
-RUN_DEPENDS =		:sdlmame-tools-0.${V}:emulators/sdlmame,-tools
+RUN_DEPENDS =		:sdlmame-tools-${V}:emulators/sdlmame,-tools
 
 USE_GMAKE =		Yes
 USE_X11 =		Yes

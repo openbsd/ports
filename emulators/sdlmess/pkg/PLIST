@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/17 19:58:21 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/18 20:23:11 landry Exp $
+@conflict xmame+xmess-*
+@conflict xmess-*
 @bin bin/dat2html
 @bin bin/imgtool
 @bin bin/sdlmess
