@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_server_server_cpp,v 1.5 2008/10/10 14:27:38 jasper Exp $
---- src/server/server.cpp.orig	Tue Sep  2 12:23:49 2008
-+++ src/server/server.cpp	Wed Oct  8 00:31:13 2008
+$OpenBSD: patch-src_server_server_cpp,v 1.6 2009/03/18 11:42:16 jasper Exp $
+--- src/server/server.cpp.orig	Sun Mar 15 17:36:20 2009
++++ src/server/server.cpp	Sun Mar 15 17:36:33 2009
 @@ -35,6 +35,8 @@
  #include "proxy.hpp"
  #include "simple_wml.hpp"
  
 +#include <unistd.h>
 +
+ #include <boost/scoped_ptr.hpp>
  #include <algorithm>
  #include <cassert>
- #include <cerrno>
