@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2007/09/15 20:59:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.31 2009/03/18 19:48:00 sthen Exp $
 
 COMMENT=	convert memos written in XML to the RFC format
 
 VERSION=	1.26
 DISTNAME=	xml2rfc-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	textproc
 
 EXTRACT_SUFX=	.tgz
@@ -18,18 +19,21 @@ PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
-RUN_DEPENDS=	:tcl-8.4.*:lang/tcl/8.4
-
 FLAVORS=	no_x11
 FLAVOR?=
 
+MODTCL_VERSION=	8.4
+MODTK_VERSION=	8.4
+
 .if ${FLAVOR:L} == "no_x11"
-USE_X11=	No
+MODULES=	lang/tcl
+RUN_DEPENDS=	${MODTCL_RUN_DEPENDS}
 .else
-USE_X11=	Yes
-RUN_DEPENDS+=	:tk-8.4.*:x11/tk/8.4
+MODULES+=	x11/tk
+RUN_DEPENDS+=	${MODTK_RUN_DEPENDS}
 .endif
 
+# XXX could use MODTCL_BIN etc. instead
 do-build:
 .if ${FLAVOR:L} == "no_x11"
 	sed s,y0y0y0,${PREFIX}, ${FILESDIR}/xml2rfc.no_x11 >${WRKSRC}/xml2rfc
