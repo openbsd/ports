@@ -1,5 +1,0 @@
-$OpenBSD: patch-j2sdk1_3_1_src_share_classes_com_sun_tools_javah_resources_OpenBSD_arm_properties,v 1.1 2005/06/03 17:27:54 kurt Exp $
---- j2sdk1.3.1/src/share/classes/com/sun/tools/javah/resources/OpenBSD_arm.properties.orig	Fri May 27 17:34:59 2005
-+++ j2sdk1.3.1/src/share/classes/com/sun/tools/javah/resources/OpenBSD_arm.properties	Fri May 27 17:34:50 2005
-@@ -0,0 +1 @@
-+# OpenBSD arm specific properties
