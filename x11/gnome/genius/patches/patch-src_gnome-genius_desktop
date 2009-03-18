@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gnome-genius_desktop,v 1.1 2009/03/18 11:28:37 ajacoutot Exp $
+--- src/gnome-genius.desktop.orig	Wed Mar 18 10:44:51 2009
++++ src/gnome-genius.desktop	Wed Mar 18 10:45:01 2009
+@@ -4,7 +4,7 @@ Type=Application
+ Exec=gnome-genius
+ Icon=gnome-genius
+ Terminal=false
+-Categories=GNOME;Science;Math;Education;Calculator;Utility;
++Categories=GNOME;Science;Math;Calculator;Utility;
+ MimeType=text/x-genius;
+ Name=Genius Math Tool
+ Name[ca]=Eina matemàtica Genius
