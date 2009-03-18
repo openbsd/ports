@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2008/10/27 17:58:52 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/18 20:49:50 kili Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		vector font editor/converter
 
 DISTNAME=		fontforge_full-20080927
-PKGNAME=		${DISTNAME:S,_full,,}
+PKGNAME=		${DISTNAME:S,_full,,}p0
 EXTRACT_SUFX=		.tar.bz2
 SHARED_LIBS=		fontforge	1.0 \
 			gdraw		3.0 \
@@ -28,15 +28,17 @@ PERMIT_DISTFILES_CDROM=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fontforge/}
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xi c freetype m \
-			pthread xkbfile xkbui z 
+			pthread util xkbfile xkbui z 
 
 MODULES=		devel/gettext lang/python
+MODPY_VERSION=		2.5
 
 LIB_DEPENDS=		png.>=5::graphics/png		\
 			tiff.>=38::graphics/tiff	\
 			ungif.>=5::graphics/libungif	\
 			jpeg.>=62::graphics/jpeg	\
-			xml2.>=9::textproc/libxml
+			xml2.>=9::textproc/libxml	\
+			${MODPY_LIB_DEPENDS}
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S,_full,,}
 
@@ -46,7 +48,10 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include		\
 				  -I${LOCALBASE}/include/libpng"	\
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib	\
 				 -lintl -liconv -lz"
-CONFIGURE_ARGS=		--with-regular-link --without-freetype-src
+CONFIGURE_ARGS=		--without-freetype-src \
+			--with-python=${MODPY_BIN} \
+			--with-python-lib="$$(python${MODPY_VERSION}-config --libs)" \
+			--with-regular-link
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_X11=		Yes
