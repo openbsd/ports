@@ -1,0 +1,71 @@
+$OpenBSD: patch-sources_CPlayer_cpp,v 1.1.1.1 2009/03/19 18:30:30 landry Exp $
+--- sources/CPlayer.cpp.orig	Sat Mar  7 11:53:33 2009
++++ sources/CPlayer.cpp	Sat Mar  7 12:30:45 2009
+@@ -7,6 +7,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <sys/types.h>
+ #include <time.h>
+ #include <SDL.h>
+ 
+@@ -259,11 +260,12 @@ void CPlayerInfo::set_points(int i, int p)
+ #else
+ 
+ 	struct timeval ttime;
+-
++	struct timespec ts;
+ 	struct tm *today;
+ 
+ 	gettimeofday(&ttime, NULL);
+-	today = localtime(&(ttime.tv_sec));
++	ts.tv_sec = ttime.tv_sec;
++	today = localtime(&(ts.tv_sec));
+ 
+ 	position_date[i].year = today->tm_year;
+ 	position_date[i].month = today->tm_mon;
+@@ -289,11 +291,12 @@ void CPlayerInfo::set_time(int i, Uint32 p)
+ #else
+ 
+ 	struct timeval ttime;
+-
++	struct timespec ts;
+ 	struct tm *today;
+ 
+ 	gettimeofday(&ttime, NULL);
+-	today = localtime(&(ttime.tv_sec));
++	ts.tv_sec = ttime.tv_sec;
++	today = localtime(&(ts.tv_sec));
+ 
+ 	time_date[i].year = today->tm_year;
+ 	time_date[i].month = today->tm_mon;
+@@ -319,11 +322,12 @@ void CPlayerInfo::set_bestlap(int i, Uint32 p)
+ #else
+ 
+ 	struct timeval ttime;
+-
++	struct timespec ts;
+ 	struct tm *today;
+ 
+ 	gettimeofday(&ttime, NULL);
+-	today = localtime(&(ttime.tv_sec));
++	ts.tv_sec = ttime.tv_sec;
++	today = localtime(&(ts.tv_sec));
+ 
+ 	lap_date[i].year = today->tm_year;
+ 	lap_date[i].month = today->tm_mon;
+@@ -349,11 +353,12 @@ void CPlayerInfo::set_position(int i, int p)
+ #else
+ 
+ 	struct timeval ttime;
+-
++	struct timespec ts;
+ 	struct tm *today;
+ 
+ 	gettimeofday(&ttime, NULL);
+-	today = localtime(&(ttime.tv_sec));
++	ts.tv_sec = ttime.tv_sec;
++	today = localtime(&(ts.tv_sec));
+ 
+ 	position_date[i].year = today->tm_year;
+ 	position_date[i].month = today->tm_mon;
