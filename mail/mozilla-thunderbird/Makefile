@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.79 2009/03/09 21:32:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2009/03/19 21:59:32 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=	redesign of Mozilla's mail component
 
-VER=		2.0.0.19
+VER=		2.0.0.21
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p1
+PKGNAME=	mozilla-thunderbird-${VER}
 SO_VERSION=	13.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
