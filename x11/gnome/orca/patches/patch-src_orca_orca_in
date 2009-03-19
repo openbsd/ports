@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_orca_orca_in,v 1.2 2008/11/21 19:05:30 jasper Exp $
---- src/orca/orca.in.orig	Tue Nov 18 13:08:42 2008
-+++ src/orca/orca.in	Tue Nov 18 13:12:43 2008
+$OpenBSD: patch-src_orca_orca_in,v 1.3 2009/03/19 12:04:39 ajacoutot Exp $
+--- src/orca/orca.in.orig	Fri Jan 23 22:35:24 2009
++++ src/orca/orca.in	Thu Mar 19 12:12:37 2009
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -18,12 +18,21 @@ $OpenBSD: patch-src_orca_orca_in,v 1.2 2008/11/21 19:05:30 jasper Exp $
  # Save the arguments away.
  #
  ARGS="$*"
+@@ -83,7 +79,7 @@ restoreXmodmap()
+ cleanup()
+ {
+     USERID=`id | cut -f2 -d= | cut -f1 -d\(`
+-    PIDS=`ps -eo pid,ruid,args | grep $USERID | \
++    PIDS=`ps -xo pid,ruid,args | grep $USERID | \
+ 	egrep "orca[.]orca|OAFIID[:]GNOME_Speech|OAFIID[:]GNOME_Magnifier|festival [-][-]server"|\
+ 	grep -v grep | awk '{ print $1 }'`
+     IFS='
 @@ -137,7 +133,7 @@ if [ "x$LOGNAME" != "xgdm" ] ; then
      fi
  fi
  
 -if [ `grep -c "\-q" <<< $ARGS` -gt 0 ] ; then
-+if [ `echo $ARGS | grep -c "\-q"` -gt 0 ]
++if [ `echo $ARGS | grep -c "\-q"` -gt 0 ] ; then
      # If the user has done -q or --quit, that means to tell any
      # existing orca process to quit.  So, we just do a cleanup.
      #
@@ -32,7 +41,7 @@ $OpenBSD: patch-src_orca_orca_in,v 1.2 2008/11/21 19:05:30 jasper Exp $
          CLEANUP=1
      else
 -        CLEANUP=`egrep -c "\-s|\-t|\-n|\-u|\-e|\-d" <<< $ARGS`
-+        CLEANUP=`echo $ARGS | egrep -c "\-s|\-t|\-n|\-u|\-e|\-d"" <<< $ARGS`
++        CLEANUP=`echo $ARGS egrep -c "\-s|\-t|\-n|\-u|\-e|\-d"`
      fi
  
      # Clean up before running orca to get anything that might
