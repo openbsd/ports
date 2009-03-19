@@ -1,25 +1,21 @@
-$OpenBSD: patch-configure,v 1.2 2008/01/28 15:19:17 merdely Exp $
---- configure.orig	Thu Jul 22 12:43:15 2004
-+++ configure	Wed Jan 23 09:55:43 2008
-@@ -7337,7 +7337,6 @@ fi
-     ECHO_VERSION='`echo ${PACKAGE_VERSION}`'
-     TCL_LIB_VERSIONS_OK=ok
-     CFLAGS_DEBUG=-g
--    CFLAGS_OPTIMIZE=-O
-     if test "$GCC" = "yes" ; then
- 	CFLAGS_WARNING="-Wall -Wno-implicit-int"
-     else
-@@ -8600,11 +8599,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
-   $EGREP "yes" >/dev/null 2>&1; then
-   echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6
--		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
-+		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.${LIBTktable29_VERSION}'
- else
-   echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6
--		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
-+		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.${LIBTktable29_VERSION}'
+$OpenBSD: patch-configure,v 1.3 2009/03/19 12:39:08 sthen Exp $
+--- configure.orig	Sun Jan 25 03:55:46 2009
++++ configure	Sun Jan 25 03:56:17 2009
+@@ -7944,7 +7944,7 @@ fi
  
+ 	# TEA specific:
+ 	CFLAGS_OPTIMIZE=-O2
+-	CFLAGS_WARNING="-Wall -Wno-implicit-int"
++	CFLAGS_WARNING="-Wall"
+ 
+ else
+   CFLAGS_WARNING=""
+@@ -9141,7 +9141,7 @@ fi
  fi
- rm -f conftest*
+ 
+ 	    LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
+-	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${SHLIB_VERSION}'
+ 	    echo "$as_me:$LINENO: checking for ELF" >&5
+ echo $ECHO_N "checking for ELF... $ECHO_C" >&6
+ if test "${tcl_cv_ld_elf+set}" = set; then

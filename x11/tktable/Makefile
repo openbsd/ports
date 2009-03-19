@@ -1,49 +1,71 @@
-# $OpenBSD: Makefile,v 1.18 2008/01/28 15:19:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2009/03/19 12:39:08 sthen Exp $
 
-COMMENT=	tk extension
+COMMENT =		table/matrix widget extension to Tcl/Tk
 
-V=		2.9
-DISTNAME=	Tktable$V
-PKGNAME=	Tktable-$Vp0
-SHARED_LIBS=	Tktable29 1.0
-CATEGORIES=	x11
+DOTVER =		2.10
+VER =			${DOTVER:S/.//}
+DISTNAME =		Tktable${DOTVER}
+PKGNAME =		Tktable-${DOTVER}
+TKTABLE_LIB =		libTktable${VER}
+SUBST_VARS +=		TKTABLE_LIB
+SHARED_LIBS =		Tktable${VER} 0.0
+CATEGORIES =		x11
+HOMEPAGE =		http://tktable.sourceforge.net/
+MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
-HOMEPAGE= 	http://tktable.sourceforge.net/
+# BSD style
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+WANTLIB +=		X11
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tktable/}
+MODULES =		x11/tk
+BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}
+RUN_DEPENDS =		${BUILD_DEPENDS}
+FAKE_FLAGS =		INSTALL_PROGRAM="${INSTALL_DATA}"
+REGRESS_FLAGS =		DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+SEPARATE_BUILD =	concurrent
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--with-tcl=${MODTCL_LIBDIR} \
+			--with-tk=${MODTK_LIBDIR} \
+			--with-tkinclude=${MODTK_INCDIR}
 
-# BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11
+CONFIGURE_ENV +=	SHLIB_VERSION=${LIBTktable${VER}_VERSION}
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tktable/}
+REGRESS_IS_INTERACTIVE =Yes
+REGRESS_TARGET =	test
 
-BUILD_DEPENDS=	::x11/tk/8.4
+SCRIPTS_TCLSH =		basic.tcl buttons.tcl command.tcl debug.tcl dynarows.tcl \
+			maxsize.tcl spreadsheet.tcl valid.tcl
 
-USE_X11=	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.4 \
-		--with-tk=${PREFIX}/lib/tk8.4 \
-		--with-tclinclude=${PREFIX}/include/tcl8.4 \
-		--with-tkinclude=${PREFIX}/include/tk8.4
-CONFIGURE_ENV=	LIBTktable29_VERSION=${LIBTktable29_VERSION}
+EXAMPLE_FILES =		loadtable.tcl tcllogo.gif tktable.py
 
-MAKE_ENV=	DISPLAY="${DISPLAY}" XAUTHORITY="${XAUTHORITY}"
-REGRESS_TARGET=	test
-REGRESS_IS_INTERACTIVE=	Yes
+pre-configure:
+	${MODTCL_TCLSH_ADJ} ${SCRIPTS_TCLSH:S!^!${WRKSRC}/demos/!}
 
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/tktable
+	${INSTALL_DATA} ${WRKBUILD}/${TKTABLE_LIB}.so.${LIBTktable${VER}_VERSION} \
+		${WRKBUILD}/pkgIndex.tcl ${WRKSRC}/library/tkTable.tcl \
+		${WRKSRC}/library/tktable.py ${PREFIX}/lib/tktable
+	${INSTALL_DATA_DIR} ${PREFIX}/man/mann
+	${INSTALL_DATA} ${WRKSRC}/doc/tkTable.n ${PREFIX}/man/mann/tktable.n
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tktable
+	${INSTALL_DATA} ${WRKSRC}/doc/tkTable.html ${PREFIX}/share/doc/tktable/tktable.html
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${WRKSRC}/license.txt ${PREFIX}/share/doc/tktable
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tktable
+	${INSTALL_SCRIPT} ${SCRIPTS_TCLSH:S!^!${WRKSRC}/demos/!} ${PREFIX}/share/examples/tktable
+	${INSTALL_DATA} ${EXAMPLE_FILES:S!^!${WRKSRC}/demos/!} ${PREFIX}/share/examples/tktable
+
+# This regression test needs an X11 display
 pre-regress:
-.for t in DISPLAY XAUTHORITY
-.  if !defined($t)
-	@echo "$t needs to be set to run regress"; exit 1
+.for i in DISPLAY XAUTHORITY
+.  if !defined($i)
+	@echo "$i needs to be set to run regress"; exit 1
 .  endif
 .endfor
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/Tktable
-	@cp ${WRKSRC}/demos/* ${PREFIX}/share/examples/Tktable
 
 .include <bsd.port.mk>

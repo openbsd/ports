@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/08 20:56:08 naddy Exp $
-@lib lib/Tktable2.9/libTktable29.so.${LIBTktable29_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.6 2009/03/19 12:39:08 sthen Exp $
+@lib lib/tktable/${TKTABLE_LIB}.so.${LIBTktable210_VERSION}

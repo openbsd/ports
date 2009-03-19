@@ -1,20 +1,19 @@
 TkTable is a table/matrix widget extension to Tcl/Tk.
 The basic features of the widget are:
 
- * multi-line cells
- * support for embedded windows (one per cell)
- * row & column spanning
- * variable width columns / height rows (interactively resizable)
- * row and column titles
- * multiple data sources ((Tcl array || Tcl command) &| internal caching)
- * supports standard Tk reliefs, fonts, colors, etc.
- * x/y scrollbar support
- * 'tag' styles per row, column or cell to change visual appearance
- * in-cell editing - returns value back to data source
- * support for disabled (read-only) tables or cells (via tags)
- * multiple selection modes, with "active" cell
- * multiple drawing modes to get optimal performance for larger tables
- * optional 'flashes' when things update
- * cell validation support
- * Works everywhere Tk does (including Windows and Mac!)
- * Unicode support (Tk8.1+)
+ * Multi-line cells
+ * Support for embedded windows (one per cell)
+ * Row & column spanning
+ * Variable width columns / height rows (interactively resizable)
+ * Row and column titles
+ * Multiple data sources ((Tcl array || Tcl command) &| internal caching)
+ * Supports standard Tk reliefs, fonts, colors, etc.
+ * X/y scrollbar support
+ * Tag styles per row, column or cell to change visual appearance
+ * In-cell editing - returns value back to data source
+ * Support for disabled (read-only) tables or cells (via tags)
+ * Multiple selection modes, with "active" cell
+ * Multiple drawing modes to get optimal performance for larger tables
+ * Optional "flashes" when things update
+ * Cell validation support
+ * Unicode support

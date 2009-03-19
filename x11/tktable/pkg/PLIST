@@ -1,21 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/11/24 02:35:28 kevlo Exp $
-lib/Tktable2.9/
-lib/Tktable2.9/README.txt
-lib/Tktable2.9/html/
-lib/Tktable2.9/html/tkTable.html
-lib/Tktable2.9/license.txt
-lib/Tktable2.9/pkgIndex.tcl
-lib/Tktable2.9/tkTable.tcl
-share/examples/Tktable/
-share/examples/Tktable/basic.tcl
-share/examples/Tktable/buttons.tcl
-share/examples/Tktable/command.tcl
-share/examples/Tktable/debug.tcl
-share/examples/Tktable/dynarows.tcl
-share/examples/Tktable/loadtable.tcl
-share/examples/Tktable/maxsize.tcl
-share/examples/Tktable/spreadsheet.tcl
-share/examples/Tktable/tcllogo.gif
-share/examples/Tktable/tktable.py
-share/examples/Tktable/valid.tcl
+@comment $OpenBSD: PLIST,v 1.8 2009/03/19 12:39:08 sthen Exp $
 %%SHARED%%
+lib/tktable/
+lib/tktable/pkgIndex.tcl
+lib/tktable/tkTable.tcl
+lib/tktable/tktable.py
+@man man/mann/tktable.n
+share/doc/tktable/
+share/doc/tktable/README.txt
+share/doc/tktable/license.txt
+share/doc/tktable/tktable.html
+share/examples/tktable/
+share/examples/tktable/basic.tcl
+share/examples/tktable/buttons.tcl
+share/examples/tktable/command.tcl
+share/examples/tktable/debug.tcl
+share/examples/tktable/dynarows.tcl
+share/examples/tktable/loadtable.tcl
+share/examples/tktable/maxsize.tcl
+share/examples/tktable/spreadsheet.tcl
+share/examples/tktable/tcllogo.gif
+share/examples/tktable/tktable.py
+share/examples/tktable/valid.tcl
