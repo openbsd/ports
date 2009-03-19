@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/19 20:15:34 jasper Exp $
+@group daemon
+lib/
+lib/php/
+pear/doc/
+pear/doc/DB_DataObject/
+pear/doc/DB_DataObject/docs/
+pear/doc/DB_DataObject/docs/example.ini
+pear/lib/.registry/db_dataobject.reg
+pear/lib/DB/
+pear/lib/DB/DataObject/
+pear/lib/DB/DataObject.php
+pear/lib/DB/DataObject/Cast.php
+pear/lib/DB/DataObject/Error.php
+pear/lib/DB/DataObject/Generator.php
+pear/lib/DB/DataObject/createTables.php
