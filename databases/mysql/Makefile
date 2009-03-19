@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2009/03/17 11:26:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.151 2009/03/19 22:51:01 martynas Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -11,7 +11,7 @@ PKGNAME-server=	mysql-server-${VERSION}p1
 PKGNAME-tests= 	mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.0
-MASTER_SITES=	${MASTER_SITES_MYSQL:=Downloads/$V/}
+MASTER_SITES=	${MASTER_SITE_MYSQL:=Downloads/$V/}
 
 SHARED_LIBS +=	mysqlclient_r		19.0
 SHARED_LIBS +=	mysqlclient		19.0

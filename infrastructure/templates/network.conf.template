@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.129 2009/02/16 15:28:58 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.130 2009/03/19 22:51:01 martynas Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -260,7 +260,7 @@ MASTER_SITE_RUBYFORGE+= \
 	http://files.rubyforge.mmmultiworks.com/ \
 	http://files.rubyforge.vm.bytemark.co.uk/
 
-MASTER_SITES_MYSQL+= \
+MASTER_SITE_MYSQL+= \
 	ftp://ftp.easynet.be/mysql/ \
 	ftp://ftp.gwdg.de/pub/misc/mysql/ \
 	ftp://ftp.fh-wolfenbuettel.de/pub/database/mysql/ \
