@@ -1,0 +1,51 @@
+$OpenBSD: patch-build_linux_Makefile,v 1.1.1.1 2009/03/19 18:28:18 landry Exp $
+--- build/linux/Makefile.orig	Wed Mar 19 21:58:51 2008
++++ build/linux/Makefile	Sat Mar  7 12:44:30 2009
+@@ -1,11 +1,11 @@
+ EXE = roadfighter
+ SRC = src
+-PREFIX = /usr
++PREFIX?= /usr
+ EXTRADIR = ./build/linux
+ 
+-GAMEDIR = $(PREFIX)/games
++GAMEDIR = $(PREFIX)/bin
+ STARTUP = $(GAMEDIR)/$(EXE)
+-BINDIR = $(PREFIX)/share/games/$(EXE)
++BINDIR = $(PREFIX)/share/$(EXE)
+ ICNDIR = $(PREFIX)/share/pixmaps
+ APPDIR = $(PREFIX)/share/applications
+ 
+@@ -37,8 +37,8 @@ OBJS = \
+ 	$(SRC)/main.o
+ 
+ CC = g++
+-CFLAGS = -g3 -O3 `sdl-config --cflags` -I/usr/X11R6/include
+-LDFLAGS = `sdl-config --libs` -L/usr/X11R6/lib/ -lSDL_image -lSDL_mixer -lSDL_sound -lSDL_ttf
++CFLAGS+= -g -O2 `sdl-config --cflags` -I/usr/X11R6/include
++LDFLAGS+= `sdl-config --libs` -L/usr/X11R6/lib/ -lSDL_image -lSDL_mixer -lSDL_sound -lSDL_ttf
+ RM = rm -f
+ CP = cp -r
+ MD = mkdir -p
+@@ -49,10 +49,10 @@ STRIP = strip
+ all: $(EXE)
+ 
+ %.o: %.cpp
+-	$(CC) $(CFLAGS) -c $< -o $@
++	$(CXX) $(CFLAGS) -c $< -o $@
+ 
+ $(EXE): $(OBJS)
+-	$(CC) $(LDFLAGS) $^ -o $@
++	$(CXX) $(LDFLAGS) $^ -o $@
+ 	@$(STRIP) $@
+ 	@$(ECHO) " o If there are no errors, the game compiled succesfully"
+ 
+@@ -67,7 +67,7 @@ install: all
+ 	@$(CP) "$(EXE)" $(DATA) "$(BINDIR)"
+ 	@$(ECHO) " o Creating startup script $(STARTUP)"
+ 	@$(MD) "$(GAMEDIR)"
+-	@$(ECHO) "cd \"$(BINDIR)\"; ./$(EXE); cd -" >"$(STARTUP)"
++	@$(ECHO) "cd \"${TRUEPREFIX}/share/${EXE}\"; ./$(EXE); cd -" >"$(STARTUP)"
+ 	@$(CHMOD) 755 "$(STARTUP)"
+ 	@$(ECHO) " o Creating application menu entry"
+ 	@$(MD) "$(ICNDIR)"
