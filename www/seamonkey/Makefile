@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.31 2009/01/09 15:54:31 martynas Exp $
+# $OpenBSD: Makefile,v 1.32 2009/03/19 22:03:42 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	integrated mozilla application suite
 
-VER=		1.1.14
+VER=		1.1.15
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}p0
+PKGNAME=	seamonkey-${VER}
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -41,40 +41,31 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
-.for id version in \
-	0 1.1.2 \
-	1 1.1.8 \
-	2 1.1.9 \
-	4 1.1.11 \
-	5 1.1.12 \
-	6 1.1.13 \
-	7 1.1.14
-MASTER_SITES${id}+=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${version}/contrib-localized/
-.endfor
+MASTER_SITES0=	http://mirrors.protection.cx/~martynas/mozilla/seamonkey/langpacks/
 
-LANGUAGES=	be-BY 2 1.1.9 \
-		ca-AD 1 1.1.8 \
-		cs-CZ 7 1.1.14 \
-		de-AT 7 1.1.14 \
-		el-GR 0 1.1.2 \
-		es-ES 6 1.1.13 \
-		fr-FR 6 1.1.13 \
-		he-IL 0 1.1.2 \
-		hu-HU 4 1.1.11 \
-		it-IT 4 1.1.11 \
-		lt-LT 5 1.1.12 \
-		nl-NL 6 1.1.13 \
-		pl-PL 7 1.1.14 \
-		pt-BR 7 1.1.14 \
-		ru-RU 6 1.1.13 \
-		ur-PK 2 1.1.9 \
-		sv-SE 5 1.1.12
+LANGUAGES=	be-BY 1.1.9 \
+		ca-AD 1.1.14 \
+		cs-CZ 1.1.15 \
+		de-AT 1.1.15 \
+		el-GR 1.1.2 \
+		es-ES 1.1.13 \
+		fr-FR 1.1.14 \
+		he-IL 1.1.2 \
+		hu-HU 1.1.11 \
+		it-IT 1.1.14 \
+		lt-LT 1.1.12 \
+		nl-NL 1.1.14 \
+		pl-PL 1.1.15 \
+		pt-BR 1.1.14 \
+		ru-RU 1.1.14 \
+		ur-PK 1.1.9 \
+		sv-SE 1.1.12
 BINLANGS=	be-BY el-GR fr-FR pl-PL pt-BR
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-.for language id version in ${LANGUAGES}
-DISTFILES+=	seamonkey-${version}.${language}.langpack.xpi:${id}
+.for language version in ${LANGUAGES}
+DISTFILES+=	seamonkey-${version}.${language}.langpack.xpi:0
 .endfor
 
 EXTRACT_CASES += *.xpi) \
@@ -97,7 +88,7 @@ WANTLIB=	c glib-2.0 m pthread stdc++ \
 		Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 \
 		cairo expat fontconfig freetype glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 jpeg pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pangox-1.0 pixman-1 png z
+		pangoft2-1.0 pangox-1.0 pixman-1 png z gio-2.0
 
 VMEM_WARNING=	Yes
 
@@ -159,7 +150,7 @@ post-extract:
 	@mv -f ${WRKDIR}/$i/bin/* ${WRKDIR}/$i/
 	@rmdir ${WRKDIR}/$i/bin
 .endfor
-.for language id version in ${LANGUAGES}
+.for language version in ${LANGUAGES}
 	@rm -f ${WRKDIR}/${language}/chrome/*-{mac,win}.jar
 .endfor
 
@@ -188,7 +179,7 @@ do-install:
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
 		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
 	${INSTALL_MAN} ${WRKSRC}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
-.for language id version in ${LANGUAGES}
+.for language version in ${LANGUAGES}
 	${INSTALL_DATA} ${WRKDIR}/${language}/chrome/*.jar ${MOZ}/chrome/
 	sh ${FILESDIR}/genchrome ${WRKDIR}/${language}/install.js \
 		${language} >> ${MOZ}/chrome/installed-chrome.txt
