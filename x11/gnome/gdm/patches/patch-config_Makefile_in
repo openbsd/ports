@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_Makefile_in,v 1.12 2009/02/04 18:50:02 ajacoutot Exp $
---- config/Makefile.in.orig	Wed Dec 10 23:26:32 2008
-+++ config/Makefile.in	Wed Feb  4 18:33:48 2009
-@@ -715,18 +715,6 @@ install-data-hook: gdm.conf gdm.conf-custom Xsession I
+$OpenBSD: patch-config_Makefile_in,v 1.13 2009/03/19 08:26:42 ajacoutot Exp $
+--- config/Makefile.in.orig	Thu Mar 19 06:00:25 2009
++++ config/Makefile.in	Thu Mar 19 09:01:36 2009
+@@ -709,18 +709,6 @@ install-data-hook: gdm.conf gdm.conf-custom Xsession I
  		chmod 755 $(DESTDIR)$(gnomercdir); \
  	fi
  
