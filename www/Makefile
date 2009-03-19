@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.393 2009/03/19 18:29:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.394 2009/03/19 22:42:33 bernd Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -328,6 +328,7 @@
      SUBDIR += ruby-mongrel
      SUBDIR += ruby-rack
      SUBDIR += ruby-rails
+     SUBDIR += ruby-rest-client
      SUBDIR += ruby-sinatra
      SUBDIR += ruby-thin_http
      SUBDIR += ruby-typo
