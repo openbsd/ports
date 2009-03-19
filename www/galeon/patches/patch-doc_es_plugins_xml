@@ -1,0 +1,13 @@
+$OpenBSD: patch-doc_es_plugins_xml,v 1.1 2009/03/19 09:31:21 ajacoutot Exp $
+--- doc/es/plugins.xml.orig	Thu Mar 19 09:41:52 2009
++++ doc/es/plugins.xml	Thu Mar 19 09:42:14 2009
+@@ -3,7 +3,8 @@
+   <title>Complementos</title>
+   <para>
+     Galeon usa los complementos de Mozilla (plugins) situados en ~/.mozilla/plugins,
+-    /usr/lib/mozilla/plugins o $MOZILLA_FIVE_HOME/plugins.
++    /usr/lib/mozilla/plugins, ${LOCALBASE}/lib/mozilla-plugins
++     o $MOZILLA_FIVE_HOME/plugins.
+     Para añadir un complemento nuevo, copie o haga un enlace simbólico al complemento en
+     este directorio.
+   </para>
