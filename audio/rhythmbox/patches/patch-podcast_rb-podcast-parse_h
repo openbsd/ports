@@ -1,11 +1,11 @@
-$OpenBSD: patch-podcast_rb-podcast-parse_h,v 1.1 2008/05/14 09:41:56 jasper Exp $
---- podcast/rb-podcast-parse.h.orig	Sat Mar  8 16:42:20 2008
-+++ podcast/rb-podcast-parse.h	Sat Mar  8 16:47:29 2008
-@@ -23,6 +23,7 @@
+$OpenBSD: patch-podcast_rb-podcast-parse_h,v 1.2 2009/03/19 13:50:28 ajacoutot Exp $
+--- podcast/rb-podcast-parse.h.orig	Thu Mar 12 03:26:18 2009
++++ podcast/rb-podcast-parse.h	Thu Mar 19 13:09:49 2009
+@@ -31,6 +31,7 @@
  #define RB_PODCAST_PARSE_H
  
  #include <glib.h>
 +#include <inttypes.h>
  
- typedef struct
+ typedef enum
  {

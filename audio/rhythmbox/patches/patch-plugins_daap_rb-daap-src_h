@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_daap_rb-daap-src_h,v 1.1 2008/05/14 09:41:56 jasper Exp $
---- plugins/daap/rb-daap-src.h.orig	Sat Mar  8 17:34:27 2008
-+++ plugins/daap/rb-daap-src.h	Sat Mar  8 17:35:22 2008
-@@ -25,6 +25,10 @@
+$OpenBSD: patch-plugins_daap_rb-daap-src_h,v 1.2 2009/03/19 13:50:28 ajacoutot Exp $
+--- plugins/daap/rb-daap-src.h.orig	Thu Mar 12 03:26:13 2009
++++ plugins/daap/rb-daap-src.h	Thu Mar 19 13:09:49 2009
+@@ -33,6 +33,10 @@
  #include <glib.h>
  #include <gst/gstelement.h>
  

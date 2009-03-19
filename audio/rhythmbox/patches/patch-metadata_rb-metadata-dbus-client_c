@@ -1,7 +1,7 @@
-$OpenBSD: patch-metadata_rb-metadata-dbus-client_c,v 1.1 2008/05/14 09:41:56 jasper Exp $
---- metadata/rb-metadata-dbus-client.c.orig	Sat Mar  8 21:04:48 2008
-+++ metadata/rb-metadata-dbus-client.c	Sat Mar  8 21:07:05 2008
-@@ -51,8 +51,7 @@
+$OpenBSD: patch-metadata_rb-metadata-dbus-client_c,v 1.2 2009/03/19 13:50:28 ajacoutot Exp $
+--- metadata/rb-metadata-dbus-client.c.orig	Thu Mar 12 03:26:12 2009
++++ metadata/rb-metadata-dbus-client.c	Thu Mar 19 13:09:48 2009
+@@ -67,8 +67,7 @@
  #include <glib/gi18n.h>
  
  #include <unistd.h>

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2009/03/14 18:32:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2009/03/19 13:50:28 ajacoutot Exp $
 
 COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		0.11.5
-PKGNAME=		${DISTNAME}p5
+GNOME_VERSION=		0.12.0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 CATEGORIES=		audio
@@ -42,7 +41,8 @@ LIB_DEPENDS=		musicbrainz3::audio/libmusicbrainz \
 			gnome-media-profiles::x11/gnome/media \
 			totem-plparser::x11/gnome/totem-pl-parser \
 			sexy::x11/libsexy \
-			camel-1.2.>=10,edataserver-1.2::databases/evolution-data-server
+			camel-1.2.>=10,edataserver-1.2::databases/evolution-data-server \
+			gstcdda-0.10,gsttag-0.10::multimedia/gstreamer-0.10/plugins-base,-cdda
 RUN_DEPENDS=		:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-gnome \
 			:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-ogg \
 			:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-vorbis \
@@ -55,28 +55,29 @@ REGRESS_DEPENDS=	::devel/check
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
-AUTOCONF_VERSION=	2.61
+AUTOCONF_VERSION=	2.62
+
 CONFIGURE_STYLE= 	autoconf
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/rhythmbox/ \
 			--disable-schemas-install \
-			--enable-nautilus-menu \
 			--with-database=tree \
-			--with-metadata-helper \
+			--with-gnome-keyring \
+			--with-x \
 			--disable-scrollkeeper \
 			--disable-python \
 			--disable-daap \
-			--disable-ipod-writing \
-			--without-cd-burning \
 			--without-hal \
 			--without-mdns \
 			--without-mtp \
 			--without-ipod \
+			--without-hal \
+			--without-libbrasero-media \
+			--without-libnautilus-burn \
 			--disable-vala \
 			--disable-browser-plugin \
 			--disable-fm-radio \
-			--disable-lirc \
-			--without-internal-gsequence
+			--disable-lirc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
