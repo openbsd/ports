@@ -1,0 +1,22 @@
+$OpenBSD: patch-examples_struct_diff_tcl,v 1.1 2009/03/19 16:54:32 sthen Exp $
+--- examples/struct/diff.tcl.orig	Fri Jan 16 17:00:50 2009
++++ examples/struct/diff.tcl	Fri Jan 16 17:00:16 2009
+@@ -1,3 +1,7 @@
++#! /bin/sh
++# the next line restarts with tclsh \
++exec tclsh "$0" ${1+"$@"}
++
+ # MAIN PROGRAM
+ #
+ # Usage:
+@@ -12,10 +16,6 @@
+ #       n2 is omitted, and conversely, if it appears in the second file but not the first, n1
+ #       is omitted.
+ 
+-lappend auto_path \
+-	[file join \
+-	[file dirname [file dirname [file dirname [file dirname [file join [pwd] [info script]]]]]] \
+-	modules struct]
+ package require struct
+ 
+ # Open the files and read the lines into memory

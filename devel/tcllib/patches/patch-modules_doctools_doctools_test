@@ -1,0 +1,7 @@
+$OpenBSD: patch-modules_doctools_doctools_test,v 1.1 2009/03/19 16:54:32 sthen Exp $
+--- modules/doctools/doctools.test.orig	Fri Dec 12 23:10:24 2008
++++ modules/doctools/doctools.test	Wed Feb  4 14:40:59 2009
+@@ -333,0 +334,3 @@
++	if {$format eq "nroff"} {
++		lappend map ".so man.macros\n" [fileutil::cat [localPath mpformats/man.macros]]
++	}

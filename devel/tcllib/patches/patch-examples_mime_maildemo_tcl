@@ -1,0 +1,11 @@
+$OpenBSD: patch-examples_mime_maildemo_tcl,v 1.1 2009/03/19 16:54:32 sthen Exp $
+--- examples/mime/maildemo.tcl.orig	Wed Feb  4 09:25:12 2009
++++ examples/mime/maildemo.tcl	Wed Feb  4 09:26:45 2009
+@@ -1,3 +1,7 @@
++#! /bin/sh
++# the next line restarts with tclsh \
++exec tclsh "$0" ${1+"$@"}
++
+ # maildemo.tcl - Copyright (C) 2005 Pat Thoyts <patthoyts@users.sf.net>
+ # 
+ # This program illustrates the steps required to compose a MIME message and 

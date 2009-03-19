@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_doctools_mpformats_toc_nroff,v 1.1 2009/03/19 16:54:33 sthen Exp $
+--- modules/doctools/mpformats/toc.nroff.orig	Fri Dec 12 23:10:24 2008
++++ modules/doctools/mpformats/toc.nroff	Thu Jan 22 12:44:13 2009
+@@ -51,7 +51,7 @@ proc fmt_toc_begin     {label title}      {
+ 	set hdr [nr_comment $prec]\n
+     }
+     append  hdr [nr_comment [c_provenance]]\n
+-    append  hdr [nr_include man.macros]\n
++    append  hdr [nr_read man.macros]\n
+     append  hdr [nr_title "\"[string trimleft $label :]\" n"]\n
+     append  hdr [nr_bolds]\n
+     append  hdr [nr_section CONTENTS]\n

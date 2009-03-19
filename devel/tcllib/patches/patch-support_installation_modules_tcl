@@ -1,0 +1,48 @@
+$OpenBSD: patch-support_installation_modules_tcl,v 1.1 2009/03/19 16:54:33 sthen Exp $
+--- support/installation/modules.tcl.orig	Fri Dec 12 23:10:20 2008
++++ support/installation/modules.tcl	Sun Jan 18 01:18:55 2009
+@@ -40,7 +40,7 @@ Module  base64      _tcl  _man  _null
+ Module  base32      _tcl  _man  _null
+ Module  bee         _tcl  _man  _null
+ Module  bench       _tcl _null  _null
+-Module  bibtex      _tcl  _man  _null
++Module  bibtex      _tcl  _man  _exa
+ Module  blowfish    _tcl  _man  _null
+ Module  cache       _tcl  _man  _null
+ Module  calendar     _tci _man  _null
+@@ -63,7 +63,7 @@ Module  grammar_fa  _tcl  _man  _null
+ Module  grammar_me  _tcl  _man  _null
+ Module  grammar_peg _tcl  _man  _null
+ Module  html        _tcl  _man  _null
+-Module  htmlparse   _tcl  _man  _null
++Module  htmlparse   _tcl  _man  _exa
+ Module  http        _tcl  _man  _null
+ Module  ident       _tcl  _man  _null
+ Module  inifile     _tcl  _man  _null
+@@ -73,7 +73,7 @@ Module  javascript  _tcl  _man  _null
+ Module  jpeg        _tcl  _man  _null
+ Module  json        _tcl  _man  _null
+ Module  ldap        _tcl  _man _exa
+-Module  log          _msg _man  _null
++Module  log          _msg _man  _exa
+ Module  map         _tcl  _man  _null
+ Module  mapproj     _tcl  _man _exa
+ Module  math         _tci _man _exa
+@@ -98,7 +98,7 @@ Module  rc4         _tcl  _man  _null
+ Module  rcs         _tcl  _man  _null
+ Module  report      _tcl  _man  _null
+ Module  ripemd      _tcl  _man  _null
+-Module  sasl        _tcl  _man  _null
++Module  sasl        _tcl  _man  _exa
+ Module  sha1        _tcl  _man  _null
+ Module  simulation  _tcl  _man  _null
+ Module  smtpd       _tcl  _man _exa
+@@ -110,7 +110,7 @@ Module  struct      _tcl  _man _exa
+ Module  tar         _tcl  _man  _null
+ Module  term         _tcr _man _exa
+ Module  textutil     _tex _man  _null
+-Module  tie         _tcl  _man  _null
++Module  tie         _tcl  _man  _exa
+ Module  tiff        _tcl  _man  _null
+ Module  transfer    _tcl  _man  _null
+ Module  treeql      _tcl  _man  _null

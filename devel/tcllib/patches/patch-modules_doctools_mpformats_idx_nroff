@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_doctools_mpformats_idx_nroff,v 1.1 2009/03/19 16:54:33 sthen Exp $
+--- modules/doctools/mpformats/idx.nroff.orig	Fri Dec 12 23:10:24 2008
++++ modules/doctools/mpformats/idx.nroff	Thu Jan 22 12:43:54 2009
+@@ -52,7 +52,7 @@ proc fmt_index_begin     {label title}      {
+ 	set hdr [nr_comment $prec]\n
+     }
+     append  hdr [nr_comment [c_provenance]]\n
+-    append  hdr [nr_include man.macros]\n
++    append  hdr [nr_read man.macros]\n
+     append  hdr [nr_title "\"[string trimleft $label :]\" n"]\n
+     append  hdr [nr_bolds]\n
+     append  hdr [nr_section INDEX]\n

@@ -1,6 +1,6 @@
-$OpenBSD: patch-support_devel_all_tcl,v 1.1 2008/05/09 19:45:18 sthen Exp $
---- support/devel/all.tcl.pat.orig	Fri Oct 13 12:09:34 2006
-+++ support/devel/all.tcl	Thu May  1 15:28:19 2008
+$OpenBSD: patch-support_devel_all_tcl,v 1.2 2009/03/19 16:54:33 sthen Exp $
+--- support/devel/all.tcl.orig	Fri Dec 12 23:10:20 2008
++++ support/devel/all.tcl	Tue Jan  6 02:28:48 2009
 @@ -98,6 +98,7 @@ if {[catch {::tcltest::normalizePath ::tcltest::testsD
  set root $::tcltest::testsDirectory
  

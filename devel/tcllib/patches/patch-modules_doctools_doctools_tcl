@@ -1,0 +1,23 @@
+$OpenBSD: patch-modules_doctools_doctools_tcl,v 1.1 2009/03/19 16:54:32 sthen Exp $
+--- modules/doctools/doctools.tcl.orig	Fri Dec 12 23:10:24 2008
++++ modules/doctools/doctools.tcl	Thu Jan 22 12:39:52 2009
+@@ -650,6 +650,7 @@ proc ::doctools::SetupFormatter {name format} {
+     $mpip invokehidden source [file join $here api.tcl]
+     #$mpip eval [list source [file join $here api.tcl]]
+     interp alias $mpip dt_source   {} ::doctools::Source  $mpip [file dirname $format]
++    interp alias $mpip dt_read     {} ::doctools::Read    $mpip [file dirname $format]
+     interp alias $mpip dt_package  {} ::doctools::Package $mpip
+     interp alias $mpip file        {} ::doctools::FileOp  $mpip
+     interp alias $mpip puts_stderr {} ::puts stderr
+@@ -1135,6 +1136,11 @@ proc ::doctools::Source {ip path file} {
+     return
+ }
+ 
++proc ::doctools::Read {ip path file} {
++    #puts stderr "$ip (read $path $file)"
++
++    return [read [set f [open [file join $path [file tail $file]]]]][close $f]
++}
+ 
+ proc ::doctools::Locate {p} {
+     # @mdgen NODEP: doctools::__undefined__

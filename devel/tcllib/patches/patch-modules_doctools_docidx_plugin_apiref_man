@@ -1,0 +1,18 @@
+$OpenBSD: patch-modules_doctools_docidx_plugin_apiref_man,v 1.1 2009/03/19 16:54:32 sthen Exp $
+--- modules/doctools/docidx_plugin_apiref.man.orig	Fri Jan 23 22:07:37 2009
++++ modules/doctools/docidx_plugin_apiref.man	Fri Jan 23 22:07:59 2009
+@@ -106,6 +106,14 @@ of the documentation for the package [package doctools
+ Query command. It returns the name of the format associated with the
+ index formatting engine.
+ 
++[call [cmd dt_read] [arg file]]
++
++Controlled filesystem access. Appends contents of file to the output.
++
++Only files which are either in the same directory as the file
++containing the engine, or below it, can be loaded. Trying to load a
++file outside of this directory causes an error.
++
+ [call [cmd dt_source] [arg file]]
+ 
+ Controlled filesystem access. This command allows the index formatting

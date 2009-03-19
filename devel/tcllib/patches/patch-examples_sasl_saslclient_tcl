@@ -1,0 +1,11 @@
+$OpenBSD: patch-examples_sasl_saslclient_tcl,v 1.1 2009/03/19 16:54:32 sthen Exp $
+--- examples/sasl/saslclient.tcl.orig	Sun Jan 18 01:17:52 2009
++++ examples/sasl/saslclient.tcl	Sun Jan 18 01:18:29 2009
+@@ -1,3 +1,7 @@
++#! /bin/sh
++# the next line restarts with tclsh \
++exec tclsh "$0" ${1+"$@"}
++
+ # saslclient.tcl - Copyright (C) 2005 Pat Thoyts <patthoyts@users.sf.net>
+ #
+ # This is a SMTP SASL test client. It connects to a SMTP server and uses 

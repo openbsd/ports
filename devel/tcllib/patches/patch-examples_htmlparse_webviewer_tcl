@@ -1,0 +1,11 @@
+$OpenBSD: patch-examples_htmlparse_webviewer_tcl,v 1.1 2009/03/19 16:54:32 sthen Exp $
+--- examples/htmlparse/webviewer.tcl.orig	Sun Jan 18 00:55:12 2009
++++ examples/htmlparse/webviewer.tcl	Sun Jan 18 00:55:56 2009
+@@ -1,3 +1,7 @@
++#! /bin/sh
++# the next line restarts with tclsh \
++exec tclsh "$0" ${1+"$@"}
++
+ # webviewer.tcl - Copyright (C) 2004 Pat Thoyts <patthoyts@users.sourceforge.net>
+ #
+ # This is a sample application to demonstrate the use of the htmlparse package.

@@ -1,0 +1,11 @@
+$OpenBSD: patch-examples_mapproj_tkmap_tcl,v 1.1 2009/03/19 16:54:32 sthen Exp $
+--- examples/mapproj/tkmap.tcl.orig	Sat Jan 17 06:04:02 2009
++++ examples/mapproj/tkmap.tcl	Sat Jan 17 06:04:57 2009
+@@ -1,3 +1,7 @@
++#! /bin/sh
++# the next line restarts with tclsh \
++exec tclsh "$0" ${1+"$@"}
++
+ # tkmap.tcl --
+ #
+ #	Example application demonstrating the use of Tcllib's 'mapproj'

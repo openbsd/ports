@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_doctools_mpformats_fmt_nroff,v 1.1 2009/03/19 16:54:32 sthen Exp $
+--- modules/doctools/mpformats/fmt.nroff.orig	Fri Dec 12 23:10:24 2008
++++ modules/doctools/mpformats/fmt.nroff	Thu Jan 22 12:43:40 2009
+@@ -40,7 +40,7 @@ c_pass 2 fmt_manpage_begin {title section version} {
+ 	c_hold hdr $text
+     }
+ 
+-    c_hold hdr [nr_include man.macros]
++    c_hold hdr [nr_read man.macros]
+     c_hold hdr [nr_title "\"[string trimleft $title :]\" $section $version $module \"$shortdesc\""]
+     c_hold hdr [nr_bolds]
+     c_hold hdr [fmt_section NAME]

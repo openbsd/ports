@@ -1,0 +1,28 @@
+$OpenBSD: patch-modules_doctools_mpformats__nroff_tcl,v 1.1 2009/03/19 16:54:32 sthen Exp $
+--- modules/doctools/mpformats/_nroff.tcl.orig	Fri Dec 12 23:10:24 2008
++++ modules/doctools/mpformats/_nroff.tcl	Thu Jan 22 12:43:15 2009
+@@ -33,6 +33,7 @@ proc nr_title   {text}      {return "\n.TH $text"}
+ proc nr_include {file}      {return "\n.so $file"}
+ proc nr_bolds   {}          {return \n.BS}
+ proc nr_bolde   {}          {return \n.BE}
++proc nr_read    {fn}        {return [nroffMarkup [dt_read $fn]]}
+ 
+ proc nr_section {name} {
+     if {![regexp {[ 	]} $name]} {
+@@ -60,11 +61,14 @@ proc nr_subsection {name}   {
+ #
+ 
+ global   markupMap
+-set      markupMap [list "\\" "\1\\"]
++set      markupMap [list \
++	"\\"   "\1\\" \
++	"'"    "\1'" \
++	"\\\\" "\\"]
+ global   finalMap
+ set      finalMap [list \
+ 	"\1\\" "\\" \
+-        "\1'" "'" \
++	"\1'"  "'" \
+ 	"\\"   "\\\\"]
+ global   textMap
+ set      textMap [list "\\" "\\\\"]

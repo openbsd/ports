@@ -1,0 +1,17 @@
+$OpenBSD: patch-examples_irc_irc_example_tcl,v 1.1 2009/03/19 16:54:32 sthen Exp $
+--- examples/irc/irc_example.tcl.orig	Sat Jan 17 13:57:20 2009
++++ examples/irc/irc_example.tcl	Sat Jan 17 14:05:00 2009
+@@ -7,7 +7,3 @@
+ 
+-# I include these so that it can find both the irc package and the
+-# logger package that irc needs.
+-
+-set auto_path "[file join [file dirname [info script]] .. .. modules irc] $auto_path"
+-set auto_path "[file join [file dirname [info script]] .. .. modules log] $auto_path"
++set scriptDir [file dirname [info script]]
+ package require irc 0.4
+@@ -30,3 +26,3 @@
+     while { 1 } {
+-	source mainloop.tcl
++	source [file join $::scriptDir mainloop.tcl]
+ 	vwait ::ircclient::RELOAD
