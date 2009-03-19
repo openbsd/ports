@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/19 20:15:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/19 20:18:04 jasper Exp $
 
 COMMENT=	SQL builder, object interface to database tables
 
@@ -16,5 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
+
+RUN_DEPENDS=	::databases/pear-MDB2
 
 .include <bsd.port.mk>
