@@ -1,0 +1,16 @@
+CMS Made Simple has been installed into ${INSTDIR}
+
+You should point this to the DocumentRoot of your web-server:
+   # ln -s ../cmd /var/www/htdocs/cms
+(make sure you use a relative symlink since Apache is chrooted)
+
+You will also need to add these lines to you php.ini file:
+    extension=mysql.so
+    extensions=gd.so
+
+and proceed to complete the installation by reading the INSTALL.txt
+which has been installed as ${INSTDIR}/doc/INSTALL.txt, starting from
+step 2.
+
+You can ensure you have a working install by accessing:
+http://<localhost>/cms/
