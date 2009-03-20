@@ -1,26 +1,22 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/19 13:14:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/20 10:34:33 ajacoutot Exp $
 
 COMMENT=	zarafa webaccess frontend
 
 V=		6.20.3
 DISTNAME=	zarafa-webaccess-ajax-${V}
-PKGNAME=	zarafa-webaccess-${V}p0
+PKGNAME=	zarafa-webaccess-${V}p1
 CATEGORIES=	mail www productivity
-
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		zarafa-webaccess-mobile-${V}${EXTRACT_SUFX}
 
 MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/zarafa/
 
-RUN_DEPENDS=	::mail/zarafa/zarafa,-php \
-		::devel/smarty
+RUN_DEPENDS=	::mail/zarafa/zarafa,-php
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 
 PREFIX=		/var/www
-INSTDIR=	${PREFIX}/zarafa
+INSTDIR=	${PREFIX}/zarafa-webaccess
 SUBST_VARS=	INSTDIR
 
 WRKDIST=	${WRKDIR}
@@ -29,18 +25,12 @@ do-install:
 	${SUBST_CMD} ${WRKDIR}/php-webclient-ajax/config.php.dist
 	find ${WRKDIR} -name \*.orig -or -name \*.bak | xargs rm -f
 	${INSTALL_DATA_DIR} ${PREFIX}/zarafa
-	mv ${WRKDIR}/php-webclient-ajax ${INSTDIR}/webaccess
-	mv ${WRKDIR}/php-mobile-webaccess ${INSTDIR}/webaccess-mobile
-	mv ${INSTDIR}/webaccess-mobile/config.php \
-		${INSTDIR}/webaccess-mobile/config.php.dist
-	mv ${INSTDIR}/webaccess/debug.php \
-		${INSTDIR}/webaccess/debug.php.disabled
-	mv ${INSTDIR}/webaccess/client/layout/img/login.jpg \
-		${INSTDIR}/webaccess/client/layout/img/_login.jpg
-	mv ${INSTDIR}/webaccess-mobile/debug.php \
-		${INSTDIR}/webaccess-mobile/debug.php.disabled
-	${INSTALL_DATA} /dev/null ${INSTDIR}/webaccess/debug.txt 
-	${INSTALL_DATA} /dev/null ${INSTDIR}/webaccess-mobile/debug.txt
+	mv ${WRKDIR}/php-webclient-ajax ${INSTDIR}
+	mv ${INSTDIR}/debug.php \
+		${INSTDIR}/debug.php.disabled
+	mv ${INSTDIR}/client/layout/img/login.jpg \
+		${INSTDIR}/client/layout/img/_login.jpg
+	${INSTALL_DATA} /dev/null ${INSTDIR}/debug.txt 
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

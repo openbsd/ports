@@ -1,23 +1,20 @@
 Zarafa webaccess has been installed under
 ${INSTDIR}
 
-Whether you want to provide access to regular and/or mobile clients, you
-should point the followings to the DocumentRoot of your web-server:
-   # ln -s ../zarafa/webaccess /var/www/htdocs/webaccess
-   # ln -s ../zarafa/webaccess-mobile /var/www/htdocs/webaccess-mobile
+You should point the followings to the DocumentRoot of your web-server:
+   # ln -s ../zarafa-webaccess ${PREFIX}/htdocs/webaccess
 (make sure you use a relative symlink since Apache is chrooted)
 
 You need to edit the config.php file installed under:
-${INSTDIR}/webaccess for regular web client access
-${INSTDIR}/webaccess-mobile for mobile client access
+${INSTDIR} for regular web client access
 
 You may want to edit ${PREFIX}/conf/php.ini according to
-   ${INSTDIR}/webaccess/.htaccess
+   ${INSTDIR}/.htaccess
 In any case, short_open_tag must be "On".
 
 If you want to debug the webaccess, copy the following file
-   ${INSTDIR}/webaccess{-mobile}/debug.php.disabled
+   ${INSTDIR}/debug.php.disabled
 to
-   ${INSTDIR}/webaccess{-mobile}/debug.php
+   ${INSTDIR}/debug.php
 The debugging output will then be available under:
-   ${INSTDIR}/webaccess{-mobile}/debug.txt
+   ${INSTDIR}/debug.txt

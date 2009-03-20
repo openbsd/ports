@@ -1,6 +1,4 @@
 Zarafa provides full functionality webaccess completely in the Outlook
-"Look & Feel". It includes access to email, calendars, contacts, tasks,
-shared folders and Public Folders. The AJAX implementation with drag &
+"Look & Feel".  It includes access to email, calendars, contacts, tasks,
+shared folders and Public Folders.  The AJAX implementation with drag &
 drop support is used be competitive with desktop email applications.
-
-This package provides both web and mobile clients access to Zarafa.
