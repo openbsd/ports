@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2009/03/04 20:08:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2009/03/20 17:36:15 ajacoutot Exp $
 
 COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		gtkhtml
 GNOME_VERSION=		3.24.5
 API_VERSION=		3.14
-PKGNAME=		gtkhtml3-${VERSION}
+PKGNAME=		gtkhtml3-${VERSION}p0
 
 SHARED_LIBS +=	gtkhtml-3.14         3.0      # .20.0
 SHARED_LIBS +=	gtkhtml-editor       0.0      # .0.0
+
 CATEGORIES=    		www
 
 # GPLv2/LGPLv2
@@ -35,6 +36,7 @@ BUILD_DEPENDS=		::devel/iso-codes \
 			:gnome-icon-theme-*:x11/gnome/icon-theme
 LIB_DEPENDS=		enchant::textproc/enchant \
 			gnomeui-2::x11/gnome/libgnomeui
+RUN_DEPENDS=		::devel/iso-codes
 
 USE_X11=		Yes
 
