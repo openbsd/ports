@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/20 13:53:04 eric Exp $
+%%SHARED%%
+include/FreeImage.h
+lib/libfreeimage.a

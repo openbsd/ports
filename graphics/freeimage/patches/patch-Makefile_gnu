@@ -1,0 +1,60 @@
+$OpenBSD: patch-Makefile_gnu,v 1.1.1.1 2009/03/20 13:53:04 eric Exp $
+--- Makefile.gnu.orig	Sun Aug 26 07:44:24 2007
++++ Makefile.gnu	Tue Feb 17 18:02:33 2009
+@@ -8,13 +8,13 @@ CC = gcc
+ CXX = g++
+ AR = ar
+ 
+-INCDIR = /usr/include
+-INSTALLDIR = /usr/lib
++INCDIR = ${PREFIX}/include
++INSTALLDIR = ${PREFIX}/lib
+ 
+ # Converts cr/lf to just lf
+ DOS2UNIX = dos2unix
+ 
+-COMPILERFLAGS = -O3 -fPIC -fexceptions -fvisibility=hidden
++COMPILERFLAGS = -O2 -fPIC
+ LIBRARIES = -lstdc++
+ 
+ MODULES = $(SRCS:.c=.o)
+@@ -24,9 +24,8 @@ CXXFLAGS = $(COMPILERFLAGS)  -Wno-ctor-dtor-privacy $(
+ 
+ TARGET  = freeimage
+ STATICLIB = lib$(TARGET).a
+-SHAREDLIB = lib$(TARGET)-$(VER_MAJOR).$(VER_MINOR).so
++SHAREDLIB = lib$(TARGET).so.$(LIBfreeimage_VERSION)
+ LIBNAME	= lib$(TARGET).so
+-VERLIBNAME = $(LIBNAME).$(VER_MAJOR)
+ HEADER = Source/FreeImage.h
+ 
+ 
+@@ -37,7 +36,7 @@ all: dist
+ 
+ dist: FreeImage
+ 	cp *.a Dist
+-	cp *.so Dist
++	cp *.so.* Dist
+ 	cp Source/FreeImage.h Dist
+ 
+ dos2unix:
+@@ -55,15 +54,12 @@ $(STATICLIB): $(MODULES)
+ 	$(AR) r $@ $(MODULES)
+ 
+ $(SHAREDLIB): $(MODULES)
+-	$(CC) -s -shared -Wl,-soname,$(VERLIBNAME) -o $@ $(MODULES) $(LIBRARIES)
++	$(CC) -O2 -fPIC -s -shared -o $@ $(MODULES) $(LIBRARIES)
+ 
+ install:
+-	install -m 644 -o root -g root $(HEADER) $(INCDIR)
+-	install -m 644 -o root -g root $(STATICLIB) $(INSTALLDIR)
+-	install -m 755 -o root -g root $(SHAREDLIB) $(INSTALLDIR)
+-	ln -sf $(SHAREDLIB) $(INSTALLDIR)/$(VERLIBNAME)
+-	ln -sf $(VERLIBNAME) $(INSTALLDIR)/$(LIBNAME)	
+-	ldconfig
++	install -m 644 -o root -g bin $(HEADER) $(INCDIR)
++	install -m 644 -o root -g bin $(STATICLIB) $(INSTALLDIR)
++	install -m 755 -o root -g bin $(SHAREDLIB) $(INSTALLDIR)
+ 
+ clean:
+ 	rm -f core Dist/*.* u2dtmp* $(MODULES) $(STATICLIB) $(SHAREDLIB) $(LIBNAME)
