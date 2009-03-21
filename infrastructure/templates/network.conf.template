@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.130 2009/03/19 22:51:01 martynas Exp $
+# $OpenBSD: network.conf.template,v 1.131 2009/03/21 22:25:48 fgsch Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -276,3 +276,6 @@ MASTER_SITE_MYSQL+= \
 	ftp://ftp.linorg.usp.br/mysql/ \
 	ftp://ftp.cbn.net.id/mirror/mysql/ \
 	http://download.softagency.net/MySQL/
+
+MASTER_SITE_PYPI +=	\
+	http://pypi.python.org/packages/source/
