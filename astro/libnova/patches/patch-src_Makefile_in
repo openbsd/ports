@@ -1,12 +1,10 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2008/02/08 23:25:56 espie Exp $
---- src/Makefile.in.orig	Mon Feb  4 16:03:39 2008
-+++ src/Makefile.in	Mon Feb  4 16:04:22 2008
-@@ -100,7 +100,7 @@ lib_LTLIBRARIES = libnova.la
- libnova_la_SOURCES =  	julian_day.c 	dynamical_time.c 	sidereal_time.c 	transform.c 	nutation.c 	aberration.c   	apparent_position.c 	solar.c 	precession.c  	proper_motion.c 	mercury.c 	venus.c  	earth.c  	mars.c   	jupiter.c 	saturn.c  	uranus.c  	neptune.c  	pluto.c 	vsop87.c 	lunar.c  	elliptic_motion.c 	asteroid.c 	comet.c 	parabolic_motion.c 	utility.c 	refraction.c 	rise_set.c 	angular_separation.c 	hyperbolic_motion.c 	parallax.c 	airmass.c
+--- src/Makefile.in.orig	Wed Jan 14 01:10:35 2009
++++ src/Makefile.in	Sat Mar 21 09:04:32 2009
+@@ -246,7 +246,6 @@ libnova_la_SOURCES = \
  
+ libnova_la_LDFLAGS = \
+ 	-version-info $(LT_VERSION) \
+-	-release $(LT_RELEASE) \
+ 	-no-undefined \
+ 	-export-dynamic
  
--libnova_la_LDFLAGS =  	-version-info $(LT_VERSION) 	-release $(LT_RELEASE) 	-no-undefined 	-export-dynamic
-+libnova_la_LDFLAGS =  	-version-info $(LT_VERSION) -no-undefined 	-export-dynamic
- 
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h

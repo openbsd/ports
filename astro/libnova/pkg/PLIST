@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/08 23:25:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/21 08:13:03 ajacoutot Exp $
 %%SHARED%%
-bin/libnovaconfig
+@bin bin/libnovaconfig
 include/libnova/
 include/libnova/aberration.h
 include/libnova/airmass.h
