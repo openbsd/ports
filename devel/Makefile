@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.680 2009/03/18 09:21:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.681 2009/03/22 16:52:09 fgsch Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -646,6 +646,7 @@
      SUBDIR += py-ctypes
      SUBDIR += py-dateutil
      SUBDIR += py-decoratortools
+     SUBDIR += py-dtopt
      SUBDIR += py-editdist
      SUBDIR += py-epsilon
      SUBDIR += py-fpconst
