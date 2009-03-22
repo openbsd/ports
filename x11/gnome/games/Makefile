@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/22 20:56:52 jasper Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
-GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p4
+GNOME_VERSION=		2.24.3.1
 
 CATEGORIES=		games
 

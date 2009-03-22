@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/03/14 10:40:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/03/22 20:56:52 jasper Exp $
 @bin bin/blackjack
 bin/glchess
 @mode g+s
@@ -1487,6 +1487,11 @@ share/gnome/help/gnotski/de/figures/
 share/gnome/help/gnotski/de/figures/gnotski_start_window.png
 share/gnome/help/gnotski/de/figures/gnotski_win.png
 share/gnome/help/gnotski/de/gnotski.xml
+share/gnome/help/gnotski/en_GB/
+share/gnome/help/gnotski/en_GB/figures/
+share/gnome/help/gnotski/en_GB/figures/gnotski_start_window.png
+share/gnome/help/gnotski/en_GB/figures/gnotski_win.png
+share/gnome/help/gnotski/en_GB/gnotski.xml
 share/gnome/help/gnotski/es/
 share/gnome/help/gnotski/es/figures/
 share/gnome/help/gnotski/es/figures/gnotski_start_window.png
@@ -2072,6 +2077,7 @@ share/omf/gnotski/
 share/omf/gnotski/gnotski-C.omf
 share/omf/gnotski/gnotski-ca.omf
 share/omf/gnotski/gnotski-de.omf
+share/omf/gnotski/gnotski-en_GB.omf
 share/omf/gnotski/gnotski-es.omf
 share/omf/gnotski/gnotski-fr.omf
 share/omf/gnotski/gnotski-it.omf
