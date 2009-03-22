@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/22 16:50:04 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/22 17:37:58 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/dtopt/
 lib/python${MODPY_VERSION}/site-packages/dtopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/dtopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -16,6 +16,5 @@ lib/python${MODPY_VERSION}/site-packages/dtopt/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dtopt/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/dtopt/tests.py
 lib/python${MODPY_VERSION}/site-packages/dtopt/tests.pyc
-share/docs/
-share/docs/py-dtopt/
-share/docs/py-dtopt/index.txt
+share/doc/py-dtopt/
+share/doc/py-dtopt/index.txt

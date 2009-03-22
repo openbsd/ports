@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/22 17:05:58 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/22 17:37:58 fgsch Exp $
 bin/pyprof2calltree
 lib/python${MODPY_VERSION}/site-packages/pyprof2calltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyprof2calltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,6 +9,5 @@ lib/python${MODPY_VERSION}/site-packages/pyprof2calltree-${MODPY_EGG_VERSION}-py
 lib/python${MODPY_VERSION}/site-packages/pyprof2calltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/pyprof2calltree.py
 lib/python${MODPY_VERSION}/site-packages/pyprof2calltree.pyc
-share/docs/
-share/docs/py-pyprof2calltree/
-share/docs/py-pyprof2calltree/README.txt
+share/doc/py-pyprof2calltree/
+share/doc/py-pyprof2calltree/README.txt
