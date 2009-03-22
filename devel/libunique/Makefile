@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/19 19:12:41 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/22 14:21:25 ajacoutot Exp $
 
 COMMENT =	library for writing single instance application
 
-DISTNAME =	unique-1.0.6
-PKGNAME =	lib${DISTNAME}
+GNOME_PROJECT =	libunique
+GNOME_VERSION =	1.0.8
 
-SHARED_LIBS =	unique-1.0 0.0 #.2.0
+SHARED_LIBS =	unique-1.0 0.0 #.2.6
 CATEGORIES =	devel
 
 HOMEPAGE =	http://live.gnome.org/LibUnique
-MASTER_SITES =	http://www.gnome.org/~ebassi/source/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,9 +16,17 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-USE_LIBTOOL =		Yes
+USE_X11 =		Yes
+
 CONFIGURE_STYLE =	gnu
-MODULES =	devel/gettext
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
+			--with-x \
+			--enable-gtk-doc=no
+
+MODULES =	devel/gettext \
+		x11/gnome
 
 LIB_DEPENDS =	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		dbus-glib-1::x11/dbus-glib
