@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/01/24 16:50:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/03/22 19:18:32 ajacoutot Exp $
 %%SHARED%%
 bin/vala-gen-introspect
 @bin bin/valac
@@ -184,7 +184,6 @@ include/vala-1.0/vala/valanulltype.h
 include/vala-1.0/vala/valaobjectcreationexpression.h
 include/vala-1.0/vala/valaobjecttype.h
 include/vala-1.0/vala/valaobjecttypesymbol.h
-include/vala-1.0/vala/valaparenthesizedexpression.h
 include/vala-1.0/vala/valaparser.h
 include/vala-1.0/vala/valaphifunction.h
 include/vala-1.0/vala/valapointerindirection.h
@@ -269,6 +268,8 @@ share/vala/vapi/cairo.vapi
 share/vala/vapi/curses.vapi
 share/vala/vapi/dbus-glib-1.vapi
 share/vala/vapi/enchant.vapi
+share/vala/vapi/fuse.deps
+share/vala/vapi/fuse.vapi
 share/vala/vapi/gconf-2.0.vapi
 share/vala/vapi/gdk-2.0.deps
 share/vala/vapi/gdk-2.0.vapi
@@ -338,6 +339,7 @@ share/vala/vapi/hildon-fm-2.deps
 share/vala/vapi/hildon-fm-2.vapi
 share/vala/vapi/json-glib-1.0.vapi
 share/vala/vapi/libbonoboui-2.0.vapi
+share/vala/vapi/libdaemon.vapi
 share/vala/vapi/libepc-1.0.vapi
 share/vala/vapi/libftdi.deps
 share/vala/vapi/libftdi.vapi
