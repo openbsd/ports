@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/21 12:42:21 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/22 15:53:21 jasper Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 
-DISTNAME =	sphinx-0.9.8
+DISTNAME =	sphinx-0.9.8.1
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://www.sphinxsearch.com/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES =	http://www.sphinxsearch.com/downloads/
+MASTER_SITES =	${HOMEPAGE}/downloads/
 
 MODULES =	converters/libiconv
 
@@ -37,6 +37,12 @@ LIB_DEPENDS +=	pq::databases/postgresql
 LIB_DEPENDS +=	mysqlclient::databases/mysql
 WANTLIB +=	crypto ssl z
 .endif
+
+# Needs php5 with pdo_mysql setup.
+REGRESS_IS_INTERACTIVE=	Yes
+PHP_VERSION=    	5
+REGRESS_DEPENDS=:php${PHP_VERSION}-mysql-*:www/php${PHP_VERSION}/extensions,-mysql \
+		:php${PHP_VERSION}-pdo_mysql-*:www/php${PHP_VERSION}/extensions,-pdo_mysql
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sphinx

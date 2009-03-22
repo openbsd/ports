@@ -1,6 +1,6 @@
---- configure.orig	Mon Jan 28 00:09:03 2008
-+++ configure	Fri Feb 29 13:12:06 2008
-@@ -7228,11 +7228,11 @@ extern "C"
+--- configure.orig	Wed Jul  9 16:29:17 2008
++++ configure	Fri Mar 20 12:04:00 2009
+@@ -7229,11 +7229,11 @@ extern "C"
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -14,7 +14,7 @@
    ;
    return 0;
  }
-@@ -8205,7 +8205,7 @@ main ()
+@@ -8219,7 +8219,7 @@ main ()
  {
  const char * inbuf;
  			iconv_t cd;

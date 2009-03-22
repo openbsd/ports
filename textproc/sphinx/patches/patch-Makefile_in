@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/07/21 12:42:21 bernd Exp $
---- Makefile.in.orig	Fri Dec 28 02:14:35 2007
-+++ Makefile.in	Fri Feb 29 13:21:21 2008
-@@ -237,12 +237,12 @@ sphinx.conf.dist: $(top_builddir)/config.status $(srcd
+$OpenBSD: patch-Makefile_in,v 1.2 2009/03/22 15:53:21 jasper Exp $
+--- Makefile.in.orig	Sun Jun  8 10:57:36 2008
++++ Makefile.in	Fri Mar 20 12:04:00 2009
+@@ -239,12 +239,12 @@ sphinx-min.conf.dist: $(top_builddir)/config.status $(
  uninstall-info-am:
  install-sysconfDATA: $(sysconf_DATA)
  	@$(NORMAL_INSTALL)
@@ -17,7 +17,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/07/21 12:42:21 bernd Exp $
  	done
  
  uninstall-sysconfDATA:
-@@ -617,7 +617,6 @@ uninstall-info: uninstall-info-recursive
+@@ -619,7 +619,6 @@ uninstall-info: uninstall-info-recursive
  
  
  install-data-hook:
