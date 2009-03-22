@@ -1,0 +1,3 @@
+meld3 is an HTML/XML templating system for Python 2.3+ which keeps
+template markup and dynamic rendering logic separate from one
+another.

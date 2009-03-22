@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/22 17:01:13 fgsch Exp $
+lib/python${MODPY_VERSION}/site-packages/meld3/
+lib/python${MODPY_VERSION}/site-packages/meld3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/meld3/__init__.py
+lib/python${MODPY_VERSION}/site-packages/meld3/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/meld3/clearsilverprofile.py
+lib/python${MODPY_VERSION}/site-packages/meld3/clearsilverprofile.pyc
+lib/python${MODPY_VERSION}/site-packages/meld3/example.py
+lib/python${MODPY_VERSION}/site-packages/meld3/example.pyc
+lib/python${MODPY_VERSION}/site-packages/meld3/meld3.py
+lib/python${MODPY_VERSION}/site-packages/meld3/meld3.pyc
+lib/python${MODPY_VERSION}/site-packages/meld3/melddiff.py
+lib/python${MODPY_VERSION}/site-packages/meld3/melddiff.pyc
+lib/python${MODPY_VERSION}/site-packages/meld3/meldprofile.py
+lib/python${MODPY_VERSION}/site-packages/meld3/meldprofile.pyc
+lib/python${MODPY_VERSION}/site-packages/meld3/test_getiterator.py
+lib/python${MODPY_VERSION}/site-packages/meld3/test_getiterator.pyc
+lib/python${MODPY_VERSION}/site-packages/meld3/test_meld3.py
+lib/python${MODPY_VERSION}/site-packages/meld3/test_meld3.pyc
+lib/python${MODPY_VERSION}/site-packages/meld3/testclone.py
+lib/python${MODPY_VERSION}/site-packages/meld3/testclone.pyc
+lib/python${MODPY_VERSION}/site-packages/meld3/zptprofile.py
+lib/python${MODPY_VERSION}/site-packages/meld3/zptprofile.pyc
+share/docs/
+share/docs/py-meld3/
+share/docs/py-meld3/README.txt
