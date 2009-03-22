@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_bogo-junk-plugin_bf-junk-filter_c,v 1.1 2009/03/22 16:00:28 ajacoutot Exp $
+--- plugins/bogo-junk-plugin/bf-junk-filter.c.orig	Fri Mar 20 12:12:29 2009
++++ plugins/bogo-junk-plugin/bf-junk-filter.c	Fri Mar 20 12:13:04 2009
+@@ -48,7 +48,7 @@
+ 
+ 
+ #ifndef BOGOFILTER_BINARY
+-#define BOGOFILTER_BINARY "/usr/bin/bogofilter"
++#define BOGOFILTER_BINARY "${LOCALBASE}/bin/bogofilter"
+ #endif
+ 
+ #define BOGOFILTER_ERROR 3

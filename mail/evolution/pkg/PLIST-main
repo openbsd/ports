@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.27 2009/03/17 12:39:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2009/03/22 16:00:29 ajacoutot Exp $
+@pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution
 include/evolution-${R}/
@@ -286,15 +287,10 @@ lib/evolution/${R}/libfilter.la
 lib/evolution/${R}/libmenus.a
 lib/evolution/${R}/libmenus.la
 lib/evolution/${R}/plugins/
-lib/evolution/${R}/plugins/attachment-reminder.glade
 lib/evolution/${R}/plugins/libmail-account-disable.a
 lib/evolution/${R}/plugins/libmail-account-disable.la
 lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.a
 lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.la
-lib/evolution/${R}/plugins/liborg-gnome-audio-inline.a
-lib/evolution/${R}/plugins/liborg-gnome-audio-inline.la
-lib/evolution/${R}/plugins/liborg-gnome-backup-restore.a
-lib/evolution/${R}/plugins/liborg-gnome-backup-restore.la
 lib/evolution/${R}/plugins/liborg-gnome-bogo-junk-plugin.a
 lib/evolution/${R}/plugins/liborg-gnome-bogo-junk-plugin.la
 lib/evolution/${R}/plugins/liborg-gnome-calendar-file.a
@@ -303,32 +299,18 @@ lib/evolution/${R}/plugins/liborg-gnome-calendar-http.a
 lib/evolution/${R}/plugins/liborg-gnome-calendar-http.la
 lib/evolution/${R}/plugins/liborg-gnome-calendar-weather.a
 lib/evolution/${R}/plugins/liborg-gnome-calendar-weather.la
-lib/evolution/${R}/plugins/liborg-gnome-copy-tool.a
-lib/evolution/${R}/plugins/liborg-gnome-copy-tool.la
-lib/evolution/${R}/plugins/liborg-gnome-default-mailer.a
-lib/evolution/${R}/plugins/liborg-gnome-default-mailer.la
 lib/evolution/${R}/plugins/liborg-gnome-default-source.a
 lib/evolution/${R}/plugins/liborg-gnome-default-source.la
-lib/evolution/${R}/plugins/liborg-gnome-email-custom-header.a
-lib/evolution/${R}/plugins/liborg-gnome-email-custom-header.la
-lib/evolution/${R}/plugins/liborg-gnome-evolution-attachment-reminder.a
-lib/evolution/${R}/plugins/liborg-gnome-evolution-attachment-reminder.la
-lib/evolution/${R}/plugins/liborg-gnome-evolution-bbdb.a
-lib/evolution/${R}/plugins/liborg-gnome-evolution-bbdb.la
 lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.a
 lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.la
 lib/evolution/${R}/plugins/liborg-gnome-evolution-google.a
 lib/evolution/${R}/plugins/liborg-gnome-evolution-google.la
-lib/evolution/${R}/plugins/liborg-gnome-evolution-mail-attachments-import-ics.a
-lib/evolution/${R}/plugins/liborg-gnome-evolution-mail-attachments-import-ics.la
 lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.a
 lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.la
 lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.a
 lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.la
 lib/evolution/${R}/plugins/liborg-gnome-exchange-operations.a
 lib/evolution/${R}/plugins/liborg-gnome-exchange-operations.la
-lib/evolution/${R}/plugins/liborg-gnome-face.a
-lib/evolution/${R}/plugins/liborg-gnome-face.la
 lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.a
 lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.la
 lib/evolution/${R}/plugins/liborg-gnome-gw-account-setup.a
@@ -337,57 +319,29 @@ lib/evolution/${R}/plugins/liborg-gnome-imap-features.a
 lib/evolution/${R}/plugins/liborg-gnome-imap-features.la
 lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.a
 lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.la
-lib/evolution/${R}/plugins/liborg-gnome-mail-notification.a
-lib/evolution/${R}/plugins/liborg-gnome-mail-notification.la
-lib/evolution/${R}/plugins/liborg-gnome-mail-to-task.a
-lib/evolution/${R}/plugins/liborg-gnome-mail-to-task.la
-lib/evolution/${R}/plugins/liborg-gnome-mailing-list-actions.a
-lib/evolution/${R}/plugins/liborg-gnome-mailing-list-actions.la
 lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.a
 lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.la
-lib/evolution/${R}/plugins/liborg-gnome-mark-calendar-offline.a
-lib/evolution/${R}/plugins/liborg-gnome-mark-calendar-offline.la
 lib/evolution/${R}/plugins/liborg-gnome-plugin-manager.a
 lib/evolution/${R}/plugins/liborg-gnome-plugin-manager.la
-lib/evolution/${R}/plugins/liborg-gnome-prefer-plain.a
-lib/evolution/${R}/plugins/liborg-gnome-prefer-plain.la
 lib/evolution/${R}/plugins/liborg-gnome-publish-calendar.a
 lib/evolution/${R}/plugins/liborg-gnome-publish-calendar.la
 lib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.a
 lib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.la
-lib/evolution/${R}/plugins/liborg-gnome-save-calendar.a
-lib/evolution/${R}/plugins/liborg-gnome-save-calendar.la
-lib/evolution/${R}/plugins/liborg-gnome-select-one-source.a
-lib/evolution/${R}/plugins/liborg-gnome-select-one-source.la
-lib/evolution/${R}/plugins/liborg-gnome-subject-thread.a
-lib/evolution/${R}/plugins/liborg-gnome-subject-thread.la
-lib/evolution/${R}/plugins/liborg-gnome-templates.a
-lib/evolution/${R}/plugins/liborg-gnome-templates.la
 lib/evolution/${R}/plugins/org-gnome-addressbook-file.eplug
-lib/evolution/${R}/plugins/org-gnome-audio-inline.eplug
-lib/evolution/${R}/plugins/org-gnome-backup-restore.eplug
-lib/evolution/${R}/plugins/org-gnome-backup-restore.xml
 lib/evolution/${R}/plugins/org-gnome-bogo-junk-plugin.eplug
 lib/evolution/${R}/plugins/org-gnome-calendar-file.eplug
 lib/evolution/${R}/plugins/org-gnome-calendar-http.eplug
 lib/evolution/${R}/plugins/org-gnome-calendar-weather.eplug
 lib/evolution/${R}/plugins/org-gnome-compose-send-options.xml
-lib/evolution/${R}/plugins/org-gnome-copy-tool.eplug
-lib/evolution/${R}/plugins/org-gnome-default-mailer.eplug
 lib/evolution/${R}/plugins/org-gnome-default-source.eplug
-lib/evolution/${R}/plugins/org-gnome-email-custom-header.eplug
-lib/evolution/${R}/plugins/org-gnome-evolution-attachment-reminder.eplug
-lib/evolution/${R}/plugins/org-gnome-evolution-bbdb.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-caldav.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-google.eplug
-lib/evolution/${R}/plugins/org-gnome-evolution-mail-attachments-import-ics.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-startup-wizard.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-webdav.eplug
 lib/evolution/${R}/plugins/org-gnome-exchange-ab-subscription.xml
 lib/evolution/${R}/plugins/org-gnome-exchange-cal-subscription.xml
 lib/evolution/${R}/plugins/org-gnome-exchange-operations.eplug
 lib/evolution/${R}/plugins/org-gnome-exchange-tasks-subscription.xml
-lib/evolution/${R}/plugins/org-gnome-face.eplug
 lib/evolution/${R}/plugins/org-gnome-folder-permissions.xml
 lib/evolution/${R}/plugins/org-gnome-folder-subscription.xml
 lib/evolution/${R}/plugins/org-gnome-groupwise-features.eplug
@@ -395,24 +349,12 @@ lib/evolution/${R}/plugins/org-gnome-gw-account-setup.eplug
 lib/evolution/${R}/plugins/org-gnome-imap-features.eplug
 lib/evolution/${R}/plugins/org-gnome-itip-formatter.eplug
 lib/evolution/${R}/plugins/org-gnome-mail-account-disable.eplug
-lib/evolution/${R}/plugins/org-gnome-mail-notification.eplug
-lib/evolution/${R}/plugins/org-gnome-mail-to-task.eplug
-lib/evolution/${R}/plugins/org-gnome-mail-to-task.xml
-lib/evolution/${R}/plugins/org-gnome-mailing-list-actions.eplug
-lib/evolution/${R}/plugins/org-gnome-mailing-list-actions.xml
 lib/evolution/${R}/plugins/org-gnome-mark-all-read.eplug
-lib/evolution/${R}/plugins/org-gnome-mark-calendar-offline.eplug
 lib/evolution/${R}/plugins/org-gnome-plugin-manager.eplug
 lib/evolution/${R}/plugins/org-gnome-plugin-manager.xml
-lib/evolution/${R}/plugins/org-gnome-prefer-plain.eplug
 lib/evolution/${R}/plugins/org-gnome-publish-calendar.eplug
 lib/evolution/${R}/plugins/org-gnome-publish-calendar.xml
 lib/evolution/${R}/plugins/org-gnome-sa-junk-plugin.eplug
-lib/evolution/${R}/plugins/org-gnome-save-calendar.eplug
-lib/evolution/${R}/plugins/org-gnome-select-one-source.eplug
-lib/evolution/${R}/plugins/org-gnome-subject-thread.eplug
-lib/evolution/${R}/plugins/org-gnome-templates.eplug
-lib/evolution/${R}/plugins/templates.glade
 lib/pkgconfig/evolution-plugin.pc
 lib/pkgconfig/evolution-shell.pc
 libexec/evolution/
@@ -421,7 +363,6 @@ libexec/evolution/${R}/csv2vcard
 libexec/evolution/${R}/evolution-addressbook-clean
 @bin libexec/evolution/${R}/evolution-addressbook-export
 @bin libexec/evolution/${R}/evolution-alarm-notify
-@bin libexec/evolution/${R}/evolution-backup
 @bin libexec/evolution/${R}/killev
 share/applications/evolution.desktop
 share/evolution/
@@ -516,14 +457,9 @@ share/evolution/${R}/errors/e-system.error
 share/evolution/${R}/errors/filter.error
 share/evolution/${R}/errors/mail-composer.error
 share/evolution/${R}/errors/mail.error
-share/evolution/${R}/errors/org-gnome-attachment-reminder.error
-share/evolution/${R}/errors/org-gnome-backup-restore.error
-share/evolution/${R}/errors/org-gnome-default-mailer.error
 share/evolution/${R}/errors/org-gnome-exchange-operations.error
-share/evolution/${R}/errors/org-gnome-face.errors.xml
 share/evolution/${R}/errors/org-gnome-itip-formatter.error
 share/evolution/${R}/errors/org-gnome-mail-retract-errors.xml
-share/evolution/${R}/errors/org-gnome-mailing-list-actions.error
 share/evolution/${R}/errors/org-gnome-proxy-errors.xml
 share/evolution/${R}/errors/org-gnome-proxy-login-errors.xml
 share/evolution/${R}/errors/org-gnome-shared-folder.errors.xml
@@ -555,7 +491,6 @@ share/evolution/${R}/glade/e-table-field-chooser.glade
 share/evolution/${R}/glade/e-timezone-dialog.glade
 share/evolution/${R}/glade/eab-contact-commit-duplicate-detected.glade
 share/evolution/${R}/glade/eab-contact-duplicate-detected.glade
-share/evolution/${R}/glade/email-custom-header.glade
 share/evolution/${R}/glade/event-page.glade
 share/evolution/${R}/glade/exchange-change-password.glade
 share/evolution/${R}/glade/exchange-delegates.glade
@@ -581,7 +516,6 @@ share/evolution/${R}/glade/mail-config.glade
 share/evolution/${R}/glade/mail-dialogs.glade
 share/evolution/${R}/glade/meeting-page.glade
 share/evolution/${R}/glade/memo-page.glade
-share/evolution/${R}/glade/org-gnome-email-custom-header.glade
 share/evolution/${R}/glade/properties.glade
 share/evolution/${R}/glade/proxy-add-dialog.glade
 share/evolution/${R}/glade/proxy-listing.glade
@@ -2239,18 +2173,13 @@ share/omf/evolution/evolution-sv.omf
 @unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/evolution/eplugin/disabled
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/evolution/*.schemas > /dev/null
 share/schemas/evolution/
-share/schemas/evolution/apps-evolution-attachment-reminder.schemas
-share/schemas/evolution/apps-evolution-mail-notification.schemas
-share/schemas/evolution/apps-evolution-mail-prompts-checkdefault.schemas
-share/schemas/evolution/apps-evolution-template-placeholders.schemas
 share/schemas/evolution/apps_evolution_addressbook.schemas
 share/schemas/evolution/apps_evolution_calendar.schemas
-share/schemas/evolution/apps_evolution_email_custom_header.schemas
 share/schemas/evolution/apps_evolution_shell.schemas
 share/schemas/evolution/bogo-junk-plugin.schemas
 share/schemas/evolution/evolution-mail.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/evolution/*.schemas > /dev/null
-@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --set --type list --list-type=string /apps/evolution/eplugin/disabled '[org.gnome.evolution.bbdb,org.gnome.evolution.mail.attachments.import.ics,org.gnome.evolution.plugin.templates,org.gnome.evolution.mail_subject_thread,org.gnome.evolution.save_calendar,org.gnome.evolution.select_one_source,org.gnome.evolution.plugin.preferPlain,org.gnome.evolution.mark_calendar_offline,org.gnome.plugin.mailing-list.actions,org.gnome.evolution.plugin.mailToTask,org.gnome.evolution.mail_notification,org.gnome.evolution.face,org.gnome.evolution.email-custom-header,org.gnome.evolution.default.mailer,org.gnome.evolution.plugin.copyTool,org.gnome.plugin.backup.restore,org.gnome.evolution.plugin.audioInline,org.gnome.evolution.attachment-reminder]'
+@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --set --type list --list-type=string /apps/evolution/eplugin/disabled '[org.gnome.mail.account.disable]'
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database

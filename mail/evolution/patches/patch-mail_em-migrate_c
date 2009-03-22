@@ -1,0 +1,19 @@
+$OpenBSD: patch-mail_em-migrate_c,v 1.1 2009/03/22 16:00:28 ajacoutot Exp $
+
+from pkgsrc:
+Fix permissions of files copied into the user directory from the data
+directory, otherwise, the sample Inbox folder is copied with mode 444
+and you get multiple warnings from Evolution saying that it can't update
+the folder.
+
+--- mail/em-migrate.c.orig	Wed Feb 25 04:45:24 2009
++++ mail/em-migrate.c	Fri Mar 20 12:15:07 2009
+@@ -1495,7 +1495,7 @@ cp (const char *src, const char *dest, gboolean show_p
+ 	ut.actime = st.st_atime;
+ 	ut.modtime = st.st_mtime;
+ 	utime (dest, &ut);
+-	chmod (dest, st.st_mode);
++	chmod (dest, st.st_mode | S_IWUSR);
+ 
+ 	return 0;
+ 

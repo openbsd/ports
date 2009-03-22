@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_sa-junk-plugin_em-junk-filter_c,v 1.1 2009/03/22 16:00:28 ajacoutot Exp $
+--- plugins/sa-junk-plugin/em-junk-filter.c.orig	Fri Mar 20 12:13:24 2009
++++ plugins/sa-junk-plugin/em-junk-filter.c	Fri Mar 20 12:14:04 2009
+@@ -90,8 +90,8 @@ static volatile gboolean em_junk_sa_local_only;
+ static volatile gboolean em_junk_sa_use_daemon;
+ static char * em_junk_sa_preferred_socket_path;
+ 
+-static char *em_junk_sa_spamc_binaries [3] = {"spamc", "/usr/sbin/spamc", NULL};
+-static char *em_junk_sa_spamd_binaries [3] = {"spamd", "/usr/sbin/spamd", NULL};
++static char *em_junk_sa_spamc_binaries [3] = {"spamc", "${LOCALBASE}/bin/spamc", NULL};
++static char *em_junk_sa_spamd_binaries [3] = {"spamd", "${LOCALBASE}/bin/spamd", NULL};
+ 
+ #define SPAMD_RESTARTS_SIZE 8
+ static time_t em_junk_sa_spamd_restarts [SPAMD_RESTARTS_SIZE] = {0, 0, 0, 0, 0, 0, 0, 0};
