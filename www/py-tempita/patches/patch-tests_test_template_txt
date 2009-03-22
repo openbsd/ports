@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_test_template_txt,v 1.1.1.1 2009/03/22 16:57:01 fgsch Exp $
+--- tests/test_template.txt.orig	Sun Mar 15 14:36:15 2009
++++ tests/test_template.txt	Sun Mar 15 14:36:22 2009
+@@ -92,7 +92,7 @@ Also a couple handy functions;:
+ There's a handyish looper thing you can also use in your templates (or
+ in Python, but it's more useful in templates generally)::
+ 
+-    >>> from tempita.looper import looper
++    >>> from tempita._looper import looper
+     >>> seq = ['apple', 'asparagus', 'Banana', 'orange']
+     >>> for loop, item in looper(seq):
+     ...     if item == 'apple':

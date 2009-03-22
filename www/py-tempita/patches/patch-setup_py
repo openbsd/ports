@@ -1,0 +1,10 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2009/03/22 16:57:01 fgsch Exp $
+--- setup.py.orig	Sun Mar 15 17:05:41 2009
++++ setup.py	Sun Mar 15 17:06:09 2009
+@@ -37,4 +37,6 @@ You can install from the `svn repository
+       packages=['tempita'],
+       include_package_data=True,
+       zip_safe=True,
++      tests_require=['nose'],
++      test_suite='nose.collector',
+       )

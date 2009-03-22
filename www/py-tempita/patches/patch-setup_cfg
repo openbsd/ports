@@ -1,0 +1,10 @@
+$OpenBSD: patch-setup_cfg,v 1.1.1.1 2009/03/22 16:57:01 fgsch Exp $
+--- setup.cfg.orig	Sun Mar 15 17:04:39 2009
++++ setup.cfg	Sun Mar 15 17:04:44 2009
+@@ -29,3 +29,6 @@ doc-dir = docs/html
+ [aliases]
+ distribute = register sdist bdist_egg upload pudge publish
+ 
++[nosetests]
++with-doctest = True
++doctest-extension = txt

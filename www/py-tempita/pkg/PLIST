@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/22 16:57:01 fgsch Exp $
+lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/tempita/
+lib/python${MODPY_VERSION}/site-packages/tempita/__init__.py
+lib/python${MODPY_VERSION}/site-packages/tempita/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/tempita/_looper.py
+lib/python${MODPY_VERSION}/site-packages/tempita/_looper.pyc
+share/docs/
+share/docs/py-tempita/
+share/docs/py-tempita/index.txt
