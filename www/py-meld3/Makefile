@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/22 17:01:13 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/22 17:40:59 fgsch Exp $
 
 COMMENT =	html/xml templating engine
 
 MODPY_EGG_VERSION = 0.6.5
 
 DISTNAME =	meld3-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME:L}
+PKGNAME =	py-${DISTNAME:L}p0
 
 CATEGORIES =	www
 
@@ -22,9 +22,9 @@ MASTER_SITES =	${HOMEPAGE}
 MODULES =	lang/python
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/docs/py-meld3
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-meld3
 	${INSTALL_DATA} ${WRKSRC}/README.txt \
-	    ${PREFIX}/share/docs/py-meld3
+	    ${PREFIX}/share/doc/py-meld3
 
 do-regress:
 	cd ${WRKSRC}/meld3 && ${MODPY_BIN} test_meld3.py

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/22 16:57:01 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/22 17:40:59 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -10,6 +10,5 @@ lib/python${MODPY_VERSION}/site-packages/tempita/__init__.py
 lib/python${MODPY_VERSION}/site-packages/tempita/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/tempita/_looper.py
 lib/python${MODPY_VERSION}/site-packages/tempita/_looper.pyc
-share/docs/
-share/docs/py-tempita/
-share/docs/py-tempita/index.txt
+share/doc/py-tempita/
+share/doc/py-tempita/index.txt

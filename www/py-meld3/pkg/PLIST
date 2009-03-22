@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/22 17:01:13 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/22 17:40:59 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/meld3/
 lib/python${MODPY_VERSION}/site-packages/meld3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/meld3/__init__.py
@@ -21,6 +21,5 @@ lib/python${MODPY_VERSION}/site-packages/meld3/testclone.py
 lib/python${MODPY_VERSION}/site-packages/meld3/testclone.pyc
 lib/python${MODPY_VERSION}/site-packages/meld3/zptprofile.py
 lib/python${MODPY_VERSION}/site-packages/meld3/zptprofile.pyc
-share/docs/
-share/docs/py-meld3/
-share/docs/py-meld3/README.txt
+share/doc/py-meld3/
+share/doc/py-meld3/README.txt
