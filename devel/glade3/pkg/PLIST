@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/03/14 10:40:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/03/22 16:17:09 jasper Exp $
 %%SHARED%%
 @bin bin/glade-3
 include/libgladeui-1.0/
@@ -367,6 +367,16 @@ share/gnome/help/glade/bg/figures/
 share/gnome/help/glade/bg/figures/main-window.png
 share/gnome/help/glade/bg/glade.xml
 share/gnome/help/glade/bg/legal.xml
+share/gnome/help/glade/de/
+share/gnome/help/glade/de/figures/
+share/gnome/help/glade/de/figures/main-window.png
+share/gnome/help/glade/de/glade.xml
+share/gnome/help/glade/de/legal.xml
+share/gnome/help/glade/el/
+share/gnome/help/glade/el/figures/
+share/gnome/help/glade/el/figures/main-window.png
+share/gnome/help/glade/el/glade.xml
+share/gnome/help/glade/el/legal.xml
 share/gnome/help/glade/en_GB/
 share/gnome/help/glade/en_GB/figures/
 share/gnome/help/glade/en_GB/figures/main-window.png
@@ -377,6 +387,11 @@ share/gnome/help/glade/es/figures/
 share/gnome/help/glade/es/figures/main-window.png
 share/gnome/help/glade/es/glade.xml
 share/gnome/help/glade/es/legal.xml
+share/gnome/help/glade/eu/
+share/gnome/help/glade/eu/figures/
+share/gnome/help/glade/eu/figures/main-window.png
+share/gnome/help/glade/eu/glade.xml
+share/gnome/help/glade/eu/legal.xml
 share/gnome/help/glade/fr/
 share/gnome/help/glade/fr/figures/
 share/gnome/help/glade/fr/figures/main-window.png
@@ -412,6 +427,8 @@ share/gnome/help/glade/sv/figures/
 share/gnome/help/glade/sv/figures/main-window.png
 share/gnome/help/glade/sv/glade.xml
 share/gnome/help/glade/sv/legal.xml
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/gladeui/
 share/gtk-doc/html/gladeui/GladeApp.html
 share/gtk-doc/html/gladeui/GladeBaseEditor.html
@@ -476,6 +493,7 @@ share/locale/bg/LC_MESSAGES/glade3.mo
 share/locale/bn/LC_MESSAGES/glade3.mo
 share/locale/bn_IN/LC_MESSAGES/glade3.mo
 share/locale/ca/LC_MESSAGES/glade3.mo
+share/locale/cs/LC_MESSAGES/glade3.mo
 share/locale/da/LC_MESSAGES/glade3.mo
 share/locale/de/LC_MESSAGES/glade3.mo
 share/locale/el/LC_MESSAGES/glade3.mo
@@ -483,6 +501,7 @@ share/locale/en_CA/LC_MESSAGES/glade3.mo
 share/locale/en_GB/LC_MESSAGES/glade3.mo
 share/locale/es/LC_MESSAGES/glade3.mo
 share/locale/et/LC_MESSAGES/glade3.mo
+share/locale/eu/LC_MESSAGES/glade3.mo
 share/locale/fi/LC_MESSAGES/glade3.mo
 share/locale/fr/LC_MESSAGES/glade3.mo
 share/locale/gl/LC_MESSAGES/glade3.mo
@@ -494,6 +513,7 @@ share/locale/it/LC_MESSAGES/glade3.mo
 share/locale/ja/LC_MESSAGES/glade3.mo
 share/locale/ko/LC_MESSAGES/glade3.mo
 share/locale/lt/LC_MESSAGES/glade3.mo
+share/locale/lv/LC_MESSAGES/glade3.mo
 share/locale/mk/LC_MESSAGES/glade3.mo
 share/locale/ml/LC_MESSAGES/glade3.mo
 share/locale/mr/LC_MESSAGES/glade3.mo
@@ -525,8 +545,11 @@ share/locale/zh_TW/LC_MESSAGES/glade3.mo
 share/omf/glade/
 share/omf/glade/glade-C.omf
 share/omf/glade/glade-bg.omf
+share/omf/glade/glade-de.omf
+share/omf/glade/glade-el.omf
 share/omf/glade/glade-en_GB.omf
 share/omf/glade/glade-es.omf
+share/omf/glade/glade-eu.omf
 share/omf/glade/glade-fr.omf
 share/omf/glade/glade-hi.omf
 share/omf/glade/glade-it.omf
