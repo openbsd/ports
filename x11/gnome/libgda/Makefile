@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/02/11 15:47:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/23 07:31:09 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,7 +12,7 @@ COMMENT-tds=		FreeTDS backend for libgda
 GNOME_PROJECT=		libgda
 GNOME_VERSION=		3.0.4
 
-PKGNAME-main=		${DISTNAME}p1v0
+PKGNAME-main=		${DISTNAME}p2v0
 PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}p1v0
 PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}p1v0
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}p1v0
@@ -51,7 +51,7 @@ FLAVOR?=
 MULTI_PACKAGES=		-main
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			db:db-4.*:databases/db/v4 \
+			db:db->=4,<5:databases/db/v4 \
 			sqlite3::databases/sqlite3
 
 LIB_DEPENDS=		fam::sysutils/fam \
