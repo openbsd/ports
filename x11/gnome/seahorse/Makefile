@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/03/23 15:54:58 ajacoutot Exp $
 
 COMMENT=		manage encryption keys
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 SHARED_LIBS +=	cryptui              0.0      # .0.0
 CATEGORIES=		security
 
@@ -28,7 +28,6 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::x11/gnome/doc-utils \
 			::textproc/rarian
-RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info
 LIB_DEPENDS=		lber,ldap::databases/openldap \
 			notify::devel/libnotify \
 			soup-2.4::devel/libsoup \
@@ -52,7 +51,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-nautilus \
 			--disable-schemas-install \
 			--disable-scrollkeeper \
-			--disable-update-mime-database \
 			--disable-sharing
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
