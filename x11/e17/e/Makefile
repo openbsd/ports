@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/07 13:54:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/23 18:39:47 ajacoutot Exp $
 
 COMMENT=	the enlightened window manager
 DISTNAME=	e-20071211
-PKGNAME=        ${DISTNAME}p4
+PKGNAME=        ${DISTNAME}p5
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,6 @@ WANTLIB += ssl usbhid z
 LIB_DEPENDS=		SDL::devel/sdl \
 			edje::x11/e17/edje \
 			efreet,efreet_mime::x11/e17/efreet
-RUN_DEPENDS=		::devel/desktop-file-utils
 
 CONFIGURE_STYLE=	automake autoconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

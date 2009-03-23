@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/12/16 18:33:07 laurent Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/03/23 18:39:48 ajacoutot Exp $
 %%SHARED%%
 bin/enlightenment
 bin/enlightenment-config
@@ -487,5 +487,3 @@ share/locale/zh_CN/LC_MESSAGES/enlightenment.mo
 share/locale/zh_TW/LC_MESSAGES/enlightenment.mo
 share/xsessions/
 share/xsessions/enlightenment.desktop
-@exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database

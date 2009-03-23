@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2009/03/19 08:26:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2009/03/23 18:39:48 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.10
+PKGNAME=		${PKGNAME}p0
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
@@ -34,7 +35,6 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 USE_X11=		Yes
-DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_STYLE=	gnu old
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-scrollkeeper \
 			--with-console-kit=no \
 			--with-libaudit=no
-# XXX X Window System Error ('BadLenght...')
+# not enabled in X.org
 CONFIGURE_ARGS+=	--with-xevie=no
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

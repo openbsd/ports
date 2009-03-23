@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/24 09:16:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/23 18:39:48 ajacoutot Exp $
 share/icons/
 share/icons/Industrial/
 share/icons/Industrial/48x48/
@@ -203,7 +203,3 @@ share/themes/mbcrystal/matchbox/theme.xml
 share/themes/mbcrystal/matchbox/topleft.png
 share/themes/mbcrystal/matchbox/topright.png
 share/themes/mbcrystal/matchbox/toptile.png
-@exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
