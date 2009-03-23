@@ -1,0 +1,15 @@
+$OpenBSD: patch-random_c,v 1.1 2009/03/23 00:35:44 jakemsr Exp $
+--- random.c.orig	Sun Mar 22 02:29:55 2009
++++ random.c	Sun Mar 22 02:30:35 2009
+@@ -275,7 +275,11 @@ random_seed()
+     memset(digits, 0, big->len * SIZEOF_BDIGITS);
+ 
+ #ifdef S_ISCHR
++# ifdef __OpenBSD__
++    if ((fd = open("/dev/arandom", O_RDONLY
++# else
+     if ((fd = open("/dev/urandom", O_RDONLY
++# endif
+ #ifdef O_NONBLOCK
+             |O_NONBLOCK
+ #endif
