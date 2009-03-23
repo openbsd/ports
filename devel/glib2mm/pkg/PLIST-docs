@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.8 2008/10/28 11:27:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.9 2009/03/23 17:46:33 ajacoutot Exp $
 share/doc/glibmm-${V}/
 share/doc/glibmm-${V}/docs/
 share/doc/glibmm-${V}/docs/images/
@@ -336,8 +336,6 @@ share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1TimeoutSource.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1TimeoutSource__inherit__graph.png
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Timer-members.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Timer.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Tree-members.html
-share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Tree.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Value-members.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1Value.html
 share/doc/glibmm-${V}/docs/reference/html/classGlib_1_1ValueBase-members.html
@@ -1264,7 +1262,6 @@ share/doc/glibmm-${V}/docs/reference/html/inherit__graph__735.png
 share/doc/glibmm-${V}/docs/reference/html/inherit__graph__736.png
 share/doc/glibmm-${V}/docs/reference/html/inherit__graph__737.png
 share/doc/glibmm-${V}/docs/reference/html/inherit__graph__738.png
-share/doc/glibmm-${V}/docs/reference/html/inherit__graph__739.png
 share/doc/glibmm-${V}/docs/reference/html/inherit__graph__74.png
 share/doc/glibmm-${V}/docs/reference/html/inherit__graph__75.png
 share/doc/glibmm-${V}/docs/reference/html/inherit__graph__76.png
@@ -1342,7 +1339,6 @@ share/doc/glibmm-${V}/docs/reference/html/namespacemembers_eval_0x64.html
 share/doc/glibmm-${V}/docs/reference/html/namespacemembers_eval_0x66.html
 share/doc/glibmm-${V}/docs/reference/html/namespacemembers_eval_0x69.html
 share/doc/glibmm-${V}/docs/reference/html/namespacemembers_eval_0x6b.html
-share/doc/glibmm-${V}/docs/reference/html/namespacemembers_eval_0x6c.html
 share/doc/glibmm-${V}/docs/reference/html/namespacemembers_eval_0x6d.html
 share/doc/glibmm-${V}/docs/reference/html/namespacemembers_eval_0x6e.html
 share/doc/glibmm-${V}/docs/reference/html/namespacemembers_eval_0x6f.html
@@ -1427,7 +1423,6 @@ share/doc/glibmm-${V}/docs/reference/html/thread_8h.html
 share/doc/glibmm-${V}/docs/reference/html/threadpool_8h.html
 share/doc/glibmm-${V}/docs/reference/html/timer_8h.html
 share/doc/glibmm-${V}/docs/reference/html/timeval_8h.html
-share/doc/glibmm-${V}/docs/reference/html/tree_8h.html
 share/doc/glibmm-${V}/docs/reference/html/unicode_8h.html
 share/doc/glibmm-${V}/docs/reference/html/unixinputstream_8h.html
 share/doc/glibmm-${V}/docs/reference/html/unixoutputstream_8h.html

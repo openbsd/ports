@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2009/03/11 21:15:30 bernd Exp $
+# $OpenBSD: Makefile,v 1.21 2009/03/23 17:46:32 ajacoutot Exp $
 
 COMMENT-main=		C++ interface for glib2
 COMMENT-docs=		C++ interface for glib2 documentation
 
 GNOME_PROJECT=		glibmm
-GNOME_VERSION=		2.18.1
+GNOME_VERSION=		2.18.2
 V=			2.4
-PKGNAME-main=		glib2mm-${VERSION}p1
-PKGNAME-docs=		glib2mm-docs-${VERSION}
+PKGNAME-main=		glib2mm-${GNOME_VERSION}
+PKGNAME-docs=		glib2mm-docs-${GNOME_VERSION}
 SHARED_LIBS +=	glibmm_generate_extra_defs-2.4 7.0      # .1.25
 SHARED_LIBS +=	glibmm-2.4           7.0      # .1.25
 SHARED_LIBS +=  giomm-2.4            7.0      # .1.25
