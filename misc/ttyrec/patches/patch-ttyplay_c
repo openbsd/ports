@@ -1,0 +1,21 @@
+$OpenBSD: patch-ttyplay_c,v 1.1 2009/03/23 17:42:40 naddy Exp $
+--- ttyplay.c.orig	Mon Mar 23 11:32:09 2009
++++ ttyplay.c	Mon Mar 23 11:32:52 2009
+@@ -81,7 +81,7 @@ double
+ ttywait (struct timeval prev, struct timeval cur, double speed)
+ {
+     static struct timeval drift = {0, 0};
+-    struct timeval start;
++    struct timeval start, orig_diff;
+     struct timeval diff = timeval_diff(prev, cur);
+     fd_set readfs;
+ 
+@@ -100,7 +100,7 @@ ttywait (struct timeval prev, struct timeval cur, doub
+      *
+      * Save "diff" since select(2) may overwrite it to {0, 0}. 
+      */
+-    struct timeval orig_diff = diff;
++    orig_diff = diff;
+     select(1, &readfs, NULL, NULL, &diff);
+     diff = orig_diff;  /* Restore the original diff value. */
+     if (FD_ISSET(0, &readfs)) { /* a user hits a character? */

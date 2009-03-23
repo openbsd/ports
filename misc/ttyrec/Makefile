@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2009/03/23 17:42:40 naddy Exp $
 
 COMMENT=	tty recorder
 
 DISTNAME=	ttyrec-1.0.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc
 
 HOMEPAGE=	http://0xcc.net/ttyrec/
