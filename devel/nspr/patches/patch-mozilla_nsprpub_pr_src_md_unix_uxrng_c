@@ -1,0 +1,15 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_src_md_unix_uxrng_c,v 1.1 2009/03/23 00:50:52 jakemsr Exp $
+--- mozilla/nsprpub/pr/src/md/unix/uxrng.c.orig	Tue Oct  7 14:45:09 2008
++++ mozilla/nsprpub/pr/src/md/unix/uxrng.c	Sun Mar 22 01:28:01 2009
+@@ -150,7 +150,11 @@ static PRCallOnceType coOpenDevURandom;
+ 
+ static PRStatus OpenDevURandom( void )
+ {
++#if defined(OPENBSD)
++    fdDevURandom = open( "/dev/arandom", O_RDONLY );
++#else
+     fdDevURandom = open( "/dev/urandom", O_RDONLY );
++#endif
+     return((-1 == fdDevURandom)? PR_FAILURE : PR_SUCCESS );
+ } /* end OpenDevURandom() */
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2009/02/14 12:01:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2009/03/23 00:50:52 jakemsr Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64 hppa
@@ -8,7 +8,7 @@ COMMENT-docs=		HTML Documentation for NSPR
 
 VER=			4.7.3
 DISTNAME=		nspr-${VER}
-PKGNAME-main=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 PKGNAME-docs=		nspr-docs-${VER}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			nspr-reference${EXTRACT_SUFX}:0
