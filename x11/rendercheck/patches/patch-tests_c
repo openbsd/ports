@@ -1,0 +1,13 @@
+$OpenBSD: patch-tests_c,v 1.1 2009/03/23 20:57:31 naddy Exp $
+--- tests.c.orig	Mon Mar 23 09:23:55 2009
++++ tests.c	Mon Mar 23 09:24:12 2009
+@@ -392,8 +392,8 @@ do_tests(Display *dpy, picture_info *win)
+ 
+         pictures_solid = malloc(num_colors * sizeof(picture_info));
+ 	for (i = 0; i < num_colors; i++) {
+-            pictures_solid[i].color = colors[i];
+             XRenderColor c;
++            pictures_solid[i].color = colors[i];
+             c.alpha = (int)(colors[i].a*65535);
+             c.red = (int)(colors[i].r*65535);
+             c.green = (int)(colors[i].g*65535);

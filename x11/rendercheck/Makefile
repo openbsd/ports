@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:04:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/23 20:56:39 naddy Exp $
 
 COMMENT=	X Render extension test suite
 
 DISTNAME=	rendercheck-1.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.freedesktop.org/
