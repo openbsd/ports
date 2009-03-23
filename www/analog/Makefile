@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2007/09/15 20:38:20 merdely Exp $
+# $OpenBSD: Makefile,v 1.51 2009/03/23 20:09:51 naddy Exp $
 
 COMMENT=	extremely fast program for analysing WWW logfiles
 
@@ -49,7 +49,7 @@ CFLAGS+=	-I${LOCALBASE}/include \
 
 ALL_TARGET=	analog
 MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS}' \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm -lgd -lpng -ljpeg -lz -lpcre -liconv"
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgd -lpng -lm -ljpeg -lz -lpcre -liconv"
 
 pre-configure:
 	@mv ${WRKSRC}/anlgform.pl ${WRKSRC}/anlgform.pl.src
