@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2008/11/04 22:38:52 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2009/03/23 19:40:13 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	libpcap bindings for Python
 
 DISTNAME=	pylibpcap-0.6.2
-PKGNAME=	${DISTNAME:S/py/py-/}
+PKGNAME=	${DISTNAME:S/py/py-/}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://pylibpcap.sourceforge.net/
