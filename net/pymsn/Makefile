@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/26 23:57:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/23 22:26:27 jasper Exp $
 
 COMMENT=		MSN client library for Python
 
 MODPY_EGG_VERSION=	0.3.3
 DISTNAME=		pymsn-${MODPY_EGG_VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 
 MASTER_SITES=		http://telepathy.freedesktop.org/releases/pymsn/

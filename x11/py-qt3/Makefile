@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/01/15 15:12:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/23 22:26:27 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	python Qt3 bindings
 
 V=		3.17.4
 DISTNAME=	PyQt-x11-gpl-${V}
-PKGNAME=	py-qt3-${V}
+PKGNAME=	py-qt3-${V}p0
 
 CATEGORIES=	x11 devel
 
