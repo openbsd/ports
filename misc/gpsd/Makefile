@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/02/17 07:45:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2009/03/23 20:17:57 jasper Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-motif=		motif-based test apps using gpsd
@@ -10,7 +10,7 @@ DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}p0
 PKGNAME-motif=		gpsd-motif-${VERSION}p0
 PKGNAME-php=		gpsd-php-${VERSION}
-PKGNAME-python=		gpsd-python-${VERSION}p0
+PKGNAME-python=		gpsd-python-${VERSION}p1
 SHARED_LIBS=		gps	18.0
 CATEGORIES=		misc geo
 
