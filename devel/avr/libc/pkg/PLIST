@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/10/01 04:56:57 ckuethe Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/03/23 15:43:44 ckuethe Exp $
 avr/include/
 avr/include/alloca.h
 avr/include/assert.h
@@ -31,7 +31,10 @@ avr/include/avr/io90pwm216.h
 avr/include/avr/io90pwm2b.h
 avr/include/avr/io90pwm316.h
 avr/include/avr/io90pwm3b.h
+avr/include/avr/io90pwm81.h
 avr/include/avr/io90pwmx.h
+avr/include/avr/io90scr100.h
+avr/include/avr/ioa6289.h
 avr/include/avr/ioat94k.h
 avr/include/avr/iocan128.h
 avr/include/avr/iocan32.h
@@ -42,6 +45,7 @@ avr/include/avr/iom128.h
 avr/include/avr/iom1280.h
 avr/include/avr/iom1281.h
 avr/include/avr/iom1284p.h
+avr/include/avr/iom128rfa1.h
 avr/include/avr/iom16.h
 avr/include/avr/iom161.h
 avr/include/avr/iom162.h
@@ -54,6 +58,8 @@ avr/include/avr/iom168p.h
 avr/include/avr/iom169.h
 avr/include/avr/iom169p.h
 avr/include/avr/iom16hva.h
+avr/include/avr/iom16m1.h
+avr/include/avr/iom16u4.h
 avr/include/avr/iom2560.h
 avr/include/avr/iom2561.h
 avr/include/avr/iom32.h
@@ -68,6 +74,7 @@ avr/include/avr/iom32c1.h
 avr/include/avr/iom32hvb.h
 avr/include/avr/iom32m1.h
 avr/include/avr/iom32u4.h
+avr/include/avr/iom32u6.h
 avr/include/avr/iom406.h
 avr/include/avr/iom48.h
 avr/include/avr/iom48p.h
@@ -78,6 +85,8 @@ avr/include/avr/iom645.h
 avr/include/avr/iom6450.h
 avr/include/avr/iom649.h
 avr/include/avr/iom6490.h
+avr/include/avr/iom64c1.h
+avr/include/avr/iom64m1.h
 avr/include/avr/iom8.h
 avr/include/avr/iom8515.h
 avr/include/avr/iom8535.h
@@ -91,6 +100,7 @@ avr/include/avr/iomxxhva.h
 avr/include/avr/iotn11.h
 avr/include/avr/iotn12.h
 avr/include/avr/iotn13.h
+avr/include/avr/iotn13a.h
 avr/include/avr/iotn15.h
 avr/include/avr/iotn167.h
 avr/include/avr/iotn22.h
@@ -108,6 +118,7 @@ avr/include/avr/iotn48.h
 avr/include/avr/iotn84.h
 avr/include/avr/iotn85.h
 avr/include/avr/iotn861.h
+avr/include/avr/iotn87.h
 avr/include/avr/iotn88.h
 avr/include/avr/iotnx4.h
 avr/include/avr/iotnx5.h
@@ -121,7 +132,15 @@ avr/include/avr/iousb82.h
 avr/include/avr/iousbxx2.h
 avr/include/avr/iousbxx6_7.h
 avr/include/avr/iox128a1.h
+avr/include/avr/iox128a3.h
+avr/include/avr/iox16a4.h
+avr/include/avr/iox16d4.h
+avr/include/avr/iox256a3.h
+avr/include/avr/iox256a3b.h
+avr/include/avr/iox32a4.h
+avr/include/avr/iox32d4.h
 avr/include/avr/iox64a1.h
+avr/include/avr/iox64a3.h
 avr/include/avr/lock.h
 avr/include/avr/parity.h
 avr/include/avr/pgmspace.h
@@ -189,6 +208,7 @@ avr/lib/avr3/libprintf_min.a
 avr/lib/avr3/libscanf_flt.a
 avr/lib/avr3/libscanf_min.a
 avr/lib/avr31/
+avr/lib/avr31/crt43320.o
 avr/lib/avr31/crtm103.o
 avr/lib/avr35/
 avr/lib/avr35/crtusb162.o
