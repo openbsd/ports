@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/09/08 09:50:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/23 08:41:15 jasper Exp $
 
 COMMENT=		make use of SSL with POE
 
 MODULES=		cpan
-DISTNAME=		POE-Component-SSLify-0.14
+DISTNAME=		POE-Component-SSLify-0.15
 CATEGORIES=		net security
 
 # perl
