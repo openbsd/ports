@@ -1,7 +1,22 @@
-$OpenBSD: patch-src_os_unix_c,v 1.5 2009/01/31 15:49:34 simon Exp $
---- src/os_unix.c.orig	Thu Jan 15 15:01:46 2009
-+++ src/os_unix.c	Tue Jan 27 10:18:24 2009
-@@ -141,6 +141,9 @@
+$OpenBSD: patch-src_os_unix_c,v 1.6 2009/03/23 00:33:03 jakemsr Exp $
+--- src/os_unix.c.orig	Thu Jan 15 06:01:46 2009
++++ src/os_unix.c	Sun Mar 22 01:10:09 2009
+@@ -111,6 +111,14 @@
+ # define _LARGEFILE_SOURCE 1
+ #endif
+ 
++/* PRNG device to use */
++#ifdef __OpenBSD__
++#define RAND_DEV "/dev/arandom"
++#else
++#define RAND_DEV "/dev/urandom"
++#endif
++
++
+ /*
+ ** standard include files.
+ */
+@@ -141,6 +149,9 @@
  #if SQLITE_THREADSAFE
  # include <pthread.h>
  # define SQLITE_UNIX_THREADS 1
@@ -11,7 +26,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.5 2009/01/31 15:49:34 simon Exp $
  #endif
  
  /*
-@@ -184,7 +187,7 @@ struct unixFile {
+@@ -184,7 +195,7 @@ struct unixFile {
    int lastErrno;                   /* The unix errno from the last I/O error */
    void *lockingContext;            /* Locking style specific state */
    int openFlags;                   /* The flags specified at open */
@@ -20,7 +35,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.5 2009/01/31 15:49:34 simon Exp $
    pthread_t tid;                   /* The thread that "owns" this unixFile */
  #endif
  #if OS_VXWORKS
-@@ -247,7 +250,7 @@ struct unixFile {
+@@ -247,7 +258,7 @@ struct unixFile {
  ** The threadid macro resolves to the thread-id or to 0.  Used for
  ** testing and debugging only.
  */
@@ -29,7 +44,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.5 2009/01/31 15:49:34 simon Exp $
  #define threadid pthread_self()
  #else
  #define threadid 0
-@@ -657,7 +660,7 @@ static void vxworksReleaseFileId(struct vxworksFileId 
+@@ -657,7 +668,7 @@ static void vxworksReleaseFileId(struct vxworksFileId 
  ** recomputed because its key includes the thread-id.  See the 
  ** transferOwnership() function below for additional information
  */
@@ -38,7 +53,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.5 2009/01/31 15:49:34 simon Exp $
  # define SET_THREADID(X)   (X)->tid = pthread_self()
  # define CHECK_THREADID(X) (threadsOverrideEachOthersLocks==0 && \
                              !pthread_equal((X)->tid, pthread_self()))
-@@ -692,7 +695,7 @@ struct unixFileId {
+@@ -692,7 +703,7 @@ struct unixFileId {
  */
  struct unixLockKey {
    struct unixFileId fid;  /* Unique identifier for the file */
@@ -47,7 +62,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.5 2009/01/31 15:49:34 simon Exp $
    pthread_t tid;  /* Thread ID of lock owner. Zero if not using LinuxThreads */
  #endif
  };
-@@ -767,7 +770,7 @@ static struct unixOpenCnt *openList = 0;
+@@ -767,7 +778,7 @@ static struct unixOpenCnt *openList = 0;
  ** it a global so that the test code can change its value in order to verify
  ** that the right stuff happens in either case.
  */
@@ -56,7 +71,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.5 2009/01/31 15:49:34 simon Exp $
  #  ifndef SQLITE_THREAD_OVERRIDE_LOCK
  #    define SQLITE_THREAD_OVERRIDE_LOCK -1
  #  endif
-@@ -788,7 +791,7 @@ struct threadTestData {
+@@ -788,7 +799,7 @@ struct threadTestData {
    int result;            /* Result of the locking operation */
  };
  
@@ -65,7 +80,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.5 2009/01/31 15:49:34 simon Exp $
  /*
  ** This function is used as the main routine for a thread launched by
  ** testThreadLockingBehavior(). It tests whether the shared-lock obtained
-@@ -806,7 +809,7 @@ static void *threadLockingTest(void *pArg){
+@@ -806,7 +817,7 @@ static void *threadLockingTest(void *pArg){
  #endif /* SQLITE_THREADSAFE && defined(__linux__) */
  
  
@@ -74,7 +89,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.5 2009/01/31 15:49:34 simon Exp $
  /*
  ** This procedure attempts to determine whether or not threads
  ** can override each others locks then sets the 
-@@ -946,7 +949,7 @@ static int findLockInfo(
+@@ -946,7 +957,7 @@ static int findLockInfo(
  #else
    lockKey.fid.ino = statbuf.st_ino;
  #endif
@@ -83,7 +98,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.5 2009/01/31 15:49:34 simon Exp $
    if( threadsOverrideEachOthersLocks<0 ){
      testThreadLockingBehavior(fd);
    }
-@@ -1023,7 +1026,7 @@ exit_findlockinfo:
+@@ -1023,7 +1034,7 @@ exit_findlockinfo:
  ** If the unixFile is locked and an ownership is wrong, then return
  ** SQLITE_MISUSE.  SQLITE_OK is returned if everything works.
  */
@@ -92,3 +107,21 @@ $OpenBSD: patch-src_os_unix_c,v 1.5 2009/01/31 15:49:34 simon Exp $
  static int transferOwnership(unixFile *pFile){
    int rc;
    pthread_t hSelf;
+@@ -3918,7 +3929,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
+ #if !defined(SQLITE_TEST)
+   {
+     int pid, fd;
+-    fd = open("/dev/urandom", O_RDONLY);
++    fd = open(RAND_DEV, O_RDONLY);
+     if( fd<0 ){
+       time_t t;
+       time(&t);
+@@ -4221,7 +4232,7 @@ static int proxyGenerateHostID(char *pHostID){
+   
+   memset(key, 0, HOSTIDLEN);
+   len = 0;
+-  fd = open("/dev/urandom", O_RDONLY);
++  fd = open(RAND_DEV, O_RDONLY);
+   if( fd>=0 ){
+     len = read(fd, key, HOSTIDLEN);
+     close(fd); /* silently leak the fd if it fails */
