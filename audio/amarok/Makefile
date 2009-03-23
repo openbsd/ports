@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2009/01/23 17:42:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2009/03/23 00:29:54 jakemsr Exp $
 
 CATEGORIES =	audio x11 x11/kde
 COMMENT =	music player for KDE
@@ -7,7 +7,7 @@ HOMEPAGE =	http://amarok.kde.org/
 V =		1.4.10
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/amarok/$V/src/}
 DISTNAME =	amarok-$V
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 EXTRACT_SUFX =	.tar.bz2
 
 # GPLv2/LGPLv2/GFDL

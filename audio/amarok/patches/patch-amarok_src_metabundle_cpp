@@ -1,0 +1,12 @@
+$OpenBSD: patch-amarok_src_metabundle_cpp,v 1.1 2009/03/23 00:29:54 jakemsr Exp $
+--- amarok/src/metabundle.cpp.orig	Sun Mar 22 16:25:14 2009
++++ amarok/src/metabundle.cpp	Sun Mar 22 16:26:29 2009
+@@ -1705,7 +1705,7 @@ MetaBundle::getRand()
+     //KRandom  supposedly exists in SVN, although it's not checked out on my machine, and it's certainly not in 3.3, so I'm just going to steal its code
+ 
+     unsigned int seed;
+-    int fd = open("/dev/urandom", O_RDONLY);
++    int fd = open("/dev/arandom", O_RDONLY);
+     if (fd < 0 || ::read(fd, &seed, sizeof(seed)) != sizeof(seed))
+     {
+             // No /dev/urandom... try something else.
