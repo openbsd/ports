@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/03/08 17:29:02 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/03/23 17:23:43 ajacoutot Exp $
 @bin bin/xfce4-mixer
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
@@ -101,7 +101,5 @@ share/xfce4-mixer/icons/hicolor/scalable/status/xfce4-mixer-volume-ultra-low.svg
 share/xfce4-mixer/icons/hicolor/scalable/status/xfce4-mixer-volume-very-high.svg
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/xfce4-mixer-plugin.desktop
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

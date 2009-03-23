@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/08 17:29:02 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2009/03/23 17:23:43 ajacoutot Exp $
 
 COMMENT=	volume mixer module for xfce4-panel
 
 XFCE_PROJECT=	xfce4-mixer
+PKGNAME=	${DISTNAME}p0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
