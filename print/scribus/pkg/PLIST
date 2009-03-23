@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/01/21 17:13:32 ian Exp $
-bin/scribus
+@comment $OpenBSD: PLIST,v 1.11 2009/03/23 19:28:22 ajacoutot Exp $
+@bin bin/scribus
 include/scribus/
 include/scribus/about.h
 include/scribus/actionmanager.h
@@ -394,6 +394,7 @@ lib/scribus/swatches/Scribus_X11Grey.txt
 @comment man/pl/
 @comment man/pl/man1/
 @comment @man man/pl/man1/scribus.1
+share/applications/scribus.desktop
 share/doc/scribus/
 share/doc/scribus/AUTHORS
 share/doc/scribus/BUILDING
@@ -870,8 +871,6 @@ share/doc/scribus/pl/tutorials/scribus-short-words/dialog.png
 share/doc/scribus/pl/tutorials/scribus-short-words/menu.png
 share/doc/scribus/pl/tutorials/scribus-short-words/menu.xml
 share/doc/scribus/pl/tutorials/scribus-short-words/short-words-manual.html
-share/mime/
-share/mime/packages/
 share/mime/packages/scribus.xml
 share/pixmaps/
 share/pixmaps/scribusicon.png
