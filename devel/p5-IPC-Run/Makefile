@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/23 14:01:01 jasper Exp $
 
 COMMENT= 	run a subprocess
 
 MODULES=	cpan
-DISTNAME=	IPC-Run-0.80
+DISTNAME=	IPC-Run-0.82
 CATEGORIES=	devel
 
 # perl
