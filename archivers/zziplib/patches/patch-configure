@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/12/10 21:22:48 eric Exp $
---- configure.orig	Fri Dec  7 17:55:08 2007
-+++ configure	Fri Dec  7 17:59:23 2007
-@@ -24686,7 +24686,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
+$OpenBSD: patch-configure,v 1.2 2009/03/23 18:06:28 giovanni Exp $
+--- configure.orig	Sat Dec 27 19:32:23 2008
++++ configure	Mon Mar 23 18:51:28 2009
+@@ -24160,7 +24160,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
+ 	 test -z "$ac_c_werror_flag" ||
+ 	 test ! -s conftest.err
+        } && test -s conftest.$ac_objext; then
 -  ac_cv_cflags_no_writable_strings=`echo $ac_arg | -e 's,.*% *,,'` ; break
 +  ac_cv_cflags_no_writable_strings=`echo $ac_arg | sed -e 's,.*% *,,'` ; break
  else

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/12/10 21:22:48 eric Exp $
---- Makefile.in.orig	Tue May  8 12:59:06 2007
-+++ Makefile.in	Tue May  8 12:59:18 2007
-@@ -233,8 +233,8 @@ AUTOMAKE_OPTIONS = 1.4 foreign dist-bzip2
+$OpenBSD: patch-Makefile_in,v 1.2 2009/03/23 18:06:28 giovanni Exp $
+--- Makefile.in.orig	Sat Dec 27 19:32:25 2008
++++ Makefile.in	Mon Mar 23 18:50:36 2009
+@@ -237,8 +237,8 @@ AUTOMAKE_OPTIONS = 1.4 foreign dist-bzip2
  ACLOCAL_AMFLAGS = -I m4
  WANT_AUTOMAKE = 1.7
  WANT_AUTOCONF = 2.57

@@ -1,7 +1,7 @@
-$OpenBSD: patch-zzipwrap_Makefile_in,v 1.1.1.1 2007/12/10 21:22:48 eric Exp $
---- zzipwrap/Makefile.in.orig	Mon May  7 17:01:56 2007
-+++ zzipwrap/Makefile.in	Mon May  7 17:02:06 2007
-@@ -171,7 +171,7 @@ PERL = @PERL@
+$OpenBSD: patch-zzipwrap_Makefile_in,v 1.2 2009/03/23 18:06:28 giovanni Exp $
+--- zzipwrap/Makefile.in.orig	Sat Dec 27 19:32:25 2008
++++ zzipwrap/Makefile.in	Mon Mar 23 18:50:36 2009
+@@ -174,7 +174,7 @@ PERL = @PERL@
  PKG_CONFIG = @PKG_CONFIG@
  PYTHON = @PYTHON@
  RANLIB = @RANLIB@
@@ -9,4 +9,4 @@ $OpenBSD: patch-zzipwrap_Makefile_in,v 1.1.1.1 2007/12/10 21:22:48 eric Exp $
 +RELEASE_INFO =
  RESOLVES = @RESOLVES@
  SDL = @SDL@
- SET_MAKE = @SET_MAKE@
+ SED = @SED@

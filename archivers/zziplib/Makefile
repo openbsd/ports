@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/11 15:11:21 eric Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/23 18:06:28 giovanni Exp $
 
 COMMENT=	lightweight library for extracting data from zip files
 
-DISTNAME=	zziplib-0.13.49
+DISTNAME=	zziplib-0.13.50
 CATEGORIES=	archivers
 
-SHARED_LIBS +=	zzip		13.49 \
-		zzipfseeko	13.49 \
-		zzipmmapped	13.49 \
-		zzipwrap	13.49
+SHARED_LIBS +=	zzip		13.50 \
+		zzipfseeko	13.50 \
+		zzipmmapped	13.50 \
+		zzipwrap	13.50
 
 HOMEPAGE=	http://zziplib.sourceforge.net/
 
-MAINTAINER=	Giovanni Bechis <g.bechis@snb.it>
+MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # LGPL/MPL license
 PERMIT_PACKAGE_CDROM=		Yes

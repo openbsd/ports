@@ -1,7 +1,7 @@
-$OpenBSD: patch-zzip_Makefile_in,v 1.1.1.1 2007/12/10 21:22:48 eric Exp $
---- zzip/Makefile.in.orig	Sun Mar 18 17:24:38 2007
-+++ zzip/Makefile.in	Fri Dec  7 13:09:01 2007
-@@ -173,7 +173,7 @@ PERL = @PERL@
+$OpenBSD: patch-zzip_Makefile_in,v 1.2 2009/03/23 18:06:28 giovanni Exp $
+--- zzip/Makefile.in.orig	Sat Dec 27 19:32:25 2008
++++ zzip/Makefile.in	Mon Mar 23 18:50:36 2009
+@@ -179,7 +179,7 @@ PERL = @PERL@
  PKG_CONFIG = @PKG_CONFIG@
  PYTHON = @PYTHON@
  RANLIB = @RANLIB@
@@ -9,8 +9,8 @@ $OpenBSD: patch-zzip_Makefile_in,v 1.1.1.1 2007/12/10 21:22:48 eric Exp $
 +RELEASE_INFO =
  RESOLVES = @RESOLVES@
  SDL = @SDL@
- SET_MAKE = @SET_MAKE@
-@@ -688,15 +688,6 @@ install-data-local : install-zzipHEADERS
+ SED = @SED@
+@@ -711,15 +711,6 @@ install-data-local : install-zzipHEADERS
  	$(DESTDIR)$(includedir)/zzip.h >$(DESTDIR)$(includedir)/zzip-io.h
  
  install-exec-local:
