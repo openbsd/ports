@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/02/08 15:51:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/23 10:05:36 ajacoutot Exp $
 
 COMMENT=	glib bindings for dbus message system
 
 DISTNAME=	dbus-glib-0.80
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS+=	dbus-glib-1	4.1
 CATEGORIES=	x11
 
@@ -25,13 +26,15 @@ LIB_DEPENDS=	dbus-1.>=7::x11/dbus \
 SEPARATE_BUILD=	simple
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--enable-bash-completion
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-bash-completion \
+		--enable-gtk-doc=no \
+		--with-test-socket-dir=${WRKDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-FAKE_FLAGS+=	completiondir="${PREFIX}/share/dbus-glib"
 
-pre-build:
-	@cp ${FILESDIR}/dbus-bus-introspect.xml ${WRKBUILD}/tools
+FAKE_FLAGS+=	completiondir="${PREFIX}/share/examples/dbus-glib"
 
 .include <bsd.port.mk>

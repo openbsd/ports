@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1 2009/03/23 10:05:36 ajacoutot Exp $
+--- configure.orig	Mon Mar 23 10:57:27 2009
++++ configure	Mon Mar 23 10:57:42 2009
+@@ -29496,7 +29496,6 @@ echo "
+         Building Gtk-doc docs:    ${enable_gtk_doc}
+         Bash Completion:          ${enable_bash_completion}
+         Gettext libs (empty OK):  ${INTLLIBS}
+-        Using XML parser:         ${with_xml}
+         'make check' socket dir:  ${TEST_SOCKET_DIR}
+ "
+ 
