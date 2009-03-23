@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2008/11/19 05:28:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2009/03/23 15:04:41 ajacoutot Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS:/nonexistent:/sbin/nologin
@@ -1253,6 +1253,10 @@ share/examples/cups/
 share/examples/cups/cupsd.conf
 @sample ${SYSCONFDIR}/cups/cupsd.conf
 share/examples/cups/cupsd.conf.default
+share/examples/cups/dbus-1/
+share/examples/cups/dbus-1/system.d/
+share/examples/cups/dbus-1/system.d/cups.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/cups.conf
 share/examples/cups/init/
 @sample ${SYSCONFDIR}/cups/init/
 share/examples/cups/interfaces/

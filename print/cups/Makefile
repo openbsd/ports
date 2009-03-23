@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2009/03/15 18:31:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2009/03/23 15:04:41 ajacoutot Exp $
 
 COMMENT=		Common Unix Printing System
 
 VERSION=		1.2.7
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		cups-${VERSION}p17
+PKGNAME=		cups-${VERSION}p18
 CATEGORIES=		print sysutils
 
 SHARED_LIBS+=		cups		3.0
@@ -36,13 +36,18 @@ RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
 			::devel/xdg-utils
 LIB_DEPENDS=		png.>=3::graphics/png \
 			jpeg.>=62::graphics/jpeg \
-			tiff.>=35::graphics/tiff
+			tiff.>=35::graphics/tiff \
+			dbus-1.>=7::x11/dbus
 
 FAKE_FLAGS=		BINMODE=${BINMODE} \
-			SHAREMODE=${SHAREMODE}
+			SHAREMODE=${SHAREMODE} \
+			DBUSDIR=${WRKINST}/${TRUEPREFIX}/share/examples/cups/dbus-1/system.d
 
 MAKE_ENV+=		LIBcups_VERSION=${LIBcups_VERSION} \
 			LIBcupsimage_VERSION=${LIBcupsimage_VERSION}
+
+# UTF8 desktop file patch
+DIFF_ARGS=		-a
 
 CONFIGURE_STYLE=	gnu dest
 AUTOCONF_VERSION=	2.59
@@ -55,13 +60,13 @@ CONFIGURE_ARGS+=	--with-cups-user=_cups \
 			--without-perl \
 			--without-php \
 			--without-python \
-			--disable-dbus \
+			--enable-dbus \
 			--disable-gnutls
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${LOCALBASE}/include/libpng" \
 			DSOFLAGS="-L${LOCALBASE}/lib" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
+			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			LIBcups_VERSION=${LIBcups_VERSION} \
 			LIBcupsimage_VERSION=${LIBcupsimage_VERSION}
 

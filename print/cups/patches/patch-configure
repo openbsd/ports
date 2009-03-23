@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.5 2007/12/11 08:00:06 jakemsr Exp $
---- configure.orig	Thu Nov 16 06:51:56 2006
-+++ configure	Sun Oct 21 00:41:30 2007
+$OpenBSD: patch-configure,v 1.6 2009/03/23 15:04:41 ajacoutot Exp $
+--- configure.orig	Thu Nov 16 15:51:56 2006
++++ configure	Mon Mar 23 15:38:33 2009
+@@ -7179,7 +7179,7 @@ done
+ 
+                 ;;
+ 
+-	Linux*)
++	*)
+ 				if test "x$enable_dbus" != xno; then
+ 			# Extract the first word of "pkg-config", so it can be a program name with args.
+ set dummy pkg-config; ac_word=$2
 @@ -7910,8 +7910,8 @@ if test x$enable_shared != xno; then
  			DSOFLAGS="$DSOFLAGS -set_version,sgi2.6,-soname,\`basename \$@\` -shared \$(OPTIM)"
  			;;
