@@ -1,7 +1,7 @@
-$OpenBSD: patch-xdmchoose_conf_5,v 1.1 2003/05/12 20:11:28 naddy Exp $
---- xdmchoose.conf.5.orig	Mon May 12 11:58:40 2003
-+++ xdmchoose.conf.5	Mon May 12 11:58:51 2003
-@@ -62,7 +62,7 @@ Visual components are configured using t
+$OpenBSD: patch-xdmchoose_conf_5,v 1.2 2009/03/23 21:41:44 naddy Exp $
+--- xdmchoose.conf.5.orig	Thu Apr 24 03:40:56 2003
++++ xdmchoose.conf.5	Mon Mar 23 22:04:59 2009
+@@ -62,7 +62,7 @@ Visual components are configured using the following p
  \fBforeground\fR \fIstring\fR
  foreground colour.  This can be any X-understood colour spec - either a name in the colour database (\fIXlib Volume 1\fR) or a #RRGGBB style definition.
  .TP

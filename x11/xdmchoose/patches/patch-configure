@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2009/03/23 21:41:44 naddy Exp $
+--- configure.orig	Mon Mar 23 22:27:21 2009
++++ configure	Mon Mar 23 22:28:21 2009
+@@ -4905,7 +4905,7 @@ fi
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+ if test "$ac_cv_search_XpmReadFileToPixmap" = no; then
+   for ac_lib in Xpm; do
+-    LIBS="-l$ac_lib $X_LIBS -lX11 $ac_func_search_save_LIBS"
++    LIBS="-l$ac_lib $X_LIBS -lX11 -lXdmcp -lXau $ac_func_search_save_LIBS"
+     cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */

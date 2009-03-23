@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2009/03/23 21:41:44 naddy Exp $
+--- Makefile.in.orig	Thu Apr 24 03:41:13 2003
++++ Makefile.in	Mon Mar 23 22:32:09 2009
+@@ -87,7 +87,7 @@ install_sh = @install_sh@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-LDADD = -lXdmcp -lX11
++LDADD = -lX11 -lXdmcp -lXau
+ bin_PROGRAMS = xdmchooser xdmping
+ 
+ xdmchooser_SOURCES = cfg.c gadgets.h gadgets.c interface.h version.h \
+@@ -194,10 +194,10 @@ clean-binPROGRAMS:
+ 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+ xdmchooser$(EXEEXT): $(xdmchooser_OBJECTS) $(xdmchooser_DEPENDENCIES) 
+ 	@rm -f xdmchooser$(EXEEXT)
+-	$(LINK) $(xdmchooser_LDFLAGS) $(xdmchooser_OBJECTS) $(xdmchooser_LDADD) $(LIBS)
++	$(LINK) $(xdmchooser_LDFLAGS) $(xdmchooser_OBJECTS) $(LIBS) $(xdmchooser_LDADD)
+ xdmping$(EXEEXT): $(xdmping_OBJECTS) $(xdmping_DEPENDENCIES) 
+ 	@rm -f xdmping$(EXEEXT)
+-	$(LINK) $(xdmping_LDFLAGS) $(xdmping_OBJECTS) $(xdmping_LDADD) $(LIBS)
++	$(LINK) $(xdmping_LDFLAGS) $(xdmping_OBJECTS) $(LIBS) $(xdmping_LDADD)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
