@@ -1,19 +1,24 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/12 18:13:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/23 17:17:33 ajacoutot Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
 COMMENT-gimp=		Gimp print plug-in
 
-V=			5.0.1
+V=			5.2.3
 DISTNAME=		gutenprint-${V}
-PKGNAME-main=		${DISTNAME}p6
-PKGNAME-foomatic=	foomatic-db-${DISTNAME}p1
-PKGNAME-gimp=		gutenprint-gimp-${V}p3
+PKGNAME-main=		${DISTNAME}
+PKGNAME-foomatic=	foomatic-db-${DISTNAME}
+PKGNAME-gimp=		gutenprint-gimp-${V}
+
+MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
+SUBST_VARS=		MAJOR_V
+
 CATEGORIES=		print
 
 EXTRACT_SUFX=		.tar.bz2
-SHARED_LIBS+=		gutenprint	0.0	# .2.0
-SHARED_LIBS+=		gutenprintui2	0.0	# .1.0
+
+SHARED_LIBS+=		gutenprint	1.0	# .2.3
+SHARED_LIBS+=		gutenprintui2	1.0	# .1.0
 
 HOMEPAGE=		http://gimp-print.sourceforge.net/
 
@@ -73,17 +78,27 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
 			--enable-test \
 			--enable-testpattern \
-			--disable-libgutenprintui \
-			--without-gimp \
-			--docdir=${PREFIX}/share/doc/gutenprint \
+			--enable-libgutenprintui2 \
+			--enable-escputil \
+			--with-foomatic \
+			--with-foomatic3 \
+			--with-ghostscript \
+			--with-gimp2 \
+			--with-gimp2-as-gutenprint \
 			--with-cups=no
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			am_cv_prog_tar_ustar=plaintar
 
-MAKE_ENV=		${CONFIGURE_ENV}
-MAKE_FLAGS=		INTLLIBS="\$${LTLIBINTL}"
+.for i in DVIPS DB2PDF DVIPDF DB2PS DB2HTML DOXYGEN TEXI2HTML CONVERT
+CONFIGURE_ENV+=		ac_cv_path_$i=""
+.endfor
 
 PKG_ARCH-foomatic=	*
+
+FAKE_FLAGS=		docdir=${PREFIX}/share/doc/gutenprint
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/gutenprintui2/plist.c
 
 .include <bsd.port.mk>

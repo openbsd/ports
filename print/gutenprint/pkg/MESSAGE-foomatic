@@ -4,8 +4,8 @@ foomatic-db-engine package as in the following example for an Epson
 Stylus C64:
 
 % foomatic-ppdfile -P C64
-Epson Stylus C64 Id='Epson-Stylus_C64' Driver='gutenprint' CompatibleDrivers='gutenprint gutenprint-ijs-simplified.5.0 gutenprint-ijs.5.0 '
-% foomatic-ppdfile -p 'Epson-Stylus_C64' -d 'gutenprint-ijs.5.0' > C64.ppd
+Epson Stylus C64 Id='Epson-Stylus_C64' Driver='gutenprint' CompatibleDrivers='gutenprint gutenprint-ijs-simplified.${MAJOR_V} gutenprint-ijs.${MAJOR_V}'
+% foomatic-ppdfile -p 'Epson-Stylus_C64' -d 'gutenprint-ijs.${MAJOR_V}' > C64.ppd
 
 C64.ppd can then be used with CUPS or with lpd(8) and foomatic-rip(1) as
 the input filter.

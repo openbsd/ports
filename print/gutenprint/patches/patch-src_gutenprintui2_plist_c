@@ -1,10 +1,30 @@
-$OpenBSD: patch-src_gutenprintui2_plist_c,v 1.1.1.1 2007/10/01 10:32:57 ajacoutot Exp $
---- src/gutenprintui2/plist.c.orig	Sun Jun  3 17:20:09 2007
-+++ src/gutenprintui2/plist.c	Mon Jun 18 23:32:40 2007
-@@ -1613,7 +1613,7 @@ stpui_print(const stpui_plist_t *printer, stpui_image_
- 			  close (pipefd[0]);
- 			  close (pipefd[1]);
- 			  close(syncfd[1]);
+$OpenBSD: patch-src_gutenprintui2_plist_c,v 1.2 2009/03/23 17:17:33 ajacoutot Exp $
+--- src/gutenprintui2/plist.c.orig	Sun Mar 22 11:48:22 2009
++++ src/gutenprintui2/plist.c	Sun Mar 22 11:54:35 2009
+@@ -89,14 +89,14 @@ typedef struct
+  * See bug 742187 (huge delays with lpstat -d -p) for an explanation.
+  */
+ static const print_system_t default_printing_system =
+-  { "SysV", N_("System V lp"), "lp -s", "-d", "-oraw", "/usr/bin/lp",
+-    "/usr/bin/lpstat -v | awk '/^device for /i {sub(\":\", \"\", $3); print $3}'",
+-  "-n" };
++  { "lpd", N_("Berkeley lpd (/usr/sbin/lpc)"), "lpr", "-P", "-l", "/usr/sbin/lpc",
++    "/usr/sbin/lpc status | awk '/^...*:/ {sub(\":.*\", \"\"); print}'",
++    "-#" };
+ 
+ static print_system_t known_printing_systems[] =
+ {
+-  { "CUPS", N_("CUPS"), "lp -s", "-d", "-oraw", "/usr/sbin/cupsd",
+-    "/usr/bin/lpstat -v | awk '/^device for /i {sub(\":\", \"\", $3); print $3}'",
++  { "CUPS", N_("CUPS"), "lp -s", "-d", "-oraw", "${LOCALBASE}/sbin/cupsd",
++    "${LOCALBASE}/bin/lpstat -v | awk '/^device for /i {sub(\":\", \"\", $3); print $3}'",
+     "-n" },
+   { "SysV", N_("System V lp"), "lp -s", "-d", "-oraw", "/usr/bin/lp",
+     "/usr/bin/lpstat -v | awk '/^device for /i {sub(\":\", \"\", $3); print $3}'",
+@@ -1661,7 +1661,7 @@ stpui_print(const stpui_plist_t *printer, stpui_image_
+ 			  locale = g_strdup(setlocale(LC_NUMERIC, NULL));
+ 			  setlocale(LC_NUMERIC, "C");
+ #endif
 -			  execl("/bin/sh", "/bin/sh", "-c", command, NULL);
 +			  execl("/bin/sh", "/bin/sh", "-c", command, (char *)NULL);
  			  /* NOTREACHED */

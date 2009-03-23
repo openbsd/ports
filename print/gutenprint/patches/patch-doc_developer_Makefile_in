@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_developer_Makefile_in,v 1.1.1.1 2007/10/01 10:32:57 ajacoutot Exp $
---- doc/developer/Makefile.in.orig	Sun Sep  9 18:30:00 2007
-+++ doc/developer/Makefile.in	Sun Sep  9 18:32:42 2007
-@@ -600,11 +600,11 @@ html-stamp: $(MANUAL_SRC_FILES)
+$OpenBSD: patch-doc_developer_Makefile_in,v 1.2 2009/03/23 17:17:33 ajacoutot Exp $
+--- doc/developer/Makefile.in.orig	Mon Dec 22 03:50:29 2008
++++ doc/developer/Makefile.in	Sun Mar 22 11:58:42 2009
+@@ -549,11 +549,11 @@ html-stamp: $(MANUAL_SRC_FILES)
  
  install-data-local: $(STANDARD_TARGETS)
  	if test -n '$(STANDARD_TARGETS)' ; then \
@@ -16,7 +16,7 @@ $OpenBSD: patch-doc_developer_Makefile_in,v 1.1.1.1 2007/10/01 10:32:57 ajacouto
  	  fi ; \
  	  if test -d $(HTMLDIR) ; then \
  	  HTMLGENDIR="$(HTMLDIR)" ; \
-@@ -615,7 +615,7 @@ install-data-local: $(STANDARD_TARGETS)
+@@ -564,7 +564,7 @@ install-data-local: $(STANDARD_TARGETS)
  	  fi ; \
  	  for file in $$HTMLGENDIR/*.html $$HTMLGENDIR/*.css ; do \
  	    if test -f $$file ; then \
