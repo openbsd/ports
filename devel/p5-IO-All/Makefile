@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/05 21:11:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/23 14:01:20 jasper Exp $
 
 COMMENT= 	universal I/O to everything
 
 MODULES=	cpan 
-DISTNAME=	IO-All-0.38
+DISTNAME=	IO-All-0.39
 CATEGORIES=	devel
 
 # perl
