@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/10/08 12:43:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/03/23 14:02:12 jasper Exp $
 
-COMMENT=		perl DateTime submodule for TZ
+COMMENT=		DateTime submodule for TZ
 
 MODULES=		cpan
-DISTNAME=		DateTime-TimeZone-0.81
+DISTNAME=		DateTime-TimeZone-0.85
 CATEGORIES=		devel
 
 # Perl
@@ -14,7 +14,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 RUN_DEPENDS=		::devel/p5-Params-Validate \
 			::devel/p5-Class-Singleton
-BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	modbuild
 REGRESS_DEPENDS=	::devel/p5-DateTime

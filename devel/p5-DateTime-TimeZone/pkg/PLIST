@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/08 12:43:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/03/23 14:02:12 jasper Exp $
 ${P5SITE}/DateTime/
 ${P5SITE}/DateTime/TimeZone/
 ${P5SITE}/DateTime/TimeZone.pm
@@ -68,6 +68,7 @@ ${P5SITE}/DateTime/TimeZone/America/Argentina/Jujuy.pm
 ${P5SITE}/DateTime/TimeZone/America/Argentina/La_Rioja.pm
 ${P5SITE}/DateTime/TimeZone/America/Argentina/Mendoza.pm
 ${P5SITE}/DateTime/TimeZone/America/Argentina/Rio_Gallegos.pm
+${P5SITE}/DateTime/TimeZone/America/Argentina/Salta.pm
 ${P5SITE}/DateTime/TimeZone/America/Argentina/San_Juan.pm
 ${P5SITE}/DateTime/TimeZone/America/Argentina/San_Luis.pm
 ${P5SITE}/DateTime/TimeZone/America/Argentina/Tucuman.pm
@@ -239,7 +240,7 @@ ${P5SITE}/DateTime/TimeZone/Asia/Kabul.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Kamchatka.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Karachi.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Kashgar.pm
-${P5SITE}/DateTime/TimeZone/Asia/Katmandu.pm
+${P5SITE}/DateTime/TimeZone/Asia/Kathmandu.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Kolkata.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Krasnoyarsk.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Kuala_Lumpur.pm
