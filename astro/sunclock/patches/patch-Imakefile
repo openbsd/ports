@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.4 2007/12/18 09:43:37 ajacoutot Exp $
+$OpenBSD: patch-Imakefile,v 1.5 2009/03/23 17:20:33 naddy Exp $
 --- Imakefile.orig	Sun Jun 18 21:58:50 2006
-+++ Imakefile	Tue Dec 18 10:10:55 2007
++++ Imakefile	Mon Mar 23 17:28:30 2009
 @@ -1,5 +1,5 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
@@ -17,7 +17,7 @@ $OpenBSD: patch-Imakefile,v 1.4 2007/12/18 09:43:37 ajacoutot Exp $
  
  XCOMM Name of DOCDIR's subdirectories of DESTDIR:
  DOCDIR=/X11R6/lib/X11/doc 
-@@ -42,13 +42,14 @@ CCOPTIONS = -Ae $(XPMINC) $(JINC) -DZLIB -DSHAREDIR=\"
+@@ -42,31 +42,25 @@ CCOPTIONS = -Ae $(XPMINC) $(JINC) -DZLIB -DSHAREDIR=\"
  #CCOPTIONS=-O -DZLIB -DNEW_CTIME -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
  
  # Solaris, Linux
@@ -38,7 +38,12 @@ $OpenBSD: patch-Imakefile,v 1.4 2007/12/18 09:43:37 ajacoutot Exp $
  #endif
  
  SRCS=sunclock.c astro.c widgets.c tildepath.c dirlist.c \
-@@ -60,13 +61,6 @@ LOCAL_LIBRARIES=$(XLIB) $(XPMLIBDIR) -lXpm $(ZLIBDIR) 
+      readvmf.c readxpm.c readgif.c readjpeg.c readpng.c
+ OBJS=sunclock.o astro.o widgets.o tildepath.o dirlist.o \
+      readvmf.o readxpm.o readgif.o readjpeg.o readpng.o
+-LOCAL_LIBRARIES=$(XLIB) $(XPMLIBDIR) -lXpm $(ZLIBDIR) -lz \
++LOCAL_LIBRARIES=$(XPMLIBDIR) -lXpm $(XLIB) $(ZLIBDIR) -lz \
+      $(JLIBDIR) -ljpeg -lpng -lm
  DEPLIBS=		# I don't know what I'm doing, and I hate imake!
  
  ComplexProgramTarget(sunclock)
