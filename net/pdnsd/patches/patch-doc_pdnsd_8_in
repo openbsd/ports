@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_pdnsd_8_in,v 1.1 2009/01/02 22:28:21 sthen Exp $
---- doc/pdnsd.8.in.orig	Mon Aug 20 08:24:51 2007
-+++ doc/pdnsd.8.in	Sat Sep 13 04:33:54 2008
+$OpenBSD: patch-doc_pdnsd_8_in,v 1.2 2009/03/23 09:54:36 ajacoutot Exp $
+--- doc/pdnsd.8.in.orig	Mon Aug 20 14:24:51 2007
++++ doc/pdnsd.8.in	Sun Mar 22 20:14:48 2009
 @@ -11,7 +11,7 @@ This man page is an extract of the documentation of \f
  For complete, current documentation, refer to the HTML (or plain text)
  documentation (which you can find in the \fBdoc/\fP subdirectory of the
@@ -37,7 +37,7 @@ $OpenBSD: patch-doc_pdnsd_8_in,v 1.1 2009/01/02 22:28:21 sthen Exp $
  
  .SH AUTHORS
  
-@@ -301,13 +301,13 @@ and was extensively revised by Paul Rombouts
+@@ -301,7 +301,7 @@ and was extensively revised by Paul Rombouts
  (for versions 1.1.8b1\-par and later).
  .PP
  Several others have contributed to \fBpdnsd\fP; see files in the
@@ -46,10 +46,3 @@ $OpenBSD: patch-doc_pdnsd_8_in,v 1.1 2009/01/02 22:28:21 sthen Exp $
  .PP
  This man page was written by Mahesh T. Pai
  .UR
- <paivakil@yahoo.co.in>
- .UE
--using the documents in \fB/usr/share/docs/pdnsd/\fP directory for Debian,
-+using the documents in \fB@prefix@/share/docs/pdnsd/\fP directory for Debian,
- but can be used on other distributions too.
- .PP
- Last revised: 22 Jul 2007 by Paul Rombouts.
