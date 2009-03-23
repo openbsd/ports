@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/01/16 08:14:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/03/23 09:57:54 sthen Exp $
 
 COMMENT=	genealogical research and analysis management program system
 
 DISTNAME=	gramps-3.0.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc x11
 
 HOMEPAGE=	http://www.gramps-project.org/
@@ -21,7 +22,7 @@ MODULES=	lang/python \
 BUILD_DEPENDS=	:py-gnome-*:x11/gnome/py-gnome \
 		:gnome-doc-utils-*:x11/gnome/doc-utils
 RUN_DEPENDS=	:py-gnome-*:x11/gnome/py-gnome \
-		:python-bsddb-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-bsddb \
+		${MODPY_RUN_DEPENDS:S/python/python-bsddb/},-bsddb \
 		:graphviz-*:math/graphviz \
 		:shared-mime-info-*:misc/shared-mime-info \
 		:desktop-file-utils-*:devel/desktop-file-utils \

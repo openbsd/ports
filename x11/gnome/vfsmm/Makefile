@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2009/02/11 15:47:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2009/03/23 09:57:54 sthen Exp $
 
 COMMENT=		C++ interface to gnome-vfs
 
 GNOME_PROJECT=		gnome-vfsmm
 GNOME_VERSION=		2.24.0
 SHARED_LIBS=		gnomevfsmm-2.6	1.0	# .1.9
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 HOMEPAGE=		http://www.gtkmm.org/
 
@@ -23,7 +23,7 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		gconf-2.>=5::devel/gconf2 \
 			glibmm-2.4:glib2mm->=2.8:devel/glib2mm \
-			sigc-2.0:libsigc++-2.*:devel/libsigc++-2 \
+			sigc-2.0:libsigc++->=2,<3:devel/libsigc++-2 \
 			xml2.>=9::textproc/libxml \
 			gnomevfs-2::x11/gnome/vfs2
 

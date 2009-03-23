@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.60 2009/01/29 22:28:58 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.61 2009/03/23 09:57:54 sthen Exp $
 
 COMMENT = 		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdemultimedia-${VERSION}
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	artsbuilder          1.0      # .0.0
 SHARED_LIBS +=	artsmidi_idl         1.0      # .0.0
@@ -42,7 +42,7 @@ LIB_DEPENDS = 	DCOP,kdecore.>=6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts
 		vorbis,vorbisenc,vorbisfile::audio/libvorbis \
 		cdda_paranoia,cdda_interface::audio/cdparanoia \
 		tag::audio/taglib \
-		gstreamer-0.10:gstreamer-0.10.*:multimedia/gstreamer-0.10/core \
+		gstreamer-0.10:gstreamer->=0.10,<0.11:multimedia/gstreamer-0.10/core \
 		ltdl::devel/libtool,-ltdl \
 		theora::multimedia/libtheora \
 		akode::audio/akode \
