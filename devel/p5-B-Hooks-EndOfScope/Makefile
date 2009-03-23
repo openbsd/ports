@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/02 00:58:02 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/23 09:37:37 simon Exp $
 
 COMMENT =	execute code after a scope finished compilation
 
 MODULES =	cpan
-DISTNAME =	B-Hooks-EndOfScope-0.06
+DISTNAME =	B-Hooks-EndOfScope-0.07
 CATEGORIES =	devel
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
@@ -15,6 +15,6 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 RUN_DEPENDS =	::devel/p5-Sub-Exporter \
-		::devel/p5-Variable-Magic
+		:p5-Variable-Magic->=0.31:devel/p5-Variable-Magic
 
 .include <bsd.port.mk>
