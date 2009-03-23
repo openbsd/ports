@@ -1,0 +1,2 @@
+Generic publish/subscribe POE::Component that enables POE::Sessions to
+publish events to which other POE::Sessions may subscribe.
