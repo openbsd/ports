@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tea_options_c,v 1.1 2009/03/23 10:55:40 giovanni Exp $
+--- src/tea_options.c.orig	Wed Aug  6 14:41:15 2008
++++ src/tea_options.c	Wed Aug  6 19:49:40 2008
+@@ -598,7 +598,7 @@ static GtkWidget* wnd_options_encoding (void)
+ 
+   cb_det_charset_by_meta = tea_checkbox (box, _("Detect a charset by the [X]HTML meta header"), confile.det_charset_by_meta);
+   cb_enc_use_fallback = tea_checkbox (box, _("On autodetect failed, fallback to this charset:"), confile.enc_use_fallback);
+-  bt_fallback_charset = tea_button_list_items (box, gl_enc_available, _("Fallback charset"), confile.fallback_charset);
++  // bt_fallback_charset = tea_button_list_items (box, gl_enc_available, _("Fallback charset"), confile.fallback_charset);
+ 
+   GtkWidget *fr2 = gtk_frame_new (_("Autodetect"));
+   gtk_widget_show (fr2);

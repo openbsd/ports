@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tea_config_c,v 1.3 2008/07/15 14:22:16 landry Exp $
+$OpenBSD: patch-src_tea_config_c,v 1.4 2009/03/23 10:55:40 giovanni Exp $
 --- src/tea_config.c.orig	Tue Jul  8 10:29:45 2008
-+++ src/tea_config.c	Tue Jul  8 12:18:54 2008
++++ src/tea_config.c	Fri Nov 21 17:03:32 2008
 @@ -591,7 +591,6 @@ void tea_done (void)
    unlink (confile.tmp_file);
    g_free (confile.last_version);
@@ -18,6 +18,15 @@ $OpenBSD: patch-src_tea_config_c,v 1.3 2008/07/15 14:22:16 landry Exp $
    confile.ext_pic_viewer = ht_get_char_value ("ext_pic_viewer", "display %s&");
    confile.date_time = ht_get_char_value ("date_time", "%d/%m/%Y %T");
    confile.date_time_ver = ht_get_char_value ("date_time_ver", "%Y-%m-%d-%T");
+@@ -1012,7 +1011,7 @@ void confile_reload (void)
+   confile.now_playing = ht_get_char_value ("now_playing", "Now playing %s");
+ 
+   confile.show_cursor_pos = ht_get_int_value ("show_cursor_pos", 0);
+-  confile.enc_use_fallback = ht_get_int_value ("enc_use_fallback", 1);
++  confile.enc_use_fallback = ht_get_int_value ("enc_use_fallback", 0);
+ 
+   confile.saveopen_h = ht_get_int_value ("saveopen_h", 75);
+   confile.saveopen_w = ht_get_int_value ("saveopen_w", 75);
 @@ -1115,9 +1114,9 @@ void confile_reload (void)
    confile.autoclose_tags = ht_get_int_value ("autoclose_tags", 0);
  
