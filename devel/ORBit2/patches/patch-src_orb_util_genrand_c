@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_orb_util_genrand_c,v 1.1 2009/03/23 07:29:18 jakemsr Exp $
+--- src/orb/util/genrand.c.orig	Sun Mar 22 20:31:38 2009
++++ src/orb/util/genrand.c	Sun Mar 22 20:31:48 2009
+@@ -73,7 +73,7 @@ ORBit_genuid_init (ORBitGenUidType type)
+ 	switch (genuid_type) {
+ 	case ORBIT_GENUID_STRONG:
+ #ifndef G_OS_WIN32
+-		random_fd = open ("/dev/urandom", O_RDONLY);
++		random_fd = open ("/dev/arandom", O_RDONLY);
+ 
+ 		if (random_fd < 0)
+ 			random_fd = open ("/dev/random", O_RDONLY);
