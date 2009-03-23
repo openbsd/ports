@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/07/11 00:23:15 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/03/23 00:49:07 martynas Exp $
 lib/python${MODPY_VERSION}/site-packages/Paste-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/Paste-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Paste-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -257,6 +257,7 @@ share/doc/py-paste/modules/url.txt
 share/doc/py-paste/modules/urlmap.txt
 share/doc/py-paste/modules/urlparser.txt
 share/doc/py-paste/modules/util.import_string.txt
+share/doc/py-paste/modules/util.multidict.txt
 share/doc/py-paste/modules/wsgilib.txt
 share/doc/py-paste/modules/wsgiwrappers.txt
 share/doc/py-paste/news.txt
