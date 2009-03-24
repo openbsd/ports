@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/24 19:05:38 jasper Exp $
+@conflict p5-YAML-<0.86
+bin/ysh
+${P5SITE}/YAML/Shell.pm
+@man man/man1/ysh.1
+@man man/man3p/YAML::Shell.3p

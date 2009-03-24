@@ -1,0 +1,2 @@
+This module supports the ysh command. It is not to be used in any
+general way as a Perl module.
