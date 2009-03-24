@@ -1,0 +1,2 @@
+login_fingerprint provides a fingerprint authentication mechanism
+through libfprint.

@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/24 19:03:20 robert Exp $
+@bin bin/enroll_fingerprint
+libexec/auth/
+@group auth
+@bin libexec/auth/login_fingerprint
+@mode 4555
+@owner root
+@sample /usr/libexec/auth/login_fingerprint
+@mode
+@owner
+@group
+@man man/cat1/enroll_fingerprint.0
+@man man/cat8/login_fingerprint.0
+share/doc/login_fingerprint/
+share/doc/login_fingerprint/README
