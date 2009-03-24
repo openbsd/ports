@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/01/15 02:00:56 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/24 17:55:23 jasper Exp $
 
 COMMENT=		simple Python framework for web-based applications
 
 V=			2.5
 DISTNAME=		Quixote-$V
-PKGNAME=		py-quixote-$V
+PKGNAME=		py-quixote-$Vp0
 
 CATEGORIES=		www
 

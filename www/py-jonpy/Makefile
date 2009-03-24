@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/10/08 08:22:43 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/24 17:55:24 jasper Exp $
 
 COMMENT=	Python cgi/fastcgi/mod_python framework
 
 DISTNAME=	jonpy-0.06
-PKGNAME=	py-${DISTNAME}p2
+PKGNAME=	py-${DISTNAME}p3
 CATEGORIES=    	www
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jonpy/}
