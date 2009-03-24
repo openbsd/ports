@@ -1,9 +1,18 @@
-$OpenBSD: patch-imap-send_c,v 1.1 2009/01/24 14:31:29 bernd Exp $
+$OpenBSD: patch-imap-send_c,v 1.2 2009/03/24 05:11:50 jakemsr Exp $
 
 Fix "warning: missing sentinel in function call" on 64bit archs.
 
---- imap-send.c.orig	Fri Jan 23 09:42:51 2009
-+++ imap-send.c	Fri Jan 23 09:43:04 2009
+--- imap-send.c.orig	Sat Feb  7 11:46:30 2009
++++ imap-send.c	Mon Mar 23 00:32:21 2009
+@@ -496,7 +496,7 @@ static void arc4_init(void)
+ 	int i, fd;
+ 	unsigned char j, si, dat[128];
+ 
+-	if ((fd = open("/dev/urandom", O_RDONLY)) < 0 && (fd = open("/dev/random", O_RDONLY)) < 0) {
++	if ((fd = open("/dev/arandom", O_RDONLY)) < 0 && (fd = open("/dev/random", O_RDONLY)) < 0) {
+ 		fprintf(stderr, "Fatal: no random number source available.\n");
+ 		exit(3);
+ 	}
 @@ -1009,7 +1009,7 @@ static struct store *imap_open_store(struct imap_serve
  				_exit(127);
  			close(a[0]);
