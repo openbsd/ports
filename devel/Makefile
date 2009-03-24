@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.683 2009/03/23 08:28:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.684 2009/03/24 19:08:14 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -606,6 +606,7 @@
      SUBDIR += p5-Want
      SUBDIR += p5-WeakRef
      SUBDIR += p5-YAML
+     SUBDIR += p5-YAML-Shell
      SUBDIR += p5-YAML-Syck
      SUBDIR += p5-accessors
      SUBDIR += p5-boolean
