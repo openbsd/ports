@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/24 18:14:09 jasper Exp $
 
 COMMENT=	Python interface to memcached
 
 DISTNAME=	python-memcached-1.34
-PKGNAME=	${DISTNAME:S/python-/py-/}p0
+PKGNAME=	${DISTNAME:S/python-/py-/}p1
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.danga.com/memcached/apis.bml

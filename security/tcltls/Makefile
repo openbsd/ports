@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/08/31 11:02:23 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/24 18:14:10 jasper Exp $
 
 COMMENT=	OpenSSL Tcl extension
 
 VERSION=	1.5.0
 DISTNAME=	tls${VERSION}-src
-PKGNAME=	tcltls-${VERSION}p1
+PKGNAME=	tcltls-${VERSION}p2
 SHARED_LIBS=	tls150	0.0
 
 CATEGORIES=	security

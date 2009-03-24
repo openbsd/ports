@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/08/23 20:38:57 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/24 18:14:10 jasper Exp $
 
 COMMENT=		random assortment of WSGI servers, middleware
 
 MODPY_EGG_VERSION=	1.0.1
 DISTNAME=		flup-${MODPY_EGG_VERSION}
-PKGNAME=		py-flup-${MODPY_EGG_VERSION}
+PKGNAME=		py-flup-${MODPY_EGG_VERSION}p0
 
 CATEGORIES=		www
 
