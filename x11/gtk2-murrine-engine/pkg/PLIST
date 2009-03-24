@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/07/13 17:20:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/03/24 20:36:21 landry Exp $
 lib/gtk-2.0/2.10.0/engines/libmurrine.a
 lib/gtk-2.0/2.10.0/engines/libmurrine.la
 lib/gtk-2.0/2.10.0/engines/libmurrine.so
+share/gtk-engines/
+share/gtk-engines/murrine.xml
 share/themes/MurrinaAquaIsh/
 share/themes/MurrinaAquaIsh/gtk-2.0/
 share/themes/MurrinaAquaIsh/gtk-2.0/gtkrc
+share/themes/MurrinaBlu/
+share/themes/MurrinaBlu/gtk-2.0/
+share/themes/MurrinaBlu/gtk-2.0/gtkrc
 share/themes/MurrinaBlue/
 share/themes/MurrinaBlue/AUTHOR
 share/themes/MurrinaBlue/COPYING
@@ -143,12 +148,21 @@ share/themes/MurrinaBlue/xfwm4/top-right-active.png
 share/themes/MurrinaBlue/xfwm4/top-right-active.xpm
 share/themes/MurrinaBlue/xfwm4/top-right-inactive.png
 share/themes/MurrinaBlue/xfwm4/top-right-inactive.xpm
+share/themes/MurrinaCandido/
+share/themes/MurrinaCandido/gtk-2.0/
+share/themes/MurrinaCandido/gtk-2.0/gtkrc
 share/themes/MurrinaCandy/
 share/themes/MurrinaCandy/gtk-2.0/
 share/themes/MurrinaCandy/gtk-2.0/gtkrc
 share/themes/MurrinaCappuccino/
 share/themes/MurrinaCappuccino/gtk-2.0/
 share/themes/MurrinaCappuccino/gtk-2.0/gtkrc
+share/themes/MurrinaChrome/
+share/themes/MurrinaChrome/gtk-2.0/
+share/themes/MurrinaChrome/gtk-2.0/gtkrc
+share/themes/MurrinaCream/
+share/themes/MurrinaCream/gtk-2.0/
+share/themes/MurrinaCream/gtk-2.0/gtkrc
 share/themes/MurrinaEalm/
 share/themes/MurrinaEalm/gtk-2.0/
 share/themes/MurrinaEalm/gtk-2.0/gtkrc
@@ -188,6 +202,9 @@ share/themes/MurrinaLoveGray/gtk-2.0/gtkrc
 share/themes/MurrinaNeoGraphite/
 share/themes/MurrinaNeoGraphite/gtk-2.0/
 share/themes/MurrinaNeoGraphite/gtk-2.0/gtkrc
+share/themes/MurrinaOranche/
+share/themes/MurrinaOranche/gtk-2.0/
+share/themes/MurrinaOranche/gtk-2.0/gtkrc
 share/themes/MurrinaOransun/
 share/themes/MurrinaOransun/gtk-2.0/
 share/themes/MurrinaOransun/gtk-2.0/gtkrc
