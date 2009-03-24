@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/01/20 10:43:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2009/03/24 20:07:05 jasper Exp $
 
 COMMENT=		flexible communications framework, python bindings
 
 DISTNAME=		telepathy-python-0.15.6
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-python/}
 
