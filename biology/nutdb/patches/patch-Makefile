@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.4 2008/02/10 18:23:24 jasper Exp $
---- Makefile.orig	Mon Jan 29 06:06:37 2007
-+++ Makefile	Wed Jan 30 07:14:50 2008
+$OpenBSD: patch-Makefile,v 1.5 2009/03/24 14:51:04 naddy Exp $
+--- Makefile.orig	Mon Aug 25 22:11:23 2008
++++ Makefile	Tue Mar 24 15:50:10 2009
 @@ -1,14 +1,24 @@
  objects := $(patsubst %.c,%.o,$(wildcard *.c))
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-Makefile,v 1.4 2008/02/10 18:23:24 jasper Exp $
  
  nut:	$(objects)
 -	gcc ${CFLAGS} -lm -o nut $(objects)
-+	${CC} ${CFLAGS} -lm -o nut $(objects)
++	${CC} ${CFLAGS} -o nut $(objects) -lm
  
 +anameal.o: anameal.c
 +	${CC} ${CFLAGS} $(EXTRA_CFLAGS) -c $< -o $@
