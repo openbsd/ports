@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/14 15:49:21 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/24 14:58:25 naddy Exp $
 
 COMMENT=		GNU watch command
 
@@ -23,7 +23,8 @@ NO_REGRESS=		Yes
 
 do-build:
 	${CC} ${CFLAGS} -c ${WRKSRC}/watch.c -o ${WRKSRC}/watch.o
-	${CC} ${CFLAGS} ${LDFLAGS} -lncurses ${WRKSRC}/watch.o -o ${WRKSRC}/gnuwatch
+	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/watch.o -o ${WRKSRC}/gnuwatch \
+	    -lncurses
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gnuwatch ${PREFIX}/bin
