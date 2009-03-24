@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/16 22:17:01 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/24 22:05:18 jasper Exp $
 
 COMMENT=	utility to turn simply formatted text into markup 
 
@@ -20,6 +20,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=txt2tags/}
 EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python
+
+BUILD_DEPENDS=	::devel/gettext
 
 PKG_ARCH=	*
 
