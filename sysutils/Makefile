@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2009/03/15 20:12:19 landry Exp $
+# $OpenBSD: Makefile,v 1.171 2009/03/24 19:03:51 robert Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -56,6 +56,7 @@
      SUBDIR += libgksuui
      SUBDIR += libretto-config
      SUBDIR += libstatgrab
+     SUBDIR += login_fingerprint
      SUBDIR += login_ldap
      SUBDIR += logpp
      SUBDIR += lsof
