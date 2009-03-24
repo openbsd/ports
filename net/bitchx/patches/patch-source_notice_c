@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_notice_c,v 1.1 2003/03/27 15:46:11 brad Exp $
---- source/notice.c.orig	Mon Jan  8 01:24:22 2001
-+++ source/notice.c	Wed Mar 26 23:00:45 2003
-@@ -421,7 +421,7 @@ irc.BitchX.com *** Notice -- Nick collis
+$OpenBSD: patch-source_notice_c,v 1.2 2009/03/24 21:43:10 naddy Exp $
+--- source/notice.c.orig	Mon Jan  8 07:24:22 2001
++++ source/notice.c	Tue Mar 24 22:41:56 2009
+@@ -421,7 +421,7 @@ irc.BitchX.com *** Notice -- Nick collision on nickser
  		int conn = !strncmp(line+7, "connect", 7) ? 1 : 0;
  		int dalnet = 0, ircnet = 0;
  

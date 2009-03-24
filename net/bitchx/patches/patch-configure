@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2002/06/30 18:23:31 brad Exp $
---- configure.orig	Mon Jan  8 01:24:22 2001
-+++ configure	Thu Feb 28 18:06:38 2002
-@@ -12004,11 +12004,11 @@ if test -n "$CYGWIN" -o -n "$EMXOS2" -o 
+$OpenBSD: patch-configure,v 1.5 2009/03/24 21:43:09 naddy Exp $
+--- configure.orig	Mon Jan  8 07:24:22 2001
++++ configure	Tue Mar 24 22:41:56 2009
+@@ -12004,11 +12004,11 @@ if test -n "$CYGWIN" -o -n "$EMXOS2" -o -n "$MINGWIN32
    mandir="\$(IRCLIB)"
  else
    INSTALL_IRC="\${bindir}/\$(_VERSION_)\$(EXEEXT)"

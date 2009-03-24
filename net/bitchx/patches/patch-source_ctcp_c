@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_ctcp_c,v 1.1 2003/03/27 15:46:11 brad Exp $
---- source/ctcp.c.orig	Mon Jan  8 01:24:22 2001
-+++ source/ctcp.c	Wed Mar 26 23:00:45 2003
-@@ -1478,6 +1478,10 @@ extern	void	send_ctcp (int type, char *t
+$OpenBSD: patch-source_ctcp_c,v 1.2 2009/03/24 21:43:09 naddy Exp $
+--- source/ctcp.c.orig	Mon Jan  8 07:24:22 2001
++++ source/ctcp.c	Tue Mar 24 22:41:56 2009
+@@ -1478,6 +1478,10 @@ extern	void	send_ctcp (int type, char *to, int datatag
  	     *putbuf2;
  	int len;
  	len = IRCD_BUFFER_SIZE - (12 + strlen(to));
