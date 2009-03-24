@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/05/11 12:03:44 msf Exp $
-bin/ysh
+@comment $OpenBSD: PLIST,v 1.5 2009/03/24 19:03:44 jasper Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/YAML.pm
 ${P5SITE}/YAML/
 ${P5SITE}/YAML.pm
+${P5SITE}/YAML/Any.pm
 ${P5SITE}/YAML/Base.pm
 ${P5SITE}/YAML/Dumper/
 ${P5SITE}/YAML/Dumper.pm
@@ -16,9 +16,9 @@ ${P5SITE}/YAML/Marshall.pm
 ${P5SITE}/YAML/Node.pm
 ${P5SITE}/YAML/Tag.pm
 ${P5SITE}/YAML/Types.pm
-@man man/man1/ysh.1
 @man man/man3p/Test::YAML.3p
 @man man/man3p/YAML.3p
+@man man/man3p/YAML::Any.3p
 @man man/man3p/YAML::Base.3p
 @man man/man3p/YAML::Dumper.3p
 @man man/man3p/YAML::Dumper::Base.3p

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/11/12 17:37:22 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2009/03/24 19:03:44 jasper Exp $
 
 COMMENT=	YAML ain't a markup language
 
 MODULES=	cpan
 
-DISTNAME=	YAML-0.66
+DISTNAME=	YAML-0.68
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
