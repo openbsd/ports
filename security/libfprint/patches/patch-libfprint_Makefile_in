@@ -1,0 +1,12 @@
+$OpenBSD: patch-libfprint_Makefile_in,v 1.1.1.1 2009/03/24 19:01:04 robert Exp $
+--- libfprint/Makefile.in.orig	Tue Mar 24 17:20:41 2009
++++ libfprint/Makefile.in	Tue Mar 24 17:20:58 2009
+@@ -275,7 +275,7 @@ NBIS_SRC = \
+ 	nbis/mindtct/sort.c \
+ 	nbis/mindtct/util.c
+ 
+-libfprint_la_CFLAGS = -fvisibility=hidden -I$(srcdir)/nbis/include $(LIBUSB_CFLAGS) $(GLIB_CFLAGS) $(IMAGEMAGICK_CFLAGS) $(CRYPTO_CFLAGS) $(AM_CFLAGS)
++libfprint_la_CFLAGS = -I$(srcdir)/nbis/include $(LIBUSB_CFLAGS) $(GLIB_CFLAGS) $(IMAGEMAGICK_CFLAGS) $(CRYPTO_CFLAGS) $(AM_CFLAGS)
+ libfprint_la_LDFLAGS = -version-info @lt_major@:@lt_revision@:@lt_age@
+ libfprint_la_LIBADD = -lm $(LIBUSB_LIBS) $(GLIB_LIBS) $(IMAGEMAGICK_LIBS) $(CRYPTO_LIBS)
+ libfprint_la_SOURCES = \

@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/24 19:01:04 robert Exp $
+%%SHARED%%
+include/libfprint/
+include/libfprint/fprint.h
+lib/libfprint.a
+lib/libfprint.la
+lib/pkgconfig/
+lib/pkgconfig/libfprint.pc
