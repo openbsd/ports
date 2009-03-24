@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2009/02/11 15:48:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.221 2009/03/24 11:39:14 sthen Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -92,6 +92,7 @@
      SUBDIR += mp3info
      SUBDIR += mp3info,no_x11
      SUBDIR += mp3splt
+     SUBDIR += mp3splt-gtk
      SUBDIR += mp3wrap
      SUBDIR += mpc
      SUBDIR += mpd
