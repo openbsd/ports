@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/03/12 10:04:56 steven Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/03/25 00:56:54 martynas Exp $
 bin/rst2html
 bin/rst2latex
 bin/rst2newlatex
 bin/rst2pseudoxml
 bin/rst2s5
 bin/rst2xml
+bin/rstpep2html
 lib/python${MODPY_VERSION}/site-packages/docutils/
+lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/docutils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/docutils/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/core.py
@@ -37,6 +39,8 @@ lib/python${MODPY_VERSION}/site-packages/docutils/languages/fi.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/fi.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/fr.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/fr.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/languages/he.py
+lib/python${MODPY_VERSION}/site-packages/docutils/languages/he.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/it.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/it.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/ja.py
@@ -140,6 +144,8 @@ lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/fi.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/fi.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/fr.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/fr.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/he.py
+lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/he.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/it.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/it.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/ja.py
@@ -214,6 +220,7 @@ lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/__init__.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/html4css1.css
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/html4css1/template.txt
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/__init__.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/__init__.pyc

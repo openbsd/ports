@@ -1,32 +1,32 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/11 21:24:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/25 00:56:54 martynas Exp $
 
-COMMENT=	process plaintext documentation into other formats
+COMMENT =	process plaintext documentation into other formats
 
-DISTNAME=	docutils-0.4
-PKGNAME=	py-${DISTNAME}p3
-CATEGORIES=	textproc
+MODPY_EGG_VERSION = 0.5
+DISTNAME =	docutils-${MODPY_EGG_VERSION}
+PKGNAME =	py-${DISTNAME}
+CATEGORIES =	textproc
 
-MAINTAINER=	Ben Lovett <ben@tilderoot.com>
+MAINTAINER =	Ben Lovett <ben@tilderoot.com>
 
-HOMEPAGE=	http://docutils.sourceforge.net/
+HOMEPAGE =	http://docutils.sourceforge.net/
 
 # BSD/GPL/Python Software License
-PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=docutils/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=docutils/}
 
-MODULES=	lang/python
+MODULES =	lang/python
 
 pre-build:
-.for file in html s5 latex newlatex xml pseudoxml
-	@mv ${WRKSRC}/tools/rst2${file}{.py,}
+.for file in 2html 2s5 2latex 2newlatex 2xml 2pseudoxml pep2html
+	@mv ${WRKSRC}/tools/rst${file}{.py,}
 .endfor
 
 do-regress: fake
-	@cd ${WRKSRC}/test && ${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-	   ${MODPY_BIN} ./alltests.py
+	@cd ${WRKSRC}/test && ${MODPY_BIN} ./alltests.py
 
 .include <bsd.port.mk>

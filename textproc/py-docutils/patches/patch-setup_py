@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.2 2006/03/12 10:04:56 steven Exp $
---- setup.py.orig	Mon Jan  9 10:28:09 2006
-+++ setup.py	Fri Mar 10 15:50:13 2006
-@@ -76,12 +76,12 @@ what-you-see-is-what-you-get plaintext m
+$OpenBSD: patch-setup_py,v 1.3 2009/03/25 00:56:54 martynas Exp $
+--- setup.py.orig	Thu Mar 22 01:00:23 2007
++++ setup.py	Sun Mar 22 13:59:06 2009
+@@ -108,13 +108,13 @@ what-you-see-is-what-you-get plaintext markup syntax."
                      ('docutils/writers/s5_html/themes',
                       ['docutils/writers/s5_html/themes/README.txt']),]
                     + s5_theme_files),
@@ -10,17 +10,19 @@ $OpenBSD: patch-setup_py,v 1.2 2006/03/12 10:04:56 steven Exp $
 -                 'tools/rst2latex.py',
 -                 'tools/rst2newlatex.py',
 -                 'tools/rst2xml.py',
--                 'tools/rst2pseudoxml.py'],}
+-                 'tools/rst2pseudoxml.py',
+-                 'tools/rstpep2html.py',
 +    'scripts' : ['tools/rst2html',
 +                 'tools/rst2s5',
 +                 'tools/rst2latex',
 +                 'tools/rst2newlatex',
 +                 'tools/rst2xml',
-+                 'tools/rst2pseudoxml'],}
++                 'tools/rst2pseudoxml',
++                 'tools/rstpep2html',
+                  ],}
  """Distutils setup parameters."""
  
- classifiers = [
-@@ -123,6 +123,8 @@ List of (module name, minimum __version_
+@@ -157,6 +157,8 @@ List of (module name, minimum __version__ string, [att
  def get_extras():
      extras = []
      for module_name, version, attributes in extra_modules:
