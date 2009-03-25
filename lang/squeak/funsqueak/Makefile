@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/25 14:01:48 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/25 13:41:06 jasper Exp $
 
 
 COMMENT =	smalltalk system, exploration image
@@ -9,6 +9,7 @@ DISTFILES =	FunSqueak3.10alpha.7.zip
 DISTNAME =	squeak-funsqueak-3.10alpha7
 MASTER_SITES =	${SQUEAK_SITE}../various_images/FunSqueak/
 RUN_DEPENDS =	:squeak-vm->=3.10:lang/squeak/vm
+BUILD_DEPENDS = ::archivers/unzip
 EXTRACT_ONLY =
 NO_BUILD =	Yes
 
