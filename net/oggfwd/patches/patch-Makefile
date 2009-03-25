@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile,v 1.1 2009/03/25 17:58:48 naddy Exp $
+--- Makefile.orig	Wed Mar 25 18:55:38 2009
++++ Makefile	Wed Mar 25 18:56:22 2009
+@@ -15,12 +15,12 @@ INSTALL =	install
+ PTHREADFLAGS ?=	-pthread
+ INCLUDEFLAGS ?=	-I${PREFIX}/include
+ LINKFLAGS ?=	-L${PREFIX}/lib
+-LINKFLAGS +=    -lshout -logg -lvorbis -ltheora -lspeex
++LIBS +=    	-lshout -lvorbis -ltheora -lspeex -logg -lm
+ 
+ all: ${PROG}
+ 
+ ${PROG}: ${SRC}
+-	${CC} ${CFLAGS} ${PTHREADFLAGS} ${INCLUDEFLAGS} ${LINKFLAGS} -o ${PROG} $<
++	${CC} ${CFLAGS} ${PTHREADFLAGS} ${INCLUDEFLAGS} ${LINKFLAGS} -o ${PROG} $< ${LIBS}
+ 
+ install: ${PROG}
+ 	${INSTALL} -c -m 555 -o root -g bin ${PROG} ${BINDIR}
