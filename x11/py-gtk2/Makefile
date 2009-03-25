@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2009/03/07 15:37:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2009/03/25 09:03:21 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GTK+2 Python bindings
 
 GNOME_PROJECT=	pygtk
-GNOME_VERSION=	2.12.1
-PKGNAME=	py-gtk2-${VERSION}p3
+GNOME_VERSION=	2.14.1
+PKGNAME=	py-gtk2-${VERSION}
 
 CATEGORIES=	x11
 
@@ -50,6 +50,6 @@ REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \
-	    xargs perl -i -pe 's:^#!/usr/bin/env python:#!${MODPY_BIN}:'
+	    xargs perl -i -pe 's,^#!/usr/bin/env python,#!${MODPY_BIN},'
 
 .include <bsd.port.mk>

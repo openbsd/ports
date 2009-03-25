@@ -1,7 +1,7 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.4 2008/04/22 14:50:54 ajacoutot Exp $
---- examples/Makefile.in.orig	Thu Jan  3 16:05:54 2008
-+++ examples/Makefile.in	Fri Apr 18 13:30:09 2008
-@@ -562,7 +562,7 @@ pygtk-demo/pygtk-demo: pygtk-demo/pygtk-demo.in
+$OpenBSD: patch-examples_Makefile_in,v 1.5 2009/03/25 09:03:21 jasper Exp $
+--- examples/Makefile.in.orig	Fri Mar  6 00:09:16 2009
++++ examples/Makefile.in	Sun Mar 15 21:46:46 2009
+@@ -580,7 +580,7 @@ pygtk-demo/pygtk-demo: pygtk-demo/pygtk-demo.in
  	@mkdir -p pygtk-demo
  	@sed -e s!\@PYTHON\@!@PYTHON@! \
  	     -e s!\@libdir\@!@libdir@! \
