@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/14 03:48:07 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/25 20:44:10 jakemsr Exp $
 
 COMMENT =		audio plugin API
 
@@ -32,6 +32,8 @@ FAKE_FLAGS =		PREFIX="${TRUEPREFIX}"
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		SNDFILE_CFLAGS="-I${LOCALBASE}/include" \
+			SNDFILE_LIBS="-L${LOCALBASE}/lib -lsndfile"
 
 REGRESS_TARGET =	test
 REGRESS_DEPENDS =	::audio/libsndfile
