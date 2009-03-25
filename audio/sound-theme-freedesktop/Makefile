@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/12/14 18:42:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/25 13:17:39 jasper Exp $
 
 COMMENT=	XDG sound theme
 
 DISTNAME=	sound-theme-freedesktop-0.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 EXTRACT_SUFX=	.tar.bz2
@@ -21,5 +22,7 @@ MASTER_SITES=	http://people.freedesktop.org/~mccann/dist/
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
+
+MODULES=	textproc/intltool
 
 .include <bsd.port.mk>
