@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/25 22:03:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/03/25 22:06:41 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	set of modules to use Gtk+2 libraries from Perl
 
 MODULES=	cpan
 DISTNAME=	Gtk2-1.203
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -31,7 +32,7 @@ BUILD_DEPENDS=	::devel/p5-ExtUtils-Depends \
 		::devel/p5-ExtUtils-PkgConfig \
 		${RUN_DEPENDS}
 
-RUN_DEPENDS=	:p5-Glib2->=1.161:devel/p5-Glib2 \
+RUN_DEPENDS=	:p5-Glib2->=1.200:devel/p5-Glib2 \
 		:p5-Cairo->=1.00:graphics/p5-Cairo
 		
 # The regression tests require a running instance of X.
