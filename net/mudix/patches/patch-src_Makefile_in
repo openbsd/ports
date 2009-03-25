@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2002/05/10 16:05:50 lebel Exp $
---- src/Makefile.in.orig	Sun May  5 10:07:29 2002
-+++ src/Makefile.in	Mon May  6 10:14:55 2002
-@@ -2,9 +2,9 @@ CC      = @CC@
+$OpenBSD: patch-src_Makefile_in,v 1.2 2009/03/25 18:29:34 naddy Exp $
+--- src/Makefile.in.orig	Sun Oct 20 21:34:28 2002
++++ src/Makefile.in	Wed Mar 25 19:28:15 2009
+@@ -2,9 +2,10 @@ CC      = @CC@
  #DEBUG   = -DKEY_DEBUG 
  DEBUG   = 
  EXEC    = ../mudix
@@ -9,13 +9,17 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2002/05/10 16:05:50 lebel Exp $
 +O_FLAGS = @CFLAGS@
  C_FLAGS = $(O_FLAGS) $(DEBUG) -Wall -I../include
 -L_FLAGS = $(O_FLAGS) $(DEBUG) -lpanel -lncurses
-+L_FLAGS = $(O_FLAGS) $(DEBUG) -lpanel -lcurses
++L_FLAGS = $(O_FLAGS) $(DEBUG)
++LIBS    = -lpanel -lcurses
  
  O_FILES = alias.o \
            commands.o \
-@@ -25,7 +25,7 @@ $(EXEC): $(O_FILES)
+@@ -23,9 +24,9 @@ O_FILES = alias.o \
+ 
+ $(EXEC): $(O_FILES)
  	rm -f $(EXEC) 
- 	$(CC) -o $(EXEC) $(L_FLAGS) $(O_FILES)
+-	$(CC) -o $(EXEC) $(L_FLAGS) $(O_FILES)
++	$(CC) -o $(EXEC) $(L_FLAGS) $(O_FILES) $(LIBS)
  
 -.c.o: mudix.h conf.h 
 +.c.o:  
