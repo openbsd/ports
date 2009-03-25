@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/12/08 18:04:52 pirofti Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/25 18:09:12 ajacoutot Exp $
 
 COMMENT =		interactive, multi-threaded text mode web browser
 
 DISTNAME =		retawq-0.2.6c
-PKGNAME = 		${DISTNAME}p0
+PKGNAME = 		${DISTNAME}p1
 CATEGORIES =		www
 
 HOMEPAGE =		http://retawq.sourceforge.net
