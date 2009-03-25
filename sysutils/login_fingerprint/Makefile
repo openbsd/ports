@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/24 19:03:20 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/25 13:39:29 robert Exp $
 
 COMMENT=	provide fingerprint authentication
 
 DISTNAME=	login_fingerprint-1.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	sysutils	
 
 MASTER_SITES=	http://blade2k.humppa.hu/
