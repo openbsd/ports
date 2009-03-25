@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_queue_cpp,v 1.1 2009/03/25 08:58:04 jakemsr Exp $
+--- src/queue.cpp.orig	Sun Mar 22 23:58:11 2009
++++ src/queue.cpp	Sun Mar 22 23:59:06 2009
+@@ -499,7 +499,7 @@ uint32 random32()
+ 	uint32 number;
+ #ifndef	WIN32
+ 	bool success = true;
+-	int fd = open("/dev/urandom",O_RDONLY);
++	int fd = open("/dev/arandom",O_RDONLY);
+         if (fd == -1) {
+ 		success = false;
+         } else {
