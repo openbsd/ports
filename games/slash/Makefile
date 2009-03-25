@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2008/01/26 19:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2009/03/25 18:16:29 naddy Exp $
 
 COMMENT=	dungeon explorin', hackin' game, but harder than nethack
 
 DISTNAME=	slash-e8
-PKGNAME=	slash-3.2.2-e8p0
+PKGNAME=	slash-3.2.2.e8
 CATEGORIES=	games
 
 MASTER_SITES=   ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
