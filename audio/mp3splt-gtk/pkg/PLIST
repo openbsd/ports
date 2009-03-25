@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/24 11:36:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/25 19:13:56 sthen Exp $
 @bin bin/mp3splt-gtk
 share/applications/mp3splt-gtk.desktop
 share/locale/fr/LC_MESSAGES/mp3splt-gtk.mo
 share/pixmaps/
 share/pixmaps/mp3splt-gtk.png
 share/pixmaps/mp3splt-gtk_ico.png
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
