@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2007/10/08 08:22:43 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2009/03/25 13:39:40 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	checks HTML documents for broken links
 
 DISTNAME=	linkchecker-4.5
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=    	www
 
 HOMEPAGE=	http://linkchecker.sourceforge.net/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/12/10 21:07:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/25 13:39:40 jasper Exp $
 
 COMMENT=		statistical anti-spam filter
 
 DISTNAME=		spambayes-1.1a4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		mail
 

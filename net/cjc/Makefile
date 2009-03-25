@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2009/03/25 13:39:40 jasper Exp $
 
 COMMENT=	Jabber client for text terminals
 
 DISTNAME=	cjc-1.0.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 
 HOMEPAGE=	http://cjc.jajcus.net/
