@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.14 2008/06/28 12:34:58 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.15 2009/03/25 22:11:16 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.5,<1.6
 @pkgpath devel/jdk/1.5,-jre,native_bootstrap
@@ -200,6 +200,7 @@ ${JREHOME}/lib/zi/America/Argentina/La_Rioja
 ${JREHOME}/lib/zi/America/Argentina/Mendoza
 ${JREHOME}/lib/zi/America/Argentina/Rio_Gallegos
 ${JREHOME}/lib/zi/America/Argentina/San_Juan
+${JREHOME}/lib/zi/America/Argentina/San_Luis
 ${JREHOME}/lib/zi/America/Argentina/Tucuman
 ${JREHOME}/lib/zi/America/Argentina/Ushuaia
 ${JREHOME}/lib/zi/America/Aruba
@@ -347,7 +348,6 @@ ${JREHOME}/lib/zi/Asia/Bangkok
 ${JREHOME}/lib/zi/Asia/Beirut
 ${JREHOME}/lib/zi/Asia/Bishkek
 ${JREHOME}/lib/zi/Asia/Brunei
-${JREHOME}/lib/zi/Asia/Calcutta
 ${JREHOME}/lib/zi/Asia/Choibalsan
 ${JREHOME}/lib/zi/Asia/Chongqing
 ${JREHOME}/lib/zi/Asia/Colombo
@@ -358,6 +358,7 @@ ${JREHOME}/lib/zi/Asia/Dubai
 ${JREHOME}/lib/zi/Asia/Dushanbe
 ${JREHOME}/lib/zi/Asia/Gaza
 ${JREHOME}/lib/zi/Asia/Harbin
+${JREHOME}/lib/zi/Asia/Ho_Chi_Minh
 ${JREHOME}/lib/zi/Asia/Hong_Kong
 ${JREHOME}/lib/zi/Asia/Hovd
 ${JREHOME}/lib/zi/Asia/Irkutsk
@@ -369,6 +370,7 @@ ${JREHOME}/lib/zi/Asia/Kamchatka
 ${JREHOME}/lib/zi/Asia/Karachi
 ${JREHOME}/lib/zi/Asia/Kashgar
 ${JREHOME}/lib/zi/Asia/Katmandu
+${JREHOME}/lib/zi/Asia/Kolkata
 ${JREHOME}/lib/zi/Asia/Krasnoyarsk
 ${JREHOME}/lib/zi/Asia/Kuala_Lumpur
 ${JREHOME}/lib/zi/Asia/Kuching
@@ -392,7 +394,6 @@ ${JREHOME}/lib/zi/Asia/Riyadh
 ${JREHOME}/lib/zi/Asia/Riyadh87
 ${JREHOME}/lib/zi/Asia/Riyadh88
 ${JREHOME}/lib/zi/Asia/Riyadh89
-${JREHOME}/lib/zi/Asia/Saigon
 ${JREHOME}/lib/zi/Asia/Sakhalin
 ${JREHOME}/lib/zi/Asia/Samarkand
 ${JREHOME}/lib/zi/Asia/Seoul
