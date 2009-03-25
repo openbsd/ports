@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2008/10/18 12:37:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/03/25 13:52:31 jasper Exp $
 
 COMMENT=	Python interface to sendmail milter API
 
 DISTNAME=	pymilter-0.8.10
-PKGNAME=	py-${DISTNAME}
+PKGNAME=	py-${DISTNAME}p0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.bmsi.com/python/milter.html

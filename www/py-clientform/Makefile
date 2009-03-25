@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/12/23 18:00:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/25 13:52:31 jasper Exp $
 
 COMMENT=		handle HTML forms on the client side
 
 V=			0.2.7
 DISTNAME=		ClientForm-$V
-PKGNAME=		py-clientform-$V
+PKGNAME=		py-clientform-$Vp0
 
 CATEGORIES=		www
 
