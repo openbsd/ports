@@ -1,0 +1,15 @@
+$OpenBSD: patch-Box2D_Source_Collision_Shapes_b2Shape_cpp,v 1.1 2009/03/25 11:39:46 sthen Exp $
+
+avoid a crash in one of the npcomplete levels.
+
+--- Box2D/Source/Collision/Shapes/b2Shape.cpp.orig	Tue Mar 24 16:09:42 2009
++++ Box2D/Source/Collision/Shapes/b2Shape.cpp	Tue Mar 24 16:09:54 2009
+@@ -99,7 +99,7 @@ void b2Shape::CreateProxy(b2BroadPhase* broadPhase, co
+ 	bool inRange = broadPhase->InRange(aabb);
+ 
+ 	// You are creating a shape outside the world box.
+-	b2Assert(inRange);
++	// b2Assert(inRange);
+ 
+ 	if (inRange)
+ 	{
