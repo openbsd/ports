@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/19 18:26:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2009/03/25 10:30:30 avsm Exp $
 
 COMMENT=		jabber server written in Erlang
 
 V=			2.0.4
 DISTNAME=		ejabberd-$V
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		net
 
@@ -23,7 +24,7 @@ MASTER_SITES=		http://www.process-one.net/downloads/ejabberd/$V/
 
 MODULES=		converters/libiconv
 BUILD_DEPENDS=		:erlang->=12b.0:lang/erlang
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS=		:erlang->=12b.0:lang/erlang
 
 MAKE_FLAGS+=		EJABBERDDIR=${PREFIX}/lib/ejabberd \
 			LOGDIR=${EJLOGDIR} \
