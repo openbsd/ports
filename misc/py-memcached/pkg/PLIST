@@ -1,3 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/14 08:41:14 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/25 22:31:22 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/memcache.py
 lib/python${MODPY_VERSION}/site-packages/memcache.pyc
+lib/python${MODPY_VERSION}/site-packages/python_memcached-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/python_memcached-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/python_memcached-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/python_memcached-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/python_memcached-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt

@@ -1,28 +1,34 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/24 18:14:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/25 22:31:22 fgsch Exp $
 
-COMMENT=	Python interface to memcached
+COMMENT =	Python interface to memcached
 
-DISTNAME=	python-memcached-1.34
-PKGNAME=	${DISTNAME:S/python-/py-/}p1
-CATEGORIES=	misc
+MODPY_EGG_VERSION = 1.43
+DISTNAME =	python-memcached-${MODPY_EGG_VERSION}
+PKGNAME =	${DISTNAME:S/python-/py-/}
+CATEGORIES =	misc
 
-HOMEPAGE=	http://www.danga.com/memcached/apis.bml
+HOMEPAGE =	http://www.tummy.com/Community/software/python-memcached/
 
-MAINTAINER=	Ben Lovett <ben@tilderoot.com>
+MAINTAINER =	Ben Lovett <ben@tilderoot.com>
 
 # Python
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MODULES=	lang/python
+MASTER_SITES =	ftp://ftp.tummy.com/pub/python-memcached/
 
-MASTER_SITES=	ftp://ftp.tummy.com/pub/python-memcached/
+MODULES =	lang/python
 
-NO_REGRESS=	Yes
+MODPY_SETUPTOOLS =	Yes
+
+NO_REGRESS =	Yes
 
 pre-install:
 	@perl -pi -e "s,#!.*python,#!${MODPY_BIN}," ${WRKSRC}/memcache.py
+
+post-install:
+	@rm -rf ${WRKSRC}/python_memcached.egg-info
 
 .include <bsd.port.mk>
