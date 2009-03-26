@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2008/11/26 20:09:35 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2009/03/26 18:52:50 steven Exp $
 
 COMMENT=	syslogd replacement
 
-DISTNAME=	syslog-ng-2.1.3
+V=		2.1.4
+DISTNAME=	syslog-ng-$V
 CATEGORIES=	sysutils
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
@@ -15,7 +16,8 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES =	http://www.balabit.com/downloads/files/syslog-ng/sources/2.1/src/
+MASTER_SITES =	http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/$V/source/
+DISTFILES=	syslog-ng_$V.tar.gz
 
 WANTLIB =	c iconv intl wrap
 
