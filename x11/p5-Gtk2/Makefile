@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/25 22:06:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2009/03/26 08:12:53 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	set of modules to use Gtk+2 libraries from Perl
 
 MODULES=	cpan
 DISTNAME=	Gtk2-1.203
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	x11
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
