@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/26 21:59:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/03/26 22:09:53 jasper Exp $
 
 COMMENT=		C macros to add, find and delete items from a hash
 
@@ -16,8 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=uthash/}
 EXTRACT_SUFX=		.tar.bz2
-
-USE_GMAKE=		Yes
 
 NO_BUILD=		Yes
 PKG_ARCH=		*
