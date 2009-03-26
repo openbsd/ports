@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/02/16 15:29:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/03/26 21:34:30 landry Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -10,9 +10,9 @@ SHARED_ONLY=	Yes
 
 VERSION=	0.5.6
 DISTNAME=	kazehakase-${VERSION}
-PKGNAME-main=	kazehakase-common-${VERSION}
-PKGNAME-gecko=	${DISTNAME}
-PKGNAME-webkit=	kazehakase-webkit-${VERSION}
+PKGNAME-main=	kazehakase-common-${VERSION}p0
+PKGNAME-gecko=	${DISTNAME}p0
+PKGNAME-webkit=	kazehakase-webkit-${VERSION}p0
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=kazehakase/33533/}
 
 HOMEPAGE=	http://kazehakase.sourceforge.jp/
@@ -69,13 +69,13 @@ LIB_DEPENDS-webkit =	${LIB_DEPENDS} \
 
 WANTLIB =		ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			Xrandr Xrender Xcomposite Xdamage expat fontconfig \
-			freetype m z png cairo iconv intl atk-1.0 glib-2.0 \
+			freetype m z png cairo iconv intl atk-1.0 gio-2.0 glib-2.0 \
 			gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 \
-			pangocairo-1.0 pangoft2-1.0 glitz pcre pixman-1
+			pangocairo-1.0 pangoft2-1.0 glitz pcre pixman-1 tasn1
 
 WANTLIB-main =		${WANTLIB} c gcrypt gpg-error pthread
 WANTLIB-gecko =		${WANTLIB} nspr4 plc4 plds4 gcrypt gpg-error
-WANTLIB-webkit =	${WANTLIB} Xt crypto curl icudata icui18n icuuc idn \
-			jpeg pthread sqlite3 ssl xml2 xslt
+WANTLIB-webkit =	${WANTLIB} Xt gcrypt gnutls gpg-error icudata icui18n \
+			icuuc jpeg pthread soup-2.4 sqlite3 xml2 xslt
 
 .include <bsd.port.mk>
