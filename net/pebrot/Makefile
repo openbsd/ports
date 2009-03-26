@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/02/03 11:58:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.17 2009/03/26 11:50:09 jasper Exp $
 
 COMMENT=	text-based MSN messenger client
 
 MODPY_EGG_VERSION=	0.8.9
 DISTNAME=	pebrot-${MODPY_EGG_VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://pebrot.sourceforge.net/

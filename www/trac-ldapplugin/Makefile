@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/02/18 14:06:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/26 11:50:09 jasper Exp $
 
 COMMENT=		ldap authentication plugin for trac
 
 V=			0.5.1
 DISTNAME=		trac-ldapplugin-$V-svn2637
-PKGNAME=		trac-ldapplugin-$V
+PKGNAME=		trac-ldapplugin-$Vp0
 CATEGORIES=		www devel
 
 MAINTAINER=		Michael Erdely <merdely@openbsd.org>
