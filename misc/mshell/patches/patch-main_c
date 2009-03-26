@@ -1,0 +1,21 @@
+$OpenBSD: patch-main_c,v 1.1 2009/03/26 18:25:28 naddy Exp $
+--- main.c.orig	Thu Mar 26 12:20:24 2009
++++ main.c	Thu Mar 26 12:20:40 2009
+@@ -62,7 +62,7 @@ char ** argv;
+ 	set_resource_limits();
+ 
+ 	rc();
+-	openlog();
++	open_log();
+ 	load_macrofile(GLOBAL_MACRO_FILE);
+ 	load_macrofile(".mshellmac");
+ 
+@@ -86,7 +86,7 @@ rc()
+ #endif
+ 
+ FILE *logfp;
+-openlog()
++open_log()
+ {
+ 	struct passwd *pw;
+ 	char fn[32];

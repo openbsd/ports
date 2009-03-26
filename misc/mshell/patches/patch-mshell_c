@@ -1,16 +1,18 @@
-$OpenBSD: patch-mshell_c,v 1.1 2002/12/23 07:42:00 pvalchev Exp $
---- mshell.c.orig	Sun Dec 22 23:47:32 2002
-+++ mshell.c	Sun Dec 22 23:47:32 2002
-@@ -1,6 +1,8 @@
+$OpenBSD: patch-mshell_c,v 1.2 2009/03/26 18:25:28 naddy Exp $
+--- mshell.c.orig	Thu Mar 26 12:17:55 2009
++++ mshell.c	Thu Mar 26 12:18:03 2009
+@@ -1,8 +1,10 @@
  #include "mshell.h"
  #include <setjmp.h>
 -char * index ();
-+
+ 
 +#include <stdlib.h>
 +#include <string.h>
  
- 
++
  extern char     G_homevar      [];
+ extern char     G_uservar      [];
+ extern char 	G_termvar      [];
 @@ -26,8 +28,7 @@ char *m;
  	     exec_string   [DESCLEN],
  	     *args         [MAXARGS],

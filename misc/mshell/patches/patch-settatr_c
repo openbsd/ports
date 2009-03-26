@@ -1,6 +1,6 @@
-$OpenBSD: patch-settatr_c,v 1.1 2002/12/23 07:42:00 pvalchev Exp $
---- settatr.c.orig	Sun Dec 22 23:47:32 2002
-+++ settatr.c	Sun Dec 22 23:47:32 2002
+$OpenBSD: patch-settatr_c,v 1.2 2009/03/26 18:25:28 naddy Exp $
+--- settatr.c.orig	Thu Mar 26 12:17:56 2009
++++ settatr.c	Thu Mar 26 12:18:04 2009
 @@ -15,7 +15,7 @@ set_terminal_attributes()
  	ioctl ( 0, TIOCGETP, &sg );
  	if (access(".stty", 0) == -1) {	/* not already set up */
