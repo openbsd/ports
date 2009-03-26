@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1 2009/03/26 16:26:41 naddy Exp $
+--- Makefile.orig	Thu Mar 26 17:25:02 2009
++++ Makefile	Thu Mar 26 17:25:15 2009
+@@ -23,7 +23,7 @@ check:
+ clean:
+ 	cd $(.CURDIR)/testsuite; $(MAKE) clean
+ 
+-CRYPTOLIBS=	-lcrypto -lssl
++CRYPTOLIBS=	-lssl -lcrypto
+ CRYPTODEPS=	$(LIBCRYPTO) $(LIBSSL)
+ 
+ NROFF?=		nroff
