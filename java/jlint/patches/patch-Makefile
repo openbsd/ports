@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.4 2006/09/26 12:26:21 kevlo Exp $
---- Makefile.orig	Wed Jan 14 16:23:41 2004
-+++ Makefile	Tue Sep 26 20:19:40 2006
+$OpenBSD: patch-Makefile,v 1.5 2009/03/26 18:06:01 naddy Exp $
+--- Makefile.orig	Wed Jan 14 17:23:41 2004
++++ Makefile	Thu Mar 26 19:02:54 2009
 @@ -3,8 +3,8 @@
  # Makefile for Unix and GNU/Linux with gcc/g++ compiler
  # Edit here:
@@ -21,7 +21,26 @@ $OpenBSD: patch-Makefile,v 1.4 2006/09/26 12:26:21 kevlo Exp $
  # -DSLIST removed because it wouldn't compile under gcc 3.x
  # add -DHASH_TABLE for extra speed (may sometimes produce inconsistent results)
  
-@@ -103,10 +103,11 @@ test-zip:
+@@ -28,7 +28,8 @@ CFLAGS = -c -Wall -O2 -g
+ #CFLAGS = -c -Wall -O2 -g -DSLIST -DNDEBUG
+ 
+ # link zlib the compression/decompression library. used for decompressing jar files
+-LFLAGS=-g -lz
++LFLAGS=-g
++LIBS=-lz
+ 
+ # Directory to place executables
+ INSTALL_DIR=/usr/local/bin
+@@ -52,7 +53,7 @@ antic.o: antic.c
+ 	$(CC) $(CFLAGS) antic.c
+ 
+ antic: antic.o
+-	$(CC) $(LFLAGS) -o antic antic.o
++	$(CC) $(LFLAGS) -o antic antic.o $(LIBS)
+ 
+ clean: 
+ 	rm -f  *.o *.exe core *~ *.his *.class jlint antic manual.{html,pdf,aux,cp,fn,ky,log,pg,toc,tp,vr} jlint_3.0.{aux,dvi,log,toc}
+@@ -103,10 +104,11 @@ test-zip:
  
  
  install:
@@ -37,3 +56,12 @@ $OpenBSD: patch-Makefile,v 1.4 2006/09/26 12:26:21 kevlo Exp $
  
  
  # --> automatically generated dependencies follow; do not remove this line.
+@@ -120,7 +122,7 @@ jlint: \
+ 	locks.o \
+ 	message_node.o \
+ 	method_desc.o
+-	$(CPP) $(LFLAGS) -o jlint access_desc.o callee_desc.o class_desc.o graph.o jlint.o local_context.o locks.o message_node.o method_desc.o
++	$(CPP) $(LFLAGS) -o jlint access_desc.o callee_desc.o class_desc.o graph.o jlint.o local_context.o locks.o message_node.o method_desc.o $(LIBS)
+ 
+ access_desc.o: access_desc.cc \
+ 	access_desc.hh \

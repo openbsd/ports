@@ -1,16 +1,15 @@
-$OpenBSD: patch-field_desc_hh,v 1.1 2004/01/28 20:39:44 naddy Exp $
---- field_desc.hh.orig	2004-01-28 21:24:08.000000000 +0100
-+++ field_desc.hh	2004-01-28 21:24:21.000000000 +0100
-@@ -2,10 +2,11 @@
+$OpenBSD: patch-field_desc_hh,v 1.2 2009/03/26 18:06:01 naddy Exp $
+--- field_desc.hh.orig	Tue Jun  5 14:19:37 2001
++++ field_desc.hh	Thu Mar 26 19:01:07 2009
+@@ -2,9 +2,10 @@
  #define FIELD_DESC_HH
  
  #ifdef VISUAL_CPP
 -using namespace std;
  #pragma warning (disable : 4786)
  #endif
- 
-+using namespace std;
 +
++using namespace std;
+ 
  #include "component_desc.hh"
  #include "utf_string.hh"
- class const_name_and_type;

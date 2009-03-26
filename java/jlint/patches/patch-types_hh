@@ -1,6 +1,6 @@
-$OpenBSD: patch-types_hh,v 1.1 2004/01/28 20:39:44 naddy Exp $
---- types.hh.orig	2004-01-28 21:25:25.000000000 +0100
-+++ types.hh	2004-01-28 21:25:33.000000000 +0100
+$OpenBSD: patch-types_hh,v 1.2 2009/03/26 18:06:01 naddy Exp $
+--- types.hh.orig	Fri Apr  4 20:29:43 2003
++++ types.hh	Thu Mar 26 19:01:07 2009
 @@ -2,10 +2,10 @@
  #define TYPES_HH
  
@@ -12,4 +12,4 @@ $OpenBSD: patch-types_hh,v 1.1 2004/01/28 20:39:44 naddy Exp $
 +#include <cassert>
  #include <string>
  #include <vector>
- 
+ #include <stddef.h>
