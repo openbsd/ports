@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2009/03/23 22:25:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2009/03/26 17:15:46 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.10
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
@@ -50,8 +50,10 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 # not enabled in X.org
 CONFIGURE_ARGS+=	--with-xevie=no
 
+# -pthread is needed to resolve some undefined symbols
+# (pthread_mutex_trylock in libgthread for gdmflexiserver, gdmXnest...)
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 # XXX IPv6-only FLAVOR?
 CONFIGURE_ARGS+=	--enable-ipv6=no
