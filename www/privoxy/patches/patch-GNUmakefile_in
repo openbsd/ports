@@ -1,7 +1,7 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.4 2008/04/04 02:21:29 merdely Exp $
---- GNUmakefile.in.orig	Wed Apr  2 15:27:11 2008
-+++ GNUmakefile.in	Wed Apr  2 15:27:48 2008
-@@ -226,7 +226,7 @@ PTHREAD_LIB  = @PTHREAD_ONLY@@PTHREAD_LIB@
+$OpenBSD: patch-GNUmakefile_in,v 1.5 2009/03/26 18:58:03 merdely Exp $
+--- GNUmakefile.in.orig	Fri Jul 18 13:50:47 2008
++++ GNUmakefile.in	Thu Mar 26 14:23:35 2009
+@@ -225,7 +225,7 @@ PTHREAD_LIB  = @PTHREAD_ONLY@@PTHREAD_LIB@
  SRCS         = $(C_SRC)  $(W32_SRC)  $(PCRS_SRC)  $(PCRE_SRC)  $(REGEX_SRC)
  OBJS         = $(C_OBJS) $(W32_OBJS) $(PCRS_OBJS) $(PCRE_OBJS) $(REGEX_OBJS)
  HDRS         = $(C_HDRS) $(W32_HDRS) $(PCRS_HDRS) $(PCRE_OBJS) $(REGEX_HDRS)
