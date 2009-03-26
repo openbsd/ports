@@ -15,13 +15,21 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 [ "${SYSCONFDIR}" ] || SYSCONFDIR=/etc
-[ "${PREFIX}" ] || PREFIX=/usr/local
+[ "${LOCALBASE}" ] || LOCALBASE=/usr/local
 
-afsp=${PREFIX}/libexec/openafs
-PATH=${PREFIX}/sbin:${PREFIX}/bin:$PATH
+afsp=${LOCALBASE}/libexec/openafs
+PATH=${LOCALBASE}/sbin:${LOCALBASE}/bin:$PATH
 DIR=`mktemp -d /tmp/_openafs.XXXXXXXXXX` || exit 1
 trap 'rm -rf $DIR; exit 1' 0 1 2 3 13 15
 OUTPUT=$DIR/_1
+defuser="$USER"
+if [ "$defuser" = "root" ]; then
+	if [ "$SUDO_USER" ]; then
+		defuser="$SUDO_USER"
+	else
+		defuser="todd"
+	fi
+fi
 
 # (borrowed from install.sub)
 # Ask for user input.
@@ -262,10 +270,10 @@ __EOT
 	cat <<__EOT
 
 This is an existing KerberosV principal with the ability to
-create and delete other kerberos principals.  e.g. todd/admin.
+create and delete other kerberos principals.  e.g. $defuser/admin.
 __EOT
 	ask_until "KerberosV principal for kerberos administration?" \
-		"todd/admin"
+		"$defuser/admin"
 	p=${resp}
 	echo
 	ask_until "Is this the first server setup in the $c cell?" "Y"
@@ -290,7 +298,7 @@ __EOT
 
 Just a sample user to create a basic homedir and account on afs with.
 __EOT
-		ask_until "KerberosV princiapl for example user?" "todd"
+		ask_until "KerberosV princiapl for example user?" "$defuser"
 		u=${resp}
 		cat <<__EOT
 
@@ -300,7 +308,7 @@ can administrate OpenBSD.  Tread lightly when using this principal.
 __EOT
 	fi
 	ask_until "KerberosV princiapl for afs administration?" \
-		"todd/afs"
+		"$defuser/afs"
 	A=${resp}
 	slist="" i=0
 	while [ i -lt ${#sservers[*]} ]; do
@@ -326,7 +334,7 @@ fi
 
 slist="" i=0 vl2=0
 while [ i -lt ${#sservers[*]} ]; do
-	if [ "${sservers[$i]}" = "vlserver" -a first -eq 0]; then
+	if [ "${sservers[$i]}" = "vlserver" -a first -eq 0 ]; then
 		# we are a 2ndary server running vlserver, save to CellServDB
 		vl2=1
 	fi
@@ -501,7 +509,7 @@ Disallow: /
 __EOT
 
 	mkvol user /afs/.$c/u
-	mkvol user.todd /afs/.$c/u/todd
+	mkvol user.$defuser /afs/.$c/u/$defuser
 	mkvol mirror /afs/.$c/mirror
 	retry vos addsite $h /vicepa mirror
 	retry vos release mirror
@@ -652,6 +660,10 @@ log release of replicated volumes
 retry vos release root.afs
 retry vos release root.cell
 
+log restart afsd so it sees RO replicated volumes
+pkill afsd
+retry /usr/libexec/afsd -z --log=/var/log/afsd.log
+
 addchg /etc/kerberosV/krb5.conf
 addchg "+/etc/kerberosV/krb5.keytab"
 addchg /etc/afs/{CellServDB,ThisCell,afsd.conf}
@@ -671,6 +683,6 @@ cat <<__EOT
 
 CONGRATULATIONS! Your OpenAFS server setup has been successfully completed,
 and is now running.
-Please read ${PREFIX}/share/openafs/README.OpenBSD for further details;
+Please read ${LOCALBASE}/share/openafs/README.OpenBSD for further details;
 be sure to note the startup and shutdown script examples.
 __EOT
