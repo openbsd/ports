@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.25 2009/03/26 02:03:26 okan Exp $
 
 COMMENT=	addressbook program with mutt support
 
-DISTNAME=	abook-0.5.5
+DISTNAME=	abook-0.5.6
 CATEGORIES=	mail
 
 HOMEPAGE=	http://abook.sourceforge.net/
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

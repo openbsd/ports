@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/07/12 14:24:49 steven Exp $
-bin/abook
+@comment $OpenBSD: PLIST,v 1.8 2009/03/26 02:03:26 okan Exp $
+@bin bin/abook
 @man man/man1/abook.1
 @man man/man5/abookrc.5
 share/examples/abook/
