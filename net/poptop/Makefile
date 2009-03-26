@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/01/21 16:07:15 giovanni Exp $
+# $OpenBSD: Makefile,v 1.10 2009/03/26 08:36:30 giovanni Exp $
 
 COMMENT=		PPTP Server
 
 V=1.3.4
 DISTNAME=		pptpd-$V
-PKGNAME=		poptop-$V
+PKGNAME=		poptop-$Vp0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.poptop.org/
@@ -21,13 +21,9 @@ WANTLIB=		c util
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=poptop/}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lintl -liconv"
 CONFIGURE_ARGS+=	--with-bsdppp --with-pppd-ip-alloc
 FAKE_FLAGS=		DESTDIR=
 USE_GMAKE=		Yes
-
-MODULES=		devel/gettext
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/poptop
