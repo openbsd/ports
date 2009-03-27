@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/22 17:37:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/27 23:13:22 fgsch Exp $
 
 COMMENT =	add options to doctest examples while they are running
 
 MODPY_EGG_VERSION = 0.1
-
 DISTNAME =	dtopt-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}p0
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=/d/dtopt/}
+MASTER_SITES =	${MASTER_SITE_PYPI:=d/dtopt/}
 
 MODULES =	lang/python
 
