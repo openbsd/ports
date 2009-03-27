@@ -1,0 +1,30 @@
+$OpenBSD: patch-vncstorepw_Makefile,v 1.1 2009/03/27 02:04:44 sthen Exp $
+--- vncstorepw/Makefile.orig	Mon Nov 10 22:54:24 2008
++++ vncstorepw/Makefile	Wed Mar 25 23:37:44 2009
+@@ -3,8 +3,10 @@
+ EPATH = /usr/ccs/bin:/usr/sfw/bin:/usr/local/bin
+ 
+ CMD = vncstorepw
++.if ${NO_SHARED_LIBS:L} == "no"
+ UNWRAP = unwrap.so
+ LIMACC = lim_accept.so
++.endif
+ ULTDSM = ultravnc_dsm_helper
+ 
+ # gcc must be used:
+@@ -17,6 +19,7 @@ $(CMD): vncauth.o vncstorepw.o d3des.o
+ 	PATH=$$PATH:$(EPATH) strip $(CMD)
+ 	@ls -l $(CMD)
+ 
++.if ${NO_SHARED_LIBS:L} == "no"
+ $(UNWRAP): unwrap.c
+ 	if [ `uname` = "Darwin" ]; then \
+ 		PATH=$$PATH:$(EPATH) $(CC) -o $(UNWRAP) -dynamiclib -fPIC unwrap.c; \
+@@ -32,6 +35,7 @@ $(LIMACC): lim_accept.c
+ 		PATH=$$PATH:$(EPATH) $(CC) -o $(LIMACC) -shared     -fPIC -nostartfiles lim_accept.c; \
+ 	fi
+ 	@ls -l $(LIMACC)
++.endif
+ 
+ # use: LD_SSL='-L/usr/foo/lib' CPP_SSL='-I /usr/foo/include':
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/11 21:39:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2009/03/27 02:04:44 sthen Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -9,7 +9,7 @@ CATEGORIES =		net x11
 
 PKGNAME =		ssvnc-$V
 FULLPKGNAME-gui =	ssvnc-$Vp0
-FULLPKGNAME-main =	ssvnc-viewer-$V
+FULLPKGNAME-main =	ssvnc-viewer-$Vp0
 
 HOMEPAGE =		http://www.karlrunge.com/x11vnc/ssvnc.html
 
@@ -25,10 +25,8 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ssvnc/}
 
 MULTI_PACKAGES =-main -gui
 
-USE_X11 =	Yes
-USE_GMAKE =	Yes
-
-MAKE_ENV =	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV =	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		NO_SHARED_LIBS=${NO_SHARED_LIBS}
 
 WRKDIST =	${WRKDIR}/ssvnc-$V
 
@@ -50,8 +48,6 @@ XMKMF =			xmkmf
 
 VNCSRC =		${WRKSRC}/vnc_unixsrc/
 VNCLIB =		${PREFIX}/lib/ssvnc/
-
-SUBST_VARS =		MODTK_BIN
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/scripts/ssvnc
@@ -75,8 +71,9 @@ do-install:
 	${INSTALL_PROGRAM} ${VNCSRC}/vncviewer/vncviewer ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/vncstorepw/vncstorepw ${VNCLIB}
 	${INSTALL_PROGRAM} ${WRKSRC}/vncstorepw/ultravnc_dsm_helper ${VNCLIB}
-	${INSTALL_DATA} ${WRKSRC}/vncstorepw/lim_accept.so ${VNCLIB}
-	${INSTALL_DATA} ${WRKSRC}/vncstorepw/unwrap.so ${VNCLIB}
+.for i in vncstorepw/lim_accept.so vncstorepw/unwrap.so
+	if test -r ${WRKSRC}/$i; then ${INSTALL_DATA} ${WRKSRC}/$i ${VNCLIB}; fi
+.endfor
 .for i in ssvnc tsvnc sshvnc
 	${WRKSRC}/wr_tool ${PREFIX}/bin/$i ${TRUEPREFIX}/lib/ssvnc/$i
 .endfor
