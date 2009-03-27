@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/12/10 21:32:42 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/27 10:42:41 jasper Exp $
 
 COMMENT=		Python HTTP client library
 
 DISTNAME=		httplib2-0.4.0
-PKGNAME=		py-${DISTNAME}
+PKGNAME=		py-${DISTNAME}p0
 
 CATEGORIES=		www net
 
