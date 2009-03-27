@@ -3,3 +3,6 @@ review FAQ Section 10.16 discussing name resolution with httpd(8)'s
 default chroot(2).
 
 Additionally, one may create a custom femail.conf; see femail(8).
+
+If you're using femail with PHP inside a chroot jail, be aware that
+PHP's built-in "mail" function uses popen(), which requires /bin/sh.
