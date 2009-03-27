@@ -1,0 +1,3 @@
+Note: To use the Japanese translation you will have to copy or symlink a    
+font with Japanese characters to
+  ${PREFIX}/share/lincity-ng/fonts/sans-ja_JA.ttf
