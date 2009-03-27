@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.396 2009/03/27 10:43:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.397 2009/03/27 23:20:10 fgsch Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -309,11 +309,13 @@
      SUBDIR += py-paste-deploy
      SUBDIR += py-paste-script
      SUBDIR += py-quixote
+     SUBDIR += py-repoze-profile
      SUBDIR += py-routes
      SUBDIR += py-tempita
      SUBDIR += py-turbogears
      SUBDIR += py-webpy
      SUBDIR += py-werkzeug
+     SUBDIR += py-wsgiproxy
      SUBDIR += py-zine
      SUBDIR += pyblosxom
      SUBDIR += raggle
