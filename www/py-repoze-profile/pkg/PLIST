@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/27 23:16:23 fgsch Exp $
+lib/python${MODPY_VERSION}/site-packages/repoze/
+lib/python${MODPY_VERSION}/site-packages/repoze.profile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
+lib/python${MODPY_VERSION}/site-packages/repoze.profile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/repoze.profile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/repoze.profile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/repoze.profile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/repoze.profile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/repoze.profile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/repoze.profile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/repoze.profile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/repoze.profile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/repoze/profile/
+lib/python${MODPY_VERSION}/site-packages/repoze/profile/__init__.py
+lib/python${MODPY_VERSION}/site-packages/repoze/profile/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/repoze/profile/profiler.html
+lib/python${MODPY_VERSION}/site-packages/repoze/profile/profiler.py
+lib/python${MODPY_VERSION}/site-packages/repoze/profile/profiler.pyc
+lib/python${MODPY_VERSION}/site-packages/repoze/profile/tests.py
+lib/python${MODPY_VERSION}/site-packages/repoze/profile/tests.pyc
+share/doc/py-repoze-profile/
+share/doc/py-repoze-profile/README.txt
