@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2009/03/05 07:49:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2009/03/27 15:12:19 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.7
 lib/gstreamer-${VERSION}/libgstalaw.la
 lib/gstreamer-${VERSION}/libgstalaw.so
@@ -26,6 +26,8 @@ lib/gstreamer-${VERSION}/libgstflxdec.la
 lib/gstreamer-${VERSION}/libgstflxdec.so
 lib/gstreamer-${VERSION}/libgstgamma.la
 lib/gstreamer-${VERSION}/libgstgamma.so
+lib/gstreamer-${VERSION}/libgstgoom.la
+lib/gstreamer-${VERSION}/libgstgoom.so
 lib/gstreamer-${VERSION}/libgstgoom2k1.la
 lib/gstreamer-${VERSION}/libgstgoom2k1.so
 lib/gstreamer-${VERSION}/libgsticydemux.la

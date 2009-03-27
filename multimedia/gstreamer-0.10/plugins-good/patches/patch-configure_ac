@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.6 2008/11/03 23:24:09 jakemsr Exp $
---- configure.ac.orig	Tue Apr 22 18:55:55 2008
-+++ configure.ac	Mon Oct 27 01:45:57 2008
+$OpenBSD: patch-configure_ac,v 1.7 2009/03/27 15:12:19 ajacoutot Exp $
+--- configure.ac.orig	Wed Apr 23 03:55:55 2008
++++ configure.ac	Fri Mar 27 13:55:13 2009
 @@ -488,6 +488,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
@@ -25,7 +25,7 @@ $OpenBSD: patch-configure_ac,v 1.6 2008/11/03 23:24:09 jakemsr Exp $
  
 +dnl *** libsndio ***
 +translit(dnm, m, l) AM_CONDITIONAL(USE_LIBSNDIO, true)
-+AG_GST_CHECK_FEATURE(LIBSNDIO, [libsndio audio], libsndioaudio, [
++AG_GST_CHECK_FEATURE(LIBSNDIO, [libsndio audio], libsndio, [
 +  AC_CHECK_HEADER(sndio.h, HAVE_LIBSNDIO="yes", HAVE_LIBSNDIO="no")
 +  if test $HAVE_LIBSNDIO = yes
 +  then

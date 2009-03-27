@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2009/03/16 22:20:02 kili Exp $
+# $OpenBSD: Makefile,v 1.37 2009/03/27 15:12:19 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -19,7 +19,7 @@ COMMENT-wavpack =	multimedia framework - wavpack plugin
 
 V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
-PKGNAME-main =		gstreamer-plugins-good-$V10
+PKGNAME-main =		gstreamer-plugins-good-$Vp10v0
 PKGNAME-aalib =		gstreamer-aalib-$Vp1
 PKGNAME-cairo =		gstreamer-cairo-$Vp2
 PKGNAME-gconf =		gstreamer-confelements-$Vp2
@@ -169,17 +169,11 @@ CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-schemas-install \
 			--enable-experimental \
 			--enable-gst_v4l2 \
+			--enable-goom \
 			--with-default-audiosink=libsndiosink \
 			--with-default-audiosrc=libsndiosrc \
 			--with-default-videosink=xvimagesink \
 			--with-default-videosrc=v4l2src
-
-# XXX probably our default thread stack size is too low
-# #0  0x09b37a78 in plugin_info_init (pp=0x85e35000, nbVisuals=-2048700416)
-#    at /usr/obj/ports/gst-plugins-good-0.10.8/gst-plugins-good-0.10.8/gst/goom/plugin_info.c:92
-#        p = Cannot access memory at address 0x88f22290
-# XXX When fixed, remove x11/gnome/totem/patches/patch-configure
-CONFIGURE_ARGS +=	--disable-goom
 
 post-extract:
 	cp -R ${FILESDIR} ${WRKSRC}/ext/libsndio
