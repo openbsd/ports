@@ -1,13 +1,10 @@
-$OpenBSD: patch-vsftpd_conf,v 1.6 2006/07/27 11:48:41 aanriot Exp $
---- vsftpd.conf.orig	Sat May 21 00:52:54 2005
-+++ vsftpd.conf	Thu Jul 27 12:34:09 2006
-@@ -8,11 +8,20 @@
+$OpenBSD: patch-vsftpd_conf,v 1.7 2009/03/27 11:54:49 sthen Exp $
+--- vsftpd.conf.orig	Wed Dec 17 20:31:40 2008
++++ vsftpd.conf	Fri Mar 27 09:09:19 2009
+@@ -8,11 +8,17 @@
  # Please read the vsftpd.conf.5 manual page to get a full idea of vsftpd's
  # capabilities.
  #
-+# Standalone mode
-+listen=YES
-+#
 +# SSL
 +#ssl_enable=YES
 +#
@@ -24,7 +21,7 @@ $OpenBSD: patch-vsftpd_conf,v 1.6 2006/07/27 11:48:41 aanriot Exp $
  #
  # Uncomment this to enable any form of FTP write command.
  #write_enable=YES
-@@ -61,7 +70,7 @@ connect_from_port_20=YES
+@@ -62,7 +68,7 @@ connect_from_port_20=YES
  #
  # It is recommended that you define on your system a unique user which the
  # ftp server can use as a totally isolated and unprivileged user.
@@ -33,7 +30,7 @@ $OpenBSD: patch-vsftpd_conf,v 1.6 2006/07/27 11:48:41 aanriot Exp $
  #
  # Enable this and the server will recognise asynchronous ABOR requests. Not
  # recommended for security (the code is non-trivial). Not enabling it,
-@@ -91,9 +100,9 @@ connect_from_port_20=YES
+@@ -92,9 +98,9 @@ connect_from_port_20=YES
  # You may specify an explicit list of local users to chroot() to their home
  # directory. If chroot_local_user is YES, then this list becomes a list of
  # users to NOT chroot().
@@ -45,10 +42,10 @@ $OpenBSD: patch-vsftpd_conf,v 1.6 2006/07/27 11:48:41 aanriot Exp $
  #
  # You may activate the "-R" option to the builtin ls. This is disabled by
  # default to avoid remote users being able to cause excessive I/O on large
-@@ -101,3 +110,32 @@ connect_from_port_20=YES
+@@ -102,6 +108,35 @@ connect_from_port_20=YES
  # the presence of the "-R" option, so there is a strong case for enabling it.
  #ls_recurse_enable=YES
- 
+ #
 +#
 +# If enabled, vsftpd will load a list of usernames from the filename
 +# given by userlist_file. If a user tries to log in using a name in this
@@ -78,3 +75,6 @@ $OpenBSD: patch-vsftpd_conf,v 1.6 2006/07/27 11:48:41 aanriot Exp $
 +# directory listings. You can get textual names by enabling this parameter.
 +# It is off by default for performance reasons.
 +text_userdb_names=YES
+ # When "listen" directive is enabled, vsftpd runs in standalone mode and
+ # listens on IPv4 sockets. This directive cannot be used in conjunction
+ # with the listen_ipv6 directive.
