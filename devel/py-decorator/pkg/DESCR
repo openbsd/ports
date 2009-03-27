@@ -1,0 +1,3 @@
+The aim of the decorator module it to simplify the usage of decorators
+for the average programmer, and to popularize decorators by showing
+various non-trivial examples
