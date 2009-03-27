@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/24 20:36:20 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2009/03/27 09:56:46 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	beautiful glass-like GTK+ 2.x engine and themes
 
 VERSION =	0.90.2
 DISTNAME =	murrine-${VERSION}
-PKGNAME =	gtk2-murrine-engine-${VERSION}
+PKGNAME =	gtk2-murrine-engine-${VERSION}p0
 CATEGORIES =	x11
 
 HOMEPAGE =	http://cimitan.com/murrine/
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_GNOME:=sources/murrine/0.90/}
 MASTER_SITES0 =	${HOMEPAGE}files/
-DIST_SUBDIR =	${DISTNAME}
+DIST_SUBDIR =	murrine
 DISTFILES =	${DISTNAME}.tar.bz2 \
 		MurrinaBlu-0.32.tar.gz:0 \
 		MurrineThemePack.tar.bz2:0 \
