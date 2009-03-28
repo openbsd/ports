@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure_ac,v 1.1 2009/03/28 16:26:46 martynas Exp $
+--- configure.ac.orig	Mon Feb 23 23:34:53 2004
++++ configure.ac	Tue Mar 24 12:56:28 2009
+@@ -314,6 +314,13 @@ fi
+ 
+ if test "$audio" = unknown
+ then
++    AC_EGREP_CPP(sio_par, [
++# include <sndio.h>
++], [audio="sndio"; ldadd_audio="$ldadd_audio -lsndio"])
++fi
++
++if test "$audio" = unknown
++then
+     AC_EGREP_CPP(yes, [
+ # include <sys/soundcard.h>
+ # if defined(OPEN_SOUND_SYSTEM) || defined(UNIX_SOUND_SYSTEM) ||  \

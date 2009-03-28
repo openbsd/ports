@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2009/03/28 16:26:46 martynas Exp $
+--- Makefile.am.orig	Thu Mar 26 23:43:32 2009
++++ Makefile.am	Thu Mar 26 23:44:31 2009
+@@ -45,7 +45,7 @@ default_audio =		audio.c audio.h  \
+ 			audio_raw.c audio_snd.c audio_wave.c
+ extra_audio =		audio_alsa.c audio_carbon.c audio_empeg.c  \
+ 			audio_esd.c audio_jaguar.c audio_nas.c audio_oss.c  \
+-			audio_qnx.c audio_sun.c audio_win32.c
++			audio_qnx.c audio_sndio.c audio_sun.c audio_win32.c
+ 
+ getopt_sources =	getopt.c getopt.h getopt1.c
+ 
