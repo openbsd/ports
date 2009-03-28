@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.6 2009/03/23 19:28:52 naddy Exp $
+$OpenBSD: patch-Makefile,v 1.7 2009/03/28 18:18:51 naddy Exp $
 --- Makefile.orig	Fri Sep 24 11:43:37 2004
 +++ Makefile	Mon Mar 23 12:15:03 2009
 @@ -19,9 +19,9 @@ SOLARIS=0
@@ -31,7 +31,7 @@ $OpenBSD: patch-Makefile,v 1.6 2009/03/23 19:28:52 naddy Exp $
  O_arping=arping.o
  arping1-make: $(O_arping)
 -	$(CC) $(CFLAGS) -g -o arping $(O_arping) `libnet-config --libs` -lpcap
-+	$(CC) $(CFLAGS) -g -o arping $(O_arping) `libnet-config-1.0 --libs` -lpcap
++	$(CC) -g -o arping $(O_arping) `libnet-config-1.0 --libs` -lpcap
  
  SYS=$(shell uname -s)
 -ifeq ($(SYS),SunOS)
