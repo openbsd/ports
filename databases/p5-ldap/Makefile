@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2008/10/28 12:27:17 pea Exp $
+# $OpenBSD: Makefile,v 1.24 2009/03/28 17:41:53 pea Exp $
 
 COMMENT=	client interface to LDAP servers
 
 VERSION=	0.39
 DISTNAME=	perl-ldap-${VERSION}
-PKGNAME=	p5-ldap-${VERSION}
+PKGNAME=	p5-ldap-${VERSION}p0
 CATEGORIES=	databases
 MODULES=	cpan
 

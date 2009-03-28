@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_Net_LDAP_LDIF_pm,v 1.1 2009/03/28 17:41:53 pea Exp $
+--- lib/Net/LDAP/LDIF.pm.orig	Fri Mar 27 17:35:12 2009
++++ lib/Net/LDAP/LDIF.pm	Fri Mar 27 17:36:19 2009
+@@ -126,6 +126,7 @@ sub _read_lines {
+     }
+   }
+   $self->eof(1)  if (!defined($ln));
++  $self->{_current_lines} = $entry;
+   $entry =~ s/\r?\n //sgo;	# un-wrap wrapped lines
+   $entry =~ s/\r?\n\t/ /sgo;	# OpenLDAP extension !!!
+   @ldif = split(/^/, $entry);
