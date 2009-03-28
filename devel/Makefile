@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.685 2009/03/27 23:13:51 fgsch Exp $
+# $OpenBSD: Makefile,v 1.686 2009/03/28 19:05:37 ckuethe Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -768,6 +768,7 @@
      SUBDIR += swig
      SUBDIR += t1lib
      SUBDIR += tclcl
+     SUBDIR += teensyloader
      SUBDIR += tcllib
      SUBDIR += tig
      SUBDIR += tkcvs
