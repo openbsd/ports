@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/28 20:27:11 sthen Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/korean/
+lib/X11/fonts/korean/UnBatang.ttf
+lib/X11/fonts/korean/UnBatangBold.ttf
+lib/X11/fonts/korean/UnDinaru.ttf
+lib/X11/fonts/korean/UnDinaruBold.ttf
+lib/X11/fonts/korean/UnDinaruLight.ttf
+lib/X11/fonts/korean/UnDotum.ttf
+lib/X11/fonts/korean/UnDotumBold.ttf
+lib/X11/fonts/korean/UnGraphic.ttf
+lib/X11/fonts/korean/UnGraphicBold.ttf
+lib/X11/fonts/korean/UnGungseo.ttf
+lib/X11/fonts/korean/UnPilgi.ttf
+lib/X11/fonts/korean/UnPilgiBold.ttf
