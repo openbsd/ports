@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2008/10/08 21:09:01 martynas Exp $
+# $OpenBSD: Makefile,v 1.11 2009/03/28 18:12:49 naddy Exp $
 
 COMMENT=		Python web development megaframework
 
 MODPY_EGG_VERSION=	1.0.7
 DISTNAME=		TurboGears-${MODPY_EGG_VERSION}
-PKGNAME=		py-turbogears-${MODPY_EGG_VERSION}
+PKGNAME=		py-turbogears-${MODPY_EGG_VERSION}p0
 
 CATEGORIES=		www
 

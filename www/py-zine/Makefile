@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/01/21 20:31:18 djm Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/28 18:12:50 naddy Exp $
 
 COMMENT=		personal publishing platform / weblog engine
 
 DISTNAME=		Zine-0.1.2
-PKGNAME=		py-${DISTNAME:L}
+PKGNAME=		py-${DISTNAME:L}p0
 
 CATEGORIES=		www
 

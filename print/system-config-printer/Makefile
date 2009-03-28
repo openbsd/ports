@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/02/10 17:19:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/03/28 18:12:50 naddy Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
 DISTNAME=		system-config-printer-1.0.13
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		print sysutils
 
 HOMEPAGE=		http://cyberelk.net/tim/software/system-config-printer/
