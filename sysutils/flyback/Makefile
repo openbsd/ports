@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/01/29 17:37:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/03/28 16:49:49 naddy Exp $
 
 COMMENT=		Time Machine-like backup tool
 
 DISTNAME=		flyback_0.4.0
-PKGNAME=		${DISTNAME:S/_/-/}p4
+PKGNAME=		${DISTNAME:S/_/-/}p5
 CATEGORIES=		sysutils x11
 
 HOMEPAGE=		http://flyback-project.org/

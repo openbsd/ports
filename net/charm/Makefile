@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/10/08 08:22:41 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2009/03/28 16:49:49 naddy Exp $
 
 COMMENT=	LiveJournal client for Python
 
 DISTNAME=	charm-1.7.0
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	net news
 
 HOMEPAGE=	http://ljcharm.sourceforge.net/
