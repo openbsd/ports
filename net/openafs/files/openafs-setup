@@ -15,10 +15,10 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 [ "${SYSCONFDIR}" ] || SYSCONFDIR=/etc
-[ "${LOCALBASE}" ] || LOCALBASE=/usr/local
+[ "${TRUEPREFIX}" ] || TRUEPREFIX=/usr/local
 
-afsp=${LOCALBASE}/libexec/openafs
-PATH=${LOCALBASE}/sbin:${LOCALBASE}/bin:$PATH
+afsp=${TRUEPREFIX}/libexec/openafs
+PATH=${TRUEPREFIX}/sbin:${TRUEPREFIX}/bin:$PATH
 DIR=`mktemp -d /tmp/_openafs.XXXXXXXXXX` || exit 1
 trap 'rm -rf $DIR; exit 1' 0 1 2 3 13 15
 OUTPUT=$DIR/_1
@@ -683,6 +683,6 @@ cat <<__EOT
 
 CONGRATULATIONS! Your OpenAFS server setup has been successfully completed,
 and is now running.
-Please read ${LOCALBASE}/share/openafs/README.OpenBSD for further details;
+Please read ${TRUEPREFIX}/share/openafs/README.OpenBSD for further details;
 be sure to note the startup and shutdown script examples.
 __EOT
