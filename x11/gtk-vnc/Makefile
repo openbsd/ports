@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2008/12/11 12:36:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/03/28 16:12:21 naddy Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
 
 V=			0.3.8
 DISTNAME=		gtk-vnc-${V}
-PKGNAME-main=		${DISTNAME}
-PKGNAME-plugin=		gtk-vnc-plugin-${V}
+PKGNAME-main=		${DISTNAME}p0
+PKGNAME-plugin=		gtk-vnc-plugin-${V}p0
 
 SHARED_LIBS +=	gtk-vnc-1.0          1.0      # .0.1
 CATEGORIES=		x11 net
