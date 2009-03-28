@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/28 18:55:09 ckuethe Exp $
+@bin bin/teensyloader
+share/examples/teensy/
+share/examples/teensy/blink_fast.asm
+share/examples/teensy/blink_fast.hex
+share/examples/teensy/blink_slow.asm
+share/examples/teensy/blink_slow.hex
