@@ -1,9 +1,0 @@
-$OpenBSD: patch-files_Hosts_blc,v 1.1 2009/03/09 04:32:48 todd Exp $
---- files/Hosts.blc.orig	Sun Mar  8 18:49:14 2009
-+++ files/Hosts.blc	Sun Mar  8 23:30:14 2009
-@@ -1,4 +1,4 @@
--Liste anti-phishing sécurisant l'accès à 550 sites financiers et sécuritaires
-+#Liste anti-phishing sécurisant l'accès à 550 sites financiers et sécuritaires
- # © Airelle - http://rlwpx.free.fr/WPFF/hosts.htm - 14.12.2008
- # Diffusion et utilisation libres sous réserve de conserver les commentaires
- 
