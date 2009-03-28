@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.373 2009/03/16 20:43:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.374 2009/03/28 20:27:57 sthen Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -225,6 +225,7 @@
      SUBDIR += treewm
      SUBDIR += tvtwm
      SUBDIR += type1inst
+     SUBDIR += un-fonts
      SUBDIR += unclutter
      SUBDIR += vdesk
      SUBDIR += viewfax
