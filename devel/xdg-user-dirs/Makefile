@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/30 16:28:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/28 11:10:29 ajacoutot Exp $
 
 COMMENT=	utilities to manage well know user directories
 
 DISTNAME=	xdg-user-dirs-0.10
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://freedesktop.org/wiki/Software/xdg-user-dirs/

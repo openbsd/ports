@@ -1,0 +1,9 @@
+$OpenBSD: patch-user-dirs_conf,v 1.1 2009/03/28 11:10:29 ajacoutot Exp $
+--- user-dirs.conf.orig	Sat Mar 28 12:08:22 2009
++++ user-dirs.conf	Sat Mar 28 12:08:58 2009
+@@ -8,4 +8,4 @@ enabled=True
+ # This sets the filename encoding to use. You can specify an explicit
+ # encoding, or "locale" which means the encoding of the users locale
+ # will be used
+-filename_encoding=UTF-8
++filename_encoding=locale
