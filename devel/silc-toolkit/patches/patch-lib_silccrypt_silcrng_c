@@ -1,0 +1,39 @@
+$OpenBSD: patch-lib_silccrypt_silcrng_c,v 1.1 2009/03/29 09:13:01 sthen Exp $
+--- lib/silccrypt/silcrng.c.orig	Mon Mar 23 10:15:01 2009
++++ lib/silccrypt/silcrng.c	Mon Mar 23 10:15:19 2009
+@@ -218,7 +218,7 @@ void silc_rng_init(SilcRng rng)
+   silc_rng_get_hard_noise(rng);
+   silc_rng_get_soft_noise(rng);
+   silc_free(rng->devrandom);
+-  rng->devrandom = strdup("/dev/urandom");
++  rng->devrandom = strdup("/dev/arandom");
+ }
+ 
+ /* This function gets 'soft' noise from environment. */
+@@ -552,7 +552,7 @@ SilcUInt8 silc_rng_get_byte(SilcRng rng)
+   return byte;
+ }
+ 
+-/* Return random byte as fast as possible. Reads from /dev/urandom if
++/* Return random byte as fast as possible. Reads from /dev/arandom if
+    available. If not then return from normal RNG (not so fast). */
+ 
+ SilcUInt8 silc_rng_get_byte_fast(SilcRng rng)
+@@ -561,7 +561,7 @@ SilcUInt8 silc_rng_get_byte_fast(SilcRng rng)
+   unsigned char buf[1];
+ 
+   if (rng->fd_devurandom == -1) {
+-    rng->fd_devurandom = open("/dev/urandom", O_RDONLY);
++    rng->fd_devurandom = open("/dev/arandom", O_RDONLY);
+     if (rng->fd_devurandom < 0)
+       return silc_rng_get_byte(rng);
+     fcntl(rng->fd_devurandom, F_SETFL, O_NONBLOCK);
+@@ -678,7 +678,7 @@ SilcUInt8 silc_rng_global_get_byte(void)
+   return global_rng ? silc_rng_get_byte(global_rng) : 0;
+ }
+ 
+-/* Return random byte as fast as possible. Reads from /dev/urandom if
++/* Return random byte as fast as possible. Reads from /dev/arandom if
+    available. If not then return from normal RNG (not so fast). */
+ 
+ SilcUInt8 silc_rng_global_get_byte_fast(void)
