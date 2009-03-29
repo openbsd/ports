@@ -1,0 +1,5 @@
+Web Helpers is a library of helper functions intended to make writing
+templates in web applications easier. It's the standard function
+library for Pylons and TurboGears 2.  It also contains a large
+number of functions not specific to the web, including text processing,
+number formatting, date calculations, container objects, etc.
