@@ -1,11 +1,3 @@
-Upgrading users, please note that some incompatible changes have occurred
-since 1.2 (mainly removal of deprecated commands, but some defaults have
-changed, and DTMF has been heavily overhauled); the following files have
-more information:
-
-${PREFIX}/share/doc/asterisk/CHANGES
-${PREFIX}/share/doc/asterisk/UPGRADE.txt
-
 Simplified sample configuration is provided in ${SYSCONFDIR}/asterisk;
 the full set is available in ${PREFIX}/share/examples/asterisk/default.
 

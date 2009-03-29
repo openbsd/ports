@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.18 2008/10/07 09:57:52 sthen Exp $
---- Makefile.orig	Mon Sep  8 21:15:42 2008
-+++ Makefile	Thu Oct  2 22:54:53 2008
+$OpenBSD: patch-Makefile,v 1.19 2009/03/29 22:23:35 sthen Exp $
+--- Makefile.orig	Sat Nov 29 16:58:29 2008
++++ Makefile	Wed Feb 18 20:05:57 2009
 @@ -35,6 +35,7 @@ export ASTVARRUNDIR
  export MODULES_DIR
  export ASTSPOOLDIR
@@ -57,7 +57,7 @@ $OpenBSD: patch-Makefile,v 1.18 2008/10/07 09:57:52 sthen Exp $
  
  ASTCFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG)
  
-@@ -214,9 +220,11 @@ ifneq ($(findstring BSD,$(OSARCH)),)
+@@ -219,9 +225,11 @@ ifneq ($(findstring BSD,$(OSARCH)),)
    ASTLDFLAGS+=-L/usr/local/lib
  endif
  
@@ -69,7 +69,7 @@ $OpenBSD: patch-Makefile,v 1.18 2008/10/07 09:57:52 sthen Exp $
  
  ifeq ($(PROC),ppc)
    ASTCFLAGS+=-fsigned-char
-@@ -574,6 +582,7 @@ samples: adsi
+@@ -581,6 +589,7 @@ samples: adsi
  		echo "astetcdir => $(ASTETCDIR)" ; \
  		echo "astmoddir => $(MODULES_DIR)" ; \
  		echo "astvarlibdir => $(ASTVARLIBDIR)" ; \
@@ -77,7 +77,7 @@ $OpenBSD: patch-Makefile,v 1.18 2008/10/07 09:57:52 sthen Exp $
  		echo "astdatadir => $(ASTDATADIR)" ; \
  		echo "astagidir => $(AGI_DIR)" ; \
  		echo "astspooldir => $(ASTSPOOLDIR)" ; \
-@@ -604,16 +613,16 @@ samples: adsi
+@@ -611,16 +620,16 @@ samples: adsi
  		echo ";transmit_silence_during_record = yes ; Transmit SLINEAR silence while a channel is being recorded" ; \
  		echo ";transmit_silence = yes ; Transmit SLINEAR silence while a channel is being recorded or DTMF is being generated" ; \
  		echo ";transcode_via_sln = yes ; Build transcode paths via SLINEAR, instead of directly" ; \

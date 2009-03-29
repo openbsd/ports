@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2009/01/08 21:04:02 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2009/03/29 22:23:35 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict app_conference-<=20070710
 @newgroup _asterisk:545
@@ -188,6 +188,7 @@ lib/asterisk/modules/format_sln.so
 lib/asterisk/modules/format_vox.so
 lib/asterisk/modules/format_wav.so
 lib/asterisk/modules/format_wav_gsm.so
+lib/asterisk/modules/func_audiohookinherit.so
 lib/asterisk/modules/func_base64.so
 lib/asterisk/modules/func_callerid.so
 lib/asterisk/modules/func_cdr.so
@@ -260,9 +261,10 @@ share/asterisk/moh/fpm-calm-river.wav
 share/asterisk/moh/fpm-sunshine.wav
 share/asterisk/moh/fpm-world-mix.wav
 share/asterisk/sounds/
-share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.9
-share/asterisk/sounds/CHANGES-asterisk-core-en-1.4.9
-share/asterisk/sounds/CREDITS-asterisk-core-en-1.4.9
+share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.14
+share/asterisk/sounds/CHANGES-asterisk-core-en-1.4.14
+share/asterisk/sounds/CREDITS-asterisk-core-en-1.4.14
+share/asterisk/sounds/LICENSE-asterisk-core-en-1.4.14
 share/asterisk/sounds/agent-alreadyon.gsm
 share/asterisk/sounds/agent-incorrect.gsm
 share/asterisk/sounds/agent-loggedoff.gsm
@@ -274,9 +276,11 @@ share/asterisk/sounds/auth-incorrect.gsm
 share/asterisk/sounds/auth-thankyou.gsm
 share/asterisk/sounds/beep.gsm
 share/asterisk/sounds/beeperr.gsm
+share/asterisk/sounds/conf-adminmenu-162.gsm
 share/asterisk/sounds/conf-adminmenu.gsm
 share/asterisk/sounds/conf-enteringno.gsm
 share/asterisk/sounds/conf-errormenu.gsm
+share/asterisk/sounds/conf-extended.gsm
 share/asterisk/sounds/conf-getchannel.gsm
 share/asterisk/sounds/conf-getconfno.gsm
 share/asterisk/sounds/conf-getpin.gsm
@@ -290,6 +294,7 @@ share/asterisk/sounds/conf-locked.gsm
 share/asterisk/sounds/conf-lockednow.gsm
 share/asterisk/sounds/conf-muted.gsm
 share/asterisk/sounds/conf-noempty.gsm
+share/asterisk/sounds/conf-nonextended.gsm
 share/asterisk/sounds/conf-onlyone.gsm
 share/asterisk/sounds/conf-onlyperson.gsm
 share/asterisk/sounds/conf-otherinparty.gsm
@@ -297,6 +302,7 @@ share/asterisk/sounds/conf-placeintoconf.gsm
 share/asterisk/sounds/conf-thereare.gsm
 share/asterisk/sounds/conf-unlockednow.gsm
 share/asterisk/sounds/conf-unmuted.gsm
+share/asterisk/sounds/conf-usermenu-162.gsm
 share/asterisk/sounds/conf-usermenu.gsm
 share/asterisk/sounds/conf-userswilljoin.gsm
 share/asterisk/sounds/conf-userwilljoin.gsm
@@ -422,6 +428,8 @@ share/asterisk/sounds/dir-multi9.gsm
 share/asterisk/sounds/dir-nomatch.gsm
 share/asterisk/sounds/dir-nomore.gsm
 share/asterisk/sounds/dir-pls-enter.gsm
+share/asterisk/sounds/dir-usingkeypad.gsm
+share/asterisk/sounds/dir-welcome.gsm
 share/asterisk/sounds/es/
 share/asterisk/sounds/followme/
 share/asterisk/sounds/followme/call-from.gsm
@@ -563,6 +571,7 @@ share/asterisk/sounds/silence/8.gsm
 share/asterisk/sounds/silence/9.gsm
 share/asterisk/sounds/spy-agent.gsm
 share/asterisk/sounds/spy-console.gsm
+share/asterisk/sounds/spy-dahdi.gsm
 share/asterisk/sounds/spy-h323.gsm
 share/asterisk/sounds/spy-iax.gsm
 share/asterisk/sounds/spy-iax2.gsm
@@ -593,6 +602,7 @@ share/asterisk/sounds/vm-Family.gsm
 share/asterisk/sounds/vm-Friends.gsm
 share/asterisk/sounds/vm-INBOX.gsm
 share/asterisk/sounds/vm-Old.gsm
+share/asterisk/sounds/vm-Urgent.gsm
 share/asterisk/sounds/vm-Work.gsm
 share/asterisk/sounds/vm-advopts.gsm
 share/asterisk/sounds/vm-and.gsm
@@ -606,6 +616,7 @@ share/asterisk/sounds/vm-enter-num-to-call.gsm
 share/asterisk/sounds/vm-extension.gsm
 share/asterisk/sounds/vm-first.gsm
 share/asterisk/sounds/vm-for.gsm
+share/asterisk/sounds/vm-forward-multiple.gsm
 share/asterisk/sounds/vm-forward.gsm
 share/asterisk/sounds/vm-forwardoptions.gsm
 share/asterisk/sounds/vm-from-extension.gsm
@@ -617,6 +628,7 @@ share/asterisk/sounds/vm-incorrect-mailbox.gsm
 share/asterisk/sounds/vm-incorrect.gsm
 share/asterisk/sounds/vm-instructions.gsm
 share/asterisk/sounds/vm-intro.gsm
+share/asterisk/sounds/vm-invalid-password.gsm
 share/asterisk/sounds/vm-invalidpassword.gsm
 share/asterisk/sounds/vm-isonphone.gsm
 share/asterisk/sounds/vm-isunavail.gsm
@@ -624,6 +636,8 @@ share/asterisk/sounds/vm-last.gsm
 share/asterisk/sounds/vm-leavemsg.gsm
 share/asterisk/sounds/vm-login.gsm
 share/asterisk/sounds/vm-mailboxfull.gsm
+share/asterisk/sounds/vm-marked-nonurgent.gsm
+share/asterisk/sounds/vm-marked-urgent.gsm
 share/asterisk/sounds/vm-message.gsm
 share/asterisk/sounds/vm-messages.gsm
 share/asterisk/sounds/vm-minutes.gsm
@@ -654,8 +668,11 @@ share/asterisk/sounds/vm-rec-name.gsm
 share/asterisk/sounds/vm-rec-temp.gsm
 share/asterisk/sounds/vm-rec-unv.gsm
 share/asterisk/sounds/vm-received.gsm
+share/asterisk/sounds/vm-record-prepend.gsm
 share/asterisk/sounds/vm-reenterpassword.gsm
 share/asterisk/sounds/vm-repeat.gsm
+share/asterisk/sounds/vm-review-nonurgent.gsm
+share/asterisk/sounds/vm-review-urgent.gsm
 share/asterisk/sounds/vm-review.gsm
 share/asterisk/sounds/vm-saved.gsm
 share/asterisk/sounds/vm-savedto.gsm
