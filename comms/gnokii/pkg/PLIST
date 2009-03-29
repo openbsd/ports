@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/01/26 10:59:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/03/29 10:03:19 robert Exp $
 @conflict smstools-*
 %%SHARED%%
 !%%no_x11%%
@@ -46,3 +46,5 @@ share/locale/sk/LC_MESSAGES/gnokii.mo
 share/locale/sl/LC_MESSAGES/gnokii.mo
 share/locale/sv/LC_MESSAGES/gnokii.mo
 share/locale/zh_CN/LC_MESSAGES/gnokii.mo
+share/pixmaps/
+share/pixmaps/xgnokii.xpm

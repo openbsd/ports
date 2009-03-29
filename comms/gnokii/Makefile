@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2009/01/26 10:59:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2009/03/29 10:03:19 robert Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
 DISTNAME=	gnokii-0.6.14
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 CATEGORIES=	comms x11
 SHARED_LIBS +=	gnokii               2.7      # .3.0
 
@@ -61,8 +61,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Docs/man/gnokii.1 \
 		${PREFIX}/man/man1
 .if !${FLAVOR:L:Mno_x11}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/Docs/man/xgnokii.1x \
 		${PREFIX}/man/man1/xgnokii.1
+	${INSTALL_DATA} ${WRKSRC}/Docs/sample/logo/gnokii.xpm \
+		${PREFIX}/share/pixmaps/xgnokii.xpm
 .endif
 
 do-regress:
