@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2009/01/17 10:10:01 grange Exp $
+# $OpenBSD: Makefile,v 1.16 2009/03/30 18:25:32 kili Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-0.10.0.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,6 +21,7 @@ USE_X11=		Yes
 
 MODULES=		devel/gettext
 LIB_DEPENDS=		glib-2.0.>=0.8::devel/glib2 \
+			samplerate::audio/libsamplerate \
 			spectrum.>=5::devel/libspectrum \
 			png.>=3::graphics/png \
 			xml2.>=7::textproc/libxml
