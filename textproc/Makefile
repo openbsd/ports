@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2009/03/08 20:38:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.258 2009/03/30 22:25:08 jcs Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -232,6 +232,7 @@
      SUBDIR += ruby-pdf-writer
      SUBDIR += ruby-randexp
      SUBDIR += ruby-redcloth
+     SUBDIR += ruby-rss
      SUBDIR += ruby-rubigen
      SUBDIR += ruby-templater
      SUBDIR += rxp
