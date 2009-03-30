@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2008/12/13 08:58:16 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.25 2009/03/30 18:56:18 mbalmer Exp $ 
 
 COMMENT=	highly configurable pop3/imap4 webmail client
 
 HORDE_MODULE=	imp
 HORDE_NAME=	IMP
+V=		4.3.3
 
-DISTNAME=	${HORDE_MODULE}-h3-4.3.2
+DISTNAME=	${HORDE_MODULE}-h3-${V}
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
@@ -41,6 +42,6 @@ pre-fake:
 
 do-install:
 	@cd ${INSTDIR} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-	@mv ${INSTDIR}/${DISTNAME} ${INSTDIR}/${HORDE_MODULE}
+	@mv ${INSTDIR}/${HORDE_MODULE}-${V} ${INSTDIR}/${HORDE_MODULE}
 
 .include <bsd.port.mk>
