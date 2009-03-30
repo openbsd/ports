@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/03/30 21:19:02 sthen Exp $
+@newgroup _ngrep:622
+@newuser _ngrep:622:_ngrep::ngrep user:/nonexistent:/sbin/nologin
 @man man/man8/ngrep.8
-sbin/ngrep
+@bin sbin/ngrep

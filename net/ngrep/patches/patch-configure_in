@@ -1,9 +1,61 @@
---- configure.in.orig	Thu Jun 30 13:22:15 2005
-+++ configure.in	Fri Jul 22 20:01:45 2005
-@@ -196,18 +196,6 @@ unsigned short bar = foo.source;
+--- configure.in.orig	Wed Nov 15 03:43:56 2006
++++ configure.in	Thu Mar 26 22:07:10 2009
+@@ -111,47 +111,12 @@ else
+ fi
+ 
+ 
+-dnl
+-dnl Configure the regular expression library.
+-dnl
++AC_CHECK_LIB(pcre, pcre_compile,,echo need pcre lib; exit)
++REGEX_OBJS=''
++USE_PCRE="1"
+ 
+-AC_ARG_ENABLE(pcre,
+-[  --enable-pcre           use PCRE instead of GNU regex],
+-[ 
+-  use_pcre="$enableval"
+-],
+-[ 
+-  use_pcre="no"
+-])
+-
+-if test $use_pcre = yes; then
+-
+-  echo 
+-  echo 'Configuring Perl-Compatible Regular Expression (PCRE) library ...' 
+-  echo 
+-
+-  REGEX_DIR='pcre-5.0'
+-  REGEX_OBJS="$REGEX_DIR/pcre.o $REGEX_DIR/study.o"
+-  USE_PCRE="1"
+-
+-else
+-
+-  echo
+-  echo 'Configuring GNU Regular Expression library ...'
+-  echo
+-
+-  REGEX_DIR='regex-0.12'
+-  REGEX_OBJS="$REGEX_DIR/regex.o"
+-  USE_PCRE="0"
+-
+-fi
+-
+-( cd $REGEX_DIR && ./configure )
+-
+-AC_SUBST(REGEX_DIR)
+ AC_SUBST(REGEX_OBJS)
+ 
+-
+ echo
+ echo 'Configuring Network Grep (ngrep) ...'
+ echo 
+@@ -193,18 +158,6 @@ unsigned short bar = foo.source;
+ 
  *bsd*)
  	AC_SUBST(OS, BSD)
- 
+-
 -	if test "$USE_PCAP_RESTART" = "0"; then 
 -
 -        AC_MSG_WARN(
@@ -15,7 +67,6 @@
 -	sleep 3
 -
 -	fi
--
+ 
          ;;
  
- *solaris*)

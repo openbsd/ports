@@ -1,0 +1,11 @@
+$OpenBSD: patch-ngrep_h,v 1.1 2009/03/30 21:19:02 sthen Exp $
+--- ngrep.h.orig	Mon Feb 23 17:19:58 2009
++++ ngrep.h	Mon Feb 23 17:20:00 2009
+@@ -17,6 +17,7 @@
+ #define ETHHDR_SIZE 14
+ #define TOKENRING_SIZE 22
+ #define PPPHDR_SIZE 4
++#define PPPOEHDR_SIZE 8
+ #define SLIPHDR_SIZE 16
+ #define RAWHDR_SIZE 0
+ #define LOOPHDR_SIZE 4
