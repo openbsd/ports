@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/07 12:42:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/03/30 09:17:45 sthen Exp $
 
 COMMENT=		tunnel IPv4 data through DNS
 
-DISTNAME=		iodine-0.4.1
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		iodine-0.5.1
 CATEGORIES=		net
 
 HOMEPAGE=		http://code.kryo.se/iodine/
@@ -18,6 +17,7 @@ MASTER_SITES=		${HOMEPAGE}
 
 WANTLIB=		c z
 
+MAKE_ENV=		CC=${CC}
 REGRESS_DEPENDS=	::devel/check
 REGRESS_TARGET=		test
 

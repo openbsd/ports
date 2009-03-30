@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_iodine_c,v 1.1.1.1 2008/02/06 21:42:28 bernd Exp $
+$OpenBSD: patch-src_iodine_c,v 1.2 2009/03/30 09:17:45 sthen Exp $
 
 Drop privileges and chroot by default.
 
---- src/iodine.c.orig	Fri Nov 30 23:11:30 2007
-+++ src/iodine.c	Fri Feb  1 20:54:41 2008
-@@ -621,9 +621,9 @@ main(int argc, char **argv)
- 	int dns_fd;
+--- src/iodine.c.orig	Sat Mar 21 14:07:49 2009
++++ src/iodine.c	Mon Mar 30 10:25:08 2009
+@@ -1009,9 +1009,9 @@ main(int argc, char **argv)
+ 	int autodetect_frag_size;
  
  	memset(password, 0, 33);
 -	username = NULL;

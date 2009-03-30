@@ -1,19 +1,41 @@
-$OpenBSD: patch-src_Makefile,v 1.1 2008/02/07 12:42:11 sthen Exp $
---- src/Makefile.orig	Fri Nov 30 22:11:30 2007
-+++ src/Makefile	Thu Feb  7 11:48:20 2008
+$OpenBSD: patch-src_Makefile,v 1.2 2009/03/30 09:17:45 sthen Exp $
+--- src/Makefile.orig	Sat Mar 21 13:07:49 2009
++++ src/Makefile	Mon Mar 30 10:09:57 2009
 @@ -1,4 +1,4 @@
 -CC = gcc
 +CC ?= gcc
  COMMONOBJS = tun.o dns.o read.o encoding.o login.o base32.o base64.o md5.o common.o
  CLIENTOBJS = iodine.o
  CLIENT = ../bin/iodine
-@@ -9,7 +9,8 @@ OS = `uname | tr "a-z" "A-Z"`
- ARCH = `uname -m`
+@@ -10,7 +10,8 @@ ARCH = `uname -m`
  
- LDFLAGS =  -lz
--CFLAGS = -c -g -Wall -D$(OS) -pedantic
+ LIBPATH = -L.
+ LDFLAGS =  -lz `sh osflags $(TARGETOS) link` $(LIBPATH)
+-CFLAGS = -c -g -Wall -D$(OS) -pedantic `sh osflags $(TARGETOS) cflags`
 +CFLAGS ?= -g
-+CFLAGS += -c -Wall -D$(OS) -pedantic
++CFLAGS += -c -Wall -D$(OS) -pedantic `sh osflags $(TARGETOS) cflags`
  
- all: stateos $(CLIENT) $(SERVER) $(TESTSUITE) 
+ all: stateos $(CLIENT) $(SERVER)
  
+@@ -18,18 +19,15 @@ stateos:
+ 	@echo OS is $(OS), arch is $(ARCH)
+ 
+ $(CLIENT): $(COMMONOBJS) $(CLIENTOBJS)
+-	@echo LD $@
+ 	@mkdir -p ../bin
+-	@$(CC) $(COMMONOBJS) $(CLIENTOBJS) -o $(CLIENT) $(LDFLAGS)
++	$(CC) $(COMMONOBJS) $(CLIENTOBJS) -o $(CLIENT) $(LDFLAGS)
+ 
+ $(SERVER): $(COMMONOBJS) $(SERVEROBJS)
+-	@echo LD $@
+ 	@mkdir -p ../bin
+-	@$(CC) $(COMMONOBJS) $(SERVEROBJS) -o $(SERVER) $(LDFLAGS)
++	$(CC) $(COMMONOBJS) $(SERVEROBJS) -o $(SERVER) $(LDFLAGS)
+ 
+ .c.o: 
+-	@echo CC $<
+-	@$(CC) $(CFLAGS) $< -o $@
++	$(CC) $(CFLAGS) $< -o $@
+ 
+ clean:
+ 	@echo "Cleaning src/"
