@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2008/10/30 09:49:39 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.13 2009/03/30 18:36:37 mbalmer Exp $
 @group daemon
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/COPYING
@@ -301,6 +301,7 @@ horde/${HORDE_MODULE}/pref_api.php
 horde/${HORDE_MODULE}/scripts/
 horde/${HORDE_MODULE}/scripts/.htaccess
 horde/${HORDE_MODULE}/scripts/import_icals.php
+horde/${HORDE_MODULE}/scripts/import_squirrelmail_calendar.php
 horde/${HORDE_MODULE}/scripts/migrate_to_sql_driver.php
 horde/${HORDE_MODULE}/scripts/reminders.php
 horde/${HORDE_MODULE}/scripts/sql/
@@ -317,6 +318,7 @@ horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.pgsql.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2.1_to_2.2.pgsql.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2.1_to_2.2.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2.2_to_2.3.oci8.sql
+horde/${HORDE_MODULE}/scripts/upgrades/2.2_to_2.3.pgsql.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2.2_to_2.3.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2006-08-20_fix_recur_int_fields.mysql.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2008-09-23_fix_group_uid.sql
@@ -464,6 +466,8 @@ horde/${HORDE_MODULE}/themes/silver/graphics/new.png
 horde/${HORDE_MODULE}/themes/silver/graphics/new_big.png
 horde/${HORDE_MODULE}/themes/silver/graphics/new_small.png
 horde/${HORDE_MODULE}/themes/silver/graphics/plus.png
+horde/${HORDE_MODULE}/themes/silver/graphics/private-000.png
+horde/${HORDE_MODULE}/themes/silver/graphics/private-fff.png
 horde/${HORDE_MODULE}/themes/silver/graphics/recur-000.png
 horde/${HORDE_MODULE}/themes/silver/graphics/recur-fff.png
 horde/${HORDE_MODULE}/themes/silver/graphics/search.png
@@ -501,6 +505,8 @@ horde/${HORDE_MODULE}/themes/tango-blue/graphics/new.png
 horde/${HORDE_MODULE}/themes/tango-blue/graphics/new_big.png
 horde/${HORDE_MODULE}/themes/tango-blue/graphics/new_small.png
 horde/${HORDE_MODULE}/themes/tango-blue/graphics/plus.png
+horde/${HORDE_MODULE}/themes/tango-blue/graphics/private-000.png
+horde/${HORDE_MODULE}/themes/tango-blue/graphics/private-fff.png
 horde/${HORDE_MODULE}/themes/tango-blue/graphics/recur-000.png
 horde/${HORDE_MODULE}/themes/tango-blue/graphics/recur-fff.png
 horde/${HORDE_MODULE}/themes/tango-blue/graphics/search.png
