@@ -1,0 +1,38 @@
+$OpenBSD: patch-examples_albumart_c,v 1.1 2009/03/31 13:37:16 jasper Exp $
+
+Fix compilation with GCC2.
+
+--- examples/albumart.c.orig	Tue Mar 31 15:35:04 2009
++++ examples/albumart.c	Tue Mar 31 15:39:40 2009
+@@ -35,8 +35,11 @@ int main (int argc, char **argv) {
+   extern int optind;
+   extern char *optarg;
+   LIBMTP_mtpdevice_t *device = NULL;
++  LIBMTP_filesampledata_t *albumart = NULL;
++  LIBMTP_album_t *album = NULL;
+   int idcount = 0;
+   int fd;
++  int ret;
+   uint32_t *ids = NULL;
+   uint32_t *tmp = NULL;
+   uint64_t filesize;
+@@ -116,16 +119,16 @@ int main (int argc, char **argv) {
+     return 0;
+   }
+ 
+-  LIBMTP_filesampledata_t *albumart = LIBMTP_new_filesampledata_t();
++  albumart = LIBMTP_new_filesampledata_t();
+   albumart->data = imagedata;
+   albumart->size = filesize;
+   albumart->filetype = LIBMTP_FILETYPE_JPEG;
+ 
+-  LIBMTP_album_t *album = LIBMTP_new_album_t();
++  album = LIBMTP_new_album_t();
+   album->name = albumname;
+   album->no_tracks = idcount;
+   album->tracks = ids;
+-  int ret = LIBMTP_Create_New_Album(device,album,0);
++  ret = LIBMTP_Create_New_Album(device,album,0);
+   if (ret == 0) {
+     ret = LIBMTP_Send_Representative_Sample(device,album->album_id, albumart);
+     if (ret != 0) {

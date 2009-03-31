@@ -1,0 +1,28 @@
+$OpenBSD: patch-examples_emptyfolders_c,v 1.1 2009/03/31 13:37:16 jasper Exp $
+
+Fix compilation with GCC2.
+
+--- examples/emptyfolders.c.orig	Tue Mar 31 15:43:55 2009
++++ examples/emptyfolders.c	Tue Mar 31 15:44:25 2009
+@@ -61,6 +61,10 @@ int main (int argc, char **argv)
+   int do_delete = 0;
+   int opt;
+ 
++  LIBMTP_mtpdevice_t *device = NULL;
++  LIBMTP_folder_t *folders = NULL;
++  LIBMTP_file_t *files = NULL;
++
+   fprintf(stdout, "libmtp version: " LIBMTP_VERSION_STRING "\n\n");
+ 
+   while ( (opt = getopt(argc, argv, "d")) != -1 ) {
+@@ -77,10 +81,6 @@ int main (int argc, char **argv)
+     printf("This is a dummy run. No folders will be deleted.\n");
+     printf("To delete folders, use the '-d' option.\n");
+   }
+-
+-  LIBMTP_mtpdevice_t *device;
+-  LIBMTP_folder_t *folders;
+-  LIBMTP_file_t *files;
+ 
+   LIBMTP_Init();
+   device = LIBMTP_Get_First_Device();

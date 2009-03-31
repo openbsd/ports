@@ -1,0 +1,32 @@
+$OpenBSD: patch-examples_newplaylist_c,v 1.1 2009/03/31 13:37:16 jasper Exp $
+
+Fix compilation with GCC2.
+
+--- examples/newplaylist.c.orig	Tue Mar 31 15:42:26 2009
++++ examples/newplaylist.c	Tue Mar 31 15:43:12 2009
+@@ -32,9 +32,11 @@ static void usage(void) {
+ 
+ int main (int argc, char **argv) {
+   int opt;
++  int ret;
+   extern int optind;
+   extern char *optarg;
+   LIBMTP_mtpdevice_t *device = NULL;
++  LIBMTP_playlist_t *playlist = NULL;
+   int idcount = 0;
+   uint32_t *ids = NULL;
+   uint32_t *tmp = NULL;
+@@ -84,11 +86,11 @@ int main (int argc, char **argv) {
+     return 0;
+   }
+ 
+-  LIBMTP_playlist_t *playlist = LIBMTP_new_playlist_t();
++  playlist = LIBMTP_new_playlist_t();
+   playlist->name = playlistname;
+   playlist->no_tracks = idcount;
+   playlist->tracks = ids;
+-  int ret = LIBMTP_Create_New_Playlist(device,playlist,0);
++  ret = LIBMTP_Create_New_Playlist(device,playlist,0);
+   if (ret != 0) {
+     printf("Couldn't create playlist object\n");
+     LIBMTP_Dump_Errorstack(device);

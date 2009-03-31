@@ -1,0 +1,34 @@
+$OpenBSD: patch-examples_connect_c,v 1.1 2009/03/31 13:37:16 jasper Exp $
+
+Fix compilation with GCC2.
+
+--- examples/connect.c.orig	Tue Mar 31 15:21:29 2009
++++ examples/connect.c	Tue Mar 31 15:26:53 2009
+@@ -73,6 +73,10 @@ usage(void)
+ 
+ int main (int argc, char **argv)
+ {
++
++  char *lang;
++  char *arg1, *arg2;
++
+   if ( argc < 2 ) {
+     usage ();
+     return 1;
+@@ -82,7 +86,7 @@ int main (int argc, char **argv)
+    * Check environment variables $LANG and $LC_CTYPE
+    * to see if we want to support UTF-8 unicode
+    */
+-  char * lang = getenv("LANG");
++  lang = getenv("LANG");
+   if (lang != NULL) {
+     if (strlen(lang) > 5) {
+       char *langsuff = &lang[strlen(lang)-5];
+@@ -133,7 +137,6 @@ int main (int argc, char **argv)
+       if (c == -1)
+         break;
+   
+-      char *arg1, *arg2;
+       switch (c) {
+       case 'd':
+         printf("Delete %s\n",optarg);

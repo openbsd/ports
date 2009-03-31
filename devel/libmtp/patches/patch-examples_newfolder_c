@@ -1,0 +1,20 @@
+$OpenBSD: patch-examples_newfolder_c,v 1.1 2009/03/31 13:37:16 jasper Exp $
+
+Fix compilation with GCC2.
+
+--- examples/newfolder.c.orig	Tue Mar 31 15:29:03 2009
++++ examples/newfolder.c	Tue Mar 31 15:29:03 2009
+@@ -52,11 +52,12 @@ void newfolder_command (int argc, char **argv)
+ void
+ newfolder_function(char * path)
+ {
+-  printf("Creating new folder %s\n",path);
+   char * parent = dirname(path);
+   char * folder = basename(path);
+   int id = parse_path (parent,files,folders);
+   int newid = LIBMTP_Create_Folder(device, folder, id);
++
++  printf("Creating new folder %s\n",path);
+   if (newid == 0) {
+     printf("Folder creation failed.\n");
+     LIBMTP_Dump_Errorstack(device);

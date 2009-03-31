@@ -1,0 +1,23 @@
+$OpenBSD: patch-examples_sendfile_c,v 1.1 2009/03/31 13:37:16 jasper Exp $
+
+Fix compilation with GCC2.
+
+--- examples/sendfile.c.orig	Tue Mar 31 15:29:34 2009
++++ examples/sendfile.c	Tue Mar 31 15:30:34 2009
+@@ -47,7 +47,6 @@ void sendfile_usage(void)
+ 
+ int sendfile_function(char * from_path, char *to_path)
+ {
+-  printf("Sending %s to %s\n",from_path,to_path);
+   char *filename;
+   uint64_t filesize;
+ #ifdef __USE_LARGEFILE64
+@@ -58,6 +57,8 @@ int sendfile_function(char * from_path, char *to_path)
+   LIBMTP_file_t *genfile;
+   int ret;
+   uint32_t parent_id = 0;
++
++  printf("Sending %s to %s\n",from_path,to_path);
+ 
+ #ifdef __USE_LARGEFILE64
+   if ( stat64(from_path, &sb) == -1 ) {

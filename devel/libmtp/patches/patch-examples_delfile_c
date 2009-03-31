@@ -1,0 +1,18 @@
+$OpenBSD: patch-examples_delfile_c,v 1.1 2009/03/31 13:37:16 jasper Exp $
+
+Fix compilation with GCC2.
+
+--- examples/delfile.c.orig	Tue Mar 31 15:27:20 2009
++++ examples/delfile.c	Tue Mar 31 15:27:48 2009
+@@ -41,10 +41,10 @@ void
+ delfile_function(char * path)
+ {
+   uint32_t id = parse_path (path,files,folders);
++  int ret = 1;
+ 
+   if (id > 0) {
+     printf("Deleting %s which has item_id:%d\n",path,id);
+-    int ret = 1;
+     ret = LIBMTP_Delete_Object(device, id);
+     if (ret != 0) {
+       LIBMTP_Dump_Errorstack(device);

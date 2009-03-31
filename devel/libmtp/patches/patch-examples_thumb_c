@@ -1,0 +1,33 @@
+$OpenBSD: patch-examples_thumb_c,v 1.1 2009/03/31 13:37:16 jasper Exp $
+
+Fix compilation with GCC2.
+
+--- examples/thumb.c.orig	Tue Mar 31 15:44:56 2009
++++ examples/thumb.c	Tue Mar 31 15:45:35 2009
+@@ -36,6 +36,7 @@ int main (int argc, char **argv) {
+   extern int optind;
+   extern char *optarg;
+   LIBMTP_mtpdevice_t *device = NULL;
++  LIBMTP_filesampledata_t *thumb = NULL;
+   int fd;
+   uint32_t id = 0;
+   uint64_t filesize;
+@@ -44,6 +45,7 @@ int main (int argc, char **argv) {
+   char *rest;
+   struct stat statbuff;
+   int ret;
++  int i;
+ 
+   fprintf(stdout, "libmtp version: " LIBMTP_VERSION_STRING "\n\n");
+ 
+@@ -96,9 +98,8 @@ int main (int argc, char **argv) {
+     return 0;
+   }
+   
+-  LIBMTP_filesampledata_t *thumb = LIBMTP_new_filesampledata_t();
++  thumb = LIBMTP_new_filesampledata_t();
+ 
+-  int i;
+   thumb->data = malloc(sizeof(uint16_t) * filesize);
+   for (i = 0; i < filesize; i++) {
+     thumb->data[i] = imagedata[i];
