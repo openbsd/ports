@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2009/03/24 19:01:36 robert Exp $
+# $OpenBSD: Makefile,v 1.214 2009/03/31 01:53:13 sthen Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -37,6 +37,7 @@
      SUBDIR += despoof
      SUBDIR += dsniff
      SUBDIR += dsniff,no_x11
+     SUBDIR += fcrackzip
      SUBDIR += fragroute
      SUBDIR += fragrouter
      SUBDIR += fwbuilder
