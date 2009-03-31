@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/28 18:55:09 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/31 13:56:58 ckuethe Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
 DISTNAME=	teensy_loader_cli
 PKGNAME=	teensyloader-1.03
 CATEGORIES=	devel
+BROKEN=		Need to educate upstream about versioned distfiles
 
 HOMEPAGE=	http://www.pjrc.com/teensy/
 
