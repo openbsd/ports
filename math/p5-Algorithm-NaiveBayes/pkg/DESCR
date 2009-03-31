@@ -1,0 +1,5 @@
+This module implements the classic "Naive Bayes" machine learning
+algorithm. It is a well-studied probabilistic algorithm often used in
+automatic text categorization. Compared to other algorithms (kNN, SVM,
+Decision Trees), it's pretty fast and reasonably competitive in the
+quality of its results.

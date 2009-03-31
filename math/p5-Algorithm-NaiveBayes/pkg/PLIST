@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/31 16:53:43 jasper Exp $
+${P5SITE}/Algorithm/
+${P5SITE}/Algorithm/NaiveBayes/
+${P5SITE}/Algorithm/NaiveBayes.pm
+${P5SITE}/Algorithm/NaiveBayes/Model/
+${P5SITE}/Algorithm/NaiveBayes/Model/Discrete.pm
+${P5SITE}/Algorithm/NaiveBayes/Model/Frequency.pm
+${P5SITE}/Algorithm/NaiveBayes/Model/Gaussian.pm
+${P5SITE}/Algorithm/NaiveBayes/Util.pm
+@man man/man3p/Algorithm::NaiveBayes.3p
