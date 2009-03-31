@@ -1,0 +1,28 @@
+$OpenBSD: patch-src-make_local,v 1.1.1.1 2009/03/31 19:08:29 jasper Exp $
+--- src/make_local.orig	Sun Mar 29 19:02:53 2009
++++ src/make_local	Tue Mar 31 19:25:04 2009
+@@ -72,3 +72,24 @@ PATH_GTKGL_L =-L/usr/lib
+ #
+ #======================== Linux Yellow Dog ppc =================================
+ #
++
++#===================== OpenBSD ================================
++#
++PATH_EXPAT_H = -I${X11BASE}/include
++PATH_FREETYPE_H = -I${X11BASE}/include/freetype2
++PATH_X_H = -I${X11BASE}/include
++PATH_GLIB_H = `pkg-config --cflags glib-2.0`
++PATH_CAIRO_H = -I${LOCALBASE}/include/cairo
++PATH_PANGO_H = -I${LOCALBASE}/include/pango-2.0
++PATH_ATK_H = -I${LOCALBASE}/include/atk-2.0
++PATH_GTK_H =  `pkg-config --cflags gtk+-2.0`
++PATH_MESA_H = -I${X11BASE}/include/GL
++PATH_GTKGL_H = `pkg-config --cflags gtkglext-1.0` `pkg-config --cflags gdkglext-1.0`
++
++PATH_X_L = -L${X11BASE}/lib
++PATH_GLIB_L = -L${LOCALBASE}/lib
++PATH_GTK_L = -L${LOCALBASE}/lib
++PATH_MESA_L = -L${X11BASE}/lib
++PATH_GTKGL_L = -L${LOCALBASE}/lib
++PATH_EXPAT_L = -L${X11BASE}/lib
++PATH_FREETYPE_L = -L${X11BASE}/lib

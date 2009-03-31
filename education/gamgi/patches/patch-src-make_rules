@@ -1,0 +1,28 @@
+$OpenBSD: patch-src-make_rules,v 1.1.1.1 2009/03/31 19:08:29 jasper Exp $
+--- src/make_rules.orig	Wed Jun  4 16:26:29 2008
++++ src/make_rules	Tue Mar 31 19:37:54 2009
+@@ -14,12 +14,12 @@ SHELL=/bin/sh
+ 
+ #================================ compiler =================================
+ 
+-COMPILE = gcc -g -Wall -ansi
++COMPILE = $(CC) -g -Wall -ansi
+ #COMPILE = gcc -g -Wall -ansi -O3 -pedantic -Werror -MMD
+-LINK = gcc
++LINK = $(CC)
+ #LINK = g++
+ 
+-CFLAGS = -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \
++CFLAGS += -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED # -DGTK_DISABLE_DEPRECATED
+ 
+ #================================ executable ===============================
+@@ -31,7 +31,7 @@ EXE = gamgi
+ LIBS = -lgtkglext-x11-1.0 -lGLU -lGL -lgtk-x11-2.0 -lgdk-x11-2.0 \
+ 	-latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lpango-1.0 \
+ 	-lcairo -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -lXext -lX11 \
+-	-lXi -lXmu -lfreetype -lexpat -lm -ldl
++	-lXi -lXmu -lfreetype -lexpat -lm
+ 
+ #================================ full paths ===============================
+ 

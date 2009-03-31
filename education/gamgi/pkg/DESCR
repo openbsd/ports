@@ -1,0 +1,13 @@
+The goal of GAMGI is to provide a free package to construct, view and
+analyse atomic structures, as powerful and simple to use as possible.
+
+GAMGI aims to be useful for: 1) the scientific community working in
+atomistic modelling, who needs a graphic interface to build and analyse
+atomic structures; 2) the scientific community at large, who needs a
+graphic interface to study atomic structures and to prepare images for
+presentations; 3) teaching the atomic structure of matter in schools and
+universities, even inviting students to run GAMGI at home; 4) science
+promotion, in exhibitions and science museums.
+
+To run properly, GAMGI requires a graphics environment with at least 16
+bits per pixel, plus a 3-button mouse.
