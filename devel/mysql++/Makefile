@@ -1,43 +1,47 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2009/03/31 11:37:20 wilfried Exp $
 
-SHARED_ONLY=		Yes
+SHARED_ONLY =		Yes
 
-COMMENT-main=		C++ API for MySQL
-COMMENT-docs=		C++ API for MySQL documentation
+COMMENT-main =		C++ API for MySQL
+COMMENT-docs =		C++ API for MySQL documentation
 
-VERSION=		2.0.6
-DISTNAME=		mysql++-${VERSION}
-PKGNAME-main=		${DISTNAME}p3
-PKGNAME-docs=		mysql++-docs-${VERSION}
-SHARED_LIBS +=	mysqlpp              3.0      # .2.6
-CATEGORIES=		devel
+VERSION =		3.0.9
+DISTNAME =		mysql++-${VERSION}
+PKGNAME-main =		${DISTNAME}
+PKGNAME-docs =		mysql++-docs-${VERSION}
+SHARED_LIBS += mysqlpp	4.0	# 3
+CATEGORIES =		devel
 
-HOMEPAGE=		http://tangentsoft.net/mysql++/
+HOMEPAGE =		http://tangentsoft.net/mysql++/
 
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
+MAINTAINER =		Peter Stromberg <wilfried@openbsd.org>
 
 # LPGL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=		${HOMEPAGE}releases/
+MASTER_SITES =		${HOMEPAGE}releases/
 
-MULTI_PACKAGES=		-main -docs
+MULTI_PACKAGES =	-main -docs
 
-LIB_DEPENDS-main=	lib/mysql/mysqlclient.>=10::databases/mysql
-WANTLIB-main=		crypto m ssl z
-PKG_ARCH-docs=		*
+LIB_DEPENDS-main =	mysqlclient::databases/mysql
+WANTLIB-main =		m
+PKG_ARCH-docs =		*
 
-NO_REGRESS=		Yes
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	gnu
+NO_REGRESS =		Yes
+USE_GMAKE =		Yes
+AUTOCONF_VERSION =	2.59
+CONFIGURE_STYLE =	autoconf
 
 post-install:
+	@mv ${PREFIX}/lib/libmysqlpp.so.${VERSION} ${PREFIX}/lib/libmysqlpp.so.${LIBmysqlpp_VERSION}
+	@rm -f ${PREFIX}/lib/libmysqlpp.so.3
+	@rm -f ${PREFIX}/lib/libmysqlpp.so
 .for dir in refman userman
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql++/${dir}/
-	${INSTALL_DATA} ${WRKSRC}/doc/${dir}/html/* ${PREFIX}/share/doc/mysql++/${dir}/
+	${INSTALL_DATA} ${WRKSRC}/doc/html/${dir}/* ${PREFIX}/share/doc/mysql++/${dir}/
 .endfor
 
 .include <bsd.port.mk>

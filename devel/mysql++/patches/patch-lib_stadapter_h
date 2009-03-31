@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_stadapter_h,v 1.1 2009/03/31 11:37:20 wilfried Exp $
+
+work-around for gcc 3.3
+
+--- lib/stadapter.h.orig	Wed Feb  4 22:45:37 2009
++++ lib/stadapter.h	Mon Mar 23 14:25:15 2009
+@@ -37,6 +37,7 @@
+ 
+ #include <stdexcept>
+ #include <string>
++#include "mystring.h"
+ 
+ namespace mysqlpp {
+ 

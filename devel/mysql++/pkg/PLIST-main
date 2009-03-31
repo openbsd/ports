@@ -1,37 +1,42 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/26 00:40:28 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/03/31 11:37:20 wilfried Exp $
 @pkgpath databases/mysql++
 include/mysql++/
-include/mysql++/coldata.h
-include/mysql++/compare.h
+include/mysql++/autoflag.h
+include/mysql++/beemutex.h
+include/mysql++/common.h
+include/mysql++/comparable.h
 include/mysql++/connection.h
-include/mysql++/const_string.h
-include/mysql++/convert.h
-include/mysql++/custom-macros.h
+include/mysql++/cpool.h
 include/mysql++/custom.h
 include/mysql++/datetime.h
-include/mysql++/defs.h
+include/mysql++/dbdriver.h
 include/mysql++/exceptions.h
+include/mysql++/field.h
 include/mysql++/field_names.h
 include/mysql++/field_types.h
-include/mysql++/fields.h
-include/mysql++/lockable.h
 include/mysql++/manip.h
 include/mysql++/myset.h
 include/mysql++/mysql++.h
+include/mysql++/mystring.h
 include/mysql++/noexceptions.h
 include/mysql++/null.h
-include/mysql++/platform.h
+include/mysql++/options.h
 include/mysql++/qparms.h
 include/mysql++/query.h
-include/mysql++/resiter.h
+include/mysql++/querydef.h
+include/mysql++/refcounted.h
 include/mysql++/result.h
 include/mysql++/row.h
-include/mysql++/sql_string.h
+include/mysql++/sql_buffer.h
+include/mysql++/sql_types.h
+include/mysql++/ssqls.h
+include/mysql++/stadapter.h
 include/mysql++/stream2string.h
-include/mysql++/string_util.h
+include/mysql++/tcp_connection.h
 include/mysql++/tiny_int.h
+include/mysql++/transaction.h
 include/mysql++/type_info.h
+include/mysql++/uds_connection.h
 include/mysql++/vallist.h
-lib/libmysqlpp.a
-lib/libmysqlpp.la
+include/mysql++/wnp_connection.h
 @lib lib/libmysqlpp.so.${LIBmysqlpp_VERSION}
