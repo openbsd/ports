@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/30 13:56:39 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/03/31 13:59:22 pirofti Exp $
 @bin bin/ocat
 include/ocat.h
+include/ocat_cygwin.h
+include/openbsd_netinet_icmp6.h
+include/openbsd_netinet_if_ether.h
+include/openbsd_netinet_ip6.h
 include/strlcat.c
 include/strlcpy.c
+@man man/man1/ocat.1
 share/doc/onioncat/
 share/doc/onioncat/README

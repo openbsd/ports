@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/12/30 13:56:39 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2009/03/31 13:59:22 pirofti Exp $
 
 COMMENT =	IP-Transparent Tor Hidden Service Connector
 
-DISTNAME =	onioncat-0.1.8
+DISTNAME =	onioncat-0.1.12.r493
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.abenteuerland.at/onioncat/
@@ -21,5 +21,6 @@ MASTER_SITES =	${HOMEPAGE}download/
 
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS +=	--mandir=${PREFIX}/man
 
 .include <bsd.port.mk>
