@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2009/03/31 01:50:12 sthen Exp $
+--- configure.in.orig	Mon Mar 30 22:59:27 2009
++++ configure.in	Mon Mar 30 22:59:42 2009
+@@ -21,7 +21,7 @@ AM_CONDITIONAL(HAVE_PERL,test -n "$PERL")
+ 
+ if test "$GCC" = yes; then
+    AC_DEFINE([USE_GCC_ASM], 1, [Define if you can use gcc inline assembly.])
+-   CFLAGS="$CFLAGS -funroll-all-loops -O3"
++   #CFLAGS="$CFLAGS -funroll-all-loops -O3"
+    AC_MSG_CHECKING(for pgcc/egcs)
+    case `$CC -v 2>&1` in
+       *pgcc-* )
