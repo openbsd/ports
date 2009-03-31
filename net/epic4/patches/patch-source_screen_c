@@ -1,0 +1,27 @@
+$OpenBSD: patch-source_screen_c,v 1.1 2009/03/31 13:31:18 jasper Exp $
+
+Fix compilation with GCC2.
+
+--- source/screen.c.orig	Tue Mar 31 15:32:24 2009
++++ source/screen.c	Tue Mar 31 15:33:21 2009
+@@ -1799,6 +1799,8 @@ const 	u_char	*ptr;
+ 			{
+ 				int	lhs_count = 0;
+ 				int	continued_count = 0;
++				char	*copy;
++				size_t	cont_len;
+ 
+ 				if (indent > max_cols / 3)
+ 					indent = max_cols / 3;
+@@ -1806,9 +1808,9 @@ const 	u_char	*ptr;
+ 				/* refined this to use proper logic to 
+ 				** decide the length of cont. - pegasus
+ 				*/
+-				char *copy = LOCAL_COPY(cont_ptr);
++				copy = LOCAL_COPY(cont_ptr);
+ 				copy = normalize_string(copy, 0);
+-				size_t cont_len = output_with_count(copy, 0, 0);
++				cont_len = output_with_count(copy, 0, 0);
+ 				if (do_indent && (cont_len < indent))
+ 				{
+ 					size_t size = indent + 1 +
