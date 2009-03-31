@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2005/01/14 03:02:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2009/03/31 19:11:44 jasper Exp $
 #
 
      SUBDIR += algotutor
@@ -6,6 +6,7 @@
      SUBDIR += drgeo-doc
      SUBDIR += dvorak7min
      SUBDIR += edict
+     SUBDIR += gamgi
      SUBDIR += gtypist
 
 .include <bsd.port.subdir.mk>
