@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2009/03/19 14:36:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2009/03/31 18:13:59 jasper Exp $
 
 COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
 GNOME_VERSION=		0.22
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 SHARED_LIBS +=	devhelp-1             1.0        # .0.0
 CATEGORIES=		textproc
 
-HOMEPAGE=		http://developer.imendio.com/projects/devhelp/
+HOMEPAGE=		http://live.gnome.org/devhelp
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
