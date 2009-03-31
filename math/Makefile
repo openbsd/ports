@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2009/02/16 14:43:30 eric Exp $
+# $OpenBSD: Makefile,v 1.82 2009/03/31 16:55:00 jasper Exp $
 #
 
      SUBDIR += R
@@ -48,8 +48,11 @@
      SUBDIR += octave
      SUBDIR += p5-AI-FANN
      SUBDIR += p5-AI-NeuralNet-BackProp
+     SUBDIR += p5-AI-NeuralNet-Kohonen
+     SUBDIR += p5-AI-NeuralNet-Kohonen-Visual
      SUBDIR += p5-AI-NeuralNet-Mesh
      SUBDIR += p5-AI-Perceptron
+     SUBDIR += p5-Algorithm-NaiveBayes
      SUBDIR += p5-Bit-Vector
      SUBDIR += p5-Chart-Math-Axis
      SUBDIR += p5-GraphViz
@@ -66,6 +69,7 @@
      SUBDIR += p5-Math-Spline
      SUBDIR += p5-Math-VecStat
      SUBDIR += p5-Set-IntSpan
+     SUBDIR += p5-Statistics-Contingency
      SUBDIR += p5-Statistics-Descriptive
      SUBDIR += pari
      SUBDIR += plplot
