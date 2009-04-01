@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_textgfx_Makefile,v 1.1 2009/04/01 08:30:45 martin Exp $
+--- src/textgfx/Makefile.orig	Mon Mar 30 20:49:59 2009
++++ src/textgfx/Makefile	Mon Mar 30 20:50:22 2009
+@@ -5,7 +5,8 @@ OBJS = block.o win.o print.o ibmgfx.o \
+ 
+ textgfx.a: $(OBJS)
+ 	rm -f textgfx.a
+-	ar rcs textgfx.a $(OBJS)
++	ar rc textgfx.a $(OBJS)
++	ranlib textgfx.a
+ 
+ term.o: term.c textgfx.h ../options.h ../config.h
+ 	$(CC) $(CCFLAGS) -I.. -c term.c

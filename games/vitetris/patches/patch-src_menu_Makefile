@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_menu_Makefile,v 1.1 2009/04/01 08:30:45 martin Exp $
+--- src/menu/Makefile.orig	Tue Sep  9 23:42:23 2008
++++ src/menu/Makefile	Mon Mar 30 20:54:27 2009
+@@ -11,11 +11,13 @@ HEADERS = menu.h ../input/input.h ../textgfx/textgfx.h
+ all: menu.a $(menuext_lib)
+ 
+ menu.a: $(OBJS)
+-	ar rs menu.a $(OBJS)
++	ar r menu.a $(OBJS)
++	ranlib menu.a
+ 
+ menuext.a: $(EXT_OBJS)
+ 	rm -f menuext.a
+-	ar rcs menuext.a $(EXT_OBJS)
++	ar rc menuext.a $(EXT_OBJS)
++	ranlib menuext.a
+ 
+ menucore.o: menucore.c $(HEADERS) ../src-conf.mk
+ 	$(CC) $(CCFLAGS) $(DNO_MENU) -c menucore.c 

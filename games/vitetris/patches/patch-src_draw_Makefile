@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_draw_Makefile,v 1.1 2009/04/01 08:30:45 martin Exp $
+--- src/draw/Makefile.orig	Mon Mar 30 20:43:06 2009
++++ src/draw/Makefile	Mon Mar 30 20:43:29 2009
+@@ -4,7 +4,8 @@ OBJS = draw.o draw_menu.o draw2p.o draw2p_menu.o
+ HEADERS = draw.h internal.h ../textgfx/textgfx.h
+ 
+ draw.a: $(OBJS)
+-	ar rs draw.a $(OBJS)
++	ar r draw.a $(OBJS)
++	ranlib draw.a
+ 
+ draw.o: draw.c $(HEADERS) ../game/tetris.h ../hiscore.h \
+ 			  ../netw/sock.h ../src-conf.mk

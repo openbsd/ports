@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_input_Makefile,v 1.1 2009/04/01 08:30:45 martin Exp $
+--- src/input/Makefile.orig	Mon Mar 30 20:48:17 2009
++++ src/input/Makefile	Mon Mar 30 20:49:08 2009
+@@ -6,19 +6,23 @@ default: $(BACKEND)
+ 
+ unixterm: $(OBJS) inp_unixterm.o escseq.o select.o $(joylinux_obj)
+ 	rm -f input.a
+-	ar rcs input.a $(OBJS) inp_unixterm.o escseq.o select.o $(joylinux_obj)
++	ar rc input.a $(OBJS) inp_unixterm.o escseq.o select.o $(joylinux_obj)
++	ranlib input.a
+ 
+ curses: $(OBJS) inp_curses.o $(joylinux_obj) $(select_obj)
+ 	rm -f input.a
+-	ar rcs input.a $(OBJS) inp_curses.o $(joylinux_obj) $(select_obj)
++	ar rc input.a $(OBJS) inp_curses.o $(joylinux_obj) $(select_obj)
++	ranlib input.a
+ 
+ conio: $(OBJS) inp_con.o
+ 	rm -f input.a
+-	ar rcs input.a $(OBJS) inp_con.o
++	ar rc input.a $(OBJS) inp_con.o
++	ranlib input.a
+ 
+ allegro: $(OBJS) inp_allegro.o $(select_obj)
+ 	rm -f input.a
+-	ar rcs input.a $(OBJS) inp_allegro.o $(select_obj)
++	ar rc input.a $(OBJS) inp_allegro.o $(select_obj)
++	ranlib input.a
+ 
+ input.o: input.c input.h keyboard.h joystick.h \
+ 	 ../timer.h ../draw/draw.h ../game/tetris.h ../netw/sock.h \

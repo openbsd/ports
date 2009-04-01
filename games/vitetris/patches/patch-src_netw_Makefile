@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_netw_Makefile,v 1.1 2009/04/01 08:30:45 martin Exp $
+--- src/netw/Makefile.orig	Mon Mar 30 20:42:32 2009
++++ src/netw/Makefile	Mon Mar 30 20:42:52 2009
+@@ -6,7 +6,8 @@ config_h = ../config.h ../config2.h
+ all: $(netw_lib)
+ 
+ netw.a: $(OBJS) ../src-conf.mk
+-	ar rs netw.a $(OBJS)
++	ar r netw.a $(OBJS)
++	ranlib netw.a
+ 
+ socket.o: socket.c sock.h internal.h ../input/input.h ../timer.h $(config_h)
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_game_Makefile,v 1.1 2009/04/01 08:30:45 martin Exp $
+--- src/game/Makefile.orig	Mon Mar 30 20:46:27 2009
++++ src/game/Makefile	Mon Mar 30 20:45:11 2009
+@@ -4,7 +4,8 @@ OBJS = tetris.o $(tetris2p_obj) game.o wonlost.o
+ HEADERS = tetris.h ../timer.h ../input/input.h ../draw/draw.h
+ 
+ game.a: $(OBJS)
+-	ar rs game.a $(OBJS)
++	ar r game.a $(OBJS)
++	ranlib game.a
+ 
+ tetris.o: tetris.c $(HEADERS)
+ 	$(CC) $(CCFLAGS) -I..  -c tetris.c
