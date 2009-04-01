@@ -1,3 +1,4 @@
+$OpenBSD: patch-nfs-version,v 1.4 2009/04/01 16:24:05 jasper Exp $
 --- nfs/syscalls.c.orig	Mon Dec 29 06:11:57 2003
 +++ nfs/syscalls.c	Wed Feb 13 16:47:13 2008
 @@ -78,7 +78,7 @@ struct nfs_args		nfs_args;

@@ -1,3 +1,5 @@
+/* $OpenBSD: unshlight.c,v 1.3 2009/04/01 16:24:05 jasper Exp $ */
+
 #include <sys/param.h>
 #include <sys/mount.h>
 
@@ -6,6 +8,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <string.h>
 
 static void usage(void);
 
