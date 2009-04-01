@@ -1,0 +1,12 @@
+tt-rss has been installed into ${INSTDIR}
+
+You should point this to the DocumentRoot of your web-server:
+   # ln -s ../piwik /var/www/htdocs/piwik
+(make sure you use a relative symlink since Apache is chrooted)
+
+and proceed to complete the installation by reading the online
+documentation. Which can be found at:
+http://tt-rss.org/trac/wiki/InstallationNotes
+
+You can ensure you have a working install by accessing:
+http://<localhost>/tt-rss/

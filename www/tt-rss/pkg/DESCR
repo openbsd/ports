@@ -1,0 +1,15 @@
+Tiny Tiny RSS is a web-based news feed (RSS/Atom) aggregator, designed
+to allow you to read news from any location, while feeling as close to a
+real desktop application as possible.
+
+  - Supports RSS, RDF, Atom feeds using Magpie library
+  - Supports OPML import/export
+  - Easy setup and configuration
+  - Streamlined interface using AJAX
+  - Optionally supports multiple users with administrative and
+    user privileges
+  - Supports aggregation of feeds and article publishing
+  - Supports keyboard shortcuts
+  - Supports interface translations (work in progress)
+  - Supports feed enclosures (podcasts)
+  - Supports article scoring 
