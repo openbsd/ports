@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2009/03/29 22:23:35 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2009/04/02 19:37:25 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict app_conference-<=20070710
 @newgroup _asterisk:545
@@ -256,6 +256,7 @@ share/asterisk/keys/freeworlddialup.pub
 share/asterisk/keys/iaxtel.pub
 share/asterisk/moh/
 share/asterisk/moh/.asterisk-moh-freeplay-wav
+share/asterisk/moh/CHANGES-asterisk-moh-freeplay-wav
 share/asterisk/moh/LICENSE-asterisk-moh-freeplay-wav
 share/asterisk/moh/fpm-calm-river.wav
 share/asterisk/moh/fpm-sunshine.wav
