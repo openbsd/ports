@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.5 2009/03/24 14:51:04 naddy Exp $
---- Makefile.orig	Mon Aug 25 22:11:23 2008
-+++ Makefile	Tue Mar 24 15:50:10 2009
+$OpenBSD: patch-Makefile,v 1.6 2009/04/02 13:24:30 jasper Exp $
+--- Makefile.orig	Mon Dec 29 17:34:19 2008
++++ Makefile	Thu Apr  2 15:23:45 2009
 @@ -1,14 +1,24 @@
  objects := $(patsubst %.c,%.o,$(wildcard *.c))
  
@@ -8,8 +8,8 @@ $OpenBSD: patch-Makefile,v 1.5 2009/03/24 14:51:04 naddy Exp $
 +CFLAGS+= -Wall -pedantic -ansi -DNUTDIR=\".nutdb\" -DFOODDIR=\"$(PREFIX)/lib/nutdb\"
  
  nut:	$(objects)
--	gcc ${CFLAGS} -lm -o nut $(objects)
-+	${CC} ${CFLAGS} -o nut $(objects) -lm
+-	$(CC) ${CFLAGS} -o nut $(LDFLAGS) $(objects) -lm
++	$(CC) ${CFLAGS} -o nut $(objects) -lm
  
 +anameal.o: anameal.c
 +	${CC} ${CFLAGS} $(EXTRA_CFLAGS) -c $< -o $@
