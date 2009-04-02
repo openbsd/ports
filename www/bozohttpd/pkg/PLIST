@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/12 20:06:19 naddy Exp $
-libexec/bozohttpd
+@comment $OpenBSD: PLIST,v 1.2 2009/04/02 13:15:39 jasper Exp $
+@bin libexec/bozohttpd
 @man man/cat8/bozohttpd.0
