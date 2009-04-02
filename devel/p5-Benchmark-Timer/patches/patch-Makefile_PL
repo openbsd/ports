@@ -1,18 +1,13 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2007/03/18 20:17:10 simon Exp $
---- Makefile.PL.orig	Sat Mar 17 12:46:08 2007
-+++ Makefile.PL	Sat Mar 17 12:46:23 2007
-@@ -17,14 +17,6 @@ requires        (
-                   'Time::HiRes' => 0,
+$OpenBSD: patch-Makefile_PL,v 1.2 2009/04/02 14:04:19 giovanni Exp $
+--- Makefile.PL.orig	Tue Jul 15 13:46:25 2008
++++ Makefile.PL	Wed Apr  1 19:15:37 2009
+@@ -13,9 +13,6 @@ test_requires   (
+                   'Test::More' => 0,
                  );
  
--# Optional features and their modules
--features        (
--                  'Statistical sampling support' => [
--                    -default    => 1,
--                    recommends( 'Statistics::PointEstimation' => 0 ),
--                  ],
--                );
+-check_optional  ( 'Statistics::PointEstimation' => 0,
+-  'Install Statistics::PointEstimation for statistical sampling support');
 -
- skip            ('delta.pl');
+ no_index        ('delta.pl');
  
- include         ('ExtUtils/AutoInstall.pm');
+ WriteAll();
