@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_command_c,v 1.3 2009/04/02 05:18:15 jasper Exp $
+
+Fix compilation with GCC2.
+
+--- src/command.c.orig	Tue Mar 31 15:19:10 2009
++++ src/command.c	Tue Mar 31 15:21:48 2009
+@@ -362,6 +362,7 @@ int cmd_play ( int argc, char ** argv, mpd_Connection 
+ {
+ 	int song;
+ 	int i;
++	mpd_Status *status;
+ 
+ 	if(0==argc) song = MPD_PLAY_AT_BEGINNING;
+ 	else {
+@@ -374,7 +375,7 @@ int cmd_play ( int argc, char ** argv, mpd_Connection 
+ 		song--;
+ 
+ 		/* This is necessary, otherwise mpc will output the wrong playlist number */
+-		mpd_Status * status = getStatus(conn);
++		status = getStatus(conn);
+ 		i = status->playlistLength;
+ 		mpd_freeStatus(status);
+ 		if(song >= i)
