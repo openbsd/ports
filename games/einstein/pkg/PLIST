@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/03 17:56:41 landry Exp $
+@bin bin/einstein
+share/einstein/
+share/einstein/res/
+share/einstein/res/einstein.res

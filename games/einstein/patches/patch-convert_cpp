@@ -1,0 +1,35 @@
+$OpenBSD: patch-convert_cpp,v 1.1.1.1 2009/04/03 17:56:41 landry Exp $
+--- convert.cpp.orig	Sun Aug 14 06:40:58 2005
++++ convert.cpp	Thu Apr  2 10:27:29 2009
+@@ -28,7 +28,14 @@ std::wstring numToStr(int num)
+ #ifdef WIN32
+     swprintf(buf, L"%i", num);
+ #else
+-    swprintf(buf, 29, L"%i", num);
++    int  c, i;
++    char buf2 [60];
++
++    c = snprintf (buf2, sizeof (buf2), "%i", num);
++    for (i = 0; i < c; ++i) {
++        buf [i] = (wchar_t) buf2 [i];
++    }
++    buf [i] = L'\0';
+ #endif
+     buf[29] = 0;
+     return std::wstring(buf);
+@@ -40,7 +47,14 @@ std::wstring numToStr(unsigned int num)
+ #ifdef WIN32
+     swprintf(buf, L"%u", num);
+ #else
+-    swprintf(buf, 29, L"%i", num);
++    int  c, i;
++    char buf2 [30];
++    
++    c = snprintf (buf2, sizeof (buf2), "%i", num);
++    for (i = 0; i < c; ++i) {
++        buf [i] = (wchar_t) buf2 [i];
++    }
++    buf [i] = L'\0';
+ #endif
+     buf[29] = 0;
+     return std::wstring(buf);

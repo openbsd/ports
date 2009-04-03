@@ -1,0 +1,21 @@
+$OpenBSD: patch-utils_cpp,v 1.1.1.1 2009/04/03 17:56:41 landry Exp $
+--- utils.cpp.orig	Thu Apr  2 09:00:22 2009
++++ utils.cpp	Thu Apr  2 09:14:42 2009
+@@ -275,7 +275,16 @@ std::wstring secToStr(int time)
+ #ifdef WIN32
+     swprintf(buf, L"%02i:%02i:%02i", hours, minutes, seconds);
+ #else
+-    swprintf(buf, 50, L"%02i:%02i:%02i", hours, minutes, seconds);
++    int  c, i;
++    char buf2 [50];
++
++    c = snprintf (buf2, sizeof (buf2), "%02i:%02i:%02i", hours, minutes,
++        seconds);
++
++    for (i = 0; i < c; ++i) {
++        buf [i] = (wchar_t) buf2 [i];
++    }
++    buf [i] = L'\0';
+ #endif
+ 
+     return buf;
