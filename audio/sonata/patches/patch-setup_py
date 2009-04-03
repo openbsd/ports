@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.4 2008/04/20 07:37:00 ajacoutot Exp $
---- setup.py.orig	Sat Apr 19 10:42:39 2008
-+++ setup.py	Sat Apr 19 10:43:53 2008
-@@ -70,10 +70,9 @@ setup(name='Sonata',
+$OpenBSD: patch-setup_py,v 1.5 2009/04/03 13:03:00 ajacoutot Exp $
+--- setup.py.orig	Wed Mar 18 03:23:09 2009
++++ setup.py	Fri Apr  3 14:29:44 2009
+@@ -77,10 +77,9 @@ setup(name='Sonata',
          extra_link_args=capture("pkg-config --libs gtk+-2.0 pygtk-2.0").split()
           ),],
          scripts = ['sonata/sonata'],
