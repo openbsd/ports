@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/08/19 23:44:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/04/03 12:55:08 espie Exp $
+@option no-default-conflict
+@conflict drupal-<6
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/
