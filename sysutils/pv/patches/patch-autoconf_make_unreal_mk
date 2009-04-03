@@ -1,0 +1,11 @@
+$OpenBSD: patch-autoconf_make_unreal_mk,v 1.1.1.1 2009/04/03 18:03:04 giovanni Exp $
+--- autoconf/make/unreal.mk.orig	Fri Apr  3 19:14:16 2009
++++ autoconf/make/unreal.mk	Fri Apr  3 19:14:27 2009
+@@ -155,7 +155,6 @@ install: all doc
+ 	                  "$(DESTDIR)/$(bindir)/$(package)"
+ 	$(INSTALL) -m 644 doc/quickref.1 \
+ 	                  "$(DESTDIR)/$(mandir)/man1/$(package).1"
+-	-$(DO_GZIP) "$(DESTDIR)/$(mandir)/man1/$(package).1"
+ 	if test -n "$(CATALOGS)"; then \
+ 	  catalogs='$(CATALOGS)'; \
+ 	  for cat in $$catalogs; do \
