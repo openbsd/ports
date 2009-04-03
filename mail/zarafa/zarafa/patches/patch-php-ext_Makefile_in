@@ -1,7 +1,7 @@
-$OpenBSD: patch-php-ext_Makefile_in,v 1.2 2009/03/05 08:01:26 ajacoutot Exp $
---- php-ext/Makefile.in.orig	Wed Dec 24 20:00:13 2008
-+++ php-ext/Makefile.in	Thu Jan  8 12:03:08 2009
-@@ -215,7 +215,7 @@ build_alias = @build_alias@
+$OpenBSD: patch-php-ext_Makefile_in,v 1.3 2009/04/03 17:30:40 ajacoutot Exp $
+--- php-ext/Makefile.in.orig	Thu Mar 26 14:35:50 2009
++++ php-ext/Makefile.in	Fri Apr  3 19:36:34 2009
+@@ -218,7 +218,7 @@ build_alias = @build_alias@
  build_cpu = @build_cpu@
  build_os = @build_os@
  build_vendor = @build_vendor@
@@ -10,7 +10,7 @@ $OpenBSD: patch-php-ext_Makefile_in,v 1.2 2009/03/05 08:01:26 ajacoutot Exp $
  datarootdir = @datarootdir@
  docdir = @docdir@
  dvidir = @dvidir@
-@@ -251,13 +251,13 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX \
+@@ -254,13 +254,13 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX \
  	$(PHP_INCLUDES) -I${top_srcdir}/common \
  	-I$(top_srcdir)/inetmapi
  

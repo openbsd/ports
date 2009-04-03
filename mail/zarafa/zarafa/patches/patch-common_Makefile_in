@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_Makefile_in,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
---- common/Makefile.in.orig	Thu Dec 11 22:18:07 2008
-+++ common/Makefile.in	Tue Dec 30 13:32:42 2008
-@@ -278,7 +278,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX \
+$OpenBSD: patch-common_Makefile_in,v 1.2 2009/04/03 17:30:40 ajacoutot Exp $
+--- common/Makefile.in.orig	Thu Mar 26 14:35:46 2009
++++ common/Makefile.in	Fri Apr  3 19:36:33 2009
+@@ -281,7 +281,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX \
  	-I${top_srcdir}/mapi4linux/include -I${top_srcdir}/provider/common \
  	-I${top_srcdir}/libfreebusy
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-common_Makefile_in,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
  libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
  			rtfutil.cpp									\
  			codepage.cpp							\
-@@ -293,7 +293,7 @@ libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
+@@ -296,7 +296,7 @@ libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
  			ZarafaCode.cpp								\
  			RecurrenceState.cpp						
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-common_Makefile_in,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
  libcommon_util_la_SOURCES = platform.cpp			\
  			platform.linux.cpp						\
  			md5.cpp									\
-@@ -309,7 +309,7 @@ libcommon_util_la_SOURCES = platform.cpp			\
+@@ -312,7 +312,7 @@ libcommon_util_la_SOURCES = platform.cpp			\
  			str1252.cpp								\
  			SymmetricCrypt.cpp		
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
---- configure.orig	Mon Jan 12 20:22:46 2009
-+++ configure	Wed Jan 28 23:17:58 2009
-@@ -20997,7 +20997,7 @@ else
+$OpenBSD: patch-configure,v 1.2 2009/04/03 17:30:40 ajacoutot Exp $
+--- configure.orig	Thu Mar 26 14:35:40 2009
++++ configure	Fri Apr  3 19:36:33 2009
+@@ -21636,7 +21636,7 @@ else
  fi
  
  if test "$want_release" = "yes"; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
  fi
  
  # Check whether --enable-oss was given.
-@@ -21549,9 +21549,9 @@ GSOAP_LIBS="-lz"
+@@ -22188,9 +22188,9 @@ GSOAP_LIBS="-lz"
  
  # check user given vmime location
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
  else
    VMIME_PREFIX=
  fi
-@@ -21832,7 +21832,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+@@ -22471,7 +22471,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
  _ACEOF
  
  		VMIME_CFLAGS=$VMIME_PREFIX
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
  
  else
  
-@@ -22116,7 +22116,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+@@ -22755,7 +22755,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
  #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
    ICAL_CFLAGS=$ICAL_PREFIX
@@ -41,7 +41,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
  else
    { { echo "$as_me:$LINENO: error: libical headers are not found" >&5
  echo "$as_me: error: libical headers are not found" >&2;}
-@@ -22892,13 +22892,13 @@ LIBS=$libs_keep
+@@ -23531,13 +23531,13 @@ LIBS=$libs_keep
  libs_keep=$LIBS
  # check lib, but do not set in link list
  
@@ -58,7 +58,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -22958,7 +22958,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
+@@ -23597,7 +23597,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  

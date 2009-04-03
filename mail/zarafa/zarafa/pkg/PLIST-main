@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2009/03/19 09:33:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/04/03 17:30:40 ajacoutot Exp $
 @newgroup _zarafa:700
 @newuser _zarafa:700:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
@@ -26,6 +26,7 @@ include/icalmapi/vevent.h
 include/inetmapi/
 include/inetmapi/ECMapiUtils.h
 include/inetmapi/ECVMIMEUtils.h
+include/inetmapi/MAPISMTPTransport.h
 include/inetmapi/MAPIToVMIME.h
 include/inetmapi/VMIMEToMAPI.h
 include/inetmapi/inetmapi.h

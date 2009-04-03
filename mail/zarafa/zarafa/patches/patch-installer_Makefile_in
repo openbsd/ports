@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_Makefile_in,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
---- installer/Makefile.in.orig	Sun Oct 19 18:18:19 2008
-+++ installer/Makefile.in	Sun Oct 19 18:19:01 2008
-@@ -262,12 +262,12 @@ distclean-libtool:
+$OpenBSD: patch-installer_Makefile_in,v 1.2 2009/04/03 17:30:40 ajacoutot Exp $
+--- installer/Makefile.in.orig	Thu Mar 26 14:35:47 2009
++++ installer/Makefile.in	Fri Apr  3 19:36:34 2009
+@@ -265,12 +265,12 @@ distclean-libtool:
  uninstall-info-am:
  install-dist_dataDATA: $(dist_data_DATA)
  	@$(NORMAL_INSTALL)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-perl_Makefile_in,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
---- perl/Makefile.in.orig	Tue Oct 14 15:59:43 2008
-+++ perl/Makefile.in	Tue Oct 14 16:00:15 2008
-@@ -527,7 +527,7 @@ uninstall-am: uninstall-info-am uninstall-libLTLIBRARI
+$OpenBSD: patch-perl_Makefile_in,v 1.2 2009/04/03 17:30:40 ajacoutot Exp $
+--- perl/Makefile.in.orig	Thu Mar 26 14:35:49 2009
++++ perl/Makefile.in	Fri Apr  3 19:36:34 2009
+@@ -530,7 +530,7 @@ uninstall-am: uninstall-info-am uninstall-libLTLIBRARI
  
  
  .xs.cpp: typemap

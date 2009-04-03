@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_client_Makefile_in,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
---- provider/client/Makefile.in.orig	Wed Dec 24 20:00:14 2008
-+++ provider/client/Makefile.in	Wed Jan  7 16:25:42 2009
-@@ -333,7 +333,7 @@ libzarafaclient_la_LIBADD = $(GSOAP_LIBS) $(SSL_LIBS)	
+$OpenBSD: patch-provider_client_Makefile_in,v 1.2 2009/04/03 17:30:40 ajacoutot Exp $
+--- provider/client/Makefile.in.orig	Thu Mar 26 14:35:50 2009
++++ provider/client/Makefile.in	Fri Apr  3 19:36:34 2009
+@@ -336,7 +336,7 @@ libzarafaclient_la_LIBADD = $(GSOAP_LIBS) $(SSL_LIBS)	
  	${top_builddir}/mapi4linux/src/libmapi.la			\
  	-lstdc++ $(UUID_LIBS)
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-mapi4linux_src_Makefile_in,v 1.1.1.1 2009/02/16 09:44:38 ajacoutot Exp $
---- mapi4linux/src/Makefile.in.orig	Tue Feb  3 16:49:12 2009
-+++ mapi4linux/src/Makefile.in	Tue Feb  3 16:49:26 2009
-@@ -243,7 +243,7 @@ AM_LDFLAGS = $(DL_LIBS) -export-symbols ${top_srcdir}/
+$OpenBSD: patch-mapi4linux_src_Makefile_in,v 1.2 2009/04/03 17:30:40 ajacoutot Exp $
+--- mapi4linux/src/Makefile.in.orig	Thu Mar 26 14:35:49 2009
++++ mapi4linux/src/Makefile.in	Fri Apr  3 19:36:34 2009
+@@ -246,7 +246,7 @@ AM_LDFLAGS = $(DL_LIBS) -export-symbols ${top_srcdir}/
  libmapi_la_LIBADD = ${top_builddir}/common/libcommon_util.la
  
  # required because we're exporting extern "C" functions and want to filter with 'export-symbols'

@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_plugins_Makefile_in,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
---- provider/plugins/Makefile.in.orig	Sun Jan  4 19:25:41 2009
-+++ provider/plugins/Makefile.in	Sun Jan  4 19:25:59 2009
-@@ -280,11 +280,11 @@ pkglib_LTLIBRARIES = $(am__append_1) $(am__append_2) d
+$OpenBSD: patch-provider_plugins_Makefile_in,v 1.2 2009/04/03 17:30:40 ajacoutot Exp $
+--- provider/plugins/Makefile.in.orig	Thu Mar 26 14:35:51 2009
++++ provider/plugins/Makefile.in	Fri Apr  3 19:36:34 2009
+@@ -283,11 +283,11 @@ pkglib_LTLIBRARIES = $(am__append_1) $(am__append_2) d
  @WITH_UNIX_TRUE@unixplugin_la_LIBADD = ${top_builddir}/common/libcommon_util.la $(MYSQL_LIBS) $(CRYPT_LIBS)
  @WITH_LDAP_TRUE@ldapplugin_la_CXXFLAGS = $(LDAP_FLAGS) -DLDAP_THREAD_SAFE
  @WITH_LDAP_TRUE@ldapplugin_la_SOURCES = LDAPUserPlugin.cpp LDAPUserPlugin.h ldappasswords.cpp ldappasswords.h $(COMMON_PLUGIN_FILES)

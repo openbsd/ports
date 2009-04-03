@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
---- doc/Makefile.in.orig	Sun Oct 19 18:15:49 2008
-+++ doc/Makefile.in	Sun Oct 19 18:17:59 2008
-@@ -364,12 +364,12 @@ uninstall-man5:
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2009/04/03 17:30:40 ajacoutot Exp $
+--- doc/Makefile.in.orig	Thu Mar 26 14:35:46 2009
++++ doc/Makefile.in	Fri Apr  3 19:36:33 2009
+@@ -367,12 +367,12 @@ uninstall-man5:
  	done
  install-dist_dataDATA: $(dist_data_DATA)
  	@$(NORMAL_INSTALL)

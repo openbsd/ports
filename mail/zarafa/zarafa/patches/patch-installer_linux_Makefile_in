@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_linux_Makefile_in,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
---- installer/linux/Makefile.in.orig	Mon Sep 22 21:58:07 2008
-+++ installer/linux/Makefile.in	Sun Oct 19 18:20:23 2008
-@@ -187,6 +187,7 @@ datadir = ${prefix}/share/zarafa
+$OpenBSD: patch-installer_linux_Makefile_in,v 1.2 2009/04/03 17:30:40 ajacoutot Exp $
+--- installer/linux/Makefile.in.orig	Thu Mar 26 14:35:47 2009
++++ installer/linux/Makefile.in	Fri Apr  3 19:36:34 2009
+@@ -190,6 +190,7 @@ datadir = ${prefix}/share/zarafa
  datarootdir = @datarootdir@
  docdir = @docdir@
  dvidir = @dvidir@
@@ -9,7 +9,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.1.1.1 2009/02/16 09:44:37 ajacou
  exec_prefix = @exec_prefix@
  host = @host@
  host_alias = @host_alias@
-@@ -215,12 +216,8 @@ target_alias = @target_alias@
+@@ -218,12 +219,8 @@ target_alias = @target_alias@
  dist_data_DATA = server.cfg unix.cfg ldap.openldap.cfg ldap.active-directory.cfg \
  	spooler.cfg gateway.cfg monitor.cfg dagent.cfg ical.cfg licensed.cfg \
  	zarafa.logrotate \
@@ -23,7 +23,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.1.1.1 2009/02/16 09:44:37 ajacou
  
  dist_bin_SCRIPTS = zarafa-autorespond
  dist_sysconf_DATA = ipsseg.crt
-@@ -287,12 +284,12 @@ distclean-libtool:
+@@ -290,12 +287,12 @@ distclean-libtool:
  uninstall-info-am:
  install-dist_dataDATA: $(dist_data_DATA)
  	@$(NORMAL_INSTALL)
