@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2009/02/14 08:44:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2009/04/03 09:55:06 giovanni Exp $
 
 COMMENT=	extension for unparsed raw whois information
 
-DISTNAME=	Net-Whois-Raw-1.63
+DISTNAME=	Net-Whois-Raw-1.67
 CATEGORIES=	net
 
 # perl
@@ -15,7 +15,8 @@ MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
 
-RUN_DEPENDS=	::www/p5-URI \
-		::www/p5-libwww
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		::www/p5-URI \
+			::www/p5-libwww
 
 .include <bsd.port.mk>
