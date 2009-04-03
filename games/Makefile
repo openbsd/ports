@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2009/03/19 18:31:38 landry Exp $
+# $OpenBSD: Makefile,v 1.190 2009/04/03 17:57:38 landry Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -43,6 +43,7 @@
      SUBDIR += dungeon-crawl
      SUBDIR += eboard
      SUBDIR += eboard-extras
+     SUBDIR += einstein
      SUBDIR += enigma
      SUBDIR += f1spirit
      SUBDIR += falconseye
