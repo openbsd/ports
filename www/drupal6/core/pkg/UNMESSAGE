@@ -1,0 +1,8 @@
+Your database is still there.
+
+In mysql, if you want to finish wiping it out, you probably want to do 
+something like:
+
+drop database drupal;
+drop user drupal;
+
