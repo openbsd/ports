@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/03 15:45:41 sthen Exp $
+lib/python${MODPY_VERSION}/site-packages/pcapy-0.10.5-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pcapy.so
+share/doc/pcapy/
+share/doc/pcapy/LICENSE
+share/doc/pcapy/README
+share/doc/pcapy/pcapy.html

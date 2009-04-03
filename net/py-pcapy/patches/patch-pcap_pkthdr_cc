@@ -1,0 +1,12 @@
+$OpenBSD: patch-pcap_pkthdr_cc,v 1.1.1.1 2009/04/03 15:45:41 sthen Exp $
+--- pcap_pkthdr.cc.orig	Fri Apr  3 11:52:32 2009
++++ pcap_pkthdr.cc	Fri Apr  3 11:52:36 2009
+@@ -24,7 +24,7 @@
+ // internal pcapobject
+ typedef struct {
+ 	PyObject_HEAD
+-	struct timeval ts;
++	struct bpf_timeval ts;
+ 	bpf_u_int32 caplen;
+ 	bpf_u_int32 len;
+ } pkthdr;

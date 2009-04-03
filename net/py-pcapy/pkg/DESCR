@@ -1,0 +1,6 @@
+Pcapy is a Python extension module that enables software written in Python
+to access the routines from the pcap packet capture library.
+
+Pcapy is most useful when used together with a packet handling package such
+as Impacket, a collection of Python classes for contructing and dissecting
+network packets.
