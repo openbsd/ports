@@ -1,22 +1,26 @@
-$OpenBSD: patch-includes_common_inc,v 1.3 2008/10/25 14:20:34 espie Exp $
---- includes/common.inc.orig	Wed Jul  9 21:34:30 2008
-+++ includes/common.inc	Sat Oct 25 16:15:27 2008
-@@ -1618,8 +1618,17 @@ function drupal_clear_css_cache() {
+$OpenBSD: patch-includes_common_inc,v 1.4 2009/04/03 19:03:03 espie Exp $
+--- includes/common.inc.orig	Fri Jan 16 20:26:09 2009
++++ includes/common.inc	Fri Apr  3 20:58:49 2009
+@@ -1726,11 +1726,20 @@ function drupal_clear_css_cache() {
+  *   far for $scope is returned.
   */
  function drupal_add_js($data = NULL, $type = 'module', $scope = 'header', $defer = FALSE, $cache = TRUE) {
++  $path = drupal_get_path('module', 'jquery_update');
    if (!is_null($data)) {
 -    _drupal_add_js('misc/jquery.js', 'core', 'header', FALSE, $cache);
-+    if (module_exists('jquery_update')) {
-+      $path = drupal_get_path('module', 'jquery_update');
++    if (!is_null($path)) {
 +      _drupal_add_js($path .'/misc/jquery.js', 'core', 'header', FALSE, $cache);
 +    } else {
 +      _drupal_add_js('misc/jquery.js', 'core', 'header', FALSE, $cache);
 +    }
      _drupal_add_js('misc/drupal.js', 'core', 'header', FALSE, $cache);
-+    $altname = $path.'/'.$data;
-+    if (file_exists($altname)) {
-+      return _drupal_add_js($altname, $type, $scope, $defer, $cache);
-+    }
    }
-   return _drupal_add_js($data, $type, $scope, $defer, $cache);
+-  return _drupal_add_js($data, $type, $scope, $defer, $cache);
++  if (!is_null($path) && file_exists($path.'/'.$data)) {
++    return _drupal_add_js($path.'/'.$data, $type, $scope, $defer, $cache);
++  } else {
++    return _drupal_add_js($data, $type, $scope, $defer, $cache);
++  }
  }
+ 
+ /**
