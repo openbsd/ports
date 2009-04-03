@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/07 14:23:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2009/04/03 21:30:50 sturm Exp $
 
 COMMENT=	OCaml interface to GTK+
 
 DISTNAME=	lablgtk-1.2.7
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
@@ -19,7 +19,6 @@ WANTLIB += X11 Xext Xi glib gmodule m
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/
 
 LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
-RUN_DEPENDS=	::lang/ocaml
 
 FAKE_FLAGS=	BINDIR=${WRKINST}${PREFIX}/bin \
 		INSTALLDIR=${WRKINST}${PREFIX}/lib/ocaml/lablgtk \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/11 21:20:27 avsm Exp $
+# $OpenBSD: Makefile,v 1.17 2009/04/03 21:30:50 sturm Exp $
 
 # until tested on others, even though bytecode is produced
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS=	i386 amd64 powerpc
 COMMENT=	framework for analysis and transformation of C
 
 DISTNAME=	cil-1.3.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://manju.cs.berkeley.edu/cil/distrib/
 
