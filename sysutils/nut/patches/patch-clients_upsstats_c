@@ -1,7 +1,7 @@
-$OpenBSD: patch-clients_upsstats_c,v 1.6 2008/09/08 19:38:30 martynas Exp $
---- clients/upsstats.c.orig	Fri Feb 22 21:21:11 2008
-+++ clients/upsstats.c	Wed Aug 27 17:18:49 2008
-@@ -825,7 +825,7 @@ static void display_template(const char *tfn)
+$OpenBSD: patch-clients_upsstats_c,v 1.7 2009/04/03 15:40:12 sthen Exp $
+--- clients/upsstats.c.orig	Tue Feb 17 09:20:43 2009
++++ clients/upsstats.c	Wed Mar 18 21:27:43 2009
+@@ -835,7 +835,7 @@ static void display_template(const char *tfn)
  {
  	char	fn[SMALLBUF], buf[LARGEBUF];	
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-clients_upsstats_c,v 1.6 2008/09/08 19:38:30 martynas Exp $
  
  	tf = fopen(fn, "r");
  
-@@ -957,7 +957,7 @@ static void load_hosts_conf(void)
+@@ -955,7 +955,7 @@ static void load_hosts_conf(void)
  	char	fn[SMALLBUF];
  	PCONF_CTX_t	ctx;
  

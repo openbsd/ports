@@ -1,6 +1,6 @@
-$OpenBSD: patch-clients_upsset_c,v 1.7 2008/09/08 19:38:30 martynas Exp $
---- clients/upsset.c.orig	Fri Feb 22 21:21:11 2008
-+++ clients/upsset.c	Wed Aug 27 17:18:49 2008
+$OpenBSD: patch-clients_upsset_c,v 1.8 2009/04/03 15:40:12 sthen Exp $
+--- clients/upsset.c.orig	Tue Feb 17 09:20:43 2009
++++ clients/upsset.c	Wed Mar 18 21:27:43 2009
 @@ -192,7 +192,7 @@ static void do_pickups(const char *currfunc)
  	char	hostfn[SMALLBUF];
  	PCONF_CTX_t	ctx;
@@ -10,7 +10,7 @@ $OpenBSD: patch-clients_upsset_c,v 1.7 2008/09/08 19:38:30 martynas Exp $
  
  	printf("<FORM METHOD=\"POST\" ACTION=\"upsset.cgi\">\n");
  
-@@ -990,7 +990,7 @@ static void check_conf(void)
+@@ -981,7 +981,7 @@ static void check_conf(void)
  	char	fn[SMALLBUF];
  	PCONF_CTX_t	ctx;
  
