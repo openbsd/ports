@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/03 14:07:58 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}/themesettingsapi/
+${DRUPAL_MODS}/themesettingsapi/CHANGELOG.txt
+${DRUPAL_MODS}/themesettingsapi/LICENSE.txt
+${DRUPAL_MODS}/themesettingsapi/README.txt
+${DRUPAL_MODS}/themesettingsapi/themesettingsapi.admin.inc
+${DRUPAL_MODS}/themesettingsapi/themesettingsapi.info
+${DRUPAL_MODS}/themesettingsapi/themesettingsapi.module
+${DRUPAL_MODS}/themesettingsapi/translations/
+${DRUPAL_MODS}/themesettingsapi/translations/de.po
+${DRUPAL_MODS}/themesettingsapi/translations/ja.po
+${DRUPAL_MODS}/themesettingsapi/translations/themesettingsapi.pot

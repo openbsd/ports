@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/03 14:07:58 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}/admin_menu/
+${DRUPAL_MODS}/admin_menu/CHANGELOG.txt
+${DRUPAL_MODS}/admin_menu/LICENSE.txt
+${DRUPAL_MODS}/admin_menu/README.txt
+${DRUPAL_MODS}/admin_menu/admin_menu-rtl.css
+${DRUPAL_MODS}/admin_menu/admin_menu.css
+${DRUPAL_MODS}/admin_menu/admin_menu.inc
+${DRUPAL_MODS}/admin_menu/admin_menu.info
+${DRUPAL_MODS}/admin_menu/admin_menu.install
+${DRUPAL_MODS}/admin_menu/admin_menu.js
+${DRUPAL_MODS}/admin_menu/admin_menu.module
+${DRUPAL_MODS}/admin_menu/images/
+${DRUPAL_MODS}/admin_menu/images/arrow-rtl.png
+${DRUPAL_MODS}/admin_menu/images/arrow.png
+${DRUPAL_MODS}/admin_menu/images/bkg.png
+${DRUPAL_MODS}/admin_menu/images/bkg_tab.png
+${DRUPAL_MODS}/admin_menu/images/icon_users.png
+${DRUPAL_MODS}/admin_menu/tests/
+${DRUPAL_MODS}/admin_menu/tests/admin_menu.test
+${DRUPAL_MODS}/admin_menu/translations/
+${DRUPAL_MODS}/admin_menu/translations/admin_menu.pot
+${DRUPAL_MODS}/admin_menu/translations/da.po
+${DRUPAL_MODS}/admin_menu/translations/de.po
+${DRUPAL_MODS}/admin_menu/translations/es.po
+${DRUPAL_MODS}/admin_menu/translations/hu.po
+${DRUPAL_MODS}/admin_menu/translations/ja.po
+${DRUPAL_MODS}/admin_menu/translations/nl.po
+${DRUPAL_MODS}/admin_menu/translations/pt-br.po
+${DRUPAL_MODS}/admin_menu/translations/ru.po
+${DRUPAL_MODS}/admin_menu/translations/sv.po
