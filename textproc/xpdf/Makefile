@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2008/04/25 19:19:05 deanna Exp $
+# $OpenBSD: Makefile,v 1.63 2009/04/04 14:45:48 naddy Exp $
 
 COMMENT-main=	PDF viewer for X11
 COMMENT-utils=	PDF conversion tools
 
 DISTNAME=	xpdf-3.02
-PKGNAME-main=	xpdf-3.02pl2p4
-PKGNAME-utils=	xpdf-utils-3.02pl2p1
+PKGNAME-main=	xpdf-3.02pl2p5
+PKGNAME-utils=	xpdf-utils-3.02pl2p2
 CATEGORIES=	textproc x11
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+= --enable-multithreaded \
 		 --without-Sgm-library \
 		 --without-libpaper-library
 
-CONFIGURE_ENV=  CPPFLAGS="-I${X11BASE}/include/freetype2 -I${X11BASE}/include -I${LOCALBASE}/include" \
+CONFIGURE_ENV=  CPPFLAGS='-I${X11BASE}/include/freetype2 -I${X11BASE}/include -I${LOCALBASE}/include -DLOCALBASE="\"${LOCALBASE}\""' \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lz"
 
 LIB_DEPENDS-utils=
