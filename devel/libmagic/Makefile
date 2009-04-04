@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2008/09/25 20:43:56 rui Exp $
+# $OpenBSD: Makefile,v 1.10 2009/04/04 18:28:14 rui Exp $
 
 COMMENT=	library to determine file type
-V=		4.26
+V=		5.00
 DISTNAME= 	file-${V}
 PKGNAME=	libmagic-${V}
-SHARED_LIBS=	magic	1.0
+SHARED_LIBS=	magic	2.0
 CATEGORIES=	sysutils devel
 
 HOMEPAGE=	ftp://ftp.astron.com/pub/file/

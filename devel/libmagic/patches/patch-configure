@@ -1,21 +1,21 @@
-$OpenBSD: patch-configure,v 1.1 2008/09/25 20:43:56 rui Exp $
---- configure.orig	Sat Sep 20 17:43:15 2008
-+++ configure	Sat Sep 20 17:43:46 2008
-@@ -23727,7 +23727,7 @@ echo "${ECHO_T}yes" >&6; }
+$OpenBSD: patch-configure,v 1.2 2009/04/04 18:28:15 rui Exp $
+--- configure.orig	Tue Feb  3 20:16:11 2009
++++ configure	Sat Mar 28 13:28:59 2009
+@@ -23930,7 +23930,7 @@ echo "${ECHO_T}yes" >&6; }
     WARNINGS="-Wall -Wstrict-prototypes -Wmissing-prototypes -Wpointer-arith \
         -Wmissing-declarations -Wredundant-decls -Wnested-externs \
         -Wsign-compare -Wreturn-type -Wswitch -Wshadow \
 -       -Wcast-qual -Wwrite-strings -Wextra -Wunused-parameter"
-+       -Wcast-qual -Wwrite-strings -Wunused-parameter"
++       -Wcast-qual -Wwrite-strings"
  fi
  else
  
-@@ -23741,7 +23741,7 @@ echo "${ECHO_T}yes" >&6; }
+@@ -23944,7 +23944,7 @@ echo "${ECHO_T}yes" >&6; }
     WARNINGS="-Wall -Wstrict-prototypes -Wmissing-prototypes -Wpointer-arith \
         -Wmissing-declarations -Wredundant-decls -Wnested-externs \
         -Wsign-compare -Wreturn-type -Wswitch -Wshadow \
 -       -Wcast-qual -Wwrite-strings -Wextra -Wunused-parameter"
-+       -Wcast-qual -Wwrite-strings -Wunused-parameter"
++       -Wcast-qual -Wwrite-strings"
  fi
  fi
  
