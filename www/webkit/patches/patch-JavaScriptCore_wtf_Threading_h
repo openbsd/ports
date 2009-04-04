@@ -1,9 +1,9 @@
-$OpenBSD: patch-JavaScriptCore_wtf_Threading_h,v 1.2 2009/03/08 20:00:41 landry Exp $
+$OpenBSD: patch-JavaScriptCore_wtf_Threading_h,v 1.3 2009/04/04 10:35:26 landry Exp $
 
 Sparc64 definitely doesn't like __gnu_cxx::__atomic_add.
---- JavaScriptCore/wtf/Threading.h.orig	Sun Jan 25 03:24:37 2009
-+++ JavaScriptCore/wtf/Threading.h	Sun Feb 22 22:38:46 2009
-@@ -197,7 +197,7 @@ inline int atomicDecrement(int volatile* addend) { ret
+--- JavaScriptCore/wtf/Threading.h.orig	Sat Mar 14 11:04:35 2009
++++ JavaScriptCore/wtf/Threading.h	Mon Mar 23 23:08:39 2009
+@@ -204,7 +204,7 @@ inline int atomicDecrement(int volatile* addend) { ret
  inline void atomicIncrement(int volatile* addend) { OSAtomicIncrement32Barrier(const_cast<int*>(addend)); }
  inline int atomicDecrement(int volatile* addend) { return OSAtomicDecrement32Barrier(const_cast<int*>(addend)); }
  

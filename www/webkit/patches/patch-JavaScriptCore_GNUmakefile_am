@@ -1,7 +1,7 @@
-$OpenBSD: patch-JavaScriptCore_GNUmakefile_am,v 1.4 2009/03/08 20:00:41 landry Exp $
---- JavaScriptCore/GNUmakefile.am.orig	Sat Feb 21 04:38:12 2009
-+++ JavaScriptCore/GNUmakefile.am	Thu Mar  5 21:40:38 2009
-@@ -493,7 +493,7 @@ Programs_minidom_CFLAGS = \
+$OpenBSD: patch-JavaScriptCore_GNUmakefile_am,v 1.5 2009/04/04 10:35:26 landry Exp $
+--- JavaScriptCore/GNUmakefile.am.orig	Thu Feb 26 07:17:57 2009
++++ JavaScriptCore/GNUmakefile.am	Mon Mar 23 23:08:39 2009
+@@ -495,7 +495,7 @@ Programs_minidom_CFLAGS = \
  Programs_minidom_LDADD = \
  	 libJavaScriptCore.la \
  	 -lm \

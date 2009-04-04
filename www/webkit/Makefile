@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/08 20:00:41 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2009/04/04 10:35:26 landry Exp $
 
 COMMENT =	open source web browser engine
 
-V = 41121
+V = 41894
 DISTNAME =	WebKit-r${V}
 PKGNAME =	webkit-${V}
 CATEGORIES =	www
@@ -38,6 +38,8 @@ MODGCC4_LANGS =	c c++
 AUTOMAKE_VERSION =	1.9
 AUTOCONF_VERSION =	2.59
 CONFIGURE_STYLE =	gnu
+
+CONFIGURE_ARGS =	--disable-video
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11"
