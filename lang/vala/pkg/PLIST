@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/03/22 19:18:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/04/04 15:14:58 ajacoutot Exp $
 %%SHARED%%
 bin/vala-gen-introspect
 @bin bin/valac
@@ -76,6 +76,7 @@ include/vala-1.0/gobject/valaccodeassignmentmodule.h
 include/vala-1.0/gobject/valaccodebasemodule.h
 include/vala-1.0/gobject/valaccodecompiler.h
 include/vala-1.0/gobject/valaccodecontrolflowmodule.h
+include/vala-1.0/gobject/valaccodedeclarationspace.h
 include/vala-1.0/gobject/valaccodedelegatemodule.h
 include/vala-1.0/gobject/valaccodegenerator.h
 include/vala-1.0/gobject/valaccodememberaccessmodule.h
@@ -354,8 +355,11 @@ share/vala/vapi/libgsf-1.vapi
 share/vala/vapi/libnotify.deps
 share/vala/vapi/libnotify.vapi
 share/vala/vapi/liboobs-1.vapi
+share/vala/vapi/libosso.vapi
 share/vala/vapi/libpanelapplet-2.0.deps
 share/vala/vapi/libpanelapplet-2.0.vapi
+share/vala/vapi/librsvg-2.0.deps
+share/vala/vapi/librsvg-2.0.vapi
 share/vala/vapi/libsexy.deps
 share/vala/vapi/libsexy.vapi
 share/vala/vapi/libsoup-2.2.vapi
@@ -389,6 +393,7 @@ share/vala/vapi/tiff.vapi
 share/vala/vapi/tracker-indexer-module-1.0.vapi
 share/vala/vapi/unique-1.0.deps
 share/vala/vapi/unique-1.0.vapi
+share/vala/vapi/v4l2.vapi
 share/vala/vapi/vala-1.0.vapi
 share/vala/vapi/vte.deps
 share/vala/vapi/vte.vapi
