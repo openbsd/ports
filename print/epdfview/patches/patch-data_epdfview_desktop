@@ -1,11 +1,11 @@
-$OpenBSD: patch-data_epdfview_desktop,v 1.1 2008/05/02 11:55:42 fgsch Exp $
---- data/epdfview.desktop.orig	Thu May  1 14:20:04 2008
-+++ data/epdfview.desktop	Thu May  1 14:23:04 2008
-@@ -8,7 +8,7 @@ Exec=epdfview %f
+$OpenBSD: patch-data_epdfview_desktop,v 1.2 2009/04/04 09:25:25 landry Exp $
+--- data/epdfview.desktop.orig	Sat Feb 28 18:39:00 2009
++++ data/epdfview.desktop	Sat Apr  4 11:06:03 2009
+@@ -7,7 +7,7 @@ Exec=epdfview %f
  GenericName=PDF Viewer
  GenericName[ca]=Visor PDF
  GenericName[es]=Visor PDF
--Icon=postscript-viewer.png
+-Icon=icon_epdfview-48
 +Icon=epdfview.png
  Name=ePDFViewer
  Name[ca]=ePDFViewer

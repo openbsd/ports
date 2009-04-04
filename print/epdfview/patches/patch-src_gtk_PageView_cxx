@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_gtk_PageView_cxx,v 1.1 2009/04/04 09:25:25 landry Exp $
+--- src/gtk/PageView.cxx.orig	Sat Feb 28 22:00:35 2009
++++ src/gtk/PageView.cxx	Sat Apr  4 11:06:03 2009
+@@ -527,13 +527,6 @@ page_view_scrolled_cb (GtkWidget *widget, GdkEventScro
+ {
+     g_assert ( NULL != data && "The data parameter is NULL.");
+ 
+-    // don't scroll when the CRTL-Button is down, because then the page should
+-    // actually be zoomed and not scrolled. Zooming is handelt by the MainView
+-    // class.
+-    if ( event->state & GDK_CONTROL_MASK )
+-    {
+-        return FALSE;
+-    }
+     PagePter *pter = (PagePter *)data;
+     GtkAdjustment *adjustment = 
+         gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (widget));

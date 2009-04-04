@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/12 18:13:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2009/04/04 09:25:25 landry Exp $
 
 COMMENT=	lightweight PDF document viewer
 
-DISTNAME=	epdfview-0.1.6
-PKGNAME=	${DISTNAME}p6
+DISTNAME=	epdfview-0.1.7
 CATEGORIES=	print
 HOMEPAGE=	http://trac.emma-soft.com/epdfview/
 
-MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
+MAINTAINER=	Brynet <brynet@gmail.com>
 
 MASTER_SITES=	${HOMEPAGE}chrome/site/releases/
 
 EXTRACT_SUFX=	.tar.bz2
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -41,10 +40,10 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mcups}
 WANTLIB+=		crypto ssl
-LIB_DEPENDS+=           cups.>=3:cups->=1.2:print/cups
+LIB_DEPENDS+=	cups.>=3:cups->=1.2:print/cups
 CONFIGURE_ARGS+=	--with-cups
 .else
-CONFIGURE_ARGS+=        --without-cups
+CONFIGURE_ARGS+=	--without-cups
 .endif
 
 ICONDIR = $(PREFIX)/share/icons/hicolor
