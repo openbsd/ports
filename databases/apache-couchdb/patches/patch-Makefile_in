@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2009/03/16 22:05:59 bernd Exp $
---- Makefile.in.orig	Sun Mar  8 00:04:27 2009
-+++ Makefile.in	Sun Mar  8 00:04:43 2009
-@@ -225,7 +225,7 @@ version_release = @version_release@
+$OpenBSD: patch-Makefile_in,v 1.2 2009/04/04 10:12:39 bernd Exp $
+--- Makefile.in.orig	Tue Mar 24 17:14:56 2009
++++ Makefile.in	Wed Apr  1 15:43:01 2009
+@@ -231,7 +231,7 @@ version_release = @version_release@
  version_revision = @version_revision@
  version_stage = @version_stage@
- SUBDIRS = bin etc src share var
+ SUBDIRS = bin etc src/couchdb src/ibrowse src/mochiweb share test var utils
 -localdoc_DATA = AUTHORS.gz BUGS.gz CHANGES.gz NEWS.gz README.gz THANKS.gz
 +localdoc_DATA = AUTHORS BUGS CHANGES NEWS README THANKS
  DISTCLEANFILES = $(localdoc_DATA)
