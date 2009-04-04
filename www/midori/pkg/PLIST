@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/03/08 20:01:18 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/04/04 11:05:08 landry Exp $
 @bin bin/midori
 lib/midori/
+lib/midori/libcolorful-tabs.so
 lib/midori/libmouse-gestures.so
 lib/midori/libpage-holder.so
 lib/midori/libstatusbar-features.so
@@ -48,6 +49,8 @@ share/locale/ru/LC_MESSAGES/midori.mo
 share/locale/sv/LC_MESSAGES/midori.mo
 share/locale/tr/LC_MESSAGES/midori.mo
 share/locale/uk/LC_MESSAGES/midori.mo
+share/locale/zh_CN/LC_MESSAGES/midori.mo
+share/locale/zh_TW/LC_MESSAGES/midori.mo
 share/midori/
 share/midori/logo-shade.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

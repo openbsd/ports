@@ -3,7 +3,3 @@ compliant icon-theme (like gnome-icon-theme or tango-icon-theme) and
 set it as default through a ~/.gtkrc-2.0 file containing :
 
 gtk-icon-theme-name = "<theme name>"
-
-If https page fails to open, you may have to set
-WEBKIT_IGNORE_SSL_ERRORS=1 in your environment before launching midori.
-(see https://bugs.webkit.org/show_bug.cgi?id=19146)
