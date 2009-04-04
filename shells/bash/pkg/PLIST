@@ -1,10 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.12 2006/10/14 18:03:10 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2009/04/04 19:42:18 naddy Exp $
 @pkgpath shells/bash,static
 @shell bin/bash
 bin/bashbug
 @info info/bash.info
 @man man/man1/bash.1
 @man man/man1/bashbug.1
+share/locale/af/
+share/locale/af/LC_MESSAGES/
+share/locale/af/LC_MESSAGES/bash.mo
+share/locale/bg/LC_MESSAGES/bash.mo
+share/locale/ca/LC_MESSAGES/bash.mo
+share/locale/cs/LC_MESSAGES/bash.mo
+share/locale/de/LC_MESSAGES/bash.mo
 share/locale/en@boldquot/LC_MESSAGES/bash.mo
 share/locale/en@quot/LC_MESSAGES/bash.mo
+share/locale/eo/LC_MESSAGES/bash.mo
+share/locale/es/LC_MESSAGES/bash.mo
+share/locale/et/LC_MESSAGES/bash.mo
+share/locale/fr/LC_MESSAGES/bash.mo
+share/locale/hu/LC_MESSAGES/bash.mo
+share/locale/id/LC_MESSAGES/bash.mo
+share/locale/ja/LC_MESSAGES/bash.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/bash.mo
+share/locale/nl/LC_MESSAGES/bash.mo
+share/locale/pl/LC_MESSAGES/bash.mo
+share/locale/pt_BR/LC_MESSAGES/bash.mo
+share/locale/ro/LC_MESSAGES/bash.mo
 share/locale/ru/LC_MESSAGES/bash.mo
+share/locale/sk/LC_MESSAGES/bash.mo
+share/locale/sv/LC_MESSAGES/bash.mo
+share/locale/tr/LC_MESSAGES/bash.mo
+share/locale/vi/LC_MESSAGES/bash.mo
+share/locale/zh_TW/LC_MESSAGES/bash.mo

@@ -1,7 +1,7 @@
-$OpenBSD: patch-builtins_enable_def,v 1.1 2004/07/30 17:02:49 naddy Exp $
---- builtins/enable.def.orig	Sat Dec 20 00:07:07 2003
-+++ builtins/enable.def	Fri Jul 30 15:10:33 2004
-@@ -316,9 +316,16 @@ dyn_load_builtin (list, flags, filename)
+$OpenBSD: patch-builtins_enable_def,v 1.2 2009/04/04 19:42:18 naddy Exp $
+--- builtins/enable.def.orig	Sun Jan  4 20:32:22 2009
++++ builtins/enable.def	Tue Feb 24 18:37:05 2009
+@@ -325,9 +325,16 @@ dyn_load_builtin (list, flags, filename)
        name = list->word->word;
  
        size = strlen (name);
