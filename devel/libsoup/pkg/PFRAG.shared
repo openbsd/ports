@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.11 2008/06/02 16:42:47 jasper Exp $
-@lib lib/libsoup-${API_VERSION}.so.${LIBsoup-2.4_VERSION}

@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST-gnome,v 1.1 2009/04/04 10:25:48 landry Exp $
+%%SHARED%%
+include/libsoup-gnome-${API_VERSION}/
+include/libsoup-gnome-${API_VERSION}/libsoup/
+include/libsoup-gnome-${API_VERSION}/libsoup/soup-cookie-jar-sqlite.h
+include/libsoup-gnome-${API_VERSION}/libsoup/soup-gnome-features.h
+include/libsoup-gnome-${API_VERSION}/libsoup/soup-gnome.h
+lib/libsoup-gnome-${API_VERSION}.a
+lib/libsoup-gnome-${API_VERSION}.la
+lib/pkgconfig/libsoup-gnome-${API_VERSION}.pc

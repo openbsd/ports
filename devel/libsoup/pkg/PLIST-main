@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/01/29 20:08:42 sturm Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2009/04/04 10:25:48 landry Exp $
 @pkgpath devel/libsoup,ssl
 %%SHARED%%
 include/libsoup-${API_VERSION}/
@@ -8,6 +8,7 @@ include/libsoup-${API_VERSION}/libsoup/soup-auth-domain-basic.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth-domain-digest.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth-domain.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth.h
+include/libsoup-${API_VERSION}/libsoup/soup-cookie-jar-text.h
 include/libsoup-${API_VERSION}/libsoup/soup-cookie-jar.h
 include/libsoup-${API_VERSION}/libsoup/soup-cookie.h
 include/libsoup-${API_VERSION}/libsoup/soup-date.h
@@ -20,7 +21,9 @@ include/libsoup-${API_VERSION}/libsoup/soup-message-headers.h
 include/libsoup-${API_VERSION}/libsoup/soup-message.h
 include/libsoup-${API_VERSION}/libsoup/soup-method.h
 include/libsoup-${API_VERSION}/libsoup/soup-misc.h
+include/libsoup-${API_VERSION}/libsoup/soup-multipart.h
 include/libsoup-${API_VERSION}/libsoup/soup-portability.h
+include/libsoup-${API_VERSION}/libsoup/soup-proxy-resolver.h
 include/libsoup-${API_VERSION}/libsoup/soup-server.h
 include/libsoup-${API_VERSION}/libsoup/soup-session-async.h
 include/libsoup-${API_VERSION}/libsoup/soup-session-feature.h
@@ -46,15 +49,22 @@ share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomain.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomainBasic.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomainDigest.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJar.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJarSqlite.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJarText.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupLogger.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupMessage.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupProxyResolver.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupServer.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSession.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSessionAsync.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupSessionFeature.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSessionSync.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSocket.html
 share/gtk-doc/html/libsoup-${API_VERSION}/ch01.html
 share/gtk-doc/html/libsoup-${API_VERSION}/ch02.html
+share/gtk-doc/html/libsoup-${API_VERSION}/ch03.html
+share/gtk-doc/html/libsoup-${API_VERSION}/ch04.html
+share/gtk-doc/html/libsoup-${API_VERSION}/ch05.html
 share/gtk-doc/html/libsoup-${API_VERSION}/home.png
 share/gtk-doc/html/libsoup-${API_VERSION}/index.html
 share/gtk-doc/html/libsoup-${API_VERSION}/index.sgml
@@ -63,14 +73,18 @@ share/gtk-doc/html/libsoup-${API_VERSION}/left.png
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}.devhelp
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}.devhelp2
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-GValue-Support.html
+share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-HTML-Form-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-Soup-Miscellaneous-Utilities.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupCookie.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupMessageBody.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupMessageHeaders.html
+share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupMultipart.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupURI.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-XMLRPC-Support.html
+share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-soup-gnome-features.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-soup-method.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-soup-status.html
+share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-build-howto.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-client-howto.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-porting-2.2-${API_VERSION}.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-server-howto.html
