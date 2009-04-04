@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_lib_proxy_factory_c,v 1.1.1.1 2009/04/04 10:07:31 landry Exp $
+--- src/lib/proxy_factory.c.orig	Tue Feb  3 10:32:47 2009
++++ src/lib/proxy_factory.c	Tue Feb  3 10:33:07 2009
+@@ -17,16 +17,18 @@
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
+  ******************************************************************************/
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <arpa/inet.h>
++#include <netinet/in.h>
++
+ #include <stdlib.h>
+ #include <assert.h>
+ #include <string.h>
+-#include <sys/types.h>
+ #include <dirent.h>
+ #include <stdio.h>
+ #include <dlfcn.h>
+ #include <math.h>
+-#include <sys/socket.h>
+-#include <arpa/inet.h>
+ #include <pthread.h>
+ 
+ 

@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_lib_url_c,v 1.1.1.1 2009/04/04 10:07:31 landry Exp $
+--- src/lib/url.c.orig	Mon Feb  2 23:17:31 2009
++++ src/lib/url.c	Tue Feb  3 10:33:11 2009
+@@ -17,15 +17,17 @@
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
+  ******************************************************************************/
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <arpa/inet.h>
++#include <netinet/in.h>
+ #include <netdb.h>
++
+ #include <stdbool.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
+-#include <sys/types.h>
+-#include <sys/socket.h>
+-#include <arpa/inet.h>
+ 
+ #include "misc.h"
+ #include "url.h"

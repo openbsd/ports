@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/04/04 10:07:31 landry Exp $
+--- configure.orig	Thu Jun  5 22:56:33 2008
++++ configure	Tue Feb  3 11:05:33 2009
+@@ -21840,10 +21840,6 @@ _ACEOF
+ esac
+ 
+ 
+-cat >>confdefs.h <<\_ACEOF
+-#define malloc rpl_malloc
+-_ACEOF
+-
+ fi
+ 
+ 

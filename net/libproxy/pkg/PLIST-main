@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/04/04 10:07:31 landry Exp $
+@bin bin/proxy
+include/proxy.h
+lib/libproxy/
+lib/libproxy.la
+@lib lib/libproxy.so.${LIBproxy_VERSION}
+lib/libproxy/0.2.3/
+lib/libproxy/0.2.3/plugins/
+lib/libproxy/0.2.3/plugins/envvar.so
+lib/libproxy/0.2.3/plugins/file.so
+lib/libproxy/0.2.3/plugins/kde.so
+lib/pkgconfig/libproxy-1.0.pc
+lib/python${MODPY_VERSION}/site-packages/libproxy.py

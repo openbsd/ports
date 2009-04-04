@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_plugins_webkit_c,v 1.1.1.1 2009/04/04 10:07:31 landry Exp $
+--- src/plugins/webkit.c.orig	Tue Feb  3 10:34:19 2009
++++ src/plugins/webkit.c	Tue Feb  3 10:34:53 2009
+@@ -17,12 +17,14 @@
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
+  ******************************************************************************/
+ 
+-#include <stdlib.h>
+-#include <string.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+-#include <netdb.h>
+ #include <arpa/inet.h>
++#include <netinet/in.h>
++#include <netdb.h>
++
++#include <stdlib.h>
++#include <string.h>
+ #define __USE_BSD
+ #include <unistd.h>
+ 

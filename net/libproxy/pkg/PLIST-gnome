@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-gnome,v 1.1.1.1 2009/04/04 10:07:31 landry Exp $
+lib/libproxy/0.2.3/plugins/gnome.so

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bin_Makefile_in,v 1.1.1.1 2009/04/04 10:07:31 landry Exp $
+--- src/bin/Makefile.in.orig	Tue Feb  3 10:40:04 2009
++++ src/bin/Makefile.in	Tue Feb  3 10:40:14 2009
+@@ -210,7 +210,7 @@ xmu_LIBS = @xmu_LIBS@
+ # Command line interface to libproxy
+ proxy_SOURCES = proxy.c
+ proxy_CFLAGS = -I$(top_srcdir)/src/lib
+-proxy_LDFLAGS = -ldl
++proxy_LDFLAGS =
+ proxy_LDADD = ../lib/libproxy.la
+ all: all-am
+ 

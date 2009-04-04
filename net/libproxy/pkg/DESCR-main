@@ -1,0 +1,9 @@
+libproxy is a library that provides automatic proxy configuration
+management.
+
+libproxy offers the following features:
+
+  * extremely small core footprint (< 35K)
+  * only 3 functions in the stable external API
+  * dynamic adjustment to changing network topology
+  * a standard way of dealing with proxy settings across all scenarios
