@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/03/04 20:59:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2009/04/04 14:42:58 naddy Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gui=	lightweight BitTorrent client with graphical interface
@@ -29,9 +29,8 @@ MULTI_PACKAGES=	-main
 WANTLIB=	c crypto idn m pthread ssl z
 WANTLIB-main=	${WANTLIB}
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext textproc/intltool
 LIB_DEPENDS=	curl.>=12::net/curl
-BUILD_DEPENDS=	::textproc/intltool
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
