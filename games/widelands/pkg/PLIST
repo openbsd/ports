@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/10/03 13:21:20 steven Exp $
-bin/widelands
+@comment $OpenBSD: PLIST,v 1.3 2009/04/04 14:53:38 ajacoutot Exp $
+@bin bin/widelands
 share/locale/cz_CZ/
 share/locale/cz_CZ/LC_MESSAGES/
 share/locale/cz_CZ/LC_MESSAGES/campaigns/
