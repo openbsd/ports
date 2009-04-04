@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.565 2009/04/03 15:49:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.566 2009/04/04 10:08:18 landry Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -158,6 +158,7 @@
      SUBDIR += libnetdude
      SUBDIR += libnids
      SUBDIR += libpcapnav
+     SUBDIR += libproxy
      SUBDIR += librsync
      SUBDIR += libshout
      SUBDIR += libst
