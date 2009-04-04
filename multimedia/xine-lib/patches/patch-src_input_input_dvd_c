@@ -1,18 +1,7 @@
-$OpenBSD: patch-src_input_input_dvd_c,v 1.6 2009/02/02 22:00:42 sthen Exp $
---- src/input/input_dvd.c.orig	Wed Jan  7 11:14:32 2009
-+++ src/input/input_dvd.c	Thu Jan  8 01:02:34 2009
-@@ -116,8 +116,8 @@
- #define DVD_PATH "d:\\"
- #define RDVD_PATH "d:\\"
- #else
--#define DVD_PATH "/dev/dvd"
--#define RDVD_PATH "/dev/rdvd"
-+#define DVD_PATH "/dev/rcd0c"
-+#define RDVD_PATH "/dev/rcd0c"
- #endif 
- 
- /* Some misc. defines */
-@@ -603,7 +603,7 @@ static buf_element_t *dvd_plugin_read_block (input_plu
+$OpenBSD: patch-src_input_input_dvd_c,v 1.7 2009/04/04 00:28:56 sthen Exp $
+--- src/input/input_dvd.c.orig	Wed Feb 18 06:37:42 2009
++++ src/input/input_dvd.c	Fri Apr  3 14:42:42 2009
+@@ -606,7 +606,7 @@ static buf_element_t *dvd_plugin_read_block (input_plu
        xprintf(this->stream->xine, XINE_VERBOSITY_LOG,
  	      _("input_dvd: Error getting next block from DVD (%s)\n"), dvdnav_err_to_string(this->dvdnav));
        _x_message(this->stream, XINE_MSG_READ_ERROR,
@@ -21,7 +10,7 @@ $OpenBSD: patch-src_input_input_dvd_c,v 1.6 2009/02/02 22:00:42 sthen Exp $
        if (block != buf->mem) dvdnav_free_cache_block(this->dvdnav, block);
        buf->free_buffer(buf);
        return NULL;
-@@ -1494,7 +1494,7 @@ static int dvd_plugin_open (input_plugin_t *this_gen) 
+@@ -1497,7 +1497,7 @@ static int dvd_plugin_open (input_plugin_t *this_gen) 
      xprintf(this->stream->xine, XINE_VERBOSITY_LOG, _("input_dvd: Error opening DVD device\n"));
      _x_message(this->stream, XINE_MSG_READ_ERROR,
        /* FIXME: see FIXME in dvd_parse_try_open() */
