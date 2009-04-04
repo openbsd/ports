@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/14 22:20:07 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/04/04 10:18:42 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -32,7 +32,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Base.sr
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Base.src/M000067.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Base.src/M000068.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Base.src/M000069.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Base.src/M000070.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Base.src/M000071.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Base.src/M000072.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Base.src/M000073.html
@@ -55,9 +54,11 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Base.sr
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Base.src/M000090.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Base.src/M000091.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Base.src/M000092.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Base.src/M000093.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/ClientError.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Connection.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Connection.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Connection.src/M000099.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Connection.src/M000100.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Connection.src/M000101.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Connection.src/M000102.html
@@ -68,7 +69,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Connect
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Connection.src/M000107.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Connection.src/M000108.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Connection.src/M000109.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Connection.src/M000110.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/CustomMethods/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/CustomMethods.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/CustomMethods.src/
@@ -125,11 +125,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/HttpMoc
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/InvalidRequestError.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Request.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Request.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Request.src/M000095.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Request.src/M000096.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Request.src/M000097.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Request.src/M000098.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Request.src/M000099.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/ResourceConflict.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/ResourceNotFound.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Response.html
@@ -142,8 +140,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Respons
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/ServerError.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/TimeoutError.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/TimeoutError.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/TimeoutError.src/M000093.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/TimeoutError.src/M000094.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/TimeoutError.src/M000095.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/UnauthorizedAccess.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Validations.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActiveResource/Validations.src/
@@ -207,6 +205,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/load-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/load_attributes_from_response-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/new%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/new-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/new_record%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/password%3d-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/password-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/prefix%3d-c.yaml
@@ -308,8 +307,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Redirection/cdesc
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Request/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Request/%3d%3d-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Request/cdesc-Request.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Request/eql%3f-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Request/hash-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Request/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Request/to_s-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/ResourceConflict/

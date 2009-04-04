@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/01/14 22:20:07 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/04/04 10:18:42 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -14,7 +14,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Base.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Base.src/M000368.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Base.src/M000369.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Base.src/M000370.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Base.src/M000371.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Helpers/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Helpers/ClassMethods.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/Helpers/ClassMethods.src/
@@ -45,7 +44,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/TestHelpe
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionMailer/TestHelper.src/M000347.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MailHelper.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MailHelper.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MailHelper.src/M000372.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MailHelper.src/M000371.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/TMail/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/TMail.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/TMail.src/
@@ -443,6 +443,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor/text-format-0_6_3/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor/text-format-0_6_3/text/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor/text-format-0_6_3/text/format_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor/text_format_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor/tmail-1_2_3/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor/tmail-1_2_3/tmail/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor/tmail-1_2_3/tmail/address_rb.html
@@ -469,7 +470,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor/tmail-1_2_3/tmail/stringio_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor/tmail-1_2_3/tmail/utils_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor/tmail-1_2_3/tmail_rb.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/vendor/tmail_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer/version_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/action_mailer_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/actionmailer_rb.html
@@ -494,7 +495,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Base/mailer_name%3d
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Base/mailer_name-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Base/mailer_name-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Base/receive-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Base/register_template_extension-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Base/template_root%3d-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Base/template_root-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionMailer/Helpers/
@@ -538,6 +538,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Enumerable/cdesc-Enumerable.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailHelper/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailHelper/block_format-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MailHelper/cdesc-MailHelper.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/cdesc-Net.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/StringInput/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/StringInput/cdesc-StringInput.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/StringOutput/
@@ -984,10 +986,10 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/test_case.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/test_helper.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/utils.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor/text-format-0.6.3/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor/text-format-0.6.3/text/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor/text-format-0.6.3/text/format.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor/text_format.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor/tmail-1.2.3/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor/tmail-1.2.3/tmail/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor/tmail-1.2.3/tmail.rb
@@ -1017,14 +1019,20 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor/tmail-1.2
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor/tmail-1.2.3/tmail/stringio.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor/tmail-1.2.3/tmail/utils.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor/tmail-1.2.3/tmail/version.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/vendor/tmail.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/action_mailer/version.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/actionmailer.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/abstract_unit.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/asset_host_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/delivery_method_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/asset_host_mailer/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/asset_host_mailer/email_with_asset.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/auto_layout_mailer/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/auto_layout_mailer/hello.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/auto_layout_mailer/multipart.text.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/auto_layout_mailer/multipart.text.plain.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/explicit_layout_mailer/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/explicit_layout_mailer/logout.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/explicit_layout_mailer/signup.html.erb
@@ -1039,6 +1047,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/helpers/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/helpers/example_helper.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/layouts/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/layouts/auto_layout_mailer.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/layouts/auto_layout_mailer.text.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/layouts/spam.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/path.with.dots/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/path.with.dots/funky_path_mailer/
