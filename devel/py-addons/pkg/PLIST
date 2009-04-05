@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/05 00:45:48 martynas Exp $
+lib/python${MODPY_VERSION}/site-packages/AddOns-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
+lib/python${MODPY_VERSION}/site-packages/AddOns-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/AddOns-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/AddOns-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/AddOns-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/AddOns-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/AddOns-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/AddOns-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/peak/util/addons.py
+lib/python${MODPY_VERSION}/site-packages/peak/util/addons.pyc
+share/doc/py-addons/
+share/doc/py-addons/README.txt
