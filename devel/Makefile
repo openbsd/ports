@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.687 2009/04/01 11:56:32 kili Exp $
+# $OpenBSD: Makefile,v 1.688 2009/04/05 01:28:12 martynas Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -640,9 +640,11 @@
      SUBDIR += pwlib
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
+     SUBDIR += py-addons
      SUBDIR += py-asn1
      SUBDIR += py-babel
      SUBDIR += py-buildbot
+     SUBDIR += py-bytecodeassembler
      SUBDIR += py-cheetah
      SUBDIR += py-configobj
      SUBDIR += py-ctypes
@@ -652,6 +654,7 @@
      SUBDIR += py-dtopt
      SUBDIR += py-editdist
      SUBDIR += py-epsilon
+     SUBDIR += py-extremes
      SUBDIR += py-fpconst
      SUBDIR += py-gdata
      SUBDIR += py-gobject
@@ -680,6 +683,7 @@
      SUBDIR += py-silc
      SUBDIR += py-simplejson
      SUBDIR += py-sip
+     SUBDIR += py-symboltype
      SUBDIR += py-tpg
      SUBDIR += py-turbocheetah
      SUBDIR += py-turbojson
