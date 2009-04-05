@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_test1_c,v 1.1 2009/01/31 15:49:34 simon Exp $
+$OpenBSD: patch-src_test1_c,v 1.2 2009/04/05 00:02:54 martynas Exp $
 
 Fix test on big endian arches.  Bug filed upstream at
 http://www.sqlite.org/cvstrac/tktview?tn=3621
 
---- src/test1.c.orig	Sat Jan 31 16:07:27 2009
-+++ src/test1.c	Sat Jan 31 16:18:33 2009
-@@ -1199,7 +1199,7 @@ static int sqlite3_mprintf_int(
+--- src/test1.c.orig	Sun Feb 15 15:07:11 2009
++++ src/test1.c	Sun Mar 22 13:23:03 2009
+@@ -1200,7 +1200,7 @@ static int sqlite3_mprintf_int(
    int argc,              /* Number of arguments */
    char **argv            /* Text of each argument */
  ){

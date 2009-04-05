@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.11 2009/01/31 15:49:34 simon Exp $
---- Makefile.in.orig	Thu Jan 15 15:01:45 2009
-+++ Makefile.in	Tue Jan 27 10:23:37 2009
-@@ -172,11 +172,11 @@ OBJS0 = alter.lo analyze.lo attach.lo auth.lo bitvec.l
+$OpenBSD: patch-Makefile_in,v 1.12 2009/04/05 00:02:54 martynas Exp $
+--- Makefile.in.orig	Sun Feb 15 15:07:08 2009
++++ Makefile.in	Sun Mar 22 13:28:08 2009
+@@ -176,11 +176,11 @@ OBJS0 = alter.lo analyze.lo attach.lo auth.lo bitvec.l
          table.lo tokenize.lo trigger.lo update.lo \
          util.lo vacuum.lo \
          vdbe.lo vdbeapi.lo vdbeaux.lo vdbeblob.lo vdbemem.lo \
@@ -15,7 +15,7 @@ $OpenBSD: patch-Makefile_in,v 1.11 2009/01/31 15:49:34 simon Exp $
  
  # Determine the real value of LIBOBJ based on the 'configure' script
  #
-@@ -268,7 +268,8 @@ SRC = \
+@@ -273,7 +273,8 @@ SRC = \
    $(TOP)/src/vdbeInt.h \
    $(TOP)/src/vtab.c \
    $(TOP)/src/walker.c \
@@ -25,7 +25,7 @@ $OpenBSD: patch-Makefile_in,v 1.11 2009/01/31 15:49:34 simon Exp $
  
  # Generated source code files
  #
-@@ -431,7 +432,7 @@ HDR += \
+@@ -438,7 +439,7 @@ HDR += \
  # hidden when the library is built via the amalgamation).
  #
  TESTFIXTURE_SRC0 = $(TESTSRC2) libsqlite3.la
@@ -34,18 +34,18 @@ $OpenBSD: patch-Makefile_in,v 1.11 2009/01/31 15:49:34 simon Exp $
  TESTFIXTURE_SRC = $(TESTSRC) $(TOP)/src/tclsqlite.c $(TESTFIXTURE_SRC$(USE_AMALGAMATION))
  
  
-@@ -456,7 +457,7 @@ libsqlite3.la:	$(LIBOBJ)
+@@ -466,7 +467,7 @@ libsqlite3.la:	$(LIBOBJ)
  
  libtclsqlite3.la:	tclsqlite.lo libsqlite3.la
  	$(LTLINK) -o $@ tclsqlite.lo \
 -		libsqlite3.la @TCL_STUB_LIB_SPEC@ $(TLIBS) \
 +		libsqlite3.la -L./.libs @TCL_STUB_LIB_SPEC@ $(TLIBS) \
-                 -rpath "$(libdir)/sqlite" \
- 		-module -avoid-version
- 
-@@ -493,6 +494,9 @@ lemon$(BEXE):	$(TOP)/tool/lemon.c $(TOP)/tool/lempar.c
+ 		-rpath "$(TCLLIBDIR)" \
+ 		-version-info "8:6:8" \
+ 		-avoid-version
+@@ -504,6 +505,9 @@ lemon$(BEXE):	$(TOP)/tool/lemon.c $(TOP)/tool/lempar.c
  sqlite3.lo:	sqlite3.c
- 	$(LTCOMPILE) -c sqlite3.c
+ 	$(LTCOMPILE) $(TEMP_STORE) -c sqlite3.c
  
 +pthread_stub.lo: $(TOP)/src/pthread_stub.c
 +	$(LTCOMPILE) -c $(TOP)/src/pthread_stub.c
@@ -53,7 +53,7 @@ $OpenBSD: patch-Makefile_in,v 1.11 2009/01/31 15:49:34 simon Exp $
  # Rules to build individual files
  #
  alter.lo:	$(TOP)/src/alter.c $(HDR)
-@@ -783,6 +787,8 @@ clean:	
+@@ -799,6 +803,8 @@ clean:	
  
  distclean:	clean
  	rm -f config.log config.status libtool Makefile sqlite3.pc

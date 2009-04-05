@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2008/10/27 23:20:39 steven Exp $
---- configure.orig	Tue Oct 14 20:07:39 2008
-+++ configure	Mon Oct 27 18:30:05 2008
-@@ -10793,7 +10793,7 @@ USE_AMALGAMATION=1
+$OpenBSD: patch-configure,v 1.6 2009/04/05 00:02:54 martynas Exp $
+--- configure.orig	Sun Feb 15 15:07:08 2009
++++ configure	Sun Mar 22 13:27:07 2009
+@@ -12216,7 +12216,7 @@ USE_AMALGAMATION=1
  # if not, then we fall back to plain tclsh.
  # TODO: try other versions before falling back?
  #
@@ -10,16 +10,18 @@ $OpenBSD: patch-configure,v 1.5 2008/10/27 23:20:39 steven Exp $
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -11089,7 +11089,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
--  ac_cv_search_pthread_create="-l$ac_lib"
-+  ac_cv_search_pthread_create="-$ac_lib"
- break
- else
-   echo "$as_me: failed program was:" >&5
-@@ -11432,7 +11432,7 @@ echo "${ECHO_T}file not found" >&6
+@@ -12455,8 +12455,8 @@ for ac_lib in '' pthread; do
+   if test -z "$ac_lib"; then
+     ac_res="none required"
+   else
+-    ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++    ac_res=-$ac_lib
++    LIBS="-$ac_lib  $ac_func_search_save_LIBS"
+   fi
+   rm -f conftest.$ac_objext conftest$ac_exeext
+ if { (ac_try="$ac_link"
+@@ -12877,7 +12877,7 @@ $as_echo "file not found" >&6; }
  
      eval "TCL_STUB_LIB_FILE=\"${TCL_STUB_LIB_FILE}\""
      eval "TCL_STUB_LIB_FLAG=\"${TCL_STUB_LIB_FLAG}\""

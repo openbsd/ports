@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_util_c,v 1.3 2009/01/31 15:49:34 simon Exp $
---- src/util.c.orig	Thu Jan 15 15:01:47 2009
-+++ src/util.c	Tue Jan 27 10:22:58 2009
-@@ -19,6 +19,7 @@
+$OpenBSD: patch-src_util_c,v 1.4 2009/04/05 00:02:54 martynas Exp $
+--- src/util.c.orig	Sun Feb 15 15:07:11 2009
++++ src/util.c	Sun Mar 22 13:29:53 2009
+@@ -18,6 +18,7 @@
+ */
  #include "sqliteInt.h"
  #include <stdarg.h>
- #include <ctype.h>
 +#include <math.h>
  
- 
  /*
-@@ -56,29 +57,7 @@ int sqlite3Assert(void){
+ ** Routine needed to support the testcase() macro.
+@@ -54,29 +55,7 @@ int sqlite3Assert(void){
  ** Return true if the floating point value is Not a Number (NaN).
  */
  int sqlite3IsNaN(double x){
