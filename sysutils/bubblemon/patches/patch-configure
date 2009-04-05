@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure,v 1.1 2009/04/05 10:15:33 ajacoutot Exp $
+--- configure.orig	Sun Apr  5 11:55:04 2009
++++ configure	Sun Apr  5 11:55:41 2009
+@@ -5001,16 +5001,6 @@ else
+ fi
+ 
+ 
+-if test "x$GCC" = "xyes"; then
+-  # -Wno-missing-field-initializers is because of
+-  # http://bugs.debian.org/509663
+-  #
+-  # -Wno-unused-parameter is because in gnome2-ui.c our function
+-  # prototypes are decided by the GNOME API, and we have to accept
+-  # some parameters we never use.
+-  CFLAGS="-g -O2 -Wall -Werror -Wextra -Wno-unused-parameter -Wno-missing-field-initializers"
+-
+-fi
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'

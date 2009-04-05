@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/02/04 12:53:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/04/05 10:15:34 ajacoutot Exp $
 lib/bonobo/
 lib/bonobo/servers/
 lib/bonobo/servers/GNOME_BubblemonApplet.server
-libexec/bubblemon-gnome2
+@bin libexec/bubblemon-gnome2
 @comment man/hu/
 @comment man/hu/man1/
 @comment @man man/hu/man1/bubblemon-gnome2.1
@@ -13,6 +13,7 @@ libexec/bubblemon-gnome2
 share/gnome-2.0/
 share/gnome-2.0/ui/
 share/gnome-2.0/ui/GNOME_BubblemonApplet.xml
+share/locale/ca/LC_MESSAGES/bubblemon.mo
 share/locale/da/LC_MESSAGES/bubblemon.mo
 share/locale/de/LC_MESSAGES/bubblemon.mo
 share/locale/es/LC_MESSAGES/bubblemon.mo
@@ -27,6 +28,7 @@ share/locale/ko/LC_MESSAGES/bubblemon.mo
 share/locale/no/LC_MESSAGES/bubblemon.mo
 share/locale/pl/LC_MESSAGES/bubblemon.mo
 share/locale/pt/LC_MESSAGES/bubblemon.mo
+share/locale/pt_BR/LC_MESSAGES/bubblemon.mo
 share/locale/ro/LC_MESSAGES/bubblemon.mo
 share/locale/ru/LC_MESSAGES/bubblemon.mo
 share/locale/sh/

@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.31 2009/03/28 18:38:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2009/04/05 10:15:33 ajacoutot Exp $
 
-COMMENT=		GNOME panel applet that displays the CPU + memory load
+COMMENT=		GNOME panel applet that displays CPU and memory load
 
-DISTNAME=		bubblemon-2.0.1
-PKGNAME=		${DISTNAME}p8
+DISTNAME=		bubblemon-2.0.12
 CATEGORIES=		sysutils x11/gnome
 
-HOMEPAGE=		http://www.d.kth.se/~d92-jwa/code/
+HOMEPAGE=		http://www.nongnu.org/bubblemon/
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=bubblemon/}
-
-LIB_DEPENDS=		panel-applet-2::x11/gnome/panel \
-			gtop-2.0.>=3.0::devel/libgtop2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,12 +29,16 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage \
 MODULES=		devel/gettext \
 			textproc/intltool
 
+LIB_DEPENDS=		panel-applet-2::x11/gnome/panel \
+			gtop-2.0.>=3.0::devel/libgtop2
+
 USE_X11=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS=		itlocaledir=${PREFIX}/share/locale
 
 .include <bsd.port.mk>
