@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/15 13:03:41 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2009/04/05 02:07:40 martynas Exp $
 
 COMMENT=		rule-based dispatching and generic functions
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SUNSITE:=distributions/gentoo/distfiles/}
+MASTER_SITES=		http://mirrors.protection.cx/~martynas/python/
 DISTFILES=		RuleDispatch-${VERSION}a0.dev-r${REVISION}${EXTRACT_SUFX}
 
 MODULES=		lang/python
