@@ -1,7 +1,7 @@
-$OpenBSD: patch-drivers_pstex_c,v 1.1.1.1 2006/05/12 13:35:39 steven Exp $
---- drivers/pstex.c.orig	Mon Jan 19 20:10:19 2004
-+++ drivers/pstex.c	Mon Apr 17 01:34:40 2006
-@@ -229,7 +229,8 @@ proc_str (PLStream *pls, EscText *args)
+$OpenBSD: patch-drivers_pstex_c,v 1.2 2009/04/05 16:21:55 steven Exp $
+--- drivers/pstex.c.orig	Sun Nov 18 21:04:10 2007
++++ drivers/pstex.c	Fri May 23 21:10:35 2008
+@@ -231,7 +231,8 @@ proc_str (PLStream *pls, EscText *args)
      fprintf(fp,"\\special{ps: 0 0 0 setrgbcolor}{");
  
    fprintf(fp,"%% Your text follows:\n");
@@ -11,7 +11,7 @@ $OpenBSD: patch-drivers_pstex_c,v 1.1.1.1 2006/05/12 13:35:39 steven Exp $
    fprintf(fp,"}}}}");
    
    /*
-@@ -260,6 +261,11 @@ parse_str(const char *str, char *dest)
+@@ -262,6 +263,11 @@ parse_str(const char *str, char *dest)
  		       "psi", "Psi", "omega", "Omega"};
  
    plgesc(&esc);

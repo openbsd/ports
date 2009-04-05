@@ -1,0 +1,31 @@
+$OpenBSD: patch-cmake_modules_instdirs_cmake,v 1.1 2009/04/05 16:21:55 steven Exp $
+--- cmake/modules/instdirs.cmake.orig	Sun Nov 18 21:03:55 2007
++++ cmake/modules/instdirs.cmake	Sat Jun  7 09:42:14 2008
+@@ -61,13 +61,13 @@ CACHE PATH "install location for C header files"
+ 
+ set(
+ CMAKE_INSTALL_INFODIR
+-${CMAKE_INSTALL_DATADIR}/info
++${CMAKE_INSTALL_PREFIX}/info
+ CACHE PATH "install location for info documentation"
+ )
+ 
+ set(
+ CMAKE_INSTALL_MANDIR
+-${CMAKE_INSTALL_DATADIR}/man
++${CMAKE_INSTALL_PREFIX}/man
+ CACHE PATH "install location for man documentation"
+ )
+ 
+@@ -75,7 +75,10 @@ CACHE PATH "install location for man documentation"
+ # cached values above.
+ 
+ # Data.
+-set(DATA_DIR ${CMAKE_INSTALL_DATADIR}/${PACKAGE}${VERSION})
++set(DATA_DIR ${CMAKE_INSTALL_DATADIR}/${PACKAGE})
++
++# Examples.
++set(EXAMPLE_DIR ${CMAKE_INSTALL_DATADIR}/examples/${PACKAGE})
+ 
+ # Libraries.
+ set(LIB_DIR ${CMAKE_INSTALL_LIBDIR})

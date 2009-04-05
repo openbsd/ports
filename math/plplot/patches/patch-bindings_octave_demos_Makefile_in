@@ -1,6 +1,6 @@
-$OpenBSD: patch-bindings_octave_demos_Makefile_in,v 1.2 2006/06/06 13:36:28 steven Exp $
---- bindings/octave/demos/Makefile.in.orig	Tue May 30 01:07:09 2006
-+++ bindings/octave/demos/Makefile.in	Wed May 31 18:32:16 2006
+$OpenBSD: patch-bindings_octave_demos_Makefile_in,v 1.3 2009/04/05 16:21:55 steven Exp $
+--- bindings/octave/demos/Makefile.in.orig	Sun Nov 18 21:04:00 2007
++++ bindings/octave/demos/Makefile.in	Fri May 23 21:10:35 2008
 @@ -138,6 +138,7 @@ CXXDEPMODE = @CXXDEPMODE@
  CXXFLAGS = @CXXFLAGS@
  CYGPATH_W = @CYGPATH_W@
@@ -9,7 +9,7 @@ $OpenBSD: patch-bindings_octave_demos_Makefile_in,v 1.2 2006/06/06 13:36:28 stev
  DB2X_TEXIXML = @DB2X_TEXIXML@
  DB2X_XSLTPROC = @DB2X_XSLTPROC@
  DB_SS_HTML_PUBID = @DB_SS_HTML_PUBID@
-@@ -500,7 +501,7 @@ examples_octave = \
+@@ -502,7 +503,7 @@ examples_octave = \
  	lena.img
  
  EXTRA_DIST = $(examples_octave)

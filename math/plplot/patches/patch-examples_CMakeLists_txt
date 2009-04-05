@@ -1,0 +1,11 @@
+$OpenBSD: patch-examples_CMakeLists_txt,v 1.1 2009/04/05 16:21:55 steven Exp $
+--- examples/CMakeLists.txt.orig	Sat Jun  7 09:29:42 2008
++++ examples/CMakeLists.txt	Sat Jun  7 09:29:52 2008
+@@ -55,6 +55,6 @@ if(ENABLE_ada)
+ endif(ENABLE_ada)
+ 
+ install(FILES Makefile.examples 
+-DESTINATION ${DATA_DIR}/examples
++DESTINATION ${EXAMPLE_DIR}
+ RENAME Makefile
+ )

@@ -1,0 +1,30 @@
+$OpenBSD: patch-examples_c_CMakeLists_txt,v 1.1 2009/04/05 16:21:55 steven Exp $
+--- examples/c/CMakeLists.txt.orig	Sat Jun  7 09:30:57 2008
++++ examples/c/CMakeLists.txt	Sat Jun  7 09:31:34 2008
+@@ -80,7 +80,7 @@ README.plplotcanvas
+ )
+ 
+ install(FILES ${c_SRCS} ${plplotcanvas_SRCS} ${plplotcanvas_DOCS}
+-DESTINATION ${DATA_DIR}/examples/c
++DESTINATION ${EXAMPLE_DIR}/c
+ )
+ 
+ set(CC ${CMAKE_C_COMPILER})
+@@ -90,7 +90,7 @@ ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples
+ )
+ 
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples
+-DESTINATION ${DATA_DIR}/examples/c
++DESTINATION ${EXAMPLE_DIR}/c
+ RENAME Makefile
+ )
+ 
+@@ -98,7 +98,7 @@ RENAME Makefile
+ # of example 20 in the various examples subdirectories can conveniently
+ # access this file.
+ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/lena.pgm
+-DESTINATION ${DATA_DIR}/examples
++DESTINATION ${EXAMPLE_DIR}
+ )
+ 
+ # Do the same as above for the build tree for those who want to individually

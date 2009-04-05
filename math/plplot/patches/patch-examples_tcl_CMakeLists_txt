@@ -1,0 +1,23 @@
+$OpenBSD: patch-examples_tcl_CMakeLists_txt,v 1.1 2009/04/05 16:21:55 steven Exp $
+--- examples/tcl/CMakeLists.txt.orig	Sat Jun  7 09:32:12 2008
++++ examples/tcl/CMakeLists.txt	Sat Jun  7 09:32:32 2008
+@@ -57,8 +57,8 @@ foreach(STRING_INDEX ${tcl_STRING_INDICES})
+   set(tcl_SCRIPTS ${tcl_SCRIPTS} x${STRING_INDEX})
+ endforeach(STRING_INDEX ${tcl_STRING_INDICES})
+ 
+-install(FILES ${tcl_FILES} DESTINATION ${DATA_DIR}/examples/tcl)
+-install(PROGRAMS ${tcl_SCRIPTS} DESTINATION ${DATA_DIR}/examples/tcl)
++install(FILES ${tcl_FILES} DESTINATION ${EXAMPLE_DIR}/tcl)
++install(PROGRAMS ${tcl_SCRIPTS} DESTINATION ${EXAMPLE_DIR}/tcl)
+ 
+ # Copy file and scripts to the binary directory if different to the 
+ # source directory. Needed for ctest, but also so the tclIndex file
+@@ -94,7 +94,7 @@ WORKING_DIRECTORY ${tclIndex_WORKING_DIRECTORY}
+ 
+ install(
+ FILES ${tclIndex_WORKING_DIRECTORY}/tclIndex
+-DESTINATION ${DATA_DIR}/examples/tcl
++DESTINATION ${EXAMPLE_DIR}/tcl
+ )
+ 
+ add_custom_target(tclIndex_examples_tcl ALL

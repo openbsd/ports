@@ -1,0 +1,48 @@
+$OpenBSD: patch-examples_tk_CMakeLists_txt,v 1.1 2009/04/05 16:21:55 steven Exp $
+--- examples/tk/CMakeLists.txt.orig	Sat Jun  7 09:32:37 2008
++++ examples/tk/CMakeLists.txt	Sat Jun  7 09:33:13 2008
+@@ -79,7 +79,7 @@ foreach(STRING_INDEX ${tk_STRING_INDICES})
+   set(tk_FILES ${tk_FILES} ${CMAKE_CURRENT_BINARY_DIR}/${_file})
+ endforeach(STRING_INDEX ${tk_STRING_INDICES})
+ 
+-install(FILES ${tk_FILES} DESTINATION ${DATA_DIR}/examples/tk)
++install(FILES ${tk_FILES} DESTINATION ${EXAMPLE_DIR}/tk)
+ 
+ add_custom_command(
+ OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/tclIndex
+@@ -88,7 +88,7 @@ DEPENDS ${tk_FILES}
+ WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+ )
+ 
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/tclIndex DESTINATION ${DATA_DIR}/examples/tk)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/tclIndex DESTINATION ${EXAMPLE_DIR}/tk)
+ 
+ set(tk_SCRIPTS
+ tk01
+@@ -97,7 +97,7 @@ tk03
+ tk04
+ )
+ 
+-install(PROGRAMS ${tk_SCRIPTS} DESTINATION ${DATA_DIR}/examples/tk)
++install(PROGRAMS ${tk_SCRIPTS} DESTINATION ${EXAMPLE_DIR}/tk)
+ 
+ set(tk_SRC
+ xtk01.c
+@@ -105,7 +105,7 @@ xtk02.c
+ xtk04.c
+ )
+ 
+-install(FILES ${tk_SRC} DESTINATION ${DATA_DIR}/examples/tk)
++install(FILES ${tk_SRC} DESTINATION ${EXAMPLE_DIR}/tk)
+ 
+ set(CC ${CMAKE_C_COMPILER})
+ 
+@@ -115,7 +115,7 @@ ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples
+ )
+ 
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples
+-DESTINATION ${DATA_DIR}/examples/tk
++DESTINATION ${EXAMPLE_DIR}/tk
+ RENAME Makefile
+ )
+ 

@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST-c++,v 1.2 2006/06/06 13:36:28 steven Exp $
-lib/libplplotcxxd.a
-lib/libplplotcxxd.la
+@comment $OpenBSD: PLIST-c++,v 1.3 2009/04/05 16:21:55 steven Exp $
 @lib lib/libplplotcxxd.so.${LIBplplotcxxd_VERSION}
 lib/pkgconfig/plplotd-c++.pc
 share/examples/plplot/c++/
 share/examples/plplot/c++/Makefile
-share/examples/plplot/c++/lena.pgm
 share/examples/plplot/c++/plc++demos.h
+share/examples/plplot/c++/wxPLplotDemo.cpp
 share/examples/plplot/c++/x01.cc
 share/examples/plplot/c++/x01cc.cc
 share/examples/plplot/c++/x02.cc
@@ -32,4 +30,7 @@ share/examples/plplot/c++/x21.cc
 share/examples/plplot/c++/x22.cc
 share/examples/plplot/c++/x23.cc
 share/examples/plplot/c++/x24.cc
+share/examples/plplot/c++/x25.cc
+share/examples/plplot/c++/x26.cc
+share/examples/plplot/c++/x28.cc
 share/examples/plplot/test_cxx.sh

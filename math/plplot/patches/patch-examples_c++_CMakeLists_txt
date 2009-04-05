@@ -1,0 +1,21 @@
+$OpenBSD: patch-examples_c++_CMakeLists_txt,v 1.1 2009/04/05 16:21:55 steven Exp $
+--- examples/c++/CMakeLists.txt.orig	Sun Nov 18 21:04:09 2007
++++ examples/c++/CMakeLists.txt	Sat Jun  7 09:41:03 2008
+@@ -78,7 +78,7 @@ set(wxPLplotDemo_SRCS
+ wxPLplotDemo.cpp
+ )
+ 
+-install(FILES ${cxx_SRCS} ${wxPLplotDemo_SRCS} DESTINATION ${DATA_DIR}/examples/c++)
++install(FILES ${cxx_SRCS} ${wxPLplotDemo_SRCS} DESTINATION ${EXAMPLE_DIR}/c++)
+ 
+ set(CXX ${CMAKE_CXX_COMPILER})
+ configure_file(
+@@ -87,7 +87,7 @@ ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples
+ )
+ 
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples 
+-DESTINATION ${DATA_DIR}/examples/c++
++DESTINATION ${EXAMPLE_DIR}/c++
+ RENAME Makefile
+ )
+ 

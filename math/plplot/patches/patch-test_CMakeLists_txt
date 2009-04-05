@@ -1,0 +1,20 @@
+$OpenBSD: patch-test_CMakeLists_txt,v 1.1 2009/04/05 16:21:55 steven Exp $
+--- test/CMakeLists.txt.orig	Sat Jun  7 09:33:46 2008
++++ test/CMakeLists.txt	Sat Jun  7 09:34:00 2008
+@@ -216,14 +216,14 @@ WORLD_EXECUTE
+ foreach(SCRIPT ${SCRIPTS})
+   install(
+   FILES ${CMAKE_CURRENT_BINARY_DIR}/${SCRIPT} 
+-  DESTINATION ${DATA_DIR}/examples
++  DESTINATION ${EXAMPLE_DIR}
+   PERMISSIONS ${PERM_SCRIPTS}
+   )
+ endforeach(SCRIPT ${SCRIPTS})
+ 
+ install(
+ FILES ${CMAKE_CURRENT_BINARY_DIR}/plplot-test.sh
+-DESTINATION ${DATA_DIR}/examples
++DESTINATION ${EXAMPLE_DIR}
+ PERMISSIONS ${PERM_SCRIPTS}
+ )
+ 

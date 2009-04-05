@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 11:13:09 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/04/05 16:21:55 steven Exp $
 @pkgpath math/plplot
 bin/plm2gif
-bin/plplot-config
-bin/plplot_libtool
 bin/plpr
-bin/plrender
-bin/pltek
-bin/pstex2eps
+@bin bin/pltek
 include/plplot/
 include/plplot/disptab.h
 include/plplot/drivers.h
@@ -15,59 +11,25 @@ include/plplot/pdf.h
 include/plplot/plConfig.h
 include/plplot/plDevs.h
 include/plplot/pldebug.h
+include/plplot/pldll.h
 include/plplot/plevent.h
 include/plplot/plplot.h
 include/plplot/plplotP.h
 include/plplot/plplotcanvas.h
 include/plplot/plstream.h
 include/plplot/plstrm.h
-include/plplot/pltcl.h
 include/plplot/plxwd.h
-include/plplot/tclMatrix.h
-lib/libcsirocsa.a
-lib/libcsirocsa.la
+lib/libcsirocsa.so
 @lib lib/libcsirocsa.so.${LIBcsirocsa_VERSION}
-lib/libplplotd.a
-lib/libplplotd.la
+lib/libplplotcxxd.so
+lib/libplplotd.so
 @lib lib/libplplotd.so.${LIBplplotd_VERSION}
+lib/libplplotf77cd.so
+lib/libplplotf77d.so
 lib/pkgconfig/plplotd.pc
-lib/plplot/
-lib/plplot/driversd/
-lib/plplot/driversd/gd.la
-lib/plplot/driversd/gd.rc
-lib/plplot/driversd/gd.so
-lib/plplot/driversd/hpgl.la
-lib/plplot/driversd/hpgl.rc
-lib/plplot/driversd/hpgl.so
-lib/plplot/driversd/mem.la
-lib/plplot/driversd/mem.rc
-lib/plplot/driversd/mem.so
-lib/plplot/driversd/null.la
-lib/plplot/driversd/null.rc
-lib/plplot/driversd/null.so
-lib/plplot/driversd/pbm.la
-lib/plplot/driversd/pbm.rc
-lib/plplot/driversd/pbm.so
-lib/plplot/driversd/plmeta.la
-lib/plplot/driversd/plmeta.rc
-lib/plplot/driversd/plmeta.so
-lib/plplot/driversd/ps.la
-lib/plplot/driversd/ps.rc
-lib/plplot/driversd/ps.so
-lib/plplot/driversd/xfig.la
-lib/plplot/driversd/xfig.rc
-lib/plplot/driversd/xfig.so
-lib/plplot/driversd/xwin.la
-lib/plplot/driversd/xwin.rc
-lib/plplot/driversd/xwin.so
 @man man/man1/plm2gif.1
-@man man/man1/plplot_libtool.1
 @man man/man1/plpr.1
-@man man/man1/plrender.1
-@man man/man1/plserver.1
-@man man/man1/pltcl.1
 @man man/man1/pltek.1
-@man man/man1/pstex2eps.1
 @man man/man3/pl_setcontlabelformat.3
 @man man/man3/pl_setcontlabelparam.3
 @man man/man3/pladv.3
@@ -133,6 +95,7 @@ lib/plplot/driversd/xwin.so
 @man man/man3/plmeshc.3
 @man man/man3/plmkstrm.3
 @man man/man3/plmtex.3
+@man man/man3/plmtex3.3
 @man man/man3/plot3d.3
 @man man/man3/plot3dc.3
 @man man/man3/plparseopts.3
@@ -144,6 +107,7 @@ lib/plplot/driversd/xwin.so
 @man man/man3/plprec.3
 @man man/man3/plpsty.3
 @man man/man3/plptex.3
+@man man/man3/plptex3.3
 @man man/man3/plreplot.3
 @man man/man3/plrgbhls.3
 @man man/man3/plschr.3
@@ -240,6 +204,7 @@ share/doc/plplot/html/cplusplus.html
 share/doc/plplot/html/credits.html
 share/doc/plplot/html/custom-extensions-tcl.html
 share/doc/plplot/html/deploying.html
+share/doc/plplot/html/djgpp-notes.html
 share/doc/plplot/html/drawing.html
 share/doc/plplot/html/error.html
 share/doc/plplot/html/extended-wish.html
@@ -250,7 +215,6 @@ share/doc/plplot/html/fortran77.html
 share/doc/plplot/html/fortran95.html
 share/doc/plplot/html/freetype-notes.html
 share/doc/plplot/html/gcw-driver.html
-share/doc/plplot/html/gd-driver.html
 share/doc/plplot/html/gui.html
 share/doc/plplot/html/index.html
 share/doc/plplot/html/initializing.html
@@ -259,15 +223,17 @@ share/doc/plplot/html/intro.html
 share/doc/plplot/html/introduction-itcl.html
 share/doc/plplot/html/introduction-tk.html
 share/doc/plplot/html/labelling.html
+share/doc/plplot/html/latex-postscript-driver.html
 share/doc/plplot/html/line-attributes.html
 share/doc/plplot/html/organization.html
 share/doc/plplot/html/os-notes.html
 share/doc/plplot/html/output-devices.html
 share/doc/plplot/html/output-drivers.html
-share/doc/plplot/html/p148.html
-share/doc/plplot/html/p2442.html
-share/doc/plplot/html/p3311.html
-share/doc/plplot/html/p56.html
+share/doc/plplot/html/p162.html
+share/doc/plplot/html/p2493.html
+share/doc/plplot/html/p3385.html
+share/doc/plplot/html/p62.html
+share/doc/plplot/html/pdf-driver.html
 share/doc/plplot/html/perl.html
 share/doc/plplot/html/pl_setcontlabelparam.html
 share/doc/plplot/html/plabort.html
@@ -344,6 +310,7 @@ share/doc/plplot/html/plmeshfortran77.html
 share/doc/plplot/html/plmeshfortran95.html
 share/doc/plplot/html/plmkstrm.html
 share/doc/plplot/html/plmtex.html
+share/doc/plplot/html/plmtex3.html
 share/doc/plplot/html/plot3d.html
 share/doc/plplot/html/plot3dc.html
 share/doc/plplot/html/plot3dfortran77.html
@@ -360,6 +327,7 @@ share/doc/plplot/html/plpoly3.html
 share/doc/plplot/html/plprec.html
 share/doc/plplot/html/plpsty.html
 share/doc/plplot/html/plptex.html
+share/doc/plplot/html/plptex3.html
 share/doc/plplot/html/plreplot.html
 share/doc/plplot/html/plrgb.html
 share/doc/plplot/html/plrgb1.html
@@ -435,9 +403,11 @@ share/doc/plplot/html/plw3d.html
 share/doc/plplot/html/plwid.html
 share/doc/plplot/html/plwind.html
 share/doc/plplot/html/plxormod.html
+share/doc/plplot/html/postscript-driver.html
 share/doc/plplot/html/python.html
 share/doc/plplot/html/scales.html
 share/doc/plplot/html/simple.html
+share/doc/plplot/html/svg-driver.html
 share/doc/plplot/html/tcl-contouring.html
 share/doc/plplot/html/tcl-extension.html
 share/doc/plplot/html/tcl-overview.html
@@ -445,16 +415,20 @@ share/doc/plplot/html/tcl-understanding.html
 share/doc/plplot/html/tcl.html
 share/doc/plplot/html/tk-driver.html
 share/doc/plplot/html/tri-d-plots.html
+share/doc/plplot/html/truetype-postscript-driver.html
 share/doc/plplot/html/viewport_window.html
+share/doc/plplot/html/windows-notes.html
 share/doc/plplot/html/wxwidgets-driver.html
 share/doc/plplot/html/x-drivers.html
-share/doc/plplot/html/x11698.html
+share/doc/plplot/html/x12680.html
 share/examples/plplot/
 share/examples/plplot/Makefile
 share/examples/plplot/c/
 share/examples/plplot/c/Makefile
-share/examples/plplot/c/lena.pgm
+share/examples/plplot/c/README.plplotcanvas
 share/examples/plplot/c/plcdemos.h
+share/examples/plplot/c/plplotcanvas_animation.c
+share/examples/plplot/c/plplotcanvas_demo.c
 share/examples/plplot/c/tutor.c
 share/examples/plplot/c/x01c.c
 share/examples/plplot/c/x02c.c
@@ -481,16 +455,16 @@ share/examples/plplot/c/x22c.c
 share/examples/plplot/c/x23c.c
 share/examples/plplot/c/x24c.c
 share/examples/plplot/c/x25c.c
+share/examples/plplot/c/x26c.c
+share/examples/plplot/c/x27c.c
+share/examples/plplot/c/x28c.c
+share/examples/plplot/lena.pgm
 share/examples/plplot/plplot-test.sh
 share/examples/plplot/test_c.sh
 share/plplot/
 share/plplot/cglobe.map
 share/plplot/globe.map
-share/plplot/pkgIndex.tcl
 share/plplot/plstnd5.fnt
 share/plplot/plxtnd5.fnt
-share/plplot/tcl/
-share/plplot/tcl/plplot.tcl
-share/plplot/tcl/tclIndex
 share/plplot/usa.map
 share/plplot/usaglobe.map
