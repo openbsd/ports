@@ -1,6 +1,6 @@
-$OpenBSD: patch-default_bam,v 1.1.1.1 2009/01/18 17:53:36 ajacoutot Exp $
---- default.bam.orig	Tue Jan 13 20:36:11 2009
-+++ default.bam	Fri Jan 16 18:41:00 2009
+$OpenBSD: patch-default_bam,v 1.2 2009/04/05 16:59:40 ajacoutot Exp $
+--- default.bam.orig	Thu Mar  5 11:41:17 2009
++++ default.bam	Thu Mar  5 11:41:53 2009
 @@ -15,7 +15,7 @@ function Script(name)
  	if family == "windows" then
  		return str_replace(name, "/", "\\")
@@ -10,12 +10,12 @@ $OpenBSD: patch-default_bam,v 1.1.1.1 2009/01/18 17:53:36 ajacoutot Exp $
  end
  
  function CHash(output, ...)
-@@ -132,7 +132,7 @@ function build(settings)
+@@ -128,7 +128,7 @@ function build(settings)
+ 			settings.link.frameworks:Add("Carbon")
+ 			settings.link.frameworks:Add("AppKit")
  		else
- 			glfw_platform = "x11"
- 			pa_platform = "unix"
 -			settings.link.libs:Add("pthread")
 +			settings.link.flags:Add("-pthread")
  		end
  	elseif family == "windows" then
- 		glfw_platform = "win32"
+ 		settings.link.libs:Add("gdi32")
