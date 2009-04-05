@@ -1,15 +1,6 @@
-$OpenBSD: patch-test_backup2_test,v 1.1 2009/04/05 00:02:54 martynas Exp $
+$OpenBSD: patch-test_backup2_test,v 1.2 2009/04/05 07:52:17 martynas Exp $
 --- test/backup2.test.orig	Wed Feb 11 18:06:19 2009
 +++ test/backup2.test	Tue Mar 24 14:00:28 2009
-@@ -13,7 +13,7 @@
- # of the TCL interface - methods which are based on the
- # sqlite3_backup_XXX API.
- #
--# $Id: patch-test_backup2_test,v 1.1 2009/04/05 00:02:54 martynas Exp $
-+# $Id: patch-test_backup2_test,v 1.1 2009/04/05 00:02:54 martynas Exp $
- 
- set testdir [file dirname $argv0]
- source $testdir/tester.tcl
 @@ -111,8 +111,8 @@ do_test backup2-6 {
  # Try to backup to something that is not a database file.
  #
