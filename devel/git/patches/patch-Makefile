@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Dec 25 06:33:25 2008
-+++ Makefile	Mon Jan 26 09:09:19 2009
-@@ -170,7 +170,7 @@ uname_V := $(shell sh -c 'uname -v 2>/dev/null || echo
+--- Makefile.orig	Wed Mar  4 09:18:50 2009
++++ Makefile	Sat Mar  7 14:14:19 2009
+@@ -173,7 +173,7 @@ uname_V := $(shell sh -c 'uname -v 2>/dev/null || echo
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -9,33 +9,36 @@
  LDFLAGS =
  ALL_CFLAGS = $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
-@@ -186,11 +186,11 @@ STRIP ?= strip
+@@ -191,22 +191,16 @@ STRIP ?= strip
  # runtime figures out where they are based on the path to the executable.
  # This can help installing the suite in a relocatable way.
  
 -prefix = $(HOME)
 +#prefix = $(HOME)
- bindir = $(prefix)/bin
--mandir = $(prefix)/share/man
-+mandir = $(prefix)/man
- infodir = $(prefix)/share/info
--gitexecdir = $(prefix)/libexec/git-core
-+gitexecdir = $(prefix)/libexec/git
+ bindir_relative = bin
+ bindir = $(prefix)/$(bindir_relative)
+-mandir = share/man
++mandir = man
+ infodir = share/info
+-gitexecdir = libexec/git-core
++gitexecdir = libexec/git
  sharedir = $(prefix)/share
- template_dir = $(sharedir)/git-core/templates
- htmldir=$(sharedir)/doc/git-doc
-@@ -200,7 +200,7 @@ else
- sysconfdir = $(prefix)/etc
- endif
- lib = lib
+ template_dir = share/git-core/templates
+ htmldir = share/doc/git-doc
+-ifeq ($(prefix),/usr)
+-sysconfdir = /etc
 -ETC_GITCONFIG = $(sysconfdir)/gitconfig
+-else
+-sysconfdir = $(prefix)/etc
+-ETC_GITCONFIG = etc/gitconfig
+-endif
 +ETC_GITCONFIG = $(SYSCONFDIR)/gitconfig
+ lib = lib
  # DESTDIR=
  
- # default configuration for gitweb
-@@ -223,16 +223,16 @@ GITWEB_SITE_FOOTER =
+@@ -230,16 +224,16 @@ GITWEB_SITE_FOOTER =
  
- export prefix bindir sharedir htmldir sysconfdir
+ export prefix bindir sharedir sysconfdir
  
 -CC = gcc
 +CC ?= gcc
@@ -54,7 +57,7 @@
  
  export TCL_PATH TCLTK_PATH
  
-@@ -703,12 +703,11 @@ ifeq ($(uname_S),FreeBSD)
+@@ -714,12 +708,11 @@ ifeq ($(uname_S),FreeBSD)
  	endif
  endif
  ifeq ($(uname_S),OpenBSD)
@@ -70,16 +73,7 @@
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -793,7 +792,7 @@ ifneq (,$(findstring MINGW,$(uname_S)))
- 	COMPAT_OBJS += compat/mingw.o compat/fnmatch/fnmatch.o compat/regex/regex.o compat/winansi.o
- 	EXTLIBS += -lws2_32
- 	X = .exe
--	gitexecdir = ../libexec/git-core
-+	gitexecdir = ../libexec/git
- 	template_dir = ../share/git-core/templates/
- 	ETC_GITCONFIG = ../etc/gitconfig
- endif
-@@ -864,7 +863,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
+@@ -879,7 +872,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
  	PROGRAMS += git-imap-send$X
  endif
  ifndef NO_OPENSSL
@@ -88,7 +82,7 @@
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
-@@ -1363,7 +1362,7 @@ all:: $(TEST_PROGRAMS)
+@@ -1400,7 +1393,7 @@ all:: $(TEST_PROGRAMS)
  
  export NO_SVN_TESTS
  
@@ -96,4 +90,4 @@
 +test:
  	$(MAKE) -C t/ all
  
- test-date$X: date.o ctype.o
+ test-ctype$X: ctype.o

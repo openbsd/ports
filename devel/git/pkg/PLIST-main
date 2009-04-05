@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2009/02/09 19:45:19 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2009/04/05 10:05:35 bernd Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -353,7 +353,11 @@ share/doc/git/RelNotes-1.6.0.txt
 share/doc/git/RelNotes-1.6.1.1.txt
 share/doc/git/RelNotes-1.6.1.2.txt
 share/doc/git/RelNotes-1.6.1.3.txt
+share/doc/git/RelNotes-1.6.1.4.txt
 share/doc/git/RelNotes-1.6.1.txt
+share/doc/git/RelNotes-1.6.2.1.txt
+share/doc/git/RelNotes-1.6.2.2.txt
+share/doc/git/RelNotes-1.6.2.txt
 share/doc/git/blame-options.txt
 share/doc/git/cmds-ancillaryinterrogators.txt
 share/doc/git/cmds-ancillarymanipulators.txt
@@ -678,6 +682,7 @@ share/doc/git/howto/using-merge-subtree.html
 share/doc/git/howto/using-merge-subtree.txt
 share/doc/git/i18n.txt
 share/doc/git/index.html
+share/doc/git/mailmap.txt
 share/doc/git/merge-config.txt
 share/doc/git/merge-options.txt
 share/doc/git/merge-strategies.txt
@@ -693,7 +698,6 @@ share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/git-blame.el
 share/emacs/site-lisp/git.el
-share/emacs/site-lisp/vc-git.el
 share/git-core/
 share/git-core/templates/
 share/git-core/templates/branches/

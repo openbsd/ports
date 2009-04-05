@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.44 2009/03/24 05:11:50 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.45 2009/04/05 10:05:35 bernd Exp $
 
 COMMENT-main=		GIT - Tree History Storage Tool
 COMMENT-svn=		GIT - subversion interoperability tools
 COMMENT-x11=		GIT - graphical tools
 
-V=			1.6.1.3
+V=			1.6.2.2
 DISTNAME=		git-${V}
-PKGNAME-main=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}
 PKGNAME-svn=		git-svn-${V}
-PKGNAME-x11=		git-x11-${V}p0
+PKGNAME-x11=		git-x11-${V}
 CATEGORIES=		devel
 
-HOMEPAGE=		http://git.or.cz/
+HOMEPAGE=		http://git-scm.com/
 
 MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
 
@@ -54,7 +54,7 @@ RUN_DEPENDS-svn=	::${BASE_PKGPATH} \
 LIB_DEPENDS-svn=
 PKG_ARCH-svn=		*
 
-RUN_DEPENDS-x11=	:${PKGNAME}:${BASE_PKGPATH},-main \
+RUN_DEPENDS-x11=	::${BASE_PKGPATH},-main \
 			${MODTK_RUN_DEPENDS}
 LIB_DEPENDS-x11=
 PKG_ARCH-x11=		*
