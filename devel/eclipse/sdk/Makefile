@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2009/03/28 17:05:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2009/04/05 14:11:14 steven Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -127,11 +127,11 @@ SUBST_VARS=		ECLIPSE_ARCH
 
 # Build out openbsd source from linux source
 pre-patch:
-	@exec ${SETENV} WRKSRC=${WRKSRC} ECLIPSE_WS=${ECLIPSE_WS} \
-		${FILESDIR}/prepatch.sh
+	@${SETENV} WRKSRC=${WRKSRC} ECLIPSE_WS=${ECLIPSE_WS} \
+		sh ${FILESDIR}/prepatch.sh
 
 do-build:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
 		./build -os ${ECLIPSE_OS} -ws ${ECLIPSE_WS} -arch ${ECLIPSE_ARCH} -java5home ${JAVA_HOME} -compilelibs
 
 do-install:
