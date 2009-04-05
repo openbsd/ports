@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/04/01 13:02:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/04/05 18:21:38 jasper Exp $
 
 COMMENT=	File Alteration Monitor
 
 DISTNAME=	fam-2.7.0
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 SHARED_LIBS +=	fam	0.0	# .0.0
 CATEGORIES=	sysutils
 
