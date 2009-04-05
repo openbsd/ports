@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/18 09:46:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/04/05 10:51:33 ajacoutot Exp $
 bin/okle
-bin/okle_gui
+@bin bin/okle_gui
 share/applnk/
 share/applnk/Multimedia/
 share/applnk/Multimedia/okle.desktop
@@ -29,13 +29,11 @@ share/apps/okle/pics/stepreverse.png
 share/apps/okle/pics/stop.png
 share/apps/okle/pics/subtitleselect.png
 share/apps/okle/pics/up.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/okle.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/okle.png
 share/locale/de/LC_MESSAGES/okle-0.3.mo
 share/locale/hu/LC_MESSAGES/okle-0.3.mo
 share/locale/it/LC_MESSAGES/okle-0.3.mo
 share/locale/sv/LC_MESSAGES/okle-0.3.mo
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

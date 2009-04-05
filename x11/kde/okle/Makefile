@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/28 19:22:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2009/04/05 10:51:33 ajacoutot Exp $
 
 COMMENT= 		kde front end for ogle
 CATEGORIES=		x11 x11/kde 
 VERSION=		3.0
 DISTNAME=		okle-0.3
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 HOMEPAGE=		http://okle.sourceforge.net/
 MASTER_SITES=		http://okle.sourceforge.net/src/
 EXTRACT_SUFX=		.tar.gz
