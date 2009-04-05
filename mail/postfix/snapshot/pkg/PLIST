@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2009/03/15 19:38:05 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.51 2009/04/05 20:48:25 sthen Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -18,7 +18,9 @@ libexec/postfix/
 @bin libexec/postfix/flush
 @bin libexec/postfix/lmtp
 @bin libexec/postfix/local
+libexec/postfix/main.cf
 @bin libexec/postfix/master
+libexec/postfix/master.cf
 @bin libexec/postfix/nqmgr
 @bin libexec/postfix/oqmgr
 @bin libexec/postfix/pickup
