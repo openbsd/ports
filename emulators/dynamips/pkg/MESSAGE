@@ -7,4 +7,4 @@ You can greatly reduce startup times by uncompressing your IOS
 images with unzip.
 
 N.B. The just-in-time compiler, required for good performance,
-is currently only supported on i386.
+is currently only supported on i386 and amd64.

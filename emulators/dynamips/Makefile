@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/11/24 23:29:48 claudio Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/05 12:48:40 fgsch Exp $
 
 COMMENT=		cisco 3600/7200 platform emulator
 
 DISTNAME=		dynamips-0.2.8-RC2
-PKGNAME=		${DISTNAME:S/-RC/rc/}p1
+PKGNAME=		${DISTNAME:S/-RC/rc/}p2
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://www.ipflow.utc.fr/index.php/Cisco_7200_Simulator
