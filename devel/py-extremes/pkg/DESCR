@@ -1,0 +1,9 @@
+The peak.util.extremes module provides a production-quality
+implementation of the Min and Max objects from PEP 326. While PEP
+326 was rejected for inclusion in the language or standard library,
+the objects described in it are useful in a variety of applications.
+In PEAK, they have been used to implement generic functions (in
+RuleDispatch and PEAK-Rules), as well as to handle scheduling and
+time operations in the Trellis. Because this has led to each project
+copying the same code, we've now split the module out so it can be
+used independently.
