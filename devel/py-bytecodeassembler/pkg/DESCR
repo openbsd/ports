@@ -1,0 +1,13 @@
+peak.util.assembler is a simple bytecode assembler module that
+handles most low-level bytecode generation details like jump offsets,
+stack size tracking, line number table generation, constant and
+variable name index tracking, etc. That way, you can focus your
+attention on the desired semantics of your bytecode instead of on
+these mechanical issues.
+
+In addition to a low-level opcode-oriented API for directly generating
+specific Python bytecodes, this module also offers an extensible
+mini-AST framework for generating code from high-level specifications.
+This framework does most of the work needed to transform tree-like
+structures into linear bytecode instructions, and includes the
+ability to do compile-time constant folding.
