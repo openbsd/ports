@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/27 02:04:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/04/05 12:12:23 sthen Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -57,9 +57,9 @@ do-configure:
 	cd ${VNCSRC}/vncviewer; ${XMKMF}
 
 do-build:
-	cd ${VNCSRC}/libvncauth; ${ENV} ${MAKE_ENV} ${MAKE}
-	cd ${VNCSRC}/vncviewer; ${ENV} ${MAKE_ENV} ${MAKE}
-	cd ${WRKSRC}/vncstorepw; ${ENV} ${MAKE_ENV} ${MAKE}
+	cd ${VNCSRC}/libvncauth; ${SETENV} ${MAKE_ENV} ${MAKE}
+	cd ${VNCSRC}/vncviewer; ${SETENV} ${MAKE_ENV} ${MAKE}
+	cd ${WRKSRC}/vncstorepw; ${SETENV} ${MAKE_ENV} ${MAKE}
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${VNCLIB}
