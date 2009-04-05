@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/05 00:55:00 martynas Exp $
+lib/python${MODPY_VERSION}/site-packages/SymbolType-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
+lib/python${MODPY_VERSION}/site-packages/SymbolType-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/SymbolType-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/SymbolType-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/SymbolType-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/SymbolType-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/SymbolType-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/peak/
+lib/python${MODPY_VERSION}/site-packages/peak/util/
+lib/python${MODPY_VERSION}/site-packages/peak/util/symbols.py
+lib/python${MODPY_VERSION}/site-packages/peak/util/symbols.pyc
+share/doc/py-symboltype/
+share/doc/py-symboltype/README.txt

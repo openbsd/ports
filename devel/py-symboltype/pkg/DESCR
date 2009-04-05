@@ -1,0 +1,5 @@
+Installing SymbolType (using "easy_install SymbolType" or "setup.py
+install") gives you access to the peak.util.symbols module, previously
+available only by installing the full PEAK toolkit. peak.util.symbols
+provides a Symbol type and two built-in symbols that are used by
+PEAK: NOT_FOUND and NOT_GIVEN.
