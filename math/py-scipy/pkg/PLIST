@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/16 14:42:38 eric Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/04/05 18:08:34 eric Exp $
 lib/python${MODPY_VERSION}/site-packages/scipy/
 lib/python${MODPY_VERSION}/site-packages/scipy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/scipy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -637,6 +637,9 @@ lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/tests/test_l
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/umfpack/
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/umfpack/__init__.py
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/umfpack/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/umfpack/__umfpack.so
+lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/umfpack/_umfpack.py
+lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/umfpack/_umfpack.pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/umfpack/info.py
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/umfpack/info.pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/sparse/linalg/dsolve/umfpack/setup.py
