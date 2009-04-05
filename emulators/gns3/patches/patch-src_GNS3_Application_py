@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_GNS3_Application_py,v 1.1 2009/04/05 13:31:38 sthen Exp $
+--- src/GNS3/Application.py.orig	Sun Apr  5 11:28:42 2009
++++ src/GNS3/Application.py	Sun Apr  5 11:28:46 2009
+@@ -259,7 +259,7 @@ class Application(QApplication, Singleton):
+ 
+         self.systconf['dynamips'] = systemDynamipsConf()
+         confo = self.systconf['dynamips']
+-        confo.path = ConfDB().get('Dynamips/hypervisor_path', unicode(''))
++        confo.path = ConfDB().get('Dynamips/hypervisor_path', unicode('${PREFIX}/bin/dynamips'))
+         confo.port = int(ConfDB().get('Dynamips/hypervisor_port', 7200))
+         confo.baseUDP = int(ConfDB().get('Dynamips/hypervisor_baseUDP', 10000))
+         confo.baseConsole = int(ConfDB().get('Dynamips/hypervisor_baseConsole', 2000))

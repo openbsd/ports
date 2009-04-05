@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/15 13:31:58 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2009/04/05 13:31:38 sthen Exp $
 
 COMMENT=	graphical network simulator
 
 MODPY_EGG_VERSION=	0.5
 V=			0.6
 DISTNAME=		GNS3-$V-src
-PKGNAME=		gns3-$Vp0
+PKGNAME=		gns3-$Vp1
 
 CATEGORIES=	emulators
 
@@ -26,8 +26,10 @@ BUILD_DEPENDS=	${_MODPY_BUILD_DEPENDS}
 RUN_DEPENDS=	::x11/py-qt4 \
 		::emulators/dynamips
 
-NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/GNS3/Application.py 
 
 .include <bsd.port.mk>
