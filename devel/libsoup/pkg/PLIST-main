@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2009/04/04 10:25:48 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/04/05 10:34:03 kili Exp $
+@pkgpath devel/libsoup
 @pkgpath devel/libsoup,ssl
 %%SHARED%%
 include/libsoup-${API_VERSION}/
