@@ -1,23 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.5 2005/12/23 16:59:13 espie Exp $
---- Makefile.orig	Tue Jul  2 16:36:06 1996
-+++ Makefile	Thu Dec 22 13:46:49 2005
-@@ -7,11 +7,13 @@
- SASR	= -DSASR
- ######### Define SASR if >> is a signed arithmetic shift (-1 >> 1 == -1)
- 
--MULHACK = -DUSE_FLOAT_MUL
-+#MULHACK = -DUSE_FLOAT_MUL      # Don't define it for FreeBSD, cause SIGFPE
-+MULHACK =
- ######### Define this if your host multiplies floats faster than integers,
- ######### e.g. on a SPARCstation.
- 
--FAST	= -DFAST
-+#FAST    = -DFAST
-+FAST    =
- ######### Define together with USE_FLOAT_MUL to enable the GSM library's
- ######### approximation option for incorrect, but good-enough results.
- 
-@@ -44,7 +46,7 @@ WAV49	=
+$OpenBSD: patch-Makefile,v 1.6 2009/04/05 19:09:32 kili Exp $
+--- Makefile.orig	Wed Apr 26 21:14:26 2006
++++ Makefile	Sun Apr  5 18:39:44 2009
+@@ -44,7 +44,7 @@ WAV49	= -DWAV49
  # CCFLAGS 	= -c -O
  
  CC		= gcc -ansi -pedantic
@@ -26,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.5 2005/12/23 16:59:13 espie Exp $
  
  LD 		= $(CC)
  
-@@ -80,7 +82,7 @@ INSTALL_ROOT	=
+@@ -80,7 +80,7 @@ INSTALL_ROOT	=
  
  GSM_INSTALL_ROOT = $(INSTALL_ROOT)
  GSM_INSTALL_LIB = $(GSM_INSTALL_ROOT)/lib
@@ -35,7 +19,7 @@ $OpenBSD: patch-Makefile,v 1.5 2005/12/23 16:59:13 espie Exp $
  GSM_INSTALL_MAN = $(GSM_INSTALL_ROOT)/man/man3
  
  
-@@ -106,7 +108,10 @@ COMPRESS 	= compress
+@@ -106,7 +106,10 @@ COMPRESS 	= compress
  COMPRESSFLAGS 	= 
  # RANLIB 	= true
  RANLIB	 	= ranlib
@@ -46,7 +30,7 @@ $OpenBSD: patch-Makefile,v 1.5 2005/12/23 16:59:13 espie Exp $
  #
  #    You shouldn't have to configure below this line if you're porting.
  # 
-@@ -136,11 +141,21 @@ CFLAGS	= $(CCFLAGS) $(SASR) $(DEBUG) $(M
+@@ -136,11 +139,21 @@ CFLAGS	= $(CCFLAGS) $(SASR) $(DEBUG) $(MULHACK) $(FAST
  LFLAGS	= $(LDFLAGS) $(LDINC)
  ######### It's $(LD) $(LFLAGS)
  
@@ -68,7 +52,7 @@ $OpenBSD: patch-Makefile,v 1.5 2005/12/23 16:59:13 espie Exp $
  TOAST	= $(BIN)/toast
  UNTOAST	= $(BIN)/untoast
  TCAT	= $(BIN)/tcat
-@@ -258,6 +273,7 @@ STUFF = 	ChangeLog			\
+@@ -258,6 +271,7 @@ STUFF = 	ChangeLog			\
  
  GSM_INSTALL_TARGETS =	\
  		$(GSM_INSTALL_LIB)/libgsm.a		\
@@ -76,7 +60,7 @@ $OpenBSD: patch-Makefile,v 1.5 2005/12/23 16:59:13 espie Exp $
  		$(GSM_INSTALL_INC)/gsm.h		\
  		$(GSM_INSTALL_MAN)/gsm.3		\
  		$(GSM_INSTALL_MAN)/gsm_explode.3	\
-@@ -277,9 +293,12 @@ TOAST_INSTALL_TARGETS =	\
+@@ -277,9 +291,12 @@ TOAST_INSTALL_TARGETS =	\
  		$(CC) $(CFLAGS) $?
  		@-mv `$(BASENAME) $@` $@ > /dev/null 2>&1
  
@@ -90,7 +74,7 @@ $OpenBSD: patch-Makefile,v 1.5 2005/12/23 16:59:13 espie Exp $
  		@-echo $(ROOT): Done.
  
  tst:		$(TST)/lin2cod $(TST)/cod2lin $(TOAST) $(TST)/test-result
-@@ -299,8 +318,11 @@ install:	toastinstall gsminstall
+@@ -299,8 +316,11 @@ install:	toastinstall gsminstall
  
  # The basic API: libgsm
  
@@ -103,7 +87,7 @@ $OpenBSD: patch-Makefile,v 1.5 2005/12/23 16:59:13 espie Exp $
  		$(AR) $(ARFLAGS) $(LIBGSM) $(GSM_OBJECTS)
  		$(RANLIB) $(LIBGSM)
  
-@@ -308,14 +330,14 @@ $(LIBGSM):	$(LIB) $(GSM_OBJECTS)
+@@ -308,14 +328,14 @@ $(LIBGSM):	$(LIB) $(GSM_OBJECTS)
  # Toast, Untoast and Tcat -- the compress-like frontends to gsm.
  
  $(TOAST):	$(BIN) $(TOAST_OBJECTS) $(LIBGSM)
@@ -121,7 +105,7 @@ $OpenBSD: patch-Makefile,v 1.5 2005/12/23 16:59:13 espie Exp $
  		$(LN) $(TOAST) $(TCAT)
  
  
-@@ -342,63 +364,51 @@ toastinstall:
+@@ -342,63 +362,51 @@ toastinstall:
  
  gsmuninstall:
  		-if [ x"$(GSM_INSTALL_ROOT)" != x ] ; then	\
@@ -203,7 +187,7 @@ $OpenBSD: patch-Makefile,v 1.5 2005/12/23 16:59:13 espie Exp $
  # Distribution
  
  dist:		gsm-1.0.tar.Z
-@@ -416,16 +426,16 @@ uninstall:	toastuninstall gsmuninstall
+@@ -416,16 +424,16 @@ uninstall:	toastuninstall gsmuninstall
  		@-echo uninstall: Done.
  
  semi-clean:
@@ -223,7 +207,7 @@ $OpenBSD: patch-Makefile,v 1.5 2005/12/23 16:59:13 espie Exp $
  			$(TOAST) $(TCAT) $(UNTOAST)	\
  			$(ROOT)/gsm-1.0.tar.Z
  
-@@ -434,29 +444,29 @@ clean:	semi-clean
+@@ -434,29 +442,29 @@ clean:	semi-clean
  # but aren't generally needed to port this.
  
  $(TLS)/sweet:	$(TLS)/sweet.o $(TLS)/taste.o
@@ -258,7 +242,7 @@ $OpenBSD: patch-Makefile,v 1.5 2005/12/23 16:59:13 espie Exp $
  
  
  # Various conversion programs between linear, text, .gsm and the code
-@@ -474,21 +484,21 @@ $(TST)/test-result:	$(TST)/lin2cod $(TST
+@@ -474,21 +482,21 @@ $(TST)/test-result:	$(TST)/lin2cod $(TST)/cod2lin $(TO
  			( cd $(TST); ./run ) 
  
  $(TST)/lin2txt:		$(TST)/lin2txt.o $(LIBGSM)

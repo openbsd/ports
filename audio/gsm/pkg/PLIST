@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/04/17 21:18:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/04/05 19:09:32 kili Exp $
 %%SHARED%%
 bin/tcat
-bin/toast
+@bin bin/toast
 bin/untoast
 include/gsm.h
 lib/libgsm.a
