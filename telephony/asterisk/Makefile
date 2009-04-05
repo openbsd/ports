@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2009/04/02 19:37:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2009/04/05 22:37:35 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
 V=			1.4.24.1
 DISTNAME=		asterisk-$V
-FULLPKGNAME-main=	asterisk-$V
+FULLPKGNAME-main=	asterisk-$Vp0
 # N.B. overridden for h323 flavor below.
 
 CATEGORIES=		telephony
@@ -27,7 +27,8 @@ MULTI_PACKAGES=		-main
 
 WANTLIB-main=		c crypto m pthread ssl stdc++ termcap z
 
-LIB_DEPENDS-main=	popt::devel/popt
+LIB_DEPENDS-main=	popt::devel/popt \
+			gsm::audio/gsm
 
 MASTER_SITES=		http://downloads.digium.com/pub/telephony/asterisk/releases/
 
@@ -48,7 +49,6 @@ CONFIGURE_ARGS+=	--with-asterisk-user=_asterisk \
 			--localstatedir=/var \
 			--sharedstatedir=${PREFIX}/share/asterisk \
 			--with-asound=no \
-			--with-gsm=internal \
 			--with-isdnnet=no \
 			--with-kde=no \
 			--with-misdn=no \
