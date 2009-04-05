@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/26 10:33:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/04/05 16:43:45 jasper Exp $
 bin/gtg
 lib/python${MODPY_VERSION}/site-packages/GTG/
 lib/python${MODPY_VERSION}/site-packages/GTG/__init__.py
@@ -13,6 +13,8 @@ lib/python${MODPY_VERSION}/site-packages/GTG/core/__init__.py
 lib/python${MODPY_VERSION}/site-packages/GTG/core/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/core/datastore.py
 lib/python${MODPY_VERSION}/site-packages/GTG/core/datastore.pyc
+lib/python${MODPY_VERSION}/site-packages/GTG/core/firstrun_tasks.py
+lib/python${MODPY_VERSION}/site-packages/GTG/core/firstrun_tasks.pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/core/requester.py
 lib/python${MODPY_VERSION}/site-packages/GTG/core/requester.pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/core/tagstore.py
@@ -52,20 +54,26 @@ lib/python${MODPY_VERSION}/site-packages/GTG/tools/dates.py
 lib/python${MODPY_VERSION}/site-packages/GTG/tools/dates.pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/tools/listes.py
 lib/python${MODPY_VERSION}/site-packages/GTG/tools/listes.pyc
+lib/python${MODPY_VERSION}/site-packages/GTG/tools/openurl.py
+lib/python${MODPY_VERSION}/site-packages/GTG/tools/openurl.pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/tools/taskxml.py
 lib/python${MODPY_VERSION}/site-packages/GTG/tools/taskxml.pyc
-lib/python${MODPY_VERSION}/site-packages/gtg-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/gtg-${VERSION}-py${MODPY_VERSION}.egg-info
+@man man/man1/gtg.1
 share/applications/gtg.desktop
 share/gtg/
-share/gtg/firstrun_tasks.xml
 share/gtg/icons/
 share/gtg/icons/hicolor/
 share/gtg/icons/hicolor/16x16/
 share/gtg/icons/hicolor/16x16/actions/
 share/gtg/icons/hicolor/16x16/actions/gtg-note-new.png
+share/gtg/icons/hicolor/16x16/actions/gtg-tag-new.png
+share/gtg/icons/hicolor/16x16/actions/gtg-tag.png
 share/gtg/icons/hicolor/16x16/actions/gtg-task-dismiss.png
 share/gtg/icons/hicolor/16x16/actions/gtg-task-done.png
 share/gtg/icons/hicolor/16x16/actions/gtg-task-new.png
+share/gtg/icons/hicolor/16x16/actions/gtg-task-undismiss.png
+share/gtg/icons/hicolor/16x16/actions/gtg-task-undone.png
 share/gtg/icons/hicolor/16x16/apps/
 share/gtg/icons/hicolor/16x16/apps/gtg.png
 share/gtg/icons/hicolor/16x16/categories/
@@ -78,6 +86,8 @@ share/gtg/icons/hicolor/16x16/emblems/gtg-work.png
 share/gtg/icons/hicolor/22x22/
 share/gtg/icons/hicolor/22x22/actions/
 share/gtg/icons/hicolor/22x22/actions/gtg-note-new.png
+share/gtg/icons/hicolor/22x22/actions/gtg-tag-new.png
+share/gtg/icons/hicolor/22x22/actions/gtg-tag.png
 share/gtg/icons/hicolor/22x22/actions/gtg-task-dismiss.png
 share/gtg/icons/hicolor/22x22/actions/gtg-task-done.png
 share/gtg/icons/hicolor/22x22/actions/gtg-task-new.png
@@ -88,15 +98,31 @@ share/gtg/icons/hicolor/22x22/apps/gtg.png
 share/gtg/icons/hicolor/22x22/categories/
 share/gtg/icons/hicolor/22x22/categories/items-tags.png
 share/gtg/icons/hicolor/24x24/
+share/gtg/icons/hicolor/24x24/actions/
+share/gtg/icons/hicolor/24x24/actions/gtg-tag-new.png
 share/gtg/icons/hicolor/24x24/apps/
 share/gtg/icons/hicolor/24x24/apps/gtg.png
+share/gtg/icons/hicolor/32x32/
+share/gtg/icons/hicolor/32x32/apps/
+share/gtg/icons/hicolor/32x32/apps/gtg.png
 share/gtg/icons/hicolor/scalable/
 share/gtg/icons/hicolor/scalable/apps/
 share/gtg/icons/hicolor/scalable/apps/gtg.svg
+share/gtg/icons/hicolor/svg/
+share/gtg/icons/hicolor/svg/gtg.svg
 share/icons/hicolor/16x16/apps/gtg.png
 share/icons/hicolor/22x22/apps/gtg.png
 share/icons/hicolor/24x24/apps/gtg.png
 share/icons/hicolor/scalable/apps/gtg.svg
+share/locale/be/LC_MESSAGES/gtg.mo
+share/locale/de/LC_MESSAGES/gtg.mo
+share/locale/es/LC_MESSAGES/gtg.mo
+share/locale/fr/LC_MESSAGES/gtg.mo
+share/locale/it/LC_MESSAGES/gtg.mo
+share/locale/ms/LC_MESSAGES/gtg.mo
+share/locale/nl/LC_MESSAGES/gtg.mo
+share/locale/ru/LC_MESSAGES/gtg.mo
+share/locale/sv/LC_MESSAGES/gtg.mo
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

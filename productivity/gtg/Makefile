@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/01 13:34:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/05 16:43:45 jasper Exp $
 
 COMMENT=		GTD organizer for GNOME
 
 GNOME_PROJECT=		gtg
-GNOME_VERSION=		0.1
-PKGNAME=		${DISTNAME}p1
+GNOME_VERSION=		0.1.1
 CATEGORIES=		productivity
 
 HOMEPAGE=		http://gtg.fritalk.com/
@@ -24,11 +23,14 @@ MODULES=		lang/python \
 RUN_DEPENDS=		::devel/py-configobj \
 			::devel/py-xdg \
 			::x11/gnome/py-gnome
+BUILD_DEPENDS=		::x11/py-gtk2
 
 DESKTOP_FILES=		Yes
 
 NO_REGRESS=		Yes
 USE_X11=		Yes
+
+SUBST_VARS+=		VERSION
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/gtg \

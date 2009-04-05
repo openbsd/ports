@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2009/04/05 16:43:45 jasper Exp $
+--- setup.py.orig	Fri Apr  3 21:31:34 2009
++++ setup.py	Sat Apr  4 03:40:19 2009
+@@ -59,7 +59,7 @@ def create_data_files():
+     data_files.append(('share/icons/hicolor/scalable/apps', ['data/icons/hicolor/scalable/apps/gtg.svg']))
+     # misc
+     data_files.append(('share/applications', ['gtg.desktop']))
+-    data_files.append(('share/man/man1', ['doc/gtg.1']))
++    data_files.append(('man/man1', ['doc/gtg.1']))
+     return data_files
+     
+     

@@ -1,12 +1,12 @@
-$OpenBSD: patch-GTG___init___py,v 1.1.1.1 2009/03/26 10:33:55 jasper Exp $
---- GTG/__init__.py.orig	Wed Mar 25 23:46:13 2009
-+++ GTG/__init__.py	Wed Mar 25 23:46:20 2009
-@@ -22,7 +22,7 @@ URL             = "http://gtg.fritalk.com"
+$OpenBSD: patch-GTG___init___py,v 1.2 2009/04/05 16:43:45 jasper Exp $
+--- GTG/__init__.py.orig	Fri Apr  3 22:00:16 2009
++++ GTG/__init__.py	Sat Apr  4 03:38:30 2009
+@@ -32,7 +32,7 @@ URL             = "http://gtg.fritalk.com"
  EMAIL           = "gtg@lists.launchpad.net"
- VERSION         = '0.1'
+ VERSION         = '0.1.1'
  LOCAL_ROOTDIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..')) 
 -DIST_ROOTDIR    = "/usr/share/gtg"
 +DIST_ROOTDIR    = "${PREFIX}/share/gtg"
  
- if not os.path.isdir( os.path.join(LOCAL_ROOTDIR,'data') ) :
-     DATA_DIR = DIST_ROOTDIR
+ # CREDITS
+ AUTHORS     = ["Main developers:", \

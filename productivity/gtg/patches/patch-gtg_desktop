@@ -1,10 +1,10 @@
-$OpenBSD: patch-gtg_desktop,v 1.1.1.1 2009/03/26 10:33:55 jasper Exp $
---- gtg.desktop.orig	Wed Mar 25 23:40:53 2009
-+++ gtg.desktop	Wed Mar 25 23:44:22 2009
-@@ -3,7 +3,7 @@ Version=0.1
- Name=Getting Things Gnome!
+$OpenBSD: patch-gtg_desktop,v 1.2 2009/04/05 16:43:45 jasper Exp $
+--- gtg.desktop.orig	Thu Apr  2 23:06:06 2009
++++ gtg.desktop	Fri Apr  3 10:11:27 2009
+@@ -3,7 +3,7 @@ Version=1.0
+ Name=Getting Things GNOME!
  Icon=gtg
- Comment=Personal organizer for the GNOME desktop environment.
+ Comment=Personal organizer for the GNOME desktop environment
 -Exec=/usr/bin/gtg %F
 +Exec=gtg %F
  Terminal=false
