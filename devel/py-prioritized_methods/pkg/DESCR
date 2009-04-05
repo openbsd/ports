@@ -1,0 +1,9 @@
+An extension to PEAK-Rules to prioritize methods in order to to
+avoid AmbiguousMethods situations
+
+This module provides four decorators:
+
+	prioritized_when
+	prioritized_around
+	prioritized_before
+	prioritized_after
