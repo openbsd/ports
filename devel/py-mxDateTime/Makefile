@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.21 2009/03/11 21:11:29 bernd Exp $
+# $OpenBSD: Makefile,v 1.22 2009/04/06 18:21:26 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Date and Time types for Python
 
-VERSION=	2.0.5
+VERSION=	3.1.2
 DISTNAME=	egenix-mx-base-${VERSION}
-PKGNAME=	py-mxDateTime-${VERSION}p4
+PKGNAME=	py-mxDateTime-${VERSION}
 CATEGORIES=	devel
 
 MASTER_SITES=	http://www.lemburg.com/files/python/
 
-HOMEPAGE=	http://www.lemburg.com/files/python/eGenix-mx-Extensions.html
-
-MAINTAINER=	Jason Ish <ish@openbsd.org>
+HOMEPAGE=	http://www.egenix.com/products/python/mxBase/
 
 # eGenix.com Public License Agreement
 PERMIT_PACKAGE_FTP=	Yes
@@ -30,7 +28,7 @@ FLAVOR?=	python2.5
 ERRORS+=	"Fatal: You must select one version: ${FLAVORS}"
 .endif
 
-MODPY_VERSION=          ${FLAVOR:S/python//}
+MODPY_VERSION=	${FLAVOR:S/python//}
 
 NO_REGRESS=	Yes
 
