@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/28 16:03:41 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/04/06 07:52:12 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -261,6 +261,14 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/PGresult/result_error_message-i.
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/PGresult/result_status-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/BSD
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/COPYING.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ChangeLog
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Contributors
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/GPL
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/LICENSE
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Rakefile
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/postgres.html
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/doc/postgres.jp.html
@@ -270,12 +278,17 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/compat.c
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/compat.h
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/compat.o
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/extconf.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mingw/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mingw/Rakefile
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mingw/build.rake
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mkmf.log
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mkrf_config.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/pg.c
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/pg.h
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/pg.o
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/pg.so
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/vc/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/vc/pg.sln
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/pg.so
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/sample/
