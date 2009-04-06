@@ -1,0 +1,23 @@
+$OpenBSD: patch-shell_ev-window_c,v 1.1 2009/04/06 16:15:13 stsp Exp $
+
+Taken from http://bugzilla.gnome.org/show_bug.cgi?id=571051
+
+This prevents evince from stealing focus when reloading a document.
+Evince reloads documents automatically when they are changed while
+being displayed. Very annoying while editing LaTeX files and rebuilding
+the corresponding PDF.
+
+--- shell/ev-window.c.orig	Mon Apr  6 16:34:01 2009
++++ shell/ev-window.c	Mon Apr  6 16:34:10 2009
+@@ -926,6 +926,11 @@ setup_size_from_metadata (EvWindow *window)
+ 	GValue x = { 0, };
+ 	GValue y = { 0, };
+ 
++	/* Don't try to change the window when reloading a document */
++	if (window->priv->in_reload) {
++	    return;
++	}
++
+ 	if (ev_metadata_manager_get (uri, "window_maximized", &maximized, FALSE)) {
+ 		if (g_value_get_boolean (&maximized)) {
+ 			gtk_window_maximize (GTK_WINDOW (window));

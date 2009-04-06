@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2009/04/06 10:09:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/04/06 16:15:13 stsp Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,13 +11,16 @@ GNOME_VERSION=	2.24.2
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p5
+PKGNAME-main=	${DISTNAME}p6
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 
 SHARED_LIBS=	evbackend	0.0 # .0.0
 
 HOMEPAGE=	http://www.gnome.org/projects/evince/
+
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_FTP=	Yes
