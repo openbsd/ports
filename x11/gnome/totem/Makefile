@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/03/27 15:33:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
@@ -34,7 +34,6 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS=	::x11/py-gtk2 \
-		::textproc/rarian \
 		::devel/iso-codes
 RUN_DEPENDS=	::x11/gnome/settings-daemon \
 		::x11/py-gtk2 \

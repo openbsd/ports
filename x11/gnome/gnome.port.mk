@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.20 2008/11/23 22:56:37 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.21 2009/04/06 10:05:20 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
@@ -21,7 +21,12 @@ MODGNOME_RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 # Set to 'yes' if there are .xml GNOME help files under
 # share/gnome/help/ in the package list.
 .if defined(MODGNOME_HELP_FILES) && ${MODGNOME_HELP_FILES:L} == "yes"
+MODGNOME_BUILD_DEPENDS+= ::x11/gnome/doc-utils
 MODGNOME_RUN_DEPENDS+=	:yelp-*:x11/gnome/yelp
+.endif
+
+.if defined(MODGNOME_BUILD_DEPENDS)
+BUILD_DEPENDS+=		${MODGNOME_BUILD_DEPENDS}
 .endif
 
 .if defined(MODGNOME_RUN_DEPENDS)

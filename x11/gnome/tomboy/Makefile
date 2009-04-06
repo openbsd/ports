@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
@@ -30,9 +30,7 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png xml2 z gio-2.0
 
-BUILD_DEPENDS=	::x11/gnome/doc-utils \
-		::textproc/rarian \
-		${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::lang/mono \
 		::devel/mono-addins \
 		::sysutils/ndesk-dbus-glib \

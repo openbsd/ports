@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/04/06 10:05:21 ajacoutot Exp $
 
 # (empathy:10245): Gtk-WARNING **: could not load image: Icon 'im-xmpp' not present in theme
 
@@ -38,9 +38,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		::devel/iso-codes \
-			::x11/gnome/doc-utils \
-			::x11/py-gtk2 \
-			::textproc/rarian
+			::x11/py-gtk2
 LIB_DEPENDS=		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
 			missioncontrol-client::net/telepathy/telepathy-mission-control \
 			panel-applet-2::x11/gnome/panel \

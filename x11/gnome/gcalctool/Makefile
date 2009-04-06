@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/03/15 21:55:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		GTK2 desktop calculator
 
@@ -28,9 +28,7 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		gconf-2.>=6::devel/gconf2 \
 			glade-2.0.>=1::devel/libglade2
 BUILD_DEPENDS=		::devel/bison \
-			::devel/gconf2 \
-			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
-			::textproc/rarian
+			::devel/gconf2
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes

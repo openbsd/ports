@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/04/06 10:05:20 ajacoutot Exp $
 
 # XXX the following modules are commented in PLIST
 # iPodModule ===> needs py-gpod which we don't provide
@@ -21,9 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		::x11/gnome/doc-utils \
-			::textproc/rarian \
-			${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
 # XXX needs avahi for network sync
 RUN_DEPENDS=		::devel/gettext \
 			::devel/xdg-utils \

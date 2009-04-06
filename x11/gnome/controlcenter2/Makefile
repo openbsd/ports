@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2009/04/06 10:05:20 ajacoutot Exp $
 
 COMMENT=		GNOME control center
 
@@ -43,9 +43,7 @@ LIB_DEPENDS=		canberra,canberra-gtk:libcanberra->=0.10p0:audio/libcanberra \
 			xklavier::x11/gnome/libxklavier \
 			metacity-private::x11/gnome/metacity \
 			panel-applet-2::x11/gnome/panel
-BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
-			::textproc/rarian \
-			::x11/gnome/settings-daemon
+BUILD_DEPENDS=		::x11/gnome/settings-daemon
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			::multimedia/gstreamer-0.10/plugins-good,-gconf \
 			::x11/gnome/settings-daemon \

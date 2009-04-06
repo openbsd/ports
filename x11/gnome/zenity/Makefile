@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2009/03/14 10:40:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		dialogs for GNOME
 
 GNOME_PROJECT=		zenity
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,8 +22,6 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:gnome-doc-utils-*:x11/gnome/doc-utils
 LIB_DEPENDS=		dbus-glib-1.>=3::x11/dbus-glib \
 			gnomecanvas-2::x11/gnome/libgnomecanvas \
 			notify::devel/libnotify

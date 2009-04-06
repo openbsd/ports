@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		GNOME utility programs
 
@@ -25,8 +25,6 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
 		pthread ssl startup-notification-1 util xml2 z
 
-BUILD_DEPENDS=		:gnome-doc-utils-*:x11/gnome/doc-utils \
-			::textproc/rarian
 LIB_DEPENDS=		gtop-2.0.>=7::devel/libgtop2 \
 			gnomeui-2.>=1800::x11/gnome/libgnomeui \
 			panel-applet-2::x11/gnome/panel

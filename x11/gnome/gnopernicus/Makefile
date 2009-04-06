@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		screen reader and magnifier for GNOME desktop
 
@@ -36,8 +36,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png popt pthread spi ssl util xml2 z
 
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			::textproc/rarian
+BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::x11/gnome/libgail-gnome
 LIB_DEPENDS=		gnome-mag::x11/gnome/mag \
 			gnomespeech::x11/gnome/speech

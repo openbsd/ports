@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2009/03/26 17:15:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
@@ -22,9 +22,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png util wrap xml2 z
 
-BUILD_DEPENDS=		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils \
-			:rarian-*:textproc/rarian \
-			::x11/gnome/zenity
+BUILD_DEPENDS=		::x11/gnome/zenity
 RUN_DEPENDS=		:sox-*:audio/sox \
 			:gnome-audio-*:x11/gnome/audio \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme \

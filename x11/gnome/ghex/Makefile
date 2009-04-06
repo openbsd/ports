@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/04 20:01:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		binary editor
 
 GNOME_PROJECT=		ghex
 GNOME_VERSION=		2.24.0
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=  gtkhex               1.0      # .0.0
 CATEGORIES=		sysutils editors
@@ -27,10 +28,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		::x11/gnome/doc-utils
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui
-RUN_DEPENDS=		::x11/gnome/doc-utils
 
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes

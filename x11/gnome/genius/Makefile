@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/18 11:28:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=	advanced general purpose calculator
 
@@ -28,7 +28,6 @@ WANTLIB += ssl termcap util xml2 z
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	::textproc/rarian
 RUN_DEPENDS=	:shared-mime-info->=0.21:misc/shared-mime-info
 LIB_DEPENDS=	gtksourceview-2.0.>=2::x11/gtksourceview \
 		gnomevfs-2.>=2400::x11/gnome/vfs2 \

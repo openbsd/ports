@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/04/06 10:05:20 ajacoutot Exp $
 
 BROKEN= 	does not work after changes in the UVC layer
 
@@ -34,7 +34,6 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	::x11/gnome/doc-utils
 LIB_DEPENDS=	camel-1.2.>=11,ebook-1.2,edataserver-1.2,smime3,softokn3::databases/evolution-data-server \
 		rsvg-2.>=20::x11/gnome/librsvg \
 		gstinterfaces-0.10,gstreamer-0.10::multimedia/gstreamer-0.10/plugins-base \

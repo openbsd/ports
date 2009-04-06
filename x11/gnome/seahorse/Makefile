@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/03/23 15:54:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		manage encryption keys
 
@@ -25,9 +25,7 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		krb5 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png pthread sasl2 ssl tasn1 xml2 z
 
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			::x11/gnome/doc-utils \
-			::textproc/rarian
+BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		lber,ldap::databases/openldap \
 			notify::devel/libnotify \
 			soup-2.4::devel/libsoup \

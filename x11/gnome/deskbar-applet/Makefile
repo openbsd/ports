@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		universal search and navigation for GNOME
 
@@ -35,9 +35,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		startup-notification-1 tasn1 util xml2 z
 
 BUILD_DEPENDS=		::x11/dbus-python \
-			::x11/gnome/doc-utils \
-			::x11/gnome/py-gnome-desktop \
-			::textproc/rarian
+			::x11/gnome/py-gnome-desktop
 RUN_DEPENDS=		::mail/evolution \
 			::x11/dbus-python \
 			::x11/gnome/py-gnome-desktop \

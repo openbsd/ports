@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=	collection of documentation utilities for the GNOME project
 
 GNOME_PROJECT=	gnome-doc-utils
 GNOME_VERSION=	0.14.2
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 
 CATEGORIES=	textproc
 
@@ -23,7 +23,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		::textproc/rarian
 RUN_DEPENDS=	::devel/gettext \
 		:py-libxml-*:textproc/libxml,-python \
-		:libxslt-*:textproc/libxslt,-python
+		:libxslt-*:textproc/libxslt,-python \
+		::textproc/rarian
 
 USE_LIBTOOL=	No
 CONFIGURE_ARGS=	--disable-scrollkeeper

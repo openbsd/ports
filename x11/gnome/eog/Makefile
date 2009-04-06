@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
@@ -28,9 +28,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			::textproc/rarian \
-			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
+BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		gnome-desktop-2.>=5::x11/gnome/desktop \
 			exif::graphics/libexif \
 			lcms.>=1::graphics/lcms

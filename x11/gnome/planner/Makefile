@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		project management application
 
@@ -32,8 +32,7 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		:rarian-*:textproc/rarian \
-			:py-gtk2-*:x11/py-gtk2
+BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:py-gtk2-*:x11/py-gtk2 \
 			:shared-mime-info->=0.21:misc/shared-mime-info
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		GNOME media utilities
 
@@ -27,9 +27,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		::multimedia/gstreamer-0.10/plugins-good,-gconf \
-			::x11/gnome/doc-utils \
-			::textproc/rarian
+BUILD_DEPENDS=		::multimedia/gstreamer-0.10/plugins-good,-gconf
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			bonoboui-2::x11/gnome/libbonoboui \
 			gnomevfs-2::x11/gnome/vfs2 \

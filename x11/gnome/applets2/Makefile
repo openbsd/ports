@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2009/04/06 10:05:20 ajacoutot Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -33,8 +33,7 @@ MODULES=		devel/gettext \
 
 MODGNOME_HELP_FILES=	Yes
 
-BUILD_DEPENDS= 		${RUN_DEPENDS} \
-			::textproc/rarian
+BUILD_DEPENDS= 		${RUN_DEPENDS}
 RUN_DEPENDS=		:gnome-icon-theme->=2.15.91:x11/gnome/icon-theme \
 			::x11/gnome/py-gnome-desktop
 MODPY_RUNDEP=		No

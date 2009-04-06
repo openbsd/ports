@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/03/23 17:21:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
@@ -22,8 +22,6 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png pthread z
 
-BUILD_DEPENDS=		:gnome-doc-utils-*:x11/gnome/doc-utils \
-			::textproc/rarian
 LIB_DEPENDS=		gconf-2::devel/gconf2
 
 MODULES=		devel/gettext \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
@@ -25,8 +25,6 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils \
-		::textproc/rarian
 LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui \
 		startup-notification-1::devel/startup-notification \
 		vte.>=11::devel/vte

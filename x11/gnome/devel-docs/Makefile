@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		developer documentation for GNOME
 
@@ -14,9 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		x11/gnome
 
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			::textproc/rarian \
-			:gnome-doc-utils-*:x11/gnome/doc-utils
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 MODGNOME_HELP_FILES=	Yes
 

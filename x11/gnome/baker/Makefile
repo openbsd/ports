@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/17 11:53:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/04/06 10:05:20 ajacoutot Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
@@ -33,7 +33,6 @@ EXTRACT_SUFX=		.tar.gz
 LIB_DEPENDS=		gstreamer-0.10::multimedia/gstreamer-0.10/core \
 			gnomeui-2::x11/gnome/libgnomeui
 
-BUILD_DEPENDS=		::textproc/rarian
 RUN_DEPENDS=		::misc/cdrdao \
 			::sysutils/cdrtools \
 			::sysutils/dvd+rw-tools

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/22 20:56:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2009/04/06 10:05:21 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
@@ -30,10 +30,8 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		::x11/gnome/doc-utils \
-			::x11/gnome/py-gnome-desktop \
-			::lang/guile \
-			::textproc/rarian
+BUILD_DEPENDS=		::x11/gnome/py-gnome-desktop \
+			::lang/guile
 LIB_DEPENDS=		ggzcore,ggzmod::games/ggz/ggz-client-libs \
 			guile-ltdl,guile::lang/guile \
 			gnomeui-2::x11/gnome/libgnomeui \
