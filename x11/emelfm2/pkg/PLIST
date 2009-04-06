@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/30 19:32:32 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/04/06 17:19:02 giovanni Exp $
 %%SHARED%%
 @bin bin/emelfm2
 lib/emelfm2/
-lib/emelfm2/plugins/
 @man man/man1/emelfm2.1
 share/application-registry/
 share/application-registry/emelfm2.applications
@@ -22,6 +21,11 @@ share/doc/emelfm2/TODO
 share/doc/emelfm2/USAGE
 share/doc/emelfm2/WARNING
 share/doc/emelfm2/help.txt
+share/locale/de/LC_MESSAGES/emelfm2.mo
+share/locale/fr/LC_MESSAGES/emelfm2.mo
+share/locale/ja/LC_MESSAGES/emelfm2.mo
+share/locale/pl/LC_MESSAGES/emelfm2.mo
+share/locale/ru/LC_MESSAGES/emelfm2.mo
 share/pixmaps/
 share/pixmaps/emelfm2/
 share/pixmaps/emelfm2/add_mark_bottom_48.png

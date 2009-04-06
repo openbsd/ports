@@ -1,25 +1,44 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2008/10/30 19:32:32 landry Exp $
---- Makefile.orig	Sat Oct 18 00:37:53 2008
-+++ Makefile	Thu Oct 30 18:28:33 2008
-@@ -48,7 +48,7 @@ COPYRIGHT=2003-$(shell date +"%04Y"), tooar <tooar@gmx
+$OpenBSD: patch-Makefile,v 1.2 2009/04/06 17:19:02 giovanni Exp $
+--- Makefile.orig	Thu Feb 12 04:47:20 2009
++++ Makefile	Sat Mar 21 12:23:23 2009
+@@ -211,7 +211,7 @@ lLIBS_CFLAGS = -shared -fPIC -DPIC
  
- #these are only used here for installation purposes
- BIN_DIR = $(PREFIX)/bin
--MAN_DIR = $(PREFIX)/share/man/man1
-+MAN_DIR = $(PREFIX)/man/man1
- #as well as usage here, all in-code uses of these is assumed localised
- ifeq ($(DOCS_VERSION), 1)
- DOC_DIR = $(PREFIX)/share/doc/$(TARGET)-$(VERSION)
-@@ -212,7 +212,7 @@ endif
- 
- lLDFLAGS = $(LDFLAGS)
+ #setup linking
  # -lrt needed for clock_gettime()
 -lLIBS = $(shell pkg-config --libs gtk+-2.0 gthread-2.0 gmodule-2.0) -lrt
 +lLIBS = $(shell pkg-config --libs gtk+-2.0 gthread-2.0 gmodule-2.0)
  ifeq ($(USE_FAM),1)
  lLIBS += -lfam
  endif
-@@ -337,34 +337,34 @@ endif
+@@ -237,7 +237,7 @@ all: $(OBJECTS_DIR) $(BUILD_FILE) $(TARGET) $(LIBS) $(
+ 
+ plugins: $(OBJECTS_DIR)/$(LIBS) $(LIBS_OBJECTS) $(LIBS_XOBJECTS)
+ 
+-install: all install_plugins
++install: all install_i18n install_plugins
+ 	@echo "installing $(TARGET) to prefix '$(PREFIX)'"
+ 	@install -d -m 755 $(BIN_DIR)
+ 	@install -m 755 $(TARGET) $(BIN_DIR)
+@@ -249,8 +249,7 @@ install: all install_plugins
+ 	@for file in `ls $(DOCS)/ |grep -v svn |grep -v desktop_environment |grep -v api |grep -v $(TARGET).1`; do \
+ 		install -m 644 $(DOCS)/$$file $(DOC_DIR); \
+ 	done
+-	@install -d $(MAN_DIR)
+-	@install -m 644 $(DOCS)/$(TARGET).1 $(MAN_DIR);
++	@install -m 644 $(DOCS)/$(TARGET).1 $(PREFIX)/man/man1;
+ #	@bzip2 -f $(MAN_DIR)/$(TARGET).1;
+ 
+ ifeq ($(XDG_INTEGRATION), 1)
+@@ -314,7 +313,7 @@ clean_plugins:
+ 
+ $(TARGET): $(OBJECTS)
+ 	@echo "linking binary '$(TARGET)'"
+-	@$(CC) $(LDFLAGS) $(OBJECTS) -o $(TARGET) -Wl,--as-needed $(lLIBS)
++	$(CC) $(LDFLAGS) $(OBJECTS) -o $(TARGET) -Wl,--as-needed $(lLIBS)
+ ifneq ($(DEBUG), 1)
+ 	@echo "stripping binary '$(TARGET)'"
+ 	@strip $(TARGET)
+@@ -322,39 +321,39 @@ endif
  
  $(OBJECTS): $(OBJECTS_DIR)/%.o: %.c
  	@echo "compiling '$*.c'"
@@ -28,24 +47,53 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2008/10/30 19:32:32 landry Exp $
  
  $(LIBS_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
  	@echo "compiling '$*.c'"
--	@$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) -o $@ $*.c
-+	$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) -o $@ $*.c
+-	@$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(LDFLAGS) -o $@ $*.c
++	$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(LDFLAGS) -o $@ $*.c
+ ifneq ($(DEBUG), 1)
+ 	@strip -g $@
+ endif
  
- deps: $(DEP_FILES) $(LIB_DEP_FILES)
- $(DEP_FILES): $(OBJECTS_DIR)
+ $(THUMBS_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
+ 	@echo "compiling '$*.c'"
+-	@$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(THUMBS_FLAGS) $(LDFLAGS) -o $@ $*.c -Wl,--as-needed $(THUMBS_LIBS)
++	$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(THUMBS_FLAGS) $(LDFLAGS) -o $@ $*.c -Wl,--as-needed $(THUMBS_LIBS)
+ ifneq ($(DEBUG), 1)
+ 	@strip -g $@
+ endif
+ 
+ $(ACL_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
+ 	@echo "compiling '$*.c'"
+-	@$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(ACL_FLAGS) $(LDFLAGS) -o $@ $*.c -Wl,--as-needed $(ACL_LIBS)
++	$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(ACL_FLAGS) $(LDFLAGS) -o $@ $*.c -Wl,--as-needed $(ACL_LIBS)
+ ifneq ($(DEBUG), 1)
+ 	@strip -g $@
+ endif
+ 
+ $(TRACKER_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
+ 	@echo "compiling '$*.c'"
+-	@$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(TRACKER_FLAGS) $(LDFLAGS) -o $@ $*.c -Wl,--as-needed $(TRACKER_LIBS)
++	$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(TRACKER_FLAGS) $(LDFLAGS) -o $@ $*.c -Wl,--as-needed $(TRACKER_LIBS)
+ ifneq ($(DEBUG), 1)
+ 	@strip -g $@
+ endif
+ 
+ $(VFS_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
+ 	@echo "compiling '$*.c'"
+-	@$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(VFS_FLAGS) $(LDFLAGS) -o $@ $*.c -Wl,--as-needed $(VFS_LIBS)
++	$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(VFS_FLAGS) $(LDFLAGS) -o $@ $*.c -Wl,--as-needed $(VFS_LIBS)
+ ifneq ($(DEBUG), 1)
+ 	@strip -g $@
+ endif
+@@ -364,7 +363,7 @@ $(DEP_FILES): $(OBJECTS_DIR)
  $(DEP_FILES): $(BUILD_FILE)
  $(DEP_FILES): $(OBJECTS_DIR)/%.deps: %.c
  	@echo "generating '$@'"
 -	@$(CC) $(lCFLAGS) -MM -o $@ $*.c
 +	$(CC) $(lCFLAGS) -MM -o $@ $*.c
  
- $(LIB_DEP_FILES): $(OBJECTS_DIR)
- $(LIB_DEP_FILES): $(BUILD_FILE)
- $(LIB_DEP_FILES): $(OBJECTS_DIR)/%.deps: %.c
- 	@echo "generating '$@'"
--	@$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) -MM -o $@ $*.c
-+	$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) -MM -o $@ $*.c
- 
+ #$(LIB_DEP_FILES): $(OBJECTS_DIR)
+ #$(LIB_DEP_FILES): $(BUILD_FILE)
+@@ -375,16 +374,16 @@ $(DEP_FILES): $(OBJECTS_DIR)/%.deps: %.c
  $(DEPS_FILE): $(BUILD_FILE)
  	@echo "generating dependencies: '$(DEPS_FILE)'"
  	@touch $(DEPS_FILE)
@@ -60,12 +108,17 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2008/10/30 19:32:32 landry Exp $
  
  #gettext:
  i18n:
-@@ -427,7 +427,7 @@ help:
+-	@$(BIN_XGETTEXT) $(foreach dir, $(DIRS) $(LIBS) $(OPTLIBS), -D $(dir)) \
++	$(BIN_XGETTEXT) $(foreach dir, $(DIRS) $(LIBS) $(OPTLIBS), -D $(dir)) \
+ 		-p ./$(PO_DIR) --from-code=UTF-8 --no-wrap --omit-header -i -F \
+ 		--copyright-holder="$(COPYRIGHT)" --keyword=_ --keyword=N_ \
+ 		$(foreach file, $(SOURCES) $(HEADERS) $(LIBS_SOURCES) $(LIBS_HEADERS), $(shell basename $(file)))
+@@ -443,7 +442,7 @@ help:
  
  $(OBJECTS_DIR):
  	@echo "creating object directories in '$(OBJECTS_DIR)'"
 -	@mkdir -p $(MKOBJDIRS)
 +	mkdir -p $(MKOBJDIRS)
  
- $(BUILD_FILE):
- 	@echo "updating build info: '$(BUILD_FILE)'"
+ $(OBJECTS_DIR)/$(LIBS):
+ 	@echo "creating plugin-object directories in '$(OBJECTS_DIR)'"
