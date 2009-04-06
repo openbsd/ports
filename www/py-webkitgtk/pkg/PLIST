@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/06 16:29:01 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/webkit.a
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/webkit.la
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/webkit.so
+share/pywebkitgtk/
+share/pywebkitgtk/defs/
+share/pywebkitgtk/defs/webkit-1.0.2.defs
+share/pywebkitgtk/defs/webkit-1.1-types.defs
+share/pywebkitgtk/defs/webkit-1.1.defs
+share/pywebkitgtk/defs/webkit-base-types.defs
