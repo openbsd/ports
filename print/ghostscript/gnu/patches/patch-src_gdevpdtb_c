@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_gdevpdtb_c,v 1.1 2009/04/06 17:06:33 jasper Exp $
+
+Security fix for SA34534, which could trigger a buffer overflow.
+Patch taken from: http://bugs.ghostscript.com/show_bug.cgi?id=690211
+
+--- src/gdevpdtb.c.orig	Mon Apr  6 12:39:38 2009
++++ src/gdevpdtb.c	Mon Apr  6 12:40:06 2009
+@@ -133,7 +133,7 @@ pdf_base_font_alloc(gx_device_pdf *pdev, pdf_base_font
+ 			&st_pdf_base_font, "pdf_base_font_alloc");
+     const gs_font_name *pfname = &font->font_name;
+     gs_const_string font_name;
+-    char fnbuf[3 + sizeof(long) / 3 + 1]; /* .F#######\0 */
++    char fnbuf[2*sizeof(long) + 3]; /* .F########\0 */
+     int code;
+ 
+     if (pbfont == 0)
