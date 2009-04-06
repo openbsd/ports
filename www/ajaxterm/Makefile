@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/24 17:55:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/04/06 15:30:13 ajacoutot Exp $
 
 COMMENT = 		web-based SSH client
 
 DISTNAME =		Ajaxterm-0.10
-PKGNAME =		ajaxterm-0.10p0
+PKGNAME =		ajaxterm-0.10p1
 
 CATEGORIES =		net security www
 PKG_ARCH =		*
@@ -26,6 +26,7 @@ MODULES =		lang/python
 SHARE =			${PREFIX}/share/ajaxterm
 
 do-install:
+	${SUBST_CMD} ${WRKDIST}/ajaxterm.py
 	${INSTALL_SCRIPT} ${WRKDIST}/ajaxterm.py ${PREFIX}/bin/ajaxterm
 	${INSTALL_DATA_DIR} ${SHARE}
 	${INSTALL_SCRIPT} ${WRKDIST}/qweb.py ${SHARE}

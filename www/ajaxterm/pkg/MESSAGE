@@ -7,12 +7,9 @@ ajaxterm -d -u _ajaxterm
 That is:
 - activate the proxy module
 LoadModule proxy_module        /usr/lib/apache/modules/libproxy.so
-- activate proxy requests
-ProxyRequests On
 - choose a secure url and redirect it to ajaxterm. In the SSL VirtualHost
 section <VirtualHost _default_:443>
 
 add something like:
        ProxyPass /ajaxterm/ http://localhost:8022/
        ProxyPassReverse /ajaxterm http://localhost:8022/
-

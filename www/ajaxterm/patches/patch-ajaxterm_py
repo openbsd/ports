@@ -1,7 +1,11 @@
-$OpenBSD: patch-ajaxterm_py,v 1.1.1.1 2009/02/03 10:52:36 espie Exp $
+$OpenBSD: patch-ajaxterm_py,v 1.2 2009/04/06 15:30:13 ajacoutot Exp $
 --- ajaxterm.py.orig	Sun Oct 29 03:52:39 2006
-+++ ajaxterm.py	Tue Dec  9 11:31:25 2008
-@@ -4,9 +4,10 @@
++++ ajaxterm.py	Tue Mar 31 12:32:31 2009
+@@ -1,12 +1,13 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ 
+ """ Ajaxterm """
  
  import array,cgi,fcntl,glob,mimetypes,optparse,os,pty,random,re,signal,select,sys,threading,time,termios,struct,pwd
  
