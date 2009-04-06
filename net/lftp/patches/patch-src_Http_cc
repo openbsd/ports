@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Http_cc,v 1.1 2009/04/06 09:17:57 kevlo Exp $
+--- src/Http.cc.orig	Thu Apr  2 17:51:32 2009
++++ src/Http.cc	Thu Apr  2 18:08:26 2009
+@@ -586,7 +586,7 @@ void Http::SendRequest(const char *connection,const ch
+ 	    SendMethod("PROPFIND",efile);
+ 	    Send("Depth: 0\r\n"); // no directory listing required
+ 	    Send("Content-Type: text/xml\r\n");
+-	    Send("Content-Length: %d\r\n",strlen(allprop));
++	    Send("Content-Length: %zu\r\n",strlen(allprop));
+ 	 }
+ 	 else
+ 	    SendMethod("HEAD",efile);
+@@ -609,7 +609,7 @@ void Http::SendRequest(const char *connection,const ch
+ 	 SendMethod("PROPFIND",efile);
+ 	 Send("Depth: 1\r\n"); // directory listing required
+ 	 Send("Content-Type: text/xml\r\n");
+-	 Send("Content-Length: %d\r\n",strlen(allprop));
++	 Send("Content-Length: %zu\r\n",strlen(allprop));
+ 	 pos=0;
+       }
+       break;

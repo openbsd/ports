@@ -1,6 +1,6 @@
---- src/Resolver.cc.orig	Thu Nov 27 13:56:26 2008
-+++ src/Resolver.cc	Sun Dec 14 13:11:16 2008
-@@ -756,8 +756,6 @@ void Resolver::LookupOne(const char *name)
+--- src/Resolver.cc.orig	Tue Jan 27 22:43:12 2009
++++ src/Resolver.cc	Thu Apr  2 17:47:17 2009
+@@ -764,8 +764,6 @@ void Resolver::LookupOne(const char *name)
  #  undef h_errno // it could be a macro, but we want it to be local variable.
        int h_errno=0;
        ha=getipnodebyname(name,af,0,&h_errno);
