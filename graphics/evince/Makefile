@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/03/14 11:36:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/04/06 10:09:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,9 +28,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	::textproc/rarian \
-		:gnome-doc-utils-*:x11/gnome/doc-utils \
-		::x11/gnome/icon-theme
+BUILD_DEPENDS=	::x11/gnome/icon-theme
 
 MULTI_PACKAGES=	-main -djvu -dvi
 

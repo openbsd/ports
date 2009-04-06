@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2009/03/14 11:36:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2009/04/06 10:09:06 ajacoutot Exp $
 
 COMMENT=		editor for the GConf configuration system
 
@@ -26,8 +26,6 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
 		pthread ssl util xml2 z
 
-BUILD_DEPENDS=		::textproc/rarian \
-			:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui
 
 MODULES=		devel/gettext \

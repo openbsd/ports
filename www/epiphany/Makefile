@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2009/03/16 10:44:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2009/04/06 10:09:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,9 +24,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::textproc/rarian \
-		:xulrunner-devel->=1.8.1:devel/xulrunner,-devel \
-		:gnome-doc-utils->=0.3.2:x11/gnome/doc-utils
+		:xulrunner-devel->=1.8.1:devel/xulrunner,-devel
 RUN_DEPENDS=	:gnome-icon-theme-*:x11/gnome/icon-theme \
 		:gnome-themes-*:x11/gnome/themes \
 		:iso-codes-*:devel/iso-codes \

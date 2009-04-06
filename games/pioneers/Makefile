@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/14 11:36:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/04/06 10:09:06 ajacoutot Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
@@ -32,8 +32,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pio/}
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		::textproc/rarian
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::x11/gnome/librsvg
 LIB_DEPENDS=	gnome-2.>=1900::x11/gnome/libgnome
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/06 10:09:06 ajacoutot Exp $
 
 COMMENT =	gnucash documentation
 
@@ -24,8 +24,6 @@ EXTRACT_SUFX =	.tar.gz
 
 MODULES =		x11/gnome
 MODGNOME_HELP_FILES =	Yes
-
-BUILD_DEPENDS =		::textproc/rarian
 
 CONFIGURE_STYLE =	gnu
 

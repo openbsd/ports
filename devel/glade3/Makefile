@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/22 16:17:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/04/06 10:09:06 ajacoutot Exp $
 
 COMMENT=		user interface builder for the GTK2+ toolkit
 
@@ -33,8 +33,6 @@ MODULES=		devel/gettext \
     
 LIB_DEPENDS=            dbus-glib-1::x11/dbus-glib \
 			gnomeui-2::x11/gnome/libgnomeui
-BUILD_DEPENDS=          ::textproc/rarian \
-			::x11/gnome/doc-utils
 RUN_DEPENDS=		::x11/gnome/devhelp
 
 DESKTOP_FILES = 	Yes

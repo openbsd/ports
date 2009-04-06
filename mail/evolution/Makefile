@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2009/03/31 15:21:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2009/04/06 10:09:06 ajacoutot Exp $
 
 # XXX TODO: the mail-account-disable plugin is not loaded by default:
 # it makes right-clicking on a folder very long (the first time)
@@ -65,8 +65,6 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		::devel/bison \
-			::textproc/rarian \
-			::x11/gnome/doc-utils \
 			::misc/shared-mime-info \
 			::x11/gnome/icon-theme \
 			::devel/iso-codes
