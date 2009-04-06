@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/04 10:12:39 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2009/04/06 14:43:18 fgsch Exp $
 
 COMMENT =	distributed, document-oriented database
 
 COUCH_VER =	0.9.0
 DISTNAME =	apache-couchdb-${COUCH_VER}
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	databases
 
 HOMEPAGE =	http://incubator.apache.org/couchdb/
@@ -39,7 +40,8 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
 		 --localstatedir=/var \
 		 --with-erlang=${LOCALBASE}/lib/erlang/usr/include \
-		 --with-js-include=${LOCALBASE}/include/js
+		 --with-js-include=${LOCALBASE}/include/js \
+		 --with-js-lib=${LOCALBASE}/lib
 
 NO_REGRESS =	Yes
 
