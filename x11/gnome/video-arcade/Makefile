@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/06 07:54:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/04/06 09:42:20 ajacoutot Exp $
 
 # XXX: Without category, history or nplayer files for now.
 
@@ -29,7 +29,8 @@ WANTLIB += xml2 z
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		::x11/gnome/icon-theme
 RUN_DEPENDS=	::emulators/sdlmame,-main
 LIB_DEPENDS=	wnck-1.>=24::devel/libwnck
 
