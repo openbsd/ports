@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/04/04 10:35:26 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2009/04/06 07:40:30 landry Exp $
 
 COMMENT =	open source web browser engine
 
 V = 41894
 DISTNAME =	WebKit-r${V}
-PKGNAME =	webkit-${V}
+PKGNAME =	webkit-${V}p0
 CATEGORIES =	www
 EXTRACT_SUFX =	.tar.bz2
 
@@ -57,7 +57,7 @@ LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2,-main \
 		icudata,icui18n,icuuc::textproc/icu4c \
 		sqlite3::databases/sqlite3 \
 		xslt::textproc/libxslt \
-		soup-2.4::devel/libsoup
+		soup-2.4:libsoup->=2.26:devel/libsoup
 
 
 BUILD_DEPENDS =	::devel/bison \
