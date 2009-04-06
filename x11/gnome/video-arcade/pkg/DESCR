@@ -1,0 +1,10 @@
+GNOME Video Arcade is a clean and simple MAME front-end for the GNOME
+Desktop Environment.
+
+GNOME Video Arcade recognizes that the frontend is not the point, the
+games are. As such, its chief design goal is to help you quickly find a
+game to play and then get out of the way. Its purpose is not to help you
+manage your ROM collection, nor to provide a confusing graphical
+interface for MAME's plethora of configuration options.
+It can utilize third-party data files like arcade history and game
+categories.

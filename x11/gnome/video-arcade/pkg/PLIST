@@ -1,0 +1,76 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/06 07:54:23 ajacoutot Exp $
+@bin bin/gnome-video-arcade
+@man man/man1/gnome-video-arcade.1
+share/applications/gnome-video-arcade.desktop
+share/gnome-video-arcade/
+share/gnome-video-arcade/gnome-video-arcade.glade
+share/gnome-video-arcade/gnome-video-arcade.ui
+share/gnome/help/gnome-video-arcade/
+share/gnome/help/gnome-video-arcade/C/
+share/gnome/help/gnome-video-arcade/C/figures/
+share/gnome/help/gnome-video-arcade/C/figures/gva_building_database.png
+share/gnome/help/gnome-video-arcade/C/figures/gva_column_preferences.png
+share/gnome/help/gnome-video-arcade/C/figures/gva_general_preferences.png
+share/gnome/help/gnome-video-arcade/C/figures/gva_main_window.png
+share/gnome/help/gnome-video-arcade/C/figures/gva_recorded_games.png
+share/gnome/help/gnome-video-arcade/C/figures/gva_search_window.png
+share/gnome/help/gnome-video-arcade/C/gnome-video-arcade.xml
+share/gnome/help/gnome-video-arcade/C/legal.xml
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/gnome-video-arcade/
+share/gtk-doc/html/gnome-video-arcade/GvaCellRendererPixbuf.html
+share/gtk-doc/html/gnome-video-arcade/GvaColumnManager.html
+share/gtk-doc/html/gnome-video-arcade/GvaGameStore.html
+share/gtk-doc/html/gnome-video-arcade/GvaLinkButton.html
+share/gtk-doc/html/gnome-video-arcade/GvaMameProcess.html
+share/gtk-doc/html/gnome-video-arcade/GvaMuteButton.html
+share/gtk-doc/html/gnome-video-arcade/GvaProcess.html
+share/gtk-doc/html/gnome-video-arcade/ch01.html
+share/gtk-doc/html/gnome-video-arcade/ch02.html
+share/gtk-doc/html/gnome-video-arcade/ch03.html
+share/gtk-doc/html/gnome-video-arcade/database-schema.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-audit.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-categories.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-columns.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-db.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-error.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-favorites.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-history.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-main.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-mame-common.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-mame.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-nplayers.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-play-back.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-preferences.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-properties.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-time.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-tree-view.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-ui.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-util.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade-gva-wnck.html
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade.devhelp
+share/gtk-doc/html/gnome-video-arcade/gnome-video-arcade.devhelp2
+share/gtk-doc/html/gnome-video-arcade/home.png
+share/gtk-doc/html/gnome-video-arcade/index.html
+share/gtk-doc/html/gnome-video-arcade/index.sgml
+share/gtk-doc/html/gnome-video-arcade/ix01.html
+share/gtk-doc/html/gnome-video-arcade/left.png
+share/gtk-doc/html/gnome-video-arcade/right.png
+share/gtk-doc/html/gnome-video-arcade/style.css
+share/gtk-doc/html/gnome-video-arcade/up.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/gnome-video-arcade.svg
+share/locale/fr/LC_MESSAGES/gnome-video-arcade.mo
+share/locale/sv/LC_MESSAGES/gnome-video-arcade.mo
+share/omf/gnome-video-arcade/
+share/omf/gnome-video-arcade/gnome-video-arcade-C.omf
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gnome-video-arcade/*.schemas > /dev/null
+share/schemas/gnome-video-arcade/
+share/schemas/gnome-video-arcade/gnome-video-arcade.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-video-arcade/*.schemas > /dev/null
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
