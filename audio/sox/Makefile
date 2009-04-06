@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.40 2009/01/16 16:42:56 ratchov Exp $
+# $OpenBSD: Makefile,v 1.41 2009/04/06 18:56:55 kili Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
 DISTNAME=	sox-14.2.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS +=  sox                  0.0      # .0.0
 SHARED_LIBS +=  sfx                  0.0      # .0.0
 CATEGORIES=	audio
 HOMEPAGE=	http://sox.sourceforge.net/
 
-# GPLv2, but the included gsm library was originally distributed with an
-# incomplete license.
-PERMIT_PACKAGE_CDROM=	no redistribution
+# GPLv2.
+# The libgsm issues have been fixed (see libgsm-1.0.13).
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no redistribution
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sox/}
@@ -27,7 +27,8 @@ LIB_DEPENDS=	vorbis.>=6,vorbisenc.>=2,vorbisfile.>=5::audio/libvorbis \
 		mp3lame.>=2::audio/lame \
 		wavpack.>=0::audio/wavpack \
 		png.>=8::graphics/png \
-		samplerate.>=2::audio/libsamplerate
+		samplerate.>=2::audio/libsamplerate \
+		gsm.>=1::audio/gsm
 WANTLIB=	c iconv m ogg sndio z
 
 AUTOCONF_VERSION=2.62	# 2.63
