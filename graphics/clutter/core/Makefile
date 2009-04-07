@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/15 17:41:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/04/07 13:57:49 jasper Exp $
 
 COMMENT=		OpenGL-based interactive canvas library
 
-DISTNAME=		clutter-${MAJOR}.6
-SHARED_LIBS +=  clutter-glx-0.8      0.0      # .806.0
+DISTNAME=		clutter-${MAJOR}.8
+SHARED_LIBS +=  clutter-glx-0.8      0.0      # .808.0
 
 MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter/${MAJOR}/}
 
