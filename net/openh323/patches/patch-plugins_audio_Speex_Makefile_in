@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_audio_Speex_Makefile_in,v 1.1 2007/04/26 14:10:30 ajacoutot Exp $
+$OpenBSD: patch-plugins_audio_Speex_Makefile_in,v 1.2 2009/04/07 21:34:24 ajacoutot Exp $
 --- plugins/audio/Speex/Makefile.in.orig	Wed Apr 11 16:49:42 2007
 +++ plugins/audio/Speex/Makefile.in	Wed Apr 11 16:49:55 2007
 @@ -79,7 +79,7 @@ SRCS   += $(SRCDIR)/nb_celp.c $(SRCDIR)/sb_celp.c $(SR
@@ -6,7 +6,7 @@ $OpenBSD: patch-plugins_audio_Speex_Makefile_in,v 1.1 2007/04/26 14:10:30 ajacou
  EXTRALIBS =
  else
 -EXTRALIBS = -lspeex
-+EXTRALIBS = -L!!LOCALBASE!!/lib -lspeex
++EXTRALIBS = -L${LOCALBASE}/lib -lspeex
  endif
  
  OBJDIR	= ./obj

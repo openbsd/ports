@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/01/17 14:14:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/04/07 21:34:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	H.323 video conferencing library
 
 V=		1_19_0_1
 DISTNAME=	openh323-v${V}
-PKGNAME=	openh323-${V:S/_/./g}p3
+PKGNAME=	openh323-${V:S/_/./g}p4
 CATEGORIES=	net devel
 
 EXTRACT_SUFX=	-src-tar.gz
@@ -29,7 +29,8 @@ WANTLIB=	SDL crypto expat lber ldap ldap_r sasl2 ssl
 
 LIB_DEPENDS=	pt.>=2::devel/pwlib \
 		speex.>=4::audio/speex \
-		avutil.>=2::graphics/ffmpeg
+		avutil.>=2::graphics/ffmpeg \
+		gsm.>=1::audio/gsm
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-/_/}
 
@@ -54,10 +55,8 @@ do-extract:
 	@tar xzf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR}
 
 pre-configure:
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
-		${WRKSRC}/plugins/audio/Speex/Makefile.in
-	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g;' \
-		-e 's,!!SOSUFX!!,so.${LIBh323_VERSION},g' \
+	${SUBST_CMD} ${WRKSRC}/plugins/audio/GSM0610/Makefile.in \
+		${WRKSRC}/plugins/audio/Speex/Makefile.in \
 		${WRKSRC}/openh323u.mak.in
 
 post-install:
