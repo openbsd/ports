@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_GtkamlMethod_h,v 1.1 2009/04/07 21:48:05 ajacoutot Exp $
+--- src/GtkamlMethod.h.orig	Tue Apr  7 23:43:24 2009
++++ src/GtkamlMethod.h	Tue Apr  7 23:43:31 2009
+@@ -27,7 +27,7 @@
+ #include <glib-object.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <gee/list.h>
++#include <gee.h>
+ 
+ G_BEGIN_DECLS
+ 

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/22 19:25:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/04/07 21:48:05 ajacoutot Exp $
 
 COMMENT=		XML parser that extends the Vala.Parser
 
-DISTNAME=		gtkaml-0.2.4
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		gtkaml-0.2.5
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://gtkaml.googlecode.com/

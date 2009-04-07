@@ -1,19 +1,10 @@
-$OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.8 2009/04/07 21:48:05 ajacoutot Exp $
+$OpenBSD: patch-src_GtkamlImplicitsStore_c.orig,v 1.1 2009/04/07 21:48:05 ajacoutot Exp $
 
 Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
 
---- src/GtkamlImplicitsStore.c.orig	Sun Apr  5 23:37:52 2009
-+++ src/GtkamlImplicitsStore.c	Tue Apr  7 13:46:22 2009
-@@ -130,7 +130,7 @@ enum  {
- 	GTKAML_KEY_FILE_WRAPPER_DUMMY_PROPERTY
- };
- gboolean gtkaml_key_file_wrapper_has_key (GtkamlKeyFileWrapper* self, const char* group, const char* key);
--char** gtkaml_key_file_wrapper_get_string_list (GtkamlKeyFileWrapper* self, const char* group, const char* key, int* result_length1);
-+char** gtkaml_key_file_wrapper_get_string_list (GtkamlKeyFileWrapper* self, const char* group, const char* key, gsize* result_length1);
- GtkamlKeyFileWrapper* gtkaml_key_file_wrapper_new (void);
- GtkamlKeyFileWrapper* gtkaml_key_file_wrapper_construct (GType object_type);
- GtkamlKeyFileWrapper* gtkaml_key_file_wrapper_new (void);
-@@ -239,7 +239,7 @@ gboolean gtkaml_key_file_wrapper_has_key (GtkamlKeyFil
+--- src/GtkamlImplicitsStore.c.orig	Sun Mar 22 20:10:31 2009
++++ src/GtkamlImplicitsStore.c	Sun Mar 22 20:13:45 2009
+@@ -145,7 +145,7 @@ gboolean gtkaml_key_file_wrapper_has_key (GtkamlKeyFil
  }
  
  
@@ -22,7 +13,7 @@ Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
  	GError * inner_error;
  	g_return_val_if_fail (self != NULL, NULL);
  	g_return_val_if_fail (group != NULL, NULL);
-@@ -249,7 +249,7 @@ char** gtkaml_key_file_wrapper_get_string_list (Gtkaml
+@@ -155,7 +155,7 @@ char** gtkaml_key_file_wrapper_get_string_list (Gtkaml
  		char** _tmp2;
  		gint _tmp1_size;
  		gint _tmp1_length1;
@@ -31,7 +22,7 @@ Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
  		char** _tmp1;
  		char** _tmp3;
  		_tmp2 = NULL;
-@@ -449,15 +449,15 @@ GeeList* gtkaml_implicits_store_get_adds (GtkamlImplic
+@@ -355,15 +355,15 @@ GeeList* gtkaml_implicits_store_get_adds (GtkamlImplic
  			if (gtkaml_key_file_wrapper_has_key (kfw, class_name, "adds")) {
  				char** _tmp1;
  				gint kf_adds_size;
@@ -50,7 +41,7 @@ Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
  					add_collection = kf_adds;
  					add_collection_length1 = kf_adds_length1;
  					for (add_it = 0; add_it < kf_adds_length1; add_it = add_it + 1) {
-@@ -503,8 +503,8 @@ GeeList* gtkaml_implicits_store_get_method_parameters 
+@@ -409,8 +409,8 @@ GeeList* gtkaml_implicits_store_get_method_parameters 
  			if (gtkaml_key_file_wrapper_has_key (kfw, class_name, method_name)) {
  				char** _tmp3;
  				gint kf_parameters_size;
@@ -61,7 +52,7 @@ Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
  				char** kf_parameters;
  				GeeList* _tmp11;
  				_tmp3 = NULL;
-@@ -512,7 +512,7 @@ GeeList* gtkaml_implicits_store_get_method_parameters 
+@@ -418,7 +418,7 @@ GeeList* gtkaml_implicits_store_get_method_parameters 
  				{
  					char** parameter_collection;
  					int parameter_collection_length1;

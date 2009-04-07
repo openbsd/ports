@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_GtkamlRootClassDefinition_h,v 1.1 2009/04/07 21:48:05 ajacoutot Exp $
+--- src/GtkamlRootClassDefinition.h.orig	Sat Jan 10 13:17:40 2009
++++ src/GtkamlRootClassDefinition.h	Tue Apr  7 23:42:46 2009
+@@ -25,12 +25,10 @@
+ 
+ #include <glib.h>
+ #include <glib-object.h>
+-#include <vala/valasourcereference.h>
++#include <vala.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <vala/valaclass.h>
+-#include <gee/list.h>
+-#include <gee/map.h>
++#include <gee.h>
+ #include "GtkamlClassDefinition.h"
+ 
+ G_BEGIN_DECLS
