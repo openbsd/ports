@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/02/04 20:24:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/07 20:50:09 naddy Exp $
 
 COMMENT=	network distribution package for CVS repositories
 
-VERSION=	20090105
-DISTNAME=	csup-snap-${VERSION}
-PKGNAME=	csup-${VERSION}
+DISTNAME=	csup-20090407
 CATEGORIES=	net
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
