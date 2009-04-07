@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/13 13:02:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/07 23:19:20 sthen Exp $
 
 COMMENT=		Asterisk access for Nortel i2002/i2004/i2050 phones
 
 DISTNAME=		chan_unistim-1.0.0.5e	# for Asterisk 1.4
+PKGNAME=		${DISTNAME}p0
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		telephony

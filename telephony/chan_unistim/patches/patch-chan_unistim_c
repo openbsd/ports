@@ -1,6 +1,6 @@
-$OpenBSD: patch-chan_unistim_c,v 1.1.1.1 2007/09/14 13:24:42 ian Exp $
---- chan_unistim.c.orig	Sun May 13 14:52:20 2007
-+++ chan_unistim.c	Tue Jul  3 14:07:28 2007
+$OpenBSD: patch-chan_unistim_c,v 1.2 2009/04/07 23:19:20 sthen Exp $
+--- chan_unistim.c.orig	Tue Oct  7 16:52:37 2008
++++ chan_unistim.c	Wed Apr  8 00:16:02 2009
 @@ -31,6 +31,8 @@
  #include <unistd.h>
  #include <sys/socket.h>
@@ -19,3 +19,25 @@ $OpenBSD: patch-chan_unistim_c,v 1.1.1.1 2007/09/14 13:24:42 ian Exp $
  
  /* Beware, G729 and G723 are not supported by asterisk, except with the proper licence */
  #define CAPABILITY AST_FORMAT_ALAW | AST_FORMAT_ULAW    /* | AST_FORMAT_G729A | AST_FORMAT_G723_1 */
+@@ -388,7 +390,7 @@ static struct unistim_device {
+         char datetimeformat;            /* format used for displaying time/date */
+         char contrast;                          /* contrast */
+         char country[3];                        /* country used for dial tone frequency */
+-        struct ind_tone_zone *tz;           /* Tone zone used by res_indications for ring, busy, congestion */
++        struct tone_zone *tz;           /* Tone zone used by res_indications for ring, busy, congestion */
+         char ringvolume;                        /* Ring volume */
+         char ringstyle;                         /* Ring melody */
+         int rtp_port;                           /* RTP port used by the phone */
+@@ -4042,10 +4044,10 @@ static char *control2str(int ind)
+ }
+ 
+ static void
+-in_band_indication(struct ast_channel *ast, const struct ind_tone_zone *tz,
++in_band_indication(struct ast_channel *ast, const struct tone_zone *tz,
+                                    const char *indication)
+ {
+-        const struct ind_tone_zone_sound *ts = NULL;
++        const struct tone_zone_sound *ts = NULL;
+ 
+         ts = ast_get_indication_tone(tz, indication);
+         if (ts && ts->data[0])
