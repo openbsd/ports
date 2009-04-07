@@ -1,4 +1,4 @@
 The Murrine gtk engine intends to provide the ability to make your
 desktop look like a "Murrine", beautiful glass artworks created by
-Venician glass blowers.  This cairo-based engine is very fast due to
+Venetian glass blowers. This cairo-based engine is very fast due to
 optimization and removal of slow gradients.

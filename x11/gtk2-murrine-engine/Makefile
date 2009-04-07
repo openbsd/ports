@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/04/07 12:34:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/04/07 13:52:42 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	beautiful glass-like GTK+ 2.x engine and themes
 
 VERSION =	0.90.3
 DISTNAME =	murrine-${VERSION}
-PKGNAME =	gtk2-murrine-engine-${VERSION}p0
+PKGNAME =	gtk2-murrine-engine-${VERSION}p1
 CATEGORIES =	x11
 
 HOMEPAGE =	http://cimitan.com/murrine/
