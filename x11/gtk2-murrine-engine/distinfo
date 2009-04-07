@@ -13,7 +13,7 @@ MD5 (murrine/MurrinaOransun.tar.gz) = WXIeJNW1YAjuitMQBFaN6A==
 MD5 (murrine/MurrinaTango.tar.bz2) = Q6aEjMip7t7f+1Fs+wK2NQ==
 MD5 (murrine/MurrinaVerdeOlivo.tar.bz2) = f7VdYTwxoUVanbbBIf/wuw==
 MD5 (murrine/MurrineThemePack.tar.bz2) = QUATwi0fs5VKXD0JSZyAsg==
-MD5 (murrine/murrine-0.90.2.tar.bz2) = 2fxcuk69NJwGKfZ4JuwgYw==
+MD5 (murrine/murrine-0.90.3.tar.bz2) = WKELXHteEUqKf/VwX+J09Q==
 RMD160 (murrine/MurrinaAquaIsh.tar.bz2) = u/adMGH7EbhirM94fjI93MOU1co=
 RMD160 (murrine/MurrinaBlu-0.32.tar.gz) = 9r8ETME5p35nmDx0glhtLxKBvRY=
 RMD160 (murrine/MurrinaBlue.tar.bz2) = ybxT1Sr1KN0+JkYw37nIjV9aa+0=
@@ -29,7 +29,7 @@ RMD160 (murrine/MurrinaOransun.tar.gz) = lNZpRMKIjkEGKReTH869/uP/Jss=
 RMD160 (murrine/MurrinaTango.tar.bz2) = DpvWNoqgwLcOSILpj02WWIpKQsc=
 RMD160 (murrine/MurrinaVerdeOlivo.tar.bz2) = uUNdA0XIttZMmvfqpR7sTg3l0o8=
 RMD160 (murrine/MurrineThemePack.tar.bz2) = ecz8br8c9FpalyG0EcOdZLBlf64=
-RMD160 (murrine/murrine-0.90.2.tar.bz2) = 0KURJjrx96ViM7ONsVFphgi1C90=
+RMD160 (murrine/murrine-0.90.3.tar.bz2) = NHkJckoRz+U/kiII9G459HtCBFk=
 SHA1 (murrine/MurrinaAquaIsh.tar.bz2) = v6YJlBO33hxzS5hdQHE7mX33Bgs=
 SHA1 (murrine/MurrinaBlu-0.32.tar.gz) = LohcbnMk20JShSn69uKaEKMJ2TU=
 SHA1 (murrine/MurrinaBlue.tar.bz2) = HIExDttAfiQZT158MFQa/H60jGg=
@@ -45,7 +45,7 @@ SHA1 (murrine/MurrinaOransun.tar.gz) = UbtK0kx7QbCuBuMJkoLV6AB2wJE=
 SHA1 (murrine/MurrinaTango.tar.bz2) = oOGoTrMFNIUCccsLmjWk/dtK58Q=
 SHA1 (murrine/MurrinaVerdeOlivo.tar.bz2) = JhYAJzZgc9bXePuc++a+9NgQm08=
 SHA1 (murrine/MurrineThemePack.tar.bz2) = Z0cuwvmZzl5x27whzb4+INWl3sw=
-SHA1 (murrine/murrine-0.90.2.tar.bz2) = 2x8EbR2fCNS2eTgZ0Elo3roGC8U=
+SHA1 (murrine/murrine-0.90.3.tar.bz2) = XGWs95SNI7sWk3KBV0JRIEhjA6g=
 SHA256 (murrine/MurrinaAquaIsh.tar.bz2) = bYRkmt9C7/kPPktUtdQKipCqayRwt20vcs/YcJSWFH4=
 SHA256 (murrine/MurrinaBlu-0.32.tar.gz) = H5EXjiab5whzHOo6E2FMsBCq66+znGt6V1gDbLOc1h8=
 SHA256 (murrine/MurrinaBlue.tar.bz2) = YrMa71a8VMn4RGAWsPnDCIspFvsfxbhzM4VOFQy3W/s=
@@ -61,7 +61,7 @@ SHA256 (murrine/MurrinaOransun.tar.gz) = VryyRvbSaGbZt6FFV+OyPb3QXF2n6jBO9u48rS4
 SHA256 (murrine/MurrinaTango.tar.bz2) = eYUugwiimHY2aFFDcZIlb21RQ41PGm22Fh+lHVBAIgE=
 SHA256 (murrine/MurrinaVerdeOlivo.tar.bz2) = 4LKgDE6os1qlfhp5VMyUU4t4KaYqO5uNyl57G817eZA=
 SHA256 (murrine/MurrineThemePack.tar.bz2) = HD2qh/xV5B+GpTqtNgXvKJTO1k7Jajv/iIgPye9YyWo=
-SHA256 (murrine/murrine-0.90.2.tar.bz2) = VQbLfwg/mI/dbCDyjzdE5B24vLyFpVYlwno9W6eM30k=
+SHA256 (murrine/murrine-0.90.3.tar.bz2) = xh/3YU5otwVWBhLqdIVFTRp5R0IqyM/hHXXkU3Di8Lo=
 SIZE (murrine/MurrinaAquaIsh.tar.bz2) = 1353
 SIZE (murrine/MurrinaBlu-0.32.tar.gz) = 3946
 SIZE (murrine/MurrinaBlue.tar.bz2) = 14161
@@ -77,4 +77,4 @@ SIZE (murrine/MurrinaOransun.tar.gz) = 1762
 SIZE (murrine/MurrinaTango.tar.bz2) = 1772
 SIZE (murrine/MurrinaVerdeOlivo.tar.bz2) = 1320
 SIZE (murrine/MurrineThemePack.tar.bz2) = 3003
-SIZE (murrine/murrine-0.90.2.tar.bz2) = 271070
+SIZE (murrine/murrine-0.90.3.tar.bz2) = 271512
