@@ -1,0 +1,151 @@
+$OpenBSD: patch-httplib2___init___py,v 1.1 2009/04/07 20:01:47 fgsch Exp $
+--- httplib2/__init__.py.orig	Tue Oct 23 16:25:46 2007
++++ httplib2/__init__.py	Sat Apr  4 22:40:25 2009
+@@ -26,7 +26,6 @@ __version__ = "$Rev: 259 $"
+ 
+ import re 
+ import sys 
+-import md5
+ import email
+ import email.Utils
+ import email.Message
+@@ -41,7 +40,14 @@ import copy
+ import calendar
+ import time
+ import random
+-import sha
++# remove deprecated warning in python2.6
++try:
++    from hashlib import sha1 as _sha, md5 as _md5
++except ImportError:
++    import sha
++    import md5
++    _sha = sha.new
++    _md5 = md5.new
+ import hmac
+ from gettext import gettext as _
+ import socket
+@@ -51,12 +57,26 @@ try:
+ except ImportError:
+     socks = None
+ 
++# Build the appropriate socket wrapper for ssl
++try:
++    import ssl # python 2.6
++    _ssl_wrap_socket = ssl.wrap_socket
++except ImportError:
++    def _ssl_wrap_socket(sock, key_file, cert_file):
++        ssl_sock = socket.ssl(sock, key_file, cert_file)
++        return httplib.FakeSocket(sock, ssl_sock)
++
+ if sys.version_info >= (2,3):
+     from iri2uri import iri2uri
+ else:
+     def iri2uri(uri):
+         return uri
+ 
++def has_timeout(timeout): # python 2.6
++    if hasattr(socket, '_GLOBAL_DEFAULT_TIMEOUT'):
++        return (timeout is not None and timeout is not socket._GLOBAL_DEFAULT_TIMEOUT)
++    return (timeout is not None)
++
+ __all__ = ['Http', 'Response', 'ProxyInfo', 'HttpLib2Error',
+   'RedirectMissingLocation', 'RedirectLimit', 'FailedToDecompressContent', 
+   'UnimplementedDigestAuthOptionError', 'UnimplementedHmacDigestAuthOptionError',
+@@ -180,7 +200,7 @@ def safename(filename):
+         pass
+     if isinstance(filename,unicode):
+         filename=filename.encode('utf-8')
+-    filemd5 = md5.new(filename).hexdigest()
++    filemd5 = _md5(filename).hexdigest()
+     filename = re_url_scheme.sub("", filename)
+     filename = re_slash.sub(",", filename)
+ 
+@@ -359,11 +379,11 @@ def _updateCache(request_headers, response_headers, co
+             cache.set(cachekey, text)
+ 
+ def _cnonce():
+-    dig = md5.new("%s:%s" % (time.ctime(), ["0123456789"[random.randrange(0, 9)] for i in range(20)])).hexdigest()
++    dig = _md5("%s:%s" % (time.ctime(), ["0123456789"[random.randrange(0, 9)] for i in range(20)])).hexdigest()
+     return dig[:16]
+ 
+ def _wsse_username_token(cnonce, iso_now, password):
+-    return base64.encodestring(sha.new("%s%s%s" % (cnonce, iso_now, password)).digest()).strip()
++    return base64.encodestring(_sha("%s%s%s" % (cnonce, iso_now, password)).digest()).strip()
+ 
+ 
+ # For credentials we need two things, first 
+@@ -437,7 +457,7 @@ class DigestAuthentication(Authentication):
+ 
+     def request(self, method, request_uri, headers, content, cnonce = None):
+         """Modify the request headers"""
+-        H = lambda x: md5.new(x).hexdigest()
++        H = lambda x: _md5(x).hexdigest()
+         KD = lambda s, d: H("%s:%s" % (s, d))
+         A2 = "".join([method, ":", request_uri])
+         self.challenge['cnonce'] = cnonce or _cnonce() 
+@@ -497,18 +517,18 @@ class HmacDigestAuthentication(Authentication):
+         if self.challenge['pw-algorithm'] not in ['SHA-1', 'MD5']:
+             raise UnimplementedHmacDigestAuthOptionError( _("Unsupported value for pw-algorithm: %s." % self.challenge['pw-algorithm']))
+         if self.challenge['algorithm'] == 'HMAC-MD5':
+-            self.hashmod = md5
++            self.hashmod = _md5
+         else:
+-            self.hashmod = sha
++            self.hashmod = _sha
+         if self.challenge['pw-algorithm'] == 'MD5':
+-            self.pwhashmod = md5
++            self.pwhashmod = _md5
+         else:
+-            self.pwhashmod = sha
++            self.pwhashmod = _sha
+         self.key = "".join([self.credentials[0], ":",
+-                    self.pwhashmod.new("".join([self.credentials[1], self.challenge['salt']])).hexdigest().lower(),
++                    self.pwhashmod("".join([self.credentials[1], self.challenge['salt']])).hexdigest().lower(),
+                     ":", self.challenge['realm']
+                     ])
+-        self.key = self.pwhashmod.new(self.key).hexdigest().lower()
++        self.key = self.pwhashmod(self.key).hexdigest().lower()
+ 
+     def request(self, method, request_uri, headers, content):
+         """Modify the request headers"""
+@@ -600,15 +620,12 @@ AUTH_SCHEME_CLASSES = {
+ 
+ AUTH_SCHEME_ORDER = ["hmacdigest", "googlelogin", "digest", "wsse", "basic"]
+ 
+-def _md5(s):
+-    return 
+-
+ class FileCache(object):
+     """Uses a local directory as a store for cached files.
+     Not really safe to use if multiple threads or processes are going to 
+     be running on the same cache.
+     """
+-    def __init__(self, cache, safe=safename): # use safe=lambda x: md5.new(x).hexdigest() for the old behavior
++    def __init__(self, cache, safe=safename): # use safe=lambda x: _md5(x).hexdigest() for the old behavior
+         self.cache = cache
+         self.safe = safe
+         if not os.path.exists(cache): 
+@@ -697,7 +714,7 @@ class HTTPConnectionWithTimeout(httplib.HTTPConnection
+                 else:
+                     self.sock = socket.socket(af, socktype, proto)
+                 # Different from httplib: support timeouts.
+-                if self.timeout is not None:
++                if has_timeout(self.timeout):
+                     self.sock.settimeout(self.timeout)
+                     # End of difference from httplib.
+                 if self.debuglevel > 0:
+@@ -732,11 +749,10 @@ class HTTPSConnectionWithTimeout(httplib.HTTPSConnecti
+             sock.setproxy(*self.proxy_info.astuple())
+         else:
+             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+-        if self.timeout is not None:
++        if has_timeout(self.timeout):
+             sock.settimeout(self.timeout)
+         sock.connect((self.host, self.port))
+-        ssl = socket.ssl(sock, self.key_file, self.cert_file)
+-        self.sock = httplib.FakeSocket(sock, ssl)
++        self.sock = _ssl_wrap_socket(sock, self.key_file, self.cert_file)
+ 
+ 
+ 
