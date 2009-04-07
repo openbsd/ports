@@ -1,12 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/25 09:32:07 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/04/07 21:03:55 landry Exp $
 @pkgpath x11/slim,-themes
 share/slim/
 share/slim/themes/
+share/slim/themes/Zenwalk/
+share/slim/themes/Zenwalk/README
+share/slim/themes/Zenwalk/background.jpg
+share/slim/themes/Zenwalk/panel.png
+share/slim/themes/Zenwalk/slim.theme
 share/slim/themes/capernoited/
 share/slim/themes/capernoited/README
 share/slim/themes/capernoited/background.jpg
 share/slim/themes/capernoited/panel.png
 share/slim/themes/capernoited/slim.theme
+share/slim/themes/fingerprint/
+share/slim/themes/fingerprint/background.png
+share/slim/themes/fingerprint/panel.png
+share/slim/themes/fingerprint/screenshot.png
+share/slim/themes/fingerprint/slim.theme
+share/slim/themes/flat/
+share/slim/themes/flat/background.jpg
+share/slim/themes/flat/panel.png
+share/slim/themes/flat/slim.theme
 share/slim/themes/flower2/
 share/slim/themes/flower2/README
 share/slim/themes/flower2/background.jpg
@@ -17,6 +31,10 @@ share/slim/themes/isolated/README
 share/slim/themes/isolated/background.jpg
 share/slim/themes/isolated/panel.png
 share/slim/themes/isolated/slim.theme
+share/slim/themes/lake/
+share/slim/themes/lake/background.jpg
+share/slim/themes/lake/panel.png
+share/slim/themes/lake/slim.theme
 share/slim/themes/lotus-midnight/
 share/slim/themes/lotus-midnight/COPYRIGHT.panel
 share/slim/themes/lotus-midnight/LICENSE.panel
@@ -43,3 +61,28 @@ share/slim/themes/parallel-dimensions/LICENSE.panel
 share/slim/themes/parallel-dimensions/background.jpg
 share/slim/themes/parallel-dimensions/panel.png
 share/slim/themes/parallel-dimensions/slim.theme
+share/slim/themes/previous/
+share/slim/themes/previous/background.png
+share/slim/themes/previous/panel.png
+share/slim/themes/previous/slim.theme
+share/slim/themes/rainbow/
+share/slim/themes/rainbow/background.jpg
+share/slim/themes/rainbow/panel.png
+share/slim/themes/rainbow/slim.theme
+share/slim/themes/rear-window/
+share/slim/themes/rear-window/background.png
+share/slim/themes/rear-window/panel.png
+share/slim/themes/rear-window/slim.theme
+share/slim/themes/scotland-road/
+share/slim/themes/scotland-road/background.jpg
+share/slim/themes/scotland-road/panel.png
+share/slim/themes/scotland-road/slim.theme
+share/slim/themes/subway/
+share/slim/themes/subway/README
+share/slim/themes/subway/background.jpg
+share/slim/themes/subway/panel.png
+share/slim/themes/subway/slim.theme
+share/slim/themes/wave/
+share/slim/themes/wave/background.jpg
+share/slim/themes/wave/panel.png
+share/slim/themes/wave/slim.theme
