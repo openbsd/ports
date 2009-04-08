@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2009/03/18 11:42:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2009/04/08 21:58:01 jasper Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
 DISTNAME=	wesnoth-1.4.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.wesnoth.org/
 
-MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org> 
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wesnoth/}
 EXTRACT_SUFX=	.tar.bz2
