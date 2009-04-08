@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/09/05 11:19:48 ajacoutot Exp $
---- configure.orig	Sat Aug 30 12:22:52 2008
-+++ configure	Sat Aug 30 12:23:02 2008
-@@ -32557,13 +32557,13 @@ echo "${ECHO_T}no" >&6; }
+$OpenBSD: patch-configure,v 1.2 2009/04/08 21:30:54 sthen Exp $
+--- configure.orig	Sat Feb  7 17:51:30 2009
++++ configure	Wed Apr  8 10:24:02 2009
+@@ -32331,13 +32331,13 @@ echo "${ECHO_T}no" >&6; }
       esac
  
  	if test "$have_pthread" != "yes"; then
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2008/09/05 11:19:48 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -32619,7 +32619,7 @@ else
+@@ -32393,7 +32393,7 @@ else
  fi
  
  	   if test "$have_pthread" = "yes"; then

@@ -1,18 +1,16 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2009/03/16 17:11:42 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/04/08 21:30:54 sthen Exp $
 @newgroup _cherokee:608
 @newuser _cherokee:608:_cherokee:daemon:Cherokee HTTP Server:/var/empty:/sbin/nologin
-@conflict lighttpd-<=1.4.22
-@conflict spawn-fcgi-*
 @bin bin/cget
 bin/cherokee-config
 bin/cherokee-panic
 @bin bin/cherokee-tweak
-@bin bin/spawn-fcgi
 include/cherokee/
 include/cherokee/admin_client.h
 include/cherokee/avl.h
 include/cherokee/avl_r.h
 include/cherokee/buffer.h
+include/cherokee/cache.h
 include/cherokee/cherokee-config.h
 include/cherokee/cherokee.h
 include/cherokee/common.h
@@ -20,6 +18,7 @@ include/cherokee/config_entry.h
 include/cherokee/config_node.h
 include/cherokee/connection.h
 include/cherokee/connection_info.h
+include/cherokee/cryptor.h
 include/cherokee/downloader.h
 include/cherokee/encoder.h
 include/cherokee/fdpoll.h
@@ -27,6 +26,7 @@ include/cherokee/handler.h
 include/cherokee/header.h
 include/cherokee/http.h
 include/cherokee/init.h
+include/cherokee/iocache.h
 include/cherokee/list.h
 include/cherokee/logger.h
 include/cherokee/macros.h
@@ -50,12 +50,16 @@ lib/cherokee/
 lib/cherokee/libplugin_admin.so
 @comment lib/cherokee/libplugin_and.la
 lib/cherokee/libplugin_and.so
+@comment lib/cherokee/libplugin_authlist.la
+lib/cherokee/libplugin_authlist.so
 @comment lib/cherokee/libplugin_cgi.la
 lib/cherokee/libplugin_cgi.so
 @comment lib/cherokee/libplugin_combined.la
 lib/cherokee/libplugin_combined.so
 @comment lib/cherokee/libplugin_common.la
 lib/cherokee/libplugin_common.so
+@comment lib/cherokee/libplugin_custom_error.la
+lib/cherokee/libplugin_custom_error.so
 @comment lib/cherokee/libplugin_deflate.la
 lib/cherokee/libplugin_deflate.so
 @comment lib/cherokee/libplugin_directory.la
@@ -66,6 +70,8 @@ lib/cherokee/libplugin_dirlist.so
 lib/cherokee/libplugin_error_nn.so
 @comment lib/cherokee/libplugin_error_redir.la
 lib/cherokee/libplugin_error_redir.so
+@comment lib/cherokee/libplugin_exists.la
+lib/cherokee/libplugin_exists.so
 @comment lib/cherokee/libplugin_extensions.la
 lib/cherokee/libplugin_extensions.so
 @comment lib/cherokee/libplugin_fastcgi.la
@@ -82,6 +88,12 @@ lib/cherokee/libplugin_header.so
 lib/cherokee/libplugin_htdigest.so
 @comment lib/cherokee/libplugin_htpasswd.la
 lib/cherokee/libplugin_htpasswd.so
+@comment lib/cherokee/libplugin_ip_hash.la
+lib/cherokee/libplugin_ip_hash.so
+@comment lib/cherokee/libplugin_libssl.la
+lib/cherokee/libplugin_libssl.so
+@comment lib/cherokee/libplugin_method.la
+lib/cherokee/libplugin_method.so
 @comment lib/cherokee/libplugin_mirror.la
 lib/cherokee/libplugin_mirror.so
 @comment lib/cherokee/libplugin_ncsa.la
@@ -93,7 +105,7 @@ lib/cherokee/libplugin_or.so
 @comment lib/cherokee/libplugin_phpcgi.la
 lib/cherokee/libplugin_phpcgi.so
 @comment lib/cherokee/libplugin_plain.la
-lib/cherokee/libplugin_plain.so
+@comment lib/cherokee/libplugin_plain.so
 @comment lib/cherokee/libplugin_proxy.la
 lib/cherokee/libplugin_proxy.so
 @comment lib/cherokee/libplugin_redir.la
@@ -106,27 +118,31 @@ lib/cherokee/libplugin_round_robin.so
 lib/cherokee/libplugin_scgi.so
 @comment lib/cherokee/libplugin_server_info.la
 lib/cherokee/libplugin_server_info.so
-lib/cherokee/libplugin_w3c.la
+@comment lib/cherokee/libplugin_ssi.la
+lib/cherokee/libplugin_ssi.so
+@comment lib/cherokee/libplugin_streaming.la
+lib/cherokee/libplugin_streaming.so
+@comment lib/cherokee/libplugin_w3c.la
 lib/cherokee/libplugin_w3c.so
-lib/libcherokee-base.la
+@comment lib/libcherokee-base.la
 @lib lib/libcherokee-base.so.${LIBcherokee-base_VERSION}
-lib/libcherokee-client.la
+@comment lib/libcherokee-client.la
 @lib lib/libcherokee-client.so.${LIBcherokee-client_VERSION}
-lib/libcherokee-config.la
+@comment lib/libcherokee-config.la
 @lib lib/libcherokee-config.so.${LIBcherokee-config_VERSION}
-lib/libcherokee-server.la
+@comment lib/libcherokee-server.la
 @lib lib/libcherokee-server.so.${LIBcherokee-server_VERSION}
 lib/pkgconfig/cherokee.pc
 @man man/man1/cget.1
 @man man/man1/cherokee-admin.1
 @man man/man1/cherokee-config.1
-@man man/man1/cherokee-guardian.1
 @man man/man1/cherokee-tweak.1
+@man man/man1/cherokee-worker.1
 @man man/man1/cherokee.1
-@man man/man1/spawn-fcgi.1
 @bin sbin/cherokee
 @bin sbin/cherokee-admin
-@bin sbin/cherokee-guardian
+@bin sbin/cherokee-worker
+share/aclocal/
 share/aclocal/cherokee.m4
 share/cherokee/
 share/cherokee/admin/
@@ -136,72 +152,75 @@ share/cherokee/admin/Form.py
 share/cherokee/admin/Module.py
 share/cherokee/admin/ModuleAdmin.py
 share/cherokee/admin/ModuleAuth.py
+share/cherokee/admin/ModuleAuthlist.py
 share/cherokee/admin/ModuleBalancer.py
 share/cherokee/admin/ModuleCgi.py
 share/cherokee/admin/ModuleCommon.py
+share/cherokee/admin/ModuleCustomError.py
+share/cherokee/admin/ModuleDbslayer.py
 share/cherokee/admin/ModuleDefault.py
 share/cherokee/admin/ModuleDirectory.py
 share/cherokee/admin/ModuleDirlist.py
 share/cherokee/admin/ModuleErrorNn.py
 share/cherokee/admin/ModuleErrorRedir.py
+share/cherokee/admin/ModuleExists.py
 share/cherokee/admin/ModuleExtensions.py
 share/cherokee/admin/ModuleFcgi.py
 share/cherokee/admin/ModuleFile.py
 share/cherokee/admin/ModuleGeoip.py
+share/cherokee/admin/ModuleHandler.py
+share/cherokee/admin/ModuleHeader.py
 share/cherokee/admin/ModuleHtdigest.py
 share/cherokee/admin/ModuleHtpasswd.py
+share/cherokee/admin/ModuleIpHash.py
 share/cherokee/admin/ModuleLdap.py
+share/cherokee/admin/ModuleMethod.py
 share/cherokee/admin/ModuleMirror.py
 share/cherokee/admin/ModuleMysql.py
 share/cherokee/admin/ModulePam.py
 share/cherokee/admin/ModulePlain.py
+share/cherokee/admin/ModuleProxy.py
 share/cherokee/admin/ModuleRedir.py
 share/cherokee/admin/ModuleRequest.py
 share/cherokee/admin/ModuleRoundRobin.py
 share/cherokee/admin/ModuleScgi.py
 share/cherokee/admin/ModuleServerInfo.py
+share/cherokee/admin/ModuleSsi.py
+share/cherokee/admin/ModuleStreaming.py
 share/cherokee/admin/Page.py
 share/cherokee/admin/PageAdvanced.py
 share/cherokee/admin/PageAjaxUpdate.py
-share/cherokee/admin/PageEncoders.py
 share/cherokee/admin/PageEntry.py
 share/cherokee/admin/PageError.py
 share/cherokee/admin/PageFeedback.py
 share/cherokee/admin/PageGeneral.py
 share/cherokee/admin/PageIcon.py
-share/cherokee/admin/PageMain.py
+share/cherokee/admin/PageInfoSource.py
 share/cherokee/admin/PageMime.py
+share/cherokee/admin/PageStatus.py
 share/cherokee/admin/PageVServer.py
 share/cherokee/admin/PageVServers.py
 share/cherokee/admin/Post.py
 share/cherokee/admin/RuleList.py
 share/cherokee/admin/Table.py
 share/cherokee/admin/Theme.py
-share/cherokee/admin/advanced.help.html
 share/cherokee/admin/cherokee.conf.sample
 share/cherokee/admin/config.py
 share/cherokee/admin/configured.py
 share/cherokee/admin/consts.py
 share/cherokee/admin/default.template.html
-share/cherokee/admin/encoder.help.html
-share/cherokee/admin/entry.help.html
 share/cherokee/admin/error_couldnt_launch.template.html
 share/cherokee/admin/error_icons_dir_missing.template.html
 share/cherokee/admin/error_not_found.template.html
 share/cherokee/admin/error_not_writable.template.html
-share/cherokee/admin/feedback.help.html
 share/cherokee/admin/flags.py
-share/cherokee/admin/general.help.html
-share/cherokee/admin/icon.help.html
-share/cherokee/admin/main.help.html
-share/cherokee/admin/main.template.html
-share/cherokee/admin/mime.help.html
 share/cherokee/admin/pyscgi.py
 share/cherokee/admin/server.py
 share/cherokee/admin/static/
 share/cherokee/admin/static/css/
 share/cherokee/admin/static/css/cherokee.css
 share/cherokee/admin/static/css/reset-min.css
+share/cherokee/admin/static/css/thickbox.css
 share/cherokee/admin/static/images/
 share/cherokee/admin/static/images/background.png
 share/cherokee/admin/static/images/bin.png
@@ -461,23 +480,35 @@ share/cherokee/admin/static/images/flags/yt.png
 share/cherokee/admin/static/images/flags/za.png
 share/cherokee/admin/static/images/flags/zm.png
 share/cherokee/admin/static/images/flags/zw.png
+share/cherokee/admin/static/images/forbidden.png
 share/cherokee/admin/static/images/help.png
+share/cherokee/admin/static/images/loadingAnimation.gif
+share/cherokee/admin/static/images/macFFBgHack.png
 share/cherokee/admin/static/images/menu-active.png
 share/cherokee/admin/static/images/menu-highlight.png
+share/cherokee/admin/static/images/menu-sep.png
 share/cherokee/admin/static/images/offline.png
 share/cherokee/admin/static/images/online.png
+share/cherokee/admin/static/images/tab.png
+share/cherokee/admin/static/images/top-bar.png
+share/cherokee/admin/static/images/web_proud.jpg
 share/cherokee/admin/static/images/workarea.png
 share/cherokee/admin/static/js/
 share/cherokee/admin/static/js/common.js
 share/cherokee/admin/static/js/icons.js
-share/cherokee/admin/static/js/jquery-1.2.3.min.js
-share/cherokee/admin/static/js/jquery.accordion.js
+share/cherokee/admin/static/js/jquery-1.2.6.min.js
+share/cherokee/admin/static/js/jquery.cookie.js
 share/cherokee/admin/static/js/jquery.dimensions.js
 share/cherokee/admin/static/js/jquery.easing.js
 share/cherokee/admin/static/js/jquery.tablednd.js
+share/cherokee/admin/static/js/thickbox.js
+share/cherokee/admin/static/js/ui.core.js
+share/cherokee/admin/static/js/ui.dialog.js
+share/cherokee/admin/static/js/ui.draggable.js
+share/cherokee/admin/static/js/ui.resizable.js
+share/cherokee/admin/static/js/ui.tabs.js
+share/cherokee/admin/status.template.html
 share/cherokee/admin/validations.py
-share/cherokee/admin/vserver.help.html
-share/cherokee/admin/vservers.help.html
 share/cherokee/deps/
 share/cherokee/deps/cgi.deps
 share/cherokee/deps/combined.deps
@@ -487,6 +518,7 @@ share/cherokee/deps/fastcgi.deps
 share/cherokee/deps/fcgi.deps
 share/cherokee/deps/phpcgi.deps
 share/cherokee/deps/scgi.deps
+share/cherokee/deps/streaming.deps
 share/cherokee/icons/
 share/cherokee/icons/README.txt
 share/cherokee/icons/arrow_turn_left.png
@@ -516,7 +548,6 @@ share/cherokee/icons/page_white_text.png
 share/cherokee/icons/printer.png
 share/cherokee/icons/ruby.png
 share/cherokee/icons/script.png
-share/cherokee/mime_types.txt
 share/cherokee/themes/
 share/cherokee/themes/default/
 share/cherokee/themes/default/entry.html
@@ -529,6 +560,11 @@ share/cherokee/themes/firefox3/entry.html
 share/cherokee/themes/firefox3/footer.html
 share/cherokee/themes/firefox3/header.html
 share/cherokee/themes/firefox3/theme.css
+share/cherokee/themes/plain/
+share/cherokee/themes/plain/entry.html
+share/cherokee/themes/plain/footer.html
+share/cherokee/themes/plain/header.html
+share/cherokee/themes/plain/theme.css
 share/doc/cherokee/
 share/doc/cherokee/basics.html
 share/doc/cherokee/basics_download.html
@@ -544,44 +580,73 @@ share/doc/cherokee/bundle.html
 share/doc/cherokee/bundle_cget.html
 share/doc/cherokee/bundle_cherokee-admin.html
 share/doc/cherokee/bundle_cherokee-config.html
-share/doc/cherokee/bundle_cherokee-guardian.html
 share/doc/cherokee/bundle_cherokee-tweak.html
+share/doc/cherokee/bundle_cherokee-worker.html
 share/doc/cherokee/bundle_cherokee.html
 share/doc/cherokee/bundle_spawn-fcgi.html
 share/doc/cherokee/config.html
 share/doc/cherokee/config_advanced.html
-share/doc/cherokee/config_encoding.html
 share/doc/cherokee/config_general.html
 share/doc/cherokee/config_icons.html
+share/doc/cherokee/config_info_sources.html
 share/doc/cherokee/config_mime_types.html
 share/doc/cherokee/config_quickstart.html
+share/doc/cherokee/config_status.html
 share/doc/cherokee/config_virtual_servers.html
 share/doc/cherokee/config_virtual_servers_rule.html
 share/doc/cherokee/cookbook.html
+share/doc/cherokee/cookbook_alfresco.html
 share/doc/cherokee/cookbook_authentication.html
 share/doc/cherokee/cookbook_cross_compilation.html
+share/doc/cherokee/cookbook_dbslayer.html
 share/doc/cherokee/cookbook_django.html
+share/doc/cherokee/cookbook_drupal.html
+share/doc/cherokee/cookbook_embedding_cherokee.html
+share/doc/cherokee/cookbook_glassfish.html
+share/doc/cherokee/cookbook_joomla.html
+share/doc/cherokee/cookbook_kumbia.html
+share/doc/cherokee/cookbook_liferay.html
+share/doc/cherokee/cookbook_mailman.html
+share/doc/cherokee/cookbook_maintenance.html
 share/doc/cherokee/cookbook_managing_logs.html
+share/doc/cherokee/cookbook_mono.html
+share/doc/cherokee/cookbook_moodle.html
+share/doc/cherokee/cookbook_nagios.html
 share/doc/cherokee/cookbook_optimizations.html
 share/doc/cherokee/cookbook_php.html
+share/doc/cherokee/cookbook_phpbb.html
+share/doc/cherokee/cookbook_phpmyadmin.html
+share/doc/cherokee/cookbook_redirs.html
 share/doc/cherokee/cookbook_ror.html
 share/doc/cherokee/cookbook_ssl.html
+share/doc/cherokee/cookbook_sugarcrm.html
+share/doc/cherokee/cookbook_symfony.html
+share/doc/cherokee/cookbook_trac.html
+share/doc/cherokee/cookbook_wordpress.html
+share/doc/cherokee/cookbook_zend.html
 share/doc/cherokee/dev.html
 share/doc/cherokee/dev_cherokee.conf.html
 share/doc/cherokee/dev_debug.html
+share/doc/cherokee/dev_issues.html
 share/doc/cherokee/index.html
 share/doc/cherokee/media/
 share/doc/cherokee/media/css/
 share/doc/cherokee/media/css/cherokee_doc.css
 share/doc/cherokee/media/images/
-share/doc/cherokee/media/images/admin_advanced.png
+share/doc/cherokee/media/images/admin_advanced0.png
+share/doc/cherokee/media/images/admin_advanced1.png
+share/doc/cherokee/media/images/admin_advanced2.png
+share/doc/cherokee/media/images/admin_advanced3.png
+share/doc/cherokee/media/images/admin_advanced4.png
 share/doc/cherokee/media/images/admin_behaviour.png
 share/doc/cherokee/media/images/admin_dirlist_cherokee.png
-share/doc/cherokee/media/images/admin_encoding.png
-share/doc/cherokee/media/images/admin_encoding_gzip.png
-share/doc/cherokee/media/images/admin_general.png
+share/doc/cherokee/media/images/admin_general_networking.png
+share/doc/cherokee/media/images/admin_general_permissions.png
+share/doc/cherokee/media/images/admin_general_ports.png
 share/doc/cherokee/media/images/admin_handler_admin.png
 share/doc/cherokee/media/images/admin_handler_cgi.png
+share/doc/cherokee/media/images/admin_handler_custom_error.png
+share/doc/cherokee/media/images/admin_handler_dbslayer.png
 share/doc/cherokee/media/images/admin_handler_dirlist.png
 share/doc/cherokee/media/images/admin_handler_dirlist_ex.png
 share/doc/cherokee/media/images/admin_handler_fastcgi1.png
@@ -589,30 +654,120 @@ share/doc/cherokee/media/images/admin_handler_fastcgi2.png
 share/doc/cherokee/media/images/admin_handler_file.png
 share/doc/cherokee/media/images/admin_handler_onlylisting.png
 share/doc/cherokee/media/images/admin_handler_onlylisting_ex.png
+share/doc/cherokee/media/images/admin_handler_proxy.png
 share/doc/cherokee/media/images/admin_icons1.png
 share/doc/cherokee/media/images/admin_icons2.png
 share/doc/cherokee/media/images/admin_icons3.png
 share/doc/cherokee/media/images/admin_index.png
+share/doc/cherokee/media/images/admin_info_sources.png
 share/doc/cherokee/media/images/admin_launch.png
 share/doc/cherokee/media/images/admin_mime.png
 share/doc/cherokee/media/images/admin_noconfig.png
 share/doc/cherokee/media/images/admin_notrunning.png
 share/doc/cherokee/media/images/admin_rule_regex.png
+share/doc/cherokee/media/images/admin_validators_authlist.png
+share/doc/cherokee/media/images/admin_validators_ldap.png
 share/doc/cherokee/media/images/admin_validators_pam.png
 share/doc/cherokee/media/images/admin_validators_plain.png
 share/doc/cherokee/media/images/admin_vserver.png
 share/doc/cherokee/media/images/admin_vserver_errors.png
 share/doc/cherokee/media/images/admin_vserver_loggers.png
+share/doc/cherokee/media/images/admin_vserver_security.png
 share/doc/cherokee/media/images/admin_vserver_vserver.png
+share/doc/cherokee/media/images/cookbook_alfresco_alfresco.png
+share/doc/cherokee/media/images/cookbook_alfresco_assistant.png
+share/doc/cherokee/media/images/cookbook_alfresco_install.png
+share/doc/cherokee/media/images/cookbook_alfresco_path.png
+share/doc/cherokee/media/images/cookbook_alfresco_share.png
+share/doc/cherokee/media/images/cookbook_alfresco_soffice.png
+share/doc/cherokee/media/images/cookbook_dbslayer1.png
+share/doc/cherokee/media/images/cookbook_dbslayer2.png
+share/doc/cherokee/media/images/cookbook_dbslayer3.png
+share/doc/cherokee/media/images/cookbook_dbslayer4.png
+share/doc/cherokee/media/images/cookbook_django.png
 share/doc/cherokee/media/images/cookbook_django_common.png
-share/doc/cherokee/media/images/cookbook_django_scgi.png
+share/doc/cherokee/media/images/cookbook_django_infosources.png
+share/doc/cherokee/media/images/cookbook_drupal.png
+share/doc/cherokee/media/images/cookbook_drupal_default1.png
+share/doc/cherokee/media/images/cookbook_drupal_default2.png
+share/doc/cherokee/media/images/cookbook_drupal_default3.png
+share/doc/cherokee/media/images/cookbook_drupal_example1.png
+share/doc/cherokee/media/images/cookbook_drupal_example2.png
+share/doc/cherokee/media/images/cookbook_drupal_example3.png
+share/doc/cherokee/media/images/cookbook_drupal_example4.png
+share/doc/cherokee/media/images/cookbook_drupal_rules.png
+share/doc/cherokee/media/images/cookbook_glassfish.png
+share/doc/cherokee/media/images/cookbook_liferay.png
+share/doc/cherokee/media/images/cookbook_mailman.png
+share/doc/cherokee/media/images/cookbook_maintenance_advanced_domains.png
+share/doc/cherokee/media/images/cookbook_maintenance_advanced_redir.png
+share/doc/cherokee/media/images/cookbook_maintenance_advanced_rules.png
+share/doc/cherokee/media/images/cookbook_maintenance_copy.png
+share/doc/cherokee/media/images/cookbook_maintenance_domain.png
+share/doc/cherokee/media/images/cookbook_maintenance_error.png
+share/doc/cherokee/media/images/cookbook_maintenance_result.png
+share/doc/cherokee/media/images/cookbook_maintenance_rule.png
+share/doc/cherokee/media/images/cookbook_managing_logs_handler.png
+share/doc/cherokee/media/images/cookbook_managing_logs_rules.png
+share/doc/cherokee/media/images/cookbook_managing_logs_security.png
+share/doc/cherokee/media/images/cookbook_mono_demo.png
+share/doc/cherokee/media/images/cookbook_mono_handler.png
+share/doc/cherokee/media/images/cookbook_moodle.png
+share/doc/cherokee/media/images/cookbook_moodle_db.png
+share/doc/cherokee/media/images/cookbook_moodle_document_root.png
+share/doc/cherokee/media/images/cookbook_moodle_modules.png
+share/doc/cherokee/media/images/cookbook_moodle_paths.png
 share/doc/cherokee/media/images/cookbook_mysql_rule.png
 share/doc/cherokee/media/images/cookbook_mysql_validator.png
+share/doc/cherokee/media/images/cookbook_nagios1.png
+share/doc/cherokee/media/images/cookbook_nagios2.png
+share/doc/cherokee/media/images/cookbook_nagios3.png
+share/doc/cherokee/media/images/cookbook_nagios4.png
+share/doc/cherokee/media/images/cookbook_phpbb_1_intro.png
+share/doc/cherokee/media/images/cookbook_phpbb_2_req.png
+share/doc/cherokee/media/images/cookbook_phpbb_3_db.png
+share/doc/cherokee/media/images/cookbook_phpbb_4_admin.png
+share/doc/cherokee/media/images/cookbook_phpbb_5_config.png
+share/doc/cherokee/media/images/cookbook_phpbb_6_advanced.png
+share/doc/cherokee/media/images/cookbook_phpbb_7_create.png
+share/doc/cherokee/media/images/cookbook_phpbb_8_final.png
+share/doc/cherokee/media/images/cookbook_phpbb_adm.png
+share/doc/cherokee/media/images/cookbook_phpbb_adm_warning.png
+share/doc/cherokee/media/images/cookbook_phpbb_rules.png
+share/doc/cherokee/media/images/cookbook_phpbb_running.png
+share/doc/cherokee/media/images/cookbook_phpmyadmin.png
+share/doc/cherokee/media/images/cookbook_phpmyadmin_denied.png
+share/doc/cherokee/media/images/cookbook_redir_behavior.png
+share/doc/cherokee/media/images/cookbook_redir_domains.png
+share/doc/cherokee/media/images/cookbook_redir_handler.png
+share/doc/cherokee/media/images/cookbook_ror.png
 share/doc/cherokee/media/images/cookbook_ror_common.png
 share/doc/cherokee/media/images/cookbook_ror_fcgi.png
+share/doc/cherokee/media/images/cookbook_sugarcrm_install0.png
+share/doc/cherokee/media/images/cookbook_sugarcrm_install1.png
+share/doc/cherokee/media/images/cookbook_sugarcrm_running0.png
+share/doc/cherokee/media/images/cookbook_sugarcrm_running1.png
+share/doc/cherokee/media/images/cookbook_symfony.png
+share/doc/cherokee/media/images/cookbook_trac.png
+share/doc/cherokee/media/images/cookbook_trac_info.png
+share/doc/cherokee/media/images/cookbook_trac_rules.png
+share/doc/cherokee/media/images/cookbook_trac_scgi.png
+share/doc/cherokee/media/images/cookbook_trac_static.png
+share/doc/cherokee/media/images/cookbook_wp1.png
+share/doc/cherokee/media/images/cookbook_wp2.png
+share/doc/cherokee/media/images/cookbook_wp3.png
+share/doc/cherokee/media/images/cookbook_wp4.png
+share/doc/cherokee/media/images/cookbook_wp5.png
+share/doc/cherokee/media/images/cookbook_wp_default1.png
+share/doc/cherokee/media/images/cookbook_wp_example1.png
+share/doc/cherokee/media/images/cookbook_wp_example2.png
+share/doc/cherokee/media/images/cookbook_wp_example3.png
+share/doc/cherokee/media/images/proxy_phase1.png
+share/doc/cherokee/media/images/proxy_phase2.png
 share/doc/cherokee/media/images/tracelor.png
 share/doc/cherokee/modules.html
 share/doc/cherokee/modules_balancers.html
+share/doc/cherokee/modules_balancers_ip_hash.html
 share/doc/cherokee/modules_balancers_round_robin.html
 share/doc/cherokee/modules_encoders.html
 share/doc/cherokee/modules_encoders_deflate.html
@@ -621,18 +776,23 @@ share/doc/cherokee/modules_handlers.html
 share/doc/cherokee/modules_handlers_admin.html
 share/doc/cherokee/modules_handlers_cgi.html
 share/doc/cherokee/modules_handlers_common.html
+share/doc/cherokee/modules_handlers_custom_error.html
+share/doc/cherokee/modules_handlers_dbslayer.html
 share/doc/cherokee/modules_handlers_dirlist.html
 share/doc/cherokee/modules_handlers_fcgi.html
 share/doc/cherokee/modules_handlers_file.html
 share/doc/cherokee/modules_handlers_mirror.html
+share/doc/cherokee/modules_handlers_proxy.html
 share/doc/cherokee/modules_handlers_redir.html
 share/doc/cherokee/modules_handlers_scgi.html
 share/doc/cherokee/modules_handlers_server_info.html
+share/doc/cherokee/modules_handlers_ssi.html
 share/doc/cherokee/modules_loggers.html
 share/doc/cherokee/modules_loggers_combined.html
 share/doc/cherokee/modules_loggers_ncsa.html
 share/doc/cherokee/modules_loggers_w3c.html
 share/doc/cherokee/modules_validators.html
+share/doc/cherokee/modules_validators_authlist.html
 share/doc/cherokee/modules_validators_htdigest.html
 share/doc/cherokee/modules_validators_htpasswd.html
 share/doc/cherokee/modules_validators_ldap.html
@@ -640,14 +800,17 @@ share/doc/cherokee/modules_validators_mysql.html
 share/doc/cherokee/modules_validators_pam.html
 share/doc/cherokee/modules_validators_plain.html
 share/doc/cherokee/other.html
+share/doc/cherokee/other_community.html
+share/doc/cherokee/other_faq.html
 share/doc/cherokee/other_goodies.html
+share/doc/cherokee/other_signals.html
 share/examples/cherokee/
-share/examples/cherokee${SYSCONFDIR}/
+share/examples/cherokee/etc/
 @sample ${SYSCONFDIR}/cherokee/
-share/examples/cherokee${SYSCONFDIR}/cherokee.conf
+share/examples/cherokee/etc/cherokee.conf
 @sample ${SYSCONFDIR}/cherokee/cherokee.conf
-share/examples/cherokee${SYSCONFDIR}/cherokee.conf.perf_sample
-share/examples/cherokee${SYSCONFDIR}/ssl/
+share/examples/cherokee/etc/cherokee.conf.perf_sample
+share/examples/cherokee/etc/ssl/
 @sample ${SYSCONFDIR}/cherokee/ssl/
 share/examples/cherokee/www/
 @sample /var/cherokee/
@@ -657,6 +820,7 @@ share/examples/cherokee/www/images/cherokee-logo.png
 @sample /var/cherokee/images/cherokee-logo.png
 share/examples/cherokee/www/images/default-bg.png
 @sample /var/cherokee/images/default-bg.png
+share/examples/cherokee/www/images/favicon.ico
 share/examples/cherokee/www/images/powered_by_cherokee.png
 @sample /var/cherokee/images/powered_by_cherokee.png
 share/examples/cherokee/www/index.html
@@ -666,5 +830,4 @@ share/examples/cherokee/www/index.html
 @sample /var/log/cherokee/
 @sample /var/log/cherokee/cherokee.access
 @sample /var/log/cherokee/cherokee.error
-@owner
 @extraunexec rm -rf /var/log/cherokee

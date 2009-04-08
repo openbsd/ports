@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/16 17:11:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/08 21:30:54 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,10 +7,11 @@ COMMENT-geoip =	GeoIP module for Cherokee web server
 COMMENT-ldap =	LDAP module for Cherokee web server
 COMMENT-mysql =	MySQL module for Cherokee web server
 
-VERSION =	0.8.1
+VERSION =	0.99.0
+DIR =		${VERSION:C/..$//}
 DISTNAME =	cherokee-${VERSION}
 
-PKGNAME-main =	${DISTNAME}p1
+PKGNAME-main =	${DISTNAME}
 PKGNAME-ldap=   cherokee-ldap-${VERSION}
 PKGNAME-mysql=  cherokee-mysql-${VERSION}
 PKGNAME-geoip=  cherokee-geoip-${VERSION}
@@ -32,8 +33,10 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes 
 PERMIT_DISTFILES_FTP =	Yes 
 
-MASTER_SITES  =	${HOMEPAGE}/download/${VERSION:R}/${VERSION}/ \
-		http://cherokee.osuosl.org/${VERSION:R}/${VERSION}/
+MASTER_SITES  =	${HOMEPAGE}download/${DIR}/${VERSION}/ \
+		http://ftp.heanet.ie/mirrors/cherokee/${DIR}/${VERSION}/ \
+		http://www.ring.gr.jp/arcvhies/net/cherokee/${DIR}/${VERSION}/ \
+		http://cherokee.osuosl.org/${DIR}/${VERSION}/
 
 MULTI_PACKAGES =-main -ldap -mysql -geoip
 
@@ -42,8 +45,10 @@ MODULES =	lang/python
 BUILD_DEPENDS =	::textproc/py-docutils \
 		::www/php5/core,-fastcgi
 
-LIB_DEPENDS-main =	pcre::devel/pcre
+LIB_DEPENDS-main =	pcre::devel/pcre \
+			bz2::archivers/bzip2
 WANTLIB-main =		c crypto pthread ssl
+RUN_DEPENDS-main =	::www/spawn-fcgi
 
 LIB_DEPENDS-geoip =	GeoIP.>=6::net/GeoIP
 WANTLIB-geoip =		crypto

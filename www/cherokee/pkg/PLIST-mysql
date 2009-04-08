@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST-mysql,v 1.1.1.1 2008/09/05 11:19:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.2 2009/04/08 21:30:54 sthen Exp $
 @comment lib/cherokee/libplugin_mysql.la
 lib/cherokee/libplugin_mysql.so
+@comment lib/cherokee/libplugin_dbslayer.la
+lib/cherokee/libplugin_dbslayer.so
