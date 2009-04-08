@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/24 15:49:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/08 15:26:48 jasper Exp $
 
 COMMENT =		add OpenBSD songs to Asterisk music-on-hold
 
-PKGNAME =		asterisk-openbsd-moh-4.4
-REL_LIST =		30 31 32 33 34 35 36 37 38 39 40 41 42 43 44
+PKGNAME =		asterisk-openbsd-moh-4.5
+REL_LIST =		30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45
 .for release in ${REL_LIST}
 DISTFILES += song${release}.mp3
 .endfor
