@@ -1,29 +1,30 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 20:00:06 steven Exp $
-@pkgpath misc/fileutils
+@comment $OpenBSD: PLIST-main,v 1.2 2009/04/08 16:27:12 ajacoutot Exp $
 @conflict gnuls-*
-bin/gchgrp
-bin/gchmod
-bin/gchown
-bin/gcp
-bin/gdd
-bin/gdf
-bin/gdir
-bin/gdircolors
-bin/gdu
-bin/ginstall
-bin/gln
-bin/gls
-bin/gmkdir
-bin/gmkfifo
-bin/gmknod
-bin/gmv
-bin/grm
-bin/grmdir
-bin/gshred
-bin/gsync
-bin/gtouch
-bin/gvdir
+@pkgpath misc/fileutils
+@bin bin/gchgrp
+@bin bin/gchmod
+@bin bin/gchown
+@bin bin/gcp
+@bin bin/gdd
+@bin bin/gdf
+@bin bin/gdir
+@bin bin/gdircolors
+@bin bin/gdu
+@bin bin/ginstall
+@bin bin/gln
+@bin bin/gls
+@bin bin/gmkdir
+@bin bin/gmkfifo
+@bin bin/gmknod
+@bin bin/gmv
+@bin bin/grm
+@bin bin/grmdir
+@bin bin/gshred
+@bin bin/gsync
+@bin bin/gtouch
+@bin bin/gvdir
 @info info/fileutils.info
+@comment lib/charset.alias
 @man man/man1/gchgrp.1
 @man man/man1/gchmod.1
 @man man/man1/gchown.1
@@ -47,24 +48,44 @@ bin/gvdir
 @man man/man1/gtouch.1
 @man man/man1/gvdir.1
 share/locale/cs/LC_MESSAGES/fileutils.mo
+share/locale/cs/LC_TIME
 share/locale/da/LC_MESSAGES/fileutils.mo
+share/locale/da/LC_TIME
 share/locale/de/LC_MESSAGES/fileutils.mo
+share/locale/de/LC_TIME
 share/locale/el/LC_MESSAGES/fileutils.mo
+share/locale/el/LC_TIME
 share/locale/es/LC_MESSAGES/fileutils.mo
+share/locale/es/LC_TIME
 share/locale/fr/LC_MESSAGES/fileutils.mo
+share/locale/fr/LC_TIME
 share/locale/gl/LC_MESSAGES/fileutils.mo
+share/locale/gl/LC_TIME
 share/locale/it/LC_MESSAGES/fileutils.mo
+share/locale/it/LC_TIME
 share/locale/ja/LC_MESSAGES/fileutils.mo
+share/locale/ja/LC_TIME
 share/locale/ko/LC_MESSAGES/fileutils.mo
+share/locale/ko/LC_TIME
 share/locale/nl/LC_MESSAGES/fileutils.mo
+share/locale/nl/LC_TIME
 share/locale/no/LC_MESSAGES/fileutils.mo
+share/locale/no/LC_TIME
 share/locale/pl/LC_MESSAGES/fileutils.mo
+share/locale/pl/LC_TIME
 share/locale/pt/LC_MESSAGES/fileutils.mo
+share/locale/pt/LC_TIME
 share/locale/pt_BR/LC_MESSAGES/fileutils.mo
+share/locale/pt_BR/LC_TIME
 share/locale/ru/LC_MESSAGES/fileutils.mo
-share/locale/sk/
-share/locale/sk/LC_MESSAGES/
+share/locale/ru/LC_TIME
 share/locale/sk/LC_MESSAGES/fileutils.mo
+share/locale/sk/LC_TIME
 share/locale/sl/LC_MESSAGES/fileutils.mo
+share/locale/sl/LC_TIME
 share/locale/sv/LC_MESSAGES/fileutils.mo
+share/locale/sv/LC_TIME
+share/locale/zh/
+share/locale/zh/LC_MESSAGES/
 share/locale/zh/LC_MESSAGES/fileutils.mo
+share/locale/zh/LC_TIME

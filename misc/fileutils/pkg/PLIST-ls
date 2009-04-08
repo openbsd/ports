@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-ls,v 1.5 2004/09/18 12:55:53 espie Exp $
+@comment $OpenBSD: PLIST-ls,v 1.6 2009/04/08 16:27:12 ajacoutot Exp $
 @conflict fileutils-*
-bin/gdir
-bin/gdircolors
-bin/gls
-bin/gvdir
+@bin bin/gdir
+@bin bin/gdircolors
+@bin bin/gls
+@bin bin/gvdir
 @man man/man1/gdir.1
 @man man/man1/gdircolors.1
 @man man/man1/gls.1
@@ -24,8 +24,6 @@ share/locale/pl/LC_MESSAGES/fileutils.mo
 share/locale/pt/LC_MESSAGES/fileutils.mo
 share/locale/pt_BR/LC_MESSAGES/fileutils.mo
 share/locale/ru/LC_MESSAGES/fileutils.mo
-share/locale/sk/
-share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/fileutils.mo
 share/locale/sl/LC_MESSAGES/fileutils.mo
 share/locale/sv/LC_MESSAGES/fileutils.mo
