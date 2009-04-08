@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/28 15:16:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/04/08 22:29:24 todd Exp $
 @conflict clamav-<0.94
 bin/MailScanner
 bin/analyse_SpamAssassin_cache
@@ -8,6 +8,7 @@ bin/clean.quarantine
 bin/d2mbox
 bin/df2mbox
 bin/mailscanner_create_locks
+bin/processing_messages_alert
 bin/update_bad_phishing_sites
 bin/update_phishing_sites
 lib/MailScanner/

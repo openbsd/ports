@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_MailScanner_Message_pm,v 1.5 2008/11/07 02:33:58 brad Exp $
---- lib/MailScanner/Message.pm.orig	Mon Oct 27 07:31:59 2008
-+++ lib/MailScanner/Message.pm	Thu Nov  6 20:24:55 2008
-@@ -680,12 +680,19 @@ sub IsSpam {
+$OpenBSD: patch-lib_MailScanner_Message_pm,v 1.6 2009/04/08 22:29:24 todd Exp $
+--- lib/MailScanner/Message.pm.orig	Thu Mar 12 11:37:44 2009
++++ lib/MailScanner/Message.pm	Wed Apr  1 17:45:47 2009
+@@ -694,12 +694,19 @@ sub IsSpam {
    # rblspamheader is useful start to spamreport if RBLsaysspam.
  
    # Do the Custom Spam Checker

@@ -1,0 +1,18 @@
+$OpenBSD: patch-bin_processing_messages_alert,v 1.1 2009/04/08 22:29:24 todd Exp $
+--- bin/processing_messages_alert.orig	Wed Apr  1 18:09:59 2009
++++ bin/processing_messages_alert	Wed Apr  1 18:14:53 2009
+@@ -1,10 +1,10 @@
+ #!/bin/sh
+ 
+-noticesfrom=`perl -n -e 'print "$_" if chomp && s/^\s*Notices\s*From\s*=\s*([^\s#]+).*$/$1/' /opt/MailScanner/etc/MailScanner.conf`
+-localpostmaster=`perl -n -e 'print "$_" if chomp && s/^\s*Local\s*Postmaster\s*=\s*([^\s#]+).*$/$1/' /opt/MailScanner/etc/MailScanner.conf`
+-noticesto=`perl -n -e 'print "$_" if chomp && s/^\s*Notices\s*To\s*=\s*([^\s#]+).*$/$1/' /opt/MailScanner/etc/MailScanner.conf`
++noticesfrom=`perl -n -e 'print "$_" if chomp && s/^\s*Notices\s*From\s*=\s*([^\s#]+).*$/$1/' %SYSCONFDIR%/MailScanner/MailScanner.conf`
++localpostmaster=`perl -n -e 'print "$_" if chomp && s/^\s*Local\s*Postmaster\s*=\s*([^\s#]+).*$/$1/' %SYSCONFDIR%/MailScanner/MailScanner.conf`
++noticesto=`perl -n -e 'print "$_" if chomp && s/^\s*Notices\s*To\s*=\s*([^\s#]+).*$/$1/' %SYSCONFDIR%/MailScanner/MailScanner.conf`
+ 
+-alert=`/opt/MailScanner/bin/MailScanner --processing`
++alert=`%PREFIX%/bin/MailScanner --processing`
+ 
+ if [ \! "x$alert" = "x" ]; then
+   #cat <<EOM

@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_mcafee-autoupdate,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
---- lib/mcafee-autoupdate.orig	Mon Mar 20 17:48:20 2006
-+++ lib/mcafee-autoupdate	Mon Mar 20 17:48:20 2006
+$OpenBSD: patch-lib_mcafee-autoupdate,v 1.2 2009/04/08 22:29:24 todd Exp $
+--- lib/mcafee-autoupdate.orig	Wed Mar 18 14:20:37 2009
++++ lib/mcafee-autoupdate	Wed Apr  1 17:46:41 2009
 @@ -20,7 +20,7 @@
  
  # defaults
- OPTS=""
+ OPTS="-d"
 -PREFIX=/opt/uvscan
 +PREFIX=%PREFIX%/uvscan
  FTPDIR=http://download.nai.com/products/datfiles/4.x/nai
