@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/04/17 13:37:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/04/08 11:46:10 eric Exp $
 include/jconfig.h
 include/jerror.h
 include/jmorecfg.h
@@ -7,13 +7,17 @@ lib/libjpeg.a
 lib/libjpeg.la
 %%SHARED%%
 @endfake
-bin/cjpeg
-bin/djpeg
-bin/jpegtran
-bin/rdjpgcom
-bin/wrjpgcom
+@bin bin/cjpeg
+@bin bin/djpeg
+@bin bin/jpegtran
+@bin bin/rdjpgcom
+@bin bin/wrjpgcom
 @man man/man1/cjpeg.1
 @man man/man1/djpeg.1
 @man man/man1/jpegtran.1
 @man man/man1/rdjpgcom.1
 @man man/man1/wrjpgcom.1
+share/doc/jpeg/
+share/doc/jpeg/libjpeg.doc
+share/examples/jpeg/
+share/examples/jpeg/example.c

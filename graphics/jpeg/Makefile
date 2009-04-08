@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.33 2009/04/08 11:46:10 eric Exp $
 
 COMMENT=	IJG's JPEG compression utilities
 
 DISTNAME=	jpegsrc.v6b
-PKGNAME=	jpeg-6bp3
+PKGNAME=	jpeg-6bp4
 SHARED_LIBS=	jpeg	62.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.uu.net/graphics/jpeg/
@@ -20,5 +20,11 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
 WRKDIST=	${WRKDIR}/jpeg-6b
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jpeg
+	${INSTALL_DATA} ${WRKDIST}/libjpeg.doc ${PREFIX}/share/doc/jpeg
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/jpeg
+	${INSTALL_DATA} ${WRKDIST}/example.c ${PREFIX}/share/examples/jpeg
 
 .include <bsd.port.mk>
