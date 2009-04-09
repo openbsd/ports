@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_a2ps_cfg_in,v 1.1 2009/04/09 09:25:20 ajacoutot Exp $
+--- etc/a2ps_cfg.in.orig	Thu Apr  9 11:19:26 2009
++++ etc/a2ps_cfg.in	Thu Apr  9 11:19:53 2009
+@@ -68,7 +68,7 @@ Medium: Letterdj	612	792	24	40	588	752
+ # 2)	Path to the a2ps resource				#
+ #################################################################
+ # Default path where a2ps dropped its library files.
+-LibraryPath: @libpath@
++LibraryPath: @libpath@:${X11BASE}/lib/X11/fonts/Type1
+ 
+ # It may be useful to extend it so that a2ps can see some
+ # TeX or X11 resources: it likes AFM files and PF[AB] files.
