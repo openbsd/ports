@@ -1,0 +1,26 @@
+$OpenBSD: patch-pound_8,v 1.1.1.1 2009/04/09 01:06:24 sthen Exp $
+--- pound.8.orig	Tue Mar 10 22:17:18 2009
++++ pound.8	Tue Mar 10 22:18:11 2009
+@@ -155,7 +155,7 @@ running a quick syntax check before actually activatin
+ \fB\-f\fR config_file
+ Location of the configuration file (see below for a full description of the format).
+ Default:
+-.I /usr/local/etc/pound.cfg
++.I ${SYSCONFDIR}/pound.cfg
+ .TP
+ \fB\-p\fR pid_file
+ Location of the pid file.
+@@ -1112,11 +1112,11 @@ this is where
+ .B Pound
+ will attempt to record its process id.
+ .TP
+-\fI/usr/local/etc/pound.cfg\fR
++\fI${SYSCONFDIR}/pound.cfg\fR
+ the default configuration file (the location may be changed when compiling - see the
+ F_CONF flag in the Makefile).
+ .TP
+-\fI/usr/local/etc/pound/cert.pem\fR
++\fI${SYSCONFDIR}/pound/cert.pem\fR
+ the certificate file(s) for HTTPS. The location must be defined in the configuration
+ file - this is only a suggestion. The file must contain a PEM-encoded certificate,
+ optionally a certificate chain from a known Certificate Authority to your server certificate
