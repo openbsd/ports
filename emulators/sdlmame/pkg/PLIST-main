@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/03/17 19:55:09 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/04/09 22:44:41 ajacoutot Exp $
 @bin bin/sdlmame
 share/doc/sdlmame/
 share/doc/sdlmame/SDLMAME.txt
@@ -6,10 +6,20 @@ share/doc/sdlmame/config.txt
 share/doc/sdlmame/license.txt
 share/doc/sdlmame/mame.txt
 share/doc/sdlmame/newvideo.txt
+share/examples/sdlmame/
+@sample ${SYSCONFDIR}/mame/
+share/examples/sdlmame/mame.ini
+@sample ${SYSCONFDIR}/mame/mame.ini
 share/sdlmame/
+share/sdlmame/artwork/
+share/sdlmame/cheat/
+share/sdlmame/ctrlr/
 share/sdlmame/keymaps/
 share/sdlmame/keymaps/km-be.txt
 share/sdlmame/keymaps/km-ch.txt
 share/sdlmame/keymaps/km-de.txt
 share/sdlmame/keymaps/km-fr.txt
 share/sdlmame/keymaps/km_it.txt
+share/sdlmame/roms/
+share/sdlmame/samples/
+share/sdlmame/ui.bdf

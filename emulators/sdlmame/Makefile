@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/18 20:23:11 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/04/09 22:44:41 ajacoutot Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -10,7 +10,7 @@ COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
 V =			0.130
 DISTNAME =		sdlmame${V:S/.//}
-PKGNAME-main =		sdlmame-${V}p0
+PKGNAME-main =		sdlmame-${V}p1
 PKGNAME-tools =		sdlmame-tools-${V}p0
 
 CATEGORIES =		emulators games
@@ -48,6 +48,7 @@ USE_X11 =		Yes
 NO_REGRESS =		Yes
 VMEM_WARNING =		Yes
 
+MAKE_FLAGS =		OPT_FLAGS='-DINI_PATH="\"${SYSCONFDIR}/mame;\""'
 MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" LD=$(CC) \
 			TARGETOS=openbsd
 .if ${MACHINE_ARCH} == "amd64"
@@ -57,19 +58,28 @@ MAKE_FILE =		makefile
 
 MAME_EXTBIN =		chdman jedutil ldresample ldverify romcmp
 MAME_DOC =		config.txt license.txt mame.txt newvideo.txt
+MAME_DATA_DIR =		roms samples artwork ctrlr cheat keymaps
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mame ${PREFIX}/bin/sdlmame
 .for i in ${MAME_EXTBIN}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin/${i}
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/sdlmame/keymaps
+.for i in ${MAME_DATA_DIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/sdlmame/${i}
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/keymaps/km[-_]??.txt \
 		${PREFIX}/share/sdlmame/keymaps/
+	${INSTALL_DATA} ${WRKSRC}/ui.bdf ${PREFIX}/share/sdlmame
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sdlmame
 .for i in ${MAME_DOC}
 	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${PREFIX}/share/doc/sdlmame/
 .endfor
 	${INSTALL_DATA} $(WRKSRC)/SDLMAME.txt ${PREFIX}/share/doc/sdlmame/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sdlmame
+	${SUBST_CMD} -c ${FILESDIR}/mame.ini \
+		${PREFIX}/share/examples/sdlmame/mame.ini
+	chown ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/share/examples/sdlmame/mame.ini
 
 .include <bsd.port.mk>
