@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/04/08 21:58:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2009/04/09 07:36:17 jasper Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
@@ -28,10 +28,6 @@ LIB_DEPENDS=	boost_iostreams-mt::devel/boost \
 		SDL_net::devel/sdl-net \
 		SDL_mixer::devel/sdl-mixer \
 		fribidi::devel/fribidi
-# png is only required for the tools, which we don't build yet.
-
-# The detection of kde-config/gnome-config will only lead to some
-# desktop file installation...
 
 MODULES=	devel/gettext
 
@@ -57,6 +53,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 
+# XXX: Provide the tools
 CONFIGURE_ARGS+=--enable-server \
 		--enable-campaign-server \
 		--enable-editor \
