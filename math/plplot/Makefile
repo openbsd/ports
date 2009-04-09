@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/04/05 16:21:55 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2009/04/09 05:17:53 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -60,7 +60,9 @@ CONFIGURE_ARGS=	-D ENABLE_java=OFF \
 		-D ENABLE_tcl=OFF \
 		-D ENABLE_tk=OFF \
 		-D ENABLE_wxwidgets=OFF \
-		-D ENABLE_octave=OFF
+		-D ENABLE_gnome2=OFF \
+		-D ENABLE_octave=OFF \
+		-D PLD_wxwidgets=OFF
 
 GCC_ARCH=       ${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
 GNU_ARCH=       ${GCC_ARCH:S/amd64/x86_64/}
