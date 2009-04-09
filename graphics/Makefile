@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2009/03/20 13:55:35 eric Exp $
+# $OpenBSD: Makefile,v 1.234 2009/04/09 12:45:42 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -44,6 +44,7 @@
      SUBDIR += flash
      SUBDIR += fnlib
      SUBDIR += freeimage
+     SUBDIR += freeglut
      SUBDIR += fswebcam
      SUBDIR += fxtv
      SUBDIR += fyre

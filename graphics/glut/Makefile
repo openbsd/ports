@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2008/11/11 12:41:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2009/04/09 12:45:42 jasper Exp $
 
 COMMENT=	OpenGL Utility Toolkit
 
 DISTNAME=	glut-3.7
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 SHARED_LIBS=	glsmap	3.7	\
 		glut	3.7	\
 		mui	3.7
