@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.401 2009/04/06 16:30:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.402 2009/04/09 01:09:53 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -292,6 +292,7 @@
      SUBDIR += plone-massloader
      SUBDIR += pmwiki
      SUBDIR += polipo
+     SUBDIR += pound
      SUBDIR += privoxy
      SUBDIR += py-beautifulsoup
      SUBDIR += py-CherryPy
