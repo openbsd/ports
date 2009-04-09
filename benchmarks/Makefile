@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2008/04/15 14:16:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2009/04/09 00:20:04 sthen Exp $
 # $FreeBSD: Makefile,v 1.4 1997/02/16 13:32:59 andreas Exp $
 #
 
@@ -13,6 +13,7 @@
      SUBDIR += netstrain
      SUBDIR += pear-Benchmark
      SUBDIR += randread
+     SUBDIR += siege
      SUBDIR += smtp-benchmark
      SUBDIR += sysbench
      SUBDIR += sysbench,mysql
