@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2009/03/23 15:04:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2009/04/09 08:47:24 ajacoutot Exp $
 
 COMMENT=		Common Unix Printing System
 
 VERSION=		1.2.7
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		cups-${VERSION}p18
+PKGNAME=		cups-${VERSION}p19
 CATEGORIES=		print sysutils
 
 SHARED_LIBS+=		cups		3.0
@@ -13,7 +13,7 @@ SHARED_LIBS+=		cupsimage	2.3
 
 HOMEPAGE=		http://www.cups.org/
 
-MAITAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m z stdc++ pthread crypto ssl
+WANTLIB += c gcrypt gpg-error jpeg m pthread stdc++ tasn1 z
 
 MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 			http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
@@ -32,12 +32,14 @@ MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 
 EXTRACT_SUFX=		.tar.bz2
 
+MODULES=		devel/gettext
+
 RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
 			::devel/xdg-utils
 LIB_DEPENDS=		png.>=3::graphics/png \
-			jpeg.>=62::graphics/jpeg \
 			tiff.>=35::graphics/tiff \
-			dbus-1.>=7::x11/dbus
+			dbus-1.>=7::x11/dbus \
+			gnutls.>=14::security/gnutls
 
 FAKE_FLAGS=		BINMODE=${BINMODE} \
 			SHAREMODE=${SHAREMODE} \
@@ -55,20 +57,23 @@ CONFIGURE_ARGS+=	--with-cups-user=_cups \
 			--with-cups-group=_cups \
 			${CONFIGURE_SHARED} \
 			--localstatedir=/var \
-			--enable-ssl \
 			--without-java \
 			--without-perl \
 			--without-php \
 			--without-python \
-			--enable-dbus \
-			--disable-gnutls
+			--enable-dbus
+
+# XXX we need to use GnuTLS instead of OpenSSL because of conflicting
+# symbols with Mozilla NSS which can lead to crashes
+CONFIGURE_ARGS+=	--enable-gnutls=yes
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${LOCALBASE}/include/libpng" \
 			DSOFLAGS="-L${LOCALBASE}/lib" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			LIBcups_VERSION=${LIBcups_VERSION} \
-			LIBcupsimage_VERSION=${LIBcupsimage_VERSION}
+			LIBcupsimage_VERSION=${LIBcupsimage_VERSION} \
+			LIBGNUTLSCONFIG="pkg-config gnutls"
 
 CFLAGS+=		"-I${LOCALBASE}/include" \
 			"-I${LOCALBASE}/include/libpng"
