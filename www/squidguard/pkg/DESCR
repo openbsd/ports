@@ -3,4 +3,5 @@ for Squid. It can be used to limit the web access for some users, block
 access to URLs, redirect trafic, etc.
 
 Flavors:
-	ldap - Build with LDAP support
+	ldap  - Build with LDAP support for authentication
+	mysql - Build with MySQL support for authentication

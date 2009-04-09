@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_y_tab_c_bison,v 1.2 2009/04/09 23:53:13 sthen Exp $
---- src/y.tab.c.bison.orig	Tue Feb 17 19:47:27 2009
-+++ src/y.tab.c.bison	Tue Feb 17 19:48:25 2009
-@@ -198,8 +198,11 @@
+$OpenBSD: patch-src_sg_y_in,v 1.1 2009/04/09 23:53:13 sthen Exp $
+--- src/sg.y.in.orig	Tue Feb 17 19:49:53 2009
++++ src/sg.y.in	Tue Feb 17 19:50:27 2009
+@@ -22,8 +22,11 @@
  extern int globalDebug;
  
  #ifdef HAVE_LIBLDAP

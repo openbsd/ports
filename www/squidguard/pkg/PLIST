@@ -1,23 +1,44 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/02 15:26:54 aanriot Exp $
-bin/squidGuard
+@comment $OpenBSD: PLIST,v 1.2 2009/04/09 23:53:13 sthen Exp $
+@bin bin/squidGuard
 share/doc/squidguard/
 share/doc/squidguard/LDAPFlow.txt
 share/doc/squidguard/README
-share/doc/squidguard/configuration.html
+share/doc/squidguard/authentication.txt
 share/doc/squidguard/configuration.txt
-share/doc/squidguard/configure.html
 share/doc/squidguard/configure.txt
-share/doc/squidguard/extended.html
+share/doc/squidguard/expressionlist.txt
 share/doc/squidguard/extended.txt
-share/doc/squidguard/faq.html
 share/doc/squidguard/faq.txt
-share/doc/squidguard/index.html
-share/doc/squidguard/install.html
+share/doc/squidguard/features.txt
+share/doc/squidguard/html/
+share/doc/squidguard/html/authentication.html
+share/doc/squidguard/html/configuration.html
+share/doc/squidguard/html/configure.html
+share/doc/squidguard/html/expressionlist.html
+share/doc/squidguard/html/extended.html
+share/doc/squidguard/html/faq.html
+share/doc/squidguard/html/features.html
+share/doc/squidguard/html/index.html
+share/doc/squidguard/html/install.html
+share/doc/squidguard/html/installation.html
+share/doc/squidguard/html/ldap-ad-tips.html
+share/doc/squidguard/html/ldap.html
+share/doc/squidguard/html/runtimeops.html
+share/doc/squidguard/html/squidGuard.gif
+share/doc/squidguard/html/troubleshoot.html
 share/doc/squidguard/install.txt
-share/doc/squidguard/installation.html
 share/doc/squidguard/installation.txt
-share/doc/squidguard/squidGuard.gif
+share/doc/squidguard/ldap-ad-tips.txt
+share/doc/squidguard/ldap.txt
+share/doc/squidguard/runtimeops.txt
+share/doc/squidguard/troubleshoot.txt
 share/examples/squidguard/
+share/examples/squidguard/babel.de
+share/examples/squidguard/babel.en
+share/examples/squidguard/babel.es
+share/examples/squidguard/babel.fr
+share/examples/squidguard/babel.nl
+share/examples/squidguard/babel.no
 share/examples/squidguard/dest/
 share/examples/squidguard/dest/README
 share/examples/squidguard/dest/blacklists.tar.gz
@@ -25,7 +46,7 @@ share/examples/squidguard/dest/financial/
 share/examples/squidguard/dest/financial/domainlist
 share/examples/squidguard/sample.conf
 @sample ${CONFIG_DIR}/
-@sample ${CONFIG_FILE}
+@sample ${CONFIG_DIR}/squidguard.conf
 share/examples/squidguard/squidGuard-simple-de.cgi
 share/examples/squidguard/squidGuard-simple.cgi
 share/examples/squidguard/squidGuard.cgi
@@ -34,6 +55,7 @@ share/examples/squidguard/squidGuard.cgi
 @group _squid
 @sample ${SG_DIR}/
 @sample ${SG_DIR}/db/
-@sample ${SG_DIR}/log/
+@sample /var/log/squidguard/
 @extraunexec rm -fr ${CONFIG_DIR}
 @extraunexec rm -fr ${SG_DIR}
+@extraunexec rm -fr /var/log/squidguard/
