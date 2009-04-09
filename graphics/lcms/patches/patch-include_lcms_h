@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_lcms_h,v 1.7 2008/07/19 11:18:23 espie Exp $
---- include/lcms.h.orig	Sat Jul 19 12:52:40 2008
-+++ include/lcms.h	Sat Jul 19 12:55:23 2008
+$OpenBSD: patch-include_lcms_h,v 1.8 2009/04/09 13:10:49 jasper Exp $
+--- include/lcms.h.orig	Thu Apr  9 13:56:40 2009
++++ include/lcms.h	Thu Apr  9 13:59:19 2009
 @@ -143,17 +143,17 @@ typedef    pthread_rwlock_t      LCMS_RWLOCK_T;
  #   define USE_BIG_ENDIAN      1
  #endif
@@ -17,12 +17,12 @@ $OpenBSD: patch-include_lcms_h,v 1.7 2008/07/19 11:18:23 espie Exp $
  # endif
  #endif
  
--#if __BIG_ENDIAN__
+-#ifdef __BIG_ENDIAN__
 +#if defined(__BIG_ENDIAN__) && __BIG_ENDIAN__
  #   define USE_BIG_ENDIAN      1
  #endif
  
-@@ -1407,7 +1407,6 @@ LCMS_INLINE WORD _cmsClampWord(int in)
+@@ -1415,7 +1415,6 @@ LCMS_INLINE WORD _cmsClampWord(int in)
  LCMS_INLINE void* _cmsMalloc(size_t size)
  {
      if (size > ((size_t) 1024*1024*500)) return NULL;  // Never allow over 500Mb
