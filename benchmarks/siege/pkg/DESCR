@@ -1,0 +1,7 @@
+Siege is an http regression testing and benchmarking utility. It
+was designed to let web developers measure the performance of their
+code under duress, to see how it will stand up to load on the
+internet. Siege supports basic authentication, cookies, HTTP and
+HTTPS protocols. It allows the user hit a web server with a
+configurable number of concurrent simulated users. Those users place
+the webserver "under siege."

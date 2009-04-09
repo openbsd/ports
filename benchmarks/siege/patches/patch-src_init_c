@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_init_c,v 1.1.1.1 2009/04/09 00:19:14 sthen Exp $
+--- src/init.c.orig	Wed Feb 18 11:22:30 2009
++++ src/init.c	Wed Feb 18 11:23:45 2009
+@@ -90,8 +90,7 @@ init_config( void )
+   }
+   
+   if(strlen(my.file) < 1){ 
+-    strcpy( my.file, SIEGE_HOME );
+-    strcat( my.file, "/etc/urls.txt" );
++    strcpy( my.file, CNF_FILE );
+   }
+ 
+   if(strlen(my.uagent) < 1) 

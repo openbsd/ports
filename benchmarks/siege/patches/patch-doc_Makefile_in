@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2009/04/09 00:19:14 sthen Exp $
+--- doc/Makefile.in.orig	Wed Feb 18 11:05:55 2009
++++ doc/Makefile.in	Wed Feb 18 11:06:07 2009
+@@ -335,7 +335,7 @@ install-exec: install-exec-am
+ install-data: install-data-am
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-data-am
+ 
+ installcheck: installcheck-am
+ install-strip:
