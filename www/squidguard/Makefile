@@ -1,39 +1,39 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/16 22:55:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/04/09 21:20:36 sthen Exp $
 
-COMMENT=		filter, redirector and access controller for Squid
+COMMENT =		filter, redirector and access controller for Squid
 
-DISTNAME=		squidGuard-1.2.1
-PKGNAME=		${DISTNAME}p1
-CATEGORIES=		www
+DISTNAME =		squidGuard-1.2.1
+PKGNAME =		${DISTNAME}p1
+CATEGORIES =		www
 
-HOMEPAGE=		http://www.squidguard.org/
+HOMEPAGE =		http://www.squidguard.org/
 
-MAINTAINER=		Claudio Correa <correa@pucpcaldas.br>
+MAINTAINER =		Claudio Correa <correa@pucpcaldas.br>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c pthread
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+WANTLIB =		c pthread
 
-MASTER_SITES=		http://www.squidguard.org/Downloads/
+MASTER_SITES =		http://www.squidguard.org/Downloads/
 
-SG_DIR=			/var/squidguard
-CONFIG_DIR=		${SYSCONFDIR}/squidguard
-CONFIG_FILE=		${CONFIG_DIR}/squidguard.conf
-SUBST_VARS=		SG_DIR CONFIG_DIR CONFIG_FILE
+SG_DIR =		/var/squidguard
+CONFIG_DIR =		${SYSCONFDIR}/squidguard
+CONFIG_FILE =		${CONFIG_DIR}/squidguard.conf
+SUBST_VARS =		SG_DIR CONFIG_DIR CONFIG_FILE
 
-LIB_DEPENDS=		lib/db4/db.>=4:db->=4,<5:databases/db/v4
-RUN_DEPENDS=		::www/squid
-BUILD_DEPENDS=		${RUN_DEPENDS}
+LIB_DEPENDS =		lib/db4/db.>=4:db->=4,<5:databases/db/v4
+RUN_DEPENDS =		::www/squid
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
-CONFIGURE_ENV=		CFLAGS='${CFLAGS} -I${LOCALBASE}/include' \
+CONFIGURE_ENV =		CFLAGS='${CFLAGS} -I${LOCALBASE}/include' \
 			LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib' \
 			ac_cv_path_LYNX=false
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--squiduser='_squid' \
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--squiduser='_squid' \
 			--localstatedir=${SG_DIR} \
 			--sysconfdir=${CONFIG_DIR} \
 			--with-sg-config=${CONFIG_FILE} \
@@ -42,14 +42,14 @@ CONFIGURE_ARGS=		--squiduser='_squid' \
 			--with-db-lib=${LOCALBASE}/lib/db4 \
 			--with-db-inc=${LOCALBASE}/include/db4
 
-FLAVORS=	ldap
-FLAVOR?=        
+FLAVORS =	ldap
+FLAVOR ?=        
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=		ldap:openldap-client-*:databases/openldap
-CONFIGURE_ARGS+=	--with-ldap=yes
+LIB_DEPENDS +=		ldap:openldap-client-*:databases/openldap
+CONFIGURE_ARGS +=	--with-ldap=yes
 .else
-CONFIGURE_ARGS+=	--with-ldap=no
+CONFIGURE_ARGS +=	--with-ldap=no
 .endif
 
 post-configure:
