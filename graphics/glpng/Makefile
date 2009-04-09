@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:41 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2009/04/09 13:01:53 jasper Exp $
 
 COMMENT=	load PNG graphics files and bind them to an OpenGL texture
 
 VERSION=	1.45
 DISTNAME=	glpng
-PKGNAME=	${DISTNAME}-${VERSION}p0
+PKGNAME=	${DISTNAME}-${VERSION}p1
 SHARED_LIBS=	glpng 0.0
 CATEGORIES=	graphics
 
@@ -29,7 +29,7 @@ USE_X11=	Yes
 # This regression test wants an X11 display
 REGRESS_IS_INTERACTIVE=	Yes
 
-REGRESS_DEPENDS=	::graphics/glut
+REGRESS_DEPENDS=	::graphics/freeglut
 
 DIST_SUBDIR=	${DISTNAME}-${VERSION}
 WRKDIST=	${WRKDIR}

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2008/06/15 00:08:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2009/04/09 13:01:53 jasper Exp $
 
 COMMENT=	graphical networked AD&D style game
 
 VERSION=	1.11.0
 DISTNAME=	crossfire-client-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -30,7 +30,7 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		SDL_image.>=2::devel/sdl-image \
-		glut.>=3::graphics/glut \
+		glut.>=4::graphics/freeglut \
 		curl.>=8::net/curl
 
 USE_X11=		Yes

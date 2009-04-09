@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Attack_cxx,v 1.1 2009/04/09 13:01:53 jasper Exp $
+--- src/Attack.cxx.orig        Sun Nov  9 18:45:06 2008
++++ src/Attack.cxx     Sun Nov  9 18:45:58 2008
+@@ -83,6 +83,7 @@ int main ( int argc, char **argv )
+   int height = -1, width = -1;
+   
+   player_name[0] = '\0';
++  glutInit(&argc, argv);
+   parseCommandLine(argc, argv, mode, port, host_name, player_name, height, width);
+   run_crack_attack(mode, port, host_name, player_name, height, width);
+ 

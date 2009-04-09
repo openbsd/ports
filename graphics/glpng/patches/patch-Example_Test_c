@@ -1,6 +1,6 @@
-$OpenBSD: patch-Example_Test_c,v 1.1.1.1 2006/11/20 09:35:48 ajacoutot Exp $
---- Example/Test.c.orig	Sun Nov 19 18:49:52 2006
-+++ Example/Test.c	Sun Nov 19 18:50:04 2006
+$OpenBSD: patch-Example_Test_c,v 1.2 2009/04/09 13:01:53 jasper Exp $
+--- Example/Test.c.orig	Mon Jul 10 21:23:42 2000
++++ Example/Test.c	Thu Apr  9 06:58:13 2009
 @@ -6,8 +6,8 @@
   * http://www.wyatt100.freeserve.co.uk/download.htm
   */
@@ -12,3 +12,16 @@ $OpenBSD: patch-Example_Test_c,v 1.1.1.1 2006/11/20 09:35:48 ajacoutot Exp $
  #include <stdlib.h>
  
  int angle = 0;
+@@ -64,10 +64,11 @@ void Reshape(int w, int h) {
+ 
+ /***** Main function *****/
+ 
+-void main() {
++void main(int argc, char **argv) {
+ 	pngInfo info;
+ 	GLuint  texture;
+ 
++	glutInit(&argc, argv);
+ 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+ 	glutInitWindowSize(300, 300);
+ 	glutCreateWindow("glpng test");
