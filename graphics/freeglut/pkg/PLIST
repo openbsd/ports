@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/09 12:44:12 jasper Exp $
+@conflict glut-*
+@pkgpath graphics/glut
+%%SHARED%%
+include/GL/
+include/GL/freeglut.h
+include/GL/freeglut_ext.h
+include/GL/freeglut_std.h
+include/GL/glut.h
+lib/libglut.a
+lib/libglut.la
