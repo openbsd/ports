@@ -1,12 +1,11 @@
-$OpenBSD: patch-Setup_in,v 1.1 2006/10/17 23:31:12 alek Exp $
---- Setup.in.orig	Mon Apr 18 07:46:23 2005
-+++ Setup.in	Tue Oct 17 19:00:17 2006
-@@ -41,7 +41,7 @@ movie src/movie.c $(SDL) $(SMPEG)
- base src/base.c $(SDL)
- cdrom src/cdrom.c $(SDL)
- constants src/constants.c $(SDL)
--display src/display.c $(SDL)
-+display src/display.c $(SDL) -I!!X11BASE!!/include
- event src/event.c $(SDL)
- fastevent src/fastevent.c src/fastevents.c $(SDL)
- key src/key.c $(SDL)
+$OpenBSD: patch-Setup_in,v 1.2 2009/04/09 22:49:39 ajacoutot Exp $
+--- Setup.in.orig	Mon Apr  6 20:06:31 2009
++++ Setup.in	Mon Apr  6 20:07:24 2009
+@@ -58,6 +58,7 @@ cdrom src/cdrom.c $(SDL) $(DEBUG)
+ color src/color.c $(SDL) $(DEBUG)
+ constants src/constants.c $(SDL) $(DEBUG)
+ display src/display.c $(SDL) $(DEBUG)
++display src/display.c $(SDL) $(DEBUG) -I${X11BASE}/include
+ event src/event.c $(SDL) $(DEBUG)
+ fastevent src/fastevent.c src/fastevents.c $(SDL) $(DEBUG)
+ key src/key.c $(SDL) $(DEBUG)

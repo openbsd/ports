@@ -1,9 +1,0 @@
-$OpenBSD: patch-examples_overlay_py,v 1.1 2006/10/17 23:31:12 alek Exp $
---- examples/overlay.py.orig	Tue Oct 17 19:09:01 2006
-+++ examples/overlay.py	Tue Oct 17 19:09:10 2006
-@@ -1,4 +1,4 @@
--#! /bin/env python
-+#!/usr/bin/env python
- 
- import sys
- import pygame

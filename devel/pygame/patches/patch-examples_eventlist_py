@@ -1,7 +1,8 @@
-$OpenBSD: patch-examples_eventlist_py,v 1.1 2006/10/17 23:31:12 alek Exp $
---- examples/eventlist.py.orig	Tue Oct 17 19:07:46 2006
-+++ examples/eventlist.py	Tue Oct 17 19:07:52 2006
-@@ -1,4 +1,4 @@
+$OpenBSD: patch-examples_eventlist_py,v 1.2 2009/04/09 22:49:39 ajacoutot Exp $
+--- examples/eventlist.py.orig	Mon Jul  7 07:58:40 2008
++++ examples/eventlist.py	Mon Apr  6 20:08:49 2009
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python
 -
 +#!/usr/bin/env python
  """Eventlist is a sloppy style of pygame, but is a handy
