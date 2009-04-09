@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.3 2008/01/12 23:05:13 eric Exp $
---- setup.py.orig	Wed Jul 18 01:03:48 2007
-+++ setup.py	Tue Nov 27 21:53:01 2007
-@@ -105,12 +105,10 @@ def get_setup_args():
+$OpenBSD: patch-setup_py,v 1.4 2009/04/09 01:05:25 martynas Exp $
+--- setup.py.orig	Mon Mar  9 14:16:40 2009
++++ setup.py	Sun Mar 22 14:18:45 2009
+@@ -149,13 +149,6 @@ def get_setup_args():
          print "Fatal error: PYSQLITE_VERSION could not be detected!"
          sys.exit(1)
  
@@ -11,10 +11,16 @@ $OpenBSD: patch-setup_py,v 1.3 2008/01/12 23:05:13 eric Exp $
 -                      + glob.glob("doc/*.css")),
 -                   ("pysqlite2-doc/code",
 -                        glob.glob("doc/code/*.py"))]
-+    data_files = [("share/doc/py-sqlite2",
-+                        glob.glob("doc/usage-guide.html") \
-+                      + glob.glob("doc/usage-guide.txt") \
-+                      + glob.glob("doc/*.css")), ]
- 
+-
      py_modules = ["sqlite"]
      setup_args = dict(
+             name = "pysqlite",
+@@ -175,7 +168,7 @@ def get_setup_args():
+             package_dir = {"pysqlite2": "pysqlite2"},
+             packages = ["pysqlite2", "pysqlite2.test"],
+             scripts=[],
+-            data_files = data_files,
++            data_files = [],
+ 
+             ext_modules = [Extension( name="pysqlite2._sqlite",
+                                       sources=sources,

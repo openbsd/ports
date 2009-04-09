@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_cfg,v 1.1 2008/01/30 17:33:13 eric Exp $
---- setup.cfg.orig	Mon Jan 28 21:11:24 2008
-+++ setup.cfg	Tue Jan 29 10:26:08 2008
-@@ -1,5 +1,5 @@
+$OpenBSD: patch-setup_cfg,v 1.2 2009/04/09 01:05:25 martynas Exp $
+--- setup.cfg.orig	Wed Mar 11 18:31:40 2009
++++ setup.cfg	Sun Mar 22 14:12:42 2009
+@@ -1,6 +1,6 @@
  [build_ext]
  #define=
 -#include_dirs=/usr/local/include
@@ -9,3 +9,4 @@ $OpenBSD: patch-setup_cfg,v 1.1 2008/01/30 17:33:13 eric Exp $
 +include_dirs=_LOCALBASE_/include
 +library_dirs=_LOCALBASE_/lib
  libraries=sqlite3
+ define=SQLITE_OMIT_LOAD_EXTENSION

@@ -1,16 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/01/12 23:05:13 eric Exp $
-lib/python${MODPY_VERSION}/site-packages/pysqlite-${VERSION}-py${MODPY_VERSION}.egg-info
+@comment $OpenBSD: PLIST,v 1.7 2009/04/09 01:05:25 martynas Exp $
+lib/python${MODPY_VERSION}/site-packages/pysqlite-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/_sqlite.so
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/dbapi2.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/dbapi2.pyc
+lib/python${MODPY_VERSION}/site-packages/pysqlite2/dump.py
+lib/python${MODPY_VERSION}/site-packages/pysqlite2/dump.pyc
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/dbapi.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/dbapi.pyc
+lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/dump.py
+lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/dump.pyc
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/factory.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/factory.pyc
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/hooks.py
@@ -26,8 +30,4 @@ lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/types.pyc
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/userfunctions.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/userfunctions.pyc
 share/doc/py-sqlite2/
-share/doc/py-sqlite2/default.css
-share/doc/py-sqlite2/docutils.css
-share/doc/py-sqlite2/silvercity.css
-share/doc/py-sqlite2/usage-guide.html
-share/doc/py-sqlite2/usage-guide.txt
+share/doc/py-sqlite2/sqlite3.txt

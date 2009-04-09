@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_sphinx_conf_py,v 1.1 2009/04/09 01:05:25 martynas Exp $
+--- doc/sphinx/conf.py.orig	Wed Nov 12 10:56:11 2008
++++ doc/sphinx/conf.py	Sun Mar 22 14:14:11 2009
+@@ -34,7 +34,7 @@ master_doc = 'index'
+ 
+ # General substitutions.
+ project = 'pysqlite'
+-copyright = '2008, Gerhard Häring'
++copyright = u'2008, Gerhard Häring'
+ 
+ # The default replacements for |version| and |release|, also used in various
+ # other places throughout the built documents.
