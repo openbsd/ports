@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/21 17:01:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/04/09 15:03:06 ajacoutot Exp $
 %%SHARED%%
 include/execinfo.h
 include/stacktraverse.h
 lib/libexecinfo.a
 lib/libexecinfo_pic.a
+share/doc/libexecinfo/
+share/doc/libexecinfo/README

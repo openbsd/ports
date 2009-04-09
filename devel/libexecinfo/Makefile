@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2008/11/11 15:48:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2009/04/09 15:03:06 ajacoutot Exp $
 
 COMMENT=	clone of backtrace facility found in the GNU libc
 
 DISTNAME=	libexecinfo-1.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 
 SHARED_LIBS=	execinfo	0.0
+
+# <sobomax@FreeBSD.org>
+HOMEPAGE=	http://www.freebsd.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,5 +28,8 @@ MAKE_ENV=	LIBDIR=${PREFIX}/lib \
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/*.h ${PREFIX}/include
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libexecinfo
+	${INSTALL_DATA} ${WRKBUILD}/README \
+		${PREFIX}/share/doc/libexecinfo
 
 .include <bsd.port.mk>
