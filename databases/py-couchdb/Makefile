@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/04 21:02:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2009/04/09 14:45:52 fgsch Exp $
 
 COMMENT =	Python library for working with CouchDB
 
 MODPY_EGG_VERSION = 0.5dev_r141
 DISTNAME =	CouchDB-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME:L:S/dev_//}
+PKGNAME =	py-${DISTNAME:L:S/dev_//}p0
 
 CATEGORIES =	databases devel
 
@@ -22,6 +22,8 @@ MODULES =	lang/python
 
 RUN_DEPENDS =	::www/py-httplib2 \
 		::devel/py-simplejson
+
+MODPY_SETUPTOOLS =	Yes
 
 NO_REGRESS =	Yes
 
