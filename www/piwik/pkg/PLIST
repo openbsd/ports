@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/05 15:49:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/04/09 07:25:26 giovanni Exp $
 @group daemon
 piwik/
 piwik/LICENSE
 piwik/README
 piwik/config/
+piwik/config/.htaccess
 piwik/config/config.ini.sample.php
 piwik/config/global.ini.php
 piwik/core/
@@ -28,9 +29,8 @@ piwik/core/ArchiveProcessing/Period.php
 piwik/core/ArchiveProcessing/Record/
 piwik/core/ArchiveProcessing/Record.php
 piwik/core/ArchiveProcessing/Record/Blob.php
-piwik/core/ArchiveProcessing/Record/BlobArray.php
-piwik/core/ArchiveProcessing/Record/Manager.php
 piwik/core/ArchiveProcessing/Record/Numeric.php
+piwik/core/ArchiveProcessing/RecordArray.php
 piwik/core/Auth.php
 piwik/core/CacheFile.php
 piwik/core/Common.php
@@ -145,6 +145,7 @@ piwik/core/Updates/0.2.13.php
 piwik/core/Updates/0.2.24.php
 piwik/core/Updates/0.2.27.php
 piwik/core/Updates/0.2.32.php
+piwik/core/Updates/0.2.33.php
 piwik/core/Url.php
 piwik/core/Version.php
 piwik/core/View.php
@@ -167,10 +168,11 @@ piwik/core/ViewDataTable/HtmlTable/AllColumns.php
 piwik/core/ViewDataTable/HtmlTable/Goals.php
 piwik/core/ViewDataTable/Sparkline.php
 piwik/core/Visualization/
+piwik/core/Visualization/Chart/
 piwik/core/Visualization/Chart.php
-piwik/core/Visualization/ChartEvolution.php
-piwik/core/Visualization/ChartPie.php
-piwik/core/Visualization/ChartVerticalBar.php
+piwik/core/Visualization/Chart/Evolution.php
+piwik/core/Visualization/Chart/Pie.php
+piwik/core/Visualization/Chart/VerticalBar.php
 piwik/core/Visualization/Cloud.php
 piwik/core/Visualization/OpenFlashChart.php
 piwik/core/Visualization/Sparkline.php
@@ -179,10 +181,14 @@ piwik/core/testMinimumPhpVersion.php
 piwik/index.php
 piwik/lang/
 piwik/lang/ca.php
+piwik/lang/da.php
 piwik/lang/de.php
+piwik/lang/el.php
 piwik/lang/en.php
 piwik/lang/es.php
+piwik/lang/et.php
 piwik/lang/fr.php
+piwik/lang/gl.php
 piwik/lang/hu.php
 piwik/lang/it.php
 piwik/lang/ja.php
@@ -190,6 +196,7 @@ piwik/lang/nl.php
 piwik/lang/no.php
 piwik/lang/pl.php
 piwik/lang/pt.php
+piwik/lang/ro.php
 piwik/lang/ru.php
 piwik/lang/sk.php
 piwik/lang/sr.php
@@ -631,6 +638,7 @@ piwik/misc/
 piwik/misc/.htaccess_to_use_later
 piwik/misc/How to install Piwik.html
 piwik/misc/TODO
+piwik/misc/UI/
 piwik/misc/api_community_sticker.php
 piwik/misc/api_example_marketing.php
 piwik/misc/api_internal_call.php
@@ -765,6 +773,8 @@ piwik/plugins/ExampleFeedburner/ExampleFeedburner.php
 piwik/plugins/ExampleFeedburner/feedburner.tpl
 piwik/plugins/ExamplePlugin/
 piwik/plugins/ExamplePlugin/ExamplePlugin.php
+piwik/plugins/ExamplePlugin/lang/
+piwik/plugins/ExamplePlugin/lang/en.php
 piwik/plugins/ExampleRssWidget/
 piwik/plugins/ExampleRssWidget/ExampleRssWidget.php
 piwik/plugins/ExampleRssWidget/styles.css
@@ -831,6 +841,7 @@ piwik/plugins/Live/templates/index.tpl
 piwik/plugins/Live/templates/lastVisits.tpl
 piwik/plugins/Live/templates/scripts/
 piwik/plugins/Live/templates/scripts/spy.js
+piwik/plugins/Live/templates/structure.tpl
 piwik/plugins/Login/
 piwik/plugins/Login/Auth.php
 piwik/plugins/Login/Controller.php

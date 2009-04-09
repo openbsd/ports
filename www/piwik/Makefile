@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/05 15:49:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/09 07:25:26 giovanni Exp $
 
 COMMENT=		open source web analytics software program
 
-DISTNAME=		piwik-0.2.32
+DISTNAME=		piwik-0.2.33
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.piwik.org/
@@ -14,7 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://spacehopper.org/mirrors/ \
-			http://nedbsd.eu/~jasper/
+			http://nedbsd.eu/~jasper/ \
+			http://bigio.snb.it/openbsd/distfiles/
 EXTRACT_SUFX=		.zip
 
 WRKDIST=		${WRKDIR}/piwik/
