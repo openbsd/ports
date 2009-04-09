@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.1 2009/04/09 07:44:37 landry Exp $
+--- configure.orig	Wed Apr  8 12:04:27 2009
++++ configure	Wed Apr  8 12:04:49 2009
+@@ -17499,19 +17499,6 @@ echo "${ECHO_T}$enable_debug" >&6; }
+   fi
+ fi
+ 
+-{ echo "$as_me:$LINENO: checking whether $LD accepts --as-needed" >&5
+-echo $ECHO_N "checking whether $LD accepts --as-needed... $ECHO_C" >&6; }
+-case `$LD --as-needed -v 2>&1 </dev/null` in
+-*GNU* | *'with BFD'*)
+-  LDFLAGS="$LDFLAGS -Wl,--as-needed"
+-  { echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6; }
+-  ;;
+-*)
+-  { echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6; }
+-  ;;
+-esac
+ { echo "$as_me:$LINENO: checking whether $LD accepts -O1" >&5
+ echo $ECHO_N "checking whether $LD accepts -O1... $ECHO_C" >&6; }
+ case `$LD -O1 -v 2>&1 </dev/null` in
