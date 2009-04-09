@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/04/09 07:36:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2009/04/09 17:43:36 jasper Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
@@ -21,32 +21,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 c freetype m pthread stdc++ z
 
-USE_LIBTOOL=	Yes
+MODULES=	devel/gettext
+
 LIB_DEPENDS=	boost_iostreams-mt::devel/boost \
 		SDL::devel/sdl \
 		SDL_image::devel/sdl-image \
 		SDL_net::devel/sdl-net \
 		SDL_mixer::devel/sdl-mixer \
 		fribidi::devel/fribidi
-
-MODULES=	devel/gettext
-
-USE_X11=	Yes
-
-FLAVORS=	lite tinygui
-FLAVOR?=
-
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-
-.if ${FLAVOR:L:Mlite}
-CONFIGURE_ARGS+=--enable-lite
-.endif
-
-.if ${FLAVOR:L:Mtinygui}
-BUILD_DEPENDS+=	::graphics/pngmeta \
-		:ImageMagick-*:graphics/ImageMagick
-CONFIGURE_ARGS+=--enable-tinygui
-.endif
 
 CONFIGURE_STYLE=gnu
 
@@ -63,5 +46,21 @@ CONFIGURE_ARGS+=--enable-server \
 		--with-icondir=${PREFIX}/share/pixmaps
 
 MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
+
+USE_X11=	Yes
+USE_LIBTOOL=	Yes
+
+FLAVORS=	lite tinygui
+FLAVOR?=
+
+.if ${FLAVOR:L:Mlite}
+CONFIGURE_ARGS+=--enable-lite
+.endif
+
+.if ${FLAVOR:L:Mtinygui}
+BUILD_DEPENDS+=	::graphics/pngmeta \
+		:ImageMagick-*:graphics/ImageMagick
+CONFIGURE_ARGS+=--enable-tinygui
+.endif
 
 .include <bsd.port.mk>
