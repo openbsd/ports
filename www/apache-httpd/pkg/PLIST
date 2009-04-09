@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2008/09/02 22:05:23 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.14 2009/04/09 18:36:00 bernd Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -30,6 +30,7 @@ include/apache2/mod_dbd.h
 include/apache2/mod_include.h
 include/apache2/mod_log_config.h
 include/apache2/mod_proxy.h
+include/apache2/mod_rewrite.h
 include/apache2/mod_ssl.h
 include/apache2/mod_status.h
 include/apache2/mpm.h
@@ -158,6 +159,7 @@ share/doc/apache2/bind.html.tr.utf8
 share/doc/apache2/caching.html
 share/doc/apache2/caching.html.en
 share/doc/apache2/caching.html.fr
+share/doc/apache2/caching.html.tr.utf8
 share/doc/apache2/configuring.html
 share/doc/apache2/configuring.html.de
 share/doc/apache2/configuring.html.en
@@ -170,12 +172,14 @@ share/doc/apache2/content-negotiation.html.en
 share/doc/apache2/content-negotiation.html.fr
 share/doc/apache2/content-negotiation.html.ja.utf8
 share/doc/apache2/content-negotiation.html.ko.euc-kr
+share/doc/apache2/content-negotiation.html.tr.utf8
 share/doc/apache2/convenience.map
 share/doc/apache2/custom-error.html
 share/doc/apache2/custom-error.html.en
 share/doc/apache2/custom-error.html.es
 share/doc/apache2/custom-error.html.ja.utf8
 share/doc/apache2/custom-error.html.ko.euc-kr
+share/doc/apache2/custom-error.html.tr.utf8
 share/doc/apache2/developer/
 share/doc/apache2/developer/API.html
 share/doc/apache2/developer/API.html.en
@@ -200,14 +204,17 @@ share/doc/apache2/dns-caveats.html
 share/doc/apache2/dns-caveats.html.en
 share/doc/apache2/dns-caveats.html.ja.utf8
 share/doc/apache2/dns-caveats.html.ko.euc-kr
+share/doc/apache2/dns-caveats.html.tr.utf8
 share/doc/apache2/dso.html
 share/doc/apache2/dso.html.en
 share/doc/apache2/dso.html.ja.utf8
 share/doc/apache2/dso.html.ko.euc-kr
+share/doc/apache2/dso.html.tr.utf8
 share/doc/apache2/env.html
 share/doc/apache2/env.html.en
 share/doc/apache2/env.html.ja.utf8
 share/doc/apache2/env.html.ko.euc-kr
+share/doc/apache2/env.html.tr.utf8
 share/doc/apache2/faq/
 share/doc/apache2/faq/index.html
 share/doc/apache2/faq/index.html.en
@@ -218,11 +225,13 @@ share/doc/apache2/filter.html.es
 share/doc/apache2/filter.html.fr
 share/doc/apache2/filter.html.ja.utf8
 share/doc/apache2/filter.html.ko.euc-kr
+share/doc/apache2/filter.html.tr.utf8
 share/doc/apache2/glossary.html
 share/doc/apache2/glossary.html.de
 share/doc/apache2/glossary.html.en
 share/doc/apache2/glossary.html.es
 share/doc/apache2/glossary.html.fr
+share/doc/apache2/glossary.html.ja.utf8
 share/doc/apache2/glossary.html.ko.euc-kr
 share/doc/apache2/glossary.html.tr.utf8
 share/doc/apache2/handler.html
@@ -232,6 +241,7 @@ share/doc/apache2/handler.html.fr
 share/doc/apache2/handler.html.ja.utf8
 share/doc/apache2/handler.html.ko.euc-kr
 share/doc/apache2/handler.html.ru.koi8-r
+share/doc/apache2/handler.html.tr.utf8
 share/doc/apache2/howto/
 share/doc/apache2/howto/access.html
 share/doc/apache2/howto/access.html.en
@@ -264,17 +274,20 @@ share/doc/apache2/images/
 share/doc/apache2/images/apache_header.gif
 share/doc/apache2/images/caching_fig1.gif
 share/doc/apache2/images/caching_fig1.png
+share/doc/apache2/images/caching_fig1.tr.png
 share/doc/apache2/images/custom_errordocs.png
 share/doc/apache2/images/down.gif
 share/doc/apache2/images/favicon.ico
 share/doc/apache2/images/feather.gif
 share/doc/apache2/images/feather.png
 share/doc/apache2/images/filter_arch.png
+share/doc/apache2/images/filter_arch.tr.png
 share/doc/apache2/images/home.gif
 share/doc/apache2/images/index.gif
 share/doc/apache2/images/left.gif
 share/doc/apache2/images/mod_filter_new.gif
 share/doc/apache2/images/mod_filter_new.png
+share/doc/apache2/images/mod_filter_new.tr.png
 share/doc/apache2/images/mod_filter_old.gif
 share/doc/apache2/images/mod_rewrite_fig1.gif
 share/doc/apache2/images/mod_rewrite_fig1.png
@@ -322,10 +335,12 @@ share/doc/apache2/logs.html
 share/doc/apache2/logs.html.en
 share/doc/apache2/logs.html.ja.utf8
 share/doc/apache2/logs.html.ko.euc-kr
+share/doc/apache2/logs.html.tr.utf8
 share/doc/apache2/misc/
 share/doc/apache2/misc/index.html
 share/doc/apache2/misc/index.html.en
 share/doc/apache2/misc/index.html.ko.euc-kr
+share/doc/apache2/misc/index.html.tr.utf8
 share/doc/apache2/misc/password_encryptions.html
 share/doc/apache2/misc/password_encryptions.html.en
 share/doc/apache2/misc/perf-tuning.html
@@ -340,6 +355,7 @@ share/doc/apache2/misc/rewriteguide.html.ko.euc-kr
 share/doc/apache2/misc/security_tips.html
 share/doc/apache2/misc/security_tips.html.en
 share/doc/apache2/misc/security_tips.html.ko.euc-kr
+share/doc/apache2/misc/security_tips.html.tr.utf8
 share/doc/apache2/mod/
 share/doc/apache2/mod/beos.html
 share/doc/apache2/mod/beos.html.de
@@ -382,6 +398,7 @@ share/doc/apache2/mod/mod_alias.html
 share/doc/apache2/mod/mod_alias.html.en
 share/doc/apache2/mod/mod_alias.html.ja.utf8
 share/doc/apache2/mod/mod_alias.html.ko.euc-kr
+share/doc/apache2/mod/mod_alias.html.tr.utf8
 share/doc/apache2/mod/mod_asis.html
 share/doc/apache2/mod/mod_asis.html.en
 share/doc/apache2/mod/mod_asis.html.ja.utf8
@@ -442,6 +459,7 @@ share/doc/apache2/mod/mod_autoindex.html
 share/doc/apache2/mod/mod_autoindex.html.en
 share/doc/apache2/mod/mod_autoindex.html.ja.utf8
 share/doc/apache2/mod/mod_autoindex.html.ko.euc-kr
+share/doc/apache2/mod/mod_autoindex.html.tr.utf8
 share/doc/apache2/mod/mod_cache.html
 share/doc/apache2/mod/mod_cache.html.en
 share/doc/apache2/mod/mod_cache.html.ja.utf8
@@ -481,6 +499,7 @@ share/doc/apache2/mod/mod_dir.html
 share/doc/apache2/mod/mod_dir.html.en
 share/doc/apache2/mod/mod_dir.html.ja.utf8
 share/doc/apache2/mod/mod_dir.html.ko.euc-kr
+share/doc/apache2/mod/mod_dir.html.tr.utf8
 share/doc/apache2/mod/mod_disk_cache.html
 share/doc/apache2/mod/mod_disk_cache.html.en
 share/doc/apache2/mod/mod_disk_cache.html.ja.utf8
@@ -496,6 +515,7 @@ share/doc/apache2/mod/mod_env.html
 share/doc/apache2/mod/mod_env.html.en
 share/doc/apache2/mod/mod_env.html.ja.utf8
 share/doc/apache2/mod/mod_env.html.ko.euc-kr
+share/doc/apache2/mod/mod_env.html.tr.utf8
 share/doc/apache2/mod/mod_example.html
 share/doc/apache2/mod/mod_example.html.en
 share/doc/apache2/mod/mod_example.html.ko.euc-kr
@@ -539,13 +559,16 @@ share/doc/apache2/mod/mod_log_config.html
 share/doc/apache2/mod/mod_log_config.html.en
 share/doc/apache2/mod/mod_log_config.html.ja.utf8
 share/doc/apache2/mod/mod_log_config.html.ko.euc-kr
+share/doc/apache2/mod/mod_log_config.html.tr.utf8
 share/doc/apache2/mod/mod_log_forensic.html
 share/doc/apache2/mod/mod_log_forensic.html.en
 share/doc/apache2/mod/mod_log_forensic.html.ja.utf8
+share/doc/apache2/mod/mod_log_forensic.html.tr.utf8
 share/doc/apache2/mod/mod_logio.html
 share/doc/apache2/mod/mod_logio.html.en
 share/doc/apache2/mod/mod_logio.html.ja.utf8
 share/doc/apache2/mod/mod_logio.html.ko.euc-kr
+share/doc/apache2/mod/mod_logio.html.tr.utf8
 share/doc/apache2/mod/mod_mem_cache.html
 share/doc/apache2/mod/mod_mem_cache.html.en
 share/doc/apache2/mod/mod_mem_cache.html.ja.utf8
@@ -582,10 +605,12 @@ share/doc/apache2/mod/mod_setenvif.html
 share/doc/apache2/mod/mod_setenvif.html.en
 share/doc/apache2/mod/mod_setenvif.html.ja.utf8
 share/doc/apache2/mod/mod_setenvif.html.ko.euc-kr
+share/doc/apache2/mod/mod_setenvif.html.tr.utf8
 share/doc/apache2/mod/mod_so.html
 share/doc/apache2/mod/mod_so.html.en
 share/doc/apache2/mod/mod_so.html.ja.utf8
 share/doc/apache2/mod/mod_so.html.ko.euc-kr
+share/doc/apache2/mod/mod_so.html.tr.utf8
 share/doc/apache2/mod/mod_speling.html
 share/doc/apache2/mod/mod_speling.html.en
 share/doc/apache2/mod/mod_speling.html.ja.utf8
@@ -596,12 +621,14 @@ share/doc/apache2/mod/mod_status.html
 share/doc/apache2/mod/mod_status.html.en
 share/doc/apache2/mod/mod_status.html.ja.utf8
 share/doc/apache2/mod/mod_status.html.ko.euc-kr
+share/doc/apache2/mod/mod_status.html.tr.utf8
 share/doc/apache2/mod/mod_substitute.html
 share/doc/apache2/mod/mod_substitute.html.en
 share/doc/apache2/mod/mod_suexec.html
 share/doc/apache2/mod/mod_suexec.html.en
 share/doc/apache2/mod/mod_suexec.html.ja.utf8
 share/doc/apache2/mod/mod_suexec.html.ko.euc-kr
+share/doc/apache2/mod/mod_suexec.html.tr.utf8
 share/doc/apache2/mod/mod_unique_id.html
 share/doc/apache2/mod/mod_unique_id.html.en
 share/doc/apache2/mod/mod_unique_id.html.ja.utf8
@@ -610,6 +637,7 @@ share/doc/apache2/mod/mod_userdir.html
 share/doc/apache2/mod/mod_userdir.html.en
 share/doc/apache2/mod/mod_userdir.html.ja.utf8
 share/doc/apache2/mod/mod_userdir.html.ko.euc-kr
+share/doc/apache2/mod/mod_userdir.html.tr.utf8
 share/doc/apache2/mod/mod_usertrack.html
 share/doc/apache2/mod/mod_usertrack.html.en
 share/doc/apache2/mod/mod_version.html
@@ -618,6 +646,7 @@ share/doc/apache2/mod/mod_version.html.ja.utf8
 share/doc/apache2/mod/mod_version.html.ko.euc-kr
 share/doc/apache2/mod/mod_vhost_alias.html
 share/doc/apache2/mod/mod_vhost_alias.html.en
+share/doc/apache2/mod/mod_vhost_alias.html.tr.utf8
 share/doc/apache2/mod/module-dict.html
 share/doc/apache2/mod/module-dict.html.en
 share/doc/apache2/mod/module-dict.html.ja.utf8
@@ -640,6 +669,7 @@ share/doc/apache2/mod/prefork.html
 share/doc/apache2/mod/prefork.html.de
 share/doc/apache2/mod/prefork.html.en
 share/doc/apache2/mod/prefork.html.ja.utf8
+share/doc/apache2/mod/prefork.html.tr.utf8
 share/doc/apache2/mod/quickreference.html
 share/doc/apache2/mod/quickreference.html.de
 share/doc/apache2/mod/quickreference.html.en
@@ -652,6 +682,7 @@ share/doc/apache2/mod/worker.html
 share/doc/apache2/mod/worker.html.de
 share/doc/apache2/mod/worker.html.en
 share/doc/apache2/mod/worker.html.ja.utf8
+share/doc/apache2/mod/worker.html.tr.utf8
 share/doc/apache2/mpm.html
 share/doc/apache2/mpm.html.de
 share/doc/apache2/mpm.html.en
@@ -668,11 +699,13 @@ share/doc/apache2/new_features_2_0.html.ja.utf8
 share/doc/apache2/new_features_2_0.html.ko.euc-kr
 share/doc/apache2/new_features_2_0.html.pt-br
 share/doc/apache2/new_features_2_0.html.ru.koi8-r
+share/doc/apache2/new_features_2_0.html.tr.utf8
 share/doc/apache2/new_features_2_2.html
 share/doc/apache2/new_features_2_2.html.en
 share/doc/apache2/new_features_2_2.html.fr
 share/doc/apache2/new_features_2_2.html.ko.euc-kr
 share/doc/apache2/new_features_2_2.html.pt-br
+share/doc/apache2/new_features_2_2.html.tr.utf8
 share/doc/apache2/platform/
 share/doc/apache2/platform/ebcdic.html
 share/doc/apache2/platform/ebcdic.html.en
@@ -696,15 +729,18 @@ share/doc/apache2/programs/
 share/doc/apache2/programs/ab.html
 share/doc/apache2/programs/ab.html.en
 share/doc/apache2/programs/ab.html.ko.euc-kr
+share/doc/apache2/programs/ab.html.tr.utf8
 share/doc/apache2/programs/apachectl.html
 share/doc/apache2/programs/apachectl.html.en
 share/doc/apache2/programs/apachectl.html.ko.euc-kr
+share/doc/apache2/programs/apachectl.html.tr.utf8
 share/doc/apache2/programs/apxs.html
 share/doc/apache2/programs/apxs.html.en
 share/doc/apache2/programs/apxs.html.ko.euc-kr
 share/doc/apache2/programs/configure.html
 share/doc/apache2/programs/configure.html.en
 share/doc/apache2/programs/configure.html.ko.euc-kr
+share/doc/apache2/programs/configure.html.tr.utf8
 share/doc/apache2/programs/dbmmanage.html
 share/doc/apache2/programs/dbmmanage.html.en
 share/doc/apache2/programs/dbmmanage.html.ko.euc-kr
@@ -722,6 +758,7 @@ share/doc/apache2/programs/htpasswd.html.ko.euc-kr
 share/doc/apache2/programs/httpd.html
 share/doc/apache2/programs/httpd.html.en
 share/doc/apache2/programs/httpd.html.ko.euc-kr
+share/doc/apache2/programs/httpd.html.tr.utf8
 share/doc/apache2/programs/httxt2dbm.html
 share/doc/apache2/programs/httxt2dbm.html.en
 share/doc/apache2/programs/index.html
@@ -745,6 +782,7 @@ share/doc/apache2/programs/suexec.html.ko.euc-kr
 share/doc/apache2/rewrite/
 share/doc/apache2/rewrite/index.html
 share/doc/apache2/rewrite/index.html.en
+share/doc/apache2/rewrite/index.html.tr.utf8
 share/doc/apache2/rewrite/rewrite_flags.html
 share/doc/apache2/rewrite/rewrite_flags.html.en
 share/doc/apache2/rewrite/rewrite_guide.html
@@ -765,6 +803,7 @@ share/doc/apache2/server-wide.html
 share/doc/apache2/server-wide.html.en
 share/doc/apache2/server-wide.html.ja.utf8
 share/doc/apache2/server-wide.html.ko.euc-kr
+share/doc/apache2/server-wide.html.tr.utf8
 share/doc/apache2/sitemap.html
 share/doc/apache2/sitemap.html.de
 share/doc/apache2/sitemap.html.en
@@ -776,6 +815,7 @@ share/doc/apache2/ssl/
 share/doc/apache2/ssl/index.html
 share/doc/apache2/ssl/index.html.en
 share/doc/apache2/ssl/index.html.ja.utf8
+share/doc/apache2/ssl/index.html.tr.utf8
 share/doc/apache2/ssl/ssl_compat.html
 share/doc/apache2/ssl/ssl_compat.html.en
 share/doc/apache2/ssl/ssl_faq.html
@@ -818,6 +858,7 @@ share/doc/apache2/suexec.html
 share/doc/apache2/suexec.html.en
 share/doc/apache2/suexec.html.ja.utf8
 share/doc/apache2/suexec.html.ko.euc-kr
+share/doc/apache2/suexec.html.tr.utf8
 share/doc/apache2/upgrading.html
 share/doc/apache2/upgrading.html.de
 share/doc/apache2/upgrading.html.en
@@ -826,21 +867,25 @@ share/doc/apache2/urlmapping.html
 share/doc/apache2/urlmapping.html.en
 share/doc/apache2/urlmapping.html.ja.utf8
 share/doc/apache2/urlmapping.html.ko.euc-kr
+share/doc/apache2/urlmapping.html.tr.utf8
 share/doc/apache2/vhosts/
 share/doc/apache2/vhosts/details.html
 share/doc/apache2/vhosts/details.html.en
 share/doc/apache2/vhosts/details.html.fr
 share/doc/apache2/vhosts/details.html.ko.euc-kr
+share/doc/apache2/vhosts/details.html.tr.utf8
 share/doc/apache2/vhosts/examples.html
 share/doc/apache2/vhosts/examples.html.en
 share/doc/apache2/vhosts/examples.html.fr
 share/doc/apache2/vhosts/examples.html.ja.utf8
 share/doc/apache2/vhosts/examples.html.ko.euc-kr
+share/doc/apache2/vhosts/examples.html.tr.utf8
 share/doc/apache2/vhosts/fd-limits.html
 share/doc/apache2/vhosts/fd-limits.html.en
 share/doc/apache2/vhosts/fd-limits.html.fr
 share/doc/apache2/vhosts/fd-limits.html.ja.utf8
 share/doc/apache2/vhosts/fd-limits.html.ko.euc-kr
+share/doc/apache2/vhosts/fd-limits.html.tr.utf8
 share/doc/apache2/vhosts/index.html
 share/doc/apache2/vhosts/index.html.de
 share/doc/apache2/vhosts/index.html.en
@@ -858,6 +903,7 @@ share/doc/apache2/vhosts/ip-based.html.tr.utf8
 share/doc/apache2/vhosts/mass.html
 share/doc/apache2/vhosts/mass.html.en
 share/doc/apache2/vhosts/mass.html.ko.euc-kr
+share/doc/apache2/vhosts/mass.html.tr.utf8
 share/doc/apache2/vhosts/name-based.html
 share/doc/apache2/vhosts/name-based.html.de
 share/doc/apache2/vhosts/name-based.html.en
@@ -969,16 +1015,6 @@ share/examples/apache2/error/include/top.html
 @sample /var/apache2/error/include/top.html
 share/examples/apache2/htdocs/
 @sample /var/apache2/htdocs/
-share/examples/apache2/htdocs/apache_pb.gif
-@sample /var/apache2/htdocs/apache_pb.gif
-share/examples/apache2/htdocs/apache_pb.png
-@sample /var/apache2/htdocs/apache_pb.png
-share/examples/apache2/htdocs/apache_pb22.gif
-@sample /var/apache2/htdocs/apache_pb22.gif
-share/examples/apache2/htdocs/apache_pb22.png
-@sample /var/apache2/htdocs/apache_pb22.png
-share/examples/apache2/htdocs/apache_pb22_ani.gif
-@sample /var/apache2/htdocs/apache_pb22_ani.gif
 share/examples/apache2/htdocs/index.html
 @sample /var/apache2/htdocs/index.html
 share/examples/apache2/icons/
