@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/06 07:54:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/04/10 22:35:08 ajacoutot Exp $
 @bin bin/gnome-video-arcade
 @man man/man1/gnome-video-arcade.1
 share/applications/gnome-video-arcade.desktop
@@ -16,8 +16,6 @@ share/gnome/help/gnome-video-arcade/C/figures/gva_recorded_games.png
 share/gnome/help/gnome-video-arcade/C/figures/gva_search_window.png
 share/gnome/help/gnome-video-arcade/C/gnome-video-arcade.xml
 share/gnome/help/gnome-video-arcade/C/legal.xml
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/gnome-video-arcade/
 share/gtk-doc/html/gnome-video-arcade/GvaCellRendererPixbuf.html
 share/gtk-doc/html/gnome-video-arcade/GvaColumnManager.html

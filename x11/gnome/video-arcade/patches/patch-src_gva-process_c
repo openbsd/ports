@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_gva-process_c,v 1.1 2009/04/10 22:35:08 ajacoutot Exp $
+--- src/gva-process.c.orig	Sun Apr  5 18:36:35 2009
++++ src/gva-process.c	Fri Apr 10 21:01:15 2009
+@@ -171,10 +171,7 @@ process_read_line (GvaProcess *process,
+                 g_signal_emit (process, signal_id, 0);
+         }
+         else
+-        {
+-                g_assert (error != NULL);
+                 process_propagate_error (process, error);
+-        }
+ }
+ 
+ static gboolean
+@@ -182,7 +179,7 @@ process_stdout_ready (GIOChannel *channel,
+                       GIOCondition condition,
+                       GvaProcess *process)
+ {
+-        if (condition & G_IO_IN)
++        if (condition == G_IO_IN)
+         {
+                 /* For better performance, keep reading lines as long as
+                  * there's more data available.  This assumes the stderr
+@@ -200,7 +197,7 @@ process_stdout_ready (GIOChannel *channel,
+                         condition =
+                                 g_io_channel_get_buffer_condition (channel);
+                 }
+-                while (condition & G_IO_IN);
++                while (condition == G_IO_IN);
+ 
+                 return TRUE;
+         }
+@@ -215,7 +212,7 @@ process_stderr_ready (GIOChannel *channel,
+                       GIOCondition condition,
+                       GvaProcess *process)
+ {
+-        if (condition & G_IO_IN)
++        if (condition == G_IO_IN)
+         {
+                 /* Do NOT loop here, as we do for stdout. */
+ 

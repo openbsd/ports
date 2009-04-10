@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/06 09:42:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/04/10 22:35:08 ajacoutot Exp $
 
 # XXX: Without category, history or nplayer files for now.
 
@@ -6,6 +6,7 @@ COMMENT=	MAME front-end for GNOME
 
 GNOME_PROJECT=	gnome-video-arcade
 GNOME_VERSION=	0.6.6
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	emulators games
 
