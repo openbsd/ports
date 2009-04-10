@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/07 08:40:11 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/04/10 17:28:28 giovanni Exp $
 bin/mk-archiver
 bin/mk-audit
 bin/mk-checksum-filter
 bin/mk-deadlock-logger
 bin/mk-duplicate-key-checker
+bin/mk-duplicate-key-checker-2
 bin/mk-find
 bin/mk-heartbeat
-bin/mk-log-parser
 bin/mk-parallel-dump
 bin/mk-parallel-restore
 bin/mk-profile-compact
+bin/mk-query-digest
 bin/mk-query-profiler
 bin/mk-show-grants
 bin/mk-slave-delay
@@ -26,13 +27,14 @@ ${P5SITE}/maatkitdsn.pm
 @man man/man1/mk-audit.1
 @man man/man1/mk-checksum-filter.1
 @man man/man1/mk-deadlock-logger.1
+@man man/man1/mk-duplicate-key-checker-2.1
 @man man/man1/mk-duplicate-key-checker.1
 @man man/man1/mk-find.1
 @man man/man1/mk-heartbeat.1
-@man man/man1/mk-log-parser.1
 @man man/man1/mk-parallel-dump.1
 @man man/man1/mk-parallel-restore.1
 @man man/man1/mk-profile-compact.1
+@man man/man1/mk-query-digest.1
 @man man/man1/mk-query-profiler.1
 @man man/man1/mk-show-grants.1
 @man man/man1/mk-slave-delay.1
