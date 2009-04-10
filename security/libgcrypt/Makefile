@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/01/07 17:56:40 grange Exp $
+# $OpenBSD: Makefile,v 1.16 2009/04/10 15:30:49 ajacoutot Exp $
 
 COMMENT=		crypto library based on code used in GnuPG
 
@@ -23,7 +23,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/libgcrypt/ \
 
 MODULES=		devel/gettext
 LIB_DEPENDS=		gpg-error::security/libgpg-error
-BUILD_DEPENDS=		::print/transfig
+
 WANTLIB=		c
 
 USE_LIBTOOL=		Yes
