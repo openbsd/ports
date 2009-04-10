@@ -1,4 +1,8 @@
-$OpenBSD: patch-cups_ipp_c,v 1.1 2009/04/10 15:35:01 ajacoutot Exp $
+$OpenBSD: patch-cups_ipp_c,v 1.2 2009/04/10 16:36:02 ajacoutot Exp $
+
+Lower buffer so that we don't run into memory access issues with default
+limits.
+
 --- cups/ipp.c.orig	Fri Apr 10 16:56:45 2009
 +++ cups/ipp.c	Fri Apr 10 16:57:46 2009
 @@ -1023,7 +1023,7 @@ ippReadIO(void       *src,		/* I - Data source */

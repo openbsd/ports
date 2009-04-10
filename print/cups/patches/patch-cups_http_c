@@ -1,4 +1,8 @@
-$OpenBSD: patch-cups_http_c,v 1.1 2009/04/10 15:35:01 ajacoutot Exp $
+$OpenBSD: patch-cups_http_c,v 1.2 2009/04/10 16:36:02 ajacoutot Exp $
+
+Lower buffer so that we don't run into memory access issues with default
+limits.
+
 --- cups/http.c.orig	Fri Apr 10 17:03:07 2009
 +++ cups/http.c	Fri Apr 10 17:03:22 2009
 @@ -1724,7 +1724,7 @@ httpTrace(http_t     *http,		/* I - HTTP connection */
