@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/18 20:23:11 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/04/10 13:56:46 ajacoutot Exp $
 @conflict xmame+xmess-*
 @conflict xmess-*
 @bin bin/dat2html
@@ -15,10 +15,21 @@ share/doc/sdlmess/mame.txt
 share/doc/sdlmess/messnew.txt
 share/doc/sdlmess/newvideo.txt
 share/doc/sdlmess/sysinfo.dat
+share/examples/sdlmess/
+@sample ${SYSCONFDIR}/mess/
+share/examples/sdlmess/mess.ini
+@sample ${SYSCONFDIR}/mess/mess.ini
 share/sdlmess/
+share/sdlmess/artwork/
+share/sdlmess/cheat/
+share/sdlmess/ctrlr/
+share/sdlmess/hash/
 share/sdlmess/keymaps/
 share/sdlmess/keymaps/km-be.txt
 share/sdlmess/keymaps/km-ch.txt
 share/sdlmess/keymaps/km-de.txt
 share/sdlmess/keymaps/km-fr.txt
 share/sdlmess/keymaps/km_it.txt
+share/sdlmess/roms/
+share/sdlmess/samples/
+share/sdlmess/ui.bdf

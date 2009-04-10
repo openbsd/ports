@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/18 20:23:11 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/04/10 13:56:46 ajacoutot Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -7,7 +7,7 @@ COMMENT =		emulates game consoles and old home computers
 
 V =			0.130
 DISTNAME =		sdlmess${V:S/.//}
-PKGNAME =		sdlmess-${V}p0
+PKGNAME =		sdlmess-${V}p1
 
 CATEGORIES =		emulators games
 
@@ -43,6 +43,7 @@ USE_X11 =		Yes
 
 NO_REGRESS =		Yes
 
+MAKE_FLAGS =		OPT_FLAGS='-DINI_PATH="\"${SYSCONFDIR}/mess;\""'
 MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" LD=$(CC) \
 			TARGETOS=openbsd
 .if ${MACHINE_ARCH} == "amd64"
@@ -53,20 +54,29 @@ MAKE_FILE =		makefile.sdl
 MESS_EXTBIN=		dat2html imgtool
 MESS_DOC=		config.txt credits.htm faq.htm imgtool.txt \
 				license.txt mame.txt messnew.txt newvideo.txt
+MESS_DATA_DIR =		roms hash samples artwork ctrlr cheat keymaps
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mess ${PREFIX}/bin/sdlmess
 .for i in ${MESS_EXTBIN}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin/
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/sdlmess/keymaps
+.for i in ${MESS_DATA_DIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/sdlmess/${i}
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/keymaps/km[-_]??.txt \
 		${PREFIX}/share/sdlmess/keymaps/
+	${INSTALL_DATA} ${WRKSRC}/ui.bdf ${PREFIX}/share/sdlmess
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sdlmess
 .for i in ${MESS_DOC}
 	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${PREFIX}/share/doc/sdlmess/
 .endfor
 	${INSTALL_DATA} $(WRKSRC)/SDLMESS.txt ${PREFIX}/share/doc/sdlmess/
 	${INSTALL_DATA} $(WRKSRC)/sysinfo.dat ${PREFIX}/share/doc/sdlmess/
-
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sdlmess
+	${SUBST_CMD} -c ${FILESDIR}/mess.ini \
+		${PREFIX}/share/examples/sdlmess/mess.ini
+	chown ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/share/examples/sdlmess/mess.ini
+ 
 .include <bsd.port.mk>
