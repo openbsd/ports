@@ -1,0 +1,21 @@
+$OpenBSD: patch-cups_ipp_c,v 1.1 2009/04/10 15:35:01 ajacoutot Exp $
+--- cups/ipp.c.orig	Fri Apr 10 16:56:45 2009
++++ cups/ipp.c	Fri Apr 10 16:57:46 2009
+@@ -1023,7 +1023,7 @@ ippReadIO(void       *src,		/* I - Data source */
+           ipp_t      *ipp)		/* I - IPP data */
+ {
+   int			n;		/* Length of data */
+-  unsigned char		buffer[32768],	/* Data buffer */
++  unsigned char		buffer[4096],	/* Data buffer */
+ 			string[255],	/* Small string buffer */
+ 			*bufptr;	/* Pointer into buffer */
+   ipp_attribute_t	*attr;		/* Current attribute */
+@@ -1633,7 +1633,7 @@ ippWriteIO(void       *dst,		/* I - Destination */
+ {
+   int			i;		/* Looping var */
+   int			n;		/* Length of data */
+-  unsigned char		buffer[32768],	/* Data buffer */
++  unsigned char		buffer[4096],	/* Data buffer */
+ 			*bufptr;	/* Pointer into buffer */
+   ipp_attribute_t	*attr;		/* Current attribute */
+   ipp_value_t		*value;		/* Current value */
