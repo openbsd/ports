@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/14 14:47:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2009/04/10 12:00:13 pea Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
-MODPY_EGG_VERSION=	2.1.8
+MODPY_EGG_VERSION=	2.1.9
 DISTNAME=		skytools-${MODPY_EGG_VERSION}
-PKGNAME =		${DISTNAME}p0
 
 CATEGORIES=	databases
 
 HOMEPAGE=	http://pgfoundry.org/projects/skytools
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_FTP=	Yes
@@ -20,13 +19,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB= 	c
 
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1940/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2129/
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	::databases/postgresql,-server \
-		::textproc/asciidoc \
-		::textproc/xmlto
+BUILD_DEPENDS=	::databases/postgresql,-server 
 
 RUN_DEPENDS=    ::databases/py-psycopg2
 
@@ -34,8 +31,7 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-python=${MODPY_BIN} \
-		--with-asciidoc=${LOCALBASE}/bin/asciidoc
+CONFIGURE_ARGS=	--with-python=${MODPY_BIN} 
 
 BINFILES=	bulk_loader.py cube_dispatcher.py londiste.py \
 		pgqadm.py queue_mover.py queue_splitter.py \
