@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/04/11 14:10:57 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.22.2
-PKGNAME=	${DISTNAME}p17
+PKGNAME=	${DISTNAME}p18
 
 CATEGORIES=	multimedia
 
@@ -98,7 +98,6 @@ LIB_DEPENDS+=	gstaudio-0.10,gstinterfaces-0.10,gstpbutils-0.10,gstvideo-0.10::mu
 BUILD_DEPENDS+=	:gstreamer-confelements-*:multimedia/gstreamer-0.10/plugins-good,-gconf
 RUN_DEPENDS+=	:gstreamer-vorbis-*:multimedia/gstreamer-0.10/plugins-base,-vorbis \
 		:gstreamer-ogg-*:multimedia/gstreamer-0.10/plugins-base,-ogg \
-		:gstreamer-xvid-*:multimedia/gstreamer-0.10/plugins-bad,-xvid \
 		:gstreamer-jpeg-*:multimedia/gstreamer-0.10/plugins-good,-jpeg \
 		:gstreamer-confelements-*:multimedia/gstreamer-0.10/plugins-good,-gconf \
 		:gstreamer-a52-*:multimedia/gstreamer-0.10/plugins-ugly,-a52 \
