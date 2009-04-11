@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/06/02 17:16:49 wcmaier Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/04/11 13:45:06 martynas Exp $
 lib/python${MODPY_VERSION}/site-packages/psycopg2/
 lib/python${MODPY_VERSION}/site-packages/psycopg2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/psycopg2/__init__.py
@@ -35,6 +35,7 @@ share/examples/py-psycopg2/dt.py
 share/examples/py-psycopg2/encoding.py
 share/examples/py-psycopg2/fetch.py
 share/examples/py-psycopg2/lastrowid.py
+share/examples/py-psycopg2/lobject.py
 share/examples/py-psycopg2/mogrify.py
 share/examples/py-psycopg2/myfirstrecipe.py
 share/examples/py-psycopg2/notify.py
