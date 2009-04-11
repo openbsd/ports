@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2008/05/13 15:11:51 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2009/04/11 14:37:21 ajacoutot Exp $
 
 CATEGORIES ?=	multimedia devel
 
@@ -33,7 +33,6 @@ CONFIGURE_STYLE ?=	autoconf
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--localstatedir=/var/db \
 			--with-cachedir=/var/db/gstreamer-${VERSION} \
-			--disable-debug \
 			--disable-valgrind \
 			--disable-static \
 #			--enable-gtk-doc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/05/13 15:11:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/04/11 14:37:21 ajacoutot Exp $
 lib/pkgconfig/gst-python-${VERSION}.pc
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/
@@ -33,6 +33,8 @@ lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/interfaces.la
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/interfaces.so
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/pbutils.la
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/pbutils.so
+lib/python${MODPY_VERSION}/site-packages/gstoption.la
+lib/python${MODPY_VERSION}/site-packages/gstoption.so
 lib/python${MODPY_VERSION}/site-packages/pygst.pth
 lib/python${MODPY_VERSION}/site-packages/pygst.py
 lib/python${MODPY_VERSION}/site-packages/pygst.pyc

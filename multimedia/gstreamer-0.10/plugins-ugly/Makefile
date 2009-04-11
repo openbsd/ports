@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/16 22:18:06 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2009/04/11 14:37:21 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - plugins ugly
 COMMENT-sidplay =	multimedia framework - sidplay plugin
@@ -10,13 +10,13 @@ COMMENT-dvdread =	multimedia framework - dvdread plugin
 
 V =			0.10.7
 DISTNAME =		gst-plugins-ugly-$V
-PKGNAME-main =		gstreamer-plugins-ugly-$Vp0
-PKGNAME-sidplay =	gstreamer-sidplay-$Vp1
-PKGNAME-a52 =		gstreamer-a52-$Vp1
-PKGNAME-mad =		gstreamer-mad-$Vp1
-PKGNAME-lame =		gstreamer-lame-$Vp1
-PKGNAME-mpeg2 =		gstreamer-mpeg2-$Vp1
-PKGNAME-dvdread =	gstreamer-dvdread-$Vp1
+PKGNAME-main =		gstreamer-plugins-ugly-$Vp1
+PKGNAME-sidplay =	gstreamer-sidplay-$Vp2
+PKGNAME-a52 =		gstreamer-a52-$Vp2
+PKGNAME-mad =		gstreamer-mad-$Vp2
+PKGNAME-lame =		gstreamer-lame-$Vp2
+PKGNAME-mpeg2 =		gstreamer-mpeg2-$Vp2
+PKGNAME-dvdread =	gstreamer-dvdread-$Vp2
 MULTI_PACKAGES =	-main -sidplay -lame -mad -a52 -mpeg2 -dvdread
 
 PERMIT_PACKAGE_CDROM =	Patent issues

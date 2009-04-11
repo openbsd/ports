@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2009/03/27 15:12:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2009/04/11 14:37:21 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.7
 lib/gstreamer-${VERSION}/libgstalaw.la
 lib/gstreamer-${VERSION}/libgstalaw.so
@@ -18,6 +18,10 @@ lib/gstreamer-${VERSION}/libgstavi.la
 lib/gstreamer-${VERSION}/libgstavi.so
 lib/gstreamer-${VERSION}/libgstcutter.la
 lib/gstreamer-${VERSION}/libgstcutter.so
+lib/gstreamer-${VERSION}/libgstdebug.la
+lib/gstreamer-${VERSION}/libgstdebug.so
+lib/gstreamer-${VERSION}/libgstefence.la
+lib/gstreamer-${VERSION}/libgstefence.so
 lib/gstreamer-${VERSION}/libgsteffectv.la
 lib/gstreamer-${VERSION}/libgsteffectv.so
 lib/gstreamer-${VERSION}/libgstequalizer.la
@@ -48,6 +52,8 @@ lib/gstreamer-${VERSION}/libgstmultifile.la
 lib/gstreamer-${VERSION}/libgstmultifile.so
 lib/gstreamer-${VERSION}/libgstmultipart.la
 lib/gstreamer-${VERSION}/libgstmultipart.so
+lib/gstreamer-${VERSION}/libgstnavigationtest.la
+lib/gstreamer-${VERSION}/libgstnavigationtest.so
 @comment lib/gstreamer-${VERSION}/libgstossaudio.la
 @comment lib/gstreamer-${VERSION}/libgstossaudio.so
 lib/gstreamer-${VERSION}/libgstqtdemux.la

@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST-frontend,v 1.1 2007/01/08 17:39:53 espie Exp $
-bin/gst-feedback
-bin/gst-inspect
-bin/gst-launch
-bin/gst-typefind
-bin/gst-xmlinspect
-bin/gst-xmllaunch
+@comment $OpenBSD: PLIST-frontend,v 1.2 2009/04/11 14:37:21 ajacoutot Exp $
+@bin bin/gst-feedback
+bin/gst-feedback-${VERSION}
+@bin bin/gst-inspect
+@bin bin/gst-inspect-${VERSION}
+@bin bin/gst-launch
+@bin bin/gst-launch-${VERSION}
+@bin bin/gst-typefind
+@bin bin/gst-typefind-${VERSION}
+@bin bin/gst-xmlinspect
+@bin bin/gst-xmlinspect-${VERSION}
+@bin bin/gst-xmllaunch
+@bin bin/gst-xmllaunch-${VERSION}

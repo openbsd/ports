@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/03/24 22:24:47 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2009/04/11 14:37:21 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - plugins bad
 COMMENT-tremor =	multimedia framework - tremor plugin
@@ -20,23 +20,23 @@ COMMENT-mplex =		multimedia framework - mplex plugin
 
 V =			0.10.7
 DISTNAME =		gst-plugins-bad-$V
-PKGNAME-main =		gstreamer-plugins-bad-${V}p5
-PKGNAME-tremor =	gstreamer-tremor-$Vp2
-PKGNAME-musepack =	gstreamer-musepack-$Vp2
-PKGNAME-faac =		gstreamer-faac-$Vp2
-PKGNAME-faad =		gstreamer-faad-$Vp2
-PKGNAME-xvid =		gstreamer-xvid-$Vp2
-PKGNAME-sdl =		gstreamer-sdl-$Vp4
-PKGNAME-bz2 =		gstreamer-bz2-$Vp2
-PKGNAME-gsm =		gstreamer-gsm-$Vp2
-PKGNAME-ladspa =	gstreamer-ladspa-$Vp2
-PKGNAME-neon =		gstreamer-neon-$Vp3
-PKGNAME-swf =		gstreamer-flash-$Vp1
-PKGNAME-meta =		gstreamer-meta-$Vp2
-PKGNAME-sndfile =	gstreamer-sndfile-$Vp2
-PKGNAME-real =		gstreamer-real-$Vp2
-PKGNAME-x264 =		gstreamer-x264-$Vp0
-PKGNAME-mplex =		gstreamer-mplex-$Vp0
+PKGNAME-main =		gstreamer-plugins-bad-${V}p6
+PKGNAME-tremor =	gstreamer-tremor-$Vp3
+PKGNAME-musepack =	gstreamer-musepack-$Vp3
+PKGNAME-faac =		gstreamer-faac-$Vp3
+PKGNAME-faad =		gstreamer-faad-$Vp3
+PKGNAME-xvid =		gstreamer-xvid-$Vp3
+PKGNAME-sdl =		gstreamer-sdl-$Vp5
+PKGNAME-bz2 =		gstreamer-bz2-$Vp3
+PKGNAME-gsm =		gstreamer-gsm-$Vp3
+PKGNAME-ladspa =	gstreamer-ladspa-$Vp3
+PKGNAME-neon =		gstreamer-neon-$Vp4
+PKGNAME-swf =		gstreamer-flash-$Vp2
+PKGNAME-meta =		gstreamer-meta-$Vp3
+PKGNAME-sndfile =	gstreamer-sndfile-$Vp3
+PKGNAME-real =		gstreamer-real-$Vp3
+PKGNAME-x264 =		gstreamer-x264-$Vp1
+PKGNAME-mplex =		gstreamer-mplex-$Vp1
 
 MULTI_PACKAGES =	-main -tremor -musepack -faac -faad -xvid -sdl -bz2 \
 			-gsm -ladspa -meta -neon -sndfile -x264 -mplex
