@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/04/03 13:03:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/04/11 20:03:59 ajacoutot Exp $
 bin/sonata
 lib/python${MODPY_VERSION}/site-packages/Sonata-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mmkeys.so
@@ -11,6 +11,8 @@ lib/python${MODPY_VERSION}/site-packages/sonata/artwork.py
 lib/python${MODPY_VERSION}/site-packages/sonata/artwork.pyc
 lib/python${MODPY_VERSION}/site-packages/sonata/audioscrobbler.py
 lib/python${MODPY_VERSION}/site-packages/sonata/audioscrobbler.pyc
+lib/python${MODPY_VERSION}/site-packages/sonata/breadcrumbs.py
+lib/python${MODPY_VERSION}/site-packages/sonata/breadcrumbs.pyc
 lib/python${MODPY_VERSION}/site-packages/sonata/cli.py
 lib/python${MODPY_VERSION}/site-packages/sonata/cli.pyc
 lib/python${MODPY_VERSION}/site-packages/sonata/config.py
@@ -38,6 +40,8 @@ lib/python${MODPY_VERSION}/site-packages/sonata/playlists.pyc
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/sonata/plugins/localmpd.py
+lib/python${MODPY_VERSION}/site-packages/sonata/plugins/localmpd.pyc
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/test.py
 lib/python${MODPY_VERSION}/site-packages/sonata/plugins/test.pyc
 lib/python${MODPY_VERSION}/site-packages/sonata/pluginsystem.py
