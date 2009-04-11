@@ -1,15 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/02/02 12:29:16 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/04/11 23:54:12 sthen Exp $
 @newgroup _tinyproxy:617
 @newuser _tinyproxy:617:_tinyproxy:daemon:tinyproxy:/nonexistent:/sbin/nologin
 @man man/man8/tinyproxy.8
-sbin/tinyproxy
+@bin sbin/tinyproxy
 share/doc/tinyproxy/
-share/doc/tinyproxy/HTML_VARIABLES
-share/doc/tinyproxy/HTTP_ERROR_CODES
-share/doc/tinyproxy/RFC_INFO
 share/doc/tinyproxy/debug.html
 share/doc/tinyproxy/default.html
-share/doc/tinyproxy/filter-howto.txt
 share/doc/tinyproxy/stats.html
 share/examples/tinyproxy/
 @sample ${SYSCONFDIR}/tinyproxy/

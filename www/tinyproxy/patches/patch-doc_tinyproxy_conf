@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_tinyproxy_conf,v 1.1 2009/02/02 12:29:16 martynas Exp $
---- doc/tinyproxy.conf.orig	Fri Aug  6 19:23:48 2004
-+++ doc/tinyproxy.conf	Mon Feb  2 06:41:40 2009
+$OpenBSD: patch-doc_tinyproxy_conf,v 1.2 2009/04/11 23:54:12 sthen Exp $
+--- doc/tinyproxy.conf.orig	Sun Aug 24 06:58:43 2008
++++ doc/tinyproxy.conf	Tue Mar 24 03:09:09 2009
 @@ -6,8 +6,8 @@
  # Name of the user the tinyproxy daemon should switch to after the port
  # has been bound.
@@ -12,3 +12,36 @@ $OpenBSD: patch-doc_tinyproxy_conf,v 1.1 2009/02/02 12:29:16 martynas Exp $
  
  #
  # Port to listen on.
+@@ -40,25 +40,25 @@ Timeout 600
+ #   /usr/share/tinyproxy
+ #   /etc/tinyproxy
+ #
+-# ErrorFile 404 "/usr/share/tinyproxy/404.html"
+-# ErrorFile 400 "/usr/share/tinyproxy/400.html"
+-# ErrorFile 503 "/usr/share/tinyproxy/503.html"
+-# ErrorFile 403 "/usr/share/tinyproxy/403.html"
+-# ErrorFile 408 "/usr/share/tinyproxy/408.html"
++# ErrorFile 404 "/usr/local/share/tinyproxy/404.html"
++# ErrorFile 400 "/usr/local/share/tinyproxy/400.html"
++# ErrorFile 503 "/usr/local/share/tinyproxy/503.html"
++# ErrorFile 403 "/usr/local/share/tinyproxy/403.html"
++# ErrorFile 408 "/usr/local/share/tinyproxy/408.html"
+ 
+ # 
+ # DefaultErrorFile: The HTML file that gets sent if there is no
+ # HTML file defined with an ErrorFile keyword for the HTTP error
+ # that has occured.
+ #
+-DefaultErrorFile "/usr/share/tinyproxy/default.html"
++DefaultErrorFile "/usr/local/share/tinyproxy/default.html"
+ 
+ #
+ # StatFile: The HTML file that gets sent when a request is made
+ # for the stathost.  If this file doesn't exist a basic page is
+ # hardcoded in tinyproxy.
+ #
+-StatFile "/usr/share/tinyproxy/stats.html"
++StatFile "/usr/local/share/tinyproxy/stats.html"
+ 
+ #
+ # Where to log the information. Either LogFile or Syslog should be set,
