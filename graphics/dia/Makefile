@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.56 2008/11/24 09:52:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2009/04/11 10:05:47 ajacoutot Exp $
 
 COMMENT=	technical diagrams drawing tool
 
 DISTNAME=	dia-0.96.1
-PKGNAME=	${DISTNAME}p11
+PKGNAME=	${DISTNAME}p12
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://live.gnome.org/Dia/
@@ -31,8 +31,7 @@ LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		popt::devel/popt \
 		xml2.>=10::textproc/libxml \
 		xslt.>=1::textproc/libxslt
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		::devel/xdg-utils
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 MODULES=	devel/gettext \
 		textproc/intltool
@@ -40,6 +39,9 @@ MODULES=	devel/gettext \
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+
+# patch-doc_en_usage-layers_xml seen as binary file
+DIFF_ARGS=	-a
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng \
@@ -58,14 +60,15 @@ CONFIGURE_ARGS+=--enable-gnome \
 		--with-gnomeprint
 LIB_DEPENDS+=	gnomeui-2::x11/gnome/libgnomeui \
 		gnomeprint-2-2::x11/gnome/libgnomeprint
-WANTLIB+=	ICE ORBit-2 ORBitCosNaming-2 SM audiofile bonobo-2 \
+WANTLIB+=	ICE ORBit-2 ORBitCosNaming-2 SM bonobo-2 \
 		bonobo-activation bonoboui-2 crypto dbus-1 dbus-glib-1 \
-		esd gailutil gconf-2 gnome-2 gnome-keyring \
+		gailutil gconf-2 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 ssl util
 RUN_DEPENDS+=	:yelp-*:x11/gnome/yelp
 .else
 CONFIGURE_ARGS+=--disable-gnome \
 		--without-gnomeprint
+RUN_DEPENDS+=	::devel/xdg-utils
 .endif
 
 pre-configure:
@@ -76,5 +79,8 @@ post-install:
 	xmlto -o ${PREFIX}/share/doc/dia/html/en html ${WRKSRC}/doc/en/dia.xml
 	xmlto -o ${PREFIX}/share/doc/dia/html/pl html ${WRKSRC}/doc/pl/dia.xml
 	@cd ${PREFIX}/share/doc/dia/html && ln -s en C
+.if ${FLAVOR:L:Mgnome}
+	@cd ${PREFIX}/share/gnome/help/dia && ln -s en C
+.endif
 
 .include <bsd.port.mk>

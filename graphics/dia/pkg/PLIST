@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2008/11/24 09:52:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2009/04/11 10:05:47 ajacoutot Exp $
 %%SHARED%%
 @bin bin/dia
 lib/dia/
@@ -1821,8 +1821,8 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 share/mime-info/
 share/mime-info/dia.keys
 share/mime-info/dia.mime
-@comment share/omf/
 @comment share/oaf/
+@comment share/omf/
 @comment share/omf/dia/
 share/pixmaps/
 share/pixmaps/dia-diagram.png
