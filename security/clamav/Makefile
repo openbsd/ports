@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2008/12/13 10:19:09 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.42 2009/04/11 14:13:58 sthen Exp $
 
 COMMENT=		virus scanner
-DISTNAME=		clamav-0.94.2
+DISTNAME=		clamav-0.95.1
 CATEGORIES=		security
-SHARED_LIBS=		clamav 10.0 \
-			clamunrar 1.0 \
-			clamunrar_iface 1.0
+SHARED_LIBS=		clamav 11.0 \
+			clamunrar 2.0 \
+			clamunrar_iface 2.0
 
 HOMEPAGE=		http://www.clamav.net/
 
@@ -17,12 +17,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c milter pthread wrap z
+WANTLIB=		c milter ncurses pthread z
 
 BUILD_DEPENDS=		::devel/check
 
-LIB_DEPENDS=		gmp.>=6::devel/gmp \
-			bz2.>=10::archivers/bzip2 \
+LIB_DEPENDS=		bz2.>=10::archivers/bzip2 \
 			iconv.>=4::converters/libiconv
 
 RUN_DEPENDS=		:lha-*:archivers/lha \
@@ -32,8 +31,12 @@ RUN_DEPENDS=		:lha-*:archivers/lha \
 
 USE_LIBTOOL=		Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clamav/} \
-			${HOMEPAGE}
+# XXX dlopen() of modules fails with the ports-tree libltdl.
+#     the bundled libltdl won't build with ports-tree libtool;
+#     use bundled versions of both for now.
+LIBTOOL=		${WRKSRC}/libtool
+
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clamav/}
 
 CONFIGURE_STYLE=        gnu
 CONFIGURE_ARGS+=        ${CONFIGURE_SHARED}
@@ -49,7 +52,7 @@ CONFIGURE_ARGS+=        --disable-clamav \
 
 REGRESS_TARGET=		check
 
-CONFIGURE_ENV+=		LDFLAGS="-pthread -L/usr/lib -L../libclamav/.libs -L${LOCALBASE}/lib" \
+CONFIGURE_ENV+=		LDFLAGS="-pthread -L/usr/lib -L${WRKSRC}/libclamav/.libs -L${LOCALBASE}/lib" \
 			CPPFLAGS="-I/usr/include -I${LOCALBASE}/include"
 
 DOCS=			clamav-mirror-howto.pdf clamdoc.pdf signatures.pdf
@@ -58,8 +61,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/clamav \
 		${PREFIX}/share/examples/clamav
 	cd ${WRKSRC}/docs; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/clamav
-	cd ${WRKSRC}/etc; ${INSTALL_DATA} clamd.conf \
-		freshclam.conf ${PREFIX}/share/examples/clamav
+	cd ${WRKSRC}/etc; ${INSTALL_DATA} clamd.conf freshclam.conf \
+		clamav-milter.conf ${PREFIX}/share/examples/clamav
 	cd ${WRKSRC}/examples; ${INSTALL_DATA} ex1.c \
 		${PREFIX}/share/examples/clamav
 

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/07/08 22:38:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2009/04/11 14:13:59 sthen Exp $
 @newgroup _clamav:539
 @newuser _clamav:539:539:daemon:Clam AntiVirus:/nonexistent:/sbin/nologin
 bin/clamav-config
 @bin bin/clamconf
 @bin bin/clamdscan
+@bin bin/clamdtop
 @bin bin/clamscan
 @bin bin/freshclam
 @bin bin/sigtool
@@ -18,6 +19,7 @@ lib/pkgconfig/
 lib/pkgconfig/libclamav.pc
 @man man/man1/clamconf.1
 @man man/man1/clamdscan.1
+@man man/man1/clamdtop.1
 @man man/man1/clamscan.1
 @man man/man1/freshclam.1
 @man man/man1/sigtool.1
@@ -32,11 +34,8 @@ share/doc/clamav/clamav-mirror-howto.pdf
 share/doc/clamav/clamdoc.pdf
 share/doc/clamav/signatures.pdf
 share/examples/clamav/
-share/examples/clamav/clamd.conf
-@sample ${SYSCONFDIR}/clamd.conf
-share/examples/clamav/ex1.c
-share/examples/clamav/freshclam.conf
-@sample ${SYSCONFDIR}/freshclam.conf
+share/examples/clamav/clamav-milter.conf
+@sample ${SYSCONFDIR}/clamav-milter.conf
 %%SHARED%%
 @owner _clamav
 @group _clamav
@@ -49,3 +48,11 @@ share/examples/clamav/freshclam.conf
 @extraunexec rm -fr /var/db/clamav/*
 @extraunexec rm -fr /var/spool/clamav/*
 @extraunexec rm -fr /var/clamav/*
+@mode
+@owner
+@group
+share/examples/clamav/clamd.conf
+@sample ${SYSCONFDIR}/clamd.conf
+share/examples/clamav/ex1.c
+share/examples/clamav/freshclam.conf
+@sample ${SYSCONFDIR}/freshclam.conf

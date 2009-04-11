@@ -1,5 +1,5 @@
---- etc/clamd.conf.orig	Tue Sep  2 12:59:05 2008
-+++ etc/clamd.conf	Fri Sep  5 02:32:34 2008
+--- etc/clamd.conf.orig	Tue Apr  7 11:32:06 2009
++++ etc/clamd.conf	Fri Apr 10 14:58:49 2009
 @@ -11,7 +11,7 @@ Example
  # LogFile must be writable for the user running daemon.
  # A full path is required.
@@ -16,9 +16,9 @@
 -#DatabaseDirectory /var/lib/clamav
 +#DatabaseDirectory /var/db/clamav
  
- # The daemon works in a local OR a network mode. Due to security reasons we
- # recommend the local mode.
-@@ -147,7 +147,7 @@ LocalSocket /tmp/clamd.socket
+ # The daemon can work in local mode, network mode or both. 
+ # Due to security reasons we recommend the local mode.
+@@ -167,7 +167,7 @@ LocalSocket /tmp/clamd.socket
  
  # Run as another user (clamd must be started by root for this option to work)
  # Default: don't drop privileges
