@@ -1,41 +1,79 @@
-$OpenBSD: patch-src_gva-process_c,v 1.1 2009/04/10 22:35:08 ajacoutot Exp $
+$OpenBSD: patch-src_gva-process_c,v 1.2 2009/04/11 12:18:00 ajacoutot Exp $
 --- src/gva-process.c.orig	Sun Apr  5 18:36:35 2009
-+++ src/gva-process.c	Fri Apr 10 21:01:15 2009
-@@ -171,10 +171,7 @@ process_read_line (GvaProcess *process,
-                 g_signal_emit (process, signal_id, 0);
++++ src/gva-process.c	Sat Apr 11 10:11:52 2009
+@@ -152,7 +152,7 @@ process_exited (GPid pid,
          }
-         else
--        {
--                g_assert (error != NULL);
-                 process_propagate_error (process, error);
--        }
  }
  
- static gboolean
-@@ -182,7 +179,7 @@ process_stdout_ready (GIOChannel *channel,
-                       GIOCondition condition,
-                       GvaProcess *process)
- {
--        if (condition & G_IO_IN)
-+        if (condition == G_IO_IN)
+-static void
++static int
+ process_read_line (GvaProcess *process,
+                    GIOChannel *channel,
+                    GQueue *queue,
+@@ -169,11 +169,12 @@ process_read_line (GvaProcess *process,
+                 g_assert (line != NULL);
+                 g_queue_push_tail (queue, line);
+                 g_signal_emit (process, signal_id, 0);
++                return 0;
+         }
+         else
          {
-                 /* For better performance, keep reading lines as long as
-                  * there's more data available.  This assumes the stderr
-@@ -200,7 +197,7 @@ process_stdout_ready (GIOChannel *channel,
+-                g_assert (error != NULL);
+                 process_propagate_error (process, error);
++                return -1;
+         }
+ }
+ 
+@@ -192,10 +193,17 @@ process_stdout_ready (GIOChannel *channel,
+ 
+                 do
+                 {
+-                        process_read_line (
++                        /*
++                         * XXX For some reason on OpenBSD the G_IO_IN flag
++                         * is always present even when we hit EOF from the
++                         * source, so use the return value of
++                         * process_read_line to know when to remove the source
++                         */
++                        if (process_read_line (
+                                 process, channel,
+                                 process->priv->stdout_lines,
+-                                signals[STDOUT_READY]);
++                                signals[STDOUT_READY]) == -1)
++                                goto remove_source;
+ 
                          condition =
                                  g_io_channel_get_buffer_condition (channel);
-                 }
--                while (condition & G_IO_IN);
-+                while (condition == G_IO_IN);
- 
+@@ -205,6 +213,7 @@ process_stdout_ready (GIOChannel *channel,
                  return TRUE;
          }
-@@ -215,7 +212,7 @@ process_stderr_ready (GIOChannel *channel,
-                       GIOCondition condition,
-                       GvaProcess *process)
- {
--        if (condition & G_IO_IN)
-+        if (condition == G_IO_IN)
+ 
++remove_source:
+         process->priv->stdout_source_id = 0;
+ 
+         return FALSE;
+@@ -219,14 +228,22 @@ process_stderr_ready (GIOChannel *channel,
          {
                  /* Do NOT loop here, as we do for stdout. */
  
+-                process_read_line (
++                /*
++                 * XXX For some reason on OpenBSD the G_IO_IN flag
++                 * is always present even when we hit EOF from the
++                 * source, so use the return value of
++                 * process_read_line to know when to remove the source
++                 */
++                if (process_read_line (
+                         process, channel,
+                         process->priv->stderr_lines,
+-                        signals[STDERR_READY]);
++                        signals[STDERR_READY]) == -1)
++                        goto remove_source;
+ 
+                 return TRUE;
+         }
+ 
++remove_source:
+         process->priv->stderr_source_id = 0;
+ 
+         return FALSE;
