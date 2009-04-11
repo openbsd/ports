@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.90 2009/01/24 11:32:43 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.91 2009/04/11 14:56:31 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -83,6 +83,11 @@ _STARTDIR_SEEN ?= false
 _STARTDIR_SEEN ?= true
 .endif
 
+.if defined(MATCHDIR)
+_SKIP_STUFF+= ; case "$${subdir}" in \
+	${MATCHDIR}) ;; \
+	*) continue ;; esac
+.endif
 TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
 .if defined(PORTSTOP)
 README = ${TEMPLATES}/README.top
