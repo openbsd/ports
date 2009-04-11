@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2009/03/16 08:56:32 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2009/04/11 08:16:58 eric Exp $
 
 VMEM_WARNING=	Yes
-SHARED_ONLY=	Yes
 
 COMMENT=	Python charting and plotting API
 
 DISTNAME=	matplotlib-0.98.5.2
-PKGNAME=	py-${DISTNAME}p0
+PKGNAME=	py-${DISTNAME}p1
 CATEGORIES=	graphics devel math
 
 HOMEPAGE=	http://matplotlib.sourceforge.net/
@@ -23,7 +22,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gtk-x11-2.0 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		tcl84
+		tcl84 tk84
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=matplotlib/}
 
@@ -33,10 +32,10 @@ MODULES=	lang/python \
 RUN_DEPENDS=	::math/py-numpy \
 		::x11/py-gtk2 \
 		::devel/py-tz \
-		::devel/py-dateutil
+		::devel/py-dateutil \
+		${MODPY_TKINTER_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	png.>=3::graphics/png \
-		tk84.>=1:tk->=8.4,<8.5:x11/tk/8.4
+LIB_DEPENDS=	png.>=3::graphics/png
 
 MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng" \
 		LDSHARED="${CC} -shared -fPIC"
