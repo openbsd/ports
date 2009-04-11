@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/02/12 10:17:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/04/11 10:46:43 ajacoutot Exp $
 
 COMMENT=		database administration GUI
 
 GNOME_PROJECT=		mergeant
 GNOME_VERSION=		0.67
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 CATEGORIES+=		databases
 

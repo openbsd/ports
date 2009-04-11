@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_main_c,v 1.1 2009/02/11 15:23:35 ajacoutot Exp $
+$OpenBSD: patch-src_main_c,v 1.2 2009/04/11 10:46:43 ajacoutot Exp $
 
 XXX Workaround a SIGSEGV when no datasources are configured. This should
 eventually be fixed at the source (libgnomedb?). Next major libgnomedb
@@ -27,7 +27,7 @@ be needed at that point.
 +				GTK_BUTTONS_CLOSE,
 +				"No data source configured!");
 +
-+			gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG(dialog), "Use the gnome-database-properties-3.0 program to add or remove data sources.");
++			gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG(dialog), "Use the gnome-database-properties-X.Y program to add or remove data sources.");
 +
 +			gtk_dialog_run (GTK_DIALOG (dialog));
 +			gtk_widget_destroy (dialog);
