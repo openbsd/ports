@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2009/04/06 17:14:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/04/11 21:08:35 ajacoutot Exp $
 
 COMMENT=		user interface builder for the GTK2+ toolkit
 
 GNOME_VERSION =		3.6.1
 GNOME_PROJECT = 	glade3
+PKGNAME =		${DISTNAME}p0
 
 CATEGORIES =		devel
 SHARED_LIBS +=  gladeui-1            0.1      # .9.3
 
 HOMEPAGE =		http://glade.gnome.org/
 
-MAINTAINER=		Jason Beaudoin <jasonbeaudoin@gmail.com>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2, with exception of png images under:
 # plugins/{gtk+,gnome}/icons  (which are LGPL)
