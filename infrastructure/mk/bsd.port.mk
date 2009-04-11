@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.959 2009/01/05 12:43:49 ajacoutot Exp $
+#	$OpenBSD: bsd.port.mk,v 1.960 2009/04/11 14:55:31 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -205,7 +205,7 @@ _okay_words = depends work fake -f flavors dist install sub packages package \
 	readmes bulk force plist build
 .for _w in ${_clean:L}
 .  if !${_okay_words:M${_w}}
-ERRORS += "Fatal: unknown clean command: ${_w}"
+ERRORS += "Fatal: unknown clean command: ${_w}\n(not in ${_okay_words})"
 .  endif
 .endfor
 
@@ -1718,7 +1718,7 @@ _internal-fetch-all:
 	@cd ${.CURDIR} && exec ${MAKE} pre-fetch __FETCH_ALL=Yes
 .endif
 .if target(do-fetch)
-	@cd ${.CURDIR} && exec ${MAKE} do-fetch __FETCH_ALL=Yes
+ERRORS += "Fatal: you're not allowed to override do-fetch"
 .else
 # What FETCH-ALL normally does:
 .  if !empty(MAKESUMFILES)
@@ -2752,7 +2752,7 @@ _print-package-args:
 				case "$$check" in \
 				*.a) continue;; \
 				Failed) \
-					echo 1>&2 "Can't resolve libspec $$d"; \
+					echo 1>&2 "Can't resolve libspec $$d (in ${SUBPACKAGE})"; \
 					exit 1;; \
 				*) \
 					echo "-W $$check";; \
