@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.20 2009/03/17 18:03:30 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.21 2009/04/11 10:12:19 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 
@@ -53,6 +53,7 @@ you can install. The most important ones will be mentioned by category:
    * pessulus - lockdown editor for desktop
    * planner - project management
    * seahorse - encryption keys manager
+   * system-config-printer - printer (CUPS) administration tool
    * tomboy - desktop note-taking
    * totem - multimedia player
 
