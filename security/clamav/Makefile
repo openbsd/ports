@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2009/04/11 14:13:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2009/04/12 09:28:45 sthen Exp $
 
 COMMENT=		virus scanner
 DISTNAME=		clamav-0.95.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		security
 SHARED_LIBS=		clamav 11.0 \
 			clamunrar 2.0 \
@@ -22,7 +23,8 @@ WANTLIB=		c milter ncurses pthread z
 BUILD_DEPENDS=		::devel/check
 
 LIB_DEPENDS=		bz2.>=10::archivers/bzip2 \
-			iconv.>=4::converters/libiconv
+			iconv.>=4::converters/libiconv \
+			ltdl:libltdl-*:devel/libtool,-ltdl
 
 RUN_DEPENDS=		:lha-*:archivers/lha \
 			:zoo-*:archivers/zoo \
@@ -30,11 +32,6 @@ RUN_DEPENDS=		:lha-*:archivers/lha \
 			:unzip-*:archivers/unzip 
 
 USE_LIBTOOL=		Yes
-
-# XXX dlopen() of modules fails with the ports-tree libltdl.
-#     the bundled libltdl won't build with ports-tree libtool;
-#     use bundled versions of both for now.
-LIBTOOL=		${WRKSRC}/libtool
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clamav/}
 
@@ -48,7 +45,9 @@ CONFIGURE_ARGS+=        --disable-clamav \
 			--with-user=_clamav \
 			--with-group=_clamav \
                         --disable-cr \
-			--with-dbdir=/var/db/clamav
+			--with-dbdir=/var/db/clamav \
+			--with-ltdl-include=${LOCALBASE}/include \
+			--with-ltdl-lib=${LOCALBASE}/lib
 
 REGRESS_TARGET=		check
 
