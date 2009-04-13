@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gui_FWBSettings_h,v 1.1 2008/11/05 20:38:50 steven Exp $
---- src/gui/FWBSettings.h.orig	Sat Oct  4 18:46:16 2008
-+++ src/gui/FWBSettings.h	Wed Oct  8 07:39:28 2008
-@@ -33,6 +33,8 @@
+$OpenBSD: patch-src_gui_FWBSettings_h,v 1.2 2009/04/13 14:12:02 steven Exp $
+--- src/gui/FWBSettings.h.orig	Sun Mar 29 22:08:37 2009
++++ src/gui/FWBSettings.h	Tue Mar 31 12:16:28 2009
+@@ -36,6 +36,8 @@
  
  #include <set>
  

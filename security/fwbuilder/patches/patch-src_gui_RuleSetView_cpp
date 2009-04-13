@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_gui_RuleSetView_cpp,v 1.1 2008/11/05 20:38:50 steven Exp $
---- src/gui/RuleSetView.cpp.orig	Sat Oct  4 18:46:16 2008
-+++ src/gui/RuleSetView.cpp	Wed Oct  8 07:21:00 2008
+$OpenBSD: patch-src_gui_RuleSetView_cpp,v 1.2 2009/04/13 14:12:02 steven Exp $
+--- src/gui/RuleSetView.cpp.orig	Sun Mar 29 22:08:37 2009
++++ src/gui/RuleSetView.cpp	Tue Mar 31 12:17:06 2009
 @@ -45,37 +45,12 @@
  #include "global.h"
  #include "utils.h"
@@ -39,7 +39,7 @@ $OpenBSD: patch-src_gui_RuleSetView_cpp,v 1.1 2008/11/05 20:38:50 steven Exp $
  #include <qapplication.h>
  #include <qpainter.h>
  #include <qrect.h>
-@@ -99,6 +74,32 @@
+@@ -99,6 +74,31 @@
  #include <QMdiSubWindow>
  #include <QMdiArea>
  #include <QScrollBar>
@@ -51,7 +51,6 @@ $OpenBSD: patch-src_gui_RuleSetView_cpp,v 1.1 2008/11/05 20:38:50 steven Exp $
 +#include <fwbuilder/Routing.h>
 +#include <fwbuilder/RuleElement.h>
 +#include <fwbuilder/Interface.h>
-+#include <fwbuilder/InterfacePolicy.h>
 +
 +#include "ActionsDialog.h"
 +#include "FWBSettings.h"

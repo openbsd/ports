@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/12/05 21:50:57 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/04/13 14:12:02 steven Exp $
 @bin bin/fwb_iosacl
 @bin bin/fwb_ipf
 @bin bin/fwb_ipfw
@@ -31,6 +31,7 @@ share/doc/fwbuilder/README.ipfw
 share/doc/fwbuilder/README.ipt
 share/doc/fwbuilder/README.pf
 share/doc/fwbuilder/README.pix
+share/doc/fwbuilder/README.pix_routing
 share/doc/fwbuilder/README.policy_import
 share/doc/fwbuilder/README.routing
 ${SHARE}/

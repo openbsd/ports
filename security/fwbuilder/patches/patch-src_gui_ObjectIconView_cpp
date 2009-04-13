@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_gui_ObjectIconView_cpp,v 1.1 2009/04/13 14:12:02 steven Exp $
+--- src/gui/ObjectIconView.cpp.orig	Tue Apr  7 15:14:52 2009
++++ src/gui/ObjectIconView.cpp	Tue Apr  7 15:15:27 2009
+@@ -119,6 +119,8 @@ bool ObjectIconView::event(QEvent *event)
+ QDrag* ObjectIconView::dragObject()
+ {
+     QListWidgetItem *ivi = currentItem();
++    if (ivi == NULL)
++        return NULL;
+     int obj_id = ivi->data(Qt::UserRole).toInt();
+     FWObject *obj = mw->db()->findInIndex(obj_id);
+     QString icn =
+@@ -189,7 +191,7 @@ void ObjectIconView::mouseMoveEvent ( QMouseEvent * ev
+         startingDrag = false;
+         QDrag *dr = dragObject();
+ 
+-        if (dr)
++        if (dr != NULL)
+             dr->start();
+     }
+     QListWidget::mouseMoveEvent(event);
