@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_GL_glew_h,v 1.1.1.1 2009/04/13 23:24:01 sthen Exp $
+--- include/GL/glew.h.orig	Sun Apr 12 23:12:58 2009
++++ include/GL/glew.h	Sun Apr 12 23:14:00 2009
+@@ -12244,6 +12244,7 @@ GLEWAPI const GLubyte* glewGetString (GLenum name);
+ #undef GLEW_APIENTRY_DEFINED
+ #undef APIENTRY
+ #undef GLAPIENTRY
++#define GLAPIENTRY
+ #endif
+ 
+ #ifdef GLEW_CALLBACK_DEFINED

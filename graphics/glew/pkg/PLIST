@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/13 23:24:01 sthen Exp $
+%%SHARED%%
+@bin bin/glewinfo
+@bin bin/visualinfo
+include/GL/
+include/GL/glew.h
+include/GL/glxew.h
+include/GL/wglew.h
+lib/libGLEW.a
+share/doc/glew/
+share/doc/glew/advanced.html
+share/doc/glew/basic.html
+share/doc/glew/credits.html
+share/doc/glew/glew.css
+share/doc/glew/glew.html
+share/doc/glew/glew.png
+share/doc/glew/glxew.html
+share/doc/glew/index.html
+share/doc/glew/install.html
+share/doc/glew/log.html
+share/doc/glew/new.png
+share/doc/glew/ogl_sm.jpg
+share/doc/glew/wglew.html
