@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/09/22 03:42:57 pvalchev Exp $
-bin/bzadmin
-bin/bzflag
-bin/bzfs
+@comment $OpenBSD: PLIST,v 1.6 2009/04/13 23:29:44 sthen Exp $
+@bin bin/bzadmin
+@bin bin/bzflag
+@bin bin/bzfs
 @man man/man5/bzw.5
 @man man/man6/bzadmin.6
 @man man/man6/bzflag.6
