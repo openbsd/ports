@@ -1,15 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2009/04/13 12:27:39 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
 .include <bsd.own.mk>
 
 COMMENT=	libraries for maple V 5; commercial
-
-# Directory where the maple CDROM was mounted
-.if !defined(MAPLE_CDROM)
-IGNORE="Commercial port, mount the maple share cdrom and build with make MAPLE_CDROM=mount_point"
-.endif
 
 # where the basic distribution unpacks
 MAPLE_DIR?=${PREFIX}/maple
@@ -23,6 +18,7 @@ CATEGORIES=     math
 ONLY_FOR_ARCHS=	i386
 
 
+FETCH_MANUALLY = "Mount the maple cdrom somewhere and make copy MAPLE_CDROM=mnt_point"
 PERMIT_DISTFILES_CDROM=	Commercial
 PERMIT_DISTFILES_FTP=	Commercial
 PERMIT_PACKAGE_FTP=	Commercial
@@ -44,14 +40,9 @@ DISTFILES=unix/share.tar readunix
 # better than NO_EXTRACT, as this builds WRKDIR correctly for us.
 EXTRACT_ONLY=
 
-COPY_MAPLE_DISTFILES?=No
-.if ${COPY_MAPLE_DISTFILES:L} == "no"
-COPY_CMD=ln -sf
-.else
 COPY_CMD=cp -f
-.endif
 
-do-fetch:
+copy:
 	@mkdir -p ${FULLDISTDIR}
 	@cd ${MAPLE_CDROM}; \
 	for file in ${DISTFILES}; do\

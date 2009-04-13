@@ -1,15 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.26 2009/04/13 12:27:38 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
 .include <bsd.own.mk>
 
 COMMENT=	algebraic and symbolic computations; commercial
-
-# Directory where the maple CDROM was mounted
-.if !defined(MAPLE_CDROM)
-IGNORE="Commercial port, mount the maple cdrom and build with make MAPLE_CDROM=mount_point"
-.endif
 
 # where the basic distribution unpacks
 MAPLE_DIR?=${PREFIX}/maple
@@ -26,6 +21,7 @@ RUN_DEPENDS=	:redhat_libc5-*:emulators/redhat/libc5
 ONLY_FOR_ARCHS=	i386
 
 
+FETCH_MANUALLY = "Mount the maple cdrom somewhere and make copy MAPLE_CDROM=mnt_point"
 PERMIT_DISTFILES_CDROM=	Commercial
 PERMIT_DISTFILES_FTP=	Commercial
 PERMIT_PACKAGE_FTP=	Commercial
@@ -41,7 +37,7 @@ pre-fetch:
 
 # we only use the CD-Rom files for markers
 DIST_SUBDIR=maple5.5
-DISTFILES=readme install \
+DISTFILES= readme install \
 install_base/base.tar install_base/bin.tar install_base/license.tar \
 install_bins/bin_ibm_intel_linux.tar
 
@@ -49,12 +45,7 @@ install_bins/bin_ibm_intel_linux.tar
 # better than NO_EXTRACT, as this builds WRKDIR correctly for us.
 EXTRACT_ONLY=
 
-COPY_MAPLE_DISTFILES?=No
-.if ${COPY_MAPLE_DISTFILES:L} == "no"
-COPY_CMD=ln -sf
-.else
 COPY_CMD=cp -f
-.endif
 
 post-extract:
 	ln -sf ${FILESDIR}/resolv_display.c ${WRKSRC}
@@ -62,7 +53,7 @@ post-extract:
 
 ALL_TARGET=resolv_display
 
-do-fetch:
+copy:
 	@mkdir -p ${FULLDISTDIR}
 	@cd ${MAPLE_CDROM}; \
 	for file in ${DISTFILES}; do\
