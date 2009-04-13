@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/11/05 20:37:48 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/04/13 14:11:23 steven Exp $
 %%SHARED%%
 bin/libfwbuilder-config-3
 ${INCLUDE}/
@@ -33,7 +33,6 @@ ${INCLUDE}/fwbuilder/InetAddr.h
 ${INCLUDE}/fwbuilder/InetAddrMask.h
 ${INCLUDE}/fwbuilder/Interface.h
 ${INCLUDE}/fwbuilder/InterfaceData.h
-${INCLUDE}/fwbuilder/InterfacePolicy.h
 ${INCLUDE}/fwbuilder/Interval.h
 ${INCLUDE}/fwbuilder/IntervalGroup.h
 ${INCLUDE}/fwbuilder/Library.h
@@ -44,6 +43,7 @@ ${INCLUDE}/fwbuilder/NAT.h
 ${INCLUDE}/fwbuilder/Network.h
 ${INCLUDE}/fwbuilder/NetworkIPv6.h
 ${INCLUDE}/fwbuilder/ObjectGroup.h
+${INCLUDE}/fwbuilder/ObjectMatcher.h
 ${INCLUDE}/fwbuilder/Policy.h
 ${INCLUDE}/fwbuilder/Pool.h
 ${INCLUDE}/fwbuilder/Resources.h
