@@ -1,11 +1,11 @@
-$OpenBSD: patch-glib_gbase64_c,v 1.1 2009/03/22 19:33:39 jasper Exp $
+$OpenBSD: patch-glib_gbase64_c,v 1.2 2009/04/13 09:03:34 ajacoutot Exp $
 
 Security fix for CVE-2008-4316.
 Fixes multiple integer overflows.
 Patch adapted from upstream svn -r 7973.
 
---- glib/gbase64.c.orig	Sun Mar 22 20:11:01 2009
-+++ glib/gbase64.c	Sun Mar 22 20:12:17 2009
+--- glib/gbase64.c.orig	Fri Jan  9 06:36:18 2009
++++ glib/gbase64.c	Mon Apr 13 10:42:02 2009
 @@ -54,8 +54,9 @@ static const char base64_alphabet[] =
   *
   * The output buffer must be large enough to fit all the data that will
@@ -18,7 +18,7 @@ Patch adapted from upstream svn -r 7973.
   *
   * @break_lines is typically used when putting base64-encoded data in emails.
   * It breaks the lines at 72 columns instead of putting all of the text on 
-@@ -233,8 +234,11 @@ g_base64_encode (const guchar *data, 
+@@ -233,8 +234,13 @@ g_base64_encode (const guchar *data, 
    g_return_val_if_fail (data != NULL, NULL);
    g_return_val_if_fail (len > 0, NULL);
  
@@ -29,10 +29,12 @@ Patch adapted from upstream svn -r 7973.
 +  if (len >= ((G_MAXSIZE - 1) / 4 - 1) * 3)
 +    g_error("%s: input too large for Base64 encoding (%"G_GSIZE_FORMAT" chars)",
 +        G_STRLOC, len);
++  out = g_malloc ((len / 3 + 1) * 4 + 1);
++
    outlen = g_base64_encode_step (data, len, FALSE, out, &state, &save);
    outlen += g_base64_encode_close (FALSE, out + outlen, &state, &save);
    out[outlen] = '\0';
-@@ -275,7 +279,8 @@ static const unsigned char mime_base64_rank[256] = {
+@@ -275,7 +281,8 @@ static const unsigned char mime_base64_rank[256] = {
   *
   * The output buffer must be large enough to fit all the data that will
   * be written to it. Since base64 encodes 3 bytes in 4 chars you need
@@ -42,7 +44,7 @@ Patch adapted from upstream svn -r 7973.
   * 
   * Return value: The number of bytes of output that was written
   *
-@@ -358,7 +363,8 @@ g_base64_decode (const gchar *text,
+@@ -358,7 +365,8 @@ g_base64_decode (const gchar *text,
  		 gsize       *out_len)
  {
    guchar *ret;
@@ -52,7 +54,7 @@ Patch adapted from upstream svn -r 7973.
    guint save = 0;
    
    g_return_val_if_fail (text != NULL, NULL);
-@@ -368,7 +374,9 @@ g_base64_decode (const gchar *text,
+@@ -368,7 +376,9 @@ g_base64_decode (const gchar *text,
  
    g_return_val_if_fail (input_length > 1, NULL);
  
