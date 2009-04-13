@@ -1,0 +1,16 @@
+$OpenBSD: patch-markdown_1_in,v 1.1.1.1 2009/04/13 20:45:05 sthen Exp $
+--- markdown.1.in.orig	Sun Apr 12 18:49:05 2009
++++ markdown.1.in	Sun Apr 12 18:49:41 2009
+@@ -1,10 +1,10 @@
+ .\"     %A%
+ .\"
+ .Dd January 7, 2008
+-.Dt MARKDOWN 1
++.Dt DISCOUNT 1
+ .Os MASTODON
+ .Sh NAME
+-.Nm markdown
++.Nm discount
+ .Nd text to html conversion tool
+ .Sh SYNOPSIS
+ .Nm

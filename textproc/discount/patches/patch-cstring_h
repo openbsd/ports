@@ -1,0 +1,12 @@
+$OpenBSD: patch-cstring_h,v 1.1.1.1 2009/04/13 20:45:05 sthen Exp $
+--- cstring.h.orig	Fri Apr  3 17:57:34 2009
++++ cstring.h	Mon Apr 13 10:39:25 2009
+@@ -16,7 +16,7 @@
+  */
+ #define STRING(type)	struct { type *text; int size, alloc; }
+ 
+-#define CREATE(x)	T(x) = (void*)(S(x) = (x).alloc = 0)
++#define CREATE(x)	T(x) = NULL; (S(x) = (x).alloc = 0)
+ #define EXPAND(x)	(S(x)++)[(S(x) < (x).alloc) \
+ 			    ? (T(x)) \
+ 			    : (T(x) = T(x) ? realloc(T(x), sizeof T(x)[0] * ((x).alloc += 100)) \

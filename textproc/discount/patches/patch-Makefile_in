@@ -1,0 +1,32 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2009/04/13 20:45:05 sthen Exp $
+--- Makefile.in.orig	Sun Apr 12 18:45:50 2009
++++ Makefile.in	Sun Apr 12 18:48:28 2009
+@@ -7,7 +7,7 @@ MANDIR=@mandir@
+ LIBDIR=@libdir@
+ INCDIR=@prefix@/include
+ 
+-PGMS=markdown
++PGMS=discount
+ SAMPLE_PGMS=mkd2html makepage
+ @THEME@SAMPLE_PGMS+= theme
+ MKDLIB=libmarkdown.a
+@@ -40,15 +40,16 @@ install.man:
+ 	@INSTALL_DIR@ $(DESTDIR)/$(MANDIR)/man7
+ 	@INSTALL_DATA@ markdown.7 mkd-extensions.7 $(DESTDIR)/$(MANDIR)/man7
+ 	@INSTALL_DIR@ $(DESTDIR)/$(MANDIR)/man1
+-	@INSTALL_DATA@ markdown.1 $(DESTDIR)/$(MANDIR)/man1
++	@mv markdown.1 discount.1
++	@INSTALL_DATA@ discount.1 $(DESTDIR)/$(MANDIR)/man1
+ 
+ install.everything: install install.man
+ 
+ version.o: version.c VERSION
+ 	$(CC) -DVERSION=\"`cat VERSION`\" -c version.c
+ 
+-markdown: main.o $(MKDLIB)
+-	$(CC) -o markdown main.o -lmarkdown @LIBS@
++discount: main.o $(MKDLIB)
++	$(CC) -o discount main.o -lmarkdown @LIBS@
+ 
+ # example programs
+ @THEME@theme:  theme.o $(MKDLIB)

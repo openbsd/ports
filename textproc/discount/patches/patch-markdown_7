@@ -1,0 +1,12 @@
+$OpenBSD: patch-markdown_7,v 1.1.1.1 2009/04/13 20:45:05 sthen Exp $
+--- markdown.7.orig	Sun Apr 12 18:57:14 2009
++++ markdown.7	Sun Apr 12 18:57:35 2009
+@@ -999,7 +999,7 @@ assumes that tabs are set to 4 spaces.
+ John Gruber
+ .%T http://daringfireball.net/
+ .Sh SEE ALSO
+-.Xr markdown 1 ,
++.Xr discount 1 ,
+ .Xr markdown 3 ,
+ .Xr mkd-functions 3 ,
+ .Xr mkd-extensions 7 .

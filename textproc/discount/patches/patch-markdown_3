@@ -1,0 +1,12 @@
+$OpenBSD: patch-markdown_3,v 1.1.1.1 2009/04/13 20:45:05 sthen Exp $
+--- markdown.3.orig	Sun Apr 12 18:57:11 2009
++++ markdown.3	Sun Apr 12 18:57:23 2009
+@@ -107,7 +107,7 @@ and
+ .Fn mkd_string
+ functions return a MMIOT* on success, null on failure.
+ .Sh SEE ALSO
+-.Xr markdown 1 ,
++.Xr discount 1 ,
+ .Xr mkd-functions 3 ,
+ .Xr markdown 7 ,
+ .Xr mkd-extensions 7 ,

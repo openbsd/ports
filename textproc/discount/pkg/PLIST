@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/13 20:45:05 sthen Exp $
+@bin bin/discount
+@bin bin/makepage
+@bin bin/mkd2html
+@bin bin/theme
+include/mkdio.h
+lib/libmarkdown.a
+@man man/man1/discount.1
+@man man/man1/theme.1
+@man man/man3/markdown.3
+@man man/man3/mkd-functions.3
+@man man/man3/mkd_cleanup.3
+@man man/man3/mkd_compile.3
+@man man/man3/mkd_doc_author.3
+@man man/man3/mkd_doc_date.3
+@man man/man3/mkd_doc_title.3
+@man man/man3/mkd_generatehtml.3
+@man man/man3/mkd_in.3
+@man man/man3/mkd_string.3
+@man man/man3/mkd_style.3
+@man man/man3/mkd_text.3
+@man man/man7/markdown.7
+@man man/man7/mkd-extensions.7
