@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2009/04/14 13:20:51 ajacoutot Exp $
 
 COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 
 SHARED_LIBS +=  gdict-1.0      6.0      # .6.3
 
@@ -28,8 +28,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 LIB_DEPENDS=		gtop-2.0.>=7::devel/libgtop2 \
 			gnomeui-2.>=1800::x11/gnome/libgnomeui \
 			panel-applet-2::x11/gnome/panel
-RUN_DEPENDS=		:fam-*:sysutils/fam \
-			::x11/gnome/gvfs
+RUN_DEPENDS=		::x11/gnome/gvfs
 
 MODULES=		devel/gettext \
 			x11/gnome
