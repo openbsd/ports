@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/04/11 14:37:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/04/14 19:52:08 kili Exp $
 
 COMMENT-main =		multimedia framework - plugins bad
 COMMENT-tremor =	multimedia framework - tremor plugin
@@ -35,7 +35,7 @@ PKGNAME-swf =		gstreamer-flash-$Vp2
 PKGNAME-meta =		gstreamer-meta-$Vp3
 PKGNAME-sndfile =	gstreamer-sndfile-$Vp3
 PKGNAME-real =		gstreamer-real-$Vp3
-PKGNAME-x264 =		gstreamer-x264-$Vp1
+PKGNAME-x264 =		gstreamer-x264-$Vp2
 PKGNAME-mplex =		gstreamer-mplex-$Vp1
 
 MULTI_PACKAGES =	-main -tremor -musepack -faac -faad -xvid -sdl -bz2 \

@@ -1,0 +1,15 @@
+$OpenBSD: patch-ext_x264_gstx264enc_c,v 1.1 2009/04/14 19:52:08 kili Exp $
+--- ext/x264/gstx264enc.c.orig	Sun Jan  4 01:07:03 2009
++++ ext/x264/gstx264enc.c	Sun Jan  4 01:08:50 2009
+@@ -594,7 +594,11 @@ gst_x264_enc_init_encoder (GstX264Enc * encoder)
+   encoder->x264param.i_frame_reference = encoder->ref;
+   encoder->x264param.i_bframe = encoder->bframes;
+   encoder->x264param.b_bframe_pyramid = encoder->b_pyramid;
++#if X264_BUILD < 63
+   encoder->x264param.b_bframe_adaptive = 0;
++#else
++  encoder->x264param.i_bframe_adaptive = 0;
++#endif
+   encoder->x264param.b_deblocking_filter = 1;
+   encoder->x264param.i_deblocking_filter_alphac0 = 0;
+   encoder->x264param.i_deblocking_filter_beta = 0;

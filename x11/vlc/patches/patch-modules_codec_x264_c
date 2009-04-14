@@ -1,0 +1,118 @@
+$OpenBSD: patch-modules_codec_x264_c,v 1.1 2009/04/14 19:52:08 kili Exp $
+--- modules/codec/x264.c.orig	Tue Jul  8 16:59:23 2008
++++ modules/codec/x264.c	Sun Mar  8 23:36:34 2009
+@@ -29,6 +29,7 @@
+ #include <vlc/sout.h>
+ #include <vlc/decoder.h>
+ 
++#include <inttypes.h>
+ #include <x264.h>
+ 
+ #define SOUT_CFG_PREFIX "sout-x264-"
+@@ -72,8 +73,14 @@ static void Close( vlc_object_t * );
+     "P-frames. Range 1 to 16." )
+ 
+ #define B_ADAPT_TEXT N_("Adaptive B-frame decision")
++#if X264_BUILD >= 63
+ #define B_ADAPT_LONGTEXT N_( "Force the specified number of " \
++    "consecutive B-frames to be used, except possibly before an I-frame." \
++    "Range 0 to 2." )
++#else
++#define B_ADAPT_LONGTEXT N_( "Force the specified number of " \
+     "consecutive B-frames to be used, except possibly before an I-frame." )
++#endif
+ 
+ #define B_BIAS_TEXT N_("Influence (bias) B-frames usage")
+ #define B_BIAS_LONGTEXT N_( "Bias the choice to use B-frames. Positive values " \
+@@ -214,7 +221,12 @@ static void Close( vlc_object_t * );
+ 
+ #define SUBME_TEXT N_("Subpixel motion estimation and partition decision " \
+     "quality")
+-#if X264_BUILD >= 46 /* r477 */
++#if X264_BUILD >= 65 
++#define SUBME_MAX 9
++#define SUBME_LONGTEXT N_( "This parameter controls quality versus speed " \
++    "tradeoffs involved in the motion estimation decision process " \
++    "(lower = quicker and higher = better quality). Range 1 to 9." )
++#elif X264_BUILD >= 46 /* r477 */
+ #define SUBME_MAX 7
+ #define SUBME_LONGTEXT N_( "This parameter controls quality versus speed " \
+     "tradeoffs involved in the motion estimation decision process " \
+@@ -356,10 +368,16 @@ vlc_module_begin();
+                  BFRAMES_LONGTEXT, VLC_FALSE );
+         change_integer_range( 0, 16 );
+ 
+-#if X264_BUILD >= 0x0013 /* r137 */
++#if X264_BUILD >= 63
++    add_integer( SOUT_CFG_PREFIX "b-adapt", 1, NULL, B_ADAPT_TEXT,
++                 B_ADAPT_LONGTEXT, VLC_FALSE );
++        change_integer_range( 0, 2 );
++#elif  X264_BUILD >= 0x0013 /* r137 */
+     add_bool( SOUT_CFG_PREFIX "b-adapt", 1, NULL, B_ADAPT_TEXT,
+               B_ADAPT_LONGTEXT, VLC_FALSE );
++#endif
+ 
++#if  X264_BUILD >= 0x0013 /* r137 */
+     add_integer( SOUT_CFG_PREFIX "b-bias", 0, NULL, B_BIAS_TEXT,
+                  B_BIAS_LONGTEXT, VLC_FALSE );
+         change_integer_range( -100, 100 );
+@@ -494,7 +512,7 @@ vlc_module_begin();
+         change_integer_range( 1, SUBME_MAX );
+     	add_deprecated( SOUT_CFG_PREFIX "subpel", VLC_FALSE ); /* Deprecated since 0.8.5 */
+ 
+-#if X264_BUILD >= 41 /* r368 */
++#if X264_BUILD >= 41 && X264_BUILD < 65 /* r368 */
+     add_bool( SOUT_CFG_PREFIX "b-rdo", 0, NULL, B_RDO_TEXT,
+               B_RDO_LONGTEXT, VLC_FALSE );
+ #endif
+@@ -509,7 +527,7 @@ vlc_module_begin();
+               CHROMA_ME_LONGTEXT, VLC_FALSE );
+ #endif
+ 
+-#if X264_BUILD >= 43 /* r390 */
++#if X264_BUILD >= 43 && X264_BUILD < 65 /* r390 */
+     add_bool( SOUT_CFG_PREFIX "bime", 0, NULL, BIME_TEXT,
+               BIME_LONGTEXT, VLC_FALSE );
+ #endif
+@@ -890,7 +908,11 @@ static int  Open ( vlc_object_t *p_this )
+ 
+ #if X264_BUILD >= 0x0013
+     var_Get( p_enc, SOUT_CFG_PREFIX "b-adapt", &val );
++#if X264_BUILD >= 63
++    p_sys->param.i_bframe_adaptive = val.i_int;
++#else
+     p_sys->param.b_bframe_adaptive = val.b_bool;
++#endif
+ 
+     var_Get( p_enc, SOUT_CFG_PREFIX "b-bias", &val );
+     if( val.i_int >= -100 && val.i_int <= 100 )
+@@ -930,7 +952,7 @@ static int  Open ( vlc_object_t *p_this )
+         p_sys->param.analyse.i_trellis = val.i_int;
+ #endif
+ 
+-#if X264_BUILD >= 41
++#if X264_BUILD >= 41 && X264_BUILD < 65
+     var_Get( p_enc, SOUT_CFG_PREFIX "b-rdo", &val );
+     p_sys->param.analyse.b_bframe_rdo = val.b_bool;
+ #endif
+@@ -940,7 +962,7 @@ static int  Open ( vlc_object_t *p_this )
+     p_sys->param.analyse.b_fast_pskip = val.b_bool;
+ #endif
+ 
+-#if X264_BUILD >= 43
++#if X264_BUILD >= 43 && X264_BUILD < 65
+     var_Get( p_enc, SOUT_CFG_PREFIX "bime", &val );
+     p_sys->param.analyse.b_bidir_me = val.b_bool;
+ #endif
+@@ -965,9 +987,11 @@ static int  Open ( vlc_object_t *p_this )
+     if( val.i_int >= 0 && val.i_int <= 32 )
+         p_sys->param.analyse.i_luma_deadzone[1] = val.i_int;   
+ 
++#if X264_BUILD <= 65
+     var_Get( p_enc, SOUT_CFG_PREFIX "direct-8x8", &val );
+     if( val.i_int >= -1 && val.i_int <= 1 )
+         p_sys->param.analyse.i_direct_8x8_inference = val.i_int; 
++#endif
+ #endif
+ 
+     var_Get( p_enc, SOUT_CFG_PREFIX "asm", &val );

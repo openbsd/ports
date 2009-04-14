@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2009/01/29 11:30:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2009/04/14 19:52:08 kili Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 V=			20080620
 DISTNAME=		ffmpeg-svn-${V}
-PKGNAME=		ffmpeg-${V}p7
+PKGNAME=		ffmpeg-${V}p8
 SHARED_LIBS=		avutil		6.0 \
 			avcodec		13.0 \
 			avformat	12.0 \
@@ -32,7 +32,7 @@ LIB_DEPENDS=		SDL.>=4::devel/sdl \
 			mp3lame.>=0.1::audio/lame \
 			vorbis.>=4.0,vorbisenc.>=2.0::audio/libvorbis \
 			a52::audio/liba52 \
-			x264.>=1::multimedia/x264 \
+			x264.>=3::multimedia/x264 \
 			theora::multimedia/libtheora \
 			Imlib2::graphics/imlib2 \
 			bz2.>=10::archivers/bzip2
