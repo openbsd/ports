@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-battstat,v 1.20 2009/03/14 10:40:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST-battstat,v 1.21 2009/04/14 21:07:44 merdely Exp $
 lib/bonobo/servers/GNOME_BattstatApplet.server
 @bin libexec/battstat-applet-2
 share/examples/gnome-applets2/
@@ -10,6 +10,7 @@ share/examples/gnome-applets2/sound/events/
 share/examples/gnome-applets2/sound/events/battstat_applet.soundlist
 @sample ${SYSCONFDIR}/gnome/sound/events/battstat_applet.soundlist
 share/gnome-2.0/ui/GNOME_BattstatApplet.xml
+share/gnome-applets/builder/battstat_applet.ui
 share/gnome/help/battstat/
 share/gnome/help/battstat/C/
 share/gnome/help/battstat/C/battstat.xml

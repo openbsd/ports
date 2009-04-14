@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2009/03/14 10:40:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2009/04/14 21:07:44 merdely Exp $
 @conflict libgweather-<2.24.1
 @pkgpath x11/gnome/applets2
 @pkgpath x11/gnome/applets2,no_battstat
@@ -67,7 +67,6 @@ share/gnome-2.0/ui/GNOME_StickyNotesApplet.xml
 share/gnome-2.0/ui/Invest_Applet.xml
 share/gnome-applets/
 share/gnome-applets/builder/
-share/gnome-applets/builder/battstat_applet.ui
 share/gnome-applets/builder/financialchart.ui
 share/gnome-applets/builder/gswitchit.ui
 share/gnome-applets/builder/prefs-dialog.ui
