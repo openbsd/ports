@@ -1,67 +1,16 @@
-$OpenBSD: patch-common_cpu_c,v 1.3 2008/08/28 15:23:31 brad Exp $
---- common/cpu.c.orig	Sun Jul 13 16:45:06 2008
-+++ common/cpu.c	Thu Aug 14 20:58:30 2008
-@@ -32,6 +32,10 @@
- #include <sys/types.h>
- #include <sys/sysctl.h>
- #endif
-+#ifdef SYS_OPENBSD
-+#include <sys/param.h>
-+#include <sys/sysctl.h>
-+#endif
- 
- #include "common.h"
- #include "cpu.h"
-@@ -182,17 +186,28 @@ uint32_t x264_cpu_detect( void )
- 
- #elif defined( ARCH_PPC )
- 
--#ifdef SYS_MACOSX
-+#if defined(SYS_MACOSX) || defined(SYS_OPENBSD)
- #include <sys/sysctl.h>
-+#ifdef SYS_OPENBSD
-+#include <machine/cpu.h>
-+#endif
- uint32_t x264_cpu_detect( void )
- {
-     /* Thank you VLC */
-     uint32_t cpu = 0;
--    int      selectors[2] = { CTL_HW, HW_VECTORUNIT };
--    int      has_altivec = 0;
-+    int      selectors[2];
-+    int      has_altivec = 0, error;
+$OpenBSD: patch-common_cpu_c,v 1.4 2009/04/14 19:50:47 kili Exp $
+--- common/cpu.c.orig	Wed Feb  4 16:45:09 2009
++++ common/cpu.c	Sun Apr  5 16:55:33 2009
+@@ -214,10 +214,12 @@ uint32_t x264_cpu_detect( void )
      size_t   length = sizeof( has_altivec );
--    int      error = sysctl( selectors, 2, &has_altivec, &length, NULL, 0 );
+     int      error = sysctl( selectors, 2, &has_altivec, &length, NULL, 0 );
  
-+#ifdef SYS_OPENBSD
-+    selectors[0] = CTL_MACHDEP;
-+    selectors[1] = CPU_ALTIVEC;
-+#else
-+    selectors[0] = CTL_HW;
-+    selectors[1] = HW_VECTORUNIT;
-+#endif
-+
-+    error = sysctl( selectors, 2, &has_altivec, &length, NULL, 0 );
++#if 0
      if( error == 0 && has_altivec != 0 )
      {
          cpu |= X264_CPU_ALTIVEC;
-@@ -286,6 +301,19 @@ int x264_cpu_num_processors( void )
-     int numberOfCPUs;
-     size_t length = sizeof( numberOfCPUs );
-     if( sysctlbyname("hw.ncpu", &numberOfCPUs, &length, NULL, 0) )
-+    {
-+        numberOfCPUs = 1;
-+    }
-+    return numberOfCPUs;
-+
-+#elif defined(SYS_OPENBSD)
-+    int mib[2], numberOfCPUs;
-+    size_t length = sizeof( numberOfCPUs );
-+
-+    mib[0] = CTL_HW;
-+    mib[1] = HW_NCPU;
-+
-+    if( sysctl(mib, 2, &numberOfCPUs, &length, NULL, 0) )
-     {
-         numberOfCPUs = 1;
      }
++#endif
+ 
+     return cpu;
+ }

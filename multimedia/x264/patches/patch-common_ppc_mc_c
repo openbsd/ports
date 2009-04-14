@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_ppc_mc_c,v 1.1.1.1 2007/04/08 17:31:01 ajacoutot Exp $
---- common/ppc/mc.c.orig	Mon Mar 19 22:45:02 2007
-+++ common/ppc/mc.c	Tue Mar 20 18:20:12 2007
-@@ -24,10 +24,10 @@
+$OpenBSD: patch-common_ppc_mc_c,v 1.2 2009/04/14 19:50:47 kili Exp $
+--- common/ppc/mc.c.orig	Tue Jan  6 16:45:09 2009
++++ common/ppc/mc.c	Tue Jan  6 13:10:49 2009
+@@ -24,7 +24,7 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <string.h>
@@ -9,8 +9,4 @@ $OpenBSD: patch-common_ppc_mc_c,v 1.1.1.1 2007/04/08 17:31:01 ajacoutot Exp $
 +#include <inttypes.h>
  #include <stdarg.h>
  
--#ifdef SYS_LINUX
-+#if defined SYS_LINUX || defined SYS_OPENBSD
- #include <altivec.h>
- #endif
- 
+ #include "x264.h"

@@ -1,43 +1,46 @@
-$OpenBSD: patch-configure,v 1.4 2008/07/22 20:24:04 brad Exp $
---- configure.orig	Fri Jul  4 16:45:05 2008
-+++ configure	Sat Jul 12 02:16:14 2008
-@@ -254,7 +254,7 @@ case $host_cpu in
-     fi
-     as_check || AS="nasm"
-     ;;
--  x86_64)
-+  x86_64 | amd64)
-     ARCH="X86_64"
-     AS="yasm"
-     if [ "$SYS" = MACOSX ];then
-@@ -353,6 +353,9 @@ if test "$pthread" = "auto" ; then
-                 CFLAGS="$CFLAGS -DPTW32_STATIC_LIB"
-             fi
-             ;;
-+        OPENBSD)
-+            cc_check pthread.h -pthread && pthread="yes" && libpthread="-pthread"
-+            ;;
-         *)
-             cc_check pthread.h -lpthread && pthread="yes" && libpthread="-lpthread"
-             ;;
-@@ -389,21 +392,21 @@ if [ "$avis_input" = "yes" ] ; then
+$OpenBSD: patch-configure,v 1.5 2009/04/14 19:50:47 kili Exp $
+--- configure.orig	Wed Feb  4 16:45:09 2009
++++ configure	Thu Mar  5 10:44:49 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ if test x"$1" = x"-h" -o x"$1" = x"--help" ; then
+ 
+@@ -70,6 +70,18 @@ ASFLAGS=""
+ 
+ EXE=""
+ 
++# check whether 'echo -n' works as expected, otherwise try printf
++if [ "x`echo -n houba`" = xhouba ]
++then
++  ECHON="echo -n"
++elif [ "x`printf houba`" = xhouba ]
++then
++  ECHON="printf"
++else
++  echo "Neither 'echo -n' nor 'printf' are working with your shell!"
++  exit 1
++fi
++
+ # parse options
+ 
+ for opt do
+@@ -371,21 +383,15 @@ if [ "$avis_input" = "yes" ] ; then
  fi
  
  if [ "$pic" = "yes" ] ; then
 -    CFLAGS="$CFLAGS -fPIC"
-+    CFLAGS="$CFLAGS"
-     ASFLAGS="$ASFLAGS -D__PIC__"
+     ASFLAGS="$ASFLAGS -DPIC"
      # resolve textrels in the x86 asm
      cc_check stdio.h -Wl,-Bsymbolic && LDFLAGS="$LDFLAGS -Wl,-Bsymbolic"
  fi
  
- if [ "$debug" != "yes" -a "$gprof" != "yes" ]; then
+-if [ "$debug" != "yes" -a "$gprof" != "yes" ]; then
 -    CFLAGS="$CFLAGS -s -fomit-frame-pointer"
 -    LDFLAGS="$LDFLAGS -s"
-+    CFLAGS="$CFLAGS"
-+    LDFLAGS="$LDFLAGS"
- fi
- 
+-fi
+-
  if [ "$debug" = "yes" ]; then
      CFLAGS="-O1 -g $CFLAGS"
  else
@@ -46,23 +49,32 @@ $OpenBSD: patch-configure,v 1.4 2008/07/22 20:24:04 brad Exp $
  fi
  
  if cc_check "stdio.h" "" "fseeko(stdin,0,0);" ; then
-@@ -449,7 +452,6 @@ echo '' >> config.mak
- cp config.mak gtk/config.mak
+@@ -418,10 +424,16 @@ EXE=$EXE
+ VIS=$vis
+ HAVE_GETOPT_LONG=$HAVE_GETOPT_LONG
+ DEVNULL=$DEVNULL
++ECHON=$ECHON
+ EOF
  
++$ECHON 'CONFIGURE_ARGS=' >> config.mak
++for A in "$@" ; do
++    $ECHON " '$A'" >> config.mak
++done
++echo '' >> config.mak
++
  if [ "$shared" = "yes" ]; then
 -    API=$(grep '#define X264_BUILD' < x264.h | cut -f 3 -d ' ')
      if [ "$SYS" = "MINGW" ]; then
          echo "SONAME=libx264-$API.dll" >> config.mak
          echo 'IMPLIBNAME=libx264.dll.a' >> config.mak
-@@ -459,7 +461,6 @@ if [ "$shared" = "yes" ]; then
-         echo 'SOFLAGS=-dynamiclib -Wl,-single_module -Wl,-read_only_relocs,suppress' >> config.mak        
+@@ -437,14 +449,13 @@ if [ "$shared" = "yes" ]; then
      else
+         echo "SOSUFFIX=so" >> config.mak
          echo "SONAME=libx264.so.$API" >> config.mak
 -        echo 'SOFLAGS=-Wl,-soname,$(SONAME)' >> config.mak
      fi
      echo 'default: $(SONAME)' >> config.mak
-     if [ "$gtk" = "yes" ]; then
-@@ -474,7 +475,7 @@ fi
+ fi
  
  ./version.sh
  

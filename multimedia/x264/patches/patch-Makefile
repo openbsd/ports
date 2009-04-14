@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.3 2008/07/22 20:24:04 brad Exp $
---- Makefile.orig	Fri Jul  4 16:45:05 2008
-+++ Makefile	Wed Jul  9 00:15:36 2008
-@@ -52,6 +52,9 @@ ALTIVECSRC += common/ppc/mc.c common/ppc/pixel.c commo
+$OpenBSD: patch-Makefile,v 1.4 2009/04/14 19:50:47 kili Exp $
+--- Makefile.orig	Wed Feb  4 16:45:09 2009
++++ Makefile	Thu Mar  5 10:44:49 2009
+@@ -53,6 +53,9 @@ ALTIVECSRC += common/ppc/mc.c common/ppc/pixel.c commo
                common/ppc/predict.c
  SRCS += $(ALTIVECSRC)
  $(ALTIVECSRC:%.c=%.o): CFLAGS += $(ALTIVECFLAGS)
@@ -11,7 +11,7 @@ $OpenBSD: patch-Makefile,v 1.3 2008/07/22 20:24:04 brad Exp $
  endif
  
  # VIS optims
-@@ -65,6 +68,7 @@ SRCS += extras/getopt.c
+@@ -66,6 +69,7 @@ SRCS += extras/getopt.c
  endif
  
  OBJS = $(SRCS:%.c=%.o)
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile,v 1.3 2008/07/22 20:24:04 brad Exp $
  OBJCLI = $(SRCCLI:%.c=%.o)
  DEP  = depend
  
-@@ -76,8 +80,8 @@ libx264.a: .depend $(OBJS) $(OBJASM)
+@@ -77,8 +81,8 @@ libx264.a: .depend $(OBJS) $(OBJASM)
  	ar rc libx264.a $(OBJS) $(OBJASM)
  	ranlib libx264.a
  
@@ -30,7 +30,7 @@ $OpenBSD: patch-Makefile,v 1.3 2008/07/22 20:24:04 brad Exp $
  
  x264$(EXE): $(OBJCLI) libx264.a 
  	$(CC) -o $@ $+ $(LDFLAGS)
-@@ -93,6 +97,9 @@ checkasm: tools/checkasm.o libx264.a
+@@ -91,9 +95,12 @@ checkasm: tools/checkasm.o libx264.a
  # delete local/anonymous symbols, so they don't show up in oprofile
  	-@ strip -x $@
  
@@ -39,12 +39,16 @@ $OpenBSD: patch-Makefile,v 1.3 2008/07/22 20:24:04 brad Exp $
 +
  .depend: config.mak
  	rm -f .depend
- # Hacky - because gcc 2.9x doesn't have -MT
-@@ -160,7 +167,6 @@ install: x264$(EXE) $(SONAME)
+-	$(foreach SRC, $(SRCS) $(SRCCLI), $(CC) $(CFLAGS) $(ALTIVECFLAGS) $(SRC) -MT $(SRC:%.c=%.o) -MM -g0 1>> .depend;)
++	$(foreach SRC, $(SRCS) $(SRCCLI), ( $(ECHON) "`dirname $(SRC)`/" && $(CC) $(CFLAGS) $(ALTIVECFLAGS) $(SRC) -MM -g0 ) 1>> .depend;)
+ 
+ config.mak:
+ 	./configure
+@@ -154,7 +161,6 @@ install: x264$(EXE) $(SONAME)
  ifeq ($(SYS),MINGW)
  	$(if $(SONAME), install -m 755 $(SONAME) $(DESTDIR)$(bindir))
  else
--	$(if $(SONAME), ln -sf $(SONAME) $(DESTDIR)$(libdir)/libx264.so)
+-	$(if $(SONAME), ln -sf $(SONAME) $(DESTDIR)$(libdir)/libx264.$(SOSUFFIX))
  	$(if $(SONAME), install -m 755 $(SONAME) $(DESTDIR)$(libdir))
  endif
  	$(if $(IMPLIBNAME), install -m 644 $(IMPLIBNAME) $(DESTDIR)$(libdir))
