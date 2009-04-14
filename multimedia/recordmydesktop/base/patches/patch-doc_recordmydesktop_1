@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_recordmydesktop_1,v 1.1 2009/04/14 18:43:39 jasper Exp $
+
+Fix path to audio device.
+
+--- doc/recordmydesktop.1.orig	Tue Apr 14 19:54:56 2009
++++ doc/recordmydesktop.1	Tue Apr 14 19:55:03 2009
+@@ -307,7 +307,7 @@ Sound Options:
+ .TP
+ .B
+     \-\-device SOUND_DEVICE
+-    Sound device(default hw:0,0 or /dev/dsp, depending on whether ALSA or OSS is used).
++    Sound device(default hw:0,0 or /dev/audio, depending on whether ALSA or OSS is used).
+ .br
+ .TP
+ .B

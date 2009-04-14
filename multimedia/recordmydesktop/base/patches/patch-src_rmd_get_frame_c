@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_rmd_get_frame_c,v 1.1 2009/04/14 18:43:39 jasper Exp $
+
+Include missing header to prevent 64-bit issues.
+
+--- src/rmd_get_frame.c.orig	Tue Apr 14 20:02:56 2009
++++ src/rmd_get_frame.c	Tue Apr 14 20:03:08 2009
+@@ -40,6 +40,7 @@
+ #include <X11/extensions/XShm.h>
+ 
+ #include <limits.h>
++#include <stdlib.h>
+ #include <pthread.h>
+ #include <sys/shm.h>
+ #include <errno.h>

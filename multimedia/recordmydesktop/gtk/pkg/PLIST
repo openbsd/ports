@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/04 21:15:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/04/14 18:43:39 jasper Exp $
 bin/gtk-recordMyDesktop
 lib/python${MODPY_VERSION}/site-packages/recordMyDesktop/
 lib/python${MODPY_VERSION}/site-packages/recordMyDesktop/__init__.py
@@ -34,7 +34,6 @@ lib/python${MODPY_VERSION}/site-packages/recordMyDesktop/rmdTrayIcon.pyo
 lib/python${MODPY_VERSION}/site-packages/recordMyDesktop/rmdTrayPopup.py
 lib/python${MODPY_VERSION}/site-packages/recordMyDesktop/rmdTrayPopup.pyc
 lib/python${MODPY_VERSION}/site-packages/recordMyDesktop/rmdTrayPopup.pyo
-share/applications/
 share/applications/gtk-recordmydesktop.desktop
 share/locale/ar/LC_MESSAGES/gtk-recordMyDesktop.mo
 share/locale/ca/LC_MESSAGES/gtk-recordMyDesktop.mo
@@ -44,6 +43,7 @@ share/locale/es/LC_MESSAGES/gtk-recordMyDesktop.mo
 share/locale/fr/LC_MESSAGES/gtk-recordMyDesktop.mo
 share/locale/it/LC_MESSAGES/gtk-recordMyDesktop.mo
 share/locale/ja/LC_MESSAGES/gtk-recordMyDesktop.mo
+share/locale/nl/LC_MESSAGES/gtk-recordMyDesktop.mo
 share/locale/pl/LC_MESSAGES/gtk-recordMyDesktop.mo
 share/locale/pt/LC_MESSAGES/gtk-recordMyDesktop.mo
 share/locale/pt_BR/LC_MESSAGES/gtk-recordMyDesktop.mo

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_rmd_c,v 1.1 2009/04/14 18:43:39 jasper Exp $
+
+Include missing header to prevent 64-bit issues.
+
+--- src/rmd.c.orig	Tue Apr 14 20:02:01 2009
++++ src/rmd.c	Tue Apr 14 20:02:12 2009
+@@ -43,6 +43,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <errno.h>
+ 
+ int main(int argc,char **argv){

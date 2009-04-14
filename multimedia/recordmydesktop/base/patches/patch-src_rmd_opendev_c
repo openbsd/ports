@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_rmd_opendev_c,v 1.1 2009/04/14 18:43:39 jasper Exp $
+
+Fix path to the header file.
+
+--- src/rmd_opendev.c.orig	Tue Apr 14 20:00:57 2009
++++ src/rmd_opendev.c	Tue Apr 14 20:01:04 2009
+@@ -31,7 +31,7 @@
+     #include <alsa/asoundlib.h>
+ #else
+     #include <sys/ioctl.h>
+-    #include <sys/soundcard.h>
++    #include <soundcard.h>
+ #endif
+ 
+ #include <stdlib.h>

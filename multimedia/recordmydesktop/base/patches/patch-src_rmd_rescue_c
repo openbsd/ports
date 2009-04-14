@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_rmd_rescue_c,v 1.1 2009/04/14 18:43:39 jasper Exp $
+
+Include missing header to prevent 64-bit issues.
+
+--- src/rmd_rescue.c.orig	Tue Apr 14 20:04:08 2009
++++ src/rmd_rescue.c	Tue Apr 14 20:04:18 2009
+@@ -37,7 +37,7 @@
+ #include <pthread.h>
+ 
+ #include <string.h>
+-
++#include <stdlib.h>
+ 
+ int rmdRescue(const char *path){
+     

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/12 11:58:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/14 18:43:39 jasper Exp $
 
 COMMENT=		record desktop sessions to an Ogg-Theora-Vorbis file
 
-DISTNAME=		recordmydesktop-0.3.7.3
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		recordmydesktop-0.3.8.1
 
 WANTLIB=		ICE SM X11 Xdamage Xext Xfixes c m ogg ossaudio pthread z
 

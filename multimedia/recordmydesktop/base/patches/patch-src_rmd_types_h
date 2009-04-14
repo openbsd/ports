@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_rmd_types_h,v 1.1 2009/04/14 18:43:39 jasper Exp $
+
+Fix paths to include file and audio device.
+
+--- src/rmd_types.h.orig	Sat Dec 13 15:16:57 2008
++++ src/rmd_types.h	Tue Apr 14 20:00:33 2009
+@@ -42,9 +42,9 @@
+     #define DEFAULT_AUDIO_DEVICE "hw:0,0"
+ #else
+     #include <sys/ioctl.h>
+-    #include <sys/soundcard.h>
++    #include <soundcard.h>
+ 
+-    #define DEFAULT_AUDIO_DEVICE "/dev/dsp"
++    #define DEFAULT_AUDIO_DEVICE "/dev/audio"
+ #endif
+ 
+ #ifdef HAVE_LIBJACK

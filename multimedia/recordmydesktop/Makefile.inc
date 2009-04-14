@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.2 2008/07/04 21:42:06 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2009/04/14 18:43:39 jasper Exp $
 
 CATEGORIES=             multimedia x11
 
-HOMEPAGE=               http://recordmydesktop.iovar.org/
+HOMEPAGE=               http://recordmydesktop.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes

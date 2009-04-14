@@ -1,16 +1,19 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/07/04 21:15:24 jasper Exp $
---- configure.orig	Mon Jun  9 12:26:56 2008
-+++ configure	Mon Jun  9 12:27:27 2008
-@@ -8087,13 +8087,13 @@ echo "$as_me: error: Can't find libtheora" >&2;}
+$OpenBSD: patch-configure,v 1.2 2009/04/14 18:43:39 jasper Exp $
+
+Don't link with -lpthread, but with -pthread.
+
+--- configure.orig	Tue Apr 14 19:51:35 2009
++++ configure	Tue Apr 14 19:51:51 2009
+@@ -8574,13 +8574,13 @@ $as_echo "$as_me: error: Can't find libtheora" >&2;}
  fi
  
  
--{ echo "$as_me:$LINENO: checking for pthread_mutex_lock in -lpthread" >&5
--echo $ECHO_N "checking for pthread_mutex_lock in -lpthread... $ECHO_C" >&6; }
-+{ echo "$as_me:$LINENO: checking for pthread_mutex_lock in -pthread" >&5
-+echo $ECHO_N "checking for pthread_mutex_lock in -pthread... $ECHO_C" >&6; }
+-{ $as_echo "$as_me:$LINENO: checking for pthread_mutex_lock in -lpthread" >&5
+-$as_echo_n "checking for pthread_mutex_lock in -lpthread... " >&6; }
++{ $as_echo "$as_me:$LINENO: checking for pthread_mutex_lock in -pthread" >&5
++$as_echo_n "checking for pthread_mutex_lock in -pthread... " >&6; }
  if test "${ac_cv_lib_pthread_pthread_mutex_lock+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
@@ -18,7 +21,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2008/07/04 21:15:24 jasper Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -8153,7 +8153,7 @@ if test $ac_cv_lib_pthread_pthread_mutex_lock = yes; t
+@@ -8644,7 +8644,7 @@ if test "x$ac_cv_lib_pthread_pthread_mutex_lock" = x""
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  
@@ -26,4 +29,4 @@ $OpenBSD: patch-configure,v 1.1.1.1 2008/07/04 21:15:24 jasper Exp $
 +  LIBS="-pthread $LIBS"
  
  else
-   { { echo "$as_me:$LINENO: error: Can't find libpthread" >&5
+   { { $as_echo "$as_me:$LINENO: error: Can't find libpthread" >&5
