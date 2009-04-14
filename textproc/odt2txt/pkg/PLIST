@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/14 11:28:12 jasper Exp $
+@bin bin/odt2txt
+@man man/man1/odt2txt.1

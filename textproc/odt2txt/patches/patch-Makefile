@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/04/14 11:28:12 jasper Exp $
+--- Makefile.orig	Mon Jun 23 21:32:28 2008
++++ Makefile	Tue Apr 14 13:23:40 2009
+@@ -7,7 +7,7 @@ CFLAGS = -O0 -g -Wextra -DMEMDEBUG -DSTRBUF_CHECK
+ #LDFLAGS = -lefence
+ LDFLAGS += -g
+ else
+-CFLAGS = -O2
++CFLAGS ?= -O2
+ endif
+ 
+ ifdef NO_ICONV
