@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/02/12 11:06:50 form Exp $
+# $OpenBSD: Makefile,v 1.7 2009/04/14 19:13:30 merdely Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Internet Relay Chat server
 
 DISTNAME =	ircd-hybrid-7.2.3
-PKGNAME =	${DISTNAME}p4
+PKGNAME =	${DISTNAME}p5
 CATEGORIES =	net
 
 HOMEPAGE =	http://ircd-hybrid.com/

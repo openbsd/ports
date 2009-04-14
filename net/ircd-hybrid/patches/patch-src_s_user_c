@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_s_user_c,v 1.1 2009/04/14 19:13:30 merdely Exp $
+--- src/s_user.c.orig	Tue Apr 14 12:50:56 2009
++++ src/s_user.c	Tue Apr 14 12:52:09 2009
+@@ -427,8 +427,9 @@ register_local_user(struct Client *client_p, struct Cl
+   {
+     const char *id = execute_callback(uid_get_cb, source_p);
+ 
++    va_list va;
+     while (hash_find_id(id) != NULL)
+-      id = uid_get(NULL);
++      id = uid_get(va);
+ 
+     strlcpy(source_p->id, id, sizeof(source_p->id));
+     hash_add_id(source_p);
