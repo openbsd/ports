@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.260 2009/04/13 20:46:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.261 2009/04/14 11:29:31 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -60,6 +60,7 @@
      SUBDIR += mxml
      SUBDIR += ocaml-rss
      SUBDIR += ocaml-xml-light
+     SUBDIR += odt2text
      SUBDIR += openjade
      SUBDIR += ots
      SUBDIR += p5-Blatte
