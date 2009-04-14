@@ -1,0 +1,21 @@
+$OpenBSD: patch-doc_sipcalc_1,v 1.1.1.1 2009/04/14 19:12:59 stsp Exp $
+
+The web (cgi) version of sipcalc has been removed from the tarball
+due to lack of time and interest in keeping it up to date with the
+console version.
+
+--- doc/sipcalc.1.orig	Sat Apr 11 14:28:34 2009
++++ doc/sipcalc.1	Sat Apr 11 14:28:37 2009
+@@ -11,10 +11,8 @@ sipcalc \- IP subnet calculator
+ ]>
+ .SH DESCRIPTION
+ .B Sipcalc
+-is an ip subnet calculator consisting of two parts.
+-A plain text based console version, and web (cgi) based counterpart.
+-This manpage only addresses the console based version.
+-Sipcalc, in it's simplest form takes an ip-address and a subnet mask
++is an ip subnet calculator.
++In its simplest form, it takes an ip-address and a subnet mask
+ on the commandline and outputs information about the subnet.
+ Sipcalc has support for both IPv4 and IPv6 addresses.
+ 
