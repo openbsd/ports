@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.36 2008/06/14 02:01:10 pvalchev Exp $
-@bin bin/epic
+@comment $OpenBSD: PLIST,v 1.37 2009/04/14 09:37:49 sthen Exp $
+bin/epic
 @bin bin/epic-EPIC4-${VERSION}
 @bin libexec/wserv4
 @man man/man1/epic.1
