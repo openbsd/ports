@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/07 18:37:01 steven Exp $
-bin/qtoctave
-bin/widgetserver
+@comment $OpenBSD: PLIST,v 1.2 2009/04/14 18:23:40 steven Exp $
+@bin bin/qtoctave
+@bin bin/widgetserver
 share/doc/qtoctave/
 share/doc/qtoctave/english-widgetserver_tutorial.html
 share/doc/qtoctave/english-widgetserver_tutorial_html_5bec7cbb.png
