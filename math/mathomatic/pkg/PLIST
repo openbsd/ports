@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/10/08 21:55:19 steven Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/04/14 18:37:31 steven Exp $
 @bin bin/mathomatic
 @man man/man1/mathomatic.1
 share/applications/mathomatic.desktop
@@ -13,7 +13,6 @@ share/doc/mathomatic/factorial/README.txt
 share/doc/mathomatic/factorial/fact.c
 share/doc/mathomatic/factorial/fact.py
 share/doc/mathomatic/factorial/factorial
-share/doc/mathomatic/factorial/intfact.c
 share/doc/mathomatic/html/
 share/doc/mathomatic/html/am.html
 share/doc/mathomatic/html/doc.css
@@ -30,7 +29,8 @@ share/doc/mathomatic/html/open_book_nae_02.png
 share/doc/mathomatic/m4/
 share/doc/mathomatic/m4/README.txt
 share/doc/mathomatic/m4/functions.m4
-share/doc/mathomatic/m4/math
+share/doc/mathomatic/m4/matho
+share/doc/mathomatic/m4/rmath
 share/doc/mathomatic/tests/
 share/doc/mathomatic/tests/README.txt
 share/doc/mathomatic/tests/all.in
@@ -38,6 +38,7 @@ share/doc/mathomatic/tests/all.out
 share/doc/mathomatic/tests/circles.in
 share/doc/mathomatic/tests/conversions.in
 share/doc/mathomatic/tests/cubic.in
+share/doc/mathomatic/tests/david.in
 share/doc/mathomatic/tests/demo.in
 share/doc/mathomatic/tests/distance.in
 share/doc/mathomatic/tests/electronics.in
@@ -52,6 +53,7 @@ share/doc/mathomatic/tests/fix7.in
 share/doc/mathomatic/tests/fix8.in
 share/doc/mathomatic/tests/fix9.in
 share/doc/mathomatic/tests/fraction.in
+share/doc/mathomatic/tests/geometry.in
 share/doc/mathomatic/tests/heron.in
 share/doc/mathomatic/tests/how_limit_works.in
 share/doc/mathomatic/tests/hypertrig.in
@@ -67,6 +69,7 @@ share/doc/mathomatic/tests/test.in
 share/doc/mathomatic/tests/test1.in
 share/doc/mathomatic/tests/test2.in
 share/doc/mathomatic/tests/test3.in
+share/doc/mathomatic/tests/test6.in
 share/doc/mathomatic/tests/trig.in
 share/pixmaps/
 share/pixmaps/mathomatic.png
