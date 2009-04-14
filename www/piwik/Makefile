@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/04/09 07:25:26 giovanni Exp $
+# $OpenBSD: Makefile,v 1.5 2009/04/14 08:05:06 sthen Exp $
 
 COMMENT=		open source web analytics software program
 
@@ -13,10 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://spacehopper.org/mirrors/ \
-			http://nedbsd.eu/~jasper/ \
-			http://bigio.snb.it/openbsd/distfiles/
-EXTRACT_SUFX=		.zip
+MASTER_SITES=		http://builds.piwik.org/
 
 WRKDIST=		${WRKDIR}/piwik/
 
