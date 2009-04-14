@@ -1,0 +1,33 @@
+$OpenBSD: patch-capplets_common_theme-thumbnail_c,v 1.1 2009/04/14 17:16:54 ajacoutot Exp $
+
+Disable thumbnailer: GNOME Bugzilla #578835
+
+--- capplets/common/theme-thumbnail.c.orig	Mon Apr 13 23:58:25 2009
++++ capplets/common/theme-thumbnail.c	Tue Apr 14 00:00:49 2009
+@@ -1185,7 +1185,7 @@ generate_icon_theme_thumbnail_async (GnomeThemeIconInf
+ void
+ theme_thumbnail_factory_init (int argc, char *argv[])
+ {
+-#ifndef __APPLE__
++#if ! defined(__APPLE__) && ! defined(__OpenBSD__)
+   gint child_pid;
+ #endif
+ 
+@@ -1197,7 +1197,7 @@ theme_thumbnail_factory_init (int argc, char *argv[])
+  * disable the thumbnailer on MacOS for now. That means no thumbs
+  * until the thumbnailing process is rewritten, but at least we won't
+  * make apps crash. */
+-#ifndef __APPLE__
++#if ! defined(__APPLE__) && ! defined(__OpenBSD__)
+   child_pid = fork ();
+   if (child_pid == 0)
+   {
+@@ -1236,7 +1236,7 @@ theme_thumbnail_factory_init (int argc, char *argv[])
+   /* Parent */
+   close (pipe_to_factory_fd[0]);
+   close (pipe_from_factory_fd[1]);
+-#endif /* __APPLE__ */
++#endif /* __APPLE__ && __OpenBSD__ */
+ 
+   async_data.set = FALSE;
+   async_data.theme_name = NULL;
