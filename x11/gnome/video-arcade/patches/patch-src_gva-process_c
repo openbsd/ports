@@ -1,79 +1,87 @@
-$OpenBSD: patch-src_gva-process_c,v 1.2 2009/04/11 12:18:00 ajacoutot Exp $
+$OpenBSD: patch-src_gva-process_c,v 1.3 2009/04/14 09:43:42 ajacoutot Exp $
 --- src/gva-process.c.orig	Sun Apr  5 18:36:35 2009
-+++ src/gva-process.c	Sat Apr 11 10:11:52 2009
++++ src/gva-process.c	Tue Apr 14 00:39:41 2009
 @@ -152,7 +152,7 @@ process_exited (GPid pid,
          }
  }
  
 -static void
-+static int
++static GIOStatus
  process_read_line (GvaProcess *process,
                     GIOChannel *channel,
                     GQueue *queue,
-@@ -169,11 +169,12 @@ process_read_line (GvaProcess *process,
-                 g_assert (line != NULL);
-                 g_queue_push_tail (queue, line);
+@@ -171,10 +171,9 @@ process_read_line (GvaProcess *process,
                  g_signal_emit (process, signal_id, 0);
-+                return 0;
          }
          else
-         {
+-        {
 -                g_assert (error != NULL);
                  process_propagate_error (process, error);
-+                return -1;
-         }
+-        }
++
++        return status;
  }
  
-@@ -192,10 +193,17 @@ process_stdout_ready (GIOChannel *channel,
+ static gboolean
+@@ -182,6 +181,12 @@ process_stdout_ready (GIOChannel *channel,
+                       GIOCondition condition,
+                       GvaProcess *process)
+ {
++        /* The logic here is tricky to get right across all operating
++         * systems due to the various ways poll() can report end-of-file.
++         * See http://www.greenend.org.uk/rjk/2001/06/poll.html. */
++
++        GIOStatus status;
++
+         if (condition & G_IO_IN)
+         {
+                 /* For better performance, keep reading lines as long as
+@@ -192,17 +197,23 @@ process_stdout_ready (GIOChannel *channel,
  
                  do
                  {
 -                        process_read_line (
-+                        /*
-+                         * XXX For some reason on OpenBSD the G_IO_IN flag
-+                         * is always present even when we hit EOF from the
-+                         * source, so use the return value of
-+                         * process_read_line to know when to remove the source
-+                         */
-+                        if (process_read_line (
++                        status = process_read_line (
                                  process, channel,
                                  process->priv->stdout_lines,
--                                signals[STDOUT_READY]);
-+                                signals[STDOUT_READY]) == -1)
-+                                goto remove_source;
+                                 signals[STDOUT_READY]);
  
++                        if (status != G_IO_STATUS_NORMAL)
++                                break;
++
++                        /* Continue reading as long as data is available
++                         * in the internal buffer. */
                          condition =
                                  g_io_channel_get_buffer_condition (channel);
-@@ -205,6 +213,7 @@ process_stdout_ready (GIOChannel *channel,
-                 return TRUE;
+                 }
+-                while (condition & G_IO_IN);
++                while (condition == G_IO_IN);
+ 
+-                return TRUE;
++                if (status == G_IO_STATUS_NORMAL)
++                        return TRUE;
          }
  
-+remove_source:
          process->priv->stdout_source_id = 0;
- 
-         return FALSE;
-@@ -219,14 +228,22 @@ process_stderr_ready (GIOChannel *channel,
+@@ -215,16 +226,19 @@ process_stderr_ready (GIOChannel *channel,
+                       GIOCondition condition,
+                       GvaProcess *process)
+ {
++        GIOStatus status;
++
+         if (condition & G_IO_IN)
          {
                  /* Do NOT loop here, as we do for stdout. */
  
 -                process_read_line (
-+                /*
-+                 * XXX For some reason on OpenBSD the G_IO_IN flag
-+                 * is always present even when we hit EOF from the
-+                 * source, so use the return value of
-+                 * process_read_line to know when to remove the source
-+                 */
-+                if (process_read_line (
++                status = process_read_line (
                          process, channel,
                          process->priv->stderr_lines,
--                        signals[STDERR_READY]);
-+                        signals[STDERR_READY]) == -1)
-+                        goto remove_source;
+                         signals[STDERR_READY]);
  
-                 return TRUE;
+-                return TRUE;
++                if (status == G_IO_STATUS_NORMAL)
++                        return TRUE;
          }
  
-+remove_source:
          process->priv->stderr_source_id = 0;
- 
-         return FALSE;
