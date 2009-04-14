@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_details_c,v 1.6 2009/03/04 20:59:52 naddy Exp $
---- gtk/details.c.orig	Fri Feb 27 17:46:14 2009
-+++ gtk/details.c	Sun Mar  1 17:10:43 2009
-@@ -499,7 +499,7 @@ fmtpeercount( GtkWidget * l,
+$OpenBSD: patch-gtk_details_c,v 1.7 2009/04/14 14:06:26 naddy Exp $
+--- gtk/details.c.orig	Sun Apr 12 21:55:50 2009
++++ gtk/details.c	Tue Apr 14 00:11:22 2009
+@@ -264,7 +264,7 @@ fmtpeercount( GtkWidget * l,
      else
      {
          char str[16];
@@ -10,8 +10,8 @@ $OpenBSD: patch-gtk_details_c,v 1.6 2009/03/04 20:59:52 naddy Exp $
          gtk_label_set_text( GTK_LABEL( l ), str );
      }
  }
-@@ -911,7 +911,7 @@ info_page_new( tr_torrent * tor )
-     hig_workarea_add_section_title ( t, &row, _( "Details" ) );
+@@ -630,7 +630,7 @@ info_page_new( tr_torrent * tor )
+     hig_workarea_add_section_title( t, &row, _( "Details" ) );
  
      g_snprintf( countStr, sizeof( countStr ),
 -                ngettext( "%'d Piece", "%'d Pieces", info->pieceCount ),

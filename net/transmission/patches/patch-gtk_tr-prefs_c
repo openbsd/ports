@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_tr-prefs_c,v 1.4 2009/03/04 20:59:52 naddy Exp $
---- gtk/tr-prefs.c.orig	Fri Feb 27 17:46:14 2009
-+++ gtk/tr-prefs.c	Sun Mar  1 17:10:43 2009
-@@ -383,8 +383,8 @@ updateBlocklistText( GtkWidget * w,
+$OpenBSD: patch-gtk_tr-prefs_c,v 1.5 2009/04/14 14:06:26 naddy Exp $
+--- gtk/tr-prefs.c.orig	Sun Apr 12 21:55:50 2009
++++ gtk/tr-prefs.c	Tue Apr 14 00:11:23 2009
+@@ -319,8 +319,8 @@ updateBlocklistText( GtkWidget * w,
      char      buf[512];
  
      g_snprintf( buf, sizeof( buf ),

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_tr-window_c,v 1.5 2009/02/15 18:09:29 naddy Exp $
---- gtk/tr-window.c.orig	Sat Jan 17 16:25:47 2009
-+++ gtk/tr-window.c	Tue Jan 20 20:59:57 2009
-@@ -717,13 +717,13 @@ updateTorrentCount( PrivateData * p )
+$OpenBSD: patch-gtk_tr-window_c,v 1.6 2009/04/14 14:06:26 naddy Exp $
+--- gtk/tr-window.c.orig	Sun Apr 12 21:55:50 2009
++++ gtk/tr-window.c	Tue Apr 14 00:11:23 2009
+@@ -703,13 +703,13 @@ updateTorrentCount( PrivateData * p )
  
          if( torrentCount != visibleCount )
              g_snprintf( buf, sizeof( buf ),

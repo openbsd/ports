@@ -1,6 +1,6 @@
-$OpenBSD: patch-gtk_util_c,v 1.4 2009/02/15 18:09:29 naddy Exp $
---- gtk/util.c.orig	Thu Jan 22 23:05:24 2009
-+++ gtk/util.c	Fri Jan 23 15:42:02 2009
+$OpenBSD: patch-gtk_util_c,v 1.5 2009/04/14 14:06:26 naddy Exp $
+--- gtk/util.c.orig	Sun Apr 12 21:55:50 2009
++++ gtk/util.c	Tue Apr 14 00:12:23 2009
 @@ -58,11 +58,11 @@ tr_strlratio( char * buf,
      else if( (int)ratio == TR_RATIO_INF )
          g_strlcpy( buf, "\xE2\x88\x9E", buflen );
@@ -53,14 +53,14 @@ $OpenBSD: patch-gtk_util_c,v 1.4 2009/02/15 18:09:29 naddy Exp $
 -        g_snprintf( buf, buflen, _( "%'.1f KB/s" ), speed );
 +        g_snprintf( buf, buflen, _( "%.1f KB/s" ), speed );
      else if( speed < 102400.0 ) /* 0.98 MB to 99.99 MB */
--        g_snprintf( buf, buflen, _( "%'.2f MB/s" ), ( speed / 1024 ) );
-+        g_snprintf( buf, buflen, _( "%.2f MB/s" ), ( speed / 1024 ) );
+-        g_snprintf( buf, buflen, _( "%'.2f MB/s" ), ( speed / KILOBYTE_FACTOR ) );
++        g_snprintf( buf, buflen, _( "%.2f MB/s" ), ( speed / KILOBYTE_FACTOR ) );
      else if( speed < 1024000.0 ) /* 100.0 MB to 999.9 MB */
--        g_snprintf( buf, buflen, _( "%'.1f MB/s" ), ( speed / 1024 ) );
-+        g_snprintf( buf, buflen, _( "%.1f MB/s" ), ( speed / 1024 ) );
+-        g_snprintf( buf, buflen, _( "%'.1f MB/s" ), ( speed / MEGABYTE_FACTOR ) );
++        g_snprintf( buf, buflen, _( "%.1f MB/s" ), ( speed / MEGABYTE_FACTOR ) );
      else /* insane speeds */
--        g_snprintf( buf, buflen, _( "%'.2f GB/s" ), ( speed / 1048576 ) );
-+        g_snprintf( buf, buflen, _( "%.2f GB/s" ), ( speed / 1048576 ) );
+-        g_snprintf( buf, buflen, _( "%'.2f GB/s" ), ( speed / GIGABYTE_FACTOR ) );
++        g_snprintf( buf, buflen, _( "%.2f GB/s" ), ( speed / GIGABYTE_FACTOR ) );
  
      return buf;
  }

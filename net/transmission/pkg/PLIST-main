@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2009/03/04 20:59:52 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2009/04/14 14:06:26 naddy Exp $
 @pkgpath net/transmission
 @bin bin/transmission-daemon
 @bin bin/transmission-remote
@@ -35,7 +35,6 @@ share/transmission/web/javascript/common.js
 share/transmission/web/javascript/dialog.js
 share/transmission/web/javascript/jquery/
 share/transmission/web/javascript/jquery/jquery.contextmenu.min.js
-share/transmission/web/javascript/jquery/jquery.dimensions.min.js
 share/transmission/web/javascript/jquery/jquery.form.min.js
 share/transmission/web/javascript/jquery/jquery.min.js
 share/transmission/web/javascript/jquery/jquery.transmenu.min.js
