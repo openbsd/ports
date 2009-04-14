@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/05/23 12:03:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/04/14 15:17:57 jolan Exp $
 %%SHARED%%
-bin/test_physfs
+@bin bin/test_physfs
 include/physfs.h
 lib/libphysfs.a
 lib/libphysfs.la

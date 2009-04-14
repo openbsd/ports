@@ -1,10 +1,10 @@
-$OpenBSD: patch-test_Makefile_in,v 1.1 2008/10/28 18:25:54 bernd Exp $
+$OpenBSD: patch-test_Makefile_in,v 1.2 2009/04/14 15:17:57 jolan Exp $
 
 The quotes are wrong and our new libtool chokes on it.
 
---- test/Makefile.in.orig	Tue Oct 28 19:15:08 2008
-+++ test/Makefile.in	Tue Oct 28 19:15:23 2008
-@@ -190,7 +190,7 @@ target_os = @target_os@
+--- test/Makefile.in.orig	Mon Mar 23 01:43:33 2009
++++ test/Makefile.in	Mon Apr 13 19:46:20 2009
+@@ -205,7 +205,7 @@ target_os = @target_os@
  target_vendor = @target_vendor@
  we_have_sed = @we_have_sed@
  @BUILD_TEST_PHYSFS_TRUE@INCLUDES = -I$(top_srcdir)
