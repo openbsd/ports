@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.60 2009/04/14 17:16:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2009/04/14 22:04:31 ajacoutot Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		${DISTNAME}p14
+PKGNAME=		${DISTNAME}p15
 
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
