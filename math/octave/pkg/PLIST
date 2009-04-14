@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/11/04 22:41:59 steven Exp $
+@comment $OpenBSD: PLIST,v 1.16 2009/04/14 18:22:59 steven Exp $
 %%SHARED%%
 bin/mkoctfile
 @bin bin/octave
@@ -158,6 +158,7 @@ include/octave-${VERSION}/octave/lo-sysdep.h
 include/octave-${VERSION}/octave/lo-utils.h
 include/octave-${VERSION}/octave/load-path.h
 include/octave-${VERSION}/octave/load-save.h
+include/octave-${VERSION}/octave/ls-ascii-helper.h
 include/octave-${VERSION}/octave/ls-hdf5.h
 include/octave-${VERSION}/octave/ls-mat-ascii.h
 include/octave-${VERSION}/octave/ls-mat4.h
@@ -1839,6 +1840,7 @@ share/doc/octave/interpreter/doc_002dpopen2.html
 share/doc/octave/interpreter/doc_002dpow2.html
 share/doc/octave/interpreter/doc_002dppplot.html
 share/doc/octave/interpreter/doc_002dppval.html
+share/doc/octave/interpreter/doc_002dprctile.html
 share/doc/octave/interpreter/doc_002dprepad.html
 share/doc/octave/interpreter/doc_002dprimes.html
 share/doc/octave/interpreter/doc_002dprint.html
@@ -1874,6 +1876,7 @@ share/doc/octave/interpreter/doc_002dqtransvmat.html
 share/doc/octave/interpreter/doc_002dquad.html
 share/doc/octave/interpreter/doc_002dquad_005foptions.html
 share/doc/octave/interpreter/doc_002dquadl.html
+share/doc/octave/interpreter/doc_002dquantile.html
 share/doc/octave/interpreter/doc_002dquaternion.html
 share/doc/octave/interpreter/doc_002dquit.html
 share/doc/octave/interpreter/doc_002dquiver.html
@@ -1911,6 +1914,7 @@ share/doc/octave/interpreter/doc_002drename.html
 share/doc/octave/interpreter/doc_002drepmat.html
 share/doc/octave/interpreter/doc_002dreshape.html
 share/doc/octave/interpreter/doc_002dresidue.html
+share/doc/octave/interpreter/doc_002dresize.html
 share/doc/octave/interpreter/doc_002drethrow.html
 share/doc/octave/interpreter/doc_002drgb2hsv.html
 share/doc/octave/interpreter/doc_002drgb2ind.html
@@ -3101,6 +3105,7 @@ share/octave/${VERSION}/m/startup/inputrc
 share/octave/${VERSION}/m/startup/octaverc
 share/octave/${VERSION}/m/statistics/
 share/octave/${VERSION}/m/statistics/base/
+share/octave/${VERSION}/m/statistics/base/__quantile__.m
 share/octave/${VERSION}/m/statistics/base/center.m
 share/octave/${VERSION}/m/statistics/base/cloglog.m
 share/octave/${VERSION}/m/statistics/base/cor.m
@@ -3120,8 +3125,10 @@ share/octave/${VERSION}/m/statistics/base/mode.m
 share/octave/${VERSION}/m/statistics/base/moment.m
 share/octave/${VERSION}/m/statistics/base/ols.m
 share/octave/${VERSION}/m/statistics/base/ppplot.m
+share/octave/${VERSION}/m/statistics/base/prctile.m
 share/octave/${VERSION}/m/statistics/base/probit.m
 share/octave/${VERSION}/m/statistics/base/qqplot.m
+share/octave/${VERSION}/m/statistics/base/quantile.m
 share/octave/${VERSION}/m/statistics/base/range.m
 share/octave/${VERSION}/m/statistics/base/ranks.m
 share/octave/${VERSION}/m/statistics/base/run_count.m
