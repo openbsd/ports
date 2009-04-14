@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.566 2009/04/04 10:08:18 landry Exp $
+# $OpenBSD: Makefile,v 1.567 2009/04/14 19:19:08 stsp Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -399,6 +399,7 @@
      SUBDIR += silc-server
      SUBDIR += silc-server,operops
      SUBDIR += sing
+     SUBDIR += sipcalc
      SUBDIR += sipsak
      SUBDIR += sirc
      SUBDIR += slirp
