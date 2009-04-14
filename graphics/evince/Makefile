@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/04/06 16:15:13 stsp Exp $
+# $OpenBSD: Makefile,v 1.24 2009/04/14 21:34:42 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,8 +12,8 @@ GNOME_VERSION=	2.24.2
 CATEGORIES=	graphics print
 
 PKGNAME-main=	${DISTNAME}p6
-PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
-PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
+PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}p0
+PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}p0
 
 SHARED_LIBS=	evbackend	0.0 # .0.0
 
