@@ -1,7 +1,30 @@
-$OpenBSD: patch-configure_in,v 1.1 2009/01/28 19:05:23 ajacoutot Exp $
---- configure.in.orig	Tue Jan 27 03:51:27 2009
-+++ configure.in	Tue Jan 27 03:52:10 2009
-@@ -282,10 +282,6 @@ if test "x$GCC" = "xyes"; then
+$OpenBSD: patch-configure_in,v 1.2 2009/04/14 20:33:11 kili Exp $
+
+XXX disabling PIE is a workaround to let dbus work on arm.
+
+--- configure.in.orig	Wed Jan  7 01:30:26 2009
++++ configure.in	Tue Apr 14 12:46:30 2009
+@@ -253,19 +253,6 @@ if test "x$GCC" = "xyes"; then
+      ;;
+   esac
+ 
+-  case " $CFLAGS " in
+-  *[\ \	]-fPIE[\ \	]*) ;;
+-  *) if cc_supports_flag -fPIE; then
+-        PIE_CFLAGS="-fPIE"
+-        if ld_supports_flag -z,relro; then
+-           PIE_LDFLAGS="-pie -Wl,-z,relro"
+-        else
+-           PIE_LDFLAGS="-pie"
+-        fi
+-     fi
+-     ;;
+-  esac
+-  
+   ### Disabled warnings, and compiler flag overrides
+   
+   # Let's just ignore unused for now
+@@ -282,10 +269,6 @@ if test "x$GCC" = "xyes"; then
    *[\ \	]-Wno-sign-compare[\ \	]*) ;;
    *) CFLAGS="$CFLAGS -Wno-sign-compare" ;;
    esac
