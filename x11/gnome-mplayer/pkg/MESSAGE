@@ -1,0 +1,2 @@
+To prevent errors, the "unclutter" program (from x11/unclutter) must not
+be running when using gnome-mplayer.
