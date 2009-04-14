@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/04/09 07:25:26 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/04/14 10:55:01 giovanni Exp $
 @group daemon
 piwik/
 piwik/LICENSE
@@ -146,6 +146,7 @@ piwik/core/Updates/0.2.24.php
 piwik/core/Updates/0.2.27.php
 piwik/core/Updates/0.2.32.php
 piwik/core/Updates/0.2.33.php
+piwik/core/Updates/0.2.34.php
 piwik/core/Url.php
 piwik/core/Version.php
 piwik/core/View.php
