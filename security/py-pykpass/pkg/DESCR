@@ -1,0 +1,2 @@
+Pykpass is a C extension module to perform password verification using
+Kerberos 5. It requires either the MIT or Heimdal Kerberos library. 
