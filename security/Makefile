@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2009/03/31 01:53:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.215 2009/04/15 21:24:13 sthen Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -163,6 +163,7 @@
      SUBDIR += py-gnupg
      SUBDIR += py-openssl
      SUBDIR += py-paramiko
+     SUBDIR += py-pykpass
      SUBDIR += py-sslwrapper
      SUBDIR += qca
      SUBDIR += qca-tls
