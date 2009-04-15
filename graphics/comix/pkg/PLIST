@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/04/02 06:22:34 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/04/15 08:26:28 landry Exp $
 bin/comicthumb
 bin/comix
 @man man/man1/comicthumb.1
@@ -120,7 +120,9 @@ share/icons/hicolor/scalable/apps/comix.svg
 share/locale/ca/LC_MESSAGES/comix.mo
 share/locale/cs/LC_MESSAGES/comix.mo
 share/locale/es/LC_MESSAGES/comix.mo
+share/locale/fr/LC_MESSAGES/comix.mo
 share/locale/hr/LC_MESSAGES/comix.mo
+share/locale/hu/LC_MESSAGES/comix.mo
 share/locale/id/LC_MESSAGES/comix.mo
 share/locale/ja/LC_MESSAGES/comix.mo
 share/locale/ko/LC_MESSAGES/comix.mo

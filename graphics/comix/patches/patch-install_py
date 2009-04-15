@@ -1,12 +1,12 @@
-$OpenBSD: patch-install_py,v 1.2 2009/01/24 11:07:04 landry Exp $
+$OpenBSD: patch-install_py,v 1.3 2009/04/15 08:26:28 landry Exp $
 
 install files in the right place, and don't try to run
 update-mime-database and gconftool-2, will be done in fake.
 
---- install.py.orig	Fri Jan  2 00:07:54 2009
-+++ install.py	Wed Jan 21 22:58:26 2009
-@@ -35,7 +35,8 @@ TRANSLATIONS = ('ca', 'cs', 'es', 'hr', 'id', 'ja', 'k
- # 'de', 'it', 'nl', 'fr', 'el', 'hu', 'fa'
+--- install.py.orig	Sat Feb 14 12:09:21 2009
++++ install.py	Tue Apr  7 20:33:57 2009
+@@ -35,7 +35,8 @@ TRANSLATIONS = ('ca', 'cs', 'es', 'fr', 'hr', 'hu', 'i
+ # 'de', 'it', 'nl', 'el', 'fa'
  
  # Files to be installed, as (source file, destination directory)
 -FILES = (('src/about.py', 'share/comix/src'),
