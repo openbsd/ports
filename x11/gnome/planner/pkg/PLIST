@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/03/14 10:40:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/04/15 21:12:59 ajacoutot Exp $
 @bin bin/planner
 include/planner-1.0/
 include/planner-1.0/libplanner/
@@ -38,6 +38,9 @@ lib/planner/plugins/libhtml-plugin.so
 lib/planner/plugins/libmsp-plugin.a
 lib/planner/plugins/libmsp-plugin.la
 lib/planner/plugins/libmsp-plugin.so
+lib/planner/plugins/libpython-plugin.a
+lib/planner/plugins/libpython-plugin.la
+lib/planner/plugins/libpython-plugin.so
 lib/planner/plugins/libxmlplanner-plugin.a
 lib/planner/plugins/libxmlplanner-plugin.la
 lib/planner/plugins/libxmlplanner-plugin.so
@@ -179,6 +182,7 @@ share/locale/fi/LC_MESSAGES/planner.mo
 share/locale/fr/LC_MESSAGES/planner.mo
 share/locale/ga/LC_MESSAGES/planner.mo
 share/locale/gl/LC_MESSAGES/planner.mo
+share/locale/gu/LC_MESSAGES/planner.mo
 share/locale/hi/LC_MESSAGES/planner.mo
 share/locale/hr/LC_MESSAGES/planner.mo
 share/locale/hu/LC_MESSAGES/planner.mo
@@ -193,6 +197,7 @@ share/locale/lv/LC_MESSAGES/planner.mo
 share/locale/mk/LC_MESSAGES/planner.mo
 share/locale/ml/LC_MESSAGES/planner.mo
 share/locale/mn/LC_MESSAGES/planner.mo
+share/locale/mr/LC_MESSAGES/planner.mo
 share/locale/ms/LC_MESSAGES/planner.mo
 share/locale/nb/LC_MESSAGES/planner.mo
 share/locale/ne/LC_MESSAGES/planner.mo
@@ -269,6 +274,7 @@ share/planner/sql/upgrade-0.6.x-0.11.sql
 share/planner/stylesheets/
 share/planner/stylesheets/html1_css.xsl
 share/planner/stylesheets/html1_css_ie.xsl
+share/planner/stylesheets/html1_css_ie7.xsl
 share/planner/stylesheets/html1_gantt.xsl
 share/planner/stylesheets/html1_resources.xsl
 share/planner/stylesheets/html1_tasks.xsl
