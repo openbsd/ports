@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2008/08/30 08:31:28 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2009/04/15 08:22:11 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	LIVE555 streaming media library
 
-DISTNAME=	live.2008.07.25
-PKGNAME=	liveMedia-20080725
+DISTNAME=	live.2009.04.07
+PKGNAME=	liveMedia-20090407
 CATEGORIES=	net devel
 MASTER_SITES=	http://comstyle.com/source/
 

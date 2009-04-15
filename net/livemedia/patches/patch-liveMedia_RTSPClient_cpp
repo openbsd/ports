@@ -1,8 +1,8 @@
-$OpenBSD: patch-liveMedia_RTSPClient_cpp,v 1.1 2008/08/30 08:31:28 landry Exp $
+$OpenBSD: patch-liveMedia_RTSPClient_cpp,v 1.2 2009/04/15 08:22:12 landry Exp $
 Fixes tv-over-ip with my isp (free.fr) using vlc.
---- liveMedia/RTSPClient.cpp.orig	Sat Aug  2 13:44:39 2008
-+++ liveMedia/RTSPClient.cpp	Sat Aug  2 13:45:14 2008
-@@ -2100,9 +2100,7 @@ unsigned RTSPClient::getResponse1(char*& responseBuffe
+--- liveMedia/RTSPClient.cpp.orig	Mon Apr  6 22:19:00 2009
++++ liveMedia/RTSPClient.cpp	Thu Apr  9 23:27:06 2009
+@@ -2136,9 +2136,7 @@ unsigned RTSPClient::getResponse1(char*& responseBuffe
    Boolean success = False;
    while (1) {
      unsigned char firstByte;
