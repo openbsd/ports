@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/04/16 08:24:24 ajacoutot Exp $
 
 COMMENT=		Jabber client for the GNOME desktop
 
@@ -31,8 +31,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		::x11/gnome/doc-utils \
-			::textproc/rarian
+BUILD_DEPENDS=		::x11/gnome/doc-utils
 LIB_DEPENDS=		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
 			idn.>=16::devel/libidn \
 			notify::devel/libnotify \
