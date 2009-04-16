@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/05/12 19:04:27 alek Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/04/16 22:15:46 sthen Exp $
 bin/vtcl
 lib/vtcl/
 lib/vtcl/demo/
 lib/vtcl/demo/README
 lib/vtcl/demo/about.ttd
+lib/vtcl/demo/bitmapbutton_compound.tcl
+lib/vtcl/demo/bitmapbutton_test.tcl
 lib/vtcl/demo/combo.tcl
 lib/vtcl/demo/draw.tcl
+lib/vtcl/demo/ex1_cmpd.tcl
 lib/vtcl/demo/grid.tcl
 lib/vtcl/demo/images/
 lib/vtcl/demo/images/free.gif
@@ -36,6 +39,7 @@ lib/vtcl/demo/tutorial/core/listbox.tcl
 lib/vtcl/demo/tutorial/core/menubutton.tcl
 lib/vtcl/demo/tutorial/core/message.tcl
 lib/vtcl/demo/tutorial/core/modal.tcl
+lib/vtcl/demo/tutorial/core/ok.gif
 lib/vtcl/demo/tutorial/core/scales.tcl
 lib/vtcl/demo/tutorial/core/scrollbar.tcl
 lib/vtcl/demo/tutorial/core/simple_topevel.tcl
@@ -50,6 +54,7 @@ lib/vtcl/demo/tutorial/megawidgets/databaseview/databaseview_compound.tcl
 lib/vtcl/demo/tutorial/megawidgets/databaseview/databaseview_project.tcl
 lib/vtcl/demo/tutorial/megawidgets/databaseview/databaseview_test.tcl
 lib/vtcl/demo/tutorial/megawidgets/databaseview/readme.txt
+lib/vtcl/demo/tutorial/megawidgets/databaseview/test.mk
 lib/vtcl/demo/tutorial/megawidgets/imagelist/
 lib/vtcl/demo/tutorial/megawidgets/imagelist/imagelist.tcl
 lib/vtcl/demo/tutorial/megawidgets/imagelist/imagelist_project.tcl
@@ -100,6 +105,7 @@ lib/vtcl/images/edit/srchbak.gif
 lib/vtcl/images/edit/srchfwd.gif
 lib/vtcl/images/ellipses.gif
 lib/vtcl/images/fg.gif
+lib/vtcl/images/fix-gif-types.tcl
 lib/vtcl/images/fontbase.gif
 lib/vtcl/images/fontsize.gif
 lib/vtcl/images/fontstyle.gif
@@ -199,6 +205,7 @@ lib/vtcl/lib/Help/WidgetTree
 lib/vtcl/lib/Help/about.ttd
 lib/vtcl/lib/Help/reference.ttd
 lib/vtcl/lib/Widgets/
+lib/vtcl/lib/Widgets/README
 lib/vtcl/lib/Widgets/blt/
 lib/vtcl/lib/Widgets/blt/Options.wgt
 lib/vtcl/lib/Widgets/blt/barchart.gif
@@ -406,6 +413,7 @@ lib/vtcl/lib/do.tcl
 lib/vtcl/lib/dragsize.tcl
 lib/vtcl/lib/dump.tcl
 lib/vtcl/lib/edit.tcl
+lib/vtcl/lib/events.txt
 lib/vtcl/lib/file.tcl
 lib/vtcl/lib/font.tcl
 lib/vtcl/lib/globals.tcl
@@ -413,6 +421,9 @@ lib/vtcl/lib/handle.tcl
 lib/vtcl/lib/help.tcl
 lib/vtcl/lib/images.tcl
 lib/vtcl/lib/input.tcl
+lib/vtcl/lib/kpwidgets/
+lib/vtcl/lib/kpwidgets/sbands.tcl
+lib/vtcl/lib/kpwidgets/scrolledbands.tcl
 lib/vtcl/lib/lib_blt.tcl
 lib/vtcl/lib/lib_bwidget.tcl
 lib/vtcl/lib/lib_core.tcl
@@ -420,6 +431,7 @@ lib/vtcl/lib/lib_itcl.tcl
 lib/vtcl/lib/lib_table.tcl
 lib/vtcl/lib/lib_tablelist.tcl
 lib/vtcl/lib/lib_tix.tcl
+lib/vtcl/lib/lib_user.tcl
 lib/vtcl/lib/lib_vtcl.tcl
 lib/vtcl/lib/loadwidg.tcl
 lib/vtcl/lib/menu.tcl
@@ -448,7 +460,6 @@ share/doc/vtcl/doc/mclistbox.html
 share/doc/vtcl/doc/progressbar.html
 share/doc/vtcl/doc/tutorial.html
 share/doc/vtcl/doc/tutorial.txt
-share/examples/
 share/examples/vtcl/
 share/examples/vtcl/sample/
 share/examples/vtcl/sample/User_Compound.tcl
