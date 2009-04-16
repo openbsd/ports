@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/16 22:17:43 sthen Exp $
+%%SHARED%%
+include/xmi.h
+@info info/libxmi.info
+lib/libxmi.a
+lib/libxmi.la

@@ -1,0 +1,6 @@
+GNU libxmi is a C/C++ function library for rasterizing 2-D vector
+graphics. It can draw 2-D graphical primitives, including wide
+polygonal lines and circular and elliptical arcs, into a user-supplied
+matrix of pixels. Sophisticated line styles, such as multicolored
+dashing patterns, can be specified. There is also support for filling
+and texturing polygons.
