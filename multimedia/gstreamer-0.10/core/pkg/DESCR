@@ -4,6 +4,3 @@ from real-time sound processing to playing videos, and just about anything
 else media-related.  Its plugin-based architecture means that new data
 types or processing capabilities can be added simply by installing new 
 plugins.
-
-Some command-line utilities have been moved into gstreamer-frontend
-to facilitate the transition to gstreamer-0.10

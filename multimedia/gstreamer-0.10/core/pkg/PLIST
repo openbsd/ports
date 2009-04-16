@@ -1,6 +1,19 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/04/11 14:37:21 ajacoutot Exp $
-@option no-default-conflict
-@conflict gstreamer->=0.10
+@comment $OpenBSD: PLIST,v 1.1 2009/04/16 11:40:45 ajacoutot Exp $
+@conflict gstreamer-frontend-*
+@conflict gstreamer->=0.8,<0.10
+@pkgpath multimedia/gstreamer-0.10/core,-main
+@bin bin/gst-feedback
+bin/gst-feedback-${VERSION}
+@bin bin/gst-inspect
+@bin bin/gst-inspect-${VERSION}
+@bin bin/gst-launch
+@bin bin/gst-launch-${VERSION}
+@bin bin/gst-typefind
+@bin bin/gst-typefind-${VERSION}
+@bin bin/gst-xmlinspect
+@bin bin/gst-xmlinspect-${VERSION}
+@bin bin/gst-xmllaunch
+@bin bin/gst-xmllaunch-${VERSION}
 include/gstreamer-${VERSION}/
 include/gstreamer-${VERSION}/gst/
 include/gstreamer-${VERSION}/gst/base/
@@ -104,8 +117,6 @@ lib/pkgconfig/gstreamer-net-${VERSION}.pc
 @man man/man1/gst-xmlinspect-${VERSION}.1
 @man man/man1/gst-xmllaunch-${VERSION}.1
 share/aclocal/gst-element-check-${VERSION}.m4
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/gstreamer-${VERSION}/
 share/gtk-doc/html/gstreamer-libs-${VERSION}/
 share/gtk-doc/html/gstreamer-plugins-${VERSION}/

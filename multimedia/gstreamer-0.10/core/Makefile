@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/04/11 14:37:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/04/16 11:40:45 ajacoutot Exp $
 
-COMMENT-main =		streaming media framework - core
-COMMENT-frontend =	streaming media framework - frontend commands
+COMMENT =		streaming media framework - core
 
 V =			0.10.19
 
-PKGNAME-main =		gstreamer-$Vp2
-PKGNAME-frontend =	gstreamer-frontend-$Vp2
+PKGNAME =		gstreamer-$Vp3
 
 DISTNAME =		gstreamer-$V
 
@@ -15,23 +13,15 @@ SHARED_LIBS +=	gstbase-0.10          0.2     # .11.0
 SHARED_LIBS +=	gstcontroller-0.10    1.0     # .11.0
 SHARED_LIBS +=	gstdataprotocol-0.10  0.0     # .11.0
 SHARED_LIBS +=	gstnet-0.10           0.1     # .11.0
-#SHARED_LIBS +=  gstcheck-0.10         0.0     # .16.0
+
+WANTLIB += c m pcre pthread z
 
 MASTER_SITES =		${MASTER_SITE_GST:=gstreamer/}
 
-MULTI_PACKAGES =	-main -frontend
-WANTLIB =		m pcre z
 MODULES =		devel/gettext
 
-LIB_DEPENDS =		glib-2.0.>=200.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2
-
-WANTLIB-frontend =	${WANTLIB} c pthread xml2
-
-LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			xml2.>=6::textproc/libxml
-
-LIB_DEPENDS-frontend =	${LIB_DEPENDS} \
-			gstreamer-0.10::multimedia/gstreamer-0.10/core,-main
+LIB_DEPENDS =		xml2.>=6::textproc/libxml \
+			glib-2.0.>=1800,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2
 
 CONFIGURE_ARGS =	--without-check
 
