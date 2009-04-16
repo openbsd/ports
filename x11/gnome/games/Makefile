@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
@@ -67,10 +67,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 # to the appropriate .Xauthority file. 
 REGRESS_IS_INTERACTIVE= Yes
 REGRESS_FLAGS=		DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
-
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/glchess/src/glchess.in.in \

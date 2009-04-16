@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/14 11:36:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
@@ -44,8 +44,5 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_X11=		Yes
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

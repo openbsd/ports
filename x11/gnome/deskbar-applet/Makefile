@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		universal search and navigation for GNOME
 
@@ -53,8 +53,5 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/deskbar/deskbar-applet.py
-
-post-patch:
-			@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

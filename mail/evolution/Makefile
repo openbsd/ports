@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2009/04/06 10:09:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2009/04/16 08:11:13 ajacoutot Exp $
 
 # XXX TODO: the mail-account-disable plugin is not loaded by default:
 # it makes right-clicking on a folder very long (the first time)
@@ -118,9 +118,6 @@ SCHEMAS-plugins= 	apps-evolution-attachment-reminder \
 			apps-evolution-mail-prompts-checkdefault \
 			apps-evolution-template-placeholders \
 			apps_evolution_email_custom_header
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/bogo-junk-plugin/bf-junk-filter.c \

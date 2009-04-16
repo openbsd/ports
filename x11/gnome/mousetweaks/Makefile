@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
@@ -39,8 +39,5 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 USE_X11=	Yes
 MODGNOME_HELP_FILES= Yes
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

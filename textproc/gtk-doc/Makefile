@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=	GTK C code documentation system
 
@@ -37,11 +37,8 @@ NO_REGRESS=		Yes
 post-extract:
 	cp ${LOCALBASE}/share/xml/docbook/catalog.xml \
 		${WRKDIR}/catalog.xml
-
 	xmlcatalog --add nextCatalog \
 		--id ${LOCALBASE}/share/xsl/docbook/catalog.xml \
 		--noout ${WRKDIR}/catalog.xml ${WRKDIR}/catalog.xml
-
-	ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

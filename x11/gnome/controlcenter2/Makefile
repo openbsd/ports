@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2009/04/14 22:04:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		GNOME control center
 
@@ -62,8 +62,5 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/controlcenter2
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

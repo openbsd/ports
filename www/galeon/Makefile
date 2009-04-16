@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2009/03/19 09:31:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=	GNOME web browser based on gecko
 
@@ -60,9 +60,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-gconf-schema-file-dir="${LOCALBASE}/share/schemas/galeon" \
 		--disable-schemas-install \
 		--disable-gtkhtml
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/mozilla/mozilla-embed-shell.cpp \

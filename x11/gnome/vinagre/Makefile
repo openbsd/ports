@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/04/16 08:11:14 ajacoutot Exp $
 
 COMMENT=		VNC Client for the GNOME Desktop
 
@@ -40,8 +40,5 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--enable-avahi=no
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

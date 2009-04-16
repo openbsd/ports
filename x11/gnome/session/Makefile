@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2009/04/11 10:12:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
@@ -66,9 +66,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 
 MAKE_FLAGS=		XSLTPROC="${LOCALBASE}/bin/xsltproc -nonet"
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnome-session

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2009/04/16 08:11:14 ajacoutot Exp $
 
 COMMENT=		dialogs for GNOME
 
@@ -32,8 +32,5 @@ USE_LIBTOOL=		No
 CONFIGURE_ARGS= 	--enable-libnotify
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

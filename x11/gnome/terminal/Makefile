@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
@@ -38,8 +38,5 @@ CONFIGURE_ARGS= --with-widget=vte \
 		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-terminal
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2009/04/14 13:20:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		GNOME utility programs
 
@@ -46,8 +46,5 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-ipv6=yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

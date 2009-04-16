@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/03/31 18:13:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		API documentation browser for GNOME
 
@@ -42,9 +42,6 @@ CONFIGURE_ARGS+= 	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/devhel
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			PYTHON="${MODPY_BIN}"
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>
 

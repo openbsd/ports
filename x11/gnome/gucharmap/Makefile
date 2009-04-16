@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
@@ -37,8 +37,5 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-python-bindings
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
@@ -51,9 +51,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 # to the appropriate .Xauthority file. 
 REGRESS_IS_INTERACTIVE= Yes
 REGRESS_FLAGS+= 	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 post-build:
 	cd ${WRKSRC} && \

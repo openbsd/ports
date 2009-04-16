@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		GNOME panel
 
@@ -53,8 +53,5 @@ CONFIGURE_ARGS+= 	--enable-eds \
 			--disable-scrollkeeper
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2009/03/14 11:36:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-5.4
@@ -59,7 +59,6 @@ do-configure:
 		library-owner=${BINOWN} \
 		library-group=${BINGRP} \
 		gconf-schemas-dir="${LOCALBASE}/share/schemas/mail-notification" \
-		scrollkeeper-update="/usr/bin/true" \
 		gconftool-2="/usr/bin/true" \
 		destdir="${WRKINST}"
 

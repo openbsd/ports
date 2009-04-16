@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/04/14 21:34:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2009/04/16 08:11:13 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -89,8 +89,5 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

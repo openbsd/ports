@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
@@ -58,8 +58,6 @@ CONFIGURE_ARGS+=	--enable-ipv6=no
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples \
 			dmconfdir=${PREFIX}/share/examples/dm
-post-patch:
-	ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 pre-configure:
 	${SUBST_CMD} \

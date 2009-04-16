@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
@@ -45,8 +45,5 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/eog \
 			--disable-python \
 			--without-xmp \
 			--with-libexif
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

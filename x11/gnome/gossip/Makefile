@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		Jabber client for the GNOME desktop
 
@@ -60,9 +60,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 NO_REGRESS=		Yes
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gossip
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gossip/sound/events

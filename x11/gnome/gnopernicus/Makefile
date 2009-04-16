@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		screen reader and magnifier for GNOME desktop
 
@@ -58,8 +58,5 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnopern
 			--enable-magnifier
 
 FAKE_FLAGS=		translationdir=${PREFIX}/share/examples/gnopernicus/translation_tables
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

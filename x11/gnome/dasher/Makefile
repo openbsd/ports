@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/04/06 10:05:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		graphical predictive text input system
 
@@ -44,8 +44,5 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/dasher/
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include " \
 			LDFLAGS="-L${LOCALBASE}/lib " \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include "
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

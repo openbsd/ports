@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
@@ -46,8 +46,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 DLLMAP_FILES=	Tomboy/Tomboy.exe.config.in
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

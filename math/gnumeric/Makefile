@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2009/04/06 10:09:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
@@ -56,8 +56,5 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 SUBST_VARS=		VERSION
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

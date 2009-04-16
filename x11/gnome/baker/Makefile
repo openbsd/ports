@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/04/06 10:05:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
@@ -44,8 +44,5 @@ USE_X11=		Yes
 CONFIGURE_ARGS+=	--disable-libnotify
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

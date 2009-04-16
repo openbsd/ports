@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/04/06 10:09:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=		editor for the GConf configuration system
 
@@ -41,8 +41,5 @@ CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
 			--disable-schemas-install
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

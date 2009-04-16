@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/04/11 14:10:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/04/16 08:11:13 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
@@ -108,9 +108,6 @@ RUN_DEPENDS+=	:gstreamer-vorbis-*:multimedia/gstreamer-0.10/plugins-base,-vorbis
 CONFIGURE_ARGS+=--enable-gstreamer \
 		--disable-xine
 .endif
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 # stop systrace spam by avoiding xsltproc to access net
 pre-configure:
