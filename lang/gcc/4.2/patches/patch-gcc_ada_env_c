@@ -1,13 +1,12 @@
-$OpenBSD: patch-gcc_ada_env_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- gcc/ada/env.c.orig	Sun Jul 23 19:38:16 2006
-+++ gcc/ada/env.c	Sun Jul 23 19:38:44 2006
-@@ -287,7 +287,8 @@ void __gnat_clearenv (void) {
-     env[index]=NULL;
-     index++;
+$OpenBSD: patch-gcc_ada_env_c,v 1.2 2009/04/16 18:36:48 espie Exp $
+--- gcc/ada/env.c.orig	Sat Dec  1 13:03:42 2007
++++ gcc/ada/env.c	Tue Apr  7 19:44:38 2009
+@@ -289,7 +289,7 @@ void __gnat_clearenv (void) {
    }
--#elif defined (__MINGW32__) || defined (__FreeBSD__) || defined (__APPLE__) \
-+#elif defined (__MINGW32__) || defined (__FreeBSD__) \
-+   || defined(__OpenBSD__) || defined (__APPLE__) \
-    || (defined (__vxworks) && defined (__RTP__)) || defined (__CYGWIN__)
+ #elif defined (__MINGW32__) || defined (__FreeBSD__) || defined (__APPLE__) \
+    || (defined (__vxworks) && defined (__RTP__)) || defined (__CYGWIN__) \
+-   || defined (__NetBSD__)
++   || defined (__NetBSD__) || defined(__OpenBSD__)
    /* On Windows, FreeBSD and MacOS there is no function to clean all the
       environment but there is a "clean" way to unset a variable. So go
+      through the environ table and call __gnat_unsetenv on all entries */

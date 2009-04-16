@@ -1,7 +1,13 @@
-$OpenBSD: patch-gcc_config_t-openbsd,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- gcc/config/t-openbsd.orig	Sat Jul 22 23:29:24 2006
-+++ gcc/config/t-openbsd	Sat Jul 22 23:29:32 2006
-@@ -1,2 +1,2 @@
+$OpenBSD: patch-gcc_config_t-openbsd,v 1.2 2009/04/16 18:36:48 espie Exp $
+--- gcc/config/t-openbsd.orig	Tue Sep 23 20:56:00 2003
++++ gcc/config/t-openbsd	Sat Apr 11 14:22:32 2009
+@@ -1,2 +1,8 @@
  # We don't need GCC's own include files.
 -USER_H =
 +USER_H = $(EXTRA_HEADERS)
++# Use unwind-dw2-fde-glibc
++LIB2ADDEH = $(srcdir)/unwind-dw2.c $(srcdir)/unwind-dw2-fde-openbsd.c \
++  $(srcdir)/unwind-sjlj.c $(srcdir)/unwind-c.c
++LIB2ADDEHDEP = unwind.inc unwind-dw2-fde.h unwind-dw2-fde.c \
++  unwind-dw2-fde-glibc.c
++

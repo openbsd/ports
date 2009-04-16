@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_i386_driver-i386_c,v 1.5 2007/03/20 10:48:52 espie Exp $
---- gcc/config/i386/driver-i386.c.orig	Fri Dec 29 07:09:06 2006
-+++ gcc/config/i386/driver-i386.c	Sun Mar 18 23:59:30 2007
-@@ -269,7 +269,7 @@ const char *host_detect_local_cpu (int argc, const cha
+$OpenBSD: patch-gcc_config_i386_driver-i386_c,v 1.6 2009/04/16 18:36:48 espie Exp $
+--- gcc/config/i386/driver-i386.c.orig	Thu Nov  8 11:07:06 2007
++++ gcc/config/i386/driver-i386.c	Tue Apr  7 19:38:59 2009
+@@ -268,7 +268,7 @@ const char *host_detect_local_cpu (int argc, const cha
      }
  
  done:
@@ -10,11 +10,11 @@ $OpenBSD: patch-gcc_config_i386_driver-i386_c,v 1.5 2007/03/20 10:48:52 espie Ex
  }
  #else
  /* If we aren't compiling with GCC we just provide a minimal
-@@ -295,6 +295,6 @@ const char *host_detect_local_cpu (int argc, const cha
+@@ -294,6 +294,6 @@ const char *host_detect_local_cpu (int argc, const cha
    else
      cpu = "generic";
  
 -  return concat ("-m", argv[0], "=", cpu, NULL);
 +  return concat ("-m", argv[0], "=", cpu, (void *)0);
  }
- #endif /* GCC_VERSION */
+ #endif /* __GNUC__ */

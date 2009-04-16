@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST-ada,v 1.3 2007/03/17 22:34:13 espie Exp $
-bin/gnat
-bin/gnatbind
-bin/gnatbl
-bin/gnatchop
-bin/gnatclean
-bin/gnatfind
-bin/gnatkr
-bin/gnatlink
-bin/gnatls
-bin/gnatmake
-bin/gnatname
-bin/gnatprep
-bin/gnatxref
-bin/gprmake
+@comment $OpenBSD: PLIST-ada,v 1.4 2009/04/16 18:36:48 espie Exp $
+@bin bin/gnat
+@bin bin/gnatbind
+@bin bin/gnatbl
+@bin bin/gnatchop
+@bin bin/gnatclean
+@bin bin/gnatfind
+@bin bin/gnatkr
+@bin bin/gnatlink
+@bin bin/gnatls
+@bin bin/gnatmake
+@bin bin/gnatname
+@bin bin/gnatprep
+@bin bin/gnatxref
+@bin bin/gprmake
 @info info/gnat-style.info
 @info info/gnat_rm.info
 @info info/gnat_ugn_unw.info
@@ -1542,4 +1542,4 @@ lib/gcc/${CONFIG}/${V}/adalib/s-wwdenu.ali
 lib/gcc/${CONFIG}/${V}/adalib/s-wwdwch.ali
 lib/gcc/${CONFIG}/${V}/adalib/system.ali
 lib/gcc/${CONFIG}/${V}/adalib/text_io.ali
-libexec/gcc/${CONFIG}/${V}/gnat1
+@bin libexec/gcc/${CONFIG}/${V}/gnat1

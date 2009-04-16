@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_c-common_c,v 1.5 2007/03/20 10:48:52 espie Exp $
---- gcc/c-common.c.orig	Wed Mar  7 21:24:37 2007
-+++ gcc/c-common.c	Sun Mar 18 23:58:42 2007
-@@ -543,7 +543,9 @@ static tree handle_cleanup_attribute (tree *, tree, tr
+$OpenBSD: patch-gcc_c-common_c,v 1.6 2009/04/16 18:36:48 espie Exp $
+--- gcc/c-common.c.orig	Wed Oct 10 22:46:11 2007
++++ gcc/c-common.c	Tue Apr  7 19:38:58 2009
+@@ -544,7 +544,9 @@ static tree handle_cleanup_attribute (tree *, tree, tr
  static tree handle_warn_unused_result_attribute (tree *, tree, tree, int,
  						 bool *);
  static tree handle_sentinel_attribute (tree *, tree, tree, int, bool *);
@@ -11,7 +11,7 @@ $OpenBSD: patch-gcc_c-common_c,v 1.5 2007/03/20 10:48:52 espie Exp $
  static void check_function_nonnull (tree, tree);
  static void check_nonnull_arg (void *, tree, unsigned HOST_WIDE_INT);
  static bool nonnull_check_p (tree, unsigned HOST_WIDE_INT);
-@@ -620,6 +622,8 @@ const struct attribute_spec c_common_attribute_table[]
+@@ -623,6 +625,8 @@ const struct attribute_spec c_common_attribute_table[]
  			      handle_deprecated_attribute },
    { "vector_size",	      1, 1, false, true, false,
  			      handle_vector_size_attribute },
@@ -20,7 +20,7 @@ $OpenBSD: patch-gcc_c-common_c,v 1.5 2007/03/20 10:48:52 espie Exp $
    { "visibility",	      1, 1, false, false, false,
  			      handle_visibility_attribute },
    { "tls_model",	      1, 1, true,  false, false,
-@@ -5598,6 +5602,15 @@ handle_warn_unused_result_attribute (tree *node, tree 
+@@ -5634,6 +5638,15 @@ handle_warn_unused_result_attribute (tree *node, tree 
      }
  
    return NULL_TREE;

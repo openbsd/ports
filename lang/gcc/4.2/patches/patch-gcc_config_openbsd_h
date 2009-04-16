@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_openbsd_h,v 1.1 2006/10/20 13:43:18 espie Exp $
---- gcc/config/openbsd.h.orig	Sat Jun 25 03:22:41 2005
-+++ gcc/config/openbsd.h	Wed Oct 18 15:39:01 2006
-@@ -73,6 +73,37 @@ Boston, MA 02110-1301, USA.  */
+$OpenBSD: patch-gcc_config_openbsd_h,v 1.2 2009/04/16 18:36:48 espie Exp $
+--- gcc/config/openbsd.h.orig	Sat Sep  1 17:28:30 2007
++++ gcc/config/openbsd.h	Sat Apr 11 14:22:00 2009
+@@ -72,6 +72,37 @@ along with GCC; see the file COPYING3.  If not see
  
  /* Controlling the compilation driver.  */
  /* TARGET_OS_CPP_BUILTINS() common to all OpenBSD targets.  */
@@ -39,7 +39,7 @@ $OpenBSD: patch-gcc_config_openbsd_h,v 1.1 2006/10/20 13:43:18 espie Exp $
  #define OPENBSD_OS_CPP_BUILTINS()		\
    do						\
      {						\
-@@ -96,15 +127,8 @@ Boston, MA 02110-1301, USA.  */
+@@ -95,16 +126,9 @@ along with GCC; see the file COPYING3.  If not see
  #define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
  #endif
  
@@ -51,9 +51,32 @@ $OpenBSD: patch-gcc_config_openbsd_h,v 1.1 2006/10/20 13:43:18 espie Exp $
 -/* Include -lpthread if -pthread is specified on the command line. */
 -# define OBSD_LIB_SPEC "%{!shared:%{pthread:-lpthread%{p:_p}%{!p:%{pg:_p}}}} %{!shared:-lc%{p:_p}%{!p:%{pg:_p}}}"
 -#endif
--
 +#undef LIB_SPEC
 +#define LIB_SPEC OBSD_LIB_SPEC
  
+-
  #ifndef OBSD_HAS_CORRECT_SPECS
  
+ #ifndef OBSD_NO_DYNAMIC_LIBRARIES
+@@ -139,6 +163,10 @@ along with GCC; see the file COPYING3.  If not see
+   "%{g:%{!nostdlib:-L/usr/lib/debug}} %{!shared:%{!nostdlib:%{!r*:%{!e*:-e start}}}} %{shared:-Bshareable -x} -dc -dp %{R*} %{static:-Bstatic} %{assert*}"
+ #endif
+ 
++#if defined(HAVE_LD_EH_FRAME_HDR)
++#define LINK_EH_SPEC "%{!static:--eh-frame-hdr} "
++#endif
++
+ #undef LIB_SPEC
+ #define LIB_SPEC OBSD_LIB_SPEC
+ #endif
+@@ -281,10 +309,6 @@ do {									 \
+ /* Storage layout.  */
+ 
+ 
+-/* Otherwise, since we support weak, gthr.h erroneously tries to use
+-   #pragma weak.  */
+-#define GTHREAD_USE_WEAK 0
+-
+ /* bug work around: we don't want to support #pragma weak, but the current
+    code layout needs HANDLE_PRAGMA_WEAK asserted for __attribute((weak)) to
+    work.  On the other hand, we don't define HANDLE_PRAGMA_WEAK directly,

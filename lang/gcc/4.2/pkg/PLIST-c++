@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-c++,v 1.7 2009/01/18 18:47:05 robert Exp $
-bin/ec++
-bin/eg++
-bin/${CONFIG}-ec++
-bin/${CONFIG}-eg++
+@comment $OpenBSD: PLIST-c++,v 1.8 2009/04/16 18:36:48 espie Exp $
+@bin bin/ec++
+@bin bin/eg++
+@bin bin/${CONFIG}-ec++
+@bin bin/${CONFIG}-eg++
 include/c++/
 include/c++/${V}/
 include/c++/${V}/algorithm
@@ -70,6 +70,7 @@ include/c++/${V}/bits/locale_facets.tcc
 include/c++/${V}/bits/localefwd.h
 include/c++/${V}/bits/mask_array.h
 include/c++/${V}/bits/ostream.tcc
+include/c++/${V}/bits/ostream_insert.h
 include/c++/${V}/bits/postypes.h
 include/c++/${V}/bits/slice_array.h
 include/c++/${V}/bits/sstream.tcc
@@ -599,6 +600,6 @@ lib/libestdc++.a
 lib/libestdc++.la
 lib/libesupc++.a
 lib/libesupc++.la
-libexec/gcc/${CONFIG}/${V}/cc1plus
+@bin libexec/gcc/${CONFIG}/${V}/cc1plus
 %%PIC%%
 @man man/man1/eg++.1

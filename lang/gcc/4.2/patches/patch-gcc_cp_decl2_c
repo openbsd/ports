@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_cp_decl2_c,v 1.6 2007/03/20 10:48:52 espie Exp $
---- gcc/cp/decl2.c.orig	Wed Dec  6 18:41:29 2006
-+++ gcc/cp/decl2.c	Sun Mar 18 23:58:43 2007
-@@ -3010,7 +3010,7 @@ build_java_method_aliases (void)
+$OpenBSD: patch-gcc_cp_decl2_c,v 1.7 2009/04/16 18:36:48 espie Exp $
+--- gcc/cp/decl2.c.orig	Tue Feb 12 07:37:34 2008
++++ gcc/cp/decl2.c	Tue Apr  7 19:38:59 2009
+@@ -3018,7 +3018,7 @@ build_java_method_aliases (void)
  	  oid = DECL_ASSEMBLER_NAME (fndecl);
  	  oname = IDENTIFIER_POINTER (oid);
  	  gcc_assert (oname[0] == '_' && oname[1] == 'Z');

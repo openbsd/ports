@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
---- gcc/c-aux-info.c.orig	Fri May 19 00:16:23 2006
-+++ gcc/c-aux-info.c	Sun Mar 18 23:58:42 2007
-@@ -91,14 +91,14 @@ affix_data_type (const char *param)
+$OpenBSD: patch-gcc_c-aux-info_c,v 1.3 2009/04/16 18:36:48 espie Exp $
+--- gcc/c-aux-info.c.orig	Sat Sep  1 17:28:30 2007
++++ gcc/c-aux-info.c	Tue Apr  7 19:38:58 2009
+@@ -90,14 +90,14 @@ affix_data_type (const char *param)
       add a blank after the data-type of course.  */
  
    if (p == type_or_decl)
@@ -19,7 +19,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
  }
  
  /* Given a tree node which represents some "function type", generate the
-@@ -123,13 +123,13 @@ gen_formal_list_for_type (tree fntype, formals_style s
+@@ -122,13 +122,13 @@ gen_formal_list_for_type (tree fntype, formals_style s
        const char *this_type;
  
        if (*formal_list)
@@ -36,7 +36,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
  
        formal_type = TREE_CHAIN (formal_type);
      }
-@@ -178,10 +178,10 @@ gen_formal_list_for_type (tree fntype, formals_style s
+@@ -177,10 +177,10 @@ gen_formal_list_for_type (tree fntype, formals_style s
  	 petered out to a NULL (i.e. without being terminated by a
  	 void_type_node) then we need to tack on an ellipsis.  */
        if (!formal_type)
@@ -49,7 +49,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
  }
  
  /* For the generation of an ANSI prototype for a function definition, we have
-@@ -237,23 +237,23 @@ gen_formal_list_for_func_def (tree fndecl, formals_sty
+@@ -236,23 +236,23 @@ gen_formal_list_for_func_def (tree fndecl, formals_sty
        const char *this_formal;
  
        if (*formal_list && ((style == ansi) || (style == k_and_r_names)))
@@ -79,7 +79,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
    return formal_list;
  }
  
-@@ -312,14 +312,14 @@ gen_type (const char *ret_val, tree t, formals_style s
+@@ -311,14 +311,14 @@ gen_type (const char *ret_val, tree t, formals_style s
  	{
  	case POINTER_TYPE:
  	  if (TYPE_READONLY (t))
@@ -98,7 +98,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
  
  	  ret_val = gen_type (ret_val, TREE_TYPE (t), style);
  
-@@ -327,17 +327,17 @@ gen_type (const char *ret_val, tree t, formals_style s
+@@ -326,17 +326,17 @@ gen_type (const char *ret_val, tree t, formals_style s
  
  	case ARRAY_TYPE:
  	  if (!COMPLETE_TYPE_P (t) || TREE_CODE (TYPE_SIZE (t)) != INTEGER_CST)
@@ -119,7 +119,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
  				  TREE_TYPE (t), style);
  	    }
  	  break;
-@@ -345,7 +345,7 @@ gen_type (const char *ret_val, tree t, formals_style s
+@@ -344,7 +344,7 @@ gen_type (const char *ret_val, tree t, formals_style s
  	case FUNCTION_TYPE:
  	  ret_val = gen_type (concat (ret_val,
  				      gen_formal_list_for_type (t, style),
@@ -128,7 +128,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
  			      TREE_TYPE (t), style);
  	  break;
  
-@@ -374,13 +374,13 @@ gen_type (const char *ret_val, tree t, formals_style s
+@@ -373,13 +373,13 @@ gen_type (const char *ret_val, tree t, formals_style s
  	      while (chain_p)
  		{
  		  data_type = concat (data_type, gen_decl (chain_p, 0, ansi),
@@ -146,7 +146,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
  	  break;
  
  	case UNION_TYPE:
-@@ -393,13 +393,13 @@ gen_type (const char *ret_val, tree t, formals_style s
+@@ -392,13 +392,13 @@ gen_type (const char *ret_val, tree t, formals_style s
  	      while (chain_p)
  		{
  		  data_type = concat (data_type, gen_decl (chain_p, 0, ansi),
@@ -164,7 +164,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
  	  break;
  
  	case ENUMERAL_TYPE:
-@@ -412,14 +412,14 @@ gen_type (const char *ret_val, tree t, formals_style s
+@@ -411,14 +411,14 @@ gen_type (const char *ret_val, tree t, formals_style s
  	      while (chain_p)
  		{
  		  data_type = concat (data_type,
@@ -183,7 +183,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
  	  break;
  
  	case TYPE_DECL:
-@@ -431,7 +431,7 @@ gen_type (const char *ret_val, tree t, formals_style s
+@@ -430,7 +430,7 @@ gen_type (const char *ret_val, tree t, formals_style s
  	  /* Normally, `unsigned' is part of the deal.  Not so if it comes
  	     with a type qualifier.  */
  	  if (TYPE_UNSIGNED (t) && TYPE_QUALS (t))
@@ -192,7 +192,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
  	  break;
  
  	case REAL_TYPE:
-@@ -451,11 +451,11 @@ gen_type (const char *ret_val, tree t, formals_style s
+@@ -450,11 +450,11 @@ gen_type (const char *ret_val, tree t, formals_style s
  	}
      }
    if (TYPE_READONLY (t))
@@ -207,7 +207,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
    return ret_val;
  }
  
-@@ -494,9 +494,9 @@ gen_decl (tree decl, int is_func_definition, formals_s
+@@ -493,9 +493,9 @@ gen_decl (tree decl, int is_func_definition, formals_s
       generate the qualifiers here.  */
  
    if (TREE_THIS_VOLATILE (decl))
@@ -219,7 +219,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
  
    data_type = "";
  
-@@ -515,7 +515,7 @@ gen_decl (tree decl, int is_func_definition, formals_s
+@@ -514,7 +514,7 @@ gen_decl (tree decl, int is_func_definition, formals_s
    if (TREE_CODE (decl) == FUNCTION_DECL && is_func_definition)
      {
        ret_val = concat (ret_val, gen_formal_list_for_func_def (decl, ansi),
@@ -228,7 +228,7 @@ $OpenBSD: patch-gcc_c-aux-info_c,v 1.2 2007/03/20 10:48:52 espie Exp $
  
        /* Since we have already added in the formals list stuff, here we don't
  	 add the whole "type" of the function we are considering (which
-@@ -532,11 +532,11 @@ gen_decl (tree decl, int is_func_definition, formals_s
+@@ -531,11 +531,11 @@ gen_decl (tree decl, int is_func_definition, formals_s
    ret_val = affix_data_type (ret_val);
  
    if (TREE_CODE (decl) != FUNCTION_DECL && C_DECL_REGISTER (decl))

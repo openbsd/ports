@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_gensupport_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- gcc/gensupport.c.orig	Wed Mar 15 11:14:51 2006
-+++ gcc/gensupport.c	Sun Jul 23 11:24:02 2006
-@@ -220,7 +220,7 @@ process_include (rtx desc, int lineno)
+$OpenBSD: patch-gcc_gensupport_c,v 1.2 2009/04/16 18:36:48 espie Exp $
+--- gcc/gensupport.c.orig	Sat Sep  1 17:28:30 2007
++++ gcc/gensupport.c	Tue Apr  7 19:38:59 2009
+@@ -219,7 +219,7 @@ process_include (rtx desc, int lineno)
  	{
  	  static const char sep[2] = { DIR_SEPARATOR, '\0' };
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-gcc_gensupport_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
  	  input_file = fopen (pathname, "r");
  	  if (input_file != NULL)
  	    goto success;
-@@ -229,7 +229,7 @@ process_include (rtx desc, int lineno)
+@@ -228,7 +228,7 @@ process_include (rtx desc, int lineno)
      }
  
    if (base_dir)

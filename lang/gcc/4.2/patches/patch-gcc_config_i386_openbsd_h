@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_i386_openbsd_h,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- gcc/config/i386/openbsd.h.orig	Sat Jun 25 03:22:41 2005
-+++ gcc/config/i386/openbsd.h	Sun Jul 23 18:43:15 2006
-@@ -41,16 +41,19 @@ Boston, MA 02110-1301, USA.  */
+$OpenBSD: patch-gcc_config_i386_openbsd_h,v 1.2 2009/04/16 18:36:48 espie Exp $
+--- gcc/config/i386/openbsd.h.orig	Sat Sep  1 17:28:30 2007
++++ gcc/config/i386/openbsd.h	Tue Apr  7 19:38:59 2009
+@@ -40,16 +40,19 @@ along with GCC; see the file COPYING3.  If not see
  
  /* This must agree with <machine/ansi.h> */
  #undef SIZE_TYPE

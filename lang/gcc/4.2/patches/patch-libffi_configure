@@ -1,0 +1,11 @@
+$OpenBSD: patch-libffi_configure,v 1.1 2009/04/16 18:36:48 espie Exp $
+--- libffi/configure.orig	Sun Apr 12 20:02:53 2009
++++ libffi/configure	Sun Apr 12 20:03:27 2009
+@@ -5390,6 +5390,7 @@ i*86-*-solaris*) TARGET=X86; TARGETDIR=x86;;
+ i*86-*-beos*) TARGET=X86; TARGETDIR=x86;;
+ i*86-*-darwin*) TARGET=X86_DARWIN; TARGETDIR=x86;;
+ i*86-*-freebsd* | i*86-*-kfreebsd*-gnu) TARGET=X86; TARGETDIR=x86;;
++i*86-*-openbsd*) TARGET=X86; TARGETDIR=x86;;
+ i*86-*-netbsdelf* | i*86-*-knetbsd*-gnu) TARGET=X86; TARGETDIR=x86;;
+ i*86-*-rtems*) TARGET=X86; TARGETDIR=x86;;
+ i*86-*-win32*) TARGET=X86_WIN32; TARGETDIR=x86;;

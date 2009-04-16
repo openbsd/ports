@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_coverage_c,v 1.3 2007/03/17 22:34:13 espie Exp $
---- gcc/coverage.c.orig	Wed Jun 21 23:27:19 2006
-+++ gcc/coverage.c	Sun Jul 23 11:24:01 2006
-@@ -807,7 +807,7 @@ build_gcov_info (void)
+$OpenBSD: patch-gcc_coverage_c,v 1.4 2009/04/16 18:36:48 espie Exp $
+--- gcc/coverage.c.orig	Sat Sep  1 17:28:30 2007
++++ gcc/coverage.c	Tue Apr  7 19:38:59 2009
+@@ -806,7 +806,7 @@ build_gcov_info (void)
    fields = field;
    filename = getpwd ();
    filename = (filename && da_file_name[0] != '/'

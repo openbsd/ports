@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST-f95,v 1.6 2007/03/20 10:48:52 espie Exp $
-bin/egfortran
-bin/${CONFIG}-egfortran
+@comment $OpenBSD: PLIST-f95,v 1.7 2009/04/16 18:36:48 espie Exp $
+@bin bin/egfortran
+@bin bin/${CONFIG}-egfortran
 @info info/gfortran.info
 lib/gcc/${CONFIG}/${V}/finclude/
 lib/gcc/${CONFIG}/${V}/libgfortranbegin.a
 lib/gcc/${CONFIG}/${V}/libgfortranbegin.la
 lib/libgfortran.a
 lib/libgfortran.la
-libexec/gcc/${CONFIG}/${V}/f951
+@bin libexec/gcc/${CONFIG}/${V}/f951
 %%PIC%%
 @man man/man1/egfortran.1

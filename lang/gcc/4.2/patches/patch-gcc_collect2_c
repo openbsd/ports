@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_collect2_c,v 1.4 2007/03/20 10:48:52 espie Exp $
---- gcc/collect2.c.orig	Fri May 19 00:16:23 2006
-+++ gcc/collect2.c	Sun Mar 18 23:58:42 2007
-@@ -753,19 +753,19 @@ main (int argc, char **argv)
+$OpenBSD: patch-gcc_collect2_c,v 1.5 2009/04/16 18:36:48 espie Exp $
+--- gcc/collect2.c.orig	Mon Dec 31 17:04:26 2007
++++ gcc/collect2.c	Tue Apr  7 19:38:58 2009
+@@ -756,19 +756,19 @@ main (int argc, char **argv)
       qualify the program name with the target machine.  */
  
    const char *const full_ld_suffix =
@@ -27,7 +27,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.4 2007/03/20 10:48:52 espie Exp $
  #else
    const char *const full_ld_suffix	= ld_suffix;
    const char *const full_nm_suffix	= nm_suffix;
-@@ -958,7 +958,7 @@ main (int argc, char **argv)
+@@ -961,7 +961,7 @@ main (int argc, char **argv)
    if (c_file_name == 0)
      {
  #ifdef CROSS_COMPILE
@@ -36,7 +36,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.4 2007/03/20 10:48:52 espie Exp $
  #else
        c_file_name = "gcc";
  #endif
-@@ -1236,7 +1236,7 @@ main (int argc, char **argv)
+@@ -1239,7 +1239,7 @@ main (int argc, char **argv)
  
    if (exports.first)
      {
@@ -45,7 +45,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.4 2007/03/20 10:48:52 espie Exp $
  
        *ld1++ = buf;
        *ld2++ = buf;
-@@ -1401,7 +1401,7 @@ main (int argc, char **argv)
+@@ -1404,7 +1404,7 @@ main (int argc, char **argv)
    /* Tell the linker that we have initializer and finalizer functions.  */
  #ifdef LD_INIT_SWITCH
  #ifdef COLLECT_EXPORT_LIST
@@ -54,7 +54,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.4 2007/03/20 10:48:52 espie Exp $
  #else
    *ld2++ = LD_INIT_SWITCH;
    *ld2++ = initname;
-@@ -1416,7 +1416,7 @@ main (int argc, char **argv)
+@@ -1419,7 +1419,7 @@ main (int argc, char **argv)
        /* If we did not add export flag to link arguments before, add it to
  	 second link phase now.  No new exports should have been added.  */
        if (! exports.first)
@@ -63,7 +63,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.4 2007/03/20 10:48:52 espie Exp $
  
  #ifndef LD_INIT_SWITCH
        add_to_list (&exports, initname);
-@@ -1811,8 +1811,8 @@ write_c_file_stat (FILE *stream, const char *name ATTR
+@@ -1814,8 +1814,8 @@ write_c_file_stat (FILE *stream, const char *name ATTR
      notice ("\nwrite_c_file - output name is %s, prefix is %s\n",
  	    output_file, prefix);
  

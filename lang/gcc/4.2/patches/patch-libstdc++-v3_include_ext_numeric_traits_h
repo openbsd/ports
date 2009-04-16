@@ -1,7 +1,10 @@
-$OpenBSD: patch-libstdc++-v3_include_ext_numeric_traits_h,v 1.1 2009/01/18 18:47:05 robert Exp $
---- libstdc++-v3/include/ext/numeric_traits.h.orig	Thu Jan 15 15:01:21 2009
-+++ libstdc++-v3/include/ext/numeric_traits.h	Thu Jan 15 15:01:42 2009
-@@ -0,0 +1,98 @@
+$OpenBSD: patch-libstdc++-v3_include_ext_numeric_traits_h,v 1.2 2009/04/16 18:36:48 espie Exp $
+--- libstdc++-v3/include/ext/numeric_traits.h.orig	Sat Apr  7 10:38:39 2007
++++ libstdc++-v3/include/ext/numeric_traits.h	Tue Apr  7 19:39:00 2009
+@@ -96,3 +96,101 @@ _GLIBCXX_END_NAMESPACE
+ #undef __glibcxx_digits
+ 
+ #endif 
 +// -*- C++ -*-
 +
 +// Copyright (C) 2007 Free Software Foundation, Inc.

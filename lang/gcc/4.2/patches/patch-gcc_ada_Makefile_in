@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_ada_Makefile_in,v 1.4 2007/03/17 22:34:13 espie Exp $
---- gcc/ada/Makefile.in.orig	Tue Oct 17 06:24:13 2006
-+++ gcc/ada/Makefile.in	Mon Oct 30 12:43:35 2006
-@@ -117,12 +117,12 @@ TEXI2DVI = texi2dvi
+$OpenBSD: patch-gcc_ada_Makefile_in,v 1.5 2009/04/16 18:36:48 espie Exp $
+--- gcc/ada/Makefile.in.orig	Mon Sep  3 15:11:02 2007
++++ gcc/ada/Makefile.in	Tue Apr  7 19:38:58 2009
+@@ -116,12 +116,12 @@ TEXI2DVI = texi2dvi
  TEXI2PDF = texi2pdf
  GNATBIND = $(STAGE_PREFIX)gnatbind
  GNATBIND_FLAGS = -static -x

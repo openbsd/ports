@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_tree-vect-transform_c,v 1.4 2007/03/20 10:48:52 espie Exp $
---- gcc/tree-vect-transform.c.orig	Tue Sep 12 12:11:04 2006
-+++ gcc/tree-vect-transform.c	Sun Mar 18 23:58:45 2007
-@@ -105,7 +105,7 @@ vect_get_new_vect_var (tree type, enum vect_var_kind v
+$OpenBSD: patch-gcc_tree-vect-transform_c,v 1.5 2009/04/16 18:36:48 espie Exp $
+--- gcc/tree-vect-transform.c.orig	Sat Sep  1 17:28:30 2007
++++ gcc/tree-vect-transform.c	Tue Apr  7 19:38:59 2009
+@@ -104,7 +104,7 @@ vect_get_new_vect_var (tree type, enum vect_var_kind v
    }
  
    if (name)

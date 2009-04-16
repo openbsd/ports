@@ -1,6 +1,6 @@
---- gcc/config.gcc.orig	Sat Feb  3 00:25:20 2007
-+++ gcc/config.gcc	Thu Apr 10 09:14:05 2008
-@@ -552,6 +552,11 @@ case ${target} in
+--- gcc/config.gcc.orig	Thu Mar 13 20:11:43 2008
++++ gcc/config.gcc	Sun Apr 12 11:29:43 2009
+@@ -555,6 +555,11 @@ case ${target} in
      *-*-openbsd2.*|*-*-openbsd3.[012])
        tm_defines="${tm_defines} HAS_LIBC_R=1" ;;
    esac
@@ -12,16 +12,16 @@
    ;;
  *-*-rtems*)
    case ${enable_threads} in
-@@ -618,7 +623,7 @@ alpha*-*-netbsd*)
+@@ -621,7 +626,7 @@ alpha*-*-netbsd*)
  	;;
  alpha*-*-openbsd*)
  	tm_defines="${tm_defines} OBSD_NO_DYNAMIC_LIBRARIES OBSD_HAS_DECLARE_FUNCTION_NAME OBSD_HAS_DECLARE_FUNCTION_SIZE OBSD_HAS_DECLARE_OBJECT"
 -	tm_file="alpha/alpha.h openbsd.h alpha/openbsd.h"
-+	tm_file="alpha/alpha.h openbsd.h openbsd-libpthread.h alpha/openbsd.h"
++	tm_file="alpha/alpha.h alpha/elf.h openbsd.h openbsd-libpthread.h alpha/openbsd.h"
  	# default x-alpha is only appropriate for dec-osf.
  	target_cpu_default="MASK_GAS"
  	tmake_file="alpha/t-alpha alpha/t-ieee"
-@@ -1080,10 +1085,15 @@ i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
+@@ -1085,10 +1090,15 @@ i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
  	;;
  i[34567]86-*-openbsd*)
  	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h"
@@ -38,7 +38,7 @@
  i[34567]86-*-coff*)
  	tm_file="${tm_file} i386/unix.h i386/bsd.h i386/gas.h dbxcoff.h i386/i386-coff.h"
  	use_fixproto=yes
-@@ -1474,7 +1484,7 @@ m68010-*-netbsdelf* | m68k*-*-netbsdelf*)
+@@ -1479,7 +1489,7 @@ m68010-*-netbsdelf* | m68k*-*-netbsdelf*)
  m68k*-*-openbsd*)
  	# needed to unconfuse gdb
  	tm_defines="${tm_defines} OBSD_OLD_GAS TARGET_DEFAULT=(MASK_68020|MASK_68881|MASK_BITFIELD)"
@@ -47,7 +47,7 @@
  	tmake_file="t-libc-ok t-openbsd m68k/t-openbsd"
  	# we need collect2 until our bug is fixed...
  	use_collect2=yes
-@@ -1564,7 +1574,7 @@ mips*-*-linux*)				# Linux MIPS, either endian.
+@@ -1569,7 +1579,7 @@ mips*-*-linux*)				# Linux MIPS, either endian.
  mips*-*-openbsd*)
  	tm_defines="${tm_defines} OBSD_HAS_DECLARE_FUNCTION_NAME OBSD_HAS_DECLARE_OBJECT OBSD_HAS_CORRECT_SPECS"
  	target_cpu_default="MASK_ABICALLS"
@@ -56,7 +56,7 @@
  	case ${target} in
  	mips*el-*-openbsd*)
  	    tm_defines="${tm_defines} TARGET_ENDIAN_DEFAULT=0";;
-@@ -1682,11 +1692,11 @@ pdp11-*-bsd)
+@@ -1687,11 +1697,11 @@ pdp11-*-bsd)
  pdp11-*-*)
  	use_fixproto=yes
  	;;
@@ -73,7 +73,7 @@
  powerpc64-*-linux*)
  	tm_file="${tm_file} dbxelf.h elfos.h svr4.h freebsd-spec.h rs6000/sysv4.h"
  	test x$with_cpu != x || cpu_is_64bit=yes
-@@ -2150,7 +2160,7 @@ sparc-*-netbsdelf*)
+@@ -2163,7 +2173,7 @@ sparc-*-netbsdelf*)
  	extra_options="${extra_options} sparc/long-double-switch.opt"
  	;;
  sparc64-*-openbsd*)
@@ -82,7 +82,7 @@
  	extra_options="${extra_options} sparc/little-endian.opt"
  	gas=yes gnu_ld=yes
  	with_cpu=ultrasparc
-@@ -2395,7 +2405,7 @@ vax-*-netbsd*)
+@@ -2408,7 +2418,7 @@ vax-*-netbsd*)
  	use_collect2=yes
  	;;
  vax-*-openbsd*)

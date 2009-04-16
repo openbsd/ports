@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_cp_g++spec_c,v 1.1.1.1 2006/07/31 09:50:53 espie Exp $
---- gcc/cp/g++spec.c.orig	Sat Jun 25 02:58:12 2005
-+++ gcc/cp/g++spec.c	Thu Aug  4 10:54:00 2005
-@@ -40,7 +40,7 @@ Boston, MA 02110-1301, USA.  */
+$OpenBSD: patch-gcc_cp_g++spec_c,v 1.2 2009/04/16 18:36:48 espie Exp $
+--- gcc/cp/g++spec.c.orig	Fri Aug 31 10:27:50 2007
++++ gcc/cp/g++spec.c	Tue Apr  7 19:38:59 2009
+@@ -39,7 +39,7 @@ along with GCC; see the file COPYING3.  If not see
  #endif
  
  #ifndef LIBSTDCXX

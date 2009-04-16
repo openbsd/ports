@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_tree-mudflap_c,v 1.4 2007/03/20 10:48:52 espie Exp $
---- gcc/tree-mudflap.c.orig	Mon Oct  9 15:58:10 2006
-+++ gcc/tree-mudflap.c	Sun Mar 18 23:58:45 2007
-@@ -236,7 +236,7 @@ mf_file_function_line_tree (location_t location)
+$OpenBSD: patch-gcc_tree-mudflap_c,v 1.5 2009/04/16 18:36:48 espie Exp $
+--- gcc/tree-mudflap.c.orig	Sat Sep  1 17:28:30 2007
++++ gcc/tree-mudflap.c	Tue Apr  7 19:38:59 2009
+@@ -235,7 +235,7 @@ mf_file_function_line_tree (location_t location)
    else
      op = name = cp = "";
  

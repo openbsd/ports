@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/09/11 19:22:05 martynas Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/04/16 18:36:48 espie Exp $
 @pkgpath lang/gcc/4.2
 %%SHARED%%
-bin/ecpp
-bin/egcc
+@bin bin/ecpp
+@bin bin/egcc
 bin/egccbug
-bin/egcov
-bin/${CONFIG}-egcc
-bin/${CONFIG}-gcc-${V}
+@bin bin/egcov
+@bin bin/${CONFIG}-egcc
+@bin bin/${CONFIG}-gcc-${V}
 @info info/cpp.info
 @info info/cppinternals.info
 @info info/gcc.info
@@ -52,11 +52,11 @@ lib/libssp_nonshared.la
 libexec/gcc/
 libexec/gcc/${CONFIG}/
 libexec/gcc/${CONFIG}/${V}/
-libexec/gcc/${CONFIG}/${V}/cc1
-libexec/gcc/${CONFIG}/${V}/collect2
+@bin libexec/gcc/${CONFIG}/${V}/cc1
+@bin libexec/gcc/${CONFIG}/${V}/collect2
 libexec/gcc/${CONFIG}/${V}/install-tools/
 libexec/gcc/${CONFIG}/${V}/install-tools/fixinc.sh
-libexec/gcc/${CONFIG}/${V}/install-tools/fixincl
+@bin libexec/gcc/${CONFIG}/${V}/install-tools/fixincl
 libexec/gcc/${CONFIG}/${V}/install-tools/mkheaders
 %%I386%%
 %%PPC%%

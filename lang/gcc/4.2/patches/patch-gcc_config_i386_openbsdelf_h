@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.1 2006/10/06 12:42:43 kurt Exp $
---- gcc/config/i386/openbsdelf.h.orig	Tue Oct  3 20:52:02 2006
-+++ gcc/config/i386/openbsdelf.h	Tue Oct  3 20:52:18 2006
-@@ -56,10 +56,10 @@ Boston, MA 02110-1301, USA.  */
+$OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.2 2009/04/16 18:36:48 espie Exp $
+--- gcc/config/i386/openbsdelf.h.orig	Sat Sep  1 17:28:30 2007
++++ gcc/config/i386/openbsdelf.h	Sat Apr 11 14:07:21 2009
+@@ -55,10 +55,10 @@ along with GCC; see the file COPYING3.  If not see
  
  /* This must agree with <machine/ansi.h> */
  #undef SIZE_TYPE
@@ -14,3 +14,13 @@ $OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.1 2006/10/06 12:42:43 kurt Exp 
  
  #undef WCHAR_TYPE
  #define WCHAR_TYPE "int"
+@@ -109,9 +109,6 @@ along with GCC; see the file COPYING3.  If not see
+   fputs (flag_pic ? "\tcall __mcount@PLT\n": "\tcall __mcount\n", FILE);
+ 
+ /* Assembler format: exception region output.  */
+-
+-/* our configuration still doesn't handle dwarf2 correctly */
+-#define DWARF2_UNWIND_INFO 0
+ 
+ /* Assembler format: alignment output.  */
+ 
