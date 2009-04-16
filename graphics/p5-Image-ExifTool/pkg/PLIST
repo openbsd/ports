@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/01/01 15:52:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/04/16 06:36:59 jasper Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -47,6 +47,18 @@ ${P5SITE}/Image/ExifTool/JVC.pm
 ${P5SITE}/Image/ExifTool/Jpeg2000.pm
 ${P5SITE}/Image/ExifTool/Kodak.pm
 ${P5SITE}/Image/ExifTool/KyoceraRaw.pm
+${P5SITE}/Image/ExifTool/Lang/
+${P5SITE}/Image/ExifTool/Lang/ch_s.pm
+${P5SITE}/Image/ExifTool/Lang/cz.pm
+${P5SITE}/Image/ExifTool/Lang/de.pm
+${P5SITE}/Image/ExifTool/Lang/en_ca.pm
+${P5SITE}/Image/ExifTool/Lang/en_gb.pm
+${P5SITE}/Image/ExifTool/Lang/es.pm
+${P5SITE}/Image/ExifTool/Lang/fr.pm
+${P5SITE}/Image/ExifTool/Lang/it.pm
+${P5SITE}/Image/ExifTool/Lang/jp.pm
+${P5SITE}/Image/ExifTool/Lang/nl.pm
+${P5SITE}/Image/ExifTool/Lang/pl.pm
 ${P5SITE}/Image/ExifTool/Leaf.pm
 ${P5SITE}/Image/ExifTool/MIE.pm
 ${P5SITE}/Image/ExifTool/MIEUnits.pod
@@ -82,6 +94,7 @@ ${P5SITE}/Image/ExifTool/Shortcuts.pm
 ${P5SITE}/Image/ExifTool/Sigma.pm
 ${P5SITE}/Image/ExifTool/SigmaRaw.pm
 ${P5SITE}/Image/ExifTool/Sony.pm
+${P5SITE}/Image/ExifTool/TagInfoXML.pm
 ${P5SITE}/Image/ExifTool/TagLookup.pm
 ${P5SITE}/Image/ExifTool/TagNames.pod
 ${P5SITE}/Image/ExifTool/Unknown.pm
@@ -141,6 +154,17 @@ ${P5SITE}/Image/ExifTool/ZIP.pm
 @man man/man3p/Image::ExifTool::Jpeg2000.3p
 @man man/man3p/Image::ExifTool::Kodak.3p
 @man man/man3p/Image::ExifTool::KyoceraRaw.3p
+@man man/man3p/Image::ExifTool::Lang::ch_s.3p
+@man man/man3p/Image::ExifTool::Lang::cz.3p
+@man man/man3p/Image::ExifTool::Lang::de.3p
+@man man/man3p/Image::ExifTool::Lang::en_ca.3p
+@man man/man3p/Image::ExifTool::Lang::en_gb.3p
+@man man/man3p/Image::ExifTool::Lang::es.3p
+@man man/man3p/Image::ExifTool::Lang::fr.3p
+@man man/man3p/Image::ExifTool::Lang::it.3p
+@man man/man3p/Image::ExifTool::Lang::jp.3p
+@man man/man3p/Image::ExifTool::Lang::nl.3p
+@man man/man3p/Image::ExifTool::Lang::pl.3p
 @man man/man3p/Image::ExifTool::Leaf.3p
 @man man/man3p/Image::ExifTool::MIE.3p
 @man man/man3p/Image::ExifTool::MIEUnits.3p
@@ -175,6 +199,7 @@ ${P5SITE}/Image/ExifTool/ZIP.pm
 @man man/man3p/Image::ExifTool::Sigma.3p
 @man man/man3p/Image::ExifTool::SigmaRaw.3p
 @man man/man3p/Image::ExifTool::Sony.3p
+@man man/man3p/Image::ExifTool::TagInfoXML.3p
 @man man/man3p/Image::ExifTool::TagLookup.3p
 @man man/man3p/Image::ExifTool::TagNames.3p
 @man man/man3p/Image::ExifTool::Unknown.3p
