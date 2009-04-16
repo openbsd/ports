@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/04/06 17:14:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/04/16 08:21:13 jasper Exp $
 %%SHARED%%
 @bin bin/glade-3
 include/libgladeui-1.0/
@@ -533,6 +533,8 @@ share/locale/si/LC_MESSAGES/glade3.mo
 share/locale/sk/LC_MESSAGES/glade3.mo
 share/locale/sl/LC_MESSAGES/glade3.mo
 share/locale/sq/LC_MESSAGES/glade3.mo
+share/locale/sr/LC_MESSAGES/glade3.mo
+share/locale/sr@latin/LC_MESSAGES/glade3.mo
 share/locale/sv/LC_MESSAGES/glade3.mo
 share/locale/ta/LC_MESSAGES/glade3.mo
 share/locale/te/LC_MESSAGES/glade3.mo
