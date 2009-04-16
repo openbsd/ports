@@ -1,4 +1,4 @@
-$OpenBSD: patch-openh323u_mak_in,v 1.4 2009/04/07 21:34:24 ajacoutot Exp $
+$OpenBSD: patch-openh323u_mak_in,v 1.5 2009/04/16 14:43:36 ajacoutot Exp $
 --- openh323u.mak.in.orig	Tue May 30 13:09:24 2006
 +++ openh323u.mak.in	Mon Mar  3 12:29:57 2008
 @@ -166,8 +166,12 @@
@@ -43,7 +43,7 @@ $OpenBSD: patch-openh323u_mak_in,v 1.4 2009/04/07 21:34:24 ajacoutot Exp $
 +ifdef BUILDSELF
  OH323_FILE  = lib$(OH323_BASE).$(LIB_SUFFIX)
 +else
-+OH323_FILE  = lib$(OH323_BASE).${LIBh323_VERSION}
++OH323_FILE  = lib$(OH323_BASE).so.${LIBh323_VERSION}
 +endif
  
  LDFLAGS	    += -L$(OH323_LIBDIR)
