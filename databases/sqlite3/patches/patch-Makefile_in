@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.12 2009/04/05 00:02:54 martynas Exp $
---- Makefile.in.orig	Sun Feb 15 15:07:08 2009
-+++ Makefile.in	Sun Mar 22 13:28:08 2009
-@@ -176,11 +176,11 @@ OBJS0 = alter.lo analyze.lo attach.lo auth.lo bitvec.l
+$OpenBSD: patch-Makefile_in,v 1.13 2009/04/16 20:09:58 martynas Exp $
+--- Makefile.in.orig	Mon Mar 30 19:37:16 2009
++++ Makefile.in	Sun Apr  5 11:14:52 2009
+@@ -176,11 +176,11 @@ OBJS0 = alter.lo analyze.lo attach.lo auth.lo backup.l
          table.lo tokenize.lo trigger.lo update.lo \
          util.lo vacuum.lo \
          vdbe.lo vdbeapi.lo vdbeaux.lo vdbeblob.lo vdbemem.lo \
@@ -15,7 +15,7 @@ $OpenBSD: patch-Makefile_in,v 1.12 2009/04/05 00:02:54 martynas Exp $
  
  # Determine the real value of LIBOBJ based on the 'configure' script
  #
-@@ -273,7 +273,8 @@ SRC = \
+@@ -274,7 +274,8 @@ SRC = \
    $(TOP)/src/vdbeInt.h \
    $(TOP)/src/vtab.c \
    $(TOP)/src/walker.c \
@@ -25,7 +25,7 @@ $OpenBSD: patch-Makefile_in,v 1.12 2009/04/05 00:02:54 martynas Exp $
  
  # Generated source code files
  #
-@@ -438,7 +439,7 @@ HDR += \
+@@ -439,7 +440,7 @@ HDR += \
  # hidden when the library is built via the amalgamation).
  #
  TESTFIXTURE_SRC0 = $(TESTSRC2) libsqlite3.la
@@ -34,7 +34,7 @@ $OpenBSD: patch-Makefile_in,v 1.12 2009/04/05 00:02:54 martynas Exp $
  TESTFIXTURE_SRC = $(TESTSRC) $(TOP)/src/tclsqlite.c $(TESTFIXTURE_SRC$(USE_AMALGAMATION))
  
  
-@@ -466,7 +467,7 @@ libsqlite3.la:	$(LIBOBJ)
+@@ -467,7 +468,7 @@ libsqlite3.la:	$(LIBOBJ)
  
  libtclsqlite3.la:	tclsqlite.lo libsqlite3.la
  	$(LTLINK) -o $@ tclsqlite.lo \
@@ -43,7 +43,7 @@ $OpenBSD: patch-Makefile_in,v 1.12 2009/04/05 00:02:54 martynas Exp $
  		-rpath "$(TCLLIBDIR)" \
  		-version-info "8:6:8" \
  		-avoid-version
-@@ -504,6 +505,9 @@ lemon$(BEXE):	$(TOP)/tool/lemon.c $(TOP)/tool/lempar.c
+@@ -505,6 +506,9 @@ lemon$(BEXE):	$(TOP)/tool/lemon.c $(TOP)/tool/lempar.c
  sqlite3.lo:	sqlite3.c
  	$(LTCOMPILE) $(TEMP_STORE) -c sqlite3.c
  
@@ -53,7 +53,7 @@ $OpenBSD: patch-Makefile_in,v 1.12 2009/04/05 00:02:54 martynas Exp $
  # Rules to build individual files
  #
  alter.lo:	$(TOP)/src/alter.c $(HDR)
-@@ -799,6 +803,8 @@ clean:	
+@@ -808,6 +812,8 @@ clean:	
  
  distclean:	clean
  	rm -f config.log config.status libtool Makefile sqlite3.pc

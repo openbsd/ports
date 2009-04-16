@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.43 2009/04/05 00:02:53 martynas Exp $
+# $OpenBSD: Makefile,v 1.44 2009/04/16 20:09:58 martynas Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
 COMMENT-lemon=	LEMON LALR(1) parser generator
-V=		3.6.11
+V=		3.6.12
 DISTNAME=	sqlite-${V}
 PKGNAME-main=	sqlite3-${V}
 PKGNAME-tcl=	sqlite3-tcl-${V}
 PKGNAME-lemon=	lemon-${V}
 CATEGORIES=	databases
-SHARED_LIBS +=	sqlite3              13.1      # .8.6
-SHARED_LIBS +=	tclsqlite3           12.1      # .8.6
+SHARED_LIBS +=	sqlite3              13.2      # .8.6
+SHARED_LIBS +=	tclsqlite3           12.2      # .8.6
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -31,11 +31,6 @@ CFLAGS+=	-DSQLITE_ENABLE_COLUMN_METADATA
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-threads-override-locks
-
-# XXX gcc bug? some regress tests crash w/-O2 but not -Os
-.if ${MACHINE_ARCH} == "amd64"
-CFLAGS+=-Os
-.endif
 
 PSEUDO_FLAVORS=	no_tcl
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
