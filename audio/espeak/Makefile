@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/23 12:02:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/16 16:39:17 ajacoutot Exp $
 
 COMMENT=		compact speech synthesizer
 
 DISTNAME=		espeak-1.40.02-source
-PKGNAME=		${DISTNAME:S/-source//}
+PKGNAME=		${DISTNAME:S/-source//}p0
 SHARED_LIBS=		espeak 0.0
 
 CATEGORIES=		audio devel
@@ -39,7 +39,7 @@ MAKE_FLAGS +=		EXTRA_FLAGS="-fPIC"
 SUBST_VARS=		PREFIX LIBespeak_VERSION
 
 post-extract:
-	@cp ${WRKSRC}/portaudio19.h ${WRKSRC}/portaudio.h
+	@cp ${LOCALBASE}/include/portaudio.h ${WRKSRC}/portaudio.h
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/speech.h ${WRKSRC}/Makefile

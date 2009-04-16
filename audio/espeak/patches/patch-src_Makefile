@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile,v 1.4 2009/03/23 12:02:28 ajacoutot Exp $
---- src/Makefile.orig	Mon Mar 23 12:36:15 2009
-+++ src/Makefile	Mon Mar 23 12:39:29 2009
+$OpenBSD: patch-src_Makefile,v 1.5 2009/04/16 16:39:17 ajacoutot Exp $
+--- src/Makefile.orig	Mon Dec 22 23:37:41 2008
++++ src/Makefile	Thu Apr 16 18:33:32 2009
 @@ -1,6 +1,5 @@
  # remove -fno-exceptions  if it causes problems with stdio library on some platforms (ARM)
  
@@ -22,22 +22,31 @@ $OpenBSD: patch-src_Makefile,v 1.4 2009/03/23 12:02:28 ajacoutot Exp $
  # Use SONAME_OPT=-Wl,h, on Solaris
  SONAME_OPT=-Wl,-soname,
  
+@@ -35,7 +36,7 @@ USE_AUDIO=-DUSE_PULSEAUDIO
+ else
+ ifeq ($(AUDIO),portaudio)
+ WAVE=wave.cpp
+-LIB_AUDIO=-lportaudio
++LIB_AUDIO=-L$(LOCALBASE)/lib -lportaudio
+ USE_AUDIO=-DUSE_PORTAUDIO
+ else
+ ifeq ($(AUDIO),sada)
 @@ -60,27 +61,25 @@ libespeak_SOURCES = speak_lib.cpp compiledict.cpp dict
  
  SRCS1=$(speak_SOURCES)
  OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
 -LIBS1=-lstdc++ $(LIB_AUDIO) -lpthread $(EXTRA_LIBS)
-+LIBS1=-lstdc++ $(LPATH) -lportaudio -pthread
++LIBS1=-lstdc++ $(LIB_AUDIO) -pthread $(EXTRA_LIBS)
  
  SRCS2=$(libespeak_SOURCES)
  OBJS2=$(patsubst %.cpp,x_%.o,$(SRCS2))
 -LIBS2=-lstdc++ $(LIB_AUDIO) -lpthread
-+LIBS2=-lstdc++ $(LPATH) -lportaudio -pthread
++LIBS2=-lstdc++ $(LPATH) $(LIB_AUDIO) -pthread
  
  SRCS3 = espeak.cpp
  OBJS3=$(patsubst %.cpp,%.o,$(SRCS3))
 -LIBS3=-lstdc++ -L . -lespeak
-+LIBS3=-lstdc++ -L . -lespeak $(LPATH) -lportaudio -pthread
++LIBS3=-lstdc++ -L . -lespeak $(LPATH) -pthread
  
 -CXXFLAGS=-O2
  
@@ -47,7 +56,7 @@ $OpenBSD: patch-src_Makefile,v 1.4 2009/03/23 12:02:28 ajacoutot Exp $
  
  .cpp.o:
 -	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions  $<
-+	$(CXX) $(CXXFLAGS) $(EXTRA_FLAGS) $(USE_AUDIO) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions  $<
++	$(CXX) $(CXXFLAGS) -pthread $(USE_AUDIO) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions  $<
  
  $(BIN_NAME): $(OBJS1)
 -	$(CXX) -o $@ $(OBJS1) $(LIBS1)
@@ -61,7 +70,7 @@ $OpenBSD: patch-src_Makefile,v 1.4 2009/03/23 12:02:28 ajacoutot Exp $
  x_%.o: %.cpp
 -	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -Wall -fpic -fvisibility=hidden -pedantic \
 -	-I. -D LIBRARY -c -fno-exceptions  $<  -o x_$*.o
-+	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -Wall -fPIC -DPIC -pedantic \
++	$(CXX) $(CXXFLAGS) -pthread $(USE_AUDIO) -Wall -fpic -pedantic \
 +	-I. -DLIBRARY -DPATH_ESPEAK_DATA=\"$(DATADIR)\" -c -fno-exceptions $<  -o x_$*.o
  
  $(LIB_NAME): $(OBJS2)
@@ -70,3 +79,10 @@ $OpenBSD: patch-src_Makefile,v 1.4 2009/03/23 12:02:28 ajacoutot Exp $
  
  $(STATIC_LIB_NAME): $(OBJS2)
  	$(AR) cqs $(STATIC_LIB_NAME) $(OBJS2)
+@@ -123,5 +122,5 @@ install: all
+ 	# Install development headers
+ 	$(INSTALL) -pm 644 speak_lib.h $(DESTDIR)$(INCDIR)
+ 	# Install data files
+-	cp -prf ../espeak-data/* $(DESTDIR)$(DATADIR)
++	cp -pRf ../espeak-data/* $(DESTDIR)$(DATADIR)
+ 
