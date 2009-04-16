@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2008/06/29 20:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/04/16 08:23:14 ajacoutot Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
@@ -25,7 +25,8 @@ MASTER_SITES=		http://releases.navi.cx/fyre/ \
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		::misc/shared-mime-info
+BUILD_DEPENDS=		::misc/shared-mime-info \
+			::textproc/rarian
 LIB_DEPENDS=		glade-2.0::devel/libglade2 \
 			IlmImf.>=4::graphics/openexr \
 			gnet-2.0::net/gnet
@@ -39,7 +40,6 @@ CONFIGURE_ARGS= 	--enable-openexr \
 			--enable-gnet
 
 post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 	@ln -s /usr/bin/true ${WRKDIR}/bin/update-mime-database
 
 .include <bsd.port.mk>
