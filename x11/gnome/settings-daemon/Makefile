@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/04/16 08:17:49 ajacoutot Exp $
 
 COMMENT=		GNOME settings daemon
 
@@ -48,9 +48,6 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/control
 # We can't have both OSS and GStreamer support for the media-keys plugin.
 # We choose for GStreamer.
 CONFIGURE_ARGS+=	--enable-gstreamer
-
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/gnome-settings-daemon/gnome-settings-module.c
