@@ -1,0 +1,2 @@
+If you want 'ssh-add </dev/null' to use this dialog, you have to set
+SSH_ASKPASS environment variable to ${PREFIX}/bin/ssh-askpass-fullscreen

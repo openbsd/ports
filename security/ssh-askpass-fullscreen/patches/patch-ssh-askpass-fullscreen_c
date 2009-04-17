@@ -1,0 +1,23 @@
+$OpenBSD: patch-ssh-askpass-fullscreen_c,v 1.1.1.1 2009/04/17 14:57:59 landry Exp $
+--- ssh-askpass-fullscreen.c.orig	Mon Jan 16 13:49:38 2006
++++ ssh-askpass-fullscreen.c	Mon Apr 13 21:25:43 2009
+@@ -229,8 +229,9 @@ enter_callback(GtkWidget *widget,
+   if (result == 0) /* result is always == 0, what this check is for? */
+ 	puts(passphrase);
+ 		
+-  memset((void*)passphrase, '\0', strlen(passphrase)); 
++  memset((void*)passphrase, '\b', strlen(passphrase)); 
+   gtk_entry_set_text(GTK_ENTRY(entry), passphrase);
++  memset((void*)passphrase, '\0', strlen(passphrase)); 
+   gtk_main_quit();
+   
+ }
+@@ -247,7 +248,7 @@ passphrase_dialog(char *message)
+ 	GdkColor color;
+ 	gchar *str;
+         GdkGrabStatus status;
+-        int grab_tries;
++        int grab_tries = 0;
+         const char *failed;
+         
+  	grab_server = (getenv("GNOME_SSH_ASKPASS_GRAB_SERVER") != NULL); 
