@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/04/17 10:31:09 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2009/04/17 10:31:45 espie Exp $
 
 COMMENT = 		web-based SSH client
 
@@ -40,4 +40,4 @@ do-install:
 
 
 
-linclude <bsd.port.mk>
+.include <bsd.port.mk>
