@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/04/08 21:30:54 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/04/17 23:17:07 sthen Exp $
 @newgroup _cherokee:608
 @newuser _cherokee:608:_cherokee:daemon:Cherokee HTTP Server:/var/empty:/sbin/nologin
 @bin bin/cget
@@ -40,6 +40,7 @@ include/cherokee/post.h
 include/cherokee/resolv_cache.h
 include/cherokee/rule.h
 include/cherokee/server.h
+include/cherokee/template.h
 include/cherokee/trace.h
 include/cherokee/url.h
 include/cherokee/util.h
@@ -52,12 +53,16 @@ lib/cherokee/libplugin_admin.so
 lib/cherokee/libplugin_and.so
 @comment lib/cherokee/libplugin_authlist.la
 lib/cherokee/libplugin_authlist.so
+@comment lib/cherokee/libplugin_bind.la
+lib/cherokee/libplugin_bind.so
 @comment lib/cherokee/libplugin_cgi.la
 lib/cherokee/libplugin_cgi.so
 @comment lib/cherokee/libplugin_combined.la
 lib/cherokee/libplugin_combined.so
 @comment lib/cherokee/libplugin_common.la
 lib/cherokee/libplugin_common.so
+@comment lib/cherokee/libplugin_custom.la
+lib/cherokee/libplugin_custom.so
 @comment lib/cherokee/libplugin_custom_error.la
 lib/cherokee/libplugin_custom_error.so
 @comment lib/cherokee/libplugin_deflate.la
@@ -66,10 +71,14 @@ lib/cherokee/libplugin_deflate.so
 lib/cherokee/libplugin_directory.so
 @comment lib/cherokee/libplugin_dirlist.la
 lib/cherokee/libplugin_dirlist.so
+@comment lib/cherokee/libplugin_empty_gif.la
+lib/cherokee/libplugin_empty_gif.so
 @comment lib/cherokee/libplugin_error_nn.la
 lib/cherokee/libplugin_error_nn.so
 @comment lib/cherokee/libplugin_error_redir.la
 lib/cherokee/libplugin_error_redir.so
+@comment lib/cherokee/libplugin_evhost.la
+lib/cherokee/libplugin_evhost.so
 @comment lib/cherokee/libplugin_exists.la
 lib/cherokee/libplugin_exists.so
 @comment lib/cherokee/libplugin_extensions.la
@@ -110,12 +119,16 @@ lib/cherokee/libplugin_phpcgi.so
 lib/cherokee/libplugin_proxy.so
 @comment lib/cherokee/libplugin_redir.la
 lib/cherokee/libplugin_redir.so
+@comment lib/cherokee/libplugin_rehost.la
+lib/cherokee/libplugin_rehost.so
 @comment lib/cherokee/libplugin_request.la
 lib/cherokee/libplugin_request.so
 @comment lib/cherokee/libplugin_round_robin.la
 lib/cherokee/libplugin_round_robin.so
 @comment lib/cherokee/libplugin_scgi.la
 lib/cherokee/libplugin_scgi.so
+@comment lib/cherokee/libplugin_secdownload.la
+lib/cherokee/libplugin_secdownload.so
 @comment lib/cherokee/libplugin_server_info.la
 lib/cherokee/libplugin_server_info.so
 @comment lib/cherokee/libplugin_ssi.la
@@ -124,6 +137,8 @@ lib/cherokee/libplugin_ssi.so
 lib/cherokee/libplugin_streaming.so
 @comment lib/cherokee/libplugin_w3c.la
 lib/cherokee/libplugin_w3c.so
+@comment lib/cherokee/libplugin_wildcard.la
+lib/cherokee/libplugin_wildcard.so
 @comment lib/libcherokee-base.la
 @lib lib/libcherokee-base.so.${LIBcherokee-base_VERSION}
 @comment lib/libcherokee-client.la
@@ -154,6 +169,7 @@ share/cherokee/admin/ModuleAdmin.py
 share/cherokee/admin/ModuleAuth.py
 share/cherokee/admin/ModuleAuthlist.py
 share/cherokee/admin/ModuleBalancer.py
+share/cherokee/admin/ModuleBind.py
 share/cherokee/admin/ModuleCgi.py
 share/cherokee/admin/ModuleCommon.py
 share/cherokee/admin/ModuleCustomError.py
@@ -161,8 +177,10 @@ share/cherokee/admin/ModuleDbslayer.py
 share/cherokee/admin/ModuleDefault.py
 share/cherokee/admin/ModuleDirectory.py
 share/cherokee/admin/ModuleDirlist.py
+share/cherokee/admin/ModuleEmptyGif.py
 share/cherokee/admin/ModuleErrorNn.py
 share/cherokee/admin/ModuleErrorRedir.py
+share/cherokee/admin/ModuleEvhost.py
 share/cherokee/admin/ModuleExists.py
 share/cherokee/admin/ModuleExtensions.py
 share/cherokee/admin/ModuleFcgi.py
@@ -181,12 +199,15 @@ share/cherokee/admin/ModulePam.py
 share/cherokee/admin/ModulePlain.py
 share/cherokee/admin/ModuleProxy.py
 share/cherokee/admin/ModuleRedir.py
+share/cherokee/admin/ModuleRehost.py
 share/cherokee/admin/ModuleRequest.py
 share/cherokee/admin/ModuleRoundRobin.py
 share/cherokee/admin/ModuleScgi.py
+share/cherokee/admin/ModuleSecdownload.py
 share/cherokee/admin/ModuleServerInfo.py
 share/cherokee/admin/ModuleSsi.py
 share/cherokee/admin/ModuleStreaming.py
+share/cherokee/admin/ModuleWildcard.py
 share/cherokee/admin/Page.py
 share/cherokee/admin/PageAdvanced.py
 share/cherokee/admin/PageAjaxUpdate.py
@@ -197,10 +218,12 @@ share/cherokee/admin/PageGeneral.py
 share/cherokee/admin/PageIcon.py
 share/cherokee/admin/PageInfoSource.py
 share/cherokee/admin/PageMime.py
+share/cherokee/admin/PageNewConfig.py
 share/cherokee/admin/PageStatus.py
 share/cherokee/admin/PageVServer.py
 share/cherokee/admin/PageVServers.py
 share/cherokee/admin/Post.py
+share/cherokee/admin/Rule.py
 share/cherokee/admin/RuleList.py
 share/cherokee/admin/Table.py
 share/cherokee/admin/Theme.py
@@ -211,9 +234,9 @@ share/cherokee/admin/consts.py
 share/cherokee/admin/default.template.html
 share/cherokee/admin/error_couldnt_launch.template.html
 share/cherokee/admin/error_icons_dir_missing.template.html
-share/cherokee/admin/error_not_found.template.html
 share/cherokee/admin/error_not_writable.template.html
 share/cherokee/admin/flags.py
+share/cherokee/admin/performance.conf.sample
 share/cherokee/admin/pyscgi.py
 share/cherokee/admin/server.py
 share/cherokee/admin/static/
@@ -518,6 +541,7 @@ share/cherokee/deps/fastcgi.deps
 share/cherokee/deps/fcgi.deps
 share/cherokee/deps/phpcgi.deps
 share/cherokee/deps/scgi.deps
+share/cherokee/deps/secdownload.deps
 share/cherokee/deps/streaming.deps
 share/cherokee/icons/
 share/cherokee/icons/README.txt
@@ -640,6 +664,7 @@ share/doc/cherokee/media/images/admin_advanced3.png
 share/doc/cherokee/media/images/admin_advanced4.png
 share/doc/cherokee/media/images/admin_behaviour.png
 share/doc/cherokee/media/images/admin_dirlist_cherokee.png
+share/doc/cherokee/media/images/admin_general.png
 share/doc/cherokee/media/images/admin_general_networking.png
 share/doc/cherokee/media/images/admin_general_permissions.png
 share/doc/cherokee/media/images/admin_general_ports.png
@@ -655,6 +680,7 @@ share/doc/cherokee/media/images/admin_handler_file.png
 share/doc/cherokee/media/images/admin_handler_onlylisting.png
 share/doc/cherokee/media/images/admin_handler_onlylisting_ex.png
 share/doc/cherokee/media/images/admin_handler_proxy.png
+share/doc/cherokee/media/images/admin_handler_secdownload.png
 share/doc/cherokee/media/images/admin_icons1.png
 share/doc/cherokee/media/images/admin_icons2.png
 share/doc/cherokee/media/images/admin_icons3.png
@@ -785,10 +811,13 @@ share/doc/cherokee/modules_handlers_mirror.html
 share/doc/cherokee/modules_handlers_proxy.html
 share/doc/cherokee/modules_handlers_redir.html
 share/doc/cherokee/modules_handlers_scgi.html
+share/doc/cherokee/modules_handlers_secdownload.html
 share/doc/cherokee/modules_handlers_server_info.html
 share/doc/cherokee/modules_handlers_ssi.html
+share/doc/cherokee/modules_handlers_streaming.html
 share/doc/cherokee/modules_loggers.html
 share/doc/cherokee/modules_loggers_combined.html
+share/doc/cherokee/modules_loggers_custom.html
 share/doc/cherokee/modules_loggers_ncsa.html
 share/doc/cherokee/modules_loggers_w3c.html
 share/doc/cherokee/modules_validators.html

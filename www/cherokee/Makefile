@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/04/08 21:30:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/04/17 23:17:07 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,8 +7,8 @@ COMMENT-geoip =	GeoIP module for Cherokee web server
 COMMENT-ldap =	LDAP module for Cherokee web server
 COMMENT-mysql =	MySQL module for Cherokee web server
 
-VERSION =	0.99.0
-DIR =		${VERSION:C/..$//}
+VERSION =	0.99.10
+DIR =		0.99
 DISTNAME =	cherokee-${VERSION}
 
 PKGNAME-main =	${DISTNAME}
@@ -16,10 +16,10 @@ PKGNAME-ldap=   cherokee-ldap-${VERSION}
 PKGNAME-mysql=  cherokee-mysql-${VERSION}
 PKGNAME-geoip=  cherokee-geoip-${VERSION}
 
-SHARED_LIBS +=	cherokee-base        0.0      # .0.1
-SHARED_LIBS +=	cherokee-client      0.0      # .0.1
-SHARED_LIBS +=	cherokee-config      0.0      # .0.1
-SHARED_LIBS +=	cherokee-server      0.0      # .0.1
+SHARED_LIBS +=	cherokee-base        0.0
+SHARED_LIBS +=	cherokee-client      0.0
+SHARED_LIBS +=	cherokee-config      0.0
+SHARED_LIBS +=	cherokee-server      0.0
 
 CATEGORIES =	www
 
@@ -35,7 +35,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES  =	${HOMEPAGE}download/${DIR}/${VERSION}/ \
 		http://ftp.heanet.ie/mirrors/cherokee/${DIR}/${VERSION}/ \
-		http://www.ring.gr.jp/arcvhies/net/cherokee/${DIR}/${VERSION}/ \
+		http://www.ring.gr.jp/archives/net/cherokee/${DIR}/${VERSION}/ \
 		http://cherokee.osuosl.org/${DIR}/${VERSION}/
 
 MULTI_PACKAGES =-main -ldap -mysql -geoip
