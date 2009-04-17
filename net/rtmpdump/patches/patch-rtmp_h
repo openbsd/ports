@@ -1,0 +1,20 @@
+$OpenBSD: patch-rtmp_h,v 1.1.1.1 2009/04/17 17:56:50 sthen Exp $
+--- rtmp.h.orig	Wed Apr  8 15:50:31 2009
++++ rtmp.h	Wed Apr  8 15:50:43 2009
+@@ -27,12 +27,12 @@
+ 
+ #ifdef WIN32
+ #else
+-//#include <sys/types.h>
+-//#include <sys/socket.h>
++#include <sys/types.h>
++#include <sys/socket.h>
+ #include <netdb.h>
+ #include <arpa/inet.h>
+-//#include <unistd.h>
+-//#include <netinet/in.h>
++#include <unistd.h>
++#include <netinet/in.h>
+ #endif
+ 
+ #include "AMFObject.h"

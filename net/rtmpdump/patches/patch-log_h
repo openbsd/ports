@@ -1,0 +1,12 @@
+$OpenBSD: patch-log_h,v 1.1.1.1 2009/04/17 17:56:50 sthen Exp $
+--- log.h.orig	Fri Apr 17 14:05:18 2009
++++ log.h	Fri Apr 17 14:05:37 2009
+@@ -21,7 +21,7 @@
+ #ifndef __LOG_H__
+ #define __LOG_H__
+ 
+-#define _DEBUG
++/* #define _DEBUG */
+ 
+ #ifdef _DEBUG
+ #undef NODEBUG
