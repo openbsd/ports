@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/11/10 09:02:30 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/04/17 08:34:41 landry Exp $
 @pkgpath devel/vte
-bin/vte
+@bin bin/vte
 include/vte/
 include/vte/pty.h
 include/vte/reaper.h
@@ -13,14 +13,9 @@ lib/libvte.la
 lib/pkgconfig/vte.pc
 lib/vte/
 lib/vte/decset
-lib/vte/interpret
-lib/vte/iso8859mode
-lib/vte/nativeecho
+@bin lib/vte/interpret
 lib/vte/osc
-lib/vte/slowcat
-lib/vte/utf8echo
-lib/vte/utf8mode
-lib/vte/vterdb
+@bin lib/vte/slowcat
 lib/vte/window
 @mode g+s
 @group utmp
@@ -28,7 +23,6 @@ libexec/gnome-pty-helper
 @mode
 @group
 share/gtk-doc/html/vte/
-share/gtk-doc/html/vte/VteReaper.html
 share/gtk-doc/html/vte/VteTerminal.html
 share/gtk-doc/html/vte/VteTerminalAccessible.html
 share/gtk-doc/html/vte/ch01.html
@@ -44,6 +38,7 @@ share/gtk-doc/html/vte/vte.devhelp2
 share/locale/am/LC_MESSAGES/vte.mo
 share/locale/ang/LC_MESSAGES/vte.mo
 share/locale/ar/LC_MESSAGES/vte.mo
+share/locale/as/LC_MESSAGES/vte.mo
 share/locale/az/LC_MESSAGES/vte.mo
 share/locale/be/LC_MESSAGES/vte.mo
 share/locale/be@latin/LC_MESSAGES/vte.mo

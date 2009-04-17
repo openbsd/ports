@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST-python,v 1.2 2008/07/08 12:02:19 jasper Exp $
+@comment $OpenBSD: PLIST-python,v 1.3 2009/04/17 08:34:41 landry Exp $
 %%SHARED%%
+lib/pkgconfig/pyvte.pc
 lib/python${MODPY_VERSION}/
 lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/vtemodule.a
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/vtemodule.la
+share/pygtk/
+share/pygtk/2.0/
+share/pygtk/2.0/defs/
+share/pygtk/2.0/defs/vte.defs
