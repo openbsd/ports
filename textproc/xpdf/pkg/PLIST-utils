@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-utils,v 1.1 2008/02/13 16:18:33 landry Exp $
+@comment $OpenBSD: PLIST-utils,v 1.2 2009/04/17 20:55:46 kili Exp $
 @conflict xpdf-<=3.02pl2p0
-bin/pdffonts
-bin/pdfimages
-bin/pdfinfo
-bin/pdftotext
+@bin bin/pdffonts
+@bin bin/pdfimages
+@bin bin/pdfinfo
+@bin bin/pdftotext
 @man man/man1/pdffonts.1
 @man man/man1/pdfimages.1
 @man man/man1/pdfinfo.1
