@@ -1,0 +1,9 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2009/04/18 09:02:05 sthen Exp $
+--- Makefile.in.orig	Sat Apr 18 09:54:34 2009
++++ Makefile.in	Sat Apr 18 09:54:48 2009
+@@ -189,4 +189,4 @@ Makefile: Makefile.in
+ 	    -e 's!@''dotlock@!$(DOTLOCKBASE)!' $@.in > $@
+ 
+ %.o: %.c
+-	$(CC) $(CFLAGS) $(DEFS) -c $<
++	$(CC) $(CFLAGS) $(CPPFLAGS) $(DEFS) -c $<
