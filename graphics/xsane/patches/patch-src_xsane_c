@@ -1,0 +1,84 @@
+$OpenBSD: patch-src_xsane_c,v 1.1 2009/04/18 12:22:13 ajacoutot Exp $
+
+Close unneeded file descriptors.
+
+--- src/xsane.c.orig	Sat Mar 29 09:56:30 2008
++++ src/xsane.c	Sat Apr 18 13:29:24 2009
+@@ -48,6 +48,8 @@
+ 
+ #include <sys/wait.h>
+ 
++#include <stdarg.h>
++
+ /* ---------------------------------------------------------------------------------------------------------------------- */
+ 
+ struct option long_options[] =
+@@ -3674,6 +3676,41 @@ static void xsane_show_gpl(GtkWidget *widget, gpointer
+ 
+ /* ---------------------------------------------------------------------------------------------------------------------- */
+ 
++static void xsane_close_fds_for_exec(signed int first_fd_to_leave_open, ...)
++{
++ int open_max;
++ signed int i;
++
++ va_list ap;
++ unsigned char *close_fds;
++
++  open_max = (int) sysconf (_SC_OPEN_MAX);
++
++  close_fds = malloc (open_max);
++
++  memset (close_fds, 1, open_max);
++
++  va_start (ap, first_fd_to_leave_open);
++
++  for (i = first_fd_to_leave_open; i >= 0; i = va_arg (ap, signed int)) {
++    if (i < open_max)
++      close_fds[i] = 0;
++  }
++
++  va_end (ap);
++
++  DBG(DBG_info, "closing unneeded file descriptors\n");
++
++  for (i = 0; i < open_max; i++) {
++    if (close_fds[i])
++      close (i);
++  }
++
++  free (close_fds);
++}
++
++/* ---------------------------------------------------------------------------------------------------------------------- */
++
+ static void xsane_show_doc_via_nsr(GtkWidget *widget, gpointer data) /* show via netscape remote */
+ {
+  char *name = (char *) data;
+@@ -3726,6 +3763,8 @@ static void xsane_show_doc_via_nsr(GtkWidget *widget, 
+         ipc_file = fdopen(xsane.ipc_pipefd[1], "w");
+       }
+ 
++      xsane_close_fds_for_exec (1, 2, xsane.ipc_pipefd[1], -1);
++
+       DBG(DBG_info, "trying to change user id for new subprocess:\n");
+       DBG(DBG_info, "old effective uid = %d\n", (int) geteuid());
+       setuid(getuid());
+@@ -3768,6 +3807,8 @@ static void xsane_show_doc_via_nsr(GtkWidget *widget, 
+         ipc_file = fdopen(xsane.ipc_pipefd[1], "w");
+       }
+ 
++      xsane_close_fds_for_exec (1, 2, xsane.ipc_pipefd[1], -1);
++
+       DBG(DBG_info, "trying to change user id for new subprocess:\n");
+       DBG(DBG_info, "old effective uid = %d\n", (int) geteuid());
+       setuid(getuid());
+@@ -3888,6 +3929,8 @@ static void xsane_show_doc(GtkWidget *widget, gpointer
+         close(xsane.ipc_pipefd[0]); /* close reading end of pipe */
+         ipc_file = fdopen(xsane.ipc_pipefd[1], "w");
+       }
++
++      xsane_close_fds_for_exec (1, 2, xsane.ipc_pipefd[1], -1);
+ 
+       DBG(DBG_info, "trying to change user id for new subprocess:\n");
+       DBG(DBG_info, "old effective uid = %d\n", (int) geteuid());

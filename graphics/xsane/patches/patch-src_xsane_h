@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_xsane_h,v 1.1 2009/04/18 12:22:13 ajacoutot Exp $
+--- src/xsane.h.orig	Fri Nov 30 19:07:34 2007
++++ src/xsane.h	Thu Apr 16 23:59:53 2009
+@@ -251,7 +251,7 @@
+ # elif defined(HAVE_OS2_H)
+ #  define DEFAULT_BROWSER "netscape"
+ # else
+-#  define DEFAULT_BROWSER "netscape"
++#  define DEFAULT_BROWSER "xdg-open"
+ # endif
+ #endif
+ 
