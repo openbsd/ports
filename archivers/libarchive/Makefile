@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/08 21:50:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2009/04/18 18:22:49 naddy Exp $
 
 COMMENT=	library for reading and writing streaming archives
 
-V=		2.6.2
+V=		2.7.0
 DISTNAME=	libarchive-$V
-SHARED_LIBS +=  archive              3.0      # .8.0
+SHARED_LIBS +=  archive              4.0      # .9.0
 CATEGORIES=	archivers
 HOMEPAGE=	http://code.google.com/p/libarchive/
 
@@ -21,17 +21,17 @@ MASTER_SITES0=	http://shell.uugrn.org/~naddy/
 DISTFILES=	libarchive-$V.tar.gz \
 		libarchive-catpages-$V.tar.gz:0
 
-WANTLIB=	c z
+WANTLIB=	c crypto z
 LIB_DEPENDS=	bz2.>=10::archivers/bzip2 \
 		lzmadec.>=0::archivers/lzma
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-bsdcpio
+		--without-lzma		# xz, liblzma
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config.aux
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build/autoconf
 
 # Our groff is too old.  We need to format the man pages on a
 # FreeBSD system.
