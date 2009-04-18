@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.GCC4-shared-main,v 1.1 2009/04/18 17:25:43 espie Exp $
+@lib lib/libQtWebKit.so.${LIBQtWebKit_VERSION}
+@lib lib/qt4/libQtWebKit.so.${LIBQtWebKit_VERSION}
+lib/qt4/plugins/designer/libqwebview.so

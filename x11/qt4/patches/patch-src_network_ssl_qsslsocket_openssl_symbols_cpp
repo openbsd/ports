@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.1 2009/04/18 17:25:43 espie Exp $
+--- src/network/ssl/qsslsocket_openssl_symbols.cpp.orig	Fri Apr 17 14:03:42 2009
++++ src/network/ssl/qsslsocket_openssl_symbols.cpp	Fri Apr 17 14:11:40 2009
+@@ -364,11 +364,14 @@ static QPair<QLibrary*, QLibrary*> loadOpenSsl()
+     // DT_RPATH tags on our library header as well as other system-specific search
+     // paths. See the man page for dlopen(3) on your system for more information.
+ 
++#ifdef Q_OS_OPENBSD
++    libcrypto->setLoadHints(QLibrary::ExportExternalSymbolsHint);
++#endif
+ #ifdef SHLIB_VERSION_NUMBER
+     // first attempt: the canonical name is libssl.so.<SHLIB_VERSION_NUMBER>
+     libssl->setFileNameAndVersion(QLatin1String("ssl"), QLatin1String(SHLIB_VERSION_NUMBER));
+     libcrypto->setFileNameAndVersion(QLatin1String("crypto"), QLatin1String(SHLIB_VERSION_NUMBER));
+-    if (libssl->load() && libcrypto->load()) {
++    if (libcrypto->load() && libssl->load()) {
+         // libssl.so.<SHLIB_VERSION_NUMBER> and libcrypto.so.<SHLIB_VERSION_NUMBER> found
+         return pair;
+     } else {
+@@ -380,7 +383,7 @@ static QPair<QLibrary*, QLibrary*> loadOpenSsl()
+     // second attempt: find the development files libssl.so and libcrypto.so
+     libssl->setFileNameAndVersion(QLatin1String("ssl"), -1);
+     libcrypto->setFileNameAndVersion(QLatin1String("crypto"), -1);
+-    if (libssl->load() && libcrypto->load()) {
++    if (libcrypto->load() && libssl->load()) {
+         // libssl.so.0 and libcrypto.so.0 found
+         return pair;
+     } else {
+@@ -395,7 +398,7 @@ static QPair<QLibrary*, QLibrary*> loadOpenSsl()
+         crypto.replace(QLatin1String("ssl"), QLatin1String("crypto"));
+         libssl->setFileNameAndVersion(ssl, -1);
+         libcrypto->setFileNameAndVersion(crypto, -1);
+-        if (libssl->load() && libcrypto->load()) {
++        if (libcrypto->load() && libssl->load()) {
+             // libssl.so.0 and libcrypto.so.0 found
+             return pair;
+         } else {

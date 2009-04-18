@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_3rdparty_webkit_JavaScriptCore_runtime_Collector_cpp,v 1.1 2009/04/18 17:25:43 espie Exp $
+--- src/3rdparty/webkit/JavaScriptCore/runtime/Collector.cpp.orig	Mon Apr 13 11:47:17 2009
++++ src/3rdparty/webkit/JavaScriptCore/runtime/Collector.cpp	Mon Apr 13 11:53:41 2009
+@@ -80,7 +80,7 @@ extern int *__libc_stack_end;
+ #include <pthread.h>
+ #endif
+ 
+-#if HAVE(PTHREAD_NP_H)
++#if HAVE(PTHREAD_NP_H) || PLATFORM(OPENBSD)
+ #include <pthread_np.h>
+ #endif
+ 

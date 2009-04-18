@@ -1,4 +1,1 @@
-@comment $OpenBSD: PFRAG.shared-phonon,v 1.1 2008/10/21 22:20:00 espie Exp $
-@lib lib/libphonon.so.${LIBphonon_VERSION}
-@lib lib/qt4/libphonon.so.${LIBphonon_VERSION}
-lib/qt4/plugins/phonon_backend/libphonon_gstreamer.so
+@comment $OpenBSD: PFRAG.shared-phonon,v 1.2 2009/04/18 17:25:43 espie Exp $

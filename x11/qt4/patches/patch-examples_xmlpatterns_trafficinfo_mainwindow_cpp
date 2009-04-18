@@ -1,0 +1,14 @@
+$OpenBSD: patch-examples_xmlpatterns_trafficinfo_mainwindow_cpp,v 1.1 2009/04/18 17:25:43 espie Exp $
+--- examples/xmlpatterns/trafficinfo/mainwindow.cpp.orig	Tue Mar  3 23:23:28 2009
++++ examples/xmlpatterns/trafficinfo/mainwindow.cpp	Tue Mar  3 23:24:05 2009
+@@ -112,7 +112,9 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
+ 
+ void MainWindow::paintEvent(QPaintEvent*)
+ {
+-    QLinearGradient gradient(QPoint(width()/2, 0), QPoint(width()/2, height()));
++    QPoint a(width()/2, 0);
++    QPoint b(width()/2, height());
++    QLinearGradient gradient(a, b);
+     const QColor qtGreen(102, 176, 54);
+     gradient.setColorAt(0, qtGreen.dark());
+     gradient.setColorAt(0.5, qtGreen);

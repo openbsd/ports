@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.3 2008/10/21 22:20:00 espie Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.4 2009/04/18 17:25:43 espie Exp $
+%%GCC4%%
 @lib lib/libQt3Support.so.${LIBQt3Support_VERSION}
 @lib lib/libQtAssistantClient.so.${LIBQtAssistantClient_VERSION}
 @lib lib/libQtCLucene.so.${LIBQtCLucene_VERSION}
@@ -11,11 +12,13 @@
 @lib lib/libQtNetwork.so.${LIBQtNetwork_VERSION}
 @lib lib/libQtOpenGL.so.${LIBQtOpenGL_VERSION}
 @lib lib/libQtScript.so.${LIBQtScript_VERSION}
+@lib lib/libQtScriptTools.so.${LIBQtScriptTools_VERSION}
 @lib lib/libQtSql.so.${LIBQtSql_VERSION}
 @lib lib/libQtSvg.so.${LIBQtSvg_VERSION}
 @lib lib/libQtTest.so.${LIBQtTest_VERSION}
 @lib lib/libQtXml.so.${LIBQtXml_VERSION}
 @lib lib/libQtXmlPatterns.so.${LIBQtXmlPatterns_VERSION}
+@lib lib/libphonon.so.${LIBphonon_VERSION}
 @lib lib/qt4/libQt3Support.so.${LIBQt3Support_VERSION}
 @lib lib/qt4/libQtAssistantClient.so.${LIBQtAssistantClient_VERSION}
 @lib lib/qt4/libQtCLucene.so.${LIBQtCLucene_VERSION}
@@ -28,14 +31,18 @@
 @lib lib/qt4/libQtNetwork.so.${LIBQtNetwork_VERSION}
 @lib lib/qt4/libQtOpenGL.so.${LIBQtOpenGL_VERSION}
 @lib lib/qt4/libQtScript.so.${LIBQtScript_VERSION}
+@lib lib/qt4/libQtScriptTools.so.${LIBQtScriptTools_VERSION}
 @lib lib/qt4/libQtSql.so.${LIBQtSql_VERSION}
 @lib lib/qt4/libQtSvg.so.${LIBQtSvg_VERSION}
 @lib lib/qt4/libQtTest.so.${LIBQtTest_VERSION}
 @lib lib/qt4/libQtXml.so.${LIBQtXml_VERSION}
 @lib lib/qt4/libQtXmlPatterns.so.${LIBQtXmlPatterns_VERSION}
+@lib lib/qt4/libphonon.so.${LIBphonon_VERSION}
 lib/qt4/plugins/accessible/libqtaccessiblecompatwidgets.so
 lib/qt4/plugins/accessible/libqtaccessiblewidgets.so
+lib/qt4/plugins/designer/libphononwidgets.so
 lib/qt4/plugins/designer/libqt3supportwidgets.so
+lib/qt4/plugins/graphicssystems/libqglgraphicssystem.so
 lib/qt4/plugins/iconengines/libqsvgicon.so
 lib/qt4/plugins/imageformats/libqgif.so
 lib/qt4/plugins/imageformats/libqico.so
@@ -44,4 +51,5 @@ lib/qt4/plugins/imageformats/libqmng.so
 lib/qt4/plugins/imageformats/libqsvg.so
 lib/qt4/plugins/imageformats/libqtiff.so
 lib/qt4/plugins/inputmethods/libqimsw-multi.so
+lib/qt4/plugins/phonon_backend/libphonon_gstreamer.so
 lib/qt4/plugins/script/libqtscriptdbus.so

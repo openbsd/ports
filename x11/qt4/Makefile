@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2008/11/17 15:05:24 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2009/04/18 17:25:43 espie Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -8,7 +8,7 @@ COMMENT-postgresql =	PostgresSQL plugin for qt4
 COMMENT-mysql =		MySQL plugin for qt4
 COMMENT-sqlite2 =	sqlite2 plugin for qt4
 COMMENT-sqlite =	sqlite plugin for qt4
-COMMENT-phonon =	qt4 multimedia
+COMMENT-tds =		tds plugin for qt4
 
 PKGNAME =		qt4-${VERSION}
 PKGNAME-mysql =		qt4-mysql-${PKGVERSION}
@@ -16,9 +16,9 @@ PKGNAME-postgresql =	qt4-postgresql-${PKGVERSION}
 PKGNAME-examples =	qt4-examples-${PKGVERSION}
 PKGNAME-sqlite2 =	qt4-sqlite2-${PKGVERSION}
 PKGNAME-sqlite =	qt4-sqlite-${PKGVERSION}
-PKGNAME-main =		qt4-${PKGVERSION}p0
+PKGNAME-tds =		qt4-tds-${PKGVERSION}
+PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
-PKGNAME-phonon =	qt4-phonon-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
@@ -39,11 +39,13 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		QtCLucene 0.0 \
 		QtHelp 0.0 \
 		QtXmlPatterns 0.0 \
+		QtScriptTools 0.0 \
+		QtWebKit 0.0 \
 		phonon 4.1
 
 
-VERSION =	4.4.3
-PKGVERSION =	4.4.3
+VERSION =	4.5.0
+PKGVERSION =	4.5.0
 DISTNAME =	qt-x11-opensource-src-${VERSION}
 
 
@@ -62,8 +64,8 @@ FLAVORS =	debug
 PSEUDO_FLAVORS =no_examples
 FLAVOR ?=
 
-# GPL, plus more exceptions to link with other free licences.
-# or QPL
+# GPLv3, or LGPL.
+# (GPLv2 not needed, since LGPL is more free)
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
@@ -83,7 +85,7 @@ CONFIGURE_ARGS =	-qt-gif -system-libpng -system-libjpeg -system-zlib \
 			-sm -system-sqlite \
 			-v -stl -xrender -fast \
 			-no-sql-odbc \
-			-tablet \
+			-xinput \
 			-xinerama \
 			-cups \
 			-confirm-license \
@@ -115,9 +117,10 @@ CONFIGURE_ENV =		LOCALBASE=${LOCALBASE} QTDIR="${WRKSRC}" \
 			X11BASE=${X11BASE}
 
 BUILD_DEPENDS +=	::print/cups
+BUILD_DEPENDS +=	::x11/dbus
 BUILD_DEPENDS +=	::databases/postgresql,-server
 
-MULTI_PACKAGES =	-main -html -mysql -postgresql -sqlite2 -sqlite -phonon
+MULTI_PACKAGES =	-main -html -mysql -postgresql -sqlite2 -sqlite -tds
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS +=	-debug
@@ -133,16 +136,22 @@ SUBTARGETS = 		sub-moc \
 			sub-uic \
 			sub-corelib \
 			sub-xml \
+			sub-network \
 			sub-gui \
 			sub-sql \
-			sub-network \
-			sub-svg \
 			sub-script \
-			sub-opengl \
+			sub-testlib \
 			sub-qt3support \
+			sub-dbus \
 			sub-uic3 \
+			sub-opengl \
+			sub-xmlpatterns \
+			sub-phonon \
+			sub-svg \
 			sub-plugins \
-			sub-tools
+			sub-tools \
+			sub-tools-qdoc3
+
 ALL_TARGET =		${SUBTARGETS}
 INSTALL_TARGET =	${SUBTARGETS:S/$/-install_subtargets/} \
 			install_htmldocs install_translations install_qmake \
@@ -156,9 +165,9 @@ PROGRAMS +=		qtdemo pixeltool
 LIB_DEPENDS =		glib-2.0,gthread-2.0::devel/glib2
 WANTLIB =		iconv intl
 
-commonWANTLIB =		ICE Xrender c GLU SM freetype pthread Xrandr Xinerama \
-			stdc++ Xcursor Xext GL Xi m X11.>=10 z fontconfig \
-			Xfixes ssl crypto
+commonWANTLIB =		ICE Xrender c GLU SM freetype pthread Xinerama \
+			stdc++ Xext GL Xi m X11.>=10 z fontconfig \
+			expat
 commonLIB_DEPENDS =	png.>=2::graphics/png
 
 sqlWANTLIB =		m z
@@ -166,11 +175,13 @@ sqlLIB_DEPENDS = 	QtCore.>=4,QtSql::${BASE_PKGPATH}
 
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
-			dbus-1::x11/dbus \
 			jpeg::graphics/jpeg \
-			mng::graphics/libmng
+			mng::graphics/libmng \
+			gstaudio-0.10,gstinterfaces-0.10,gstvideo-0.10::multimedia/gstreamer-0.10/plugins-base
 WANTLIB-main =		${WANTLIB} ${commonWANTLIB} \
-			lcms tiff 
+			lcms tiff gobject-2.0 Xrandr \
+			gstbase-0.10 gstreamer-0.10 xml2 \
+			gobject-2.0 gmodule-2.0 
 
 
 LIB_DEPENDS-mysql =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
@@ -181,8 +192,7 @@ WANTLIB-mysql =		${WANTLIB} ${sqlWANTLIB} \
 
 LIB_DEPENDS-postgresql =${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
 			pq.>=2:postgresql-client-*:databases/postgresql
-WANTLIB-postgresql =	${WANTLIB} ${sqlWANTLIB} xml2 ssl termcap readline \
-			com_err crypto
+WANTLIB-postgresql =	${WANTLIB} ${sqlWANTLIB} 
 			
 
 LIB_DEPENDS-sqlite2 =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
@@ -192,25 +202,34 @@ WANTLIB-sqlite2 =	${WANTLIB} ${sqlWANTLIB}
 
 LIB_DEPENDS-sqlite =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
 			sqlite3::databases/sqlite3
-WANTLIB-sqlite =		${WANTLIB} ${sqlWANTLIB}
+WANTLIB-sqlite =	${WANTLIB} ${sqlWANTLIB}
 
+
+LIB_DEPENDS-tds =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
+			sybdb::databases/freetds
+WANTLIB-tds =		${WANTLIB} ${sqlWANTLIB}
 
 LIB_DEPENDS-examples =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
-			QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus,QtScript,QtHelp,QtCLucene,QtXmlPatterns::${BASE_PKGPATH} \
-			phonon::${BASE_PKGPATH},-phonon
-WANTLIB-examples =	${WANTLIB} ${commonWANTLIB}
+			QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus,QtScript,QtScriptTools,QtHelp,QtCLucene,phonon::${BASE_PKGPATH}
+WANTLIB-examples =	${WANTLIB} ${commonWANTLIB} gobject-2.0 Xrandr
 
-LIB_DEPENDS-phonon =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
-			QtCore.>=7,Qt3Support,QtDBus,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml::${BASE_PKGPATH} \
-			gstaudio-0.10,gstinterfaces-0.10,gstvideo-0.10::multimedia/gstreamer-0.10/plugins-base
-WANTLIB-phonon = 	${WANTLIB} ${commonWANTLIB} \
-			gstbase-0.10 gstreamer-0.10 xml2 \
-			gobject-2.0 gmodule-2.0
 
 LIB_DEPENDS-html =
 WANTLIB-html =
 PKG_ARCH-html =	*
 
+MODULES =
+#MODULES += gcc4
+#MODGCC4_ARCHES =*
+#MODGCC4_LANGS =	c++
+
+.if ${MODULES:Mgcc4}
+PKG_ARGS += -DGCC4=1
+WANTLIB-examples +=	QtWebKit sqlite3 QtXmlPatterns
+WANTLIB-main =+ sqlite3
+.else
+PKG_ARGS += -DGCC4=0
+.endif
 
 QT_BASEDIR =	${PREFIX}/lib/qt4
 QT_INCDIR =	${PREFIX}/include/X11/qt4
@@ -220,14 +239,14 @@ QT_PLUGINSDIR =	${QT_BASEDIR}/plugins
 QT_BINDIR =	${QT_BASEDIR}/bin
 QT_PKGCFGDIR =	${QT_BASEDIR}/pkgconfig
 
-DOCS =	OPENSOURCE-NOTICE.TXT README
+DOCS =	README
 
 VMEM_WARNING =	Yes
 NO_REGRESS =	Yes
 
 PROGRAMS4 =	assistant designer findtr linguist lrelease lupdate moc qmake \
 		qtconfig uic uic3
-PROGRAMS += 	rcc qt3to4 syncqt qdbus qtconfig-lite
+PROGRAMS += 	rcc qt3to4 syncqt qdbus
 
 
 QMAKE =		${WRKBUILD}/bin/qmake
@@ -239,9 +258,6 @@ MAKE_FLAGS +=	LIB$l_VERSION=$v
 .endfor
 
 DESTDIRNAME =	INSTALL_ROOT
-
-post-extract:
-	cp -R ${WRKSRC}/tools/qtconfig ${WRKSRC}/tools/qtconfig-lite
 
 post-install:
 	# extra doc
