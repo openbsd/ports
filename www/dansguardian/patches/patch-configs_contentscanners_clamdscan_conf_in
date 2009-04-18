@@ -1,0 +1,12 @@
+$OpenBSD: patch-configs_contentscanners_clamdscan_conf_in,v 1.1 2009/04/18 14:42:41 sthen Exp $
+--- configs/contentscanners/clamdscan.conf.in.orig	Sat Apr 18 15:35:34 2009
++++ configs/contentscanners/clamdscan.conf.in	Sat Apr 18 15:35:50 2009
+@@ -1,7 +1,7 @@
+ plugname = 'clamdscan'
+ 
+ # edit this to match the location of your ClamD UNIX domain socket
+-#clamdudsfile = '/var/run/clamav/clamd.sock'
++clamdudsfile = '/tmp/clamd.socket'
+ 
+ # If this string is set, the text it contains shall be removed from the
+ # beginning of filenames when passing them to ClamD.

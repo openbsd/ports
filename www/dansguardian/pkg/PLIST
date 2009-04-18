@@ -1,11 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/07 13:16:14 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/04/18 14:42:41 sthen Exp $
+@conflict dansguardian-*-clamav
+@pkgpath www/dansguardian,clamav
 @newgroup _dansguardian:588
 @newuser _dansguardian:588:588:daemon:DansGuardian:/nonexistent:/sbin/nologin
 @man man/man8/dansguardian.8
-sbin/dansguardian
+@bin sbin/dansguardian
 share/dansguardian/
 share/dansguardian/dansguardian.pl
 share/dansguardian/languages/
+share/dansguardian/languages/arspanish/
+share/dansguardian/languages/arspanish/fancydmtemplate.html
+share/dansguardian/languages/arspanish/messages
+share/dansguardian/languages/arspanish/template.html
 share/dansguardian/languages/bulgarian/
 share/dansguardian/languages/bulgarian/fancydmtemplate.html
 share/dansguardian/languages/bulgarian/messages
@@ -54,10 +60,22 @@ share/dansguardian/languages/italian/
 share/dansguardian/languages/italian/fancydmtemplate.html
 share/dansguardian/languages/italian/messages
 share/dansguardian/languages/italian/template.html
+share/dansguardian/languages/japanese/
+share/dansguardian/languages/japanese/fancydmtemplate.html
+share/dansguardian/languages/japanese/messages
+share/dansguardian/languages/japanese/template.html
 share/dansguardian/languages/lithuanian/
 share/dansguardian/languages/lithuanian/fancydmtemplate.html
 share/dansguardian/languages/lithuanian/messages
 share/dansguardian/languages/lithuanian/template.html
+share/dansguardian/languages/malay/
+share/dansguardian/languages/malay/fancydmtemplate.html
+share/dansguardian/languages/malay/messages
+share/dansguardian/languages/malay/template.html
+share/dansguardian/languages/mxspanish/
+share/dansguardian/languages/mxspanish/fancydmtemplate.html
+share/dansguardian/languages/mxspanish/messages
+share/dansguardian/languages/mxspanish/template.html
 share/dansguardian/languages/polish/
 share/dansguardian/languages/polish/fancydmtemplate.html
 share/dansguardian/languages/polish/messages
@@ -105,6 +123,13 @@ share/dansguardian/scripts/logrotation
 share/dansguardian/scripts/solaris-init
 share/dansguardian/scripts/systemv-init
 share/dansguardian/transparent1x1.gif
+share/doc/dansguardian/
+share/doc/dansguardian/AuthPlugins
+share/doc/dansguardian/ContentScanners
+share/doc/dansguardian/DownloadManagers
+share/doc/dansguardian/FAQ
+share/doc/dansguardian/FAQ.html
+share/doc/dansguardian/Plugins
 share/examples/dansguardian/
 @sample ${SYSCONFDIR}/dansguardian/
 share/examples/dansguardian/authplugins/
@@ -115,6 +140,12 @@ share/examples/dansguardian/authplugins/ip.conf
 @sample ${SYSCONFDIR}/dansguardian/authplugins/ip.conf
 share/examples/dansguardian/authplugins/proxy-basic.conf
 @sample ${SYSCONFDIR}/dansguardian/authplugins/proxy-basic.conf
+share/examples/dansguardian/authplugins/proxy-digest.conf
+@sample ${SYSCONFDIR}/dansguardian/authplugins/proxy-digest.conf
+share/examples/dansguardian/contentscanners/
+@sample ${SYSCONFDIR}/dansguardian/contentscanners/
+share/examples/dansguardian/contentscanners/clamdscan.conf
+@sample ${SYSCONFDIR}/dansguardian/contentscanners/clamdscan.conf
 share/examples/dansguardian/dansguardian.conf
 @sample ${SYSCONFDIR}/dansguardian/dansguardian.conf
 share/examples/dansguardian/dansguardianf1.conf
@@ -139,6 +170,8 @@ share/examples/dansguardian/lists/bannedmimetypelist
 @sample ${SYSCONFDIR}/dansguardian/lists/bannedmimetypelist
 share/examples/dansguardian/lists/bannedphraselist
 @sample ${SYSCONFDIR}/dansguardian/lists/bannedphraselist
+share/examples/dansguardian/lists/bannedregexpheaderlist
+@sample ${SYSCONFDIR}/dansguardian/lists/bannedregexpheaderlist
 share/examples/dansguardian/lists/bannedregexpurllist
 @sample ${SYSCONFDIR}/dansguardian/lists/bannedregexpurllist
 share/examples/dansguardian/lists/bannedsitelist
@@ -155,6 +188,16 @@ share/examples/dansguardian/lists/blacklists/ads/urls
 @sample ${SYSCONFDIR}/dansguardian/lists/blacklists/ads/urls
 share/examples/dansguardian/lists/contentregexplist
 @sample ${SYSCONFDIR}/dansguardian/lists/contentregexplist
+share/examples/dansguardian/lists/contentscanners/
+@sample ${SYSCONFDIR}/dansguardian/lists/contentscanners/
+share/examples/dansguardian/lists/contentscanners/exceptionvirusextensionlist
+@sample ${SYSCONFDIR}/dansguardian/lists/contentscanners/exceptionvirusextensionlist
+share/examples/dansguardian/lists/contentscanners/exceptionvirusmimetypelist
+@sample ${SYSCONFDIR}/dansguardian/lists/contentscanners/exceptionvirusmimetypelist
+share/examples/dansguardian/lists/contentscanners/exceptionvirussitelist
+@sample ${SYSCONFDIR}/dansguardian/lists/contentscanners/exceptionvirussitelist
+share/examples/dansguardian/lists/contentscanners/exceptionvirusurllist
+@sample ${SYSCONFDIR}/dansguardian/lists/contentscanners/exceptionvirusurllist
 share/examples/dansguardian/lists/downloadmanagers/
 @sample ${SYSCONFDIR}/dansguardian/lists/downloadmanagers/
 share/examples/dansguardian/lists/downloadmanagers/managedextensionlist
@@ -165,6 +208,8 @@ share/examples/dansguardian/lists/exceptionextensionlist
 @sample ${SYSCONFDIR}/dansguardian/lists/exceptionextensionlist
 share/examples/dansguardian/lists/exceptionfilesitelist
 @sample ${SYSCONFDIR}/dansguardian/lists/exceptionfilesitelist
+share/examples/dansguardian/lists/exceptionfileurllist
+@sample ${SYSCONFDIR}/dansguardian/lists/exceptionfileurllist
 share/examples/dansguardian/lists/exceptioniplist
 @sample ${SYSCONFDIR}/dansguardian/lists/exceptioniplist
 share/examples/dansguardian/lists/exceptionmimetypelist
@@ -183,6 +228,14 @@ share/examples/dansguardian/lists/greysitelist
 @sample ${SYSCONFDIR}/dansguardian/lists/greysitelist
 share/examples/dansguardian/lists/greyurllist
 @sample ${SYSCONFDIR}/dansguardian/lists/greyurllist
+share/examples/dansguardian/lists/headerregexplist
+@sample ${SYSCONFDIR}/dansguardian/lists/headerregexplist
+share/examples/dansguardian/lists/logregexpurllist
+@sample ${SYSCONFDIR}/dansguardian/lists/logregexpurllist
+share/examples/dansguardian/lists/logsitelist
+@sample ${SYSCONFDIR}/dansguardian/lists/logsitelist
+share/examples/dansguardian/lists/logurllist
+@sample ${SYSCONFDIR}/dansguardian/lists/logurllist
 share/examples/dansguardian/lists/phraselists/
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/
 share/examples/dansguardian/lists/phraselists/badwords/
@@ -203,10 +256,22 @@ share/examples/dansguardian/lists/phraselists/chat/weighted
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/chat/weighted
 share/examples/dansguardian/lists/phraselists/chat/weighted_italian
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/chat/weighted_italian
+share/examples/dansguardian/lists/phraselists/conspiracy/
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/conspiracy/
+share/examples/dansguardian/lists/phraselists/conspiracy/weighted
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/conspiracy/weighted
+share/examples/dansguardian/lists/phraselists/domainsforsale/
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/domainsforsale/
+share/examples/dansguardian/lists/phraselists/domainsforsale/weighted
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/domainsforsale/weighted
 share/examples/dansguardian/lists/phraselists/drugadvocacy/
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/drugadvocacy/
 share/examples/dansguardian/lists/phraselists/drugadvocacy/weighted
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/drugadvocacy/weighted
+share/examples/dansguardian/lists/phraselists/forums/
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/forums/
+share/examples/dansguardian/lists/phraselists/forums/weighted
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/forums/weighted
 share/examples/dansguardian/lists/phraselists/gambling/
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/gambling/
 share/examples/dansguardian/lists/phraselists/gambling/banned
@@ -235,6 +300,8 @@ share/examples/dansguardian/lists/phraselists/goodphrases/weighted_general_dutch
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/goodphrases/weighted_general_dutch
 share/examples/dansguardian/lists/phraselists/goodphrases/weighted_general_malay
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/goodphrases/weighted_general_malay
+share/examples/dansguardian/lists/phraselists/goodphrases/weighted_general_polish
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/goodphrases/weighted_general_polish
 share/examples/dansguardian/lists/phraselists/goodphrases/weighted_general_portuguese
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/goodphrases/weighted_general_portuguese
 share/examples/dansguardian/lists/phraselists/goodphrases/weighted_news
@@ -249,6 +316,10 @@ share/examples/dansguardian/lists/phraselists/gore/weighted
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/gore/weighted
 share/examples/dansguardian/lists/phraselists/gore/weighted_portuguese
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/gore/weighted_portuguese
+share/examples/dansguardian/lists/phraselists/idtheft/
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/idtheft/
+share/examples/dansguardian/lists/phraselists/idtheft/weighted
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/idtheft/weighted
 share/examples/dansguardian/lists/phraselists/illegaldrugs/
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/illegaldrugs/
 share/examples/dansguardian/lists/phraselists/illegaldrugs/banned
@@ -273,6 +344,10 @@ share/examples/dansguardian/lists/phraselists/malware/
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/malware/
 share/examples/dansguardian/lists/phraselists/malware/weighted
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/malware/weighted
+share/examples/dansguardian/lists/phraselists/music/
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/music/
+share/examples/dansguardian/lists/phraselists/music/weighted
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/music/weighted
 share/examples/dansguardian/lists/phraselists/news/
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/news/
 share/examples/dansguardian/lists/phraselists/news/weighted
@@ -315,8 +390,10 @@ share/examples/dansguardian/lists/phraselists/pornography/weighted_japanese
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/pornography/weighted_japanese
 share/examples/dansguardian/lists/phraselists/pornography/weighted_malay
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/pornography/weighted_malay
-share/examples/dansguardian/lists/phraselists/pornography/weighted_norgwegian
-@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/pornography/weighted_norgwegian
+share/examples/dansguardian/lists/phraselists/pornography/weighted_norwegian
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/pornography/weighted_norwegian
+share/examples/dansguardian/lists/phraselists/pornography/weighted_polish
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/pornography/weighted_polish
 share/examples/dansguardian/lists/phraselists/pornography/weighted_portuguese
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/pornography/weighted_portuguese
 share/examples/dansguardian/lists/phraselists/pornography/weighted_russian
@@ -327,10 +404,34 @@ share/examples/dansguardian/lists/phraselists/proxies/
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/proxies/
 share/examples/dansguardian/lists/phraselists/proxies/weighted
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/proxies/weighted
+share/examples/dansguardian/lists/phraselists/rta/
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/rta/
+share/examples/dansguardian/lists/phraselists/rta/banned
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/rta/banned
+share/examples/dansguardian/lists/phraselists/safelabel/
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/safelabel/
+share/examples/dansguardian/lists/phraselists/safelabel/banned
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/safelabel/banned
+share/examples/dansguardian/lists/phraselists/secretsocieties/
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/secretsocieties/
+share/examples/dansguardian/lists/phraselists/secretsocieties/weighted
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/secretsocieties/weighted
 share/examples/dansguardian/lists/phraselists/sport/
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/sport/
 share/examples/dansguardian/lists/phraselists/sport/weighted
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/sport/weighted
+share/examples/dansguardian/lists/phraselists/translation/
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/translation/
+share/examples/dansguardian/lists/phraselists/translation/weighted
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/translation/weighted
+share/examples/dansguardian/lists/phraselists/travel/
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/travel/
+share/examples/dansguardian/lists/phraselists/travel/weighted
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/travel/weighted
+share/examples/dansguardian/lists/phraselists/upstreamfilter/
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/upstreamfilter/
+share/examples/dansguardian/lists/phraselists/upstreamfilter/weighted
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/upstreamfilter/weighted
 share/examples/dansguardian/lists/phraselists/violence/
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/violence/
 share/examples/dansguardian/lists/phraselists/violence/weighted
@@ -361,4 +462,3 @@ share/examples/dansguardian/lists/weightedphraselist
 @owner _dansguardian
 @group _dansguardian
 @sample /var/log/dansguardian/
-%%clamav%%
