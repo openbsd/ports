@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.403 2009/04/09 18:42:30 simon Exp $
+# $OpenBSD: Makefile,v 1.404 2009/04/18 14:07:52 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -23,7 +23,6 @@
      SUBDIR += cronolog
      SUBDIR += cssed
      SUBDIR += dansguardian
-     SUBDIR += dansguardian,clamav
      SUBDIR += decss
      SUBDIR += dillo
      SUBDIR += drupal5
