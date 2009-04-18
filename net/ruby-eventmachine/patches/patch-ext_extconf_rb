@@ -1,0 +1,19 @@
+$OpenBSD: patch-ext_extconf_rb,v 1.1.1.1 2009/04/18 19:34:34 jcs Exp $
+--- ext/extconf.rb.orig	Wed Dec 31 18:00:00 1969
++++ ext/extconf.rb	Mon Mar 30 10:41:06 2009
+@@ -63,7 +63,7 @@ when /openbsd/
+   # OpenBSD branch contributed by Guillaume Sellier.
+ 
+   # on Unix we need a g++ link, not gcc. On OpenBSD, linking against libstdc++ have to be explicitly done for shared libs
+-  CONFIG['LDSHARED'] = "$(CXX) -shared -lstdc++"
++  CONFIG['LDSHARED'] = "$(CXX) -shared -lstdc++ -fPIC"
+ 
+ when /darwin/
+ 
+@@ -126,4 +126,4 @@ else
+   add_define "WITHOUT_SSL"
+ end
+ 
+-create_makefile "rubyeventmachine"
+\ No newline at end of file
++create_makefile "rubyeventmachine"

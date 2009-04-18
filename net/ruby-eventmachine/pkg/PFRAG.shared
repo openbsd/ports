@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/04/18 19:34:34 jcs Exp $
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/fastfilereader/fastfilereaderext.so
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/rubyeventmachine.so
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/fastfilereaderext.so
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/rubyeventmachine.so

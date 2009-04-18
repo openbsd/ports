@@ -1,0 +1,19 @@
+$OpenBSD: patch-ext_fastfilereader_extconf_rb,v 1.1.1.1 2009/04/18 19:34:34 jcs Exp $
+--- ext/fastfilereader/extconf.rb.orig	Mon Mar 30 10:40:44 2009
++++ ext/fastfilereader/extconf.rb	Mon Mar 30 10:41:11 2009
+@@ -59,7 +59,7 @@ when /openbsd/
+   # OpenBSD branch contributed by Guillaume Sellier.
+ 
+   # on Unix we need a g++ link, not gcc. On OpenBSD, linking against libstdc++ have to be explicitly done for shared libs
+-  CONFIG['LDSHARED'] = "$(CXX) -shared -lstdc++"
++  CONFIG['LDSHARED'] = "$(CXX) -shared -lstdc++ -fPIC"
+ when /darwin/
+   # on Unix we need a g++ link, not gcc.
+   # Ff line contributed by Daniel Harple.
+@@ -74,4 +74,4 @@ else
+   CONFIG['LDSHARED'] = "$(CXX) -shared"
+ end
+ 
+-create_makefile "fastfilereaderext"
+\ No newline at end of file
++create_makefile "fastfilereaderext"
