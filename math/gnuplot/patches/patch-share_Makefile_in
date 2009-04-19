@@ -1,8 +1,8 @@
-$OpenBSD: patch-share_Makefile_in,v 1.2 2008/05/23 20:57:32 steven Exp $
---- share/Makefile.in.orig	Sat Mar  8 21:06:28 2008
-+++ share/Makefile.in	Sun May 11 21:45:30 2008
-@@ -189,7 +189,7 @@ sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+$OpenBSD: patch-share_Makefile_in,v 1.3 2009/04/19 15:06:50 steven Exp $
+--- share/Makefile.in.orig	Sat Mar 28 22:24:51 2009
++++ share/Makefile.in	Mon Apr 13 18:54:19 2009
+@@ -193,7 +193,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign 1.2h
  EXTRA_DIST = Gnuplot.app-defaults
 -SUBDIRS = LaTeX

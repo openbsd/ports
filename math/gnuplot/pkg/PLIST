@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2007/03/28 16:50:58 steven Exp $
-bin/gnuplot
+@comment $OpenBSD: PLIST,v 1.14 2009/04/19 15:06:50 steven Exp $
+@bin bin/gnuplot
 bin/lasergnu
 @info info/gnuplot.info
 @man man/man1/gnuplot.1
