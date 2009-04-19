@@ -1,0 +1,19 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2009/04/19 11:18:40 sthen Exp $
+--- CMakeLists.txt.orig	Wed Mar 25 18:39:13 2009
++++ CMakeLists.txt	Sat Apr 18 05:03:24 2009
+@@ -106,6 +106,7 @@ ENDIF(WIN32)
+ #  finding the wxWidgets distributions of those packages (Win32 only).
+ 
+ SET(wxWidgets_USE_LIBS base core xrc html xml adv gl)
++SET(wxWidgets_INCLUDE_DIRS_NO_SYSTEM 1)
+ FIND_PACKAGE(wxWidgets REQUIRED)
+ IF(NOT wxWidgets_FOUND)
+   MESSAGE("wxWidgets was not found, GUI programs (hugin, nona_gui) disabled")
+@@ -222,6 +223,7 @@ ENDIF(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+ SET(HUGINDATADIR share/hugin)
+ SET(DATADIR share)
+ SET(BINDIR  bin)
++SET(MANDIR  man)
+ SET(LOCALEDIR share/locale) 
+ SET(ICONDIR share/icons) 
+ SET(LINKDIR share/applications)

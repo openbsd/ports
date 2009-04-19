@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_hugin_base_hugin_utils_platform_cpp,v 1.1.1.1 2009/04/19 11:18:40 sthen Exp $
+--- src/hugin_base/hugin_utils/platform.cpp.orig	Fri Apr 17 23:34:21 2009
++++ src/hugin_base/hugin_utils/platform.cpp	Fri Apr 17 23:34:31 2009
+@@ -29,6 +29,7 @@
+ #include "vigra/windows.h"
+ #else
+ #include <unistd.h>
++#include <sys/param.h>
+ #include <sys/sysctl.h>
+ #endif
+ 

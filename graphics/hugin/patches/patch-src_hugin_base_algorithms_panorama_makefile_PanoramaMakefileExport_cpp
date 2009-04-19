@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_hugin_base_algorithms_panorama_makefile_PanoramaMakefileExport_cpp,v 1.1.1.1 2009/04/19 11:18:40 sthen Exp $
+--- src/hugin_base/algorithms/panorama_makefile/PanoramaMakefileExport.cpp.orig	Sat Apr 18 05:10:04 2009
++++ src/hugin_base/algorithms/panorama_makefile/PanoramaMakefileExport.cpp	Sat Apr 18 05:10:08 2009
+@@ -763,7 +763,7 @@ void PanoramaMakefileExport::createMakefile(const Pano
+           << "\t@-$(EXIFTOOL) -ver > " << NULL_DEVICE << " 2>&1 && echo '[OK]' || echo '[FAIL]'" << endl;
+         // test rm
+         o << "\t@echo -n 'Checking rm...'" << endl
+-          << "\t@-$(RM) --version > " << NULL_DEVICE << " 2>&1 && echo '[OK]' || echo '[FAIL]'" << endl;
++          << "\t@-type $(RM) > /dev/null 2>&1 && echo '[OK]' || echo '[FAIL]'" << endl;
+         o << endl;
+ 
+         // ==============================

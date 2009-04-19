@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_hugin1_hugin_config_defaults_h,v 1.1.1.1 2009/04/19 11:18:40 sthen Exp $
+--- src/hugin1/hugin/config_defaults.h.orig	Sat Apr 18 01:06:05 2009
++++ src/hugin1/hugin/config_defaults.h	Sat Apr 18 01:07:02 2009
+@@ -148,7 +148,7 @@
+ 
+ #endif
+ 
+-#elif defined unix
++#elif ((defined unix) || (defined __unix__))
+ 
+ #define HUGIN_PT_SCRIPTFILE                   "PT_script.txt"
+ 
