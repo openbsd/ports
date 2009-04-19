@@ -1,0 +1,43 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2009/04/19 11:14:34 sthen Exp $
+--- configure.ac.orig	Thu Feb  5 00:35:32 2009
++++ configure.ac	Fri Apr 17 21:23:37 2009
+@@ -45,6 +45,11 @@ case "${host_os}" in
+ 		;;
+ 	esac
+ 	;;
++  openbsd*)
++    PANO_WIN32_RESOURCE=
++    HSYS=openbsd
++    HCPU="${target_cpu}"
++    ;;
+   *darwin*)
+     PANO_WIN32_RESOURCE=
+     HSYS=darwin
+@@ -73,6 +78,7 @@ esac
+ 
+ AM_CONDITIONAL(HAVE_DARWIN, test "${HSYS}" = "darwin")
+ AM_CONDITIONAL(HAVE_LINUX, test "${HSYS}" = "linux")
++AM_CONDITIONAL(HAVE_OPENBSD, test "${HSYS}" = "openbsd")
+ AM_CONDITIONAL(HAVE_MAC, test "${HSYS}" = "classic")
+ AM_CONDITIONAL(HAVE_MINGW, test "${HSYS}" = "mingw32")
+ AM_CONDITIONAL(HAVE_CYGWIN, test "${HSYS}" = "cygwin")
+@@ -96,7 +102,7 @@ if test "x$have_zlib" != xyes; then
+     ])
+ fi
+ 
+-AX_CHECK_PNG
++PKG_CHECK_MODULES(PNG, libpng, have_png=yes, have_png=no)
+ if test "x$have_png" != xyes; then
+     AC_MSG_ERROR([
+         the png library must be installed on your system
+@@ -177,8 +183,8 @@ echo "  CXX            = $CXX"
+ echo "  CXXFLAGS       = $CXXFLAGS"
+ echo "  JPEG_FLAGS     = $JPEG_FLAGS"
+ echo "  LIB_JPEG       = $LIB_JPEG"
+-echo "  PNG_FLAGS      = $PNG_FLAGS"
+-echo "  LIB_PNG        = $LIB_PNG"
++echo "  PNG_FLAGS      = $PNG_CFLAGS"
++echo "  LIB_PNG        = $PNG_LIBS"
+ echo "  TIFF_FLAGS     = $TIFF_FLAGS"
+ echo "  LIB_TIFF       = $LIB_TIFF"
+ echo "  ZLIB_FLAGS     = $ZLIB_FLAGS"

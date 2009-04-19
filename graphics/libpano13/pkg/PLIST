@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/19 11:14:34 sthen Exp $
+%%SHARED%%
+@bin bin/PTblender
+@bin bin/PTcrop
+@bin bin/PTinfo
+@bin bin/PTmasker
+@bin bin/PTmender
+@bin bin/PToptimizer
+@bin bin/PTroller
+@bin bin/PTtiff2psd
+@bin bin/PTtiffdump
+@bin bin/PTuncrop
+@bin bin/panoinfo
+include/pano13/
+include/pano13/PTcommon.h
+include/pano13/file.h
+include/pano13/filter.h
+include/pano13/panorama.h
+include/pano13/panotypes.h
+include/pano13/pt_stdint.h
+include/pano13/pteditor.h
+include/pano13/ptutils.h
+include/pano13/queryfeature.h
+include/pano13/version.h
+lib/libpano13.a
+lib/libpano13.la
+@man man/man1/PTblender.1
+@man man/man1/PTcrop.1
+@man man/man1/PTinfo.1
+@man man/man1/PTmasker.1
+@man man/man1/PTmender.1
+@man man/man1/PToptimizer.1
+@man man/man1/PTroller.1
+@man man/man1/PTtiff2psd.1
+@man man/man1/PTtiffdump.1
+@man man/man1/PTuncrop.1
+@man man/man1/panoinfo.1

@@ -1,0 +1,11 @@
+$OpenBSD: patch-bootstrap,v 1.1.1.1 2009/04/19 11:14:34 sthen Exp $
+--- bootstrap.orig	Fri Apr 17 22:04:18 2009
++++ bootstrap	Fri Apr 17 22:04:28 2009
+@@ -96,6 +96,7 @@ $AUTOHEADER --force || exit $?
+ $AUTOMAKE --add-missing --copy || exit $?
+ 
+ $AUTOCONF || exit $?
++exit 0
+ 
+ cd $ORIGDIR || exit $?
+ 

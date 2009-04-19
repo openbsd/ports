@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/04/19 11:14:34 sthen Exp $
+@lib lib/libpano13.so.${LIBpano13_VERSION}

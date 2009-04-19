@@ -1,0 +1,36 @@
+$OpenBSD: patch-tools_Makefile_am,v 1.1.1.1 2009/04/19 11:14:34 sthen Exp $
+--- tools/Makefile.am.orig	Tue Jan 15 00:11:39 2008
++++ tools/Makefile.am	Fri Apr 17 21:23:45 2009
+@@ -24,6 +24,14 @@ LIN_SRC =
+ LIN_DEFS = 
+ endif
+ 
++if HAVE_OPENBSD
++OBSD_SRC =  panoinfo_unix.c
++OBSD_DEFS = -D__Ansi__=1
++else
++OBSD_SRC =
++OBSD_DEFS = 
++endif
++
+ if HAVE_DARWIN
+ DAR_SRC =  panoinfo_unix.c
+ DAR_DEFS = -D__Ansi__=1
+@@ -32,7 +40,7 @@ DAR_SRC =
+ DAR_DEFS = 
+ endif
+ 
+-AM_CPPFLAGS = $(JAVA_FLAGS) $(LIN_DEFS) $(DAR_DEFS) $(TIFF_FLAGS) $(JPEG_FLAGS)
++AM_CPPFLAGS = $(JAVA_FLAGS) $(LIN_DEFS) $(DAR_DEFS) $(TIFF_FLAGS) $(JPEG_FLAGS) $(OBSD_DEFS)
+ AM_LDFLAGS  = -L${top_builddir}
+ 
+ # PTAInterpolate can only be compiled with ptpicker.h, which in turn depends on java
+@@ -77,7 +85,7 @@ PTtiffdump_LDADD   = -l${PANOLIB} -ljpeg -ltiff
+ PToptimizer_SOURCES = PToptimizer.c
+ PToptimizer_LDADD   = -l${PANOLIB}
+ 
+-panoinfo_SOURCES    = $(WIN_SRC) $(LIN_SRC) $(DAR_SRC)
++panoinfo_SOURCES    = $(WIN_SRC) $(LIN_SRC) $(DAR_SRC) $(OBSD_SRC)
+ panoinfo_LDADD      = -l${PANOLIB}
+ 
+ EXTRA_DIST = README.PTmender 

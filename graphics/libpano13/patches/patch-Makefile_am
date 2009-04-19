@@ -1,0 +1,38 @@
+$OpenBSD: patch-Makefile_am,v 1.1.1.1 2009/04/19 11:14:34 sthen Exp $
+--- Makefile.am.orig	Thu Feb  5 00:18:23 2009
++++ Makefile.am	Fri Apr 17 21:23:43 2009
+@@ -71,6 +71,16 @@ install-exec-hook:
+ 
+ endif
+ 
++if HAVE_OPENBSD
++OBSD_SRC =  sys_ansi.c ppm.c
++OBSD_DEFS = -D__Ansi__=1
++OBSD_LDFS = -version-info 0:0:0
++
++install-exec-hook:
++	@true
++
++endif
++
+ if HAVE_DARWIN
+ DAR_SRC =  sys_ansi.c ppm.c
+ DAR_DEFS = -D__Ansi__=1
+@@ -81,13 +91,13 @@ install-exec-hook:
+ 
+ endif
+ 
+-AM_CPPFLAGS = $(JAVA_FLAGS) $(JPEG_FLAGS) $(PNG_FLAGS) $(TIFF_FLAGS) $(ZLIB_FLAGS) $(WIN_DEFS) $(LIN_DEFS) $(DAR_DEFS) $(ENDIAN_FLAG)
++AM_CPPFLAGS = $(JAVA_FLAGS) $(JPEG_FLAGS) $(PNG_CFLAGS) $(TIFF_FLAGS) $(ZLIB_FLAGS) $(WIN_DEFS) $(LIN_DEFS) $(DAR_DEFS) $(ENDIAN_FLAG) $(OBSD_DEFS)
+ 
+ lib_LTLIBRARIES = libpano13.la
+ 
+-libpano13_la_SOURCES = $(STD_SRC) $(JAVA_SRC) $(X11_SRC) $(WIN_SRC) $(MAC_SRC) $(LIN_SRC) $(DAR_SRC)
+-libpano13_la_LIBADD = $(LIB_JPEG) $(LIB_PNG) $(LIB_TIFF) $(LIB_ZLIB) @PANO_WIN32_RESOURCE@
+-libpano13_la_LDFLAGS = $(LIN_LDFS) $(WIN_LDFS) $(DAR_LDFS)
++libpano13_la_SOURCES = $(STD_SRC) $(JAVA_SRC) $(X11_SRC) $(WIN_SRC) $(MAC_SRC) $(LIN_SRC) $(DAR_SRC) $(OBSD_SRC)
++libpano13_la_LIBADD = $(LIB_JPEG) $(PNG_LIBS) $(LIB_TIFF) $(LIB_ZLIB) @PANO_WIN32_RESOURCE@
++libpano13_la_LDFLAGS = $(LIN_LDFS) $(WIN_LDFS) $(DAR_LDFS) $(OBSD_LDFS)
+ libpano13_la_DEPENDENCIES = @PANO_WIN32_RESOURCE@
+ 
+ pkginclude_HEADERS = $(STD_HDR) $(TOOL_HDR)
