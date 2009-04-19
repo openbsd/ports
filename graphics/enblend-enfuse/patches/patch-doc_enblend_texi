@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_enblend_texi,v 1.1.1.1 2009/04/19 11:14:37 sthen Exp $
+--- doc/enblend.texi.orig	Sat Oct 25 15:10:09 2008
++++ doc/enblend.texi	Sat Oct 25 15:11:19 2008
+@@ -3,6 +3,10 @@
+ @c %** start of header
+ @setfilename enblend.info
+ @settitle Combining Multiple Images with Enblend
++@dircategory Enblend
++@direntry
++* enblend: (enblend).            seamlessly combines overlapping images.
++@end direntry
+ @c %** end of header
+ 
+ 

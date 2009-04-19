@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_enfuse_texi,v 1.1.1.1 2009/04/19 11:14:37 sthen Exp $
+--- doc/enfuse.texi.orig	Sat Oct 25 15:10:21 2008
++++ doc/enfuse.texi	Sat Oct 25 15:12:01 2008
+@@ -3,6 +3,10 @@
+ @c %** start of header
+ @setfilename enfuse.info
+ @settitle Fusing Multiple Images with Enfuse
++@dircategory Enblend
++@direntry
++* enfuse: (enfuse).    combines overlapping images into one with good exposure and focus.
++@end direntry
+ @c %** end of header
+ 
+ 

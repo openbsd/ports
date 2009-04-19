@@ -1,0 +1,8 @@
+Enblend combines images that partially overlap into a single large
+image with no seams (panorama generation). This is a command-line
+tool which performs the actual composition; another tool is required
+to line up the images ready for input (e.g. Hugin).
+
+Enfuse combines images that overlap into a single image with good
+focus and exposure (exposure stacking for high dynamic range, focus
+stacking for extended depth-of-field).

@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_enblend_cc,v 1.1.1.1 2009/04/19 11:14:37 sthen Exp $
+--- src/enblend.cc.orig	Fri Feb 15 10:18:21 2008
++++ src/enblend.cc	Fri Jul 25 00:49:48 2008
+@@ -61,8 +61,14 @@ extern "C" {
+ extern "C" char *optarg;
+ extern "C" int optind;
+ 
++#ifdef __OpenBSD__
++#include <ieeefp.h>
++#define fesetround(x) fpsetround(x)
++#define FE_TONEAREST FP_RN
++#else
+ #ifndef _MSC_VER
+ #include <fenv.h>
++#endif
+ #endif
+ 
+ #include <signal.h>

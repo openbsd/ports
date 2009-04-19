@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2009/04/19 11:14:37 sthen Exp $
+--- configure.in.orig	Fri Jul 25 00:52:20 2008
++++ configure.in	Fri Jul 25 00:52:27 2008
+@@ -119,7 +119,7 @@ if test "x$enable_debug" = "xyes"; then
+   CXXFLAGS="$CXXFLAGS -g -DDEBUG -Wall"
+   AC_MSG_RESULT(yes)
+ else
+-  CXXFLAGS="$CXXFLAGS -O3 -ffast-math -DNDEBUG -Wall"
++  CXXFLAGS="$CXXFLAGS -ffast-math -DNDEBUG -Wall"
+   AC_MSG_RESULT(no)
+ fi
+ 

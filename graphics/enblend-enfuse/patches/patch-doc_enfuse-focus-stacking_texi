@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_enfuse-focus-stacking_texi,v 1.1.1.1 2009/04/19 11:14:37 sthen Exp $
+--- doc/enfuse-focus-stacking.texi.orig	Sat Oct 25 15:10:34 2008
++++ doc/enfuse-focus-stacking.texi	Sat Oct 25 15:11:50 2008
+@@ -2,6 +2,10 @@
+ @c %** start of header
+ @setfilename enfuse-focus-stacking.info
+ @settitle Focus Stacking with Enfuse
++@dircategory Enblend
++@direntry
++* Focus Stacking with Enfuse (enfuse-focus-stacking).
++@end direntry
+ @c %** end of header
+ 
+ 

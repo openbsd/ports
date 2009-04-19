@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/19 11:14:37 sthen Exp $
+@bin bin/enblend
+@bin bin/enfuse
+@info info/enblend.info
+@info info/enfuse-focus-stacking.info
+@info info/enfuse.info
+@man man/man1/enblend.1
+@man man/man1/enfuse.1

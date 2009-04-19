@@ -1,0 +1,49 @@
+$OpenBSD: patch-src_assemble_h,v 1.1.1.1 2009/04/19 11:14:37 sthen Exp $
+--- src/assemble.h.orig	Sat Mar  8 23:16:23 2008
++++ src/assemble.h	Fri Apr 17 20:18:16 2009
+@@ -81,14 +81,18 @@ void checkpoint(pair<ImageType*, AlphaType*> &p, Image
+             Threshold<AlphaPixelType, ImagePixelComponentType>, AlphaAccessor>
+             ThresholdingAccessor;
+  
++    AlphaType* alphaType = p.second;
++    ImagePixelComponentType alphaMaxValue = AlphaTraits<ImagePixelComponentType>::max();
++    ImagePixelComponentType alphaZeroValue = AlphaTraits<ImagePixelComponentType>::zero();
++    AlphaPixelType numericZeroValue = NumericTraits<AlphaPixelType>::zero();
++    Threshold<AlphaPixelType, ImagePixelComponentType> curThreshold =
++        Threshold<AlphaPixelType, ImagePixelComponentType>(numericZeroValue,
++                                                           numericZeroValue,
++                                                           alphaMaxValue,
++                                                           alphaZeroValue);
+     ThresholdingAccessor ata(
+-            Threshold<AlphaPixelType, ImagePixelComponentType>(
+-                    NumericTraits<AlphaPixelType>::zero(),
+-                    NumericTraits<AlphaPixelType>::zero(),
+-                    AlphaTraits<ImagePixelComponentType>::max(),
+-                    AlphaTraits<ImagePixelComponentType>::zero()
+-            ),
+-            (p.second)->accessor());
++            curThreshold,
++            alphaType->accessor());
+ 
+     try {
+         exportImageAlpha(srcImageRange(*(p.first)),
+@@ -118,12 +122,15 @@ void import(const ImageImportInfo &info,
+ 
+     // Threshold the alpha mask so that all pixels are either contributing
+     // or not contributing.
++    ImagePixelComponentType imagePixelMaxValue = AlphaTraits<ImagePixelComponentType>::max();
++    AlphaPixelType alphaPixelMaxValue = AlphaTraits<AlphaPixelType>::max();
++    AlphaPixelType alphaPixelZeroValue = AlphaTraits<AlphaPixelType>::zero();
+     ThresholdingAccessor ata(
+             Threshold<ImagePixelComponentType, AlphaPixelType>(
+-                    AlphaTraits<ImagePixelComponentType>::max() / 2,
+-                    AlphaTraits<ImagePixelComponentType>::max(),
+-                    AlphaTraits<AlphaPixelType>::zero(),
+-                    AlphaTraits<AlphaPixelType>::max()
++                    imagePixelMaxValue / 2,
++                    imagePixelMaxValue,
++                    alphaPixelZeroValue,
++                    alphaPixelMaxValue
+             ),
+             alpha.second);
+ 

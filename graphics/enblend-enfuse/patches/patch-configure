@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/04/19 11:14:37 sthen Exp $
+--- configure.orig	Sat Oct 25 01:25:26 2008
++++ configure	Sat Oct 25 01:25:46 2008
+@@ -11378,7 +11378,7 @@ if test "x$enable_debug" = "xyes"; then
+   { echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6; }
+ else
+-  CXXFLAGS="$CXXFLAGS -O3 -ffast-math -DNDEBUG -Wall"
++  CXXFLAGS="$CXXFLAGS -ffast-math -DNDEBUG -Wall"
+   { echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6; }
+ fi

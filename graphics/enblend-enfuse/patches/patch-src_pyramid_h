@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_pyramid_h,v 1.1.1.1 2009/04/19 11:14:37 sthen Exp $
+--- src/pyramid.h.orig	Sat Feb  2 21:30:51 2008
++++ src/pyramid.h	Fri Apr 17 20:18:27 2009
+@@ -641,7 +641,8 @@ inline void reduce(bool wraparound,
+ 
+         // Main pixels in first row
+         for (sx = sy, evenX = true, srcx = 0, dstx = 0;  srcx < src_w; ++srcx, ++sx.x) {
+-            SKIPSMImagePixelType icurrent(SKIPSMImagePixelType(sa(sx)));
++            SKIPSMImagePixelType foo = SKIPSMImagePixelType(sa(sx));
++            SKIPSMImagePixelType icurrent(foo);
+             if (evenX) {
+                 isc0[dstx] = isr1 + IMUL6(isr0) + isrp + icurrent;
+                 isc1[dstx] = IMUL5(isc0[dstx]);
+@@ -708,7 +709,8 @@ inline void reduce(bool wraparound,
+ 
+                 // Main entries in row
+                 for (evenX = false, srcx = 1, dstx = 0; srcx < src_w; ++srcx, ++sx.x) {
+-                    SKIPSMImagePixelType icurrent(SKIPSMImagePixelType(sa(sx)));
++                    SKIPSMImagePixelType foo = SKIPSMImagePixelType(sa(sx));
++                    SKIPSMImagePixelType icurrent(foo);
+                     if (evenX) {
+                         SKIPSMImagePixelType ip = isc1[dstx] + IMUL6(isc0[dstx]) + iscp[dstx];
+                         isc1[dstx] = isc0[dstx] + iscp[dstx];
+@@ -770,7 +772,8 @@ inline void reduce(bool wraparound,
+ 
+                 // Main entries in odd-numbered row
+                 for (evenX = false, srcx = 1, dstx = 0; srcx < src_w; ++srcx, ++sx.x) {
+-                    SKIPSMImagePixelType icurrent(SKIPSMImagePixelType(sa(sx)));
++                    SKIPSMImagePixelType foo = SKIPSMImagePixelType(sa(sx));
++                    SKIPSMImagePixelType icurrent(foo);
+                     if (evenX) {
+                         iscp[dstx] = (isr1 + IMUL6(isr0) + isrp + icurrent) * 4;
+                         isr1 = isr0 + isrp;
