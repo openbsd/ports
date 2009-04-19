@@ -1,0 +1,8 @@
+Autopano-SIFT-C automatically creates control points for
+groups of overlapping photographs using SIFT ("scale-invariant
+feature transform").
+
+It can be controlled from within the Hugin GUI front-end.
+
+N.B. The SIFT algorithm is restricted in the USA by a patent
+owned by the University of British Columbia.
