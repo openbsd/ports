@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/02/01 19:13:40 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/04/19 09:01:18 jakob Exp $
 @man man/man5/nsd.conf.5
 @man man/man8/nsd-checkconf.8
 @man man/man8/nsd-notify.8
@@ -14,6 +14,9 @@
 @bin sbin/nsd-xfer
 sbin/nsdc
 @bin sbin/zonec
+share/doc/nsd/
+share/doc/nsd/NSD-FOR-BIND-USERS
+share/doc/nsd/README
 share/examples/nsd/
 @mode 770
 @group named
@@ -21,7 +24,6 @@ share/examples/nsd/
 @mode
 @group
 share/examples/nsd/nsd.conf
-@group named
 @mode 640
 @group named
 @sample ${SYSCONFDIR}/nsd/nsd.conf
