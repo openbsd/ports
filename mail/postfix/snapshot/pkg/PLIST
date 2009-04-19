@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2009/04/05 20:48:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.52 2009/04/19 14:14:22 jakob Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -29,6 +29,7 @@ libexec/postfix/post-install
 libexec/postfix/postfix-files
 libexec/postfix/postfix-script
 libexec/postfix/postfix-wrapper
+libexec/postfix/postmulti-script
 @bin libexec/postfix/proxymap
 @bin libexec/postfix/qmgr
 @bin libexec/postfix/qmqpd
@@ -52,6 +53,7 @@ libexec/postfix/postfix-wrapper
 @man man/man1/postlock.1
 @man man/man1/postlog.1
 @man man/man1/postmap.1
+@man man/man1/postmulti.1
 @man man/man1/postqueue.1
 @man man/man1/postsuper.1
 @man man/man1/qshape.1
@@ -117,6 +119,7 @@ sbin/postfix-install
 @bin sbin/postlock
 @bin sbin/postlog
 @bin sbin/postmap
+@bin sbin/postmulti
 @bin sbin/postqueue
 @bin sbin/postsuper
 sbin/qshape
@@ -145,6 +148,7 @@ share/doc/postfix/html/LINUX_README.html
 share/doc/postfix/html/LOCAL_RECIPIENT_README.html
 share/doc/postfix/html/MAILDROP_README.html
 share/doc/postfix/html/MILTER_README.html
+share/doc/postfix/html/MULTI_INSTANCE_README.html
 share/doc/postfix/html/MYSQL_README.html
 share/doc/postfix/html/NFS_README.html
 share/doc/postfix/html/OVERVIEW.html
@@ -209,6 +213,7 @@ share/doc/postfix/html/postkick.1.html
 share/doc/postfix/html/postlock.1.html
 share/doc/postfix/html/postlog.1.html
 share/doc/postfix/html/postmap.1.html
+share/doc/postfix/html/postmulti.1.html
 share/doc/postfix/html/postqueue.1.html
 share/doc/postfix/html/postsuper.1.html
 share/doc/postfix/html/proxymap.8.html
@@ -257,6 +262,7 @@ share/doc/postfix/readme/LINUX_README
 share/doc/postfix/readme/LOCAL_RECIPIENT_README
 share/doc/postfix/readme/MAILDROP_README
 share/doc/postfix/readme/MILTER_README
+share/doc/postfix/readme/MULTI_INSTANCE_README
 share/doc/postfix/readme/MYSQL_README
 share/doc/postfix/readme/NFS_README
 share/doc/postfix/readme/OVERVIEW
