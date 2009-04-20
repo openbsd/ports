@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_yelp-transform_c,v 1.1 2009/04/20 15:15:40 ajacoutot Exp $
+
+Fix memory leak. From upstream SVN r3246.
+
+XXX add a workaround for:
+Program received signal SIGSEGV, Segmentation fault.
+[Switching to process 201, thread 0x7de7a000]
+0x0d363e73 in xmlXPathFreeNodeSet (obj=0x8644ce60) at xpath.c:4081
+4081               if ((obj->nodeTab[i] != NULL) &&
+
+--- src/yelp-transform.c.orig	Mon Sep 22 19:26:17 2008
++++ src/yelp-transform.c	Sat Apr 18 22:35:44 2009
+@@ -73,6 +73,8 @@ YelpTransform
+     YelpTransform *transform;
+     
+     transform = g_new0 (YelpTransform, 1);
++    transform->func = func;
++    transform->user_data = user_data;
+ 
+     transform->stylesheet = xsltParseStylesheetFile (BAD_CAST stylesheet);
+     if (!transform->stylesheet) {
+@@ -82,19 +84,16 @@ YelpTransform
+ 			      "not valid."),
+ 			    stylesheet);
+ 	transform_error (transform);
++	g_free (transform);
+ 	return NULL;
+     }
+ 
+-    transform->func = func;
+-
+     transform->queue = g_async_queue_new ();
+     transform->chunks = g_hash_table_new_full (g_str_hash,
+ 					       g_str_equal,
+ 					       g_free,
+ 					       NULL);
+ 
+-    transform->user_data = user_data;
+-
+     return transform;
+ }
+ 
+@@ -172,7 +171,7 @@ yelp_transform_release (YelpTransform *transform)
+ 	/* We might still have pending pops from the queue, so just
+ 	 * schedule transform_free.
+ 	 */
+-	g_idle_add ((GSourceFunc) transform_free, transform);
++	/* g_idle_add ((GSourceFunc) transform_free, transform); */
+     }
+     g_mutex_unlock (transform->mutex);
+ }
