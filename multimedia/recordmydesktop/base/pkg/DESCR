@@ -2,3 +2,7 @@ Recordmydesktop produces a file(default out.ogg) that contains a video
 and audio recording of a desktop session. The default behavior of
 recording is to mark areas that have changed(through libxdamage) and
 update the frame.
+
+Under OpenBSD, the OSS audio backend will not be usable because it needs
+exclusive access to the audio hardware. Audio recording will only work
+through the JACK backend and for applications that have JACK support.
