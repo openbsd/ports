@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.29 2008/09/02 18:35:57 todd Exp $
+# $OpenBSD: Makefile.inc,v 1.30 2009/04/20 07:43:21 sthen Exp $
 
 CATEGORIES=	mail
 
@@ -10,15 +10,19 @@ MASTER_SITES_MUTT= ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		   ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/
 
 MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
-MASTER_SITES1=	http://spacehopper.org/
+MASTER_SITES1=	http://lunar-linux.org/~tchan/mutt/
+DIST_SUBDIR=	mutt
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 MODULES=	devel/gettext
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB+=	c crypto des gssapi krb5 ssl
 
 FLAVORS+=	slang mixmaster compressed
@@ -51,8 +55,7 @@ CONFIGURE_ARGS+=	--with-curses
 WANTLIB+=		ncurses 
 .endif
 
-# compressed folder support provided by
-# http://www.spinnaker.de/mutt/compressed/
+# compressed folder support
 .if ${FLAVOR:L:Mcompressed}
 PATCHFILES+=		patch-${VERSION}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=	-p1
@@ -87,7 +90,6 @@ SUBST_VARS=	CONFDIR
 MUTTRCDIR?=
 
 post-install:
-	@strip ${PREFIX}/bin/mutt
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mutt
 	${INSTALL_DATA} ${WRKSRC}/${MUTTRCDIR}Muttrc \
 		${PREFIX}/share/examples/mutt/Muttrc.sample

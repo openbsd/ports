@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.17 2007/11/11 10:09:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2009/04/20 07:43:21 sthen Exp $
 @pkgpath mail/mutt/snapshot,hcache
 bin/flea
-bin/mutt
-bin/mutt_dotlock
+@bin bin/mutt
+@bin bin/mutt_dotlock
 bin/muttbug
-bin/pgpewrap
-bin/pgpring
+@bin bin/pgpewrap
+@bin bin/pgpring
 bin/smime_keys
 @man man/man1/flea.1
 @man man/man1/mutt.1
@@ -17,7 +17,6 @@ bin/smime_keys
 share/doc/mutt/
 share/doc/mutt/COPYRIGHT
 share/doc/mutt/ChangeLog
-share/doc/mutt/ChangeLog.old
 share/doc/mutt/GPL
 share/doc/mutt/INSTALL
 share/doc/mutt/NEWS
@@ -93,8 +92,6 @@ share/locale/el/LC_MESSAGES/mutt.mo
 share/locale/eo/LC_MESSAGES/mutt.mo
 share/locale/es/LC_MESSAGES/mutt.mo
 share/locale/et/LC_MESSAGES/mutt.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/mutt.mo
 share/locale/fr/LC_MESSAGES/mutt.mo
 share/locale/ga/LC_MESSAGES/mutt.mo

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/07/24 09:44:20 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/04/20 07:43:21 sthen Exp $
 bin/flea
-bin/mutt
-bin/mutt_dotlock
+@bin bin/mutt
+@bin bin/mutt_dotlock
 bin/muttbug
-bin/pgpewrap
-bin/pgpring
+@bin bin/pgpewrap
+@bin bin/pgpring
 @man man/man1/flea.1
 @man man/man1/mutt.1
 @man man/man1/mutt_dotlock.1

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2008/05/22 14:40:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2009/04/20 07:43:21 sthen Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
-VERSION=	1.5.18
+VERSION=	1.5.19
 DISTNAME=	mutt-${VERSION}
 MASTER_SITES=	${MASTER_SITES_MUTT:=devel/}
 
@@ -25,10 +25,11 @@ LIB_DEPENDS+=	sasl2::security/cyrus-sasl2
 MUTTRCDIR=	doc/
 
 .if ${FLAVOR:L:Msidebar}
-PATCHFILES+=		patch-${VERSION}.sidebar-b.txt:1
+PATCHFILES+=		patch-${VERSION}.sidebar.20090308.txt:1
 PATCH_DIST_STRIP=	-p1
+PATCH_LIST=		patch-* sidebar-*
 .else
-SUPDISTFILES+=		patch-${VERSION}.sidebar-b.txt:1
+SUPDISTFILES+=		patch-${VERSION}.sidebar.20090308.txt:1
 .endif
 
 .include <bsd.port.mk>
