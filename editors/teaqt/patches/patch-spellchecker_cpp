@@ -1,0 +1,13 @@
+$OpenBSD: patch-spellchecker_cpp,v 1.1.1.1 2009/04/20 10:29:05 giovanni Exp $
+--- spellchecker.cpp.orig	Fri Apr 17 20:47:13 2009
++++ spellchecker.cpp	Mon Apr 20 11:15:41 2009
+@@ -54,9 +54,6 @@ CSpellchecker::CSpellchecker (const QString &lang)
+ 
+ CSpellchecker::~CSpellchecker()
+ {
+-  if (speller)
+-     delete_aspell_speller (speller);
+-
+   if (spell_config)
+      delete_aspell_config (spell_config);
+ 

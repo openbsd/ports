@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_pro,v 1.1.1.1 2009/04/20 10:29:05 giovanni Exp $
+--- src.pro.orig	Fri Apr 17 20:47:13 2009
++++ src.pro	Mon Apr 20 11:15:42 2009
+@@ -68,11 +68,9 @@ DISTFILES += ChangeLog \
+     manuals/ru.html \
+     text-data/* \
+     translations/*
+-exists("/usr/include/aspell.h") { 
+     message ("ASpell enabled")
+     LIBS += -laspell
+     DEFINES += ASPELL_ENABLE
+-}
+ 
+ DEFINES += NOCRYPT \
+           NOUNCRYPT
