@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.237 2009/04/16 22:18:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.238 2009/04/20 23:32:11 sthen Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -11,6 +11,7 @@
      SUBDIR += agg
      SUBDIR += animorph
      SUBDIR += aqsis
+     SUBDIR += autopano-sift-c
      SUBDIR += babl
      SUBDIR += barcode
      SUBDIR += blender
@@ -36,6 +37,7 @@
      SUBDIR += djvulibre,no_x11
      SUBDIR += dumpmpeg
      SUBDIR += dvdrip
+     SUBDIR += enblend-enfuse
      SUBDIR += enjoympeg
      SUBDIR += evince
      SUBDIR += exiv2
@@ -76,6 +78,7 @@
      SUBDIR += gtkam
      SUBDIR += gwenview
      SUBDIR += gwenview-i18n
+     SUBDIR += hugin
      SUBDIR += ilmbase
      SUBDIR += imlib
      SUBDIR += imlib2
@@ -107,6 +110,7 @@
      SUBDIR += liblqr
      SUBDIR += libmng
      SUBDIR += libmpeg2
+     SUBDIR += libpano13
      SUBDIR += libungif
      SUBDIR += libwmf
      SUBDIR += libxmi
