@@ -109,8 +109,9 @@ NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
 
 	# qemu -net nic -net tap -no-fd-bootchk -hda virtual.img
 
-  It presumes you have a 'trunk0' interface you wish the tun(4) interface to
-  talk to.  It presumes you want 'bridge0' to be used to bridge the two.
+  It presumes you wish the tun(4) interface to talk to the interface
+  holding the default IPv4 route (falling back to trunk0 if no route is
+  found), and that you want 'bridge0' to be used to bridge the two.
 
   If you wish to over-ride these settings, setting the environment variables
   ETHER and BRIDGE will over-ride these settings, respectively.

@@ -1,6 +1,7 @@
 #! /bin/sh
 
-_ETHER=trunk0
+_ETHER=`route -n get default 2>/dev/null |awk '/interface:/ {print $2}'`
+_ETHER=${_ETHER:=trunk0}
 _BRIDGE=bridge0
 
 # Let the environment over-ride this
