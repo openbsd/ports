@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/31 13:56:58 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.3 2009/04/21 05:57:07 sturm Exp $
+
+BROKEN=		distfile needs to updated/versioned
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
