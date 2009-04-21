@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.569 2009/04/18 19:36:48 jcs Exp $
+# $OpenBSD: Makefile,v 1.570 2009/04/21 16:39:23 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -307,6 +307,7 @@
      SUBDIR += packit
      SUBDIR += pavuk
      SUBDIR += pavuk,no_x11
+     SUBDIR += pcapdiff
      SUBDIR += pcapmerge
      SUBDIR += pchar
      SUBDIR += pdnsd
