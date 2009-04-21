@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/21 22:48:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/04/21 23:39:43 jasper Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
+# there is already audio/tracker, so this port has to live
+# as tracker-search.
 GNOME_PROJECT=	tracker
 GNOME_VERSION=	0.6.93
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	tracker-search-${VERSION}
 
 SHARED_LIBS +=	stemmer              0.0      # .693.0
 SHARED_LIBS +=	tracker-common       0.0      # .693.0
@@ -59,16 +61,6 @@ RUN_DEPENDS=		::devel/glib2,-fam \
 			::www/w3m \
 			::x11/gnome/deskbar-applet
 
-# Allow tracker to index the media files these gstreamer packages
-# can grok. To not force a huge pile of dependencies on the user
-# only install a base set.
-RUN_DEPENDS+=	:gstreamer-vorbis-*:multimedia/gstreamer-0.10/plugins-base,-vorbis \
-		:gstreamer-ogg-*:multimedia/gstreamer-0.10/plugins-base,-ogg \
-		:gstreamer-theora-*:multimedia/gstreamer-0.10/plugins-base,-theora \
-		:gstreamer-jpeg-*:multimedia/gstreamer-0.10/plugins-good,-jpeg \
-		:gstreamer-png-*:multimedia/gstreamer-0.10/plugins-good,-png \
-		:gstreamer-confelements-*:multimedia/gstreamer-0.10/plugins-good,-gconf
-
 DESKTOP_FILES=		Yes
 MODPY_RUNDEP=		No
 
@@ -88,5 +80,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-deskbar-applet-handler-dir="${LOCALBASE}/lib/python${MODPY_VERSION}/site-packages/deskbar/handlers/"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/data/modules/applications.module
 
 .include <bsd.port.mk>

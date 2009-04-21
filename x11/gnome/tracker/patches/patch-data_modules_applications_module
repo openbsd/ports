@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_modules_applications_module,v 1.1 2009/04/21 23:39:43 jasper Exp $
+--- data/modules/applications.module.orig	Wed Apr 22 01:26:02 2009
++++ data/modules/applications.module	Wed Apr 22 01:26:12 2009
+@@ -4,7 +4,7 @@ Enabled=true
+ 
+ [Monitors]
+ Directories=
+-RecurseDirectories=/usr/share/applications;
++RecurseDirectories=${LOCALBASE}/share/applications;
+ 
+ [Ignored]
+ Directories=
