@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.PIC-objc,v 1.1 2006/10/20 15:35:25 espie Exp $
+@comment $OpenBSD: PFRAG.PIC-objc,v 1.2 2009/04/21 21:02:34 kurt Exp $
 lib/fpic/libobjc.a
 lib/fpic/libobjc.la
+@comment @lib lib/fpic/libobjc.so.${LIBobjc_VERSION}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.PIC-c++,v 1.1 2006/10/20 13:43:18 espie Exp $
+@comment $OpenBSD: PFRAG.PIC-c++,v 1.2 2009/04/21 21:02:34 kurt Exp $
 include/c++/${V}/${CONFIG}/fpic/
 include/c++/${V}/${CONFIG}/fpic/bits/
 include/c++/${V}/${CONFIG}/fpic/bits/atomic_word.h
@@ -19,9 +19,17 @@ include/c++/${V}/${CONFIG}/fpic/bits/gthr-tpf.h
 include/c++/${V}/${CONFIG}/fpic/bits/gthr.h
 include/c++/${V}/${CONFIG}/fpic/bits/messages_members.h
 include/c++/${V}/${CONFIG}/fpic/bits/os_defines.h
+include/c++/${V}/${CONFIG}/fpic/bits/stdc++.h
+include/c++/${V}/${CONFIG}/fpic/bits/stdc++.h.gch/
+include/c++/${V}/${CONFIG}/fpic/bits/stdc++.h.gch/O0g.gch
+include/c++/${V}/${CONFIG}/fpic/bits/stdc++.h.gch/O2g.gch
+include/c++/${V}/${CONFIG}/fpic/bits/stdtr1c++.h
+include/c++/${V}/${CONFIG}/fpic/bits/stdtr1c++.h.gch/
+include/c++/${V}/${CONFIG}/fpic/bits/stdtr1c++.h.gch/O2g.gch
 include/c++/${V}/${CONFIG}/fpic/bits/time_members.h
 lib/fpic/
 lib/fpic/libestdc++.a
 lib/fpic/libestdc++.la
+@comment @lib lib/fpic/libestdc++.so.${LIBestdc++_VERSION}
 lib/fpic/libesupc++.a
 lib/fpic/libesupc++.la
