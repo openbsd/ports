@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/21 16:36:23 sthen Exp $
+bin/pcapdiff
+bin/printpackets
+lib/python${MODPY_VERSION}/site-packages/pcapdiff-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pcapdiff.py
+lib/python${MODPY_VERSION}/site-packages/pcapdiff.pyc
+lib/python${MODPY_VERSION}/site-packages/pcapdiff_helper.py
+lib/python${MODPY_VERSION}/site-packages/pcapdiff_helper.pyc
+lib/python${MODPY_VERSION}/site-packages/printpackets.py
+lib/python${MODPY_VERSION}/site-packages/printpackets.pyc
