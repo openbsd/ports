@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.404 2009/04/18 14:07:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.405 2009/04/21 09:32:58 robert Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -20,6 +20,7 @@
      SUBDIR += clearsilver
      SUBDIR += clearsilver,python
      SUBDIR += cms-ms
+     SUBDIR += concrete5
      SUBDIR += cronolog
      SUBDIR += cssed
      SUBDIR += dansguardian
