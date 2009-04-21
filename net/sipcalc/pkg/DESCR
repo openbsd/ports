@@ -8,9 +8,9 @@ Sipcalc is an "advanced" console based ip subnet calculator.
   * Output of broadcast address, network class, Cisco wildcard, hosts/range,
     network range.
   * Output of multiple types of bitmaps.
-  * Output of a userdefined number of extra networks.
+  * Output of a user-defined number of extra networks.
   * Multiple networks input from commandline.
-  * Parsing of a newline seperated list of networks from standard input (STDIN).
+  * Parsing of a newline separated list of networks from standard input (STDIN).
   * The ability to "split" a network based on a smaller netmask, now also with
     recursive runs on the generated subnets.
   * DNS resolution.
