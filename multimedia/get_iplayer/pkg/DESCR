@@ -6,8 +6,6 @@ This tool allows you to search, index and download/stream:
     * BBC Podcasts - 128 kb/s MP3 / AAC
     * BBC iPlayer TV subtitles - SubRip / srt
     * ITV player Catch-up or classic TV - WMV / ASF
-    * Hulu.com* TV - MP4
-    * Hulu.com* Closed-captions / subtitles - SubRip / srt
 
 get_iplayer has PVR-like capabilities (like Sky+ / TiVo / Series-Link);
 You can save lists of programme searches which are automatically
