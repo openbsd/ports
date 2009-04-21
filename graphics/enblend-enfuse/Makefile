@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/21 09:20:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/21 13:09:39 sthen Exp $
 
 VMEM_WARNING =	Yes
 # and I'm not joking! - don't waste build time on the following arch
 # where MAXDSIZ is simply too low to compile this software:
 NOT_FOR_ARCHS = m68k m88k sparc vax
-# other arch may need MAXDSIZ adjustment, lower optimization levels,
-# or may fail completely. i386 sparc64 and amd64 known to build given
-# enough RAM.
-#
-# MAKE_ENV +=	CXXNOOPT=-O
-# MAKE_ENV +=	CXXNOOPT=-O0
+# and restrict to -O1 for the largest files, except on selected arch
+.if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "sparc64" && \
+    ${MACHINE_ARCH} != "amd64")
+MAKE_ENV +=	CXXNOOPT=-O1
+.endif
 
 COMMENT =	blend seams in panoramic image mosaics
 
 DISTNAME =	enblend-enfuse-3.2
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://enblend.sourceforge.net/
