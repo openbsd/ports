@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2009/04/21 21:48:16 jasper Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -8,7 +8,7 @@ COMMENT=		GNOME shell and file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		2.24.2
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 CATEGORIES=		x11
@@ -42,14 +42,15 @@ RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 LIB_DEPENDS=		exif::graphics/libexif \
 			gnome-desktop-2::x11/gnome/desktop \
 			eel-2.>=20.0::x11/gnome/eel \
-			rsvg-2.>=18.0::x11/gnome/librsvg
+			rsvg-2.>=18.0::x11/gnome/librsvg \
+			trackerclient::x11/gnome/tracker
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/nautilus \
-			--disable-tracker \
+			--enable-tracker \
 			--disable-beagle \
 			--disable-schemas-install \
 			--disable-update-mimedb
