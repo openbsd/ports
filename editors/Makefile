@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2009/04/20 10:31:29 giovanni Exp $
+# $OpenBSD: Makefile,v 1.74 2009/04/21 08:32:35 robert Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -35,7 +35,6 @@
      SUBDIR += nedit
      SUBDIR += nvi-m17n
      SUBDIR += nvi-m17n,canna
-     SUBDIR += openoffice
      SUBDIR += openoffice3
      SUBDIR += openoffice3-dicts
      SUBDIR += qscintilla
