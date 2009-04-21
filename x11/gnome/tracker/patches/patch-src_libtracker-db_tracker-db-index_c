@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_libtracker-db_tracker-db-index_c,v 1.1.1.1 2009/04/21 21:34:46 jasper Exp $
+
+Lower buffer size, as the default stack size on OpenBSD is too low.
+
+--- src/libtracker-db/tracker-db-index.c.orig	Wed Apr  8 00:04:00 2009
++++ src/libtracker-db/tracker-db-index.c	Thu Apr  9 21:32:09 2009
+@@ -37,7 +37,7 @@
+ #include "tracker-db-index.h"
+ 
+ /* Size of free block pool of inverted index */
+-#define MAX_HIT_BUFFER 480000
++#define MAX_HIT_BUFFER 65536
+ #define MAX_CACHE_DEPTH 2
+ #define MAX_FLUSH_TIME 0.5 /* In fractions of a second */
+ 

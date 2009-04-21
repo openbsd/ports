@@ -1,0 +1,99 @@
+$OpenBSD: patch-src_tracker-extract_tracker-extract-abw_c,v 1.1.1.1 2009/04/21 21:34:46 jasper Exp $
+
+- implement getline() in case it's not found on this system.
+
+--- src/tracker-extract/tracker-extract-abw.c.orig	Wed Apr  8 00:04:00 2009
++++ src/tracker-extract/tracker-extract-abw.c	Tue Apr 14 16:23:54 2009
+@@ -31,6 +31,10 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ 
++#ifndef HAVE_GETLINE_H
++#include <stdlib.h>
++#endif /* HAVE_GETLINE_H */
++
+ #include <glib.h>
+ #include <glib/gstdio.h>
+ 
+@@ -46,6 +50,81 @@ static TrackerExtractData data[] = {
+ 	{ "application/x-abiword", extract_abw },
+ 	{ NULL, NULL }
+ };
++
++
++#ifndef HAVE_GETLINE
++ssize_t getline(char **lineptr, size_t *n, FILE *stream)
++{
++	char *dest = *lineptr, *ret, *newline;
++	size_t len = *n;
++	
++	if (dest == NULL || len < 1) {
++		len = 256;
++		if ((dest = malloc(len)) == NULL) {
++			goto error;
++		}
++	}
++	
++	/* Fetch up to line_length bytes from the file, or up to a newline */
++	ret = fgets(dest, (int) (len-1), stream);
++	if (ret == NULL) {
++		if (feof(stream) != 0) {
++			dest[0] = '\0';
++			len = 0;
++			return 0;
++		} else {
++			goto error;
++		}
++	}
++	
++	/* If the line was too long, and so doesn't contain a newline, carry on
++	 * fetching until it does, or we hit the end of the file. */
++	while ((newline = strchr(dest, '\n')) == NULL) {
++		char *new_dest, *tmp;
++
++		/* Create a new storage space the same size as the last one, and carry
++		 * on reading. We'll need to append this to the previous string - fgets
++		 * will just overwrite it. */
++		if ((tmp = malloc(len)) == NULL) {
++			goto error;
++		}
++
++		ret = fgets(tmp, (int) (len-1), stream);
++		if (ret == NULL) {
++			/* This probably shouldn't happen... */
++			if (feof(stream) != 0) {
++				free(tmp);
++				break;
++			} else {
++				free(tmp);
++				goto error;
++			}
++		}
++
++		len *= 2;
++		if ((new_dest = realloc(dest, (size_t)len)) == NULL) {
++			free(tmp);
++			goto error;
++		}
++
++		dest = new_dest;
++		strlcat(dest, tmp, len);
++		free(tmp);
++	}
++	
++	/* Don't include the newline in the line we return. */
++	if (newline != NULL)
++		*newline = '\0';
++	
++	return (ssize_t) (newline - dest - 1);
++
++error:
++	free(dest);
++	dest = NULL;
++	len = 0;
++	return -1;
++}
++#endif
+ 
+ static void
+ extract_abw (const gchar *filename,

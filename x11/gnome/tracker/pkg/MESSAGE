@@ -1,0 +1,2 @@
+To allow tracker to index more types of media files, it is advised to
+install the corresponding Gstreamer plugins.

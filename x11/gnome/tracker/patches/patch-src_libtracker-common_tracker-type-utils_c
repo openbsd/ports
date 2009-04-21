@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_libtracker-common_tracker-type-utils_c,v 1.1.1.1 2009/04/21 21:34:46 jasper Exp $
+
+tracker-type-utils.c: In function `tracker_string_to_date':
+tracker-type-utils.c:539: error: invalid operands to binary -
+
+--- src/libtracker-common/tracker-type-utils.c.orig	Wed Apr  8 00:04:00 2009
++++ src/libtracker-common/tracker-type-utils.c	Wed Apr 15 17:16:37 2009
+@@ -21,7 +21,10 @@
+ 
+ #include "config.h"
+ 
++#if !defined(__OpenBSD__)
+ #define _XOPEN_SOURCE
++#endif
++#include <sys/types.h>
+ #include <time.h>
+ 
+ #include <strings.h>
+@@ -528,11 +531,15 @@ tracker_string_to_date (const gchar *date_string)
+ 		tm.tm_sec = strtoul (date_string, (gchar**) &date_string, 10);
+ 	}
+ 
++#if !(defined(__FreeBSD__) || defined(__OpenBSD__))
+ 	/* mktime() always assumes that "tm" is in locale time but we
+ 	 * want to keep control on time, so we go to UTC
+ 	 */
+ 	t  = mktime (&tm);
+ 	t -= timezone;
++#else
++	t = timegm (&tm);
++#endif
+ 
+ 	if (*date_string == '+' ||
+ 	    *date_string == '-') {

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_libtracker-data_tracker-query-tree_c,v 1.1.1.1 2009/04/21 21:34:46 jasper Exp $
+
+Lower buffer size, as the default stack size on OpenBSD is too low.
+
+--- src/libtracker-data/tracker-query-tree.c.orig	Wed Apr  1 14:31:50 2009
++++ src/libtracker-data/tracker-query-tree.c	Wed Apr  1 14:32:02 2009
+@@ -43,7 +43,7 @@
+ 
+ #define TRACKER_QUERY_TREE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), TRACKER_TYPE_QUERY_TREE, TrackerQueryTreePrivate))
+ 
+-#define MAX_HIT_BUFFER 480000
++#define MAX_HIT_BUFFER 65536
+ #define SCORE_MULTIPLIER 100000
+ 
+ typedef enum   OperationType OperationType;

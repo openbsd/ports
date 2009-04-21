@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_tracker-extract_tracker-extract-mp3_c,v 1.1.1.1 2009/04/21 21:34:46 jasper Exp $
+
+- O_NOATIME doesn't exist on *BSD or Solaris.
+- use glib's strndup(), instead of libc's version. Which may not be present
+  on every system.
+
+--- src/tracker-extract/tracker-extract-mp3.c.orig	Wed Apr  8 00:04:00 2009
++++ src/tracker-extract/tracker-extract-mp3.c	Tue Apr 14 16:20:35 2009
+@@ -759,7 +759,7 @@ get_id3v24_tags (const gchar *data,
+ 							  NULL, NULL, NULL);
+ 					break;
+ 				case 0x03 :
+-					word = strndup (&data[pos+11], csize-1);
++					word = g_strndup (&data[pos+11], csize-1);
+ 					break;
+ 
+ 				default:
+@@ -852,7 +852,7 @@ get_id3v24_tags (const gchar *data,
+ 						  NULL, NULL, NULL);
+ 				break;
+ 			case 0x03 :
+-				word = strndup (text, csize-offset);
++				word = g_strndup (text, csize-offset);
+ 				break;
+ 				
+ 			default:
+@@ -1517,7 +1517,11 @@ extract_mp3 (const gchar *filename,
+ 	 * without as a last resort. This can happen due to
+ 	 * permissions.
+ 	 */
++#if defined(__linux__)
+ 	fd = open (filename, O_RDONLY | O_NOATIME);
++#else
++	fd = open (filename, O_RDONLY);
++#endif
+ 	if (fd == -1) {
+ 		fd = open (filename, O_RDONLY);
+ 		
