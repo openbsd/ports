@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_tracker-utils_Makefile_in,v 1.1 2009/04/21 22:48:22 jasper Exp $
+
+Don't build tracker-processes, which depends on /proc being present.
+
+--- src/tracker-utils/Makefile.in.orig	Wed Apr 22 00:38:13 2009
++++ src/tracker-utils/Makefile.in	Wed Apr 22 00:38:53 2009
+@@ -48,7 +48,7 @@ bin_PROGRAMS = tracker-search$(EXEEXT) tracker-query$(
+ 	tracker-meta-folder$(EXEEXT) tracker-stats$(EXEEXT) \
+ 	tracker-tag$(EXEEXT) tracker-files$(EXEEXT) \
+ 	tracker-status$(EXEEXT) tracker-unique$(EXEEXT) \
+-	tracker-info$(EXEEXT) tracker-processes$(EXEEXT) \
++	tracker-info$(EXEEXT) \
+ 	tracker-services$(EXEEXT)
+ subdir = src/tracker-utils
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -115,13 +115,13 @@ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOO
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+ SOURCES = $(tracker_files_SOURCES) $(tracker_info_SOURCES) \
+-	$(tracker_meta_folder_SOURCES) $(tracker_processes_SOURCES) \
++	$(tracker_meta_folder_SOURCES) \
+ 	$(tracker_query_SOURCES) $(tracker_search_SOURCES) \
+ 	$(tracker_services_SOURCES) $(tracker_stats_SOURCES) \
+ 	$(tracker_status_SOURCES) $(tracker_tag_SOURCES) \
+ 	$(tracker_unique_SOURCES)
+ DIST_SOURCES = $(tracker_files_SOURCES) $(tracker_info_SOURCES) \
+-	$(tracker_meta_folder_SOURCES) $(tracker_processes_SOURCES) \
++	$(tracker_meta_folder_SOURCES) \
+ 	$(tracker_query_SOURCES) $(tracker_search_SOURCES) \
+ 	$(tracker_services_SOURCES) $(tracker_stats_SOURCES) \
+ 	$(tracker_status_SOURCES) $(tracker_tag_SOURCES) \
+@@ -420,8 +420,6 @@ tracker_unique_SOURCES = tracker-unique.c
+ tracker_unique_LDADD = $(libs)
+ tracker_info_SOURCES = tracker-info.c
+ tracker_info_LDADD = $(libs)
+-tracker_processes_SOURCES = tracker-processes.c
+-tracker_processes_LDADD = $(libs)
+ tracker_services_SOURCES = tracker-services.c
+ tracker_services_LDADD = $(libs)
+ all: all-am

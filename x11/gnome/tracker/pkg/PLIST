@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/21 21:34:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/04/21 22:48:22 jasper Exp $
 @bin bin/tracker-applet
 @bin bin/tracker-files
 @bin bin/tracker-info
 @bin bin/tracker-meta-folder
 @bin bin/tracker-preferences
-@bin bin/tracker-processes
 @bin bin/tracker-query
 @bin bin/tracker-search
 @bin bin/tracker-search-tool
