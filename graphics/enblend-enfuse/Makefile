@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/20 23:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/04/21 09:20:26 sthen Exp $
 
 VMEM_WARNING =	Yes
 # and I'm not joking! - don't waste build time on the following arch
@@ -7,6 +7,9 @@ NOT_FOR_ARCHS = m68k m88k sparc vax
 # other arch may need MAXDSIZ adjustment, lower optimization levels,
 # or may fail completely. i386 sparc64 and amd64 known to build given
 # enough RAM.
+#
+# MAKE_ENV +=	CXXNOOPT=-O
+# MAKE_ENV +=	CXXNOOPT=-O0
 
 COMMENT =	blend seams in panoramic image mosaics
 

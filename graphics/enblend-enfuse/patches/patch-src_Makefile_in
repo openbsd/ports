@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2009/04/21 09:20:26 sthen Exp $
+--- src/Makefile.in.orig	Tue Sep  9 05:07:35 2008
++++ src/Makefile.in	Tue Apr 21 10:11:46 2009
+@@ -301,7 +301,7 @@ distclean-compile:
+ @am__fastdepCXX_FALSE@	$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+ 
+ enblend-enblend.o: enblend.cc
+-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enblend_CXXFLAGS) $(CXXFLAGS) -MT enblend-enblend.o -MD -MP -MF $(DEPDIR)/enblend-enblend.Tpo -c -o enblend-enblend.o `test -f 'enblend.cc' || echo '$(srcdir)/'`enblend.cc
++@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enblend_CXXFLAGS) $(CXXFLAGS) $(CXXNOOPT) -MT enblend-enblend.o -MD -MP -MF $(DEPDIR)/enblend-enblend.Tpo -c -o enblend-enblend.o `test -f 'enblend.cc' || echo '$(srcdir)/'`enblend.cc
+ @am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/enblend-enblend.Tpo $(DEPDIR)/enblend-enblend.Po
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='enblend.cc' object='enblend-enblend.o' libtool=no @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@@ -329,7 +329,7 @@ enblend-gpu.obj: gpu.cc
+ @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enblend_CXXFLAGS) $(CXXFLAGS) -c -o enblend-gpu.obj `if test -f 'gpu.cc'; then $(CYGPATH_W) 'gpu.cc'; else $(CYGPATH_W) '$(srcdir)/gpu.cc'; fi`
+ 
+ enfuse-enfuse.o: enfuse.cc
+-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enfuse_CXXFLAGS) $(CXXFLAGS) -MT enfuse-enfuse.o -MD -MP -MF $(DEPDIR)/enfuse-enfuse.Tpo -c -o enfuse-enfuse.o `test -f 'enfuse.cc' || echo '$(srcdir)/'`enfuse.cc
++@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enfuse_CXXFLAGS) $(CXXFLAGS) $(CXXNOOPT) -MT enfuse-enfuse.o -MD -MP -MF $(DEPDIR)/enfuse-enfuse.Tpo -c -o enfuse-enfuse.o `test -f 'enfuse.cc' || echo '$(srcdir)/'`enfuse.cc
+ @am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/enfuse-enfuse.Tpo $(DEPDIR)/enfuse-enfuse.Po
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='enfuse.cc' object='enfuse-enfuse.o' libtool=no @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
