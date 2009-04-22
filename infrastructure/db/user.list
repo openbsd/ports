@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.109 2009/03/30 21:17:30 sthen Exp $
+$OpenBSD: user.list,v 1.110 2009/04/22 21:25:15 jasper Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -131,3 +131,4 @@ id  user		group		port options
 620 _adsuck		_adsuck		net/adsuck
 621 _couchdb		_couchdb	databases/couchdb
 622 _ngrep		_ngrep		net/ngrep
+623 _zabbix		_zabbix		net/zabbix
