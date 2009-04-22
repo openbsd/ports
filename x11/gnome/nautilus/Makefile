@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2009/04/21 21:48:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2009/04/22 08:54:05 jasper Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -8,7 +8,7 @@ COMMENT=		GNOME shell and file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		2.24.2
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 CATEGORIES=		x11
