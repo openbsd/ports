@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/01/08 19:57:36 okan Exp $
+# $OpenBSD: Makefile,v 1.10 2009/04/22 13:19:12 jasper Exp $
 
 COMMENT=	image processing tools with stable ABI
 
 DISTNAME=	GraphicsMagick-1.3.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics devel
 
 SHARED_LIBS +=	GraphicsMagick       1.0      # .3.3

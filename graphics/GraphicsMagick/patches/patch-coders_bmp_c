@@ -1,0 +1,16 @@
+$OpenBSD: patch-coders_bmp_c,v 1.1 2009/04/22 13:19:12 jasper Exp $
+
+Security fix for SA33697, which could cause a DoS.
+Patch from upstream bugreport.
+
+--- coders/bmp.c.orig	Wed Apr 22 15:08:29 2009
++++ coders/bmp.c	Wed Apr 22 15:09:20 2009
+@@ -1226,6 +1226,8 @@ static Image *ReadBMPImage(const ImageInfo *image_info
+             DestroyImageList(image);
+             return((Image *) NULL);
+           }
++        DestroyBlobInfo(flipped_image->blob);
++        flipped_image->blob=ReferenceBlob(image->blob);
+         DestroyImage(image);
+         image=flipped_image;
+       }
