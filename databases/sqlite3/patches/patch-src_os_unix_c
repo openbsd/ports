@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_os_unix_c,v 1.8 2009/04/16 20:09:58 martynas Exp $
---- src/os_unix.c.orig	Tue Mar 31 03:40:16 2009
-+++ src/os_unix.c	Sun Apr  5 11:14:52 2009
+$OpenBSD: patch-src_os_unix_c,v 1.9 2009/04/22 21:23:43 martynas Exp $
+--- src/os_unix.c.orig	Thu Apr  9 21:41:18 2009
++++ src/os_unix.c	Thu Apr 16 23:11:23 2009
 @@ -111,6 +111,14 @@
  # define _LARGEFILE_SOURCE 1
  #endif
@@ -107,7 +107,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.8 2009/04/16 20:09:58 martynas Exp $
  static int transferOwnership(unixFile *pFile){
    int rc;
    pthread_t hSelf;
-@@ -3964,7 +3975,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
+@@ -4002,7 +4013,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
  #if !defined(SQLITE_TEST)
    {
      int pid, fd;
@@ -116,7 +116,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.8 2009/04/16 20:09:58 martynas Exp $
      if( fd<0 ){
        time_t t;
        time(&t);
-@@ -4269,7 +4280,7 @@ static int proxyGenerateHostID(char *pHostID){
+@@ -4307,7 +4318,7 @@ static int proxyGenerateHostID(char *pHostID){
    
    memset(key, 0, HOSTIDLEN);
    len = 0;
