@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/21 23:39:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/22 07:06:04 jasper Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -6,7 +6,7 @@ COMMENT=	powerful desktop search tool and indexer
 # as tracker-search.
 GNOME_PROJECT=	tracker
 GNOME_VERSION=	0.6.93
-PKGNAME=	tracker-search-${VERSION}
+PKGNAME=	tracker-search-${VERSION}p0
 
 SHARED_LIBS +=	stemmer              0.0      # .693.0
 SHARED_LIBS +=	tracker-common       0.0      # .693.0
@@ -80,6 +80,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-deskbar-applet-handler-dir="${LOCALBASE}/lib/python${MODPY_VERSION}/site-packages/deskbar/handlers/"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS+=		sysconfdir=${PREFIX}/share/examples/tracker-search/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/data/modules/applications.module

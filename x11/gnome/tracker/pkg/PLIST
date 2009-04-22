@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/04/21 23:39:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/04/22 07:06:04 jasper Exp $
 @bin bin/tracker-applet
 @bin bin/tracker-files
 @bin bin/tracker-info
@@ -190,6 +190,13 @@ share/applications/tracker-search-tool.desktop
 share/dbus-1/services/org.freedesktop.Tracker.Extract.service
 share/dbus-1/services/org.freedesktop.Tracker.Indexer.service
 share/dbus-1/services/org.freedesktop.Tracker.service
+share/examples/tracker-search/
+share/examples/tracker-search/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/tracker-search/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/tracker-search/xdg/autostart/trackerd.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/trackerd.desktop
 share/gtk-doc/html/libtracker-common/
 share/gtk-doc/html/libtracker-common/ch01.html
 share/gtk-doc/html/libtracker-common/ch02.html
