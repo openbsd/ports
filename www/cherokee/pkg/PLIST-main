@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/04/17 23:17:07 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/04/22 00:28:54 sthen Exp $
 @newgroup _cherokee:608
 @newuser _cherokee:608:_cherokee:daemon:Cherokee HTTP Server:/var/empty:/sbin/nologin
 @bin bin/cget
@@ -133,8 +133,6 @@ lib/cherokee/libplugin_secdownload.so
 lib/cherokee/libplugin_server_info.so
 @comment lib/cherokee/libplugin_ssi.la
 lib/cherokee/libplugin_ssi.so
-@comment lib/cherokee/libplugin_streaming.la
-lib/cherokee/libplugin_streaming.so
 @comment lib/cherokee/libplugin_w3c.la
 lib/cherokee/libplugin_w3c.so
 @comment lib/cherokee/libplugin_wildcard.la

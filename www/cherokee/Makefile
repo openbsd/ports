@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/04/17 23:17:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2009/04/22 00:28:54 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,15 +6,17 @@ COMMENT-main =	fast, flexible and easy to configure Web Server
 COMMENT-geoip =	GeoIP module for Cherokee web server
 COMMENT-ldap =	LDAP module for Cherokee web server
 COMMENT-mysql =	MySQL module for Cherokee web server
+COMMENT-streaming = Streaming module for Cherokee web server
 
 VERSION =	0.99.10
 DIR =		0.99
 DISTNAME =	cherokee-${VERSION}
 
-PKGNAME-main =	${DISTNAME}
-PKGNAME-ldap=   cherokee-ldap-${VERSION}
-PKGNAME-mysql=  cherokee-mysql-${VERSION}
-PKGNAME-geoip=  cherokee-geoip-${VERSION}
+PKGNAME-main =	${DISTNAME}p0
+PKGNAME-ldap =	cherokee-ldap-${VERSION}
+PKGNAME-mysql =	cherokee-mysql-${VERSION}
+PKGNAME-geoip =	cherokee-geoip-${VERSION}
+PKGNAME-streaming = cherokee-streaming-${VERSION}
 
 SHARED_LIBS +=	cherokee-base        0.0
 SHARED_LIBS +=	cherokee-client      0.0
@@ -33,20 +35,19 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes 
 PERMIT_DISTFILES_FTP =	Yes 
 
-MASTER_SITES  =	${HOMEPAGE}download/${DIR}/${VERSION}/ \
+MASTER_SITES =	${HOMEPAGE}download/${DIR}/${VERSION}/ \
 		http://ftp.heanet.ie/mirrors/cherokee/${DIR}/${VERSION}/ \
 		http://www.ring.gr.jp/archives/net/cherokee/${DIR}/${VERSION}/ \
 		http://cherokee.osuosl.org/${DIR}/${VERSION}/
 
-MULTI_PACKAGES =-main -ldap -mysql -geoip
+MULTI_PACKAGES =-main -ldap -mysql -geoip -streaming
 
 MODULES =	lang/python
 
 BUILD_DEPENDS =	::textproc/py-docutils \
 		::www/php5/core,-fastcgi
 
-LIB_DEPENDS-main =	pcre::devel/pcre \
-			bz2::archivers/bzip2
+LIB_DEPENDS-main =	pcre::devel/pcre
 WANTLIB-main =		c crypto pthread ssl
 RUN_DEPENDS-main =	::www/spawn-fcgi
 
@@ -61,6 +62,14 @@ RUN_DEPENDS-ldap =	::${BASE_PKGPATH}
 LIB_DEPENDS-mysql =	mysqlclient.>=19::databases/mysql
 WANTLIB-mysql =		crypto m ssl z
 RUN_DEPENDS-mysql =	::${BASE_PKGPATH}
+
+LIB_DEPENDS-streaming =	avutil.>=6,avcodec.>=13,avformat.>=12::graphics/ffmpeg \
+			bz2::archivers/bzip2
+WANTLIB-streaming =	crypto
+RUN_DEPENDS-streaming =	::graphics/ffmpeg
+
+FLAVORS =	debug
+FLAVOR ?=
 
 USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
@@ -82,11 +91,17 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-pam \
 			--with-geoip \
 			--with-ldap \
-			--with-mysql
+			--with-mysql \
+			--with-ffmpeg 
 
-SUBST_PY=	admin/server.py qa/fcgi.py qa/run-tests.py \
-		contrib/06to07.py contrib/tracelor.py \
-		contrib/07to08.py contrib/05to06.py
+.if ${FLAVOR:L:Mdebug}
+CFLAGS +=		-O0 -g3
+CONFIGURE_ARGS +=	--enable-trace
+.endif
+
+SUBST_PY =		admin/server.py qa/fcgi.py qa/run-tests.py \
+			contrib/06to07.py contrib/tracelor.py \
+			contrib/07to08.py contrib/05to06.py
 
 pre-configure:
 .for i in ${SUBST_PY}
