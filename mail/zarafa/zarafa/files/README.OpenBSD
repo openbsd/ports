@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2009/02/16 09:44:38 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2009/04/22 11:43:54 ajacoutot Exp $
 
 Post-install/update instructions for Zarafa
 ===========================================
@@ -33,6 +33,13 @@ To start all zarafa services on boot-up, add the following lines to
 /etc/rc.local:
 
 if [ -x ${TRUEPREFIX}/bin/zarafa-server ]; then
+	# make sure mysqld is running before starting zarafa-server
+	# (give up after 15 secs)
+	i=1
+	while [ ! -S "/var/run/mysql/mysql.sock" -a ${i} -lt 15 ]; do
+		sleep 1
+		i=`expr ${i} + 1`
+	done
 	echo -n ' zarafa-server' ; ${TRUEPREFIX}/bin/zarafa-server
 fi
 if [ -x ${TRUEPREFIX}/bin/zarafa-spooler ]; then
