@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/09/07 01:27:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/04/22 08:58:34 landry Exp $
 %%SHARED%%
 bin/taglib-config
 include/taglib/
@@ -11,6 +11,7 @@ include/taglib/commentsframe.h
 include/taglib/fileref.h
 include/taglib/flacfile.h
 include/taglib/flacproperties.h
+include/taglib/generalencapsulatedobjectframe.h
 include/taglib/id3v1genres.h
 include/taglib/id3v1tag.h
 include/taglib/id3v2extendedheader.h
@@ -30,9 +31,12 @@ include/taglib/oggflacfile.h
 include/taglib/oggpage.h
 include/taglib/oggpageheader.h
 include/taglib/relativevolumeframe.h
+include/taglib/speexfile.h
+include/taglib/speexproperties.h
 include/taglib/tag.h
 include/taglib/tag_c.h
 include/taglib/taglib.h
+include/taglib/taglib_export.h
 include/taglib/tbytevector.h
 include/taglib/tbytevectorlist.h
 include/taglib/textidentificationframe.h
@@ -41,12 +45,18 @@ include/taglib/tlist.h
 include/taglib/tlist.tcc
 include/taglib/tmap.h
 include/taglib/tmap.tcc
+include/taglib/trueaudiofile.h
+include/taglib/trueaudioproperties.h
 include/taglib/tstring.h
 include/taglib/tstringlist.h
 include/taglib/uniquefileidentifierframe.h
 include/taglib/unknownframe.h
+include/taglib/unsynchronizedlyricsframe.h
+include/taglib/urllinkframe.h
 include/taglib/vorbisfile.h
 include/taglib/vorbisproperties.h
+include/taglib/wavpackfile.h
+include/taglib/wavpackproperties.h
 include/taglib/xingheader.h
 include/taglib/xiphcomment.h
 lib/libtag.a
@@ -55,3 +65,4 @@ lib/libtag_c.a
 lib/libtag_c.la
 lib/pkgconfig/
 lib/pkgconfig/taglib.pc
+lib/pkgconfig/taglib_c.pc
