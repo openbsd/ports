@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.22 2008/11/19 18:27:16 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2009/04/22 12:14:15 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 
-V=		0.10.0
+V=		0.10.6
 DISTNAME=	poppler-$V
 CATEGORIES=	print
-PKGNAME-main=	poppler-$Vp0
-FULLPKGNAME-qt=	poppler-qt-$Vp0
-FULLPKGNAME-qt4=poppler-qt4-$Vp0
+PKGNAME-main=	poppler-$V
+FULLPKGNAME-qt=	poppler-qt-$V
+FULLPKGNAME-qt4=poppler-qt4-$V
 
-SHARED_LIBS +=	poppler              4.0      # .2.0
-SHARED_LIBS +=	poppler-glib         4.0      # .2.0
-SHARED_LIBS +=	poppler-qt           4.0      # .2.0
-SHARED_LIBS +=	poppler-qt4          3.0      # .2.0
+SHARED_LIBS +=	poppler              5.0      # .2.0
+SHARED_LIBS +=	poppler-glib         5.0      # .4.0
+SHARED_LIBS +=	poppler-qt           5.0      # .2.0
+SHARED_LIBS +=	poppler-qt4          4.0      # .4.0
 
 HOMEPAGE=	http://poppler.freedesktop.org/
 

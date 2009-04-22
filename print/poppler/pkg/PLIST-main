@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/10/28 12:59:55 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/04/22 12:14:15 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 %%SHARED%%
 include/poppler/
 include/poppler/Annot.h
 include/poppler/Array.h
-include/poppler/BaseFile.h
 include/poppler/BuiltinFont.h
 include/poppler/BuiltinFontTables.h
 include/poppler/CMap.h
@@ -22,7 +21,6 @@ include/poppler/FileSpec.h
 include/poppler/FontEncodingTables.h
 include/poppler/FontInfo.h
 include/poppler/Form.h
-include/poppler/Function.cc
 include/poppler/Function.h
 include/poppler/Gfx.h
 include/poppler/GfxFont.h
