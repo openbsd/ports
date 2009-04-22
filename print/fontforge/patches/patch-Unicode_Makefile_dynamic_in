@@ -1,12 +1,12 @@
-$OpenBSD: patch-Unicode_Makefile_dynamic_in,v 1.2 2007/09/23 18:45:45 kili Exp $
---- Unicode/Makefile.dynamic.in.orig	Mon May 28 16:20:55 2007
-+++ Unicode/Makefile.dynamic.in	Sat Aug 25 14:59:42 2007
+$OpenBSD: patch-Unicode_Makefile_dynamic_in,v 1.3 2009/04/22 12:23:00 kili Exp $
+--- Unicode/Makefile.dynamic.in.orig	Tue Dec 23 22:03:33 2008
++++ Unicode/Makefile.dynamic.in	Mon Mar  9 21:29:26 2009
 @@ -18,7 +18,7 @@ libgunicode_OBJECTS =  ArabicForms.lo alphabet.lo back
   cjk.lo memory.lo ucharmap.lo unialt.lo ustring.lo utype.lo \
   usprintf.lo gwwiconv.lo
  
--Incs = -I$(top_srcdir)/inc -I/usr/pkg/include -I/usr/pkg/include/giflib
-+Incs = -I$(top_srcdir)/inc
+-Incs = -I$(top_srcdir)/inc -I../inc -I/usr/pkg/include -I/usr/pkg/include/giflib
++Incs = -I$(top_srcdir)/inc -I../inc
  CFLAGS = @CFLAGS@ @CPPFLAGS@ $(Incs) @WFLAGS@ @DEFS@
  
  ../libgunicode.la: $(libgunicode_OBJECTS)

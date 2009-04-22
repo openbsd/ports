@@ -1,12 +1,12 @@
-$OpenBSD: patch-gdraw_Makefile_dynamic_in,v 1.4 2008/10/27 17:58:52 kili Exp $
---- gdraw/Makefile.dynamic.in.orig	Wed Aug 27 16:39:23 2008
-+++ gdraw/Makefile.dynamic.in	Sun Oct 26 14:24:19 2008
+$OpenBSD: patch-gdraw_Makefile_dynamic_in,v 1.5 2009/04/22 12:23:00 kili Exp $
+--- gdraw/Makefile.dynamic.in.orig	Sat Jan  3 01:56:57 2009
++++ gdraw/Makefile.dynamic.in	Mon Mar  9 21:28:42 2009
 @@ -34,7 +34,7 @@ libgdraw_OBJECTS =  choosericons.lo ctlvalues.lo drawb
-  gtextfield.lo gtextinfo.lo gwidgets.lo gxdraw.lo \
+  gtextfield.lo gtextinfo.lo gwidgets.lo gxdraw.lo gxcdraw.lo \
   ghvbox.lo gmatrixedit.lo gdrawable.lo gspacer.lo xkeysyms_unicode.lo
  
--Incs = -I$(top_srcdir)/inc -I/usr/pkg/include -I/usr/pkg/include/giflib
-+Incs = -I$(top_srcdir)/inc
+-Incs = -I$(top_srcdir)/inc -I../inc -I/usr/pkg/include -I/usr/pkg/include/giflib
++Incs = -I$(top_srcdir)/inc -I../inc
  CFLAGS = @CFLAGS@ @CPPFLAGS@ $(Incs) @WFLAGS@ $(X_CFLAGS) -DNOTHREADS @DEFS@ -DLIBDIR='"$(libdir)"'
  
  ../libgdraw.la: $(libgdraw_OBJECTS)

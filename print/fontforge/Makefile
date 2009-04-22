@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/18 20:49:50 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2009/04/22 12:23:00 kili Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		vector font editor/converter
 
-DISTNAME=		fontforge_full-20080927
-PKGNAME=		${DISTNAME:S,_full,,}p0
+DISTNAME=		fontforge_full-20090408
+PKGNAME=		${DISTNAME:S,_full,,}
 EXTRACT_SUFX=		.tar.bz2
-SHARED_LIBS=		fontforge	1.0 \
-			gdraw		3.0 \
+SHARED_LIBS=		fontforge	2.0 \
+			gdraw		4.0 \
 			gioftp		1.0 \
-			gunicode	4.0 \
-			gutils		1.0
+			gunicode	4.1 \
+			gutils		1.1
 
 CATEGORIES=		print
 
@@ -27,18 +27,22 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fontforge/}
 
-WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xi c freetype m \
-			pthread util xkbfile xkbui z 
-
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xft Xi Xrender c \
+                        expat fontconfig freetype glib-2.0 glitz \
+                        gmodule-2.0 gobject-2.0 m pcre pixman-1 \
+                        pthread util xkbfile xkbui z
+ 
 MODULES=		devel/gettext lang/python
 MODPY_VERSION=		2.5
 
-LIB_DEPENDS=		png.>=5::graphics/png		\
+LIB_DEPENDS=		${MODPY_LIB_DEPENDS}		\
+			cairo.>=9::graphics/cairo	\
+			jpeg.>=62::graphics/jpeg	\
+			pango-1.0.>=1800,pangocairo-1.0.>=1800,pangoft2-1.0.>=1800,pangoxft-1.0.>=1800::devel/pango	\
+			png.>=5::graphics/png		\
 			tiff.>=38::graphics/tiff	\
 			ungif.>=5::graphics/libungif	\
-			jpeg.>=62::graphics/jpeg	\
-			xml2.>=9::textproc/libxml	\
-			${MODPY_LIB_DEPENDS}
+			xml2.>=9::textproc/libxml
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S,_full,,}
 
