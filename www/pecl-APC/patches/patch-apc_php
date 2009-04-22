@@ -1,10 +1,11 @@
+$OpenBSD: patch-apc_php,v 1.2 2009/04/22 21:24:09 jasper Exp $
+
 "Get rid of very contrived local-user XSS - can't be triggered from external"
 from upstream CVS
 
-$OpenBSD: patch-apc_php,v 1.1 2008/12/20 01:06:50 sthen Exp $
---- apc.php.orig	Thu May 15 02:45:28 2008
-+++ apc.php	Fri Dec 19 19:29:50 2008
-@@ -59,7 +59,7 @@ function defaults($d,$v) {
+--- apc.php.orig	Fri Dec 12 12:37:26 2008
++++ apc.php	Wed Apr 22 10:32:53 2009
+@@ -61,7 +61,7 @@ function defaults($d,$v) {
  
  // rewrite $PHP_SELF to block XSS attacks
  //
@@ -13,7 +14,7 @@ $OpenBSD: patch-apc_php,v 1.1 2008/12/20 01:06:50 sthen Exp $
  $time = time();
  $host = getenv('HOSTNAME');
  if($host) { $host = '('.$host.')'; }
-@@ -1078,7 +1078,7 @@ EOB;
+@@ -1091,7 +1091,7 @@ EOB;
  		}
  		if (!$AUTHENTICATED) {
  			// hide all path entries if not logged in
@@ -22,7 +23,7 @@ $OpenBSD: patch-apc_php,v 1.1 2008/12/20 01:06:50 sthen Exp $
  		} else {
  			$list[$k.$entry[$fieldname]]=$entry;
  		}
-@@ -1097,9 +1097,10 @@ EOB;
+@@ -1110,9 +1110,10 @@ EOB;
  		$i=0;
  		foreach($list as $k => $entry) {
        if(!$MYREQUEST['SEARCH'] || preg_match($MYREQUEST['SEARCH'], $entry[$fieldname]) != 0) {  

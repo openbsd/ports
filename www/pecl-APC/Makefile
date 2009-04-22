@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2008/12/20 01:06:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2009/04/22 21:24:09 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Alternative PHP Cache
 
-DISTNAME=	APC-3.0.19
-PKGNAME=	pecl-${DISTNAME}p0
+DISTNAME=	APC-3.1.2
+PKGNAME=	pecl-${DISTNAME}
 CATEGORIES=	www
 
 HOMEPAGE=	http://pecl.php.net/package/APC
