@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_net_c,v 1.1.1.1 2009/04/22 15:03:52 jasper Exp $
+--- src/libs/zbxsysinfo/openbsd/net.c.orig	Wed Apr 22 15:56:31 2009
++++ src/libs/zbxsysinfo/openbsd/net.c	Wed Apr 22 16:03:55 2009
+@@ -21,6 +21,8 @@
+ 
+ #include "sysinfo.h"
+ 
++#define	N_UNDF	0x00		/* undefined */
++
+ static struct nlist kernel_symbols[] = 
+ {
+ 	{"_ifnet", N_UNDF, 0, 0, 0},

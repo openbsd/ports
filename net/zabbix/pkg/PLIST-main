@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/04/22 15:03:52 jasper Exp $
+@bin sbin/zabbix_agent
+@bin sbin/zabbix_agentd
+@bin sbin/zabbix_get
+@bin sbin/zabbix_sender
+share/examples/zabbix/
+@sample ${SYSCONFDIR}/zabbix/
+share/examples/zabbix/zabbix_agent.conf
+@sample ${SYSCONFDIR}/zabbix/zabbix_agent.conf
+share/examples/zabbix/zabbix_agentd.conf
+@sample ${SYSCONFDIR}/zabbix/zabbix_agentd.conf

@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/04/22 15:03:52 jasper Exp $
+--- configure.orig	Wed Apr 22 15:48:20 2009
++++ configure	Wed Apr 22 15:48:52 2009
+@@ -580,6 +580,9 @@ ac_unique_file="src/zabbix_server/server.c"
+ # Factoring default headers for most tests.
+ ac_includes_default="\
+ #include <stdio.h>
++#include <sys/socket.h>
++#include <sys/param.h>
++#include <netinet/in.h>
+ #ifdef HAVE_SYS_TYPES_H
+ # include <sys/types.h>
+ #endif
