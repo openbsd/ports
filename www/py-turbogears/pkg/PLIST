@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/07/11 22:48:04 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/04/22 22:07:12 martynas Exp $
 bin/tg-admin
 lib/python${MODPY_VERSION}/site-packages/TurboGears-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/TurboGears-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -525,6 +525,8 @@ lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/tests/test_so_gettext.p
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/tests/test_so_gettext.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/tests/test_tg_gettext.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/tests/test_tg_gettext.pyc
+lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/tests/test_toolboxadmi18n.py
+lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/tests/test_toolboxadmi18n.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/tests/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/tests/test_utils.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/i18n/tg_gettext.py
@@ -676,7 +678,8 @@ lib/python${MODPY_VERSION}/site-packages/turbogears/static/images/transp.png
 lib/python${MODPY_VERSION}/site-packages/turbogears/static/images/trash.png
 lib/python${MODPY_VERSION}/site-packages/turbogears/static/images/widgets.png
 lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/
-lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/MochiKit.js
+lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/MochiKit_1_3.js
+lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/MochiKit_1_4.js
 lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/__init__.py
 lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/turbogears/static/js/i18n_base.js
