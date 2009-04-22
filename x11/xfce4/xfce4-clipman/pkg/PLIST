@@ -1,17 +1,90 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/07/08 12:50:06 landry Exp $
-libexec/xfce4/
-libexec/xfce4/panel-plugins/
-@bin libexec/xfce4/panel-plugins/xfce4-clipman-plugin
+@comment $OpenBSD: PLIST,v 1.6 2009/04/22 07:41:20 landry Exp $
+@bin bin/xfce4-clipman-plugin
+@bin bin/xfce4-popup-clipman
+share/applications/xfce4-clipman-plugin.desktop
+share/examples/xfce4-clipman/
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/xfce4/
+@sample ${SYSCONFDIR}/xdg/xfce4/panel/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/xfce4-clipman/xfce4-clipman-actions.xml
+@sample ${SYSCONFDIR}/xdg/xfce4/panel/xfce4-clipman-actions.xml
+share/examples/xfce4-clipman/xfce4-clipman-plugin-autostart.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/xfce4-clipman-plugin-autostart.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/xfce4-clipman-plugin.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/xfce4-clipman-plugin.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/xfce4-clipman-plugin.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/xfce4-clipman-plugin.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/xfce4-clipman-plugin.svg
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/da/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/el/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/es/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/eu/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/fi/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/gl/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/id/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/it/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/lv/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/nb/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/nl/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/pt/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/ru/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/sv/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/tr/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/uk/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/ur/
+share/locale/ur/LC_MESSAGES/
+share/locale/ur/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/zh_CN/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/xfce4/
+share/xfce4/doc/
+share/xfce4/doc/C/
+share/xfce4/doc/C/images/
+share/xfce4/doc/C/images/clipman-action-dialog.png
+share/xfce4/doc/C/images/clipman-menu.png
+share/xfce4/doc/C/images/clipman-settings-actions.png
+share/xfce4/doc/C/images/clipman-settings-general.png
+share/xfce4/doc/C/xfce4-clipman-plugin.html
+share/xfce4/doc/gl/
+share/xfce4/doc/gl/images/
+share/xfce4/doc/gl/images/clipman-action-dialog.png
+share/xfce4/doc/gl/images/clipman-menu.png
+share/xfce4/doc/gl/images/clipman-settings-actions.png
+share/xfce4/doc/gl/images/clipman-settings-general.png
+share/xfce4/doc/gl/xfce4-clipman-plugin.html
 share/xfce4/panel-plugins/
-share/xfce4/panel-plugins/clipman.desktop
+share/xfce4/panel-plugins/xfce4-clipman-plugin.desktop
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

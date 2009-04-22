@@ -1,1 +1,5 @@
-xfce4-clipman provides a clipboard history for the xfce4 panel.
+Clipboard Manager for the Xfce Panel and as a standalone application
+(it is a bundle). It keeps the clipboard contents around (even after an
+application quits), it is able to handle text and images, and has a
+feature to execute actions on specific text selection by matching them
+against regexes.
