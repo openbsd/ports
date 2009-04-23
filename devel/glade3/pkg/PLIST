@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/04/16 08:21:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/04/23 08:27:01 ajacoutot Exp $
 %%SHARED%%
 @bin bin/glade-3
 include/libgladeui-1.0/
@@ -454,18 +454,9 @@ share/gtk-doc/html/gladeui/gladeui-glade-property.html
 share/gtk-doc/html/gladeui/gladeui-glade-signal-editor.html
 share/gtk-doc/html/gladeui/gladeui-glade-utils.html
 share/gtk-doc/html/gladeui/gladeui-glade-xml-utils.html
-share/gtk-doc/html/gladeui/gladeui.devhelp
-share/gtk-doc/html/gladeui/gladeui.devhelp2
-share/gtk-doc/html/gladeui/home.png
-share/gtk-doc/html/gladeui/index.html
-share/gtk-doc/html/gladeui/index.sgml
-share/gtk-doc/html/gladeui/ix01.html
-share/gtk-doc/html/gladeui/left.png
 share/gtk-doc/html/gladeui/misc.html
 share/gtk-doc/html/gladeui/properties.html
-share/gtk-doc/html/gladeui/right.png
-share/gtk-doc/html/gladeui/style.css
-share/gtk-doc/html/gladeui/up.png
+share/gtk-doc/html/gladeui/pythonsupport.html
 share/gtk-doc/html/gladeui/widgetclasses.html
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/

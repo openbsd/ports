@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2009/04/16 08:21:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2009/04/23 08:27:01 ajacoutot Exp $
 
 COMMENT=		user interface builder for the GTK2+ toolkit
 
-GNOME_VERSION =		3.6.2
+GNOME_VERSION =		3.6.3
 GNOME_PROJECT = 	glade3
 
 CATEGORIES =		devel
@@ -14,7 +14,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2, with exception of png images under:
-# plugins/{gtk+,gnome}/icons  (which are LGPL)
+# plugins/{gtk+,gnome}/icons (which are LGPL)
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
@@ -43,7 +43,8 @@ USE_X11 =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-scrollkeeper
+			--disable-scrollkeeper \
+			--disable-python
 CONFIGURE_ENV=          CPPFLAGS="-pthread -I${LOCALBASE}/include"      \
                         LDFLAGS="-pthread -L${LOCALBASE}/lib"
 
