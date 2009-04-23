@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/02 18:12:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/04/23 21:19:33 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		alternative notification pop-up, for gmpc
 
-VERSION=		0.17.0
+VERSION=		0.18.0
 DISTNAME=		gmpc-libnotify-${VERSION}
 CATEGORIES=		audio
 
-HOMEPAGE=		http://gmpcwiki.sarine.nl/index.php?title=Osd
+HOMEPAGE=		http://gmpc.wikia.com/wiki/Plugins
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
