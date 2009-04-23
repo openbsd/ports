@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2009/03/24 11:39:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.222 2009/04/23 19:30:27 landry Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -31,14 +31,9 @@
      SUBDIR += freealut
      SUBDIR += gimmix
      SUBDIR += gmpc
-     SUBDIR += gmpc-lastfm
      SUBDIR += gmpc-libnotify
-     SUBDIR += gmpc-lyrics
-     SUBDIR += gmpc-magnatune
-     SUBDIR += gmpc-osd
+     SUBDIR += gmpc-plugins
      SUBDIR += gmpc-serverstats
-     SUBDIR += gmpc-shout
-     SUBDIR += gmpccaa
      SUBDIR += gnomad2
      SUBDIR += gogo
      SUBDIR += gqmpeg
