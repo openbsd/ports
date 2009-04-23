@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/21 05:57:07 sturm Exp $
-
-BROKEN=		distfile needs to updated/versioned
+# $OpenBSD: Makefile,v 1.4 2009/04/23 22:37:14 ckuethe Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
-DISTNAME=	teensy_loader_cli
-PKGNAME=	teensyloader-1.03
+DISTNAME=	teensyloader-1.03
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
-BROKEN=		Need to educate upstream about versioned distfiles
 
 HOMEPAGE=	http://www.pjrc.com/teensy/
 
@@ -20,10 +17,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		https://www.mainframe.cx/~ckuethe/openbsd/
 
 CONFIGURE_STYLE=	None
-PATCHFILES=		teensy_loader_cli_openbsd.diff
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/teensyloader ${PREFIX}/bin
