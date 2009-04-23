@@ -1,0 +1,56 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/23 19:26:47 landry Exp $
+@conflict gmpc-coveramazon-*
+@conflict gmpc-osd-*
+@conflict gmpc-lyrics-*
+@conflict gmpc-lastfm-*
+@conflict gmpc-magnatune-*
+@conflict gmpc-shout-*
+@pkgpath audio/gmpcca
+@pkgpath audio/gmpc-osd
+@pkgpath audio/gmpc-lyrics
+@pkgpath audio/gmpc-lastfm
+@pkgpath audio/gmpc-magnatune
+@pkgpath audio/gmpc-shout
+lib/gmpc/
+lib/gmpc/plugins/
+lib/gmpc/plugins/alarmplugin.a
+lib/gmpc/plugins/alarmplugin.la
+lib/gmpc/plugins/alarmplugin.so
+lib/gmpc/plugins/caaplugin.a
+lib/gmpc/plugins/caaplugin.la
+lib/gmpc/plugins/caaplugin.so
+lib/gmpc/plugins/gmpctageditplugin.a
+lib/gmpc/plugins/gmpctageditplugin.la
+lib/gmpc/plugins/gmpctageditplugin.so
+lib/gmpc/plugins/jamendoplugin.a
+lib/gmpc/plugins/jamendoplugin.la
+lib/gmpc/plugins/jamendoplugin.so
+lib/gmpc/plugins/lastfmplugin.a
+lib/gmpc/plugins/lastfmplugin.la
+lib/gmpc/plugins/lastfmplugin.so
+lib/gmpc/plugins/libextraplaylist.a
+lib/gmpc/plugins/libextraplaylist.la
+lib/gmpc/plugins/libextraplaylist.so
+lib/gmpc/plugins/lyricsplugin.a
+lib/gmpc/plugins/lyricsplugin.la
+lib/gmpc/plugins/lyricsplugin.so
+lib/gmpc/plugins/lyricwikiplugin.a
+lib/gmpc/plugins/lyricwikiplugin.la
+lib/gmpc/plugins/lyricwikiplugin.so
+lib/gmpc/plugins/magnatuneplugin.a
+lib/gmpc/plugins/magnatuneplugin.la
+lib/gmpc/plugins/magnatuneplugin.so
+lib/gmpc/plugins/mdcaplugin.a
+lib/gmpc/plugins/mdcaplugin.la
+lib/gmpc/plugins/mdcaplugin.so
+lib/gmpc/plugins/osdplugin.a
+lib/gmpc/plugins/osdplugin.la
+lib/gmpc/plugins/osdplugin.so
+lib/gmpc/plugins/shoutplugin.a
+lib/gmpc/plugins/shoutplugin.la
+lib/gmpc/plugins/shoutplugin.so
+share/gmpc/plugins/
+share/gmpc/plugins/jamendo/
+share/gmpc/plugins/jamendo/jamendo.png
+share/gmpc/plugins/magnatune/
+share/gmpc/plugins/magnatune/magnatune.png

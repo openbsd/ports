@@ -1,0 +1,12 @@
+A bundle of plugins for gmpc :
+ * Amazon.com cover fetcher
+ * Music directory metadata fetcher
+ * Last.fm metadata fetcher
+ * Lyricwiki lyrics fetcher
+ * Lyrics fetcher
+ * Jamendo: Browse and listen to music from jamendo
+ * Magnatune: Browse and listen to music from magnatune
+ * Extra Playlist: Add an extra view to the play queue
+ * Tagedit: Quickly fix your tags
+ * Osd: More modern looking song notification
+ * Shout: Play mpd's shout (ogg) stream locally
