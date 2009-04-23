@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_tracker-preferences_tracker-preferences_glade,v 1.1 2009/04/23 22:30:42 jasper Exp $
+
+Don't display "Power Management" options, this requires HAL and will
+only confuse users.
+
+--- src/tracker-preferences/tracker-preferences.glade.orig	Wed Apr  8 00:04:00 2009
++++ src/tracker-preferences/tracker-preferences.glade	Fri Apr 24 00:18:52 2009
+@@ -483,7 +483,7 @@
+ 
+ 			  <child>
+ 			    <widget class="GtkCheckButton" id="chkDisableBatteryIndex">
+-			      <property name="visible">True</property>
++			      <property name="visible">False</property>
+ 			      <property name="can_focus">True</property>
+ 			      <property name="label" translatable="yes">Disable all Indexing when on battery</property>
+ 			      <property name="use_underline">True</property>
+@@ -502,7 +502,7 @@
+ 
+ 			  <child>
+ 			    <widget class="GtkCheckButton" id="chkDisableBatteryInitialIndex">
+-			      <property name="visible">True</property>
++			      <property name="visible">False</property>
+ 			      <property name="can_focus">True</property>
+ 			      <property name="label" translatable="yes">Disable initial index sweep when on battery</property>
+ 			      <property name="use_underline">True</property>
+@@ -525,7 +525,7 @@
+ 
+ 		  <child>
+ 		    <widget class="GtkLabel" id="label37">
+-		      <property name="visible">True</property>
++		      <property name="visible">False</property>
+ 		      <property name="label" translatable="yes">&lt;b&gt;Power management&lt;/b&gt;</property>
+ 		      <property name="use_underline">False</property>
+ 		      <property name="use_markup">True</property>
