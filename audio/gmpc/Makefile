@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2009/01/30 22:47:08 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2009/04/23 19:21:03 landry Exp $
 
 COMMENT=		GNOME music player client
 
-VERSION=		0.17.0
+VERSION=		0.18.0
 DISTNAME=		gmpc-${VERSION}
 CATEGORIES=		audio
 
 MAINTAINER=		Landry Breuil <gaston@gcu.info>
 
-HOMEPAGE=		http://gmpcwiki.sarine.nl/
+HOMEPAGE=		http://gmpc.wikia.com/wiki/Gnome_Music_Player_Client
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +20,7 @@ WANTLIB=		ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 			expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 			gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 			gtk-x11-2.0 idn m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-			pcre pixman-1 png pthread ssl xml2 z
+			pcre pixman-1 png pthread ssl xml2 z gnutls gpg-error tasn1
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=musicpd/}
 
@@ -43,9 +43,10 @@ CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 CONFIGURE_ARGS+=	--enable-configdir \
 			--enable-system-libsexy
 
-LIB_DEPENDS=		mpd.>=2::audio/libmpd \
+LIB_DEPENDS=		mpd:libmpd->=0.18:audio/libmpd \
 			sexy::x11/libsexy \
 			glade-2.0::devel/libglade2 \
+			soup-2.4::devel/libsoup,-main \
 			curl::net/curl
 
 .include <bsd.port.mk>
