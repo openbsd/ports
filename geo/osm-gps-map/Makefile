@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/14 11:39:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/04/23 09:19:37 jasper Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
 # original tarball is an archive from git and lacks sane numbering
 # in the filename.
-DISTNAME=		osm-gps-map-0.2
-PKGNAME=		${DISTNAME}p0
-
+DISTNAME=		osm-gps-map-0.3
 SHARED_LIBS +=  osmgpsmap 0.0 # .0.0
 CATEGORIES=		geo x11
 
@@ -24,10 +22,9 @@ MODULES=		devel/gettext
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gcrypt gio-2.0 glib-2.0 glitz gmodule-2.0
-WANTLIB += gnutls gobject-2.0 gpg-error gthread-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += tasn1 xml2 z
+WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls
+WANTLIB += gobject-2.0 gpg-error gthread-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread tasn1 xml2 z
 
 USE_LIBTOOL=		Yes
 
