@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/23 15:59:07 robert Exp $
+${P5SITE}/HTML/
+${P5SITE}/HTML/RewriteAttributes/
+${P5SITE}/HTML/RewriteAttributes.pm
+${P5SITE}/HTML/RewriteAttributes/Links.pm
+${P5SITE}/HTML/RewriteAttributes/Resources.pm
+@man man/man3p/HTML::RewriteAttributes.3p
+@man man/man3p/HTML::RewriteAttributes::Links.3p
+@man man/man3p/HTML::RewriteAttributes::Resources.3p
