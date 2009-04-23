@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/30 22:45:10 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/04/23 19:20:02 landry Exp $
 %%SHARED%%
 include/libmpd-1.0/
 include/libmpd-1.0/libmpd/
@@ -8,6 +8,7 @@ include/libmpd-1.0/libmpd/libmpd-internal.h
 include/libmpd-1.0/libmpd/libmpd-player.h
 include/libmpd-1.0/libmpd/libmpd-playlist.h
 include/libmpd-1.0/libmpd/libmpd-status.h
+include/libmpd-1.0/libmpd/libmpd-sticker.h
 include/libmpd-1.0/libmpd/libmpd-strfsong.h
 include/libmpd-1.0/libmpd/libmpd-version.h
 include/libmpd-1.0/libmpd/libmpd.h
