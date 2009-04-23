@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/05 15:47:53 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2009/04/23 13:26:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-gnome=	plugin for GNOME
 
 VERSION=	0.2.3
 DISTNAME=	libproxy-${VERSION}
-PKGNAME-main=	libproxy-${VERSION}
+PKGNAME-main=	libproxy-${VERSION}p0
 PKGNAME-gnome=	libproxy-gnome-${VERSION}
 SHARED_LIBS +=  proxy          0.0               # .0.0
 CATEGORIES=	net
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-webkit
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread"
-			
+			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
+			PYTHON="${MODPY_BIN}"
 
 .include <bsd.port.mk>
