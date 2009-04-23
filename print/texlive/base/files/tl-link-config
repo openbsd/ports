@@ -1,0 +1,16 @@
+#!/bin/sh
+# $OpenBSD: tl-link-config,v 1.1 2009/04/23 00:18:18 sthen Exp $
+#
+# This script looks at what TeX Live trees you have installed on
+# your OpenBSD system and links the right config file.
+#
+# It gets called as an @exec/@unexec of packages which require
+# different fmtutil.cnf's, namely -base and -full. 
+
+fmtutil=${TRUEPREFIX}/share/texmf/web2c/fmtutil.cnf
+
+if [ -e "${fmtutil}-full" ]; then
+	ln -sf ${fmtutil}-full $fmtutil
+else
+	ln -sf ${fmtutil}-minimal $fmtutil
+fi

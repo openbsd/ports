@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-full,v 1.4 2009/02/22 19:05:17 kili Exp $
+@comment $OpenBSD: PLIST-full,v 1.5 2009/04/23 00:18:18 sthen Exp $
 @conflict teTeX_texmf-*
 @pkgpath print/texlive/texmf-full
+share/texmf/web2c/fmtutil.cnf-full
 share/texmf-dist/bibtex/bib/IEEEtran/IEEEabrv.bib
 share/texmf-dist/bibtex/bib/IEEEtran/IEEEexample.bib
 share/texmf-dist/bibtex/bib/IEEEtran/IEEEfull.bib
@@ -20028,12 +20029,12 @@ share/texmf/texdoctk/texdocrc.defaults
 share/texmf/texdoctk/texdoctk.dat
 share/texmf/ttf2pk/VPS.rpl
 share/texmf/ttf2pk/ttf2pk.cfg
-@exec ln -sf %D/share/texmf/web2c/fmtutil.cnf-full %D/share/texmf/web2c/fmtutil.cnf
+@exec %D/bin/tl-link-config
 @exec mktexlsr > /dev/null 2>&1
 @exec fmtutil-sys --all > /dev/null 2>&1
 @exec updmap-sys --syncwithtrees > /dev/null 2>&1   
 @exec texlinks
-@unexec ln -sf %D/share/texmf/web2c/fmtutil.cnf-minimal %D/share/texmf/web2c/fmtutil.cnf
+@unexec %D/bin/tl-link-config
 @unexec mktexlsr > /dev/null 2>&1
 @unexec fmtutil-sys --all > /dev/null 2>&1
 @unexec updmap-sys --syncwithtrees > /dev/null 2>&1

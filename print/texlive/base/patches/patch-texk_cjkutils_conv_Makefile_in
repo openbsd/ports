@@ -1,0 +1,12 @@
+$OpenBSD: patch-texk_cjkutils_conv_Makefile_in,v 1.3 2009/04/23 00:18:18 sthen Exp $
+--- texk/cjkutils/conv/Makefile.in.orig	Sun Apr  5 18:29:23 2009
++++ texk/cjkutils/conv/Makefile.in	Sun Apr  5 18:30:12 2009
+@@ -26,7 +26,7 @@ install: install-exec install-data
+ uninstall: uninstall-exec uninstall-data
+ install-exec: all
+ 	$(SHELL) $(top_srcdir)/../mkinstalldirs $(bindir)
+-	for p in $(programs); do $(INSTALL_PROGRAM) $$p $(bindir); done
++	for p in $(programs); do $(INSTALL_PROGRAM) $$p $(DESTDIR)/$(bindir); done
+ uninstall-exec:
+ 	for p in $(programs); do $(RM) $(bindir)/$$p; done
+ 

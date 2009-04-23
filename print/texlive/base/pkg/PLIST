@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/02/22 19:05:17 kili Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/04/23 00:18:18 sthen Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @conflict texlive_texmf-minimal-<2008p1
@@ -11,8 +11,22 @@ bin/a2ping
 bin/allcm
 bin/allec
 bin/allneeded
+bin/bg5+latex
+bin/bg5+pdflatex
+@bin bin/bg5conv
+bin/bg5latex
+bin/bg5pdflatex
 @bin bin/bibtex
 @bin bin/bibtex8
+@bin bin/cef5conv
+bin/cef5latex
+bin/cef5pdflatex
+@bin bin/cefconv
+bin/ceflatex
+bin/cefpdflatex
+@bin bin/cefsconv
+bin/cefslatex
+bin/cefspdflatex
 @bin bin/cfftot1
 bin/context
 @bin bin/ctangle
@@ -54,10 +68,13 @@ bin/epspdf
 bin/epspdftk
 bin/epstopdf
 bin/exatools
+@bin bin/extconv
 bin/extractbb
 bin/fmtutil
 bin/fmtutil-sys
 bin/fontinst
+bin/gbklatex
+bin/gbkpdflatex
 bin/getnonfreefonts
 bin/getnonfreefonts-sys
 @bin bin/gftodvi
@@ -83,7 +100,7 @@ bin/kpsewhere
 bin/kpsexpand
 @bin bin/lacheck
 @bin bin/luatex
-@bin bin/luatools
+bin/luatools
 @bin bin/mag
 bin/makeglossaries
 @bin bin/makeindex
@@ -159,6 +176,9 @@ bin/rumakeindex
 bin/rungs
 bin/runtools
 bin/simpdftex
+@bin bin/sjisconv
+bin/sjislatex
+bin/sjispdflatex
 @bin bin/synctex
 @bin bin/t1dotlessj
 @bin bin/t1lint
@@ -189,6 +209,7 @@ bin/texutil
 @bin bin/tftopl
 bin/thumbpdf
 @bin bin/tie
+bin/tl-link-config
 bin/tlmgr
 bin/tmftools
 bin/tpic2pdftex
@@ -479,7 +500,7 @@ share/texmf/texconfig/v/vt100
 share/texmf/texconfig/x/
 share/texmf/texconfig/x/xterm
 @comment share/texmf/web2c/
-share/texmf/web2c/fmtutil.cnf-full
+@comment share/texmf/web2c/fmtutil.cnf
 share/texmf/web2c/fmtutil.cnf-minimal
 share/texmf/web2c/mktex.opt
 share/texmf/web2c/mktexdir
@@ -583,15 +604,15 @@ texmf/scripts/texlive/getnonfreefonts.pl
 texmf/scripts/texlive/rungs.tlu
 texmf/scripts/texlive/texdoc.tlu
 texmf/scripts/texlive/tlmgr.pl
-@exec ln -sf %D/share/texmf/web2c/fmtutil.cnf-minimal %D/share/texmf/web2c/fmtutil.cnf
+@exec %D/bin/tl-link-config
 @exec mktexlsr > /dev/null 2>&1
 @exec texlinks
 @exec fmtutil-sys --all > /dev/null 2>&1
 @exec updmap-sys --syncwithtrees > /dev/null 2>&1
+@extraunexec rm -Rf %D/share/texmf-var/
+@extraunexec rm -Rf %D/share/texmf-config/
 @extra share/texmf/ls-R
 @extra share/texmf-dist/ls-R
 @extra share/texmf-var/ls-R
 @extra share/texmf-config/ls-R
 @extra share/texmf/web2c/fmtutil.cnf
-@extraunexec rm -Rf %D/share/texmf-var/
-@extraunexec rm -Rf %D/share/texmf-config/

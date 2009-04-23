@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2009/02/22 19:05:17 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2009/04/23 00:18:17 sthen Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DIST_V = 		20080816
 DISTNAME =		texlive-${DIST_V}-source
-PKGNAME =		texlive_base-${V}p9
+PKGNAME =		texlive_base-${V}p10
 SHARED_LIBS =		kpathsea	1.0
 
 WANTLIB =		m X11 ICE freetype Xt pthread c Xext fontconfig \
@@ -67,6 +67,8 @@ CONFIGURE_ARGS +=	--with-fontconfig=${X11BASE} \
 			--with-old-mac-fonts \
 			--without-xindy
 
+SUBST_VARS +=		TRUEPREFIX
+
 # Could do with bsd.port.mk understanding lzma
 # Also annoyingly loads of .orig files confuse update-patches
 do-extract:
@@ -77,10 +79,11 @@ do-extract:
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/fmtutil.cnf-minimal \
 		${PREFIX}/share/texmf/web2c
-	${INSTALL_DATA} ${FILESDIR}/fmtutil.cnf-full \
-		${PREFIX}/share/texmf/web2c
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/texlive
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
 		${PREFIX}/share/doc/texlive
+	${INSTALL_SCRIPT} ${FILESDIR}/tl-link-config \
+		${PREFIX}/bin
+	${SUBST_CMD} ${PREFIX}/bin/tl-link-config
 
 .include <bsd.port.mk>
