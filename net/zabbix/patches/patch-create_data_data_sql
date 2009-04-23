@@ -1,0 +1,23 @@
+$OpenBSD: patch-create_data_data_sql,v 1.1 2009/04/23 15:38:11 jasper Exp $
+--- create/data/data.sql.orig	Wed Apr 22 23:02:19 2009
++++ create/data/data.sql	Wed Apr 22 23:03:03 2009
+@@ -27,8 +27,8 @@ INSERT INTO config VALUES (1,365,365,600,'1-5,00:00-24
+ -- Dumping data for table `scripts`
+ --
+ 
+-INSERT INTO scripts VALUES (1,'Ping','/bin/ping -c 3 {HOST.CONN}',2,0,0);
+-INSERT INTO scripts VALUES (2,'Traceroute','/usr/bin/traceroute {HOST.CONN}',2,0,0);
++INSERT INTO scripts VALUES (1,'Ping','/sbin/ping -c 3 {HOST.CONN}',2,0,0);
++INSERT INTO scripts VALUES (2,'Traceroute','/usr/sbin/traceroute {HOST.CONN}',2,0,0);
+ 
+ --
+ -- Dumping data for table `users`
+@@ -64,7 +64,7 @@ INSERT INTO users_groups VALUES (2,8,2);
+ 
+ INSERT INTO media_type VALUES (1,0,'Email','mail.company.com','company.com','zabbix@company.com','','','','');
+ INSERT INTO media_type VALUES (2,3,'Jabber','','','','','','jabber@company.com','zabbix');
+-INSERT INTO media_type VALUES (3,2,'SMS','','','','','/dev/ttyS0','','');
++INSERT INTO media_type VALUES (3,2,'SMS','','','','','/dev/ttyU0','','');
+ 
+ --
+ -- Dumping data for table hosts
