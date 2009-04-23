@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/23 16:01:49 robert Exp $
+${P5SITE}/RT/
+${P5SITE}/RT/Search/
+${P5SITE}/RT/Search/Googleish_Local.pm
+${P5SITE}/RTx/
+${P5SITE}/RTx/Tags.pm
+@man man/man3/RT::Search::Googleish_Local.3p
+@man man/man3/RTx::Tags.3p

@@ -1,0 +1,7 @@
+This module uses portions of HTML::TagCloud to provide a tag cloud
+on Search/Simple.html.
+The cloud consists of the values (split on commas, semi-colons
+and whitespace) for all objects with the Tags custom field.
+
+In addition to the cloud, this module provides support for
+Simple Searchable Custom Fields witha Local overlay.
