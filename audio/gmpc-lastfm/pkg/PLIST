@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/01/30 22:48:36 landry Exp $
-lib/gmpc/
-lib/gmpc/plugins/
-lib/gmpc/plugins/lastfmplugin.a
-lib/gmpc/plugins/lastfmplugin.la
-lib/gmpc/plugins/lastfmplugin.so

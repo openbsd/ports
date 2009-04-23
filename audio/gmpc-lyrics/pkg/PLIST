@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/30 22:49:43 landry Exp $
-lib/gmpc/
-lib/gmpc/plugins/
-lib/gmpc/plugins/lyricsplugin.a
-lib/gmpc/plugins/lyricsplugin.la
-lib/gmpc/plugins/lyricsplugin.so

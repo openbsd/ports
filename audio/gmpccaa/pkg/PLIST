@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/30 22:52:16 landry Exp $
-lib/gmpc/
-lib/gmpc/plugins/
-lib/gmpc/plugins/caaplugin.a
-lib/gmpc/plugins/caaplugin.la
-lib/gmpc/plugins/caaplugin.so
