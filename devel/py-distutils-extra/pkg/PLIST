@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/23 10:30:48 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/__init__.py
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/__init__.py
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/build_extra.py
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/build_extra.pyc
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/build_help.py
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/build_help.pyc
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/build_i18n.py
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/build_i18n.pyc
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/build_icons.py
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/build_icons.pyc
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/clean_i18n.py
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/clean_i18n.pyc
+lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt

@@ -1,0 +1,4 @@
+Python-distutils-extra allows to easily integrate themable icons,
+scrollkeeper based documentation and gettext based translations in your
+python install and build tools. It can be used with python's distutils
+or the enhanced setuptools.
