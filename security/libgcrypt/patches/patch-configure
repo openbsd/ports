@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.6 2009/04/23 13:38:18 ajacoutot Exp $
+--- configure.orig	Thu Apr 23 15:29:36 2009
++++ configure	Thu Apr 23 15:31:14 2009
+@@ -20873,8 +20873,8 @@ esac
+ #
+ case "${host}" in
+     *-openbsd*)
+-        NAME_OF_DEV_RANDOM="/dev/srandom"
+-        NAME_OF_DEV_URANDOM="/dev/urandom"
++        NAME_OF_DEV_RANDOM="/dev/arandom"
++        NAME_OF_DEV_URANDOM="/dev/arandom"
+         ;;
+ 
+     *)
