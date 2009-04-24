@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/01/20 06:23:51 jolan Exp $
-@lib lib/libgpod.so.${LIBgpod_VERSION}

@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST-python,v 1.1 2009/04/24 09:45:48 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/gpod/
+lib/python${MODPY_VERSION}/site-packages/gpod/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gpod/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gpod/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/gpod/_gpod.a
+lib/python${MODPY_VERSION}/site-packages/gpod/_gpod.la
+lib/python${MODPY_VERSION}/site-packages/gpod/_gpod.so
+lib/python${MODPY_VERSION}/site-packages/gpod/gpod.py
+lib/python${MODPY_VERSION}/site-packages/gpod/gpod.pyc
+lib/python${MODPY_VERSION}/site-packages/gpod/gpod.pyo
+lib/python${MODPY_VERSION}/site-packages/gpod/gtkpod.py
+lib/python${MODPY_VERSION}/site-packages/gpod/gtkpod.pyc
+lib/python${MODPY_VERSION}/site-packages/gpod/gtkpod.pyo
+lib/python${MODPY_VERSION}/site-packages/gpod/ipod.py
+lib/python${MODPY_VERSION}/site-packages/gpod/ipod.pyc
+lib/python${MODPY_VERSION}/site-packages/gpod/ipod.pyo
+share/examples/py-gpod/
+share/examples/py-gpod/add_song.py
+share/examples/py-gpod/coverart_fetch.py
+share/examples/py-gpod/create_mp3_tags_from_itdb.py
+share/examples/py-gpod/fix_empty_artist_field.py
+share/examples/py-gpod/play_with_ipod_api.py
+share/examples/py-gpod/play_with_smart_playlists.py
+share/examples/py-gpod/save_photos.py
+share/examples/py-gpod/tag_genre_from_audioscrobber.py
+share/examples/py-gpod/toy_around.py
