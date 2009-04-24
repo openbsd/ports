@@ -1,7 +1,7 @@
-$OpenBSD: patch-libcharset_lib_config_charset,v 1.6 2005/12/01 11:23:42 bernd Exp $
---- libcharset/lib/config.charset.orig	Wed Jan 21 19:53:20 2004
-+++ libcharset/lib/config.charset	Wed Nov 30 17:52:14 2005
-@@ -345,13 +345,14 @@ case "$os" in
+$OpenBSD: patch-libcharset_lib_config_charset,v 1.7 2009/04/24 18:56:49 naddy Exp $
+--- libcharset/lib/config.charset.orig	Sat Jan 24 18:39:06 2009
++++ libcharset/lib/config.charset	Sun Apr 19 23:47:28 2009
+@@ -348,13 +348,14 @@ case "$os" in
  	#echo "sun_eu_greek ?" # what is this?
  	echo "UTF-8 UTF-8"
  	;;

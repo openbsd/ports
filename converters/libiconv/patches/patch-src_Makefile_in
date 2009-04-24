@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2008/05/28 20:03:13 naddy Exp $
---- src/Makefile.in.orig	Mon May 28 00:15:52 2007
-+++ src/Makefile.in	Wed May 21 19:40:43 2008
-@@ -63,7 +63,6 @@ OBJECTS_RES_no =
+$OpenBSD: patch-src_Makefile_in,v 1.5 2009/04/24 18:56:49 naddy Exp $
+--- src/Makefile.in.orig	Sat Jan 17 04:00:59 2009
++++ src/Makefile.in	Sun Apr 19 23:47:28 2009
+@@ -71,7 +71,6 @@ OBJECTS_RES_no =
  # without internationalization and not linked with libintl.
  
  all : iconv_no_i18n iconv.@OBJEXT@ $(OBJECTS_RES_@WOE32@)
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.4 2008/05/28 20:03:13 naddy Exp $
  
  # This is the temporary iconv executable, without internationalization.
  iconv_no_i18n : iconv_no_i18n.@OBJEXT@ ../lib/libiconv.la $(OBJECTS_RES_@WOE32@)
-@@ -104,7 +103,7 @@ install : all force
+@@ -113,7 +112,7 @@ install : all force
  	if [ ! -d $(DESTDIR)$(bindir) ] ; then $(mkinstalldirs) $(DESTDIR)$(bindir) ; fi
  	case "@host_os@" in \
  	  hpux*) $(CC) $(LDFLAGS) $(CFLAGS) $(iconv_LDFLAGS) iconv.@OBJEXT@ ../srclib/libicrt.a -L$(DESTDIR)$(libdir) -liconv @LIBINTL@ $(OBJECTS_RES_@WOE32@) `if test -n '$(DESTDIR)'; then echo " -Wl,+b -Wl,$(libdir)"; fi` -o iconv;; \
