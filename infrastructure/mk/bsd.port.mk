@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.960 2009/04/11 14:55:31 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.961 2009/04/24 08:53:33 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2352,7 +2352,7 @@ ${_F}:
 	${_CDROM_OVERRIDE}; \
 	${_SITE_SELECTOR}; \
 	for site in $$sites; do \
-		${ECHO_MSG} ">> Fetch $${site}$$f."; \
+		${ECHO_MSG} ">> Fetch $${site}$$f"; \
 		if ${FETCH_CMD} $${site}$$f; then \
 				file=${_F:S@^${DISTDIR}/@@}; \
 				ck=`cd ${DISTDIR} && ${_size_fragment}`; \
