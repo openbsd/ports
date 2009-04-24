@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/10 13:56:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/24 14:47:16 kurt Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -32,7 +32,7 @@ EXTRACT_SUFX =		.zip
 
 MODULES =		gcc4
 MODGCC4_ARCHES =	*
-MODGCC4_LANG =		c
+MODGCC4_LANGS =		c
 
 LIB_DEPENDS =		SDL::devel/sdl gconf-2.>=5::devel/gconf2 \
 			gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
