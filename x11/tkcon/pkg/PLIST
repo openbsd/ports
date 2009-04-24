@@ -1,11 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/07 11:16:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/04/24 16:29:55 sthen Exp $
 bin/tkcon
+lib/tcl8/${MODTK_VERSION}/tkcon-2.5.tm
+@man man/man1/tkcon.1
+@man man/man5/tkconrc.5
+@man man/mann/dump.n
+@man man/mann/idebug.n
+@man man/mann/observe.n
+@man man/mann/tkcon.n
 share/doc/tkcon/
 share/doc/tkcon/README.txt
 share/doc/tkcon/docs/
 share/doc/tkcon/docs/bindings.html
 share/doc/tkcon/docs/changes.txt
-share/doc/tkcon/docs/demopic.gif
+share/doc/tkcon/docs/demopic.png
 share/doc/tkcon/docs/dump.html
 share/doc/tkcon/docs/idebug.html
 share/doc/tkcon/docs/index.html
