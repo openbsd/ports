@@ -1,0 +1,34 @@
+Link with system zlib.
+
+$OpenBSD: patch-custom_Mf-ti3ob,v 1.1.1.1 2009/04/24 13:13:45 wcmaier Exp $
+--- custom/Mf-ti3ob.orig	Mon Jun 11 12:09:01 2007
++++ custom/Mf-ti3ob	Wed Feb 11 17:12:30 2009
+@@ -4,13 +4,13 @@
+ # Usage: included in custom/Makefile
+ 
+ # Add additional machine-dependent C libraries here.
+-mdclib=-lm -lcurses -pthread
++mdclib=-lz -lm -lcurses -pthread
+ 
+ # Add additinal machine-dependent object files to clean here
+ mdclean=
+ 
+ # Define C compiler here
+-C=gcc -D_REENTRANT -pthread
++C=gcc -D_REENTRANT -pthread -Xlinker -E -Xlinker -Bdynamic
+ 
+ # Define default installation group here
+ group=bin
+@@ -18,10 +18,10 @@ group=bin
+ .SUFFIXES: .c .o
+ .c.o: ; $C -c -I${Include} $*.c
+ 
+-${Scheme}: ${Kernel} ${Custom} ${cobj} ${Archive}
++${Scheme}: ${Kernel} ${Custom} ${cobj}
+ 	/bin/rm -f ${Scheme}
+ 	echo "const char *S_date_stamp = \"`date +%m%d%Y%H%M%S`\";" > datestamp.c
+-	$C -rdynamic -o ${Scheme} datestamp.c ${Kernel} ${Custom} ${cobj} ${Archive} ${clib} ${mdclib}
++	$C -rdynamic -o ${Scheme} datestamp.c ${Kernel} ${Custom} ${cobj} ${clib} ${mdclib}
+ 	chmod 551 ${Scheme}
+ 
+ include Mf-install

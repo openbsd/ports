@@ -1,0 +1,32 @@
+Fix example path and don't install with restrictive permissions.
+
+$OpenBSD: patch-custom_Mf-install_in,v 1.1.1.1 2009/04/24 13:13:45 wcmaier Exp $
+--- custom/Mf-install.in.orig	Tue Mar 13 12:03:19 2007
++++ custom/Mf-install.in	Wed Feb 11 16:43:12 2009
+@@ -24,7 +24,7 @@ InstallBin=${InstallPrefix}/bin
+ InstallLib=${InstallPrefix}/lib/csv7.4
+ 
+ # example program directory
+-InstallLibLib=${InstallLib}/lib
++InstallLibLib=${InstallPrefix}/share/examples/petite-chez
+ 
+ # base executable and heap file directory
+ InstallLibBin=${InstallLib}/$m
+@@ -158,7 +158,7 @@ petitebininstall: ${Bin}
+           /bin/rm -f ${PetitePath};\
+           ln -f ${SchemePath} ${PetitePath};\
+         else\
+-          $I -m 511 ${Petite} ${PetitePath};\
++          $I -m 555 ${Petite} ${PetitePath};\
+         fi
+ 
+ petitemaninstall: petite.1 ${Man}
+@@ -196,7 +196,7 @@ schemebininstall: ${Bin}
+           /bin/rm -f ${SchemePath};\
+           ln -f ${PetitePath} ${SchemePath};\
+         else\
+-          $I -m 511 ${Scheme} ${SchemePath};\
++          $I -m 555 ${Scheme} ${SchemePath};\
+         fi
+ 
+ schememaninstall: scheme.1 ${Man}

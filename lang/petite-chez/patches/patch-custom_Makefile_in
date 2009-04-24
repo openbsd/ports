@@ -1,0 +1,13 @@
+Don't use bundled zlib.
+
+$OpenBSD: patch-custom_Makefile_in,v 1.1.1.1 2009/04/24 13:13:45 wcmaier Exp $
+--- custom/Makefile.in.orig	Wed Feb 11 17:03:52 2009
++++ custom/Makefile.in	Wed Feb 11 17:09:12 2009
+@@ -11,7 +11,6 @@ Kernel=../boot/$m/kernel.o
+ Custom=../boot/$m/custom.o
+ PetiteBoot=../boot/$m/petite.boot
+ SchemeBoot=../boot/$m/scheme.boot
+-Archive=../zlib/$m/libz.a
+ 
+ # force local rebuild of executable if desired
+ ForceRelink=no

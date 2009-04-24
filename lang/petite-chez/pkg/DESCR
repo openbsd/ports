@@ -1,0 +1,5 @@
+Petite Chez Scheme is a complete Scheme system that is fully compatible
+with Chez Scheme but uses high-speed threaded interpreter technology in
+place of Chez Scheme's incremental native-code compiler. Petite Chez
+Scheme may be used without license, fee or royalty for any purpose,
+including for resale as part of a commercial product. 

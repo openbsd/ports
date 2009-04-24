@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/24 13:13:45 wcmaier Exp $
+@conflict chez-*
+@bin bin/petite
+lib/csv7.4/
+lib/csv7.4/ti3ob/
+lib/csv7.4/ti3ob/petite.boot
+lib/csv7.4/ti3ob/scheme.h
+@man man/man1/petite.1
+share/examples/petite-chez/
+share/examples/petite-chez/Makefile
+share/examples/petite-chez/compat.ss
+share/examples/petite-chez/csocket.c
+share/examples/petite-chez/def.ss
+share/examples/petite-chez/edit.ss
+share/examples/petite-chez/fact.ss
+share/examples/petite-chez/fatfib.ss
+share/examples/petite-chez/fft.ss
+share/examples/petite-chez/fib.ss
+share/examples/petite-chez/foreign.ss
+share/examples/petite-chez/freq.ss
+share/examples/petite-chez/interpret.ss
+share/examples/petite-chez/m4.ss
+share/examples/petite-chez/macro.ss
+share/examples/petite-chez/matrix.ss
+share/examples/petite-chez/object.ss
+share/examples/petite-chez/power.ss
+share/examples/petite-chez/queue.ss
+share/examples/petite-chez/rabbit.ss
+share/examples/petite-chez/rsa.ss
+share/examples/petite-chez/scons.ss
+share/examples/petite-chez/setof.ss
+share/examples/petite-chez/socket.ss
+share/examples/petite-chez/unify.ss

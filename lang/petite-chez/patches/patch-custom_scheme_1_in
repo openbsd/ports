@@ -1,0 +1,14 @@
+Don't describe scheme executable in synopsis.
+
+$OpenBSD: patch-custom_scheme_1_in,v 1.1.1.1 2009/04/24 13:13:45 wcmaier Exp $
+--- custom/scheme.1.in.orig	Wed Feb 11 16:18:42 2009
++++ custom/scheme.1.in	Wed Feb 11 16:18:54 2009
+@@ -10,8 +10,6 @@
+ .br
+ \fIPetite Chez Scheme\fP
+ .SH SYNOPSIS
+-\fB{InstallSchemeName}\fP [ \fIoptions\fP ] \fIfile\fP ...
+-.br
+ \fB{InstallPetiteName}\fP [ \fIoptions\fP ] \fIfile\fP ...
+ .SH DESCRIPTION
+ \*s is a high-performance implementation of ANSI Scheme with numerous 
