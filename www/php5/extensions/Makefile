@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2008/09/18 13:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2009/04/24 08:36:49 espie Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 COMMENT-main=		informational package about PHP5 extensions
@@ -353,6 +353,18 @@ COMMENT-xsl=		XSL functions for php5
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 LIB_DEPENDS-xsl=	xslt.>=3,exslt::textproc/libxslt
 WANTLIB-xsl=		${WANTLIB} iconv xml2 z
+.endif
+
+# zip
+PSEUDO_FLAVORS+=	no_zip
+.if ${FLAVOR:L:Mno_zip}
+CONFIGURE_ARGS+=	--disable-zip
+.else
+MULTI_PACKAGES+=	-zip
+COMMENT-zip=		zip functions for php5
+CONFIGURE_ARGS+=	--enable-zip=shared
+LIB_DEPENDS-zip=
+WANTLIB-zip=		${WANTLIB} z
 .endif
 
 .for i in ${MULTI_PACKAGES}
