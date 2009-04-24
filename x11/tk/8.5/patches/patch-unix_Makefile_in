@@ -1,17 +1,26 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.4 2009/03/17 00:24:28 sthen Exp $
---- unix/Makefile.in.orig	Mon Dec 22 13:52:02 2008
-+++ unix/Makefile.in	Wed Mar 11 13:18:07 2009
-@@ -92,6 +92,9 @@ HTML_DIR		= @HTML_DIR@
- # Directory in which to install html documentation:
- HTML_INSTALL_DIR	= $(INSTALL_ROOT)$(HTML_DIR)
+$OpenBSD: patch-unix_Makefile_in,v 1.5 2009/04/24 21:13:13 sthen Exp $
+--- unix/Makefile.in.orig	Wed Apr 15 10:11:42 2009
++++ unix/Makefile.in	Wed Apr 15 23:16:23 2009
+@@ -95,6 +95,9 @@ HTML_INSTALL_DIR	= $(INSTALL_ROOT)$(HTML_DIR)
+ # Directory in which to install the configuration file tkConfig.sh:
+ CONFIG_INSTALL_DIR	= $(INSTALL_ROOT)$(libdir)
  
-+# Directory in which to install the configuration file tkConfig.sh:
-+CONFIG_INSTALL_DIR     = $(INSTALL_ROOT)$(libdir)
++# Directory in which to install the demo files:
++DEMO_INSTALL_DIR	= $(INSTALL_ROOT)$(TK_LIBRARY)/demos
 +
  # The directory containing the Tcl sources and headers appropriate
  # for this version of Tk ("srcdir" will be replaced or has already
  # been replaced by the configure script):
-@@ -537,7 +540,8 @@ AQUA_XLIB_HDRS = $(XLIB_DIR)/X11/*.h $(XLIB_DIR)/xbyte
+@@ -190,7 +193,7 @@ NO_DEPRECATED_FLAGS	= -DTCL_NO_DEPRECATED
+ 
+ # Some versions of make, like SGI's, use the following variable to
+ # determine which shell to use for executing commands:
+-SHELL			= /bin/sh
++SHELL			= @SHELL@
+ 
+ # BUILD_TCLSH is the fully qualified path name of the tclsh shell
+ # in the Tcl build directory. Test that need to be run in the
+@@ -540,7 +543,8 @@ AQUA_XLIB_HDRS = $(XLIB_DIR)/X11/*.h $(XLIB_DIR)/xbyte
  
  AQUA_PRIVATE_HDRS = $(MAC_OSX_DIR)/tkMacOSXPort.h $(MAC_OSX_DIR)/tkMacOSXInt.h
  
@@ -21,25 +30,19 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2009/03/17 00:24:28 sthen Exp $
  
  # Currently private, eventually public
  TTK_HDRS = $(TTK_DIR)/ttkTheme.h $(TTK_DIR)/ttkDecls.h
-@@ -548,7 +552,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
+@@ -551,9 +555,9 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
  # The private headers we want installed for install-private-headers
  PRIVATE_HDRS = $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
  	$(GENERIC_DIR)/tkIntPlatDecls.h $(GENERIC_DIR)/tkPort.h \
 -	$(TTK_HDRS) $(@TK_WINDOWINGSYSTEM@_PRIVATE_HDRS)
 +	$(GENERIC_DIR)/default.h
  
- DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
+-DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
++DEMOPROGS = browse hello ixset rmt rolodex tcolor timer widget
  
-@@ -560,7 +564,7 @@ SHELL_ENV = \
- 
- all: binaries libraries doc
- 
--binaries: ${LIB_FILE} ${STUB_LIB_FILE} wish
-+binaries: ${LIB_FILE} ${STUB_LIB_FILE} ${TK_BUILD_EXP_FILE} wish
- 
- libraries:
- 
-@@ -580,6 +584,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+ SHELL_ENV = \
+ 	@LD_LIBRARY_PATH_VAR@="`pwd`:${TCL_BIN_DIR}:$${@LD_LIBRARY_PATH_VAR@}"; \
+@@ -583,6 +587,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
  
@@ -50,7 +53,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2009/03/17 00:24:28 sthen Exp $
  # Build Aqua resource files
  ${TK_RSRC_FILE}: $(AQUA_RESOURCES)
  	rm -f $@
-@@ -635,7 +643,6 @@ xttest: test.o tkTest.o tkSquare.o $(TK_LIB_FILE)
+@@ -638,7 +646,6 @@ xttest: test.o tkTest.o tkSquare.o $(TK_LIB_FILE)
  #	% make test TESTFLAGS="-verbose bps -file fileName.test"
  
  test: test-classic test-ttk
@@ -58,18 +61,13 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2009/03/17 00:24:28 sthen Exp $
  
  test-classic: tktest
  	$(SHELL_ENV) ./tktest $(TEST_DIR)/all.tcl -geometry +0+0 $(TESTFLAGS)
-@@ -688,18 +695,14 @@ install-strip:
- # possible (e.g. if installing as root).
- 
- install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
--	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" "$(PKG_INSTALL_DIR)"; \
-+	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" "$(PKG_INSTALL_DIR)" "$(CONFIG_INSTALL_DIR)"; \
+@@ -696,14 +703,10 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
 -		mkdir -p "$$i"; \
 -		chmod 755 "$$i"; \
-+		$(INSTALL_DATA_DIR) $$i; \
++		$(INSTALL_DATA_DIR) "$$i"; \
  		else true; \
  		fi; \
  	    done;
@@ -79,7 +77,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2009/03/17 00:24:28 sthen Exp $
  	@if test "x$(TK_SHARED_BUILD)" = "x1"; then \
  	    echo "Creating package index $(PKG_INDEX)"; \
  	    rm -f "$(PKG_INDEX)"; \
-@@ -709,19 +712,20 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+@@ -713,14 +716,15 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
  	    echo "package ifneeded Tk $(MAJOR_VERSION).$(MINOR_VERSION)$(PATCH_LEVEL)\
  		[list load [file join \$$dir $${relative}$(TK_LIB_FILE)] Tk]";\
  	    ) > "$(PKG_INDEX)"; \
@@ -96,14 +94,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2009/03/17 00:24:28 sthen Exp $
  	    fi
  	@echo "Installing wish as $(BIN_INSTALL_DIR)/wish$(VERSION)"
  	@$(INSTALL_PROGRAM) wish "$(BIN_INSTALL_DIR)"/wish$(VERSION)
--	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/"
--	@$(INSTALL_DATA) tkConfig.sh "$(LIB_INSTALL_DIR)"/tkConfig.sh
-+	@echo "Installing tkConfig.sh to $(CONFIG_INSTALL_DIR)/"
-+	@$(INSTALL_DATA) tkConfig.sh "$(CONFIG_INSTALL_DIR)"/tkConfig.sh
- 	@if test "$(STUB_LIB_FILE)" != "" ; then \
- 	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
- 	    @INSTALL_STUB_LIB@ ; \
-@@ -732,24 +736,35 @@ install-libraries: libraries
+@@ -736,24 +740,35 @@ install-libraries: libraries
  	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \
  	    XLIB_INCLUDE_INSTALL_DIR="$(INCLUDE_INSTALL_DIR)"/X11; fi; \
  	for i in "$(INCLUDE_INSTALL_DIR)" "$${XLIB_INCLUDE_INSTALL_DIR}" \
@@ -116,7 +107,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2009/03/17 00:24:28 sthen Exp $
  		echo "Making directory $$i"; \
 -		mkdir -p "$$i"; \
 -		chmod 755 "$$i"; \
-+		$(INSTALL_DATA_DIR) $$i; \
++		$(INSTALL_DATA_DIR) "$$i"; \
  		else true; \
  		fi; \
  	    done;
@@ -144,21 +135,20 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2009/03/17 00:24:28 sthen Exp $
  	@list='$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)'; for i in $$list ; \
  	    do \
  	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"/X11; \
-@@ -783,34 +798,33 @@ install-libraries: libraries
+@@ -787,63 +802,57 @@ install-libraries: libraries
  	    done;
  
  install-demos:
 -	@for i in "$(SCRIPT_INSTALL_DIR)" \
 -		"$(SCRIPT_INSTALL_DIR)"/demos \
 -		"$(SCRIPT_INSTALL_DIR)"/demos/images ; \
-+	@for i in "$(DEMO_INSTALL_DIR)" \
-+		"$(DEMO_INSTALL_DIR)"/images ; \
++	@for i in "$(DEMO_INSTALL_DIR)" "$(DEMO_INSTALL_DIR)"/images ; \
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
 -		mkdir -p "$$i"; \
 -		chmod 755 "$$i"; \
-+		$(INSTALL_DATA_DIR) $$i; \
++		$(INSTALL_DATA_DIR) "$$i"; \
  		else true; \
  		fi; \
  	    done;
@@ -187,13 +177,36 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2009/03/17 00:24:28 sthen Exp $
  		fi; \
  	    done;
  
-@@ -822,8 +836,7 @@ install-doc:
+ install-doc:
+-	@if test ! -x $(UNIX_DIR)/installManPage; then \
+-	    chmod +x $(UNIX_DIR)/installManPage; \
+-	    fi
+ 	@for i in "$(MAN_INSTALL_DIR)" "$(MAN1_INSTALL_DIR)" "$(MAN3_INSTALL_DIR)" "$(MANN_INSTALL_DIR)" ; \
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
 -		mkdir -p "$$i"; \
 -		chmod 755 "$$i"; \
-+		$(INSTALL_DATA_DIR) $$i; \
++		$(INSTALL_DATA_DIR) "$$i"; \
  		else true; \
  		fi; \
  	    done;
+ 	@echo "Installing and cross-linking top-level (.1) docs";
+ 	@for i in $(TOP_DIR)/doc/*.1; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN1_INSTALL_DIR)"; \
++	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN1_INSTALL_DIR)"; \
+ 	done
+ 
+ 	@echo "Installing and cross-linking C API (.3) docs";
+ 	@for i in $(TOP_DIR)/doc/*.3; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN3_INSTALL_DIR)"; \
++	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN3_INSTALL_DIR)"; \
+ 	done
+ 
+ 	@echo "Installing and cross-linking command (.n) docs";
+ 	@for i in $(TOP_DIR)/doc/*.n; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MANN_INSTALL_DIR)"; \
++	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MANN_INSTALL_DIR)"; \
+ 	done
+ 
+ # Optional target to install private headers

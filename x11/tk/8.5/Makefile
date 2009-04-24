@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2009/03/17 00:24:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/04/24 21:13:13 sthen Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
-V =			8.5.6
+V =			8.5.7
 DISTNAME =		tk${V}
-PKGNAME =		tk-${V}p0
-
-SHARED_LIBS =		tk85 0.3
-
+PKGNAME =		tk-${V}
+SHARED_LIBS =		tk85 0.4
 CATEGORIES =		x11 x11/tk
-
 HOMEPAGE =		http://www.tcl.tk/
-
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
@@ -43,9 +39,7 @@ REGRESS_FLAGS =		HOME=${TESTHOME} \
 
 SEPARATE_BUILD =	concurrent
 USE_X11 =		Yes
-
-AUTOCONF_VERSION =	2.59
-CONFIGURE_STYLE =	autoconf no-autoheader old
+CONFIGURE_STYLE =	gnu old
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--includedir="${PREFIX}/include/tk8.5" \
 			--mandir="${PREFIX}/lib/tk8.5/man" \
@@ -54,8 +48,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-rpath \
 			--with-tcl="${LOCALBASE}/lib/tcl8.5"
 
-CONFIGURE_ENV +=	SHLIB_VERSION="${LIBtk85_VERSION}" \
-			CFLAGS=""
+CONFIGURE_ENV +=	SHLIB_VERSION="${LIBtk85_VERSION}"
 
 # This regression test wants an X11 display
 REGRESS_IS_INTERACTIVE =Yes
@@ -66,9 +59,9 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mthreaded}
 CONFIGURE_ARGS +=	--enable-threads
 WANTLIB +=		pthread
-LIB_DEPENDS =		tcl85:tcl->=$V,<8.5.7-${FLAVOR}:lang/tcl/8.5
+LIB_DEPENDS =		tcl85:tcl->=$V,<8.5.8-${FLAVOR}:lang/tcl/8.5
 .else
-LIB_DEPENDS =		tcl85:tcl->=$V,<8.5.7:lang/tcl/8.5
+LIB_DEPENDS =		tcl85:tcl->=$V,<8.5.8:lang/tcl/8.5
 .endif
 
 WRKSRC =		${WRKDIST}/unix

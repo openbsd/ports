@@ -1,17 +1,7 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.2 2008/10/01 19:47:40 steven Exp $
---- unix/Makefile.in.orig	Thu Aug 14 13:31:38 2008
-+++ unix/Makefile.in	Wed Aug 27 02:25:06 2008
-@@ -80,6 +80,9 @@ HTML_DIR		= @HTML_DIR@
- # Directory in which to install html documentation:
- HTML_INSTALL_DIR	= $(INSTALL_ROOT)$(HTML_DIR)
- 
-+# Directory in which to install the configuration file tclConfig.sh:
-+CONFIG_INSTALL_DIR	= $(INSTALL_ROOT)$(libdir)
-+
- # Package search path.
- TCL_PACKAGE_PATH	= @TCL_PACKAGE_PATH@
- 
-@@ -554,6 +557,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+$OpenBSD: patch-unix_Makefile_in,v 1.3 2009/04/24 21:13:13 sthen Exp $
+--- unix/Makefile.in.orig	Wed Apr 15 15:30:05 2009
++++ unix/Makefile.in	Fri Apr 17 11:09:50 2009
+@@ -557,6 +557,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
  
@@ -22,12 +12,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2008/10/01 19:47:40 steven Exp $
  # Make target which outputs the list of the .o contained in the Tcl lib useful
  # to build a single big shared library containing Tcl and other extensions.
  # Used for the Tcl Plugin.  -- dl
-@@ -711,30 +718,26 @@ install-strip:
- # (e.g. if installing as root).
- 
- install-binaries: binaries
--	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" ; \
-+	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" "$(CONFIG_INSTALL_DIR)"; \
+@@ -719,21 +723,17 @@ install-binaries: binaries
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -51,14 +36,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2008/10/01 19:47:40 steven Exp $
  	    fi
  	@echo "Installing tclsh as $(BIN_INSTALL_DIR)/tclsh$(VERSION)"
  	@$(INSTALL_PROGRAM) tclsh "$(BIN_INSTALL_DIR)"/tclsh$(VERSION)
--	@echo "Installing tclConfig.sh to $(LIB_INSTALL_DIR)/"
--	@$(INSTALL_DATA) tclConfig.sh "$(LIB_INSTALL_DIR)"/tclConfig.sh
-+	@echo "Installing tclConfig.sh to $(CONFIG_INSTALL_DIR)/"
-+	@$(INSTALL_DATA) tclConfig.sh "$(CONFIG_INSTALL_DIR)"/tclConfig.sh
- 	@if test "$(STUB_LIB_FILE)" != "" ; then \
- 	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
- 	    @INSTALL_STUB_LIB@ ; \
-@@ -742,12 +745,12 @@ install-binaries: binaries
+@@ -746,12 +746,12 @@ install-binaries: binaries
  	@EXTRA_INSTALL_BINARIES@
  
  install-libraries: libraries $(INSTALL_TZDATA) install-msgs
@@ -74,7 +52,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2008/10/01 19:47:40 steven Exp $
  		else true; \
  		fi; \
  	    done;
-@@ -755,14 +758,10 @@ install-libraries: libraries $(INSTALL_TZDATA) install
+@@ -759,14 +759,10 @@ install-libraries: libraries $(INSTALL_TZDATA) install
  	    do \
  	    if [ ! -d "$(SCRIPT_INSTALL_DIR)"/$$i ] ; then \
  		echo "Making directory $(SCRIPT_INSTALL_DIR)/$$i"; \
@@ -90,15 +68,15 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2008/10/01 19:47:40 steven Exp $
  	@echo "Installing header files";
  	@for i in $(GENERIC_DIR)/tcl.h $(GENERIC_DIR)/tclDecls.h \
  		$(GENERIC_DIR)/tclPlatDecls.h \
-@@ -770,10 +769,21 @@ install-libraries: libraries $(INSTALL_TZDATA) install
+@@ -774,7 +770,18 @@ install-libraries: libraries $(INSTALL_TZDATA) install
  		$(GENERIC_DIR)/tclTomMathDecls.h ; \
  	    do \
  	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"; \
 +	    cd "$(INCLUDE_INSTALL_DIR)"/generic && ln -sf ../`basename $$i` ./`basename $$i`; \
  	    done;
 +	@for i in $(GENERIC_DIR)/tclInt.h $(GENERIC_DIR)/tclIntDecls.h \
-+		$(GENERIC_DIR)/tclIntPlatDecls.h \
-+		$(GENERIC_DIR)/tclPort.h ; \
++		$(GENERIC_DIR)/tclIntPlatDecls.h $(GENERIC_DIR)/tclPort.h \
++		$(GENERIC_DIR)/tclRegexp.h $(GENERIC_DIR)/regex.h ; \
 +	    do \
 +	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"/generic; \
 +	    done;
@@ -108,12 +86,15 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2008/10/01 19:47:40 steven Exp $
 +	    done;
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex \
--		$(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix @DTRACE_SRC@; \
-+		$(UNIX_DIR)/tclAppInit.c @LDAIX_SRC@ @DTRACE_SRC@; \
- 	    do \
- 	    $(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"; \
- 	    done;
-@@ -831,8 +841,7 @@ install-doc: doc
+ 		$(UNIX_DIR)/tclAppInit.c @LDAIX_SRC@ @DTRACE_SRC@; \
+@@ -828,31 +835,27 @@ install-msgs: tclsh
+ 	    $(TOP_DIR)/library/msgs "$(SCRIPT_INSTALL_DIR)"/msgs
+ 
+ install-doc: doc
+-	@if test ! -x $(UNIX_DIR)/installManPage; then \
+-	    chmod +x $(UNIX_DIR)/installManPage; \
+-	    fi
+ 	@for i in "$(MAN_INSTALL_DIR)" "$(MAN1_INSTALL_DIR)" "$(MAN3_INSTALL_DIR)" "$(MANN_INSTALL_DIR)" ; \
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -123,3 +104,22 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2008/10/01 19:47:40 steven Exp $
  		else true; \
  		fi; \
  	    done;
+ 	@echo "Installing and cross-linking top-level (.1) docs";
+ 	@for i in $(TOP_DIR)/doc/*.1; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN1_INSTALL_DIR)"; \
++	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN1_INSTALL_DIR)"; \
+ 	done
+ 
+ 	@echo "Installing and cross-linking C API (.3) docs";
+ 	@for i in $(TOP_DIR)/doc/*.3; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN3_INSTALL_DIR)"; \
++	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN3_INSTALL_DIR)"; \
+ 	done
+ 
+ 	@echo "Installing and cross-linking command (.n) docs";
+ 	@for i in $(TOP_DIR)/doc/*.n; do \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MANN_INSTALL_DIR)"; \
++	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MANN_INSTALL_DIR)"; \
+ 	done
+ 
+ # Optional target to install private headers

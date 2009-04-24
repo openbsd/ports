@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/03/17 00:24:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/04/24 21:13:13 sthen Exp $
 @option no-default-conflict
 @conflict tk->=8.5,<8.6
 %%SHARED%%
@@ -449,7 +449,6 @@ lib/tk8.5/optMenu.tcl
 lib/tk8.5/palette.tcl
 lib/tk8.5/panedwindow.tcl
 lib/tk8.5/pkgIndex.tcl
-lib/tk8.5/prolog.ps
 lib/tk8.5/safetk.tcl
 lib/tk8.5/scale.tcl
 lib/tk8.5/scrlbar.tcl
