@@ -1,0 +1,12 @@
+$OpenBSD: patch-dfasyn_compdfa_c,v 1.1 2009/04/24 14:43:16 kurt Exp $
+--- dfasyn/compdfa.c.orig	Sun Apr 19 09:57:26 2009
++++ dfasyn/compdfa.c	Sun Apr 19 09:56:53 2009
+@@ -425,7 +425,7 @@ do_next_dfa_state:
+ 
+     for (j=0; j<ntokens; j++) {
+       int next_state = dfas[i]->map[j];
+-      if (leads_to_result[next_state] == 0) {
++      if ((next_state >= 0) && leads_to_result[next_state] == 0) {
+         dfas[i]->map[j] = -1;
+       }
+     }
