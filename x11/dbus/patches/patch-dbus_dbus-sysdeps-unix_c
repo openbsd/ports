@@ -1,0 +1,40 @@
+$OpenBSD: patch-dbus_dbus-sysdeps-unix_c,v 1.1 2009/04/24 15:06:05 kurt Exp $
+--- dbus/dbus-sysdeps-unix.c.orig	Wed Apr 22 17:32:26 2009
++++ dbus/dbus-sysdeps-unix.c	Wed Apr 22 18:56:49 2009
+@@ -2860,6 +2860,7 @@ _dbus_get_autolaunch_address (DBusString *address,
+   int i;
+   DBusString uuid;
+   dbus_bool_t retval;
++  sigset_t new_set, old_set;
+   
+   _DBUS_ASSERT_ERROR_IS_CLEAR (error);
+   retval = FALSE;
+@@ -2869,6 +2870,10 @@ _dbus_get_autolaunch_address (DBusString *address,
+       _DBUS_SET_OOM (error);
+       return FALSE;
+     }
++
++  sigemptyset(&new_set);
++  sigaddset(&new_set, SIGCHLD);
++  sigprocmask(SIG_BLOCK, &new_set, &old_set);
+   
+   if (!_dbus_get_local_machine_uuid_encoded (&uuid))
+     {
+@@ -2963,6 +2968,8 @@ _dbus_get_autolaunch_address (DBusString *address,
+       for (i = 3; i < maxfds; i++)
+         close (i);
+ 
++      sigprocmask(SIG_SETMASK, &old_set, NULL);
++
+       execv (DBUS_BINDIR "/dbus-launch", argv);
+ 
+       /* failed, try searching PATH */
+@@ -3021,6 +3028,8 @@ _dbus_get_autolaunch_address (DBusString *address,
+   retval = TRUE;
+   
+  out:
++  sigprocmask(SIG_SETMASK, &old_set, NULL);
++
+   if (retval)
+     _DBUS_ASSERT_ERROR_IS_CLEAR (error);
+   else
