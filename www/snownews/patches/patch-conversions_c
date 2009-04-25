@@ -1,6 +1,6 @@
-$OpenBSD: patch-conversions_c,v 1.8 2008/09/12 20:07:15 martynas Exp $
---- conversions.c.orig	Mon Jul 28 12:26:16 2008
-+++ conversions.c	Fri Sep 12 22:33:53 2008
+$OpenBSD: patch-conversions_c,v 1.9 2009/04/25 20:08:44 martynas Exp $
+--- conversions.c.orig	Thu Mar 19 13:16:44 2009
++++ conversions.c	Thu Apr 23 15:08:30 2009
 @@ -31,7 +31,7 @@
  #include <errno.h>
  #include <libxml/HTMLparser.h>
@@ -15,6 +15,6 @@ $OpenBSD: patch-conversions_c,v 1.8 2008/09/12 20:07:15 martynas Exp $
  #include "setup.h"
  #include "digcalc.h"
 -#include "md5.h"
+ #include "io-internal.h"
  
  extern struct entity *first_entity;
- 
