@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/03/16 22:20:02 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2009/04/25 12:54:57 ajacoutot Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
@@ -22,15 +22,11 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	lang/python
 
-MY_DEPENDS=	::databases/py-sqlite2 \
+RUN_DEPENDS=	::databases/py-sqlite2 \
 		::devel/subversion,-python \
 		::textproc/py-docutils \
-		:clearsilver-*-python:www/clearsilver,python
-
-RUN_DEPENDS=	${MY_DEPENDS} \
+		:clearsilver-*-python:www/clearsilver,python \
 		::print/enscript
-
-BUILD_DEPENDS=	${MY_DEPENDS}
 
 post-install:
 	@perl -pi -e 's#${WRKINST}##' ${WRKSRC}/trac/siteconfig.py
