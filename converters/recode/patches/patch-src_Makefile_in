@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2003/04/27 21:00:21 avsm Exp $
---- src/Makefile.in.orig       Mon Jan 22 19:14:16 2001
-+++ src/Makefile.in    Wed Apr 23 11:10:09 2003
-@@ -129,7 +129,7 @@ L_SURFACES =
+$OpenBSD: patch-src_Makefile_in,v 1.2 2009/04/25 18:02:58 ajacoutot Exp $
+--- src/Makefile.in.orig	Mon Jan 22 19:14:16 2001
++++ src/Makefile.in	Sat Apr 25 19:18:55 2009
+@@ -129,7 +129,7 @@ L_SURFACES = 
  recode_SOURCES = main.c freeze.c mixed.c
  recode_LDADD = librecode.la ../lib/libreco.a
-
+ 
 -librecode_la_SOURCES = argmatch.c charname.c combine.c fr-charname.c hash.c iconv.c libiconv.c localcharset.c merged.c names.c outer.c quotearg.c recode.c request.c strip-pool.c task.c xmalloc.c $(C_STEPS)
 +librecode_la_SOURCES = argmatch.c charname.c combine.c fr-charname.c hash.c iconv.c libiconv.c localcharset.c merged.c names.c outer.c quotearg.c recode.c request.c strip-pool.c task.c xmalloc.c error.c $(C_STEPS)
-
+ 
  librecode_la_LDFLAGS = -version-info 0:0:0
-
-@@ -159,7 +159,7 @@ librecode_la_LIBADD =
+ 
+@@ -159,7 +159,7 @@ librecode_la_LIBADD = 
  librecode_la_OBJECTS =  argmatch$U.lo charname$U.lo combine$U.lo \
  fr-charname$U.lo hash$U.lo iconv$U.lo libiconv$U.lo localcharset$U.lo \
  merged$U.lo names$U.lo outer$U.lo quotearg$U.lo recode$U.lo \
