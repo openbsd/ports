@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_instrument_c,v 1.1 2007/10/12 20:12:19 sturm Exp $
---- src/instrument.c.orig	Sun Sep  2 16:20:59 2007
-+++ src/instrument.c	Sun Sep  2 16:22:24 2007
-@@ -331,7 +331,7 @@ while (dbcp->c_get(dbcp, &key, &value, DB_NEXT) == 0)
+$OpenBSD: patch-src_instrument_c,v 1.2 2009/04/25 22:07:37 okan Exp $
+--- src/instrument.c.orig	Tue Jun  3 21:20:37 2008
++++ src/instrument.c	Thu Jul  3 13:02:36 2008
+@@ -547,7 +547,7 @@ while (dbcp->c_get(dbcp, &key, &value, DB_NEXT) == 0)
     
     tthen = (time_t)then;
  

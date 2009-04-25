@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2007/10/12 20:12:19 sturm Exp $
---- configure.orig	Tue May 29 20:07:07 2007
-+++ configure	Sun Sep  2 16:14:30 2007
-@@ -17941,7 +17941,7 @@ echo $ECHO_N "checking Checking for GCC Specific compi
+$OpenBSD: patch-configure,v 1.6 2009/04/25 22:07:37 okan Exp $
+--- configure.orig	Wed Dec 24 09:42:49 2008
++++ configure	Sat Apr 11 16:32:57 2009
+@@ -31434,7 +31434,7 @@ echo $ECHO_N "checking Checking for GCC Specific compi
  if test x"$GCC" = "xyes"; then
  
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cflex_c,v 1.3 2007/10/12 20:12:19 sturm Exp $
---- src/cflex.c.orig	Tue May 29 20:07:57 2007
-+++ src/cflex.c	Sun Sep  2 16:02:56 2007
+$OpenBSD: patch-src_cflex_c,v 1.4 2009/04/25 22:07:37 okan Exp $
+--- src/cflex.c.orig	Wed Dec 24 09:43:31 2008
++++ src/cflex.c	Sat Apr 11 16:32:57 2009
 @@ -93,7 +93,7 @@ typedef unsigned int flex_uint32_t;
  
  #else	/* ! __cplusplus */
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_cflex_c,v 1.3 2007/10/12 20:12:19 sturm Exp $
  
  #define YY_USE_CONST
  
-@@ -4556,7 +4556,7 @@ static void yy_load_buffer_state  (void)
+@@ -4854,7 +4854,7 @@ static void yy_load_buffer_state  (void)
  }
  
  #ifndef __cplusplus

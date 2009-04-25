@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_do_c,v 1.7 2007/10/28 18:32:14 sturm Exp $
---- src/do.c.orig	Sun Sep  2 16:14:43 2007
-+++ src/do.c	Sun Sep  2 16:20:28 2007
-@@ -3278,7 +3278,7 @@ if (MatchStringInFstab(mountpt))
+$OpenBSD: patch-src_do_c,v 1.8 2009/04/25 22:07:37 okan Exp $
+--- src/do.c.orig	Sat Dec  6 04:30:19 2008
++++ src/do.c	Sat Apr 11 16:32:57 2009
+@@ -3399,7 +3399,7 @@ if (MatchStringInFstab(mountpt))
           CfLog(cfinform,"---------------------------------------------------","");
           
           /* delete current fstab entry and unmount if necessary */
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_do_c,v 1.7 2007/10/28 18:32:14 sturm Exp $
           mntentry = LocateItemContainingRegExp(VMOUNTED,mountspec);
           if (mntentry)
              {
-@@ -3287,7 +3287,7 @@ if (MatchStringInFstab(mountpt))
+@@ -3408,7 +3408,7 @@ if (MatchStringInFstab(mountpt))
              strcat(mountspec,mountpt);
              }
           else  /* mountpt isn't mounted, so Unmount can use dummy host name */

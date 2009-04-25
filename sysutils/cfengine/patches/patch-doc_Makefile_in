@@ -1,16 +1,16 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.3 2007/10/12 20:12:19 sturm Exp $
---- doc/Makefile.in.orig	Tue May 29 20:07:06 2007
-+++ doc/Makefile.in	Sun Sep  2 15:56:22 2007
-@@ -79,7 +79,7 @@ am__vpath_adj = case $$p in \
- am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
+$OpenBSD: patch-doc_Makefile_in,v 1.4 2009/04/25 22:07:37 okan Exp $
+--- doc/Makefile.in.orig	Sat Apr 11 16:34:08 2009
++++ doc/Makefile.in	Sat Apr 11 16:35:13 2009
+@@ -75,7 +75,7 @@ NROFF = nroff
+ MANS = $(man_MANS)
  docDATA_INSTALL = $(INSTALL_DATA)
  htmlDATA_INSTALL = $(INSTALL_DATA)
 -DATA = $(doc_DATA) $(html_DATA)
 +DATA =
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
  ACLOCAL = @ACLOCAL@
- AMDEP_FALSE = @AMDEP_FALSE@
-@@ -717,7 +717,7 @@ info: info-am
+ AMTAR = @AMTAR@
+@@ -771,7 +771,7 @@ info: info-am
  
  info-am: $(INFO_DEPS)
  
@@ -18,13 +18,13 @@ $OpenBSD: patch-doc_Makefile_in,v 1.3 2007/10/12 20:12:19 sturm Exp $
 +install-data-am: install-info-am \
  	install-man
  
- install-exec-am:
-@@ -783,7 +783,7 @@ uninstall-am: uninstall-docDATA uninstall-htmlDATA uni
- uninstall-man: uninstall-man8
+ install-dvi: install-dvi-am
+@@ -892,7 +892,7 @@ uninstall-man: uninstall-man8
  
- .PHONY: all all-am check check-am clean clean-generic dist-info \
--	distclean distclean-generic distdir dvi dvi-am html html-am \
-+	distclean distclean-generic distdir dvi dvi-am \
- 	info info-am install install-am install-data install-data-am \
- 	install-docDATA install-exec install-exec-am install-htmlDATA \
- 	install-info install-info-am install-man install-man8 \
+ .PHONY: all all-am check check-am clean clean-generic clean-libtool \
+ 	dist-info distclean distclean-generic distclean-libtool \
+-	distdir dvi dvi-am html html-am info info-am install \
++	distdir dvi dvi-am info info-am install \
+ 	install-am install-data install-data-am install-docDATA \
+ 	install-dvi install-dvi-am install-exec install-exec-am \
+ 	install-html install-html-am install-htmlDATA install-info \
