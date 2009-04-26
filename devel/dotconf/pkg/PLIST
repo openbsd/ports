@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/26 19:36:33 jasper Exp $
+%%SHARED%%
+bin/dotconf-config
+include/dotconf.h
+include/libpool.h
+lib/libdotconf.a
+lib/libdotconf.la
+lib/libpool.a
+lib/pkgconfig/
+lib/pkgconfig/dotconf.pc
+share/aclocal/
+share/aclocal/dotconf.m4
+share/doc/dotconf/
+share/doc/dotconf/dotconf-api.txt
+share/doc/dotconf/dotconf-features.txt
