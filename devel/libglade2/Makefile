@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/03/17 16:01:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2009/04/26 11:01:04 ajacoutot Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
@@ -31,8 +31,7 @@ USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
-                        LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+                        LDFLAGS="-L${LOCALBASE}/lib"
 
 REGRESS_IS_INTERACTIVE= Yes
 REGRESS_FLAGS=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}

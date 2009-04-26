@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2009/03/28 16:18:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2009/04/26 11:01:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,8 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	PYTHON=${MODPY_BIN} \
-		CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-gtkspell
 

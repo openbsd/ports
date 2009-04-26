@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/23 13:26:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/26 11:01:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,7 +45,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-webkit
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 .include <bsd.port.mk>

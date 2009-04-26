@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=		API documentation browser for GNOME
 
@@ -40,8 +40,7 @@ DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+= 	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/devhelp/ \
 			--disable-schemas-install
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
 

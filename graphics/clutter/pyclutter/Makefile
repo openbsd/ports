@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/15 17:47:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/04/26 11:01:04 ajacoutot Exp $
 
 COMMENT=		python bindings for Clutter
 
@@ -29,7 +29,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-cluttercairo=yes \
 			--with-cluttergst=yes \
 			--with-cluttergtk=yes
-CONFIGURE_ENV+= 	PYTHON="${MODPY_BIN}"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-clutter

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/13 11:37:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/04/26 11:01:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -92,8 +92,7 @@ CONFIGURE_ENV=	LIBNETCONFIG=${LOCALBASE}/bin/libnet-config-1.0 \
 		LDFLAGS="-liconv -L${LOCALBASE}/lib/libnet-1.0" \
 		docdir=${PREFIX}/share/doc/heartbeat \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		PYTHON=${MODPY_BIN}
+		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 CONFIGURE_ARGS=	configure --prefix=${PREFIX} \
 		--sysconfdir=${SYSCONFDIR} \
 		--localstatedir=/var \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2009/03/11 11:18:39 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2009/04/26 11:01:04 ajacoutot Exp $
 
 COMMENT-main=		GNOME Structured File library
 COMMENT-gnome=		GNOME specific extensions to libgsf
@@ -43,8 +43,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-python \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/libgsf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
+
 MAKE_ENV+=		GCONF2_SCHEMAS_DIR="${LOCALBASE}/share/schemas/libgsf"
 
 LIB_DEPENDS-gnome=	${LIB_DEPENDS} \

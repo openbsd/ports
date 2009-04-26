@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/04/15 21:12:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=		project management application
 
@@ -56,7 +56,6 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}" \
 			UPDATE_DESKTOP_DATABASE="/usr/bin/false"
 
 .include <bsd.port.mk>

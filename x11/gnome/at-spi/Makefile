@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/23 21:45:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=		GNOME accessibility interface
 
@@ -39,8 +39,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ARGS+=	--disable-xevie
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON=${MODPY_BIN}
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 # The regression tests require a running instance of X.
 # You will also need to set the XAUTHORITY environment variable to point

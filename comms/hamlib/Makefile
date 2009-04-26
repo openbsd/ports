@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/11 21:19:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2009/04/26 11:01:04 ajacoutot Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -44,7 +44,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hamlib/}
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		PYTHON=${MODPY_BIN}
 
 BUILD_DEPENDS=		::devel/swig
 

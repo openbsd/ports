@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/28 16:01:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2009/04/26 11:01:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,7 +31,6 @@ RUN_DEPENDS=		:py-gobject->=2.15.2:devel/py-gobject \
 			::x11/py-gtk2
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		PYTHON="${MODPY_BIN}"
 
 LIBTOOL_FLAGS=		--tag=disable-static
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/24 20:07:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, main library
 
@@ -20,6 +20,5 @@ LIB_DEPENDS=		telepathy-glib.>=1::net/telepathy/telepathy-glib
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+= 	PYTHON="${MODPY_BIN}"
 
 .include <bsd.port.mk>

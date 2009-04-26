@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/18 08:27:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/04/26 11:01:04 ajacoutot Exp $
 
 COMMENT=		Python bindings for goocanvas
 
@@ -32,6 +32,5 @@ LIB_DEPENDS=		goocanvas::graphics/goocanvas \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-docs
-CONFIGURE_ENV+= 	PYTHON="${MODPY_BIN}"
 
 .include <bsd.port.mk>

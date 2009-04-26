@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2009/03/25 09:03:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2009/04/26 11:01:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -40,7 +40,6 @@ USE_GMAKE=	No
 USE_X11=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
 
 # The regression tests require a running instance of X.
 # You will also need to set the XAUTHORITY environment variable to point 

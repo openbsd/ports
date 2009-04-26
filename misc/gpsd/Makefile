@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2009/03/23 20:17:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2009/04/26 11:01:04 ajacoutot Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-motif=		motif-based test apps using gpsd
@@ -62,7 +62,6 @@ LIB_DEPENDS-python=	gps::misc/gpsd
 WANTLIB-python=
 RUN_DEPENDS-main=
 RUN_DEPENDS-motif=
-CONFIGURE_ENV+=		PYTHON="${MODPY_BIN}"
 .endif
 
 WANTLIB-main=		m ncurses c pthread

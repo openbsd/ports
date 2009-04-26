@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/03/14 13:12:51 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2009/04/26 11:01:04 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -53,7 +53,6 @@ PKG_ARCH-zope=		*
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-mxdatetime-includes=${MODPY_SITEPKG}/mx/DateTime/mxDateTime
-CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
 
 NO_REGRESS=	Yes
 

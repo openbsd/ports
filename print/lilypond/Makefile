@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/04/26 11:01:05 ajacoutot Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -41,7 +41,6 @@ AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	gnu
 CONFIGURE_SCRIPT=	autogen.sh
 CONFIGURE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			PYTHON=${MODPY_BIN} \
 			FLEXLEXER_PATH=/usr/include/g++
 CONFIGURE_ARGS+=	--disable-{debugging,optimising,pipe} \
 			--with-ncsb-dir=${LOCALBASE}/lib/X11/fonts/ghostscript

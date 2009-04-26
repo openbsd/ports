@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/04/26 11:01:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -47,8 +47,7 @@ LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-static
 

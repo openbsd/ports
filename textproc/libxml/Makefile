@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2009/03/11 16:14:32 bernd Exp $
+# $OpenBSD: Makefile,v 1.120 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		m z 
 
 MODULES=		converters/libiconv
@@ -46,7 +47,6 @@ MULTI_PACKAGES+=	-python
 MODULES+=		lang/python
 LIB_DEPENDS-python=	xml2.>=9::textproc/libxml,-main \
 			${MODLIBICONV_LIB_DEPENDS}
-CONFIGURE_ENV+=		PYTHON=${MODPY_BIN}
 FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxml2/
 .endif
 

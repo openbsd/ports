@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/03/10 19:26:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2009/04/26 11:01:04 ajacoutot Exp $
 
 COMMENT=	ORBit2 Python bindings
 
@@ -20,7 +20,9 @@ MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pyorbit/2.14/}
 WANTLIB=	m util IDL-2 pcre glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0
 
-MODULES=	devel/gettext lang/python
+MODULES=	devel/gettext \
+		lang/python
+
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		ORBit-2,ORBit-imodule-2::devel/ORBit2
 
@@ -28,8 +30,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	LIBS="-pthread -lm -lutil" \
-		PYTHON=${MODPY_BIN}
+CONFIGURE_ENV=	LIBS="-pthread -lm -lutil"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static
 

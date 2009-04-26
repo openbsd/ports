@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/23 11:29:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=		assistive technology for people with visual impairments
 
@@ -32,7 +32,6 @@ DESKTOP_FILES=		Yes
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-liblouis
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON=${MODPY_BIN}
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

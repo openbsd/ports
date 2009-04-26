@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/24 20:07:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/04/26 11:01:05 ajacoutot Exp $
 
 BROKEN= 		too many issues with setting this up
 
@@ -25,8 +25,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			OPENSSL_LIBS="-L/usr/lib -lssl -lcrypto" \
-			OPENSSL_CFLAGS="-I/usr/include" \
-			PYTHON="${MODPY_BIN}"
+			OPENSSL_CFLAGS="-I/usr/include"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure

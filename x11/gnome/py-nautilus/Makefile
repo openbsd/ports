@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/16 12:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=	nautilus Python bindings
 
@@ -37,8 +37,7 @@ USE_X11=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lm -pthread -lutil" \
-		PYTHON=${MODPY_BIN}
+		LDFLAGS="-L${LOCALBASE}/lib -lm -pthread -lutil"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static
 

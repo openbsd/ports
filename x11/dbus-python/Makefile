@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/03/11 19:10:47 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=	dbus bindings for Python
 
@@ -28,7 +28,6 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-html-docs
-CONFIGURE_ENV+=	PYTHON=${MODPY_BIN}
 
 NO_REGRESS=	Yes
 

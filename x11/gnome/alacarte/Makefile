@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/03/17 16:03:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=		easy GNOME menu editing tool
 
@@ -26,8 +26,7 @@ RUN_DEPENDS=		::devel/gettext \
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Alacarte/util.py

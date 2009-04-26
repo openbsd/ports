@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/03/28 16:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
@@ -50,8 +50,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-examples \
 			--with-python
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${FLAVOR:L:Mno_plugin}
 CONFIGURE_ARGS+=	--enable-plugin=no

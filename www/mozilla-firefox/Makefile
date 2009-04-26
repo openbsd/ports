@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2009/04/22 21:59:31 martynas Exp $
+# $OpenBSD: Makefile,v 1.116 2009/04/26 11:01:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -110,7 +110,6 @@ MAKE_ENV=	MOZ_CO_PROJECT=browser \
 		SO_VERSION="${SO_VERSION}"
 CONFIGURE_ENV=	${MAKE_ENV} \
 		MOZ_ENABLE_COREXFONTS=1 \
-		PYTHON="${MODPY_BIN}" \
 		topsrcdir=${WRKSRC}
 
 MODPY_RUNDEP=	No

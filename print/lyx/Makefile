@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2009/03/12 18:13:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
@@ -58,7 +58,6 @@ CONFIGURE_ARGS+=--with-extra-lib=${LOCALBASE}/lib \
 		--with-extra-inc="${LOCALBASE}/include \
 		${LOCALBASE}/include/X11" \
 		--disable-dependency-tracking
-CONFIGURE_ENV+=	PYTHON=${MODPY_BIN}
 
 # Necessary because of compilation error.  See:
 # http://www.boost.org/libs/graph/doc/trouble_shooting.html

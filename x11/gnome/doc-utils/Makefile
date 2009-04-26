@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=	collection of documentation utilities for the GNOME project
 
@@ -28,8 +28,7 @@ RUN_DEPENDS=	::devel/gettext \
 
 USE_LIBTOOL=	No
 CONFIGURE_ARGS=	--disable-scrollkeeper
-CONFIGURE_ENV=	PYTHON=${MODPY_BIN} \
-		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/28 16:32:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
@@ -46,8 +46,7 @@ REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
 USE_X11=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS= 	--with-gtkmozembed=xulrunner
 
 pre-configure:

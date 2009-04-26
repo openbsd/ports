@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/04/01 10:46:48 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2009/04/26 11:01:04 ajacoutot Exp $
 
 COMMENT-main=	translator library for geospatial data formats
 COMMENT-python=	python bindings and utilities for GDAL
@@ -63,8 +63,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		PYTHON=${MODPY_BIN}
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-cfitsio \

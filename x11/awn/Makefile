@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/13 22:32:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=		avant window navigator
 
@@ -56,8 +56,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-schemas-install \
 			--without-vala
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -lm -pthread -lutil" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib -lm -pthread -lutil"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/awn-applet-activation/main.c \

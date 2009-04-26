@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2009/04/26 11:01:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -50,7 +50,6 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-python \
 			--disable-attr
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -lm -lstdc++ -lintl -liconv" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib -lm -lstdc++ -lintl -liconv"
 
 .include <bsd.port.mk>

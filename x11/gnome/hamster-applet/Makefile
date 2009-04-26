@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/03/28 15:54:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=		time tracker applet for GNOME
 
@@ -36,8 +36,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-schemas-install \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/hamster-applet
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/hamster/hamster-applet.py
 

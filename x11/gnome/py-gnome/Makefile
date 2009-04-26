@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/03/10 19:33:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=	GNOME Python bindings
 
@@ -38,8 +38,7 @@ USE_X11=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		PYTHON=${MODPY_BIN}
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-configure:

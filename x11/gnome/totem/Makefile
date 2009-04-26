@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
@@ -61,7 +61,6 @@ TOTEM_PLUGINS=	"galago gromit media-player-keys ontop properties \
 
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		PYTHON=${MODPY_BIN} \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include "
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 	        --with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/totem \

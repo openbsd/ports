@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/28 18:12:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=		lockdown editor for GNOME
 
@@ -27,7 +27,6 @@ RUN_DEPENDS=		::devel/gettext \
 			::x11/gnome/py-gnome-desktop \
 			::x11/gnome/yelp
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

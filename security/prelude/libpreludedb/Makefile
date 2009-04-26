@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/03/23 19:37:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT-main=	Prelude framework database-access library
 COMMENT-pgsql=	PostgreSQL module for libpreludedb
@@ -42,7 +42,6 @@ LIB_DEPENDS-sqlite=	${LIB_DEPENDS} \
 			sqlite3.>=8::databases/sqlite3
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
 
 PSEUDO_FLAVORS=	no_pgsql no_mysql no_sqlite
 FLAVOR?=

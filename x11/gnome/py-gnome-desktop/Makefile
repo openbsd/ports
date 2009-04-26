@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/11 21:47:47 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
@@ -48,8 +48,7 @@ LIB_DEPENDS=		gtop-2.0::devel/libgtop2 \
 USE_X11=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-metacity
 

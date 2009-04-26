@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/10 22:21:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/26 11:01:04 ajacoutot Exp $
 
 COMMENT=		module and program for processing ID3 tags
 
@@ -21,7 +21,6 @@ MODULES=		lang/python
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+= 	PYTHON="${MODPY_BIN}"
 
 NO_REGRESS=		Yes
 

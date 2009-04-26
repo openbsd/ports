@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2009/04/17 08:34:41 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2009/04/26 11:01:04 ajacoutot Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -47,7 +47,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-python
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

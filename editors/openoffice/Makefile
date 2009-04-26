@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2009/04/26 09:38:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2009/04/26 11:01:04 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -125,8 +125,7 @@ AUTOCONF_DIR=		${WRKCONF}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		QTINC="${MODQT_INCDIR}" QTDIR="${MODQT_LIBDIR}" \
-		PYTHON="${MODPY_BIN}"
+		QTINC="${MODQT_INCDIR}" QTDIR="${MODQT_LIBDIR}"
 
 CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--disable-mozilla \

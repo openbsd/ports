@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/03/23 19:21:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=	Prelude framework library
 
@@ -18,8 +18,6 @@ WANTLIB=	c gcrypt pthread z
 
 LIB_DEPENDS=	gpg-error.>=1::security/libgpg-error \
 		gnutls.>=12::security/gnutls
-
-CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
 
 .if ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	patch-* gcc-*

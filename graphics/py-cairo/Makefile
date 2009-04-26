@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/16 22:20:02 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2009/04/26 11:01:04 ajacoutot Exp $
 
 COMMENT=	cairo bindings for Python
 
@@ -27,7 +27,6 @@ USE_LIBTOOL=	Yes
 USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	PYTHON=${MODPY_BIN}
 
 pre-install:
 	perl -pi -e "s,!!MODPY_BIN!!,${MODPY_BIN}," ${WRKSRC}/test/test.test

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/15 12:49:35 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/26 11:01:04 ajacoutot Exp $
 
 COMMENT=		python bindings for libnotify
 
@@ -37,7 +37,6 @@ LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

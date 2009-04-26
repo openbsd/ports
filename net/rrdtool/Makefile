@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2009/03/11 21:29:43 bernd Exp $
+# $OpenBSD: Makefile,v 1.46 2009/04/26 11:01:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes 
 
@@ -47,8 +47,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include/libart-2.0 \
 		-I${X11BASE}/include/ \
 		-I${X11BASE}/include/freetype2
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		PYTHON=${MODPY_BIN}
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 WANTLIB-main=		c m z freetype
 LIB_DEPENDS-main=	png::graphics/png \

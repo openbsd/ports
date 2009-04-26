@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/03/16 22:20:02 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2009/04/26 11:01:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,12 +24,13 @@ WANTLIB=	pcre
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pygobject/${V:R}/}
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	devel/gettext lang/python
+MODULES=	devel/gettext \
+		lang/python
+
 LIB_DEPENDS=	gio-2.0.>=1800.0,glib-2.0.>=1800.0,gmodule-2.0.>=2.1800,gobject-2.0.>=1800.0,gthread-2.0.>=1800.0::devel/glib2
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	PYTHON="${MODPY_BIN}"
 
 REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
 

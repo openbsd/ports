@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/04/14 18:43:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/04/26 11:01:04 ajacoutot Exp $
 
 COMMENT=		GTK frontend to recorMyDesktop
 
@@ -19,8 +19,7 @@ USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-                        LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+                        LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/gtk-recordMyDesktop.in

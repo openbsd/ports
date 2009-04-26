@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/04/06 10:09:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2009/04/26 11:01:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -78,7 +78,6 @@ CONFIGURE_ARGS+= --disable-spell-checker
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/nss -I${LOCALBASE}/include -I${LOCALBASE}/xulrunner/include/pipnss/ -I${X11BASE}/include" \
 		LDFLAGS="-Wl,-rpath-link,${LOCALBASE}/lib/ -Wl,-rpath-link,${X11BASE}/lib/ -L${LOCALBASE}/lib -lfreebl3 -lnss3 -lnssckbi -lsmime3 -lsoftokn3 -lssl3 -pthread -lexecinfo -L${LOCALBASE}/xulrunner" \
-		HOME=/tmp \
-		PYTHON="${MODPY_BIN}"
+		HOME=/tmp
 
 .include <bsd.port.mk>

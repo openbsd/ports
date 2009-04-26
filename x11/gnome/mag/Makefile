@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/04/12 19:35:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/04/26 11:01:05 ajacoutot Exp $
 
 COMMENT=		screen magnifier for the GNOME desktop
 
@@ -38,8 +38,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-mag/ \
 			--enable-colorblind-applet=no
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 SUBST_VARS=		LIBgnome-mag_VERSION
 
