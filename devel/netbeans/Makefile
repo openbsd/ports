@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/11 23:22:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2009/04/26 09:38:25 sthen Exp $
 
 COMMENT=		NetBeans Java IDE
 
 DISTNAME=		netbeans-5_5-ide_sources
-PKGNAME=		netbeans-5.5p4
+PKGNAME=		netbeans-5.5p5
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.netbeans.org/

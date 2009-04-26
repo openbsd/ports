@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2009/03/11 23:22:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2009/04/26 09:38:25 sthen Exp $
 
 COMMENT=	xml parser for Java
 
 V=		2.9.1
 DISTNAME=	Xerces-J-bin.${V}
-PKGNAME=	xerces-${V}p3
+PKGNAME=	xerces-${V}p4
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://xml.apache.org/xerces2-j/index.html

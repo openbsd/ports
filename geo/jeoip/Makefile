@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/11 23:22:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/04/26 09:38:25 sthen Exp $
+
 COMMENT=		Java interface to GeoIP database
 DISTNAME=		jeoip-0.5
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		geo net
 PKG_ARCH=		*
 

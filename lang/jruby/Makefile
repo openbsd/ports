@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/11 23:22:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/04/26 09:38:25 sthen Exp $
 
 COMMENT =	pure-Java implementation of the Ruby language
 
 V =		1.1.3
 RUBY_REV =	1.8
 DISTNAME =	jruby-src-${V}
-PKGNAME =	jruby-${V}p1
+PKGNAME =	jruby-${V}p2
 CATEGORIES =	lang lang/ruby
 
 HOMEPAGE =	http://www.jruby.org/

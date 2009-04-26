@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2009/03/15 13:23:36 espie Exp $
+# $OpenBSD: Makefile,v 1.84 2009/04/26 09:38:25 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -10,9 +10,9 @@ VERSION=	2.4.2
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOH680_m18
 PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}p1
+PKGNAME-main=	openoffice-${VERSION}p2
 PKGNAME-kde=	openoffice-kde-${VERSION}
-PKGNAME-java=	openoffice-java-${VERSION}p1
+PKGNAME-java=	openoffice-java-${VERSION}p2
 CATEGORIES=	editors productivity
 
 SHARED_LIBS=	stlport_gcc	4.5

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/11 23:22:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2009/04/26 09:38:25 sthen Exp $
 
 COMMENT=	collecting and processing thoughts according to GTD
 
 V=		2.0.1
 DISTNAME=	tr-$V
-PKGNAME=	thinkingrock-${V}p4
+PKGNAME=	thinkingrock-${V}p5
 CATEGORIES=	productivity java
 
 HOMEPAGE=	http://www.thinkingrock.com.au/
