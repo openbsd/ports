@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/03/25 21:24:24 naddy Exp $
-bin/sndfile-convert
-bin/sndfile-info
-bin/sndfile-play
+@comment $OpenBSD: PLIST,v 1.8 2009/04/26 17:18:42 jasper Exp $
+%%SHARED%%
+@bin bin/sndfile-cmp
+@bin bin/sndfile-convert
+@bin bin/sndfile-info
+@bin bin/sndfile-jackplay
+@bin bin/sndfile-metadata-get
+@bin bin/sndfile-metadata-set
+@bin bin/sndfile-play
 @comment bin/sndfile-regtest
 include/sndfile.h
 include/sndfile.hh
@@ -27,11 +32,5 @@ share/doc/libsndfile/new_file_type.HOWTO
 share/doc/libsndfile/octave.html
 share/doc/libsndfile/pkgconfig.html
 share/doc/libsndfile/sndfile_info.html
+share/doc/libsndfile/tutorial.html
 share/doc/libsndfile/win32.html
-share/octave/
-share/octave/site/
-share/octave/site/m/
-share/octave/site/m/sndfile_load.m
-share/octave/site/m/sndfile_play.m
-share/octave/site/m/sndfile_save.m
-%%SHARED%%
