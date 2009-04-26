@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/04/24 12:23:14 wcmaier Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/04/26 16:27:36 wcmaier Exp $
 %%SHARED%%
 bin/hg
 lib/python${MODPY_VERSION}/site-packages/hgext/
@@ -183,19 +183,6 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/ignore.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/ignore.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/keepalive.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/keepalive.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/locale/
-lib/python${MODPY_VERSION}/site-packages/mercurial/locale/da/
-lib/python${MODPY_VERSION}/site-packages/mercurial/locale/da/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/mercurial/locale/da/LC_MESSAGES/hg.mo
-lib/python${MODPY_VERSION}/site-packages/mercurial/locale/it/
-lib/python${MODPY_VERSION}/site-packages/mercurial/locale/it/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/mercurial/locale/it/LC_MESSAGES/hg.mo
-lib/python${MODPY_VERSION}/site-packages/mercurial/locale/ja/
-lib/python${MODPY_VERSION}/site-packages/mercurial/locale/ja/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/mercurial/locale/ja/LC_MESSAGES/hg.mo
-lib/python${MODPY_VERSION}/site-packages/mercurial/locale/zh/
-lib/python${MODPY_VERSION}/site-packages/mercurial/locale/zh/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/mercurial/locale/zh/LC_MESSAGES/hg.mo
 lib/python${MODPY_VERSION}/site-packages/mercurial/localrepo.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/localrepo.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/lock.py
