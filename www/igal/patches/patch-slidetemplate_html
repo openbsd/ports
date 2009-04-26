@@ -1,0 +1,11 @@
+$OpenBSD: patch-slidetemplate_html,v 1.1 2009/04/26 01:24:37 ckuethe Exp $
+--- slidetemplate.html.orig	Mon Jan  3 07:13:49 2005
++++ slidetemplate.html	Wed Mar 25 16:36:12 2009
+@@ -40,6 +40,7 @@
+       </TABLE>
+ 
+       <P class="center"><!--IMAGE-CAPTION--></P>
++      <P class="center"><!--IMAGE-EXIF--></P>
+     </DIV>
+ 
+     <P class="center">

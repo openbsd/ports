@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/02 20:09:01 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2009/04/26 01:24:37 ckuethe Exp $
 
 COMMENT=	online Image GALlery generator
 
 V=		1.4.7
 DISTNAME=	igal-$V-wt
-PKGNAME=	igal-$V
+PKGNAME=	igal-${V}p0
 CATEGORIES=	www graphics
 
 HOMEPAGE=	http://trexler.at/igal/
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}
 
 RUN_DEPENDS=	::graphics/ImageMagick \
-		::graphics/jpeg
+		::graphics/jpeg \
+		::graphics/jhead
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

@@ -1,0 +1,66 @@
+$OpenBSD: patch-igal,v 1.1 2009/04/26 01:24:37 ckuethe Exp $
+--- igal.orig	Wed Feb 27 05:18:03 2008
++++ igal	Wed Mar 25 16:37:24 2009
+@@ -32,6 +32,12 @@ $HAVEIM = 0;
+ #
+ $HAVELJ = 0;
+ ############################################################################
++# If you KNOW you have Jhead installed then setting this equal to 1 may speed
++# up the code a bit (igal will stop checking for these commands every time it
++# runs)
++#
++$HAVEJH = 0;
++############################################################################
+ 
+ # This is IGAL version 1.4.7-wt, an online Image GALlery generator.
+ #   Copyright (C) 2000 Eric Pop
+@@ -83,6 +89,7 @@ $opt_d = ".";          # look in current directory "."
+ $opt_f = "0";          # -f to force thumbnail regeneration
+ $opt_h = "0";
+ $opt_i = "index.html"; # name of the main thumbnail index file
++$opt_j = "0";          # -j uses jhead to extract EXIF metadata
+ $opt_k = "0";          # -k for the captions to also be used as slide titles
+ $opt_m = "";           # -m Apply a watermark to each image
+ $opt_n = "0";          # -n to use image file names for the .html files
+@@ -115,6 +122,7 @@ Options:     -a           write image sizes under thum
+              -f           force thumbnail regeneration
+              -h           displays this brief help; same as --help
+              -i <file>    name of the main thumbnail index file (index.html)
++             -j           add EXIF metadata to the slide pages
+              -k           use the image captions for the HTML slide titles
+              -m <file>    Automatically add watermark to each image
+              -n           use image file names for the HTML slide files
+@@ -165,7 +173,7 @@ END_OF_USAGE
+ @igal_options = @ARGV;
+ 
+ # process command-line arguments (overriding defaults above)
+-GetOptions('a','c','C','d=s','f','h','i=s','k','m=s','n','o=s',
++GetOptions('a','c','C','d=s','f','h','i=s','j','k','m=s','n','o=s',
+            'p=i','r','s','t=i','u','w=i','x','y=i','ad','as',
+            'bigy=i', 'con=s','help','im','www','xy=i', 'dest=s', 
+ 	   'AddSubdir') or die "$usage";
+@@ -313,6 +321,10 @@ print "\nWARNING:  The ImageMagick package (imagemagic
+ $HAVELJ = (&exist("cjpeg") and &exist("djpeg") &exist("pnmscale")) unless ($HAVELJ or ($njpg == 0) or $HAVEIM);
+ print "\nWARNING:  at least one of the commands \"cjpeg\", \"djpeg\" and \"pnmscale\" is not\ninstalled.  You can find these at rpmfind.net (inside libjpeg and libgr-progs)\nor you can download the source code from:\n    http://www.ijg.org/ and\n    http://netpbm.sourceforge.net/\n\n" unless ($HAVELJ or ($njpg == 0) or $HAVEIM);
+ 
++# find out if the jhead exists
++$HAVEJH = (&exist("jhead")) unless ($HAVEJH);
++print "\nWARNING: The Jhead package is not installed; without it you won't get information about the camera used to take the photo.\n" unless ($HAVEJH);
++
+ # give up if no image processing commands can be found
+ die "ERROR:  the necessary image processing tools aren't installed on your system.\nPlease obtain them as specified above.\n\n" unless ($HAVEIM or $HAVELJ);
+ 
+@@ -529,7 +541,12 @@ if ($opt_s) {
+ 				$workarea =~ s/<!--THIS-IMAGE-->/$destback$imgfile_i_encoded/g;
+ 			}
+ 		}
+-		
++		# exif metadata
++		if ($opt_j && $HAVEJH) {
++			local $f = $imgfiles[$i];
++			local $exif = `jhead $f | egrep -v '^File|Camera make' | grep : | sed 's/\$/<br>/'`;
++			$workarea =~ s/<!--IMAGE-EXIF-->/$exif/;
++		}
+ 		# add in the image counter unless -x is specified
+ 		if ($opt_x) {
+ 			$imagecaption = $captions[$i];
