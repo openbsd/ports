@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.18 2008/10/06 09:37:02 espie Exp $
+# $OpenBSD: register-plist,v 1.19 2009/04/26 08:45:09 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -301,8 +301,9 @@ for my $pkgfile (@ARGV) {
 		die "Bad package $pkgfile";
 	}
 
-	my $plist = $pkg->plist();
+	my $plist = $pkg->plist;
 	undef $plist->{ OpenBSD::PackageInfo::COMMENT };
+	undef $plist->{"digital-signature"};
 
 	my $l = $plist->{items};
 	if ($l->[@$l-1]->isa('OpenBSD::PackingElement::Cwd') &&
@@ -310,12 +311,12 @@ for my $pkgfile (@ARGV) {
 	    pop @$l;
 	}
 
-	$plist->forget_details();
-	$pkg->close();
-	$pkg->wipe_info();
+	$plist->forget_details;
+	$pkg->close;
+	$pkg->wipe_info;
 	for my $dir (@dirs) {
 		next unless -d $dir;
-		my $result = $dir.'/'.$plist->pkgname();
+		my $result = $dir.'/'.$plist->pkgname;
 		if (-f $result) {
 			my $plist2 = OpenBSD::PackingList->fromfile($result);
 			my $r = my_compare($plist, $plist2);
@@ -333,7 +334,7 @@ for my $pkgfile (@ARGV) {
 		}
 	}
 	if (!$error) {
-		my $result = $dirs[0].'/'.$plist->pkgname();
+		my $result = $dirs[0].'/'.$plist->pkgname;
 		if (!-f $result) {
 			$plist->tofile($result);
 		}
