@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_def_h,v 1.5 2009/02/09 00:11:23 sthen Exp $
---- config.def.h.orig	Sun Feb  8 09:46:55 2009
-+++ config.def.h	Sun Feb  8 14:44:57 2009
+$OpenBSD: patch-config_def_h,v 1.6 2009/04/26 13:23:31 sthen Exp $
+--- config.def.h.orig	Mon Apr 20 15:49:55 2009
++++ config.def.h	Mon Apr 20 15:53:36 2009
 @@ -1,13 +1,13 @@
  /* See LICENSE file for copyright and license details. */
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-config_def_h,v 1.5 2009/02/09 00:11:23 sthen Exp $
  static unsigned int borderpx        = 1;        /* border pixel of windows */
  static unsigned int snap            = 32;       /* snap pixel */
  static Bool showbar                 = True;     /* False means no bar */
-@@ -23,6 +23,8 @@ static Rule rules[] = {
+@@ -21,6 +21,8 @@ static Rule rules[] = {
  	/* class      instance    title       tags mask     isfloating */
  	{ "Gimp",     NULL,       NULL,       0,            True },
  	{ "Firefox",  NULL,       NULL,       1 << 8,       True },
@@ -31,7 +31,7 @@ $OpenBSD: patch-config_def_h,v 1.5 2009/02/09 00:11:23 sthen Exp $
  };
  
  /* layout(s) */
-@@ -49,7 +51,7 @@ static Layout layouts[] = {
+@@ -47,7 +49,7 @@ static Layout layouts[] = {
  
  /* commands */
  static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };

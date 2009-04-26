@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_mk,v 1.4 2009/02/09 00:11:23 sthen Exp $
---- config.mk.orig	Sun Feb  8 09:46:55 2009
-+++ config.mk	Sun Feb  8 14:44:57 2009
-@@ -4,28 +4,28 @@ VERSION = 5.4
+$OpenBSD: patch-config_mk,v 1.5 2009/04/26 13:23:31 sthen Exp $
+--- config.mk.orig	Mon Apr 20 15:36:56 2009
++++ config.mk	Mon Apr 20 15:40:20 2009
+@@ -4,28 +4,28 @@ VERSION = 5.5
  # Customize below to fit your system
  
  # paths
@@ -16,10 +16,8 @@ $OpenBSD: patch-config_mk,v 1.4 2009/02/09 00:11:23 sthen Exp $
 +X11LIB = ${X11BASE}/lib
  
  # Xinerama, un-comment if you want it
--#XINERAMALIBS = -L${X11LIB} -lXinerama
--#XINERAMAFLAGS = -DXINERAMA
-+XINERAMALIBS = -L${X11LIB} -lXinerama
-+XINERAMAFLAGS = -DXINERAMA
+ XINERAMALIBS = -L${X11LIB} -lXinerama
+ XINERAMAFLAGS = -DXINERAMA
  
  # includes and libs
 -INCS = -I. -I/usr/include -I${X11INC}
