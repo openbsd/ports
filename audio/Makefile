@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.222 2009/04/23 19:30:27 landry Exp $
+# $OpenBSD: Makefile,v 1.223 2009/04/26 17:16:40 jasper Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -33,7 +33,6 @@
      SUBDIR += gmpc
      SUBDIR += gmpc-libnotify
      SUBDIR += gmpc-plugins
-     SUBDIR += gmpc-serverstats
      SUBDIR += gnomad2
      SUBDIR += gogo
      SUBDIR += gqmpeg
