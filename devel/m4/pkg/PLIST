@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/04/14 21:38:37 jasper Exp $
-bin/gm4
+@comment $OpenBSD: PLIST,v 1.9 2009/04/26 19:45:53 sthen Exp $
+@bin bin/gm4
 @info info/m4.info
 @comment lib/charset.alias
 @man man/man1/gm4.1
@@ -7,6 +7,7 @@ share/examples/gm4/
 share/examples/gm4/capitalize.m4
 share/examples/gm4/capitalize2.m4
 share/examples/gm4/comments.m4
+share/examples/gm4/curry.m4
 share/examples/gm4/ddivert.m4
 share/examples/gm4/debug.m4
 share/examples/gm4/esyscmd.m4
@@ -17,8 +18,10 @@ share/examples/gm4/foreach2.m4
 share/examples/gm4/foreachq.m4
 share/examples/gm4/foreachq2.m4
 share/examples/gm4/foreachq3.m4
+share/examples/gm4/foreachq4.m4
 share/examples/gm4/forloop.m4
 share/examples/gm4/forloop2.m4
+share/examples/gm4/forloop3.m4
 share/examples/gm4/fstab.m4
 share/examples/gm4/hanoi.m4
 share/examples/gm4/incl-test.m4
@@ -34,6 +37,8 @@ share/examples/gm4/pushpop.m4
 share/examples/gm4/quote.m4
 share/examples/gm4/regexp.m4
 share/examples/gm4/reverse.m4
+share/examples/gm4/stack.m4
+share/examples/gm4/stack_sep.m4
 share/examples/gm4/sync-lines.m4
 share/examples/gm4/sysv-args.m4
 share/examples/gm4/trace.m4
