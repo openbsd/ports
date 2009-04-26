@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_interface_interface_cpp,v 1.1 2009/04/26 12:31:49 landry Exp $
+--- src/interface/interface.cpp.orig	Sun Apr 26 12:07:20 2009
++++ src/interface/interface.cpp	Sun Apr 26 12:11:48 2009
+@@ -359,7 +359,8 @@ void Interface::DrawMapPreview()
+       Rectanglei water(0, rect_preview.GetSizeY()-h, rect_preview.GetSizeX(), h);
+ 
+ 
+-      Surface water_surf(Surface(GetWorld().ground.GetPreviewSize(),SDL_SWSURFACE, true));
++      Surface water_surf;
++      water_surf = Surface(GetWorld().ground.GetPreviewSize(),SDL_SWSURFACE, true);
+ 
+       // Draw box with color according to water type
+       water_surf.BoxColor(water, water_color);
+@@ -400,7 +401,8 @@ void Interface::DrawMapPreview()
+ void Interface::GenerateStyledBox(Surface & source)
+ {
+ 
+-  Surface save_surf(Surface(GetWorld().ground.GetPreviewSize(),SDL_SWSURFACE, true));
++  Surface save_surf;
++  save_surf = Surface(GetWorld().ground.GetPreviewSize(),SDL_SWSURFACE, true);
+   save_surf.MergeSurface(source, Point2i(0,0));
+   Rectanglei temp_rect;
+ 
