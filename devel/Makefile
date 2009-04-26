@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.690 2009/04/23 10:36:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.691 2009/04/26 19:42:31 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -70,6 +70,7 @@
      SUBDIR += dejagnu
      SUBDIR += desktop-file-utils
      SUBDIR += doc++
+     SUBDIR += dotconf
      SUBDIR += doxygen
      SUBDIR += eclipse
      SUBDIR += ectags
