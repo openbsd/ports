@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-docs,v 1.1.1.1 2008/09/17 11:56:35 jasper Exp $
+@comment $OpenBSD: PLIST-docs,v 1.2 2009/04/26 21:58:24 jasper Exp $
 share/doc/bouml/
 share/doc/bouml/activity.html
 share/doc/bouml/activityaction.html
 share/doc/bouml/activitycontrolnode.html
 share/doc/bouml/activitydiagram.html
 share/doc/bouml/activityobject.html
+share/doc/bouml/activitypartition.html
 share/doc/bouml/activityregion.html
 share/doc/bouml/artifact.html
 share/doc/bouml/attribute.html
@@ -191,6 +192,10 @@ share/doc/bouml/empty_html/class149506.html
 share/doc/bouml/empty_html/class149632.html
 share/doc/bouml/empty_html/class149762.html
 share/doc/bouml/empty_html/class149888.html
+share/doc/bouml/empty_html/class150016.html
+share/doc/bouml/empty_html/class150144.html
+share/doc/bouml/empty_html/class150272.html
+share/doc/bouml/empty_html/class150403.html
 share/doc/bouml/empty_html/class1536.html
 share/doc/bouml/empty_html/class1664.html
 share/doc/bouml/empty_html/class1792.html
@@ -387,6 +392,7 @@ share/doc/bouml/figs/activityobjectedit4.png
 share/doc/bouml/figs/activityobjectmenu.png
 share/doc/bouml/figs/activityobjectpictmenu.png
 share/doc/bouml/figs/activityobjectstereotypes.png
+share/doc/bouml/figs/activitypartition.png
 share/doc/bouml/figs/activitypictmenu.png
 share/doc/bouml/figs/activitystereotypes.png
 share/doc/bouml/figs/actor.png
@@ -480,6 +486,7 @@ share/doc/bouml/figs/browsernode.png
 share/doc/bouml/figs/browserobjectdiagram.png
 share/doc/bouml/figs/browseroperation.png
 share/doc/bouml/figs/browserpackage.png
+share/doc/bouml/figs/browserpartition.png
 share/doc/bouml/figs/browserregion.png
 share/doc/bouml/figs/browserrelation1.png
 share/doc/bouml/figs/browserrelation1b.png
@@ -666,6 +673,7 @@ share/doc/bouml/figs/expansionregion1.png
 share/doc/bouml/figs/expansionregiondrawingsettings.png
 share/doc/bouml/figs/expansionregionedit1.png
 share/doc/bouml/figs/expansionregionpictmenu.png
+share/doc/bouml/figs/extension.png
 share/doc/bouml/figs/extramember.png
 share/doc/bouml/figs/extramemberadd.png
 share/doc/bouml/figs/extramemberedit1.png
@@ -694,6 +702,7 @@ share/doc/bouml/figs/flowmenu1.png
 share/doc/bouml/figs/flowpictmenu.png
 share/doc/bouml/figs/flowstereotypes.png
 share/doc/bouml/figs/fragment.png
+share/doc/bouml/figs/fragmentedit.png
 share/doc/bouml/figs/fragmentmenu1.png
 share/doc/bouml/figs/free_package.png
 share/doc/bouml/figs/globalchange1.png
@@ -816,6 +825,12 @@ share/doc/bouml/figs/paramsetedit1.png
 share/doc/bouml/figs/paramsetedit2.png
 share/doc/bouml/figs/paramsetmenu.png
 share/doc/bouml/figs/paramsetpictmenu.png
+share/doc/bouml/figs/partition1.png
+share/doc/bouml/figs/partitiondrawingsettings.png
+share/doc/bouml/figs/partitionedit1.png
+share/doc/bouml/figs/partitionmenu.png
+share/doc/bouml/figs/partitionpictmenu.png
+share/doc/bouml/figs/partitionstereotypes.png
 share/doc/bouml/figs/phpreverse.png
 share/doc/bouml/figs/pin1.png
 share/doc/bouml/figs/pindrawingsettings.png
@@ -1026,6 +1041,7 @@ share/doc/bouml/index_activityaction.html
 share/doc/bouml/index_activitycontrolnode.html
 share/doc/bouml/index_activitydiagram.html
 share/doc/bouml/index_activityobject.html
+share/doc/bouml/index_activitypartition.html
 share/doc/bouml/index_activityregion.html
 share/doc/bouml/index_artifact.html
 share/doc/bouml/index_attribute.html
