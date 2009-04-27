@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/03/17 19:44:51 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.12 2009/04/27 07:17:47 sturm Exp $
 bin/getmail
 bin/getmail_fetch
 bin/getmail_maildir
@@ -13,6 +13,8 @@ lib/python${MODPY_VERSION}/site-packages/getmailcore/_retrieverbases.py
 lib/python${MODPY_VERSION}/site-packages/getmailcore/_retrieverbases.pyc
 lib/python${MODPY_VERSION}/site-packages/getmailcore/baseclasses.py
 lib/python${MODPY_VERSION}/site-packages/getmailcore/baseclasses.pyc
+lib/python${MODPY_VERSION}/site-packages/getmailcore/compatibility.py
+lib/python${MODPY_VERSION}/site-packages/getmailcore/compatibility.pyc
 lib/python${MODPY_VERSION}/site-packages/getmailcore/constants.py
 lib/python${MODPY_VERSION}/site-packages/getmailcore/constants.pyc
 lib/python${MODPY_VERSION}/site-packages/getmailcore/destinations.py
