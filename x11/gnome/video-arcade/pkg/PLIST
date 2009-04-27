@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/04/10 22:35:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/04/27 06:55:20 ajacoutot Exp $
 @bin bin/gnome-video-arcade
 @man man/man1/gnome-video-arcade.1
 share/applications/gnome-video-arcade.desktop
@@ -16,10 +16,29 @@ share/gnome/help/gnome-video-arcade/C/figures/gva_recorded_games.png
 share/gnome/help/gnome-video-arcade/C/figures/gva_search_window.png
 share/gnome/help/gnome-video-arcade/C/gnome-video-arcade.xml
 share/gnome/help/gnome-video-arcade/C/legal.xml
+share/gnome/help/gnome-video-arcade/de/
+share/gnome/help/gnome-video-arcade/de/figures/
+share/gnome/help/gnome-video-arcade/de/figures/gva_building_database.png
+share/gnome/help/gnome-video-arcade/de/figures/gva_column_preferences.png
+share/gnome/help/gnome-video-arcade/de/figures/gva_general_preferences.png
+share/gnome/help/gnome-video-arcade/de/figures/gva_main_window.png
+share/gnome/help/gnome-video-arcade/de/figures/gva_recorded_games.png
+share/gnome/help/gnome-video-arcade/de/figures/gva_search_window.png
+share/gnome/help/gnome-video-arcade/de/gnome-video-arcade.xml
+share/gnome/help/gnome-video-arcade/sv/
+share/gnome/help/gnome-video-arcade/sv/figures/
+share/gnome/help/gnome-video-arcade/sv/figures/gva_building_database.png
+share/gnome/help/gnome-video-arcade/sv/figures/gva_column_preferences.png
+share/gnome/help/gnome-video-arcade/sv/figures/gva_general_preferences.png
+share/gnome/help/gnome-video-arcade/sv/figures/gva_main_window.png
+share/gnome/help/gnome-video-arcade/sv/figures/gva_recorded_games.png
+share/gnome/help/gnome-video-arcade/sv/figures/gva_search_window.png
+share/gnome/help/gnome-video-arcade/sv/gnome-video-arcade.xml
 share/gtk-doc/html/gnome-video-arcade/
 share/gtk-doc/html/gnome-video-arcade/GvaCellRendererPixbuf.html
 share/gtk-doc/html/gnome-video-arcade/GvaColumnManager.html
 share/gtk-doc/html/gnome-video-arcade/GvaGameStore.html
+share/gtk-doc/html/gnome-video-arcade/GvaInputFile.html
 share/gtk-doc/html/gnome-video-arcade/GvaLinkButton.html
 share/gtk-doc/html/gnome-video-arcade/GvaMameProcess.html
 share/gtk-doc/html/gnome-video-arcade/GvaMuteButton.html
@@ -60,10 +79,13 @@ share/gtk-doc/html/gnome-video-arcade/up.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gnome-video-arcade.svg
+share/locale/de/LC_MESSAGES/gnome-video-arcade.mo
 share/locale/fr/LC_MESSAGES/gnome-video-arcade.mo
 share/locale/sv/LC_MESSAGES/gnome-video-arcade.mo
 share/omf/gnome-video-arcade/
 share/omf/gnome-video-arcade/gnome-video-arcade-C.omf
+share/omf/gnome-video-arcade/gnome-video-arcade-de.omf
+share/omf/gnome-video-arcade/gnome-video-arcade-sv.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gnome-video-arcade/*.schemas > /dev/null
 share/schemas/gnome-video-arcade/
 share/schemas/gnome-video-arcade/gnome-video-arcade.schemas
