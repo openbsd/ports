@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2009/04/06 07:40:30 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2009/04/27 19:25:08 landry Exp $
 
 COMMENT =	open source web browser engine
 
-V = 41894
-DISTNAME =	WebKit-r${V}
-PKGNAME =	webkit-${V}p0
+V = 1.1.5
+DISTNAME =	webkit-${V}
+PKGNAME =	webkit-${V}v0
 CATEGORIES =	www
-EXTRACT_SUFX =	.tar.bz2
 
-HOMEPAGE =	http://webkit.org/
-MASTER_SITES =	http://builds.nightly.webkit.org/files/trunk/src/
+HOMEPAGE =	http://webkitgtk.org/
+MASTER_SITES =	${HOMEPAGE}
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
-SHARED_LIBS =	webkit-1.0	0.0 \
-		testnetscapeplugin	0.0
+SHARED_LIBS =	webkit-1.0	0.1
 
 # LGPLv2 / BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -35,8 +33,6 @@ MODULES =	converters/libiconv \
 MODGCC4_ARCHES =*
 MODGCC4_LANGS =	c c++
 
-AUTOMAKE_VERSION =	1.9
-AUTOCONF_VERSION =	2.59
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS =	--disable-video
@@ -61,12 +57,6 @@ LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2,-main \
 
 
 BUILD_DEPENDS =	::devel/bison \
-		::devel/gperf \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
-pre-configure:
-	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+		::devel/gperf
 
 .include <bsd.port.mk>
