@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2009/04/22 11:43:54 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.3 2009/04/27 08:43:04 ajacoutot Exp $
 
 Post-install/update instructions for Zarafa
 ===========================================
@@ -63,24 +63,26 @@ zarafa-server may need some time to correctly shut down.
 It is advised you use something like the following at the end of your
 /etc/rc.shutdown file:
 
-echo "Shutting down Zarafa..."
-pkill zarafa-ical
-pkill zarafa-gateway
-pkill zarafa-monitor
-pkill zarafa-spooler
-pkill zarafa-server
-sleep 10
-i=0
-while [ $i -lt 60 ]
-do
-	if [ "`pgrep zarafa-server`" ]; then
-		pkill zarafa-server
-		sleep 10
-		i=`expr $i + 10`
-	else
-		i=60
-	fi
-done
+if [ "`pgrep zarafa`" ]; then
+	echo "Shutting down Zarafa..."
+	pkill zarafa-ical
+	pkill zarafa-gateway
+	pkill zarafa-monitor
+	pkill zarafa-spooler
+	pkill zarafa-server
+	sleep 10
+	i=0
+	while [ $i -lt 60 ]
+		do
+		if [ "`pgrep zarafa-server`" ]; then
+			pkill zarafa-server
+			sleep 10
+			i=`expr $i + 10`
+		else
+			i=60
+		fi
+	done
+fi
 
 
 Mail delivery agent configuration
