@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/03/18 19:38:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/04/27 16:34:22 ajacoutot Exp $
 @bin bin/dasher
 @man man/man1/dasher.1
 share/applications/dasher.desktop
@@ -226,6 +226,24 @@ share/gnome/help/dasher/de/figures/prefs2.png
 share/gnome/help/dasher/de/figures/prefs3.png
 share/gnome/help/dasher/de/figures/prefs4.png
 share/gnome/help/dasher/de/figures/prefs5.png
+share/gnome/help/dasher/el/
+share/gnome/help/dasher/el/dasher.xml
+share/gnome/help/dasher/el/figures/
+share/gnome/help/dasher/el/figures/a-z.gif
+share/gnome/help/dasher/el/figures/aa-az.gif
+share/gnome/help/dasher/el/figures/ala-alz.gif
+share/gnome/help/dasher/el/figures/exampleHad2.png
+share/gnome/help/dasher/el/figures/exampleHad2a.png
+share/gnome/help/dasher/el/figures/exampleHad3a.png
+share/gnome/help/dasher/el/figures/exampleHad4.png
+share/gnome/help/dasher/el/figures/figure2.png
+share/gnome/help/dasher/el/figures/main.png
+share/gnome/help/dasher/el/figures/object.gif
+share/gnome/help/dasher/el/figures/prefs1.png
+share/gnome/help/dasher/el/figures/prefs2.png
+share/gnome/help/dasher/el/figures/prefs3.png
+share/gnome/help/dasher/el/figures/prefs4.png
+share/gnome/help/dasher/el/figures/prefs5.png
 share/gnome/help/dasher/en_GB/
 share/gnome/help/dasher/en_GB/dasher.xml
 share/gnome/help/dasher/en_GB/figures/
@@ -448,6 +466,7 @@ share/locale/zh_TW/LC_MESSAGES/dasher.mo
 share/omf/dasher/
 share/omf/dasher/dasher-C.omf
 share/omf/dasher/dasher-de.omf
+share/omf/dasher/dasher-el.omf
 share/omf/dasher/dasher-en_GB.omf
 share/omf/dasher/dasher-es.omf
 share/omf/dasher/dasher-eu.omf
