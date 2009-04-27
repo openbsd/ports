@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/04/04 11:05:08 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/04/27 19:27:21 landry Exp $
 @bin bin/midori
 lib/midori/
 lib/midori/libcolorful-tabs.so
+lib/midori/libcookie-manager.so
 lib/midori/libmouse-gestures.so
 lib/midori/libpage-holder.so
 lib/midori/libstatusbar-features.so
-lib/midori/libtab-panel.so
 share/applications/midori.desktop
 share/doc/midori/
 share/doc/midori/user/
@@ -36,6 +36,7 @@ share/locale/et/LC_MESSAGES/midori.mo
 share/locale/fi/LC_MESSAGES/midori.mo
 share/locale/fr/LC_MESSAGES/midori.mo
 share/locale/gl/LC_MESSAGES/midori.mo
+share/locale/he/LC_MESSAGES/midori.mo
 share/locale/hu/LC_MESSAGES/midori.mo
 share/locale/id/LC_MESSAGES/midori.mo
 share/locale/it/LC_MESSAGES/midori.mo

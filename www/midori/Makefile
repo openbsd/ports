@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/04 11:05:08 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2009/04/27 19:27:21 landry Exp $
 
 COMMENT =	lightweight web browser
 
-XFCE_VERSION =	0.1.5
+XFCE_VERSION =	0.1.6
 XFCE_GOODIE =	midori
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
@@ -20,7 +20,7 @@ USE_X11 =	Yes
 DESKTOP_FILES =	Yes
 NO_REGRESS =	Yes
 
-LIB_DEPENDS =	webkit-1.0::www/webkit \
+LIB_DEPENDS =	webkit-1.0:webkit->=1.1.5v0:www/webkit \
 		idn::devel/libidn \
 		sqlite3::databases/sqlite3 \
 		unique-1.0::devel/libunique \

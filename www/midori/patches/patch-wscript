@@ -1,8 +1,8 @@
-$OpenBSD: patch-wscript,v 1.4 2009/04/04 11:05:08 landry Exp $
+$OpenBSD: patch-wscript,v 1.5 2009/04/27 19:27:21 landry Exp $
 We don't need those files installed..
---- wscript.orig	Sun Mar 22 22:49:18 2009
-+++ wscript	Sat Apr  4 12:45:44 2009
-@@ -268,12 +268,8 @@ def build (bld):
+--- wscript.orig	Sun Apr 19 22:16:33 2009
++++ wscript	Thu Apr 23 21:42:19 2009
+@@ -267,12 +267,8 @@ def build (bld):
      if option_enabled ('addons'):
          bld.add_subdirs ('extensions')
  
