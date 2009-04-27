@@ -1,4 +1,4 @@
-$OpenBSD: patch-eval_c,v 1.5 2009/03/07 12:30:17 bernd Exp $
+$OpenBSD: patch-eval_c,v 1.6 2009/04/27 10:54:09 bernd Exp $
 
 Fix usage of short-named constants.
 
@@ -8,15 +8,6 @@ https://bugs.launchpad.net/ubuntu/+source/ruby1.8/+bug/282302
 
 --- eval.c.orig	Mon Aug  4 05:16:55 2008
 +++ eval.c	Mon Mar  2 13:18:59 2009
-@@ -1066,7 +1066,7 @@ static VALUE ruby_wrapper;	/* security wrapper */
- 
- NODE *ruby_cref = 0;
- NODE *ruby_top_cref;
--#define PUSH_CREF(c) ruby_cref = NEW_NODE(NODE_CREF,(c),0,ruby_cref)
-+#define PUSH_CREF(c) ruby_cref = NEW_CREF(c,ruby_cref)
- #define POP_CREF() ruby_cref = ruby_cref->nd_next
- 
- #define PUSH_SCOPE() do {		\
 @@ -1399,7 +1399,7 @@ ruby_init()
  	rb_call_inits();
  	ruby_class = rb_cObject;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-random_c,v 1.1 2009/03/23 00:35:44 jakemsr Exp $
---- random.c.orig	Sun Mar 22 02:29:55 2009
-+++ random.c	Sun Mar 22 02:30:35 2009
-@@ -275,7 +275,11 @@ random_seed()
+$OpenBSD: patch-random_c,v 1.2 2009/04/27 10:54:09 bernd Exp $
+--- random.c.orig	Sat Jan 17 04:15:36 2009
++++ random.c	Sat Apr  4 15:25:11 2009
+@@ -273,7 +273,11 @@ random_seed()
      memset(digits, 0, big->len * SIZEOF_BDIGITS);
  
  #ifdef S_ISCHR

@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-tk,v 1.5 2007/12/27 18:32:33 bernd Exp $
-lib/ruby/${REV}/${SUB}/tcltklib.so
-lib/ruby/${REV}/${SUB}/tkutil.so
+@comment $OpenBSD: PLIST-tk,v 1.6 2009/04/27 10:54:09 bernd Exp $
 lib/ruby/${REV}/multi-tk.rb
 lib/ruby/${REV}/remote-tk.rb
 lib/ruby/${REV}/tcltk.rb
@@ -341,3 +339,5 @@ lib/ruby/${REV}/tkscrollbox.rb
 lib/ruby/${REV}/tktext.rb
 lib/ruby/${REV}/tkvirtevent.rb
 lib/ruby/${REV}/tkwinpkg.rb
+lib/ruby/${REV}/${SUB}/tcltklib.so
+lib/ruby/${REV}/${SUB}/tkutil.so
