@@ -1,6 +1,7 @@
---- src/if/gnet_property.c.orig	Fri May 30 22:23:54 2008
-+++ src/if/gnet_property.c	Fri May 30 22:24:51 2008
-@@ -416,8 +416,8 @@
+$OpenBSD: patch-src_if_gnet_property_c,v 1.2 2009/04/27 11:57:18 jasper Exp $
+--- src/if/gnet_property.c.orig	Sun Mar 29 17:37:58 2009
++++ src/if/gnet_property.c	Sun Apr 26 20:11:54 2009
+@@ -417,8 +417,8 @@ gboolean gnet_property_variable_download_require_urn  
  static const gboolean gnet_property_variable_download_require_urn_default = FALSE;
  gboolean gnet_property_variable_download_require_server_name     = TRUE;
  static const gboolean gnet_property_variable_download_require_server_name_default = TRUE;
@@ -11,7 +12,7 @@
  guint32  gnet_property_variable_quick_connect_pool_size     = 10;
  static const guint32  gnet_property_variable_quick_connect_pool_size_default = 10;
  guint32  gnet_property_variable_max_leaves     = 150;
-@@ -4196,7 +4196,7 @@
+@@ -4286,7 +4286,7 @@ gnet_prop_init(void) {
      gnet_property->props[182].data.guint32.def   = (void *) &gnet_property_variable_max_ultrapeers_default;
      gnet_property->props[182].data.guint32.value = (void *) &gnet_property_variable_max_ultrapeers;
      gnet_property->props[182].data.guint32.choices = NULL;

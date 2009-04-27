@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.18 2008/06/13 19:12:44 ckuethe Exp $
-bin/gtk-gnutella
+@comment $OpenBSD: PLIST,v 1.19 2009/04/27 11:57:18 jasper Exp $
+@bin bin/gtk-gnutella
 @man man/man1/gtk-gnutella.1
 share/applications/gtk-gnutella.desktop
 share/gtk-gnutella/
@@ -20,6 +20,7 @@ share/gtk-gnutella/pixmaps/booklib.xpm
 share/gtk-gnutella/pixmaps/booksha.xpm
 share/gtk-gnutella/pixmaps/bookshav.xpm
 share/gtk-gnutella/pixmaps/booktth.xpm
+share/gtk-gnutella/pixmaps/booktthv.xpm
 share/gtk-gnutella/pixmaps/chip.xpm
 share/gtk-gnutella/pixmaps/clanbomber_red.xpm
 share/gtk-gnutella/pixmaps/clanbomber_yellow.xpm

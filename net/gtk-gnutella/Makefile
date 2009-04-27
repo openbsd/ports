@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2009/03/16 21:29:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2009/04/27 11:57:18 jasper Exp $
 
 COMMENT=		Gtk-based GUI client for the Gnutella Network
 
-DISTNAME=		gtk-gnutella-0.96.5
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		gtk-gnutella-0.96.6
 CATEGORIES=     	net
 
 HOMEPAGE=		http://gtk-gnutella.sourceforge.net/

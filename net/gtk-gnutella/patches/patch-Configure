@@ -1,7 +1,7 @@
-$OpenBSD: patch-Configure,v 1.12 2007/09/02 17:02:10 jasper Exp $
---- Configure.orig	Fri Aug 31 13:47:15 2007
-+++ Configure	Fri Aug 31 13:51:16 2007
-@@ -317,7 +317,7 @@ d_msghdr_msg_flags=''
+$OpenBSD: patch-Configure,v 1.13 2009/04/27 11:57:18 jasper Exp $
+--- Configure.orig	Sun Apr 26 20:09:45 2009
++++ Configure	Sun Apr 26 20:11:39 2009
+@@ -320,7 +320,7 @@ d_nanosleep=''
  d_nls=''
  d_open3=''
  d_poll=''
@@ -10,7 +10,7 @@ $OpenBSD: patch-Configure,v 1.12 2007/09/02 17:02:10 jasper Exp $
  d_posix_fadvise=''
  d_posix_memalign=''
  d_pread=''
-@@ -3603,7 +3603,7 @@ for file in $*; do
+@@ -1122,7 +1122,7 @@ for file in $*; do
  			dir=`expr X$file : 'X\(.*\)/'`
  			file=`expr X$file : 'X.*/\(.*\)'`
  			./mkdirp $dir
@@ -19,16 +19,16 @@ $OpenBSD: patch-Configure,v 1.12 2007/09/02 17:02:10 jasper Exp $
  			;;
  		*)
  			sh <"$SRC/$file"
-@@ -4303,7 +4303,7 @@ case "$d_dbus" in
+@@ -4325,7 +4325,7 @@ case "$d_dbus" in
  		echo "(I'll use '$dbusconfig' to gather that information.)"
  
- 		?X: Make sure we have a good enough version
+ 		: Make sure we have a good enough version
 -		version=`$dbusconfig $modver`
 +		version=``
  		case "$version" in
  		'') ;;
  		*)
-@@ -9199,15 +9199,6 @@ If you'd like to make any changes to the config.sh fil
+@@ -9351,15 +9351,6 @@ If you'd like to make any changes to the config.sh fil
  to configure things, do it as a shell escape now (e.g. !vi config.sh).
  
  EOM
