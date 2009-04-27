@@ -1,11 +1,11 @@
 #!/bin/sh
 #
-#	$OpenBSD: cups-disable,v 1.1.1.1 2005/01/16 12:36:42 mbalmer Exp $
+#	$OpenBSD: cups-disable,v 1.2 2009/04/27 08:25:39 bernd Exp $
 #
 #	this script disables CUPS by removing links created by
 #	cups-enable.
 
-PREFIX=y0y0y0
+PREFIX=${TRUEPREFIX}
 BINDIR=/usr/bin
 SBINDIR=/usr/sbin
 QUIET=No

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.44 2009/04/21 13:03:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2009/04/27 08:25:39 bernd Exp $
 
 COMMENT=		Common Unix Printing System
 
-VERSION=		1.2.7
+VERSION=		1.3.10
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		cups-${VERSION}p21
+PKGNAME=		cups-${VERSION}
 CATEGORIES=		print sysutils
 
-SHARED_LIBS+=		cups		3.0
-# XXX ghostscript needs to dlopen() libcupsimage.so.2
-SHARED_LIBS+=		cupsimage	2.3
+SHARED_LIBS+=		cups		4.0
+# XXX ghostscript needs to dlopen() libcupsimage.so.3
+SHARED_LIBS+=		cupsimage	3.0
 
 HOMEPAGE=		http://www.cups.org/
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c gcrypt gpg-error jpeg m pthread stdc++ tasn1 z
+WANTLIB += c gcrypt gpg-error jpeg m pthread tasn1 z
 
 MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 			http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
@@ -43,7 +43,10 @@ LIB_DEPENDS=		png.>=3::graphics/png \
 
 FAKE_FLAGS=		BINMODE=${BINMODE} \
 			SHAREMODE=${SHAREMODE} \
-			DBUSDIR=${WRKINST}/${TRUEPREFIX}/share/examples/cups/dbus-1/system.d
+			ICONDIR=${DESTDIR}${PREFIX}/share/icons \
+			MENUDIR=${DESTDIR}${PREFIX}/share/applications \
+			DBUSDIR=${WRKINST}/${TRUEPREFIX}/share/examples/cups/dbus-1/system.d \
+			PDFTOPS="pdftops"
 
 MAKE_ENV+=		LIBcups_VERSION=${LIBcups_VERSION} \
 			LIBcupsimage_VERSION=${LIBcupsimage_VERSION}
@@ -61,7 +64,8 @@ CONFIGURE_ARGS+=	--with-cups-user=_cups \
 			--without-perl \
 			--without-php \
 			--without-python \
-			--enable-dbus
+			--enable-dbus \
+			--disable-pdftops
 
 # XXX we need to use GnuTLS instead of OpenSSL because of conflicting
 # symbols with Mozilla NSS which can lead to crashes
@@ -73,7 +77,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			LIBcups_VERSION=${LIBcups_VERSION} \
 			LIBcupsimage_VERSION=${LIBcupsimage_VERSION} \
-			LIBGNUTLSCONFIG="pkg-config gnutls"
+			LIBGNUTLSCONFIG="pkg-config gnutls" \
+			ac_cv_path_CUPS_GHOSTSCRIPT="${LOCALBASE}/bin/gs"
 
 CFLAGS+=		"-I${LOCALBASE}/include" \
 			"-I${LOCALBASE}/include/libpng"
@@ -102,15 +107,16 @@ post-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cups/init
-	@cd ${WRKINST}${SYSCONFDIR}/cups && cp -R * \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cups/init
+	cd ${WRKINST}${SYSCONFDIR}/cups && cp -R * \
 		${PREFIX}/share/examples/cups
-	@rm -r ${WRKINST}${SYSCONFDIR}/cups ${WRKINST}/var/run \
+	rm -r ${WRKINST}${SYSCONFDIR}/cups ${WRKINST}/var/run \
 	    ${WRKINST}/var/cache
-	@${INSTALL_DATA} ${WRKBUILD}/init/cups.sh ${PREFIX}/share/cups/init
+	${INSTALL_DATA} ${WRKBUILD}/init/cups.sh ${PREFIX}/share/cups/init
 .for file in cups-enable cups-disable
-	@sed s,y0y0y0,${LOCALBASE}, < ${FILESDIR}/${file} > \
-		${PREFIX}/sbin/${file}
+	cp ${FILESDIR}/${file} ${WRKBUILD}
+	${SUBST_CMD} ${WRKBUILD}/${file}
+	${INSTALL_SCRIPT} ${WRKBUILD}/${file} ${PREFIX}/sbin
 .endfor
 
 .include <bsd.port.mk>

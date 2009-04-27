@@ -15,7 +15,7 @@ Starting cupsd will overwrite /etc/printcap. A backup copy of this file
 is saved as /etc/printcap.pre-cups by '${PREFIX}/sbin/cups-enable'
 and will be restored when you run '${PREFIX}/sbin/cups-disable'.
 
-If you want to use CUPS bundled PPD files (i.e. drivers), you'll need to
-install ghostscript.  Also if you want to print on non-PostScript
-printers, you will most probably want to install the foomatic-filters
-package which provides a universal filter script.
+If you want to print to non-Postscript printers or use CUPS bundled PPD
+files (i.e. drivers), you'll need to install ghostscript.  You will also
+most probably want to install the foomatic-filters package which
+provides a universal filter script.

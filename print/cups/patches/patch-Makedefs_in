@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makedefs_in,v 1.2 2006/10/01 10:43:38 mbalmer Exp $
---- Makedefs.in.orig	Wed Sep 20 10:46:49 2006
-+++ Makedefs.in	Wed Sep 20 10:50:10 2006
-@@ -49,13 +49,13 @@ STRIP		=	@STRIP@
+$OpenBSD: patch-Makedefs_in,v 1.3 2009/04/27 08:25:39 bernd Exp $
+--- Makedefs.in.orig	Tue Jan 22 23:37:21 2008
++++ Makedefs.in	Tue Mar 17 16:56:19 2009
+@@ -40,13 +40,13 @@ STRIP		=	@STRIP@
  # Installation programs...
  #
  
@@ -20,7 +20,35 @@ $OpenBSD: patch-Makedefs_in,v 1.2 2006/10/01 10:43:38 mbalmer Exp $
  
  #
  # Default user, group, and system groups for the scheduler...
-@@ -238,7 +238,7 @@ DBUSDIR		=	@DBUSDIR@
+@@ -206,8 +206,8 @@ DATADIR		=	$(BUILDROOT)@CUPS_DATADIR@
+ DOCDIR		=	$(BUILDROOT)@CUPS_DOCROOT@
+ ICONDIR		=	@ICONDIR@
+ INCLUDEDIR	=	$(BUILDROOT)$(includedir)
+-INITDIR		=	@INITDIR@
+-INITDDIR	=	@INITDDIR@
++INITDIR		=
++INITDDIR	=
+ LIBDIR		=	$(BUILDROOT)$(libdir)
+ LOCALEDIR	= 	$(BUILDROOT)@CUPS_LOCALEDIR@
+ LOGDIR		= 	$(BUILDROOT)@CUPS_LOGDIR@
+@@ -222,7 +222,7 @@ SBINDIR		=	$(BUILDROOT)@sbindir@
+ SERVERBIN	= 	$(BUILDROOT)@CUPS_SERVERBIN@
+ SERVERROOT	= 	$(BUILDROOT)@CUPS_SERVERROOT@
+ STATEDIR	=	$(BUILDROOT)@CUPS_STATEDIR@
+-XINETD		=	@XINETD@
++XINETD		=
+ 
+ MAN1EXT		=	@MAN1EXT@
+ MAN5EXT		=	@MAN5EXT@
+@@ -234,14 +234,14 @@ PAMDIR		=	@PAMDIR@
+ PAMFILE		=	@PAMFILE@
+ 
+ DEFAULT_LAUNCHD_CONF =	@DEFAULT_LAUNCHD_CONF@
+-DBUSDIR		=	@DBUSDIR@
++DBUSDIR		=
+ 
+ 
+ #
  # Rules...
  #
  

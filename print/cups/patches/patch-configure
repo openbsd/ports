@@ -1,16 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2009/03/23 15:04:41 ajacoutot Exp $
---- configure.orig	Thu Nov 16 15:51:56 2006
-+++ configure	Mon Mar 23 15:38:33 2009
-@@ -7179,7 +7179,7 @@ done
- 
-                 ;;
- 
--	Linux*)
-+	*)
- 				if test "x$enable_dbus" != xno; then
- 			# Extract the first word of "pkg-config", so it can be a program name with args.
- set dummy pkg-config; ac_word=$2
-@@ -7910,8 +7910,8 @@ if test x$enable_shared != xno; then
+$OpenBSD: patch-configure,v 1.7 2009/04/27 08:25:39 bernd Exp $
+--- configure.orig	Thu Apr 16 22:02:06 2009
++++ configure	Thu Apr 23 12:57:20 2009
+@@ -9874,8 +9874,8 @@ if test x$enable_shared != xno; then
  			DSOFLAGS="$DSOFLAGS -set_version,sgi2.6,-soname,\`basename \$@\` -shared \$(OPTIM)"
  			;;
  		OSF1* | Linux | GNU | *BSD*)
@@ -21,7 +12,7 @@ $OpenBSD: patch-configure,v 1.6 2009/03/23 15:04:41 ajacoutot Exp $
  			DSO="\$(CC)"
  			DSOFLAGS="$DSOFLAGS -Wl,-soname,\`basename \$@\` -shared \$(OPTIM)"
  			;;
-@@ -8162,7 +8162,7 @@ if test -n "$GCC"; then
+@@ -10141,7 +10141,7 @@ if test -n "$GCC"; then
  	if test -z "$OPTIM"; then
  		if test "x$with_optim" = x; then
  			# Default to optimize-for-size and debug
@@ -30,12 +21,21 @@ $OpenBSD: patch-configure,v 1.6 2009/03/23 15:04:41 ajacoutot Exp $
  		else
  			OPTIM="$with_optim $OPTIM"
  		fi
-@@ -12405,7 +12405,7 @@ fi
+@@ -16791,7 +16791,7 @@ fi
  
  
  	if test x$ac_cv_header_pthread_h = xyes; then
 -				for flag in -lpthreads -lpthread -pthread; do
-+				for flag in -pthread -lpthreads -lpthread ; do
-         		echo "$as_me:$LINENO: checking for pthread_create using $flag" >&5
- echo $ECHO_N "checking for pthread_create using $flag... $ECHO_C" >&6
++				for flag in -pthread -lpthreads -lpthread; do
+         		{ echo "$as_me:$LINENO: checking for pthread_create using $flag" >&5
+ echo $ECHO_N "checking for pthread_create using $flag... $ECHO_C" >&6; }
  			SAVELIBS="$LIBS"
+@@ -18877,7 +18877,7 @@ cat >>confdefs.h <<_ACEOF
+ _ACEOF
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define CUPS_GHOSTSCRIPT "$CUPS_GHOSTSCRIPT"
++#define CUPS_GHOSTSCRIPT "$ac_cv_path_CUPS_GHOSTSCRIPT"
+ _ACEOF
+ 
+ 

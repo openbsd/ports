@@ -1,19 +1,20 @@
-$OpenBSD: patch-desktop_cups_desktop,v 1.3 2009/03/04 19:50:00 jasper Exp $
---- desktop/cups.desktop.orig	Thu Nov 16 14:34:44 2006
-+++ desktop/cups.desktop	Fri Feb 27 11:23:26 2009
-@@ -1,7 +1,7 @@
+$OpenBSD: patch-desktop_cups_desktop,v 1.4 2009/04/27 08:25:39 bernd Exp $
+--- desktop/cups.desktop.orig	Sat Sep  6 02:30:39 2008
++++ desktop/cups.desktop	Tue Mar 17 16:41:22 2009
+@@ -1,6 +1,6 @@
  [Desktop Entry]
- Categories=Application;System;X-Red-Hat-Base;
- Encoding=UTF-8
+ Categories=System;Printing;HardwareSettings;X-Red-Hat-Base;
 -Exec=htmlview http://localhost:631/
 +Exec=xdg-open http://localhost:631/
- GenericName=
  Icon=cups
- MimeType=
-@@ -24,4 +24,4 @@ Comment[et]=CUPS-i veebiliides
- Name[pl]=Zarządzanie drukowaniem
- Comment[pl]=Interfejs WWW CUPS
- Name[it]=Gestione stampa
--Comment[it]=Interfaccia web di CUPS
-\ No newline at end of file
+ StartupNotify=false
+ Terminal=false
+@@ -24,7 +24,7 @@ Comment[id.UTF-8]=Antarmuka Web CUPS
+ Name[it.UTF-8]=Gestione stampa
+ Comment[it.UTF-8]=Interfaccia web di CUPS
+ Name[ja.UTF-8]=印刷の管理
+-Comment[ja.UTF-8]=CUPS Web インタフェース
 +Comment[it]=Interfaccia web di CUPS
+ Name[pl.UTF-8]=Zarządzanie drukowaniem
+ Comment[pl.UTF-8]=Interfejs WWW CUPS
+ Name[zh.UTF-8]=打印机管理

@@ -1,7 +1,7 @@
-$OpenBSD: patch-init_cups_sh_in,v 1.1 2006/10/01 10:43:38 mbalmer Exp $
---- init/cups.sh.in.orig	Wed Sep 20 11:48:50 2006
-+++ init/cups.sh.in	Wed Sep 20 11:50:07 2006
-@@ -91,6 +91,16 @@ case "`uname`" in
+$OpenBSD: patch-init_cups_sh_in,v 1.2 2009/04/27 08:25:39 bernd Exp $
+--- init/cups.sh.in.orig	Wed Jul 11 23:46:42 2007
++++ init/cups.sh.in	Tue Mar 17 16:21:50 2009
+@@ -82,6 +82,16 @@ case "`uname`" in
  		fi
  		;;
  

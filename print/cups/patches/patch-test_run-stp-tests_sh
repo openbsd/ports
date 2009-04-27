@@ -1,12 +1,12 @@
-$OpenBSD: patch-test_run-stp-tests_sh,v 1.4 2009/03/04 19:50:00 jasper Exp $
+$OpenBSD: patch-test_run-stp-tests_sh,v 1.5 2009/04/27 08:25:39 bernd Exp $
 
 Second chunk of this patch:
 Security fix for CVE-2008-5183.
 Patch adapted from Red Hat's solution.
 
---- test/run-stp-tests.sh.orig	Wed Nov 15 21:37:45 2006
-+++ test/run-stp-tests.sh	Fri Feb 27 11:25:28 2009
-@@ -30,7 +30,7 @@ argcount=$#
+--- test/run-stp-tests.sh.orig	Wed Nov 19 20:50:56 2008
++++ test/run-stp-tests.sh	Sat Apr 18 00:50:57 2009
+@@ -21,7 +21,7 @@ argcount=$#
  # Make the IPP test program...
  #
  
@@ -15,15 +15,7 @@ Patch adapted from Red Hat's solution.
  
  #
  # Figure out the proper echo options...
-@@ -294,6 +294,7 @@ FontPath /tmp/cups-$user/share/fonts
- DocumentRoot $root/doc
- RequestRoot /tmp/cups-$user/spool
- TempDir /tmp/cups-$user/spool/temp
-+MaxSubscriptions 3
- MaxLogSize 0
- AccessLog /tmp/cups-$user/log/access_log
- ErrorLog /tmp/cups-$user/log/error_log
-@@ -373,7 +374,7 @@ fi
+@@ -387,7 +387,7 @@ fi
  
  export LD_LIBRARY_PATH
  

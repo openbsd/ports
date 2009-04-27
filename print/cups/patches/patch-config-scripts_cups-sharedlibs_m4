@@ -1,7 +1,7 @@
-$OpenBSD: patch-config-scripts_cups-sharedlibs_m4,v 1.3 2006/10/01 10:43:38 mbalmer Exp $
---- config-scripts/cups-sharedlibs.m4.orig	Wed Sep 20 10:53:05 2006
-+++ config-scripts/cups-sharedlibs.m4	Wed Sep 20 10:54:16 2006
-@@ -48,8 +48,8 @@ if test x$enable_shared != xno; then
+$OpenBSD: patch-config-scripts_cups-sharedlibs_m4,v 1.4 2009/04/27 08:25:39 bernd Exp $
+--- config-scripts/cups-sharedlibs.m4.orig	Wed Jul 11 23:46:42 2007
++++ config-scripts/cups-sharedlibs.m4	Tue Mar 17 16:21:50 2009
+@@ -49,8 +49,8 @@ if test x$enable_shared != xno; then
  			DSOFLAGS="$DSOFLAGS -set_version,sgi2.6,-soname,\`basename \$@\` -shared \$(OPTIM)"
  			;;
  		OSF1* | Linux | GNU | *BSD*)
