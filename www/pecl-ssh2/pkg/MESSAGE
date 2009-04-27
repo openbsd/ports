@@ -1,0 +1,10 @@
+You can enable this module by creating a symbolic
+link from ${PREFIX}/conf/php5.sample/ssh2.ini to
+${PREFIX}/conf/php5/ssh2.ini.
+
+ln -fs ${PREFIX}/conf/php5.sample/ssh2.ini \
+        ${PREFIX}/conf/php5/ssh2.ini
+
+If you already have Apache running on your machine,
+you should not use "apachectl restart" - instead,
+you should fully stop and then restart the server.
