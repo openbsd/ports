@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2009/04/09 22:49:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/04/28 21:10:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	set of Python modules designed for writing games
 
 DISTNAME=	pygame-1.8.1release
-PKGNAME=	${DISTNAME:S/release//}
+PKGNAME=	${DISTNAME:S/release//}p0
 CATEGORIES=	devel games
+
 HOMEPAGE=	http://www.pygame.org/
 
 # LGPL
@@ -40,6 +41,11 @@ DOCSUBDIRS=	ref tut tut/chimp tut/surfarray \
 # This regression test wants an X11 display
 REGRESS_IS_INTERACTIVE=	Yes
 REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+
+# fix perms
+post-extract:
+	find ${WRKSRC} -type d | xargs chmod 755
+	find ${WRKSRC} -type f | xargs chmod 644
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/Setup.in

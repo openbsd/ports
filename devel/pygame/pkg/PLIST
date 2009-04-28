@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/04/09 22:49:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/04/28 21:10:08 ajacoutot Exp $
 include/python${MODPY_VERSION}/pygame/
 include/python${MODPY_VERSION}/pygame/bitmask.h
 include/python${MODPY_VERSION}/pygame/fastevents.h
@@ -156,7 +156,6 @@ share/doc/pygame/tut/tom/games4.html
 share/doc/pygame/tut/tom/games5.html
 share/doc/pygame/tut/tom/games6.html
 share/doc/pygame/tut/tom/radians.png
-share/doc/pygame/util/
 share/examples/pygame/
 share/examples/pygame/aliens.py
 share/examples/pygame/arraydemo.py
