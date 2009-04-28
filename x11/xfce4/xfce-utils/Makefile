@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2009/03/08 17:24:38 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2009/04/28 19:47:15 landry Exp $
 
-COMMENT=	essential utilities and scripts for xfce4
+COMMENT=	Xfce4 essential utilities and scripts
 
 XFCE_PROJECT=	xfce-utils
 
@@ -29,4 +29,7 @@ WANTLIB= 	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 
 CONFIGURE_ARGS+=--with-browser="xterm -e lynx" \
 		--with-xsession-prefix=${PREFIX}
+
+FAKE_FLAGS=	conffilesdir=${PREFIX}/share/examples/xfce-utils \
+		autostartdir=${PREFIX}/share/examples/xfce-utils
 .include <bsd.port.mk>
