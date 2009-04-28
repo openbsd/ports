@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/01/27 17:59:05 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/04/28 09:01:56 giovanni Exp $
 @newgroup _vscan:530
 @newuser _vscan:530:_vscan::Amavisd-new Daemon:/var/empty:/sbin/nologin
 bin/amavisd-agent
@@ -52,4 +52,6 @@ share/examples/amavisd-new/amavisd.conf-sample
 @sample /var/amavisd/tmp/
 @sample /var/amavisd/db/
 @sample /var/amavisd/var/
-@extraunexec rm -rf /var/amavisd/* 2>/dev/null || true
+@sample /var/virusmails/
+@extraunexec rm -fr /var/amavisd/*
+@extraunexec rm -fr /var/virusmails/*

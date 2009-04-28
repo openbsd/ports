@@ -1,18 +1,9 @@
-$OpenBSD: patch-amavisd,v 1.6 2009/01/27 17:59:05 giovanni Exp $
---- amavisd.orig	Mon Dec 15 01:50:09 2008
-+++ amavisd	Tue Jan 27 13:21:17 2009
-@@ -215,7 +215,7 @@ BEGIN {
-     File::Glob->import(':globally');  # use the same module as Perl 5.8 uses
-   }
-   fetch_modules('REQUIRED BASIC MODULES', 1, qw(
--    Exporter POSIX Fcntl Socket Errno Carp Time::HiRes
-+    Exporter POSIX Fcntl Socket Errno Carp Carp::Heavy Time::HiRes
-     IO::Handle IO::File IO::Socket IO::Socket::UNIX IO::Socket::INET
-     IO::Stringy Digest::MD5 Unix::Syslog File::Basename
-     Compress::Zlib MIME::Base64 MIME::QuotedPrint MIME::Words
-@@ -21039,6 +21039,7 @@ sub initializeSpamAssassin {
-     stop_at_threshold => 0,
-     need_tags         => 'TIMING,LANGUAGES,RELAYCOUNTRY,ASN,ASNCIDR',
+$OpenBSD: patch-amavisd,v 1.7 2009/04/28 09:01:56 giovanni Exp $
+--- amavisd.orig	Wed Apr 22 02:24:12 2009
++++ amavisd	Tue Apr 28 09:11:49 2009
+@@ -21775,6 +21775,7 @@ sub initializeSpamAssassin {
+     rules_filename       => $sa_configpath,
+     site_rules_filename  => $sa_siteconfigpath,
  #   LOCAL_STATE_DIR   => '/var/lib',
 +    LOCAL_STATE_DIR   => '/var/db/spamassassin',
  #   PREFIX            => '/usr/local',
