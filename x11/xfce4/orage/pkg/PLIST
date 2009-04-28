@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/03/08 17:34:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/04/28 19:44:29 landry Exp $
 @conflict xfcalendar-*
 @bin bin/globaltime
 @bin bin/orage
@@ -93,18 +93,14 @@ share/locale/mr/LC_MESSAGES/orage.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/orage.mo
-share/locale/nb_NO/
-share/locale/nb_NO/LC_MESSAGES/
-share/locale/nb_NO/LC_MESSAGES/orage.mo
+share/locale/nb/LC_MESSAGES/orage.mo
 share/locale/nl/LC_MESSAGES/orage.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/orage.mo
 share/locale/pl/LC_MESSAGES/orage.mo
+share/locale/pt/LC_MESSAGES/orage.mo
 share/locale/pt_BR/LC_MESSAGES/orage.mo
-share/locale/pt_PT/
-share/locale/pt_PT/LC_MESSAGES/
-share/locale/pt_PT/LC_MESSAGES/orage.mo
 share/locale/ro/LC_MESSAGES/orage.mo
 share/locale/ru/LC_MESSAGES/orage.mo
 share/locale/sk/LC_MESSAGES/orage.mo

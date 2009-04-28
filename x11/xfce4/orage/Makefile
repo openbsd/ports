@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/08 17:34:55 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2009/04/28 19:44:29 landry Exp $
 
-COMMENT=	advanced calendar for xfce4
+COMMENT=	Xfce4 advanced calendar
 
 XFCE_PROJECT=	orage
 
