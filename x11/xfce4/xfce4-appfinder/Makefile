@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2009/03/08 17:34:02 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2009/04/28 19:47:58 landry Exp $
 
-COMMENT=	xfce4 application finder
+COMMENT=	Xfce4 application finder
 
 XFCE_PROJECT=	xfce4-appfinder
 
