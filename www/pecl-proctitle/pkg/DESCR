@@ -1,0 +1,2 @@
+pecl-proctitle is an extension which allows you to change the current
+process's name.
