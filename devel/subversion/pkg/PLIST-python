@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST-python,v 1.5 2008/11/02 20:43:49 steven Exp $
+@comment $OpenBSD: PLIST-python,v 1.6 2009/04/28 23:43:57 stsp Exp $
 %%SHARED%%
 lib/libsvn_swig_py-1.a
 lib/libsvn_swig_py-1.la
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/libsvn/
 lib/python${MODPY_VERSION}/site-packages/libsvn/__init__.py
 lib/python${MODPY_VERSION}/site-packages/libsvn/__init__.pyc

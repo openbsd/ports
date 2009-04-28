@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST-ruby,v 1.4 2008/11/02 20:43:49 steven Exp $
+@comment $OpenBSD: PLIST-ruby,v 1.5 2009/04/28 23:43:57 stsp Exp $
 %%SHARED%%
 lib/libsvn_swig_ruby-1.a
 lib/libsvn_swig_ruby-1.la
+lib/ruby/
+lib/ruby/site_ruby/
+lib/ruby/site_ruby/${MODRUBY_REV}/
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/
 lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/svn/
 lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/svn/ext/
 lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/svn/ext/client.a

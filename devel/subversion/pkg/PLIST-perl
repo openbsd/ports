@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-perl,v 1.4 2008/12/27 19:20:36 steven Exp $
+@comment $OpenBSD: PLIST-perl,v 1.5 2009/04/28 23:43:57 stsp Exp $
 %%SHARED%%
 lib/libsvn_swig_perl-1.a
 lib/libsvn_swig_perl-1.la
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SVN/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SVN/Base.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SVN/Client.pm
@@ -11,6 +12,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SVN/Fs.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SVN/Ra.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SVN/Repos.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SVN/Wc.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Client/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Client/_Client.bs

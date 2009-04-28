@@ -1,25 +1,25 @@
-$OpenBSD: patch-configure_ac,v 1.1 2008/11/02 20:43:49 steven Exp $
---- configure.ac.orig	Tue Aug 26 19:27:56 2008
-+++ configure.ac	Sat Oct 25 22:08:16 2008
+$OpenBSD: patch-configure_ac,v 1.2 2009/04/28 23:43:56 stsp Exp $
+--- configure.ac.orig	Sat Feb  7 20:46:30 2009
++++ configure.ac	Thu Feb 19 19:37:20 2009
 @@ -6,7 +6,7 @@ AC_PREREQ(2.58)
  dnl Get the version of Subversion, using m4's esyscmd() command to do this
  dnl at m4-time, since AC_INIT() requires it then.
  AC_INIT([subversion],
--        [esyscmd(python build/getversion.py subversion/include/svn_version.h)],
-+        [esyscmd(${MODPY_BIN} build/getversion.py subversion/include/svn_version.h)],
-         [http://subversion.tigris.org/])
+-     [esyscmd(python build/getversion.py SVN subversion/include/svn_version.h)],
++     [esyscmd(${MODPY_BIN} build/getversion.py SVN subversion/include/svn_version.h)],
+      [http://subversion.tigris.org/])
  
  AC_CONFIG_SRCDIR(subversion/include/svn_types.h)
-@@ -48,7 +48,7 @@ if test "$INSTALL" = "build/install-sh -c"; then
+@@ -56,7 +56,7 @@ if test "$INSTALL" = "build/install-sh -c"; then
    INSTALL="$abs_srcdir/$INSTALL"
  fi
  
 -AC_SUBST([MKDIR], ["$INSTALL -d"])
 +AC_SUBST([MKDIR], ["mkdir -p"])
  
+ # ==== Libraries, for which we may have source to build ======================
  
- dnl find Apache with a recent-enough magic module number.
-@@ -309,7 +309,8 @@ if test "$enable_nls" = "yes"; then
+@@ -447,7 +447,8 @@ if test "$enable_nls" = "yes"; then
                     [
                      AC_MSG_WARN([bindtextdomain() not found.  Disabling NLS.])
                      enable_nls="no"
@@ -29,12 +29,12 @@ $OpenBSD: patch-configure_ac,v 1.1 2008/11/02 20:43:49 steven Exp $
      if test "$enable_nls" = "yes"; then
        AC_DEFINE(ENABLE_NLS, 1,
                  [Define to 1 if translation of program messages to the user's
-@@ -540,7 +541,7 @@ AS_HELP_STRING([--enable-gprof],
+@@ -749,7 +750,7 @@ AS_HELP_STRING([--enable-gprof],
  # Python: Used for testsuite, and bindings
  
  
 -PYTHON="`$abs_srcdir/build/find_python.sh`"
 +PYTHON=${MODPY_BIN}
  if test -z "$PYTHON"; then
-   AC_MSG_WARN([Python 2.2 or later is required to run the testsuite])
+   AC_MSG_WARN([Python 2.4 or later is required to run the testsuite])
    AC_MSG_WARN([or to use the Subversion Python bindings])

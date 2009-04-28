@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/12/27 19:20:36 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/04/28 23:43:57 stsp Exp $
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion
 %%SHARED%%
+@comment @bin bin/diff
+@comment @bin bin/diff3
+@comment @bin bin/diff4
 @bin bin/svn
 @bin bin/svn-populate-node-origins-index
 @bin bin/svnadmin
+@bin bin/svnauthz-validate
 @bin bin/svndumpfilter
 @bin bin/svnlook
 @bin bin/svnmucc
@@ -15,6 +19,7 @@ include/subversion-1/
 include/subversion-1/svn-revision.txt
 include/subversion-1/svn_auth.h
 include/subversion-1/svn_base64.h
+include/subversion-1/svn_checksum.h
 include/subversion-1/svn_client.h
 include/subversion-1/svn_cmdline.h
 include/subversion-1/svn_compat.h
@@ -23,6 +28,7 @@ include/subversion-1/svn_ctype.h
 include/subversion-1/svn_dav.h
 include/subversion-1/svn_delta.h
 include/subversion-1/svn_diff.h
+include/subversion-1/svn_dirent_uri.h
 include/subversion-1/svn_dso.h
 include/subversion-1/svn_error.h
 include/subversion-1/svn_error_codes.h
@@ -89,6 +95,7 @@ lib/libsvn_wc-1.la
 @man man/man8/svnserve.8
 share/examples/subversion/
 @sample ${SYSCONFDIR}/subversion/
+share/examples/subversion/SvnCLBrowse
 share/examples/subversion/backup/
 share/examples/subversion/backup/hot-backup.py
 share/examples/subversion/bdb/

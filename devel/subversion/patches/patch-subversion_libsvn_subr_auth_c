@@ -1,0 +1,12 @@
+$OpenBSD: patch-subversion_libsvn_subr_auth_c,v 1.1 2009/04/28 23:43:56 stsp Exp $
+--- subversion/libsvn_subr/auth.c.orig	Fri Feb 20 01:59:30 2009
++++ subversion/libsvn_subr/auth.c	Fri Feb 20 02:05:05 2009
+@@ -393,7 +393,7 @@ svn_auth_get_platform_specific_provider
+       const char *library_label, *library_name;
+       const char *provider_function_name, *version_function_name;
+       library_name = apr_psprintf(pool,
+-                                  "libsvn_auth_%s-%d.so.0",
++                                  "libsvn_auth_%s-%d.so.${SO_VERSION}",
+                                   provider_name,
+                                   SVN_VER_MAJOR);
+       library_label = apr_psprintf(pool, "svn_%s", provider_name);

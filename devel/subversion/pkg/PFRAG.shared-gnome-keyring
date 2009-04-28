@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-gnome-keyring,v 1.1 2009/04/28 23:43:57 stsp Exp $
+@lib lib/libsvn_auth_gnome_keyring-1.so.${LIBsvn_auth_gnome_keyring-1_VERSION}

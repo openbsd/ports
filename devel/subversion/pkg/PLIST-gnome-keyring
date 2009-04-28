@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-gnome-keyring,v 1.1 2009/04/28 23:43:57 stsp Exp $
+%%SHARED%%
+lib/libsvn_auth_gnome_keyring-1.a
+lib/libsvn_auth_gnome_keyring-1.la
