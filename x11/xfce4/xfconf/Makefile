@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/08 17:06:42 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/04/28 19:52:38 landry Exp $
 
-COMMENT=	settings daemon for xfce4
+COMMENT=	Xfce4 settings daemon
 
 XFCE_PROJECT=	xfconf
 SHARED_LIBS =	xfconf-0 0.0
