@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/28 01:13:42 jolan Exp $
+@comment conf/php5.sample/
+@group bin
+conf/php5.sample/uploadprogress.ini
+@comment lib/
+@comment lib/php/
+@comment lib/php/modules/
+@owner root
+lib/php/modules/uploadprogress.so
+pecl-uploadprogress/
+pecl-uploadprogress/index.php
+pecl-uploadprogress/info.php
+pecl-uploadprogress/server.php
+@owner
+@group

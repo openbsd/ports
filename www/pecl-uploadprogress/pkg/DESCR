@@ -1,0 +1,2 @@
+pecl-uploadprogress is an extension which allows you to track progress
+of a file upload.
