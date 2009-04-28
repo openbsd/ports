@@ -1,7 +1,7 @@
-$OpenBSD: patch-mapi4linux_src_mapix_cpp,v 1.1.1.1 2009/02/16 09:44:38 ajacoutot Exp $
---- mapi4linux/src/mapix.cpp.orig	Wed Jan 28 20:51:38 2009
-+++ mapi4linux/src/mapix.cpp	Tue Feb  3 16:49:38 2009
-@@ -1622,7 +1622,7 @@ HRESULT M4LAddrBook::ResolveName(ULONG ulUIParam, ULON
+$OpenBSD: patch-mapi4linux_src_mapix_cpp,v 1.2 2009/04/28 10:59:51 ajacoutot Exp $
+--- mapi4linux/src/mapix.cpp.orig	Wed Apr 22 16:41:27 2009
++++ mapi4linux/src/mapix.cpp	Tue Apr 28 12:31:23 2009
+@@ -1629,7 +1629,7 @@ HRESULT M4LAddrBook::ResolveName(ULONG ulUIParam, ULON
  			std::string strAddress;
  
  			int pos = strDisplay.find(':');
