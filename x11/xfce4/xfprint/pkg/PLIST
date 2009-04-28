@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/03/08 17:21:56 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/04/28 19:54:02 landry Exp $
 %%SHARED%%
 @bin bin/xfprint-settings
 @bin bin/xfprint4
@@ -125,10 +125,8 @@ share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/xfprint.mo
 share/locale/pl/LC_MESSAGES/xfprint.mo
+share/locale/pt/LC_MESSAGES/xfprint.mo
 share/locale/pt_BR/LC_MESSAGES/xfprint.mo
-share/locale/pt_PT/
-share/locale/pt_PT/LC_MESSAGES/
-share/locale/pt_PT/LC_MESSAGES/xfprint.mo
 share/locale/ro/LC_MESSAGES/xfprint.mo
 share/locale/ru/LC_MESSAGES/xfprint.mo
 share/locale/si/
