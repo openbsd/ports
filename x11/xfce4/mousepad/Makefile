@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/08 17:36:48 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2009/04/28 19:40:09 landry Exp $
 
-COMMENT=	really simple text editor for xfce4
+COMMENT=	Xfce4 simple text editor
 
 XFCE_VERSION=	0.2.16
 XFCE_PROJECT=	mousepad
+PKGNAME=	${DISTNAME}p0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
