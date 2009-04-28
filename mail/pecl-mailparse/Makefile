@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/28 15:55:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/04/28 23:27:12 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	PHP extension for parsing and working with rfc822/MIME mail
 
 DISTNAME =	mailparse-2.1.5
-PKGNAME =	pecl-${DISTNAME}
+PKGNAME =	pecl-${DISTNAME}p0
 CATEGORIES =	www mail
 
 HOMEPAGE =	http://pecl.php.net/package/mailparse
