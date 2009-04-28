@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/28 15:55:07 sthen Exp $
+conf/php5.sample/
+conf/php5.sample/mailparse.ini
+lib/
+lib/php/
+lib/php/modules/
+lib/php/modules/mailparse.so

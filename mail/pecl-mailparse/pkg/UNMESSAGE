@@ -1,0 +1,11 @@
+To completely deinstall pecl-mailparse, you need
+to disable the module by using the following command
+
+    # ${LOCALBASE}/sbin/phpxs -r mailparse
+
+If you already have Apache running on your machine,
+you should not use "apachectl restart" - instead,
+you should fully stop and then restart the server.
+
+You'll also need to remove the associated lines from 
+your php.ini file.

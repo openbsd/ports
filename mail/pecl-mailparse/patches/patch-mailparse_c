@@ -1,0 +1,16 @@
+$OpenBSD: patch-mailparse_c,v 1.1.1.1 2009/04/28 15:55:07 sthen Exp $
+
+not pretty, but mbstring is only installed as an option rather
+than in php5-core, so we need a little hack to pick up the headers.
+
+--- mailparse.c.orig	Tue Mar  3 22:24:04 2009
++++ mailparse.c	Tue Apr 28 15:44:12 2009
+@@ -28,6 +28,8 @@
+ #include "ext/standard/info.h"
+ #include "main/php_output.h"
+ #include "php_open_temporary_file.h"
++#define HAVE_MBSTRING 1
++#include "../php/ext/mbstring/mbstring.h"
+ 
+ /* just in case the config check doesn't enable mbstring automatically */
+ #if !HAVE_MBSTRING

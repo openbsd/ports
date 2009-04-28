@@ -1,0 +1,16 @@
+$OpenBSD: patch-php_mailparse_h,v 1.1.1.1 2009/04/28 15:55:07 sthen Exp $
+
+not pretty, but mbstring is only installed as an option rather
+than in php5-core, so we need a little hack to pick up the headers.
+
+--- php_mailparse.h.orig	Tue Apr 28 15:46:11 2009
++++ php_mailparse.h	Tue Apr 28 15:47:02 2009
+@@ -97,7 +97,7 @@ PHP_FUNCTION(mailparse_mimemessage_add_child);
+ # define MAILPARSE_MBSTRING_TSRMLS_DC	TSRMLS_DC
+ # define MAILPARSE_MBSTRING_TSRMLS_FETCH_IF_BRAIN_DEAD()	/* sanity */
+ #else
+-# include "ext/mbstring/libmbfl/mbfl/mbfilter.h"
++# include "../php/ext/mbstring/libmbfl/mbfl/mbfilter.h"
+ /* ugh, even worse, they changed the signature of the API and made it
+  * really slow for threaded PHP builds */
+ # define MAILPARSE_MBSTRING_TSRMLS_CC	/* pain */
