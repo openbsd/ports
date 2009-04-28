@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/08 17:35:44 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2009/04/28 19:45:05 landry Exp $
 
-COMMENT=	lightweight vte-based terminal for xfce4
+COMMENT=	Xfce4 vte-based terminal
 
-XFCE_VERSION=	0.2.10
+XFCE_VERSION=	0.2.12
 XFCE_PROJECT=	Terminal
 # :L is here for a reason
 PKGNAME=	${DISTNAME:L}
