@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2009/03/08 17:25:36 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2009/04/28 19:55:52 landry Exp $
 
-COMMENT=	xfce4 window manager
+COMMENT=	Xfce4 window manager
 
 XFCE_PROJECT=	xfwm4
 
