@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/08 17:08:16 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2009/04/28 19:38:40 landry Exp $
 
-COMMENT=	extension library for xfce4
+COMMENT=	Xfce4 extension library
 
-XFCE_VERSION=	0.3.100
+XFCE_VERSION=	0.3.101
 XFCE_PROJECT=	exo
 
 SHARED_LIBS=	exo-0.3		5.0 \
@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	--disable-python
 BUILD_DEPENDS=	:p5-URI-*:www/p5-URI
 LIB_DEPENDS=	notify.>=2::devel/libnotify \
 		xfce4util::x11/xfce4/libxfce4util
+
+FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/xfce4
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
