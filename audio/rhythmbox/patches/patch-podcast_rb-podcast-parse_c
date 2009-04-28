@@ -1,0 +1,24 @@
+$OpenBSD: patch-podcast_rb-podcast-parse_c,v 1.1 2009/04/28 10:26:36 ajacoutot Exp $
+
+Cope with our out-dated totem-pl-parser version.
+
+--- podcast/rb-podcast-parse.c.orig	Tue Apr 28 10:35:16 2009
++++ podcast/rb-podcast-parse.c	Tue Apr 28 10:36:19 2009
+@@ -69,7 +69,7 @@ playlist_metadata_foreach (const char *key,
+ 		channel->author = g_strdup (value);
+ 	} else if (strcmp (key, TOTEM_PL_PARSER_FIELD_CONTACT) == 0) {
+ 		channel->contact = g_strdup (value);
+-	} else if (strcmp (key, TOTEM_PL_PARSER_FIELD_IMAGE_URI) == 0) {
++	} else if (strcmp (key, TOTEM_PL_PARSER_FIELD_IMAGE_URL) == 0) {
+ 		channel->img = g_strdup (value);
+ 	} else if (strcmp (key, TOTEM_PL_PARSER_FIELD_PUB_DATE) == 0) {
+ 		channel->pub_date = totem_pl_parser_parse_date (value, FALSE);
+@@ -106,7 +106,7 @@ entry_metadata_foreach (const char *key,
+ 
+ 	if (strcmp (key, TOTEM_PL_PARSER_FIELD_TITLE) == 0) {
+ 		item->title = g_strdup (value);
+-	} else if (strcmp (key, TOTEM_PL_PARSER_FIELD_URI) == 0) {
++	} else if (strcmp (key, TOTEM_PL_PARSER_FIELD_URL) == 0) {
+ 		item->url = g_strdup (value);
+ 	} else if (strcmp (key, TOTEM_PL_PARSER_FIELD_DESCRIPTION) == 0) {
+ 		item->description = g_strdup (value);

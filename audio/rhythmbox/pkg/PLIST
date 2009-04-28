@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/03/19 13:50:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/04/28 10:26:36 ajacoutot Exp $
 %%SHARED%%
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
@@ -253,8 +253,6 @@ share/gnome/help/rhythmbox/zh_CN/figures/rb-volume-changer.png
 share/gnome/help/rhythmbox/zh_CN/figures/rb-window-small.png
 share/gnome/help/rhythmbox/zh_CN/figures/rb-window.png
 share/gnome/help/rhythmbox/zh_CN/rhythmbox.xml
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/rhythmbox/
 share/gtk-doc/html/rhythmbox/RBAutoPlaylistSource.html
 share/gtk-doc/html/rhythmbox/RBBrowserSource.html
@@ -381,12 +379,14 @@ share/locale/id/LC_MESSAGES/rhythmbox.mo
 share/locale/is/LC_MESSAGES/rhythmbox.mo
 share/locale/it/LC_MESSAGES/rhythmbox.mo
 share/locale/ja/LC_MESSAGES/rhythmbox.mo
+share/locale/kn/LC_MESSAGES/rhythmbox.mo
 share/locale/ko/LC_MESSAGES/rhythmbox.mo
 share/locale/lt/LC_MESSAGES/rhythmbox.mo
 share/locale/lv/LC_MESSAGES/rhythmbox.mo
 share/locale/mk/LC_MESSAGES/rhythmbox.mo
 share/locale/ml/LC_MESSAGES/rhythmbox.mo
 share/locale/mn/LC_MESSAGES/rhythmbox.mo
+share/locale/mr/LC_MESSAGES/rhythmbox.mo
 share/locale/ms/LC_MESSAGES/rhythmbox.mo
 share/locale/nb/LC_MESSAGES/rhythmbox.mo
 share/locale/ne/LC_MESSAGES/rhythmbox.mo
@@ -440,7 +440,6 @@ share/rhythmbox/glade/podcast-properties.glade
 share/rhythmbox/glade/song-info-multiple.glade
 share/rhythmbox/glade/song-info.glade
 share/rhythmbox/glade/uri-new.glade
-share/rhythmbox/glade/uri.glade
 share/rhythmbox/icons/
 share/rhythmbox/icons/hicolor/
 share/rhythmbox/icons/hicolor/16x16/

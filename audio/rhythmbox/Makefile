@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2009/03/23 15:39:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2009/04/28 10:26:35 ajacoutot Exp $
 
 COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		0.12.0
-PKGNAME=		${DISTNAME}p1
+GNOME_VERSION=		0.12.1
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 CATEGORIES=		audio
@@ -59,9 +58,8 @@ REGRESS_DEPENDS=	::devel/check
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
-AUTOCONF_VERSION=	2.62
 
-CONFIGURE_STYLE= 	autoconf
+CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/rhythmbox/ \
 			--disable-schemas-install \
@@ -83,7 +81,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-fm-radio \
 			--disable-lirc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 # The regression tests require a running instance of X.
 # You will also need to set the XAUTHORITY environment variable to point 
