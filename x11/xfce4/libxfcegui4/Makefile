@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2009/03/08 17:11:44 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2009/04/28 19:43:59 landry Exp $
 
-COMMENT=	widget library for xfce4
+COMMENT=	Xfce4 widget library
 
 XFCE_PROJECT=	libxfcegui4
 SHARED_LIBS=	xfcegui4	5.0	\
@@ -26,4 +26,5 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0  gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png xfce4util xml2 z
 
+FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfconf
 .include <bsd.port.mk>
