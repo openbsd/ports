@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2009/03/12 18:09:13 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2009/04/28 19:46:28 landry Exp $
 
-COMMENT=	lightweight file manager for xfce4
+COMMENT=	Xfce4 file manager
 
-XFCE_VERSION=	1.0.0
+XFCE_VERSION=	1.0.1
 XFCE_PROJECT=	Thunar
-PKGNAME=	${DISTNAME:L}p0
+# :L is here for a reason
+PKGNAME=	${DISTNAME:L}
 
 SHARED_LIBS=	thunarx-1	5.1 \
 		thunar-vfs-1	5.1
@@ -25,6 +26,8 @@ CONFIGURE_ARGS=	--disable-gnome-thumbnailers \
 		--enable-startup-notification \
 		--enable-exif \
 		--enable-pcre
+
+FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/Thunar
 
 LIB_DEPENDS=	exo-0.3.>=4::x11/xfce4/exo \
 		pcre.>=2.0::devel/pcre \
