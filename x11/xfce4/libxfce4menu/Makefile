@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/09 07:44:37 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/04/28 19:42:37 landry Exp $
 
-COMMENT=	freedesktop.org compliant menu implementation for Xfce4
+COMMENT=	Xfce4 freedesktop.org compliant menu implementation
 
 XFCE_PROJECT=	libxfce4menu
-PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS +=  xfce4menu-0.1 0.0
 
