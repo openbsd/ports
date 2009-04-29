@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/17 17:56:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/04/29 00:51:23 sthen Exp $
 
 COMMENT =		dump RTMP media streams
 
-DISTNAME =		rtmpdump-v1.4
+DISTNAME =		rtmpdump-v1.5
 PKGNAME =		${DISTNAME:S/-v/-/}
 
 CATEGORIES =		net
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m stdc++
+WANTLIB =		c m stdc++ crypto ssl
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rtmpdump/}
 WRKDIST =		${WRKDIR}/rtmpdump

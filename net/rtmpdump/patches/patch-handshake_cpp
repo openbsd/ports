@@ -1,0 +1,12 @@
+$OpenBSD: patch-handshake_cpp,v 1.1 2009/04/29 00:51:23 sthen Exp $
+--- handshake.cpp.orig	Tue Apr 28 12:09:26 2009
++++ handshake.cpp	Tue Apr 28 12:09:39 2009
+@@ -210,7 +210,7 @@ unsigned int GetDigestOffset1(char *handshake, unsigne
+ 
+ void HMACsha256(const char *message, size_t messageLen, const char *key, size_t keylen, char *digest)
+ {
+-	size_t digestLen;
++	unsigned int digestLen;
+ 
+ 	HMAC_CTX ctx;
+         HMAC_CTX_init(&ctx);

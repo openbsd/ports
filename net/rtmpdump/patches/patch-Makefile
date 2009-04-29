@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2009/04/17 17:56:50 sthen Exp $
+$OpenBSD: patch-Makefile,v 1.2 2009/04/29 00:51:23 sthen Exp $
 
 avoid gmake-isms
 
---- Makefile.orig	Fri Apr 17 12:26:58 2009
-+++ Makefile	Fri Apr 17 12:27:00 2009
-@@ -10,13 +10,17 @@ CFLAGS=-Wall
+--- Makefile.orig	Mon Apr 27 13:13:18 2009
++++ Makefile	Tue Apr 28 12:11:56 2009
+@@ -6,16 +6,20 @@ CFLAGS=-Wall
  CXXFLAGS=-Wall
  LDFLAGS=-Wall
  
@@ -15,11 +15,15 @@ avoid gmake-isms
  all: rtmpdump
  
  clean:
- 	rm -f rtmpdump rtmpdump.exe *.o
+ 	rm -f *.o
  
- rtmpdump: bytes.o log.o rtmp.o AMFObject.o rtmppacket.o rtmpdump.o parseurl.o
--	$(CXX) $(LDFLAGS) $^ -o $@
-+	$(CXX) $(LDFLAGS) $> -o $@
+ streams: bytes.o log.o rtmp.o AMFObject.o rtmppacket.o streams.o parseurl.o dh.o handshake.o
+-	$(CXX) $(LDFLAGS) $^ -o $@_x86 -lpthread -lssl -lcrypto
++	$(CXX) $(LDFLAGS) $> -o $@ -lpthread -lssl -lcrypto
  
- win32: bytes.o log.o rtmp.o AMFObject.o rtmppacket.o rtmpdump.o parseurl.o
- 	$(CXX) $(LDFLAGS) $^ -o rtmpdump.exe -lws2_32 -lwinmm
+ rtmpdump: bytes.o log.o rtmp.o AMFObject.o rtmppacket.o rtmpdump.o parseurl.o dh.o handshake.o
+-	$(CXX) $(LDFLAGS) $^ -o $@_x86 -lssl -lcrypto
++	$(CXX) $(LDFLAGS) $> -o $@ -lssl -lcrypto
+ 
+ bytes.o: bytes.cpp bytes.h Makefile
+ log.o: log.cpp log.h Makefile

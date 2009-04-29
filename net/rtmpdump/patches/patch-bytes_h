@@ -1,23 +1,12 @@
-$OpenBSD: patch-bytes_h,v 1.1.1.1 2009/04/17 17:56:50 sthen Exp $
---- bytes.h.orig	Wed Mar 11 21:55:44 2009
-+++ bytes.h	Wed Apr  8 15:44:32 2009
-@@ -34,8 +34,17 @@ typedef unsigned long long int uint64_t;
-       | (((x) & 0x00000000000000ffull) << 56))
+$OpenBSD: patch-bytes_h,v 1.2 2009/04/29 00:51:23 sthen Exp $
+--- bytes.h.orig	Tue Apr 28 19:07:58 2009
++++ bytes.h	Tue Apr 28 19:08:01 2009
+@@ -76,7 +76,7 @@ typedef unsigned long long int uint64_t;
  
- #else
--#include <endian.h>
--#include <byteswap.h>
-+#include <machine/endian.h>
-+#define bswap_16 swap16
-+#define bswap_32 swap32
-+#define bswap_64 swap64
-+#define __bswap_16 __swap16
-+#define __bswap_32 __swap32
-+#define __bswap_64 __swap64
-+#define __BYTE_ORDER _BYTE_ORDER
-+#define __BIG_ENDIAN _BIG_ENDIAN
-+#define __LITTLE_ENDIAN _LITTLE_ENDIAN
-+#define __FLOAT_WORD_ORDER _BYTE_ORDER
+ // ok, we assume to have the same float word order and byte order if float word order is not defined
+ #ifndef __FLOAT_WORD_ORDER
+-#warning "Float word order not defined, assuming the same as byte order!"
++/* #warning "Float word order not defined, assuming the same as byte order!" */
+ #define __FLOAT_WORD_ORDER	__BYTE_ORDER
+ #endif
  
- typedef __uint64_t uint64_t;
- typedef __uint32_t uint32_t;
