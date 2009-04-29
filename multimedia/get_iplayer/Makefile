@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/21 15:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/04/29 00:59:07 sthen Exp $
 
 COMMENT =		download BBC iPlayer and ITV programmes
 
-DISTNAME =		get_iplayer-1.63
-PKGNAME =		${DISTNAME}p0
+DISTNAME =		get_iplayer-1.70
 
 CATEGORIES =		multimedia
 
@@ -18,7 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://linuxcentre.net/get_iplayer/packages/
 
 RUN_DEPENDS =		::audio/id3lib \
-			::net/rtmpdump \
+			:rtmpdump->=1.5:net/rtmpdump \
 			::www/p5-HTML-Parser \
 			::www/p5-libwww
 # XXX wants a newer p5-libwww feature; workaround in patches/patch-get_iplayer
