@@ -1,12 +1,25 @@
-$OpenBSD: patch-data_Makefile_in,v 1.1 2007/06/11 08:56:43 ajacoutot Exp $
---- data/Makefile.in.orig	Mon Jun 11 10:39:01 2007
-+++ data/Makefile.in	Mon Jun 11 10:39:11 2007
-@@ -439,7 +439,7 @@ info: info-recursive
+$OpenBSD: patch-data_Makefile_in,v 1.2 2009/04/29 20:11:25 sthen Exp $
+--- data/Makefile.in.orig	Mon Jan 26 17:59:45 2009
++++ data/Makefile.in	Sat Apr  4 20:32:32 2009
+@@ -461,7 +461,7 @@ info: info-recursive
  
  info-am:
  
 -install-data-am: install-cfgdataDATA
 +install-data-am:
  
- install-dvi: install-dvi-recursive
+ install-exec-am:
  
+@@ -507,8 +507,10 @@ uninstall-info: uninstall-info-recursive
+ 
+ all-local: config menu
+ 
+-%: $(srcdir)/%.in
+-	@SED@ -e 's:<PREFIX>:$(pkgdatadir):g' -e "s:<THEME>:@THEME@:g" $< > $@
++config:
++	@SED@ -e 's:<PREFIX>:$(pkgdatadir):g' -e "s:<THEME>:@THEME@:g" $@.in > $@
++menu:
++	@SED@ -e 's:<PREFIX>:$(pkgdatadir):g' -e "s:<THEME>:@THEME@:g" $@.in > $@
+ 
+ distclean-local:
+ 	rm -f *\~ .\#*

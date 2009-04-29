@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/10/09 16:56:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/04/29 20:11:25 sthen Exp $
 @bin bin/pekwm
 @man man/man1/pekwm.1
 share/examples/pekwm/
@@ -23,4 +23,37 @@ share/pekwm/scripts/pekwm_themeset.sh
 share/pekwm/scripts/pekwm_ws_menu.sh
 share/pekwm/themes/
 share/pekwm/themes/default/
+share/pekwm/themes/default-plain/
+share/pekwm/themes/default-plain/theme
+share/pekwm/themes/default/arrow.png
+share/pekwm/themes/default/arrow_focus.png
+share/pekwm/themes/default/bottom-border.png
+share/pekwm/themes/default/bottom-border_unfocus.png
+share/pekwm/themes/default/bottom-left.png
+share/pekwm/themes/default/bottom-left_unfocus.png
+share/pekwm/themes/default/bottom-right.png
+share/pekwm/themes/default/bottom-right_unfocus.png
+share/pekwm/themes/default/button.png
+share/pekwm/themes/default/button_hover.png
+share/pekwm/themes/default/button_press.png
+share/pekwm/themes/default/button_unfocus.png
+share/pekwm/themes/default/item.png
+share/pekwm/themes/default/item_focus.png
+share/pekwm/themes/default/left-border.png
+share/pekwm/themes/default/left-border_unfocus.png
+share/pekwm/themes/default/menu-bottom.png
+share/pekwm/themes/default/menu-bottom_unfocus.png
+share/pekwm/themes/default/menuline.png
+share/pekwm/themes/default/right-border.png
+share/pekwm/themes/default/right-border_unfocus.png
+share/pekwm/themes/default/tab-separator.png
+share/pekwm/themes/default/tab-separator_unfocus.png
 share/pekwm/themes/default/theme
+share/pekwm/themes/default/title.png
+share/pekwm/themes/default/title_unfocus.png
+share/pekwm/themes/default/top-border.png
+share/pekwm/themes/default/top-border_unfocus.png
+share/pekwm/themes/default/top-left.png
+share/pekwm/themes/default/top-left_unfocus.png
+share/pekwm/themes/default/top-right.png
+share/pekwm/themes/default/top-right_unfocus.png

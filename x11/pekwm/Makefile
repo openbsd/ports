@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2008/10/09 16:56:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/04/29 20:11:25 sthen Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
-DISTNAME=	pekwm-0.1.7
+DISTNAME=	pekwm-0.1.10
 CATEGORIES=	x11
 
 HOMEPAGE=	http://pekwm.org/

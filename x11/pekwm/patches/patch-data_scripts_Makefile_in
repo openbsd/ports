@@ -1,0 +1,17 @@
+$OpenBSD: patch-data_scripts_Makefile_in,v 1.1 2009/04/29 20:11:25 sthen Exp $
+--- data/scripts/Makefile.in.orig	Mon Jan 26 17:59:45 2009
++++ data/scripts/Makefile.in	Sat Apr  4 20:18:57 2009
+@@ -345,8 +345,11 @@ uninstall-am: uninstall-info-am uninstall-scriptsSCRIP
+ 
+ all-local: $(scripts_SCRIPTS)
+ 
+-%.sh: $(srcdir)/%.sh.in
+-	@SED@ -e 's:<SH>:$(SH):g' -e 's:<SED>:$(SED):g' $< > $@
++
++pekwm_ws_menu.sh:
++	@SED@ -e 's:<SH>:$(SH):g' -e 's:<SED>:$(SED):g' $@.in > $@
++pekwm_themeset.sh:
++	@SED@ -e 's:<SH>:$(SH):g' -e 's:<SED>:$(SED):g' $@.in > $@
+ 
+ distclean-local:
+ 	rm -f *\~ .\#*
