@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2009/03/06 09:18:31 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2009/04/29 11:36:58 sthen Exp $
 @conflict php4-core-*
 @pkgpath www/php5/core
 @pkgpath www/php5/core,hardened
@@ -270,4 +270,4 @@ share/php5/include/regex/regex2.h
 share/php5/include/regex/regex_extra.h
 share/php5/include/regex/utils.h
 @extraunexec rm -fr ${PHP_CONFIG_PATH}/php5/
-@unexec rm -fr ${PHP_CONFIG_PATH}/php5.sample/
+@unexec-delete rm -fr ${PHP_CONFIG_PATH}/php5.sample/
