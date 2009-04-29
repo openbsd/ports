@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2008/10/15 18:47:21 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2009/04/29 20:14:43 sthen Exp $
 
 COMMENT=		dynamic menu for X11
-DISTNAME=		dmenu-3.9
+DISTNAME=		dmenu-4.0
 
 CATEGORIES=		x11
 HOMEPAGE=		http://www.suckless.org/programs/dmenu.html

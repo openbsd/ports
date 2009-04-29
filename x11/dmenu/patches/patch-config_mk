@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_mk,v 1.6 2008/10/15 18:47:21 kili Exp $
---- config.mk.orig	Tue Sep  9 15:45:00 2008
-+++ config.mk	Mon Oct  6 12:45:22 2008
-@@ -4,28 +4,28 @@ VERSION = 3.9
+$OpenBSD: patch-config_mk,v 1.7 2009/04/29 20:14:43 sthen Exp $
+--- config.mk.orig	Mon Apr 27 13:03:41 2009
++++ config.mk	Mon Apr 27 13:06:23 2009
+@@ -4,28 +4,28 @@ VERSION = 4.0
  # Customize below to fit your system
  
  # paths
@@ -26,7 +26,7 @@ $OpenBSD: patch-config_mk,v 1.6 2008/10/15 18:47:21 kili Exp $
 +LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS}
  
  # flags
--CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+-CPPFLAGS = -D_BSD_SOURCE -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
 -CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 -LDFLAGS = -s ${LIBS}
 +CPPFLAGS += -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
