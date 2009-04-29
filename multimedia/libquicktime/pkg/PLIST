@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/07/09 02:13:01 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/04/29 21:22:14 kili Exp $
 @bin bin/libquicktime_config
 bin/lqt-config
 @bin bin/lqt_transcode
@@ -53,8 +53,8 @@ share/doc/libquicktime/
 share/doc/libquicktime/apiref/
 share/doc/libquicktime/apiref/annotated.html
 share/doc/libquicktime/apiref/colormodels_8h-source.html
-share/doc/libquicktime/apiref/dir_53292056a2aca918f7f93eaa35ab24bb.html
-share/doc/libquicktime/apiref/dir_ac6d6cfc5ba22cfe0e9bc6c52513f95c.html
+share/doc/libquicktime/apiref/dir_2c23d5540d2a668b0550fa40aa20e858.html
+share/doc/libquicktime/apiref/dir_4abde00ac62fef88430208d846181602.html
 share/doc/libquicktime/apiref/dirs.html
 share/doc/libquicktime/apiref/doxygen.css
 share/doc/libquicktime/apiref/doxygen.png
@@ -83,6 +83,7 @@ share/doc/libquicktime/apiref/group__multichannel.html
 share/doc/libquicktime/apiref/group__text.html
 share/doc/libquicktime/apiref/group__text__decode.html
 share/doc/libquicktime/apiref/group__text__encode.html
+share/doc/libquicktime/apiref/group__timecodes.html
 share/doc/libquicktime/apiref/group__video.html
 share/doc/libquicktime/apiref/group__video__codecs.html
 share/doc/libquicktime/apiref/group__video__decode.html
@@ -95,7 +96,7 @@ share/doc/libquicktime/apiref/lqt__codecinfo_8h-source.html
 share/doc/libquicktime/apiref/modules.html
 share/doc/libquicktime/apiref/quicktime_8h-source.html
 share/doc/libquicktime/apiref/quicktime_8h.html
-share/doc/libquicktime/apiref/structlqt__codec__info__t.html
+share/doc/libquicktime/apiref/structlqt__codec__info__s.html
 share/doc/libquicktime/apiref/structlqt__parameter__info__t.html
 share/doc/libquicktime/apiref/structquicktime__clap__t.html
 share/doc/libquicktime/apiref/structquicktime__colr__t.html
