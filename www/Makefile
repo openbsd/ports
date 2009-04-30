@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.410 2009/04/28 15:25:01 jolan Exp $
+# $OpenBSD: Makefile,v 1.411 2009/04/30 23:45:38 jolan Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -278,6 +278,7 @@
      SUBDIR += pear-HTML-Template-IT
      SUBDIR += pear-SOAP
      SUBDIR += pecl-APC
+     SUBDIR += pecl-geoip
      SUBDIR += pecl-memcache
      SUBDIR += pecl-proctitle
      SUBDIR += pecl-ssh2
