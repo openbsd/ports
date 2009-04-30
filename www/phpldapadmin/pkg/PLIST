@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/12/23 12:37:01 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/04/30 14:47:43 pea Exp $
 @group daemon
 phpldapadmin-${VERSION}/
 @comment phpldapadmin-${VERSION}/.cvsignore
@@ -601,16 +601,6 @@ phpldapadmin-${VERSION}/templates/modification/inetOrgPerson.xml
 phpldapadmin-${VERSION}/templates/template.dtd
 phpldapadmin-${VERSION}/tools/
 phpldapadmin-${VERSION}/tools/po/
-phpldapadmin-${VERSION}/tools/po/make_all
-phpldapadmin-${VERSION}/tools/po/make_mo
-phpldapadmin-${VERSION}/tools/po/make_mo_all
-phpldapadmin-${VERSION}/tools/po/make_po
-phpldapadmin-${VERSION}/tools/po/make_po_ca
-phpldapadmin-${VERSION}/tools/po/make_po_de
-phpldapadmin-${VERSION}/tools/po/make_po_es
-phpldapadmin-${VERSION}/tools/po/make_po_fr
-phpldapadmin-${VERSION}/tools/po/make_po_hu
-phpldapadmin-${VERSION}/tools/po/make_po_it
-phpldapadmin-${VERSION}/tools/po/make_po_ja
+phpldapadmin-${VERSION}/tools/po/Makefile
 phpldapadmin-${VERSION}/tools/po/messages.header
 phpldapadmin-${VERSION}/tools/unserialize.php
