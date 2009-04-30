@@ -1,0 +1,5 @@
+pecl-geoip is an extension which allows you to geocode IPv4 addresses.
+
+Documentation is available online at:
+
+http://us.php.net/geoip/
