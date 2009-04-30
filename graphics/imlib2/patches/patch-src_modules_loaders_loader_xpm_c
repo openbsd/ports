@@ -1,15 +1,12 @@
-$OpenBSD: patch-src_modules_loaders_loader_xpm_c,v 1.4 2009/01/13 17:43:29 jasper Exp $
+$OpenBSD: patch-src_modules_loaders_loader_xpm_c,v 1.5 2009/04/30 10:09:49 simon Exp $
 
 Chunk at line 246:
 CVE-2008-5187, Buffer overflow in the xpm loader.
 Patch from Debian's original bug report, #505714
 
-Chunk at line 284:
-Buffer overflow, see: http://secunia.com/secunia_research/2008-25/advisory/
-
---- src/modules/loaders/loader_xpm.c.orig	Tue Apr 10 00:40:40 2007
-+++ src/modules/loaders/loader_xpm.c	Tue Jan 13 18:34:23 2009
-@@ -246,8 +246,8 @@ load(ImlibImage * im, ImlibProgressFunction progress, 
+--- src/modules/loaders/loader_xpm.c.orig	Tue Oct 21 04:32:51 2008
++++ src/modules/loaders/loader_xpm.c	Wed Apr 29 10:39:45 2009
+@@ -253,8 +253,8 @@ load(ImlibImage * im, ImlibProgressFunction progress, 
                                   return 0;
                                }
                              ptr = im->data;
@@ -19,12 +16,3 @@ Buffer overflow, see: http://secunia.com/secunia_research/2008-25/advisory/
                           }
                         else
                           {
-@@ -284,7 +284,7 @@ load(ImlibImage * im, ImlibProgressFunction progress, 
-                                  if (line[k] != ' ')
-                                    {
-                                       s[0] = 0;
--                                      sscanf(&line[k], "%65535s", s);
-+                                      sscanf(&line[k], "%255s", s);
-                                       slen = strlen(s);
-                                       k += slen;
-                                       if (!strcmp(s, "c"))

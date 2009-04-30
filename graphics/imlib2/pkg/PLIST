@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/11/20 09:21:09 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/04/30 10:09:49 simon Exp $
 bin/imlib2-config
-bin/imlib2_bumpmap
-bin/imlib2_colorspace
-bin/imlib2_conv
-bin/imlib2_grab
-bin/imlib2_poly
-bin/imlib2_show
-bin/imlib2_test
-bin/imlib2_view
+@bin bin/imlib2_bumpmap
+@bin bin/imlib2_colorspace
+@bin bin/imlib2_conv
+@bin bin/imlib2_grab
+@bin bin/imlib2_poly
+@bin bin/imlib2_show
+@bin bin/imlib2_test
+@bin bin/imlib2_view
 include/Imlib2.h
 lib/imlib2/
 lib/imlib2/filters/
