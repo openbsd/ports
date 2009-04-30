@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/11/20 07:49:51 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/04/30 23:25:12 jolan Exp $
+@newgroup _noip:624
+@newuser _noip:624:_noip:daemon:noip user:/nonexistent:/sbin/nologin
 @bin sbin/noip2
 share/doc/no-ip/
 share/doc/no-ip/README.FIRST

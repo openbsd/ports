@@ -1,6 +1,6 @@
-$OpenBSD: patch-noip2_c,v 1.7 2008/11/23 09:36:30 wilfried Exp $
---- noip2.c.orig	Fri Nov 21 23:19:54 2008
-+++ noip2.c	Sun Nov 23 10:33:56 2008
+$OpenBSD: patch-noip2_c,v 1.8 2009/04/30 23:25:12 jolan Exp $
+--- noip2.c.orig	Fri Nov 21 14:19:54 2008
++++ noip2.c	Thu Apr 30 16:13:44 2009
 @@ -232,11 +232,8 @@
  #define HOST			1
  #define GROUP			2
@@ -15,3 +15,12 @@ $OpenBSD: patch-noip2_c,v 1.7 2008/11/23 09:36:30 wilfried Exp $
  #define CONFSTRLEN		1024
  #define MAX_DEVLEN		16
  #define MAX_INSTANCE		4
+@@ -587,7 +584,7 @@ int main(int argc, char *argv[])
+ 
+         /* drop root privileges after reading config */
+         if (geteuid() == 0) {
+-            if ((nobody = getpwnam("nobody")) != NULL) { // if "nobody" exists
++            if ((nobody = getpwnam("_noip")) != NULL) { // if "nobody" exists
+ 	        setgid(nobody->pw_gid);
+         	setegid(nobody->pw_gid);
+                 setuid(nobody->pw_uid);
