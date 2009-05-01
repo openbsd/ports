@@ -1,0 +1,142 @@
+$OpenBSD: patch-source_ircsig_c,v 1.1 2009/05/01 02:04:15 sthen Exp $
+
+signal handler fixes
+http://www.mail-archive.com/list@epicsol.org/msg00593.html
+
+--- source/ircsig.c.orig	Fri Mar 14 00:12:53 2008
++++ source/ircsig.c	Tue Apr 14 21:12:59 2009
+@@ -57,12 +57,13 @@ int	unblock_signal (int sig_no)
+ }
+ 
+ /* array of signal handlers containing mostly NULL */
+-volatile sigfunc *signal_handlers[NSIG];
++sigfunc *signal_handlers[NSIG];
++volatile int    signals_caught[NSIG];
+ 
+-/* grand unified signal handler, which sets flags for scriptable signals 
+- * -pegasus 
++/* grand unified signal handler, which sets flags for scriptable signals
++ * - pegasus
+  */
+-RETSIGTYPE signal_handler (int sig_no)
++static RETSIGTYPE signal_handler (int sig_no)
+ {
+ 	signals_caught[0] = 1;
+ 	signals_caught[sig_no]++;
+@@ -70,63 +71,74 @@ RETSIGTYPE signal_handler (int sig_no)
+ 		signal_handlers[sig_no](sig_no);
+ }
+ 
+-/* hook_all_signals needs to be called in main() before my_signal()
+- * if any signal hooks fail, it returns SIG_ERR, otherwise it returns 
+- * NULL. -pegasus
+- */
+-sigfunc *hook_all_signals (void)
++sigfunc *reset_one_signal (int sig_no, sigfunc *sig_handler)
+ {
+-        struct sigaction sa, osa;
+-	int sig_no;
+-	sigfunc *error = NULL;
++	struct sigaction sa, osa;
+ 
+-	/* docs say this is const. if it changes, something else is 
+-	 * broken. -pegasus
+-	 */
+-	sa.sa_handler = &signal_handler;
+-	/* end possibly risky code */
+-	for (sig_no = 0; sig_no < NSIG; sig_no++)
+-	{
+-		signal_handlers[sig_no] = NULL;
+-		/* this is ugly, but the `correct' way.  i hate c. -mrg */
+-		/* moved from my_signal. -pegasus */
+-	        sa.sa_flags = 0;
++	if (sig_no < 0)
++		return NULL;			/* Signal not implemented */
++
++	signal_handlers[sig_no] = NULL;
++
++	sa.sa_handler = sig_handler;
++	sigemptyset(&sa.sa_mask);
++	sigaddset(&sa.sa_mask, sig_no);
++
++	/* this is ugly, but the `correct' way.  i hate c. -mrg */
++	sa.sa_flags = 0;
+ #if defined(SA_RESTART) || defined(SA_INTERRUPT)
+-	        if (SIGALRM == sig_no || SIGINT == sig_no)
+-        	{
++	if (SIGALRM == sig_no || SIGINT == sig_no)
++	{
+ # if defined(SA_INTERRUPT)
+-			sa.sa_flags |= SA_INTERRUPT;
++		sa.sa_flags |= SA_INTERRUPT;
+ # endif /* SA_INTERRUPT */
+-		}
+-		else
+-		{
++	}
++	else
++	{
+ # if defined(SA_RESTART)
+-			sa.sa_flags |= SA_RESTART;
++		sa.sa_flags |= SA_RESTART;
+ # endif /* SA_RESTART */
+-		}
++	}
+ #endif /* SA_RESTART || SA_INTERRUPT */
+-		/* if it wasn't for the above code, we could move the
+-		 * sigemptyset() and sigaction() calls outside the loop 
+-		 * proper. -pegasus
+-		 */
+-		sigemptyset(&sa.sa_mask);
+-		sigaddset(&sa.sa_mask, sig_no);
+-		if (0 > sigaction(sig_no, &sa, &osa))
++
++	if (0 > sigaction(sig_no, &sa, &osa))
++		return SIG_ERR;
++
++	return osa.sa_handler;
++}
++
++
++/* hook_all_signals needs to be called in main() before my_signal()
++ * if any signal hooks fail, it returns SIG_ERR, otherwise it returns
++ * NULL. - pegasus
++ */
++sigfunc *	init_signals (void)
++{
++	int sig_no;
++	sigfunc *error = NULL;
++
++	memset(&signals_caught, 0, NSIG * sizeof(int));
++
++	for (sig_no = 0; sig_no < NSIG; sig_no++)
++	{
++		if ((reset_one_signal(sig_no, signal_handler)) == SIG_ERR)
+ 			error = SIG_ERR;
+ 	}
+ 	return error;
+ }
+ 
+-sigfunc *my_signal (int sig_no, sigfunc *sig_handler)
++sigfunc *	my_signal (int sig_no, sigfunc *sig_handler)
+ {
+-        sigfunc *old;
++	sigfunc	*old;
+ 
+-	if (sig_no < 0)
+-		return NULL;		/* Signal not implemented */
+-
+-	/* Well this is certainly simpler. -pegasus */
+ 	old = signal_handlers[sig_no];
+-	signal_handlers[sig_no] = (volatile sigfunc *)sig_handler;
++	if (sig_handler == SIG_IGN || sig_handler == SIG_DFL)
++		reset_one_signal(sig_no, sig_handler);
++	else
++	{
++		reset_one_signal(sig_no, signal_handler);
++		signal_handlers[sig_no] = (sigfunc *)sig_handler;
++	}
+ 
+-        return old;
++	return old;
+ }

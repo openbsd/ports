@@ -1,0 +1,25 @@
+$OpenBSD: patch-source_irc_c,v 1.1 2009/05/01 02:04:15 sthen Exp $
+
+signal handler fixes
+http://www.mail-archive.com/list@epicsol.org/msg00593.html
+
+--- source/irc.c.orig	Sat Mar 29 04:49:23 2008
++++ source/irc.c	Tue Apr 14 21:12:58 2009
+@@ -52,7 +52,7 @@ const char internal_version[] = "20080329";
+ /*
+  * In theory, this number is incremented for every commit.
+  */
+-const unsigned long	commit_id = 769;
++const unsigned long	commit_id = 770;
+ 
+ /*
+  * As a way to poke fun at the current rage of naming releases after
+@@ -1155,7 +1155,7 @@ int 	main (int argc, char *argv[])
+ 	/* make sure we don't start with spurious signals events firing */
+ 	memset(&signals_caught, 0, NSIG * sizeof(int));
+ 	/* hook all signals! */
+-	hook_all_signals();
++	init_signals();
+ 	/* we *might* want to check for SIG_ERR from the above function.
+ 	 * i leave it to hop to decide what to do on SIG_ERR. -pegasus 
+ 	 */
