@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/07 21:03:55 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/05/01 10:03:49 landry Exp $
 
 COMMENT=	slim themes bundle
 
 .for j in 1.2.3-themepack1a zenwalk wave subway scotland-road \
-	rear-window rainbow lake previous flat fingerprint
+	rear-window rainbow lake previous flat fingerprint sepp0
 DISTFILES+=	slim-${j}-20090407${EXTRACT_SUFX}
 .endfor
 
 DIST_SUBDIR=	slim
-PKGNAME=	slim-themes-1.2.3p1
+PKGNAME=	slim-themes-1.2.3p2
 PKG_ARCH=	*
 
 CATEGORIES=	x11

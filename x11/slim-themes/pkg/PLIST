@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/04/07 21:03:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/05/01 10:03:49 landry Exp $
 @pkgpath x11/slim,-themes
 share/slim/
 share/slim/themes/
@@ -77,6 +77,17 @@ share/slim/themes/scotland-road/
 share/slim/themes/scotland-road/background.jpg
 share/slim/themes/scotland-road/panel.png
 share/slim/themes/scotland-road/slim.theme
+share/slim/themes/sepp0/
+share/slim/themes/sepp0/4.5.derecha.1280x800.png
+share/slim/themes/sepp0/4.5.derecha.png
+share/slim/themes/sepp0/LEEME
+share/slim/themes/sepp0/README
+share/slim/themes/sepp0/background.jpg
+share/slim/themes/sepp0/crypto.png
+share/slim/themes/sepp0/panel.png
+share/slim/themes/sepp0/panelsepp0.png
+share/slim/themes/sepp0/puffy.png
+share/slim/themes/sepp0/slim.theme
 share/slim/themes/subway/
 share/slim/themes/subway/README
 share/slim/themes/subway/background.jpg
