@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2009/04/28 21:50:16 martynas Exp $
+# $OpenBSD: Makefile,v 1.118 2009/05/01 22:53:25 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		3.0.10
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}
+PKGNAME=	mozilla-firefox-${VER}p0
 SO_VERSION=	20.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -42,8 +42,7 @@ MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${VER
 DISTFILES=	firefox-${VER}-source.tar.bz2
 
 MODULES=	devel/gettext lang/python
-RUN_DEPENDS=	:esound-*:audio/esound \
-		:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
@@ -119,6 +118,9 @@ MOZ=		${PREFIX}/mozilla-firefox
 
 DATADIRS=	chrome components defaults dictionaries extensions \
 		greprefs icons modules plugins res searchplugins
+
+post-extract:
+	@cp -f ${FILESDIR}/nsSound.cpp ${WRKSRC}/widget/src/gtk2/
 
 pre-configure:
 	perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
