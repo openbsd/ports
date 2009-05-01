@@ -1,0 +1,16 @@
+$OpenBSD: patch-bgpd_bgp_debug_c,v 1.1 2009/05/01 13:48:26 sthen Exp $
+
+AS4 bugfix by Chris Caputo <ccaputo@alt.net>, from upstream repo.
+http://code.quagga.net/cgi-bin/gitweb.cgi?p=quagga.git;a=commitdiff_plain;h=aea339f72807c34a7916d8614e030069815e144c;hp=c540835eaf0cb59921969537d8e94cc83bb717f5
+
+--- bgpd/bgp_debug.c.orig	Fri Sep  5 15:27:26 2008
++++ bgpd/bgp_debug.c	Thu Apr 30 19:03:15 2009
+@@ -205,7 +205,7 @@ bgp_dump_attr (struct peer *peer, struct attr *attr, c
+     snprintf (buf + strlen (buf), size - strlen (buf), ", atomic-aggregate");
+ 
+   if (CHECK_FLAG (attr->flag, ATTR_FLAG_BIT (BGP_ATTR_AGGREGATOR)))
+-    snprintf (buf + strlen (buf), size - strlen (buf), ", aggregated by %d %s",
++    snprintf (buf + strlen (buf), size - strlen (buf), ", aggregated by %u %s",
+ 	      attr->extra->aggregator_as,
+ 	      inet_ntoa (attr->extra->aggregator_addr));
+ 

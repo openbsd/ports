@@ -1,0 +1,50 @@
+$OpenBSD: patch-bgpd_bgpd_c,v 1.1 2009/05/01 13:48:26 sthen Exp $
+
+AS4 bugfix by Chris Caputo <ccaputo@alt.net>, from upstream repo.
+http://code.quagga.net/cgi-bin/gitweb.cgi?p=quagga.git;a=commitdiff_plain;h=aea339f72807c34a7916d8614e030069815e144c;hp=c540835eaf0cb59921969537d8e94cc83bb717f5
+
+--- bgpd/bgpd.c.orig	Thu Sep 11 06:46:49 2008
++++ bgpd/bgpd.c	Thu Apr 30 19:03:15 2009
+@@ -4512,13 +4512,13 @@ bgp_config_write_peer (struct vty *vty, struct bgp *bg
+ 	    vty_out (vty, " neighbor %s peer-group%s", addr,
+ 		     VTY_NEWLINE);
+ 	  if (peer->as)
+-	    vty_out (vty, " neighbor %s remote-as %d%s", addr, peer->as,
++	    vty_out (vty, " neighbor %s remote-as %u%s", addr, peer->as,
+ 		     VTY_NEWLINE);
+ 	}
+       else
+ 	{
+ 	  if (! g_peer->as)
+-	    vty_out (vty, " neighbor %s remote-as %d%s", addr, peer->as,
++	    vty_out (vty, " neighbor %s remote-as %u%s", addr, peer->as,
+ 		     VTY_NEWLINE);
+ 	  if (peer->af_group[AFI_IP][SAFI_UNICAST])
+ 	    vty_out (vty, " neighbor %s peer-group %s%s", addr,
+@@ -4528,7 +4528,7 @@ bgp_config_write_peer (struct vty *vty, struct bgp *bg
+       /* local-as. */
+       if (peer->change_local_as)
+ 	if (! peer_group_active (peer))
+-	  vty_out (vty, " neighbor %s local-as %d%s%s", addr,
++	  vty_out (vty, " neighbor %s local-as %u%s%s", addr,
+ 		   peer->change_local_as,
+ 		   CHECK_FLAG (peer->flags, PEER_FLAG_LOCAL_AS_NO_PREPEND) ?
+ 		   " no-prepend" : "", VTY_NEWLINE);
+@@ -4917,7 +4917,7 @@ bgp_config_write (struct vty *vty)
+ 	vty_out (vty, "!%s", VTY_NEWLINE);
+ 
+       /* Router bgp ASN */
+-      vty_out (vty, "router bgp %d", bgp->as);
++      vty_out (vty, "router bgp %u", bgp->as);
+ 
+       if (bgp_option_check (BGP_OPT_MULTIPLE_INSTANCE))
+ 	{
+@@ -4978,7 +4978,7 @@ bgp_config_write (struct vty *vty)
+ 	  vty_out (vty, " bgp confederation peers");
+ 
+          for (i = 0; i < bgp->confed_peers_cnt; i++)
+-           vty_out(vty, " %d", bgp->confed_peers[i]);
++           vty_out(vty, " %u", bgp->confed_peers[i]);
+ 
+           vty_out (vty, "%s", VTY_NEWLINE);
+ 	}

@@ -1,0 +1,16 @@
+$OpenBSD: patch-bgpd_bgp_attr_c,v 1.1 2009/05/01 13:48:26 sthen Exp $
+
+AS4 bugfix by Chris Caputo <ccaputo@alt.net>, from upstream repo.
+http://code.quagga.net/cgi-bin/gitweb.cgi?p=quagga.git;a=commitdiff_plain;h=aea339f72807c34a7916d8614e030069815e144c;hp=c540835eaf0cb59921969537d8e94cc83bb717f5
+
+--- bgpd/bgp_attr.c.orig	Thu Oct  2 09:28:50 2008
++++ bgpd/bgp_attr.c	Thu Apr 30 19:03:15 2009
+@@ -857,7 +857,7 @@ static int bgp_attr_aspath_check( struct peer *peer, 
+ 	  && ! aspath_firstas_check (attr->aspath, peer->as))
+  	{
+  	  zlog (peer->log, LOG_ERR,
+- 		"%s incorrect first AS (must be %d)", peer->host, peer->as);
++ 		"%s incorrect first AS (must be %u)", peer->host, peer->as);
+  	  bgp_notify_send (peer,
+  			   BGP_NOTIFY_UPDATE_ERR,
+  			   BGP_NOTIFY_UPDATE_MAL_AS_PATH);

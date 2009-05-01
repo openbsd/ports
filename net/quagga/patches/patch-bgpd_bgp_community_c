@@ -1,0 +1,16 @@
+$OpenBSD: patch-bgpd_bgp_community_c,v 1.1 2009/05/01 13:48:26 sthen Exp $
+
+AS4 bugfix by Chris Caputo <ccaputo@alt.net>, from upstream repo.
+http://code.quagga.net/cgi-bin/gitweb.cgi?p=quagga.git;a=commitdiff_plain;h=aea339f72807c34a7916d8614e030069815e144c;hp=c540835eaf0cb59921969537d8e94cc83bb717f5
+
+--- bgpd/bgp_community.c.orig	Fri Sep  5 15:27:26 2008
++++ bgpd/bgp_community.c	Thu Apr 30 19:03:15 2009
+@@ -282,7 +282,7 @@ community_com2str  (struct community *com)
+ 	default:
+ 	  as = (comval >> 16) & 0xFFFF;
+ 	  val = comval & 0xFFFF;
+-	  sprintf (pnt, "%d:%d", as, val);
++	  sprintf (pnt, "%u:%d", as, val);
+ 	  pnt += strlen (pnt);
+ 	  break;
+ 	}

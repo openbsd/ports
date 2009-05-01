@@ -1,0 +1,34 @@
+$OpenBSD: patch-bgpd_bgp_mplsvpn_c,v 1.1 2009/05/01 13:48:26 sthen Exp $
+
+AS4 bugfix by Chris Caputo <ccaputo@alt.net>, from upstream repo.
+http://code.quagga.net/cgi-bin/gitweb.cgi?p=quagga.git;a=commitdiff_plain;h=aea339f72807c34a7916d8614e030069815e144c;hp=c540835eaf0cb59921969537d8e94cc83bb717f5
+
+--- bgpd/bgp_mplsvpn.c.orig	Tue Aug 26 19:30:05 2008
++++ bgpd/bgp_mplsvpn.c	Thu Apr 30 19:03:15 2009
+@@ -265,7 +265,7 @@ prefix_rd2str (struct prefix_rd *prd, char *buf, size_
+   if (type == RD_TYPE_AS)
+     {
+       decode_rd_as (pnt + 2, &rd_as);
+-      snprintf (buf, size, "%d:%d", rd_as.as, rd_as.val);
++      snprintf (buf, size, "%u:%d", rd_as.as, rd_as.val);
+       return buf;
+     }
+   else if (type == RD_TYPE_IP)
+@@ -371,7 +371,7 @@ show_adj_route_vpn (struct vty *vty, struct peer *peer
+                     vty_out (vty, "Route Distinguisher: ");
+ 
+                     if (type == RD_TYPE_AS)
+-                      vty_out (vty, "%d:%d", rd_as.as, rd_as.val);
++                      vty_out (vty, "%u:%d", rd_as.as, rd_as.val);
+                     else if (type == RD_TYPE_IP)
+                       vty_out (vty, "%s:%d", inet_ntoa (rd_ip.ip), rd_ip.val);
+ 
+@@ -478,7 +478,7 @@ bgp_show_mpls_vpn (struct vty *vty, struct prefix_rd *
+ 		    vty_out (vty, "Route Distinguisher: ");
+ 
+ 		    if (type == RD_TYPE_AS)
+-		      vty_out (vty, "%d:%d", rd_as.as, rd_as.val);
++		      vty_out (vty, "%u:%d", rd_as.as, rd_as.val);
+ 		    else if (type == RD_TYPE_IP)
+ 		      vty_out (vty, "%s:%d", inet_ntoa (rd_ip.ip), rd_ip.val);
+ 		  
