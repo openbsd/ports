@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/03/16 11:05:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2009/05/01 20:40:26 naddy Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -27,7 +27,6 @@ AUTOCONF_VERSION=	2.62
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-static \
-			--with-openssl \
 			--with-kqueue \
 			--disable-debug
 CONFIGURE_ENV=		OPENSSL_CFLAGS=-I/usr/include \
