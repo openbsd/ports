@@ -1,10 +1,10 @@
-$OpenBSD: patch-get_iplayer,v 1.3 2009/04/29 00:59:07 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.4 2009/05/01 02:09:56 sthen Exp $
 
 - use id3tag (from audio/id3lib) by default
 - workaround requirement for newer p5-libwww
 
---- get_iplayer.orig	Mon Apr 27 23:32:58 2009
-+++ get_iplayer	Tue Apr 28 12:15:59 2009
+--- get_iplayer.orig	Wed Apr 29 17:31:27 2009
++++ get_iplayer	Fri May  1 03:06:21 2009
 @@ -500,7 +500,7 @@ sub find_matches {
  	$lame_opts		.= ' --quiet ' if $opt->{quiet};
  	$vlc			= $opt->{vlc} || 'cvlc';
@@ -14,9 +14,9 @@ $OpenBSD: patch-get_iplayer,v 1.3 2009/04/29 00:59:07 sthen Exp $
  	$tee			= 'tee';
  	$rtmpdump		= $opt->{rtmpdump} || 'rtmpdump';
  	$bandwidth		= $opt->{bandwidth} || 512000; # Download bandwidth bps used for rtsp streams
-@@ -1251,7 +1251,7 @@ sub download_block {
- sub create_ua {
+@@ -1252,7 +1252,7 @@ sub create_ua {
  	my $agent = shift;
+ 	my $nocookiejar = shift || 0;
  	my $ua = LWP::UserAgent->new;
 -	$ua->timeout([$lwp_request_timeout]);
 +	#$ua->timeout([$lwp_request_timeout]);
