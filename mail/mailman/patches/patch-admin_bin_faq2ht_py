@@ -1,9 +1,0 @@
-$OpenBSD: patch-admin_bin_faq2ht_py,v 1.1 2008/07/09 19:30:23 wcmaier Exp $
---- admin/bin/faq2ht.py.orig	Thu Apr 18 22:34:50 2002
-+++ admin/bin/faq2ht.py	Wed Jul  9 13:13:53 2008
-@@ -1,4 +1,4 @@
--#! /usr/bin/env python
-+#!${MODPY_BIN}
- 
- """Convert the plain text FAQ file to its .ht template.
- """

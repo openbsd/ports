@@ -1,9 +1,0 @@
-$OpenBSD: patch-admin_bin_mm2do,v 1.1 2008/07/09 19:30:23 wcmaier Exp $
---- admin/bin/mm2do.orig	Fri Aug 26 20:40:17 2005
-+++ admin/bin/mm2do	Wed Jul  9 13:13:53 2008
-@@ -1,4 +1,4 @@
--#! /usr/bin/env python
-+#!${MODPY_BIN}
- #
- # Copyright (C) 1998,1999,2000,2001,2002 by the Free Software Foundation, Inc.
- #

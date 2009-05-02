@@ -1,9 +1,0 @@
-$OpenBSD: patch-admin_www_reset_pw_py,v 1.1 2008/07/09 19:30:24 wcmaier Exp $
---- admin/www/reset_pw.py.orig	Fri Aug 26 20:40:17 2005
-+++ admin/www/reset_pw.py	Wed Jul  9 13:13:53 2008
-@@ -1,4 +1,4 @@
--#! /usr/bin/env python
-+#!${MODPY_BIN}
- #
- # Copyright (C) 2004 by the Free Software Foundation, Inc.
- #

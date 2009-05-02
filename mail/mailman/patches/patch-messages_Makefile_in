@@ -1,9 +1,0 @@
-$OpenBSD: patch-messages_Makefile_in,v 1.1 2008/07/09 19:30:24 wcmaier Exp $
---- messages/Makefile.in.orig	Fri Aug  4 07:20:33 2006
-+++ messages/Makefile.in	Wed Jul  9 13:13:53 2008
-@@ -1,4 +1,4 @@
--# Copyright (C) 2001-2005 by the Free Software Foundation, Inc.
-+#!${MODPY_BIN}
- #
- # This program is free software; you can redistribute it and/or
- # modify it under the terms of the GNU General Public License

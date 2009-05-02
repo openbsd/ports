@@ -1,9 +1,0 @@
-$OpenBSD: patch-admin_bin_release,v 1.1 2008/07/09 19:30:23 wcmaier Exp $
---- admin/bin/release.orig	Tue Sep 12 22:21:03 2006
-+++ admin/bin/release	Wed Jul  9 13:13:53 2008
-@@ -1,4 +1,4 @@
--#! /usr/bin/env python
-+#!${MODPY_BIN}
- #
- # Copyright (C) 1998-2006 by the Free Software Foundation, Inc.
- #

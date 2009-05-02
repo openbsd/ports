@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2009/03/25 13:39:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2009/05/02 09:56:44 djm Exp $
 
 COMMENT=	mailing list manager with web interface
 
-DISTNAME=	mailman-2.1.9
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	mailman-2.1.12
+PKGNAME=	${DISTNAME}
 CATEGORIES=	mail www
 
 HOMEPAGE=	http://www.gnu.org/software/mailman/
@@ -25,6 +25,7 @@ MODULES=		lang/python
 NO_REGRESS=		Yes
 
 MMDOC=			${PREFIX}/share/doc/mailman
+MMEXAMPLES=		${PREFIX}/share/examples/mailman
 MMHOME=			${PREFIX}/lib/mailman
 MMSPOOL=		/var/spool/mailman
 
@@ -53,10 +54,6 @@ CONFIGURE_ARGS+=--with-mail-gid=daemon
 
 SCRIPTS=	Mailman/Archiver/pipermail.py \
 		Mailman/Post.py \
-		admin/bin/faq2ht.py \
-		admin/bin/mm2do \
-		admin/bin/release \
-		admin/www/reset_pw.py \
 		bin/msgfmt.py \
 		messages/Makefile.in \
 		templates/ru/s2s.py \
@@ -73,5 +70,7 @@ post-install:
 	    ${INSTALL_DATA} ${WRKDIST}/$$file ${MMDOC}; \
 	done
 	@${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${MMDOC}
+	@${INSTALL_DATA_DIR} ${MMEXAMPLES}
+	@mv ${WRKINST}/var/spool/mailman/data/sitelist.cfg ${MMEXAMPLES}
 
 .include <bsd.port.mk>

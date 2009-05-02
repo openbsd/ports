@@ -1,16 +1,15 @@
-$OpenBSD: patch-configure,v 1.7 2005/11/11 20:33:26 sturm Exp $
---- configure.orig	Fri Dec 31 00:41:08 2004
-+++ configure	Fri Nov 11 21:27:15 2005
-@@ -1205,54 +1205,8 @@ then
- fi
+$OpenBSD: patch-configure,v 1.8 2009/05/02 09:56:44 djm Exp $
+--- configure.orig	Tue Feb 24 08:23:35 2009
++++ configure	Sat Apr 25 12:02:36 2009
+@@ -3178,60 +3178,7 @@ fi
  USERNAME=$with_username
- echo "$ac_t""$USERNAME" 1>&6
-+MAILMAN_USER=$with_username
- 
+ { echo "$as_me:$LINENO: result: $USERNAME" >&5
+ echo "${ECHO_T}$USERNAME" >&6; }
+-
 -# User `mailman' must exist
 -
--echo $ac_n "checking for user name \"$USERNAME\"""... $ac_c" 1>&6
--echo "configure:1213: checking for user name \"$USERNAME\"" >&5
+-{ echo "$as_me:$LINENO: checking for user name \"$USERNAME\"" >&5
+-echo $ECHO_N "checking for user name \"$USERNAME\"... $ECHO_C" >&6; }
 -
 -# MAILMAN_USER == variable name
 -# $USERNAME == user id to check for
@@ -44,82 +43,23 @@ $OpenBSD: patch-configure,v 1.7 2005/11/11 20:33:26 sturm Exp $
 -then
 -  if test "$with_permcheck" = "yes"
 -  then
--    { echo "configure: error: 
+-    { { echo "$as_me:$LINENO: error:
 -***** No \"$USERNAME\" user found!
 -***** Your system must have a \"$USERNAME\" user defined
 -***** (usually in your /etc/passwd file).  Please see the INSTALL
--***** file for details." 1>&2; exit 1; }
+-***** file for details." >&5
+-echo "$as_me: error:
+-***** No \"$USERNAME\" user found!
+-***** Your system must have a \"$USERNAME\" user defined
+-***** (usually in your /etc/passwd file).  Please see the INSTALL
+-***** file for details." >&2;}
+-   { (exit 1); exit 1; }; }
 -  fi
 -fi
--echo "$ac_t""okay" 1>&6
+-{ echo "$as_me:$LINENO: result: okay" >&5
+-echo "${ECHO_T}okay" >&6; }
 -
--
++MAILMAN_USER=$with_username
+ 
  # Check for some other gid to use than `mailman'
- echo $ac_n "checking for --with-groupname""... $ac_c" 1>&6
- echo "configure:1259: checking for --with-groupname" >&5
-@@ -1269,55 +1223,10 @@ then
- fi
- GROUPNAME=$with_groupname
- echo "$ac_t""$GROUPNAME" 1>&6
-+MAILMAN_GROUP=$with_groupname
- 
- 
--# Target group must exist
- 
--echo $ac_n "checking for group name \"$GROUPNAME\"""... $ac_c" 1>&6
--echo "configure:1278: checking for group name \"$GROUPNAME\"" >&5
--
--# MAILMAN_GROUP == variable name
--# $GROUPNAME == user id to check for
--
--
--if test -z "$MAILMAN_GROUP"
--then
--    cat > conftest.py <<EOF
--import grp
--gid = ''
--for group in "$GROUPNAME".split():
--    try:
--        try:
--            gname = grp.getgrgid(int(group))[0]
--            break
--        except ValueError:
--            gname = grp.getgrnam(group)[0]
--            break
--    except KeyError:
--        gname = ''
--fp = open("conftest.out", "w")
--fp.write("%s\n" % gname)
--fp.close()
--EOF
--    $PYTHON conftest.py
--    MAILMAN_GROUP=`cat conftest.out`
--fi
--
--rm -f conftest.out conftest.py
--if test -z "$MAILMAN_GROUP"
--then
--  if test "$with_permcheck" = "yes"
--  then
--    { echo "configure: error: 
--***** No \"$GROUPNAME\" group found!
--***** Your system must have a \"$GROUPNAME\" group defined
--***** (usually in your /etc/group file).  Please see the INSTALL
--***** file for details." 1>&2; exit 1; }
--  fi
--fi
--echo "$ac_t""okay" 1>&6
--
--
- echo $ac_n "checking permissions on $prefixcheck""... $ac_c" 1>&6
- echo "configure:1323: checking permissions on $prefixcheck" >&5
- 
-@@ -1579,7 +1488,7 @@ echo "$ac_t""$URLHOST" 1>&6
- rm -f conftest.out conftest.py
- 
- # Checks for libraries.
--for ac_func in strerror setregid syslog
-+for ac_func in strerror syslog
- do
- echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
- echo "configure:1586: checking for $ac_func" >&5
+ { echo "$as_me:$LINENO: checking for --with-groupname" >&5

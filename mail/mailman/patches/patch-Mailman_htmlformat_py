@@ -1,7 +1,7 @@
-$OpenBSD: patch-Mailman_htmlformat_py,v 1.4 2008/07/09 19:30:23 wcmaier Exp $
---- Mailman/htmlformat.py.orig	Wed Aug 30 09:54:22 2006
-+++ Mailman/htmlformat.py	Wed Jul  9 13:13:49 2008
-@@ -609,12 +609,14 @@ class DefinitionList(Container):
+$OpenBSD: patch-Mailman_htmlformat_py,v 1.5 2009/05/02 09:56:44 djm Exp $
+--- Mailman/htmlformat.py.orig	Tue Feb 24 08:23:35 2009
++++ Mailman/htmlformat.py	Sat Apr 25 12:00:26 2009
+@@ -612,12 +612,14 @@ class DefinitionList(Container):
  from mm_cfg import MAILMAN_URL
  PYTHON_URL  = 'http://www.python.org/'
  GNU_URL     = 'http://www.gnu.org/'
@@ -16,7 +16,7 @@ $OpenBSD: patch-Mailman_htmlformat_py,v 1.4 2008/07/09 19:30:23 wcmaier Exp $
  
  
  def MailmanLogo():
-@@ -628,7 +630,9 @@ def MailmanLogo():
+@@ -631,7 +633,9 @@ def MailmanLogo():
                   logo(PYTHON_POWERED)
          gnulink = '<img src="%s" alt="GNU\'s Not Unix" border=0>' % \
                    logo(GNU_HEAD)
@@ -27,7 +27,7 @@ $OpenBSD: patch-Mailman_htmlformat_py,v 1.4 2008/07/09 19:30:23 wcmaier Exp $
      else:
          # use only textual links
          version = mm_cfg.VERSION
-@@ -636,7 +640,8 @@ def MailmanLogo():
+@@ -639,7 +643,8 @@ def MailmanLogo():
                        _('Delivered by Mailman<br>version %(version)s'))
          pylink = Link(PYTHON_URL, _('Python Powered'))
          gnulink = Link(GNU_URL, _("Gnu's Not Unix"))
