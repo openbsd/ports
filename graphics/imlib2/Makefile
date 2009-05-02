@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2009/04/30 10:09:49 simon Exp $
+# $OpenBSD: Makefile,v 1.23 2009/05/02 16:27:15 simon Exp $
 
 COMMENT=	image manipulation library
 
@@ -29,6 +29,9 @@ USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS+= --disable-mmx
+.endif
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${WRKBUILD}/src/lib/.libs -L${X11BASE}/lib -L${LOCALBASE}/lib"
 
