@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/26 20:56:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/05/03 22:32:01 sthen Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
 COMMENT-web =		network and application monitoring - web frontend
+COMMENT-doc =		network and application monitoring - non-free documentation
 
 VERSION =		1.6.4
 DISTNAME =		zabbix-${VERSION}
 PKGNAME-main =		zabbix-agent-${VERSION}p1
-PKGNAME-server =	zabbix-server-${VERSION}p1
+PKGNAME-server =	zabbix-server-${VERSION}p2
+PKGNAME-doc =		zabbix-doc-${VERSION}
 PKGNAME-web =		zabbix-web-${VERSION}p0
 CATEGORIES =		net
 
@@ -19,12 +21,15 @@ HOMEPAGE =		http://www.zabbix.com/
 #	  - all other uses need to be agreed upon with Zabbix Company
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
+PERMIT_DISTFILES_CDROM =includes non-free documentation
+PERMIT_DISTFILES_FTP =	includes non-free documentation
+
+PERMIT_PACKAGE_CDROM-doc = non-free documentation
+PERMIT_PACKAGE_FTP-doc =   non-free documentation
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
 
-MULTI_PACKAGES =	-server -main -web
+MULTI_PACKAGES =	-server -main -web -doc
 
 WANTLIB =		c kvm m
 LIB_DEPENDS =		lber,ldap::databases/openldap

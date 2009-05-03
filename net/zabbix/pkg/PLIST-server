@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST-server,v 1.1.1.1 2009/04/22 15:03:52 jasper Exp $
+@comment $OpenBSD: PLIST-server,v 1.2 2009/05/03 22:32:01 sthen Exp $
 @bin sbin/zabbix_proxy
 @bin sbin/zabbix_server
-share/doc/zabbix/
-share/doc/zabbix/ZABBIX_Manual_v${MAJOR}_rev17.pdf
 share/examples/zabbix/
 @sample ${SYSCONFDIR}/zabbix/
 share/examples/zabbix/zabbix_proxy.conf

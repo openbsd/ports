@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-doc,v 1.1 2009/05/03 22:32:01 sthen Exp $
+@conflict zabbix-server-<1.6.4p2
+share/doc/zabbix/
+share/doc/zabbix/ZABBIX_Manual_v${MAJOR}_rev17.pdf
