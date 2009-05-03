@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/03 16:10:33 simon Exp $
+${P5SITE}/DateTime/Set.pm
+${P5SITE}/DateTime/Span.pm
+${P5SITE}/DateTime/SpanSet.pm
+${P5SITE}/Set/Infinite/_recurrence.pm
+@man man/man3p/DateTime::Set.3p
+@man man/man3p/DateTime::Span.3p
+@man man/man3p/DateTime::SpanSet.3p
+@man man/man3p/Set::Infinite::_recurrence.3p

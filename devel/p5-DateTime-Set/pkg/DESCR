@@ -1,0 +1,8 @@
+DateTime::Set is a module for datetime sets.  It can be used to handle
+two different types of sets:
+ * Fixed sets of predefined datetime objects.  For example, if we wanted
+   to create a set of datetimes containing the birthdays of people in
+   our family.
+ * Recurring sets, such as "every Wednesday", or "noon on the 15th day
+   of every month".  This type of set can have fixed starting and ending
+   datetimes, but neither is required.
