@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/24 14:25:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/05/03 17:13:26 kili Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -6,7 +6,7 @@ COMMENT=	powerful desktop search tool and indexer
 # as tracker-search.
 GNOME_PROJECT=	tracker
 GNOME_VERSION=	0.6.94
-PKGNAME=	tracker-search-${VERSION}
+PKGNAME=	tracker-search-${VERSION}p0
 
 SHARED_LIBS +=	stemmer              0.0      # .694.0
 SHARED_LIBS +=	tracker-common       0.0      # .694.0
@@ -33,7 +33,7 @@ WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0 bonobo-2 bonobo-activation
 WANTLIB += bonoboui-2 bz2 c cairo camel-1.2 com_err crypto curl
 WANTLIB += dbus-1 dbus-glib-1 edataserver-1.2 expat fontconfig
-WANTLIB += freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += freetype gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
 WANTLIB += gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gnutls
 WANTLIB += gobject-2.0 gpg-error gssapi gsttag-0.10 gthread-2.0
