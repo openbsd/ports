@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/03 19:39:57 landry Exp $
+@conflict notification-daemon-*
+@conflict notification-daemon-xfce-*
+@bin bin/xfce4-notifyd-config
+@bin libexec/xfce4-notifyd
+share/applications/xfce4-notifyd-config.desktop
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.freedesktop.Notifications.service
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/xfce4-notifyd.png
+share/locale/ca/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/da/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/de/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/el/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/es/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/fi/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/fr/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/id/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/nb/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/nl/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/pt_PT/
+share/locale/pt_PT/LC_MESSAGES/
+share/locale/pt_PT/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/xfce4-notifyd.mo
+share/locale/tr/LC_MESSAGES/xfce4-notifyd.mo
+share/themes/
+share/themes/Default/
+share/themes/Default/xfce-notify-4.0/
+share/themes/Default/xfce-notify-4.0/gtkrc
+share/themes/Smoke/
+share/themes/Smoke/xfce-notify-4.0/
+share/themes/Smoke/xfce-notify-4.0/gtkrc
+share/themes/ZOMG-PONIES!/
+share/themes/ZOMG-PONIES!/xfce-notify-4.0/
+share/themes/ZOMG-PONIES!/xfce-notify-4.0/gtkrc
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
