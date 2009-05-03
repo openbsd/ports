@@ -1,7 +1,7 @@
-$OpenBSD: patch-Lib_distutils_command_build_ext_py,v 1.1 2008/10/18 12:03:56 djm Exp $
---- Lib/distutils/command/build_ext.py.orig	Sun Aug 17 14:16:04 2008
-+++ Lib/distutils/command/build_ext.py	Mon Aug 25 07:43:08 2008
-@@ -758,13 +758,6 @@ class build_ext (Command):
+$OpenBSD: patch-Lib_distutils_command_build_ext_py,v 1.2 2009/05/03 22:26:27 djm Exp $
+--- Lib/distutils/command/build_ext.py.orig	Fri Feb  6 09:55:00 2009
++++ Lib/distutils/command/build_ext.py	Sun Apr 19 10:28:50 2009
+@@ -760,13 +760,6 @@ class build_ext (Command):
              return ext.libraries
  
          else:

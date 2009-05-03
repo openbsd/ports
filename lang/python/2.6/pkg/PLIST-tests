@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.2 2009/01/01 21:03:28 djm Exp $
+@comment $OpenBSD: PLIST-tests,v 1.3 2009/05/03 22:26:27 djm Exp $
 @option no-default-conflict
 @conflict python-tests->=2.6,<2.6
 lib/python2.6/test/
@@ -1362,6 +1362,9 @@ lib/python2.6/test/test_zipfile64.pyo
 lib/python2.6/test/test_zipimport.py
 lib/python2.6/test/test_zipimport.pyc
 lib/python2.6/test/test_zipimport.pyo
+lib/python2.6/test/test_zipimport_support.py
+lib/python2.6/test/test_zipimport_support.pyc
+lib/python2.6/test/test_zipimport_support.pyo
 lib/python2.6/test/test_zlib.py
 lib/python2.6/test/test_zlib.pyc
 lib/python2.6/test/test_zlib.pyo
@@ -1392,3 +1395,4 @@ lib/python2.6/test/wrongcert.pem
 lib/python2.6/test/xmltests.py
 lib/python2.6/test/xmltests.pyc
 lib/python2.6/test/xmltests.pyo
+lib/python2.6/test/zipdir.zip

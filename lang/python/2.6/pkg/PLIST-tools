@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-tools,v 1.1 2008/10/18 12:03:56 djm Exp $
+@comment $OpenBSD: PLIST-tools,v 1.2 2009/05/03 22:26:27 djm Exp $
 @option no-default-conflict
 @conflict python-tools->=2.6,<2.6
-lib/python2.6/Tools/
 lib/python2.6/Tools/README
 lib/python2.6/Tools/audiopy/
 lib/python2.6/Tools/audiopy/README
@@ -23,7 +22,6 @@ lib/python2.6/Tools/bgen/bgen/bgenType.py
 lib/python2.6/Tools/bgen/bgen/bgenVariable.py
 lib/python2.6/Tools/bgen/bgen/macsupport.py
 lib/python2.6/Tools/bgen/bgen/scantools.py
-lib/python2.6/Tools/buildbot/
 lib/python2.6/Tools/buildbot/build.bat
 lib/python2.6/Tools/buildbot/buildmsi.bat
 lib/python2.6/Tools/buildbot/clean.bat
@@ -109,7 +107,6 @@ lib/python2.6/Tools/modulator/Tkextra.py
 lib/python2.6/Tools/modulator/genmodule.py
 lib/python2.6/Tools/modulator/modulator.py
 lib/python2.6/Tools/modulator/varsubst.py
-lib/python2.6/Tools/msi/
 lib/python2.6/Tools/msi/README.txt
 lib/python2.6/Tools/msi/msi.py
 lib/python2.6/Tools/msi/msilib.py
@@ -119,7 +116,6 @@ lib/python2.6/Tools/msi/schema.py
 lib/python2.6/Tools/msi/sequence.py
 lib/python2.6/Tools/msi/uisample.py
 lib/python2.6/Tools/msi/uuids.py
-lib/python2.6/Tools/pybench/
 lib/python2.6/Tools/pybench/Arithmetic.py
 lib/python2.6/Tools/pybench/Calls.py
 lib/python2.6/Tools/pybench/CommandLine.py
@@ -167,7 +163,6 @@ lib/python2.6/Tools/pynche/pynche
 lib/python2.6/Tools/pynche/pynche.pyw
 lib/python2.6/Tools/pynche/webcolors.txt
 lib/python2.6/Tools/pynche/websafe.txt
-lib/python2.6/Tools/scripts/
 lib/python2.6/Tools/scripts/README
 lib/python2.6/Tools/scripts/byext.py
 lib/python2.6/Tools/scripts/byteyears.py

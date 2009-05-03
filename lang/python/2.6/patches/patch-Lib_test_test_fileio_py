@@ -1,7 +1,7 @@
-$OpenBSD: patch-Lib_test_test_fileio_py,v 1.1 2008/10/18 12:03:56 djm Exp $
---- Lib/test/test_fileio.py.orig	Tue Sep  2 00:13:43 2008
-+++ Lib/test/test_fileio.py	Wed Sep 17 10:49:32 2008
-@@ -150,6 +150,7 @@ class OtherFileTests(unittest.TestCase):
+$OpenBSD: patch-Lib_test_test_fileio_py,v 1.2 2009/05/03 22:26:27 djm Exp $
+--- Lib/test/test_fileio.py.orig	Tue Jan 20 08:02:45 2009
++++ Lib/test/test_fileio.py	Sun Apr 19 10:28:51 2009
+@@ -152,6 +152,7 @@ class OtherFileTests(unittest.TestCase):
                      self.assertEquals(f.writable(), True)
                      if sys.platform != "darwin" and \
                         not sys.platform.startswith('freebsd') and \
