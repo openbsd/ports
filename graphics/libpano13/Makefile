@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/19 11:14:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/05/03 09:02:16 sthen Exp $
 
 COMMENT =		library for processing panoramic images
-DISTNAME =		libpano13-2.9.14_beta2
-PKGNAME =		${DISTNAME:S/_beta/b/}
+DISTNAME =		libpano13-2.9.14_rc1
+PKGNAME =		${DISTNAME:S/_//}
 WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 
-SHARED_LIBS +=		pano13               0.0
+SHARED_LIBS +=		pano13               1.0
 
 CATEGORIES =		graphics
 HOMEPAGE =		http://panotools.sourceforge.net/
