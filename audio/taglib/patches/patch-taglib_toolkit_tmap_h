@@ -1,0 +1,14 @@
+$OpenBSD: patch-taglib_toolkit_tmap_h,v 1.1 2009/05/03 15:13:53 martynas Exp $
+--- taglib/toolkit/tmap.h.orig	Mon Feb  4 17:14:45 2008
++++ taglib/toolkit/tmap.h	Fri May  1 15:23:52 2009
+@@ -27,7 +27,10 @@
+ #define TAGLIB_MAP_H
+ 
+ #include <map>
++
++#ifdef WANT_CLASS_INSTANTIATION_OF_MAP
+ using namespace std;
++#endif
+ 
+ #include "taglib.h"
+ 
