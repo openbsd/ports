@@ -1,0 +1,9 @@
+Set::Infinite is a Set Theory module for infinite sets.
+
+A set is a collection of objects.  The objects that belong to a set are
+called its members, or "elements".  As objects we allow (almost)
+anything: reals, integers, and objects (such as dates).
+
+Note that there is no account for
+ - the order of elements.  For example, {1,2} = {2,1}.
+ - repetition of elements.  For example, {1,2,2} = {1,1,1,2} = {1,2}.

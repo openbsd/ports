@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/03 16:10:28 simon Exp $
+${P5SITE}/Set/
+${P5SITE}/Set/Infinite/
+${P5SITE}/Set/Infinite.pm
+${P5SITE}/Set/Infinite/Arithmetic.pm
+${P5SITE}/Set/Infinite/Basic.pm
+@man man/man3p/Set::Infinite.3p
+@man man/man3p/Set::Infinite::Arithmetic.3p
+@man man/man3p/Set::Infinite::Basic.3p
