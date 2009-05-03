@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.691 2009/04/26 19:42:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.692 2009/05/03 16:10:38 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -337,6 +337,7 @@
      SUBDIR += p5-DateTime-Format-Strptime
      SUBDIR += p5-DateTime-Format-W3CDTF
      SUBDIR += p5-DateTime-Locale
+     SUBDIR += p5-DateTime-Set
      SUBDIR += p5-DateTime-TimeZone
      SUBDIR += p5-Devel-Cover
      SUBDIR += p5-Devel-Cycle
@@ -499,6 +500,7 @@
      SUBDIR += p5-Safe-World
      SUBDIR += p5-Scalar-Defer
      SUBDIR += p5-Scope-Guard
+     SUBDIR += p5-Set-Infinite
      SUBDIR += p5-Set-IntRange
      SUBDIR += p5-Set-Object
      SUBDIR += p5-Set-Scalar
