@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/02/06 15:05:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/05/03 19:43:36 landry Exp $
 
 COMMENT=		send small notifications to your desktop
 
 DISTNAME=		notification-daemon-0.4.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		sysutils net
 
 HOMEPAGE=		http://www.galago-project.org/

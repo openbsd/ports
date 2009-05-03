@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/08 17:30:57 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2009/05/03 19:43:36 landry Exp $
 
-COMMENT=	notification daemon for Xfce4 desktop
+COMMENT=	Xfce4 notification daemon
 
 XFCE_VERSION=	0.3.7
 XFCE_GOODIE=	notification-daemon-xfce
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
