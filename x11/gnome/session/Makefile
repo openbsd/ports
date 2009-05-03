@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.72 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2009/05/03 19:51:42 landry Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 
 CATEGORIES=		x11
 
@@ -52,7 +52,7 @@ RUN_DEPENDS+=		::x11/gnome/alacarte \
 			::x11/gnome/yelp \
 			:gnome-screensaver-*|xscreensaver->=5.07p3:x11/gnome/screensaver \
 			::x11/tango-icon-theme  \
-			:notification-daemon-*|notification-daemon-xfce-*:sysutils/notification-daemon \
+			:notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon \
 			::x11/gnome/bug-buddy
 
 USE_X11=		Yes

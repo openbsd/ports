@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/05/03 19:51:42 landry Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
 GNOME_PROJECT=	gnome-screensaver
 GNOME_VERSION=	2.24.1
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -37,7 +37,7 @@ LIB_DEPENDS=	gnome-desktop-2.>=6::x11/gnome/desktop \
 # notification-daemon is needed for the "Leave Message" button
 RUN_DEPENDS=	::x11/gnome/librsvg \
 		:xscreensaver-data-*:x11/xscreensaver,-data,no_gle \
-		:notification-daemon-*|notification-daemon-xfce-*:sysutils/notification-daemon
+		:notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
