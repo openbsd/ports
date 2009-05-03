@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/08 13:14:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/05/03 15:58:10 landry Exp $
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/Gallery.pm
-${P5SITE}/Apache/Gallery.pm.orig
 @man man/man3p/Apache::Gallery.3p
 share/Apache-Gallery/
 share/Apache-Gallery/icons/

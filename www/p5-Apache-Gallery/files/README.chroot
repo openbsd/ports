@@ -1,4 +1,4 @@
-# $OpenBSD: README.chroot,v 1.2 2008/10/08 13:14:15 jasper Exp $
+# $OpenBSD: README.chroot,v 1.3 2009/05/03 15:58:10 landry Exp $
 
 In order to make A::G operate in a chrooted environment, it is
 necessary to copy all of the relevant libraries and perl modules
@@ -24,15 +24,16 @@ $ cd /var/www/usr/libexec
 Next, the required shared libraries:
 
 $ cd /var/www/usr/lib
-# cp -p /usr/lib/lib{c,m,z,perl}.so* .
+# cp -p /usr/lib/lib{c,m,z,util,perl}.so* .
 
 $ cd /var/www${LOCALBASE}/lib
-# cp -p ${LOCALBASE}/lib/lib{jpeg,png,bz2,tiff,ungif,Imlib2,ltdl}.so* .
-# mkdir -p imlib2_loaders/image
-# cp -pR ${LOCALBASE}/lib/imlib2_loaders/image/*.so imlib2_loaders/image
+# cp -p ${LOCALBASE}/lib/lib{jpeg,png,bz2,tiff,tiffxx,gif,Imlib2,ltdl,id3tag}.so* .
+# mkdir -p imlib2/{loaders,filters}
+# cp -pR ${LOCALBASE}/lib/imlib2/loaders/*.so imlib2/loaders
+# cp -pR ${LOCALBASE}/lib/imlib2/filters/*.so imlib2/filters
 
 $ cd /var/www/usr/X11R6/lib
-# cp -p /usr/X11R6/lib/lib{Xext,freetype,X11}.so.* .
+# cp -p /usr/X11R6/lib/lib{Xext,freetype,X11,Xau,Xdmcp}.so.* .
 
 Next, the Perl base:
 
@@ -54,6 +55,8 @@ $ cd /var/www${LOCALBASE}/libdata/perl5/site_perl/
 	`machine`-openbsd
 # cp -pR ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/auto/Apache \
 	`machine`-openbsd/auto
+# cp -p ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/mod_perl*.pm \
+	`machine`-openbsd
 
 # mkdir -p {,`machine`-openbsd/}{,auto/}Image
 # cp -pR ${LOCALBASE}/libdata/perl5/site_perl/Image .
@@ -63,8 +66,9 @@ $ cd /var/www${LOCALBASE}/libdata/perl5/site_perl/
 # cp -pR ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/auto/Image \
 	`machine`-openbsd/auto
 
-# mkdir -p Text URI
+# mkdir -p Text URI IO
 # cp -pR ${LOCALBASE}/libdata/perl5/site_perl/Text/Template* Text
+# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/IO/String* String
 # cp -pR ${LOCALBASE}/libdata/perl5/site_perl/URI* .
 
 
