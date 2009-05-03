@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.28 2008/12/28 19:45:17 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.29 2009/05/03 12:19:09 sthen Exp $
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1
@@ -11,6 +11,7 @@ share/mysql-test/include/big_test.inc
 share/mysql-test/include/check-testcase.test
 share/mysql-test/include/check_var_limit.inc
 share/mysql-test/include/common-tests.inc
+share/mysql-test/include/count_sessions.inc
 share/mysql-test/include/ctype_common.inc
 share/mysql-test/include/ctype_filesort.inc
 share/mysql-test/include/ctype_innodb_like.inc
@@ -62,6 +63,7 @@ share/mysql-test/include/have_ujis.inc
 share/mysql-test/include/im_check_env.inc
 share/mysql-test/include/innodb_rollback_on_timeout.inc
 share/mysql-test/include/loaddata_autocom.inc
+share/mysql-test/include/master-slave-end.inc
 share/mysql-test/include/master-slave.inc
 share/mysql-test/include/mysqltest-x.inc
 share/mysql-test/include/ndb_backup.inc
@@ -86,6 +88,8 @@ share/mysql-test/include/show_binlog_events2.inc
 share/mysql-test/include/show_msg.inc
 share/mysql-test/include/show_msg80.inc
 share/mysql-test/include/sp-vars.inc
+share/mysql-test/include/start_slave.inc
+share/mysql-test/include/stop_slave.inc
 share/mysql-test/include/strict_autoinc.inc
 share/mysql-test/include/system_db_struct.inc
 share/mysql-test/include/test_outfile.inc
@@ -96,11 +100,16 @@ share/mysql-test/include/wait_condition.inc
 share/mysql-test/include/wait_for_query_to_suceed.inc
 share/mysql-test/include/wait_for_slave_io_to_stop.inc
 share/mysql-test/include/wait_for_slave_param.inc
+share/mysql-test/include/wait_for_slave_sql_error.inc
+share/mysql-test/include/wait_for_slave_sql_error_and_skip.inc
 share/mysql-test/include/wait_for_slave_sql_to_stop.inc
 share/mysql-test/include/wait_for_slave_to_start.inc
 share/mysql-test/include/wait_for_slave_to_stop.inc
+share/mysql-test/include/wait_show_condition.inc
 share/mysql-test/include/wait_show_pattern.inc
 share/mysql-test/include/wait_slave_status.inc
+share/mysql-test/include/wait_until_count_sessions.inc
+share/mysql-test/include/wait_until_disconnected.inc
 share/mysql-test/include/windows.inc
 share/mysql-test/install_test_db
 share/mysql-test/lib/
@@ -353,6 +362,7 @@ share/mysql-test/r/innodb-replace.result
 share/mysql-test/r/innodb-ucs2.result
 share/mysql-test/r/innodb.result
 share/mysql-test/r/innodb_bug35220.result
+share/mysql-test/r/innodb_bug42419.result
 share/mysql-test/r/innodb_cache.result
 share/mysql-test/r/innodb_gis.result
 share/mysql-test/r/innodb_handler.result
@@ -383,6 +393,8 @@ share/mysql-test/r/loaddata_autocom_innodb.result
 share/mysql-test/r/loaddata_autocom_ndb.result
 share/mysql-test/r/lock.result
 share/mysql-test/r/lock_multi.result
+share/mysql-test/r/lock_multi_bug38499.result
+share/mysql-test/r/lock_multi_bug38691.result
 share/mysql-test/r/lock_tables_lost_commit.result
 share/mysql-test/r/long_tmpdir.result
 share/mysql-test/r/lowercase0.require
@@ -395,6 +407,7 @@ share/mysql-test/r/lowercase_table2.result
 share/mysql-test/r/lowercase_table3.result
 share/mysql-test/r/lowercase_table_grant.result
 share/mysql-test/r/lowercase_table_qcache.result
+share/mysql-test/r/lowercase_utf8.result
 share/mysql-test/r/lowercase_view.result
 share/mysql-test/r/merge.result
 share/mysql-test/r/metadata.result
@@ -406,6 +419,7 @@ share/mysql-test/r/multi_update_tiny_hash.result
 share/mysql-test/r/myisam-blob.result
 share/mysql-test/r/myisam.result
 share/mysql-test/r/myisampack.result
+share/mysql-test/r/mysql-bug41486.result
 share/mysql-test/r/mysql.result
 share/mysql-test/r/mysql_client_test.result
 share/mysql-test/r/mysql_comments.result
@@ -560,6 +574,7 @@ share/mysql-test/r/rpl_dual_pos_advance.result
 share/mysql-test/r/rpl_empty_master_crash.result
 share/mysql-test/r/rpl_error_ignored_table.result
 share/mysql-test/r/rpl_failed_optimize.result
+share/mysql-test/r/rpl_filter_tables_not_exist.result
 share/mysql-test/r/rpl_flush_log_loop.result
 share/mysql-test/r/rpl_flush_tables.result
 share/mysql-test/r/rpl_free_items.result
@@ -799,9 +814,7 @@ share/mysql-test/std_data/ndb_config_mycnf2.cnf
 share/mysql-test/std_data/rpl_loaddata.dat
 share/mysql-test/std_data/rpl_loaddata2.dat
 share/mysql-test/std_data/rpl_timezone.dat
-share/mysql-test/std_data/server-cert-des.pem
 share/mysql-test/std_data/server-cert.pem
-share/mysql-test/std_data/server-key-des.pem
 share/mysql-test/std_data/server-key.pem
 share/mysql-test/std_data/server8k-cert.pem
 share/mysql-test/std_data/server8k-key.pem
@@ -1606,6 +1619,7 @@ share/mysql-test/t/innodb-replace.test
 share/mysql-test/t/innodb-ucs2.test
 share/mysql-test/t/innodb.test
 share/mysql-test/t/innodb_bug35220.test
+share/mysql-test/t/innodb_bug42419.test
 share/mysql-test/t/innodb_cache-master.opt
 share/mysql-test/t/innodb_cache.test
 share/mysql-test/t/innodb_gis.test
@@ -1640,6 +1654,8 @@ share/mysql-test/t/loaddata_autocom_innodb.test
 share/mysql-test/t/loaddata_autocom_ndb.test
 share/mysql-test/t/lock.test
 share/mysql-test/t/lock_multi.test
+share/mysql-test/t/lock_multi_bug38499.test
+share/mysql-test/t/lock_multi_bug38691.test
 share/mysql-test/t/lock_tables_lost_commit-master.opt
 share/mysql-test/t/lock_tables_lost_commit.test
 share/mysql-test/t/log.sh
@@ -1659,6 +1675,8 @@ share/mysql-test/t/lowercase_table_grant-master.opt
 share/mysql-test/t/lowercase_table_grant.test
 share/mysql-test/t/lowercase_table_qcache-master.opt
 share/mysql-test/t/lowercase_table_qcache.test
+share/mysql-test/t/lowercase_utf8-master.opt
+share/mysql-test/t/lowercase_utf8.test
 share/mysql-test/t/lowercase_view-master.opt
 share/mysql-test/t/lowercase_view.test
 share/mysql-test/t/merge.test
@@ -1677,6 +1695,7 @@ share/mysql-test/t/myisam-blob-master.opt
 share/mysql-test/t/myisam-blob.test
 share/mysql-test/t/myisam.test
 share/mysql-test/t/myisampack.test
+share/mysql-test/t/mysql-bug41486.test
 share/mysql-test/t/mysql.test
 share/mysql-test/t/mysql_client_test.opt
 share/mysql-test/t/mysql_client_test.test
@@ -1857,6 +1876,8 @@ share/mysql-test/t/rpl_error_ignored_table-slave.opt
 share/mysql-test/t/rpl_error_ignored_table.test
 share/mysql-test/t/rpl_failed_optimize-master.opt
 share/mysql-test/t/rpl_failed_optimize.test
+share/mysql-test/t/rpl_filter_tables_not_exist-slave.opt
+share/mysql-test/t/rpl_filter_tables_not_exist.test
 share/mysql-test/t/rpl_flush_log_loop-master.opt
 share/mysql-test/t/rpl_flush_log_loop-master.sh
 share/mysql-test/t/rpl_flush_log_loop-slave.opt
