@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/10/06 16:17:28 naddy Exp $
-bin/nail
+@comment $OpenBSD: PLIST,v 1.5 2009/05/04 19:10:49 okan Exp $
+@bin bin/nail
 @man man/man1/nail.1
 share/examples/nail/
 share/examples/nail/nail.rc

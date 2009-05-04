@@ -1,9 +1,12 @@
-$OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
---- mailx.1.orig	Mon Mar  6 15:23:24 2006
-+++ mailx.1	Tue Aug  1 10:23:50 2006
-@@ -38,12 +38,12 @@
+$OpenBSD: patch-mailx_1,v 1.3 2009/05/04 19:10:49 okan Exp $
+--- mailx.1.orig	Mon Oct  1 09:00:39 2007
++++ mailx.1	Mon May  4 14:18:28 2009
+@@ -36,14 +36,14 @@
  .\"
- .TH MAILX 1 "3/6/06" "Heirloom mailx 12.1" "User Commands"
+ .\"     Sccsid: @(#)mailx.1	2.326 (gritter) 10/1/07
+ .\"
+-.TH MAILX 1 "10/1/07" "Heirloom mailx 12.4" "User Commands"
++.TH NAIL 1 "10/1/07" "Heirloom nail 12.4" "User Commands"
  .SH NAME
 -mailx \- send and receive Internet mail
 +nail \- send and receive Internet mail
@@ -11,8 +14,8 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  .PD 0
  .HP
  .ad l
--\fBmailx\fR [\fB\-BDdFintv~\fR]
-+\fBnail\fR [\fB\-BDdFintv~\fR]
+-\fBmailx\fR [\fB\-BDdEFintv~\fR]
++\fBnail\fR [\fB\-BDdEFintv~\fR]
  [\fB\-s\fI\ subject\fR] [\fB\-a\fI\ attachment\fR ]
  [\fB\-c\fI\ cc-addr\fR] [\fB\-b\fI\ bcc-addr\fR] [\fB\-r\fI\ from-addr\fR]
  [\fB\-h\fI\ hops\fR]
@@ -20,15 +23,15 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  \fIto-addr\fR .\ .\ .
  .HP
  .ad l
--\fBmailx\fR [\fB\-BDdeHiInNRv~\fR] [\fB\-T\fI\ name\fR]
-+\fBnail\fR [\fB\-BDdeHiInNRv~\fR] [\fB\-T\fI\ name\fR]
+-\fBmailx\fR [\fB\-BDdeEHiInNRv~\fR] [\fB\-T\fI\ name\fR]
++\fBnail\fR [\fB\-BDdeEHiInNRv~\fR] [\fB\-T\fI\ name\fR]
  [\fB\-A\fI\ account\fR]
  [\fB\-S\fI\ variable\fR[\fB=\fIvalue\fR]]
  \fB\-f\fR [\fIname\fR]
  .HP
  .ad l
--\fBmailx\fR [\fB\-BDdeinNRv~\fR]
-+\fBnail\fR [\fB\-BDdeinNRv~\fR]
+-\fBmailx\fR [\fB\-BDdeEinNRv~\fR]
++\fBnail\fR [\fB\-BDdeEinNRv~\fR]
  [\fB\-A\fI\ account\fR]
  [\fB\-S\fI\ variable\fR[\fB=\fIvalue\fR]]
  [\fB\-u\fI\ user\fR]
@@ -41,7 +44,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  a command syntax reminiscent of
  .IR ed (1)
  with lines replaced by messages.
-@@ -76,7 +76,7 @@ is intended to provide the functionality
+@@ -76,7 +76,7 @@ is intended to provide the functionality of the POSIX
  command,
  and offers extensions
  for MIME, IMAP, POP3, SMTP, and S/MIME.
@@ -50,7 +53,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  provides enhanced
  features for interactive use, such as caching and disconnected
  operation for IMAP, message threading, scoring, and filtering.
-@@ -117,7 +117,7 @@ Enables debugging messages and disables 
+@@ -117,7 +117,7 @@ Enables debugging messages and disables the actual del
  Unlike
  .IR \-v ,
  this option is intended for
@@ -59,7 +62,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  development only.
  .TP
  .B \-e
-@@ -130,7 +130,7 @@ Read in the contents of the user's mbox
+@@ -141,7 +141,7 @@ Read in the contents of the user's mbox
  (or the specified file)
  for processing;
  when
@@ -68,7 +71,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  is quit, it writes
  undeleted messages back
  to this file.
-@@ -155,7 +155,7 @@ This option has no effect when SMTP is u
+@@ -166,7 +166,7 @@ This option has no effect when SMTP is used for sendin
  Ignore tty interrupt signals.
  This is
  particularly useful when using
@@ -77,7 +80,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  .TP
  .B \-I
  Shows the `Newsgroup:' or `Article-Id:' fields
-@@ -166,7 +166,7 @@ Only applicable in combination with
+@@ -177,7 +177,7 @@ Only applicable in combination with
  .B \-n
  Inhibits reading /etc/nail.rc upon startup.
  This option should be activated for
@@ -86,7 +89,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  scripts that are invoked on more than one machine,
  because the contents of that file may differ between them.
  .TP
-@@ -233,23 +233,23 @@ The details of
+@@ -244,23 +244,23 @@ The details of
  delivery are displayed on the user's terminal.
  .TP
  .B \-V
@@ -114,7 +117,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  and checks the user's mail out of the post office,
  then prints out a one line header
  of each message found.
-@@ -266,12 +266,12 @@ and simple numbers.
+@@ -277,12 +277,12 @@ and simple numbers.
  After examining a message
  the user can delete `d') the message
  or reply `r') to it.
@@ -129,7 +132,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  by giving the exit `x') command.
  Deleted messages will, however,
  usually disappear never to be seen again.
-@@ -414,7 +414,7 @@ All messages that satisfy the given IMAP
+@@ -425,7 +425,7 @@ All messages that satisfy the given IMAP-style SEARCH
  This addressing mode is available with all types of folders;
  for folders not located on IMAP servers,
  or for servers unable to execute the SEARCH command,
@@ -138,7 +141,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  will perform the search locally.
  Strings must be enclosed by double quotes `"' in their entirety
  if they contain white space or parentheses;
-@@ -576,7 +576,7 @@ Text the user types in then,
+@@ -587,7 +587,7 @@ Text the user types in then,
  up to an end-of-file,
  defines the contents of the message.
  While the user is composing a message,
@@ -147,7 +150,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  For instance, typing `~m' (alone on a line)
  will place a copy of the current message into the response
  right shifting it by a tabstop
-@@ -591,7 +591,7 @@ to revise the message
+@@ -602,7 +602,7 @@ to revise the message
  or to a shell to run some commands.
  (These options are given in the summary below.)
  .SS "Ending a mail processing session"
@@ -156,7 +159,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  with the quit (`q') command.
  Messages which have been examined
  go to the user's mbox file
-@@ -614,7 +614,7 @@ Such lists can be defined by placing a l
+@@ -625,7 +625,7 @@ Such lists can be defined by placing a line like
  .fi
  in the file .mailrc in the user's home directory.
  The current list of such aliases
@@ -165,7 +168,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  System wide distribution lists can be created
  by editing /etc/aliases, see
  .IR aliases (5)
-@@ -663,14 +663,14 @@ command below.
+@@ -674,14 +674,14 @@ command below.
  See
  .IR mailaddr (7)
  for a description of network addresses.
@@ -182,7 +185,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  It does this by reading MIME type files
  whose lines have the following syntax:
  .nf
-@@ -681,7 +681,7 @@ whose lines have the following syntax:
+@@ -692,7 +692,7 @@ whose lines have the following syntax:
  where type/subtype are strings describing the file contents,
  and extension is the part of a filename starting after the last dot.
  Any line not immediately beginning with an ASCII alphabetical character is
@@ -191,7 +194,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  If there is a match with the extension of the file to attach,
  the given type/subtype pair is used.
  Otherwise, or if the filename has no extension,
-@@ -690,7 +690,7 @@ the first for text or international text
+@@ -701,7 +701,7 @@ the first for text or international text files,
  the second for any file that contains formatting characters
  other than newlines and horizontal tabulators.
  .SS "Character sets"
@@ -200,7 +203,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  normally detects the character set of the terminal
  using the LC_CTYPE locale setting.
  If the locale cannot be used appropriately,
-@@ -714,7 +714,7 @@ must be declared within its header.
+@@ -725,7 +725,7 @@ must be declared within its header.
  Permissible values can be declared
  using the \fIsendcharsets\fR variable,
  separated by commas;
@@ -209,7 +212,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  tries each of the values in order
  and uses the first appropriate one.
  If the message contains characters that cannot be represented
-@@ -734,7 +734,7 @@ if it is invoked without arguments.
+@@ -745,7 +745,7 @@ if it is invoked without arguments.
  .PP
  Best results are usually achieved
  when
@@ -218,7 +221,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  is run in a UTF-8 locale
  on a UTF-8 capable terminal.
  In this setup,
-@@ -754,7 +754,7 @@ the command's requirements is used.
+@@ -765,7 +765,7 @@ the command's requirements is used.
  If there are no messages forward of the current message,
  the search proceeds backwards,
  and if there are no good messages at all,
@@ -227,7 +230,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  If the command begins with a \fI#\fR sign,
  the line is ignored.
  .PP
-@@ -858,10 +858,10 @@ creates a new alias or changes an old on
+@@ -869,10 +869,10 @@ creates a new alias or changes an old one.
  .B alternates
  (alt) The alternates command is useful
  if the user has accounts on several machines.
@@ -240,7 +243,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  to any of the addresses
  listed on the alternates list.
  If the alternates command is given
-@@ -1006,7 +1006,7 @@ available for disconnected use.
+@@ -1017,7 +1017,7 @@ available for disconnected use.
  Deletes the current message
  and prints the next message.
  If there is no next message,
@@ -249,7 +252,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  .TP
  .B draft
  Takes a message list and marks each message
-@@ -1145,7 +1145,7 @@ The optional
+@@ -1156,7 +1156,7 @@ The optional
  part applies to IMAP only;
  if it is omitted,
  the default `INBOX' is used.
@@ -258,7 +261,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  a name of the form \fB@\fImailbox\fR
  refers to the \fImailbox\fR on that server.
  If the `folder' variable refers to an IMAP account,
-@@ -1252,14 +1252,14 @@ and marks each message therein to be sav
+@@ -1263,14 +1263,14 @@ and marks each message therein to be saved
  in the user's system mailbox
  instead of in mbox.
  Does not override the delete command.
@@ -275,7 +278,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  can be executed conditionally
  depending on whether the user is sending
  or receiving mail with the if command.
-@@ -1302,7 +1302,7 @@ it lists the current set of ignored fiel
+@@ -1313,7 +1313,7 @@ it lists the current set of ignored fields.
  .TP
  .B imap
  Sends command strings directly to the current IMAP server.
@@ -284,7 +287,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  on the current mailbox;
  commands that change this
  will produce undesirable results
-@@ -1375,13 +1375,13 @@ and sends mail to those people.
+@@ -1386,13 +1386,13 @@ and sends mail to those people.
  .B mbox
  Indicate that a list of messages be sent
  to mbox in the user's home directory when
@@ -300,7 +303,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  deviates from the POSIX standard with this command,
  as a `next' command issued after `mbox'
  will display the following message,
-@@ -1771,7 +1771,7 @@ Takes a message list
+@@ -1782,7 +1782,7 @@ Takes a message list
  and marks the messages for saving in the
  .I mbox
  file.
@@ -309,7 +312,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  deviates from the POSIX standard with this command,
  as a `next' command issued after `mbox'
  will display the following message,
-@@ -1941,7 +1941,7 @@ No special handling of compressed files 
+@@ -1953,7 +1953,7 @@ No special handling of compressed files is performed.
  (x) A synonym for exit.
  .TP
  .B z
@@ -318,7 +321,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  as described under the headers command.
  The z command scrolls to the next window of messages.
  If an argument is given,
-@@ -1951,7 +1951,7 @@ that the window is calculated in relatio
+@@ -1963,7 +1963,7 @@ that the window is calculated in relation
  to the current position.
  A number without a prefix specifies an
  absolute window number,
@@ -327,7 +330,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  to the last window of messages.
  .TP
  .B Z
-@@ -1989,7 +1989,7 @@ First, the user can edit all existing at
+@@ -2001,7 +2001,7 @@ First, the user can edit all existing attachment data.
  If an attachment's file name is left empty,
  that attachment is deleted from the list.
  When the end of the attachment list is reached,
@@ -336,7 +339,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  will ask for further attachments,
  until an empty file name is given.
  If \fIfilename\fP arguments are specified,
-@@ -2141,11 +2141,11 @@ The command
+@@ -2153,11 +2153,11 @@ The command
  is often used
  as command to rejustify the message.
  .TP
@@ -351,7 +354,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  Identical to ~:.
  .TP
  .BI ~~ string
-@@ -2158,7 +2158,7 @@ in order to send it at the beginning of 
+@@ -2170,7 +2170,7 @@ in order to send it at the beginning of a line.
  Options are controlled via set and unset commands,
  see their entries for a syntax description.
  An option is also set
@@ -360,7 +363,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  as part of the environment
  (this is not restricted to specific variables as in the POSIX standard).
  A value given in a startup file overrides
-@@ -2181,7 +2181,7 @@ rather than prepended.
+@@ -2193,7 +2193,7 @@ rather than prepended.
  This should always be set.
  .TP
  .BR ask \ or \ asksub
@@ -369,7 +372,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  of each message sent.
  If the user responds with simply a newline,
  no subject field will be sent.
-@@ -2191,7 +2191,7 @@ Causes the prompts for `Cc:' and `Bcc:' 
+@@ -2203,7 +2203,7 @@ Causes the prompts for `Cc:' and `Bcc:' lists
  to appear after the message has been edited.
  .TP
  .B askattach
@@ -378,7 +381,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  Responding with a newline indicates not to include an attachment.
  .TP
  .B askcc
-@@ -2309,7 +2309,7 @@ Prints debugging messages and disables t
+@@ -2321,7 +2321,7 @@ Prints debugging messages and disables the actual deli
  Unlike
  .IR verbose ,
  this option is intended for
@@ -387,7 +390,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  development only.
  .TP
  .B disconnected
-@@ -2340,7 +2340,7 @@ variable above,
+@@ -2352,7 +2352,7 @@ variable above,
  but other accounts are not affected.
  .TP
  .B dot
@@ -396,7 +399,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  a period alone on a line
  as the terminator of a message the user is sending.
  .TP
-@@ -2359,10 +2359,10 @@ when using a common folder directory.
+@@ -2371,10 +2371,10 @@ when using a common folder directory.
  .TP
  .B emptystart
  If the mailbox is empty,
@@ -409,7 +412,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  .TP
  .B flipr
  Exchanges the
-@@ -2391,7 +2391,7 @@ option is set.
+@@ -2403,7 +2403,7 @@ option is set.
  .TP
  .B fullnames
  When replying to a message,
@@ -418,7 +421,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  which by convention contain the full names of the recipients.
  If this variable is set,
  such stripping is not performed,
-@@ -2413,13 +2413,13 @@ to be ignored and echoed as @'s.
+@@ -2425,13 +2425,13 @@ to be ignored and echoed as @'s.
  .TP
  .B ignoreeof
  An option related to dot is ignoreeof
@@ -435,7 +438,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  to issue a STARTTLS command
  to make an unencrypted IMAP session SSL/TLS encrypted.
  This functionality is not supported by all servers,
-@@ -2431,7 +2431,7 @@ Activates
+@@ -2443,7 +2443,7 @@ Activates
  for a specific account.
  .TP
  .B keep
@@ -444,7 +447,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  instead of deleting it when it is empty.
  This should always be set,
  since it prevents malicious users
-@@ -2443,7 +2443,7 @@ When a message is saved,
+@@ -2455,7 +2455,7 @@ When a message is saved,
  it is usually discarded
  from the originating folder
  when
@@ -453,7 +456,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  is quit.
  Setting this option
  causes all saved message to be retained.
-@@ -2535,7 +2535,7 @@ for a specific account.
+@@ -2547,7 +2547,7 @@ for a specific account.
  .TP
  .B pop3-use-starttls
  Causes
@@ -462,7 +465,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  to issue a STLS command
  to make an unencrypted POP3 session SSL/TLS encrypted.
  This functionality is not supported by all servers,
-@@ -2583,7 +2583,7 @@ folder as it is normally only done for n
+@@ -2595,7 +2595,7 @@ folder as it is normally only done for newly composed 
  .TP
  .B reply-in-same-charset
  If this variable is set,
@@ -471,7 +474,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  first tries to use the same character set
  of the original message for replies.
  If this fails,
-@@ -2597,7 +2597,7 @@ Reverses the sense of reply and Reply co
+@@ -2609,7 +2609,7 @@ Reverses the sense of reply and Reply commands.
  .B save
  When the user aborts a message
  with two RUBOUT (interrupt characters)
@@ -480,7 +483,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  to the file `dead.letter' in the home directory.
  This option is set by default.
  .TP
-@@ -2613,15 +2613,15 @@ When sending a message,
+@@ -2625,15 +2625,15 @@ When sending a message,
  wait until the mail transfer agent exits
  before accepting further commands.
  If the mail transfer agent returns a non-zero exit status,
@@ -499,7 +502,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  to use the sender's real name instead of the plain address
  in the header field summary and in message specifications.
  .TP
-@@ -2631,7 +2631,7 @@ if the message was sent by the user.
+@@ -2651,7 +2651,7 @@ option).
  .TP
  .B smime-force-encryption
  Causes
@@ -508,7 +511,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  to refuse sending unencrypted messages.
  .TP
  .B smime-sign
-@@ -2651,7 +2651,7 @@ when verifying S/MIME signed messages.
+@@ -2671,7 +2671,7 @@ when verifying S/MIME signed messages.
  Only applicable if S/MIME support is built using OpenSSL.
  .TP
  .B smtp-use-starttls
@@ -517,7 +520,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  to make an SMTP session SSL/TLS encrypted.
  Not all servers support this command;
  because of common implementation defects,
-@@ -2671,7 +2671,7 @@ because this protocol version is insecur
+@@ -2691,7 +2691,7 @@ because this protocol version is insecure.
  .B stealthmua
  Inhibits the generation of
  the \fI`Message-Id:'\fR and \fI`User-Agent:'\fR
@@ -526,7 +529,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  There are two pitfalls associated with this:
  First, the message id of outgoing messages is not known anymore.
  Second, an expert may still use the remaining information in the header
-@@ -2680,13 +2680,13 @@ to track down the originating mail user 
+@@ -2700,13 +2700,13 @@ to track down the originating mail user agent.
  .B verbose
  Setting the option verbose is the same
  as using the \-v flag on the command line.
@@ -542,7 +545,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  prints all data that is sent to remote servers in clear texts,
  including passwords,
  so care should be taken that no unauthorized option
-@@ -2798,7 +2798,7 @@ for storing folders of messages.
+@@ -2818,7 +2818,7 @@ for storing folders of messages.
  All folder names that begin with `+'
  refer to files below that directory.
  If the directory name begins with a `/',
@@ -551,7 +554,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  otherwise, the folder directory is found
  relative to the user's home directory.
  .IP
-@@ -2953,9 +2953,9 @@ Sets the IMAP authentication method for 
+@@ -2973,9 +2973,9 @@ Sets the IMAP authentication method for a specific acc
  Enables caching of IMAP mailboxes.
  The value of this variable must point to a directory
  that is either existent or can be created by
@@ -563,7 +566,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  at any time;
  it is not safe to make assumptions about them.
  .TP
-@@ -3005,7 +3005,7 @@ format for saving space.
+@@ -3025,7 +3025,7 @@ format for saving space.
  If processing time is considered more important,
  .IR uncompress (1)
  can be used to store them in plain form.
@@ -572,7 +575,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  will then work using the uncompressed files.
  .TP
  .B LISTER
-@@ -3080,17 +3080,17 @@ is a digit.
+@@ -3100,17 +3100,17 @@ is a digit.
  These are usually taken from Mozilla installations,
  so an appropriate value might be
  `~/.mozilla/firefox/default.clm'.
@@ -593,7 +596,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  then.
  Only applicable if S/MIME and SSL/TLS support is built using
  Network Security Services (NSS).
-@@ -3134,7 +3134,7 @@ if messages of type
+@@ -3154,7 +3154,7 @@ if messages of type
  were filtered through the shell, for example,
  a message sender could easily execute arbitrary code
  on the system
@@ -602,7 +605,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  is running on.
  .TP
  .B pop3-keepalive
-@@ -3157,7 +3157,7 @@ or to `\fB&\ \fR' if the
+@@ -3177,7 +3177,7 @@ or to `\fB&\ \fR' if the
  variable is set.
  .TP
  .B quote
@@ -611,7 +614,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  by the value of the variable \fIindentprefix\fR.
  Normally, a heading consisting of `Fromheaderfield wrote:' is printed
  before the quotation.
-@@ -3188,7 +3188,7 @@ If replying to a message, such addresses
+@@ -3208,7 +3208,7 @@ If replying to a message, such addresses are handled
  as if they were in the alternates list.
  .TP
  .B screen
@@ -620,7 +623,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  it determines the number to print
  by looking at the speed of the terminal.
  The faster the terminal, the more it prints.
-@@ -3203,7 +3203,7 @@ A comma-separated list of character set 
+@@ -3223,7 +3223,7 @@ A comma-separated list of character set names
  that can be used in Internet mail.
  When a message that contains characters not representable in US-ASCII
  is prepared for sending,
@@ -629,7 +632,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  tries to convert its text
  to each of the given character sets in order
  and uses the first appropriate one.
-@@ -3367,7 +3367,7 @@ the specific file is used.
+@@ -3387,7 +3387,7 @@ the specific file is used.
  When decrypting messages,
  their recipient fields (To: and Cc:) are searched for addresses
  for which such a variable is set.
@@ -638,7 +641,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  always uses the first address that matches,
  so if the same message is sent to more than one
  of the user's addresses using different encryption keys,
-@@ -3390,7 +3390,7 @@ for a specific address.
+@@ -3410,7 +3410,7 @@ for a specific address.
  Only applicable if S/MIME support is built using NSS.
  .TP
  .B smtp
@@ -647,7 +650,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  .IR sendmail (8)
  directly to transfer messages.
  If the \fIsmtp\fR variable is set, a SMTP connection to
-@@ -3464,7 +3464,7 @@ If this variable is set but neither
+@@ -3486,7 +3486,7 @@ If this variable is set but neither
  or a matching
  .I smtp-auth-password-user@host
  can be found,
@@ -656,7 +659,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  will as for a password on the user's terminal.
  .TP
  \fBsmtp-auth-user-\fIuser\fB@\fIhost\fR
-@@ -3583,9 +3583,9 @@ normally, the first five
+@@ -3605,9 +3605,9 @@ normally, the first five
  lines are printed.
  .TP
  .B ttycharset
@@ -668,7 +671,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  by looking at the LC_CTYPE locale setting;
  if this succeeds, the value is assigned at startup
  and will be displayed by the \fIset\fP command.
-@@ -3596,7 +3596,7 @@ that can be used in Internet messages.
+@@ -3618,7 +3618,7 @@ that can be used in Internet messages.
  Pathname of the text editor to use
  in the visual command and ~v escape.
  .SH ENVIRONMENT VARIABLES
@@ -677,7 +680,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  the following environment strings:
  .TP
  .B HOME
-@@ -3609,7 +3609,7 @@ See
+@@ -3631,7 +3631,7 @@ See
  .B MAILRC
  Is used as startup file instead of ~/.mailrc if set.
  When
@@ -686,7 +689,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  scripts are invoked on behalf of other users,
  this variable should be set to `/dev/null'
  to avoid side-effects from reading their configuration files.
-@@ -3641,7 +3641,7 @@ System wide MIME types.
+@@ -3663,7 +3663,7 @@ System wide MIME types.
  .SH EXAMPLES
  .SS "Getting started"
  The
@@ -695,7 +698,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  command has two distinct usages, according to whether one
  wants to send or receive mail.
  Sending mail is simple: to send a
-@@ -3651,29 +3651,29 @@ use the shell
+@@ -3673,29 +3673,29 @@ use the shell
  command:
  .nf
  .sp
@@ -730,7 +733,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  to save your partial letter on the file `dead.letter'
  in your home directory and abort the letter.
  Once you have
-@@ -3685,7 +3685,7 @@ you can list their email addresses on th
+@@ -3707,7 +3707,7 @@ you can list their email addresses on the command line
  Thus,
  .nf
  .sp
@@ -739,7 +742,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
      Subject: Fees
      Tuition fees are due next Friday.  Don't forget!
      <Control\-d>
-@@ -3700,16 +3700,16 @@ and
+@@ -3722,16 +3722,16 @@ and
  To read your mail, simply type
  .nf
  .sp
@@ -759,7 +762,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  keeps track of which messages are
  .I new
  (have been sent since you last read your mail) and
-@@ -3720,7 +3720,7 @@ next to them in the header listing and o
+@@ -3742,7 +3742,7 @@ next to them in the header listing and old, but unread
  a
  .B U
  next to them.
@@ -768,7 +771,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  keeps track of new/old and read/unread messages by putting a
  header field called
  .I Status
-@@ -3744,7 +3744,7 @@ you could examine the first message by g
+@@ -3766,7 +3766,7 @@ you could examine the first message by giving the comm
  .sp
  .fi
  which might cause
@@ -777,7 +780,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  to respond with, for example:
  .nf
  .sp
-@@ -3758,14 +3758,14 @@ to respond with, for example:
+@@ -3780,14 +3780,14 @@ to respond with, for example:
  .fi
  .PP
  Many
@@ -794,7 +797,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  program, the current message is initially the first
  (or the first recent) one.
  Thus, you can often omit the message number and use, for example,
-@@ -3788,10 +3788,10 @@ would type the first message.
+@@ -3810,10 +3810,10 @@ would type the first message.
  Frequently, it is useful to read the messages in your mailbox in order,
  one after another.
  You can read the next message in
@@ -807,7 +810,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  to type the first message.
  .PP
  If, after typing a message, you wish to immediately send a reply,
-@@ -3802,13 +3802,13 @@ This command,
+@@ -3824,13 +3824,13 @@ This command,
  like
  .IR type ,
  takes a message number as an argument.
@@ -823,7 +826,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  copies the subject header from the original message.
  This is useful in that correspondence
  about a particular matter will tend to retain the same subject heading,
-@@ -3843,13 +3843,13 @@ you can use the
+@@ -3865,13 +3865,13 @@ you can use the
  .I delete
  command.
  In addition to not saving deleted messages,
@@ -839,7 +842,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  can be tailored to your liking with the
  .I set
  command.
-@@ -3863,7 +3863,7 @@ option.
+@@ -3885,7 +3885,7 @@ option.
  Binary options are either on or off.  For example, the
  .I askcc
  option informs
@@ -848,7 +851,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  that each time you send a message, you want it to prompt you for
  a `Cc:' header,
  to be included in the message.
-@@ -3876,12 +3876,12 @@ option, you would type
+@@ -3898,12 +3898,12 @@ option, you would type
  .fi
  .PP
  Valued options are values which
@@ -863,7 +866,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  where to save messages sent by you,
  and is specified by
  .nf
-@@ -3893,17 +3893,17 @@ for example.
+@@ -3915,17 +3915,17 @@ for example.
  Note that no spaces are allowed in
  .I "set record=Sent".
  .PP
@@ -884,7 +887,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  where your folder directory is, put a line of the form
  .nf
  .sp
-@@ -3915,7 +3915,7 @@ in your
+@@ -3937,7 +3937,7 @@ in your
  file.
  If, as in the example above,
  your folder directory does not begin with a `/',
@@ -893,7 +896,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  will assume that your folder directory is to be found starting from
  your home directory.
  .PP
-@@ -3950,7 +3950,7 @@ The
+@@ -3972,7 +3972,7 @@ The
  .I folder
  command
  can be used to direct
@@ -902,7 +905,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  to the contents of a different folder.
  For example,
  .nf
-@@ -3959,7 +3959,7 @@ For example,
+@@ -3981,7 +3981,7 @@ For example,
  .sp
  .fi
  directs
@@ -911,7 +914,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  to read the contents of the
  .I classwork
  folder.
-@@ -3982,14 +3982,14 @@ command.
+@@ -4004,14 +4004,14 @@ command.
  Finally, the
  .I help
  command is available to print out a brief summary of the most important
@@ -928,7 +931,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  provides these capabilities through
  .I "tilde escapes" ,
  which consist of a tilde (~) at the beginning of a line, followed by
-@@ -4066,7 +4066,7 @@ You might want to put this string into a
+@@ -4088,7 +4088,7 @@ You might want to put this string into a startup file.
  As the
  .I shortcut
  command is specific to this implementation of
@@ -937,7 +940,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  and will confuse other implementations,
  it should not be used in
  .IR ~/.mailrc ,
-@@ -4084,15 +4084,15 @@ containing the
+@@ -4106,15 +4106,15 @@ containing the
  .I shortcut
  command above.
  You can then access your remote mailbox by invoking
@@ -956,7 +959,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  is more appropriate than the
  .I shortcut
  command.
-@@ -4107,8 +4107,8 @@ You can put the following in
+@@ -4129,8 +4129,8 @@ You can put the following in
  .fi
  .sp
  and can then access incoming mail for this account by invoking
@@ -967,7 +970,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  After that,
  a command like `copy \fI1\fR +\fIotherfolder\fR'
  will refer to \fIotherfolder\fR on the IMAP server.
-@@ -4120,7 +4120,7 @@ and
+@@ -4142,7 +4142,7 @@ and
  `fi +Sent' will show your recorded sent mail,
  with both folders located on the IMAP server.
  .PP
@@ -976,7 +979,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  will ask you for a password string
  each time you connect to a remote account.
  If you can reasonably trust the security
-@@ -4134,7 +4134,7 @@ you can give this password in the startu
+@@ -4156,7 +4156,7 @@ you can give this password in the startup file as
  You should change the permissions of this file to 0600, see
  .IR chmod (1).
  .PP
@@ -985,7 +988,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  supports different authentication methods for both IMAP and POP3.
  If Kerberos is used at your location,
  you can try to activate GSSAPI-based authentication by
-@@ -4144,7 +4144,7 @@ you can try to activate GSSAPI-based aut
+@@ -4166,7 +4166,7 @@ you can try to activate GSSAPI-based authentication by
  
  .fi
  The advantage of this method is that
@@ -994,7 +997,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  does not need to know your password at all,
  nor needs to send sensitive data over the network.
  Otherwise, the options
-@@ -4163,7 +4163,7 @@ conventional user/password based authent
+@@ -4185,7 +4185,7 @@ conventional user/password based authentication must b
  It is sometimes helpful to set the
  .I verbose
  option when authentication problems occur.
@@ -1003,7 +1006,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  will display all data sent to the server in clear text on the screen
  with this option,
  including passwords.
-@@ -4186,14 +4186,14 @@ select a local directory name and put
+@@ -4208,14 +4208,14 @@ select a local directory name and put
  .fi
  in the startup file.
  All files within that directory
@@ -1020,7 +1023,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  or when the
  .I disconnected
  variable is set,
-@@ -4270,7 +4270,7 @@ such as by personally receiving the cert
+@@ -4292,7 +4292,7 @@ such as by personally receiving the certificate on sto
  The scoring commands are best separated
  from other configuration for clarity,
  and are mostly
@@ -1029,7 +1032,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  specific.
  It is thus recommended to put them in a separate file
  that is sourced from your NAIL_EXTRA_RC as follows:
-@@ -4400,7 +4400,7 @@ If you set the
+@@ -4422,7 +4422,7 @@ If you set the
  option before running the
  .I classify
  command,
@@ -1038,7 +1041,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  prints the words it uses for calculating the junk status
  along with their statistical probabilities.
  This can help you to find out
-@@ -4454,8 +4454,8 @@ Most PDF viewers do not accept input dir
+@@ -4476,8 +4476,8 @@ Most PDF viewers do not accept input directly from a p
  It is thus necessary to store the attachment in a temporary file, as with
  .nf
  .sp
@@ -1049,7 +1052,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  .sp
  .fi
  Note that security defects are discovered in PDF viewers
-@@ -4526,7 +4526,7 @@ from one of the major CAs on the Interne
+@@ -4548,7 +4548,7 @@ from one of the major CAs on the Internet using your W
  You will usually receive
  a combined certificate and private key
  in PKCS#12 format which
@@ -1058,7 +1061,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  does not directly accept
  if S/MIME support is built using OpenSSL.
  To convert it to PEM format,
-@@ -4543,7 +4543,7 @@ parameter,
+@@ -4565,7 +4565,7 @@ parameter,
  you can specifiy an additional
  .I "PEM pass phrase"
  for protecting the private key.
@@ -1067,7 +1070,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  will then ask you for that pass phrase
  each time it signs or decrypts a message.
  You can then use
-@@ -4553,7 +4553,7 @@ You can then use
+@@ -4575,7 +4575,7 @@ You can then use
  .sp
  .fi
  to make this private key and certificate known to
@@ -1076,7 +1079,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  .PP
  If S/MIME support is built using NSS,
  the PKCS#12 file must be installed using Mozilla
-@@ -4588,7 +4588,7 @@ First use the
+@@ -4610,7 +4610,7 @@ First use the
  command to check the validity of the certificate.
  After that,
  retrieve the certificate and tell
@@ -1085,7 +1088,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  that it should use it for encryption:
  .nf
  .sp
-@@ -4645,13 +4645,13 @@ To seriously use S/MIME or SSL/TLS verif
+@@ -4667,13 +4667,13 @@ To seriously use S/MIME or SSL/TLS verification,
  an up-to-date CRL is required for each trusted CA.
  There is otherwise no method
  to distinguish between valid and invalidated certificates.
@@ -1101,7 +1104,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  accepts CRLs in PEM format only;
  CRLs in DER format must be converted,
  e.\|g. with the shell command
-@@ -4661,7 +4661,7 @@ e.\|g. with the shell command
+@@ -4683,7 +4683,7 @@ e.\|g. with the shell command
  .sp
  .fi
  To tell
@@ -1110,7 +1113,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  about the CRLs,
  a directory
  that contains all CRL files
-@@ -4674,7 +4674,7 @@ or
+@@ -4696,7 +4696,7 @@ or
  variables, respectively,
  must then be set to point to that directory.
  After that,
@@ -1119,7 +1122,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  requires a CRL to be present
  for each CA that is used
  to verify a certificate.
-@@ -4687,20 +4687,20 @@ is set appropriately).
+@@ -4709,20 +4709,20 @@ is set appropriately).
  .SS "Sending mail from scripts"
  If you want to send mail from scripts,
  you must be aware that
@@ -1144,7 +1147,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  for your script.
  This can be done by either pointing the
  .I MAILRC
-@@ -4714,7 +4714,7 @@ An invocation could thus look like
+@@ -4736,7 +4736,7 @@ An invocation could thus look like
  .sp
      \fBenv MAILRC=/dev/null\fR from=\fIscriptreply@domain\fR smtp=\fIhost\fR \e
            smtp-auth-user=\fIlogin\fR smtp-auth-password=\fIsecret\fR \e
@@ -1153,7 +1156,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
            \-a \fIattachment_file\fR \fIrecipient@domain\fR <\fIcontent_file\fR
  .SH "SEE ALSO"
  fmt(1),
-@@ -4731,7 +4731,7 @@ sendmail(8)
+@@ -4753,7 +4753,7 @@ sendmail(8)
  .SH NOTES
  .PP
  Variables in the environment passed to
@@ -1162,7 +1165,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  cannot be unset.
  .PP
  The character set conversion relies
-@@ -4740,7 +4740,7 @@ on the
+@@ -4762,7 +4762,7 @@ on the
  function.
  Its functionality differs widely
  between the various system environments
@@ -1171,7 +1174,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  If the message `Cannot convert from \fIa\fR to \fIb\fR' appears,
  either some characters within the message header or text
  are not appropriate for the currently selected terminal character set,
-@@ -4764,7 +4764,7 @@ the value assigned to
+@@ -4786,7 +4786,7 @@ the value assigned to
  .I sendcharsets
  must match the character set that is used on the terminal.
  .PP
@@ -1180,7 +1183,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  with lines separated by 
  .I newline
  (^J, \en) characters only.
-@@ -4775,7 +4775,7 @@ characters in addition will be treated a
+@@ -4797,7 +4797,7 @@ characters in addition will be treated as binary data;
  to send such files as text, strip these characters e.\ g. by
  .RS
  .sp
@@ -1189,7 +1192,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  .sp
  .RE
  or fix the tools that generate them.
-@@ -4809,10 +4809,10 @@ and new messages will appear as unread
+@@ -4831,10 +4831,10 @@ and new messages will appear as unread
  when it is selected for viewing later.
  The `flagged', `answered', and `draft' attributes are usually permanent,
  but some IMAP servers are known to drop them without notification.
@@ -1202,7 +1205,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  that messages have been deleted
  by some other client or process.
  In this case, `Expunged \fIn\fR messages' is printed,
-@@ -4836,14 +4836,14 @@ It is not possible to rename or to remov
+@@ -4858,14 +4858,14 @@ It is not possible to rename or to remove POP3 mailbox
  If a
  .SM RUBOUT
  (interrupt) is typed while an IMAP or POP3 operation is in progress,
@@ -1219,7 +1222,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  is waiting for the operation to complete,
  the operation itself will be canceled.
  In this case,
-@@ -4855,7 +4855,7 @@ was using an SSL/TLS encrypted channel,
+@@ -4877,7 +4877,7 @@ was using an SSL/TLS encrypted channel,
  an error in the SSL transport will very likely result,
  and the connection is no longer usable.
  .PP
@@ -1228,7 +1231,7 @@ $OpenBSD: patch-mailx_1,v 1.2 2006/08/01 18:22:05 alek Exp $
  it provides only basic SMTP services.
  If it fails to contact its upstream SMTP server,
  it will not make further attempts to transfer the message
-@@ -4865,20 +4865,20 @@ than an error message on the terminal
+@@ -4887,20 +4887,20 @@ than an error message on the terminal
  and a `dead.letter' file.
  This is usually not a problem if the SMTP server
  is located in the same local network
