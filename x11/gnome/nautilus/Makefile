@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.40 2009/04/22 08:54:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2009/05/04 15:11:47 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
-# XXX PLIST regen is needed for at least x11/gnome/totem and
-# x11/gnome/file-roller when the nautilus extensions directory changes
-# e.g. ${LOCALBASE}/lib/nautilus/extensions-2.0
+# PLIST regen is needed for at least the following ports when
+# the nautilus extensions directory changes:
+# (e.g. ${LOCALBASE}/lib/nautilus/extensions-2.0)
+# x11/gnome/file-roller
+# x11/gnome/nautilus-sendto
+# x11/gnome/totem
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		2.24.2
