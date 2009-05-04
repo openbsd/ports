@@ -1,6 +1,6 @@
-$OpenBSD: patch-giftoc_c,v 1.1 2007/07/18 09:58:22 jasper Exp $
---- giftoc.c.orig	Thu Aug 28 23:58:00 2003
-+++ giftoc.c	Thu Jul 12 18:52:46 2007
+$OpenBSD: patch-giftoc_c,v 1.2 2009/05/04 23:24:09 pirofti Exp $
+--- giftoc.c.orig	Sun Apr 19 13:37:58 2009
++++ giftoc.c	Sun Apr 19 13:39:46 2009
 @@ -153,7 +153,7 @@ main(int argc, char *argv[])
        if (directory[ strlen(directory) - 1 ] != PATHNAME_SEPARATOR
  	  && directory[0]) {
@@ -13,11 +13,11 @@ $OpenBSD: patch-giftoc_c,v 1.1 2007/07/18 09:58:22 jasper Exp $
 @@ -178,8 +178,8 @@ or:    giftoc -makename [OPTIONS] FILE [FILE...]\n\
      char *rec_name = 0;
      char *file_name = (char *)fmalloc(strlen(argv[0]) + strlen(directory) + 1);
-     
+ 
 -    strcpy(file_name, directory);
 -    strcat(file_name, argv[0]);
 +    strlcpy(file_name, directory, strlen(argv[0]) + strlen(directory) + 1);
 +    strlcat(file_name, argv[0], strlen(argv[0]) + strlen(directory) + 1);
      f = fopen(file_name, "rb");
-     
+ 
      if (!f) {
