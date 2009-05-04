@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/03/17 16:03:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/05/04 14:16:57 ajacoutot Exp $
 bin/alacarte
 lib/python${MODPY_VERSION}/site-packages/Alacarte/
 lib/python${MODPY_VERSION}/site-packages/Alacarte/MainWindow.py
@@ -17,7 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/Alacarte/util.py
 lib/python${MODPY_VERSION}/site-packages/Alacarte/util.pyc
 lib/python${MODPY_VERSION}/site-packages/Alacarte/util.pyo
 share/alacarte/
-share/alacarte/alacarte.glade
+share/alacarte/alacarte.ui
 share/applications/alacarte.desktop
 share/icons/hicolor/16x16/apps/alacarte.png
 share/icons/hicolor/22x22/apps/alacarte.png
@@ -32,6 +32,9 @@ share/locale/as/LC_MESSAGES/alacarte.mo
 share/locale/ast/LC_MESSAGES/alacarte.mo
 share/locale/be/LC_MESSAGES/alacarte.mo
 share/locale/be@latin/LC_MESSAGES/alacarte.mo
+share/locale/bem/
+share/locale/bem/LC_MESSAGES/
+share/locale/bem/LC_MESSAGES/alacarte.mo
 share/locale/bg/LC_MESSAGES/alacarte.mo
 share/locale/bn/LC_MESSAGES/alacarte.mo
 share/locale/bn_IN/LC_MESSAGES/alacarte.mo
