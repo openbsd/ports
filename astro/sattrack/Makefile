@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.24 2007/12/18 09:08:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2009/05/04 10:25:39 sthen Exp $
 
 V=		3.1.6
 COMMENT=	real-time satellite tracking and orbit propagation program
 DISTNAME=	sattrack-${V}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	astro
 
 # Commercial License
-PERMIT_PACKAGE_CDROM=   May not be bundled, according to copyright
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= May not be bundled, according to copyright
-PERMIT_DISTFILES_FTP=   Yes
+PERMIT_PACKAGE_CDROM=	May not be bundled, according to copyright
+PERMIT_PACKAGE_FTP=	May not distribute modified version
+PERMIT_DISTFILES_CDROM=	May not be bundled, according to copyright
+PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xt c m
 

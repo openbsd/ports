@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sattrack_sattime_c,v 1.1 2009/05/04 10:25:39 sthen Exp $
+--- src/sattrack/sattime.c.orig	Sun May  3 23:14:37 2009
++++ src/sattrack/sattime.c	Sun May  3 23:19:00 2009
+@@ -269,7 +269,7 @@ int gdnD, gdnM, gdnY;
+     if (gdnY < 50)                  /* allow 4 or 2 digit year specifications */
+         gdnY += 2000;
+     else
+-        if (gdnY < 100)
++        if (gdnY < 200)
+             gdnY += 1900;
+ 
+     result = (long) ((((gdnY-1901)*1461) >> 2) + monthDays[gdnM-1] + gdnD+365);

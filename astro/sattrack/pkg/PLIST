@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/07/24 15:17:05 espie Exp $
-bin/fixchecksum
+@comment $OpenBSD: PLIST,v 1.5 2009/05/04 10:25:39 sthen Exp $
+@bin bin/fixchecksum
 bin/getsts
 bin/gettle
-bin/makeamsat
-bin/makepassesx
-bin/maketles
-bin/maketlex
+@bin bin/makeamsat
+@bin bin/makepassesx
+@bin bin/maketles
+@bin bin/maketlex
 bin/passes
 bin/passesx
-bin/satfilter
-bin/sattrack
+@bin bin/satfilter
+@bin bin/sattrack
 bin/transits
-bin/xsattrackdemo
+@bin bin/xsattrackdemo
 lib/SatTrack/
 lib/SatTrack/data/
 lib/SatTrack/data/COPYRIGHT
