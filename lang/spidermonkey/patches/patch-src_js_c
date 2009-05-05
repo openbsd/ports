@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_js_c,v 1.2 2007/04/10 13:03:09 martynas Exp $
---- src/js.c.orig	Thu Nov 30 02:34:45 2006
-+++ src/js.c	Mon Apr  9 21:26:10 2007
-@@ -900,7 +900,7 @@ SrcNotes(JSContext *cx, JSScript *script)
-     for (sn = notes; !SN_IS_TERMINATOR(sn); sn = SN_NEXT(sn)) {
-         delta = SN_DELTA(sn);
-         offset += delta;
+$OpenBSD: patch-src_js_c,v 1.3 2009/05/05 21:01:55 martynas Exp $
+--- src/js.c.orig	Sun Feb  1 09:27:41 2009
++++ src/js.c	Sun Feb  1 09:30:25 2009
+@@ -978,7 +978,7 @@ SrcNotes(JSContext *cx, JSScript *script)
+                 }
+             }
+         }
 -        fprintf(gOutFile, "%3u: %5u [%4u] %-8s",
 +        fprintf(gOutFile, "%3tu: %5u [%4u] %-8s",
-                 PTRDIFF(sn, notes, jssrcnote), offset, delta,
-                 js_SrcNoteSpec[SN_TYPE(sn)].name);
-         type = (JSSrcNoteType) SN_TYPE(sn);
-@@ -985,7 +985,7 @@ TryNotes(JSContext *cx, JSScript *script)
+                 PTRDIFF(sn, notes, jssrcnote), offset, delta, name);
+         switch (type) {
+           case SRC_SETLINE:
+@@ -1073,7 +1073,7 @@ TryNotes(JSContext *cx, JSScript *script)
          return JS_TRUE;
      fprintf(gOutFile, "\nException table:\nstart\tend\tcatch\n");
      while (tn->start && tn->catchStart) {
@@ -19,12 +19,12 @@ $OpenBSD: patch-src_js_c,v 1.2 2007/04/10 13:03:09 martynas Exp $
                 tn->start, tn->start + tn->length, tn->catchStart);
          tn++;
      }
-@@ -1205,7 +1205,7 @@ DumpScope(JSContext *cx, JSObject *obj, FILE *fp)
+@@ -1297,7 +1297,7 @@ DumpScope(JSContext *cx, JSObject *obj, FILE *fp)
          DUMP_ATTR(SETTER);
  #undef  DUMP_ATTR
  
 -        fprintf(fp, " slot %lu flags %x shortid %d\n",
 +        fprintf(fp, " slot %u flags %x shortid %d\n",
-                 sprop->slot, sprop->flags, sprop->shortid);
+                 (unsigned long)sprop->slot, sprop->flags, sprop->shortid);
      }
  }

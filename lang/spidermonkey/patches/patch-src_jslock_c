@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_jslock_c,v 1.1.1.1 2006/10/01 23:02:12 steven Exp $
---- src/jslock.c.orig	Sun Apr  4 00:21:03 2004
-+++ src/jslock.c	Mon Sep 25 16:40:31 2006
-@@ -193,7 +193,9 @@ js_FinishLock(JSThinLock *tl)
+$OpenBSD: patch-src_jslock_c,v 1.2 2009/05/05 21:01:55 martynas Exp $
+--- src/jslock.c.orig	Fri Mar 30 00:55:35 2007
++++ src/jslock.c	Sun May  3 23:07:02 2009
+@@ -224,7 +224,9 @@ js_FinishLock(JSThinLock *tl)
  #endif
  }
  

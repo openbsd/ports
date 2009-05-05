@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_jsstr_c,v 1.1 2009/05/05 21:01:55 martynas Exp $
+--- src/jsstr.c.orig	Sun Feb  1 11:26:35 2009
++++ src/jsstr.c	Sun Feb  1 11:27:13 2009
+@@ -1815,6 +1815,8 @@ str_split(JSContext *cx, JSObject *obj, uintN argc, js
+     jsint i, j;
+     uint32 len, limit;
+ 
++    memset(&tmp, 0, sizeof(tmp));
++
+     str = js_ValueToString(cx, OBJECT_TO_JSVAL(obj));
+     if (!str)
+         return JS_FALSE;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_jsopcode_c,v 1.2 2007/04/10 13:03:09 martynas Exp $
---- src/jsopcode.c.orig	Thu Nov 30 02:34:45 2006
-+++ src/jsopcode.c	Mon Apr  9 21:26:10 2007
-@@ -183,7 +183,7 @@ js_Disassemble1(JSContext *cx, JSScript *script, jsbyt
+$OpenBSD: patch-src_jsopcode_c,v 1.3 2009/05/05 21:01:55 martynas Exp $
+--- src/jsopcode.c.orig	Thu Sep 27 21:30:18 2007
++++ src/jsopcode.c	Sun May  3 23:07:02 2009
+@@ -208,7 +208,7 @@ js_Disassemble1(JSContext *cx, JSScript *script, jsbyt
        case JOF_JUMP:
        case JOF_JUMPX:
          off = GetJumpOffset(pc, pc);
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_jsopcode_c,v 1.2 2007/04/10 13:03:09 martynas Exp $
          break;
  
        case JOF_CONST:
-@@ -214,10 +214,10 @@ js_Disassemble1(JSContext *cx, JSScript *script, jsbyt
+@@ -239,10 +239,10 @@ js_Disassemble1(JSContext *cx, JSScript *script, jsbyt
          pc2 += JUMP_OFFSET_LEN;
          high = GET_JUMP_OFFSET(pc2);
          pc2 += JUMP_OFFSET_LEN;
@@ -23,7 +23,7 @@ $OpenBSD: patch-src_jsopcode_c,v 1.2 2007/04/10 13:03:09 martynas Exp $
              pc2 += jmplen;
          }
          len = 1 + pc2 - pc;
-@@ -237,7 +237,7 @@ js_Disassemble1(JSContext *cx, JSScript *script, jsbyt
+@@ -262,7 +262,7 @@ js_Disassemble1(JSContext *cx, JSScript *script, jsbyt
          pc2 += jmplen;
          npairs = GET_ATOM_INDEX(pc2);
          pc2 += ATOM_INDEX_LEN;
