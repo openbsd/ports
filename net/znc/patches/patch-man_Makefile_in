@@ -1,0 +1,24 @@
+$OpenBSD: patch-man_Makefile_in,v 1.1.1.1 2009/05/05 23:28:50 sthen Exp $
+--- man/Makefile.in.orig	Tue Oct 21 13:41:52 2008
++++ man/Makefile.in	Sat Jan 17 12:06:28 2009
+@@ -6,9 +6,9 @@ exec_prefix := @exec_prefix@
+ datarootdir := @datarootdir@
+ mandir      := @mandir@
+ 
+-MAN1        := znc.1.gz znc-buildmod.1.gz znc-config.1.gz
++MAN1        := znc.1 znc-buildmod.1 znc-config.1
+ 
+-all: $(MAN1)
++all:
+ 
+ %.1.gz: %.1 Makefile
+ 	gzip -9 <$< >$@
+@@ -16,6 +16,6 @@ all: $(MAN1)
+ clean:
+ 	-rm -f $(MAN1)
+ 
+-install: $(MAN1)
++install:
+ 	mkdir -p $(DESTDIR)$(mandir)/man1
+-	install -m 644 $(MAN1) $(DESTDIR)$(mandir)/man1
++	cd $(VPATH) && install -m 644 $(MAN1) $(DESTDIR)$(mandir)/man1
