@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.50 2009/02/08 20:25:09 naddy Exp $
---- configure.orig	Sun Oct  7 21:49:33 2007
-+++ configure	Sun Feb  8 19:48:58 2009
+$OpenBSD: patch-configure,v 1.51 2009/05/05 11:40:08 sthen Exp $
+--- configure.orig	Sun Oct  7 22:49:33 2007
++++ configure	Sun Apr 19 13:55:04 2009
 @@ -76,7 +76,7 @@ cc_check() {
  }
  
@@ -53,6 +53,15 @@ $OpenBSD: patch-configure,v 1.50 2009/02/08 20:25:09 naddy Exp $
    for ext in $pparam ; do
      eval test \"\$_$ext\" = auto 2>/dev/null && eval _$ext=kernel_check
    done
+@@ -2323,7 +2329,7 @@ fi # if darwin && test "$cc_vendor" = "gnu" ; then
+ # Checking for CFLAGS
+ _install_strip="-s"
+ if test "$_profile" != "" || test "$_debug" != "" ; then
+-  CFLAGS="-W -Wall -O2 $_march $_mcpu $_pipe $_debug $_profile"
++  CFLAGS="-W -Wall -O1 $_march $_mcpu $_pipe $_debug $_profile"
+   _install_strip=
+ elif test -z "$CFLAGS" ; then
+   if test "$cc_vendor" = "intel" ; then
 @@ -3065,7 +3071,7 @@ int main(void) { pthread_t tid; return pthread_create 
  EOF
  _pthreads=no
