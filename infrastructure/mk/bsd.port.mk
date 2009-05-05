@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.961 2009/04/24 08:53:33 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.962 2009/05/05 20:58:38 martynas Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2348,7 +2348,6 @@ ${_F}:
 	test -f ${_F:T} && exit 0; \
 	select='${_EVERYTHING:M*${_F:S@^${FULLDISTDIR}/@@}\:[0-9]}'; \
 	f=${_F:S@^${FULLDISTDIR}/@@}; \
-	${ECHO_MSG} ">> $$f doesn't seem to exist on this system."; \
 	${_CDROM_OVERRIDE}; \
 	${_SITE_SELECTOR}; \
 	for site in $$sites; do \
@@ -2360,7 +2359,6 @@ ${_F}:
 					${ECHO_MSG} ">> Checksum file does not exist"; \
 					exit 0; \
 				elif grep -q "^$$ck\$$" ${CHECKSUM_FILE}; then \
-					${ECHO_MSG} ">> Size matches for ${_F}"; \
 					exit 0; \
 				else \
 					if grep -q "SIZE ($$file)" ${CHECKSUM_FILE}; then \
