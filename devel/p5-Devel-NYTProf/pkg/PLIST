@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/16 23:52:24 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/05/05 22:21:15 bluhm Exp $
 bin/nytprofcsv
 bin/nytprofhtml
 ${P5ARCH}/
@@ -19,9 +19,9 @@ ${P5ARCH}/Devel/NYTProf/js/
 ${P5ARCH}/Devel/NYTProf/js/asc.png
 ${P5ARCH}/Devel/NYTProf/js/bg.png
 ${P5ARCH}/Devel/NYTProf/js/desc.png
-${P5ARCH}/Devel/NYTProf/js/jquery.min.js
-${P5ARCH}/Devel/NYTProf/js/jquery.tablesorter.min.js
-${P5ARCH}/Devel/NYTProf/js/style.tablesorter.css
+${P5ARCH}/Devel/NYTProf/js/jquery-min.js
+${P5ARCH}/Devel/NYTProf/js/jquery-tablesorter-min.js
+${P5ARCH}/Devel/NYTProf/js/style-tablesorter.css
 ${P5ARCH}/Devel/auto/
 ${P5ARCH}/Devel/auto/Devel/
 ${P5ARCH}/Devel/auto/Devel/NYTProf/
