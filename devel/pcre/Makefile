@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2008/09/12 12:24:18 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2009/05/06 19:28:54 jakob Exp $
 
 COMMENT=	perl-compatible regular expression library
 
-DISTNAME=	pcre-7.8
+DISTNAME=	pcre-7.9
 
-SHARED_LIBS=	pcre		2.2 \
-		pcrecpp		3.1 \
-		pcreposix	1.4
+SHARED_LIBS=	pcre		2.3 \
+		pcrecpp		3.2 \
+		pcreposix	1.5
 
 CATEGORIES=	devel
 
