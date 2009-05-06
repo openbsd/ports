@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2008/05/22 14:52:48 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2009/05/06 22:44:25 simon Exp $
 
 COMMENT= 	Template Toolkit views for Catalyst
 
-DISTNAME=	Catalyst-View-TT-0.27
+DISTNAME=	Catalyst-View-TT-0.29
 CATEGORIES=	textproc
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	cpan
 
 RUN_DEPENDS=	::devel/p5-Data-Dump \
+		::devel/p5-Class-Accessor \
+		::devel/p5-MRO-Compat \
 		::devel/p5-Path-Class \
 		::textproc/p5-Template-Timer \
 		::www/p5-Catalyst-Runtime
