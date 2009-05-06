@@ -1,7 +1,7 @@
-$OpenBSD: patch-m4_ost_ssl_m4,v 1.1.1.1 2007/12/08 05:22:09 jakemsr Exp $
---- m4/ost_ssl.m4.orig	Sun Oct 14 02:17:46 2007
-+++ m4/ost_ssl.m4	Sun Oct 14 02:25:45 2007
-@@ -40,7 +40,7 @@ AC_DEFUN([OST_LIB_SSL],[
+$OpenBSD: patch-m4_ost_ssl_m4,v 1.2 2009/05/06 17:16:17 sthen Exp $
+--- m4/ost_ssl.m4.orig	Fri Jan 16 07:26:48 2009
++++ m4/ost_ssl.m4	Thu Apr  2 04:56:04 2009
+@@ -41,7 +41,7 @@ AC_DEFUN([OST_LIB_SSL],[
  #		])
  #	],[
  		AC_CHECK_HEADER(openssl/ssl.h,[

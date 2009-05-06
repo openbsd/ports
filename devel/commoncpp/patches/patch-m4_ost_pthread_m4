@@ -1,7 +1,7 @@
-$OpenBSD: patch-m4_ost_pthread_m4,v 1.2 2009/03/08 10:28:00 sthen Exp $
---- m4/ost_pthread.m4.orig	Mon Sep  1 04:42:29 2008
-+++ m4/ost_pthread.m4	Mon Sep  1 04:41:39 2008
-@@ -239,6 +239,8 @@ AC_LANG_RESTORE
+$OpenBSD: patch-m4_ost_pthread_m4,v 1.3 2009/05/06 17:16:17 sthen Exp $
+--- m4/ost_pthread.m4.orig	Fri Jan 16 07:26:48 2009
++++ m4/ost_pthread.m4	Thu Apr  2 04:56:04 2009
+@@ -244,6 +244,8 @@ CXXFLAGS="$ac_save_CXXFLAGS"
  		])
  	])
  

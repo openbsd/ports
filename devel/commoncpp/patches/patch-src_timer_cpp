@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_timer_cpp,v 1.1 2009/03/08 10:28:00 sthen Exp $
---- src/timer.cpp.orig	Mon Jun 23 09:02:09 2008
-+++ src/timer.cpp	Mon Sep  1 04:28:20 2008
-@@ -117,7 +117,7 @@ void TimerPort::decTimer(timeout_t timeout)
+$OpenBSD: patch-src_timer_cpp,v 1.2 2009/05/06 17:16:17 sthen Exp $
+--- src/timer.cpp.orig	Fri Jan 16 07:27:00 2009
++++ src/timer.cpp	Thu Apr  2 04:56:04 2009
+@@ -118,7 +118,7 @@ void TimerPort::decTimer(timeout_t timeout)
  	active = true;
  }
  

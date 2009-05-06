@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2009/03/08 10:28:00 sthen Exp $
---- src/Makefile.in.orig	Wed Aug 20 14:02:57 2008
-+++ src/Makefile.in	Mon Sep  1 02:47:15 2008
-@@ -319,7 +319,7 @@ aclocal_DATA = ost_check2.m4
+$OpenBSD: patch-src_Makefile_in,v 1.4 2009/05/06 17:16:17 sthen Exp $
+--- src/Makefile.in.orig	Fri Mar  6 14:41:13 2009
++++ src/Makefile.in	Thu Apr  2 04:56:14 2009
+@@ -330,7 +330,7 @@ aclocal_DATA = ost_check2.m4
  scriptdir = $(bindir)
  script_DATA = ccgnu2-config
  libccgnu2_la_LIBADD = @THREAD_LIBS@ @DYN_LOADER@ @SSL_LIBS@
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2009/03/08 10:28:00 sthen Exp $
  noinst_DATA = @STAGE2@
  libccgnu2_la_SOURCES = thread.cpp mutex.cpp semaphore.cpp threadkey.cpp \
  	friends.cpp event.cpp slog.cpp dir.cpp file.cpp inaddr.cpp \
-@@ -330,7 +330,7 @@ libccgnu2_la_SOURCES = thread.cpp mutex.cpp semaphore.
+@@ -341,7 +341,7 @@ libccgnu2_la_SOURCES = thread.cpp mutex.cpp semaphore.
  	cidr.cpp private.h nat.h
  
  @EXTRAS_TRUE@libccext2_la_LIBADD = @THREAD_LIBS@ @BASE_LIB@ @SSL_LIBS@ @ZSTREAM_LIBS@

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/08 10:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/05/06 17:16:17 sthen Exp $
 
 COMMENT=	GNU project portable class framework for C++
 
-VER=		1.6.3
+VER=		1.7.3
 DISTNAME=	commoncpp2-${VER}
 PKGNAME=	commoncpp-${VER}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=commoncpp/}
 
-SHARED_LIBS+=	ccext2		1.0
-SHARED_LIBS+=	ccgnu2		1.0
+SHARED_LIBS+=	ccext2		2.0
+SHARED_LIBS+=	ccgnu2		2.0
 
 HOMEPAGE=	http://www.gnutelephony.org/index.php/GNU_Common_C++
 
