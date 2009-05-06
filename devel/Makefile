@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.692 2009/05/03 16:10:38 simon Exp $
+# $OpenBSD: Makefile,v 1.693 2009/05/06 22:59:46 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -219,6 +219,7 @@
      SUBDIR += p5-Algorithm-MDiff
      SUBDIR += p5-Algorithm-MarkovChain
      SUBDIR += p5-Algorithm-Permute
+     SUBDIR += p5-Any-Moose
      SUBDIR += p5-AnyEvent
      SUBDIR += p5-App-CLI
      SUBDIR += p5-App-Info
