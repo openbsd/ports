@@ -1,23 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/01/14 18:17:34 simon Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/05/06 22:54:06 simon Exp $
 ${P5SITE}/Mouse/
 ${P5SITE}/Mouse.pm
 ${P5SITE}/Mouse/Meta/
 ${P5SITE}/Mouse/Meta/Attribute.pm
 ${P5SITE}/Mouse/Meta/Class.pm
 ${P5SITE}/Mouse/Meta/Method/
+${P5SITE}/Mouse/Meta/Method/Accessor.pm
 ${P5SITE}/Mouse/Meta/Method/Constructor.pm
 ${P5SITE}/Mouse/Meta/Method/Destructor.pm
 ${P5SITE}/Mouse/Meta/Role.pm
+${P5SITE}/Mouse/Meta/TypeConstraint.pm
 ${P5SITE}/Mouse/Object.pm
 ${P5SITE}/Mouse/Role.pm
 ${P5SITE}/Mouse/Tiny.pm
 ${P5SITE}/Mouse/TypeRegistry.pm
+${P5SITE}/Mouse/Util/
 ${P5SITE}/Mouse/Util.pm
-${P5SITE}/MouseX/
-${P5SITE}/MouseX/Types/
-${P5SITE}/MouseX/Types.pm
-${P5SITE}/MouseX/Types/Mouse.pm
-${P5SITE}/MouseX/Types/TypeDecorator.pm
+${P5SITE}/Mouse/Util/TypeConstraints.pm
 ${P5SITE}/Squirrel/
 ${P5SITE}/Squirrel.pm
 ${P5SITE}/Squirrel/Role.pm
@@ -25,10 +24,10 @@ ${P5SITE}/ouse.pm
 @man man/man3p/Mouse.3p
 @man man/man3p/Mouse::Meta::Attribute.3p
 @man man/man3p/Mouse::Meta::Class.3p
+@man man/man3p/Mouse::Meta::TypeConstraint.3p
 @man man/man3p/Mouse::Object.3p
 @man man/man3p/Mouse::Role.3p
-@man man/man3p/Mouse::TypeRegistry.3p
 @man man/man3p/Mouse::Util.3p
-@man man/man3p/MouseX::Types.3p
+@man man/man3p/Mouse::Util::TypeConstraints.3p
 @man man/man3p/Squirrel.3p
 @man man/man3p/ouse.3p
