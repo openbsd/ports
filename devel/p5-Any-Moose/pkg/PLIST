@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/06 22:59:42 simon Exp $
+${P5SITE}/Any/
+${P5SITE}/Any/Moose.pm
+@man man/man3p/Any::Moose.3p
