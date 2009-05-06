@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/06 23:06:21 simon Exp $
+${P5ARCH}/
+${P5ARCH}/Scope/
+${P5ARCH}/Scope/Upper.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Scope/
+${P5ARCH}/auto/Scope/Upper/
+${P5ARCH}/auto/Scope/Upper/Upper.bs
+${P5ARCH}/auto/Scope/Upper/Upper.so
+@man man/man3p/Scope::Upper.3p

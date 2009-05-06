@@ -1,0 +1,5 @@
+This module lets you defer actions that will take place when the control
+flow returns into an upper scope.  Currently, you can hook an upper
+scope end, or localize variables, array/hash values or deletions of
+elements in higher contexts.  You can also return to an upper level and
+know which context was in use then.
