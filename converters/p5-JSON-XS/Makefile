@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/12/03 21:35:40 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2009/05/06 22:13:51 simon Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	JSON serialising/deserialising, done correctly and fast
 
 MODULES =	cpan
-DISTNAME =	JSON-XS-2.231
+DISTNAME =	JSON-XS-2.232
 CATEGORIES =	converters
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
