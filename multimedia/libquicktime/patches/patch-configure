@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.8 2009/04/29 21:22:14 kili Exp $
+$OpenBSD: patch-configure,v 1.9 2009/05/06 20:24:15 kili Exp $
 --- configure.orig	Wed Dec 17 12:13:49 2008
-+++ configure	Thu Apr 16 21:58:48 2009
++++ configure	Wed May  6 21:49:21 2009
 @@ -25174,7 +25174,7 @@ fi
      VORBIS_LIBS="-L$prefix/lib"
    fi
@@ -26,39 +26,3 @@ $OpenBSD: patch-configure,v 1.8 2009/04/29 21:22:14 kili Exp $
  
  
  { echo "$as_me:$LINENO: checking for lame" >&5
-@@ -27956,7 +27956,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- 
--#include <ffmpeg/avcodec.h>
-+#include <libavcodec/avcodec.h>
- int
- main ()
- {
-@@ -27982,7 +27982,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
- 	 test -z "$ac_c_werror_flag" ||
- 	 test ! -s conftest.err
-        } && test -s conftest.$ac_objext; then
--  found_header="true";AVCODEC_HEADER="<ffmpeg/avcodec.h>"
-+  found_header="true";AVCODEC_HEADER="<libavcodec/avcodec.h>"
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
-@@ -28258,7 +28258,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- 
--#include <ffmpeg/avcodec.h>
-+#include <libavcodec/avcodec.h>
- int
- main ()
- {
-@@ -28284,7 +28284,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
- 	 test -z "$ac_c_werror_flag" ||
- 	 test ! -s conftest.err
-        } && test -s conftest.$ac_objext; then
--  found_header="true";AVCODEC_HEADER="<ffmpeg/avcodec.h>"
-+  found_header="true";AVCODEC_HEADER="<libavcodec/avcodec.h>"
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
