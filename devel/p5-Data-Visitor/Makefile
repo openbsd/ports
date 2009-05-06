@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/01/14 17:52:10 simon Exp $
+# $OpenBSD: Makefile,v 1.12 2009/05/06 23:01:45 simon Exp $
 
 COMMENT=	visitor-style traversal of Perl data structures
 
 MODULES=	cpan
-DISTNAME=	Data-Visitor-0.22
+DISTNAME=	Data-Visitor-0.24
 CATEGORIES=	devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	::devel/p5-Class-Accessor \
 		::devel/p5-Data-Alias \
-		::devel/p5-Mouse \
+		::devel/p5-Any-Moose \
 		::devel/p5-Tie-ToObject \
 		::devel/p5-namespace-clean
 
