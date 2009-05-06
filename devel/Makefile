@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.693 2009/05/06 22:59:46 simon Exp $
+# $OpenBSD: Makefile,v 1.694 2009/05/06 23:06:25 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -501,6 +501,7 @@
      SUBDIR += p5-Safe-World
      SUBDIR += p5-Scalar-Defer
      SUBDIR += p5-Scope-Guard
+     SUBDIR += p5-Scope-Upper
      SUBDIR += p5-Set-Infinite
      SUBDIR += p5-Set-IntRange
      SUBDIR += p5-Set-Object
