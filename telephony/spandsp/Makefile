@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2009/04/01 16:01:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2009/05/06 15:48:26 sthen Exp $
 
 COMMENT=	DSP library for telephony
 
-DISTNAME=	spandsp-0.0.6pre7
+DISTNAME=	spandsp-0.0.6pre11
 CATEGORIES=	telephony
 MASTER_SITES=	${HOMEPAGE}downloads/spandsp/
 EXTRACT_SUFX=	.tgz
 
-SHARED_LIBS=	spandsp	4.0
+SHARED_LIBS=	spandsp	5.0
 
 HOMEPAGE=	http://www.soft-switch.org/
 
