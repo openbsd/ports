@@ -1,7 +1,7 @@
-$OpenBSD: patch-backend_dll_c,v 1.3 2008/02/13 13:23:58 ajacoutot Exp $
---- backend/dll.c.orig	Sat Nov 10 12:35:34 2007
-+++ backend/dll.c	Tue Feb 12 11:40:39 2008
-@@ -396,7 +396,7 @@ load (struct backend *be)
+$OpenBSD: patch-backend_dll_c,v 1.4 2009/05/06 10:23:21 ajacoutot Exp $
+--- backend/dll.c.orig	Tue May  5 10:01:03 2009
++++ backend/dll.c	Tue May  5 10:02:12 2009
+@@ -398,7 +398,7 @@ load (struct backend *be)
  # elif defined (__APPLE__) && defined (__MACH__)
  #   define POSTFIX ".%u.so"
  # else
@@ -10,7 +10,7 @@ $OpenBSD: patch-backend_dll_c,v 1.3 2008/02/13 13:23:58 ajacoutot Exp $
  # endif
    mode = getenv ("LD_BIND_NOW") ? RTLD_NOW : RTLD_LAZY;
  #elif defined(HAVE_SHL_LOAD)
-@@ -458,7 +458,7 @@ load (struct backend *be)
+@@ -460,7 +460,7 @@ load (struct backend *be)
                                              (be->name)+2, V_MAJOR);
  #else
        snprintf (libname, sizeof (libname), "%s/" PREFIX "%s" POSTFIX,

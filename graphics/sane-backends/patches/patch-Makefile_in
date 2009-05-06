@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2009/05/06 10:23:21 ajacoutot Exp $
+--- Makefile.in.orig	Tue May  5 11:36:35 2009
++++ Makefile.in	Tue May  5 11:37:09 2009
+@@ -33,7 +33,7 @@ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+ subdir = .
+-DIST_COMMON = README $(am__configure_deps) $(dist_doc_DATA) \
++DIST_COMMON = $(am__configure_deps) $(dist_doc_DATA) \
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+ 	$(top_srcdir)/configure $(top_srcdir)/include/sane/config.h.in \
+ 	AUTHORS COPYING ChangeLog INSTALL NEWS compile config.guess \
+@@ -246,11 +246,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = include lib sanei backend frontend tools doc po
+ DIST_SUBDIRS = include lib sanei backend frontend tools doc po japi testsuite
+-dist_doc_DATA = AUTHORS ChangeLog COPYING LICENSE NEWS PROBLEMS PROJECTS \
+- README README.aix README.beos README.darwin README.djpeg README.freebsd \
+- README.hp-ux README.linux README.netbsd README.openbsd README.os2 \
+- README.solaris README.unixware2 README.unixware7 README.windows \
+- README.zeta
++dist_doc_DATA = AUTHORS ChangeLog COPYING LICENSE NEWS PROBLEMS PROJECTS
+ 
+ EXTRA_DIST = ChangeLog-1.0.0 ChangeLog-1.0.1  ChangeLog-1.0.2 \
+  ChangeLog-1.0.3 ChangeLog-1.0.4 ChangeLog-1.0.5 ChangeLog-1.0.6 \

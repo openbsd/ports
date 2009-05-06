@@ -1,49 +1,12 @@
-$OpenBSD: patch-backend_Makefile_in,v 1.3 2008/02/13 13:23:58 ajacoutot Exp $
---- backend/Makefile.in.orig	Mon Feb 11 00:02:31 2008
-+++ backend/Makefile.in	Tue Feb 12 11:40:39 2008
-@@ -213,7 +213,8 @@ DISTFILES = Makefile.in saned.conf.in sane_strstatus.c
- libsane-%.la: %.lo %-s.lo $(EXTRA) $(LIBOBJS)
- 	@$(LIBTOOL) $(MLINK) $(CC) -export-dynamic -o $@ $($*_LIBS) \
- 	$(LDFLAGS) $(BACKENDLIBS) $^ @LIBTOOL_LINK_EXTRA@ -rpath $(libsanedir) \
--	-version-info $(V_MAJOR):$(V_REV):$(V_MINOR) $(DYNAMIC_FLAG)
-+	-version-info $(V_MAJOR):$(V_REV):$(V_MINOR) $(DYNAMIC_FLAG) \
-+	-avoid-version
+$OpenBSD: patch-backend_Makefile_in,v 1.4 2009/05/06 10:23:21 ajacoutot Exp $
+--- backend/Makefile.in.orig	Tue May  5 10:27:46 2009
++++ backend/Makefile.in	Tue May  5 10:29:13 2009
+@@ -1485,7 +1485,7 @@ AM_LDFLAGS = @STRICT_LDFLAGS@
+ # The -rpath option is added because we are creating _LTLIBRARIES based
+ # on configure substitution.  This causes automake to not know the
+ # correct $libdir and must be added here.
+-DIST_SANELIBS_LDFLAGS = $(AM_LDFLAGS) -rpath '$(libdir)/sane' -version-number $(V_MAJOR):$(V_MINOR):$(V_REV) $(DYNAMIC_FLAG)
++DIST_SANELIBS_LDFLAGS = $(AM_LDFLAGS) -rpath '$(libdir)/sane' -avoid-version $(DYNAMIC_FLAG)
+ DIST_LIBS_LDFLAGS = $(AM_LDFLAGS) -rpath '$(libdir)' -version-number $(V_MAJOR):$(V_MINOR):$(V_REV)
+ FIRMWARE_DIRS = artec_eplus48u gt68xx snapscan epjitsu
  
- %-s.lo:	%-s.c
- 	@$(LIBTOOL) $(MCOMP) $(COMPILE) -DSTUBS -DBACKEND_NAME=$* $<
-@@ -241,7 +242,7 @@ install-be:
- 	  $(LIBTOOL) $(MINST) $(INSTALL_PROGRAM) $${be} \
-               $(DESTDIR)$(libsanedir)/$${be} >/dev/null || exit 1; \
- 	done
--	@$(LIBTOOL) $(MINST) --finish $(DESTDIR)$(libsanedir) >/dev/null
-+#	@$(LIBTOOL) $(MINST) --finish $(DESTDIR)$(libsanedir) >/dev/null
- 	@# Remove libsane.* links in lib/sane/ as these links to libsane-v4l.so
- 	@# cause misdetection of scanners.
- 	rm -f $(DESTDIR)$(libsanedir)/libsane.*
-@@ -270,7 +271,7 @@ install-libsane:
- 	@echo installing libsane.la in $(DESTDIR)$(libdir)/libsane.la...
- 	@$(LIBTOOL) $(MINST) $(INSTALL_PROGRAM) libsane.la \
-           $(DESTDIR)$(libdir)/libsane.la >/dev/null
--	@$(LIBTOOL) $(MINST) --finish $(DESTDIR)$(libdir)
-+#	@$(LIBTOOL) $(MINST) --finish $(DESTDIR)$(libdir)
- 
- install-becfg:
- 	@list="$(CONFIGS)"; for cfg in $$list; do \
-@@ -288,7 +289,7 @@ install-becfg:
- 	 done
- 
- install-lockpath:
--	$(MKDIR) -m 775 -g $(LOCKPATH_GROUP) $(DESTDIR)$(locksanedir)
-+#	$(MKDIR) -m 775 -g $(LOCKPATH_GROUP) $(DESTDIR)$(locksanedir)
- 
- uninstall:
- 	rm -rf $(libsanedir) $(configdir) $(locksanedir)
-@@ -320,7 +321,7 @@ dll-preload.c:
- libsane.la: dll.lo dll-s.lo $(EXTRA) $(addsuffix .lo,$(DLL_PRELOAD)) $(LIBOBJS)
- 	@$(LIBTOOL) $(MLINK) $(CC) -o $@ $(LDFLAGS) $(BACKENDLIBS)  $^ \
- 		$(addsuffix .lo,$(DLL_PRELOAD_EXTRAS)) @LIBTOOL_LINK_EXTRA@ \
--		-rpath $(libdir) -version-info $(V_MAJOR):$(V_REV):$(V_MINOR)
-+		-rpath $(libdir) $(libsane_la_LDFLAGS)
- 
- # Generate .conf files for all existing .conf.in files
- becfg: $(patsubst %.conf.in,%.conf,$(wildcard *.conf.in)) 

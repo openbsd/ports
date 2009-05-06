@@ -1,25 +1,16 @@
-$OpenBSD: patch-configure,v 1.6 2008/02/13 13:23:58 ajacoutot Exp $
---- configure.orig	Mon Feb 11 00:02:31 2008
-+++ configure	Tue Feb 12 11:47:39 2008
-@@ -6388,7 +6388,7 @@ done
- 
-   #check if links for dynamic libs should be created
-   case "${host_os}" in
--  darwin*)
-+  darwin* | openbsd* )
-     USE_LINKS=no
-     ;;
-   *)
-@@ -7657,13 +7657,13 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+$OpenBSD: patch-configure,v 1.7 2009/05/06 10:23:21 ajacoutot Exp $
+--- configure.orig	Tue May  5 10:03:09 2009
++++ configure	Tue May  5 10:04:50 2009
+@@ -11606,13 +11606,13 @@ as_val=`eval 'as_val=${'$as_ac_Header'}
+ #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
  
- 
--{ echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
-+{ echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
+-       { $as_echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
++       { $as_echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++$as_echo_n "checking for pthread_create in -pthread... " >&6; }
  if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
@@ -27,16 +18,16 @@ $OpenBSD: patch-configure,v 1.6 2008/02/13 13:23:58 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -7723,7 +7723,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
- #define HAVE_LIBPTHREAD 1
- _ACEOF
- 
--  LIBS="-lpthread $LIBS"
-+  LIBS="-pthread $LIBS"
- 
+@@ -11672,7 +11672,7 @@ fi
+ { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
+ if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then
+-  PTHREAD_LIBS="-lpthread"
++  PTHREAD_LIBS="-pthread"
  fi
  
-@@ -7884,18 +7884,6 @@ if test "${with_group+set}" = set; then
+        have_pthread=yes
+@@ -11843,18 +11843,6 @@ if test "${with_group+set}" = set; then
  
  fi
  
@@ -46,21 +37,21 @@ $OpenBSD: patch-configure,v 1.6 2008/02/13 13:23:58 ajacoutot Exp $
 -    chgrp $LOCKPATH_GROUP sanetest.file 2>/dev/null || lasterror=$?
 -    rm -f sanetest.file
 -    if test ! -z "$lasterror"; then
--      { echo "$as_me:$LINENO: WARNING: Group $LOCKPATH_GROUP does not exist on this system." >&5
--echo "$as_me: WARNING: Group $LOCKPATH_GROUP does not exist on this system." >&2;}
--      { echo "$as_me:$LINENO: WARNING: Locking feature will be disabled." >&5
--echo "$as_me: WARNING: Locking feature will be disabled." >&2;}
+-      { $as_echo "$as_me:$LINENO: WARNING: Group $LOCKPATH_GROUP does not exist on this system." >&5
+-$as_echo "$as_me: WARNING: Group $LOCKPATH_GROUP does not exist on this system." >&2;}
+-      { $as_echo "$as_me:$LINENO: WARNING: Locking feature will be disabled." >&5
+-$as_echo "$as_me: WARNING: Locking feature will be disabled." >&2;}
 -      use_locking=no
 -    fi
    fi
    if test $use_locking = yes ; then
      INSTALL_LOCKPATH=install-lockpath
-@@ -27050,7 +27038,7 @@ echo "$as_me: Manually selected backends: ${BACKENDS}"
- 	  hp hp3500 hp3900 hp4200 hp5400 hp5590 hpljm1005 hs2p \
- 	  ibm leo lexmark \
- 	  ma1509 matsushita microtek microtek2 mustek mustek_usb \
--	  nec niash pie pixma plustek ricoh \
-+	  nec niash pie plustek ricoh \
- 	  s9036 sceptre sharp sm3600 sm3840 snapscan sp15c st400 stv680 \
- 	  tamarack teco1 teco2 teco3 test u12 umax umax_pp umax1220u"
- 
+@@ -34117,7 +34105,7 @@ ALL_BACKENDS="abaton agfafocus apple artec artec_eplus
+         hp5590 hpsj5s hpljm1005 hs2p ibm leo lexmark ma1509 \
+         matsushita microtek microtek2 mustek mustek_pp \
+         mustek_usb mustek_usb2 nec net niash pie pint \
+-        pixma plustek plustek_pp qcam ricoh rts8891 s9036 \
++        plustek plustek_pp qcam ricoh rts8891 s9036 \
+         sceptre sharp sm3600 sm3840 snapscan sp15c st400 \
+         stv680 tamarack teco1 teco2 teco3 test u12 umax
+         umax_pp umax1220u v4l xerox_mfp"

@@ -1,21 +1,21 @@
-$OpenBSD: patch-doc_saned_man,v 1.4 2008/02/13 13:23:58 ajacoutot Exp $
---- doc/saned.man.orig	Sat Nov 26 06:31:26 2005
-+++ doc/saned.man	Tue Feb 12 11:40:39 2008
-@@ -92,7 +92,7 @@ support IPv6, check the documentation for your inetd d
+$OpenBSD: patch-doc_saned_man,v 1.5 2009/05/06 10:23:21 ajacoutot Exp $
+--- doc/saned.man.orig	Tue May  5 10:05:38 2009
++++ doc/saned.man	Tue May  5 10:06:49 2009
+@@ -136,7 +136,7 @@ support IPv6, check the documentation for your inetd d
  The configuration line normally looks like this:
  .PP
  .RS
--sane-port stream tcp nowait saned.saned @SBINDIR@/saned saned
-+sane-port stream tcp nowait _saned._saned @SBINDIR@/saned saned
+-sane\-port stream tcp nowait saned.saned @SBINDIR@/saned saned
++sane\-port stream tcp nowait _saned._saned @SBINDIR@/saned saned
  .RE
  .PP
  However, if your system uses
-@@ -105,16 +105,16 @@ and use a line of the following form in
+@@ -149,16 +149,16 @@ and use a line of the following form in
  instead:
  .PP
  .RS
--sane-port stream tcp nowait saned.saned /usr/sbin/tcpd @SBINDIR@/saned
-+sane-port stream tcp nowait _saned._saned /usr/libexec/tcpd @SBINDIR@/saned
+-sane\-port stream tcp nowait saned.saned /usr/sbin/tcpd @SBINDIR@/saned
++sane\-port stream tcp nowait _saned._saned /usr/sbin/tcpd @SBINDIR@/saned
  .RE
  .PP
  Note that both examples assume that there is a
@@ -31,7 +31,7 @@ $OpenBSD: patch-doc_saned_man,v 1.4 2008/02/13 13:23:58 ajacoutot Exp $
  can access the scanner (the program generally needs read and
  write access to scanner devices).
  .PP
-@@ -133,8 +133,8 @@ service sane-port
+@@ -177,8 +177,8 @@ service sane\-port
     port        = 6566
     socket_type = stream
     wait        = no

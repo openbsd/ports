@@ -1,18 +1,2 @@
-Before using this program, make sure you read the
-${PREFIX}/share/doc/sane-backends/PROBLEMS file.
-
-Make sure your user has read+write access to the scanner device
-(e.g. /dev/uscanner0) or you will not be able to scan.
-
-With some USB backends, the OpenBSD uscanner driver does not support
-getting USB vendor and product ids. To make your scanner work with sane,
-you'll have to disable uscanner in your kernel - see config(8) - which
-will allow libusb to claim your device instead.
-
-Some backends (like plustek) use a lockfile for allowing multiple access
-to one scanner. If using such a backend, you must add yourself to the
-_saned group or you will not be able to scan.
-
-If you're planning on using the SANE network daemon (saned), add the
-following line in /etc/services:
-sane-port 6566/tcp saned # SANE network scanner daemon
+Please see ${PREFIX}/share/doc/sane-backends/README.OpenBSD
+for information about running sane(4) on OpenBSD.

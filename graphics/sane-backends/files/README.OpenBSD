@@ -1,0 +1,33 @@
+$OpenBSD: README.OpenBSD,v 1.1 2009/05/06 10:23:21 ajacoutot Exp $
+
+Using sane(7) under OpenBSD
+===========================
+
+First read ${TRUEPREFIX}/share/doc/sane-backends/PROBLEMS.
+
+Make sure your user has read/write access to the scanner device
+(e.g. /dev/uscanner0) or you will not be able to scan.
+
+* USB
+With some USB backends, the OpenBSD uscanner(4) driver does not support
+getting USB vendor and product ids. To make your scanner work with sane,
+you'll have to disable uscanner(4) in your kernel - see config(8) -
+which will allow libusb to claim your device instead. When using libusb,
+you need read/write permissions to ugen(4) (/dev/ugen*.*) and the usb(4)
+controller (/dev/usb*) your scanner is connected to (consider using
+hotplugd(8) attach and detach scripts).
+
+* SCSI
+SANE only supports the generic SCSI uk(4) devices, ss(4) won't work. If
+your scanner is detected as an ss(4) device, you'll have to disable
+ss(4) in your kernel - see config(8).
+
+* LOCKING
+Some backends (like sane-plustek(5)) use a lockfile for allowing
+multiple access to one scanner. If using such a backend, you must
+add yourself to the _saned group or you will not be able to scan.
+
+* NETWORK
+If you're planning on using the SANE network daemon (saned), add the
+following line in /etc/services:
+sane-port	6566/tcp	saned	# SANE network scanner daemon

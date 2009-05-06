@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2008/02/13 13:23:58 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2009/05/06 10:23:21 ajacoutot Exp $
 @lib lib/libsane.so.${LIBsane_VERSION}
 lib/sane/libsane-abaton.so
 lib/sane/libsane-agfafocus.so
@@ -10,9 +10,11 @@ lib/sane/libsane-avision.so
 lib/sane/libsane-bh.so
 lib/sane/libsane-canon.so
 lib/sane/libsane-canon630u.so
+lib/sane/libsane-canon_dr.so
 lib/sane/libsane-cardscan.so
 lib/sane/libsane-coolscan.so
 lib/sane/libsane-coolscan2.so
+lib/sane/libsane-coolscan3.so
 lib/sane/libsane-dc210.so
 lib/sane/libsane-dc240.so
 lib/sane/libsane-dc25.so
@@ -52,6 +54,7 @@ lib/sane/libsane-pint.so
 lib/sane/libsane-plustek.so
 lib/sane/libsane-plustek_pp.so
 lib/sane/libsane-ricoh.so
+lib/sane/libsane-rts8891.so
 lib/sane/libsane-s9036.so
 lib/sane/libsane-sceptre.so
 lib/sane/libsane-sharp.so
@@ -70,3 +73,4 @@ lib/sane/libsane-u12.so
 lib/sane/libsane-umax.so
 lib/sane/libsane-umax1220u.so
 lib/sane/libsane-umax_pp.so
+lib/sane/libsane-xerox_mfp.so

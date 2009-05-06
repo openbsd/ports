@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/02/13 13:23:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/05/06 10:23:21 ajacoutot Exp $
 @newgroup _saned:553
-@newuser _saned:553:_saned:daemon:Scanner Daemon:/var/empty:/sbin/nologin
+@newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 %%SHARED%%
-bin/gamma4scanimage
+@bin bin/gamma4scanimage
 bin/sane-config
-bin/sane-find-scanner
-bin/scanimage
+@bin bin/sane-find-scanner
+@bin bin/scanimage
 include/sane/
 include/sane/sane.h
 include/sane/saneopts.h
@@ -32,12 +32,16 @@ lib/sane/libsane-canon.a
 lib/sane/libsane-canon.la
 lib/sane/libsane-canon630u.a
 lib/sane/libsane-canon630u.la
+lib/sane/libsane-canon_dr.a
+lib/sane/libsane-canon_dr.la
 lib/sane/libsane-cardscan.a
 lib/sane/libsane-cardscan.la
 lib/sane/libsane-coolscan.a
 lib/sane/libsane-coolscan.la
 lib/sane/libsane-coolscan2.a
 lib/sane/libsane-coolscan2.la
+lib/sane/libsane-coolscan3.a
+lib/sane/libsane-coolscan3.la
 lib/sane/libsane-dc210.a
 lib/sane/libsane-dc210.la
 lib/sane/libsane-dc240.a
@@ -116,6 +120,8 @@ lib/sane/libsane-plustek_pp.a
 lib/sane/libsane-plustek_pp.la
 lib/sane/libsane-ricoh.a
 lib/sane/libsane-ricoh.la
+lib/sane/libsane-rts8891.a
+lib/sane/libsane-rts8891.la
 lib/sane/libsane-s9036.a
 lib/sane/libsane-s9036.la
 lib/sane/libsane-sceptre.a
@@ -152,7 +158,9 @@ lib/sane/libsane-umax1220u.a
 lib/sane/libsane-umax1220u.la
 lib/sane/libsane-umax_pp.a
 lib/sane/libsane-umax_pp.la
-libexec/saned
+lib/sane/libsane-xerox_mfp.a
+lib/sane/libsane-xerox_mfp.la
+@bin libexec/saned
 @man man/man1/gamma4scanimage.1
 @man man/man1/sane-config.1
 @man man/man1/sane-find-scanner.1
@@ -167,10 +175,11 @@ libexec/saned
 @man man/man5/sane-bh.5
 @man man/man5/sane-canon.5
 @man man/man5/sane-canon630u.5
-@comment @man man/man5/sane-canon_pp.5
+@man man/man5/sane-canon_dr.5
 @man man/man5/sane-cardscan.5
 @man man/man5/sane-coolscan.5
 @man man/man5/sane-coolscan2.5
+@man man/man5/sane-coolscan3.5
 @man man/man5/sane-dc210.5
 @man man/man5/sane-dc240.5
 @man man/man5/sane-dc25.5
@@ -178,6 +187,7 @@ libexec/saned
 @man man/man5/sane-dmc.5
 @man man/man5/sane-epjitsu.5
 @man man/man5/sane-epson.5
+@man man/man5/sane-epson2.5
 @man man/man5/sane-fujitsu.5
 @man man/man5/sane-genesys.5
 @man man/man5/sane-gphoto2.5
@@ -189,7 +199,6 @@ libexec/saned
 @man man/man5/sane-hp5400.5
 @man man/man5/sane-hp5590.5
 @man man/man5/sane-hpljm1005.5
-@comment @man man/man5/sane-hpsj5s.5
 @man man/man5/sane-hs2p.5
 @man man/man5/sane-ibm.5
 @man man/man5/sane-leo.5
@@ -199,7 +208,6 @@ libexec/saned
 @man man/man5/sane-microtek.5
 @man man/man5/sane-microtek2.5
 @man man/man5/sane-mustek.5
-@comment @man man/man5/sane-mustek_pp.5
 @man man/man5/sane-mustek_usb.5
 @man man/man5/sane-mustek_usb2.5
 @man man/man5/sane-nec.5
@@ -207,12 +215,10 @@ libexec/saned
 @man man/man5/sane-niash.5
 @man man/man5/sane-pie.5
 @man man/man5/sane-pint.5
-@man man/man5/sane-pixma.5
 @man man/man5/sane-plustek.5
 @man man/man5/sane-plustek_pp.5
-@comment @man man/man5/sane-pnm.5
-@comment @man man/man5/sane-qcam.5
 @man man/man5/sane-ricoh.5
+@man man/man5/sane-rts8891.5
 @man man/man5/sane-s9036.5
 @man man/man5/sane-sceptre.5
 @man man/man5/sane-scsi.5
@@ -233,7 +239,7 @@ libexec/saned
 @man man/man5/sane-umax1220u.5
 @man man/man5/sane-umax_pp.5
 @man man/man5/sane-usb.5
-@comment @man man/man5/sane-v4l.5
+@man man/man5/sane-xerox_mfp.5
 @man man/man7/sane.7
 @man man/man8/saned.8
 share/doc/sane-backends/
@@ -244,22 +250,7 @@ share/doc/sane-backends/LICENSE
 share/doc/sane-backends/NEWS
 share/doc/sane-backends/PROBLEMS
 share/doc/sane-backends/PROJECTS
-share/doc/sane-backends/README
-share/doc/sane-backends/README.aix
-share/doc/sane-backends/README.beos
-share/doc/sane-backends/README.darwin
-share/doc/sane-backends/README.djpeg
-share/doc/sane-backends/README.freebsd
-share/doc/sane-backends/README.hp-ux
-share/doc/sane-backends/README.linux
-share/doc/sane-backends/README.netbsd
-share/doc/sane-backends/README.openbsd
-share/doc/sane-backends/README.os2
-share/doc/sane-backends/README.solaris
-share/doc/sane-backends/README.unixware2
-share/doc/sane-backends/README.unixware7
-share/doc/sane-backends/README.windows
-share/doc/sane-backends/README.zeta
+share/doc/sane-backends/README.OpenBSD
 share/doc/sane-backends/backend-writing.txt
 share/doc/sane-backends/canon/
 share/doc/sane-backends/canon/canon.changes
@@ -334,6 +325,9 @@ share/doc/sane-backends/umax/umax.CHANGES
 share/doc/sane-backends/umax/umax.FAQ
 share/doc/sane-backends/umax/umax.TODO
 share/examples/sane-backends/
+share/examples/sane-backends/hotplug/
+share/examples/sane-backends/hotplug/attach
+share/examples/sane-backends/hotplug/detach
 share/examples/sane-backends/sane.d/
 @sample ${SYSCONFDIR}/sane.d/
 share/examples/sane-backends/sane.d/abaton.conf
@@ -354,12 +348,16 @@ share/examples/sane-backends/sane.d/canon.conf
 @sample ${SYSCONFDIR}/sane.d/canon.conf
 share/examples/sane-backends/sane.d/canon630u.conf
 @sample ${SYSCONFDIR}/sane.d/canon630u.conf
+share/examples/sane-backends/sane.d/canon_dr.conf
+@sample ${SYSCONFDIR}/sane.d/canon_dr.conf
 share/examples/sane-backends/sane.d/cardscan.conf
 @sample ${SYSCONFDIR}/sane.d/cardscan.conf
 share/examples/sane-backends/sane.d/coolscan.conf
 @sample ${SYSCONFDIR}/sane.d/coolscan.conf
 share/examples/sane-backends/sane.d/coolscan2.conf
 @sample ${SYSCONFDIR}/sane.d/coolscan2.conf
+share/examples/sane-backends/sane.d/coolscan3.conf
+@sample ${SYSCONFDIR}/sane.d/coolscan3.conf
 share/examples/sane-backends/sane.d/dc210.conf
 @sample ${SYSCONFDIR}/sane.d/dc210.conf
 share/examples/sane-backends/sane.d/dc240.conf
@@ -370,6 +368,8 @@ share/examples/sane-backends/sane.d/dell1600n_net.conf
 @sample ${SYSCONFDIR}/sane.d/dell1600n_net.conf
 share/examples/sane-backends/sane.d/dll.conf
 @sample ${SYSCONFDIR}/sane.d/dll.conf
+share/examples/sane-backends/sane.d/dll.d/
+@sample ${SYSCONFDIR}/sane.d/dll.d/
 share/examples/sane-backends/sane.d/dmc.conf
 @sample ${SYSCONFDIR}/sane.d/dmc.conf
 share/examples/sane-backends/sane.d/epjitsu.conf
@@ -425,6 +425,8 @@ share/examples/sane-backends/sane.d/plustek_pp.conf
 @sample ${SYSCONFDIR}/sane.d/plustek_pp.conf
 share/examples/sane-backends/sane.d/ricoh.conf
 @sample ${SYSCONFDIR}/sane.d/ricoh.conf
+share/examples/sane-backends/sane.d/rts8891.conf
+@sample ${SYSCONFDIR}/sane.d/rts8891.conf
 share/examples/sane-backends/sane.d/s9036.conf
 @sample ${SYSCONFDIR}/sane.d/s9036.conf
 share/examples/sane-backends/sane.d/saned.conf
@@ -461,10 +463,15 @@ share/examples/sane-backends/sane.d/umax1220u.conf
 @sample ${SYSCONFDIR}/sane.d/umax1220u.conf
 share/examples/sane-backends/sane.d/umax_pp.conf
 @sample ${SYSCONFDIR}/sane.d/umax_pp.conf
+share/examples/sane-backends/sane.d/xerox_mfp.conf
+@sample ${SYSCONFDIR}/sane.d/xerox_mfp.conf
 share/locale/bg/LC_MESSAGES/sane-backends.mo
 share/locale/cs/LC_MESSAGES/sane-backends.mo
 share/locale/da/LC_MESSAGES/sane-backends.mo
 share/locale/de/LC_MESSAGES/sane-backends.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/sane-backends.mo
 share/locale/eo/LC_MESSAGES/sane-backends.mo
 share/locale/es/LC_MESSAGES/sane-backends.mo
 share/locale/fi/LC_MESSAGES/sane-backends.mo
