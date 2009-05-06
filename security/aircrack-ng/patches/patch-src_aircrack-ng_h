@@ -1,0 +1,11 @@
+--- src/aircrack-ng.h.orig	Wed Mar  4 15:14:46 2009
++++ src/aircrack-ng.h	Wed Mar  4 15:15:43 2009
+@@ -3,6 +3,8 @@
+ 
+ #include <stdint.h>
+ #include <stdio.h>
++#include <pthread.h>
++
+ #include "aircrack-ptw-lib.h"
+ 
+ #define SUCCESS  0

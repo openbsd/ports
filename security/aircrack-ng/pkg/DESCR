@@ -1,0 +1,7 @@
+aircrack is an 802.11 WEP and WPA-PSK keys cracking program that can recover
+keys once enough data packets have been captured.
+
+It implements the standard FMS attack along with some optimizations
+like KoreK attacks, thus making the attack much faster compared to
+other WEP cracking tools. In fact, aircrack is a set of tools for
+auditing wireless networks.

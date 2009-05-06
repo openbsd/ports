@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_osdep_Makefile,v 1.1.1.1 2009/05/06 20:39:29 kili Exp $
+--- src/osdep/Makefile.orig	Thu Mar 26 22:01:02 2009
++++ src/osdep/Makefile	Wed Apr 15 18:46:31 2009
+@@ -10,7 +10,7 @@ OBJS		= osdep.o $(OBJS_NET)
+ #AIRPCAP_DIR	= airpcap
+ OBJS_APCAP	= airpcap.o
+ 
+-OBJS_OBSD	= $(OBJS) openbsd.o openbsd_tap.o
++OBJS_OBSD	= $(OBJS) openbsd.o openbsd_tap.o common.o
+ OBJS_NBSD	= $(OBJS) netbsd.o netbsd_tap.o
+ OBJS_FBSD	= $(OBJS) freebsd.o freebsd_tap.o
+ OBJS_LINUX	= $(OBJS) linux.o linux_tap.o radiotap-parser.o common.o

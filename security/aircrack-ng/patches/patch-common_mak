@@ -1,0 +1,32 @@
+--- common.mak.orig	Thu Mar 26 22:01:02 2009
++++ common.mak	Wed Apr 15 18:36:48 2009
+@@ -31,16 +31,16 @@ COMMON_CFLAGS   += -DCYGWIN
+ endif
+ 
+ ifeq ($(SQLITE), true)
+-    COMMON_CFLAGS	+= -I/usr/local/include -DHAVE_SQLITE
++    COMMON_CFLAGS	+= -I${LOCALBASE}/include -DHAVE_SQLITE
+ else
+     ifeq ($(sqlite), true)
+-        COMMON_CFLAGS	+= -I/usr/local/include -DHAVE_SQLITE
++        COMMON_CFLAGS	+= -I${LOCALBASE}/include -DHAVE_SQLITE
+     else
+         ifeq ($(SQLITE), TRUE)
+-            COMMON_CFLAGS	+= -I/usr/local/include -DHAVE_SQLITE
++            COMMON_CFLAGS	+= -I${LOCALBASE}/include -DHAVE_SQLITE
+         else
+             ifeq ($(sqlite), TRUE)
+-                COMMON_CFLAGS	+= -I/usr/local/include -DHAVE_SQLITE
++                COMMON_CFLAGS	+= -I${LOCALBASE}/include -DHAVE_SQLITE
+             endif
+         endif
+     endif
+@@ -70,7 +70,7 @@ OPTFLAGS        = -D_FILE_OFFSET_BITS=64
+ CFLAGS          ?= -g -W -Wall -Werror -O3
+ CFLAGS          += $(OPTFLAGS) $(REVFLAGS) $(COMMON_CFLAGS)
+ 
+-prefix          = /usr/local
++prefix          = ${LOCALBASE}
+ bindir          = $(prefix)/bin
+ sbindir         = $(prefix)/sbin
+ mandir          = $(prefix)/man/man1

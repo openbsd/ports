@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_osdep_osdep_h,v 1.1.1.1 2009/05/06 20:39:29 kili Exp $
+--- src/osdep/osdep.h.orig	Thu Jan  1 12:51:45 2009
++++ src/osdep/osdep.h	Thu Jan  1 12:59:31 2009
+@@ -13,6 +13,35 @@
+ 
+ #include "packed.h"
+ 
++/* XXX: There are no standard functions to byte-swap 64-bit integers */
++#ifdef __MACH__ 
++#include <libkern/OSByteOrder.h>
++#define aircrack_ntohl64(x)	OSSwapBigToHostInt64(x)
++#define aircrack_htonl64(x)	OSSwapHostToBigInt64(x)
++#elif __linux__
++#include <asm/byteorder.h>
++#define aircrack_ntohl64(x)	__be64_to_cpu(x)
++#define aircrack_htonl64(x)	__cpu_to_be64(x)
++#elif defined (__sun) && defined (__sparc) /* Solaris SPARC, not Solaris x86 */
++#include <sys/byteorder.h>
++#define aircrack_ntohl64(x)	__be64_to_cpu(x)
++#define aircrack_htonl64(x)	__cpu_to_be64(x)
++#elif __FreeBSD__
++#include <sys/endian.h>
++#define aircrack_ntohl64(x)	betoh64(x)
++#define aircrack_htonl64(x)	htobe64(x)
++#elif __OpenBSD__
++#include <machine/endian.h>
++#define aircrack_ntohl64(x)	betoh64(x)
++#define aircrack_htonl64(x)	htobe64(x)
++#elif __NetBSD__
++#include <sys/endian.h>
++#define aircrack_ntohl64(x)	be64toh(x)
++#define aircrack_htonl64(x)	h64tobe(x)
++#else
++#error "FIXME: Don't know how to byte-swap 64-bit integers on this platform"
++#endif /* __MACH__ */
++
+ /* For all structures, when adding new fields, always append them to the end.
+  * This way legacy binary code does not need to be recompiled.  This is
+  * particularly useful for DLLs.  -sorbo

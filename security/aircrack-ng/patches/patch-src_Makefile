@@ -1,0 +1,58 @@
+--- src/Makefile.orig	Thu Mar 26 22:01:02 2009
++++ src/Makefile	Wed Apr 15 18:37:27 2009
+@@ -102,16 +102,16 @@ LIBOSD		= $(OSD)/lib$(OSD).a
+ LIBSSL		= -lssl -lcrypto $(LDFLAGS)
+ LIBSQL		=
+ ifeq ($(SQLITE), true)
+-	LIBSQL		= -L/usr/local/lib -lsqlite3
++	LIBSQL		= -L${LOCALBASE}/lib -lsqlite3
+ else
+ 	ifeq ($(sqlite), true)
+-		LIBSQL          = -L/usr/local/lib -lsqlite3
++		LIBSQL          = -L${LOCALBASE}/lib -lsqlite3
+ 	else
+ 		ifeq ($(SQLITE), TRUE)
+-			LIBSQL          = -L/usr/local/lib -lsqlite3
++			LIBSQL          = -L${LOCALBASE}/lib -lsqlite3
+ 		else
+ 			ifeq ($(sqlite), TRUE)
+-				LIBSQL          = -L/usr/local/lib -lsqlite3
++				LIBSQL          = -L${LOCALBASE}/lib -lsqlite3
+ 			endif
+ 		endif
+ 	endif
+@@ -129,21 +129,21 @@ $(LIBOSD):
+ 
+ aircrack-ng-opt: $(SRC_AC)
+ 	$(iCC) $(iCFLAGS) $(iOPTFLAGS) $(REVFLAGS) $(SRC_AC) $(ASM_AC) $(LIBSSL) \
+-	uniqueiv.o -o aircrack-ng-opt -lpthread $(LIBSQL)
++	uniqueiv.o -o aircrack-ng-opt -pthread $(LIBSQL)
+ 
+ aircrack-ng-opt-prof_gen: $(SRC_AC)
+ 	mkdir -p prof
+ 	$(iCC) $(iCFLAGS) $(iOPTFLAGS) $(REVFLAGS) -prof_genx -DDO_PGO_DUMP \
+ 	-prof_dir$(PROF_DIR) $(SRC_AC) $(ASM_AC) $(LIBSSL) uniqueiv.o -o \
+-	aircrack-ng-opt-prof_gen -lpthread $(LIBSQL)
++	aircrack-ng-opt-prof_gen -pthread $(LIBSQL)
+ 
+ aircrack-ng-opt-prof_use: $(SRC_AC)
+ 	$(iCC) $(iCFLAGS) $(iOPTFLAGS) $(REVFLAGS) -prof_use \
+ 	-prof_dir$(PROF_DIR) $(SRC_AC) $(ASM_AC) $(LIBSSL) uniqueiv.o -o \
+-	aircrack-ng-opt-prof -lpthread $(LIBSQL)
++	aircrack-ng-opt-prof -pthread $(LIBSQL)
+ 
+ aircrack-ng$(EXE): $(OBJS_AC)
+-	$(CC) $(CFLAGS) $(OBJS_AC) $(ASM_AC) -o $(@) -lpthread $(LIBSSL) $(LIBSQL)
++	$(CC) $(CFLAGS) $(OBJS_AC) $(ASM_AC) -o $(@) -pthread $(LIBSSL) $(LIBSQL)
+ 
+ airdecap-ng$(EXE): $(OBJS_AD)
+ 	$(CC) $(CFLAGS) $(OBJS_AD) -o $(@) $(LIBSSL)
+@@ -185,7 +185,7 @@ airolib-ng$(EXE): $(OBJS_AL)
+ 	$(CC) $(CFLAGS) $(OBJS_AL) -o $(@) $(LIBSSL) -DHAVE_REGEXP $(LIBSQL)
+ 
+ airbase-ng$(EXE): $(OBJS_AB) $(LIBOSD)
+-	$(CC) $(CFLAGS) $(OBJS_AB) -o $(@) $(LIBS) $(LIBSSL) -lpthread
++	$(CC) $(CFLAGS) $(OBJS_AB) -o $(@) $(LIBS) $(LIBSSL) -pthread
+ 
+ airdecloak-ng$(EXE): $(OBJS_AU)
+ 	$(CC) $(CFLAGS) $(OBJS_AU) -o $(@)
