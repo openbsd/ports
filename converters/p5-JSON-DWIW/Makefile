@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/13 14:48:57 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2009/05/06 22:20:21 simon Exp $
 
 COMMENT =	JSON converter that Does What I Want
 SHARED_ONLY =	Yes
 
 MODULES =	cpan
-DISTNAME =	JSON-DWIW-0.28
+DISTNAME =	JSON-DWIW-0.32
 CATEGORIES =	converters
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
