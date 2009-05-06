@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_utils_e2_utils_c,v 1.2 2009/04/06 17:19:02 giovanni Exp $
+$OpenBSD: patch-src_utils_e2_utils_c,v 1.3 2009/05/06 16:20:01 giovanni Exp $
 Our file(1) doesn't have all that fancy options.
---- src/utils/e2_utils.c.orig	Sun Feb  1 22:51:22 2009
-+++ src/utils/e2_utils.c	Thu Mar 19 19:31:50 2009
-@@ -480,7 +480,7 @@ gchar *e2_utils_get_mimetype (VPATH *localpath)
+--- src/utils/e2_utils.c.orig	Fri May  1 09:24:56 2009
++++ src/utils/e2_utils.c	Wed May  6 17:25:13 2009
+@@ -484,7 +484,7 @@ gchar *e2_utils_get_mimetype (VPATH *localpath)
  		{
  			//xdg command failed, maybe due to no xdg utilities, or unrecognised type
  			g_free (command);

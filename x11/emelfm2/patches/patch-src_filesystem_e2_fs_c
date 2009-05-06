@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_filesystem_e2_fs_c,v 1.2 2009/04/06 17:19:02 giovanni Exp $
---- src/filesystem/e2_fs.c.orig	Tue Feb 10 23:11:01 2009
-+++ src/filesystem/e2_fs.c	Thu Mar 19 19:40:14 2009
+$OpenBSD: patch-src_filesystem_e2_fs_c,v 1.3 2009/05/06 16:20:01 giovanni Exp $
+--- src/filesystem/e2_fs.c.orig	Thu Apr 30 09:56:47 2009
++++ src/filesystem/e2_fs.c	Wed May  6 17:25:13 2009
 @@ -54,7 +54,7 @@ Not implemented yet.
  #ifdef E2_VFS
  #include "e2_plugins.h"
@@ -10,18 +10,7 @@ $OpenBSD: patch-src_filesystem_e2_fs_c,v 1.2 2009/04/06 17:19:02 giovanni Exp $
  #include "e2_complete.h"
  #endif
  
-@@ -1044,8 +1044,8 @@ retry:
- 	}
- 	if (!(fstatus.f_flags & MNT_LOCAL))
- 	{
--//		if (errno == EINTR)
--//			goto retry;
-+		if (errno == EINTR)
-+			goto retry;
- 		else if (errno == ENOENT && descend && e2_utils_get_parent_path (localpath, TRUE))
- 			goto retry;
- 		g_free (localpath);
-@@ -2538,7 +2538,7 @@ gboolean e2_fs_copy_file (VPATH *src, const struct sta
+@@ -2606,7 +2606,7 @@ gboolean e2_fs_copy_file (VPATH *src, const struct sta
  	//		blksize_t buf_size = 1048576;
  		//find a buffer up to 16 times dest block
  		//(compromise between accesses and multi-tasking latency)
