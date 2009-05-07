@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_Module_Install_Admin_Include_pm,v 1.1 2009/05/07 10:45:58 simon Exp $
+--- lib/Module/Install/Admin/Include.pm.orig	Thu May  7 12:10:39 2009
++++ lib/Module/Install/Admin/Include.pm	Thu May  7 12:11:35 2009
+@@ -50,6 +50,10 @@ sub auto_include_deps {
+ 
+ =pod
+ 
++=head1 NAME
++
++Module::Install::Admin::Include
++
+ =head2 auto_include_dependent_dists
+ 
+ Grabs everything in this module's build_requires and attempts to

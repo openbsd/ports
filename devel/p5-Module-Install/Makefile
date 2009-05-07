@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2008/11/07 15:08:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2009/05/07 10:45:58 simon Exp $
 
 COMMENT=        standalone extensible Perl module installer
 
 MODULES=	cpan
-DISTNAME=	Module-Install-0.67
-PKGNAME=	p5-${DISTNAME}p1
+DISTNAME=	Module-Install-0.87
 CATEGORIES=     devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -16,7 +15,10 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 RUN_DEPENDS=	::devel/p5-Module-ScanDeps \
-		::devel/p5-PAR-Dist
+		::devel/p5-File-Remove \
+		::devel/p5-PAR-Dist \
+		::devel/p5-YAML-Tiny
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_ARGS=	--skip
 

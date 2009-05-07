@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 23:50:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/05/07 10:45:58 simon Exp $
 ${P5SITE}/Module/AutoInstall.pm
 ${P5SITE}/Module/Install/
 ${P5SITE}/Module/Install.pm
@@ -6,8 +6,10 @@ ${P5SITE}/Module/Install.pod
 ${P5SITE}/Module/Install/Admin/
 ${P5SITE}/Module/Install/Admin.pm
 ${P5SITE}/Module/Install/Admin/Bundle.pm
+${P5SITE}/Module/Install/Admin/Compiler.pm
 ${P5SITE}/Module/Install/Admin/Find.pm
 ${P5SITE}/Module/Install/Admin/Include.pm
+@comment ${P5SITE}/Module/Install/Admin/Include.pm.orig
 ${P5SITE}/Module/Install/Admin/Makefile.pm
 ${P5SITE}/Module/Install/Admin/Manifest.pm
 ${P5SITE}/Module/Install/Admin/Metadata.pm
@@ -15,20 +17,17 @@ ${P5SITE}/Module/Install/Admin/ScanDeps.pm
 ${P5SITE}/Module/Install/Admin/WriteAll.pm
 ${P5SITE}/Module/Install/AutoInstall.pm
 ${P5SITE}/Module/Install/Base.pm
-${P5SITE}/Module/Install/Build.pm
 ${P5SITE}/Module/Install/Bundle.pm
 ${P5SITE}/Module/Install/Can.pm
 ${P5SITE}/Module/Install/Compiler.pm
+${P5SITE}/Module/Install/DSL.pm
 ${P5SITE}/Module/Install/Deprecated.pm
 ${P5SITE}/Module/Install/External.pm
 ${P5SITE}/Module/Install/Fetch.pm
 ${P5SITE}/Module/Install/Include.pm
 ${P5SITE}/Module/Install/Inline.pm
 ${P5SITE}/Module/Install/MakeMaker.pm
-${P5SITE}/Module/Install/Makefile/
 ${P5SITE}/Module/Install/Makefile.pm
-${P5SITE}/Module/Install/Makefile/Name.pm
-${P5SITE}/Module/Install/Makefile/Version.pm
 ${P5SITE}/Module/Install/Metadata.pm
 ${P5SITE}/Module/Install/PAR.pm
 ${P5SITE}/Module/Install/Philosophy.pod
@@ -38,15 +37,22 @@ ${P5SITE}/Module/Install/Share.pm
 ${P5SITE}/Module/Install/Win32.pm
 ${P5SITE}/Module/Install/With.pm
 ${P5SITE}/Module/Install/WriteAll.pm
+@comment ${P5SITE}/auto/
+@comment ${P5SITE}/auto/share/
+@comment ${P5SITE}/auto/share/dist/
+@comment ${P5SITE}/auto/share/dist/Module-Install/
+@comment ${P5SITE}/auto/share/dist/Module-Install/dist_file.txt
 ${P5SITE}/inc/
 ${P5SITE}/inc/Module/
+${P5SITE}/inc/Module/Install/
 ${P5SITE}/inc/Module/Install.pm
+${P5SITE}/inc/Module/Install/DSL.pm
 @man man/man3p/Module::AutoInstall.3p
 @man man/man3p/Module::Install.3p
 @man man/man3p/Module::Install::Admin.3p
+@man man/man3p/Module::Install::Admin::Include.3p
 @man man/man3p/Module::Install::Admin::Manifest.3p
 @man man/man3p/Module::Install::Base.3p
-@man man/man3p/Module::Install::Build.3p
 @man man/man3p/Module::Install::Bundle.3p
 @man man/man3p/Module::Install::Can.3p
 @man man/man3p/Module::Install::Compiler.3p
@@ -56,4 +62,6 @@ ${P5SITE}/inc/Module/Install.pm
 @man man/man3p/Module::Install::PAR.3p
 @man man/man3p/Module::Install::Philosophy.3p
 @man man/man3p/Module::Install::Share.3p
+@man man/man3p/Module::Install::With.3p
 @man man/man3p/inc::Module::Install.3p
+@man man/man3p/inc::Module::Install::DSL.3p
