@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.113 2009/05/07 12:16:34 sthen Exp $
+$OpenBSD: user.list,v 1.114 2009/05/07 12:37:10 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -134,4 +134,4 @@ id  user		group		port options
 623 _zabbix		_zabbix		net/zabbix
 624 _noip		_noip		net/no-ip
 625 _varnish		_varnish	www/varnish
-625 _pound		_pound		www/pound
+626 _pound		_pound		www/pound

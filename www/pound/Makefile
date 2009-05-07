@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/05/07 12:16:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/05/07 12:37:10 sthen Exp $
 
 COMMENT =		HTTP reverse proxy/load balancer/SSL offload
 
 DISTNAME =		Pound-2.4.4
-PKGNAME =		${DISTNAME:S/Pound/pound/}p0
+PKGNAME =		${DISTNAME:S/Pound/pound/}p1
 
 CATEGORIES =		www
 
