@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/07 10:30:16 simon Exp $
+${P5SITE}/YAML/
+${P5SITE}/YAML/Tiny.pm
+@man man/man3p/YAML::Tiny.3p
