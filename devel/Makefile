@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.694 2009/05/06 23:06:25 simon Exp $
+# $OpenBSD: Makefile,v 1.695 2009/05/07 10:30:21 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -613,6 +613,7 @@
      SUBDIR += p5-YAML
      SUBDIR += p5-YAML-Shell
      SUBDIR += p5-YAML-Syck
+     SUBDIR += p5-YAML-Tiny
      SUBDIR += p5-accessors
      SUBDIR += p5-boolean
      SUBDIR += p5-capitalization
