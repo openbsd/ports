@@ -1,16 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/21 02:42:49 msf Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/05/07 08:14:51 simon Exp $
 ${P5ARCH}/Class/
 ${P5ARCH}/Class/MOP/
 ${P5ARCH}/Class/MOP.pm
 ${P5ARCH}/Class/MOP/Attribute.pm
+${P5ARCH}/Class/MOP/Class/
 ${P5ARCH}/Class/MOP/Class.pm
-${P5ARCH}/Class/MOP/Immutable.pm
+${P5ARCH}/Class/MOP/Class/Immutable/
+${P5ARCH}/Class/MOP/Class/Immutable/Class/
+${P5ARCH}/Class/MOP/Class/Immutable/Class/MOP/
+${P5ARCH}/Class/MOP/Class/Immutable/Class/MOP/Class.pm
+${P5ARCH}/Class/MOP/Class/Immutable/Trait.pm
 ${P5ARCH}/Class/MOP/Instance.pm
 ${P5ARCH}/Class/MOP/Method/
 ${P5ARCH}/Class/MOP/Method.pm
 ${P5ARCH}/Class/MOP/Method/Accessor.pm
 ${P5ARCH}/Class/MOP/Method/Constructor.pm
 ${P5ARCH}/Class/MOP/Method/Generated.pm
+${P5ARCH}/Class/MOP/Method/Inlined.pm
 ${P5ARCH}/Class/MOP/Method/Wrapped.pm
 ${P5ARCH}/Class/MOP/Module.pm
 ${P5ARCH}/Class/MOP/Object.pm
@@ -23,12 +29,14 @@ ${P5ARCH}/metaclass.pm
 @man man/man3p/Class::MOP.3p
 @man man/man3p/Class::MOP::Attribute.3p
 @man man/man3p/Class::MOP::Class.3p
-@man man/man3p/Class::MOP::Immutable.3p
+@man man/man3p/Class::MOP::Class::Immutable::Class::MOP::Class.3p
+@man man/man3p/Class::MOP::Class::Immutable::Trait.3p
 @man man/man3p/Class::MOP::Instance.3p
 @man man/man3p/Class::MOP::Method.3p
 @man man/man3p/Class::MOP::Method::Accessor.3p
 @man man/man3p/Class::MOP::Method::Constructor.3p
 @man man/man3p/Class::MOP::Method::Generated.3p
+@man man/man3p/Class::MOP::Method::Inlined.3p
 @man man/man3p/Class::MOP::Method::Wrapped.3p
 @man man/man3p/Class::MOP::Module.3p
 @man man/man3p/Class::MOP::Object.3p
