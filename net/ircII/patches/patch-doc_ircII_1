@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_ircII_1,v 1.3 2007/10/05 19:54:55 kili Exp $
---- doc/ircII.1.orig	Sat Jan  1 06:25:09 2005
-+++ doc/ircII.1	Sun Apr 29 17:20:59 2007
+$OpenBSD: patch-doc_ircII_1,v 1.4 2009/05/07 19:54:57 naddy Exp $
+--- doc/ircII.1.orig	Sat Jan  1 12:25:09 2005
++++ doc/ircII.1	Wed May  6 13:51:59 2009
 @@ -3,7 +3,7 @@
  .SH NAME
  ircII \- interface to the Internet Relay Chat system
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_ircII_1,v 1.3 2007/10/05 19:54:55 kili Exp $
  .RB [ \-c
  .IR chan ]
  .RB [ \-p
-@@ -60,7 +60,7 @@ Load the .ircrc file before connection t
+@@ -60,7 +60,7 @@ Load the .ircrc file before connection to a server, no
  .B \-f
  Use flow control (^S and ^Q) to stop/start the display.
  Normally these are both bound to other functions within
@@ -28,7 +28,7 @@ $OpenBSD: patch-doc_ircII_1,v 1.3 2007/10/05 19:54:55 kili Exp $
  will try to connect upon startup.
  This list is also used by the program's
  .B /server
-@@ -142,9 +142,9 @@ is taken to be the Server Group for this
+@@ -142,9 +142,9 @@ is taken to be the Server Group for this server entry.
  .TP
  .BI \-a
  This adds the normal
@@ -49,7 +49,7 @@ $OpenBSD: patch-doc_ircII_1,v 1.3 2007/10/05 19:54:55 kili Exp $
  quickly -- don't load the IRCRC file.
  .TP
  .BI \-h " hostname"
-@@ -208,32 +208,32 @@ need to have a leading slash character '
+@@ -208,32 +208,32 @@ need to have a leading slash character '/'.
  This allows predefinition of aliases and other features.
  .SH EXAMPLES
  .TP
@@ -99,7 +99,7 @@ $OpenBSD: patch-doc_ircII_1,v 1.3 2007/10/05 19:54:55 kili Exp $
  Set the username (if not specified elsewhere) to "Mermaid".
  The user's name (when provided inside parentheses in response to a
  WHOIS command) is set to "The one and only :)".
-@@ -340,9 +340,6 @@ The initial list of servers if none are 
+@@ -340,9 +340,6 @@ The initial list of servers if none are provided on th
  .B ircII.motd
  Message of the day.
  This file is displayed only once each time it is changed.

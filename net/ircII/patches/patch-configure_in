@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure_in,v 1.1 2009/05/07 19:54:57 naddy Exp $
+--- configure.in.orig	Tue Jul 25 13:11:05 2006
++++ configure.in	Wed May  6 15:10:19 2009
+@@ -764,22 +764,17 @@ AC_ARG_WITH(paranoid,
+   AC_MSG_RESULT(none)
+ )
+ 
+-AC_MSG_CHECKING(for /dev/urandom)
+-if test -c /dev/urandom; then
+-  AC_MSG_RESULT(yes)
+-  AC_DEFINE_UNQUOTED([HAVE_DEV_RANDOM])
+-  AC_DEFINE_UNQUOTED([DEV_RANDOM_PATH], ["/dev/urandom"])
+-else
+-  AC_MSG_RESULT(no)
+-  AC_MSG_CHECKING(for /dev/random)
+-  if test -c /dev/random; then
++for dev in /dev/arandom /dev/urandom /dev/random; do
++  AC_MSG_CHECKING(for $dev)
++  if test -c $dev; then
+     AC_MSG_RESULT(yes)
+     AC_DEFINE_UNQUOTED([HAVE_DEV_RANDOM])
+-    AC_DEFINE_UNQUOTED([DEV_RANDOM_PATH], ["/dev/random"])
++    AC_DEFINE_UNQUOTED([DEV_RANDOM_PATH], ["$dev"])
++    break
+   else
+     AC_MSG_RESULT(no)
+   fi
+-fi
++done
+ 
+ AC_MSG_CHECKING(for default server)
+ AC_ARG_WITH(default-server,
