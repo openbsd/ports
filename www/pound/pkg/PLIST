@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/09 01:06:24 sthen Exp $
-@newgroup _pound:623
-@newuser _pound:623:_pound::pound user:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.2 2009/05/07 12:16:34 sthen Exp $
+@newgroup _pound:625
+@newuser _pound:625:_pound::pound user:/nonexistent:/sbin/nologin
 @man man/man8/pound.8
 @man man/man8/poundctl.8
 @bin sbin/pound
