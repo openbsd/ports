@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2009/05/07 14:43:48 giovanni Exp $
 
 COMMENT=	manipulate IPv4/IPv6 netblocks in CIDR notation
 
 MODULES=	cpan
-DISTNAME=	Net-CIDR-0.11
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Net-CIDR-0.13
 CATEGORIES=	net
 
 MAINTAINER=	Matteo Cantoni <goony@openbeer.it> 
 
-# GPL/Artistic
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
