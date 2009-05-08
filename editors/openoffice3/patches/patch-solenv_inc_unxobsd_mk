@@ -1,6 +1,6 @@
-$OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.3 2009/01/31 01:06:20 robert Exp $
---- solenv/inc/unxobsd.mk.orig.port	Fri Jan 30 10:58:30 2009
-+++ solenv/inc/unxobsd.mk	Sat Jan 31 02:52:37 2009
+$OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.4 2009/05/08 15:43:50 robert Exp $
+--- solenv/inc/unxobsd.mk.orig.port	Thu May  7 23:14:18 2009
++++ solenv/inc/unxobsd.mk	Fri May  8 11:02:18 2009
 @@ -0,0 +1,243 @@
 +#*************************************************************************
 +#
@@ -12,7 +12,7 @@ $OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.3 2009/01/31 01:06:20 robert Exp $
 +#
 +# $RCSfile: patch-solenv_inc_unxobsd_mk,v $
 +#
-+# $Revision: 1.3 $
++# $Revision: 1.4 $
 +#
 +# This file is part of OpenOffice.org.
 +#

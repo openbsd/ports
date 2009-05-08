@@ -1,6 +1,6 @@
---- config_office/configure.in.orig.port	Fri Sep  5 15:54:41 2008
-+++ config_office/configure.in	Mon Jan 19 14:46:19 2009
-@@ -986,6 +986,18 @@ case "$build_os" in
+--- configure.in.orig.port	Wed Apr 15 16:46:34 2009
++++ configure.in	Fri May  8 11:01:46 2009
+@@ -1001,6 +1001,18 @@ case "$build_os" in
  		echo "AIX is an alpha port --- Use at own risk" >> warn
  		_os=AIX
  		;;
@@ -10,8 +10,8 @@
 +                build_cairo=yes
 +                test_kde=yes
 +                test_cups=yes
-+		test_freetype=yes
-+		test_randr=yes
++                test_freetype=yes
++                test_randr=yes
 +                PTHREAD_CFLAGS="-pthread -D_THREAD_SAFE"
 +                PTHREAD_LIBS="-pthread"
 +                _os=OpenBSD
@@ -19,26 +19,26 @@
     *)
     AC_MSG_ERROR([$_os operating system is not suitable to build OpenOffice.org!])
     ;;
-@@ -2301,6 +2313,8 @@ dnl ==================================================
-      esac
-    elif test "$_os" = "Darwin"; then
-       DEFAULT_TO_STLPORT="no"
+@@ -2310,6 +2322,8 @@ dnl ==================================================
+       DEFAULT_TO_STLPORT="yes" 
+    elif test "$_os" = "FreeBSD"; then
+       DEFAULT_TO_STLPORT="yes"
 +   elif test "$_os" = "OpenBSD"; then
 +      DEFAULT_TO_STLPORT="no"
     fi
     if test "$DEFAULT_TO_STLPORT" = "yes"; then
        AC_MSG_RESULT([stlport])
-@@ -3115,6 +3129,9 @@ if test "$_os" != "WINNT" -a \( "z$enable_epm" = "z" -
+@@ -3124,6 +3138,9 @@ if test "$_os" != "WINNT" -a \( "z$enable_epm" = "z" -
  	AIX)
  		PKGFORMAT=aix
  		;;
-+        OpenBSD)
-+                PKGFORMAT=portable
-+                ;;
++	OpenBSD)
++		PKGFORMAT=portable
++		;;
  	*BSD)
  		PKGFORMAT=bsd
  		;;
-@@ -3441,7 +3458,7 @@ if test -n "$with_system_libwpd" -o -n "$with_system_l
+@@ -3453,7 +3470,7 @@ if test -n "$with_system_libwpd" -o -n "$with_system_l
          test "$with_system_libwpd" != "no"; then
      AC_MSG_RESULT([external])
      SYSTEM_LIBWPD=YES
@@ -47,7 +47,7 @@
  else
      AC_MSG_RESULT([internal])
      SYSTEM_LIBWPD=NO
-@@ -3561,12 +3578,13 @@ if test -n "$with_system_python" -o -n "$with_system_l
+@@ -3573,12 +3590,13 @@ if test -n "$with_system_python" -o -n "$with_system_l
  
     python_include=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('INCLUDEPY');"`
     python_version=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('VERSION');"`
@@ -62,7 +62,7 @@
     fi
     
     dnl check if the headers really work:
-@@ -3605,15 +3623,12 @@ if test -n "$with_system_db" -o -n "$with_system_libs"
+@@ -3617,16 +3635,13 @@ if test -n "$with_system_db" -o -n "$with_system_libs"
  	test "$with_system_db" != "no"; then
      SYSTEM_DB=YES
      AC_MSG_RESULT([external])
@@ -77,20 +77,22 @@
 +            [ AC_MSG_ERROR(no. install the db4 libraries) ], []
      )
      AC_MSG_CHECKING([whether db is at least 4.1])
-+    save_CXXFLAGS=$CXXFLAGS
-+    CXXFLAGS=-I$DB_INCLUDES
-     for v in 1 2 3 4 5 6; do
+-    for v in `seq 1 7`; do
++    save_CPPFLAGS=$CPPFLAGS
++    CPPFLAGS=-I$DB_INCLUDES
++    for v in `jot - 1 7 1`; do
         AC_TRY_RUN([
  #include <db.h>
-@@ -3624,6 +3639,7 @@ int main(int argc, char **argv) {
+ 
+@@ -3636,6 +3651,7 @@ int main(int argc, char **argv) {
  }
         ], [DB_VERSION_MINOR=$v], [])
      done
-+    CXXFLAGS=$save_CXXFLAGS
++    CPPFLAGS=$save_CPPFLAGS
      if test "$DB_VERSION_MINOR" -gt "1"; then
         AC_MSG_RESULT([OK])
         DB_VERSION=4.$DB_VERSION_MINOR
-@@ -4199,11 +4215,11 @@ if test -n "$with_system_icu" -o -n "$with_system_libs
+@@ -4238,11 +4254,11 @@ if test -n "$with_system_icu" -o -n "$with_system_libs
     if test -z "$SYSTEM_GENBRK"; then
        AC_MSG_ERROR([\"genbrk\" not found in \$PATH, install the icu development tool \"genbrk"\])
     fi
@@ -104,7 +106,7 @@
     if test -z "$SYSTEM_GENCMN"; then
        AC_MSG_ERROR([\"gencmn\" not found in \$PATH, install the icu development tool \"gencmn"\])
     fi
-@@ -4299,7 +4315,7 @@ elif test "$_os" != "WINNT" ; then
+@@ -4324,7 +4340,7 @@ elif test "$_os" != "WINNT" ; then
        AC_MSG_ERROR([No X includes found]) # Exit
     fi
     CFLAGS=$X_CFLAGS
@@ -113,7 +115,7 @@
     AC_CHECK_LIB(X11, XOpenDisplay, x_libs="-lX11 $X_EXTRA_LIBS", [AC_MSG_ERROR([X Development libraries not found])])
     dnl Check if the XauDisposeAuth symbol is provided by libXau.
     AC_CHECK_LIB(Xau, XauDisposeAuth, XAU_LIBS="-lXau", [])
-@@ -4447,7 +4463,7 @@ if test -n "$with_system_openssl" -o -n "$with_system_
+@@ -4495,7 +4511,7 @@ if test -n "$with_system_openssl" -o -n "$with_system_
      AC_MSG_RESULT([external])
      # Mac OS builds should get out without extra stuff is the Mac porters'
      # wish. And pkg-config is although Xcode ships a .pc for openssl
@@ -122,7 +124,7 @@
          OPENSSL_CFLAGS=
          OPENSSL_LIBS="-lssl -lcrypto"
      else
-@@ -5591,42 +5607,24 @@ KDE_LIBS=""
+@@ -5696,42 +5712,23 @@ KDE_LIBS=""
  MOC="moc"
  if test "$test_kde" = "yes" -a "$ENABLE_KDE" = "TRUE" ; then
      dnl Search paths for Qt and KDE
@@ -150,9 +152,9 @@
 -    else
 -        kde_incdirs="/usr/lib64/kde/include /usr/lib/kde/include /usr/local/kde/include /usr/local/include /usr/kde/include /usr/include/kde /usr/include /opt/kde3/include /opt/kde/include $x_includes"
 -        kde_libdirs="/usr/lib64/kde/lib64 /usr/local/kde/lib64 /usr/kde/lib64 /usr/lib64/kde /usr/lib64/kde3 /usr/lib64 /usr/X11R6/lib64 /usr/local/lib64 /opt/kde3/lib64 /opt/kde/lib64 /usr/X11R6/kde/lib64 /usr/lib/kde/lib /usr/local/kde/lib /usr/kde/lib /usr/lib/kde /usr/lib/kde3 /usr/lib /usr/X11R6/lib /usr/local/lib /opt/kde3/lib /opt/kde/lib /usr/X11R6/kde/lib $x_libraries"
+-    fi
 +    kde_incdirs="/usr/lib/kde/include /usr/local/kde/include /usr/local/include /usr/kde/include /usr/include/kde /usr/include /opt/kde3/include /opt/kde/include $x_includes"
 +    kde_libdirs="/usr/local/lib /usr/lib/kde/lib /usr/local/kde/lib /usr/kde/lib /usr/lib/kde /usr/lib/kde3 /usr/lib /usr/X11R6/lib /opt/kde3/lib /opt/kde/lib /usr/X11R6/kde/lib $x_libraries"
-     fi
      if test -n "$KDEDIR" ; then
 -        kde_incdirs="$KDEDIR/include $kde_incdirs"
 -        if test "$build_cpu" != "x86_64" ; then
@@ -173,7 +175,7 @@
  
      dnl Check for Qt headers
      AC_MSG_CHECKING([for Qt headers])
-@@ -5647,7 +5645,7 @@ your Qt installation by exporting QTDIR before running
+@@ -5752,7 +5749,7 @@ your Qt installation by exporting QTDIR before running
      AC_MSG_CHECKING([for Qt libraries])
      qt_libdir="no"
      for qt_check in $qt_libdirs ; do
@@ -182,7 +184,7 @@
              qt_libdir="$qt_check"
              break
          fi
-@@ -5683,7 +5681,7 @@ your KDE installation by exporting KDEDIR before runni
+@@ -5788,7 +5785,7 @@ your KDE installation by exporting KDEDIR before runni
      AC_MSG_CHECKING([for KDE libraries])
      kde_libdir="no"
      for kde_check in $kde_libdirs ; do
@@ -191,16 +193,7 @@
              kde_libdir="$kde_check"
              break
          fi
-@@ -5697,7 +5695,7 @@ your KDE installation by exporting KDEDIR before runni
-     dnl Set the variables
-     KDE_CFLAGS="-I$qt_incdir -I$kde_incdir -DQT_CLEAN_NAMESPACE -DQT_THREAD_SUPPORT"
-     KDE_LIBS="-L$kde_libdir -L$qt_libdir -lkdeui -lkdecore -lqt-mt"
--fi
-+
- AC_SUBST(KDE_CFLAGS)
- AC_SUBST(KDE_LIBS)
- AC_SUBST(MOC)
-@@ -5874,7 +5872,7 @@ AC_SUBST(WITH_WRITER2LATEX)
+@@ -5965,7 +5962,7 @@ AC_SUBST(WITHOUT_AFMS)
  AC_SUBST(SCPDEFS)
  
  AC_MSG_CHECKING([whether and how to use Xinerama])

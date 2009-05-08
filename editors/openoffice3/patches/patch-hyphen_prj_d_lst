@@ -1,9 +1,9 @@
-$OpenBSD: patch-hyphen_prj_d_lst,v 1.1 2009/01/22 17:44:39 robert Exp $
---- hyphen/prj/d.lst.orig.port	Sun Jan 18 01:28:05 2009
-+++ hyphen/prj/d.lst	Sun Jan 18 01:28:22 2009
+$OpenBSD: patch-hyphen_prj_d_lst,v 1.2 2009/05/08 15:43:50 robert Exp $
+--- hyphen/prj/d.lst.orig.port	Fri Apr 10 10:36:58 2009
++++ hyphen/prj/d.lst	Fri Apr 10 10:37:09 2009
 @@ -2,4 +2,5 @@
  
  ..\%__SRC%\inc\hyphen.h %_DEST%\inc%_EXT%\hyphen.h
- ..\%__SRC%\misc\build\hyphen-2.3.1\.libs\libhyphen.a %_DEST%\lib%_EXT%\libhyphen.a
+ ..\%__SRC%\misc\build\hyphen-2.4\.libs\libhyphen.a %_DEST%\lib%_EXT%\libhyphen.a
 +..\%__SRC%\misc\build\hyphen-2.3.1\.libs\libhyphen.so.1.0 %_DEST%\lib%_EXT%\libhyphen.so.1.0
- ..\%__SRC%\misc\build\hyphen-2.3.1\hyph_en_US.dic %_DEST%\bin%_EXT%\hyph_en_US.dic
+ ..\%__SRC%\misc\build\hyphen-2.4\hyph_en_US.dic %_DEST%\bin%_EXT%\hyph_en_US.dic

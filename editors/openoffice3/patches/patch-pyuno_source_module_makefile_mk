@@ -1,6 +1,6 @@
---- pyuno/source/module/makefile.mk.orig.port	Fri Aug  1 07:29:45 2008
-+++ pyuno/source/module/makefile.mk	Thu Jan 15 14:47:50 2009
-@@ -132,6 +132,8 @@ $(PYUNO_MODULE) : $(SLO)$/pyuno_dlopenwrapper.obj
+--- pyuno/source/module/makefile.mk.orig.port	Wed Apr 22 16:54:40 2009
++++ pyuno/source/module/makefile.mk	Thu May  7 23:14:17 2009
+@@ -145,6 +145,8 @@ $(PYUNO_MODULE) : $(SLO)$/pyuno_dlopenwrapper.obj
  	@echo $(LINK) $(LINKFLAGSSHLCUI) -o $@ $(SLO)$/pyuno_dlopenwrapper.o > $(MISC)$/$(@:b).cmd
  .ELIF "$(OS)" == "MACOSX"
  	@echo $(CC) -bundle -ldl -o $@ $(SLO)$/pyuno_dlopenwrapper.o $(EXTRA_LINKFLAGS) $(EXTRA_FRAMEWORK_FLAG) > $(MISC)$/$(@:b).cmd

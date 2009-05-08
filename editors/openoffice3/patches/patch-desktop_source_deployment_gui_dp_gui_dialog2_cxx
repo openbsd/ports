@@ -1,6 +1,6 @@
---- desktop/source/deployment/gui/dp_gui_dialog2.cxx.orig.port	Fri Aug  1 07:58:33 2008
-+++ desktop/source/deployment/gui/dp_gui_dialog2.cxx	Thu Jan 15 14:47:49 2009
-@@ -1482,7 +1482,7 @@ IMPL_LINK( ExtensionBox_Impl, ScrollHdl, ScrollBar*, p
+--- desktop/source/deployment/gui/dp_gui_dialog2.cxx.orig.port	Mon Feb  2 16:38:56 2009
++++ desktop/source/deployment/gui/dp_gui_dialog2.cxx	Thu May  7 23:14:16 2009
+@@ -1499,7 +1499,7 @@ IMPL_LINK( ExtensionBox_Impl, ScrollHdl, ScrollBar*, p
      Point aNewEnPt( m_pEnableBtn->GetPosPixel() - Point( 0, nDelta ) );
      Point aNewSBPt( m_pScrollBar->GetPosPixel() );
  

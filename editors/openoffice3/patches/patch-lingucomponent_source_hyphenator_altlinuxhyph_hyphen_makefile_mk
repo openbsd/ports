@@ -1,21 +1,21 @@
-$OpenBSD: patch-lingucomponent_source_hyphenator_altlinuxhyph_hyphen_makefile_mk,v 1.1 2009/01/22 17:44:39 robert Exp $
---- lingucomponent/source/hyphenator/altlinuxhyph/hyphen/makefile.mk.orig.port	Thu Jan 22 10:21:02 2009
-+++ lingucomponent/source/hyphenator/altlinuxhyph/hyphen/makefile.mk	Thu Jan 22 10:30:27 2009
-@@ -37,7 +37,7 @@ ENABLE_EXCEPTIONS=TRUE
- USE_DEFFILE=TRUE
- 
- .IF "$(GUI)"=="UNX" || "$(COM)"=="GCC"
+$OpenBSD: patch-lingucomponent_source_hyphenator_altlinuxhyph_hyphen_makefile_mk,v 1.2 2009/05/08 15:43:50 robert Exp $
+--- lingucomponent/source/hyphenator/altlinuxhyph/hyphen/makefile.mk.orig.port	Fri Apr 10 19:58:42 2009
++++ lingucomponent/source/hyphenator/altlinuxhyph/hyphen/makefile.mk	Fri Apr 10 19:59:28 2009
+@@ -39,7 +39,7 @@ USE_DEFFILE=TRUE
+ .IF "$(GUI)"=="OS2"
+ HNJLIB=hyphen.lib
+ .ELIF "$(GUI)"=="UNX" || "$(COM)"=="GCC"
 -HNJLIB=-lhyphen
 +#HNJLIB=-lhyphen
- .ELIF  "$(GUI)"=="OS2"
- HNJLIB=$(SLB)\hyphen.lib
  .ELSE
+ HNJLIB=hyphen.lib
+ .ENDIF
 @@ -68,7 +68,7 @@ SLOFILES=	\
  REALNAME:=hyphen
  SHL1TARGET= $(REALNAME)$(DLLPOSTFIX)
  
 -SHL1STDLIBS= \
-+SHL1STDLIBS= 	../../../../../solver/300/unxobsd.pro/lib/libhyphen.a \
++SHL1STDLIBS= ../../../../../solver/310/unxobsd.pro/lib/libhyphen.a \
  		$(CPPULIB) 	 \
  		$(CPPUHELPERLIB) 	 \
  		$(VOSLIB)		\

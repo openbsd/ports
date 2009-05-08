@@ -1,12 +1,11 @@
-$OpenBSD: patch-sal_osl_unx_socket_c,v 1.2 2009/01/22 17:44:39 robert Exp $
---- sal/osl/unx/socket.c.orig.port	Fri Aug  1 07:32:17 2008
-+++ sal/osl/unx/socket.c	Thu Jan 15 14:47:50 2009
+--- sal/osl/unx/socket.c.orig.port	Wed Oct  1 11:19:55 2008
++++ sal/osl/unx/socket.c	Fri Apr 10 10:22:47 2009
 @@ -48,7 +48,7 @@
  #undef HAVE_POLL_H
  #endif
  
--#if defined(LINUX) || defined (IRIX) || defined(NETBSD) || defined ( FREEBSD )
-+#if defined(LINUX) || defined (IRIX) || defined(NETBSD) || defined ( FREEBSD ) || defined ( OPENBSD )
+-#if defined(LINUX) || defined (IRIX) || defined(NETBSD) || defined ( FREEBSD ) || defined (MACOSX)
++#if defined(LINUX) || defined (IRIX) || defined(NETBSD) || defined ( FREEBSD ) || defined (MACOSX) || defined(OPENBSD)
  #include <sys/poll.h>
  #define HAVE_POLL_H
  #endif /* HAVE_POLL_H */

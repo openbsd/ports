@@ -1,5 +1,5 @@
---- sal/osl/unx/system.h.orig.port	Fri Aug  1 07:32:17 2008
-+++ sal/osl/unx/system.h	Thu Jan 15 14:47:50 2009
+--- sal/osl/unx/system.h.orig.port	Wed Oct  1 11:19:55 2008
++++ sal/osl/unx/system.h	Thu May  7 23:14:17 2009
 @@ -190,6 +190,32 @@
  #	define  NO_PTHREAD_RTL
  #endif
@@ -33,7 +33,7 @@
  #ifdef SCO
  #   define AF_IPX -1
  #	include <strings.h>
-@@ -368,7 +394,7 @@ int macxp_resolveAlias(char *path, int buflen);
+@@ -365,7 +391,7 @@ int macxp_resolveAlias(char *path, int buflen);
      !defined(LINUX)   && !defined(NETBSD) && !defined(FREEBSD) && !defined(SCO)  && \
  	!defined(AIX)     && !defined(HPUX)   && \
  	!defined(SOLARIS) && !defined(IRIX)   && \

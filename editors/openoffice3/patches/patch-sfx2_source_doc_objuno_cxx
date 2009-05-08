@@ -1,6 +1,6 @@
---- sfx2/source/doc/objuno.cxx.orig.port	Fri Aug  1 07:34:09 2008
-+++ sfx2/source/doc/objuno.cxx	Thu Jan 15 14:47:50 2009
-@@ -390,7 +390,7 @@ void SfxDocumentInfoObject_Impl::Reset(uno::Reference<
+--- sfx2/source/doc/objuno.cxx.orig.port	Wed Mar 25 12:12:12 2009
++++ sfx2/source/doc/objuno.cxx	Thu May  7 23:14:17 2009
+@@ -392,7 +392,7 @@ void SfxDocumentInfoObject_Impl::Reset(uno::Reference<
              for (sal_Int32 i = 0; i < oldLength; ++i) {
                  names.push_back(props[i].Name);
              }

@@ -1,6 +1,6 @@
---- config_office/set_soenv.in.orig.port	Wed Aug 27 09:46:28 2008
-+++ config_office/set_soenv.in	Tue Dec  2 23:28:46 2008
-@@ -810,6 +810,43 @@ elsif ( $platform =~ m/aix/ )
+--- set_soenv.in.orig.port	Wed Apr 22 16:54:40 2009
++++ set_soenv.in	Fri May  8 11:02:00 2009
+@@ -812,6 +812,52 @@ elsif ( $platform =~ m/aix/ )
     $OS             = "AIX";
     $PATH_SEPERATOR = $ps;
  }
@@ -28,6 +28,15 @@
 +         $JRETHREADDIR   = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64".$ds."native_threads";
 +         $JREEXTRALIBDIR = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64".$ds."xawt";
 +      }
++      elsif ( $platform =~ m/^amd64/ )
++      {
++         $CPU            = "X";
++         $CPUNAME        = "X86_64";
++         $JRELIBDIR      = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64";
++         $JRETOOLKITDIR  = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64".$ds."server";
++         $JRETHREADDIR   = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64".$ds."native_threads";
++         $JREEXTRALIBDIR = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64".$ds."xawt";
++      }
 +      $CVER           = "C300";
 +      $GUI            = "UNX";
 +      $GUIBASE        = "unx";
@@ -44,7 +53,7 @@
  else {
  	print "\nset_soenv:  Cannot figure out what platform you are running\n";
  	print "For $platform.\n";
-@@ -1074,7 +1111,7 @@ if ($platform =~ m/solaris/) 
+@@ -1076,7 +1122,7 @@ if ($platform =~ m/solaris/) 
                          $ps.$JRETHREADDIR.
                          $ps.'$SOLARVER'.$ds.'$INPATH'.$LIB;
  }
@@ -53,7 +62,7 @@
  {  $LD_LIBRARY_PATH   = $cur_dir.
                          $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
                          $ps.$JRELIBDIR.
-@@ -1116,7 +1153,7 @@ if ($platform =~ m/solaris/) 
+@@ -1118,7 +1164,7 @@ if ($platform =~ m/solaris/) 
                          $L.$USR_DT.$LIB.
                          $L.$USR_OPENWIN.$LIB;
  }
@@ -62,7 +71,7 @@
  {
     $SOLAREXTRALIB     = $L.$par_dir.$LIB64;
  }
-@@ -1182,7 +1219,7 @@ if ($platform =~ m/cygwin|os2/)
+@@ -1183,7 +1229,7 @@ if ($platform =~ m/cygwin|os2/)
  }
       
  # The general environment path.
@@ -71,7 +80,7 @@
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1400,11 +1437,12 @@ if ($platform =~ m/solaris/) 
+@@ -1417,11 +1463,12 @@ if ($platform =~ m/solaris/) 
                          $L_STLPORT_LIB.
                          $L.$XLIB;
  }
@@ -85,7 +94,7 @@
                          $L.'$JAVA_HOME'.$LIB64.
                          $L.$JRELIBDIR.
                          $L.$JRETOOLKITDIR.
-@@ -1428,7 +1466,19 @@ elsif ($platform =~ m/darwin/) 
+@@ -1445,7 +1492,19 @@ elsif ($platform =~ m/darwin/) 
      }
  
  }
@@ -106,7 +115,7 @@
  if ($SYSTEM_MOZILLA eq "YES")
  {
         $SOLARLIB .= $L."@MOZ_LIB@"
-@@ -1443,10 +1493,10 @@ $SOLARINC             = $I.$cur_dir.
+@@ -1460,10 +1519,10 @@ $SOLARINC             = $I.$cur_dir.
                          $I.'$SOLARENV'.$INC.
                          $I.'$SRC_ROOT'.$ds."res";
  
@@ -119,7 +128,7 @@
  {
  # This simply adds an include path, so even cases that break the FHS work
  $SOLARINC            .= $STLPORT_inc_stlport;
-@@ -1468,9 +1518,15 @@ if ($platform =~ m/linux/)
+@@ -1485,9 +1544,15 @@ if ($platform =~ m/linux/)
  }
  
  
@@ -137,7 +146,7 @@
  	#include system dependent Java include directory
  	if (!($JDK eq "gcj"))
  	{
-@@ -1492,13 +1548,16 @@ if ($platform =~ m/linux/)
+@@ -1509,13 +1574,16 @@ if ($platform =~ m/linux/)
     		elsif ($platform =~ m/irix/)
     		{  $SOLARINC   .=$I.'$JAVA_HOME'.$INCLUDE.$ds."irix";
     		}
@@ -155,3 +164,11 @@
      {  $SOLARINC  .= $I.$XINC;
      }
      elsif ($platform =~ m/osf1/)
+@@ -2127,6 +2195,7 @@ if ($platform =~ m/os2/)
+   ToFile( "SWITCHAR",   "-",	"e");
+ }
+ ToFile( "SAL_ENABLE_FILE_LOCKING",	"1",	"e");
++
+ #
+ # Writing unset variables you might not need to file.
+ # 

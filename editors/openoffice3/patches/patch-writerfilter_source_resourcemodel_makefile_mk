@@ -1,9 +1,9 @@
-$OpenBSD: patch-writerfilter_source_resourcemodel_makefile_mk,v 1.1 2009/01/22 17:44:39 robert Exp $
---- writerfilter/source/resourcemodel/makefile.mk.orig.port	Sat Jan 17 23:41:16 2009
-+++ writerfilter/source/resourcemodel/makefile.mk	Sat Jan 17 23:41:31 2009
-@@ -48,6 +48,9 @@ CDEFS+=-DWRITERFILTER_DLLIMPLEMENTATION
- 
- # --- Files --------------------------------------------------------
+$OpenBSD: patch-writerfilter_source_resourcemodel_makefile_mk,v 1.2 2009/05/08 15:43:50 robert Exp $
+--- writerfilter/source/resourcemodel/makefile.mk.orig.port	Fri Apr 10 10:36:58 2009
++++ writerfilter/source/resourcemodel/makefile.mk	Fri Apr 10 10:37:10 2009
+@@ -52,6 +52,9 @@ CDEFS+=-DWRITERFILTER_DLLIMPLEMENTATION
+ NOOPTFILES= \
+ 	$(SLO)$/qnametostr.obj
  
 +NOOPTFILES= \
 +	$(SLO)$/qnametostr.obj

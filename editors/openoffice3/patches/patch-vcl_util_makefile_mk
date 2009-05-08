@@ -1,6 +1,6 @@
---- vcl/util/makefile.mk.orig.port	Fri Aug  1 07:38:45 2008
-+++ vcl/util/makefile.mk	Thu Jan 15 14:47:51 2009
-@@ -302,7 +302,7 @@ SHL2STDLIBS+=`pkg-config --libs xrender`
+--- vcl/util/makefile.mk.orig.port	Mon Jan  5 15:44:12 2009
++++ vcl/util/makefile.mk	Thu May  7 23:14:18 2009
+@@ -312,7 +312,7 @@ SHL2STDLIBS+=`pkg-config --libs xrender`
  .IF "$(GUIBASE)"=="unx"
  
  SHL2STDLIBS += -lXext -lSM -lICE -lX11

@@ -1,6 +1,6 @@
---- solenv/bin/modules/installer/download.pm.orig.port	Fri Aug  1 08:48:15 2008
-+++ solenv/bin/modules/installer/download.pm	Thu Jan 15 14:47:50 2009
-@@ -144,7 +144,7 @@ sub put_checksum_and_size_into_script
+--- solenv/bin/modules/installer/download.pm.orig.port	Fri Mar  6 21:54:06 2009
++++ solenv/bin/modules/installer/download.pm	Thu May  7 23:14:17 2009
+@@ -147,7 +147,7 @@ sub put_checksum_and_size_into_script
  	}
  	else
  	{
@@ -9,7 +9,7 @@
  	}
  
  	my $infoline = "Adding checksum $checksum and size $size into download shell script\n";
-@@ -230,7 +230,7 @@ sub call_sum
+@@ -233,7 +233,7 @@ sub call_sum
  {
  	my ($filename, $getuidlibrary) = @_;
  

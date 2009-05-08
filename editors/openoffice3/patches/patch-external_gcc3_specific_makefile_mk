@@ -1,6 +1,6 @@
-$OpenBSD: patch-external_gcc3_specific_makefile_mk,v 1.2 2009/01/22 17:44:39 robert Exp $
---- external/gcc3_specific/makefile.mk.orig.port	Fri Aug  1 07:22:55 2008
-+++ external/gcc3_specific/makefile.mk	Thu Jan 15 16:09:09 2009
+$OpenBSD: patch-external_gcc3_specific_makefile_mk,v 1.3 2009/05/08 15:43:50 robert Exp $
+--- external/gcc3_specific/makefile.mk.orig.port	Wed Aug 30 14:39:00 2006
++++ external/gcc3_specific/makefile.mk	Wed Apr 29 22:06:12 2009
 @@ -13,18 +13,20 @@ TARGET=gcc3_specific
  .IF "$(OS)"!="MACOSX"
  .IF "$(OS)"!="IRIX"
@@ -13,9 +13,8 @@ $OpenBSD: patch-external_gcc3_specific_makefile_mk,v 1.2 2009/01/22 17:44:39 rob
 +all .SEQUENTIAL : $(LB)$/libestdc++.so.$(SHORTSTDCPP3) $(LB)$/libgcc_s.so.1
  
  
--$(LB)$/libstdc++.so.$(SHORTSTDCPP3) :
+ $(LB)$/libstdc++.so.$(SHORTSTDCPP3) :
 -       $(GCCINSTLIB) libstdc++.so.$(SHORTSTDCPP3) $(LB)
-+$(LB)$/libestdc++.so.$(SHORTSTDCPP3) :
 +       $(GCCINSTLIB) libestdc++.so.$(SHORTSTDCPP3) $(LB)
  
  $(LB)$/libgcc_s.so.1 :

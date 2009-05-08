@@ -1,6 +1,6 @@
---- sal/inc/sal/types.h.orig.port	Fri Aug  1 07:32:15 2008
-+++ sal/inc/sal/types.h	Thu Jan 15 14:47:50 2009
-@@ -325,7 +325,7 @@ typedef struct _sal_Sequence
+--- sal/inc/sal/types.h.orig.port	Tue Dec 30 15:32:01 2008
++++ sal/inc/sal/types.h	Thu May  7 23:14:17 2009
+@@ -339,7 +339,7 @@ typedef struct _sal_Sequence
      lack RTTI support, dynamic_cast is not included here).
   */
  #ifdef __cplusplus
