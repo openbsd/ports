@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.411 2009/04/30 23:45:38 jolan Exp $
+# $OpenBSD: Makefile,v 1.412 2009/05/08 22:04:31 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -55,6 +55,7 @@
      SUBDIR += libcroco
      SUBDIR += libghttp
      SUBDIR += liferea
+     SUBDIR += lightsquid
      SUBDIR += lighttpd
      SUBDIR += lighttpd,ldap
      SUBDIR += lighttpd,ldap,mysql
