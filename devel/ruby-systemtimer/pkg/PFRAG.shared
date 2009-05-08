@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/05/08 17:58:52 jcs Exp $
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/system_timer/system_timer_native.so
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/system_timer_native.so

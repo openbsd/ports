@@ -1,0 +1,4 @@
+System Timer, a timer based on underlying SIGALRM system timers, is
+a solution to Ruby processes which hang beyond the time limit when
+accessing external resources. This is useful when timeout.rb, which
+relies on green threads, does not work consistently. 
