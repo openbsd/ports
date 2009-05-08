@@ -1,0 +1,17 @@
+To use lightsquid (with non-chrooted apache, httpd -u), give the www
+user permissions to access squid logs; either like this, or some other
+way:
+
+# usermod -G _squid www
+
+Add the following lines to httpd.conf:
+
+<Directory "${INSTDIR}">
+   AddHandler cgi-script .cgi
+   AllowOverride All
+</Directory>
+
+Then restart apache.
+
+If you have problems, ${INSTDIR}/check-setup.pl will check
+for a few common causes.

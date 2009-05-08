@@ -1,0 +1,97 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/08 22:03:57 sthen Exp $
+@owner www
+@group www
+htdocs/lightsquid/
+htdocs/lightsquid/.htaccess
+htdocs/lightsquid/bigfiles.cgi
+htdocs/lightsquid/check-setup.pl
+htdocs/lightsquid/common.pl
+htdocs/lightsquid/day_detail.cgi
+@owner
+@group
+htdocs/lightsquid/doc/
+htdocs/lightsquid/doc/gnugpl.txt
+htdocs/lightsquid/doc/graph.txt
+htdocs/lightsquid/doc/group.cfg
+@sample htdocs/lightsquid/group.cfg
+htdocs/lightsquid/doc/install.txt
+htdocs/lightsquid/doc/lightsquid.cfg
+@sample htdocs/lightsquid/lightsquid.cfg
+htdocs/lightsquid/doc/logformat.txt
+htdocs/lightsquid/doc/readme.txt
+htdocs/lightsquid/doc/realname.cfg
+@sample htdocs/lightsquid/realname.cfg
+htdocs/lightsquid/doc/skipuser.cfg
+@sample htdocs/lightsquid/skipuser.cfg
+htdocs/lightsquid/doc/templates.txt
+htdocs/lightsquid/doc/thanks.txt
+htdocs/lightsquid/doc/version.txt
+@owner www
+@group www
+htdocs/lightsquid/fixreport.pl
+htdocs/lightsquid/get.cgi
+htdocs/lightsquid/graph.cgi
+htdocs/lightsquid/group_detail.cgi
+htdocs/lightsquid/index.cgi
+htdocs/lightsquid/ip2name/
+htdocs/lightsquid/ip2name/ip2name.abils
+htdocs/lightsquid/ip2name/ip2name.demo
+htdocs/lightsquid/ip2name/ip2name.dhcp
+htdocs/lightsquid/ip2name/ip2name.dns
+htdocs/lightsquid/ip2name/ip2name.ip
+htdocs/lightsquid/ip2name/ip2name.list
+htdocs/lightsquid/ip2name/ip2name.simple
+htdocs/lightsquid/ip2name/ip2name.smb
+htdocs/lightsquid/ip2name/ip2name.squidauth
+htdocs/lightsquid/ip2name/ip2name.squidlist
+htdocs/lightsquid/ip2name/ip2name.squidlist2
+htdocs/lightsquid/lang/
+htdocs/lightsquid/lang/bg.lng
+htdocs/lightsquid/lang/check_lng.pl
+htdocs/lightsquid/lang/check_tpl_lng.pl
+htdocs/lightsquid/lang/cz.lng
+htdocs/lightsquid/lang/eng.lng
+htdocs/lightsquid/lang/fr.lng
+htdocs/lightsquid/lang/hu.lng
+htdocs/lightsquid/lang/it.lng
+htdocs/lightsquid/lang/pt_br.lng
+htdocs/lightsquid/lang/ru-koi8.lng
+htdocs/lightsquid/lang/ru.lng
+htdocs/lightsquid/lang/sp.lng
+htdocs/lightsquid/lang/ua.lng
+htdocs/lightsquid/lightparser.pl
+htdocs/lightsquid/month_detail.cgi
+htdocs/lightsquid/report/
+htdocs/lightsquid/topsites.cgi
+htdocs/lightsquid/tpl/
+htdocs/lightsquid/tpl/base/
+htdocs/lightsquid/tpl/base/bigfiles.html
+htdocs/lightsquid/tpl/base/day_detail.html
+htdocs/lightsquid/tpl/base/graph.html
+htdocs/lightsquid/tpl/base/group_detail.html
+htdocs/lightsquid/tpl/base/images/
+htdocs/lightsquid/tpl/base/images/datetime.png
+htdocs/lightsquid/tpl/base/images/flag_red.png
+htdocs/lightsquid/tpl/base/images/graph.png
+htdocs/lightsquid/tpl/base/images/printer.png
+htdocs/lightsquid/tpl/base/index.html
+htdocs/lightsquid/tpl/base/month_detail.html
+htdocs/lightsquid/tpl/base/topsites.html
+htdocs/lightsquid/tpl/base/user_detail.html
+htdocs/lightsquid/tpl/base/user_month.html
+htdocs/lightsquid/tpl/base/user_time.html
+htdocs/lightsquid/tpl/base/whousesite.html
+htdocs/lightsquid/tpl/text/
+htdocs/lightsquid/tpl/text/bigfiles.html
+htdocs/lightsquid/tpl/text/day_detail.html
+htdocs/lightsquid/tpl/text/group_detail.html
+htdocs/lightsquid/tpl/text/index.html
+htdocs/lightsquid/tpl/text/month_detail.html
+htdocs/lightsquid/tpl/text/topsites.html
+htdocs/lightsquid/tpl/text/user_detail.html
+htdocs/lightsquid/tpl/text/user_month.html
+htdocs/lightsquid/tpl/text/whousesite.html
+htdocs/lightsquid/user_detail.cgi
+htdocs/lightsquid/user_month.cgi
+htdocs/lightsquid/user_time.cgi
+htdocs/lightsquid/whousesite.cgi
