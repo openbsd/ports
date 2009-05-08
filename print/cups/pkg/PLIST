@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.18 2009/04/27 08:25:39 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.19 2009/05/08 20:00:57 ajacoutot Exp $
 @conflict LPRng-*
 @newgroup _cups:541
-@newuser _cups:541:541:daemon:CUPS:/nonexistent:/sbin/nologin
+@newuser _cups:541:541:daemon:CUPS printer spooler daemon:/var/empty:/sbin/nologin
 %%SHARED%%
 @bin bin/cancel
 bin/cups-config
@@ -1772,6 +1772,7 @@ share/examples/cups/mime.types
 share/examples/cups/ppd/
 @sample ${SYSCONFDIR}/cups/ppd/
 share/examples/cups/snmp.conf
+@sample ${SYSCONFDIR}/cups/snmp.conf
 share/examples/cups/ssl/
 @sample ${SYSCONFDIR}/cups/ssl/
 share/icons/

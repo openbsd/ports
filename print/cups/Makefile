@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2009/04/27 08:25:39 bernd Exp $
+# $OpenBSD: Makefile,v 1.46 2009/05/08 20:00:57 ajacoutot Exp $
 
 COMMENT=		Common Unix Printing System
 
 VERSION=		1.3.10
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		cups-${VERSION}
+PKGNAME=		cups-${VERSION}p0
 CATEGORIES=		print sysutils
 
 SHARED_LIBS+=		cups		4.0
@@ -21,7 +21,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c gcrypt gpg-error jpeg m pthread tasn1 z
+WANTLIB += asn1 c crypto gcrypt gpg-error gssapi jpeg krb5 m
+WANTLIB += pthread z
 
 MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 			http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
@@ -56,23 +57,37 @@ DIFF_ARGS=		-a
 
 CONFIGURE_STYLE=	gnu dest
 AUTOCONF_VERSION=	2.59
-CONFIGURE_ARGS+=	--with-cups-user=_cups \
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--with-cups-user=_cups \
 			--with-cups-group=_cups \
-			${CONFIGURE_SHARED} \
+			--with-system-groups=wheel \
 			--localstatedir=/var \
 			--without-java \
-			--without-perl \
+			--with-perl="/usr/bin/perl" \
+			--with-optim="${CFLAGS}" \
 			--without-php \
 			--without-python \
+			--enable-image \
 			--enable-dbus \
+			--enable-raw-printing \
+			--enable-gssapi \
+			--disable-dnssd \
+			--disable-pap \
+			--disable-ldap \
+			--disable-slp \
+			--disable-default-shared \
 			--disable-pdftops
 
 # XXX we need to use GnuTLS instead of OpenSSL because of conflicting
 # symbols with Mozilla NSS which can lead to crashes
 CONFIGURE_ARGS+=	--enable-gnutls=yes
 
+# XXX there is an issue with threading with CUPS under OpenBSD
+# the lpd backend and admin.cgi hang at cpu 100%
+CONFIGURE_ARGS+=	--disable-threads
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
-			  -I${LOCALBASE}/include/libpng" \
+				-I${LOCALBASE}/include/libpng" \
 			DSOFLAGS="-L${LOCALBASE}/lib" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			LIBcups_VERSION=${LIBcups_VERSION} \
@@ -100,6 +115,9 @@ LIB_DEPENDS+=		ldap,lber::databases/openldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
 .endif
+
+post-extract:
+	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
 
 post-configure:
 	cd ${WRKBUILD} && perl -pi -e 's|\$${DESTDIR}||g' init/cups.sh \
