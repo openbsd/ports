@@ -1,4 +1,0 @@
-Libchamplain is a C library providing a ClutterActor that displays maps
-such as OpenStreetMap.  You can also have markers.  These markers can be
-animated or not and are interactive. Libchamplain-gtk is a Gtk+ widget
-that wraps around libchamplain's ClutterActor.

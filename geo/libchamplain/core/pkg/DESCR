@@ -13,3 +13,6 @@ rasterized maps.
  * Add markers on the map with a mixed Clutter/Champlain API
  * Add layers of markers
  * You can animate markers
+
+Libchamplain-gtk is a Gtk+ widget that wraps around libchamplain's
+ClutterActor.

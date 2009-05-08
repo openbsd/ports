@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/15 17:57:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/05/08 12:38:27 jasper Exp $
 
     SUBDIR += core
-    SUBDIR += libchamplain-gtk
 
 .include <bsd.port.subdir.mk>
