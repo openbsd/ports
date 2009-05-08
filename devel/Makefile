@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.695 2009/05/07 10:30:21 simon Exp $
+# $OpenBSD: Makefile,v 1.696 2009/05/08 18:01:33 jcs Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -749,6 +749,7 @@
      SUBDIR += ruby-rubyinline
      SUBDIR += ruby-sexp
      SUBDIR += ruby-sexp_processor
+     SUBDIR += ruby-systemtimer
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-tzinfo
      SUBDIR += ruby-uuidtools
