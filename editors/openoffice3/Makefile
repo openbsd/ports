@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/05/08 15:43:50 robert Exp $
+# $OpenBSD: Makefile,v 1.16 2009/05/08 15:47:32 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -59,7 +59,7 @@ DISTFILES+=	nbcat-0.1.tar.gz:0
 SUPDISTFILES+=	nbcat-0.1.tar.gz:0
 .endif
 
-.if ${FLAVOR:L:Mjava}
+.if !${FLAVOR:L:Mno_java}
 MULTI_PACKAGES+=	-java
 .endif
 
@@ -112,7 +112,7 @@ LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
 			kabc,kdecore,kdeui,kio::x11/kde/libs3
 WANTLIB-kde=		X11 Xau Xdmcp Xext Xrandr Xrender estdc++ m
 
-.if ${FLAVOR:L:Mjava}
+.if !${FLAVOR:L:Mno_java}
 MODULES+=		java
 MODJAVA_VER=		1.4+
 MODJAVA_JRERUN=		Yes
@@ -169,7 +169,7 @@ CONFIGURE_ARGS=	--disable-gnome-vfs \
 		--with-vba-package-format="builtin" \
 		--with-lang="en-US ${LANGS}"
 
-.if ${FLAVOR:L:Mjava}
+.if !${FLAVOR:L:Mno_java}
 CONFIGURE_ARGS+=--with-java \
 		--with-jdk-home=${JAVA_HOME} \
 		--with-ant-home=${LOCALBASE}/ant/lib \
