@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2006/11/04 12:00:03 espie Exp $
-bin/GET
-bin/HEAD
-bin/POST
+@comment $OpenBSD: PLIST,v 1.17 2009/05/08 15:46:39 simon Exp $
 bin/lwp-download
 bin/lwp-mirror
 bin/lwp-request
@@ -12,6 +9,7 @@ ${P5SITE}/File/
 ${P5SITE}/File/Listing.pm
 ${P5SITE}/HTML/Form.pm
 ${P5SITE}/HTTP/
+${P5SITE}/HTTP/Config.pm
 ${P5SITE}/HTTP/Cookies/
 ${P5SITE}/HTTP/Cookies.pm
 ${P5SITE}/HTTP/Cookies/Microsoft.pm
@@ -73,9 +71,6 @@ ${P5SITE}/WWW/RobotRules.pm
 ${P5SITE}/WWW/RobotRules/AnyDBM_File.pm
 ${P5SITE}/lwpcook.pod
 ${P5SITE}/lwptut.pod
-@man man/man1/GET.1
-@man man/man1/HEAD.1
-@man man/man1/POST.1
 @man man/man1/lwp-download.1
 @man man/man1/lwp-mirror.1
 @man man/man1/lwp-request.1
@@ -83,6 +78,7 @@ ${P5SITE}/lwptut.pod
 @man man/man3p/Bundle::LWP.3p
 @man man/man3p/File::Listing.3p
 @man man/man3p/HTML::Form.3p
+@man man/man3p/HTTP::Config.3p
 @man man/man3p/HTTP::Cookies.3p
 @man man/man3p/HTTP::Cookies::Microsoft.3p
 @man man/man3p/HTTP::Cookies::Netscape.3p
@@ -100,7 +96,6 @@ ${P5SITE}/lwptut.pod
 @man man/man3p/LWP::Authen::Ntlm.3p
 @man man/man3p/LWP::ConnCache.3p
 @man man/man3p/LWP::Debug.3p
-@man man/man3p/LWP::DebugFile.3p
 @man man/man3p/LWP::MediaTypes.3p
 @man man/man3p/LWP::MemberMixin.3p
 @man man/man3p/LWP::Protocol.3p
