@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2008/02/04 10:11:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2009/05/08 10:25:37 jasper Exp $
 
 COMMENT=	color X11 terminal emulator with transparency support
 COMMENT-kanji=	color japanese terminal emulator with transparency support
@@ -7,7 +7,7 @@ V=		0.9.4
 DISTNAME=	Eterm-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 PKGNAME=	eterm-$Vp0
-FULLPKGNAME-kanji=	ja-eterm-$Vp0
+FULLPKGNAME-kanji=	ja-eterm-$Vp1
 SHARED_LIBS +=	Eterm                1.0      # .0.0
 CATEGORIES=	x11
 
@@ -48,6 +48,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mkanji}
 CATEGORIES+=	japanese
 CONFIGURE_ARGS+=--enable-multi-charset=kanji
+MODULES+=	converters/libiconv
 .else
 CONFIGURE_ARGS+=--enable-multi-charset
 .endif
