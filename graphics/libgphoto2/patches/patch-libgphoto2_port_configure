@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgphoto2_port_configure,v 1.4 2009/02/01 11:04:11 ajacoutot Exp $
---- libgphoto2_port/configure.orig	Mon Jan 19 08:56:26 2009
-+++ libgphoto2_port/configure	Tue Jan 27 09:09:16 2009
-@@ -28130,10 +28130,10 @@ MSGFMT!$MSGFMT$ac_delim
+$OpenBSD: patch-libgphoto2_port_configure,v 1.5 2009/05/08 08:05:53 ajacoutot Exp $
+--- libgphoto2_port/configure.orig	Wed Apr  1 13:38:24 2009
++++ libgphoto2_port/configure	Mon May  4 17:40:04 2009
+@@ -28183,10 +28183,10 @@ MSGFMT!$MSGFMT$ac_delim
  GMSGFMT!$GMSGFMT$ac_delim
  XGETTEXT!$XGETTEXT$ac_delim
  MSGMERGE!$MSGMERGE$ac_delim

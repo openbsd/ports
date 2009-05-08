@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2009/02/01 11:04:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/05/08 08:05:53 ajacoutot Exp $
 
 COMMENT=	digital camera library
 CATEGORIES=	graphics devel
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-VERSION=	2.4.4
+VERSION=	2.4.5
 DISTNAME=	libgphoto2-${VERSION}
 PKGNAME=	libgphoto-${VERSION}
 SHARED_LIBS+=	gphoto2		3.1 # 6.0
@@ -29,7 +29,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_path_DOXYGEN=false
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-static
+			--enable-static \
+			--without-hal \
+			--without-bonjour
 
 SUBST_VARS=		VERSION
 

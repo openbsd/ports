@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2009/02/01 11:04:11 ajacoutot Exp $
---- configure.orig	Wed Jan 21 22:23:06 2009
-+++ configure	Tue Jan 27 09:09:16 2009
-@@ -29178,10 +29178,10 @@ MSGFMT!$MSGFMT$ac_delim
+$OpenBSD: patch-configure,v 1.5 2009/05/08 08:05:53 ajacoutot Exp $
+--- configure.orig	Wed Apr  1 16:06:05 2009
++++ configure	Mon May  4 17:40:04 2009
+@@ -29193,10 +29193,10 @@ MSGFMT!$MSGFMT$ac_delim
  GMSGFMT!$GMSGFMT$ac_delim
  XGETTEXT!$XGETTEXT$ac_delim
  MSGMERGE!$MSGMERGE$ac_delim
