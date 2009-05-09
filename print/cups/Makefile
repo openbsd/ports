@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2009/05/08 20:00:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2009/05/09 11:05:44 ajacoutot Exp $
 
 COMMENT=		Common Unix Printing System
 
 VERSION=		1.3.10
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		cups-${VERSION}p0
+PKGNAME=		cups-${VERSION}p1
 CATEGORIES=		print sysutils
 
 SHARED_LIBS+=		cups		4.0
@@ -81,10 +81,6 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 # XXX we need to use GnuTLS instead of OpenSSL because of conflicting
 # symbols with Mozilla NSS which can lead to crashes
 CONFIGURE_ARGS+=	--enable-gnutls=yes
-
-# XXX there is an issue with threading with CUPS under OpenBSD
-# the lpd backend and admin.cgi hang at cpu 100%
-CONFIGURE_ARGS+=	--disable-threads
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				-I${LOCALBASE}/include/libpng" \
