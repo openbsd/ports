@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: dpb,v 1.14 2008/10/24 16:34:19 sturm Exp $
+# $OpenBSD: dpb,v 1.15 2009/05/09 07:36:17 sturm Exp $
 # Copyright (c) 2004 Nikolay Sturm <sturm@openbsd.org>.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -520,6 +520,34 @@ sub parse_hosts_file()
 	close($fh);
 }
 
+sub find_circular_deps()
+{
+	foreach my $base_port (keys %prereqs_of) {
+		# port might have been removed due to circular dependencies
+		next if not exists $prereqs_of{$base_port};
+
+		my @backlog = ();
+		my %checked = ();
+		foreach my $p (@{$prereqs_of{$base_port}}) {
+			push @backlog, $p unless $p eq $base_port;
+		}
+
+		while ($#backlog >= 0) {
+			my $p = shift @backlog;
+			next if exists $checked{$p};
+
+			if ($p eq $base_port) {
+				warn "*** circular dependency for $base_port\n";
+				remove_port($base_port);
+			}
+			$checked{$p} = 1;
+			foreach my $q (@{$prereqs_of{$p}}) {
+				push @backlog, $q unless $q eq $p;
+			}
+		}
+	}
+}
+
 sub build_package($$$$)
 {
 	my ($node, $port, $flavor, $fullport) = @_;
@@ -672,6 +700,7 @@ if (defined $opt_b or not defined $opt_T or not -f $opt_T) {
 
 parse_dependency_file();
 parse_hosts_file();
+find_circular_deps();
 
 check_hosts();
 
