@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/19 14:17:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/05/09 22:44:43 martynas Exp $
 
      SUBDIR+= af
      SUBDIR+= ar
@@ -21,6 +21,7 @@
      SUBDIR+= id
      SUBDIR+= is
      SUBDIR+= it
+     SUBDIR+= lt
      SUBDIR+= mi
      SUBDIR+= ms
      SUBDIR+= mt
