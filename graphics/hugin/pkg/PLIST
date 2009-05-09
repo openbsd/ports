@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/19 11:18:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/05/09 19:28:55 sthen Exp $
 %%SHARED%%
 @bin bin/PTBatcher
 @bin bin/PTBatcherGUI
@@ -24,7 +24,6 @@
 @man man/man1/nona.1
 @man man/man1/nona_gui.1
 @man man/man1/vig_optimize.1
-share/applications/PTBatcher.desktop
 share/applications/PTBatcherGUI.desktop
 share/applications/hugin.desktop
 share/applications/hugin_stitch_project.desktop
@@ -51,6 +50,8 @@ share/hugin/xrc/data/CPCursor4.png
 share/hugin/xrc/data/CPCursor5.png
 share/hugin/xrc/data/CPCursor6.png
 share/hugin/xrc/data/about.htm
+share/hugin/xrc/data/add_project.png
+share/hugin/xrc/data/add_projects.png
 share/hugin/xrc/data/celeste.model
 share/hugin/xrc/data/center_pano.png
 share/hugin/xrc/data/center_pano.xpm
@@ -210,6 +211,12 @@ share/hugin/xrc/data/help_en_EN/CA_tCA03.jpg
 share/hugin/xrc/data/help_en_EN/CCD.html
 share/hugin/xrc/data/help_en_EN/CMakeLists.txt
 share/hugin/xrc/data/help_en_EN/Camera_response_curve.html
+share/hugin/xrc/data/help_en_EN/Celeste_cpeditor_post.jpg
+share/hugin/xrc/data/help_en_EN/Celeste_cpeditor_pre.jpg
+share/hugin/xrc/data/help_en_EN/Celeste_done.jpg
+share/hugin/xrc/data/help_en_EN/Celeste_images_panel.jpg
+share/hugin/xrc/data/help_en_EN/Celeste_preferences.jpg
+share/hugin/xrc/data/help_en_EN/Celeste_standalone.html
 share/hugin/xrc/data/help_en_EN/Chromatic_aberration.html
 share/hugin/xrc/data/help_en_EN/Color_correct_tiff.html
 share/hugin/xrc/data/help_en_EN/Colour_profile.html
@@ -330,6 +337,7 @@ share/hugin/xrc/data/help_en_EN/Panoinfo.html
 share/hugin/xrc/data/help_en_EN/Panomatic.html
 share/hugin/xrc/data/help_en_EN/Panorama.html
 share/hugin/xrc/data/help_en_EN/Panorama_formats.html
+share/hugin/xrc/data/help_en_EN/Panorama_scripting_in_a_nutshell.html
 share/hugin/xrc/data/help_en_EN/Panorama_tools.html
 share/hugin/xrc/data/help_en_EN/Panotools.html
 share/hugin/xrc/data/help_en_EN/Parallax.gif
@@ -341,6 +349,7 @@ share/hugin/xrc/data/help_en_EN/Pincushion_distortion.html
 share/hugin/xrc/data/help_en_EN/Pitch.html
 share/hugin/xrc/data/help_en_EN/Portrait.html
 share/hugin/xrc/data/help_en_EN/Projections.html
+share/hugin/xrc/data/help_en_EN/Pto2mk.html
 share/hugin/xrc/data/help_en_EN/QTVR.html
 share/hugin/xrc/data/help_en_EN/RAW.html
 share/hugin/xrc/data/help_en_EN/RGBE.html
@@ -353,10 +362,13 @@ share/hugin/xrc/data/help_en_EN/Spherical.html
 share/hugin/xrc/data/help_en_EN/Stereographic_Projection.html
 share/hugin/xrc/data/help_en_EN/Straight_line_control_points.html
 share/hugin/xrc/data/help_en_EN/TIFF.html
+share/hugin/xrc/data/help_en_EN/Tca_correct.html
 share/hugin/xrc/data/help_en_EN/Tone_mapping.html
+share/hugin/xrc/data/help_en_EN/Using_Celeste_with_hugin.html
 share/hugin/xrc/data/help_en_EN/Vertical-fisheye.jpg
 share/hugin/xrc/data/help_en_EN/Vertical-stereographic.jpg
 share/hugin/xrc/data/help_en_EN/Vertical_control_points.html
+share/hugin/xrc/data/help_en_EN/Vig_optimize.html
 share/hugin/xrc/data/help_en_EN/Vignetting.html
 share/hugin/xrc/data/help_en_EN/Wavy_distortion.html
 share/hugin/xrc/data/help_en_EN/Yaw.html
@@ -534,6 +546,7 @@ share/hugin/xrc/data/nona_multilayer.mk
 share/hugin/xrc/data/nona_smartblend.mk
 share/hugin/xrc/data/optimize.png
 share/hugin/xrc/data/optimize.xpm
+share/hugin/xrc/data/pause.png
 share/hugin/xrc/data/photometric.png
 share/hugin/xrc/data/preview.png
 share/hugin/xrc/data/preview_auto_update.png
@@ -548,8 +561,12 @@ share/hugin/xrc/data/ptmender_enblend.mk
 share/hugin/xrc/data/ptmender_smartblend.mk
 share/hugin/xrc/data/redo.png
 share/hugin/xrc/data/reload.png
+share/hugin/xrc/data/remove_project.png
 share/hugin/xrc/data/searchfind.xpm
+share/hugin/xrc/data/skip.png
 share/hugin/xrc/data/splash.png
+share/hugin/xrc/data/start.png
+share/hugin/xrc/data/stop.png
 share/hugin/xrc/data/straighten_pano.png
 share/hugin/xrc/data/straighten_pano.xpm
 share/hugin/xrc/data/tips.txt

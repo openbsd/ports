@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/29 23:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/05/09 19:28:55 sthen Exp $
 
 COMMENT =		panorama image stitcher
 
-DISTNAME =		hugin-0.8.0_beta3
-PKGNAME =		${DISTNAME:C/_beta/b/}p0
+DISTNAME =		hugin-0.8.0_rc1
+PKGNAME =		${DISTNAME:S/_//}
 WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 
 SHARED_LIBS =		celeste 0.0 \
 			huginANN 0.0 \
-			huginbase 0.0 \
+			huginbase 1.0 \
 			huginjhead 0.0 \
 			huginvigraimpex 0.0
 
@@ -31,7 +31,6 @@ WANTLIB += GL GLU ICE SM X11 Xext c m pthread stdc++ z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 
 RUN_DEPENDS =		:desktop-file-utils-*:devel/desktop-file-utils \
-			::devel/gmake \
 			::graphics/autopano-sift-c \
 			::graphics/enblend-enfuse \
 			::graphics/p5-Image-ExifTool
@@ -44,7 +43,7 @@ LIB_DEPENDS =		boost_thread-mt::devel/boost \
 			IlmImf::graphics/openexr \
 			png::graphics/png \
 			tiff::graphics/tiff \
-			wx_base,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_gl,wx_gtk2_html,wx_gtk2_xrc::x11/wxWidgets
+			wx_base,wx_base_net,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_gl,wx_gtk2_html,wx_gtk2_xrc::x11/wxWidgets
 
 USE_X11=		Yes
 MODULES +=		devel/cmake
@@ -53,6 +52,7 @@ NO_REGRESS =		Yes
 CFLAGS +=		-pthread
 
 pre-patch:
+	find ${WRKSRC} -name '*.orig' | xargs rm
 	cd ${WRKSRC}/CMakeModules; perl -i -pe 's/\r$$//' `find . -type f`
 
 pre-configure:
