@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2009/04/14 14:06:26 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2009/05/10 19:31:44 naddy Exp $
 @pkgpath net/transmission
 @bin bin/transmission-daemon
 @bin bin/transmission-remote
@@ -12,7 +12,10 @@ share/transmission/web/
 share/transmission/web/LICENSE
 share/transmission/web/images/
 share/transmission/web/images/buttons/
+share/transmission/web/images/buttons/file_priority_buttons.png
+share/transmission/web/images/buttons/file_wanted_buttons.png
 share/transmission/web/images/buttons/info_activity.png
+share/transmission/web/images/buttons/info_files.png
 share/transmission/web/images/buttons/info_general.png
 share/transmission/web/images/buttons/tab_backgrounds.png
 share/transmission/web/images/buttons/toolbar_buttons.png

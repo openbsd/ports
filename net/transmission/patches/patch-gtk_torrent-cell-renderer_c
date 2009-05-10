@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_torrent-cell-renderer_c,v 1.3 2008/12/02 15:29:07 naddy Exp $
---- gtk/torrent-cell-renderer.c.orig	Mon Nov 10 16:52:26 2008
-+++ gtk/torrent-cell-renderer.c	Thu Nov 27 22:33:20 2008
-@@ -202,8 +202,8 @@ getStatusString( const tr_stat * torStat )
+$OpenBSD: patch-gtk_torrent-cell-renderer_c,v 1.4 2009/05/10 19:31:44 naddy Exp $
+--- gtk/torrent-cell-renderer.c.orig	Tue May  5 02:40:11 2009
++++ gtk/torrent-cell-renderer.c	Thu May  7 19:40:40 2009
+@@ -229,8 +229,8 @@ getStatusString( const tr_stat * torStat )
  
              case TR_STATUS_DOWNLOAD:
                  g_string_append_printf( gstr,
@@ -12,7 +12,7 @@ $OpenBSD: patch-gtk_torrent-cell-renderer_c,v 1.3 2008/12/02 15:29:07 naddy Exp 
                                torStat->peersConnected ),
                      torStat->peersSendingToUs +
                      torStat->webseedsSendingToUs,
-@@ -213,8 +213,8 @@ getStatusString( const tr_stat * torStat )
+@@ -240,8 +240,8 @@ getStatusString( const tr_stat * torStat )
  
              case TR_STATUS_SEED:
                  g_string_append_printf( gstr,

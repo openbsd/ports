@@ -1,22 +1,7 @@
-$OpenBSD: patch-daemon_remote_c,v 1.4 2009/03/04 20:59:52 naddy Exp $
---- daemon/remote.c.orig	Fri Feb 27 17:46:36 2009
-+++ daemon/remote.c	Sun Mar  1 17:10:43 2009
-@@ -630,11 +630,11 @@ strlratio2( char * buf, double ratio, size_t buflen )
-     else if( (int)ratio == TR_RATIO_INF )
-         tr_strlcpy( buf, "Inf", buflen );
-     else if( ratio < 10.0 )
--        tr_snprintf( buf, buflen, "%'.2f", ratio );
-+        tr_snprintf( buf, buflen, "%.2f", ratio );
-     else if( ratio < 100.0 )
--        tr_snprintf( buf, buflen, "%'.1f", ratio );
-+        tr_snprintf( buf, buflen, "%.1f", ratio );
-     else
--        tr_snprintf( buf, buflen, "%'.0f", ratio );
-+        tr_snprintf( buf, buflen, "%.0f", ratio );
-     return buf;
- }
- 
-@@ -662,24 +662,24 @@ strlsize( char *  buf, int64_t size, size_t  buflen )
+$OpenBSD: patch-daemon_remote_c,v 1.5 2009/05/10 19:31:44 naddy Exp $
+--- daemon/remote.c.orig	Tue May  5 02:40:19 2009
++++ daemon/remote.c	Thu May  7 19:40:40 2009
+@@ -692,24 +692,24 @@ strlsize( char *  buf, int64_t size, size_t  buflen )
      if( !size )
          tr_strlcpy( buf, "None", buflen );
      else if( size < (int64_t)KILOBYTE_FACTOR )

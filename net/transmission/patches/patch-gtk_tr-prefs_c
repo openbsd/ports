@@ -1,9 +1,9 @@
-$OpenBSD: patch-gtk_tr-prefs_c,v 1.5 2009/04/14 14:06:26 naddy Exp $
---- gtk/tr-prefs.c.orig	Sun Apr 12 21:55:50 2009
-+++ gtk/tr-prefs.c	Tue Apr 14 00:11:23 2009
-@@ -319,8 +319,8 @@ updateBlocklistText( GtkWidget * w,
+$OpenBSD: patch-gtk_tr-prefs_c,v 1.6 2009/05/10 19:31:44 naddy Exp $
+--- gtk/tr-prefs.c.orig	Tue May  5 02:40:11 2009
++++ gtk/tr-prefs.c	Thu May  7 19:40:40 2009
+@@ -369,8 +369,8 @@ updateBlocklistText( GtkWidget * w, TrCore * core )
+     const int n = tr_blocklistGetRuleCount( tr_core_session( core ) );
      char      buf[512];
- 
      g_snprintf( buf, sizeof( buf ),
 -                ngettext( "Enable _blocklist (contains %'d rule)",
 -                          "Enable _blocklist (contains %'d rules)", n ), n );
@@ -12,3 +12,12 @@ $OpenBSD: patch-gtk_tr-prefs_c,v 1.5 2009/04/14 14:06:26 naddy Exp $
      gtk_button_set_label( GTK_BUTTON( w ), buf );
  }
  
+@@ -399,7 +399,7 @@ onBlocklistUpdateResponse( GtkDialog * dialog, gint re
+ static void
+ onBlocklistUpdated( TrCore * core, int n, gpointer gdata )
+ {
+-    const char * s = ngettext( "Blocklist now has %'d rule.", "Blocklist now has %'d rules.", n );
++    const char * s = ngettext( "Blocklist now has %d rule.", "Blocklist now has %d rules.", n );
+     struct blocklist_data * data = gdata;
+     GtkMessageDialog * d = GTK_MESSAGE_DIALOG( data->updateBlocklistDialog );
+     gtk_widget_set_sensitive( data->updateBlocklistButton, TRUE );

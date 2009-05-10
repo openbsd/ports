@@ -1,21 +1,36 @@
-$OpenBSD: patch-gtk_details_c,v 1.7 2009/04/14 14:06:26 naddy Exp $
---- gtk/details.c.orig	Sun Apr 12 21:55:50 2009
-+++ gtk/details.c	Tue Apr 14 00:11:22 2009
-@@ -264,7 +264,7 @@ fmtpeercount( GtkWidget * l,
-     else
-     {
-         char str[16];
--        g_snprintf( str, sizeof str, "%'d", count );
-+        g_snprintf( str, sizeof str, "%d", count );
-         gtk_label_set_text( GTK_LABEL( l ), str );
+$OpenBSD: patch-gtk_details_c,v 1.8 2009/05/10 19:31:44 naddy Exp $
+--- gtk/details.c.orig	Tue May  5 02:40:11 2009
++++ gtk/details.c	Thu May  7 19:40:40 2009
+@@ -906,7 +906,7 @@ refreshInfo( struct DetailsImpl * di, tr_torrent ** to
+         for( i=0; i<n; ++i )
+             sum += infos[i]->pieceCount;
+         g_snprintf( buf, sizeof( buf ),
+-                    ngettext( "%'d Piece", "%'d Pieces", sum ), sum );
++                    ngettext( "%d Piece", "%d Pieces", sum ), sum );
+         for( i=1; i<n; ++i )
+             if( baseline != (int)infos[i]->pieceSize )
+                 break;
+@@ -1453,11 +1453,11 @@ refreshPeers( struct DetailsImpl * di, tr_torrent ** t
+             leechers = s->leechers;
+             completed += s->timesCompleted;
+         }
+-        g_snprintf( buf, sizeof( buf ), "%'d", seeders );
++        g_snprintf( buf, sizeof( buf ), "%d", seeders );
+         gtk_label_set_text( GTK_LABEL( di->seeders_lb ), buf );
+-        g_snprintf( buf, sizeof( buf ), "%'d", leechers );
++        g_snprintf( buf, sizeof( buf ), "%d", leechers );
+         gtk_label_set_text( GTK_LABEL( di->leechers_lb ), buf );
+-        g_snprintf( buf, sizeof( buf ), "%'d", completed );
++        g_snprintf( buf, sizeof( buf ), "%d", completed );
+         gtk_label_set_text( GTK_LABEL( di->completed_lb ), buf );
      }
- }
-@@ -630,7 +630,7 @@ info_page_new( tr_torrent * tor )
-     hig_workarea_add_section_title( t, &row, _( "Details" ) );
  
-     g_snprintf( countStr, sizeof( countStr ),
--                ngettext( "%'d Piece", "%'d Pieces", info->pieceCount ),
-+                ngettext( "%d Piece", "%d Pieces", info->pieceCount ),
-                 info->pieceCount );
-     tr_strlsize( sizeStr, info->pieceSize, sizeof( sizeStr ) );
-     g_snprintf( buf, sizeof( buf ),
+@@ -2058,7 +2058,7 @@ torrent_inspector_set_torrents( GtkWidget * w, GSList 
+    {
+         file_list_clear( di->file_list );
+         tracker_list_clear( di->tracker_list );
+-        g_snprintf( title, sizeof( title ), _( "%'d Torrent Properties" ), len );
++        g_snprintf( title, sizeof( title ), _( "%d Torrent Properties" ), len );
+     }
+ 
+     gtk_window_set_title( GTK_WINDOW( w ), title );
