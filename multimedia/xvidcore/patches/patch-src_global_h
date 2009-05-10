@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_global_h,v 1.1 2009/05/10 20:16:10 sthen Exp $
+--- src/global.h.orig	Fri Apr 10 19:36:17 2009
++++ src/global.h	Fri Apr 10 19:36:37 2009
+@@ -255,8 +255,12 @@ get_dc_scaler(uint32_t quant,
+ 
+ /* useful macros */
+ 
++#ifndef MIN
+ #define MIN(X, Y) ((X)<(Y)?(X):(Y))
++#endif
++#ifndef MAX
+ #define MAX(X, Y) ((X)>(Y)?(X):(Y))
++#endif
+ /* #define ABS(X)    (((X)>0)?(X):-(X)) */
+ #define SIGN(X)   (((X)>0)?1:-1)
+ #define CLIP(X,AMIN,AMAX)   (((X)<(AMIN)) ? (AMIN) : ((X)>(AMAX)) ? (AMAX) : (X))
