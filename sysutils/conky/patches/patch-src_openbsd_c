@@ -1,59 +1,25 @@
-$OpenBSD: patch-src_openbsd_c,v 1.5 2008/09/30 09:54:19 landry Exp $
---- src/openbsd.c.orig	Tue Jul 29 20:01:18 2008
-+++ src/openbsd.c	Mon Sep 22 22:38:31 2008
-@@ -598,6 +598,7 @@ char get_freq(char *p_client_buffer, size_t client_buf
+$OpenBSD: patch-src_openbsd_c,v 1.6 2009/05/10 19:07:47 sthen Exp $
+--- src/openbsd.c.orig	Mon Mar 30 05:55:51 2009
++++ src/openbsd.c	Sun May 10 12:23:14 2009
+@@ -56,6 +56,10 @@
+ #include <net80211/ieee80211_ioctl.h>
  
- void update_top()
- {
-+	kvm_init();
- 	proc_find_top(info.cpu, info.memu);
- }
+ #include "conky.h"
++#include "diskio.h"
++#include "logging.h"
++#include "openbsd.h"
++#include "top.h"
  
-@@ -654,6 +655,10 @@ cleanup:
- }
+ #define	MAXSHOWDEVS		16
+ 
+@@ -656,6 +660,10 @@ cleanup:
  #endif
  
-+void clear_diskio_stats()
+ void clear_diskio_stats()
 +{
 +}
 +
- void update_diskio()
++struct diskio_stat *prepare_diskio_stat(const char *s)
  {
- 	return;	/* XXX: implement? hifi: not sure how */
-@@ -695,18 +700,22 @@ inline void proc_find_top(struct process **cpu, struct
- 	struct process *processes;
- 	int mib[2];
+ }
  
--	int total_pages;
-+	u_int total_pages;
-+	int64_t usermem;
- 	int pagesize = getpagesize();
- 
- 	/* we get total pages count again to be sure it is up to date */
- 	mib[0] = CTL_HW;
--	mib[1] = HW_USERMEM;
--	size_t size = sizeof(total_pages);
-+	mib[1] = HW_USERMEM64;
-+	size_t size = sizeof(usermem);
- 
--	if (sysctl(mib, 2, &total_pages, &size, NULL, 0) == -1) {
--		ERR("error reading nmempages");
-+	if (sysctl(mib, 2, &usermem, &size, NULL, 0) == -1) {
-+		ERR("error reading usermem");
- 	}
- 
-+	/* translate bytes into page count */
-+	total_pages = usermem / pagesize;
-+
- 	int max_size = sizeof(struct kinfo_proc2);
- 
- 	p = kvm_getproc2(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
-@@ -717,7 +726,7 @@ inline void proc_find_top(struct process **cpu, struct
- 			processes[j].pid = p[i].p_pid;
- 			processes[j].name = strndup(p[i].p_comm, text_buffer_size);
- 			processes[j].amount = 100.0 * p[i].p_pctcpu / FSCALE;
--			processes[j].totalmem = (float) (p[i].p_vm_rssize * pagesize /
-+			processes[j].totalmem = (float) (p[i].p_vm_rssize /
- 				(float) total_pages) * 100.0;
- 			j++;
- 		}
