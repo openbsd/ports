@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2009/05/10 13:59:35 fkr Exp $
+--- configure.orig	Sun May  3 03:42:03 2009
++++ configure	Sun May  3 03:43:03 2009
+@@ -10326,8 +10326,6 @@ if test x"$acx_pthread_ok" = xyes; then
+ 
+ 	    case "$target" in
+ 	    *openbsd*)
+-		{ echo "$as_me:$LINENO: result: WARNING: pthread support on OpenBSD is unstable!" >&5
+-echo "${ECHO_T}WARNING: pthread support on OpenBSD is unstable!" >&6; }
+ 		CFLAGS="$CFLAGS -pthread"
+ 		;;
+ 	    esac
