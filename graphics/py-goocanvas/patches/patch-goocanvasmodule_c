@@ -1,0 +1,16 @@
+$OpenBSD: patch-goocanvasmodule_c,v 1.1 2009/05/10 16:41:23 ajacoutot Exp $
+
+Fix for API change for older py-cairo.
+(XXX removed when py-cairo is updated to >=1.8.4)
+
+--- goocanvasmodule.c.orig	Sun May 10 18:34:45 2009
++++ goocanvasmodule.c	Sun May 10 18:34:57 2009
+@@ -35,7 +35,7 @@ _cairo_matrix_to_gvalue(GValue *value, PyObject *obj)
+ static PyObject *
+ _cairo_pattern_from_gvalue(const GValue *value)
+ {
+-    return PycairoPattern_FromPattern(cairo_pattern_reference((cairo_pattern_t *) g_value_get_boxed(value)), NULL);
++    return PycairoPattern_FromPattern(cairo_pattern_reference((cairo_pattern_t *) g_value_get_boxed(value)));
+ }
+ 
+ static int
