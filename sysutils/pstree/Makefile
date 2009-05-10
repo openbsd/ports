@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2009/05/10 14:54:22 jasper Exp $
 
 COMMENT=		list processes as a tree
-DISTNAME=		pstree-2.27
+DISTNAME=		pstree-2.32
 CATEGORIES=     	sysutils
 
 # GPL
@@ -11,7 +11,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
-MASTER_SITES=		http://fresh.t-systems-sfr.com/unix/src/misc/
+MASTER_SITES=		ftp://ftp.thp.uni-duisburg.de/pub/source/
 
 NO_REGRESS=		Yes
 
