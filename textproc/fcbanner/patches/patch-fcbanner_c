@@ -1,0 +1,12 @@
+$OpenBSD: patch-fcbanner_c,v 1.1.1.1 2009/05/11 15:50:35 sthen Exp $
+--- fcbanner.c.orig	Mon May 11 12:48:33 2009
++++ fcbanner.c	Mon May 11 12:55:48 2009
+@@ -402,7 +402,7 @@ main(int argc, char **argv)
+     } else {
+ 	wint_t c;
+ 
+-	while((c = fgetwc(stdin)) != WEOF) {
++	while(((c = fgetwc(stdin)) != EOF) && c != '\004' ) { /* ^D */
+ 	    if(c == L'\n')
+ 		newline();
+ 	    else

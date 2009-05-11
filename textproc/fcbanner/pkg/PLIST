@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/11 15:50:35 sthen Exp $
+@bin bin/fcbanner
+share/doc/fcbanner/
+share/doc/fcbanner/fcbanner.txt

@@ -1,0 +1,4 @@
+fcbanner is a variant on the banner program that uses fontconfig
+and freetype to draw its characters. Thus, it can easily draw using
+various fonts - any font you can get in Gnome or Mozilla for example
+- and handles non-ASCII characters if they are present in the font.
