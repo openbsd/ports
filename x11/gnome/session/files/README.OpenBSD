@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.21 2009/04/11 10:12:19 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.22 2009/05/11 08:59:22 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 
@@ -19,13 +19,6 @@ interfaces for libbonoboui and libgnomeui widgets.
 If your needs aren't satisfied yet, there are many other packages
 you can install. The most important ones will be mentioned by category:
 
- - Communication
-   * ekiga - SIP and H.323 conferencing application
-   * empathy - Telepathy based messenger for e.g. MSN, Jabber, etc
-   * epiphany - lightweight and simple web browser
-   * evolution - integrated email and PIM software
-   * gossip - Jabber client
-
  - Accessibility
    * dasher - predictive text input system
    * gnome-mag - screen magnifier
@@ -36,7 +29,15 @@ you can install. The most important ones will be mentioned by category:
    * mousetweaks - mouse accessibility enhancements
    * orca - assistive technology for visually impaired
 
+ - Communication
+   * ekiga - SIP and H.323 conferencing application
+   * empathy - Telepathy based messenger for e.g. MSN, Jabber, etc
+   * epiphany - lightweight and simple web browser
+   * evolution - integrated email and PIM software
+   * gossip - Jabber client
+
  - Development
+   * devhelp - API documentation browser
    * gedit-plugins - plugins for Gedit
    * glade3 - user interface builder
    * gnome-devel-docs - developer documentation

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2009/05/03 19:51:42 landry Exp $
+# $OpenBSD: Makefile,v 1.74 2009/05/11 08:59:22 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p7
+PKGNAME=		${DISTNAME}p8
 
 CATEGORIES=		x11
 
@@ -39,7 +39,6 @@ RUN_DEPENDS+=		::x11/gnome/alacarte \
 			::x11/gnome/applets2 \
 			::x11/gnome/backgrounds \
 			::x11/gnome/controlcenter2 \
-			::x11/gnome/devhelp \
 			::x11/gnome/file-roller \
 			:gdm->=2.20.7:x11/gnome/gdm \
 			::x11/gnome/gedit \
