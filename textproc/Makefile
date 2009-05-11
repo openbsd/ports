@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.262 2009/04/14 11:30:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.263 2009/05/11 15:51:51 sthen Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -21,6 +21,7 @@
      SUBDIR += enchant
      SUBDIR += eruby
      SUBDIR += exempi
+     SUBDIR += fcbanner
      SUBDIR += gdiff
      SUBDIR += glimpse
      SUBDIR += gnuvd
