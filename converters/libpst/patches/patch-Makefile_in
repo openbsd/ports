@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2009/05/11 09:36:17 jasper Exp $
+
+Don't bother installing files like AUTHORS and such.
+
+--- Makefile.in.orig	Fri Apr 17 21:58:48 2009
++++ Makefile.in	Mon May 11 10:04:26 2009
+@@ -624,7 +624,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-htmlDATA install-pkgconfigDATA
++install-data-am: install-pkgconfigDATA
+ 
+ install-exec-am:
+ 
