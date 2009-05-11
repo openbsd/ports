@@ -1,0 +1,11 @@
+$OpenBSD: patch-auth_ldap_h,v 1.1 2009/05/11 19:40:58 claudio Exp $
+--- auth_ldap.h.orig	Sun May 10 12:38:59 2009
++++ auth_ldap.h	Sun May 10 12:39:12 2009
+@@ -30,6 +30,7 @@
+ #include <http_conf_globals.h>
+ #include <multithread.h>
+ 
++#define LDAP_DEPRECATED 1
+ #include <lber.h>
+ #include <ldap.h>
+ 

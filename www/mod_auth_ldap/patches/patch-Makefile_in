@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2004/06/12 15:39:08 pvalchev Exp $
---- Makefile.in.orig	2001-07-04 08:37:55.000000000 -0600
-+++ Makefile.in	2004-06-12 00:55:16.000000000 -0600
-@@ -20,12 +20,14 @@ html: FAQ.html Changes.html auth_ldap.ht
+$OpenBSD: patch-Makefile_in,v 1.5 2009/05/11 19:40:58 claudio Exp $
+--- Makefile.in.orig	Wed Jul  4 16:37:55 2001
++++ Makefile.in	Sun May 10 12:37:14 2009
+@@ -20,12 +20,14 @@ html: FAQ.html Changes.html auth_ldap.html
  
  OBJS=auth_ldap.o auth_ldap_config.o auth_ldap_cache.o auth_ldap_cache_mgr.o
  
