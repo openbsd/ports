@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2009/05/06 10:23:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2009/05/11 15:22:07 ajacoutot Exp $
 
 COMMENT=	API for accessing scanners, backends
 
 DISTNAME=	sane-backends-1.0.20
+PKGNAME=	${DISTNAME}p0
+
 SHARED_LIBS=	sane 2.0 # .1.0
 CATEGORIES=	graphics
 
