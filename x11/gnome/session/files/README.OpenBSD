@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.22 2009/05/11 08:59:22 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.23 2009/05/11 09:10:24 jasper Exp $
 
 The OpenBSD/GNOME desktop
 
@@ -39,6 +39,7 @@ you can install. The most important ones will be mentioned by category:
  - Development
    * devhelp - API documentation browser
    * gedit-plugins - plugins for Gedit
+   * ghex - HEX editor
    * glade3 - user interface builder
    * gnome-devel-docs - developer documentation
 
@@ -47,10 +48,15 @@ you can install. The most important ones will be mentioned by category:
    * evince - document viewer for multiple document formats
    * gcalctool - desktop calculator
    * gconf-editor - editor for GConf settings
+   * gnome-games - collection of games
    * gnome-keyring-manager - keyring password management
    * gnome-scan - scanning application
+   * gnome-video-arcade - MAME front-end
    * gnomebaker - CD/DVD burning application
    * gucharmap - Unicode character map
+   * hamster-applet - time tracker applet
+   * mergeant - database administration GUI
+   * nautilus-sendto - integrate applications into Nautilus
    * pessulus - lockdown editor for desktop
    * planner - project management
    * seahorse - encryption keys manager
