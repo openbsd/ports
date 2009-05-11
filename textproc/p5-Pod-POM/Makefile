@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/03/24 19:08:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2009/05/11 19:34:19 jasper Exp $
 
 COMMENT=	convert Pod documents into a simple object model form
 
 MODULES=	cpan
-DISTNAME=	Pod-POM-0.24
+DISTNAME=	Pod-POM-0.25
 CATEGORIES=	textproc
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=		::devel/p5-File-Slurp \
-			::devel/p5-Test-Differences \
-			:p5-YAML->=0.68:devel/p5-YAML
+			::devel/p5-Test-Differences
 
 .include <bsd.port.mk>
