@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2008/09/01 09:55:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/05/11 19:30:56 jasper Exp $
 
 COMMENT=		POE-based parser for the IRC protocol
 
 MODULES=		cpan
-DISTNAME=		POE-Filter-IRCD-2.38
+DISTNAME=		POE-Filter-IRCD-2.40
 CATEGORIES=		net
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
