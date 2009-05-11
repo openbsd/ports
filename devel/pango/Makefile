@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2009/03/15 13:34:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2009/05/11 12:43:20 jasper Exp $
 
 COMMENT=		library for layout and rendering of text
 
 DISTNAME=		pango-1.22.4
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS += pango-1.0	   1800.0    # .2203.0
 SHARED_LIBS += pangox-1.0	   1800.0    # .2203.0
 SHARED_LIBS += pangoft2-1.0	   1800.0    # .2203.0
