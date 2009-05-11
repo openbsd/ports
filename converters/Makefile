@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2009/01/25 23:02:44 simon Exp $
+# $OpenBSD: Makefile,v 1.47 2009/05/11 09:36:48 jasper Exp $
 #
 
     SUBDIR += base64
@@ -9,6 +9,7 @@
     SUBDIR += libdvd
     SUBDIR += libdvdcss
     SUBDIR += libiconv
+    SUBDIR += libpst
     SUBDIR += mimepp
     SUBDIR += mpack
     SUBDIR += p5-Calendar-Simple
