@@ -1,5 +1,6 @@
---- conf/master.cf.orig	Wed Jan 30 12:57:57 2008
-+++ conf/master.cf	Sun Feb 17 05:10:21 2008
+$OpenBSD: patch-master.cf,v 1.16 2009/05/12 20:03:08 jakob Exp $
+--- conf/master.cf.orig	Wed Jan 30 06:57:57 2008
++++ conf/master.cf	Sun Apr 19 01:29:06 2009
 @@ -8,8 +8,8 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
@@ -72,7 +73,7 @@
  #
  #old-cyrus unix  -       n       n       -       -       pipe
 -#  flags=R user=cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
-+#  flags=R user=_cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
++#  flags=R user=_cyrus argv=/usr/local/libexec/cyrus-imapd/deliver -e -m ${extension} ${user}
  #
  # ====================================================================
  #
@@ -81,7 +82,7 @@
  #
  #cyrus     unix  -       n       n       -       -       pipe
 -#  user=cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
-+#  user=_cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
++#  user=_cyrus argv=/usr/local/libexec/cyrus-imapd/deliver -e -r ${sender} -m ${extension} ${user}
  #
  # ====================================================================
  #

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: postfix-install,v 1.3 2009/03/15 19:38:05 jakob Exp $
+# $OpenBSD: postfix-install,v 1.4 2009/05/12 20:03:08 jakob Exp $
 #
 # Post-installation setup of postfix
 
@@ -40,17 +40,6 @@ MAILER
     chmod 644 /etc/mailer.conf.postfix
 }
 
-# Function: update postfix scripts
-#
-update_scripts()
-{
-    rm -f $CONFIG_DIR/{postfix-script,postfix-files,post-install}
-    install -o root -g wheel -m 544 \
-	$SAMPLE_CONFIG_DIR/{postfix-script,post-install} $CONFIG_DIR
-    install -o root -g wheel -m 444 \
-	$SAMPLE_CONFIG_DIR/postfix-files $CONFIG_DIR
-}
-
 # Function: install the postfix configuration files from the samples
 #
 do_configs()
@@ -58,8 +47,6 @@ do_configs()
     POSTFIX="${PREFIX}/sbin/postfix"
 
     if [ -d $CONFIG_DIR ]; then
-	update_scripts
-
 	echo ""
 	$POSTFIX upgrade-configuration
 	echo ""
@@ -68,15 +55,11 @@ do_configs()
 	echo "| The existing configuration files in $CONFIG_DIR have been preserved."
 	echo "| You may want to compare them to the current sample files,"
 	echo "| $SAMPLE_CONFIG_DIR, and update your configuration as needed."
-	echo "|"
-	echo "| $CONFIG_DIR/post{fix-{script,files},-install} has been updated."
     	echo "+---------------"
 	echo ""
     else
 	install -d -o root -g wheel -m 755 $CONFIG_DIR
 	install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/* $CONFIG_DIR
-
-	update_scripts
 
 	echo "+---------------"
 	echo "| Configuration files have been installed in $CONFIG_DIR."
