@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/12 23:49:27 simon Exp $
+${P5SITE}/MojoX/Renderer/
+${P5SITE}/MojoX/Renderer/TT.pm
+@man man/man3p/MojoX::Renderer::TT.3p
