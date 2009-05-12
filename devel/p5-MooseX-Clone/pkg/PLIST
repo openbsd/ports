@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/12 23:33:14 simon Exp $
+${P5SITE}/MooseX/
+${P5SITE}/MooseX/Clone/
+${P5SITE}/MooseX/Clone.pm
+${P5SITE}/MooseX/Clone/Meta/
+${P5SITE}/MooseX/Clone/Meta/Attribute/
+${P5SITE}/MooseX/Clone/Meta/Attribute/Trait/
+${P5SITE}/MooseX/Clone/Meta/Attribute/Trait/Clone/
+${P5SITE}/MooseX/Clone/Meta/Attribute/Trait/Clone.pm
+${P5SITE}/MooseX/Clone/Meta/Attribute/Trait/Clone/Base.pm
+${P5SITE}/MooseX/Clone/Meta/Attribute/Trait/Clone/Std.pm
+${P5SITE}/MooseX/Clone/Meta/Attribute/Trait/Copy.pm
+${P5SITE}/MooseX/Clone/Meta/Attribute/Trait/NoClone.pm
+${P5SITE}/MooseX/Clone/Meta/Attribute/Trait/StorableClone.pm
+@man man/man3p/MooseX::Clone.3p
+@man man/man3p/MooseX::Clone::Meta::Attribute::Trait::Clone.3p
+@man man/man3p/MooseX::Clone::Meta::Attribute::Trait::Copy.3p
+@man man/man3p/MooseX::Clone::Meta::Attribute::Trait::NoClone.3p
+@man man/man3p/MooseX::Clone::Meta::Attribute::Trait::StorableClone.3p
