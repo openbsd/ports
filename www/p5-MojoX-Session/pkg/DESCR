@@ -1,0 +1,2 @@
+MojoX::Session is a session management for Mojo.  Based on CGI::Session
+and HTTP::Session but without any dependencies except the core ones.

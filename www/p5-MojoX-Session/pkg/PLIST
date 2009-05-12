@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/12 23:44:40 simon Exp $
+${P5SITE}/MojoX/Session/
+${P5SITE}/MojoX/Session.pm
+${P5SITE}/MojoX/Session/Store/
+${P5SITE}/MojoX/Session/Store.pm
+${P5SITE}/MojoX/Session/Store/DBI.pm
+${P5SITE}/MojoX/Session/Store/DBIC.pm
+${P5SITE}/MojoX/Session/Transport/
+${P5SITE}/MojoX/Session/Transport.pm
+${P5SITE}/MojoX/Session/Transport/Cookie.pm
+@man man/man3p/MojoX::Session.3p
+@man man/man3p/MojoX::Session::Store.3p
+@man man/man3p/MojoX::Session::Store::DBI.3p
+@man man/man3p/MojoX::Session::Store::DBIC.3p
+@man man/man3p/MojoX::Session::Transport.3p
+@man man/man3p/MojoX::Session::Transport::Cookie.3p
