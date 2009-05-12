@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.263 2009/05/11 15:51:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.264 2009/05/12 23:49:33 simon Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -92,6 +92,7 @@
      SUBDIR += p5-Lingua-Stem-Snowball-Da
      SUBDIR += p5-Lingua-Stem-Snowball-No
      SUBDIR += p5-Lingua-Stem-Snowball-Se
+     SUBDIR += p5-MojoX-Renderer-TT
      SUBDIR += p5-Number-Format
      SUBDIR += p5-Object-MultiType
      SUBDIR += p5-PDF-API2
