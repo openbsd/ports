@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.697 2009/05/12 21:41:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.698 2009/05/12 23:33:20 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -405,6 +405,7 @@
      SUBDIR += p5-Graph
      SUBDIR += p5-Hash-Merge
      SUBDIR += p5-Hash-NoRef
+     SUBDIR += p5-Hash-Util-FieldHash-Compat
      SUBDIR += p5-Heap
      SUBDIR += p5-Hook-LexWrap
      SUBDIR += p5-I18N-LangTags
@@ -451,6 +452,7 @@
      SUBDIR += p5-Module-ScanDeps
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Moose
+     SUBDIR += p5-MooseX-Clone
      SUBDIR += p5-Mouse
      SUBDIR += p5-Net-Server
      SUBDIR += p5-Number-Compare
