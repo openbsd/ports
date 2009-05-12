@@ -2,10 +2,10 @@ This patch makes sure that prepared statements get closed when
 $dbh->disconnect() is called.  Ticket created upstream at
 http://rt.cpan.org/Public/Bug/Display.html?id=40383
 
-$OpenBSD: patch-dbdimp_c,v 1.5 2009/01/24 17:42:22 simon Exp $
---- dbdimp.c.orig	Fri Aug 24 04:51:25 2007
-+++ dbdimp.c	Sat Oct 25 22:31:04 2008
-@@ -151,8 +151,13 @@ sqlite_db_disconnect (SV *dbh, imp_dbh_t *imp_dbh)
+$OpenBSD: patch-dbdimp_c,v 1.6 2009/05/12 23:26:26 simon Exp $
+--- dbdimp.c.orig	Thu Apr 23 12:12:05 2009
++++ dbdimp.c	Thu Apr 23 17:51:37 2009
+@@ -169,8 +169,13 @@ sqlite_db_disconnect (SV *dbh, imp_dbh_t *imp_dbh)
      }
  
      if (sqlite3_close(imp_dbh->db) == SQLITE_BUSY) {

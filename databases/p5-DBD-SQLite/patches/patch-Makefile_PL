@@ -1,0 +1,28 @@
+Upstream forces use of bundeled sqlite but we use the one from ports.
+
+$OpenBSD: patch-Makefile_PL,v 1.8 2009/05/12 23:26:26 simon Exp $
+--- Makefile.PL.orig	Thu Apr 23 12:12:04 2009
++++ Makefile.PL	Thu Apr 23 17:52:59 2009
+@@ -79,7 +79,7 @@ if ( $@ or DBI->VERSION < $DBI_required ) {
+ # Let's find out the full story first, so we can make an informed
+ # decision to whether to do this. -- ADAMK
+ my ($force_local, $sqlite_base, $sqlite_lib, $sqlite_inc);
+-if ( 0 ) {
++if ( 1 ) {
+ 	require File::Spec;
+ 	if ( $sqlite_base = (grep(/SQLITE_LOCATION=.*/, @ARGV))[0] ) {
+ 		$sqlite_base =~ /=(.*)/;
+@@ -141,8 +141,13 @@ if ( 0 ) {
+ 
+ # Use always the bundled one.
+ # XXX: ... and this message should be more informative.
++
++=for comment
++
+ $force_local = 1;
+ print "We're using the bundled sqlite library.\n" if $ENV{AUTOMATED_TESTING};
++
++=cut
+ 
+ @ARGV = grep( ! /SQLITE_LOCATION|USE_LOCAL_SQLITE/, @ARGV );
+ 
