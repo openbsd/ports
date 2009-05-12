@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/12 23:33:06 simon Exp $
+${P5SITE}/Hash/
+${P5SITE}/Hash/Util/
+${P5SITE}/Hash/Util/FieldHash/
+${P5SITE}/Hash/Util/FieldHash/Compat/
+${P5SITE}/Hash/Util/FieldHash/Compat.pm
+${P5SITE}/Hash/Util/FieldHash/Compat/Heavy.pm
+@man man/man3p/Hash::Util::FieldHash::Compat.3p
+@man man/man3p/Hash::Util::FieldHash::Compat::Heavy.3p
