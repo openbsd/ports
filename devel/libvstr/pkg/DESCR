@@ -1,0 +1,7 @@
+Vstr is a string library designed for network communication. Its
+design uses blocks of ptr+length data, so adding, substituting, and
+deleting data are all fast operations. It has a full API of all the
+usual string tasks: searching, comparing, splitting, substitution,
+converting between upper and lower case, and parsing numbers and
+strings. Has a full POSIX and ISO 9899:1999 compliant printf()
+implementation including gcc warning compatible custom formatters.
