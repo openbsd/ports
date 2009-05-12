@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_os_unix_c,v 1.9 2009/04/22 21:23:43 martynas Exp $
---- src/os_unix.c.orig	Thu Apr  9 21:41:18 2009
-+++ src/os_unix.c	Thu Apr 16 23:11:23 2009
+$OpenBSD: patch-src_os_unix_c,v 1.10 2009/05/12 23:20:52 simon Exp $
+--- src/os_unix.c.orig	Thu Apr  9 20:41:18 2009
++++ src/os_unix.c	Thu Apr 23 17:50:03 2009
 @@ -111,6 +111,14 @@
  # define _LARGEFILE_SOURCE 1
  #endif
@@ -107,6 +107,15 @@ $OpenBSD: patch-src_os_unix_c,v 1.9 2009/04/22 21:23:43 martynas Exp $
  static int transferOwnership(unixFile *pFile){
    int rc;
    pthread_t hSelf;
+@@ -3936,7 +3947,7 @@ static void *unixDlOpen(sqlite3_vfs *NotUsed, const ch
+ ** error message.
+ */
+ static void unixDlError(sqlite3_vfs *NotUsed, int nBuf, char *zBufOut){
+-  char *zErr;
++  const char *zErr;
+   UNUSED_PARAMETER(NotUsed);
+   unixEnterMutex();
+   zErr = dlerror();
 @@ -4002,7 +4013,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
  #if !defined(SQLITE_TEST)
    {
