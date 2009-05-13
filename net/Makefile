@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.572 2009/05/05 23:29:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.573 2009/05/13 00:08:01 simon Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -222,6 +222,7 @@
      SUBDIR += openvpn
      SUBDIR += openvpn_bsdauth
      SUBDIR += osrtspproxy
+     SUBDIR += p5-Bot-BasicBot
      SUBDIR += p5-Chatbot-Eliza
      SUBDIR += p5-DNS-ZoneParse
      SUBDIR += p5-Danga-Socket
