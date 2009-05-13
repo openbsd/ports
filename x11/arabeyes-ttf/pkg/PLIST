@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/21 09:31:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/05/13 09:44:32 ajacoutot Exp $
+@conflict arabeyes-*
+@pkgpath x11/arabeyes-ttf
 lib/X11/fonts/
 @fontdir lib/X11/fonts/arabeyes/
 lib/X11/fonts/arabeyes/ae_AlArabiya.ttf

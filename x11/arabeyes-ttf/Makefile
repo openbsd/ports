@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/21 09:31:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/05/13 09:44:32 ajacoutot Exp $
 
 COMMENT=	Arabeyes TrueType Arabic fonts
 
 V=		2.0
 DISTNAME=	ttf-arabeyes_$V.orig
-PKGNAME=	arabeyes-$V
+PKGNAME=	arabeyes-ttf-$V
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.arabeyes.org/project.php?proj=Khotot
