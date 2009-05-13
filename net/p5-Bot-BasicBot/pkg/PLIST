@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/13 00:07:51 simon Exp $
+${P5SITE}/Bot/
+@comment ${P5SITE}/Bot/._BasicBot.pm
+${P5SITE}/Bot/BasicBot.pm
+@man man/man3p/Bot::BasicBot.3p
+share/examples/p5-Bot-BasicBot/
+share/examples/p5-Bot-BasicBot/countdownbot.pl
+share/examples/p5-Bot-BasicBot/cpanbot.pl
+share/examples/p5-Bot-BasicBot/namer.pl
+share/examples/p5-Bot-BasicBot/tailbot.pl
+share/examples/p5-Bot-BasicBot/tango.pl

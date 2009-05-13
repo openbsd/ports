@@ -1,0 +1,17 @@
+$OpenBSD: patch-t_connect_t,v 1.1.1.1 2009/05/13 00:07:51 simon Exp $
+
+Avoid live test!
+
+--- t/connect.t.orig	Tue Feb 10 11:59:16 2009
++++ t/connect.t	Tue Feb 10 11:59:18 2009
+@@ -5,6 +5,10 @@ use Test::More;
+ 
+ use lib qw(lib t/lib);
+ 
++# not at all, no!
++plan skip_all => "test disabled by port maintainer";
++exit;
++
+ require IO::Socket;
+ my $s = IO::Socket::INET->new(
+   PeerAddr => "irc.perl.org:80",
