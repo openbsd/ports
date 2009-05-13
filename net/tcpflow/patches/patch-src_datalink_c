@@ -1,11 +1,40 @@
-$OpenBSD: patch-src_datalink_c,v 1.1 2006/01/15 12:42:31 sturm Exp $
---- src/datalink.c.orig	Fri Jan  6 16:07:13 2006
-+++ src/datalink.c	Fri Jan  6 16:08:29 2006
-@@ -188,6 +188,7 @@ pcap_handler find_handler(int datalink_t
+$OpenBSD: patch-src_datalink_c,v 1.2 2009/05/13 09:47:43 sthen Exp $
+--- src/datalink.c.orig	Fri Mar 29 23:19:03 2002
++++ src/datalink.c	Wed May 13 10:41:44 2009
+@@ -137,7 +137,26 @@ void dl_ppp(u_char *user, const struct pcap_pkthdr *h,
+   process_ip(p + PPP_HDRLEN, caplen - PPP_HDRLEN);
+ }
+ 
++#define	PPP_ETHER_HDRLEN 8
+ 
++void dl_ppp_ether(u_char *user, const struct pcap_pkthdr *h, const u_char *p)
++{
++  u_int caplen = h->caplen;
++  u_int length = h->len;
++
++  if (length != caplen) {
++    DEBUG(6) ("warning: only captured %d bytes of %d byte PPPoE frame",
++	  caplen, length);
++  }
++
++  if (caplen < PPP_ETHER_HDRLEN) {
++    DEBUG(6) ("warning: received incomplete PPP frame");
++    return;
++  }
++
++  process_ip(p + PPP_ETHER_HDRLEN, caplen - PPP_ETHER_HDRLEN);
++}
++
+ /* DLT_RAW: just a raw IP packet, no encapsulation or link-layer
+  * headers.  Used for PPP connections under some OSs including Linux
+  * and IRIX. */
+@@ -188,7 +207,9 @@ pcap_handler find_handler(int datalink_type, char *dev
  #endif
      { dl_ethernet, DLT_EN10MB },
      { dl_ethernet, DLT_IEEE802 },
 +    { dl_null, DLT_LOOP },
      { dl_ppp, DLT_PPP },
++    { dl_ppp_ether, DLT_PPP_ETHER },
  #ifdef DLT_LINUX_SLL
      { dl_linux_sll, DLT_LINUX_SLL },
+ #endif
