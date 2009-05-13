@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.46 2009/02/18 12:57:39 eric Exp $
+# $OpenBSD: OpenBSD,v 1.47 2009/05/13 13:13:47 benoit Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -66,6 +66,7 @@
 48.8640		2.3555		"ajacoutot"	# Antoine Jacoutot
 48.87		2.33		"espie"		# Marc Espie
 48.883		2.2365		"gilles"	# Gilles Chehade
+49.033		2.0666		"benoit"	# Benoit Lecocq
 49.0816		-0.2885		"eric"		# Eric Faurot
 49.22		-123.10		"hugh"		# Hugh Graham
 49.313446	-123.063975	"mjc"		# Michael Coulter
