@@ -1,28 +1,28 @@
-# $OpenBSD: Makefile,v 1.15 2009/05/13 13:02:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2009/05/13 20:45:21 benoit Exp $
 
-COMMENT=	create, alter and inspect Matroska files
+COMMENT =	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-2.7.0
-CATEGORIES=	multimedia x11
+DISTNAME =	mkvtoolnix-2.7.0
+CATEGORIES =	multimedia x11
 
-EXTRACT_SUFX=	.tar.bz2
+HOMEPAGE =	http://www.bunkus.org/videotools/mkvtoolnix/
 
-HOMEPAGE=	http://www.bunkus.org/videotools/mkvtoolnix/
-
-MAINTAINER=	Benoit Lecocq <blq@arcane-labs.net>
+MAINTAINER =	Benoit Lecocq <blq@arcane-labs.net>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=	${HOMEPAGE}/sources/
+WANTLIB =	c ebml expat m ogg stdc++ z
 
-WANTLIB=	c ebml expat m ogg stdc++ z
+MASTER_SITES =	${HOMEPAGE}/sources/
 
-MODULES=	converters/libiconv
-LIB_DEPENDS=	FLAC.>=7::audio/flac \
+EXTRACT_SUFX =	.tar.bz2
+
+MODULES =	converters/libiconv
+LIB_DEPENDS =	FLAC.>=7::audio/flac \
 		bz2.>=10::archivers/bzip2 \
 		lzo.>=1::archivers/lzo \
 		matroska:libmatroska->=0.8.1:multimedia/libmatroska \
@@ -30,33 +30,34 @@ LIB_DEPENDS=	FLAC.>=7::audio/flac \
 		magic.>=1::devel/libmagic \
 		boost_regex-mt.>=1::devel/boost
 
-MAKE_FLAGS+=	V=1
+MAKE_FLAGS +=	V=1
 
-NO_REGRESS=	Yes
-USE_GMAKE=	Yes
-USE_X11=	Yes
+USE_GMAKE =	Yes
+USE_X11 =	Yes
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib \
-			-lm -lstdc++ -pthread" \
-		ac_cv_has_nl_langinfo=no
-CONFIGURE_ARGS=	--enable-lzo \
+CONFIGURE_STYLE = gnu
+CONFIGURE_ARGS = --enable-lzo \
 		--enable-bz2 \
 		--disable-qt \
 		--with-flac \
 		--with-boost-regex=boost_regex-mt
+CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib \
+		-lm -lstdc++ -pthread" \
+		ac_cv_has_nl_langinfo=no
 
-FLAVORS=	no_x11
-FLAVOR?=
+FLAVORS =	no_x11
+FLAVOR ?=
 
 .if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS+=--disable-gui
+CONFIGURE_ARGS += --disable-gui
 .else
-WANTLIB+=	pthread
-LIB_DEPENDS+=	wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc,wx_gtk2_aui,wx_gtk2_richtext:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
-CONFIGURE_ARGS+=--enable-gui \
+WANTLIB +=	pthread
+LIB_DEPENDS +=	wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc,wx_gtk2_aui,wx_gtk2_richtext:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
+CONFIGURE_ARGS += --enable-gui \
 		--enable-wxwidgets
 .endif
+
+NO_REGRESS =    Yes
 
 .include <bsd.port.mk>
