@@ -1,7 +1,7 @@
-$OpenBSD: patch-daemon_remote_c,v 1.5 2009/05/10 19:31:44 naddy Exp $
---- daemon/remote.c.orig	Tue May  5 02:40:19 2009
-+++ daemon/remote.c	Thu May  7 19:40:40 2009
-@@ -692,24 +692,24 @@ strlsize( char *  buf, int64_t size, size_t  buflen )
+$OpenBSD: patch-daemon_remote_c,v 1.6 2009/05/13 15:10:42 naddy Exp $
+--- daemon/remote.c.orig	Tue May 12 02:32:38 2009
++++ daemon/remote.c	Wed May 13 13:30:31 2009
+@@ -702,24 +702,24 @@ strlsize( char *  buf, int64_t size, size_t  buflen )
      if( !size )
          tr_strlcpy( buf, "None", buflen );
      else if( size < (int64_t)KILOBYTE_FACTOR )
