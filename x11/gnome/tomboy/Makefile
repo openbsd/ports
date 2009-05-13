@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/05/13 09:17:03 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
 GNOME_VERSION=	0.12.2
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 
 CATEGORIES=	x11
 
@@ -36,7 +36,7 @@ RUN_DEPENDS=	::lang/mono \
 		::sysutils/ndesk-dbus-glib \
 		::x11/gnome/mono-gnome \
 		:shared-mime-info->=0.21:misc/shared-mime-info \
-		:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme \
+		:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-sketching=no \
