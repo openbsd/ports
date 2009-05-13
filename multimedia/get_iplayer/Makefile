@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/05/04 23:22:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2009/05/13 09:31:44 sthen Exp $
 
 COMMENT =		download BBC iPlayer and ITV programmes
 
-DISTNAME =		get_iplayer-1.77
+DISTNAME =		get_iplayer-1.85
 
 CATEGORIES =		multimedia
 
@@ -19,14 +19,19 @@ MASTER_SITES =		http://linuxcentre.net/get_iplayer/packages/
 RUN_DEPENDS =		::audio/id3lib \
 			:rtmpdump->=1.5:net/rtmpdump \
 			::www/p5-HTML-Parser \
-			::www/p5-libwww
-# XXX wants a newer p5-libwww feature; workaround in patches/patch-get_iplayer
+			:p5-libwww->=5.826:www/p5-libwww
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/get_iplayer
+
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/get_iplayer/plugins
 	${INSTALL_SCRIPT} ${WRKSRC}/get_iplayer ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/plugins/* \
+	    ${PREFIX}/share/get_iplayer/plugins
 	${INSTALL_MAN} ${WRKSRC}/get_iplayer.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

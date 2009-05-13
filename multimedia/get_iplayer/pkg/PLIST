@@ -1,3 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/17 21:27:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/05/13 09:31:44 sthen Exp $
 bin/get_iplayer
 @man man/man1/get_iplayer.1
+share/get_iplayer/
+share/get_iplayer/plugins/
+share/get_iplayer/plugins/itv.plugin
+share/get_iplayer/plugins/podcast.plugin

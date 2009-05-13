@@ -1,25 +1,30 @@
-$OpenBSD: patch-get_iplayer,v 1.4 2009/05/01 02:09:56 sthen Exp $
-
-- use id3tag (from audio/id3lib) by default
-- workaround requirement for newer p5-libwww
-
---- get_iplayer.orig	Wed Apr 29 17:31:27 2009
-+++ get_iplayer	Fri May  1 03:06:21 2009
-@@ -500,7 +500,7 @@ sub find_matches {
- 	$lame_opts		.= ' --quiet ' if $opt->{quiet};
- 	$vlc			= $opt->{vlc} || 'cvlc';
- 	$vlc_opts		= '-vv' if $opt->{verbose} || $opt->{debug};
--	$id3v2			= $opt->{id3v2} || 'id3v2';
-+	$id3v2			= $opt->{id3v2} || 'id3tag';
- 	$tee			= 'tee';
- 	$rtmpdump		= $opt->{rtmpdump} || 'rtmpdump';
- 	$bandwidth		= $opt->{bandwidth} || 512000; # Download bandwidth bps used for rtsp streams
-@@ -1252,7 +1252,7 @@ sub create_ua {
- 	my $agent = shift;
- 	my $nocookiejar = shift || 0;
+$OpenBSD: patch-get_iplayer,v 1.5 2009/05/13 09:31:44 sthen Exp $
+--- get_iplayer.orig	Mon May 11 19:29:30 2009
++++ get_iplayer	Wed May 13 10:04:13 2009
+@@ -174,7 +174,7 @@ mkpath $profile_dir if ! -d $profile_dir;
+ 
+ 
+ # get list of additional user plugins and load plugin
+-for my $plugin_dir ( ("$profile_dir/plugins", '/usr/share/get_iplayer/plugins') ) {
++for my $plugin_dir ( ("$profile_dir/plugins", '${TRUEPREFIX}/share/get_iplayer/plugins') ) {
+ 	if ( opendir( DIR, $plugin_dir ) ) {
+ 		#logger "INFO: Checking for plugins in $plugin_dir\n";
+ 		my @plugin_files = grep /^.+\.plugin$/, readdir DIR;
+@@ -515,7 +515,7 @@ sub find_matches {
+ 	$binopts->{lame}	.= ' --quiet ' if $opt->{quiet};
+ 	$bin->{vlc}		= $opt->{vlc} || 'cvlc';
+ 	$binopts->{vlc}		= '-vv' if $opt->{verbose} || $opt->{debug};
+-	$bin->{id3v2}		= $opt->{id3v2} || 'id3v2';
++	$bin->{id3v2}		= $opt->{id3v2} || 'id3tag';
+ 	$bin->{tee}		= 'tee';
+ 	$bin->{rtmpdump}	= $opt->{rtmpdump} || 'rtmpdump';
+ 	# Set quiet, test and get options if we're asked for streaminfo
+@@ -1317,7 +1317,7 @@ sub create_ua {
+ 	my $agent = $user_agent{ $_[0] } || random_ua();
+ 	my $nocookiejar = $_[1] || 0;
  	my $ua = LWP::UserAgent->new;
 -	$ua->timeout([$lwp_request_timeout]);
-+	#$ua->timeout([$lwp_request_timeout]);
- 	$ua->proxy( ['http'] => $opt->{proxy} ) if $opt->{proxy};
- 	$ua->agent( $user_agent{$agent} );
- 	$ua->conn_cache(LWP::ConnCache->new());
++	$ua->timeout($lwp_request_timeout);
+ 	$ua->proxy( ['http'] => $opt->{proxy} ) if $opt->{proxy} && $opt->{proxy} !~ /^prepend:/;
+ 	$ua->agent( $agent );
+ 	main::logger "DEBUG: Using user-agent '$agent'\n" if $opt->{debug};
