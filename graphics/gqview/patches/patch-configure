@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.12 2008/02/04 08:44:48 ajacoutot Exp $
---- configure.orig	Sat Dec  2 18:04:07 2006
-+++ configure	Thu Jan 31 20:44:29 2008
-@@ -4565,12 +4565,12 @@ echo "$as_me: error: GTK+ >= 2.4.0 not installed." >&2
+$OpenBSD: patch-configure,v 1.13 2009/05/14 13:39:44 ajacoutot Exp $
+--- configure.orig	Sat Dec  2 20:41:26 2006
++++ configure	Tue May 12 20:22:32 2009
+@@ -4570,12 +4570,12 @@ echo "$as_me: error: GTK+ >= 2.4.0 not installed." >&2
  
  
  cat >>confdefs.h <<_ACEOF
@@ -16,3 +16,12 @@ $OpenBSD: patch-configure,v 1.12 2008/02/04 08:44:48 ajacoutot Exp $
  _ACEOF
  
  
+@@ -4769,7 +4769,7 @@ if test "${ac_cv_lib_lcms_cmsCreate_sRGBProfile+set}" 
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-llcms  $LIBS"
++LIBS="-llcms -lm  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF

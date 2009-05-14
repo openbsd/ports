@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.25 2008/02/04 08:44:48 ajacoutot Exp $
-bin/gqview
+@comment $OpenBSD: PLIST,v 1.26 2009/05/14 13:39:44 ajacoutot Exp $
+@bin bin/gqview
 @man man/man1/gqview.1
 share/applications/gqview.desktop
 share/doc/gqview/
@@ -70,8 +70,6 @@ share/locale/de/LC_MESSAGES/gqview.mo
 share/locale/eo/LC_MESSAGES/gqview.mo
 share/locale/es/LC_MESSAGES/gqview.mo
 share/locale/et/LC_MESSAGES/gqview.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/gqview.mo
 share/locale/fi/LC_MESSAGES/gqview.mo
 share/locale/fr/LC_MESSAGES/gqview.mo
