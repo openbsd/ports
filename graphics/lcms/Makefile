@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2009/04/09 13:10:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2009/05/14 08:13:37 jasper Exp $
 
 COMMENT =	color management library
 
-DISTNAME =	lcms-1.18
+DISTNAME =	lcms-1.18a
 SHARED_LIBS =	lcms	2.0
 CATEGORIES =	graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=lcms/}
@@ -24,6 +24,12 @@ CONFIGURE_STYLE = 	gnu
 CONFIGURE_ARGS += 	${CONFIGURE_SHARED}
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${WRKBUILD}/src/.libs -L${LOCALBASE}/lib"
+
+WRKDIST =		${WRKDIR}/lcms-1.18
+
+# Unconfuse update-patches
+post-extract:
+	rm -f ${WRKSRC}/src/cmsxform.c.orig
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lcms
