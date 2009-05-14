@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2009/03/05 06:23:04 steven Exp $
+# $OpenBSD: Makefile,v 1.37 2009/05/14 06:51:07 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-protocol instant messaging client
 
 DISTNAME=	pidgin-2.5.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 
@@ -30,7 +31,9 @@ WANTLIB=		ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 			gthread-2.0 m ncurses panel pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pcre pixman-1 png pthread ssl stdc++ z
 
-MODULES=	devel/gettext textproc/intltool
+MODULES=	devel/gettext \
+		textproc/intltool \
+		lang/python
 
 BUILD_DEPENDS=	:gconf2-*:devel/gconf2 \
 		:dbus-python-*:x11/dbus-python
@@ -45,10 +48,6 @@ LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		gadu.>=4::net/libgadu \
 		xml2::textproc/libxml \
 		dbus-glib-1::x11/dbus-glib
-
-PYTHON=		${LOCALBASE}/bin/python2.5
-
-SUBST_VARS=	PYTHON
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
@@ -69,7 +68,7 @@ CONFIGURE_ARGS+= --with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/pidgin 
 		 --disable-tk \
 		 --disable-cap \
 		 --disable-schemas-install \
-		 --with-python=${PYTHON}
+		 --with-python=${MODPY_BIN}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
