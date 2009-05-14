@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/16 20:31:10 pea Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/05/14 07:56:19 pea Exp $
 @bin bin/homebank
 share/application-registry/
 share/application-registry/homebank.applications
@@ -163,9 +163,6 @@ share/icons/hicolor/48x48/apps/homebank.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/homebank.svg
-share/locale/am/
-share/locale/am/LC_MESSAGES/
-share/locale/am/LC_MESSAGES/homebank.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/homebank.mo
@@ -194,25 +191,13 @@ share/locale/he/LC_MESSAGES/homebank.mo
 share/locale/hr/LC_MESSAGES/homebank.mo
 share/locale/hu/LC_MESSAGES/homebank.mo
 share/locale/id/LC_MESSAGES/homebank.mo
-share/locale/is/
-share/locale/is/LC_MESSAGES/
-share/locale/is/LC_MESSAGES/homebank.mo
 share/locale/it/LC_MESSAGES/homebank.mo
-share/locale/ja/LC_MESSAGES/homebank.mo
-share/locale/kn/
-share/locale/kn/LC_MESSAGES/
-share/locale/kn/LC_MESSAGES/homebank.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/homebank.mo
 share/locale/ko/LC_MESSAGES/homebank.mo
 share/locale/lt/LC_MESSAGES/homebank.mo
-share/locale/lv/LC_MESSAGES/homebank.mo
-share/locale/mi/
-share/locale/mi/LC_MESSAGES/
-share/locale/mi/LC_MESSAGES/homebank.mo
-share/locale/ms/LC_MESSAGES/homebank.mo
 share/locale/nb/LC_MESSAGES/homebank.mo
-share/locale/nds/
-share/locale/nds/LC_MESSAGES/
-share/locale/nds/LC_MESSAGES/homebank.mo
 share/locale/nl/LC_MESSAGES/homebank.mo
 share/locale/oc/
 share/locale/oc/LC_MESSAGES/
@@ -220,22 +205,16 @@ share/locale/oc/LC_MESSAGES/homebank.mo
 share/locale/pl/LC_MESSAGES/homebank.mo
 share/locale/pt/LC_MESSAGES/homebank.mo
 share/locale/pt_BR/LC_MESSAGES/homebank.mo
-share/locale/pt_PT/
-share/locale/pt_PT/LC_MESSAGES/
-share/locale/pt_PT/LC_MESSAGES/homebank.mo
 share/locale/ro/LC_MESSAGES/homebank.mo
 share/locale/ru/LC_MESSAGES/homebank.mo
 share/locale/sk/LC_MESSAGES/homebank.mo
 share/locale/sl/LC_MESSAGES/homebank.mo
 share/locale/sv/LC_MESSAGES/homebank.mo
-share/locale/ta/
-share/locale/ta/LC_MESSAGES/
-share/locale/ta/LC_MESSAGES/homebank.mo
 share/locale/tr/LC_MESSAGES/homebank.mo
 share/locale/uk/LC_MESSAGES/homebank.mo
-share/locale/ur/
-share/locale/ur/LC_MESSAGES/
-share/locale/ur/LC_MESSAGES/homebank.mo
+share/locale/uz/
+share/locale/uz/LC_MESSAGES/
+share/locale/uz/LC_MESSAGES/homebank.mo
 share/locale/vi/LC_MESSAGES/homebank.mo
 share/locale/zh_CN/LC_MESSAGES/homebank.mo
 share/locale/zh_HK/LC_MESSAGES/homebank.mo

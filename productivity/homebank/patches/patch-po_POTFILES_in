@@ -1,9 +1,9 @@
-$OpenBSD: patch-po_POTFILES_in,v 1.1 2009/04/22 04:13:45 pea Exp $
---- po/POTFILES.in.orig	Mon Mar  9 12:14:33 2009
-+++ po/POTFILES.in	Mon Mar  9 12:14:54 2009
-@@ -28,4 +28,5 @@ src/ui_category.c
+$OpenBSD: patch-po_POTFILES_in,v 1.2 2009/05/14 07:56:19 pea Exp $
+--- po/POTFILES.in.orig	Fri May  1 15:03:47 2009
++++ po/POTFILES.in	Wed May  6 11:21:16 2009
+@@ -29,4 +29,5 @@ src/ui_category.c
  src/ui_payee.c
  src/widgets.c
  src/xml.c
-+src/hb_category.c
++src/da_encoding.c
  
