@@ -1,0 +1,86 @@
+$OpenBSD: patch-scheduler_process_c,v 1.1 2009/05/14 12:38:52 kurt Exp $
+--- scheduler/process.c.orig	Tue Sep 25 11:44:07 2007
++++ scheduler/process.c	Tue May 12 11:01:25 2009
+@@ -125,6 +125,7 @@ cupsdStartProcess(
+ 		linkpath[1024];		/* Link path for symlinks... */
+   int		linkbytes;		/* Bytes for link path */
+ #endif /* __APPLE__ */
++  int		dnfd;
+ 
+ 
+   cupsdLogMessage(CUPSD_LOG_DEBUG2,
+@@ -186,41 +187,56 @@ cupsdStartProcess(
+ 
+     if (infd != 0)
+     {
+-      close(0);
+       if (infd > 0)
+-        dup(infd);
+-      else
+-        open("/dev/null", O_RDONLY);
++        dup2(infd, 0);
++      else {
++        dnfd = open("/dev/null", O_RDONLY);
++        if (dnfd != 0) {
++          dup2(dnfd, 0);
++          close(dnfd);
++        }
++      }
+     }
+     if (outfd != 1)
+     {
+-      close(1);
+       if (outfd > 0)
+-	dup(outfd);
+-      else
+-        open("/dev/null", O_WRONLY);
++	dup2(outfd, 1);
++      else {
++        dnfd = open("/dev/null", O_WRONLY);
++        if (dnfd != 1) {
++          dup2(dnfd, 1);
++          close(dnfd);
++        }
++      }
+     }
+     if (errfd != 2)
+     {
+-      close(2);
+       if (errfd > 0)
+-        dup(errfd);
+-      else
+-        open("/dev/null", O_WRONLY);
++        dup2(errfd, 2);
++      else {
++        dnfd = open("/dev/null", O_WRONLY);
++        if (dnfd != 2) {
++          dup2(dnfd, 2);
++          close(dnfd);
++        }
++      }
+     }
+     if (backfd != 3)
+     {
+-      close(3);
+       if (backfd > 0)
+-	dup(backfd);
+-      else
+-        open("/dev/null", O_RDWR);
++	dup2(backfd, 3);
++      else {
++        dnfd = open("/dev/null", O_RDWR);
++        if (dnfd != 3) {
++          dup2(dnfd, 3);
++          close(dnfd);
++        }
++      }
+       fcntl(3, F_SETFL, O_NDELAY);
+     }
+     if (sidefd != 4 && sidefd > 0)
+     {
+-      close(4);
+-      dup(sidefd);
++      dup2(sidefd, 4);
+       fcntl(4, F_SETFL, O_NDELAY);
+     }
+ 
