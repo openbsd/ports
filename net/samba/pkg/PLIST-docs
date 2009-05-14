@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.12 2008/12/07 03:52:56 brad Exp $
+@comment $OpenBSD: PLIST-docs,v 1.13 2009/05/14 17:05:46 giovanni Exp $
 @conflict samba-<=3.0.31p0
 share/doc/samba/
 share/doc/samba/NT4-Locking.reg
@@ -457,6 +457,7 @@ share/swat/help/Samba3-HOWTO/unicode.html
 share/swat/help/Samba3-HOWTO/upgrading-to-3.0.html
 share/swat/help/Samba3-HOWTO/winbind.html
 share/swat/help/manpages/
+share/swat/help/manpages/cifs.upcall.8.html
 share/swat/help/manpages/eventlogadm.8.html
 share/swat/help/manpages/findsmb.1.html
 share/swat/help/manpages/idmap_ad.8.html
