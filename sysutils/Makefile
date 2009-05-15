@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2009/04/03 18:06:53 giovanni Exp $
+# $OpenBSD: Makefile,v 1.173 2009/05/15 07:50:09 sthen Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -21,6 +21,7 @@
      SUBDIR += colorls
      SUBDIR += colortail
      SUBDIR += conky
+     SUBDIR += conky,no_x11
      SUBDIR += contool
      SUBDIR += d-feet
      SUBDIR += dmassage
