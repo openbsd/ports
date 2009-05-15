@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/24 18:14:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/05/15 16:31:45 jim Exp $
 
 COMMENT =	Python interface to Amazon Web Services
 
-MODPY_EGG_VERSION = 1.6b
+MODPY_EGG_VERSION = 1.7a
 DISTNAME =	boto-${MODPY_EGG_VERSION}
-PKGNAME = 	py-${DISTNAME}p0
+PKGNAME = 	py-${DISTNAME}
 CATEGORIES =	net
 
 HOMEPAGE =	http://code.google.com/p/boto/
@@ -12,7 +12,7 @@ MASTER_SITES =	http://boto.googlecode.com/files/ \
 		http://pypi.python.org/packages/source/b/boto/ \
 		http://release.ingeniweb.com/pypi.python.org-mirror/boto/
 
-MAINTAINER =	Bruno Bigras <bruno@burnbox.net>
+MAINTAINER =	Jim Razmus II <jim@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

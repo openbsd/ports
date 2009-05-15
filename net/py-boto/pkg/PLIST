@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/02/09 00:28:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/05/15 16:31:45 jim Exp $
 lib/python${MODPY_VERSION}/site-packages/boto/
 lib/python${MODPY_VERSION}/site-packages/boto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/boto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -28,6 +28,8 @@ lib/python${MODPY_VERSION}/site-packages/boto/ec2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/address.py
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/address.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/ec2/buyreservation.py
+lib/python${MODPY_VERSION}/site-packages/boto/ec2/buyreservation.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/connection.py
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/connection.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/ec2object.py
@@ -40,6 +42,8 @@ lib/python${MODPY_VERSION}/site-packages/boto/ec2/keypair.py
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/keypair.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/regioninfo.py
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/regioninfo.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/ec2/reservedinstance.py
+lib/python${MODPY_VERSION}/site-packages/boto/ec2/reservedinstance.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/securitygroup.py
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/securitygroup.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/ec2/snapshot.py
@@ -120,6 +124,8 @@ lib/python${MODPY_VERSION}/site-packages/boto/sdb/connection.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/__init__.py
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/blob.py
+lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/blob.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/key.py
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/key.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/manager/
@@ -129,6 +135,8 @@ lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/manager/pgmanager.py
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/manager/pgmanager.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/manager/sdbmanager.py
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/manager/sdbmanager.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/manager/xmlmanager.py
+lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/manager/xmlmanager.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/model.py
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/model.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/sdb/db/property.py
@@ -184,6 +192,8 @@ lib/python${MODPY_VERSION}/site-packages/boto/sqs/message.py
 lib/python${MODPY_VERSION}/site-packages/boto/sqs/message.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/sqs/queue.py
 lib/python${MODPY_VERSION}/site-packages/boto/sqs/queue.pyc
+lib/python${MODPY_VERSION}/site-packages/boto/sqs/regioninfo.py
+lib/python${MODPY_VERSION}/site-packages/boto/sqs/regioninfo.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/tests/
 lib/python${MODPY_VERSION}/site-packages/boto/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/boto/tests/__init__.pyc
