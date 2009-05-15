@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1 2009/04/03 23:26:48 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2009/05/15 21:21:27 sthen Exp $
 
 COMMENT =	powerful content management system
  
-DISTNAME =	drupal-6.10
+DISTNAME =	drupal-6.12
 PKGNAME=	${DISTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
