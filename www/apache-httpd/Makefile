@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2009/04/09 18:36:00 bernd Exp $
+# $OpenBSD: Makefile,v 1.20 2009/05/15 15:46:58 claudio Exp $
 
 COMMENT=	apache HTTP server
 
 V=		2.2.11
-PKGNAME=	apache-httpd-${V}
+PKGNAME=	apache-httpd-${V}p0
 DISTNAME=	httpd-${V}
 
 CATEGORIES=	www net
@@ -60,7 +60,11 @@ CONFIGURE_ARGS+=	--enable-layout=OpenBSD \
 			--enable-disk-cache \
 			--enable-proxy \
 			--enable-mods-shared=all \
-			--with-pcre=${LOCALBASE}
+			--enable-suexec \
+			--with-suexec-caller=_apache2 \
+			--with-suexec-bin=${TRUEPREFIX}/sbin/suexec2 \
+			--with-suexec-logfile=/var/log/suexec2_log \
+			--with-pcre=${LOCALBASE} 
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -71,7 +75,7 @@ FAKE_FLAGS+=		rel_user=_apache2 rel_group=_apache2 \
 			sysconfdir=${PREFIX}/share/examples/apache2/conf
 
 A2SBIN=			apachectl apxs dbmmanage htdigest htpasswd \
-			logresolve rotatelogs
+			logresolve rotatelogs suexec
 A2MAN1=			dbmmanage htdigest htpasswd
 A2MAN8= 		apachectl apxs httpd logresolve rotatelogs suexec
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/04/09 18:36:00 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.15 2009/05/15 15:46:58 claudio Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -104,6 +104,7 @@ lib/apache2/mod_speling.so
 lib/apache2/mod_ssl.so
 lib/apache2/mod_status.so
 lib/apache2/mod_substitute.so
+lib/apache2/mod_suexec.so
 lib/apache2/mod_unique_id.so
 lib/apache2/mod_userdir.so
 lib/apache2/mod_usertrack.so
@@ -136,6 +137,7 @@ sbin/envvars-std
 @bin sbin/httxt2dbm
 @bin sbin/logresolve2
 @bin sbin/rotatelogs2
+@bin sbin/suexec2
 share/apache2/
 share/apache2/build/
 share/apache2/build/config.nice
