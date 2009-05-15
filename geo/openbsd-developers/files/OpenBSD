@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.47 2009/05/13 13:13:47 benoit Exp $
+# $OpenBSD: OpenBSD,v 1.48 2009/05/15 15:47:25 jim Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -30,6 +30,7 @@
 42.2342		-88.3737	"jcs"		# Joshua Stein
 42.2731		-83.782		"aaron"		# Aaron Campbell
 42.49538	-82.89954	"nick"		# Nick Holland
+42.861267	-85.747117	"jim"		# Jim Razmus II
 43.0277		-86.13		"dhill"		# David Hill
 43.064216	-89.406185	"wcmaier"	# Will Maier
 43.084950	-89.361468	"jolan"		# Jolan Luff
