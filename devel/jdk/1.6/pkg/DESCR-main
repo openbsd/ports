@@ -8,9 +8,11 @@ running on the Java platform.
 Flavors:
   native_bootstrap
     Bootstrap the jdk using a previously built and installed
-    devel/jdk/1.6 package. NOTE: if this flavor is used without a
-    previously installed devel/jdk/1.6 package, the port will
-    just build the jdk with default (devel/jdk/1.5) bootstrap and stop.
+    devel/jdk/1.6 package.
+
+  jdk17_bootstrap
+    Bootstrap the jdk using a previously built and installed
+    devel/jdk/1.7 package.
 
   no_web
     The Mozilla plugin and Java Web Start (javaws) are not built.

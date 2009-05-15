@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/15 09:25:04 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2009/05/15 17:41:04 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -7,8 +7,8 @@ COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
 COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.6.0.03
 PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}p6
-PKGNAME-jre=		jre-${V}p6
+PKGNAME-main=		jdk-${V}p7
+PKGNAME-jre=		jre-${V}p7
 
 CATEGORIES=		devel/jdk java
 
@@ -81,7 +81,7 @@ FETCH_MANUALLY+=	" ${PATCHSET}"
 FETCH_MANUALLY+=	"from http://www.eyesbeyond.com/freebsddom/java/jdk16.html"
 
 FLAVORS=		no_web with_ipv6
-PSEUDO_FLAVORS=		native_bootstrap
+PSEUDO_FLAVORS=		native_bootstrap jdk17_bootstrap
 FLAVOR?=
 
 .if !${FLAVOR:L:Mwith_ipv6}
@@ -92,11 +92,24 @@ MAKE_ENV+=		DONT_ENABLE_IPV6=YES
 EXTRACT_CASES+=		*.jar) true ;;
 
 .if ${FLAVOR:L:Mnative_bootstrap}
+INSTALLED!= (pkg_info -e "jdk->=1.6,<1.7" -q && echo yes) || echo no
+.if ${INSTALLED:L} != "yes"
+ERRORS += "Fatal: This flavor requires an installed 1.6 jdk package"
+.endif
 BUILD_DEPENDS+=		:jdk->=1.6,<1.7:devel/jdk/1.6
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
+.if ${FLAVOR:L:Mjdk17_bootstrap}
+INSTALLED!= (pkg_info -e "jdk->=1.7,<1.8" -q && echo yes) || echo no
+.if ${INSTALLED:L} != "yes"
+ERRORS += "Fatal: This flavor requires an installed 1.7 jdk package"
+.endif
+BUILD_DEPENDS+=		:jdk->=1.7,<1.8:devel/jdk/1.7
+MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/jdk-1.7.0"
+.else
 BUILD_DEPENDS+=		:jdk->=1.5,<1.6:devel/jdk/1.5
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/jdk-1.5.0"
+.endif
 .endif
 
 .if !${FLAVOR:L:Mno_web}
