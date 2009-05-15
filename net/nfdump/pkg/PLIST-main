@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/05/21 22:28:35 sthen Exp $
-bin/ft2nfdump
-bin/nfcapd
-bin/nfdump
-bin/nfexpire
-bin/nfreplay
-bin/sfcapd
+@comment $OpenBSD: PLIST-main,v 1.2 2009/05/15 06:56:05 sthen Exp $
+@bin bin/ft2nfdump
+@bin bin/nfcapd
+@bin bin/nfdump
+@bin bin/nfexpire
+@bin bin/nfreplay
+@bin bin/sfcapd
 @man man/man1/ft2nfdump.1
 @man man/man1/nfcapd.1
 @man man/man1/nfdump.1

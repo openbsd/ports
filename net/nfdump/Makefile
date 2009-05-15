@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/21 22:28:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/05/15 06:56:05 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
 
-DISTNAME =		nfdump-1.5.7
+DISTNAME =		nfdump-1.5.8
 FULLPKGNAME-main =	${DISTNAME}
 FULLPKGNAME-nfprofile =	${DISTNAME:S/nfdump/nfprofile/}
 
