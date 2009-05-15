@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.3 2009/05/15 05:10:04 sturm Exp $
+
+On sparc64 there are some unexplainable format warnings, maybe a gcc bug.
+
+--- Makefile.in.orig	Thu May 14 13:21:54 2009
++++ Makefile.in	Thu May 14 13:22:04 2009
+@@ -788,7 +788,7 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-bsdtar --enable-b
+ # Especially for early development, we want to be a little
+ # aggressive about diagnosing build problems; this can get
+ # relaxed somewhat in final shipping versions.
+-AM_CFLAGS = -Wall -Werror
++AM_CFLAGS = -Wall
+ 
+ #
+ # What to include in the distribution
