@@ -1,7 +1,7 @@
-$OpenBSD: patch-cherokee_conf_sample_pre,v 1.2 2009/04/08 21:30:54 sthen Exp $
---- cherokee.conf.sample.pre.orig	Wed Feb 25 08:04:54 2009
-+++ cherokee.conf.sample.pre	Wed Apr  8 10:26:53 2009
-@@ -10,6 +10,9 @@
+$OpenBSD: patch-cherokee_conf_sample_pre,v 1.3 2009/05/15 06:57:18 sthen Exp $
+--- cherokee.conf.sample.pre.orig	Tue May 12 04:27:39 2009
++++ cherokee.conf.sample.pre	Thu May 14 20:39:33 2009
+@@ -13,6 +13,9 @@
  #
  server!bind!1!port = 80
  server!timeout = 15
@@ -11,7 +11,7 @@ $OpenBSD: patch-cherokee_conf_sample_pre,v 1.2 2009/04/08 21:30:54 sthen Exp $
  server!keepalive = 1
  server!keepalive_max_requests = 500
  server!server_tokens = full
-@@ -24,10 +27,10 @@ vserver!1!directory_index = index.php,index.html
+@@ -27,10 +30,10 @@ vserver!1!directory_index = index.php,index.html
  
  vserver!1!logger = combined
  vserver!1!logger!access!type = file
@@ -24,7 +24,7 @@ $OpenBSD: patch-cherokee_conf_sample_pre,v 1.2 2009/04/08 21:30:54 sthen Exp $
  
  vserver!1!rule!1!match = default
  vserver!1!rule!1!handler = common
-@@ -45,7 +48,7 @@ vserver!1!rule!3!handler = file
+@@ -48,7 +51,7 @@ vserver!1!rule!3!handler = file
  
  vserver!1!rule!4!match = directory
  vserver!1!rule!4!match!directory = /cgi-bin

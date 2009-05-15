@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/04/22 00:28:54 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/05/15 06:57:18 sthen Exp $
 @newgroup _cherokee:608
 @newuser _cherokee:608:_cherokee:daemon:Cherokee HTTP Server:/var/empty:/sbin/nologin
 @bin bin/cget
@@ -615,6 +615,7 @@ share/doc/cherokee/config_mime_types.html
 share/doc/cherokee/config_quickstart.html
 share/doc/cherokee/config_status.html
 share/doc/cherokee/config_virtual_servers.html
+share/doc/cherokee/config_virtual_servers_evhost.html
 share/doc/cherokee/config_virtual_servers_rule.html
 share/doc/cherokee/cookbook.html
 share/doc/cherokee/cookbook_alfresco.html
@@ -695,6 +696,7 @@ share/doc/cherokee/media/images/admin_validators_pam.png
 share/doc/cherokee/media/images/admin_validators_plain.png
 share/doc/cherokee/media/images/admin_vserver.png
 share/doc/cherokee/media/images/admin_vserver_errors.png
+share/doc/cherokee/media/images/admin_vserver_evhost.png
 share/doc/cherokee/media/images/admin_vserver_loggers.png
 share/doc/cherokee/media/images/admin_vserver_security.png
 share/doc/cherokee/media/images/admin_vserver_vserver.png
