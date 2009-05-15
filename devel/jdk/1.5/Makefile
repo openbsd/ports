@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2009/03/25 22:11:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.58 2009/05/15 17:47:29 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -7,8 +7,8 @@ COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
 COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.5.0.16
 PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}
-PKGNAME-jre=		jre-${V}
+PKGNAME-main=		jdk-${V}p0
+PKGNAME-jre=		jre-${V}p0
 
 CATEGORIES=		devel devel/jdk java
 
@@ -90,6 +90,10 @@ MAKE_ENV+=		DONT_ENABLE_IPV6="YES"
 EXTRACT_CASES+=		*.jar) true ;;
 
 .if ${FLAVOR:L:Mnative_bootstrap}
+INSTALLED!= (pkg_info -e "jdk->=1.5.0,<1.6" -q && echo yes) || echo no
+.if ${INSTALLED:L} != "yes"
+ERRORS += "Fatal: This flavor requires an installed 1.5 jdk package"
+.endif
 BUILD_DEPENDS+=		:jdk->=1.5.0,<1.6:devel/jdk/1.5
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
