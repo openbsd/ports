@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2009/03/04 20:01:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2009/05/15 16:03:49 ajacoutot Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
-DISTNAME=	iso-codes-3.6
+DISTNAME=	iso-codes-3.9
 
 CATEGORIES=	devel
 
@@ -27,6 +27,6 @@ FAKE_FLAGS=	pkgconfigdir=${PREFIX}/lib/pkgconfig
 
 post-extract:
 	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' \
-		${WRKSRC}/{iso2pot.py,iso_639/iso639tab.py}
+		${WRKSRC}/iso2pot.py
 
 .include <bsd.port.mk>
