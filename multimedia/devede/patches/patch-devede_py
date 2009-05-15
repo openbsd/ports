@@ -1,35 +1,37 @@
-$OpenBSD: patch-devede_py,v 1.7 2009/01/25 16:14:25 ajacoutot Exp $
---- devede.py.orig	Sun Jan 25 17:09:52 2009
-+++ devede.py	Sun Jan 25 17:11:10 2009
-@@ -36,13 +36,13 @@ import pickle
+$OpenBSD: patch-devede_py,v 1.8 2009/05/15 08:11:59 ajacoutot Exp $
+--- devede.py.orig	Thu May 14 21:50:35 2009
++++ devede.py	Fri May 15 09:55:55 2009
+@@ -35,7 +35,7 @@ import pickle
  import cairo
  
- print "DeVeDe 3.12"
+ print "DeVeDe 3.13.0"
 -if sys.platform!="win32":
 +if sys.platform!="win32" and not sys.platform.startswith('openbsd'):
- 	print "Locale: "+str(os.environ["LANG"])
- 
+ 	try:
+ 		print "Locale: "+str(os.environ["LANG"])
+ 	except:
+@@ -44,7 +44,7 @@ if sys.platform!="win32":
  # append the directories where we install the devede's own modules
  tipo=-1
  try:
--	fichero=open("/usr/share/devede/devede.glade","r")
-+	fichero=open("${PREFIX}/share/devede/devede.glade","r")
+-	fichero=open("/usr/share/devede/wmain.ui","r")
++	fichero=open("${PREFIX}/share/devede/wmain.ui","r")
  	fichero.close()
  	tipo=0
  	found=True
-@@ -76,13 +76,13 @@ if tipo==0:
- 	#arbol=gtk.glade.XML("/usr/share/devede/devede.glade",domain="devede")
+@@ -78,13 +78,13 @@ if tipo==0:
+ 	#arbol=gtk.Builder("/usr/share/devede/devede.glade",domain="devede")
  	# append the directories where we install the devede's own modules
  
 -	share_locale="/usr/share/locale"
--	glade="/usr/share/devede/devede.glade"
+-	glade="/usr/share/devede"
 -	sys.path.append("/usr/lib/devede")
 -	font_path="/usr/share/devede"
 -	pic_path="/usr/share/devede"
 -	other_path="/usr/share/devede"
 -	help_path="/usr/share/doc/devede"
 +	share_locale="${PREFIX}/share/locale"
-+	glade="${PREFIX}/share/devede/devede.glade"
++	glade="${PREFIX}/share/devede"
 +	sys.path.append("${MODPY_SITEPKG}/devede")
 +	font_path="${PREFIX}/share/devede"
 +	pic_path="${PREFIX}/share/devede"

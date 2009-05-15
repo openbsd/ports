@@ -1,7 +1,7 @@
-$OpenBSD: patch-devede_glade,v 1.9 2009/05/15 08:11:59 ajacoutot Exp $
---- devede.glade.orig	Thu May 14 21:50:35 2009
-+++ devede.glade	Fri May 15 10:02:38 2009
-@@ -4239,7 +4239,7 @@ V. Fotiadis</property>
+$OpenBSD: patch-interface_wfolder_dialog_ui,v 1.1 2009/05/15 08:11:59 ajacoutot Exp $
+--- interface/wfolder_dialog.ui.orig	Fri May 15 10:03:44 2009
++++ interface/wfolder_dialog.ui	Fri May 15 10:04:15 2009
+@@ -22,7 +22,7 @@
                  <property name="width_request">330</property>
                  <property name="height_request">89</property>
                  <property name="visible">True</property>
@@ -9,4 +9,4 @@ $OpenBSD: patch-devede_glade,v 1.9 2009/05/15 08:11:59 ajacoutot Exp $
 +                <property name="label" translatable="yes">Choose the folder where DeVeDe will create the DVD image and a name for it. Don't use a folder in a VFAT/FAT32 drive and make sure you have enough free space available (about 3 times the final disk size).</property>
                  <property name="justify">GTK_JUSTIFY_CENTER</property>
                  <property name="wrap">True</property>
-               </widget>
+               </object>

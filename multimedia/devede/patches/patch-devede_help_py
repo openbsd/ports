@@ -1,0 +1,19 @@
+$OpenBSD: patch-devede_help_py,v 1.1 2009/05/15 08:11:59 ajacoutot Exp $
+--- devede_help.py.orig	Fri May 15 10:05:20 2009
++++ devede_help.py	Fri May 15 10:05:50 2009
+@@ -42,7 +42,7 @@ class show_help(devede_executor.executor):
+ 
+ 		self.printout=False
+ 
+-		launch_list=[[True,"yelp"],[False,"epiphany"],[False,"konqueror"],[False,"firefox","-new-window"],[False,"opera","-newwindow"]]
++		launch_list=[[True,"xdg-open"],[False,"epiphany"],[False,"konqueror"],[False,"firefox","-new-window"],[False,"opera","-newwindow"]]
+ 
+ 		file=os.path.join(installpath,"html",filename)	
+ 		
+@@ -57,4 +57,4 @@ class show_help(devede_executor.executor):
+ 			
+ 		if retval==None:
+ 			msg=devede_dialogs.show_error(gladefile,_("Can't open the help files."))
+-		
+\ No newline at end of file
++		

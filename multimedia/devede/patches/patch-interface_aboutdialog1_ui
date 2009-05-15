@@ -1,0 +1,11 @@
+$OpenBSD: patch-interface_aboutdialog1_ui,v 1.1 2009/05/15 08:11:59 ajacoutot Exp $
+--- interface/aboutdialog1.ui.orig	Fri May 15 10:02:47 2009
++++ interface/aboutdialog1.ui	Fri May 15 10:02:54 2009
+@@ -1,6 +1,6 @@
+ <?xml version="1.0"?>
+ <interface>
+-  <requires lib="gtk+" version="2.16"/>
++  <requires lib="gtk+" version="2.14"/>
+   <!-- interface-naming-policy toplevel-contextual -->
+   <object class="GtkAboutDialog" id="aboutdialog1">
+     <property name="border_width">5</property>
