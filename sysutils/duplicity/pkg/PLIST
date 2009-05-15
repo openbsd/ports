@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/02/09 00:28:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/05/15 16:36:50 jim Exp $
 bin/duplicity
 bin/rdiffdir
 lib/python${MODPY_VERSION}/site-packages/duplicity/
 lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/duplicity/GnuPGInterface.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/GnuPGInterface.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/__init__.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/_librsync.so
