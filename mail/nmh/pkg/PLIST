@@ -1,43 +1,43 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/09/06 18:57:34 naddy Exp $
-bin/ali
-bin/anno
-bin/burst
-bin/comp
-bin/dist
-bin/flist
-bin/flists
-bin/folder
-bin/folders
-bin/forw
-bin/inc
-bin/install-mh
-bin/mark
-bin/mhbuild
-bin/mhlist
-bin/mhmail
-bin/mhn
-bin/mhparam
-bin/mhpath
-bin/mhshow
-bin/mhstore
-bin/msgchk
-bin/msh
-bin/next
-bin/packf
-bin/pick
-bin/prev
-bin/prompter
-bin/refile
-bin/repl
-bin/rmf
-bin/rmm
-bin/scan
-bin/send
+@comment $OpenBSD: PLIST,v 1.9 2009/05/16 09:35:00 ajacoutot Exp $
+@bin bin/ali
+@bin bin/anno
+@bin bin/burst
+@bin bin/comp
+@bin bin/dist
+@bin bin/flist
+@bin bin/flists
+@bin bin/folder
+@bin bin/folders
+@bin bin/forw
+@bin bin/inc
+@bin bin/install-mh
+@bin bin/mark
+@bin bin/mhbuild
+@bin bin/mhlist
+@bin bin/mhmail
+@bin bin/mhn
+@bin bin/mhparam
+@bin bin/mhpath
+@bin bin/mhshow
+@bin bin/mhstore
+@bin bin/msgchk
+@bin bin/msh
+@bin bin/next
+@bin bin/packf
+@bin bin/pick
+@bin bin/prev
+@bin bin/prompter
+@bin bin/refile
+@bin bin/repl
+@bin bin/rmf
+@bin bin/rmm
+@bin bin/scan
+@bin bin/send
 bin/sendfiles
-bin/show
-bin/sortm
-bin/whatnow
-bin/whom
+@bin bin/show
+@bin bin/sortm
+@bin bin/whatnow
+@bin bin/whom
 lib/nmh/
 lib/nmh/MailAliases
 lib/nmh/components
@@ -65,20 +65,20 @@ lib/nmh/scan.size
 lib/nmh/scan.time
 lib/nmh/scan.timely
 lib/nmh/scan.unseen
-libexec/ap
-libexec/conflict
-libexec/dp
-libexec/fmtdump
-libexec/mhl
-libexec/mhtest
-libexec/post
-libexec/rcvdist
-libexec/rcvpack
-libexec/rcvstore
-libexec/rcvtty
-libexec/slocal
-libexec/spost
-libexec/viamail
+@bin libexec/ap
+@bin libexec/conflict
+@bin libexec/dp
+@bin libexec/fmtdump
+@bin libexec/mhl
+@bin libexec/mhtest
+@bin libexec/post
+@bin libexec/rcvdist
+@bin libexec/rcvpack
+@bin libexec/rcvstore
+@bin libexec/rcvtty
+@bin libexec/slocal
+@bin libexec/spost
+@bin libexec/viamail
 @man man/man1/ali.1
 @man man/man1/anno.1
 @man man/man1/burst.1
@@ -139,5 +139,4 @@ libexec/viamail
 @man man/man8/conflict.8
 @man man/man8/dp.8
 @man man/man8/fmtdump.8
-@man man/man8/mh-mts.8
 @man man/man8/post.8
