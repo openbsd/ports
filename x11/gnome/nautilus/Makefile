@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2009/05/04 15:11:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2009/05/16 13:56:27 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME shell and file manager
 # the nautilus extensions directory changes:
 # (e.g. ${LOCALBASE}/lib/nautilus/extensions-2.0)
 # x11/gnome/file-roller
+# x11/gnome/nautilus-open-terminal
 # x11/gnome/nautilus-sendto
 # x11/gnome/totem
 
