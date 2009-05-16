@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 23:54:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2009/05/16 13:39:10 jim Exp $
 
 COMMENT=		Qt-based CD creation tool
 
@@ -13,8 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c m stdc++
 
-MASTER_SITES=		http://www.drahthaar.clara.net/ \
-			http://www.jakemsr.com/openbsd/ports/
+MASTER_SITES=		http://spacehopper.org/mirrors/
 
 MODULES=		x11/qt2
 
