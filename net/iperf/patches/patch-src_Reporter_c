@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Reporter_c,v 1.1 2006/08/29 19:50:22 aanriot Exp $
---- src/Reporter.c.orig	Mon Aug 28 02:12:10 2006
-+++ src/Reporter.c	Mon Aug 28 02:11:37 2006
-@@ -307,6 +307,9 @@ ReportHeader* InitReport( thread_Setting
+$OpenBSD: patch-src_Reporter_c,v 1.2 2009/05/16 21:48:20 rui Exp $
+--- src/Reporter.c.orig	Tue Apr  8 03:37:54 2008
++++ src/Reporter.c	Sat May 16 12:29:06 2009
+@@ -309,6 +309,9 @@ ReportHeader* InitReport( thread_Settings *agent ) {
  #else
          // set start time
          gettimeofday( &(reporthdr->report.startTime), NULL );

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_PerfSocket_cpp,v 1.1 2006/03/23 19:35:08 jakob Exp $
---- src/PerfSocket.cpp.orig	Mon May  2 22:09:27 2005
-+++ src/PerfSocket.cpp	Thu Mar 23 20:29:38 2006
-@@ -92,7 +92,7 @@ void SetSocketOptions( thread_Settings *
+$OpenBSD: patch-src_PerfSocket_cpp,v 1.2 2009/05/16 21:48:20 rui Exp $
+--- src/PerfSocket.cpp.orig	Tue Apr  8 03:37:54 2008
++++ src/PerfSocket.cpp	Sat May 16 12:29:06 2009
+@@ -107,7 +107,7 @@ void SetSocketOptions( thread_Settings *inSettings ) {
  
      // check if we're sending multicast, and set TTL
      if ( isMulticast( inSettings ) && ( inSettings->mTTL > 0 ) ) {

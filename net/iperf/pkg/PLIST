@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/05/08 21:16:15 jakob Exp $
-bin/iperf
+@comment $OpenBSD: PLIST,v 1.5 2009/05/16 21:48:20 rui Exp $
+@bin bin/iperf
+@man man/man1/iperf.1
 share/doc/iperf/
 share/doc/iperf/dast.gif
 share/doc/iperf/index.html
