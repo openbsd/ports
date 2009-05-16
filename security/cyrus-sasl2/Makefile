@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2009/03/16 22:44:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2009/05/16 09:09:59 ajacoutot Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
-DISTNAME=	cyrus-sasl-2.1.22
-PKGNAME=	${DISTNAME}p5
+DISTNAME=	cyrus-sasl-2.1.23
 SHARED_LIBS=	anonymous	2.22 \
 		crammd5		2.22 \
 		digestmd5	2.22 \

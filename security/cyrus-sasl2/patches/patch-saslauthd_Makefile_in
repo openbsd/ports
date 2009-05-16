@@ -1,7 +1,7 @@
-$OpenBSD: patch-saslauthd_Makefile_in,v 1.8 2007/06/18 12:31:20 ajacoutot Exp $
---- saslauthd/Makefile.in.orig	Fri Jun  1 08:12:05 2007
-+++ saslauthd/Makefile.in	Fri Jun  1 08:13:41 2007
-@@ -621,7 +621,7 @@ saslauthd.8: saslauthd.mdoc
+$OpenBSD: patch-saslauthd_Makefile_in,v 1.9 2009/05/16 09:09:59 ajacoutot Exp $
+--- saslauthd/Makefile.in.orig	Thu May  7 16:25:39 2009
++++ saslauthd/Makefile.in	Sat May 16 10:26:19 2009
+@@ -622,7 +622,7 @@ saslauthd.8: saslauthd.mdoc
  
  install-data-local: saslauthd.8
  	$(mkinstalldirs) $(DESTDIR)$(mandir)/man8

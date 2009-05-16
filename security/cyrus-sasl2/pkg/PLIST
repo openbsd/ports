@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/03/15 12:50:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2009/05/16 09:09:59 ajacoutot Exp $
 @conflict cyrus-sasl-*
 include/sasl/
 include/sasl/hmac-md5.h
@@ -76,11 +76,11 @@ lib/sasl2/libsasldb.la
 @man man/man8/pluginviewer.8
 @man man/man8/sasldblistusers2.8
 @man man/man8/saslpasswd2.8
-sbin/pluginviewer
-sbin/saslauthd
-sbin/sasldblistusers2
-sbin/saslpasswd2
-sbin/testsaslauthd
+@bin sbin/pluginviewer
+@bin sbin/saslauthd
+@bin sbin/sasldblistusers2
+@bin sbin/saslpasswd2
+@bin sbin/testsaslauthd
 share/doc/sasl2/
 share/doc/sasl2/advanced.html
 share/doc/sasl2/appconvert.html
