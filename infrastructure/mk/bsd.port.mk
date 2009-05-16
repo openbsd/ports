@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.962 2009/05/05 20:58:38 martynas Exp $
+#	$OpenBSD: bsd.port.mk,v 1.963 2009/05/16 22:18:50 simon Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -622,6 +622,11 @@ ALL_REGRESS_FLAGS = ${MAKE_FLAGS} ${REGRESS_FLAGS}
 REGRESS_LOGFILE ?= ${WRKDIR}/regress.log
 REGRESS_LOG ?= | tee ${REGRESS_LOGFILE}
 REGRESS_STATUS_IGNORE ?=
+
+.if defined(REGRESS_IS_INTERACTIVE) && ${REGRESS_IS_INTERACTIVE:L} == "x11"
+REGRESS_FLAGS += DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+XAUTHORITY ?= ${HOME}/.Xauthority
+.endif
 
 _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
 
@@ -2203,6 +2208,16 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 .if ${NO_REGRESS:L} == "no"
 	@${ECHO_MSG} "===>  Regression check for ${FULLPKGNAME}${_MASTER}"
+# When interactive tests need X11
+.  if defined(REGRESS_IS_INTERACTIVE) && ${REGRESS_IS_INTERACTIVE:L} == "x11"
+.    if !defined(DISPLAY) || !exists(${XAUTHORITY})
+	@echo 1>&2 "The regression tests require a running instance of X."
+	@echo 1>&2 "You will also need to set the environment variable DISPLAY"
+	@echo 1>&2 "to point to an active X11 display and XAUTHORITY to point"
+	@echo 1>&2 "to the appropriate .Xauthority file."
+	@exit 1
+.    endif
+.  endif
 .  if target(pre-regress)
 	@cd ${.CURDIR} && exec ${MAKE} pre-regress
 .  endif
