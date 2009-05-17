@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2008/11/29 05:00:20 okan Exp $
+# $OpenBSD: Makefile,v 1.104 2009/05/17 09:04:38 sthen Exp $
 
 COMMENT=		image processing tools
 
@@ -15,10 +15,12 @@ CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.imagemagick.org
 
-MASTER_SITES=		${HOMEPAGE}/download/ \
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=imagemagick/} \
+			${HOMEPAGE}/download/ \
 			ftp://ftp.fu-berlin.de/unix/X11/graphics/ImageMagick/ \
+			ftp://ftp.fu-berlin.de/unix/X11/graphics/ImageMagick/legacy/ \
 			http://gd.tuwien.ac.at/graphics/ImageMagick/ \
-			${MASTER_SITE_SOURCEFORGE:=imagemagick/}
+			http://gd.tuwien.ac.at/graphics/ImageMagick/legacy/
 
 # http://www.imagemagick.org/script/license.php
 PERMIT_PACKAGE_CDROM=	Yes
