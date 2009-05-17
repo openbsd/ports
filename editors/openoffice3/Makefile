@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/05/08 15:47:32 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2009/05/17 09:41:05 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -10,7 +10,7 @@ VERSION=	3.1.0
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOO310_m11
 PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}
+PKGNAME-main=	openoffice-${VERSION}p0
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
@@ -89,7 +89,6 @@ BUILD_DEPENDS+=	:zip-*:archivers/zip \
 MODULES+=	lang/python
 LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
-		estdc++.>=7:libstdc++->=4.2,<4.3:lang/gcc/4.2,-estdc \
 		db.>=4:db->=4,<5:databases/db/v4 \
 		xslt.>=3::textproc/libxslt \
 		curl.>=7::net/curl \
