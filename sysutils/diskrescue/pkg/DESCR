@@ -1,0 +1,4 @@
+Diskrescue is a tool to verify and/or recover as much data as possible
+from failed disks. The idea is to read all sectors of a disk and let 
+the disk reallocate bad or soon to be bad sectors. While the disk is 
+being read it can clone the data to a file or another disk.

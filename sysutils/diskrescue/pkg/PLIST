@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/18 08:20:02 laurent Exp $
+@bin bin/diskrescue
+@man man/man8/diskrescue.8
