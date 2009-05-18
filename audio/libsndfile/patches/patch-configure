@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2009/05/18 21:37:09 kili Exp $
+--- configure.orig	Thu May 14 11:44:39 2009
++++ configure	Mon May 18 23:21:00 2009
+@@ -24823,7 +24823,7 @@ _ACEOF
+ #====================================================================================
+ # Check for JACK (only used for examples/sndfile-jackplay).
+ 
+-
++if false; then	# disable jack test
+ pkg_failed=no
+ { $as_echo "$as_me:$LINENO: checking for jack >= 0.100 " >&5
+ $as_echo_n "checking for jack >= 0.100 ... " >&6; }
+@@ -24905,6 +24905,8 @@ else
+ cat >>confdefs.h <<_ACEOF
+ #define HAVE_JACK $HAVE_JACK
+ _ACEOF
++fi	# disable jack test
++HAVE_JACK=0
+ 
+ 
+ #====================================================================================
