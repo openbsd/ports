@@ -1,76 +1,103 @@
-$OpenBSD: patch-scheduler_main_c,v 1.3 2009/05/14 12:38:52 kurt Exp $
---- scheduler/main.c.orig	Wed Jan 28 17:12:18 2009
-+++ scheduler/main.c	Sat May  9 09:22:27 2009
-@@ -144,12 +144,13 @@ main(int  argc,				/* I - Number of command-line args 
+$OpenBSD: patch-scheduler_main_c,v 1.4 2009/05/18 17:09:54 ajacoutot Exp $
+--- scheduler/main.c.orig	Wed Jan 28 23:12:18 2009
++++ scheduler/main.c	Mon May 18 18:57:12 2009
+@@ -144,10 +144,9 @@ main(int  argc,				/* I - Number of command-line args 
    cups_file_t		*fp;		/* Fake lpsched lock file */
    struct stat		statbuf;	/* Needed for checking lpsched FIFO */
  #endif /* __sgi */
 -#ifdef __APPLE__
-+#if defined (__APPLE__) || defined(__OpenBSD__)
    int			run_as_child = 0;
- 					/* Needed for Mac OS X fork/exec */
+-					/* Needed for Mac OS X fork/exec */
 -#else
-+#endif 
++					/* Needed for background fork/exec */
 +#ifndef __APPLE__
    time_t		netif_time = 0;	/* Time since last network update */
--#endif /* __APPLE__ */
-+#endif /* !__APPLE__ */
+ #endif /* __APPLE__ */
  #if HAVE_LAUNCHD
-   int			launchd_idle_exit;
- 					/* Idle exit on select timeout? */
-@@ -187,11 +188,11 @@ main(int  argc,				/* I - Number of command-line args 
+@@ -187,11 +186,9 @@ main(int  argc,				/* I - Number of command-line args 
        for (opt = argv[i] + 1; *opt != '\0'; opt ++)
          switch (*opt)
  	{
 -#ifdef __APPLE__
-+#if defined(__APPLE__) || defined(__OpenBSD__)
  	  case 'C' : /* Run as child with config file */
                run_as_child = 1;
  	      fg           = -1;
 -#endif /* __APPLE__ */
-+#endif /* __APPLE__ || __OpenBSD__ */
  
  	  case 'c' : /* Configuration file */
  	      i ++;
-@@ -367,6 +368,27 @@ main(int  argc,				/* I - Number of command-line args 
-     execlp(argv[0], argv[0], "-C", ConfigurationFile, (char *)0);
-     exit(errno);
- #endif /* __APPLE__ */
-+
+@@ -356,17 +353,27 @@ main(int  argc,				/* I - Number of command-line args 
+       }
+     }
+ 
+-#ifdef __APPLE__
 +#ifdef __OpenBSD__
-+   /*
-+    * Directly call _thread_sys_closefrom() so the child process
-+    * doesn't reset the parent's file descriptors to be blocking.
-+    * This is a work-around to a limitation of userland libpthread.
-+    */
+    /*
+-    * Since CoreFoundation has an overly-agressive check for whether a
+-    * process has forked but not exec'd (whether CF has been called or
+-    * not...), we now have to exec ourselves with the "-f" option to
+-    * eliminate their bogus warning messages.
++    * Call _thread_sys_closefrom() so the child process doesn't reset the
++    * parent's file descriptors to be blocking.  This is a workaround for a
++    * limitation of userland libpthread on OpenBSD.
+     */
 +   
 +    _thread_sys_closefrom(0);
-+
++#endif /* __OpenBSD__ */
+ 
 +   /*
-+    * Actually an exec*(3) call is needed for all portable threaded
-+    * applications. According to POSIX threaded applications that
-+    * fork: "the child process may only execute async-signal-safe
-+    * operations until such time as one of the exec functions is
-+    * called."
++    * Since CoreFoundation and DBUS both create fork-unsafe data on execution of
++    * a program, and since this kind of really unfriendly behavior seems to be
++    * more common these days in system libraries, we need to re-execute the
++    * background cupsd with the "-C" option to avoid problems.  Unfortunately,
++    * we also have to assume that argv[0] contains the name of the cupsd
++    * executable - there is no portable way to get the real pathname...
 +    */
 +
-+    execlp(argv[0], argv[0], "-C", ConfigurationFile, (char *)0);
-+    exit(errno);
-+#endif
+     execlp(argv[0], argv[0], "-C", ConfigurationFile, (char *)0);
+     exit(errno);
+-#endif /* __APPLE__ */
    }
  
    if (fg < 1)
-@@ -607,11 +629,11 @@ main(int  argc,				/* I - Number of command-line args 
+@@ -400,6 +407,28 @@ main(int  argc,				/* I - Number of command-line args 
+ 
+     for (i = 0; i < limit.rlim_cur && i < 1024; i ++)
+       close(i);
++
++   /*
++    * Redirect stdin/out/err to /dev/null...
++    */
++
++    if ((i = open("/dev/null", O_RDONLY)) != 0)
++    {
++      dup2(i, 0);
++      close(i);
++    }
++
++    if ((i = open("/dev/null", O_WRONLY)) != 1)
++    {
++      dup2(i, 1);
++      close(i);
++    }
++
++    if ((i = open("/dev/null", O_WRONLY)) != 2)
++    {
++      dup2(i, 2);
++      close(i);
++    }
+ #endif /* DEBUG */
+   }
+ 
+@@ -607,11 +636,7 @@ main(int  argc,				/* I - Number of command-line args 
    * we are up and running...
    */
  
 -#ifdef __APPLE__
-+#if defined(__APPLE__) || defined(__OpenBSD__)
    if (!fg || run_as_child)
- #else
-   if (!fg)
+-#else
+-  if (!fg)
 -#endif /* __APPLE__ */
-+#endif /* __APPLE__ || __OpenBSD__ */
    {
     /*
      * Send a signal to the parent process, but only if the parent is
