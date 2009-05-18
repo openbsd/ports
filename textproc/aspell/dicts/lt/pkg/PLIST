@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/09 22:43:57 martynas Exp $
-@pkgpath textproc/aspell/dicts/aspell-lt
+@comment $OpenBSD: PLIST,v 1.2 2009/05/18 18:44:51 martynas Exp $
 lib/aspell/lt.dat
 lib/aspell/lt_affix.dat
 share/aspell/lietuviu.alias
