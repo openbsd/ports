@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/18 08:20:02 laurent Exp $
-COMMENT =		a fancy dd
+# $OpenBSD: Makefile,v 1.2 2009/05/18 11:40:46 ajacoutot Exp $
 
-V =			0.1
-DISTNAME =		diskrescue-${V}
+COMMENT =		fancy dd
+
+DISTNAME =		diskrescue-0.1
+PKGNAME =		${DISTNAME}p0
 
 CATEGORIES =		sysutils
 
@@ -25,7 +26,6 @@ EXTRACT_SUFX =		.tgz
 NO_REGRESS=		Yes
 
 do-install:
-	echo ${WRKSRC}
 	${INSTALL_PROGRAM} ${WRKSRC}/diskrescue ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/diskrescue.8 ${PREFIX}/man/man8/diskrescue.8
 
