@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-x11,v 1.5 2009/01/24 14:31:29 bernd Exp $
+@comment $OpenBSD: PLIST-x11,v 1.6 2009/05/18 19:23:58 bernd Exp $
 @conflict git-<=1.5.4.2p0
 bin/gitk
 libexec/git/git-citool
@@ -70,4 +70,5 @@ share/gitk/lib/msgs/
 share/gitk/lib/msgs/de.msg
 share/gitk/lib/msgs/es.msg
 share/gitk/lib/msgs/it.msg
+share/gitk/lib/msgs/ru.msg
 share/gitk/lib/msgs/sv.msg

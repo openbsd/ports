@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2009/04/05 10:05:35 bernd Exp $
+# $OpenBSD: Makefile,v 1.46 2009/05/18 19:23:58 bernd Exp $
 
 COMMENT-main=		GIT - Tree History Storage Tool
 COMMENT-svn=		GIT - subversion interoperability tools
 COMMENT-x11=		GIT - graphical tools
 
-V=			1.6.2.2
+V=			1.6.3.1
 DISTNAME=		git-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-svn=		git-svn-${V}
@@ -68,8 +68,10 @@ USE_GMAKE=		Yes
 
 REGRESS_DEPENDS=	:zip-*:archivers/zip \
 			:cvsps-*:devel/cvsps \
-			::devel/subversion,-perl \
-			::sysutils/ggrep
+			::devel/subversion,-perl
+
+GITWEB=			README INSTALL git-favicon.png git-logo.png \
+			gitweb.cgi gitweb.css
 
 post-extract:
 	@mkdir -p ${WRKSRC}/doc
@@ -77,6 +79,10 @@ post-extract:
 	@${TAR} -C ${WRKSRC}/doc -xzf ${FULLDISTDIR}/${distfile}${EXTRACT_SUFX}
 .endfor
 	@rm -f ${WRKSRC}/doc/man1/git-p4import.1
+	@cd ${WRKSRC} && perl -pi -e "s|/usr/share/git|${TRUEPREFIX}/share/git|g" \
+		Documentation/git-clone.txt Documentation/git-init.txt \
+		doc/man1/git-clone.1 doc/man1/git-init.1 doc/git-clone.txt \
+		doc/git-init.txt doc/git-clone.html doc/git-init.html
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/libgit.a ${PREFIX}/lib
@@ -92,6 +98,9 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/post-receive-email \
 		${PREFIX}/share/git-core/templates/hooks/post-receive-email.sample
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/git
+	${INSTALL_DATA_DIR} ${PREFIX}/share/gitweb
+	cd ${WRKSRC}/gitweb && \
+		${INSTALL_DATA} ${GITWEB} ${PREFIX}/share/gitweb
 
 do-regress:
 	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2009/04/05 10:05:35 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2009/05/18 19:23:58 bernd Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -18,6 +18,7 @@ libexec/git/git-am
 libexec/git/git-archimport
 @bin libexec/git/git-archive
 libexec/git/git-bisect
+@bin libexec/git/git-bisect--helper
 @bin libexec/git/git-blame
 @bin libexec/git/git-branch
 @bin libexec/git/git-bundle
@@ -43,6 +44,8 @@ libexec/git/git-cvsserver
 @bin libexec/git/git-diff-files
 @bin libexec/git/git-diff-index
 @bin libexec/git/git-diff-tree
+libexec/git/git-difftool
+libexec/git/git-difftool--helper
 @bin libexec/git/git-fast-export
 @bin libexec/git/git-fast-import
 @bin libexec/git/git-fetch
@@ -86,6 +89,7 @@ libexec/git/git-merge-resolve
 @bin libexec/git/git-merge-subtree
 @bin libexec/git/git-merge-tree
 libexec/git/git-mergetool
+libexec/git/git-mergetool--lib
 @bin libexec/git/git-mktag
 @bin libexec/git/git-mktree
 @bin libexec/git/git-mv
@@ -179,6 +183,7 @@ libexec/git/git-web--browse
 @man man/man1/git-diff-index.1
 @man man/man1/git-diff-tree.1
 @man man/man1/git-diff.1
+@man man/man1/git-difftool.1
 @man man/man1/git-fast-export.1
 @man man/man1/git-fast-import.1
 @man man/man1/git-fetch-pack.1
@@ -214,6 +219,7 @@ libexec/git/git-web--browse
 @man man/man1/git-merge-one-file.1
 @man man/man1/git-merge-tree.1
 @man man/man1/git-merge.1
+@man man/man1/git-mergetool--lib.1
 @man man/man1/git-mergetool.1
 @man man/man1/git-mktag.1
 @man man/man1/git-mktree.1
@@ -357,7 +363,12 @@ share/doc/git/RelNotes-1.6.1.4.txt
 share/doc/git/RelNotes-1.6.1.txt
 share/doc/git/RelNotes-1.6.2.1.txt
 share/doc/git/RelNotes-1.6.2.2.txt
+share/doc/git/RelNotes-1.6.2.3.txt
+share/doc/git/RelNotes-1.6.2.4.txt
+share/doc/git/RelNotes-1.6.2.5.txt
 share/doc/git/RelNotes-1.6.2.txt
+share/doc/git/RelNotes-1.6.3.1.txt
+share/doc/git/RelNotes-1.6.3.txt
 share/doc/git/blame-options.txt
 share/doc/git/cmds-ancillaryinterrogators.txt
 share/doc/git/cmds-ancillarymanipulators.txt
@@ -439,6 +450,8 @@ share/doc/git/git-diff-tree.html
 share/doc/git/git-diff-tree.txt
 share/doc/git/git-diff.html
 share/doc/git/git-diff.txt
+share/doc/git/git-difftool.html
+share/doc/git/git-difftool.txt
 share/doc/git/git-fast-export.html
 share/doc/git/git-fast-export.txt
 share/doc/git/git-fast-import.html
@@ -509,6 +522,8 @@ share/doc/git/git-merge-tree.html
 share/doc/git/git-merge-tree.txt
 share/doc/git/git-merge.html
 share/doc/git/git-merge.txt
+share/doc/git/git-mergetool--lib.html
+share/doc/git/git-mergetool--lib.txt
 share/doc/git/git-mergetool.html
 share/doc/git/git-mergetool.txt
 share/doc/git/git-mktag.html
@@ -716,3 +731,10 @@ share/git-core/templates/hooks/prepare-commit-msg.sample
 share/git-core/templates/hooks/update.sample
 share/git-core/templates/info/
 share/git-core/templates/info/exclude
+share/gitweb/
+share/gitweb/INSTALL
+share/gitweb/README
+share/gitweb/git-favicon.png
+share/gitweb/git-logo.png
+share/gitweb/gitweb.cgi
+share/gitweb/gitweb.css
