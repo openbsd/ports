@@ -1,0 +1,77 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/18 06:02:45 phessler Exp $
+bin/marathon-evil
+share/alephone/
+share/alephone/MarathonEVIL/
+share/alephone/MarathonEVIL/Cursed Data.mpg
+share/alephone/MarathonEVIL/Cursed Images.imgA
+share/alephone/MarathonEVIL/Cursed Map.sceA
+share/alephone/MarathonEVIL/Cursed Net Maps.sceA
+share/alephone/MarathonEVIL/Cursed Net Physics.phyA
+share/alephone/MarathonEVIL/Cursed Physics.phyA
+share/alephone/MarathonEVIL/Cursed Shapes.shpA
+share/alephone/MarathonEVIL/Cursed Sounds.sndA
+share/alephone/MarathonEVIL/EVIL ReadMe.txt
+share/alephone/MarathonEVIL/Fonts.fntA
+share/alephone/MarathonEVIL/Music.ogg
+share/alephone/MarathonEVIL/Scripts/
+share/alephone/MarathonEVIL/Scripts/Evil Scenario.mml
+share/alephone/MarathonEVIL/Scripts/Evil Strings.mml
+share/alephone/MarathonEVIL/Scripts/Transparent_Liquids.mml
+share/alephone/MarathonEVIL/Scripts/Transparent_Sprites.mml
+share/alephone/MarathonEVIL/Themes/
+share/alephone/MarathonEVIL/Themes/Default/
+@comment share/alephone/MarathonEVIL/Themes/Default/.#slider_c.bmp.1.3
+@comment share/alephone/MarathonEVIL/Themes/Default/.#slider_l.bmp.1.3
+@comment share/alephone/MarathonEVIL/Themes/Default/.#slider_r.bmp.1.3
+@comment share/alephone/MarathonEVIL/Themes/Default/.#theme2.mml.1.2
+@comment share/alephone/MarathonEVIL/Themes/Default/.#theme2.mml.1.7
+@comment share/alephone/MarathonEVIL/Themes/Default/CVS/
+@comment share/alephone/MarathonEVIL/Themes/Default/CVS/Entries
+@comment share/alephone/MarathonEVIL/Themes/Default/CVS/Repository
+@comment share/alephone/MarathonEVIL/Themes/Default/CVS/Root
+share/alephone/MarathonEVIL/Themes/Default/DejaVuLGCSansCondensed-Bold.ttf
+share/alephone/MarathonEVIL/Themes/Default/DejaVuLGCSansCondensed-BoldOblique.ttf
+share/alephone/MarathonEVIL/Themes/Default/LICENSE-DejaVu
+share/alephone/MarathonEVIL/Themes/Default/Makefile
+share/alephone/MarathonEVIL/Themes/Default/Makefile.am
+share/alephone/MarathonEVIL/Themes/Default/Makefile.in
+share/alephone/MarathonEVIL/Themes/Default/README
+share/alephone/MarathonEVIL/Themes/Default/bankgthd.ttf
+share/alephone/MarathonEVIL/Themes/Default/bankgthd.ttf.txt
+share/alephone/MarathonEVIL/Themes/Default/button_c.bmp
+share/alephone/MarathonEVIL/Themes/Default/button_c_p.bmp
+share/alephone/MarathonEVIL/Themes/Default/button_l.bmp
+share/alephone/MarathonEVIL/Themes/Default/button_l_p.bmp
+share/alephone/MarathonEVIL/Themes/Default/button_r.bmp
+share/alephone/MarathonEVIL/Themes/Default/button_r_p.bmp
+share/alephone/MarathonEVIL/Themes/Default/frame_b.bmp
+share/alephone/MarathonEVIL/Themes/Default/frame_bl.bmp
+share/alephone/MarathonEVIL/Themes/Default/frame_br.bmp
+share/alephone/MarathonEVIL/Themes/Default/frame_l.bmp
+share/alephone/MarathonEVIL/Themes/Default/frame_r.bmp
+share/alephone/MarathonEVIL/Themes/Default/frame_t.bmp
+share/alephone/MarathonEVIL/Themes/Default/frame_tl.bmp
+share/alephone/MarathonEVIL/Themes/Default/frame_tr.bmp
+share/alephone/MarathonEVIL/Themes/Default/list_b.bmp
+share/alephone/MarathonEVIL/Themes/Default/list_bl.bmp
+share/alephone/MarathonEVIL/Themes/Default/list_br.bmp
+share/alephone/MarathonEVIL/Themes/Default/list_l.bmp
+share/alephone/MarathonEVIL/Themes/Default/list_r.bmp
+share/alephone/MarathonEVIL/Themes/Default/list_t.bmp
+share/alephone/MarathonEVIL/Themes/Default/list_tl.bmp
+share/alephone/MarathonEVIL/Themes/Default/list_tr.bmp
+share/alephone/MarathonEVIL/Themes/Default/resources
+share/alephone/MarathonEVIL/Themes/Default/slider.bmp
+share/alephone/MarathonEVIL/Themes/Default/slider_c.bmp
+share/alephone/MarathonEVIL/Themes/Default/slider_l.bmp
+share/alephone/MarathonEVIL/Themes/Default/slider_r.bmp
+share/alephone/MarathonEVIL/Themes/Default/theme.mml
+share/alephone/MarathonEVIL/Themes/Default/theme2.mml
+share/alephone/MarathonEVIL/Themes/Default/thumb_b.bmp
+share/alephone/MarathonEVIL/Themes/Default/thumb_bc.bmp
+share/alephone/MarathonEVIL/Themes/Default/thumb_c.bmp
+share/alephone/MarathonEVIL/Themes/Default/thumb_t.bmp
+share/alephone/MarathonEVIL/Themes/Default/thumb_tc.bmp
+share/alephone/MarathonEVIL/Themes/Default/tiny_button_c.bmp
+share/alephone/MarathonEVIL/Themes/Default/tiny_button_l.bmp
+share/alephone/MarathonEVIL/Themes/Default/tiny_button_r.bmp
