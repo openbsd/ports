@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/24 17:56:08 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/05/18 14:23:50 pirofti Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -39,7 +39,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Connection/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Connection.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Connection/Channel.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Connection/Constants.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Connection/Session/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Connection/Session.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Connection/Session/NilChannel.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Connection/Term.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Disconnect.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/SSH/Exception.html
@@ -227,6 +229,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Authentication/Constants
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Authentication/Constants/cdesc-Constants.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Authentication/KeyManager/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Authentication/KeyManager/add-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Authentication/KeyManager/add_key_data-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Authentication/KeyManager/agent-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Authentication/KeyManager/cdesc-KeyManager.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Authentication/KeyManager/clear%21-i.yaml
@@ -372,6 +375,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Constants/cde
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/%5b%5d%3d-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/%5b%5d-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/NilChannel/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/NilChannel/cdesc-NilChannel.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/NilChannel/method_missing-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/NilChannel/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/busy%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/cdesc-Session.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/close-i.yaml
@@ -392,6 +399,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/prepr
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/process-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/send_global_request-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/send_message-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/shutdown%21-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Session/stop_listening_to-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Term/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Connection/Term/cdesc-Term.yaml
@@ -412,6 +420,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/HostKeyMismatch/remember
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/KeyFactory/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/KeyFactory/cdesc-KeyFactory.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/KeyFactory/get-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/KeyFactory/load_data_private_key-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/KeyFactory/load_data_public_key-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/KeyFactory/load_private_key-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/KeyFactory/load_public_key-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/KnownHosts/
@@ -661,6 +671,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Transport/Session/rekey%
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Transport/Session/rekey_as_needed-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Transport/Session/send_message-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Transport/Session/service_request-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Transport/Session/shutdown%21-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Transport/Session/wait-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Transport/State/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Transport/State/cdesc-State.yaml
@@ -697,6 +708,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Version/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Version/to_i-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/Version/to_s-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/cdesc-SSH.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/configuration_for-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/SSH/start-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/cdesc-Net.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/OpenSSL/
