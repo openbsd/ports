@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2009/05/18 17:35:47 jakob Exp $
+--- Makefile.in.orig	Fri Apr  3 07:56:43 2009
++++ Makefile.in	Mon May 18 12:38:54 2009
+@@ -318,8 +318,6 @@ nsd.conf.sample:	$(srcdir)/nsd.conf.sample.in
+ install: all
+ 	$(INSTALL) -d $(DESTDIR)$(sbindir)
+ 	$(INSTALL) -d $(DESTDIR)$(configdir)
+-	$(INSTALL) -d $(DESTDIR)$(piddir)
+-	$(INSTALL) -d $(DESTDIR)$(dbdir)
+ 	$(INSTALL) -d $(DESTDIR)$(mandir)
+ 	$(INSTALL) -d $(DESTDIR)$(mandir)/man8
+ 	$(INSTALL) -d $(DESTDIR)$(mandir)/man5
+@@ -347,7 +345,7 @@ uninstall:
+ 	rm -f -- $(DESTDIR)$(mandir)/man8/nsd-checkconf.8 $(DESTDIR)$(mandir)/man8/nsd-patch.8
+ 	rm -f -- $(DESTDIR)$(pidfile) $(DESTDIR)$(dbfile)
+ 	@echo
+-	@echo "You still need to remove $(DESTDIR)$(configdir), $(DESTDIR)$(piddir), $(DESTDIR)$(dbdir) directory by hand."
++	@echo "You still need to remove $(DESTDIR)$(configdir) directory by hand."
+ 
+ test: 
+ 
