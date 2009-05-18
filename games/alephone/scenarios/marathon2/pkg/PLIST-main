@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/07/13 01:08:35 phessler Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/05/18 05:56:03 phessler Exp $
 bin/marathon2
 share/alephone/
 share/alephone/Marathon2/
@@ -6,6 +6,7 @@ share/alephone/Marathon2/Fonts.fntA
 share/alephone/Marathon2/Images.imgA
 @comment share/alephone/Marathon2/Landscapes/.DS_Store
 share/alephone/Marathon2/Map.sceA
+share/alephone/Marathon2/Marathon_2_Manual.pdf
 share/alephone/Marathon2/Music.ogg
 share/alephone/Marathon2/Physics Models/
 share/alephone/Marathon2/Physics Models/Standard.phyA

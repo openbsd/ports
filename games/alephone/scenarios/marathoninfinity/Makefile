@@ -1,10 +1,10 @@
-#	$OpenBSD: Makefile,v 1.2 2008/07/13 01:08:35 phessler Exp $
+#	$OpenBSD: Makefile,v 1.3 2009/05/18 05:56:03 phessler Exp $
 PKG_ARCH-main =		*
 PKG_ARCH-hires =	*
 
 COMMENT-main =		marathon infinity data files
 COMMENT-hires =		hires graphics and sounds
-V =			0.0.20080712
+V =			0.0.20090509
 DISTNAME =		marathoninfinity-${V}
 PKGNAME-main =		marathoninfinity-${V}
 PKGNAME-hires =		marathoninfinity-hires-${V}
@@ -14,6 +14,7 @@ DISTFILES =		MarathonInfinity.zip
 DISTFILES +=		LandscapeEnhancementPackv10.zip:0
 DISTFILES +=		TotalTextureEnhancementv61.zip:1
 DISTFILES +=		shots_fired.zip:2
+DISTFILES +=		Trilogy_Manual.pdf:4
 
 # http://trilogyrelease.bungie.org/faq.html
 PERMIT_PACKAGE_CDROM =	"not for sale"
@@ -22,8 +23,10 @@ PERMIT_DISTFILES_CDROM = "not for sale"
 PERMIT_DISTFILES_FTP =	YES
 
 MULTI_PACKAGES =	-main -hires
+RUN_DEPENDS-hires =	::games/alephone/scenarios/marathoninfinity
 
-
+EXTRACT_ONLY =		MarathonInfinity.zip LandscapeEnhancementPackv10.zip \
+			    TotalTextureEnhancementv61.zip shots_fired.zip
 INSTALL_LOC =		${PREFIX}/share/alephone
 INSTALL_MI =		${INSTALL_LOC}/Infinity
 
@@ -41,7 +44,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTALL_MI}/Textures/
 	@cd ${WRKDIR}/Texture\ Enhancement\ Package\ 6.1/Texture\ Folders/Textures/Marathon\ 2\ Textures/ && pax -rw . ${INSTALL_MI}/Textures/
 	${INSTALL_SCRIPT} ${FILESDIR}/marathoninfinity.sh ${PREFIX}/bin/marathoninfinity
-
+	${INSTALL_DATA} ${FULLDISTDIR}/Trilogy_Manual.pdf ${INSTALL_MI}
 
 NO_BUILD =	Yes
 NO_REGRESS =	Yes

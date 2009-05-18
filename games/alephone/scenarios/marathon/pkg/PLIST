@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/07/13 01:08:35 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/05/18 05:56:03 phessler Exp $
 bin/marathon
 share/alephone/
 share/alephone/Marathon/
@@ -8,6 +8,7 @@ share/alephone/Marathon/M1A1 Map.sceA
 share/alephone/Marathon/M1A1 Music.ogg
 share/alephone/Marathon/M1A1 Shapes.shpA
 share/alephone/Marathon/M1A1 Sounds.sndA
+share/alephone/Marathon/Marathon_Manual.pdf
 share/alephone/Marathon/Read Me M1A1.html
 share/alephone/Marathon/Scripts/
 share/alephone/Marathon/Scripts/M1A1.mml
