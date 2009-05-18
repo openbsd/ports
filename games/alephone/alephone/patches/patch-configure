@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2009/05/18 05:59:23 phessler Exp $
+--- configure.orig	Sat Dec 27 03:35:29 2008
++++ configure	Sat May  9 13:05:08 2009
+@@ -8184,7 +8184,7 @@ if test "${ac_cv_lib_vorbisfile_ov_open+set}" = set; t
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lvorbisfile  $LIBS"
++LIBS="`pkg-config vorbisfile --libs` $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -8241,7 +8241,7 @@ fi
+ echo "${ECHO_T}$ac_cv_lib_vorbisfile_ov_open" >&6; }
+ if test $ac_cv_lib_vorbisfile_ov_open = yes; then
+ 
+-				 LIBS="-lvorbisfile $LIBS"
++				 LIBS="`pkg-config vorbisfile --libs` $LIBS"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_VORBISFILE 1
