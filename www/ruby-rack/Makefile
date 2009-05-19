@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/24 15:20:54 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2009/05/19 21:54:33 bernd Exp $
 
 COMMENT=		modular Ruby webserver interface
 
-DISTNAME=		rack-0.9.1
+DISTNAME=		rack-1.0.0
 PKGNAME=		ruby-${DISTNAME}
 CATEGORIES=		www
 
