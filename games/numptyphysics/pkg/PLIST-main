@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2009/05/19 21:28:17 sthen Exp $
+@pkgpath games/numptyphysics
+@bin bin/numptyphysics
+share/applications/numptyphysics.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/26x26/
+share/icons/hicolor/26x26/apps/
+share/icons/hicolor/26x26/apps/numptyphysics.png
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/numptyphysics.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/numptyphysics.png
+share/numptyphysics/
+share/numptyphysics/L00_title.nph
+share/numptyphysics/L01_tutorial.nph
+share/numptyphysics/L05_plane_sailing.nph
+share/numptyphysics/L10_the_leap.nph
+share/numptyphysics/L15_trampoline.nph
+share/numptyphysics/L30_see_saw.nph
+share/numptyphysics/L35_pendulum.nph
+share/numptyphysics/L35_pusher.nph
+share/numptyphysics/L38_box.nph
+share/numptyphysics/L40_tree_of_life.nph
+share/numptyphysics/L50_nautilus.nph
+share/numptyphysics/edit.png
+share/numptyphysics/next.png
+share/numptyphysics/next_win32.png
+share/numptyphysics/numptyphysics.service
+share/numptyphysics/paper.jpg
+share/numptyphysics/pause.png
+share/numptyphysics/play.png
+share/numptyphysics/record.png
+share/numptyphysics/theend.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

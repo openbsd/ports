@@ -1,18 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/25 11:39:46 sthen Exp $
-@bin bin/numptyphysics
-share/applications/numptyphysics.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/26x26/
-share/icons/hicolor/26x26/apps/
-share/icons/hicolor/26x26/apps/numptyphysics.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
-share/icons/hicolor/64x64/apps/numptyphysics.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
-share/icons/hicolor/scalable/apps/numptyphysics.png
-share/numptyphysics/
+@comment $OpenBSD: PLIST-npcomplete,v 1.1 2009/05/19 21:28:17 sthen Exp $
+@conflict numptyphysics-0.3.r20090104p1
 share/numptyphysics/AlmostEasy.nph
 share/numptyphysics/Bell.nph
 share/numptyphysics/Bullseye.nph
@@ -23,41 +10,30 @@ share/numptyphysics/GetOutComeIn.nph
 share/numptyphysics/Hanged.nph
 share/numptyphysics/Innardio.nph
 share/numptyphysics/Inverse.nph
-share/numptyphysics/L00_title.nph
-share/numptyphysics/L01_tutorial.nph
 share/numptyphysics/L02_bridge Gaps tut.nph
 share/numptyphysics/L02_hammer-tut.nph
 share/numptyphysics/L03_kickit-tut.nph
-share/numptyphysics/L05_plane_sailing.nph
 share/numptyphysics/L06_Scribble tut.nph
 share/numptyphysics/L100j.nph
 share/numptyphysics/L101j.nph
 share/numptyphysics/L102j.nph
 share/numptyphysics/L103j.nph
 share/numptyphysics/L104j.nph
-share/numptyphysics/L10_the_leap.nph
 share/numptyphysics/L110ParadiseIsland.nph
 share/numptyphysics/L11_Bulldoze.nph
 share/numptyphysics/L11_easterbunny.nph
 share/numptyphysics/L12_Caves.nph
 share/numptyphysics/L12_Fix Car.nph
 share/numptyphysics/L13_See Saw.nph
-share/numptyphysics/L15_trampoline.nph
 share/numptyphysics/L16_forest.nph
 share/numptyphysics/L18_Elevator.nph
 share/numptyphysics/L25_Propeller.nph
 share/numptyphysics/L26_MouseTrap.nph
 share/numptyphysics/L26_Pull_Pins.nph
-share/numptyphysics/L30_see_saw.nph
 share/numptyphysics/L32_tarzan.nph
 share/numptyphysics/L34_dump truck.nph
-share/numptyphysics/L35_pendulum.nph
-share/numptyphysics/L35_pusher.nph
 share/numptyphysics/L38_Pac_Man.nph
-share/numptyphysics/L38_box.nph
 share/numptyphysics/L39_Square_Roll.nph
-share/numptyphysics/L40_tree_of_life.nph
-share/numptyphysics/L50_nautilus.nph
 share/numptyphysics/L52_Dominoes.nph
 share/numptyphysics/L54_Funnel.nph
 share/numptyphysics/L56_david.nph
@@ -93,7 +69,6 @@ share/numptyphysics/TowerPower.nph
 share/numptyphysics/balloons.nph
 share/numptyphysics/basketball.nph
 share/numptyphysics/breakdown.nph
-share/numptyphysics/edit.png
 share/numptyphysics/eyesInTheLake.nph
 share/numptyphysics/grassy_knoll.nph
 share/numptyphysics/hanging.nph
@@ -109,24 +84,12 @@ share/numptyphysics/jungle.nph
 share/numptyphysics/melvin1.nph
 share/numptyphysics/melvin2.nph
 share/numptyphysics/melvin3.nph
-share/numptyphysics/next.png
-share/numptyphysics/next_win32.png
-share/numptyphysics/numptyphysics.service
-share/numptyphysics/paper.jpg
 share/numptyphysics/papky1.nph
-share/numptyphysics/pause.png
 share/numptyphysics/pendulum.nph
 share/numptyphysics/pengu2.nph
-share/numptyphysics/play.png
 share/numptyphysics/pusher.nph
-share/numptyphysics/record.png
 share/numptyphysics/roller.nph
 share/numptyphysics/rotate.nph
 share/numptyphysics/ship.nph
 share/numptyphysics/surfs_up.nph
 share/numptyphysics/szymanowski1.nph
-share/numptyphysics/theend.png
-@exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
