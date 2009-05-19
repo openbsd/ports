@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:32:14 espie Exp $
-bin/epsffit
+@comment $OpenBSD: PLIST,v 1.6 2009/05/19 13:46:34 ajacoutot Exp $
+@bin bin/epsffit
 bin/extractres
 bin/fixdlsrps
 bin/fixfmps
@@ -13,12 +13,12 @@ bin/fixwpps
 bin/fixwwps
 bin/getafm
 bin/includeres
-bin/psbook
+@bin bin/psbook
 bin/psmerge
-bin/psnup
-bin/psresize
-bin/psselect
-bin/pstops
+@bin bin/psnup
+@bin bin/psresize
+@bin bin/psselect
+@bin bin/pstops
 bin/showchar
 @man man/man1/epsffit.1
 @man man/man1/extractres.1

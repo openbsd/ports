@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2007/10/08 14:01:12 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2009/05/19 13:46:34 ajacoutot Exp $
 
 COMMENT=	manipulating PostScript documents
 
 DISTNAME=	psutils-p17
-PKGNAME=	psutils-0.17p0
+PKGNAME=	psutils-0.17p1
 CATEGORIES=	print
 
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=support/psutils/}
@@ -21,7 +21,7 @@ WRKDIST=	${WRKDIR}/psutils
 FLAVORS=a3 a4 a5 b5 letter legal ledger tabloid statement executive \
 	folio quarto s10x14
 
-FLAVOR?=a4
+FLAVOR?=letter
 
 .for i in ${FLAVORS}
 .  if ${FLAVOR:L} == $i
