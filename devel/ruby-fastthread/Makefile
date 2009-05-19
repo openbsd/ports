@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/14 23:46:38 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/05/19 22:46:37 bernd Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	optimized replacement for Ruby thread.rb primitives
 
-DISTNAME=	fastthread-1.0.1
-PKGNAME=	ruby-${DISTNAME}p0
+DISTNAME=	fastthread-1.0.7
+PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	devel
 
 # Ruby's license
