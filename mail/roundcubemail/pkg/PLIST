@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/03/11 00:12:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/05/19 13:27:43 sthen Exp $
 roundcubemail/
 roundcubemail/.htaccess
 roundcubemail/CHANGELOG
@@ -94,11 +94,15 @@ roundcubemail/program/include/rcube_vcard.php
 roundcubemail/program/include/session.inc
 roundcubemail/program/js/
 roundcubemail/program/js/app.js
+@comment roundcubemail/program/js/app.js.src
 roundcubemail/program/js/common.js
+@comment roundcubemail/program/js/common.js.src
 roundcubemail/program/js/editor.js
 roundcubemail/program/js/editor_images.js
 roundcubemail/program/js/googiespell.js
+@comment roundcubemail/program/js/googiespell.js.src
 roundcubemail/program/js/list.js
+@comment roundcubemail/program/js/list.js.src
 roundcubemail/program/js/tiny_mce/
 roundcubemail/program/js/tiny_mce/langs/
 roundcubemail/program/js/tiny_mce/langs/ar.js
