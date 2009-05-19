@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/19 18:00:45 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/05/19 22:02:20 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -30,6 +30,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MIME/Type.src/M000028.
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MIME/Type.src/M000029.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MIME/Type.src/M000030.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MIME/Type.src/M000031.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MIME/Type.src/M000032.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MIME/Type.src/M000033.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MIME/Type.src/M000034.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MIME/Types.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MIME/Types.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MIME/Types.src/M000001.html
@@ -43,9 +46,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MIME/Types.src/M000008
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/MIME/Types.src/M000009.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/ChangeLog.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/Install.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/README.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/History_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/Install_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/Licence_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/README_txt.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/mime/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/mime/types_rb.html
@@ -59,12 +63,14 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/InvalidContentType/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/InvalidContentType/cdesc-InvalidContentType.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/%3c%3d%3e-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/ascii%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/binary%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/cdesc-Type.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/complete%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/default_encoding-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/docs%3d-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/eql%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/from_array-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/from_hash-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/from_mime_type-c.yaml
@@ -72,6 +78,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/like%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/obsolete%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/platform%3f-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/priority_compare-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/registered%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/signature%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Type/simplified-c.yaml
@@ -96,18 +103,19 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/Types/type_for-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/MIME/cdesc-MIME.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ChangeLog
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Install
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/LICENCE
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/History.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Install.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Licence.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Manifest.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README.txt
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Rakefile
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/mime/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/mime/types.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/pre-setup.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/mime/types.rb.data
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/mime-types.gemspec
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/setup.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/tests/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/tests/tc_mime_type.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/tests/tc_mime_types.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/tests/testall.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_mime_type.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_mime_types.rb
 lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec
