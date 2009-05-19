@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/31 10:09:11 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2009/05/19 22:31:45 bernd Exp $
 
 COMMENT =		high-level IO library for Ruby
 
-DISTNAME =		highline-1.5.0
+DISTNAME =		highline-1.5.1
 PKGNAME =		ruby-${DISTNAME}
 CATEGORIES =		devel
 
