@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/10 10:37:35 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2009/05/19 21:53:48 bernd Exp $
 
 COMMENT =	DSL for quickly creating web-applications in Ruby
 
-DISTNAME =	sinatra-0.9.1.1
+DISTNAME =	sinatra-0.9.2
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	www
 
@@ -27,7 +27,8 @@ PKG_ARCH =		*
 
 REGRESS_DEPENDS =	::devel/ruby-rake \
 			::textproc/ruby-haml \
-			::textproc/ruby-builder
+			::textproc/ruby-builder \
+			::devel/ruby-rack-test
 
 do-regress:
 	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test

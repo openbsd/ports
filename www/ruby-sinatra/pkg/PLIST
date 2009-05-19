@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/04 19:53:19 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/05/19 21:53:48 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -12,6 +12,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sinatra/Helpers.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sinatra/Request.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sinatra/Response.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sinatra/ServerError.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sinatra/ShowExceptions.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sinatra/Templates.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sinatra/Test.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Sinatra/TestHarness.html
@@ -24,6 +25,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sinatra/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sinatra/base_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sinatra/compat_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sinatra/main_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sinatra/showexceptions_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sinatra/test/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sinatra/test/bacon_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sinatra/test/rspec_rb.html
@@ -45,28 +47,23 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Application/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Application/cdesc-Application.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/before-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/call%21-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/call-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/call-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/caller_files-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/caller_locations-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/cdesc-Base.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/condition-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/configure-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/delete-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/development%3f-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/disable-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/dupe_routes-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/enable-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/error-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/extensions-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/forward-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/get-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/halt-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/head-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/helpers-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/layout-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/media_type-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/new-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/not_found-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/options-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/pass-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/post-c.yaml
@@ -74,15 +71,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/production%3f-c.yam
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/prototype-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/put-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/register-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/reload%21-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/reloading%3f-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/reset%21-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/run%21-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/set-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/template-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/test%3f-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/use-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Base/use_in_file_templates%21-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Compat/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Compat/cdesc-Compat.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Default/
@@ -96,6 +88,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Default/env%3d-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Default/env-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Default/header-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Default/options-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Default/render-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Default/send_data-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Default/set_option-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Default/set_options-c.yaml
@@ -130,12 +123,14 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Request/user_agent-i.yam
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Response/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Response/cdesc-Response.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Response/finish-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Response/new-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Response/write-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/ServerError/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/ServerError/cdesc-ServerError.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/ServerError/code-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/ServerError/new-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/ShowExceptions/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/ShowExceptions/cdesc-ShowExceptions.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/ShowExceptions/frame_class-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/ShowExceptions/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Templates/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Templates/builder-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sinatra/Templates/cdesc-Templates.yaml
@@ -230,6 +225,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sinatra/images/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sinatra/images/404.png
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sinatra/images/500.png
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sinatra/main.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sinatra/showexceptions.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sinatra/test/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sinatra/test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sinatra/test/bacon.rb
@@ -240,6 +236,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/sinatra.gemspec
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/base_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/builder_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/contest.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/data/reload_app_file.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/erb_test.rb
@@ -251,10 +248,11 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/helpers_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/mapped_error_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/middleware_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/options_test.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/reload_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/render_backtrace_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/request_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/response_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/result_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/route_added_hook_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/routing_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/sass_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/server_test.rb
@@ -263,6 +261,10 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/static_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/templates_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/views/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/views/error.builder
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/views/error.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/views/error.haml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/views/error.sass
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/views/hello.builder
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/views/hello.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/views/hello.haml
