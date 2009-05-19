@@ -1,0 +1,31 @@
+$OpenBSD: patch-Rakefile,v 1.1 2009/05/19 22:41:24 bernd Exp $
+
+Remove cruft so the regress tests will run.
+
+--- Rakefile.orig	Thu Jan  1 01:00:00 1970
++++ Rakefile	Wed May 20 00:38:42 2009
+@@ -35,16 +35,7 @@ END
+ # ----- Packaging -----
+ 
+ require 'rake/gempackagetask'
+-load    'haml.gemspec'
+ 
+-Rake::GemPackageTask.new(HAML_GEMSPEC) do |pkg|
+-  if Rake.application.top_level_tasks.include?('release')
+-    pkg.need_tar_gz  = true
+-    pkg.need_tar_bz2 = true
+-    pkg.need_zip     = true
+-  end
+-end
+-
+ task :revision_file do
+   require 'lib/haml'
+ 
+@@ -56,7 +47,6 @@ task :revision_file do
+     File.open('REVISION', 'w') { |f| f.puts "(unknown)" }
+   end
+ end
+-Rake::Task[:package].prerequisites.insert(0, :revision_file)
+ 
+ # We also need to get rid of this file after packaging.
+ at_exit { File.delete('REVISION') rescue nil }

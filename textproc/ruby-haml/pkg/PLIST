@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/01/24 15:19:17 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/05/19 22:41:24 bernd Exp $
 bin/css2sass
 bin/haml
 bin/html2haml
@@ -25,6 +25,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/Precompiler.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/SyntaxError.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/Template.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/Util.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/Version.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Rack.html
@@ -67,6 +68,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/haml/template/patch_
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/haml/template/plugin_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/haml/template_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/haml/util_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/haml/version_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/haml_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sass/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/sass/constant/
@@ -115,6 +117,9 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/css2sass
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/html2haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/sass
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/extra/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/extra/haml-mode.el
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/extra/sass-mode.el
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/init.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/haml/
@@ -135,6 +140,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/haml/template.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/haml/template/patch.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/haml/template/plugin.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/haml/util.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/haml/version.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sass/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sass.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/sass/constant/
@@ -184,6 +190,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/results/nuke_outer_white
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/results/original_engine.xhtml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/results/partial_layout.xhtml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/results/partials.xhtml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/results/render_layout.xhtml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/results/silent_script.xhtml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/results/standard.xhtml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/results/tag_parsing.xhtml
@@ -200,6 +207,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/_av_partial_1.
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/_av_partial_1_ugly.haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/_av_partial_2.haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/_av_partial_2_ugly.haml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/_layout.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/_layout_for_partial.haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/_partial.haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/_text_area.haml
@@ -219,6 +227,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/original_engin
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/partial_layout.haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/partialize.haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/partials.haml
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/render_layout.haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/silent_script.haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/standard.haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/standard_ugly.haml
@@ -227,6 +236,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/very_basic.ham
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/haml/templates/whitespace_handling.haml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/linked_rails.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/sass/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/sass/css2sass_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/sass/engine_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/sass/plugin_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/sass/results/
