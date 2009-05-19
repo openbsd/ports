@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/28 23:27:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/05/19 10:32:49 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	PHP extension for parsing and working with rfc822/MIME mail
 
 DISTNAME =	mailparse-2.1.5
-PKGNAME =	pecl-${DISTNAME}p0
+PKGNAME =	pecl-${DISTNAME}p1
 CATEGORIES =	www mail
 
 HOMEPAGE =	http://pecl.php.net/package/mailparse
@@ -54,5 +54,6 @@ post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
 	@echo "extension=mailparse.so" > \
 	    ${PREFIX}/conf/php5.sample/mailparse.ini
+	@chown ${BINOWN}:${BINGRP} ${PREFIX}/lib/php/modules/mailparse.so
 
 .include <bsd.port.mk>
