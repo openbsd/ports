@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.114 2009/05/07 12:37:10 sthen Exp $
+$OpenBSD: user.list,v 1.115 2009/05/19 15:20:08 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -135,3 +135,4 @@ id  user		group		port options
 624 _noip		_noip		net/no-ip
 625 _varnish		_varnish	www/varnish
 626 _pound		_pound		www/pound
+627 _zarafa		_zarafa		mail/zarafa/zarafa
