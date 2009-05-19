@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/05/19 11:07:06 sthen Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
-DISTNAME=		awesome-2.3
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		awesome-2.3.6
 
 CATEGORIES=		x11
 

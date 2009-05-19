@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu May 15 20:59:29 2008
-+++ Makefile.in	Thu May 15 20:59:42 2008
-@@ -200,7 +200,7 @@
+--- Makefile.in.orig	Sat Apr 18 15:56:52 2009
++++ Makefile.in	Tue May 12 13:15:40 2009
+@@ -200,7 +200,7 @@ STRIP = @STRIP@
  VERSION = @VERSION@
  WHOAMI = @WHOAMI@
  XMKMF = @XMKMF@

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/05/16 20:06:12 wcmaier Exp $
-bin/awesome
-bin/awesome-client
-bin/awesome-menu
-bin/awesome-message
+@comment $OpenBSD: PLIST,v 1.6 2009/05/19 11:07:06 sthen Exp $
+@bin bin/awesome
+@bin bin/awesome-client
+@bin bin/awesome-menu
+@bin bin/awesome-message
 @man man/man1/awesome-client.1
 @man man/man1/awesome-menu.1
 @man man/man1/awesome-message.1
