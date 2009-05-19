@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/25 13:52:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/05/19 13:56:11 benoit Exp $
 
 COMMENT=	Python interface to the gnuplot plotting program
 
-DISTNAME=	gnuplot-py-1.7
-PKGNAME=	py-${DISTNAME:S/py-//}p2
-CATEGORIES=	math graphics
+MODPY_EGG_VERSION=	1.8
+DISTNAME=		gnuplot-py-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME:S/py-//}
+CATEGORIES=		math graphics
 
-HOMEPAGE=	http://gnuplot-py.sourceforge.net/
+HOMEPAGE=		http://gnuplot-py.sourceforge.net/
 
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
+MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +21,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gnuplot-py/}
 
 MODULES=	lang/python
 
-BUILD_DEPENDS+=	:py-Numeric-*:math/py-Numeric
+BUILD_DEPENDS+=	:py-Numeric-*:math/py-Numeric \
+		::math/py-numpy
 RUN_DEPENDS+=	:py-Numeric-*:math/py-Numeric \
 		:gnuplot-*:math/gnuplot
 

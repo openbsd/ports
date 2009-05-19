@@ -1,12 +1,11 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2004/02/05 23:37:27 xsa Exp $
---- setup.py.orig	2003-10-17 16:52:28.000000000 +0200
-+++ setup.py	2004-02-04 15:14:33.000000000 +0100
-@@ -31,7 +31,7 @@ setup (
-     author_email='mhagger@alum.mit.edu',
-     url='http://gnuplot-py.sourceforge.net',
-     license='LGPL',
--    licence='LGPL', # Spelling error in distutils
-+    #licence='LGPL', # Spelling error in distutils
+--- setup.py.orig	Fri May  2 02:53:07 2008
++++ setup.py	Tue Mar 10 09:42:29 2009
+@@ -33,7 +33,7 @@
+     # versions of distutils.  The error has been fixed as of
+     # python2.3, but we leave this line here for compatibility with
+     # older python versions.
+-    licence='LGPL',
++    #licence='LGPL',
  
      # Description of the package in the distribution
      package_dir={'Gnuplot' : '.'},
