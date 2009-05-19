@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.19 2009/05/08 20:00:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2009/05/19 11:15:28 ajacoutot Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/var/empty:/sbin/nologin
-%%SHARED%%
 @bin bin/cancel
 bin/cups-config
 @bin bin/cupstestdsc
@@ -29,6 +28,8 @@ include/cups/ppd.h
 include/cups/raster.h
 include/cups/sidechannel.h
 include/cups/transcode.h
+@lib lib/libcups.so.${LIBcups_VERSION}
+@lib lib/libcupsimage.so.${LIBcupsimage_VERSION}
 libexec/cups/
 libexec/cups/backend/
 libexec/cups/backend/http
