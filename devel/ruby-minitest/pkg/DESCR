@@ -1,0 +1,4 @@
+minitest/unit is a small and fast replacement for ruby's huge and slow
+test/unit. This is meant to be clean and easy to use both as a regular test
+writer and for language implementors that need a minimal set of methods to
+bootstrap a working unit test suite.
