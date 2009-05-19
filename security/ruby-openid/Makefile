@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2008/10/27 11:34:00 pirofti Exp $
+# $OpenBSD: Makefile,v 1.8 2009/05/19 21:07:26 pirofti Exp $
 
 COMMENT=	robust library for verifying and serving OpenID identities
 
-DISTNAME=	ruby-openid-2.1.2
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	ruby-openid-2.1.6
+PKGNAME=	${DISTNAME}
 CATEGORIES=	security
 
 MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
@@ -23,20 +23,6 @@ CONFIGURE_STYLE=ruby gem
 PKG_ARCH=	*
 
 do-regress:
-	@cd ${WRKBUILD}/test && ${RUBY} -I"../lib" \
-		-e 'ARGV.each { |f| load f unless f =~ /^-/  }' \
-		"testutil.rb" "discoverdata.rb" "test_accept.rb" \
-		"test_association.rb" "test_associationmanager.rb" \
-		"test_ax.rb" "test_checkid_request.rb" "test_consumer.rb" \
-		"test_cryptutil.rb" "test_dh.rb" "test_discover.rb" \
-		"test_discovery_manager.rb" "test_extras.rb" \
-		"test_fetchers.rb" "test_filters.rb" "test_idres.rb" \
-		"test_kvform.rb" "test_kvpost.rb" "test_linkparse.rb" \
-		"test_message.rb" "test_nonce.rb" "test_openid_yadis.rb" \
-		"test_pape.rb" "test_parsehtml.rb" "test_responses.rb" \
-		"test_server.rb" "test_sreg.rb" "test_stores.rb" \
-		"test_trustroot.rb" "test_urinorm.rb" "test_util.rb" \
-		"test_xrds.rb" "test_xri.rb" "test_xrires.rb" \
-		"test_yadis_discovery.rb" "util.rb"
+	@cd ${WRKBUILD} && ${RUBY} -rubygems admin/runtests.rb
 
 .include <bsd.port.mk>
