@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/05/16 08:32:03 bernd Exp $
-bin/xchm
+@comment $OpenBSD: PLIST,v 1.5 2009/05/19 22:03:13 bernd Exp $
+@bin bin/xchm
 share/applications/xchm.desktop
 share/locale/be/LC_MESSAGES/xchm.mo
 share/locale/bg/LC_MESSAGES/xchm.mo
