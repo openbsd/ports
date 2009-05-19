@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/07 15:37:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/05/19 14:49:37 jim Exp $
 
 COMMENT=	window manager improved - key driven window manager
 
 DISTNAME=	wmi-10
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	x11
 
-HOMEPAGE=	http://wmii.suckless.org/
+HOMEPAGE=	http://wmi.suckless.org/
 
 MAINTAINER=	Julian Frede <julian.frede@gmail.com>
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ICE SM X11 Xau Xdmcp Xft Xrender c expat fontconfig
 WANTLIB += freetype m stdc++ z
 
-MASTER_SITES=	${HOMEPAGE}/download/
+MASTER_SITES=	http://code.suckless.org/dl/misc/
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu
