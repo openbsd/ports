@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.699 2009/05/19 21:01:10 pirofti Exp $
+# $OpenBSD: Makefile,v 1.700 2009/05/19 21:51:50 bernd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -744,6 +744,7 @@
      SUBDIR += ruby-needle
      SUBDIR += ruby-open4
      SUBDIR += ruby-parsetree
+     SUBDIR += ruby-rack-test
      SUBDIR += ruby-rake
      SUBDIR += ruby-rcov
      SUBDIR += ruby-rparsec
