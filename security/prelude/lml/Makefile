@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 23:30:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2009/05/19 11:03:31 sthen Exp $
 
 COMMENT=	Prelude log analyzer
 
 DISTNAME=	prelude-lml-0.9.10
+PKGNAME=	${DISTNAME}p0
 
-WANTLIB=	c pthread z gcrypt gpg-error gnutls
+WANTLIB=	c gcrypt gnutls gpg-error pthread tasn1 z
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
