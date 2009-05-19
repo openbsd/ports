@@ -1,4 +1,8 @@
-$OpenBSD: patch-src_enfuse_cc,v 1.1.1.1 2009/04/19 11:14:37 sthen Exp $
+$OpenBSD: patch-src_enfuse_cc,v 1.2 2009/05/19 08:41:38 sthen Exp $
+
+we don't have fenv.h/fesetround(), but we can set rounding behaviour
+this way instead. probably a noop anyway; FP_RN is the default.
+
 --- src/enfuse.cc.orig	Thu Mar 13 20:34:35 2008
 +++ src/enfuse.cc	Fri Jul 25 00:49:41 2008
 @@ -61,8 +61,14 @@ extern "C" {
