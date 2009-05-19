@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 21:32:05 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2009/05/19 10:35:19 sthen Exp $
 
 CATEGORIES=	biology perl5
 
@@ -36,6 +36,7 @@ RUN_DEPENDS=	:p5-libwww-*:www/p5-libwww \
 		:p5-Graph-*:devel/p5-Graph \
 		:p5-Class-AutoClass-*:devel/p5-Class-AutoClass
 
+REGRESS_DEPENDS=${RUN_DEPENDS}
 
 # stuff not yet integrated:
 #  SVG::Graph, Generate optional SVG output,
