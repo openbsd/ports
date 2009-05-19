@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/04/03 17:30:40 ajacoutot Exp $
-@newgroup _zarafa:700
-@newuser _zarafa:700:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
+@comment $OpenBSD: PLIST-main,v 1.4 2009/05/19 15:21:47 ajacoutot Exp $
+@newgroup _zarafa:627
+@newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
 bin/zarafa-autorespond
 @bin bin/zarafa-dagent
