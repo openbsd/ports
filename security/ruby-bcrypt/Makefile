@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/30 02:08:38 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/05/19 22:44:21 bernd Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Ruby binding for the bcrypt() password hashing algorithm
 
-VERSION =	2.0.3
+VERSION =	2.0.5
 DISTNAME =	bcrypt-ruby-${VERSION}
 PKGNAME =	ruby-bcrypt-${VERSION}
 CATEGORIES =	security
