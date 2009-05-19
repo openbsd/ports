@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/01/31 18:22:35 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/05/19 21:03:44 pirofti Exp $
 bin/redcloth
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -63,30 +63,23 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ERB/cdesc-ERB.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/Base/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/Base/after_transform-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/Base/before_transform-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/Base/cdesc-Base.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/Base/ignore-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/Base/inline_redcloth_version-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/Base/method_missing-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/Base/notextile-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/Base/pba-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/Base/redcloth_version-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/acronym-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/after_transform-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/amp-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/apos-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/arrow-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/bc_close-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/bc_open-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/before_transform-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/bq_close-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/bq_open-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/br-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/caps-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/cdesc-HTML.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/clean_html-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/copyright-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/del-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/dim-i.yaml
@@ -96,9 +89,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/ellipsi
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/emdash-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/endash-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/entity-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/escape-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/escape_attribute-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/escape_pre-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/fn-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/footno-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/HTML/gt-i.yaml
@@ -142,8 +132,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/LATEX/ellips
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/LATEX/emdash-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/LATEX/endash-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/LATEX/entity-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/LATEX/escape-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/LATEX/escape_pre-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/LATEX/fn-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/LATEX/footno-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/RedCloth/Formatters/LATEX/image-i.yaml

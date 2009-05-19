@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/31 18:22:35 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2009/05/19 21:03:44 pirofti Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	module for using Textile in Ruby
 
-DISTNAME =	RedCloth-4.1.1
+DISTNAME =	RedCloth-4.1.9
 PKGNAME =	ruby-${DISTNAME:L}
 CATEGORIES =	textproc
 
