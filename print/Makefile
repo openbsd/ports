@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.79 2009/03/17 18:38:22 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.80 2009/05/19 13:48:34 ajacoutot Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -54,7 +54,8 @@
     SUBDIR += ps2eps
     SUBDIR += pscal
     SUBDIR += psdim
-    SUBDIR += psutils
+    SUBDIR += psutils,a4
+    SUBDIR += psutils,letter
     SUBDIR += py-cups
     SUBDIR += py-reportlab
     SUBDIR += scribus
