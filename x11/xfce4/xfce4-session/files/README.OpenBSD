@@ -39,9 +39,9 @@ to the /etc/sudoers file using visudo:
 $your_username ALL=NOPASSWD: ${TRUEPREFIX}/libexec/xfsm-shutdown-helper
 
 - thunar file manager tips
-thunar can display resizable svg icons if you install the librsvg
-package (prefer using the no_gnome flavor). A nice svg icon theme is
-provided by the tango-icon-theme package.
+Thunar can display resizable svg icons if you install the librsvg
+package. A nice svg icon theme is provided by the tango-icon-theme
+package.   
 You can have a look at hotplugd(8) if you want some kind of auto-mount
 feature in thunar, provided natively by HAL on Linux and FreeBSD.
 Also, see http://thunar.xfce.org/pwiki/documentation/faq.
