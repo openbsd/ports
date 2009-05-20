@@ -1,30 +1,30 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2009/05/20 14:01:13 benoit Exp $
 
-COMMENT=	analyze C source files and print a call graph
+COMMENT =	analyze C source files and print a call graph
 
-DISTNAME=	cflow-1.1
-CATEGORIES=	devel
+DISTNAME =	cflow-1.2
+CATEGORIES =	devel
 
-HOMEPAGE=	http://www.gnu.org/software/cflow/
+HOMEPAGE =	http://www.gnu.org/software/cflow/
 
-MAINTAINER=	Louis Bertrand <louis@bertrandtech.ca>
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
-# GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+# GPLv3
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES=	${MASTER_SITE_GNU:=cflow/}
+WANTLIB =		c
 
-WANTLIB=	c
+MASTER_SITES =		${MASTER_SITE_GNU:=cflow/}
 
-MODULES=	devel/gettext
+MODULES =		devel/gettext
 
-SEPARATE_BUILD=	simple
-CONFIGURE_STYLE=gnu
+MAKE_FLAGS =		LIBINTL="-L${LOCALBASE}/lib -liconv -lintl"
 
-MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -liconv -lintl"
+SEPARATE_BUILD =	simple
+CONFIGURE_STYLE =	gnu
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
