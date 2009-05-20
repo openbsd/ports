@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/05 22:05:00 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2009/05/20 06:40:40 pea Exp $
 
 COMMENT =	create machine readable date/time with natural parsing logic
 
 MODULES =	cpan
-DISTNAME =	DateTime-Format-Natural-0.74
+DISTNAME =	DateTime-Format-Natural-0.76
 CATEGORIES =	devel
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
