@@ -1,31 +1,30 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 23:54:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2009/05/20 13:22:47 benoit Exp $
 
 COMMENT=	binary patch tools
-DISTNAME=	bsdiff-4.2
+DISTNAME=	bsdiff-4.3
 CATEGORIES=	misc devel
-MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.daemonology.net/bsdiff/
 
-MAINTAINER=	Michael van der Westhuizen <michael@skanky.homeunix.net>
+MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
-# Conditional BSD
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
 
-MAKE_FLAGS=	BZIP2=${LOCALBASE}/bin/bzip2 \
-		CC='${CC}'
+WANTLIB=	c
 
+MASTER_SITES=	${HOMEPAGE}
+
+MAKE_FLAGS=	CC='${CC}' \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib -lbz2"
+
+LIB_DEPENDS=	bz2::archivers/bzip2
+   
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=	:bzip2-*:archivers/bzip2
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bsdiff
-	${INSTALL_DATA} ${WRKBUILD}/LICENSE ${PREFIX}/share/doc/bsdiff
-
 .include <bsd.port.mk>
+
