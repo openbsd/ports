@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/23 14:02:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/05/20 06:43:15 pea Exp $
 
 COMMENT=		DateTime submodule for TZ
 
 MODULES=		cpan
-DISTNAME=		DateTime-TimeZone-0.85
+DISTNAME=		DateTime-TimeZone-0.90
 CATEGORIES=		devel
 
 # Perl
@@ -16,6 +16,7 @@ RUN_DEPENDS=		::devel/p5-Params-Validate \
 			::devel/p5-Class-Singleton
 
 CONFIGURE_STYLE=	modbuild
-REGRESS_DEPENDS=	::devel/p5-DateTime
+REGRESS_DEPENDS=	::devel/p5-DateTime \
+			::devel/p5-Test-Output
 
 .include <bsd.port.mk>	
