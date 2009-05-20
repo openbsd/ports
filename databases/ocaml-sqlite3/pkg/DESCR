@@ -1,4 +1,4 @@
 OCaml bindings to the SQLite 3 database access library.  The current
 version provides low level access to the SQL queries and data
-transfer.  Aggregate/user-defined SQL function support is not
-implemented.
+transfer.  Support for aggregate/user-defined SQL function support
+via OCaml callbacks is also present.

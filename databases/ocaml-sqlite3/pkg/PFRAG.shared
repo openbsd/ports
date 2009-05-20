@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2009/05/20 01:40:56 avsm Exp $
+lib/ocaml/site-lib/sqlite3/dllsqlite3_stubs.so

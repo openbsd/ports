@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2006/06/01 01:20:25 avsm Exp $
-lib/ocaml/site-lib/sqlite3/libsqlite3.a
+lib/ocaml/site-lib/sqlite3/libsqlite3_stubs.a
 lib/ocaml/site-lib/sqlite3/sqlite3.a
 lib/ocaml/site-lib/sqlite3/sqlite3.cmx
 lib/ocaml/site-lib/sqlite3/sqlite3.cmxa

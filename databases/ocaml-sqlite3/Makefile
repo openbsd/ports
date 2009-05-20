@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.12 2009/04/03 21:30:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2009/05/20 01:40:56 avsm Exp $
 
 COMMENT=	Objective Caml bindings for SQLite3
 CATEGORIES=	databases
 
-V=		0.2.0
-DISTNAME=	ocaml-sqlite3-${V}
-PKGNAME=	${DISTNAME}p7
+V=		1.5.0
+DISTNAME=	release-${V}
+PKGNAME=	ocaml-sqlite3-${V}
 EXTRACT_SUFX=	.tar.bz2
-MASTER_SITES=	http://metamatix.org/~ocaml/
-WRKDIST=	${WRKDIR}/ocaml-sqlite3
+MASTER_SITES=	http://hg.ocaml.info/release/ocaml-sqlite3/archive/
+WRKDIST=	${WRKDIR}/ocaml-sqlite3-release-${V}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
-HOMEPAGE=	http://metamatix.org/~ocaml/ocaml_sqlite3.html
+HOMEPAGE=	http://www.ocaml.info/home/ocaml_sources.html
 
 # BSD
 PERMIT_PACKAGE_FTP=	Yes
@@ -21,26 +21,26 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/ocaml
 NO_REGRESS= 	Yes
-CONFIGURE_STYLE=autoconf no-autoheader
+CONFIGURE_STYLE=gnu
 AUTOCONF_VERSION=2.59
-ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}
+ALL_TARGET=	docs bytecode ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}
 USE_GMAKE=	Yes
+NO_REGRESS=	Yes
 
-CONFIGURE_ENV=	CFLAGG="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib -L."
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib -L."
 CONFIGURE_ARGS=	--with-sqlite3=${LOCALBASE}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::sysutils/findlib \
 		::databases/sqlite3
 
-SQOCAMLDIR=	${PREFIX}/lib/ocaml/site-lib/sqlite3
+FAKE_ENV=	OCAMLFIND_DESTDIR=${PREFIX}/lib/ocaml/site-lib/sqlite3
 
-BYTECODE_FILES=	META sqlite3.cma sqlite3.cmi sqlite3.mli
-NATIVE_FILES=	libsqlite3.a sqlite3.a sqlite3.cmx sqlite3.cmxa
-INST_FILES=	${BYTECODE_FILES} ${MODOCAML_NATIVE:S,Yes,${NATIVE_FILES},:S,No,,}
+pre-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib/sqlite3
 
-do-install:
-	${INSTALL_DATA_DIR} ${SQOCAMLDIR}
-	cd ${WRKBUILD} && ${INSTALL_DATA} ${INST_FILES} ${SQOCAMLDIR}
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-sqlite3
+	for i in ${WRKBUILD}/doc/*; do ${INSTALL_DATA} $$i ${PREFIX}/share/doc/ocaml-sqlite3/; done
 
 .include <bsd.port.mk>
