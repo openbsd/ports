@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile_in,v 1.5 2009/05/20 02:02:30 avsm Exp $
+--- Makefile.in.orig	Sat May 16 17:29:15 2009
++++ Makefile.in	Tue May 19 19:35:29 2009
+@@ -40,11 +40,10 @@ distclean: clean
+ 
+ # install rebuilds sqlite3top to point to the findlib-managed dll and not the
+ # one in .
+-install: sqlite3.cma sqlite3.cmxa sqlite3top
++install:
+ 	[ -f *.so ] && SO_FILES=*.so; \
+-	ocamlfind install sqlite3 META sqlite3.cmi sqlite3.mli sqlite3.cma *.cmxa *.a *.cmx $$SO_FILES
+-	ocamlfind ocamlmktop -o sqlite3top -package "sqlite3" sqlite3.cma
+-	$(INSTALL) sqlite3top $(bindir)/sqlite3top
++	[ -f *.cmxa ] && CMXA=*.cmxa && CA=*.a && CMX=*.cmx; \
++	ocamlfind install -ldconf ignore sqlite3 META sqlite3.cmi sqlite3.mli sqlite3.cma $$CMXA $$CA $$CMX $$SO_FILES
+ 
+ remove: uninstall
+ uninstall:
