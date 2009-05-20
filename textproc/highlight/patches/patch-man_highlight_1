@@ -1,8 +1,8 @@
-$OpenBSD: patch-man_highlight_1,v 1.1.1.1 2007/07/05 09:58:32 jasper Exp $
---- man/highlight.1.orig	Tue Jul  3 23:44:06 2007
-+++ man/highlight.1	Wed Jul  4 00:35:42 2007
-@@ -154,15 +154,15 @@ RTF output will ignore background colour information.
- The wrapping options will cause faulty highlighting of long single line comments and directives.
+$OpenBSD: patch-man_highlight_1,v 1.2 2009/05/20 11:35:30 benoit Exp $
+--- man/highlight.1.orig	Sat Mar  7 05:38:01 2009
++++ man/highlight.1	Wed May 20 10:12:35 2009
+@@ -216,15 +216,15 @@ The converter is not able to recognize mixed code like
+ The wrapping options might cause faulty highlighting of multi line comments.
  .SH FILES
  The parsing information of the programming languages is stored in
 -.I /usr/share/highlight/langDefs/.

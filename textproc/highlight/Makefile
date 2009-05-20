@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/07/05 09:58:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/05/20 11:35:27 benoit Exp $
 
 COMMENT=		convert source code to markup formats
 
-DISTNAME=		highlight-2.6.1
+DISTNAME=		highlight-2.9
 CATEGORIES=		textproc converters
 
 HOMEPAGE=		http://www.andre-simon.de/
 
-# GPL
+MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
+
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

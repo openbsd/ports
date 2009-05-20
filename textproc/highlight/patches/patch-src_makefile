@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_makefile,v 1.1.1.1 2007/07/05 09:58:32 jasper Exp $
---- src/makefile.orig	Tue Jul  3 21:51:55 2007
-+++ src/makefile	Tue Jul  3 21:52:08 2007
-@@ -13,9 +13,6 @@
- # Add -DUSE_FN_MATCH to enable better wildcard support with the --batch-recursive option.
- # See "man 3 fnmatch" for details.
+--- src/makefile.orig	Thu Apr 23 05:32:21 2009
++++ src/makefile	Wed May 20 10:12:35 2009
+@@ -15,10 +15,6 @@
+ 
+ # See src/gui-qt/highlight.pro for the Qt GUI compilation options
  
 -CXX=c++
 -
--CFLAGS := -O2
- #CFLAGS := -Wall -DHL_DATA_DIR=\"${HL_DATA_DIR}\" -ggdb
- 
- LDFLAGS = -s
+-CFLAGS:=-O2 ${CFLAGS}
+-
+ # Source paths
+ CORE_DIR=./core/
+ CLI_DIR=./cli/

@@ -1,20 +1,19 @@
-$OpenBSD: patch-makefile,v 1.1.1.1 2007/07/05 09:58:32 jasper Exp $
---- makefile.orig	Tue Jul  3 23:14:38 2007
-+++ makefile	Tue Jul  3 23:15:02 2007
-@@ -7,7 +7,6 @@
- DESTDIR = 
+--- makefile.orig	Thu Apr 23 05:29:22 2009
++++ makefile	Wed May 20 10:12:35 2009
+@@ -8,7 +8,6 @@
+ DESTDIR =
  
  # Root directory for final installation
 -PREFIX = /usr
  
  # Location of the highlight data files:
  data_dir = ${PREFIX}/share/highlight/
-@@ -25,7 +24,7 @@ doc_dir = ${PREFIX}/share/doc/highlight/
- examples_dir = ${PREFIX}/share/doc/highlight/examples/
+@@ -26,7 +25,7 @@ doc_dir = ${PREFIX}/share/doc/highlight/
+ examples_dir = ${doc_dir}/examples/
  
  # Location of the highlight config files:
--conf_dir = ${PREFIX}/etc/highlight/
+-conf_dir = /etc/highlight/
 +conf_dir = !!SYSCONFDIR!!/highlight/
+ #conf_dir = ${PREFIX}/etc/highlight/
  
- # Commands:
- INSTALL_DATA=install -m644
+ # Location of additional gui files

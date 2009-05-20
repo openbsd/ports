@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/05 09:58:32 jasper Exp $
-bin/highlight
+@comment $OpenBSD: PLIST,v 1.2 2009/05/20 11:35:32 benoit Exp $
+@bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
 share/doc/highlight/README
@@ -15,6 +15,7 @@ share/highlight/helpmsg/de.help
 share/highlight/helpmsg/en.help
 share/highlight/helpmsg/es.help
 share/highlight/helpmsg/fr.help
+share/highlight/helpmsg/ja.help
 share/highlight/indentSchemes/
 share/highlight/indentSchemes/acid.indent
 share/highlight/indentSchemes/ansi.indent
@@ -31,6 +32,7 @@ share/highlight/langDefs/agda.lang
 share/highlight/langDefs/ampl.lang
 share/highlight/langDefs/amtrix.lang
 share/highlight/langDefs/applescript.lang
+share/highlight/langDefs/arc.lang
 share/highlight/langDefs/arm.lang
 share/highlight/langDefs/as.lang
 share/highlight/langDefs/asm.lang
@@ -48,11 +50,13 @@ share/highlight/langDefs/c.lang
 share/highlight/langDefs/cb.lang
 share/highlight/langDefs/cfc.lang
 share/highlight/langDefs/clipper.lang
+share/highlight/langDefs/clojure.lang
 share/highlight/langDefs/clp.lang
 share/highlight/langDefs/cob.lang
 share/highlight/langDefs/cs.lang
 share/highlight/langDefs/css.lang
 share/highlight/langDefs/d.lang
+share/highlight/langDefs/diff.lang
 share/highlight/langDefs/dot.lang
 share/highlight/langDefs/dylan.lang
 share/highlight/langDefs/e.lang
@@ -77,11 +81,14 @@ share/highlight/langDefs/js.lang
 share/highlight/langDefs/jsp.lang
 share/highlight/langDefs/lbn.lang
 share/highlight/langDefs/ldif.lang
+share/highlight/langDefs/lgt.lang
+share/highlight/langDefs/lhs.lang
 share/highlight/langDefs/lisp.lang
 share/highlight/langDefs/lotos.lang
 share/highlight/langDefs/ls.lang
 share/highlight/langDefs/lsl.lang
 share/highlight/langDefs/lua.lang
+share/highlight/langDefs/ly.lang
 share/highlight/langDefs/m.lang
 share/highlight/langDefs/make.lang
 share/highlight/langDefs/mel.lang
@@ -101,6 +108,7 @@ share/highlight/langDefs/nut.lang
 share/highlight/langDefs/oberon.lang
 share/highlight/langDefs/objc.lang
 share/highlight/langDefs/octave.lang
+share/highlight/langDefs/oorexx.lang
 share/highlight/langDefs/os.lang
 share/highlight/langDefs/pas.lang
 share/highlight/langDefs/php.lang
@@ -116,6 +124,7 @@ share/highlight/langDefs/psl.lang
 share/highlight/langDefs/py.lang
 share/highlight/langDefs/pyx.lang
 share/highlight/langDefs/q.lang
+share/highlight/langDefs/qmake.lang
 share/highlight/langDefs/qu.lang
 share/highlight/langDefs/r.lang
 share/highlight/langDefs/rb.lang
@@ -128,8 +137,9 @@ share/highlight/langDefs/scala.lang
 share/highlight/langDefs/scilab.lang
 share/highlight/langDefs/sh.lang
 share/highlight/langDefs/sma.lang
+share/highlight/langDefs/smalltalk.lang
 share/highlight/langDefs/sml.lang
-share/highlight/langDefs/snobol.lang
+share/highlight/langDefs/sno.lang
 share/highlight/langDefs/spec.lang
 share/highlight/langDefs/spn.lang
 share/highlight/langDefs/sql.lang
@@ -140,6 +150,7 @@ share/highlight/langDefs/test_re.lang
 share/highlight/langDefs/tex.lang
 share/highlight/langDefs/ttcn3.lang
 share/highlight/langDefs/txt.lang
+share/highlight/langDefs/vala.lang
 share/highlight/langDefs/vb.lang
 share/highlight/langDefs/verilog.lang
 share/highlight/langDefs/vhd.lang
@@ -155,7 +166,6 @@ share/highlight/themes/contrast.style
 share/highlight/themes/darkblue.style
 share/highlight/themes/darkness.style
 share/highlight/themes/desert.style
-share/highlight/themes/dull.style
 share/highlight/themes/easter.style
 share/highlight/themes/emacs.style
 share/highlight/themes/golden.style
@@ -165,10 +175,12 @@ share/highlight/themes/ide-codewarrior.style
 share/highlight/themes/ide-devcpp.style
 share/highlight/themes/ide-eclipse.style
 share/highlight/themes/ide-kdev.style
-share/highlight/themes/ide-msvcpp.style
+share/highlight/themes/ide-msvs2008.style
+share/highlight/themes/ide-xcode.style
 share/highlight/themes/kwrite.style
 share/highlight/themes/lucretia.style
 share/highlight/themes/matlab.style
+share/highlight/themes/moe.style
 share/highlight/themes/navy.style
 share/highlight/themes/nedit.style
 share/highlight/themes/neon.style
