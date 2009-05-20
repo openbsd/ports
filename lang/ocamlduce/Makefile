@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/01/04 17:48:36 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2009/05/20 03:24:50 avsm Exp $
 
 COMMENT=	XML extension types for Objective Caml
 CATEGORIES=	lang textproc
 
+BROKEN=		"needs update to match OCaml 3.11"
 V=		3.09.2pl1
 DISTNAME=	ocamlduce-${V}
 PKGNAME=	${DISTNAME}p0
