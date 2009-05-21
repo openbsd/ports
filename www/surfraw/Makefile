@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2008/01/28 21:55:41 bernd Exp $
+# $OpenBSD: Makefile,v 1.20 2009/05/21 14:36:57 benoit Exp $
 
 COMMENT=	command line interface to popular WWW search engines
 
-DISTNAME=	surfraw-2.2.0
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	surfraw-2.2.5
 CATEGORIES=	www
+
 HOMEPAGE=	http://surfraw.alioth.debian.org/
+
+MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
 # Public Domain 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,6 +25,8 @@ pre-configure:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/elvi.1sr ${PREFIX}/man/man1/elvi.1
+	${INSTALL_MAN} ${WRKSRC}/surfraw.1 ${PREFIX}/man/man1/surfraw.1
+	${INSTALL_MAN} ${WRKSRC}/surfraw.1 ${PREFIX}/man/man1/sr.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/surfraw
 	${INSTALL_DATA} ${WRKSRC}/surfraw.conf ${WRKSRC}/surfraw.bookmarks \
 	    ${PREFIX}/share/examples/surfraw

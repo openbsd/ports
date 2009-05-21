@@ -1,14 +1,15 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2008/01/17 20:33:43 sthen Exp $
---- Makefile.in.orig	Fri Sep 14 10:51:42 2007
-+++ Makefile.in	Thu Nov 22 02:54:22 2007
-@@ -747,13 +747,13 @@ install-data-hook: links
- 	do \
- 		ln -sf $$target  $(DESTDIR)/$$link ;\
+--- Makefile.in.orig	Sun Sep 14 14:37:57 2008
++++ Makefile.in	Sun Feb 22 09:06:40 2009
+@@ -759,7 +759,7 @@
  	done < links
--@OPENSEARCH_TRUE@	ln -sf elvi.1sr.gz $(DESTDIR)/@mandir@/man1/opensearch.1sr.gz
-+@OPENSEARCH_TRUE@	ln -sf elvi.1 $(DESTDIR)/@mandir@/man1/opensearch.1
+ @OPENSEARCH_TRUE@	ln -sf elvi.1sr.gz $(DESTDIR)/@mandir@/man1/opensearch.1sr.gz
+ @INSTALLSR_TRUE@	ln -sf surfraw $(DESTDIR)/@bindir@/sr
+-@INSTALLSR_TRUE@	ln -sf surfraw.1.gz $(DESTDIR)/@mandir@/man1/sr.1.gz
++# @INSTALLSR_TRUE@	ln -sf surfraw.1.gz $(DESTDIR)/@mandir@/man1/sr.1.gz
  
- submit-lsm: surfraw.lsm
+ uninstall-local: links
+ 	while read target link ;\
+@@ -774,7 +774,7 @@
  	mail -s add LSM@qqx.org < $<
  
  test: all
