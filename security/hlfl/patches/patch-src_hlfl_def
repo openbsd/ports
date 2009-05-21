@@ -1,0 +1,21 @@
+--- src/hlfl.def.orig	2002-10-27 20:43:28.000000000 +0900
++++ src/hlfl.def
+@@ -4,15 +4,15 @@
+ DEF("<->",		ACCEPT_TWO_WAYS)
+ DEF("<=>>",		ACCEPT_TWO_WAYS_ESTABLISHED)
+ DEF("<<=>",		ACCEPT_TWO_WAYS_ESTABLISHED_REVERSE)
+-DEF("X->",		DENY_OUT)
+-DEF("<-X",		DENY_IN)
+ DEF("<-X!",		REJECT_IN)
+ DEF("X!->",		REJECT_OUT)
+ DEF("!X->",		REJECT_OUT)
+ DEF("X!",		REJECT_ALL)
+-DEF("X",		DENY_ALL)
++DEF("X->",             DENY_OUT)
++DEF("<-X",             DENY_IN)
+ DEF("->",		ACCEPT_ONE_WAY)
+ DEF("<-",		ACCEPT_ONE_WAY_REVERSE)
++DEF("X",               DENY_ALL)
+ DEF("accept",		ACCEPT)
+ DEF("deny",		DENY)
+ DEF("reject",		REJECT)

@@ -1,0 +1,38 @@
+--- src/linux_netfilter.cc	Fri Mar 13 18:35:42 2009
++++ src/linux_netfilter.c	Fri Mar 13 18:36:13 2009
+@@ -15,7 +15,7 @@
+  * along with this program; if not, write to the Free Software
+  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  *
+- * Reference : http://netfilter.kernelnotes.org/iptables-HOWTO-7.html
++ * Reference : http://www.netfilter.org/documentation/HOWTO/packet-filtering-HOWTO-7.html
+  */
+ 
+ #include "includes.h"
+@@ -193,11 +193,11 @@
+ 		/* Add extra rules specific to tcp protocol, when protocol is all */
+ 		if (!strcmp(proto, "all")) {
+ 			fprintf(fout,
+-				"$iptables --append ALL --source %s --destination %s --protocol tcp %s %s --jump %sREJECT --reject-with tcp-reset %s\n",
+-				src, dst, sports_as_src, dports_as_dst, logit, via_out);
++				"$iptables --append ALL --source %s --destination %s --protocol tcp %s %s --jump %sREJECT %s %s\n",
++				src, dst, sports_as_src, dports_as_dst, logit, rejectit, via_out);
+ 			fprintf(fout,
+-				"$iptables --append ALL --source %s  --destination %s --protocol tcp %s %s --jump %sREJECT --reject-with tcp-reset %s\n",
+-				dst, src, dports_as_src, sports_as_dst, logit, via_in);
++				"$iptables --append ALL --source %s  --destination %s --protocol tcp %s %s --jump %sREJECT %s %s\n",
++				dst, src, dports_as_src, sports_as_dst, logit, rejectit, via_in);
+ 		}
+ 		fprintf(fout,
+ 			"$iptables --append ALL --source %s --destination %s --protocol %s %s %s --jump %sREJECT %s %s\n",
+@@ -222,8 +222,8 @@
+ 		/* Add an extra rule specific to tcp protocol, when protocol is all */
+ 		if (!strcmp(proto, "all")) {
+ 			fprintf(fout,
+-				"$iptables --append ALL --source %s --destination %s --protocol tcp %s %s --jump %sREJECT --reject-with tcp-reset %s\n",
+-				src, dst, sports_as_src, dports_as_dst, logit, via_out);
++				"$iptables --append ALL --source %s --destination %s --protocol tcp %s %s --jump %sREJECT %s %s\n",
++				src, dst, sports_as_src, dports_as_dst, logit, rejectit, via_out);
+ 		}
+ 		fprintf(fout,
+ 			"$iptables --append ALL --source %s --destination %s --protocol %s %s %s --jump %sREJECT %s %s\n",

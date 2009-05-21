@@ -1,0 +1,11 @@
+--- configure.orig	Fri Mar 13 17:11:49 2009
++++ configure	Fri Mar 13 17:12:05 2009
+@@ -3626,7 +3626,7 @@
+ done
+ 
+ 
+-CFLAGS="$CFLAGS -DFILES='\"${datadir}/hlfl\"' -Wall"
++CFLAGS="$CFLAGS -DFILES='\"${sysconfdir}\"' -Wall"
+ 
+ 
+ # Needed for Solaris

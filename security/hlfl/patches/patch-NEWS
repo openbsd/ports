@@ -1,0 +1,13 @@
+--- NEWS.orig	2002-02-20 23:14:44.000000000 +0900
++++ NEWS
+@@ -1,3 +1,10 @@
++Oct 6, 2003 -- Version 0.60.1
++- ipchains now ACCEPT packets by default
++- malloc() are now checked
++- cisco accepts comments, netmask
++- spaces and tabs are better managed
++- as always, bugfixes here and there
++
+ Feb 20, 2002 -- Version 0.60.0
+ - dev system use autoconf 2.52 / automake 1.5
+ - verbose operators

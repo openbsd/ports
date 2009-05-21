@@ -1,0 +1,11 @@
+--- doc/hlfl.1.in~	Sun Jun  8 03:05:13 2003
++++ doc/hlfl.1.in	Fri Mar 13 17:08:51 2009
+@@ -192,7 +192,7 @@
+ The second
+ .I include
+ statement will include the file
+-.I hflf.fl
++.I hflf.hlfl
+ which is in the current working directory.
+ 
+ It is also possible to include 'systems' file, using brackets :

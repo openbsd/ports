@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:36:00 espie Exp $
-bin/hlfl
+@comment $OpenBSD: PLIST,v 1.4 2009/05/21 10:17:04 benoit Exp $
+@bin bin/hlfl
 @man man/man1/hlfl.1
 share/examples/hlfl/
+share/examples/hlfl/CodingStyle
+share/examples/hlfl/RoadMap
+share/examples/hlfl/TODO
 share/examples/hlfl/sample_1.hlfl
 share/examples/hlfl/sample_2.hlfl
+share/examples/hlfl/sample_3.hlfl
 share/examples/hlfl/services.hlfl
-@sample ${SYSCONFDIR}/services.hlfl
 share/examples/hlfl/syntax.txt
 share/examples/hlfl/test.hlfl
