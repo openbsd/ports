@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/23 06:58:55 espie Exp $
-bin/aide
-lib/locale/
-lib/locale/LC_MESSAGES/
+@comment $OpenBSD: PLIST,v 1.5 2009/05/21 21:53:29 benoit Exp $
+@bin bin/aide
 @man man/man1/aide.1
 @man man/man5/aide.conf.5
 share/examples/aide/

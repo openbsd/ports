@@ -1,16 +1,14 @@
-$OpenBSD: patch-doc_aide_conf_in,v 1.2 2003/12/04 15:29:31 lebel Exp $
---- doc/aide.conf.in.orig	Sun Feb 24 08:42:43 2002
-+++ doc/aide.conf.in	Mon Aug  5 09:01:09 2002
-@@ -19,8 +19,6 @@
+--- doc/aide.conf.in.ori	Tue Feb 13 23:20:16 2007
++++ doc/aide.conf.in	Tue Feb 13 23:50:41 2007
+@@ -19,7 +19,6 @@
  # corresponding line.
  #
  
 -@@define TOPDIR @top_srcdir@
--
+ 
  @@ifndef TOPDIR 
  @@define TOPDIR /
- @@endif
-@@ -43,12 +41,11 @@
+@@ -43,12 +42,12 @@
  
  # The location of the database to be read.
  #database=file:aide.db
@@ -19,35 +17,47 @@ $OpenBSD: patch-doc_aide_conf_in,v 1.2 2003/12/04 15:29:31 lebel Exp $
  
  # The location of the database to be written.
  #database_out=sql:host:port:database:login_name:passwd:table
--#database_out=file:aide.db.new
+ #database_out=file:aide.db.new
 -database_out=file:aide.db.new
 +database_out=file:/var/db/aide.db.new
  
  # Whether to gzip the output to database
  # gzip_dbout=no
-@@ -64,8 +61,6 @@ verbose=20
- #NOT IMPLEMENTED report_url=syslog:LOG_AUTH
- report_url=stdout
+@@ -100,7 +99,7 @@
+ #xattr:		extended file attributes
  
--# @@{TOPDIR} is replaced with @top_srcdir@ when
--# read by aide. 
- #p:     permissions
- #i:	inode
- #n:	number of links
-@@ -100,22 +95,37 @@ All=R+a+sha1+rmd160
+ # Rule definition
+-All=R+a+sha1+rmd160+sha256+sha512+whirlpool
++All=R+a+sha1+rmd160+sha256+sha512
+ 
+ # report_attributes is a special rule definition
+ # the attributes listed in it are alway displayed for changed files
+@@ -115,22 +114,34 @@
  # Attributes that can be used to verify that aide in intact
  # by people that have downloaded it from the web.
  # Let's be paranoid
--Norm=s+n+b+md5+sha1+rmd160
--
--# The commented rules are just examples the rest are used by 
--# make check
--
--#Selection regexp rule
+-Norm=l+s+n+b+selinux+xattrs+md5+sha1+rmd160+sha256+sha512+whirlpool
++#Norm=l+s+n+b+selinux+xattrs+md5+sha1+rmd160+sha256+sha512+whirlpool
++=/$		R
++/bsd$		L+s+sha256
++/etc$		L+s+sha256
+ 
+ # The commented rules are just examples the rest are used by 
+ # make check
+ 
++# my password database should be static at time of system build. yours
++# may not be, if not, uncomment the lines below.
++#/etc/passwd		L
++#/etc/master.passwd	L
++#/etc/pwd.db		L
++#/etc/spwd.db		L
++
+ #Selection regexp rule
 -@@{TOPDIR}/.* Norm
--#Equals selection only the directory doc is checked and not it's children
--#=@@{TOPDIR}/doc L
--#Negative selection no rule is necessary but ignored if there
++#@@{TOPDIR}/.* Norm
+ #Equals selection only the directory doc is checked and not it's children
+ #=@@{TOPDIR}/doc L
+ #Negative selection no rule is necessary but ignored if there
 -!@@{TOPDIR}/.*~
 -!@@{TOPDIR}/src/.*\.o
 -!@@{TOPDIR}/src/(aide|core)$ L
@@ -55,39 +65,14 @@ $OpenBSD: patch-doc_aide_conf_in,v 1.2 2003/12/04 15:29:31 lebel Exp $
 -!@@{TOPDIR}/.*CVS
 -!@@{TOPDIR}/.*aide\.db.*
 -!@@{TOPDIR}/.*\.cvsignore.*
--# @@{TOPDIR}/doc/.* All
--
-+#Norm=s+n+b+md5+sha1+rmd160+tiger
-+  
-+=/$			R
-+/bsd$			L+s+sha1
-+/etc$			L+s+sha1
-+
-+# my passwd database should be static at time of system build.  yours may
-+# not be, if not, uncomment the lines below.
-+ 
-+#/etc/passwd           	L
-+#/etc/master.passwd    	L
-+#/etc/pwd.db           	L
-+#/etc/spwd.db          	L
-+
++#!@@{TOPDIR}/.*~
++#!@@{TOPDIR}/src/.*\.o
++#!@@{TOPDIR}/src/(aide|core)$ L
++#!@@{TOPDIR}/.*RCS
++#!@@{TOPDIR}/.*CVS
++#!@@{TOPDIR}/.*aide\.db.*
++#!@@{TOPDIR}/.*\.cvsignore.*
+ # @@{TOPDIR}/doc/.* All
 +# /home
-+=/home$			R
-+
-+# /usr
-+# /usr/bin
-+/usr/bin                R
-+/usr/include            R
-+/usr/lib                R
-+/usr/libdata            R
-+/usr/libexec            R
-+/usr/local/bin          R
-+/usr/local/etc          L+s+sha1
-+/usr/local/lib          R
-+/usr/local/libexec      R
-+/usr/local/sbin         R
-+/usr/local/share        R
-+/usr/sbin               R
-+/usr/share              R
-+  
-+=/tmp$			L
++=/home$		R
+ 

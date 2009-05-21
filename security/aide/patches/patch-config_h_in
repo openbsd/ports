@@ -1,8 +1,8 @@
-$OpenBSD: patch-config_h_in,v 1.1 2003/12/04 15:29:31 lebel Exp $
+$OpenBSD: patch-config_h_in,v 1.2 2009/05/21 21:53:27 benoit Exp $
 --- config.h.in.orig	2003-11-28 10:14:07.000000000 -0500
 +++ config.h.in	2003-12-04 10:18:39.000000000 -0500
 @@ -1,5 +1,13 @@
- /* config.h.in.  Generated automatically from configure.in by autoheader 2.13.  */
+ /* config.h.in.  Generated from configure.in by autoheader.  */
  
 +#ifndef _OPENBSD_BLKCNT_
 +#define _OPENBSD_BLKCNT_
@@ -12,6 +12,6 @@ $OpenBSD: patch-config_h_in,v 1.1 2003/12/04 15:29:31 lebel Exp $
 +#endif
 +#endif
 +
- /* Define if you have the ANSI C header files.  */
- #undef STDC_HEADERS
+ /* Compile-time options displayed in -v output */
+ #undef AIDECOMPILEOPTIONS
  

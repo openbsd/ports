@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_util_c,v 1.1 2003/12/04 15:29:31 lebel Exp $
---- src/util.c.orig	Wed May 29 04:04:27 2002
-+++ src/util.c	Mon Apr 14 10:30:09 2003
-@@ -356,7 +356,6 @@ void sig_handler(int signal)
+$OpenBSD: patch-src_util_c,v 1.2 2009/05/21 21:53:27 benoit Exp $
+--- src/util.c.orig	Thu Feb  9 11:45:43 2006
++++ src/util.c	Wed May 10 20:41:59 2006
+@@ -357,7 +357,6 @@ void sig_handler(int signal)
    return;
  }
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_util_c,v 1.1 2003/12/04 15:29:31 lebel Exp $
  /* Like strstr but only do search for maximum of n chars.
     haystack does not have to be NULL terminated
     needle has to be NULL terminated. NULL in needle is not used in compare.
-@@ -396,7 +395,7 @@ char* strnstr(char* haystack,char* needl
+@@ -479,7 +478,7 @@ int syslog_facility_lookup(char *s)
  /* We need these dummy stubs to fool the linker into believing that
     we do not need them at link time */
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_util_c,v 1.1 2003/12/04 15:29:31 lebel Exp $
  {
    return NULL;
  }
-@@ -415,6 +414,7 @@ const char* dlerror(void)
+@@ -498,6 +497,7 @@ const char* dlerror(void)
  {
    return NULL;
  }

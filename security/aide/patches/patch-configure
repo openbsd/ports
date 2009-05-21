@@ -1,12 +1,11 @@
-$OpenBSD: patch-configure,v 1.2 2003/12/04 15:29:31 lebel Exp $
---- configure.orig	Tue Jun  4 04:31:27 2002
-+++ configure	Mon Aug  5 08:56:10 2002
-@@ -96,7 +96,7 @@ libexecdir='${exec_prefix}/libexec'
- datadir='${prefix}/share'
+--- configure.ori	Tue Feb 13 23:15:36 2007
++++ configure	Tue Feb 13 23:17:02 2007
+@@ -755,7 +755,7 @@
+ datadir='${datarootdir}'
  sysconfdir='${prefix}/etc'
  sharedstatedir='${prefix}/com'
 -localstatedir='${prefix}/var'
 +localstatedir='/var'
- libdir='${exec_prefix}/lib'
  includedir='${prefix}/include'
  oldincludedir='/usr/include'
+ docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'

@@ -1,17 +1,16 @@
-$OpenBSD: patch-doc_aide_1,v 1.2 2003/12/04 15:29:31 lebel Exp $
---- doc/aide.1.orig	Sun Mar 17 15:06:07 2002
-+++ doc/aide.1	Mon Aug  5 08:56:10 2002
-@@ -48,11 +48,11 @@ output. See aide.conf (5) section URLS f
- Prints out the standard help message.
+--- doc/aide.1.orig	Fri Dec 15 13:56:35 2006
++++ doc/aide.1	Thu May 21 22:56:42 2009
+@@ -73,11 +73,11 @@
+ SIGTERM. Use SIGKILL to terminate.
  .PP
  .SH FILES
--.B <prefix>/etc/aide.conf
+-.B ${prefix}/etc/aide.conf
 +.B /etc/aide.conf
  Default aide configuration file.
--.B <prefix>/etc/aide.db
+-.B ${prefix}/etc/aide.db
 +.B /var/db/aide.db
  Default aide database.
--.B <prefix>/etc/aide.db.new
+-.B ${prefix}/etc/aide.db.new
 +.B /var/db/aide.db.new
  Default aide output database.
  .SH SEE ALSO
