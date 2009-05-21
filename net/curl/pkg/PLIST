@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2008/10/15 19:36:43 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.22 2009/05/21 19:58:02 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -52,6 +52,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/curl_multi_remove_handle.3
 @man man/man3/curl_multi_setopt.3
 @man man/man3/curl_multi_socket.3
+@man man/man3/curl_multi_socket_action.3
 @man man/man3/curl_multi_strerror.3
 @man man/man3/curl_multi_timeout.3
 @man man/man3/curl_share_cleanup.3
