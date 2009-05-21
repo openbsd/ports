@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/03/26 10:34:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2009/05/21 10:21:23 ajacoutot Exp $
 
      SUBDIR += bruce
      SUBDIR += calcurse
@@ -13,6 +13,7 @@
      SUBDIR += ledger
      SUBDIR += osmo
      SUBDIR += qhacc
+     SUBDIR += rednotebook
      SUBDIR += siag
      SUBDIR += taskjuggler
      SUBDIR += tasks
