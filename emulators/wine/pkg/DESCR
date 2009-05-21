@@ -5,8 +5,3 @@ MS-Windows application package, but it is definitely on its way ...
 To use Wine, you need to enable the machdep.userldt sysctl, either via
 /etc/sysctl.conf, or by entering (as root):
     sysctl -w machdep.userldt=1
-
-Wine relies on the configuration file /etc/wine.conf to
-contain valid assignments of Unix directories to DOS drive letters,
-and for certain other options (see "man wine" for details).
-You will most probably have to edit it, after the install...

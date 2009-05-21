@@ -1,38 +1,86 @@
-# $OpenBSD: Makefile,v 1.32 2007/09/16 00:45:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.33 2009/05/21 14:11:51 pirofti Exp $
 
-COMMENT=	MS-Windows 3.1/95/NT emulator for Unix (Alpha release)
+ONLY_FOR_ARCHS =	i386 amd64
 
-DATE= 		990225
-DISTNAME= 	Wine-${DATE}
-PKGNAME=	wine-${DATE}p0
-CATEGORIES=	emulators x11
+COMMENT =		Wine enables you to run windows binaries.
 
-ONLY_FOR_ARCHS= i386
+DISTNAME =		wine-1.1.21
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	ICE SM X11 Xext Xpm Xxf86dga Xxf86vm c m ncurses ossaudio
+SHARED_LIBS =		wine 0.0
 
-MASTER_SITES=	ftp://ftp.chg.ru/pub/gnu/ALPHA/wine/development/
+CATEGORIES =		x11 emulators
 
-USE_X11=	yes
-CONFIGURE_STYLE=	gnu dest
+HOMEPAGE =		http://winehq.org/
 
-# XXX partial citrus: no real wctype functions yet
-#CONFIGURE_ENV+=ac_cv_header_wctype_h=no
+MAINTAINER =		Ariane van der Steldt <ariane@stack.nl>
 
-WRKDIST=	${WRKDIR}/${DISTNAME:L}
+# GPL
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-NO_REGRESS=	Yes
+WANTLIB =		c m z pthread ssl GL GLU crypto ossaudio ncurses \
+			ICE SM X11 Xext Xpm Xxf86dga Xxf86vm gphoto2 \
+			gphoto2_port jpeg lcms png sane xslt iconv drm
+
+MASTER_SITES =		http://ibiblio.org/pub/linux/system/emulators/wine/ \
+			http://prdownloads.sourceforge.net/wine/
+EXTRACT_SUFX =		.tar.bz2
+
+BUILD_DEPENDS =		:bison-*:devel/bison
+LIB_DEPENDS =		xslt.>=3::textproc/libxslt \
+			jpeg.>=62::graphics/jpeg \
+			png.>=4::graphics/png \
+			gphoto2.>=2,gphoto2_port.>=5::graphics/libgphoto2 \
+			sane.>=1::graphics/sane-backends \
+			lcms.>=1::graphics/lcms \
+			iconv.>=1::converters/libiconv
+RUN_DEPENDS =		::devel/desktop-file-utils
+
+USE_X11 =		Yes
+USE_GMAKE =		Yes
+USE_LIBTOOL =		Yes
+CONFIGURE_STYLE =	gnu autoconf
+
+CPPFLAGS =		-I${LOCALBASE}/include \
+			-I${LOCALBASE}/include/libpng \
+			-I${X11BASE}/include
+
+LDFLAGS =		-L${LOCALBASE}/lib \
+			-L${X11BASE}/lib \
+			-lz -lm -lcrypto -liconv -pthread
+
+X_EXTRA_LIBS =		-L${X11BASE}/lib \
+			-lXau -lXdmcp -ldrm -lGL -lGLU -lXxf86vm -lXdamage
+
+CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS}" \
+			LDFLAGS="${LDFLAGS}" \
+			X_EXTRA_LIBS="${X_EXTRA_LIBS}"
+
+CONFIGURE_ARGS +=	--without-hal --without-ldap --without-capi
+
+AUTOCONF_VERSION =	2.62
+
+FLAVORS =		cups esd
+FLAVOR ?=
+.if ${FLAVOR:L:Mcups}
+CONFIGURE_ARGS +=	--with-cups
+.else
+CONFIGURE_ARGS +=	--without-cups
+.endif
+.if ${FLAVOR:L:Mesd}
+CONFIGURE_ARGS +=	--with-esd
+LIB_DEPENDS =		esd.>=2::sound/esound
+.else
+CONFIGURE_ARGS +=	--without-esd
+.endif
+
+.if ${MACHINE_ARCH} == "amd64"
+CONFIGURE_ARGS	+=	--enable-win64
+.endif
 
 post-configure:
-	cd ${WRKSRC} && make depend
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wine
-	${INSTALL_DATA} ${WRKSRC}/wine.ini \
-		${PREFIX}/share/examples/wine/wine.conf
+	cd ${WRKSRC} && ${MAKE} depend
 
 .include <bsd.port.mk>
