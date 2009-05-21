@@ -1,0 +1,28 @@
+--- configure.orig	Sun May 17 01:55:42 2009
++++ configure	Thu May 21 12:49:25 2009
+@@ -21369,13 +21369,13 @@
+ fi
+ 
+ if test x"$png_prefix" != "x"; then
+-    PNG_LDFLAGS="-L$png_prefix/lib -lpng12"
+-    PNG_CFLAGS="-I$png_prefix/include"
++    PNG_LDFLAGS="-L$png_prefix/lib -lpng"
++    PNG_CFLAGS="-I$png_prefix/include/libpng"
+ 
+     LDFLAGS="$LDFLAGS -lm $PNG_LDFLAGS $ZLIB_FLAGS"
+     CPPFLAGS="$CPPFLAGS $PNG_CFLAGS"
+ else
+-    PNG_LDFLAGS="-lpng12"
++    PNG_LDFLAGS="-lpng"
+     PNG_CFLAGS=""
+ fi
+ 
+@@ -21536,7 +21536,7 @@
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpng12 $ZLIB_LDFLAGS $LIBS"
++LIBS="-lpng $ZLIB_LDFLAGS $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/13 17:58:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2009/05/21 14:28:48 benoit Exp $
 
 COMMENT=	medical image conversion
 
-DISTNAME=	xmedcon-0.10.4
+DISTNAME=	xmedcon-0.10.5
 SHARED_LIBS=	mdc	2.1	# .2.1
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://xmedcon.sourceforge.net
 
-MAINTAINER=	Benoit Lecocq <blq@arcane-labs.net>
+MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE_CDROM=   Yes
@@ -28,7 +28,7 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/xmedcon
+FAKE_FLAGS=	sysconfdir=${TRUEPREFIX}/share/examples/xmedcon
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
@@ -36,10 +36,10 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --enable-static \
-		 --with-png-prefix=${LOCALBASE} \
+		 --with-png-prefix=${TRUEPREFIX} \
 		 --sysconfdir="${SYSCONFDIR}"
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
                          
 NO_REGRESS=	Yes
 
