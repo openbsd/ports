@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/04/14 10:55:01 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/05/21 13:59:32 giovanni Exp $
 @group daemon
 piwik/
 piwik/LICENSE
@@ -53,7 +53,6 @@ piwik/core/DataTable/Filter/ColumnCallbackAddColumnPercentage.php
 piwik/core/DataTable/Filter/ColumnCallbackAddMetadata.php
 piwik/core/DataTable/Filter/ColumnCallbackDeleteRow.php
 piwik/core/DataTable/Filter/ColumnCallbackReplace.php
-piwik/core/DataTable/Filter/ExactMatch.php
 piwik/core/DataTable/Filter/ExcludeLowPopulation.php
 piwik/core/DataTable/Filter/Limit.php
 piwik/core/DataTable/Filter/MetadataCallbackAddMetadata.php
@@ -147,6 +146,8 @@ piwik/core/Updates/0.2.27.php
 piwik/core/Updates/0.2.32.php
 piwik/core/Updates/0.2.33.php
 piwik/core/Updates/0.2.34.php
+piwik/core/Updates/0.2.35.php
+piwik/core/Updates/0.2.37.php
 piwik/core/Url.php
 piwik/core/Version.php
 piwik/core/View.php
@@ -175,7 +176,6 @@ piwik/core/Visualization/Chart/Evolution.php
 piwik/core/Visualization/Chart/Pie.php
 piwik/core/Visualization/Chart/VerticalBar.php
 piwik/core/Visualization/Cloud.php
-piwik/core/Visualization/OpenFlashChart.php
 piwik/core/Visualization/Sparkline.php
 piwik/core/iView.php
 piwik/core/testMinimumPhpVersion.php
@@ -573,6 +573,7 @@ piwik/libs/Zend/Validate/Regex.php
 piwik/libs/Zend/Validate/StringLength.php
 piwik/libs/Zend/Version.php
 piwik/libs/javascript/
+piwik/libs/javascript/json2.js
 piwik/libs/javascript/sprintf.js
 piwik/libs/jquery/
 piwik/libs/jquery/fdd2div-modified.js
@@ -580,6 +581,7 @@ piwik/libs/jquery/jquery-calendar.css
 piwik/libs/jquery/jquery-calendar.js
 piwik/libs/jquery/jquery.blockUI.js
 piwik/libs/jquery/jquery.dimensions.js
+piwik/libs/jquery/jquery.history.js
 piwik/libs/jquery/jquery.js
 piwik/libs/jquery/jquery.scrollTo-min.js
 piwik/libs/jquery/jquery.scrollTo.js
@@ -588,6 +590,7 @@ piwik/libs/jquery/original lib/
 piwik/libs/jquery/original lib/jquery-calendar.js
 piwik/libs/jquery/original lib/jquery.blockUI.js
 piwik/libs/jquery/original lib/jquery.dimensions.js
+piwik/libs/jquery/original lib/jquery.history.js
 piwik/libs/jquery/original lib/jquery.js
 piwik/libs/jquery/original lib/jquery.scrollTo.js
 piwik/libs/jquery/original lib/ui.mouse.js
@@ -619,6 +622,48 @@ piwik/libs/json/json.js
 piwik/libs/open-flash-chart/
 piwik/libs/open-flash-chart/README.txt
 piwik/libs/open-flash-chart/open-flash-chart.swf
+piwik/libs/open-flash-chart/php-ofc-library/
+piwik/libs/open-flash-chart/php-ofc-library/README.txt
+piwik/libs/open-flash-chart/php-ofc-library/dot_base.php
+piwik/libs/open-flash-chart/php-ofc-library/json_format.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_area_base.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_area_hollow.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_area_line.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_bar.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_bar_3d.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_bar_base.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_bar_filled.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_bar_glass.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_bar_sketch.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_bar_stack.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_hbar.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_line.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_line_base.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_line_dot.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_line_hollow.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_line_style.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_menu.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_pie.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_radar_axis.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_radar_axis_labels.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_radar_spoke_labels.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_scatter.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_scatter_line.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_shape.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_sugar.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_title.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_tooltip.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_upload_image.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_x_axis.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_x_axis_label.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_x_axis_labels.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_x_legend.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_y_axis.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_y_axis_base.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_y_axis_right.php
+piwik/libs/open-flash-chart/php-ofc-library/ofc_y_legend.php
+piwik/libs/open-flash-chart/php-ofc-library/open-flash-chart-object.php
+piwik/libs/open-flash-chart/php-ofc-library/open-flash-chart.php
 piwik/libs/sparkline/
 piwik/libs/sparkline/CHANGES
 piwik/libs/sparkline/DESIGN
@@ -631,6 +676,7 @@ piwik/libs/sparkline/lib/Sparkline_Bar.php
 piwik/libs/sparkline/lib/Sparkline_Line.php
 piwik/libs/swfobject/
 piwik/libs/swfobject/README.txt
+piwik/libs/swfobject/expressInstall.swf
 piwik/libs/swfobject/swfobject.js
 piwik/libs/upgradephp/
 piwik/libs/upgradephp/README
@@ -695,6 +741,7 @@ piwik/plugins/CoreHome/
 piwik/plugins/CoreHome/Controller.php
 piwik/plugins/CoreHome/CoreHome.php
 piwik/plugins/CoreHome/templates/
+piwik/plugins/CoreHome/templates/broadcast.js
 piwik/plugins/CoreHome/templates/calendar.js
 piwik/plugins/CoreHome/templates/cloud.tpl
 piwik/plugins/CoreHome/templates/datatable.css
@@ -765,25 +812,44 @@ piwik/plugins/Dashboard/templates/Dashboard.js
 piwik/plugins/Dashboard/templates/dashboard.css
 piwik/plugins/Dashboard/templates/header.tpl
 piwik/plugins/Dashboard/templates/index.tpl
+piwik/plugins/Dashboard/templates/standalone.tpl
 piwik/plugins/Dashboard/templates/widgetMenu.js
 piwik/plugins/ExampleAPI/
 piwik/plugins/ExampleAPI/API.php
 piwik/plugins/ExampleAPI/ExampleAPI.php
 piwik/plugins/ExampleFeedburner/
 piwik/plugins/ExampleFeedburner/ExampleFeedburner.php
-piwik/plugins/ExampleFeedburner/feedburner.tpl
+piwik/plugins/ExampleFeedburner/templates/
+piwik/plugins/ExampleFeedburner/templates/feedburner.tpl
 piwik/plugins/ExamplePlugin/
 piwik/plugins/ExamplePlugin/ExamplePlugin.php
 piwik/plugins/ExamplePlugin/lang/
 piwik/plugins/ExamplePlugin/lang/en.php
 piwik/plugins/ExampleRssWidget/
 piwik/plugins/ExampleRssWidget/ExampleRssWidget.php
-piwik/plugins/ExampleRssWidget/styles.css
+piwik/plugins/ExampleRssWidget/templates/
+piwik/plugins/ExampleRssWidget/templates/styles.css
+piwik/plugins/ExampleUI/
+piwik/plugins/ExampleUI/API.php
+piwik/plugins/ExampleUI/Controller.php
+piwik/plugins/ExampleUI/ExampleUI.php
+piwik/plugins/ExampleUI/images/
+piwik/plugins/ExampleUI/images/icons-planet/
+piwik/plugins/ExampleUI/images/icons-planet/LICENSE
+piwik/plugins/ExampleUI/images/icons-planet/earth.png
+piwik/plugins/ExampleUI/images/icons-planet/jupiter.png
+piwik/plugins/ExampleUI/images/icons-planet/mars.png
+piwik/plugins/ExampleUI/images/icons-planet/mercury.png
+piwik/plugins/ExampleUI/images/icons-planet/neptune.png
+piwik/plugins/ExampleUI/images/icons-planet/saturn.png
+piwik/plugins/ExampleUI/images/icons-planet/uranus.png
+piwik/plugins/ExampleUI/images/icons-planet/venus.png
 piwik/plugins/Feedback/
 piwik/plugins/Feedback/Controller.php
 piwik/plugins/Feedback/Feedback.php
-piwik/plugins/Feedback/index.tpl
-piwik/plugins/Feedback/sent.tpl
+piwik/plugins/Feedback/templates/
+piwik/plugins/Feedback/templates/index.tpl
+piwik/plugins/Feedback/templates/sent.tpl
 piwik/plugins/Goals/
 piwik/plugins/Goals/API.php
 piwik/plugins/Goals/Controller.php
@@ -1259,7 +1325,8 @@ piwik/plugins/UserCountry/flags/zm.png
 piwik/plugins/UserCountry/flags/zr.png
 piwik/plugins/UserCountry/flags/zw.png
 piwik/plugins/UserCountry/functions.php
-piwik/plugins/UserCountry/index.tpl
+piwik/plugins/UserCountry/templates/
+piwik/plugins/UserCountry/templates/index.tpl
 piwik/plugins/UserSettings/
 piwik/plugins/UserSettings/API.php
 piwik/plugins/UserSettings/Controller.php
@@ -1268,6 +1335,7 @@ piwik/plugins/UserSettings/functions.php
 piwik/plugins/UserSettings/images/
 piwik/plugins/UserSettings/images/browsers/
 piwik/plugins/UserSettings/images/browsers/AM.gif
+piwik/plugins/UserSettings/images/browsers/AR.gif
 piwik/plugins/UserSettings/images/browsers/AV.gif
 piwik/plugins/UserSettings/images/browsers/AW.gif
 piwik/plugins/UserSettings/images/browsers/BB.gif
@@ -1328,14 +1396,14 @@ piwik/plugins/UserSettings/images/plugins/director.gif
 piwik/plugins/UserSettings/images/plugins/flash.gif
 piwik/plugins/UserSettings/images/plugins/java.gif
 piwik/plugins/UserSettings/images/plugins/pdf.gif
-piwik/plugins/UserSettings/images/plugins/quicktime.gif
 piwik/plugins/UserSettings/images/plugins/realplayer.gif
 piwik/plugins/UserSettings/images/plugins/windowsmedia.gif
 piwik/plugins/UserSettings/images/screens/
 piwik/plugins/UserSettings/images/screens/dual.gif
 piwik/plugins/UserSettings/images/screens/normal.gif
 piwik/plugins/UserSettings/images/screens/wide.gif
-piwik/plugins/UserSettings/index.tpl
+piwik/plugins/UserSettings/templates/
+piwik/plugins/UserSettings/templates/index.tpl
 piwik/plugins/UsersManager/
 piwik/plugins/UsersManager/API.php
 piwik/plugins/UsersManager/Controller.php
@@ -1355,24 +1423,28 @@ piwik/plugins/VisitFrequency/
 piwik/plugins/VisitFrequency/API.php
 piwik/plugins/VisitFrequency/Controller.php
 piwik/plugins/VisitFrequency/VisitFrequency.php
-piwik/plugins/VisitFrequency/index.tpl
-piwik/plugins/VisitFrequency/sparklines.tpl
+piwik/plugins/VisitFrequency/templates/
+piwik/plugins/VisitFrequency/templates/index.tpl
+piwik/plugins/VisitFrequency/templates/sparklines.tpl
 piwik/plugins/VisitTime/
 piwik/plugins/VisitTime/API.php
 piwik/plugins/VisitTime/Controller.php
 piwik/plugins/VisitTime/VisitTime.php
-piwik/plugins/VisitTime/index.tpl
+piwik/plugins/VisitTime/templates/
+piwik/plugins/VisitTime/templates/index.tpl
 piwik/plugins/VisitorInterest/
 piwik/plugins/VisitorInterest/API.php
 piwik/plugins/VisitorInterest/Controller.php
 piwik/plugins/VisitorInterest/VisitorInterest.php
-piwik/plugins/VisitorInterest/index.tpl
+piwik/plugins/VisitorInterest/templates/
+piwik/plugins/VisitorInterest/templates/index.tpl
 piwik/plugins/VisitsSummary/
 piwik/plugins/VisitsSummary/API.php
 piwik/plugins/VisitsSummary/Controller.php
 piwik/plugins/VisitsSummary/VisitsSummary.php
-piwik/plugins/VisitsSummary/index.tpl
-piwik/plugins/VisitsSummary/sparklines.tpl
+piwik/plugins/VisitsSummary/templates/
+piwik/plugins/VisitsSummary/templates/index.tpl
+piwik/plugins/VisitsSummary/templates/sparklines.tpl
 piwik/plugins/Widgetize/
 piwik/plugins/Widgetize/Controller.php
 piwik/plugins/Widgetize/Widgetize.php
@@ -1403,6 +1475,8 @@ piwik/themes/default/images/error_medium.png
 piwik/themes/default/images/export.png
 piwik/themes/default/images/feed.png
 piwik/themes/default/images/goal.png
+piwik/themes/default/images/icon-calendar.gif
+piwik/themes/default/images/image.png
 piwik/themes/default/images/link.gif
 piwik/themes/default/images/loading-blue.gif
 piwik/themes/default/images/minus.png
