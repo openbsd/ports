@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2008/06/12 20:36:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2009/05/21 21:29:29 benoit Exp $
 
 COMMENT=		Atari 2600 VCS emulator
 
-DISTNAME=		stella-2.3.5
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		stella-2.7.7
 CATEGORIES=		emulators
 DISTFILES=		${DISTNAME}-src.tar.gz
 
 HOMEPAGE=		http://stella.sourceforge.net/
 
-MAINTAINER=		Niall O Higgins <niallo@openbsd.org>
+MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
