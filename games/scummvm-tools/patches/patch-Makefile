@@ -1,43 +1,101 @@
-$OpenBSD: patch-Makefile,v 1.6 2007/07/07 01:39:47 jsg Exp $
---- Makefile.orig	Sun Jun 17 07:00:22 2007
-+++ Makefile	Tue Jun 26 22:57:57 2007
-@@ -3,9 +3,10 @@
+$OpenBSD: patch-Makefile,v 1.7 2009/05/21 12:52:57 jsg Exp $
+--- Makefile.orig	Thu Feb 19 10:16:35 2009
++++ Makefile	Fri Mar  6 22:55:56 2009
+@@ -9,7 +9,7 @@ srcdir      ?= .
  
- SRC=.
+ DEFINES     := -DUNIX
+ LDFLAGS     := $(LDFLAGS)
+-INCLUDES    := -I. -I$(srcdir)
++INCLUDES    := -I. -I$(srcdir) `pkg-config --cflags libpng vorbis vorbisenc`
+ LIBS        :=
+ OBJS        :=
+ DEPDIR      := .deps
+@@ -19,8 +19,6 @@ DEPDIR      := .deps
+ # manually create a config.mk files with overrides, if needed.
+ -include config.mk
+ 
+-CXXFLAGS  += -g -O -Wuninitialized
+-
+ # Additional warnings
+ CXXFLAGS:= -Wall $(CXXFLAGS)
+ # Turn off some annoying and not-so-useful warnings
+@@ -46,8 +44,8 @@ RM      ?= rm -f
+ RM_REC  ?= $(RM) -r
+ ZIP     ?= zip -q
  
 -CC      := gcc
 -CXX     := g++
--CFLAGS  += -g -O -Wall -Wuninitialized -Wno-long-long -Wno-multichar -DUNIX
 +#CC      := gcc
 +#CXX     := g++
-+CFLAGS  += -Wall -Wno-long-long -Wno-multichar -DUNIX
-+CXXFLAGS  += -Wall -Wno-long-long -Wno-multichar -DUNIX
- # LDFLAGS +=
  
- # Additional warnings
-@@ -29,7 +30,6 @@ TARGETS := \
- 	dekyra$(EXEEXT) \
- 	descumm$(EXEEXT) \
- 	desword2$(EXEEXT) \
--	encode_dxa$(EXEEXT) \
- 	extract_agos$(EXEEXT) \
- 	extract_kyra$(EXEEXT) \
- 	extract_loom_tg16$(EXEEXT) \
-@@ -89,7 +89,7 @@ desword2$(EXEEXT): desword2.o util.o
+ #######################################################################
+ 
+@@ -86,8 +84,8 @@ TARGETS := \
+ 	extract_scumm_mac$(EXEEXT) \
+ 	extract_t7g_mac$(EXEEXT) \
+ 	extract_zak_c64$(EXEEXT) \
+-	extract_gob_stk$(EXEEXT) \
+-	tools_gui$(EXEEXT)
++	extract_gob_stk$(EXEEXT)
++#	tools_gui$(EXEEXT)
+ 
+ UTILS := \
+ 	utils/adpcm.o \
+@@ -114,37 +112,37 @@ bundle: $(TARGETS)
+ 	mv $(bundle_name)/Contents/Resources/tools_gui $(bundle_name)/Contents/MacOS/
+ 
+ compress_agos$(EXEEXT): compress_agos.o compress.o util.o
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
++	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
+ 
+ compress_kyra$(EXEEXT): compress_kyra.o kyra_pak.o compress.o util.o
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
++	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
+ 
+ compress_queen$(EXEEXT): compress_queen.o compress.o util.o
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
++	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
+ 
+ compress_saga$(EXEEXT): compress_saga.o compress.o util.o $(UTILS)
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
++	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
+ 
+ compress_scumm_bun$(EXEEXT): compress_scumm_bun.o compress.o util.o
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
++	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
+ 
+ compress_scumm_san$(EXEEXT): compress_scumm_san.o compress.o util.o
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lz -lvorbis -logg -lvorbisenc -lFLAC
++	$(CXX) $(LDFLAGS) -o $@ $+ -lz `pkg-config --libs vorbis vorbisenc flac`
+ 
+ compress_scumm_sou$(EXEEXT): compress_scumm_sou.o compress.o util.o
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
++	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
+ 
+ compress_sword1$(EXEEXT): compress_sword1.o compress.o util.o
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
++	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
+ 
+ compress_sword2$(EXEEXT): compress_sword2.o compress.o util.o
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
++	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
+ 
+ compress_touche$(EXEEXT): compress_touche.o compress.o util.o
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
++	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
+ 
+ compress_tucker$(EXEEXT): compress_tucker.o compress.o util.o
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
++	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
+ 
+ decine$(EXEEXT): decine.o
+ 	$(CXX) $(LDFLAGS) -o $@ $+
+@@ -162,7 +160,7 @@ degob$(EXEEXT): degob.o degob_script.o degob_script_v1
  	$(CXX) $(LDFLAGS) -o $@ $+
  
  encode_dxa$(EXEEXT): encode_dxa.o compress.o util.o
--	$(CXX) $(LDFLAGS) -o $@ $+ -lpng -lz
-+	$(CXX) $(LDFLAGS) `pkg-config --cflags --libs libpng` -o $@ $+ -lz
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lpng -lz -lvorbis -logg -lvorbisenc -lFLAC
++	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs libpng vorbis vorbisenc flac`
  
- extract_agos$(EXEEXT): extract_agos.o
- 	$(CC) $(LDFLAGS) -o $@ $+
-@@ -148,7 +148,7 @@ clean:
- 	rm -f *.o utils/*.o $(TARGETS)
- 
- .cpp.o:
--	$(CXX) $(CFLAGS) $(CPPFLAGS) -c $(<) -o $*.o
-+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(<) -o $*.o
- 
- .c.o:
- 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $(<) -o $*.o
+ extract_cine$(EXEEXT): extract_cine.o util.o
+ 	$(CXX) $(LDFLAGS) -o $@ $+

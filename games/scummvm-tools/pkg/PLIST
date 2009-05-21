@@ -1,19 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/07/07 01:39:47 jsg Exp $
-bin/compress_agos
-bin/compress_kyra
-bin/compress_queen
-bin/compress_saga
-bin/compress_scumm_bun
-bin/compress_scumm_san
-bin/compress_scumm_sou
-bin/compress_sword1
-bin/compress_sword2
-bin/compress_touche
-bin/dekyra
-bin/descumm
-bin/desword2
-bin/extract_mm_nes
-bin/extract_scumm_mac
-bin/extract_zak_c64
+@comment $OpenBSD: PLIST,v 1.8 2009/05/21 12:52:57 jsg Exp $
+@bin bin/compress_agos
+@bin bin/compress_kyra
+@bin bin/compress_queen
+@bin bin/compress_saga
+@bin bin/compress_scumm_bun
+@bin bin/compress_scumm_san
+@bin bin/compress_scumm_sou
+@bin bin/compress_sword1
+@bin bin/compress_sword2
+@bin bin/compress_touche
+@bin bin/compress_tucker
+@bin bin/decine
+@bin bin/degob
+@bin bin/dekyra
+@bin bin/descumm
+@bin bin/desword2
+@bin bin/encode_dxa
+@bin bin/extract_agos
+@bin bin/extract_cine
+@bin bin/extract_gob_stk
+@bin bin/extract_kyra
+@bin bin/extract_loom_tg16
+@bin bin/extract_mm_apple
+@bin bin/extract_mm_c64
+@bin bin/extract_mm_nes
+@bin bin/extract_parallaction
+@bin bin/extract_scumm_mac
+@bin bin/extract_t7g_mac
+@bin bin/extract_zak_c64
 share/doc/scummvm-tools/
 share/doc/scummvm-tools/README
