@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_external_GLee_h,v 1.1 2009/05/21 21:34:40 ajacoutot Exp $
+--- src/external/GLee.h.orig	Thu May 21 23:20:15 2009
++++ src/external/GLee.h	Thu May 21 23:20:22 2009
+@@ -797,7 +797,7 @@ GLEE_EXTERN GLboolean _GLEE_SGIX_texture_range;
+ 
+ 	/* GLX */
+ 
+-	typedef void (*__GLXextFuncPtr)(void);
++//	typedef void (*__GLXextFuncPtr)(void);
+ 
+ 	#ifndef GLX_ARB_get_proc_address 
+ 	#define GLX_ARB_get_proc_address 1
