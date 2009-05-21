@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2009/05/21 14:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2009/05/21 14:54:04 sthen Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	i386 amd64
@@ -59,7 +59,18 @@ CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
 			X_EXTRA_LIBS="${X_EXTRA_LIBS}"
 
-CONFIGURE_ARGS +=	--without-hal --without-ldap --without-capi
+CONFIGURE_ARGS +=	--without-also \
+			--without-audioio \
+			--without-capi \
+			--without-coreaudio \
+			--without-cups \
+			--without-esd \
+			--without-gnutls \
+			--without-hal \
+			--without-jack \
+			--without-ldap \
+			--without-nas \
+			--without-xml
 
 AUTOCONF_VERSION =	2.62
 
