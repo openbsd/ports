@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2009/05/21 14:54:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2009/05/21 14:55:12 sthen Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	i386 amd64
@@ -15,7 +15,7 @@ HOMEPAGE =		http://winehq.org/
 
 MAINTAINER =		Ariane van der Steldt <ariane@stack.nl>
 
-# GPL
+# LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
