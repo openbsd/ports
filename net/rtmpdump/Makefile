@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/05/22 23:42:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/05/22 23:43:58 sthen Exp $
 
 COMMENT =		dump RTMP media streams
 
 DISTNAME =		rtmpdump-v1.5
-PKGNAME =		${DISTNAME:S/-v/-/}p0
+PKGNAME =		${DISTNAME:S/-v/-/}p1
 
 CATEGORIES =		net
-
-HOMEPAGE =		http://sourceforge.net/projects/rtmpdump/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
