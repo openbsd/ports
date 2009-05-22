@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 09:11:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/05/22 09:03:33 benoit Exp $
+%%SHARED%%
 include/NTL/
 include/NTL/FFT.h
 include/NTL/FacVec.h
@@ -12,6 +13,7 @@ include/NTL/GF2XVec.h
 include/NTL/HNF.h
 include/NTL/LLL.h
 include/NTL/RR.h
+include/NTL/SPMM_ASM.h
 include/NTL/WordVector.h
 include/NTL/ZZ.h
 include/NTL/ZZVec.h
@@ -111,6 +113,9 @@ share/doc/NTL/ZZ_pEX.txt
 share/doc/NTL/ZZ_pEXFactoring.txt
 share/doc/NTL/ZZ_pX.txt
 share/doc/NTL/ZZ_pXFactoring.txt
+share/doc/NTL/arrow1.gif
+share/doc/NTL/arrow2.gif
+share/doc/NTL/arrow3.gif
 share/doc/NTL/config.txt
 share/doc/NTL/conversions.txt
 share/doc/NTL/copying.txt
@@ -147,6 +152,7 @@ share/doc/NTL/tour-ex4.html
 share/doc/NTL/tour-ex5.html
 share/doc/NTL/tour-ex6.html
 share/doc/NTL/tour-examples.html
+share/doc/NTL/tour-gf2x.html
 share/doc/NTL/tour-gmp.html
 share/doc/NTL/tour-impl.html
 share/doc/NTL/tour-intro.html
@@ -155,6 +161,7 @@ share/doc/NTL/tour-roadmap.html
 share/doc/NTL/tour-stdcxx.html
 share/doc/NTL/tour-struct.html
 share/doc/NTL/tour-time.html
+share/doc/NTL/tour-tips.html
 share/doc/NTL/tour-unix.html
 share/doc/NTL/tour-win.html
 share/doc/NTL/tour.html

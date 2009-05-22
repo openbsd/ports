@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2009/05/22 09:03:33 benoit Exp $
+@lib lib/libntl.so.${LIBntl_VERSION}

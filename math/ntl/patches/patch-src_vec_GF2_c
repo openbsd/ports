@@ -1,0 +1,11 @@
+--- src/vec_GF2.c.orig	Sat Mar 14 18:38:29 2009
++++ src/vec_GF2.c	Sat Mar 14 18:38:42 2009
+@@ -3,6 +3,8 @@
+ 
+ #include <NTL/new.h>
+ 
++#include <cstdio>
++
+ NTL_START_IMPL
+ 
+ void vec_GF2::SetLength(long n)

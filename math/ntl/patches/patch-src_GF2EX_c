@@ -1,0 +1,11 @@
+--- src/GF2EX.c.orig	Sat Mar 14 18:32:20 2009
++++ src/GF2EX.c	Sat Mar 14 18:32:46 2009
+@@ -5,6 +5,8 @@
+ 
+ #include <NTL/new.h>
+ 
++#include <cstdio>
++
+ NTL_START_IMPL
+ 
+ 
