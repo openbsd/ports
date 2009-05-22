@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2009/04/10 16:19:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2009/05/22 12:30:43 ajacoutot Exp $
 
 COMMENT=		printing framework for GNOME
 
 GNOME_PROJECT=		libgnomeprint
 GNOME_VERSION=		2.18.6
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 SHARED_LIBS +=	gnomeprint-2-2 2.1            # .1.0
 
@@ -18,9 +18,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xdmcp cups expat fontconfig freetype gcrypt
-WANTLIB += glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpg-error gthread-2.0
-WANTLIB += m pcre tasn1 z
+WANTLIB += X11 Xau Xdmcp asn1 crypto cups expat fontconfig freetype
+WANTLIB += gcrypt glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpg-error
+WANTLIB += gssapi gthread-2.0 krb5 m pcre tasn1 z
 
 MODULES=		devel/gettext \
 			x11/gnome
