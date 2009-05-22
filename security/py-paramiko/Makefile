@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2009/03/24 18:14:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2009/05/22 12:29:19 benoit Exp $
 
 COMMENT=	Python module that implements the SSH2 protocol
 
-DISTNAME=	paramiko-1.6.2
-PKGNAME=	py-${DISTNAME}p2
-CATEGORIES=	security
+MODPY_EGG_VERSION=	1.7.4
+DISTNAME=		paramiko-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME}
+CATEGORIES=		security
 
-HOMEPAGE=	http://www.lag.net/paramiko/
+HOMEPAGE=		http://www.lag.net/paramiko/
+
+MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,11 +30,12 @@ NO_REGRESS=	Yes
 DOCSDIR=	${PREFIX}/share/doc/py-paramiko
 EXAMPLESDIR=	${PREFIX}/share/examples/py-paramiko
 
+pre-build:
+	@perl -pi -e "s,^\#\!/usr/bin/env python,#!${MODPY_BIN}," ${WRKSRC}/demos/*.py
+        
 post-install:
-	${INSTALL_DATA_DIR} ${DOCSDIR}/{private,public}
-	${INSTALL_DATA} ${WRKSRC}/docs/{index.html,epydoc.css} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/private/* ${DOCSDIR}/private
-	${INSTALL_DATA} ${WRKSRC}/docs/public/* ${DOCSDIR}/public
+	${INSTALL_DATA_DIR} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/demos
 	${INSTALL_DATA} ${WRKSRC}/demos/* ${EXAMPLESDIR}/demos
 
