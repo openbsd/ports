@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2009/04/21 13:01:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2009/05/22 13:08:22 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -10,7 +10,7 @@ VERSION=			2.14.7
 DISTNAME=			gtk+-${VERSION}
 PKGNAME-main=			gtk+2-${VERSION}p0
 PKGNAME-docs=			gtk+2-docs-${VERSION}
-PKGNAME-cups=			gtk+2-cups-${VERSION}p0
+PKGNAME-cups=			gtk+2-cups-${VERSION}p1
 CATEGORIES=			x11 devel
 
 SHARED_LIBS+=	gdk_pixbuf-2.0		1400.1 #.1400.5
@@ -60,7 +60,7 @@ LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			cups.>=3::print/cups \
 			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::${BASE_PKGPATH},-main
 WANTLIB-cups=		${WANTLIB} atk-1.0 gio-2.0 glib-2.0 gmodule-2.0 \
-			gobject-2.0 pango-1.0 pangocairo-1.0 \
+			gobject-2.0 pango-1.0 pangocairo-1.0 asn1 crypto gssapi krb5 \
 			pangoft2-1.0 png gcrypt gnutls gpg-error tasn1
 
 USE_X11=			Yes

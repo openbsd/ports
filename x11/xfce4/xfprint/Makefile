@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/04/28 19:54:02 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2009/05/22 13:08:22 ajacoutot Exp $
 
 COMMENT=	Xfce4 printing helper
 
 XFCE_PROJECT=	xfprint
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS=	xfprint	0.1
 
@@ -31,6 +32,6 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
 		pthread startup-notification-1 xfce4util z gcrypt gnutls \
-		gpg-error tasn1
+		gpg-error tasn1 asn1 crypto gssapi krb5
 
 .include <bsd.port.mk>
