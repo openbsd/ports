@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.53 2009/04/05 22:37:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2009/05/22 09:05:10 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-V=			1.4.24.1
+V=			1.4.25
+CORESOUNDS=		1.4.15
 DISTNAME=		asterisk-$V
-FULLPKGNAME-main=	asterisk-$Vp0
+FULLPKGNAME-main=	asterisk-$V
 # N.B. overridden for h323 flavor below.
 
 CATEGORIES=		telephony
@@ -24,13 +25,14 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=		-main
+SUBST_VARS+=		CORESOUNDS
 
 WANTLIB-main=		c crypto m pthread ssl stdc++ termcap z
 
 LIB_DEPENDS-main=	popt::devel/popt \
 			gsm::audio/gsm
 
-MASTER_SITES=		http://downloads.digium.com/pub/telephony/asterisk/releases/
+MASTER_SITES=		http://downloads.asterisk.org/pub/telephony/asterisk/releases/
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
@@ -75,7 +77,7 @@ CONFIGURE_ARGS+=	--with-osptk=no \
 # to WRKSRC, 'gmake menuselect', then cd back to the port directory
 # and 'make'.
 
-FLAVOR?=
+FLAVOR?=		no_speex # XXX crashes at startup: Bus Error
 FLAVORS=		h323
 
 # odbc

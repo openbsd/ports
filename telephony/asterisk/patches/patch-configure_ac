@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.1 2009/03/29 22:23:35 sthen Exp $
---- configure.ac.orig	Wed Feb 18 20:06:45 2009
-+++ configure.ac	Sat Mar 28 00:17:00 2009
-@@ -191,7 +191,7 @@ AST_EXT_LIB_SETUP([NBS], [Network Broadcast Sound], [n
+$OpenBSD: patch-configure_ac,v 1.2 2009/05/22 09:05:10 sthen Exp $
+--- configure.ac.orig	Wed Apr 22 22:35:03 2009
++++ configure.ac	Thu May 21 21:22:19 2009
+@@ -195,7 +195,7 @@ AST_EXT_LIB_SETUP([NBS], [Network Broadcast Sound], [n
  AST_EXT_LIB_SETUP([NCURSES], [ncurses], [ncurses])
  AST_EXT_LIB_SETUP([NETSNMP], [Net-SNMP], [netsnmp])
  AST_EXT_LIB_SETUP([NEWT], [newt], [newt])
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.1 2009/03/29 22:23:35 sthen Exp $
  AST_EXT_LIB_SETUP([OGG], [OGG], [ogg])
  AST_EXT_LIB_SETUP([OSPTK], [OSP Toolkit], [osptk])
  AST_EXT_LIB_SETUP([OSS], [Open Sound System], [oss])
-@@ -1183,7 +1183,7 @@ fi
+@@ -1221,7 +1221,7 @@ fi
  
  AST_EXT_LIB_CHECK([NEWT], [newt], [newtBell], [newt.h])
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_ac,v 1.1 2009/03/29 22:23:35 sthen Exp $
  
  AST_EXT_LIB_CHECK([OGG], [ogg], [ogg_sync_init], [])
  
-@@ -1302,7 +1302,8 @@ if test "${PBX_PWLIB}" = "1" -a "${USE_OPENH323}" != "
+@@ -1340,7 +1340,8 @@ if test "${PBX_PWLIB}" = "1" -a "${USE_OPENH323}" != "
  	AST_CHECK_OPENH323()
  	AST_CHECK_PWLIB_VERSION([OpenH323], [OPENH323], [openh323buildopts.h], [1], [17], [3])
  	AST_CHECK_OPENH323_BUILD()
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure_ac,v 1.1 2009/03/29 22:23:35 sthen Exp $
  	AST_CHECK_PWLIB_BUILD([OpenH323], [OPENH323],
  		[Define if your system has the OpenH323 libraries.],
  		[#include "ptlib.h"
-@@ -1397,7 +1398,7 @@ AST_EXT_LIB_CHECK([TONEZONE], [tonezone], [tone_zone_f
+@@ -1435,7 +1436,7 @@ AST_EXT_LIB_CHECK([TONEZONE], [tonezone], [tone_zone_f
  
  AST_EXT_LIB_CHECK([USB], [usb], [usb_init], [usb.h], [])
  

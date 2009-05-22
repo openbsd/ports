@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2009/04/02 19:37:25 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2009/05/22 09:05:10 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict app_conference-<=20070710
 @newgroup _asterisk:545
@@ -262,10 +262,10 @@ share/asterisk/moh/fpm-calm-river.wav
 share/asterisk/moh/fpm-sunshine.wav
 share/asterisk/moh/fpm-world-mix.wav
 share/asterisk/sounds/
-share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.14
-share/asterisk/sounds/CHANGES-asterisk-core-en-1.4.14
-share/asterisk/sounds/CREDITS-asterisk-core-en-1.4.14
-share/asterisk/sounds/LICENSE-asterisk-core-en-1.4.14
+share/asterisk/sounds/.asterisk-core-sounds-en-gsm-${CORESOUNDS}
+share/asterisk/sounds/CHANGES-asterisk-core-en-${CORESOUNDS}
+share/asterisk/sounds/CREDITS-asterisk-core-en-${CORESOUNDS}
+share/asterisk/sounds/LICENSE-asterisk-core-en-${CORESOUNDS}
 share/asterisk/sounds/agent-alreadyon.gsm
 share/asterisk/sounds/agent-incorrect.gsm
 share/asterisk/sounds/agent-loggedoff.gsm
