@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/10 11:59:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/05/22 13:51:08 ajacoutot Exp $
 
 COMMENT=	CUPS drivers for SPL printers
 
 DISTNAME=	splix-2.0.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	print
 
 EXTRACT_SUFX=	.tar.bz2
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=splix/}
 
-WANTLIB += c gcrypt gnutls gpg-error m pthread stdc++ tasn1 z
+WANTLIB += asn1 c crypto gcrypt gnutls gpg-error gssapi krb5 m
+WANTLIB += pthread stdc++ z
 
 MODULES=	devel/gettext
 
