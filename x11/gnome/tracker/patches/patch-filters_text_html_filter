@@ -1,0 +1,28 @@
+$OpenBSD: patch-filters_text_html_filter,v 1.1 2009/05/22 10:18:14 ajacoutot Exp $
+
+Use lynx(1) from base instead of the w3m package for indexing
+html files content.
+
+--- filters/text/html_filter.orig	Tue Apr 14 11:57:40 2009
++++ filters/text/html_filter	Fri May 22 11:59:34 2009
+@@ -1,15 +1,9 @@
+ #!/bin/sh
+ 
+-nice -n19 w3m \
+-    -o indent_incr=0 \
+-    -o multicol=false \
+-    -o no_cache=true \
+-    -o use_cookie=false \
+-    -o display_charset=utf8 \
+-    -o system_charset=utf8 \
+-    -o follow_locale=false \
+-    -o use_language_tag=true \
+-    -o ucs_conv=true \
+-    -T text/html \
++nice -n19 lynx \
++    -assume_charset=UTF-8 \
++    -assume_local_charset=UTF-8 \
++    -assume_unrec_charset=UTF-8 \
++    -nolist \
+     -dump \
+     "$1"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/05/03 17:13:26 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2009/05/22 10:18:14 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -6,7 +6,7 @@ COMMENT=	powerful desktop search tool and indexer
 # as tracker-search.
 GNOME_PROJECT=	tracker
 GNOME_VERSION=	0.6.94
-PKGNAME=	tracker-search-${VERSION}p0
+PKGNAME=	tracker-search-${VERSION}p1
 
 SHARED_LIBS +=	stemmer              0.0      # .694.0
 SHARED_LIBS +=	tracker-common       0.0      # .694.0
@@ -59,7 +59,6 @@ BUILD_DEPENDS=		::devel/xdg-utils \
 RUN_DEPENDS=		::devel/glib2,-fam \
 			::devel/xdg-utils \
 			::textproc/odt2txt \
-			::www/w3m \
 			::x11/gnome/deskbar-applet
 
 DESKTOP_FILES=		Yes
