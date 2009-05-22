@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/29 01:39:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/05/22 23:42:32 sthen Exp $
 
 COMMENT =		dump RTMP media streams
 
@@ -17,7 +17,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m stdc++ crypto ssl
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rtmpdump/}
+MASTER_SITES =		http://spacehopper.org/mirrors/ \
+			${MASTER_SITE_SOURCEFORGE:=rtmpdump/}
+
 WRKDIST =		${WRKDIR}/rtmpdump
 
 MAKE_FLAGS +=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
