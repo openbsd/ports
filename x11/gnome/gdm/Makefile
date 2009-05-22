@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.60 2009/04/27 08:09:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2009/05/22 08:46:22 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.10
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 HOMEPAGE=		http://www.gnome.org/projects/gdm/
 
@@ -24,7 +24,6 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 
 BUILD_DEPENDS=		::x11/gnome/zenity
 RUN_DEPENDS=		:sox-*:audio/sox \
-			:gnome-audio-*:x11/gnome/audio \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme \
 			::x11/gnome/zenity
 LIB_DEPENDS=		rsvg-2::x11/gnome/librsvg
