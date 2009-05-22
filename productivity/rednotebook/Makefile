@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/21 10:20:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/05/22 07:19:26 ajacoutot Exp $
 
 COMMENT =	diary and journal application
 
-MODPY_EGG_VERSION =	0.7.0
+MODPY_EGG_VERSION =	0.7.1
 DISTNAME =	rednotebook-${MODPY_EGG_VERSION}
 
 CATEGORIES =	productivity
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=rednotebook/}
+
+NO_REGRESS =	Yes
 
 MODULES =	lang/python
 

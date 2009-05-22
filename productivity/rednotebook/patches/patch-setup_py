@@ -1,0 +1,15 @@
+$OpenBSD: patch-setup_py,v 1.1 2009/05/22 07:19:26 ajacoutot Exp $
+
+Fix build on clean system.
+
+--- setup.py.orig	Sun May  3 18:03:13 2009
++++ setup.py	Fri May 22 03:07:05 2009
+@@ -39,7 +39,7 @@ parameters = {'name'          : 'rednotebook', 
+                    }
+ 
+ # Freedesktop parameters
+-if os.path.exists(os.path.join(sys.prefix, 'share/applications/')):
++if 1:
+ 	parameters['data_files'] = [('share/applications/', ['rednotebook.desktop']),
+ 							    ('share/icons/hicolor/48x48/apps', ['rednotebook.png']),# new freedesktop.org spec
+ 							    ('share/pixmaps/', ['rednotebook.png']),				# for older configurations
