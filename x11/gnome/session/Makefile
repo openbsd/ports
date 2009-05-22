@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2009/05/11 09:10:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2009/05/22 08:50:19 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p9
+PKGNAME=		${DISTNAME}p10
 
 CATEGORIES=		x11
 
@@ -29,14 +29,16 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	::textproc/rarian \
 		::textproc/xmlto \
-		::x11/gnome/controlcenter2
+		::x11/gnome/settings-daemon
 LIB_DEPENDS=	execinfo::devel/libexecinfo \
 		gnomeui-2::x11/gnome/libgnomeui
+RUN_DEPENDS=	::x11/gnome/settings-daemon
 
 # Here we hang all the additional ports that will make up a satisfying
-# GNOME user experience :)
+# GNOME user experience but are not *needed* per se by this port
 RUN_DEPENDS+=		::x11/gnome/alacarte \
 			::x11/gnome/applets2 \
+			::x11/gnome/audio \
 			::x11/gnome/backgrounds \
 			::x11/gnome/controlcenter2 \
 			::x11/gnome/file-roller \
