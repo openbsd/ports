@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/30 07:55:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2009/05/23 17:51:14 martynas Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	SILC plugin for irssi
 
-VERSION=	1.1.7
-DISTNAME=	silc-client-${VERSION}
-PKGNAME=	irssi-silc-${VERSION}p0
+DISTNAME=	irssi-silc-1.1.7
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	net
 
@@ -20,20 +19,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ftp.silcnet.org/client/sources/ \
-		ftp://ftp.silcnet.org/silc/client/sources/ \
-		http://www.planetmirror.com/pub/silcnet/client/sources/ \
-		http://munitions.vipul.net/software/mirrors/silc/client/sources/ \
-		ftp://ftp.no.silcnet.org/pub/silc/client/sources/ \
-		http://the.wiretapped.net/security/network-security/silc/client/sources/ \
-		ftp://ftp.wiretapped.net/pub/security/network-security/silc/client/sources/
+MASTER_SITES=	http://mirrors.protection.cx/~martynas/
 
 BUILD_DEPENDS=	::devel/gettext \
 		::devel/glib2
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+= :yasm-*:devel/yasm
 .endif
-RUN_DEPENDS=	::net/irssi
+RUN_DEPENDS=	:irssi->=0.8.13:net/irssi
 
 MAKE_FLAGS=	libfe_common_silc_la_LDFLAGS=-avoid-version \
 		libsilc_core_la_LDFLAGS=-avoid-version
