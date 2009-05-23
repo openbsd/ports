@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/04/08 22:29:24 todd Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/05/23 21:30:05 sthen Exp $
 @conflict clamav-<0.94
 bin/MailScanner
 bin/analyse_SpamAssassin_cache
@@ -35,6 +35,7 @@ lib/MailScanner/MailScanner/CustomFunctions/SpamWhitelist.pm
 lib/MailScanner/MailScanner/CustomFunctions/ZMRouterDirHash.pm
 lib/MailScanner/MailScanner/Exim.pm
 lib/MailScanner/MailScanner/EximDiskStore.pm
+lib/MailScanner/MailScanner/FileInto.pm
 lib/MailScanner/MailScanner/GenericSpam.pm
 lib/MailScanner/MailScanner/Lock.pm
 lib/MailScanner/MailScanner/Log.pm
@@ -58,6 +59,7 @@ lib/MailScanner/MailScanner/SweepOther.pm
 lib/MailScanner/MailScanner/SweepViruses.pm
 lib/MailScanner/MailScanner/SystemDefs.pm
 lib/MailScanner/MailScanner/TNEF.pm
+lib/MailScanner/MailScanner/Unzip.pm
 lib/MailScanner/MailScanner/WorkArea.pm
 lib/MailScanner/MailScanner/ZMDiskStore.pm
 lib/MailScanner/MailScanner/ZMailer.pm
@@ -71,6 +73,10 @@ share/examples/MailScanner/
 @sample ${SYSCONFDIR}/MailScanner/
 share/examples/MailScanner/MailScanner.conf
 @sample ${SYSCONFDIR}/MailScanner/MailScanner.conf
+share/examples/MailScanner/archives.filename.rules.conf
+@sample ${SYSCONFDIR}/MailScanner/archives.filename.rules.conf
+share/examples/MailScanner/archives.filetype.rules.conf
+@sample ${SYSCONFDIR}/MailScanner/archives.filetype.rules.conf
 share/examples/MailScanner/country.domains.conf
 @sample ${SYSCONFDIR}/MailScanner/country.domains.conf
 share/examples/MailScanner/filename.rules.conf
