@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/sun/awt/fontpath.c.orig	Sat Dec  1 00:00:00 2007
-+++ jdk/src/solaris/native/sun/awt/fontpath.c	Tue Feb 26 18:50:59 2008
+$OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/sun/awt/fontpath.c.orig	Fri May  8 03:35:07 2009
++++ jdk/src/solaris/native/sun/awt/fontpath.c	Mon May 18 20:19:13 2009
 @@ -23,7 +23,7 @@
   * have any questions.
   */
@@ -10,7 +10,32 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.1 2008/03/19 18:05
  #include <string.h>
  #endif /* __linux__ */
  #include <stdio.h>
-@@ -61,7 +61,7 @@ extern Display *awt_display;
+@@ -40,6 +40,7 @@
+ 
+ #include <jni.h>
+ #include <jni_util.h>
++#include <jvm_md.h>
+ #include <sun_font_FontManager.h>
+ #ifndef HEADLESS
+ #include <X11/Xlib.h>
+@@ -58,10 +59,24 @@
+ extern Display *awt_display;
+ #endif /* !HEADLESS */
+ 
++#ifdef __APPLE__
++// XXXDARWIN: Hard-code the path to Apple's freetype, as it is
++// not included in the dyld search path by default, and 10.4
++// does not support -rpath.
++//
++// This ignores the build time setting of ALT_FREETYPE_LIB_PATH,
++// and should be replaced with -rpath/@rpath support on 10.5 or later,
++// or via support for a the FREETYPE_LIB_PATH define.
++#define FONTCONFIG_DLL_VERSIONED X11_PATH "/lib/" VERSIONED_JNI_LIB_NAME("fontconfig", "1")
++#define FONTCONFIG_DLL X11_PATH "/lib/" JNI_LIB_NAME("fontconfig")
++#else
++#define FONTCONFIG_DLL_VERSIONED VERSIONED_JNI_LIB_NAME("fontconfig", "1")
++#define FONTCONFIG_DLL JNI_LIB_NAME("fontconfig")
++#endif
  
  #define MAXFDIRS 512    /* Max number of directories that contain fonts */
  
@@ -19,7 +44,60 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.1 2008/03/19 18:05
  /*
   * This can be set in the makefile to "/usr/X11" if so desired.
   */
-@@ -351,7 +351,7 @@ static char **getX11FontPath ()
+@@ -111,24 +126,40 @@ static char *fullSolarisFontPath[] = {
+     NULL, /* terminates the list */
+ };
+ 
++#elif _ALLBSD_SOURCE
++static char *fullBSDFontPath[] = {
++    X11_PATH "/lib/X11/fonts/TrueType",
++    X11_PATH "/lib/X11/fonts/truetype",
++    X11_PATH "/lib/X11/fonts/tt",
++    X11_PATH "/lib/X11/fonts/TTF",
++    X11_PATH "/lib/X11/fonts/OTF",
++    PACKAGE_PATH "/share/fonts/TrueType",
++    PACKAGE_PATH "/share/fonts/truetype",
++    PACKAGE_PATH "/share/fonts/tt",
++    PACKAGE_PATH "/share/fonts/TTF",
++    PACKAGE_PATH "/share/fonts/OTF",
++    X11_PATH "/lib/X11/fonts/Type1",
++    PACKAGE_PATH "/share/fonts/Type1",
++    NULL, /* terminates the list */
++};
+ #else /* __linux */
+ /* All the known interesting locations we have discovered on
+  * various flavors of Linux
+  */
+ static char *fullLinuxFontPath[] = {
+-    "/usr/X11R6/lib/X11/fonts/TrueType",  /* RH 7.1+ */
+-    "/usr/X11R6/lib/X11/fonts/truetype",  /* SuSE */
+-    "/usr/X11R6/lib/X11/fonts/tt",
+-    "/usr/X11R6/lib/X11/fonts/TTF",
+-    "/usr/X11R6/lib/X11/fonts/OTF",       /* RH 9.0 (but empty!) */
+-    "/usr/share/fonts/ja/TrueType",       /* RH 7.2+ */
+-    "/usr/share/fonts/truetype",
+-    "/usr/share/fonts/ko/TrueType",       /* RH 9.0 */
+-    "/usr/share/fonts/zh_CN/TrueType",    /* RH 9.0 */
+-    "/usr/share/fonts/zh_TW/TrueType",    /* RH 9.0 */
++    X11_PATH "/lib/X11/fonts/TrueType",  /* RH 7.1+ */
++    X11_PATH "/lib/X11/fonts/truetype",  /* SuSE */
++    X11_PATH "/lib/X11/fonts/tt",
++    X11_PATH "/lib/X11/fonts/TTF",
++    X11_PATH "/lib/X11/fonts/OTF",       /* RH 9.0 (but empty!) */
++    PACKAGE_PATH "/share/fonts/ja/TrueType",       /* RH 7.2+ */
++    PACKAGE_PATH "/share/fonts/truetype",
++    PACKAGE_PATH "/share/fonts/ko/TrueType",       /* RH 9.0 */
++    PACKAGE_PATH "/share/fonts/zh_CN/TrueType",    /* RH 9.0 */
++    PACKAGE_PATH "/share/fonts/zh_TW/TrueType",    /* RH 9.0 */
+     "/var/lib/defoma/x-ttcidfont-conf.d/dirs/TrueType", /* Debian */
+-    "/usr/X11R6/lib/X11/fonts/Type1",
+-    "/usr/share/fonts/default/Type1",     /* RH 9.0 */
++    X11_PATH "/lib/X11/fonts/Type1",
++    PACKAGE_PATH "/share/fonts/default/Type1",     /* RH 9.0 */
+     NULL, /* terminates the list */
+ };
+ #endif
+@@ -351,7 +382,7 @@ static char **getX11FontPath ()
  
  #endif /* !HEADLESS */
  
@@ -28,16 +106,19 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.1 2008/03/19 18:05
  /* from awt_LoadLibrary.c */
  JNIEXPORT jboolean JNICALL AWTIsHeadless();
  #endif
-@@ -476,7 +476,7 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
+@@ -476,8 +507,10 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
       */
      fcdirs = getFontConfigLocations();
  
 -#ifdef __linux__
-+#if defined(__linux__) || defined(_ALLBSD_SOURCE)
++#if defined(__linux__)
      knowndirs = fullLinuxFontPath;
++#elif defined(_ALLBSD_SOURCE)
++    knowndirs = fullBSDFontPath;
  #else /* IF SOLARIS */
      knowndirs = fullSolarisFontPath;
-@@ -488,7 +488,8 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
+ #endif
+@@ -488,7 +521,8 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
       * be initialised.
       */
  #ifndef HEADLESS
@@ -47,7 +128,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.1 2008/03/19 18:05
      if (!AWTIsHeadless()) { /* .. so need to call a function to check */
  #endif
      AWT_LOCK();
-@@ -496,7 +497,7 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
+@@ -496,7 +530,7 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
          x11dirs = getX11FontPath();
      }
      AWT_UNLOCK();
@@ -56,3 +137,24 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.1 2008/03/19 18:05
      }
  #endif
  #endif /* !HEADLESS */
+@@ -608,7 +642,7 @@ Java_sun_font_FontManager_populateFontFileNameMap
+ }
+ 
+ #include <dlfcn.h>
+-#ifndef __linux__ /* i.e. is solaris */
++#if !(defined(__linux__) || defined(__APPLE__))
+ #include <link.h>
+ #endif
+ 
+@@ -654,9 +688,9 @@ static void* openFontConfig() {
+      * certain symbols - and functionality - to be available.
+      * Also add explicit search for .so.1 in case .so symlink doesn't exist.
+      */
+-    libfontconfig = dlopen("libfontconfig.so.1", RTLD_LOCAL|RTLD_LAZY);
++    libfontconfig = dlopen(FONTCONFIG_DLL_VERSIONED, RTLD_LOCAL|RTLD_LAZY);
+     if (libfontconfig == NULL) {
+-        libfontconfig = dlopen("libfontconfig.so", RTLD_LOCAL|RTLD_LAZY);
++        libfontconfig = dlopen(FONTCONFIG_DLL, RTLD_LOCAL|RTLD_LAZY);
+         if (libfontconfig == NULL) {
+             return NULL;
+         }

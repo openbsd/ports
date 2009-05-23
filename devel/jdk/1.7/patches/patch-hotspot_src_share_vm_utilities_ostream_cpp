@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_share_vm_utilities_ostream_cpp,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- hotspot/src/share/vm/utilities/ostream.cpp.orig	Thu Nov 20 03:41:06 2008
-+++ hotspot/src/share/vm/utilities/ostream.cpp	Tue Dec 23 07:16:15 2008
-@@ -821,7 +821,7 @@ bufferedStream::~bufferedStream() {
+$OpenBSD: patch-hotspot_src_share_vm_utilities_ostream_cpp,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- hotspot/src/share/vm/utilities/ostream.cpp.orig	Fri May  8 03:30:37 2009
++++ hotspot/src/share/vm/utilities/ostream.cpp	Sat May  9 10:15:54 2009
+@@ -827,7 +827,7 @@ bufferedStream::~bufferedStream() {
  
  #ifndef PRODUCT
  

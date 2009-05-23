@@ -1,7 +1,7 @@
-$OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.2 2008/03/21 02:46:43 kurt Exp $
---- corba/make/common/shared/Platform.gmk.orig	Sat Dec  1 00:00:00 2007
-+++ corba/make/common/shared/Platform.gmk	Thu Mar 20 09:05:23 2008
-@@ -262,6 +262,73 @@ ifeq ($(SYSTEM_UNAME), Linux)
+$OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.3 2009/05/23 03:03:24 kurt Exp $
+--- corba/make/common/shared/Platform.gmk.orig	Fri May  8 03:29:39 2009
++++ corba/make/common/shared/Platform.gmk	Mon May 18 08:24:56 2009
+@@ -262,6 +262,85 @@ ifeq ($(SYSTEM_UNAME), Linux)
    MB_OF_MEMORY := $(shell free -m | fgrep Mem: | sed -e 's@\ \ *@ @g' | cut -d' ' -f2)
  endif
  
@@ -10,6 +10,13 @@ $OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.2 2008/03/21 02:46:43 
 +  OS_NAME = freebsd
 +  OS_VENDOR = FreeBSD
 + REQUIRED_OS_VERSION = 6.0
++endif
++
++ifeq ($(SYSTEM_UNAME), Darwin)
++  PLATFORM = bsd
++  OS_NAME = darwin
++  OS_VENDOR = Apple
++ REQUIRED_OS_VERSION = 8.0
 +endif
 +
 +ifeq ($(SYSTEM_UNAME), NetBSD)
@@ -42,6 +49,15 @@ $OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.2 2008/03/21 02:46:43 
 +  ARCH        := $(shell $(archExpr) )
 +  ARCH_FAMILY := $(ARCH)
 +
++  # Darwin builds may be 32-bit or 64-bit data model.
++  ifeq ($(SYSTEM_UNAME), Darwin)
++    ifeq ($(ARCH), i586)
++      ifeq ($(ARCH_DATA_MODEL), 64)
++        ARCH=amd64
++      endif
++    endif
++  endif
++
 +  # i586 and sparc are 32 bit, amd64 and sparc64 are 64
 +  ifneq (,$(findstring $(ARCH), i586 sparc))
 +    ARCH_DATA_MODEL=32
@@ -65,35 +81,34 @@ $OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.2 2008/03/21 02:46:43 
 +  #    a fully built workspace.
 +  REQUIRED_FREE_SPACE=1500000
 +  # How much RAM does this machine have:
-+  ifeq ($(OS_VENDOR), OpenBSD)
-+    MB_OF_MEMORY=$(shell perl -e 'printf "%d", `sysctl hw.physmem | cut -d'=' -f2` / 1048576' )
-+  else
-+    MB_OF_MEMORY := $(shell `sysctl hw.physmem | cut -d' ' -f2` / 1048576 )
-+  endif
++  MB_OF_MEMORY=$(shell sysctl -n hw.physmem | awk '{print int($$NF / 1048576); }' )
 +endif
 +
  # Windows with and without CYGWIN will be slightly different
  ifeq ($(SYSTEM_UNAME), Windows_NT)
    PLATFORM = windows
-@@ -373,7 +440,7 @@ endif
+@@ -373,7 +452,14 @@ endif
  #    build machines and adjustments will be made to prevent excessing
  #    system swapping during the build.
  #    If we don't know, assume 512. Subtract 128 from MB for VM MAX.
 -#    Don't set VM max over 1024-128=896.
-+#    Don't set VM max over 864-128=736.
++#    Don't set VM max over 1024-128=896, except on OpenBSD where
++#    736 is the max.
++ifeq ($(OS_VENDOR), OpenBSD)
++  ABS_MAX_MEMORY := "736"
++else
++  ABS_MAX_MEMORY := "896"
++endif
++
  ifneq ($(MB_OF_MEMORY),)
    LOW_MEMORY_MACHINE := $(shell \
      if [ $(MB_OF_MEMORY) -le 512 ] ; then \
-@@ -382,10 +449,10 @@ ifneq ($(MB_OF_MEMORY),)
-       echo "false"; \
-     fi)
-   MAX_VM_MEMORY := $(shell \
--    if [ $(MB_OF_MEMORY) -le 1024 ] ; then \
-+    if [ $(MB_OF_MEMORY) -le 864 ] ; then \
+@@ -385,7 +471,7 @@ ifneq ($(MB_OF_MEMORY),)
+     if [ $(MB_OF_MEMORY) -le 1024 ] ; then \
        expr $(MB_OF_MEMORY) '-' 128 ; \
      else \
 -      echo "896"; \
-+      echo "736"; \
++      echo $(ABS_MAX_MEMORY); \
      fi)
    MIN_VM_MEMORY := $(shell \
      if [ $(MAX_VM_MEMORY) -le 128 ] ; then \

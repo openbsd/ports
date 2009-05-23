@@ -1,0 +1,38 @@
+$OpenBSD: patch-jdk_src_solaris_native_java_net_bsd_close_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/java/net/bsd_close.c.orig	Mon May 18 21:16:40 2009
++++ jdk/src/solaris/native/java/net/bsd_close.c	Mon May 18 21:17:02 2009
+@@ -57,7 +57,7 @@ typedef struct {
+ /*
+  * Signal to unblock thread
+  */
+-static int sigWakeup = (__SIGRTMAX - 2);
++static int sigWakeup = SIGIO;
+ 
+ /*
+  * The fd table and the number of file descriptors
+@@ -281,9 +281,7 @@ int NET_ReadV(int s, const struct iovec * vector, int 
+ 
+ int NET_RecvFrom(int s, void *buf, int len, unsigned int flags,
+        struct sockaddr *from, int *fromlen) {
+-    socklen_t socklen = *fromlen;
+-    BLOCKING_IO_RETURN_INT( s, recvfrom(s, buf, len, flags, from, &socklen) );
+-    *fromlen = socklen;
++    BLOCKING_IO_RETURN_INT( s, recvfrom(s, buf, len, flags, from, fromlen) );
+ }
+ 
+ int NET_Send(int s, void *msg, int len, unsigned int flags) {
+@@ -300,9 +298,11 @@ int NET_SendTo(int s, const void *msg, int len,  unsig
+ }
+ 
+ int NET_Accept(int s, struct sockaddr *addr, int *addrlen) {
+-    socklen_t socklen = *addrlen;
+-    BLOCKING_IO_RETURN_INT( s, accept(s, addr, &socklen) );
+-    *addrlen = socklen;
++    socklen_t len = *addrlen;
++    int error = accept(s, addr, &len);
++    if (error != -1)
++	*addrlen = (int)len;
++    BLOCKING_IO_RETURN_INT( s, error );
+ }
+ 
+ int NET_Connect(int s, struct sockaddr *addr, int addrlen) {

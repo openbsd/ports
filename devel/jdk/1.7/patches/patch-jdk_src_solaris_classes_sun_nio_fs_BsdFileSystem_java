@@ -1,0 +1,130 @@
+$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/classes/sun/nio/fs/BsdFileSystem.java.orig	Tue May 19 11:45:57 2009
++++ jdk/src/solaris/classes/sun/nio/fs/BsdFileSystem.java	Tue May 19 16:41:08 2009
+@@ -31,55 +31,24 @@ import java.io.IOException;
+ import java.util.*;
+ import java.security.AccessController;
+ import sun.security.action.GetPropertyAction;
+-import static sun.nio.fs.BsdNativeDispatcher.*;
++import static sun.nio.fs.UnixNativeDispatcher.*;
+ 
+ /**
+  * Bsd implementation of FileSystem
+  */
+ 
+ class BsdFileSystem extends UnixFileSystem {
+-    private final boolean hasInotify;
+-    private final boolean hasAtSysCalls;
+ 
+     BsdFileSystem(UnixFileSystemProvider provider, String dir) {
+         super(provider, dir);
+-
+-        // assume X.Y[-Z] format
+-        String osversion = AccessController
+-            .doPrivileged(new GetPropertyAction("os.version"));
+-        String[] vers = osversion.split("\\.", 0);
+-        assert vers.length >= 2;
+-
+-        int majorVersion = Integer.parseInt(vers[0]);
+-        int minorVersion = Integer.parseInt(vers[1]);
+-        int microVersion = 0;
+-        if (vers.length > 2) {
+-            String[] microVers = vers[2].split("-", 0);
+-            microVersion = (microVers.length > 0) ?
+-                Integer.parseInt(microVers[0]) : 0;
+-        }
+-
+-        // inotify available since 2.6.13
+-        this.hasInotify = ((majorVersion > 2) ||
+-            (majorVersion == 2 && minorVersion > 6) ||
+-            ((majorVersion == 2) && (minorVersion == 6) && (microVersion >= 13)));
+-
+-        // openat etc. available since 2.6.16
+-        this.hasAtSysCalls = ((majorVersion > 2) ||
+-            (majorVersion == 2 && minorVersion > 6) ||
+-            ((majorVersion == 2) && (minorVersion == 6) && (microVersion >= 16)));
+     }
+ 
+     @Override
+     public WatchService newWatchService()
+         throws IOException
+     {
+-        if (hasInotify) {
+-            return new BsdWatchService(this);
+-        } else {
+-            // use polling implementation on older kernels
+-            return new PollingWatchService();
+-        }
++        // use polling implementation until we implement a BSD/kqueue one
++        return new PollingWatchService();
+     }
+ 
+     @Override
+@@ -88,10 +57,6 @@ class BsdFileSystem extends UnixFileSystem {
+                                                                 UnixPath file,
+                                                                 LinkOption... options)
+     {
+-        if (view == DosFileAttributeView.class)
+-            return (V) new BsdDosFileAttributeView(file, followLinks(options));
+-        if (view == UserDefinedFileAttributeView.class)
+-            return (V) new BsdUserDefinedFileAttributeView(file, followLinks(options));
+         return super.newFileAttributeView(view, file, options);
+     }
+ 
+@@ -101,10 +66,6 @@ class BsdFileSystem extends UnixFileSystem {
+                                                   UnixPath file,
+                                                   LinkOption... options)
+     {
+-        if (name.equals("dos"))
+-            return new BsdDosFileAttributeView(file, followLinks(options));
+-        if (name.equals("xattr"))
+-            return new BsdUserDefinedFileAttributeView(file, followLinks(options));
+         return super.newFileAttributeView(name, file, options);
+     }
+ 
+@@ -115,9 +76,6 @@ class BsdFileSystem extends UnixFileSystem {
+         private static Set<String> supportedFileAttributeViews() {
+             Set<String> result = new HashSet<String>();
+             result.addAll(UnixFileSystem.standardFileAttributeViews());
+-            // additional Bsd-specific views
+-            result.add("dos");
+-            result.add("xattr");
+             return Collections.unmodifiableSet(result);
+         }
+     }
+@@ -129,22 +87,22 @@ class BsdFileSystem extends UnixFileSystem {
+ 
+     @Override
+     void copyNonPosixAttributes(int ofd, int nfd) {
+-        BsdUserDefinedFileAttributeView.copyExtendedAttributes(ofd, nfd);
+     }
+ 
+     @Override
+     boolean supportsSecureDirectoryStreams() {
+-        return hasAtSysCalls;
++        return false;
+     }
+ 
+     /**
+-     * Returns object to iterate over entries in /etc/mtab
++     * Returns object to iterate over entries in /etc/fstab
+      */
+     @Override
+     Iterable<UnixMountEntry> getMountEntries() {
+         ArrayList<UnixMountEntry> entries = new ArrayList<UnixMountEntry>();
+         try {
+-            long fp = setmntent("/etc/mtab".getBytes(), "r".getBytes());
++            UnixPath fstab = new UnixPath(this, "/etc/fstab");
++            long fp = fopen(fstab, "r");
+             try {
+                 for (;;) {
+                     UnixMountEntry entry = new UnixMountEntry();
+@@ -154,7 +112,7 @@ class BsdFileSystem extends UnixFileSystem {
+                     entries.add(entry);
+                 }
+             } finally {
+-                endmntent(fp);
++                fclose(fp);
+             }
+ 
+         } catch (UnixException x) {

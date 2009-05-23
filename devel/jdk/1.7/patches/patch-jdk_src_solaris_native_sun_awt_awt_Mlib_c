@@ -1,0 +1,25 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_Mlib_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/sun/awt/awt_Mlib.c.orig	Mon May 18 19:53:30 2009
++++ jdk/src/solaris/native/sun/awt/awt_Mlib.c	Mon May 18 19:53:40 2009
+@@ -32,6 +32,7 @@
+ #include <dlfcn.h>
+ #include "jni.h"
+ #include <jni_util.h>
++#include "jvm_md.h"
+ #include "awt_Mlib.h"
+ #include "java_awt_image_BufferedImage.h"
+ 
+@@ -67,11 +68,11 @@ mlib_status awt_getImagingLib(JNIEnv *env, mlibFnS_t *
+         ((strncmp(name.machine, "sun4v" , 5) == 0) &&
+          (getenv("USE_VIS_ON_SUN4V") != NULL)))
+     {
+-        handle = dlopen("libmlib_image_v.so", RTLD_LAZY);
++        handle = dlopen(JNI_LIB_NAME("mlib_image_v"), RTLD_LAZY);
+     }
+ 
+     if (handle == NULL) {
+-        handle = dlopen("libmlib_image.so", RTLD_LAZY);
++        handle = dlopen(JNI_LIB_NAME("mlib_image"), RTLD_LAZY);
+     }
+ 
+     if (handle == NULL) {

@@ -1,26 +1,20 @@
-$OpenBSD: patch-jdk_src_solaris_classes_sun_print_UnixPrintServiceLookup_java,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java.orig	Tue Oct 30 05:04:01 2007
-+++ jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Thu Nov  8 08:38:02 2007
-@@ -119,7 +119,10 @@ public class UnixPrintServiceLookup extends PrintServi
+$OpenBSD: patch-jdk_src_solaris_classes_sun_print_UnixPrintServiceLookup_java,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java.orig	Fri May  8 03:35:06 2009
++++ jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Mon May 18 16:49:44 2009
+@@ -119,7 +119,11 @@ public class UnixPrintServiceLookup extends PrintServi
      }
  
      static boolean isBSD() {
 -        return osname.equals("Linux");
 +	return (osname.equals("Linux") ||
 +		osname.equals("FreeBSD") ||
++		osname.equals("Darwin") ||
 +		osname.equals("NetBSD") ||
 +		osname.equals("OpenBSD"));
      }
  
      static final int UNINITIALIZED = -1;
-@@ -129,13 +132,13 @@ public class UnixPrintServiceLookup extends PrintServi
-     static int cmdIndex = UNINITIALIZED;
- 
-     String[] lpcFirstCom = {
--        "/usr/sbin/lpc status | grep : | sed -ne '1,1 s/://p'",
--        "/usr/sbin/lpc status | grep -E '^[ 0-9a-zA-Z_-]*@' | awk -F'@' '{print $1}'"
-+        "/usr/sbin/lpc status all | grep : | sed -ne '1,1 s/://p'",
-+        "/usr/sbin/lpc status all | grep -E '^[ 0-9a-zA-Z_-]*@' | awk -F'@' '{print $1}'"
+@@ -134,8 +138,8 @@ public class UnixPrintServiceLookup extends PrintServi
      };
  
      String[] lpcAllCom = {
@@ -31,7 +25,7 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_print_UnixPrintServiceLookup_java,v 
      };
  
      String[] lpcNameCom = {
-@@ -145,7 +148,7 @@ public class UnixPrintServiceLookup extends PrintServi
+@@ -145,7 +149,7 @@ public class UnixPrintServiceLookup extends PrintServi
  
  
      static int getBSDCommandIndex() {

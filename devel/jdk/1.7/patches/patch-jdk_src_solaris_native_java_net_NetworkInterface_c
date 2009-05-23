@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/src/solaris/native/java/net/NetworkInterface.c.orig	Thu Sep 11 03:44:53 2008
-+++ jdk/src/solaris/native/java/net/NetworkInterface.c	Fri Sep 12 17:45:12 2008
+$OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/java/net/NetworkInterface.c.orig	Fri May  8 03:35:07 2009
++++ jdk/src/solaris/native/java/net/NetworkInterface.c	Mon May 18 19:36:07 2009
 @@ -23,13 +23,13 @@
   * have any questions.
   */
@@ -17,18 +17,20 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.2 2009/01
  #include <arpa/inet.h>
  #include <net/if.h>
  #include <net/if_arp.h>
-@@ -47,6 +47,19 @@
+@@ -47,6 +47,21 @@
  #else
  #include <sys/sockio.h>
  #endif
 +#if defined(_ALLBSD_SOURCE)
 +#include <sys/param.h>
 +#include <sys/ioctl.h>
-+#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__APPLE__)
 +#include <net/ethernet.h>
 +#include <net/if_var.h>
 +#elif defined(__OpenBSD__)
 +#include <netinet/if_ether.h>
++#elif defined(__NetBSD__)
++#include <net/if_ether.h>
 +#endif
 +#include <net/if_dl.h>
 +#include <netinet/in_var.h>
@@ -37,7 +39,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.2 2009/01
  
  #ifdef __linux__
  #define ifr_index ifr_ifindex
-@@ -583,6 +596,7 @@ static netif *enumInterfaces(JNIEnv *env) {
+@@ -583,6 +598,7 @@ static netif *enumInterfaces(JNIEnv *env) {
  }
  
  
@@ -45,7 +47,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.2 2009/01
  /*
   * Enumerates and returns all IPv4 interfaces
   */
-@@ -693,7 +707,177 @@ static netif *enumIPv4Interfaces(JNIEnv *env, netif *i
+@@ -693,7 +709,177 @@ static netif *enumIPv4Interfaces(JNIEnv *env, netif *i
      return ifs;
  }
  
@@ -223,7 +225,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.2 2009/01
  #if defined(__solaris__) && defined(AF_INET6)
  /*
   * Enumerates and returns all IPv6 interfaces on Solaris
-@@ -1010,7 +1194,13 @@ netif *addif(JNIEnv *env, netif *ifs, char *if_name, i
+@@ -1036,7 +1222,13 @@ netif *addif(JNIEnv *env, netif *ifs, char *if_name, i
              JNU_ThrowOutOfMemoryError(env, "heap allocation failed");
              return ifs;
          }
@@ -237,7 +239,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.2 2009/01
          currif->addr = NULL;
          currif->childs = NULL;
          currif->virtual = isVirtual;
-@@ -1321,6 +1511,31 @@ int getMacAddress(JNIEnv *env, const struct in_addr* a
+@@ -1347,6 +1539,31 @@ int getMacAddress(JNIEnv *env, const struct in_addr* a
     * All bytes to 0 means no hardware address.
     */
    return -1;
@@ -269,7 +271,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.2 2009/01
  #else
    struct arpreq arpreq;
    struct sockaddr_in* sin;
-@@ -1486,7 +1701,7 @@ JNIEXPORT jint JNICALL Java_java_net_NetworkInterface_
+@@ -1512,7 +1729,7 @@ JNIEXPORT jint JNICALL Java_java_net_NetworkInterface_
                                   "Socket creation failed");
    } else {
  

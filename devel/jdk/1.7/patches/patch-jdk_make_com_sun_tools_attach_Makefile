@@ -1,0 +1,13 @@
+$OpenBSD: patch-jdk_make_com_sun_tools_attach_Makefile,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/com/sun/tools/attach/Makefile.orig	Mon May 18 10:39:47 2009
++++ jdk/make/com/sun/tools/attach/Makefile	Mon May 18 10:39:55 2009
+@@ -36,6 +36,9 @@ endif
+ ifeq ($(PLATFORM), linux)
+ FILES_m = mapfile-linux
+ endif
++ifeq ($(PLATFORM), bsd)
++FILES_m = mapfile-bsd
++endif
+ include $(BUILDDIR)/common/Mapfile-vers.gmk
+ 
+ #

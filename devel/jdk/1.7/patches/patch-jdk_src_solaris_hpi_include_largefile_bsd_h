@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_src_solaris_hpi_include_largefile_bsd_h,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/hpi/include/largefile_bsd.h.orig	Tue Feb 26 18:50:53 2008
-+++ jdk/src/solaris/hpi/include/largefile_bsd.h	Tue Feb 26 18:50:58 2008
-@@ -23,14 +23,28 @@
+$OpenBSD: patch-jdk_src_solaris_hpi_include_largefile_bsd_h,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/hpi/include/largefile_bsd.h.orig	Mon May 11 10:48:21 2009
++++ jdk/src/solaris/hpi/include/largefile_bsd.h	Mon May 11 13:02:43 2009
+@@ -23,14 +23,32 @@
   * have any questions.
   */
  
@@ -21,6 +21,8 @@ $OpenBSD: patch-jdk_src_solaris_hpi_include_largefile_bsd_h,v 1.1 2008/03/19 18:
 +/* define compatibility macros */
 +#define                off64_t         off_t
 +#define                stat64          stat
++#define                dirent64        dirent
++#define                statvfs64       statvfs
 +
 +#define                F_SETLK64       F_SETLK
 +#define                F_SETLKW64      F_SETLKW
@@ -32,6 +34,8 @@ $OpenBSD: patch-jdk_src_solaris_hpi_include_largefile_bsd_h,v 1.1 2008/03/19 18:
 +#define                flock64         flock
 +#define                mmap64          mmap
 +#define                fdatasync       fsync
++#define                lstat64         lstat
++#define                readdir64_r     readdir_r
 +
 +#define                pread64         pread
 +#define                pwrite64        pwrite

@@ -1,7 +1,12 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_gcc_make,v 1.1 2009/01/04 23:25:16 kurt Exp $
---- hotspot/make/bsd/makefiles/gcc.make.orig	Mon Dec 22 21:13:31 2008
-+++ hotspot/make/bsd/makefiles/gcc.make	Mon Dec 22 23:13:24 2008
-@@ -25,9 +25,10 @@
+$OpenBSD: patch-hotspot_make_bsd_makefiles_gcc_make,v 1.2 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/make/bsd/makefiles/gcc.make.orig	Wed May 20 17:32:15 2009
++++ hotspot/make/bsd/makefiles/gcc.make	Wed May 20 17:32:19 2009
+@@ -22,12 +22,15 @@
+ #  
+ #
+ 
++OS_VENDOR = $(shell uname -s)
++
  #------------------------------------------------------------------------
  # CC, CPP & AS
  
@@ -11,11 +16,11 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_gcc_make,v 1.1 2009/01/04 23:25:16 ku
 +CXX ?= g++
 +CPP  = $(CXX)
 +CC  ?= gcc
-+AS   = $(CC) -c
++AS   = $(CC) -c -x assembler-with-cpp
  
  # -dumpversion in gcc-2.91 shows "egcs-2.91.66". In later version, it only
  # prints the numbers (e.g. "2.95", "3.2.1")
-@@ -55,7 +56,7 @@ VM_PICFLAG        = $(VM_PICFLAG/$(LINK_INTO))
+@@ -55,7 +58,7 @@ VM_PICFLAG        = $(VM_PICFLAG/$(LINK_INTO))
  CFLAGS += $(VM_PICFLAG)
  CFLAGS += -fno-rtti
  CFLAGS += -fno-exceptions
@@ -24,7 +29,20 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_gcc_make,v 1.1 2009/01/04 23:25:16 ku
  CFLAGS += -fcheck-new
  
  ARCHFLAG = $(ARCHFLAG/$(BUILDARCH))
-@@ -83,7 +84,7 @@ else
+@@ -65,6 +68,12 @@ ARCHFLAG/ia64    =
+ ARCHFLAG/sparc   = -m32 -mcpu=v9
+ ARCHFLAG/sparcv9 = -m64 -mcpu=v9
+ 
++# Darwin-specific build flags
++ifeq ($(OS_VENDOR), Darwin)
++  # Ineffecient 16-byte stack re-alignment on Darwin/IA32
++  ARCHFLAG/i486 += -mstackrealign
++endif
++
+ CFLAGS     += $(ARCHFLAG)
+ AOUT_FLAGS += $(ARCHFLAG)
+ LFLAGS     += $(ARCHFLAG)
+@@ -83,7 +92,7 @@ else
  endif
  
  # Compiler warnings are treated as errors
@@ -33,12 +51,74 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_gcc_make,v 1.1 2009/01/04 23:25:16 ku
  
  # Except for a few acceptable ones
  # Since GCC 4.3, -Wconversion has changed its meanings to warn these implicit
-@@ -138,7 +139,7 @@ MAPFLAG = -Xlinker --version-script=FILENAME
- SONAMEFLAG = -Xlinker -soname=SONAME
+@@ -98,7 +107,12 @@ endif
+ CFLAGS_WARN/DEFAULT = $(WARNINGS_ARE_ERRORS) $(ACCEPTABLE_WARNINGS)
+ # Special cases
+ CFLAGS_WARN/BYFILE = $(CFLAGS_WARN/$@)$(CFLAGS_WARN/DEFAULT$(CFLAGS_WARN/$@)) 
++# XXXDARWIN: for _dyld_bind_fully_image_containing_address
++ifeq ($(OS_VENDOR), Darwin)
++  CFLAGS_WARN/os_bsd.o = $(CFLAGS_WARN/DEFAULT) -Wno-deprecated-declarations
++endif
  
- # Build shared library
++
+ # The flags to use for an Optimized g++ build
+ OPT_CFLAGS += -O3
+ 
+@@ -133,28 +147,40 @@ ifeq ($(BUILDARCH), ia64)
+ LFLAGS += -Wl,-relax
+ endif
+ 
+-# Enable linker optimization
+-LFLAGS += -Xlinker -O1
+-
+-# If this is a --hash-style=gnu system, use --hash-style=both
+-#   The gnu .hash section won't work on some Bsd systems like SuSE 10.
+-_HAS_HASH_STYLE_GNU:=$(shell $(CC) -dumpspecs | grep -- '--hash-style=gnu')
+-ifneq ($(_HAS_HASH_STYLE_GNU),)
+-  LDFLAGS_HASH_STYLE = -Wl,--hash-style=both
+-endif
+-LFLAGS += $(LDFLAGS_HASH_STYLE)
+-
+ # Use $(MAPFLAG:FILENAME=real_file_name) to specify a map file.
+ MAPFLAG = -Xlinker --version-script=FILENAME
+ 
+-# Use $(SONAMEFLAG:SONAME=soname) to specify the intrinsic name of a shared obj
+-SONAMEFLAG = -Xlinker -soname=SONAME
++#
++# Shared Library
++#
++ifeq ($(OS_VENDOR), Darwin)
++  # Standard linker flags
++  LFLAGS +=
+ 
+-# Build shared library
 -SHARED_FLAG = -shared
-+SHARED_FLAG = -shared $(VM_PICFLAG)
++  # Darwin doesn't use ELF and doesn't support version scripts
++  LDNOMAP = true
  
- # Keep symbols even they are not used
- AOUT_FLAGS += -export-dynamic
+-# Keep symbols even they are not used
+-AOUT_FLAGS += -export-dynamic
++  # Use $(SONAMEFLAG:SONAME=soname) to specify the intrinsic name of a shared obj
++  SONAMEFLAG =
++
++  # Build shared library
++  SHARED_FLAG = -dynamiclib $(VM_PICFLAG)
++
++  # Keep symbols even they are not used
++  #AOUT_FLAGS += -export-dynamic
++else
++  # Enable linker optimization
++  LFLAGS += -Xlinker -O1
++
++  # Use $(SONAMEFLAG:SONAME=soname) to specify the intrinsic name of a shared obj
++  SONAMEFLAG = -Xlinker -soname=SONAME
++
++  # Build shared library
++  SHARED_FLAG = -shared $(VM_PICFLAG)
++
++  # Keep symbols even they are not used
++  AOUT_FLAGS += -export-dynamic
++endif
+ 
+ #------------------------------------------------------------------------
+ # Debug flags

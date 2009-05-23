@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.4 2009/01/04 23:25:16 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.5 2009/05/23 03:03:25 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.7,<1.8
 ${JREHOME}/
@@ -18,8 +18,6 @@ ${JREHOME}/bin/
 @bin ${JREHOME}/bin/unpack200
 ${JREHOME}/lib/
 ${JREHOME}/lib/applet/
-${JREHOME}/lib/audio/
-${JREHOME}/lib/audio/soundbank.gm
 ${JREHOME}/lib/calendars.properties
 ${JREHOME}/lib/charsets.jar
 ${JREHOME}/lib/classlist
@@ -188,6 +186,7 @@ ${JREHOME}/lib/zi/America/Argentina/Jujuy
 ${JREHOME}/lib/zi/America/Argentina/La_Rioja
 ${JREHOME}/lib/zi/America/Argentina/Mendoza
 ${JREHOME}/lib/zi/America/Argentina/Rio_Gallegos
+${JREHOME}/lib/zi/America/Argentina/Salta
 ${JREHOME}/lib/zi/America/Argentina/San_Juan
 ${JREHOME}/lib/zi/America/Argentina/San_Luis
 ${JREHOME}/lib/zi/America/Argentina/Tucuman
@@ -359,7 +358,7 @@ ${JREHOME}/lib/zi/Asia/Kabul
 ${JREHOME}/lib/zi/Asia/Kamchatka
 ${JREHOME}/lib/zi/Asia/Karachi
 ${JREHOME}/lib/zi/Asia/Kashgar
-${JREHOME}/lib/zi/Asia/Katmandu
+${JREHOME}/lib/zi/Asia/Kathmandu
 ${JREHOME}/lib/zi/Asia/Kolkata
 ${JREHOME}/lib/zi/Asia/Krasnoyarsk
 ${JREHOME}/lib/zi/Asia/Kuala_Lumpur

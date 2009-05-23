@@ -1,0 +1,16 @@
+$OpenBSD: patch-hotspot_make_bsd_makefiles_buildtree_make,v 1.1 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/make/bsd/makefiles/buildtree.make.orig	Fri May 15 16:59:31 2009
++++ hotspot/make/bsd/makefiles/buildtree.make	Fri May 15 16:59:59 2009
+@@ -277,10 +277,11 @@ env.sh: $(BUILDTREE_MAKE)
+ 	[ -n "$$JAVA_HOME" ] && { echo ": \$${JAVA_HOME:=$${JAVA_HOME}}"; }; \
+ 	{ \
+ 	echo "LD_LIBRARY_PATH=.:$${LD_LIBRARY_PATH:+$$LD_LIBRARY_PATH:}\$${JAVA_HOME}/jre/lib/${LIBARCH}/native_threads:\$${JAVA_HOME}/jre/lib/${LIBARCH}:${GCC_LIB}"; \
++	echo "DYLD_LIBRARY_PATH=.:$${DYLD_LIBRARY_PATH:+$$DYLD_LIBRARY_PATH:}\$${JAVA_HOME}/jre/lib/${LIBARCH}/native_threads:\$${JAVA_HOME}/jre/lib/${LIBARCH}:${GCC_LIB}"; \
+ 	echo "CLASSPATH=$${CLASSPATH:+$$CLASSPATH:}.:\$${JAVA_HOME}/jre/lib/rt.jar:\$${JAVA_HOME}/jre/lib/i18n.jar"; \
+ 	} | sed s:$${JAVA_HOME:--------}:\$${JAVA_HOME}:g; \
+ 	echo "HOTSPOT_BUILD_USER=\"$${LOGNAME:-$$USER} in `basename $(GAMMADIR)`\""; \
+-	echo "export JAVA_HOME LD_LIBRARY_PATH CLASSPATH HOTSPOT_BUILD_USER"; \
++	echo "export JAVA_HOME LD_LIBRARY_PATH DYLD_LIBRARY_PATH CLASSPATH HOTSPOT_BUILD_USER"; \
+ 	) > $@
+ 
+ env.csh: env.sh

@@ -1,7 +1,22 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.1 2009/01/04 23:25:16 kurt Exp $
---- hotspot/make/bsd/makefiles/saproc.make.orig	Sat Aug  2 16:12:30 2008
-+++ hotspot/make/bsd/makefiles/saproc.make	Sat Aug  2 16:15:29 2008
-@@ -43,11 +43,11 @@ SAMAPFILE = $(SASRCDIR)/mapfile
+$OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.2 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/make/bsd/makefiles/saproc.make.orig	Fri May 15 16:25:29 2009
++++ hotspot/make/bsd/makefiles/saproc.make	Fri May 15 17:08:59 2009
+@@ -26,8 +26,13 @@
+ 
+ # libsaproc[_g].so: serviceability agent
+ SAPROC = saproc$(G_SUFFIX)
+-LIBSAPROC = lib$(SAPROC).so
+ 
++ifeq ($(OS_VENDOR), Darwin)
++  LIBSAPROC = lib$(SAPROC).dylib
++else
++  LIBSAPROC = lib$(SAPROC).so
++endif
++
+ AGENT_DIR = $(GAMMADIR)/agent
+ 
+ SASRCDIR = $(AGENT_DIR)/src/os/$(Platform_os_family)
+@@ -43,11 +48,11 @@ SAMAPFILE = $(SASRCDIR)/mapfile
  
  DEST_SAPROC = $(JDK_LIBDIR)/$(LIBSAPROC)
  

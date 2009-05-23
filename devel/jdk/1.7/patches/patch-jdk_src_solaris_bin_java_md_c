@@ -1,7 +1,15 @@
-$OpenBSD: patch-jdk_src_solaris_bin_java_md_c,v 1.2 2008/08/01 20:22:48 kurt Exp $
---- jdk/src/solaris/bin/java_md.c.orig	Sat Dec  1 00:00:00 2007
-+++ jdk/src/solaris/bin/java_md.c	Thu Jul 31 22:53:02 2008
-@@ -34,10 +34,14 @@
+$OpenBSD: patch-jdk_src_solaris_bin_java_md_c,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/bin/java_md.c.orig	Fri May  8 03:35:05 2009
++++ jdk/src/solaris/bin/java_md.c	Mon May 18 16:44:36 2009
+@@ -24,6 +24,7 @@
+  */
+ 
+ #include "java.h"
++#include "jvm_md.h"
+ #include <dirent.h>
+ #include <dlfcn.h>
+ #include <fcntl.h>
+@@ -34,17 +35,30 @@
  #include <sys/stat.h>
  #include <unistd.h>
  #include <sys/types.h>
@@ -17,23 +25,62 @@ $OpenBSD: patch-jdk_src_solaris_bin_java_md_c,v 1.2 2008/08/01 20:22:48 kurt Exp
  #include <pthread.h>
  #else
  #include <thread.h>
-@@ -77,7 +81,13 @@ extern char **environ;
+ #endif
+ 
++#ifdef __APPLE__
++#define JVM_DLL "libjvm.dylib"
++#define JAVA_DLL "libjava.dylib"
++/* FALLBACK avoids naming conflicts with system libraries
++ * (eg, ImageIO's libJPEG.dylib) */
++#define LD_LIBRARY_PATH "DYLD_FALLBACK_LIBRARY_PATH"
++#else
+ #define JVM_DLL "libjvm.so"
+ #define JAVA_DLL "libjava.so"
++#define LD_LIBRARY_PATH "LD_LIBRARY_PATH"
++#endif
+ 
+ /*
+  * If a processor / os combination has the ability to run binaries of
+@@ -71,14 +85,31 @@
+ #endif
+ 
+ /* pointer to environment */
++#ifdef __APPLE__
++#include <crt_externs.h>
++#define environ (*_NSGetEnviron())
++#else
+ extern char **environ;
++#endif
+ 
+ /*
   *      A collection of useful strings. One should think of these as #define
   *      entries, but actual strings can be more efficient (with many compilers).
   */
 -#ifdef __linux__
+-static const char *system_dir   = "/usr/java";
 +#if defined(__FreeBSD__)
-+static const char *system_dir	= "/usr/local/jdk1.7.0";
++static const char *system_dir	= PACKAGE_PATH "/openjdk7";
++static const char *user_dir	= "/java";
++#elif defined(__NetBSD__)
++static const char *system_dir	= PACKAGE_PATH "/openjdk7";
 +static const char *user_dir	= "/java";
 +#elif defined(__OpenBSD__)
-+static const char *system_dir	= "/usr/local/jdk-1.7.0";
++static const char *system_dir	= PACKAGE_PATH "/openjdk7";
++static const char *user_dir	= "/java";
++#elif defined(__APPLE__)
++static const char *system_dir	= PACKAGE_PATH "/openjdk7";
 +static const char *user_dir	= "/java";
 +#elif defined(__linux__)
- static const char *system_dir   = "/usr/java";
++static const char *system_dir   = PACKAGE_PATH "/java";
  static const char *user_dir     = "/java";
  #else /* Solaris */
-@@ -414,7 +424,7 @@ CreateExecutionEnvironment(int *_argcp,
-       runpath = getenv("LD_LIBRARY_PATH");
+ static const char *system_dir   = "/usr/jdk";
+@@ -411,10 +442,10 @@ CreateExecutionEnvironment(int *_argcp,
+        * If not on Solaris, assume only a single LD_LIBRARY_PATH
+        * variable.
+        */
+-      runpath = getenv("LD_LIBRARY_PATH");
++      runpath = getenv(LD_LIBRARY_PATH);
  #endif /* __solaris__ */
  
 -#ifdef __linux
@@ -41,7 +88,25 @@ $OpenBSD: patch-jdk_src_solaris_bin_java_md_c,v 1.2 2008/08/01 20:22:48 kurt Exp
        /*
         * On linux, if a binary is running as sgid or suid, glibc sets
         * LD_LIBRARY_PATH to the empty string for security purposes.  (In
-@@ -1209,6 +1219,20 @@ UnsetEnv(char *name)
+@@ -438,7 +469,7 @@ CreateExecutionEnvironment(int *_argcp,
+       new_runpath = JLI_MemAlloc( ((runpath!=NULL)?JLI_StrLen(runpath):0) +
+                               2*JLI_StrLen(jrepath) + 2*JLI_StrLen(arch) +
+                               JLI_StrLen(jvmpath) + 52);
+-      newpath = new_runpath + JLI_StrLen("LD_LIBRARY_PATH=");
++      newpath = new_runpath + JLI_StrLen(LD_LIBRARY_PATH "=");
+ 
+ 
+       /*
+@@ -453,7 +484,7 @@ CreateExecutionEnvironment(int *_argcp,
+ 
+         /* jvmpath, ((running != wanted)?((wanted==64)?"/"LIBARCH64NAME:"/.."):""), */
+ 
+-        sprintf(new_runpath, "LD_LIBRARY_PATH="
++        sprintf(new_runpath, LD_LIBRARY_PATH "="
+                 "%s:"
+                 "%s/lib/%s:"
+                 "%s/../lib/%s",
+@@ -1209,9 +1240,23 @@ UnsetEnv(char *name)
      return(borrowed_unsetenv(name));
  }
  
@@ -61,8 +126,12 @@ $OpenBSD: patch-jdk_src_solaris_bin_java_md_c,v 1.2 2008/08/01 20:22:48 kurt Exp
 +
  /* --- Splash Screen shared library support --- */
  
- static const char* SPLASHSCREEN_SO = "libsplashscreen.so";
-@@ -1247,7 +1271,7 @@ jlong_format_specifier() {
+-static const char* SPLASHSCREEN_SO = "libsplashscreen.so";
++static const char* SPLASHSCREEN_SO = JNI_LIB_NAME("splashscreen");
+ 
+ static void* hSplashLib = NULL;
+ 
+@@ -1247,7 +1292,7 @@ jlong_format_specifier() {
  int
  ContinueInNewThread0(int (JNICALL *continuation)(void *), jlong stack_size, void * args) {
      int rslt;

@@ -1,0 +1,32 @@
+$OpenBSD: patch-hotspot_src_os_bsd_vm_hpi_bsd_cpp,v 1.1 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/src/os/bsd/vm/hpi_bsd.cpp.orig	Fri May 15 17:26:11 2009
++++ hotspot/src/os/bsd/vm/hpi_bsd.cpp	Fri May 15 17:26:18 2009
+@@ -28,6 +28,14 @@
+ # include <sys/param.h>
+ # include <dlfcn.h>
+ 
++#ifdef __APPLE__
++#define HPI_LIB "libhpi.dylib"
++#define HPI_G_LIB "libhpi.dylib"
++#else
++#define HPI_LIB "libhpi.so"
++#define HPI_G_LIB "libhpi.so"
++#endif
++
+ typedef jint (JNICALL *init_t)(GetInterfaceFunc *, void *);
+ 
+ void hpi::initialize_get_interface(vm_calls_t *callbacks) {
+@@ -45,11 +53,11 @@ void hpi::initialize_get_interface(vm_calls_t *callbac
+       os::jvm_path(buf, JVM_MAXPATHLEN);
+ 
+ #ifdef PRODUCT
+-      const char * hpi_lib = "/libhpi.so";
++      const char * hpi_lib = "/" HPI_LIB;
+ #else
+       char * ptr = strrchr(buf, '/');
+       assert(strstr(ptr, "/libjvm") == ptr, "invalid library name");
+-      const char * hpi_lib = strstr(ptr, "_g") ? "/libhpi_g.so" : "/libhpi.so";
++      const char * hpi_lib = strstr(ptr, "_g") ? "/" HPI_G_LIB : "/" HPI_LIB;
+ #endif
+ 
+       *(strrchr(buf, '/')) = '\0';  /* get rid of /libjvm.so */

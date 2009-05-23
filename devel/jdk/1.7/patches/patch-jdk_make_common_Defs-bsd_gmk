@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.3 2009/01/04 23:25:16 kurt Exp $
---- jdk/make/common/Defs-bsd.gmk.orig	Mon Dec 22 21:13:32 2008
-+++ jdk/make/common/Defs-bsd.gmk	Mon Dec 22 23:14:44 2008
+$OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.4 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/common/Defs-bsd.gmk.orig	Mon May 18 10:55:28 2009
++++ jdk/make/common/Defs-bsd.gmk	Mon May 18 11:08:55 2009
 @@ -43,12 +43,6 @@
  # Get shared JDK settings
  include $(JDK_MAKE_SHARED_DIR)/Defs.gmk
@@ -23,8 +23,25 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.3 2009/01/04 23:25:16 kurt Exp 
  PLATFORM_INCLUDE      = $(INCLUDEDIR)/$(PLATFORM_INCLUDE_NAME)
  
  # suffix used for make dependencies files.
-@@ -169,7 +163,7 @@ ifeq ($(FASTDEBUG), true)
-   CXXFLAGS_DBG	+= $(CC_OPT/LOWER)
+@@ -109,8 +103,14 @@ CC_OPT          = $(CC_OPT/$(OPTIMIZATION_LEVEL))
+ #    We need this frame pointer to make it easy to walk the stacks.
+ #    This should be the default on X86, but ia64 and amd64 may not have this
+ #    as the default.
+-CFLAGS_REQUIRED_amd64   += -fno-omit-frame-pointer -D_LITTLE_ENDIAN
+-CFLAGS_REQUIRED_i586    += -fno-omit-frame-pointer -D_LITTLE_ENDIAN
++CFLAGS_REQUIRED_amd64   += -m64 -fno-omit-frame-pointer -D_LITTLE_ENDIAN
++LDFLAGS_COMMON_amd64    += -m64
++CFLAGS_REQUIRED_i586    += -m32 -fno-omit-frame-pointer -D_LITTLE_ENDIAN
++LDFLAGS_COMMON_i586     += -m32
++ifeq ($(OS_VENDOR),Apple)
++  # 16-byte stack re-alignment on 32-bit Darwin
++  CFLAGS_REQUIRED_i586 += -mstackrealign
++endif
+ CFLAGS_REQUIRED_ia64    += -fno-omit-frame-pointer -D_LITTLE_ENDIAN
+ CFLAGS_REQUIRED_sparcv9 += -m64 -mcpu=v9
+ LDFLAGS_COMMON_sparcv9  += -m64 -mcpu=v9
+@@ -180,7 +180,7 @@ ifeq ($(FASTDEBUG), true)
+   CXXFLAGS_DBG	+= $(CC_OPT/$(FASTDEBUG_OPTIMIZATION_LEVEL))
  endif
  
 -CPPFLAGS_COMMON = -D$(ARCH) -DARCH='"$(ARCH)"' -DLINUX $(VERSION_DEFINES) \
@@ -32,7 +49,7 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.3 2009/01/04 23:25:16 kurt Exp 
  		  -D_LARGEFILE64_SOURCE -D_GNU_SOURCE -D_REENTRANT
  
  ifeq ($(ARCH_DATA_MODEL), 64)
-@@ -182,27 +176,6 @@ ifneq ($(PRODUCT), java)
+@@ -193,33 +193,15 @@ ifneq ($(PRODUCT), java)
    CPPFLAGS_DBG    += -DLOGGING 
  endif
  
@@ -60,48 +77,71 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.3 2009/01/04 23:25:16 kurt Exp 
  #
  # -L paths for finding and -ljava
  #
-@@ -240,15 +213,6 @@ endif
- LD_MAPFILE_FLAG = -Xlinker --version-script -Xlinker
+-LDFLAGS_OPT     = -Xlinker -O1
+ LDFLAGS_COMMON += -L$(LIBDIR)/$(LIBARCH)
++
++ifneq ($(OS_VENDOR), Apple)
++LDFLAGS_OPT     = -Xlinker -O1
+ LDFLAGS_COMMON += -Wl,-soname=$(LIB_PREFIX)$(LIBRARY).$(LIBRARY_SUFFIX)
++endif
  
  #
+ # -static-libgcc is a gcc-3 flag to statically link libgcc, gcc-2.9x always
+@@ -240,8 +222,8 @@ AUTOMATIC_PCH_OPTION = 
+ #
+ ifeq ($(VARIANT), OPT)
+   ifneq ($(NO_STRIP), true)
+-    # Debug 'strip -g' leaves local function Elf symbols (better stack traces)
+-    POST_STRIP_PROCESS = $(STRIP) -g
++    # Debug 'strip -S' leaves local function Elf symbols (better stack traces)
++    POST_STRIP_PROCESS = $(STRIP) -S
+   endif
+ endif
+ 
+@@ -250,13 +232,9 @@ endif
+ #
+ LD_MAPFILE_FLAG = -Xlinker --version-script -Xlinker
+ 
+-#
 -# Support for Quantify.
 -#
 -ifdef QUANTIFY
 -QUANTIFY_CMD = quantify
 -QUANTIFY_OPTIONS = -cache-dir=/tmp/quantify -always-use-cache-dir=yes
 -LINK_PRE_CMD = $(QUANTIFY_CMD) $(QUANTIFY_OPTIONS)
--endif
--
--#
- # Path and option to link against the VM, if you have to.  Note that
- # there are libraries that link against only -ljava, but they do get
- # -L to the -ljvm, this is because -ljava depends on -ljvm, whereas
-@@ -274,7 +238,9 @@ override HAVE_ALTZONE            = false
++# Darwin does not support linker map files.
++ifeq ($(OS_VENDOR), Apple)
++LDNOMAP=true
+ endif
+ 
+ #
+@@ -285,7 +263,9 @@ override HAVE_ALTZONE            = false
  override HAVE_FILIOH             = false
  override HAVE_GETHRTIME          = false
  override HAVE_GETHRVTIME         = false
-+ifeq ($(OS_VENDOR),NetBSD)
++ifeq ($(OS_VENDOR),Apple)
  override HAVE_SIGIGNORE          = true
 +endif
  override LEX_LIBRARY             = -lfl
  ifeq ($(STATIC_CXX),true)
  override LIBCXX                  = -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
-@@ -285,13 +251,9 @@ override LIBPOSIX4               =
+@@ -296,13 +276,9 @@ override LIBPOSIX4               =
  override LIBSOCKET               =
  override LIBTHREAD               =
  override MOOT_PRIORITIES         = true
 -override NO_INTERRUPTIBLE_IO     = true
-+override NO_INTERRUPTIBLE_IO     = false
- override OPENWIN_HOME            = /usr/X11R6
+-override OPENWIN_HOME            = /usr/X11R6
 -ifeq ($(ARCH), amd64)
 -override OPENWIN_LIB             = $(OPENWIN_HOME)/lib64
 -else
++override NO_INTERRUPTIBLE_IO     = false
++override OPENWIN_HOME            = $(X11_PATH)
  override OPENWIN_LIB             = $(OPENWIN_HOME)/lib
 -endif
  override OTHER_M4FLAGS           = -D__GLIBC__ -DGNU_ASSEMBLER
  override SUN_CMM_SUBDIR          =
  override THREADS_FLAG            = native
-@@ -311,6 +273,14 @@ override USE_EXECNAME            = true
+@@ -322,6 +298,14 @@ override USE_EXECNAME            = true
  # HAVE_DPS should only be "no" if the platform has no DPS headers or libs
  # DPS (Displayable PostScript) is available on Solaris machines
  HAVE_DPS = no

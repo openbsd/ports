@@ -1,29 +1,206 @@
-$OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_bsd_x86_32_s,v 1.1 2008/03/19 18:05:43 kurt Exp $
---- hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_32.s.orig	Tue Feb 26 18:50:51 2008
-+++ hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_32.s	Tue Feb 26 18:50:54 2008
-@@ -21,6 +21,7 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_bsd_x86_32_s,v 1.2 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_32.s.orig	Fri May 15 16:25:28 2009
++++ hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_32.s	Fri May 15 17:42:58 2009
+@@ -19,8 +19,19 @@
+ # Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
+ # CA 95054 USA or visit www.sun.com if you need additional information or
  # have any questions.
- # 
+-# 
++#
  
-+	.globl fixcw
++ 
++#ifdef __APPLE__
++# Darwin uses _ prefixed global symbols
++#define SYMBOL(s) _ ## s
++#define ELF_TYPE(name, description)
++#else
++#define SYMBOL(s) s
++#define ELF_TYPE(name, description) .type name,description
++#endif
++
++	.globl SYMBOL(fixcw)
  	
          # NOTE WELL!  The _Copy functions are called directly
  	# from server-compiler-generated code via CallLeafNoFP,
-@@ -41,6 +42,17 @@
+@@ -28,41 +39,61 @@
+ 	# point or use it in the same manner as does the server
+ 	# compiler.
+ 	
+-        .globl _Copy_conjoint_bytes
+-        .globl _Copy_arrayof_conjoint_bytes
+-        .globl _Copy_conjoint_jshorts_atomic
+-	.globl _Copy_arrayof_conjoint_jshorts
+-        .globl _Copy_conjoint_jints_atomic
+-        .globl _Copy_arrayof_conjoint_jints
+-	.globl _Copy_conjoint_jlongs_atomic
+-	.globl _mmx_Copy_arrayof_conjoint_jshorts
++        .globl SYMBOL(_Copy_conjoint_bytes)
++        .globl SYMBOL(_Copy_arrayof_conjoint_bytes)
++        .globl SYMBOL(_Copy_conjoint_jshorts_atomic)
++	.globl SYMBOL(_Copy_arrayof_conjoint_jshorts)
++        .globl SYMBOL(_Copy_conjoint_jints_atomic)
++        .globl SYMBOL(_Copy_arrayof_conjoint_jints)
++	.globl SYMBOL(_Copy_conjoint_jlongs_atomic)
++	.globl SYMBOL(_mmx_Copy_arrayof_conjoint_jshorts)
+ 
+-        .globl _Atomic_cmpxchg_long
++        .globl SYMBOL(_Atomic_cmpxchg_long)
  
  	.text
  
+-        .globl  SafeFetch32, Fetch32PFI, Fetch32Resume
+-        .globl  SafeFetchN
 +# Support for void os::Solaris::init_thread_fpu_state() in os_solaris_i486.cpp
 +# Set fpu to 53 bit precision.  This happens too early to use a stub.
 +# ported from solaris_x86_32.s
++#ifdef __APPLE__
++        .align   4
++#else
 +	.align   16
-+fixcw:
++#endif
++SYMBOL(fixcw):
 +	pushl    $0x27f
 +	fldcw    0(%esp)
 +	popl     %eax
 +	ret
 +
-+       .align  16
-         .globl  SafeFetch32, Fetch32PFI, Fetch32Resume
-         .globl  SafeFetchN
++#ifdef __APPLE__
++        .align   4
++#else
++        .align   16
++#endif
++
++        .globl  SYMBOL(SafeFetch32), SYMBOL(Fetch32PFI), SYMBOL(Fetch32Resume)
++        .globl  SYMBOL(SafeFetchN)
          ## TODO: avoid exposing Fetch32PFI and Fetch32Resume.
+         ## Instead, the signal handler would call a new SafeFetchTriage(FaultingEIP)
+         ## routine to vet the address.  If the address is the faulting LD then
+         ## SafeFetchTriage() would return the resume-at EIP, otherwise null.
+-	.type    SafeFetch32,@function
++	ELF_TYPE(SafeFetch32,@function)
+         .p2align 4,,15
+-SafeFetch32:
+-SafeFetchN:
++SYMBOL(SafeFetch32):
++SYMBOL(SafeFetchN):
+          movl    0x8(%esp), %eax
+          movl    0x4(%esp), %ecx
+-Fetch32PFI:
++SYMBOL(Fetch32PFI):
+          movl    (%ecx), %eax
+-Fetch32Resume:
++SYMBOL(Fetch32Resume):
+          ret
+ 
+ 
+-        .globl  SpinPause
+-	.type   SpinPause,@function
++        .globl  SYMBOL(SpinPause)
++	ELF_TYPE(SpinPause,@function)
+         .p2align 4,,15
+-SpinPause:
++SYMBOL(SpinPause):
+         rep
+         nop
+         movl    $1, %eax
+@@ -72,8 +103,8 @@ SpinPause:
+         #                                       void* to,
+         #                                       size_t count)
+         .p2align 4,,15
+-	.type    _Copy_conjoint_bytes,@function
+-_Copy_conjoint_bytes:
++	ELF_TYPE(_Copy_conjoint_bytes,@function)
++SYMBOL(_Copy_conjoint_bytes):
+         pushl    %esi
+         movl     4+12(%esp),%ecx      # count
+         pushl    %edi
+@@ -180,8 +211,8 @@ cb_CopyLeft:
+         #
+         # Same as _Copy_conjoint_bytes, except no source alignment check.
+         .p2align 4,,15
+-	.type    _Copy_arrayof_conjoint_bytes,@function
+-_Copy_arrayof_conjoint_bytes:
++	ELF_TYPE(_Copy_arrayof_conjoint_bytes,@function)
++SYMBOL(_Copy_arrayof_conjoint_bytes):
+         pushl    %esi
+         movl     4+12(%esp),%ecx      # count
+         pushl    %edi
+@@ -268,8 +299,8 @@ acb_CopyLeft:
+         #                                                void* to,
+         #                                                size_t count)
+         .p2align 4,,15
+-	.type    _Copy_conjoint_jshorts_atomic,@function
+-_Copy_conjoint_jshorts_atomic:
++	ELF_TYPE(_Copy_conjoint_jshorts_atomic,@function)
++SYMBOL(_Copy_conjoint_jshorts_atomic):
+         pushl    %esi
+         movl     4+12(%esp),%ecx      # count
+         pushl    %edi
+@@ -354,8 +385,8 @@ cs_CopyLeft:
+         #                                                 void* to,
+         #                                                 size_t count)
+         .p2align 4,,15
+-	.type    _Copy_arrayof_conjoint_jshorts,@function
+-_Copy_arrayof_conjoint_jshorts:
++	ELF_TYPE(_Copy_arrayof_conjoint_jshorts,@function)
++SYMBOL(_Copy_arrayof_conjoint_jshorts):
+         pushl    %esi
+         movl     4+12(%esp),%ecx      # count
+         pushl    %edi
+@@ -431,10 +462,10 @@ acs_CopyLeft:
+         # Equivalent to
+         #   arrayof_conjoint_jints
+         .p2align 4,,15
+-	.type    _Copy_conjoint_jints_atomic,@function
+-	.type    _Copy_arrayof_conjoint_jints,@function
+-_Copy_conjoint_jints_atomic:
+-_Copy_arrayof_conjoint_jints:
++	ELF_TYPE(_Copy_conjoint_jints_atomic,@function)
++	ELF_TYPE(_Copy_arrayof_conjoint_jints,@function)
++SYMBOL(_Copy_conjoint_jints_atomic):
++SYMBOL(_Copy_arrayof_conjoint_jints):
+         pushl    %esi
+         movl     4+12(%esp),%ecx      # count
+         pushl    %edi
+@@ -494,7 +525,7 @@ ci_CopyLeft:
+         #
+         # count treated as signed
+         #
+-        # if (from > to) {
++        # // if (from > to) {
+         #   while (--count >= 0) {
+         #     *to++ = *from++;
+         #   }
+@@ -504,8 +535,8 @@ ci_CopyLeft:
+         #   }
+         # }
+         .p2align 4,,15
+-	.type    _Copy_conjoint_jlongs_atomic,@function
+-_Copy_conjoint_jlongs_atomic:
++	ELF_TYPE(_Copy_conjoint_jlongs_atomic,@function)
++SYMBOL(_Copy_conjoint_jlongs_atomic):
+         movl     4+8(%esp),%ecx       # count
+         movl     4+0(%esp),%eax       # from
+         movl     4+4(%esp),%edx       # to
+@@ -533,8 +564,8 @@ cla_CopyLeft:
+         #                                                 void* to,
+         #                                                 size_t count)
+         .p2align 4,,15
+-	.type    _mmx_Copy_arrayof_conjoint_jshorts,@function
+-_mmx_Copy_arrayof_conjoint_jshorts:
++	ELF_TYPE(_mmx_Copy_arrayof_conjoint_jshorts,@function)
++SYMBOL(_mmx_Copy_arrayof_conjoint_jshorts):
+         pushl    %esi
+         movl     4+12(%esp),%ecx
+         pushl    %edi
+@@ -632,8 +663,8 @@ mmx_acs_CopyLeft:
+         #                                   bool is_MP)
+         #
+         .p2align 4,,15
+-	.type    _Atomic_cmpxchg_long,@function
+-_Atomic_cmpxchg_long:
++	ELF_TYPE(_Atomic_cmpxchg_long,@function)
++SYMBOL(_Atomic_cmpxchg_long):
+                                    #  8(%esp) : return PC
+         pushl    %ebx              #  4(%esp) : old %ebx
+         pushl    %edi              #  0(%esp) : old %edi

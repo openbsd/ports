@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_share_native_common_check_code_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/src/share/native/common/check_code.c.orig	Thu Sep 11 03:44:46 2008
-+++ jdk/src/share/native/common/check_code.c	Fri Sep 12 17:36:40 2008
+$OpenBSD: patch-jdk_src_share_native_common_check_code_c,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/native/common/check_code.c.orig	Fri May  8 03:35:00 2009
++++ jdk/src/share/native/common/check_code.c	Sat May  9 11:04:59 2009
 @@ -1066,7 +1066,7 @@ verify_method(context_type *context, jclass cb, int me
   * Make sure that branches don't go into the middle of nowhere.
   */
@@ -44,7 +44,7 @@ $OpenBSD: patch-jdk_src_share_native_common_check_code_c,v 1.2 2009/01/04 23:25:
              if (!isLegalTarget(context, target))
                  CCerror(context, "Illegal branch in tableswitch");
              saved_operand[k + 1] = code_data[target];
-@@ -1613,7 +1613,7 @@ static int instruction_length(unsigned char *iptr, uns
+@@ -1625,7 +1625,7 @@ static int instruction_length(unsigned char *iptr, uns
              if (lpc + 2 >= (int *)end) {
                  return -1; /* do not read pass the end */
              }
@@ -53,7 +53,7 @@ $OpenBSD: patch-jdk_src_share_native_common_check_code_c,v 1.2 2009/01/04 23:25:
              if ((index < 0) || (index > 65535)) {
                  return -1;      /* illegal */
              } else {
-@@ -1626,7 +1626,7 @@ static int instruction_length(unsigned char *iptr, uns
+@@ -1638,7 +1638,7 @@ static int instruction_length(unsigned char *iptr, uns
              int npairs;
              if (lpc + 1 >= (int *)end)
                  return -1; /* do not read pass the end */

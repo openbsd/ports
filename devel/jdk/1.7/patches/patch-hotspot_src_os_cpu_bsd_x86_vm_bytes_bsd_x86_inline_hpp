@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_bytes_bsd_x86_inline_hpp,v 1.1 2008/03/19 18:05:43 kurt Exp $
---- hotspot/src/os_cpu/bsd_x86/vm/bytes_bsd_x86.inline.hpp.orig	Wed Nov  7 15:05:15 2007
-+++ hotspot/src/os_cpu/bsd_x86/vm/bytes_bsd_x86.inline.hpp	Wed Nov  7 15:20:05 2007
-@@ -22,7 +22,15 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_bytes_bsd_x86_inline_hpp,v 1.2 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/src/os_cpu/bsd_x86/vm/bytes_bsd_x86.inline.hpp.orig	Fri May 15 16:25:28 2009
++++ hotspot/src/os_cpu/bsd_x86/vm/bytes_bsd_x86.inline.hpp	Fri May 15 17:44:35 2009
+@@ -22,7 +22,33 @@
   *
   */
  
@@ -9,10 +9,28 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_bytes_bsd_x86_inline_hpp,v 1.1 200
  #include <byteswap.h>
 +#endif
 +
-+#if defined(AMD64) && defined (__OpenBSD__)
-+# define bswap_16(x)	swap16(x)
-+# define bswap_32(x)	swap32(x)
-+# define bswap_64(x)	swap64(x)
++#ifdef __APPLE__
++#include <libkern/OSByteOrder.h>
++#endif
++
++#if defined(AMD64)
++#  if defined(__APPLE__)
++#    define bswap_16(x)	OSSwapInt16(x)
++#    define bswap_32(x)	OSSwapInt32(x)
++#    define bswap_64(x)	OSSwapInt64(x)
++#  elif defined(__OpenBSD__)
++#    define bswap_16(x)	swap16(x)
++#    define bswap_32(x)	swap32(x)
++#    define bswap_64(x)	swap64(x)
++#  elif defined(__NetBSD__)
++#    define bswap_16(x)	bswap16(x)
++#    define bswap_32(x)	bswap32(x)
++#    define bswap_64(x)	bswap64(x)
++#  else
++#    define bswap_16(x) __bswap16(x)
++#    define bswap_32(x) __bswap32(x)
++#    define bswap_64(x) __bswap64(x)
++#  endif
 +#endif
  
  // Efficient swapping of data bytes from Java byte

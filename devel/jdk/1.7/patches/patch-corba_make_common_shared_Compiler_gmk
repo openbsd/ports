@@ -1,14 +1,15 @@
-$OpenBSD: patch-corba_make_common_shared_Compiler_gmk,v 1.1 2008/03/19 18:05:43 kurt Exp $
---- corba/make/common/shared/Compiler.gmk.orig	Thu Nov  8 12:07:05 2007
-+++ corba/make/common/shared/Compiler.gmk	Thu Nov  8 12:08:00 2007
-@@ -37,8 +37,8 @@ ifeq ($(PLATFORM), solaris)
-   override CC_VERSION = sun
- endif
- 
--# Linux uses GNU compilers by default
--ifeq ($(PLATFORM), linux)
-+# Linux & BSD uses GNU compilers by default
-+ifneq (,$(findstring $(PLATFORM), linux bsd))
+$OpenBSD: patch-corba_make_common_shared_Compiler_gmk,v 1.2 2009/05/23 03:03:24 kurt Exp $
+--- corba/make/common/shared/Compiler.gmk.orig	Fri May  8 03:29:39 2009
++++ corba/make/common/shared/Compiler.gmk	Thu May 14 23:15:23 2009
+@@ -42,6 +42,11 @@ ifeq ($(PLATFORM), linux)
    override CC_VERSION = gcc
  endif
+ 
++# BSD uses GNU compilers by default
++ifeq ($(PLATFORM), bsd)
++  override CC_VERSION = gcc
++endif
++
+ # Get the compiler specific settings
+ include $(BUILDDIR)/common/shared/Compiler-$(CC_VERSION).gmk
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_sun_awt_Makefile,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/make/sun/awt/Makefile.orig	Thu Sep 11 03:44:07 2008
-+++ jdk/make/sun/awt/Makefile	Fri Sep 12 17:05:55 2008
+$OpenBSD: patch-jdk_make_sun_awt_Makefile,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/sun/awt/Makefile.orig	Fri May  8 03:34:16 2009
++++ jdk/make/sun/awt/Makefile	Sat May  9 11:04:59 2009
 @@ -123,6 +123,13 @@ OTHER_CFLAGS += -DMLIB_NO_LIBSUNMATH
  OTHER_LDLIBS = $(JVMLIB) $(LIBM) -ldl
  endif
@@ -15,7 +15,7 @@ $OpenBSD: patch-jdk_make_sun_awt_Makefile,v 1.2 2009/01/04 23:25:16 kurt Exp $
  FILES_c += initIDs.c
  
  # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ SOLARIS/LINUX
-@@ -235,7 +242,7 @@ vpath %.c     $(SHARE_SRC)/native/$(PKGDIR)/../font
+@@ -236,7 +243,7 @@ vpath %.c     $(SHARE_SRC)/native/$(PKGDIR)/../font
  # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ WINDOWS
  endif # PLATFORM
  
@@ -24,7 +24,7 @@ $OpenBSD: patch-jdk_make_sun_awt_Makefile,v 1.2 2009/01/04 23:25:16 kurt Exp $
  # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv LINUX
  vpath %.c   $(SHARE_SRC)/native/$(PKGDIR)/../java2d/opengl
  vpath %.c   $(PLATFORM_SRC)/native/$(PKGDIR)/../java2d/opengl
-@@ -384,6 +391,19 @@ FONTCONFIGS_SRC_PREFIX = $(PLATFORM).
+@@ -390,6 +397,19 @@ FONTCONFIGS_SRC_PREFIX = $(PLATFORM).
  # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ SOLARIS
  endif # PLATFORM
  
@@ -44,7 +44,7 @@ $OpenBSD: patch-jdk_make_sun_awt_Makefile,v 1.2 2009/01/04 23:25:16 kurt Exp $
  FONTCONFIGS     = $(_FONTCONFIGS:%=$(LIBDIR)/%.src)
  BINARYFONTCONFIGS = $(_FONTCONFIGS:%.properties=$(LIBDIR)/%.bfc)
  
-@@ -476,6 +496,9 @@ CPPFLAGS += -I$(OPENWIN_HOME)/include \
+@@ -482,6 +502,9 @@ CPPFLAGS += -I$(OPENWIN_HOME)/include \
              -I$(OPENWIN_HOME)/include/X11/extensions \
              -I$(PLATFORM_SRC)/native/$(PKGDIR)/font 
  endif
@@ -54,7 +54,7 @@ $OpenBSD: patch-jdk_make_sun_awt_Makefile,v 1.2 2009/01/04 23:25:16 kurt Exp $
  CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
              -I$(SHARE_SRC)/native/$(PKGDIR)/../font \
              -I$(PLATFORM_SRC)/native/$(PKGDIR)/../font \
-@@ -497,7 +520,13 @@ CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
+@@ -503,7 +526,13 @@ CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
              -I$(PLATFORM_SRC)/native/$(PKGDIR) \
  	    $(EVENT_MODEL)
  

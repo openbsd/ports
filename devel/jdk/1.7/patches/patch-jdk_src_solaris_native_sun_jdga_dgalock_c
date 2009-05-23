@@ -1,0 +1,25 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_jdga_dgalock_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/sun/jdga/dgalock.c.orig	Mon May 18 20:25:39 2009
++++ jdk/src/solaris/native/sun/jdga/dgalock.c	Mon May 18 20:25:47 2009
+@@ -44,6 +44,7 @@
+ #include <X11/Xlib.h>
+ 
+ #include "jni.h"
++#include "jvm_md.h"
+ #include "jdga.h"
+ #include "jdgadevice.h"
+ 
+@@ -84,10 +85,10 @@ Drawable GetVirtualDrawableStub(Display *display, Draw
+ static GetVirtualDrawableFunc * GetVirtualDrawable = GetVirtualDrawableStub;
+ 
+ static void Solaris_DGA_XineramaInit(Display *display) {
+-    void * handle = 0;
++    void * handle = NULL;
+     if (IsXineramaOn == NULL) {
+-        handle = dlopen("libxinerama.so", RTLD_NOW);
+-        if (handle != 0) {
++        handle = dlopen(JNI_LIB_NAME("xinerama"), RTLD_NOW);
++        if (handle != NULL) {
+             void *sym = dlsym(handle, "IsXineramaOn");
+             IsXineramaOn = (IsXineramaOnFunc *)sym;
+             if (IsXineramaOn != 0 && (*IsXineramaOn)(display)) {

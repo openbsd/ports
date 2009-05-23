@@ -1,11 +1,11 @@
-$OpenBSD: patch-hotspot_src_share_vm_utilities_macros_hpp,v 1.6 2009/01/04 23:25:16 kurt Exp $
---- hotspot/src/share/vm/utilities/macros.hpp.orig	Fri Dec 19 03:42:12 2008
-+++ hotspot/src/share/vm/utilities/macros.hpp	Wed Dec 24 10:02:13 2008
-@@ -154,6 +154,14 @@
- #define X86_ONLY(code)
+$OpenBSD: patch-hotspot_src_share_vm_utilities_macros_hpp,v 1.7 2009/05/23 03:03:25 kurt Exp $
+--- hotspot/src/share/vm/utilities/macros.hpp.orig	Fri May  8 03:30:37 2009
++++ hotspot/src/share/vm/utilities/macros.hpp	Fri May 15 17:51:24 2009
+@@ -146,6 +146,14 @@
+ #define NOT_WINDOWS(code) code
  #endif
  
-+#if defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__APPLE__)
 +#define BSD_ONLY(code) code
 +#define NOT_BSD(code)
 +#else
@@ -13,6 +13,6 @@ $OpenBSD: patch-hotspot_src_share_vm_utilities_macros_hpp,v 1.6 2009/01/04 23:25
 +#define NOT_BSD(code) code
 +#endif
 +
- #ifdef IA32
- #define IA32_ONLY(code) code
- #define NOT_IA32(code)
+ #if defined(IA32) || defined(AMD64)
+ #define X86
+ #define X86_ONLY(code) code

@@ -1,0 +1,15 @@
+$OpenBSD: patch-jdk_src_share_native_sun_font_DrawGlyphList_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/native/sun/font/DrawGlyphList.c.orig	Mon May 18 16:35:58 2009
++++ jdk/src/share/native/sun/font/DrawGlyphList.c	Mon May 18 16:36:07 2009
+@@ -26,7 +26,11 @@
+ #include "jlong.h"
+ #include "math.h"
+ #include "string.h"
++#ifdef _ALLBSD_SOURCE
++#include "stdlib.h"
++#else
+ #include "malloc.h"
++#endif
+ #include "sunfontids.h"
+ #include "fontscalerdefs.h"
+ #include "glyphblitting.h"

@@ -1,0 +1,26 @@
+$OpenBSD: patch-jdk_src_solaris_npt_npt_md_h,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/npt/npt_md.h.orig	Mon May 18 20:32:59 2009
++++ jdk/src/solaris/npt/npt_md.h	Mon May 18 20:33:04 2009
+@@ -32,10 +32,11 @@
+ #include <string.h>
+ #include <errno.h>
+ #include <dlfcn.h>
++#ifndef __APPLE__
+ #include <link.h>
++#endif
++#include <jvm_md.h>
+ 
+-#define NPT_LIBNAME "libnpt.so"
+-
+ #define NPT_INITIALIZE(pnpt,version,options)                            \
+     {                                                                   \
+         void   *_handle;                                                \
+@@ -43,7 +44,7 @@
+                                                                         \
+         if ( (pnpt) == NULL ) NPT_ERROR("NptEnv* is NULL");             \
+         *(pnpt) = NULL;                                                 \
+-        _handle =  dlopen(NPT_LIBNAME, RTLD_LAZY);                      \
++        _handle =  dlopen(JNI_LIB_NAME("npt"), RTLD_LAZY);              \
+         if ( _handle == NULL ) NPT_ERROR("Cannot open library");        \
+         _sym = dlsym(_handle, "nptInitialize");                         \
+         if ( _sym == NULL ) NPT_ERROR("Cannot find nptInitialize");     \

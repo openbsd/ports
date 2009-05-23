@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_DefaultFileSystemProvider_java,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java.orig	Tue May 19 14:14:38 2009
++++ jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Tue May 19 14:15:30 2009
+@@ -68,6 +68,8 @@ public class DefaultFileSystemProvider {
+             return createProvider("sun.nio.fs.SolarisFileSystemProvider");
+         if (osname.equals("Linux"))
+             return createProvider("sun.nio.fs.LinuxFileSystemProvider");
++        if (osname.endsWith("BSD") || osname.equals("Darwin"))
++            return createProvider("sun.nio.fs.BsdFileSystemProvider");
+         throw new AssertionError("Platform not recognized");
+     }
+ }

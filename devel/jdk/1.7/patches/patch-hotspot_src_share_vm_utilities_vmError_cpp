@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_share_vm_utilities_vmError_cpp,v 1.5 2009/01/17 11:37:42 kurt Exp $
---- hotspot/src/share/vm/utilities/vmError.cpp.orig	Thu Jan 15 03:41:24 2009
-+++ hotspot/src/share/vm/utilities/vmError.cpp	Fri Jan 16 12:16:44 2009
-@@ -31,7 +31,7 @@ const char *env_list[] = {
+$OpenBSD: patch-hotspot_src_share_vm_utilities_vmError_cpp,v 1.6 2009/05/23 03:03:25 kurt Exp $
+--- hotspot/src/share/vm/utilities/vmError.cpp.orig	Fri May  8 03:30:37 2009
++++ hotspot/src/share/vm/utilities/vmError.cpp	Fri May 15 17:51:40 2009
+@@ -31,13 +31,18 @@ const char *env_list[] = {
    "JAVA_HOME", "JRE_HOME", "JAVA_TOOL_OPTIONS", "_JAVA_OPTIONS", "CLASSPATH",
    "JAVA_COMPILER", "PATH", "USERNAME",
  
@@ -10,24 +10,18 @@ $OpenBSD: patch-hotspot_src_share_vm_utilities_vmError_cpp,v 1.5 2009/01/17 11:3
    "LD_LIBRARY_PATH", "LD_PRELOAD", "SHELL", "DISPLAY",
    "HOSTTYPE", "OSTYPE", "ARCH", "MACHTYPE",
  
-@@ -165,9 +165,16 @@ static char* next_OnError_command(char* buf, int bufle
+   // defined on Linux
+   "LD_ASSUME_KERNEL", "_JAVA_SR_SIGNUM",
  
- static void print_bug_submit_message(outputStream *out, Thread *thread) {
-   if (out == NULL) return;
-+#ifdef __FreeBSD__
-+  out->print_raw_cr("#");
-+  out->print_raw_cr("# If you would like to submit a bug report, please write");
-+  out->print_raw_cr("# a letter to freebsd-java@FreeBSD.org mailing list");
-+  out->print_raw_cr("#");
-+#else
-   out->print_raw_cr("# If you would like to submit a bug report, please visit:");
-   out->print_raw   ("#   ");
-   out->print_raw_cr(Arguments::java_vendor_url_bug());
-+#endif
-   // If the crash is in native code, encourage user to submit a bug to the
-   // provider of that code.
-   if (thread && thread->is_Java_thread() &&
-@@ -794,7 +801,7 @@ void VMError::report_and_die() {
++  // defined on Darwin
++  "DYLD_LIBRARY_PATH", "DYLD_FALLBACK_LIBRARY_PATH",
++  "DYLD_FRAMEWORK_PATH", "DYLD_FALLBACK_FRAMEWORK_PATH",
++  "DYLD_INSERT_LIBRARIES",
++
+   // defined on Windows
+   "OS", "PROCESSOR_IDENTIFIER", "_ALT_JAVA_HOME_DIR",
+ 
+@@ -799,7 +804,7 @@ void VMError::report_and_die() {
      const char* ptr = OnError;
      while ((cmd = next_OnError_command(buffer, sizeof(buffer), &ptr)) != NULL){
        out.print_raw   ("#   Executing ");

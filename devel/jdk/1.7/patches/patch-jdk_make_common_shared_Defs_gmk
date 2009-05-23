@@ -1,0 +1,14 @@
+$OpenBSD: patch-jdk_make_common_shared_Defs_gmk,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/common/shared/Defs.gmk.orig	Fri May  8 03:34:14 2009
++++ jdk/make/common/shared/Defs.gmk	Mon May 18 11:22:55 2009
+@@ -577,8 +577,8 @@ ifeq ($(PLATFORM), solaris)
+   override CC_VERSION = sun
+ endif
+ 
+-# Linux uses GNU compilers by default
+-ifeq ($(PLATFORM), linux)
++# Linux & BSD uses GNU compilers by default
++ifneq (,$(findstring $(PLATFORM), linux bsd))
+   override CC_VERSION = gcc
+ endif
+ 

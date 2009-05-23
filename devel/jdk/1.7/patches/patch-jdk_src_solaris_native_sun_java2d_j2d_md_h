@@ -1,16 +1,15 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_java2d_j2d_md_h,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/sun/java2d/j2d_md.h.orig	Tue Dec  4 04:05:46 2007
-+++ jdk/src/solaris/native/sun/java2d/j2d_md.h	Thu Feb 14 17:56:30 2008
-@@ -29,10 +29,13 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_java2d_j2d_md_h,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/sun/java2d/j2d_md.h.orig	Fri May  8 03:35:07 2009
++++ jdk/src/solaris/native/sun/java2d/j2d_md.h	Mon May 18 20:22:12 2009
+@@ -28,11 +28,11 @@
+ #include <sys/types.h>
  
  /*
-  * Linux version of <sys/types.h> does not define intptr_t
-+ * NetBSD's doesn't either, so let's do it for everyone.
+- * Linux version of <sys/types.h> does not define intptr_t
++ * Linux and BSD's version of <sys/types.h> does not define intptr_t
   */
 -#ifdef __linux__
-+#if defined(__OpenBSD__)
-+#include <inttypes.h>
-+#elif defined(__linux__) || defined(_ALLBSD_SOURCE)
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
  #include <stdint.h>
 -#endif /* __linux__ */
 +#endif /* __linux__ || _ALLBSD_SOURCE */

@@ -8,9 +8,7 @@ running on the Java platform.
 Flavors:
   native_bootstrap
     Bootstrap the jdk using a previously built and installed
-    devel/jdk/1.7 package. NOTE: if this flavor is used without a
-    previously installed devel/jdk/1.7 package, the port will just
-    build the jdk with default (devel/jdk/1.6) bootstrap and stop.
+    devel/jdk/1.7 package.
 
   with_ipv6
     Build the jdk/jre with ipv6 support. When the jdk/jre is built

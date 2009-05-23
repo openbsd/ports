@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_make_common_internal_BinaryPlugs_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/make/common/internal/BinaryPlugs.gmk.orig	Thu Sep 11 03:44:06 2008
-+++ jdk/make/common/internal/BinaryPlugs.gmk	Fri Sep 12 17:05:54 2008
-@@ -51,8 +51,6 @@ PLUG_JMF_CLASS_NAMES = \
+$OpenBSD: patch-jdk_make_common_internal_BinaryPlugs_gmk,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/common/internal/BinaryPlugs.gmk.orig	Fri May  8 03:34:14 2009
++++ jdk/make/common/internal/BinaryPlugs.gmk	Sat May  9 11:08:16 2009
+@@ -49,8 +49,6 @@ PLUG_JMF_CLASS_NAMES = \
  com/sun/jmx/snmp/SnmpDataTypeEnums.class \
  com/sun/jmx/snmp/SnmpDefinitions.class \
  com/sun/jmx/snmp/SnmpOid.class \
@@ -10,7 +10,7 @@ $OpenBSD: patch-jdk_make_common_internal_BinaryPlugs_gmk,v 1.2 2009/01/04 23:25:
  com/sun/jmx/snmp/SnmpOidRecord.class \
  com/sun/jmx/snmp/SnmpOidTable.class \
  com/sun/jmx/snmp/SnmpOidTableSupport.class \
-@@ -62,17 +60,9 @@ com/sun/jmx/snmp/SnmpPeer.class \
+@@ -60,22 +58,16 @@ com/sun/jmx/snmp/SnmpPeer.class \
  com/sun/jmx/snmp/SnmpTimeticks.class \
  com/sun/jmx/snmp/SnmpVarBind.class \
  com/sun/jmx/snmp/SnmpVarBindList.class \
@@ -27,25 +27,19 @@ $OpenBSD: patch-jdk_make_common_internal_BinaryPlugs_gmk,v 1.2 2009/01/04 23:25:
 -com/sun/jmx/snmp/daemon/WaitQ.class
 +com/sun/jmx/snmp/daemon/SnmpSession.class
  
- PLUG_SOUND_CLASS_NAMES = \
- com/sun/media/sound/AbstractPlayer.class \
-@@ -126,10 +116,12 @@ com/sun/media/sound/SimpleInputDeviceProvider\$$1.clas
- com/sun/media/sound/SimpleInputDeviceProvider\$$InputDeviceInfo.class \
- com/sun/media/sound/SimpleInputDeviceProvider.class
- 
 +PLUG_GNU_CLASS_NAMES = gnu
 +
  # Class list temp files (used by both import and export of plugs)
  
  PLUG_TEMPDIR=$(ABS_TEMPDIR)/plugs
--PLUG_CLASS_AREAS = jmf sound
-+PLUG_CLASS_AREAS = jmf sound gnu
+-PLUG_CLASS_AREAS = jmf
++PLUG_CLASS_AREAS = jmf gnu
  PLUG_CLISTS = $(PLUG_CLASS_AREAS:%=$(PLUG_TEMPDIR)/%.clist)
  
  # Create jargs file command
-@@ -152,6 +144,11 @@ $(PLUG_TEMPDIR)/sound.clist:
- 	@for i in $(PLUG_SOUND_CLASS_NAMES) ; do \
- 	  $(ECHO) "$$i" >> $@ ; \
+@@ -93,11 +85,18 @@ $(PLUG_TEMPDIR)/jmf.clist:
+ 	@for i in $(PLUG_JMF_CLASS_NAMES) ; do \
+ 	  $(ECHO) "$$i" >> $@; \
  	done
 +$(PLUG_TEMPDIR)/gnu.clist:
 +	@$(prep-target)
@@ -55,33 +49,30 @@ $OpenBSD: patch-jdk_make_common_internal_BinaryPlugs_gmk,v 1.2 2009/01/04 23:25:
  $(PLUG_TEMPDIR)/all.clist: $(PLUG_CLISTS)
  	@$(prep-target)
  	$(CAT) $(PLUG_CLISTS) > $@
-@@ -159,6 +156,8 @@ $(PLUG_TEMPDIR)/jmf.jargs: $(PLUG_TEMPDIR)/jmf.clist
- 	$(plug-create-jargs)
- $(PLUG_TEMPDIR)/sound.jargs: $(PLUG_TEMPDIR)/sound.clist
+ $(PLUG_TEMPDIR)/jmf.jargs: $(PLUG_TEMPDIR)/jmf.clist
  	$(plug-create-jargs)
 +$(PLUG_TEMPDIR)/gnu.jargs: $(PLUG_TEMPDIR)/gnu.clist
 +	$(plug-create-jargs)
  $(PLUG_TEMPDIR)/all.jargs: $(PLUG_TEMPDIR)/all.clist
  	$(plug-create-jargs)
  
-@@ -195,12 +194,15 @@ import-binary-plug-jmf-classes: $(PLUG_IMPORT_JARFILE)
+@@ -133,10 +132,14 @@ endef # import-binary-plug-classes
+ import-binary-plug-jmf-classes: $(PLUG_IMPORT_JARFILE) $(PLUG_TEMPDIR)/jmf.clist
  	$(call import-binary-plug-classes,$(PLUG_TEMPDIR)/jmf.clist)
- import-binary-plug-sound-classes: $(PLUG_IMPORT_JARFILE) $(PLUG_TEMPDIR)/sound.clist
- 	$(call import-binary-plug-classes,$(PLUG_TEMPDIR)/sound.clist)
+ 
 +import-binary-plug-gnu-classes: $(PLUG_IMPORT_JARFILE) $(PLUG_TEMPDIR)/gnu.clist
 +	$(call import-binary-plug-classes,$(PLUG_TEMPDIR)/gnu.clist)
- 
++
  # Import all classes from the jar file
  
  import-binary-plug-jar: \
- 	     import-binary-plug-jmf-classes \
--	     import-binary-plug-sound-classes
-+	     import-binary-plug-sound-classes \
+-	     import-binary-plug-jmf-classes
++	     import-binary-plug-jmf-classes \
 +	     import-binary-plug-gnu-classes
  
- # Import native libraries
+ # Binary plug start/complete messages
  
-@@ -223,14 +225,12 @@ import-binary-plugs-completed:
+@@ -148,14 +151,12 @@ import-binary-plugs-completed:
  
  # Import lib files (only if they don't exist already)
  

@@ -1,0 +1,12 @@
+$OpenBSD: patch-corba_make_common_Defs-linux_gmk,v 1.1 2009/05/23 03:03:24 kurt Exp $
+--- corba/make/common/Defs-linux.gmk.orig	Thu May 14 23:22:22 2009
++++ corba/make/common/Defs-linux.gmk	Thu May 14 23:15:04 2009
+@@ -282,7 +282,7 @@ override LIBSOCKET               =
+ override LIBTHREAD               =
+ override MOOT_PRIORITIES         = true
+ override NO_INTERRUPTIBLE_IO     = true
+-override OPENWIN_HOME            = /usr/X11R6
++override OPENWIN_HOME            = $(X11_PATH)
+ ifeq ($(ARCH), amd64)
+ override OPENWIN_LIB             = $(OPENWIN_HOME)/lib64
+ else

@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_share_native_com_sun_java_util_jar_pack_defines_h,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/src/share/native/com/sun/java/util/jar/pack/defines.h.orig	Thu Sep 11 03:44:46 2008
-+++ jdk/src/share/native/com/sun/java/util/jar/pack/defines.h	Fri Sep 12 17:05:58 2008
+$OpenBSD: patch-jdk_src_share_native_com_sun_java_util_jar_pack_defines_h,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/native/com/sun/java/util/jar/pack/defines.h.orig	Fri May  8 03:35:00 2009
++++ jdk/src/share/native/com/sun/java/util/jar/pack/defines.h	Sat May  9 11:04:59 2009
 @@ -32,6 +32,10 @@
  #include <unistd.h>
  #endif
@@ -12,7 +12,7 @@ $OpenBSD: patch-jdk_src_share_native_com_sun_java_util_jar_pack_defines_h,v 1.2 
  #ifndef FULL
  #define FULL 1 /* Adds <500 bytes to the zipped final product. */
  #endif
-@@ -87,10 +91,12 @@ extern int assert_failed(const char*);
+@@ -89,10 +93,12 @@ extern int assert_failed(const char*);
  // bytes and byte arrays
  
  typedef unsigned int uint;

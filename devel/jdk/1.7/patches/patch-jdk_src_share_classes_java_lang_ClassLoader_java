@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_share_classes_java_lang_ClassLoader_java,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/src/share/classes/java/lang/ClassLoader.java.orig	Thu Jul 17 03:43:19 2008
-+++ jdk/src/share/classes/java/lang/ClassLoader.java	Fri Aug  8 16:13:51 2008
+$OpenBSD: patch-jdk_src_share_classes_java_lang_ClassLoader_java,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/classes/java/lang/ClassLoader.java.orig	Fri May  8 03:34:34 2009
++++ jdk/src/share/classes/java/lang/ClassLoader.java	Sat May  9 15:07:33 2009
 @@ -27,6 +27,7 @@ package java.lang;
  import java.io.InputStream;
  import java.io.IOException;
@@ -9,15 +9,15 @@ $OpenBSD: patch-jdk_src_share_classes_java_lang_ClassLoader_java,v 1.2 2009/01/0
  import java.lang.reflect.Constructor;
  import java.lang.reflect.InvocationTargetException;
  import java.net.MalformedURLException;
-@@ -48,6 +49,7 @@ import java.util.Set;
- import java.util.Stack;
- import java.util.Map;
- import java.util.Vector;
+@@ -40,6 +41,7 @@ import java.security.PrivilegedActionException;
+ import java.security.PrivilegedExceptionAction;
+ import java.security.ProtectionDomain;
+ import java.security.cert.Certificate;
 +import java.util.Arrays;
- import sun.misc.ClassFileTransformer;
- import sun.misc.CompoundEnumeration;
- import sun.misc.Resource;
-@@ -1706,18 +1708,42 @@ public abstract class ClassLoader {
+ import java.util.Collections;
+ import java.util.Enumeration;
+ import java.util.HashMap;
+@@ -1846,18 +1848,42 @@ public abstract class ClassLoader {
      }
  
      private static boolean loadLibrary0(Class fromClass, final File file) {

@@ -1,0 +1,29 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_xawt_awt_Desktop_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/sun/xawt/awt_Desktop.c.orig	Mon May 18 20:32:31 2009
++++ jdk/src/solaris/native/sun/xawt/awt_Desktop.c	Mon May 18 20:32:40 2009
+@@ -24,6 +24,7 @@
+  */
+ 
+ #include <jni.h>
++#include <jvm_md.h>
+ #include <dlfcn.h>
+ 
+ typedef int gboolean;
+@@ -36,7 +37,7 @@ int init(){
+     gboolean (*gnome_vfs_init) (void);
+     const char *errmsg;
+ 
+-    vfs_handle = dlopen("libgnomevfs-2.so.0", RTLD_LAZY);
++    vfs_handle = dlopen(VERSIONED_JNI_LIB_NAME("gnomevfs-2", "0"), RTLD_LAZY);
+     if (vfs_handle == NULL) {
+ #ifdef INTERNAL_BUILD
+         fprintf(stderr, "can not load libgnomevfs-2.so\n");
+@@ -54,7 +55,7 @@ int init(){
+     // call gonme_vfs_init()
+     (*gnome_vfs_init)();
+ 
+-    gnome_handle = dlopen("libgnome-2.so.0", RTLD_LAZY);
++    gnome_handle = dlopen(VERSIONED_JNI_LIB_NAME("gnome-2", "0"), RTLD_LAZY);
+     if (gnome_handle == NULL) {
+ #ifdef INTERNAL_BUILD
+         fprintf(stderr, "can not load libgnome-2.so\n");

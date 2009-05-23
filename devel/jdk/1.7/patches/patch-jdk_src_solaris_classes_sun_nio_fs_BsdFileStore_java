@@ -1,0 +1,52 @@
+$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileStore_java,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/classes/sun/nio/fs/BsdFileStore.java.orig	Tue May 19 11:45:53 2009
++++ jdk/src/solaris/classes/sun/nio/fs/BsdFileStore.java	Tue May 19 11:46:23 2009
+@@ -35,10 +35,6 @@ import java.io.IOException;
+ class BsdFileStore
+     extends UnixFileStore
+ {
+-    // used when checking if extended attributes are enabled or not
+-    private volatile boolean xattrChecked;
+-    private volatile boolean xattrEnabled;
+-
+     BsdFileStore(UnixPath file) throws IOException {
+         super(file);
+     }
+@@ -86,12 +82,13 @@ class BsdFileStore
+                 return entry;
+         }
+ 
+-        throw new IOException("Mount point not found in mtab");
++        throw new IOException("Mount point not found in fstab");
+     }
+ 
+     // returns true if extended attributes enabled on file system where given
+     // file resides, returns false if disabled or unable to determine.
+     private boolean isExtendedAttributesEnabled(UnixPath path) {
++/*
+         try {
+             int fd = path.openForAttributeAccess(false);
+             try {
+@@ -108,11 +105,13 @@ class BsdFileStore
+         } catch (IOException ignore) {
+             // nothing we can do
+         }
++*/
+         return false;
+     }
+ 
+     @Override
+     public boolean supportsFileAttributeView(String name) {
++/*
+         // support DosFileAttributeView and NamedAttributeView if extended
+         // attributes enabled
+         if (name.equals("dos") || name.equals("xattr")) {
+@@ -141,7 +140,7 @@ class BsdFileStore
+             }
+             return xattrEnabled;
+         }
+-
++*/
+         return super.supportsFileAttributeView(name);
+     }
+ 

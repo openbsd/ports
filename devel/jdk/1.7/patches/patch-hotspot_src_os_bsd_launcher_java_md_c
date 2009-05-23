@@ -1,0 +1,131 @@
+$OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/src/os/bsd/launcher/java_md.c.orig	Fri May 15 17:19:44 2009
++++ hotspot/src/os/bsd/launcher/java_md.c	Fri May 15 17:58:17 2009
+@@ -45,8 +45,15 @@
+ #include "version_comp.h"
+ #endif
+ 
++#ifdef __APPLE__
++#define JVM_DLL "libjvm.dylib"
++#define JAVA_DLL "libjava.dylib"
++#define LD_LIBRARY_PATH "DYLD_LIBRARY_PATH"
++#else
+ #define JVM_DLL "libjvm.so"
+ #define JAVA_DLL "libjava.so"
++#define LD_LIBRARY_PATH "LD_LIBRARY_PATH"
++#endif
+ 
+ #ifndef GAMMA   /* launcher.make defines ARCH */
+ 
+@@ -112,7 +119,7 @@ extern char **environ;
+  *      A collection of useful strings. One should think of these as #define
+  *      entries, but actual strings can be more efficient (with many compilers).
+  */
+-#ifdef __bsd__
++#ifdef _ALLBSD_SOURCE
+ static const char *system_dir   = "/usr/java";
+ static const char *user_dir     = "/java";
+ #else /* Solaris */
+@@ -456,10 +463,10 @@ CreateExecutionEnvironment(int *_argcp,
+        * If not on Solaris, assume only a single LD_LIBRARY_PATH
+        * variable.
+        */
+-      runpath = getenv("LD_LIBRARY_PATH");
++      runpath = getenv(LD_LIBRARY_PATH);
+ #endif /* __sun */
+ 
+-#ifdef __bsd
++#ifdef _ALLBSD_SOURCE
+       /*
+        * On bsd, if a binary is running as sgid or suid, glibc sets
+        * LD_LIBRARY_PATH to the empty string for security purposes.  (In
+@@ -483,7 +490,7 @@ CreateExecutionEnvironment(int *_argcp,
+       new_runpath = MemAlloc( ((runpath!=NULL)?strlen(runpath):0) +
+                               2*strlen(jrepath) + 2*strlen(arch) +
+                               strlen(jvmpath) + 52);
+-      newpath = new_runpath + strlen("LD_LIBRARY_PATH=");
++      newpath = new_runpath + strlen(LD_LIBRARY_PATH "=");
+ 
+ 
+       /*
+@@ -498,7 +505,7 @@ CreateExecutionEnvironment(int *_argcp,
+ 
+         /* jvmpath, ((running != wanted)?((wanted==64)?"/"BIG_ARCH:"/.."):""), */
+ 
+-        sprintf(new_runpath, "LD_LIBRARY_PATH="
++        sprintf(new_runpath, LD_LIBRARY_PATH "="
+                 "%s:"
+                 "%s/lib/%s:"
+                 "%s/../lib/%s",
+@@ -836,7 +843,7 @@ GetXUsagePath(char *buf, jint bufsize)
+ jboolean
+ GetApplicationHome(char *buf, jint bufsize)
+ {
+-#ifdef __bsd__
++#ifdef _ALLBSD_SOURCE
+     char *execname = GetExecname();
+     if (execname) {
+         strncpy(buf, execname, bufsize-1);
+@@ -1005,7 +1012,7 @@ SetExecname(char **argv)
+             }
+         }
+     }
+-#elif defined(__bsd__)
++#elif defined(__linux__)
+     {
+         const char* self = "/proc/self/exe";
+         char buf[PATH_MAX+1];
+@@ -1015,7 +1022,7 @@ SetExecname(char **argv)
+             exec_path = strdup(buf);
+         }
+     }
+-#else /* !__sun && !__bsd */
++#else /* !__sun && !__linux */
+     {
+         /* Not implemented */
+     }
+@@ -1220,7 +1227,7 @@ get_cpuid(uint32_t arg,
+ 
+ #endif /* __sun && i586 */
+ 
+-#if defined(__bsd__) && defined(i586)
++#if defined(_ALLBSD_SOURCE) && defined(i586)
+ 
+ /*
+  * A utility method for asking the CPU about itself.
+@@ -1286,7 +1293,7 @@ get_cpuid(uint32_t arg,
+ #endif
+ }
+ 
+-#endif /* __bsd__ && i586 */
++#endif /* _ALLBSD_SOURCE && i586 */
+ 
+ #ifdef i586
+ /*
+@@ -1465,7 +1472,7 @@ solaris_i586_ServerClassMachine(void) {
+ 
+ #endif /* __sun && i586 */
+ 
+-#if defined(__bsd__) && defined(i586)
++#if defined(_ALLBSD_SOURCE) && defined(i586)
+ 
+ /* The definition of a server-class machine for bsd-i586 */
+ jboolean
+@@ -1496,7 +1503,7 @@ bsd_i586_ServerClassMachine(void) {
+   return result;
+ }
+ 
+-#endif /* __bsd__ && i586 */
++#endif /* _ALLBSD_SOURCE && i586 */
+ 
+ /* Dispatch to the platform-specific definition of "server-class" */
+ jboolean
+@@ -1506,7 +1513,7 @@ ServerClassMachine(void) {
+   result = solaris_sparc_ServerClassMachine();
+ #elif defined(__sun) && defined(i586)
+   result = solaris_i586_ServerClassMachine();
+-#elif defined(__bsd__) && defined(i586)
++#elif defined(_ALLBSD_SOURCE) && defined(i586)
+   result = bsd_i586_ServerClassMachine();
+ #else
+   if (_launcher_debug) {

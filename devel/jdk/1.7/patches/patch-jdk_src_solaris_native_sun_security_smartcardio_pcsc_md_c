@@ -1,0 +1,13 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_security_smartcardio_pcsc_md_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/sun/security/smartcardio/pcsc_md.c.orig	Mon May 18 20:31:43 2009
++++ jdk/src/solaris/native/sun/security/smartcardio/pcsc_md.c	Mon May 18 20:31:57 2009
+@@ -29,7 +29,9 @@
+ #include <assert.h>
+ 
+ #include <dlfcn.h>
++#ifndef __APPLE__
+ #include <link.h>
++#endif
+ 
+ #include <winscard.h>
+ 

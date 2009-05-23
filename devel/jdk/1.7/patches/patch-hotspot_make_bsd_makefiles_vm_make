@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_vm_make,v 1.1 2009/01/04 23:25:16 kurt Exp $
---- hotspot/make/bsd/makefiles/vm.make.orig	Mon Dec 22 21:13:31 2008
-+++ hotspot/make/bsd/makefiles/vm.make	Mon Dec 22 23:29:49 2008
+$OpenBSD: patch-hotspot_make_bsd_makefiles_vm_make,v 1.2 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/make/bsd/makefiles/vm.make.orig	Fri May 15 16:25:29 2009
++++ hotspot/make/bsd/makefiles/vm.make	Fri May 15 17:11:43 2009
 @@ -86,6 +86,10 @@ CPPFLAGS =           \
    ${JRE_VERSION}     \
    ${VM_DISTRO}
@@ -21,7 +21,20 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_vm_make,v 1.1 2009/01/04 23:25:16 kur
  
  # By default, link the *.o into the library, not the executable.
  LINK_INTO$(LINK_INTO) = LIBJVM
-@@ -124,7 +128,7 @@ mapfile_reorder : mapfile $(REORDERFILE)
+@@ -110,7 +114,11 @@ include $(MAKEFILES_DIR)/dtrace.make
+ # JVM
+ 
+ JVM    = jvm$(G_SUFFIX)
+-LIBJVM = lib$(JVM).so
++ifeq ($(OS_VENDOR), Darwin)
++  LIBJVM = lib$(JVM).dylib
++else
++  LIBJVM = lib$(JVM).so
++endif
+ 
+ JVM_OBJ_FILES = $(Obj_Files)
+ 
+@@ -124,7 +132,7 @@ mapfile_reorder : mapfile $(REORDERFILE)
  	rm -f $@
  	cat $^ > $@
  
@@ -30,14 +43,14 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_vm_make,v 1.1 2009/01/04 23:25:16 kur
  
  ifeq ($(LINK_INTO),AOUT)
    LIBJVM.o                 =
-@@ -142,14 +146,14 @@ else
+@@ -142,14 +150,14 @@ else
    ifeq ($(STATIC_CXX), true)
      LFLAGS_VM              += $(STATIC_LIBGCC)
      LIBS_VM                += $(STATIC_STDCXX)
-+    LINK_VM = $(LINK_LIB.c)
++    LINK_VM                = $(LINK_LIB.c)
    else
 -    LIBS_VM                += -lstdc++
-+    LINK_VM = $(LINK_LIB.CC)
++    LINK_VM                = $(LINK_LIB.CC)
    endif
  
    LIBS_VM                  += $(LIBS)
@@ -47,3 +60,31 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_vm_make,v 1.1 2009/01/04 23:25:16 kur
  
  # rule for building precompiled header
  $(PRECOMPILED_HEADER): $(Precompiled_Files)
+@@ -177,11 +185,6 @@ $(LD_SCRIPT): $(LIBJVM_MAPFILE)
+ LD_SCRIPT_FLAG = -Wl,-T,$(LD_SCRIPT)
+ endif
+ 
+-# With more recent Redhat releases (or the cutting edge version Fedora), if
+-# SEBsd is configured to be enabled, the runtime linker will fail to apply
+-# the text relocation to libjvm.so considering that it is built as a non-PIC
+-# DSO. To workaround that, we run chcon to libjvm.so after it is built. See 
+-# details in bug 6538311.
+ $(LIBJVM): $(LIBJVM.o) $(LIBJVM_MAPFILE) $(LD_SCRIPT)
+ 	$(QUIETLY) {                                                    \
+ 	    echo Linking vm...;                                         \
+@@ -190,15 +193,6 @@ $(LIBJVM): $(LIBJVM.o) $(LIBJVM_MAPFILE) $(LD_SCRIPT)
+ 		       $(LFLAGS_VM) -o $@ $(LIBJVM.o) $(LIBS_VM);       \
+ 	    $(LINK_LIB.CC/POST_HOOK)                                    \
+ 	    rm -f $@.1; ln -s $@ $@.1;                                  \
+-	    if [ -x /usr/sbin/sebsdenabled ] ; then                   \
+-	      /usr/sbin/sebsdenabled;                                 \
+-              if [ $$? = 0 ] ; then					\
+-		/usr/bin/chcon -t textrel_shlib_t $@;                   \
+-		if [ $$? != 0 ]; then                                   \
+-		  echo "ERROR: Cannot chcon $@";			\
+-		fi							\
+-	      fi							\
+-	    fi                                                          \
+ 	}
+ 
+ DEST_JVM = $(JDK_LIBDIR)/$(VM_SUBDIR)/$(LIBJVM)

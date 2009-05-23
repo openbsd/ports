@@ -1,7 +1,15 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_GraphicsEnv_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c.orig	Thu Jul 17 03:43:47 2008
-+++ jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Sat Aug  2 16:12:56 2008
-@@ -122,7 +122,7 @@ static char *x11GraphicsConfigClassName = "sun/awt/X11
+$OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_GraphicsEnv_c,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c.orig	Fri May  8 03:35:07 2009
++++ jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Mon May 18 19:51:58 2009
+@@ -40,6 +40,7 @@
+ #include <jni.h>
+ #include <jni_util.h>
+ #include <jvm.h>
++#include <jvm_md.h>
+ #include <jlong.h>
+ 
+ #include <stdlib.h>
+@@ -122,7 +123,7 @@ static char *x11GraphicsConfigClassName = "sun/awt/X11
   */
  
  #define MAXFRAMEBUFFERS 16
@@ -10,7 +18,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_GraphicsEnv_c,v 1.2 2009/01/0
  typedef struct {
     int   screen_number;
     short x_org;
-@@ -631,7 +631,7 @@ void checkNewXineramaScreen(JNIEnv* env, jobject peer,
+@@ -711,19 +712,22 @@ void checkNewXineramaScreen(JNIEnv* env, jobject peer,
  #endif /* HEADLESS */
  
  #ifndef HEADLESS
@@ -18,8 +26,27 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_GraphicsEnv_c,v 1.2 2009/01/0
 +#if defined(__linux__) || defined(_ALLBSD_SOURCE)
  static void xinerama_init_linux()
  {
-     void* libHandle = 0;
-@@ -679,7 +679,7 @@ static void xinerama_init_linux()
+-    void* libHandle = 0;
+-    char* XineramaLibName= "libXinerama.so.1";
++    void* libHandle = NULL;
+     int32_t locNumScr = 0;
+     XineramaScreenInfo *xinInfo;
+     char* XineramaQueryScreensName = "XineramaQueryScreens";
+     XineramaQueryScreensFunc* XineramaQueryScreens = NULL;
+ 
+     /* load library */
+-    libHandle = dlopen(XineramaLibName, RTLD_LAZY | RTLD_GLOBAL);
+-    if (libHandle != 0) {
++    libHandle = dlopen(VERSIONED_JNI_LIB_NAME("Xinerama", "1"),
++                       RTLD_LAZY | RTLD_GLOBAL);
++    if (libHandle == NULL) {
++        libHandle = dlopen(JNI_LIB_NAME("Xinerama"), RTLD_LAZY | RTLD_GLOBAL);
++    }
++    if (libHandle != NULL) {
+         XineramaQueryScreens = (XineramaQueryScreensFunc*)
+             dlsym(libHandle, XineramaQueryScreensName);
+ 
+@@ -759,11 +763,10 @@ static void xinerama_init_linux()
      }
  }
  #endif
@@ -27,8 +54,24 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_GraphicsEnv_c,v 1.2 2009/01/0
 +#if !defined(__linux__) && !defined(_ALLBSD_SOURCE) /* Solaris */
  static void xinerama_init_solaris()
  {
-     void* libHandle = 0;
-@@ -740,11 +740,11 @@ static void xineramaInit(void) {
+-    void* libHandle = 0;
+-    char* XineramaLibName= "libXext.so";
++    void* libHandle = NULL;
+     unsigned char fbhints[MAXFRAMEBUFFERS];
+     int32_t locNumScr = 0;
+     /* load and run XineramaGetInfo */
+@@ -772,8 +775,8 @@ static void xinerama_init_solaris()
+     XineramaGetInfoFunc* XineramaSolarisFunc = NULL;
+ 
+     /* load library */
+-    libHandle = dlopen(XineramaLibName, RTLD_LAZY | RTLD_GLOBAL);
+-    if (libHandle != 0) {
++    libHandle = dlopen(JNI_LIB_NAME("Xext"), RTLD_LAZY | RTLD_GLOBAL);
++    if (libHandle != NULL) {
+         XineramaSolarisFunc = (XineramaGetInfoFunc*)dlsym(libHandle, XineramaGetInfoName);
+         XineramaSolarisCenterFunc =
+             (XineramaGetCenterHintFunc*)dlsym(libHandle, XineramaGetCenterHintName);
+@@ -820,11 +823,11 @@ static void xineramaInit(void) {
      }
  
      DTRACE_PRINTLN("Xinerama extension is available");
@@ -42,7 +85,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_GraphicsEnv_c,v 1.2 2009/01/0
  }
  #endif /* HEADLESS */
  
-@@ -1600,7 +1600,7 @@ Java_sun_awt_X11GraphicsEnvironment_getXineramaCenterP
+@@ -1700,7 +1703,7 @@ Java_sun_awt_X11GraphicsEnvironment_getXineramaCenterP
  {
      jobject point = NULL;
  #ifndef HEADLESS    /* return NULL in HEADLESS, Linux */
@@ -51,7 +94,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_GraphicsEnv_c,v 1.2 2009/01/0
      int x,y;
  
      AWT_LOCK();
-@@ -1613,7 +1613,7 @@ Java_sun_awt_X11GraphicsEnvironment_getXineramaCenterP
+@@ -1713,7 +1716,7 @@ Java_sun_awt_X11GraphicsEnvironment_getXineramaCenterP
          DTRACE_PRINTLN("unable to call XineramaSolarisCenterFunc: symbol is null");
      }
      AWT_FLUSH_UNLOCK();
@@ -60,3 +103,16 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_GraphicsEnv_c,v 1.2 2009/01/0
  #endif /* HEADLESS */
      return point;
  }
+@@ -1778,7 +1781,11 @@ X11GD_InitXrandrFuncs(JNIEnv *env)
+ {
+     int rr_maj_ver = 0, rr_min_ver = 0;
+ 
+-    void *pLibRandR = dlopen("libXrandr.so.2", RTLD_LAZY | RTLD_LOCAL);
++    void *pLibRandR = dlopen(VERSIONED_JNI_LIB_NAME("Xrandr", "2"),
++                             RTLD_LAZY | RTLD_LOCAL);
++    if (pLibRandR == NULL) {
++        pLibRandR = dlopen(JNI_LIB_NAME("Xrandr"), RTLD_LAZY | RTLD_LOCAL);
++    }
+     if (pLibRandR == NULL) {
+         J2dRlsTraceLn(J2D_TRACE_ERROR,
+                       "X11GD_InitXrandrFuncs: Could not open libXrandr.so.2");

@@ -1,0 +1,100 @@
+$OpenBSD: patch-jdk_src_share_bin_java_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/bin/java.c.orig	Mon May 18 13:32:27 2009
++++ jdk/src/share/bin/java.c	Mon May 18 13:32:35 2009
+@@ -68,6 +68,10 @@ static jboolean showVersion = JNI_FALSE;  /* print but
+ static jboolean printUsage = JNI_FALSE;   /* print and exit*/
+ static jboolean printXUsage = JNI_FALSE;  /* print and exit*/
+ 
++#ifdef __APPLE__
++static jboolean continueInSameThread = JNI_FALSE; /* start VM in current thread */
++#endif
++
+ static const char *_program_name;
+ static const char *_launcher_name;
+ static jboolean _is_java_args = JNI_FALSE;
+@@ -116,6 +120,10 @@ static void SetPaths(int argc, char **argv);
+ static void DumpState();
+ static jboolean RemovableOption(char *option);
+ 
++#ifdef __APPLE__
++static int ContinueInSameThread(InvocationFunctions* ifn, int argc, char **argv, char *jarfile, char *classname, int ret);
++#endif
++
+ /* Maximum supported entries from jvm.cfg. */
+ #define INIT_MAX_KNOWN_VMS      10
+ 
+@@ -295,9 +303,16 @@ JLI_Launch(int argc, char ** argv,              /* mai
+ 
+     /* Show the splash screen if needed */
+     ShowSplashScreen();
+-
++   
++#ifdef __APPLE__
++    if (continueInSameThread == JNI_TRUE) {
++        return ContinueInSameThread(&ifn, argc, argv, jarfile, classname, ret);
++    } else {
++        return ContinueInNewThread(&ifn, argc, argv, jarfile, classname, ret);
++    }
++#else
+     return ContinueInNewThread(&ifn, argc, argv, jarfile, classname, ret);
+-
++#endif
+ }
+ 
+ #define CHECK_EXCEPTION_NULL_LEAVE(e) \
+@@ -969,6 +984,10 @@ ParseArguments(int *pargc, char ***pargv, char **pjarf
+         } else if (JLI_StrCmp(arg, "-X") == 0) {
+             printXUsage = JNI_TRUE;
+             return JNI_TRUE;
++#ifdef __APPLE__
++        } else if (JLI_StrCmp(arg, "-XstartOnFirstThread") == 0) {
++            continueInSameThread = JNI_TRUE;
++#endif            
+ /*
+  * The following case provide backward compatibility with old-style
+  * command line options.
+@@ -1855,6 +1874,44 @@ ContinueInNewThread(InvocationFunctions* ifn, int argc
+       return (ret != 0) ? ret : rslt;
+     }
+ }
++
++#ifdef __APPLE__
++static int
++ContinueInSameThread(InvocationFunctions* ifn, int argc,
++                    char **argv, char *jarfile, char *classname, int ret)
++{
++        
++    /*
++     * If user doesn't specify stack size, check if VM has a preference.
++     * Note that HotSpot no longer supports JNI_VERSION_1_1 but it will
++     * return its default stack size through the init args structure.
++     */
++    if (threadStackSize == 0) {
++        struct JDK1_1InitArgs args1_1;
++        memset((void*)&args1_1, 0, sizeof(args1_1));
++        args1_1.version = JNI_VERSION_1_1;
++        ifn->GetDefaultJavaVMInitArgs(&args1_1);  /* ignore return value */
++        if (args1_1.javaStackSize > 0) {
++            threadStackSize = args1_1.javaStackSize;
++        }
++    }
++    
++    { /* Create create JVM and invoke main method */
++        JavaMainArgs args;
++        int rslt;
++        
++        args.argc = argc;
++        args.argv = argv;
++        args.jarfile = jarfile;
++        args.classname = classname;
++        args.ifn = *ifn;
++        
++        rslt = JavaMain((void*)&args);
++        
++        return (ret != 0) ? ret : rslt;
++    }
++}
++#endif
+ 
+ static void
+ DumpState()

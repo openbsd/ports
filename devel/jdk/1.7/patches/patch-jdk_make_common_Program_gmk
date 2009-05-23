@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_make_common_Program_gmk,v 1.2 2008/12/22 13:22:12 kurt Exp $
---- jdk/make/common/Program.gmk.orig	Sat Dec  1 00:00:00 2007
-+++ jdk/make/common/Program.gmk	Sun Dec 21 22:08:35 2008
-@@ -67,11 +67,22 @@ endif
+$OpenBSD: patch-jdk_make_common_Program_gmk,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/common/Program.gmk.orig	Fri May  8 03:34:14 2009
++++ jdk/make/common/Program.gmk	Mon May 18 11:13:27 2009
+@@ -67,11 +67,27 @@ endif
  # Create a dependency on libjli (Java Launcher Infrastructure)
  #
  # On UNIX, this is a relative dependency using $ORIGIN. Unfortunately, to
@@ -13,19 +13,24 @@ $OpenBSD: patch-jdk_make_common_Program_gmk,v 1.2 2008/12/22 13:22:12 kurt Exp $
  # itself, as with all the Windows libraries.
  #
 +ifeq ($(PLATFORM), bsd)
++  ifeq ($(OS_VENDOR), Apple)
++    LDFLAGS += -Wl,-all_load
++    LDFLAGS += $(OUTPUTDIR)/tmp/java/jli/$(OBJDIRNAME)/static/libjli.a
++  else
 +    LDFLAGS += -Wl,--whole-archive
 +    LDFLAGS += $(OUTPUTDIR)/tmp/java/jli/$(OBJDIRNAME)/static/libjli.a
 +    LDFLAGS += -Wl,--no-whole-archive
 +# Work-around an dlsym(RTLD_DEFAULT) bug in at least FreeBSD & OpenBSD
 +    LDFLAGS += -Wl,--export-dynamic
-+    ifeq ($(SYSTEM_ZLIB),true)
-+        OTHER_LDLIBS += -lz
-+    endif
++  endif
++  ifeq ($(SYSTEM_ZLIB),true)
++      OTHER_LDLIBS += -lz
++  endif
 +endif
  ifneq (,$(findstring $(PLATFORM), linux solaris))	# UNIX systems
      LDFLAGS += -L $(LIBDIR)/$(LIBARCH)/jli
      OTHER_LDLIBS += -ljli
-@@ -174,6 +185,10 @@ else # USE_PTHREADS
+@@ -180,6 +196,10 @@ else # USE_PTHREADS
    THREADLIBS = $(LIBTHREAD)
  endif # USE_PTHREADS
  
@@ -36,7 +41,7 @@ $OpenBSD: patch-jdk_make_common_Program_gmk,v 1.2 2008/12/22 13:22:12 kurt Exp $
  #
  # This rule only applies on unix.  It supports quantify and its ilk.
  #
-@@ -242,15 +257,19 @@ endif
+@@ -248,15 +268,19 @@ endif
  
  
  ifneq ($(PLATFORM), windows)

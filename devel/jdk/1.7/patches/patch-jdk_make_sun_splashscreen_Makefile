@@ -1,40 +1,49 @@
-$OpenBSD: patch-jdk_make_sun_splashscreen_Makefile,v 1.3 2009/01/04 23:25:16 kurt Exp $
---- jdk/make/sun/splashscreen/Makefile.orig	Thu Oct 23 03:44:06 2008
-+++ jdk/make/sun/splashscreen/Makefile	Mon Dec 22 23:25:34 2008
-@@ -61,10 +61,25 @@ JAVALIB=
+$OpenBSD: patch-jdk_make_sun_splashscreen_Makefile,v 1.4 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/sun/splashscreen/Makefile.orig	Fri May  8 03:34:17 2009
++++ jdk/make/sun/splashscreen/Makefile	Mon May 18 13:19:53 2009
+@@ -61,10 +61,33 @@ JAVALIB=
  
  CFLAGS += -DSPLASHSCREEN
  
 +CPPFLAGS += -I$(PLATFORM_SRC)/native/$(PKGDIR)/splashscreen -I$(SHARE_SRC)/native/$(PKGDIR)/splashscreen
 +CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/image/jpeg
 +ifneq ($(SYSTEM_ZLIB),true)
-+CPPFLAGS += -I$(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
++  CPPFLAGS += -I$(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
 +endif
++
 +
  ifneq ($(PLATFORM), windows)
    CFLAGS += -DWITH_X11
 -  CPPFLAGS += -I$(OPENWIN_HOME)/include -I$(OPENWIN_HOME)/include/X11/extensions
 -  OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext $(LIBM) -lpthread
 +  ifeq ($(PLATFORM), bsd)
-+    CFLAGS += -DPNG_NO_MMX_CODE
-+    ICONV_DIR=/usr/local
++    ifeq ($(OS_VENDOR), Apple)
++      OTHER_LDLIBS += -liconv
++    else
++      ifneq ($(OS_NAME), netbsd)
++        CPPFLAGS += -I$(PACKAGE_PATH)/include
++        OTHER_LDLIBS += -L$(PACKAGE_PATH)/lib -liconv
++      else
++        OTHER_LDLIBS += -Wl,-R$(OPENWIN_LIB)
++      endif
++    endif
 +    CPPFLAGS += -I$(OPENWIN_HOME)/include \
-+                -I$(OPENWIN_HOME)/include/X11/extensions \
-+                -I$(ICONV_DIR)/include
-+    OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext -L$(ICONV_DIR)/lib -liconv $(LIBM) -pthread
++                -I$(OPENWIN_HOME)/include/X11/extensions
++    OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext $(LIBM) -pthread
 +  else
 +    CPPFLAGS += -I$(OPENWIN_HOME)/include -I$(OPENWIN_HOME)/include/X11/extensions
 +    OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext $(LIBM) -lpthread
 +  endif
  else # PLATFORM
    CFLAGS += -DWITH_WIN32
-   OTHER_LDLIBS += kernel32.lib user32.lib gdi32.lib 
-@@ -77,13 +92,12 @@ endif # PLATFORM
+   OTHER_LDLIBS += kernel32.lib user32.lib gdi32.lib delayimp.lib /DELAYLOAD:user32.dll
+@@ -77,13 +100,12 @@ endif # PLATFORM
  vpath %.c   $(SHARE_SRC)/native/$(PKGDIR)/splashscreen
  vpath %.c   $(SHARE_SRC)/native/$(PKGDIR)
  vpath %.c   $(SHARE_SRC)/native/$(PKGDIR)/giflib
+-vpath %.c   $(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
 +ifneq ($(SYSTEM_ZLIB),true)
- vpath %.c   $(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
++  vpath %.c   $(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
 +endif
  vpath %.c   $(SHARE_SRC)/native/$(PKGDIR)/libpng
  vpath %.c   $(SHARE_SRC)/native/$(PKGDIR)/image/jpeg
@@ -43,5 +52,5 @@ $OpenBSD: patch-jdk_make_sun_splashscreen_Makefile,v 1.3 2009/01/04 23:25:16 kur
 -CPPFLAGS += -I$(PLATFORM_SRC)/native/$(PKGDIR)/splashscreen -I$(SHARE_SRC)/native/$(PKGDIR)/splashscreen
 -CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/image/jpeg -I$(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
  
- ifeq ($(PLATFORM), linux)
-   ifeq ($(ARCH_DATA_MODEL), 64)
+ # Shun the less than portable MMX assembly code in pnggccrd.c,
+ # and use alternative implementations in C.

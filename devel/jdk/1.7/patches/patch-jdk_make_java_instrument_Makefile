@@ -1,23 +1,30 @@
-$OpenBSD: patch-jdk_make_java_instrument_Makefile,v 1.1 2008/03/19 18:05:45 kurt Exp $
---- jdk/make/java/instrument/Makefile.orig	Tue Oct 30 05:04:22 2007
-+++ jdk/make/java/instrument/Makefile	Wed Nov  7 18:01:59 2007
-@@ -102,6 +102,15 @@ ifeq ($(PLATFORM), windows)
+$OpenBSD: patch-jdk_make_java_instrument_Makefile,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/java/instrument/Makefile.orig	Fri May  8 03:34:14 2009
++++ jdk/make/java/instrument/Makefile	Mon May 18 11:26:48 2009
+@@ -102,6 +102,22 @@ ifeq ($(PLATFORM), windows)
    # equivalent of strcasecmp is stricmp on Windows
    CPPFLAGS_COMMON += -Dstrcasecmp=stricmp
  else
 +ifeq ($(PLATFORM), bsd)
-+  LDFLAGS += -Wl,--whole-archive
-+  LDFLAGS += $(OUTPUTDIR)/tmp/java/jli/$(OBJDIRNAME)/static/libjli.a
-+  LDFLAGS += -Wl,--no-whole-archive
-+  ICONV_DIR = /usr/local
++  ifeq ($(OS_VENDOR), Apple)
++    LDFLAGS += -Wl,-all_load
++    LDFLAGS += $(OUTPUTDIR)/tmp/java/jli/$(OBJDIRNAME)/static/libjli.a
++    OTHER_LDLIBS += -liconv
++  else
++    LDFLAGS += -Wl,--whole-archive
++    LDFLAGS += $(OUTPUTDIR)/tmp/java/jli/$(OBJDIRNAME)/static/libjli.a
++    LDFLAGS += -Wl,--no-whole-archive
++    ifneq ($(OS_NAME), netbsd)
 +# Use CPPFLAGS instead of OTHER_INCLUDES to force this last
-+  CPPFLAGS += -I$(ICONV_DIR)/include
-+  OTHER_LDLIBS += -L$(ICONV_DIR)/lib -liconv
++      CPPFLAGS += -I$(PACKAGE_PATH)/include
++      OTHER_LDLIBS += -L$(PACKAGE_PATH)/lib -liconv
++    endif
++  endif
 +else
    LDFLAGS += -L $(LIBDIR)/$(LIBARCH)/jli
    OTHER_LDLIBS += -ljli
    OTHER_LDLIBS += -ldl 
-@@ -113,6 +122,7 @@ else
+@@ -113,6 +129,7 @@ else
      LDFLAGS += -Wl,--allow-shlib-undefined
      LDFLAGS += -Wl,-rpath -Wl,\$$ORIGIN/jli
    endif

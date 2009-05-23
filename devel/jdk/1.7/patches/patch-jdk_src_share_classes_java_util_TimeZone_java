@@ -1,11 +1,11 @@
-$OpenBSD: patch-jdk_src_share_classes_java_util_TimeZone_java,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/share/classes/java/util/TimeZone.java.orig	Tue Oct 30 05:01:24 2007
-+++ jdk/src/share/classes/java/util/TimeZone.java	Wed Nov  7 18:54:21 2007
+$OpenBSD: patch-jdk_src_share_classes_java_util_TimeZone_java,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/classes/java/util/TimeZone.java.orig	Fri May  8 03:34:37 2009
++++ jdk/src/share/classes/java/util/TimeZone.java	Mon May 18 13:33:50 2009
 @@ -776,15 +776,13 @@ abstract public class TimeZone implements Serializable
          }
          int gmtOffset =  (hours * 60 + num) * 60 * 1000;
  
-+	zi = ZoneInfoFile.getCustomTimeZone(id, negative ? -gmtOffset : gmtOffset);
++        zi = ZoneInfoFile.getCustomTimeZone(id, negative ? -gmtOffset : gmtOffset);
          if (gmtOffset == 0) {
 -            zi = ZoneInfoFile.getZoneInfo(GMT_ID);
              if (negative) {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_make_common_shared_Sanity_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/make/common/shared/Sanity.gmk.orig	Thu Jul 17 03:43:08 2008
-+++ jdk/make/common/shared/Sanity.gmk	Sat Aug  2 16:12:53 2008
-@@ -96,6 +96,11 @@ ifeq ($(PLATFORM), windows)
+$OpenBSD: patch-jdk_make_common_shared_Sanity_gmk,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/common/shared/Sanity.gmk.orig	Fri May  8 03:34:14 2009
++++ jdk/make/common/shared/Sanity.gmk	Mon May 18 11:25:23 2009
+@@ -142,6 +142,11 @@ ifeq ($(PLATFORM), windows)
      $(EGREP) "\#define" | $(NAWK) '{print $$3}')
  endif
  
@@ -13,3 +13,22 @@ $OpenBSD: patch-jdk_make_common_shared_Sanity_gmk,v 1.2 2009/01/04 23:25:16 kurt
  # Get the version numbers of what we are using
  _MAKE_VER  :=$(shell $(MAKE) --version 2>&1 | $(HEAD) -n 1)
  _ZIP_VER   :=$(shell $(ZIPEXE) -help 2>&1 | $(HEAD) -n 4 | $(EGREP) '^Zip')
+@@ -845,8 +850,10 @@ endif
+ 
+ ######################################################
+ # Check for existence of DEVTOOLS_PATH
++# All needed tools come with base system on Apple
+ ######################################################
+ sane-devtools_path:
++ifneq ($(OS_VENDOR), Apple)
+ 	@if [ "$(DEVTOOLS_PATH)" != "" -a ! -r "$(DEVTOOLS_PATH)" ]; then \
+ 	  $(ECHO) "ERROR: You do not have a valid DEVTOOLS_PATH setting. \n" \
+ 	    "      Please check your access to \n" \
+@@ -854,6 +861,7 @@ sane-devtools_path:
+ 	    "      and/or check your value of ALT_DEVTOOLS_PATH. \n" \
+ 	    "" >> $(ERROR_FILE) ; \
+ 	fi
++endif
+ 
+ ######################################################
+ # Check for existence of MS_RUNTIME_LIBRARIES

@@ -1,0 +1,8 @@
+$OpenBSD: patch-jdk_src_share_classes_sun_tools_attach-too-long,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider.orig	Mon May 18 13:48:08 2009
++++ jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Mon May 18 13:48:26 2009
+@@ -30,3 +30,4 @@
+ #[solaris]sun.tools.attach.SolarisAttachProvider
+ #[windows]sun.tools.attach.WindowsAttachProvider
+ #[linux]sun.tools.attach.LinuxAttachProvider
++#[bsd]sun.tools.attach.BsdAttachProvider

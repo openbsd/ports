@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_net_PlainSocketImpl_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/src/solaris/native/java/net/PlainSocketImpl.c.orig	Thu Sep 11 03:44:53 2008
-+++ jdk/src/solaris/native/java/net/PlainSocketImpl.c	Fri Sep 12 17:45:12 2008
+$OpenBSD: patch-jdk_src_solaris_native_java_net_PlainSocketImpl_c,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/java/net/PlainSocketImpl.c.orig	Fri May  8 03:35:07 2009
++++ jdk/src/solaris/native/java/net/PlainSocketImpl.c	Mon May 18 19:36:43 2009
 @@ -467,9 +467,11 @@ Java_java_net_PlainSocketImpl_socketConnect(JNIEnv *en
          if (connect_rv == JVM_IO_INTR) {
              JNU_ThrowByName(env, JNU_JAVAIOPKG "InterruptedIOException",
@@ -13,3 +13,12 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_PlainSocketImpl_c,v 1.2 2009/01/
          } else if (errno == ECONNREFUSED) {
              NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "ConnectException",
                             "Connection refused");
+@@ -985,7 +987,7 @@ Java_java_net_PlainSocketImpl_socketGetOption(JNIEnv *
+      */
+     if (cmd == java_net_SocketOptions_SO_BINDADDR) {
+         SOCKADDR him;
+-        socklen_t len = 0;
++        socklen_t len;
+         int port;
+         jobject iaObj;
+         jclass iaCntrClass;

@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_sun_awt_mawt_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/make/sun/awt/mawt.gmk.orig	Thu Oct 23 03:44:06 2008
-+++ jdk/make/sun/awt/mawt.gmk	Mon Dec 22 16:54:06 2008
+$OpenBSD: patch-jdk_make_sun_awt_mawt_gmk,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/sun/awt/mawt.gmk.orig	Fri May  8 03:34:16 2009
++++ jdk/make/sun/awt/mawt.gmk	Mon May 18 13:03:16 2009
 @@ -167,7 +167,7 @@ ifeq ($(PLATFORM), solaris)
  OTHER_LDLIBS = -lXt -lXext $(LIBXTST) $(LIBXMU) -lX11 -lXi
  endif
@@ -24,7 +24,17 @@ $OpenBSD: patch-jdk_make_sun_awt_mawt_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
  #
  # Sun CC with -Xa misdefines __STDC__ to 0 (zero).
  # The following will force checking of X11 prototypes.
-@@ -221,10 +225,24 @@ CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
+@@ -196,6 +200,9 @@ CPPFLAGS += -I$(CUPS_HEADERS_PATH)
+ ifndef HEADLESS
+ CPPFLAGS += -I$(OPENWIN_HOME)/include 
+ LDFLAGS  += -L$(OPENWIN_LIB)
++ifeq ($(OS_NAME), netbsd)
++LDFLAGS  += -Wl,-R$(OPENWIN_LIB)
++endif
+ 
+ endif # !HEADLESS
+ 
+@@ -221,16 +228,33 @@ CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
          -I$(PLATFORM_SRC)/native/$(PKGDIR) \
          $(EVENT_MODEL)
  
@@ -41,11 +51,20 @@ $OpenBSD: patch-jdk_make_sun_awt_mawt_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
  # Checking for the X11/extensions headers at the additional location
    CPPFLAGS += -I/X11R6/include/X11/extensions \
                -I/usr/include/X11/extensions
-+endif
-+
+ endif
+ 
 +ifeq ($(PLATFORM), bsd)
 +  CPPFLAGS += -I$(OPENWIN_HOME)/include/X11/extensions \
 +              -I$(OPENWIN_HOME)/include 
++endif
++
+ ifeq ($(PLATFORM), solaris)
+   CPPFLAGS += -I$(OPENWIN_HOME)/include/X11/extensions
  endif
  
- ifeq ($(PLATFORM), solaris)
++ifneq ($(PLATFORM), windows)
++  CPPFLAGS += -DX11_PATH=\"$(X11_PATH)\" -DPACKAGE_PATH=\"$(PACKAGE_PATH)\"
++endif
+ 
+ LDFLAGS += -L$(LIBDIR)/$(LIBARCH)/$(TSOBJDIR) \
+ 	   $(AWT_RUNPATH)

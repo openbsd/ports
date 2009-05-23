@@ -1,0 +1,13 @@
+$OpenBSD: patch-jdk_src_share_native_sun_font_sunFont_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/native/sun/font/sunFont.c.orig	Mon May 18 16:36:21 2009
++++ jdk/src/share/native/sun/font/sunFont.c	Mon May 18 16:36:30 2009
+@@ -24,7 +24,9 @@
+  */
+ 
+ #include "stdlib.h"
++#ifndef _ALLBSD_SOURCE
+ #include "malloc.h"
++#endif
+ #include "string.h"
+ #include "gdefs.h"
+ #include "jlong.h"

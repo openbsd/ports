@@ -1,13 +1,13 @@
-$OpenBSD: patch-jdk_make_com_sun_tools_attach_FILES_java_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
---- jdk/make/com/sun/tools/attach/FILES_java.gmk.orig	Tue Oct 30 05:04:21 2007
-+++ jdk/make/com/sun/tools/attach/FILES_java.gmk	Wed Nov  7 17:55:17 2007
+$OpenBSD: patch-jdk_make_com_sun_tools_attach_FILES_java_gmk,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/com/sun/tools/attach/FILES_java.gmk.orig	Fri May  8 03:34:14 2009
++++ jdk/make/com/sun/tools/attach/FILES_java.gmk	Mon May 18 10:39:25 2009
 @@ -43,6 +43,11 @@ FILES_java += \
  	sun/tools/attach/LinuxAttachProvider.java
  endif
  
 +ifeq ($(PLATFORM), bsd)
 +FILES_java += \
-+	$(TARGDIR)/sun/tools/attach/BsdAttachProvider.java
++	sun/tools/attach/BsdAttachProvider.java
 +endif
 +
  #

@@ -1,0 +1,106 @@
+$OpenBSD: patch-jdk_src_solaris_classes_sun_tools_attach_BsdVirtualMachine_java,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java.orig	Mon May 18 16:56:42 2009
++++ jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Mon May 18 16:57:00 2009
+@@ -38,9 +38,6 @@ import java.util.Properties;
+  */
+ public class BsdVirtualMachine extends HotSpotVirtualMachine {
+ 
+-    // Indicates if this machine uses the old BsdThreads
+-    static boolean isBsdThreads;
+-
+     // The patch to the socket file created by the target VM
+     String path;
+ 
+@@ -65,25 +62,10 @@ public class BsdVirtualMachine extends HotSpotVirtualM
+         // Then we attempt to find the socket file again.
+         path = findSocketFile(pid);
+         if (path == null) {
+-            File f = createAttachFile(pid);
++            File f = new File("/tmp/.attach_pid" + pid);
++	    createAttachFile(f.getPath());
+             try {
+-                // On BsdThreads each thread is a process and we don't have the
+-                // pid of the VMThread which has SIGQUIT unblocked. To workaround
+-                // this we get the pid of the "manager thread" that is created
+-                // by the first call to pthread_create. This is parent of all
+-                // threads (except the initial thread).
+-                if (isBsdThreads) {
+-                    int mpid;
+-                    try {
+-                        mpid = getBsdThreadsManager(pid);
+-                    } catch (IOException x) {
+-                        throw new AttachNotSupportedException(x.getMessage());
+-                    }
+-                    assert(mpid >= 1);
+-                    sendQuitToChildrenOf(mpid);
+-                } else {
+-                    sendQuitTo(pid);
+-                }
++                sendQuitTo(pid);
+ 
+                 // give the target VM time to start the attach mechanism
+                 int i = 0;
+@@ -265,37 +247,14 @@ public class BsdVirtualMachine extends HotSpotVirtualM
+         // First check for a .java_pid<pid> file in the working directory
+         // of the target process
+         String fn = ".java_pid" + pid;
+-        String path = "/proc/" + pid + "/cwd/" + fn;
++        String path = "/tmp/" + fn;
+         File f = new File(path);
+         if (!f.exists()) {
+-            // Not found, so try /tmp
+-            path = "/tmp/" + fn;
+-            f = new File(path);
+-            if (!f.exists()) {
+-                return null;            // not found
+-            }
++            return null;            // not found
+         }
+         return path;
+     }
+ 
+-    // On Solaris/Bsd a simple handshake is used to start the attach mechanism
+-    // if not already started. The client creates a .attach_pid<pid> file in the
+-    // target VM's working directory (or /tmp), and the SIGQUIT handler checks
+-    // for the file.
+-    private File createAttachFile(int pid) throws IOException {
+-        String fn = ".attach_pid" + pid;
+-        String path = "/proc/" + pid + "/cwd/" + fn;
+-        File f = new File(path);
+-        try {
+-            f.createNewFile();
+-        } catch (IOException x) {
+-            path = "/tmp/" + fn;
+-            f = new File(path);
+-            f.createNewFile();
+-        }
+-        return f;
+-    }
+-
+     /*
+      * Write/sends the given to the target VM. String is transmitted in
+      * UTF-8 encoding.
+@@ -318,12 +277,6 @@ public class BsdVirtualMachine extends HotSpotVirtualM
+ 
+     //-- native methods
+ 
+-    static native boolean isBsdThreads();
+-
+-    static native int getBsdThreadsManager(int pid) throws IOException;
+-
+-    static native void sendQuitToChildrenOf(int pid) throws IOException;
+-
+     static native void sendQuitTo(int pid) throws IOException;
+ 
+     static native void checkPermissions(String path) throws IOException;
+@@ -338,8 +291,9 @@ public class BsdVirtualMachine extends HotSpotVirtualM
+ 
+     static native void write(int fd, byte buf[], int off, int bufLen) throws IOException;
+ 
++    static native void createAttachFile(String path);
++
+     static {
+         System.loadLibrary("attach");
+-        isBsdThreads = isBsdThreads();
+     }
+ }

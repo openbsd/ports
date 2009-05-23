@@ -1,42 +1,81 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_defs_make,v 1.1 2009/01/04 23:25:16 kurt Exp $
---- hotspot/make/bsd/makefiles/defs.make.orig	Sat Aug  2 16:12:30 2008
-+++ hotspot/make/bsd/makefiles/defs.make	Sat Aug  2 16:15:29 2008
-@@ -79,6 +79,31 @@ ifeq ($(ARCH), x86_64) 
+$OpenBSD: patch-hotspot_make_bsd_makefiles_defs_make,v 1.2 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/make/bsd/makefiles/defs.make.orig	Sat May 16 23:21:09 2009
++++ hotspot/make/bsd/makefiles/defs.make	Mon May 18 08:17:30 2009
+@@ -28,6 +28,14 @@
+ 
+ SLASH_JAVA ?= /java
+ 
++# Library suffix
++OS_VENDOR:=$(shell uname -s)
++ifeq ($(OS_VENDOR),Darwin)
++  LIBRARY_SUFFIX=dylib
++else
++  LIBRARY_SUFFIX=so
++endif
++
+ # Need PLATFORM (os-arch combo names) for jdk and hotspot, plus libarch name
+ ARCH:=$(shell uname -m)
+ PATH_SEP = :
+@@ -61,8 +69,8 @@ ifeq ($(ARCH), sparc64)
+   HS_ARCH            = sparc
+ endif
+ 
+-# x86_64
+-ifeq ($(ARCH), x86_64) 
++# amd64
++ifeq ($(ARCH), amd64) 
+   ifeq ($(ARCH_DATA_MODEL), 64)
+     ARCH_DATA_MODEL = 64
+     MAKE_ARGS       += LP64=1
+@@ -74,17 +82,27 @@ ifeq ($(ARCH), x86_64) 
+     PLATFORM        = bsd-i586
+     VM_PLATFORM     = bsd_i486
+     HS_ARCH         = x86
+-    # We have to reset ARCH to i686 since SRCARCH relies on it
+-    ARCH            = i686   
++    # We have to reset ARCH to i386 since SRCARCH relies on it
++    ARCH            = i386   
    endif
  endif
  
-+# amd64
-+ifeq ($(ARCH), amd64)
-+  ARCH_DATA_MODEL = 64
-+  MAKE_ARGS       += LP64=1
-+  PLATFORM        = bsd-amd64
-+  VM_PLATFORM     = bsd_amd64
-+  HS_ARCH         = x86
-+endif
-+
+-# i686
+-ifeq ($(ARCH), i686)
+-  ARCH_DATA_MODEL  = 32
+-  PLATFORM         = bsd-i586
+-  VM_PLATFORM      = bsd_i486
+-  HS_ARCH          = x86
 +# i386
 +ifeq ($(ARCH), i386)
-+  ARCH_DATA_MODEL  = 32
-+  PLATFORM         = bsd-i586
-+  VM_PLATFORM      = bsd_i486
-+  HS_ARCH          = x86
-+endif
-+
-+# i486
-+ifeq ($(ARCH), i486)
-+  ARCH_DATA_MODEL  = 32
-+  PLATFORM         = bsd-i586
-+  VM_PLATFORM      = bsd_i486
-+  HS_ARCH          = x86
-+endif
-+
- # i686
- ifeq ($(ARCH), i686)
-   ARCH_DATA_MODEL  = 32
-@@ -102,12 +127,4 @@ ifeq ($(ARCH_DATA_MODEL), 32)
++  ifeq ($(ARCH_DATA_MODEL), 64)
++    ARCH_DATA_MODEL = 64
++    MAKE_ARGS       += LP64=1
++    PLATFORM        = bsd-amd64
++    VM_PLATFORM     = bsd_amd64
++    HS_ARCH         = x86
++    # We have to reset ARCH to amd64 since SRCARCH relies on it
++    ARCH            = amd64
++  else
++    ARCH_DATA_MODEL  = 32
++    PLATFORM         = bsd-i586
++    VM_PLATFORM      = bsd_i486
++    HS_ARCH          = x86
++  endif
+ endif
+ 
+ JDK_INCLUDE_SUBDIR=bsd
+@@ -95,19 +113,11 @@ VM_DEBUG=jvmg
+ EXPORT_LIST += $(EXPORT_DOCS_DIR)/platform/jvmti/jvmti.html
+ EXPORT_SERVER_DIR = $(EXPORT_JRE_LIB_ARCH_DIR)/server
+ EXPORT_LIST += $(EXPORT_SERVER_DIR)/Xusage.txt
+-EXPORT_LIST += $(EXPORT_SERVER_DIR)/libjsig.so
+-EXPORT_LIST += $(EXPORT_SERVER_DIR)/libjvm.so
++EXPORT_LIST += $(EXPORT_SERVER_DIR)/libjsig.$(LIBRARY_SUFFIX)
++EXPORT_LIST += $(EXPORT_SERVER_DIR)/libjvm.$(LIBRARY_SUFFIX)
+ ifeq ($(ARCH_DATA_MODEL), 32)
+   EXPORT_CLIENT_DIR = $(EXPORT_JRE_LIB_ARCH_DIR)/client
    EXPORT_LIST += $(EXPORT_CLIENT_DIR)/Xusage.txt
-   EXPORT_LIST += $(EXPORT_CLIENT_DIR)/libjsig.so
-   EXPORT_LIST += $(EXPORT_CLIENT_DIR)/libjvm.so 
+-  EXPORT_LIST += $(EXPORT_CLIENT_DIR)/libjsig.so
+-  EXPORT_LIST += $(EXPORT_CLIENT_DIR)/libjvm.so 
 -  EXPORT_LIST += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.so
 -  EXPORT_LIST += $(EXPORT_LIB_DIR)/sa-jdi.jar 
 -else
@@ -45,4 +84,6 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_defs_make,v 1.1 2009/01/04 23:25:16 k
 -      EXPORT_LIST += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.so
 -      EXPORT_LIST += $(EXPORT_LIB_DIR)/sa-jdi.jar
 -    endif
++  EXPORT_LIST += $(EXPORT_CLIENT_DIR)/libjsig.$(LIBRARY_SUFFIX)
++  EXPORT_LIST += $(EXPORT_CLIENT_DIR)/libjvm.$(LIBRARY_SUFFIX)
  endif

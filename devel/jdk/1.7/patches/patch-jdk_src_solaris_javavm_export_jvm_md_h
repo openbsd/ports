@@ -1,7 +1,22 @@
-$OpenBSD: patch-jdk_src_solaris_javavm_export_jvm_md_h,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/src/solaris/javavm/export/jvm_md.h.orig	Thu Sep 11 03:44:53 2008
-+++ jdk/src/solaris/javavm/export/jvm_md.h	Fri Sep 12 17:06:01 2008
-@@ -68,7 +68,7 @@
+$OpenBSD: patch-jdk_src_solaris_javavm_export_jvm_md_h,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/javavm/export/jvm_md.h.orig	Fri May  8 03:35:07 2009
++++ jdk/src/solaris/javavm/export/jvm_md.h	Mon May 18 17:00:23 2009
+@@ -41,7 +41,14 @@
+ #define JNI_ONUNLOAD_SYMBOLS {"JNI_OnUnload"}
+ 
+ #define JNI_LIB_PREFIX "lib"
++#ifdef __APPLE__
++#define JNI_LIB_SUFFIX ".dylib"
++#define VERSIONED_JNI_LIB_NAME(NAME, VERSION) JNI_LIB_PREFIX NAME "." VERSION JNI_LIB_SUFFIX
++#else
+ #define JNI_LIB_SUFFIX ".so"
++#define VERSIONED_JNI_LIB_NAME(NAME, VERSION) JNI_LIB_PREFIX NAME JNI_LIB_SUFFIX "." VERSION
++#endif
++#define JNI_LIB_NAME(NAME) JNI_LIB_PREFIX NAME JNI_LIB_SUFFIX
+ 
+ #define JVM_MAXPATHLEN MAXPATHLEN
+ 
+@@ -68,7 +75,7 @@
  #define JVM_O_O_APPEND   O_APPEND
  #define JVM_O_EXCL       O_EXCL
  #define JVM_O_CREAT      O_CREAT

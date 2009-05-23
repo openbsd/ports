@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_share_vm_utilities_globalDefinitions_gcc_hpp,v 1.3 2009/01/04 23:25:16 kurt Exp $
---- hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp.orig	Fri Dec 19 03:42:12 2008
-+++ hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Sun Dec 28 19:25:16 2008
-@@ -71,12 +71,14 @@
+$OpenBSD: patch-hotspot_src_share_vm_utilities_globalDefinitions_gcc_hpp,v 1.4 2009/05/23 03:03:25 kurt Exp $
+--- hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp.orig	Fri May  8 03:30:37 2009
++++ hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Fri May 15 17:50:50 2009
+@@ -71,12 +71,25 @@
  # include <sys/procfs.h>
  # endif
  
@@ -12,34 +12,33 @@ $OpenBSD: patch-hotspot_src_share_vm_utilities_globalDefinitions_gcc_hpp,v 1.3 2
 +#ifndef __OpenBSD__
  #include <ucontext.h>
 +#endif
++#ifdef __APPLE__
++  #include <AvailabilityMacros.h>
++  #if (MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4)
++    // Mac OS X 10.4 defines EFL_AC and EFL_ID,
++    // which conflict with hotspot variable names.
++    //
++    // This has been fixed in Mac OS X 10.5.
++    #undef EFL_AC
++    #undef EFL_ID
++  #endif
++#endif
  #include <sys/time.h>
 -#endif // LINUX
 +#endif // LINUX || _ALLBSD_SOURCE
  
  // 4810578: varargs unsafe on 32-bit integer/64-bit pointer architectures
  // When __cplusplus is defined, NULL is defined as 0 (32-bit constant) in
-@@ -107,22 +109,22 @@
- #endif
- 
- // NULL vs NULL_WORD:
--// On Linux NULL is defined as a special type '__null'. Assigning __null to
-+// With gcc NULL is defined as a special type '__null'. Assigning __null to
- // integer variable will cause gcc warning. Use NULL_WORD in places where a
--// pointer is stored as integer value.  On some platforms, sizeof(intptr_t) >
--// sizeof(void*), so here we want something which is integer type, but has the
--// same size as a pointer.
+@@ -112,7 +125,7 @@
+ // pointer is stored as integer value.  On some platforms, sizeof(intptr_t) >
+ // sizeof(void*), so here we want something which is integer type, but has the
+ // same size as a pointer.
 -#ifdef LINUX
-+// pointer is stored as integer value.  On some platforms the datatype of
-+// intptr_t != int, so here we want something which is the same size as a
-+// pointer.
-+#ifdef __GNUG__
++#ifdef __GNUC__
    #ifdef _LP64
      #define NULL_WORD  0L
    #else
--    #define NULL_WORD  0
-+    #define NULL_WORD  ((intptr_t)0)
-   #endif
- #else
+@@ -124,7 +137,7 @@
    #define NULL_WORD  NULL
  #endif
  
@@ -48,7 +47,7 @@ $OpenBSD: patch-hotspot_src_share_vm_utilities_globalDefinitions_gcc_hpp,v 1.3 2
  // Compiler-specific primitive types
  typedef unsigned short     uint16_t;
  #ifndef _UINT32_T
-@@ -142,7 +144,7 @@ typedef unsigned int            uintptr_t;
+@@ -144,7 +157,7 @@ typedef unsigned int            uintptr_t;
  // prior definition of intptr_t, and add "&& !defined(XXX)" above.
  #endif // _SYS_INT_TYPES_H
  
@@ -57,11 +56,13 @@ $OpenBSD: patch-hotspot_src_share_vm_utilities_globalDefinitions_gcc_hpp,v 1.3 2
  
  // Additional Java basic types
  
-@@ -226,7 +228,7 @@ inline int g_isnan(float  f) { return isnanf(f); }
+@@ -228,7 +241,9 @@ inline int g_isnan(float  f) { return isnanf(f); }
  inline int g_isnan(float  f) { return isnand(f); }
  #endif
  inline int g_isnan(double f) { return isnand(f); }
 -#elif LINUX
++#elif defined(__APPLE__)
++inline int g_isnan(double f) { return isnan(f); }
 +#elif defined(LINUX) || defined(_ALLBSD_SOURCE)
  inline int g_isnan(float  f) { return isnanf(f); }
  inline int g_isnan(double f) { return isnan(f); }

@@ -1,53 +1,73 @@
-$OpenBSD: patch-jdk_src_share_classes_sun_tools_jar_Main_java,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/share/classes/sun/tools/jar/Main.java.orig	Tue Oct 30 05:03:27 2007
-+++ jdk/src/share/classes/sun/tools/jar/Main.java	Wed Nov  7 19:01:18 2007
-@@ -49,6 +49,7 @@ class Main {
-     Hashtable filesTable = new Hashtable();
-     Vector paths = new Vector();
-     Vector v;
+$OpenBSD: patch-jdk_src_share_classes_sun_tools_jar_Main_java,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/classes/sun/tools/jar/Main.java.orig	Fri May  8 03:34:56 2009
++++ jdk/src/share/classes/sun/tools/jar/Main.java	Mon May 18 13:49:17 2009
+@@ -46,6 +46,7 @@ class Main {
+     String zname = "";
+     String[] files;
+     String rootjar = null;
 +    String cwd;
-     CRC32 crc32 = new CRC32();
-     /*
-      * cflag: create
-@@ -770,6 +771,19 @@ class Main {
+ 
+     // An entryName(path)->File map generated during "expand", it helps to
+     // decide whether or not an existing entry in a jar file needs to be
+@@ -801,6 +802,19 @@ class Main {
       * Extracts specified entries from JAR file.
       */
      void extract(InputStream in, String files[]) throws IOException {
-+    	// Current working directory
++        // Current working directory
 +
-+	cwd = System.getProperty("user.dir");
-+	if (cwd == null) {
++        cwd = System.getProperty("user.dir");
++        if (cwd == null) {
 +            fatalError(getMsg("error.no.cwd"));
-+	}
-+	cwd = (new File(cwd)).getCanonicalPath();
-+	if (!cwd.endsWith(File.separator)) {
-+	    cwd += File.separator;
-+	}
++        }
++        cwd = (new File(cwd)).getCanonicalPath();
++        if (!cwd.endsWith(File.separator)) {
++            cwd += File.separator;
++        }
 +
-+	// Extract the files
++        // Extract the files
 +
          ZipInputStream zis = new ZipInputStream(in);
          ZipEntry e;
-         // Set of all directory entries specified in archive.  Dissallows
-@@ -817,6 +831,10 @@ class Main {
+         // Set of all directory entries specified in archive.  Disallows
+@@ -831,6 +845,19 @@ class Main {
+      * Extracts specified entries from JAR file, via ZipFile.
+      */
+     void extract(String fname, String files[]) throws IOException {
++        // Current working directory
++
++        cwd = System.getProperty("user.dir");
++        if (cwd == null) {
++             fatalError(getMsg("error.no.cwd"));
++        }
++        cwd = (new File(cwd)).getCanonicalPath();
++        if (!cwd.endsWith(File.separator)) {
++            cwd += File.separator;
++        }
++
++        // Extract the files
++
+         ZipFile zf = new ZipFile(fname);
+         Set<ZipEntry> dirs = newDirSet();
+         Enumeration<? extends ZipEntry> zes = zf.entries();
+@@ -862,6 +889,10 @@ class Main {
          ZipEntry rc = null;
          String name = e.getName();
          File f = new File(e.getName().replace('/', File.separatorChar));
-+	if (!f.getCanonicalPath().startsWith(cwd)) {
-+ 	    output(formatMsg("out.ignore.entry", name));
-+	    return null;
-+	}
++        if (!f.getCanonicalPath().startsWith(cwd)) {
++            output(formatMsg("out.ignore.entry", name));
++            return null;
++        }
          if (e.isDirectory()) {
              if (f.exists()) {
                  if (!f.isDirectory()) {
-@@ -838,6 +856,10 @@ class Main {
+@@ -883,6 +914,10 @@ class Main {
          } else {
              if (f.getParent() != null) {
                  File d = new File(f.getParent());
-+		if (!d.getCanonicalPath().startsWith(cwd)) {
-+	 	    output(formatMsg("out.ignore.entry", name));
-+		    return null;
-+		}
++                if (!d.getCanonicalPath().startsWith(cwd)) {
++                    output(formatMsg("out.ignore.entry", name));
++                    return null;
++                }
                  if (!d.exists() && !d.mkdirs() || !d.isDirectory()) {
                      throw new IOException(formatMsg(
                          "error.create.dir", d.getPath()));

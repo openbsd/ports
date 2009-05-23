@@ -1,0 +1,14 @@
+$OpenBSD: patch-jdk_src_share_native_java_util_zip_zip_util_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/native/java/util/zip/zip_util.c.orig	Sun May 10 22:52:12 2009
++++ jdk/src/share/native/java/util/zip/zip_util.c	Sun May 10 22:53:13 2009
+@@ -46,6 +46,10 @@
+ #include "zip_util.h"
+ #include "zlib.h"
+ 
++#ifdef _ALLBSD_SOURCE
++#include "largefile_bsd.h"
++#endif
++
+ /* USE_MMAP means mmap the CEN & ENDHDR part of the zip file. */
+ #ifdef USE_MMAP
+ #include <sys/mman.h>

@@ -1,7 +1,19 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_jvm_bsd_h,v 1.3 2008/03/19 18:05:43 kurt Exp $
---- hotspot/src/os/bsd/vm/jvm_bsd.h.orig	Wed Nov  7 12:41:29 2007
-+++ hotspot/src/os/bsd/vm/jvm_bsd.h	Wed Nov  7 12:41:35 2007
-@@ -90,6 +90,20 @@
+$OpenBSD: patch-hotspot_src_os_bsd_vm_jvm_bsd_h,v 1.4 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/src/os/bsd/vm/jvm_bsd.h.orig	Fri May 15 16:25:27 2009
++++ hotspot/src/os/bsd/vm/jvm_bsd.h	Fri May 15 17:27:11 2009
+@@ -51,7 +51,11 @@
+ #define AGENT_ONATTACH_SYMBOLS  {"Agent_OnAttach"}
+ 
+ #define JNI_LIB_PREFIX "lib"
++#ifdef __APPLE__
++#define JNI_LIB_SUFFIX ".dylib"
++#else
+ #define JNI_LIB_SUFFIX ".so"
++#endif
+ 
+ // Hack: MAXPATHLEN is 4095 on some Bsd and 4096 on others. This may
+ //       cause problems if JVM and the rest of JDK are built on different
+@@ -90,6 +94,20 @@
  #define SHUTDOWN2_SIGNAL SIGINT
  #define SHUTDOWN3_SIGNAL SIGTERM
  

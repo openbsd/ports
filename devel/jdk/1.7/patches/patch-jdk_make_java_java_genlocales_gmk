@@ -1,0 +1,22 @@
+$OpenBSD: patch-jdk_make_java_java_genlocales_gmk,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/java/java/genlocales.gmk.orig	Mon May 18 11:27:18 2009
++++ jdk/make/java/java/genlocales.gmk	Mon May 18 11:27:26 2009
+@@ -76,10 +76,14 @@ RESOURCE_NAMES="FormatData CollationData TimeZoneNames
+ $(LocaleDataMetaInfo_Dest):$(LocaleDataMetaInfo_Src) $(LOCALEGEN_SH)
+ 	@$(RM) $@.tmp.euro $@.tmp.noneuro;
+ 	@$(prep-target) 
+-	@$(ECHO) $(subst .properties,'\n',$(Euro_Resources_properties)) > $@.tmp.euro;
+-	@$(ECHO) $(subst .java,'\n',$(Euro_Resources_java)) >> $@.tmp.euro;	
+-	@$(ECHO) $(subst .properties,'\n',$(NonEuro_Resources_properties)) > $@.tmp.noneuro;
+-	@$(ECHO) $(subst .java,'\n',$(NonEuro_Resources_java)) >> $@.tmp.noneuro;
++	@$(ECHO) $(Euro_Resources_properties) | $(SED) -e s@.properties@'\
++'@g > $@.tmp.euro;
++	@$(ECHO) $(Euro_Resources_java) | $(SED) -e s@.java@'\
++'@g >> $@.tmp.euro;
++	@$(ECHO) $(NonEuro_Resources_properties) | $(SED) -e s@.properties@'\
++'@g > $@.tmp.noneuro;
++	@$(ECHO) $(NonEuro_Resources_java) | $(SED) -e s@.java@'\
++'@g >> $@.tmp.noneuro;
+ 	NAWK="$(NAWK)" SED="$(SED)" SORT="$(SORT)" \
+ 	     $(SH) $(LOCALEGEN_SH) $(RESOURCE_NAMES) $@.tmp.euro \
+ 		$@.tmp.noneuro $< $@

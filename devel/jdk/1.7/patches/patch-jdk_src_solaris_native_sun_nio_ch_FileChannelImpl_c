@@ -1,15 +1,18 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c.orig	Thu Jul 17 03:43:48 2008
-+++ jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c	Sat Aug  2 17:11:47 2008
-@@ -29,6 +29,7 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c.orig	Fri May  8 03:35:08 2009
++++ jdk/src/solaris/native/sun/nio/ch/FileChannelImpl.c	Mon May 18 20:26:57 2009
+@@ -26,15 +26,21 @@
+ #include "jni.h"
+ #include "jni_util.h"
+ #include "jvm.h"
++#include "jvm_md.h"
  #include "jlong.h"
  #include <sys/mman.h>
  #include <sys/stat.h>
 +#include <fcntl.h>
  #include "sun_nio_ch_FileChannelImpl.h"
  #include "java_lang_Integer.h"
- #include "java_lang_Long.h"
-@@ -36,6 +37,10 @@
+ #include "nio.h"
  #include "nio_util.h"
  #include <dlfcn.h>
  
@@ -20,7 +23,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.2 2009/0
  static jfieldID chan_fd;        /* jobject 'fd' in sun.io.FileChannelImpl */
  
  #ifdef __solaris__
-@@ -60,6 +65,10 @@ sendfile_func* my_sendfile_func = NULL;
+@@ -59,6 +65,10 @@ sendfile_func* my_sendfile_func = NULL;
  typedef ssize_t sendfile64_func(int out_fd, int in_fd, off64_t *offset, size_t count);
  
  sendfile64_func* my_sendfile64_func = NULL;
@@ -31,10 +34,21 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.2 2009/0
  #endif
  
  JNIEXPORT jlong JNICALL
-@@ -279,6 +288,58 @@ Java_sun_nio_ch_FileChannelImpl_transferTo0(JNIEnv *en
-         return result;
+@@ -68,7 +78,8 @@ Java_sun_nio_ch_FileChannelImpl_initIDs(JNIEnv *env, j
+     chan_fd = (*env)->GetFieldID(env, clazz, "fd", "Ljava/io/FileDescriptor;");
+ 
+ #ifdef __solaris__
+-    if (dlopen("/usr/lib/libsendfile.so.1", RTLD_GLOBAL | RTLD_LAZY) != NULL) {
++    if (dlopen("/usr/lib/" VERSIONED_JNI_LIB_NAME("sendfile", "1"),
++               RTLD_GLOBAL | RTLD_LAZY) != NULL) {
+         my_sendfile_func = (sendfile_func*) dlsym(RTLD_DEFAULT, "sendfilev64");
      }
  #endif
+@@ -242,5 +253,57 @@ Java_sun_nio_ch_FileChannelImpl_transferTo0(JNIEnv *en
+         }
+         return result;
+     }
++#endif
 +
 +#ifdef _ALLBSD_SOURCE
 +    /*
@@ -86,31 +100,5 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_FileChannelImpl_c,v 1.2 2009/0
 +    }
 +
 +    return (0);
-+#endif
+ #endif
  }
- 
- JNIEXPORT jint JNICALL
-@@ -338,6 +399,23 @@ Java_sun_nio_ch_FileChannelImpl_release0(JNIEnv *env, 
-     fl.l_start = (off64_t)pos;
-     fl.l_type = F_UNLCK;
-     lockResult = fcntl(fd, cmd, &fl);
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+    /* XXXFREEBSD:  While doing of preClose0() we're closing actual fd which
-+       was locked, so here we'll get an error which need to be ignored to
-+       satisfy TCK FileLock test */
-+    /* XXXFREEBSD: backport to 1.4.2 */
-+    if (lockResult < 0 && errno == EBADF)
-+	lockResult = errno = 0;
-+#endif
-+#if defined(__NetBSD__)
-+    /* XXXNETBSD: The dup2 in preClose0 is being done onto 1 end of a
-+       socketpair which isn't a valid target for F_UNLCK. No good way to see
-+       this vs. a bad lock setup so just return errno = 0 there
-+       to pass JCK (lock will get removed once all fd's close anyways) */
-+    /* XXXNETBSD: backport to 1.4.2 */
-+    if (lockResult < 0 && errno == EINVAL)
-+	lockResult = errno = 0;
-+#endif
-     if (lockResult < 0) {
-         JNU_ThrowIOExceptionWithLastError(env, "Release failed");
-     }

@@ -1,0 +1,31 @@
+$OpenBSD: patch-hotspot_make_Makefile,v 1.1 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/make/Makefile.orig	Fri May 15 16:44:15 2009
++++ hotspot/make/Makefile	Fri May 15 16:45:03 2009
+@@ -265,6 +265,19 @@ endif
+ 
+ # Shared Library
+ ifneq ($(OSNAME),windows)
++ifeq ($(OSNAME),bsd)
++# BSD-specific LIBRARY_SUFFIX build option
++$(EXPORT_JRE_LIB_ARCH_DIR)/%.$(LIBRARY_SUFFIX): $(C2_DIR)/%.$(LIBRARY_SUFFIX)
++	$(install-file)
++$(EXPORT_CLIENT_DIR)/%.$(LIBRARY_SUFFIX):       $(C1_DIR)/%.$(LIBRARY_SUFFIX)
++	$(install-file)
++$(EXPORT_CLIENT_DIR)/64/%.$(LIBRARY_SUFFIX):    $(C1_DIR)/%.$(LIBRARY_SUFFIX)
++	$(install-file)
++$(EXPORT_SERVER_DIR)/%.$(LIBRARY_SUFFIX):       $(C2_DIR)/%.$(LIBRARY_SUFFIX)
++	$(install-file)
++$(EXPORT_SERVER_DIR)/64/%.$(LIBRARY_SUFFIX):    $(C2_DIR)/%.$(LIBRARY_SUFFIX)
++	$(install-file)
++else
+ $(EXPORT_JRE_LIB_ARCH_DIR)/%.so: $(C2_DIR)/%.so
+ 	$(install-file)
+ $(EXPORT_CLIENT_DIR)/%.so:       $(C1_DIR)/%.so
+@@ -275,6 +288,7 @@ $(EXPORT_SERVER_DIR)/%.so:       $(C2_DIR)/%.so
+ 	$(install-file)
+ $(EXPORT_SERVER_DIR)/64/%.so:    $(C2_DIR)/%.so
+ 	$(install-file)
++endif
+ endif
+ 
+ # Jar file (sa-jdi.jar)

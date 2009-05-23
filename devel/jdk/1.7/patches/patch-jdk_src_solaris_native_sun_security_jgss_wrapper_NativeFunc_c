@@ -1,0 +1,13 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_security_jgss_wrapper_NativeFunc_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/sun/security/jgss/wrapper/NativeFunc.c.orig	Mon May 18 20:29:44 2009
++++ jdk/src/solaris/native/sun/security/jgss/wrapper/NativeFunc.c	Mon May 18 20:29:55 2009
+@@ -26,7 +26,9 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <dlfcn.h>
++#ifndef __APPLE__
+ #include <link.h>
++#endif
+ #include "NativeFunc.h"
+ 
+ /* standard GSS method names (ordering is from mapfile) */

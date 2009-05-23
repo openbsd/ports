@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_make_common_Defs-linux_gmk,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/common/Defs-linux.gmk.orig	Mon May 18 11:12:22 2009
++++ jdk/make/common/Defs-linux.gmk	Mon May 18 11:12:29 2009
+@@ -297,7 +297,7 @@ override LIBSOCKET               =
+ override LIBTHREAD               =
+ override MOOT_PRIORITIES         = true
+ override NO_INTERRUPTIBLE_IO     = true
+-override OPENWIN_HOME            = /usr/X11R6
++override OPENWIN_HOME            = $(X11_PATH)
+ ifeq ($(ARCH), amd64)
+ override OPENWIN_LIB             = $(OPENWIN_HOME)/lib64
+ else

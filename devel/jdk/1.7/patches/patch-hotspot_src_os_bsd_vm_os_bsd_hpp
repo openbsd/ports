@@ -1,7 +1,20 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.4 2009/01/04 23:25:16 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.hpp.orig	Wed Dec 24 10:02:07 2008
-+++ hotspot/src/os/bsd/vm/os_bsd.hpp	Wed Dec 24 10:04:07 2008
-@@ -47,6 +47,7 @@ class Bsd {
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.5 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.hpp.orig	Wed May 20 17:42:24 2009
++++ hotspot/src/os/bsd/vm/os_bsd.hpp	Wed May 20 19:02:42 2009
+@@ -27,6 +27,12 @@
+ /* pthread_getattr_np comes with BsdThreads-0.9-7 on RedHat 7.1 */
+ typedef int (*pthread_getattr_func_type) (pthread_t, pthread_attr_t *);
+ 
++#ifdef __APPLE__
++// Mac OS X doesn't support clock_gettime. Stub out the type, it is
++// unused
++typedef int clockid_t;
++#endif
++
+ class Bsd {
+   friend class os;
+ 
+@@ -47,6 +53,7 @@ class Bsd {
    static int sigflags[MAXSIGNUM];
  
    static int (*_clock_gettime)(clockid_t, struct timespec *);
@@ -9,7 +22,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.4 2009/01/04 23:25:16 kurt 
    static int (*_pthread_getcpuclockid)(pthread_t, clockid_t *);
  
    static address   _initial_thread_stack_bottom;
-@@ -58,6 +59,7 @@ class Bsd {
+@@ -58,6 +65,7 @@ class Bsd {
    static bool _is_floating_stack;
    static bool _is_NPTL;
    static bool _supports_fast_thread_cpu_time;
@@ -17,7 +30,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.4 2009/01/04 23:25:16 kurt 
  
    static GrowableArray<int>* _cpu_to_node;
  
-@@ -65,38 +67,73 @@ class Bsd {
+@@ -65,38 +73,73 @@ class Bsd {
  
    static julong _physical_memory;
    static pthread_t _main_thread;
@@ -91,7 +104,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.4 2009/01/04 23:25:16 kurt 
    static bool is_initial_thread(void);
  
    static int page_size(void)                                        { return _page_size; }
-@@ -133,6 +170,7 @@ class Bsd {
+@@ -133,6 +176,7 @@ class Bsd {
    static struct sigaction *get_chained_signal_action(int sig);
    static bool chained_handler(int sig, siginfo_t* siginfo, void* context);
  
@@ -99,15 +112,15 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.4 2009/01/04 23:25:16 kurt 
    // GNU libc and libpthread version strings
    static const char *glibc_version()          { return _glibc_version; }
    static const char *libpthread_version()     { return _libpthread_version; }
-@@ -146,6 +184,7 @@ class Bsd {
-   static bool is_floating_stack()             { return _is_floating_stack; }
- 
+@@ -148,6 +192,7 @@ class Bsd {
    static void libpthread_init();
-+#endif
    static bool libnuma_init();
- 
+   static void* libnuma_dlsym(void* handle, const char* name);
++#endif
    // Minimum stack size a thread can be created with (allowing
-@@ -156,17 +195,21 @@ class Bsd {
+   // the VM to completely create the thread and enter user code)
+   static size_t min_stack_allowed;
+@@ -156,17 +201,21 @@ class Bsd {
    static size_t default_stack_size(os::ThreadType thr_type);
    static size_t default_guard_size(os::ThreadType thr_type);
  
@@ -129,7 +142,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.4 2009/01/04 23:25:16 kurt 
  
    static bool supports_monotonic_clock() {
      return _clock_gettime != NULL;
-@@ -176,6 +219,7 @@ class Bsd {
+@@ -176,6 +225,7 @@ class Bsd {
      return _clock_gettime ? _clock_gettime(clock_id, tp) : -1;
    }
  
@@ -137,7 +150,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.4 2009/01/04 23:25:16 kurt 
    static int pthread_getcpuclockid(pthread_t tid, clockid_t *clock_id) {
      return _pthread_getcpuclockid ? _pthread_getcpuclockid(tid, clock_id) : -1;
    }
-@@ -185,6 +229,7 @@ class Bsd {
+@@ -185,6 +235,7 @@ class Bsd {
    }
  
    static jlong fast_thread_cpu_time(clockid_t clockid);

@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_util_TimeZone_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/java/util/TimeZone_md.c.orig	Tue Dec  4 04:05:20 2007
-+++ jdk/src/solaris/native/java/util/TimeZone_md.c	Fri Dec  7 17:44:58 2007
+$OpenBSD: patch-jdk_src_solaris_native_java_util_TimeZone_md_c,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/java/util/TimeZone_md.c.orig	Fri May  8 03:35:07 2009
++++ jdk/src/solaris/native/java/util/TimeZone_md.c	Mon May 18 19:49:29 2009
 @@ -31,7 +31,7 @@
  #include <errno.h>
  #include <stddef.h>
@@ -37,7 +37,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_util_TimeZone_md_c,v 1.1 2008/03/19 
      /*
       * First, try the ZONE entry in /etc/sysconfig/clock. However, the
       * ZONE entry is not set up after initial Red Hat Linux
-@@ -254,14 +259,18 @@ getPlatformTimeZoneID()
+@@ -254,14 +259,19 @@ getPlatformTimeZoneID()
              return tz;
          }
      }
@@ -51,13 +51,14 @@ $OpenBSD: patch-jdk_src_solaris_native_java_util_TimeZone_md_c,v 1.1 2008/03/19 
          return NULL;
      }
  
-+    strlcpy(zoneinfo_file, default_zoneinfo_file, PATH_MAX+1);
++    strncpy(zoneinfo_file, default_zoneinfo_file, PATH_MAX);
++    zoneinfo_file[PATH_MAX] = '\0';
 +
 +#if defined(__linux__) || defined(_ALLBSD_SOURCE)
      /*
       * If it's a symlink, get the link name and its zone ID part. (The
       * older versions of timeconfig created a symlink as described in
-@@ -270,21 +279,25 @@ getPlatformTimeZoneID()
+@@ -270,21 +280,25 @@ getPlatformTimeZoneID()
       * from /etc/localtime.)
       */
      if (S_ISLNK(statbuf.st_mode)) {
@@ -89,7 +90,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_util_TimeZone_md_c,v 1.1 2008/03/19 
  
      /*
       * If it's a regular file, we need to find out the same zoneinfo file
-@@ -295,7 +308,7 @@ getPlatformTimeZoneID()
+@@ -295,7 +309,7 @@ getPlatformTimeZoneID()
      if (buf == NULL) {
          return NULL;
      }
@@ -98,7 +99,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_util_TimeZone_md_c,v 1.1 2008/03/19 
          free((void *) buf);
          return NULL;
      }
-@@ -524,7 +537,7 @@ findJavaTZ_md(const char *java_home_dir, const char *c
+@@ -524,7 +538,7 @@ findJavaTZ_md(const char *java_home_dir, const char *c
  
      tz = getenv("TZ");
  
@@ -107,7 +108,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_util_TimeZone_md_c,v 1.1 2008/03/19 
      if (tz == NULL) {
  #else
  #ifdef __solaris__
-@@ -563,19 +576,32 @@ getGMTOffsetID()
+@@ -563,19 +577,32 @@ getGMTOffsetID()
  {
      time_t offset;
      char sign, buf[16];

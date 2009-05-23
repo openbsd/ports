@@ -1,0 +1,14 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_awt_gtk2_interface_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/sun/awt/gtk2_interface.c.orig	Mon May 18 20:20:15 2009
++++ jdk/src/solaris/native/sun/awt/gtk2_interface.c	Mon May 18 20:21:33 2009
+@@ -30,8 +30,9 @@
+ #include <string.h>
+ #include "gtk2_interface.h"
+ #include "java_awt_Transparency.h"
++#include "jvm_md.h"
+ 
+-#define GTK2_LIB "libgtk-x11-2.0.so.0"
++#define GTK2_LIB VERSIONED_JNI_LIB_NAME("gtk-x11-2.0", "0")
+ 
+ #define G_TYPE_INVALID                  G_TYPE_MAKE_FUNDAMENTAL (0)
+ #define G_TYPE_NONE                     G_TYPE_MAKE_FUNDAMENTAL (1)

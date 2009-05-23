@@ -1,33 +1,28 @@
-$OpenBSD: patch-jdk_make_common_shared_Compiler-gcc_gmk,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/make/common/shared/Compiler-gcc.gmk.orig	Thu Jul 17 03:43:08 2008
-+++ jdk/make/common/shared/Compiler-gcc.gmk	Sat Aug  2 16:12:53 2008
-@@ -53,20 +53,24 @@ ifeq ($(PLATFORM), windows)
+$OpenBSD: patch-jdk_make_common_shared_Compiler-gcc_gmk,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/common/shared/Compiler-gcc.gmk.orig	Fri May  8 03:34:14 2009
++++ jdk/make/common/shared/Compiler-gcc.gmk	Mon May 18 11:18:32 2009
+@@ -72,6 +72,24 @@ ifeq ($(PLATFORM), linux)
  
  endif
  
--ifeq ($(PLATFORM), linux)
-+ifneq (,$(findstring $(PLATFORM), linux bsd))
- 
-+ifeq ($(PLATFORM), linux)
-   # Settings specific to Linux
--  CC             = $(COMPILER_PATH)gcc
--  CPP            = $(COMPILER_PATH)gcc -E
-+  CC            ?= $(COMPILER_PATH)gcc
-+  CPP            = $(CC) -E
-   # statically link libstdc++ before C++ ABI is stablized on Linux
-   STATIC_CXX     = true
-+else
-+  STATIC_CXX     = false
++ifeq ($(PLATFORM), bsd)
++
++  # Settings specific to BSD
++  CC             = $(COMPILER_PATH)gcc
++  CPP            = $(COMPILER_PATH)gcc -E
++  CXX            = $(COMPILER_PATH)g++
++  REQUIRED_CC_VER = 3.2
++
++  # Option used to create a shared library
++  # Option used to create a shared library
++  ifeq ($(OS_VENDOR), Apple)
++    SHARED_LIBRARY_FLAG = -dynamiclib 
++  else
++    SHARED_LIBRARY_FLAG = -shared
++  endif
++  SUN_COMP_VER := $(shell $(CC) --verbose 2>&1 )
 +endif
-   ifeq ($(STATIC_CXX),true)
-     # g++ always dynamically links libstdc++, even we use "-Wl,-Bstatic -lstdc++"
-     # We need to use gcc to statically link the C++ runtime. gcc and g++ use
-     # the same subprocess to compile C++ files, so it is OK to build using gcc.
--    CXX            = $(COMPILER_PATH)gcc
-+    CXX            = $(CC)
-   else
--    CXX            = $(COMPILER_PATH)g++
-+    CXX           ?= $(COMPILER_PATH)g++
-   endif
-   ifneq ("$(findstring sparc,$(ARCH))", "")
-     # sparc or sparcv9
++
+ ifeq ($(PLATFORM), solaris)
+ 
+   # Settings specific to Solaris

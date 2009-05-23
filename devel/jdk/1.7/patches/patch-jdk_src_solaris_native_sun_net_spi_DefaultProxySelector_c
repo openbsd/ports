@@ -1,7 +1,12 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_net_spi_DefaultProxySelector_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c.orig	Tue Dec  4 04:05:47 2007
-+++ jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c	Thu Feb 14 17:57:04 2008
-@@ -30,7 +30,7 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_net_spi_DefaultProxySelector_c,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c.orig	Fri May  8 03:35:08 2009
++++ jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c	Mon May 18 20:26:12 2009
+@@ -26,11 +26,12 @@
+ #include "jni.h"
+ #include "jni_util.h"
+ #include "jvm.h"
++#include "jvm_md.h"
+ #include "jlong.h"
  #include "sun_net_spi_DefaultProxySelector.h"
  #include <dlfcn.h>
  #include <stdio.h>
@@ -10,3 +15,15 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_net_spi_DefaultProxySelector_c,v 1.1 
  #include <string.h>
  #else
  #include <strings.h>
+@@ -109,8 +110,9 @@ Java_sun_net_spi_DefaultProxySelector_init(JNIEnv *env
+   /**
+    * Let's try to load le GConf-2 library
+    */
+-  if (dlopen("libgconf-2.so", RTLD_GLOBAL | RTLD_LAZY) != NULL ||
+-      dlopen("libgconf-2.so.4", RTLD_GLOBAL | RTLD_LAZY) != NULL) {
++  if (dlopen(JNI_LIB_NAME("gconf-2"), RTLD_GLOBAL | RTLD_LAZY) != NULL ||
++      dlopen(VERSIONED_JNI_LIB_NAME("gconf-2", "4"),
++             RTLD_GLOBAL | RTLD_LAZY) != NULL) {
+     gconf_ver = 2;
+   }
+   if (gconf_ver > 0) {

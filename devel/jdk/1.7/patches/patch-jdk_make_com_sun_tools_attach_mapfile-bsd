@@ -1,0 +1,19 @@
+$OpenBSD: patch-jdk_make_com_sun_tools_attach_mapfile-bsd,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/com/sun/tools/attach/mapfile-bsd.orig	Mon May 18 10:57:46 2009
++++ jdk/make/com/sun/tools/attach/mapfile-bsd	Mon May 18 10:57:53 2009
+@@ -30,14 +30,12 @@ SUNWprivate_1.1 {
+ 	    Java_sun_tools_attach_BsdVirtualMachine_checkPermissions;
+ 	    Java_sun_tools_attach_BsdVirtualMachine_close;
+ 	    Java_sun_tools_attach_BsdVirtualMachine_connect;
+-	    Java_sun_tools_attach_BsdVirtualMachine_getBsdThreadsManager;
+-	    Java_sun_tools_attach_BsdVirtualMachine_isBsdThreads;
+ 	    Java_sun_tools_attach_BsdVirtualMachine_open;
+ 	    Java_sun_tools_attach_BsdVirtualMachine_sendQuitTo;
+-            Java_sun_tools_attach_BsdVirtualMachine_sendQuitToChildrenOf;
+ 	    Java_sun_tools_attach_BsdVirtualMachine_socket;
+ 	    Java_sun_tools_attach_BsdVirtualMachine_read;
+ 	    Java_sun_tools_attach_BsdVirtualMachine_write;
++	    Java_sun_tools_attach_BsdVirtualMachine_createAttachFile;
+ 	local:
+ 		*;
+ };

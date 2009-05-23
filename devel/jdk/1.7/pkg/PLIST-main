@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/01/04 23:25:16 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/05/23 03:03:25 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.7,<1.8
 ${JDKHOME}/
@@ -412,8 +412,6 @@ ${JDKHOME}/jre/bin/
 @bin ${JDKHOME}/jre/bin/unpack200
 ${JDKHOME}/jre/lib/
 ${JDKHOME}/jre/lib/applet/
-${JDKHOME}/jre/lib/audio/
-${JDKHOME}/jre/lib/audio/soundbank.gm
 ${JDKHOME}/jre/lib/calendars.properties
 ${JDKHOME}/jre/lib/charsets.jar
 ${JDKHOME}/jre/lib/classlist
@@ -583,6 +581,7 @@ ${JDKHOME}/jre/lib/zi/America/Argentina/Jujuy
 ${JDKHOME}/jre/lib/zi/America/Argentina/La_Rioja
 ${JDKHOME}/jre/lib/zi/America/Argentina/Mendoza
 ${JDKHOME}/jre/lib/zi/America/Argentina/Rio_Gallegos
+${JDKHOME}/jre/lib/zi/America/Argentina/Salta
 ${JDKHOME}/jre/lib/zi/America/Argentina/San_Juan
 ${JDKHOME}/jre/lib/zi/America/Argentina/San_Luis
 ${JDKHOME}/jre/lib/zi/America/Argentina/Tucuman
@@ -754,7 +753,7 @@ ${JDKHOME}/jre/lib/zi/Asia/Kabul
 ${JDKHOME}/jre/lib/zi/Asia/Kamchatka
 ${JDKHOME}/jre/lib/zi/Asia/Karachi
 ${JDKHOME}/jre/lib/zi/Asia/Kashgar
-${JDKHOME}/jre/lib/zi/Asia/Katmandu
+${JDKHOME}/jre/lib/zi/Asia/Kathmandu
 ${JDKHOME}/jre/lib/zi/Asia/Kolkata
 ${JDKHOME}/jre/lib/zi/Asia/Krasnoyarsk
 ${JDKHOME}/jre/lib/zi/Asia/Kuala_Lumpur
@@ -1088,6 +1087,14 @@ ${JDKHOME}/sample/jmx/jmx-scandir/truststore
 ${JDKHOME}/sample/nbproject/
 ${JDKHOME}/sample/nbproject/project.xml
 ${JDKHOME}/sample/nio/
+${JDKHOME}/sample/nio/file/
+${JDKHOME}/sample/nio/file/AclEdit.java
+${JDKHOME}/sample/nio/file/Chmod.java
+${JDKHOME}/sample/nio/file/Copy.java
+${JDKHOME}/sample/nio/file/DiskUsage.java
+${JDKHOME}/sample/nio/file/FileType.java
+${JDKHOME}/sample/nio/file/WatchDir.java
+${JDKHOME}/sample/nio/file/Xdd.java
 ${JDKHOME}/sample/nio/multicast/
 ${JDKHOME}/sample/nio/multicast/MulticastAddress.java
 ${JDKHOME}/sample/nio/multicast/Reader.java

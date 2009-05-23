@@ -1,7 +1,29 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_lang_ProcessEnvironment_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/java/lang/ProcessEnvironment_md.c.orig	Tue Dec  4 04:05:20 2007
-+++ jdk/src/solaris/native/java/lang/ProcessEnvironment_md.c	Wed Dec  5 17:42:02 2007
-@@ -46,7 +46,7 @@ Java_java_lang_ProcessEnvironment_environ(JNIEnv *env,
+$OpenBSD: patch-jdk_src_solaris_native_java_lang_ProcessEnvironment_md_c,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/java/lang/ProcessEnvironment_md.c.orig	Fri May  8 03:35:07 2009
++++ jdk/src/solaris/native/java/lang/ProcessEnvironment_md.c	Mon May 18 17:03:34 2009
+@@ -28,6 +28,11 @@
+ #include "jni.h"
+ #include "jni_util.h"
+ 
++#ifdef __APPLE__
++#include <crt_externs.h>
++#define environ (*_NSGetEnviron())
++#endif
++
+ JNIEXPORT jobjectArray JNICALL
+ Java_java_lang_ProcessEnvironment_environ(JNIEnv *env, jclass ign)
+ {
+@@ -37,7 +42,9 @@ Java_java_lang_ProcessEnvironment_environ(JNIEnv *env,
+      * no standard (not even de-facto) header file where the
+      * declaration is to be found.  See:
+      * http://www.opengroup.org/onlinepubs/007908799/xbd/envvar.html */
++#ifndef __APPLE__
+     extern char ** environ; /* environ[i] looks like: VAR=VALUE\0 */
++#endif
+ 
+     jsize count = 0;
+     jsize i, j;
+@@ -46,7 +53,7 @@ Java_java_lang_ProcessEnvironment_environ(JNIEnv *env,
  
      for (i = 0; environ[i]; i++) {
          /* Ignore corrupted environment variables */
@@ -10,7 +32,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_lang_ProcessEnvironment_md_c,v 1.1 2
              count++;
      }
  
-@@ -56,7 +56,7 @@ Java_java_lang_ProcessEnvironment_environ(JNIEnv *env,
+@@ -56,7 +63,7 @@ Java_java_lang_ProcessEnvironment_environ(JNIEnv *env,
      for (i = 0, j = 0; environ[i]; i++) {
          const char * varEnd = strchr(environ[i], '=');
          /* Ignore corrupted environment variables */

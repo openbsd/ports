@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_java_jli_Makefile,v 1.3 2009/01/04 23:25:16 kurt Exp $
---- jdk/make/java/jli/Makefile.orig	Thu Oct 23 03:44:05 2008
-+++ jdk/make/java/jli/Makefile	Mon Dec 22 23:24:39 2008
+$OpenBSD: patch-jdk_make_java_jli_Makefile,v 1.4 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/java/jli/Makefile.orig	Fri May  8 03:34:15 2009
++++ jdk/make/java/jli/Makefile	Mon May 18 11:28:33 2009
 @@ -44,8 +44,10 @@ MS_RUNTIME_STATIC = true
  
  include $(BUILDDIR)/common/Defs.gmk
@@ -32,7 +32,13 @@ $OpenBSD: patch-jdk_make_java_jli_Makefile,v 1.3 2009/01/04 23:25:16 kurt Exp $
  
  ifneq ($(PLATFORM), windows)
  
-@@ -96,10 +102,12 @@ OTHER_CPPFLAGS += $(LIBARCH_DEFINES)
+@@ -91,15 +97,17 @@ ifeq ($(PLATFORM), solaris)
+   LIBARCH_DEFINES += -DLIBARCH64NAME='"$(LIBARCH64)"'
+ endif
+ 
+-OTHER_CPPFLAGS += $(LIBARCH_DEFINES)
++OTHER_CPPFLAGS += $(LIBARCH_DEFINES) -DPACKAGE_PATH=\"$(PACKAGE_PATH)\"
+ 
  
  ifneq ($(PLATFORM), windows)	# UNIX systems
  	LIB_LOCATION = $(LIBDIR)/$(LIBARCH)/jli
@@ -49,10 +55,11 @@ $OpenBSD: patch-jdk_make_java_jli_Makefile,v 1.3 2009/01/04 23:25:16 kurt Exp $
  
  OTHER_INCLUDES += -I$(LAUNCHER_SHARE_SRC)
  OTHER_INCLUDES += -I$(LAUNCHER_PLATFORM_SRC)
+-OTHER_INCLUDES += -I$(ZIP_SRC)
 +ifneq ($(SYSTEM_ZLIB),true)
- OTHER_INCLUDES += -I$(ZIP_SRC)
++  OTHER_INCLUDES += -I$(ZIP_SRC)
 +else
-+LDLIBS += -lz
++  LDLIBS += -lz
 +endif
  
  #
@@ -68,7 +75,6 @@ $OpenBSD: patch-jdk_make_java_jli_Makefile,v 1.3 2009/01/04 23:25:16 kurt Exp $
 +STATIC_LIBRARY = $(STATIC_LIBRARY_DIR)/$(STATIC_LIBRARY_NAME)
 +
 +$(STATIC_LIBRARY_DIR): $(OBJDIR)
-+	@$(prep-target)
 +	@$(MKDIR) $(STATIC_LIBRARY_DIR)
 +
 +$(STATIC_LIBRARY): $(STATIC_LIBRARY_DIR)
@@ -85,5 +91,6 @@ $OpenBSD: patch-jdk_make_java_jli_Makefile,v 1.3 2009/01/04 23:25:16 kurt Exp $
 -vpath %.c $(LAUNCHER_SHARE_SRC) $(ZIP_SRC) $(LAUNCHER_PLATFORM_SRC)
 +vpath %.c $(LAUNCHER_SHARE_SRC) $(LAUNCHER_PLATFORM_SRC)
 +ifneq ($(SYSTEM_ZLIB),true)
-+vpath %.c $(ZIP_SRC)
++  vpath %.c $(ZIP_SRC)
 +endif
++

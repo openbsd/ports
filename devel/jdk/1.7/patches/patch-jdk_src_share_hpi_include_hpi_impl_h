@@ -1,25 +1,16 @@
-$OpenBSD: patch-jdk_src_share_hpi_include_hpi_impl_h,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/share/hpi/include/hpi_impl.h.orig	Tue Oct 30 05:03:35 2007
-+++ jdk/src/share/hpi/include/hpi_impl.h	Wed Nov  7 19:02:41 2007
-@@ -138,21 +138,12 @@ int sysConnect(int fd, struct sockaddr *him, int len);
+$OpenBSD: patch-jdk_src_share_hpi_include_hpi_impl_h,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/hpi/include/hpi_impl.h.orig	Fri May  8 03:34:59 2009
++++ jdk/src/share/hpi/include/hpi_impl.h	Mon May 18 13:50:09 2009
+@@ -138,7 +138,11 @@ int sysConnect(int fd, struct sockaddr *him, int len);
  int sysBind(int fd, struct sockaddr *him, int len);
  int sysAccept(int fd, struct sockaddr *him, int *len);
  int sysGetSockName(int fd, struct sockaddr *him, int *len);
 -#ifdef _LP64
++#if defined(_LP64) || defined(_ALLBSD_SOURCE)
++// XXXBSD: The implementations all use ssize_t, except on Windows,
++// regardless of _LP64. The resulting mismatch between "int" and "ssize_t"
++// causes gcc on Darwin to report a conflicting types error.
++// Appears to be an upstream issue introduced in 1.7
  ssize_t sysSendTo(int fd, char *buf, int len, int flags, struct sockaddr *to,
                int tolen);
  ssize_t sysRecvFrom(int fd, char *buf, int nbytes, int flags,
-                 struct sockaddr *from, int *fromlen);
- ssize_t sysRecv(int fd, char *buf, int nBytes, int flags);
- ssize_t sysSend(int fd, char *buf, int nBytes, int flags);
--#else
--int sysSendTo(int fd, char *buf, int len, int flags, struct sockaddr *to,
--              int tolen);
--int sysRecvFrom(int fd, char *buf, int nbytes, int flags,
--                struct sockaddr *from, int *fromlen);
--int sysRecv(int fd, char *buf, int nBytes, int flags);
--int sysSend(int fd, char *buf, int nBytes, int flags);
--#endif
- int sysListen(int fd, int count);
- int sysTimeout(int fd, long timeout);
- int sysGetHostName(char* name, int namelen);

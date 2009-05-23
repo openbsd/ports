@@ -1,11 +1,14 @@
-$OpenBSD: patch-hotspot_make_defs_make,v 1.3 2009/01/04 23:25:16 kurt Exp $
---- hotspot/make/defs.make.orig	Thu Jul 17 03:40:27 2008
-+++ hotspot/make/defs.make	Sat Aug  2 16:12:52 2008
-@@ -119,13 +119,20 @@ endif
+$OpenBSD: patch-hotspot_make_defs_make,v 1.4 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/make/defs.make.orig	Fri May  8 03:30:27 2009
++++ hotspot/make/defs.make	Fri May 15 17:12:33 2009
+@@ -119,13 +119,23 @@ endif
  # Windows should have OS predefined
  ifeq ($(OS),)
    OS   := $(shell uname -s)
 +  ifneq ($(findstring BSD,$(OS)),)
++    OS=bsd
++  endif
++  ifeq ($(OS), Darwin)
 +    OS=bsd
 +  endif
    HOST := $(shell uname -n)

@@ -1,0 +1,180 @@
+$OpenBSD: patch-corba_src_share_native_com_sun_corba_se_internal_io_ioser_c,v 1.1 2009/05/23 03:03:24 kurt Exp $
+--- corba/src/share/native/com/sun/corba/se/internal/io/ioser.c.orig	Thu May 14 23:14:21 2009
++++ corba/src/share/native/com/sun/corba/se/internal/io/ioser.c	Thu May 14 23:13:00 2009
+@@ -24,6 +24,7 @@
+  */
+ 
+ #include "jni.h"
++#include <stdint.h>
+ 
+ #include "com_sun_corba_se_internal_io_IIOPInputStream.h"
+ #include "com_sun_corba_se_internal_io_IIOPOutputStream.h"
+@@ -643,7 +644,7 @@ JNIEXPORT jclass JNICALL Java_com_sun_corba_se_interna
+ JNIEXPORT jobject JNICALL Java_com_sun_corba_se_internal_io_IIOPOutputStream_getObjectFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID)
+ {
+-    return (*env)->GetObjectField(env, obj, (jfieldID)fieldID);
++    return (*env)->GetObjectField(env, obj, (jfieldID)(intptr_t)fieldID);
+ }
+ 
+ /*
+@@ -654,7 +655,7 @@ JNIEXPORT jobject JNICALL Java_com_sun_corba_se_intern
+ JNIEXPORT jboolean JNICALL Java_com_sun_corba_se_internal_io_IIOPOutputStream_getBooleanFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID)
+ {
+-    return (*env)->GetBooleanField(env, obj, (jfieldID)fieldID);
++    return (*env)->GetBooleanField(env, obj, (jfieldID)(intptr_t)fieldID);
+ }
+ 
+ /*
+@@ -665,7 +666,7 @@ JNIEXPORT jboolean JNICALL Java_com_sun_corba_se_inter
+ JNIEXPORT jbyte JNICALL Java_com_sun_corba_se_internal_io_IIOPOutputStream_getByteFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID)
+ {
+-    return (*env)->GetByteField(env, obj, (jfieldID)fieldID);
++    return (*env)->GetByteField(env, obj, (jfieldID)(intptr_t)fieldID);
+ 
+ }
+ 
+@@ -677,7 +678,7 @@ JNIEXPORT jbyte JNICALL Java_com_sun_corba_se_internal
+ JNIEXPORT jchar JNICALL Java_com_sun_corba_se_internal_io_IIOPOutputStream_getCharFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID)
+ {
+-    return (*env)->GetCharField(env, obj, (jfieldID)fieldID);
++    return (*env)->GetCharField(env, obj, (jfieldID)(intptr_t)fieldID);
+ 
+ }
+ 
+@@ -689,7 +690,7 @@ JNIEXPORT jchar JNICALL Java_com_sun_corba_se_internal
+ JNIEXPORT jshort JNICALL Java_com_sun_corba_se_internal_io_IIOPOutputStream_getShortFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID)
+ {
+-    return (*env)->GetShortField(env, obj, (jfieldID)fieldID);
++    return (*env)->GetShortField(env, obj, (jfieldID)(intptr_t)fieldID);
+ }
+ 
+ /*
+@@ -700,7 +701,7 @@ JNIEXPORT jshort JNICALL Java_com_sun_corba_se_interna
+ JNIEXPORT jint JNICALL Java_com_sun_corba_se_internal_io_IIOPOutputStream_getIntFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID)
+ {
+-    return (*env)->GetIntField(env, obj, (jfieldID)fieldID);
++    return (*env)->GetIntField(env, obj, (jfieldID)(intptr_t)fieldID);
+ 
+ }
+ 
+@@ -713,7 +714,7 @@ JNIEXPORT jint JNICALL Java_com_sun_corba_se_internal_
+ JNIEXPORT jlong JNICALL Java_com_sun_corba_se_internal_io_IIOPOutputStream_getLongFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID)
+ {
+-    return (*env)->GetLongField(env, obj, (jfieldID)fieldID);
++    return (*env)->GetLongField(env, obj, (jfieldID)(intptr_t)fieldID);
+ 
+ }
+ 
+@@ -725,7 +726,7 @@ JNIEXPORT jlong JNICALL Java_com_sun_corba_se_internal
+ JNIEXPORT jfloat JNICALL Java_com_sun_corba_se_internal_io_IIOPOutputStream_getFloatFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID)
+ {
+-    return (*env)->GetFloatField(env, obj, (jfieldID)fieldID);
++    return (*env)->GetFloatField(env, obj, (jfieldID)(intptr_t)fieldID);
+ 
+ }
+ 
+@@ -737,7 +738,7 @@ JNIEXPORT jfloat JNICALL Java_com_sun_corba_se_interna
+ JNIEXPORT jdouble JNICALL Java_com_sun_corba_se_internal_io_IIOPOutputStream_getDoubleFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID)
+ {
+-    return (*env)->GetDoubleField(env, obj, (jfieldID)fieldID);
++    return (*env)->GetDoubleField(env, obj, (jfieldID)(intptr_t)fieldID);
+ 
+ }
+ 
+@@ -751,7 +752,7 @@ JNIEXPORT jdouble JNICALL Java_com_sun_corba_se_intern
+ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_io_IIOPInputStream_setObjectFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID, jobject v)
+ {
+-    (*env)->SetObjectField(env, obj, (jfieldID)fieldID, v);
++    (*env)->SetObjectField(env, obj, (jfieldID)(intptr_t)fieldID, v);
+ }
+ 
+ /*
+@@ -762,7 +763,7 @@ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_
+ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_io_IIOPInputStream_setBooleanFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID, jboolean v)
+ {
+-    (*env)->SetBooleanField(env, obj, (jfieldID)fieldID, v);
++    (*env)->SetBooleanField(env, obj, (jfieldID)(intptr_t)fieldID, v);
+ }
+ 
+ /*
+@@ -773,7 +774,7 @@ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_
+ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_io_IIOPInputStream_setByteFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID, jbyte v)
+ {
+-    (*env)->SetByteField(env, obj, (jfieldID)fieldID, v);
++    (*env)->SetByteField(env, obj, (jfieldID)(intptr_t)fieldID, v);
+ }
+ 
+ /*
+@@ -784,7 +785,7 @@ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_
+ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_io_IIOPInputStream_setCharFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID, jchar v)
+ {
+-    (*env)->SetCharField(env, obj, (jfieldID)fieldID, v);
++    (*env)->SetCharField(env, obj, (jfieldID)(intptr_t)fieldID, v);
+ }
+ 
+ /*
+@@ -795,7 +796,7 @@ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_
+ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_io_IIOPInputStream_setShortFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID, jshort v)
+ {
+-    (*env)->SetShortField(env, obj, (jfieldID)fieldID, v);
++    (*env)->SetShortField(env, obj, (jfieldID)(intptr_t)fieldID, v);
+ }
+ 
+ /*
+@@ -806,7 +807,7 @@ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_
+ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_io_IIOPInputStream_setIntFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID, jint v)
+ {
+-  (*env)->SetIntField(env, obj, (jfieldID)fieldID, v);
++  (*env)->SetIntField(env, obj, (jfieldID)(intptr_t)fieldID, v);
+ }
+ 
+ /*
+@@ -817,7 +818,7 @@ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_
+ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_io_IIOPInputStream_setLongFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID, jlong v)
+ {
+-    (*env)->SetLongField(env, obj, (jfieldID)fieldID, v);
++    (*env)->SetLongField(env, obj, (jfieldID)(intptr_t)fieldID, v);
+ }
+ 
+ /*
+@@ -828,7 +829,7 @@ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_
+ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_io_IIOPInputStream_setFloatFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID, jfloat v)
+ {
+-    (*env)->SetFloatField(env, obj, (jfieldID)fieldID, v);
++    (*env)->SetFloatField(env, obj, (jfieldID)(intptr_t)fieldID, v);
+ }
+ 
+ /*
+@@ -839,7 +840,7 @@ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_
+ JNIEXPORT void JNICALL Java_com_sun_corba_se_internal_io_IIOPInputStream_setDoubleFieldOpt
+   (JNIEnv *env, jobject this, jobject obj, jlong fieldID, jdouble v)
+ {
+-    (*env)->SetDoubleField(env, obj, (jfieldID)fieldID, v);
++    (*env)->SetDoubleField(env, obj, (jfieldID)(intptr_t)fieldID, v);
+ }
+ 
+ /*
+@@ -858,5 +859,5 @@ JNIEXPORT jlong JNICALL Java_com_sun_corba_se_internal
+     (*env)->ReleaseStringUTFChars(env, fieldName, strFieldName);
+     (*env)->ReleaseStringUTFChars(env, fieldSig, strFieldSig);
+ 
+-    return (jlong)fieldID;
++    return (jlong)(intptr_t)fieldID;
+ }

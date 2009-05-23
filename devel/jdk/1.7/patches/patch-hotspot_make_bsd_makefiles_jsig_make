@@ -1,12 +1,27 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_jsig_make,v 1.1 2009/01/04 23:25:16 kurt Exp $
---- hotspot/make/bsd/makefiles/jsig.make.orig	Sat Aug  2 16:12:30 2008
-+++ hotspot/make/bsd/makefiles/jsig.make	Sat Aug  2 16:15:29 2008
-@@ -39,12 +39,12 @@ LIBJSIG_MAPFILE = $(MAKEFILES_DIR)/mapfile-vers-jsig
+$OpenBSD: patch-hotspot_make_bsd_makefiles_jsig_make,v 1.2 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/make/bsd/makefiles/jsig.make.orig	Wed May 20 17:32:15 2009
++++ hotspot/make/bsd/makefiles/jsig.make	Wed May 20 17:33:51 2009
+@@ -26,8 +26,13 @@
+ 
+ # libjsig[_g].so: signal interposition library
+ JSIG = jsig$(G_SUFFIX)
+-LIBJSIG = lib$(JSIG).so
+ 
++ifeq ($(OS_VENDOR), Darwin)
++  LIBJSIG = lib$(JSIG).dylib
++else
++  LIBJSIG = lib$(JSIG).so
++endif
++
+ JSIGSRCDIR = $(GAMMADIR)/src/os/$(Platform_os_family)/vm
+ 
+ DEST_JSIG  = $(JDK_LIBDIR)/$(LIBJSIG)
+@@ -39,12 +44,12 @@ LIBJSIG_MAPFILE = $(MAKEFILES_DIR)/mapfile-vers-jsig
  # cause problems with interposing. See CR: 6466665
  # LFLAGS_JSIG += $(MAPFLAG:FILENAME=$(LIBJSIG_MAPFILE))
  
--LFLAGS_JSIG += -D_GNU_SOURCE -D_REENTRANT
-+LFLAGS_JSIG += -D_GNU_SOURCE -pthread
+-LFLAGS_JSIG += -D_GNU_SOURCE -D_REENTRANT $(LDFLAGS_HASH_STYLE)
++LFLAGS_JSIG += -D_GNU_SOURCE -pthread $(LDFLAGS_HASH_STYLE)
  
  $(LIBJSIG): $(JSIGSRCDIR)/jsig.c $(LIBJSIG_MAPFILE)
  	@echo Making signal interposition lib...

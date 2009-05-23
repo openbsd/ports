@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_src_share_native_java_lang_fdlibm_include_fdlibm_h,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h.orig	Sat Dec  1 00:00:00 2007
-+++ jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Tue Feb 26 18:50:57 2008
-@@ -24,17 +24,13 @@
+$OpenBSD: patch-jdk_src_share_native_java_lang_fdlibm_include_fdlibm_h,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h.orig	Fri May  8 03:35:00 2009
++++ jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Mon May 18 16:28:36 2009
+@@ -24,6 +24,10 @@
   * have any questions.
   */
  
@@ -11,20 +11,8 @@ $OpenBSD: patch-jdk_src_share_native_java_lang_fdlibm_include_fdlibm_h,v 1.1 200
 +#include <machine/endian.h>
  #include "jfdlibm.h"
  
--#ifdef __NEWVALID       /* special setup for Sun test regime */
--#if defined(i386) || defined(i486) || \
--        defined(intel) || defined(x86) || \
--        defined(i86pc) || defined(_M_IA64)
--#define _LITTLE_ENDIAN
--#endif
--#endif
--
--#ifdef _LITTLE_ENDIAN
-+#if (BYTE_ORDER == LITTLE_ENDIAN)
- #define __HI(x) *(1+(int*)&x)
- #define __LO(x) *(int*)&x
- #define __HIp(x) *(1+(int*)x)
-@@ -46,10 +42,12 @@
+ #ifdef __NEWVALID       /* special setup for Sun test regime */
+@@ -46,10 +50,12 @@
  #define __LOp(x) *(1+(int*)x)
  #endif
  

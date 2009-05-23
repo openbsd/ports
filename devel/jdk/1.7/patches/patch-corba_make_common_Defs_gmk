@@ -1,7 +1,7 @@
-$OpenBSD: patch-corba_make_common_Defs_gmk,v 1.2 2009/01/16 16:49:29 kurt Exp $
---- corba/make/common/Defs.gmk.orig	Fri Dec 19 03:41:17 2008
-+++ corba/make/common/Defs.gmk	Sun Jan 11 21:40:13 2009
-@@ -53,6 +53,24 @@ endif
+$OpenBSD: patch-corba_make_common_Defs_gmk,v 1.3 2009/05/23 03:03:24 kurt Exp $
+--- corba/make/common/Defs.gmk.orig	Fri May  8 03:29:39 2009
++++ corba/make/common/Defs.gmk	Thu May 14 23:15:04 2009
+@@ -53,6 +53,28 @@ endif
  
  _OUTPUTDIR=$(TOPDIR)/build/$(PLATFORM)-$(ARCH)
  
@@ -18,7 +18,11 @@ $OpenBSD: patch-corba_make_common_Defs_gmk,v 1.2 2009/01/16 16:49:29 kurt Exp $
 +    ifeq ($(PLATFORM), linux)
 +      PACKAGE_PATH = /usr
 +    else
-+      PACKAGE_PATH = /usr/local
++      ifeq ($(OS_VENDOR), Apple)
++        PACKAGE_PATH = /opt/local
++      else
++        PACKAGE_PATH = /usr/local
++      endif
 +    endif
 +  endif
 +endif
@@ -26,7 +30,7 @@ $OpenBSD: patch-corba_make_common_Defs_gmk,v 1.2 2009/01/16 16:49:29 kurt Exp $
  #
  # Get platform definitions
  #
-@@ -97,6 +115,9 @@ ifdef PROGRAM
+@@ -97,6 +119,9 @@ ifdef PROGRAM
      LDLIBS_COMMON = -ldl
    endif
  

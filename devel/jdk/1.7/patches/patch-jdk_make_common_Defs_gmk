@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_make_common_Defs_gmk,v 1.3 2009/01/16 16:49:29 kurt Exp $
---- jdk/make/common/Defs.gmk.orig	Fri Dec 19 03:45:14 2008
-+++ jdk/make/common/Defs.gmk	Sun Jan 11 21:46:07 2009
-@@ -172,6 +172,24 @@ ifdef OPENJDK
+$OpenBSD: patch-jdk_make_common_Defs_gmk,v 1.4 2009/05/23 03:03:25 kurt Exp $
+--- jdk/make/common/Defs.gmk.orig	Fri May  8 03:34:14 2009
++++ jdk/make/common/Defs.gmk	Mon May 18 11:12:58 2009
+@@ -181,6 +181,36 @@ ifdef OPENJDK
    endif
  endif # OPENJDK
  
@@ -9,7 +9,11 @@ $OpenBSD: patch-jdk_make_common_Defs_gmk,v 1.3 2009/01/16 16:49:29 kurt Exp $
 +  ifdef ALT_X11_PATH
 +    X11_PATH = $(ALT_X11_PATH)
 +  else
-+    X11_PATH = /usr/X11R6
++    ifneq ($(OS_VENDOR), NetBSD)
++      X11_PATH = /usr/X11R6
++    else
++      X11_PATH = /usr/X11R7
++    endif
 +  endif 
 +
 +  ifdef ALT_PACKAGE_PATH
@@ -18,7 +22,15 @@ $OpenBSD: patch-jdk_make_common_Defs_gmk,v 1.3 2009/01/16 16:49:29 kurt Exp $
 +    ifeq ($(PLATFORM), linux)
 +      PACKAGE_PATH = /usr
 +    else
-+      PACKAGE_PATH = /usr/local
++      ifeq ($(OS_VENDOR), Apple)
++        PACKAGE_PATH = /opt/local
++      else
++	ifeq ($(OS_NAME), netbsd)
++	  PACKAGE_PATH = /usr/pkg
++	else
++          PACKAGE_PATH = /usr/local
++	endif
++      endif
 +    endif
 +  endif
 +endif
@@ -26,7 +38,7 @@ $OpenBSD: patch-jdk_make_common_Defs_gmk,v 1.3 2009/01/16 16:49:29 kurt Exp $
  #
  # Get platform definitions
  #
-@@ -207,6 +225,7 @@ DEVTOOLS_FT_DIR_EXISTS = $(shell \
+@@ -216,6 +246,7 @@ DEVTOOLS_FT_DIR_EXISTS = $(shell \
  
    ifdef ALT_FREETYPE_LIB_PATH
      FREETYPE_LIB_PATH = $(ALT_FREETYPE_LIB_PATH)
@@ -34,7 +46,7 @@ $OpenBSD: patch-jdk_make_common_Defs_gmk,v 1.3 2009/01/16 16:49:29 kurt Exp $
    else
      ifeq ($(DEVTOOLS_FT_DIR_EXISTS), true)
        FREETYPE_LIB_PATH = $(DEVTOOLS_FT_DIR)/lib
-@@ -269,6 +288,10 @@ ifdef PROGRAM
+@@ -278,6 +309,10 @@ ifdef PROGRAM
  
    ifeq ($(PLATFORM), linux)
      LDLIBS_COMMON = -ldl

@@ -1,14 +1,14 @@
-$OpenBSD: patch-jdk_src_share_classes_sun_print_PSPrinterJob_java,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/share/classes/sun/print/PSPrinterJob.java.orig	Tue Oct 30 05:03:05 2007
-+++ jdk/src/share/classes/sun/print/PSPrinterJob.java	Wed Nov  7 18:16:18 2007
+$OpenBSD: patch-jdk_src_share_classes_sun_print_PSPrinterJob_java,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/classes/sun/print/PSPrinterJob.java.orig	Fri May  8 03:34:51 2009
++++ jdk/src/share/classes/sun/print/PSPrinterJob.java	Mon May 18 13:47:15 2009
 @@ -1532,7 +1532,9 @@ public class PSPrinterJob extends RasterPrinterJob {
              pFlags |= NOSHEET;
              ncomps+=1;
          }
 -       if (System.getProperty("os.name").equals("Linux")) {
 +
-+	String osname = System.getProperty("os.name");
-+       if (osname.equals("Linux") || osname.equals("FreeBSD") || osname.equals("NetBSD") || osname.equals("OpenBSD")) {
++       String osname = System.getProperty("os.name");
++       if (osname.equals("Linux") || osname.equals("FreeBSD") || osname.equals("NetBSD") || osname.equals("OpenBSD") || osname.equals("Darwin")) {
              execCmd = new String[ncomps];
              execCmd[n++] = "/usr/bin/lpr";
              if ((pFlags & PRINTER) != 0) {

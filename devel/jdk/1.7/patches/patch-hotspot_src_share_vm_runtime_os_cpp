@@ -1,12 +1,12 @@
-$OpenBSD: patch-hotspot_src_share_vm_runtime_os_cpp,v 1.3 2009/01/04 23:25:16 kurt Exp $
---- hotspot/src/share/vm/runtime/os.cpp.orig	Thu Jul 17 03:40:34 2008
-+++ hotspot/src/share/vm/runtime/os.cpp	Sat Aug  2 16:12:52 2008
-@@ -81,7 +81,11 @@ char* os::iso8601_time(char* buffer, size_t buffer_len
+$OpenBSD: patch-hotspot_src_share_vm_runtime_os_cpp,v 1.4 2009/05/23 03:03:25 kurt Exp $
+--- hotspot/src/share/vm/runtime/os.cpp.orig	Fri May  8 03:30:37 2009
++++ hotspot/src/share/vm/runtime/os.cpp	Sun May 10 19:23:00 2009
+@@ -79,7 +79,11 @@ char* os::iso8601_time(char* buffer, size_t buffer_len
+     assert(false, "Failed localtime_pd");
+     return NULL;
    }
-   // Save the results of localtime
-   const struct tm time_struct = *time_struct_temp;
 +#if defined(_ALLBSD_SOURCE)
-+  const time_t zone = (time_t) time_struct_temp->tm_gmtoff;
++  const time_t zone = (time_t) time_struct.tm_gmtoff;
 +#else
    const time_t zone = timezone;
 +#endif

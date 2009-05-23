@@ -1,12 +1,13 @@
-$OpenBSD: patch-hotspot_make_bsd_Makefile,v 1.1 2009/01/04 23:25:16 kurt Exp $
---- hotspot/make/bsd/Makefile.orig	Sat Aug  2 16:12:30 2008
-+++ hotspot/make/bsd/Makefile	Sat Aug  2 16:15:29 2008
-@@ -197,7 +197,7 @@ all:
- 	@echo "  $(TARGETS_C1)"
- 	@echo "  $(TARGETS_CORE)"
- 
--checks: check_os_version check_j2se_version
-+checks: check_j2se_version
- 
- # We do not want people accidentally building on old systems (e.g. Bsd 2.2.x,
+$OpenBSD: patch-hotspot_make_bsd_Makefile,v 1.2 2009/05/23 03:03:24 kurt Exp $
+--- hotspot/make/bsd/Makefile.orig	Fri May 15 16:25:28 2009
++++ hotspot/make/bsd/Makefile	Fri May 15 16:56:20 2009
+@@ -203,7 +203,8 @@ checks: check_os_version check_j2se_version
  # Solaris 2.5.1, 2.6).
+ # Disable this check by setting DISABLE_HOTSPOT_OS_VERSION_CHECK=ok.
+ 
+-SUPPORTED_OS_VERSION = 2.4% 2.5% 2.6% 2.7%
++#SUPPORTED_OS_VERSION = 2.4% 2.5% 2.6% 2.7%
++DISABLE_HOTSPOT_OS_VERSION_CHECK = ok
+ OS_VERSION := $(shell uname -r)
+ EMPTY_IF_NOT_SUPPORTED = $(filter $(SUPPORTED_OS_VERSION),$(OS_VERSION))
+ 

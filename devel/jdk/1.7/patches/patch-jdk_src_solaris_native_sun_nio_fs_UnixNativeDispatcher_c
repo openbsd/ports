@@ -1,0 +1,52 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_nio_fs_UnixNativeDispatcher_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/sun/nio/fs/UnixNativeDispatcher.c.orig	Fri May  8 03:35:08 2009
++++ jdk/src/solaris/native/sun/nio/fs/UnixNativeDispatcher.c	Tue May 19 16:56:05 2009
+@@ -49,6 +49,11 @@
+ #include <mntent.h>
+ #endif
+ 
++#ifdef _ALLBSD_SOURCE
++#include <string.h>
++#include "largefile_bsd.h"
++#endif
++
+ #include "jni.h"
+ #include "jni_util.h"
+ #include "jlong.h"
+@@ -1006,6 +1011,10 @@ Java_sun_nio_fs_UnixNativeDispatcher_getextmntent(JNIE
+ {
+ #ifdef __solaris__
+     struct extmnttab ent;
++#elif defined(_ALLBSD_SOURCE)
++    char buf[1024];
++    char *str;
++    char *last;
+ #else
+     struct mntent ent;
+     char buf[1024];
+@@ -1034,6 +1043,25 @@ Java_sun_nio_fs_UnixNativeDispatcher_getextmntent(JNIE
+         throwUnixException(env, errno);
+         return -1;
+     }
++#elif defined(_ALLBSD_SOURCE)
++again:
++    if (!(str = fgets(buf, sizeof(buf), fp)))    
++        return -1;
++
++    name = strtok_r(str, " \t\n", &last);
++    if (name == NULL)
++        return -1;
++ 
++    // skip comments
++    if (*name == '#')
++        goto again;
++
++    dir = strtok_r((char *)NULL, " \t\n", &last);
++    fstype = strtok_r((char *)NULL, " \t\n", &last);
++    options = strtok_r((char *)NULL, " \t\n", &last);
++    if (options == NULL)
++        return -1;
++    dev = 0;
+ #else
+     m = getmntent_r(fp, &ent, (char*)&buf, buflen);
+     if (m == NULL)

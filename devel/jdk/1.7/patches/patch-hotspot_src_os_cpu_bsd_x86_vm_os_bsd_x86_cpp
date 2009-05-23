@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11:37:42 kurt Exp $
---- hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp.orig	Fri Jan 16 12:16:38 2009
-+++ hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Fri Jan 16 12:16:43 2009
-@@ -44,23 +44,158 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.4 2009/05/23 03:03:25 kurt Exp $
+--- hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp.orig	Fri May 15 16:25:28 2009
++++ hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Sat May 16 16:49:25 2009
+@@ -44,23 +44,202 @@
  # include <sys/wait.h>
  # include <pwd.h>
  # include <poll.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
 -# include <fpu_control.h>
 +#endif
  
-+#if defined(_ALLBSD_SOURCE) && !defined(__APPLE__)
++#if defined(_ALLBSD_SOURCE) && !defined(__APPLE__) && !defined(__NetBSD__)
 +# include <pthread_np.h>
 +#endif
 +
@@ -164,10 +164,54 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
 +# endif
 +#endif
 +
++#ifdef __NetBSD__
++# define context_trapno uc_mcontext.__gregs[_REG_TRAPNO]
++# ifdef AMD64
++#  define __register_t __greg_t
++#  define context_pc uc_mcontext.__gregs[_REG_RIP]
++#  define context_sp uc_mcontext.__gregs[_REG_URSP]
++#  define context_fp uc_mcontext.__gregs[_REG_RBP]
++#  define context_rip uc_mcontext.__gregs[_REG_RIP]
++#  define context_rsp uc_mcontext.__gregs[_REG_URSP]
++#  define context_rax uc_mcontext.__gregs[_REG_RAX]
++#  define context_rbx uc_mcontext.__gregs[_REG_RBX]
++#  define context_rcx uc_mcontext.__gregs[_REG_RCX]
++#  define context_rdx uc_mcontext.__gregs[_REG_RDX]
++#  define context_rbp uc_mcontext.__gregs[_REG_RBP]
++#  define context_rsi uc_mcontext.__gregs[_REG_RSI]
++#  define context_rdi uc_mcontext.__gregs[_REG_RDI]
++#  define context_r8  uc_mcontext.__gregs[_REG_R8]
++#  define context_r9  uc_mcontext.__gregs[_REG_R9]
++#  define context_r10 uc_mcontext.__gregs[_REG_R10]
++#  define context_r11 uc_mcontext.__gregs[_REG_R11]
++#  define context_r12 uc_mcontext.__gregs[_REG_R12]
++#  define context_r13 uc_mcontext.__gregs[_REG_R13]
++#  define context_r14 uc_mcontext.__gregs[_REG_R14]
++#  define context_r15 uc_mcontext.__gregs[_REG_R15]
++#  define context_flags uc_mcontext.__gregs[_REG_RFL]
++#  define context_err uc_mcontext.__gregs[_REG_ERR]
++# else
++#  define context_pc uc_mcontext.__gregs[_REG_EIP]
++#  define context_sp uc_mcontext.__gregs[_REG_UESP]
++#  define context_fp uc_mcontext.__gregs[_REG_EBP]
++#  define context_eip uc_mcontext.__gregs[_REG_EIP]
++#  define context_esp uc_mcontext.__gregs[_REG_UESP]
++#  define context_eax uc_mcontext.__gregs[_REG_EAX]
++#  define context_ebx uc_mcontext.__gregs[_REG_EBX]
++#  define context_ecx uc_mcontext.__gregs[_REG_ECX]
++#  define context_edx uc_mcontext.__gregs[_REG_EDX]
++#  define context_ebp uc_mcontext.__gregs[_REG_EBP]
++#  define context_esi uc_mcontext.__gregs[_REG_ESI]
++#  define context_edi uc_mcontext.__gregs[_REG_EDI]
++#  define context_eflags uc_mcontext.__gregs[_REG_EFL]
++#  define context_trapno uc_mcontext.__gregs[_REG_TRAPNO]
++# endif
++#endif
++
  address os::current_stack_pointer() {
  #ifdef SPARC_WORKS
    register void *esp;
-@@ -85,15 +220,15 @@ void os::initialize_thread() {
+@@ -85,15 +264,15 @@ void os::initialize_thread() {
  }
  
  address os::Bsd::ucontext_get_pc(ucontext_t * uc) {
@@ -186,7 +230,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
  }
  
  // For Forte Analyzer AsyncGetCallTrace profiling support - thread
-@@ -245,18 +380,18 @@ JVM_handle_bsd_signal(int sig,
+@@ -245,18 +424,18 @@ JVM_handle_bsd_signal(int sig,
      pc = (address) os::Bsd::ucontext_get_pc(uc);
  
      if (pc == (address) Fetch32PFI) {
@@ -208,7 +252,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
        address addr = (address) info->si_addr;
  
        // check if fault address is within thread stack
-@@ -278,6 +413,7 @@ JVM_handle_bsd_signal(int sig,
+@@ -278,6 +457,7 @@ JVM_handle_bsd_signal(int sig,
            // to handle_unexpected_exception way down below.
            thread->disable_stack_red_zone();
            tty->print_raw_cr("An irrecoverable stack overflow has occurred.");
@@ -216,7 +260,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
          } else {
            // Accessing stack address below sp may cause SEGV if current
            // thread has MAP_GROWSDOWN stack. This should only happen when
-@@ -293,6 +429,7 @@ JVM_handle_bsd_signal(int sig,
+@@ -293,6 +473,7 @@ JVM_handle_bsd_signal(int sig,
            } else {
               fatal("recursive segv. expanding stack.");
            }
@@ -224,7 +268,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
          }
        }
      }
-@@ -301,9 +438,16 @@ JVM_handle_bsd_signal(int sig,
+@@ -301,9 +482,16 @@ JVM_handle_bsd_signal(int sig,
        // Java thread running in Java code => find exception handler if any
        // a fault inside compiled code, the interpreter, or a stub
  
@@ -242,7 +286,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
          // BugId 4454115: A read from a MappedByteBuffer can fault
          // here if the underlying file has been truncated.
          // Do not crash the VM in such a case.
-@@ -324,9 +468,31 @@ JVM_handle_bsd_signal(int sig,
+@@ -324,6 +512,28 @@ JVM_handle_bsd_signal(int sig,
                                                pc,
                                                SharedRuntime::
                                                IMPLICIT_DIVIDE_BY_ZERO);
@@ -270,12 +314,8 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
 +
  #else
        if (sig == SIGFPE /* && info->si_code == FPE_INTDIV */) {
--        // HACK: si_code does not work on bsd 2.2.12-20!!!
-+        // HACK: si_code does not work on linux 2.2.12-20!!!
-         int op = pc[0];
-         if (op == 0xDB) {
-           // FIST
-@@ -351,7 +517,7 @@ JVM_handle_bsd_signal(int sig,
+         // HACK: si_code does not work on bsd 2.2.12-20!!!
+@@ -351,7 +561,7 @@ JVM_handle_bsd_signal(int sig,
            fatal("please update this code.");
          }
  #endif // AMD64
@@ -284,7 +324,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
                 !MacroAssembler::needs_explicit_null_check((intptr_t)info->si_addr)) {
            // Determination of interpreter/vtable stub/compiled code null exception
            stub = SharedRuntime::continuation_for_implicit_exception(thread, pc, SharedRuntime::IMPLICIT_NULL);
-@@ -375,7 +541,7 @@ JVM_handle_bsd_signal(int sig,
+@@ -375,7 +585,7 @@ JVM_handle_bsd_signal(int sig,
      // process of write protecting the memory serialization page.
      // It write enables the page immediately after protecting it
      // so we can just return to retry the write.
@@ -293,7 +333,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
          os::is_memory_serialize_page(thread, (address) info->si_addr)) {
        // Block current thread until the memory serialize page permission restored.
        os::block_on_serialize_page_trap();
-@@ -396,7 +562,7 @@ JVM_handle_bsd_signal(int sig,
+@@ -396,7 +606,7 @@ JVM_handle_bsd_signal(int sig,
    // Furthermore, a false-positive should be harmless.
    if (UnguardOnExecutionViolation > 0 &&
        (sig == SIGSEGV || sig == SIGBUS) &&
@@ -302,7 +342,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
      int page_size = os::vm_page_size();
      address addr = (address) info->si_addr;
      address pc = os::Bsd::ucontext_get_pc(uc);
-@@ -466,7 +632,7 @@ JVM_handle_bsd_signal(int sig,
+@@ -466,7 +676,7 @@ JVM_handle_bsd_signal(int sig,
      // save all thread context in case we need to restore it
      if (thread != NULL) thread->set_saved_exception_pc(pc);
  
@@ -311,7 +351,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
      return true;
    }
  
-@@ -496,13 +662,24 @@ JVM_handle_bsd_signal(int sig,
+@@ -496,13 +706,24 @@ JVM_handle_bsd_signal(int sig,
    ShouldNotReachHere();
  }
  
@@ -336,7 +376,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
  int os::Bsd::get_fpu_control_word(void) {
  #ifdef AMD64
    return 0;
-@@ -518,11 +695,12 @@ void os::Bsd::set_fpu_control_word(int fpu_control) {
+@@ -518,11 +739,12 @@ void os::Bsd::set_fpu_control_word(int fpu_control) {
    _FPU_SETCW(fpu_control);
  #endif // !AMD64
  }
@@ -350,7 +390,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
    return true;
  #else
    struct utsname uts;
-@@ -576,6 +754,9 @@ size_t os::Bsd::min_stack_allowed  =  (48 DEBUG_ONLY(+
+@@ -576,6 +798,9 @@ size_t os::Bsd::min_stack_allowed  =  (48 DEBUG_ONLY(+
  #define GET_GS() ({int gs; __asm__ volatile("movw %%gs, %w0":"=q"(gs)); gs&0xffff;})
  #endif
  
@@ -360,7 +400,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
  // Test if pthread library can support variable thread stack size. BsdThreads
  // in fixed stack mode allocates 2M fixed slot for each thread. BsdThreads
  // in floating stack mode and NPTL support variable stack size.
-@@ -612,6 +793,7 @@ bool os::Bsd::supports_variable_stack_size() {
+@@ -612,6 +837,7 @@ bool os::Bsd::supports_variable_stack_size() {
  #endif
    }
  }
@@ -368,7 +408,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
  #endif // AMD64
  
  // return default stack size for thr_type
-@@ -665,6 +847,41 @@ size_t os::Bsd::default_guard_size(os::ThreadType thr_
+@@ -665,6 +891,41 @@ size_t os::Bsd::default_guard_size(os::ThreadType thr_
  //    pthread_attr_getstack()
  
  static void current_stack_region(address * bottom, size_t * size) {
@@ -410,7 +450,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
    if (os::Bsd::is_initial_thread()) {
       // initial thread needs special handling because pthread_getattr_np()
       // may return bogus value.
-@@ -691,6 +908,7 @@ static void current_stack_region(address * bottom, siz
+@@ -691,6 +952,7 @@ static void current_stack_region(address * bottom, siz
       pthread_attr_destroy(&attr);
  
    }
@@ -418,7 +458,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.3 2009/01/17 11
    assert(os::current_stack_pointer() >= *bottom &&
           os::current_stack_pointer() < *bottom + *size, "just checking");
  }
-@@ -719,46 +937,44 @@ void os::print_context(outputStream *st, void *context
+@@ -719,46 +981,44 @@ void os::print_context(outputStream *st, void *context
    ucontext_t *uc = (ucontext_t*)context;
    st->print_cr("Registers:");
  #ifdef AMD64

@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_net_PlainDatagramSocketImpl_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c.orig	Thu Sep 11 03:44:53 2008
-+++ jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Fri Sep 12 17:45:12 2008
+$OpenBSD: patch-jdk_src_solaris_native_java_net_PlainDatagramSocketImpl_c,v 1.3 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c.orig	Fri May  8 03:35:07 2009
++++ jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Mon May 18 19:36:28 2009
 @@ -23,12 +23,12 @@
   * have any questions.
   */
@@ -73,6 +73,24 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_PlainDatagramSocketImpl_c,v 1.2 
  #else
      JVM_Connect(fd, 0, 0);
  #endif
+@@ -1838,7 +1852,7 @@ Java_java_net_PlainDatagramSocketImpl_socketGetOption(
+     if (opt == java_net_SocketOptions_SO_BINDADDR) {
+         /* find out local IP address */
+         SOCKADDR him;
+-        int len = 0;
++        socklen_t len;
+         int port;
+         jobject iaObj;
+ 
+@@ -2219,7 +2233,7 @@ static void mcast_join_leave(JNIEnv *env, jobject this
+             {
+                 struct in_addr in;
+                 struct in_addr *inP = &in;
+-                int len = sizeof(struct in_addr);
++                socklen_t len = sizeof(struct in_addr);
+ 
+ #ifdef __linux__
+                 struct ip_mreqn mreqn;
 @@ -2364,18 +2378,30 @@ static void mcast_join_leave(JNIEnv *env, jobject this
              mname6.ipv6mr_interface = idx;
          }

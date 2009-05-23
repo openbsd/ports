@@ -1,0 +1,11 @@
+$OpenBSD: patch-jdk_src_share_native_sun_nio_ch_genSocketOptionRegistry_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
+--- jdk/src/share/native/sun/nio/ch/genSocketOptionRegistry.c.orig	Mon May 18 16:39:55 2009
++++ jdk/src/share/native/sun/nio/ch/genSocketOptionRegistry.c	Mon May 18 16:40:11 2009
+@@ -28,6 +28,7 @@
+ #include <winsock2.h>
+ #include <ws2tcpip.h>
+ #else
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <netinet/tcp.h>

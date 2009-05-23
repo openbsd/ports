@@ -1,12 +1,14 @@
-$OpenBSD: patch-langtools_src_share_classes_com_sun_tools_javah_Util_java,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- langtools/src/share/classes/com/sun/tools/javah/Util.java.orig	Tue Dec  4 04:08:09 2007
-+++ langtools/src/share/classes/com/sun/tools/javah/Util.java	Wed Dec  5 17:14:44 2007
-@@ -180,6 +180,12 @@ public class Util {
+$OpenBSD: patch-langtools_src_share_classes_com_sun_tools_javah_Util_java,v 1.2 2009/05/23 03:03:25 kurt Exp $
+--- langtools/src/share/classes/com/sun/tools/javah/Util.java.orig	Fri May  8 03:36:01 2009
++++ langtools/src/share/classes/com/sun/tools/javah/Util.java	Fri May 15 16:25:49 2009
+@@ -180,6 +180,14 @@ public class Util {
              os = "win32";
          } else if (os.indexOf("Linux") >= 0) {
              os = "Linux";
 +	} else if (os.indexOf("FreeBSD") >= 0) {
 +	    os = "FreeBSD";
++	} else if (os.indexOf("Darwin") >= 0) {
++	    os = "Darwin";
 +	} else if (os.indexOf("NetBSD") >= 0) {
 +	    os = "NetBSD";
 +	} else if (os.indexOf("OpenBSD") >= 0) {
