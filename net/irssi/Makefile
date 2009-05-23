@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2008/12/22 19:40:33 matthieu Exp $
+# $OpenBSD: Makefile,v 1.39 2009/05/23 17:47:00 martynas Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	modular IRC client with many features (ipv6,socks,proxy)
 
-DISTNAME=	irssi-0.8.12
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	irssi-0.8.13
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.irssi.org/
@@ -34,8 +33,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}
 CONFIGURE_ARGS+=--enable-ipv6 \
 		--with-pic \
 		--with-proxy \
-		--without-included-gettext \
-		--enable-perl=yes \
+		--with-perl=yes \
 		--with-perl-lib=${PREFIX}/libdata/perl5/site_perl
 
 FLAVORS=	socks

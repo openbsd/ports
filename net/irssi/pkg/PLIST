@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/12/22 19:40:33 matthieu Exp $
+@comment $OpenBSD: PLIST,v 1.18 2009/05/23 17:47:01 martynas Exp $
 @bin bin/irssi
 lib/irssi/
 lib/irssi/modules/
@@ -25,7 +25,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
 @man man/man1/irssi.1
 share/doc/irssi/
-share/doc/irssi/botnet.txt
 share/doc/irssi/design.txt
 share/doc/irssi/faq.html
 share/doc/irssi/faq.txt
@@ -63,6 +62,8 @@ share/examples/irssi/scripts/quitmsg.pl
 @sample ${SYSCONFDIR}/irssi/scripts/quitmsg.pl
 share/examples/irssi/scripts/redirect.pl
 @sample ${SYSCONFDIR}/irssi/scripts/redirect.pl
+share/examples/irssi/scripts/sb_search.pl
+@sample ${SYSCONFDIR}/irssi/scripts/sb_search.pl
 share/examples/irssi/scripts/scriptassist.pl
 @sample ${SYSCONFDIR}/irssi/scripts/scriptassist.pl
 share/examples/irssi/scripts/splitlong.pl
@@ -93,7 +94,6 @@ share/irssi/help/completion
 share/irssi/help/connect
 share/irssi/help/ctcp
 share/irssi/help/cycle
-share/irssi/help/date
 share/irssi/help/dcc
 share/irssi/help/dehilight
 share/irssi/help/deop
@@ -104,7 +104,6 @@ share/irssi/help/echo
 share/irssi/help/eval
 share/irssi/help/exec
 share/irssi/help/flushbuffer
-share/irssi/help/flushbuffers
 share/irssi/help/format
 share/irssi/help/hash
 share/irssi/help/help
@@ -192,7 +191,6 @@ share/irssi/help/version
 share/irssi/help/voice
 share/irssi/help/wait
 share/irssi/help/wall
-share/irssi/help/wallchops
 share/irssi/help/wallops
 share/irssi/help/watch
 share/irssi/help/who
