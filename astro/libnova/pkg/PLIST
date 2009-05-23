@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/21 08:13:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/05/23 15:35:15 benoit Exp $
 %%SHARED%%
 @bin bin/libnovaconfig
 include/libnova/
@@ -11,6 +11,7 @@ include/libnova/comet.h
 include/libnova/dynamical_time.h
 include/libnova/earth.h
 include/libnova/elliptic_motion.h
+include/libnova/heliocentric_time.h
 include/libnova/hyperbolic_motion.h
 include/libnova/julian_day.h
 include/libnova/jupiter.h
