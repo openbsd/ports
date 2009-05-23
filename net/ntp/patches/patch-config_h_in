@@ -1,13 +1,13 @@
-$OpenBSD: patch-config_h_in,v 1.4 2009/01/26 23:26:02 naddy Exp $
---- config.h.in.orig	Sun Aug 17 02:17:36 2008
-+++ config.h.in	Wed Jan  7 23:44:05 2009
-@@ -355,6 +355,9 @@
- /* Define to 1 if you have the `getifaddrs' function. */
- #undef HAVE_GETIFADDRS
+$OpenBSD: patch-config_h_in,v 1.5 2009/05/23 16:32:29 naddy Exp $
+--- config.h.in.orig	Mon May 18 10:53:23 2009
++++ config.h.in	Sat May 23 17:03:44 2009
+@@ -352,6 +352,9 @@
+ /* Define to 1 if you have the `getdtablesize' function. */
+ #undef HAVE_GETDTABLESIZE
  
 +/* Define to 1 if you have the `geteuid' function. */
 +#undef HAVE_GETEUID
 +
- /* Define to 1 if you have the `getrusage' function. */
- #undef HAVE_GETRUSAGE
+ /* Define to 1 if you have the `getifaddrs' function. */
+ #undef HAVE_GETIFADDRS
  

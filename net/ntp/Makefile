@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2009/04/20 15:32:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2009/05/23 16:32:29 naddy Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -6,13 +6,11 @@ COMMENT=	Network Time Protocol reference implementation
 # to confuse with the ports system's 'pN' convention, so we
 # convert it to 'pl' for local use.
 
-VERSION=	4.2.4p6
+VERSION=	4.2.4p7
 DISTNAME=	ntp-${VERSION}
-PKGNAME=	ntp-${VERSION:S/p/pl/}p1
+PKGNAME=	ntp-${VERSION:S/p/pl/}
 CATEGORIES=	net
-MASTER_SITES=   ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-4.2/ \
-		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
-		ftp://archive.ntp.org/ntp4/ntp-4.2/ \
+MASTER_SITES=	ftp://archive.ntp.org/ntp4/ntp-4.2/ \
 		http://archive.ntp.org/ntp4/ntp-4.2/
 
 HOMEPAGE=	http://www.ntp.org/
