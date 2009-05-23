@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:36:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/05/23 15:16:20 benoit Exp $
 bin/ftpgw.tcl
-bin/zebedee
+@bin bin/zebedee
 @man man/man1/ftpgw.tcl.1
 @man man/man1/zebedee.1
 share/doc/zebedee/
