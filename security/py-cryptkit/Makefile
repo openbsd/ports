@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/25 20:14:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2009/05/23 15:07:22 benoit Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python Cryptographic Toolkit
 
-DISTNAME=	cryptkit-0.9
-PKGNAME=	py-${DISTNAME}p3
+MODPY_EGG_VERSION= 0.9
+DISTNAME=	cryptkit-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}p4
 CATEGORIES=    	security devel
 
-HOMEPAGE=	http://eevolved.com/cryptkit/
+HOMEPAGE=	http://sourceforge.net/projects/cryptkit/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
