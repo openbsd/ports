@@ -1,27 +1,28 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2009/05/23 16:34:50 benoit Exp $
 
 COMMENT=		extract files from InstallShield CAB archives
 
-DISTNAME=		unshield-0.5
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		unshield-0.5.1
+SHARED_LIBS+=		unshield	2.0	# .0.0
 CATEGORIES=		archivers
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synce/}
-SHARED_LIBS +=	unshield             1.0      # .0.0
 
-HOMEPAGE=		http://synce.sourceforge.net/synce/unshield.php
+HOMEPAGE=		http://sourceforge.net/projects/synce/
 
 MAINTAINER=		Jonathan Gray <jsg@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=		Yes
+PERMIT_PACKAGE_FTP=		Yes
+PERMIT_DISTFILES_CDROM=		Yes
+PERMIT_DISTFILES_FTP=		Yes
 WANTLIB=		c z
+
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synce/}
+
+USE_LIBTOOL=		Yes
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
-USE_LIBTOOL=		Yes
 
 .include <bsd.port.mk>

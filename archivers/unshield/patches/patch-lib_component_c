@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_component_c,v 1.2 2006/10/18 13:47:36 jsg Exp $
---- lib/component.c.orig	Wed Jun 29 04:49:36 2005
-+++ lib/component.c	Wed Oct 18 23:08:15 2006
+$OpenBSD: patch-lib_component_c,v 1.3 2009/05/23 16:34:54 benoit Exp $
+--- lib/component.c.orig	Tue May  6 03:38:11 2008
++++ lib/component.c	Sat Mar 21 19:00:40 2009
 @@ -1,8 +1,9 @@
- /* $Id: patch-lib_component_c,v 1.2 2006/10/18 13:47:36 jsg Exp $ */
+ /* $Id: patch-lib_component_c,v 1.3 2009/05/23 16:34:54 benoit Exp $ */
 -#include "internal.h"
 -#include "log.h"
  #include <stdlib.h>

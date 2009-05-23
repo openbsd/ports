@@ -1,33 +1,21 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.2 2006/10/18 13:47:36 jsg Exp $
---- lib/Makefile.in.orig	Sat Jul  9 00:55:34 2005
-+++ lib/Makefile.in	Wed Oct 18 23:26:57 2006
-@@ -138,7 +138,7 @@ target_alias = @target_alias@
- target_cpu = @target_cpu@
- target_os = @target_os@
- target_vendor = @target_vendor@
--AM_CFLAGS = -g -ansi -Wall -Wsign-compare -Wno-long-long -Werror @CFLAGS@ @APPLE_CFLAGS@ -I..
-+AM_CFLAGS = -ansi -Wall -Wsign-compare -Wno-long-long -Werror @CFLAGS@ @APPLE_CFLAGS@ -I..
- 
- lib_LTLIBRARIES = libunshield.la
- 
-@@ -155,11 +155,10 @@ libunshield_la_SOURCES = \
- 
- 
- libunshield_la_LDFLAGS = -no-undefined -version-info 0:0:0
--libunshield_la_LIBADD = md5/libmd5.la
- 
- include_HEADERS = libunshield.h
- 
--SUBDIRS = md5 .
-+SUBDIRS = .
- subdir = lib
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -167,7 +166,6 @@ CONFIG_HEADER = unshield_config.h
- CONFIG_CLEAN_FILES =
+--- lib/Makefile.in.orig	Tue May  6 03:42:53 2008
++++ lib/Makefile.in	Sat Mar 21 19:00:40 2009
+@@ -56,7 +56,6 @@ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(i
+ libLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(lib_LTLIBRARIES)
- 
--libunshield_la_DEPENDENCIES = md5/libmd5.la
+ @USE_OUR_OWN_MD5_TRUE@am__DEPENDENCIES_1 = md5/libmd5.la
+-libunshield_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
  am_libunshield_la_OBJECTS = bswap.lo component.lo directory.lo file.lo \
  	file_group.lo helper.lo libunshield.lo log.lo
  libunshield_la_OBJECTS = $(am_libunshield_la_OBJECTS)
+@@ -228,9 +227,8 @@ libunshield_la_SOURCES = \
+ 	cabfile.h
+ 
+ libunshield_la_LDFLAGS = -no-undefined -version-info 0:0:0
+-libunshield_la_LIBADD = $(MD5_LIBS)
+ include_HEADERS = libunshield.h
+-SUBDIRS = $(MD5_SUBDIR) .
++SUBDIRS = .
+ all: unshield_config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 

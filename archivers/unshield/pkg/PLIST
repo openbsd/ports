@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $
-bin/unshield
+@comment $OpenBSD: PLIST,v 1.2 2009/05/23 16:34:59 benoit Exp $
+@bin bin/unshield
 include/libunshield.h
 lib/libunshield.a
 lib/libunshield.la
-share/aclocal/
-share/aclocal/unshield.m4
 %%SHARED%%
+lib/pkgconfig/
+lib/pkgconfig/libunshield.pc
+@man man/man1/unshield.1
