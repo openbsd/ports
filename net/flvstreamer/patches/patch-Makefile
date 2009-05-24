@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/05/24 23:57:01 sthen Exp $
+--- Makefile.orig	Mon May 25 00:41:57 2009
++++ Makefile	Mon May 25 00:42:03 2009
+@@ -12,10 +12,10 @@ clean:
+ 	rm -f *.o
+ 
+ streams: bytes.o log.o rtmp.o AMFObject.o rtmppacket.o streams.o parseurl.o handshake.o
+-	$(CXX) $(LDFLAGS) $^ -o $@_x86 -lpthread
++	$(CXX) $(LDFLAGS) $^ -o $@ -lpthread
+ 
+ flvstreamer: bytes.o log.o rtmp.o AMFObject.o rtmppacket.o flvstreamer.o parseurl.o handshake.o
+-	$(CXX) $(LDFLAGS) $^ -o $@_x86
++	$(CXX) $(LDFLAGS) $^ -o $@
+ 
+ bytes.o: bytes.cpp bytes.h Makefile
+ log.o: log.cpp log.h Makefile

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/24 23:57:01 sthen Exp $
+@bin bin/flvstreamer
