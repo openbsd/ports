@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 22:36:55 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2009/05/24 20:12:51 benoit Exp $
 
 # see md.h, add others
-ONLY_FOR_ARCHS=		alpha i386 sparc
+ONLY_FOR_ARCHS=		amd64 alpha i386 sparc
 
 COMMENT=		threaded library for writing Internet applications
 
-DISTNAME=		st-1.4
-PKGNAME=		lib${DISTNAME}p0
-SHARED_LIBS=		st	1.4
+DISTNAME=		st-1.8
+PKGNAME=		lib${DISTNAME}
+SHARED_LIBS=		st	2.0
 CATEGORIES=		net devel
+
 HOMEPAGE=		http://state-threads.sourceforge.net/
 
-MAINTAINER=		Patroklos Argyroudis <argp@ieee.org>
+MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
-# MPL or GPL
+# MPLv1.1 or GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

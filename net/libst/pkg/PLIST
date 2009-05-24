@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/05/24 20:12:53 benoit Exp $
 include/st.h
 lib/libst.a
 share/doc/libst/
@@ -6,6 +6,7 @@ share/doc/libst/fig.gif
 share/doc/libst/notes.html
 share/doc/libst/reference.html
 share/doc/libst/st.html
+share/doc/libst/timeout_heap.txt
 share/examples/libst/
 share/examples/libst/Makefile
 share/examples/libst/README
