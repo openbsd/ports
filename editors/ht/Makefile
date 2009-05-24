@@ -1,21 +1,23 @@
-# $OpenBSD: Makefile,v 1.12 2009/01/11 17:02:09 pirofti Exp $
+# $OpenBSD: Makefile,v 1.13 2009/05/24 20:03:47 benoit Exp $
 
 COMMENT=		file editor/viewer/analyzer for executables
 
-DISTNAME=		ht-2.0.15
+DISTNAME=		ht-2.0.17
 CATEGORIES=		editors
 
 HOMEPAGE=		http://hte.sourceforge.net/
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hte/}
+MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m ncurses stdc++
+
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hte/}
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
