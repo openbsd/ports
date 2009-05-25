@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/20 19:15:00 jasper Exp $
-bin/ii
+@comment $OpenBSD: PLIST,v 1.2 2009/05/25 13:11:07 jim Exp $
+@bin bin/ii
 @man man/man1/ii.1
 share/doc/ii/
 share/doc/ii/FAQ
