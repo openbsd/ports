@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.6 2009/05/25 00:22:52 sthen Exp $
---- get_iplayer.orig	Sat May 23 13:35:21 2009
-+++ get_iplayer	Mon May 25 01:12:59 2009
+$OpenBSD: patch-get_iplayer,v 1.7 2009/05/25 17:54:01 sthen Exp $
+--- get_iplayer.orig	Mon May 25 17:04:40 2009
++++ get_iplayer	Mon May 25 18:50:21 2009
 @@ -174,7 +174,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
@@ -10,7 +10,15 @@ $OpenBSD: patch-get_iplayer,v 1.6 2009/05/25 00:22:52 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -515,9 +515,9 @@ sub find_matches {
+@@ -360,6 +360,7 @@ if ( ! keys %plugin_files ) {
+ 	$opt->{pluginsupdate} = 1;
+ }
+ # Update this script if required
++$opt->{packagemanager}='pkg_add';
+ update_script() if $opt->{update} || $opt->{pluginsupdate};
+ 
+ 
+@@ -515,9 +516,9 @@ sub find_matches {
  	$binopts->{lame}	.= ' --quiet ' if $opt->{quiet};
  	$bin->{vlc}		= $opt->{vlc} || 'cvlc';
  	$binopts->{vlc}		= '-vv' if $opt->{verbose} || $opt->{debug};
@@ -22,7 +30,7 @@ $OpenBSD: patch-get_iplayer,v 1.6 2009/05/25 00:22:52 sthen Exp $
  	# Set quiet, test and get options if we're asked for streaminfo
  	if ( $opt->{streaminfo} ) {
  		$opt->{test} 	= 1;
-@@ -1312,7 +1312,7 @@ sub create_ua {
+@@ -1312,7 +1313,7 @@ sub create_ua {
  	my $agent = $user_agent{ $_[0] } || random_ua();
  	my $nocookiejar = $_[1] || 0;
  	my $ua = LWP::UserAgent->new;
