@@ -1,0 +1,14 @@
+$OpenBSD: patch-compat_gperf,v 1.1 2009/05/25 14:06:16 ajacoutot Exp $
+--- compat.gperf.orig	Fri Jan 23 10:41:32 2004
++++ compat.gperf	Wed May 20 18:25:44 2009
+@@ -236,6 +236,10 @@ int id3_compat_fixup(struct id3_tag *tag)
+ 
+     encoding = id3_parse_uint(&data, 1);
+     string   = id3_parse_string(&data, end - data, encoding, 0);
++    if (!string)
++    {
++	continue;
++    }
+ 
+     if (id3_ucs4_length(string) < 4) {
+       free(string);

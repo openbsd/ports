@@ -1,0 +1,22 @@
+$OpenBSD: patch-utf16_c,v 1.1 2009/05/25 14:06:16 ajacoutot Exp $
+--- utf16.c.orig	Fri Jan 23 10:41:32 2004
++++ utf16.c	Wed May 20 18:27:16 2009
+@@ -282,5 +282,18 @@ id3_ucs4_t *id3_utf16_deserialize(id3_byte_t const **p
+ 
+   free(utf16);
+ 
++  if (end == *ptr && length % 2 != 0)
++  {
++     /* We were called with a bogus length.  It should always
++      * be an even number.  We can deal with this in a few ways:
++      * - Always give an error.
++      * - Try and parse as much as we can and
++      *   - return an error if we're called again when we
++      *     already tried to parse everything we can.
++      *   - tell that we parsed it, which is what we do here.
++      */
++     (*ptr)++;
++  }
++
+   return ucs4;
+ }
