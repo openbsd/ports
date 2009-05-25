@@ -1,51 +1,50 @@
-# $OpenBSD: Makefile,v 1.46 2009/05/25 15:17:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.47 2009/05/25 16:09:08 benoit Exp $
 
-COMMENT=	small, fast & usable window manager
+COMMENT =	small, fast & usable window manager
 
-DISTNAME=	openbox-3.4.7.2
-PKGNAME=	${DISTNAME}p2
-SHARED_LIBS+=	obparser	8.0 # .21.2
-SHARED_LIBS+=	obrender	8.0 # .21.2
-CATEGORIES=	x11
+DISTNAME =	openbox-3.4.7.2
+PKGNAME =	${DISTNAME}p3
+SHARED_LIBS +=	obparser	8.0 # .21.2
+SHARED_LIBS +=	obrender	8.0 # .21.2
+CATEGORIES =	x11
 
-HOMEPAGE=	http://icculus.org/openbox/
+HOMEPAGE =	http://icculus.org/openbox/
 
-MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=	http://offload1.icculus.org/openbox/releases/
-
-WANTLIB=	ICE SM X11 Xext Xft Xinerama Xrandr Xrender c \
+WANTLIB =	ICE SM X11 Xext Xft Xinerama Xrandr Xrender c \
 		fontconfig freetype m z glib-2.0 gmodule-2.0 \
 		gobject-2.0 Xau Xcursor Xdmcp Xfixes expat pcre
 
-MODULES=	devel/gettext \
+MASTER_SITES =	http://offload1.icculus.org/openbox/releases/
+
+MODULES =	devel/gettext \
 		lang/python
 
-RUN_DEPENDS=	::devel/py-xdg
-
-LIB_DEPENDS+=	pango-1.0,pangoxft-1.0,pangoft2-1.0::devel/pango \
+RUN_DEPENDS =	::devel/py-xdg
+LIB_DEPENDS +=	pango-1.0,pangoxft-1.0,pangoft2-1.0::devel/pango \
 		xml2.>=6::textproc/libxml \
 		startup-notification-1.>=1::devel/startup-notification
 
-USE_X11=	Yes
-USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
-MODPY_RUNDEP=	No
+MAKE_FLAGS =	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
+FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/openbox"
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+USE_X11 =	Yes
+USE_GMAKE =	Yes
+USE_LIBTOOL =	Yes
+MODPY_RUNDEP =	No
+
+CONFIGURE_STYLE = gnu
+CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
 		--docdir=${PREFIX}/share/examples/openbox
-
-MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
-FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/openbox"
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
 	@chmod +x ${WRKSRC}/install-sh

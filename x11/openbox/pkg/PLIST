@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.20 2008/09/17 15:12:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2009/05/25 16:09:12 benoit Exp $
 %%SHARED%%
-bin/gdm-control
-bin/gnome-panel-control
-bin/openbox
+@bin bin/gdm-control
+@bin bin/gnome-panel-control
+@bin bin/openbox
 bin/openbox-gnome-session
 bin/openbox-kde-session
 bin/openbox-session
