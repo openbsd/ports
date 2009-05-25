@@ -1,5 +1,5 @@
 TeX Live for OpenBSD - Notes
-$OpenBSD: README.OpenBSD,v 1.4 2008/12/27 18:22:36 steven Exp $
+$OpenBSD: README.OpenBSD,v 1.5 2009/05/25 17:19:12 sthen Exp $
 ----------------------------
 
 There are a number of texmf trees in the OpenBSD packages:
@@ -30,9 +30,6 @@ As far as I know:
 * For texdoctk you will need p5-Tk
 
 If you know more, please mail me: <vext01@gmail.com>
-
-Known issues:
-* texdoc is broken due to lua being broken (working on this)
 
 Have fun TeXing.
 
