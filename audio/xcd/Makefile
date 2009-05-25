@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2009/03/13 13:05:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2009/05/25 16:15:19 naddy Exp $
 
 COMMENT=	Tcl/Tk CD player
 DISTNAME=	xcd-1.7
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	audio
 
 # custom free license; see top of cdplayer.cc
