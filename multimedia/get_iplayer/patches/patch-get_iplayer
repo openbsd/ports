@@ -1,25 +1,28 @@
-$OpenBSD: patch-get_iplayer,v 1.5 2009/05/13 09:31:44 sthen Exp $
---- get_iplayer.orig	Mon May 11 19:29:30 2009
-+++ get_iplayer	Wed May 13 10:04:13 2009
+$OpenBSD: patch-get_iplayer,v 1.6 2009/05/25 00:22:52 sthen Exp $
+--- get_iplayer.orig	Sat May 23 13:35:21 2009
++++ get_iplayer	Mon May 25 01:12:59 2009
 @@ -174,7 +174,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
  # get list of additional user plugins and load plugin
--for my $plugin_dir ( ("$profile_dir/plugins", '/usr/share/get_iplayer/plugins') ) {
-+for my $plugin_dir ( ("$profile_dir/plugins", '${TRUEPREFIX}/share/get_iplayer/plugins') ) {
+-my $plugin_dir_system = '/usr/share/get_iplayer/plugins';
++my $plugin_dir_system = '${TRUEPREFIX}/share/get_iplayer/plugins';
+ my $plugin_dir_user = "$profile_dir/plugins";
+ for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
- 		#logger "INFO: Checking for plugins in $plugin_dir\n";
- 		my @plugin_files = grep /^.+\.plugin$/, readdir DIR;
-@@ -515,7 +515,7 @@ sub find_matches {
+@@ -515,9 +515,9 @@ sub find_matches {
  	$binopts->{lame}	.= ' --quiet ' if $opt->{quiet};
  	$bin->{vlc}		= $opt->{vlc} || 'cvlc';
  	$binopts->{vlc}		= '-vv' if $opt->{verbose} || $opt->{debug};
 -	$bin->{id3v2}		= $opt->{id3v2} || 'id3v2';
 +	$bin->{id3v2}		= $opt->{id3v2} || 'id3tag';
  	$bin->{tee}		= 'tee';
- 	$bin->{rtmpdump}	= $opt->{rtmpdump} || 'rtmpdump';
+-	$bin->{rtmpdump}	= $opt->{rtmpdump} || 'rtmpdump';
++	$bin->{rtmpdump}	= $opt->{rtmpdump} || 'flvstreamer';
  	# Set quiet, test and get options if we're asked for streaminfo
-@@ -1317,7 +1317,7 @@ sub create_ua {
+ 	if ( $opt->{streaminfo} ) {
+ 		$opt->{test} 	= 1;
+@@ -1312,7 +1312,7 @@ sub create_ua {
  	my $agent = $user_agent{ $_[0] } || random_ua();
  	my $nocookiejar = $_[1] || 0;
  	my $ua = LWP::UserAgent->new;
