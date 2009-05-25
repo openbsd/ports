@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2002/11/17 00:15:19 brad Exp $
---- Makefile.in.orig	Sun Sep 22 04:36:21 2002
-+++ Makefile.in	Sun Sep 22 04:39:40 2002
+$OpenBSD: patch-Makefile_in,v 1.2 2009/05/25 18:50:30 benoit Exp $
+--- Makefile.in.orig	Sat Jun  2 23:41:37 2007
++++ Makefile.in	Mon May 25 19:07:08 2009
 @@ -26,7 +26,7 @@ srcdir		 = @srcdir@
  # VPATH		 = @srcdir@
  CC	 = @CC@
@@ -10,18 +10,15 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2002/11/17 00:15:19 brad Exp $
  INSTALL	 = @INSTALL@
  OBJ	 = @OBJ@
  ILIBOBJ	 = @ILIBOBJ@
-@@ -84,9 +84,12 @@ $(srcdir)/dep.mak ::
- 	    fi; \
- 	  done; \
- 	  obj=`echo $$f | sed -e 's/^gnupg\///' -e 's/\.c\$$/.o/'`; \
--	  printf "%s\n\t%s\n" \
-+	  if [ "$obj" = "sha1.o" ]; then \
-+	    extra_flags="-O0"; \
-+	  fi; \
-+          printf "%s\n\t%s\n" \
- 	    "$$obj : \$${srcdir}/$$f $$hdeps Makefile" \
--	    "${COMPILE} \$${srcdir}/$$f"; \
-+	    "${COMPILE} \$${srcdir}/$$f $extra_flags"; \
- 	done >> dep.mak
- 
- include $(srcdir)/dep.mak
+@@ -143,9 +143,9 @@ install : $(PROG)
+ 	fi
+ 	@if test ! -d $(SBINDIR); then \
+ 	  echo creating directory $(SBINDIR); \
+-	  $(INSTALL) -d -m 755 $(SBINDIR); \
++	  $(INSTALL) -d -m $(DIRMODE) $(SBINDIR); \
+ 	fi
+-	$(INSTALL) $(STRIP) -m 755 $(PROG) $(SBINDIR)/$(PROG)
++	$(INSTALL) $(STRIP) -m $(DIRMODE) $(PROG) $(SBINDIR)/$(PROG)
+ 	@echo
+ 	@echo 'It is recommended that the binary be copied to a secure location and'
+ 	@echo "  re-copied to $(SBINDIR) at runtime or run directly"

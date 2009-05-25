@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/10/04 20:09:47 xsa Exp $
-bin/i-ls
+@comment $OpenBSD: PLIST,v 1.5 2009/05/25 18:50:32 benoit Exp $
+@bin bin/i-ls
 @info info/integrit.info
 @man man/man1/i-ls.1
 @man man/man1/i-viewdb.1
 @man man/man1/integrit.1
-sbin/i-viewdb
-sbin/integrit
+@bin sbin/i-viewdb
+@bin sbin/integrit
 share/doc/integrit/
 share/doc/integrit/README
 share/doc/integrit/crontab
