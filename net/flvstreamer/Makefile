@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/05/25 00:21:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/05/25 08:49:31 ajacoutot Exp $
 
 COMMENT =		dump RTMP media streams
 
 DISTNAME =		flvstreamer-1.7
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 
 CATEGORIES =		net
 
