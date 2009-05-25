@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.45 2009/01/16 07:52:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2009/05/25 15:17:20 benoit Exp $
 
 COMMENT=	small, fast & usable window manager
 
 DISTNAME=	openbox-3.4.7.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS+=	obparser	8.0 # .21.2
 SHARED_LIBS+=	obrender	8.0 # .21.2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://icculus.org/openbox/
 
-MAINTAINER=	Benoit Lecocq <blq@arcane-labs.net>
+MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,6 +26,8 @@ WANTLIB=	ICE SM X11 Xext Xft Xinerama Xrandr Xrender c \
 
 MODULES=	devel/gettext \
 		lang/python
+
+RUN_DEPENDS=	::devel/py-xdg
 
 LIB_DEPENDS+=	pango-1.0,pangoxft-1.0,pangoft2-1.0::devel/pango \
 		xml2.>=6::textproc/libxml \
