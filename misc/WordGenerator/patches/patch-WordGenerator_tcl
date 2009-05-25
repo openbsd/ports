@@ -1,12 +1,11 @@
-$OpenBSD: patch-WordGenerator_tcl,v 1.4 2008/03/30 22:08:31 jasper Exp $
---- WordGenerator.tcl.orig	Sun Mar 30 23:56:41 2008
-+++ WordGenerator.tcl	Sun Mar 30 23:57:06 2008
+--- WordGenerator.tcl.orig	Fri Dec 12 06:20:58 2008
++++ WordGenerator.tcl	Tue Jan 13 22:11:05 2009
 @@ -1,7 +1,7 @@
  #!/bin/sh
  #-*- mode: Tcl;time-stamp-start:"TimeStamp[ 	]+\\\\?[\"<]+";-*-
  # the next line restarts using wish \
 -exec wish $0 -- $@
-+exec !!LOCALBASE!!/bin/wish8.4 $0 -- $@
- set TimeStamp "2008-02-20 20:30:00 poser"
++exec ${MODTK_BIN} $0 -- $@
+ set TimeStamp "2008-12-11 21:12:09 poser"
  #
  # Copyright (C) 2005-2008 William J. Poser (billposer@alum.mit.edu)
