@@ -1,10 +1,10 @@
-$OpenBSD: patch-devede_py,v 1.8 2009/05/15 08:11:59 ajacoutot Exp $
---- devede.py.orig	Thu May 14 21:50:35 2009
-+++ devede.py	Fri May 15 09:55:55 2009
+$OpenBSD: patch-devede_py,v 1.9 2009/05/25 18:14:07 ajacoutot Exp $
+--- devede.py.orig	Mon May 25 14:50:34 2009
++++ devede.py	Mon May 25 19:58:08 2009
 @@ -35,7 +35,7 @@ import pickle
  import cairo
  
- print "DeVeDe 3.13.0"
+ print "DeVeDe 3.13.1"
 -if sys.platform!="win32":
 +if sys.platform!="win32" and not sys.platform.startswith('openbsd'):
  	try:

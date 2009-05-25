@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2009/05/15 08:11:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/05/25 18:14:07 ajacoutot Exp $
 
 COMMENT=	video DVDs and CDs creation tool
 
-DISTNAME=	devede-3.13.0
+DISTNAME=	devede-3.13.1
 CATEGORIES=	multimedia x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -49,5 +49,6 @@ pre-configure:
 do-install:
 	cd ${WRKSRC} && \
 		/bin/sh install.sh prefix=${TRUEPREFIX} libdir=${MODPY_SITEPKG} uninstall=no
+	find ${PREFIX} -name \*.orig -or -name \*~ | xargs rm
 
 .include <bsd.port.mk>
