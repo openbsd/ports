@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.216 2009/04/17 14:58:51 landry Exp $
+# $OpenBSD: Makefile,v 1.217 2009/05/25 22:51:28 sthen Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -176,6 +176,7 @@
      SUBDIR += ruby-yadis
      SUBDIR += scanlogd
      SUBDIR += scanssh
+     SUBDIR += scrypt
      SUBDIR += sentinel
      SUBDIR += shash
      SUBDIR += shash,static
