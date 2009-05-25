@@ -1,12 +1,29 @@
-$OpenBSD: patch-configure,v 1.2 2009/03/23 18:06:28 giovanni Exp $
---- configure.orig	Sat Dec 27 19:32:23 2008
-+++ configure	Mon Mar 23 18:51:28 2009
-@@ -24160,7 +24160,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
- 	 test -z "$ac_c_werror_flag" ||
- 	 test ! -s conftest.err
-        } && test -s conftest.$ac_objext; then
--  ac_cv_cflags_no_writable_strings=`echo $ac_arg | -e 's,.*% *,,'` ; break
-+  ac_cv_cflags_no_writable_strings=`echo $ac_arg | sed -e 's,.*% *,,'` ; break
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
+$OpenBSD: patch-configure,v 1.3 2009/05/25 15:29:24 giovanni Exp $
+--- configure.orig      Fri May 22 16:44:45 2009
++++ configure   Sun May 24 14:09:41 2009
+@@ -9126,7 +9126,11 @@ $as_echo_n "checking whether the $compiler linker ($LD
+     # here allows them to be overridden if necessary.
+     runpath_var=LD_RUN_PATH
+     hardcode_libdir_flag_spec='${wl}-rpath ${wl}$libdir'
+-    export_dynamic_flag_spec='${wl}--export-dynamic'
++    if echo __ELF__ | $CC -E - | $GREP __ELF__ >/dev/null; then
++     export_dynamic_flag_spec='${wl}--export-dynamic'
++    else
++     export_dynamic_flag_spec=
++    fi
+     # ancient GNU ld didn't support --whole-archive et. al.
+     if $LD --help 2>&1 | $GREP 'no-whole-archive' > /dev/null; then
+       whole_archive_flag_spec="$wlarc"'--whole-archive$convenience '"$wlarc"'--no-whole-archive'
+@@ -16176,7 +16180,11 @@ case "$host_os" in
+     RESOLVES=' '
+   ;;
+   *)
+-    ZZIPLIB_LDFLAGS="--export-dynamic"
++    if test "$ld_shlibs" = no; then
++       ZZIPLIB_LDFLAGS=""
++    else
++       ZZIPLIB_LDFLAGS="--export-dynamic"
++    fi
+     RESOLVES=' # '
+   ;;
+ esac

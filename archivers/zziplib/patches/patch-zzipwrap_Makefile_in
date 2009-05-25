@@ -1,7 +1,7 @@
-$OpenBSD: patch-zzipwrap_Makefile_in,v 1.2 2009/03/23 18:06:28 giovanni Exp $
---- zzipwrap/Makefile.in.orig	Sat Dec 27 19:32:25 2008
-+++ zzipwrap/Makefile.in	Mon Mar 23 18:50:36 2009
-@@ -174,7 +174,7 @@ PERL = @PERL@
+$OpenBSD: patch-zzipwrap_Makefile_in,v 1.3 2009/05/25 15:29:24 giovanni Exp $
+--- zzipwrap/Makefile.in.orig	Fri May 22 16:44:48 2009
++++ zzipwrap/Makefile.in	Sat May 23 10:51:59 2009
+@@ -183,7 +183,7 @@ PERL = @PERL@
  PKG_CONFIG = @PKG_CONFIG@
  PYTHON = @PYTHON@
  RANLIB = @RANLIB@
