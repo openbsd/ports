@@ -1,0 +1,31 @@
+--- libs/wine/Makefile.in.orig	Fri May  8 19:33:02 2009
++++ libs/wine/Makefile.in	Sat May 23 22:45:15 2009
+@@ -9,8 +9,8 @@ VERSCRIPT = $(SRCDIR)/wine.map
+ EXTRALIBS = $(LIBPORT) @LIBDL@ @CRTLIBS@
+ DEFS      = -D__WINESRC__ -DWINE_UNICODE_API=""
+ 
+-VERSION   = 1.0
+-SOVERSION = 1
++VERSION   = 0.0
++SOVERSION = 0
+ SONAME    = libwine.so.$(SOVERSION)
+ DYNAME    = libwine.$(SOVERSION).dylib
+ 
+@@ -151,7 +151,6 @@ libwine.dylib: libwine.$(SOVERSION).dylib
+ 
+ install-lib-so: libwine.so.$(VERSION) $(DESTDIR)$(libdir) dummy
+ 	$(INSTALL_PROGRAM) libwine.so.$(VERSION) $(DESTDIR)$(libdir)/libwine.so.$(VERSION)
+-	cd $(DESTDIR)$(libdir) && $(RM) libwine.so.$(SOVERSION) && $(LN_S) libwine.so.$(VERSION) libwine.so.$(SOVERSION)
+ 
+ install-lib-dll: libwine.dll $(DESTDIR)$(libdir) dummy
+ 	$(INSTALL_DATA) libwine.dll $(DESTDIR)$(libdir)/libwine.dll
+@@ -160,8 +159,7 @@ install-lib-dylib: libwine.$(VERSION).dylib $(DESTDIR)
+ 	$(INSTALL_PROGRAM) libwine.$(VERSION).dylib $(DESTDIR)$(libdir)/libwine.$(VERSION).dylib
+ 	cd $(DESTDIR)$(libdir) && $(RM) libwine.$(SOVERSION).dylib && $(LN_S) libwine.$(VERSION).dylib libwine.$(SOVERSION).dylib
+ 
+-install-dev-so: $(DESTDIR)$(libdir) dummy
+-	cd $(DESTDIR)$(libdir) && $(RM) libwine.so && $(LN_S) libwine.so.$(VERSION) libwine.so
++install-dev-so: install-lib-so
+ 
+ install-dev-dll: libwine.a $(DESTDIR)$(libdir) dummy
+ 	$(INSTALL_DATA) libwine.a $(DESTDIR)$(libdir)/libwine.a

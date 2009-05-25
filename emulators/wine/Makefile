@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2009/05/21 14:55:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2009/05/25 15:33:10 ariane Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	i386 amd64
@@ -59,12 +59,14 @@ CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
 			X_EXTRA_LIBS="${X_EXTRA_LIBS}"
 
-CONFIGURE_ARGS +=	--without-also \
+# User configuration dir for regress.
+MAKE_ENV =		WINEPREFIX="${WRKBUILD}/.wine"
+
+CONFIGURE_ARGS +=	--without-alsa \
 			--without-audioio \
 			--without-capi \
 			--without-coreaudio \
 			--without-cups \
-			--without-esd \
 			--without-gnutls \
 			--without-hal \
 			--without-jack \
