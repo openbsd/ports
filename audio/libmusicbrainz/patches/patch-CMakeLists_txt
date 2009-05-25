@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2008/04/03 12:03:09 jasper Exp $
---- CMakeLists.txt.orig	Thu Apr  3 13:58:34 2008
-+++ CMakeLists.txt	Thu Apr  3 13:58:42 2008
-@@ -14,7 +14,6 @@ SET(musicbrainz3_SOVERSION ${musicbrainz3_SOVERSION_CU
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2009/05/25 13:59:09 ajacoutot Exp $
+--- CMakeLists.txt.orig	Sat Sep 13 10:53:16 2008
++++ CMakeLists.txt	Mon May 25 14:24:45 2009
+@@ -20,7 +20,6 @@ SET(musicbrainz3_SOVERSION ${musicbrainz3_SOVERSION_MA
  
  SET(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
  FIND_PACKAGE(Neon REQUIRED)
