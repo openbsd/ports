@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/05/22 23:51:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/05/26 14:13:22 sthen Exp $
 
 COMMENT =		dump RTMP media streams
 
-DISTNAME =		rtmpdump-v1.5
-PKGNAME =		${DISTNAME:S/-v/-/}p1
+DISTNAME =		rtmpdump-v1.6
+PKGNAME =		${DISTNAME:S/-v/-/}
 
 CATEGORIES =		net
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m stdc++ crypto ssl
 
-MASTER_SITES =		http://spacehopper.org/mirrors/ \
-			${MASTER_SITE_SOURCEFORGE:=rtmpdump/}
+MASTER_SITES =		http://lkcl.net/rtmp/ \
+			http://downloads.sehe.nl/lkcl.net/rtmp/
 
 WRKDIST =		${WRKDIR}/rtmpdump
 
