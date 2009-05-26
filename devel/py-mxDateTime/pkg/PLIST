@@ -1,6 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/04/06 18:21:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/05/26 19:28:12 fgsch Exp $
 @option no-default-conflict
 @conflict py-mxDateTime-*-python${MODPY_VERSION}
+lib/python${MODPY_VERSION}/site-packages/egenix_mx_base-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/egenix_mx_base-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/egenix_mx_base-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/egenix_mx_base-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/egenix_mx_base-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mx/
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/BeeBase.py
