@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/08 17:55:29 espie Exp $
-bin/cscope
+@comment $OpenBSD: PLIST,v 1.5 2009/05/26 15:44:57 benoit Exp $
+@bin bin/cscope
 bin/cscope-indexer
 bin/ocs
 @man man/man1/cscope.1
