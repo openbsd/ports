@@ -1,5 +1,5 @@
---- libs/wine/Makefile.in.orig	Fri May  8 19:33:02 2009
-+++ libs/wine/Makefile.in	Sat May 23 22:45:15 2009
+--- libs/wine/Makefile.in.orig	Fri May  8 20:33:02 2009
++++ libs/wine/Makefile.in	Tue May 26 18:51:31 2009
 @@ -9,8 +9,8 @@ VERSCRIPT = $(SRCDIR)/wine.map
  EXTRALIBS = $(LIBPORT) @LIBDL@ @CRTLIBS@
  DEFS      = -D__WINESRC__ -DWINE_UNICODE_API=""
@@ -7,11 +7,25 @@
 -VERSION   = 1.0
 -SOVERSION = 1
 +VERSION   = 0.0
-+SOVERSION = 0
++SOVERSION = 0.0
  SONAME    = libwine.so.$(SOVERSION)
  DYNAME    = libwine.$(SOVERSION).dylib
  
-@@ -151,7 +151,6 @@ libwine.dylib: libwine.$(SOVERSION).dylib
+@@ -122,12 +122,8 @@ config.o: config.c $(RELPATH)
+ libwine.so.$(VERSION): $(OBJS) $(VERSCRIPT) Makefile.in
+ 	$(LDSHARED) $(OBJS) $(EXTRALIBS) $(LDFLAGS) $(LIBS) -o $@
+ 
+-libwine.so.$(SOVERSION): libwine.so.$(VERSION)
+-	$(RM) $@ && $(LN_S) libwine.so.$(VERSION) $@
++libwine.so: libwine.so.$(VERSION)
+ 
+-libwine.so: libwine.so.$(SOVERSION)
+-	$(RM) $@ && $(LN_S) libwine.so.$(SOVERSION) $@
+-
+ libwine.a: wine.def
+ 	$(DLLTOOL) -l $@ -d $(SRCDIR)/wine.def
+ 
+@@ -151,23 +147,19 @@ libwine.dylib: libwine.$(SOVERSION).dylib
  
  install-lib-so: libwine.so.$(VERSION) $(DESTDIR)$(libdir) dummy
  	$(INSTALL_PROGRAM) libwine.so.$(VERSION) $(DESTDIR)$(libdir)/libwine.so.$(VERSION)
@@ -19,9 +33,10 @@
  
  install-lib-dll: libwine.dll $(DESTDIR)$(libdir) dummy
  	$(INSTALL_DATA) libwine.dll $(DESTDIR)$(libdir)/libwine.dll
-@@ -160,8 +159,7 @@ install-lib-dylib: libwine.$(VERSION).dylib $(DESTDIR)
+ 
+ install-lib-dylib: libwine.$(VERSION).dylib $(DESTDIR)$(libdir) dummy
  	$(INSTALL_PROGRAM) libwine.$(VERSION).dylib $(DESTDIR)$(libdir)/libwine.$(VERSION).dylib
- 	cd $(DESTDIR)$(libdir) && $(RM) libwine.$(SOVERSION).dylib && $(LN_S) libwine.$(VERSION).dylib libwine.$(SOVERSION).dylib
+-	cd $(DESTDIR)$(libdir) && $(RM) libwine.$(SOVERSION).dylib && $(LN_S) libwine.$(VERSION).dylib libwine.$(SOVERSION).dylib
  
 -install-dev-so: $(DESTDIR)$(libdir) dummy
 -	cd $(DESTDIR)$(libdir) && $(RM) libwine.so && $(LN_S) libwine.so.$(VERSION) libwine.so
@@ -29,3 +44,9 @@
  
  install-dev-dll: libwine.a $(DESTDIR)$(libdir) dummy
  	$(INSTALL_DATA) libwine.a $(DESTDIR)$(libdir)/libwine.a
+ 
+ install-dev-dylib: $(DESTDIR)$(libdir) dummy
+-	cd $(DESTDIR)$(libdir) && $(RM) libwine.dylib && $(LN_S) libwine.$(VERSION).dylib libwine.dylib
+ 
+ install install-lib:: $(LIBEXT:%=install-lib-%)
+ install install-dev:: $(LIBEXT:%=install-dev-%)
