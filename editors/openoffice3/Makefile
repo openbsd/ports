@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/05/17 09:41:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2009/05/26 11:01:47 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -10,7 +10,7 @@ VERSION=	3.1.0
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOO310_m11
 PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}p0
+PKGNAME-main=	openoffice-${VERSION}p1
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity

@@ -1,9 +1,7 @@
-
 To start OpenOffice run '/usr/local/bin/soffice'
 
 Platform dependent extensions have been installed in
-${PREFIX}/openoffice.org3/share/extension/install/
+  ${PREFIX}/openoffice.org3/share/extension/install/
 
 To install or uninstall the extensions, you can either
 use the Extensions Manager or unopkg.
-
