@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/26 07:48:32 benoit Exp $
+%%SHARED%%
+include/crack.h
+include/packer.h
+lib/libcrack.a
+lib/libcrack.la
+lib/python${MODPY_VERSION}/site-packages/_cracklibmodule.a
+lib/python${MODPY_VERSION}/site-packages/_cracklibmodule.la
+lib/python${MODPY_VERSION}/site-packages/_cracklibmodule.so
+lib/python${MODPY_VERSION}/site-packages/cracklib.py
+lib/python${MODPY_VERSION}/site-packages/cracklib.pyc
+lib/python${MODPY_VERSION}/site-packages/cracklib.pyo
+@bin sbin/cracklib-check
+sbin/cracklib-format
+@bin sbin/cracklib-packer
+@bin sbin/cracklib-unpacker
+sbin/create-cracklib-dict
+share/cracklib/
+share/cracklib/cracklib-small
+share/cracklib/cracklib-small.hwm
+share/cracklib/cracklib-small.pwd
+share/cracklib/cracklib-small.pwi
+share/cracklib/cracklib.magic
+share/locale/cs/LC_MESSAGES/cracklib.mo
+share/locale/da/LC_MESSAGES/cracklib.mo
+share/locale/de/LC_MESSAGES/cracklib.mo
+share/locale/el/LC_MESSAGES/cracklib.mo
+share/locale/es/LC_MESSAGES/cracklib.mo
+share/locale/fi/LC_MESSAGES/cracklib.mo
+share/locale/fr/LC_MESSAGES/cracklib.mo
+share/locale/hu/LC_MESSAGES/cracklib.mo
+share/locale/it/LC_MESSAGES/cracklib.mo
+share/locale/ja/LC_MESSAGES/cracklib.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/cracklib.mo
+share/locale/nb/LC_MESSAGES/cracklib.mo
+share/locale/nl/LC_MESSAGES/cracklib.mo
+share/locale/pa/
+share/locale/pa/LC_MESSAGES/
+share/locale/pa/LC_MESSAGES/cracklib.mo
+share/locale/pl/LC_MESSAGES/cracklib.mo
+share/locale/pt/LC_MESSAGES/cracklib.mo
+share/locale/pt_BR/LC_MESSAGES/cracklib.mo
+share/locale/sk/LC_MESSAGES/cracklib.mo
+share/locale/sl_SI/
+share/locale/sl_SI/LC_MESSAGES/
+share/locale/sl_SI/LC_MESSAGES/cracklib.mo
+share/locale/zh_CN/LC_MESSAGES/cracklib.mo
+share/locale/zh_TW/LC_MESSAGES/cracklib.mo
