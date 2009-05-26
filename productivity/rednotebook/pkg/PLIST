@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/21 10:20:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/05/26 08:21:50 ajacoutot Exp $
 bin/rednotebook
 lib/python${MODPY_VERSION}/site-packages/rednotebook/
 lib/python${MODPY_VERSION}/site-packages/rednotebook-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/rednotebook/__init__.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/rednotebook/backup.py
+lib/python${MODPY_VERSION}/site-packages/rednotebook/backup.pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/config.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/config.pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/files/
