@@ -1,12 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/19 11:14:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/05/27 12:59:45 sthen Exp $
 @bin bin/autopano
 bin/autopano-c-complete.sh
 @bin bin/autopano-sift-c
 @bin bin/generatekeys
-share/man/
-share/man/man1/
-@man share/man/man1/autopano-c-complete.1
-@man share/man/man1/autopano.1
-@man share/man/man1/generatekeys.1
-share/man/man7/
-@man share/man/man7/autopano-sift-c.7
+@man man/man1/autopano-c-complete.1
+@man man/man1/autopano.1
+@man man/man1/generatekeys.1
+@man man/man7/autopano-sift-c.7

@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2009/05/27 12:59:45 sthen Exp $
+--- CMakeLists.txt.orig	Wed May 27 13:57:42 2009
++++ CMakeLists.txt	Wed May 27 13:57:44 2009
+@@ -146,8 +146,8 @@ endif (WIN32)
+ # documentation
+ FILE(GLOB MAN_PAGES_1 doc/*.1)
+ FILE(GLOB MAN_PAGES_7 doc/*.7)
+-install(FILES ${MAN_PAGES_1} DESTINATION share/man/man1) 
+-install(FILES ${MAN_PAGES_7} DESTINATION share/man/man7) 
++install(FILES ${MAN_PAGES_1} DESTINATION man/man1) 
++install(FILES ${MAN_PAGES_7} DESTINATION man/man7) 
+ 
+ ## Test exectuables.
+ 
