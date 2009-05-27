@@ -1,23 +1,26 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/25 16:07:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2009/05/27 20:52:15 benoit Exp $
 
-COMMENT=	unit test framework for C programs
+COMMENT =	unit test framework for C programs
 
-DISTNAME=	check-0.9.5
-SHARED_LIBS +=	check                0.0      # .0.0
-CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=check/}
+DISTNAME =	check-0.9.6
+SHARED_LIBS +=	check	1.0	# .0.0
+CATEGORIES =	devel
 
-HOMEPAGE=	http://check.sf.net/
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+HOMEPAGE =	http://check.sf.net/
 
-# LGPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS= 	--enable-plain-docdir
+# LGPLv2.1
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=check/}
+
+USE_LIBTOOL =		Yes
+
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS = 	--enable-plain-docdir
 
 .include <bsd.port.mk>

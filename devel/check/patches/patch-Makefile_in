@@ -1,21 +1,21 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2007/10/19 08:39:08 jasper Exp $
---- Makefile.in.orig	Wed Nov 22 00:19:11 2006
-+++ Makefile.in	Thu Oct 18 13:56:20 2007
-@@ -197,7 +197,7 @@ sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+$OpenBSD: patch-Makefile_in,v 1.2 2009/05/27 20:52:18 benoit Exp $
+--- Makefile.in.orig	Mon Dec 29 15:07:02 2008
++++ Makefile.in	Wed May 27 22:41:26 2009
+@@ -205,7 +205,7 @@ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  SUBDIRS = src doc . tests
 -AM_MAKEINFOFLAGS = -I$(top_srcdir)/doc/example
 +AM_MAKEINFOFLAGS = -I$(top_srcdir)/share/examples/check/
  CLEANFILES = *~\
  	$(PACKAGE)-$(VERSION).tar.gz\
  	ChangeLog.bak
-@@ -660,7 +660,7 @@ info: info-recursive
+@@ -671,7 +671,7 @@ info: info-recursive
  
  info-am:
  
 -install-data-am: install-docDATA install-m4dataDATA install-pcdataDATA
 +install-data-am: install-m4dataDATA install-pcdataDATA
  
- install-exec-am:
+ install-dvi: install-dvi-recursive
  
