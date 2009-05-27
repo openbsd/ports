@@ -1,44 +1,44 @@
-# $OpenBSD: Makefile,v 1.8 2009/03/19 13:22:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/05/27 13:50:20 benoit Exp $
 
-COMMENT-main=	template engine for PHP
-COMMENT-docs=	documentation for Smarty
+COMMENT-main =	template engine for PHP
+COMMENT-docs =	documentation for Smarty
 
-VERSION=	2.6.22
-DISTNAME=	Smarty-${VERSION}
-PKGNAME-main=	smarty-${VERSION}
-DISTNAME-docs=	Smarty-2.6.14-docs
-PKGNAME-docs=	smarty-docs-${VERSION}
-CATEGORIES=	devel www
+VERSION =	2.6.25
+DISTNAME =	Smarty-${VERSION}
+PKGNAME-main =	smarty-${VERSION}
+DISTNAME-docs =	Smarty-2.6.14-docs
+PKGNAME-docs =	smarty-docs-${VERSION}
+CATEGORIES =	devel www
 
-HOMEPAGE=	http://www.smarty.net
+HOMEPAGE =	http://www.smarty.net
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # PHP License
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=	${HOMEPAGE}/do_download.php?download_file=
-MASTER_SITES0=	${HOMEPAGE}/distributions/manual/en/
+MASTER_SITES =	${HOMEPAGE}/do_download.php?download_file=
+MASTER_SITES0 =	${HOMEPAGE}/distributions/manual/en/
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME-docs}${EXTRACT_SUFX}:0
 
-MULTI_PACKAGES= -main -docs
+MULTI_PACKAGES = -main -docs
 
-PHP_VERSION=	5
-RUN_DEPENDS-main=::www/php${PHP_VERSION}/core
+PHP_VERSION =	5
+RUN_DEPENDS-main = ::www/php${PHP_VERSION}/core
 
-CHROOT_DIR=	/var/www
+CHROOT_DIR =	/var/www
 
-PREFIX-main=		${CHROOT_DIR}
+PREFIX-main =	${CHROOT_DIR}
 
-NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_BUILD =	Yes
+NO_REGRESS =	Yes
 
-PKG_ARCH=	*
+PKG_ARCH =	*
 
 do-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${CHROOT_DIR}/smarty
