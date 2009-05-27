@@ -1,33 +1,36 @@
-# $OpenBSD: Makefile,v 1.5 2008/07/07 07:32:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/05/27 13:43:09 benoit Exp $
 
-COMMENT=		word-based diff program
+COMMENT =		word-based diff program
 
-DISTNAME=		dwdiff-1.4
-CATEGORIES=		sysutils textproc
+DISTNAME=		dwdiff-1.5.2
+CATEGORIES =		sysutils textproc
 
-HOMEPAGE=		http://os.ghalkes.nl/dwdiff.html
+HOMEPAGE =		http://os.ghalkes.nl/dwdiff.html
+
+MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m pthread
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=		http://os.ghalkes.nl/dist/
-EXTRACT_SUFX=		.tgz
+WANTLIB =		c m pthread
 
-CONFIGURE_STYLE=	simple
+MASTER_SITES =		http://os.ghalkes.nl/dist/
+EXTRACT_SUFX =		.tgz
 
-MODULES=		devel/gettext
+MODULES =		devel/gettext
 
-LIB_DEPENDS=		icudata,icui18n,icuuc::textproc/icu4c
+LIB_DEPENDS =		icudata,icui18n,icuuc::textproc/icu4c
 
-CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
+CONFIGURE_STYLE =	simple
+CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-NO_REGRESS=		Yes
 
-LANGS=			de nl
+NO_REGRESS =		Yes
+
+LANGS =			de nl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dwdiff ${PREFIX}/bin
