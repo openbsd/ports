@@ -1,30 +1,32 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 23:54:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2009/05/27 10:24:50 benoit Exp $
 
-COMMENT=	generates ASCII banner art
+COMMENT =	generates ASCII banner art
 
-PKGNAME=	figlet-2.2.1p0
-DISTNAME=	figlet221
-CATEGORIES=	misc graphics
+PKGNAME =	figlet-2.2.2
+DISTNAME =	figlet222
+CATEGORIES =	misc graphics
 
-HOMEPAGE=	http://www.figlet.org/
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+HOMEPAGE =	http://www.figlet.org/
+
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=	ftp://ftp.figlet.org/pub/figlet/program/unix/
-MASTER_SITES0=	ftp://ftp.recoil.org/pub/figlet/
+WANTLIB =		c
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+MASTER_SITES =	ftp://ftp.figlet.org/pub/figlet/program/unix/
+MASTER_SITES0 =	http://www.arcane-labs.net/download/
+
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		figlet-contributed-06092002${EXTRACT_SUFX}:0
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
+MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}" \
 		DEFAULTFONTDIR=${PREFIX}/share/figlet
 
-NO_REGRESS=	Yes
+NO_REGRESS =	Yes
 
 pre-configure:
 	@perl -pi -e 's|%%OPENBSDFIGLET%%|${LOCALBASE}/share/figlet|g' ${WRKBUILD}/figlist

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 17:54:16 espie Exp $
-bin/chkfont
-bin/figlet
+@comment $OpenBSD: PLIST,v 1.5 2009/05/27 10:24:56 benoit Exp $
+@bin bin/chkfont
+@bin bin/figlet
 bin/figlist
 bin/showfigfonts
 @man man/man6/figlet.6
