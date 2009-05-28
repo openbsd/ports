@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/05/28 09:18:24 giovanni Exp $
+lib/ocaml/stublibs/
+lib/ocaml/stublibs/dlllablglade2.so
+lib/ocaml/stublibs/dlllablgtk2.so
+lib/ocaml/stublibs/dlllablrsvg.so

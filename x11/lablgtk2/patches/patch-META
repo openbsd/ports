@@ -1,0 +1,25 @@
+$OpenBSD: patch-META,v 1.1.1.1 2009/05/28 09:18:24 giovanni Exp $
+--- META.orig	Tue Mar 25 08:55:03 2008
++++ META	Tue May 19 21:11:00 2009
+@@ -1,8 +1,15 @@
++description = "Bindings for gtk2"
+ requires=""
+-version="2.10.1"
+-archive(byte)="lablgtk.cma"
+-archive(byte,init)="lablgtk.cma gtkInit.cmo"
+-archive(native)="lablgtk.cmxa"
+-archive(native,init)="lablgtk.cmxa gtkInit.cmx"
+-linkopts=""
++requires(lablGL)="lablGL"
+ directory="+lablgtk2"
++version="2.12.0"
++archive(byte)="lablgtk.cma  lablgnomecanvas.cma  gtkInit.cmo"
++archive(native)="lablgtk.cmxa  lablgnomecanvas.cmxa gtkInit.cmx"
++archive(byte,lablGL)="lablgtk.cma lablgtkgl.cma  lablgnomecanvas.cma  gtkInit.cmo"
++archive(native,lablGL)="lablgtk.cmxa lablgtkgl.cmxa  lablgnomecanvas.cmxa gtkInit.cmx"
++archive(byte,mt) += "gtkThread.cmo"
++archive(native,mt) += "gtkThread.cmx"
++archive(byte,lablGL,mt) += "gtkThread.cmo"
++archive(native,lablGL,mt) += "gtkThread.cmx"
++archive(toploop,mt) += "gtkThInit.cmo"
++

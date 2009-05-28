@@ -1,0 +1,6 @@
+LablGTK2 is an Objective Caml interface to gtk+2.
+
+It uses the rich type system of Objective Caml 3 to provide a strongly
+typed, yet very comfortable, object-oriented interface to gtk+2. This
+is not that easy if you know the dynamic typing approach taken by
+gtk+2.
