@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/03/11 08:32:07 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/05/28 08:58:03 giovanni Exp $
 ${P5SITE}/Mail/DKIM/
 ${P5SITE}/Mail/DKIM.pm
 ${P5SITE}/Mail/DKIM/Algorithm/
@@ -6,6 +6,7 @@ ${P5SITE}/Mail/DKIM/Algorithm/Base.pm
 ${P5SITE}/Mail/DKIM/Algorithm/dk_rsa_sha1.pm
 ${P5SITE}/Mail/DKIM/Algorithm/rsa_sha1.pm
 ${P5SITE}/Mail/DKIM/Algorithm/rsa_sha256.pm
+${P5SITE}/Mail/DKIM/AuthorDomainPolicy.pm
 ${P5SITE}/Mail/DKIM/Canonicalization/
 ${P5SITE}/Mail/DKIM/Canonicalization/Base.pm
 ${P5SITE}/Mail/DKIM/Canonicalization/DkCommon.pm
@@ -17,6 +18,7 @@ ${P5SITE}/Mail/DKIM/Canonicalization/relaxed.pm
 ${P5SITE}/Mail/DKIM/Canonicalization/simple.pm
 ${P5SITE}/Mail/DKIM/Common.pm
 ${P5SITE}/Mail/DKIM/DNS.pm
+${P5SITE}/Mail/DKIM/DkPolicy.pm
 ${P5SITE}/Mail/DKIM/DkSignature.pm
 ${P5SITE}/Mail/DKIM/DkimPolicy.pm
 ${P5SITE}/Mail/DKIM/Key.pm
@@ -32,8 +34,10 @@ ${P5SITE}/Mail/DKIM/TextWrap.pm
 ${P5SITE}/Mail/DKIM/Verifier.pm
 @man man/man3p/Mail::DKIM.3p
 @man man/man3p/Mail::DKIM::Algorithm::Base.3p
+@man man/man3p/Mail::DKIM::AuthorDomainPolicy.3p
 @man man/man3p/Mail::DKIM::Canonicalization::Base.3p
 @man man/man3p/Mail::DKIM::Canonicalization::DkimCommon.3p
+@man man/man3p/Mail::DKIM::DkPolicy.3p
 @man man/man3p/Mail::DKIM::DkSignature.3p
 @man man/man3p/Mail::DKIM::DkimPolicy.3p
 @man man/man3p/Mail::DKIM::Policy.3p

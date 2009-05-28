@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/11 08:32:06 giovanni Exp $
+# $OpenBSD: Makefile,v 1.6 2009/05/28 08:58:03 giovanni Exp $
 
 COMMENT=	DKIM and DomainKeys message-signing implementation
 
-DISTNAME=	Mail-DKIM-0.33
+DISTNAME=	Mail-DKIM-0.35
 CATEGORIES=	mail
 
 MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
