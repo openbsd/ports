@@ -1,7 +1,7 @@
---- tools/stunnel.conf-sample.in.orig	Thu Aug 31 21:02:30 2006
-+++ tools/stunnel.conf-sample.in	Wed Sep 27 16:40:43 2006
+--- tools/stunnel.conf-sample.in.orig	Thu Apr 16 11:10:09 2009
++++ tools/stunnel.conf-sample.in	Sun May 17 00:58:19 2009
 @@ -3,18 +3,17 @@
- ; Please make sure you understand them (especially the effect of chroot jail)
+ ; Please make sure you understand them (especially the effect of the chroot jail)
  
  ; Certificate/key is needed in server mode and optional in client mode
 -cert = @prefix@/etc/stunnel/mail.pem
@@ -16,7 +16,7 @@
 -chroot = @prefix@/var/lib/stunnel/
 -setuid = nobody
 -setgid = @DEFAULT_GROUP@
--; PID is created inside chroot jail
+-; PID is created inside the chroot jail
 -pid = /stunnel.pid
 +chroot = /var/stunnel/
 +setuid = _stunnel
@@ -30,7 +30,7 @@
  ;CApath = /certs
  ; It's often easier to use CAfile
 -;CAfile = @prefix@/etc/stunnel/certs.pem
-+;CAfile = @sysconfdir@/ssl/certs.pem
++;CAfile = @sysconfdir@/ssl/cert.pem
  ; Don't forget to c_rehash CRLpath
  ; CRLpath is located inside chroot jail
  ;CRLpath = /crls
