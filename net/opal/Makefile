@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2009/02/18 11:56:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/05/28 10:00:44 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Open Phone Abstraction Library
 
 DISTNAME=	opal-2.2.11
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 SHARED_LIBS=	opal	0.0 # .2.2.11
 CATEGORIES=	net devel
 
-HOMEPAGE=	http://www.ekiga.org/
+HOMEPAGE=	http://www.opalvoip.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
