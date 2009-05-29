@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2009/04/08 16:27:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/05/29 08:21:16 ajacoutot Exp $
 
 COMMENT-main= 		GNU versions of common file management utilities
 COMMENT-ls=		colorized GNU 'ls'
@@ -7,8 +7,10 @@ V=			4.1
 DISTNAME=		fileutils-$V
 CATEGORIES=		misc
 
-PKGNAME-main=		${DISTNAME}p4
-PKGNAME-ls=		gnuls-$Vp1
+PKGNAME-main=		${DISTNAME}p5
+PKGNAME-ls=		gnuls-$Vp2
+
+HOMEPAGE=		http://www.gnu.org/software/fileutils/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
