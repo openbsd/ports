@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/05/29 15:49:37 simon Exp $
 ${P5SITE}/Exception/
+${P5SITE}/Exception/Class/
 ${P5SITE}/Exception/Class.pm
+${P5SITE}/Exception/Class/Base.pm
 @man man/man3p/Exception::Class.3p
+@man man/man3p/Exception::Class::Base.3p
