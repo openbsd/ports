@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:36:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/05/29 19:53:16 benoit Exp $
 bin/libmcrypt-config
 include/mcrypt.h
+include/mutils/
+include/mutils/mcrypt.h
 lib/libmcrypt/
 lib/libmcrypt.a
 lib/libmcrypt.la

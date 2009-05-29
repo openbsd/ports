@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.2 2009/01/09 17:43:39 naddy Exp $
---- lib/Makefile.in.orig	Sat Mar  8 18:59:39 2003
-+++ lib/Makefile.in	Fri Jan  9 17:30:15 2009
-@@ -157,8 +157,7 @@ libmcrypt_la_SOURCES = mcrypt_extra.c mcrypt.c bzero.c
- 
+$OpenBSD: patch-lib_Makefile_in,v 1.3 2009/05/29 19:53:14 benoit Exp $
+--- lib/Makefile.in.orig	Mon Feb 19 07:32:37 2007
++++ lib/Makefile.in	Wed May 27 01:50:14 2009
+@@ -227,8 +227,7 @@ libmcrypt_la_SOURCES = mcrypt_extra.c mcrypt.c bzero.c
+ 	mcrypt_symb.c 
  
  libmcrypt_la_LDFLAGS = \
 -	  -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
