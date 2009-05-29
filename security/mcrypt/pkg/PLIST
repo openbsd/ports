@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:36:00 espie Exp $
-bin/mcrypt
+@comment $OpenBSD: PLIST,v 1.5 2009/05/29 20:01:10 benoit Exp $
+@bin bin/mcrypt
 bin/mdecrypt
 @man man/man1/mcrypt.1

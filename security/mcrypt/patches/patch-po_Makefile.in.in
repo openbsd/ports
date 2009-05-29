@@ -1,12 +1,12 @@
-$OpenBSD: patch-po_Makefile.in.in,v 1.2 2003/01/18 22:55:39 avsm Exp $
---- po/Makefile.in.in.orig	Sat Apr 27 12:51:00 2002
-+++ po/Makefile.in.in	Sat Jan 18 18:40:45 2003
-@@ -20,7 +20,7 @@ srcdir = @srcdir@
+$OpenBSD: patch-po_Makefile.in.in,v 1.3 2009/05/29 20:01:09 benoit Exp $
+--- po/Makefile.in.in.orig	Sat Jun  9 10:32:45 2007
++++ po/Makefile.in.in	Wed May 27 01:43:31 2009
+@@ -21,7 +21,7 @@ srcdir = @srcdir@
  top_srcdir = @top_srcdir@
  VPATH = @srcdir@
  
 -prefix = @prefix@
 +prefix = ${DESTDIR}@prefix@
  exec_prefix = @exec_prefix@
+ datarootdir = @datarootdir@
  datadir = @datadir@
- localedir = $(datadir)/locale
