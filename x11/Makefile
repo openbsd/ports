@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.375 2009/04/07 19:02:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.376 2009/05/29 10:45:20 giovanni Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -117,6 +117,7 @@
      SUBDIR += kountdown
      SUBDIR += krusader
      SUBDIR += lablgtk
+     SUBDIR += lablgtk2
      SUBDIR += lesstif
      SUBDIR += libdnd
      SUBDIR += liberation-fonts
