@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.152 2009/05/03 12:19:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.153 2009/05/29 08:42:06 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite)
 
-VERSION=	5.0.81
+VERSION=	5.0.82
 DISTNAME=	mysql-${VERSION}
 PKGNAME-main=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
@@ -13,8 +13,8 @@ CATEGORIES=	databases
 V=		MySQL-5.0
 MASTER_SITES=	${MASTER_SITE_MYSQL:=Downloads/$V/}
 
-SHARED_LIBS +=	mysqlclient_r		19.0
-SHARED_LIBS +=	mysqlclient		19.0
+SHARED_LIBS=	mysqlclient_r		19.0 \
+		mysqlclient		19.0
 
 HOMEPAGE=	http://www.mysql.com/
 
@@ -83,15 +83,13 @@ MULTI_PACKAGES=		-main -server -tests
 
 RUN_DEPENDS-server=	:mysql-client->=5.0,<5.1:databases/mysql \
 			:p5-DBD-mysql-*:databases/p5-DBD-mysql
-
 LIB_DEPENDS-server=	mysqlclient:mysql-client->=5.0,<5.1:databases/mysql
 
 WANTLIB-server=		${WANTLIB} wrap		
-
 WANTLIB-main=		${WANTLIB} ncurses readline
-
-PKG_ARCH-tests=	*
 WANTLIB-tests=
+
+PKG_ARCH-tests=		*
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql

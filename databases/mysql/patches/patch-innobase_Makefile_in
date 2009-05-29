@@ -1,7 +1,7 @@
-$OpenBSD: patch-innobase_Makefile_in,v 1.11 2009/02/17 10:47:00 sthen Exp $
---- innobase/Makefile.in.orig	Thu Jan 29 16:56:28 2009
-+++ innobase/Makefile.in	Mon Feb 16 14:22:22 2009
-@@ -558,9 +558,9 @@ distcleancheck: distclean
+$OpenBSD: patch-innobase_Makefile_in,v 1.12 2009/05/29 08:42:06 sthen Exp $
+--- innobase/Makefile.in.orig	Thu May  7 17:21:13 2009
++++ innobase/Makefile.in	Thu May 28 17:45:20 2009
+@@ -561,9 +561,9 @@ distcleancheck: distclean
  check-am: all-am
  check: check-recursive
  all-am: Makefile $(HEADERS) ib_config.h

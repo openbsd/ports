@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.25 2008/12/28 19:45:17 sthen Exp $
---- configure.in.orig	Thu Dec 18 12:19:33 2008
-+++ configure.in	Mon Dec 22 02:30:13 2008
+$OpenBSD: patch-configure_in,v 1.26 2009/05/29 08:42:06 sthen Exp $
+--- configure.in.orig	Thu May  7 17:11:51 2009
++++ configure.in	Thu May 28 17:45:20 2009
 @@ -514,44 +514,7 @@ AC_SUBST(ICHECK)
  AC_PATH_PROG(PS, ps, ps)
  AC_MSG_CHECKING("how to check if pid exists")
@@ -47,7 +47,7 @@ $OpenBSD: patch-configure_in,v 1.25 2008/12/28 19:45:17 sthen Exp $
  AC_SUBST(FIND_PROC)
  AC_MSG_RESULT("$FIND_PROC")
  
-@@ -913,7 +876,8 @@ AC_ARG_WITH(libwrap,
+@@ -937,7 +900,8 @@ AC_ARG_WITH(libwrap,
      AC_CHECK_HEADER(tcpd.h,
        LIBS="-lwrap $LIBS"
        AC_MSG_CHECKING(for TCP wrappers library -lwrap)
@@ -57,7 +57,7 @@ $OpenBSD: patch-configure_in,v 1.25 2008/12/28 19:45:17 sthen Exp $
  int allow_severity = 0;
  int deny_severity  = 0;
  
-@@ -1681,7 +1645,7 @@ then
+@@ -1705,7 +1669,7 @@ then
    AC_CHECK_LIB(c_r,strtok_r)
    case "$with_osf32_threads---$target_os" in
      # Don't keep -lc_r in LIBS; -pthread handles it magically
@@ -66,7 +66,7 @@ $OpenBSD: patch-configure_in,v 1.25 2008/12/28 19:45:17 sthen Exp $
  
    esac
    AC_CHECK_FUNCS(strtok_r pthread_init)
-@@ -1729,29 +1693,6 @@ case $SYSTEM_TYPE in
+@@ -1753,29 +1717,6 @@ case $SYSTEM_TYPE in
  AC_SYS_RESTARTABLE_SYSCALLS
      ;;
  esac

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.29 2009/05/03 12:19:09 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.30 2009/05/29 08:42:06 sthen Exp $
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1
@@ -19,6 +19,7 @@ share/mysql-test/include/ctype_like_escape.inc
 share/mysql-test/include/ctype_like_range_f1f2.inc
 share/mysql-test/include/ctype_regex.inc
 share/mysql-test/include/delete_anonymous_users.inc
+share/mysql-test/include/diff_master_slave.inc
 share/mysql-test/include/endspace.inc
 share/mysql-test/include/federated.inc
 share/mysql-test/include/federated_cleanup.inc
@@ -31,6 +32,7 @@ share/mysql-test/include/have_big5.inc
 share/mysql-test/include/have_blackhole.inc
 share/mysql-test/include/have_bug25714.inc
 share/mysql-test/include/have_case_sensitive_file_system.inc
+share/mysql-test/include/have_community_features.inc
 share/mysql-test/include/have_compress.inc
 share/mysql-test/include/have_cp1250_ch.inc
 share/mysql-test/include/have_cp932.inc
@@ -53,6 +55,7 @@ share/mysql-test/include/have_lowercase1.inc
 share/mysql-test/include/have_multi_ndb.inc
 share/mysql-test/include/have_ndb.inc
 share/mysql-test/include/have_outfile.inc
+share/mysql-test/include/have_profiling.inc
 share/mysql-test/include/have_query_cache.inc
 share/mysql-test/include/have_sjis.inc
 share/mysql-test/include/have_ssl.inc
@@ -62,6 +65,8 @@ share/mysql-test/include/have_udf.inc
 share/mysql-test/include/have_ujis.inc
 share/mysql-test/include/im_check_env.inc
 share/mysql-test/include/innodb_rollback_on_timeout.inc
+share/mysql-test/include/kill_query.inc
+share/mysql-test/include/kill_query_and_diff_master_slave.inc
 share/mysql-test/include/loaddata_autocom.inc
 share/mysql-test/include/master-slave-end.inc
 share/mysql-test/include/master-slave.inc
@@ -297,6 +302,7 @@ share/mysql-test/r/have_bdb.require
 share/mysql-test/r/have_big5.require
 share/mysql-test/r/have_blackhole.require
 share/mysql-test/r/have_bug25714.require
+share/mysql-test/r/have_community_features.require
 share/mysql-test/r/have_compress.require
 share/mysql-test/r/have_cp1250_ch.require
 share/mysql-test/r/have_cp932.require
@@ -321,6 +327,7 @@ share/mysql-test/r/have_ndb.require
 share/mysql-test/r/have_ndb_status_ok.require
 share/mysql-test/r/have_outfile.require
 share/mysql-test/r/have_perror.require
+share/mysql-test/r/have_profiling.require
 share/mysql-test/r/have_query_cache.require
 share/mysql-test/r/have_raid.require
 share/mysql-test/r/have_sjis.require
@@ -556,6 +563,7 @@ share/mysql-test/r/rpl_auto_increment.result
 share/mysql-test/r/rpl_auto_increment_11932.result
 share/mysql-test/r/rpl_auto_increment_bug33029.result
 share/mysql-test/r/rpl_bug33931.result
+share/mysql-test/r/rpl_bug38694.result
 share/mysql-test/r/rpl_change_master.result
 share/mysql-test/r/rpl_charset.result
 share/mysql-test/r/rpl_charset_sjis.result
@@ -568,6 +576,7 @@ share/mysql-test/r/rpl_delete_all.result
 share/mysql-test/r/rpl_do_grant.result
 share/mysql-test/r/rpl_drop.result
 share/mysql-test/r/rpl_drop_db.result
+share/mysql-test/r/rpl_drop_if_exists.result
 share/mysql-test/r/rpl_drop_temp.result
 share/mysql-test/r/rpl_drop_view.result
 share/mysql-test/r/rpl_dual_pos_advance.result
@@ -589,6 +598,7 @@ share/mysql-test/r/rpl_insert_delayed.result
 share/mysql-test/r/rpl_insert_id.result
 share/mysql-test/r/rpl_insert_ignore.result
 share/mysql-test/r/rpl_insert_select.result
+share/mysql-test/r/rpl_killed_ddl.result
 share/mysql-test/r/rpl_known_bugs_detection.result
 share/mysql-test/r/rpl_loaddata.result
 share/mysql-test/r/rpl_loaddata_charset.result
@@ -611,6 +621,7 @@ share/mysql-test/r/rpl_multi_update2.result
 share/mysql-test/r/rpl_multi_update3.result
 share/mysql-test/r/rpl_multi_update4.result
 share/mysql-test/r/rpl_mystery22.result
+share/mysql-test/r/rpl_name_const.result
 share/mysql-test/r/rpl_ndb_innodb_trans.result
 share/mysql-test/r/rpl_openssl.result
 share/mysql-test/r/rpl_optimize.result
@@ -900,7 +911,7 @@ share/mysql-test/suite/funcs_1/r/is_cml_innodb.result
 share/mysql-test/suite/funcs_1/r/is_cml_memory.result
 share/mysql-test/suite/funcs_1/r/is_cml_myisam.result
 share/mysql-test/suite/funcs_1/r/is_cml_ndb.result
-share/mysql-test/suite/funcs_1/r/is_collation_character_set_applicability.result
+share/mysql-test/suite/funcs_1/r/is_coll_char_set_appl.result
 share/mysql-test/suite/funcs_1/r/is_collations.result
 share/mysql-test/suite/funcs_1/r/is_column_privileges.result
 share/mysql-test/suite/funcs_1/r/is_column_privileges_is_mysql_test.result
@@ -1027,7 +1038,7 @@ share/mysql-test/suite/funcs_1/t/is_cml_innodb.test
 share/mysql-test/suite/funcs_1/t/is_cml_memory.test
 share/mysql-test/suite/funcs_1/t/is_cml_myisam.test
 share/mysql-test/suite/funcs_1/t/is_cml_ndb.test
-share/mysql-test/suite/funcs_1/t/is_collation_character_set_applicability.test
+share/mysql-test/suite/funcs_1/t/is_coll_char_set_appl.test
 share/mysql-test/suite/funcs_1/t/is_collations.test
 share/mysql-test/suite/funcs_1/t/is_column_privileges.test
 share/mysql-test/suite/funcs_1/t/is_column_privileges_is_mysql_test.test
@@ -1849,6 +1860,8 @@ share/mysql-test/t/rpl_auto_increment_11932.test
 share/mysql-test/t/rpl_auto_increment_bug33029.test
 share/mysql-test/t/rpl_bug33931-slave.opt
 share/mysql-test/t/rpl_bug33931.test
+share/mysql-test/t/rpl_bug38694-slave.opt
+share/mysql-test/t/rpl_bug38694.test
 share/mysql-test/t/rpl_change_master.test
 share/mysql-test/t/rpl_charset.test
 share/mysql-test/t/rpl_charset_sjis.test
@@ -1864,6 +1877,7 @@ share/mysql-test/t/rpl_delete_all.test
 share/mysql-test/t/rpl_do_grant.test
 share/mysql-test/t/rpl_drop.test
 share/mysql-test/t/rpl_drop_db.test
+share/mysql-test/t/rpl_drop_if_exists.test
 share/mysql-test/t/rpl_drop_temp-slave.opt
 share/mysql-test/t/rpl_drop_temp.test
 share/mysql-test/t/rpl_drop_view.test
@@ -1903,6 +1917,8 @@ share/mysql-test/t/rpl_insert_id.test
 share/mysql-test/t/rpl_insert_ignore-slave.opt
 share/mysql-test/t/rpl_insert_ignore.test
 share/mysql-test/t/rpl_insert_select.test
+share/mysql-test/t/rpl_killed_ddl-master.opt
+share/mysql-test/t/rpl_killed_ddl.test
 share/mysql-test/t/rpl_known_bugs_detection-master.opt
 share/mysql-test/t/rpl_known_bugs_detection.test
 share/mysql-test/t/rpl_loaddata.test
@@ -1937,6 +1953,7 @@ share/mysql-test/t/rpl_multi_update3.test
 share/mysql-test/t/rpl_multi_update4-slave.opt
 share/mysql-test/t/rpl_multi_update4.test
 share/mysql-test/t/rpl_mystery22.test
+share/mysql-test/t/rpl_name_const.test
 share/mysql-test/t/rpl_ndb_innodb_trans-slave.opt
 share/mysql-test/t/rpl_ndb_innodb_trans.test
 share/mysql-test/t/rpl_openssl.test
