@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2009/04/17 20:55:46 kili Exp $
+# $OpenBSD: Makefile,v 1.65 2009/05/30 22:35:56 miod Exp $
 
 COMMENT-main=	PDF viewer for X11
 COMMENT-utils=	PDF conversion tools
 
 DISTNAME=	xpdf-3.02
-PKGNAME-main=	xpdf-3.02.3
+PKGNAME-main=	xpdf-3.02.3p0
 PKGNAME-utils=	xpdf-utils-3.02.3
 CATEGORIES=	textproc x11
 
