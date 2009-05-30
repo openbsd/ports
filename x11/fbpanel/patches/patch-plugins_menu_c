@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_menu_c,v 1.1 2009/05/30 21:34:16 landry Exp $
+--- plugins/menu.c.orig	Mon Jul 30 17:38:54 2007
++++ plugins/menu.c	Sat May 30 15:21:02 2009
+@@ -92,8 +92,8 @@ _menu_shell_insert_sorted(GtkMenuShell *menu_shell, Gt
+     items = gtk_container_get_children(GTK_CONTAINER(menu_shell));
+     for(i=0; items; items=items->next, i++)  {
+         cmpname = (gchar *)g_object_get_data(G_OBJECT(items->data), "item-name");
+-        if(cmpname && g_ascii_strcasecmp(name, cmpname) < 0)
+-            break;
++        if(cmpname && g_ascii_strcasecmp(name, cmpname) == 0)
++            return -1;
+     }
+     gtk_menu_shell_insert(menu_shell, mi, i);
+     return i;

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/07 14:23:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/05/30 21:34:16 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lightweight NETWM compliant desktop panel
 
 DISTNAME=	fbpanel-4.12
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://fbpanel.sourceforge.net/
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
