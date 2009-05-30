@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/21 02:11:57 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/05/30 23:05:11 jasper Exp $
 %%SHARED%%
-bin/mDNSBrowse
-bin/mDNSPublish
-bin/mDNSQuery
-bin/mDNSResolve
-bin/mDNSResponder
+@bin bin/mDNSBrowse
+@bin bin/mDNSPublish
+@bin bin/mDNSQuery
+@bin bin/mDNSResolve
+@bin bin/mDNSResponder
 include/howl/
 include/howl/corby/
 include/howl/corby/buffer.h
