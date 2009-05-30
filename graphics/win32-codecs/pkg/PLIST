@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2006/07/03 18:19:40 robert Exp $
+@comment $OpenBSD: PLIST,v 1.18 2009/05/30 19:05:31 dhill Exp $
 lib/win32/
 lib/win32/AvidQTAVUICodec.qtx
 lib/win32/BeHereiVideo.qtx
@@ -49,6 +49,7 @@ lib/win32/drv33260.dll
 lib/win32/drv43260.dll
 @comment lib/win32/drvc.so
 lib/win32/dspr.so.6.0
+lib/win32/frapsvid.dll
 lib/win32/huffyuv.dll
 lib/win32/i263_32.drv
 lib/win32/iac25_32.ax
@@ -141,4 +142,5 @@ lib/win32/wmvds32.ax
 lib/win32/wnvplay1.dll
 lib/win32/wnvwinx.dll
 lib/win32/wvc1dmod.dll
+lib/win32/xanlib.dll
 lib/win32/zmbv.dll

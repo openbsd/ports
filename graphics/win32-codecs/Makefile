@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 20:09:43 simon Exp $
+# $OpenBSD: Makefile,v 1.21 2009/05/30 19:05:31 dhill Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	Huge compilation of Win32 binary codecs
-DATE=		20061022
+DATE=		20071007
 DATE2=		20050115
 
 DISTNAME=	win32-codecs-${DATE}
