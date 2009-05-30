@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.28 2008/10/02 19:18:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2009/05/30 04:46:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		perl module for using OpenSSL
 
 DISTNAME=		Net-SSLeay-1.35
+PKGNAME=		p5-${DISTNAME}p0
 
 CATEGORIES=		security
 
 MAINTAINER=		Alexander Bluhm <bluhm@openbsd.org>
+
+HOMEPAGE=		http://alioth.debian.org/projects/net-ssleay
 
 # same terms as OpenSSL
 PERMIT_PACKAGE_CDROM=	Yes
