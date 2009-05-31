@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.28 2007/09/15 10:14:32 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2009/05/31 18:06:26 wcmaier Exp $
 
 COMMENT=	create & extract files from DOS .ARC files
 
 DISTNAME=	arc-5.21o
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	archivers
 
-MAINTAINER=	Will Maier <willmaier@ml1.net>
+MAINTAINER=	Will Maier <wcmaier@openbsd.org>
+HOMEPAGE=	http://arc.sourceforge.net/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
