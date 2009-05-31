@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_config_cpp,v 1.1.1.1 2009/05/31 02:51:02 landry Exp $
+don't bail out when the default configuration file is not found,
+defaults just works fine.
+--- src/config.cpp.orig	Sat May 30 18:30:57 2009
++++ src/config.cpp	Sat May 30 18:54:58 2009
+@@ -387,6 +387,8 @@ bool			Configurator::source(string fn, Error & err)
+ 
+ 	if (fd == NULL)
+ 	{
++		if (fn.substr(fn.length() - 7,7) == ".pms/rc")
++			return true;
+ 		err.code = CERR_NO_FILE;
+ 		err.str = "Could not open file.";
+ 		return false;

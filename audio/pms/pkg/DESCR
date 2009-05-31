@@ -1,0 +1,4 @@
+Practical Music Search is a ncurses-based client for MPD. It has a
+command line interface much like Vim, and supports custom colors,
+layouts, and key bindings.  PMS aims to be accessible and highly
+configurable.
