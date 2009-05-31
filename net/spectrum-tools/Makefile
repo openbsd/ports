@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.4 2009/02/18 16:07:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/05/31 17:49:19 ckuethe Exp $
 
 COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
 COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
 
-V =		20080314
+V =		2009-02-R1
 DISTNAME =	spectools-$V
 PKGNAME =	spectrum-tools-$V
 
-FULLPKGNAME-main =  spectrum-tools-$Vp1
-FULLPKGNAME-utils = spectrum-tools-utils-$Vp0
+FULLPKGNAME-main =  spectrum-tools-${V:S/-//g}
+FULLPKGNAME-utils = spectrum-tools-utils-${V:S/-//g}
 
 CATEGORIES =	net
 
-MASTER_SITES =	http://www.kismetwireless.net/code/ \
-		http://spacehopper.org/mirrors/
+MASTER_SITES =	http://www.kismetwireless.net/code/
 
 HOMEPAGE =	http://www.kismetwireless.net/spectools/
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Chris Kuethe <ckuethe@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
