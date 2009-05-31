@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/05/11 19:27:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/05/31 02:25:47 jasper Exp $
 
 COMMENT=	portable multitasking and networking framework for perl
 
 MODULES=	cpan
-DISTNAME=	POE-1.005
+DISTNAME=	POE-1.006
 CATEGORIES=	devel
 
 HOMEPAGE=	http://poe.perl.org/
