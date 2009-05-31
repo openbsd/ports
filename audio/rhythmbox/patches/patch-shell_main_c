@@ -1,7 +1,7 @@
-$OpenBSD: patch-shell_main_c,v 1.4 2009/04/28 10:26:36 ajacoutot Exp $
---- shell/main.c.orig	Mon Apr 20 09:38:15 2009
-+++ shell/main.c	Tue Apr 28 10:19:34 2009
-@@ -330,7 +330,9 @@ main (int argc, char **argv)
+$OpenBSD: patch-shell_main_c,v 1.5 2009/05/31 14:11:36 ajacoutot Exp $
+--- shell/main.c.orig	Sat May 23 14:33:25 2009
++++ shell/main.c	Sun May 31 14:44:37 2009
+@@ -329,7 +329,9 @@ main (int argc, char **argv)
  #ifdef ENABLE_PYTHON
  		pyg_begin_allow_threads;
  #endif

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2009/04/28 10:26:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2009/05/31 14:11:36 ajacoutot Exp $
 
 COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		0.12.1
+GNOME_VERSION=		0.12.2
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 CATEGORIES=		audio
@@ -35,10 +35,13 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		ssl ssl3 tasn1 util xml2 z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			lang/python
 
-BUILD_DEPENDS=		:gstreamer-gnome->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-gnome
-LIB_DEPENDS=		musicbrainz3::audio/libmusicbrainz \
+BUILD_DEPENDS=		:gstreamer-gnome->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-gnome \
+			::py-gstreamer
+LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
+			musicbrainz3::audio/libmusicbrainz \
 			notify::devel/libnotify \
 			gnomeui-2::x11/gnome/libgnomeui \
 			gnome-media-profiles::x11/gnome/media \
@@ -52,7 +55,8 @@ RUN_DEPENDS=		:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugin
 			:gstreamer-plugins-good->=0.10.8:multimedia/gstreamer-0.10/plugins-good,-flac \
 			:gstreamer-plugins-good->=0.10.8:multimedia/gstreamer-0.10/plugins-good,-gconf \
 			:gstreamer-plugins-ugly->=0.10.7:multimedia/gstreamer-0.10/plugins-ugly,-mad \
-			::x11/gnome/icon-theme
+			::x11/gnome/icon-theme \
+			::py-gstreamer
 REGRESS_DEPENDS=	::devel/check
 
 USE_X11=		Yes
@@ -66,8 +70,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-database=tree \
 			--with-gnome-keyring \
 			--with-x \
+			--enable-python \
 			--disable-scrollkeeper \
-			--disable-python \
 			--disable-daap \
 			--without-hal \
 			--without-mdns \
@@ -79,7 +83,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-vala \
 			--disable-browser-plugin \
 			--disable-fm-radio \
-			--disable-lirc
+			--disable-lirc \
+			--disable-daap
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
