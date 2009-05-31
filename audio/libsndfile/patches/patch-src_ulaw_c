@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ulaw_c,v 1.1 2009/05/31 17:31:13 jasper Exp $
+
+Security fix for SA35266.
+
+--- src/ulaw.c.orig	Sun Mar 22 13:17:14 2009
++++ src/ulaw.c	Sun May 31 10:21:16 2009
+@@ -59,7 +59,7 @@ ulaw_init (SF_PRIVATE *psf)
+ 	else
+ 		psf->datalength = 0 ;
+ 
+-	psf->sf.frames = psf->datalength / psf->blockwidth ;
++	psf->sf.frames = psf->blockwidth > 0 ? psf->datalength / psf->blockwidth : 0 ;
+ 
+ 	return 0 ;
+ } /* ulaw_init */

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_float32_c,v 1.1 2009/05/31 17:31:13 jasper Exp $
+
+Security fix for SA35266.
+
+--- src/float32.c.orig	Tue Mar 24 20:59:47 2009
++++ src/float32.c	Sun May 31 10:21:16 2009
+@@ -241,7 +241,7 @@ float32_init	(SF_PRIVATE *psf)
+ 	else
+ 		psf->datalength = 0 ;
+ 
+-	psf->sf.frames = psf->datalength / psf->blockwidth ;
++	psf->sf.frames = psf->blockwidth > 0 ? psf->datalength / psf->blockwidth : 0 ;
+ 
+ 	return 0 ;
+ } /* float32_init */
