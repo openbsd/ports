@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_vim_h,v 1.1 2009/05/31 18:59:51 ckuethe Exp $
+--- src/vim.h.orig	Sun May 31 12:52:45 2009
++++ src/vim.h	Sun May 31 12:54:18 2009
+@@ -261,6 +261,7 @@
+ #ifndef __PARMS
+ # define __PARMS(x) __ARGS(x)
+ #endif
++#define UNUSED __attribute__((unused))
+ 
+ /* if we're compiling in C++ (currently only KVim), the system
+  * headers must have the correct prototypes or nothing will build.
