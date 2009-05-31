@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2009/02/03 12:30:57 pirofti Exp $
+# $OpenBSD: Makefile,v 1.42 2009/05/31 21:12:26 benoit Exp $
 
      SUBDIR += arc
      SUBDIR += bzip
@@ -29,6 +29,7 @@
      SUBDIR += p7zip
      SUBDIR += par1cmdline
      SUBDIR += par2cmdline
+     SUBDIR += py-lzo
      SUBDIR += rar
      SUBDIR += ripole
      SUBDIR += ruby-archive-tar-minitar
