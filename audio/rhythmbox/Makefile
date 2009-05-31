@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/05/31 14:11:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2009/05/31 21:22:53 ajacoutot Exp $
 
 COMMENT=		music management application for GNOME
 
@@ -39,7 +39,7 @@ MODULES=		devel/gettext \
 			lang/python
 
 BUILD_DEPENDS=		:gstreamer-gnome->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-gnome \
-			::py-gstreamer
+			::multimedia/gstreamer-0.10/py-gstreamer
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			musicbrainz3::audio/libmusicbrainz \
 			notify::devel/libnotify \
