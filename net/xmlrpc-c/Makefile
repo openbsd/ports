@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/14 19:01:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/05/31 15:54:18 benoit Exp $
 
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
 
-V=		1.06.32
+V=		1.06.35
 DISTNAME=	xmlrpc-c-${V}
 
 EXTRACT_SUFX=	.tgz

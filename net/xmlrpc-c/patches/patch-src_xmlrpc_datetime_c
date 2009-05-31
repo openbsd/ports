@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_xmlrpc_datetime_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
---- src/xmlrpc_datetime.c.orig	Mon Dec 18 11:19:46 2006
-+++ src/xmlrpc_datetime.c	Mon Dec 18 12:06:13 2006
-@@ -243,7 +243,11 @@ static void
+$OpenBSD: patch-src_xmlrpc_datetime_c,v 1.2 2009/05/31 15:54:20 benoit Exp $
+--- src/xmlrpc_datetime.c.orig	Wed Apr 22 00:42:03 2009
++++ src/xmlrpc_datetime.c	Tue May 26 01:12:35 2009
+@@ -251,7 +251,11 @@ static void
  restoreTimezone(const char * const oldTz) {
  
      if (haveSetenv) {
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_xmlrpc_datetime_c,v 1.1.1.1 2006/12/18 14:39:56 espie Exp $
          free((char*)oldTz);
      }
  }
-@@ -389,6 +393,7 @@ parseDatetime(xmlrpc_env * const envP,
+@@ -397,6 +401,7 @@ parseDatetime(xmlrpc_env * const envP,
          else {
              struct tm brokenTime;
              
