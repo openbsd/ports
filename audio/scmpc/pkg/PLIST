@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 21:48:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/05/31 20:47:08 jasper Exp $
 bin/scmpc
 @man man/man1/scmpc.1
 share/scmpc/
-@sample ${SYSCONFDIR}/scmpc/
 @sample /var/scmpc/
 share/scmpc/scmpc.conf
-@sample ${SYSCONFDIR}/scmpc/scmpc.conf
+@sample ${SYSCONFDIR}/scmpc.conf
 @extraunexec rm -fr /var/scmpc/* 2>/dev/null || true

@@ -1,11 +1,8 @@
---- src/preferences.c.orig	Sat Dec  2 21:59:17 2006
-+++ src/preferences.c	Tue Jan  1 21:49:51 2008
-@@ -39,10 +39,10 @@
- #include "scmpc.h"
- #include "preferences.h"
- 
--#define DEFAULT_CONFIG_FILE SYSCONFDIR "/scmpc.conf"
-+#define DEFAULT_CONFIG_FILE SYSCONFDIR "/scmpc/scmpc.conf"
+$OpenBSD: patch-src-preferences_c,v 1.3 2009/05/31 20:47:08 jasper Exp $
+--- src/preferences.c.orig	Sat Dec  2 13:59:17 2006
++++ src/preferences.c	Sun May 31 14:41:17 2009
+@@ -42,7 +42,7 @@
+ #define DEFAULT_CONFIG_FILE SYSCONFDIR "/scmpc.conf"
  #define DEFAULT_PID_FILE "/var/run/scmpc.pid"
  #define DEFAULT_LOG_FILE "/var/log/scmpc.log"
 -#define DEFAULT_CACHE_FILE "/var/lib/scmpc/scmpc.cache"
