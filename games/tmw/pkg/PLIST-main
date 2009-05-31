@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2009/01/26 10:57:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/05/31 00:19:22 jasper Exp $
 @bin bin/tmw
 @man man/man6/tmw.6
 share/applications/tmw.desktop
@@ -36,6 +36,7 @@ share/pixmaps/tmw.png
 share/tmw/
 share/tmw/data/
 share/tmw/data/fonts/
+share/tmw/data/fonts/dejavusans-bold.ttf
 share/tmw/data/fonts/dejavusans.ttf
 share/tmw/data/graphics/
 share/tmw/data/graphics/gui/
@@ -46,13 +47,12 @@ share/tmw/data/graphics/gui/button_disabled.png
 share/tmw/data/graphics/gui/buttonhi.png
 share/tmw/data/graphics/gui/buttonpress.png
 share/tmw/data/graphics/gui/checkbox.png
+share/tmw/data/graphics/gui/circle-gray.png
+share/tmw/data/graphics/gui/circle-green.png
 share/tmw/data/graphics/gui/close_button.png
 share/tmw/data/graphics/gui/deepbox.png
-share/tmw/data/graphics/gui/emotions.png
-share/tmw/data/graphics/gui/fixedfont.png
-share/tmw/data/graphics/gui/hits_blue.png
-share/tmw/data/graphics/gui/hits_red.png
-share/tmw/data/graphics/gui/hits_yellow.png
+share/tmw/data/graphics/gui/default.png
+share/tmw/data/graphics/gui/gui.xml
 share/tmw/data/graphics/gui/hscroll_left_default.png
 share/tmw/data/graphics/gui/hscroll_left_highlight.png
 share/tmw/data/graphics/gui/hscroll_left_pressed.png
@@ -60,17 +60,14 @@ share/tmw/data/graphics/gui/hscroll_right_default.png
 share/tmw/data/graphics/gui/hscroll_right_highlight.png
 share/tmw/data/graphics/gui/hscroll_right_pressed.png
 share/tmw/data/graphics/gui/item_shortcut_bgr.png
-share/tmw/data/graphics/gui/menuitemD.png
-share/tmw/data/graphics/gui/menuitemF.png
-share/tmw/data/graphics/gui/menuitemN.png
-share/tmw/data/graphics/gui/menuitemP.png
 share/tmw/data/graphics/gui/mouse.png
 share/tmw/data/graphics/gui/radioin.png
 share/tmw/data/graphics/gui/radioout.png
 share/tmw/data/graphics/gui/resize.png
-share/tmw/data/graphics/gui/rpgfont_wider.png
 share/tmw/data/graphics/gui/selection.png
 share/tmw/data/graphics/gui/slider.png
+share/tmw/data/graphics/gui/speechbubble.xml
+share/tmw/data/graphics/gui/sticky_button.png
 share/tmw/data/graphics/gui/tab.png
 share/tmw/data/graphics/gui/tabselected.png
 share/tmw/data/graphics/gui/target-cursor-blue-l.png
@@ -79,14 +76,11 @@ share/tmw/data/graphics/gui/target-cursor-blue-s.png
 share/tmw/data/graphics/gui/target-cursor-red-l.png
 share/tmw/data/graphics/gui/target-cursor-red-m.png
 share/tmw/data/graphics/gui/target-cursor-red-s.png
-share/tmw/data/graphics/gui/thickborder.png
 share/tmw/data/graphics/gui/unknown-item.png
-share/tmw/data/graphics/gui/vscroll_blue.png
 share/tmw/data/graphics/gui/vscroll_down_default.png
 share/tmw/data/graphics/gui/vscroll_down_highlight.png
 share/tmw/data/graphics/gui/vscroll_down_pressed.png
 share/tmw/data/graphics/gui/vscroll_grey.png
-share/tmw/data/graphics/gui/vscroll_red.png
 share/tmw/data/graphics/gui/vscroll_up_default.png
 share/tmw/data/graphics/gui/vscroll_up_highlight.png
 share/tmw/data/graphics/gui/vscroll_up_pressed.png
