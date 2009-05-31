@@ -1,7 +1,7 @@
-$OpenBSD: patch-scrotwm_c,v 1.4 2009/04/01 06:41:09 jasper Exp $
---- scrotwm.c.orig	Sun Mar 15 16:19:46 2009
-+++ scrotwm.c	Wed Apr  1 08:39:59 2009
-@@ -140,7 +140,7 @@ u_int32_t		swm_debug = 0
+$OpenBSD: patch-scrotwm_c,v 1.5 2009/05/31 18:29:53 pyr Exp $
+--- scrotwm.c.orig	Sun May 31 20:15:54 2009
++++ scrotwm.c	Sun May 31 20:16:08 2009
+@@ -143,7 +143,7 @@ u_int32_t		swm_debug = 0
  #define SWM_MAX_FONT_STEPS	(3)
  
  #ifndef SWM_LIB
@@ -10,12 +10,3 @@ $OpenBSD: patch-scrotwm_c,v 1.4 2009/04/01 06:41:09 jasper Exp $
  #endif
  
  char			**start_argv;
-@@ -1562,7 +1562,7 @@ stack_master(struct workspace *ws, struct swm_geometry
- 	int			w_inc = 1, h_inc, w_base = 1, h_base;
- 	int			hrh, extra = 0, h_slice, last_h = 0;
- 	int			split, colno, winno, mwin, msize, mscale;
--	int			remain, missing, v_slice;;
-+	int			remain, missing, v_slice;
- 	unsigned int		mask;
- 
- 	DNPRINTF(SWM_D_STACK, "stack_master: workspace: %d\n rot=%s flip=%s",
