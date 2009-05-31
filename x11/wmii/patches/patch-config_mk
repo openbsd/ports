@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_mk,v 1.3 2008/03/15 12:52:50 mcbride Exp $
---- config.mk.orig	Fri Nov 16 06:59:15 2007
-+++ config.mk	Tue Feb 19 03:56:08 2008
+$OpenBSD: patch-config_mk,v 1.4 2009/05/31 16:24:23 sthen Exp $
+--- config.mk.orig	Fri Nov 16 13:59:15 2007
++++ config.mk	Sun May 31 17:21:19 2009
 @@ -1,10 +1,10 @@
  # Customize below to fit your system
  
@@ -15,7 +15,20 @@ $OpenBSD: patch-config_mk,v 1.3 2008/03/15 12:52:50 mcbride Exp $
  LIBDIR = ${PREFIX}/lib
  INCLUDE = ${PREFIX}/include
  
-@@ -31,9 +31,8 @@ P9PATHS = ${PLAN9}:"'$${HOME}/plan9'":/usr/local/plan9
+@@ -14,8 +14,10 @@ LIBS = -L/usr/lib -lc -L${ROOT}/lib
+ 
+ # Flags
+ include ${ROOT}/mk/gcc.mk
+-CFLAGS += -g -O0 -DIXPlint
+-LDFLAGS += -g ${LIBS}
++#CFLAGS += -g -O0 -DIXPlint
++CFLAGS += -DIXPlint
++#LDFLAGS += -g ${LIBS}
++LDFLAGS += ${LIBS}
+ STATIC = -static
+ MKDEP = cpp -M
+ 
+@@ -31,9 +33,8 @@ P9PATHS = ${PLAN9}:"'$${HOME}/plan9'":/usr/local/plan9
  
  INCX11 = -I/usr/X11R6/include
  LIBX11 = -L/usr/X11R6/lib -lX11

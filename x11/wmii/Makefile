@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/05/18 23:25:57 jim Exp $
+# $OpenBSD: Makefile,v 1.13 2009/05/31 16:24:23 sthen Exp $
 
 COMMENT=	dynamic window manager
 
 DISTNAME=	wmii-3.6
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	x11
 
 HOMEPAGE=	http://wmii.suckless.org/
@@ -27,7 +27,8 @@ USE_X11=	Yes
 
 NO_REGRESS=	Yes
 
-FAKE_FLAGS=	PREFIX=${WRKINST}/usr/local \
-		MAN=${WRKINST}/usr/local/man
+MAKE_FLAGS=	noisycc=1
+FAKE_FLAGS=	PREFIX=${WRKINST}${LOCALBASE} \
+		MAN=${WRKINST}${LOCALBASE}/man
 
 .include <bsd.port.mk>
