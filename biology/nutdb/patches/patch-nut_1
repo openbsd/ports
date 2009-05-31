@@ -1,11 +1,15 @@
---- nut.1.orig	Sun Feb  8 00:52:28 2009
-+++ nut.1	Thu Apr  2 15:23:37 2009
-@@ -4,14 +4,14 @@
+--- nut.1.orig	Sat Apr 11 15:24:19 2009
++++ nut.1	Sun May 31 10:11:16 2009
+@@ -1,17 +1,17 @@
+-.\" manual page [] for nut
++.\" manual page [] for nutdb
+ .\" SH section heading
+ .\" SS subsection heading
  .\" LP paragraph
  .\" IP indented paragraph
  .\" TP hanging label
--.TH "nut" "1" "2009.02.07" "" ""
-+.TH "nutdb" "1" "2009.02.07" "" ""
+-.TH "nut" "1" "2009.04.12" "" ""
++.TH "nutdb" "1" "2009.04.12" "" ""
  .SH "NAME"
 -.B nut \- analyze meals with the USDA Nutrient Database
 +.B nutdb \- analyze meals with the USDA Nutrient Database
@@ -28,7 +32,7 @@
  can be called with an optional argument to specify a database subdirectory.
  For example, if a user tracks meals for other family members, each person
  can have his own database, and each database is entirely separate.
-@@ -139,7 +139,7 @@ desired,
+@@ -144,7 +144,7 @@ desired,
  and provides an opportunity to adjust the weight of the servings to allow
  for water gained or lost in preparation.
  
@@ -37,7 +41,7 @@
  with an ordered list of ingredients and a nutrition statement. 
  The new food will have  additional nutrients that
  were not on the nutrition statement, but that the database says are in the food.
-@@ -163,10 +163,10 @@ the program are the USA standard 2000\-calorie Daily V
+@@ -168,10 +168,10 @@ the program are the USA standard 2000\-calorie Daily V
  customized options\-\-but users can always set the label's nutrient information in grams.
  Only Daily Value nutrients greater than zero are considered as
  constraints when
@@ -51,7 +55,7 @@
  that according
  to the food database, there is no way to match the ingredients with the
  constraints of the nutrition statement.
-@@ -175,11 +175,11 @@ edit the
+@@ -180,11 +180,11 @@ edit the
  nutrient values.
  Perhaps the food was so heavily fortified with vitamins
  that the user waited until
@@ -65,7 +69,7 @@
  in the same manner as a recipe.
  
  To modify the serving size of an existing food, the food is selected
-@@ -267,7 +267,7 @@ non\-fiber carb as  "." and fiber as ":".
+@@ -272,7 +272,7 @@ non\-fiber carb as  "." and fiber as ":".
  
  .B Record 'The Usual'\-\-Customary Meals:
  When 
@@ -74,7 +78,7 @@
  asks what you are having, you can answer "the usual."  Specifically,
  this function allows you to record a customary meal, 
  and give it a name.  Later, when
-@@ -298,7 +298,7 @@ food.db         Food database
+@@ -303,7 +303,7 @@ food.db         Food database
  meal.db         Meal database
  theusual.db     Customary Meals database
  OPTIONS.txt     Personal Options records
