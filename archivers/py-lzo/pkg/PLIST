@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/31 21:03:10 benoit Exp $
+lib/python${MODPY_VERSION}/site-packages/lzo.so
+lib/python${MODPY_VERSION}/site-packages/python_lzo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+share/examples/py-lzo/
+share/examples/py-lzo/test.py
+share/examples/py-lzo/util.py

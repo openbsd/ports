@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2009/05/31 21:03:10 benoit Exp $
+--- setup.py.orig	Wed Jul 17 19:18:50 2002
++++ setup.py	Sun May 31 02:28:11 2009
+@@ -25,9 +25,9 @@ if sys.platform == "win32":
+     extra_objects.append(os.path.join(CURL_DIR, "lzo.lib"))
+ else:
+     libraries = ["lzo"]
+-    ##include_dirs.append("/usr/local/include")
+-    ##library_dirs.append("/usr/local/lib")
+-    ##runtime_library_dirs.append("/usr/local/lib")
++    include_dirs.append("${PREFIX}/include")
++    library_dirs.append("${PREFIX}/lib")
++    runtime_library_dirs.append("${PREFIX}/lib")
+ 
+     # Add extra compile flag for MacOS X
+     if sys.platform[:-1] == "darwin":
