@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/03/05 18:26:07 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/05/31 01:56:51 landry Exp $
 %%SHARED%%
 @bin bin/geany
 include/geany/
@@ -11,6 +11,7 @@ include/geany/geany.h
 include/geany/geanyfunctions.h
 include/geany/highlighting.h
 include/geany/keybindings.h
+include/geany/main.h
 include/geany/msgwindow.h
 include/geany/plugindata.h
 include/geany/pluginmacros.h
@@ -52,8 +53,6 @@ lib/geany/saveactions.a
 lib/geany/saveactions.la
 lib/geany/splitwindow.a
 lib/geany/splitwindow.la
-lib/geany/vcdiff.a
-@comment lib/geany/vcdiff.la
 lib/pkgconfig/
 lib/pkgconfig/geany.pc
 @man man/man1/geany.1
@@ -86,6 +85,7 @@ share/geany/
 share/geany/GPL-2
 share/geany/c99.tags
 share/geany/filetype_extensions.conf
+share/geany/filetypes.actionscript
 share/geany/filetypes.asm
 share/geany/filetypes.c
 share/geany/filetypes.caml
