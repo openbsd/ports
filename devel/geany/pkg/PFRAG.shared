@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2009/05/31 01:56:51 landry Exp $
-lib/geany/classbuilder.so
-lib/geany/export.so
-lib/geany/filebrowser.so
-lib/geany/htmlchars.so
-lib/geany/saveactions.so
-lib/geany/splitwindow.so

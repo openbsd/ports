@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/05/31 01:56:51 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.12 2009/05/31 02:33:08 landry Exp $
 @bin bin/geany
 include/geany/
 include/geany/dialogs.h
@@ -40,20 +39,24 @@ include/geany/toolbar.h
 include/geany/ui_utils.h
 include/geany/utils.h
 lib/geany/
-@comment lib/geany/autosave.la
-lib/geany/classbuilder.a
+@comment lib/geany/classbuilder.a
 @comment lib/geany/classbuilder.la
-lib/geany/export.a
+lib/geany/classbuilder.so
+@comment lib/geany/export.a
 @comment lib/geany/export.la
-lib/geany/filebrowser.a
+lib/geany/export.so
+@comment lib/geany/filebrowser.a
 @comment lib/geany/filebrowser.la
-lib/geany/htmlchars.a
+lib/geany/filebrowser.so
+@comment lib/geany/htmlchars.a
 @comment lib/geany/htmlchars.la
-lib/geany/saveactions.a
-lib/geany/saveactions.la
-lib/geany/splitwindow.a
-lib/geany/splitwindow.la
-lib/pkgconfig/
+lib/geany/htmlchars.so
+@comment lib/geany/saveactions.a
+@comment lib/geany/saveactions.la
+lib/geany/saveactions.so
+@comment lib/geany/splitwindow.a
+@comment lib/geany/splitwindow.la
+lib/geany/splitwindow.so
 lib/pkgconfig/geany.pc
 @man man/man1/geany.1
 share/applications/geany.desktop
@@ -135,10 +138,6 @@ share/geany/php.tags
 share/geany/python.tags
 share/geany/snippets.conf
 share/geany/ui_toolbar.xml
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/classviewer-class.png
 share/icons/hicolor/16x16/apps/classviewer-macro.png
 share/icons/hicolor/16x16/apps/classviewer-member.png
@@ -153,8 +152,6 @@ share/locale/ca/LC_MESSAGES/geany.mo
 share/locale/cs/LC_MESSAGES/geany.mo
 share/locale/de/LC_MESSAGES/geany.mo
 share/locale/el/LC_MESSAGES/geany.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/geany.mo
 share/locale/es/LC_MESSAGES/geany.mo
 share/locale/fi/LC_MESSAGES/geany.mo

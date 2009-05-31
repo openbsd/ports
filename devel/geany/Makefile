@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2009/05/31 01:56:51 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2009/05/31 02:33:08 landry Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	small and lightweight IDE
 
 DISTNAME=	geany-0.17
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.geany.org
