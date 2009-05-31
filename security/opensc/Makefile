@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/13 21:33:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/05/31 16:51:07 jasper Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
-DISTNAME=	opensc-0.11.7
+DISTNAME=	opensc-0.11.8
 CATEGORIES=	security
 SHARED_LIBS +=  scconf               2.0      # .1.0
 SHARED_LIBS +=  opensc               2.0      # .1.0
