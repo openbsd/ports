@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2009/05/31 21:22:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2009/05/31 21:27:01 jasper Exp $
 
 COMMENT=		music management application for GNOME
 
@@ -56,7 +56,7 @@ RUN_DEPENDS=		:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugin
 			:gstreamer-plugins-good->=0.10.8:multimedia/gstreamer-0.10/plugins-good,-gconf \
 			:gstreamer-plugins-ugly->=0.10.7:multimedia/gstreamer-0.10/plugins-ugly,-mad \
 			::x11/gnome/icon-theme \
-			::py-gstreamer
+			::multimedia/gstreamer-0.10/py-gstreamer
 REGRESS_DEPENDS=	::devel/check
 
 USE_X11=		Yes
