@@ -1,20 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/30 16:18:10 eric Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/06/01 21:18:20 eric Exp $
 lib/python${MODPY_VERSION}/site-packages/zope/
-lib/python${MODPY_VERSION}/site-packages/zope.interface-${VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/zope.interface-${VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/zope.interface-${VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/zope.interface-${VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/zope.interface-${VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/zope.interface-${VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/zope.interface-${VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/zope/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zope/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/
-lib/python${MODPY_VERSION}/site-packages/zope/interface/DEPENDENCIES.cfg
-lib/python${MODPY_VERSION}/site-packages/zope/interface/PUBLICATION.cfg
 lib/python${MODPY_VERSION}/site-packages/zope/interface/README.ru.txt
 lib/python${MODPY_VERSION}/site-packages/zope/interface/README.txt
-lib/python${MODPY_VERSION}/site-packages/zope/interface/SETUP.cfg
 lib/python${MODPY_VERSION}/site-packages/zope/interface/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/_flatten.py
@@ -55,6 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/zope/interface/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/human.ru.txt
 lib/python${MODPY_VERSION}/site-packages/zope/interface/human.txt
+lib/python${MODPY_VERSION}/site-packages/zope/interface/index.txt
 lib/python${MODPY_VERSION}/site-packages/zope/interface/interface.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/interface.pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/interfaces.py
@@ -97,3 +95,4 @@ lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/unitfixtures.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/unitfixtures.pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/verify.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/verify.pyc
+lib/python${MODPY_VERSION}/site-packages/zope/interface/verify.txt
