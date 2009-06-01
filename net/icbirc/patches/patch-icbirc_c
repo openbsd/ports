@@ -1,0 +1,11 @@
+$OpenBSD: patch-icbirc_c,v 1.1 2009/06/01 07:06:12 ray Exp $
+--- icbirc.c.orig	Thu Nov 18 13:14:06 2004
++++ icbirc.c	Sat May 30 20:29:23 2009
+@@ -258,6 +258,7 @@ handle_client(int client_fd)
+ 
+ 	irc_send_notice(client_fd, "Connected");
+ 	terminate_client = 0;
++	icb_init();
+ 	while (!terminate_client) {
+ 		fd_set readfds;
+ 		struct timeval tv;

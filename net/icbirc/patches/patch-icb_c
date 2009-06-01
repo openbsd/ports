@@ -1,0 +1,37 @@
+$OpenBSD: patch-icb_c,v 1.1 2009/06/01 07:06:12 ray Exp $
+--- icb.c.orig	Thu Nov 18 13:14:06 2004
++++ icb.c	Sat May 30 20:29:23 2009
+@@ -60,6 +60,7 @@ static char icurgroup[256];
+ static char igroup[256];
+ static char inick[256];
+ static char ihostmask[256];
++static unsigned off;
+ 
+ /*
+  * A single ICB packet consists of a length byte, a command byte and
+@@ -124,10 +125,24 @@ scan(const char **s, char *d, size_t siz, const char *
+ }
+ 
+ void
++icb_init(void)
++{
++	memset(icb_protolevel, 0, sizeof(icb_protolevel));
++	memset(icb_hostid, 0, sizeof(icb_hostid));
++	memset(icb_serverid, 0, sizeof(icb_serverid));
++	memset(icb_moderator, 0, sizeof(icb_moderator));
++	imode = imode_none;
++	memset(icurgroup, 0, sizeof(icurgroup));
++	memset(igroup, 0, sizeof(igroup));
++	memset(inick, 0, sizeof(inick));
++	memset(ihostmask, 0, sizeof(ihostmask));
++	off = 0;
++}
++
++void
+ icb_recv(const char *buf, unsigned len, int fd, int server_fd)
+ {
+ 	static unsigned char cmd[256];
+-	static unsigned off = 0;
+ 
+ 	while (len > 0) {
+ 		if (off == 0) {

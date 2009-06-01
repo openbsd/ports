@@ -1,0 +1,11 @@
+$OpenBSD: patch-icb_h,v 1.1 2009/06/01 07:06:12 ray Exp $
+--- icb.h.orig	Thu Nov 18 13:14:06 2004
++++ icb.h	Sat May 30 20:29:23 2009
+@@ -3,6 +3,7 @@
+ #ifndef _ICB_H_
+ #define _ICB_H_
+ 
++void	 icb_init(void);
+ void	 icb_recv(const char *, unsigned, int, int);
+ void	 icb_send_login(int, const char *, const char *, const char *);
+ void	 icb_send_openmsg(int, const char *);
