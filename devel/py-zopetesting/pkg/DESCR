@@ -1,0 +1,3 @@
+This package provides a number of testing frameworks that Zope 3
+packages use for their test suites.  It includes a flexible test
+runner, and supports both doctest and unittest.
