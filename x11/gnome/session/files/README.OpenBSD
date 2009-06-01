@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.23 2009/05/11 09:10:24 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.24 2009/06/01 22:28:34 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 
@@ -56,6 +56,7 @@ you can install. The most important ones will be mentioned by category:
    * gucharmap - Unicode character map
    * hamster-applet - time tracker applet
    * mergeant - database administration GUI
+   * nautilus-open-terminal - open terminal from a nautilus folder
    * nautilus-sendto - integrate applications into Nautilus
    * pessulus - lockdown editor for desktop
    * planner - project management
