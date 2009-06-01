@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2009/05/26 08:19:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.220 2009/06/01 07:00:48 benoit Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -87,6 +87,7 @@
      SUBDIR += opencdk
      SUBDIR += openct
      SUBDIR += opensc
+     SUBDIR += ophcrack
      SUBDIR += otpcalc
      SUBDIR += outguess
      SUBDIR += p0f
