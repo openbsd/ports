@@ -1,5 +1,0 @@
-AssetML defines an xml file that let application developer to use it
-as a resource database.  The idea is to be have a way to search content
-on your hard drive with metadata (like name, category, file type,
-description) instead of just a file name.  This way, users can browse
-content more easily and developpers can share content more easily.

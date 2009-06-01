@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/11/12 14:00:36 ajacoutot Exp $
-@lib lib/libassetml.so.${LIBassetml_VERSION}
