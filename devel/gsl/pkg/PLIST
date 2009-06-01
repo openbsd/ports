@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/12/22 07:35:20 canacar Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/06/01 13:37:05 benoit Exp $
 %%SHARED%%
 bin/gsl-config
-bin/gsl-histogram
-bin/gsl-randist
+@bin bin/gsl-histogram
+@bin bin/gsl-randist
 include/gsl/
 include/gsl/gsl_blas.h
 include/gsl/gsl_blas_types.h
@@ -21,6 +21,7 @@ include/gsl/gsl_block_uchar.h
 include/gsl/gsl_block_uint.h
 include/gsl/gsl_block_ulong.h
 include/gsl/gsl_block_ushort.h
+include/gsl/gsl_bspline.h
 include/gsl/gsl_cblas.h
 include/gsl/gsl_cdf.h
 include/gsl/gsl_chebyshev.h
@@ -53,6 +54,7 @@ include/gsl/gsl_heapsort.h
 include/gsl/gsl_histogram.h
 include/gsl/gsl_histogram2d.h
 include/gsl/gsl_ieee_utils.h
+include/gsl/gsl_inline.h
 include/gsl/gsl_integration.h
 include/gsl/gsl_interp.h
 include/gsl/gsl_linalg.h
@@ -75,6 +77,7 @@ include/gsl/gsl_matrix_ulong.h
 include/gsl/gsl_matrix_ushort.h
 include/gsl/gsl_message.h
 include/gsl/gsl_min.h
+include/gsl/gsl_minmax.h
 include/gsl/gsl_mode.h
 include/gsl/gsl_monte.h
 include/gsl/gsl_monte_miser.h
@@ -148,6 +151,7 @@ include/gsl/gsl_sf_laguerre.h
 include/gsl/gsl_sf_lambert.h
 include/gsl/gsl_sf_legendre.h
 include/gsl/gsl_sf_log.h
+include/gsl/gsl_sf_mathieu.h
 include/gsl/gsl_sf_pow_int.h
 include/gsl/gsl_sf_psi.h
 include/gsl/gsl_sf_result.h

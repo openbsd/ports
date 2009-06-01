@@ -1,7 +1,7 @@
-$OpenBSD: patch-ieee-utils_read_c,v 1.1 2005/05/30 17:58:08 canacar Exp $
---- ieee-utils/read.c.orig	Sun May 29 18:27:52 2005
-+++ ieee-utils/read.c	Sun May 29 18:29:21 2005
-@@ -41,14 +41,12 @@ gsl_ieee_read_mode_string (const char * 
+$OpenBSD: patch-ieee-utils_read_c,v 1.2 2009/06/01 13:37:03 benoit Exp $
+--- ieee-utils/read.c.orig	Wed Nov 19 10:13:46 2008
++++ ieee-utils/read.c	Mon Jun  1 15:27:59 2009
+@@ -41,14 +41,12 @@ gsl_ieee_read_mode_string (const char * description, 
    int rounding_count = 0 ;
    int exception_count = 0 ;
  
