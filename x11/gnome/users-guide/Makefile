@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2009/03/14 11:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2009/06/01 23:32:58 ajacoutot Exp $
 
-# This port does not run_depends on devhelp on purpose, as it would
+# This port does not run_depends on yelp on purpose, as it would
 # create a cyclic dependency.
 
 PKG_ARCH=		*
