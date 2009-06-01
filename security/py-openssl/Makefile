@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/11 22:05:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.12 2009/06/01 20:25:24 benoit Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
-VERSION=	0.8
-DISTNAME=	pyOpenSSL-${VERSION}
-PKGNAME=        py-openssl-${VERSION}p0
-CATEGORIES=    	security devel
+MODPY_EGG_VERSION=	0.9
+DISTNAME=	pyOpenSSL-${MODPY_EGG_VERSION}
+PKGNAME=	py-openssl-${MODPY_EGG_VERSION}
+CATEGORIES=	security devel
 
 HOMEPAGE=	http://www.sourceforge.net/projects/pyopenssl/
 
 MAINTAINER=	Eric Faurot <eric@openbsd.org>
 
-# LGPL
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -22,8 +22,6 @@ WANTLIB=	crypto ssl
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyopenssl/}
 
 MODULES=	lang/python
-
-MODPY_EGG_VERSION=${VERSION}
 
 REGRESS_DEPENDS=:py-twisted-core-*:devel/py-twisted/core
 

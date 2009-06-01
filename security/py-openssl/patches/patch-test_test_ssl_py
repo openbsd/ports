@@ -1,9 +1,17 @@
-$OpenBSD: patch-test_test_ssl_py,v 1.1 2009/01/30 16:13:55 eric Exp $
---- test/test_ssl.py.orig	Mon Sep 22 02:36:55 2008
-+++ test/test_ssl.py	Mon Jan 26 20:47:05 2009
-@@ -80,7 +80,7 @@ class ContextTests(TestCase, _Python23TestCaseHelper):
+--- test/test_ssl.py.orig	Sat Apr 25 14:47:06 2009
++++ test/test_ssl.py	Fri May 22 17:04:34 2009
+@@ -101,7 +101,7 @@
          when certain information about an SSL connection is available.
          """
+         port = socket()
+-        port.bind(('', 0))
++        port.bind(('127.0.0.1', 0))
+         port.listen(1)
+ 
+         client = socket()
+@@ -140,7 +140,7 @@
+ 
+     def _load_verify_locations_test(self, *args):
          port = socket()
 -        port.bind(('', 0))
 +        port.bind(('127.0.0.1', 0))
