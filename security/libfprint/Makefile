@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/30 15:40:35 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/01 20:35:02 jasper Exp $
 
 COMMENT=	library for fingerprint reader devices
 
 DISTNAME=	libfprint-0.0.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=    	security
 
 SHARED_LIBS=	fprint 0.0
