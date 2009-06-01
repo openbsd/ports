@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/04/27 19:25:09 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/06/01 05:51:31 landry Exp $
 %%SHARED%%
 @bin bin/jsc
 include/webkit-1.0/
@@ -18,6 +18,7 @@ include/webkit-1.0/webkit/webkit.h
 include/webkit-1.0/webkit/webkitdefines.h
 include/webkit-1.0/webkit/webkitdownload.h
 include/webkit-1.0/webkit/webkitenumtypes.h
+include/webkit-1.0/webkit/webkiterror.h
 include/webkit-1.0/webkit/webkitnetworkrequest.h
 include/webkit-1.0/webkit/webkitsoupauthdialog.h
 include/webkit-1.0/webkit/webkitversion.h
@@ -38,11 +39,30 @@ share/locale/
 share/locale/de/
 share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/webkit.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
+share/locale/it/LC_MESSAGES/webkit.mo
 share/locale/pt_BR/
 share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/webkit.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
+share/locale/ru/LC_MESSAGES/webkit.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
+share/locale/sv/LC_MESSAGES/webkit.mo
 share/webkit-1.0/
+share/webkit-1.0/images/
+share/webkit-1.0/images/deleteButton.png
+share/webkit-1.0/images/missingImage.png
+share/webkit-1.0/images/nullPlugin.png
+share/webkit-1.0/images/panIcon.png
+share/webkit-1.0/images/textAreaResizeCorner.png
+share/webkit-1.0/images/urlIcon.png
+share/webkit-1.0/resources/
+share/webkit-1.0/resources/error.html
 share/webkit-1.0/webinspector/
+share/webkit-1.0/webinspector/BottomUpProfileDataGridTree.js
 share/webkit-1.0/webinspector/Breakpoint.js
 share/webkit-1.0/webinspector/BreakpointsSidebarPane.js
 share/webkit-1.0/webinspector/CallStackSidebarPane.js
@@ -179,6 +199,7 @@ share/webkit-1.0/webinspector/ObjectPropertiesSection.js
 share/webkit-1.0/webinspector/Panel.js
 share/webkit-1.0/webinspector/PanelEnablerView.js
 share/webkit-1.0/webinspector/Placard.js
+share/webkit-1.0/webinspector/ProfileDataGridTree.js
 share/webkit-1.0/webinspector/ProfileView.js
 share/webkit-1.0/webinspector/ProfilesPanel.js
 share/webkit-1.0/webinspector/PropertiesSection.js
@@ -197,9 +218,11 @@ share/webkit-1.0/webinspector/SourceFrame.js
 share/webkit-1.0/webinspector/SourceView.js
 share/webkit-1.0/webinspector/StylesSidebarPane.js
 share/webkit-1.0/webinspector/TextPrompt.js
+share/webkit-1.0/webinspector/TopDownProfileDataGridTree.js
 share/webkit-1.0/webinspector/View.js
 share/webkit-1.0/webinspector/inspector.css
 share/webkit-1.0/webinspector/inspector.html
 share/webkit-1.0/webinspector/inspector.js
+share/webkit-1.0/webinspector/localizedStrings.js
 share/webkit-1.0/webinspector/treeoutline.js
 share/webkit-1.0/webinspector/utilities.js

@@ -1,7 +1,7 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.1 2009/04/27 19:25:09 landry Exp $
---- GNUmakefile.in.orig	Tue Apr 14 23:39:16 2009
-+++ GNUmakefile.in	Fri Apr 24 13:51:52 2009
-@@ -5966,9 +5966,10 @@ libJavaScriptCore_la_SOURCES = \
+$OpenBSD: patch-GNUmakefile_in,v 1.2 2009/06/01 05:51:31 landry Exp $
+--- GNUmakefile.in.orig	Thu May 28 20:36:42 2009
++++ GNUmakefile.in	Sun May 31 01:38:02 2009
+@@ -7655,9 +7655,10 @@ libJavaScriptCore_la_SOURCES = \
  
  libJavaScriptCore_la_LIBADD = \
  	$(UNICODE_LIBS) \
@@ -14,24 +14,26 @@ $OpenBSD: patch-GNUmakefile_in,v 1.1 2009/04/27 19:25:09 landry Exp $
  libJavaScriptCore_la_CXXFLAGS = \
  	$(global_cxxflags) \
  	$(libJavaScriptCore_la_CFLAGS)
-@@ -7481,9 +7482,9 @@ libWebCore_la_LIBADD = \
- 	$(HILDON_LIBS) \
- 	$(JPEG_LIBS) \
- 	$(PNG_LIBS) \
--	$(GEOCLUE_LIBS) \
--	-lpthread
-+	$(GEOCLUE_LIBS)
+@@ -7723,12 +7724,12 @@ libwebkit_1_0_la_CPPFLAGS = \
+ 	$(HILDON_CPPFLAGS)
  
-+libWebCore_la_LDFLAGS = -pthread
+ libwebkit_1_0_la_LDFLAGS = \
++	-pthread \
+ 	-version-info @LIBWEBKITGTK_VERSION@ \
+ 	$(version_script) \
+ 	$(no_undefined)
  
- # WebKit
- webkitgtk_h_api := WebKit/gtk/webkit/webkit.h \
-@@ -7664,7 +7665,7 @@ Programs_minidom_CFLAGS = \
+ libwebkit_1_0_la_LIBADD = \
+-	-lpthread \
+ 	libJavaScriptCore.la \
+ 	libWebCore.la \
+ 	libWebCoreJS.la \
+@@ -7847,7 +7848,7 @@ Programs_minidom_CFLAGS = \
  Programs_minidom_LDADD = \
  	 libJavaScriptCore.la \
  	 -lm \
 -	 -lstdc++
 +	 -lestdc++
  
- 
- # jsc
+ Programs_minidom_LDFLAGS = \
+ 	-no-install \

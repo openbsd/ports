@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/05/17 09:40:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2009/06/01 05:51:31 landry Exp $
 
 COMMENT =	open source web browser engine
 
-V = 1.1.5
+V = 1.1.8
 DISTNAME =	webkit-${V}
-PKGNAME =	webkit-${V}p0v0
+PKGNAME =	webkit-${V}v0
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -12,7 +12,7 @@ MASTER_SITES =	${HOMEPAGE}
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
-SHARED_LIBS =	webkit-1.0	0.1
+SHARED_LIBS =	webkit-1.0	0.2
 
 # LGPLv2 / BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -53,6 +53,7 @@ LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2,-main \
 		icudata,icui18n,icuuc::textproc/icu4c \
 		sqlite3::databases/sqlite3 \
 		xslt::textproc/libxslt \
+		enchant::textproc/enchant \
 		soup-2.4:libsoup->=2.26:devel/libsoup
 
 

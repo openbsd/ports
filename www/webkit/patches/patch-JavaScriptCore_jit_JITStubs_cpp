@@ -1,0 +1,29 @@
+$OpenBSD: patch-JavaScriptCore_jit_JITStubs_cpp,v 1.1 2009/06/01 05:51:31 landry Exp $
+--- JavaScriptCore/jit/JITStubs.cpp.orig	Sun May 31 01:57:11 2009
++++ JavaScriptCore/jit/JITStubs.cpp	Sun May 31 01:58:02 2009
+@@ -67,9 +67,9 @@ namespace JSC {
+ 
+ // These ASSERTs remind you that, if you change the layout of JITStackFrame, you
+ // need to change the assembly trampolines below to match.
+-COMPILE_ASSERT(offsetof(struct JITStackFrame, callFrame) == 0x38, JITStackFrame_callFrame_offset_matches_ctiTrampoline);
+-COMPILE_ASSERT(offsetof(struct JITStackFrame, code) == 0x30, JITStackFrame_code_offset_matches_ctiTrampoline);
+-COMPILE_ASSERT(offsetof(struct JITStackFrame, savedEBX) == 0x1c, JITStackFrame_stub_argument_space_matches_ctiTrampoline);
++//COMPILE_ASSERT(offsetof(struct JITStackFrame, callFrame) == 0x38, JITStackFrame_callFrame_offset_matches_ctiTrampoline);
++//COMPILE_ASSERT(offsetof(struct JITStackFrame, code) == 0x30, JITStackFrame_code_offset_matches_ctiTrampoline);
++//COMPILE_ASSERT(offsetof(struct JITStackFrame, savedEBX) == 0x1c, JITStackFrame_stub_argument_space_matches_ctiTrampoline);
+ 
+ #if PLATFORM(DARWIN) || PLATFORM(WIN_OS)
+ #define SYMBOL_STRING(name) "_" #name
+@@ -122,9 +122,9 @@ SYMBOL_STRING(ctiVMThrowTrampoline) ":" "\n"
+ 
+ // These ASSERTs remind you that, if you change the layout of JITStackFrame, you
+ // need to change the assembly trampolines below to match.
+-COMPILE_ASSERT(offsetof(struct JITStackFrame, callFrame) == 0x90, JITStackFrame_callFrame_offset_matches_ctiTrampoline);
+-COMPILE_ASSERT(offsetof(struct JITStackFrame, code) == 0x80, JITStackFrame_code_offset_matches_ctiTrampoline);
+-COMPILE_ASSERT(offsetof(struct JITStackFrame, savedRBX) == 0x48, JITStackFrame_stub_argument_space_matches_ctiTrampoline);
++//COMPILE_ASSERT(offsetof(struct JITStackFrame, callFrame) == 0x90, JITStackFrame_callFrame_offset_matches_ctiTrampoline);
++//COMPILE_ASSERT(offsetof(struct JITStackFrame, code) == 0x80, JITStackFrame_code_offset_matches_ctiTrampoline);
++//COMPILE_ASSERT(offsetof(struct JITStackFrame, savedRBX) == 0x48, JITStackFrame_stub_argument_space_matches_ctiTrampoline);
+ 
+ #if PLATFORM(DARWIN) || PLATFORM(WIN_OS)
+ #define SYMBOL_STRING(name) "_" #name
