@@ -1,0 +1,12 @@
+QGIS aims to be an easy to use GIS, providing common functions and
+features. The initial goal was to provide a GIS data viewer, but now
+it also permits to edit, create and analyze lots of spatial datas.
+QGIS supports a number of raster and vector data formats, with new
+support easily added using the plugin architecture.
+Supported formats are :
+- spatially-enabled PostgreSQL tables using PostGIS.
+- most vector formats supported by the OGR library, including ESRI
+  shapefiles, MapInfo, SDTS and GML.
+- raster formats supported by the GDAL library, such as digital
+  elevation models, aerial photography or landsat imagery.
+- online spatial data served as OGC-compliant WMS or WFS.

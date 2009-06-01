@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2009/06/01 23:14:58 landry Exp $
+--- CMakeLists.txt.orig	Mon Jun  1 15:52:51 2009
++++ CMakeLists.txt	Mon Jun  1 15:53:29 2009
+@@ -365,7 +365,7 @@ ENDIF (ENABLE_TESTS)
+ # install stuff
+ 
+ INSTALL (FILES AUTHORS SPONSORS INSTALL CODING
+-         DESTINATION ${QGIS_DATA_DIR}/doc)
++         DESTINATION ${QGIS_DATA_DIR}/../doc/qgis)
+ 
+ # manual page - makes sense only on unix systems
+ IF (UNIX)

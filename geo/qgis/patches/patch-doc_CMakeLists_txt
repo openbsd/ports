@@ -1,0 +1,13 @@
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.1.1.1 2009/06/01 23:14:58 landry Exp $
+--- doc/CMakeLists.txt.orig	Mon Jun  1 15:50:39 2009
++++ doc/CMakeLists.txt	Mon Jun  1 15:54:27 2009
+@@ -9,7 +9,7 @@ userguide.pdf
+ #SUBDIRS (images plugins install_guide)
+ 
+ INSTALL(FILES ${DOC_FILES}
+-        DESTINATION ${QGIS_DATA_DIR}/doc)
++        DESTINATION ${QGIS_DATA_DIR}/../doc/qgis)
+ 
+ INSTALL(FILES images/qgis_new_80pct.png
+-        DESTINATION ${QGIS_DATA_DIR}/doc/images)
++        DESTINATION ${QGIS_DATA_DIR}/../doc/qgis/images)

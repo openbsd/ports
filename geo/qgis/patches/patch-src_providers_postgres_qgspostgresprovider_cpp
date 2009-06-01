@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_providers_postgres_qgspostgresprovider_cpp,v 1.1.1.1 2009/06/01 23:14:58 landry Exp $
+--- src/providers/postgres/qgspostgresprovider.cpp.orig	Sun May 31 14:36:42 2009
++++ src/providers/postgres/qgspostgresprovider.cpp	Sun May 31 14:37:24 2009
+@@ -21,6 +21,7 @@
+ #ifdef WIN32
+ #include <winsock.h>
+ #else
++#include <sys/types.h>
+ #include <netinet/in.h>
+ #endif
+ 

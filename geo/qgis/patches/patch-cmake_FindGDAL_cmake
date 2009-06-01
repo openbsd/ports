@@ -1,0 +1,16 @@
+$OpenBSD: patch-cmake_FindGDAL_cmake,v 1.1.1.1 2009/06/01 23:14:58 landry Exp $
+--- cmake/FindGDAL.cmake.orig	Sun May 31 10:52:56 2009
++++ cmake/FindGDAL.cmake	Sun May 31 10:54:43 2009
+@@ -118,11 +118,7 @@ ELSE(WIN32)
+         STRING(REGEX REPLACE "[-][l]" "" GDAL_LIB_NAME ${GDAL_LIB_NAME_WITH_PREFIX} )
+       ENDIF (GDAL_LIB_NAME_WITH_PREFIX)
+ 
+-      IF (APPLE)
+-        SET(GDAL_LIBRARY ${GDAL_LINK_DIRECTORIES}/lib${GDAL_LIB_NAME}.dylib CACHE STRING INTERNAL)
+-      ELSE (APPLE)
+-       SET(GDAL_LIBRARY ${GDAL_LINK_DIRECTORIES}/lib${GDAL_LIB_NAME}.so CACHE STRING INTERNAL)
+-      ENDIF (APPLE)
++      FIND_LIBRARY(GDAL_LIBRARY NAMES gdal PATHS ${LOCALBASE}/lib)
+       
+     ELSE(GDAL_CONFIG)
+       MESSAGE("FindGDAL.cmake: gdal-config not found. Please set it manually. GDAL_CONFIG=${GDAL_CONFIG}")

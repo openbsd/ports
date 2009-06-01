@@ -1,0 +1,16 @@
+$OpenBSD: patch-cmake_FindPostgres_cmake,v 1.1.1.1 2009/06/01 23:14:58 landry Exp $
+--- cmake/FindPostgres.cmake.orig	Sun May 31 10:58:46 2009
++++ cmake/FindPostgres.cmake	Sun May 31 11:00:05 2009
+@@ -50,11 +50,7 @@ ELSE(WIN32)
+       EXEC_PROGRAM(${POSTGRES_CONFIG}
+         ARGS --libdir
+         OUTPUT_VARIABLE PG_TMP)
+-      IF (APPLE)
+-        SET(POSTGRES_LIBRARY ${PG_TMP}/libpq.dylib CACHE STRING INTERNAL)
+-      ELSE (APPLE)
+-        SET(POSTGRES_LIBRARY ${PG_TMP}/libpq.so CACHE STRING INTERNAL)
+-      ENDIF (APPLE)
++      FIND_LIBRARY(POSTGRES_LIBRARY NAMES pq libpq libpqdll PATHS ${LOCALBASE}/lib)
+     ENDIF(POSTGRES_CONFIG)
+ 
+   ENDIF(UNIX)

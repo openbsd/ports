@@ -1,0 +1,14 @@
+$OpenBSD: patch-debian_qgis_desktop,v 1.1.1.1 2009/06/01 23:14:58 landry Exp $
+--- debian/qgis.desktop.orig	Mon Jun  1 09:45:50 2009
++++ debian/qgis.desktop	Mon Jun  1 09:53:03 2009
+@@ -5,8 +5,8 @@ Version=1.0
+ GenericName=Geographical Information System
+ GenericName[de]=Geographisches Informationssystem
+ Icon=qgis-icon
+-TryExec=/usr/bin/qgis
+-Exec=/usr/bin/qgis %F
++TryExec=${TRUEPREFIX}/bin/qgis
++Exec=${TRUEPREFIX}/bin/qgis %F
+ Terminal=false
+ StartupNotify=false
+ Categories=Education;Geography;Qt;
