@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/04 20:52:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2009/06/01 23:15:35 landry Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 
      SUBDIR += gdal
@@ -26,6 +26,7 @@
      SUBDIR += p5-Geo-TigerLine
      SUBDIR += p5-Geography-Countries
      SUBDIR += postgis
+     SUBDIR += qgis
      SUBDIR += qlandkarte
 
 .include <bsd.port.subdir.mk>
