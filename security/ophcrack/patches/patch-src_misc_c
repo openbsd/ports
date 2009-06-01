@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_misc_c,v 1.1.1.1 2009/06/01 06:51:51 benoit Exp $
+--- src/misc.c.orig	Thu Apr  2 16:45:00 2009
++++ src/misc.c	Tue May 26 12:56:00 2009
+@@ -35,7 +35,7 @@
+ #include <string.h>
+ #include <stdio.h>
+ #include <math.h>
+-#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <sys/param.h>
+ #endif
+ #ifdef WIN32

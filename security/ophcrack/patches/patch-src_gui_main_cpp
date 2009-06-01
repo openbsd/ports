@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gui_main_cpp,v 1.1.1.1 2009/06/01 06:51:51 benoit Exp $
+--- src/gui/main.cpp.orig	Thu Apr  2 16:45:00 2009
++++ src/gui/main.cpp	Thu May 28 14:44:58 2009
+@@ -31,6 +31,9 @@
+  *   
+  *   
+ */
++#ifdef QT_GUI_LIB
++#include <cstdlib>
++#endif
+ #include <config.h>
+ #include <stdlib.h>
+ #include <stdio.h>

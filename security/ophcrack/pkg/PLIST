@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/01 06:51:51 benoit Exp $
+@bin bin/ophcrack

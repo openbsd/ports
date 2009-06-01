@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gui_ophcrackgui_cpp,v 1.1.1.1 2009/06/01 06:51:51 benoit Exp $
+--- src/gui/ophcrackgui.cpp.orig	Thu May 28 14:57:07 2009
++++ src/gui/ophcrackgui.cpp	Thu May 28 14:58:57 2009
+@@ -31,6 +31,7 @@
+  *   
+  *   
+ */
++#include <cstdlib>
+ #include <QHeaderView>
+ #include <QMessageBox>
+ #include <QTimer>

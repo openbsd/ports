@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/06/01 06:51:51 benoit Exp $
+--- configure.orig	Thu Apr  2 16:45:00 2009
++++ configure	Thu May 28 16:07:47 2009
+@@ -6476,8 +6476,10 @@ _ACEOF
+    fi
+ fi
+ 
++cat >>confdefs.h <<_ACEOF
++#define HAVE_QWT 1
++_ACEOF
+ 
+-
+ # Sets GUI_TARGET and qt specific stuff
+ # Check whether --enable-gui was given.
+ if test "${enable_gui+set}" = set; then
+@@ -7215,9 +7217,6 @@ _ACEOF
+ esac
+ 
+ 
+-cat >>confdefs.h <<\_ACEOF
+-#define malloc rpl_malloc
+-_ACEOF
+ 
+ fi
+ 
