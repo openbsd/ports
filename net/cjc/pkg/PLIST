@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/11 04:28:17 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/01 18:39:52 wcmaier Exp $
 bin/cjc
+lib/python${MODPY_VERSION}/site-packages/Console_Jabber_Client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/cjc/
 lib/python${MODPY_VERSION}/site-packages/cjc/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cjc/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/cjc/cjc_globals.py
+lib/python${MODPY_VERSION}/site-packages/cjc/cjc_globals.pyc
 lib/python${MODPY_VERSION}/site-packages/cjc/cjclogging.py
 lib/python${MODPY_VERSION}/site-packages/cjc/cjclogging.pyc
 lib/python${MODPY_VERSION}/site-packages/cjc/common.py
@@ -66,9 +69,11 @@ share/cjc/plugins/events.py
 share/cjc/plugins/jogger_pl.py
 share/cjc/plugins/message.py
 share/cjc/plugins/muc.py
+share/cjc/plugins/multicast.py
 share/cjc/plugins/presence.py
 share/cjc/plugins/python.py
 share/cjc/plugins/roster.py
+share/cjc/plugins/roster_ei.py
 share/cjc/plugins/shell.py
 share/cjc/plugins/test.py
 share/cjc/plugins/vcard.py
