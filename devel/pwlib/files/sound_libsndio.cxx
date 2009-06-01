@@ -25,6 +25,11 @@
  * All Rights Reserved.
  *
  * $Log: sound_libsndio.cxx,v $
+ * Revision 1.3  2009/06/01 22:19:23  ajacoutot
+ * - aucat.sock is no more
+ *
+ * spotted by robert@ on ekiga
+ *
  * Revision 1.2  2009/01/19 09:42:21  ajacoutot
  * - s/LIBSNDIO/SNDIO for consistency
  * discussed with naddy@
@@ -80,7 +85,6 @@ PStringArray PSoundChannelLIBSNDIO::GetDeviceNames(Directions)
 {
   static const char * const devices[] = {
     "default",
-    "/tmp/aucat.sock",
     "/dev/audio0",
     "/dev/audio1",
     "/dev/audio2"
