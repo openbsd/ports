@@ -1,7 +1,7 @@
-$OpenBSD: patch-app_commands_c,v 1.4 2009/04/11 10:05:47 ajacoutot Exp $
---- app/commands.c.orig	Sun Mar 18 20:49:14 2007
-+++ app/commands.c	Sat Apr 11 11:16:22 2009
-@@ -532,7 +532,7 @@ help_manual_callback (GtkAction *action)
+$OpenBSD: patch-app_commands_c,v 1.5 2009/06/01 21:17:39 ajacoutot Exp $
+--- app/commands.c.orig	Sun Mar  8 13:38:35 2009
++++ app/commands.c	Tue Apr 14 22:57:59 2009
+@@ -641,7 +641,7 @@ help_manual_callback (GtkAction *action)
    const char *dentry;
    GError *error = NULL;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-app_commands_c,v 1.4 2009/04/11 10:05:47 ajacoutot Exp $
    if (!helpdir) {
      message_warning(_("Could not find help directory"));
      return;
-@@ -581,7 +581,7 @@ help_manual_callback (GtkAction *action)
+@@ -690,7 +690,7 @@ help_manual_callback (GtkAction *action)
    ShellExecuteA (0, "open", helpindex, NULL, helpdir, SW_SHOWNORMAL);
  #else
    command = getenv("BROWSER");
@@ -19,7 +19,7 @@ $OpenBSD: patch-app_commands_c,v 1.4 2009/04/11 10:05:47 ajacoutot Exp $
    system(command);
    g_free(command);
  #endif
-@@ -599,7 +599,7 @@ activate_url (GtkAboutDialog *about,
+@@ -708,7 +708,7 @@ activate_url (GtkAboutDialog *about,
    ShellExecuteA (0, "open", link, NULL, NULL, SW_SHOWNORMAL);
  #else
    gchar *command = getenv("BROWSER");

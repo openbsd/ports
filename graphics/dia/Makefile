@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.57 2009/04/11 10:05:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2009/06/01 21:17:39 ajacoutot Exp $
 
 COMMENT=	technical diagrams drawing tool
 
-DISTNAME=	dia-0.96.1
-PKGNAME=	${DISTNAME}p12
+GNOME_PROJECT=	dia
+GNOME_VERSION=	0.97
+
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://live.gnome.org/Dia/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
-
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/dia/0.96/}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
@@ -18,69 +17,60 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
-		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
-		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png pthread z gio-2.0
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
+WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread xml2 z
 
-BUILD_DEPENDS=	::textproc/xmlto \
-		::textproc/docbook
+BUILD_DEPENDS=	::textproc/docbook-xsl
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		art_lgpl_2.>=5::graphics/libart \
-		popt::devel/popt \
-		xml2.>=10::textproc/libxml \
-		xslt.>=1::textproc/libxslt
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+		xslt.>=3::textproc/libxslt
 
 MODULES=	devel/gettext \
-		textproc/intltool
+		x11/gnome \
+		lang/python
 
 USE_X11=	Yes
-USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
-
-# patch-doc_en_usage-layers_xml seen as binary file
-DIFF_ARGS=	-a
+DESKTOP_FILES=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng \
 		-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LOCALBASE=${LOCALBASE}
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--without-cairo \
-		--without-python
+		--with-cairo \
+		--enable-db2html=no \
+		--with-hardbooks=no
 
 FLAVORS=	gnome
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgnome}
 CONFIGURE_ARGS+=--enable-gnome \
-		--with-gnomeprint
+		--with-python \
+		--with-swig
+BUILD_DEPENDS+=	::devel/swig
 LIB_DEPENDS+=	gnomeui-2::x11/gnome/libgnomeui \
-		gnomeprint-2-2::x11/gnome/libgnomeprint
-WANTLIB+=	ICE ORBit-2 ORBitCosNaming-2 SM bonobo-2 \
-		bonobo-activation bonoboui-2 crypto dbus-1 dbus-glib-1 \
-		gailutil gconf-2 gnome-2 gnome-keyring \
-		gnomecanvas-2 gnomevfs-2 ssl util
-RUN_DEPENDS+=	:yelp-*:x11/gnome/yelp
+		${MODPY_LIB_DEPENDS}
+WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM bonobo-2 bonobo-activation
+WANTLIB += bonoboui-2 crypto dbus-1 dbus-glib-1 gconf-2 gailutil
+WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 popt ssl
+WANTLIB += util
+MODGNOME_HELP_FILES= Yes
 .else
+# help is only installed and usable with yelp
+PATCH_LIST=	patch-* no_gnome-patch-*
 CONFIGURE_ARGS+=--disable-gnome \
-		--without-gnomeprint
+		--without-python \
+		--without-swig
 RUN_DEPENDS+=	::devel/xdg-utils
+MODPY_RUNDEP=	No
 .endif
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/app/commands.c
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dia/html/{en,pl}
-	xmlto -o ${PREFIX}/share/doc/dia/html/en html ${WRKSRC}/doc/en/dia.xml
-	xmlto -o ${PREFIX}/share/doc/dia/html/pl html ${WRKSRC}/doc/pl/dia.xml
-	@cd ${PREFIX}/share/doc/dia/html && ln -s en C
-.if ${FLAVOR:L:Mgnome}
-	@cd ${PREFIX}/share/gnome/help/dia && ln -s en C
-.endif
+	${SUBST_CMD} ${WRKSRC}/app/commands.c \
+		${WRKSRC}/po-checktrans.py
 
 .include <bsd.port.mk>

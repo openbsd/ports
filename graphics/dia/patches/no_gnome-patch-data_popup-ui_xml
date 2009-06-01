@@ -1,0 +1,13 @@
+$OpenBSD: no_gnome-patch-data_popup-ui_xml,v 1.1 2009/06/01 21:17:39 ajacoutot Exp $
+--- data/popup-ui.xml.orig	Wed Apr 15 15:21:42 2009
++++ data/popup-ui.xml	Wed Apr 15 15:24:41 2009
+@@ -160,9 +160,6 @@
+ 			<separator name="DebugExtensionStart" />
+ 		</menu>
+ 		<menu name="Help" action="Help">
+-			<menuitem name="HelpContents" action="HelpContents" />
+-			<separator name="HelpExtensionStart" />
+-			<separator name="HelpExtensionEnd" />
+ 			<menuitem name="HelpAbout" action="HelpAbout" />
+ 		</menu>
+ 	</popup>

@@ -1,10 +1,12 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2007/04/06 10:10:01 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2009/06/01 21:17:39 ajacoutot Exp $
 lib/dia/libaadl_objects.so
-lib/dia/libbondgraph_objects.so
+lib/dia/libart_filter.so
 lib/dia/libcairo_filter.so
 lib/dia/libcgm_filter.so
 lib/dia/libchronogram_objects.so
+lib/dia/libcustom_lines_objects.so
 lib/dia/libcustom_objects.so
+lib/dia/libdb_objects.so
 lib/dia/libdia.so
 lib/dia/libdxf_filter.so
 lib/dia/liber_objects.so
@@ -20,6 +22,7 @@ lib/dia/libmisc_objects.so
 lib/dia/libnetwork_objects.so
 lib/dia/libpgf_filter.so
 lib/dia/libpixbuf_filter.so
+lib/dia/libpostscript_filter.so
 lib/dia/libpstricks_filter.so
 lib/dia/libsadt_objects.so
 lib/dia/libshape_filter.so

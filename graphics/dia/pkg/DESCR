@@ -10,4 +10,4 @@ diagrams to EPS or SVG formats and can print diagrams (including ones
 that span multiple pages).
 
 Available flavor:
-	gnome - build support for GNOME and the gnomeprint plug-in
+	gnome - build support for GNOME and python plug-in and bindings

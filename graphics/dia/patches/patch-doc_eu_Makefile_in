@@ -1,30 +1,12 @@
-$OpenBSD: patch-doc_eu_Makefile_in,v 1.3 2007/10/18 14:18:40 ajacoutot Exp $
---- doc/eu/Makefile.in.orig	Thu Mar 29 11:15:09 2007
-+++ doc/eu/Makefile.in	Tue Oct 16 13:47:26 2007
-@@ -332,7 +332,7 @@ docname = dia
- lang = eu
- omffile = 
- entities = 
--@HAVE_GNOME_FALSE@docdir = $(datadir)/help/$(docname)/$(lang)
-+@HAVE_GNOME_FALSE@docdir = $(datadir)/gnome/help/$(docname)/$(lang)
+$OpenBSD: patch-doc_eu_Makefile_in,v 1.4 2009/06/01 21:17:39 ajacoutot Exp $
+--- doc/eu/Makefile.in.orig	Sun May  3 20:12:41 2009
++++ doc/eu/Makefile.in	Mon May  4 10:23:37 2009
+@@ -865,7 +865,7 @@ clean-local-xml: clean-local-omf
  
- # **********  Begin of section some packagers may need to modify  **********
- # This variable (docdir) specifies where the documents should be installed.
-@@ -593,7 +593,7 @@ install-data-hook-omf:
- 	    $(INSTALL_DATA) $$file.out $(DESTDIR)$(omf_dest_dir)/$$file; \
- 	  done; \
- 	fi
--	-scrollkeeper-update -p $(scrollkeeper_localstate_dir) -o $(DESTDIR)$(omf_dest_dir)
-+	# -scrollkeeper-update -p $(scrollkeeper_localstate_dir) -o $(DESTDIR)$(omf_dest_dir)
- 
- uninstall-local-omf:
- 	-for file in $(srcdir)/*.omf; do \
-@@ -610,7 +610,7 @@ clean-local-omf:
- 	  done; \
- 	fi
- 
--all: omf
-+all:
- 
- $(docname).xml: $(entities)
- 	-ourdir=`pwd`;  \
+ dist-hook: app-dist-hook
+ @HAVE_DB2MAN_TRUE@dia.1: dia.dbk
+-@HAVE_DB2MAN_TRUE@	xsltproc --novalid $(DB2MAN) $< >dia.1
++@HAVE_DB2MAN_TRUE@	xsltproc --novalid --nonet $(DB2MAN) $< >dia.1
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

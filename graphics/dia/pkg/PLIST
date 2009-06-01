@@ -1,19 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.19 2009/04/11 10:05:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2009/06/01 21:17:39 ajacoutot Exp $
 %%SHARED%%
 @bin bin/dia
 lib/dia/
 lib/dia/libaadl_objects.a
 lib/dia/libaadl_objects.la
-lib/dia/libbondgraph_objects.a
-lib/dia/libbondgraph_objects.la
+lib/dia/libart_filter.a
+lib/dia/libart_filter.la
 lib/dia/libcairo_filter.a
 lib/dia/libcairo_filter.la
 lib/dia/libcgm_filter.a
 lib/dia/libcgm_filter.la
 lib/dia/libchronogram_objects.a
 lib/dia/libchronogram_objects.la
+lib/dia/libcustom_lines_objects.a
+lib/dia/libcustom_lines_objects.la
 lib/dia/libcustom_objects.a
 lib/dia/libcustom_objects.la
+lib/dia/libdb_objects.a
+lib/dia/libdb_objects.la
 lib/dia/libdia.a
 lib/dia/libdia.la
 lib/dia/libdxf_filter.a
@@ -44,6 +48,8 @@ lib/dia/libpgf_filter.a
 lib/dia/libpgf_filter.la
 lib/dia/libpixbuf_filter.a
 lib/dia/libpixbuf_filter.la
+lib/dia/libpostscript_filter.a
+lib/dia/libpostscript_filter.la
 lib/dia/libpstricks_filter.a
 lib/dia/libpstricks_filter.la
 lib/dia/libsadt_objects.a
@@ -67,7 +73,7 @@ lib/dia/libxslt_filter.la
 @man man/man1/dia.1
 share/applications/dia.desktop
 share/dia/
-share/dia/dia_logo.png
+share/dia/dia-splash.png
 share/dia/shapes/
 share/dia/shapes/Assorted/
 share/dia/shapes/Assorted/arrow-chevron.png
@@ -1314,6 +1320,33 @@ share/dia/shapes/Gane_and_Sarson/entity.png
 share/dia/shapes/Gane_and_Sarson/entity.shape
 share/dia/shapes/Gane_and_Sarson/process.png
 share/dia/shapes/Gane_and_Sarson/process.shape
+share/dia/shapes/Lights/
+share/dia/shapes/Lights/ACL.png
+share/dia/shapes/Lights/ACL.shape
+share/dia/shapes/Lights/Blacklight.png
+share/dia/shapes/Lights/Blacklight.shape
+share/dia/shapes/Lights/Blinders.png
+share/dia/shapes/Lights/Blinders.shape
+share/dia/shapes/Lights/ERS.png
+share/dia/shapes/Lights/ERS.shape
+share/dia/shapes/Lights/Fresnel.png
+share/dia/shapes/Lights/Fresnel.shape
+share/dia/shapes/Lights/Moving_head.png
+share/dia/shapes/Lights/Moving_head.shape
+share/dia/shapes/Lights/PAR.png
+share/dia/shapes/Lights/PAR.shape
+share/dia/shapes/Lights/PAR_floor.png
+share/dia/shapes/Lights/PAR_floor.shape
+share/dia/shapes/Lights/PC.png
+share/dia/shapes/Lights/PC.shape
+share/dia/shapes/Lights/Scanner.png
+share/dia/shapes/Lights/Scanner.shape
+share/dia/shapes/Lights/Striplight.png
+share/dia/shapes/Lights/Striplight.shape
+share/dia/shapes/Lights/Stroboscope.png
+share/dia/shapes/Lights/Stroboscope.shape
+share/dia/shapes/Lights/Structure.png
+share/dia/shapes/Lights/Structure.shape
 share/dia/shapes/Logic/
 share/dia/shapes/Logic/and.png
 share/dia/shapes/Logic/and.shape
@@ -1399,6 +1432,10 @@ share/dia/shapes/Map/Isometric/Train2.shape
 share/dia/shapes/Map/Isometric/Tree1.png
 share/dia/shapes/Map/Isometric/Tree1.shape
 share/dia/shapes/Misc/
+share/dia/shapes/Misc/expended-node.png
+share/dia/shapes/Misc/expended-node.shape
+share/dia/shapes/Misc/expensible-node.png
+share/dia/shapes/Misc/expensible-node.shape
 share/dia/shapes/Misc/file.png
 share/dia/shapes/Misc/file.shape
 share/dia/shapes/Misc/folder.png
@@ -1510,8 +1547,6 @@ share/dia/shapes/Pneumatic/seijack.shape
 share/dia/shapes/Pneumatic/seojack.png
 share/dia/shapes/Pneumatic/seojack.shape
 share/dia/shapes/RDP/
-share/dia/shapes/RDP/arc.png
-share/dia/shapes/RDP/arc_inhibiteur.png
 share/dia/shapes/RDP/place.png
 share/dia/shapes/RDP/place.shape
 share/dia/shapes/RDP/place_marquee.png
@@ -1609,6 +1644,7 @@ share/dia/sheets/ChemEng.sheet
 share/dia/sheets/Circuit.sheet
 share/dia/sheets/Contact.sheet
 share/dia/sheets/Cybernetics.sheet
+share/dia/sheets/Database.sheet
 share/dia/sheets/ER/
 share/dia/sheets/ER.sheet
 share/dia/sheets/ER/weakentity.png
@@ -1662,12 +1698,14 @@ share/dia/sheets/KAOS/performs.png
 share/dia/sheets/KAOS/requirement.png
 share/dia/sheets/KAOS/responsibility.png
 share/dia/sheets/KAOS/softgoal.png
+share/dia/sheets/Lights.sheet
 share/dia/sheets/Logic.sheet
 share/dia/sheets/MSE.sheet
 share/dia/sheets/Misc.sheet
 share/dia/sheets/Pneumatic.sheet
 share/dia/sheets/SADT.sheet
 share/dia/sheets/SDL.sheet
+share/dia/sheets/SISSI/
 share/dia/sheets/UML/
 share/dia/sheets/UML.sheet
 share/dia/sheets/UML/aggregation.png
@@ -1687,7 +1725,9 @@ share/dia/sheets/network.sheet
 share/dia/sheets/sybase.sheet
 share/dia/ui/
 share/dia/ui/display-ui.xml
+share/dia/ui/integrated-ui.xml
 share/dia/ui/popup-ui.xml
+share/dia/ui/toolbar-ui.xml
 share/dia/ui/toolbox-ui.xml
 share/dia/xslt/
 share/dia/xslt/dia-uml.xsl
@@ -1699,70 +1739,32 @@ share/dia/xslt/dia-uml2owl.xsl
 share/dia/xslt/dia-uml2python.xsl
 share/dia/xslt/stylesheets.xml
 share/doc/dia/
-share/doc/dia/html/
-share/doc/dia/html/C
-share/doc/dia/html/en/
-share/doc/dia/html/en/ch01.html
-share/doc/dia/html/en/ch02.html
-share/doc/dia/html/en/ch02s02.html
-share/doc/dia/html/en/ch02s03.html
-share/doc/dia/html/en/ch02s04.html
-share/doc/dia/html/en/ch02s05.html
-share/doc/dia/html/en/ch02s06.html
-share/doc/dia/html/en/ch02s07.html
-share/doc/dia/html/en/ch03.html
-share/doc/dia/html/en/ch03s02.html
-share/doc/dia/html/en/ch03s03.html
-share/doc/dia/html/en/ch03s04.html
-share/doc/dia/html/en/ch03s05.html
-share/doc/dia/html/en/ch04.html
-share/doc/dia/html/en/ch04s02.html
-share/doc/dia/html/en/ch04s03.html
-share/doc/dia/html/en/ch04s04.html
-share/doc/dia/html/en/ch05.html
-share/doc/dia/html/en/ch06.html
-share/doc/dia/html/en/ch06s02.html
-share/doc/dia/html/en/ch07.html
-share/doc/dia/html/en/ch07s02.html
-share/doc/dia/html/en/ch08.html
-share/doc/dia/html/en/ch08s02.html
-share/doc/dia/html/en/ch09.html
-share/doc/dia/html/en/ch10.html
-share/doc/dia/html/en/ch10s02.html
-share/doc/dia/html/en/ch10s03.html
-share/doc/dia/html/en/ch11.html
-share/doc/dia/html/en/ch12.html
-share/doc/dia/html/en/index.html
-share/doc/dia/html/pl/
-share/doc/dia/html/pl/ch01.html
-share/doc/dia/html/pl/ch01s02.html
-share/doc/dia/html/pl/ch01s03.html
-share/doc/dia/html/pl/ch01s04.html
-share/doc/dia/html/pl/ch01s05.html
-share/doc/dia/html/pl/ch01s06.html
-share/doc/dia/html/pl/ch01s07.html
-share/doc/dia/html/pl/ch02.html
-share/doc/dia/html/pl/ch02s02.html
-share/doc/dia/html/pl/ch02s03.html
-share/doc/dia/html/pl/ch02s04.html
-share/doc/dia/html/pl/ch02s05.html
-share/doc/dia/html/pl/ch03.html
-share/doc/dia/html/pl/ch03s02.html
-share/doc/dia/html/pl/ch03s03.html
-share/doc/dia/html/pl/ch03s04.html
-share/doc/dia/html/pl/ch04.html
-share/doc/dia/html/pl/ch04s02.html
-share/doc/dia/html/pl/ch05.html
-share/doc/dia/html/pl/ch05s02.html
-share/doc/dia/html/pl/ch06.html
-share/doc/dia/html/pl/ch06s02.html
-share/doc/dia/html/pl/ch07.html
-share/doc/dia/html/pl/ch08.html
-share/doc/dia/html/pl/ch08s02.html
-share/doc/dia/html/pl/ch08s03.html
-share/doc/dia/html/pl/ch09.html
-share/doc/dia/html/pl/ch10.html
-share/doc/dia/html/pl/index.html
+share/doc/dia/en/
+share/doc/dia/en/examples/
+share/doc/dia/en/examples/diagram.dtd
+share/doc/dia/en/examples/shape.dtd
+share/doc/dia/en/examples/sheet.dtd
+share/doc/dia/eu/
+share/doc/dia/eu/examples/
+share/doc/dia/eu/examples/diagram.dtd
+share/doc/dia/eu/examples/shape.dtd
+share/doc/dia/eu/examples/sheet.dtd
+share/doc/dia/fr/
+share/doc/dia/fr/examples/
+share/doc/dia/fr/examples/diagram.dtd
+share/doc/dia/fr/examples/shape.dtd
+share/doc/dia/fr/examples/sheet.dtd
+share/doc/dia/pl/
+share/doc/dia/pl/examples/
+share/doc/dia/pl/examples/diagram.dtd
+share/doc/dia/pl/examples/shape.dtd
+share/doc/dia/pl/examples/sheet.dtd
+share/icons/hicolor/16x16/apps/dia.png
+share/icons/hicolor/22x22/apps/dia.png
+share/icons/hicolor/24x24/apps/dia.png
+share/icons/hicolor/32x32/apps/dia.png
+share/icons/hicolor/48x48/apps/dia.png
+share/icons/hicolor/scalable/apps/dia.svg
 share/locale/am/LC_MESSAGES/dia.mo
 share/locale/ar/LC_MESSAGES/dia.mo
 share/locale/az/LC_MESSAGES/dia.mo
@@ -1773,6 +1775,7 @@ share/locale/ca/LC_MESSAGES/dia.mo
 share/locale/cs/LC_MESSAGES/dia.mo
 share/locale/da/LC_MESSAGES/dia.mo
 share/locale/de/LC_MESSAGES/dia.mo
+share/locale/dz/LC_MESSAGES/dia.mo
 share/locale/el/LC_MESSAGES/dia.mo
 share/locale/en_CA/LC_MESSAGES/dia.mo
 share/locale/en_GB/LC_MESSAGES/dia.mo
@@ -1789,17 +1792,21 @@ share/locale/id/LC_MESSAGES/dia.mo
 share/locale/is/LC_MESSAGES/dia.mo
 share/locale/it/LC_MESSAGES/dia.mo
 share/locale/ja/LC_MESSAGES/dia.mo
+share/locale/kn/LC_MESSAGES/dia.mo
 share/locale/ko/LC_MESSAGES/dia.mo
 share/locale/lt/LC_MESSAGES/dia.mo
 share/locale/lv/LC_MESSAGES/dia.mo
 share/locale/mk/LC_MESSAGES/dia.mo
 share/locale/ml/LC_MESSAGES/dia.mo
 share/locale/mn/LC_MESSAGES/dia.mo
+share/locale/mr/LC_MESSAGES/dia.mo
 share/locale/ms/LC_MESSAGES/dia.mo
 share/locale/nb/LC_MESSAGES/dia.mo
 share/locale/ne/LC_MESSAGES/dia.mo
 share/locale/nl/LC_MESSAGES/dia.mo
 share/locale/nn/LC_MESSAGES/dia.mo
+share/locale/oc/LC_MESSAGES/dia.mo
+share/locale/pa/LC_MESSAGES/dia.mo
 share/locale/pl/LC_MESSAGES/dia.mo
 share/locale/pt/LC_MESSAGES/dia.mo
 share/locale/pt_BR/LC_MESSAGES/dia.mo
@@ -1817,16 +1824,16 @@ share/locale/tr/LC_MESSAGES/dia.mo
 share/locale/uk/LC_MESSAGES/dia.mo
 share/locale/vi/LC_MESSAGES/dia.mo
 share/locale/zh_CN/LC_MESSAGES/dia.mo
+share/locale/zh_HK/LC_MESSAGES/dia.mo
 share/locale/zh_TW/LC_MESSAGES/dia.mo
-share/mime-info/
+@comment share/man/
+@comment share/man/fr/
+@comment share/man/fr/man1/
+@comment @man share/man/fr/man1/dia.1
 share/mime-info/dia.keys
 share/mime-info/dia.mime
-@comment share/oaf/
-@comment share/omf/
-@comment share/omf/dia/
-share/pixmaps/
-share/pixmaps/dia-diagram.png
-share/pixmaps/dia_gnome_icon.png
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 %%gnome%%

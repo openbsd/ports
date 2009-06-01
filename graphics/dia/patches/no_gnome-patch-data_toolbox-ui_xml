@@ -1,0 +1,13 @@
+$OpenBSD: no_gnome-patch-data_toolbox-ui_xml,v 1.1 2009/06/01 21:17:39 ajacoutot Exp $
+--- data/toolbox-ui.xml.orig	Wed Apr 15 15:25:16 2009
++++ data/toolbox-ui.xml	Wed Apr 15 15:25:24 2009
+@@ -15,9 +15,6 @@
+ 			<menuitem name="FileQuit" action="FileQuit" />
+ 		</menu>
+ 		<menu name="Help" action="Help">
+-			<menuitem name="HelpContents" action="HelpContents" />
+-			<separator name="HelpExtensionStart" />
+-			<separator name="HelpExtensionEnd" />
+ 			<menuitem name="HelpAbout" action="HelpAbout" />
+ 		</menu>
+ 	</menubar>

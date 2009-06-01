@@ -1,16 +1,15 @@
-$OpenBSD: patch-app_main_c,v 1.1 2008/10/03 11:39:01 ajacoutot Exp $
---- app/main.c.orig	Sun Jan 21 09:18:08 2007
-+++ app/main.c	Fri Oct  3 12:39:09 2008
-@@ -17,6 +17,8 @@
+$OpenBSD: patch-app_main_c,v 1.2 2009/06/01 21:17:39 ajacoutot Exp $
+--- app/main.c.orig	Tue Apr 14 22:57:03 2009
++++ app/main.c	Tue Apr 14 22:57:33 2009
+@@ -16,6 +16,7 @@
+  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
   */
  #include <config.h>
- 
 +#include <ieeefp.h>
-+
- #include "geometry.h"
- #include "diagram.h"
- #include "display.h"
-@@ -28,6 +30,8 @@
+ 
+ #include "app_procs.h"
+ 
+@@ -23,6 +24,8 @@
  
  int main(int argc, char *argv[])
  {

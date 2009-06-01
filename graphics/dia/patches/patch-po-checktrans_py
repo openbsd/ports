@@ -1,0 +1,9 @@
+$OpenBSD: patch-po-checktrans_py,v 1.1 2009/06/01 21:17:39 ajacoutot Exp $
+--- po-checktrans.py.orig	Wed Apr 15 00:12:43 2009
++++ po-checktrans.py	Wed Apr 15 00:13:01 2009
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!${MODPY_BIN}
+ #
+ # This quick hack gives translation statistics (from the core translation
+ # files).

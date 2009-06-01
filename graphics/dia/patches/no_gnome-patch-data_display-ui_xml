@@ -1,0 +1,13 @@
+$OpenBSD: no_gnome-patch-data_display-ui_xml,v 1.1 2009/06/01 21:17:39 ajacoutot Exp $
+--- data/display-ui.xml.orig	Wed Apr 15 15:24:47 2009
++++ data/display-ui.xml	Wed Apr 15 15:24:53 2009
+@@ -163,9 +163,6 @@
+ 			<separator name="DebugExtensionStart" />
+ 		</menu>
+ 		<menu name="Help" action="Help">
+-			<menuitem name="HelpContents" action="HelpContents" />
+-			<separator name="HelpExtensionStart" />
+-			<separator name="HelpExtensionEnd" />
+ 			<menuitem name="HelpAbout" action="HelpAbout" />
+ 		</menu>
+ 	</menubar>
