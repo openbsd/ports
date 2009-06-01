@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2009/06/01 05:50:43 ajacoutot Exp $
 
 # XXX TODO: the mail-account-disable plugin is not loaded by default:
 # it makes right-clicking on a folder very long (the first time)
@@ -11,8 +11,8 @@ COMMENT-plugins=	additionnal plugins for evolution
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.24.5
 
-PKGNAME-main=		${DISTNAME}p7
-PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p1
+PKGNAME-main=		${DISTNAME}p8
+PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p2
 
 CATEGORIES=		mail
 
@@ -107,7 +107,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-krb5=/usr \
 			--with-krb5-includes=/usr/include/kerberosV
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}/components:${TRUEPREFIX}/lib/evolution/${R}:${LOCALBASE}/lib -Z"
+			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}/components:${TRUEPREFIX}/lib/evolution/${R}:${LOCALBASE}/lib"
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
