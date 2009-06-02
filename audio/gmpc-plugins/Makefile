@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/23 19:26:47 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/02 05:20:58 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -35,7 +35,8 @@ MODULES =	devel/gettext
 RUN_DEPENDS =	:gmpc->=${VERSION}:audio/gmpc \
 		::audio/vorbis-tools
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS} \
+		::x11/gob2
 USE_LIBTOOL =	Yes
 USE_X11 =	Yes
 USE_GMAKE =	Yes
