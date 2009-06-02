@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2008/01/12 02:00:24 okan Exp $
-lib/python${MODPY_VERSION}/site-packages/Bio/KDTree/_CKDTree.so

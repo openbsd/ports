@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2009/03/11 08:07:56 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2009/06/02 04:48:32 wcmaier Exp $
 
-SHARED_ONLY=	Yes
-COMMENT=	Python tools for computational molecular biology
+SHARED_ONLY=		Yes
+COMMENT=		Python tools for computational molecular biology
 
-DISTNAME=	biopython-1.44
-PKGNAME=	py-${DISTNAME}p1
-CATEGORIES=	biology
+MODPY_EGG_VERSION=	1.50
+DISTNAME=		biopython-${MODPY_EGG_VERSION}
+CATEGORIES=		biology
 
-HOMEPAGE=	http://www.biopython.org/
+HOMEPAGE=		http://www.biopython.org/
 
-MAINTAINER=	Will Maier <willmaier@ml1.net>
+MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 
 # BSD-like 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,15 +20,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}DIST/
 
 MODULES=	lang/python
-PY_FLAVOR=	python${MODPY_VERSION}
 
 WANTLIB+=	stdc++
 
-BUILD_DEPENDS=	::math/py-Numeric \
-		::devel/swig
-RUN_DEPENDS=	:py-mxDateTime-*-${PY_FLAVOR}:devel/py-mxDateTime,${PY_FLAVOR} \
-		:py-Numeric-*:math/py-Numeric \
-		:py-reportlab-*:print/py-reportlab/reportlab
+BUILD_DEPENDS=	::devel/swig \
+		::math/py-numpy
+RUN_DEPENDS=	::math/py-numpy \
+		::print/py-reportlab/reportlab
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
 CFLAGS+=	-fPIC
@@ -43,6 +41,6 @@ post-install:
 do-regress: fake
 	@cd ${WRKSRC}/Tests && \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-		${MODPY_BIN} ./run_tests.py --no-gui
+		${MODPY_BIN} ./run_tests.py
 
 .include <bsd.port.mk>
