@@ -1,7 +1,6 @@
-$OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.4 2009/05/08 15:43:50 robert Exp $
---- solenv/inc/unxobsd.mk.orig.port	Thu May  7 23:14:18 2009
-+++ solenv/inc/unxobsd.mk	Fri May  8 11:02:18 2009
-@@ -0,0 +1,243 @@
+--- solenv/inc/unxobsd.mk.orig.port	Tue Jun  2 11:29:58 2009
++++ solenv/inc/unxobsd.mk	Tue Jun  2 15:47:36 2009
+@@ -0,0 +1,249 @@
 +#*************************************************************************
 +#
 +# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -12,7 +11,7 @@ $OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.4 2009/05/08 15:43:50 robert Exp $
 +#
 +# $RCSfile: patch-solenv_inc_unxobsd_mk,v $
 +#
-+# $Revision: 1.4 $
++# $Revision: 1.5 $
 +#
 +# This file is part of OpenOffice.org.
 +#
@@ -35,8 +34,8 @@ $OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.4 2009/05/08 15:43:50 robert Exp $
 +
 +# Makefile for OpenBSD.
 +
-+ASM=
-+AFLAGS=
++ASM=$(CC)
++AFLAGS=-Wa,-Av9b -x assembler-with-cpp -traditional-cpp -c $(CDEFS)
 +
 +SOLAR_JAVA*=
 +JAVAFLAGSDEBUG=-g
@@ -109,7 +108,13 @@ $OpenBSD: patch-solenv_inc_unxobsd_mk,v 1.4 2009/05/08 15:43:50 robert Exp $
 +
 +# -fpermissive should be removed as soon as possible
 +CFLAGSCXX= -pipe $(ARCH_FLAGS)
++
++.IF "$(CPUNAME)" == "SPARC"
++PICSWITCH:=-fPIC
++.ELSE
 +PICSWITCH:=-fpic
++.ENDIF
++
 +.IF "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
 +CFLAGSCXX += -fvisibility-inlines-hidden
 +.ENDIF # "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"

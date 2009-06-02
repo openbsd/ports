@@ -1,5 +1,5 @@
---- sal/osl/unx/makefile.mk.orig.port	Fri Aug  8 07:56:09 2008
-+++ sal/osl/unx/makefile.mk	Thu Jan 15 14:47:50 2009
+--- sal/osl/unx/makefile.mk.orig.port	Mon Aug 18 09:47:40 2008
++++ sal/osl/unx/makefile.mk	Tue Jun  2 01:02:13 2009
 @@ -116,7 +116,7 @@ OBJFILES=   $(OBJ)$/conditn.obj  \
  SLOFILES += $(SLO)$/osxlocale.obj
  .ENDIF
@@ -9,3 +9,12 @@
  SLOFILES += $(SLO)$/backtrace.obj
  OBJFILES += $(OBJ)$/backtrace.obj
  .ENDIF
+@@ -148,7 +148,7 @@ CFLAGS+=-DSAL_ENABLE_CRASH_REPORT
+ 
+ .INCLUDE :  target.mk
+ 
+-.IF "$(OS)$(CPU)"=="SOLARISU" || "$(OS)$(CPU)"=="SOLARISS" || "$(OS)$(CPU)"=="NETBSDS" || "$(OS)$(CPU)"=="LINUXS"
++.IF "$(OS)$(CPU)"=="SOLARISU" || "$(OS)$(CPU)"=="SOLARISS" || "$(OS)$(CPU)"=="NETBSDS" || "$(OS)$(CPU)"=="LINUXS" || "$(OS)$(CPU)"=="OPENBSDS"
+ 
+ $(SLO)$/interlck.obj: $(SLO)$/interlck.o
+ 	 touch $(SLO)$/interlck.obj
