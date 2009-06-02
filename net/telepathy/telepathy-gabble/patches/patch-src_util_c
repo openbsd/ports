@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_util_c,v 1.1 2009/06/02 04:43:33 jasper Exp $
+--- src/util.c.orig	Mon Jun  1 17:56:48 2009
++++ src/util.c	Mon Jun  1 17:57:01 2009
+@@ -30,7 +30,7 @@
+ #include <telepathy-glib/handle-repo-dynamic.h>
+ 
+ #ifdef HAVE_UUID
+-# include <uuid.h>
++# include <uuid/uuid.h>
+ #endif
+ 
+ #define DEBUG_FLAG GABBLE_DEBUG_JID

@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_gibber_asyncns_c,v 1.1 2009/06/02 04:43:33 jasper Exp $
+--- lib/gibber/asyncns.c.orig	Mon Jun  1 17:55:19 2009
++++ lib/gibber/asyncns.c	Mon Jun  1 17:55:28 2009
+@@ -29,6 +29,7 @@
+ #include <signal.h>
+ #include <unistd.h>
+ #include <sys/select.h>
++#include <sys/resource.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>

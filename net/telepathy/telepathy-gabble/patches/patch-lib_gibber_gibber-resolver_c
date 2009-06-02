@@ -1,0 +1,31 @@
+$OpenBSD: patch-lib_gibber_gibber-resolver_c,v 1.1 2009/06/02 04:43:33 jasper Exp $
+--- lib/gibber/gibber-resolver.c.orig	Mon Apr 20 15:18:10 2009
++++ lib/gibber/gibber-resolver.c	Mon Jun  1 18:19:42 2009
+@@ -37,6 +37,17 @@
+   #include "gibber-resolver-asyncns.h"
+ #endif
+ 
++#ifndef NS_GET16
++#define NS_INT16SZ	2	/* #/bytes of data in a u_int16_t */
++#define NS_GET16(s, cp) do { \
++	register const u_char *t_cp = (const u_char *)(cp); \
++	(s) = ((u_int16_t)t_cp[0] << 8) \
++	    | ((u_int16_t)t_cp[1]) \
++	    ; \
++	(cp) += NS_INT16SZ; \
++} while (0)
++#endif /* !NS_GET16 */
++
+ static GibberResolver *resolver_singleton = NULL;
+ static GType resolver_singleton_type = 0;
+ 
+@@ -735,7 +746,9 @@ gibber_resolver_gai_error_to_g_error (int error)
+       break;
+ 
+     case EAI_MEMORY:
++#ifdef EAI_OVERFLOW
+     case EAI_OVERFLOW:
++#endif
+       code = GIBBER_RESOLVER_ERROR_MEMORY;
+       break;
+ 

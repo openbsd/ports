@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/24 20:07:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2009/06/02 04:43:33 jasper Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
-DISTNAME=		telepathy-gabble-0.7.18
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		telepathy-gabble-0.7.27
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-gabble/}
 
@@ -18,7 +17,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::net/py-xmpp
 RUN_DEPENDS=		::textproc/libxslt
 LIB_DEPENDS=		loudmouth-1.>=3::net/loudmouth \
-			telepathy-glib.>=3::net/telepathy/telepathy-glib
+			telepathy-glib.>=4::net/telepathy/telepathy-glib
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

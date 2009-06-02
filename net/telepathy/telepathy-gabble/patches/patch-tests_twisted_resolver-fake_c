@@ -1,0 +1,17 @@
+$OpenBSD: patch-tests_twisted_resolver-fake_c,v 1.1 2009/06/02 04:43:33 jasper Exp $
+--- tests/twisted/resolver-fake.c.orig	Mon Jun  1 18:45:01 2009
++++ tests/twisted/resolver-fake.c	Mon Jun  1 18:55:20 2009
+@@ -20,10 +20,11 @@
+ 
+ #include "resolver-fake.h"
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <netdb.h>
+ #include <string.h>
+-#include <sys/socket.h>
+-#include <sys/types.h>
+ 
+ #define DEBUG(format, ...) \
+   g_debug ("%s: " format, G_STRFUNC, ##__VA_ARGS__)
