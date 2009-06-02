@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/24 20:07:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/06/02 04:45:14 jasper Exp $
 
 COMMENT=		flexible communications framework, python bindings
 
-DISTNAME=		telepathy-python-0.15.6
-PKGNAME=		${DISTNAME}p1
+V=			0.15.7
+DISTNAME=		telepathy-python-$V
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-python/}
 
@@ -19,6 +19,8 @@ RUN_DEPENDS=		::devel/py-gobject \
 USE_X11=		Yes
 
 NO_REGRESS=		Yes
+
+SUBST_VARS+=		V
 
 .include <bsd.port.mk>
 

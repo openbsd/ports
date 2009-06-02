@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/20 10:27:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/06/02 04:45:14 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/telepathy/
 lib/python${MODPY_VERSION}/site-packages/telepathy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/__init__.pyc
@@ -27,16 +27,22 @@ lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Hold.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Media_Signalling.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Media_Signalling.pyc
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Media_Signalling_Future.py
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Media_Signalling_Future.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Messages.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Messages.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Password.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Password.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Contact_List.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Contact_List.pyc
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_File_Transfer.py
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_File_Transfer.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Room_List.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Room_List.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Streamed_Media.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Streamed_Media.pyc
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Streamed_Media_Future.py
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Streamed_Media_Future.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Text.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Text.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Tubes.py
@@ -49,8 +55,6 @@ lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interfa
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Avatars.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Capabilities.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Capabilities.pyc
-lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_Capabilities.py
-lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_Capabilities.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contacts.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contacts.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Presence.py
@@ -115,4 +119,4 @@ lib/python${MODPY_VERSION}/site-packages/telepathy/server/properties.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/server/properties.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/utils.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/utils.pyc
-lib/python${MODPY_VERSION}/site-packages/telepathy_python-0.15.6-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/telepathy_python-${V}-py${MODPY_VERSION}.egg-info
