@@ -1,0 +1,7 @@
+The Frozen-Bubble server is a standalone program acting as a bridge
+between Frozen-Bubble clients (where the players are). It uses the IP
+protocol thus players need Internet connectivity (though it's possible
+to play LAN games on a LAN with IP support but no Internet
+connectivity). It has some logic to control creating and joining a
+game, and then becomes a pure relay for in-game information
+communicated between players.

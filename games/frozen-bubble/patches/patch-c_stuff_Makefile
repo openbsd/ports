@@ -1,0 +1,21 @@
+$OpenBSD: patch-c_stuff_Makefile,v 1.1.1.1 2009/06/02 22:07:25 sthen Exp $
+--- c_stuff/Makefile.orig	Sat Nov 15 06:23:58 2008
++++ c_stuff/Makefile	Tue May 26 01:19:34 2009
+@@ -51,13 +51,15 @@ PERL_MAKE_OPTS = $(PMO_PREFIX) $(PMO_INSTALLPRIVLIB) $
+     $(PMO_INSTALLMAN1DIR) $(PMO_INSTALLMAN3DIR)
+ 
+ Makefile_c: Makefile.PL
+-	perl Makefile.PL $(PERL_MAKE_OPTS) INSTALLDIRS=$(INSTALLDIRS)
++	perl Makefile.PL 
+ 
++#	perl Makefile.PL $(PERL_MAKE_OPTS) INSTALLDIRS=$(INSTALLDIRS)
++
+ fb_c_stuff: %: %.xs Makefile_c
+ 	$(MAKE) -f Makefile_c
+ 
+ install:
+-	$(MAKE) -f Makefile_c install
++	$(MAKE) -f Makefile_c pure_install
+ 
+ clean:
+ 	test ! -e Makefile_c || $(MAKE) -f Makefile_c clean

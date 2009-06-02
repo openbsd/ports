@@ -1,0 +1,58 @@
+$OpenBSD: patch-c_stuff_Makefile_PL,v 1.1.1.1 2009/06/02 22:07:25 sthen Exp $
+--- c_stuff/Makefile.PL.orig	Wed Jul  2 14:07:14 2008
++++ c_stuff/Makefile.PL	Tue May 26 00:43:53 2009
+@@ -31,11 +31,12 @@ system("sdl-config --cflags 2>/dev/null 1>/dev/null") 
+   die_ 'SDL development environment seems to be missing ("sdl-config --cflags" reports an error)';
+ 
+ 
++(my $sdl_libs = qx{sdl-config --libs}) =~ s{-pthread}{-lpthread};
+ ccompile('#include <SDL.h>
+           #include <SDL_mixer.h>',
+ 	 '',
+ 	 chomp_(`sdl-config --cflags`),
+-	 chomp_(`sdl-config --libs`) . ' -lSDL_mixer')
++	 chomp_($sdl_libs) . ' -lSDL_mixer')
+   or
+   die_ 'SDL_mixer development environment seems to be missing (failed to compile and link a simple program against libSDL_mixer)';
+ 
+@@ -44,7 +45,7 @@ ccompile('#include <SDL.h>
+           #include <SDL_mixer.h>',
+ 	 'Mix_FadeInMusicPos(NULL, 0, 0, 0);',
+ 	 chomp_(`sdl-config --cflags`),
+-	 chomp_(`sdl-config --libs`) . ' -lSDL_mixer')
++	 chomp_($sdl_libs) . ' -lSDL_mixer')
+   or
+   die_ 'SDL_mixer >= 1.2.2 is needed (impossible to create an executable with function Mix_FadeInMusicPos)';
+ 
+@@ -57,7 +58,7 @@ system("pkg-config SDL_Pango --cflags 2>/dev/null 1>/d
+ ccompile('#include <SDL_Pango.h>',
+ 	 'SDLPango_Context *context;',
+ 	 chomp_(`sdl-config --cflags`) . ' ' . chomp_(`pkg-config SDL_Pango --cflags`) . ' ',
+-	 chomp_(`sdl-config --libs`) . ' ' . chomp_(`pkg-config SDL_Pango --libs`) . ' ')
++	 chomp_($sdl_libs) . ' ' . chomp_(`pkg-config SDL_Pango --libs`) . ' ')
+   or
+   die_ 'SDL_Pango is needed (impossible to create an executable containing an SDLPango_Context pointer.';
+ 
+@@ -65,7 +66,7 @@ ccompile('#include <SDL_Pango.h>',
+ ccompile('#include <SDL_Pango.h>',
+ 	 'SDLPango_Context * context = SDLPango_CreateContext_GivenFontDesc(NULL);',
+ 	 chomp_(`sdl-config --cflags`) . ' ' . chomp_(`pkg-config SDL_Pango --cflags`) . ' ',
+-	 chomp_(`sdl-config --libs`) . ' ' . chomp_(`pkg-config SDL_Pango --libs`) . ' ')
++	 chomp_($sdl_libs) . ' ' . chomp_(`pkg-config SDL_Pango --libs`) . ' ')
+   or
+   die_ 'Frozen-Bubble patches are needed in SDL_Pango (impossible to create an executable calling the function SDLPango_CreateContext_GivenFontDesc)';
+ 
+@@ -73,10 +74,11 @@ ccompile('#include <SDL_Pango.h>',
+ 
+ WriteMakefile(
+     'NAME'         => 'fb_c_stuff',
+-    'LIBS'         => [ '-lm ' . chomp_(`sdl-config --libs`) . ' -lSDL_mixer ' . chomp_(`pkg-config SDL_Pango --libs`)],
++    'LIBS'         => [ '-lm ' . chomp_($sdl_libs) . ' -lSDL_mixer ' . chomp_(`pkg-config SDL_Pango --libs`)],
+     'VERSION_FROM' => 'fb_c_stuff.pm', # finds VERSION
+     'OBJECT'       => 'fb_c_stuff.o',
++    'INSTALLDIRS'  => 'site',
+     'INC'          => chomp_(`sdl-config --cflags`) . ' ' . chomp_(`pkg-config SDL_Pango --cflags`) . ' -I.',
+-    'OPTIMIZE'     => '-O2 -Wall',
++    'OPTIMIZE'     => $ENV{CFLAGS} . ' -Wall',
+     'MAKEFILE'     => 'Makefile_c',
+ );

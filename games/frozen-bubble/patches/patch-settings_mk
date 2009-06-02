@@ -1,0 +1,13 @@
+$OpenBSD: patch-settings_mk,v 1.1.1.1 2009/06/02 22:07:25 sthen Exp $
+--- settings.mk.orig	Sun Jun  8 15:48:22 2008
++++ settings.mk	Tue May 26 00:05:38 2009
+@@ -1,6 +1,7 @@
+-PREFIX = /usr/local
++PREFIX = ${LOCALBASE}
+ DATADIR = $(PREFIX)/share
+ LIBDIR = $(PREFIX)/lib
++LIBEXECDIR = $(PREFIX)/libexec
+ BINDIR = $(PREFIX)/bin
+-MANDIR = $(DATADIR)/man
++MANDIR = $(PREFIX)/man
+ LOCALEDIR = $(DATADIR)/locale

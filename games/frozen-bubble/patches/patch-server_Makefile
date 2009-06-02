@@ -1,0 +1,14 @@
+$OpenBSD: patch-server_Makefile,v 1.1.1.1 2009/06/02 22:07:25 sthen Exp $
+--- server/Makefile.orig	Tue May 26 00:05:45 2009
++++ server/Makefile	Tue May 26 00:06:26 2009
+@@ -21,8 +21,8 @@ clean: 
+ 	rm -f fb-server *.o .depend
+ 
+ install: fb-server
+-	install -d $(DESTDIR)$(LIBDIR)/frozen-bubble
+-	install fb-server $(DESTDIR)$(LIBDIR)/frozen-bubble
++	install -d $(DESTDIR)$(LIBEXECDIR)/frozen-bubble
++	install fb-server $(DESTDIR)$(LIBEXECDIR)/frozen-bubble
+ 
+ .depend:
+ 	$(CPP) $(CFLAGS) $(CPPFLAGS) -M $(ALLSRC) > .depend
