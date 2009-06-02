@@ -1,7 +1,7 @@
-$OpenBSD: patch-statist_1,v 1.1 2003/08/02 01:41:43 jolan Exp $
---- statist.1.orig	1993-02-24 14:36:59.000000000 +0100
-+++ statist.1	2003-08-01 08:33:14.000000000 +0200
-@@ -102,11 +102,8 @@ results may be unusable). Other values (
+$OpenBSD: patch-statist_1,v 1.2 2009/06/02 20:46:13 benoit Exp $
+--- statist.1.orig	Wed Feb 24 14:36:59 1993
++++ statist.1	Tue Jun  2 20:50:16 2009
+@@ -102,11 +102,8 @@ results may be unusable). Other values (average match 
  percentiles and sigma) are FYI only.
  .PP
  You may create the 
@@ -10,7 +10,7 @@ $OpenBSD: patch-statist_1,v 1.1 2003/08/02 01:41:43 jolan Exp $
 -.IR /etc/default/
 -directory, choose another - in MS-DOS it is FREEZE.CNF in
 -the directory of FREEZE.EXE), which has the following format:
-+.IR %%SYSCONFDIR%%/freeze.cnf
++.IR {SYSCONFDIR}/freeze.cnf
 +file, which has the following format:
  .in +8
  .I name

@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/03 11:30:01 espie Exp $
-bin/fcat
-bin/freeze
-bin/melt
-bin/statist
-bin/unfreeze
+@comment $OpenBSD: PLIST,v 1.6 2009/06/02 20:46:15 benoit Exp $
+@bin bin/fcat
+@bin bin/freeze
+@bin bin/melt
+@bin bin/statist
+@bin bin/unfreeze
 @man man/man1/fcat.1
 @man man/man1/freeze.1
 @man man/man1/melt.1
