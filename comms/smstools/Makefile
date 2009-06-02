@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/17 10:47:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2009/06/02 15:57:48 sthen Exp $
 
 COMMENT =	gateway to send and receive SMS through GSM mobile phones
 
-DISTNAME =	smstools3-3.1.3
-PKGNAME =	${DISTNAME}p0
+DISTNAME =	smstools3-3.1.5
 
 CATEGORIES =	comms
 
@@ -23,6 +22,7 @@ MASTER_SITES =	${HOMEPAGE}/packages/
 
 # some scripts use formail
 RUN_DEPENDS =	::mail/procmail
+LIB_DEPENDS =	mm::devel/mm
 
 USE_GMAKE =	Yes
 NO_REGRESS =	Yes
@@ -31,10 +31,12 @@ WRKSRC = 	${WRKDIST}/src
 
 # gcc 3.3.5 internal compiler error
 .if ${MACHINE_ARCH} == "mips64"
-EXTRA_CFLAGS =   -O0
+CFLAGS +=	-O0
 .endif
 
-MAKE_FLAGS +=		EXTRA_CFLAGS=${EXTRA_CFLAGS}
+EXTRA_CFLAGS +=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
+MAKE_FLAGS +=	CFLAGS="${CFLAGS} -D NUMBER_OF_MODEMS=64 `mm-config --cflags`"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/smsd ${PREFIX}/bin

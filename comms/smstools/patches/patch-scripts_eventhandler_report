@@ -1,0 +1,9 @@
+$OpenBSD: patch-scripts_eventhandler_report,v 1.1 2009/06/02 15:57:48 sthen Exp $
+--- scripts/eventhandler_report.orig	Tue Jun  2 03:59:02 2009
++++ scripts/eventhandler_report	Tue Jun  2 03:59:05 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # SMS Server Tools 3.
+ # Sample eventhandler script for storing delivery timestamps.
+ 

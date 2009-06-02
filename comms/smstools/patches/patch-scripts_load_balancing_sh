@@ -1,0 +1,9 @@
+$OpenBSD: patch-scripts_load_balancing_sh,v 1.1 2009/06/02 15:57:48 sthen Exp $
+--- scripts/load_balancing.sh.orig	Tue Jun  2 03:59:09 2009
++++ scripts/load_balancing.sh	Tue Jun  2 03:59:12 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # ---------------------------------------------------------------------------------------
+ # This example is for three modems, named GSM1, GSM2 and GSM3 using queues Q1, Q2 and Q3.
+ # In the global part of smsd.conf, enable message counters:
