@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2009/04/26 17:10:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2009/06/02 00:08:29 ajacoutot Exp $
 
-# XXX the following modules are commented in PLIST
+# XXX the following module is commented in PLIST
 # N800Module ===> needs HAL which we don't provide
-# Network sync ===> needs avahi
 
 COMMENT=		synchronization application for GNOME
 
