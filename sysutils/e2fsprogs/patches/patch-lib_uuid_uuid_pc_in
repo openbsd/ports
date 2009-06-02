@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_uuid_uuid_pc_in,v 1.1 2009/06/02 17:35:23 landry Exp $
+--- lib/uuid/uuid.pc.in.orig	Mon Jun  1 18:24:37 2009
++++ lib/uuid/uuid.pc.in	Mon Jun  1 18:25:29 2009
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+-libdir=@libdir@
++libdir=@libdir@/uuid
+ includedir=@includedir@
+ 
+ Name: uuid
