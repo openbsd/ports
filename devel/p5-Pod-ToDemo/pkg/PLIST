@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/02 21:42:42 sthen Exp $
+${P5SITE}/Pod/
+${P5SITE}/Pod/ToDemo.pm
+@man man/man3p/Pod::ToDemo.3p

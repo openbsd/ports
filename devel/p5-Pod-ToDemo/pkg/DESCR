@@ -1,0 +1,9 @@
+Pod::ToDemo allows you to write POD-only modules that serve as
+tutorials which can write out demo programs if you invoke them
+directly. That is, while SDL::Tutorial is a tutorial on writing
+beginner SDL applications with Perl, you can invoke it as:
+
+  $ perl -MSDL::Tutorial=sdl_demo.pl -e 1
+
+and it will write a bare-bones demo program called sdl_demo.pl based
+on the tutorial.
