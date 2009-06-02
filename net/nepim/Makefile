@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2009/02/16 15:28:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/02 21:08:23 merdely Exp $
 
 COMMENT=		network pipe meter
 
-DISTNAME=		nepim-0.39
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		nepim-0.53
 CATEGORIES=		net sysutils
 
 HOMEPAGE=		http://www.nongnu.org/nepim/
@@ -27,7 +26,7 @@ WRKSRC=         	${WRKDIST}/src
 ALL_TARGET=		default
 
 do-configure:
-	@perl -pi -e 's,!!PREFIX!!,${PREFIX},' ${WRKSRC}/Makefile
+	${SUBST_CMD} ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nepim ${PREFIX}/bin
