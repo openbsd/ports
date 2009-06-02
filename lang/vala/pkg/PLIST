@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/05/06 11:56:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2009/06/02 04:03:10 ajacoutot Exp $
 %%SHARED%%
 bin/vala-gen-introspect
 @bin bin/valac
@@ -8,7 +8,7 @@ include/vala-1.0/
 include/vala-1.0/gee.h
 include/vala-1.0/vala.h
 include/vala-1.0/valaccode.h
-include/vala-1.0/valagobject.h
+include/vala-1.0/valacodegen.h
 lib/libvala.a
 lib/libvala.la
 lib/pkgconfig/
@@ -41,6 +41,8 @@ share/vala/
 share/vala/vapi/
 share/vala/vapi/atk.vapi
 share/vala/vapi/bzlib.vapi
+share/vala/vapi/cairo-xcb.deps
+share/vala/vapi/cairo-xcb.vapi
 share/vala/vapi/cairo.vapi
 share/vala/vapi/curses.vapi
 share/vala/vapi/dbus-glib-1.vapi
@@ -174,4 +176,6 @@ share/vala/vapi/vte.deps
 share/vala/vapi/vte.vapi
 share/vala/vapi/webkit-1.0.deps
 share/vala/vapi/webkit-1.0.vapi
+share/vala/vapi/x11.vapi
+share/vala/vapi/xcb.vapi
 share/vala/vapi/zlib.vapi
