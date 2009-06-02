@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2009/05/31 21:27:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2009/06/02 04:23:22 ajacoutot Exp $
 
 COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.12.2
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 CATEGORIES=		audio
@@ -72,9 +73,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-x \
 			--enable-python \
 			--disable-scrollkeeper \
-			--disable-daap \
 			--without-hal \
-			--without-mdns \
 			--without-mtp \
 			--without-ipod \
 			--without-hal \
@@ -83,8 +82,11 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-vala \
 			--disable-browser-plugin \
 			--disable-fm-radio \
-			--disable-lirc \
-			--disable-daap
+			--disable-lirc
+# no need to enable avahi without daap
+CONFIGURE_ARGS+=	--disable-daap \
+			--without-mdns
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
