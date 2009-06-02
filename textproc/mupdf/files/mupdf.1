@@ -1,0 +1,77 @@
+.\" $OpenBSD: mupdf.1,v 1.1.1.1 2009/06/02 22:15:08 sthen Exp $
+.Dd $Mdocdate: June 2 2009 $
+.Dt MUPDF 1
+.Os
+.Sh NAME
+.Nm mupdf
+.Nd "display PDF files"
+.Sh SYNOPSIS
+.Nm mupdf
+.Bk -words
+.Op Fl d Ar password
+.Op Fl p Ar pagenumber
+.Op Fl z Ar zoom
+.Ar file.pdf
+.Sh DESCRIPTION
+.Nm
+is a viewer for Portable Document Format (pdf) files.
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl d Ar password
+Use
+.Ar password
+as the password to open the document.
+.It Fl p Ar pagenumber
+Open the document at page
+.Ar pagenumber .
+.It Fl z Ar zoom
+Open the document zoomed by
+.Ar zoom
+times.
+The value is taken as a multiplier, not a percentage.
+.El
+.Sh KEY BINDINGS
+The following key bindings are available.
+.Pp
+.Bl -tag -width xxxxxxxxxxxx -compact
+.It l <
+rotate left
+.It r >
+rotate right
+.It u
+scroll up
+.\" .It up
+.\" scroll up
+.It d
+scroll down
+.\" .It down
+.\" scroll down
+.It + =
+zoom in
+.It -
+zoom out
+.It w
+shrinkwrap
+.It b backspace
+previous page
+.\" .It pgup left
+.\" previous page
+.It n space
+next page
+.\" .It pgdn right
+.\" next page
+.It N F
+forward 10 pages
+.It B
+back 10 pages
+.It m
+mark page for snap back
+.It t
+pop back to last mark
+.It 123g
+move to page 123
+.El
+.Pp
+.Sh SEE ALSO
+.Xr xpdf 1

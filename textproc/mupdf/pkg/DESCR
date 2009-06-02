@@ -1,0 +1,23 @@
+Fitz is a project to create a new and modern graphics library.
+At the core of Fitz is the display tree: a scene graph of vector
+graphics, images and text making up the contents of a page.
+
+The standard components of Fitz are:
+
+    * Base runtime (thin memory and error handling layer)
+    * Streams and filters (standard postscript, pdf and tiff filters)
+    * World model (display trees and resources)
+    * Drawing (draw the tree to a bitmap raster) 
+
+MuPDF is a PDF parser that reads PDF files and creates Fitz trees.
+
+MuPDF also has an API to modify internal objects in the PDF files
+and write PDF files. For instance, it is possible to use the MuPDF
+library to encrypt existing PDF files, or to rearrange the pages.
+
+pdftool is a commandline demo of this functionality; it is a portable
+pdf swiss army knife for fixing broken pdf files, changing permissions,
+merging and extracting pages, and examining the internal object
+structure of a PDF file.
+
+The mupdf binary (aka pdfview) is a bare bones PDF viewer. 
