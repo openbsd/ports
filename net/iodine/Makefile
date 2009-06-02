@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/30 09:17:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/02 06:27:05 jasper Exp $
 
 COMMENT=		tunnel IPv4 data through DNS
 
-DISTNAME=		iodine-0.5.1
+DISTNAME=		iodine-0.5.2
 CATEGORIES=		net
 
 HOMEPAGE=		http://code.kryo.se/iodine/
