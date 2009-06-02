@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/25 13:52:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/06/02 05:20:51 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,12 +8,12 @@ COMMENT-docs=	py-qt4 documentation
 V=		4.3.3
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
-PKGNAME-main=	py-qt4-${V}p4
-PKGNAME-docs=	py-qt4-docs-${V}
+PKGNAME-main=	py-qt4-${V}p5
+PKGNAME-docs=	py-qt4-docs-${V}p0
 
 CATEGORIES=	x11 devel
 
-HOMEPAGE=	http://www.riverbankcomputing.co.uk/pyqt/index.php
+HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/pyqt/intro
 
 MAINTAINER=	Lars Hansson <lars@unet.net.ph>
 
@@ -43,7 +43,7 @@ LIB_DEPENDS=	QtAssistantClient,QtDesigner,QtGui,QtNetwork,QtOpenGL,QtScript,QtSq
 
 NO_REGRESS=	Yes
 
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/
+MASTER_SITES=	http://www.riverbankcomputing.co.uk/static/Downloads/PyQt4/
 
 MODULES=	x11/qt4 \
 		lang/python
