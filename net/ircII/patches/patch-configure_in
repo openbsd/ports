@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1 2009/05/07 19:54:57 naddy Exp $
---- configure.in.orig	Tue Jul 25 13:11:05 2006
-+++ configure.in	Wed May  6 15:10:19 2009
-@@ -764,22 +764,17 @@ AC_ARG_WITH(paranoid,
+$OpenBSD: patch-configure_in,v 1.2 2009/06/02 17:59:43 naddy Exp $
+--- configure.in.orig	Fri Mar 14 13:13:16 2008
++++ configure.in	Tue May 19 10:24:32 2009
+@@ -765,22 +765,17 @@ AC_ARG_WITH(paranoid,
    AC_MSG_RESULT(none)
  )
  

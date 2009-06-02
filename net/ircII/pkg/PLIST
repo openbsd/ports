@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.18 2007/10/05 19:54:55 kili Exp $
-bin/ircII
+@comment $OpenBSD: PLIST,v 1.19 2009/06/02 17:59:43 naddy Exp $
+@bin bin/ircII
 bin/ircbug
-bin/ircflush
-bin/ircio
-bin/wserv
+@bin bin/ircflush
+@bin bin/ircio
+@bin bin/wserv
 @comment @man man/man1/irc.1
 @man man/man1/ircII.1
 @man man/man1/ircbug.1
@@ -359,7 +359,6 @@ share/ircII/help/set/dccport
 share/ircII/help/set/debug
 share/ircII/help/set/decrypt_program
 share/ircII/help/set/display
-share/ircII/help/set/display_encoding
 share/ircII/help/set/eight_bit_characters
 share/ircII/help/set/encrypt_program
 share/ircII/help/set/exec_protection
@@ -382,12 +381,10 @@ share/ircII/help/set/hold_mode
 share/ircII/help/set/hold_mode_max
 share/ircII/help/set/indent
 share/ircII/help/set/input_aliases
-share/ircII/help/set/input_encoding
 share/ircII/help/set/input_prompt
 share/ircII/help/set/input_protection
 share/ircII/help/set/insert_mode
 share/ircII/help/set/inverse_video
-share/ircII/help/set/irc_encoding
 share/ircII/help/set/irchost
 share/ircII/help/set/lastlog
 share/ircII/help/set/lastlog_level
@@ -448,6 +445,7 @@ share/ircII/help/set/status_window
 share/ircII/help/set/suppress_server_motd
 share/ircII/help/set/tab
 share/ircII/help/set/tab_max
+share/ircII/help/set/translation
 share/ircII/help/set/underline_video
 share/ircII/help/set/user_information
 share/ircII/help/set/user_wallops
@@ -609,3 +607,37 @@ share/ircII/script/voice
 share/ircII/script/wallopstat
 share/ircII/script/whowas
 share/ircII/script/window
+share/ircII/translation/
+share/ircII/translation/ASCII
+share/ircII/translation/CP437
+share/ircII/translation/CP850
+share/ircII/translation/DANISH
+share/ircII/translation/DEC_MCS
+share/ircII/translation/DG_MCS
+share/ircII/translation/DUTCH
+share/ircII/translation/FINNISH
+share/ircII/translation/FRENCH
+share/ircII/translation/FRENCH_CANADIAN
+share/ircII/translation/GERMAN
+share/ircII/translation/HP_MCS
+share/ircII/translation/IRV
+share/ircII/translation/ITALIAN
+share/ircII/translation/JIS
+share/ircII/translation/MACINTOSH
+share/ircII/translation/NEXT
+share/ircII/translation/NORWEGIAN_1
+share/ircII/translation/NORWEGIAN_2
+share/ircII/translation/POLISH
+share/ircII/translation/POLISH_NOPL
+share/ircII/translation/PORTUGUESE
+share/ircII/translation/PORTUGUESE_COM
+share/ircII/translation/RUSSIAN
+share/ircII/translation/RUSSIAN_ALT
+share/ircII/translation/RUSSIAN_WIN
+share/ircII/translation/SPANISH
+share/ircII/translation/SWEDISH
+share/ircII/translation/SWEDISH_NAMES
+share/ircII/translation/SWEDISH_NAMES_COM
+share/ircII/translation/SWISS
+share/ircII/translation/UNITED_KINGDOM
+share/ircII/translation/UNITED_KINGDOM_COM

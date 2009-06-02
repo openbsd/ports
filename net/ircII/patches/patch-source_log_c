@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_log_c,v 1.1 2004/11/02 03:26:26 brad Exp $
---- source/log.c.orig	Tue Jan  6 00:42:16 2004
-+++ source/log.c	Tue Sep 21 22:26:52 2004
-@@ -172,9 +172,16 @@ add_to_log(fp, line)
+$OpenBSD: patch-source_log_c,v 1.2 2009/06/02 17:59:43 naddy Exp $
+--- source/log.c.orig	Wed Sep 27 05:16:29 2006
++++ source/log.c	Tue May 19 10:24:31 2009
+@@ -170,9 +170,16 @@ add_to_log(fp, line)
  	FILE	*fp;
  	u_char	*line;
  {
