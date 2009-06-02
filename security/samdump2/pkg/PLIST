@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/02 08:36:02 benoit Exp $
+@bin bin/samdump2
+@man man/man1/samdump2.1

@@ -1,0 +1,15 @@
+$OpenBSD: patch-bkhive_c,v 1.1.1.1 2009/06/02 08:36:02 benoit Exp $
+--- bkhive.c.orig	Thu Oct  2 15:44:47 2008
++++ bkhive.c	Thu May 28 23:25:32 2009
+@@ -34,7 +34,11 @@
+ #ifdef BYTE_ORDER
+ #if BYTE_ORDER == LITTLE_ENDIAN
+ #elif BYTE_ORDER == BIG_ENDIAN
++#ifndef __OpenBSD__
+ #include <byteswap.h>
++#else
++#include <sys/endian.h>
++#endif
+ #else
+ #warning "Doesn't define a standard ENDIAN type"
+ #endif

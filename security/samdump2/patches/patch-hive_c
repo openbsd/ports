@@ -1,0 +1,21 @@
+$OpenBSD: patch-hive_c,v 1.1.1.1 2009/06/02 08:36:02 benoit Exp $
+--- hive.c.orig	Thu May 28 21:14:36 2009
++++ hive.c	Thu May 28 21:43:50 2009
+@@ -27,11 +27,16 @@
+ #include <sys/param.h>
+ #include "hive.h"
+ 
+-
+ #ifdef BYTE_ORDER
+ #if BYTE_ORDER == LITTLE_ENDIAN
+ #elif BYTE_ORDER == BIG_ENDIAN
++#ifndef __OpenBSD__
+ #include <byteswap.h>
++#else
++#include <sys/endian.h>
++#define __bswap_32 __swap32
++#define __bswap_16 __swap16
++#endif 
+ #else
+ #warning "Doesn't define a standard ENDIAN type"
+ #endif
