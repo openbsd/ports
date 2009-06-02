@@ -226,8 +226,8 @@ NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
                 -net tap,vlan=0,fd=3 \
                 -m 128 \
                 -hda $hddir/virtual.img \
-                -serial telnet:127.0.0.1:1010,server,nowait \
-                -monitor telnet:127.0.0.1:1011,server,nowait \
+                -serial telnet:127.0.0.1:1080,server,nowait \
+                -monitor telnet:127.0.0.1:1081,server,nowait \
 		-no-fd-bootchk 3<>/dev/tun0"
         )
         echo "."
