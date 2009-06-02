@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_glib-errors-str-gen_py,v 1.1 2009/06/02 04:44:22 jasper Exp $
+
+Fix a /usr/local/include/telepathy-1.0/telepathy-glib/_gen/error-str.h:301:4: no newline at end of file
+
+--- tools/glib-errors-str-gen.py.orig	Mon Jun  1 22:23:52 2009
++++ tools/glib-errors-str-gen.py	Mon Jun  1 22:24:33 2009
+@@ -55,6 +55,7 @@ class Generator(object):
+         self.h("/* Work around a gtkdoc bug where it doesn't see the last")
+         self.h(" * definition in the file unless there's misc after it")
+         self.h(" */")
++        self.h('')
+ 
+         self.b('      default:')
+         self.b('        g_return_val_if_reached (NULL);')

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2009/03/24 20:07:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2009/06/02 04:44:22 jasper Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
-DISTNAME=		telepathy-glib-0.7.22
-PKGNAME=		${DISTNAME}p2
-SHARED_LIBS +=	telepathy-glib       3.2      # .20.0
+DISTNAME=		telepathy-glib-0.7.31
+SHARED_LIBS +=	telepathy-glib       4.0      # .25.0
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-glib/}
 
@@ -23,6 +22,7 @@ CONFIGURE_STYLE=	gnu autoconf
 AUTOCONF_VERSION=	2.61
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
+	${SUBST_CMD} ${WRKSRC}/configure \
+		${WRKSRC}/tests/all-errors-documented.py
 
 .include <bsd.port.mk>

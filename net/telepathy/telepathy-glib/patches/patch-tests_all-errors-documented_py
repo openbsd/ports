@@ -1,0 +1,9 @@
+$OpenBSD: patch-tests_all-errors-documented_py,v 1.1 2009/06/02 04:44:22 jasper Exp $
+--- tests/all-errors-documented.py.orig	Mon Jun  1 16:56:43 2009
++++ tests/all-errors-documented.py	Mon Jun  1 16:56:52 2009
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!${MODPY_BIN}
+ # Check if all the errors have been added to
+ # docs/reference/telepathy-glib-sections.txt
+ 

@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.6 2009/01/20 10:24:49 jasper Exp $
---- configure.ac.orig	Tue Jan 13 21:01:01 2009
-+++ configure.ac	Tue Jan 20 10:35:01 2009
-@@ -168,7 +168,7 @@ if test -z "$XSLTPROC"; then
+$OpenBSD: patch-configure_ac,v 1.7 2009/06/02 04:44:22 jasper Exp $
+--- configure.ac.orig	Sun May 31 15:12:02 2009
++++ configure.ac	Sun May 31 15:12:26 2009
+@@ -174,7 +174,7 @@ AC_CHECK_PROGS([XSLTPROC], [xsltproc])
+ if test -z "$XSLTPROC"; then
    AC_MSG_ERROR([xsltproc (from the libxslt source package) is required])
  fi
- PYTHON=
--AC_CHECK_PROGS([PYTHON], [python2.3 python2.4 python2.5 python])
-+AC_CHECK_PROGS([PYTHON], [python${MODPY_VERSION}])
- if test -z "$PYTHON"; then
-   AC_MSG_ERROR([Python is required to compile this package])
- fi
+-AM_PATH_PYTHON([2.3])
++AM_PATH_PYTHON([${MODPY_VERSION}])
+ 
+ dnl glibc backtrace functions
+ AC_CHECK_FUNCS(backtrace backtrace_symbols_fd)
