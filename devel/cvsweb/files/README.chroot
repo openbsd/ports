@@ -1,4 +1,4 @@
-# $OpenBSD: README.chroot,v 1.5 2009/02/17 09:04:07 giovanni Exp $
+# $OpenBSD: README.chroot,v 1.6 2009/06/02 04:38:35 naddy Exp $
 # Author: Jolan Luff <jolan@openbsd.org>
 
 In order to make CVSweb operate in a chroot environment, it is
@@ -39,7 +39,7 @@ And finally, the perl modules:
 
 $ cd /var/www/usr/libdata/perl5
 # cp -p /usr/libdata/perl5/{Carp,Exporter,Symbol,base,integer}.pm .
-# cp -p /usr/libdata/perl5/{strict,warnings,vars}.pm .
+# cp -p /usr/libdata/perl5/{strict,warnings,vars,constant}.pm .
 # cp -p /usr/libdata/perl5/File/Basename.pm ./File/
 # cp -p /usr/libdata/perl5/IPC/Open{2,3}.pm ./IPC/
 # cp -p /usr/libdata/perl5/Time/Local.pm ./Time/
