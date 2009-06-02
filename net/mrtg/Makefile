@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.60 2009/01/01 15:23:41 bluhm Exp $
+# $OpenBSD: Makefile,v 1.61 2009/06/02 21:47:02 merdely Exp $
 
 COMMENT=	multi-router traffic grapher
 
-DISTNAME=	mrtg-2.15.2
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	mrtg-2.16.2
 CATEGORIES=	net
 
 HOMEPAGE=	http://oss.oetiker.ch/mrtg/
@@ -27,7 +26,7 @@ LIB_DEPENDS=	gd.>=18::graphics/gd
 USE_X11=	Yes
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.59
+AUTOCONF_VERSION= 2.61
 CONFIGURE_ARGS+=--with-gd-inc="${LOCALBASE}/include" \
 		--with-gd-lib="${LOCALBASE}/lib" \
 		--with-png-inc="${LOCALBASE}/include" \
