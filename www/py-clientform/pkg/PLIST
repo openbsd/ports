@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/23 18:00:16 merdely Exp $
-lib/python${MODPY_VERSION}/site-packages/ClientForm-0.2.7-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/ClientForm-0.2.7-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/ClientForm-0.2.7-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/ClientForm-0.2.7-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/ClientForm-0.2.7-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/ClientForm-0.2.7-py${MODPY_VERSION}.egg-info/zip-safe
+@comment $OpenBSD: PLIST,v 1.2 2009/06/02 05:04:37 wcmaier Exp $
+lib/python${MODPY_VERSION}/site-packages/ClientForm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/ClientForm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/ClientForm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/ClientForm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/ClientForm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/ClientForm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/ClientForm.py
 lib/python${MODPY_VERSION}/site-packages/ClientForm.pyc
 share/doc/py-clientform/
