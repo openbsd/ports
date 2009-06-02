@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2009/06/02 00:57:57 merdely Exp $
+--- Makefile.in.orig	Sun May 31 15:45:15 2009
++++ Makefile.in	Sun May 31 15:45:27 2009
+@@ -180,7 +180,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ AUTOMAKE_OPTIONS = foreign dist-zip
+-SUBDIRS = src include @docs_subdirs@
++SUBDIRS = src include
+ EXTRA_DIST = AUTHORS COPYING ChangeLog INSTALL README README.win32 README.osx TODO NEWS libdbi.spec.in config.h.in Makefile.w32 autogen.sh drivers/example/AUTHORS drivers/example/Makefile.am drivers/example/README drivers/example/TODO drivers/example/.cvsignore drivers/example/dbd_example.c drivers/example/dbd_example.h drivers/example/dbd_example.sgml
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive

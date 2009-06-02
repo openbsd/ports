@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/06/02 00:57:57 merdely Exp $
+--- configure.orig	Wed Feb  6 14:40:11 2008
++++ configure	Sun May 31 15:46:40 2009
+@@ -19264,9 +19264,10 @@ else
+                 CFLAGS="-O20 -ffast-math -D__NO_MATH_INLINES -fsigned-char -mv8 -std=gnu99"
+                 PROFILE="-pg -g -O20 -D__NO_MATH_INLINES -fsigned-char -mv8 -std=gnu99" ;;
+         *)
+-                DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char -std=gnu99"
+-                CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char -std=gnu99"
+-                PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char -std=gnu99" ;;
++                DEBUG="${DEBUG} -Wall -D__NO_MATH_INLINES -fsigned-char"
++                CFLAGS="${CFLAGS} -D__NO_MATH_INLINES -fsigned-char"
++                PROFILE="${PROFILE} -pg -D__NO_MATH_INLINES -fsigned-char"
++		;;
+         esac
+ fi
+ 

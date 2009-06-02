@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/06/02 00:57:57 merdely Exp $
+@lib lib/libdbi.so.${LIBdbi_VERSION}
