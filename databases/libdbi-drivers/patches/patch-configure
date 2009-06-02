@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/06/02 00:58:58 merdely Exp $
+--- configure.orig	Mon Mar  3 12:41:58 2008
++++ configure	Sun May 31 17:47:10 2009
+@@ -11830,7 +11830,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+   # The `*' in the case matches for architectures that use `case' in
+   # $output_verbose_cmd can trigger glob expansion during the loop
+   # eval without this substitution.
+-  output_verbose_link_cmd="`$echo \"X$output_verbose_link_cmd\" | $Xsed -e \"$no_glob_subst\"`"
++  output_verbose_link_cmd="`$echo \"$output_verbose_link_cmd\" | $Xsed -e "$no_glob_subst"`"
+ 
+   for p in `eval $output_verbose_link_cmd`; do
+     case $p in
+@@ -20209,9 +20209,9 @@ else
+                 CFLAGS="-O20 -ffast-math -D__NO_MATH_INLINES -fsigned-char -mv8"
+                 PROFILE="-pg -g -O20 -D__NO_MATH_INLINES -fsigned-char -mv8" ;;
+         *)
+-                DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char"
+-                CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char"
+-                PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
++                DEBUG="${DEBUG} -Wall -D__NO_MATH_INLINES -fsigned-char"
++                CFLAGS="${CFLAGS} -D__NO_MATH_INLINES -fsigned-char"
++                PROFILE="${PROFILE} -pg -D__NO_MATH_INLINES -fsigned-char" ;;
+         esac
+ fi
+ 

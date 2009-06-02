@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST-pgsql,v 1.1.1.1 2009/06/02 00:58:58 merdely Exp $
+%%SHARED%%
+lib/dbd/
+lib/dbd/libdbdpgsql.a
+lib/dbd/libdbdpgsql.la
+share/doc/libdbi-drivers/
+share/doc/libdbi-drivers/dbd_pgsql/
+share/doc/libdbi-drivers/dbd_pgsql.pdf
+share/doc/libdbi-drivers/dbd_pgsql/copying-fdl.html
+share/doc/libdbi-drivers/dbd_pgsql/f30.html
+share/doc/libdbi-drivers/dbd_pgsql/index.html
+share/doc/libdbi-drivers/dbd_pgsql/install-build.html
+share/doc/libdbi-drivers/dbd_pgsql/install-prereq.html
+share/doc/libdbi-drivers/dbd_pgsql/install.html
+share/doc/libdbi-drivers/dbd_pgsql/intro.html
+share/doc/libdbi-drivers/dbd_pgsql/options.html
+share/doc/libdbi-drivers/dbd_pgsql/specific.html

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1.1.1 2009/06/02 00:58:58 merdely Exp $
+lib/dbd/libdbdmysql.so

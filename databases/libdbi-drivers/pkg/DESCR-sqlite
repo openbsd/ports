@@ -1,0 +1,5 @@
+The libdbi-drivers project provides the database-specific drivers for
+the libdbi framework. The current version of libdbi-drivers will work
+with any 0.8.x release of the framework.
+
+This package has the sqlite driver.

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-freetds,v 1.1.1.1 2009/06/02 00:58:58 merdely Exp $
+%%SHARED%%
+lib/dbd/
+lib/dbd/libdbdfreetds.a
+lib/dbd/libdbdfreetds.la

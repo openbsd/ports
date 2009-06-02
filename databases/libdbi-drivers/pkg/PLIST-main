@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/06/02 00:58:58 merdely Exp $
+%%SHARED%%
+lib/dbd/
+lib/dbd/libdbdmysql.a
+lib/dbd/libdbdmysql.la
+share/doc/libdbi-drivers/
+share/doc/libdbi-drivers/dbd_mysql/
+share/doc/libdbi-drivers/dbd_mysql.pdf
+share/doc/libdbi-drivers/dbd_mysql/c168.html
+share/doc/libdbi-drivers/dbd_mysql/c173.html
+share/doc/libdbi-drivers/dbd_mysql/c35.html
+share/doc/libdbi-drivers/dbd_mysql/c39.html
+share/doc/libdbi-drivers/dbd_mysql/c40.html
+share/doc/libdbi-drivers/dbd_mysql/c44.html
+share/doc/libdbi-drivers/dbd_mysql/c93.html
+share/doc/libdbi-drivers/dbd_mysql/c98.html
+share/doc/libdbi-drivers/dbd_mysql/copying-fdl.html
+share/doc/libdbi-drivers/dbd_mysql/f24.html
+share/doc/libdbi-drivers/dbd_mysql/f29.html
+share/doc/libdbi-drivers/dbd_mysql/index.html
+share/doc/libdbi-drivers/dbd_mysql/x171.html
+share/doc/libdbi-drivers/dbd_mysql/x176.html
+share/doc/libdbi-drivers/dbd_mysql/x42.html
+share/doc/libdbi-drivers/dbd_mysql/x47.html
+share/doc/libdbi-drivers/dbd_mysql/x56.html
+share/doc/libdbi-drivers/dbd_mysql/x61.html
