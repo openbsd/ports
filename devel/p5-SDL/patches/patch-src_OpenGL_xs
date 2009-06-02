@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_OpenGL_xs,v 1.1.1.1 2009/06/02 21:57:38 sthen Exp $
+--- src/OpenGL.xs.orig	Wed Oct  5 02:25:49 2005
++++ src/OpenGL.xs	Mon May 25 14:07:37 2009
+@@ -12,8 +12,8 @@
+ 
+ #include <SDL.h>
+ 
+-#include <gl.h>
+-#include <glu.h>
++#include <GL/gl.h>
++#include <GL/glu.h>
+ 
+ #ifdef USE_THREADS
+ #define HAVE_TLS_CONTEXT
+@@ -23,7 +23,7 @@
+ #define GL_ALL_CLIENT_ATTRIB_BITS 0xFFFFFFF
+ #endif /* GL_ALL_CLIENT_BITS */  
+ 
+-#include "../defines.h"
++#include "../src/defines.h"
+ 
+ SV* sdl_perl_nurbs_error_hook;
+ void

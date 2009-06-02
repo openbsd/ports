@@ -1,0 +1,117 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/02 21:57:38 sthen Exp $
+${P5ARCH}/SDL/
+${P5ARCH}/SDL.pm
+${P5ARCH}/SDL/App.pm
+${P5ARCH}/SDL/Cdrom.pm
+${P5ARCH}/SDL/Color.pm
+${P5ARCH}/SDL/Config.pm
+${P5ARCH}/SDL/Constants.pm
+${P5ARCH}/SDL/Cursor.pm
+${P5ARCH}/SDL/Event.pm
+${P5ARCH}/SDL/Font.pm
+${P5ARCH}/SDL/MPEG.pm
+${P5ARCH}/SDL/Mixer.pm
+${P5ARCH}/SDL/Music.pm
+${P5ARCH}/SDL/OpenGL/
+${P5ARCH}/SDL/OpenGL.pm
+${P5ARCH}/SDL/OpenGL/Constants.pm
+${P5ARCH}/SDL/Palette.pm
+${P5ARCH}/SDL/Rect.pm
+${P5ARCH}/SDL/SFont.pm
+${P5ARCH}/SDL/Sound.pm
+${P5ARCH}/SDL/Surface.pm
+${P5ARCH}/SDL/TTFont.pm
+${P5ARCH}/SDL/Timer.pm
+${P5ARCH}/SDL/Tool/
+${P5ARCH}/SDL/Tool/Font.pm
+${P5ARCH}/SDL/Tool/Graphic.pm
+${P5ARCH}/SDL/Tutorial/
+${P5ARCH}/SDL/Tutorial.pm
+${P5ARCH}/SDL/Tutorial/Animation.pm
+${P5ARCH}/SDL/Tutorial/Drawing.pm
+${P5ARCH}/SDL/Tutorial/Images.pm
+${P5ARCH}/SDL/Video.pm
+${P5ARCH}/SDL_perl.pm
+${P5ARCH}/auto/SDL/
+${P5ARCH}/auto/SDL/OpenGL/
+${P5ARCH}/auto/SDL/OpenGL/OpenGL.bs
+${P5ARCH}/auto/SDL/OpenGL/OpenGL.so
+${P5ARCH}/auto/SDL/SFont/
+${P5ARCH}/auto/SDL/SFont/SFont.bs
+${P5ARCH}/auto/SDL/SFont/SFont.so
+${P5ARCH}/auto/SDL_perl/
+${P5ARCH}/auto/SDL_perl/SDL_perl.bs
+${P5ARCH}/auto/SDL_perl/SDL_perl.so
+@man man/man3p/SDL.3p
+@man man/man3p/SDL::App.3p
+@man man/man3p/SDL::Cdrom.3p
+@man man/man3p/SDL::Color.3p
+@man man/man3p/SDL::Cursor.3p
+@man man/man3p/SDL::Event.3p
+@man man/man3p/SDL::Font.3p
+@man man/man3p/SDL::MPEG.3p
+@man man/man3p/SDL::Mixer.3p
+@man man/man3p/SDL::Music.3p
+@man man/man3p/SDL::OpenGL.3p
+@man man/man3p/SDL::Palette.3p
+@man man/man3p/SDL::Rect.3p
+@man man/man3p/SDL::SFont.3p
+@man man/man3p/SDL::Sound.3p
+@man man/man3p/SDL::Surface.3p
+@man man/man3p/SDL::TTFont.3p
+@man man/man3p/SDL::Timer.3p
+@man man/man3p/SDL::Tool::Font.3p
+@man man/man3p/SDL::Tool::Graphic.3p
+@man man/man3p/SDL::Tutorial.3p
+@man man/man3p/SDL::Tutorial::Animation.3p
+@man man/man3p/SDL::Tutorial::Drawing.3p
+@man man/man3p/SDL::Tutorial::Images.3p
+@man man/man3p/SDL::Video.3p
+share/examples/p5-SDL/
+share/examples/p5-SDL/OpenGL/
+share/examples/p5-SDL/OpenGL/README
+share/examples/p5-SDL/OpenGL/tutorial/
+share/examples/p5-SDL/OpenGL/tutorial/Data/
+share/examples/p5-SDL/OpenGL/tutorial/Data/NeHe.png
+share/examples/p5-SDL/OpenGL/tutorial/Data/Star.bmp
+share/examples/p5-SDL/OpenGL/tutorial/Data/crate.png
+share/examples/p5-SDL/OpenGL/tutorial/Data/cube.bmp
+share/examples/p5-SDL/OpenGL/tutorial/Data/glass.bmp
+share/examples/p5-SDL/OpenGL/tutorial/Data/tim.jpg
+share/examples/p5-SDL/OpenGL/tutorial/Data/world.txt
+share/examples/p5-SDL/OpenGL/tutorial/lesson02.pl
+share/examples/p5-SDL/OpenGL/tutorial/lesson03.pl
+share/examples/p5-SDL/OpenGL/tutorial/lesson04.pl
+share/examples/p5-SDL/OpenGL/tutorial/lesson05.pl
+share/examples/p5-SDL/OpenGL/tutorial/lesson06.pl
+share/examples/p5-SDL/OpenGL/tutorial/lesson07.pl
+share/examples/p5-SDL/OpenGL/tutorial/lesson08.pl
+share/examples/p5-SDL/OpenGL/tutorial/test1.pl
+share/examples/p5-SDL/OpenGL/tutorial/test2.pl
+share/examples/p5-SDL/OpenGL/tutorial/test3.pl
+share/examples/p5-SDL/OpenGL/tutorial/test4.pl
+share/examples/p5-SDL/OpenGL/tutorial/test5.pl
+share/examples/p5-SDL/README
+share/examples/p5-SDL/checkkeys.pl
+share/examples/p5-SDL/data/
+share/examples/p5-SDL/data/24P_Arial_NeonYellow.png
+share/examples/p5-SDL/data/24P_Copperplate_Blue.png
+share/examples/p5-SDL/data/LargeFont.bmp
+share/examples/p5-SDL/data/aircut3.ttf
+share/examples/p5-SDL/data/electrohar.ttf
+share/examples/p5-SDL/data/highlight.png
+share/examples/p5-SDL/data/icon.bmp
+share/examples/p5-SDL/data/logo.png
+share/examples/p5-SDL/data/menu.png
+share/examples/p5-SDL/data/sample.wav
+share/examples/p5-SDL/graywin.pl
+share/examples/p5-SDL/loopwave.pl
+share/examples/p5-SDL/testcolor.pl
+share/examples/p5-SDL/testfonttool.pl
+share/examples/p5-SDL/testgfxprim.pl
+share/examples/p5-SDL/testgfxroto.pl
+share/examples/p5-SDL/testgraphictool.pl
+share/examples/p5-SDL/testjoystick.pl
+share/examples/p5-SDL/testmenu.pl
+share/examples/p5-SDL/testsprite.pl
+share/examples/p5-SDL/testtimer.pl

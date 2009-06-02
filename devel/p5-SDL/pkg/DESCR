@@ -1,0 +1,6 @@
+SDL_perl is a package of perl modules that provides both functional
+and object orient interfaces to the Simple DirectMedia Layer for Perl
+5. This package does take some liberties with the SDL API, and
+attempts to adhere to the spirit of both the SDL and Perl. For the
+object oriented programming interface please see the documentation
+provided on a per class basis.

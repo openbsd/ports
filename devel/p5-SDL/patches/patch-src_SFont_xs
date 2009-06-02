@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_SFont_xs,v 1.1.1.1 2009/06/02 21:57:38 sthen Exp $
+--- src/SFont.xs.orig	Wed Oct  5 02:25:49 2005
++++ src/SFont.xs	Mon May 25 14:09:52 2009
+@@ -23,8 +23,8 @@
+ #define HAVE_TLS_CONTEXT
+ #endif
+ 
+-#include "../defines.h"
+-#include "../SFont.h"
++#include "../src/defines.h"
++#include "../src/SFont.h"
+ 
+ #ifdef HAVE_SDL_IMAGE
+ #include <SDL_image.h>

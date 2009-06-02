@@ -1,0 +1,11 @@
+$OpenBSD: patch-typemap,v 1.1.1.1 2009/06/02 21:57:38 sthen Exp $
+--- typemap.orig	Wed Oct  5 02:25:49 2005
++++ typemap	Mon May 25 14:08:13 2009
+@@ -54,6 +54,7 @@ GLboolean		T_U_CHAR
+ GLUnurbsObj *		T_PTR
+ GLUtesselator *		T_PTR
+ GLuint			T_UV
++GLint			T_IV
+ GLint*			T_PTR
+ float *			T_PTR
+ float			T_NV

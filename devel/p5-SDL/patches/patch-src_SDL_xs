@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_SDL_xs,v 1.1.1.1 2009/06/02 21:57:38 sthen Exp $
+--- src/SDL.xs.orig	Wed Oct  5 02:25:49 2005
++++ src/SDL.xs	Thu May 28 14:54:55 2009
+@@ -69,7 +69,7 @@ static int sdl_perl_use_smpeg_audio = 0;
+ #define HAVE_TLS_CONTEXT
+ #endif
+ 
+-#include "defines.h"
++#include "src/defines.h"
+ 
+ Uint32 
+ sdl_perl_timer_callback ( Uint32 interval, void* param )
+@@ -3911,7 +3911,7 @@ GFXFilledpieColor ( dst, x, y, rad, start, end, color 
+     Sint16 end;
+     Uint32 color;
+ CODE:
+-     RETVAL = filledpieColor( dst, x, y, rad, start, end, color );
++     RETVAL = filledPieColor( dst, x, y, rad, start, end, color );
+ OUTPUT:
+      RETVAL
+ 
+@@ -3928,7 +3928,7 @@ GFXFilledpieRGBA ( dst, x, y, rad, start, end, r, g, b
+     Uint8 b;
+     Uint8 a;
+ CODE:
+-     RETVAL = filledpieRGBA( dst, x, y, rad, start, end, r, g, b, a );
++     RETVAL = filledPieRGBA( dst, x, y, rad, start, end, r, g, b, a );
+ OUTPUT:
+      RETVAL
+ 
