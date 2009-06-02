@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2009/04/05 11:01:52 bernd Exp $
+# $OpenBSD: Makefile,v 1.161 2009/06/02 00:59:57 merdely Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -16,6 +16,8 @@
      SUBDIR += jxplorer
      SUBDIR += keximdb
      SUBDIR += lbdb
+     SUBDIR += libdbi
+     SUBDIR += libdbi-drivers
      SUBDIR += libpqxx
      SUBDIR += luasqlite3
      SUBDIR += maatkit
