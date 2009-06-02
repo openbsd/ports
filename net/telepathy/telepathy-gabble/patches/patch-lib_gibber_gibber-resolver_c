@@ -1,31 +1,30 @@
-$OpenBSD: patch-lib_gibber_gibber-resolver_c,v 1.1 2009/06/02 04:43:33 jasper Exp $
+$OpenBSD: patch-lib_gibber_gibber-resolver_c,v 1.2 2009/06/02 17:10:42 jasper Exp $
+
+Use GETSHORT instead of NS_GET16 which comes with libresolv.
+
 --- lib/gibber/gibber-resolver.c.orig	Mon Apr 20 15:18:10 2009
-+++ lib/gibber/gibber-resolver.c	Mon Jun  1 18:19:42 2009
-@@ -37,6 +37,17 @@
-   #include "gibber-resolver-asyncns.h"
- #endif
++++ lib/gibber/gibber-resolver.c	Tue Jun  2 11:05:23 2009
+@@ -686,8 +686,8 @@ gibber_resolver_res_query_to_list (guchar *answer, int
  
-+#ifndef NS_GET16
-+#define NS_INT16SZ	2	/* #/bytes of data in a u_int16_t */
-+#define NS_GET16(s, cp) do { \
-+	register const u_char *t_cp = (const u_char *)(cp); \
-+	(s) = ((u_int16_t)t_cp[0] << 8) \
-+	    | ((u_int16_t)t_cp[1]) \
-+	    ; \
-+	(cp) += NS_INT16SZ; \
-+} while (0)
-+#endif /* !NS_GET16 */
-+
- static GibberResolver *resolver_singleton = NULL;
- static GType resolver_singleton_type = 0;
+        /* Ignore the initial string, which has the query in it */
+        pos += len;
+-       NS_GET16 (type, pos);
+-       NS_GET16 (class, pos);
++       GETSHORT (type, pos);
++       GETSHORT (class, pos);
  
-@@ -735,7 +746,9 @@ gibber_resolver_gai_error_to_g_error (int error)
-       break;
+        if (type != T_SRV || class != C_IN)
+          goto failed;
+@@ -695,9 +695,9 @@ gibber_resolver_res_query_to_list (guchar *answer, int
+        /* skip ttl and dlen */
+        pos += 6;
  
-     case EAI_MEMORY:
-+#ifdef EAI_OVERFLOW
-     case EAI_OVERFLOW:
-+#endif
-       code = GIBBER_RESOLVER_ERROR_MEMORY;
-       break;
+-       NS_GET16 (pref, pos);
+-       NS_GET16 (weight, pos);
+-       NS_GET16 (port, pos);
++       GETSHORT (pref, pos);
++       GETSHORT (weight, pos);
++       GETSHORT (port, pos);
+        len = dn_expand (answer, end, pos, name, 255);
  
+        list = g_list_prepend (list,
