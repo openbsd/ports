@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_idle-parser_c,v 1.1.1.1 2007/10/27 16:18:54 jasper Exp $
---- src/idle-parser.c.orig	Fri Oct 12 22:13:36 2007
-+++ src/idle-parser.c	Fri Oct 12 22:25:39 2007
-@@ -195,7 +195,9 @@ void idle_parser_receive(IdleParser *parser, const gch
+$OpenBSD: patch-src_idle-parser_c,v 1.2 2009/06/02 04:46:29 jasper Exp $
+--- src/idle-parser.c.orig	Fri Mar 27 17:24:50 2009
++++ src/idle-parser.c	Mon Jun  1 20:18:04 2009
+@@ -207,7 +207,9 @@ void idle_parser_receive(IdleParser *parser, const gch
  
  	g_assert(msg != NULL);
  

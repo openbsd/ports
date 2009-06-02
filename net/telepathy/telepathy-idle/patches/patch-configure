@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2009/01/22 17:14:24 jasper Exp $
---- configure.orig	Sat Oct 27 16:43:14 2007
-+++ configure	Sat Oct 27 16:43:29 2007
-@@ -21747,7 +21747,7 @@ echo "$as_me: error: dbus-binding-tool (from dbus-glib
+$OpenBSD: patch-configure,v 1.3 2009/06/02 04:46:29 jasper Exp $
+--- configure.orig	Mon Jun  1 20:17:29 2009
++++ configure	Mon Jun  1 20:17:54 2009
+@@ -13522,7 +13522,7 @@ $as_echo "$as_me: error: xsltproc (from the libxslt so
     { (exit 1); exit 1; }; }
  fi
  PYTHON=
