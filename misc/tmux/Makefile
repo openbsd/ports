@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/21 20:57:45 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2009/06/02 07:48:40 nicm Exp $
+
+COMES_WITH=	4.6
 
 COMMENT=	terminal multiplexer
 
