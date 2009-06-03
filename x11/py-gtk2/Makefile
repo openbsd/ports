@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2009/06/03 17:26:00 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GTK+2 Python bindings
 
 GNOME_PROJECT=	pygtk
 GNOME_VERSION=	2.14.1
-PKGNAME=	py-gtk2-${VERSION}
+PKGNAME=	py-gtk2-${VERSION}p0
 
 CATEGORIES=	x11
 
@@ -40,6 +40,9 @@ USE_GMAKE=	No
 USE_X11=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE=gnu
+
+# pick bind_textdomain_codeset
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv"
 
 # The regression tests require a running instance of X.
 # You will also need to set the XAUTHORITY environment variable to point 
