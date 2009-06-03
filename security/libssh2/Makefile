@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/15 21:20:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/03 22:46:42 merdely Exp $
 
 COMMENT =		library implementing the SSH2 protocol
 
-DISTNAME =		libssh2-0.18
+DISTNAME =		libssh2-1.1
 CATEGORIES =		security
 HOMEPAGE =		http://www.libssh2.org/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libssh2/}
-SHARED_LIBS +=		ssh2	1.0	# .1.0
+SHARED_LIBS +=		ssh2	2.0	# .1.0
 
 MAINTAINER =		Eric Sproul <eric@nanobyte.org>
 
@@ -19,6 +19,10 @@ PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE =	gnu
 USE_LIBTOOL =		Yes
-WANTLIB =		crypto z
+WANTLIB =		crypto ssl z
+
+# The second test will only pass if public key auth is configured for ${USER}
+REGRESS_IS_INTERACTIVE = Yes
+REGRESS_FLAGS="USER=${USER}"
 
 .include <bsd.port.mk>
