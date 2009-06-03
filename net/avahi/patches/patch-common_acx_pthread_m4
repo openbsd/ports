@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_acx_pthread_m4,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp $
+--- common/acx_pthread.m4.orig	Sun May 31 17:35:34 2009
++++ common/acx_pthread.m4	Sun May 31 17:35:49 2009
+@@ -260,7 +260,7 @@ if test "x$acx_pthread_ok" = xyes; then
+       # FIXME: -fPIC is required for -shared on many architectures,
+       # so we specify it here, but the right way would probably be to
+       # properly detect whether it is actually required.
+-      CFLAGS="-shared -fPIC -Wl,-z,defs $CFLAGS $PTHREAD_CFLAGS"
++      CFLAGS="-shared -fPIC $CFLAGS $PTHREAD_CFLAGS"
+       LIBS="$PTHREAD_LIBS $LIBS"
+       CC="$PTHREAD_CC"
+ 

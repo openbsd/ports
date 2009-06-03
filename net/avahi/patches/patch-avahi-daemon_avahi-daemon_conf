@@ -1,0 +1,22 @@
+$OpenBSD: patch-avahi-daemon_avahi-daemon_conf,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp $
+--- avahi-daemon/avahi-daemon.conf.orig	Fri Dec 12 22:36:15 2008
++++ avahi-daemon/avahi-daemon.conf	Wed Jun  3 09:03:04 2009
+@@ -23,15 +23,15 @@
+ [server]
+ #host-name=foo
+ #domain-name=local
+-browse-domains=0pointer.de, zeroconf.org
++#browse-domains=0pointer.de, zeroconf.org
+ use-ipv4=yes
+-use-ipv6=no
++use-ipv6=yes
+ #allow-interfaces=eth0
+ #deny-interfaces=eth1
+ #check-response-ttl=no
+ #use-iff-running=no
+ #enable-dbus=yes
+-#disallow-other-stacks=no
++disallow-other-stacks=yes
+ #allow-point-to-point=no
+ 
+ [wide-area]

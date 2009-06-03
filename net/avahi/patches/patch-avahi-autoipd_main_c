@@ -1,0 +1,72 @@
+$OpenBSD: patch-avahi-autoipd_main_c,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp $
+--- avahi-autoipd/main.c.orig	Wed Jun 18 01:13:44 2008
++++ avahi-autoipd/main.c	Wed Jul  9 18:10:51 2008
+@@ -29,19 +29,26 @@
+ #include <sys/ioctl.h>
+ #include <sys/socket.h>
+ #include <sys/wait.h>
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/sysctl.h>
+-#endif
++#endif /* __FreeBSD__ || __OpenBSD__ */
+ 
++#include <net/if.h>
++
+ #ifdef __linux__
+ #include <netpacket/packet.h>
+-#endif
++#endif /* __linux__ */
++#if defined(__OpenBSD__)
++#include <netinet/in.h>
++#include <netinet/if_ether.h>
++#include <net/if_arp.h>
++#else
+ #include <net/ethernet.h>
+-#include <net/if.h>
+-#ifdef __FreeBSD__
++#endif /* __OpenBSD__ */
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <net/if_dl.h>
+ #include <net/route.h>
+-#endif
++#endif /* __FreeBSD__ || __OpenBSD__ */
+ #include <arpa/inet.h>
+ 
+ #include <assert.h>
+@@ -64,7 +71,7 @@
+ #include <pcap.h>
+ 
+ /* Old versions of PCAP defined it as D_IN */
+-#ifndef PCAP_D_IN
++#ifdef PCAP_D_IN
+ #define PCAP_D_IN D_IN
+ #endif
+ 
+@@ -729,7 +736,7 @@ open_socket(int iface, uint8_t *hw_address)
+ }
+ 
+ static void
+-close_socket(int fd __unused)
++close_socket(int fd)
+ {
+ 
+     assert(__pp != NULL);
+@@ -742,7 +749,7 @@ close_socket(int fd __unused)
+  * and prepend the required ethernet header information before sending.
+  */
+ static int
+-send_packet(int fd __unused, int iface __unused, ArpPacket *packet,
++send_packet(int fd, int iface, ArpPacket *packet,
+             size_t packet_len)
+ {
+     struct ether_header *eh;
+@@ -759,7 +766,7 @@ send_packet(int fd __unused, int iface __unused, ArpPa
+ }
+ 
+ static int
+-recv_packet(int fd __unused, ArpPacket **packet, size_t *packet_len)
++recv_packet(int fd, ArpPacket **packet, size_t *packet_len)
+ {
+     struct pcap_pkthdr      *ph;
+     u_char                  *pd;

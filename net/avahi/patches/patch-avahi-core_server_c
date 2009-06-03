@@ -1,0 +1,18 @@
+$OpenBSD: patch-avahi-core_server_c,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp $
+
+CVE-2008-5081.
+
+--- avahi-core/server.c.orig	Tue Apr 14 03:28:56 2009
++++ avahi-core/server.c	Sun May 31 19:20:04 2009
+@@ -904,6 +904,11 @@ static void dispatch_packet(AvahiServer *s, AvahiDnsPa
+         return;
+     }
+ 
++    if (port <= 0) {
++        avahi_log_warn("Received packet from invalid source port.");
++        return;
++    }
++
+     if (avahi_address_is_ipv4_in_ipv6(src_address))
+         /* This is an IPv4 address encapsulated in IPv6, so let's ignore it. */
+         return;

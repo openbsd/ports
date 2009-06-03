@@ -1,0 +1,9 @@
+To start avahi automatically, add the following to /etc/rc.local:
+(after dbus-daemon but before Zeroconf-aware applications startup)
+
+if [ -x ${PREFIX}/sbin/avahi-daemon ]; then
+	echo -n ' avahi-daemon'; ${PREFIX}/sbin/avahi-daemon -D
+fi
+if [ -x ${PREFIX}/sbin/avahi-dnsconfd ]; then
+	echo -n ' avahi-dnsconfd'; ${PREFIX}/sbin/avahi-dnsconfd -D
+fi

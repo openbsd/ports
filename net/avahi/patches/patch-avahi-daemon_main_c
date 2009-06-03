@@ -1,0 +1,15 @@
+$OpenBSD: patch-avahi-daemon_main_c,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp $
+--- avahi-daemon/main.c.orig	Fri Dec 12 22:36:15 2008
++++ avahi-daemon/main.c	Sun May 31 20:01:36 2009
+@@ -318,6 +318,11 @@ static void update_browse_domains(void) {
+         return;
+     }
+ 
++    if (!resolv_conf_search_domains) {
++	    avahi_server_set_browse_domains(avahi_server, NULL);
++	    return;
++    }
++
+     l = avahi_string_list_copy(config.server_config.browse_domains);
+ 
+     for (p = resolv_conf_search_domains, n = 0; *p && n < BROWSE_DOMAINS_MAX; p++, n++) {

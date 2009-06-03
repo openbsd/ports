@@ -1,0 +1,23 @@
+$OpenBSD: patch-avahi-autoipd_Makefile_am,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp $
+--- avahi-autoipd/Makefile.am.orig	Wed Jul  9 18:29:35 2008
++++ avahi-autoipd/Makefile.am	Wed Jul  9 18:41:13 2008
+@@ -46,6 +46,9 @@ avahi_autoipd_LDADD = $(AM_LDADD) $(LIBDAEMON_LIBS)
+ if TARGET_FREEBSD
+ avahi_autoipd_SOURCES += iface-bsd.c
+ avahi_autoipd_LDADD += -lpcap
++ifelse TARGET_OPENBSD
++avahi_autoipd_SOURCES += iface-bsd.c
++avahi_autoipd_LDADD += -lpcap
+ else
+ avahi_autoipd_SOURCES += iface-linux.c
+ endif
+@@ -55,6 +58,9 @@ nodist_pkgsysconf_SCRIPTS = avahi-autoipd.action
+ if TARGET_FREEBSD
+ avahi-autoipd.action: avahi-autoipd.action.bsd
+ 	cp $< $@
++ifelse TARGET_OPENBSD
++avahi_autoipd_SOURCES += iface-bsd.c
++avahi_autoipd_LDADD += -lpcap
+ else
+ avahi-autoipd.action: avahi-autoipd.action.linux
+ 	cp $< $@

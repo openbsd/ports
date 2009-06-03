@@ -1,0 +1,47 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp $
+--- configure.ac.orig	Tue Apr 14 03:55:55 2009
++++ configure.ac	Sun May 31 16:58:24 2009
+@@ -244,7 +244,7 @@ AC_TRY_COMPILE([#include <netinet/in.h>], [
+ #
+ # Detecting the linux distribution for specific things like init scripts.
+ #
+-AC_ARG_WITH(distro, AS_HELP_STRING([--with-distro=DISTRO],[Specify the distribution to target: One of lfs, debian, gentoo, archlinux, fedora, mandriva, darwin, netbsd, freebsd, slackware or none]))
++AC_ARG_WITH(distro, AS_HELP_STRING([--with-distro=DISTRO],[Specify the distribution to target: One of lfs, debian, gentoo, archlinux, fedora, mandriva, darwin, netbsd, freebsd, openbsd, slackware or none]))
+ if test "z$with_distro" = "z"; then
+     if test "$cross_compiling" = yes; then
+         AC_MSG_WARN([Target distribution cannot be reliably detected when cross-compiling. You should specify it with --with-distro (see $0 --help for recognized distros)])
+@@ -267,7 +267,7 @@ with_distro=`echo ${with_distro} | tr '[[:upper:]]' '[
+ case $with_distro in
+     lfs|debian|gentoo|archlinux|suse|fedora|mandriva|darwin|freebsd|slackware|none)
+      ;;
+-    netbsd)
++    netbsd|openbsd)
+      AC_MSG_WARN([Your distribution (${with_distro}) is supported but no init script exist yet! (patches welcome)])
+      ;;
+     linux)
+@@ -288,6 +288,7 @@ AM_CONDITIONAL(TARGET_MANDRIVA, test x"$with_distro" =
+ AM_CONDITIONAL(TARGET_DARWIN, test x"$with_distro" = xdarwin)
+ AM_CONDITIONAL(TARGET_NETBSD, test x"$with_distro" = xnetbsd)
+ AM_CONDITIONAL(TARGET_FREEBSD, test x"$with_distro" = xfreebsd)
++AM_CONDITIONAL(TARGET_OPENBSD, test x"$with_distro" = xopenbsd)
+ AM_CONDITIONAL(TARGET_SLACKWARE, test x"$with_distro" = xslackware)
+ 
+ test_gcc_flag() {
+@@ -350,7 +351,8 @@ AC_HEADER_SYS_WAIT
+  # Solaris stuff
+  AC_SEARCH_LIBS([inet_ntop],[nsl])
+  AC_SEARCH_LIBS([recv],[socket])
+- AC_CHECK_DECL([CMSG_SPACE],,CFLAGS="$CFLAGS -D_XOPEN_SOURCE=500 -D__EXTENSIONS__")
++ AC_CHECK_DECL([CMSG_SPACE],,CFLAGS="$CFLAGS -D_XOPEN_SOURCE=500 -D__EXTENSIONS__",[[#include <arpa/inet.h>
++#include <sys/socket.h>]])
+ 
+ # Checks for library functions.
+ AC_FUNC_MEMCMP
+@@ -1127,7 +1129,6 @@ echo "
+     Group for avahi-autoipd:                   ${AVAHI_AUTOIPD_GROUP}
+     Enable chroot():                           ${enable_chroot}
+     Enable Linux inotify:                      ${have_inotify}
+-    Enable stack-smashing protection:          ${enable_ssp}
+ "
+ 
+ BUILD_DAEMON="no   (You need libdaemon and expat/bsdxml!)"

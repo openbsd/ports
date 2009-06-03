@@ -1,0 +1,8 @@
+Avahi is a free, standards-compliant implementation of the Zeroconf
+protocols Multicast DNS and DNS-SD.
+It is a system which facilitates service discovery on a local network.
+This means that you can plug your laptop or computer into a network and
+instantly be able to view other people who you can chat with, find
+printers to print to or find files being shared.  This kind of
+technology is already found in Apple MacOS X (branded Rendezvous,
+Bonjour and sometimes Zeroconf) and is very convenient.
