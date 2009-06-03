@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/23 19:26:47 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/03 16:34:51 ajacoutot Exp $
 @conflict gmpc-coveramazon-*
 @conflict gmpc-osd-*
 @conflict gmpc-lyrics-*
@@ -16,6 +16,9 @@ lib/gmpc/plugins/
 lib/gmpc/plugins/alarmplugin.a
 lib/gmpc/plugins/alarmplugin.la
 lib/gmpc/plugins/alarmplugin.so
+lib/gmpc/plugins/avahiplugin.a
+lib/gmpc/plugins/avahiplugin.la
+lib/gmpc/plugins/avahiplugin.so
 lib/gmpc/plugins/caaplugin.a
 lib/gmpc/plugins/caaplugin.la
 lib/gmpc/plugins/caaplugin.so

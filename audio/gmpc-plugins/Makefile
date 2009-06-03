@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/02 05:20:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/03 16:34:51 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,6 +6,8 @@ COMMENT =	bundle of plugins for gmpc
 
 VERSION =	0.18.0
 DISTNAME =	gmpc-plugins-${VERSION}
+PKGNAME =	${DISTNAME}p0
+
 CATEGORIES =	audio
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
@@ -20,16 +22,16 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS =	tag,tag_c::audio/taglib \
-		xosd::x11/xosd
+		xosd::x11/xosd \
+		avahi-client,avahi-common,avahi-glib::net/avahi
 
-WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo \
-		crypto curl expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		gthread-2.0 gtk-x11-2.0 idn m mpd pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png pthread sqlite3 ssl \
-		stdc++ xml2 z
-
+WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo
+WANTLIB += crypto curl dbus-1 expat fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 idn m mpd pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += sqlite3 ssl stdc++ xml2 z
 
 MODULES =	devel/gettext
 RUN_DEPENDS =	:gmpc->=${VERSION}:audio/gmpc \
