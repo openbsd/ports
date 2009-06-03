@@ -1,0 +1,7 @@
+This plugin works with the regular Python interpreter.
+
+At present it does NOT work with Jython, the reason
+apparently being that our Eclipse SDK is too old
+(the actual problem being that the last step of
+creating a Jython launch configuration explodes with a
+java.lang.NoSuchMethodError on SWT TreeItem).
