@@ -1,6 +1,6 @@
 X-platform Music Multiplexing System 2 is a client-server audio player.
 Client-server model allows XMMS2 to have various multiple (remote)
-interfaces (as clients) :
+interfaces (as clients):
     * Command line interfaces
     * GTK clients (matching GNOME & Xfce4 look and feel)
     * KDE clients (matching KDE look and feel)
