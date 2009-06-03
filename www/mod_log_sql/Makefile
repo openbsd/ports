@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 20:38:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2009/06/03 00:48:51 pyr Exp $
 
 COMMENT=	Apache module for logging to an SQL database
 
 DISTNAME=	mod_log_sql-1.18
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.outoforder.cc/projects/apache/mod_log_sql/

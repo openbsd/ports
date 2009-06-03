@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/01/30 19:21:50 okan Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/03 00:48:51 pyr Exp $
 
 COMMENT=	Apache module designed to replace text/plain handler
 
 DISTNAME=	mod_text2html-1.0
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	www
 
 HOMEPAGE=	http://tangent.org/

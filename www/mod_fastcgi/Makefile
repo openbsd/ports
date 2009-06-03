@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2008/12/29 17:22:22 mglocker Exp $
+# $OpenBSD: Makefile,v 1.8 2009/06/03 00:48:51 pyr Exp $
 
 COMMENT=        Apache FastCGI module
 
 DISTNAME=       mod_fastcgi-2.4.2
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 
 CATEGORIES=     www
 

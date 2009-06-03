@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:38:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/03 00:48:51 pyr Exp $
 
 COMMENT=	provides HTTP Basic authentication via bsd auth
 
 VERSION=	0.8.2
 DISTNAME=	bsdauth-${VERSION}
-PKGNAME=	mod_auth_bsd-${VERSION}p1
+PKGNAME=	mod_auth_bsd-${VERSION}p2
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	www
 MASTER_SITES=	http://www.25thandclement.com/~william/projects/releases/

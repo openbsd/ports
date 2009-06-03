@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/17 11:28:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/03 00:48:51 pyr Exp $
 
 COMMENT=	Apache module for non-ascii filename interoperability
 
 DISTNAME=	mod_encoding-20021209
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www converters
 
 HOMEPAGE=	http://webdav.todo.gr.jp/
