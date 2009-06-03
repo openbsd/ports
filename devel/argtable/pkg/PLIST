@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/05/30 09:23:44 alek Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/06/03 22:54:26 jasper Exp $
 %%SHARED%%
 include/argtable2.h
 lib/libargtable2.a
@@ -19,7 +19,6 @@ share/doc/argtable2/argtable2.html
 share/doc/argtable2/argxxx.gif
 share/examples/argtable2/
 share/examples/argtable2/Makefile
-share/examples/argtable2/Makefile.nmake
 share/examples/argtable2/README.txt
 share/examples/argtable2/argcustom.c
 share/examples/argtable2/argxxx.c

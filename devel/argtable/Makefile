@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 02:52:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2009/06/03 22:54:26 jasper Exp $
 
 COMMENT=		ANSI C command line parser
 
-DISTNAME=		argtable2-6
-PKGNAME=		argtable-2.6p1
-SHARED_LIBS +=	argtable2            1.1      # .1.1
+DISTNAME=		argtable2-11
+PKGNAME=		argtable-2.11
+SHARED_LIBS +=	argtable2            1.1      # .1.6
 CATEGORIES=		devel
 
 HOMEPAGE=		http://argtable.sourceforge.net/
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-# GPL
+# LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
