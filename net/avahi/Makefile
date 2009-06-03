@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/03 19:42:55 ajacoutot Exp $
 
 # python MODULE
 SHARED_ONLY=	Yes
@@ -12,7 +12,7 @@ V=		0.6.25
 DISTNAME=	avahi-${V}
 CATEGORIES=	net devel
 
-PKGNAME-main=	avahi-${V}
+PKGNAME-main=	avahi-${V}p0
 PKGNAME-gtk=	avahi-gtk-${V}
 PKGNAME-qt3=	avahi-qt3-${V}
 PKGNAME-qt4=	avahi-qt4-${V}

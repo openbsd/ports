@@ -1,6 +1,6 @@
-$OpenBSD: patch-avahi-daemon_main_c,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp $
+$OpenBSD: patch-avahi-daemon_main_c,v 1.2 2009/06/03 19:42:55 ajacoutot Exp $
 --- avahi-daemon/main.c.orig	Fri Dec 12 22:36:15 2008
-+++ avahi-daemon/main.c	Sun May 31 20:01:36 2009
++++ avahi-daemon/main.c	Wed Jun  3 21:30:51 2009
 @@ -318,6 +318,11 @@ static void update_browse_domains(void) {
          return;
      }
@@ -13,3 +13,14 @@ $OpenBSD: patch-avahi-daemon_main_c,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp 
      l = avahi_string_list_copy(config.server_config.browse_domains);
  
      for (p = resolv_conf_search_domains, n = 0; *p && n < BROWSE_DOMAINS_MAX; p++, n++) {
+@@ -985,8 +990,10 @@ static int run_server(DaemonConfig *c) {
+ 
+     assert(c);
+ 
++#ifndef __OpenBSD__ // no NSS in OpenBSD
+     if (!(nss_support = avahi_nss_support()))
+         avahi_log_warn("WARNING: No NSS support for mDNS detected, consider installing nss-mdns!");
++#endif
+ 
+     if (!(simple_poll_api = avahi_simple_poll_new())) {
+         avahi_log_error("Failed to create main loop object.");
