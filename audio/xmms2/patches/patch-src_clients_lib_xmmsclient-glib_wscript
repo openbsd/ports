@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_clients_lib_xmmsclient-glib_wscript,v 1.1.1.1 2009/06/03 18:25:25 ajacoutot Exp $
+--- src/clients/lib/xmmsclient-glib/wscript.orig	Sat May 16 17:21:08 2009
++++ src/clients/lib/xmmsclient-glib/wscript	Sat May 16 17:35:25 2009
+@@ -7,7 +7,7 @@ def build(bld):
+     obj.source = 'xmmsclient-glib.c'
+     obj.uselib = 'glib2'
+     obj.uselib_local = 'xmmsclient'
+-    obj.vnum = '1.0.0'
++    obj.vnum = '${LIBxmmsclient_VERSION}'
+     tool.add_install_flag(bld, obj)
+ 
+ def configure(conf):

@@ -1,0 +1,27 @@
+$OpenBSD: patch-wafadmin_Tools_ccroot_py,v 1.1.1.1 2009/06/03 18:25:25 ajacoutot Exp $
+
+Don't create symlink for shared librairies versions.
+Don't put (wrong) SONAME in shared libraries.
+
+--- wafadmin/Tools/ccroot.py.orig	Tue Apr 21 19:50:47 2009
++++ wafadmin/Tools/ccroot.py	Tue May 26 23:24:47 2009
+@@ -113,8 +113,8 @@ def install_shlib(self):
+ 	filename = self.outputs[0].abspath(self.env)
+ 	bld = Build.bld
+ 	bld.install_as(os.path.join(path, name3), filename, env=self.env)
+-	bld.symlink_as(os.path.join(path, name2), name3)
+-	bld.symlink_as(os.path.join(path, name1), name3)
++	#bld.symlink_as(os.path.join(path, name2), name3)
++	#bld.symlink_as(os.path.join(path, name1), name3)
+ 
+ # TODO reference the d programs, shlibs in d.py, not here
+ 
+@@ -384,7 +384,7 @@ def apply_vnum(self):
+ 			try: name3 = self.soname
+ 			except AttributeError: name3 = self.link_task.outputs[0].name + '.' + nums[0]
+ 			self.link_task.outputs.append(self.link_task.outputs[0].parent.find_or_declare(name3))
+-			self.env.append_value('LINKFLAGS', '-Wl,-h,'+name3)
++			self.env.append_value('LINKFLAGS', '-Wl')
+ 
+ @taskgen
+ @after('apply_link')

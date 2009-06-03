@@ -1,0 +1,11 @@
+X-platform Music Multiplexing System 2 is a client-server audio player.
+Client-server model allows XMMS2 to have various multiple (remote)
+interfaces (as clients) :
+    * Command line interfaces
+    * GTK clients (matching GNOME & Xfce4 look and feel)
+    * KDE clients (matching KDE look and feel)
+It has a wide format support and can play over different media.
+It comes with Medialib, a database-driven media library which stores
+metadata about songs as they're played, so songs can be quickly recalled
+and new playlists easily made. The media library can be easily queried
+and managed using Collections.

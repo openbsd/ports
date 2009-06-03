@@ -1,0 +1,25 @@
+$OpenBSD: patch-wscript,v 1.1.1.1 2009/06/03 18:25:25 ajacoutot Exp $
+--- wscript.orig	Tue Apr 21 17:51:11 2009
++++ wscript	Tue May 26 17:13:06 2009
+@@ -309,6 +309,7 @@ def configure(conf):
+     # Our static libraries may link to dynamic libraries
+     if Options.platform != 'win32':
+         conf.env["staticlib_CCFLAGS"] += ['-fPIC', '-DPIC']
++        conf.env["LINKFLAGS"] += ['-fPIC']
+     else:
+         # As we have to change target platform after the tools
+         # have been loaded there are a few variables that needs
+@@ -479,9 +480,10 @@ def shutdown():
+     if Options.commands['install'] and os.geteuid() == 0:
+         ldconfig = '/sbin/ldconfig'
+         if os.path.isfile(ldconfig):
+-            libprefix = Utils.subst_vars('${PREFIX}/lib', Build.bld.env)
+-            try: Utils.cmd_output(ldconfig + ' ' + libprefix)
+-            except: pass
++            #libprefix = Utils.subst_vars('${PREFIX}/lib', Build.bld.env)
++            #try: Utils.cmd_output(ldconfig + ' ' + libprefix)
++            #except: pass
++	    pass
+ 
+     if Options.options.run_tests:
+         os.system(os.path.join(os.getenv('WAF_HOME'), "default/tests/test_xmmstypes"))

@@ -1,0 +1,31 @@
+$OpenBSD: patch-waftools_man_py,v 1.1.1.1 2009/06/03 18:25:25 ajacoutot Exp $
+
+Bypass the gzip function that compress man files.
+
+--- waftools/man.py.orig	Tue May 19 18:21:41 2009
++++ waftools/man.py	Tue May 19 18:32:57 2009
+@@ -22,6 +22,9 @@ def gzip_func(task):
+ 
+ @feature('man')
+ def process_man(self):
++    def empty(x):
++        pass
++
+     if not getattr(self, 'files', None):
+         return
+ 
+@@ -34,12 +37,10 @@ def process_man(self):
+         if not target:
+             target = node.name
+ 
+-        out = self.path.find_or_declare(x + '.gz')
+-
+         tsk = self.create_task('copy')
+         tsk.set_inputs(node)
+-        tsk.set_outputs(out)
+-        tsk.fun = gzip_func
++        tsk.set_outputs(node)
++        tsk.fun = empty
+         tsk.install_path = '${MANDIR}/man' + getattr(self, 'section', '1')
+         tsk.color = 'BLUE'
+ 
