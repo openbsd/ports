@@ -1,0 +1,6 @@
+Meld is a visual diff and merge tool. You can compare two or three files
+and edit them in place (diffs update dynamically). You can compare two
+or three folders and launch file comparisons. You can browse and view a
+working copy from popular version control systems such such as CVS,
+Subversion, Bazaar-ng and Mercurial if the corresponding commands are
+installed.

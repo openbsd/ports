@@ -1,0 +1,12 @@
+$OpenBSD: patch-INSTALL,v 1.1.1.1 2009/06/03 18:23:27 landry Exp $
+--- INSTALL.orig	Wed Jun  3 10:29:40 2009
++++ INSTALL	Wed Jun  3 10:32:45 2009
+@@ -20,7 +20,7 @@
+ PYTHON ?= python
+ prefix := /usr/local
+ bindir := $(prefix)/bin
+-libdir := $(prefix)/lib
++libdir := ${MODPY_SITEPKG}
+ docdir := $(prefix)/share/doc
+ sharedir := $(prefix)/share
+ helpdir := $(sharedir)/gnome/help

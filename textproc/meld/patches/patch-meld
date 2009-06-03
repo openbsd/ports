@@ -1,0 +1,29 @@
+$OpenBSD: patch-meld,v 1.1.1.1 2009/06/03 18:23:27 landry Exp $
+--- meld.orig	Fri Apr 17 15:49:43 2009
++++ meld	Wed Jun  3 10:54:34 2009
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#!${MODPY_BIN}
+ 
+ ### Copyright (C) 2002-2006 Stephen Kennedy <stevek@gnome.org>
+ 
+@@ -17,18 +17,9 @@
+ ### Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
+ #
+-# pychecker
+-#
+-import sys
+-if "--pychecker" in sys.argv:
+-    sys.argv.remove("--pychecker")
+-    import os
+-    os.environ['PYCHECKER'] = "--no-argsused --no-classattr --stdlib"
+-        #'--blacklist=gettext,locale,pygtk,gtk,gtk.keysyms,popen2,random,difflib,filecmp,tempfile'
+-    import pychecker.checker
+-#
+ # i18n support
+ #
++import sys
+ sys.path += [ #LIBDIR#
+ ]
+ import paths
