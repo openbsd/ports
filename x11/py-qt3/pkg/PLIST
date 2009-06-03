@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/15 13:26:00 ajacoutot Exp $
-bin/pylupdate
-bin/pyuic
+@comment $OpenBSD: PLIST,v 1.2 2009/06/03 18:21:34 jasper Exp $
+@bin bin/pylupdate
+@bin bin/pyuic
 lib/python${MODPY_VERSION}/site-packages/pyqtconfig.py
 lib/python${MODPY_VERSION}/site-packages/qt.so
 lib/python${MODPY_VERSION}/site-packages/qtcanvas.so
