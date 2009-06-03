@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_gibber_gibber-tcp-transport_c,v 1.1 2009/06/03 16:40:06 ajacoutot Exp $
+--- lib/gibber/gibber-tcp-transport.c.orig	Tue Jun  2 07:44:20 2009
++++ lib/gibber/gibber-tcp-transport.c	Tue Jun  2 07:51:39 2009
+@@ -19,6 +19,8 @@
+  */
+ 
+ 
++#include <sys/types.h>
++#include <netinet/in.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ 

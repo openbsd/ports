@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_gibber_examples_test-resolv_c,v 1.1 2009/06/03 16:40:06 ajacoutot Exp $
+--- lib/gibber/examples/test-resolv.c.orig	Tue Jun  2 07:58:50 2009
++++ lib/gibber/examples/test-resolv.c	Tue Jun  2 07:58:58 2009
+@@ -2,6 +2,7 @@
+ #include <stdlib.h>
+ 
+ #include <string.h>
++#include <netinet/in.h>
+ 
+ #include <glib.h>
+ 

@@ -1,0 +1,38 @@
+$OpenBSD: patch-lib_gibber_gibber-resolver_c,v 1.1 2009/06/03 16:40:06 ajacoutot Exp $
+
+Use GETSHORT instead of NS_GET16 which comes with libresolv.
+
+--- lib/gibber/gibber-resolver.c.orig	Thu Apr  2 12:12:20 2009
++++ lib/gibber/gibber-resolver.c	Tue Jun  2 08:38:27 2009
+@@ -27,6 +27,7 @@
+ #include <resolv.h>
+ #include <sys/types.h>
+ #include <netdb.h>
++#include <netinet/in.h>
+ 
+ #include <errno.h>
+ 
+@@ -686,8 +687,8 @@ gibber_resolver_res_query_to_list (guchar *answer, int
+ 
+        /* Ignore the initial string, which has the query in it */
+        pos += len;
+-       NS_GET16 (type, pos);
+-       NS_GET16 (class, pos);
++       GETSHORT (type, pos);
++       GETSHORT (class, pos);
+ 
+        if (type != T_SRV || class != C_IN)
+          goto failed;
+@@ -695,9 +696,9 @@ gibber_resolver_res_query_to_list (guchar *answer, int
+        /* skip ttl and dlen */
+        pos += 6;
+ 
+-       NS_GET16 (pref, pos);
+-       NS_GET16 (weight, pos);
+-       NS_GET16 (port, pos);
++       GETSHORT (pref, pos);
++       GETSHORT (weight, pos);
++       GETSHORT (port, pos);
+        len = dn_expand (answer, end, pos, name, 255);
+ 
+        list = g_list_prepend (list,

@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_gibber_gibber-muc-connection_c,v 1.1 2009/06/03 16:40:06 ajacoutot Exp $
+--- lib/gibber/gibber-muc-connection.c.orig	Tue Jun  2 07:41:47 2009
++++ lib/gibber/gibber-muc-connection.c	Tue Jun  2 07:42:00 2009
+@@ -26,6 +26,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netdb.h>
++#include <netinet/in.h>
+ 
+ #include "gibber-muc-connection.h"
+ #include "gibber-signals-marshal.h"

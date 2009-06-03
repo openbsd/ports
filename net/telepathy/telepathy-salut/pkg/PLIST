@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1 2009/06/03 16:40:06 ajacoutot Exp $
+@bin libexec/telepathy-salut
+@man man/man8/telepathy-salut.8
+share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.salut.service
+share/doc/telepathy-salut/
+share/doc/telepathy-salut/clique.html
+share/telepathy/
+share/telepathy/managers/
+share/telepathy/managers/salut.manager

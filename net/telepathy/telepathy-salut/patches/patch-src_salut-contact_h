@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_salut-contact_h,v 1.1 2009/06/03 16:40:06 ajacoutot Exp $
+--- src/salut-contact.h.orig	Tue Jun  2 08:40:33 2009
++++ src/salut-contact.h	Tue Jun  2 08:40:51 2009
+@@ -20,6 +20,8 @@
+ #ifndef __SALUT_CONTACT_H__
+ #define __SALUT_CONTACT_H__
+ 
++#include <sys/socket.h>
++
+ #include "config.h"
+ 
+ #include <netinet/in.h>

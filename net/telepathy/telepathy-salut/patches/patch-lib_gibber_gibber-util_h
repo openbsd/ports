@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_gibber_gibber-util_h,v 1.1 2009/06/03 16:40:06 ajacoutot Exp $
+--- lib/gibber/gibber-util.h.orig	Tue Jun  2 07:54:39 2009
++++ lib/gibber/gibber-util.h	Tue Jun  2 07:54:56 2009
+@@ -21,6 +21,7 @@
+ #define __GIBBER_UTIL_H__
+ 
+ #include <netdb.h>
++#include <netinet/in.h>
+ 
+ #include <glib.h>
+ 
