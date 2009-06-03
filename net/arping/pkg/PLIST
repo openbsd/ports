@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:38 espie Exp $
-bin/arping
+@comment $OpenBSD: PLIST,v 1.5 2009/06/03 19:13:25 benoit Exp $
+@bin bin/arping
 @man man/man8/arping.8
 share/doc/arping/
 share/doc/arping/README

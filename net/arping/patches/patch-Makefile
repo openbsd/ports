@@ -1,19 +1,19 @@
-$OpenBSD: patch-Makefile,v 1.7 2009/03/28 18:18:51 naddy Exp $
---- Makefile.orig	Fri Sep 24 11:43:37 2004
-+++ Makefile	Mon Mar 23 12:15:03 2009
-@@ -19,9 +19,9 @@ SOLARIS=0
+$OpenBSD: patch-Makefile,v 1.8 2009/06/03 19:13:23 benoit Exp $
+--- Makefile.orig	Mon Aug 11 08:33:31 2008
++++ Makefile	Wed Jun  3 08:52:32 2009
+@@ -20,9 +20,9 @@ SOLARIS=0
  FREEBSD=0
  MACOSX=0
  
 -CC=gcc
 +#CC=gcc
  # explicit pcap include dir is for redhat which is fux0red
--CFLAGS=-g -I/usr/local/include -L/usr/local/lib -DFINDIF=$(FINDIF) -DUSE_NETIF=$(USE_NETIF) -DOPENBSD=$(OPENBSD) -DLINUX=$(LINUX) -DSOLARIS=$(SOLARIS) -DFREEBSD=$(FREEBSD) -DMACOSX=$(MACOSX) -I/usr/include/pcap
-+CFLAGS=-I${LOCALBASE}/include -L${LOCALBASE}/lib -DFINDIF=$(FINDIF) -DUSE_NETIF=$(USE_NETIF) -DOPENBSD=$(OPENBSD) -DLINUX=$(LINUX) -DSOLARIS=$(SOLARIS) -DFREEBSD=$(FREEBSD) -DMACOSX=$(MACOSX) -I/usr/include/pcap
+-CFLAGS=-g -I/usr/local/include -L/usr/local/lib -DFINDIF=$(FINDIF) -DUSE_NETIF=$(USE_NETIF) -DOPENBSD=$(OPENBSD) -DLINUX=$(LINUX) -DSOLARIS=$(SOLARIS) -DFREEBSD=$(FREEBSD) -DMACOSX=$(MACOSX) -I/usr/include/pcap -L/opt/csw/lib -R/opt/csw/lib
++CFLAGS=-g -I${LOCALBASE}/include -L${LOCALBASE}/lib -DFINDIF=$(FINDIF) -DUSE_NETIF=$(USE_NETIF) -DOPENBSD=$(OPENBSD) -DLINUX=$(LINUX) -DSOLARIS=$(SOLARIS) -DFREEBSD=$(FREEBSD) -DMACOSX=$(MACOSX) -I/usr/include/pcap
  
- all: message arping2
- 
-@@ -83,20 +83,22 @@ solaris:
+ CFLAGS2=-g -I/usr/local/include -I/usr/local/include/libnet-1.1 -I/usr/include/pcap -I/usr/local/include/libnet11
+ LDFLAGS2=-g -L/usr/local/lib -L/usr/local/lib/libnet-1.1 -L/opt/csw/lib -L/usr/local/lib/libnet11
+@@ -87,20 +87,22 @@ solaris:
  	$(MAKE) USE_NETIF=0 SOLARIS=1 arping1-make
  
  install:
