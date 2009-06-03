@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.265 2009/06/02 22:17:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.266 2009/06/03 18:24:47 landry Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -56,6 +56,7 @@
      SUBDIR += lq-sp
      SUBDIR += makefaq
      SUBDIR += markdown
+     SUBDIR += meld
      SUBDIR += mgdiff
      SUBDIR += mozilla-dicts
      SUBDIR += mupdf
