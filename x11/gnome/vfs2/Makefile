@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2009/03/17 15:53:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2009/06/03 17:17:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,8 +8,8 @@ COMMENT-smb=		samba module for gnome-vfs2
 GNOME_PROJECT=		gnome-vfs
 GNOME_VERSION=		2.24.1
 PKGNAME=		gnome-vfs2-${VERSION}
-PKGNAME-main=		gnome-vfs2-${VERSION}
-PKGNAME-smb=		gnome-vfs2-smb-${VERSION}
+PKGNAME-main=		gnome-vfs2-${VERSION}p0
+PKGNAME-smb=		gnome-vfs2-smb-${VERSION}p0
 MULTI_PACKAGES=		-main -smb
 
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
@@ -29,7 +29,8 @@ BUILD_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 LIB_DEPENDS=		ORBit-2.>=2::devel/ORBit2 \
 			gconf-2.>=5::devel/gconf2 \
 			xml2.>=9::textproc/libxml \
-			dbus-glib-1.>=3::x11/dbus-glib
+			dbus-glib-1.>=3::x11/dbus-glib \
+			avahi-client,avahi-common,avahi-glib::net/avahi
 RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 
 WANTLIB-main=		${WANTLIB} c asn1 gssapi krb5 pthread rpcsvc stdc++
@@ -49,7 +50,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-vfs2 \
 			--disable-schemas-install \
 			--enable-cdda \
-			--disable-avahi \
+			--enable-avahi \
 			--disable-howl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

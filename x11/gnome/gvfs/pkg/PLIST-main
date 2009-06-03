@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/02/16 07:26:43 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/06/03 17:18:30 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
 @bin bin/gvfs-cat
@@ -36,6 +36,7 @@ lib/libgvfscommon.la
 @comment @bin libexec/gvfsd-burn
 @bin libexec/gvfsd-computer
 @bin libexec/gvfsd-dav
+@bin libexec/gvfsd-dnssd
 @bin libexec/gvfsd-ftp
 @bin libexec/gvfsd-http
 @bin libexec/gvfsd-localtest
@@ -54,6 +55,7 @@ share/gvfs/mounts/archive.mount
 @comment share/gvfs/mounts/burn.mount
 share/gvfs/mounts/computer.mount
 share/gvfs/mounts/dav.mount
+share/gvfs/mounts/dns-sd.mount
 share/gvfs/mounts/ftp.mount
 share/gvfs/mounts/http.mount
 share/gvfs/mounts/localtest.mount
