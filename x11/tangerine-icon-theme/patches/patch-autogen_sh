@@ -1,0 +1,10 @@
+$OpenBSD: patch-autogen_sh,v 1.1.1.1 2009/06/03 22:27:47 landry Exp $
+--- autogen.sh.orig	Tue Feb  3 21:42:20 2009
++++ autogen.sh	Tue Feb  3 21:42:26 2009
+@@ -4,6 +4,3 @@ intltoolize -c --force		|| exit 1
+ aclocal				|| exit 1
+ automake --gnu --add-missing	|| exit 1
+ autoconf			|| exit 1
+-echo configure will be run, if you want to pass arguments, add them to ./autogen.sh
+-./configure $@
+-
