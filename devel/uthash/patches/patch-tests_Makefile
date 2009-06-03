@@ -1,19 +1,21 @@
-$OpenBSD: patch-tests_Makefile,v 1.4 2009/03/26 22:09:53 jasper Exp $
+$OpenBSD: patch-tests_Makefile,v 1.5 2009/06/03 22:43:59 jasper Exp $
 
 - Remove GNU make crap that never applied to us anyway.
 
---- tests/Makefile.orig	Thu Feb 19 11:41:01 2009
-+++ tests/Makefile	Thu Mar 26 23:06:05 2009
-@@ -4,37 +4,18 @@ UTILS = emit_keys
- PROGS = test1 test2 test3 test4 test5 test6 test7 test8 test9   \
- 		    test10 test11 test12 test13 test14 test15 test16 test17 \
-         test18 test19 test20 test21 test22 test23 test24
+--- tests/Makefile.orig	Wed Jun  3 16:41:44 2009
++++ tests/Makefile	Wed Jun  3 16:42:50 2009
+@@ -6,38 +6,20 @@ PROGS = test1 test2 test3 test4 test5 test6 test7 test
+         test18 test19 test20 test21 test22 test23 test24 test25 \
+         test26 test27 test28 test29 test30 test31 test32 test33 \
+         test34 test35 test36 test37 test38 test39
 -CFLAGS = -I$(HASHDIR) 
 -CFLAGS += -O3
+-#CFLAGS += -g
 -CFLAGS += -Wall 
 +CFLAGS += -I$(HASHDIR) 
 +CFLAGS += -O2
 +CFLAGS += -Wall
+ CFLAGS += ${EXTRA_CFLAGS}
  
 -ifeq ($(HASH_DEBUG),1)
 -CFLAGS += -DHASH_DEBUG=1
@@ -31,21 +33,21 @@ $OpenBSD: patch-tests_Makefile,v 1.4 2009/03/26 22:09:53 jasper Exp $
 -  CFLAGS += -m64
 -endif
 -
-+# gnu make idiom...
- # detect Cygwin
+-# detect Cygwin
 -ifneq ($(strip $(shell $(CC) -v 2>&1 |grep "cygwin")),)
 -  TESTS=./do_tests.cygwin
 -endif
 -
--# detect MinGW
++# gnu make idiom...
+ # detect MinGW
 -ifneq ($(strip $(shell $(CC) -v 2>&1 |grep "mingw")),)
 -  TEST_TARGET=run_tests_mingw
 -  TESTS=./do_tests.mingw
 -endif
--
-+#ifneq ($(strip $(shell $(CC) -v 2>&1 |grep "cygwin")),)
-+#  TESTS=./do_tests.cygwin
++#ifneq ($(strip $(shell $(CC) -v 2>&1 |grep "mingw")),)
++#  TEST_TARGET=run_tests_mingw
++#  TESTS=./do_tests.mingw
 +#endif
  
- all: $(PROGS) $(UTILS) $(FUNCS) $(TEST_TARGET)
+ 
  

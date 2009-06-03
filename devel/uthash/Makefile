@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/26 22:09:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/06/03 22:43:58 jasper Exp $
 
 COMMENT=		C macros to add, find and delete items from a hash
 
-DISTNAME=		uthash-1.5
+DISTNAME=		uthash-1.6
 CATEGORIES=		devel
 
 HOMEPAGE=		http://uthash.sf.net/
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
