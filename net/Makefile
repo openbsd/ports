@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.576 2009/06/03 16:29:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.577 2009/06/03 16:44:20 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -105,7 +105,6 @@
      SUBDIR += gtk-gnutella
      SUBDIR += haproxy
      SUBDIR += honeyd
-     SUBDIR += howl
      SUBDIR += hping
      SUBDIR += hs-HTTP
      SUBDIR += httptunnel
