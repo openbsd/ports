@@ -1,6 +1,6 @@
-$OpenBSD: patch-tests_qx_testlib_py,v 1.1.1.1 2008/01/15 02:00:56 okan Exp $
---- tests/qx_testlib.py.orig	Mon Jan 14 08:20:48 2008
-+++ tests/qx_testlib.py	Mon Jan 14 08:21:20 2008
+$OpenBSD: patch-tests_qx_testlib_py,v 1.2 2009/06/03 02:13:30 wcmaier Exp $
+--- tests/qx_testlib.py.orig	Mon Jun  1 23:37:03 2009
++++ tests/qx_testlib.py	Mon Jun  1 23:36:57 2009
 @@ -56,7 +56,8 @@ def run_server(create_fn, PORT=None):
      print 'STARTING:', sys.executable, 'tests/qx_testserver.py', os.getcwd()
      process = subprocess.Popen([sys.executable, '-u', 'qx_testserver.py'],

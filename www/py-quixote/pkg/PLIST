@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/15 02:00:56 okan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/03 02:13:30 wcmaier Exp $
 %%SHARED%%
-lib/python${MODPY_VERSION}/site-packages/Quixote-${MODPY_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/Quixote-${MODPY_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/Quixote-${MODPY_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/Quixote-${MODPY_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/Quixote-${MODPY_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/Quixote-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/Quixote-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/Quixote-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/Quixote-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Quixote-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/quixote/
 lib/python${MODPY_VERSION}/site-packages/quixote/__init__.py
 lib/python${MODPY_VERSION}/site-packages/quixote/__init__.pyc

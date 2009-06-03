@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2008/01/15 02:00:56 okan Exp $
---- setup.py.orig	Sun Jan 13 13:22:59 2008
-+++ setup.py	Sun Jan 13 13:23:04 2008
+$OpenBSD: patch-setup_py,v 1.2 2009/06/03 02:13:30 wcmaier Exp $
+--- setup.py.orig	Fri Nov 28 22:50:56 2008
++++ setup.py	Mon Jun  1 23:34:02 2009
 @@ -1,9 +1,9 @@
  #!/usr/bin/env python
 -#try:
@@ -16,7 +16,7 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2008/01/15 02:00:56 okan Exp $
  
  # Setup script for Quixote
  
-@@ -49,7 +49,7 @@ kw = {'name': "Quixote",
+@@ -39,7 +39,7 @@ kw = {'name': "Quixote",
  
        'cmdclass': {'build_py': qx_build_py},
  
