@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.376 2009/05/29 10:45:20 giovanni Exp $
+# $OpenBSD: Makefile,v 1.377 2009/06/03 22:30:15 landry Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -102,9 +102,11 @@
      SUBDIR += gxmessage
      SUBDIR += hicolor-icon-theme
      SUBDIR += hs-x11-extras
+     SUBDIR += human-icon-theme
      SUBDIR += icewm
      SUBDIR += icon-naming-utils
      SUBDIR += idesk
+     SUBDIR += industrial-icon-theme
      SUBDIR += ion
      SUBDIR += isomaster
      SUBDIR += itk
@@ -214,6 +216,7 @@
      SUBDIR += swisswatch
      SUBDIR += tango-icon-theme
      SUBDIR += tango-icon-theme-extras
+     SUBDIR += tangerine-icon-theme
      SUBDIR += tellico
      SUBDIR += terminus-font
      SUBDIR += thewidgetfactory
