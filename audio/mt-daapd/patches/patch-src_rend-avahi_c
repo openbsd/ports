@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_rend-avahi_c,v 1.1 2009/06/03 16:37:31 ajacoutot Exp $
+--- src/rend-avahi.c.orig	Sat Apr 19 21:17:23 2008
++++ src/rend-avahi.c	Tue Jun  2 18:48:06 2009
+@@ -28,6 +28,7 @@
+ #include <errno.h>
+ #include <assert.h>
+ #include <pthread.h>
++#include <sys/socket.h>
+ #include <net/if.h>
+ 
+ 
