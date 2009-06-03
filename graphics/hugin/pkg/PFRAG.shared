@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/04/19 11:18:40 sthen Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2009/06/03 13:45:14 sthen Exp $
 @comment lib/libceleste.so
 @lib lib/libceleste.so.${LIBceleste_VERSION}
 @comment lib/libhuginANN.so
@@ -6,6 +6,5 @@
 @comment lib/libhuginbase.so
 @lib lib/libhuginbase.so.${LIBhuginbase_VERSION}
 @comment lib/libhuginjhead.so
-@lib lib/libhuginjhead.so.${LIBhuginjhead_VERSION}
 @comment lib/libhuginvigraimpex.so
 @lib lib/libhuginvigraimpex.so.${LIBhuginvigraimpex_VERSION}

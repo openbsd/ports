@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/09 19:28:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/03 13:45:14 sthen Exp $
 
 COMMENT =		panorama image stitcher
 
-DISTNAME =		hugin-0.8.0_rc1
+DISTNAME =		hugin-0.8.0_rc2
 PKGNAME =		${DISTNAME:S/_//}
 WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =patents
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += GL GLU ICE SM X11 Xext c m pthread stdc++ z
+WANTLIB += GL GLU ICE SM X11 Xext c g2c m pthread stdc++ z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 
@@ -43,11 +43,14 @@ LIB_DEPENDS =		boost_thread-mt::devel/boost \
 			IlmImf::graphics/openexr \
 			png::graphics/png \
 			tiff::graphics/tiff \
+			blas::math/blas \
+			lapack::math/lapack \
 			wx_base,wx_base_net,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_gl,wx_gtk2_html,wx_gtk2_xrc::x11/wxWidgets
 
 USE_X11=		Yes
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake
+# doesnt work CONFIGURE_ARGS =	-DLAPACK_FOUND:Strings=NO
 NO_REGRESS =		Yes
 CFLAGS +=		-pthread
 

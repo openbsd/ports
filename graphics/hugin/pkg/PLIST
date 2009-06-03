@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/05/09 19:28:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/06/03 13:45:14 sthen Exp $
 %%SHARED%%
 @bin bin/PTBatcher
 @bin bin/PTBatcherGUI
@@ -15,21 +15,23 @@
 @bin bin/pto2mk
 @bin bin/tca_correct
 @bin bin/vig_optimize
+@man man/man1/PTBatcherGUI.1
 @man man/man1/align_image_stack.1
 @man man/man1/autooptimiser.1
+@man man/man1/celeste_standalone.1
 @man man/man1/fulla.1
 @man man/man1/hugin.1
 @man man/man1/hugin_hdrmerge.1
 @man man/man1/hugin_stitch_project.1
 @man man/man1/nona.1
 @man man/man1/nona_gui.1
+@man man/man1/pto2mk.1
+@man man/man1/tca_correct.1
 @man man/man1/vig_optimize.1
 share/applications/PTBatcherGUI.desktop
 share/applications/hugin.desktop
-share/applications/hugin_stitch_project.desktop
 share/hugin/
 share/hugin/Makefile.equirect.mk
-share/hugin/nona.txt
 share/hugin/xrc/
 share/hugin/xrc/about.xrc
 share/hugin/xrc/assistant_panel.xrc
@@ -209,7 +211,6 @@ share/hugin/xrc/data/help_en_EN/CA_tCA01.jpg
 share/hugin/xrc/data/help_en_EN/CA_tCA02.jpg
 share/hugin/xrc/data/help_en_EN/CA_tCA03.jpg
 share/hugin/xrc/data/help_en_EN/CCD.html
-share/hugin/xrc/data/help_en_EN/CMakeLists.txt
 share/hugin/xrc/data/help_en_EN/Camera_response_curve.html
 share/hugin/xrc/data/help_en_EN/Celeste_cpeditor_post.jpg
 share/hugin/xrc/data/help_en_EN/Celeste_cpeditor_pre.jpg
@@ -394,7 +395,6 @@ share/hugin/xrc/data/help_en_EN/hugin.hhc
 share/hugin/xrc/data/help_en_EN/hugin.hhk
 share/hugin/xrc/data/help_en_EN/hugin.hhp
 share/hugin/xrc/data/help_en_EN/license.html
-share/hugin/xrc/data/help_en_EN/pages.txt
 share/hugin/xrc/data/help_it_IT/
 share/hugin/xrc/data/help_it_IT/16bit_workflow_with_hugin.html
 share/hugin/xrc/data/help_it_IT/Aliasing.html
@@ -410,7 +410,6 @@ share/hugin/xrc/data/help_it_IT/Banding.html
 share/hugin/xrc/data/help_it_IT/Barrel_distortion.html
 share/hugin/xrc/data/help_it_IT/Bracketing.html
 share/hugin/xrc/data/help_it_IT/CCD.html
-share/hugin/xrc/data/help_it_IT/CMakeLists.txt
 share/hugin/xrc/data/help_it_IT/Camera_response_curve.html
 share/hugin/xrc/data/help_it_IT/Chromatic_aberration.html
 share/hugin/xrc/data/help_it_IT/Color_correct_tiff.html
@@ -622,6 +621,7 @@ share/locale/sl/LC_MESSAGES/hugin.mo
 share/locale/sv/LC_MESSAGES/hugin.mo
 share/locale/uk/LC_MESSAGES/hugin.mo
 share/locale/zh_CN/LC_MESSAGES/hugin.mo
+share/locale/zh_TW/LC_MESSAGES/hugin.mo
 share/mime/
 share/mime/packages/
 share/mime/packages/hugin.xml

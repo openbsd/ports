@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_hugin1_hugin_TextureManager_cpp,v 1.1 2009/06/03 13:45:14 sthen Exp $
+
+r3904 from svn; fix for slowdown of GL preview after changes made to images.
+
+--- src/hugin1/hugin/TextureManager.cpp.orig	Mon Jun  1 21:56:11 2009
++++ src/hugin1/hugin/TextureManager.cpp	Wed Jun  3 02:25:33 2009
+@@ -370,6 +370,14 @@ void TextureManager::CheckUpdate()
+             // Either: 1. We haven't seen this image before
+             //     or: 2. Our texture for this is image is the wrong size
+             // ...therefore we make a new one the right size:
++            //
++            // remove duplicate key if exists
++            TextureKey checkKey (img_p, &photometric_correct);
++            if (textures.find(checkKey) != textures.end()) {
++                // Already exists in map, remove it first before adding a new one
++                textures.erase(checkKey);
++            }
++
+             std::pair<std::map<TextureKey, TextureInfo>::iterator, bool> ins;
+             ins = textures.insert(std::pair<TextureKey, TextureInfo>
+                                  (TextureKey(img_p, &photometric_correct),

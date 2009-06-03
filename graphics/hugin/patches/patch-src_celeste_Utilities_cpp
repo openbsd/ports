@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_celeste_Utilities_cpp,v 1.1.1.1 2009/04/19 11:18:40 sthen Exp $
---- src/celeste/Utilities.cpp.orig	Sat Apr 18 00:26:18 2009
-+++ src/celeste/Utilities.cpp	Sat Apr 18 00:26:26 2009
-@@ -5,6 +5,7 @@
+$OpenBSD: patch-src_celeste_Utilities_cpp,v 1.2 2009/06/03 13:45:14 sthen Exp $
+--- src/celeste/Utilities.cpp.orig	Mon Jun  1 21:56:10 2009
++++ src/celeste/Utilities.cpp	Wed Jun  3 02:22:10 2009
+@@ -26,6 +26,7 @@ Copyright (c) 2002-3 Adriaan Tijsseling
  */
  
  #include <math.h>

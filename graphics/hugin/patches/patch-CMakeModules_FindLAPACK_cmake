@@ -1,0 +1,10 @@
+$OpenBSD: patch-CMakeModules_FindLAPACK_cmake,v 1.1 2009/06/03 13:45:14 sthen Exp $
+--- CMakeModules/FindLAPACK.cmake.orig	Wed Jun  3 13:30:39 2009
++++ CMakeModules/FindLAPACK.cmake	Wed Jun  3 13:31:16 2009
+@@ -17,5 +17,6 @@ FIND_LIBRARY(LAPACK_LIBRARIES
+ 
+ IF(LAPACK_LIBRARIES)
+   SET( LAPACK_FOUND "YES" )
++  SET( LAPACK_LIBRARIES g2c blas ${LAPACK_LIBRARIES} )
+ ENDIF(LAPACK_LIBRARIES)
+ 
