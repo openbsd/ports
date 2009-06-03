@@ -1,7 +1,7 @@
-$OpenBSD: patch-daapd_cc,v 1.1.1.1 2005/01/21 06:49:11 jolan Exp $
---- daapd.cc.orig	Tue Jan  4 17:18:48 2005
-+++ daapd.cc	Thu Jan 20 21:11:10 2005
-@@ -829,7 +829,7 @@ InitParams *readConfig( InitParams& init
+$OpenBSD: patch-daapd_cc,v 1.2 2009/06/03 16:32:54 ajacoutot Exp $
+--- daapd.cc.orig	Sun Mar  5 14:39:37 2006
++++ daapd.cc	Tue Jun  2 16:20:11 2009
+@@ -829,7 +829,7 @@ InitParams *readConfig( InitParams& initParams ) {
  		}
  	}
  	
@@ -10,7 +10,7 @@ $OpenBSD: patch-daapd_cc,v 1.1.1.1 2005/01/21 06:49:11 jolan Exp $
  	if( conf != NULL ) {
  		return( parseConfig( conf, initParams ) );
  	}
-@@ -989,7 +989,7 @@ void startScanThread ( Database *db, con
+@@ -989,7 +989,7 @@ void startScanThread ( Database *db, const bool verbos
  	/* get the default attributes */
  	pthread_attr_init( &attr );
  

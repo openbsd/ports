@@ -1,7 +1,7 @@
-$OpenBSD: patch-README,v 1.1.1.1 2005/01/21 06:49:11 jolan Exp $
---- README.orig	Tue Jan  4 17:18:48 2005
-+++ README	Thu Jan 20 21:10:04 2005
-@@ -65,7 +65,7 @@ daapd has the following invocation synta
+$OpenBSD: patch-README,v 1.2 2009/06/03 16:32:54 ajacoutot Exp $
+--- README.orig	Sun Mar  5 14:39:37 2006
++++ README	Tue Jun  2 16:20:11 2009
+@@ -65,7 +65,7 @@ daapd has the following invocation syntax (see also th
  
  daapd [-dhqvz] [-c config-file] [-C cache-file] [-n name] [-p port] [-t vbr-limit] [file/directory]...
  
