@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2008/11/04 10:00:59 pea Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.9 2009/06/03 14:35:48 pea Exp $
 lib/zsh/
 lib/zsh/${V}/
 lib/zsh/${V}/zsh/
@@ -51,6 +51,7 @@ share/zsh/${V}/functions/VCS_INFO_detect_svk
 share/zsh/${V}/functions/VCS_INFO_detect_svn
 share/zsh/${V}/functions/VCS_INFO_detect_tla
 share/zsh/${V}/functions/VCS_INFO_formats
+share/zsh/${V}/functions/VCS_INFO_get_cmd
 share/zsh/${V}/functions/VCS_INFO_get_data_bzr
 share/zsh/${V}/functions/VCS_INFO_get_data_cdv
 share/zsh/${V}/functions/VCS_INFO_get_data_cvs
