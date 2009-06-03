@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/25 13:52:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/06/03 17:02:54 ian Exp $
 
 COMMENT=	high-level Python web framework
 
-MODPY_EGG_VERSION=	0.96.2
-V=			0.96
+V=			1.0.2
+MODPY_EGG_VERSION=	${V}-final
 LNAME=			django
 DISTNAME=		Django-${MODPY_EGG_VERSION}
-PKGNAME=		py-${LNAME}-${MODPY_EGG_VERSION}p0
+PKGNAME=		py-${LNAME}-${V}
 CATEGORIES=		www
 
 HOMEPAGE=	http://www.djangoproject.com/
 
-MAINTAINER=	Darrin Chandler <dwchandler@stilyagin.com>
+MAINTAINER=	Ryan Boggs <rmboggs@gmail.com>
 
 # BSD License
 PERMIT_PACKAGE_CDROM=	Yes

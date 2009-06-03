@@ -2,8 +2,14 @@ Complete documentation on Django may be found in:
 ${PREFIX}/share/doc/${LNAME}/
 
 or online:
-http://www.djangoproject.com/documentation/${V}/
+http://www.djangoproject.com/documentation/1.0/
 
 If you want a database for Django you should install the Python
-database adapter(s) of your choice ('pkg_add py-psycopg',
+database adapter(s) of your choice ('pkg_add py-psycopg2',
 'pkg_add py-mysql', etc).
+
+Please note, there have been significant changes between
+version 0.96 and 1.0 that may cause problems when upgrading
+projects.  A guide for upgrading projects can be found
+online at:
+http://docs.djangoproject.com/en/1.0/releases/1.0-porting-guide/
