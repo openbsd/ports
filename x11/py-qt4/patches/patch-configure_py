@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_py,v 1.1.1.1 2008/01/15 13:25:23 ajacoutot Exp $
---- configure.py.orig	Mon Jan 14 13:53:23 2008
-+++ configure.py	Mon Jan 14 13:54:59 2008
-@@ -1328,7 +1328,7 @@ def check_license():
+$OpenBSD: patch-configure_py,v 1.2 2009/06/03 18:22:28 jasper Exp $
+--- configure.py.orig	Sat Nov  8 04:55:49 2008
++++ configure.py	Mon Jun  1 23:22:13 2009
+@@ -1401,7 +1401,7 @@ def check_license():
  
          while 1:
              try:
