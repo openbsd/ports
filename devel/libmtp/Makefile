@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/31 13:37:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/06/03 17:13:28 jasper Exp $
 
 COMMENT=		Media Transfer Protocol (MTP) implementation
 
@@ -9,7 +9,7 @@ CATEGORIES=		devel
 
 HOMEPAGE=		http://libmtp.sourceforge.net/
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER=		William Yodlowsky <william@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
