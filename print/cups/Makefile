@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2009/05/19 11:15:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2009/06/03 16:31:57 ajacoutot Exp $
 
 COMMENT=		Common Unix Printing System
 
 VERSION=		1.3.10
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		cups-${VERSION}p5
+PKGNAME=		cups-${VERSION}p6
 CATEGORIES=		print sysutils
 
 SHARED_LIBS+=		cups		4.0
@@ -40,7 +40,8 @@ RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
 LIB_DEPENDS=		png.>=3::graphics/png \
 			tiff.>=35::graphics/tiff \
 			dbus-1.>=7::x11/dbus \
-			gnutls.>=14::security/gnutls
+			gnutls.>=14::security/gnutls \
+			dns_sd::net/avahi
 
 FAKE_FLAGS=		BINMODE=${BINMODE} \
 			SHAREMODE=${SHAREMODE} \
@@ -71,7 +72,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-dbus \
 			--enable-raw-printing \
 			--enable-gssapi \
-			--disable-dnssd \
+			--enable-dnssd \
 			--disable-pap \
 			--disable-ldap \
 			--disable-slp \
@@ -83,7 +84,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 CONFIGURE_ARGS+=	--enable-gnutls=yes
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
-				-I${LOCALBASE}/include/libpng" \
+				-I${LOCALBASE}/include/libpng \
+				-I${LOCALBASE}/include/avahi-compat-libdns_sd" \
 			DSOFLAGS="-L${LOCALBASE}/lib" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			LIBcups_VERSION=${LIBcups_VERSION} \

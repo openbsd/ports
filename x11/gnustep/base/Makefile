@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2009/03/07 14:23:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2009/06/03 16:36:09 ajacoutot Exp $
 
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.18.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	gnustep-base 2.1	# .1.16.4
 CATEGORIES=	devel
 
@@ -12,7 +12,7 @@ SUBST_VARS=	LIBDIR
 
 HOMEPAGE=	http://www.gnustep.org/
 
-WANTLIB += c crypto gcrypt gpg-error m objc pthread ssl tasn1
+WANTLIB += c crypto gcrypt gpg-error iberty m objc pthread ssl
 WANTLIB += xml2 z
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
@@ -22,11 +22,16 @@ MODULES=	x11/gnustep \
 LIB_DEPENDS=	avcall.>=1,callback.>=1::devel/ffcall \
 		gmp.>=7::devel/gmp \
 		xslt.>=3::textproc/libxslt \
-		gnutls.>=13::security/gnutls
+		gnutls.>=13::security/gnutls \
+		dns_sd::net/avahi
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/avahi-compat-libdns_sd" \
+		LDFLAGS="-pthread"
 CONFIGURE_ARGS=	--disable-procfs \
 		--disable-procfs-psinfo
+
+CFLAGS+=	-pthread
 
 pre-configure:
 	@perl -pi -e 's,^MAJOR_VERSION=.*,MAJOR_VERSION=${LIBgnustep-base_VERSION:R},g;' \
