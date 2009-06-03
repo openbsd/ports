@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/06/02 00:08:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2009/06/03 16:31:13 ajacoutot Exp $
 
 # XXX the following module is commented in PLIST
 # N800Module ===> needs HAL which we don't provide
@@ -7,7 +7,7 @@ COMMENT=		synchronization application for GNOME
 
 GNOME_PROJECT=		conduit
 GNOME_VERSION=		0.3.15
-PKGNAME=		${DISTNAME}p12
+PKGNAME=		${DISTNAME}p13
 
 HOMEPAGE=		http://www.conduit-project.org/
 
@@ -27,7 +27,8 @@ RUN_DEPENDS=		::audio/libgpod,-python \
 			::graphics/py-goocanvas \
 			::textproc/py-vobject \
 			::x11/dbus-python \
-			::multimedia/gstreamer-0.10/py-gstreamer
+			::multimedia/gstreamer-0.10/py-gstreamer \
+			::net/avahi
 
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
