@@ -1,0 +1,111 @@
+$OpenBSD: README.OpenBSD,v 1.1 2009/06/03 17:54:12 jasper Exp $
+
+This document gives information relevant to using ZABBIX on OpenBSD.
+The original documentation is available as a PDF file at ${HOMEPAGE}
+(or via the -doc subpackage of the zabbix port) but may not be
+redistributed. 
+
+On OpenBSD, ZABBIX is packaged in four parts:
+
+- the agent (in the zabbix-agent package) for installing onto a
+monitored machine. To simplify installation from ports on client
+machines, only this part is built by default.
+
+- the server and proxy (in the database-dependent zabbix-server
+package); this has heavier dependencies and is built by selecting
+the FLAVOR for the database you use (currently mysql or pgsql).
+
+- the web interface to run with the server (in the zabbix-web package).
+This is also in a database-dependent package to ensure the correct
+PHP modules are installed.
+
+- the PDF document, a package which must be 'built' locally because it
+can not be redistributed.
+
+To have the ZABBIX server start at boot time, you have to adapt
+the configuration file in ${SYSCONFDIR}/zabbix/zabbix_server.conf,
+create the directory /var/run/zabbix (owned by the _zabbix user),
+and insert the following into /etc/rc.local.
+
+if [ -x ${PREFIX}/bin/zabbix_server ]; then
+        echo -n ' zabbix';      ${PREFIX}/bin/zabbix_server
+fi
+
+For the proxy, follow the same procedure, replacing zabbix_server
+with zabbix_proxy.
+
+The web frontend works reasonably well with OpenBSD's chroot'ed
+httpd (the "Status of ZABBIX" page uses /bin/ps and /dev/kmem to
+check the process, so it erroneously reports it as not running).
+Some changes from the default configuration are required -
+you can do this by creating symbolic links as follows:
+
+# ln -s ${PREFIX-web}/conf/modules.sample/zabbix.conf \
+        ${PREFIX-web}/conf/modules
+
+# ln -fs ${PREFIX-web}/conf/php5.sample/zabbix.ini \
+        ${PREFIX-web}/conf/php5/zabbix.ini
+
+ZABBIX requires a timezone to be configured in PHP; zabbix.ini
+sets this to UTC, you may like to adjust this. After making these
+changes, stop and start httpd.
+
+Next you must create the database following the relevant set of
+instructions below. When this is done you can proceed to configure
+through the web interface at http://your_machine/zabbix/setup.php.
+
+
+== MySQL ==
+
+MySQL users running with chroot'ed httpd might like to take the
+following steps to place the mysql socket inside the chroot:
+
+Create a directory for the mysql socket.
+
+        mkdir -p /var/www/var/run/mysql
+
+Adjust ${SYSCONFDIR}/my.cnf to put the mysql socket into the chroot,
+
+        [client]
+        socket = /var/www/var/run/mysql/mysql.sock
+
+        [mysqld]
+        socket = /var/www/var/run/mysql/mysql.sock
+
+and set DBSocket in the ZABBIX configuration appropriately.
+
+Connect to MySQL, and create a user and database for ZABBIX;
+
+	$ mysql -u root -p
+	create user zabbix@localhost identified by 'password';
+	create database zabbix;
+	grant all on zabbix.* to zabbix@localhost;
+
+Then initialize the database from the files installed in
+${PREFIX}/share/examples/zabbix:
+
+	$ cd ${PREFIX}/share/zabbix/schema
+	$ mysql -uzabbix -p[password] zabbix < mysql.sql
+	$ cd ../data
+	$ mysql -uzabbix -p[password] zabbix < data.sql	     ## N.B. slow!!
+	$ mysql -uzabbix -p[password] zabbix < images_mysql.sql
+
+== PostgreSQL ==
+
+Assuming you have an administrative account named `postgres',
+you can create the 'zabbix' user and database like this:
+
+	createuser -U postgres --pwprompt --no-superuser \
+	    --createdb --no-createrole zabbix
+	createdb -U zabbix zabbix
+
+And initialize the database:
+
+	$ psql -U zabbix
+	psql> create database zabbix;
+	psql> \q
+	$ cd ${PREFIX}/share/zabbix/schema
+	$ cat postgresql.sql | psql -U zabbix zabbix
+	$ cd ../data
+	$ cat data.sql | psql -U zabbix zabbix
+	$ cat images_pgsql.sql | psql -U zabbix zabbix

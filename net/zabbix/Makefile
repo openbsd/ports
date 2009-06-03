@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/05/03 22:32:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/03 17:54:12 jasper Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -7,10 +7,10 @@ COMMENT-doc =		network and application monitoring - non-free documentation
 
 VERSION =		1.6.4
 DISTNAME =		zabbix-${VERSION}
-PKGNAME-main =		zabbix-agent-${VERSION}p1
-PKGNAME-server =	zabbix-server-${VERSION}p2
+PKGNAME-main =		zabbix-agent-${VERSION}p2
+PKGNAME-server =	zabbix-server-${VERSION}p3
 PKGNAME-doc =		zabbix-doc-${VERSION}
-PKGNAME-web =		zabbix-web-${VERSION}p0
+PKGNAME-web =		zabbix-web-${VERSION}p1
 CATEGORIES =		net
 
 HOMEPAGE =		http://www.zabbix.com/
@@ -29,27 +29,25 @@ PERMIT_PACKAGE_FTP-doc =   non-free documentation
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
 
-MULTI_PACKAGES =	-server -main -web -doc
+MULTI_PACKAGES =	-main -doc
+PSEUDO_FLAVORS =	no_server
+FLAVORS =		mysql pgsql
+
+SUBST_VARS +=		PREFIX-web ZABBIX_WEB
 
 WANTLIB =		c kvm m
 LIB_DEPENDS =		lber,ldap::databases/openldap
 
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
 			curl::net/curl \
-			netsnmp::net/net-snmp \
-			mysqlclient::databases/mysql
+			netsnmp::net/net-snmp
 RUN_DEPENDS-server =	::net/fping
-
-WANTLIB-web =
-LIB_DEPENDS-web =
-RUN_DEPENDS-web =	::www/php5/extensions,-mysql
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-server \
 			--enable-agent \
 			--enable-proxy \
 			--enable-ipv6 \
-			--with-mysql \
 			--with-libcurl \
 			--with-net-snmp \
 			--with-ldap
@@ -57,14 +55,47 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 PREFIX-web =		/var/www
+ZABBIX_WEB =		${PREFIX-web}/htdocs/zabbix
+
+FLAVOR ?=		no_server
+
+#if non-backend-related flavors are added, add them to
+#the following line as ":L:Nflavor1:Nflavor2" so that
+#they don't trigger a "Conflicting flavors" error.
+BACKEND =		${FLAVOR}
+.if ${BACKEND} == "mysql"
+MULTI_PACKAGES += -server -web
+LIB_DEPENDS-server +=	mysqlclient::databases/mysql,-main
+RUN_DEPENDS-web =	::www/php5/extensions,-mysql
+CONFIGURE_ARGS +=	--with-mysql
+.elif ${BACKEND} == "pgsql"
+MULTI_PACKAGES += -server -web
+LIB_DEPENDS-server +=	pq::databases/postgresql,-main
+RUN_DEPENDS-web =	::www/php5/extensions,-pgsql
+CONFIGURE_ARGS +=	--with-pgsql
+.elif ${BACKEND} == "no_server"
+CONFIGURE_ARGS += --disable-server \
+                  --disable-proxy
+.else
+ERRORS +=		"Fatal: Conflicting flavors: ${FLAVOR}";
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/zabbix
 	cd ${WRKBUILD}/frontends/php && tar -cf - . | \
 		tar -C ${DESTDIR}${PREFIX-web}/zabbix -xf -
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zabbix
+	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/doc/zabbix/README.OpenBSD
 	${INSTALL_DATA} "${WRKBUILD}/docs/ZABBIX Manual v1.6 rev 17.pdf" \
 		${PREFIX}/share/doc/zabbix/ZABBIX_Manual_v1.6_rev17.pdf
+	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/conf/
+	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/conf/modules.sample
+	${SUBST_CMD} -c ${FILESDIR}/zabbix.conf \
+		${DESTDIR}${PREFIX-web}/conf/modules.sample/zabbix.conf
+	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/conf/php5.sample
+	${SUBST_CMD} -c ${FILESDIR}/zabbix.ini \
+		${DESTDIR}${PREFIX-web}/conf/php5.sample/zabbix.ini
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/schema
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/data
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/data/images
