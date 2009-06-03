@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.224 2009/05/31 02:52:06 landry Exp $
+# $OpenBSD: Makefile,v 1.225 2009/06/03 18:28:37 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -203,6 +203,7 @@
      SUBDIR += xmms-tremor
      SUBDIR += xmms-wavpack
      SUBDIR += xmms-xf86audio
+     SUBDIR += xmms2
      SUBDIR += xmmsctrl
      SUBDIR += xmp
 
