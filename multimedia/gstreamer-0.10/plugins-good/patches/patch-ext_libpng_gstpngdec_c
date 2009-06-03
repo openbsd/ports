@@ -1,0 +1,54 @@
+$OpenBSD: patch-ext_libpng_gstpngdec_c,v 1.1 2009/06/03 20:24:31 jasper Exp $
+
+GStreamer Good Plug-ins PNG Processing Integer Overflow Vulnerability (SA35205)
+Patch from upstream git: d9544bcc44adcef769cbdf7f6453e140058a3adc
+
+--- ext/libpng/gstpngdec.c.orig	Wed Jun  3 14:10:46 2009
++++ ext/libpng/gstpngdec.c	Wed Jun  3 14:13:57 2009
+@@ -204,7 +204,13 @@ user_info_callback (png_structp png_ptr, png_infop inf
+ 
+   /* Allocate output buffer */
+   pngdec->rowbytes = png_get_rowbytes (pngdec->png, pngdec->info);
+-  buffer_size = pngdec->height * GST_ROUND_UP_4 (pngdec->rowbytes);
++  if (pngdec->rowbytes > (G_MAXUINT32 - 3)
++      || pngdec->height > G_MAXUINT32 / pngdec->rowbytes) {
++    ret = GST_FLOW_ERROR;
++    goto beach;
++  }
++  pngdec->rowbytes = GST_ROUND_UP_4 (pngdec->rowbytes);
++  buffer_size = pngdec->height * pngdec->rowbytes;
+   ret =
+       gst_pad_alloc_buffer_and_set_caps (pngdec->srcpad, GST_BUFFER_OFFSET_NONE,
+       buffer_size, GST_PAD_CAPS (pngdec->srcpad), &buffer);
+@@ -229,7 +235,7 @@ user_endrow_callback (png_structp png_ptr, png_bytep n
+   /* FIXME: implement interlaced pictures */
+ 
+   if (GST_IS_BUFFER (pngdec->buffer_out)) {
+-    size_t offset = row_num * GST_ROUND_UP_4 (pngdec->rowbytes);
++    size_t offset = row_num * pngdec->rowbytes;
+ 
+     GST_LOG ("got row %u, copying in buffer %p at offset %" G_GSIZE_FORMAT,
+         (guint) row_num, pngdec->buffer_out, offset);
+@@ -478,7 +484,12 @@ gst_pngdec_task (GstPad * pad)
+ 
+   /* Allocate output buffer */
+   rowbytes = png_get_rowbytes (pngdec->png, pngdec->info);
+-  buffer_size = pngdec->height * GST_ROUND_UP_4 (rowbytes);
++  if (rowbytes > (G_MAXUINT32 - 3) || pngdec->height > G_MAXUINT32 / rowbytes) {
++    ret = GST_FLOW_ERROR;
++    goto pause;
++  }
++  rowbytes = GST_ROUND_UP_4 (rowbytes);
++  buffer_size = pngdec->height * rowbytes;
+   ret =
+       gst_pad_alloc_buffer_and_set_caps (pngdec->srcpad, GST_BUFFER_OFFSET_NONE,
+       buffer_size, GST_PAD_CAPS (pngdec->srcpad), &buffer);
+@@ -492,7 +503,7 @@ gst_pngdec_task (GstPad * pad)
+ 
+   for (i = 0; i < pngdec->height; i++) {
+     rows[i] = inp;
+-    inp += GST_ROUND_UP_4 (rowbytes);
++    inp += rowbytes;
+   }
+ 
+   /* Read the actual picture */

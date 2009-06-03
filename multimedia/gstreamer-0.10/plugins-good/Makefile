@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2009/04/11 14:37:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2009/06/03 20:24:31 jasper Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -19,7 +19,7 @@ COMMENT-wavpack =	multimedia framework - wavpack plugin
 
 V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
-PKGNAME-main =		gstreamer-plugins-good-$Vp11v0
+PKGNAME-main =		gstreamer-plugins-good-$Vp12v0
 PKGNAME-aalib =		gstreamer-aalib-$Vp2
 PKGNAME-cairo =		gstreamer-cairo-$Vp3
 PKGNAME-gconf =		gstreamer-confelements-$Vp4
@@ -29,7 +29,7 @@ PKGNAME-speex =		gstreamer-speex-$Vp2
 PKGNAME-taglib =	gstreamer-taglib-$Vp2
 PKGNAME-dv =		gstreamer-dv-$Vp2
 PKGNAME-jpeg =		gstreamer-jpeg-$Vp2
-PKGNAME-png =		gstreamer-png-$Vp2
+PKGNAME-png =		gstreamer-png-$Vp3
 PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp4
 PKGNAME-caca =		gstreamer-libcaca-$Vp2
 PKGNAME-shout =		gstreamer-shoutcast-$Vp2
