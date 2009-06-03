@@ -1,11 +1,11 @@
-$OpenBSD: patch-src-make_rules,v 1.1.1.1 2009/03/31 19:08:29 jasper Exp $
---- src/make_rules.orig	Wed Jun  4 16:26:29 2008
-+++ src/make_rules	Tue Mar 31 19:37:54 2009
+$OpenBSD: patch-src-make_rules,v 1.2 2009/06/03 22:46:06 jasper Exp $
+--- src/make_rules.orig	Wed Jun  3 16:27:53 2009
++++ src/make_rules	Wed Jun  3 16:28:31 2009
 @@ -14,12 +14,12 @@ SHELL=/bin/sh
  
  #================================ compiler =================================
  
--COMPILE = gcc -g -Wall -ansi
+-COMPILE = gcc -g -O0 -Wall -ansi
 +COMPILE = $(CC) -g -Wall -ansi
  #COMPILE = gcc -g -Wall -ansi -O3 -pedantic -Werror -MMD
 -LINK = gcc
