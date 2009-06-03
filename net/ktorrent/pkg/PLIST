@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/01/28 20:03:40 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/06/03 18:39:28 ajacoutot Exp $
 @bin bin/ktcachecheck
 @bin bin/ktorrent
 bin/ktshell
@@ -26,6 +26,8 @@ ${KDE}/ktupnpplugin.la
 ${KDE}/ktupnpplugin.so
 ${KDE}/ktwebinterfaceplugin.la
 ${KDE}/ktwebinterfaceplugin.so
+${KDE}/ktzeroconfplugin.la
+${KDE}/ktzeroconfplugin.so
 lib/libktorrent-${VERSION}.so
 lib/libktorrent.la
 lib/libktorrent.so
