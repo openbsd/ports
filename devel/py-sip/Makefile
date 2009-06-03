@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/11 21:49:39 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2009/06/03 18:20:51 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
-DISTNAME=	sip-4.7.3
-PKGNAME=	py-${DISTNAME}p1
+DISTNAME=	sip-4.7.9
+PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
 
-HOMEPAGE=	http://www.riverbankcomputing.co.uk/sip/
+HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/sip/intro
 
 MAINTAINER=	Lars Hansson <lars@unet.net.ph>
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	m c stdc++
 
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/
+MASTER_SITES=	http://www.riverbankcomputing.co.uk/static/Downloads/sip4/
 
 MODULES=	lang/python
 

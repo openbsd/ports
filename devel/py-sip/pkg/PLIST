@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/14 14:44:11 ajacoutot Exp $
-bin/sip
+@comment $OpenBSD: PLIST,v 1.2 2009/06/03 18:20:51 jasper Exp $
+@bin bin/sip
 include/python${MODPY_VERSION}/sip.h
 lib/python${MODPY_VERSION}/site-packages/sip.so
 lib/python${MODPY_VERSION}/site-packages/sipconfig.py
