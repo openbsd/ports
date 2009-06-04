@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.3 2007/06/09 09:09:44 espie Exp $
+# $OpenBSD: cmake.port.mk,v 1.4 2009/06/04 21:07:23 ajacoutot Exp $
 
 BUILD_DEPENDS+=	::devel/cmake
 
@@ -19,10 +19,16 @@ REGRESS_TARGET?=	test
 
 .if defined(BATCH)
 MODCMAKE_WANTCOLOR ?= No
+MODCMAKE_VERBOSE ?= No
 .else
 MODCMAKE_WANTCOLOR ?= Yes
+MODCMAKE_VERBOSE ?= Yes
 .endif
 
 .if ${MODCMAKE_WANTCOLOR:L} == "yes" && defined(TERM)
 MAKE_ENV += TERM=${TERM}
+.endif
+
+.if ${MODCMAKE_VERBOSE:L} == "yes"
+MAKE_ENV += VERBOSE=1
 .endif
