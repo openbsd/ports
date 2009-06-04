@@ -1,0 +1,10 @@
+To have kamailio start at boot time, you have to adapt
+${SYSCONFDIR}/kamailio/kamailio.cfg and insert the following
+into /etc/rc.local.
+
+if [ -x ${PREFIX}/sbin/kamctl ]; then
+        install -d -o _kamailio /var/run/kamailio
+        echo -n ' kamailio';   ${PREFIX}/sbin/kamctl
+fi
+
+######## XXX ########### XXX ############# XXX ######

@@ -1,0 +1,13 @@
+$OpenBSD: patch-etc_kamailio_cfg,v 1.1.1.1 2009/06/04 13:44:09 sthen Exp $
+--- etc/kamailio.cfg.orig	Wed Apr 29 14:58:51 2009
++++ etc/kamailio.cfg	Wed May 13 12:31:58 2009
+@@ -63,6 +63,9 @@ log_facility=LOG_LOCAL0
+ fork=yes
+ children=4
+ 
++user="_kamailio"
++group="_kamailio"
++
+ /* uncomment the following lines to enable debugging */
+ #debug=6
+ #fork=no

@@ -1,0 +1,10 @@
+$OpenBSD: patch-scripts_kamdbctl,v 1.1.1.1 2009/06/04 13:44:09 sthen Exp $
+
+# N.B. Hand-edited to avoid CVS keywords.
+
+--- scripts/kamdbctl.orig	Wed May 13 21:38:24 2009
++++ scripts/kamdbctl	Wed May 13 21:38:29 2009
+@@ -1,2 +1,2 @@
+-#!/usr/local/bin/bash 
++#!/bin/sh 
+ #

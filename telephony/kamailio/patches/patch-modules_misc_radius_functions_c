@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_misc_radius_functions_c,v 1.1.1.1 2009/06/04 13:44:09 sthen Exp $
+--- modules/misc_radius/functions.c.orig	Wed May 13 21:20:09 2009
++++ modules/misc_radius/functions.c	Wed May 13 21:20:18 2009
+@@ -34,6 +34,10 @@
+ /* Array for extra attribute values */
+ static str val_arr[MAX_EXTRA];
+ 
++#ifndef UINT4
++#define UINT4 uint32_t
++#endif
++
+ /* Extract one reply item value to AVP flags, name and value */
+ static inline int extract_avp(VALUE_PAIR* vp, unsigned short *flags,
+ 			      int_str *name, int_str *value)
