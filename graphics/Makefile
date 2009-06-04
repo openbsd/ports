@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2009/06/04 00:39:53 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.240 2009/06/04 13:07:18 benoit Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -9,6 +9,7 @@
      SUBDIR += aalib
      SUBDIR += aalib,no_x11
      SUBDIR += agg
+     SUBDIR += amide
      SUBDIR += animorph
      SUBDIR += aqsis
      SUBDIR += autopano-sift-c
