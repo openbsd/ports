@@ -2,7 +2,7 @@
 
 # Sample script to use with fetch-makefile: fetch all distfiles
 
-# $OpenBSD: fetch-all,v 1.8 2008/03/24 18:05:54 espie Exp $
+# $OpenBSD: fetch-all,v 1.9 2009/06/04 15:15:48 sthen Exp $
 #
 # Copyright (c) 2000 Marc Espie.
 # 
@@ -32,19 +32,28 @@ then
 	exit 0
 fi
 
-file=`echo $1|sed -e "s,^${DIST_SUBDIR:-.}/,,"`
+file=`basename $1`
 dir=`dirname $1`
-check=`basename $1`
 mkdir -p $dir
 oldd=$PWD
+
 cd $dir
+
 for site in ${SITES}
 do
-	if ftp ${site}$file
+	if ${FETCH_CMD:-ftp} ${site}$file
 	then
 		echo -n "$site: "
 		cd $oldd
-		if echo "${CHECK}" |cksum -c; then
+
+		if [ -z "${CHECK}" ]
+		then
+			echo "$file: NO CHECKSUM"
+			exit 0
+		fi
+
+		if echo "${CHECK}" | cksum -c
+		then
 			exit 0
 		else
 			cd $dir
