@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2009/04/20 23:32:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.239 2009/06/04 00:39:53 wcmaier Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -167,6 +167,7 @@
      SUBDIR += py-goocanvas
      SUBDIR += py-graphics
      SUBDIR += py-matplotlib
+     SUBDIR += py-opengl
      SUBDIR += py-pyx
      SUBDIR += pycha
      SUBDIR += qiv
