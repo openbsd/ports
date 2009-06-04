@@ -1,0 +1,4 @@
+Xfce 4 Modem Lights panel plugin provides an easy way to establish/close
+a ppp connection via a modem. It should work with any scripts that
+create a lock file during dialing and retain it through the connection,
+like ppp -ddial which creates /var/run/tun0.pid.

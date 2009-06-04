@@ -1,0 +1,68 @@
+$OpenBSD: patch-panel-plugin_panel-plugin_c,v 1.1.1.1 2009/06/04 04:18:39 landry Exp $
+--- panel-plugin/panel-plugin.c.orig	Thu Nov  8 01:28:58 2007
++++ panel-plugin/panel-plugin.c	Wed Jun  3 22:16:33 2009
+@@ -26,6 +26,8 @@
+ #include <libxfce4panel/xfce-panel-plugin.h>
+ #include <libxfce4panel/xfce-panel-convenience.h>
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
+ #include <net/if.h>
+ 
+ #define THEME_OFFLINE_ICON "modem-disconnected"
+@@ -355,19 +357,19 @@ modemlights_read_config(XfceModemlightsPlugin *mwp)
+     g_return_if_fail (rc);
+ 
+     mwp->connection_cmd =
+-      g_strdup (xfce_rc_read_entry (rc, "connection_cmd", "/usr/bin/pon"));
++      g_strdup (xfce_rc_read_entry (rc, "connection_cmd", "/usr/bin/ppp"));
+     mwp->disconnection_cmd =
+-      g_strdup (xfce_rc_read_entry (rc, "disconnection_cmd", "/usr/bin/poff"));
++      g_strdup (xfce_rc_read_entry (rc, "disconnection_cmd", "/usr/bin/pkill ppp"));
+     mwp->device =
+-      g_strdup (xfce_rc_read_entry (rc, "device", "ppp0"));
++      g_strdup (xfce_rc_read_entry (rc, "device", "tun0"));
+     mwp->lockfile =
+-      g_strdup (xfce_rc_read_entry (rc, "lockfile", "/var/lock/LCK..ttyS1"));
++      g_strdup (xfce_rc_read_entry (rc, "lockfile", "/var/run/tun0.pid"));
+     mwp->icon_disconnected =
+-      g_strdup (xfce_rc_read_entry (rc, "icon_disconnected", ""));
++      g_strdup (xfce_rc_read_entry (rc, "icon_disconnected", "${PREFIX}/share/pixmaps/modem-disconnected.png"));
+     mwp->icon_connected =
+-      g_strdup (xfce_rc_read_entry (rc, "icon_connected", ""));
++      g_strdup (xfce_rc_read_entry (rc, "icon_connected", "${PREFIX}/share/pixmaps/modem-connected.png"));
+     mwp->icon_dialing =
+-      g_strdup (xfce_rc_read_entry (rc, "icon_dialing", ""));
++      g_strdup (xfce_rc_read_entry (rc, "icon_dialing", "${PREFIX}/share/pixmaps/modem-dialing.png"));
+ 
+     xfce_rc_close (rc);
+ }
+@@ -554,12 +556,12 @@ modemlights_create_device_entry (XfceModemlightsPlugin
+                       G_CALLBACK (modemlights_create_info),
+                       _("This is the device name (interface name) for the "
+                         "established connection, such as:\n"
+-                        " <b>ppp0</b> \n"
++                        " <b>tun0</b> \n"
+                         "To determine the device name, you can execute the next "
+                         "command before and after establishing the connection:\n"
+-                        " <b>cat /proc/net/dev</b> \n"
+-                        "This will show the active devices/interfaces in the first "
+-                        "column. The new device after establishing the connection "
++                        " <b>ifconfig</b> \n"
++                        "This will show the active devices/interfaces. "
++                        "The new device after establishing the connection "
+                         "is the device/interface name required."));
+ 
+     GtkWidget *hbox = gtk_hbox_new(FALSE, 8);
+@@ -603,9 +605,9 @@ modemlights_create_lockfile_selector (XfceModemlightsP
+                       G_CALLBACK (modemlights_create_info),
+                       _("This is the name of the lock file created by the "
+                         "connection command, such as:\n"
+-                        " <b>/var/lock/LCK..ttyS1</b> \n"
++                        " <b>/var/run/tun0.pid</b> \n"
+                         "You can frequently find this name by checking the "
+-                        "content of /var/lock before and after establishing the "
++                        "content of /var/run before and after establishing the "
+                         "connection. The absence of that file indicates to the "
+                         "plugin that no connection has been established and that "
+                         "no dialing is in progress."));
