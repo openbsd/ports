@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/05/03 19:51:42 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2009/06/04 00:45:39 ajacoutot Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
 GNOME_PROJECT=	gnome-screensaver
 GNOME_VERSION=	2.24.1
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -39,6 +39,9 @@ RUN_DEPENDS=	::x11/gnome/librsvg \
 		:xscreensaver-data-*:x11/xscreensaver,-data,no_gle \
 		:notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
 
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.61
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
@@ -46,8 +49,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-pam \
 		--enable-docbook-docs \
 		--enable-locking \
-		--enable-authentication-scheme=pwent \
 		--with-x \
+		--with-bsdauth=yes \
 		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-screensaver \
 		--with-xscreensaverdir="${LOCALBASE}/share/xscreensaver/config" \
 		--with-xscreensaverhackdir="${LOCALBASE}/libexec/xscreensaver" \
@@ -55,7 +58,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-mit-ext \
 		--with-xf86gamma-ext \
 		--with-libgl \
-		--with-shadow=yes \
 		--with-kbd-layout-indicator \
 		--with-libnotify
 
@@ -66,5 +68,8 @@ DESKTOP_FILES=	Yes
 MAKE_FLAGS=	GNOMELOCALEDIR="${LOCALBASE}/share/locale" \
 		DOCDIR="${PREFIX}/share/doc/gnome-screensaver"
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gnome-xscreensaver
+
+post-extract:
+	cp ${FILESDIR}/gs-auth-bsdauth.c ${WRKSRC}/src/
 
 .include <bsd.port.mk>

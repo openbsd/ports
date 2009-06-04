@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2009/06/04 00:45:39 ajacoutot Exp $
+--- src/Makefile.am.orig	Wed May 14 07:14:43 2008
++++ src/Makefile.am	Wed May 13 18:17:09 2009
+@@ -141,6 +141,7 @@ gnome_screensaver_dialog_SOURCES = 	\
+ EXTRA_gnome_screensaver_dialog_SOURCES = \
+ 	gs-auth-pam.c		\
+ 	gs-auth-helper.c	\
++	gs-auth-bsdauth.c	\
+ 	gs-auth-pwent.c		\
+ 	$(NULL)
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/29 11:34:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/04 00:45:39 ajacoutot Exp $
 @bin bin/gnome-screensaver
 @bin bin/gnome-screensaver-command
 @bin bin/gnome-screensaver-preferences
@@ -35,15 +35,11 @@ share/gnome-screensaver/
 share/gnome-screensaver/gnome-screensaver-preferences.glade
 share/gnome-screensaver/lock-dialog-default.glade
 share/locale/ar/LC_MESSAGES/gnome-screensaver.mo
-share/locale/as/
-share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ast/
 share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/gnome-screensaver.mo
 share/locale/be/LC_MESSAGES/gnome-screensaver.mo
-share/locale/be@latin/
-share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/gnome-screensaver.mo
 share/locale/bg/LC_MESSAGES/gnome-screensaver.mo
 share/locale/bn/LC_MESSAGES/gnome-screensaver.mo
@@ -89,8 +85,6 @@ share/locale/nb/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ne/LC_MESSAGES/gnome-screensaver.mo
 share/locale/nl/LC_MESSAGES/gnome-screensaver.mo
 share/locale/nn/LC_MESSAGES/gnome-screensaver.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/gnome-screensaver.mo
 share/locale/or/LC_MESSAGES/gnome-screensaver.mo
 share/locale/pa/LC_MESSAGES/gnome-screensaver.mo
@@ -102,20 +96,14 @@ share/locale/pt/LC_MESSAGES/gnome-screensaver.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ro/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ru/LC_MESSAGES/gnome-screensaver.mo
-share/locale/si/
-share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sk/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sl/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sq/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sr/LC_MESSAGES/gnome-screensaver.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/gnome-screensaver.mo
 share/locale/sv/LC_MESSAGES/gnome-screensaver.mo
 share/locale/ta/LC_MESSAGES/gnome-screensaver.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/gnome-screensaver.mo
 share/locale/th/LC_MESSAGES/gnome-screensaver.mo
 share/locale/tr/LC_MESSAGES/gnome-screensaver.mo

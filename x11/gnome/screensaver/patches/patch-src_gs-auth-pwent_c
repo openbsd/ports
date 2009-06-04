@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_gs-auth-pwent_c,v 1.1 2009/06/04 00:45:39 ajacoutot Exp $
+--- src/gs-auth-pwent.c.orig	Wed May 13 23:23:49 2009
++++ src/gs-auth-pwent.c	Wed May 13 23:24:51 2009
+@@ -164,10 +164,10 @@ get_encrypted_passwd (const char *user)
+                 }
+         }
+ 
+-#ifndef HAVE_PAM
++#if !defined(HAVE_PAM) && !defined(HAVE_BSDAUTH)
+         /* We only issue this warning if not compiled with support for PAM.
+            If we're using PAM, it's not unheard of that normal pwent passwords
+-           would be unavailable. */
++           would be unavailable. This is also true if we use bsd_auth(3). */
+ 
+         if (!result) {
+                 g_warning ("Couldn't get password of \"%s\"",
