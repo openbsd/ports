@@ -1,8 +1,11 @@
-# $OpenBSD: network.conf.template,v 1.132 2009/04/02 15:04:19 jcs Exp $
+# $OpenBSD: network.conf.template,v 1.133 2009/06/04 14:43:40 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
-# ALWAYS COPY IT TO ../db/network.conf FIRST.
+#
+# ADD YOUR OWN ENTRIES TO ../db/network.conf - EITHER COPY THIS
+# FILE AND MODIFY IT, OR ADD YOUR OWN ENTRIES FIRST FOLLOWED BY:
+# .include "../templates/network.conf.template"
 #
 
 # List of OpenBSD sites
