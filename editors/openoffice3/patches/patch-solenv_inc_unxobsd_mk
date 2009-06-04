@@ -1,6 +1,6 @@
---- solenv/inc/unxobsd.mk.orig.port	Tue Jun  2 11:29:58 2009
-+++ solenv/inc/unxobsd.mk	Tue Jun  2 15:47:36 2009
-@@ -0,0 +1,249 @@
+--- solenv/inc/unxobsd.mk.orig.port	Wed Jun  3 13:44:50 2009
++++ solenv/inc/unxobsd.mk	Wed Jun  3 13:49:00 2009
+@@ -0,0 +1,248 @@
 +#*************************************************************************
 +#
 +# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -11,7 +11,7 @@
 +#
 +# $RCSfile: patch-solenv_inc_unxobsd_mk,v $
 +#
-+# $Revision: 1.5 $
++# $Revision: 1.6 $
 +#
 +# This file is part of OpenOffice.org.
 +#
@@ -89,7 +89,6 @@
 +CC+:=$(CFLAGS_SYSBASE)
 +.ENDIF          # "$(SYSBASE)"!=""
 +CFLAGS+=-fmessage-length=0 -c
-+CFLAGS+=-fno-stack-protector
 +
 +# flags to enable build with symbols; required for crashdump feature
 +.IF "$(ENABLE_SYMBOLS)"=="SMALL"
