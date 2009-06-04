@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/04 02:02:08 jasper Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/Inconsolata/
+lib/X11/fonts/Inconsolata/Inconsolata.otf
