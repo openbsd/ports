@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/24 14:58:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2009/06/04 00:18:31 jasper Exp $
 
 COMMENT=		GNU watch command
 
-DISTNAME=		procps-3.2.7
-PKGNAME=		${DISTNAME:S/procps/gnuwatch/}p0
+DISTNAME=		procps-3.2.8
+PKGNAME=		${DISTNAME:S/procps/gnuwatch/}
 CATEGORIES=		misc
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 HOMEPAGE=		http://procps.sourceforge.net/
 
-# GPL/LGPL
+# GPLv2/LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
