@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2009/06/03 17:17:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2009/06/04 22:01:26 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,8 +29,9 @@ BUILD_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 LIB_DEPENDS=		ORBit-2.>=2::devel/ORBit2 \
 			gconf-2.>=5::devel/gconf2 \
 			xml2.>=9::textproc/libxml \
-			dbus-glib-1.>=3::x11/dbus-glib \
-			avahi-client,avahi-common,avahi-glib::net/avahi
+			dbus-glib-1.>=3::x11/dbus-glib
+# only build the -main subpackage to prevent cyclic dependency
+LIB_DEPENDS+=		avahi-client,avahi-common,avahi-glib::net/avahi,no_gtk,no_qt3,no_qt4
 RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 
 WANTLIB-main=		${WANTLIB} c asn1 gssapi krb5 pthread rpcsvc stdc++
