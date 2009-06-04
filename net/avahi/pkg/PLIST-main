@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/06/04 21:42:40 ajacoutot Exp $
 @conflict howl-*
 @newgroup _avahi:629
 @newgroup _avahi-autoipd:630
 @newuser _avahi:629:629:daemon:Avahi User:/var/empty:/sbin/nologin
 @newuser _avahi-autoipd:630:630:daemon:Avahi Autoipd User:/var/empty:/sbin/nologin
+%%SHARED%%
 @bin bin/avahi-browse
 bin/avahi-browse-domains
 @bin bin/avahi-publish
@@ -76,41 +77,21 @@ include/avahi-gobject/ga-error.h
 include/avahi-gobject/ga-record-browser.h
 include/avahi-gobject/ga-service-browser.h
 include/avahi-gobject/ga-service-resolver.h
-lib/avahi/
-lib/avahi/service-types.db
 lib/libavahi-client.a
-lib/libavahi-client.la
-@lib lib/libavahi-client.so.${LIBavahi-client_VERSION}
 lib/libavahi-common.a
-lib/libavahi-common.la
-@lib lib/libavahi-common.so.${LIBavahi-common_VERSION}
 lib/libavahi-core.a
-lib/libavahi-core.la
-@lib lib/libavahi-core.so.${LIBavahi-core_VERSION}
 lib/libavahi-glib.a
-lib/libavahi-glib.la
-@lib lib/libavahi-glib.so.${LIBavahi-glib_VERSION}
 lib/libavahi-gobject.a
-lib/libavahi-gobject.la
-@lib lib/libavahi-gobject.so.${LIBavahi-gobject_VERSION}
 lib/libdns_sd.a
-lib/libdns_sd.la
-@lib lib/libdns_sd.so.${LIBdns_sd_VERSION}
 lib/libhowl.a
-lib/libhowl.la
-@lib lib/libhowl.so.${LIBhowl_VERSION}
 lib/pkgconfig/avahi-client.pc
 lib/pkgconfig/avahi-compat-howl.pc
 lib/pkgconfig/avahi-compat-libdns_sd.pc
 lib/pkgconfig/avahi-core.pc
 lib/pkgconfig/avahi-glib.pc
 lib/pkgconfig/avahi-gobject.pc
-lib/python${MODPY_VERSION}/site-packages/avahi/
-lib/python${MODPY_VERSION}/site-packages/avahi/ServiceTypeDatabase.py
-@man man/man1/avahi-bookmarks.1
 @man man/man1/avahi-browse-domains.1
 @man man/man1/avahi-browse.1
-@man man/man1/avahi-discover.1
 @man man/man1/avahi-publish-address.1
 @man man/man1/avahi-publish-service.1
 @man man/man1/avahi-publish.1
@@ -128,8 +109,6 @@ lib/python${MODPY_VERSION}/site-packages/avahi/ServiceTypeDatabase.py
 @bin sbin/avahi-dnsconfd
 share/avahi/
 share/avahi/avahi-service.dtd
-share/avahi/interfaces/
-share/avahi/interfaces/avahi-discover.glade
 share/avahi/introspection/
 share/avahi/introspection/AddressResolver.introspect
 share/avahi/introspection/DomainBrowser.introspect

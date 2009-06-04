@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/03 19:42:55 ajacoutot Exp $
-
-# python MODULE
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.3 2009/06/04 21:42:40 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -12,10 +9,10 @@ V=		0.6.25
 DISTNAME=	avahi-${V}
 CATEGORIES=	net devel
 
-PKGNAME-main=	avahi-${V}p0
-PKGNAME-gtk=	avahi-gtk-${V}
-PKGNAME-qt3=	avahi-qt3-${V}
-PKGNAME-qt4=	avahi-qt4-${V}
+PKGNAME-main=	avahi-${V}p1
+PKGNAME-gtk=	avahi-gtk-${V}p0
+PKGNAME-qt3=	avahi-qt3-${V}p0
+PKGNAME-qt4=	avahi-qt4-${V}p0
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -40,15 +37,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
-MULTI_PACKAGES=	-main -gtk -qt3 -qt4
+PSEUDO_FLAVORS=	no_gtk no_qt3 no_qt4
+FLAVOR?=
+
+MULTI_PACKAGES=	-main
 
 MODULES=	devel/gettext \
-		lang/python \
-		textproc/intltool \
-		x11/qt3 \
-		x11/qt4
+		textproc/intltool
 
 WANTLIB=	c expat glib-2.0 gobject-2.0 pcre pthread
+
+BUILD_DEPENDS=	::converters/xmltoman
 
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		glib-2.0.>=1800,gobject-2.0::devel/glib2 \
@@ -56,38 +55,55 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		daemon::devel/libdaemon \
 		dbus-1::x11/dbus
 
-BUILD_DEPENDS=	::converters/xmltoman \
-		:python-gdbm-*:lang/python/${MODPY_VERSION},-gdbm \
+.if !${FLAVOR:L:Mno_gtk}
+MULTI_PACKAGES+= -gtk
+MODULES+=	lang/python
+BUILD_DEPENDS+=	:python-gdbm-*:lang/python/${MODPY_VERSION},-gdbm \
 		::x11/py-gtk2 \
 		::x11/dbus-python
-
+LIB_DEPENDS-gtk= ${MODGETTEXT_LIB_DEPENDS} \
+		avahi-client,avahi-common,avahi-core,avahi-glib::net/avahi \
+		glade-2.0.>=1::devel/libglade2
 RUN_DEPENDS-gtk= ::devel/desktop-file-utils \
 		::devel/py-twisted/web \
 		::x11/py-gtk2 \
 		::x11/dbus-python
-
-LIB_DEPENDS-gtk= ${MODGETTEXT_LIB_DEPENDS} \
-		avahi-client,avahi-common,avahi-core,avahi-glib::net/avahi \
-		glade-2.0.>=1::devel/libglade2
-
 WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
 		expat fontconfig freetype gdbm gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread xml2 z
+.else
+CONFIGURE_ARGS+= -disable-gtk \
+		--disable-python \
+		--disable-pygtk \
+		--disable-python-dbus
+.endif
 
+.if !${FLAVOR:L:Mno_qt3}
+MULTI_PACKAGES+= -qt3
+MODULES+=	x11/qt3
 LIB_DEPENDS-qt3= ${MODGETTEXT_LIB_DEPENDS} \
 		${MODQT3_LIB_DEPENDS} \
 		avahi-common::net/avahi
 WANTLIB-qt3=	GL ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi \
 		Xinerama Xmu Xrandr Xrender Xt expat fontconfig \
 		freetype jpeg lcms m mng png z
+.else
+CONFIGURE_ARGS+= --disable-qt3
+.endif
 
+.if !${FLAVOR:L:Mno_qt4}
+MULTI_PACKAGES+= -qt4
+MODULES+=	x11/qt4
 LIB_DEPENDS-qt4= ${MODGETTEXT_LIB_DEPENDS} \
 		QtCore.>=7::x11/qt4 \
 		avahi-common::net/avahi
 WANTLIB-qt4=
+.else
+CONFIGURE_ARGS+= --disable-qt4
+.endif
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
@@ -101,7 +117,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		PTHREAD_CFLAGS="-pthread" \
 		PTHREAD_LIBS="-pthread" \
 		PYTHON="${MODPY_BIN}"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--localstatedir="/var" \
 		--with-dbus-sys="${SYSCONFDIR}/dbus-1/" \
 		--with-avahi-user=_avahi \
@@ -115,8 +131,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-compat-libdns_sd \
 		--enable-core-docs \
 		--enable-tests \
-		--enable-qt3 \
-		--enable-qt4 \
 		--disable-mono \
 		--disable-monodoc \
 		--disable-doxygen-doc \

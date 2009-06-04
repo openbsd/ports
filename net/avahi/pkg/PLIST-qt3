@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-qt3,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST-qt3,v 1.2 2009/06/04 21:42:40 ajacoutot Exp $
+%%SHARED%%
 include/avahi-qt3/
 include/avahi-qt3/qt-watch.h
 lib/libavahi-qt3.a
-lib/libavahi-qt3.la
-@lib lib/libavahi-qt3.so.${LIBavahi-qt3_VERSION}
 lib/pkgconfig/avahi-qt3.pc

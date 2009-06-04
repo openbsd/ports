@@ -1,0 +1,15 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2009/06/04 21:42:40 ajacoutot Exp $
+lib/libavahi-client.la
+@lib lib/libavahi-client.so.${LIBavahi-client_VERSION}
+lib/libavahi-common.la
+@lib lib/libavahi-common.so.${LIBavahi-common_VERSION}
+lib/libavahi-core.la
+@lib lib/libavahi-core.so.${LIBavahi-core_VERSION}
+lib/libavahi-glib.la
+@lib lib/libavahi-glib.so.${LIBavahi-glib_VERSION}
+lib/libavahi-gobject.la
+@lib lib/libavahi-gobject.so.${LIBavahi-gobject_VERSION}
+lib/libdns_sd.la
+@lib lib/libdns_sd.so.${LIBdns_sd_VERSION}
+lib/libhowl.la
+@lib lib/libhowl.so.${LIBhowl_VERSION}

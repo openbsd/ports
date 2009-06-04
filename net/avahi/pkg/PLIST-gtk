@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gtk,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gtk,v 1.2 2009/06/04 21:42:40 ajacoutot Exp $
 bin/avahi-bookmarks
 bin/avahi-discover
 @bin bin/avahi-discover-standalone
@@ -7,10 +7,14 @@ bin/bshell
 bin/bvnc
 include/avahi-ui/
 include/avahi-ui/avahi-ui.h
+lib/avahi/
+lib/avahi/service-types.db
 lib/libavahi-ui.a
 lib/libavahi-ui.la
 @lib lib/libavahi-ui.so.${LIBavahi-ui_VERSION}
 lib/pkgconfig/avahi-ui.pc
+lib/python${MODPY_VERSION}/site-packages/avahi/
+lib/python${MODPY_VERSION}/site-packages/avahi/ServiceTypeDatabase.py
 lib/python${MODPY_VERSION}/site-packages/avahi/__init__.py
 lib/python${MODPY_VERSION}/site-packages/avahi/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/avahi/__init__.pyo
@@ -21,10 +25,14 @@ lib/python${MODPY_VERSION}/site-packages/avahi_discover/SimpleGladeApp.pyo
 lib/python${MODPY_VERSION}/site-packages/avahi_discover/__init__.py
 lib/python${MODPY_VERSION}/site-packages/avahi_discover/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/avahi_discover/__init__.pyo
+@man man/man1/avahi-bookmarks.1
+@man man/man1/avahi-discover.1
 @man man/man1/bssh.1
 @man man/man1/bvnc.1
 share/applications/avahi-discover.desktop
 share/applications/bssh.desktop
 share/applications/bvnc.desktop
+share/avahi/interfaces/
+share/avahi/interfaces/avahi-discover.glade
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
