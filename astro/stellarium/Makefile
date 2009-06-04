@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/05/21 21:34:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/06/04 21:12:07 ajacoutot Exp $
 
 COMMENT=	free open source planetarium
 
@@ -36,7 +36,6 @@ CONFIGURE_STYLE=cmake
 CONFIGURE_ENV=	HOME=${WRKDIR}
 PORTHOME=	${WRKDIR}
 
-MAKE_FLAGS=	-DVERBOSE
 NO_REGRESS=	Yes
 MODCMAKE_WANTCOLOR=No
 

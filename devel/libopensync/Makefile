@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/08/20 08:34:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/06/04 21:12:07 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,7 +31,6 @@ MODULES=	devel/cmake \
 		devel/gettext
 
 MODCMAKE_WANTCOLOR=No
-MAKE_FLAGS=	VERBOSE=2
 CFLAGS+=	-pthread
 
 LIB_DEPENDS=	sqlite3.>=8::databases/sqlite3 \

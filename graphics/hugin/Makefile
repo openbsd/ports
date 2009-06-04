@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/06/04 16:21:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2009/06/04 21:12:07 ajacoutot Exp $
 
 COMMENT =		panorama image stitcher
 
@@ -50,7 +50,6 @@ LIB_DEPENDS =		boost_thread-mt::devel/boost \
 USE_X11=		Yes
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake
-MAKE_ENV +=		VERBOSE=1
 NO_REGRESS =		Yes
 CFLAGS +=		-pthread
 
