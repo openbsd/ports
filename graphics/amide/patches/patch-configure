@@ -1,0 +1,40 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/06/04 12:59:33 benoit Exp $
+--- configure.orig	Mon Dec 17 07:55:29 2007
++++ configure	Fri Apr 17 13:37:28 2009
+@@ -22657,8 +22657,8 @@ fi
+ 
+ case "$host_os" in
+ darwin*) 	CFLAGS="-g -O2 -Wall";;
+-*)		CFLAGS="-g -O6 -Wall"
+-		CXXFLAGS="-g -O6 -Wall";;
++*)		CFLAGS="-g -Wall"
++		CXXFLAGS="-g -Wall";;
+ esac
+ 
+ if test $CC = "gcc"; then
+@@ -23720,13 +23720,13 @@ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_e
+ ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ 
+-{ echo "$as_me:$LINENO: checking for pthread_mutex_init in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_mutex_init in -lpthread... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for pthread_mutex_init in -pthread" >&5
++echo $ECHO_N "checking for pthread_mutex_init in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_mutex_init+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -23782,7 +23782,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_mutex_init" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_mutex_init" >&6; }
+ if test $ac_cv_lib_pthread_pthread_mutex_init = yes; then
+-  THREAD_LIBS="-lpthread"
++  THREAD_LIBS="-pthread"
+ else
+   THREAD_LIBS=""
+ fi

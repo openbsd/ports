@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_amitk_xif_sel_c,v 1.1.1.1 2009/06/04 12:59:33 benoit Exp $
+--- src/amitk_xif_sel.c.orig	Thu Nov  8 21:29:03 2007
++++ src/amitk_xif_sel.c	Wed May 27 15:24:04 2009
+@@ -2019,8 +2019,12 @@ amitk_xif_selection_dir_activate (GtkTreeView       *t
+   gtk_tree_model_get_iter (model, &iter, path);
+   gtk_tree_model_get (model, &iter, DIR_COLUMN, &filename, -1);
+   filename = get_real_filename (filename, TRUE);
+-  amitk_xif_selection_populate (fs, filename, FALSE, FALSE);
+-  g_free (filename);
++  if (filename) {
++    amitk_xif_selection_populate (fs, filename, FALSE, FALSE);
++  }
++  if (filename) {
++    g_free (filename);
++  }
+ }
+ 
+ #ifdef G_PLATFORM_WIN32
+@@ -2142,7 +2146,9 @@ amitk_xif_selection_populate (AmitkXifSelection *fs,
+ 
+ 	      gtk_list_store_append (file_model, &iter);
+ 	      gtk_list_store_set (file_model, &iter, DIR_COLUMN, xifname, -1);
+-	      g_free(xifname);
++	      if (xifname) {
++	        g_free(xifname);
++	      }
+ 
+ 
+ 	    } else if (cmpl_is_directory (poss)) { 

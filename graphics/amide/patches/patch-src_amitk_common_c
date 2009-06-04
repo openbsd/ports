@@ -1,0 +1,49 @@
+$OpenBSD: patch-src_amitk_common_c,v 1.1.1.1 2009/06/04 12:59:33 benoit Exp $
+--- src/amitk_common.c.orig	Sun Dec  2 14:34:04 2007
++++ src/amitk_common.c	Wed May 27 15:24:04 2009
+@@ -262,25 +262,37 @@ gboolean amitk_is_xif_directory(const gchar * filename
+ 
+     return TRUE;
+   }
+-  g_free(temp_str);
+-
++  if (temp_str) {
++    g_free(temp_str);
++  }
++  
+   /* figure out the name of the study file */
+-  directory = opendir(xifname);
+-      
++  if (xifname) {
++    directory = opendir(xifname);
++  }      
+   /* currently, only looks at the first study_*.xml file... there should be only one anyway */
+   if (directory != NULL) {
+     while (((directory_entry = readdir(directory)) != NULL))
+       if (g_pattern_match_simple("study_*.xml", directory_entry->d_name)) {
+ 	if (plegacy1 != NULL) *plegacy1 = FALSE;
+ 	if (pxml_filename != NULL) *pxml_filename = g_strdup(directory_entry->d_name);
+-	closedir(directory);
+-	
++	if (directory) {
++	  closedir(directory);
++	}
++	if (xifname) {
++	  g_free(xifname);
++	}
+ 	return TRUE;
+       }
+   }
+     
+-  closedir(directory);
+-
++  if (directory) {  
++    closedir(directory);
++  }
++  if (xifname) {
++    g_free(xifname);
++  }
++  
+   return FALSE;
+ 
+ }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tb_export_data_set_c,v 1.1.1.1 2009/06/04 12:59:33 benoit Exp $
+--- src/tb_export_data_set.c.orig	Mon Dec  3 00:21:38 2007
++++ src/tb_export_data_set.c	Fri Apr 17 13:33:41 2009
+@@ -178,7 +178,7 @@ static void export_data_set_ok(GtkWidget* widget, gpoi
+   /* get the filename and import - note DCMTK dicom files we don't want to 
+      complain about file existing, as we might be appending */
+   filename = ui_common_file_selection_get_save_name(file_selection,
+-						    method!=AMITK_EXPORT_METHOD_DCMTK);
++						    method!=TRUE);
+   
+   if (filename == NULL) return;
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/06/04 12:59:33 benoit Exp $
+--- src/Makefile.in.orig	Mon Dec 17 07:45:45 2007
++++ src/Makefile.in	Fri Apr 17 13:33:41 2009
+@@ -374,8 +374,7 @@ AM_CFLAGS = \
+ 	$(AMIDE_LIBDCMDATA_CFLAGS) \
+ 	-I/usr/local/include \
+ 	$(XMEDCON_CFLAGS) \
+-	-DG_DISABLE_DEPRECATED \
+-	-DGTK_DISABLE_DEPRECATED 
++	-DG_DISABLE_DEPRECATED
+ 
+ AM_CXXFLAGS = $(AM_CFLAGS)
+ 
