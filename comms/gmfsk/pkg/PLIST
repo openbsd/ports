@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/03/14 10:40:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/06/04 01:28:43 jasper Exp $
 @bin bin/gmfsk
-share/gnome/help/
 share/gnome/help/gmfsk/
 share/gnome/help/gmfsk/C/
 share/gnome/help/gmfsk/C/fdl-appendix.xml

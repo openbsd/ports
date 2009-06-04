@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/06/04 01:28:43 jasper Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
-DISTNAME=	gmfsk-0.6
-PKGNAME=	${DISTNAME}p8
+GNOME_PROJECT=	gmfsk
+GNOME_VERSION=	0.6
+PKGNAME=	${DISTNAME}p9
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://gmfsk.connect.fi/
-MASTER_SITES=	http://gmfsk.connect.fi/	\
+MASTER_SITES=	${HOMEPAGE}	\
 		http://he.fi/pub/ham/unix/linux/hfmodems/
+EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	Jason Wright <jason@openbsd.org>
 
@@ -27,9 +29,12 @@ WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png popt pthread stdc++ xml2
 WANTLIB += z
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			x11/gnome
 
-RUN_DEPENDS=		:yelp-*:x11/gnome/yelp
+MODGNOME_HELP_FILES=	Yes
+USE_GMAKE=		No
+
 BUILD_DEPENDS=		::textproc/rarian
 LIB_DEPENDS=		fftw.>=2::math/fftw \
 			gailutil,gtk-x11-2.0,gdk_pixbuf-2.0,gdk-x11-2.0::x11/gtk+2 \
@@ -39,7 +44,7 @@ LIB_DEPENDS=		fftw.>=2::math/fftw \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-hamlib \
 			--disable-schemas-install \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gmfsk
+			--with-gconf-schema-file-dir="${LOCALBASE}/share/schemas/gmfsk"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
