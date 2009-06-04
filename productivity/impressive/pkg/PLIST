@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/04 02:15:45 wcmaier Exp $
+bin/impressive
+@man man/man1/impressive.1
+share/examples/impressive/
+share/examples/impressive/demo.pdf
