@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 20:04:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2009/06/04 23:37:50 naddy Exp $
 
 COMMENT=	minimal window manager
 
 DISTNAME=	wmx-6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.all-day-breakfast.com/wmx/

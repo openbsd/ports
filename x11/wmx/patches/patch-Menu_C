@@ -1,7 +1,7 @@
-$OpenBSD: patch-Menu_C,v 1.1 2002/09/30 14:31:50 naddy Exp $
---- Menu.C.orig	Mon Sep 30 16:19:29 2002
-+++ Menu.C	Mon Sep 30 16:19:46 2002
-@@ -621,7 +621,7 @@ void ClientMenu::raiseFeedbackLevel(int 
+$OpenBSD: patch-Menu_C,v 1.2 2009/06/04 23:37:50 naddy Exp $
+--- Menu.C.orig	Wed May 24 17:50:27 2000
++++ Menu.C	Fri Jun  5 00:51:49 2009
+@@ -621,7 +621,7 @@ void ClientMenu::raiseFeedbackLevel(int item)
  
  
  CommandMenu::CommandMenu(WindowManager *manager, XEvent *e,
