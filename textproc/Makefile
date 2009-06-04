@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.266 2009/06/03 18:24:47 landry Exp $
+# $OpenBSD: Makefile,v 1.267 2009/06/04 02:04:22 landry Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -10,6 +10,7 @@
      SUBDIR += c2html
      SUBDIR += catdoc
      SUBDIR += catdoc,tk
+     SUBDIR += catfish
      SUBDIR += clo++
      SUBDIR += clucene
      SUBDIR += diffstat
