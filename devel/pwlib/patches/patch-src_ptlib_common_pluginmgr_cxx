@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ptlib_common_pluginmgr_cxx,v 1.3 2009/01/17 12:30:08 jakemsr Exp $
+$OpenBSD: patch-src_ptlib_common_pluginmgr_cxx,v 1.4 2009/06/04 04:37:04 ajacoutot Exp $
 --- src/ptlib/common/pluginmgr.cxx.orig	Thu Oct 18 23:22:32 2007
 +++ src/ptlib/common/pluginmgr.cxx	Sat Jan 17 03:54:23 2009
 @@ -168,7 +168,7 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_ptlib_common_pluginmgr_cxx,v 1.3 2009/01/17 12:30:08 jakemsr
  #    define P_DEFAULT_PLUGIN_DIR ".;C:\\PWLIB_PLUGINS"
  #  else
 -#    define P_DEFAULT_PLUGIN_DIR ".:/usr/lib/pwlib"
-+#    define P_DEFAULT_PLUGIN_DIR ".:/usr/local/lib/pwlib"
++#    define P_DEFAULT_PLUGIN_DIR ".:${PREFIX}/lib/pwlib"
  #  endif
  #endif
  
