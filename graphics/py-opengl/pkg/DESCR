@@ -1,0 +1,13 @@
+PyOpenGL is the cross platform Python binding to OpenGL and related
+APIs.  The binding is created using the standard (in Python 2.5 and
+above) ctypes library, and is provided under an extremely liberal
+BSD-style Open-Source license.
+
+PyOpenGL includes support for OpenGL v1.1 through 3.0, GLU, GLUT v3.7
+(and FreeGLUT), and GLE 3.  It also includes support for hundreds of
+OpenGL extensions.
+
+PyOpenGL is interoperable with a large number of external GUI libraries
+for Python including (wxPython, FxPy, PyGame, and Qt).  It can be used
+with the Tkinter GUI library if you have installed the Togl widget for
+Tk. 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-OpenGL___init___py,v 1.1.1.1 2009/06/04 00:38:43 wcmaier Exp $
+--- OpenGL/__init__.py.orig	Tue Jun  2 22:57:27 2009
++++ OpenGL/__init__.py	Tue Jun  2 22:57:21 2009
+@@ -115,6 +115,7 @@ from OpenGL.plugins import PlatformPlugin, FormatHandl
+ PlatformPlugin( 'nt', 'OpenGL.platform.win32.Win32Platform' )
+ PlatformPlugin( 'posix ', 'OpenGL.platform.glx.GLXPlatform' )
+ PlatformPlugin( 'linux2', 'OpenGL.platform.glx.GLXPlatform' )
++PlatformPlugin( 'openbsd4', 'OpenGL.platform.glx.GLXPlatform' )
+ PlatformPlugin( 'darwin', 'OpenGL.platform.darwin.DarwinPlatform' )
+ 
+ FormatHandler( 'none', 'OpenGL.arrays.nones.NoneHandler' )
