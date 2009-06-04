@@ -1,0 +1,47 @@
+$OpenBSD: patch-catfish_py,v 1.1.1.1 2009/06/04 02:03:39 landry Exp $
+- strip heading spaces
+- expand ~ to /home/user as default search path
+- fix find/locate args
+- add a hack for non-iso chars to be converted to utf before being
+  passed to gtk
+--- catfish.py.orig	Thu Oct 23 18:35:21 2008
++++ catfish.py	Wed Jun  3 20:00:14 2009
+@@ -183,7 +183,7 @@ class catfish:
+         parser.add_option('', '--debug', action='store_true'
+             , help='Show debugging messages.')
+         parser.set_defaults(icons_large=0, thumbnails=0, time_iso=0, method='find'
+-            , limit_results=0, path='~', fileman=default_fileman, exact=0
++            , limit_results=0, path=os.path.expanduser('~'), fileman=default_fileman, exact=0
+             , hidden=0, fulltext=0, file_action='open', debug=0, open_wrapper=self.open_wrapper)
+         self.options, args = parser.parse_args()
+         keywords = ' '.join(args)
+@@ -510,9 +510,9 @@ class catfish:
+         folder = os.path.expanduser(folder)
+         method_name = [method, 'locate'][method=='slocate']
+         methods = {
+-            'find': (method, '', '%s "' + folder + '" -ignore_readdir_race -noleaf',
+-                '-wholename', '-iwholename', '', 1, 1, 0, 0, 0),
+-            'locate': (method, '', '%s', '', '-i', '-n %i' % limit,
++            'find': (method, '', '%s "' + folder + '"',
++                '-name', '-iname', '', 1, 1, 0, 0, 0),
++            'locate': (method, '', '%s', '', '-i', '-l %i' % limit,
+                 1, 0, 1, 0, 0),
+             'tracker': ('tracker-search', 'trackerd', '%s', '', '', '-l %i' % limit,
+                 0, 0, 1, 1, 0),
+@@ -631,6 +631,7 @@ class catfish:
+                 for filename in query.run(keywords, folder, exact, hidden, limit):
+                     if self.abort_find or len(listmodel) == limit: break
+                     filename = filename.split(os.linesep)[0]
++                    filename.strip()
+                     # Convert uris to filenames
+                     if filename[:7] == 'file://':
+                         filename = filename[7:]
+@@ -639,6 +640,8 @@ class catfish:
+                         filename = filename[10:]
+                         filename = filename[:filename.index('?')]
+                     path, name = os.path.split(filename)
++                    name = name.decode('iso-8859-1').encode('utf-8')
++                    path = path.decode('iso-8859-1').encode('utf-8')
+                     if (path_manual or exact_manual) and not fulltext:
+                         if not self.string_wild_match(name, keywords, exact):
+                             yield True

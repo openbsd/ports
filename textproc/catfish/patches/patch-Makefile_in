@@ -1,0 +1,41 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2009/06/04 02:03:39 landry Exp $
+--- Makefile.in.orig	Fri Oct 24 23:14:07 2008
++++ Makefile.in	Sun Apr 26 14:56:05 2009
+@@ -1,13 +1,11 @@
+ APPNAME=catfish
+-PREFIX=@prefix@
+-PYTHON=`which python`
++PREFIX=${PREFIX}
++PYTHON=${MODPY_BIN}
+ LANGUAGE_FILES=$(patsubst po/%.po, locale/%/LC_MESSAGES/$(APPNAME).mo, $(wildcard po/*.po))
+ DESTDIR=
+ 
+ all: $(LANGUAGE_FILES)
+ 	$(PYTHON) ./build.py build $(APPNAME)
+-	sed -e s,%prefix%,$(PREFIX), $(APPNAME).in > $(APPNAME)
+-	chmod +x $(APPNAME)
+ 
+ locale/%/LC_MESSAGES/$(APPNAME).mo: po/%.po
+ 	mkdir -p $(dir $@)
+@@ -23,7 +21,7 @@ install: all
+ 
+ 	install -d $(DESTDIR)/$(PREFIX)/share/icons/hicolor/scalable/apps
+ 	install $(APPNAME).svg $(DESTDIR)/$(PREFIX)/share/icons/hicolor/scalable/apps
+-	ln -sf $(DESTDIR)/$(PREFIX)/share/icons/hicolor/scalable/apps/$(APPNAME).svg $(DESTDIR)/$(PREFIX)/share/$(APPNAME)/$(APPNAME).svg
++	ln -sf $(TRUEPREFIX)/share/icons/hicolor/scalable/apps/$(APPNAME).svg $(DESTDIR)/$(PREFIX)/share/$(APPNAME)/$(APPNAME).svg
+ 
+ 	install -d $(DESTDIR)/$(PREFIX)/share/doc/$(APPNAME)
+ 	install AUTHORS $(DESTDIR)/$(PREFIX)/share/doc/$(APPNAME)
+@@ -33,10 +31,10 @@ install: all
+ 	install README $(DESTDIR)/$(PREFIX)/share/doc/$(APPNAME)
+ 
+ 	install -d $(DESTDIR)/$(PREFIX)/share/applications
+-	install --mode=644 $(APPNAME).desktop $(DESTDIR)/$(PREFIX)/share/applications
++	install -m 644 $(APPNAME).desktop $(DESTDIR)/$(PREFIX)/share/applications
+ 
+ 	cp -rf locale $(DESTDIR)/$(PREFIX)/share
+-	ln -sf $(DESTDIR)/$(PREFIX)/share/locale $(DESTDIR)/$(PREFIX)/share/$(APPNAME)/locale
++	ln -sf $(TRUEPREFIX)/share/locale $(DESTDIR)/$(PREFIX)/share/$(APPNAME)/locale
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)/$(PREFIX)/share/applications/$(APPNAME).desktop

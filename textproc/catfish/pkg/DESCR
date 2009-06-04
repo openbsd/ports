@@ -1,0 +1,8 @@
+Catfish is a handy file searching tool for linux and unix. Basically it
+is a frontend for different search engines (daemons) which provides a
+unified interface. The interface is intentionally lightweight and
+simple, using only GTK+2. You can configure it to your needs by using
+several command line options.
+
+Supported backends are find, (s)locate, doodle, tracker, beagle, strigi
+and pinot.

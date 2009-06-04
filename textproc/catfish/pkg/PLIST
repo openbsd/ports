@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/04 02:03:39 landry Exp $
+bin/catfish
+share/applications/catfish.desktop
+share/catfish/
+share/catfish/catfish.glade
+share/catfish/catfish.pyc
+share/catfish/catfish.svg
+share/catfish/locale
+share/doc/catfish/
+share/doc/catfish/AUTHORS
+share/doc/catfish/COPYING
+share/doc/catfish/ChangeLog
+share/doc/catfish/INSTALL
+share/doc/catfish/README
+share/icons/hicolor/scalable/apps/catfish.svg
+share/locale/ca/LC_MESSAGES/catfish.mo
+share/locale/cs/LC_MESSAGES/catfish.mo
+share/locale/da/LC_MESSAGES/catfish.mo
+share/locale/de/LC_MESSAGES/catfish.mo
+share/locale/es/LC_MESSAGES/catfish.mo
+share/locale/fi/LC_MESSAGES/catfish.mo
+share/locale/fr/LC_MESSAGES/catfish.mo
+share/locale/it/LC_MESSAGES/catfish.mo
+share/locale/pl/LC_MESSAGES/catfish.mo
+share/locale/ru/LC_MESSAGES/catfish.mo
+share/locale/sv/LC_MESSAGES/catfish.mo
+share/locale/zh_CN/LC_MESSAGES/catfish.mo
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

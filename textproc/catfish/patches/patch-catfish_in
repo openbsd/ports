@@ -1,0 +1,21 @@
+$OpenBSD: patch-catfish_in,v 1.1.1.1 2009/06/04 02:03:39 landry Exp $
+--- catfish.in.orig	Sun Apr 26 14:35:15 2009
++++ catfish.in	Sun Apr 26 14:37:11 2009
+@@ -1,14 +1,4 @@
+-#!/usr/bin/env bash
+-
++#!/bin/sh
+ APPNAME=catfish
+-
+-if [ -e $APPNAME.pyc ]
+-    then python $APPNAME.pyc "$@"
+-    else
+-        if [ -e $APPNAME.py ]
+-            then python $APPNAME.py "$@"
+-            else
+-                cd %prefix%/share/$APPNAME
+-                python $APPNAME.pyc "$@"
+-        fi
+-    fi
++cd ${PREFIX}/share/$APPNAME
++${MODPY_BIN} $APPNAME.pyc "$@"
