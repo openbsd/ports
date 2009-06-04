@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/02 20:38:37 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/04 22:10:42 merdely Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	support for the SSH 2 protocol via libssh2
 
-DISTNAME =	Net-SSH2-0.18
-PKGNAME =	p5-${DISTNAME}p1
+DISTNAME =	Net-SSH2-0.19
 CATEGORIES =	net
 MODULES =	cpan
 
