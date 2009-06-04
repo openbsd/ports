@@ -4,7 +4,5 @@ into /etc/rc.local.
 
 if [ -x ${PREFIX}/sbin/kamctl ]; then
         install -d -o _kamailio /var/run/kamailio
-        echo -n ' kamailio';   ${PREFIX}/sbin/kamctl
+        echo -n ' kamailio';   ${PREFIX}/sbin/kamctl start
 fi
-
-######## XXX ########### XXX ############# XXX ######
