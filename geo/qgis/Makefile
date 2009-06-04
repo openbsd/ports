@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/01 23:14:58 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/04 17:45:51 landry Exp $
 
 COMMENT =	desktop geographical information system
 
 DISTNAME =	qgis_1.0.2
-PKGNAME =	${DISTNAME:L:S/_/-/}
+PKGNAME =	${DISTNAME:L:S/_/-/}p0
 CATEGORIES =	geo x11
 
 SHARED_LIBS =	qgis_core	0.0 \
@@ -27,11 +27,11 @@ MODULES =	devel/cmake \
 		lang/python
 
 BUILD_DEPENDS =	::x11/py-qt4 \
-		:py-gdal-*:geo/gdal \
+		:py-gdal-*:geo/gdal,-python \
 		::devel/bison
 
 RUN_DEPENDS =	::x11/py-qt4 \
-		:py-gdal-*:geo/gdal \
+		:py-gdal-*:geo/gdal,-python \
 		:desktop-file-utils-*:devel/desktop-file-utils
 
 LIB_DEPENDS =	proj::devel/proj \
