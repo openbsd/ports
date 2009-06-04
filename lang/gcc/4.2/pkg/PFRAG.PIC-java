@@ -1,0 +1,22 @@
+@comment $OpenBSD: PFRAG.PIC-java,v 1.1 2009/06/04 18:24:20 kurt Exp $
+lib/fpic/
+lib/fpic/gcj-${V}/
+@comment lib/fpic/gcj-${V}/classmap.db
+lib/fpic/gcj-${V}/libjvm.a
+lib/fpic/gcj-${V}/libjvm.la
+@comment lib/fpic/gcj-${V}/libjvm.so
+lib/fpic/libffi.a
+lib/fpic/libffi.la
+@comment @lib lib/fpic/libffi.so.${LIBffi_VERSION}
+lib/fpic/libgcj-tools.a
+lib/fpic/libgcj-tools.la
+@comment @lib lib/fpic/libgcj-tools.so.${LIBgcj-tools_VERSION}
+lib/fpic/libgcj.a
+lib/fpic/libgcj.la
+@comment @lib lib/fpic/libgcj.so.${LIBgcj_VERSION}
+lib/fpic/libgij.a
+lib/fpic/libgij.la
+@comment @lib lib/fpic/libgij.so.${LIBgij_VERSION}
+@comment lib/fpic/logging.properties
+@comment lib/fpic/security/
+@comment lib/fpic/security/classpath.security

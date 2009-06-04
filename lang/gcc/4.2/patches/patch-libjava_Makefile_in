@@ -1,0 +1,36 @@
+$OpenBSD: patch-libjava_Makefile_in,v 1.1 2009/06/04 18:24:20 kurt Exp $
+--- libjava/Makefile.in.orig	Tue Apr 21 17:41:26 2009
++++ libjava/Makefile.in	Tue Apr 21 17:50:13 2009
+@@ -772,12 +772,13 @@ AM_CPPFLAGS = -I$(top_srcdir) \
+ 	$(GCINCS) $(THREADINCS) $(INCLTDL) \
+ 	$(GCC_UNWIND_INCLUDE) $(ZINCS) $(LIBFFIINCS)
+ 
++include $(top_srcdir)/../libversions
+ BOOTCLASSPATH = $(here)/classpath/lib
+ libgij_la_SOURCES = gij.cc
+ libgij_la_DEPENDENCIES = libgcj.la libgcj.spec
+ libgij_la_LIBADD = -L$(here)/.libs libgcj.la
+ libgij_la_LDFLAGS = -rpath $(toolexeclibdir) \
+-        -version-info `grep -v '^\#' $(srcdir)/libtool-version` $(LIBGCJ_LD_SYMBOLIC)
++        $(LIBgij_LTVERSION) $(LIBGCJ_LD_SYMBOLIC)
+ 
+ libgcj_la_SOURCES = prims.cc jni.cc jvmti.cc exception.cc \
+ 	stacktrace.cc link.cc defineclass.cc interpret.cc verify.cc \
+@@ -792,7 +793,7 @@ xlib_nat_files = $(xlib_nat_source_files:.cc=.lo)
+ # certain linuxthread functions get linked:
+ libgcj_la_LDFLAGS = -rpath $(toolexeclibdir) $(THREADLDFLAGS) $(THREADLIBS) \
+ 	$(LIBLTDL) $(SYS_ZLIBS) \
+-	-version-info `grep -v '^\#' $(srcdir)/libtool-version`
++	$(LIBgcj_LTVERSION)
+ 
+ libgcj_la_LIBADD = \
+ 	classpath/native/fdlibm/libfdlibm.la \
+@@ -809,7 +810,7 @@ libgcj_la_LINK = $(LIBLINK)
+ libgcj_tools_la_SOURCES = classpath/tools/tools.jar
+ libgcj_tools_la_GCJFLAGS = $(AM_GCJFLAGS) -findirect-dispatch -fno-indirect-classes
+ libgcj_tools_la_LDFLAGS = -rpath $(toolexeclibdir) \
+- -version-info `grep -v '^\#' $(srcdir)/libtool-version`
++ $(LIBgcj_tools_LTVERSION)
+ 
+ libgcj_tools_la_DEPENDENCIES = libgcj.la libgcj.spec
+ libgcj_tools_la_LINK = $(LIBLINK)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-boehm-gc_misc_c,v 1.1 2009/06/04 18:24:20 kurt Exp $
+--- boehm-gc/misc.c.orig	Thu Jan 29 17:29:56 2009
++++ boehm-gc/misc.c	Thu Jan 29 17:30:08 2009
+@@ -660,7 +660,7 @@ void GC_init_inner()
+ #   if defined(SEARCH_FOR_DATA_START)
+ 	GC_init_linux_data_start();
+ #   endif
+-#   if (defined(NETBSD) || defined(OPENBSD)) && defined(__ELF__)
++#   if defined(NETBSD) && defined(__ELF__)
+ 	GC_init_netbsd_elf();
+ #   endif
+ #   if defined(GC_PTHREADS) || defined(GC_SOLARIS_THREADS) \

@@ -1,0 +1,13 @@
+$OpenBSD: patch-libffi_Makefile_in,v 1.1 2009/06/04 18:24:20 kurt Exp $
+--- libffi/Makefile.in.orig	Tue Apr 21 17:37:05 2009
++++ libffi/Makefile.in	Tue Apr 21 17:40:07 2009
+@@ -428,7 +428,8 @@ nodist_libffi_la_SOURCES = $(am__append_1) $(am__appen
+ libffi_convenience_la_SOURCES = $(libffi_la_SOURCES)
+ nodist_libffi_convenience_la_SOURCES = $(nodist_libffi_la_SOURCES)
+ AM_CFLAGS = -Wall -g -fexceptions
+-libffi_la_LDFLAGS = -version-info `grep -v '^\#' $(srcdir)/libtool-version`
++include $(top_srcdir)/../libversions
++libffi_la_LDFLAGS = $(LIBffi_LTVERSION)
+ AM_CPPFLAGS = -I. -I$(top_srcdir)/include -Iinclude -I$(top_srcdir)/src
+ AM_CCASFLAGS = $(AM_CPPFLAGS)
+ all: fficonfig.h

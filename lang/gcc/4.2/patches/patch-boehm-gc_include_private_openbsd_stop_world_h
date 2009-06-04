@@ -1,0 +1,16 @@
+$OpenBSD: patch-boehm-gc_include_private_openbsd_stop_world_h,v 1.1 2009/06/04 18:24:20 kurt Exp $
+--- boehm-gc/include/private/openbsd_stop_world.h.orig	Thu Mar  5 17:44:00 2009
++++ boehm-gc/include/private/openbsd_stop_world.h	Thu Mar  5 17:44:00 2009
+@@ -0,0 +1,12 @@
++#ifndef GC_OPENBSD_STOP_WORLD_H
++#define GC_OPENBSD_STOP_WORLD_H
++
++#if !defined(GC_OPENBSD_THREADS)
++#error openbsd_stop_world.h included without GC_OPENBSD_THREADS defined
++#endif
++
++struct thread_stop_info {
++    ptr_t stack_ptr;  		/* Valid only when stopped.      	*/
++};
++    
++#endif

@@ -1,7 +1,22 @@
-$OpenBSD: patch-libffi_configure,v 1.1 2009/04/16 18:36:48 espie Exp $
---- libffi/configure.orig	Sun Apr 12 20:02:53 2009
-+++ libffi/configure	Sun Apr 12 20:03:27 2009
-@@ -5390,6 +5390,7 @@ i*86-*-solaris*) TARGET=X86; TARGETDIR=x86;;
+$OpenBSD: patch-libffi_configure,v 1.2 2009/06/04 18:24:20 kurt Exp $
+--- libffi/configure.orig	Mon May 19 10:28:07 2008
++++ libffi/configure	Tue Apr 21 17:29:31 2009
+@@ -3464,6 +3464,14 @@ linux-gnu*)
+   lt_cv_deplibs_check_method=pass_all
+   ;;
+ 
++openbsd*)
++  if echo __ELF__ | $CC -E - | grep __ELF__ > /dev/null; then
++    lt_cv_deplibs_check_method='match_pattern /lib[^/\.]+\.so\.[0-9]+\.[0-9]+$'
++  else
++    lt_cv_deplibs_check_method='match_pattern /lib[^/\.]+\.so$'
++  fi
++  ;;
++
+ netbsd* | knetbsd*-gnu)
+   if echo __ELF__ | $CC -E - | grep __ELF__ > /dev/null; then
+     lt_cv_deplibs_check_method='match_pattern /lib[^/\.]+\.so\.[0-9]+\.[0-9]+$'
+@@ -5390,6 +5398,7 @@ i*86-*-solaris*) TARGET=X86; TARGETDIR=x86;;
  i*86-*-beos*) TARGET=X86; TARGETDIR=x86;;
  i*86-*-darwin*) TARGET=X86_DARWIN; TARGETDIR=x86;;
  i*86-*-freebsd* | i*86-*-kfreebsd*-gnu) TARGET=X86; TARGETDIR=x86;;
@@ -9,3 +24,27 @@ $OpenBSD: patch-libffi_configure,v 1.1 2009/04/16 18:36:48 espie Exp $
  i*86-*-netbsdelf* | i*86-*-knetbsd*-gnu) TARGET=X86; TARGETDIR=x86;;
  i*86-*-rtems*) TARGET=X86; TARGETDIR=x86;;
  i*86-*-win32*) TARGET=X86_WIN32; TARGETDIR=x86;;
+@@ -5401,6 +5410,7 @@ sparc*-sun-*) TARGET=SPARC; TARGETDIR=sparc;;
+ sparc-*-linux* | sparc-*-netbsdelf* | sparc-*-knetbsd*-gnu) TARGET=SPARC; TARGETDIR=sparc;;
+ sparc*-*-rtems*) TARGET=SPARC; TARGETDIR=sparc;;
+ sparc64-*-linux* | sparc64-*-freebsd* | sparc64-*-netbsd* | sparc64-*-knetbsd*-gnu) TARGET=SPARC; TARGETDIR=sparc;;
++sparc64-*-openbsd*) TARGET=SPARC; TARGETDIR=sparc;;
+ alpha*-*-linux* | alpha*-*-osf* | alpha*-*-freebsd* | alpha*-*-kfreebsd*-gnu | alpha*-*-netbsd* | alpha*-*-knetbsd*-gnu)
+ 	TARGET=ALPHA; TARGETDIR=alpha
+ 	# Support 128-bit long double, changable via command-line switch.
+@@ -5417,6 +5427,7 @@ powerpc-*-beos*) TARGET=POWERPC; TARGETDIR=powerpc;;
+ powerpc-*-darwin*) TARGET=POWERPC_DARWIN; TARGETDIR=powerpc;;
+ powerpc-*-aix*) TARGET=POWERPC_AIX; TARGETDIR=powerpc;;
+ powerpc-*-freebsd*) TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc;;
++powerpc-*-openbsd*) TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc;;
+ powerpc*-*-rtems*) TARGET=POWERPC; TARGETDIR=powerpc;;
+ rs6000-*-aix*) TARGET=POWERPC_AIX; TARGETDIR=powerpc;;
+ arm*-*-linux-*) TARGET=ARM; TARGETDIR=arm;;
+@@ -5426,6 +5437,7 @@ cris-*-*) TARGET=LIBFFI_CRIS; TARGETDIR=cris;;
+ s390-*-linux-*) TARGET=S390; TARGETDIR=s390;;
+ s390x-*-linux-*) TARGET=S390; TARGETDIR=s390;;
+ x86_64-*-linux* | x86_64-*-freebsd* | x86_64-*-kfreebsd*-gnu) TARGET=X86_64; TARGETDIR=x86;;
++x86_64-*-openbsd*) TARGET=X86_64; TARGETDIR=x86;;
+ sh-*-linux* | sh[34]*-*-linux*) TARGET=SH; TARGETDIR=sh;;
+ sh-*-rtems*) TARGET=SH; TARGETDIR=sh;;
+ sh64-*-linux* | sh5*-*-linux*) TARGET=SH64; TARGETDIR=sh64;;

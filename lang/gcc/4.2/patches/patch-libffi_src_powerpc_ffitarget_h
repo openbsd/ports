@@ -1,0 +1,11 @@
+$OpenBSD: patch-libffi_src_powerpc_ffitarget_h,v 1.1 2009/06/04 18:24:20 kurt Exp $
+--- libffi/src/powerpc/ffitarget.h.orig	Mon Mar 16 21:39:23 2009
++++ libffi/src/powerpc/ffitarget.h	Mon Mar 16 21:43:52 2009
+@@ -71,6 +71,7 @@ typedef enum ffi_abi {
+   FFI_SYSV,
+   FFI_GCC_SYSV,
+   FFI_LINUX64,
++  FFI_LINUX,
+   FFI_DEFAULT_ABI = FFI_SYSV,
+ #endif
+ 

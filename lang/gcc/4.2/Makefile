@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2009/05/16 23:50:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2009/06/04 18:24:20 kurt Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -11,17 +11,20 @@ ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tgz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}p1
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}p2
-PKGNAME-estdc = libstdc++-${FULL_PKGVERSION}p1
+PKGNAME-estdc = libstdc++-${FULL_PKGVERSION}p2
 PKGNAME-g77 =   g77-${FULL_PKGVERSION}p0
 PKGNAME-f95 =   g95-${FULL_PKGVERSION}p1
 PKGNAME-java =  gcj-${FULL_PKGVERSION}p0
 PKGNAME-objc =  gobjc-${FULL_PKGVERSION}p1
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}p0
-SHARED_LIBS =	estdc++		10.0 \
+SHARED_LIBS =	estdc++		11.0 \
 		gfortran	2.0 \
 		-org-w3c-dom	1.0 \
 		-org-xml-sax	1.0 \
-		gcj		5.0 \
+		gcj		0.0 \
+		ffi		0.0 \
+		gcj-tools	0.0 \
+		gij		0.0 \
 		objc		2.0 \
 		objc_gc		2.0 \
 		ssp		0.0 \
@@ -31,7 +34,10 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 PSEUDO_FLAVORS = c++ fortran objc java ada
 .if ${MACHINE_ARCH} == "i386"
-FLAVOR ?= c++ fortran objc ada
+FLAVOR ?= c++ fortran objc ada java
+.endif
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
+FLAVOR ?= c++ fortran objc java
 .else
 FLAVOR ?= c++ fortran objc
 .endif
@@ -82,7 +88,7 @@ MULTI_PACKAGES += -objc
 .if ${FLAVOR:L:Mjava}
 LANGS := ${LANGS},java
 MULTI_PACKAGES += -java
-CONFIGURE_ARGS += --enable-java-gc=system-boehm
+BUILD_DEPENDS += :zip->=2.3p0:archivers/zip
 CONFIGURE_ARGS += --enable-libgcj
 .endif
 .if ${FLAVOR:L:Mada}
@@ -135,7 +141,6 @@ CONFIGURE_ARGS += \
 	--with-gnu-ld \
 	--with-gnu-as \
 	--enable-threads=posix \
-	--enable-sjlj-exceptions \
 	--enable-languages=${LANGS}
 
 # This is needed, as internal cpp is no longer compatible with the
@@ -182,14 +187,14 @@ WANTLIB =		c
 
 RUN_DEPENDS-main =
 RUN_DEPENDS-estdc =
+RUN_DEPENDS-java =
 
 RUN_DEPENDS-c++ =	${RUN_DEPENDS} ::${PKGPATH},-estdc
 WANTLIB-estdc =		c m
+WANTLIB-java =		c m pthread z
 
 LIB_DEPENDS-f95 =	gmp:gmp->=4.2:devel/gmp \
 			mpfr::devel/mpfr
-
-LIB_DEPENDS-java =	gc::devel/boehm-gc
 
 .include <bsd.port.mk>
 

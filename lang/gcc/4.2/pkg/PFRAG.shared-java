@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared-java,v 1.1 2009/06/04 18:24:20 kurt Exp $
+lib/gcj-${V}/libjvm.so
+@lib lib/libffi.so.${LIBffi_VERSION}
+@lib lib/libgcj-tools.so.${LIBgcj-tools_VERSION}
+@lib lib/libgcj.so.${LIBgcj_VERSION}
+@lib lib/libgij.so.${LIBgij_VERSION}

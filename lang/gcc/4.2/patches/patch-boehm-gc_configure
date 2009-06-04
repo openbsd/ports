@@ -1,0 +1,63 @@
+$OpenBSD: patch-boehm-gc_configure,v 1.1 2009/06/04 18:24:20 kurt Exp $
+--- boehm-gc/configure.orig	Mon May 19 10:28:07 2008
++++ boehm-gc/configure	Tue Apr 21 17:28:23 2009
+@@ -309,7 +309,7 @@ ac_includes_default="\
+ # include <unistd.h>
+ #endif"
+ 
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS multi_basedir build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os target_noncanonical mkinstalldirs INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot AMTAR am__tar am__untar CC ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CXX ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE CFLAGS CXXFLAGS CCAS CCASFLAGS AS ac_ct_AS AR ac_ct_AR RANLIB ac_ct_RANLIB MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT GC_CFLAGS LN_S LIBTOOL CXXCPP CPPFLAGS THREADLIBS POWERPC_DARWIN_TRUE POWERPC_DARWIN_FALSE extra_ldflags_libgc EXTRA_TEST_LIBS target_all CPLUSPLUS_TRUE CPLUSPLUS_FALSE AM_CPPFLAGS addobjs addincludes addlibs addtests CPP EGREP MY_CFLAGS toolexecdir toolexeclibdir LIBOBJS LTLIBOBJS'
++ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS multi_basedir build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os target_noncanonical mkinstalldirs INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot AMTAR am__tar am__untar CC ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CXX ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE CFLAGS CXXFLAGS CCAS CCASFLAGS AS ac_ct_AS AR ac_ct_AR RANLIB ac_ct_RANLIB MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT GC_CFLAGS LN_S LIBTOOL CXXCPP CPPFLAGS THREADLIBS POWERPC_DARWIN_TRUE POWERPC_DARWIN_FALSE OPENBSD_THREADS_TRUE OPENBSD_THREADS_FALSE extra_ldflags_libgc EXTRA_TEST_LIBS target_all CPLUSPLUS_TRUE CPLUSPLUS_FALSE AM_CPPFLAGS addobjs addincludes addlibs addtests CPP EGREP MY_CFLAGS toolexecdir toolexeclibdir LIBOBJS LTLIBOBJS'
+ ac_subst_files=''
+ 
+ # Initialize some variables set by options.
+@@ -5451,6 +5451,15 @@ _ACEOF
+ 	{ echo "$as_me:$LINENO: WARNING: \"Only HP-UX 11 POSIX threads are supported.\"" >&5
+ echo "$as_me: WARNING: \"Only HP-UX 11 POSIX threads are supported.\"" >&2;}
+ 	;;
++     *-*-openbsd*)
++       cat >>confdefs.h <<\_ACEOF
++#define GC_OPENBSD_THREADS 1
++_ACEOF
++
++       THREADDLLIBS=-pthread
++       INCLUDES="$INCLUDES -pthread"
++       openbsd_threads=true
++       ;;
+       *-*-kfreebsd*-gnu)
+        cat >>confdefs.h <<\_ACEOF
+ #define GC_FREEBSD_THREADS 1
+@@ -5630,7 +5639,15 @@ else
+   POWERPC_DARWIN_FALSE=
+ fi
+ 
++if test x$openbsd_threads = xtrue; then
++  OPENBSD_THREADS_TRUE=
++  OPENBSD_THREADS_FALSE='#'
++else
++  OPENBSD_THREADS_TRUE='#'
++  OPENBSD_THREADS_FALSE=
++fi
+ 
++
+ # Darwin needs a few extra special tests to deal with variation in the
+ # system headers.
+ case "$host" in
+@@ -6887,6 +6904,9 @@ _ACEOF
+  sparc-*-netbsd*)
+     machdep="sparc_netbsd_mach_dep.lo"
+     ;;
++ sparc*-*-openbsd*)
++    machdep="sparc_mach_dep.lo"
++    ;;
+  sparc-sun-solaris2.3)
+     machdep="sparc_mach_dep.lo"
+ 
+@@ -8482,6 +8502,8 @@ s,@CPPFLAGS@,$CPPFLAGS,;t t
+ s,@THREADLIBS@,$THREADLIBS,;t t
+ s,@POWERPC_DARWIN_TRUE@,$POWERPC_DARWIN_TRUE,;t t
+ s,@POWERPC_DARWIN_FALSE@,$POWERPC_DARWIN_FALSE,;t t
++s,@OPENBSD_THREADS_TRUE@,$OPENBSD_THREADS_TRUE,;t t
++s,@OPENBSD_THREADS_FALSE@,$OPENBSD_THREADS_FALSE,;t t
+ s,@extra_ldflags_libgc@,$extra_ldflags_libgc,;t t
+ s,@EXTRA_TEST_LIBS@,$EXTRA_TEST_LIBS,;t t
+ s,@target_all@,$target_all,;t t

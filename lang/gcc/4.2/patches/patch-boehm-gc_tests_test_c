@@ -1,0 +1,13 @@
+$OpenBSD: patch-boehm-gc_tests_test_c,v 1.1 2009/06/04 18:24:20 kurt Exp $
+--- boehm-gc/tests/test.c.orig	Thu Mar  5 17:57:38 2009
++++ boehm-gc/tests/test.c	Thu Mar  5 17:58:02 2009
+@@ -1799,7 +1799,8 @@ main()
+ 
+     pthread_attr_init(&attr);
+ #   if defined(GC_IRIX_THREADS) || defined(GC_FREEBSD_THREADS) \
+-    	|| defined(GC_DARWIN_THREADS) || defined(GC_AIX_THREADS)
++    	|| defined(GC_DARWIN_THREADS) || defined(GC_AIX_THREADS) \
++	|| defined(GC_OPENBSD_THREADS)
+     	pthread_attr_setstacksize(&attr, 1000000);
+ #   endif
+     n_tests = 0;
