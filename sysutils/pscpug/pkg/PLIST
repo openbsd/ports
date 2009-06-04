@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/12 13:55:08 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/04 00:24:10 jasper Exp $
 @man man/man1/pscpug.1
-sbin/pscpug
+@bin sbin/pscpug
