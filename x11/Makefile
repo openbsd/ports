@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.377 2009/06/03 22:30:15 landry Exp $
+# $OpenBSD: Makefile,v 1.378 2009/06/04 02:03:49 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -106,6 +106,7 @@
      SUBDIR += icewm
      SUBDIR += icon-naming-utils
      SUBDIR += idesk
+     SUBDIR += inconsolata-font
      SUBDIR += industrial-icon-theme
      SUBDIR += ion
      SUBDIR += isomaster
