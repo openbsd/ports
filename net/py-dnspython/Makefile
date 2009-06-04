@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/16 22:20:02 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2009/06/04 09:14:03 benoit Exp $
 
 COMMENT=		DNS toolkit for Python
 
@@ -7,29 +7,28 @@ DISTNAME=		dnspython-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}p0
 CATEGORIES=		net
 
-HOMEPAGE=		http://www.dnspython.org/
+HOMEPAGE =		http://www.dnspython.org/
 
 MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES=		${HOMEPAGE}/kits/${MODPY_EGG_VERSION}/
 
-MODULES=		lang/python
+MODULES =		lang/python
+
+NO_REGRESS =		Yes
+
+pre-configure:
+			${SUBST_CMD} ${WRKSRC}/tests/Makefile
 
 post-install:
-	@perl -pi -e "s,/usr/bin/env python,${MODPY_BIN}," \
-		${WRKSRC}/examples/*.py
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-dnspython
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* \
-		${PREFIX}/share/examples/py-dnspython
-
-do-regress:
-	@cd ${WRKSRC}/tests && env PYTHONPATH=../ \
-		make check PYTHON=${MODPY_BIN} 
+			${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-dnspython
+			${INSTALL_DATA} ${WRKSRC}/examples/*.py \
+				${PREFIX}/share/examples/py-dnspython
 
 .include <bsd.port.mk>
