@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/06/01 23:15:35 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2009/06/04 17:56:14 landry Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 
      SUBDIR += gdal
@@ -9,6 +9,7 @@
      SUBDIR += gpsbabel
      SUBDIR += jeoip
      SUBDIR += libchamplain
+     SUBDIR += mapserver
      SUBDIR += openbsd-developers
      SUBDIR += osm-gps-map
      SUBDIR += p5-GPS-PRN
