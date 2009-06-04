@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-php,v 1.1.1.1 2009/06/04 17:55:39 landry Exp $
+conf/php5.sample/
+conf/php5.sample/mapscript.ini
+lib/
+lib/php/
+lib/php/modules/
+lib/php/modules/mapscript.so

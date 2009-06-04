@@ -1,0 +1,15 @@
+You can enable this module by creating a symbolic
+link from ${PREFIX-php}/conf/php5.sample/mapscript.ini to
+${PREFIX-php}/conf/php5/mapscript.ini.
+
+#ln -fs ${PREFIX-php}/conf/php5.sample/mapscript.ini \
+	${PREFIX-php}/conf/php5/mapscript.ini
+
+If you plan to use PHP mapscript extension with a chrooted httpd, make
+sure to copy the libs needed by mapscript.so file binary from ${LOCALBASE}/lib,
+but also the projection definitions from libgeotiff and proj packages to the
+chroot:
+
+# mkdir -p ${PREFIX-php}/${LOCALBASE}/share/{epsg_csv,proj}
+# cp ${LOCALBASE}/share/epsg_csv/* ${PREFIX-php}/${LOCALBASE}/share/epsg_csv
+# cp ${LOCALBASE}/share/proj/* ${PREFIX-php}/${LOCALBASE}/share/proj

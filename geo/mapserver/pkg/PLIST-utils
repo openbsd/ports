@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST-utils,v 1.1.1.1 2009/06/04 17:55:39 landry Exp $
+@bin bin/legend
+bin/mapserver-config
+@bin bin/msencrypt
+@bin bin/scalebar
+@bin bin/shp2img
+@bin bin/shp2pdf
+@bin bin/shptree
+@bin bin/shptreetst
+@bin bin/shptreevis
+@bin bin/sortshp
+@bin bin/tile4ms
+share/examples/mapserver/
+share/examples/mapserver/perl/
+share/examples/mapserver/perl/RFC24.pl
+share/examples/mapserver/perl/buffer.pl
+share/examples/mapserver/perl/distanceToPoint.pl
+share/examples/mapserver/perl/distanceToShape.pl
+share/examples/mapserver/perl/dump.pl
+share/examples/mapserver/perl/shapeprops.pl
+share/examples/mapserver/perl/shpPoint2GPX.pl
+share/examples/mapserver/perl/shp_in_shp.pl
+share/examples/mapserver/perl/shpinfo.pl
+share/examples/mapserver/perl/thin.pl
+share/examples/mapserver/perl/wxs.pl
+share/examples/mapserver/php/
+share/examples/mapserver/php/phpinfo_mapscript.phtml
+share/examples/mapserver/php/test_draw_legend_icon.phtml
+share/examples/mapserver/php/test_draw_map.phtml
+share/examples/mapserver/php/test_layer_mask.phtml
+share/examples/mapserver/php/test_writeshape.phtml

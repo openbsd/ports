@@ -1,0 +1,8 @@
+If you plan to use mapserv CGI with a  chrooted httpd, make sure to
+copy the libs needed by mapserv binary from ${LOCALBASE}/lib, but also
+the projection definitions from libgeotiff and proj packages to the
+chroot:
+
+# mkdir -p ${PREFIX-main}/${LOCALBASE}/share/{epsg_csv,proj}
+# cp ${LOCALBASE}/share/epsg_csv/* ${PREFIX-main}/${LOCALBASE}/share/epsg_csv
+# cp ${LOCALBASE}/share/proj/* ${PREFIX-main}/${LOCALBASE}/share/proj

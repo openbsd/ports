@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/06/04 17:55:39 landry Exp $
+@bin cgi-bin/mapserv
