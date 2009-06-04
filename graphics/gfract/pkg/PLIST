@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/17 13:48:54 steven Exp $
-bin/gfract
+@comment $OpenBSD: PLIST,v 1.2 2009/06/04 00:27:58 jasper Exp $
+@bin bin/gfract
 share/gfract/
 share/gfract/gfract.xpm
 share/gfract/palettes/
