@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/04/11 13:50:57 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/06/04 19:49:17 wcmaier Exp $
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -59,6 +59,8 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/associationproxy.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/associationproxy.pyc
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/compiler.py
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/compiler.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/declarative.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/declarative.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/ext/orderinglist.py
@@ -102,6 +104,8 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/session.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/session.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/shard.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/shard.pyc
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/state.py
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/state.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/strategies.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/strategies.pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/orm/sync.py
@@ -163,6 +167,7 @@ share/doc/py-sqlalchemy/_sources/reference/dialects/sqlite.txt
 share/doc/py-sqlalchemy/_sources/reference/dialects/sybase.txt
 share/doc/py-sqlalchemy/_sources/reference/ext/
 share/doc/py-sqlalchemy/_sources/reference/ext/associationproxy.txt
+share/doc/py-sqlalchemy/_sources/reference/ext/compiler.txt
 share/doc/py-sqlalchemy/_sources/reference/ext/declarative.txt
 share/doc/py-sqlalchemy/_sources/reference/ext/index.txt
 share/doc/py-sqlalchemy/_sources/reference/ext/orderinglist.txt
@@ -225,6 +230,7 @@ share/doc/py-sqlalchemy/build/reference/dialects/sqlite.rst
 share/doc/py-sqlalchemy/build/reference/dialects/sybase.rst
 share/doc/py-sqlalchemy/build/reference/ext/
 share/doc/py-sqlalchemy/build/reference/ext/associationproxy.rst
+share/doc/py-sqlalchemy/build/reference/ext/compiler.rst
 share/doc/py-sqlalchemy/build/reference/ext/declarative.rst
 share/doc/py-sqlalchemy/build/reference/ext/index.rst
 share/doc/py-sqlalchemy/build/reference/ext/orderinglist.rst
@@ -285,6 +291,7 @@ share/doc/py-sqlalchemy/reference/dialects/sqlite.html
 share/doc/py-sqlalchemy/reference/dialects/sybase.html
 share/doc/py-sqlalchemy/reference/ext/
 share/doc/py-sqlalchemy/reference/ext/associationproxy.html
+share/doc/py-sqlalchemy/reference/ext/compiler.html
 share/doc/py-sqlalchemy/reference/ext/declarative.html
 share/doc/py-sqlalchemy/reference/ext/index.html
 share/doc/py-sqlalchemy/reference/ext/orderinglist.html
