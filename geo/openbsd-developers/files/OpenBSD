@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.49 2009/05/26 23:10:22 halex Exp $
+# $OpenBSD: OpenBSD,v 1.50 2009/06/05 17:37:16 nicm Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -98,6 +98,7 @@
 53.56		-113.51		"beck"		# Bob Beck
 53.562888	9.961555	"henning"	# Henning Brauer
 53.59		10.05		"simon"		# Simon Bertrang
+54.35		-5.56		"nicm"		# Nicholas Marriott
 54.869288       83.08799	"form"		# Oleg Safiullin
 55.16		23.88		"martynas"	# Martynas Venckus
 55.599		-2.4324		"jmc"		# Jason McIntyre
