@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/06/05 22:13:25 jasper Exp $
+@lib lib/libbakery-${API_VERSION}.so.${LIBbakery-2.6_VERSION}

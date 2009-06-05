@@ -1,0 +1,16 @@
+$OpenBSD: patch-bakery_Makefile_in,v 1.1.1.1 2009/06/05 22:13:25 jasper Exp $
+--- bakery/Makefile.in.orig	Fri Jun  5 15:57:16 2009
++++ bakery/Makefile.in	Fri Jun  5 15:57:39 2009
+@@ -291,10 +291,10 @@ libbakery_2_6_la_LIBADD = App/libbakery_app.la \
+                       View/libbakery_view.la \
+                       $(BAKERY_LIBS)
+ 
+-libbakery_2_6_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION) -release $(GENERIC_RELEASE) -no-undefined
++libbakery_2_6_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION)
+ 
+ # Install the headers:
+-library_configdir = $(libdir)/bakery-2.6/include
++library_configdir = $(includedir)/bakery-2.6
+ library_config_DATA = bakeryconfig.h
+ all: bakeryconfig.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
