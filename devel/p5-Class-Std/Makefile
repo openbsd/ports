@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/09/29 22:53:57 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/05 13:07:53 dhill Exp $
 
 COMMENT=		inside-out object scaffolding
 
 MODULES=		cpan
-DISTNAME=		Class-Std-v0.0.8
-PKGNAME=		p5-Class-Std-0.0.8p1
+DISTNAME=		Class-Std-0.0.9
 CATEGORIES=		devel
 
 # perl
