@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/05 09:28:24 pea Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/05 14:39:25 ajacoutot Exp $
 
 COMMENT =		last.fm client for xmms2
 
 DISTNAME =		xmms2-scrobbler-0.3.0
+PKGNAME =		${DISTNAME}
 
 CATEGORIES =		audio
 
@@ -16,11 +17,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=		c pthread curl
+WANTLIB +=		c curl pthread
 
 MASTER_SITES =		ftp://ftp.code-monkey.de/pub/xmms2-scrobbler/
 
-LIB_DEPENDS =		xmmsclient.=0::audio/xmms2
+LIB_DEPENDS =		xmmsclient::audio/xmms2
 
 USE_GMAKE =		Yes
 
