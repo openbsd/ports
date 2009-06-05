@@ -1,15 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.6 2008/07/12 05:29:17 brad Exp $
---- configure.in.orig	Sun Jul  6 11:19:57 2008
-+++ configure.in	Mon Jul  7 01:29:18 2008
-@@ -40,7 +40,7 @@ dnl Perform program name transformation
- AC_ARG_PROGRAM
- 
- dnl Automake doc recommends to do this only here. (Janos)
--AM_INIT_AUTOMAKE(kaffeine-0.8.6, "3.5.7") dnl searches for some needed programs
-+AM_INIT_AUTOMAKE(kaffeine-0.8.7, "3.5.7") dnl searches for some needed programs
- 
- KDE_SET_PREFIX
- 
+$OpenBSD: patch-configure_in,v 1.7 2009/06/05 00:59:45 merdely Exp $
+--- configure.in.orig	Wed May 20 07:42:35 2009
++++ configure.in	Thu May 28 11:19:43 2009
 @@ -327,8 +327,8 @@ if test "$with_oggvorbis" != "no" ; then
  
  	if "$PKG_CONFIG" --exists vorbisenc ; then

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/07/12 05:29:17 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/06/05 00:59:45 merdely Exp $
 @bin bin/kaffeine
 include/kaffeine/
 include/kaffeine/kaffeineaudioencoder.h
@@ -120,10 +120,10 @@ share/locale/se/LC_MESSAGES/
 share/locale/se/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/sk/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/sr/LC_MESSAGES/kaffeine-${VERSION}.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/sv/LC_MESSAGES/kaffeine-${VERSION}.mo
-share/locale/tg/
-share/locale/tg/LC_MESSAGES/
 share/locale/tg/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/tr/LC_MESSAGES/kaffeine-${VERSION}.mo
 share/locale/uk/LC_MESSAGES/kaffeine-${VERSION}.mo
