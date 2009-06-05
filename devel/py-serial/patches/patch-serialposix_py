@@ -1,0 +1,12 @@
+$OpenBSD: patch-serialposix_py,v 1.1.1.1 2009/06/05 04:29:22 wcmaier Exp $
+--- serial/serialposix.py.orig	Wed Apr  1 14:52:46 2009
++++ serial/serialposix.py	Wed Apr  1 14:52:57 2009
+@@ -35,7 +35,7 @@ elif plat == 'cygwin':       #cywin/win32 (confirmed)
+     def device(port):
+         return '/dev/com%d' % (port + 1)
+ 
+-elif plat     == 'openbsd3': #BSD (confirmed)
++elif plat     == 'openbsd4': #BSD (confirmed)
+     def device(port):
+         return '/dev/ttyp%d' % port
+ 

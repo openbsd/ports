@@ -1,0 +1,6 @@
+This python module provides access to the serial port, with backends for
+standard Python running on Windows, Linux, BSD (possibly any POSIX
+compilant system), Jython and IronPython. The module named "serial"
+automatically selects the appropriate backend. 
+
+For usage instructions see ${PREFIX}/share/doc/py-serial/README.txt
