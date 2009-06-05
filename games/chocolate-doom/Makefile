@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/05 21:58:43 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/05 22:27:29 jasper Exp $
 
 COMMENT =	portable version of iD Software's Doom
 DISTNAME =	chocolate-doom-1.2.1
@@ -27,17 +27,17 @@ USE_X11 =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS+ =	--without-python
 
+MAN_5=		chocolate-doom.cfg default.cfg
+MAN_6=		chocolate-doom chocolate-server chocolate-setup
+
 post-install:
+	# Data files get installed to this directory.
 	${INSTALL_DATA_DIR} ${PREFIX}/share/games/doom/
-	${INSTALL_MAN} ${WRKBUILD}/man/chocolate-doom.cfg.5 \
-		${PREFIX}/man/man5/
-	${INSTALL_MAN} ${WRKBUILD}/man/default.cfg.5 \
-		${PREFIX}/man/man5/
-	${INSTALL_MAN} ${WRKBUILD}/man/chocolate-doom.6 \
-		${PREFIX}/man/man6/
-	${INSTALL_MAN} ${WRKBUILD}/man/chocolate-server.6 \
-		${PREFIX}/man/man6/
-	${INSTALL_MAN} ${WRKBUILD}/man/chocolate-setup.6 \
-		${PREFIX}/man/man6/
+.for m in ${MAN_5}
+	${INSTALL_MAN} ${WRKBUILD}/man/$m.5 ${PREFIX}/man/man5/
+.endfor
+.for m in ${MAN_6}
+	${INSTALL_MAN} ${WRKBUILD}/man/$m.6 ${PREFIX}/man/man6/
+.endfor
 
 .include <bsd.port.mk>

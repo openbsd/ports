@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_Makefile_in,v 1.2 2009/06/05 22:27:29 jasper Exp $
 --- src/Makefile.in.orig	Wed Dec 10 21:27:14 2008
 +++ src/Makefile.in	Wed Dec 10 21:27:39 2008
 @@ -239,7 +239,7 @@ sysconfdir = @sysconfdir@
