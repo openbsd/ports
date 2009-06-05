@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/05 22:31:44 phessler Exp $
+share/games/
+share/games/doom/
+share/games/doom/doom2.wad
