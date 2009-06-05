@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/05 21:58:43 phessler Exp $
+@bin bin/chocolate-doom
+@bin bin/chocolate-server
+@bin bin/chocolate-setup
+@man man/man5/chocolate-doom.cfg.5
+@man man/man5/default.cfg.5
+@man man/man6/chocolate-doom.6
+@man man/man6/chocolate-server.6
+@man man/man6/chocolate-setup.6
+share/games/
+share/games/doom/

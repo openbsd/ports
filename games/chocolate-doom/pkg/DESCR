@@ -1,0 +1,21 @@
+Chocolate Doom is a portable branch of the classic doom.exe experience
+from the days of DOS. The author, Simon Howard, has worked to insure 
+Chocolate Doom, which is nothing more than a directly modified version
+of the released iD Software source code, has zero changes that affect
+gameplay, look, or feel, and also re-created a DOS-like setup program to
+configure the game much like the original setup.exe.
+
+Chocolate Doom provides:
+  chocolate-doom   - the game
+  chocolate-setup  - the game setup program 
+  chocolate-server - server for up to 4-player net games
+
+Due to the port re-implimenting the original game as closely as
+possible, all original game PWADs and demos work flawlessly. Other
+original features include a PC-speaker driver written with OpenBSD in
+mind, just like the DOS PC-speaker driver, and a working -left and
+-right network command parameter system for the 'surround display' setup
+that was obtainable with the original DOS executables over an IPX
+network.
+
+Check the chocolate-*(6) manpages for additional information.

@@ -1,0 +1,15 @@
+To play the game you will need an original Doom, Ultimate Doom, Doom II
+or Final Doom IWAD. Place the doom.wad, doom2.wad, plutonia.wad,
+tnt.wad, or all of the above in ${PREFIX}/share/games/doom/ to play.
+If multiple IWADs are installed, you may specify the one you want to
+play via the -iwad command-line parameter e.g.
+
+  $ chocolate-doom -iwad doom.wad
+
+The Shareware IWAD is available in games/doomdata.
+
+Run `chocolate-setup' to generate a configuration file to your liking.
+If you would like to enjoy the classic in-game Doom music, you may
+install audio/timidity and Chocolate Doom will automatically make use
+of it at runtime, no recompilation required. Be sure that the music is
+enabled within chocolate-setup.

@@ -1,0 +1,11 @@
+--- setup/Makefile.in.orig	Wed Dec 10 21:29:26 2008
++++ setup/Makefile.in	Wed Dec 10 21:28:32 2008
+@@ -170,7 +170,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-gamesdir = $(prefix)/games
++gamesdir = $(prefix)/bin
+ AM_CFLAGS = -I../textscreen -I../src -DINSTALL_DIR="\"$(gamesdir)\""
+ SOURCE_FILES = \
+     compatibility.c   compatibility.h           \
