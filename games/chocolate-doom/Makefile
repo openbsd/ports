@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/05 22:27:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/05 22:38:04 jasper Exp $
 
 COMMENT =	portable version of iD Software's Doom
 DISTNAME =	chocolate-doom-1.2.1
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://www.chocolate-doom.org/

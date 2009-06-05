@@ -6,7 +6,7 @@ play via the -iwad command-line parameter e.g.
 
   $ chocolate-doom -iwad doom.wad
 
-The Shareware IWAD is available in games/doomdata.
+The Shareware IWAD is available in games/doomdata/shareware.
 
 Run `chocolate-setup' to generate a configuration file to your liking.
 If you would like to enjoy the classic in-game Doom music, you may
