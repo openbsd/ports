@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_common_imagpng_cpp,v 1.1 2009/06/05 17:28:57 jasper Exp $
+
+Security fix for part 1 or SA35292 (wxWidgets Double Free Vulnerability).
+Patch from upstream svn -r60875.
+
+--- src/common/imagpng.cpp.orig	Thu Jun  4 18:43:31 2009
++++ src/common/imagpng.cpp	Thu Jun  4 18:45:25 2009
+@@ -566,18 +566,16 @@ wxPNGHandler::LoadFile(wxImage *image,
+     if (!image->Ok())
+         goto error;
+ 
+-    lines = (unsigned char **)malloc( (size_t)(height * sizeof(unsigned char *)) );
++    // initialize all line pointers to NULL to ensure that they can be safely
++    // free()d if an error occurs before all of them could be allocated
++    lines = (unsigned char **)calloc(height, sizeof(unsigned char *));
+     if ( !lines )
+         goto error;
+ 
+     for (i = 0; i < height; i++)
+     {
+         if ((lines[i] = (unsigned char *)malloc( (size_t)(width * (sizeof(unsigned char) * 4)))) == NULL)
+-        {
+-            for ( unsigned int n = 0; n < i; n++ )
+-                free( lines[n] );
+             goto error;
+-        }
+     }
+ 
+     png_read_image( png_ptr, lines );
