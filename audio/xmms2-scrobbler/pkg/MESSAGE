@@ -1,0 +1,15 @@
+You need to store your Audioscrobbler username and password in the
+config file:
+ echo -e "user: foo\npassword: bar" > \
+ ~/.config/xmms2/clients/xmms2-scrobbler/config
+
+Optionally, if you're behind a proxy, you'll need to tell
+XMMS2-Scrobbler about that proxy:
+  echo -e "proxy: my.proxy\nproxy_port: 8080" >> \
+  ~/.config/xmms2/clients/xmms2-scrobbler/config
+
+If you want to launch and stop xmms2-scrobbler with xmms2d you can
+execute:
+  ln -s ${PREFIX}/bin/xmms2-scrobbler ~/.config/xmms2/startup.d
+
+Log will be saved in ~/.config/xmms2/clients/xmms2-scrobbler/logfile.log

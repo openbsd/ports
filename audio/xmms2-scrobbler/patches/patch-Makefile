@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/06/05 09:28:24 pea Exp $
+--- Makefile.orig	Sat May  9 21:28:01 2009
++++ Makefile	Sun May 17 01:20:26 2009
+@@ -22,11 +22,11 @@ OBJECTS := src/xmms2-scrobbler.o src/queue.o src/strbu
+ all: $(BINARY)
+ 
+ install: $(BINARY)
+-	install -d $(DESTDIR)$(PREFIX)/bin
+-	install -m 755 $(BINARY) $(DESTDIR)$(PREFIX)/bin
++	install -d $(PREFIX)/bin
++	install -m 755 $(BINARY) $(PREFIX)/bin
+ 
+ $(BINARY): $(OBJECTS) bin
+-	$(QUIET_LINK)$(CC) $(LDFLAGS) $(XMMS_LDFLAGS) $(CURL_LDFLAGS) $(OBJECTS) -o $@
++	$(QUIET_LINK)$(CC) $(LDFLAGS) $(CFLAGS) $(XMMS_LDFLAGS) $(CURL_LDFLAGS) $(OBJECTS) -o $@
+ 
+ src/%.o : src/%.c
+ 	$(QUIET_CC)$(CC) $(CFLAGS) $(XMMS_CFLAGS) $(CURL_CFLAGS) -o $@ -c $<

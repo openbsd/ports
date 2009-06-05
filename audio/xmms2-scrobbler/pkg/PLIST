@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/05 09:28:24 pea Exp $
+@bin bin/xmms2-scrobbler
