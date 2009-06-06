@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/06 04:44:10 landry Exp $
+@bin bin/keynav
+share/examples/keynav/
+share/examples/keynav/keynavrc

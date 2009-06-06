@@ -1,0 +1,9 @@
+keynav is a piece of an on-going experiment to make pointer-driven
+interfaces easier and faster for users to operate. It lets you move the
+pointer quickly to most points on the screen with only a few key
+strokes.
+You select a piece of the screen. The screen is initially wholely
+selected. One move will cut that region by half. A move is a direction:
+up, down, left, and right.
+Once you're done moving, you simply indicate (with a key stroke) that
+you want to move. Boom, cursor moves.

@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/06/06 04:44:10 landry Exp $
+--- Makefile.orig	Fri Jun  5 22:27:03 2009
++++ Makefile	Fri Jun  5 22:31:54 2009
+@@ -1,5 +1,5 @@
+-CFLAGS=`pkg-config --cflags x11 xtst 2> /dev/null || echo -I/usr/X11R6/include -I/usr/local/include`
+-LDFLAGS=`pkg-config --libs x11 xtst 2> /dev/null || echo -L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXtst` 
++CFLAGS+=`pkg-config --cflags x11 xtst 2> /dev/null || echo -I/usr/X11R6/include -I/usr/local/include`
++LDFLAGS+=`pkg-config --libs x11 xtst 2> /dev/null || echo -L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXtst` 
+ 
+ #CFLAGS+=-g
+ OTHERFILES=README CHANGELIST COPYRIGHT \
+@@ -13,12 +13,8 @@ clean:
+ 	rm *.o || true;
+ 	make -C xdotool clean || true
+ 
+-keynav: xdo.o keynav.o
+-	gcc $(LDFLAGS) xdo.o keynav.o -o $@
+-
+-xdo.o:
+-	make -C xdotool xdo.o
+-	cp xdotool/xdo.o .
++keynav:
++	${CC} ${CFLAGS} xdotool/xdo.c keynav.c ${LDFLAGS} -o $@
+ 
+ package: clean
+ 	NAME=keynav-`date +%Y%m%d`.$(MICROVERSION); \
