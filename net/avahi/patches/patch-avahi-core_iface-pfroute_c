@@ -1,0 +1,12 @@
+$OpenBSD: patch-avahi-core_iface-pfroute_c,v 1.1 2009/06/06 08:02:08 ajacoutot Exp $
+--- avahi-core/iface-pfroute.c.orig	Sat Jun  6 09:57:56 2009
++++ avahi-core/iface-pfroute.c	Sat Jun  6 09:58:05 2009
+@@ -130,7 +130,7 @@ static void rtm_addr(struct rt_msghdr *rtm, AvahiInter
+   int prefixlen = 0;
+   struct sockaddr *sa  =NULL;
+ 
+-#if defined(__NetBSD__) || defined(__OpenBSD__)
++#if defined(__NetBSD__)
+   if(((struct sockaddr *)cp)->sa_family == AF_UNSPEC)
+     ((struct sockaddr *)cp)->sa_family = AF_INET;
+ #endif
