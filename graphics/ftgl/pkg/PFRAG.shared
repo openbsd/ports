@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/06/06 05:18:56 phessler Exp $
+@lib lib/libftgl.so.${LIBftgl_VERSION}

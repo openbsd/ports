@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/06/06 05:18:56 phessler Exp $
+--- configure.orig	Thu Jun 12 08:32:56 2008
++++ configure	Fri Jun  5 22:25:02 2009
+@@ -23000,7 +23000,7 @@ if test "x$FRAMEWORK_OPENGL" = "x" ; then
+ 
+ { echo "$as_me:$LINENO: checking for GLU library" >&5
+ echo $ECHO_N "checking for GLU library... $ECHO_C" >&6; }
+-LIBS="-lGLU $GL_LIBS"
++LIBS="$LIBS -lm -lGLU $GL_LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -23053,7 +23053,7 @@ rm -f core conftest.err conftest.$ac_objext conftest_i
+       conftest$ac_exeext conftest.$ac_ext
+ if test "x$HAVE_GLU" = xno ; then
+     if test "x$GL_X_LIBS" != x ; then
+-        LIBS="-lGLU $GL_LIBS $GL_X_LIBS"
++        LIBS="-lGLU -lm $GL_LIBS $GL_X_LIBS"
+         cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -23109,7 +23109,7 @@ fi
+ if test "x$HAVE_GLU" = xyes ; then
+     { echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6; }
+-    GL_LIBS="$LIBS"
++    GL_LIBS="$LIBS -lm"
+ else
+     { echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6; }
