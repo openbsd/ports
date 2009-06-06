@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/03 16:34:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/06 18:41:41 landry Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	bundle of plugins for gmpc
 
 VERSION =	0.18.0
 DISTNAME =	gmpc-plugins-${VERSION}
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 CATEGORIES =	audio
 
@@ -44,8 +44,7 @@ USE_X11 =	Yes
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-avahi \
-		--disable-mserver \
+CONFIGURE_ARGS=	--disable-mserver \
 		--disable-libnotify \
 		--disable-wikipedia \
 		--disable-lirc
