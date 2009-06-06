@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/02 22:07:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/06 03:23:21 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,8 +7,8 @@ COMMENT-server =	server for the frozen-bubble bubble popping game
 
 VER =			2.2.0
 DISTNAME =		frozen-bubble-${VER}
-PKGNAME-main =		${DISTNAME}
-PKGNAME-server =	frozen-bubble-server-${VER}
+PKGNAME-main =		${DISTNAME}p0
+PKGNAME-server =	frozen-bubble-server-${VER}p0
 CATEGORIES =		games
 
 HOMEPAGE =		http://www.frozen-bubble.org
@@ -28,27 +28,26 @@ USE_GMAKE =		Yes
 # No regress tests here
 NO_REGRESS =		Yes
 
-MODULES =		perl converters/libiconv devel/gettext
+MODULES =		perl \
+			devel/gettext
 
 BUILD_DEPENDS =		${RUN_DEPENDS-main} \
 			${RUN_DEPENDS-server}
 
-RUN_DEPENDS-main =	::devel/sdl \
-			::devel/sdl-mixer \
+RUN_DEPENDS-main =	::devel/p5-SDL \
 			::devel/sdl-pango \
-			::devel/p5-Locale-gettext \
-			::devel/p5-SDL
+			::devel/p5-Locale-gettext
 
-LIB_DEPENDS-main =	SDL::devel/sdl \
+LIB_DEPENDS-main =	${MODGETTEXT_LIB_DEPENDS} \
 			SDL_Pango::devel/sdl-pango \
 			SDL_mixer::devel/sdl-mixer \
 			glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2
 
-LIB_DEPENDS-server =	glib-2.0::devel/glib2
+LIB_DEPENDS-server =	${MODGETTEXT_LIB_DEPENDS} \
+			glib-2.0::devel/glib2
 
-WANTLIB =		iconv intl
-WANTLIB-main =		${WANTLIB} X11 m pango-1.0 pthread
-WANTLIB-server =	${WANTLIB} c
+WANTLIB-main =		SDL X11 m pango-1.0 pthread
+WANTLIB-server =	c
 
 MULTI_PACKAGES =	-main -server
 
