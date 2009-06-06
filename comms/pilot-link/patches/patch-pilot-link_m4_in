@@ -1,9 +1,0 @@
-$OpenBSD: patch-pilot-link_m4_in,v 1.2 2008/01/20 15:19:31 ajacoutot Exp $
---- pilot-link.m4.in.orig	Wed Feb 21 17:57:32 2007
-+++ pilot-link.m4.in	Thu Jan 17 09:00:40 2008
-@@ -1,4 +1,4 @@
--AC_DEFUN([AC_PILOT_LINK_HOOK], [
-+AC_DEFUN([IT_PROG_INTLTOOL], [AC_PREREQ([2.50])])dnl
- 	PILOT_LINK_VERS=@PILOT_LINK_VERS@
- 	PILOT_LINK_MAJOR=@PILOT_LINK_MAJOR@
- 	PILOT_LINK_MINOR=@PILOT_LINK_MINOR@
