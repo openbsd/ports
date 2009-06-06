@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2009/04/23 08:27:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/06/06 19:00:02 ajacoutot Exp $
 
 COMMENT=		user interface builder for the GTK2+ toolkit
 
-GNOME_VERSION =		3.6.3
+GNOME_VERSION =		3.6.4
 GNOME_PROJECT = 	glade3
 
 CATEGORIES =		devel
@@ -22,10 +22,11 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation
-WANTLIB += bonoboui-2 c cairo crypto dbus-1 expat fontconfig freetype
-WANTLIB += gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
+WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
+WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 c
+WANTLIB += cairo crypto dbus-1 expat fontconfig freetype gailutil
+WANTLIB += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt
 WANTLIB += pthread ssl util xml2 z
