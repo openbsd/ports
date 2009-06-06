@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.378 2009/06/04 02:03:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.379 2009/06/06 04:45:24 landry Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -116,6 +116,7 @@
      SUBDIR += jwm
      SUBDIR += kde
      SUBDIR += kdirstat
+     SUBDIR += keynav
      SUBDIR += kmplayer
      SUBDIR += kountdown
      SUBDIR += krusader
