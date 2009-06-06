@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/02 21:57:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/06 03:22:05 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		Simple DirectMedia Layer for Perl
@@ -7,7 +7,7 @@ HOMEPAGE =		http://sdlperl.org/
 MODULES =		cpan
 VER =			2.1.3
 DISTNAME =		SDL_Perl-${VER}
-PKGNAME =		p5-SDL-${VER}
+PKGNAME =		p5-SDL-${VER}p0
 CATEGORIES =		devel graphics
 CPAN_AUTHOR =		DGOEHRIG
 
@@ -18,31 +18,17 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
-WANTLIB =			pthread
 
-BUILD_DEPENDS =		::devel/sdl \
-			::graphics/jpeg \
-			::graphics/png \
-			::devel/sdl-mixer \
-			::devel/sdl-gfx \
-			::devel/sdl-ttf \
-			::devel/sdl-image \
-			::devel/sdl-net \
-			::devel/smpeg \
-			::graphics/freeglut \
-			::devel/p5-YAML
-RUN_DEPENDS =		${BUILD_DEPENDS}
-LIB_DEPENDS =		SDL::devel/sdl \
-			SDL_gfx::devel/sdl-gfx \
+WANTLIB += GL GLU SDL jpeg png pthread
+
+RUN_DEPENDS =		::devel/p5-YAML
+BUILD_DEPENDS =		${RUN_DEPENDS}
+LIB_DEPENDS =		SDL_gfx::devel/sdl-gfx \
 			SDL_image::devel/sdl-image \
 			SDL_mixer::devel/sdl-mixer \
 			SDL_net::devel/sdl-net \
 			SDL_ttf::devel/sdl-ttf \
-			jpeg::graphics/jpeg \
-			png::graphics/png \
 			smpeg::devel/smpeg
-
-WANTLIB +=		GL GLU
 
 CONFIGURE_STYLE =	perl modbuild
 
