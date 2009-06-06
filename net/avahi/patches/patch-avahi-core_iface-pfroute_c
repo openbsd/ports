@@ -1,12 +1,17 @@
-$OpenBSD: patch-avahi-core_iface-pfroute_c,v 1.1 2009/06/06 08:02:08 ajacoutot Exp $
---- avahi-core/iface-pfroute.c.orig	Sat Jun  6 09:57:56 2009
-+++ avahi-core/iface-pfroute.c	Sat Jun  6 09:58:05 2009
-@@ -130,7 +130,7 @@ static void rtm_addr(struct rt_msghdr *rtm, AvahiInter
-   int prefixlen = 0;
-   struct sockaddr *sa  =NULL;
+$OpenBSD: patch-avahi-core_iface-pfroute_c,v 1.2 2009/06/06 18:36:43 ajacoutot Exp $
+--- avahi-core/iface-pfroute.c.orig	Fri Dec 12 22:36:15 2008
++++ avahi-core/iface-pfroute.c	Sat Jun  6 20:16:04 2009
+@@ -48,6 +48,13 @@
+ #include "iface-pfroute.h"
+ #include "util.h"
  
--#if defined(__NetBSD__) || defined(__OpenBSD__)
-+#if defined(__NetBSD__)
-   if(((struct sockaddr *)cp)->sa_family == AF_UNSPEC)
-     ((struct sockaddr *)cp)->sa_family = AF_INET;
- #endif
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++#define lifreq if_laddrreq
++#define lifr_addr iflr_addr
++#define lifr_flags iflr_flags
++#define SIOCGLIFFLAGS SIOCGIFFLAGS
++#endif
++
+ static int bitcount (unsigned int n)  
+ {  
+   int count=0 ;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-avahi-daemon_avahi-daemon_conf,v 1.1.1.1 2009/06/03 16:27:12 ajacoutot Exp $
+$OpenBSD: patch-avahi-daemon_avahi-daemon_conf,v 1.2 2009/06/06 18:36:43 ajacoutot Exp $
 --- avahi-daemon/avahi-daemon.conf.orig	Fri Dec 12 22:36:15 2008
-+++ avahi-daemon/avahi-daemon.conf	Wed Jun  3 09:03:04 2009
-@@ -23,15 +23,15 @@
++++ avahi-daemon/avahi-daemon.conf	Sat Jun  6 20:18:20 2009
+@@ -23,9 +23,9 @@
  [server]
  #host-name=foo
  #domain-name=local
@@ -13,10 +13,3 @@ $OpenBSD: patch-avahi-daemon_avahi-daemon_conf,v 1.1.1.1 2009/06/03 16:27:12 aja
  #allow-interfaces=eth0
  #deny-interfaces=eth1
  #check-response-ttl=no
- #use-iff-running=no
- #enable-dbus=yes
--#disallow-other-stacks=no
-+disallow-other-stacks=yes
- #allow-point-to-point=no
- 
- [wide-area]
