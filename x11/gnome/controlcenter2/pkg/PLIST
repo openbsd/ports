@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2009/06/07 09:06:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2009/06/07 10:47:38 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @pkgpath x11/gnome/controlcenter2
@@ -292,7 +292,6 @@ share/omf/control-center/control-center-uk.omf
 share/omf/control-center/control-center-vi.omf
 share/omf/control-center/control-center-zh_CN.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/gnome-default-applications.pc
 ${SCHEMAS_INSTDIR}/control-center.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
