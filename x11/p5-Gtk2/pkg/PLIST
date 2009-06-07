@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/03/25 22:03:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/06/07 08:47:57 landry Exp $
 ${P5ARCH}/Gtk2/
 ${P5ARCH}/Gtk2.pm
 ${P5ARCH}/Gtk2/AboutDialog.pod
@@ -14,6 +14,7 @@ ${P5ARCH}/Gtk2/Arrow.pod
 ${P5ARCH}/Gtk2/AspectFrame.pod
 ${P5ARCH}/Gtk2/Assistant.pod
 ${P5ARCH}/Gtk2/Bin.pod
+${P5ARCH}/Gtk2/BindingSet.pod
 ${P5ARCH}/Gtk2/Box.pod
 ${P5ARCH}/Gtk2/Buildable/
 ${P5ARCH}/Gtk2/Buildable.pod
@@ -160,7 +161,6 @@ ${P5ARCH}/Gtk2/Install/gtk2perl-autogen.h
 ${P5ARCH}/Gtk2/Install/gtk2perl-versions.h
 ${P5ARCH}/Gtk2/Install/gtk2perl.h
 ${P5ARCH}/Gtk2/Install/gtk2perl.typemap
-${P5ARCH}/Gtk2/Install/pango.typemap
 ${P5ARCH}/Gtk2/Invisible.pod
 ${P5ARCH}/Gtk2/Item.pod
 ${P5ARCH}/Gtk2/ItemFactory.pod
@@ -352,6 +352,7 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::AspectFrame.3p
 @man man/man3p/Gtk2::Assistant.3p
 @man man/man3p/Gtk2::Bin.3p
+@man man/man3p/Gtk2::BindingSet.3p
 @man man/man3p/Gtk2::Box.3p
 @man man/man3p/Gtk2::Buildable.3p
 @man man/man3p/Gtk2::Buildable::ParseContext.3p
