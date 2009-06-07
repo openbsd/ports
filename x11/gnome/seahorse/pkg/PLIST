@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/03/23 15:54:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/06/07 10:46:41 ajacoutot Exp $
 %%SHARED%%
 @bin bin/seahorse
 @mode 4555
@@ -300,10 +300,10 @@ share/pixmaps/seahorse/scalable/seahorse-sign-bad.svg
 share/pixmaps/seahorse/scalable/seahorse-sign-ok.svg
 share/pixmaps/seahorse/scalable/seahorse-sign-unknown.svg
 share/pixmaps/seahorse/scalable/seahorse-sign.svg
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/seahorse/*.schemas > /dev/null
-share/schemas/seahorse/
-share/schemas/seahorse/seahorse.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/seahorse/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/seahorse.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/seahorse/
 share/seahorse/glade/
 share/seahorse/glade/seahorse-add-keyring.glade

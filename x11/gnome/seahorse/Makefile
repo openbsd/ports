@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2009/06/03 16:38:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2009/06/07 10:46:41 ajacoutot Exp $
 
 COMMENT=		manage encryption keys
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p7
+PKGNAME=		${DISTNAME}p8
 SHARED_LIBS +=	cryptui              0.0      # .0.0
 CATEGORIES=		security
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0 avahi-client
 WANTLIB += avahi-common avahi-glib c cairo com_err crypto dbus-1
-WANTLIB += dbus-glib-1 expat fontconfig freetype gconf-2 gcrypt
+WANTLIB += dbus-glib-1 expat fontconfig freetype gcrypt
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gnome-keyring gnutls gobject-2.0
 WANTLIB += gp11 gpg-error gssapi gthread-2.0 gtk-x11-2.0 krb5
@@ -33,14 +33,15 @@ LIB_DEPENDS=		lber,ldap::databases/openldap \
 			gpgme::security/gpgme
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
+MODGCONF2_SCHEMAS_DIR=	seahorse
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/seahorse \
 			--with-gecko=xulrunner \
 			--enable-applet \
 			--enable-epiphany \
@@ -49,7 +50,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-ldap \
 			--enable-nautilus \
 			--enable-sharing \
-			--disable-schemas-install \
 			--disable-scrollkeeper
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

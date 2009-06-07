@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/01/18 18:05:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/06/07 10:46:41 ajacoutot Exp $
 @conflict control-center2-<=2.22
 %%SHARED%%
 include/gnome-settings-daemon-2.0/
@@ -259,14 +259,13 @@ share/locale/zh_TW/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zu/
 share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/gnome-settings-daemon.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/control-center2/*.schemas > /dev/null
-share/schemas/
-share/schemas/control-center2/
-share/schemas/control-center2/apps_gnome_settings_daemon_keybindings.schemas
-share/schemas/control-center2/apps_gnome_settings_daemon_screensaver.schemas
-share/schemas/control-center2/apps_gnome_settings_daemon_xrandr.schemas
-share/schemas/control-center2/desktop_gnome_font_rendering.schemas
-share/schemas/control-center2/gnome-settings-daemon.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/control-center2/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/apps_gnome_settings_daemon_keybindings.schemas
+${SCHEMAS_INSTDIR}/apps_gnome_settings_daemon_screensaver.schemas
+${SCHEMAS_INSTDIR}/apps_gnome_settings_daemon_xrandr.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_font_rendering.schemas
+${SCHEMAS_INSTDIR}/gnome-settings-daemon.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

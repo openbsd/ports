@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2009/06/07 10:46:40 ajacoutot Exp $
 
 COMMENT=		GNOME panel
 
 GNOME_PROJECT=		gnome-panel
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 
 SHARED_LIBS=	panel-applet-2       2.24      # .2.26
 CATEGORIES=		x11
@@ -25,7 +25,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite \
 		Xrender art_lgpl_2 asn1 atk-1.0 bonobo-2 \
 		bonobo-activation bonoboui-2 bz2 c cairo com_err croco-0.6 \
 		crypto dbus-1 dbus-glib-1 expat fontconfig freetype \
-		gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
+		gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomeui-2 gnomevfs-2 gnutls gobject-2.0 \
 		gpg-error gsf-1 gssapi gthread-2.0 gtk-x11-2.0 krb5 m \
@@ -35,7 +35,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite \
 		ssl3 startup-notification-1 tasn1 util xml2 z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
 LIB_DEPENDS= 		camel-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2::databases/evolution-data-server \
 			wnck-1.>=21::devel/libwnck \
@@ -47,9 +48,9 @@ LIB_DEPENDS= 		camel-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2::d
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
+MODGCONF2_SCHEMAS_DIR=	gnome-panel
+
 CONFIGURE_ARGS+= 	--enable-eds \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-panel \
-			--disable-schemas-install \
 			--disable-scrollkeeper
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
