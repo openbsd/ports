@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/06/04 13:52:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2009/06/07 10:10:33 ajacoutot Exp $
 
      SUBDIR += app_conference
      SUBDIR += asterisk
@@ -11,7 +11,6 @@
      SUBDIR += iaxmodem
      SUBDIR += kamailio
      SUBDIR += libosip2
-     SUBDIR += ohphone
      SUBDIR += p5-Net-SIP
      SUBDIR += p5-asterisk
      SUBDIR += pjsua
