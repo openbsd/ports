@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2009/06/03 20:24:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2009/06/07 06:02:20 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -22,7 +22,7 @@ DISTNAME =		gst-plugins-good-$V
 PKGNAME-main =		gstreamer-plugins-good-$Vp12v0
 PKGNAME-aalib =		gstreamer-aalib-$Vp2
 PKGNAME-cairo =		gstreamer-cairo-$Vp3
-PKGNAME-gconf =		gstreamer-confelements-$Vp4
+PKGNAME-gconf =		gstreamer-confelements-$Vp5
 PKGNAME-esd =		gstreamer-esd-$Vp3
 PKGNAME-flac =		gstreamer-flac-$Vp2
 PKGNAME-speex =		gstreamer-speex-$Vp2
@@ -45,6 +45,9 @@ MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-good/}
 
 USE_X11 =		Yes
 MODULES =		devel/gettext
+
+MODGCONF2_LIBDEP=	No
+MODGCONF2_SCHEMAS_DIR=	gst-plugins
 
 RUN_DEPENDS =		::${BUILD_PKGPATH}
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
@@ -73,7 +76,7 @@ LIB_DEPENDS-cairo =	${LIB_DEPENDS} \
 WANTLIB-gconf =		${WANTLIB} \
 			ORBit-2 dbus-1 dbus-glib-1
 LIB_DEPENDS-gconf =	${LIB_DEPENDS} \
-			gconf-2::devel/gconf2
+			${MODGCONF2_LIB_DEPENDS}
 
 WANTLIB-esd =		${WANTLIB} \
 			audiofile gstbase-0.10 sndio
@@ -165,8 +168,6 @@ CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-cdio \
 			--disable-dv1394 \
 			--without-check \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gst-plugins \
-			--disable-schemas-install \
 			--enable-experimental \
 			--enable-gst_v4l2 \
 			--enable-goom \

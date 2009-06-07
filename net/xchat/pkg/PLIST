@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2008/10/29 11:31:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2009/06/07 06:03:43 ajacoutot Exp $
 %%SHARED%%
 @bin bin/xchat
 lib/xchat/
@@ -38,10 +38,9 @@ share/locale/zh_CN/LC_MESSAGES/xchat.mo
 share/locale/zh_TW/LC_MESSAGES/xchat.mo
 share/pixmaps/
 share/pixmaps/xchat.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/xchat/*.schemas > /dev/null
-share/schemas/
-share/schemas/xchat/
-share/schemas/xchat/apps_xchat_url_handler.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/xchat/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/apps_xchat_url_handler.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

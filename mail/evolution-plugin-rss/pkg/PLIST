@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/11/23 12:04:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/06/07 05:59:48 ajacoutot Exp $
 @bin bin/evolution-import-rss
 lib/bonobo/servers/GNOME_Evolution_RSS_${EVO_VERSION}.server
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.a
@@ -20,7 +20,7 @@ share/evolution/${EVO_VERSION}/images/rss.png
 share/locale/en_AU/LC_MESSAGES/evolution-rss.mo
 share/locale/ro/LC_MESSAGES/evolution-rss.mo
 share/locale/sv/LC_MESSAGES/evolution-rss.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/evolution-rss/*.schemas > /dev/null
-share/schemas/evolution-rss/
-share/schemas/evolution-rss/evolution-rss.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/evolution-rss/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/evolution-rss.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

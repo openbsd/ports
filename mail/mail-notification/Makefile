@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2009/05/03 19:51:42 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2009/06/07 05:59:48 ajacoutot Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-5.4
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 
 CATEGORIES=		mail
 
@@ -21,7 +21,7 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage \
 		art_lgpl_2 atk-1.0 bonobo-2 \
 		bonobo-activation bonoboui-2 c cairo crypto dbus-1 \
 		dbus-glib-1 expat fontconfig freetype gailutil \
-		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 \
+		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
@@ -30,7 +30,8 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage \
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=mailnotify/}
 
 MODULES=	devel/gettext \
-		textproc/intltool
+		textproc/intltool \
+		devel/gconf2
 
 BUILD_DEPENDS=	::textproc/rarian
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
@@ -43,6 +44,7 @@ LIB_DEPENDS=	gnomeui-2.>=2400::x11/gnome/libgnomeui \
 
 USE_X11=		Yes
 NO_REGRESS=		Yes
+MODGCONF2_SCHEMAS_DIR=	mail-notification
 
 do-configure:
 	cd ${WRKSRC} && ./jb configure ${JB_FLAGS} \
@@ -58,7 +60,7 @@ do-configure:
 		program-group=${BINGRP} \
 		library-owner=${BINOWN} \
 		library-group=${BINGRP} \
-		gconf-schemas-dir="${LOCALBASE}/share/schemas/mail-notification" \
+		gconf-schemas-dir="${LOCALBASE}/${SCHEMAS_INSTDIR}/" \
 		gconftool-2="/usr/bin/true" \
 		destdir="${WRKINST}"
 

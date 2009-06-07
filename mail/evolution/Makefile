@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2009/06/01 05:50:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2009/06/07 05:59:47 ajacoutot Exp $
 
 # XXX TODO: the mail-account-disable plugin is not loaded by default:
 # it makes right-clicking on a folder very long (the first time)
@@ -11,8 +11,8 @@ COMMENT-plugins=	additionnal plugins for evolution
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.24.5
 
-PKGNAME-main=		${DISTNAME}p8
-PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p2
+PKGNAME-main=		${DISTNAME}p9
+PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p3
 
 CATEGORIES=		mail
 
@@ -43,7 +43,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xrender art_lgpl_2 asn1 atk-1.0 bonobo-2 \
 		bonobo-activation bonoboui-2 c cairo com_err crypto \
 		db dbus-1 dbus-glib-1 enchant expat fontconfig freetype \
-		gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
+		gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomeui-2 gnomevfs-2 gnutls gobject-2.0 \
 		gpg-error gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4 \
@@ -62,7 +62,8 @@ WANTLIB-plugins= ${WANTLIB} \
 MULTI_PACKAGES=		-main -plugins
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
 BUILD_DEPENDS=		::devel/bison \
 			::misc/shared-mime-info \
@@ -89,12 +90,12 @@ RUN_DEPENDS-plugins=	::multimedia/gstreamer-0.10/plugins-good
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
+MODGCONF2_SCHEMAS_DIR=	evolution
 
 YACC=			bison
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/evolution \
 			--disable-pilot-conduits \
 			--enable-nss=yes \
 			--enable-smime=yes \

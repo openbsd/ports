@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2009/06/07 06:00:57 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.8.4
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 SHARED_LIBS +=	spreadsheet     0.0
 CATEGORIES=    		math
@@ -22,14 +22,15 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender atk-1.0 bonobo-2 bonobo-activation \
 		bonoboui-2 bz2 c cairo crypto dbus-1 dbus-glib-1 \
-		expat fontconfig freetype gailutil gconf-2 gdk-x11-2.0 \
+		expat fontconfig freetype gailutil gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 		gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre perl pixman-1 png popt pthread ssl util z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
 LIB_DEPENDS=		art_lgpl_2.>=5.19::graphics/libart \
 			glade-2.0.>=0.8::devel/libglade2 \
@@ -41,17 +42,16 @@ LIB_DEPENDS=		art_lgpl_2.>=5.19::graphics/libart \
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
+MODGCONF2_SCHEMAS_DIR=	gnumeric
 
 CONFIGURE_STYLE=	gnu
-
 CONFIGURE_ARGS=		--with-gnome \
 			--without-gda \
 			--without-gb \
 			--without-psiconv \
 			--without-paradox \
 			--without-long-double \
-			--without-python \
-			--with-gconf-schema-file-dir="${LOCALBASE}/share/schemas/gnumeric"
+			--without-python
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

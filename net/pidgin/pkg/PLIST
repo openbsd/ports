@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2009/03/05 06:23:05 steven Exp $
+@comment $OpenBSD: PLIST,v 1.20 2009/06/07 06:03:43 ajacoutot Exp $
 @conflict gaim-*
 @bin bin/finch
 @bin bin/pidgin
@@ -915,11 +915,10 @@ share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_
 share/purple/ca-certs/VeriSign_International_Server_Class_3_CA.pem
 share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
 share/purple/ca-certs/Verisign_RSA_Secure_Server_CA.pem
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/pidgin/*.schemas > /dev/null
-share/schemas/
-share/schemas/pidgin/
-share/schemas/pidgin/purple.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/pidgin/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/purple.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/sounds/
 share/sounds/purple/
 share/sounds/purple/alert.wav

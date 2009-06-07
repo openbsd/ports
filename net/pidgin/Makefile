@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2009/05/21 15:07:37 steven Exp $
+# $OpenBSD: Makefile,v 1.39 2009/06/07 06:03:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-protocol instant messaging client
 
 DISTNAME=	pidgin-2.5.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 
@@ -32,12 +33,11 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 
 MODULES=	devel/gettext \
 		textproc/intltool \
-		lang/python
+		lang/python \
+		devel/gconf2
 
-BUILD_DEPENDS=	:gconf2-*:devel/gconf2 \
-		:dbus-python-*:x11/dbus-python
-RUN_DEPENDS+=	:gconf2-*:devel/gconf2 \
-		:dbus-python-*:x11/dbus-python \
+BUILD_DEPENDS=	:dbus-python-*:x11/dbus-python
+RUN_DEPENDS+=	:dbus-python-*:x11/dbus-python \
 		:py-gtk2-*:x11/py-gtk2 \
 		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
@@ -48,6 +48,9 @@ LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		xml2::textproc/libxml \
 		dbus-glib-1::x11/dbus-glib
 
+MODGCONF2_SCHEMAS_DIR= pidgin
+MODGCONF2_LIBDEP= No
+
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
@@ -55,8 +58,7 @@ USE_GMAKE=	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61
-CONFIGURE_ARGS+= --with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/pidgin \
-		 --disable-avahi \
+CONFIGURE_ARGS+= --disable-avahi \
 		 --disable-doxygen \
 		 --disable-gevolution \
 		 --disable-gnutls \
@@ -66,7 +68,6 @@ CONFIGURE_ARGS+= --with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/pidgin 
 		 --disable-tcl \
 		 --disable-tk \
 		 --disable-cap \
-		 --disable-schemas-install \
 		 --with-python=${MODPY_BIN}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

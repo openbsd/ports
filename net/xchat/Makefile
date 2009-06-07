@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2009/03/16 21:29:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2009/06/07 06:03:43 ajacoutot Exp $
 
 COMMENT=	GTK+2 IRC client
 
 MAJOR=		2.8
 VERSION=	${MAJOR}.6
 DISTNAME=	xchat-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	net x11
 
@@ -29,11 +29,10 @@ WANTLIB += xml2 z
 MASTER_SITES=	${HOMEPAGE}files/source/${MAJOR}/ \
 		${MASTER_SITE_SOURCEFORGE:=xchat/}
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		devel/gconf2
 
-BUILD_DEPENDS=	::devel/gconf2
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
-		::devel/gconf2
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 		dbus-glib-1.>=4::x11/dbus-glib \
 		sexy::x11/libsexy
@@ -41,6 +40,8 @@ LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
+MODGCONF2_SCHEMAS_DIR= xchat
+MODGCONF2_LIBDEP= No
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
@@ -54,6 +55,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-mmx
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		GCONF_SCHEMA_FILE_DIR=${LOCALBASE}/share/schemas/xchat
+		GCONF_SCHEMA_FILE_DIR=${LOCALBASE}/${SCHEMAS_INSTDIR}/
 
 .include <bsd.port.mk>
