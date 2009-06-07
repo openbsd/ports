@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/06/07 08:18:43 ajacoutot Exp $
+@lib lib/libpolkit-gnome.so.${LIBpolkit-gnome_VERSION}

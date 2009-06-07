@@ -1,0 +1,7 @@
+PolicyKit-gnome provides:
+  * an Authentication Agent for PolicyKit that integrates well with the
+    GNOME desktop environment
+  * a shared library to easily integrate usage of PolicyKit into GTK+
+    applications
+  * a proof-of-concept applet (that is subject to change) for managing
+    authorizations
