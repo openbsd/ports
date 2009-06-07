@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2009/02/18 12:16:15 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/06/07 07:07:39 eric Exp $
 @bin bin/b2m
 @bin bin/ctags
 @bin bin/ebrowse
@@ -1219,6 +1219,16 @@ share/emacs/${VERSION}/lisp/textmodes/flyspell.elc
 share/emacs/${VERSION}/lisp/textmodes/ispell.elc
 share/emacs/${VERSION}/lisp/textmodes/makeinfo.elc
 share/emacs/${VERSION}/lisp/textmodes/nroff-mode.elc
+share/emacs/${VERSION}/lisp/textmodes/org-export-latex.el.gz
+share/emacs/${VERSION}/lisp/textmodes/org-export-latex.elc
+share/emacs/${VERSION}/lisp/textmodes/org-irc.el.gz
+share/emacs/${VERSION}/lisp/textmodes/org-irc.elc
+share/emacs/${VERSION}/lisp/textmodes/org-mac-message.el.gz
+share/emacs/${VERSION}/lisp/textmodes/org-mac-message.elc
+share/emacs/${VERSION}/lisp/textmodes/org-mouse.el.gz
+share/emacs/${VERSION}/lisp/textmodes/org-mouse.elc
+share/emacs/${VERSION}/lisp/textmodes/org-publish.el.gz
+share/emacs/${VERSION}/lisp/textmodes/org-publish.elc
 share/emacs/${VERSION}/lisp/textmodes/org.elc
 share/emacs/${VERSION}/lisp/textmodes/page-ext.elc
 share/emacs/${VERSION}/lisp/textmodes/page.elc

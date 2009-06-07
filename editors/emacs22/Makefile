@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2009/02/18 12:16:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/07 07:07:39 eric Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
 
-VERSION=		22.2
+VERSION=		22.3
 DISTNAME=		emacs-${VERSION}
-PKGNAME-main=		emacs-${VERSION}p2
-FULLPKGNAME-el=		emacs-el-${VERSION}p0
+PKGNAME-main=		emacs-${VERSION}
+FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs22,-el
 
 CATEGORIES=		editors
@@ -68,9 +68,9 @@ LIB_DEPENDS-main+=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 			ungif::graphics/libungif
 WANTLIB-main+=		ICE SM X11 Xdmcp Xext Xft Xpm Xrender Xau Xcomposite \
 			Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
-			atk-1.0 cairo expat fontconfig freetype glib-2.0 \
-			glitz gmodule-2.0 gobject-2.0 iconv intl pango-1.0 \
-			pangocairo-1.0 pangoft2-1.0 pixman-1 pthread z
+			atk-1.0 cairo expat fontconfig freetype gio-2.0 \
+			glib-2.0 glitz gmodule-2.0 gobject-2.0 iconv intl \
+			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread z
 .else
 CONFIGURE_ARGS+=	--with-x-toolkit=athena --without-toolkit-scroll-bars
 USE_X11=		Yes
@@ -83,5 +83,13 @@ WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
 
 RUN_DEPENDS-el=		:emacs-${VERSION}*:${PKGPATH}
 PKG_ARCH-el=		*
+
+.if ${MACHINE_ARCH} == "amd64"
+post-extract:
+	touch ${WRKSRC}/leim/quail/tsang-b5.el
+
+post-install:
+	gzip -f ${PREFIX}/share/emacs/${VERSION}/leim/quail/tsang-b5.el
+.endif
 
 .include <bsd.port.mk>
