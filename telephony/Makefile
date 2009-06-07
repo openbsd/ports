@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2009/06/07 10:10:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2009/06/07 12:02:43 sthen Exp $
 
      SUBDIR += app_conference
      SUBDIR += asterisk
+     SUBDIR += asterisk,h323
      SUBDIR += asterisk-native-sounds
      SUBDIR += asterisk-openbsd-moh
      SUBDIR += asterisk-sounds
