@@ -1,6 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/08/20 15:57:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/07 12:01:32 phessler Exp $
 @pkgpath graphics/swfdec,plugin
 lib/mozilla-plugins/
 lib/mozilla-plugins/libswfdecmozilla.a
 lib/mozilla-plugins/libswfdecmozilla.la
 lib/mozilla-plugins/libswfdecmozilla.so
+share/icons/hicolor/16x16/apps/swfdec-mozilla.png
+share/icons/hicolor/22x22/apps/swfdec-mozilla.png
+share/icons/hicolor/24x24/apps/swfdec-mozilla.png
+share/icons/hicolor/32x32/apps/swfdec-mozilla.png
+share/icons/hicolor/48x48/apps/swfdec-mozilla.png
+share/icons/hicolor/scalable/apps/swfdec-mozilla.svg
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
