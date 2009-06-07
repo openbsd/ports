@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.707 2009/06/07 08:46:59 landry Exp $
+# $OpenBSD: Makefile,v 1.708 2009/06/07 11:24:54 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -351,6 +351,7 @@
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-Devel-StackTrace
      SUBDIR += p5-Devel-Symdump
+     SUBDIR += p5-Devel-Trace
      SUBDIR += p5-Devel-ptkdb
      SUBDIR += p5-Directory-Scratch
      SUBDIR += p5-Env-PS1 
