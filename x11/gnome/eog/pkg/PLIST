@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/03/14 10:40:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2009/06/07 09:27:37 ajacoutot Exp $
 %%SHARED%%
 @bin bin/eog
 include/eog-2.20/
@@ -391,10 +391,10 @@ share/omf/eog/eog-th.omf
 share/omf/eog/eog-uk.omf
 share/omf/eog/eog-zh_CN.omf
 share/omf/eog/eog-zh_TW.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/eog/*.schemas > /dev/null
-share/schemas/eog/
-share/schemas/eog/eog.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/eog/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/eog.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/03/22 20:56:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/06/07 09:27:37 ajacoutot Exp $
 @bin bin/blackjack
 bin/glchess
 @mode g+s
@@ -2217,24 +2217,24 @@ share/pixmaps/iagno/woodtrim.png
 share/pixmaps/mahjongg/
 share/pixmaps/mahjongg/postmodern.svg
 share/pixmaps/mahjongg/smooth.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gnome-games/*.schemas > /dev/null
-share/schemas/gnome-games/
-share/schemas/gnome-games/aisleriot.schemas
-share/schemas/gnome-games/blackjack.schemas
-share/schemas/gnome-games/glchess.schemas
-share/schemas/gnome-games/glines.schemas
-share/schemas/gnome-games/gnect.schemas
-share/schemas/gnome-games/gnibbles.schemas
-share/schemas/gnome-games/gnobots2.schemas
-share/schemas/gnome-games/gnometris.schemas
-share/schemas/gnome-games/gnomine.schemas
-share/schemas/gnome-games/gnotravex.schemas
-share/schemas/gnome-games/gnotski.schemas
-share/schemas/gnome-games/gtali.schemas
-share/schemas/gnome-games/iagno.schemas
-share/schemas/gnome-games/mahjongg.schemas
-share/schemas/gnome-games/same-gnome.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-games/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/aisleriot.schemas
+${SCHEMAS_INSTDIR}/blackjack.schemas
+${SCHEMAS_INSTDIR}/glchess.schemas
+${SCHEMAS_INSTDIR}/glines.schemas
+${SCHEMAS_INSTDIR}/gnect.schemas
+${SCHEMAS_INSTDIR}/gnibbles.schemas
+${SCHEMAS_INSTDIR}/gnobots2.schemas
+${SCHEMAS_INSTDIR}/gnometris.schemas
+${SCHEMAS_INSTDIR}/gnomine.schemas
+${SCHEMAS_INSTDIR}/gnotravex.schemas
+${SCHEMAS_INSTDIR}/gnotski.schemas
+${SCHEMAS_INSTDIR}/gtali.schemas
+${SCHEMAS_INSTDIR}/iagno.schemas
+${SCHEMAS_INSTDIR}/mahjongg.schemas
+${SCHEMAS_INSTDIR}/same-gnome.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

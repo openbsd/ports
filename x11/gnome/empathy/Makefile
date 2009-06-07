@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/06/07 09:27:37 ajacoutot Exp $
 
+# XXX
 # (empathy:10245): Gtk-WARNING **: could not load image: Icon 'im-xmpp' not present in theme
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p9
+PKGNAME=		${DISTNAME}p10
 
 SHARED_LIBS +=	empathy              1.0      # .16.4
 SHARED_LIBS +=	empathy-gtk          1.0      # .15.6
@@ -24,7 +25,7 @@ WANTLIB=	ICE SM ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
 		art_lgpl_2 asn1 atk-1.0 bonobo-2 bonobo-activation stdc++ \
 		bonoboui-2 c cairo com_err crypto dbus-1 dbus-glib-1 \
-		expat fontconfig freetype gailutil gconf-2 gcrypt gdk-x11-2.0 \
+		expat fontconfig freetype gailutil gcrypt gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
 		gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
 		gnutls gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0 \
@@ -35,7 +36,8 @@ WANTLIB=	ICE SM ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 
 MODULES=		devel/gettext \
 			lang/python \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
 BUILD_DEPENDS=		::devel/iso-codes \
 			::x11/py-gtk2
@@ -51,9 +53,9 @@ RUN_DEPENDS=		::net/telepathy/telepathy-butterfly \
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
+MODGCONF2_SCHEMAS_DIR=	empathy
+
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/empathy \
-			--disable-schemas-install \
 			--disable-scrollkeeper \
 			--disable-aspell \
 			--disable-voip \

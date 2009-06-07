@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/03/14 10:40:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/06/07 09:27:37 ajacoutot Exp $
 @bin bin/empathy
 @bin bin/empathy-logs
 include/libempathy/
@@ -429,11 +429,11 @@ share/omf/empathy/empathy-es.omf
 share/omf/empathy/empathy-fr.omf
 share/omf/empathy/empathy-it.omf
 share/omf/empathy/empathy-sv.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/empathy/*.schemas > /dev/null
-share/schemas/empathy/
-share/schemas/empathy/GNOME_Megaphone_Applet.schemas
-share/schemas/empathy/empathy.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/empathy/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/GNOME_Megaphone_Applet.schemas
+${SCHEMAS_INSTDIR}/empathy.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database

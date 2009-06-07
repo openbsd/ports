@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2009/06/07 09:27:37 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		2.24.3.1
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 
 CATEGORIES=		graphics
 
@@ -18,7 +18,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation \
 		bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 expat \
-		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
+		fontconfig freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 		gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 \
@@ -26,7 +26,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		util xml2 z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		gnome-desktop-2.>=5::x11/gnome/desktop \
@@ -38,11 +39,11 @@ RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
+MODGCONF2_SCHEMAS_DIR=	eog
+
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/eog \
-			--disable-schemas-install \
-			--disable-python \
+CONFIGURE_ARGS+=	--disable-python \
 			--without-xmp \
 			--with-libexif
 
