@@ -1,0 +1,4 @@
+Sphinx-3 is the successor to the Sphinx-II speech recognition system
+from Carnegie Mellon University. It includes both an acoustic trainer
+and various decoders, i.e., text recognition, phoneme recognition,
+N-best list generation, etc.

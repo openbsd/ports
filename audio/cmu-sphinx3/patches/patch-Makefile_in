@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2009/06/07 07:18:39 eric Exp $
+--- Makefile.in.orig	Mon Jun  1 23:56:18 2009
++++ Makefile.in	Mon Jun  1 23:56:00 2009
+@@ -196,7 +196,6 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ tidigitsdata = @tidigitsdata@
+ SUBDIRS = src \
+-	doc \
+ 	scripts \
+ 	model \
+ 	include
