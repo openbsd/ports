@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_common_unicode_rbbi_h,v 1.1 2008/05/04 12:01:42 robert Exp $
---- source/common/unicode/rbbi.h.orig	Thu May  1 13:24:31 2008
-+++ source/common/unicode/rbbi.h	Thu May  1 13:24:50 2008
-@@ -611,12 +611,14 @@ class U_COMMON_API RuleBasedBreakIterator : public Bre
+$OpenBSD: patch-source_common_unicode_rbbi_h,v 1.2 2009/06/07 00:54:43 landry Exp $
+--- source/common/unicode/rbbi.h.orig	Fri May  8 18:12:14 2009
++++ source/common/unicode/rbbi.h	Sat May  9 20:17:36 2009
+@@ -633,12 +633,14 @@ class U_COMMON_API RuleBasedBreakIterator : public Bre
      virtual int32_t getBreakType() const;
  #endif
  

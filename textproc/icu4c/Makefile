@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2009/02/03 10:40:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/07 00:54:43 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		International Components for Unicode
 
-VERSION=		4.0.1
+VERSION=		4.2
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
-PKGNAME=		icu4c-${VERSION}p0
-SO_VERSION=		1.1
+PKGNAME=		icu4c-${VERSION}
+SO_VERSION=		2.0
 .for _lib in icudata icui18n icuio icule iculx icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
