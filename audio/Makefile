@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2009/06/05 09:30:57 pea Exp $
+# $OpenBSD: Makefile,v 1.227 2009/06/07 07:25:44 eric Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -16,6 +16,8 @@
      SUBDIR += bonk
      SUBDIR += cdparanoia
      SUBDIR += cmt
+     SUBDIR += cmu-sphinx3
+     SUBDIR += cmu-sphinxbase
      SUBDIR += cplay
      SUBDIR += daapd
      SUBDIR += disc-cover
