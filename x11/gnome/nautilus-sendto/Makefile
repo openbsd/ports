@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/05 08:14:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/07 11:16:04 ajacoutot Exp $
 
 COMMENT-main=	applications integration into Nautilus
 COMMENT-pidgin=	pidgin integration in Nautilus
@@ -6,7 +6,7 @@ COMMENT-pidgin=	pidgin integration in Nautilus
 GNOME_PROJECT=	nautilus-sendto
 GNOME_VERSION=	1.0.1
 
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-pidgin=	${GNOME_PROJECT}-pidgin-${GNOME_VERSION}
 
 CATEGORIES-main=	misc
@@ -27,7 +27,7 @@ WANTLIB += pixman-1 png xml2 z
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += ORBit-2 ORBitCosNaming-2 asn1 bonobo-2 bonobo-activation
-WANTLIB-main += c com_err crypto gconf-2 gcrypt glade-2.0 gnome-2 gnomevfs-2
+WANTLIB-main += c com_err crypto gcrypt glade-2.0 gnome-2 gnomevfs-2
 WANTLIB-main += gnutls gpg-error gssapi krb5 nspr4 nss3 plc4 plds4
 WANTLIB-main += popt pthread smime3 softokn3 soup-2.4 sqlite3 ssl ssl3
 WANTLIB-main += tasn1 util
@@ -36,7 +36,8 @@ WANTLIB-pidgin += ${WANTLIB}
 WANTLIB-pidgin += ncurses
 
 MODULES=	devel/gettext \
-		x11/gnome
+		x11/gnome \
+		devel/gconf2
 
 MULTI_PACKAGES=	-main -pidgin
 
@@ -53,10 +54,9 @@ LIB_DEPENDS-pidgin=	${LIB_DEPENDS} \
 			purple.>=4::net/pidgin
 
 USE_X11=	Yes
+MODGCONF2_SCHEMAS_DIR= nautilus-sendto
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/nautilus-sendto \
-		--disable-schemas-install \
 		--with-thunderbird-name=thunderbird \
 		--with-gajim=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
