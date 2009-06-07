@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/29 14:35:07 espie Exp $
-@lib lib/libqutil.so.${LIBqutil_VERSION}
-@lib lib/qt2/libqutil.so.${LIBqutil_VERSION}

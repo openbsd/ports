@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.379 2009/06/06 04:45:24 landry Exp $
+# $OpenBSD: Makefile,v 1.380 2009/06/07 00:16:36 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -185,7 +185,6 @@
      SUBDIR += qlwm
      SUBDIR += qrfcview
      SUBDIR += qt2
-     SUBDIR += qt2-designer
      SUBDIR += qt3
      SUBDIR += qt4
      SUBDIR += quadkonsole
