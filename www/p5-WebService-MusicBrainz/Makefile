@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2009/02/04 10:51:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/07 11:32:41 ajacoutot Exp $
 
 COMMENT=		interface to Music Brainz
 
-DISTNAME=		WebService-MusicBrainz-0.21
+DISTNAME=		WebService-MusicBrainz-0.22
 CATEGORIES=		www
 
 MODULES=		cpan
