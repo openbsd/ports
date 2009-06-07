@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.382 2009/06/07 00:29:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.383 2009/06/07 00:30:09 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -183,7 +183,6 @@
      SUBDIR += pypanel
      SUBDIR += qinx
      SUBDIR += qrfcview
-     SUBDIR += qt2
      SUBDIR += qt3
      SUBDIR += qt4
      SUBDIR += quadkonsole
