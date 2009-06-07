@@ -1,0 +1,35 @@
+$OpenBSD: patch-configure_ac,v 1.3 2009/06/07 11:56:51 phessler Exp $
+--- configure.ac.orig	Fri Mar  6 22:37:45 2009
++++ configure.ac	Fri Mar  6 22:44:26 2009
+@@ -155,7 +155,7 @@ dnl
+ dnl audio backend
+ dnl
+ AC_ARG_WITH(audio,
+-            [AC_HELP_STRING([--with-audio=@<:@auto/pulse/none@:>@],
++            [AC_HELP_STRING([--with-audio=@<:@auto/pulse/sndio/none@:>@],
+                             [audio backend to use])],,
+ 	    [with_audio=alsa])
+ 
+@@ -170,6 +170,22 @@ if test "$with_audio" = "alsa"; then
+       AC_MSG_ERROR([no alsa audio support])
+     else
+       AC_MSG_WARN([no alsa audio support])
++    fi
++  fi
++fi
++
++if test "$with_audio" = "sndio"; then
++  AC_CHECK_HEADERS([sndio.h], [AUDIO_TYPE=sndio])
++  if test "$AUDIO_TYPE" = "sndio"; then
++    SNDIO_CFLAGS=""
++    SNDIO_LIBS="-lsndio"
++    AUDIO_CFLAGS=$SNDIO_CFLAGS
++    AUDIO_LIBS=$SNDIO_LIBS
++  else
++    if test "$with_audio" = "sndio"; then
++      AC_MSG_ERROR([no sndio audio support])
++    else
++      AC_MSG_WARN([no sndio audio support])
+     fi
+   fi
+ fi
