@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2009/03/14 10:40:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2009/06/07 11:03:21 ajacoutot Exp $
 @bin bin/gnome-terminal
 lib/bonobo/
 lib/bonobo/servers/
@@ -216,9 +216,9 @@ share/omf/gnome-terminal/gnome-terminal-sv.omf
 share/omf/gnome-terminal/gnome-terminal-uk.omf
 share/omf/gnome-terminal/gnome-terminal-zh_CN.omf
 share/omf/gnome-terminal/gnome-terminal-zh_TW.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gnome-terminal/*.schemas > /dev/null
-share/schemas/gnome-terminal/
-share/schemas/gnome-terminal/gnome-terminal.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-terminal/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gnome-terminal.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

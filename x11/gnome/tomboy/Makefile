@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2009/05/13 09:17:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2009/06/07 11:03:21 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
 GNOME_VERSION=	0.12.2
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 
 CATEGORIES=	x11
 
@@ -16,11 +16,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/gnome \
 		lang/mono \
-		devel/gettext
+		devel/gettext \
+		devel/gconf2
 
 USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=	Yes
+MODGCONF2_SCHEMAS_DIR=	tomboy
+MODGCONF2_LIBDEP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
@@ -39,9 +42,7 @@ RUN_DEPENDS=	::lang/mono \
 		:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-sketching=no \
-		--disable-schemas-install \
-		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/tomboy
+		--enable-sketching=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

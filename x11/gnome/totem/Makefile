@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2009/06/07 11:03:21 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.22.2
-PKGNAME=	${DISTNAME}p18
+PKGNAME=	${DISTNAME}p19
 
 CATEGORIES=	multimedia
 
@@ -22,7 +22,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		bonobo-2 bonobo-activation bonoboui-2 c cairo \
 		camel-1.2 com_err crypto dbus-1 dbus-glib-1 sqlite3 \
 		edataserver-1.2 expat fontconfig freetype gailutil \
-		gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz \
+		gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz \
 		gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gnutls gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0 \
 		krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 \
@@ -31,7 +31,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 
 MODULES=	devel/gettext \
 		lang/python \
-		x11/gnome
+		x11/gnome \
+		devel/gconf2
 
 BUILD_DEPENDS=	::x11/py-gtk2 \
 		::devel/iso-codes
@@ -53,6 +54,7 @@ PORTHOME=	${WRKDIR}
 USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=Yes
+MODGCONF2_SCHEMAS_DIR= totem
 
 TOTEM_PLUGINS=	"galago gromit media-player-keys ontop properties \
 		screensaver skipto thumbnail youtube" # Browser \
@@ -63,7 +65,6 @@ CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include "
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-	        --with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/totem \
 		--with-plugins=${TOTEM_PLUGINS} \
 		--with-dbus \
 		--without-hal \
@@ -76,7 +77,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-complex-plugin \
 		--disable-narrowspace-plugin \
 		--disable-mully-plugin \
-		--disable-schemas-install \
 		--disable-scrollkeeper \
 		--disable-nvtv \
 		--disable-lirc \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2009/03/14 10:40:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2009/06/07 11:03:21 ajacoutot Exp $
 %%SHARED%%
 @bin bin/baobab
 @bin bin/gnome-dictionary
@@ -659,14 +659,14 @@ share/omf/gnome-system-log/gnome-system-log-uk.omf
 share/pixmaps/
 share/pixmaps/gsearchtool/
 share/pixmaps/gsearchtool/thumbnail_frame.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gnome-utils/*.schemas > /dev/null
-share/schemas/gnome-utils/
-share/schemas/gnome-utils/baobab.schemas
-share/schemas/gnome-utils/gnome-dictionary.schemas
-share/schemas/gnome-utils/gnome-screenshot.schemas
-share/schemas/gnome-utils/gnome-search-tool.schemas
-share/schemas/gnome-utils/logview.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-utils/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/baobab.schemas
+${SCHEMAS_INSTDIR}/gnome-dictionary.schemas
+${SCHEMAS_INSTDIR}/gnome-screenshot.schemas
+${SCHEMAS_INSTDIR}/gnome-search-tool.schemas
+${SCHEMAS_INSTDIR}/logview.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
