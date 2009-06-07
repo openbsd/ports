@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/07 07:49:44 ajacoutot Exp $
 %%SHARED%%
 @bin bin/ck-history
 @bin bin/ck-launch-session
@@ -42,9 +42,4 @@ share/examples/consolekit/dbus-1/
 @sample ${SYSCONFDIR}/dbus-1/
 share/examples/consolekit/dbus-1/ConsoleKit.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/ConsoleKit.conf
-var/
-var/log/
-var/log/ConsoleKit/
-var/run/
-var/run/ConsoleKit/
-@exec ${PREFIX}/bin/dbus-uuidgen --ensure
+@sample /var/log/ConsoleKit/
