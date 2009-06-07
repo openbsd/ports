@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-battstat,v 1.21 2009/04/14 21:07:44 merdely Exp $
+@comment $OpenBSD: PLIST-battstat,v 1.22 2009/06/07 08:40:58 ajacoutot Exp $
 lib/bonobo/servers/GNOME_BattstatApplet.server
 @bin libexec/battstat-applet-2
 share/examples/gnome-applets2/
@@ -140,6 +140,6 @@ share/omf/battstat/battstat-pa.omf
 share/omf/battstat/battstat-pt_BR.omf
 share/omf/battstat/battstat-sv.omf
 share/omf/battstat/battstat-uk.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gnome-applets2/battstat.schemas > /dev/null
-share/schemas/gnome-applets2/battstat.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-applets2/battstat.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/battstat.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

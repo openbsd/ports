@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2009/06/07 08:40:59 ajacoutot Exp $
 
 COMMENT=		GNOME accessibility interface
 
 GNOME_PROJECT=		at-spi
 GNOME_VERSION=		1.24.1
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 
 SHARED_LIBS +=	spi                  0.0      # .10.11
 SHARED_LIBS +=	loginhelper          0.0      # .0.0
@@ -27,14 +27,16 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 
 MODULES=		devel/gettext \
 			lang/python \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
 LIB_DEPENDS=		bonobo-2.>=1,bonobo-activation.>=5::x11/gnome/libbonobo \
 			gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 USE_X11=		Yes
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/at-spi
+MODGCONF2_SCHEMAS_DIR=	at-spi
+
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 # not enabled in X.org
 CONFIGURE_ARGS+=	--disable-xevie
 

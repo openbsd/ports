@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/22 18:40:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/06/07 08:40:59 ajacoutot Exp $
 include/at-spi-1.0/
 include/at-spi-1.0/cspi/
 include/at-spi-1.0/cspi/spi-impl.h
@@ -370,8 +370,7 @@ share/locale/xh/LC_MESSAGES/at-spi.mo
 share/locale/zh_CN/LC_MESSAGES/at-spi.mo
 share/locale/zh_HK/LC_MESSAGES/at-spi.mo
 share/locale/zh_TW/LC_MESSAGES/at-spi.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/at-spi/*.schemas > /dev/null
-share/schemas/
-share/schemas/at-spi/
-share/schemas/at-spi/at-spi.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/at-spi/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/at-spi.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
