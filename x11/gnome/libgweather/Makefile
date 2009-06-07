@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/06/07 10:26:08 ajacoutot Exp $
 
 COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS +=	gweather             2.0      # .3.0
 CATEGORIES=		net
 
@@ -23,17 +23,16 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		pcre pixman-1 png tasn1 xml2 z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
-LIB_DEPENDS=		gconf-2::devel/gconf2 \
-			soup-2.4::devel/libsoup \
+LIB_DEPENDS=		soup-2.4::devel/libsoup \
 			dbus-glib-1::x11/dbus-glib
 
 USE_X11=		Yes
+MODGCONF2_SCHEMAS_DIR=	libgweather
 
-CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/libgweather \
-			--disable-schemas-install \
-			--with-zoneinfo-dir="/usr/share/zoneinfo"
+CONFIGURE_ARGS+=	--with-zoneinfo-dir="/usr/share/zoneinfo"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

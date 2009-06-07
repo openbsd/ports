@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2008/11/24 18:13:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2009/06/07 10:26:08 ajacoutot Exp $
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
 @bin bin/nautilus-connect-server
@@ -294,11 +294,10 @@ share/pixmaps/nautilus/erase.png
 share/pixmaps/nautilus/knob.png
 share/pixmaps/nautilus/note-indicator.png
 share/pixmaps/nautilus/thumbnail_frame.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/nautilus/*.schemas > /dev/null
-share/schemas/
-share/schemas/nautilus/
-share/schemas/nautilus/apps_nautilus_preferences.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/nautilus/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/apps_nautilus_preferences.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 %%SHARED%%
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

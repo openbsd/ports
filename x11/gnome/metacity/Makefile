@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2009/06/07 10:26:08 ajacoutot Exp $
 
 COMMENT=		lightweight window manager
 
 GNOME_PROJECT=		metacity
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS +=  metacity-private     0.0      # .0.0
 CATEGORIES=		x11
 
@@ -22,17 +22,17 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		png pthread z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
-LIB_DEPENDS=		gconf-2::devel/gconf2 \
-			startup-notification-1::devel/startup-notification \
+LIB_DEPENDS=		startup-notification-1::devel/startup-notification \
 			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
-CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/metacity \
-			--disable-schemas-install
+MODGCONF2_SCHEMAS_DIR=	metacity
+
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 

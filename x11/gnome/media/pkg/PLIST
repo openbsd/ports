@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/03/14 10:40:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/06/07 10:26:08 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-audio-profiles-properties
 @bin bin/gnome-sound-recorder
@@ -261,7 +261,6 @@ share/locale/xh/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gnome-media/*.schemas > /dev/null
 share/omf/gnome-sound-recorder/
 share/omf/gnome-sound-recorder/gnome-sound-recorder-C.omf
 share/omf/gnome-sound-recorder/gnome-sound-recorder-ca.omf
@@ -293,11 +292,12 @@ share/omf/gstreamer-properties/gstreamer-properties-it.omf
 share/omf/gstreamer-properties/gstreamer-properties-oc.omf
 share/omf/gstreamer-properties/gstreamer-properties-ru.omf
 share/omf/gstreamer-properties/gstreamer-properties-sv.omf
-share/schemas/gnome-media/
-share/schemas/gnome-media/gnome-audio-profiles.schemas
-share/schemas/gnome-media/gnome-sound-recorder.schemas
-share/schemas/gnome-media/gnome-volume-control.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-media/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gnome-audio-profiles.schemas
+${SCHEMAS_INSTDIR}/gnome-sound-recorder.schemas
+${SCHEMAS_INSTDIR}/gnome-volume-control.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

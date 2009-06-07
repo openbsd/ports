@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/03/14 10:40:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/06/07 10:26:08 ajacoutot Exp $
 @bin bin/gnome-database-properties-${API_VERSION}
 @bin bin/gnome-db-browser
 @bin bin/gnome-db-demo
@@ -389,9 +389,9 @@ share/pixmaps/libgnomedb-${API_VERSION}/gnome-db-types_16x16.png
 share/pixmaps/libgnomedb-${API_VERSION}/gnome-db-types_24x24.png
 share/pixmaps/libgnomedb-${API_VERSION}/gnome-db-views_16x16.png
 share/pixmaps/libgnomedb-${API_VERSION}/gnome-db-within-transaction_24x24.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/libgnomedb/*.schemas > /dev/null
-share/schemas/libgnomedb/
-share/schemas/libgnomedb/libgnomedb-${API_VERSION}.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/libgnomedb/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/libgnomedb-${API_VERSION}.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

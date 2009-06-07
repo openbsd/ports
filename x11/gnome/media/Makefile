@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2009/06/07 10:26:08 ajacoutot Exp $
 
 COMMENT=		GNOME media utilities
 
 GNOME_PROJECT=		gnome-media
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		${DISTNAME}p12
+PKGNAME=		${DISTNAME}p13
 
 SHARED_LIBS +=	gnome-media-profiles 0.0      # .0.0
 CATEGORIES=		x11
@@ -25,11 +25,11 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		popt pthread ssl util xml2 z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
 BUILD_DEPENDS=		::multimedia/gstreamer-0.10/plugins-good,-gconf
-LIB_DEPENDS=		gconf-2::devel/gconf2 \
-			bonoboui-2::x11/gnome/libbonoboui \
+LIB_DEPENDS=		bonoboui-2::x11/gnome/libbonoboui \
 			gnomevfs-2::x11/gnome/vfs2 \
 			gnomeui-2::x11/gnome/libgnomeui \
 			gstreamer-0.10,gstbase-0.10::multimedia/gstreamer-0.10/core \
@@ -39,9 +39,8 @@ LIB_DEPENDS=		gconf-2::devel/gconf2 \
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
-CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-media \
-			--disable-schemas-install \
-			--disable-esound
+MODGCONF2_SCHEMAS_DIR=	gnome-media
+CONFIGURE_ARGS+=	--disable-esound
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \

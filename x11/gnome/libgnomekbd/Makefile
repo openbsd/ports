@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2009/06/07 10:26:08 ajacoutot Exp $
 
 COMMENT=		keyboard configuration library
 
 GNOME_PROJECT=		libgnomekbd
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 SHARED_LIBS +=	gnomekbd             3.0      # .3.0
 SHARED_LIBS +=	gnomekbdui           3.0      # .3.0
@@ -25,17 +25,17 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		pcre pixman-1 png pthread xkbfile xml2 z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
 LIB_DEPENDS=		glade-2.0.>=0.8::devel/libglade2 \
-			gconf-2::devel/gconf2 \
 			xklavier.>=12.0::x11/gnome/libxklavier
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-schemas-install \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/libgnomekbd
+MODGCONF2_SCHEMAS_DIR=	libgnomekbd
+
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
