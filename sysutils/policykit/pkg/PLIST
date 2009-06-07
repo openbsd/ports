@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/07 02:53:06 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/07 08:11:39 ajacoutot Exp $
 %%SHARED%%
 @bin bin/polkit-action
 @bin bin/polkit-auth
@@ -35,7 +35,6 @@ lib/libpolkit-grant.a
 lib/libpolkit-grant.la
 lib/libpolkit.a
 lib/libpolkit.la
-lib/locale/
 lib/pkgconfig/
 lib/pkgconfig/polkit-dbus.pc
 lib/pkgconfig/polkit-grant.pc
@@ -43,19 +42,14 @@ lib/pkgconfig/polkit.pc
 @mode 2755
 libexec/polkit-explicit-grant-helper
 libexec/polkit-grant-helper
-@mode
 @mode 4750
 libexec/polkit-grant-helper-bsdauth
-@mode
 @mode 2755
 libexec/polkit-read-auth-helper
-@mode
 @mode 4755
 libexec/polkit-resolve-exe-helper
-@mode
 @mode 2755
 libexec/polkit-revoke-helper
-@mode
 @mode 4755
 libexec/polkit-set-default-helper
 @mode
@@ -153,4 +147,3 @@ var/lib/misc/
 var/lib/misc/PolicyKit.reload
 var/run/
 var/run/PolicyKit/
-@exec ${PREFIX}/bin/dbus-uuidgen --ensure
