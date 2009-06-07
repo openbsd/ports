@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2009/06/07 00:29:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.121 2009/06/07 09:03:29 landry Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -101,6 +101,7 @@
      SUBDIR += xd
      SUBDIR += xdelta
      SUBDIR += xgas
+     SUBDIR += xkcd-viewer
      SUBDIR += xless
      SUBDIR += xnc
      SUBDIR += xtar
