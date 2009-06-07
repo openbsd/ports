@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/03/14 10:40:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/06/07 09:06:20 ajacoutot Exp $
 lib/bonobo/servers/Deskbar_Applet.server
 lib/deskbar-applet/
 lib/deskbar-applet/deskbar-applet
@@ -492,7 +492,7 @@ share/omf/deskbar/deskbar-ru.omf
 share/omf/deskbar/deskbar-sv.omf
 share/omf/deskbar/deskbar-uk.omf
 share/omf/deskbar/deskbar-zh_CN.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/deskbar-applet/*.schemas > /dev/null
-share/schemas/deskbar-applet/
-share/schemas/deskbar-applet/deskbar-applet.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/deskbar-applet/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/deskbar-applet.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

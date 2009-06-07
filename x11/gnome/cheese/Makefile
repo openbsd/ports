@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/04/06 10:05:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/06/07 09:06:20 ajacoutot Exp $
 
 BROKEN= 	does not work after changes in the UVC layer
 
@@ -6,7 +6,7 @@ COMMENT=	PhotoBooth inspired application
 
 GNOME_PROJECT=	cheese
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 
 CATEGORIES=	multimedia
 
@@ -23,7 +23,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xrender art_lgpl_2 asn1 atk-1.0 \
 		bonobo-2 bonobo-activation bonoboui-2 bz2 c cairo \
 		com_err croco-0.6 crypto dbus-1 dbus-glib-1 \
-		expat fontconfig freetype gailutil gconf-2 gcrypt gdk-x11-2.0 \
+		expat fontconfig freetype gailutil gcrypt gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gnutls \
 		gobject-2.0 gpg-error gsf-1 gssapi gthread-2.0 gtk-x11-2.0 \
@@ -32,7 +32,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		ssl ssl3 tasn1 util xml2 z soup-2.4 sqlite3
 
 MODULES=	devel/gettext \
-		x11/gnome
+		x11/gnome \
+		devel/gconf2
 
 LIB_DEPENDS=	camel-1.2.>=11,ebook-1.2,edataserver-1.2,smime3,softokn3::databases/evolution-data-server \
 		rsvg-2.>=20::x11/gnome/librsvg \
@@ -46,14 +47,13 @@ RUN_DEPENDS=	:gstreamer-ogg-*:multimedia/gstreamer-0.10/plugins-base,-ogg \
 USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=Yes
+MODGCONF2_SCHEMAS_DIR= cheese
 
 FAKE_FLAGS=	schemadir=${LOCALBASE}/share/schemas/cheese
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-schemas-install \
-		--disable-scrollkeeper \
-		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/cheese
+		--disable-scrollkeeper
 
 .include <bsd.port.mk>

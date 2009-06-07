@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/12/04 14:28:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/06/07 09:06:20 ajacoutot Exp $
 @bin bin/devhelp
 include/devhelp-1.0/
 include/devhelp-1.0/devhelp/
@@ -109,11 +109,10 @@ share/locale/vi/LC_MESSAGES/devhelp.mo
 share/locale/zh_CN/LC_MESSAGES/devhelp.mo
 share/locale/zh_HK/LC_MESSAGES/devhelp.mo
 share/locale/zh_TW/LC_MESSAGES/devhelp.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/devhelp/*.schemas > /dev/null
-share/schemas/
-share/schemas/devhelp/
-share/schemas/devhelp/devhelp.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/devhelp/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/devhelp.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
