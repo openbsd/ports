@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/03/05 07:52:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/06/07 05:32:02 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gthumb
 lib/bonobo/
@@ -224,10 +224,10 @@ share/omf/gthumb/gthumb-de.omf
 share/omf/gthumb/gthumb-es.omf
 share/omf/gthumb/gthumb-fr.omf
 share/omf/gthumb/gthumb-sv.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gthumb/*.schemas > /dev/null
-share/schemas/gthumb/
-share/schemas/gthumb/gthumb.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gthumb/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gthumb.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/rarian-sk-update
 @unexec %D/bin/rarian-sk-update
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

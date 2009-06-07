@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/04/15 08:26:28 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2009/06/07 05:32:02 ajacoutot Exp $
 
 COMMENT=	gtk2 comic book viewer
 
 DISTNAME=	comix-4.0.3
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	graphics
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -15,14 +17,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=comix/}
 
-MODULES=	lang/python
+MODULES=	lang/python \
+		devel/gconf2
 PY_FLAVOR=	python${MODPY_VERSION}
+
+MODGCONF2_LIBDEP= No
+MODGCONF2_SCHEMAS_DIR= comix
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:py-Imaging-*-${PY_FLAVOR}:graphics/py-Imaging,${PY_FLAVOR} \
 		::x11/py-gtk2 \
 		::misc/shared-mime-info \
-		::devel/gconf2 \
 		:desktop-file-utils-*:devel/desktop-file-utils
 
 NO_REGRESS=	Yes
@@ -36,9 +41,9 @@ do-build:
 do-install:
 		cd ${WRKSRC} && ${MODPY_BIN} install.py --dir ${PREFIX} install
 		# schemas files are always installed under LOCALBASE, not PREFIX
-		${INSTALL_DATA_DIR} ${WRKINST}/${LOCALBASE}/share/schemas/comix/
+		${INSTALL_DATA_DIR} ${WRKINST}/${LOCALBASE}/${SCHEMAS_INSTDIR}/
 		${INSTALL_DATA} ${WRKSRC}/mime/comicbook.schemas \
-			${WRKINST}/${LOCALBASE}/share/schemas/comix/
+			${WRKINST}/${LOCALBASE}/${SCHEMAS_INSTDIR}/
 
 PKG_ARCH=	*
 

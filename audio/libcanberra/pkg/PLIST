@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/03/05 08:11:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/06/07 05:30:09 ajacoutot Exp $
 %%SHARED%%
 @bin bin/canberra-gtk-play
 include/canberra-gtk.h
@@ -42,8 +42,7 @@ share/gtk-doc/html/libcanberra/libcanberra.devhelp2
 share/gtk-doc/html/libcanberra/right.png
 share/gtk-doc/html/libcanberra/style.css
 share/gtk-doc/html/libcanberra/up.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/libcanberra/*.schemas > /dev/null
-share/schemas/
-share/schemas/libcanberra/
-share/schemas/libcanberra/libcanberra.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/libcanberra/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/libcanberra.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

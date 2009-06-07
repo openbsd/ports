@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/06/04 01:28:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/06/07 05:30:32 ajacoutot Exp $
 @bin bin/gmfsk
 share/gnome/help/gmfsk/
 share/gnome/help/gmfsk/C/
@@ -20,7 +20,7 @@ share/pixmaps/gmfsk/pause.xpm
 share/pixmaps/gmfsk/rx.xpm
 share/pixmaps/gmfsk/tune.xpm
 share/pixmaps/gmfsk/tx.xpm
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gmfsk/*.schemas > /dev/null
-share/schemas/gmfsk/
-share/schemas/gmfsk/gmfsk.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gmfsk/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gmfsk.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

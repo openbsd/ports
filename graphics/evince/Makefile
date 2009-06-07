@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2009/06/07 05:32:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,9 +11,9 @@ GNOME_VERSION=	2.24.2
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p6
-PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}p0
-PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}p0
+PKGNAME-main=	${DISTNAME}p7
+PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}p1
+PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}p1
 
 SHARED_LIBS=	evbackend	0.0 # .0.0
 
@@ -29,7 +29,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	devel/gettext \
-		x11/gnome
+		x11/gnome \
+		devel/gconf2
 
 BUILD_DEPENDS=	::x11/gnome/icon-theme
 
@@ -43,7 +44,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		pixman-1 png xml2 z
 
 WANTLIB-main=		${WANTLIB} ICE ORBit-2 SM c dbus-1 dbus-glib-1 \
-			gconf-2 gnome-keyring gs gthread-2.0 \
+			gnome-keyring gs gthread-2.0 \
 			jpeg pthread tiff
 LIB_DEPENDS-main=	poppler.>=3,poppler-glib.>=3::print/poppler \
 			spectre::print/libspectre \
@@ -70,6 +71,7 @@ RUN_DEPENDS-dvi=	# empty
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
+MODGCONF2_SCHEMAS_DIR=	evince
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
@@ -83,8 +85,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-scrollkeeper \
 		--enable-djvu \
 		--enable-dvi \
-		--enable-pixbuf \
-		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/evince/
+		--enable-pixbuf
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

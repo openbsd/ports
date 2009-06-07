@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/06/04 01:28:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2009/06/07 05:30:32 ajacoutot Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
 GNOME_PROJECT=	gmfsk
 GNOME_VERSION=	0.6
-PKGNAME=	${DISTNAME}p9
+PKGNAME=	${DISTNAME}p10
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://gmfsk.connect.fi/
@@ -23,17 +23,19 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
 WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo dbus-1
-WANTLIB += expat fontconfig freetype gconf-2 gio-2.0 glib-2.0
+WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png popt pthread stdc++ xml2
 WANTLIB += z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
 MODGNOME_HELP_FILES=	Yes
 USE_GMAKE=		No
+MODGCONF2_SCHEMAS_DIR=	gmfsk
 
 BUILD_DEPENDS=		::textproc/rarian
 LIB_DEPENDS=		fftw.>=2::math/fftw \
@@ -42,9 +44,7 @@ LIB_DEPENDS=		fftw.>=2::math/fftw \
 			gnomeui-2::x11/gnome/libgnomeui
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-hamlib \
-			--disable-schemas-install \
-			--with-gconf-schema-file-dir="${LOCALBASE}/share/schemas/gmfsk"
+CONFIGURE_ARGS=		--enable-hamlib
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

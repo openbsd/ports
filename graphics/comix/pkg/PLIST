@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/04/15 08:26:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/06/07 05:32:02 ajacoutot Exp $
 bin/comicthumb
 bin/comix
 @man man/man1/comicthumb.1
@@ -133,10 +133,9 @@ share/locale/sv/LC_MESSAGES/comix.mo
 share/locale/zh_CN/LC_MESSAGES/comix.mo
 share/locale/zh_TW/LC_MESSAGES/comix.mo
 share/mime/packages/comix.xml
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/comix/*.schemas > /dev/null
-share/schemas/
-share/schemas/comix/
-share/schemas/comix/comicbook.schemas
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/comicbook.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/comix/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

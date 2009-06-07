@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/06/03 19:04:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2009/06/07 05:30:09 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 lib/librhythmbox-core.la
@@ -626,10 +626,10 @@ share/rhythmbox/rhythmbox-ui.xml
 share/rhythmbox/song-info-multiple.ui
 share/rhythmbox/song-info.ui
 share/rhythmbox/uri-new.ui
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/rhythmbox/*.schemas > /dev/null
-share/schemas/rhythmbox/
-share/schemas/rhythmbox/rhythmbox.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/rhythmbox/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/rhythmbox.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2009/06/03 19:04:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2009/06/07 05:30:09 ajacoutot Exp $
 
 COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.12.2
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 CATEGORIES=		audio
@@ -25,7 +25,7 @@ WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0 avahi-client avahi-common
 WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 c
 WANTLIB += cairo com_err crypto dbus-1 dbus-glib-1 expat fontconfig
-WANTLIB += freetype gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
 WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gnutls gobject-2.0
 WANTLIB += gpg-error gssapi gstbase-0.10 gstcontroller-0.10 gstinterfaces-0.10
@@ -36,7 +36,8 @@ WANTLIB += soup-2.4 sqlite3 ssl ssl3 tasn1 util xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \
-			lang/python
+			lang/python \
+			devel/gconf2
 
 BUILD_DEPENDS=		:gstreamer-gnome->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-gnome \
 			::multimedia/gstreamer-0.10/py-gstreamer
@@ -62,11 +63,10 @@ REGRESS_DEPENDS=	::devel/check
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
+MODGCONF2_SCHEMAS_DIR=	rhythmbox
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/rhythmbox/ \
-			--disable-schemas-install \
 			--with-database=tree \
 			--with-gnome-keyring \
 			--with-mdns=avahi \

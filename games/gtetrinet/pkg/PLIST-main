@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/09/29 18:16:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/06/07 05:31:32 ajacoutot Exp $
 @bin bin/gtetrinet
 @man man/man6/gtetrinet.6
 share/applications/gtetrinet.desktop
@@ -78,10 +78,9 @@ share/pixmaps/gtetrinet/
 share/pixmaps/gtetrinet.png
 share/pixmaps/gtetrinet/alone.png
 share/pixmaps/gtetrinet/team.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gtetrinet/*.schemas > /dev/null
-share/schemas/
-share/schemas/gtetrinet/
-share/schemas/gtetrinet/gtetrinet.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gtetrinet/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gtetrinet.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
