@@ -1,4 +1,0 @@
-This package contains the basic libraries shared by the CMU Sphinx
-speech recognition trainer and decoders (Sphinx-II, Sphinx-III, and
-PocketSphinx), as well as some common utilities for manipulating
-acoustic feature and audio files.
