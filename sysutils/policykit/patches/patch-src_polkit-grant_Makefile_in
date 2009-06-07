@@ -1,0 +1,66 @@
+$OpenBSD: patch-src_polkit-grant_Makefile_in,v 1.1.1.1 2009/06/07 02:53:06 robert Exp $
+--- src/polkit-grant/Makefile.in.orig	Sat May 30 22:09:35 2009
++++ src/polkit-grant/Makefile.in	Sat May 30 22:09:38 2009
+@@ -43,6 +43,7 @@ host_triplet = @host@
+ @POLKIT_AUTHDB_DEFAULT_TRUE@	polkit-revoke-helper$(EXEEXT)
+ @POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_PAM_TRUE@am__append_3 = polkit-grant-helper-pam
+ @POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_SHADOW_TRUE@am__append_4 = polkit-grant-helper-shadow
++@POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_BSDAUTH_TRUE@am__append_4 = polkit-grant-helper-bsdauth
+ @KIT_BUILD_TESTS_TRUE@TESTS = polkit-grant-test$(EXEEXT)
+ @KIT_BUILD_TESTS_TRUE@check_PROGRAMS = $(am__EXEEXT_1)
+ subdir = src/polkit-grant
+@@ -83,6 +84,7 @@ libpolkit_grant_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIB
+ @KIT_BUILD_TESTS_TRUE@am__EXEEXT_1 = polkit-grant-test$(EXEEXT)
+ @POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_PAM_TRUE@am__EXEEXT_2 = polkit-grant-helper-pam$(EXEEXT)
+ @POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_SHADOW_TRUE@am__EXEEXT_3 = polkit-grant-helper-shadow$(EXEEXT)
++@POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_BSDAUTH_TRUE@am__EXEEXT_3 = polkit-grant-helper-bsdauth$(EXEEXT)
+ libexecPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(libexec_PROGRAMS)
+ am__polkit_explicit_grant_helper_SOURCES_DIST =  \
+@@ -120,6 +122,12 @@ am__polkit_grant_helper_shadow_SOURCES_DIST =  \
+ polkit_grant_helper_shadow_OBJECTS =  \
+ 	$(am_polkit_grant_helper_shadow_OBJECTS)
+ polkit_grant_helper_shadow_DEPENDENCIES =
++am__polkit_grant_helper_bsdauth_SOURCES_DIST =  \
++	polkit-grant-helper-bsdauth.c
++@POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_BSDAUTH_TRUE@am_polkit_grant_helper_bsdauth_OBJECTS = polkit-grant-helper-bsdauth.$(OBJEXT)
++polkit_grant_helper_bsdauth_OBJECTS =  \
++	$(am_polkit_grant_helper_bsdauth_OBJECTS)
++polkit_grant_helper_bsdauth_DEPENDENCIES =
+ am__polkit_grant_test_SOURCES_DIST = polkit-grant-test.h \
+ 	polkit-grant-test.c
+ @KIT_BUILD_TESTS_TRUE@am_polkit_grant_test_OBJECTS =  \
+@@ -380,6 +388,8 @@ libpolkit_grant_la_LIBADD = @GLIB_LIBS@ @DBUS_LIBS@ $(
+ @POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_PAM_TRUE@polkit_grant_helper_pam_LDADD = @AUTH_LIBS@ $(top_builddir)/src/kit/libkit.la $(top_builddir)/src/polkit/libpolkit.la
+ @POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_SHADOW_TRUE@polkit_grant_helper_shadow_SOURCES = polkit-grant-helper-shadow.c
+ @POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_SHADOW_TRUE@polkit_grant_helper_shadow_LDADD = @AUTH_LIBS@
++@POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_BSDAUTH_TRUE@polkit_grant_helper_bsdauth_SOURCES = polkit-grant-helper-bsdauth.c
++@POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_BSDAUTH_TRUE@polkit_grant_helper_bsdauth_LDADD = @AUTH_LIBS@
+ @POLKIT_AUTHDB_DEFAULT_TRUE@polkit_explicit_grant_helper_SOURCES = polkit-explicit-grant-helper.c
+ @POLKIT_AUTHDB_DEFAULT_TRUE@polkit_explicit_grant_helper_CFLAGS = @DBUS_CFLAGS@
+ @POLKIT_AUTHDB_DEFAULT_TRUE@polkit_explicit_grant_helper_LDADD = $(top_builddir)/src/kit/libkit.la $(top_builddir)/src/polkit/libpolkit.la $(top_builddir)/src/polkit-dbus/libpolkit-dbus.la libpolkit-grant.la
+@@ -884,6 +894,8 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-libex
+ @POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_PAM_TRUE@	-chmod 4754 $(DESTDIR)$(libexecdir)/polkit-grant-helper-pam
+ @POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_SHADOW_TRUE@	-chgrp $(POLKIT_GROUP) $(DESTDIR)$(libexecdir)/polkit-grant-helper-shadow
+ @POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_SHADOW_TRUE@	-chmod 4750 $(DESTDIR)$(libexecdir)/polkit-grant-helper-shadow
++@POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_BSDAUTH_TRUE@	-chgrp $(POLKIT_GROUP) $(DESTDIR)$(libexecdir)/polkit-grant-helper-bsdauth
++@POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_BSDAUTH_TRUE@	-chmod 4750 $(DESTDIR)$(libexecdir)/polkit-grant-helper-bsdauth
+ @POLKIT_AUTHDB_DEFAULT_TRUE@	-chgrp $(POLKIT_GROUP) $(DESTDIR)$(libexecdir)/polkit-explicit-grant-helper
+ @POLKIT_AUTHDB_DEFAULT_TRUE@	-chmod 2755 $(DESTDIR)$(libexecdir)/polkit-explicit-grant-helper
+ @POLKIT_AUTHDB_DEFAULT_TRUE@	-chgrp $(POLKIT_GROUP) $(DESTDIR)$(libexecdir)/polkit-revoke-helper
+@@ -900,6 +912,7 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-libex
+ @KIT_BUILD_TESTS_TRUE@@KIT_GCOV_ENABLED_TRUE@@POLKIT_AUTHDB_DEFAULT_TRUE@	echo src/polkit-grant/polkit-grant-helper.c >> covered-files.txt
+ @KIT_BUILD_TESTS_TRUE@@KIT_GCOV_ENABLED_TRUE@@POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_PAM_TRUE@	echo src/polkit-grant/polkit-grant-helper-pam.c >> covered-files.txt
+ @KIT_BUILD_TESTS_TRUE@@KIT_GCOV_ENABLED_TRUE@@POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_SHADOW_TRUE@	echo src/polkit-grant/polkit-grant-helper-shadow.c >> covered-files.txt
++@KIT_BUILD_TESTS_TRUE@@KIT_GCOV_ENABLED_TRUE@@POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_BSDAUTH_TRUE@	echo src/polkit-grant/polkit-grant-helper-bsdauth.c >> covered-files.txt
+ @KIT_BUILD_TESTS_TRUE@@KIT_GCOV_ENABLED_TRUE@@POLKIT_AUTHDB_DEFAULT_TRUE@	echo src/polkit-grant/polkit-revoke-helper.c >> covered-files.txt
+ 
+ @KIT_BUILD_TESTS_TRUE@@KIT_GCOV_ENABLED_TRUE@coverage-report.txt : covered-files.txt clean-gcov all check 
+@@ -908,6 +921,7 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-libex
+ @KIT_BUILD_TESTS_TRUE@@KIT_GCOV_ENABLED_TRUE@@POLKIT_AUTHDB_DEFAULT_TRUE@	gcov polkit-grant-helper.c -o .libs/ > /dev/null
+ @KIT_BUILD_TESTS_TRUE@@KIT_GCOV_ENABLED_TRUE@@POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_PAM_TRUE@	gcov polkit-grant-helper-pam.c -o .libs/ > /dev/null
+ @KIT_BUILD_TESTS_TRUE@@KIT_GCOV_ENABLED_TRUE@@POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_SHADOW_TRUE@	gcov polkit-grant-helper-shadow.c -o .libs/ > /dev/null
++@KIT_BUILD_TESTS_TRUE@@KIT_GCOV_ENABLED_TRUE@@POLKIT_AUTHDB_DEFAULT_TRUE@@POLKIT_AUTHFW_BSDAUTH_TRUE@	gcov polkit-grant-helper-bsdauth.c -o .libs/ > /dev/null
+ @KIT_BUILD_TESTS_TRUE@@KIT_GCOV_ENABLED_TRUE@@POLKIT_AUTHDB_DEFAULT_TRUE@	gcov polkit-revoke-helper.c -o .libs/ > /dev/null
+ @KIT_BUILD_TESTS_TRUE@@KIT_GCOV_ENABLED_TRUE@	$(top_srcdir)/test/create-coverage-report.sh "module polkit-grant" `cat covered-files.txt` > coverage-report.txt
+ 

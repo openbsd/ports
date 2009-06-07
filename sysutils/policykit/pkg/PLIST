@@ -1,0 +1,156 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/07 02:53:06 robert Exp $
+%%SHARED%%
+@bin bin/polkit-action
+@bin bin/polkit-auth
+@bin bin/polkit-config-file-validate
+@bin bin/polkit-policy-file-validate
+include/PolicyKit/
+include/PolicyKit/polkit/
+include/PolicyKit/polkit-dbus/
+include/PolicyKit/polkit-dbus/polkit-dbus.h
+include/PolicyKit/polkit-dbus/polkit-simple.h
+include/PolicyKit/polkit-grant/
+include/PolicyKit/polkit-grant/polkit-grant.h
+include/PolicyKit/polkit/polkit-action.h
+include/PolicyKit/polkit/polkit-authorization-constraint.h
+include/PolicyKit/polkit/polkit-authorization-db.h
+include/PolicyKit/polkit/polkit-authorization.h
+include/PolicyKit/polkit/polkit-caller.h
+include/PolicyKit/polkit/polkit-config.h
+include/PolicyKit/polkit/polkit-context.h
+include/PolicyKit/polkit/polkit-error.h
+include/PolicyKit/polkit/polkit-policy-cache.h
+include/PolicyKit/polkit/polkit-policy-default.h
+include/PolicyKit/polkit/polkit-policy-file-entry.h
+include/PolicyKit/polkit/polkit-policy-file.h
+include/PolicyKit/polkit/polkit-result.h
+include/PolicyKit/polkit/polkit-seat.h
+include/PolicyKit/polkit/polkit-session.h
+include/PolicyKit/polkit/polkit-sysdeps.h
+include/PolicyKit/polkit/polkit-types.h
+include/PolicyKit/polkit/polkit.h
+lib/libpolkit-dbus.a
+lib/libpolkit-dbus.la
+lib/libpolkit-grant.a
+lib/libpolkit-grant.la
+lib/libpolkit.a
+lib/libpolkit.la
+lib/locale/
+lib/pkgconfig/
+lib/pkgconfig/polkit-dbus.pc
+lib/pkgconfig/polkit-grant.pc
+lib/pkgconfig/polkit.pc
+@mode 2755
+libexec/polkit-explicit-grant-helper
+libexec/polkit-grant-helper
+@mode
+@mode 4750
+libexec/polkit-grant-helper-bsdauth
+@mode
+@mode 2755
+libexec/polkit-read-auth-helper
+@mode
+@mode 4755
+libexec/polkit-resolve-exe-helper
+@mode
+@mode 2755
+libexec/polkit-revoke-helper
+@mode
+@mode 4755
+libexec/polkit-set-default-helper
+@mode
+@bin libexec/polkitd
+@man man/man1/polkit-action.1
+@man man/man1/polkit-auth.1
+@man man/man1/polkit-config-file-validate.1
+@man man/man1/polkit-policy-file-validate.1
+@man man/man5/PolicyKit.conf.5
+@man man/man8/PolicyKit.8
+share/PolicyKit/
+share/PolicyKit/config.dtd
+share/PolicyKit/policy/
+share/PolicyKit/policy/org.freedesktop.policykit.policy
+share/dbus-1/
+share/dbus-1/interfaces/
+share/dbus-1/interfaces/org.freedesktop.PolicyKit.AuthenticationAgent.xml
+share/dbus-1/system-services/
+share/dbus-1/system-services/org.freedesktop.PolicyKit.service
+share/examples/policykit/
+share/examples/policykit/PolicyKit/
+@sample ${SYSCONFDIR}/PolicyKit/
+share/examples/policykit/PolicyKit/PolicyKit.conf
+@sample ${SYSCONFDIR}/PolicyKit/PolicyKit.conf
+share/examples/policykit/dbus-1/
+@sample ${SYSCONFDIR}/dbus-1/
+share/examples/policykit/dbus-1/system.d/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
+share/examples/policykit/dbus-1/system.d/org.freedesktop.PolicyKit.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.PolicyKit.conf
+share/examples/policykit/profile.d/
+share/examples/policykit/profile.d/polkit-bash-completion.sh
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/polkit/
+share/gtk-doc/html/polkit/PolicyKit.8.html
+share/gtk-doc/html/polkit/PolicyKit.conf.5.html
+share/gtk-doc/html/polkit/beyond-defaults.html
+share/gtk-doc/html/polkit/diagram-bus-model.png
+share/gtk-doc/html/polkit/diagram-interaction.png
+share/gtk-doc/html/polkit/home.png
+share/gtk-doc/html/polkit/index.html
+share/gtk-doc/html/polkit/index.sgml
+share/gtk-doc/html/polkit/intro-define-problem.html
+share/gtk-doc/html/polkit/introduction.html
+share/gtk-doc/html/polkit/ix01.html
+share/gtk-doc/html/polkit/ix02.html
+share/gtk-doc/html/polkit/ix03.html
+share/gtk-doc/html/polkit/ix04.html
+share/gtk-doc/html/polkit/left.png
+share/gtk-doc/html/polkit/license.html
+share/gtk-doc/html/polkit/model-authentication-agent.html
+share/gtk-doc/html/polkit/model-concepts.html
+share/gtk-doc/html/polkit/model-theory-of-operation.html
+share/gtk-doc/html/polkit/model.html
+share/gtk-doc/html/polkit/polkit-action.1.html
+share/gtk-doc/html/polkit/polkit-auth.1.html
+share/gtk-doc/html/polkit/polkit-conf.html
+share/gtk-doc/html/polkit/polkit-config-file-validate.1.html
+share/gtk-doc/html/polkit/polkit-policy-file-validate.1.html
+share/gtk-doc/html/polkit/polkit-polkit-action.html
+share/gtk-doc/html/polkit/polkit-polkit-authorization-constraint.html
+share/gtk-doc/html/polkit/polkit-polkit-authorization-db.html
+share/gtk-doc/html/polkit/polkit-polkit-authorization.html
+share/gtk-doc/html/polkit/polkit-polkit-caller.html
+share/gtk-doc/html/polkit/polkit-polkit-config.html
+share/gtk-doc/html/polkit/polkit-polkit-context.html
+share/gtk-doc/html/polkit/polkit-polkit-dbus.html
+share/gtk-doc/html/polkit/polkit-polkit-error.html
+share/gtk-doc/html/polkit/polkit-polkit-grant.html
+share/gtk-doc/html/polkit/polkit-polkit-policy-cache.html
+share/gtk-doc/html/polkit/polkit-polkit-policy-default.html
+share/gtk-doc/html/polkit/polkit-polkit-policy-file-entry.html
+share/gtk-doc/html/polkit/polkit-polkit-policy-file.html
+share/gtk-doc/html/polkit/polkit-polkit-result.html
+share/gtk-doc/html/polkit/polkit-polkit-seat.html
+share/gtk-doc/html/polkit/polkit-polkit-session.html
+share/gtk-doc/html/polkit/polkit-polkit-simple.html
+share/gtk-doc/html/polkit/polkit-polkit-sysdeps.html
+share/gtk-doc/html/polkit/polkit-polkit-types.html
+share/gtk-doc/html/polkit/polkit-spec-history.html
+share/gtk-doc/html/polkit/polkit.devhelp
+share/gtk-doc/html/polkit/polkit.devhelp2
+share/gtk-doc/html/polkit/ref-core.html
+share/gtk-doc/html/polkit/ref-design.html
+share/gtk-doc/html/polkit/right.png
+share/gtk-doc/html/polkit/style.css
+share/gtk-doc/html/polkit/tools-fileformats.html
+share/gtk-doc/html/polkit/up.png
+var/
+var/lib/
+var/lib/PolicyKit/
+var/lib/PolicyKit-public/
+var/lib/misc/
+var/lib/misc/PolicyKit.reload
+var/run/
+var/run/PolicyKit/
+@exec ${PREFIX}/bin/dbus-uuidgen --ensure

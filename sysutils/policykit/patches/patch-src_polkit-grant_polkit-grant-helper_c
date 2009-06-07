@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_polkit-grant_polkit-grant-helper_c,v 1.1.1.1 2009/06/07 02:53:06 robert Exp $
+--- src/polkit-grant/polkit-grant-helper.c.orig	Sat May 30 21:02:40 2009
++++ src/polkit-grant/polkit-grant-helper.c	Sat May 30 21:03:09 2009
+@@ -183,6 +183,9 @@ do_auth (const char *user_to_auth, gboolean *empty_con
+ #ifdef POLKIT_AUTHFW_SHADOW
+         char *helper_argv[2] = {PACKAGE_LIBEXEC_DIR "/polkit-grant-helper-shadow", NULL};
+ #endif
++#ifdef POLKIT_AUTHFW_BSDAUTH
++        char *helper_argv[2] = {PACKAGE_LIBEXEC_DIR "/polkit-grant-helper-bsdauth", NULL};
++#endif
+         char buf[256];
+         FILE *child_stdin;
+         FILE *child_stdout;

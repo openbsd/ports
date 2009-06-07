@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_polkit-dbus_polkit-resolve-exe-helper_c,v 1.1.1.1 2009/06/07 02:53:06 robert Exp $
+--- src/polkit-dbus/polkit-resolve-exe-helper.c.orig	Sat May 30 20:39:36 2009
++++ src/polkit-dbus/polkit-resolve-exe-helper.c	Sat May 30 20:45:04 2009
+@@ -43,7 +43,9 @@
+ #ifdef HAVE_FREEBSD
+ #include <sys/param.h>
+ #endif
++#ifndef HAVE_OPENBSD
+ #include <security/pam_appl.h>
++#endif
+ #include <grp.h>
+ #include <pwd.h>
+ #include <syslog.h>
+@@ -56,7 +58,7 @@
+ #include <polkit-dbus/polkit-dbus.h>
+ #include <polkit/polkit-private.h>
+ 
+-#ifdef HAVE_SOLARIS
++#if defined(HAVE_SOLARIS) || defined(HAVE_OPENBSD)
+ #define LOG_AUTHPRIV	(10<<3)
+ #define PATH_MAX	1024
+ #endif

@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_polkit-auth_c,v 1.1.1.1 2009/06/07 02:53:06 robert Exp $
+--- tools/polkit-auth.c.orig	Sat May 30 21:54:41 2009
++++ tools/polkit-auth.c	Sat May 30 21:54:51 2009
+@@ -37,7 +37,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <sys/types.h>
+-#if defined(HAVE_SOLARIS) || defined(HAVE_FREEBSD)
++#if defined(HAVE_SOLARIS) || defined(HAVE_FREEBSD) || defined(HAVE_OPENBSD)
+ #include <sys/wait.h>
+ #endif
+ #include <pwd.h>

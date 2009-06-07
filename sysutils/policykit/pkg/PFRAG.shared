@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/06/07 02:53:06 robert Exp $
+@lib lib/libpolkit-dbus.so.${LIBpolkit-dbus_VERSION}
+@lib lib/libpolkit-grant.so.${LIBpolkit-grant_VERSION}
+@lib lib/libpolkit.so.${LIBpolkit_VERSION}
