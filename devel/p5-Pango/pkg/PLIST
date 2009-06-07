@@ -1,0 +1,121 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/07 08:45:52 landry Exp $
+@conflict p5-Gtk2-<1.220
+${P5ARCH}/Pango/
+${P5ARCH}/Pango.pm
+${P5ARCH}/Pango/AttrBackground.pod
+${P5ARCH}/Pango/AttrColor.pod
+${P5ARCH}/Pango/AttrFallback.pod
+${P5ARCH}/Pango/AttrFamily.pod
+${P5ARCH}/Pango/AttrFontDesc.pod
+${P5ARCH}/Pango/AttrForeground.pod
+${P5ARCH}/Pango/AttrGravity.pod
+${P5ARCH}/Pango/AttrGravityHint.pod
+${P5ARCH}/Pango/AttrInt.pod
+${P5ARCH}/Pango/AttrIterator.pod
+${P5ARCH}/Pango/AttrLanguage.pod
+${P5ARCH}/Pango/AttrLetterSpacing.pod
+${P5ARCH}/Pango/AttrList.pod
+${P5ARCH}/Pango/AttrRise.pod
+${P5ARCH}/Pango/AttrScale.pod
+${P5ARCH}/Pango/AttrShape.pod
+${P5ARCH}/Pango/AttrSize.pod
+${P5ARCH}/Pango/AttrStretch.pod
+${P5ARCH}/Pango/AttrStrikethrough.pod
+${P5ARCH}/Pango/AttrStrikethroughColor.pod
+${P5ARCH}/Pango/AttrString.pod
+${P5ARCH}/Pango/AttrStyle.pod
+${P5ARCH}/Pango/AttrUnderline.pod
+${P5ARCH}/Pango/AttrUnderlineColor.pod
+${P5ARCH}/Pango/AttrVariant.pod
+${P5ARCH}/Pango/AttrWeight.pod
+${P5ARCH}/Pango/Attribute.pod
+${P5ARCH}/Pango/Cairo/
+${P5ARCH}/Pango/Cairo.pod
+${P5ARCH}/Pango/Cairo/Context.pod
+${P5ARCH}/Pango/Cairo/Font.pod
+${P5ARCH}/Pango/Cairo/FontMap.pod
+${P5ARCH}/Pango/Color.pod
+${P5ARCH}/Pango/Context.pod
+${P5ARCH}/Pango/Font.pod
+${P5ARCH}/Pango/FontDescription.pod
+${P5ARCH}/Pango/FontFace.pod
+${P5ARCH}/Pango/FontFamily.pod
+${P5ARCH}/Pango/FontMap.pod
+${P5ARCH}/Pango/FontMetrics.pod
+${P5ARCH}/Pango/Fontset.pod
+${P5ARCH}/Pango/Gravity.pod
+${P5ARCH}/Pango/Install/
+${P5ARCH}/Pango/Install/Files.pm
+${P5ARCH}/Pango/Install/doctypes
+${P5ARCH}/Pango/Install/pango-perl-autogen.h
+${P5ARCH}/Pango/Install/pango-perl-versions.h
+${P5ARCH}/Pango/Install/pango-perl.h
+${P5ARCH}/Pango/Install/pango-perl.typemap
+${P5ARCH}/Pango/Install/pango.typemap
+${P5ARCH}/Pango/Language.pod
+${P5ARCH}/Pango/Layout.pod
+${P5ARCH}/Pango/LayoutIter.pod
+${P5ARCH}/Pango/LayoutLine.pod
+${P5ARCH}/Pango/Matrix.pod
+${P5ARCH}/Pango/Renderer.pod
+${P5ARCH}/Pango/Script.pod
+${P5ARCH}/Pango/ScriptIter.pod
+${P5ARCH}/Pango/TabArray.pod
+${P5ARCH}/Pango/index.pod
+${P5ARCH}/Pango/version.pod
+${P5ARCH}/auto/Pango/
+${P5ARCH}/auto/Pango/Pango.bs
+${P5ARCH}/auto/Pango/Pango.so
+@man man/man3p/Pango.3p
+@man man/man3p/Pango::AttrBackground.3p
+@man man/man3p/Pango::AttrColor.3p
+@man man/man3p/Pango::AttrFallback.3p
+@man man/man3p/Pango::AttrFamily.3p
+@man man/man3p/Pango::AttrFontDesc.3p
+@man man/man3p/Pango::AttrForeground.3p
+@man man/man3p/Pango::AttrGravity.3p
+@man man/man3p/Pango::AttrGravityHint.3p
+@man man/man3p/Pango::AttrInt.3p
+@man man/man3p/Pango::AttrIterator.3p
+@man man/man3p/Pango::AttrLanguage.3p
+@man man/man3p/Pango::AttrLetterSpacing.3p
+@man man/man3p/Pango::AttrList.3p
+@man man/man3p/Pango::AttrRise.3p
+@man man/man3p/Pango::AttrScale.3p
+@man man/man3p/Pango::AttrShape.3p
+@man man/man3p/Pango::AttrSize.3p
+@man man/man3p/Pango::AttrStretch.3p
+@man man/man3p/Pango::AttrStrikethrough.3p
+@man man/man3p/Pango::AttrStrikethroughColor.3p
+@man man/man3p/Pango::AttrString.3p
+@man man/man3p/Pango::AttrStyle.3p
+@man man/man3p/Pango::AttrUnderline.3p
+@man man/man3p/Pango::AttrUnderlineColor.3p
+@man man/man3p/Pango::AttrVariant.3p
+@man man/man3p/Pango::AttrWeight.3p
+@man man/man3p/Pango::Attribute.3p
+@man man/man3p/Pango::Cairo.3p
+@man man/man3p/Pango::Cairo::Context.3p
+@man man/man3p/Pango::Cairo::Font.3p
+@man man/man3p/Pango::Cairo::FontMap.3p
+@man man/man3p/Pango::Color.3p
+@man man/man3p/Pango::Context.3p
+@man man/man3p/Pango::Font.3p
+@man man/man3p/Pango::FontDescription.3p
+@man man/man3p/Pango::FontFace.3p
+@man man/man3p/Pango::FontFamily.3p
+@man man/man3p/Pango::FontMap.3p
+@man man/man3p/Pango::FontMetrics.3p
+@man man/man3p/Pango::Fontset.3p
+@man man/man3p/Pango::Gravity.3p
+@man man/man3p/Pango::Language.3p
+@man man/man3p/Pango::Layout.3p
+@man man/man3p/Pango::LayoutIter.3p
+@man man/man3p/Pango::LayoutLine.3p
+@man man/man3p/Pango::Matrix.3p
+@man man/man3p/Pango::Renderer.3p
+@man man/man3p/Pango::Script.3p
+@man man/man3p/Pango::ScriptIter.3p
+@man man/man3p/Pango::TabArray.3p
+@man man/man3p/Pango::index.3p
+@man man/man3p/Pango::version.3p

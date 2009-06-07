@@ -1,0 +1,5 @@
+Pango is a library for laying out and rendering text, with an emphasis
+on internationalization. Pango can be used anywhere that text layout is
+needed, but using Pango in conjunction with Cairo and/or Gtk2 provides a
+complete solution with high quality text handling and graphics rendering.
+This package contains the Perl bindings for Pango.
