@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.705 2009/06/05 22:14:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.706 2009/06/07 00:14:23 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -179,7 +179,6 @@
      SUBDIR += libvstr
      SUBDIR += libwnck
      SUBDIR += libyaml
-     SUBDIR += lincvs
      SUBDIR += llvm
      SUBDIR += lpeg
      SUBDIR += luaalarm
