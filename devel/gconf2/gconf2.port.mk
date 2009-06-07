@@ -1,0 +1,21 @@
+# $OpenBSD: gconf2.port.mk,v 1.1 2009/06/07 05:27:58 ajacoutot Exp $
+
+MODGCONF2_LIB_DEPENDS=	gconf-2::devel/gconf2
+MODGCONF2_BUILD_DEPENDS=:gconf2-*:devel/gconf2
+MODGCONF2_RUN_DEPENDS=	:gconf2-*:devel/gconf2
+
+MODGCONF2_LIBDEP?=	Yes
+
+.if ${MODGCONF2_LIBDEP:L} == "yes"
+LIB_DEPENDS+=	${MODGCONF2_LIB_DEPENDS}
+.else
+BUILD_DEPENDS+=	${MODGCONF2_BUILD_DEPENDS}
+RUN_DEPENDS+=	${MODGCONF2_RUN_DEPENDS}
+.endif
+
+.if defined(MODGCONF2_SCHEMAS_DIR)
+SCHEMAS_INSTDIR=share/schemas/${MODGCONF2_SCHEMAS_DIR:L}
+SUBST_VARS+=	SCHEMAS_INSTDIR
+CONFIGURE_ARGS+=--disable-schemas-install \
+		--with-gconf-schema-file-dir=${LOCALBASE}/${SCHEMAS_INSTDIR}
+.endif
