@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/07 08:18:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/07 08:20:07 ajacoutot Exp $
 
 # XXX
 BROKEN=		WIP: does not work yet
@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tar.bz2
 SHARED_LIBS+=	polkit-gnome	0.0	# .0.0
 
 HOMEPAGE=	http://hal.freedesktop.org/docs/PolicyKit-gnome/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+ - LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
