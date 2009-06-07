@@ -1,5 +1,0 @@
-CD-Rchive is a Qt-based graphical CD creation tool.  It uses cdrecord,
-mkisofs and cdda2wav, and has the ability to make data and audio CDs.
-CD-Rchive also supports recording data and audio CDs "on the fly", and
-mounting ISO images using vnconfig to check that the image is as it
-should be.  CD-Rchive can be used to make bootable "El Torito" CDs. 
