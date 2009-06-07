@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_reports_Makefile_in,v 1.1 2009/06/07 00:08:32 jasper Exp $
+--- plugins/reports/Makefile.in.orig	Fri Jun  5 14:57:07 2009
++++ plugins/reports/Makefile.in	Fri Jun  5 14:58:18 2009
+@@ -335,7 +335,7 @@ target_alias = @target_alias@
+ @PGPH_TRUE@libtbal_la_SOURCES = tbalreport.cpp 
+ @PGPH_TRUE@libshares_la_SOURCES = sharesreport.cpp 
+ @PGPH_TRUE@RELEASE = 1:0:0
+-@PGPH_TRUE@ALLADDS = -l$(QHACCQT) -lqhaccutils -ltemp
++@PGPH_TRUE@ALLADDS = -l$(QHACCQT) -lqhaccutils  -Wl,reporter.o
+ @PGPH_TRUE@libpayee_la_LIBADD = $(ALLADDS)
+ @PGPH_TRUE@libprofitloss_la_LIBADD = $(ALLADDS)
+ @PGPH_TRUE@libbalances_la_LIBADD = $(ALLADDS)

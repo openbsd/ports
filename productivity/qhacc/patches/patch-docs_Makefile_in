@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_Makefile_in,v 1.1 2009/06/07 00:08:32 jasper Exp $
+--- docs/Makefile.in.orig	Tue Jun  2 11:30:32 2009
++++ docs/Makefile.in	Tue Jun  2 11:38:58 2009
+@@ -208,7 +208,7 @@ html_DATA = index.html intro.html formats.html using.h
+ 			faq.html compiling.html advanced.html plugins.html
+ 
+ EXTRA_DIST = $(html_DATA) uml.xmi
+-htmldir = $(datadir)/doc/html
++htmldir = $(datadir)/qhacc/doc/html
+ all: all-am
+ 
+ .SUFFIXES:

@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_qhacc_cpp,v 1.1 2009/06/07 00:08:32 jasper Exp $
+--- lib/qhacc.cpp.orig	Tue Jun  2 11:39:13 2009
++++ lib/qhacc.cpp	Tue Jun  2 11:39:29 2009
+@@ -55,7 +55,7 @@
+ #include "localfileplugin.h"
+ #include "qhacc.moc"
+ 
+-#include <math.h>
++#include <cmath>
+ 
+ //const int QHacc::ROLLOVER=( int )std::pow( ( double )10, QC::DECIMALS );
+ const int QHacc::ROLLOVER=100;

@@ -1,0 +1,28 @@
+$OpenBSD: patch-qm_Makefile_in,v 1.1 2009/06/07 00:08:32 jasper Exp $
+--- qm/Makefile.in.orig	Tue Jun  2 11:45:59 2009
++++ qm/Makefile.in	Tue Jun  2 11:46:48 2009
+@@ -250,12 +250,12 @@ distclean-libtool:
+ uninstall-info-am:
+ install-dataDATA: $(data_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(datadir)"
++	test -z "$(pkgdatadir)" || $(mkdir_p) "$(DESTDIR)$(pkgdatadir)"
+ 	@list='$(data_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(datadir)/$$f'"; \
+-	  $(dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(datadir)/$$f"; \
++	  echo " $(dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgdatadir)/$$f'"; \
++	  $(dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgdatadir)/$$f"; \
+ 	done
+ 
+ uninstall-dataDATA:
+@@ -303,7 +303,7 @@ check-am: all-am
+ check: check-am
+ all-am: Makefile $(DATA)
+ installdirs:
+-	for dir in "$(DESTDIR)$(datadir)"; do \
++	for dir in "$(DESTDIR)$(pkgdatadir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+ install: install-am

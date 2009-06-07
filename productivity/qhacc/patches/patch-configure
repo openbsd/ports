@@ -1,21 +1,65 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2000/10/02 09:06:23 espie Exp $
---- configure.orig	Sun Sep 24 17:21:54 2000
-+++ configure	Sun Sep 24 17:22:56 2000
-@@ -1181,7 +1181,7 @@ fi
+$OpenBSD: patch-configure,v 1.2 2009/06/07 00:08:32 jasper Exp $
+--- configure.orig	Mon May 30 19:08:34 2005
++++ configure	Tue Jun  2 12:10:32 2009
+@@ -20564,13 +20564,13 @@ if test "${enable_mt+set}" = set; then
+ 											 else
+ 												 QHACCQT=qt-mt
+ 
+-echo "$as_me:$LINENO: checking for main in -lpthread" >&5
+-echo $ECHO_N "checking for main in -lpthread... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for main in -pthread" >&5
++echo $ECHO_N "checking for main in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_main+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -20626,7 +20626,7 @@ if test $ac_cv_lib_pthread_main = yes; then
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ fi
+ 
+@@ -20636,13 +20636,13 @@ fi
+ else
  
  
+-echo "$as_me:$LINENO: checking for main in -lpthread" >&5
+-echo $ECHO_N "checking for main in -lpthread... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for main in -pthread" >&5
++echo $ECHO_N "checking for main in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_main+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -20698,7 +20698,7 @@ if test $ac_cv_lib_pthread_main = yes; then
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
  
--qtdirs="/usr/local/qt /usr/qt /opt/qt /usr/local/qt2"
-+qtdirs="$QTDIR /usr/local/qt /usr/qt /opt/qt /usr/local/qt2"
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
  
+ fi
  
+@@ -20821,7 +20821,8 @@ else
  
-@@ -1209,7 +1209,7 @@ fi
- 
- 	for dir in $with_qt
- 	do
--		if test -f $dir/lib/libqt.so.2
-+		if test -f $dir/lib/libqt.so.2 -o \! -z "$dir/lib/libqt.so.2.*"
+ 	  if test -f $dir/libqt-mt.so.3 -o -f $dir/libqt.so.3 \
+ 		-o -f $dir/libqt.dll.a -o -f $dir/libqt-mt.dll.a \
+-		-o -f $dir/libqt.dylib -o -f $dir/libqt-mt.dylib
++		-o -f $dir/libqt.dylib -o -f $dir/libqt-mt.dylib \
++		-o -f $dir/libqt-mt.so.*
  		then
- 			qthome=$dir
- 			echo "found in $dir"
+ 		  echo "found in $dir"
+ 		  QTLIBDIR=$dir

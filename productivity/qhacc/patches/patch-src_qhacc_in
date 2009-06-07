@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_qhacc_in,v 1.1 2009/06/07 00:08:32 jasper Exp $
+--- src/qhacc.in.orig	Tue Jun  2 11:47:27 2009
++++ src/qhacc.in	Tue Jun  2 11:48:03 2009
+@@ -4,7 +4,7 @@
+ #                                                             #
+ ###############################################################
+ 
+-function helpq () {
++helpq () {
+ 	echo "Syntax: $0 [options]"
+ 	echo " General Options:"
+ 	echo "  [-f|--home      <QHACC_HOME>]          set QHACC_HOME"
+@@ -39,13 +39,13 @@ PATH=@bindir@:$PATH
+ # You can change QHACC_ROOT and QHACC_HOME to fit your needs
+ QHACC_ROOT=${QHACC_ROOT:="@libdir@"}
+ QHACC_HOME=${QHACC_HOME:="${HOME}/.qhacc"}
+-QHACC_LANGDIR=${QHACC_LANGDIR:="@datadir@"}
++QHACC_LANGDIR=${QHACC_LANGDIR:="@pkgdatadir@/"}
+ 
+ export LD_LIBRARY_PATH=$QHACC_ROOT:$LD_LIBRARY_PATH
+ 
+-typeset USEGUI="YES"
+-typeset OPTIONS=""
+-typeset LANGFIRST="YES"
++USEGUI="YES"
++OPTIONS=""
++LANGFIRST="YES"
+ 
+ while [ $# -gt 0 ]
+ do

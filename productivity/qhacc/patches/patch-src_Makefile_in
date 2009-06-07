@@ -1,23 +1,16 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2000/10/02 09:06:23 espie Exp $
---- src/Makefile.in.orig	Sat Sep 16 19:49:48 2000
-+++ src/Makefile.in	Sun Sep 24 17:42:50 2000
-@@ -64,6 +64,8 @@ MAKEINFO = @MAKEINFO@
- MYFLAGS = @MYFLAGS@
- PACKAGE = @PACKAGE@
- QTDIR = @QTDIR@
-+QTLIBDIR = $(QTDIR)/lib
-+QTINCDIR = $(QTDIR)/include
- VERSION = @VERSION@
- incgraphs = @incgraphs@
+$OpenBSD: patch-src_Makefile_in,v 1.2 2009/06/07 00:08:32 jasper Exp $
+--- src/Makefile.in.orig	Mon May 30 19:08:33 2005
++++ src/Makefile.in	Tue Jun  2 11:49:45 2009
+@@ -249,9 +249,9 @@ qhacc_cli_SOURCES = qhacccli.cpp
+ noinst_HEADERS = qhaccview.h qhaccrecwin.h qhaccdialogs.h qhaccacctchsr.h transeditor.h qhaccwidget.h qhaccgrwin.h qhaccsubsetwin.h qhaccjrnlchsr.h qhacccli.h qhacclineedits.h splitdialog.h copystore.h guiconstants.h qhacclistview.h qhaccacctbox.h qhaccacctboxchsr.h qhaccacctdlg.h qhaccprefdlg.h metadialog.h
+ EXTRA_DIST = lupdate.info
+ SUBDIRS = pixmaps
+-INCLUDES = $(all_includes) -I$(QTINCDIR) -I$(top_srcdir)/lib
+-qhacc_gui_LDFLAGS = -L$(QTLIBDIR) -L$(top_builddir)/lib $(LDFLAGS) -L.
+-qhacc_cli_LDFLAGS = -L$(QTLIBDIR) -L$(top_builddir)/lib $(LDFLAGS) -L.
++INCLUDES = -I$(top_srcdir)/lib $(all_includes) -I$(QTINCDIR)
++qhacc_gui_LDFLAGS = -L$(top_builddir)/lib -L. -L$(QTLIBDIR) $(LDFLAGS) -lX11 -lGL
++qhacc_cli_LDFLAGS = -L$(top_builddir)/lib -L. -L$(QTLIBDIR) $(LDFLAGS) -lX11 -lGL 
  
-@@ -80,8 +82,8 @@ BUILT_SOURCES = moc_qhacc.cpp moc_qhaccv
- noinst_HEADERS = qhacc.h qhaccview.h accounts.h transaction.h qhaccvector.h 		qhaccrecwin.h qhacclineedits.h qhaccdialogs.h  		qhaccacctman.h qhaccacctchsr.h prefs.h globals.h 		qhaccloader.h qhaccgrapher.h
- 
- 
--INCLUDES = $(all_includes) -I$(QTDIR)/include
--qhacc_LDFLAGS = -L$(QTDIR)/lib
-+INCLUDES = $(all_includes) -I$(QTINCDIR)
-+qhacc_LDFLAGS = -L$(QTLIBDIR) -L$(X11BASE)/lib -L$(LOCALBASE)/lib
- qhacc_LDADD = -lqt
- MOC = $(QTDIR)/bin/moc
- 
+ #qhacc_gui_LDADD =	-l$(QHACCQT) -lqhacc -lqhaccutils -lmpatrol -lbfd -liberty
+ qhacc_gui_LDADD = -l$(QHACCQT) -lqhacc -lqhaccutils

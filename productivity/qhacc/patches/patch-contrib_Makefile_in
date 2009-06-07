@@ -1,0 +1,12 @@
+$OpenBSD: patch-contrib_Makefile_in,v 1.1 2009/06/07 00:08:32 jasper Exp $
+--- contrib/Makefile.in.orig	Tue Jun  2 11:49:21 2009
++++ contrib/Makefile.in	Tue Jun  2 11:49:33 2009
+@@ -215,7 +215,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ SUBDIRS = easysetup
+ extras_DATA = qhacccvs.sh
+-extrasdir = $(datadir)/extras
++extrasdir = $(pkgdatadir)/extras
+ EXTRA_DIST = $(extras_DATA) libofx-from-066.patch Makefile.windows src.pro
+ all: all-recursive
+ 
