@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/07 09:01:39 landry Exp $
+bin/xkcd_viewer.pl
+${P5SITE}/XKCD/
+${P5SITE}/XKCD/Core.pm
+@man man/man1/xkcd_viewer.pl.1
+@man man/man3p/XKCD::Core.3p
