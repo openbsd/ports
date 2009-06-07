@@ -1,5 +1,0 @@
-Ohphone is a fully functional H.323 endpoint command line application
-that can be used to listen for incoming H.323 calls, or to initiate a
-call to a remote host.  It includes a simple menu that allows
-interactive control of functions, as well as allowing control of most
-dialing and answer functions via a phone handset.

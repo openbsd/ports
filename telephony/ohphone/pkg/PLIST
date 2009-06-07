@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/17 14:14:14 ajacoutot Exp $
-@bin bin/ohphone
-@man man/man1/ohphone.1
-share/doc/ohphone/
-share/doc/ohphone/ReadMe.txt
-share/doc/ohphone/check_listen.awk
-share/doc/ohphone/regtest
-share/doc/ohphone/stresstest
