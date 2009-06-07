@@ -1,0 +1,16 @@
+$OpenBSD: patch-data_PolicyKit_conf_in,v 1.1 2009/06/07 08:30:31 ajacoutot Exp $
+
+Add a default policy which allows root full control, and those in the
+wheel group to authenticate for services using their password.
+
+--- data/PolicyKit.conf.in.orig	Sun Jun  7 10:24:44 2009
++++ data/PolicyKit.conf.in	Sun Jun  7 10:27:23 2009
+@@ -6,4 +6,8 @@
+ <!-- See the manual page PolicyKit.conf(5) for file format -->
+ 
+ <config version="0.1">
++    <match user="root">
++       <return result="yes"/>
++    </match>
++    <define_admin_auth group="wheel"/>
+ </config>

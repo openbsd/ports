@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/07 08:11:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/07 08:30:31 ajacoutot Exp $
 
 COMMENT=	authorization framework
 
 DISTNAME=	PolicyKit-0.9
-PKGNAME=	${DISTNAME:L}p0
+PKGNAME=	${DISTNAME:L}p1
 CATEGORIES=	sysutils security
 
 SHARED_LIBS+=	polkit-dbus	0.0 \
