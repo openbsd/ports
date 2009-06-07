@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2008/08/20 15:55:15 jasper Exp $
-@lib lib/libswfdec-0.6.so.${LIBswfdec-0.6_VERSION}
-@lib lib/libswfdec-gtk-0.6.so.${LIBswfdec-gtk-0.6_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.5 2009/06/07 11:52:16 phessler Exp $
+@lib lib/libswfdec-0.8.so.${LIBswfdec-0.8_VERSION}
+@lib lib/libswfdec-gtk-0.8.so.${LIBswfdec-gtk-0.8_VERSION}
