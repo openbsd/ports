@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/12/29 17:03:46 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/06/07 06:41:26 ajacoutot Exp $
 bin/gnc-fq-check
 bin/gnc-fq-dump
 bin/gnc-fq-helper
@@ -945,24 +945,24 @@ share/locale/uk/LC_MESSAGES/gnucash.mo
 share/locale/vi/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gnucash/*.schemas > /dev/null
-share/schemas/gnucash/
-share/schemas/gnucash/apps_gnucash_dialog_business_common.schemas
-share/schemas/gnucash/apps_gnucash_dialog_commodities.schemas
-share/schemas/gnucash/apps_gnucash_dialog_common.schemas
-share/schemas/gnucash/apps_gnucash_dialog_prices.schemas
-share/schemas/gnucash/apps_gnucash_dialog_print_checks.schemas
-share/schemas/gnucash/apps_gnucash_dialog_reconcile.schemas
-share/schemas/gnucash/apps_gnucash_dialog_scheduled_transctions.schemas
-share/schemas/gnucash/apps_gnucash_dialog_totd.schemas
-share/schemas/gnucash/apps_gnucash_general.schemas
-share/schemas/gnucash/apps_gnucash_history.schemas
-share/schemas/gnucash/apps_gnucash_import_generic_matcher.schemas
-share/schemas/gnucash/apps_gnucash_import_qif.schemas
-share/schemas/gnucash/apps_gnucash_warnings.schemas
-share/schemas/gnucash/apps_gnucash_window_pages_account_tree.schemas
-share/schemas/gnucash/apps_gnucash_window_pages_register.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnucash/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/apps_gnucash_dialog_business_common.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_dialog_commodities.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_dialog_common.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_dialog_prices.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_dialog_print_checks.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_dialog_reconcile.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_dialog_scheduled_transctions.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_dialog_totd.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_general.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_history.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_import_generic_matcher.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_import_qif.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_warnings.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_window_pages_account_tree.schemas
+${SCHEMAS_INSTDIR}/apps_gnucash_window_pages_register.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/xml/gnucash/
 share/xml/gnucash/xsl/
 share/xml/gnucash/xsl/README

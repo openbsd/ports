@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2009/06/02 15:39:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2009/06/07 06:44:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		simple GTK desktop news aggregator
 
 DISTNAME=		liferea-1.4.19
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		www x11
 
 HOMEPAGE=		http://liferea.sourceforge.net/
@@ -28,11 +28,11 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=liferea/}
 
 MODULES=		devel/gettext \
-			textproc/intltool
+			textproc/intltool \
+			devel/gconf2
 
 BUILD_DEPENDS=		::devel/xulrunner,-devel
 LIB_DEPENDS=		xulrunner/gtkembedmoz,xulrunner/xpcom::devel/xulrunner,-main \
-			gconf-2.>=5::devel/gconf2 \
 			notify.>=2::devel/libnotify \
 			lua.>=5::lang/lua \
 			xslt.>=3.3::textproc/libxslt \
@@ -52,12 +52,11 @@ CFLAGS+=		-I${LOCALBASE}/xulrunner/include/webbrwsr/ \
 			-I${LOCALBASE}/xulrunner/include/necko/
 
 USE_X11=		Yes
-
 USE_LIBTOOL=		Yes
+MODGCONF2_SCHEMAS_DIR=	liferea
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/liferea \
 			--docdir=${PREFIX}/share/doc/liferea \
 			--enable-dbus \
 			--disable-gecko \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/19 18:50:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/06/07 06:42:26 ajacoutot Exp $
 
 COMMENT=		library providing su and sudo functionality
 
 DISTNAME=		libgksu-2.0.7
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS=		gksu2		0.1	# .0.2
 CATEGORIES=             sysutils
 
@@ -25,10 +25,10 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 MASTER_SITES=		http://people.debian.org/~kov/gksu/
 
 MODULES=		devel/gettext \
-			textproc/intltool
+			textproc/intltool \
+			devel/gconf2
 
-LIB_DEPENDS=		gconf-2::devel/gconf2 \
-			gtop-2.0::devel/libgtop2 \
+LIB_DEPENDS=		gtop-2.0::devel/libgtop2 \
 			glade-2.0::devel/libglade2 \
 			startup-notification-1::devel/startup-notification \
 			gnome-keyring::x11/gnome/keyring
@@ -38,9 +38,10 @@ USE_X11=		Yes
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
+MODGCONF2_SCHEMAS_DIR=	libgksu
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/libgksu \
 			--enable-gtk-doc="no"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

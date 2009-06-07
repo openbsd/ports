@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2009/06/07 06:44:42 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME web browser based on mozilla
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
@@ -41,14 +41,15 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 
 MODULES=	devel/gettext \
 		lang/python \
-		x11/gnome
+		x11/gnome \
+		devel/gconf2
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender art_lgpl_2 atk-1.0 bonobo-2 \
 		bonobo-activation bonoboui-2 c cairo crypto dbus-1 \
 		dbus-glib-1 expat fontconfig freebl3 freetype \
-		gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
+		gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 		gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 ltdl m nspr4 nss3 nssckbi ogg \
@@ -61,15 +62,14 @@ USE_X11=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES= Yes
+MODGCONF2_SCHEMAS_DIR= epiphany
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
 		--with-engine=mozilla \
 		--with-gecko=xulrunner \
-		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/epiphany \
 		--enable-python \
-		--disable-schemas-install \
 		--disable-scrollkeeper \
 		--disable-gtk-doc \
 		--disable-zeroconf

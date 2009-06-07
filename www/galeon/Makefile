@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2009/06/07 06:44:42 ajacoutot Exp $
 
 COMMENT=	GNOME web browser based on gecko
 
 DISTNAME=	galeon-2.0.7
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 CATEGORIES=	www
 
@@ -19,7 +19,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation \
 		bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 expat \
-		fontconfig freebl3 freetype gailutil gconf-2 gdk-x11-2.0 \
+		fontconfig freebl3 freetype gailutil gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
 		gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m nspr4 nss3 nssckbi pango-1.0 \
@@ -30,7 +30,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galeon/}
 
 MODULES=	devel/gettext \
-		textproc/intltool
+		textproc/intltool \
+		devel/gconf2
 
 BUILD_DEPENDS=	:xulrunner-devel->=1.8.1:devel/xulrunner,-devel \
 		::textproc/rarian \
@@ -53,12 +54,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/nss -I${X11BASE}/include -I${LOC
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+MODGCONF2_SCHEMAS_DIR= galeon
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-mozilla="xulrunner" \
-		--with-gconf-schema-file-dir="${LOCALBASE}/share/schemas/galeon" \
-		--disable-schemas-install \
 		--disable-gtkhtml
 
 pre-configure:

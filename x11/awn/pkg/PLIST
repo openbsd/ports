@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/13 19:34:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/07 06:46:37 ajacoutot Exp $
 @bin bin/avant-window-navigator
 @bin bin/awn-applet-activation
 bin/awn-applets-migration
@@ -171,11 +171,11 @@ share/locale/vi/LC_MESSAGES/avant-window-navigator.mo
 share/locale/zh_CN/LC_MESSAGES/avant-window-navigator.mo
 share/locale/zh_HK/LC_MESSAGES/avant-window-navigator.mo
 share/locale/zh_TW/LC_MESSAGES/avant-window-navigator.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/awn/*.schemas > /dev/null
-share/schemas/awn/
-share/schemas/awn/awn-applets-shared.schemas
-share/schemas/awn/awn.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/awn/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/awn-applets-shared.schemas
+${SCHEMAS_INSTDIR}/awn/awn.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database

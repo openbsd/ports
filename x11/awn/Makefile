@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/07 06:46:37 ajacoutot Exp $
 
 COMMENT=		avant window navigator
 
 V=			0.3.2
 DISTNAME=		avant-window-navigator-$V
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=	awn                  0.0      # .0.1
 CATEGORIES=		x11
 
@@ -21,7 +21,8 @@ MASTER_SITES=		${HOMEPAGE}/0.2/$V/+download/
 
 MODULES=		devel/gettext \
 			lang/python \
-			textproc/intltool
+			textproc/intltool \
+			devel/gconf2
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
@@ -39,21 +40,19 @@ BUILD_DEPENDS=		::devel/py-xdg \
 RUN_DEPENDS=		::devel/desktop-file-utils \
 			::devel/py-xdg \
 			::x11/py-gtk2
-LIB_DEPENDS=		gconf-2::devel/gconf2 \
-			wnck-1::devel/libwnck \
+LIB_DEPENDS=		wnck-1::devel/libwnck \
 			gnome-desktop-2::x11/gnome/desktop \
 			${MODPY_LIB_DEPENDS}
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 USE_X11=		Yes
+MODGCONF2_SCHEMAS_DIR=	awn
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-desktop="gnome" \
 			--with-gconf \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/awn \
-			--disable-schemas-install \
 			--without-vala
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm -pthread -lutil"

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/16 13:00:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/07 06:44:42 ajacoutot Exp $
 lib/mozilla-plugins/
 lib/mozilla-plugins/gecko-mediaplayer-dvx.so
 lib/mozilla-plugins/gecko-mediaplayer-qt.so
@@ -20,7 +20,7 @@ share/locale/ja/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/pl/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/pt_BR/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/tr/LC_MESSAGES/gecko-mediaplayer.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gecko-mediaplayer/*.schemas > /dev/null
-share/schemas/gecko-mediaplayer/
-share/schemas/gecko-mediaplayer/gecko-mediaplayer.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gecko-mediaplayer/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gecko-mediaplayer.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

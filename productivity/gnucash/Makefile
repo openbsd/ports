@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/01/21 10:50:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/06/07 06:41:26 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	personal and small-business financial-accounting software
 
 GNOME_PROJECT =	gnucash
 GNOME_VERSION =	2.2.8
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 SHARED_LIBS +=	gnc-backend-file-utils	0.0	# .0.0
 SHARED_LIBS +=	gnc-business-ledger	0.0	# .0.0
@@ -33,7 +33,7 @@ WANTLIB =	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xrender art_lgpl_2 atk-1.0 bonobo-2 \
 		bonobo-activation bonoboui-2 bz2 c cairo crypto dbus-1 \
 		dbus-glib-1 enchant expat fontconfig freetype gailutil \
-		gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 \
+		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomeui-2 gnomevfs-2 gobject-2.0 gsf-1 gsf-gnome-1 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
@@ -43,8 +43,11 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnucash/} \
 		${HOMEPAGE}pub/gnucash/sources/stable/
 
 MODULES =	devel/gettext \
-		x11/gnome
+		x11/gnome \
+		devel/gconf2
+
 DESKTOP_FILES =	Yes
+MODGCONF2_SCHEMAS_DIR = gnucash
 
 BUILD_DEPENDS =	::devel/slib \
 		::devel/slib-guile
@@ -60,9 +63,7 @@ CONFIGURE_STYLE =	gnu
 # --disable-ofx until libofx/libsp is fixed to work with .so
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-doxygen \
-			--disable-ofx \
-			--disable-schemas-install \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnucash
+			--disable-ofx
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
