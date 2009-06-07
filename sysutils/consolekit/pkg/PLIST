@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
+%%SHARED%%
+@bin bin/ck-history
+@bin bin/ck-launch-session
+@bin bin/ck-list-sessions
+include/ConsoleKit/
+include/ConsoleKit/ck-connector/
+include/ConsoleKit/ck-connector/ck-connector.h
+lib/ConsoleKit/
+lib/ConsoleKit/run-session.d/
+lib/libck-connector.a
+lib/libck-connector.la
+lib/pkgconfig/
+lib/pkgconfig/ck-connector.pc
+@bin libexec/ck-collect-session-info
+@bin libexec/ck-get-x11-display-device
+@bin libexec/ck-get-x11-server-pid
+@bin sbin/ck-log-system-restart
+@bin sbin/ck-log-system-start
+@bin sbin/ck-log-system-stop
+@bin sbin/console-kit-daemon
+share/PolicyKit/
+share/PolicyKit/policy/
+share/PolicyKit/policy/org.freedesktop.consolekit.policy
+share/dbus-1/
+share/dbus-1/interfaces/
+share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Manager.xml
+share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Seat.xml
+share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Session.xml
+share/dbus-1/system-services/
+share/dbus-1/system-services/org.freedesktop.ConsoleKit.service
+share/examples/consolekit/
+share/examples/consolekit/ConsoleKit/
+@sample ${SYSCONFDIR}/ConsoleKit/
+share/examples/consolekit/ConsoleKit/run-session.d/
+@sample ${SYSCONFDIR}/ConsoleKit/run-session.d/
+share/examples/consolekit/ConsoleKit/seats.d/
+@sample ${SYSCONFDIR}/ConsoleKit/seats.d/
+share/examples/consolekit/ConsoleKit/seats.d/00-primary.seat
+@sample ${SYSCONFDIR}/ConsoleKit/seats.d/00-primary.seat
+share/examples/consolekit/dbus-1/
+@sample ${SYSCONFDIR}/dbus-1/
+share/examples/consolekit/dbus-1/ConsoleKit.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/ConsoleKit.conf
+var/
+var/log/
+var/log/ConsoleKit/
+var/run/
+var/run/ConsoleKit/
+@exec ${PREFIX}/bin/dbus-uuidgen --ensure

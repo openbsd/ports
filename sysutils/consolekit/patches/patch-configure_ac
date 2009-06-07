@@ -1,0 +1,41 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
+--- configure.ac.orig	Sat May 30 23:09:15 2009
++++ configure.ac	Sat May 30 23:10:16 2009
+@@ -176,6 +176,14 @@ dnl --------------------------------------------------
+ CK_BACKEND=""
+ KVM_LIBS=""
+ case "$host" in
++	*-*-openbsd*)
++	CK_BACKEND="openbsd"
++        AC_CHECK_LIB(kvm, kvm_openfiles, have_kvm=yes,
++                AC_MSG_ERROR([Unable to find libkvm which is needed on OpenBSD]))
++        if test "x$have_kvm" = "xyes"; then
++                KVM_LIBS="-lkvm"
++        fi
++        ;;
+         *-*-freebsd*)
+         CK_BACKEND="freebsd"
+         AC_CHECK_LIB(kvm, kvm_openfiles, have_kvm=yes,
+@@ -196,6 +204,7 @@ AC_SUBST(KVM_LIBS)
+ 
+ AM_CONDITIONAL(CK_COMPILE_LINUX, test x$CK_BACKEND = xlinux, [Compiling for Linux])
+ AM_CONDITIONAL(CK_COMPILE_FREEBSD, test x$CK_BACKEND = xfreebsd, [Compiling for FreeBSD])
++AM_CONDITIONAL(CK_COMPILE_OPENBSD, test x$CK_BACKEND = xopenbsd, [Compiling for OpenBSD])
+ AM_CONDITIONAL(CK_COMPILE_SOLARIS, test x$CK_BACKEND = xsolaris, [Compiling for Solaris])
+ AC_SUBST(CK_BACKEND)
+ 
+@@ -393,6 +402,7 @@ src/Makefile
+ tools/Makefile
+ tools/linux/Makefile
+ tools/freebsd/Makefile
++tools/openbsd/Makefile
+ tools/solaris/Makefile
+ data/Makefile
+ doc/Makefile
+@@ -441,4 +451,4 @@ if test x${have_polkit} = xno -a x${msg_rbac_shutdown}
+    echo "         a huge SECURITY HOLE. I repeat: YOU NEED TO EDIT THE FILE"
+    echo "         ConsoleKit.conf to match your distro/site to avoid NASTY SECURITY HOLES."
+    echo ""
+-fi
+\ No newline at end of file
++fi

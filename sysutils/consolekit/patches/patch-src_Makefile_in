@@ -1,0 +1,54 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
+--- src/Makefile.in.orig	Thu Jul 31 02:41:10 2008
++++ src/Makefile.in	Sun May 31 00:06:37 2009
+@@ -46,6 +46,10 @@ host_triplet = @host@
+ @CK_COMPILE_FREEBSD_TRUE@	ck-sysdeps-freebsd.c	\
+ @CK_COMPILE_FREEBSD_TRUE@	$(NULL)
+ 
++@CK_COMPILE_OPENBSD_TRUE@am__append_3 = \
++@CK_COMPILE_OPENBSD_TRUE@	ck-sysdeps-openbsd.c	\
++@CK_COMPILE_OPENBSD_TRUE@	$(NULL)
++
+ sbin_PROGRAMS = console-kit-daemon$(EXEEXT) $(am__EXEEXT_1)
+ noinst_PROGRAMS = test-event-logger$(EXEEXT) \
+ 	test-tty-idle-monitor$(EXEEXT) test-vt-monitor$(EXEEXT) \
+@@ -69,13 +73,17 @@ am__DEPENDENCIES_1 =
+ @CK_COMPILE_FREEBSD_TRUE@libck_la_DEPENDENCIES =  \
+ @CK_COMPILE_FREEBSD_TRUE@	$(am__DEPENDENCIES_1)
+ am__libck_la_SOURCES_DIST = ck-sysdeps.h ck-sysdeps-unix.c \
+-	ck-sysdeps-linux.c ck-sysdeps-solaris.c ck-sysdeps-freebsd.c
++	ck-sysdeps-linux.c ck-sysdeps-solaris.c ck-sysdeps-freebsd.c \
++	ck-sysdeps-openbsd.c
+ @CK_COMPILE_LINUX_TRUE@am__objects_2 = ck-sysdeps-linux.lo \
+ @CK_COMPILE_LINUX_TRUE@	$(am__objects_1)
+ @CK_COMPILE_SOLARIS_TRUE@am__objects_3 = ck-sysdeps-solaris.lo \
+ @CK_COMPILE_SOLARIS_TRUE@	$(am__objects_1)
+ @CK_COMPILE_FREEBSD_TRUE@am__objects_4 = ck-sysdeps-freebsd.lo \
+ @CK_COMPILE_FREEBSD_TRUE@	$(am__objects_1)
++@CK_COMPILE_OPENBSD_TRUE@am__objects_4 = ck-sysdeps-openbsd.lo \
++@CK_COMPILE_OPENBSD_TRUE@	$(am__objects_1)
++
+ am_libck_la_OBJECTS = ck-sysdeps-unix.lo $(am__objects_1) \
+ 	$(am__objects_2) $(am__objects_3) $(am__objects_4)
+ libck_la_OBJECTS = $(am_libck_la_OBJECTS)
+@@ -362,10 +370,12 @@ libck_event_log_la_SOURCES = \
+ libck_la_SOURCES = ck-sysdeps.h ck-sysdeps-unix.c $(NULL) \
+ 	$(am__append_1) $(am__append_2) $(am__append_3)
+ @CK_COMPILE_FREEBSD_TRUE@libck_la_LIBADD = $(KVM_LIBS)
++@CK_COMPILE_OPENBSD_TRUE@libck_la_LIBADD = $(KVM_LIBS)
+ EXTRA_libck_la_SOURCES = \
+ 	ck-sysdeps-linux.c		\
+ 	ck-sysdeps-solaris.c		\
+ 	ck-sysdeps-freebsd.c		\
++	ck-sysdeps-openbsd.c		\
+ 	$(NULL)
+ 
+ BUILT_SOURCES = \
+@@ -571,6 +581,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ck-session-leader.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ck-session.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ck-sysdeps-freebsd.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ck-sysdeps-openbsd.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ck-sysdeps-linux.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ck-sysdeps-solaris.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ck-sysdeps-unix.Plo@am__quote@

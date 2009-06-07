@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
+@lib lib/libck-connector.so.${LIBck-connector_VERSION}

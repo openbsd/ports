@@ -1,0 +1,47 @@
+$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
+--- src/ck-sysdeps-unix.c.orig	Sun May 31 19:27:59 2009
++++ src/ck-sysdeps-unix.c	Sun May 31 19:40:26 2009
+@@ -35,6 +35,11 @@
+ #include <linux/kd.h>
+ #endif
+ 
++#if defined(__OpenBSD__)
++#include <dev/wscons/wsdisplay_usl_io.h>
++#include <sys/un.h>
++#endif
++
+ #ifdef HAVE_SYS_VT_H
+ #include <sys/vt.h>
+ #endif
+@@ -126,7 +131,7 @@ ck_get_socket_peer_credentials   (int      socket_fd,
+ gboolean
+ ck_fd_is_a_console (int fd)
+ {
+-#ifdef __linux__
++#if defined(__linux__) || defined(__OpenBSD__)
+         struct vt_stat vts;
+ #elif defined(__FreeBSD__)
+         int vers;
+@@ -134,7 +139,7 @@ ck_fd_is_a_console (int fd)
+         int  kb_ok;
+ 
+         errno = 0;
+-#ifdef __linux__
++#if defined(__linux__) || defined(__OpenBSD__)
+         kb_ok = (ioctl (fd, VT_GETSTATE, &vts) == 0);
+ #elif defined(__FreeBSD__)
+         kb_ok = (ioctl (fd, CONS_GETVERS, &vers) == 0);
+@@ -182,6 +187,13 @@ ck_get_a_console_fd (void)
+         if (fd >= 0) {
+                 goto done;
+         }
++#endif
++
++#if defined(__OpenBSD__)
++	fd = open_a_console ("/dev/ttyC0");
++	if (fd >= 0) {
++		goto done;
++	}
+ #endif
+ 
+ #ifdef _PATH_TTY

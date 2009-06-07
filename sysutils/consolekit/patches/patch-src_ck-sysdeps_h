@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ck-sysdeps_h,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
+--- src/ck-sysdeps.h.orig	Sat May 30 23:01:14 2009
++++ src/ck-sysdeps.h	Sat May 30 23:01:57 2009
+@@ -23,6 +23,10 @@
+ 
+ #include "config.h"
+ 
++#ifndef ENOTSUP
++#define ENOTSUP EOPNOTSUPP
++#endif
++
+ #include <glib.h>
+ 
+ G_BEGIN_DECLS
