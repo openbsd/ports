@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/04/06 10:09:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/06/07 06:33:52 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
@@ -42,7 +42,6 @@ FAKE_FLAGS+=	PYTHON="${MODPY_BIN}"
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
-		--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/epiphany \
 		--with-gecko=xulrunner \
 		--disable-schemas-install \
 		--disable-scrollkeeper \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/03/14 10:40:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/06/07 06:33:52 ajacoutot Exp $
 lib/epiphany/${M}/extensions/
 lib/epiphany/${M}/extensions/actions.ephy-extension
 lib/epiphany/${M}/extensions/adblock.ephy-extension
@@ -288,5 +288,3 @@ share/omf/epiphany-extensions/epiphany-extensions-C.omf
 share/omf/epiphany-extensions/epiphany-extensions-es.omf
 share/omf/epiphany-extensions/epiphany-extensions-oc.omf
 share/omf/epiphany-extensions/epiphany-extensions-sv.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/epiphany/*.schemas > /dev/null
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/epiphany/*.schemas > /dev/null
