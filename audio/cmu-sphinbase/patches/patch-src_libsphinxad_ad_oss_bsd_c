@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libsphinxad_ad_oss_bsd_c,v 1.1.1.1 2009/06/07 07:12:55 eric Exp $
+--- src/libsphinxad/ad_oss_bsd.c.orig	Mon Jun  1 20:01:13 2009
++++ src/libsphinxad/ad_oss_bsd.c	Mon Jun  1 20:01:34 2009
+@@ -64,7 +64,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ #include <sys/ioctl.h>
+ #include <errno.h>
+ #include <unistd.h>
