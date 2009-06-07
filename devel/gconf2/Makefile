@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2008/11/16 21:43:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2009/06/07 01:28:38 ajacoutot Exp $
 
 COMMENT=	configuration database system for GNOME
 
 GNOME_PROJECT=	GConf
 GNOME_VERSION=	2.24.0
-PKGNAME=	gconf2-${GNOME_VERSION}
+PKGNAME=	gconf2-${GNOME_VERSION}p0
 SHARED_LIBS +=	gconf-2              6.2      # .5.5
 CATEGORIES=	devel
 
@@ -38,5 +38,8 @@ CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 FAKE_FLAGS=	sysgconfdir=${PREFIX}/share/examples/gconf2
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/schemas/
 
 .include <bsd.port.mk>

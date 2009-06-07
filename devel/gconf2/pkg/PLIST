@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2008/11/16 21:43:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2009/06/07 01:28:38 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gconf-merge-tree
 @bin bin/gconftool-2
@@ -225,6 +225,7 @@ share/locale/yi/LC_MESSAGES/GConf2.mo
 share/locale/zh_CN/LC_MESSAGES/GConf2.mo
 share/locale/zh_HK/LC_MESSAGES/GConf2.mo
 share/locale/zh_TW/LC_MESSAGES/GConf2.mo
+share/schemas/
 share/sgml/
 share/sgml/gconf/
 share/sgml/gconf/gconf-1.0.dtd
