@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/06/04 18:24:20 kurt Exp $
+# $OpenBSD: Makefile,v 1.34 2009/06/07 01:22:05 robert Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -10,8 +10,8 @@ BOOTSTRAP_GEN = 2
 ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tgz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}p1
-PKGNAME-c++ =   g++-${FULL_PKGVERSION}p2
-PKGNAME-estdc = libstdc++-${FULL_PKGVERSION}p2
+PKGNAME-c++ =   g++-${FULL_PKGVERSION}p3
+PKGNAME-estdc = libstdc++-${FULL_PKGVERSION}p3
 PKGNAME-g77 =   g77-${FULL_PKGVERSION}p0
 PKGNAME-f95 =   g95-${FULL_PKGVERSION}p1
 PKGNAME-java =  gcj-${FULL_PKGVERSION}p0
@@ -141,6 +141,7 @@ CONFIGURE_ARGS += \
 	--with-gnu-ld \
 	--with-gnu-as \
 	--enable-threads=posix \
+	--enable-wchar_t \
 	--enable-languages=${LANGS}
 
 # This is needed, as internal cpp is no longer compatible with the

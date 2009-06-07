@@ -1,0 +1,12 @@
+$OpenBSD: patch-libstdc++-v3_include_tr1_cwctype,v 1.1 2009/06/07 01:22:05 robert Exp $
+--- libstdc++-v3/include/tr1/cwctype.orig	Fri Jun  5 02:00:32 2009
++++ libstdc++-v3/include/tr1/cwctype	Fri Jun  5 02:01:17 2009
+@@ -45,7 +45,7 @@ namespace std
+ {
+ _GLIBCXX_BEGIN_NAMESPACE(tr1)
+ 
+-#if _GLIBCXX_HAVE_ISWBLANK
++#if defined(_GLIBCXX_HAVE_ISWBLANK) && !defined(__OpenBSD__)
+   using std::iswblank;
+ #endif  
+ 
