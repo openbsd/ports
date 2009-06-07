@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gnome,v 1.5 2008/09/07 22:21:10 brad Exp $
+@comment $OpenBSD: PLIST-gnome,v 1.6 2009/06/07 05:31:10 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gsf-office-thumbnailer
 include/libgsf-1/gsf-gnome/
@@ -10,7 +10,7 @@ include/libgsf-1/gsf-gnome/gsf-shared-bonobo-stream.h
 lib/libgsf-gnome-1.a
 lib/libgsf-gnome-1.la
 lib/pkgconfig/libgsf-gnome-1.pc
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/libgsf/*.schemas > /dev/null
-share/schemas/libgsf/
-share/schemas/libgsf/gsf-office-thumbnailer.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/libgsf/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gsf-office-thumbnailer.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
