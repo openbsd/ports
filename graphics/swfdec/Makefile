@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2008/08/20 15:55:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2009/06/07 11:46:18 phessler Exp $
 
 COMMENT=	flash rendering library
-DISTNAME=	swfdec-0.6.8
-SHARED_LIBS +=	swfdec-0.6           0.0      # .90.0
-SHARED_LIBS +=	swfdec-gtk-0.6       0.0      # .90.0
+DISTNAME=	swfdec-0.8.4
+SHARED_LIBS +=	swfdec-0.8           0.0      # .90.0
+SHARED_LIBS +=	swfdec-gtk-0.8       0.0      # .90.0
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://swfdec.sourceforge.net/
+HOMEPAGE=	http://swfdec.freedesktop.org/
 
 # LGPLv2.1
 PERMIT_DISTFILES_CDROM=	Yes
@@ -14,30 +14,44 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/download/swfdec/0.6/
+MASTER_SITES=		${HOMEPAGE}download/swfdec/0.8/
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
-		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		gstreamer-0.10 gthread-2.0 m oil-0.3 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png xml2 z
+		freetype gcrypt gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls \
+		gobject-2.0 gpg-error gstreamer-0.10 gthread-2.0 m oil-0.3 \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
+		sndio tasn1 xml2 z
 
-LIB_DEPENDS=		mad::audio/libmad \
-			soup-2.4::devel/libsoup \
-			gstpbutils-0.10::multimedia/gstreamer-0.10/plugins-base \
-			gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	soup-2.4::devel/libsoup \
+		gstpbutils-0.10::multimedia/gstreamer-0.10/plugins-base \
+		gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
+		a52::audio/liba52 \
+		faac::audio/faac
 
-
-MODULES=		devel/gettext
+RUN_DEPENDS=	:gstreamer-faad-*:multimedia/gstreamer-0.10/plugins-bad,-faad \
+		:gstreamer-mad-*:multimedia/gstreamer-0.10/plugins-ugly,-mad \
+		:gstreamer-ffmpeg-*:multimedia/gstreamer-0.10/plugins-ffmpeg
+MODULES=	devel/gettext
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-audio=oss \
-			--enable-mad \
+CONFIGURE_ARGS+=	--with-audio=sndio \
+			--enable-gtk \
 			--enable-gstreamer
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig"
+
+AUTOCONF_VERSION=	2.61
+AUTOMAKE_VERSION=	1.9
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+
+post-patch:
+	cp ${FILESDIR}/swfdec_playback_sndio.c ${WRKSRC}/swfdec-gtk/
+	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -i -f
 
 .include <bsd.port.mk>
