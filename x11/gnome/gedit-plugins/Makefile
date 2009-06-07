@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/28 16:09:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2009/06/07 09:44:47 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		2.22.5
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		editors
 
 HOMEPAGE=		http://live.gnome.org/Gedit/Plugins
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto \
-		dbus-1 dbus-glib-1 expat fontconfig freetype gconf-2 \
+		dbus-1 dbus-glib-1 expat fontconfig freetype \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 \
 		glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 gtksourceview-2.0 m pango-1.0 pangocairo-1.0 \
@@ -25,7 +25,8 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 
 MODULES=		devel/gettext \
 			lang/python \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::x11/gnome/doc-utils
@@ -35,10 +36,9 @@ RUN_DEPENDS=		::devel/vte,-python \
 			:py-gtk2->=2.12.0:x11/py-gtk2
 
 USE_X11=		Yes
+MODGCONF2_SCHEMAS_DIR=	gedit
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gedit \
-			--disable-schemas-install \
 			--with-plugins=all
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

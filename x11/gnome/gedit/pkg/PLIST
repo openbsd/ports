@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/03/14 10:40:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2009/06/07 09:44:47 ajacoutot Exp $
 @bin bin/gedit
 bin/gnome-text-editor
 include/gedit-2.20/
@@ -545,10 +545,10 @@ share/omf/gedit/gedit-uk.omf
 share/omf/gedit/gedit-zh_CN.omf
 share/omf/gedit/gedit-zh_HK.omf
 share/omf/gedit/gedit-zh_TW.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gedit/*.schemas > /dev/null
-share/schemas/gedit/
-share/schemas/gedit/gedit-file-browser.schemas
-share/schemas/gedit/gedit.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gedit/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gedit-file-browser.schemas
+${SCHEMAS_INSTDIR}/gedit.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

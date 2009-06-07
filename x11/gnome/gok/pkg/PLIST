@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/03/14 10:40:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/06/07 09:44:47 ajacoutot Exp $
 @bin bin/create-branching-keyboard
 @bin bin/gok
 lib/bonobo/
@@ -1023,10 +1023,10 @@ share/omf/gok/
 share/omf/gok/gok-C.omf
 share/pixmaps/
 share/pixmaps/gok.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gok/*.schemas > /dev/null
-share/schemas/gok/
-share/schemas/gok/gok.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gok/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gok.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

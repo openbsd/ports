@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/03/14 10:40:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/06/07 09:44:47 ajacoutot Exp $
 @bin bin/gcalctool
 bin/gnome-calculator
 @man man/man1/gcalctool.1
@@ -236,9 +236,9 @@ share/omf/gcalctool/gcalctool-sv.omf
 share/omf/gcalctool/gcalctool-zh_CN.omf
 share/omf/gcalctool/gcalctool-zh_HK.omf
 share/omf/gcalctool/gcalctool-zh_TW.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gcalctool/*.schemas > /dev/null
-share/schemas/gcalctool/
-share/schemas/gcalctool/gcalctool.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gcalctool/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gcalctool/gcalctool.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
