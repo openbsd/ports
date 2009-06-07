@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/07 11:23:55 landry Exp $
+${P5SITE}/Devel/
+${P5SITE}/Devel/Trace.pm
+@man man/man3p/Devel::Trace.3p
