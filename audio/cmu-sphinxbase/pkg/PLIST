@@ -1,0 +1,58 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/07 07:23:37 eric Exp $
+%%SHARED%%
+@bin bin/sphinx_cepview
+@bin bin/sphinx_cont_adseg
+@bin bin/sphinx_cont_fileseg
+@bin bin/sphinx_fe
+@bin bin/sphinx_jsgf2fsg
+@bin bin/sphinx_lm_eval
+bin/sphinx_lm_sort
+@bin bin/sphinx_pitch
+include/sphinxbase/
+include/sphinxbase/ad.h
+include/sphinxbase/agc.h
+include/sphinxbase/bio.h
+include/sphinxbase/bitvec.h
+include/sphinxbase/byteorder.h
+include/sphinxbase/case.h
+include/sphinxbase/ckd_alloc.h
+include/sphinxbase/clapack_lite.h
+include/sphinxbase/cmd_ln.h
+include/sphinxbase/cmn.h
+include/sphinxbase/cont_ad.h
+include/sphinxbase/err.h
+include/sphinxbase/f2c.h
+include/sphinxbase/fe.h
+include/sphinxbase/feat.h
+include/sphinxbase/filename.h
+include/sphinxbase/fixpoint.h
+include/sphinxbase/fsg_model.h
+include/sphinxbase/genrand.h
+include/sphinxbase/glist.h
+include/sphinxbase/hash_table.h
+include/sphinxbase/heap.h
+include/sphinxbase/info.h
+include/sphinxbase/jsgf.h
+include/sphinxbase/libutil.h
+include/sphinxbase/listelem_alloc.h
+include/sphinxbase/logmath.h
+include/sphinxbase/matrix.h
+include/sphinxbase/mmio.h
+include/sphinxbase/mulaw.h
+include/sphinxbase/ngram_model.h
+include/sphinxbase/pio.h
+include/sphinxbase/prim_type.h
+include/sphinxbase/profile.h
+include/sphinxbase/sbthread.h
+include/sphinxbase/sphinx_config.h
+include/sphinxbase/sphinxbase.pxd
+include/sphinxbase/sphinxbase_export.h
+include/sphinxbase/strfuncs.h
+include/sphinxbase/unlimit.h
+include/sphinxbase/yin.h
+lib/libsphinxad.a
+lib/libsphinxad.la
+lib/libsphinxbase.a
+lib/libsphinxbase.la
+lib/pkgconfig/
+lib/pkgconfig/sphinxbase.pc
