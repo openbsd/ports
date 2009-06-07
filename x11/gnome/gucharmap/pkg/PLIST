@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/03/23 17:21:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/06/07 10:01:47 ajacoutot Exp $
 %%SHARED%%
 bin/charmap
 bin/gnome-character-map
@@ -212,9 +212,9 @@ share/omf/gucharmap/gucharmap-sv.omf
 share/omf/gucharmap/gucharmap-vi.omf
 share/omf/gucharmap/gucharmap-zh_CN.omf
 share/omf/gucharmap/gucharmap-zh_TW.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gucharmap/*.schemas > /dev/null
-share/schemas/gucharmap/
-share/schemas/gucharmap/gucharmap.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gucharmap/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gucharmap.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

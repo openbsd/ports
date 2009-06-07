@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/11/21 18:06:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2009/06/07 10:01:47 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-keyring
 @bin bin/gnome-keyring-daemon
@@ -211,8 +211,7 @@ share/locale/xh/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gnome-keyring/*.schemas > /dev/null
-share/schemas/
-share/schemas/gnome-keyring/
-share/schemas/gnome-keyring/gnome-keyring.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-keyring/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gnome-keyring.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

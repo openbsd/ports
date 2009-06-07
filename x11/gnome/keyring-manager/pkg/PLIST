@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/03/14 10:40:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/06/07 10:01:47 ajacoutot Exp $
 @bin bin/gnome-keyring-manager
 @man man/man1/gnome-keyring-manager.1
 share/applications/gnome-keyring-manager.desktop
@@ -116,9 +116,9 @@ share/omf/gnome-keyring-manager/gnome-keyring-manager-oc.omf
 share/omf/gnome-keyring-manager/gnome-keyring-manager-sv.omf
 share/omf/gnome-keyring-manager/gnome-keyring-manager-uk.omf
 share/omf/gnome-keyring-manager/gnome-keyring-manager-vi.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/gnome-keyring-manager/*.schemas > /dev/null
-share/schemas/gnome-keyring-manager/
-share/schemas/gnome-keyring-manager/gnome-keyring-manager.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-keyring-manager/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gnome-keyring-manager.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

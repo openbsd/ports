@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/06/07 10:01:47 ajacoutot Exp $
 
 COMMENT=		keyring management program for the GNOME desktop
 
 GNOME_PROJECT=		gnome-keyring-manager
 GNOME_VERSION=		2.20.0
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 
 CATEGORIES=		x11
 
@@ -18,14 +18,15 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation \
 		bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 expat \
-		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
+		fontconfig freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png popt pthread ssl util xml2 z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
 RUN_DEPENDS=		::x11/gnome/themes-extras
 LIB_DEPENDS= 		gnomeui-2::x11/gnome/libgnomeui \
@@ -34,10 +35,9 @@ LIB_DEPENDS= 		gnomeui-2::x11/gnome/libgnomeui \
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-keyring-manager \
-			--disable-schemas-install
+MODGCONF2_SCHEMAS_DIR=	gnome-keyring-manager
 
+CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 

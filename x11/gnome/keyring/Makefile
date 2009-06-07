@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2009/02/11 15:47:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2009/06/07 10:01:47 ajacoutot Exp $
 
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 SHARED_LIBS +=	gp11                 0.0      # .0.0
 SHARED_LIBS +=	gnome-keyring        4.0      # .1.1
@@ -23,17 +23,17 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		pangoft2-1.0 pcre pixman-1 png pthread z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			devel/gconf2
 
-LIB_DEPENDS=		gconf-2::devel/gconf2 \
-			gcrypt::security/libgcrypt \
+LIB_DEPENDS=		gcrypt::security/libgcrypt \
 			tasn1.>=1::security/libtasn1 \
 			dbus-1::x11/dbus
 
 USE_X11=		Yes
-CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-keyring \
-			--with-root-certs=/etc/ssl \
-			--disable-schemas-install \
+MODGCONF2_SCHEMAS_DIR=	gnome-keyring
+
+CONFIGURE_ARGS+=	--with-root-certs=/etc/ssl \
 			--disable-hal \
 			--disable-tests \
 			--disable-gtk-doc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2008/11/21 18:36:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2009/06/07 10:01:47 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-open
 include/libgnome-2.0/
@@ -254,25 +254,24 @@ share/pixmaps/
 share/pixmaps/backgrounds/
 share/pixmaps/backgrounds/gnome/
 share/pixmaps/backgrounds/gnome/background-default.jpg
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/libgnome/*.schemas > /dev/null
-share/schemas/
-share/schemas/libgnome/
-share/schemas/libgnome/desktop_gnome_accessibility_keyboard.schemas
-share/schemas/libgnome/desktop_gnome_accessibility_startup.schemas
-share/schemas/libgnome/desktop_gnome_applications_at_mobility.schemas
-share/schemas/libgnome/desktop_gnome_applications_at_visual.schemas
-share/schemas/libgnome/desktop_gnome_applications_browser.schemas
-share/schemas/libgnome/desktop_gnome_applications_office.schemas
-share/schemas/libgnome/desktop_gnome_applications_terminal.schemas
-share/schemas/libgnome/desktop_gnome_applications_window_manager.schemas
-share/schemas/libgnome/desktop_gnome_background.schemas
-share/schemas/libgnome/desktop_gnome_file_views.schemas
-share/schemas/libgnome/desktop_gnome_interface.schemas
-share/schemas/libgnome/desktop_gnome_lockdown.schemas
-share/schemas/libgnome/desktop_gnome_peripherals_keyboard.schemas
-share/schemas/libgnome/desktop_gnome_peripherals_mouse.schemas
-share/schemas/libgnome/desktop_gnome_sound.schemas
-share/schemas/libgnome/desktop_gnome_thumbnail_cache.schemas
-share/schemas/libgnome/desktop_gnome_thumbnailers.schemas
-share/schemas/libgnome/desktop_gnome_typing_break.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/libgnome/*.schemas > /dev/null
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/desktop_gnome_accessibility_keyboard.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_accessibility_startup.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_applications_at_mobility.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_applications_at_visual.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_appl/ications_browser.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_applications_office.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_applications_terminal.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_applications_window_manager.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_background.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_file_views.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_interface.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_lockdown.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_peripherals_keyboard.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_peripherals_mouse.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_sound.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_thumbnail_cache.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_thumbnailers.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_typing_break.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
