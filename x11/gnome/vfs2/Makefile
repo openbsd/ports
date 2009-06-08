@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2009/06/08 17:59:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2009/06/08 18:24:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,9 +7,8 @@ COMMENT-smb=		samba module for gnome-vfs2
 
 GNOME_PROJECT=		gnome-vfs
 GNOME_VERSION=		2.24.1
-PKGNAME=		gnome-vfs2-${VERSION}
-PKGNAME-main=		gnome-vfs2-${VERSION}p2
-PKGNAME-smb=		gnome-vfs2-smb-${VERSION}p1
+PKGNAME-main=		gnome-vfs2-${VERSION}p3
+PKGNAME-smb=		gnome-vfs2-smb-${VERSION}p2
 MULTI_PACKAGES=		-main -smb
 
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
@@ -37,11 +36,12 @@ RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 
 WANTLIB-main=		${WANTLIB} c asn1 gssapi krb5 pthread rpcsvc stdc++
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			${MODGCONF2_LIB_DEPENDS} \
 			cdda_interface,cdda_paranoia::audio/cdparanoia \
 			bz2.>=10::archivers/bzip2 \
 			fam::sysutils/fam
 
-WANTLIB-smb=		${WANTLIB}
+WANTLIB-smb=		${WANTLIB} gconf-2
 LIB_DEPENDS-smb=	${LIB_DEPENDS} \
 			smbclient::net/samba \
 			gnomevfs-2.>=2400::x11/gnome/vfs2
@@ -49,6 +49,8 @@ RUN_DEPENDS-smb=	${RUN_DEPENDS}
 
 USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-vfs2
+MODGCONF2_LIBDEP=	No
+MODGCONF2_RUNDEP=	No
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--enable-cdda \
