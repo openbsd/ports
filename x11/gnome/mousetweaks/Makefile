@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/06/07 10:26:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/06/08 17:59:15 ajacoutot Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
 GNOME_PROJECT=	mousetweaks
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 
 HOMEPAGE=	http://live.gnome.org/Mousetweaks/Home
 

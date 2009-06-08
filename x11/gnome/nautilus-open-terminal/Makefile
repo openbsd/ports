@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/07 11:16:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/08 17:59:15 ajacoutot Exp $
 
 # dlopen() module
 SHARED_ONLY=	Yes
@@ -7,7 +7,7 @@ COMMENT=	open terminal from a nautilus folder
 
 GNOME_PROJECT=	nautilus-open-terminal
 GNOME_VERSION=	0.10
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	sysutils
 

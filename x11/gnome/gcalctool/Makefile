@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2009/06/07 09:44:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/06/08 17:59:14 ajacoutot Exp $
 
 COMMENT=		GTK2 desktop calculator
 
 GNOME_PROJECT=		gcalctool
 GNOME_VERSION=		5.24.3.1
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 CATEGORIES=		math
 

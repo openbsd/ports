@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2009/06/07 10:26:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2009/06/08 17:59:15 ajacoutot Exp $
 
 COMMENT=		GNOME media utilities
 
 GNOME_PROJECT=		gnome-media
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		${DISTNAME}p13
+PKGNAME=		${DISTNAME}p14
 
 SHARED_LIBS +=	gnome-media-profiles 0.0      # .0.0
 CATEGORIES=		x11
