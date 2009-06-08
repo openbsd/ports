@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/06/07 06:01:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/06/08 16:58:15 ajacoutot Exp $
 
 COMMENT=		lightweight addressbook
 
 DISTNAME=		contacts-0.9
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		misc x11
 
 HOMEPAGE=		http://pimlico-project.org/contacts.html

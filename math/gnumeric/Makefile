@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2009/06/07 06:00:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2009/06/08 16:58:15 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.8.4
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 SHARED_LIBS +=	spreadsheet     0.0
 CATEGORIES=    		math

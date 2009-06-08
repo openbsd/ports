@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/07 05:31:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/08 16:58:15 ajacoutot Exp $
 
 MULTI_PACKAGES=	-main -themes
 
 COMMENT-main=	tetrinet client
 COMMENT-themes=	collection of gtetrinet themes
 DISTNAME=	gtetrinet-0.7.11
-PKGNAME-main=	${DISTNAME}p5
-PKGNAME-themes=	gtetrinet-themes-20070623p0
+PKGNAME-main=	${DISTNAME}p6
+PKGNAME-themes=	gtetrinet-themes-20070623p1
 CATEGORIES=	x11 games
 
 HOMEPAGE=	http://gtetrinet.sourceforge.net/
@@ -58,6 +58,8 @@ WANTLIB-main=	ICE ORBit-2 SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi \
 WANTLIB-themes=
 
 MODGCONF2_SCHEMAS_DIR= gtetrinet
+MODGCONF2_LIBDEP= No
+MODGCONF2_RUNDEP= No
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-ipv6
@@ -70,7 +72,6 @@ FAKE_FLAGS=	gamesdir=${PREFIX}/bin
 USE_GMAKE=	Yes
 USE_X11=	Yes
 NO_REGRESS=	Yes
-MODGCONF2_LIBDEP= No
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/schemas/gtetrinet

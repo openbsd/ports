@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2009/06/07 05:30:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/06/08 16:58:15 ajacoutot Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
 GNOME_PROJECT=	gmfsk
 GNOME_VERSION=	0.6
-PKGNAME=	${DISTNAME}p10
+PKGNAME=	${DISTNAME}p11
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://gmfsk.connect.fi/

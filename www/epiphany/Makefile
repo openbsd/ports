@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2009/06/07 06:44:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2009/06/08 16:58:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME web browser based on mozilla
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
