@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/07 11:16:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/08 18:03:15 ajacoutot Exp $
 
 COMMENT-main=	applications integration into Nautilus
 COMMENT-pidgin=	pidgin integration in Nautilus
@@ -6,8 +6,8 @@ COMMENT-pidgin=	pidgin integration in Nautilus
 GNOME_PROJECT=	nautilus-sendto
 GNOME_VERSION=	1.0.1
 
-PKGNAME-main=	${DISTNAME}p0
-PKGNAME-pidgin=	${GNOME_PROJECT}-pidgin-${GNOME_VERSION}
+PKGNAME-main=	${DISTNAME}p1
+PKGNAME-pidgin=	${GNOME_PROJECT}-pidgin-${GNOME_VERSION}p0
 
 CATEGORIES-main=	misc
 CATEGORIES-pidgin=	net
@@ -46,6 +46,7 @@ BUILD_DEPENDS=	::net/gajim
 RUN_DEPENDS-main=	::archivers/zip \
 			::archivers/bzip2
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			${MODGCONF2_LIB_DEPENDS} \
 			camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
 			nautilus-extension.>=2::x11/gnome/nautilus
 
@@ -55,6 +56,8 @@ LIB_DEPENDS-pidgin=	${LIB_DEPENDS} \
 
 USE_X11=	Yes
 MODGCONF2_SCHEMAS_DIR= nautilus-sendto
+MODGCONF2_LIBDEP= No
+MODGCONF2_RUNDEP= No
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-thunderbird-name=thunderbird \
