@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/28 18:12:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2009/06/08 19:24:43 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
-DISTNAME=		system-config-printer-1.0.13
-PKGNAME=		${DISTNAME}p2
+DISTNAME=		system-config-printer-1.0.15
 CATEGORIES=		print sysutils
 
 HOMEPAGE=		http://cyberelk.net/tim/software/system-config-printer/
@@ -42,7 +41,8 @@ SUBST_FILES=		applet.py cupshelpers/cupshelpers.py pysmb.py \
 			my-default-printer.desktop.in \
 			print-applet.desktop.in \
 			system-config-printer.desktop.in \
-			troubleshoot/SchedulerNotRunning.py
+			troubleshoot/SchedulerNotRunning.py \
+			Makefile.in
 
 FAKE_FLAGS=	dbusdir=${PREFIX}/share/examples/system-config-printer/dbus-1/system.d/ \
 		autostartdir=${PREFIX}/share/examples/system-config-printer/xdg/autostart/

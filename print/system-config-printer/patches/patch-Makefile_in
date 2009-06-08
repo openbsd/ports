@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2009/02/10 17:19:42 ajacoutot Exp $
---- Makefile.in.orig	Fri Jan 16 11:37:10 2009
-+++ Makefile.in	Tue Feb 10 17:40:25 2009
+$OpenBSD: patch-Makefile_in,v 1.7 2009/06/08 19:24:43 ajacoutot Exp $
+--- Makefile.in.orig	Wed Feb 18 17:10:32 2009
++++ Makefile.in	Thu Jun  4 03:22:18 2009
 @@ -308,7 +308,7 @@ man_MANS = \
  dbus_DATA = \
  	newprinternotification.conf
@@ -54,3 +54,12 @@ $OpenBSD: patch-Makefile_in,v 1.6 2009/02/10 17:19:42 ajacoutot Exp $
  	  print-applet.desktop
  
  uninstall-desktopDATA:
+@@ -1120,7 +1116,7 @@ help:
+ 	@echo " run-applet         Run system-config-printer-applet with local glade file"
+ 
+ test-ppd-module.sh:
+-	echo "#!/usr/bin/env python" > "$@"
++	echo "#!${MODPY_BIN}" > "$@"
+ 	echo "import sys; sys.path.append ('$(top_srcdir)')" >> "$@"
+ 	echo "from cupshelpers.ppds import _self_test" >> "$@"
+ 	echo "_self_test(sys.argv)" >> "$@"

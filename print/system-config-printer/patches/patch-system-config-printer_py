@@ -1,6 +1,6 @@
-$OpenBSD: patch-system-config-printer_py,v 1.8 2009/02/10 17:19:42 ajacoutot Exp $
---- system-config-printer.py.orig	Fri Jan 16 11:35:26 2009
-+++ system-config-printer.py	Tue Feb 10 17:20:21 2009
+$OpenBSD: patch-system-config-printer_py,v 1.9 2009/06/08 19:24:43 ajacoutot Exp $
+--- system-config-printer.py.orig	Wed Feb 18 16:46:03 2009
++++ system-config-printer.py	Thu Jun  4 03:19:02 2009
 @@ -101,10 +101,6 @@ busy_cursor = gtk.gdk.Cursor(gtk.gdk.WATCH)
  ready_cursor = gtk.gdk.Cursor(gtk.gdk.LEFT_PTR)
  ellipsis = unichr(0x2026)
@@ -12,7 +12,7 @@ $OpenBSD: patch-system-config-printer_py,v 1.8 2009/02/10 17:19:42 ajacoutot Exp
  try:
      try_CUPS_SERVER_REMOTE_ANY = cups.CUPS_SERVER_REMOTE_ANY
  except AttributeError:
-@@ -2511,25 +2507,6 @@ class GUI(GtkGUI, monitor.Watcher):
+@@ -2518,25 +2514,6 @@ class GUI(GtkGUI, monitor.Watcher):
          self.changed = set()
          self.setDataButtonState()
  
@@ -38,7 +38,7 @@ $OpenBSD: patch-system-config-printer_py,v 1.8 2009/02/10 17:19:42 ajacoutot Exp
          # Now reconnect, in case the server needed to reload.
          self.reconnect ()
  
-@@ -3696,7 +3673,7 @@ class NewPrinterGUI(GtkGUI):
+@@ -3704,7 +3681,7 @@ class NewPrinterGUI(GtkGUI):
          # Try to get make and model via SNMP
          if host:
              os.environ["HOST"] = host
@@ -47,7 +47,7 @@ $OpenBSD: patch-system-config-printer_py,v 1.8 2009/02/10 17:19:42 ajacoutot Exp
              debugprint (host + ": " + cmd)
              stdout = None
              try:
-@@ -5194,7 +5171,7 @@ class NewPrinterGUI(GtkGUI):
+@@ -5199,7 +5176,7 @@ class NewPrinterGUI(GtkGUI):
                  try:
                      # We want this to be in the current natural language,
                      # so we intentionally don't set LC_ALL=C here.
