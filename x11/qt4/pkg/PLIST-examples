@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.19 2009/04/18 17:25:43 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.20 2009/06/08 13:55:28 espie Exp $
 @conflict qt4-<=4.2.2
 %%SHARED%%
 %%GCC4%%
@@ -300,9 +300,13 @@ lib/qt4/demos/spreadsheet/
 lib/qt4/demos/spreadsheet/images/
 lib/qt4/demos/spreadsheet/images/interview.png
 lib/qt4/demos/spreadsheet/main.cpp
+lib/qt4/demos/spreadsheet/printview.cpp
 @bin lib/qt4/demos/spreadsheet/spreadsheet
+lib/qt4/demos/spreadsheet/spreadsheet.cpp
 lib/qt4/demos/spreadsheet/spreadsheet.pro
 lib/qt4/demos/spreadsheet/spreadsheet.qrc
+lib/qt4/demos/spreadsheet/spreadsheetdelegate.cpp
+lib/qt4/demos/spreadsheet/spreadsheetitem.cpp
 lib/qt4/demos/sqlbrowser/
 lib/qt4/demos/sqlbrowser/browser.cpp
 lib/qt4/demos/sqlbrowser/browser.h
@@ -1159,6 +1163,14 @@ lib/qt4/examples/itemviews/editabletreemodel/treeitem.cpp
 lib/qt4/examples/itemviews/editabletreemodel/treeitem.h
 lib/qt4/examples/itemviews/editabletreemodel/treemodel.cpp
 lib/qt4/examples/itemviews/editabletreemodel/treemodel.h
+lib/qt4/examples/itemviews/fetchmore/
+@bin lib/qt4/examples/itemviews/fetchmore/fetchmore
+lib/qt4/examples/itemviews/fetchmore/fetchmore.pro
+lib/qt4/examples/itemviews/fetchmore/filelistmodel.cpp
+lib/qt4/examples/itemviews/fetchmore/filelistmodel.h
+lib/qt4/examples/itemviews/fetchmore/main.cpp
+lib/qt4/examples/itemviews/fetchmore/window.cpp
+lib/qt4/examples/itemviews/fetchmore/window.h
 lib/qt4/examples/itemviews/itemviews.pro
 lib/qt4/examples/itemviews/pixelator/
 lib/qt4/examples/itemviews/pixelator/imagemodel.cpp
@@ -1218,10 +1230,6 @@ lib/qt4/examples/itemviews/spinboxdelegate/main.cpp
 @bin lib/qt4/examples/itemviews/spinboxdelegate/spinboxdelegate
 lib/qt4/examples/itemviews/spinboxdelegate/spinboxdelegate.pro
 lib/qt4/examples/itemviews/stardelegate/
-@bin lib/qt4/examples/itemviews/stardelegate/fetchmore
-lib/qt4/examples/itemviews/stardelegate/fetchmore.pro
-lib/qt4/examples/itemviews/stardelegate/filelistmodel.cpp
-lib/qt4/examples/itemviews/stardelegate/filelistmodel.h
 lib/qt4/examples/itemviews/stardelegate/main.cpp
 @bin lib/qt4/examples/itemviews/stardelegate/stardelegate
 lib/qt4/examples/itemviews/stardelegate/stardelegate.cpp
@@ -1231,12 +1239,6 @@ lib/qt4/examples/itemviews/stardelegate/stareditor.cpp
 lib/qt4/examples/itemviews/stardelegate/stareditor.h
 lib/qt4/examples/itemviews/stardelegate/starrating.cpp
 lib/qt4/examples/itemviews/stardelegate/starrating.h
-lib/qt4/examples/itemviews/stardelegate/svgtextobject.cpp
-lib/qt4/examples/itemviews/stardelegate/svgtextobject.h
-@bin lib/qt4/examples/itemviews/stardelegate/textobject
-lib/qt4/examples/itemviews/stardelegate/textobject.pro
-lib/qt4/examples/itemviews/stardelegate/window.cpp
-lib/qt4/examples/itemviews/stardelegate/window.h
 lib/qt4/examples/layouts/
 lib/qt4/examples/layouts/README
 lib/qt4/examples/layouts/basiclayouts/
@@ -1658,6 +1660,16 @@ lib/qt4/examples/painting/painterpaths/renderarea.h
 lib/qt4/examples/painting/painterpaths/window.cpp
 lib/qt4/examples/painting/painterpaths/window.h
 lib/qt4/examples/painting/painting.pro
+lib/qt4/examples/painting/svggenerator/
+lib/qt4/examples/painting/svggenerator/displaywidget.cpp
+lib/qt4/examples/painting/svggenerator/displaywidget.h
+lib/qt4/examples/painting/svggenerator/main.cpp
+@bin lib/qt4/examples/painting/svggenerator/svggenerator
+lib/qt4/examples/painting/svggenerator/svggenerator.pro
+lib/qt4/examples/painting/svggenerator/svggenerator.qrc
+lib/qt4/examples/painting/svggenerator/window.cpp
+lib/qt4/examples/painting/svggenerator/window.h
+lib/qt4/examples/painting/svggenerator/window.ui
 lib/qt4/examples/painting/svgviewer/
 lib/qt4/examples/painting/svgviewer/files/
 lib/qt4/examples/painting/svgviewer/files/bubbles.svg
@@ -1767,6 +1779,14 @@ lib/qt4/examples/richtext/syntaxhighlighter/mainwindow.cpp
 lib/qt4/examples/richtext/syntaxhighlighter/mainwindow.h
 @bin lib/qt4/examples/richtext/syntaxhighlighter/syntaxhighlighter
 lib/qt4/examples/richtext/syntaxhighlighter/syntaxhighlighter.pro
+lib/qt4/examples/richtext/textobject/
+lib/qt4/examples/richtext/textobject/main.cpp
+lib/qt4/examples/richtext/textobject/svgtextobject.cpp
+lib/qt4/examples/richtext/textobject/svgtextobject.h
+@bin lib/qt4/examples/richtext/textobject/textobject
+lib/qt4/examples/richtext/textobject/textobject.pro
+lib/qt4/examples/richtext/textobject/window.cpp
+lib/qt4/examples/richtext/textobject/window.h
 lib/qt4/examples/script/
 lib/qt4/examples/script/README
 lib/qt4/examples/script/calculator/
@@ -2275,6 +2295,7 @@ lib/qt4/examples/widgets/lineedits/main.cpp
 lib/qt4/examples/widgets/lineedits/window.cpp
 lib/qt4/examples/widgets/lineedits/window.h
 lib/qt4/examples/widgets/movie/
+lib/qt4/examples/widgets/movie/animation.mng
 lib/qt4/examples/widgets/movie/main.cpp
 @bin lib/qt4/examples/widgets/movie/movie
 lib/qt4/examples/widgets/movie/movie.pro

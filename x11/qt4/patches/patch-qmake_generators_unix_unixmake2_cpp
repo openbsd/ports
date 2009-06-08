@@ -1,6 +1,6 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.10 2009/04/18 17:25:43 espie Exp $
---- qmake/generators/unix/unixmake2.cpp.orig	Wed Feb 25 22:09:16 2009
-+++ qmake/generators/unix/unixmake2.cpp	Tue Mar  3 19:37:56 2009
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.11 2009/06/08 13:55:28 espie Exp $
+--- qmake/generators/unix/unixmake2.cpp.orig	Wed Apr 22 01:57:37 2009
++++ qmake/generators/unix/unixmake2.cpp	Sun Jun  7 12:40:52 2009
 @@ -233,10 +233,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              t << "TARGETD       = " << escapeFilePath(var("TARGET_x.y")) << endl;
              t << "TARGET0       = " << escapeFilePath(var("TARGET_")) << endl;
@@ -49,7 +49,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.10 2009/04/18 17:25:43 e
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
              t << endl << endl;
-@@ -873,9 +862,7 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -874,9 +863,7 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
          t << "\t-$(LIBTOOL) --mode=clean $(DEL_FILE) " << "$(TARGET)" << endl;
      } else if(!project->isActiveConfig("staticlib") && project->values("QMAKE_APP_FLAG").isEmpty() &&
         !project->isActiveConfig("plugin")) {
@@ -60,7 +60,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.10 2009/04/18 17:25:43 e
      } else {
          t << "\t-$(DEL_FILE) " << "$(TARGET)" << " " << endl;
      }
-@@ -973,6 +960,10 @@ void UnixMakefileGenerator::init2()
+@@ -974,6 +961,10 @@ void UnixMakefileGenerator::init2()
      project->values("VER_MAJ").append(l[0]);
      project->values("VER_MIN").append(l[1]);
      project->values("VER_PAT").append(l[2]);
@@ -71,7 +71,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.10 2009/04/18 17:25:43 e
      if(project->isEmpty("QMAKE_FRAMEWORK_VERSION"))
          project->values("QMAKE_FRAMEWORK_VERSION").append(project->values("VER_MAJ").first());
  
-@@ -1104,7 +1095,7 @@ void UnixMakefileGenerator::init2()
+@@ -1105,7 +1096,7 @@ void UnixMakefileGenerator::init2()
                                                              project->first("VER_MIN") +  "." +
                                                              project->first("VER_PAT"));
              }

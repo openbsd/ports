@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2009/04/18 17:25:43 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2009/06/08 13:55:28 espie Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -44,19 +44,20 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		phonon 4.1
 
 
-VERSION =	4.5.0
-PKGVERSION =	4.5.0
+VERSION =	4.5.1
+PKGVERSION =	4.5.1
 DISTNAME =	qt-x11-opensource-src-${VERSION}
 
 
 CATEGORIES =	x11
-MASTER_SITES =	ftp://ftp.troll.no/qt/source/ \
+MASTER_SITES =	ftp://ftp.qtsoftware.com/qt/source/ \
+		ftp://ftp.troll.no/qt/source/ \
 		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/ \
 		ftp://ftp.ntua.gr/pub/X11/Qt/qt/source/ \
 		ftp://ftp.tu-chemnitz.de/pub/Qt/qt/source/ \
 		http://ftp.silug.org/pub/qt/source/
 
-HOMEPAGE =	http://www.trolltech.com/qt/
+HOMEPAGE =	http://www.qtsoftware.com/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
  
@@ -89,6 +90,7 @@ CONFIGURE_ARGS =	-qt-gif -system-libpng -system-libjpeg -system-zlib \
 			-xinerama \
 			-cups \
 			-confirm-license \
+			-opensource \
 			-I${LOCALBASE}/include/libpng \
 			-I${X11BASE}/include/freetype2 \
 			-I${X11BASE}/include \
@@ -220,13 +222,14 @@ PKG_ARCH-html =	*
 
 MODULES =
 #MODULES += gcc4
-#MODGCC4_ARCHES =*
+#MODGCC4_ARCHES = *
 #MODGCC4_LANGS =	c++
 
 .if ${MODULES:Mgcc4}
 PKG_ARGS += -DGCC4=1
-WANTLIB-examples +=	QtWebKit sqlite3 QtXmlPatterns
-WANTLIB-main =+ sqlite3
+LIB_DEPENDS-examples +=	QtWebKit,QtXmlPatterns::${BASE_PKGPATH}
+WANTLIB-examples +=	sqlite3
+WANTLIB-main += sqlite3
 .else
 PKG_ARGS += -DGCC4=0
 .endif

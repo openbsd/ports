@@ -1,6 +1,6 @@
-$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.6 2008/11/17 15:05:24 espie Exp $
---- mkspecs/openbsd-g++/qmake.conf.orig	Sat Sep 27 10:58:43 2008
-+++ mkspecs/openbsd-g++/qmake.conf	Mon Nov 17 13:02:51 2008
+$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.7 2009/06/08 13:55:28 espie Exp $
+--- mkspecs/openbsd-g++/qmake.conf.orig	Wed Apr 22 01:57:37 2009
++++ mkspecs/openbsd-g++/qmake.conf	Sun Jun  7 12:40:52 2009
 @@ -7,12 +7,13 @@ TEMPLATE		= app
  CONFIG			+= qt warn_on release link_prl
  QT			+= core gui
@@ -31,7 +31,7 @@ $OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.6 2008/11/17 15:05:24 espie E
  QMAKE_INCDIR_QT		= $$[QT_INSTALL_HEADERS]
  QMAKE_LIBDIR_QT		= $$[QT_INSTALL_LIBS]
  QMAKE_INCDIR_OPENGL	= /usr/X11R6/include
-@@ -54,7 +55,7 @@ QMAKE_LFLAGS_RELEASE	=
+@@ -56,7 +57,7 @@ QMAKE_LFLAGS_RELEASE	=
  QMAKE_LFLAGS_DEBUG	=
  QMAKE_LFLAGS_SHLIB	= -shared
  QMAKE_LFLAGS_PLUGIN	= $$QMAKE_LFLAGS_SHLIB

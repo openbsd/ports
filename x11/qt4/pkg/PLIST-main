@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2009/04/18 17:25:43 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2009/06/08 13:55:28 espie Exp $
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
 %%SHARED%%
@@ -2541,6 +2541,7 @@ lib/qt4/mkspecs/features/designer.prf
 lib/qt4/mkspecs/features/dll.prf
 lib/qt4/mkspecs/features/exclusive_builds.prf
 lib/qt4/mkspecs/features/help.prf
+lib/qt4/mkspecs/features/include_source_dir.prf
 lib/qt4/mkspecs/features/incredibuild_xge.prf
 lib/qt4/mkspecs/features/lex.prf
 lib/qt4/mkspecs/features/link_pkgconfig.prf
@@ -2586,6 +2587,7 @@ lib/qt4/mkspecs/features/unix/x11.prf
 lib/qt4/mkspecs/features/unix/x11inc.prf
 lib/qt4/mkspecs/features/unix/x11lib.prf
 lib/qt4/mkspecs/features/unix/x11sm.prf
+lib/qt4/mkspecs/features/use_c_linker.prf
 lib/qt4/mkspecs/features/warn_off.prf
 lib/qt4/mkspecs/features/warn_on.prf
 lib/qt4/mkspecs/features/win32/
@@ -2598,7 +2600,6 @@ lib/qt4/mkspecs/features/win32/embed_manifest_exe.prf
 lib/qt4/mkspecs/features/win32/exceptions.prf
 lib/qt4/mkspecs/features/win32/exceptions_off.prf
 lib/qt4/mkspecs/features/win32/opengl.prf
-lib/qt4/mkspecs/features/win32/profiling.prf
 lib/qt4/mkspecs/features/win32/qaxcontainer.prf
 lib/qt4/mkspecs/features/win32/qaxserver.prf
 lib/qt4/mkspecs/features/win32/qt_dll.prf
@@ -3007,7 +3008,7 @@ lib/qt4/translations/qt_help_pl.qm
 lib/qt4/translations/qt_help_zh_CN.qm
 lib/qt4/translations/qt_help_zh_TW.qm
 lib/qt4/translations/qt_iw.qm
-lib/qt4/translations/qt_ja_jp.qm
+lib/qt4/translations/qt_ja_JP.qm
 lib/qt4/translations/qt_pl.qm
 lib/qt4/translations/qt_pt.qm
 lib/qt4/translations/qt_ru.qm
