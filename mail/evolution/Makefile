@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2009/06/07 05:59:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2009/06/08 09:41:01 ajacoutot Exp $
 
 # XXX TODO: the mail-account-disable plugin is not loaded by default:
 # it makes right-clicking on a folder very long (the first time)
@@ -11,8 +11,8 @@ COMMENT-plugins=	additionnal plugins for evolution
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.24.5
 
-PKGNAME-main=		${DISTNAME}p9
-PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p3
+PKGNAME-main=		${DISTNAME}p10
+PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p4
 
 CATEGORIES=		mail
 
@@ -126,9 +126,9 @@ pre-configure:
 
 post-install:
 	find ${PREFIX}/share/evolution/${R}/default -perm 444 -exec chmod 644 {} \;
-	${INSTALL_DATA_DIR} ${PREFIX}/share/schemas/evolution-plugins/
+	${INSTALL_DATA_DIR} ${PREFIX}/${SCHEMAS_INSTDIR}-plugins/
 	for i in ${SCHEMAS-plugins} ; do \
-		mv ${PREFIX}/share/schemas/evolution/$$i.schemas \
-		${PREFIX}/share/schemas/evolution-plugins/ ; done
+		mv ${PREFIX}/${SCHEMAS_INSTDIR}/$$i.schemas \
+		${PREFIX}/${SCHEMAS_INSTDIR}-plugins/ ; done
 
 .include <bsd.port.mk>
