@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2009/06/01 06:51:51 benoit Exp $
---- configure.orig	Thu Apr  2 16:45:00 2009
-+++ configure	Thu May 28 16:07:47 2009
-@@ -6476,8 +6476,10 @@ _ACEOF
+$OpenBSD: patch-configure,v 1.2 2009/06/08 10:38:21 benoit Exp $
+--- configure.orig	Tue Jun  2 07:24:16 2009
++++ configure	Tue Jun  2 12:06:01 2009
+@@ -6480,8 +6480,10 @@ _ACEOF
     fi
  fi
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2009/06/01 06:51:51 benoit Exp $
  # Sets GUI_TARGET and qt specific stuff
  # Check whether --enable-gui was given.
  if test "${enable_gui+set}" = set; then
-@@ -7215,9 +7217,6 @@ _ACEOF
+@@ -7219,9 +7221,6 @@ _ACEOF
  esac
  
  
