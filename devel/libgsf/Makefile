@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2009/06/07 05:31:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2009/06/08 16:43:51 ajacoutot Exp $
 
 COMMENT-main=		GNOME Structured File library
 COMMENT-gnome=		GNOME specific extensions to libgsf
@@ -6,8 +6,8 @@ COMMENT-gnome=		GNOME specific extensions to libgsf
 GNOME_PROJECT=		libgsf
 GNOME_VERSION=		1.14.14
 
-PKGNAME-main=		${DISTNAME}
-PKGNAME-gnome=		libgsf-gnome-${VERSION}p0
+PKGNAME-main=		${DISTNAME}p0
+PKGNAME-gnome=		libgsf-gnome-${VERSION}p1
 
 CATEGORIES=		devel
 
@@ -41,6 +41,7 @@ LIB_DEPENDS=		bz2.>=10.2::archivers/bzip2 \
 			xml2.>=8.4::textproc/libxml
 
 MODGCONF2_LIBDEP=	No
+MODGCONF2_RUNDEP=	No
 MODGCONF2_SCHEMAS_DIR=	libgsf
 
 CONFIGURE_STYLE=	gnu
