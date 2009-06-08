@@ -1,30 +1,30 @@
-# $OpenBSD: Makefile,v 1.6 2009/05/25 09:46:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2009/06/08 21:46:58 benoit Exp $
 
-COMMENT=		generates lists of words given certain information
-DISTNAME=		WordGenerator-1.9
-CATEGORIES=		misc education
+COMMENT =		generates lists of words given certain information
 
-HOMEPAGE=		http://billposer.org/Software/WordGenerator.html
+DISTNAME =		WordGenerator-1.9
+PKGNAME =		${DISTNAME}p0
+CATEGORIES =		misc education
 
-MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
+MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=		http://billposer.org/Software/Downloads/
+MASTER_SITES =		http://www.arcane-labs.net/download/OpenBSD/
 
-MODULES=		x11/tk
+MODULES =		x11/tk
 
-RUN_DEPENDS=		:tcllib->=1.8:devel/tcllib \
+RUN_DEPENDS =		:tcllib->=1.8:devel/tcllib \
 			::x11/iwidgets
 
-NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_BUILD =		Yes
+NO_REGRESS =		Yes
 
-PKG_ARCH=		*
+PKG_ARCH =		*
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/WordGenerator.tcl
