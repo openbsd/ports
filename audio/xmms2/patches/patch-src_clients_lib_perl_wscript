@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_clients_lib_perl_wscript,v 1.1 2009/06/08 17:08:48 ajacoutot Exp $
+--- src/clients/lib/perl/wscript.orig	Thu Jun  4 12:11:24 2009
++++ src/clients/lib/perl/wscript	Thu Jun  4 12:12:19 2009
+@@ -17,9 +17,9 @@ def build(bld):
+     obj.mac_bundle = True
+
+     bld.install_files('${INSTALLDIR_PERL_LIB}', 'pm/XMMSClient.pm')
+-    bld.install_files('${INSTALLDIR_PERL_LIB}', 'pm/XMMSClient/Sync.pm')
+-    bld.install_files('${INSTALLDIR_PERL_LIB}', 'pm/XMMSClient/Glib.pm')
+-    bld.install_files('${INSTALLDIR_PERL_LIB}', 'pm/XMMSClient/Collection.pm')
++    bld.install_files('${INSTALLDIR_PERL_LIB}/XMMSClient', 'pm/XMMSClient/Sync.pm')
++    bld.install_files('${INSTALLDIR_PERL_LIB}/XMMSClient', 'pm/XMMSClient/Glib.pm')
++    bld.install_files('${INSTALLDIR_PERL_LIB}/XMMSClient', 'pm/XMMSClient/Collection.pm')
+
+ def configure(conf):
+     conf.check_tool('perl')

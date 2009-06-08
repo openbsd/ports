@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/03 18:25:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/08 17:08:48 ajacoutot Exp $
 @bin bin/nyxmms2
 @bin bin/vistest
 @bin bin/vistest-fft
@@ -111,22 +111,25 @@ lib/xmms2/libxmms_vorbis.so
 lib/xmms2/libxmms_wave.so
 lib/xmms2/libxmms_xml.so
 lib/xmms2/libxmms_xspf.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Audio/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Audio/Collection.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Audio/Glib.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Audio/Sync.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Audio/XMMSClient.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Audio/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Audio/XMMSClient/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Audio/XMMSClient/XMMSClient.so
+${P5ARCH}/
+${P5ARCH}/Audio/
+${P5ARCH}/Audio/XMMSClient/
+${P5ARCH}/Audio/XMMSClient.pm
+${P5ARCH}/Audio/XMMSClient/Collection.pm
+${P5ARCH}/Audio/XMMSClient/Glib.pm
+${P5ARCH}/Audio/XMMSClient/Sync.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Audio/
+${P5ARCH}/auto/Audio/XMMSClient/
+${P5ARCH}/auto/Audio/XMMSClient/XMMSClient.so
 @man man/man1/nyxmms2.1
 @man man/man1/xmms2-et.1
 @man man/man1/xmms2-launcher.1
 @man man/man1/xmms2-mdns-avahi.1
 @man man/man1/xmms2.1
 @man man/man1/xmms2d.1
+@man man/man3p/Audio::XMMSClient.3p
+@man man/man3p/Audio::XMMSClient::Glib.3p
 share/pixmaps/
 share/pixmaps/xmms2-128.png
 share/pixmaps/xmms2-16.png

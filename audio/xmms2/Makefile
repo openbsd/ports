@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/03 18:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/08 17:08:48 ajacoutot Exp $
 
 COMMENT =		audio player daemon with library management
 
 V =			0.6
 DISTNAME =		xmms2-${V}DrMattDestruction
-PKGNAME =		xmms2-${V}
+PKGNAME =		xmms2-${V}p0
 
 SHARED_LIBS +=		xmmsclient++-glib	0.0 # 1.0.0
 SHARED_LIBS +=		xmmsclient-glib		0.0 # 1.0.0
@@ -27,7 +27,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmms2/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python \
-			devel/gettext
+			devel/gettext \
+			perl
 
 WANTLIB += a52 c faac faad m mp3lame ncurses ogg pthread readline
 WANTLIB += theora vorbis vorbisenc vorbisfile x264 z
@@ -73,5 +74,10 @@ do-install:
 # These directories are empty after the fake
 	rmdir ${WRKSRC}/_build_/default/src/clients/lib/perl/pm/XMMSClient
 	rmdir ${WRKSRC}/_build_/default/src/clients/lib/perl/pm
+	/usr/bin/pod2man ${WRKSRC}/src/clients/lib/perl/pm/XMMSClient.pm > ${WRKDIR}/Audio::XMMSClient.3p
+	/usr/bin/pod2man ${WRKSRC}/src/clients/lib/perl/pm/XMMSClient/Glib.pm > ${WRKDIR}/Audio::XMMSClient::Glib.3p
+	${INSTALL_MAN} ${WRKDIR}/*.3p ${PREFIX}/man/man3p/
+
+
 
 .include <bsd.port.mk>
