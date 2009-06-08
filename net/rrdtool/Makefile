@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2009/04/26 11:01:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2009/06/08 10:00:37 sthen Exp $
 
 SHARED_ONLY=	Yes 
 
@@ -15,7 +15,7 @@ PKGNAME-python= py-rrd-${VERSION}p0
 SHARED_LIBS+=	rrd 3.0
 SHARED_LIBS+=	rrd_th 3.0
 
-CATEGORIES=	net
+CATEGORIES=	net databases
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 HOMEPAGE=	http://oss.oetiker.ch/rrdtool/
