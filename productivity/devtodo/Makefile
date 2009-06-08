@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.15 2007/12/17 19:55:48 okan Exp $
+# $OpenBSD: Makefile,v 1.16 2009/06/08 14:57:37 sthen Exp $
 
 COMMENT=		reminder/task program aimed at developers
 
 DISTNAME=		devtodo-0.1.20
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		productivity devel
 
 HOMEPAGE=		http://swapoff.org/DevTodo/
-MASTER_SITES=		http://swapoff.org/files/devtodo/
 
-# GPL
+MASTER_SITES=		http://swapoff.org/files/devtodo/ \
+			http://spacehopper.org/mirrors/
+
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

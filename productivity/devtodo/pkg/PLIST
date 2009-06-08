@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/12/17 19:55:48 okan Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/06/08 14:57:37 sthen Exp $
 @conflict tdl-*
 @conflict openmotif-demos-*
-bin/devtodo
+@bin bin/devtodo
 bin/tda
 bin/tdd
 bin/tde
