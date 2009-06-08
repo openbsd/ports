@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/04/18 09:02:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/08 17:13:49 sthen Exp $
 
 COMMENT-main =		little brother's database, email address query tools
 COMMENT-ldap =		LDAP support for little brother's database
@@ -6,8 +6,8 @@ COMMENT-ldap =		LDAP support for little brother's database
 VERSION =		0.36
 DISTNAME =		lbdb_${VERSION}
 
-PKGNAME-main =		lbdb-${VERSION}p0
-PKGNAME-ldap =		lbdb-ldap-${VERSION}p0
+PKGNAME-main =		lbdb-${VERSION}p1
+PKGNAME-ldap =		lbdb-ldap-${VERSION}p1
 
 CATEGORIES =		databases mail
 
@@ -48,8 +48,8 @@ CONFIGURE_ARGS += 	--libdir=${PREFIX}/lib/lbdb \
 			--without-pgp \
 			--without-evolution-addressbook-export \
 			--enable-lbdb-dotlock
-CONFIGURE_ENV =		ac_cv_path_BASH=false \
-			ac_cv_path_GAWK=false \
+CONFIGURE_ENV =		ac_cv_path_BASH=NONE \
+			ac_cv_path_GAWK=NONE \
 			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
