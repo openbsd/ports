@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2009/06/07 11:03:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2009/06/08 17:20:13 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
 GNOME_VERSION=	0.12.2
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 
 CATEGORIES=	x11
 
@@ -23,7 +23,7 @@ USE_X11=	Yes
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	tomboy
-MODGCONF2_LIBDEP=	Yes
+MODGCONF2_LIBDEP=	No
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \

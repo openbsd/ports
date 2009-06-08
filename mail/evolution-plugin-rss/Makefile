@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/06/08 16:58:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/06/08 17:20:13 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		RSS-reader plugin for GNOME
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.1.2
-PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}p4
+PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}p5
 
 CATEGORIES=    		mail
 
@@ -39,7 +39,7 @@ LIB_DEPENDS=		dbus-glib-1::x11/dbus-glib
 
 USE_X11=		Yes
 
-MODGCONF2_LIBDEP=	Yes
+MODGCONF2_LIBDEP=	No
 MODGCONF2_SCHEMAS_DIR=	evolution-rss
 
 CONFIGURE_STYLE=	gnu
