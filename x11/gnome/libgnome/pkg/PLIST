@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2009/06/07 10:01:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2009/06/08 09:05:13 kili Exp $
 %%SHARED%%
 @bin bin/gnome-open
 include/libgnome-2.0/
@@ -260,7 +260,7 @@ ${SCHEMAS_INSTDIR}/desktop_gnome_accessibility_keyboard.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_accessibility_startup.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_applications_at_mobility.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_applications_at_visual.schemas
-${SCHEMAS_INSTDIR}/desktop_gnome_appl/ications_browser.schemas
+${SCHEMAS_INSTDIR}/desktop_gnome_applications_browser.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_applications_office.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_applications_terminal.schemas
 ${SCHEMAS_INSTDIR}/desktop_gnome_applications_window_manager.schemas

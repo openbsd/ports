@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2009/06/07 10:01:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2009/06/08 09:05:13 kili Exp $
 
 COMMENT=		libraries for the GNOME project
 
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ORBit-2 ORBitCosNaming-2 c crypto dbus-1 dbus-glib-1 \
+WANTLIB=        ORBit-2 ORBitCosNaming-2 avahi-client avahi-common \
+		avahi-glib c crypto dbus-1 dbus-glib-1 \
 		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 		m pcre pthread ssl util xml2 z
 
