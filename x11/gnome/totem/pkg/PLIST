@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/06/07 11:03:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/06/09 14:34:02 kili Exp $
 @bin bin/totem
 @bin bin/totem-audio-preview
 @bin bin/totem-video-indexer
@@ -356,7 +356,7 @@ share/omf/totem/totem-zh_TW.omf
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/totem-handlers.schemas
 ${SCHEMAS_INSTDIR}/totem-video-thumbnail.schemas
-${SCHEMAS_INSTDIR}/totem/totem.schemas
+${SCHEMAS_INSTDIR}/totem.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/totem/
 share/totem/filmholes-big-left.png
