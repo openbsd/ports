@@ -1,0 +1,12 @@
+$OpenBSD: patch-capplets_default-applications_Makefile_in,v 1.1 2009/06/09 17:21:10 ajacoutot Exp $
+--- capplets/default-applications/Makefile.in.orig	Tue Jun  9 18:57:15 2009
++++ capplets/default-applications/Makefile.in	Tue Jun  9 18:57:34 2009
+@@ -346,7 +346,7 @@ dist_glade_DATA = gnome-default-applications-propertie
+ desktopdir = $(datadir)/applications
+ Desktop_in_files = default-applications.desktop.in
+ desktop_DATA = $(Desktop_in_files:.desktop.in=.desktop)
+-pkgconfigdir = $(datadir)/pkgconfig
++pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = gnome-default-applications.pc
+ autostartdir = $(sysconfdir)/xdg/autostart
+ autostart_in_files = gnome-at-session.desktop.in

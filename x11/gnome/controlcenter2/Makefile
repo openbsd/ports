@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.65 2009/06/08 17:59:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2009/06/09 17:21:10 ajacoutot Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		${DISTNAME}p18
+PKGNAME=		${DISTNAME}p19
 
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
@@ -29,6 +29,9 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		pcre pixman-1 plc4 plds4 png popt pthread smime3 softokn3 \
 		soup-2.4 sqlite3 ssl ssl3 startup-notification-1 tasn1 util \
 		vorbis vorbisfile xkbfile xml2 z
+
+# po/ta.po (patch-po_ta_po) is seen as binary
+DIFF_ARGS=		-a
 
 MODULES=		devel/gettext \
 			x11/gnome \
