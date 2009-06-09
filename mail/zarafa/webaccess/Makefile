@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/05/14 17:38:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/06/09 18:23:03 ajacoutot Exp $
 
 COMMENT=	zarafa webaccess frontend
 
-V=		6.20.5
+V=		6.20.6
 DISTNAME=	zarafa-webaccess-ajax-${V}
-PKGNAME=	zarafa-webaccess-${V}p0
+PKGNAME=	zarafa-webaccess-${V}
 CATEGORIES=	mail www productivity
 
 MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/zarafa/
