@@ -1,0 +1,12 @@
+$OpenBSD: patch-e_chop_c,v 1.3 2009/06/09 13:20:21 jasper Exp $
+--- e_chop.c.pat.orig	Tue Jun  9 15:09:30 2009
++++ e_chop.c	Tue Jun  9 15:11:06 2009
+@@ -19,7 +19,7 @@
+ /* >>>>>>>>>>>>>>>>>>> fixme -- don't forget undo ! <<<<<<<<<<<<<<<< */
+ 
+ #include <stdlib.h>
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <alloca.h>
+ #endif
+ #include <math.h>
