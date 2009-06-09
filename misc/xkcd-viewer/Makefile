@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/07 09:01:39 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/09 15:10:19 landry Exp $
 
 COMMENT=	XKCD comic viewer
 
 DISTNAME=	XKCD_viewer-0.1
-PKGNAME=	${DISTNAME:L:S/_/-/}
+PKGNAME=	${DISTNAME:L:S/_/-/}p0
 CATEGORIES=	misc
 
 MASTER_SITES=	http://www.autistici.org/fox/files/XKCD_viewer/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKSRC=		${WRKDIR}/XKCD_viewer
+WRKDIST=		${WRKDIR}/XKCD_viewer
 MODULES=	perl
 
 CONFIGURE_STYLE=perl

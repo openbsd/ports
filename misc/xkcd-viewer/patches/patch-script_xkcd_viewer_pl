@@ -1,0 +1,15 @@
+$OpenBSD: patch-script_xkcd_viewer_pl,v 1.1 2009/06/09 15:10:19 landry Exp $
+--- script/xkcd_viewer.pl.orig	Tue Jun  9 17:03:48 2009
++++ script/xkcd_viewer.pl	Tue Jun  9 17:04:25 2009
+@@ -133,10 +133,10 @@ $mainwindow->set_default_icon(Gtk2::Gdk::Pixbuf->new_f
+ #Handlers
+ $mainwindow->signal_connect('delete_event' => sub {Gtk2->main_quit;});
+ $mainwindow->signal_connect('destroy' => sub {Gtk2->main_quit;} );
++$quit->signal_connect("activate" => sub {Gtk2->main_quit;});
+ $box->signal_connect('key-press-event' => \&key_bindings);
+ $saveas->signal_connect("activate" ,\&on_save,$mainwindow);
+ $search->signal_connect("activate" ,\&on_search,$mainwindow);
+-$quit->signal_connect("activate" ,\&delete_event,$mainwindow);
+ $about->signal_connect("activate" ,\&on_about,$mainwindow);
+ $getlink->signal_connect("activate" ,\&on_getlink,$mainwindow);
+ $inslink->signal_connect("activate" ,\&on_inslink,$mainwindow);
