@@ -1,19 +1,12 @@
-$OpenBSD: patch-w_snap_c,v 1.1 2008/08/26 14:32:20 sthen Exp $
---- w_snap.c.pat.orig	Wed Aug 20 11:45:20 2008
-+++ w_snap.c	Wed Aug 20 11:45:20 2008
-@@ -16,6 +16,7 @@
-  *
-  */
- 
-+#include <stdlib.h>
- #include "fig.h"
- #include "figx.h"
- #include "resources.h"
-@@ -29,7 +30,6 @@
- #include "w_util.h"
- #include "u_quartic.h"
+$OpenBSD: patch-w_snap_c,v 1.2 2009/06/09 13:19:44 jasper Exp $
+--- w_snap.c.pat.orig	Tue Jun  9 15:11:25 2009
++++ w_snap.c	Tue Jun  9 15:11:36 2009
+@@ -33,7 +33,7 @@
+ #include "u_search.h"
+ #include "f_util.h"
  #include <math.h>
--#include <alloca.h>
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <alloca.h>
+ #endif
  
- int snap_gx;
- int snap_gy;

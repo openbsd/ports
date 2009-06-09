@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/08/26 14:32:20 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/06/09 13:19:44 jasper Exp $
 @bin bin/xfig
 lib/X11/app-defaults/Fig
-lib/X11/app-defaults/Fig-color
 lib/X11/xfig/CompKeyDB
 lib/X11/xfig/Libraries/
 lib/X11/xfig/Libraries/Arrows/
@@ -83,15 +82,16 @@ lib/X11/xfig/Libraries/Computers/desktop3.fig
 lib/X11/xfig/Libraries/Computers/desktop4.fig
 lib/X11/xfig/Libraries/Computers/desktop5.fig
 lib/X11/xfig/Libraries/Computers/disk-array.fig
-lib/X11/xfig/Libraries/Computers/disk-array.fig.bak
 lib/X11/xfig/Libraries/Computers/film_digitizer.fig
 lib/X11/xfig/Libraries/Computers/floppy_lg.fig
 lib/X11/xfig/Libraries/Computers/floppy_sm.fig
+lib/X11/xfig/Libraries/Computers/fujitsu-siemens.fig
 lib/X11/xfig/Libraries/Computers/generic_hardware.fig
 lib/X11/xfig/Libraries/Computers/high_speed_disk.fig
 lib/X11/xfig/Libraries/Computers/laptop.fig
 lib/X11/xfig/Libraries/Computers/laptop2.fig
 lib/X11/xfig/Libraries/Computers/minitower.fig
+lib/X11/xfig/Libraries/Computers/mirapoint.fig
 lib/X11/xfig/Libraries/Computers/printer.fig
 lib/X11/xfig/Libraries/Computers/printer2.fig
 lib/X11/xfig/Libraries/Computers/printer3.fig
@@ -100,6 +100,10 @@ lib/X11/xfig/Libraries/Computers/r320.fig
 lib/X11/xfig/Libraries/Computers/scanner.fig
 lib/X11/xfig/Libraries/Computers/server.fig
 lib/X11/xfig/Libraries/Computers/sparc5.fig
+lib/X11/xfig/Libraries/Computers/sun_d1000.fig
+lib/X11/xfig/Libraries/Computers/sunfire_v120.fig
+lib/X11/xfig/Libraries/Computers/sunfire_v240.fig
+lib/X11/xfig/Libraries/Computers/sunfire_v440.fig
 lib/X11/xfig/Libraries/Computers/tapedrive.fig
 lib/X11/xfig/Libraries/Computers/telephone.fig
 lib/X11/xfig/Libraries/Computers/terminal.fig
@@ -187,10 +191,12 @@ lib/X11/xfig/Libraries/Electronic/Physical/README
 lib/X11/xfig/Libraries/Electronic/Physical/bal_mike.fig
 lib/X11/xfig/Libraries/Electronic/Physical/conn_db15.fig
 lib/X11/xfig/Libraries/Electronic/Physical/conn_db25.fig
+lib/X11/xfig/Libraries/Electronic/Physical/conn_db37.fig
 lib/X11/xfig/Libraries/Electronic/Physical/conn_db9.fig
 lib/X11/xfig/Libraries/Electronic/Physical/conn_molex_4pin.fig
 lib/X11/xfig/Libraries/Electronic/Physical/conn_molex_5pin.fig
 lib/X11/xfig/Libraries/Electronic/Physical/conn_molex_6pin.fig
+lib/X11/xfig/Libraries/Electronic/Physical/conn_ribbon_50pin.fig
 lib/X11/xfig/Libraries/Electronic/Physical/dip_08pin.fig
 lib/X11/xfig/Libraries/Electronic/Physical/dip_14pin.fig
 lib/X11/xfig/Libraries/Electronic/Physical/dip_16pin.fig
@@ -1222,6 +1228,8 @@ lib/X11/xfig/Libraries/Electronic/Schematic/pnp.fig
 lib/X11/xfig/Libraries/Electronic/Schematic/pushbutton_nc.fig
 lib/X11/xfig/Libraries/Electronic/Schematic/pushbutton_no.fig
 lib/X11/xfig/Libraries/Electronic/Schematic/relay.fig
+lib/X11/xfig/Libraries/Electronic/Schematic/relay_dpdt.fig
+lib/X11/xfig/Libraries/Electronic/Schematic/relay_spdt.fig
 lib/X11/xfig/Libraries/Electronic/Schematic/resistor.fig
 lib/X11/xfig/Libraries/Electronic/Schematic/sine-source.fig
 lib/X11/xfig/Libraries/Electronic/Schematic/sine.fig
@@ -1281,6 +1289,7 @@ lib/X11/xfig/Libraries/Examples/house_plans.fig
 lib/X11/xfig/Libraries/Examples/housecheck.fig
 lib/X11/xfig/Libraries/Examples/icebergs.jpg
 lib/X11/xfig/Libraries/Examples/illusion.fig
+lib/X11/xfig/Libraries/Examples/isometric_drawing.fig
 lib/X11/xfig/Libraries/Examples/lidar.fig
 lib/X11/xfig/Libraries/Examples/lists.fig
 lib/X11/xfig/Libraries/Examples/logic.fig
@@ -1293,7 +1302,6 @@ lib/X11/xfig/Libraries/Examples/pictures.fig
 lib/X11/xfig/Libraries/Examples/poster.fig
 lib/X11/xfig/Libraries/Examples/ps-foil.fig
 lib/X11/xfig/Libraries/Examples/ps-schematic.fig
-lib/X11/xfig/Libraries/Examples/ps-schematic.fig.bak
 lib/X11/xfig/Libraries/Examples/pumpkin.xbm
 lib/X11/xfig/Libraries/Examples/recycle.fig
 lib/X11/xfig/Libraries/Examples/rfxc.fig
@@ -1325,7 +1333,6 @@ lib/X11/xfig/Libraries/Fasteners/Machinescrews/Hexhead_screw.fig
 lib/X11/xfig/Libraries/Fasteners/Machinescrews/Panhead_Slotted_screw.fig
 lib/X11/xfig/Libraries/Fasteners/Machinescrews/Panhead_Slotted_screw2.fig
 lib/X11/xfig/Libraries/Fasteners/Machinescrews/Panhead_screw.fig
-lib/X11/xfig/Libraries/Fasteners/Machinescrews/Panhead_screw.fig.bak
 lib/X11/xfig/Libraries/Fasteners/README
 lib/X11/xfig/Libraries/Fasteners/Springs/
 lib/X11/xfig/Libraries/Fasteners/Springs/Spring.fig
@@ -1507,6 +1514,7 @@ lib/X11/xfig/Libraries/Flags/NorthAmerica/USA/tennessee.fig
 lib/X11/xfig/Libraries/Flags/NorthAmerica/USA/texas.fig
 lib/X11/xfig/Libraries/Flags/NorthAmerica/USA/usa.fig
 lib/X11/xfig/Libraries/Flags/NorthAmerica/canada.fig
+lib/X11/xfig/Libraries/Flags/NorthAmerica/mexico.ps
 lib/X11/xfig/Libraries/Flags/Oceania/
 lib/X11/xfig/Libraries/Flags/Oceania/australia.fig
 lib/X11/xfig/Libraries/Flags/Oceania/marshall_islands.fig
@@ -2168,7 +2176,6 @@ lib/X11/xfig/Libraries/Miscellaneous/brace_over.fig
 lib/X11/xfig/Libraries/Miscellaneous/brace_right.fig
 lib/X11/xfig/Libraries/Miscellaneous/brace_under.fig
 lib/X11/xfig/Libraries/Miscellaneous/candle.fig
-lib/X11/xfig/Libraries/Miscellaneous/candle.fig.bak
 lib/X11/xfig/Libraries/Miscellaneous/gradient1.fig
 lib/X11/xfig/Libraries/Miscellaneous/gradient2.fig
 lib/X11/xfig/Libraries/Miscellaneous/magnifying_glass1.fig
@@ -2213,6 +2220,8 @@ lib/X11/xfig/Libraries/Music/modern/half-dotted-up.fig
 lib/X11/xfig/Libraries/Music/modern/half-down.fig
 lib/X11/xfig/Libraries/Music/modern/half-up.fig
 lib/X11/xfig/Libraries/Music/modern/natural.fig
+lib/X11/xfig/Libraries/Music/modern/piano_keyboard.fig
+lib/X11/xfig/Libraries/Music/modern/piano_keyboard_perspect.fig
 lib/X11/xfig/Libraries/Music/modern/quarter-dotted-down.fig
 lib/X11/xfig/Libraries/Music/modern/quarter-dotted-up.fig
 lib/X11/xfig/Libraries/Music/modern/quarter-down.fig
@@ -2300,6 +2309,7 @@ lib/X11/xfig/Libraries/Networks/VideoPlayers/mmedia_explorer.fig
 lib/X11/xfig/Libraries/OfficeEquip/
 lib/X11/xfig/Libraries/OfficeEquip/filecabinet.fig
 lib/X11/xfig/Libraries/OfficeEquip/overhead.fig
+lib/X11/xfig/Libraries/OfficeEquip/scissors.fig
 lib/X11/xfig/Libraries/OfficeEquip/telephone.fig
 lib/X11/xfig/Libraries/OfficeEquip/walloutlets.fig
 lib/X11/xfig/Libraries/Optics/
@@ -2622,14 +2632,6 @@ share/doc/xfig/html/animate.js
 share/doc/xfig/html/attributes.html
 share/doc/xfig/html/authors.html
 @comment share/doc/xfig/html/authors.html.orig
-share/doc/xfig/html/bugs_fixed.3.2.1.html
-share/doc/xfig/html/bugs_fixed.3.2.2.html
-share/doc/xfig/html/bugs_fixed.3.2.3.html
-share/doc/xfig/html/bugs_fixed.3.2.3a.html
-share/doc/xfig/html/bugs_fixed.3.2.3b.html
-share/doc/xfig/html/bugs_fixed.3.2.3c.html
-share/doc/xfig/html/bugs_fixed.3.2.3d.html
-share/doc/xfig/html/bugs_fixed.3.2.4.html
 share/doc/xfig/html/bugs_fixed.html
 share/doc/xfig/html/but_frm_accelerators.html
 share/doc/xfig/html/but_frm_attributes.html
@@ -2954,13 +2956,6 @@ share/doc/xfig/html/main_menus.html
 @comment share/doc/xfig/html/main_menus.html.orig
 share/doc/xfig/html/miscellaneous.html
 @comment share/doc/xfig/html/miscellaneous.html.orig
-share/doc/xfig/html/new_features.3.2.1.html
-share/doc/xfig/html/new_features.3.2.3.html
-share/doc/xfig/html/new_features.3.2.3a.html
-share/doc/xfig/html/new_features.3.2.3b.html
-share/doc/xfig/html/new_features.3.2.3c.html
-share/doc/xfig/html/new_features.3.2.3d.html
-share/doc/xfig/html/new_features.3.2.4.html
 share/doc/xfig/html/new_features.html
 @comment share/doc/xfig/html/new_features.html.orig
 share/doc/xfig/html/options.html

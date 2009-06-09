@@ -1,0 +1,13 @@
+$OpenBSD: patch-w_intersect_c,v 1.3 2009/06/09 13:19:44 jasper Exp $
+--- w_intersect.c.pat.orig	Tue Jun  9 15:12:38 2009
++++ w_intersect.c	Tue Jun  9 15:12:49 2009
+@@ -26,7 +26,9 @@
+ #include "w_msgpanel.h"
+ #include "f_util.h"
+ #include "u_quartic.h"
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <alloca.h>
++#endif
+ #include <math.h>
+ #undef I
+   
