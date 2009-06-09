@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/17 15:49:06 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/09 11:47:46 bernd Exp $
 
 COMMENT =	library to access web resources via HTTP
 
-DISTNAME =	httpclient-2.1.4
+DISTNAME =	httpclient-2.1.5
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	www
 
