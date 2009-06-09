@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2009/05/13 20:45:21 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2009/06/09 20:30:14 benoit Exp $
 
 COMMENT =	create, alter and inspect Matroska files
 
-DISTNAME =	mkvtoolnix-2.7.0
+DISTNAME =	mkvtoolnix-2.9.5
 CATEGORIES =	multimedia x11
 
 HOMEPAGE =	http://www.bunkus.org/videotools/mkvtoolnix/
 
-MAINTAINER =	Benoit Lecocq <blq@arcane-labs.net>
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
