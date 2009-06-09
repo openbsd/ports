@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2009/05/19 15:21:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/06/09 18:22:37 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-php=	MAPI extensions for php5
 
-V=		6.20.5
+V=		6.20.6
 DISTNAME=	zarafa-${V}
 
-PKGNAME-main=	${DISTNAME}p0
-PKGNAME-php=	php5-mapi-${V}p0
+PKGNAME-main=	${DISTNAME}
+PKGNAME-php=	php5-mapi-${V}
 
 CATEGORIES=	mail www productivity
 
