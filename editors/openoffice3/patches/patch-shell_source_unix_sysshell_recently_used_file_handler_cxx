@@ -1,0 +1,12 @@
+$OpenBSD: patch-shell_source_unix_sysshell_recently_used_file_handler_cxx,v 1.1 2009/06/09 08:18:01 robert Exp $
+--- shell/source/unix/sysshell/recently_used_file_handler.cxx.orig.port	Tue Jun  9 10:05:19 2009
++++ shell/source/unix/sysshell/recently_used_file_handler.cxx	Tue Jun  9 10:05:38 2009
+@@ -114,7 +114,7 @@ namespace /* private */ {
+         void set_timestamp(const string_t& character)
+         { 
+             time_t t;
+-            if (sscanf(character.c_str(), "%ld", &t) != 1)
++            if (sscanf(character.c_str(), "%d", &t) != 1)
+                 timestamp_ = -1; 
+             else
+                 timestamp_ = t;
