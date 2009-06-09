@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2009/06/09 17:21:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2009/06/09 17:24:37 ajacoutot Exp $
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.24.0.1
-PKGNAME=		${DISTNAME}p19
+PKGNAME=		${DISTNAME}p20
 
 SHARED_LIBS +=	gnome-window-settings 2.0      # .1.0
 CATEGORIES=		x11
@@ -66,5 +66,8 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/controlcenter2
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/capplets/common/gnome-theme-info.c
 
 .include <bsd.port.mk>
