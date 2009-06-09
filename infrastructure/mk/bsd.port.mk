@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.963 2009/05/16 22:18:50 simon Exp $
+#	$OpenBSD: bsd.port.mk,v 1.964 2009/06/09 17:46:58 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -578,7 +578,15 @@ UNZIP ?= unzip
 BZIP2 ?= bzip2
 
 
-MAKE_ENV += EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
+# copy selected info from bsd.own.mk
+MAKE_ENV += ELF_TOOLCHAIN=${ELF_TOOLCHAIN} USE_GCC3=${USE_GCC3} \
+	PICFLAG=${PICFLAG} ASPICFLAG=${ASPICFLAG} \
+	BINGRP=bin BINOWN=root BINMODE=555 NONBINMODE=444 DIRMODE=755 \
+	INSTALL_COPY=-c INSTALL_STRIP=${INSTALL_STRIP} \
+	MANGRP=bin MANOWN=root MANMODE=444
+.if defined(NOPIC)
+MAKE_ENV += NOPIC=${NOPIC}
+.endif
 
 
 .if !empty(FAKEOBJDIR_${PKGPATH})
