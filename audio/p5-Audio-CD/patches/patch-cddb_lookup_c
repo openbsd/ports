@@ -1,0 +1,24 @@
+$OpenBSD: patch-cddb_lookup_c,v 1.1 2009/06/10 02:41:22 kevlo Exp $
+--- cddb_lookup.c.orig	Wed Jun 10 10:11:06 2009
++++ cddb_lookup.c	Wed Jun 10 10:12:15 2009
+@@ -21,6 +21,7 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, U
+ #include "cdaudio.h"
+ #include "cddb_lookup.h"
+ #include "stdio.h"
++#include <stdlib.h>
+ 
+ #define PACKAGE "Audio::CD"
+ 
+@@ -101,10 +102,10 @@ void cddb_lookup(int cd_desc, struct disc_data *data)
+ 	 cddb_read_serverlist(&conf, &list, proxy);
+ 	 if(conf.conf_access == CDDB_ACCESS_LOCAL) {
+ 	    free(proxy);
++	    proxy = NULL;
+ 	    cddb_generate_unknown_entry(cd_desc, data);
+ 	    return;
+-	 }
+-	 if(!conf.conf_proxy) {
++	 } else if(!conf.conf_proxy) {
+ 	    free(proxy);
+ 	    proxy = NULL;
+ 	 } else 
