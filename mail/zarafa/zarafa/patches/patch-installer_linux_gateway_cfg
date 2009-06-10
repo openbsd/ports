@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_gateway_cfg,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
---- installer/linux/gateway.cfg.orig	Wed Dec 24 15:50:33 2008
-+++ installer/linux/gateway.cfg	Sun Jan 11 14:46:02 2009
+$OpenBSD: patch-installer_linux_gateway_cfg,v 1.2 2009/06/10 09:46:00 ajacoutot Exp $
+--- installer/linux/gateway.cfg.orig	Thu May 14 11:20:45 2009
++++ installer/linux/gateway.cfg	Wed Jun 10 11:43:42 2009
 @@ -6,16 +6,16 @@ server_bind	=	0.0.0.0
  server_socket	=	http://localhost:236/zarafa
  
@@ -35,3 +35,12 @@ $OpenBSD: patch-installer_linux_gateway_cfg,v 1.1.1.1 2009/02/16 09:44:37 ajacou
  
  # Verify client certificate
  ssl_verify_client	=	no
+@@ -62,7 +62,7 @@ ssl_verify_path		=
+ log_method	=	file
+ 
+ # Loglevel (0=no logging, 5=full logging)
+-log_level	=	2
++log_level	=	3 # XXX default log_level 2 hangs the connection
+ 
+ # Logfile for log_method = file, use '-' for stderr
+ log_file	=	/var/log/zarafa/gateway.log
