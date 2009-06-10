@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2009/03/18 19:00:19 giovanni Exp $
+# $OpenBSD: Makefile,v 1.48 2009/06/10 20:27:09 kili Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME=	gimp-2.6.6
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	gimp-2.0	266.0	\
 		gimpbase-2.0	266.0	\
 		gimpcolor-2.0	266.0	\
@@ -47,6 +48,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
 		Xcomposite Xdamage pcre \
+		avahi-client avahi-common avahi-glib \
 		fontconfig freetype glib-2.0 gmodule-2.0 \
 		gobject-2.0 jpeg.>=62 lcms.>=1 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png.>=4 \

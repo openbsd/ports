@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/04/11 14:37:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/06/10 20:27:09 kili Exp $
 
 COMMENT-main =		multimedia framework - plugins base
 COMMENT-gnome =		multimedia framework - gnome vfs plugin
@@ -11,7 +11,7 @@ COMMENT-pango =		multimedia framework - pango renderer
 V =			0.10.19
 DISTNAME =		gst-plugins-base-$V
 PKGNAME-main =		gstreamer-plugins-base-$Vp1
-PKGNAME-gnome =		gstreamer-gnome-$Vp3
+PKGNAME-gnome =		gstreamer-gnome-$Vp4
 PKGNAME-cdda =		gstreamer-cdda-$Vp2
 PKGNAME-ogg =		gstreamer-ogg-$Vp2
 PKGNAME-theora =	gstreamer-theora-$Vp2
@@ -48,7 +48,8 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 RUN_DEPENDS-main =	
 			
 WANTLIB-gnome =		${WANTLIB} \
-			ORBit-2 crypto gconf-2 ssl \
+			ORBit-2 avahi-client avahi-common avahi-glib \
+			crypto gconf-2 ssl \
 			gstbase-0.10 util dbus-1 dbus-glib-1
 LIB_DEPENDS-gnome = 	${LIB_DEPENDS} \
 			gsttag-0.10::${BUILD_PKGPATH} \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2009/03/15 09:25:04 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2009/06/10 20:27:09 kili Exp $
 
 COMMENT-main=	graph drawing software
 
 DISTNAME=	graphviz-2.12
-PKGNAME-main=	${DISTNAME}p6
+PKGNAME-main=	${DISTNAME}p7
 CATEGORIES=	math devel graphics
 MULTI_PACKAGES=	-main
 
@@ -59,6 +59,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt \
+		avahi-client avahi-common avahi-glib \
 		c dbus-1 dbus-glib-1 expat fontconfig freetype m pcre \
 		util z
 

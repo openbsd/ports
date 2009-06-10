@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2009/06/10 20:27:09 kili Exp $
 
 COMMENT=	GNOME Python bindings
 
 GNOME_PROJECT=	gnome-python
 GNOME_VERSION=	2.22.3
-PKGNAME=	py-gnome-${VERSION}p4
+PKGNAME=	py-gnome-${VERSION}p5
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -16,7 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation \
+		Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common \
+		avahi-glib bonobo-2 bonobo-activation \
 		bonoboui-2 cairo crypto dbus-1 dbus-glib-1 expat \
 		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2009/06/08 17:59:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2009/06/10 20:27:09 kili Exp $
 
 COMMENT=		GNOME panel
 
 GNOME_PROJECT=		gnome-panel
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 
 SHARED_LIBS=	panel-applet-2       2.24      # .2.26
 CATEGORIES=		x11
@@ -22,7 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 asn1 atk-1.0 bonobo-2 \
+		Xrender art_lgpl_2 asn1 atk-1.0 avahi-client \
+		avahi-common avahi-glib bonobo-2 \
 		bonobo-activation bonoboui-2 bz2 c cairo com_err croco-0.6 \
 		crypto dbus-1 dbus-glib-1 expat fontconfig freetype \
 		gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \

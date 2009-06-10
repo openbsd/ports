@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2009/06/08 17:59:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2009/06/10 20:27:09 kili Exp $
 
 COMMENT=		GNOME help browser
 
@@ -22,6 +22,7 @@ WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 m nspr4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png popt pthread ssl stdc++ util xml2 z
+WANTLIB += avahi-client avahi-common avahi-glib
 
 MODULES=		devel/gettext \
 			x11/gnome \

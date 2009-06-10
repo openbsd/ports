@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2009/06/08 16:43:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2009/06/10 20:27:09 kili Exp $
 
 COMMENT-main=		GNOME Structured File library
 COMMENT-gnome=		GNOME specific extensions to libgsf
@@ -6,8 +6,8 @@ COMMENT-gnome=		GNOME specific extensions to libgsf
 GNOME_PROJECT=		libgsf
 GNOME_VERSION=		1.14.14
 
-PKGNAME-main=		${DISTNAME}p0
-PKGNAME-gnome=		libgsf-gnome-${VERSION}p1
+PKGNAME-main=		${DISTNAME}p1
+PKGNAME-gnome=		libgsf-gnome-${VERSION}p2
 
 CATEGORIES=		devel
 
@@ -59,6 +59,7 @@ LIB_DEPENDS-gnome=	${LIB_DEPENDS} \
 			gnomevfs-2.>=1800:gnome-vfs2->=2.18:x11/gnome/vfs2 \
 			bonobo-2,bonobo-activation::x11/gnome/libbonobo
 WANTLIB-gnome=		${WANTLIB} crypto ssl ORBit-2 ORBitCosNaming-2 \
+			avahi-client avahi-common avahi-glib \
 			bonobo-activation gobject-2.0 gthread-2.0 util xml2 \
 			bz2 dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0
 

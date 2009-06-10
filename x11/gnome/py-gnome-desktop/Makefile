@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/06/10 20:27:09 kili Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
 GNOME_VERSION=		2.24.1
-PKGNAME=		py-gnome-desktop-${VERSION}p5
+PKGNAME=		py-gnome-desktop-${VERSION}p6
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -20,7 +20,8 @@ MODULES=		devel/gettext \
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 asn1 atk-1.0 bonobo-2 \
+		Xrender art_lgpl_2 asn1 atk-1.0 avahi-client \
+		avahi-common avahi-glib bonobo-2 \
 		bonobo-activation bonoboui-2 bz2 cairo camel-1.2 com_err \
 		croco-0.6 crypto dbus-1 dbus-glib-1 ebook-1.2 ecal-1.2 \
 		edataserver-1.2 expat fontconfig freetype gailutil \
