@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/06/08 16:58:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/06/10 15:52:25 ajacoutot Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 DISTNAME =		gnome-mplayer-0.9.5
@@ -56,5 +56,10 @@ CONFIGURE_ARGS =	--with-gio \
 # don't install schemas configuration, @exec takes care of it
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/gconftool-2
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/${SCHEMAS_INSTDIR}
+	${INSTALL_DATA} ${WRKSRC}/gnome-mplayer.schemas \
+		${PREFIX}/${SCHEMAS_INSTDIR}
 
 .include <bsd.port.mk>
