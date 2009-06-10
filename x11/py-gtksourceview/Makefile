@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/06/10 10:11:48 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,8 +6,10 @@ COMMENT=		python bindings for the GtkSourceView library
 
 GNOME_PROJECT=		pygtksourceview
 GNOME_VERSION=		2.4.0
-PKGNAME=		py-gtksourceview-${GNOME_VERSION}p0
+PKGNAME=		py-gtksourceview-${GNOME_VERSION}p1
 CATEGORIES=		x11
+
+HOMEPAGE=		http://projects.gnome.org/gtksourceview/pygtksourceview.html
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
