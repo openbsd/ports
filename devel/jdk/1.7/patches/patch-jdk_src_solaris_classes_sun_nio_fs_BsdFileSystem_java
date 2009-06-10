@@ -1,12 +1,11 @@
-$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.1 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/solaris/classes/sun/nio/fs/BsdFileSystem.java.orig	Tue May 19 11:45:57 2009
-+++ jdk/src/solaris/classes/sun/nio/fs/BsdFileSystem.java	Tue May 19 16:41:08 2009
-@@ -31,55 +31,24 @@ import java.io.IOException;
+$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.2 2009/06/10 19:01:09 kurt Exp $
+--- jdk/src/solaris/classes/sun/nio/fs/BsdFileSystem.java.orig	Sat May 30 11:21:14 2009
++++ jdk/src/solaris/classes/sun/nio/fs/BsdFileSystem.java	Tue Jun  2 12:15:02 2009
+@@ -31,55 +31,23 @@ import java.io.IOException;
  import java.util.*;
  import java.security.AccessController;
  import sun.security.action.GetPropertyAction;
 -import static sun.nio.fs.BsdNativeDispatcher.*;
-+import static sun.nio.fs.UnixNativeDispatcher.*;
  
  /**
   * Bsd implementation of FileSystem
@@ -60,7 +59,7 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.1 2009
      }
  
      @Override
-@@ -88,10 +57,6 @@ class BsdFileSystem extends UnixFileSystem {
+@@ -88,10 +56,6 @@ class BsdFileSystem extends UnixFileSystem {
                                                                  UnixPath file,
                                                                  LinkOption... options)
      {
@@ -71,7 +70,7 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.1 2009
          return super.newFileAttributeView(view, file, options);
      }
  
-@@ -101,10 +66,6 @@ class BsdFileSystem extends UnixFileSystem {
+@@ -101,10 +65,6 @@ class BsdFileSystem extends UnixFileSystem {
                                                    UnixPath file,
                                                    LinkOption... options)
      {
@@ -82,7 +81,7 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.1 2009
          return super.newFileAttributeView(name, file, options);
      }
  
-@@ -115,9 +76,6 @@ class BsdFileSystem extends UnixFileSystem {
+@@ -115,9 +75,6 @@ class BsdFileSystem extends UnixFileSystem {
          private static Set<String> supportedFileAttributeViews() {
              Set<String> result = new HashSet<String>();
              result.addAll(UnixFileSystem.standardFileAttributeViews());
@@ -92,7 +91,7 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.1 2009
              return Collections.unmodifiableSet(result);
          }
      }
-@@ -129,22 +87,22 @@ class BsdFileSystem extends UnixFileSystem {
+@@ -129,32 +86,31 @@ class BsdFileSystem extends UnixFileSystem {
  
      @Override
      void copyNonPosixAttributes(int ofd, int nfd) {
@@ -107,24 +106,26 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.1 2009
  
      /**
 -     * Returns object to iterate over entries in /etc/mtab
-+     * Returns object to iterate over entries in /etc/fstab
++     * Returns object to iterate over mount entries
       */
      @Override
      Iterable<UnixMountEntry> getMountEntries() {
          ArrayList<UnixMountEntry> entries = new ArrayList<UnixMountEntry>();
          try {
 -            long fp = setmntent("/etc/mtab".getBytes(), "r".getBytes());
-+            UnixPath fstab = new UnixPath(this, "/etc/fstab");
-+            long fp = fopen(fstab, "r");
++            long iter = BsdNativeDispatcher.getfsstat();
              try {
                  for (;;) {
                      UnixMountEntry entry = new UnixMountEntry();
-@@ -154,7 +112,7 @@ class BsdFileSystem extends UnixFileSystem {
+-                    int res = getextmntent(fp, entry);
++                    int res = BsdNativeDispatcher.fsstatEntry(iter, entry);
+                     if (res < 0)
+                         break;
                      entries.add(entry);
                  }
              } finally {
 -                endmntent(fp);
-+                fclose(fp);
++                BsdNativeDispatcher.endfsstat(iter);
              }
  
          } catch (UnixException x) {

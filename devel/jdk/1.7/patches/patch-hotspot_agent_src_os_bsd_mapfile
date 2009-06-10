@@ -1,0 +1,24 @@
+$OpenBSD: patch-hotspot_agent_src_os_bsd_mapfile,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/agent/src/os/bsd/mapfile.orig	Tue Jun  2 13:05:13 2009
++++ hotspot/agent/src/os/bsd/mapfile	Tue Jun  2 13:05:19 2009
+@@ -43,13 +43,17 @@ SUNWprivate_1.1 {
+ 		# proc_service.h functions - to be used by libthread_db
+ 		ps_getpid;
+ 		ps_pglobal_lookup;
+-		ps_pdread;
+-		ps_pdwrite;
++		ps_pread;
++		ps_pwrite;
+ 		ps_lsetfpregs;
+ 		ps_lsetregs;
+ 		ps_lgetfpregs;
+ 		ps_lgetregs;
+-		ps_get_thread_area;
++		ps_lcontinue;
++		ps_lgetxmmregs;
++		ps_lsetxmmregs;
++		ps_lstop;
++		ps_linfo;
+ 
+                 # used by attach test program
+                 init_libproc;

@@ -1,0 +1,32 @@
+$OpenBSD: patch-hotspot_agent_make_Makefile,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/agent/make/Makefile.orig	Tue Jun  2 12:31:31 2009
++++ hotspot/agent/make/Makefile	Tue Jun  2 12:31:37 2009
+@@ -52,6 +52,9 @@ sun.jvm.hotspot.code \
+ sun.jvm.hotspot.compiler \
+ sun.jvm.hotspot.debugger \
+ sun.jvm.hotspot.debugger.amd64 \
++sun.jvm.hotspot.debugger.bsd \
++sun.jvm.hotspot.debugger.bsd.amd64 \
++sun.jvm.hotspot.debugger.bsd.x86 \
+ sun.jvm.hotspot.debugger.cdbg \
+ sun.jvm.hotspot.debugger.cdbg.basic \
+ sun.jvm.hotspot.debugger.cdbg.basic.amd64 \
+@@ -94,6 +97,9 @@ sun.jvm.hotspot.memory \
+ sun.jvm.hotspot.oops \
+ sun.jvm.hotspot.runtime \
+ sun.jvm.hotspot.runtime.amd64 \
++sun.jvm.hotspot.runtime.bsd \
++sun.jvm.hotspot.runtime.bsd_amd64 \
++sun.jvm.hotspot.runtime.bsd_x86 \
+ sun.jvm.hotspot.runtime.ia64 \
+ sun.jvm.hotspot.runtime.linux \
+ sun.jvm.hotspot.runtime.linux_amd64 \
+@@ -143,6 +149,8 @@ sun/jvm/hotspot/code/*.java \
+ sun/jvm/hotspot/compiler/*.java \
+ sun/jvm/hotspot/debugger/*.java \
+ sun/jvm/hotspot/debugger/amd64/*.java \
++sun/jvm/hotspot/debugger/bsd/*.java \
++sun/jvm/hotspot/debugger/bsd/x86/*.java \
+ sun/jvm/hotspot/debugger/cdbg/*.java \
+ sun/jvm/hotspot/debugger/cdbg/basic/*.java \
+ sun/jvm/hotspot/debugger/cdbg/basic/amd64/*.java \

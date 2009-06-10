@@ -1,0 +1,38 @@
+$OpenBSD: patch-hotspot_agent_src_os_bsd_elfmacros_h,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/agent/src/os/bsd/elfmacros.h.orig	Tue Jun  2 13:02:46 2009
++++ hotspot/agent/src/os/bsd/elfmacros.h	Tue Jun  2 13:02:52 2009
+@@ -25,16 +25,19 @@
+ #ifndef _ELFMACROS_H_
+ #define _ELFMACROS_H_
+ 
++#define ELF_NHDR        Elf_Note
++
+ #if defined(_LP64)
+ #define ELF_EHDR        Elf64_Ehdr
+ #define ELF_SHDR        Elf64_Shdr
+ #define ELF_PHDR        Elf64_Phdr
+ #define ELF_SYM         Elf64_Sym
+-#define ELF_NHDR        Elf64_Nhdr
+ #define ELF_DYN         Elf64_Dyn
+ #define ELF_ADDR        Elf64_Addr
+ 
++#ifndef ELF_ST_TYPE
+ #define ELF_ST_TYPE     ELF64_ST_TYPE
++#endif
+ 
+ #else
+ 
+@@ -42,11 +45,12 @@
+ #define ELF_SHDR        Elf32_Shdr
+ #define ELF_PHDR        Elf32_Phdr
+ #define ELF_SYM         Elf32_Sym
+-#define ELF_NHDR        Elf32_Nhdr
+ #define ELF_DYN         Elf32_Dyn
+ #define ELF_ADDR        Elf32_Addr
+ 
++#ifndef ELF_ST_TYPE
+ #define ELF_ST_TYPE     ELF32_ST_TYPE
++#endif
+ 
+ #endif
+ 

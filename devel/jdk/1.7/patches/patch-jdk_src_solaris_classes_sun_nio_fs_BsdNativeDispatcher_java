@@ -1,0 +1,113 @@
+$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdNativeDispatcher_java,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- jdk/src/solaris/classes/sun/nio/fs/BsdNativeDispatcher.java.orig	Tue Jun  2 13:13:56 2009
++++ jdk/src/solaris/classes/sun/nio/fs/BsdNativeDispatcher.java	Tue Jun  2 13:14:02 2009
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright 2008-2009 Sun Microsystems, Inc.  All Rights Reserved.
++ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -36,84 +36,23 @@ class BsdNativeDispatcher extends UnixNativeDispatcher
+     private BsdNativeDispatcher() { }
+ 
+    /**
+-    * FILE *setmntent(const char *filename, const char *type);
++    * struct fsstat_iter *getfsstat();
+     */
+-    static long setmntent(byte[] filename, byte[] type) throws UnixException {
+-        NativeBuffer pathBuffer = NativeBuffers.asNativeBuffer(filename);
+-        NativeBuffer typeBuffer = NativeBuffers.asNativeBuffer(type);
+-        try {
+-            return setmntent0(pathBuffer.address(), typeBuffer.address());
+-        } finally {
+-            typeBuffer.release();
+-            pathBuffer.release();
+-        }
+-    }
+-    private static native long setmntent0(long pathAddress, long typeAddress)
+-        throws UnixException;
++    static native long getfsstat() throws UnixException;
+ 
+    /**
+-    * int endmntent(FILE* filep);
++    * int fsstatEntry(struct fsstat_iter * iter, UnixMountEntry entry);
+     */
+-    static native void endmntent(long stream) throws UnixException;
+-
+-    /**
+-     * ssize_t fgetxattr(int filedes, const char *name, void *value, size_t size);
+-     */
+-    static int fgetxattr(int filedes, byte[] name, long valueAddress,
+-                         int valueLen) throws UnixException
+-    {
+-        NativeBuffer buffer = NativeBuffers.asNativeBuffer(name);
+-        try {
+-            return fgetxattr0(filedes, buffer.address(), valueAddress, valueLen);
+-        } finally {
+-            buffer.release();
+-        }
+-    }
+-
+-    private static native int fgetxattr0(int filedes, long nameAddress,
+-        long valueAdddress, int valueLen) throws UnixException;
+-
+-    /**
+-     *  fsetxattr(int filedes, const char *name, const void *value, size_t size, int flags);
+-     */
+-    static void fsetxattr(int filedes, byte[] name, long valueAddress,
+-        int valueLen) throws UnixException
+-    {
+-        NativeBuffer buffer = NativeBuffers.asNativeBuffer(name);
+-        try {
+-            fsetxattr0(filedes, buffer.address(), valueAddress, valueLen);
+-        } finally {
+-            buffer.release();
+-        }
+-    }
+-
+-    private static native void fsetxattr0(int filedes, long nameAddress,
+-        long valueAdddress, int valueLen) throws UnixException;
+-
+-
+-    /**
+-     * fremovexattr(int filedes, const char *name);
+-     */
+-    static void fremovexattr(int filedes, byte[] name) throws UnixException {
+-        NativeBuffer buffer = NativeBuffers.asNativeBuffer(name);
+-        try {
+-            fremovexattr0(filedes, buffer.address());
+-        } finally {
+-            buffer.release();
+-        }
+-    }
+-
+-    private static native void fremovexattr0(int filedes, long nameAddress)
++    static native int fsstatEntry(long iter, UnixMountEntry entry)
+         throws UnixException;
+ 
+-    /**
+-     * size_t flistxattr(int filedes, const char *list, size_t size)
+-     */
+-    static native int flistxattr(int filedes, long listAddress, int size)
+-        throws UnixException;
++   /**
++    * void endfsstat(struct fsstat_iter * iter);
++    */
++    static native void endfsstat(long iter) throws UnixException;
+ 
+-    // initialize
+-    private static native void init();
++    // initialize field IDs
++    private static native void initIDs();
+ 
+     static {
+         AccessController.doPrivileged(new PrivilegedAction<Void>() {
+@@ -121,6 +60,6 @@ class BsdNativeDispatcher extends UnixNativeDispatcher
+                 System.loadLibrary("nio");
+                 return null;
+         }});
+-        init();
++        initIDs();
+     }
+ }

@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_defs_make,v 1.2 2009/05/23 03:03:24 kurt Exp $
---- hotspot/make/bsd/makefiles/defs.make.orig	Sat May 16 23:21:09 2009
-+++ hotspot/make/bsd/makefiles/defs.make	Mon May 18 08:17:30 2009
+$OpenBSD: patch-hotspot_make_bsd_makefiles_defs_make,v 1.3 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/make/bsd/makefiles/defs.make.orig	Sat May 30 11:21:10 2009
++++ hotspot/make/bsd/makefiles/defs.make	Tue Jun  2 12:37:10 2009
 @@ -28,6 +28,14 @@
  
  SLASH_JAVA ?= /java
@@ -63,7 +63,7 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_defs_make,v 1.2 2009/05/23 03:03:24 k
  endif
  
  JDK_INCLUDE_SUBDIR=bsd
-@@ -95,19 +113,11 @@ VM_DEBUG=jvmg
+@@ -95,19 +113,13 @@ VM_DEBUG=jvmg
  EXPORT_LIST += $(EXPORT_DOCS_DIR)/platform/jvmti/jvmti.html
  EXPORT_SERVER_DIR = $(EXPORT_JRE_LIB_ARCH_DIR)/server
  EXPORT_LIST += $(EXPORT_SERVER_DIR)/Xusage.txt
@@ -87,3 +87,5 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_defs_make,v 1.2 2009/05/23 03:03:24 k
 +  EXPORT_LIST += $(EXPORT_CLIENT_DIR)/libjsig.$(LIBRARY_SUFFIX)
 +  EXPORT_LIST += $(EXPORT_CLIENT_DIR)/libjvm.$(LIBRARY_SUFFIX)
  endif
++EXPORT_LIST += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.$(LIBRARY_SUFFIX)
++EXPORT_LIST += $(EXPORT_LIB_DIR)/sa-jdi.jar

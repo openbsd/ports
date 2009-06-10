@@ -1,0 +1,60 @@
+$OpenBSD: patch-jdk_make_java_nio_mapfile-bsd,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- jdk/make/java/nio/mapfile-bsd.orig	Tue Jun  2 12:13:16 2009
++++ jdk/make/java/nio/mapfile-bsd	Tue Jun  2 12:13:24 2009
+@@ -36,25 +36,6 @@ SUNWprivate_1.1 {
+                 Java_sun_nio_ch_DatagramDispatcher_readv0;
+                 Java_sun_nio_ch_DatagramDispatcher_write0;
+                 Java_sun_nio_ch_DatagramDispatcher_writev0;
+-                Java_sun_nio_ch_EPollArrayWrapper_epollCreate;
+-                Java_sun_nio_ch_EPollArrayWrapper_epollCtl;
+-                Java_sun_nio_ch_EPollArrayWrapper_epollWait;
+-		Java_sun_nio_ch_EPollArrayWrapper_fdLimit;
+-		Java_sun_nio_ch_EPollArrayWrapper_init;
+-		Java_sun_nio_ch_EPollArrayWrapper_interrupt;
+-		Java_sun_nio_ch_EPollArrayWrapper_offsetofData;
+-		Java_sun_nio_ch_EPollArrayWrapper_sizeofEPollEvent;
+-		Java_sun_nio_ch_EPoll_init;
+-		Java_sun_nio_ch_EPoll_eventSize;
+-		Java_sun_nio_ch_EPoll_eventsOffset;
+-		Java_sun_nio_ch_EPoll_dataOffset;
+-		Java_sun_nio_ch_EPoll_epollCreate;
+-		Java_sun_nio_ch_EPoll_epollCtl;
+-		Java_sun_nio_ch_EPoll_epollWait;
+-		Java_sun_nio_ch_EPollPort_close0;
+-		Java_sun_nio_ch_EPollPort_drain1;
+-		Java_sun_nio_ch_EPollPort_interrupt;
+-		Java_sun_nio_ch_EPollPort_socketpair;
+                 Java_sun_nio_ch_FileChannelImpl_close0;
+                 Java_sun_nio_ch_FileChannelImpl_initIDs;
+                 Java_sun_nio_ch_FileChannelImpl_map0;
+@@ -122,26 +103,14 @@ SUNWprivate_1.1 {
+ 		Java_sun_nio_ch_UnixAsynchronousServerSocketChannelImpl_accept0;
+ 		Java_sun_nio_ch_UnixAsynchronousServerSocketChannelImpl_initIDs;
+ 		Java_sun_nio_ch_UnixAsynchronousSocketChannelImpl_checkConnect;
++		Java_sun_nio_fs_BsdNativeDispatcher_initIDs;
++		Java_sun_nio_fs_BsdNativeDispatcher_getfsstat;
++		Java_sun_nio_fs_BsdNativeDispatcher_fsstatEntry;
++		Java_sun_nio_fs_BsdNativeDispatcher_endfsstat;
+ 		Java_sun_nio_fs_GnomeFileTypeDetector_initializeGio;
+ 		Java_sun_nio_fs_GnomeFileTypeDetector_probeUsingGio;
+ 		Java_sun_nio_fs_GnomeFileTypeDetector_initializeGnomeVfs;
+ 		Java_sun_nio_fs_GnomeFileTypeDetector_probeUsingGnomeVfs;
+-		Java_sun_nio_fs_BsdWatchService_init;
+-		Java_sun_nio_fs_BsdWatchService_eventSize;
+-		Java_sun_nio_fs_BsdWatchService_eventOffsets;
+-		Java_sun_nio_fs_BsdWatchService_inotifyInit;
+-		Java_sun_nio_fs_BsdWatchService_inotifyAddWatch;
+-		Java_sun_nio_fs_BsdWatchService_inotifyRmWatch;
+-		Java_sun_nio_fs_BsdWatchService_configureBlocking;
+-		Java_sun_nio_fs_BsdWatchService_socketpair;
+-		Java_sun_nio_fs_BsdWatchService_poll;
+-		Java_sun_nio_fs_BsdNativeDispatcher_init;
+-		Java_sun_nio_fs_BsdNativeDispatcher_fgetxattr0;
+-		Java_sun_nio_fs_BsdNativeDispatcher_flistxattr;
+-		Java_sun_nio_fs_BsdNativeDispatcher_fsetxattr0;
+-		Java_sun_nio_fs_BsdNativeDispatcher_fremovexattr0;
+-		Java_sun_nio_fs_BsdNativeDispatcher_setmntent0;
+-		Java_sun_nio_fs_BsdNativeDispatcher_endmntent;
+ 		Java_sun_nio_fs_UnixNativeDispatcher_initIDs;
+ 		Java_sun_nio_fs_UnixNativeDispatcher_getcwd;
+ 		Java_sun_nio_fs_UnixNativeDispatcher_strerror;

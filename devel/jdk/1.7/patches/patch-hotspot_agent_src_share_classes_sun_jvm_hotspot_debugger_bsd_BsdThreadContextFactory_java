@@ -1,0 +1,24 @@
+$OpenBSD: patch-hotspot_agent_src_share_classes_sun_jvm_hotspot_debugger_bsd_BsdThreadContextFactory_java,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdThreadContextFactory.java.orig	Tue Jun  2 13:10:53 2009
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdThreadContextFactory.java	Tue Jun  2 13:11:11 2009
+@@ -26,9 +26,7 @@ package sun.jvm.hotspot.debugger.bsd;
+ 
+ import sun.jvm.hotspot.debugger.*;
+ import sun.jvm.hotspot.debugger.bsd.amd64.*;
+-import sun.jvm.hotspot.debugger.bsd.ia64.*;
+ import sun.jvm.hotspot.debugger.bsd.x86.*;
+-import sun.jvm.hotspot.debugger.bsd.sparc.*;
+ 
+ class BsdThreadContextFactory {
+    static ThreadContext createThreadContext(BsdDebugger dbg) {
+@@ -37,10 +35,6 @@ class BsdThreadContextFactory {
+          return new BsdX86ThreadContext(dbg);
+       } else if (cpu.equals("amd64")) {
+          return new BsdAMD64ThreadContext(dbg);
+-      } else if (cpu.equals("ia64")) {
+-         return new BsdIA64ThreadContext(dbg);
+-      } else if (cpu.equals("sparc")) {
+-         return new BsdSPARCThreadContext(dbg);
+       } else {
+          throw new RuntimeException("cpu " + cpu + " is not yet supported");
+       }

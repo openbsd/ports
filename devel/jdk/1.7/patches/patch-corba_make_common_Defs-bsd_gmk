@@ -1,6 +1,6 @@
-$OpenBSD: patch-corba_make_common_Defs-bsd_gmk,v 1.2 2009/05/23 03:03:24 kurt Exp $
---- corba/make/common/Defs-bsd.gmk.orig	Sat May 16 23:21:11 2009
-+++ corba/make/common/Defs-bsd.gmk	Mon May 18 08:24:28 2009
+$OpenBSD: patch-corba_make_common_Defs-bsd_gmk,v 1.3 2009/06/10 19:01:09 kurt Exp $
+--- corba/make/common/Defs-bsd.gmk.orig	Sat May 30 11:21:13 2009
++++ corba/make/common/Defs-bsd.gmk	Tue Jun  2 10:41:33 2009
 @@ -40,18 +40,12 @@
  # Get shared JDK settings
  include $(BUILDDIR)/common/shared/Defs.gmk
@@ -112,16 +112,14 @@ $OpenBSD: patch-corba_make_common_Defs-bsd_gmk,v 1.2 2009/05/23 03:03:24 kurt Ex
  override LEX_LIBRARY             = -lfl
  ifeq ($(STATIC_CXX),true)
  override LIBCXX                  = -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
-@@ -281,13 +261,9 @@ override LIBPOSIX4               =
- override LIBSOCKET               =
+@@ -282,12 +262,8 @@ override LIBSOCKET               =
  override LIBTHREAD               =
  override MOOT_PRIORITIES         = true
--override NO_INTERRUPTIBLE_IO     = true
+ override NO_INTERRUPTIBLE_IO     = true
 -override OPENWIN_HOME            = /usr/X11R6
 -ifeq ($(ARCH), amd64)
 -override OPENWIN_LIB             = $(OPENWIN_HOME)/lib64
 -else
-+override NO_INTERRUPTIBLE_IO     = false
 +override OPENWIN_HOME            = $(X11_PATH)
  override OPENWIN_LIB             = $(OPENWIN_HOME)/lib
 -endif

@@ -1,0 +1,300 @@
+$OpenBSD: patch-hotspot_agent_src_os_bsd_ps_core_c,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/agent/src/os/bsd/ps_core.c.orig	Tue Jun  2 13:06:41 2009
++++ hotspot/agent/src/os/bsd/ps_core.c	Tue Jun  2 13:21:01 2009
+@@ -142,6 +142,7 @@ static map_info* add_class_share_map_info(struct ps_pr
+ 
+    map->next = ph->core->class_share_maps;
+    ph->core->class_share_maps = map;
++   return map;
+ }
+ 
+ // Return the map_info for the given virtual address.  We keep a sorted
+@@ -228,8 +229,8 @@ struct FileMapHeader {
+ 
+     // 4991491 NOTICE These are C++ bool's in filemap.hpp and must match up with
+     // the C type matching the C++ bool type on any given platform. For
+-    // Hotspot on Bsd we assume the corresponding C type is char but
+-    // licensees on Bsd versions may need to adjust the type of these fields.
++    // Hotspot on BSD we assume the corresponding C type is char but
++    // licensees on BSD versions may need to adjust the type of these fields.
+     char   _read_only;       // read only space?
+     char   _allow_exec;      // executable code in space?
+ 
+@@ -240,7 +241,7 @@ struct FileMapHeader {
+ 
+ static bool read_jboolean(struct ps_prochandle* ph, uintptr_t addr, jboolean* pvalue) {
+    jboolean i;
+-   if (ps_pdread(ph, (psaddr_t) addr, &i, sizeof(i)) == PS_OK) {
++   if (ps_pread(ph, (psaddr_t) addr, &i, sizeof(i)) == PS_OK) {
+       *pvalue = i;
+       return true;
+    } else {
+@@ -250,7 +251,7 @@ static bool read_jboolean(struct ps_prochandle* ph, ui
+ 
+ static bool read_pointer(struct ps_prochandle* ph, uintptr_t addr, uintptr_t* pvalue) {
+    uintptr_t uip;
+-   if (ps_pdread(ph, (psaddr_t) addr, &uip, sizeof(uip)) == PS_OK) {
++   if (ps_pread(ph, (psaddr_t) addr, &uip, sizeof(uip)) == PS_OK) {
+       *pvalue = uip;
+       return true;
+    } else {
+@@ -264,7 +265,7 @@ static bool read_string(struct ps_prochandle* ph, uint
+    char  c = ' ';
+ 
+    while (c != '\0') {
+-     if (ps_pdread(ph, (psaddr_t) addr, &c, sizeof(char)) != PS_OK)
++     if (ps_pread(ph, (psaddr_t) addr, &c, sizeof(char)) != PS_OK)
+          return false;
+       if (i < size - 1)
+          buf[i] = c;
+@@ -296,7 +297,6 @@ static bool init_classsharing_workaround(struct ps_pro
+          uintptr_t base = 0, useSharedSpacesAddr = 0;
+          uintptr_t sharedArchivePathAddrAddr = 0, sharedArchivePathAddr = 0;
+          jboolean useSharedSpaces = 0;
+-         map_info* mi = 0;
+ 
+          memset(classes_jsa, 0, sizeof(classes_jsa));
+          jvm_name = lib->name;
+@@ -306,9 +306,9 @@ static bool init_classsharing_workaround(struct ps_pro
+             return false;
+          }
+ 
+-         // Hotspot vm types are not exported to build this library. So
+-         // using equivalent type jboolean to read the value of
+-         // UseSharedSpaces which is same as hotspot type "bool".
++	 // Hotspot vm types are not exported to build this library. So
++	 // using equivalent type jboolean to read the value of
++	 // UseSharedSpaces which is same as hotspot type "bool".
+          if (read_jboolean(ph, useSharedSpacesAddr, &useSharedSpaces) != true) {
+             print_debug("can't read the value of 'UseSharedSpaces' flag\n");
+             return false;
+@@ -507,12 +507,12 @@ static bool core_write_data(struct ps_prochandle* ph,
+ }
+ 
+ static bool core_get_lwp_regs(struct ps_prochandle* ph, lwpid_t lwp_id,
+-                          struct user_regs_struct* regs) {
++                          struct reg* regs) {
+    // for core we have cached the lwp regs from NOTE section
+    thread_info* thr = ph->threads;
+    while (thr) {
+      if (thr->lwp_id == lwp_id) {
+-       memcpy(regs, &thr->regs, sizeof(struct user_regs_struct));
++       memcpy(regs, &thr->regs, sizeof(struct reg));
+        return true;
+      }
+      thr = thr->next;
+@@ -520,11 +520,17 @@ static bool core_get_lwp_regs(struct ps_prochandle* ph
+    return false;
+ }
+ 
++static bool core_get_lwp_info(struct ps_prochandle *ph, lwpid_t lwp_id, void *linfo) {
++   print_debug("core_get_lwp_info not implemented\n");
++   return false;
++}
++
+ static ps_prochandle_ops core_ops = {
+    .release=  core_release,
+    .p_pread=  core_read_data,
+    .p_pwrite= core_write_data,
+-   .get_lwp_regs= core_get_lwp_regs
++   .get_lwp_regs= core_get_lwp_regs,
++   .get_lwp_info= core_get_lwp_info
+ };
+ 
+ // read regs and create thread from NT_PRSTATUS entries from core file
+@@ -539,52 +545,52 @@ static bool core_handle_prstatus(struct ps_prochandle*
+       return false;
+ 
+    // copy regs
+-   memcpy(&newthr->regs, prstat->pr_reg, sizeof(struct user_regs_struct));
++   memcpy(&newthr->regs, &prstat->pr_reg, sizeof(struct reg));
+ 
+    if (is_debug()) {
+       print_debug("integer regset\n");
+ #ifdef i386
+       // print the regset
+-      print_debug("\teax = 0x%x\n", newthr->regs.eax);
+-      print_debug("\tebx = 0x%x\n", newthr->regs.ebx);
+-      print_debug("\tecx = 0x%x\n", newthr->regs.ecx);
+-      print_debug("\tedx = 0x%x\n", newthr->regs.edx);
+-      print_debug("\tesp = 0x%x\n", newthr->regs.esp);
+-      print_debug("\tebp = 0x%x\n", newthr->regs.ebp);
+-      print_debug("\tesi = 0x%x\n", newthr->regs.esi);
+-      print_debug("\tedi = 0x%x\n", newthr->regs.edi);
+-      print_debug("\teip = 0x%x\n", newthr->regs.eip);
++      print_debug("\teax = 0x%x\n", newthr->regs.r_eax);
++      print_debug("\tebx = 0x%x\n", newthr->regs.r_ebx);
++      print_debug("\tecx = 0x%x\n", newthr->regs.r_ecx);
++      print_debug("\tedx = 0x%x\n", newthr->regs.r_edx);
++      print_debug("\tesp = 0x%x\n", newthr->regs.r_esp);
++      print_debug("\tebp = 0x%x\n", newthr->regs.r_ebp);
++      print_debug("\tesi = 0x%x\n", newthr->regs.r_esi);
++      print_debug("\tedi = 0x%x\n", newthr->regs.r_edi);
++      print_debug("\teip = 0x%x\n", newthr->regs.r_eip);
+ #endif
+ 
+ #if defined(amd64) || defined(x86_64)
+       // print the regset
+-      print_debug("\tr15 = 0x%lx\n", newthr->regs.r15);
+-      print_debug("\tr14 = 0x%lx\n", newthr->regs.r14);
+-      print_debug("\tr13 = 0x%lx\n", newthr->regs.r13);
+-      print_debug("\tr12 = 0x%lx\n", newthr->regs.r12);
+-      print_debug("\trbp = 0x%lx\n", newthr->regs.rbp);
+-      print_debug("\trbx = 0x%lx\n", newthr->regs.rbx);
+-      print_debug("\tr11 = 0x%lx\n", newthr->regs.r11);
+-      print_debug("\tr10 = 0x%lx\n", newthr->regs.r10);
+-      print_debug("\tr9 = 0x%lx\n", newthr->regs.r9);
+-      print_debug("\tr8 = 0x%lx\n", newthr->regs.r8);
+-      print_debug("\trax = 0x%lx\n", newthr->regs.rax);
+-      print_debug("\trcx = 0x%lx\n", newthr->regs.rcx);
+-      print_debug("\trdx = 0x%lx\n", newthr->regs.rdx);
+-      print_debug("\trsi = 0x%lx\n", newthr->regs.rsi);
+-      print_debug("\trdi = 0x%lx\n", newthr->regs.rdi);
+-      print_debug("\torig_rax = 0x%lx\n", newthr->regs.orig_rax);
+-      print_debug("\trip = 0x%lx\n", newthr->regs.rip);
+-      print_debug("\tcs = 0x%lx\n", newthr->regs.cs);
+-      print_debug("\teflags = 0x%lx\n", newthr->regs.eflags);
+-      print_debug("\trsp = 0x%lx\n", newthr->regs.rsp);
+-      print_debug("\tss = 0x%lx\n", newthr->regs.ss);
+-      print_debug("\tfs_base = 0x%lx\n", newthr->regs.fs_base);
+-      print_debug("\tgs_base = 0x%lx\n", newthr->regs.gs_base);
+-      print_debug("\tds = 0x%lx\n", newthr->regs.ds);
+-      print_debug("\tes = 0x%lx\n", newthr->regs.es);
+-      print_debug("\tfs = 0x%lx\n", newthr->regs.fs);
+-      print_debug("\tgs = 0x%lx\n", newthr->regs.gs);
++      print_debug("\tr15 = 0x%lx\n", newthr->regs.r_r15);
++      print_debug("\tr14 = 0x%lx\n", newthr->regs.r_r14);
++      print_debug("\tr13 = 0x%lx\n", newthr->regs.r_r13);
++      print_debug("\tr12 = 0x%lx\n", newthr->regs.r_r12);
++      print_debug("\trbp = 0x%lx\n", newthr->regs.r_rbp);
++      print_debug("\trbx = 0x%lx\n", newthr->regs.r_rbx);
++      print_debug("\tr11 = 0x%lx\n", newthr->regs.r_r11);
++      print_debug("\tr10 = 0x%lx\n", newthr->regs.r_r10);
++      print_debug("\tr9 = 0x%lx\n", newthr->regs.r_r9);
++      print_debug("\tr8 = 0x%lx\n", newthr->regs.r_r8);
++      print_debug("\trax = 0x%lx\n", newthr->regs.r_rax);
++      print_debug("\trcx = 0x%lx\n", newthr->regs.r_rcx);
++      print_debug("\trdx = 0x%lx\n", newthr->regs.r_rdx);
++      print_debug("\trsi = 0x%lx\n", newthr->regs.r_rsi);
++      print_debug("\trdi = 0x%lx\n", newthr->regs.r_rdi);
++      //print_debug("\torig_rax = 0x%lx\n", newthr->regs.orig_rax);
++      print_debug("\trip = 0x%lx\n", newthr->regs.r_rip);
++      print_debug("\tcs = 0x%lx\n", newthr->regs.r_cs);
++      //print_debug("\teflags = 0x%lx\n", newthr->regs.eflags);
++      print_debug("\trsp = 0x%lx\n", newthr->regs.r_rsp);
++      print_debug("\tss = 0x%lx\n", newthr->regs.r_ss);
++      //print_debug("\tfs_base = 0x%lx\n", newthr->regs.fs_base);
++      //print_debug("\tgs_base = 0x%lx\n", newthr->regs.gs_base);
++      //print_debug("\tds = 0x%lx\n", newthr->regs.ds);
++      //print_debug("\tes = 0x%lx\n", newthr->regs.es);
++      //print_debug("\tfs = 0x%lx\n", newthr->regs.fs);
++      //print_debug("\tgs = 0x%lx\n", newthr->regs.gs);
+ #endif
+    }
+ 
+@@ -656,7 +662,7 @@ static bool read_core_segments(struct ps_prochandle* p
+     * contains a set of saved /proc structures), and PT_LOAD (which
+     * represents a memory mapping from the process's address space).
+     *
+-    * Difference b/w Solaris PT_NOTE and Bsd PT_NOTE:
++    * Difference b/w Solaris PT_NOTE and BSD PT_NOTE:
+     *
+     *     In Solaris there are two PT_NOTE segments the first PT_NOTE (if present)
+     *     contains /proc structs in the pre-2.6 unstructured /proc format. the last
+@@ -666,10 +672,10 @@ static bool read_core_segments(struct ps_prochandle* p
+     *     integer register set among other stuff. For each LWP, we have one lwpstatus
+     *     entry that has integer regset for that LWP.
+     *
+-    *     Bsd threads are actually 'clone'd processes. To support core analysis
+-    *     of "multithreaded" process, Bsd creates more than one pstatus (called
++    *     Linux threads are actually 'clone'd processes. To support core analysis
++    *     of "multithreaded" process, Linux creates more than one pstatus (called
+     *     "prstatus") entry in PT_NOTE. Each prstatus entry has integer regset for one
+-    *     "thread". Please refer to Bsd kernel src file 'fs/binfmt_elf.c', in particular
++    *     "thread". Please refer to Linux kernel src file 'fs/binfmt_elf.c', in particular
+     *     function "elf_core_dump".
+     */
+ 
+@@ -725,7 +731,7 @@ err:
+    return false;
+ }
+ 
+-// process segments from interpreter (ld.so or ld-bsd.so)
++// process segments from interpreter (ld-elf.so.1)
+ static bool read_interp_segments(struct ps_prochandle* ph) {
+    ELF_EHDR interp_ehdr;
+ 
+@@ -826,7 +832,7 @@ static bool read_shared_lib_info(struct ps_prochandle*
+ 
+    dyn.d_tag = DT_NULL;
+    while (dyn.d_tag != DT_DEBUG) {
+-      if (ps_pdread(ph, (psaddr_t) addr, &dyn, sizeof(ELF_DYN)) != PS_OK) {
++      if (ps_pread(ph, (psaddr_t) addr, &dyn, sizeof(ELF_DYN)) != PS_OK) {
+          print_debug("can't read debug info from _DYNAMIC\n");
+          return false;
+       }
+@@ -836,23 +842,27 @@ static bool read_shared_lib_info(struct ps_prochandle*
+    // we have got Dyn entry with DT_DEBUG
+    debug_base = dyn.d_un.d_ptr;
+    // at debug_base we have struct r_debug. This has first link map in r_map field
+-   if (ps_pdread(ph, (psaddr_t) debug_base + FIRST_LINK_MAP_OFFSET,
++   if (ps_pread(ph, (psaddr_t) debug_base + FIRST_LINK_MAP_OFFSET,
+                  &first_link_map_addr, sizeof(uintptr_t)) != PS_OK) {
+       print_debug("can't read first link map address\n");
+       return false;
+    }
+ 
+    // read ld_base address from struct r_debug
+-   if (ps_pdread(ph, (psaddr_t) debug_base + LD_BASE_OFFSET, &ld_base_addr,
++   // XXX: There is no r_ldbase member on BSD
++/*
++   if (ps_pread(ph, (psaddr_t) debug_base + LD_BASE_OFFSET, &ld_base_addr,
+                  sizeof(uintptr_t)) != PS_OK) {
+       print_debug("can't read ld base address\n");
+       return false;
+    }
+    ph->core->ld_base_addr = ld_base_addr;
++*/
++   ph->core->ld_base_addr = 0;
+ 
+    print_debug("interpreter base address is 0x%lx\n", ld_base_addr);
+ 
+-   // now read segments from interp (i.e ld.so or ld-bsd.so)
++   // now read segments from interp (i.e ld-elf.so.1)
+    if (read_interp_segments(ph) != true)
+       return false;
+ 
+@@ -870,14 +880,14 @@ static bool read_shared_lib_info(struct ps_prochandle*
+       // address mentioned in shared object and the actual virtual base where runtime
+       // linker loaded it. We use "base diff" in read_lib_segments call below.
+ 
+-      if (ps_pdread(ph, (psaddr_t) link_map_addr + LINK_MAP_ADDR_OFFSET,
++      if (ps_pread(ph, (psaddr_t) link_map_addr + LINK_MAP_ADDR_OFFSET,
+                    &lib_base_diff, sizeof(uintptr_t)) != PS_OK) {
+          print_debug("can't read shared object base address diff\n");
+          return false;
+       }
+ 
+       // read address of the name
+-      if (ps_pdread(ph, (psaddr_t) link_map_addr + LINK_MAP_NAME_OFFSET,
++      if (ps_pread(ph, (psaddr_t) link_map_addr + LINK_MAP_NAME_OFFSET,
+                     &lib_name_addr, sizeof(uintptr_t)) != PS_OK) {
+          print_debug("can't read address of shared object name\n");
+          return false;
+@@ -921,7 +931,7 @@ static bool read_shared_lib_info(struct ps_prochandle*
+       }
+ 
+       // read next link_map address
+-      if (ps_pdread(ph, (psaddr_t) link_map_addr + LINK_MAP_NEXT_OFFSET,
++      if (ps_pread(ph, (psaddr_t) link_map_addr + LINK_MAP_NEXT_OFFSET,
+                         &link_map_addr, sizeof(uintptr_t)) != PS_OK) {
+          print_debug("can't read next link in link_map\n");
+          return false;
+@@ -935,7 +945,6 @@ static bool read_shared_lib_info(struct ps_prochandle*
+ struct ps_prochandle* Pgrab_core(const char* exec_file, const char* core_file) {
+    ELF_EHDR core_ehdr;
+    ELF_EHDR exec_ehdr;
+-   ELF_EHDR lib_ehdr;
+ 
+    struct ps_prochandle* ph = (struct ps_prochandle*) calloc(1, sizeof(struct ps_prochandle));
+    if (ph == NULL) {

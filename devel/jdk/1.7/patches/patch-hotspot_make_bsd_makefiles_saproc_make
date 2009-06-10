@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.2 2009/05/23 03:03:24 kurt Exp $
---- hotspot/make/bsd/makefiles/saproc.make.orig	Fri May 15 16:25:29 2009
-+++ hotspot/make/bsd/makefiles/saproc.make	Fri May 15 17:08:59 2009
-@@ -26,8 +26,13 @@
+$OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.3 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/make/bsd/makefiles/saproc.make.orig	Sat May 30 11:21:11 2009
++++ hotspot/make/bsd/makefiles/saproc.make	Tue Jun  2 12:37:59 2009
+@@ -26,18 +26,30 @@
  
  # libsaproc[_g].so: serviceability agent
  SAPROC = saproc$(G_SUFFIX)
@@ -16,17 +16,46 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.2 2009/05/23 03:03:24
  AGENT_DIR = $(GAMMADIR)/agent
  
  SASRCDIR = $(AGENT_DIR)/src/os/$(Platform_os_family)
-@@ -43,11 +48,11 @@ SAMAPFILE = $(SASRCDIR)/mapfile
  
- DEST_SAPROC = $(JDK_LIBDIR)/$(LIBSAPROC)
++ifeq ($(OS_VENDOR), FreeBSD)
+ SASRCFILES = $(SASRCDIR)/salibelf.c                   \
+              $(SASRCDIR)/symtab.c                     \
+              $(SASRCDIR)/libproc_impl.c               \
+              $(SASRCDIR)/ps_proc.c                    \
+              $(SASRCDIR)/ps_core.c                    \
++             $(SASRCDIR)/hsearch_r.c                  \
+              $(SASRCDIR)/BsdDebuggerLocal.c
++SALIBS = -lutil -lthread_db
++else
++SASRCFILES = $(SASRCDIR)/StubDebuggerLocal.c
++SALIBS = 
++endif
  
--# if $(AGENT_DIR) does not exist, we don't build SA
-+# if $(SASRCDIR) does not exist, we don't build SA
- # also, we don't build SA on Itanium.
+ SAMAPFILE = $(SASRCDIR)/mapfile
  
- checkAndBuildSA:
--	$(QUIETLY) if [ -d $(AGENT_DIR) -a "$(SRCARCH)" != "ia64" ] ; then \
-+	$(QUIETLY) if [ -d $(SASRCDIR) -a "$(SRCARCH)" != "ia64" ] ; then \
+@@ -51,7 +63,10 @@ checkAndBuildSA:
  	   $(MAKE) -f vm.make $(LIBSAPROC); \
  	fi
  
+-SA_LFLAGS = $(MAPFLAG:FILENAME=$(SAMAPFILE)) $(LDFLAGS_HASH_STYLE)
++ifneq ($(OS_VENDOR), Darwin)
++SA_LFLAGS = $(MAPFLAG:FILENAME=$(SAMAPFILE))
++endif
++SA_LFLAGS += $(LDFLAGS_HASH_STYLE)
+ 
+ $(LIBSAPROC): $(SASRCFILES) $(SAMAPFILE)
+ 	$(QUIETLY) if [ "$(BOOT_JAVA_HOME)" = "" ]; then \
+@@ -64,11 +79,11 @@ $(LIBSAPROC): $(SASRCFILES) $(SAMAPFILE)
+ 	           -I$(SASRCDIR)                                        \
+ 	           -I$(GENERATED)                                       \
+ 	           -I$(BOOT_JAVA_HOME)/include                          \
+-	           -I$(BOOT_JAVA_HOME)/include/$(Platform_os_family)    \
++	           -I$(BOOT_JAVA_HOME)/include/$(shell uname -s | tr "[:upper:]" "[:lower:]") \
+ 	           $(SASRCFILES)                                        \
+ 	           $(SA_LFLAGS)                                         \
+ 	           -o $@                                                \
+-	           -lthread_db
++	           $(SALIBS)
+ 
+ install_saproc: checkAndBuildSA
+ 	$(QUIETLY) if [ -e $(LIBSAPROC) ] ; then             \

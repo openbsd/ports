@@ -1,0 +1,18 @@
+$OpenBSD: patch-hotspot_agent_src_share_classes_sun_jvm_hotspot_utilities_PlatformInfo_java,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/utilities/PlatformInfo.java.orig	Tue Jun  2 12:36:27 2009
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/utilities/PlatformInfo.java	Tue Jun  2 12:36:38 2009
+@@ -37,6 +37,14 @@ public class PlatformInfo {
+       return "solaris";
+     } else if (os.equals("Linux")) {
+       return "linux";
++    } else if (os.equals("FreeBSD")) {
++      return "bsd";
++    } else if (os.equals("NetBSD")) {
++      return "bsd";
++    } else if (os.equals("OpenBSD")) {
++      return "bsd";
++    } else if (os.equals("Darwin")) {
++      return "bsd";
+     } else if (os.startsWith("Windows")) {
+       return "win32";
+     } else {

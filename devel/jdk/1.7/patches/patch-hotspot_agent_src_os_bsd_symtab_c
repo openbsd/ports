@@ -1,0 +1,67 @@
+$OpenBSD: patch-hotspot_agent_src_os_bsd_symtab_c,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/agent/src/os/bsd/symtab.c.orig	Tue Jun  2 13:08:54 2009
++++ hotspot/agent/src/os/bsd/symtab.c	Tue Jun  2 13:09:00 2009
+@@ -23,10 +23,10 @@
+  */
+ 
+ #include <unistd.h>
+-#include <sys/procfs.h>
+ #include <search.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include "hsearch_r.h"
+ #include "symtab.h"
+ #include "salibelf.h"
+ 
+@@ -56,7 +56,6 @@ typedef struct symtab {
+ // read symbol table from given fd.
+ struct symtab* build_symtab(int fd) {
+   ELF_EHDR ehdr;
+-  char *names = NULL;
+   struct symtab* symtab = NULL;
+ 
+   // Reading of elf header
+@@ -65,7 +64,9 @@ struct symtab* build_symtab(int fd) {
+   ELF_SHDR* shbuf = NULL;
+   ELF_SHDR* cursct = NULL;
+   ELF_PHDR* phbuf = NULL;
+-  ELF_PHDR* phdr = NULL;
++  int symtab_found = 0;
++  int dynsym_found = 0;
++  uint32_t symsection = SHT_SYMTAB;
+ 
+   uintptr_t baseaddr = (uintptr_t)-1;
+ 
+@@ -90,18 +91,30 @@ struct symtab* build_symtab(int fd) {
+ 
+   for (cursct = shbuf, cnt = 0; cnt < ehdr.e_shnum; cnt++) {
+     scn_cache[cnt].c_shdr = cursct;
+-    if (cursct->sh_type == SHT_SYMTAB || cursct->sh_type == SHT_STRTAB) {
++    if (cursct->sh_type == SHT_SYMTAB ||
++        cursct->sh_type == SHT_STRTAB ||
++        cursct->sh_type == SHT_DYNSYM) {
+       if ( (scn_cache[cnt].c_data = read_section_data(fd, &ehdr, cursct)) == NULL) {
+          goto quit;
+       }
+     }
++
++    if (cursct->sh_type == SHT_SYMTAB)
++       symtab_found++;
++
++    if (cursct->sh_type == SHT_DYNSYM)
++       dynsym_found++;
++
+     cursct++;
+   }
+ 
++  if (!symtab_found && dynsym_found)
++     symsection = SHT_DYNSYM;
++
+   for (cnt = 1; cnt < ehdr.e_shnum; cnt++) {
+     ELF_SHDR *shdr = scn_cache[cnt].c_shdr;
+ 
+-    if (shdr->sh_type == SHT_SYMTAB) {
++    if (shdr->sh_type == symsection) {
+       ELF_SYM  *syms;
+       int j, n, rslt;
+       size_t size;

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/05/23 03:03:25 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/06/10 19:01:09 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.7,<1.8
 ${JDKHOME}/
@@ -464,6 +464,7 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnet.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnio.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnpt.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/librmi.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsaproc.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsplashscreen.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libunpack.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libverify.so
@@ -978,6 +979,7 @@ ${JDKHOME}/lib/dt.jar
 ${JDKHOME}/lib/ir.idl
 ${JDKHOME}/lib/jconsole.jar
 ${JDKHOME}/lib/orb.idl
+${JDKHOME}/lib/sa-jdi.jar
 ${JDKHOME}/lib/tools.jar
 @mandir ${JDKHOME}/man/
 ${JDKHOME}/man/man1/

@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_share_bin_java_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/share/bin/java.c.orig	Mon May 18 13:32:27 2009
-+++ jdk/src/share/bin/java.c	Mon May 18 13:32:35 2009
+$OpenBSD: patch-jdk_src_share_bin_java_c,v 1.2 2009/06/10 19:01:09 kurt Exp $
+--- jdk/src/share/bin/java.c.orig	Thu May 14 03:29:45 2009
++++ jdk/src/share/bin/java.c	Tue Jun  2 12:14:00 2009
 @@ -68,6 +68,10 @@ static jboolean showVersion = JNI_FALSE;  /* print but
  static jboolean printUsage = JNI_FALSE;   /* print and exit*/
  static jboolean printXUsage = JNI_FALSE;  /* print and exit*/
@@ -42,18 +42,20 @@ $OpenBSD: patch-jdk_src_share_bin_java_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
  }
  
  #define CHECK_EXCEPTION_NULL_LEAVE(e) \
-@@ -969,6 +984,10 @@ ParseArguments(int *pargc, char ***pargv, char **pjarf
+@@ -969,6 +984,12 @@ ParseArguments(int *pargc, char ***pargv, char **pjarf
          } else if (JLI_StrCmp(arg, "-X") == 0) {
              printXUsage = JNI_TRUE;
              return JNI_TRUE;
 +#ifdef __APPLE__
 +        } else if (JLI_StrCmp(arg, "-XstartOnFirstThread") == 0) {
 +            continueInSameThread = JNI_TRUE;
++        } else if (JLI_StrCCmp(arg, "-Xdock:") == 0) {
++           // XXXDARWIN: Apple VM supports configuration of Dock icon and name via -Xdock:
 +#endif            
  /*
   * The following case provide backward compatibility with old-style
   * command line options.
-@@ -1855,6 +1874,44 @@ ContinueInNewThread(InvocationFunctions* ifn, int argc
+@@ -1855,6 +1876,44 @@ ContinueInNewThread(InvocationFunctions* ifn, int argc
        return (ret != 0) ? ret : rslt;
      }
  }

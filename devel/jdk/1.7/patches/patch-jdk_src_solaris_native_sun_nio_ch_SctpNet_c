@@ -1,0 +1,19 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_SctpNet_c,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- jdk/src/solaris/native/sun/nio/ch/SctpNet.c.orig	Tue Jun  2 12:18:58 2009
++++ jdk/src/solaris/native/sun/nio/ch/SctpNet.c	Tue Jun  2 12:19:06 2009
+@@ -55,6 +55,7 @@ JNIEXPORT jint JNICALL JNI_OnLoad
+  */
+ jboolean loadSocketExtensionFuncs
+   (JNIEnv* env) {
++#if !defined(__FreeBSD__) || __FreeBSD__ < 7 /* On FreeBSD 7.x these functions are in libc */
+     if (dlopen(nativeSctpLib, RTLD_GLOBAL | RTLD_LAZY) == NULL) {
+         JNU_ThrowByName(env, "java/lang/UnsupportedOperationException",
+               dlerror());
+@@ -95,6 +96,7 @@ jboolean loadSocketExtensionFuncs
+               dlerror());
+         return JNI_FALSE;
+     }
++#endif /* __FreeBSD__ */
+ 
+     funcsLoaded = JNI_TRUE;
+     return JNI_TRUE;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_agent_src_os_bsd_test_c,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/agent/src/os/bsd/test.c.orig	Tue Jun  2 13:09:43 2009
++++ hotspot/agent/src/os/bsd/test.c	Tue Jun  2 13:09:50 2009
+@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
+       }
+ 
+       default: {
+-        printf("usage %s <pid> or %s <exec file> <core file>\n");
++        fprintf(stderr, "usage %s <pid> or %s <exec file> <core file>\n", argv[0], argv[0]);
+         return 1;
+       }
+    }

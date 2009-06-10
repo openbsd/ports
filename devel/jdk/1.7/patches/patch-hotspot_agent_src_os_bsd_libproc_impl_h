@@ -1,0 +1,32 @@
+$OpenBSD: patch-hotspot_agent_src_os_bsd_libproc_impl_h,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/agent/src/os/bsd/libproc_impl.h.orig	Tue Jun  2 13:04:50 2009
++++ hotspot/agent/src/os/bsd/libproc_impl.h	Tue Jun  2 13:04:58 2009
+@@ -47,7 +47,7 @@ typedef struct lib_info {
+ typedef struct thread_info {
+    lwpid_t                  lwp_id;
+    pthread_t                pthread_id; // not used cores, always -1
+-   struct user_regs_struct  regs;       // not for process, core uses for caching regset
++   struct reg               regs;       // not for process, core uses for caching regset
+    struct thread_info*      next;
+ } thread_info;
+ 
+@@ -71,7 +71,9 @@ typedef struct ps_prochandle_ops {
+    bool (*p_pwrite)(struct ps_prochandle *ph,
+             uintptr_t addr, const char *buf , size_t size);
+    // get integer regset of a thread
+-   bool (*get_lwp_regs)(struct ps_prochandle* ph, lwpid_t lwp_id, struct user_regs_struct* regs);
++   bool (*get_lwp_regs)(struct ps_prochandle* ph, lwpid_t lwp_id, struct reg* regs);
++   // get info on thread
++   bool (*get_lwp_info)(struct ps_prochandle *ph, lwpid_t lwp_id, void *linfo);
+ } ps_prochandle_ops;
+ 
+ // the ps_prochandle
+@@ -79,7 +81,7 @@ typedef struct ps_prochandle_ops {
+ struct core_data {
+    int                core_fd;   // file descriptor of core file
+    int                exec_fd;   // file descriptor of exec file
+-   int                interp_fd; // file descriptor of interpreter (ld-bsd.so.2)
++   int                interp_fd; // file descriptor of interpreter (ld-elf.so.1)
+    // part of the class sharing workaround
+    int                classes_jsa_fd; // file descriptor of class share archive
+    uintptr_t          dynamic_addr;  // address of dynamic section of a.out

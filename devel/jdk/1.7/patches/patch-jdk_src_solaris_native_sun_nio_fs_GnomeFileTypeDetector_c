@@ -1,0 +1,13 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_nio_fs_GnomeFileTypeDetector_c,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- jdk/src/solaris/native/sun/nio/fs/GnomeFileTypeDetector.c.orig	Tue Jun  2 12:19:48 2009
++++ jdk/src/solaris/native/sun/nio/fs/GnomeFileTypeDetector.c	Tue Jun  2 12:19:56 2009
+@@ -30,7 +30,9 @@
+ 
+ #include <stdlib.h>
+ #include <dlfcn.h>
++#ifndef __APPLE__
+ #include <link.h>
++#endif
+ 
+ #ifdef __solaris__
+ #include <strings.h>

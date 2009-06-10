@@ -1,0 +1,63 @@
+$OpenBSD: patch-hotspot_agent_src_os_bsd_libproc_h,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/agent/src/os/bsd/libproc.h.orig	Tue Jun  2 13:03:57 2009
++++ hotspot/agent/src/os/bsd/libproc.h	Tue Jun  2 13:04:07 2009
+@@ -27,7 +27,8 @@
+ 
+ #include <unistd.h>
+ #include <stdint.h>
+-#include "proc_service.h"
++#include <machine/reg.h>
++#include <proc_service.h>
+ 
+ #if defined(sparc) || defined(sparcv9)
+ /*
+@@ -50,14 +51,11 @@ Please note that the bulk of the functionality is from
+ adds Pgrab__ and some missing stuff. We hide the difference b/w live process and core
+ file by this interface.
+ 
+-1. pthread_id unique in both NPTL & BsdThreads. We store this in
+-OSThread::_pthread_id in JVM code.
++1. pthread_id is unique. We store this in OSThread::_pthread_id in JVM code.
+ 
+-2. All threads see the same pid when they call getpid() under NPTL.
+-Threads receive different pid under BsdThreads. We used to save the result of
+-::getpid() call in OSThread::_thread_id. This way uniqueness of OSThread::_thread_id
+-was lost under NPTL. Now, we store the result of ::gettid() call in
+-OSThread::_thread_id. Because gettid returns actual pid of thread (lwp id), this is
++2. All threads see the same pid when they call getpid().
++We used to save the result of ::getpid() call in OSThread::_thread_id.
++Because gettid returns actual pid of thread (lwp id), this is
+ unique again. We therefore use OSThread::_thread_id as unique identifier.
+ 
+ 3. There is a unique LWP id under both thread libraries. libthread_db  maps pthread_id
+@@ -74,20 +72,7 @@ combination of ptrace and /proc calls.
+ 
+ *************************************************************************************/
+ 
+-#ifdef ia64
+-struct user_regs_struct {
+-/* copied from user.h which doesn't define this in a struct */
+-
+-#define IA64_REG_COUNT (EF_SIZE/8+32)   /* integer and fp regs */
+-unsigned long   regs[IA64_REG_COUNT];     /* integer and fp regs */
+-};
+-#endif
+-
+-#if defined(sparc)  || defined(sparcv9)
+-#define user_regs_struct  pt_regs
+-#endif
+-
+-// This C bool type must be int for compatibility with Bsd calls and
++// This C bool type must be int for compatibility with BSD calls and
+ // it would be a mistake to equivalence it to C++ bool on many platforms
+ 
+ typedef int bool;
+@@ -118,7 +103,7 @@ int get_num_threads(struct ps_prochandle* ph);
+ lwpid_t get_lwp_id(struct ps_prochandle* ph, int index);
+ 
+ // get regs for a given lwp
+-bool get_lwp_regs(struct ps_prochandle* ph, lwpid_t lid, struct user_regs_struct* regs);
++bool get_lwp_regs(struct ps_prochandle* ph, lwpid_t lid, struct reg* regs);
+ 
+ // get number of shared objects
+ int get_num_libs(struct ps_prochandle* ph);

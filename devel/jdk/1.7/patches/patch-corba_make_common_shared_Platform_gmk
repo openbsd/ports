@@ -1,7 +1,7 @@
-$OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.3 2009/05/23 03:03:24 kurt Exp $
---- corba/make/common/shared/Platform.gmk.orig	Fri May  8 03:29:39 2009
-+++ corba/make/common/shared/Platform.gmk	Mon May 18 08:24:56 2009
-@@ -262,6 +262,85 @@ ifeq ($(SYSTEM_UNAME), Linux)
+$OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.4 2009/06/10 19:01:09 kurt Exp $
+--- corba/make/common/shared/Platform.gmk.orig	Thu May 14 03:25:58 2009
++++ corba/make/common/shared/Platform.gmk	Wed Jun  3 16:07:27 2009
+@@ -262,6 +262,89 @@ ifeq ($(SYSTEM_UNAME), Linux)
    MB_OF_MEMORY := $(shell free -m | fgrep Mem: | sed -e 's@\ \ *@ @g' | cut -d' ' -f2)
  endif
  
@@ -81,13 +81,17 @@ $OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.3 2009/05/23 03:03:24 
 +  #    a fully built workspace.
 +  REQUIRED_FREE_SPACE=1500000
 +  # How much RAM does this machine have:
-+  MB_OF_MEMORY=$(shell sysctl -n hw.physmem | awk '{print int($$NF / 1048576); }' )
++  ifeq ($(OS_VENDOR), OpenBSD)
++    MB_OF_MEMORY=$(shell sysctl -n hw.physmem | awk '{print int($$NF / 1048576); }' )
++  else
++    MB_OF_MEMORY=$(shell (sysctl -n hw.physmem64 2> /dev/null || sysctl -n hw.physmem) | awk '{print int($$NF / 1048576); }' )
++  endif
 +endif
 +
  # Windows with and without CYGWIN will be slightly different
  ifeq ($(SYSTEM_UNAME), Windows_NT)
    PLATFORM = windows
-@@ -373,7 +452,14 @@ endif
+@@ -373,7 +456,14 @@ endif
  #    build machines and adjustments will be made to prevent excessing
  #    system swapping during the build.
  #    If we don't know, assume 512. Subtract 128 from MB for VM MAX.
@@ -103,7 +107,7 @@ $OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.3 2009/05/23 03:03:24 
  ifneq ($(MB_OF_MEMORY),)
    LOW_MEMORY_MACHINE := $(shell \
      if [ $(MB_OF_MEMORY) -le 512 ] ; then \
-@@ -385,7 +471,7 @@ ifneq ($(MB_OF_MEMORY),)
+@@ -385,7 +475,7 @@ ifneq ($(MB_OF_MEMORY),)
      if [ $(MB_OF_MEMORY) -le 1024 ] ; then \
        expr $(MB_OF_MEMORY) '-' 128 ; \
      else \

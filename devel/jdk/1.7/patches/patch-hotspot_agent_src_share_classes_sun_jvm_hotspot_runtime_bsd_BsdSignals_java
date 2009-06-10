@@ -1,0 +1,63 @@
+$OpenBSD: patch-hotspot_agent_src_share_classes_sun_jvm_hotspot_runtime_bsd_BsdSignals_java,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/bsd/BsdSignals.java.orig	Tue Jun  2 13:11:43 2009
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/bsd/BsdSignals.java	Tue Jun  2 13:11:54 2009
+@@ -28,37 +28,36 @@ public class BsdSignals {
+   private static String[] signalNames = {
+     "",           /* No signal 0 */
+     "SIGHUP",     /* hangup */
+-    "SIGINT",     /* interrupt (rubout) */
+-    "SIGQUIT",    /* quit (ASCII FS) */
+-    "SIGILL",     /* illegal instruction (not reset when caught) */
++    "SIGINT",     /* interrupt */
++    "SIGQUIT",    /* quit */
++    "SIGILL",     /* illegal instr. (not reset when caught) */
+     "SIGTRAP",    /* trace trap (not reset when caught) */
+-    "SIGABRT",    /* used by abort, replace SIGIOT in the future */
+-    "SIGIOT",
+-    "SIGBUS",
++    "SIGABRT",    /* abort() */
++    "SIGEMT",     /* EMT instruction */
+     "SIGFPE",     /* floating point exception */
+     "SIGKILL",    /* kill (cannot be caught or ignored) */
+-    "SIGUSR1",    /* user defined signal 1 */
++    "SIGBUS",     /* bus error */
+     "SIGSEGV",    /* segmentation violation */
+-    "SIGUSR2",    /* user defined signal 2 */
++    "SIGSYS",     /* non-existent system call invoked */
+     "SIGPIPE",    /* write on a pipe with no one to read it */
+     "SIGALRM",    /* alarm clock */
+     "SIGTERM",    /* software termination signal from kill */
+-    "SIGSTKFLT",
+-    "SIGCHLD",    /* child status change alias */
+-    "SIGCONT",    /* stopped process has been continued */
+-    "SIGSTOP",    /* stop (cannot be caught or ignored) */
+-    "SIGTSTP",    /* user stop requested from tty */
+-    "SIGTTIN",    /* background tty read attempted */
+-    "SIGTTOU",    /* background tty write attempted */
+-    "SIGURG",     /* urgent socket condition */
+-    "SIGXCPU",    /* exceeded cpu limit */
++    "SIGURG",     /* urgent condition on IO channel */
++    "SIGSTOP",    /* sendable stop signal not from tty */
++    "SIGTSTP",    /* stop signal from tty */
++    "SIGCONT",    /* continue a stopped process */
++    "SIGCHLD",    /* to parent on child stop or exit */
++    "SIGTTIN",    /* to readers pgrp upon background tty read */
++    "SIGTTOU",    /* like TTIN if (tp->t_local&LTOSTOP) */
++    "SIGIO",      /* input/output possible signal */
++    "SIGXCPU",    /* exceeded CPU time limit */
+     "SIGXFSZ",    /* exceeded file size limit */
+-    "SIGVTALRM",  /* virtual timer expired */
+-    "SIGPROF",    /* profiling timer expired */
+-    "SIGWINCH",   /* window size change */
+-    "SIGPOLL",    /* pollable event occured */
+-    "SIGPWR",     /* power-fail restart */
+-    "SIGSYS"
++    "SIGVTALRM",  /* virtual time alarm */
++    "SIGPROF",    /* profiling time alarm */
++    "SIGWINCH",   /* window size changes */
++    "SIGINFO",    /* information request */
++    "SIGUSR1",    /* user defined signal 1 */
++    "SIGUSR2"     /* user defined signal 2 */
+   };
+ 
+   public static String getSignalName(int sigNum) {

@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.5 2009/05/23 03:03:24 kurt Exp $
---- hotspot/src/os/bsd/vm/os_bsd.hpp.orig	Wed May 20 17:42:24 2009
-+++ hotspot/src/os/bsd/vm/os_bsd.hpp	Wed May 20 19:02:42 2009
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.6 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.hpp.orig	Sat May 30 10:11:57 2009
++++ hotspot/src/os/bsd/vm/os_bsd.hpp	Sat May 30 10:15:17 2009
 @@ -27,6 +27,12 @@
  /* pthread_getattr_np comes with BsdThreads-0.9-7 on RedHat 7.1 */
  typedef int (*pthread_getattr_func_type) (pthread_t, pthread_attr_t *);
@@ -30,7 +30,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.5 2009/05/23 03:03:24 kurt 
  
    static GrowableArray<int>* _cpu_to_node;
  
-@@ -65,38 +73,73 @@ class Bsd {
+@@ -65,38 +73,52 @@ class Bsd {
  
    static julong _physical_memory;
    static pthread_t _main_thread;
@@ -59,27 +59,6 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.5 2009/05/23 03:03:24 kurt 
    static void rebuild_cpu_to_node_map();
    static GrowableArray<int>* cpu_to_node()    { return _cpu_to_node; }
   public:
-+#ifdef _ALLBSD_SOURCE
-+//XXXBSD: ported from solaris version
-+  enum {
-+    clear_interrupted = true
-+  };
-+  static void setup_interruptible(JavaThread* thread);
-+  static void setup_interruptible_already_blocked(JavaThread* thread);
-+  static JavaThread* setup_interruptible();
-+  static void cleanup_interruptible(JavaThread* thread);
-+
-+  // perf counter incrementers used by _INTERRUPTIBLE 
-+
-+  static void bump_interrupted_before_count();
-+  static void bump_interrupted_during_count();
-+
-+#ifdef ASSERT
-+  static JavaThread* setup_interruptible_native();
-+  static void cleanup_interruptible_native(JavaThread* thread);
-+#endif
-+
-+#endif
 +
    static void init_thread_fpu_state();
 +#ifndef _ALLBSD_SOURCE
@@ -104,7 +83,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.5 2009/05/23 03:03:24 kurt 
    static bool is_initial_thread(void);
  
    static int page_size(void)                                        { return _page_size; }
-@@ -133,6 +176,7 @@ class Bsd {
+@@ -133,6 +155,7 @@ class Bsd {
    static struct sigaction *get_chained_signal_action(int sig);
    static bool chained_handler(int sig, siginfo_t* siginfo, void* context);
  
@@ -112,7 +91,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.5 2009/05/23 03:03:24 kurt 
    // GNU libc and libpthread version strings
    static const char *glibc_version()          { return _glibc_version; }
    static const char *libpthread_version()     { return _libpthread_version; }
-@@ -148,6 +192,7 @@ class Bsd {
+@@ -148,6 +171,7 @@ class Bsd {
    static void libpthread_init();
    static bool libnuma_init();
    static void* libnuma_dlsym(void* handle, const char* name);
@@ -120,7 +99,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.5 2009/05/23 03:03:24 kurt 
    // Minimum stack size a thread can be created with (allowing
    // the VM to completely create the thread and enter user code)
    static size_t min_stack_allowed;
-@@ -156,17 +201,21 @@ class Bsd {
+@@ -156,17 +180,21 @@ class Bsd {
    static size_t default_stack_size(os::ThreadType thr_type);
    static size_t default_guard_size(os::ThreadType thr_type);
  
@@ -142,7 +121,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.5 2009/05/23 03:03:24 kurt 
  
    static bool supports_monotonic_clock() {
      return _clock_gettime != NULL;
-@@ -176,6 +225,7 @@ class Bsd {
+@@ -176,6 +204,7 @@ class Bsd {
      return _clock_gettime ? _clock_gettime(clock_id, tp) : -1;
    }
  
@@ -150,7 +129,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_hpp,v 1.5 2009/05/23 03:03:24 kurt 
    static int pthread_getcpuclockid(pthread_t tid, clockid_t *clock_id) {
      return _pthread_getcpuclockid ? _pthread_getcpuclockid(tid, clock_id) : -1;
    }
-@@ -185,6 +235,7 @@ class Bsd {
+@@ -185,6 +214,7 @@ class Bsd {
    }
  
    static jlong fast_thread_cpu_time(clockid_t clockid);

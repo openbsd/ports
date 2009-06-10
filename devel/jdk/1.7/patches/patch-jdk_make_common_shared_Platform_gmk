@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_common_shared_Platform_gmk,v 1.4 2009/05/23 03:03:25 kurt Exp $
---- jdk/make/common/shared/Platform.gmk.orig	Fri May  8 03:34:14 2009
-+++ jdk/make/common/shared/Platform.gmk	Tue May 19 08:31:38 2009
+$OpenBSD: patch-jdk_make_common_shared_Platform_gmk,v 1.5 2009/06/10 19:01:09 kurt Exp $
+--- jdk/make/common/shared/Platform.gmk.orig	Thu May 14 03:29:40 2009
++++ jdk/make/common/shared/Platform.gmk	Wed Jun  3 16:15:54 2009
 @@ -82,7 +82,7 @@ SYSTEM_UNAME := $(shell uname)
  SCM_DIRs = .hg .svn CVS RCS SCCS Codemgr_wsdata deleted_files .hgignore .hgtags
  # When changing SCM_DIRs also change SCM_DIRS_rexp and SCM_DIRS_prune:
@@ -10,7 +10,7 @@ $OpenBSD: patch-jdk_make_common_shared_Platform_gmk,v 1.4 2009/05/23 03:03:25 ku
  
  # Don't define this unless it's not defined
  ifndef VARIANT
-@@ -211,6 +211,85 @@ ifeq ($(SYSTEM_UNAME), Linux)
+@@ -211,6 +211,89 @@ ifeq ($(SYSTEM_UNAME), Linux)
    MB_OF_MEMORY := $(shell free -m | fgrep Mem: | awk '{print $$2;}' )
  endif
  
@@ -90,13 +90,17 @@ $OpenBSD: patch-jdk_make_common_shared_Platform_gmk,v 1.4 2009/05/23 03:03:25 ku
 +  #    a fully built workspace.
 +  REQUIRED_FREE_SPACE=1500000
 +  # How much RAM does this machine have:
-+  MB_OF_MEMORY=$(shell sysctl -n hw.physmem | awk '{print int($$NF / 1048576); }' )
++  ifeq ($(OS_VENDOR), OpenBSD)
++    MB_OF_MEMORY=$(shell sysctl -n hw.physmem | awk '{print int($$NF / 1048576); }' )
++  else
++    MB_OF_MEMORY=$(shell (sysctl -n hw.physmem64 2> /dev/null || sysctl -n hw.physmem) | awk '{print int($$NF / 1048576); }' )
++  endif
 +endif
 +
  # Windows with and without CYGWIN will be slightly different
  ifeq ($(SYSTEM_UNAME), Windows_NT)
    PLATFORM = windows
-@@ -376,11 +455,26 @@ ifneq ($(PLATFORM), windows)
+@@ -376,11 +459,26 @@ ifneq ($(PLATFORM), windows)
    ARCH_VM_SUBDIR=jre/lib/$(LIBARCH)
  endif
  
@@ -123,7 +127,7 @@ $OpenBSD: patch-jdk_make_common_shared_Platform_gmk,v 1.4 2009/05/23 03:03:25 ku
  ifeq ($(JDK_HAS_MEM_INFO),)
    JDK_HAS_MEM_INFO=true
    export JDK_HAS_MEM_INFO
-@@ -395,7 +489,7 @@ ifeq ($(JDK_HAS_MEM_INFO),)
+@@ -395,7 +493,7 @@ ifeq ($(JDK_HAS_MEM_INFO),)
        if [ $(MB_OF_MEMORY) -le 1024 ] ; then \
          expr $(MB_OF_MEMORY) '-' 128 2> $(DEV_NULL) ; \
        else \

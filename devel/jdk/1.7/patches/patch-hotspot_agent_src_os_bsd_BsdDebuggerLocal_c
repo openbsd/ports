@@ -1,0 +1,142 @@
+$OpenBSD: patch-hotspot_agent_src_os_bsd_BsdDebuggerLocal_c,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/agent/src/os/bsd/BsdDebuggerLocal.c.orig	Tue Jun  2 12:59:31 2009
++++ hotspot/agent/src/os/bsd/BsdDebuggerLocal.c	Tue Jun  2 12:59:42 2009
+@@ -22,6 +22,7 @@
+  *
+  */
+ 
++#include <stdlib.h>
+ #include <jni.h>
+ #include "libproc.h"
+ 
+@@ -73,7 +74,7 @@ JNIEXPORT void JNICALL Java_sun_jvm_hotspot_debugger_b
+   (JNIEnv *env, jclass cls) {
+   jclass listClass;
+ 
+-  if (init_libproc(getenv("LIBSAPROC_DEBUG")) != true) {
++  if (init_libproc(getenv("LIBSAPROC_DEBUG") != NULL) != true) {
+      THROW_NEW_DEBUGGER_EXCEPTION("can't initialize libproc");
+   }
+ 
+@@ -275,7 +276,7 @@ JNIEXPORT jbyteArray JNICALL Java_sun_jvm_hotspot_debu
+   bufPtr = (*env)->GetByteArrayElements(env, array, &isCopy);
+   CHECK_EXCEPTION_(0);
+ 
+-  err = ps_pdread(get_proc_handle(env, this_obj), (psaddr_t) (uintptr_t)addr, bufPtr, numBytes);
++  err = ps_pread(get_proc_handle(env, this_obj), (psaddr_t) (uintptr_t)addr, bufPtr, numBytes);
+   (*env)->ReleaseByteArrayElements(env, array, bufPtr, 0);
+   return (err == PS_OK)? array : 0;
+ }
+@@ -283,11 +284,10 @@ JNIEXPORT jbyteArray JNICALL Java_sun_jvm_hotspot_debu
+ JNIEXPORT jlongArray JNICALL Java_sun_jvm_hotspot_debugger_bsd_BsdDebuggerLocal_getThreadIntegerRegisterSet0
+   (JNIEnv *env, jobject this_obj, jint lwp_id) {
+ 
+-  struct user_regs_struct gregs;
++  struct reg gregs;
+   jboolean isCopy;
+   jlongArray array;
+   jlong *regs;
+-  int i;
+ 
+   struct ps_prochandle* ph = get_proc_handle(env, this_obj);
+   if (get_lwp_regs(ph, lwp_id, &gregs) != true) {
+@@ -317,26 +317,27 @@ JNIEXPORT jlongArray JNICALL Java_sun_jvm_hotspot_debu
+ #ifdef i386
+ #define REG_INDEX(reg) sun_jvm_hotspot_debugger_x86_X86ThreadContext_##reg
+ 
+-  regs[REG_INDEX(GS)]  = (uintptr_t) gregs.xgs;
+-  regs[REG_INDEX(FS)]  = (uintptr_t) gregs.xfs;
+-  regs[REG_INDEX(ES)]  = (uintptr_t) gregs.xes;
+-  regs[REG_INDEX(DS)]  = (uintptr_t) gregs.xds;
+-  regs[REG_INDEX(EDI)] = (uintptr_t) gregs.edi;
+-  regs[REG_INDEX(ESI)] = (uintptr_t) gregs.esi;
+-  regs[REG_INDEX(FP)] = (uintptr_t) gregs.ebp;
+-  regs[REG_INDEX(SP)] = (uintptr_t) gregs.esp;
+-  regs[REG_INDEX(EBX)] = (uintptr_t) gregs.ebx;
+-  regs[REG_INDEX(EDX)] = (uintptr_t) gregs.edx;
+-  regs[REG_INDEX(ECX)] = (uintptr_t) gregs.ecx;
+-  regs[REG_INDEX(EAX)] = (uintptr_t) gregs.eax;
+-  regs[REG_INDEX(PC)] = (uintptr_t) gregs.eip;
+-  regs[REG_INDEX(CS)]  = (uintptr_t) gregs.xcs;
+-  regs[REG_INDEX(SS)]  = (uintptr_t) gregs.xss;
++  regs[REG_INDEX(GS)]  = (uintptr_t) gregs.r_gs;
++  regs[REG_INDEX(FS)]  = (uintptr_t) gregs.r_fs;
++  regs[REG_INDEX(ES)]  = (uintptr_t) gregs.r_es;
++  regs[REG_INDEX(DS)]  = (uintptr_t) gregs.r_ds;
++  regs[REG_INDEX(EDI)] = (uintptr_t) gregs.r_edi;
++  regs[REG_INDEX(ESI)] = (uintptr_t) gregs.r_esi;
++  regs[REG_INDEX(FP)] = (uintptr_t) gregs.r_ebp;
++  regs[REG_INDEX(SP)] = (uintptr_t) gregs.r_isp;
++  regs[REG_INDEX(EBX)] = (uintptr_t) gregs.r_ebx;
++  regs[REG_INDEX(EDX)] = (uintptr_t) gregs.r_edx;
++  regs[REG_INDEX(ECX)] = (uintptr_t) gregs.r_ecx;
++  regs[REG_INDEX(EAX)] = (uintptr_t) gregs.r_eax;
++  regs[REG_INDEX(PC)] = (uintptr_t) gregs.r_eip;
++  regs[REG_INDEX(CS)]  = (uintptr_t) gregs.r_cs;
++  regs[REG_INDEX(SS)]  = (uintptr_t) gregs.r_ss;
+ 
+ #endif /* i386 */
+ 
+ #if ia64
+   regs = (*env)->GetLongArrayElements(env, array, &isCopy);
++  int i;
+   for (i = 0; i < NPRGREG; i++ ) {
+     regs[i] = 0xDEADDEAD;
+   }
+@@ -345,31 +346,31 @@ JNIEXPORT jlongArray JNICALL Java_sun_jvm_hotspot_debu
+ #ifdef amd64
+ #define REG_INDEX(reg) sun_jvm_hotspot_debugger_amd64_AMD64ThreadContext_##reg
+ 
+-  regs[REG_INDEX(R15)] = gregs.r15;
+-  regs[REG_INDEX(R14)] = gregs.r14;
+-  regs[REG_INDEX(R13)] = gregs.r13;
+-  regs[REG_INDEX(R12)] = gregs.r12;
+-  regs[REG_INDEX(RBP)] = gregs.rbp;
+-  regs[REG_INDEX(RBX)] = gregs.rbx;
+-  regs[REG_INDEX(R11)] = gregs.r11;
+-  regs[REG_INDEX(R10)] = gregs.r10;
+-  regs[REG_INDEX(R9)] = gregs.r9;
+-  regs[REG_INDEX(R8)] = gregs.r8;
+-  regs[REG_INDEX(RAX)] = gregs.rax;
+-  regs[REG_INDEX(RCX)] = gregs.rcx;
+-  regs[REG_INDEX(RDX)] = gregs.rdx;
+-  regs[REG_INDEX(RSI)] = gregs.rsi;
+-  regs[REG_INDEX(RDI)] = gregs.rdi;
+-  regs[REG_INDEX(RIP)] = gregs.rip;
+-  regs[REG_INDEX(CS)] = gregs.cs;
+-  regs[REG_INDEX(RSP)] = gregs.rsp;
+-  regs[REG_INDEX(SS)] = gregs.ss;
+-  regs[REG_INDEX(FSBASE)] = gregs.fs_base;
+-  regs[REG_INDEX(GSBASE)] = gregs.gs_base;
+-  regs[REG_INDEX(DS)] = gregs.ds;
+-  regs[REG_INDEX(ES)] = gregs.es;
+-  regs[REG_INDEX(FS)] = gregs.fs;
+-  regs[REG_INDEX(GS)] = gregs.gs;
++  regs[REG_INDEX(R15)] = gregs.r_r15;
++  regs[REG_INDEX(R14)] = gregs.r_r14;
++  regs[REG_INDEX(R13)] = gregs.r_r13;
++  regs[REG_INDEX(R12)] = gregs.r_r12;
++  regs[REG_INDEX(RBP)] = gregs.r_rbp;
++  regs[REG_INDEX(RBX)] = gregs.r_rbx;
++  regs[REG_INDEX(R11)] = gregs.r_r11;
++  regs[REG_INDEX(R10)] = gregs.r_r10;
++  regs[REG_INDEX(R9)] = gregs.r_r9;
++  regs[REG_INDEX(R8)] = gregs.r_r8;
++  regs[REG_INDEX(RAX)] = gregs.r_rax;
++  regs[REG_INDEX(RCX)] = gregs.r_rcx;
++  regs[REG_INDEX(RDX)] = gregs.r_rdx;
++  regs[REG_INDEX(RSI)] = gregs.r_rsi;
++  regs[REG_INDEX(RDI)] = gregs.r_rdi;
++  regs[REG_INDEX(RIP)] = gregs.r_rip;
++  regs[REG_INDEX(CS)] = gregs.r_cs;
++  regs[REG_INDEX(RSP)] = gregs.r_rsp;
++  regs[REG_INDEX(SS)] = gregs.r_ss;
++//  regs[REG_INDEX(FSBASE)] = gregs.fs_base;
++//  regs[REG_INDEX(GSBASE)] = gregs.gs_base;
++//  regs[REG_INDEX(DS)] = gregs.ds;
++//  regs[REG_INDEX(ES)] = gregs.es;
++//  regs[REG_INDEX(FS)] = gregs.fs;
++//  regs[REG_INDEX(GS)] = gregs.gs;
+ 
+ #endif /* amd64 */
+ 

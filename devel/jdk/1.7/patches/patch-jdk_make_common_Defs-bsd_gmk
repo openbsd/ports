@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.4 2009/05/23 03:03:25 kurt Exp $
---- jdk/make/common/Defs-bsd.gmk.orig	Mon May 18 10:55:28 2009
-+++ jdk/make/common/Defs-bsd.gmk	Mon May 18 11:08:55 2009
+$OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.5 2009/06/10 19:01:09 kurt Exp $
+--- jdk/make/common/Defs-bsd.gmk.orig	Sat May 30 10:12:02 2009
++++ jdk/make/common/Defs-bsd.gmk	Sat May 30 10:16:07 2009
 @@ -43,12 +43,6 @@
  # Get shared JDK settings
  include $(JDK_MAKE_SHARED_DIR)/Defs.gmk
@@ -125,16 +125,14 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.4 2009/05/23 03:03:25 kurt Exp 
  override LEX_LIBRARY             = -lfl
  ifeq ($(STATIC_CXX),true)
  override LIBCXX                  = -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
-@@ -296,13 +276,9 @@ override LIBPOSIX4               =
- override LIBSOCKET               =
+@@ -297,12 +277,8 @@ override LIBSOCKET               =
  override LIBTHREAD               =
  override MOOT_PRIORITIES         = true
--override NO_INTERRUPTIBLE_IO     = true
+ override NO_INTERRUPTIBLE_IO     = true
 -override OPENWIN_HOME            = /usr/X11R6
 -ifeq ($(ARCH), amd64)
 -override OPENWIN_LIB             = $(OPENWIN_HOME)/lib64
 -else
-+override NO_INTERRUPTIBLE_IO     = false
 +override OPENWIN_HOME            = $(X11_PATH)
  override OPENWIN_LIB             = $(OPENWIN_HOME)/lib
 -endif

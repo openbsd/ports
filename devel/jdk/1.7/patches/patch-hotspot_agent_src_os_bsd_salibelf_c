@@ -1,0 +1,11 @@
+$OpenBSD: patch-hotspot_agent_src_os_bsd_salibelf_c,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/agent/src/os/bsd/salibelf.c.orig	Tue Jun  2 13:08:38 2009
++++ hotspot/agent/src/os/bsd/salibelf.c	Tue Jun  2 13:08:43 2009
+@@ -25,6 +25,7 @@
+ #include "salibelf.h"
+ #include <stdlib.h>
+ #include <unistd.h>
++#include <string.h>
+ 
+ extern void print_debug(const char*,...);
+ 

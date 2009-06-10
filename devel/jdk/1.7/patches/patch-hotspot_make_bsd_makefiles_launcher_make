@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_make_bsd_makefiles_launcher_make,v 1.1 2009/06/10 19:01:09 kurt Exp $
+--- hotspot/make/bsd/makefiles/launcher.make.orig	Tue Jun  2 12:37:33 2009
++++ hotspot/make/bsd/makefiles/launcher.make	Tue Jun  2 12:37:40 2009
+@@ -44,7 +44,7 @@ ifeq ($(LINK_INTO),AOUT)
+   LIBS_LAUNCHER             += $(STATIC_STDCXX) $(LIBS)
+ else
+   LAUNCHER.o                 = launcher.o
+-  LFLAGS_LAUNCHER           += -L `pwd`
++  LFLAGS_LAUNCHER           += -L`pwd`
+   LIBS_LAUNCHER             += -l$(JVM) $(LIBS)
+ endif
+ 
