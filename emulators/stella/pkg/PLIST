@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/05/21 21:29:31 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/06/10 12:41:46 benoit Exp $
 @bin bin/stella
 share/doc/stella/
 share/doc/stella/debugger.html
@@ -40,6 +40,7 @@ share/doc/stella/graphics/options_input.png
 share/doc/stella/graphics/options_misc.png
 share/doc/stella/graphics/options_ui.png
 share/doc/stella/graphics/options_video.png
+share/doc/stella/graphics/options_video_tv.png
 share/doc/stella/graphics/pacman.png
 share/doc/stella/graphics/rom_browser.png
 share/doc/stella/graphics/romaudit.png
