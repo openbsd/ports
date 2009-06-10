@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2009/06/08 17:59:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2009/06/10 20:44:03 kili Exp $
 
 COMMENT=		VNC Client for the GNOME Desktop
 
 GNOME_VERSION=		0.5.2
 GNOME_PROJECT=		vinagre
-PKGNAME=		${DISTNAME}p9
+PKGNAME=		${DISTNAME}p10
 
 CATEGORIES=		net
 
@@ -31,7 +31,7 @@ WANTLIB += pcre pixman-1 png pthread tasn1 xml2 z
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info
 LIB_DEPENDS=		gnome-keyring::x11/gnome/keyring \
 			gtk-vnc-1.0.>=1::x11/gtk-vnc \
-			avahi-client,avahi-common,avahi-glib:avahi-gtk-*:net/avahi,-gtk
+			avahi-client,avahi-common,avahi-glib,avahi-ui:avahi-gtk-*:net/avahi,-gtk
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
