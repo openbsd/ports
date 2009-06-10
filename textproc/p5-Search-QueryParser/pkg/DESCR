@@ -1,0 +1,7 @@
+This module parses a query string into a data structure to be handled 
+by external search engines. For examples of such engines, see 
+File::Tabular and Search::Indexer.
+
+The query string can contain simple terms, "exact phrases", field 
+names and comparison operators, '+/-' prefixes, parentheses, 
+and boolean connectors.

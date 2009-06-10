@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/10 17:13:18 jasper Exp $
+${P5SITE}/Search/
+${P5SITE}/Search/QueryParser.pm
+@man man/man3p/Search::QueryParser.3p
