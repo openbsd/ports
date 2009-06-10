@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/08 18:03:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/10 15:23:54 ajacoutot Exp $
 
 COMMENT-main=	applications integration into Nautilus
 COMMENT-pidgin=	pidgin integration in Nautilus
@@ -6,7 +6,7 @@ COMMENT-pidgin=	pidgin integration in Nautilus
 GNOME_PROJECT=	nautilus-sendto
 GNOME_VERSION=	1.0.1
 
-PKGNAME-main=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}p2
 PKGNAME-pidgin=	${GNOME_PROJECT}-pidgin-${GNOME_VERSION}p0
 
 CATEGORIES-main=	misc
@@ -30,7 +30,7 @@ WANTLIB-main += ORBit-2 ORBitCosNaming-2 asn1 bonobo-2 bonobo-activation
 WANTLIB-main += c com_err crypto gcrypt glade-2.0 gnome-2 gnomevfs-2
 WANTLIB-main += gnutls gpg-error gssapi krb5 nspr4 nss3 plc4 plds4
 WANTLIB-main += popt pthread smime3 softokn3 soup-2.4 sqlite3 ssl ssl3
-WANTLIB-main += tasn1 util
+WANTLIB-main += tasn1 util avahi-client avahi-common avahi-glib
 
 WANTLIB-pidgin += ${WANTLIB}
 WANTLIB-pidgin += ncurses
