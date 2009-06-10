@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/06/08 16:58:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2009/06/10 20:46:36 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ GNOME_VERSION=	2.24.2
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p8
+PKGNAME-main=	${DISTNAME}p9
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}p2
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}p2
 
@@ -50,6 +50,7 @@ LIB_DEPENDS-main=	poppler.>=3,poppler-glib.>=3::print/poppler \
 			spectre::print/libspectre \
 			gnome-keyring::x11/gnome/keyring \
 			glade-2.0::devel/libglade2 \
+			${MODGCONF2_LIB_DEPENDS} \
 			${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-main=	:shared-mime-info-*:misc/shared-mime-info \
 			:ghostscript-*:print/ghostscript/gnu \
