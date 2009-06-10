@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_main_c,v 1.1 2009/06/10 09:45:37 benoit Exp $
+--- src/main.c.orig	Sat Mar 25 08:07:44 2006
++++ src/main.c	Mon May 25 23:36:48 2009
+@@ -21,6 +21,7 @@
+ #include <config.h>
+ #endif
+ 
++#include <unistd.h>
+ #include <netinet/in.h>
+ #include "globals.h"
+ #include <signal.h>

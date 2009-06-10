@@ -1,29 +1,37 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:40 espie Exp $
-bin/etherape
-lib/locale/
-lib/locale/es/
-lib/locale/es/LC_MESSAGES/
-lib/locale/es/LC_MESSAGES/etherape.mo
-lib/locale/fr/
-lib/locale/fr/LC_MESSAGES/
-lib/locale/fr/LC_MESSAGES/etherape.mo
-lib/locale/nl/
-lib/locale/nl/LC_MESSAGES/
-lib/locale/nl/LC_MESSAGES/etherape.mo
-lib/locale/tr/
-lib/locale/tr/LC_MESSAGES/
-lib/locale/tr/LC_MESSAGES/etherape.mo
+@comment $OpenBSD: PLIST,v 1.4 2009/06/10 09:45:40 benoit Exp $
+@bin bin/etherape
 @man man/man1/etherape.1
+share/applications/etherape.desktop
 share/etherape/
+share/etherape/doc/
+share/etherape/doc/etherape/
+share/etherape/doc/etherape/C/
+share/etherape/doc/etherape/C/etherape.xml
+share/etherape/doc/etherape/C/figures/
+share/etherape/doc/etherape/C/figures/appmain.png
+share/etherape/doc/etherape/C/figures/capture_file_dlg.png
+share/etherape/doc/etherape/C/figures/color_select_dlg.png
+share/etherape/doc/etherape/C/figures/eth_toolbar.png
+share/etherape/doc/etherape/C/figures/link_info.png
+share/etherape/doc/etherape/C/figures/node_info.png
+share/etherape/doc/etherape/C/figures/pref_colors_dlg.png
+share/etherape/doc/etherape/C/figures/pref_diagram_dlg.png
+share/etherape/doc/etherape/C/figures/pref_timings_dlg.png
+share/etherape/doc/etherape/C/figures/proto_info.png
+share/etherape/doc/etherape/C/figures/protocol_edit_dlg.png
 share/etherape/glade/
 share/etherape/glade/etherape.glade2
 share/etherape/glade/etherape.png
 share/etherape/glade/pause.xpm
 share/etherape/glade/play.xpm
 share/etherape/glade/stop.xpm
-share/gnome/
-share/gnome/apps/
-share/gnome/apps/Applications/
-share/gnome/apps/Applications/etherape.desktop
+share/locale/es/LC_MESSAGES/etherape.mo
+share/locale/fr/LC_MESSAGES/etherape.mo
+share/locale/nl/LC_MESSAGES/etherape.mo
+share/locale/tr/LC_MESSAGES/etherape.mo
+share/omf/etherape/
+share/omf/etherape/etherape-C.omf
 share/pixmaps/
 share/pixmaps/etherape.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
