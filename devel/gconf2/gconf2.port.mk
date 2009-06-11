@@ -1,17 +1,18 @@
-# $OpenBSD: gconf2.port.mk,v 1.3 2009/06/11 16:42:09 ajacoutot Exp $
+# $OpenBSD: gconf2.port.mk,v 1.4 2009/06/11 18:25:54 ajacoutot Exp $
 
 MODGCONF2_LIB_DEPENDS=	gconf-2::devel/gconf2
 MODGCONF2_BUILD_DEPENDS=:gconf2-*:devel/gconf2
 MODGCONF2_RUN_DEPENDS=	:gconf2-*:devel/gconf2
 
 MODGCONF2_LIBDEP?=	Yes
-MODGCONF2_RUNDEP?=	Yes
 
 .if ${MODGCONF2_LIBDEP:L} == "yes"
 LIB_DEPENDS+=	${MODGCONF2_LIB_DEPENDS}
-.elif ${MODGCONF2_RUNDEP:L} == "yes"
-RUN_DEPENDS+=	${MODGCONF2_RUN_DEPENDS}
 .endif
+
+# The RUN_DEPENDS entry is to ensure gconf2 is installed. This is
+# necessary so that we have gconftool-2 installed on static archs.
+RUN_DEPENDS+=	${MODGCONF2_RUN_DEPENDS}
 
 BUILD_DEPENDS+=	${MODGCONF2_BUILD_DEPENDS}
 
