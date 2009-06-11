@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2009/06/08 17:59:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2009/06/11 18:38:17 ajacoutot Exp $
 
 COMMENT=		libraries for the GNOME project
 
 GNOME_PROJECT=		libgnome
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 SHARED_LIBS +=	gnome-2              2400.1   # .2400.1
 

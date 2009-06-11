@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2009/06/08 17:59:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2009/06/11 18:38:16 ajacoutot Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
 GNOME_PROJECT=		gok
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 
 HOMEPAGE=		http://live.gnome.org/Gok
 

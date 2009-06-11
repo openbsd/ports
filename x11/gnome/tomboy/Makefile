@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2009/06/08 17:20:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2009/06/11 18:38:17 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
 GNOME_VERSION=	0.12.2
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 
 CATEGORIES=	x11
 

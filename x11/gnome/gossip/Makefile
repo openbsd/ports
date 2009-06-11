@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2009/06/08 17:59:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2009/06/11 18:38:16 ajacoutot Exp $
 
 COMMENT=		Jabber client for the GNOME desktop
 
 GNOME_PROJECT=		gossip
 GNOME_VERSION=		0.31
-PKGNAME=		${DISTNAME}p12
+PKGNAME=		${DISTNAME}p13
 CATEGORIES=		net
 
 HOMEPAGE=		http://developer.imendio.com/projects/gossip/
