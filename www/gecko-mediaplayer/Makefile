@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/06/08 16:58:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/11 16:49:26 ajacoutot Exp $
 
 COMMENT =		gnome-mplayer browser media plugin
 DISTNAME =		gecko-mediaplayer-0.9.5
@@ -38,10 +38,5 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include \
 			LDFLAGS="-L${LOCALBASE}/lib \
 				-L${X11BASE}/lib"
 CONFIGURE_ARGS =	--with-gconf
-
-
-# don't install schemas configuration, @exec takes care of it
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/gconftool-2
 
 .include <bsd.port.mk>

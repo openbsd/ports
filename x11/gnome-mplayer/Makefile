@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/10 15:52:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/06/11 16:49:26 ajacoutot Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 DISTNAME =		gnome-mplayer-0.9.5
@@ -52,10 +52,6 @@ CONFIGURE_ARGS =	--with-gio \
 			--with-libgpod \
 			--with-libmusicbrainz3 \
 			--disable-nautilus
-
-# don't install schemas configuration, @exec takes care of it
-post-patch:
-	@ln -s /usr/bin/true ${WRKDIR}/bin/gconftool-2
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${SCHEMAS_INSTDIR}
