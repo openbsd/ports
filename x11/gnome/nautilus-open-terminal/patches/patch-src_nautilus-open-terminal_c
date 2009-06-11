@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_nautilus-open-terminal_c,v 1.1 2009/06/11 07:21:17 ajacoutot Exp $
+
+Fix double free or corruption when launching from desktop.
+Gentoo bug #270650.
+
+--- src/nautilus-open-terminal.c.orig	Tue Apr 28 08:30:12 2009
++++ src/nautilus-open-terminal.c	Thu Jun 11 09:03:21 2009
+@@ -202,7 +202,6 @@ get_terminal_command_for_file_info (NautilusFileInfo *
+ 			} else {
+ 				path = g_strdup (g_get_user_special_dir (G_USER_DIRECTORY_DESKTOP));
+ 			}
+-			g_free (path);
+ 			break;
+ 
+ 		case FILE_INFO_SFTP:
