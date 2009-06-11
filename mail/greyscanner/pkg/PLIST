@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/11 22:27:29 jim Exp $
+@man man/man1/greyscanner.1
+sbin/greyscanner
+share/examples/greyscanner/
+share/examples/greyscanner/greyscanner.conf
+@sample ${SYSCONFDIR}/greyscanner.conf

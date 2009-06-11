@@ -1,0 +1,6 @@
+You will need to edit /etc/rc.local as appropriate and add a section
+similar to the following so that greyscanner is started automatically:
+
+    if [ -x ${PREFIX}/sbin/greyscanner ]; then
+           echo -n ' greyscanner'; ${PREFIX}/sbin/greyscanner
+    fi

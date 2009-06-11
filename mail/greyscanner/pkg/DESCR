@@ -1,0 +1,6 @@
+greyscanner compliments OpenBSD spamd(8) greylisting by applying
+additional heuristics to greylisted hosts.  Additional heuristics
+include: confirm senders email address is valid, confirm existence of
+the senders MX or A record in DNS, confirm recipient address(es) is
+valid, and more.  Offending hosts are flagged as 'trapped' in the spamd
+database.
