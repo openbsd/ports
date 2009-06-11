@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_rules_EXAMPLES,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
---- etc/rules/EXAMPLES.orig	Wed May 30 12:30:36 2007
-+++ etc/rules/EXAMPLES	Sun Aug  5 04:03:26 2007
+$OpenBSD: patch-etc_rules_EXAMPLES,v 1.2 2009/06/11 23:33:26 sthen Exp $
+--- etc/rules/EXAMPLES.orig	Mon Jun  1 11:11:58 2009
++++ etc/rules/EXAMPLES	Wed Jun  3 21:44:46 2009
 @@ -5,7 +5,7 @@ Here are a few ideas of how to implement features usin
  
  1. Spam WhiteList
@@ -10,7 +10,7 @@ $OpenBSD: patch-etc_rules_EXAMPLES,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
     Set addresses to be whitelisted using rules such as
     From:	user@good.domain.com	yes
     From:	*@friendly.domain.com	yes
-@@ -18,7 +18,7 @@ Here are a few ideas of how to implement features usin
+@@ -22,7 +22,7 @@ Here are a few ideas of how to implement features usin
  
  2. Spam BlackList
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-etc_rules_EXAMPLES,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
     Set addresses to be blacklisted using rules such as
     From:	user@nasty.domain.com	yes
     From:	*@spammers.com		yes
-@@ -28,7 +28,7 @@ Here are a few ideas of how to implement features usin
+@@ -32,7 +32,7 @@ Here are a few ideas of how to implement features usin
  
  3. Only sign outgoing messages
  
@@ -27,8 +27,8 @@ $OpenBSD: patch-etc_rules_EXAMPLES,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
 +   Set "Sign Clean Messages = %SYSCONFDIR%/MailScanner/rules/signing.rules".
     If your messages come from "yourdomain.com", then try this:
     From:	192.168.		yes
-    FromOrTo:	default			no
-@@ -36,16 +36,16 @@ Here are a few ideas of how to implement features usin
+    From:	host:yourdomain.com	yes
+@@ -41,16 +41,16 @@ Here are a few ideas of how to implement features usin
  
  4. Use different signatures for different domains
  
