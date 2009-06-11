@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2009/06/11 05:25:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2009/06/11 18:26:44 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ GNOME_VERSION=	2.24.2
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p10
+PKGNAME-main=	${DISTNAME}p11
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}p3
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}p3
 
@@ -52,10 +52,10 @@ LIB_DEPENDS-main=	poppler.>=3,poppler-glib.>=3::print/poppler \
 			glade-2.0::devel/libglade2 \
 			${MODGCONF2_LIB_DEPENDS} \
 			${MODGETTEXT_LIB_DEPENDS}
-RUN_DEPENDS-main=	:shared-mime-info-*:misc/shared-mime-info \
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			:shared-mime-info-*:misc/shared-mime-info \
 			:ghostscript-*:print/ghostscript/gnu \
-			::x11/gnome/icon-theme \
-			${MODGNOME_RUN_DEPENDS}
+			::x11/gnome/icon-theme
 
 WANTLIB-djvu=		${WANTLIB} jpeg
 LIB_DEPENDS-djvu=	evbackend::${BASE_PKGPATH} \

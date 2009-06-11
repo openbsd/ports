@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/06/10 15:23:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/11 18:26:44 ajacoutot Exp $
 
 COMMENT-main=	applications integration into Nautilus
 COMMENT-pidgin=	pidgin integration in Nautilus
@@ -6,7 +6,7 @@ COMMENT-pidgin=	pidgin integration in Nautilus
 GNOME_PROJECT=	nautilus-sendto
 GNOME_VERSION=	1.0.1
 
-PKGNAME-main=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 PKGNAME-pidgin=	${GNOME_PROJECT}-pidgin-${GNOME_VERSION}p0
 
 CATEGORIES-main=	misc
@@ -43,7 +43,8 @@ MULTI_PACKAGES=	-main -pidgin
 
 BUILD_DEPENDS=	::net/gajim
 
-RUN_DEPENDS-main=	::archivers/zip \
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			::archivers/zip \
 			::archivers/bzip2
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			${MODGCONF2_LIB_DEPENDS} \
@@ -57,7 +58,6 @@ LIB_DEPENDS-pidgin=	${LIB_DEPENDS} \
 USE_X11=	Yes
 MODGCONF2_SCHEMAS_DIR= nautilus-sendto
 MODGCONF2_LIBDEP= No
-MODGCONF2_RUNDEP= No
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-thunderbird-name=thunderbird \

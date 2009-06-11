@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/08 16:58:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/06/11 18:26:44 ajacoutot Exp $
 
 MULTI_PACKAGES=	-main -themes
 
 COMMENT-main=	tetrinet client
 COMMENT-themes=	collection of gtetrinet themes
 DISTNAME=	gtetrinet-0.7.11
-PKGNAME-main=	${DISTNAME}p6
+PKGNAME-main=	${DISTNAME}p7
 PKGNAME-themes=	gtetrinet-themes-20070623p1
 CATEGORIES=	x11 games
 
@@ -42,7 +42,8 @@ LIB_DEPENDS-main=	${MODGCONF2_LIB_DEPENDS} \
 			gnomeui-2::x11/gnome/libgnomeui \
 			esd:esound->=0.2.38:audio/esound
 LIB_DEPENDS-themes=
-RUN_DEPENDS-main=	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			:desktop-file-utils-*:devel/desktop-file-utils
 RUN_DEPENDS-themes=	::games/gtetrinet
 PKG_ARCH-themes=	*
 
@@ -59,7 +60,6 @@ WANTLIB-themes=
 
 MODGCONF2_SCHEMAS_DIR= gtetrinet
 MODGCONF2_LIBDEP= No
-MODGCONF2_RUNDEP= No
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-ipv6
