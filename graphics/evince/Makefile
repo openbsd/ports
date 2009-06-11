@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2009/06/10 20:46:36 kili Exp $
+# $OpenBSD: Makefile,v 1.29 2009/06/11 05:25:13 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,9 +11,9 @@ GNOME_VERSION=	2.24.2
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p9
-PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}p2
-PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}p2
+PKGNAME-main=	${DISTNAME}p10
+PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}p3
+PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}p3
 
 SHARED_LIBS=	evbackend	0.0 # .0.0
 
@@ -61,13 +61,13 @@ WANTLIB-djvu=		${WANTLIB} jpeg
 LIB_DEPENDS-djvu=	evbackend::${BASE_PKGPATH} \
 			djvulibre::graphics/djvulibre \
 			${MODGETTEXT_LIB_DEPENDS}
-RUN_DEPENDS-djvu=	# empty
+RUN_DEPENDS-djvu=	${MODGCONF2_RUN_DEPENDS}
 
 WANTLIB-dvi=		${WANTLIB} gs spectre
 LIB_DEPENDS-dvi=	evbackend::${BASE_PKGPATH} \
 			kpathsea::print/texlive/base \
 			${MODGETTEXT_LIB_DEPENDS}
-RUN_DEPENDS-dvi=	# empty
+RUN_DEPENDS-dvi=	${MODGCONF2_RUN_DEPENDS}
 
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
