@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-web,v 1.2 2009/06/03 17:54:12 jasper Exp $
-@sample conf/modules.sample/zabbix.conf
-@sample conf/php5.sample/zabbix.ini
+@comment $OpenBSD: PLIST-web,v 1.3 2009/06/11 16:38:17 sthen Exp $
+conf/modules.sample/zabbix.conf
+@comment conf/php5.sample/
+conf/php5.sample/zabbix.ini
 zabbix/
 zabbix/acknow.php
 zabbix/actionconf.php

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/06/03 17:54:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/06/11 16:38:17 sthen Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -7,10 +7,10 @@ COMMENT-doc =		network and application monitoring - non-free documentation
 
 VERSION =		1.6.4
 DISTNAME =		zabbix-${VERSION}
-PKGNAME-main =		zabbix-agent-${VERSION}p2
-PKGNAME-server =	zabbix-server-${VERSION}p3
-PKGNAME-doc =		zabbix-doc-${VERSION}
-PKGNAME-web =		zabbix-web-${VERSION}p1
+PKGNAME-main =		zabbix-agent-${VERSION}p3
+PKGNAME-server =	zabbix-server-${VERSION}p4
+PKGNAME-doc =		zabbix-doc-${VERSION}p0
+PKGNAME-web =		zabbix-web-${VERSION}p2
 CATEGORIES =		net
 
 HOMEPAGE =		http://www.zabbix.com/
@@ -38,10 +38,14 @@ SUBST_VARS +=		PREFIX-web ZABBIX_WEB
 WANTLIB =		c kvm m
 LIB_DEPENDS =		lber,ldap::databases/openldap
 
+LIB_DEPENDS-doc =
+WANTLIB-doc =
+
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
 			curl::net/curl \
 			netsnmp::net/net-snmp
 RUN_DEPENDS-server =	::net/fping
+WANTLIB-server =	${WANTLIB} crypto idn ssl z
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-server \
@@ -52,9 +56,12 @@ CONFIGURE_ARGS =	--enable-server \
 			--with-net-snmp \
 			--with-ldap
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_search___res_query=no
 
 PREFIX-web =		/var/www
+LIB_DEPENDS-web =
+WANTLIB-web =
 ZABBIX_WEB =		${PREFIX-web}/htdocs/zabbix
 
 FLAVOR ?=		no_server
@@ -86,6 +93,8 @@ post-install:
 		tar -C ${DESTDIR}${PREFIX-web}/zabbix -xf -
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zabbix
 	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
+		${WRKBUILD}/README.OpenBSD
+	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
 		${PREFIX}/share/doc/zabbix/README.OpenBSD
 	${INSTALL_DATA} "${WRKBUILD}/docs/ZABBIX Manual v1.6 rev 17.pdf" \
 		${PREFIX}/share/doc/zabbix/ZABBIX_Manual_v1.6_rev17.pdf
