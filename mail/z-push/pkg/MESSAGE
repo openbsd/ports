@@ -1,0 +1,4 @@
+Z-push has been installed into ${INSTDIR}
+
+Proceed to complete the installation by reading:
+${INSTDIR}/INSTALL

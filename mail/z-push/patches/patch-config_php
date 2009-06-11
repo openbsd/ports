@@ -1,0 +1,36 @@
+$OpenBSD: patch-config_php,v 1.1.1.1 2009/06/11 07:25:35 ajacoutot Exp $
+--- config.php.orig	Wed Jun 10 08:32:38 2009
++++ config.php	Wed Jun 10 08:32:40 2009
+@@ -12,7 +12,7 @@
+ ************************************************/
+     // Defines the default time zone
+     if (function_exists("date_default_timezone_set")){
+-        date_default_timezone_set("Europe/Amsterdam");
++        date_default_timezone_set("Europe/London");
+     }
+ 
+     // Defines the base path on the server, terminated by a slash
+@@ -23,9 +23,10 @@
+ 						BASE_PATH. "include/" . PATH_SEPARATOR .
+ 						BASE_PATH. PATH_SEPARATOR .
+ 						ini_get('include_path') . PATH_SEPARATOR .
+-						"/usr/share/php/" . PATH_SEPARATOR .
+-						"/usr/share/php5/" . PATH_SEPARATOR .
+-						"/usr/share/pear/");
++						"/include/php/" . PATH_SEPARATOR .
++						"/var/www/include/php/" . PATH_SEPARATOR .
++						"/var/www/pear/" . PATH_SEPARATOR .
++						"/pear/");
+ 
+     define('STATE_DIR', 'state');
+ 
+@@ -40,7 +41,8 @@
+     // ************************
+     
+     // Defines the server to which we want to connect
+-    define('MAPI_SERVER', 'file:///var/run/zarafa');
++    #define('MAPI_SERVER', 'file:///var/run/zarafa');
++    define('MAPI_SERVER', 'http://localhost:236/zarafa');
+     
+     
+     // ************************
