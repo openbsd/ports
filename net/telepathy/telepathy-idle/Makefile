@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/06/02 04:46:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/06/11 10:57:34 jasper Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
@@ -12,7 +12,8 @@ WANTLIB=		c crypto dbus-1 dbus-glib-1 glib-2.0 gobject-2.0 \
 MODULES=		devel/gettext \
 			lang/python
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			::devel/py-twisted/words
 RUN_DEPENDS=		::textproc/libxslt
 LIB_DEPENDS=		telepathy-glib::net/telepathy/telepathy-glib
 
