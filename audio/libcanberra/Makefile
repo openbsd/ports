@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/08 16:58:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/11 18:27:02 ajacoutot Exp $
 
 COMMENT=		implementation of the Freedesktop sound theme spec.
 
 DISTNAME=		libcanberra-0.11
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 SHARED_LIBS +=  canberra             1.0      # .1.4
 SHARED_LIBS +=  canberra-gtk         0.0      # .0.4
 CATEGORIES=		audio devel

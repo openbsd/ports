@@ -1,10 +1,10 @@
-#$OpenBSD: Makefile,v 1.27 2009/06/08 16:58:15 ajacoutot Exp $
+#$OpenBSD: Makefile,v 1.28 2009/06/11 18:27:02 ajacoutot Exp $
 
 COMMENT=	Image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	2.10.11
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 
 SHARED_LIBS=	gthumb	0.0	# .0.0
 

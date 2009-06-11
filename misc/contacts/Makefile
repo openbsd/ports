@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/08 18:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/11 18:27:02 ajacoutot Exp $
 
 COMMENT=		lightweight addressbook
 
 GNOME_PROJECT=		contacts
 GNOME_VERSION=		0.10
+PKGNAME=		${DISTNAME}p0
+
 CATEGORIES=		misc
 
 HOMEPAGE=		http://pimlico-project.org/contacts.html

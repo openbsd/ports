@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/08 16:58:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/06/11 18:27:02 ajacoutot Exp $
 
 COMMENT=		library providing su and sudo functionality
 
 DISTNAME=		libgksu-2.0.7
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 SHARED_LIBS=		gksu2		0.1	# .0.2
 CATEGORIES=             sysutils
 

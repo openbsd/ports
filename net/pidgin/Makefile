@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2009/06/08 16:58:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2009/06/11 18:27:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-protocol instant messaging client
 
 DISTNAME=	pidgin-2.5.6
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 

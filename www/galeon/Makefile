@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2009/06/08 16:58:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2009/06/11 18:27:02 ajacoutot Exp $
 
 COMMENT=	GNOME web browser based on gecko
 
 DISTNAME=	galeon-2.0.7
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 
 CATEGORIES=	www
 
