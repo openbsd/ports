@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.118 2009/05/01 22:53:25 martynas Exp $
+# $OpenBSD: Makefile,v 1.119 2009/06/11 14:10:37 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=	redesign of Mozilla's browser component
 
-VER=		3.0.10
+VER=		3.0.11
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p0
+PKGNAME=	mozilla-firefox-${VER}
 SO_VERSION=	20.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -48,7 +48,7 @@ BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=20,plc4.>=20,plds4.>=20:nspr->=4.7:devel/nspr \
 		nss3.>=22,smime3.>=22,softokn3.>=22,ssl3.>=22:nss->=3.12:security/nss \
-		sqlite3.>=10.0:sqlite3->=3.5:databases/sqlite3
+		sqlite3.>=10.0:sqlite3->=3.6.7:databases/sqlite3
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi \
 		Xinerama Xrandr Xrender Xt atk-1.0 c cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \

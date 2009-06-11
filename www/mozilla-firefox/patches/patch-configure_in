@@ -1,15 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.15 2008/11/20 23:41:32 martynas Exp $
---- configure.in.orig	Thu Aug 14 13:00:32 2008
-+++ configure.in	Tue Sep 23 20:37:31 2008
-@@ -128,7 +128,7 @@ LIBGNOME_VERSION=2.0
- STARTUP_NOTIFICATION_VERSION=0.8
- DBUS_VERSION=0.60
- LCMS_VERSION=1.17
--SQLITE_VERSION=3.5.9
-+SQLITE_VERSION=3.5
- 
- MSMANIFEST_TOOL=
- 
+$OpenBSD: patch-configure_in,v 1.16 2009/06/11 14:10:37 martynas Exp $
+--- configure.in.orig	Fri Apr 17 21:10:52 2009
++++ configure.in	Thu Jun 11 16:09:20 2009
 @@ -2223,7 +2223,7 @@ case "$target" in
  	;;
  
