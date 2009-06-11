@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2009/06/11 18:38:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2009/06/11 19:12:35 ajacoutot Exp $
 
 COMMENT=		graphical predictive text input system
 
 GNOME_PROJECT=		dasher
 GNOME_VERSION=		4.10.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 CATEGORIES=		x11
 
@@ -27,7 +27,7 @@ WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
 WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread ssl stdc++
-WANTLIB += util xml2 z
+WANTLIB += util xml2 z avahi-client avahi-common avahi-glib
 
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			cspi,spi::x11/gnome/at-spi
