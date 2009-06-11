@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/11/11 14:39:10 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/06/11 06:11:19 ajacoutot Exp $
 %%SHARED%%
-bin/wpd2html
-bin/wpd2raw
-bin/wpd2text
+@bin bin/wpd2html
+@bin bin/wpd2raw
+@bin bin/wpd2text
 include/libwpd/
 include/libwpd/GSFStream.h
 include/libwpd/WPDocument.h
