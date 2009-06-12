@@ -1,0 +1,4 @@
+This module provides a simple way to extend the Math::Symbolic parser
+with arbitrary functions that return any valid Math::Symbolic tree.  The
+return value of the function call is inserted into the complete parse
+tree at the point at which the function call is parsed.

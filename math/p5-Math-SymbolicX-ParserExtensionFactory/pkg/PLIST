@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/12 17:01:31 jasper Exp $
+${P5SITE}/Math/SymbolicX/
+${P5SITE}/Math/SymbolicX/ParserExtensionFactory.pm
+@man man/man3p/Math::SymbolicX::ParserExtensionFactory.3p
