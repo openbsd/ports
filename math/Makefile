@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2009/05/13 13:13:35 simon Exp $
+# $OpenBSD: Makefile,v 1.85 2009/06/12 17:02:21 jasper Exp $
 #
 
      SUBDIR += R
@@ -64,9 +64,12 @@
      SUBDIR += p5-Math-Fibonacci
      SUBDIR += p5-Math-Fibonacci-Phi
      SUBDIR += p5-Math-GMP
+     SUBDIR += p5-Math-MatrixReal
      SUBDIR += p5-Math-Pari
      SUBDIR += p5-Math-Round
      SUBDIR += p5-Math-Spline
+     SUBDIR += p5-Math-Symbolic
+     SUBDIR += p5-Math-SymbolicX-ParserExtensionFactory
      SUBDIR += p5-Math-VecStat
      SUBDIR += p5-Set-IntSpan
      SUBDIR += p5-Statistics-Contingency
