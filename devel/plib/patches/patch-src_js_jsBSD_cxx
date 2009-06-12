@@ -1,0 +1,40 @@
+--- src/js/jsBSD.cxx.orig	Tue Mar 11 03:06:21 2008
++++ src/js/jsBSD.cxx	Thu Mar 12 21:33:03 2009
+@@ -50,8 +50,10 @@
+ #if defined(__FreeBSD__)
+ # include <sys/joystick.h>
+ #else
++#if defined(__i386__)
+ # include <machine/joystick.h>		// For analog joysticks
+ #endif
++#endif
+ #ifdef HAVE_USB_JS
+ #if defined(__NetBSD__)
+ #ifdef HAVE_USBHID_H
+@@ -85,7 +87,9 @@ struct os_specific_s {
+   int              fd;
+   int              is_analog;
+   // The following structure members are specific to analog joysticks
++#if defined(__i386__)
+   struct joystick  ajs;
++#endif
+ #ifdef HAVE_USB_JS
+   // The following structure members are specific to USB joysticks
+   struct hid_item *hids;
+@@ -437,7 +441,7 @@ void jsJoystick::rawRead ( int *buttons, float *axes )
+ 
+     return ;
+   }
+-
++#if defined(__i386__)
+   if ( os->is_analog )
+   {
+     int status = ::read ( os->fd, &os->ajs, sizeof(os->ajs) );
+@@ -462,6 +466,7 @@ void jsJoystick::rawRead ( int *buttons, float *axes )
+ 
+     return;
+   }
++#endif
+ 
+ #ifdef HAVE_USB_JS
+   while ((len = ::read(os->fd, os->hid_data_buf, os->hid_dlen)) == os->hid_dlen)
