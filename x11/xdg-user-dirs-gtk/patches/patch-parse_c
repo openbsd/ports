@@ -1,0 +1,48 @@
+$OpenBSD: patch-parse_c,v 1.1.1.1 2009/06/12 16:01:30 ajacoutot Exp $
+--- parse.c.orig	Fri Apr 10 11:18:27 2009
++++ parse.c	Fri Apr 10 11:19:21 2009
+@@ -9,7 +9,7 @@ parse_xdg_dirs_locale (void)
+ 
+   locale = NULL;
+   file = g_build_filename (g_get_user_config_dir (),
+-			   "user-dirs.locale", NULL);
++			   "user-dirs.locale", (char *)NULL);
+   if (g_file_get_contents (file, &content, NULL, NULL))
+     locale = g_strchug (g_strchomp (content));
+   g_free (file);
+@@ -35,7 +35,7 @@ parse_xdg_dirs (const char *config_file)
+   if (config_file == NULL)
+     {
+       config_file_free = g_build_filename (g_get_user_config_dir (),
+-					   "user-dirs.dirs", NULL);
++					   "user-dirs.dirs", (char *)NULL);
+       config_file = (const char *)config_file_free;
+     }
+ 
+@@ -94,7 +94,7 @@ parse_xdg_dirs (const char *config_file)
+ 	  dir.type = g_strdup (type_start);
+ 	  if (relative)
+ 	    {
+-	      dir.path = g_build_filename (g_get_home_dir (), unescaped, NULL);
++	      dir.path = g_build_filename (g_get_home_dir (), unescaped, (char *)NULL);
+ 	      g_free (unescaped);
+ 	    }
+ 	  else 
+@@ -126,7 +126,7 @@ parse_gtk_bookmarks (const char *filename)
+     {
+       filename_free = g_build_filename (g_get_home_dir (),
+ 					".gtk-bookmarks",
+-					NULL);
++					(char *)NULL);
+       filename = (const char *)filename_free;
+     }
+ 
+@@ -180,7 +180,7 @@ save_gtk_bookmarks (const char *filename,
+     {
+       filename_free = g_build_filename (g_get_home_dir (),
+ 					".gtk-bookmarks",
+-					NULL);
++					(char *)NULL);
+       filename = (const char *)filename_free;
+     }
+   

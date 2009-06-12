@@ -1,0 +1,36 @@
+$OpenBSD: patch-update_c,v 1.1.1.1 2009/06/12 16:01:30 ajacoutot Exp $
+--- update.c.orig	Fri Apr 10 11:19:46 2009
++++ update.c	Fri Apr 10 11:20:35 2009
+@@ -163,7 +163,7 @@ update_locale (XdgDirEntry *old_entries)
+   gtk_dialog_add_buttons (GTK_DIALOG (dialog),
+ 			  _("_Keep Old Names"), GTK_RESPONSE_NO,
+ 			  _("_Update Names"), GTK_RESPONSE_YES,
+-			  NULL);
++			  (char *)NULL);
+ 
+   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_NO);
+ 
+@@ -190,12 +190,12 @@ update_locale (XdgDirEntry *old_entries)
+ 					       -1, _("Current folder name"),
+ 					       cell,
+ 					       "text", 0,
+-					       NULL);
++					       (char *)NULL);
+   gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview),
+ 					       -1, _("New folder name"),
+ 					       cell,
+ 					       "text", 1,
+-					       NULL);
++					       (char *)NULL);
+ 
+   gtk_container_add (GTK_CONTAINER (scrolledwindow),
+ 		     treeview);
+@@ -256,7 +256,7 @@ update_locale (XdgDirEntry *old_entries)
+       char *file;
+       
+       file = g_build_filename (g_get_user_config_dir (),
+-			       "user-dirs.locale", NULL);
++			       "user-dirs.locale", (char *)NULL);
+       g_unlink (file);
+       g_free (file);
+     }
