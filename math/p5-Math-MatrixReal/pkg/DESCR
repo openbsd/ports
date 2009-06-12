@@ -1,0 +1,10 @@
+Math::MatrixReal implements the data type "matrix of reals" (and
+consequently also "vector of reals") which can be used almost like any
+other basic Perl type thanks to OPERATOR OVERLOADING.
+
+Also features many important operations and methods: matrix norm, matrix
+transposition, matrix inverse, determinant of a matrix, order and
+numerical condition of a matrix, scalar product of vectors, vector
+product of vectors, vector length, projection of row and column vectors,
+a comfortable way for reading in a matrix from a file, the keyboard or
+your code, and many more.
