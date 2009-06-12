@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.6 2008/02/11 02:18:28 kurt Exp $
+$OpenBSD: README.OpenBSD,v 1.7 2009/06/12 18:14:26 kurt Exp $
 
                           OpenBSD mod_jk Package
                        Apache-Tomcat AJP Connector
@@ -37,7 +37,7 @@ the file to include the sample mod_jk.conf file:
 4) Stop and start Apache using apachectl(1)
 
 5) Test mod_jk by accessing the url http://your.apache.host/examples/ for 
-Tomcat 4 or http://your.apache.host/jsp-examples/ for Tomcat 5.
+Tomcat 4 & 6 or http://your.apache.host/jsp-examples/ for Tomcat 5.
 
 On-line documentation is here:
 
