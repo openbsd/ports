@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/12 17:06:32 jasper Exp $
+${P5SITE}/Algorithm/
+${P5SITE}/Algorithm/CurveFit.pm
+@man man/man3p/Algorithm::CurveFit.3p
+share/examples/p5-Algorithm-CurveFit/
+share/examples/p5-Algorithm-CurveFit/examplefit.pl
+share/examples/p5-Algorithm-CurveFit/examplefit_generate_data.pl
