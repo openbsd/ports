@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/12 16:56:06 jasper Exp $
+${P5SITE}/Math/
+${P5SITE}/Math/Symbolic/
+${P5SITE}/Math/Symbolic.pm
+${P5SITE}/Math/Symbolic/AuxFunctions.pm
+${P5SITE}/Math/Symbolic/Base.pm
+${P5SITE}/Math/Symbolic/Compiler.pm
+${P5SITE}/Math/Symbolic/Constant.pm
+${P5SITE}/Math/Symbolic/Custom/
+${P5SITE}/Math/Symbolic/Custom.pm
+${P5SITE}/Math/Symbolic/Custom/Base.pm
+${P5SITE}/Math/Symbolic/Custom/DefaultDumpers.pm
+${P5SITE}/Math/Symbolic/Custom/DefaultMods.pm
+${P5SITE}/Math/Symbolic/Custom/DefaultTests.pm
+${P5SITE}/Math/Symbolic/Derivative.pm
+${P5SITE}/Math/Symbolic/ExportConstants.pm
+${P5SITE}/Math/Symbolic/MiscAlgebra.pm
+${P5SITE}/Math/Symbolic/MiscCalculus.pm
+${P5SITE}/Math/Symbolic/Operator.pm
+${P5SITE}/Math/Symbolic/Parser/
+${P5SITE}/Math/Symbolic/Parser.pm
+${P5SITE}/Math/Symbolic/Parser/Precompiled.pm
+${P5SITE}/Math/Symbolic/Parser/Yapp.pm
+${P5SITE}/Math/Symbolic/Variable.pm
+${P5SITE}/Math/Symbolic/VectorCalculus.pm
+@man man/man3p/Math::Symbolic.3p
+@man man/man3p/Math::Symbolic::AuxFunctions.3p
+@man man/man3p/Math::Symbolic::Base.3p
+@man man/man3p/Math::Symbolic::Compiler.3p
+@man man/man3p/Math::Symbolic::Constant.3p
+@man man/man3p/Math::Symbolic::Custom.3p
+@man man/man3p/Math::Symbolic::Custom::Base.3p
+@man man/man3p/Math::Symbolic::Custom::DefaultDumpers.3p
+@man man/man3p/Math::Symbolic::Custom::DefaultMods.3p
+@man man/man3p/Math::Symbolic::Custom::DefaultTests.3p
+@man man/man3p/Math::Symbolic::Derivative.3p
+@man man/man3p/Math::Symbolic::ExportConstants.3p
+@man man/man3p/Math::Symbolic::MiscAlgebra.3p
+@man man/man3p/Math::Symbolic::MiscCalculus.3p
+@man man/man3p/Math::Symbolic::Operator.3p
+@man man/man3p/Math::Symbolic::Parser.3p
+@man man/man3p/Math::Symbolic::Parser::Precompiled.3p
+@man man/man3p/Math::Symbolic::Variable.3p
+@man man/man3p/Math::Symbolic::VectorCalculus.3p
