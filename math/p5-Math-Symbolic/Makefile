@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/12 16:56:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/12 16:58:07 jasper Exp $
 
-COMMENT =	perl module to do symbolic calculations
+COMMENT =	symbolic calculations for Perl
 DISTNAME =	Math-Symbolic-0.603
 CATEGORIES =	math
 HOMEPAGE =	http://search.cpan.org/~smueller/Math-Symbolic/

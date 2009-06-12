@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/12 16:52:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/12 16:58:07 jasper Exp $
 
-COMMENT =	perl module that implements the data type "matrix of reals"
+COMMENT =	implement the data type "matrix of reals"
 DISTNAME =	Math-MatrixReal-2.05
 CATEGORIES =	math
 HOMEPAGE =	http://search.cpan.org/~leto/Math-MatrixReal/
