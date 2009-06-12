@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.708 2009/06/07 11:24:54 landry Exp $
+# $OpenBSD: Makefile,v 1.709 2009/06/12 17:08:32 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -213,6 +213,7 @@
      SUBDIR += opencm
      SUBDIR += p5-Algorithm-Annotate
      SUBDIR += p5-Algorithm-C3
+     SUBDIR += p5-Algorithm-CurveFit
      SUBDIR += p5-Algorithm-Dependency
      SUBDIR += p5-Algorithm-Diff
      SUBDIR += p5-Algorithm-IncludeExclude
