@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2009/01/29 22:28:58 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.97 2009/06/12 20:01:09 kili Exp $
 
 COMMENT-main =		K Desktop Environment, libraries
 COMMENT-cups =		K Desktop Environment, cups support
@@ -8,7 +8,7 @@ DISTNAME =		kdelibs-${VERSION}
 MASTER_SITES0 =  	ftp://ftp.kde.org/pub/kde/security_patches/
 
 PKGNAME-main =		${DISTNAME}p0
-PKGNAME-cups =		kdecups-${VERSION}
+PKGNAME-cups =		kdecups-${VERSION}p0
 MODKDE_VERSION =		3.5.8
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
 SHARED_LIBS +=	kdefx                7.0      # .6.0
@@ -61,8 +61,9 @@ CONFIGURE_ARGS += 	--enable-cups
 LIB_DEPENDS =	art_lgpl_2::graphics/libart \
 		idn::devel/libidn \
 		fam::sysutils/fam
-WANTLIB =	iconv intl util jpeg m X11 ICE Xrender c SM pthread \
-		stdc++ Xext z png rpcsvc Xau Xdmcp
+WANTLIB =	asn1 crypto gssapi iconv intl util jpeg krb5 m X11 \
+		ICE Xrender c SM pthread stdc++ Xext z png rpcsvc \
+		Xau Xdmcp
 
 LIB_DEPENDS-main =	\
 	${LIB_DEPENDS} \
@@ -80,7 +81,7 @@ WANTLIB-main =	${WANTLIB} \
 		audiofile glib-2.0 \
 		gmodule-2.0 gthread-2.0 mad ogg \
 		sndio vorbisenc vorbis vorbisfile \
-		xml2 krb5 gssapi crypto asn1
+		xml2
 
 
 RUN_DEPENDS-main = \
@@ -94,7 +95,7 @@ LIB_DEPENDS-cups = \
 	cups::print/cups
 
 WANTLIB-cups =	${WANTLIB} \
-		crypto ssl
+		gcrypt gnutls gpg-error tasn1
 
 
 SEPARATE_BUILD =	flavored
