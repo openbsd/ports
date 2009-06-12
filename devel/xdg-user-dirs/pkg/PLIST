@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/30 16:28:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/12 15:50:46 ajacoutot Exp $
 bin/xdg-user-dir
 @bin bin/xdg-user-dirs-update
 share/examples/xdg-user-dirs/
 share/examples/xdg-user-dirs/xdg/
 @sample ${SYSCONFDIR}/xdg/
+share/examples/xdg-user-dirs/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/xdg-user-dirs/xdg/autostart/xdg-user-dirs-update.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/xdg-user-dirs-update.desktop
 share/examples/xdg-user-dirs/xdg/user-dirs.conf
 @sample ${SYSCONFDIR}/xdg/user-dirs.conf
 share/examples/xdg-user-dirs/xdg/user-dirs.defaults

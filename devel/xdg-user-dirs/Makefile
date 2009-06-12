@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/28 11:10:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/12 15:50:46 ajacoutot Exp $
 
 COMMENT=	utilities to manage well know user directories
 
 DISTNAME=	xdg-user-dirs-0.10
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://freedesktop.org/wiki/Software/xdg-user-dirs/
@@ -23,5 +23,13 @@ MODULES=	devel/gettext
 CONFIGURE_STYLE= gnu
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/xdg-user-dirs
+
+AUTOSTARTDIR=	${PREFIX}/share/examples/xdg-user-dirs/xdg/autostart
+
+post-install:
+	${INSTALL_DATA_DIR} ${AUTOSTARTDIR}
+	${SUBST_CMD} -c ${FILESDIR}/xdg-user-dirs-update.desktop \
+		${AUTOSTARTDIR}/xdg-user-dirs-update.desktop
+	chown ${SHAREOWN}:${SHAREGRP} ${AUTOSTARTDIR}/xdg-user-dirs-update.desktop
 
 .include <bsd.port.mk>
