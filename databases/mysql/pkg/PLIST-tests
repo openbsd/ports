@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.30 2009/05/29 08:42:06 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.31 2009/06/13 21:51:30 sthen Exp $
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1
@@ -20,6 +20,7 @@ share/mysql-test/include/ctype_like_range_f1f2.inc
 share/mysql-test/include/ctype_regex.inc
 share/mysql-test/include/delete_anonymous_users.inc
 share/mysql-test/include/diff_master_slave.inc
+share/mysql-test/include/diff_tables.inc
 share/mysql-test/include/endspace.inc
 share/mysql-test/include/federated.inc
 share/mysql-test/include/federated_cleanup.inc
@@ -70,6 +71,7 @@ share/mysql-test/include/kill_query_and_diff_master_slave.inc
 share/mysql-test/include/loaddata_autocom.inc
 share/mysql-test/include/master-slave-end.inc
 share/mysql-test/include/master-slave.inc
+share/mysql-test/include/mysqldump.inc
 share/mysql-test/include/mysqltest-x.inc
 share/mysql-test/include/ndb_backup.inc
 share/mysql-test/include/ndb_backup_print.inc
@@ -357,6 +359,7 @@ share/mysql-test/r/index_merge_ror.result
 share/mysql-test/r/index_merge_ror_cpk.result
 share/mysql-test/r/information_schema.result
 share/mysql-test/r/information_schema_chmod.result
+share/mysql-test/r/information_schema_community.result
 share/mysql-test/r/information_schema_db.result
 share/mysql-test/r/information_schema_inno.result
 share/mysql-test/r/init_connect.result
@@ -441,6 +444,7 @@ share/mysql-test/r/mysqldump-compat.result
 share/mysql-test/r/mysqldump-max.result
 share/mysql-test/r/mysqldump-no-binlog.result
 share/mysql-test/r/mysqldump.result
+share/mysql-test/r/mysqldump_restore.result
 share/mysql-test/r/mysqlshow.result
 share/mysql-test/r/mysqltest.result
 share/mysql-test/r/named_pipe.result
@@ -1615,6 +1619,7 @@ share/mysql-test/t/index_merge_ror.test
 share/mysql-test/t/index_merge_ror_cpk.test
 share/mysql-test/t/information_schema.test
 share/mysql-test/t/information_schema_chmod.test
+share/mysql-test/t/information_schema_community.test
 share/mysql-test/t/information_schema_db.test
 share/mysql-test/t/information_schema_inno.test
 share/mysql-test/t/init_connect-master.opt
@@ -1730,6 +1735,7 @@ share/mysql-test/t/mysqldump-max.test
 share/mysql-test/t/mysqldump-no-binlog-master.opt
 share/mysql-test/t/mysqldump-no-binlog.test
 share/mysql-test/t/mysqldump.test
+share/mysql-test/t/mysqldump_restore.test
 share/mysql-test/t/mysqlshow.test
 share/mysql-test/t/mysqltest.test
 share/mysql-test/t/named_pipe-master.opt

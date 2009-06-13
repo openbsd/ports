@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.153 2009/05/29 08:42:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.154 2009/06/13 21:51:30 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite)
 
-VERSION=	5.0.82
+VERSION=	5.0.83
 DISTNAME=	mysql-${VERSION}
 PKGNAME-main=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
@@ -81,9 +81,9 @@ CONFIGURE_ARGS+= --enable-assembler
 
 MULTI_PACKAGES=		-main -server -tests
 
-RUN_DEPENDS-server=	:mysql-client->=5.0,<5.1:databases/mysql \
+RUN_DEPENDS-server=	:mysql-client->=5.0,<5.1:${BASE_PKGPATH} \
 			:p5-DBD-mysql-*:databases/p5-DBD-mysql
-LIB_DEPENDS-server=	mysqlclient:mysql-client->=5.0,<5.1:databases/mysql
+LIB_DEPENDS-server=	mysqlclient:mysql-client->=5.0,<5.1:${BASE_PKGPATH}
 
 WANTLIB-server=		${WANTLIB} wrap		
 WANTLIB-main=		${WANTLIB} ncurses readline
