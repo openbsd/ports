@@ -1,13 +1,17 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.20 2009/06/06 11:58:22 martynas Exp $
+-- $OpenBSD: yt.lua,v 1.21 2009/06/13 01:51:08 martynas Exp $
 -- Fetch videos from YouTube.com and convert them to MPEG.
 -- Written by Pedro Martelletto in August 2006. Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
 
+getopt = require("getopt")
 http = require("socket.http")
 
 -- Set this to a command capable of talking HTTP and following 3XX requests.
-fetch = "ftp -o <file> <url>"
+fetch = "ftp <arguments> -o <file> <url>"
+
+-- Default arguments for the fetch command.
+arguments = ""
 
 -- Set this to a command capable of converting from FLV to MPEG.
 convert = "ffmpeg -y -i <flv> -b 1000k -f mp4 -vcodec mpeg4 -acodec libfaac -ab 128k <mp4> 1>/dev/null 2>&1"
@@ -15,18 +19,37 @@ convert = "ffmpeg -y -i <flv> -b 1000k -f mp4 -vcodec mpeg4 -acodec libfaac -ab 
 -- Set this to the base location where to fetch YouTube videos from.
 base_url = "http://www.youtube.com/get_video"
 
--- Make sure a URL was given.
-assert(table.getn(arg) > 0, "Wrong usage, no URL given")
+-- Usage and supported options.
+prog = {
+   name = arg[0],
+   usage = "[-C] [-n] [-o=output] url ...",
+}
+options = Options {
+   Option {{"C"}, "continue previous transfer"},
+   Option {{"n"}, "do not convert video"},
+   Option {{"o"}, "change output filename", "Req", "filename"},
+}
+
+-- Process arguments.  Show usage.
+urls, opts, errors = getopt.getOpt(arg, options)
+if #errors > 0 or urls.n < 1 then
+   getopt.dieWithUsage()
+end
+
+-- Build arguments for the fetch command.
+if opts.C then
+   arguments = arguments .. "-C"
+end
 
 -- Fetch one or more URL.
-for i = 1, table.getn(arg) do
-   url = arg[i]
+for i = 1, table.getn(urls) do
+   url = urls[i]
 
    -- Convert embedded links to the correct form.
    url = string.gsub(url, "/v/", "/watch?v=")
 
    -- Fetch the page holding the embedded video.
-   print(string.format("Getting %s ...", url))
+   io.stderr:write(string.format("Getting %s ...\n", url))
    body = assert(http.request(url))
 
    -- Look for the video title.
@@ -43,9 +66,20 @@ for i = 1, table.getn(arg) do
    end
 
    -- Build a name for the files the video will be stored in.
-   file = string.gsub(title, "[^%w-]", "_")
-   file = string.lower(file)
-   flv = file .. ".flv"
+   if opts.o then
+      file = opts.o
+   else
+      file = string.gsub(title, "[^%w-]", "_")
+      file = string.lower(file)
+   end
+
+   -- Build flv and mp4 file names.
+   if file == "-" then
+      opts.n = 0
+      flv = file
+   else
+      flv = file .. ".flv"
+   end
    mp4 = file .. ".mp4"
 
    -- Escape the file names.
@@ -60,7 +94,7 @@ for i = 1, table.getn(arg) do
    error_pattern = "<div class=\"errorBox\">%s+(.-)</div>"
    error = string.match(body, error_pattern)
    if error then
-      print(error)
+      io.stderr:write(error .. "\n")
       return
    end
 
@@ -82,15 +116,19 @@ for i = 1, table.getn(arg) do
    end
 
    -- Fetch the video.
-   cmd = string.gsub(fetch, "<(%w+)>", { url = url, file = e_flv })
+   cmd = string.gsub(fetch, "<(%w+)>", { arguments = arguments,
+      url = url, file = e_flv })
    assert(os.execute(cmd) == 0, "Failed")
 
    -- Convert it to MPEG.
-   cmd = string.gsub(convert, "<(%w+)>", { flv = e_flv, mp4 = e_mp4 })
-   print("Converting ...")
-   assert(os.execute(cmd) == 0, "Failed")
-
-   os.remove(flv)
-   print("Done. Video saved in " .. mp4 .. ".")
+   if opts.n then
+      io.stderr:write("Done. Video saved in " .. flv .. ".\n")
+   else
+      cmd = string.gsub(convert, "<(%w+)>", { flv = e_flv, mp4 = e_mp4 })
+      io.stderr:write("Converting ...\n")
+      assert(os.execute(cmd) == 0, "Failed")
+      os.remove(flv)
+      io.stderr:write("Done. Video saved in " .. mp4 .. ".\n")
+   end
 end
 
