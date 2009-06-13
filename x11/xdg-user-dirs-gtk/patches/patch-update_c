@@ -1,6 +1,6 @@
-$OpenBSD: patch-update_c,v 1.1.1.1 2009/06/12 16:01:30 ajacoutot Exp $
---- update.c.orig	Fri Apr 10 11:19:46 2009
-+++ update.c	Fri Apr 10 11:20:35 2009
+$OpenBSD: patch-update_c,v 1.2 2009/06/13 10:48:55 ajacoutot Exp $
+--- update.c.orig	Sat Sep  6 02:50:31 2008
++++ update.c	Sat Jun 13 12:22:15 2009
 @@ -163,7 +163,7 @@ update_locale (XdgDirEntry *old_entries)
    gtk_dialog_add_buttons (GTK_DIALOG (dialog),
  			  _("_Keep Old Names"), GTK_RESPONSE_NO,
@@ -34,3 +34,15 @@ $OpenBSD: patch-update_c,v 1.1.1.1 2009/06/12 16:01:30 ajacoutot Exp $
        g_unlink (file);
        g_free (file);
      }
+@@ -295,6 +295,11 @@ main (int argc, char *argv[])
+   dot = strchr (locale, '.');
+   if (dot)
+     *dot = 0;
++
++  /* give it a chance to initially create "well-known" user directories */
++  /* if they don't exist ; we don't care whether it was successfull or not */
++  if (old_entries != 0)
++    g_spawn_command_line_sync (XDG_USER_DIRS_UPDATE "", NULL, NULL, NULL, NULL);
+ 
+   if (old_locale && *old_locale != 0 &&
+       strcmp (old_locale, locale) != 0 &&
