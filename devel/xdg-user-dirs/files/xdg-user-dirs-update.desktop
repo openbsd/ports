@@ -1,6 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Exec=${TRUEPREFIX}/bin/xdg-user-dirs-update
-Name=User folders update
-Terminal=false
-Type=Application
