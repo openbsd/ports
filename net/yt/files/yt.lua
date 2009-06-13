@@ -1,7 +1,7 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.21 2009/06/13 01:51:08 martynas Exp $
--- Fetch videos from YouTube.com and convert them to MPEG.
--- Written by Pedro Martelletto in August 2006. Public domain.
+-- $OpenBSD: yt.lua,v 1.22 2009/06/13 02:01:19 martynas Exp $
+-- Fetch videos from YouTube.com/Videos.Google.com, and convert to MPEG.
+-- Written by Pedro Martelletto and Martynas Venckus.  Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
 
 getopt = require("getopt")

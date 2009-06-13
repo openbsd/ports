@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2009/06/13 01:51:08 martynas Exp $
+# $OpenBSD: Makefile,v 1.28 2009/06/13 02:01:19 martynas Exp $
 
-COMMENT=	customizable script to fetch youtube videos
+COMMENT=	fetch youtube and google videos
 
-PKGNAME=	yt-10
+PKGNAME=	yt-10p0
 CATEGORIES=	net www
 DISTFILES=
+
+MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
 
 # Public domain
 PERMIT_PACKAGE_CDROM=	Yes
