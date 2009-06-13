@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_celestia_gtk_data_celestia_desktop,v 1.1 2009/06/13 12:07:36 ajacoutot Exp $
+--- src/celestia/gtk/data/celestia.desktop.orig	Sat Jun 13 13:50:50 2009
++++ src/celestia/gtk/data/celestia.desktop	Sat Jun 13 13:51:03 2009
+@@ -9,4 +9,4 @@ Terminal=false
+ Name=Celestia
+ Comment=Space Simulator
+ StartupNotify=true
+-Categories=Astronomy;Science;Application;
++Categories=Astronomy;Science;Application;Education

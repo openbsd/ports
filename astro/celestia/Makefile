@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/05/06 08:36:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/06/13 12:07:36 ajacoutot Exp $
 
 COMMENT=	free space simulator and planetarium
 
 DISTNAME=	celestia-1.5.1
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	astro x11
 
 HOMEPAGE=	http://www.shatters.net/celestia/
