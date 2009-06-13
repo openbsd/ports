@@ -1,0 +1,40 @@
+$OpenBSD: patch-man_hu_hunspell_1,v 1.1.1.1 2009/06/13 07:48:53 ajacoutot Exp $
+--- man/hu/hunspell.1.orig	Mon May 26 11:42:10 2008
++++ man/hu/hunspell.1	Fri Jun  5 20:41:01 2009
+@@ -65,12 +65,12 @@ a javaslattevést). Az első szótár mindig alapszót
+ .PP
+ Az alapértelmezett szótár a környezet nyelvi beállításától függ
+ az Unix rendszereken. Locale hiányában a
+-.BR /usr/share/hunspell/default
++.BR ${PREFIX}/share/hunspell/default
+ az alapértelmezett szótár. 
+ .PP
+ A megadott útvonal lehet abszolút és relatív is. Relatív
+ útvonal esetén először az aktuális, majd a
+-.BR /usr/share/hunspell
++.BR ${PREFIX}/share/hunspell
+ és még több más könyvtárban keresi a szótárt a program. L. \-D és a
+ .BR PÉLDÁK.
+ .TP
+@@ -307,7 +307,7 @@ macka
+ .TP
+ .B hunspell \-d en_US english.html
+ Az amerikai angol helyesírási szótár kiválasztása (aktuális, vagy a
+-.BR /usr/share/hunspell
++.BR ${PREFIX}/share/hunspell
+ könyvtárból.
+ .TP
+ .B hunspell \-d /opt/OpenOffice.org1.0.1/share/dict/ooo/de_DE
+@@ -335,10 +335,10 @@ A saját szótár helyének megadására szolgál. Sze
+ .I \-p
+ kapcsolóval.
+ .SH ÁLLOMÁNYOK
+-.BI /usr/share/default.aff
++.BI ${PREFIX}/share/default.aff
+ Az alapértelmezett ragozási táblázat. Lásd hunspell(4).
+ .PP
+-.BI /usr/share/default.dic
++.BI ${PREFIX}/share/default.dic
+ Az alapértelmezett szótár az előző ragozási táblázathoz.
+ Lásd hunspell(4).
+ .BI $HOME/.hunspell_default

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/06/13 07:48:53 ajacoutot Exp $
+@lib lib/libhunspell-1.2.so.${LIBhunspell-1.2_VERSION}

@@ -1,0 +1,16 @@
+$OpenBSD: patch-man_hunspell_1,v 1.1.1.1 2009/06/13 07:48:53 ajacoutot Exp $
+--- man/hunspell.1.orig	Fri Jun  5 20:03:16 2009
++++ man/hunspell.1	Fri Jun  5 20:04:20 2009
+@@ -360,10 +360,10 @@ Dictionary path.
+ Equivalent to 
+ .I \-p.
+ .SH FILES
+-.BI /usr/share/myspell/default.aff
++.BI ${PREFIX}/share/myspell/default.aff
+ Path of default affix file. See hunspell(4).
+ .PP
+-.BI /usr/share/myspell/default.dic
++.BI ${PREFIX}/share/myspell/default.dic
+ Path of default dictionary file.
+ See hunspell(4).
+ .PP

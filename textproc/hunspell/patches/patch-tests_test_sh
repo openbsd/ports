@@ -1,0 +1,9 @@
+$OpenBSD: patch-tests_test_sh,v 1.1.1.1 2009/06/13 07:48:53 ajacoutot Exp $
+--- tests/test.sh.orig	Fri Jun  5 17:37:50 2009
++++ tests/test.sh	Fri Jun  5 17:37:58 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ export LC_ALL="C"
+ 
+ function check_valgrind_log () {

@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_tools_hunspell_cxx,v 1.1.1.1 2009/06/13 07:48:53 ajacoutot Exp $
+--- src/tools/hunspell.cxx.orig	Thu Sep  4 15:44:19 2008
++++ src/tools/hunspell.cxx	Fri Jun  5 20:47:05 2009
+@@ -63,25 +63,16 @@
+ #include "firstparser.hxx"
+ 
+ #define LIBDIR \
+-    "/usr/share/hunspell:" \
+-    "/usr/share/myspell:" \
+-    "/usr/share/myspell/dicts"
++    "${PREFIX}/share/hunspell:" \
++    "${LOCALBASE}/share/myspell:" \
++    "${LOCALBASE}/share/myspell/dicts:" \
++    "${LOCALBASE}/share/mozilla-dicts"
+ #define USEROOODIR \
+-    ".openoffice.org2/user/wordbook:" \
+-    ".openoffice.org2.0/user/wordbook"
++    ".openoffice.org/3/user/wordbook:" \
++    ".openoffice.org2/user/wordbook"
+ #define OOODIR \
+-    "/opt/openoffice.org/basis3.0/share/dict/ooo:" \
+-    "/usr/lib/openoffice.org/basis3.0/share/dict/ooo:" \
+-    "/opt/openoffice.org2.4/share/dict/ooo:" \
+-    "/usr/lib/openoffice.org2.4/share/dict/ooo:" \
+-    "/opt/openoffice.org2.3/share/dict/ooo:" \
+-    "/usr/lib/openoffice.org2.3/share/dict/ooo:" \
+-    "/opt/openoffice.org2.2/share/dict/ooo:" \
+-    "/usr/lib/openoffice.org2.2/share/dict/ooo:" \
+-    "/opt/openoffice.org2.1/share/dict/ooo:" \
+-    "/usr/lib/openoffice.org2.1/share/dict/ooo:" \
+-    "/opt/openoffice.org2.0/share/dict/ooo:" \
+-    "/usr/lib/openoffice.org2.0/share/dict/ooo"
++    "${LOCALBASE}/openoffice.org3/share/extension/install:" \
++    "${LOCALBASE}/openoffice/share/dict/ooo"
+ #define HOME getenv("HOME")
+ #define DICBASENAME ".hunspell_"
+ #define LOGFILE "/tmp/hunspell.log"
+@@ -1382,7 +1373,7 @@ int main(int argc, char** argv)
+ 	int argstate = 0;
+ 	
+ #ifdef ENABLE_NLS
+-#ifdef HAVE_LOCALE_H
++#if defined HAVE_LOCALE_H && !defined __OpenBSD__ // native environment is "C"
+ 	ui_lang = setlocale(LC_ALL, "");
+ 	textdomain("hunspell");
+         ui_enc = nl_langinfo(CODESET);
