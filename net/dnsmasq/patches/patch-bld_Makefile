@@ -1,9 +1,9 @@
-$OpenBSD: patch-bld_Makefile,v 1.1 2009/03/08 21:04:16 naddy Exp $
---- bld/Makefile.orig	Fri Mar  6 17:21:42 2009
-+++ bld/Makefile	Fri Mar  6 17:21:47 2009
+$OpenBSD: patch-bld_Makefile,v 1.2 2009/06/14 17:07:25 kili Exp $
+--- bld/Makefile.orig	Mon Jun  8 23:05:30 2009
++++ bld/Makefile	Sat Jun 13 12:05:54 2009
 @@ -1,4 +1,4 @@
 -CFLAGS = -Wall -W -O2
 +#CFLAGS = -Wall -W -O2
  
- OBJS = cache.o rfc1035.o util.o option.o forward.o isc.o network.o \
+ OBJS = cache.o rfc1035.o util.o option.o forward.o network.o \
         dnsmasq.o dhcp.o lease.o rfc2131.o netlink.o dbus.o bpf.o \

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/08/06 03:11:38 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/06/14 17:07:25 kili Exp $
+@newgroup _dnsmasq:631
+@newuser _dnsmasq:631:_dnsmasq:daemon:dnsmasq Account:/nonexistent:/sbin/nologin
 @man man/man8/dnsmasq.8
 @bin sbin/dnsmasq
 share/examples/dnsmasq/

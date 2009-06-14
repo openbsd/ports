@@ -1,12 +1,20 @@
-$OpenBSD: patch-src_config_h,v 1.5 2008/08/06 03:11:38 pvalchev Exp $
---- src/config.h.orig	Sun Jul 20 19:26:32 2008
-+++ src/config.h	Tue Aug  5 11:00:00 2008
-@@ -48,7 +48,7 @@
- #if defined(__FreeBSD__)
- #   define CONFFILE "/usr/local/etc/dnsmasq.conf"
- #else
--#   define CONFFILE "/etc/dnsmasq.conf"
-+#   define CONFFILE "${SYSCONFDIR}/dnsmasq.conf"
+$OpenBSD: patch-src_config_h,v 1.6 2009/06/14 17:07:25 kili Exp $
+--- src/config.h.orig	Wed Jun 10 15:03:45 2009
++++ src/config.h	Sun Jun 14 17:03:14 2009
+@@ -53,13 +53,13 @@
+ #   if defined(__FreeBSD__)
+ #      define CONFFILE "/usr/local/etc/dnsmasq.conf"
+ #   else
+-#      define CONFFILE "/etc/dnsmasq.conf"
++#      define CONFFILE "${SYSCONFDIR}/dnsmasq.conf"
+ #   endif
  #endif
+ 
  #define DEFLEASE 3600 /* default lease time, 1 hour */
- #define CHUSER "nobody"
+-#define CHUSER "nobody"
+-#define CHGRP "dip"
++#define CHUSER "_dnsmasq"
++#define CHGRP "_dnsmasq"
+ #define DHCP_SERVER_PORT 67
+ #define DHCP_CLIENT_PORT 68
+ #define DHCP_SERVER_ALTPORT 1067

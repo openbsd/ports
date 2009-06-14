@@ -1,0 +1,12 @@
+$OpenBSD: patch-dnsmasq_conf_example,v 1.1 2009/06/14 17:07:25 kili Exp $
+--- dnsmasq.conf.example.orig	Mon Jun  8 23:05:30 2009
++++ dnsmasq.conf.example	Sat Jun 13 12:34:06 2009
+@@ -2,7 +2,7 @@
+ #
+ # Format is one option per line, legal options are the same
+ # as the long options legal on the command line. See
+-# "/usr/sbin/dnsmasq --help" or "man 8 dnsmasq" for details.
++# "${LOCALBASE}/sbin/dnsmasq --help" or "man 8 dnsmasq" for details.
+ 
+ # The following two options make you a better netizen, since they
+ # tell dnsmasq to filter out queries which the public DNS cannot

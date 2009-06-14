@@ -1,30 +1,30 @@
-$OpenBSD: patch-src_tftp_c,v 1.4 2008/06/05 19:38:39 rui Exp $
---- src/tftp.c.orig	Sat May 24 10:32:02 2008
-+++ src/tftp.c	Wed Jun  4 09:32:56 2008
-@@ -484,7 +484,7 @@ static ssize_t tftp_err(int err, char *packet, char *m
+$OpenBSD: patch-src_tftp_c,v 1.5 2009/06/14 17:07:25 kili Exp $
+--- src/tftp.c.orig	Mon Jun  8 23:12:43 2009
++++ src/tftp.c	Sat Jun 13 12:05:54 2009
+@@ -481,7 +481,7 @@ static ssize_t tftp_err(int err, char *packet, char *m
  {
    struct errmess {
      unsigned short op, err;
 -    char message[];
-+    char *message;
++    char message[0];
    } *mess = (struct errmess *)packet;
    ssize_t ret = 4;
    char *errstr = strerror(errno);
-@@ -512,7 +512,7 @@ static ssize_t get_block(char *packet, struct tftp_tra
+@@ -508,7 +508,7 @@ static ssize_t get_block(char *packet, struct tftp_tra
        char *p;
        struct oackmess {
  	unsigned short op;
 -	char data[];
-+	char *data;
++	char data[0];
        } *mess = (struct oackmess *)packet;
        
        p = mess->data;
-@@ -535,7 +535,7 @@ static ssize_t get_block(char *packet, struct tftp_tra
+@@ -531,7 +531,7 @@ static ssize_t get_block(char *packet, struct tftp_tra
        /* send data packet */
        struct datamess {
  	unsigned short op, block;
 -	unsigned char data[];
-+	unsigned char *data;
++	unsigned char data[0];
        } *mess = (struct datamess *)packet;
        
        size_t size = transfer->file->size - transfer->offset; 
