@@ -22,6 +22,7 @@ MD5 (rpm/libpng-1.2.8-2.i386.rpm) = twr/OiLRaSJSATHkNzhmog==
 MD5 (rpm/libstdc++-4.0.2-8.fc4.i386.rpm) = ckCfTx75s5pzBibeheTbsA==
 MD5 (rpm/libtermcap-2.0.8-41.i386.rpm) = h09gUe0yUxHhdMWj2RX8SA==
 MD5 (rpm/libtiff-3.7.1-6.fc4.3.i386.rpm) = aajVCZgJkOB2tFzpOTBBtg==
+MD5 (rpm/libxml2-2.6.20-1.FC4.i386.rpm) = yTCirnVCBVw5L15xwbuSag==
 MD5 (rpm/ncurses-5.4-19.fc4.i386.rpm) = gT5zaKyPMbZFGW/rBsIhbg==
 MD5 (rpm/pango-1.8.1-2.i386.rpm) = EPaYE2F9nEljLlTLjZUkrQ==
 MD5 (rpm/readline-5.0-3.i386.rpm) = iau9rz2idFMYfJFAuiViQQ==
@@ -53,6 +54,7 @@ RMD160 (rpm/libpng-1.2.8-2.i386.rpm) = 4vU4fsXpcONlaVZf0TQUvvftQFI=
 RMD160 (rpm/libstdc++-4.0.2-8.fc4.i386.rpm) = u1nNdtWkGvFl2DBcamj5RuaNM4Q=
 RMD160 (rpm/libtermcap-2.0.8-41.i386.rpm) = KB0VI3T4ajoQ6oIjZHHb3LfXMUU=
 RMD160 (rpm/libtiff-3.7.1-6.fc4.3.i386.rpm) = OrZfNPCXx9crmUG4wjHxX+N/ug4=
+RMD160 (rpm/libxml2-2.6.20-1.FC4.i386.rpm) = FLNUF3ZzU/omtTEayAg7HUm5gGg=
 RMD160 (rpm/ncurses-5.4-19.fc4.i386.rpm) = K+ltis+YJYi3gdHD+VWFXptR8ug=
 RMD160 (rpm/pango-1.8.1-2.i386.rpm) = p9Y+1ikmnRmTMv/WEFD3Cq08knE=
 RMD160 (rpm/readline-5.0-3.i386.rpm) = +/F/EtgwySkvK2LOmmQiVWcMafw=
@@ -84,6 +86,7 @@ SHA1 (rpm/libpng-1.2.8-2.i386.rpm) = tA1WGmGAlMFv+L3/JPfxh+ahqas=
 SHA1 (rpm/libstdc++-4.0.2-8.fc4.i386.rpm) = wD9Bzi7euUnsQ99qubQGgOkjD5M=
 SHA1 (rpm/libtermcap-2.0.8-41.i386.rpm) = qITF4z8ScYHuH4L1ATcJKiRrmwY=
 SHA1 (rpm/libtiff-3.7.1-6.fc4.3.i386.rpm) = Etz7DCqVnZ2n9YG0wbk6yghhVn0=
+SHA1 (rpm/libxml2-2.6.20-1.FC4.i386.rpm) = LH2okZ30OB+mmhnPToSgcvBwK7g=
 SHA1 (rpm/ncurses-5.4-19.fc4.i386.rpm) = uZWf1oaXHv4kMelRBTwlrjvUudE=
 SHA1 (rpm/pango-1.8.1-2.i386.rpm) = vwjpkZQnIKf7elb2TwhnbVicxNE=
 SHA1 (rpm/readline-5.0-3.i386.rpm) = ptHDTFF5o0h6dQoGmFi6CEwjeVM=
@@ -115,6 +118,7 @@ SHA256 (rpm/libpng-1.2.8-2.i386.rpm) = 5yr2emRVA+GIQpkwj0Emjr/2rhWAweu0Fup8PhSB3
 SHA256 (rpm/libstdc++-4.0.2-8.fc4.i386.rpm) = LCGJzHkW0tA914QmGYtNyjQbOtsjWwluCV2piYC2Zos=
 SHA256 (rpm/libtermcap-2.0.8-41.i386.rpm) = s1/NzqKTy3yVAij8phrKxTnGFqfaxpar9okyhV6K5zA=
 SHA256 (rpm/libtiff-3.7.1-6.fc4.3.i386.rpm) = /rJ5vNP/aI9s8xM6LBXnEuSf8q5ZmC1ov2+NzOzYvEU=
+SHA256 (rpm/libxml2-2.6.20-1.FC4.i386.rpm) = NNyhjeInglN00Pk4mj+TRrXnygZEDsCsXhgqZEaBEM4=
 SHA256 (rpm/ncurses-5.4-19.fc4.i386.rpm) = CgBuNIt/gJtDbbJHIfv+DwFOZdEuSKRNj+U02WL43sQ=
 SHA256 (rpm/pango-1.8.1-2.i386.rpm) = aW6WPQR19YM1pSEthE2RPj6/MwfsRvz5hHNRVWJS0p4=
 SHA256 (rpm/readline-5.0-3.i386.rpm) = gYSKawHfRqeE1yuRoGhPRCjddP5QtfIrvyHMuOwrsuQ=
@@ -146,6 +150,7 @@ SIZE (rpm/libpng-1.2.8-2.i386.rpm) = 160855
 SIZE (rpm/libstdc++-4.0.2-8.fc4.i386.rpm) = 314331
 SIZE (rpm/libtermcap-2.0.8-41.i386.rpm) = 12859
 SIZE (rpm/libtiff-3.7.1-6.fc4.3.i386.rpm) = 307266
+SIZE (rpm/libxml2-2.6.20-1.FC4.i386.rpm) = 727382
 SIZE (rpm/ncurses-5.4-19.fc4.i386.rpm) = 1763135
 SIZE (rpm/pango-1.8.1-2.i386.rpm) = 278400
 SIZE (rpm/readline-5.0-3.i386.rpm) = 205922

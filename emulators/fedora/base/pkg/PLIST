@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/06/12 16:33:23 miod Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/06/14 17:01:56 jsg Exp $
 @conflict redhat_base-*
 emul/
 emul/fedora/
@@ -540,6 +540,8 @@ emul/fedora/usr/bin/tzselect
 emul/fedora/usr/bin/update-gdk-pixbuf-loaders
 emul/fedora/usr/bin/update-gtk-immodules
 emul/fedora/usr/bin/wrjpgcom
+emul/fedora/usr/bin/xmlcatalog
+emul/fedora/usr/bin/xmllint
 emul/fedora/usr/bin/xmlwf
 emul/fedora/usr/include/
 emul/fedora/usr/include/ansidecl.h
@@ -937,6 +939,8 @@ emul/fedora/usr/lib/libtiff.so.3
 emul/fedora/usr/lib/libtiff.so.3.7.1
 emul/fedora/usr/lib/libttf.so.2
 emul/fedora/usr/lib/libttf.so.2.3.0
+emul/fedora/usr/lib/libxml2.so.2
+emul/fedora/usr/lib/libxml2.so.2.6.20
 emul/fedora/usr/lib/libz.so.1
 emul/fedora/usr/lib/libz.so.1.2.2.2
 emul/fedora/usr/lib/locale/
