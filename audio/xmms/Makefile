@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2009/02/11 15:44:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.63 2009/06/14 10:06:07 sthen Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
@@ -34,6 +34,7 @@ MASTER_SITES=		${HOMEPAGE}/files/$V/ \
 
 MULTI_PACKAGES=		-main -vorbis -mikmod -mp3
 
+# gcc/3.3.5 ICEs randomly
 .if ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	patch-* gcc-*
 .endif

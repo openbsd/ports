@@ -1,0 +1,14 @@
+$OpenBSD: gcc-Input_mpg123_Makefile_am,v 1.1 2009/06/14 10:06:08 sthen Exp $
+--- Input/mpg123/Makefile.am.orig	Fri Jun 12 15:58:20 2009
++++ Input/mpg123/Makefile.am	Fri Jun 12 15:59:27 2009
+@@ -53,3 +53,10 @@ libmpg123_la_SOURCES = $(COMMON_SRC) $(EXTRA_SRC)
+ libmpg123_la_LDFLAGS = @PLUGIN_LDFLAGS@
+ libmpg123_la_LIBADD = @GTK_LIBS@ @PTHREAD_LIBS@ @Z_LIBS@ $(top_builddir)/libxmms/libxmms.la
+ INCLUDES = @GTK_CFLAGS@ @ARCH_DEFINES@ -I$(top_builddir)/intl -I$(top_srcdir)
++
++layer3.lo: layer3.c
++@am__fastdepCC_TRUE@	if $(LTCOMPILE) -O0 -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Plo"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LTCOMPILE) -O0 -c -o $@ $<
