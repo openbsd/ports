@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/07 19:00:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/15 10:46:00 jasper Exp $
 
 COMMENT=	ISIRI 6219 conforming Farsi fonts
 
 V=		0.4
 DISTNAME=	farsi_fonts_$V
-PKGNAME=	farsifonts-ttf-$V
+PKGNAME=	farsifonts-ttf-$Vp0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.arabeyes.org/project.php?proj=Khotot
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=arabeyes/}
 EXTRACT_SUFX=		.tar.bz2
 
-USE_X11=		Yes
+PKG_ARCH=		*
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 
