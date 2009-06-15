@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/16 09:12:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/15 07:35:34 jasper Exp $
 @bin bin/vagalume
 bin/vagalumectl
 @man man/man1/vagalume.1
@@ -23,23 +23,14 @@ share/icons/hicolor/scalable/actions/media-playback-start.svg
 share/icons/hicolor/scalable/actions/media-playback-stop.svg
 share/icons/hicolor/scalable/actions/media-skip-forward.svg
 share/icons/hicolor/scalable/actions/process-stop.svg
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/vagalume.mo
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/vagalume.mo
-share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/vagalume.mo
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/vagalume.mo
-share/locale/gl/LC_MESSAGES/
 share/locale/gl/LC_MESSAGES/vagalume.mo
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/vagalume.mo
-share/locale/lv/LC_MESSAGES/
 share/locale/lv/LC_MESSAGES/vagalume.mo
-share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/vagalume.mo
-share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/vagalume.mo
 share/pixmaps/
 share/pixmaps/vagalume.xpm
