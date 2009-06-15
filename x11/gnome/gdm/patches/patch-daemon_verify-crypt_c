@@ -1,0 +1,61 @@
+$OpenBSD: patch-daemon_verify-crypt_c,v 1.1 2009/06/15 16:09:14 ajacoutot Exp $
+--- daemon/verify-crypt.c.orig	Thu Mar 19 05:59:27 2009
++++ daemon/verify-crypt.c	Mon Jun 15 17:34:23 2009
+@@ -35,6 +35,10 @@
+ #  include <crypt.h>
+ #endif /* HAVE_CRYPT */
+ 
++#ifdef __OpenBSD__
++#  include <time.h>
++#endif
++
+ #include "gdm.h"
+ #include "misc.h"
+ #include "slave.h"
+@@ -247,8 +251,8 @@ gdm_verify_user (GdmDisplay *d,
+ 	/* check for the standard method of disallowing users */
+ 	if (pwent->pw_shell != NULL &&
+ 	    (strcmp (pwent->pw_shell, NOLOGIN) == 0 ||
+-	     strcmp (pwent->pw_shell, "/bin/true") == 0 ||
+-	     strcmp (pwent->pw_shell, "/bin/false") == 0)) {
++	     strcmp (pwent->pw_shell, "/usr/bin/true") == 0 ||
++	     strcmp (pwent->pw_shell, "/usr/bin/false") == 0)) {
+ 		gdm_debug ("User not allowed to log in");
+ 		gdm_slave_greeter_ctl_no_ret (GDM_ERRBOX,
+ 					      _("\nThe system administrator "
+@@ -383,6 +387,35 @@ gdm_verify_user (GdmDisplay *d,
+ 	}
+ 
+ #endif /* HAVE_PASSWDEXPIRED && HAVE_CHPASS */
++
++#if defined __OpenBSD__
++		time_t now, window, tm;
++
++		if (pwent != NULL)
++			tm = pwent->pw_expire;
++		else
++			return NULL;
++
++		/*
++		 * Get the current time, and calculate a window based on now and the
++		 * timestamp when the password is due to expire.
++		 * "tm" is the future timestamp at which the password is due to expire.
++		 * If we reduce this stamp with the current ("now") timestamp, we're
++		 * left with the number of seconds from "now", at which the password is
++		 * due to expire.
++		*/
++		now = time((time_t *) 0);
++		window = tm - now;
++
++		g_debug("NOW=%d, TM=%d, WINDOW=%d", now, tm, window);
++
++		if (tm > 0) {
++			if (window < 0) {
++				gdm_errorgui_error_box (d, GTK_MESSAGE_ERROR,("Sorry -- your account has expired."));
++				return NULL;
++			}
++		}
++#endif
+ 
+ 	return login;
+ }
