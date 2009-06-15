@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.384 2009/06/12 16:02:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.385 2009/06/15 10:37:51 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -56,7 +56,6 @@
      SUBDIR += evilwm
      SUBDIR += extace
      SUBDIR += farsifonts-ttf
-     SUBDIR += farsiweb-ttf
      SUBDIR += fbpanel
      SUBDIR += fleditor
      SUBDIR += fltk

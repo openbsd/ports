@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/21 09:30:21 jasper Exp $
-lib/X11/fonts/
-@fontdir lib/X11/fonts/farsiweb/
-lib/X11/fonts/farsiweb/homa.ttf
-lib/X11/fonts/farsiweb/nazli.ttf
-lib/X11/fonts/farsiweb/nazlib.ttf
-lib/X11/fonts/farsiweb/titr.ttf
