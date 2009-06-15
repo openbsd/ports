@@ -1,0 +1,15 @@
+# $OpenBSD: options.sample,v 1.1 2009/06/15 09:01:22 sthen Exp $
+
+# don't ask about removing old files
+#nopurge 1
+
+# save subtitles too
+#subtitles 1
+
+# default to this directory
+#output /share/iplayer
+
+# select default video modes; ffplay from ffmpeg-20080620p8 can handle
+# the flash formats but some other software, including mplayer-1.0rc2p24
+# and the ffmpeg converter from ffmpeg-20080620 cannot.
+#vmode flashhd,flashvhigh,flashhigh

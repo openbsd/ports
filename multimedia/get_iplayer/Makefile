@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/06/14 11:47:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2009/06/15 09:01:22 sthen Exp $
 
 COMMENT =		download BBC iPlayer and ITV programmes
 
 DISTNAME =		get_iplayer-1.99
+PKGNAME =		${DISTNAME}p0
 
 CATEGORIES =		multimedia
 
@@ -27,9 +28,11 @@ NO_REGRESS =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/get_iplayer
+	${SUBST_CMD} -c ${FILESDIR}/options.sample ${WRKSRC}/options.sample
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/get_iplayer/plugins
+	${INSTALL_DATA} ${WRKSRC}/options.sample ${PREFIX}/share/get_iplayer
 	${INSTALL_SCRIPT} ${WRKSRC}/get_iplayer ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/plugins/* \
 	    ${PREFIX}/share/get_iplayer/plugins
