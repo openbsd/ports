@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2009/06/11 18:27:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2009/06/15 21:41:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -74,6 +74,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_lib_db_dbopen=no
 
 MAKE_FLAGS+=	CFLAGS="${CFLAGS}"
+
+# XXX prevent a fatal error at install phase
+CONFIGURE_ARGS+= --disable-schemas-install
 
 FLAVORS=	audio debug gtkspell
 FLAVOR?=	
