@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2009/06/11 18:27:02 ajacoutot Exp $
-
-# XXX TODO: the mail-account-disable plugin is not loaded by default:
-# it makes right-clicking on a folder very long (the first time)
+# $OpenBSD: Makefile,v 1.79 2009/06/15 06:27:10 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -11,8 +8,8 @@ COMMENT-plugins=	additionnal plugins for evolution
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.24.5
 
-PKGNAME-main=		${DISTNAME}p13
-PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p7
+PKGNAME-main=		${DISTNAME}p14
+PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p8
 
 CATEGORIES=		mail
 
@@ -108,11 +105,21 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-krb5=/usr \
 			--with-krb5-includes=/usr/include/kerberosV
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}/components:${TRUEPREFIX}/lib/evolution/${R}:${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}/components:${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib"
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		R
+
+# XXX ltasneededhack in bsd.gnome.mk from FreeBSD ports
+# (+patch-plugins_exchange-operations_Makefile_in)
+LIBTOOL=	${WRKDIR}/bin/libtool
+post-patch:
+	sed '/^archive_cmds=/s/-shared/-shared -Wl,--as-needed/ ; \
+		/^archive_expsym_cmds=/s/-shared/-shared -Wl,--as-needed/' \
+		${LOCALBASE}/bin/libtool > ${WRKDIR}/bin/libtool
+	chmod +x ${WRKDIR}/bin/libtool
+
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/bogo-junk-plugin/bf-junk-filter.c \

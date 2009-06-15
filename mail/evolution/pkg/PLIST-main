@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2009/06/07 05:59:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/06/15 06:27:10 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution
@@ -2179,7 +2179,6 @@ ${SCHEMAS_INSTDIR}/apps_evolution_shell.schemas
 ${SCHEMAS_INSTDIR}/bogo-junk-plugin.schemas
 ${SCHEMAS_INSTDIR}/evolution-mail.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-@exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --set --type list --list-type=string /apps/evolution/eplugin/disabled '[org.gnome.mail.account.disable]'
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
