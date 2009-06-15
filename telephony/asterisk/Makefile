@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2009/06/05 23:10:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2009/06/15 23:33:57 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -6,7 +6,7 @@ COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 V=			1.4.25.1
 CORESOUNDS=		1.4.15
 DISTNAME=		asterisk-$V
-FULLPKGNAME-main=	asterisk-$V
+FULLPKGNAME-main=	asterisk-$Vp0
 # N.B. overridden for h323 flavor below.
 
 CATEGORIES=		telephony
@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=	--with-osptk=no \
 # to WRKSRC, 'gmake menuselect', then cd back to the port directory
 # and 'make'.
 
-FLAVOR?=		no_speex # XXX crashes at startup: Bus Error
+FLAVOR?=
 FLAVORS=		h323
 
 # odbc
@@ -109,18 +109,19 @@ CONFIGURE_ARGS+=	--with-netsnmp=${LOCALBASE}
 .endif
 
 # speex
-PSEUDO_FLAVORS+=	no_speex
-.if ${FLAVOR:L:Mno_speex}
-CONFIGURE_ARGS+=	--with-speex=no
-.else
-MULTI_PACKAGES+=	-speex
-COMMENT-speex=		Speex codec for Asterisk
-WANTLIB-speex=		m
-LIB_DEPENDS-speex=	speex.>=7:speex->=1.2beta3:audio/speex \
-			speexdsp:speex->=1.2beta3:audio/speex
-CONFIGURE_ARGS+=	--with-speex=${LOCALBASE} \
-			--with-speexdsp=${LOCALBASE}
-.endif
+# XXX crashes at startup (bus error)
+#PSEUDO_FLAVORS+=	no_speex
+#.if ${FLAVOR:L:Mno_speex}
+#CONFIGURE_ARGS+=	--with-speex=no
+#.else
+#MULTI_PACKAGES+=	-speex
+#COMMENT-speex=		Speex codec for Asterisk
+#WANTLIB-speex=		m
+#LIB_DEPENDS-speex=	speex.>=7:speex->=1.2rc1:audio/speex \
+#			speexdsp:speex->=1.2rc1:audio/speex
+#CONFIGURE_ARGS+=	--with-speex=${LOCALBASE} \
+#			--with-speexdsp=${LOCALBASE}
+#.endif
 
 # ogg
 PSEUDO_FLAVORS+=	no_ogg
@@ -184,7 +185,7 @@ CPPFLAGS+=		-I${LOCALBASE}/include/openh323
 CONFIGURE_ARGS+=	--with-pwlib=${LOCALBASE}/lib \
 			--with-h323=${LOCALBASE}/lib
 WANTLIB-main+=		SDL avutil expat lber ldap ldap_r sasl2
-FULLPKGNAME-main=	asterisk-$V-h323
+FULLPKGNAME-main=	asterisk-$Vp0-h323
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE_PROGRAM} include/asterisk/buildopts.h
