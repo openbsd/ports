@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/15 11:18:29 jasper Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/freefarsi/
+lib/X11/fonts/freefarsi/FreeFarsi.ttf
+lib/X11/fonts/freefarsi/FreeFarsiBold.ttf
+lib/X11/fonts/freefarsi/FreeFarsiBoldItalic.ttf
+lib/X11/fonts/freefarsi/FreeFarsiItalic.ttf
