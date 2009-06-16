@@ -1,12 +1,21 @@
-# $OpenBSD: Makefile,v 1.42 2009/06/15 21:41:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2009/06/16 17:19:41 jasper Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	multi-protocol instant messaging client
+COMMENT-main=	multi-protocol instant messaging client
+COMMENT-finch=	multi-protocol instant messaging client, console client
+COMMENT-libpurple= multi-protocol instant messaging library
 
 DISTNAME=	pidgin-2.5.6
-PKGNAME=	${DISTNAME}p2
+VERSION=	2.5.6
+DISTNAME=	pidgin-${VERSION}
+
+PKGNAME=	pidgin-${VERSION}
+PKGNAME-main=	pidgin-${VERSION}p3
+FULLPKGNAME-finch=	finch-${VERSION}
+FULLPKGNAME-libpurple= libpurple-${VERSION}
 CATEGORIES=	net
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 
 SHARED_LIBS=	jabber		0.0 \
@@ -24,38 +33,46 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-		Xext Xfixes Xi Xinerama Xrandr Xrender Xss atk-1.0 \
-		c cairo crypto dbus-1 expat fontconfig freetype \
-		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		gthread-2.0 m ncurses panel pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png pthread ssl stdc++ z
+
+WANTLIB+=      c dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB+=      gthread-2.0 iconv intl m ncurses pcre pthread xml2 z
+
+WANTLIB-main+= ${WANTLIB}
+WANTLIB-main+= X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB-main+= Xi Xinerama Xrandr Xrender Xss atk-1.0 cairo expat
+WANTLIB-main+= fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glitz
+WANTLIB-main+= gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
+WANTLIB-main+= png stdc++
+
+WANTLIB-libpurple=${WANTLIB} crypto ssl
+
+WANTLIB-finch= ${WANTLIB} X11 Xau Xdmcp panel
 
 MODULES=	devel/gettext \
 		textproc/intltool \
 		lang/python \
 		devel/gconf2
 
-BUILD_DEPENDS=	:dbus-python-*:x11/dbus-python
-RUN_DEPENDS+=	:dbus-python-*:x11/dbus-python \
-		:py-gtk2-*:x11/py-gtk2 \
-		:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		startup-notification-1::devel/startup-notification \
-		silc.>=7,silcclient.>=5::devel/silc-toolkit \
-		meanwhile::net/meanwhile \
-		gadu.>=4::net/libgadu \
-		xml2::textproc/libxml \
-		dbus-glib-1::x11/dbus-glib
+BUILD_DEPENDS=		:dbus-python-*:x11/dbus-python
+RUN_DEPENDS-main+=	:dbus-python-*:x11/dbus-python \
+			:py-gtk2-*:x11/py-gtk2 \
+			:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS-main=	startup-notification-1::devel/startup-notification \
+			purple::${BUILD_PKGPATH},-libpurple
+LIB_DEPENDS-finch=	purple::${BUILD_PKGPATH}
+LIB_DEPENDS-libpurple=	silc.>=7,silcclient.>=5::devel/silc-toolkit \
+			meanwhile::net/meanwhile \
+			gadu.>=4::net/libgadu
 
-MODGCONF2_SCHEMAS_DIR= pidgin
-MODGCONF2_LIBDEP= No
+MODGCONF2_SCHEMAS_DIR=	pidgin
+MODGCONF2_LIBDEP=	No
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes
-SEPARATE_BUILD=	simple
+
+SEPARATE_BUILD= simple
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61
 CONFIGURE_ARGS+= --disable-avahi \
@@ -69,37 +86,39 @@ CONFIGURE_ARGS+= --disable-avahi \
 		 --disable-tk \
 		 --disable-cap \
 		 --with-python=${MODPY_BIN}
+# XXX prevent a fatal error at install phase
+CONFIGURE_ARGS+= --disable-schemas-install
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_lib_db_dbopen=no
 
 MAKE_FLAGS+=	CFLAGS="${CFLAGS}"
 
-# XXX prevent a fatal error at install phase
-CONFIGURE_ARGS+= --disable-schemas-install
-
-FLAVORS=	audio debug gtkspell
+FLAVORS=	audio gtkspell
 FLAVOR?=	
 
+MULTI_PACKAGES= -main -finch -libpurple
+
 .if ${FLAVOR:L:Maudio}
-LIB_DEPENDS+=		gstreamer-0.10:gstreamer-0.10.*:multimedia/gstreamer-0.10/core
+LIB_DEPENDS-main+=	gstreamer-0.10:gstreamer-0.10.*:multimedia/gstreamer-0.10/core
+LIB_DEPENDS-finch+=	gstreamer-0.10:gstreamer-0.10.*:multimedia/gstreamer-0.10/core
 .else
 CONFIGURE_ARGS+=	--disable-gstreamer
 # --disable-gstreamer is not sufficient
 MAKE_FLAGS+=    GSTREAMER_CFLAGS= GSTREAMER_LIBS=
 .endif
 
-.if ${FLAVOR:L:Mdebug}
-CFLAGS+=	-O0
-CONFIGURE_ARGS+=--enable-debug --disable-mcheck
-INSTALL_STRIP=
+.if ${FLAVOR:L:Mgtkspell}
+LIB_DEPENDS-main+=	gtkspell::textproc/gtkspell
+WANTLIB-main+=		enchant
+.else
+CONFIGURE_ARGS+=	--disable-gtkspell
 .endif
 
-.if ${FLAVOR:L:Mgtkspell}
-LIB_DEPENDS+=	gtkspell::textproc/gtkspell
-WANTLIB+=	enchant
-.else
-CONFIGURE_ARGS+=--disable-gtkspell
+.if defined(DEBUG)
+CONFIGURE_ARGS+=	--enable-debug \
+			--disable-mcheck
+INSTALL_STRIP=
 .endif
 
 post-extract:

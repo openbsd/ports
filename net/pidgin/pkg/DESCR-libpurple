@@ -1,0 +1,4 @@
+libpurple is intended to be the core of an IM program. When using
+libpurple, you'll basically be writing a UI for this core chunk of code.
+Pidgin is a GTK+ frontend to libpurple, Finch is an ncurses frontend,
+etc.

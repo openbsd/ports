@@ -1,0 +1,9 @@
+$OpenBSD: patch-libpurple_purple_pc_in,v 1.1 2009/06/16 17:19:41 jasper Exp $
+--- libpurple/purple.pc.in.orig	Thu Jun  4 01:17:16 2009
++++ libpurple/purple.pc.in	Thu Jun  4 01:17:21 2009
+@@ -11,4 +11,4 @@ Description: libpurple is a GLib-based instant messeng
+ Version: @VERSION@
+ Requires: glib-2.0
+ Cflags: -I${includedir}/libpurple
+-Libs: -L${libdir} -lpurple
++Libs: -L${libdir} -lpurple -pthread

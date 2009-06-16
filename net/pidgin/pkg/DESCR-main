@@ -15,9 +15,6 @@ Pidgin integrates well with GNOME and KDE's system trays.  This allows
 you to work with Pidgin without requiring the buddy list window to
 be up at all times.
 
-Pidgin is under constant development, and releases are usually frequent.
-
 Flavors:
 	audio    - Build with gstreamer support
-	debug    - Enable debugging
 	gtkspell - Build with spell checking support
