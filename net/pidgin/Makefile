@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2009/06/16 17:19:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2009/06/16 19:31:29 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,9 +11,9 @@ VERSION=	2.5.6
 DISTNAME=	pidgin-${VERSION}
 
 PKGNAME=	pidgin-${VERSION}
-PKGNAME-main=	pidgin-${VERSION}p3
-FULLPKGNAME-finch=	finch-${VERSION}
-FULLPKGNAME-libpurple= libpurple-${VERSION}
+PKGNAME-main=	pidgin-${VERSION}p4
+FULLPKGNAME-finch=	finch-${VERSION}p0
+FULLPKGNAME-libpurple= libpurple-${VERSION}p0
 CATEGORIES=	net
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
@@ -54,15 +54,17 @@ MODULES=	devel/gettext \
 		devel/gconf2
 
 BUILD_DEPENDS=		:dbus-python-*:x11/dbus-python
-RUN_DEPENDS-main+=	:dbus-python-*:x11/dbus-python \
+RUN_DEPENDS-main=	:dbus-python-*:x11/dbus-python \
 			:py-gtk2-*:x11/py-gtk2 \
 			:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS-main=	startup-notification-1::devel/startup-notification \
 			purple::${BUILD_PKGPATH},-libpurple
-LIB_DEPENDS-finch=	purple::${BUILD_PKGPATH}
+LIB_DEPENDS-finch=	purple::${BUILD_PKGPATH},-libpurple
+RUN_DEPENDS-finch=	# empty
 LIB_DEPENDS-libpurple=	silc.>=7,silcclient.>=5::devel/silc-toolkit \
 			meanwhile::net/meanwhile \
 			gadu.>=4::net/libgadu
+RUN_DEPENDS-libpurple=	${MODGCONF2_RUN_DEPENDS}
 
 MODGCONF2_SCHEMAS_DIR=	pidgin
 MODGCONF2_LIBDEP=	No

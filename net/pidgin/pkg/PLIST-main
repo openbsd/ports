@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2009/06/16 17:19:42 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/06/16 19:31:30 ajacoutot Exp $
 @conflict gaim-*
 @pkgpath net/pidgin
 @bin bin/pidgin
@@ -90,7 +90,7 @@ lib/pidgin/timestamp_format.so
 lib/pidgin/xmppconsole.la
 lib/pidgin/xmppconsole.so
 lib/pkgconfig/pidgin.pc
-share/applications/
+@man man/man1/pidgin.1
 share/applications/pidgin.desktop
 share/doc/pidgin/
 share/icons/hicolor/16x16/apps/pidgin.png

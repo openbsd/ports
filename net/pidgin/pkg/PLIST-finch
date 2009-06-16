@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-finch,v 1.1 2009/06/16 17:19:42 jasper Exp $
+@comment $OpenBSD: PLIST-finch,v 1.2 2009/06/16 19:31:30 ajacoutot Exp $
 @pkgpath net/pidgin
 @bin bin/finch
 include/finch/
@@ -63,3 +63,4 @@ lib/libgnt.la
 @lib lib/libgnt.so.${LIBgnt_VERSION}
 lib/pkgconfig/finch.pc
 lib/pkgconfig/gnt.pc
+@man man/man1/finch.1
