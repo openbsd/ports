@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/16 15:20:26 kurt Exp $
+share/java/
+share/java/antlr-2.7.5.jar
