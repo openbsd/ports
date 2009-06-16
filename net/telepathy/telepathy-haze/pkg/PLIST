@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/16 17:31:07 jasper Exp $
+@bin libexec/telepathy-haze
+@man man/man8/telepathy-haze.8
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.haze.service
+share/telepathy/
+share/telepathy/managers/
+share/telepathy/managers/haze.manager
