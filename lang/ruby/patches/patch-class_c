@@ -1,4 +1,4 @@
-$OpenBSD: patch-class_c,v 1.4 2009/04/27 10:54:09 bernd Exp $
+$OpenBSD: patch-class_c,v 1.5 2009/06/16 09:12:44 bernd Exp $
 
 Fix usage of short-named constants.
 
@@ -6,9 +6,9 @@ http://svn.ruby-lang.org/cgi-bin/viewvc.cgi?view=rev&revision=18485
 http://svn.ruby-lang.org/cgi-bin/viewvc.cgi?view=rev&revision=22679
 https://bugs.launchpad.net/ubuntu/+source/ruby1.8/+bug/282302
 
---- class.c.orig	Sat Jun 28 12:27:21 2008
-+++ class.c	Mon Mar  2 13:17:52 2009
-@@ -150,7 +153,7 @@ rb_singleton_class_clone(obj)
+--- class.c.orig	Fri Jan 16 02:58:45 2009
++++ class.c	Wed Jun 10 06:44:43 2009
+@@ -153,7 +153,7 @@ rb_singleton_class_clone(obj)
  		data.klass = obj;
  		break;
  	      default:

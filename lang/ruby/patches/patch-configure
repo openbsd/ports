@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2009/04/27 10:54:09 bernd Exp $
---- configure.orig	Tue Mar 31 11:22:07 2009
-+++ configure	Sat Apr  4 15:25:11 2009
-@@ -17282,7 +17282,7 @@ if test "$enable_shared" = 'yes'; then
+$OpenBSD: patch-configure,v 1.6 2009/06/16 09:12:44 bernd Exp $
+--- configure.orig	Tue Jun  9 02:38:28 2009
++++ configure	Wed Jun 10 06:44:43 2009
+@@ -17704,7 +17704,7 @@ if test "$enable_shared" = 'yes'; then
   	;;
      openbsd*)
  	SOLIBS='$(LIBS)'
