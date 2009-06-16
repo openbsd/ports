@@ -1,106 +1,250 @@
-$OpenBSD: patch-src_cheese-webcam_c,v 1.3 2008/11/25 10:33:57 ajacoutot Exp $
---- src/cheese-webcam.c.orig	Tue Nov 25 00:03:19 2008
-+++ src/cheese-webcam.c	Tue Nov 25 11:27:08 2008
-@@ -32,13 +32,25 @@
+$OpenBSD: patch-src_cheese-webcam_c,v 1.4 2009/06/16 14:41:03 ajacoutot Exp $
+--- src/cheese-webcam.c.orig	Mon Jan 12 15:55:26 2009
++++ src/cheese-webcam.c	Tue Jun 16 16:31:01 2009
+@@ -32,13 +32,12 @@
  #include <gst/gst.h>
  #include <gdk-pixbuf/gdk-pixbuf.h>
  #include <X11/Xlib.h>
-+#ifndef __OpenBSD__ // no HAL under OpenBSD
- #include <libhal.h>
-+#else
-+#include <sys/ioctl.h>
-+#include <fcntl.h>
-+#include <unistd.h>
-+#if defined(__NetBSD__) || defined(__OpenBSD__)
-+#include <sys/types.h>
-+#include <sys/videoio.h>
-+#endif
-+#endif
+-#include <libhal.h>
  
  /* for ioctl query */
  #include <fcntl.h>
  #include <unistd.h>
  #include <sys/ioctl.h>
-+#ifdef __linux__
- #include <linux/videodev.h>
-+#endif
+-#include <linux/videodev.h>
++#include <sys/videoio.h>
  
  #include "cheese-webcam.h"
  #include "cheese-flash.h"
-@@ -244,6 +256,7 @@ cheese_webcam_bus_message_cb (GstBus *bus, GstMessage 
-   }
- }
- 
-+#ifndef __OpenBSD__ // no HAL under OpenBSD
- static void
- cheese_webcam_get_video_devices_from_hal (CheeseWebcam *webcam)
+@@ -249,138 +248,38 @@ cheese_webcam_get_video_devices_from_hal (CheeseWebcam
  {
-@@ -434,7 +447,55 @@ fallback:
+   CheeseWebcamPrivate *priv = CHEESE_WEBCAM_GET_PRIVATE (webcam);
+ 
+-  int            i, fd, ok;
+-  int            num_udis = 0;
+-  char         **udis;
+-  DBusError      error;
+-  LibHalContext *hal_ctx;
++  int            i, fd, ok, max_devs = 20;
++  struct dev_info {
++    int   node;
++    char  *pname;
++  }dev_list[max_devs];
+ 
+   priv->num_webcam_devices = 0;
+ 
+-  g_print ("Probing devices with HAL...\n");
+-
+-  dbus_error_init (&error);
+-  hal_ctx = libhal_ctx_new ();
+-  if (hal_ctx == NULL)
++  for (i = 0; i < max_devs; i++)
+   {
+-    g_error ("error: libhal_ctx_new");
+-    dbus_error_free (&error);
+-    goto fallback;
+-  }
+-
+-  if (!libhal_ctx_set_dbus_connection (hal_ctx, dbus_bus_get (DBUS_BUS_SYSTEM, &error)))
+-  {
+-    g_error ("error: libhal_ctx_set_dbus_connection: %s: %s", error.name, error.message);
+-    dbus_error_free (&error);
+-    goto fallback;
+-  }
+-
+-  if (!libhal_ctx_init (hal_ctx, &error))
+-  {
+-    if (dbus_error_is_set (&error))
+-    {
+-      g_error ("error: libhal_ctx_init: %s: %s\n", error.name, error.message);
+-      dbus_error_free (&error);
+-    }
+-    g_error ("Could not initialise connection to hald.\n"
+-             "Normally this means the HAL daemon (hald) is not running or not ready");
+-    goto fallback;
+-  }
+-
+-  udis = libhal_find_device_by_capability (hal_ctx, "video4linux", &num_udis, &error);
+-
+-  if (dbus_error_is_set (&error))
+-  {
+-    g_error ("error: libhal_find_device_by_capability: %s: %s\n", error.name, error.message);
+-    dbus_error_free (&error);
+-    goto fallback;
+-  }
+-
+-  /* Initialize webcam structures */
+-  priv->webcam_devices = g_new0 (CheeseWebcamDevice, num_udis);
+-
+-  for (i = 0; i < num_udis; i++)
+-  {
+     char                   *device;
+-    char                   *parent_udi = NULL;
+-    char                   *subsystem = NULL;
+     char                   *gstreamer_src, *product_name;
++    struct stat s;
+     struct v4l2_capability  v2cap;
+-    struct video_capability v1cap;
+-    gint vendor_id = 0;
+-    gint product_id = 0;
+-    gchar *property_name = NULL;
+ 
+-    parent_udi = libhal_device_get_property_string (hal_ctx, udis[i], "info.parent", &error);
+-    if (dbus_error_is_set (&error))
+-    {
+-      g_warning ("error getting parent for %s: %s: %s\n", udis[i], error.name, error.message);
+-      dbus_error_free (&error);
+-    }
+-
+-    if (parent_udi != NULL) {
+-      subsystem = libhal_device_get_property_string (hal_ctx, parent_udi, "info.subsystem", NULL);
+-      if (subsystem == NULL) continue;
+-      property_name = g_strjoin (".", subsystem, "vendor_id", NULL);
+-      vendor_id = libhal_device_get_property_int (hal_ctx, parent_udi, property_name , &error);
+-      if (dbus_error_is_set (&error)) {
+-        g_warning ("error getting vendor id: %s: %s\n", error.name, error.message);
+-        dbus_error_free (&error);
+-      }
+-      g_free (property_name);
+-
+-      property_name = g_strjoin (".", subsystem, "product_id", NULL);
+-      product_id = libhal_device_get_property_int (hal_ctx, parent_udi, property_name, &error);
+-      if (dbus_error_is_set (&error)) {
+-        g_warning ("error getting product id: %s: %s\n", error.name, error.message);
+-        dbus_error_free (&error);
+-      }
+-      g_free (property_name);
+-      libhal_free_string (subsystem);
+-      libhal_free_string (parent_udi);
+-    }
+-
+-    g_print ("Found device %04x:%04x, getting capabilities...\n", vendor_id, product_id);
+-
+-    device = libhal_device_get_property_string (hal_ctx, udis[i], "video4linux.device", &error);
+-    if (dbus_error_is_set (&error))
+-    {
+-      g_error ("error geting device for %s: %s: %s\n", udis[i], error.name, error.message);
+-      dbus_error_free (&error);
++    dev_list[i].node = -1;
++    device = g_strdup_printf("%s%d", "/dev/video", i);
++    if (lstat(device, &s) != 0)
+       continue;
+-    }
+ 
+-    /* vbi devices support capture capability too, but cannot be used,
+-     * so detect them by device name */
+-    if (strstr (device, "vbi"))
+-    {
+-      g_print ("Skipping vbi device: %s\n", device);
+-      libhal_free_string (device);
+-      continue;
+-    }
+-
+     if ((fd = open (device, O_RDONLY | O_NONBLOCK)) < 0)
+     {
+       g_error ("Failed to open %s: %s\n", device, strerror (errno));
+-      libhal_free_string (device);
++      free (device);
+       continue;
+     }
+     ok = ioctl (fd, VIDIOC_QUERYCAP, &v2cap);
+     if (ok < 0)
+     {
+-      ok = ioctl (fd, VIDIOCGCAP, &v1cap);
+-      if (ok < 0)
+-      {
+-        g_error ("Error while probing v4l capabilities for %s: %s\n",
+-                 device, strerror (errno));
+-        libhal_free_string (device);
+-        close (fd);
+-        continue;
+-      }
+-      g_print ("Detected v4l device: %s\n", v1cap.name);
+-      g_print ("Device type: %d\n", v1cap.type);
+-      gstreamer_src = "v4lsrc";
+-      product_name  = v1cap.name;
++      g_warning ("Failed to query the capture capability of %s: %s", device, strerror (errno));
++      free (device);
++      continue;
+     }
+     else
+     {
+@@ -388,52 +287,63 @@ cheese_webcam_get_video_devices_from_hal (CheeseWebcam
+       g_print ("Detected v4l2 device: %s\n", v2cap.card);
+       g_print ("Driver: %s, version: %d\n", v2cap.driver, v2cap.version);
+       /* g_print ("Bus info: %s\n", v2cap.bus_info); */ /* Doesn't seem anything useful */
+-     g_print ("Capabilities: 0x%08X\n", v2cap.capabilities);
++      g_print ("Capabilities: 0x%08X\n", v2cap.capabilities);
+       if (!(cap & V4L2_CAP_VIDEO_CAPTURE))
+       {
+         g_print ("Device %s seems to not have the capture capability, (radio tuner?)\n"
+                  "Removing it from device list.\n", device);
+-        libhal_free_string (device);
++        free (device);
+         close (fd);
+         continue;
+       }
+-      gstreamer_src = "v4l2src";
+       product_name  = (char *) v2cap.card;
+     }
+ 
+     g_print ("\n");
+ 
+-    priv->webcam_devices[priv->num_webcam_devices].hal_udi           = g_strdup (udis[i]);
++    dev_list[i].node = i;
++    dev_list[i].pname = product_name;
++    priv->num_webcam_devices++;
++
++    free (device);
++    if (fd >= 0)
++      close (fd);
++  }
++
++  /* Initialize webcam structures */
++  priv->webcam_devices = g_new0 (CheeseWebcamDevice, priv->num_webcam_devices);
++  priv->num_webcam_devices = 0;
++
++  for (i = 0; i < max_devs; i++)
++  {
++    char *device;
++    if (dev_list[i].node < 0)
++      continue;
++    device = g_strdup_printf("%s%d", "/dev/video", i);
++    priv->webcam_devices[priv->num_webcam_devices].hal_udi           = g_strdup (device);
+     priv->webcam_devices[priv->num_webcam_devices].video_device      = g_strdup (device);
+-    priv->webcam_devices[priv->num_webcam_devices].gstreamer_src     = g_strdup (gstreamer_src);
+-    priv->webcam_devices[priv->num_webcam_devices].product_name      = g_strdup (product_name);
++    priv->webcam_devices[priv->num_webcam_devices].gstreamer_src     = g_strdup ("v4l2src");
++    priv->webcam_devices[priv->num_webcam_devices].product_name      = g_strdup (dev_list[i].pname);
+     priv->webcam_devices[priv->num_webcam_devices].num_video_formats = 0;
+     priv->webcam_devices[priv->num_webcam_devices].video_formats     =
+       g_array_new (FALSE, FALSE, sizeof (CheeseVideoFormat));
+     priv->webcam_devices[priv->num_webcam_devices].supported_resolutions =
+       g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
+     priv->num_webcam_devices++;
+-
+-    libhal_free_string (device);
+-    close (fd);
+   }
+-  libhal_free_string_array (udis);
+ 
+   if (priv->num_webcam_devices == 0)
+   {
+     /* Create a fake device so that resolution changing stil works even if the
+      * computer doesn't have a webcam. */
+-fallback:
+-    if (num_udis == 0)
+-    {
+-      priv->webcam_devices = g_new0 (CheeseWebcamDevice, 1);
+-    }
++    priv->webcam_devices = g_new0 (CheeseWebcamDevice, 1);
+     priv->webcam_devices[0].num_video_formats = 0;
+     priv->webcam_devices[0].video_formats     =
+       g_array_new (FALSE, FALSE, sizeof (CheeseVideoFormat));
      priv->webcam_devices[0].hal_udi = g_strdup ("cheese_fake_videodevice");
    }
  }
-+#else // __OpenBSD__
-+static void
-+cheese_webcam_get_video_devices_from_probe (CheeseWebcam *webcam)
-+{
-+  CheeseWebcamPrivate* priv = CHEESE_WEBCAM_GET_PRIVATE (webcam);
-+  struct v4l2_capability caps;
-+  gchar videodev[] = "/dev/video?";
-+  guint16 cammask = 0;
-+  int i, ncams = 0, fd, ret, cur = 0;
-+ 
-+  for (i = 0; i < 9; i++)
-+  {
-+    videodev[strlen(videodev) - 1] = '0' + i;
-+    fd = open(videodev, O_RDONLY);
-+    if (fd == -1)
-+      continue;
-+    ret = ioctl(fd, VIDIOC_QUERYCAP, &caps);
-+    close(fd);
-+    if (ret)
-+    {
-+      continue;
-+    }
-+    g_message("Found video device: %s\n", caps.card);
-+    cammask |= (1 << i);
-+    ++ncams;
-+  }
++
  
-+  priv->num_webcam_devices = ncams;
-+  if (ncams == 0)
-+    return;
-+  priv->webcam_devices = g_new0 (CheeseWebcamDevice, ncams);
-+  for (i = 0; i < ncams; i++)
-+  {
-+    priv->webcam_devices[i].num_video_formats = 0;
-+    priv->webcam_devices[i].video_formats = g_array_new (FALSE, FALSE, sizeof (CheeseVideoFormat));
-+  }
-+
-+  for (i = 0; i < 9; i++)
-+  {
-+    if (cammask & (1 << i))
-+    {
-+      videodev[strlen(videodev) - 1] = '0' + i;
-+      priv->webcam_devices[i].video_device = g_strdup (videodev);
-+      ++cur;
-+    }
-+  }
-+}
-+#endif /* __OpenBSD__ */
-+
  static void
  cheese_webcam_get_supported_framerates (CheeseVideoFormat *video_format, GstStructure *structure)
- {
-@@ -739,7 +800,11 @@ cheese_webcam_detect_webcam_devices (CheeseWebcam *web
- 
-   int i;
- 
--  cheese_webcam_get_video_devices_from_hal (webcam);
-+#ifndef __OpenBSD__ // no HAL under OpenBSD
-+   cheese_webcam_get_video_devices_from_hal (webcam);
-+#else
-+  cheese_webcam_get_video_devices_from_probe (webcam);
-+#endif
- 
-   g_print ("Probing supported video formats...\n");
-   for (i = 0; i < priv->num_webcam_devices; i++)

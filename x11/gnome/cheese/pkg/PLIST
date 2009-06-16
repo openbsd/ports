@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/06/07 09:06:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/06/16 14:41:03 ajacoutot Exp $
 @bin bin/cheese
 libexec/cheese/
 libexec/cheese/cheese-bugreport.sh
@@ -53,8 +53,6 @@ share/cheese/sounds/shutter1.ogg
 share/cheese/sounds/shutter2.ogg
 share/cheese/sounds/shutter3.ogg
 share/cheese/sounds/shutter4.ogg
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.gnome.Cheese.service
 share/gnome/help/cheese/
 share/gnome/help/cheese/C/
