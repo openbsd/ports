@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_gdevcdj_c,v 1.1 2009/06/16 21:03:59 sthen Exp $
+
+fix ghostscript bug 690032, failure printing PDFs with bjc600/800.
+
+--- src/gdevcdj.c.orig	Tue Jun 16 12:10:45 2009
++++ src/gdevcdj.c	Tue Jun 16 12:10:51 2009
+@@ -1107,6 +1107,7 @@ bjc_put_params(gx_device *pdev, gs_param_list *plist)
+     gs_param_string pprocesscolors;
+     gs_param_string pmedia;
+     gs_param_string pquality;
++    gs_param_string dithering;
+ 
+     gs_param_float_array hwra;
+ 
+@@ -1143,6 +1144,9 @@ bjc_put_params(gx_device *pdev, gs_param_list *plist)
+ 	(bjc->ptype == BJC800 ? bjc800_printQualityStrings :
+ 	bjc600_printQualityStrings), &params->printQuality, code);
+ 
++    code = put_param_string(plist, (unsigned char *)BJC_OPTION_DITHERINGTYPE, &dithering,
++        bjc_ditheringTypeStrings, &params->ditheringType, code);
++
+     switch (ncode = param_read_int(plist,
+ 	oname = BJC_OPTION_MEDIAWEIGHT, &params->mediaWeight)) {
+ 	case 0:
+@@ -3576,7 +3580,7 @@ cdj_param_check_float(gs_param_list *plist, gs_param_n
+         switch ( code = param_read_float(plist, pname, &new_value) )
+           {
+           case 0:
+-                if ( is_defined && new_value == fval)
++                if ( is_defined && new_value == (float)fval)
+                   break;
+                 code = gs_note_error(gs_error_rangecheck);
+                 goto e;
