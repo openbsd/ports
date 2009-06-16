@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2009/01/09 15:54:31 martynas Exp $
+# $OpenBSD: Makefile,v 1.35 2009/06/16 01:14:16 sthen Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
@@ -8,10 +8,10 @@ COMMENT-devel=	devel files for Gecko
 VER=		1.8.1.19
 DISTNAME=	mozilla
 PKGNAME=	xulrunner-${VER}
-PKGNAME-main=	xulrunner-${VER}p1
+PKGNAME-main=	xulrunner-${VER}p2
 # NOTE: Must bump package name if -main changes, since -devel depends
 # on -main (plist changes).
-PKGNAME-devel=	xulrunner-devel-${VER}p1
+PKGNAME-devel=	xulrunner-devel-${VER}p2
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -41,7 +41,7 @@ BUILD_DEPENDS=	:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
 		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
-WANTLIB=	c glib-2.0 m pthread stdc++
+WANTLIB=	c gio-2.0 glib-2.0 m pthread stdc++
 
 WANTLIB-main=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo expat \
