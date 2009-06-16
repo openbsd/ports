@@ -1,5 +1,5 @@
 The Nautilus "sendto" plugin provides the Nautilus file manager with a
 context menu component for quickly sending files through external
 applications.
-Supported so far (if installed) are Evolution, Sylpheed, Thunderbird and
-Gajim.
+Supported so far (if installed) are Evolution, Sylpheed, Thunderbird,
+Gajim and Pidgin.

@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-pidgin,v 1.1.1.1 2009/03/05 08:14:58 ajacoutot Exp $
-@comment lib/nautilus-sendto/plugins/libnstpidgin.a
-@comment lib/nautilus-sendto/plugins/libnstpidgin.la
-lib/nautilus-sendto/plugins/libnstpidgin.so
-lib/pidgin/
-@comment lib/pidgin/nautilus.a
-@comment lib/pidgin/nautilus.la
-lib/pidgin/nautilus.so
