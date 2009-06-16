@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_os_bsd_os_c,v 1.1 2006/07/11 16:01:24 kurt Exp $
---- src/os/bsd/os.c.orig	Tue Jun 20 09:50:29 2006
-+++ src/os/bsd/os.c	Tue Jun 20 09:51:08 2006
-@@ -22,6 +22,7 @@
+$OpenBSD: patch-src_os_bsd_os_c,v 1.2 2009/06/16 15:37:46 kurt Exp $
+--- src/os/bsd/os.c.orig	Sat Feb 24 11:13:12 2007
++++ src/os/bsd/os.c	Sun Mar 15 21:53:36 2009
+@@ -23,6 +23,7 @@
  #include <string.h>
  #include <stdlib.h>
  #include <dlfcn.h>
 +#include <sys/param.h>
  #include <sys/types.h>
  #include <sys/sysctl.h>
- 
+ #include <pthread.h>

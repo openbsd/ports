@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1 2006/07/11 16:01:24 kurt Exp $
---- configure.orig	Tue Jun 20 09:49:10 2006
-+++ configure	Tue Jun 20 09:50:14 2006
-@@ -1948,6 +1948,7 @@ i[3456]86-*-kfreebsd*) host_cpu=i386 hos
- i386-*-openbsd*) host_os=bsd libdl_needed=no ;;
- i386-*-freebsd*) host_os=bsd libdl_needed=no ;;
+$OpenBSD: patch-configure,v 1.2 2009/06/16 15:37:46 kurt Exp $
+--- configure.orig	Sat Mar  1 23:16:07 2008
++++ configure	Thu May  7 18:26:36 2009
+@@ -2552,6 +2552,7 @@ i386-*-freebsd*) host_os=bsd libdl_needed=no ;;
  x86_64-*-linux*) host_os=linux ;;
+ hppa*-*-linux*) host_cpu=parisc host_os=linux ;;
+ mipsel-*-linux*) host_cpu=mips host_os=linux ;;
 +x86_64-*-openbsd*) host_os=bsd libdl_needed=no ;;
  amd64-*-openbsd*) host_os=bsd libdl_needed=no ;;
  amd64-*-freebsd*) host_os=bsd libdl_needed=no ;;

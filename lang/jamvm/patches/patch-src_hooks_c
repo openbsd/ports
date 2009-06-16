@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_hooks_c,v 1.1 2009/06/16 15:37:46 kurt Exp $
+--- src/hooks.c.orig	Sat Feb 24 17:53:31 2007
++++ src/hooks.c	Sat Apr 11 17:06:42 2009
+@@ -29,8 +29,8 @@ void jam_fprintf(FILE *stream, const char *fmt, ...) {
+ 
+     va_start(ap, fmt);
+     (*vfprintf_hook)(stream, fmt, ap);
+-
+     va_end(ap);
++	fflush(stream);
+ }
+ 
+ void jamvm_exit(int status) {

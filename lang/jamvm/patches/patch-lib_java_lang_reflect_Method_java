@@ -1,0 +1,29 @@
+$OpenBSD: patch-lib_java_lang_reflect_Method_java,v 1.1 2009/06/16 15:37:46 kurt Exp $
+--- lib/java/lang/reflect/Method.java.orig	Sat Feb 24 17:57:34 2007
++++ lib/java/lang/reflect/Method.java	Thu May  7 19:52:51 2009
+@@ -46,6 +46,7 @@ import gnu.java.lang.ClassHelper;
+ import gnu.java.lang.reflect.MethodSignatureParser;
+ import java.lang.annotation.Annotation;
+ import java.util.Arrays;
++import gnu.java.lang.CPStringBuilder;
+ 
+ /**
+  * The Method class represents a member method of a class. It also allows
+@@ -270,7 +271,7 @@ public final class Method
+   public String toString()
+   {
+     // 128 is a reasonable buffer initial size for constructor
+-    StringBuilder sb = new StringBuilder(128);
++    CPStringBuilder sb = new CPStringBuilder(128);
+     Modifier.toString(getModifiers(), sb).append(' ');
+     sb.append(ClassHelper.getUserName(getReturnType())).append(' ');
+     sb.append(getDeclaringClass().getName()).append('.');
+@@ -296,7 +297,7 @@ public final class Method
+   public String toGenericString()
+   {
+     // 128 is a reasonable buffer initial size for constructor
+-    StringBuilder sb = new StringBuilder(128);
++    CPStringBuilder sb = new CPStringBuilder(128);
+     Modifier.toString(getModifiers(), sb).append(' ');
+     Constructor.addTypeParameters(sb, getTypeParameters());
+     sb.append(getGenericReturnType()).append(' ');
