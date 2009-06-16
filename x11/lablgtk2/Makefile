@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/28 09:18:24 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/16 06:13:19 sturm Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
 V =		2.12.0
 DISTNAME =	lablgtk-$V
-PKGNAME =	lablgtk2-$V
+PKGNAME =	lablgtk2-$Vp0
 CATEGORIES =	x11 devel
 
 HOMEPAGE =	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
@@ -23,7 +23,7 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 
 LIB_DEPENDS =	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		glade-2.0::devel/libglade2 \
-		::x11/gnome/librsvg
+		rsvg-2::x11/gnome/librsvg
 
 FAKE_FLAGS =	BINDIR=${WRKINST}${PREFIX}/bin \
 		INSTALLDIR=${WRKINST}${PREFIX}/lib/ocaml/lablgtk2 \
