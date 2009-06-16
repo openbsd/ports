@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_generic_configure,v 1.3 2009/05/10 20:16:10 sthen Exp $
---- build/generic/configure.orig	Wed Dec  3 06:01:54 2008
-+++ build/generic/configure	Fri Apr 10 20:10:23 2009
+$OpenBSD: patch-build_generic_configure,v 1.4 2009/06/16 20:38:50 naddy Exp $
+--- build/generic/configure.orig	Thu May 28 19:13:31 2009
++++ build/generic/configure	Tue Jun 16 17:43:38 2009
 @@ -1316,8 +1316,8 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
@@ -10,9 +10,9 @@ $OpenBSD: patch-build_generic_configure,v 1.3 2009/05/10 20:16:10 sthen Exp $
 +API_MAJOR="$API_MAJOR"
 +API_MINOR="$API_MINOR"
  
+ minimum_yasm_minor_version=8
  minimum_nasm_minor_version=0
- minimum_nasm_major_version=2
-@@ -3856,7 +3856,7 @@ echo "${ECHO_T}ok" >&6
+@@ -3858,7 +3858,7 @@ echo "${ECHO_T}ok" >&6
  echo "${ECHO_T}ok" >&6
  	STATIC_LIB="libxvidcore.\$(STATIC_EXTENSION)"
  	SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR).\$(API_MINOR)"
@@ -21,7 +21,7 @@ $OpenBSD: patch-build_generic_configure,v 1.3 2009/05/10 20:16:10 sthen Exp $
  	SPECIFIC_CFLAGS="-fPIC"
  	;;
       [cC][yY][gG][wW][iI][nN]*|mingw32*|mks*)
-@@ -4038,7 +4038,7 @@ echo "${ECHO_T}macho" >&6
+@@ -4112,7 +4112,7 @@ echo "${ECHO_T}macho" >&6
  
         AS="$chosen_asm_prog"
         ASSEMBLY_EXTENSION="asm"
@@ -30,7 +30,7 @@ $OpenBSD: patch-build_generic_configure,v 1.3 2009/05/10 20:16:10 sthen Exp $
         ASSEMBLY_SOURCES="SRC_${ARCHITECTURE}"
         if test "$ARCHITECTURE" = "X86_64" ; then
                 AFLAGS=${AFLAGS}" -DARCH_IS_X86_64"
-@@ -4452,13 +4452,13 @@ echo "${ECHO_T}$ac_cv_header_pthread_h" >&6
+@@ -4526,13 +4526,13 @@ echo "${ECHO_T}$ac_cv_header_pthread_h" >&6
  
  fi
  if test $ac_cv_header_pthread_h = yes; then
@@ -47,7 +47,7 @@ $OpenBSD: patch-build_generic_configure,v 1.3 2009/05/10 20:16:10 sthen Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -4517,13 +4517,13 @@ fi
+@@ -4591,13 +4591,13 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
  if test $ac_cv_lib_pthread_pthread_create = yes; then
@@ -64,7 +64,7 @@ $OpenBSD: patch-build_generic_configure,v 1.3 2009/05/10 20:16:10 sthen Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -4583,7 +4583,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthre
+@@ -4657,7 +4657,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthre
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_join" >&6
  if test $ac_cv_lib_pthread_pthread_join = yes; then
    SPECIFIC_CFLAGS="$SPECIFIC_CFLAGS -DHAVE_PTHREAD"
