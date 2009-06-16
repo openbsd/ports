@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.88 2009/04/24 13:15:34 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.89 2009/06/16 15:22:10 kurt Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
      SUBDIR += Gofer
      SUBDIR += STk
+     SUBDIR += antlr2
      SUBDIR += arena
      SUBDIR += chicken
      SUBDIR += classpath
