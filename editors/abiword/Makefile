@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2009/05/17 18:32:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2009/06/16 19:57:50 sthen Exp $
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	2.4.6
 MAJORVER=	${VERSION:C/..$//}
 DISTNAME=	abiword-${VERSION}
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	editors
 
 HOMEPAGE=	http://www.abisource.com/
@@ -15,8 +15,9 @@ MODULES=	devel/gettext
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	fribidi::devel/fribidi \
 		popt::devel/popt \
-		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		gnomeprintui-2-2::x11/gnome/libgnomeprintui
+		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0,gailutil::x11/gtk+2 \
+		gnomeprintui-2-2::x11/gnome/libgnomeprintui \
+		enchant.>=5::textproc/enchant
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -47,10 +48,9 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mgnome}
 LIB_DEPENDS+=	gnomeui-2::x11/gnome/libgnomeui \
-		ORBit-2::devel/ORBit2 \
-		enchant.>=5::textproc/enchant
+		ORBit-2::devel/ORBit2
 WANTLIB+=	ORBit-2 bonobo-2 bonobo-activation bonoboui-2 \
-		gconf-2 gnome-2 gnomeui-2 gnomevfs-2 
+		gconf-2 gnome-2 gnomeui-2 gnomevfs-2
 CONFIGURE_ARGS+= --enable-gnome
 .endif
 
