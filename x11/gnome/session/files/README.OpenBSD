@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.25 2009/06/12 16:06:31 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.26 2009/06/16 15:12:50 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 
@@ -44,6 +44,7 @@ you can install. The most important ones will be mentioned by category:
    * gnome-devel-docs - developer documentation
 
  - Utilities
+   * cheese - take photos and videos with your webcam
    * conduit - all-in-one synchronization application
    * evince - document viewer for multiple document formats
    * gcalctool - desktop calculator
