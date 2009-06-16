@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2008/12/30 10:29:09 sthen Exp $
---- configure.orig	Sat Sep 20 22:13:19 2008
-+++ configure	Mon Dec 29 21:45:53 2008
+$OpenBSD: patch-configure,v 1.5 2009/06/16 23:17:33 sthen Exp $
+--- configure.orig	Sat Mar 21 12:50:25 2009
++++ configure	Wed Jun 17 00:08:56 2009
 @@ -17596,7 +17596,7 @@ if test -z "$disable_lua"; then
  	for luadir in "$withval" "" /usr /usr/local; do
  		for suffix in "" 50; do
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.4 2008/12/30 10:29:09 sthen Exp $
  
  				if test ! -z "$luadir"; then
  					LUA_LIBS="-L$luadir/lib $LUA_LIBS"
-@@ -23296,10 +23296,6 @@ ALL_CFLAGS="$CFLAGS $CPPFLAGS"
+@@ -23294,10 +23294,6 @@ ALL_CFLAGS="$CFLAGS $CPPFLAGS"
  
  
  
