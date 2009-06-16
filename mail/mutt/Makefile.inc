@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.30 2009/04/20 07:43:21 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.31 2009/06/16 09:37:19 sthen Exp $
 
 CATEGORIES=	mail
 
@@ -11,6 +11,7 @@ MASTER_SITES_MUTT= ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 
 MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
 MASTER_SITES1=	http://lunar-linux.org/~tchan/mutt/
+MASTER_SITES2=	http://spacehopper.org/mutt/
 DIST_SUBDIR=	mutt
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
@@ -39,8 +40,8 @@ CONFIGURE_ARGS+=--enable-external_dotlock \
 		--sysconfdir=${CONFDIR} \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
 		--with-gss \
-		--with-sharedir="${PREFIX}/share/mutt" \
-		--with-ssl \
+		--with-ssl
+FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/mutt"
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -56,12 +57,13 @@ WANTLIB+=		ncurses
 .endif
 
 # compressed folder support
+DIST_COMPRESSED?=	patch-${VERSION}.rr.compressed.1.gz:0
 .if ${FLAVOR:L:Mcompressed}
-PATCHFILES+=		patch-${VERSION}.rr.compressed.1.gz:0
+PATCHFILES+=		${DIST_COMPRESSED}
 PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=	--enable-compressed
 .else
-SUPDISTFILES+=		patch-${VERSION}.rr.compressed.1.gz:0
+SUPDISTFILES+=		${DIST_COMPRESSED}
 .endif
 
 .if ${FLAVOR:L:Mmixmaster}
@@ -90,11 +92,6 @@ SUBST_VARS=	CONFDIR
 MUTTRCDIR?=
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mutt
-	${INSTALL_DATA} ${WRKSRC}/${MUTTRCDIR}Muttrc \
-		${PREFIX}/share/examples/mutt/Muttrc.sample
-	${INSTALL_DATA} ${WRKDIST}/mime.types \
-		${PREFIX}/share/examples/mutt/mime.types.sample
 	@mv -f ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt
 	@perl -pi -e "s,/etc/Muttrc,${CONFDIR}/Muttrc," ${PREFIX}/man/man1/mutt.1
 	@perl -pi -e "s,/etc/mime.types,${CONFDIR}/mime.types," ${PREFIX}/man/man1/mutt.1

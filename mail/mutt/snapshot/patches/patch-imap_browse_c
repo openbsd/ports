@@ -1,7 +1,7 @@
-$OpenBSD: patch-imap_browse_c,v 1.4 2008/05/21 13:46:19 sthen Exp $
---- imap/browse.c.orig	Sat May 17 19:52:24 2008
-+++ imap/browse.c	Sat May 17 22:34:14 2008
-@@ -318,7 +318,9 @@ int imap_mailbox_rename(const char* mailbox)
+$OpenBSD: patch-imap_browse_c,v 1.5 2009/06/16 09:37:19 sthen Exp $
+--- imap/browse.c.orig	Tue Jan 20 04:36:13 2009
++++ imap/browse.c	Mon Jun 15 21:06:09 2009
+@@ -322,7 +322,9 @@ int imap_mailbox_rename(const char* mailbox)
    }
  
    snprintf(buf, sizeof (buf), _("Rename mailbox %s to: "), mx.mbox);

@@ -1,0 +1,16 @@
+$OpenBSD: patch-url_c,v 1.1 2009/06/16 09:37:19 sthen Exp $
+
+don't parse URL port as signed short, but to int and cast to
+unsigned short; mutt bug #3264
+
+--- url.c.orig	Mon Jun 15 21:04:14 2009
++++ url.c	Mon Jun 15 21:04:26 2009
+@@ -144,7 +144,7 @@ static char *ciss_parse_userhost (ciss_url_t *ciss, ch
+   if ((p = strchr (t, ':')))
+   {
+     *p++ = '\0';
+-    if (mutt_atos (p, (short*) &ciss->port) < 0)
++    if (mutt_atoi (p, &t) < 0 || t < 0 || t > 0xffff)
+       return NULL;
+   }
+   else

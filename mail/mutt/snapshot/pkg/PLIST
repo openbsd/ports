@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2009/04/20 07:43:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.19 2009/06/16 09:37:19 sthen Exp $
 @pkgpath mail/mutt/snapshot,hcache
 bin/flea
 @bin bin/mutt
@@ -40,12 +40,14 @@ share/doc/mutt/optionalfeatures.html
 share/doc/mutt/patch-notes.txt
 share/doc/mutt/reference.html
 share/doc/mutt/samples/
+share/doc/mutt/security.html
 share/doc/mutt/smime-notes.txt
 share/doc/mutt/tuning.html
 share/examples/mutt/
 @sample ${CONFDIR}/
 share/examples/mutt/Mush.rc
-share/examples/mutt/Muttrc.sample
+@comment share/examples/mutt/Muttrc
+share/examples/mutt/Muttrc.dist
 @sample ${CONFDIR}/Muttrc
 share/examples/mutt/Pine.rc
 share/examples/mutt/Tin.rc
@@ -72,7 +74,8 @@ share/examples/mutt/iconv/iconv.solaris-2.5.1.rc
 share/examples/mutt/iconv/iconv.solaris-2.6-cjk.rc
 share/examples/mutt/iconv/iconv.solaris-2.6.rc
 share/examples/mutt/iconv/iconv.solaris-2.7.rc
-share/examples/mutt/mime.types.sample
+@comment share/examples/mutt/mime.types
+share/examples/mutt/mime.types.dist
 @sample ${CONFDIR}/mime.types
 share/examples/mutt/mutt_xtitle
 share/examples/mutt/pgp2.rc

@@ -1,0 +1,24 @@
+$OpenBSD: patch-imap_imap_c,v 1.1 2009/06/16 09:37:19 sthen Exp $
+
+fix segfault in imap_synx_mailbox; mutt bug #3226
+
+--- imap/imap.c.orig	Mon Jun 15 21:11:05 2009
++++ imap/imap.c	Mon Jun 15 21:11:58 2009
+@@ -1178,7 +1178,7 @@ int imap_sync_mailbox (CONTEXT* ctx, int expunge, int*
+     return rc;
+ 
+   /* if we are expunging anyway, we can do deleted messages very quickly... */
+-  if (expunge && mutt_bit_isset (ctx->rights, M_ACL_DELETE))
++  if (expunge && mutt_bit_isset (idata->ctx->rights, M_ACL_DELETE))
+   {
+     if ((rc = imap_exec_msgset (idata, "UID STORE", "+FLAGS.SILENT (\\Deleted)",
+                                 M_DELETED, 1, 0)) < 0)
+@@ -1293,7 +1293,7 @@ int imap_sync_mailbox (CONTEXT* ctx, int expunge, int*
+   ctx->changed = 0;
+ 
+   /* We must send an EXPUNGE command if we're not closing. */
+-  if (expunge && !(ctx->closing) &&
++  if (expunge && !(idata->ctx->closing) &&
+       mutt_bit_isset(ctx->rights, M_ACL_DELETE))
+   {
+     mutt_message _("Expunging messages from server...");

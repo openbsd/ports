@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/04/20 07:43:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/06/16 09:37:19 sthen Exp $
 bin/flea
 @bin bin/mutt
 @bin bin/mutt_dotlock
@@ -39,7 +39,7 @@ share/doc/mutt/patch-notes.txt
 share/doc/mutt/samples/
 share/examples/mutt/
 share/examples/mutt/Mush.rc
-share/examples/mutt/Muttrc.sample
+share/examples/mutt/Muttrc
 @sample ${CONFDIR}/Muttrc
 share/examples/mutt/Pine.rc
 share/examples/mutt/Tin.rc
@@ -63,7 +63,7 @@ share/examples/mutt/iconv/iconv.solaris-2.5.1.rc
 share/examples/mutt/iconv/iconv.solaris-2.6-cjk.rc
 share/examples/mutt/iconv/iconv.solaris-2.6.rc
 share/examples/mutt/iconv/iconv.solaris-2.7.rc
-share/examples/mutt/mime.types.sample
+share/examples/mutt/mime.types
 @sample ${CONFDIR}/mime.types
 share/examples/mutt/pgp2.rc
 share/examples/mutt/pgp5.rc

@@ -1,6 +1,6 @@
-$OpenBSD: patch-browser_c,v 1.5 2007/11/11 10:09:43 sthen Exp $
---- browser.c.orig	Wed Sep  5 19:28:05 2007
-+++ browser.c	Fri Nov  2 08:17:06 2007
+$OpenBSD: patch-browser_c,v 1.6 2009/06/16 09:37:19 sthen Exp $
+--- browser.c.orig	Thu Jun 11 18:52:54 2009
++++ browser.c	Mon Jun 15 21:06:08 2009
 @@ -27,6 +27,7 @@
  #include "buffy.h"
  #include "mapping.h"
@@ -39,9 +39,9 @@ $OpenBSD: patch-browser_c,v 1.5 2007/11/11 10:09:43 sthen Exp $
      add_folder (menu, state, de->d_name, &s, (tmp) ? tmp->new : 0);
    }
    closedir (dp);  
-@@ -464,6 +481,7 @@ static int examine_mailboxes (MUTTMENU *menu, struct b
+@@ -479,6 +496,7 @@ static int examine_mailboxes (MUTTMENU *menu, struct b
      strfcpy (buffer, NONULL(tmp->path), sizeof (buffer));
-     mutt_pretty_mailbox (buffer);
+     mutt_pretty_mailbox (buffer, sizeof (buffer));
  
 +    check_maildir_times (tmp, &s);
      add_folder (menu, state, buffer, &s, tmp->new);
