@@ -1,0 +1,15 @@
+$OpenBSD: patch-resource_Makefile_in,v 1.1 2009/06/16 15:31:02 kurt Exp $
+--- resource/Makefile.in.orig	Thu Feb  5 20:01:33 2009
++++ resource/Makefile.in	Wed Apr 15 22:56:36 2009
+@@ -270,9 +270,9 @@ top_srcdir = @top_srcdir@
+ uudecode = @uudecode@
+ vm_classes = @vm_classes@
+ logging_DATA = java/util/logging/logging.properties
+-loggingdir = $(prefix)/lib
++loggingdir = $(prefix)/lib/classpath
+ security_DATA = java/security/classpath.security
+-securitydir = $(prefix)/lib/security
++securitydir = $(prefix)/lib/classpath/security
+ all: all-am
+ 
+ .SUFFIXES:

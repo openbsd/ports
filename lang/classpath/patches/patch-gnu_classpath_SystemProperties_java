@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnu_classpath_SystemProperties_java,v 1.1 2009/06/16 15:31:02 kurt Exp $
+--- gnu/classpath/SystemProperties.java.orig	Sun Dec 10 15:25:41 2006
++++ gnu/classpath/SystemProperties.java	Wed Apr 15 22:49:10 2009
+@@ -77,7 +77,7 @@ public class SystemProperties
+       defaultProperties.put("gnu.classpath.home.url",
+ 			    "file://"
+ 			    + Configuration.CLASSPATH_HOME
+-	                    + "/lib");
++	                    + "/lib/classpath");
+ 
+     // Set short name if not already set.
+     if (defaultProperties.get("gnu.classpath.vm.shortname") == null)

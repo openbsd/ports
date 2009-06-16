@@ -1,9 +1,13 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/04/11 01:01:34 kurt Exp $
-@lib lib/classpath/libgtkpeer.so.${LIBgtkpeer_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.2 2009/06/16 15:31:02 kurt Exp $
+lib/classpath/libgcjwebplugin.so
+lib/classpath/libgconfpeer.so
+lib/classpath/libgtkpeer.so
 @lib lib/classpath/libjavaio.so.${LIBjavaio_VERSION}
 @lib lib/classpath/libjavalang.so.${LIBjavalang_VERSION}
+@lib lib/classpath/libjavalangmanagement.so.${LIBjavalangmanagement_VERSION}
 @lib lib/classpath/libjavalangreflect.so.${LIBjavalangreflect_VERSION}
+lib/classpath/libjavamath.so
 @lib lib/classpath/libjavanet.so.${LIBjavanet_VERSION}
 @lib lib/classpath/libjavanio.so.${LIBjavanio_VERSION}
 @lib lib/classpath/libjavautil.so.${LIBjavautil_VERSION}
-@lib lib/classpath/libjawtgnu.so.${LIBjawtgnu_VERSION}
+lib/classpath/libjawt.so

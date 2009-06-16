@@ -1,12 +1,12 @@
-$OpenBSD: patch-include_Makefile_in,v 1.1.1.1 2006/04/11 01:01:34 kurt Exp $
---- include/Makefile.in.orig	Fri Jan 13 08:38:32 2006
-+++ include/Makefile.in	Sun Feb 19 22:27:38 2006
-@@ -464,20 +464,20 @@ distclean-libtool:
- uninstall-info-am:
+$OpenBSD: patch-include_Makefile_in,v 1.2 2009/06/16 15:31:02 kurt Exp $
+--- include/Makefile.in.orig	Thu Feb  5 20:02:25 2009
++++ include/Makefile.in	Wed Mar  4 10:38:20 2009
+@@ -486,20 +486,20 @@ clean-libtool:
+ 	-rm -rf .libs _libs
  install-includeHEADERS: $(include_HEADERS)
  	@$(NORMAL_INSTALL)
--	test -z "$(includedir)" || $(mkdir_p) "$(DESTDIR)$(includedir)"
-+	test -z "$(includedir)" || $(mkdir_p) "$(DESTDIR)$(pkgincludedir)"
+-	test -z "$(includedir)" || $(MKDIR_P) "$(DESTDIR)$(includedir)"
++	test -z "$(pkgincludedir)" || $(MKDIR_P) "$(DESTDIR)$(pkgincludedir)"
  	@list='$(include_HEADERS)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  f=$(am__strip_dir) \
@@ -27,12 +27,12 @@ $OpenBSD: patch-include_Makefile_in,v 1.1.1.1 2006/04/11 01:01:34 kurt Exp $
  	done
  
  ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
-@@ -560,7 +560,7 @@ check: check-am
+@@ -580,7 +580,7 @@ check: check-am
  @CREATE_JNI_HEADERS_FALSE@all-local:
  all-am: Makefile $(HEADERS) config.h all-local
  installdirs:
 -	for dir in "$(DESTDIR)$(includedir)"; do \
 +	for dir in "$(DESTDIR)$(pkgincludedir)"; do \
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
