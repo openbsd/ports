@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2009/06/16 19:31:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2009/06/17 02:08:35 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,9 +11,9 @@ VERSION=	2.5.6
 DISTNAME=	pidgin-${VERSION}
 
 PKGNAME=	pidgin-${VERSION}
-PKGNAME-main=	pidgin-${VERSION}p4
-FULLPKGNAME-finch=	finch-${VERSION}p0
-FULLPKGNAME-libpurple= libpurple-${VERSION}p0
+PKGNAME-main=	pidgin-${VERSION}p5
+FULLPKGNAME-finch=	finch-${VERSION}p1
+FULLPKGNAME-libpurple= libpurple-${VERSION}p1
 CATEGORIES=	net
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
@@ -34,19 +34,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB+=      c dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB+=      gthread-2.0 iconv intl m ncurses pcre pthread xml2 z
+WANTLIB=	c dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0 gobject-2.0 \
+		gthread-2.0 iconv intl m ncurses pcre pthread xml2 z
 
-WANTLIB-main+= ${WANTLIB}
-WANTLIB-main+= X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB-main+= Xi Xinerama Xrandr Xrender Xss atk-1.0 cairo expat
-WANTLIB-main+= fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glitz
-WANTLIB-main+= gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB-main+= png stdc++
+WANTLIB-main=	X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext \
+		Xfixes Xi Xinerama Xrandr Xrender Xss atk-1.0 cairo \
+		expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gio-2.0 glitz gtk-x11-2.0 pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pixman-1 png stdc++ ${WANTLIB}
 
-WANTLIB-libpurple=${WANTLIB} crypto ssl
+WANTLIB-libpurple= crypto ssl ${WANTLIB}
 
-WANTLIB-finch= ${WANTLIB} X11 Xau Xdmcp panel
+WANTLIB-finch=	X11 Xau Xdmcp panel ${WANTLIB}
 
 MODULES=	devel/gettext \
 		textproc/intltool \
@@ -69,12 +68,11 @@ RUN_DEPENDS-libpurple=	${MODGCONF2_RUN_DEPENDS}
 MODGCONF2_SCHEMAS_DIR=	pidgin
 MODGCONF2_LIBDEP=	No
 
+SEPARATE_BUILD=	simple
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes
-
-SEPARATE_BUILD= simple
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61
 CONFIGURE_ARGS+= --disable-avahi \
