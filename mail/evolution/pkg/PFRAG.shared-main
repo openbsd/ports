@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2009/03/22 16:00:29 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2009/06/17 19:51:25 ajacoutot Exp $
 lib/evolution/${R}/components/libevolution-addressbook.so
 lib/evolution/${R}/components/libevolution-calendar.so
 lib/evolution/${R}/components/libevolution-mail.so
@@ -35,7 +35,7 @@ lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-google.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.so
-lib/evolution/${R}/plugins/liborg-gnome-exchange-operations.so
+@comment lib/evolution/${R}/plugins/liborg-gnome-exchange-operations.so
 lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.so
 lib/evolution/${R}/plugins/liborg-gnome-gw-account-setup.so
 lib/evolution/${R}/plugins/liborg-gnome-imap-features.so
