@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.3 2009/06/04 18:24:20 kurt Exp $
+# $OpenBSD: gcc4.port.mk,v 1.4 2009/06/17 00:47:06 kurt Exp $
 
 MODGCC4_ARCHES?=
 MODGCC4_LANGS?=
@@ -35,7 +35,7 @@ MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/e${_MODGCC4G77} ${WRKDIR}/bin/f77;
 MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/e${_MODGCC4G77} ${WRKDIR}/bin/${_MODGCC4G77};
 .	 endif
 .        if !empty(_MODGCC4JAVA:L:M${_j})
-BUILD_DEPENDS+=	::lang/gcc/4.2,-java
+BUILD_DEPENDS+=	::lang/gcc/4.2,-java,java
 MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/egcj ${WRKDIR}/bin/gcj;
 MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/egcjh ${WRKDIR}/bin/gcjh;
 MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/ejar ${WRKDIR}/bin/gjar;
