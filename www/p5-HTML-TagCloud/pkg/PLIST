@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/17 09:36:52 robert Exp $
+${P5SITE}/HTML/
+${P5SITE}/HTML/TagCloud.pm
+@man man/man3p/HTML::TagCloud.3p
