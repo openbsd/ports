@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/06/15 13:16:23 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/06/17 08:46:11 sthen Exp $
 @group daemon
 piwik/
 piwik/LICENSE
@@ -1509,4 +1509,5 @@ piwik/themes/default/images/warning_small.png
 piwik/themes/default/simple_structure.css
 piwik/themes/default/simple_structure_footer.tpl
 piwik/themes/default/simple_structure_header.tpl
+@mode 777
 piwik/tmp/
