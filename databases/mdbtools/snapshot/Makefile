@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2009/01/25 14:51:23 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2009/06/17 01:20:59 sthen Exp $
 
 COMMENT-main=	read microsoft Access MDB
 COMMENT-gmdb=	graphical interface to MDB tools
 DATE=		20070603
 DISTNAME=	mdbtools-${DATE}
 PKGNAME-main=	mdbtools-${DATE}p2
-PKGNAME-gmdb=	gmdb-${DATE}p4
+PKGNAME-gmdb=	gmdb-${DATE}p5
 HOMEPAGE=	http://mdbtools.sourceforge.net/
 
 CATEGORIES=	databases converters
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	::devel/bison \
 		::lang/gawk
 
 LIB_DEPENDS=	glib-2.0::devel/glib2
-WANTLIB=	c pcre
+WANTLIB=	c pcre avahi-client avahi-common avahi-glib
 
 MODULES=	devel/gettext
 

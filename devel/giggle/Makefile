@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/06/15 00:06:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/17 01:20:59 sthen Exp $
 
 COMMENT=	gtk-based git repository viewer
 CATEGORIES=	devel x11
 DISTNAME=	giggle-0.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS+=	giggle	0.0	# .0.0
 
 HOMEPAGE=	http://developer.imendio.com/projects/giggle
@@ -35,7 +35,7 @@ LIB_DEPENDS=	glade-2.0.>=0::devel/libglade2 \
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
-		freetype gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 glitz \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png xml2 z
 

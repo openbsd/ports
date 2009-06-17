@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:12 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/17 01:20:59 sthen Exp $
 
 COMMENT=	event viewer for qt4
 CATEGORIES=	devel x11
@@ -13,9 +13,10 @@ SHARED_LIBS=	eventsview	0.0
 .for l v in $(SHARED_LIBS)
 MAKE_FLAGS+=LIB$l_VERSION=$v
 .endfor
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	qt4-eventsview-$V
+V=		0.1
 DISTNAME=	57337-eventsview
-PKGNAME=	qt4-eventsview-0.1
+PKGNAME=	qt4-eventsview-$Vp0
 MASTER_SITES=	http://qt-apps.org/CONTENT/content-files/
 
 WRKDIST=	${WRKDIR}/eventsview
@@ -35,13 +36,11 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/test/{Makefile,main.cpp} ${SAMPLE}
 	${INSTALL_PROGRAM} ${WRKBUILD}/test/test ${SAMPLE}
 
-LIB_DEPENDS=	glib-2.0,gthread-2.0::devel/glib2
+LIB_DEPENDS=	glib-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
+		lib/qt4/QtGui::x11/qt4
 
-WANTLIB += ICE SM X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += c fontconfig freetype iconv intl m png pthread stdc++
-WANTLIB += z
-
-WANTLIB += QtGui
+WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
+WANTLIB += freetype iconv intl m png pthread stdc++ z
 
 SUBST_VARS=	SAMPLE
 
