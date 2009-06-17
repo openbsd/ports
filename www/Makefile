@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.414 2009/05/30 23:45:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.415 2009/06/17 09:37:54 robert Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -210,6 +210,7 @@
      SUBDIR += p5-HTML-Table
      SUBDIR += p5-HTML-TableContentParser
      SUBDIR += p5-HTML-TableExtract
+     SUBDIR += p5-HTML-TagCloud
      SUBDIR += p5-HTML-TagFilter
      SUBDIR += p5-HTML-Tagset
      SUBDIR += p5-HTML-Template
