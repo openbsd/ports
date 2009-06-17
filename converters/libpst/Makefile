@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/11 09:36:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/17 01:03:35 sthen Exp $
 
 COMMENT=		read and convert Microsoft Outlook mail files
 
 DISTNAME=		libpst-0.6.37
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=  pst                  0.0      # .3.0
 CATEGORIES=		converters mail
 
@@ -16,13 +17,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/packages/
 
-WANTLIB += c m stdc++
+WANTLIB += c expat fontconfig freetype jpeg m png stdc++ z
 
 MODULES=		converters/libiconv
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::graphics/ImageMagick \
-			::graphics/gd
+RUN_DEPENDS=		::graphics/ImageMagick
+LIB_DEPENDS=		gd::graphics/gd
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
