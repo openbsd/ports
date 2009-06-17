@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/23 07:22:03 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/17 13:35:36 sthen Exp $
 
-COMMENT=	"event-driven I/O for Ruby using the Reactor pattern"
+COMMENT=	event-driven I/O for Ruby using the Reactor pattern
 
 DISTNAME=	eventmachine-0.12.6
-PKGNAME=	ruby-${DISTNAME}p0
+PKGNAME=	ruby-${DISTNAME}p1
 CATEGORIES=	net devel
 
 HOMEPAGE=	http://rubyeventmachine.com/
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	yes
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=eventmachine/}
 
 MODULES=	lang/ruby
+LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS}
 
 WANTLIB=	c crypto m ssl stdc++
 
