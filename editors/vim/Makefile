@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2009/06/16 11:30:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2009/06/17 01:53:32 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -8,7 +8,7 @@ REVISION=	190
 VERSION=	7.2.${REVISION}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
-PKGNAME-main=	vim-${VERSION}p0
+PKGNAME-main=	vim-${VERSION}p1
 PKGNAME-lang=	vim-lang-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
@@ -83,6 +83,7 @@ WANTLIB+=	m
 .if ${FLAVOR:L:Mno_x11} && \
 	!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--disable-gui --without-x
+WANTLIB+=	m
 .elif ${FLAVOR:L:Mmotif} && \
 	!${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--enable-gui="motif" --with-x --enable-fontset --enable-xim
