@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/05/08 18:04:11 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/17 01:27:10 sthen Exp $
 
-COMMENT=	"a ruby timer based on SIGALRM"
+COMMENT=	a ruby timer based on SIGALRM
 
 DISTNAME=	SystemTimer-1.1.1
-PKGNAME=	ruby-${DISTNAME:L}
+PKGNAME=	ruby-${DISTNAME:L}p0
 CATEGORIES=	devel
 
 # ruby or gpl
@@ -17,6 +17,7 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=systemtimer/}
 MODULES=	lang/ruby
 
 WANTLIB=	c m
+LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS}
 
 CONFIGURE_STYLE=ruby gem
 
