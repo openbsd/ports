@@ -1,0 +1,27 @@
+$OpenBSD: patch-tools_dev_install_files_pl,v 1.1 2009/06/17 09:34:35 simon Exp $
+--- tools/dev/install_files.pl.orig	Wed May 20 02:29:15 2009
++++ tools/dev/install_files.pl	Wed May 27 01:37:51 2009
+@@ -98,12 +98,12 @@ while (<>) {
+     }
+     elsif ( $meta{include} ) {
+         $dest =~ s/^include//;
+-        $dest = File::Spec->catdir( $options{includedir}, $parrotdir, $dest );
++        $dest = File::Spec->catdir( $options{includedir}, $dest );
+     }
+     elsif ( $meta{doc} ) {
+         $dest =~ s/^docs\/resources/resources/; # resources go in the top level of docs
+         $dest =~ s/^docs/pod/; # other docs are actually raw Pod
+-        $dest = File::Spec->catdir( $options{docdir}, $parrotdir, $dest );
++        $dest = File::Spec->catdir( $options{docdir}, $dest );
+     }
+     elsif ( $meta{pkgconfig} ) {
+ 
+@@ -111,7 +111,7 @@ while (<>) {
+         # as it is typically done with automake installed packages.  If there
+         # is a use case to make this configurable we'll add a seperate
+         # --pkgconfigdir option.
+-        $dest = File::Spec->catdir( $options{libdir}, 'pkgconfig', $parrotdir, $dest );
++        $dest = File::Spec->catdir( $options{libdir}, 'pkgconfig', $dest );
+     }
+     elsif ( /^compilers/ ) {
+         $dest =~ s/^compilers/languages/;

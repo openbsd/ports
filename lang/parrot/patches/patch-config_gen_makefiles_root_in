@@ -1,0 +1,20 @@
+$OpenBSD: patch-config_gen_makefiles_root_in,v 1.1 2009/06/17 09:34:35 simon Exp $
+--- config/gen/makefiles/root.in.orig	Mon Jun  1 02:30:47 2009
++++ config/gen/makefiles/root.in	Mon Jun  1 02:31:51 2009
+@@ -18,7 +18,7 @@
+ 
+ DEVEL           := @DEVEL@
+ VERSION         := @VERSION@$(DEVEL)
+-SOVERSION       := @VERSION@
++SOVERSION       := $(LIBparrot_VERSION)
+ 
+ CONFIG_ARGS     := @configure_args@
+ 
+@@ -889,7 +889,6 @@ $(LIBPARROT_SHARED) : $(O_FILES)
+ #IF(win32 and cc==gcc):		-Wl,--out-implib=libparrot.lib \
+ 		$(O_FILES) $(C_LIBS) $(ICU_SHARED)
+ #IF(win32):	if exist $@.manifest mt.exe -nologo -manifest $@.manifest -outputresource:$@;2
+-#IF(libparrot_shared_alias):	( cd @blib_dir@ ; ln -sf @libparrot_shared@ @libparrot_shared_alias@ )
+ 
+ 
+ $(INSTALLABLECONFIG) : $(SRC_DIR)/install_config$(O) $(PARROT_CONFIG) $(PBC_TO_EXE)

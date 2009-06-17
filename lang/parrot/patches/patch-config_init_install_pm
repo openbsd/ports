@@ -1,0 +1,20 @@
+$OpenBSD: patch-config_init_install_pm,v 1.1 2009/06/17 09:34:35 simon Exp $
+--- config/init/install.pm.orig	Fri Apr 17 17:06:00 2009
++++ config/init/install.pm	Wed May 27 01:44:54 2009
+@@ -47,6 +47,7 @@ sub runstep {
+         $versiondir .= "/$version";
+         $versiondir .= $conf->option_or_data('DEVEL');
+     }
++    $versiondir = '/parrot';
+ 
+     #  --bindir=DIR           user executables [EPREFIX/bin]
+     my $bindir = assign_dir( $conf, 'bindir', $eprefix, '/bin' );
+@@ -105,7 +106,7 @@ sub runstep {
+         srcdir         => $srcdir,
+ 
+         # parrot internal use only
+-        doc_dir        => $datadir . "/doc",
++        doc_dir        => $datadir . "/doc/parrot",
+         versiondir     => $versiondir,
+     );
+ 

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2009/06/17 09:34:35 simon Exp $
+@lib lib/libparrot.so.${LIBparrot_VERSION}
