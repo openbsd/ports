@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_timecode_c,v 1.1 2009/06/18 07:50:18 jasper Exp $
+
+Fix potential 64-bit issue due to missing header.
+
+--- src/timecode.c.orig	Thu Jun 18 09:40:52 2009
++++ src/timecode.c	Thu Jun 18 09:41:13 2009
+@@ -23,6 +23,7 @@
+ *******************************************************************************/
+ 
+ #include <stdlib.h>
++#include <string.h>
+ 
+ #include "lqt_private.h"
+ 
