@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2009/06/11 18:26:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/06/18 01:07:52 sthen Exp $
 
 MULTI_PACKAGES=	-main -themes
 
 COMMENT-main=	tetrinet client
 COMMENT-themes=	collection of gtetrinet themes
 DISTNAME=	gtetrinet-0.7.11
-PKGNAME-main=	${DISTNAME}p7
+PKGNAME-main=	${DISTNAME}p8
 PKGNAME-themes=	gtetrinet-themes-20070623p1
 CATEGORIES=	x11 games
 
@@ -47,16 +47,15 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 RUN_DEPENDS-themes=	::games/gtetrinet
 PKG_ARCH-themes=	*
 
-WANTLIB-main=	ICE ORBit-2 SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi \
-		Xcomposite Xdamage \
-		Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 audiofile \
-		bonobo-2 bonobo-activation bonoboui-2 c cairo expat \
-		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glib-2.0 glitz gmodule-2.0 gnome-keyring gnomecanvas-2 \
-		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv \
-		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 png popt \
-		pthread xml2 z gailutil pixman-1
-WANTLIB-themes=
+WANTLIB-main += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
+WANTLIB-main += audiofile bonobo-2 bonobo-activation bonoboui-2 c cairo
+WANTLIB-main += dbus-1 expat fontconfig freetype gailutil gdk-x11-2.0
+WANTLIB-main += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-keyring
+WANTLIB-main += gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB-main += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-main += pixman-1 png popt pthread sndio xml2 z
+WANTLIB-themes =
 
 MODGCONF2_SCHEMAS_DIR= gtetrinet
 MODGCONF2_LIBDEP= No

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/12/22 22:57:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/18 01:07:52 sthen Exp $
 
 COMMENT=		GGZ Gaming Zone - base library
 
 DISTNAME=		libggz-$V
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=	ggz                  0.0      # .5.0
 
 CONFIGURE_ARGS+=	--with-gcrypt \
@@ -13,7 +13,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 MODULES=		devel/gettext
 
-WANTLIB=		crypto gpg-error ssl
+WANTLIB=		crypto gpg-error ssl pthread
 
 LIB_DEPENDS=		gcrypt::security/libgcrypt
 

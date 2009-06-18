@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/03/14 12:52:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/18 01:07:52 sthen Exp $
 
 COMMENT=	garmin gps map management tool
 
 DISTNAME=	QLandkarte_0.7.3
-PKGNAME=	${DISTNAME:L:S/_/-/}p2
+PKGNAME=	${DISTNAME:L:S/_/-/}p3
 CATEGORIES=	geo x11
 
 HOMEPAGE=	http://qlandkarte.sourceforge.net/
@@ -25,9 +25,9 @@ LIB_DEPENDS+=	proj::devel/proj \
 		QtGui,QtNetwork,QtXml::x11/qt4
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
-WANTLIB+=	ICE SM X11 Xext Xi Xinerama Xrandr Xrender \
+WANTLIB+=	ICE SM X11 Xext Xi Xinerama Xrender \
 		fontconfig freetype glib-2.0 gthread-2.0 iconv \
-		c intl m png pthread stdc++ z
+		c intl m png pthread stdc++ z expat gobject-2.0
 
 PORTHOME=	${WRKDIR}
 

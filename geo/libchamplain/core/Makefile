@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/05/08 12:38:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/18 01:07:52 sthen Exp $
 
 COMMENT=		library to provide a Gtk+ widget to display maps
 
 DISTNAME=		libchamplain-${VERSION}
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=  champlain-0.3       0.0          # .0.0
 SHARED_LIBS +=  champlain-gtk-0.3   0.0          # .0.0
@@ -13,7 +14,7 @@ WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0
 WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 json-glib-1.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png tasn1
-WANTLIB += xml2 z
+WANTLIB += xml2 z gcrypt
 
 MODULES=		devel/gettext
 

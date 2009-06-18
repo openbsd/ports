@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/04/16 08:13:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/06/18 01:07:52 sthen Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
 GNOME_PROJECT=	pioneers
 GNOME_VERSION=	0.12.2
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 
 CATEGORIES=	games
 
@@ -25,7 +25,8 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 \
 		glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png popt pthread ssl util xml2 z gio-2.0
+		pcre pixman-1 png popt pthread ssl util xml2 z gio-2.0 \
+		avahi-client avahi-common avahi-glib
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pio/}
 
