@@ -1,0 +1,80 @@
+$OpenBSD: patch-src_auth_c,v 1.1.1.1 2009/06/18 19:45:14 landry Exp $
+replace linux-only funcs by their posix equivalents
+--- src/auth.c.orig	Sun Jun 29 23:45:05 2008
++++ src/auth.c	Wed Jun 17 22:07:23 2009
+@@ -45,10 +45,6 @@
+ #include <grp.h>
+ #include "errors.h"
+ 
+-struct group *fgetgrent(FILE * stream);
+-struct passwd *fgetpwent(FILE * stream);
+-int setgroups(size_t size, const gid_t * list);
+-
+ char *get_real_name(const char *command)
+ {
+ 	char *real_PATH, *path, *subtoken, *PATH;
+@@ -106,13 +102,10 @@ inline int *fixed_realloc(int *ptr, int actual, int si
+ int set_additional_g(const char *username)
+ {
+ 	int i, x = 0;
+-	int *groups = NULL;
++	gid_t *groups = NULL;
+ 	struct group *ag;
+-	FILE *file;
+ 
+-	if ((file = fopen("/etc/group", "r")) == NULL)
+-		return ERR_OPEN_FILE_GROUP;
+-	while ((ag = fgetgrent(file)) != NULL) {
++	while ((ag = getgrent()) != NULL) {
+ 		for (i = 0; ag->gr_mem[i]; i++) {
+ 			if (!strcmp(ag->gr_mem[i], username)) {
+ 				x += 1;
+@@ -122,7 +115,7 @@ int set_additional_g(const char *username)
+ 			}
+ 		}
+ 	}
+-	fclose(file);
++	endgrent();
+ 	if (x) {
+ 		if (setgroups(x, groups))
+ 			return ERR_FAILED_ADDITIONAL_GIDS;
+@@ -134,18 +127,17 @@ int set_additional_g(const char *username)
+ int make_me_new(const char *username, const char *password, int chk_passwd)
+ {
+ 	struct passwd *pw;
++#ifdef __linux__
+ 	struct spwd *sp;
++#endif
+ 	const char *correct;
+-	FILE *file;
+ 	char *encrypted;
+ 	int error;
+ 
+-	if ((file = fopen("/etc/passwd", "r")) == NULL)
+-		return ERR_OPEN_FILE_PASSWD;
+-	while ((pw = fgetpwent(file)) != NULL)
++	while ((pw = getpwent()) != NULL)
+ 		if (!strcmp(pw->pw_name, username))
+ 			break;
+-	fclose(file);
++	endpwent();
+ 	if (pw == NULL)
+ 		return ERR_INVALID_USERNAME;
+ 	if (chk_passwd) {
+@@ -188,14 +180,11 @@ int try(const char *username, const char *password, in
+ int check_user(const char *username)
+ {
+ 	struct passwd *pw;
+-	FILE *file;
+ 
+-	if ((file = fopen("/etc/passwd", "r")) == NULL)
+-		return ERR_OPEN_FILE_PASSWD;
+-	while ((pw = fgetpwent(file)) != NULL)
++	while ((pw = getpwent()) != NULL)
+ 		if (!strcmp(pw->pw_name, username))
+ 			break;
+-	fclose(file);
++	endpwent();
+ 	if (pw == NULL)
+ 		return ERR_INVALID_USERNAME;
+ 	return ERR_SUCCESS;

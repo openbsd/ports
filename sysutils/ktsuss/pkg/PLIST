@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/18 19:45:14 landry Exp $
+@mode 4555
+@bin bin/ktsuss
+@mode
+@bin libexec/re_su
+share/pixmaps/
+share/pixmaps/ktsuss.png

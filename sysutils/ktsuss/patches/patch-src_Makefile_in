@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/06/18 19:45:14 landry Exp $
+no lcrypt, and PLIST takes care of setuid'ing ktuss binary
+--- src/Makefile.in.orig	Tue Jul  1 04:23:01 2008
++++ src/Makefile.in	Thu Jun 18 21:27:59 2009
+@@ -152,9 +152,9 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ ktsuss_SOURCES = ktsuss.c auth.c
+-ktsuss_LDADD = -lcrypt
++ktsuss_LDADD = 
+ re_su_SOURCES = auth.c re_su.c
+-re_su_LDADD = $(DEPS_LIBS) -lcrypt
++re_su_LDADD = $(DEPS_LIBS) 
+ AM_CPPFLAGS = $(DEPS_CFLAGS) \
+ 			-DRE_SU_PLACE=\""$(libexecdir)"\" -DPIXMAPS=\""$(datadir)/pixmaps"\"
+ 
+@@ -400,7 +400,6 @@ install-data-am:
+ 
+ install-exec-am: install-binPROGRAMS install-libexecPROGRAMS
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+ 
+ install-info: install-info-am
+ 

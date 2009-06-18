@@ -1,0 +1,6 @@
+ktsuss stands for "keep the su simple, stupid", and as the name says,
+is a graphical version of su written in C and GTK+ 2. The idea of the
+project is to remain simple and bug free... The ktsuss binary is
+installed set-uid, takes care of authentication and fiddles with
+uid/gids, while re_su is the graphical user interface asking for the
+desired username and password.
