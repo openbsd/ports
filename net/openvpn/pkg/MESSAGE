@@ -1,0 +1,7 @@
+OpenVPN re-creates the tun(4) interface at startup; compatibility
+with PF is improved by starting it from hostname.if(5). For example:
+
+# cat << EOF > /etc/hostname.tun0
+up
+!${TRUEPREFIX}/sbin/openvpn --daemon --config ${SYSCONFDIR}/openvpn/server.conf
+EOF

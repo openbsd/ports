@@ -1,37 +1,8 @@
-OpenVPN is an easy-to-use, robust, and highly configurable VPN (Virtual
-Private Network) daemon which can be used to securely link two or more
-private networks using an encrypted tunnel over the internet.
+OpenVPN is an easy-to-use, robust, highly configurable, cross-platform
+VPN (Virtual Private Network) daemon which can be used to securely link
+two or more private networks using an encrypted tunnel over the internet.
 
-With OpenVPN, you can:
-
-* tunnel any IP subnetwork or virtual ethernet adapter over a single UDP
-or TCP port,
-
-* create cross-platform tunnels between any of the operating systems
-supported by OpenVPN including Linux, Solaris, OpenBSD, FreeBSD, NetBSD,
-Mac OS X, and Windows 2000/XP,
-
-* use all of the encryption, authentication, and certification features
-of the OpenSSL library to protect your private network traffic as it
-transits the internet,
-
-* use any cipher, key size, or HMAC digest (for datagram authentication)
-supported by the OpenSSL library,
-
-* choose between static-key based conventional encryption or
-certificate-based public key encryption,
-
-* use static, pre-shared keys or TLS-based dynamic key exchange,
-
-* use real-time adaptive link compression and traffic-shaping to manage
-link bandwidth utilization,
-
-* tunnel networks whose public endpoints are dynamic such as DHCP or
-dial-in clients,
-
-* tunnel networks through connection-oriented stateful firewalls without
-having to use explicit firewall rules,
-
-* tunnel networks over NAT, and
-
-* create secure ethernet bridges using virtual tap devices.
+It can forward a tun(4) interface over a single UDP or TCP port with
+support for NAT, dynamic endpoints, compression, fragmentation and keep-
+alive. It uses OpenSSL's encryption, authentication, and certification
+features, with static keys, certificates or TLS-based key exchange.
