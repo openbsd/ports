@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2009/06/18 11:17:11 jim Exp $
 
 COMMENT= 	perl extension for emulating troublesome interfaces
 
 MODULES=	cpan
-DISTNAME=	Test-MockObject-1.07
+DISTNAME=	Test-MockObject-1.09
 CATEGORIES=	devel
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,6 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=		::devel/p5-Universal-isa \
 			::devel/p5-Universal-can
 
-CONFIGURE_STYLE= modbuild
+REGRESS_DEPENDS=	::devel/p5-Test-Exception
+
+CONFIGURE_STYLE=	modbuild
 
 .include <bsd.port.mk>
