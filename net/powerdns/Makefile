@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/18 01:42:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/18 20:08:25 naddy Exp $
 
 COMMENT-main=		modern authoritative nameserver
 COMMENT-mysql=		mysql database access module for powerdns
@@ -9,11 +9,11 @@ COMMENT-sqlite3=	sqlite3 database access module for powerdns
 V=			2.9.21.2
 DISTNAME=		pdns-${V}
 PKGNAME=		powerdns-${V}
-PKGNAME-main=		powerdns-${V}p2
-PKGNAME-mysql=		powerdns-mysql-${V}p1
-PKGNAME-pgsql=		powerdns-pgsql-${V}p1
-PKGNAME-sqlite= 	powerdns-sqlite-${V}p1
-PKGNAME-sqlite3=	powerdns-sqlite3-${V}p1
+PKGNAME-main=		powerdns-${V}p3
+PKGNAME-mysql=		powerdns-mysql-${V}p2
+PKGNAME-pgsql=		powerdns-pgsql-${V}p2
+PKGNAME-sqlite= 	powerdns-sqlite-${V}p2
+PKGNAME-sqlite3=	powerdns-sqlite3-${V}p2
 CATEGORIES=		net
 HOMEPAGE=		http://www.powerdns.com/
 
@@ -31,7 +31,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB-main=		c crypto m pthread ssl stdc++ z
+WANTLIB-main=		c m pthread stdc++ z
 
 MASTER_SITES=		http://downloads.powerdns.com/releases/
 
@@ -44,13 +44,6 @@ FLAVOR?=
 
 BACKENDS=
 
-# XXX this is wrong. but at least it means packages work.
-#
-# the main binary gets linked with mysqlclient; actually only the
-# mysql module should link with it.
-#
-LIB_DEPENDS-main=	lib/mysql/mysqlclient.>=10::databases/mysql
-
 # MySQL
 .if ${FLAVOR:L:Mno_mysql}
 CONFIGURE_ARGS+=	--without-mysql
@@ -58,7 +51,8 @@ CONFIGURE_ARGS+=	--without-mysql
 MULTI_PACKAGES+=	-mysql
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 LIB_DEPENDS-mysql=	lib/mysql/mysqlclient.>=10::databases/mysql
-WANTLIB-mysql+= 	z
+RUN_DEPENDS-mysql=	:${FULLPKGNAME-main}:net/powerdns
+WANTLIB-mysql+= 	crypto m ssl z
 BACKENDS+=		gmysql
 .endif
 
@@ -69,7 +63,8 @@ CONFIGURE_ARGS+=	--without-pgsql
 MULTI_PACKAGES+=	-pgsql
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE} \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql
-LIB_DEPENDS-pgsql=	pq.>=2:postgresql-client-*:databases/postgresql
+LIB_DEPENDS-pgsql=	pq.>=2::databases/postgresql,-main
+RUN_DEPENDS-pgsql=	:${FULLPKGNAME-main}:net/powerdns
 BACKENDS+=		gpgsql
 .endif
 
@@ -81,6 +76,7 @@ MULTI_PACKAGES+=	-sqlite
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE} \
 			--with-sqlite-includes=${LOCALBASE}/include
 LIB_DEPENDS-sqlite=	sqlite.>=8::databases/sqlite
+RUN_DEPENDS-sqlite=	:${FULLPKGNAME-main}:net/powerdns
 WANTLIB-sqlite+=	z
 BACKENDS+=		gsqlite
 .endif
@@ -93,6 +89,7 @@ MULTI_PACKAGES+=	-sqlite3
 CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE} \
 			--with-sqlite3-includes=${LOCALBASE}/include
 LIB_DEPENDS-sqlite3=	sqlite3.>=8::databases/sqlite3
+RUN_DEPENDS-sqlite3=	:${FULLPKGNAME-main}:net/powerdns
 WANTLIB-sqlite3+=	z
 BACKENDS+=		gsqlite3
 .endif
@@ -106,7 +103,8 @@ AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	gnu autoconf
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--with-dynmodules="${BACKENDS}" \
+CONFIGURE_ARGS+=	--with-modules="geo" \
+			--with-dynmodules="${BACKENDS}" \
 			--disable-recursor # OpenBSD lacks ucontext.h, see PR 5099
 
 EXAMPLE_TABLES= 	tables-mysql.sql \
