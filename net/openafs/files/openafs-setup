@@ -298,7 +298,7 @@ __EOT
 
 Just a sample user to create a basic homedir and account on afs with.
 __EOT
-		ask_until "KerberosV princiapl for example user?" "$defuser"
+		ask_until "KerberosV principal for example user?" "$defuser"
 		u=${resp}
 		cat <<__EOT
 
@@ -307,7 +307,7 @@ attributes.  It will be used to administer afs in a similar way that \`root'
 can administrate OpenBSD.  Tread lightly when using this principal.
 __EOT
 	fi
-	ask_until "KerberosV princiapl for afs administration?" \
+	ask_until "KerberosV principal for afs administration?" \
 		"$defuser/afs"
 	A=${resp}
 	slist="" i=0

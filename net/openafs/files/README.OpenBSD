@@ -114,11 +114,6 @@ Initialize the Kerberos realm:
    kadmin> init EXAMPLE.COM
    Max ticket life [1 day]:unlimited
    Max renewable life [1 week]:unlimited
-   Principal expiration time [never]:
-   Password expiration time [never]:
-   Attributes []:
-   todd@EXAMPLE.COM's Password: 
-   Verifying - todd@EXAMPLE.COM's Password: 
    kadmin> add todd/admin
    Max ticket life [1 day]:
    Max renewable life [1 week]:
@@ -145,11 +140,11 @@ On the server run:
 
 Verify authentication works:
 
-  kinit todd
-  todd@EXAMPLE.COM's Password: 
+  kinit todd/admin
+  todd/admin@EXAMPLE.COM's Password: 
   klist
    Credentials cache: FILE:/tmp/krb5cc_1000
-        Principal: todd@EXAMPLE.COM
+        Principal: todd/admin@EXAMPLE.COM
 
      Issued           Expires          Principal
    Jul 20 22:10:41  Aug 30 22:10:41  krbtgt/EXAMPLE.COM@EXAMPLE.COM
