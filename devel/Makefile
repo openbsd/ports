@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.709 2009/06/12 17:08:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.710 2009/06/18 18:08:17 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -478,6 +478,7 @@
      SUBDIR += p5-Params-Util
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Paranoid
+     SUBDIR += p5-Parse-CPAN-Meta
      SUBDIR += p5-Parse-PlainConfig
      SUBDIR += p5-Parse-RecDescent
      SUBDIR += p5-Path-Class
@@ -621,6 +622,7 @@
      SUBDIR += p5-YAML-Shell
      SUBDIR += p5-YAML-Syck
      SUBDIR += p5-YAML-Tiny
+     SUBDIR += p5-YAML-XS
      SUBDIR += p5-accessors
      SUBDIR += p5-boolean
      SUBDIR += p5-capitalization
