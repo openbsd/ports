@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-gecko,v 1.1 2008/10/30 22:38:11 landry Exp $
-lib/kazehakase/embed/
+@comment $OpenBSD: PLIST-gecko,v 1.2 2009/06/18 20:10:07 landry Exp $
 lib/kazehakase/embed/gecko.a
 lib/kazehakase/embed/gecko.la
 lib/kazehakase/embed/gecko.so
