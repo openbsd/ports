@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/06/01 05:51:31 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/06/18 20:09:20 landry Exp $
 %%SHARED%%
 @bin bin/jsc
 include/webkit-1.0/
@@ -130,6 +130,7 @@ share/webkit-1.0/webinspector/Images/profileIcon.png
 share/webkit-1.0/webinspector/Images/profileSmallIcon.png
 share/webkit-1.0/webinspector/Images/profilesIcon.png
 share/webkit-1.0/webinspector/Images/profilesSilhouette.png
+share/webkit-1.0/webinspector/Images/radioDot.png
 share/webkit-1.0/webinspector/Images/recordButtons.png
 share/webkit-1.0/webinspector/Images/reloadButtons.png
 share/webkit-1.0/webinspector/Images/resourceCSSIcon.png

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2009/06/01 05:51:31 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2009/06/18 20:09:20 landry Exp $
 
 COMMENT =	open source web browser engine
 
-V = 1.1.8
+V = 1.1.10
 DISTNAME =	webkit-${V}
+# XXX do not remove v0
 PKGNAME =	webkit-${V}v0
 CATEGORIES =	www
 
@@ -12,7 +13,7 @@ MASTER_SITES =	${HOMEPAGE}
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
-SHARED_LIBS =	webkit-1.0	0.2
+SHARED_LIBS =	webkit-1.0	0.3
 
 # LGPLv2 / BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -47,9 +48,9 @@ WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		expat fontconfig freetype gcrypt gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gnutls gobject-2.0 gpg-error gthread-2.0 intl jpeg m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread \
-		tasn1 z cairo pixman-1 png xml2
+		tasn1 z cairo pixman-1 png stdc++ xml2
 
-LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2,-main \
+LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0,gailutil::x11/gtk+2,-main \
 		icudata,icui18n,icuuc::textproc/icu4c \
 		sqlite3::databases/sqlite3 \
 		xslt::textproc/libxslt \
