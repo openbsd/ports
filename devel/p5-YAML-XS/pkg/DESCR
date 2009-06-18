@@ -1,0 +1,2 @@
+This module is a Perl XS binding to libyaml which will (eventually)
+offer Perl the best YAML support to date.
