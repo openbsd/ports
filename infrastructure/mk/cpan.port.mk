@@ -1,4 +1,4 @@
-# $OpenBSD: cpan.port.mk,v 1.8 2008/08/20 10:33:50 simon Exp $
+# $OpenBSD: cpan.port.mk,v 1.9 2009/06/18 13:41:28 simon Exp $
 
 PKGNAME ?=	p5-${DISTNAME}
 .if !defined(CPAN_AUTHOR)
@@ -26,7 +26,11 @@ CPAN_REPORT ?=	No
 
 .if ${CPAN_REPORT:L} == "yes"
 REGRESS_DEPENDS +=	::devel/p5-Test-Reporter
+.  if ${CONFIGURE_STYLE:L:Mmodbuild}
+REGRESS_FLAGS +=	verbose=1
+.  else
 REGRESS_FLAGS +=	TEST_VERBOSE=1
+.  endif
 REGRESS_STATUS_IGNORE =	-
 .  if !defined(CPAN_REPORT_DB)
 ERRORS +=	"Fatal: CPAN_REPORT_DB must point to a directory"
