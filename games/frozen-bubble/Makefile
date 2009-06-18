@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/06 03:23:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/18 12:54:28 martynas Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,8 +7,8 @@ COMMENT-server =	server for the frozen-bubble bubble popping game
 
 VER =			2.2.0
 DISTNAME =		frozen-bubble-${VER}
-PKGNAME-main =		${DISTNAME}p0
-PKGNAME-server =	frozen-bubble-server-${VER}p0
+PKGNAME-main =		${DISTNAME}p1
+PKGNAME-server =	frozen-bubble-server-${VER}p1
 CATEGORIES =		games
 
 HOMEPAGE =		http://www.frozen-bubble.org
