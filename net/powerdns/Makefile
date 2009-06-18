@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/02/11 08:15:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/06/18 01:42:41 sthen Exp $
 
 COMMENT-main=		modern authoritative nameserver
 COMMENT-mysql=		mysql database access module for powerdns
@@ -9,11 +9,11 @@ COMMENT-sqlite3=	sqlite3 database access module for powerdns
 V=			2.9.21.2
 DISTNAME=		pdns-${V}
 PKGNAME=		powerdns-${V}
-PKGNAME-main=		powerdns-${V}p1
-PKGNAME-mysql=		powerdns-mysql-${V}p0
-PKGNAME-pgsql=		powerdns-pgsql-${V}p0
-PKGNAME-sqlite= 	powerdns-sqlite-${V}p0
-PKGNAME-sqlite3=	powerdns-sqlite3-${V}p0
+PKGNAME-main=		powerdns-${V}p2
+PKGNAME-mysql=		powerdns-mysql-${V}p1
+PKGNAME-pgsql=		powerdns-pgsql-${V}p1
+PKGNAME-sqlite= 	powerdns-sqlite-${V}p1
+PKGNAME-sqlite3=	powerdns-sqlite3-${V}p1
 CATEGORIES=		net
 HOMEPAGE=		http://www.powerdns.com/
 
@@ -43,6 +43,13 @@ PSEUDO_FLAVORS+=	no_mysql no_pgsql no_sqlite no_sqlite3
 FLAVOR?=
 
 BACKENDS=
+
+# XXX this is wrong. but at least it means packages work.
+#
+# the main binary gets linked with mysqlclient; actually only the
+# mysql module should link with it.
+#
+LIB_DEPENDS-main=	lib/mysql/mysqlclient.>=10::databases/mysql
 
 # MySQL
 .if ${FLAVOR:L:Mno_mysql}
