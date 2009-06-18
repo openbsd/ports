@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/18 18:08:12 simon Exp $
+${P5SITE}/Parse/
+${P5SITE}/Parse/CPAN/
+${P5SITE}/Parse/CPAN/Meta.pm
+@man man/man3p/Parse::CPAN::Meta.3p

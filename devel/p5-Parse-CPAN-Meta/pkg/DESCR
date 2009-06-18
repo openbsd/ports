@@ -1,0 +1,7 @@
+Parse::CPAN::Meta is a parser for META.yml files, based on the parser
+half of YAML::Tiny.
+It supports a basic subset of the full YAML specification, enough to
+implement parsing of typical META.yml files, and other similarly simple
+YAML files.
+If you need something with more power, move up to a full YAML parser
+such as YAML, YAML::Syck or YAML::LibYAML.
