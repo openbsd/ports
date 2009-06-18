@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/17 09:34:35 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/18 23:00:43 simon Exp $
 
 # sparc64 failed to build with 0.9.0.1 and needs testing
 # macppc fails too and is therefore disabled
@@ -24,25 +24,20 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto m ncurses pthread readline stdc++ util
 
-LIB_DEPENDS=		icudata,icuuc::textproc/icu4c
+LIB_DEPENDS=		icudata,icuuc,icui18n::textproc/icu4c
 REGRESS_DEPENDS=	::devel/p5-Test-Pod
 
 CONFIGURE_SCRIPT=	/usr/bin/perl Configure.pl
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 CONFIGURE_ARGS+=	--parrot_is_shared 
-CONFIGURE_ARGS+=	--icu-config=${LOCALBASE}/bin/icu-config
+CONFIGURE_ARGS+=	--icuheaders=${LOCALBASE}/include
+CONFIGURE_ARGS+=	--icushared="`${LOCALBASE}/bin/icu-config --ldflags`"
 
 MAKE_FLAGS=		LIBparrot_VERSION=${LIBparrot_VERSION}
 
 ALL_TARGET=		installable compilers
 REGRESS_TARGET=		test
-
-.if ${MACHINE_ARCH} == "i386"
-PKG_ARGS+=		-Di386=1
-.else
-PKG_ARGS+=		-Di386=0
-.endif
 
 .if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS+=	--execcapable=0

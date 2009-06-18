@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.i386,v 1.1.1.1 2007/10/10 17:32:06 simon Exp $
-include/src/jit_emit.h

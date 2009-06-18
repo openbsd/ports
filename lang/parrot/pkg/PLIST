@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/06/17 09:34:35 simon Exp $
-%%i386%%
+@comment $OpenBSD: PLIST,v 1.9 2009/06/18 23:00:43 simon Exp $
 %%SHARED%%
 @bin bin/parrot
 @bin bin/parrot_config
