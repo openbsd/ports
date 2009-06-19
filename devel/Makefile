@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.710 2009/06/18 18:08:17 simon Exp $
+# $OpenBSD: Makefile,v 1.711 2009/06/19 00:52:31 jim Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -454,6 +454,9 @@
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Moose
      SUBDIR += p5-MooseX-Clone
+     SUBDIR += p5-MooseX-Emulate-Class-Accessor-Fast
+     SUBDIR += p5-MooseX-MethodAttributes
+     SUBDIR += p5-MooseX-Types
      SUBDIR += p5-Mouse
      SUBDIR += p5-Net-Server
      SUBDIR += p5-Number-Compare
