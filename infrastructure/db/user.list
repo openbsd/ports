@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.119 2009/06/15 23:45:50 jolan Exp $
+$OpenBSD: user.list,v 1.120 2009/06/19 10:12:36 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -141,3 +141,4 @@ id  user		group		port options
 630 _avahi-autoipd	_avahi-autoipd	net/avahi
 631 _dnsmasq		_dnsmasq	net/dnsmasq
 632 _openfire		_openfire	net/openfire
+633 _nbaudit				security/nbaudit
