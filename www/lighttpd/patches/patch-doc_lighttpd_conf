@@ -1,10 +1,10 @@
-$OpenBSD: patch-doc_lighttpd_conf,v 1.7 2009/02/17 12:44:17 sthen Exp $
---- doc/lighttpd.conf.orig	Tue Sep 23 15:03:06 2008
-+++ doc/lighttpd.conf	Fri Feb  6 13:33:09 2009
-@@ -37,18 +37,24 @@ server.modules              = (
+$OpenBSD: patch-doc_lighttpd_conf,v 1.8 2009/06/19 23:12:03 sthen Exp $
+--- doc/lighttpd.conf.orig	Thu Apr  9 16:02:00 2009
++++ doc/lighttpd.conf	Mon Jun 15 01:09:14 2009
+@@ -36,18 +36,24 @@ server.modules              = (
  
- ## a static document-root, for virtual-hosting take look at the
- ## server.virtual-* options
+ ## A static document-root. For virtual hosting take a look at the
+ ## mod_simple_vhost module.
 -server.document-root        = "/srv/www/htdocs/"
 +server.document-root        = "htdocs/"
  
@@ -32,7 +32,7 @@ $OpenBSD: patch-doc_lighttpd_conf,v 1.7 2009/02/17 12:44:17 sthen Exp $
  # mimetype mapping
  mimetype.assign             = (
    ".pdf"          =>      "application/pdf",
-@@ -110,14 +116,10 @@ mimetype.assign             = (
+@@ -109,14 +115,10 @@ mimetype.assign             = (
  # Use the "Content-Type" extended attribute to obtain mime type if possible
  #mimetype.use-xattr        = "enable"
  
@@ -47,7 +47,7 @@ $OpenBSD: patch-doc_lighttpd_conf,v 1.7 2009/02/17 12:44:17 sthen Exp $
  ## deny access the file-extensions
  #
  # ~    is for backupfiles from vi, emacs, joe, ...
-@@ -137,20 +139,13 @@ static-file.exclude-extensions = ( ".php", ".pl", ".fc
+@@ -136,20 +138,13 @@ static-file.exclude-extensions = ( ".php", ".pl", ".fc
  
  ######### Options that are good to be but not neccesary to be changed #######
  
@@ -69,7 +69,7 @@ $OpenBSD: patch-doc_lighttpd_conf,v 1.7 2009/02/17 12:44:17 sthen Exp $
  ###### virtual hosts
  ##
  ##  If you want name-based virtual hosting add the next three settings and load
-@@ -183,17 +178,12 @@ static-file.exclude-extensions = ( ".php", ".pl", ".fc
+@@ -182,17 +177,12 @@ static-file.exclude-extensions = ( ".php", ".pl", ".fc
  #debug.log-request-handling = "enable"
  #debug.log-file-not-found   = "enable"
  
@@ -91,7 +91,7 @@ $OpenBSD: patch-doc_lighttpd_conf,v 1.7 2009/02/17 12:44:17 sthen Exp $
  #### compress module
  #compress.cache-dir         = "/var/cache/lighttpd/compress/"
  #compress.filetype          = ("text/plain", "text/html")
-@@ -284,7 +274,7 @@ static-file.exclude-extensions = ( ".php", ".pl", ".fc
+@@ -283,7 +273,7 @@ static-file.exclude-extensions = ( ".php", ".pl", ".fc
  #ssi.extension              = ( ".shtml" )
  
  #### rrdtool

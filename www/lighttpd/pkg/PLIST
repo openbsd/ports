@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2009/03/16 17:15:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2009/06/19 23:12:03 sthen Exp $
 @newgroup _lighttpd:585
 @newuser _lighttpd:585:_lighttpd:daemon:lighttpd Account:/nonexistent:/sbin/nologin
 lib/lighttpd/
@@ -65,7 +65,7 @@ lib/lighttpd/mod_usertrack.so
 @comment lib/lighttpd/mod_webdav.la
 lib/lighttpd/mod_webdav.so
 %%mysql%%
-@man man/man1/lighttpd.1
+@man man/man8/lighttpd.8
 @bin sbin/lighttpd
 @bin sbin/lighttpd-angel
 share/doc/lighttpd/
