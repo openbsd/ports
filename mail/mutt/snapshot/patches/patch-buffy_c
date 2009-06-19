@@ -1,0 +1,15 @@
+$OpenBSD: patch-buffy_c,v 1.1 2009/06/19 21:35:37 sthen Exp $
+
+r5914 from upstream; Do not free statically-allocated
+buffy buffer. Unbreaks unmailboxes, ticket #3273.
+
+--- buffy.c.orig	Fri Jun 19 22:30:51 2009
++++ buffy.c	Fri Jun 19 22:30:52 2009
+@@ -236,7 +236,6 @@ int mutt_parse_mailboxes (BUFFER *path, BUFFER *s, uns
+     {
+       if(*tmp)
+       {
+-        FREE (&((*tmp)->path));
+         tmp1=(*tmp)->next;
+         FREE (tmp);		/* __FREE_CHECKED__ */
+         *tmp=tmp1;
