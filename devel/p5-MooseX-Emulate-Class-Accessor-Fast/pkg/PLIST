@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/19 00:47:27 jim Exp $
+${P5SITE}/MooseX/
+${P5SITE}/MooseX/Adopt/
+${P5SITE}/MooseX/Adopt/Class/
+${P5SITE}/MooseX/Adopt/Class/Accessor/
+${P5SITE}/MooseX/Adopt/Class/Accessor/Fast.pm
+${P5SITE}/MooseX/Emulate/
+${P5SITE}/MooseX/Emulate/Class/
+${P5SITE}/MooseX/Emulate/Class/Accessor/
+${P5SITE}/MooseX/Emulate/Class/Accessor/Fast/
+${P5SITE}/MooseX/Emulate/Class/Accessor/Fast.pm
+${P5SITE}/MooseX/Emulate/Class/Accessor/Fast/Meta/
+${P5SITE}/MooseX/Emulate/Class/Accessor/Fast/Meta/Accessor.pm
+${P5SITE}/MooseX/Emulate/Class/Accessor/Fast/Meta/Role/
+${P5SITE}/MooseX/Emulate/Class/Accessor/Fast/Meta/Role/Attribute.pm
+@man man/man3p/MooseX::Adopt::Class::Accessor::Fast.3p
+@man man/man3p/MooseX::Emulate::Class::Accessor::Fast.3p

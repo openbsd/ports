@@ -1,0 +1,4 @@
+Attempts to emulate the behavior of Class::Accessor::Fast as accurately
+as possible using the Moose attribute system. The public API of
+Class::Accessor::Fast is wholly supported, but the private methods are
+not.
