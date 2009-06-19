@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/01/12 21:17:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2009/06/19 11:13:39 sthen Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
@@ -9,7 +9,7 @@ DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
 PKGNAME-server=		bacula-server-$V
-FULLPKGNAME-bat=	bacula-bat-$V
+FULLPKGNAME-bat=	bacula-bat-$Vp0
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
 
@@ -160,8 +160,8 @@ CONFIGURE_ARGS+=	--disable-bat
 .else
 CONFIGURE_ARGS+=	--enable-bat
 WANTLIB-bat=		${WANTLIB} ICE SM X11 Xext
-WANTLIB-bat+=		Xi Xinerama Xrandr Xrender fontconfig freetype
-WANTLIB-bat+=		glib-2.0 gthread-2.0 iconv intl png
+WANTLIB-bat+=		Xi Xinerama Xrender expat fontconfig freetype
+WANTLIB-bat+=		glib-2.0 gobject-2.0 gthread-2.0 iconv intl png
 MULTI_PACKAGES+=	-bat
 LIB_DEPENDS-bat=	QtCore,QtGui::x11/qt4
 .endif
