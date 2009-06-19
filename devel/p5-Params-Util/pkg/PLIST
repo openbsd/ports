@@ -1,4 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/27 09:28:11 jasper Exp $
-${P5SITE}/Params/
-${P5SITE}/Params/Util.pm
+@comment $OpenBSD: PLIST,v 1.2 2009/06/19 00:18:00 jim Exp $
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Params/
+${P5ARCH}/Params/Util.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Params/
+${P5ARCH}/auto/Params/Util/
+${P5ARCH}/auto/Params/Util/Util.bs
 @man man/man3p/Params::Util.3p
