@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/06/16 15:31:02 kurt Exp $
+# $OpenBSD: Makefile,v 1.13 2009/06/19 22:28:04 kurt Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 COMMENT=	essential libraries for java
 
 DISTNAME=	classpath-0.98
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	lang java
 
@@ -36,7 +37,8 @@ MODGCC4_LANGS=	java
 BUILD_DEPENDS=	::devel/xulrunner,-devel \
 		::lang/antlr2
 
-RUN_DEPENDS=	::lang/antlr2
+RUN_DEPENDS=	::lang/gcc/4.2,-java,java \
+		::lang/antlr2
 
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		dbus-glib-1::x11/dbus-glib \
@@ -62,7 +64,7 @@ CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		JAVA=gij
+		JAVA=egij
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-glibj=zip \

@@ -1,5 +1,5 @@
 #!/bin/sh
 
 CLASSPATH=%%DISTDIR%%/ecj.jar${CLASSPATH:+:}$CLASSPATH \
-gij org.eclipse.jdt.internal.compiler.batch.Main "$@"
+egij org.eclipse.jdt.internal.compiler.batch.Main -nowarn "$@"
 
