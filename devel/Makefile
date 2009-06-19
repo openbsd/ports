@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.711 2009/06/19 00:52:31 jim Exp $
+# $OpenBSD: Makefile,v 1.712 2009/06/19 12:49:41 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -573,6 +573,7 @@
      SUBDIR += p5-Test-NoWarnings
      SUBDIR += p5-Test-Object
      SUBDIR += p5-Test-Output
+     SUBDIR += p5-Test-POE-Server-TCP
      SUBDIR += p5-Test-Perl-Critic
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Coverage
