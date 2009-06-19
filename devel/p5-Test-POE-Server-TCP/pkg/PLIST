@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/19 12:49:33 simon Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/POE/
+${P5SITE}/Test/POE/Server/
+${P5SITE}/Test/POE/Server/TCP.pm
+@man man/man3p/Test::POE::Server::TCP.3p
