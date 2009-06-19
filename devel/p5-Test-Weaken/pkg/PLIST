@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/19 18:31:15 jim Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Weaken.pm
+@man man/man3p/Test::Weaken.3p

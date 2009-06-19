@@ -1,0 +1,4 @@
+Allows easy detection of unfreed memory objects. Test::Weaken allows you
+to examine the unfreed objects, even objects which are usually
+inaccessible. It performs this magic by creating a set of weakened probe
+references.
