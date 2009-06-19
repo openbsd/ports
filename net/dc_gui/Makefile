@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/16 11:05:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2009/06/19 09:24:14 sthen Exp $
 
 COMMENT=		GUI for dctc (Direct Connect Text Clone)
 
 V=			0.80
 DISTNAME=		dc_gui2-$V
-PKGNAME=		dc_gui-$Vp1
+PKGNAME=		dc_gui-$Vp2
 CATEGORIES=		net x11
 HOMEPAGE=		http://ac2i.homelinux.com/dctc/
 
@@ -24,7 +24,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		idn m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-		pixman-1 png popt pthread ssl util xml2 z
+		pixman-1 png popt pthread ssl util xml2 z \
+		avahi-client avahi-common avahi-glib
 
 MODULES=		devel/gettext
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/21 08:08:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/19 09:24:14 sthen Exp $
 
 COMMENT=	pipe an Ogg stream to an Icecast server
 
 DISTNAME=	oggfwd-0.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net multimedia
 
 HOMEPAGE=	http://v2v.cc/~j/ffmpeg2theora/oggfwd/
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	c ogg pthread theora vorbis
+
+WANTLIB=	c m ogg pthread theora vorbis
 
 MASTER_SITES=	http://v2v.cc/~j/oggfwd/
 

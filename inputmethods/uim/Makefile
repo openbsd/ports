@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/01/30 09:39:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2009/06/19 09:24:14 sthen Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -17,7 +17,7 @@ PKGNAME-main=	uim-$Vp0
 PKGNAME-gtk=	uim-gtk-$Vp1
 PKGNAME-qt=	uim-qt-$Vp0
 PKGNAME-kde=	uim-kde-$Vp0
-PKGNAME-gnome=	uim-gnome-$Vp2
+PKGNAME-gnome=	uim-gnome-$Vp3
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -89,7 +89,8 @@ WANTLIB-gnome=	${WANTLIB-gtk} ICE SM crypto gthread-2.0 pthread ssl \
 		bonobo-activation gconf-2 glade-2.0 gnome-2 gnomecanvas-2 \
 		popt xml2 bonoboui-2 gnome-keyring gnomeui-2 gnomevfs-2 \
 		Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
-		dbus-1 dbus-glib-1 gailutil pcre pixman-1 util
+		dbus-1 dbus-glib-1 gailutil pcre pixman-1 util \
+		avahi-client avahi-common avahi-glib
 
 MAKE_FLAGS=	moduledir='${LOCALBASE}/lib/gtk-2.0/2.10.0/immodules' \
 		UIM_QT_LDFLAGS='-pthread -L${X11BASE}/lib -L${MODQT_LIBDIR} -lqt-mt -lXext -lX11' \
