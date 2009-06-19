@@ -1,0 +1,22 @@
+$OpenBSD: patch-gateway_IMAP_cpp,v 1.1 2009/06/19 12:47:35 ajacoutot Exp $
+
+XXX bring back behaviour from 6.20.3 to prevent the IMAP gateway from hanging.
+
+--- gateway/IMAP.cpp.orig	Thu May 14 16:49:02 2009
++++ gateway/IMAP.cpp	Fri Jun 19 12:23:43 2009
+@@ -3971,11 +3971,13 @@ HRESULT IMAP::HrParseSeqSet(string strSeqSet, list<ULO
+ 					ulCount++;
+ 				}
+ 			} else {
+-				if (ulMailnr == 0 || ulMailnr >= lstFolderMailEIDs.size()+1) {
++				if (ulMailnr == 0) {
+ 					hr = MAPI_E_CALL_FAILED;
+ 					goto exit;
+ 				}
+-				lstMails.push_back(ulMailnr - 1);
++				if (ulMailnr <= lstFolderMailEIDs.size()) {
++					lstMails.push_back(ulMailnr - 1);
++				}
+ 			}
+ 		} else if (strSeqSet.substr(ulPos, 1) == ":") {
+ 			if (ulPos - ulBeginPos == 1 && strSeqSet.substr(ulBeginPos, 1) == "*") {
