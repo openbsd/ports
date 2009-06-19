@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/03 00:48:51 pyr Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/19 12:19:00 simon Exp $
 
 COMMENT=        Apache FastCGI module
 
-DISTNAME=       mod_fastcgi-2.4.2
-PKGNAME=	${DISTNAME}p4
+DISTNAME=	mod_fastcgi-SNAP-0811090952
+# temporary workaround: as the original distname would prevent a seamless
+# update use the last offical version and append the date of the snapshot
+PKGNAME=	mod_fastcgi-2.4.6.081109
 
 CATEGORIES=     www
 
 HOMEPAGE=       http://www.fastcgi.com/
 
-MASTER_SITES=   ${HOMEPAGE}dist/old/
+MASTER_SITES=	${HOMEPAGE}dist/ \
+		${HOMEPAGE}dist/old/
 
 MODULES=	apache-module
 MODAPACHE_NAME=	fastcgi

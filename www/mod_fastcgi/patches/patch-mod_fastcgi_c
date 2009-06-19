@@ -1,6 +1,6 @@
---- mod_fastcgi.c.orig	Thu Oct 30 02:08:34 2003
-+++ mod_fastcgi.c	Mon Feb 14 06:54:32 2005
-@@ -1074,7 +1074,8 @@ static int open_connection_to_fs(fcgi_re
+--- mod_fastcgi.c.orig	Sun Nov  9 15:31:03 2008
++++ mod_fastcgi.c	Wed Jan 28 23:45:46 2009
+@@ -1073,7 +1073,8 @@ static int open_connection_to_fs(fcgi_request *fr)
      {
          socket_path = fcgi_util_socket_hash_filename(rp, fr->fs_path, fr->user, fr->group);
          socket_path = fcgi_util_socket_make_path_absolute(rp, socket_path, 1);

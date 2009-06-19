@@ -1,6 +1,6 @@
---- fcgi_pm.c.orig	Thu Oct 30 02:08:34 2003
-+++ fcgi_pm.c	Mon Feb 14 06:57:49 2005
-@@ -26,7 +26,7 @@ time_t fcgi_dynamic_epoch = 0;          
+--- fcgi_pm.c.orig	Tue Sep 23 00:24:45 2008
++++ fcgi_pm.c	Wed Jan 28 23:45:46 2009
+@@ -26,7 +26,7 @@ time_t fcgi_dynamic_epoch = 0;            /* last time
                                             * invoked by process mgr */
  time_t fcgi_dynamic_last_analyzed = 0;    /* last time calculation was
                                             * made for the dynamic procs */
@@ -9,7 +9,7 @@
  static time_t now = 0;
  
  #ifdef WIN32
-@@ -1092,6 +1092,8 @@ static void dynamic_read_msgs(int read_r
+@@ -1102,6 +1102,8 @@ static void dynamic_read_msgs(int read_ready)
              /* Create socket file's path */
              s->socket_path = fcgi_util_socket_hash_filename(tp, execName, user, group);
              s->socket_path = fcgi_util_socket_make_path_absolute(sp, s->socket_path, 1);
@@ -18,7 +18,7 @@
  
              /* Create sockaddr, prealloc it so it won't get created in tp */
              s->socket_addr = ap_pcalloc(sp, sizeof(struct sockaddr_un));
-@@ -1649,7 +1651,19 @@ void fcgi_pm_main(void *dummy)
+@@ -1665,7 +1667,19 @@ void fcgi_pm_main(void *dummy)
      fcgi_config_set_env_var(fcgi_config_pool, dynamicEnvp, &i, "SystemRoot");
  
  #else

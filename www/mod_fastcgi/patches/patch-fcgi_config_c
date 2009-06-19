@@ -1,0 +1,15 @@
+$OpenBSD: patch-fcgi_config_c,v 1.1 2009/06/19 12:19:00 simon Exp $
+
+Cast like it's done in httpd sources.
+
+--- fcgi_config.c.orig	Wed Jan 28 23:46:44 2009
++++ fcgi_config.c	Wed Jan 28 23:54:56 2009
+@@ -1204,7 +1204,7 @@ const char *fcgi_config_new_auth_server(cmd_parms * cm
+     if (compat && strcasecmp(compat, "-compat"))
+         return ap_psprintf(cmd->temp_pool, "%s: unknown option: \"%s\"", cmd->cmd->name, compat);
+ 
+-    switch((int)cmd->info) {
++    switch((int)(long)cmd->info) {
+         case FCGI_AUTH_TYPE_AUTHENTICATOR:
+             dir_config->authenticator = auth_server;
+             dir_config->authenticator_options |= (compat) ? FCGI_COMPAT : 0;
