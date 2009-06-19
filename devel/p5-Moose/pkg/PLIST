@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/05/07 08:15:20 simon Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/06/19 00:28:30 jim Exp $
 ${P5SITE}/Moose/
 ${P5SITE}/Moose.pm
 ${P5SITE}/Moose/Cookbook/
@@ -7,20 +7,19 @@ ${P5SITE}/Moose/Cookbook/Basics/
 ${P5SITE}/Moose/Cookbook/Basics/Recipe1.pod
 ${P5SITE}/Moose/Cookbook/Basics/Recipe10.pod
 ${P5SITE}/Moose/Cookbook/Basics/Recipe11.pod
-${P5SITE}/Moose/Cookbook/Basics/Recipe12.pod
 ${P5SITE}/Moose/Cookbook/Basics/Recipe2.pod
 ${P5SITE}/Moose/Cookbook/Basics/Recipe3.pod
 ${P5SITE}/Moose/Cookbook/Basics/Recipe4.pod
 ${P5SITE}/Moose/Cookbook/Basics/Recipe5.pod
 ${P5SITE}/Moose/Cookbook/Basics/Recipe6.pod
 ${P5SITE}/Moose/Cookbook/Basics/Recipe7.pod
+${P5SITE}/Moose/Cookbook/Basics/Recipe8.pod
 ${P5SITE}/Moose/Cookbook/Basics/Recipe9.pod
 ${P5SITE}/Moose/Cookbook/Extending/
 ${P5SITE}/Moose/Cookbook/Extending/Recipe1.pod
 ${P5SITE}/Moose/Cookbook/Extending/Recipe2.pod
 ${P5SITE}/Moose/Cookbook/Extending/Recipe3.pod
 ${P5SITE}/Moose/Cookbook/Extending/Recipe4.pod
-${P5SITE}/Moose/Cookbook/FAQ.pod
 ${P5SITE}/Moose/Cookbook/Meta/
 ${P5SITE}/Moose/Cookbook/Meta/Recipe1.pod
 ${P5SITE}/Moose/Cookbook/Meta/Recipe2.pod
@@ -37,7 +36,6 @@ ${P5SITE}/Moose/Cookbook/Snack/
 ${P5SITE}/Moose/Cookbook/Snack/Keywords.pod
 ${P5SITE}/Moose/Cookbook/Snack/Types.pod
 ${P5SITE}/Moose/Cookbook/Style.pod
-${P5SITE}/Moose/Cookbook/WTF.pod
 ${P5SITE}/Moose/Error/
 ${P5SITE}/Moose/Error/Confess.pm
 ${P5SITE}/Moose/Error/Croak.pm
@@ -54,11 +52,13 @@ ${P5SITE}/Moose/Manual/Construction.pod
 ${P5SITE}/Moose/Manual/Contributing.pod
 ${P5SITE}/Moose/Manual/Delegation.pod
 ${P5SITE}/Moose/Manual/Delta.pod
+${P5SITE}/Moose/Manual/FAQ.pod
 ${P5SITE}/Moose/Manual/MOP.pod
 ${P5SITE}/Moose/Manual/MethodModifiers.pod
 ${P5SITE}/Moose/Manual/MooseX.pod
 ${P5SITE}/Moose/Manual/Roles.pod
 ${P5SITE}/Moose/Manual/Types.pod
+${P5SITE}/Moose/Manual/Unsweetened.pod
 ${P5SITE}/Moose/Meta/
 ${P5SITE}/Moose/Meta/Attribute.pm
 ${P5SITE}/Moose/Meta/Class/
@@ -85,6 +85,7 @@ ${P5SITE}/Moose/Meta/Role/Application/ToRole.pm
 ${P5SITE}/Moose/Meta/Role/Composite.pm
 ${P5SITE}/Moose/Meta/Role/Method/
 ${P5SITE}/Moose/Meta/Role/Method.pm
+${P5SITE}/Moose/Meta/Role/Method/Conflicting.pm
 ${P5SITE}/Moose/Meta/Role/Method/Required.pm
 ${P5SITE}/Moose/Meta/TypeCoercion/
 ${P5SITE}/Moose/Meta/TypeCoercion.pm
@@ -116,19 +117,18 @@ ${P5SITE}/oose.pm
 @man man/man3p/Moose::Cookbook::Basics::Recipe1.3p
 @man man/man3p/Moose::Cookbook::Basics::Recipe10.3p
 @man man/man3p/Moose::Cookbook::Basics::Recipe11.3p
-@man man/man3p/Moose::Cookbook::Basics::Recipe12.3p
 @man man/man3p/Moose::Cookbook::Basics::Recipe2.3p
 @man man/man3p/Moose::Cookbook::Basics::Recipe3.3p
 @man man/man3p/Moose::Cookbook::Basics::Recipe4.3p
 @man man/man3p/Moose::Cookbook::Basics::Recipe5.3p
 @man man/man3p/Moose::Cookbook::Basics::Recipe6.3p
 @man man/man3p/Moose::Cookbook::Basics::Recipe7.3p
+@man man/man3p/Moose::Cookbook::Basics::Recipe8.3p
 @man man/man3p/Moose::Cookbook::Basics::Recipe9.3p
 @man man/man3p/Moose::Cookbook::Extending::Recipe1.3p
 @man man/man3p/Moose::Cookbook::Extending::Recipe2.3p
 @man man/man3p/Moose::Cookbook::Extending::Recipe3.3p
 @man man/man3p/Moose::Cookbook::Extending::Recipe4.3p
-@man man/man3p/Moose::Cookbook::FAQ.3p
 @man man/man3p/Moose::Cookbook::Meta::Recipe1.3p
 @man man/man3p/Moose::Cookbook::Meta::Recipe2.3p
 @man man/man3p/Moose::Cookbook::Meta::Recipe3.3p
@@ -142,7 +142,6 @@ ${P5SITE}/oose.pm
 @man man/man3p/Moose::Cookbook::Snack::Keywords.3p
 @man man/man3p/Moose::Cookbook::Snack::Types.3p
 @man man/man3p/Moose::Cookbook::Style.3p
-@man man/man3p/Moose::Cookbook::WTF.3p
 @man man/man3p/Moose::Error::Confess.3p
 @man man/man3p/Moose::Error::Croak.3p
 @man man/man3p/Moose::Error::Default.3p
@@ -157,11 +156,13 @@ ${P5SITE}/oose.pm
 @man man/man3p/Moose::Manual::Contributing.3p
 @man man/man3p/Moose::Manual::Delegation.3p
 @man man/man3p/Moose::Manual::Delta.3p
+@man man/man3p/Moose::Manual::FAQ.3p
 @man man/man3p/Moose::Manual::MOP.3p
 @man man/man3p/Moose::Manual::MethodModifiers.3p
 @man man/man3p/Moose::Manual::MooseX.3p
 @man man/man3p/Moose::Manual::Roles.3p
 @man man/man3p/Moose::Manual::Types.3p
+@man man/man3p/Moose::Manual::Unsweetened.3p
 @man man/man3p/Moose::Meta::Attribute.3p
 @man man/man3p/Moose::Meta::Class.3p
 @man man/man3p/Moose::Meta::Class::Immutable::Trait.3p
@@ -181,6 +182,7 @@ ${P5SITE}/oose.pm
 @man man/man3p/Moose::Meta::Role::Application::ToRole.3p
 @man man/man3p/Moose::Meta::Role::Composite.3p
 @man man/man3p/Moose::Meta::Role::Method.3p
+@man man/man3p/Moose::Meta::Role::Method::Conflicting.3p
 @man man/man3p/Moose::Meta::Role::Method::Required.3p
 @man man/man3p/Moose::Meta::TypeCoercion.3p
 @man man/man3p/Moose::Meta::TypeCoercion::Union.3p

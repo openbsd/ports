@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/05/07 08:15:20 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2009/06/19 00:28:30 jim Exp $
 
 COMMENT=	complete modern object system for perl 5
 
 MODULES=	cpan
-DISTNAME=	Moose-0.76
+DISTNAME=	Moose-0.81
 CATEGORIES=	devel
 
 # perl
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CPAN_AUTHOR=	DROLSKY
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:p5-Class-MOP->=0.83:devel/p5-Class-MOP \
+RUN_DEPENDS=	:p5-Class-MOP->=0.85:devel/p5-Class-MOP \
 		::devel/p5-List-MoreUtils \
 		::devel/p5-Sub-Exporter \
 		::devel/p5-Task-Weaken \
