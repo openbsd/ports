@@ -1,0 +1,68 @@
+$OpenBSD: patch-mupdf_Jamfile,v 1.1 2009/06/19 13:42:29 sthen Exp $
+--- mupdf/Jamfile.orig	Thu Jun 18 23:31:10 2009
++++ mupdf/Jamfile	Fri Jun 19 14:07:32 2009
+@@ -4,7 +4,7 @@
+ 
+ SubDir TOP mupdf ;
+ 
+-Main fontdump : fontdump.c ;
++Main fontres : fontres.c ;
+ 
+ Main cmapdump : cmapdump.c ;
+ LinkLibraries cmapdump : libfitz ;
+@@ -167,27 +167,27 @@ Library libcmaps : cmap_korean.c ;
+ 
+ SubDir TOP fonts ;
+ 
+-GenFile font_misc.c : fontdump
++GenFile font_misc.s : fontres
+     Dingbats.cff
+     StandardSymL.cff
+     URWChanceryL-MediItal.cff
+     ;
+ 
+-GenFile font_mono.c : fontdump
++GenFile font_mono.s : fontres
+     NimbusMonL-Regu.cff
+     NimbusMonL-ReguObli.cff
+     NimbusMonL-Bold.cff
+     NimbusMonL-BoldObli.cff
+     ;
+ 
+-GenFile font_serif.c : fontdump
++GenFile font_serif.s : fontres
+     NimbusRomNo9L-Regu.cff
+     NimbusRomNo9L-ReguItal.cff
+     NimbusRomNo9L-Medi.cff
+     NimbusRomNo9L-MediItal.cff
+     ;
+ 
+-GenFile font_sans.c : fontdump
++GenFile font_sans.s : fontres
+     NimbusSanL-Bold.cff
+     NimbusSanL-BoldItal.cff
+     NimbusSanL-Regu.cff
+@@ -195,17 +195,17 @@ GenFile font_sans.c : fontdump
+     ;
+ 
+ Library libfonts :
+-    font_misc.c
+-    font_mono.c
+-    font_serif.c
+-    font_sans.c
++    font_misc.s
++    font_mono.s
++    font_serif.s
++    font_sans.s
+     ;
+ 
+ if ! ( NOCJK in $(DEFINES) )
+ {
+     SubDir TOP fonts droid ;
+-    GenFile font_cjk.c : fontdump DroidSansFallback.ttf ;
+-    Library libfonts : font_cjk.c ;
++    GenFile font_cjk.s : fontres DroidSansFallback.ttf ;
++    Library libfonts : font_cjk.s ;
+ }
+ 
+ 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/19 00:51:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/19 13:42:29 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 DISTNAME =	fitz-0.0.20090616
-PKGNAME =	mupdf-0.0.20090616
+PKGNAME =	mupdf-0.0.20090616p0
 
 CATEGORIES =	textproc x11
 
@@ -46,16 +46,10 @@ JAMFLAGS = \
 	-sTHIRDPARTYINC="`freetype-config --cflags` -I${LOCALBASE}/include" \
 	-sTHIRDPARTYLIB="`freetype-config --libs` -L${LOCALBASE}/lib"
 
-# built-in CJK fonts and data files use way too much compiler
-# memory, even with -O0.
-.if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "sparc64" && \
-    ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "hppa")
-JAMFLAGS +=	-sDEFINES=NOCJK
-.else
-VMEM_WARNING =	Yes
-.endif
-
 SEPARATE_BUILD =	concurrent
+
+pre-configure:
+	cp ${FILESDIR}/fontres.c ${WRKSRC}/
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} jam ${JAMDEBUG} ${JAMFLAGS}
