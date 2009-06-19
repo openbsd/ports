@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/05 23:28:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/19 23:19:44 sthen Exp $
 @bin bin/znc
 bin/znc-buildmod
 bin/znc-config
@@ -24,6 +24,8 @@ include/znc/ZNCString.h
 include/znc/defines.h
 include/znc/main.h
 include/znc/znc.h
+lib/pkgconfig/
+lib/pkgconfig/znc.pc
 lib/znc/
 lib/znc/admin.so
 lib/znc/autoattach.so
@@ -68,11 +70,10 @@ share/znc/webadmin/skins/dark-clouds/ListUsers.tmpl
 share/znc/webadmin/skins/dark-clouds/Main.tmpl
 share/znc/webadmin/skins/dark-clouds/Settings.tmpl
 share/znc/webadmin/skins/dark-clouds/UserPage.tmpl
-share/znc/webadmin/skins/dark-clouds/css/
-share/znc/webadmin/skins/dark-clouds/css/main.css
-share/znc/webadmin/skins/dark-clouds/img/
-share/znc/webadmin/skins/dark-clouds/img/clouds-header.jpg
-share/znc/webadmin/skins/dark-clouds/img/favicon.ico
+share/znc/webadmin/skins/dark-clouds/data/
+share/znc/webadmin/skins/dark-clouds/data/clouds-header.jpg
+share/znc/webadmin/skins/dark-clouds/data/favicon.ico
+share/znc/webadmin/skins/dark-clouds/data/main.css
 share/znc/webadmin/skins/default/
 share/znc/webadmin/skins/default/Channel.tmpl
 share/znc/webadmin/skins/default/Error.tmpl
@@ -82,10 +83,9 @@ share/znc/webadmin/skins/default/ListUsers.tmpl
 share/znc/webadmin/skins/default/Main.tmpl
 share/znc/webadmin/skins/default/Settings.tmpl
 share/znc/webadmin/skins/default/UserPage.tmpl
-share/znc/webadmin/skins/default/css/
-share/znc/webadmin/skins/default/css/main.css
-share/znc/webadmin/skins/default/img/
-share/znc/webadmin/skins/default/img/favicon.ico
+share/znc/webadmin/skins/default/data/
+share/znc/webadmin/skins/default/data/favicon.ico
+share/znc/webadmin/skins/default/data/main.css
 share/znc/webadmin/skins/graphiX/
 share/znc/webadmin/skins/graphiX/Channel.tmpl
 share/znc/webadmin/skins/graphiX/Error.tmpl
@@ -95,12 +95,11 @@ share/znc/webadmin/skins/graphiX/ListUsers.tmpl
 share/znc/webadmin/skins/graphiX/Main.tmpl
 share/znc/webadmin/skins/graphiX/Settings.tmpl
 share/znc/webadmin/skins/graphiX/UserPage.tmpl
-share/znc/webadmin/skins/graphiX/css/
-share/znc/webadmin/skins/graphiX/css/main.css
-share/znc/webadmin/skins/graphiX/img/
-share/znc/webadmin/skins/graphiX/img/favicon.ico
-share/znc/webadmin/skins/graphiX/img/graphix_bg.jpg
-share/znc/webadmin/skins/graphiX/img/graphix_header.jpg
+share/znc/webadmin/skins/graphiX/data/
+share/znc/webadmin/skins/graphiX/data/favicon.ico
+share/znc/webadmin/skins/graphiX/data/graphix_bg.jpg
+share/znc/webadmin/skins/graphiX/data/graphix_header.jpg
+share/znc/webadmin/skins/graphiX/data/main.css
 share/znc/webadmin/skins/ice/
 share/znc/webadmin/skins/ice/Channel.tmpl
 share/znc/webadmin/skins/ice/Error.tmpl
@@ -110,9 +109,8 @@ share/znc/webadmin/skins/ice/ListUsers.tmpl
 share/znc/webadmin/skins/ice/Main.tmpl
 share/znc/webadmin/skins/ice/Settings.tmpl
 share/znc/webadmin/skins/ice/UserPage.tmpl
-share/znc/webadmin/skins/ice/css/
-share/znc/webadmin/skins/ice/css/main.css
-share/znc/webadmin/skins/ice/img/
-share/znc/webadmin/skins/ice/img/favicon.ico
-share/znc/webadmin/skins/ice/img/linkbg.jpg
-share/znc/webadmin/skins/ice/img/pagebg.gif
+share/znc/webadmin/skins/ice/data/
+share/znc/webadmin/skins/ice/data/favicon.ico
+share/znc/webadmin/skins/ice/data/linkbg.jpg
+share/znc/webadmin/skins/ice/data/main.css
+share/znc/webadmin/skins/ice/data/pagebg.gif
