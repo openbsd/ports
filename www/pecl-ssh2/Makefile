@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/27 02:35:33 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/19 12:37:23 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	php bindings for the libssh2 library
 
 DISTNAME=	ssh2-0.11.0
 EXTRACT_SUFX=	.tgz
-PKGNAME=	pecl-${DISTNAME}
+PKGNAME=	pecl-${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://pecl.php.net/package/ssh2/
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	:pear-*:www/pear \
 		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	ssh2::security/libssh2
 RUN_DEPENDS=	:php5-core-*:www/php5/core
-WANTLIB=	crypto z
+WANTLIB=	crypto ssl z
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
