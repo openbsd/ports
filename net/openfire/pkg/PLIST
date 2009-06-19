@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/19 01:09:36 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/19 02:02:58 jolan Exp $
 @newgroup _openfire:632
-@newuser _openfire:632:_openfire:daemon:openfire user:/var/empty:/sbin/nologin
+@newuser _openfire:632:_openfire:daemon:openfire user:/var/empty:/bin/sh
 @mode 775
 @owner root
 @group _openfire

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/19 01:09:36 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/19 02:02:58 jolan Exp $
 
 COMMENT=	XMPP real time collaboration server
 DISTNAME=	openfire_src_3_6_4
@@ -26,15 +26,12 @@ WRKDIST=	${WRKDIR}/openfire_src
 OPENFIREDEST=	${PREFIX}/openfire
 DATADIRS=	lib logs plugins resources
 
-SUBST_VARS=	PREFIX
-
 post-configure:
 	@sed -e "s|__LOCALBASE__|${LOCALBASE}|g ; s|__PREFIX__|${PREFIX}|g" ${FILESDIR}/openfirectl.template > ${WRKBUILD}/openfirectl
 
 do-build:
 	cd ${WRKSRC}/build && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant
 
-# BAHLEET non-OpenBSD shitz0rz
 pre-install:
 	rm -rf ${WRKSRC}/target/openfire/resources/nativeAuth
 	mv ${WRKSRC}/target/openfire/resources/security ${WRKBUILD}
