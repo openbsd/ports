@@ -1,0 +1,12 @@
+$OpenBSD: patch-aclocal_m4,v 1.1 2009/06/19 17:50:47 naddy Exp $
+--- aclocal.m4.orig	Fri Jun 19 19:38:46 2009
++++ aclocal.m4	Fri Jun 19 19:39:19 2009
+@@ -224,7 +224,7 @@ return (int) gettext ("")]ifelse([$2], need-ngettext, 
+ 	     AC_CACHE_CHECK([for GNU gettext in libintl],
+ 	       gt_cv_func_gnugettext_libintl,
+ 	       [gt_save_LIBS="$LIBS"
+-		LIBS="$LIBS -lintl"
++		LIBS="$LIBS -lintl $LIBICONV"
+ 		AC_TRY_LINK([#include <libintl.h>
+ extern int _nl_msg_cat_cntr;],
+ 		  [bindtextdomain ("", "");

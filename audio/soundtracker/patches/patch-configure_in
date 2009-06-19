@@ -1,3 +1,4 @@
+$OpenBSD: patch-configure_in,v 1.4 2009/06/19 17:50:47 naddy Exp $
 --- configure.in.orig	Mon May 20 18:47:38 2002
 +++ configure.in	Thu Aug 21 15:54:10 2008
 @@ -61,10 +61,19 @@ dnl --------------------------------------------------
@@ -7,7 +8,7 @@
 +case `uname` in
 +  OpenBSD)
 +    gtk_threads=""
-+    LIBS="$LIBS -pthread -lintl"
++    LIBS="$LIBS -pthread"
 +    ;;
 +  *)
 +    gtk_threads="gthreads"

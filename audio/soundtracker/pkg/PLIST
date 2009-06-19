@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/08/21 14:11:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/06/19 17:50:47 naddy Exp $
 @pkgpath audio/soundtracker,gnome
 @pkgpath audio/soundtracker,gnome,esd
 @bin bin/soundtracker
-@comment lib/charset.alias
 share/doc/soundtracker/
 share/doc/soundtracker/FAQ
 share/doc/soundtracker/NEWS
@@ -15,7 +14,6 @@ share/locale/fr/LC_MESSAGES/soundtracker.mo
 share/locale/gl/LC_MESSAGES/soundtracker.mo
 share/locale/it/LC_MESSAGES/soundtracker.mo
 share/locale/ja/LC_MESSAGES/soundtracker.mo
-share/locale/locale.alias
 share/locale/pl/LC_MESSAGES/soundtracker.mo
 share/locale/ru/LC_MESSAGES/soundtracker.mo
 share/locale/sl/LC_MESSAGES/soundtracker.mo
