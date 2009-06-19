@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_java_org_jivesoftware_openfire_XMPPServer_java,v 1.1.1.1 2009/06/19 01:09:36 jolan Exp $
+--- src/java/org/jivesoftware/openfire/XMPPServer.java.orig	Fri May  1 16:12:41 2009
++++ src/java/org/jivesoftware/openfire/XMPPServer.java	Thu Jun 18 13:16:47 2009
+@@ -338,6 +338,7 @@ public class XMPPServer {
+         if ("true".equals(JiveGlobals.getXMLProperty("setup"))) {
+             // Set the new server domain assigned during the setup process
+             name = JiveGlobals.getProperty("xmpp.domain").toLowerCase();
++	    xmppServerInfo.setXMPPDomain(name);
+ 
+             // Update certificates (if required)
+             try {

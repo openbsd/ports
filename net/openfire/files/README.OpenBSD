@@ -1,0 +1,7 @@
+Using openfire in an OpenBSD environment
+
+- if you intend on using postgresql or mysql, see database.html for instructions
+  on initializing the database
+- sudo /usr/local/bin/openfirectl start
+- lynx http://localhost:9090/ and go through the setup process
+- login and try adding users, plugins, transports, etc
