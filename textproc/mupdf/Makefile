@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/02 22:15:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/19 00:51:49 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-DISTNAME =	fitz-0.0.20090601
-PKGNAME =	mupdf-0.0.20090601
+DISTNAME =	fitz-0.0.20090616
+PKGNAME =	mupdf-0.0.20090616
 
 CATEGORIES =	textproc x11
 
@@ -11,8 +11,9 @@ HOMEPAGE =	http://ccxvii.net/fitz/
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
-# Code: GPLv2 but XXX missing copyright information and license headers
-# Fonts: Adobe/Apache license
+# Code: GPLv3 but needs some copyright notices adding.
+# cmaps: Adobe (redist ok, see headers in files)
+# droid font: Apache license
 PERMIT_PACKAGE_CDROM =	not yet
 PERMIT_PACKAGE_FTP =	not yet
 PERMIT_DISTFILES_CDROM =not yet
@@ -62,7 +63,7 @@ do-build:
 do-install:
 	${INSTALL_MAN} ${FILESDIR}/mupdf.1 ${PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKBUILD}/mupdf ${PREFIX}/bin
-.for x in cmapdump fontdump pdfclean pdfdraw pdfextract pdfinfo pdfshow
+.for x in pdfclean pdfdraw pdfextract pdfinfo pdfshow
 	${INSTALL_PROGRAM} ${WRKBUILD}/$x ${PREFIX}/bin/mu_$x
 .endfor
 
