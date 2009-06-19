@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/19 00:41:14 jim Exp $
+${P5SITE}/MooseX/
+${P5SITE}/MooseX/Types/
+${P5SITE}/MooseX/Types.pm
+${P5SITE}/MooseX/Types/Base.pm
+${P5SITE}/MooseX/Types/CheckedUtilExports.pm
+${P5SITE}/MooseX/Types/Combine.pm
+${P5SITE}/MooseX/Types/Moose.pm
+${P5SITE}/MooseX/Types/TypeDecorator.pm
+${P5SITE}/MooseX/Types/UndefinedType.pm
+${P5SITE}/MooseX/Types/Util.pm
+${P5SITE}/MooseX/Types/Wrapper.pm
+@man man/man3p/MooseX::Types.3p
+@man man/man3p/MooseX::Types::Base.3p
+@man man/man3p/MooseX::Types::CheckedUtilExports.3p
+@man man/man3p/MooseX::Types::Combine.3p
+@man man/man3p/MooseX::Types::Moose.3p
+@man man/man3p/MooseX::Types::TypeDecorator.3p
+@man man/man3p/MooseX::Types::UndefinedType.3p
+@man man/man3p/MooseX::Types::Util.3p
+@man man/man3p/MooseX::Types::Wrapper.3p
