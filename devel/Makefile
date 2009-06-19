@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.712 2009/06/19 12:49:41 simon Exp $
+# $OpenBSD: Makefile,v 1.713 2009/06/19 18:33:49 jim Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -587,6 +587,7 @@
      SUBDIR += p5-Test-WWW-Mechanize
      SUBDIR += p5-Test-WWW-Mechanize-Catalyst
      SUBDIR += p5-Test-Warn
+     SUBDIR += p5-Test-Weaken
      SUBDIR += p5-Test-YAML-Valid
      SUBDIR += p5-Test-use-ok
      SUBDIR += p5-Text-FixEOL
