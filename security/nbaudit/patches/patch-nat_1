@@ -1,6 +1,6 @@
-$OpenBSD: patch-nat_1,v 1.1 2002/01/24 21:30:54 jsyn Exp $
---- nat.1.orig	Mon Feb 17 04:18:04 1997
-+++ nat.1	Tue Oct  9 01:25:57 2001
+$OpenBSD: patch-nat_1,v 1.2 2009/06/19 10:19:27 sthen Exp $
+--- nat.1.orig	Mon Feb 17 03:18:04 1997
++++ nat.1	Fri Jun 19 11:17:09 2009
 @@ -1,12 +1,12 @@
 -.TH NAT 1
 +.TH NBAUDIT 1
@@ -19,7 +19,7 @@ $OpenBSD: patch-nat_1,v 1.1 2002/01/24 21:30:54 jsyn Exp $
  all information availible from the remote server, and attempt to access any
  services provided by the server.
  .SH OPTIONS
-@@ -54,10 +54,10 @@ tried for all usernames.  Keep this in m
+@@ -54,10 +54,10 @@ tried for all usernames.  Keep this in mind when using
  and usernames, as the time required increases exponentially with the size of
  these lists.
  .SH SUPPORTED PLATFORMS
