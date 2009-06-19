@@ -1,0 +1,24 @@
+$OpenBSD: patch-includes_h,v 1.1 2009/06/19 10:31:20 sthen Exp $
+
+fix LP64 issues.
+
+--- includes.h.orig	Fri Jun 19 11:08:47 2009
++++ includes.h	Fri Jun 19 11:08:50 2009
+@@ -461,6 +461,8 @@ char *mktemp(char *); /* No standard include */
+ #define SIGNAL_CAST (void (*)())
+ #define USE_DIRECT
+ #define REPLACE_INNETGR
++#define HAVE_BZERO
++#define HAVE_MEMMOVE
+ #endif 
+ 
+ 
+@@ -1121,3 +1123,8 @@ void *memcpy_wrapped(void *d,void *s,int l,char *fname
+ #endif
+ 
+ #endif
++
++
++char * Get_Hostbyaddr (struct in_addr ip);
++struct ipstr *parse_ip(char *);
++

@@ -1,0 +1,14 @@
+$OpenBSD: patch-nat_c,v 1.1 2009/06/19 10:31:20 sthen Exp $
+
+fix LP64 issues.
+
+--- nat.c.orig	Fri Jun 19 11:08:56 2009
++++ nat.c	Fri Jun 19 11:09:02 2009
+@@ -13,6 +13,7 @@
+ #include <varargs.h>
+ #endif
+ #include "parse_ip.h"
++#include "includes.h"
+ 
+ extern char *optarg;
+ extern int optind;

@@ -1,0 +1,14 @@
+$OpenBSD: patch-nmb_c,v 1.1 2009/06/19 10:31:20 sthen Exp $
+
+newer compilers won't like this
+
+--- nmb.c.orig	Fri Jun 19 11:18:31 2009
++++ nmb.c	Fri Jun 19 11:18:39 2009
+@@ -40,7 +40,6 @@ static fstring tbuf;
+ #endif /* SCANNER */
+ 
+ int Debug1(char *, ...);
+-int Debug1();
+ 
+ int num_good_sends=0;
+ int  num_good_receives=0;
