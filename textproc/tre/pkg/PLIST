@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/29 20:14:29 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/20 20:06:55 kili Exp $
 @conflict agrep-*
 @conflict glimpse-*
-bin/agrep
+@bin bin/agrep
 include/tre/
 include/tre/regex.h
 include/tre/tre-config.h

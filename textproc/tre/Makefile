@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:59:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/20 20:06:55 kili Exp $
 
 COMMENT=	lightweight regexp matching library with additional features
 
-DISTNAME=		tre-0.7.5
+DISTNAME=		tre-0.7.6
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		textproc
 
@@ -12,7 +12,7 @@ MASTER_SITES=		${HOMEPAGE}
 
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
-# LGPL
+# 2-clause BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
