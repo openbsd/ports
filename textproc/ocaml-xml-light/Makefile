@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/04/03 21:30:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2009/06/20 22:05:11 avsm Exp $
 
 COMMENT=	simple Objective Caml bindings for XML
 CATEGORIES=	textproc
 
 V=		2.2
 DISTNAME=	xml-light-${V}
-PKGNAME=	ocaml-${DISTNAME}p2
+PKGNAME=	ocaml-${DISTNAME}p3
 EXTRACT_SUFX=	.zip
 MASTER_SITES=	http://tech.motion-twin.com/zip/
 

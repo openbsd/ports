@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/03 21:30:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2009/06/20 22:05:11 avsm Exp $
 
 COMMENT=	cryptographic framework for the Objective-ML language
 CATEGORIES=	security
 
 DISTNAME=	cryptokit-1.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

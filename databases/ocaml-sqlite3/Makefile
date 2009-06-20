@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2009/06/17 01:20:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2009/06/20 22:05:11 avsm Exp $
 
 COMMENT=	Objective Caml bindings for SQLite3
 CATEGORIES=	databases
 
 V=		1.5.0
 DISTNAME=	release-${V}
-PKGNAME=	ocaml-sqlite3-${V}p0
+PKGNAME=	ocaml-sqlite3-${V}p1
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	http://hg.ocaml.info/release/ocaml-sqlite3/archive/
 WRKDIST=	${WRKDIR}/ocaml-sqlite3-release-${V}
