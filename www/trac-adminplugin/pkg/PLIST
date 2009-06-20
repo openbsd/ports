@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/15 03:07:07 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/20 13:38:16 sthen Exp $
+@conflict trac->=0.11
 lib/python${MODPY_VERSION}/site-packages/TracWebAdmin-0.1.2dev_r5911-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/TracWebAdmin-0.1.2dev_r5911-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/TracWebAdmin-0.1.2dev_r5911-py${MODPY_VERSION}.egg-info/SOURCES.txt
