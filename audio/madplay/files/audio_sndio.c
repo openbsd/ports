@@ -1,4 +1,4 @@
-/*	$OpenBSD: audio_sndio.c,v 1.1 2009/03/28 16:26:46 martynas Exp $	*/
+/*	$OpenBSD: audio_sndio.c,v 1.2 2009/06/20 14:56:18 martynas Exp $	*/
 
 /*
  * Copyright (c) 2009 Martynas Venckus <martynas@openbsd.org>
@@ -28,6 +28,7 @@
 
 static audio_pcmfunc_t *audio_pcm;
 static struct sio_hdl *hdl;
+static int sio_started;
 
 static int
 init(struct audio_init *init)
@@ -61,12 +62,19 @@ config(struct audio_config *config)
 	par.rate = config->speed;
 	par.sig = (par.bits == 8) ? 0 : 1;
 
+	if (sio_started) {
+		sio_stop(hdl);
+		sio_started = 0;
+	}
+
 	if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par) ||
 		!sio_start(hdl)) {
 		audio_error = ":sio_setpar";
 		sio_close(hdl);
 		return (-1);
 	}
+
+	sio_started = 1;
 
 	switch(par.bits) {
 	case 8:
