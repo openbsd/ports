@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.40 2009/06/11 18:26:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2009/06/20 15:13:50 ajacoutot Exp $
 
 COMMENT-main=		GNOME Structured File library
 COMMENT-gnome=		GNOME specific extensions to libgsf
 
 GNOME_PROJECT=		libgsf
-GNOME_VERSION=		1.14.14
+GNOME_VERSION=		1.14.15
 
-PKGNAME-main=		${DISTNAME}p2
-PKGNAME-gnome=		libgsf-gnome-${VERSION}p3
+PKGNAME-main=		${DISTNAME}
+PKGNAME-gnome=		libgsf-gnome-${VERSION}
 
 CATEGORIES=		devel
 
