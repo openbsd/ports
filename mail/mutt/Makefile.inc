@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.31 2009/06/16 09:37:19 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.32 2009/06/20 10:20:09 sthen Exp $
 
 CATEGORIES=	mail
 
@@ -42,6 +42,10 @@ CONFIGURE_ARGS+=--enable-external_dotlock \
 		--with-gss \
 		--with-ssl
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/mutt"
+
+.if defined(DEBUG)
+CONFIGURE_ARGS+=--enable-debug
+.endif
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
