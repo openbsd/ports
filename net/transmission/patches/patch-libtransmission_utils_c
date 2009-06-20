@@ -1,7 +1,7 @@
-$OpenBSD: patch-libtransmission_utils_c,v 1.4 2009/05/13 15:10:42 naddy Exp $
---- libtransmission/utils.c.orig	Tue May 12 02:32:26 2009
-+++ libtransmission/utils.c	Wed May 13 13:30:32 2009
-@@ -1541,7 +1541,7 @@ printf_double_without_rounding( char * buf, int buflen
+$OpenBSD: patch-libtransmission_utils_c,v 1.5 2009/06/20 13:07:22 naddy Exp $
+--- libtransmission/utils.c.orig	Wed Jun 17 02:01:44 2009
++++ libtransmission/utils.c	Wed Jun 17 13:35:20 2009
+@@ -1330,7 +1330,7 @@ printf_double_without_rounding( char * buf, int buflen
      char * pch;
      char tmp[128];
      int len;
@@ -10,7 +10,7 @@ $OpenBSD: patch-libtransmission_utils_c,v 1.4 2009/05/13 15:10:42 naddy Exp $
      pch = tmp;
      while( isdigit( *pch ) ) ++pch; /* walk to the decimal point */
      ++pch; /* walk over the decimal point */
-@@ -1563,6 +1563,6 @@ tr_strratio( char * buf, size_t buflen, double ratio, 
+@@ -1352,7 +1352,7 @@ tr_strratio( char * buf, size_t buflen, double ratio, 
      else if( ratio < 100.0 )
          printf_double_without_rounding( buf, buflen, ratio, 1 );
      else
@@ -18,3 +18,4 @@ $OpenBSD: patch-libtransmission_utils_c,v 1.4 2009/05/13 15:10:42 naddy Exp $
 +        tr_snprintf( buf, buflen, "%.0f", ratio );
      return buf;
  }
+ 

@@ -1,18 +1,18 @@
-$OpenBSD: patch-configure,v 1.13 2009/05/10 19:31:44 naddy Exp $
---- configure.orig	Tue May  5 02:41:18 2009
-+++ configure	Thu May  7 19:40:39 2009
-@@ -20129,8 +20129,8 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+$OpenBSD: patch-configure,v 1.14 2009/06/20 13:07:22 naddy Exp $
+--- configure.orig	Wed Jun 17 02:03:56 2009
++++ configure	Wed Jun 17 13:35:19 2009
+@@ -11259,8 +11259,8 @@ CC="$lt_save_CC"
  if test 0 = "0"; then
    supported_build=yes
    if test "x$GCC" = "xyes" ; then
--    CFLAGS="$CFLAGS -g -O3 -funroll-loops "
--    CXXFLAGS="$CXXFLAGS -g -O3 -funroll-loops "
-+    : CFLAGS="$CFLAGS -g -O3 -funroll-loops "
-+    : CXXFLAGS="$CXXFLAGS -g -O3 -funroll-loops "
+-    CFLAGS="$CFLAGS -g -O3 "
+-    CXXFLAGS="$CXXFLAGS -g -O3 "
++    : CFLAGS="$CFLAGS -g -O3 "
++    : CXXFLAGS="$CXXFLAGS -g -O3 "
    fi
  
  cat >>confdefs.h <<\_ACEOF
-@@ -21526,7 +21526,7 @@ esac
+@@ -16306,7 +16306,7 @@ esac
  
  if test "x$GCC" = "xyes" ; then
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure,v 1.13 2009/05/10 19:31:44 naddy Exp $
  
          { $as_echo "$as_me:$LINENO: checking gcc version" >&5
  $as_echo_n "checking gcc version... " >&6; }
-@@ -21538,7 +21538,7 @@ $as_echo_n "checking gcc version... " >&6; }
+@@ -16318,7 +16318,7 @@ $as_echo_n "checking gcc version... " >&6; }
      { $as_echo "$as_me:$LINENO: result: $GCC_VERSION" >&5
  $as_echo "$GCC_VERSION" >&6; }
      if test $GCC_VERSION_NUM -ge 304; then

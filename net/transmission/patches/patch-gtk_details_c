@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_details_c,v 1.8 2009/05/10 19:31:44 naddy Exp $
---- gtk/details.c.orig	Tue May  5 02:40:11 2009
-+++ gtk/details.c	Thu May  7 19:40:40 2009
-@@ -906,7 +906,7 @@ refreshInfo( struct DetailsImpl * di, tr_torrent ** to
+$OpenBSD: patch-gtk_details_c,v 1.9 2009/06/20 13:07:22 naddy Exp $
+--- gtk/details.c.orig	Wed Jun 17 02:01:45 2009
++++ gtk/details.c	Wed Jun 17 13:35:20 2009
+@@ -910,7 +910,7 @@ refreshInfo( struct DetailsImpl * di, tr_torrent ** to
          for( i=0; i<n; ++i )
              sum += infos[i]->pieceCount;
          g_snprintf( buf, sizeof( buf ),
@@ -10,7 +10,7 @@ $OpenBSD: patch-gtk_details_c,v 1.8 2009/05/10 19:31:44 naddy Exp $
          for( i=1; i<n; ++i )
              if( baseline != (int)infos[i]->pieceSize )
                  break;
-@@ -1453,11 +1453,11 @@ refreshPeers( struct DetailsImpl * di, tr_torrent ** t
+@@ -1462,11 +1462,11 @@ refreshPeers( struct DetailsImpl * di, tr_torrent ** t
              leechers = s->leechers;
              completed += s->timesCompleted;
          }
@@ -25,7 +25,7 @@ $OpenBSD: patch-gtk_details_c,v 1.8 2009/05/10 19:31:44 naddy Exp $
          gtk_label_set_text( GTK_LABEL( di->completed_lb ), buf );
      }
  
-@@ -2058,7 +2058,7 @@ torrent_inspector_set_torrents( GtkWidget * w, GSList 
+@@ -2073,7 +2073,7 @@ torrent_inspector_set_torrents( GtkWidget * w, GSList 
     {
          file_list_clear( di->file_list );
          tracker_list_clear( di->tracker_list );
