@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/01 16:11:47 merdely Exp $
-lib/python${MODPY_VERSION}/site-packages/LdapPlugin-0.5.1dev_r1611-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/LdapPlugin-0.5.1dev_r1611-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/LdapPlugin-0.5.1dev_r1611-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/LdapPlugin-0.5.1dev_r1611-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/LdapPlugin-0.5.1dev_r1611-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/LdapPlugin-0.5.1dev_r1611-py${MODPY_VERSION}.egg-info/top_level.txt
+@comment $OpenBSD: PLIST,v 1.2 2009/06/20 13:41:43 sthen Exp $
+@conflict trac-<0.11
+lib/python${MODPY_VERSION}/site-packages/LdapPlugin-${MODPY_EGG_VERSION}dev-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/LdapPlugin-${MODPY_EGG_VERSION}dev-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/LdapPlugin-${MODPY_EGG_VERSION}dev-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/LdapPlugin-${MODPY_EGG_VERSION}dev-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/LdapPlugin-${MODPY_EGG_VERSION}dev-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/LdapPlugin-${MODPY_EGG_VERSION}dev-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/LdapPlugin-${MODPY_EGG_VERSION}dev-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ldapplugin/
 lib/python${MODPY_VERSION}/site-packages/ldapplugin/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ldapplugin/__init__.pyc
