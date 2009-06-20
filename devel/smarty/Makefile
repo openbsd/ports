@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/05/27 13:50:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2009/06/20 14:31:56 benoit Exp $
 
 COMMENT-main =	template engine for PHP
 COMMENT-docs =	documentation for Smarty
 
-VERSION =	2.6.25
+VERSION =	2.6.26
 DISTNAME =	Smarty-${VERSION}
 PKGNAME-main =	smarty-${VERSION}
 DISTNAME-docs =	Smarty-2.6.14-docs
