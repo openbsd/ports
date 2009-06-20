@@ -6,8 +6,7 @@ Here, "</path/to/projectenv>" is the location on your disk where you
 want to place the project environment.
 
 "</path/to/projectenv/conf/trac.ini>" is the configuration file of your
-project environment which allows to setup the name of the project, the
-location of the enscript binary, etc.
+project environment which allows to setup the name of the project, etc.
 
 To get started with Trac, you can use the built-in webserver, by running:
    tracd -p 8085 </path/to/projectenv>
@@ -16,13 +15,6 @@ Now you can open up a web brower and go to http://localhost:8085/. You
 should see a single link for the project you just created. If you follow
 the link, you should see trac in action.
 
-You can find the Trac Installation Guide here:
+You can find the Trac Installation and Upgrade Guides here:
   http://projects.edgewall.com/trac/wiki/TracInstall
-
-If updating from trac-0.10.4p1 or older, you must update trac's 
-database from sqlite2 to sqlite3. You do this by going to the 
-db-directory of trac and running the following commands:
-
-mv trac.db trac.db.old
-${LOCALBASE}/bin/sqlite trac.db.old .dump | ${LOCALBASE}/bin/sqlite3 trac.db
-
+  http://projects.edgewall.com/trac/wiki/TracUpgrade
