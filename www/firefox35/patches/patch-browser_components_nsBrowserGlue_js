@@ -1,0 +1,94 @@
+$OpenBSD: patch-browser_components_nsBrowserGlue_js,v 1.1.1.1 2009/06/21 01:31:24 martynas Exp $
+--- browser/components/nsBrowserGlue.js.orig	Wed Jun 17 07:21:40 2009
++++ browser/components/nsBrowserGlue.js	Sat Jun 20 22:10:18 2009
+@@ -253,10 +253,6 @@ BrowserGlue.prototype = {
+   // Browser startup complete. All initial windows have opened.
+   _onBrowserStartup: function()
+   {
+-    // Show about:rights notification, if needed.
+-    if (this._shouldShowRights())
+-      this._showRightsNotification();
+-
+     // If new add-ons were installed during startup open the add-ons manager.
+     if (this._prefs.prefHasUserValue(PREF_EM_NEW_ADDONS_LIST)) {
+       var args = Cc["@mozilla.org/supports-array;1"].
+@@ -402,79 +398,6 @@ BrowserGlue.prototype = {
+       }
+       break;
+     }
+-  },
+-
+-  /*
+-   * _shouldShowRights - Determines if the user should be shown the
+-   * about:rights notification. The notification should *not* be shown if
+-   * we've already shown the current version, or if the override pref says to
+-   * never show it. The notification *should* be shown if it's never been seen
+-   * before, if a newer version is available, or if the override pref says to
+-   * always show it.
+-   */
+-  _shouldShowRights : function () {
+-    // Look for an unconditional override pref. If set, do what it says.
+-    // (true --> never show, false --> always show)
+-    try {
+-      return !this._prefs.getBoolPref("browser.rights.override");
+-    } catch (e) { }
+-    // Ditto, for the legacy EULA pref.
+-    try {
+-      return !this._prefs.getBoolPref("browser.EULA.override");
+-    } catch (e) { }
+-
+-#ifndef OFFICIAL_BUILD
+-    // Non-official builds shouldn't shouldn't show the notification.
+-    return false;
+-#endif
+-
+-    // Look to see if the user has seen the current version or not.
+-    var currentVersion = this._prefs.getIntPref("browser.rights.version");
+-    try {
+-      return !this._prefs.getBoolPref("browser.rights." + currentVersion + ".shown");
+-    } catch (e) { }
+-
+-    // Legacy: If the user accepted a EULA, we won't annoy them with the
+-    // equivalent about:rights page until the version changes.
+-    try {
+-      return !this._prefs.getBoolPref("browser.EULA." + currentVersion + ".accepted");
+-    } catch (e) { }
+-
+-    // We haven't shown the notification before, so do so now.
+-    return true;
+-  },
+-
+-  _showRightsNotification : function () {
+-    // Stick the notification onto the selected tab of the active browser window.
+-    var win = this.getMostRecentBrowserWindow();
+-    var browser = win.gBrowser; // for closure in notification bar callback
+-    var notifyBox = browser.getNotificationBox();
+-
+-    var brandBundle  = this._bundleService.createBundle("chrome://branding/locale/brand.properties");
+-    var rightsBundle = this._bundleService.createBundle("chrome://browser/locale/aboutRights.properties");
+-
+-    var buttonLabel      = rightsBundle.GetStringFromName("buttonLabel");
+-    var buttonAccessKey  = rightsBundle.GetStringFromName("buttonAccessKey");
+-    var productName      = brandBundle.GetStringFromName("brandFullName");
+-    var notifyRightsText = rightsBundle.formatStringFromName("notifyRightsText", [productName], 1);
+-    
+-    var buttons = [
+-                    {
+-                      label:     buttonLabel,
+-                      accessKey: buttonAccessKey,
+-                      popup:     null,
+-                      callback: function(aNotificationBar, aButton) {
+-                        browser.selectedTab = browser.addTab("about:rights");
+-                      }
+-                    }
+-                  ];
+-
+-    // Set pref to indicate we've shown the notification.
+-    var currentVersion = this._prefs.getIntPref("browser.rights.version");
+-    this._prefs.setBoolPref("browser.rights." + currentVersion + ".shown", true);
+-
+-    var box = notifyBox.appendNotification(notifyRightsText, "about-rights", null, notifyBox.PRIORITY_INFO_LOW, buttons);
+-    box.persistence = 3; // arbitrary number, just so bar sticks around for a bit
+   },
+ 
+   // returns the (cached) Sanitizer constructor

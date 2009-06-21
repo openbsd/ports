@@ -1,0 +1,12 @@
+$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.1.1.1 2009/06/21 01:31:26 martynas Exp $
+--- security/coreconf/OpenBSD.mk.orig	Thu Nov 22 06:39:56 2007
++++ security/coreconf/OpenBSD.mk	Sun Apr 13 18:35:49 2008
+@@ -56,7 +56,7 @@ OS_LIBS			+= -pthread
+ DSO_LDOPTS		+= -pthread
+ endif
+ 
+-DLL_SUFFIX		= so.1.0
++DLL_SUFFIX		= so.${SO_VERSION}
+ 
+ OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -Wno-switch -pipe -DOPENBSD
+ 

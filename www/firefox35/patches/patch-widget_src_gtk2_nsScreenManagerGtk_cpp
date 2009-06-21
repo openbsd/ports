@@ -1,0 +1,12 @@
+$OpenBSD: patch-widget_src_gtk2_nsScreenManagerGtk_cpp,v 1.1.1.1 2009/06/21 01:31:26 martynas Exp $
+--- widget/src/gtk2/nsScreenManagerGtk.cpp.orig	Wed Jun 17 07:22:21 2009
++++ widget/src/gtk2/nsScreenManagerGtk.cpp	Sat Jun 20 22:09:11 2009
+@@ -174,7 +174,7 @@ nsScreenManagerGtk :: Init()
+   int numScreens;
+ 
+   if (!mXineramalib) {
+-    mXineramalib = PR_LoadLibrary("libXinerama.so.1");
++    mXineramalib = PR_LoadLibrary("libXinerama.so");
+     if (!mXineramalib) {
+       mXineramalib = SCREEN_MANAGER_LIBRARY_LOAD_FAILED;
+     }

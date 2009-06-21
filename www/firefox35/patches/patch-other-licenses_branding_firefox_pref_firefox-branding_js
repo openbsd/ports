@@ -1,0 +1,11 @@
+$OpenBSD: patch-other-licenses_branding_firefox_pref_firefox-branding_js,v 1.1.1.1 2009/06/21 01:31:26 martynas Exp $
+--- other-licenses/branding/firefox/pref/firefox-branding.js.orig	Wed Jun 17 07:22:06 2009
++++ other-licenses/branding/firefox/pref/firefox-branding.js	Sat Jun 20 22:16:30 2009
+@@ -1,5 +1,5 @@
+-pref("startup.homepage_override_url","http://%LOCALE%.www.mozilla.com/%LOCALE%/%APP%/%VERSION%/whatsnew/");
+-pref("startup.homepage_welcome_url","http://%LOCALE%.www.mozilla.com/%LOCALE%/%APP%/%VERSION%/firstrun/");
++pref("startup.homepage_override_url","about:blank");
++pref("startup.homepage_welcome_url","about:blank");
+ // Interval: Time between checks for a new version (in seconds)
+ // nightly=6 hours, official=24 hours
+ pref("app.update.interval", 86400);

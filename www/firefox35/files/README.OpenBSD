@@ -1,0 +1,64 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2009/06/21 01:31:23 martynas Exp $
+
+If you encounter strange problems relating to bookmarks, downloads,
+window placement, toolbars, history, or other settings, it is
+recommended that you create a new profile and attempt to
+reproduce the problem before filing bugs.  To create a new profile,
+start Firefox with the -ProfileManager switch, e.g.
+firefox -ProfileManager, and click "Create Profile".
+
+If Firefox doesn't start at all, try starting it with -safe-mode
+switch, which disables extensions and themes for your session.
+
+To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
+
+Using mailto: links
+
+To enable mailto: links in Firefox to open in your mail program,
+you may have to set a mailto protocol handler. Type "about:config"
+in Firefox's URL text field.  Type "mailto" in the filter.  If there
+is a string called "network.protocol-handler.app.mailto", its value
+names the application for mailto URLs. If present, right click,
+choose Modify, and enter the path to your mail program, e.g.,
+"!!LOCALBASE!!/bin/thunderbird" or "!!LOCALBASE!!/bin/kmail" (other
+programs may work, but these two have been tested).  If absent,
+right click, choose New String. Set the name to
+"network.protocol-handler.app.mailto" and the value to the path to
+your mailer.
+
+Plugins
+
+Firefox looks for plugins in ~/.mozilla/plugins,
+!!PREFIX!!/lib/mozilla-plugins, and !!PREFIX!!/mozilla-firefox/plugins.
+If the environment variable MOZ_PLUGIN_PATH is specified, this
+location will be overridden.
+
+Using Java Applets
+
+To make Applets work, you must symlink (not copy) the file
+libjavaplugin_oji.so into one of the directories listed above.
+This might be done like the following:
+
+$ cd ~/.mozilla/plugins
+$ ln -s !!LOCALBASE!!/jdk-1.5.0/jre/plugin/i386/ns7/libjavaplugin_oji.so .
+$   
+
+Information on building Java (on some platforms) can be found in
+http://www.openbsd.org/faq/faq13.html#javaflash
+
+Enabling ECC cipher suites
+
+Open the URL about:config and type security.ssl3 in the search
+filter. This will bring up a list of all available cipher suites.
+Double-click on any cipher to toggle its state. For example, to
+enable TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, double-click on
+security.ssl3.ecdhe_ecdsa_aes128_sha until its boolean entry in the
+Value column changes to true.
+
+Using CUPS and LPR for printing
+
+Since version 3, Firefox uses the standard printing dialog from gtk+2.
+In order to use CUPS for printing, you will need to install the cups
+subpackage of gtk+2, i.e.:
+
+# pkg_add gtk+2-cups

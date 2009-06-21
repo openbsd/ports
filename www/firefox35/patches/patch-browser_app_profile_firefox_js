@@ -1,0 +1,37 @@
+$OpenBSD: patch-browser_app_profile_firefox_js,v 1.1.1.1 2009/06/21 01:31:24 martynas Exp $
+--- browser/app/profile/firefox.js.orig	Wed Jun 17 07:21:40 2009
++++ browser/app/profile/firefox.js	Sat Jun 20 22:09:09 2009
+@@ -92,7 +92,7 @@ pref("browser.dictionaries.download.url", "https://%LO
+ // App-specific update preferences
+ 
+ // Whether or not app updates are enabled
+-pref("app.update.enabled", true);
++pref("app.update.enabled", false);
+ 
+ // This preference turns on app.update.mode and allows automatic download and
+ // install to take place. We use a separate boolean toggle for this to make
+@@ -662,10 +662,10 @@ pref("gecko.handlerService.allowRegisterFromDifferentH
+ 
+ #ifdef MOZ_SAFE_BROWSING
+ // Safe browsing does nothing unless this pref is set
+-pref("browser.safebrowsing.enabled", true);
++pref("browser.safebrowsing.enabled", false);
+ 
+ // Prevent loading of pages identified as malware
+-pref("browser.safebrowsing.malware.enabled", true);
++pref("browser.safebrowsing.malware.enabled", false);
+ 
+ // Non-enhanced mode (local url lists) URL list to check for updates
+ pref("browser.safebrowsing.provider.0.updateURL", "http://safebrowsing.clients.google.com/safebrowsing/downloads?client={moz:client}&appver={moz:version}&pver=2.2");
+@@ -728,10 +728,8 @@ pref("browser.EULA.version", 3);
+ pref("browser.rights.version", 3);
+ pref("browser.rights.3.shown", false);
+ 
+-#ifdef DEBUG
+-// Don't show the about:rights notification in debug builds.
++// Don't show the about:rights notification
+ pref("browser.rights.override", true);
+-#endif
+ 
+ pref("browser.sessionstore.resume_from_crash", true);
+ pref("browser.sessionstore.resume_session_once", false);

@@ -1,0 +1,12 @@
+$OpenBSD: patch-xpcom_base_nsStackWalk_cpp,v 1.1.1.1 2009/06/21 01:31:26 martynas Exp $
+--- xpcom/base/nsStackWalk.cpp.orig	Wed Mar 12 00:46:31 2008
++++ xpcom/base/nsStackWalk.cpp	Sun Apr 13 20:34:51 2008
+@@ -1124,7 +1124,7 @@ NS_FormatCodeAddressDetails(void *aPC, const nsCodeAdd
+ #define __USE_GNU
+ #endif
+ 
+-#if defined(HAVE_LIBDL) || defined(XP_MACOSX)
++#if defined(HAVE_LIBDL) || defined(XP_MACOSX) || defined(__OpenBSD__)
+ #include <dlfcn.h>
+ #endif
+ 

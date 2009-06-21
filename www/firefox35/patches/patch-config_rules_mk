@@ -1,0 +1,16 @@
+$OpenBSD: patch-config_rules_mk,v 1.1.1.1 2009/06/21 01:31:24 martynas Exp $
+--- config/rules.mk.orig	Wed Jun 17 07:21:41 2009
++++ config/rules.mk	Sat Jun 20 22:09:09 2009
+@@ -601,6 +601,12 @@ endif
+ endif
+ endif
+ 
++ifeq ($(OS_ARCH),OpenBSD)
++ifdef IS_COMPONENT
++EXTRA_DSO_LDOPTS += -Wl,-Bsymbolic
++endif
++endif
++
+ ifeq ($(OS_ARCH),Linux)
+ ifneq (,$(filter mips mipsel,$(OS_TEST)))
+ ifeq ($(MODULE),layout)

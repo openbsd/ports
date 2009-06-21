@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_xslt_public_txDouble_h,v 1.1.1.1 2009/06/21 01:31:24 martynas Exp $
+--- content/xslt/public/txDouble.h.orig	Fri Jan 25 09:02:04 2008
++++ content/xslt/public/txDouble.h	Mon Jul 14 01:25:38 2008
+@@ -63,7 +63,7 @@ static fp_except_t oldmask = fpsetmask(~allmask);
+  */
+ 
+ #if defined(__arm) || defined(__arm32__) || defined(__arm26__) || defined(__arm__)
+-#if !defined(__VFP_FP__)
++#if !defined(__VFP_FP__) && !defined(__OpenBSD__) /* Armel ABI */
+ #define FPU_IS_ARM_FPA
+ #endif
+ #endif

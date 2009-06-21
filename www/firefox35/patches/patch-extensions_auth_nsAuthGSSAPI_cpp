@@ -1,0 +1,15 @@
+$OpenBSD: patch-extensions_auth_nsAuthGSSAPI_cpp,v 1.1.1.1 2009/06/21 01:31:24 martynas Exp $
+--- extensions/auth/nsAuthGSSAPI.cpp.orig	Thu Mar  5 23:31:50 2009
++++ extensions/auth/nsAuthGSSAPI.cpp	Fri Mar 13 17:46:14 2009
+@@ -155,9 +155,8 @@ gssInit()
+         };
+         
+         const char *const verLibNames[] = {
+-            "libgssapi_krb5.so.2", /* MIT - FC, Suse10, Debian */
+-            "libgssapi.so.4",      /* Heimdal - Suse10, MDK */
+-            "libgssapi.so.1"       /* Heimdal - Suse9, CITI - FC, MDK, Suse10*/
++            "libgssapi_krb5.so",
++            "libgssapi.so"
+         };
+ 
+         for (size_t i = 0; i < NS_ARRAY_LENGTH(verLibNames) && !lib; ++i) {

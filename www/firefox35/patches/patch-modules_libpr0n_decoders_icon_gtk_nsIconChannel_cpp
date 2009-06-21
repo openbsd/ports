@@ -1,0 +1,30 @@
+$OpenBSD: patch-modules_libpr0n_decoders_icon_gtk_nsIconChannel_cpp,v 1.1.1.1 2009/06/21 01:31:26 martynas Exp $
+--- modules/libpr0n/decoders/icon/gtk/nsIconChannel.cpp.orig	Sat Dec  8 02:08:09 2007
++++ modules/libpr0n/decoders/icon/gtk/nsIconChannel.cpp	Tue May  6 03:25:21 2008
+@@ -208,7 +208,7 @@ ensure_libgnomeui()
+   // Attempt to get the libgnomeui symbol references. We do it this way so that stock icons from Init()
+   // don't get held back by InitWithGnome()'s libgnomeui dependency.
+   if (!gTriedToLoadGnomeLibs) {
+-    gLibGnomeUI = PR_LoadLibrary("libgnomeui-2.so.0");
++    gLibGnomeUI = PR_LoadLibrary("libgnomeui-2.so");
+     if (!gLibGnomeUI)
+       return NS_ERROR_NOT_AVAILABLE;
+ 
+@@ -234,7 +234,7 @@ static nsresult
+ ensure_libgnome()
+ {
+   if (!gTriedToLoadGnomeLibs) {
+-    gLibGnome = PR_LoadLibrary("libgnome-2.so.0");
++    gLibGnome = PR_LoadLibrary("libgnome-2.so");
+     if (!gLibGnome)
+       return NS_ERROR_NOT_AVAILABLE;
+ 
+@@ -256,7 +256,7 @@ static nsresult
+ ensure_libgnomevfs()
+ {
+   if (!gTriedToLoadGnomeLibs) {
+-    gLibGnomeVFS = PR_LoadLibrary("libgnomevfs-2.so.0");
++    gLibGnomeVFS = PR_LoadLibrary("libgnomevfs-2.so");
+     if (!gLibGnomeVFS)
+       return NS_ERROR_NOT_AVAILABLE;
+ 

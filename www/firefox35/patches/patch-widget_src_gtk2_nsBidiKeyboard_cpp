@@ -1,0 +1,16 @@
+$OpenBSD: patch-widget_src_gtk2_nsBidiKeyboard_cpp,v 1.1.1.1 2009/06/21 01:31:26 martynas Exp $
+--- widget/src/gtk2/nsBidiKeyboard.cpp.orig	Thu Mar  5 23:32:52 2009
++++ widget/src/gtk2/nsBidiKeyboard.cpp	Fri Mar 13 17:26:18 2009
+@@ -55,10 +55,10 @@ nsBidiKeyboard::nsBidiKeyboard()
+ {
+ #if defined(MOZ_X11)
+     if (!gtklib)
+-        gtklib = PR_LoadLibrary("libgtk-x11-2.0.so.0");
++        gtklib = PR_LoadLibrary("libgtk-x11-2.0.so");
+ #elif defined(MOZ_DFB)
+     if (!gtklib)
+-        gtklib = PR_LoadLibrary("libgtk-directfb-2.0.so.0");
++        gtklib = PR_LoadLibrary("libgtk-directfb-2.0.so");
+ #else
+     return;
+ #endif
