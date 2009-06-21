@@ -1,0 +1,43 @@
+$OpenBSD: patch-nsprpub_pr_tests_runtests_sh,v 1.1 2009/06/21 15:04:16 martynas Exp $
+--- nsprpub/pr/tests/runtests.sh.orig	Wed Jun 17 07:22:05 2009
++++ nsprpub/pr/tests/runtests.sh	Sun Jun 21 17:54:39 2009
+@@ -90,11 +90,10 @@ fi
+ # Tests not run (but should)
+ #
+ 
+-#forktest (failed on IRIX)
++#nameshm1 - runs with ClientServerTest deactivated (idles forever) under OpenBSD
+ #nbconn - fails on some platforms 
+-#poll_er - fails on some platforms? limited use?
+ #prpoll -  the bad-FD test needs to be moved to a different test
+-#sleep	-  specific to OS/2
++#sema,semaerr and semaping - idles forever under OpenBSD (semaphore/thread)
+ 
+ LOGFILE=${NSPR_TEST_LOGFILE:-$NULL_DEVICE}
+ 
+@@ -124,6 +123,7 @@ exit
+ fdcach
+ fileio
+ foreign
++forktest
+ formattm
+ fsync
+ gethost
+@@ -168,6 +168,7 @@ perf
+ pipeping
+ pipeping2
+ pipeself
++poll_er
+ poll_nm
+ poll_to
+ pollable
+@@ -184,9 +185,6 @@ selct_er
+ selct_nm
+ selct_to
+ selintr
+-sema
+-semaerr
+-semaping
+ sendzlf
+ server_test
+ servr_kk

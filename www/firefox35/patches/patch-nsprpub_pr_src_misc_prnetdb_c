@@ -1,0 +1,16 @@
+$OpenBSD: patch-nsprpub_pr_src_misc_prnetdb_c,v 1.1 2009/06/21 15:04:16 martynas Exp $
+--- nsprpub/pr/src/misc/prnetdb.c.orig	Wed Jun 17 07:22:05 2009
++++ nsprpub/pr/src/misc/prnetdb.c	Sun Jun 21 17:54:00 2009
+@@ -2039,7 +2039,12 @@ PR_IMPLEMENT(PRAddrInfo *) PR_GetAddrInfoByName(const 
+          */
+         hints.ai_socktype = SOCK_STREAM;
+ 
++	LOCK_DNS();
++
+         rv = GETADDRINFO(hostname, NULL, &hints, &res);
++
++	UNLOCK_DNS();
++
+         if (rv == 0)
+             return (PRAddrInfo *) res;
+ 

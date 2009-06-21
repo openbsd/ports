@@ -1,0 +1,24 @@
+$OpenBSD: patch-nsprpub_pr_include_md__openbsd_h,v 1.1 2009/06/21 15:04:16 martynas Exp $
+--- nsprpub/pr/include/md/_openbsd.h.orig	Wed Jun 17 07:22:05 2009
++++ nsprpub/pr/include/md/_openbsd.h	Sun Jun 21 17:53:25 2009
+@@ -56,6 +56,8 @@
+ #define _PR_SI_ARCHITECTURE "sparc"
+ #elif defined(__arm__)
+ #define _PR_SI_ARCHITECTURE "arm"
++#elif defined(__hppa__)
++#define _PR_SI_ARCHITECTURE "hppa"
+ #endif
+ 
+ #define PR_DLL_SUFFIX		".so"
+@@ -65,7 +67,11 @@
+ #define _MD_DEFAULT_STACK_SIZE	65536L
+ #define _MD_MMAP_FLAGS          MAP_PRIVATE
+ 
++#if defined(__hppa__)
++#define HAVE_STACK_GROWING_UP
++#else
+ #undef  HAVE_STACK_GROWING_UP
++#endif
+ #define HAVE_DLL
+ #define USE_DLFCN
+ #define _PR_HAVE_SOCKADDR_LEN

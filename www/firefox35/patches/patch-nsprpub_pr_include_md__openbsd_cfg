@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsprpub_pr_include_md__openbsd_cfg,v 1.1 2009/06/21 15:04:16 martynas Exp $
+--- nsprpub/pr/include/md/_openbsd.cfg.orig	Wed Jun 17 07:22:05 2009
++++ nsprpub/pr/include/md/_openbsd.cfg	Sun Jun 21 17:53:09 2009
+@@ -193,7 +193,7 @@
+ #define PR_BYTES_PER_WORD_LOG2  3
+ #define PR_BYTES_PER_DWORD_LOG2 3
+ 
+-#elif defined(__sparc__)
++#elif defined(__sparc__) || defined(__hppa__)
+ 
+ #undef IS_LITTLE_ENDIAN
+ #define  IS_BIG_ENDIAN 1

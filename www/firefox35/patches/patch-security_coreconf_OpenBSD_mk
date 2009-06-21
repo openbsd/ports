@@ -1,6 +1,6 @@
-$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.1.1.1 2009/06/21 01:31:26 martynas Exp $
---- security/coreconf/OpenBSD.mk.orig	Thu Nov 22 06:39:56 2007
-+++ security/coreconf/OpenBSD.mk	Sun Apr 13 18:35:49 2008
+$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.2 2009/06/21 15:04:16 martynas Exp $
+--- security/coreconf/OpenBSD.mk.orig	Wed Jun 17 07:22:08 2009
++++ security/coreconf/OpenBSD.mk	Sun Jun 21 17:57:58 2009
 @@ -56,7 +56,7 @@ OS_LIBS			+= -pthread
  DSO_LDOPTS		+= -pthread
  endif
@@ -10,3 +10,12 @@ $OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.1.1.1 2009/06/21 01:31:26 marty
  
  OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -Wno-switch -pipe -DOPENBSD
  
+@@ -68,7 +68,7 @@ DSO_CFLAGS		= -fPIC -DPIC
+ DSO_LDOPTS		= -shared -fPIC -Wl,-soname,lib$(LIBRARY_NAME)$(LIBRARY_VERSION).$(DLL_SUFFIX)
+ DSO_LDFLAGS		=
+ 
+-MKSHLIB			= $(CC) $(DSO_LDOPTS)
++MKSHLIB			= $(CC) -Wl,-Bsymbolic $(DSO_LDOPTS)
+ 
+ USE_SYSTEM_ZLIB		= 1
+ ZLIB_LIBS		= -lz

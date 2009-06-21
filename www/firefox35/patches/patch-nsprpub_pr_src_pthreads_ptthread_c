@@ -1,0 +1,11 @@
+$OpenBSD: patch-nsprpub_pr_src_pthreads_ptthread_c,v 1.1 2009/06/21 15:04:16 martynas Exp $
+--- nsprpub/pr/src/pthreads/ptthread.c.orig	Wed Jun 17 07:22:05 2009
++++ nsprpub/pr/src/pthreads/ptthread.c	Sun Jun 21 17:54:11 2009
+@@ -51,6 +51,7 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <signal.h>
++#undef _POSIX_THREAD_PRIORITY_SCHEDULING
+ 
+ #ifdef SYMBIAN
+ /* In Open C sched_get_priority_min/max do not work properly, so we undefine

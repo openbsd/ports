@@ -1,0 +1,12 @@
+$OpenBSD: patch-security_coreconf_UNIX_mk,v 1.1 2009/06/21 15:04:16 martynas Exp $
+--- security/coreconf/UNIX.mk.orig	Wed Jun 17 07:22:08 2009
++++ security/coreconf/UNIX.mk	Sun Jun 21 17:58:10 2009
+@@ -42,7 +42,7 @@ AR          = ar cr $@
+ LDOPTS     += -L$(SOURCE_LIB_DIR)
+ 
+ ifdef BUILD_OPT
+-	OPTIMIZER  += -O
++	OPTIMIZER  +=
+ 	DEFINES    += -UDEBUG -DNDEBUG
+ else
+ 	OPTIMIZER  += -g

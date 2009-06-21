@@ -1,0 +1,29 @@
+$OpenBSD: patch-security_nss_lib_freebl_unix_rand_c,v 1.1 2009/06/21 15:04:16 martynas Exp $
+--- security/nss/lib/freebl/unix_rand.c.orig	Wed Jun 17 07:22:10 2009
++++ security/nss/lib/freebl/unix_rand.c	Sun Jun 21 17:58:22 2009
+@@ -890,7 +890,6 @@ safe_pclose(FILE *fp)
+ /* Fork netstat to collect its output by default. Do not unset this unless
+  * another source of entropy is available
+  */
+-#define DO_NETSTAT 1
+ 
+ void RNG_SystemInfoForRNG(void)
+ {
+@@ -957,7 +956,7 @@ void RNG_SystemInfoForRNG(void)
+     GiveSystemInfo();
+ 
+     /* grab some data from system's PRNG before any other files. */
+-    bytes = RNG_FileUpdate("/dev/urandom", SYSTEM_RNG_SEED_COUNT);
++    bytes = RNG_FileUpdate(RAND_DEV, SYSTEM_RNG_SEED_COUNT);
+ 
+     /* If the user points us to a random file, pass it through the rng */
+     randfile = getenv("NSRANDFILE");
+@@ -1259,7 +1258,7 @@ size_t RNG_SystemRNG(void *dest, size_t maxLen)
+     size_t fileBytes = 0;
+     unsigned char *buffer = dest;
+ 
+-    file = fopen("/dev/urandom", "r");
++    file = fopen(RAND_DEV, "r");
+     if (file == NULL) {
+ 	return rng_systemFromNoise(dest, maxLen);
+     }

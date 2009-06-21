@@ -1,0 +1,16 @@
+$OpenBSD: patch-nsprpub_configure_in,v 1.1 2009/06/21 15:04:16 martynas Exp $
+--- nsprpub/configure.in.orig	Wed Jun 17 07:22:05 2009
++++ nsprpub/configure.in	Sun Jun 21 17:52:40 2009
+@@ -1809,9 +1809,11 @@ mips-sony-newsos*)
+     AC_DEFINE(OPENBSD)
+     AC_DEFINE(HAVE_BSD_FLOCK)
+     AC_DEFINE(HAVE_SOCKLEN_T)
++    AC_DEFINE(_PR_HAVE_GETPROTO_R)
++    AC_DEFINE(_PR_HAVE_GETPROTO_R_INT)
+     CFLAGS="$CFLAGS -ansi -Wall"
+     CXXFLAGS="$CXXFLAGS -ansi -Wall"
+-    DLL_SUFFIX=so.1.0
++    DLL_SUFFIX="so.${SO_VERSION}"
+     DSO_CFLAGS=-fPIC
+     MDCPUCFG_H=_openbsd.cfg
+     PR_MD_CSRCS=openbsd.c

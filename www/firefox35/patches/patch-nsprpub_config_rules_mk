@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsprpub_config_rules_mk,v 1.1 2009/06/21 15:04:16 martynas Exp $
+--- nsprpub/config/rules.mk.orig	Wed Jun 17 07:22:05 2009
++++ nsprpub/config/rules.mk	Sun Jun 21 17:51:31 2009
+@@ -219,7 +219,7 @@ ifdef RELEASE_HEADERS
+ 	$(NSINSTALL) -t -m 0644 $(RELEASE_HEADERS) $(DESTDIR)$(includedir)/$(include_subdir)
+ endif
+ ifdef RELEASE_LIBS
+-	$(NSINSTALL) -t -m 0755 $(RELEASE_LIBS) $(DESTDIR)$(libdir)/$(lib_subdir)
++	$(NSINSTALL) -t -m 0444 $(RELEASE_LIBS) $(DESTDIR)$(libdir)/$(lib_subdir)
+ endif
+ 	+$(LOOP_OVER_DIRS)
+ 
