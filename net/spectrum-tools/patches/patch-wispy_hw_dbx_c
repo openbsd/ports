@@ -1,0 +1,12 @@
+$OpenBSD: patch-wispy_hw_dbx_c,v 1.1 2009/06/21 06:27:00 sturm Exp $
+--- wispy_hw_dbx.c.orig	Sun Jun 14 13:02:46 2009
++++ wispy_hw_dbx.c	Sun Jun 14 13:02:09 2009
+@@ -107,7 +107,7 @@
+     uint16_t __x = (x); \
+     ((uint16_t)( \
+         (uint16_t)(((uint16_t)(__x) & (uint16_t)0x000000ff) << 24) | \
+-        (uint16_t)(((uint16_t)(__x) & (uint16_t)0x0000ff00) << 8) | \
++        (uint16_t)(((uint16_t)(__x) & (uint16_t)0x0000ff00) << 8) )); \
+ })
+ 
+ /* Aux tracking struct for wispy1 characteristics */
