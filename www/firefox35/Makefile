@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/06/21 14:28:14 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/21 18:17:11 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,8 +7,8 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		3.5rc2
 DISTNAME=	mozilla-1.9.1
-PKGNAME=	firefox35-${VER}
-SO_VERSION=	20.0
+PKGNAME=	firefox35-${VER}p0
+SO_VERSION=	21.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in accessibility appcomps auth autoconfig browsercomps \
@@ -47,8 +47,6 @@ RUN_DEPENDS=	:esound-*:audio/esound \
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		nspr4.>=20.1,plc4.>=20.1,plds4.>=20.1:nspr->=4.8:devel/nspr \
-		nss3.>=22.1,smime3.>=22.1,softokn3.>=22.1,ssl3.>=22.1:nss->=3.12.3:security/nss \
 		sqlite3.>=13.3:sqlite3->=3.6.13:databases/sqlite3
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xt atk-1.0 c cairo expat fontconfig \
@@ -64,14 +62,13 @@ USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
-				${WRKSRC}/js/src/build/autoconf
+				${WRKSRC}/js/src/build/autoconf \
+				${WRKSRC}/nsprpub/build/autoconf
 
 AUTOCONF_VERSION= 2.13
 CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
-		--with-system-nspr		\
-		--with-system-nss		\
 		--with-pthreads			\
 		--enable-xft			\
 		--disable-optimize		\
@@ -104,10 +101,12 @@ CONFIGURE_ARGS+=--enable-application=browser
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-MAKE_ENV=	MOZ_CO_PROJECT=browser \
+MAKE_ENV=	BUILD_OFFICIAL=1 \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
-		BUILD_OFFICIAL=1 \
 		MOZILLA_OFFICIAL=1 \
+		MOZ_CO_PROJECT=browser \
+		NSS_ENABLE_ECC=1 \
+		NSS_USE_SYSTEM_SQLITE=1 \
 		SO_VERSION="${SO_VERSION}"
 CONFIGURE_ENV=	${MAKE_ENV} \
 		MOZ_ENABLE_COREXFONTS=1 \
@@ -126,6 +125,7 @@ post-extract:
 
 pre-configure:
 	cd ${WRKSRC}/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+	cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
 		${WRKSRC}/build/unix/mozilla.in \
 		${WRKSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
