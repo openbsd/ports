@@ -1,8 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/21 01:31:27 martynas Exp $
-@conflict firefox3-*
-@conflict mozilla-firebird-*
-@pkgpath www/firefox3
-@pkgpath www/mozilla-firefox,-main
+@comment $OpenBSD: PLIST,v 1.2 2009/06/21 14:28:14 martynas Exp $
 bin/firefox
 bin/mozilla-firefox
 @man man/man1/firefox.1
@@ -318,6 +314,7 @@ mozilla-firefox/icons/mozicon50.xpm
 @lib mozilla-firefox/libgkgfx.so.${LIBgkgfx_VERSION}
 @lib mozilla-firefox/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
 @lib mozilla-firefox/libjsj.so.${LIBjsj_VERSION}
+@lib mozilla-firefox/libmozjs.so.${LIBmozjs_VERSION}
 @lib mozilla-firefox/libthebes.so.${LIBthebes_VERSION}
 @lib mozilla-firefox/libxpcom.so.${LIBxpcom_VERSION}
 @lib mozilla-firefox/libxpcom_core.so.${LIBxpcom_core_VERSION}

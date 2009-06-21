@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/21 11:41:31 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/21 14:28:14 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -15,13 +15,13 @@ SO_VERSION=	20.0
 	browserdirprovider caps chardet chrome commandlines composer \
 	cookie docshell embedcomponents fileview gkgfxthebes gklayout \
 	gkplugin htmlpars i18n imgicon imglib2 intlapp jar50 jsd \
-	mozfind necko nsappshell oji permissions pipboot pipnss \
-	pippki places pref rdf remoteservice satchel spellchecker \
-	storagecomps system-pref tkautocomplete toolkitcomps txmgr \
-	uconv ucvmath universalchardet unixproxy webbrwsr widget_gtk2 \
-	windowds xpconnect xpinstall zipwriter gfxpsshar gkgfx \
-	gtkxtbin jsj thebes xpcom xpcom_core xul nullplugin \
-	unixprintplugin
+	mozfind mozjs necko nsappshell oji permissions pipboot \
+	pipnss pippki places pref rdf remoteservice satchel \
+	spellchecker storagecomps system-pref tkautocomplete \
+	toolkitcomps txmgr uconv ucvmath universalchardet unixproxy \
+	webbrwsr widget_gtk2 windowds xpconnect xpinstall zipwriter \
+	gfxpsshar gkgfx gtkxtbin jsj thebes xpcom xpcom_core xul \
+	nullplugin unixprintplugin
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
@@ -47,10 +47,10 @@ RUN_DEPENDS=	:esound-*:audio/esound \
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		nspr4.>=20,plc4.>=20,plds4.>=20:nspr->=4.8:devel/nspr \
-		nss3.>=22,smime3.>=22,softokn3.>=22,ssl3.>=22:nss->=3.12.3:security/nss \
-		sqlite3.>=10.0:sqlite3->=3.5:databases/sqlite3
-WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi \
+		nspr4.>=20.1,plc4.>=20.1,plds4.>=20.1:nspr->=4.8:devel/nspr \
+		nss3.>=22.1,smime3.>=22.1,softokn3.>=22.1,ssl3.>=22.1:nss->=3.12.3:security/nss \
+		sqlite3.>=13.3:sqlite3->=3.6.13:databases/sqlite3
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xt atk-1.0 c cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
