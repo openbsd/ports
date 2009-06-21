@@ -17,4 +17,6 @@ This package contains the following programs:
  - nona_gui, nona with a graphical progress bar.
 
  - autooptimiser, optimise a panorama pairwise, starting from an
-   anchor image. cmd line version of the pairwise mode in hugin
+   anchor image. cmd line version of the pairwise mode in hugin.
+
+Tutorials: http://hugin.sourceforge.net/tutorials/

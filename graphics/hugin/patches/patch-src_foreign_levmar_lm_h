@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_foreign_levmar_lm_h,v 1.1 2009/06/21 15:54:31 sthen Exp $
+--- src/foreign/levmar/lm.h.orig	Sun Jun 21 16:11:00 2009
++++ src/foreign/levmar/lm.h	Sun Jun 21 16:11:05 2009
+@@ -20,7 +20,7 @@
+ #ifndef _LM_H_
+ #define _LM_H_
+ 
+-//#undef HAVE_LAPACK // uncomment this to force not using LAPACK
++#undef HAVE_LAPACK // uncomment this to force not using LAPACK
+ 
+ #define LINSOLVERS_RETAIN_MEMORY // comment this is if you don't want routines in Axb.c retain working memory between calls
+ 
