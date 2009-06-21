@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/21 18:50:06 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2009/06/21 20:41:40 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		3.5rc2
 DISTNAME=	mozilla-1.9.1
-PKGNAME=	firefox35-${VER}p0
+PKGNAME=	firefox35-${VER}p1
 SO_VERSION=	21.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -152,8 +152,7 @@ do-install:
 		${PREFIX}/share/applications/firefox.desktop
 	${INSTALL_SCRIPT} ${MOB}/firefox ${PREFIX}/bin/firefox35
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/firefox-bin ${MOB}/mozilla-xremote-client \
-		${MOB}/regxpcom ${MOZ}
-	ln -f ${MOZ}/firefox-bin ${MOZ}/mozilla-firefox-bin
+	${INSTALL_PROGRAM} ${MOB}/mozilla-xremote-client ${MOB}/regxpcom ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/firefox-bin ${MOZ}/firefox35-bin
 
 .include <bsd.port.mk>
