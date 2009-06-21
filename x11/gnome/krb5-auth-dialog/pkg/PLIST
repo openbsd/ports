@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/21 11:14:54 ajacoutot Exp $
+@bin bin/krb5-auth-dialog
+@man man/man1/krb5-auth-dialog.1
+share/doc/krb5-auth-dialog/
+share/doc/krb5-auth-dialog/README
+share/examples/krb5-auth-dialog/
+share/examples/krb5-auth-dialog/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/krb5-auth-dialog/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/krb5-auth-dialog/xdg/autostart/krb5-auth-dialog.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/krb5-auth-dialog.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/krb-expiring-ticket.png
+share/icons/hicolor/22x22/apps/krb-no-valid-ticket.png
+share/icons/hicolor/22x22/apps/krb-valid-ticket.png
+share/krb5-auth-dialog/
+share/krb5-auth-dialog/krb5-auth-dialog.glade
+share/locale/de/LC_MESSAGES/krb5-auth-dialog.mo
+share/locale/nb/LC_MESSAGES/krb5-auth-dialog.mo
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/krb5-auth-dialog.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

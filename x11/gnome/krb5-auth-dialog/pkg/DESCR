@@ -1,0 +1,7 @@
+Krb5-auth-dialog is a tray applet for the GNOME Desktop that monitors
+Kerberos tickets.
+
+  * it can alert the user via notifications when the ticket is about to expire
+  * renewable tickets are being refreshed automatically
+  * tickets can be acquired/refreshed at any time by clicking on the tray icon
+  * the ticket cache can be removed via the context menu
