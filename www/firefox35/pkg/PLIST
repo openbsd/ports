@@ -1,425 +1,422 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/06/21 18:42:15 martynas Exp $
-bin/firefox
-bin/mozilla-firefox
-@man man/man1/firefox.1
-@man man/man1/mozilla-firefox.1
-mozilla-firefox/
-mozilla-firefox/LICENSE
-mozilla-firefox/README.OpenBSD
-mozilla-firefox/application.ini
-mozilla-firefox/blocklist.xml
-mozilla-firefox/browserconfig.properties
-mozilla-firefox/chrome/
-mozilla-firefox/chrome/browser.jar
-mozilla-firefox/chrome/browser.manifest
-mozilla-firefox/chrome/classic.jar
-mozilla-firefox/chrome/classic.manifest
-mozilla-firefox/chrome/comm.jar
-mozilla-firefox/chrome/comm.manifest
-mozilla-firefox/chrome/en-US.jar
-mozilla-firefox/chrome/en-US.manifest
-mozilla-firefox/chrome/icons/
-mozilla-firefox/chrome/icons/default/
-mozilla-firefox/chrome/icons/default/default16.png
-mozilla-firefox/chrome/icons/default/default32.png
-mozilla-firefox/chrome/icons/default/default48.png
-mozilla-firefox/chrome/pippki.jar
-mozilla-firefox/chrome/pippki.manifest
-mozilla-firefox/chrome/reporter.jar
-mozilla-firefox/chrome/reporter.manifest
-mozilla-firefox/chrome/toolkit.jar
-mozilla-firefox/chrome/toolkit.manifest
-mozilla-firefox/components/
-mozilla-firefox/components/FeedConverter.js
-mozilla-firefox/components/FeedProcessor.js
-mozilla-firefox/components/FeedWriter.js
-mozilla-firefox/components/NetworkGeolocationProvider.js
-mozilla-firefox/components/WebContentConverter.js
-mozilla-firefox/components/aboutCertError.js
-mozilla-firefox/components/aboutPrivateBrowsing.js
-mozilla-firefox/components/aboutRights.js
-mozilla-firefox/components/aboutRobots.js
-mozilla-firefox/components/aboutSessionRestore.js
-mozilla-firefox/components/accessibility.xpt
-mozilla-firefox/components/alerts.xpt
-mozilla-firefox/components/appshell.xpt
-mozilla-firefox/components/appstartup.xpt
-mozilla-firefox/components/autocomplete.xpt
-mozilla-firefox/components/autoconfig.xpt
-mozilla-firefox/components/browser-feeds.xpt
-mozilla-firefox/components/browsercompsbase.xpt
-mozilla-firefox/components/browserplaces.xpt
-mozilla-firefox/components/caps.xpt
-mozilla-firefox/components/chardet.xpt
-mozilla-firefox/components/chrome.xpt
-mozilla-firefox/components/commandhandler.xpt
-mozilla-firefox/components/commandlines.xpt
-mozilla-firefox/components/composer.xpt
-mozilla-firefox/components/content_base.xpt
-mozilla-firefox/components/content_html.xpt
-mozilla-firefox/components/content_htmldoc.xpt
-mozilla-firefox/components/content_xmldoc.xpt
-mozilla-firefox/components/content_xslt.xpt
-mozilla-firefox/components/content_xtf.xpt
-mozilla-firefox/components/contentprefs.xpt
-mozilla-firefox/components/cookie.xpt
-mozilla-firefox/components/directory.xpt
-mozilla-firefox/components/docshell.xpt
-mozilla-firefox/components/dom.xpt
-mozilla-firefox/components/dom_base.xpt
-mozilla-firefox/components/dom_canvas.xpt
-mozilla-firefox/components/dom_core.xpt
-mozilla-firefox/components/dom_css.xpt
-mozilla-firefox/components/dom_events.xpt
-mozilla-firefox/components/dom_geolocation.xpt
-mozilla-firefox/components/dom_html.xpt
-mozilla-firefox/components/dom_json.xpt
-mozilla-firefox/components/dom_loadsave.xpt
-mozilla-firefox/components/dom_offline.xpt
-mozilla-firefox/components/dom_range.xpt
-mozilla-firefox/components/dom_sidebar.xpt
-mozilla-firefox/components/dom_storage.xpt
-mozilla-firefox/components/dom_stylesheets.xpt
-mozilla-firefox/components/dom_svg.xpt
-mozilla-firefox/components/dom_threads.xpt
-mozilla-firefox/components/dom_traversal.xpt
-mozilla-firefox/components/dom_views.xpt
-mozilla-firefox/components/dom_xbl.xpt
-mozilla-firefox/components/dom_xpath.xpt
-mozilla-firefox/components/dom_xul.xpt
-mozilla-firefox/components/downloads.xpt
-mozilla-firefox/components/editor.xpt
-mozilla-firefox/components/embed_base.xpt
-mozilla-firefox/components/extensions.xpt
-mozilla-firefox/components/exthandler.xpt
-mozilla-firefox/components/exthelper.xpt
-mozilla-firefox/components/fastfind.xpt
-mozilla-firefox/components/feeds.xpt
-mozilla-firefox/components/filepicker.xpt
-mozilla-firefox/components/find.xpt
-mozilla-firefox/components/fuel.xpt
-mozilla-firefox/components/fuelApplication.js
-mozilla-firefox/components/gfx.xpt
-mozilla-firefox/components/htmlparser.xpt
-mozilla-firefox/components/imgicon.xpt
-mozilla-firefox/components/imglib2.xpt
-mozilla-firefox/components/inspector.xpt
-mozilla-firefox/components/intl.xpt
-mozilla-firefox/components/jar.xpt
-mozilla-firefox/components/jsconsole-clhandler.js
-mozilla-firefox/components/jsdservice.xpt
-mozilla-firefox/components/layout_base.xpt
-mozilla-firefox/components/layout_printing.xpt
-mozilla-firefox/components/layout_xul.xpt
-mozilla-firefox/components/layout_xul_tree.xpt
-@lib mozilla-firefox/components/libaccessibility.so.${LIBaccessibility_VERSION}
-@lib mozilla-firefox/components/libappcomps.so.${LIBappcomps_VERSION}
-@lib mozilla-firefox/components/libauth.so.${LIBauth_VERSION}
-@lib mozilla-firefox/components/libautoconfig.so.${LIBautoconfig_VERSION}
-@lib mozilla-firefox/components/libbrowsercomps.so.${LIBbrowsercomps_VERSION}
-@lib mozilla-firefox/components/libbrowserdirprovider.so.${LIBbrowserdirprovider_VERSION}
-@lib mozilla-firefox/components/libcaps.so.${LIBcaps_VERSION}
-@lib mozilla-firefox/components/libchardet.so.${LIBchardet_VERSION}
-@lib mozilla-firefox/components/libchrome.so.${LIBchrome_VERSION}
-@lib mozilla-firefox/components/libcommandlines.so.${LIBcommandlines_VERSION}
-@lib mozilla-firefox/components/libcomposer.so.${LIBcomposer_VERSION}
-@lib mozilla-firefox/components/libcookie.so.${LIBcookie_VERSION}
-@lib mozilla-firefox/components/libdocshell.so.${LIBdocshell_VERSION}
-@lib mozilla-firefox/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
-@lib mozilla-firefox/components/libfileview.so.${LIBfileview_VERSION}
-@lib mozilla-firefox/components/libgkgfxthebes.so.${LIBgkgfxthebes_VERSION}
-@lib mozilla-firefox/components/libgklayout.so.${LIBgklayout_VERSION}
-@lib mozilla-firefox/components/libgkplugin.so.${LIBgkplugin_VERSION}
-@lib mozilla-firefox/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
-@lib mozilla-firefox/components/libi18n.so.${LIBi18n_VERSION}
-@lib mozilla-firefox/components/libimgicon.so.${LIBimgicon_VERSION}
-@lib mozilla-firefox/components/libimglib2.so.${LIBimglib2_VERSION}
-@lib mozilla-firefox/components/libintlapp.so.${LIBintlapp_VERSION}
-@lib mozilla-firefox/components/libjar50.so.${LIBjar50_VERSION}
-@lib mozilla-firefox/components/libjsd.so.${LIBjsd_VERSION}
-@lib mozilla-firefox/components/libmozfind.so.${LIBmozfind_VERSION}
-@lib mozilla-firefox/components/libnecko.so.${LIBnecko_VERSION}
-@lib mozilla-firefox/components/libnsappshell.so.${LIBnsappshell_VERSION}
-@lib mozilla-firefox/components/liboji.so.${LIBoji_VERSION}
-@lib mozilla-firefox/components/libpermissions.so.${LIBpermissions_VERSION}
-@lib mozilla-firefox/components/libpipboot.so.${LIBpipboot_VERSION}
-@lib mozilla-firefox/components/libpipnss.so.${LIBpipnss_VERSION}
-@lib mozilla-firefox/components/libpippki.so.${LIBpippki_VERSION}
-@lib mozilla-firefox/components/libplaces.so.${LIBplaces_VERSION}
-@lib mozilla-firefox/components/libpref.so.${LIBpref_VERSION}
-@lib mozilla-firefox/components/librdf.so.${LIBrdf_VERSION}
-@lib mozilla-firefox/components/libremoteservice.so.${LIBremoteservice_VERSION}
-@lib mozilla-firefox/components/libsatchel.so.${LIBsatchel_VERSION}
-@lib mozilla-firefox/components/libspellchecker.so.${LIBspellchecker_VERSION}
-@lib mozilla-firefox/components/libstoragecomps.so.${LIBstoragecomps_VERSION}
-@lib mozilla-firefox/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
-@lib mozilla-firefox/components/libtkautocomplete.so.${LIBtkautocomplete_VERSION}
-@lib mozilla-firefox/components/libtoolkitcomps.so.${LIBtoolkitcomps_VERSION}
-@lib mozilla-firefox/components/libtxmgr.so.${LIBtxmgr_VERSION}
-@lib mozilla-firefox/components/libuconv.so.${LIBuconv_VERSION}
-@lib mozilla-firefox/components/libucvmath.so.${LIBucvmath_VERSION}
-@lib mozilla-firefox/components/libuniversalchardet.so.${LIBuniversalchardet_VERSION}
-@lib mozilla-firefox/components/libunixproxy.so.${LIBunixproxy_VERSION}
-@lib mozilla-firefox/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
-@lib mozilla-firefox/components/libwidget_gtk2.so.${LIBwidget_gtk2_VERSION}
-@lib mozilla-firefox/components/libwindowds.so.${LIBwindowds_VERSION}
-@lib mozilla-firefox/components/libxpconnect.so.${LIBxpconnect_VERSION}
-@lib mozilla-firefox/components/libxpinstall.so.${LIBxpinstall_VERSION}
-@lib mozilla-firefox/components/libzipwriter.so.${LIBzipwriter_VERSION}
-mozilla-firefox/components/locale.xpt
-mozilla-firefox/components/loginmgr.xpt
-mozilla-firefox/components/lwbrk.xpt
-mozilla-firefox/components/microsummaries.xpt
-mozilla-firefox/components/migration.xpt
-mozilla-firefox/components/mimetype.xpt
-mozilla-firefox/components/mozbrwsr.xpt
-mozilla-firefox/components/mozfind.xpt
-mozilla-firefox/components/necko.xpt
-mozilla-firefox/components/necko_about.xpt
-mozilla-firefox/components/necko_cache.xpt
-mozilla-firefox/components/necko_cookie.xpt
-mozilla-firefox/components/necko_dns.xpt
-mozilla-firefox/components/necko_file.xpt
-mozilla-firefox/components/necko_ftp.xpt
-mozilla-firefox/components/necko_http.xpt
-mozilla-firefox/components/necko_res.xpt
-mozilla-firefox/components/necko_socket.xpt
-mozilla-firefox/components/necko_strconv.xpt
-mozilla-firefox/components/necko_viewsource.xpt
-mozilla-firefox/components/nsAddonRepository.js
-mozilla-firefox/components/nsBadCertHandler.js
-mozilla-firefox/components/nsBlocklistService.js
-mozilla-firefox/components/nsBrowserContentHandler.js
-mozilla-firefox/components/nsBrowserGlue.js
-mozilla-firefox/components/nsContentDispatchChooser.js
-mozilla-firefox/components/nsContentPrefService.js
-mozilla-firefox/components/nsDefaultCLH.js
-mozilla-firefox/components/nsDownloadManagerUI.js
-mozilla-firefox/components/nsExtensionManager.js
-mozilla-firefox/components/nsFilePicker.js
-mozilla-firefox/components/nsHandlerService.js
-mozilla-firefox/components/nsHelperAppDlg.js
-mozilla-firefox/components/nsLivemarkService.js
-mozilla-firefox/components/nsLoginInfo.js
-mozilla-firefox/components/nsLoginManager.js
-mozilla-firefox/components/nsLoginManagerPrompter.js
-mozilla-firefox/components/nsMicrosummaryService.js
-mozilla-firefox/components/nsPlacesDBFlush.js
-mozilla-firefox/components/nsPlacesTransactionsService.js
-mozilla-firefox/components/nsPrivateBrowsingService.js
-mozilla-firefox/components/nsProgressDialog.js
-mozilla-firefox/components/nsProxyAutoConfig.js
-mozilla-firefox/components/nsSafebrowsingApplication.js
-mozilla-firefox/components/nsSearchService.js
-mozilla-firefox/components/nsSearchSuggestions.js
-mozilla-firefox/components/nsSessionStartup.js
-mozilla-firefox/components/nsSessionStore.js
-mozilla-firefox/components/nsSetDefaultBrowser.js
-mozilla-firefox/components/nsSidebar.js
-mozilla-firefox/components/nsTaggingService.js
-mozilla-firefox/components/nsTryToClose.js
-mozilla-firefox/components/nsURLFormatter.js
-mozilla-firefox/components/nsUpdateService.js
-mozilla-firefox/components/nsUrlClassifierLib.js
-mozilla-firefox/components/nsUrlClassifierListManager.js
-mozilla-firefox/components/nsWebHandlerApp.js
-mozilla-firefox/components/oji.xpt
-mozilla-firefox/components/parentalcontrols.xpt
-mozilla-firefox/components/pipboot.xpt
-mozilla-firefox/components/pipnss.xpt
-mozilla-firefox/components/pippki.xpt
-mozilla-firefox/components/places.xpt
-mozilla-firefox/components/plugin.xpt
-mozilla-firefox/components/pluginGlue.js
-mozilla-firefox/components/pref.xpt
-mozilla-firefox/components/prefetch.xpt
-mozilla-firefox/components/profile.xpt
-mozilla-firefox/components/proxyObjInst.xpt
-mozilla-firefox/components/rdf.xpt
-mozilla-firefox/components/satchel.xpt
-mozilla-firefox/components/saxparser.xpt
-mozilla-firefox/components/sessionstore.xpt
-mozilla-firefox/components/shellservice.xpt
-mozilla-firefox/components/shistory.xpt
-mozilla-firefox/components/spellchecker.xpt
-mozilla-firefox/components/storage-Legacy.js
-mozilla-firefox/components/storage-mozStorage.js
-mozilla-firefox/components/storage.xpt
-mozilla-firefox/components/toolkitprofile.xpt
-mozilla-firefox/components/toolkitremote.xpt
-mozilla-firefox/components/toolkitsearch.xpt
-mozilla-firefox/components/txEXSLTRegExFunctions.js
-mozilla-firefox/components/txmgr.xpt
-mozilla-firefox/components/txtsvc.xpt
-mozilla-firefox/components/uconv.xpt
-mozilla-firefox/components/unicharutil.xpt
-mozilla-firefox/components/update.xpt
-mozilla-firefox/components/uriloader.xpt
-mozilla-firefox/components/url-classifier.xpt
-mozilla-firefox/components/urlformatter.xpt
-mozilla-firefox/components/webBrowser_core.xpt
-mozilla-firefox/components/webbrowserpersist.xpt
-mozilla-firefox/components/webshell_idls.xpt
-mozilla-firefox/components/widget.xpt
-mozilla-firefox/components/windowds.xpt
-mozilla-firefox/components/windowwatcher.xpt
-mozilla-firefox/components/xpcom_base.xpt
-mozilla-firefox/components/xpcom_components.xpt
-mozilla-firefox/components/xpcom_ds.xpt
-mozilla-firefox/components/xpcom_io.xpt
-mozilla-firefox/components/xpcom_system.xpt
-mozilla-firefox/components/xpcom_threads.xpt
-mozilla-firefox/components/xpcom_xpti.xpt
-mozilla-firefox/components/xpconnect.xpt
-mozilla-firefox/components/xpinstall.xpt
-mozilla-firefox/components/xulapp.xpt
-mozilla-firefox/components/xuldoc.xpt
-mozilla-firefox/components/xultmpl.xpt
-mozilla-firefox/components/zipwriter.xpt
-mozilla-firefox/defaults/
-mozilla-firefox/defaults/autoconfig/
-mozilla-firefox/defaults/autoconfig/platform.js
-mozilla-firefox/defaults/autoconfig/prefcalls.js
-mozilla-firefox/defaults/pref/
-mozilla-firefox/defaults/pref/channel-prefs.js
-mozilla-firefox/defaults/pref/firefox-branding.js
-mozilla-firefox/defaults/pref/firefox-l10n.js
-mozilla-firefox/defaults/pref/firefox.js
-mozilla-firefox/defaults/pref/reporter.js
-mozilla-firefox/defaults/profile/
-mozilla-firefox/defaults/profile/bookmarks.html
-mozilla-firefox/defaults/profile/chrome/
-mozilla-firefox/defaults/profile/chrome/userChrome-example.css
-mozilla-firefox/defaults/profile/chrome/userContent-example.css
-mozilla-firefox/defaults/profile/localstore.rdf
-mozilla-firefox/defaults/profile/mimeTypes.rdf
-mozilla-firefox/defaults/profile/prefs.js
-mozilla-firefox/dictionaries/
-mozilla-firefox/dictionaries/en-US.aff
-mozilla-firefox/dictionaries/en-US.dic
-mozilla-firefox/extensions/
-mozilla-firefox/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
-mozilla-firefox/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
-@bin mozilla-firefox/firefox-bin
-mozilla-firefox/greprefs/
-mozilla-firefox/greprefs/all.js
-mozilla-firefox/greprefs/security-prefs.js
-mozilla-firefox/greprefs/xpinstall.js
-mozilla-firefox/icons/
-mozilla-firefox/icons/document.png
-mozilla-firefox/icons/mozicon128.png
-mozilla-firefox/icons/mozicon16.xpm
-mozilla-firefox/icons/mozicon50.xpm
-@lib mozilla-firefox/libfreebl3.so.${LIBfreebl3_VERSION}
-@lib mozilla-firefox/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
-@lib mozilla-firefox/libgkgfx.so.${LIBgkgfx_VERSION}
-@lib mozilla-firefox/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
-@lib mozilla-firefox/libjsj.so.${LIBjsj_VERSION}
-@lib mozilla-firefox/libmozjs.so.${LIBmozjs_VERSION}
-@lib mozilla-firefox/libnspr4.so.${LIBnspr4_VERSION}
-@lib mozilla-firefox/libnss3.so.${LIBnss3_VERSION}
-@lib mozilla-firefox/libnssckbi.so.${LIBnssckbi_VERSION}
-@lib mozilla-firefox/libnssdbm3.so.${LIBnssdbm3_VERSION}
-@lib mozilla-firefox/libnssutil3.so.${LIBnssutil3_VERSION}
-@lib mozilla-firefox/libplc4.so.${LIBplc4_VERSION}
-@lib mozilla-firefox/libplds4.so.${LIBplds4_VERSION}
-@lib mozilla-firefox/libsmime3.so.${LIBsmime3_VERSION}
-@lib mozilla-firefox/libsoftokn3.so.${LIBsoftokn3_VERSION}
-@lib mozilla-firefox/libssl3.so.${LIBssl3_VERSION}
-@lib mozilla-firefox/libthebes.so.${LIBthebes_VERSION}
-@lib mozilla-firefox/libxpcom.so.${LIBxpcom_VERSION}
-@lib mozilla-firefox/libxpcom_core.so.${LIBxpcom_core_VERSION}
-@lib mozilla-firefox/libxul.so.${LIBxul_VERSION}
-mozilla-firefox/modules/
-mozilla-firefox/modules/DownloadLastDir.jsm
-mozilla-firefox/modules/DownloadUtils.jsm
-mozilla-firefox/modules/ISO8601DateUtils.jsm
-mozilla-firefox/modules/Microformats.js
-mozilla-firefox/modules/PlacesDBUtils.jsm
-mozilla-firefox/modules/PluralForm.jsm
-mozilla-firefox/modules/SpatialNavigation.js
-mozilla-firefox/modules/WindowDraggingUtils.jsm
-mozilla-firefox/modules/XPCOMUtils.jsm
-mozilla-firefox/modules/debug.js
-mozilla-firefox/modules/distribution.js
-mozilla-firefox/modules/utils.js
-@bin mozilla-firefox/mozilla-firefox-bin
-@bin mozilla-firefox/mozilla-xremote-client
-mozilla-firefox/platform.ini
-mozilla-firefox/plugins/
-@lib mozilla-firefox/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
-@lib mozilla-firefox/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
-@bin mozilla-firefox/regxpcom
-mozilla-firefox/res/
-mozilla-firefox/res/EditorOverride.css
-mozilla-firefox/res/arrow.gif
-mozilla-firefox/res/arrowd.gif
-mozilla-firefox/res/broken-image.gif
-mozilla-firefox/res/charsetData.properties
-mozilla-firefox/res/charsetalias.properties
-mozilla-firefox/res/contenteditable.css
-mozilla-firefox/res/designmode.css
-mozilla-firefox/res/dtd/
-mozilla-firefox/res/dtd/mathml.dtd
-mozilla-firefox/res/dtd/xhtml11.dtd
-mozilla-firefox/res/entityTables/
-mozilla-firefox/res/entityTables/html40Latin1.properties
-mozilla-firefox/res/entityTables/html40Special.properties
-mozilla-firefox/res/entityTables/html40Symbols.properties
-mozilla-firefox/res/entityTables/htmlEntityVersions.properties
-mozilla-firefox/res/entityTables/mathml20.properties
-mozilla-firefox/res/entityTables/transliterate.properties
-mozilla-firefox/res/fonts/
-mozilla-firefox/res/fonts/mathfont.properties
-mozilla-firefox/res/fonts/mathfontSTIXNonUnicode.properties
-mozilla-firefox/res/fonts/mathfontSTIXSize1.properties
-mozilla-firefox/res/fonts/mathfontStandardSymbolsL.properties
-mozilla-firefox/res/fonts/mathfontUnicode.properties
-mozilla-firefox/res/forms.css
-mozilla-firefox/res/grabber.gif
-mozilla-firefox/res/hiddenWindow.html
-mozilla-firefox/res/html/
-mozilla-firefox/res/html.css
-mozilla-firefox/res/html/folder.png
-mozilla-firefox/res/langGroups.properties
-mozilla-firefox/res/language.properties
-mozilla-firefox/res/loading-image.gif
-mozilla-firefox/res/mathml.css
-mozilla-firefox/res/quirk.css
-mozilla-firefox/res/svg.css
-mozilla-firefox/res/table-add-column-after-active.gif
-mozilla-firefox/res/table-add-column-after-hover.gif
-mozilla-firefox/res/table-add-column-after.gif
-mozilla-firefox/res/table-add-column-before-active.gif
-mozilla-firefox/res/table-add-column-before-hover.gif
-mozilla-firefox/res/table-add-column-before.gif
-mozilla-firefox/res/table-add-row-after-active.gif
-mozilla-firefox/res/table-add-row-after-hover.gif
-mozilla-firefox/res/table-add-row-after.gif
-mozilla-firefox/res/table-add-row-before-active.gif
-mozilla-firefox/res/table-add-row-before-hover.gif
-mozilla-firefox/res/table-add-row-before.gif
-mozilla-firefox/res/table-remove-column-active.gif
-mozilla-firefox/res/table-remove-column-hover.gif
-mozilla-firefox/res/table-remove-column.gif
-mozilla-firefox/res/table-remove-row-active.gif
-mozilla-firefox/res/table-remove-row-hover.gif
-mozilla-firefox/res/table-remove-row.gif
-mozilla-firefox/res/ua.css
-mozilla-firefox/res/unixcharset.properties
-mozilla-firefox/res/viewsource.css
-mozilla-firefox/run-mozilla.sh
-mozilla-firefox/searchplugins/
-mozilla-firefox/searchplugins/amazondotcom.xml
-mozilla-firefox/searchplugins/answers.xml
-mozilla-firefox/searchplugins/creativecommons.xml
-mozilla-firefox/searchplugins/eBay.xml
-mozilla-firefox/searchplugins/google.xml
-mozilla-firefox/searchplugins/wikipedia.xml
-mozilla-firefox/searchplugins/yahoo.xml
+@comment $OpenBSD: PLIST,v 1.4 2009/06/21 18:50:06 martynas Exp $
+bin/firefox35
+firefox35/
+firefox35/LICENSE
+firefox35/README.OpenBSD
+firefox35/application.ini
+firefox35/blocklist.xml
+firefox35/browserconfig.properties
+firefox35/chrome/
+firefox35/chrome/browser.jar
+firefox35/chrome/browser.manifest
+firefox35/chrome/classic.jar
+firefox35/chrome/classic.manifest
+firefox35/chrome/comm.jar
+firefox35/chrome/comm.manifest
+firefox35/chrome/en-US.jar
+firefox35/chrome/en-US.manifest
+firefox35/chrome/icons/
+firefox35/chrome/icons/default/
+firefox35/chrome/icons/default/default16.png
+firefox35/chrome/icons/default/default32.png
+firefox35/chrome/icons/default/default48.png
+firefox35/chrome/pippki.jar
+firefox35/chrome/pippki.manifest
+firefox35/chrome/reporter.jar
+firefox35/chrome/reporter.manifest
+firefox35/chrome/toolkit.jar
+firefox35/chrome/toolkit.manifest
+firefox35/components/
+firefox35/components/FeedConverter.js
+firefox35/components/FeedProcessor.js
+firefox35/components/FeedWriter.js
+firefox35/components/NetworkGeolocationProvider.js
+firefox35/components/WebContentConverter.js
+firefox35/components/aboutCertError.js
+firefox35/components/aboutPrivateBrowsing.js
+firefox35/components/aboutRights.js
+firefox35/components/aboutRobots.js
+firefox35/components/aboutSessionRestore.js
+firefox35/components/accessibility.xpt
+firefox35/components/alerts.xpt
+firefox35/components/appshell.xpt
+firefox35/components/appstartup.xpt
+firefox35/components/autocomplete.xpt
+firefox35/components/autoconfig.xpt
+firefox35/components/browser-feeds.xpt
+firefox35/components/browsercompsbase.xpt
+firefox35/components/browserplaces.xpt
+firefox35/components/caps.xpt
+firefox35/components/chardet.xpt
+firefox35/components/chrome.xpt
+firefox35/components/commandhandler.xpt
+firefox35/components/commandlines.xpt
+firefox35/components/composer.xpt
+firefox35/components/content_base.xpt
+firefox35/components/content_html.xpt
+firefox35/components/content_htmldoc.xpt
+firefox35/components/content_xmldoc.xpt
+firefox35/components/content_xslt.xpt
+firefox35/components/content_xtf.xpt
+firefox35/components/contentprefs.xpt
+firefox35/components/cookie.xpt
+firefox35/components/directory.xpt
+firefox35/components/docshell.xpt
+firefox35/components/dom.xpt
+firefox35/components/dom_base.xpt
+firefox35/components/dom_canvas.xpt
+firefox35/components/dom_core.xpt
+firefox35/components/dom_css.xpt
+firefox35/components/dom_events.xpt
+firefox35/components/dom_geolocation.xpt
+firefox35/components/dom_html.xpt
+firefox35/components/dom_json.xpt
+firefox35/components/dom_loadsave.xpt
+firefox35/components/dom_offline.xpt
+firefox35/components/dom_range.xpt
+firefox35/components/dom_sidebar.xpt
+firefox35/components/dom_storage.xpt
+firefox35/components/dom_stylesheets.xpt
+firefox35/components/dom_svg.xpt
+firefox35/components/dom_threads.xpt
+firefox35/components/dom_traversal.xpt
+firefox35/components/dom_views.xpt
+firefox35/components/dom_xbl.xpt
+firefox35/components/dom_xpath.xpt
+firefox35/components/dom_xul.xpt
+firefox35/components/downloads.xpt
+firefox35/components/editor.xpt
+firefox35/components/embed_base.xpt
+firefox35/components/extensions.xpt
+firefox35/components/exthandler.xpt
+firefox35/components/exthelper.xpt
+firefox35/components/fastfind.xpt
+firefox35/components/feeds.xpt
+firefox35/components/filepicker.xpt
+firefox35/components/find.xpt
+firefox35/components/fuel.xpt
+firefox35/components/fuelApplication.js
+firefox35/components/gfx.xpt
+firefox35/components/htmlparser.xpt
+firefox35/components/imgicon.xpt
+firefox35/components/imglib2.xpt
+firefox35/components/inspector.xpt
+firefox35/components/intl.xpt
+firefox35/components/jar.xpt
+firefox35/components/jsconsole-clhandler.js
+firefox35/components/jsdservice.xpt
+firefox35/components/layout_base.xpt
+firefox35/components/layout_printing.xpt
+firefox35/components/layout_xul.xpt
+firefox35/components/layout_xul_tree.xpt
+@lib firefox35/components/libaccessibility.so.${LIBaccessibility_VERSION}
+@lib firefox35/components/libappcomps.so.${LIBappcomps_VERSION}
+@lib firefox35/components/libauth.so.${LIBauth_VERSION}
+@lib firefox35/components/libautoconfig.so.${LIBautoconfig_VERSION}
+@lib firefox35/components/libbrowsercomps.so.${LIBbrowsercomps_VERSION}
+@lib firefox35/components/libbrowserdirprovider.so.${LIBbrowserdirprovider_VERSION}
+@lib firefox35/components/libcaps.so.${LIBcaps_VERSION}
+@lib firefox35/components/libchardet.so.${LIBchardet_VERSION}
+@lib firefox35/components/libchrome.so.${LIBchrome_VERSION}
+@lib firefox35/components/libcommandlines.so.${LIBcommandlines_VERSION}
+@lib firefox35/components/libcomposer.so.${LIBcomposer_VERSION}
+@lib firefox35/components/libcookie.so.${LIBcookie_VERSION}
+@lib firefox35/components/libdocshell.so.${LIBdocshell_VERSION}
+@lib firefox35/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
+@lib firefox35/components/libfileview.so.${LIBfileview_VERSION}
+@lib firefox35/components/libgkgfxthebes.so.${LIBgkgfxthebes_VERSION}
+@lib firefox35/components/libgklayout.so.${LIBgklayout_VERSION}
+@lib firefox35/components/libgkplugin.so.${LIBgkplugin_VERSION}
+@lib firefox35/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
+@lib firefox35/components/libi18n.so.${LIBi18n_VERSION}
+@lib firefox35/components/libimgicon.so.${LIBimgicon_VERSION}
+@lib firefox35/components/libimglib2.so.${LIBimglib2_VERSION}
+@lib firefox35/components/libintlapp.so.${LIBintlapp_VERSION}
+@lib firefox35/components/libjar50.so.${LIBjar50_VERSION}
+@lib firefox35/components/libjsd.so.${LIBjsd_VERSION}
+@lib firefox35/components/libmozfind.so.${LIBmozfind_VERSION}
+@lib firefox35/components/libnecko.so.${LIBnecko_VERSION}
+@lib firefox35/components/libnsappshell.so.${LIBnsappshell_VERSION}
+@lib firefox35/components/liboji.so.${LIBoji_VERSION}
+@lib firefox35/components/libpermissions.so.${LIBpermissions_VERSION}
+@lib firefox35/components/libpipboot.so.${LIBpipboot_VERSION}
+@lib firefox35/components/libpipnss.so.${LIBpipnss_VERSION}
+@lib firefox35/components/libpippki.so.${LIBpippki_VERSION}
+@lib firefox35/components/libplaces.so.${LIBplaces_VERSION}
+@lib firefox35/components/libpref.so.${LIBpref_VERSION}
+@lib firefox35/components/librdf.so.${LIBrdf_VERSION}
+@lib firefox35/components/libremoteservice.so.${LIBremoteservice_VERSION}
+@lib firefox35/components/libsatchel.so.${LIBsatchel_VERSION}
+@lib firefox35/components/libspellchecker.so.${LIBspellchecker_VERSION}
+@lib firefox35/components/libstoragecomps.so.${LIBstoragecomps_VERSION}
+@lib firefox35/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
+@lib firefox35/components/libtkautocomplete.so.${LIBtkautocomplete_VERSION}
+@lib firefox35/components/libtoolkitcomps.so.${LIBtoolkitcomps_VERSION}
+@lib firefox35/components/libtxmgr.so.${LIBtxmgr_VERSION}
+@lib firefox35/components/libuconv.so.${LIBuconv_VERSION}
+@lib firefox35/components/libucvmath.so.${LIBucvmath_VERSION}
+@lib firefox35/components/libuniversalchardet.so.${LIBuniversalchardet_VERSION}
+@lib firefox35/components/libunixproxy.so.${LIBunixproxy_VERSION}
+@lib firefox35/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
+@lib firefox35/components/libwidget_gtk2.so.${LIBwidget_gtk2_VERSION}
+@lib firefox35/components/libwindowds.so.${LIBwindowds_VERSION}
+@lib firefox35/components/libxpconnect.so.${LIBxpconnect_VERSION}
+@lib firefox35/components/libxpinstall.so.${LIBxpinstall_VERSION}
+@lib firefox35/components/libzipwriter.so.${LIBzipwriter_VERSION}
+firefox35/components/locale.xpt
+firefox35/components/loginmgr.xpt
+firefox35/components/lwbrk.xpt
+firefox35/components/microsummaries.xpt
+firefox35/components/migration.xpt
+firefox35/components/mimetype.xpt
+firefox35/components/mozbrwsr.xpt
+firefox35/components/mozfind.xpt
+firefox35/components/necko.xpt
+firefox35/components/necko_about.xpt
+firefox35/components/necko_cache.xpt
+firefox35/components/necko_cookie.xpt
+firefox35/components/necko_dns.xpt
+firefox35/components/necko_file.xpt
+firefox35/components/necko_ftp.xpt
+firefox35/components/necko_http.xpt
+firefox35/components/necko_res.xpt
+firefox35/components/necko_socket.xpt
+firefox35/components/necko_strconv.xpt
+firefox35/components/necko_viewsource.xpt
+firefox35/components/nsAddonRepository.js
+firefox35/components/nsBadCertHandler.js
+firefox35/components/nsBlocklistService.js
+firefox35/components/nsBrowserContentHandler.js
+firefox35/components/nsBrowserGlue.js
+firefox35/components/nsContentDispatchChooser.js
+firefox35/components/nsContentPrefService.js
+firefox35/components/nsDefaultCLH.js
+firefox35/components/nsDownloadManagerUI.js
+firefox35/components/nsExtensionManager.js
+firefox35/components/nsFilePicker.js
+firefox35/components/nsHandlerService.js
+firefox35/components/nsHelperAppDlg.js
+firefox35/components/nsLivemarkService.js
+firefox35/components/nsLoginInfo.js
+firefox35/components/nsLoginManager.js
+firefox35/components/nsLoginManagerPrompter.js
+firefox35/components/nsMicrosummaryService.js
+firefox35/components/nsPlacesDBFlush.js
+firefox35/components/nsPlacesTransactionsService.js
+firefox35/components/nsPrivateBrowsingService.js
+firefox35/components/nsProgressDialog.js
+firefox35/components/nsProxyAutoConfig.js
+firefox35/components/nsSafebrowsingApplication.js
+firefox35/components/nsSearchService.js
+firefox35/components/nsSearchSuggestions.js
+firefox35/components/nsSessionStartup.js
+firefox35/components/nsSessionStore.js
+firefox35/components/nsSetDefaultBrowser.js
+firefox35/components/nsSidebar.js
+firefox35/components/nsTaggingService.js
+firefox35/components/nsTryToClose.js
+firefox35/components/nsURLFormatter.js
+firefox35/components/nsUpdateService.js
+firefox35/components/nsUrlClassifierLib.js
+firefox35/components/nsUrlClassifierListManager.js
+firefox35/components/nsWebHandlerApp.js
+firefox35/components/oji.xpt
+firefox35/components/parentalcontrols.xpt
+firefox35/components/pipboot.xpt
+firefox35/components/pipnss.xpt
+firefox35/components/pippki.xpt
+firefox35/components/places.xpt
+firefox35/components/plugin.xpt
+firefox35/components/pluginGlue.js
+firefox35/components/pref.xpt
+firefox35/components/prefetch.xpt
+firefox35/components/profile.xpt
+firefox35/components/proxyObjInst.xpt
+firefox35/components/rdf.xpt
+firefox35/components/satchel.xpt
+firefox35/components/saxparser.xpt
+firefox35/components/sessionstore.xpt
+firefox35/components/shellservice.xpt
+firefox35/components/shistory.xpt
+firefox35/components/spellchecker.xpt
+firefox35/components/storage-Legacy.js
+firefox35/components/storage-mozStorage.js
+firefox35/components/storage.xpt
+firefox35/components/toolkitprofile.xpt
+firefox35/components/toolkitremote.xpt
+firefox35/components/toolkitsearch.xpt
+firefox35/components/txEXSLTRegExFunctions.js
+firefox35/components/txmgr.xpt
+firefox35/components/txtsvc.xpt
+firefox35/components/uconv.xpt
+firefox35/components/unicharutil.xpt
+firefox35/components/update.xpt
+firefox35/components/uriloader.xpt
+firefox35/components/url-classifier.xpt
+firefox35/components/urlformatter.xpt
+firefox35/components/webBrowser_core.xpt
+firefox35/components/webbrowserpersist.xpt
+firefox35/components/webshell_idls.xpt
+firefox35/components/widget.xpt
+firefox35/components/windowds.xpt
+firefox35/components/windowwatcher.xpt
+firefox35/components/xpcom_base.xpt
+firefox35/components/xpcom_components.xpt
+firefox35/components/xpcom_ds.xpt
+firefox35/components/xpcom_io.xpt
+firefox35/components/xpcom_system.xpt
+firefox35/components/xpcom_threads.xpt
+firefox35/components/xpcom_xpti.xpt
+firefox35/components/xpconnect.xpt
+firefox35/components/xpinstall.xpt
+firefox35/components/xulapp.xpt
+firefox35/components/xuldoc.xpt
+firefox35/components/xultmpl.xpt
+firefox35/components/zipwriter.xpt
+firefox35/defaults/
+firefox35/defaults/autoconfig/
+firefox35/defaults/autoconfig/platform.js
+firefox35/defaults/autoconfig/prefcalls.js
+firefox35/defaults/pref/
+firefox35/defaults/pref/channel-prefs.js
+firefox35/defaults/pref/firefox-branding.js
+firefox35/defaults/pref/firefox-l10n.js
+firefox35/defaults/pref/firefox.js
+firefox35/defaults/pref/reporter.js
+firefox35/defaults/profile/
+firefox35/defaults/profile/bookmarks.html
+firefox35/defaults/profile/chrome/
+firefox35/defaults/profile/chrome/userChrome-example.css
+firefox35/defaults/profile/chrome/userContent-example.css
+firefox35/defaults/profile/localstore.rdf
+firefox35/defaults/profile/mimeTypes.rdf
+firefox35/defaults/profile/prefs.js
+firefox35/dictionaries/
+firefox35/dictionaries/en-US.aff
+firefox35/dictionaries/en-US.dic
+firefox35/extensions/
+firefox35/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
+firefox35/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+@bin firefox35/firefox-bin
+firefox35/greprefs/
+firefox35/greprefs/all.js
+firefox35/greprefs/security-prefs.js
+firefox35/greprefs/xpinstall.js
+firefox35/icons/
+firefox35/icons/document.png
+firefox35/icons/mozicon128.png
+firefox35/icons/mozicon16.xpm
+firefox35/icons/mozicon50.xpm
+@lib firefox35/libfreebl3.so.${LIBfreebl3_VERSION}
+@lib firefox35/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
+@lib firefox35/libgkgfx.so.${LIBgkgfx_VERSION}
+@lib firefox35/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
+@lib firefox35/libjsj.so.${LIBjsj_VERSION}
+@lib firefox35/libmozjs.so.${LIBmozjs_VERSION}
+@lib firefox35/libnspr4.so.${LIBnspr4_VERSION}
+@lib firefox35/libnss3.so.${LIBnss3_VERSION}
+@lib firefox35/libnssckbi.so.${LIBnssckbi_VERSION}
+@lib firefox35/libnssdbm3.so.${LIBnssdbm3_VERSION}
+@lib firefox35/libnssutil3.so.${LIBnssutil3_VERSION}
+@lib firefox35/libplc4.so.${LIBplc4_VERSION}
+@lib firefox35/libplds4.so.${LIBplds4_VERSION}
+@lib firefox35/libsmime3.so.${LIBsmime3_VERSION}
+@lib firefox35/libsoftokn3.so.${LIBsoftokn3_VERSION}
+@lib firefox35/libssl3.so.${LIBssl3_VERSION}
+@lib firefox35/libthebes.so.${LIBthebes_VERSION}
+@lib firefox35/libxpcom.so.${LIBxpcom_VERSION}
+@lib firefox35/libxpcom_core.so.${LIBxpcom_core_VERSION}
+@lib firefox35/libxul.so.${LIBxul_VERSION}
+firefox35/modules/
+firefox35/modules/DownloadLastDir.jsm
+firefox35/modules/DownloadUtils.jsm
+firefox35/modules/ISO8601DateUtils.jsm
+firefox35/modules/Microformats.js
+firefox35/modules/PlacesDBUtils.jsm
+firefox35/modules/PluralForm.jsm
+firefox35/modules/SpatialNavigation.js
+firefox35/modules/WindowDraggingUtils.jsm
+firefox35/modules/XPCOMUtils.jsm
+firefox35/modules/debug.js
+firefox35/modules/distribution.js
+firefox35/modules/utils.js
+@bin firefox35/mozilla-firefox-bin
+@bin firefox35/mozilla-xremote-client
+firefox35/platform.ini
+firefox35/plugins/
+@lib firefox35/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
+@lib firefox35/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
+@bin firefox35/regxpcom
+firefox35/res/
+firefox35/res/EditorOverride.css
+firefox35/res/arrow.gif
+firefox35/res/arrowd.gif
+firefox35/res/broken-image.gif
+firefox35/res/charsetData.properties
+firefox35/res/charsetalias.properties
+firefox35/res/contenteditable.css
+firefox35/res/designmode.css
+firefox35/res/dtd/
+firefox35/res/dtd/mathml.dtd
+firefox35/res/dtd/xhtml11.dtd
+firefox35/res/entityTables/
+firefox35/res/entityTables/html40Latin1.properties
+firefox35/res/entityTables/html40Special.properties
+firefox35/res/entityTables/html40Symbols.properties
+firefox35/res/entityTables/htmlEntityVersions.properties
+firefox35/res/entityTables/mathml20.properties
+firefox35/res/entityTables/transliterate.properties
+firefox35/res/fonts/
+firefox35/res/fonts/mathfont.properties
+firefox35/res/fonts/mathfontSTIXNonUnicode.properties
+firefox35/res/fonts/mathfontSTIXSize1.properties
+firefox35/res/fonts/mathfontStandardSymbolsL.properties
+firefox35/res/fonts/mathfontUnicode.properties
+firefox35/res/forms.css
+firefox35/res/grabber.gif
+firefox35/res/hiddenWindow.html
+firefox35/res/html/
+firefox35/res/html.css
+firefox35/res/html/folder.png
+firefox35/res/langGroups.properties
+firefox35/res/language.properties
+firefox35/res/loading-image.gif
+firefox35/res/mathml.css
+firefox35/res/quirk.css
+firefox35/res/svg.css
+firefox35/res/table-add-column-after-active.gif
+firefox35/res/table-add-column-after-hover.gif
+firefox35/res/table-add-column-after.gif
+firefox35/res/table-add-column-before-active.gif
+firefox35/res/table-add-column-before-hover.gif
+firefox35/res/table-add-column-before.gif
+firefox35/res/table-add-row-after-active.gif
+firefox35/res/table-add-row-after-hover.gif
+firefox35/res/table-add-row-after.gif
+firefox35/res/table-add-row-before-active.gif
+firefox35/res/table-add-row-before-hover.gif
+firefox35/res/table-add-row-before.gif
+firefox35/res/table-remove-column-active.gif
+firefox35/res/table-remove-column-hover.gif
+firefox35/res/table-remove-column.gif
+firefox35/res/table-remove-row-active.gif
+firefox35/res/table-remove-row-hover.gif
+firefox35/res/table-remove-row.gif
+firefox35/res/ua.css
+firefox35/res/unixcharset.properties
+firefox35/res/viewsource.css
+firefox35/run-mozilla.sh
+firefox35/searchplugins/
+firefox35/searchplugins/amazondotcom.xml
+firefox35/searchplugins/answers.xml
+firefox35/searchplugins/creativecommons.xml
+firefox35/searchplugins/eBay.xml
+firefox35/searchplugins/google.xml
+firefox35/searchplugins/wikipedia.xml
+firefox35/searchplugins/yahoo.xml
 share/applications/firefox.desktop
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
-@exec TEMP=`mktemp -d` && cd %D/mozilla-firefox && env HOME=$TEMP LD_LIBRARY_PATH=%D/mozilla-firefox ./regxpcom && rm -fr $TEMP
-@unexec rm -f %D/mozilla-firefox/components/compreg.dat
-@unexec rm -f %D/mozilla-firefox/components/xpti.dat
+@exec TEMP=`mktemp -d` && cd %D/firefox35 && env HOME=$TEMP LD_LIBRARY_PATH=%D/firefox35 ./regxpcom && rm -fr $TEMP
+@unexec rm -f %D/firefox35/components/compreg.dat
+@unexec rm -f %D/firefox35/components/xpti.dat

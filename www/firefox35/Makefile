@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/06/21 18:42:15 martynas Exp $
+# $OpenBSD: Makefile,v 1.7 2009/06/21 18:50:06 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -117,7 +117,7 @@ CONFIGURE_ENV=	${MAKE_ENV} \
 MODPY_RUNDEP=	No
 
 MOB=		${WRKSRC}/dist/bin
-MOZ=		${PREFIX}/mozilla-firefox
+MOZ=		${PREFIX}/firefox35
 
 DATADIRS=	chrome components defaults dictionaries extensions \
 		greprefs icons modules plugins res searchplugins
@@ -146,14 +146,11 @@ do-install:
 		${MOB}/platform.ini ${MOZ}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/firefox.desktop ${PREFIX}/share/applications
-	${INSTALL_MAN} ${FILESDIR}/mozilla-firefox.1 ${PREFIX}/man/man1
 	perl -pi -e 's,!!PREFIX!!,${TRUEPREFIX},g; \
 		s,!!LOCALBASE!!,${LOCALBASE},g; s,!!VERSION!!,${VER},g' \
-		${MOZ}/README.OpenBSD ${PREFIX}/man/man1/mozilla-firefox.1 \
+		${MOZ}/README.OpenBSD \
 		${PREFIX}/share/applications/firefox.desktop
-	ln -f ${PREFIX}/man/man1/mozilla-firefox.1 ${PREFIX}/man/man1/firefox.1
-	${INSTALL_SCRIPT} ${MOB}/firefox ${PREFIX}/bin
-	ln -f ${PREFIX}/bin/firefox ${PREFIX}/bin/mozilla-firefox
+	${INSTALL_SCRIPT} ${MOB}/firefox ${PREFIX}/bin/firefox35
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/firefox-bin ${MOB}/mozilla-xremote-client \
 		${MOB}/regxpcom ${MOZ}
