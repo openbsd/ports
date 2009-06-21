@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2009/03/31 07:14:10 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.24 2009/06/21 14:51:58 sthen Exp $
 @group daemon
 phpMyAdmin/
 phpMyAdmin/CREDITS
@@ -22,6 +22,7 @@ phpMyAdmin/config.sample.inc.php
 @sample phpMyAdmin/config.inc.php
 phpMyAdmin/contrib/
 phpMyAdmin/contrib/README
+phpMyAdmin/contrib/htaccess
 phpMyAdmin/contrib/packaging/
 phpMyAdmin/contrib/packaging/Fedora/
 phpMyAdmin/contrib/packaging/Fedora/phpMyAdmin-http.conf
@@ -232,6 +233,7 @@ phpMyAdmin/libraries/information_schema_relations.lib.php
 phpMyAdmin/libraries/ip_allow_deny.lib.php
 phpMyAdmin/libraries/js_escape.lib.php
 phpMyAdmin/libraries/kanji-encoding.lib.php
+phpMyAdmin/libraries/logging.lib.php
 phpMyAdmin/libraries/mult_submits.inc.php
 phpMyAdmin/libraries/mysql_charsets.lib.php
 phpMyAdmin/libraries/navigation_header.inc.php
@@ -304,6 +306,7 @@ phpMyAdmin/libraries/transformations/text_plain__longToIpv4.inc.php
 phpMyAdmin/libraries/transformations/text_plain__sql.inc.php
 phpMyAdmin/libraries/transformations/text_plain__substr.inc.php
 phpMyAdmin/libraries/url_generating.lib.php
+phpMyAdmin/libraries/vendor_config.php
 phpMyAdmin/libraries/zip.lib.php
 phpMyAdmin/libraries/zip_extension.lib.php
 phpMyAdmin/license.php
@@ -379,7 +382,6 @@ phpMyAdmin/pmd_relation_upd.php
 phpMyAdmin/pmd_save_pos.php
 phpMyAdmin/print.css
 phpMyAdmin/querywindow.php
-phpMyAdmin/readme.php
 phpMyAdmin/robots.txt
 phpMyAdmin/scripts/
 phpMyAdmin/scripts/check_lang.php
@@ -414,6 +416,7 @@ phpMyAdmin/setup/frames/menu.inc.php
 phpMyAdmin/setup/frames/servers.inc.php
 phpMyAdmin/setup/index.php
 phpMyAdmin/setup/lib/
+phpMyAdmin/setup/lib/.htaccess
 phpMyAdmin/setup/lib/ConfigFile.class.php
 phpMyAdmin/setup/lib/Form.class.php
 phpMyAdmin/setup/lib/FormDisplay.class.php
@@ -649,6 +652,7 @@ phpMyAdmin/themes/original/img/bd_primary.png
 phpMyAdmin/themes/original/img/bd_sbrowse.png
 phpMyAdmin/themes/original/img/bd_select.png
 phpMyAdmin/themes/original/img/bd_unique.png
+phpMyAdmin/themes/original/img/docs_menu_bg.png
 phpMyAdmin/themes/original/img/error.ico
 phpMyAdmin/themes/original/img/item.png
 phpMyAdmin/themes/original/img/item_ltr.png
