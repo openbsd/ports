@@ -1,0 +1,12 @@
+$OpenBSD: patch-media_liboggplay_src_liboggplay_std_semaphore_h,v 1.1 2009/06/21 12:30:58 martynas Exp $
+--- media/liboggplay/src/liboggplay/std_semaphore.h.orig	Sun Jun 21 14:59:18 2009
++++ media/liboggplay/src/liboggplay/std_semaphore.h	Sun Jun 21 14:59:53 2009
+@@ -74,7 +74,7 @@
+  * @retval non-zero on error 
+  */
+ 
+-#if defined(linux) || defined(SOLARIS)
++#if defined(linux) || defined(SOLARIS) || defined(__OpenBSD__)
+ #include <semaphore.h>
+ #define SEM_CREATE(p,s) sem_init(&(p), 1, s)
+ #define SEM_SIGNAL(p)   sem_post(&(p))

@@ -1,0 +1,15 @@
+$OpenBSD: patch-js_src_xpconnect_src_dom_quickstubs_cpp_diff,v 1.1 2009/06/21 12:30:58 martynas Exp $
+--- js/src/xpconnect/src/dom_quickstubs.cpp.diff.orig	Sun Jun 21 14:55:20 2009
++++ js/src/xpconnect/src/dom_quickstubs.cpp.diff	Sun Jun 21 14:55:33 2009
+@@ -0,0 +1,11 @@
++--- dom_quickstubs.cpp.orig	Sun Jun 21 14:24:03 2009
+++++ dom_quickstubs.cpp	Sun Jun 21 14:51:17 2009
++@@ -3387,7 +3387,7 @@ nsIDOM3Node_SetUserData(JSContext *cx, uintN argc, jsv
++     xpc_qsDOMString arg0(cx, &argv[0]);
++     if (!arg0.IsValid())
++         return JS_FALSE;
++-    nsCOMPtr<nsIVariant> arg1(already_AddRefed<nsIVariant>(XPCVariant::newVariant(ccx, argv[1])));
+++    nsCOMPtr<nsIVariant> arg1 = nsCOMPtr<nsIVariant>(already_AddRefed<nsIVariant>(XPCVariant::newVariant(ccx, argv[1])));
++     if (!arg1)
++         return JS_FALSE;
++     nsresult rv;
