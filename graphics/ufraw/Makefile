@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2009/03/16 08:56:32 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2009/06/21 14:01:28 sthen Exp $
 
 COMMENT=		read and manipulate raw images from digital cameras
 
-DISTNAME=		ufraw-0.13
-PKGNAME =		${DISTNAME}p0
+DISTNAME=		ufraw-0.15
 
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ufraw/}
@@ -18,7 +17,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=		atk-1.0 c cairo expat fontconfig freetype \
-			gdk_pixbuf-2.0 gdk-x11-2.0 glib-2.0 glitz \
+			gdk_pixbuf-2.0 gdk-x11-2.0 gio-2.0 glib-2.0 glitz \
 			gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 			m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
 			pthread stdc++ X11 Xau Xcursor Xext Xfixes Xi \
@@ -35,8 +34,7 @@ MODULES=		devel/gettext
 USE_X11=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-AUTOCONF_VERSION=	2.61
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 CONFIGURE_ARGS=		--enable-extras

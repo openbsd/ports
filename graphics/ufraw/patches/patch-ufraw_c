@@ -1,7 +1,7 @@
-$OpenBSD: patch-ufraw_c,v 1.4 2008/06/07 05:31:41 phessler Exp $
---- ufraw.c.orig	Sun Nov 11 02:04:39 2007
-+++ ufraw.c	Sat Dec 29 12:15:06 2007
-@@ -85,9 +85,9 @@ int main (int argc, char **argv)
+$OpenBSD: patch-ufraw_c,v 1.5 2009/06/21 14:01:28 sthen Exp $
+--- ufraw.c.orig	Wed Dec 10 04:06:53 2008
++++ ufraw.c	Thu Jun 18 02:48:27 2009
+@@ -95,9 +95,9 @@ int main (int argc, char **argv)
      if (strlen(cmd.inputFilename)>0) {
  	status = conf_load(&conf, cmd.inputFilename);
  	if (status==UFRAW_SUCCESS) {

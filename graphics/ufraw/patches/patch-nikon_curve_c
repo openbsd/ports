@@ -1,6 +1,6 @@
-$OpenBSD: patch-nikon_curve_c,v 1.4 2008/06/07 05:31:41 phessler Exp $
---- nikon_curve.c.orig	Sun Nov 11 03:10:38 2007
-+++ nikon_curve.c	Sat Dec 29 12:19:46 2007
+$OpenBSD: patch-nikon_curve_c,v 1.5 2009/06/21 14:01:28 sthen Exp $
+--- nikon_curve.c.orig	Tue Dec 16 06:55:29 2008
++++ nikon_curve.c	Thu Jun 18 02:48:27 2009
 @@ -77,8 +77,8 @@ static const unsigned char *FileTypeHeaders[NUM_FILE_T
  #ifdef _STAND_ALONE_
  
@@ -51,7 +51,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.4 2008/06/07 05:31:41 phessler Exp $
      }
  
      return NC_SUCCESS;
-@@ -1723,7 +1719,7 @@ int ConvertNikonCurveData(char *inFileName, char *outF
+@@ -1739,7 +1735,7 @@ int ConvertNikonCurveData(char *inFileName, char *outF
  {
      //Load the curve data from the ncv/ntc file
      NikonData data;
@@ -60,7 +60,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.4 2008/06/07 05:31:41 phessler Exp $
  
      if ( samplingRes <= 1 || outputRes <= 1 || samplingRes > MAX_RESOLUTION
  	    || outputRes > MAX_RESOLUTION )
-@@ -1753,8 +1749,7 @@ int ConvertNikonCurveData(char *inFileName, char *outF
+@@ -1769,8 +1765,7 @@ int ConvertNikonCurveData(char *inFileName, char *outF
  	}
  
  	//rename output files
@@ -70,7 +70,7 @@ $OpenBSD: patch-nikon_curve_c,v 1.4 2008/06/07 05:31:41 phessler Exp $
  	//if the name has an extension, attempt to remove it
  	if (tmpstr[strlen(tmpstr)-4] == '.')
  	{
-@@ -1764,19 +1759,19 @@ int ConvertNikonCurveData(char *inFileName, char *outF
+@@ -1780,19 +1775,19 @@ int ConvertNikonCurveData(char *inFileName, char *outF
  	switch(i)
  	{
  	    case TONE_CURVE:

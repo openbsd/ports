@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2008/06/07 05:31:41 phessler Exp $
---- Makefile.in.orig	Mon Nov 12 21:27:52 2007
-+++ Makefile.in	Wed Jun  4 12:39:59 2008
-@@ -93,7 +93,7 @@ am__nikon_curve_SOURCES_DIST = nikon_curve.c
+$OpenBSD: patch-Makefile_in,v 1.2 2009/06/21 14:01:28 sthen Exp $
+--- Makefile.in.orig	Tue Dec 23 07:47:19 2008
++++ Makefile.in	Thu Jun 18 02:48:27 2009
+@@ -94,7 +94,7 @@ am__nikon_curve_SOURCES_DIST = nikon_curve.c
  nikon_curve_OBJECTS = $(am_nikon_curve_OBJECTS)
  @MAKE_EXTRAS_TRUE@nikon_curve_DEPENDENCIES = $(am__DEPENDENCIES_1)
  nikon_curve_LINK = $(CCLD) $(nikon_curve_CFLAGS) $(CFLAGS) \
