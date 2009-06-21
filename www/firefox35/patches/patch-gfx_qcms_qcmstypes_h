@@ -1,0 +1,19 @@
+$OpenBSD: patch-gfx_qcms_qcmstypes_h,v 1.1 2009/06/21 11:36:11 martynas Exp $
+--- gfx/qcms/qcmstypes.h.orig	Wed Jun 17 07:21:46 2009
++++ gfx/qcms/qcmstypes.h	Sun Jun 21 14:11:37 2009
+@@ -11,15 +11,6 @@
+ /* int_types.h gets included somehow, so avoid redefining the types differently */
+ #include <sys/int_types.h>
+ #else
+-typedef PRInt8 int8_t;
+-typedef PRUint8 uint8_t;
+-typedef PRInt16 int16_t;
+-typedef PRUint16 uint16_t;
+-typedef PRInt32 int32_t;
+-typedef PRUint32 uint32_t;
+-typedef PRInt64 int64_t;
+-typedef PRUint64 uint64_t;
+-
+ #ifdef __OS2__
+ /* OS/2's stdlib typdefs uintptr_t. So we'll just include that so we don't collide */
+ #include <stdlib.h>

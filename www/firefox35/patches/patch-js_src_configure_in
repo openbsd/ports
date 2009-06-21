@@ -1,0 +1,12 @@
+$OpenBSD: patch-js_src_configure_in,v 1.1 2009/06/21 11:36:11 martynas Exp $
+--- js/src/configure.in.orig	Wed Jun 17 07:21:47 2009
++++ js/src/configure.in	Sun Jun 21 13:22:13 2009
+@@ -2135,7 +2135,7 @@ case "$target" in
+ 	;;
+ 
+ *-openbsd*)
+-    DLL_SUFFIX=".so.1.0"
++    DLL_SUFFIX=".so.${SO_VERSION}"
+     DSO_CFLAGS=''
+     DSO_PIC_CFLAGS='-fPIC'
+     DSO_LDOPTS='-shared -fPIC'

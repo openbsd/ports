@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/21 01:31:23 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/21 11:36:11 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -63,7 +63,8 @@ USE_GMAKE=	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS=	Yes
 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
+				${WRKSRC}/js/src/build/autoconf
 
 AUTOCONF_VERSION= 2.13
 CONFIGURE_STYLE= autoconf no-autoheader
@@ -125,6 +126,7 @@ post-extract:
 	@find ${WRKSRC} -name "*.orig" -exec rm -f {} \;
 
 pre-configure:
+	cd ${WRKSRC}/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
 		${WRKSRC}/build/unix/mozilla.in \
 		${WRKSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
