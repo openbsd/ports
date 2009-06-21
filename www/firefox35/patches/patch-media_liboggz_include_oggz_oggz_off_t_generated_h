@@ -1,0 +1,12 @@
+$OpenBSD: patch-media_liboggz_include_oggz_oggz_off_t_generated_h,v 1.1 2009/06/21 13:18:59 martynas Exp $
+--- media/liboggz/include/oggz/oggz_off_t_generated.h.orig	Wed Jun 17 07:21:59 2009
++++ media/liboggz/include/oggz/oggz_off_t_generated.h	Sun Jun 21 15:38:45 2009
+@@ -59,7 +59,7 @@
+ 
+ #include <sys/types.h>
+ 
+-#if defined(__APPLE__) || defined(SOLARIS)
++#if defined(__APPLE__) || defined(SOLARIS) || defined(__OpenBSD__)
+ typedef off_t oggz_off_t;
+ #else
+ typedef loff_t oggz_off_t;

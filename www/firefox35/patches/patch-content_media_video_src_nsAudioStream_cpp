@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_media_video_src_nsAudioStream_cpp,v 1.1 2009/06/21 13:18:59 martynas Exp $
+--- content/media/video/src/nsAudioStream.cpp.orig	Wed Jun 17 07:21:42 2009
++++ content/media/video/src/nsAudioStream.cpp	Sun Jun 21 15:39:50 2009
+@@ -246,7 +246,7 @@ float nsAudioStream::GetPosition()
+ #if defined(XP_WIN)
+   positionType = SA_POSITION_WRITE_HARDWARE;
+ #endif
+-  PRInt64 position = 0;
++  int64_t position = 0;
+   if (sa_stream_get_position(static_cast<sa_stream_t*>(mAudioHandle),
+                              positionType, &position) == SA_SUCCESS) {
+     return (position / float(mRate) / mChannels / sizeof(short));
