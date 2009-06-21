@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/06/21 14:28:14 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/06/21 18:42:15 martynas Exp $
 bin/firefox
 bin/mozilla-firefox
 @man man/man1/firefox.1
@@ -310,11 +310,22 @@ mozilla-firefox/icons/document.png
 mozilla-firefox/icons/mozicon128.png
 mozilla-firefox/icons/mozicon16.xpm
 mozilla-firefox/icons/mozicon50.xpm
+@lib mozilla-firefox/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib mozilla-firefox/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
 @lib mozilla-firefox/libgkgfx.so.${LIBgkgfx_VERSION}
 @lib mozilla-firefox/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
 @lib mozilla-firefox/libjsj.so.${LIBjsj_VERSION}
 @lib mozilla-firefox/libmozjs.so.${LIBmozjs_VERSION}
+@lib mozilla-firefox/libnspr4.so.${LIBnspr4_VERSION}
+@lib mozilla-firefox/libnss3.so.${LIBnss3_VERSION}
+@lib mozilla-firefox/libnssckbi.so.${LIBnssckbi_VERSION}
+@lib mozilla-firefox/libnssdbm3.so.${LIBnssdbm3_VERSION}
+@lib mozilla-firefox/libnssutil3.so.${LIBnssutil3_VERSION}
+@lib mozilla-firefox/libplc4.so.${LIBplc4_VERSION}
+@lib mozilla-firefox/libplds4.so.${LIBplds4_VERSION}
+@lib mozilla-firefox/libsmime3.so.${LIBsmime3_VERSION}
+@lib mozilla-firefox/libsoftokn3.so.${LIBsoftokn3_VERSION}
+@lib mozilla-firefox/libssl3.so.${LIBssl3_VERSION}
 @lib mozilla-firefox/libthebes.so.${LIBthebes_VERSION}
 @lib mozilla-firefox/libxpcom.so.${LIBxpcom_VERSION}
 @lib mozilla-firefox/libxpcom_core.so.${LIBxpcom_core_VERSION}

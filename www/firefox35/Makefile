@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/06/21 18:17:11 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2009/06/21 18:42:15 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -15,12 +15,13 @@ SO_VERSION=	21.0
 	browserdirprovider caps chardet chrome commandlines composer \
 	cookie docshell embedcomponents fileview gkgfxthebes gklayout \
 	gkplugin htmlpars i18n imgicon imglib2 intlapp jar50 jsd \
-	mozfind mozjs necko nsappshell oji permissions pipboot \
-	pipnss pippki places pref rdf remoteservice satchel \
-	spellchecker storagecomps system-pref tkautocomplete \
-	toolkitcomps txmgr uconv ucvmath universalchardet unixproxy \
-	webbrwsr widget_gtk2 windowds xpconnect xpinstall zipwriter \
-	gfxpsshar gkgfx gtkxtbin jsj thebes xpcom xpcom_core xul \
+	mozfind necko nsappshell oji permissions pipboot pipnss \
+	pippki places pref rdf remoteservice satchel spellchecker \
+	storagecomps system-pref tkautocomplete toolkitcomps txmgr \
+	uconv ucvmath universalchardet unixproxy webbrwsr widget_gtk2 \
+	windowds xpconnect xpinstall zipwriter freebl3 gfxpsshar \
+	gkgfx gtkxtbin jsj mozjs nspr4 nss3 nssckbi nssdbm3 nssutil3 \
+	plc4 plds4 smime3 softokn3 ssl3 thebes xpcom xpcom_core xul \
 	nullplugin unixprintplugin
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
@@ -85,6 +86,7 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--disable-gnomeui		\
 		--disable-gnomevfs		\
 		--disable-dbus			\
+		--disable-jit			\
 		--enable-xinerama		\
 		--enable-svg			\
 		--enable-svg-renderer=cairo	\
