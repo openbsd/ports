@@ -6,3 +6,6 @@ Low Level Virtual Machine (LLVM) is:
 - LLVM does not imply things that you would expect from a high-level
   virtual machine. It does not require garbage collection or run-time
   code generation.
+
+N.B. This package is built from development sources. As well as
+LLVM, the Clang front-ends are also included.

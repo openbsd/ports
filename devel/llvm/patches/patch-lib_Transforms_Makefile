@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_Transforms_Makefile,v 1.1 2008/11/12 15:46:33 sthen Exp $
---- lib/Transforms/Makefile.orig	Tue Nov 11 14:10:06 2008
-+++ lib/Transforms/Makefile	Tue Nov 11 14:10:12 2008
+$OpenBSD: patch-lib_Transforms_Makefile,v 1.2 2009/06/21 23:13:48 sthen Exp $
+--- lib/Transforms/Makefile.orig	Wed Mar 11 20:40:15 2009
++++ lib/Transforms/Makefile	Sun Jun 21 22:55:37 2009
 @@ -8,7 +8,7 @@
  ##===----------------------------------------------------------------------===##
  
@@ -8,5 +8,5 @@ $OpenBSD: patch-lib_Transforms_Makefile,v 1.1 2008/11/12 15:46:33 sthen Exp $
 -PARALLEL_DIRS = Utils Instrumentation Scalar IPO Hello
 +PARALLEL_DIRS = Utils Instrumentation Scalar IPO
  
- include $(LEVEL)/Makefile.common
+ include $(LEVEL)/Makefile.config
  
