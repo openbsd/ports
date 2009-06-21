@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/21 20:41:40 martynas Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/21 20:46:38 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -145,11 +145,12 @@ do-install:
 		${MOB}/LICENSE ${MOB}/application.ini ${MOB}/blocklist.xml \
 		${MOB}/platform.ini ${MOZ}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FILESDIR}/firefox.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FILESDIR}/firefox.desktop \
+		${PREFIX}/share/applications/firefox35.desktop
 	perl -pi -e 's,!!PREFIX!!,${TRUEPREFIX},g; \
 		s,!!LOCALBASE!!,${LOCALBASE},g; s,!!VERSION!!,${VER},g' \
 		${MOZ}/README.OpenBSD \
-		${PREFIX}/share/applications/firefox.desktop
+		${PREFIX}/share/applications/firefox35.desktop
 	${INSTALL_SCRIPT} ${MOB}/firefox ${PREFIX}/bin/firefox35
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/mozilla-xremote-client ${MOB}/regxpcom ${MOZ}

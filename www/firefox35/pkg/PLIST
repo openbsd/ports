@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/06/21 20:41:40 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/06/21 20:46:38 martynas Exp $
 bin/firefox35
 firefox35/
 firefox35/LICENSE
@@ -413,7 +413,7 @@ firefox35/searchplugins/eBay.xml
 firefox35/searchplugins/google.xml
 firefox35/searchplugins/wikipedia.xml
 firefox35/searchplugins/yahoo.xml
-share/applications/firefox.desktop
+share/applications/firefox35.desktop
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec TEMP=`mktemp -d` && cd %D/firefox35 && env HOME=$TEMP LD_LIBRARY_PATH=%D/firefox35 ./regxpcom && rm -fr $TEMP
