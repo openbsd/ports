@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/22 15:45:40 giovanni Exp $
+@group daemon
+pear/data/MDB2_Driver_mysqli/
+pear/data/MDB2_Driver_mysqli/package_mysqli.xml
+pear/lib/.registry/mdb2_driver_mysqli.reg
+pear/lib/MDB2/Driver/Datatype/mysqli.php
+pear/lib/MDB2/Driver/Function/mysqli.php
+pear/lib/MDB2/Driver/Manager/mysqli.php
+pear/lib/MDB2/Driver/Native/mysqli.php
+pear/lib/MDB2/Driver/Reverse/mysqli.php
+pear/lib/MDB2/Driver/mysqli.php
+pear/tests/MDB2_Driver_mysqli/
+pear/tests/MDB2_Driver_mysqli/tests/
+pear/tests/MDB2_Driver_mysqli/tests/MDB2_nonstandard_mysqli.php
