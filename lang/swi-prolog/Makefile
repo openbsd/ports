@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/03/08 23:05:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2009/06/22 17:00:23 naddy Exp $
 
 CATEGORIES =		lang
 V =			5.6.59
@@ -6,7 +6,7 @@ XV =			6.6.58
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS =		V XV FULLARCH
 DISTNAME =		pl-$V
-PKGNAME =		swi-prolog-$Vp1
+PKGNAME =		swi-prolog-$Vp2
 MASTER_SITES =		http://gollem.science.uva.nl/cgi-bin/nph-download/SWI-Prolog/
 COMMENT =		Prolog for the real world
 HOMEPAGE =		http://www.swi-prolog.org/

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2009/03/07 15:37:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2009/06/22 17:00:24 naddy Exp $
 
 COMMENT=	GTK+ binding for librep Lisp environment
 
 VERSION=	0.18
 DISTNAME=	rep-gtk-${VERSION}
-PKGNAME=	${DISTNAME}p14
+PKGNAME=	${DISTNAME}p15
 CATEGORIES=     x11
 
 HOMEPAGE=       http://rep-gtk.sourceforge.net/

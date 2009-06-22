@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2009/02/09 20:48:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2009/06/22 17:00:23 naddy Exp $
 
 COMMENT=	Scheme interpreter with Tk interface
 
 STK_VERSION=	4.0.1
 DISTNAME=	STk-${STK_VERSION}
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 CATEGORIES=	lang
 
 HOMEPAGE=	http://kaolin.unice.fr/STk/
