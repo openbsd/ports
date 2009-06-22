@@ -1,0 +1,7 @@
+The TeXworks project is an effort to build a simple TeX front-end
+program (working environment) that will be available for all today's
+major desktop operating systems-in particular, MS Windows (XP and
+Vista), typical GNU/Linux distros and other X11-based systems, and Mac
+OS X. It is deliberately modeled on Dick Koch's award-winning TeXShop
+for Mac OS X, which is credited with a resurgence of TeX usage on the
+Mac platform.

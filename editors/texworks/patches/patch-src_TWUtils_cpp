@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_TWUtils_cpp,v 1.1.1.1 2009/06/22 20:51:10 sthen Exp $
+--- src/TWUtils.cpp.orig	Wed Jun 17 13:46:06 2009
++++ src/TWUtils.cpp	Wed Jun 17 13:47:38 2009
+@@ -81,7 +81,9 @@ const QString TWUtils::getLibraryPath(const QString& s
+ #endif
+ #ifdef Q_WS_X11
+ 		if (subdir == "dictionaries")
+-			libPath = "/usr/share/myspell/dicts";
++			// OpenBSD mozilla dictionary paths
++			// libPath = "/usr/share/myspell/dicts";
++			libPath = "/usr/local/share/mozilla-dicts";
+ 		else
+ 			libPath = QDir::homePath() + "/." + TEXWORKS_NAME + "/" + subdir;
+ #endif
