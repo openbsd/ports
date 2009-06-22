@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/25 22:48:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/22 22:51:59 sthen Exp $
 
 COMMENT =	command-line encryption using scrypt key derivation function
 
-DISTNAME =	scrypt-1.1.3
+DISTNAME =	scrypt-1.1.4
 
 CATEGORIES =	security
 
@@ -19,7 +19,6 @@ WANTLIB =	c crypto
 MASTER_SITES =	${HOMEPAGE}
 EXTRACT_SUFX =	.tgz
 
-SEPARATE_BUILD =	concurrent
 CONFIGURE_STYLE =	gnu
 
 NO_REGRESS =		Yes
