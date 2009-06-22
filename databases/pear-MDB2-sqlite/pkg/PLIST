@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/22 15:47:52 giovanni Exp $
+@group daemon
+pear/data/MDB2_Driver_sqlite/
+pear/data/MDB2_Driver_sqlite/package_sqlite.xml
+pear/lib/.registry/mdb2_driver_sqlite.reg
+pear/lib/MDB2/Driver/Datatype/sqlite.php
+pear/lib/MDB2/Driver/Function/sqlite.php
+pear/lib/MDB2/Driver/Manager/sqlite.php
+pear/lib/MDB2/Driver/Native/sqlite.php
+pear/lib/MDB2/Driver/Reverse/sqlite.php
+pear/lib/MDB2/Driver/sqlite.php
+pear/tests/MDB2_Driver_sqlite/
+pear/tests/MDB2_Driver_sqlite/tests/
+pear/tests/MDB2_Driver_sqlite/tests/MDB2_nonstandard_sqlite.php
