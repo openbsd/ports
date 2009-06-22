@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_fe-common_irc_fe-events_c,v 1.1 2009/06/22 00:22:57 sthen Exp $
+
+from SVN r5068; fix out of bounds access in event_wallops().
+
+--- src/fe-common/irc/fe-events.c.orig	Sun Jun 21 23:32:51 2009
++++ src/fe-common/irc/fe-events.c	Sun Jun 21 23:33:22 2009
+@@ -298,7 +298,7 @@ static void event_wallops(IRC_SERVER_REC *server, cons
+ 
+ 		tmp = g_strdup(data+8);
+ 		len = strlen(tmp);
+-		if (tmp[len-1] == 1) tmp[len-1] = '\0';
++		if (len >= 1 && tmp[len-1] == 1) tmp[len-1] = '\0';
+ 		printformat(server, NULL, MSGLEVEL_WALLOPS, IRCTXT_ACTION_WALLOPS, nick, tmp);
+ 		g_free(tmp);
+ 	}
