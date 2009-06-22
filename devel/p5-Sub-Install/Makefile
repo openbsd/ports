@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/22 13:12:49 dhill Exp $
 
 COMMENT=	helper for installing code into packages
 
 MODULES=	cpan
-DISTNAME=	Sub-Install-0.924
+DISTNAME=	Sub-Install-0.925
 CATEGORIES=	devel
 
 # perl
