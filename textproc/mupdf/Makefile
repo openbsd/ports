@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/19 13:42:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/22 11:56:15 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-DISTNAME =	fitz-0.0.20090616
-PKGNAME =	mupdf-0.0.20090616p0
+DISTNAME =	fitz-0.4
+PKGNAME =	${DISTNAME:S/fitz/mupdf/}
 
 CATEGORIES =	textproc x11
 
@@ -11,13 +11,11 @@ HOMEPAGE =	http://ccxvii.net/fitz/
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
-# Code: GPLv3 but needs some copyright notices adding.
-# cmaps: Adobe (redist ok, see headers in files)
-# droid font: Apache license
-PERMIT_PACKAGE_CDROM =	not yet
-PERMIT_PACKAGE_FTP =	not yet
-PERMIT_DISTFILES_CDROM =not yet
-PERMIT_DISTFILES_FTP =	not yet
+# code: GPLv3. font maps: Adobe (redist ok, see headers). droid: Apache.
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	X11 Xext c freetype m z
 
