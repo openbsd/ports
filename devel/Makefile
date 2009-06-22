@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.713 2009/06/19 18:33:49 jim Exp $
+# $OpenBSD: Makefile,v 1.714 2009/06/22 19:35:36 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -341,6 +341,7 @@
      SUBDIR += p5-DateTime-Locale
      SUBDIR += p5-DateTime-Set
      SUBDIR += p5-DateTime-TimeZone
+     SUBDIR += p5-Devel-ebug
      SUBDIR += p5-Devel-Cover
      SUBDIR += p5-Devel-Cycle
      SUBDIR += p5-Devel-FastProf
