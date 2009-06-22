@@ -1,0 +1,11 @@
+$OpenBSD: patch-libgtklp_libgtklp_h,v 1.1 2009/06/22 08:20:48 ajacoutot Exp $
+--- libgtklp/libgtklp.h.orig	Mon Jun 22 10:07:45 2009
++++ libgtklp/libgtklp.h	Mon Jun 22 10:07:53 2009
+@@ -25,6 +25,7 @@
+ #ifndef LIBGTKLP_H
+ #define LIBGTKLP_H
+ 
++#include <stdint.h>
+ #include <glib.h>
+ #include <gtk/gtk.h>
+ #ifndef _LOCALE_H

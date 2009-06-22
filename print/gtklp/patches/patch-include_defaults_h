@@ -1,7 +1,16 @@
-$OpenBSD: patch-include_defaults_h,v 1.1.1.1 2008/05/17 13:29:29 ajacoutot Exp $
---- include/defaults.h.orig	Fri May 16 17:23:08 2008
-+++ include/defaults.h	Fri May 16 17:23:34 2008
-@@ -40,6 +40,7 @@
+$OpenBSD: patch-include_defaults_h,v 1.2 2009/06/22 08:20:48 ajacoutot Exp $
+--- include/defaults.h.orig	Sun Jun 21 14:25:37 2009
++++ include/defaults.h	Mon Jun 22 10:17:28 2009
+@@ -22,6 +22,8 @@
+ #ifndef CONFIG_H
+ #define CONFIG_H
+ 
++#include <limits.h>
++
+ #define PROGNAME "GtkLP"
+ #define MY_MAIL "gtklp@sirtobi.com"
+ #define MY_HOME "http://gtklp.sourceforge.net/"
+@@ -40,6 +42,7 @@
  #define INFRAME_SPACING_V 2
  #define BUTTON_SPACING_H 10
  #define BUTTON_SPACING_V 3
@@ -9,3 +18,16 @@ $OpenBSD: patch-include_defaults_h,v 1.1.1.1 2008/05/17 13:29:29 ajacoutot Exp $
  #define MESSAGE_SIZE_H 300
  #define MESSAGE_SIZE_V 100
  #define MESSAGE_SPACING_H 10
+@@ -71,7 +74,11 @@
+ /* Constants */
+ #define DEF_PRN_LEN 50
+ #define MAX_BANNER 20
+-#define MAXPATH 256
++#ifdef PATH_MAX
++#  define MAXPATH PATH_MAX
++#else
++#  define MAXPATH 256
++#endif
+ #define MAXLINE 256
+ #define MAXPRINTFILES 100
+ #define MAXCMD 65536
