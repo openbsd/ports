@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/22 19:34:31 landry Exp $
+bin/ebug
+bin/ebug_client
+bin/ebug_server
+${P5SITE}/Devel/ebug/
+${P5SITE}/Devel/ebug.pm
+${P5SITE}/Devel/ebug/Backend/
+${P5SITE}/Devel/ebug/Backend.pm
+${P5SITE}/Devel/ebug/Backend/Plugin/
+${P5SITE}/Devel/ebug/Backend/Plugin/ActionPoints.pm
+${P5SITE}/Devel/ebug/Backend/Plugin/Basic.pm
+${P5SITE}/Devel/ebug/Backend/Plugin/Codelines.pm
+${P5SITE}/Devel/ebug/Backend/Plugin/Commands.pm
+${P5SITE}/Devel/ebug/Backend/Plugin/Eval.pm
+${P5SITE}/Devel/ebug/Backend/Plugin/Filenames.pm
+${P5SITE}/Devel/ebug/Backend/Plugin/Output.pm
+${P5SITE}/Devel/ebug/Backend/Plugin/Pad.pm
+${P5SITE}/Devel/ebug/Backend/Plugin/Ping.pm
+${P5SITE}/Devel/ebug/Backend/Plugin/Run.pm
+${P5SITE}/Devel/ebug/Backend/Plugin/StackTrace.pm
+${P5SITE}/Devel/ebug/Console.pm
+${P5SITE}/Devel/ebug/Plugin/
+${P5SITE}/Devel/ebug/Plugin/ActionPoints.pm
+${P5SITE}/Devel/ebug/Plugin/Basic.pm
+${P5SITE}/Devel/ebug/Plugin/Codelines.pm
+${P5SITE}/Devel/ebug/Plugin/Eval.pm
+${P5SITE}/Devel/ebug/Plugin/Filenames.pm
+${P5SITE}/Devel/ebug/Plugin/Output.pm
+${P5SITE}/Devel/ebug/Plugin/Pad.pm
+${P5SITE}/Devel/ebug/Plugin/Run.pm
+${P5SITE}/Devel/ebug/Plugin/StackTrace.pm
+@man man/man1/ebug.1
+@man man/man1/ebug_client.1
+@man man/man1/ebug_server.1
+@man man/man3p/Devel::ebug.3p
+@man man/man3p/Devel::ebug::Console.3p

@@ -1,0 +1,3 @@
+Devel::ebug is a simple, extensible Perl debugger with a clean API.
+Using this module, you may easily write a Perl debugger to debug your
+programs. Alternatively, it comes with an interactive debugger, ebug.
