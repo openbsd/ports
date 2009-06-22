@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2009/02/03 22:22:11 martynas Exp $
+# $OpenBSD: Makefile,v 1.53 2009/06/22 10:43:58 sthen Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	small, simple, and powerful web browser for mobile devices
 DISTNAME=	minimo-1.8.1.19
-PKGNAME=	${DISTNAME}p0v0
+PKGNAME=	${DISTNAME}p1v0
 
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~martynas/mozilla/minimo/
@@ -35,7 +35,7 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi Xinerama \
 		pthread z \
 		atk-1.0.>=1011.0 glib-2.0.>=600.0 gmodule-2.0.>=600.0 \
 		gobject-2.0.>=600.0 pango-1.0.>=800.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1 cairo glitz stdc++
+		pangoft2-1.0 pixman-1 cairo glitz stdc++ gio-2.0
 RUN_DEPENDS=	::devel/desktop-file-utils
 
 NO_REGRESS=	Yes

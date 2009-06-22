@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2009/06/11 18:27:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2009/06/22 10:43:58 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME web browser based on mozilla
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
@@ -56,7 +56,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		plc4 plds4 png popt pthread smime3 softokn3 ssl \
 		ssl3 startup-notification-1 stdc++ util vorbis \
-		vorbisfile z
+		vorbisfile z avahi-client avahi-common avahi-glib
 
 USE_X11=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static

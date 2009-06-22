@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/16 16:01:41 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/22 10:43:58 sthen Exp $
 
 COMMENT=		python bindings for the WebKit GTK+ port
 
@@ -25,7 +25,7 @@ WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0
 WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 iconv icudata icui18n
 WANTLIB += icuuc intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png soup-2.4 sqlite3 tasn1 xml2 xslt
-WANTLIB += z
+WANTLIB += z enchant stdc++
 
 MODULES=		lang/python
 
