@@ -1,7 +1,6 @@
-$OpenBSD: patch-aclocal_m4,v 1.9 2007/09/05 09:11:34 robert Exp $
---- aclocal.m4.orig	Thu Aug 30 01:39:17 2007
-+++ aclocal.m4	Wed Sep  5 10:39:20 2007
-@@ -194,7 +194,7 @@ dnl the path is interpreted relative to the top build-
+--- aclocal.m4.orig	Wed Jun 17 14:35:16 2009
++++ aclocal.m4	Mon Jun 22 13:18:01 2009
+@@ -194,7 +194,7 @@
  dnl
  dnl which array to append to?
  AC_DEFUN([PHP_ADD_SOURCES],[
@@ -10,21 +9,24 @@ $OpenBSD: patch-aclocal_m4,v 1.9 2007/09/05 09:11:34 robert Exp $
  ])
  
  dnl
-@@ -962,12 +962,7 @@ dnl ---------------------------------------------- Sha
+@@ -968,15 +968,7 @@
    if test "$3" != "shared" && test "$3" != "yes" && test "$4" = "cli"; then
  dnl ---------------------------------------------- CLI static module
      [PHP_]translit($1,a-z_-,A-Z__)[_SHARED]=no
--    if test "$PHP_SAPI" = "cgi"; then
--      PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,)
--      EXT_STATIC="$EXT_STATIC $1"
--    else
--      PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,cli)
--    fi
-+      PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,cgi)
+-    case "$PHP_SAPI" in
+-      cgi|embed[)]
+-        PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,)
+-        EXT_STATIC="$EXT_STATIC $1"
+-        ;;
+-      *[)]
+-        PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,cli)
+-        ;;
+-    esac
++    PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,cgi)
      EXT_CLI_STATIC="$EXT_CLI_STATIC $1"
    fi
    PHP_ADD_BUILD_DIR($ext_builddir)
-@@ -1017,17 +1012,12 @@ You either need to build $1 shared or build $2 statica
+@@ -1026,12 +1018,6 @@
  build to be successful.
  ])
    fi
@@ -37,13 +39,7 @@ $OpenBSD: patch-aclocal_m4,v 1.9 2007/09/05 09:11:34 robert Exp $
    dnl Some systems require that we link $2 to $1 when building
  ])
  
- dnl -------------------------------------------------------------------------
- dnl Checks for structures, typedefs, broken functions, etc.
-+B
- dnl -------------------------------------------------------------------------
- 
- dnl Internal helper macros
-@@ -2265,10 +2255,9 @@ AC_DEFUN([PHP_SETUP_KERBEROS],[
+@@ -2274,10 +2260,9 @@
      if test "$PHP_KERBEROS_DIR"; then
        found_kerberos=yes
        PHP_ADD_LIBPATH($PHP_KERBEROS_DIR/$PHP_LIBDIR, $1)
@@ -56,12 +52,12 @@ $OpenBSD: patch-aclocal_m4,v 1.9 2007/09/05 09:11:34 robert Exp $
        PHP_ADD_INCLUDE($PHP_KERBEROS_DIR/include)
      fi
    fi
-@@ -4490,7 +4479,7 @@ openbsd*)
-     *)                         need_version=no  ;;
-   esac
-   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
--  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+@@ -4167,7 +4152,7 @@
+   need_version=no
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major $libname${shared_ext}'
+   soname_spec='${libname}${release}${shared_ext}$major'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig $libdir'
 +  finish_cmds=
    shlibpath_var=LD_LIBRARY_PATH
-   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-     case $host_os in
+   sys_lib_search_path_spec="/shlib /usr/lib /usr/X11/lib /usr/contrib/lib /lib /usr/local/lib"
+   sys_lib_dlsearch_path_spec="/shlib /usr/lib /usr/local/lib"
