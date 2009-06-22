@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/06/21 23:13:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/06/22 00:19:02 sthen Exp $
 @bin bin/bugpoint
 bin/ccc-analyzer
 @bin bin/clang
@@ -467,6 +467,27 @@ lib/libclangSema.a
 lib/libplugin_llvmc_Base.a
 lib/libplugin_llvmc_Clang.a
 @bin libexec/clang-cc
+@man man/man1/bugpoint.1
+@man man/man1/clang.1
+@man man/man1/llc.1
+@man man/man1/lli.1
+@man man/man1/llvm-ar.1
+@man man/man1/llvm-as.1
+@man man/man1/llvm-bcanalyzer.1
+@man man/man1/llvm-config.1
+@man man/man1/llvm-db.1
+@man man/man1/llvm-dis.1
+@man man/man1/llvm-extract.1
+@man man/man1/llvm-ld.1
+@man man/man1/llvm-link.1
+@man man/man1/llvm-nm.1
+@man man/man1/llvm-prof.1
+@man man/man1/llvm-ranlib.1
+@man man/man1/llvmc.1
+@man man/man1/llvmgcc.1
+@man man/man1/llvmgxx.1
+@man man/man1/opt.1
+@man man/man1/tblgen.1
 share/doc/llvm/
 share/doc/llvm/html/
 share/doc/llvm/html.tar.gz
@@ -594,26 +615,3 @@ share/doc/llvm/ps/tblgen.ps
 share/llvm/
 share/llvm/scanview.css
 share/llvm/sorttable.js
-share/man/
-share/man/man1/
-@man share/man/man1/bugpoint.1
-@man share/man/man1/clang.1
-@man share/man/man1/llc.1
-@man share/man/man1/lli.1
-@man share/man/man1/llvm-ar.1
-@man share/man/man1/llvm-as.1
-@man share/man/man1/llvm-bcanalyzer.1
-@man share/man/man1/llvm-config.1
-@man share/man/man1/llvm-db.1
-@man share/man/man1/llvm-dis.1
-@man share/man/man1/llvm-extract.1
-@man share/man/man1/llvm-ld.1
-@man share/man/man1/llvm-link.1
-@man share/man/man1/llvm-nm.1
-@man share/man/man1/llvm-prof.1
-@man share/man/man1/llvm-ranlib.1
-@man share/man/man1/llvmc.1
-@man share/man/man1/llvmgcc.1
-@man share/man/man1/llvmgxx.1
-@man share/man/man1/opt.1
-@man share/man/man1/tblgen.1

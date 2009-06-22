@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2009/06/21 23:13:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2009/06/22 00:19:01 sthen Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
 LLVM_V =	2.6pre20090621
 DISTNAME =	llvm-${LLVM_V}
 EXTRACT_SUFX =	.tar.bz2
+PKGNAME =	${DISTNAME}p0
 
 CATEGORIES =	devel
 
