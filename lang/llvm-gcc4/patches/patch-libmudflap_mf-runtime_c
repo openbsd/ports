@@ -1,0 +1,11 @@
+$OpenBSD: patch-libmudflap_mf-runtime_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- libmudflap/mf-runtime.c.orig	Wed Aug 17 05:21:42 2005
++++ libmudflap/mf-runtime.c	Sun Mar 18 23:58:46 2007
+@@ -45,6 +45,7 @@ Software Foundation, 51 Franklin Street, Fifth Floor, 
+ #define _ALL_SOURCE
+ #define _LARGE_FILE_API
+ #define _XOPEN_SOURCE_EXTENDED 1
++#define __BSD_VISIBLE
+ 
+ #include <stdio.h>
+ #include <stdlib.h>

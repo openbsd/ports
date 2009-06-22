@@ -1,0 +1,19 @@
+$OpenBSD: patch-libstdc++-v3_include_c_std_std_cwctype_h,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- libstdc++-v3/include/c_std/std_cwctype.h.orig	Fri Jun  5 00:07:56 2009
++++ libstdc++-v3/include/c_std/std_cwctype.h	Fri Jun  5 00:09:22 2009
+@@ -81,6 +81,7 @@ _GLIBCXX_BEGIN_NAMESPACE(std)
+ 
+   using ::wint_t;	  // cwchar
+ 
++#if !defined(__OpenBSD__)
+   using ::wctype_t;
+   using ::wctrans_t;
+ 
+@@ -104,6 +105,7 @@ _GLIBCXX_BEGIN_NAMESPACE(std)
+   using ::towupper;
+   using ::wctrans;
+   using ::wctype;
++#endif
+ 
+ _GLIBCXX_END_NAMESPACE
+ 

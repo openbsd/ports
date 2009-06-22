@@ -1,0 +1,13 @@
+$OpenBSD: patch-boehm-gc_pthread_stop_world_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- boehm-gc/pthread_stop_world.c.orig	Thu Mar  5 17:50:41 2009
++++ boehm-gc/pthread_stop_world.c	Thu Mar  5 17:51:12 2009
+@@ -1,7 +1,8 @@
+ #include "private/pthread_support.h"
+ 
+ #if defined(GC_PTHREADS) && !defined(GC_SOLARIS_THREADS) \
+-     && !defined(GC_WIN32_THREADS) && !defined(GC_DARWIN_THREADS)
++     && !defined(GC_WIN32_THREADS) && !defined(GC_DARWIN_THREADS) \
++     && !defined(GC_OPENBSD_THREADS)
+ 
+ #include <signal.h>
+ #include <semaphore.h>

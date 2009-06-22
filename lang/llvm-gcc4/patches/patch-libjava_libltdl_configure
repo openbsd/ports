@@ -1,0 +1,13 @@
+$OpenBSD: patch-libjava_libltdl_configure,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- libjava/libltdl/configure.orig	Mon Mar 16 09:26:51 2009
++++ libjava/libltdl/configure	Mon Mar 16 09:27:07 2009
+@@ -7294,9 +7294,6 @@ cc_basename=`$echo "X$cc_temp" | $Xsed -e 's%.*/%%' -e
+       with_gnu_ld=no
+     fi
+     ;;
+-  openbsd*)
+-    with_gnu_ld=no
+-    ;;
+   esac
+ 
+   ld_shlibs=yes

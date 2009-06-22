@@ -1,0 +1,40 @@
+$OpenBSD: patch-ltconfig,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- ltconfig.orig	Tue Mar 18 19:53:10 2008
++++ ltconfig	Mon Jun 22 01:01:51 2009
+@@ -184,6 +184,7 @@ PACKAGE=libtool
+ VERSION=1.4a-GCC3.0
+ TIMESTAMP=" (1.641.2.256 2001/05/28 20:09:07 with GCC-local changes)"
+ ac_compile='${CC-cc} -c $CFLAGS $CPPFLAGS conftest.$ac_ext 1>&5'
++ac_compile_shared='${CC-cc} -fPIC -DPIC -c $CFLAGS $CPPFLAGS conftest.$ac_ext 1>&5'
+ ac_link='${CC-cc} -o conftest $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
+ rm="rm -f"
+ 
+@@ -626,8 +627,13 @@ old_postuninstall_cmds=
+ 
+ if test -n "$RANLIB"; then
+   old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
+-  # APPLE LOCAL handle ~ in pathnames 2002-01-14 --sts
+-  old_postinstall_cmds="@$old_postinstall_cmds@\$RANLIB \$oldlib"
++  case $host_os in
++  openbsd*)
++    old_postinstall_cmds="@$old_postinstall_cmds@\$RANLIB -t \$oldlib";;
++  *)
++    # APPLE LOCAL handle ~ in pathnames 2002-01-14 --sts
++    old_postinstall_cmds="@$old_postinstall_cmds@\$RANLIB \$oldlib";;
++  esac
+ fi
+ 
+ # Source the script associated with the $tagname tag configuration.
+@@ -1308,8 +1314,11 @@ openbsd*)
+     need_version=no
+   fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
++  shlibpath_overrides_runpath=yes
++  deplib_check_method=pass_all
++  sys_lib_dlsearch_path_spec='/usr/lib /usr/local/lib /usr/X11R6/lib'
+   ;;
+ 
+ os2*)

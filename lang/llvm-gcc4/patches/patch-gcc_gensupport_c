@@ -1,0 +1,21 @@
+$OpenBSD: patch-gcc_gensupport_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/gensupport.c.orig	Wed Jul 11 22:32:42 2007
++++ gcc/gensupport.c	Mon Jun 22 00:54:00 2009
+@@ -220,7 +220,7 @@ process_include (rtx desc, int lineno)
+ 	{
+ 	  static const char sep[2] = { DIR_SEPARATOR, '\0' };
+ 
+-	  pathname = concat (stackp->fname, sep, filename, NULL);
++	  pathname = concat (stackp->fname, sep, filename, (void *)0);
+ 	  input_file = fopen (pathname, "r");
+ 	  if (input_file != NULL)
+ 	    goto success;
+@@ -229,7 +229,7 @@ process_include (rtx desc, int lineno)
+     }
+ 
+   if (base_dir)
+-    pathname = concat (base_dir, filename, NULL);
++    pathname = concat (base_dir, filename, (void *)0);
+   else
+     pathname = xstrdup (filename);
+   input_file = fopen (pathname, "r");

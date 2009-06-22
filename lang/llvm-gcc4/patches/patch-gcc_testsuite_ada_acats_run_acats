@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_testsuite_ada_acats_run_acats,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/testsuite/ada/acats/run_acats.orig	Fri Jan  7 04:04:46 2005
++++ gcc/testsuite/ada/acats/run_acats	Fri Jan  7 04:06:26 2005
+@@ -7,8 +7,8 @@ fi
+ 
+ # Set up environment to use the Ada compiler from the object tree
+ 
+-host_gnatchop=`type gnatchop | awk '{print $3}'`
+-host_gnatmake=`type gnatmake | awk '{print $3}'`
++host_gnatchop=`which gnatchop`
++host_gnatmake=`which gnatmake`
+ ROOT=`${PWDCMD-pwd}`
+ BASE=`cd $ROOT/../../..; ${PWDCMD-pwd}`
+ 

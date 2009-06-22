@@ -1,0 +1,14 @@
+$OpenBSD: patch-libjava_configure,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- libjava/configure.orig	Wed Jan 17 13:10:26 2007
++++ libjava/configure	Tue Mar  3 14:45:15 2009
+@@ -9168,6 +9168,10 @@ case "$THREADS" in
+ 	THREADLDFLAGS=-pthread
+ 	THREADSPEC=-lpthread
+ 	;;
++     *-*-openbsd*)
++	THREADLDFLAGS=-pthread
++	THREADSPEC=-lpthread
++	;;
+      alpha*-dec-osf* | hppa*-hp-hpux*)
+ 	THREADCXXFLAGS=-pthread
+ 	# boehm-gc needs some functions from librt, so link that too.

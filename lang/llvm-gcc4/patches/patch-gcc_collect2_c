@@ -1,0 +1,76 @@
+$OpenBSD: patch-gcc_collect2_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/collect2.c.orig	Tue Sep  2 22:45:01 2008
++++ gcc/collect2.c	Mon Jun 22 00:59:51 2009
+@@ -759,19 +759,19 @@ main (int argc, char **argv)
+      qualify the program name with the target machine.  */
+ 
+   const char *const full_ld_suffix =
+-    concat(target_machine, "-", ld_suffix, NULL);
++    concat(target_machine, "-", ld_suffix, (char *)0);
+   const char *const full_nm_suffix =
+-    concat (target_machine, "-", nm_suffix, NULL);
++    concat (target_machine, "-", nm_suffix, (char *)0);
+   const char *const full_gnm_suffix =
+-    concat (target_machine, "-", gnm_suffix, NULL);
++    concat (target_machine, "-", gnm_suffix, (char *)0);
+ #ifdef LDD_SUFFIX
+   const char *const full_ldd_suffix =
+-    concat (target_machine, "-", ldd_suffix, NULL);
++    concat (target_machine, "-", ldd_suffix, (char *)0);
+ #endif
+   const char *const full_strip_suffix =
+-    concat (target_machine, "-", strip_suffix, NULL);
++    concat (target_machine, "-", strip_suffix, (char *)0);
+   const char *const full_gstrip_suffix =
+-    concat (target_machine, "-", gstrip_suffix, NULL);
++    concat (target_machine, "-", gstrip_suffix, (char *)0);
+ #else
+   const char *const full_ld_suffix	= ld_suffix;
+   const char *const full_nm_suffix	= nm_suffix;
+@@ -968,7 +968,7 @@ main (int argc, char **argv)
+ /* APPLE LOCAL begin mainline 4.3 2006-12-13 CROSS_DIRECTORY_STRUCTURE 4697325 */
+ #ifdef CROSS_DIRECTORY_STRUCTURE
+ /* APPLE LOCAL end mainline 4.3 2006-12-13 CROSS_DIRECTORY_STRUCTURE 4697325 */
+-      c_file_name = concat (target_machine, "-gcc", NULL);
++      c_file_name = concat (target_machine, "-gcc", (char *)0);
+ #else
+       c_file_name = "gcc";
+ #endif
+@@ -1246,7 +1246,7 @@ main (int argc, char **argv)
+ 
+   if (exports.first)
+     {
+-      char *buf = concat ("-bE:", export_file, NULL);
++      char *buf = concat ("-bE:", export_file, (char *)0);
+ 
+       *ld1++ = buf;
+       *ld2++ = buf;
+@@ -1411,7 +1411,7 @@ main (int argc, char **argv)
+   /* Tell the linker that we have initializer and finalizer functions.  */
+ #ifdef LD_INIT_SWITCH
+ #ifdef COLLECT_EXPORT_LIST
+-  *ld2++ = concat (LD_INIT_SWITCH, ":", initname, ":", fininame, NULL);
++  *ld2++ = concat (LD_INIT_SWITCH, ":", initname, ":", fininame, (char *)0);
+ #else
+   *ld2++ = LD_INIT_SWITCH;
+   *ld2++ = initname;
+@@ -1426,7 +1426,7 @@ main (int argc, char **argv)
+       /* If we did not add export flag to link arguments before, add it to
+ 	 second link phase now.  No new exports should have been added.  */
+       if (! exports.first)
+-	*ld2++ = concat ("-bE:", export_file, NULL);
++	*ld2++ = concat ("-bE:", export_file, (char *)0);
+ 
+ #ifndef LD_INIT_SWITCH
+       add_to_list (&exports, initname);
+@@ -1823,8 +1823,8 @@ write_c_file_stat (FILE *stream, const char *name ATTR
+     notice ("\nwrite_c_file - output name is %s, prefix is %s\n",
+ 	    output_file, prefix);
+ 
+-  initname = concat ("_GLOBAL__FI_", prefix, NULL);
+-  fininame = concat ("_GLOBAL__FD_", prefix, NULL);
++  initname = concat ("_GLOBAL__FI_", prefix, (char *)0);
++  fininame = concat ("_GLOBAL__FD_", prefix, (char *)0);
+ 
+   free (prefix);
+ 

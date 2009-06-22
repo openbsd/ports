@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_coverage_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/coverage.c.orig	Mon Nov  3 07:33:15 2008
++++ gcc/coverage.c	Mon Jun 22 00:53:58 2009
+@@ -810,7 +810,7 @@ build_gcov_info (void)
+   fields = field;
+   filename = getpwd ();
+   filename = (filename && da_file_name[0] != '/'
+-	      ? concat (filename, "/", da_file_name, NULL)
++	      ? concat (filename, "/", da_file_name, (void *)0)
+ 	      : da_file_name);
+   filename_len = strlen (filename);
+   filename_string = build_string (filename_len + 1, filename);

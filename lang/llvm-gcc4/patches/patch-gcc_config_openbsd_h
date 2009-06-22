@@ -1,0 +1,82 @@
+$OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/config/openbsd.h.orig	Wed Jul 11 22:32:42 2007
++++ gcc/config/openbsd.h	Mon Jun 22 00:53:56 2009
+@@ -73,6 +73,37 @@ Boston, MA 02110-1301, USA.  */
+ 
+ /* Controlling the compilation driver.  */
+ /* TARGET_OS_CPP_BUILTINS() common to all OpenBSD targets.  */
++#define OPENBSD_OS_CPP_BUILTINS_COMMON()	\
++  do						\
++    {						\
++      builtin_define ("__OpenBSD__");		\
++      builtin_define ("__unix__");		\
++      builtin_define ("__ANSI_COMPAT");		\
++      builtin_assert ("system=unix");		\
++      builtin_assert ("system=bsd");		\
++      builtin_assert ("system=OpenBSD");	\
++    }						\
++  while (0)
++
++/* TARGET_OS_CPP_BUILTINS() common to all OpenBSD ELF targets.  */
++#define OPENBSD_OS_CPP_BUILTINS_ELF()		\
++  do						\
++    {						\
++      OPENBSD_OS_CPP_BUILTINS_COMMON();		\
++      builtin_define ("__ELF__");		\
++    }						\
++  while (0)
++
++/* TARGET_OS_CPP_BUILTINS() common to all LP64 OpenBSD targets.  */
++#define OPENBSD_OS_CPP_BUILTINS_LP64()		\
++  do						\
++    {						\
++      builtin_define ("_LP64");			\
++      builtin_define ("__LP64__");		\
++    }						\
++  while (0)
++
++/* XXX old stuff TARGET_OS_CPP_BUILTINS() common to all OpenBSD targets.  */
+ #define OPENBSD_OS_CPP_BUILTINS()		\
+   do						\
+     {						\
+@@ -96,16 +127,9 @@ Boston, MA 02110-1301, USA.  */
+ #define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
+ #endif
+ 
+-/* LIB_SPEC appropriate for OpenBSD.  */
+-#ifdef HAS_LIBC_R
+-/*   -lc(_r)?(_p)?, select _r for threads, and _p for p or pg.  */
+-# define OBSD_LIB_SPEC "%{!shared:-lc%{pthread:_r}%{p:_p}%{!p:%{pg:_p}}}"
+-#else
+-/* Include -lpthread if -pthread is specified on the command line. */
+-# define OBSD_LIB_SPEC "%{!shared:%{pthread:-lpthread%{p:_p}%{!p:%{pg:_p}}}} %{!shared:-lc%{p:_p}%{!p:%{pg:_p}}}"
+-#endif
++#undef LIB_SPEC
++#define LIB_SPEC OBSD_LIB_SPEC
+ 
+-
+ #ifndef OBSD_HAS_CORRECT_SPECS
+ 
+ #ifndef OBSD_NO_DYNAMIC_LIBRARIES
+@@ -140,6 +164,10 @@ Boston, MA 02110-1301, USA.  */
+   "%{g:%{!nostdlib:-L/usr/lib/debug}} %{!shared:%{!nostdlib:%{!r*:%{!e*:-e start}}}} %{shared:-Bshareable -x} -dc -dp %{R*} %{static:-Bstatic} %{assert*}"
+ #endif
+ 
++#if defined(HAVE_LD_EH_FRAME_HDR)
++#define LINK_EH_SPEC "%{!static:--eh-frame-hdr} "
++#endif
++
+ #undef LIB_SPEC
+ #define LIB_SPEC OBSD_LIB_SPEC
+ #endif
+@@ -282,10 +310,6 @@ do {									 \
+ /* Storage layout.  */
+ 
+ 
+-/* Otherwise, since we support weak, gthr.h erroneously tries to use
+-   #pragma weak.  */
+-#define GTHREAD_USE_WEAK 0
+-
+ /* bug work around: we don't want to support #pragma weak, but the current
+    code layout needs HANDLE_PRAGMA_WEAK asserted for __attribute((weak)) to
+    work.  On the other hand, we don't define HANDLE_PRAGMA_WEAK directly,

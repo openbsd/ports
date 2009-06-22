@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_tree-dump_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/tree-dump.c.orig	Wed Jul 11 22:32:42 2007
++++ gcc/tree-dump.c	Mon Jun 22 00:54:03 2009
+@@ -867,7 +867,7 @@ get_dump_file_name (enum tree_dump_index phase)
+ 	dump_id[0] = '\0';
+     }
+ 
+-  return concat (dump_base_name, dump_id, dfi->suffix, NULL);
++  return concat (dump_base_name, dump_id, dfi->suffix, (void *)0);
+ }
+ 
+ /* Begin a tree dump for PHASE. Stores any user supplied flag in

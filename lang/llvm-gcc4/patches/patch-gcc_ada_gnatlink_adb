@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_ada_gnatlink_adb,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/ada/gnatlink.adb.orig	Wed Feb 15 10:35:23 2006
++++ gcc/ada/gnatlink.adb	Sun Jul 23 11:24:01 2006
+@@ -131,7 +131,7 @@ procedure Gnatlink is
+    --  This table collects the arguments to be passed to compile the binder
+    --  generated file.
+ 
+-   Gcc : String_Access := Program_Name ("gcc");
++   Gcc : String_Access := Program_Name ("egcc");
+ 
+    Read_Mode  : constant String := "r" & ASCII.Nul;
+ 

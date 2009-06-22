@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_unwind-dw2-fde-openbsd_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/unwind-dw2-fde-openbsd.c.orig	Sat Apr 11 14:24:23 2009
++++ gcc/unwind-dw2-fde-openbsd.c	Sat Apr 11 14:24:02 2009
+@@ -0,0 +1,10 @@
++/* XXX This file provides a few defines such that we can compile the
++   source from unwind-dw2-fde-glibc.c on OpenBSD.  Hopefully we can
++   integrate these defines in that file and rename it to something
++   like unwind-de2-fde-phdr.c in the up-stream sources.  */
++
++#define ElfW(type) Elf_##type
++
++#define __GLIBC__ 3           /* Fool unwind-dw2-fde-glibc.c.  */
++#include "unwind-dw2-fde-glibc.c"
++

@@ -1,0 +1,17 @@
+$OpenBSD: patch-gcc_tree_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/tree.c.orig	Thu Mar 19 22:14:10 2009
++++ gcc/tree.c	Mon Jun 22 00:54:05 2009
+@@ -6931,11 +6931,11 @@ build_common_builtin_nodes (void)
+ 	  *q = TOLOWER (*p);
+ 	*q = '\0';
+ 
+-	built_in_names[mcode] = concat ("__mul", mode_name_buf, "3", NULL);
++	built_in_names[mcode] = concat ("__mul", mode_name_buf, "3", (void *)0);
+         local_define_builtin (built_in_names[mcode], ftype, mcode,
+ 			      built_in_names[mcode], ECF_CONST | ECF_NOTHROW);
+ 
+-	built_in_names[dcode] = concat ("__div", mode_name_buf, "3", NULL);
++	built_in_names[dcode] = concat ("__div", mode_name_buf, "3", (void *)0);
+         local_define_builtin (built_in_names[dcode], ftype, dcode,
+ 			      built_in_names[dcode], ECF_CONST | ECF_NOTHROW);
+       }

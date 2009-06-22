@@ -1,0 +1,93 @@
+--- gcc/config.gcc.orig	Tue Jun 16 19:53:18 2009
++++ gcc/config.gcc	Mon Jun 22 00:53:54 2009
+@@ -598,6 +598,11 @@ case ${target} in
+     *-*-openbsd2.*|*-*-openbsd3.[012])
+       tm_defines="${tm_defines} HAS_LIBC_R=1" ;;
+   esac
++  case ${target} in
++    *-*-openbsd[1-3].*|*-*-openbsd4.[012]) ;;
++    *)
++      default_use_cxa_atexit=yes ;;
++  esac
+   ;;
+ *-*-rtems*)
+   case ${enable_threads} in
+@@ -664,7 +669,7 @@ alpha*-*-netbsd*)
+ 	;;
+ alpha*-*-openbsd*)
+ 	tm_defines="${tm_defines} OBSD_NO_DYNAMIC_LIBRARIES OBSD_HAS_DECLARE_FUNCTION_NAME OBSD_HAS_DECLARE_FUNCTION_SIZE OBSD_HAS_DECLARE_OBJECT"
+-	tm_file="alpha/alpha.h openbsd.h alpha/openbsd.h"
++	tm_file="alpha/alpha.h alpha/elf.h openbsd.h openbsd-libpthread.h alpha/openbsd.h"
+ 	# default x-alpha is only appropriate for dec-osf.
+ 	target_cpu_default="MASK_GAS"
+ 	tmake_file="alpha/t-alpha alpha/t-ieee"
+@@ -1139,10 +1144,15 @@ i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
+ 	;;
+ i[34567]86-*-openbsd*)
+ 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h"
+-	tm_file="${tm_file} openbsd.h i386/openbsdelf.h"
++	tm_file="${tm_file} openbsd.h openbsd-libpthread.h i386/openbsdelf.h"
+ 	gas=yes
+ 	gnu_ld=yes
+ 	;;
++x86_64-*-openbsd*)
++        tm_file="i386/biarch64.h i386/i386.h i386/unix.h i386/att.h dbxelf.h elfos.h openbsd.h openbsd-libpthread.h i386/x86-64.h i386/openbsd64.h"
++        tm_file="${tm_file} exec-stack.h"
++        tmake_file="t-libc-ok t-openbsd i386/t-openbsd"
++        ;;
+ i[34567]86-*-coff*)
+ 	tm_file="${tm_file} i386/unix.h i386/bsd.h i386/gas.h dbxcoff.h i386/i386-coff.h"
+ 	use_fixproto=yes
+@@ -1542,7 +1552,7 @@ m68010-*-netbsdelf* | m68k*-*-netbsdelf*)
+ m68k*-*-openbsd*)
+ 	# needed to unconfuse gdb
+ 	tm_defines="${tm_defines} OBSD_OLD_GAS TARGET_DEFAULT=(MASK_68020|MASK_68881|MASK_BITFIELD)"
+-	tm_file="m68k/m68k.h openbsd.h m68k/openbsd.h"
++	tm_file="m68k/m68k.h openbsd.h openbsd-libpthread.h m68k/openbsd.h"
+ 	tmake_file="t-libc-ok t-openbsd m68k/t-openbsd"
+ 	# we need collect2 until our bug is fixed...
+ 	use_collect2=yes
+@@ -1632,7 +1642,7 @@ mips*-*-linux*)				# Linux MIPS, either endian.
+ mips*-*-openbsd*)
+ 	tm_defines="${tm_defines} OBSD_HAS_DECLARE_FUNCTION_NAME OBSD_HAS_DECLARE_OBJECT OBSD_HAS_CORRECT_SPECS"
+ 	target_cpu_default="MASK_ABICALLS"
+-	tm_file="mips/mips.h openbsd.h mips/openbsd.h mips/sdb.h"
++	tm_file="mips/mips.h openbsd.h openbsd-libpthread.h mips/openbsd.h mips/sdb.h"
+ 	case ${target} in
+ 	mips*el-*-openbsd*)
+ 	    tm_defines="${tm_defines} TARGET_ENDIAN_DEFAULT=0";;
+@@ -1762,11 +1772,11 @@ pdp11-*-bsd)
+ pdp11-*-*)
+ 	use_fixproto=yes
+ 	;;
+-# port not yet contributed
+-#powerpc-*-openbsd*)
+-#	tmake_file="${tmake_file} rs6000/t-fprules rs6000/t-fprules-fpbit "
+-#	extra_headers=
+-#	;;
++powerpc-*-openbsd*)
++	tm_file="${tm_file} dbxelf.h elfos.h openbsd.h openbsd-libpthread.h freebsd-spec.h rs6000/sysv4.h rs6000/openbsd.h"
++	tmake_file="${tmake_file} rs6000/t-openbsd"
++	extra_options="${extra_options} rs6000/sysv4.opt"
++	;;
+ powerpc64-*-linux*)
+ 	tm_file="${tm_file} dbxelf.h elfos.h svr4.h freebsd-spec.h rs6000/sysv4.h"
+ 	test x$with_cpu != x || cpu_is_64bit=yes
+@@ -2240,7 +2250,7 @@ sparc-*-netbsdelf*)
+ 	extra_options="${extra_options} sparc/long-double-switch.opt"
+ 	;;
+ sparc64-*-openbsd*)
+-	tm_file="sparc/openbsd1-64.h ${tm_file} dbxelf.h elfos.h svr4.h sparc/sysv4.h sparc/sp64-elf.h openbsd.h sparc/openbsd64.h"
++	tm_file="sparc/openbsd1-64.h ${tm_file} dbxelf.h elfos.h svr4.h sparc/sysv4.h sparc/sp64-elf.h openbsd.h openbsd-libpthread.h sparc/openbsd64.h"
+ 	extra_options="${extra_options} sparc/little-endian.opt"
+ 	gas=yes gnu_ld=yes
+ 	with_cpu=ultrasparc
+@@ -2506,7 +2516,7 @@ vax-*-netbsd*)
+ 	use_collect2=yes
+ 	;;
+ vax-*-openbsd*)
+-	tm_file="vax/vax.h vax/openbsd1.h openbsd.h vax/openbsd.h"
++	tm_file="vax/vax.h vax/openbsd1.h openbsd.h openbsd-libpthread.h vax/openbsd.h"
+ 	use_collect2=yes
+ 	;;
+ vax-*-ultrix*)			# VAXen running ultrix

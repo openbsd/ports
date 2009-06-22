@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_tree-vect-transform_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/tree-vect-transform.c.orig	Wed Jul 11 22:32:42 2007
++++ gcc/tree-vect-transform.c	Mon Jun 22 00:54:04 2009
+@@ -105,7 +105,7 @@ vect_get_new_vect_var (tree type, enum vect_var_kind v
+   }
+ 
+   if (name)
+-    new_vect_var = create_tmp_var (type, concat (prefix, name, NULL));
++    new_vect_var = create_tmp_var (type, concat (prefix, name, (void *)0));
+   else
+     new_vect_var = create_tmp_var (type, prefix);
+ 

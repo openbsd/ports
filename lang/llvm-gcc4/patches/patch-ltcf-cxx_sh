@@ -1,0 +1,57 @@
+$OpenBSD: patch-ltcf-cxx_sh,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- ltcf-cxx.sh.orig	Tue Mar 18 19:53:10 2008
++++ ltcf-cxx.sh	Mon Jun 22 00:54:09 2009
+@@ -78,8 +78,8 @@ if { ac_try='${CC-c++} -E conftest.$ac_ext'; { (eval e
+   # to be the same.
+ 
+   if test "$with_gnu_ld" = yes; then
+-    archive_cmds='$CC -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${wl}-soname $wl$soname -o $lib'
+-    archive_expsym_cmds='$CC -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
++    archive_cmds='$CC $pic_flag -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${wl}-soname $wl$soname -o $lib'
++    archive_expsym_cmds='$CC $pic_flag -shared -nostdlib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
+ 
+     hardcode_libdir_flag_spec='${wl}--rpath ${wl}$libdir'
+     export_dynamic_flag_spec='${wl}--export-dynamic'
+@@ -454,6 +454,19 @@ case $host_os in
+   netbsd* | knetbsd*-gnu)
+     # NetBSD uses g++ - do we need to do anything?
+     ;;
++  openbsd*)
++    if test "$with_gcc" = yes && test "$with_gnu_ld" = no; then
++      # MM: OpenBSD 2.7 uses G++, but not GNU ld
++      archive_cmds='$CC $pic_flag -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
++      archive_expsym_cmds='$CC $pic_flag -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
++      old_archive_cmds="$old_archive_cmds~"'$RANLIB $oldlib'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
++      hardcode_direct=yes
++      hardcode_shlibpath_var=no
++      remove_lgcc=yes
++      output_verbose_link_cmds='$CC $ac_cv_prog_cc_pic -shared $CFLAGS -v conftest.$objext 2>&1 | egrep "\-L"'
++    fi
++    ;;
+   osf3*)
+     case $cc_basename in
+       KCC)
+@@ -981,8 +994,9 @@ class Foo (private)
+ };
+ EOF
+ 
++echo $ac_compile_shared >&5
+ 
+-if (eval $ac_compile) 2>&5; then
++if (eval $ac_compile_shared) 2>&5; then
+   # Parse the compiler output and extract the necessary
+   # objects, libraries and library flags.
+ 
+@@ -1012,9 +1026,9 @@ if (eval $ac_compile) 2>&5; then
+ 	   # provided the user.  The postdeps already come after the
+ 	   # user supplied libs so there is no need to process them.
+            if test -z "$compiler_lib_search_path"; then
+-             compiler_lib_search_path="${prev}${p}"
++             compiler_lib_search_path="${prev}${p}/fpic ${p}"
+            else
+-             compiler_lib_search_path="${compiler_lib_search_path} ${prev}${p}"
++             compiler_lib_search_path="${compiler_lib_search_path} ${prev}${p}/fpic ${prev}${p}"
+            fi
+            ;;
+          # The "-l" case would never come before the object being

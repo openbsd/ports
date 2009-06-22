@@ -1,0 +1,37 @@
+$OpenBSD: patch-gcc_c-common_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/c-common.c.orig	Mon May  4 17:45:55 2009
++++ gcc/c-common.c	Mon Jun 22 00:58:03 2009
+@@ -641,6 +641,8 @@ static tree handle_cleanup_attribute (tree *, tree, tr
+ static tree handle_warn_unused_result_attribute (tree *, tree, tree, int,
+ 						 bool *);
+ static tree handle_sentinel_attribute (tree *, tree, tree, int, bool *);
++static tree handle_bounded_attribute (tree *, tree, tree, int, bool *);
++
+ /* APPLE LOCAL radar 5932809 - copyable byref blocks */
+ static tree handle_blocks_attribute (tree *, tree, tree, int, bool *);
+ 
+@@ -738,6 +740,8 @@ const struct attribute_spec c_common_attribute_table[]
+   /* APPLE LOCAL end "unavailable" attribute --ilr */
+   { "vector_size",	      1, 1, false, true, false,
+ 			      handle_vector_size_attribute },
++  { "bounded",                3, 4, false, true, false,
++                              handle_bounded_attribute },
+   { "visibility",	      1, 1, false, false, false,
+ 			      handle_visibility_attribute },
+   { "tls_model",	      1, 1, true,  false, false,
+@@ -5807,6 +5811,15 @@ handle_vector_size_attribute (tree *node, tree name, t
+   *node = reconstruct_complex_type (*node, new_type);
+ 
+   return NULL_TREE;
++}
++
++static tree
++handle_bounded_attribute (tree *ARG_UNUSED (node), tree ARG_UNUSED (name), 
++			   tree ARG_UNUSED (args),
++			   int ARG_UNUSED (flags), bool *no_add_attrs)
++{
++	*no_add_attrs = true;
++	return NULL_TREE;
+ }
+ 
+ /* Handle the "nonnull" attribute.  */

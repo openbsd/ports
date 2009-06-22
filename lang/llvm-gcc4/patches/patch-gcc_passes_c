@@ -1,0 +1,23 @@
+$OpenBSD: patch-gcc_passes_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/passes.c.orig	Mon Jan 19 02:26:09 2009
++++ gcc/passes.c	Mon Jun 22 00:54:01 2009
+@@ -359,7 +359,7 @@ register_one_dump_file (struct tree_opt_pass *pass, bo
+     sprintf (num, "%d", ((int) pass->static_pass_number < 0
+ 			 ? 1 : pass->static_pass_number));
+ 
+-  dot_name = concat (".", pass->name, num, NULL);
++  dot_name = concat (".", pass->name, num, (void *)0);
+   if (ipa)
+     prefix = "ipa-", flags = TDF_IPA;
+   else if (properties & PROP_trees)
+@@ -367,8 +367,8 @@ register_one_dump_file (struct tree_opt_pass *pass, bo
+   else
+     prefix = "rtl-", flags = TDF_RTL;
+ 
+-  flag_name = concat (prefix, pass->name, num, NULL);
+-  glob_name = concat (prefix, pass->name, NULL);
++  flag_name = concat (prefix, pass->name, num, (void *)0);
++  glob_name = concat (prefix, pass->name, (void *)0);
+   pass->static_pass_number = dump_register (dot_name, flag_name, glob_name,
+                                             flags, pass->letter);
+ }

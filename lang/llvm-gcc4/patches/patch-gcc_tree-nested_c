@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_tree-nested_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/tree-nested.c.orig	Sun Feb 15 04:17:54 2009
++++ gcc/tree-nested.c	Mon Jun 22 00:54:04 2009
+@@ -258,7 +258,7 @@ get_frame_type (struct nesting_info *info)
+ 
+       name = concat ("FRAME.",
+ 		     IDENTIFIER_POINTER (DECL_NAME (info->context)),
+-		     NULL);
++		     (void *)0);
+       TYPE_NAME (type) = get_identifier (name);
+       free (name);
+ 

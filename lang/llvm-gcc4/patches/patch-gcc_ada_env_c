@@ -1,0 +1,13 @@
+$OpenBSD: patch-gcc_ada_env_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/ada/env.c.orig	Wed Jul 11 22:32:42 2007
++++ gcc/ada/env.c	Mon Jun 22 00:57:07 2009
+@@ -288,7 +288,8 @@ void __gnat_clearenv (void) {
+     index++;
+   }
+ #elif defined (__MINGW32__) || defined (__FreeBSD__) || defined (__APPLE__) \
+-   || (defined (__vxworks) && defined (__RTP__)) || defined (__CYGWIN__)
++   || (defined (__vxworks) && defined (__RTP__)) || defined (__CYGWIN__) \
++   || defined(__OpenBSD__)
+   /* On Windows, FreeBSD and MacOS there is no function to clean all the
+      environment but there is a "clean" way to unset a variable. So go
+      through the environ table and call __gnat_unsetenv on all entries */

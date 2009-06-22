@@ -1,0 +1,62 @@
+$OpenBSD: patch-libstdc++-v3_include_c_std_std_cwchar_h,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- libstdc++-v3/include/c_std/std_cwchar.h.orig	Fri Jun  5 00:00:55 2009
++++ libstdc++-v3/include/c_std/std_cwchar.h	Fri Jun  5 00:05:00 2009
+@@ -151,8 +151,10 @@ _GLIBCXX_BEGIN_NAMESPACE(std)
+   using ::fputwc;
+   using ::fputws;
+   using ::fwide;
++#if !defined(__OpenBSD__)
+   using ::fwprintf;
+   using ::fwscanf;
++#endif
+   using ::getwc;
+   using ::getwchar;
+   using ::mbrlen;
+@@ -161,18 +163,26 @@ _GLIBCXX_BEGIN_NAMESPACE(std)
+   using ::mbsrtowcs;
+   using ::putwc;
+   using ::putwchar;
++#if !defined(__OpenBSD__)
+   using ::swprintf;
+   using ::swscanf;
++#endif
+   using ::ungetwc;
++#if !defined(__OpenBSD__)
+   using ::vfwprintf;
++#endif
+ #if _GLIBCXX_HAVE_VFWSCANF
+   using ::vfwscanf;
+ #endif
++#if !defined(__OpenBSD__)
+   using ::vswprintf;
++#endif
+ #if _GLIBCXX_HAVE_VSWSCANF
+   using ::vswscanf;
+ #endif
++#if !defined(__OpenBSD__)
+   using ::vwprintf;
++#endif
+ #if _GLIBCXX_HAVE_VWSCANF
+   using ::vwscanf;
+ #endif
+@@ -182,7 +192,9 @@ _GLIBCXX_BEGIN_NAMESPACE(std)
+   using ::wcscoll;
+   using ::wcscpy;
+   using ::wcscspn;
++#if !defined(__OpenBSD__)
+   using ::wcsftime;
++#endif
+   using ::wcslen;
+   using ::wcsncat;
+   using ::wcsncmp;
+@@ -202,8 +214,10 @@ _GLIBCXX_BEGIN_NAMESPACE(std)
+   using ::wmemcpy;
+   using ::wmemmove;
+   using ::wmemset;
++#if !defined(__OpenBSD__)
+   using ::wprintf;
+   using ::wscanf;
++#endif
+ 
+   using ::wcschr;
+ 

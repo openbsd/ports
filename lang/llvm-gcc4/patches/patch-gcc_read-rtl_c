@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_read-rtl_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/read-rtl.c.orig	Wed Jul 11 22:32:42 2007
++++ gcc/read-rtl.c	Mon Jun 22 00:54:01 2009
+@@ -784,7 +784,7 @@ join_c_conditions (const char *cond1, const char *cond
+   if (cond2 == 0 || cond2[0] == 0)
+     return cond1;
+ 
+-  result = concat ("(", cond1, ") && (", cond2, ")", NULL);
++  result = concat ("(", cond1, ") && (", cond2, ")", (void *)0);
+   obstack_ptr_grow (&joined_conditions_obstack, result);
+   obstack_ptr_grow (&joined_conditions_obstack, cond1);
+   obstack_ptr_grow (&joined_conditions_obstack, cond2);

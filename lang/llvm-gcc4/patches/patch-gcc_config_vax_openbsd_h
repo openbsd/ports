@@ -1,0 +1,23 @@
+$OpenBSD: patch-gcc_config_vax_openbsd_h,v 1.1.1.1 2009/06/22 22:37:31 sthen Exp $
+--- gcc/config/vax/openbsd.h.orig	Wed Jul 11 22:32:42 2007
++++ gcc/config/vax/openbsd.h	Mon Jun 22 00:53:58 2009
+@@ -34,13 +34,17 @@ Boston, MA 02110-1301, USA.  */
+ 
+ /* This must agree with <machine/ansi.h>  */
+ #undef SIZE_TYPE
+-#define SIZE_TYPE "unsigned int"
++#define SIZE_TYPE "long unsigned int"
+ 
+ #undef PTRDIFF_TYPE
+-#define PTRDIFF_TYPE "int"
++#define PTRDIFF_TYPE "long int"
+ 
+ #undef WCHAR_TYPE
+ #define WCHAR_TYPE "int"
+ 
+ #undef WCHAR_TYPE_SIZE
+ #define WCHAR_TYPE_SIZE 32
++
++#undef WINT_TYPE
++#define WINT_TYPE "int"
++

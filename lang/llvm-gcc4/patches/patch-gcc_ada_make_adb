@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_ada_make_adb,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/ada/make.adb.orig	Tue Nov 15 15:00:29 2005
++++ gcc/ada/make.adb	Sat Mar  4 14:34:45 2006
+@@ -601,7 +601,7 @@ package body Make is
+    -- Compiler, Binder & Linker Data and Subprograms --
+    ----------------------------------------------------
+ 
+-   Gcc             : String_Access := Program_Name ("gcc");
++   Gcc             : String_Access := Program_Name ("egcc");
+    Gnatbind        : String_Access := Program_Name ("gnatbind");
+    Gnatlink        : String_Access := Program_Name ("gnatlink");
+    --  Default compiler, binder, linker programs

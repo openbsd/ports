@@ -1,0 +1,46 @@
+$OpenBSD: patch-libstdc++-v3_include_c_compatibility_wchar_h,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- libstdc++-v3/include/c_compatibility/wchar.h.orig	Fri Jun  5 00:05:31 2009
++++ libstdc++-v3/include/c_compatibility/wchar.h	Fri Jun  5 00:06:50 2009
+@@ -45,24 +45,32 @@ using std::fgetws;
+ using std::fputwc;
+ using std::fputws;
+ using std::fwide;
++#if !defined(__OpenBSD__)
+ using std::fwprintf;
+ using std::fwscanf;
+ using std::swprintf;
+ using std::swscanf;
+ using std::vfwprintf;
++#endif
+ #if _GLIBCXX_HAVE_VFWSCANF
+ using std::vfwscanf;
+ #endif
++#if !defined(__OpenBSD__)
+ using std::vswprintf;
++#endif
+ #if _GLIBCXX_HAVE_VSWSCANF
+ using std::vswscanf;
+ #endif
++#if !defined(__OpenBSD__)
+ using std::vwprintf;
++#endif
+ #if _GLIBCXX_HAVE_VWSCANF
+ using std::vwscanf;
+ #endif
++#if !defined(__OpenBSD__)
+ using std::wprintf;
+ using std::wscanf;
++#endif
+ using std::getwc;
+ using std::getwchar;
+ using std::mbsinit;
+@@ -101,7 +109,9 @@ using std::wmemcmp;
+ using std::wmemcpy;
+ using std::wmemmove;
+ using std::wmemset;
++#if !defined(__OpenBSD__)
+ using std::wcsftime;
++#endif
+ 
+ #if _GLIBCXX_USE_C99
+ using std::wcstold;

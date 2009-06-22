@@ -1,0 +1,17 @@
+$OpenBSD: patch-gcc_testsuite_gcc_dg_format_format_h,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/testsuite/gcc.dg/format/format.h.orig	Sat Jul 22 23:16:52 2006
++++ gcc/testsuite/gcc.dg/format/format.h	Sat Jul 22 23:17:34 2006
+@@ -4,11 +4,13 @@
+ #include <stdarg.h>
+ #include <stddef.h>
+ 
++#ifndef _WINT_T_DEFINED_
+ #ifndef _WINT_T
+ #ifndef __WINT_TYPE__
+ #define __WINT_TYPE__ unsigned int
+ #endif
+ typedef __WINT_TYPE__ wint_t;
++#endif
+ #endif
+ 
+ /* Kludges to get types corresponding to size_t and ptrdiff_t.  */

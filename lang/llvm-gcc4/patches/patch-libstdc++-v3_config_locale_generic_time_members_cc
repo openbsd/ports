@@ -1,0 +1,20 @@
+$OpenBSD: patch-libstdc++-v3_config_locale_generic_time_members_cc,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- libstdc++-v3/config/locale/generic/time_members.cc.orig	Fri Jun  5 05:43:54 2009
++++ libstdc++-v3/config/locale/generic/time_members.cc	Fri Jun  5 05:44:13 2009
+@@ -128,12 +128,16 @@ _GLIBCXX_BEGIN_NAMESPACE(std)
+     {
+       char* __old = strdup(setlocale(LC_ALL, NULL));
+       setlocale(LC_ALL, _M_name_timepunct);
++#if !defined(__OpenBSD__)
+       const size_t __len = wcsftime(__s, __maxlen, __format, __tm);
++#endif
+       setlocale(LC_ALL, __old);
+       free(__old);
++#if !defined(__OpenBSD__)
+       // Make sure __s is null terminated.
+       if (__len == 0)
+ 	__s[0] = L'\0';      
++#endif
+     }
+ 
+   template<> 

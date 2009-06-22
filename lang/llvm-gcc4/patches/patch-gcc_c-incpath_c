@@ -1,0 +1,32 @@
+$OpenBSD: patch-gcc_c-incpath_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/c-incpath.c.orig	Sun Feb 15 04:17:54 2009
++++ gcc/c-incpath.c	Mon Jun 22 00:59:21 2009
+@@ -163,9 +163,9 @@ add_standard_paths (const char *sysroot, const char *i
+ 		continue;
+ 	      if (!strncmp (p->fname, cpp_GCC_INCLUDE_DIR, len))
+ 		{
+-		  char *str = concat (iprefix, p->fname + len, NULL);
++		  char *str = concat (iprefix, p->fname + len, (void *)0);
+ 		  if (p->multilib && imultilib)
+-		    str = concat (str, dir_separator_str, imultilib, NULL);
++		    str = concat (str, dir_separator_str, imultilib, (void *)0);
+ 		  add_path (str, SYSTEM, p->cxx_aware, false);
+ 		}
+ 	    }
+@@ -184,14 +184,14 @@ add_standard_paths (const char *sysroot, const char *i
+ #ifdef ENABLE_LLVM
+ 	    str = TARGET_BUILD_SYSROOT_PATH(sysroot, p->fname);
+ #else
+-	    str = concat (sysroot, p->fname, NULL);
++	    str = concat (sysroot, p->fname, (void *)0);
+ #endif
+             /* LLVM LOCAL end sysroot */
+ 	  else
+ 	    str = update_path (p->fname, p->component);
+ 
+ 	  if (p->multilib && imultilib)
+-	    str = concat (str, dir_separator_str, imultilib, NULL);
++	    str = concat (str, dir_separator_str, imultilib, (void *)0);
+ 
+ 	  add_path (str, SYSTEM, p->cxx_aware, false);
+ 	}

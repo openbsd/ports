@@ -1,0 +1,30 @@
+$OpenBSD: patch-ltcf-c_sh,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- ltcf-c.sh.orig	Tue Mar 18 19:53:10 2008
++++ ltcf-c.sh	Mon Jun 22 00:54:08 2009
+@@ -219,8 +219,8 @@ EOF
+ 
+   *)
+     if $LD --help 2>&1 | egrep ': supported targets:.* elf' > /dev/null; then
+-      archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags ${wl}-soname $wl$soname -o $lib'
+-      archive_expsym_cmds='$CC -shared $libobjs $deplibs $compiler_flags ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
++      archive_cmds='$CC $pic_flag -shared $libobjs $deplibs $compiler_flags ${wl}-soname $wl$soname -o $lib'
++      archive_expsym_cmds='$CC $pic_flag -shared $libobjs $deplibs $compiler_flags ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
+     else
+       ld_shlibs=no
+     fi
+@@ -515,10 +515,13 @@ else
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+-    hardcode_libdir_flag_spec='-R$libdir'
++    archive_cmds='$CC $pic_flag -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
++    archive_expsym_cmds='$CC $pic_flag -shared $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
++    hardcode_libdir_flag_spec='${wl}-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
++    remove_lgcc=yes
++    output_verbose_link_cmds='$CC $ac_cv_prog_cc_pic -shared $CFLAGS -v conftest.$objext 2>&1 | egrep "\-L"'
+     ;;
+ 
+   os2*)

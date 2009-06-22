@@ -1,0 +1,11 @@
+$OpenBSD: patch-libiberty_testsuite_test-expandargv_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- libiberty/testsuite/test-expandargv.c.orig	Sat Mar  7 17:08:28 2009
++++ libiberty/testsuite/test-expandargv.c	Sat Mar  7 17:09:01 2009
+@@ -173,6 +173,7 @@ writeout_test (int test, const char * test_data)
+     fatal_error (__LINE__, "Failed to malloc parse.", errno);
+       
+   memcpy (parse, test_data, sizeof (char) * len);
++  parse[len] = '\0';
+   /* Run all possible replaces */
+   run_replaces (parse);
+ 

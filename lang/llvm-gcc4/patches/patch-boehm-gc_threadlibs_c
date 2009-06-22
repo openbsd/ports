@@ -1,0 +1,13 @@
+$OpenBSD: patch-boehm-gc_threadlibs_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- boehm-gc/threadlibs.c.orig	Thu Mar  5 17:58:11 2009
++++ boehm-gc/threadlibs.c	Thu Mar  5 17:58:54 2009
+@@ -15,6 +15,9 @@ int main()
+ 	|| defined(GC_DARWIN_THREADS) || defined(GC_AIX_THREADS)
+         printf("-lpthread\n");
+ #   endif
++#   if defined(GC_OPENBSD_THREADS)
++        printf("-pthread\n");
++#   endif
+ #   if defined(GC_FREEBSD_THREADS)
+ #       if (__FREEBSD_version >= 500000)
+           printf("-lpthread\n");

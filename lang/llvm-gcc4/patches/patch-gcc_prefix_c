@@ -1,0 +1,35 @@
+$OpenBSD: patch-gcc_prefix_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/prefix.c.orig	Wed Jul 11 22:32:42 2007
++++ gcc/prefix.c	Mon Jun 22 00:54:01 2009
+@@ -99,7 +99,7 @@ get_key_value (char *key)
+ #endif
+ 
+   if (prefix == 0)
+-    prefix = getenv (temp = concat (key, "_ROOT", NULL));
++    prefix = getenv (temp = concat (key, "_ROOT", (void *)0));
+ 
+   if (prefix == 0)
+     prefix = std_prefix;
+@@ -223,7 +223,7 @@ translate_name (char *name)
+ 	 together.  */
+ 
+       old_name = name;
+-      name = concat (prefix, &name[keylen + 1], NULL);
++      name = concat (prefix, &name[keylen + 1], (void *)0);
+       free (old_name);
+     }
+ 
+@@ -261,11 +261,11 @@ update_path (const char *path, const char *key)
+ 
+       if (key[0] != '$')
+ 	{
+-	  key = concat ("@", key, NULL);
++	  key = concat ("@", key, (void *)0);
+ 	  free_key = true;
+ 	}
+ 
+-      result = concat (key, &path[len], NULL);
++      result = concat (key, &path[len], (void *)0);
+       if (free_key)
+ 	free ((char *) key);
+       result = translate_name (result);

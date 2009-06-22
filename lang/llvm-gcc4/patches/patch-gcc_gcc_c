@@ -1,0 +1,210 @@
+$OpenBSD: patch-gcc_gcc_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/gcc.c.orig	Mon Jun 22 01:17:01 2009
++++ gcc/gcc.c	Mon Jun 22 01:17:03 2009
+@@ -1406,7 +1406,7 @@ translate_options (int *argcp, const char *const **arg
+ 		  /* Store the translation as one argv elt or as two.  */
+ 		  if (arg != 0 && strchr (arginfo, 'j') != 0)
+ 		    newv[newindex++] = concat (option_map[j].equivalent, arg,
+-					       NULL);
++					       (void *)0);
+ 		  else if (arg != 0)
+ 		    {
+ 		      newv[newindex++] = option_map[j].equivalent;
+@@ -1746,7 +1746,7 @@ init_gcc_specs (struct obstack *obstack, const char *s
+ 		"%{shared:", shared_name, "}"
+ #endif
+ #endif
+-		"}}", NULL);
++		"}}", (void *)0);
+ 
+   obstack_grow (obstack, buf, strlen (buf));
+   free (buf);
+@@ -1944,7 +1944,7 @@ set_spec (const char *name, const char *spec)
+ 
+   old_spec = *(sl->ptr_spec);
+   *(sl->ptr_spec) = ((spec[0] == '+' && ISSPACE ((unsigned char)spec[1]))
+-		     ? concat (old_spec, spec + 1, NULL)
++		     ? concat (old_spec, spec + 1, (void *)0)
+ 		     : xstrdup (spec));
+ 
+ #ifdef DEBUG_SPECS
+@@ -2514,12 +2514,12 @@ for_each_path (const struct path_prefix *paths,
+   just_multi_suffix = just_machine_suffix;
+   if (do_multi && multilib_dir && strcmp (multilib_dir, ".") != 0)
+     {
+-      multi_dir = concat (multilib_dir, dir_separator_str, NULL);
+-      multi_suffix = concat (multi_suffix, multi_dir, NULL);
+-      just_multi_suffix = concat (just_multi_suffix, multi_dir, NULL);
++      multi_dir = concat (multilib_dir, dir_separator_str, (void *)0);
++      multi_suffix = concat (multi_suffix, multi_dir, (void *)0);
++      just_multi_suffix = concat (just_multi_suffix, multi_dir, (void *)0);
+     }
+   if (do_multi && multilib_os_dir && strcmp (multilib_os_dir, ".") != 0)
+-    multi_os_dir = concat (multilib_os_dir, dir_separator_str, NULL);
++    multi_os_dir = concat (multilib_os_dir, dir_separator_str, (void *)0);
+ 
+   while (1)
+     {
+@@ -2867,8 +2867,8 @@ add_sysrooted_prefix (struct path_prefix *pprefix, con
+   if (target_system_root)
+     {
+       if (target_sysroot_suffix)
+-	  prefix = concat (target_sysroot_suffix, prefix, NULL);
+-      prefix = concat (target_system_root, prefix, NULL);
++	  prefix = concat (target_sysroot_suffix, prefix, (void *)0);
++      prefix = concat (target_system_root, prefix, (void *)0);
+ 
+       /* We have to override this because GCC's notion of sysroot
+ 	 moves along with GCC.  */
+@@ -3506,7 +3506,7 @@ process_command (int argc, const char **argv)
+ 	  break;
+       new_argv0 = xmemdup (progname, baselen,
+ 			   baselen + concat_length (new_version, new_machine,
+-						    "-gcc-", NULL) + 1);
++						    "-gcc-", (void *)0) + 1);
+       strcpy (new_argv0 + baselen, new_machine);
+       strcat (new_argv0, "-gcc-");
+       strcat (new_argv0, new_version);
+@@ -3533,7 +3533,7 @@ process_command (int argc, const char **argv)
+ 						 standard_bindir_prefix,
+ 						 standard_libexec_prefix);
+       if (gcc_exec_prefix)
+-	putenv (concat ("GCC_EXEC_PREFIX=", gcc_exec_prefix, NULL));
++	putenv (concat ("GCC_EXEC_PREFIX=", gcc_exec_prefix, (void *)0));
+     }
+   else
+     {
+@@ -3541,7 +3541,7 @@ process_command (int argc, const char **argv)
+ 	 GCC_EXEC_PREFIX is typically a directory name with a trailing
+ 	 / (which is ignored by make_relative_prefix), so append a
+ 	 program name.  */
+-      char *tmp_prefix = concat (gcc_exec_prefix, "gcc", NULL);
++      char *tmp_prefix = concat (gcc_exec_prefix, "gcc", (void *)0);
+       gcc_libexec_prefix = make_relative_prefix (tmp_prefix,
+ 						 standard_exec_prefix,
+ 						 standard_libexec_prefix);
+@@ -3588,7 +3588,7 @@ process_command (int argc, const char **argv)
+ 	    {
+ 	      strncpy (nstore, startp, endp - startp);
+ 	      if (endp == startp)
+-		strcpy (nstore, concat (".", dir_separator_str, NULL));
++		strcpy (nstore, concat (".", dir_separator_str, (void *)0));
+ 	      else if (!IS_DIR_SEPARATOR (endp[-1]))
+ 		{
+ 		  nstore[endp - startp] = DIR_SEPARATOR;
+@@ -3622,7 +3622,7 @@ process_command (int argc, const char **argv)
+ 	    {
+ 	      strncpy (nstore, startp, endp - startp);
+ 	      if (endp == startp)
+-		strcpy (nstore, concat (".", dir_separator_str, NULL));
++		strcpy (nstore, concat (".", dir_separator_str, (void *)0));
+ 	      else if (!IS_DIR_SEPARATOR (endp[-1]))
+ 		{
+ 		  nstore[endp - startp] = DIR_SEPARATOR;
+@@ -3655,7 +3655,7 @@ process_command (int argc, const char **argv)
+ 	    {
+ 	      strncpy (nstore, startp, endp - startp);
+ 	      if (endp == startp)
+-		strcpy (nstore, concat (".", dir_separator_str, NULL));
++		strcpy (nstore, concat (".", dir_separator_str, (void *)0));
+ 	      else if (!IS_DIR_SEPARATOR (endp[-1]))
+ 		{
+ 		  nstore[endp - startp] = DIR_SEPARATOR;
+@@ -4178,7 +4178,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR 
+ 	      PREFIX_PRIORITY_LAST, 1, 0);
+ 
+   tooldir_prefix = concat (tooldir_base_prefix, spec_machine,
+-			   dir_separator_str, NULL);
++			   dir_separator_str, (void *)0);
+ 
+   /* If tooldir is relative, base it on exec_prefixes.  A relative
+      tooldir lets us move the installed tree as a unit.
+@@ -4193,28 +4193,28 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR 
+ 	{
+ 	  char *gcc_exec_tooldir_prefix
+ 	    = concat (gcc_exec_prefix, spec_machine, dir_separator_str,
+-		      spec_version, dir_separator_str, tooldir_prefix, NULL);
++		      spec_version, dir_separator_str, tooldir_prefix, (void *)0);
+ 
+ 	  add_prefix (&exec_prefixes,
+ 		      concat (gcc_exec_tooldir_prefix, "bin",
+-			      dir_separator_str, NULL),
++			      dir_separator_str, (void *)0),
+ 		      NULL, PREFIX_PRIORITY_LAST, 0, 0);
+ 	  add_prefix (&startfile_prefixes,
+ 		      concat (gcc_exec_tooldir_prefix, "lib",
+-			      dir_separator_str, NULL),
++			      dir_separator_str, (void *)0),
+ 		      NULL, PREFIX_PRIORITY_LAST, 0, 1);
+ 	}
+ 
+       tooldir_prefix = concat (standard_exec_prefix, spec_machine,
+ 			       dir_separator_str, spec_version,
+-			       dir_separator_str, tooldir_prefix, NULL);
++			       dir_separator_str, tooldir_prefix, (void *)0);
+     }
+ 
+   add_prefix (&exec_prefixes,
+-	      concat (tooldir_prefix, "bin", dir_separator_str, NULL),
++	      concat (tooldir_prefix, "bin", dir_separator_str, (void *)0),
+ 	      "BINUTILS", PREFIX_PRIORITY_LAST, 0, 0);
+   add_prefix (&startfile_prefixes,
+-	      concat (tooldir_prefix, "lib", dir_separator_str, NULL),
++	      concat (tooldir_prefix, "lib", dir_separator_str, (void *)0),
+ 	      "BINUTILS", PREFIX_PRIORITY_LAST, 0, 1);
+ 
+ #if defined(TARGET_SYSTEM_ROOT_RELOCATABLE) && !defined(VMS)
+@@ -4338,7 +4338,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR 
+ 	{ /* POSIX allows separation of -l and the lib arg;
+ 	     canonicalize by concatenating -l with its arg */
+ 	  infiles[n_infiles].language = "*";
+-	  infiles[n_infiles++].name = concat ("-l", argv[++i], NULL);
++	  infiles[n_infiles++].name = concat ("-l", argv[++i], (void *)0);
+ 	}
+       else if (strncmp (argv[i], "-l", 2) == 0)
+ 	{
+@@ -6618,8 +6618,8 @@ main (int argc, char **argv)
+   /* Read specs from a file if there is one.  */
+ 
+   machine_suffix = concat (spec_machine, dir_separator_str,
+-			   spec_version, dir_separator_str, NULL);
+-  just_machine_suffix = concat (spec_machine, dir_separator_str, NULL);
++			   spec_version, dir_separator_str, (void *)0);
++  just_machine_suffix = concat (spec_machine, dir_separator_str, (void *)0);
+ 
+   specs_file = find_a_file (&startfile_prefixes, "specs", R_OK, true);
+   /* Read the specs file unless it is a default one.  */
+@@ -6743,7 +6743,7 @@ main (int argc, char **argv)
+ 	  if (gcc_exec_prefix)
+ 	    add_prefix (&startfile_prefixes,
+ 			concat (gcc_exec_prefix, machine_suffix,
+-				standard_startfile_prefix, NULL),
++				standard_startfile_prefix, (void *)0),
+ 			NULL, PREFIX_PRIORITY_LAST, 0, 1);
+ 
+ 	  /* APPLE LOCAL begin ARM sysroot startfile_prefixes */
+@@ -6753,13 +6753,13 @@ main (int argc, char **argv)
+ 	    add_sysrooted_prefix (&startfile_prefixes,
+ 				  concat (standard_exec_prefix,
+ 					  machine_suffix,
+-					  standard_startfile_prefix, NULL),
++					  standard_startfile_prefix, (void *)0),
+ 				  NULL, PREFIX_PRIORITY_LAST, 0, 1);
+ 	  else
+ 	    add_prefix (&startfile_prefixes,
+ 			concat (standard_exec_prefix,
+ 				machine_suffix,
+-				standard_startfile_prefix, NULL),
++				standard_startfile_prefix, (void *)0),
+ 			NULL, PREFIX_PRIORITY_LAST, 0, 1);
+ 	  /* APPLE LOCAL end ARM sysroot startfile_prefixes */
+ 	}
+@@ -6788,7 +6788,7 @@ main (int argc, char **argv)
+   /* If we have a GCC_EXEC_PREFIX envvar, modify it for cpp's sake.  */
+   if (gcc_exec_prefix)
+     gcc_exec_prefix = concat (gcc_exec_prefix, spec_machine, dir_separator_str,
+-			      spec_version, dir_separator_str, NULL);
++			      spec_version, dir_separator_str, (void *)0);
+ 
+   /* Now we have the specs.
+      Set the `valid' bits for switches that match anything in any spec.  */

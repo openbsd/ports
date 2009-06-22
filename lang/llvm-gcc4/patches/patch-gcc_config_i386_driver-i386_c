@@ -1,0 +1,21 @@
+$OpenBSD: patch-gcc_config_i386_driver-i386_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/config/i386/driver-i386.c.orig	Thu Dec  4 05:19:42 2008
++++ gcc/config/i386/driver-i386.c	Mon Jun 22 00:53:54 2009
+@@ -271,7 +271,7 @@ const char *host_detect_local_cpu (int argc, const cha
+     }
+ 
+ done:
+-  return concat ("-m", argv[0], "=", cpu, NULL);
++  return concat ("-m", argv[0], "=", cpu, (void *)0);
+ }
+ #else
+ /* If we aren't compiling with GCC we just provide a minimal
+@@ -297,7 +297,7 @@ const char *host_detect_local_cpu (int argc, const cha
+   else
+     cpu = "generic";
+ 
+-  return concat ("-m", argv[0], "=", cpu, NULL);
++  return concat ("-m", argv[0], "=", cpu, (void *)0);
+ }
+ #endif /* GCC_VERSION */
+ /* LLVM LOCAL fix bootstrap failure on ppc host */

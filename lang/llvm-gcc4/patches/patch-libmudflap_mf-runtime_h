@@ -1,0 +1,12 @@
+$OpenBSD: patch-libmudflap_mf-runtime_h,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- libmudflap/mf-runtime.h.orig	Wed Jun 21 18:35:27 2006
++++ libmudflap/mf-runtime.h	Sun Mar 18 23:58:46 2007
+@@ -36,7 +36,7 @@ Software Foundation, 51 Franklin Street, Fifth Floor, 
+ #define MF_RUNTIME_H
+ 
+ typedef void *__mf_ptr_t;
+-typedef unsigned int __mf_uintptr_t __attribute__ ((__mode__ (__pointer__)));
++typedef unsigned long __mf_uintptr_t __attribute__ ((__mode__ (__pointer__)));
+ typedef __SIZE_TYPE__ __mf_size_t;
+ 
+ /* Global declarations used by instrumentation.  When _MUDFLAP is

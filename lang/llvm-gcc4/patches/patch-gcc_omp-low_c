@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_omp-low_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
+--- gcc/omp-low.c.orig	Fri Aug  3 02:00:37 2007
++++ gcc/omp-low.c	Mon Jun 22 00:54:00 2009
+@@ -3934,7 +3934,7 @@ lower_omp_critical (tree *stmt_p, omp_context *ctx)
+ 	  decl = create_tmp_var_raw (ptr_type_node, NULL);
+ 
+ 	  new_str = ACONCAT ((".gomp_critical_user_",
+-			      IDENTIFIER_POINTER (name), NULL));
++			      IDENTIFIER_POINTER (name), (void *)0));
+ 	  DECL_NAME (decl) = get_identifier (new_str);
+ 	  TREE_PUBLIC (decl) = 1;
+ 	  TREE_STATIC (decl) = 1;
