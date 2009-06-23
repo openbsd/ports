@@ -1,9 +1,9 @@
-$OpenBSD: patch-_bochsrc,v 1.3 2008/07/16 20:31:33 brad Exp $
---- .bochsrc.orig	Fri May 30 17:00:05 2008
-+++ .bochsrc	Wed Jul 16 15:01:44 2008
-@@ -197,13 +197,13 @@ vga: extension=vbe
- # such as a: or b: as the path.  The parameter 'image' works with image files
- # only. In that case the size must match one of the supported types.
+$OpenBSD: patch-_bochsrc,v 1.4 2009/06/23 16:03:58 pirofti Exp $
+--- .bochsrc.orig	Thu Apr 30 15:04:42 2009
++++ .bochsrc	Sun May 17 14:24:26 2009
+@@ -220,13 +220,13 @@ vga: extension=vbe
+ # The parameter 'type' can be used to enable the floppy drive without media
+ # and status specified. Usually the drive type is set up based on the media type.
  #=======================================================================
 -floppya: 1_44=/dev/fd0, status=inserted
 +#floppya: 1_44=/dev/fd0, status=inserted
@@ -17,7 +17,7 @@ $OpenBSD: patch-_bochsrc,v 1.3 2008/07/16 20:31:33 brad Exp $
  
  #=======================================================================
  # FLOPPYB:
-@@ -334,7 +334,7 @@ boot: disk
+@@ -364,7 +364,7 @@ boot: disk
  # 
  # Default value are sync=none, time0=local
  #=======================================================================
@@ -26,7 +26,7 @@ $OpenBSD: patch-_bochsrc,v 1.3 2008/07/16 20:31:33 brad Exp $
  
  
  #=======================================================================
-@@ -358,8 +358,8 @@ floppy_bootsig_check: disabled=0
+@@ -388,8 +388,8 @@ floppy_bootsig_check: disabled=0
  #   log: ./bochs.out
  #   log: /dev/tty
  #=======================================================================

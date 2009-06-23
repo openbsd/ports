@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2008/07/16 20:31:33 brad Exp $
+@comment $OpenBSD: PLIST,v 1.19 2009/06/23 16:03:58 pirofti Exp $
 @bin bin/bochs
 @bin bin/bxcommit
 @bin bin/bximage
@@ -9,14 +9,32 @@
 @man man/man5/bochsrc.5
 share/bochs/
 share/bochs/BIOS-bochs-latest
+share/bochs/BIOS-bochs-legacy
 share/bochs/VGABIOS-elpin-2.40
 share/bochs/VGABIOS-elpin-LICENSE
 share/bochs/VGABIOS-lgpl-README
 share/bochs/VGABIOS-lgpl-latest
 share/bochs/VGABIOS-lgpl-latest-cirrus
 share/bochs/VGABIOS-lgpl-latest-cirrus-debug
+share/bochs/VGABIOS-lgpl-latest-debug
 share/bochs/bochsrc
+share/bochs/keymaps/
+share/bochs/keymaps/sdl-pc-de.map
+share/bochs/keymaps/sdl-pc-us.map
+share/bochs/keymaps/x11-pc-be.map
+share/bochs/keymaps/x11-pc-da.map
+share/bochs/keymaps/x11-pc-de.map
+share/bochs/keymaps/x11-pc-es.map
+share/bochs/keymaps/x11-pc-fr.map
+share/bochs/keymaps/x11-pc-it.map
+share/bochs/keymaps/x11-pc-ru.map
+share/bochs/keymaps/x11-pc-se.map
+share/bochs/keymaps/x11-pc-si.map
+share/bochs/keymaps/x11-pc-uk.map
+share/bochs/keymaps/x11-pc-us.map
 share/doc/bochs/
-share/doc/bochs/Linux.html
+@comment share/doc/bochs/CHANGES
+@comment share/doc/bochs/COPYING
+share/doc/bochs/README
+@comment share/doc/bochs/TODO
 share/doc/bochs/cosimulation.html
-share/doc/bochs/index.html
