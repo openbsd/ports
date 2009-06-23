@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf-fam_conf,v 1.4 2009/06/20 11:51:02 ajacoutot Exp $
+$OpenBSD: patch-conf-fam_conf,v 1.5 2009/06/23 08:33:03 ajacoutot Exp $
 --- conf/fam.conf.orig	Sun Jan 19 13:20:52 2003
 +++ conf/fam.conf	Sat Jun 20 11:15:35 2009
 @@ -1,7 +1,7 @@
@@ -20,12 +20,3 @@ $OpenBSD: patch-conf-fam_conf,v 1.4 2009/06/20 11:51:02 ajacoutot Exp $
  
  #
  #  xtab_verification makes famd check the list of exported filesystems to
-@@ -51,3 +51,8 @@ xtab_verification = true
- #
- #nfs_polling_interval = 6
- 
-+#
-+#  disable_pollster disables polling of files on remote NFS servers.
-+#  The default is false.
-+#
-+#disable_pollster = false
