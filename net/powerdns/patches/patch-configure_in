@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure_in,v 1.1 2009/06/23 22:59:57 sthen Exp $
+
+workaround OpenBSD gcc LINK_SPEC problem (not obeying -rdynamic)
+
+--- configure.in.orig	Tue Jun 23 05:50:24 2009
++++ configure.in	Tue Jun 23 05:52:40 2009
+@@ -89,8 +89,8 @@ linux*)
+ 	;;
+ openbsd*)
+ 	AC_DEFINE(HAVE_IPV6,1,[If the host operating system understands IPv6])
+-	DYNLINKFLAGS="-rdynamic"
+-	LDFLAGS="-lc_r $LDFLAGS"
++	DYNLINKFLAGS="-Wl,-export-dynamic"
++	LDFLAGS="-pthread $LDFLAGS"
+ 	CXXFLAGS="-pthread $CXXFLAGS"
+ 	;;
+ *)

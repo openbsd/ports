@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-sqlite3,v 1.1.1.1 2008/10/02 18:40:41 jasper Exp $
-@lib lib/libgsqlite3backend.so.${LIBgsqlite3backend_VERSION}

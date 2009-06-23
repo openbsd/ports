@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sqlite3,v 1.1.1.1 2008/10/02 18:40:41 jasper Exp $
-%%SHARED%%
-lib/libgsqlite3backend.a
-lib/libgsqlite3backend.la
+@comment $OpenBSD: PLIST-sqlite3,v 1.2 2009/06/23 22:59:57 sthen Exp $
+@comment lib/powerdns/libgsqlite3backend.a
+@comment lib/powerdns/libgsqlite3backend.la
+lib/powerdns/libgsqlite3backend.so

@@ -1,27 +1,25 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/18 20:08:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2009/06/23 22:59:57 sthen Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT-main=		modern authoritative nameserver
 COMMENT-mysql=		mysql database access module for powerdns
 COMMENT-pgsql=		pgsql database access module for powerdns
 COMMENT-sqlite=		sqlite database access module for powerdns
 COMMENT-sqlite3=	sqlite3 database access module for powerdns
+COMMENT-ldap=		ldap module for powerdns
 
-V=			2.9.21.2
+V=			2.9.22
 DISTNAME=		pdns-${V}
 PKGNAME=		powerdns-${V}
-PKGNAME-main=		powerdns-${V}p3
-PKGNAME-mysql=		powerdns-mysql-${V}p2
-PKGNAME-pgsql=		powerdns-pgsql-${V}p2
-PKGNAME-sqlite= 	powerdns-sqlite-${V}p2
-PKGNAME-sqlite3=	powerdns-sqlite3-${V}p2
+PKGNAME-main=		powerdns-${V}
+PKGNAME-mysql=		powerdns-mysql-${V}
+PKGNAME-pgsql=		powerdns-pgsql-${V}
+PKGNAME-sqlite= 	powerdns-sqlite-${V}
+PKGNAME-sqlite3=	powerdns-sqlite3-${V}
+PKGNAME-ldap=		powerdns-ldap-${V}
 CATEGORIES=		net
 HOMEPAGE=		http://www.powerdns.com/
-
-SHARED_LIBS=		geobackend 	0.0 \
-			gmysqlbackend	0.0 \
-			gpgsqlbackend	0.0 \
-			gsqlite3backend	0.0 \
-			gsqlitebackend	0.0
 
 MULTI_PACKAGES=		-main
 
@@ -65,6 +63,7 @@ CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE} \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql
 LIB_DEPENDS-pgsql=	pq.>=2::databases/postgresql,-main
 RUN_DEPENDS-pgsql=	:${FULLPKGNAME-main}:net/powerdns
+WANTLIB-pgsql=		crypto ssl z
 BACKENDS+=		gpgsql
 .endif
 
@@ -94,6 +93,19 @@ WANTLIB-sqlite3+=	z
 BACKENDS+=		gsqlite3
 .endif
 
+# LDAP
+.if ${FLAVOR:L:Mno_ldap}
+CONFIGURE_ARGS+=	--without-ldap
+.else
+MULTI_PACKAGES+=	-ldap
+LIB_DEPENDS-ldap=	lber,ldap_r::databases/openldap
+RUN_DEPENDS-ldap=	:${FULLPKGNAME-main}:net/powerdns
+CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE} \
+			--with-ldap-includes=${LOCALBASE}/include
+WANTLIB-ldap+=		asn1 com_err crypto gssapi krb5 sasl2 ssl z
+BACKENDS+=		ldap
+.endif
+
 USE_LIBTOOL=		Yes
 
 BUILD_DEPENDS+=          ${MODGNU_AUTOCONF_DEPENDS}
@@ -103,7 +115,9 @@ AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	gnu autoconf
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--with-modules="geo" \
+CONFIGURE_ARGS+=	--enable-shared=no \
+			--libdir="${PREFIX}/lib/powerdns" \
+			--with-modules="geo" \
 			--with-dynmodules="${BACKENDS}" \
 			--disable-recursor # OpenBSD lacks ucontext.h, see PR 5099
 
@@ -122,4 +136,4 @@ post-install:
 
 .include <bsd.port.mk>
 
-CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/pdns"
+CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/pdns" \

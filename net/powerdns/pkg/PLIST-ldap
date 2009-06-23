@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-ldap,v 1.1 2009/06/23 22:59:57 sthen Exp $
+@comment lib/powerdns/libldapbackend.a
+@comment lib/powerdns/libldapbackend.la
+lib/powerdns/libldapbackend.so

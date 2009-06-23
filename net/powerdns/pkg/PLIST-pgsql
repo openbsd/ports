@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.1.1.1 2008/10/02 18:40:41 jasper Exp $
-lib/libgpgsqlbackend.a
-lib/libgpgsqlbackend.la
+@comment $OpenBSD: PLIST-pgsql,v 1.2 2009/06/23 22:59:57 sthen Exp $
+@comment lib/powerdns/libgpgsqlbackend.a
+@comment lib/powerdns/libgpgsqlbackend.la
+lib/powerdns/libgpgsqlbackend.so

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mysql,v 1.1.1.1 2008/10/02 18:40:41 jasper Exp $
-%%SHARED%%
-lib/libgmysqlbackend.a
-lib/libgmysqlbackend.la
+@comment $OpenBSD: PLIST-mysql,v 1.2 2009/06/23 22:59:57 sthen Exp $
+@comment lib/powerdns/libgmysqlbackend.a
+@comment lib/powerdns/libgmysqlbackend.la
+lib/powerdns/libgmysqlbackend.so

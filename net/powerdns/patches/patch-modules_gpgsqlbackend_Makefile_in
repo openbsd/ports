@@ -1,11 +1,11 @@
-$OpenBSD: patch-modules_gpgsqlbackend_Makefile_in,v 1.1 2008/12/16 10:30:27 jasper Exp $
+$OpenBSD: patch-modules_gpgsqlbackend_Makefile_in,v 1.2 2009/06/23 22:59:57 sthen Exp $
 
 libcrypt doesn't exist on OpenBSD.
 
---- modules/gpgsqlbackend/Makefile.in.orig	Wed Dec 10 19:15:32 2008
-+++ modules/gpgsqlbackend/Makefile.in	Wed Dec 10 19:15:35 2008
-@@ -222,7 +222,7 @@ libgpgsqlbackend_la_SOURCES = gpgsqlbackend.cc gpgsqlb
- libgpgsqlbackend_la_LDFLAGS = @PGSQL_lib@ -Wl,-Bstatic -lpq \
+--- modules/gpgsqlbackend/Makefile.in.orig	Sun Jan 25 20:24:46 2009
++++ modules/gpgsqlbackend/Makefile.in	Mon Jun 22 23:52:31 2009
+@@ -224,7 +224,7 @@ libgpgsqlbackend_la_SOURCES = gpgsqlbackend.cc gpgsqlb
+ libgpgsqlbackend_la_LDFLAGS = -module -avoid-version @PGSQL_lib@ -Wl,-Bstatic -lpq \
  	-Wl,-Bdynamic 
  
 -libgpgsqlbackend_la_LIBADD = -lssl -lcrypt -lcrypto
