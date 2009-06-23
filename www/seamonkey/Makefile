@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.36 2009/05/30 20:36:33 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2009/06/23 18:38:54 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	integrated mozilla application suite
 
-VER=		1.1.16
+VER=		1.1.17
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}p1
+PKGNAME=	seamonkey-${VER}
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -45,19 +45,19 @@ MASTER_SITES0=	http://mirrors.protection.cx/~martynas/mozilla/seamonkey/langpack
 
 LANGUAGES=	be-BY 1.1.9 \
 		ca-AD 1.1.15 \
-		cs-CZ 1.1.16 \
-		de-AT 1.1.16 \
+		cs-CZ 1.1.17 \
+		de-AT 1.1.17 \
 		el-GR 1.1.2 \
 		es-ES 1.1.13 \
-		fr-FR 1.1.15 \
+		fr-FR 1.1.16 \
 		he-IL 1.1.2 \
-		hu-HU 1.1.11 \
-		it-IT 1.1.15 \
+		hu-HU 1.1.16 \
+		it-IT 1.1.17 \
 		lt-LT 1.1.12 \
-		nl-NL 1.1.15 \
-		pl-PL 1.1.15 \
-		pt-BR 1.1.16 \
-		ru-RU 1.1.16 \
+		nl-NL 1.1.16 \
+		pl-PL 1.1.17 \
+		pt-BR 1.1.17 \
+		ru-RU 1.1.17 \
 		ur-PK 1.1.9 \
 		sv-SE 1.1.12
 BINLANGS=	be-BY el-GR fr-FR pl-PL pt-BR
