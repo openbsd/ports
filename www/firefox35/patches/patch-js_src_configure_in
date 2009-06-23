@@ -1,6 +1,15 @@
-$OpenBSD: patch-js_src_configure_in,v 1.1 2009/06/21 11:36:11 martynas Exp $
+$OpenBSD: patch-js_src_configure_in,v 1.2 2009/06/23 17:55:57 martynas Exp $
 --- js/src/configure.in.orig	Wed Jun 17 07:21:47 2009
-+++ js/src/configure.in	Sun Jun 21 13:22:13 2009
++++ js/src/configure.in	Tue Jun 23 13:33:37 2009
+@@ -906,7 +906,7 @@ HOST_AR='$(AR)'
+ HOST_AR_FLAGS='$(AR_FLAGS)'
+ 
+ MOZ_JS_LIBS='-L$(libdir) -lmozjs'
+-MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(PREFIX)/lib'
++MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(PREFIX)/lib -L$(LIBXUL_DIST)/bin'
+ 
+ MOZ_COMPONENT_NSPR_LIBS='-L$(LIBXUL_DIST)/bin $(NSPR_LIBS)'
+ MOZ_XPCOM_OBSOLETE_LIBS='-L$(LIBXUL_DIST)/lib -lxpcom_compat'
 @@ -2135,7 +2135,7 @@ case "$target" in
  	;;
  
