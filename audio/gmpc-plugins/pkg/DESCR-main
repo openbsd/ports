@@ -1,5 +1,6 @@
 A bundle of plugins for gmpc :
  * Amazon.com cover fetcher
+ * Avahi: zeroconf profile scanning
  * Music directory metadata fetcher
  * Last.fm metadata fetcher
  * Lyricwiki lyrics fetcher

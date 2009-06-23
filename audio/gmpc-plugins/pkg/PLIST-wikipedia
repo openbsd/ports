@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-wikipedia,v 1.1 2009/06/23 19:21:02 landry Exp $
+lib/gmpc/
+lib/gmpc/plugins/
+lib/gmpc/plugins/wikiplugin.a
+lib/gmpc/plugins/wikiplugin.la
+lib/gmpc/plugins/wikiplugin.so

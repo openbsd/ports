@@ -1,0 +1,14 @@
+$OpenBSD: patch-gmpc-wikipedia_src_plugin_c,v 1.1 2009/06/23 19:21:02 landry Exp $
+backport from git for http://musicpd.org/mantis/view.php?id=2378
+--- gmpc-wikipedia/src/plugin.c.orig	Tue Jun 23 20:54:45 2009
++++ gmpc-wikipedia/src/plugin.c	Tue Jun 23 20:54:57 2009
+@@ -207,9 +207,6 @@ void wp_selected(GtkWidget *container)
+ 	{
+ 		gtk_widget_hide(pgb);
+ 	}
+-	while (gtk_events_pending ())
+-		gtk_main_iteration ();
+-
+ }
+ 
+ void wp_unselected(GtkWidget *container)
