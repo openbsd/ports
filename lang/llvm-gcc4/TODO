@@ -1,0 +1,6 @@
+- controllable versioning for stdc++ library
+
+- fix build on amd64
+
+- library search order doesn't match base compilers (/usr/local/include
+before /usr/include).
