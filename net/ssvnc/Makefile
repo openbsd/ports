@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/05 12:12:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2009/06/23 20:57:46 sthen Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
 
-V =			1.0.22
+V =			1.0.23
 DISTNAME =		ssvnc-$V.src
 CATEGORIES =		net x11
 
 PKGNAME =		ssvnc-$V
-FULLPKGNAME-gui =	ssvnc-$Vp0
-FULLPKGNAME-main =	ssvnc-viewer-$Vp0
+FULLPKGNAME-gui =	ssvnc-$V
+FULLPKGNAME-main =	ssvnc-viewer-$V
 
 HOMEPAGE =		http://www.karlrunge.com/x11vnc/ssvnc.html
 
@@ -38,9 +38,10 @@ WANTLIB-main =		X11 Xext c z ICE SM Xaw Xmu Xp Xpm Xt Xau Xdmcp
 LIB_DEPENDS-main =	jpeg.>=62.::graphics/jpeg
 
 WANTLIB-gui =		c crypto
-RUN_DEPENDS-gui =	::security/stunnel \
-			::devel/desktop-file-utils \
+RUN_DEPENDS-gui =	::devel/desktop-file-utils \
+			::net/avahi,no_gtk,no_qt3,no_qt4 \
 			::net/ssvnc,-main \
+			::security/stunnel \
 			${MODTK_RUN_DEPENDS}
 
 CONFIGURE_STYLE =	imake noman

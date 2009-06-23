@@ -1,4 +1,8 @@
-$OpenBSD: patch-scripts_ssvnc,v 1.1 2009/01/13 15:08:27 sthen Exp $
+$OpenBSD: patch-scripts_ssvnc,v 1.2 2009/06/23 20:57:46 sthen Exp $
+
+use the correct wish binary first.  N.B. update-patches will destroy
+the ${MODTK_BIN} expansion in the 'for' line.
+
 --- scripts/ssvnc.orig	Tue Jan 13 03:02:08 2009
 +++ scripts/ssvnc	Tue Jan 13 03:04:45 2009
 @@ -30,7 +30,7 @@ fi

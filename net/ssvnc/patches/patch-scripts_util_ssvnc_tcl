@@ -1,0 +1,34 @@
+$OpenBSD: patch-scripts_util_ssvnc_tcl,v 1.1 2009/06/23 20:57:46 sthen Exp $
+
+type sometimes returns "xx is a tracked alias for /foo/bar" which
+isn't handled. whence is sufficient and more reliable.
+
+--- scripts/util/ssvnc.tcl.orig	Tue Jun 23 21:49:09 2009
++++ scripts/util/ssvnc.tcl	Tue Jun 23 21:49:44 2009
+@@ -15453,7 +15453,7 @@ proc check_zeroconf_browse {} {
+ 		return 0;
+ 	}
+ 	set p ""
+-	set r [catch {set p [exec /bin/sh -c {type avahi-browse}]}]
++	set r [catch {set p [exec /bin/sh -c {whence avahi-browse}]}]
+ 	if {$r == 0} {
+ 		regsub {^.* is  *} $p "" p
+ 		regsub -all {[ \t\n\r]} $p "" p
+@@ -15463,7 +15463,7 @@ proc check_zeroconf_browse {} {
+ 		}
+ 	}
+ 	set p ""
+-	set r [catch {set p [exec /bin/sh -c {type dns-sd}]}]
++	set r [catch {set p [exec /bin/sh -c {whence dns-sd}]}]
+ 	if {$r == 0} {
+ 		regsub {^.* is  *} $p "" p
+ 		regsub -all {[ \t\n\r]} $p "" p
+@@ -15478,7 +15478,7 @@ proc check_zeroconf_browse {} {
+ 		}
+ 	}
+ 	set p ""
+-	set r [catch {set p [exec /bin/sh -c {type mDNS}]}]
++	set r [catch {set p [exec /bin/sh -c {whence mDNS}]}]
+ 	if {$r == 0} {
+ 		regsub {^.* is  *} $p "" p
+ 		regsub -all {[ \t\n\r]} $p "" p

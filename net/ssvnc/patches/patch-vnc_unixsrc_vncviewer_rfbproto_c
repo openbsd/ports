@@ -1,10 +1,10 @@
-$OpenBSD: patch-vnc_unixsrc_vncviewer_rfbproto_c,v 1.1 2009/03/27 02:04:44 sthen Exp $
+$OpenBSD: patch-vnc_unixsrc_vncviewer_rfbproto_c,v 1.2 2009/06/23 20:57:46 sthen Exp $
 
 allow to build with GCC 2
 
---- vnc_unixsrc/vncviewer/rfbproto.c.orig	Thu Mar 26 20:24:19 2009
-+++ vnc_unixsrc/vncviewer/rfbproto.c	Thu Mar 26 20:25:24 2009
-@@ -1705,8 +1705,8 @@ extern void raiseme(int force);
+--- vnc_unixsrc/vncviewer/rfbproto.c.orig	Sun May 31 18:29:44 2009
++++ vnc_unixsrc/vncviewer/rfbproto.c	Tue Jun 23 21:28:20 2009
+@@ -2247,8 +2247,8 @@ extern void raiseme(int force);
  Bool
  SendTextChatOpen(void)
  {
@@ -14,19 +14,19 @@ allow to build with GCC 2
  	chat.type = rfbTextChat;
  	chat.pad1 = 0;
  	chat.pad2 = 0;
-@@ -2070,6 +2070,7 @@ HandleRFBServerMessage()
- 	int area_zrle = 0;
- 	int area_raw = 0;
- 	static int rdb = -1;
+@@ -2617,6 +2617,7 @@ HandleRFBServerMessage()
+ 	int try_delay_sync = 0;
+ 	int cnt_pseudo = 0;
+ 	int cnt_image  = 0;
 +	int skip_incFBU = 0;
  
  	if (db) fprintf(stderr, "FBU-0:    %.6f\n", dnow());
  	if (rdb < 0) {
-@@ -2080,7 +2081,6 @@ HandleRFBServerMessage()
+@@ -2635,7 +2636,6 @@ HandleRFBServerMessage()
  		}
  	}
  
 -	int skip_incFBU = 0;
  	sent_FBU = -1;
  
- 	if (!ReadFromRFBServer(((char *)&msg.fu) + 1, sz_rfbFramebufferUpdateMsg - 1)) {
+ 	if (appData.pipelineUpdates) {
