@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2008/07/10 11:38:03 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/23 20:14:28 landry Exp $
 
-COMMENT=	additional thumbnailers for Thunar
+COMMENT=	Thunar additional thumbnailers plugin
 
 XFCE_VERSION=	0.3.2
 XFCE_GOODIE=	thunar-thumbnailers
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
