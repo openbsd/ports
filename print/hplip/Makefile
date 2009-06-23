@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/16 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2009/06/23 18:05:17 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,16 +8,16 @@ COMMENT-docs=	html documentation for HPLIP
 
 V=		2.7.12
 DISTNAME=	hplip-${V}
-PKGNAME-main=	${DISTNAME}p3
-PKGNAME-hpijs=	hpijs-${V}p2
-PKGNAME-docs=	hplip-docs-${V}p1
+PKGNAME-main=	${DISTNAME}p4
+PKGNAME-hpijs=	hpijs-${V}p3
+PKGNAME-docs=	hplip-docs-${V}p2
 
 SHARED_LIBS+=	hpmud		0.0	# .0.0
 SHARED_LIBS+=	hpip		0.0	# .0.1
 
 CATEGORIES=	print
 
-HOMEPAGE=	http://hplip.sourceforge.net/
+HOMEPAGE=	http://hplipopensource.com/hplip-web/
 
 # GPLv2 - MIT (backend) - BSD (hpijs)
 PERMIT_PACKAGE_CDROM=	Yes
