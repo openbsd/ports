@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/04/09 20:30:16 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2009/06/23 20:25:15 landry Exp $
 
-COMMENT=	displays stats from a WLAN interface
+COMMENT=	Xfce4 wireless interface monitor panel plugin
 
 XFCE_VERSION=	0.5.5
 XFCE_PLUGIN=	wavelan
+PKGNAME=	${DISTNAME:S/-plugin//}p0
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes

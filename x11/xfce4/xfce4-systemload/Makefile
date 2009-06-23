@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2008/07/10 11:38:03 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2009/06/23 20:25:15 landry Exp $
 
-COMMENT=	displays cpu/memory/swap/uptime in xfce4 panel
+COMMENT=	Xfce4 cpu/memory/swap/uptime monitor panel plugin
 
 XFCE_VERSION=	0.4.2
 XFCE_PLUGIN=	systemload
-PKGNAME=	${DISTNAME:S/-plugin//}p3
+PKGNAME=	${DISTNAME:S/-plugin//}p4
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,6 +19,6 @@ WANTLIB=	X11 Xdmcp Xrender Xau Xdamage fontconfig freetype kvm \
 		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 m z c \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
 		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
-		pixman-1 xfce4util xfcegui4
+		pixman-1 xfce4util xfcegui4 gio-2.0
 
 .include <bsd.port.mk>
