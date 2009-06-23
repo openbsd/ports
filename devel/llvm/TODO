@@ -6,3 +6,6 @@ the clang-cc backend.
 - library search order doesn't match base compilers (/usr/local/include
 before /usr/include).
 
+- target-specific definitions (__OpenBSD__ etc); see
+tools/clang/lib/Basic/Targets.cpp
+
