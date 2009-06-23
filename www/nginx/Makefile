@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2009/06/04 04:06:43 william Exp $
+# $OpenBSD: Makefile,v 1.16 2009/06/23 20:24:12 sthen Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
-DISTNAME=	nginx-0.7.59
+DISTNAME=	nginx-0.7.60
 CATEGORIES=	www
 
 HOMEPAGE=	http://nginx.net/
@@ -46,7 +46,7 @@ NO_REGRESS=		Yes
 ALL_TARGET=
 
 pre-configure:
-	${SUBST_CMD} ${WRKBUILD}/conf/nginx.conf
+	@${SUBST_CMD} ${WRKBUILD}/conf/nginx.conf
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nginx/
