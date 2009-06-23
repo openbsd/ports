@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/23 14:02:03 simon Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	advanced, stable and fast ircd
 
-DISTNAME =	ircd-ratbox-3.0.1
+DISTNAME =	ircd-ratbox-3.0.4
 CATEGORIES =	net
 EXTRACT_SUFX =	.tar.bz2
 
@@ -24,6 +24,7 @@ LIB_DEPENDS =		sqlite3::databases/sqlite3 \
 			ltdl:libltdl-*:devel/libtool,-ltdl
 
 USE_LIBTOOL =		Yes
+NO_REGRESS =		Yes
 
 CONFDIR =		${SYSCONFDIR}/ircd-ratbox
 LOGDIR =		/var/log/ircd-ratbox

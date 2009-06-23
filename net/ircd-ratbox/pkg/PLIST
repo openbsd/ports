@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/23 14:02:03 simon Exp $
 @conflict irc-*
 @conflict ircd-hybrid-*
 @newgroup _ircd-ratbox:619
@@ -21,6 +21,7 @@ lib/ircd-ratbox/modules/autoload/m_connect.so
 lib/ircd-ratbox/modules/autoload/m_dline.so
 lib/ircd-ratbox/modules/autoload/m_encap.so
 lib/ircd-ratbox/modules/autoload/m_gline.so
+lib/ircd-ratbox/modules/autoload/m_gungline.so
 lib/ircd-ratbox/modules/autoload/m_help.so
 lib/ircd-ratbox/modules/autoload/m_info.so
 lib/ircd-ratbox/modules/autoload/m_invite.so
