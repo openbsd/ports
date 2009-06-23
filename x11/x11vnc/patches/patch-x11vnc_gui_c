@@ -1,7 +1,7 @@
-$OpenBSD: patch-x11vnc_gui_c,v 1.3 2009/02/15 12:02:14 sthen Exp $
---- x11vnc/gui.c.orig	Tue Dec  9 03:41:01 2008
-+++ x11vnc/gui.c	Sun Feb 15 09:55:50 2009
-@@ -229,9 +229,8 @@ static void sigusr1 (int sig) {
+$OpenBSD: patch-x11vnc_gui_c,v 1.4 2009/06/23 21:11:17 sthen Exp $
+--- x11vnc/gui.c.orig	Sun Mar 15 22:04:58 2009
++++ x11vnc/gui.c	Tue Jun 23 21:59:21 2009
+@@ -261,9 +261,8 @@ static void sigusr1 (int sig) {
  	if (0) sig = 0;
  }
  
