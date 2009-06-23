@@ -1,13 +1,19 @@
-$OpenBSD: patch-libtiff_tif_lzw_c,v 1.1 2008/08/27 18:09:36 jasper Exp $
+$OpenBSD: patch-libtiff_tif_lzw_c,v 1.2 2009/06/23 07:49:31 jasper Exp $
 
+First three chunks:
 Security fix for SA31610
 http://secunia.com/advisories/31610
 LibTIFF LZW Decoder Buffer Underflow Vulnerability   	
-
 Patch extracted from Debian's tiff_3.8.2-7+etch1
 
---- libtiff/tif_lzw.c.orig	Wed Aug 27 15:02:14 2008
-+++ libtiff/tif_lzw.c	Wed Aug 27 15:06:01 2008
+Last two chunks:
+Security fix for SA35515
+http://secunia.com/advisories/35515/
+LibTIFF "LZWDecodeCompat()" Buffer Underflow Vulnerability
+Patch from upstream bugreport #2065 (committed to CVS).
+
+--- libtiff/tif_lzw.c.orig	Tue Mar 21 17:42:50 2006
++++ libtiff/tif_lzw.c	Mon Jun 22 23:58:21 2009
 @@ -237,6 +237,11 @@ LZWSetupDecode(TIFF* tif)
                      sp->dec_codetab[code].length = 1;
                      sp->dec_codetab[code].next = NULL;
@@ -60,3 +66,20 @@ Patch extracted from Debian's tiff_3.8.2-7+etch1
  			*op++ = code, occ--;
  			oldcodep = sp->dec_codetab + code;
  			continue;
+@@ -647,6 +666,7 @@ LZWDecodeCompat(TIFF* tif, tidata_t op0, tsize_t occ0,
+ 		}
+ 		oldcodep = codep;
+ 		if (code >= 256) {
++			char *op_orig = op;
+ 			/*
+ 		 	 * Code maps to a string, copy string
+ 			 * value to output (written in reverse).
+@@ -681,7 +701,7 @@ LZWDecodeCompat(TIFF* tif, tidata_t op0, tsize_t occ0,
+ 			tp = op;
+ 			do {
+ 				*--tp = codep->value;
+-			} while( (codep = codep->next) != NULL);
++			} while( (codep = codep->next) != NULL && tp > op_orig);
+ 		} else
+ 			*op++ = code, occ--;
+ 	}
