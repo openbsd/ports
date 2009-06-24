@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/22 22:37:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/24 20:10:10 sthen Exp $
 
 # XXX WORK IN PROGRESS.
 
@@ -10,12 +10,14 @@ ONLY_FOR_ARCHS = i386
 
 COMMENT =	gcc4 front-end for LLVM
 
+GCC_V =		4.2.1
 LLVM_V =	2.6pre20090621
 DISTNAME =	llvm-gcc-4.2-${LLVM_V}.source
-PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}
+PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}p0
 EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	ssp	0.0 \
+		objc	2.0 \
 		stdc++	6.9	# XXX not controllable yet
 
 CATEGORIES =	lang devel
@@ -45,7 +47,7 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 TARGLIB =		${PREFIX}/lib/llvm-gcc-${LLVM_V}
 CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
-SUBST_VARS =		CONFIG LLVM_V
+SUBST_VARS =		CONFIG GCC_V LLVM_V
 CONFIGURE_SCRIPT =	../configure
 CONFIGURE_ARGS =	--verbose \
 			--enable-llvm=${LOCALBASE} \
@@ -56,7 +58,7 @@ CONFIGURE_ARGS =	--verbose \
 			--disable-tls \
 			--enable-threads=posix \
 			--program-prefix=llvm- \
-			--enable-languages=c,c++ \
+			--enable-languages=c,c++,objc \
 			--with-libiconv-prefix=${LOCALBASE} \
 			--libdir=${TARGLIB} \
 			--with-gxx-include-dir=${TARGLIB}/include/c++ \
@@ -78,6 +80,6 @@ post-extract:
 	@mkdir -p ${WRKSRC}/gcc
 
 post-install:
-	@chown -R ${BINOWN}:${BINGRP} ${PREFIX}/lib/llvm-gcc-${LLVM_V}/gcc/${MACHINE_ARCH}-unknown-openbsd4.5/4.2.1/include
+	@chown -R ${BINOWN}:${BINGRP} ${PREFIX}/lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include
 
 .include <bsd.port.mk>

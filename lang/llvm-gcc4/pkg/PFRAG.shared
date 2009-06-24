@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/06/22 22:37:31 sthen Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2009/06/24 20:10:10 sthen Exp $
+@lib lib/llvm-gcc-${LLVM_V}/libobjc.so.${LIBobjc_VERSION}
 @lib lib/llvm-gcc-${LLVM_V}/libssp.so.${LIBssp_VERSION}
 @lib lib/llvm-gcc-${LLVM_V}/libstdc++.so.${LIBstdc++_VERSION}

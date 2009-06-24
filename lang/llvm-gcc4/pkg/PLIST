@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/22 22:37:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/24 20:10:10 sthen Exp $
 %%SHARED%%
-@bin bin/${CONFIG}-cpp-4.2.1
-@bin bin/${CONFIG}-gcc-4.2.1
+@bin bin/${CONFIG}-cpp-${GCC_V}
+@bin bin/${CONFIG}-gcc-${GCC_V}
 @bin bin/${CONFIG}-llvm-c++
 @bin bin/${CONFIG}-llvm-cpp
 @bin bin/${CONFIG}-llvm-g++
@@ -20,62 +20,76 @@ bin/llvm-gccbug
 lib/llvm-gcc-${LLVM_V}/
 lib/llvm-gcc-${LLVM_V}/gcc/
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/
-@bin lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/cc1
-@bin lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/cc1plus
-@bin lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/collect2
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/README
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/ammintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/com_err.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/emmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/limits.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/mm3dnow.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/mm_malloc.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/mmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/nmmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/pmmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/rpc/
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/rpc/rpc_des.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/rpc/svc.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/smmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/ssp/
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/ssp/ssp.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/ssp/stdio.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/ssp/string.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/ssp/unistd.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/stddef.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/stdio.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/stdlib.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/sys/
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/sys/types.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/syslimits.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/tmmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/unwind.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/include/xmmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/fixinc.sh
-@bin lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/fixincl
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/gsyslimits.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/README
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/ammintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/emmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/limits.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/mm3dnow.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/mm_malloc.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/mmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/nmmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/pmmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/smmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/tmmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/unwind.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/include/xmmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/macro_list
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/mkheaders
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/install-tools/mkheaders.conf
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/libgcc.a
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/4.2.1/libgcov.a
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/
+@bin lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/cc1
+@bin lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/cc1obj
+@bin lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/cc1plus
+@bin lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/collect2
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/README
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/ammintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/com_err.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/emmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/limits.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/mm3dnow.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/mm_malloc.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/mmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/nmmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/objc/
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/objc/NXConstStr.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/objc/Object.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/objc/Protocol.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/objc/encoding.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/objc/hash.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/objc/objc-api.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/objc/objc-decls.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/objc/objc-list.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/objc/objc.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/objc/sarray.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/objc/thr.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/objc/typedstream.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/pmmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/rpc/
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/rpc/rpc_des.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/rpc/svc.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/smmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/ssp/
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/ssp/ssp.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/ssp/stdio.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/ssp/string.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/ssp/unistd.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/stddef.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/stdio.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/stdlib.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/sys/
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/sys/types.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/syslimits.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/tmmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/unwind.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/xmmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/fixinc.sh
+@bin lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/fixincl
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/gsyslimits.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/README
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/ammintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/emmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/limits.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/mm3dnow.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/mm_malloc.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/mmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/nmmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/pmmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/smmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/tmmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/unwind.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/include/xmmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/macro_list
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/mkheaders
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/mkheaders.conf
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/libgcc.a
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/libgcov.a
 lib/llvm-gcc-${LLVM_V}/include/
 lib/llvm-gcc-${LLVM_V}/include/c++/
 lib/llvm-gcc-${LLVM_V}/include/c++/algorithm
@@ -665,6 +679,8 @@ lib/llvm-gcc-${LLVM_V}/include/c++/vector
 lib/llvm-gcc-${LLVM_V}/libesupc++.a
 lib/llvm-gcc-${LLVM_V}/libesupc++.la
 lib/llvm-gcc-${LLVM_V}/libiberty.a
+lib/llvm-gcc-${LLVM_V}/libobjc.a
+lib/llvm-gcc-${LLVM_V}/libobjc.la
 lib/llvm-gcc-${LLVM_V}/libssp.a
 lib/llvm-gcc-${LLVM_V}/libssp.la
 lib/llvm-gcc-${LLVM_V}/libssp_nonshared.a
