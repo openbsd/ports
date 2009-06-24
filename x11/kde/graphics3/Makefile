@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2008/08/26 16:52:29 espie Exp $
+# $OpenBSD: Makefile,v 1.83 2009/06/24 20:40:23 sthen Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -17,7 +17,7 @@ PKGNAME=${DISTNAME}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-kamera =	kamera-${VERSION}
 PKGNAME-kpov =		kpovmodeller-${VERSION}
-PKGNAME-sane =		ksane-${VERSION}
+PKGNAME-sane =		ksane-${VERSION}p0
 
 SHARED_LIBS +=	kghostviewlib        1.0      # .0.0
 SHARED_LIBS +=	kpovmodeler          1.0      # .0.0
@@ -66,7 +66,7 @@ RUN_DEPENDS-sane =	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS-sane = 	${LIB_DEPENDS-kamera} \
 			ktexteditor,vcard,kabc,kparts,kresources,kspell,kdeprint::x11/kde/libs3 \
 			sane::graphics/sane-backends
-WANTLIB-sane =		${WANTLIB-kamera} usb tiff c ltdl pthread
+WANTLIB-sane =		${WANTLIB-kamera} usb tiff c ltdl pthread avahi-client avahi-common dbus-1
 
 
 CONFIGURE_ENV +=	\
