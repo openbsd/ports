@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/06/22 00:19:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2009/06/24 20:23:12 sthen Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
@@ -52,7 +52,8 @@ USE_LIBTOOL =		Yes
 
 # also supports cmake, but requires v2.6.1
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--enable-bindings=no
+CONFIGURE_ARGS =	--enable-bindings=no \
+			--enable-libffi=no
 
 MODGNU_CONFIG_GUESS_DIRS =  ${WRKSRC}/autoconf
 
