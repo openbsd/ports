@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2009/06/23 20:24:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2009/06/24 07:38:30 sthen Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
 DISTNAME=	nginx-0.7.60
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://nginx.net/
@@ -40,7 +41,8 @@ CONFIGURE_ARGS=		--prefix=${SYSCONFDIR}/nginx \
 			--with-http_ssl_module \
 			--with-http_stub_status_module \
 			--with-mail \
-			--with-mail_ssl_module
+			--with-mail_ssl_module \
+			--with-ipv6
 
 NO_REGRESS=		Yes
 ALL_TARGET=
