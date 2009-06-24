@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/01/09 15:54:31 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/06/24 01:08:05 martynas Exp $
 @pkgpath www/seamonkey,-main
 bin/seamonkey
 @man man/man1/seamonkey.1
@@ -16,7 +16,6 @@ seamonkey/chrome/HU.jar
 seamonkey/chrome/IL.jar
 seamonkey/chrome/IT.jar
 seamonkey/chrome/LT.jar
-seamonkey/chrome/NL.jar
 seamonkey/chrome/PK.jar
 seamonkey/chrome/PL.jar
 seamonkey/chrome/RU.jar
