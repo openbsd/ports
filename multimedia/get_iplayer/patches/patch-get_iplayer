@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.9 2009/06/19 01:04:50 sthen Exp $
---- get_iplayer.orig	Thu Jun 18 12:02:26 2009
-+++ get_iplayer	Fri Jun 19 01:54:57 2009
+$OpenBSD: patch-get_iplayer,v 1.10 2009/06/24 00:02:20 sthen Exp $
+--- get_iplayer.orig	Sat Jun 20 16:42:34 2009
++++ get_iplayer	Wed Jun 24 00:48:07 2009
 @@ -283,7 +283,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
@@ -27,10 +27,10 @@ $OpenBSD: patch-get_iplayer,v 1.9 2009/06/19 01:04:50 sthen Exp $
  	$bin->{tee}		= 'tee';
 -	$bin->{rtmpdump}	= $opt->{rtmpdump} || 'rtmpdump';
 +	$bin->{rtmpdump}	= $opt->{rtmpdump} || 'flvstreamer';
- 	# Set quiet, test and get options if we're asked for streaminfo
- 	if ( $opt->{streaminfo} ) {
- 		$opt->{test} 	= 1;
-@@ -1405,7 +1406,7 @@ sub create_ua {
+ 	$binopts->{rtmpdump}	= ' --quiet' if $opt->{quiet};
+ 	$binopts->{rtmpdump}	= ' --verbose' if $opt->{verbose};
+ 	$binopts->{rtmpdump}	= ' --debug' if $opt->{debug};
+@@ -1408,7 +1409,7 @@ sub create_ua {
  	my $agent = $user_agent{ "$_[0]" } || random_ua();
  	my $nocookiejar = $_[1] || 0;
  	my $ua = LWP::UserAgent->new;
