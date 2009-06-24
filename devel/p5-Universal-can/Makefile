@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/24 18:29:50 simon Exp $
 
 COMMENT=	calling UNIVERSAL::can as a function
 
 MODULES=	cpan
-DISTNAME=	UNIVERSAL-can-1.12
-PKGNAME=	p5-Universal-can-1.12
+DISTNAME=	UNIVERSAL-can-1.15
+PKGNAME=	p5-Universal-can-1.15
 CATEGORIES=	devel
 
 # perl
