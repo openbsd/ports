@@ -1,7 +1,21 @@
 Using openfire in an OpenBSD environment
 
-- if you intend on using postgresql or mysql, see database.html for instructions
-  on initializing the database
-- sudo /usr/local/bin/openfirectl start
-- lynx http://localhost:9090/ and go through the setup process
-- login and try adding users, plugins, transports, etc
+1) openfire requires a database.  If you intend on using the embedded
+   (HSQLDB) database you may skip to step #2.  If you intend on using
+   MySQL or PostgreSQL, instructions are available at:
+
+    __PREFIX__/share/doc/openfire/database.html
+
+2) openfire may be started by executing:
+
+   '__PREFIX__/sbin/openfirectl start'
+
+   as root.
+
+3) After starting openfire, you may access the web interface at
+   http://[hostname]:9090/
+
+4) openfire's automated setup and plugin installation services require
+   several directories to be writable by the _openfire user.  When you
+   complete the installation process, you may wish to tighten permissions
+   on __PREFIX__/openfire and its subdirectories.

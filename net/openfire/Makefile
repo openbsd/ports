@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/19 03:03:14 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/24 20:49:37 jolan Exp $
 
 COMMENT=	XMPP real time collaboration server
 DISTNAME=	openfire_src_3_6_4
@@ -48,8 +48,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/documentation/docs/*-guide.html \
 		${PREFIX}/share/doc/openfire
 	${INSTALL_DATA} ${WRKSRC}/documentation/docs/database.html \
-		${PREFIX}/share/doc/openfire	
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
+		${PREFIX}/share/doc/openfire
+	@sed -e "s|__PREFIX__|${TRUEPREFIX}|g" ${FILESDIR}/README.OpenBSD > \
+		${WRKBUILD}/README.OpenBSD
+	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
 		${PREFIX}/share/doc/openfire
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openfire/security
 	${INSTALL_DATA} ${WRKSRC}/target/openfire/conf/openfire.xml \
