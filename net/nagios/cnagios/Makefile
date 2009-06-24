@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/04/20 10:06:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2009/06/24 12:28:29 sthen Exp $
 
 COMMENT =		console interface for nagios
 
@@ -17,7 +17,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		ftp://noc.hep.wisc.edu/pub/src/cnagios/
+MASTER_SITES =		ftp://noc.hep.wisc.edu/src/cnagios/ \
+			ftp://noc.hep.wisc.edu/src/cnagios/old-versions/
 
 NO_REGRESS =		Yes
 
