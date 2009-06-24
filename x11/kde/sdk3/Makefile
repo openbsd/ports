@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2008/11/13 13:15:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2009/06/24 20:40:55 sthen Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -7,7 +7,7 @@ VERSION =		3.5.10
 DISTNAME =		kdesdk-${VERSION}
 
 PKGNAME-main =		${DISTNAME}p0
-PKGNAME-svn =		kdesvn-${VERSION}p1
+PKGNAME-svn =		kdesvn-${VERSION}p2
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
@@ -43,7 +43,7 @@ WANTLIB-main =	${WANTLIB} \
 
 WANTLIB-svn =	${WANTLIB} \
 		apr-1 aprutil-1 crypto db expat neon sasl2 ssl \
-		asn1 gssapi krb5
+		asn1 gssapi krb5 sqlite3
 
 post-install:
 	cd ${PREFIX}/bin && mv cvscheck kcvscheck
