@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/25 08:49:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/24 00:04:46 sthen Exp $
 
 COMMENT =		dump RTMP media streams
 
-DISTNAME =		flvstreamer-1.7
-PKGNAME =		${DISTNAME}p1
+DISTNAME =		flvstreamer-1.8a
 
 CATEGORIES =		net
 
@@ -15,7 +14,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m stdc++
 
-MASTER_SITES =		http://spacehopper.org/mirrors/
+MASTER_SITES =		http://savannah.gnu.org/submissions_uploads/ \
+			http://spacehopper.org/mirrors/
 WRKDIST =		${WRKDIR}/flvstreamer
 
 USE_GMAKE =		Yes
