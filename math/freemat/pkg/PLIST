@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/06/11 21:09:07 martynas Exp $
-bin/freemat
+@comment $OpenBSD: PLIST,v 1.7 2009/06/25 00:11:19 sthen Exp $
+@bin bin/freemat
 share/FreeMat-${V}/
 share/FreeMat-${V}/help/
 share/FreeMat-${V}/help/html/

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2008/06/11 21:09:06 martynas Exp $
+# $OpenBSD: Makefile,v 1.16 2009/06/25 00:11:19 sthen Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 
 V=		3.6
 DISTNAME=	FreeMat-${V}
-PKGNAME=	freemat-${V}
+PKGNAME=	freemat-${V}p0
 
 CATEGORIES=	graphics math
 
@@ -16,9 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	GL GLU ICE SM X11 Xcursor Xext Xfixes Xi Xinerama Xrandr \
-		Xrender c curses fontconfig freetype g2c glib-2.0 \
-		m ossaudio png pthread stdc++ z amd gthread-2.0 ssl crypto
+WANTLIB += GL GLU amd c curses g2c m ossaudio pthread stdc++ z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freemat/}
 
@@ -45,7 +43,8 @@ CONFIGURE_STYLE=  autoconf no-autoheader
 CONFIGURE_ENV=	F77=${FC} \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/amd -I${LOCALBASE}/include/umfpack -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		PKG_CONFIG_LIBDIR="${LOCALBASE}/lib/qt4/pkgconfig:${LOCALBASE}/lib/qt4"
+		PKG_CONFIG_LIBDIR="${LOCALBASE}/lib/qt4/pkgconfig:${LOCALBASE}/lib/qt4" \
+		ac_cv_path_LLVM_CONFIG=
 
 SUBST_VARS=	V
 

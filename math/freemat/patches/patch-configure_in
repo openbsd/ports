@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_in,v 1.3 2009/06/25 00:11:19 sthen Exp $
+
+XXX workaround until qt4 pkg-config can be fixed.
+
+--- configure.in.orig	Thu Jun 25 00:49:09 2009
++++ configure.in	Thu Jun 25 00:49:21 2009
+@@ -63,7 +63,7 @@ if (test "$cross_compiling" = "no") && (test "$is_mac"
+    is_win32="false"
+    platform="--linux"
+    MP_WITH_CURSES
+-   LIBS="$LIBS $CURSES_LIB $FLIBS $QT_LIBS"
++   LIBS="$LIBS $CURSES_LIB $FLIBS $QT_LIBS -pthread"
+ fi
+ 
+ if (test "$cross_compiling" = "yes"); then
