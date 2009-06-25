@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tools,v 1.2 2009/05/03 22:26:27 djm Exp $
+@comment $OpenBSD: PLIST-tools,v 1.3 2009/06/25 01:49:54 jolan Exp $
 @option no-default-conflict
 @conflict python-tools->=2.6,<2.6
 lib/python2.6/Tools/README
@@ -257,4 +257,4 @@ lib/python2.6/Tools/world/README
 lib/python2.6/Tools/world/world
 share/emacs/
 share/emacs/site-lisp/
-share/emacs/site-lisp/python-mode.el
+share/emacs/site-lisp/python-mode-2.6.el
