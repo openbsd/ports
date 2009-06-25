@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:51 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2009/06/25 01:02:54 jolan Exp $
 COMMENT=		aggregation-based network traffic profiler
 
 DISTNAME=		aguri-0.7
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.csl.sony.co.jp/person/kjc/software.html
