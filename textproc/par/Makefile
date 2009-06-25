@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/15 20:59:41 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2009/06/25 00:33:40 jolan Exp $
 
 COMMENT=	paragraph reflow for email
 
 VERSION=	1.52
 DISTNAME=	Par${VERSION:S/.//}
-PKGNAME=	par-${VERSION}
+PKGNAME=	par-${VERSION}p0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.nicemice.net/par/
