@@ -1,21 +1,14 @@
-$OpenBSD: patch-m_muttalias_sh_in,v 1.1.1.1 2008/06/15 07:22:57 sthen Exp $
---- m_muttalias.sh.in.orig	Tue Mar 11 23:27:20 2008
-+++ m_muttalias.sh.in	Tue Mar 11 23:27:35 2008
-@@ -33,13 +33,13 @@ m_muttalias_query()
- 
+$OpenBSD: patch-m_muttalias_sh_in,v 1.2 2009/06/25 22:45:56 sthen Exp $
+--- m_muttalias.sh.in.orig	Thu Jun 25 22:00:49 2009
++++ m_muttalias.sh.in	Thu Jun 25 22:05:14 2009
+@@ -34,8 +34,8 @@ m_muttalias_query()
  	if [ -f "$file" ]
  	then
--	    grep -ia "$@" $file \
+ 	    grep -ia "$@" $file \
 -	    | grep -a '^alias[ 	][ 	]*[^,][^,]*[ 	][ 	]*\([^,]\|\\\".*\\\"\)*$' \
 -	    | sed -e 's/^alias[ 	][ 	]*\([^ 	][^ 	]*\)[ 	][ 	]*<\([^ 	>][^ 	>]*\)>[ 	][ 	]*(\([^<>()]*\))[^()<>]*$/\2	\3	alias \1/' \
-+	    ggrep -ia "$@" $file \
-+	    | ggrep -a '^alias[ 	][ 	]*[^,][^,]*[ 	][ 	]*\([^,]\|\\\".*\\\"\)*$' \
++	    | grep -Ea '^alias[ 	][ 	]*[^,][^,]*[ 	][ 	]*([^,]|\\\".*\\\")*$' \
 +	    | gsed -e 's/^alias[ 	][ 	]*\([^ 	][^ 	]*\)[ 	][ 	]*<\([^ 	>][^ 	>]*\)>[ 	][ 	]*(\([^<>()]*\))[^()<>]*$/\2	\3	alias \1/' \
  		  -e 's/^alias[ 	][ 	]*\([^ 	][^ 	]*\)[ 	][ 	]*\(\\\".*\\\"[^<>()]*\|[^<>()]*\)<\([^<>()]*\)>[^<>]*$/\3	\2	alias \1/' \
  	          -e 's/^alias[ 	][ 	]*\([^ 	][^ 	]*\)[ 	][ 	]*\([^<>()]*\)(\(\\\".*\\\"[^<>()]*\|[^<>()]*\))[^()<>]*$/\2	\3	alias \1/' \
  		  -e 's/\\\"//g' \
--	    | grep -va '^alias[ 	][ 	]*[^,][^,]*[ 	][ 	]*[^,]*$'
-+	    | ggrep -va '^alias[ 	][ 	]*[^,][^,]*[ 	][ 	]*[^,]*$'
- 	fi  
-     done
- }
