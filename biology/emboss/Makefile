@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/09/24 17:14:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/06/25 01:03:09 jolan Exp $
 
 COMMENT=	European Molecular Biology Open Software Suite
 
 DISTNAME=	EMBOSS-6.0.1
+PKGNAME=	EMBOSS-6.0.1p0
 SHARED_LIBS +=  eplplot                 0.0   # .5.7
 SHARED_LIBS +=  ajax                    1.0   # .6.0
 SHARED_LIBS +=  ajaxg                   1.0   # .6.0
