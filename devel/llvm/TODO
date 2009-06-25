@@ -9,3 +9,5 @@ before /usr/include).
 - target-specific definitions (__OpenBSD__ etc); see
 tools/clang/lib/Basic/Targets.cpp
 
+- scan-build'ing an autoconf project fails
+
