@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2009/02/11 15:47:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/25 00:38:38 sthen Exp $
 
 COMMENT=		implementation of the ATK interface for GNOME widgets
 
 GNOME_PROJECT=		libgail-gnome
 GNOME_VERSION=		1.20.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 CATEGORIES=		devel
 
@@ -27,7 +27,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
 		gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
 		gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png popt ssl util xml2 z
+		pangoft2-1.0 pcre pixman-1 png popt ssl util xml2 z \
+		avahi-client avahi-common avahi-glib
 
 LIB_DEPENDS=		spi::x11/gnome/at-spi \
 			panel-applet-2::x11/gnome/panel

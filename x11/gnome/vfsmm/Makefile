@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/23 09:57:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2009/06/25 00:38:37 sthen Exp $
 
 COMMENT=		C++ interface to gnome-vfs
 
 GNOME_PROJECT=		gnome-vfsmm
 GNOME_VERSION=		2.24.0
 SHARED_LIBS=		gnomevfsmm-2.6	1.0	# .1.9
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 HOMEPAGE=		http://www.gtkmm.org/
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ORBit-2 crypto dbus-1 dbus-glib-1 gconf-2 glib-2.0 \
 			gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0 m pcre \
-			ssl util z
+			ssl util z avahi-client avahi-common avahi-glib
 
 MODULES=		devel/gettext \
 			x11/gnome

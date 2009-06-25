@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/05 07:50:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/06/25 00:38:37 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ GNOME_PROJECT=	gnome-scan
 GNOME_VERSION=	0.6.2
 CATEGORIES=	graphics
 
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}
 
 SHARED_LIBS=	gnomescan	0.0 # .0.0
@@ -37,7 +37,9 @@ MULTI_PACKAGES=	-main -gimp
 MODULES=	devel/gettext \
 		x11/gnome
 
-WANTLIB-main=	${WANTLIB} exif gphoto2 gphoto2_port jpeg ltdl tiff usb
+WANTLIB-main=	${WANTLIB} exif gphoto2 gphoto2_port jpeg ltdl tiff usb \
+		avahi-client avahi-common
+
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		sane.>=1::graphics/sane-backends \
 		gegl-0.0::graphics/gegl \

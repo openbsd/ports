@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/06/16 11:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2009/06/25 00:38:38 sthen Exp $
 
 COMMENT=		C++ interface for libgnome
 
 GNOME_PROJECT=		libgnomemm
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 SHARED_LIBS +=	gnomemm-2.6          0.0      # .1.5
 
@@ -24,7 +24,7 @@ WANTLIB += expat fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 glitz gmodule-2.0
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt
-WANTLIB += sigc-2.0 ssl util xml2 z
+WANTLIB += sigc-2.0 ssl util xml2 z avahi-client avahi-common avahi-glib
 
 MODULES=		devel/gettext \
 			x11/gnome

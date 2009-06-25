@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/06/25 00:38:38 sthen Exp $
 
 COMMENT=	.NET language bindings for assorted GNOME libraries
 
 GNOME_PROJECT=	gnome-sharp
 GNOME_VERSION=	2.20.0
-PKGNAME=	mono-gnome-${VERSION}p9
+PKGNAME=	mono-gnome-${VERSION}p10
 
 CATEGORIES=	x11
 
@@ -26,7 +26,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomeprint-2-2 gnomeui-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png popt ssl util xml2 z gio-2.0
+		pangoft2-1.0 pcre pixman-1 png popt ssl util xml2 z gio-2.0 \
+		avahi-client avahi-common avahi-glib
 
 LIB_DEPENDS=	panel-applet-2::x11/gnome/panel \
 		gnomeprintui-2-2::x11/gnome/libgnomeprintui
