@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2009/06/24 20:23:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2009/06/25 15:25:13 sthen Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
 LLVM_V =	2.6pre20090621
 DISTNAME =	llvm-${LLVM_V}
 EXTRACT_SUFX =	.tar.bz2
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 CATEGORIES =	devel
 
@@ -63,8 +63,10 @@ pre-configure:
 	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 # XXX googletest doesn't build
+# XXX symlink to workaround problem finding the correct clang binary path
 
 post-install:
+	@ln -s ${TRUEPREFIX}/libexec/clang-cc ${PREFIX}/bin
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/llvm
 	@${INSTALL_DATA_DIR} ${WRKINST}/${MODPY_SITEPKG}
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/utils/ccc-analyzer \
