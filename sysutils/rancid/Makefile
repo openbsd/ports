@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/02/11 13:17:28 pea Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/25 00:34:05 jolan Exp $
 
 COMMENT =	Really Awesome New Cisco confIg Differ
 
 DISTNAME =	rancid-2.3.2a9
+PKGNAME =	rancid-2.3.2a9p0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.shrubbery.net/rancid/
