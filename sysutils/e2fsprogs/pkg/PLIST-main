@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/03/15 19:59:31 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/06/25 01:09:12 jolan Exp $
 @bin bin/chattr
-bin/compile_et
+@comment bin/compile_et
 @bin bin/lsattr
 bin/mk_cmds
 include/blkid/
@@ -38,7 +38,7 @@ lib/pkgconfig/e2p.pc
 lib/pkgconfig/ext2fs.pc
 lib/pkgconfig/ss.pc
 @man man/man1/chattr.1
-@man man/man1/compile_et.1
+@comment man/man1/compile_et.1
 @man man/man1/lsattr.1
 @man man/man1/mk_cmds.1
 @man man/man3/com_err.3
