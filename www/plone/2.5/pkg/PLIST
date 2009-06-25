@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1 2008/03/20 11:42:35 winiger Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/06/25 15:40:43 naddy Exp $
 @conflict zope-btreefolder2-*
 @conflict zope-cmf-*
 @conflict zope-cmfquickinstaller-*
 @conflict zope-externaleditor-*
+@conflict zope-genericsetup-*
 @conflict zope-groupuserfolder-*
 @conflict zope-placelesstranslationservice-*
+@conflict zope-pluggableauthservice-*
+@conflict zope-pluginregistry-*
 lib/zope/lib/python/Products/ATContentTypes/
 lib/zope/lib/python/Products/ATContentTypes/AUTHORS.txt
 lib/zope/lib/python/Products/ATContentTypes/CHANGELOG.txt

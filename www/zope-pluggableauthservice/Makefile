@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/25 01:23:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/25 15:40:43 naddy Exp $
 
 COMMENT=	PluggableAuthService for Plone
 
 DISTNAME=	PluggableAuthService-1.4.2
-PKGNAME=	zope-${DISTNAME:L}p0
+PKGNAME=	zope-${DISTNAME:L}p1
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.zope.org/Products/PluggableAuthService/
