@@ -1,3 +1,7 @@
+For proper function, multicast(4) needs to be enabled. To do so, add the
+following line to /etc/rc.conf.local:
+    multicast_host=YES
+
 To start avahi automatically, add the following to /etc/rc.local:
 (after dbus-daemon but before Zeroconf-aware applications startup)
 

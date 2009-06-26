@@ -1,0 +1,24 @@
+$OpenBSD: patch-avahi-core_entry_c,v 1.1 2009/06/26 22:12:20 ajacoutot Exp $
+
+http://avahi.org/ticket/267
+
+--- avahi-core/entry.c.orig	Wed Jun 18 01:13:44 2008
++++ avahi-core/entry.c	Thu Jun 25 17:32:54 2009
+@@ -1087,6 +1087,8 @@ void avahi_s_entry_group_free(AvahiSEntryGroup *g) {
+     
+     g->server->need_group_cleanup = 1;
+     g->server->need_entry_cleanup = 1;
++
++    avahi_cleanup_dead_entries(g->server);
+ }
+ 
+ static void entry_group_commit_real(AvahiSEntryGroup *g) {
+@@ -1166,6 +1168,8 @@ void avahi_s_entry_group_reset(AvahiSEntryGroup *g) {
+     g->n_probing = 0;
+ 
+     avahi_s_entry_group_change_state(g, AVAHI_ENTRY_GROUP_UNCOMMITED);
++
++    avahi_cleanup_dead_entries(g->server);
+ }
+ 
+ int avahi_entry_is_commited(AvahiEntry *e) {

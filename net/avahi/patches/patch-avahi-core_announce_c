@@ -1,0 +1,15 @@
+$OpenBSD: patch-avahi-core_announce_c,v 1.1 2009/06/26 22:12:20 ajacoutot Exp $
+
+http://avahi.org/ticket/267
+
+--- avahi-core/announce.c.orig	Wed Jun 18 01:13:44 2008
++++ avahi-core/announce.c	Thu Jun 25 17:32:51 2009
+@@ -376,7 +376,7 @@ static int is_duplicate_entry(AvahiServer *s, AvahiEnt
+ 
+     for (i = avahi_hashmap_lookup(s->entries_by_key, e->record->key); i; i = i->by_key_next) {
+ 
+-        if (i == e)
++        if ((i == e) || (i->dead))
+             continue;
+ 
+         if (!avahi_record_equal_no_ttl(i->record, e->record))
