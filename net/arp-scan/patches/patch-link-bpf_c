@@ -1,0 +1,14 @@
+$OpenBSD: patch-link-bpf_c,v 1.1 2009/06/26 09:20:41 sthen Exp $
+--- link-bpf.c.orig	Thu Jul 17 13:01:14 2008
++++ link-bpf.c	Fri Jun 26 10:16:27 2009
+@@ -253,6 +253,10 @@ get_hardware_address(link_t *handle, unsigned char hw_
+  */
+    for (p = buf; p < buf + len; p += ifm->ifm_msglen) {
+       ifm = (struct if_msghdr *)p;
++
++      if (ifm->ifm_version != RTM_VERSION)
++         continue;
++
+       sdl = (struct sockaddr_dl *)(ifm + 1);
+ 
+       if (ifm->ifm_type != RTM_IFINFO || (ifm->ifm_addrs & RTA_IFP) == 0)
