@@ -1,0 +1,13 @@
+$OpenBSD: patch-thunar-vfs_thunar-vfs-io-jobs_c,v 1.3 2009/06/26 08:35:36 landry Exp $
+Fix for http://bugzilla.xfce.org/show_bug.cgi?id=5376
+--- thunar-vfs/thunar-vfs-io-jobs.c.orig	Fri Jun 26 10:11:44 2009
++++ thunar-vfs/thunar-vfs-io-jobs.c	Fri Jun 26 10:12:00 2009
+@@ -708,7 +708,7 @@ _thunar_vfs_io_jobs_mkdir (ThunarVfsJob *job,
+       _thunar_vfs_job_process_path (job, lp);
+ 
+       /* try to create the target directory */
+-      if (!_thunar_vfs_io_ops_mkdir (lp->data, 0777 & ~umask(0), THUNAR_VFS_IO_OPS_NONE, error))
++      if (!_thunar_vfs_io_ops_mkdir (lp->data, 0777, THUNAR_VFS_IO_OPS_NONE, error))
+         return FALSE;
+     }
+ 
