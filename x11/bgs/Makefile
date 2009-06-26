@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2009/02/08 20:41:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/26 00:03:04 sthen Exp $
 
 COMMENT =		simple background setter
 
 VERSION =		0.5
 DISTNAME =		bgs-${VERSION}
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		x11 graphics
 
-HOMEPAGE =		http://s01.de/~gottox/index.cgi/proj_bgs
-MASTER_SITES =		http://s01.de/~gottox/files/bgs/
+HOMEPAGE =		http://s01.de/~tox/index.cgi/proj_bgs
+MASTER_SITES =		http://s01.de/~tox/files/bgs/
 
 MAINTAINER =		James Turner <james@bsdgroup.org>
 
