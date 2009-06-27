@@ -1,0 +1,12 @@
+$OpenBSD: patch-third-party_libnatpmp_getgateway_c,v 1.1 2009/06/27 21:48:47 sthen Exp $
+--- third-party/libnatpmp/getgateway.c.orig	Thu Jun 25 23:41:44 2009
++++ third-party/libnatpmp/getgateway.c	Thu Jun 25 23:41:45 2009
+@@ -230,7 +230,7 @@ int getdefaultgateway(in_addr_t *addr)
+ 
+   do {
+     l = read(s, (char *)&m_rtmsg, sizeof(m_rtmsg));
+-  } while (l > 0 && (rtm.rtm_seq != seq || rtm.rtm_pid != pid));
++  } while (l > 0 && (rtm.rtm_version != RTM_VERSION || rtm.rtm_seq != seq || rtm.rtm_pid != pid));
+                         
+   close(s);
+ 
