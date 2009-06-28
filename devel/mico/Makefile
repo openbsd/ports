@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2008/07/29 00:18:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2009/06/28 22:00:34 sthen Exp $
 
 COMMENT=	free and complete CORBA-compliant implementation
 
 DISTNAME=	mico-2.3.6
-PKGNAME=	$(DISTNAME)p3
+PKGNAME=	$(DISTNAME)p4
 CATEGORIES=	devel
 
 # The build framework accommodates only a single shared lib extension.
@@ -41,6 +41,8 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--with-ssl
 WANTLIB+=		crypto ssl
 .endif
+
+LIB_DEPENDS+=		elf::devel/libelf
 
 # XXX no Qt parts built
 #.if ${FLAVOR:L:Mqt}
