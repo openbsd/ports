@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/06/23 19:21:02 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2009/06/28 21:58:23 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,7 +8,7 @@ COMMENT-wikipedia =	wikipedia plugin for gmpc
 VERSION =	0.18.0
 DISTNAME =	gmpc-plugins-${VERSION}
 PKGNAME-main =		${DISTNAME}p2
-PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}
+PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}p0
 
 CATEGORIES =	audio
 
@@ -42,7 +42,8 @@ WANTLIB-main = ${WANTLIB} crypto curl dbus-1 glade-2.0 idn pthread ssl
 LIB_DEPENDS-wikipedia =	${LIB_DEPENDS} \
 			webkit-1.0::www/webkit
 WANTLIB-wikipedia =	${WANTLIB} enchant gcrypt gnutls gpg-error \
-			icudata icui18n icuuc jpeg soup-2.4 tasn1 xslt
+			icudata icui18n icuuc jpeg soup-2.4 tasn1 xslt \
+			gailutil
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo
