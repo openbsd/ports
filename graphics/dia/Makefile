@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2009/06/01 21:17:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2009/06/28 21:46:38 sthen Exp $
 
 COMMENT=	technical diagrams drawing tool
 
 GNOME_PROJECT=	dia
 GNOME_VERSION=	0.97
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	graphics
 
@@ -57,7 +58,7 @@ LIB_DEPENDS+=	gnomeui-2::x11/gnome/libgnomeui \
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM bonobo-2 bonobo-activation
 WANTLIB += bonoboui-2 crypto dbus-1 dbus-glib-1 gconf-2 gailutil
 WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 popt ssl
-WANTLIB += util
+WANTLIB += util avahi-client avahi-common avahi-glib
 MODGNOME_HELP_FILES= Yes
 .else
 # help is only installed and usable with yelp

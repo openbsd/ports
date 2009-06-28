@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/04 12:59:33 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2009/06/28 21:46:38 sthen Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
 DISTNAME =	amide-0.9.1
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://amide.sourceforge.net/
@@ -22,7 +23,8 @@ WANTLIB += freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread ssl stdc++ util xml2 z
-                
+WANTLIB += avahi-client avahi-common avahi-glib
+
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amide/}
 
 EXTRACT_SUFX =	.tgz
@@ -58,5 +60,5 @@ NO_REGRESS =	Yes
 
 post-extract:
 	@rm -f ${WRKSRC}/src/ui_common.c.orig
-        
+
 .include <bsd.port.mk>

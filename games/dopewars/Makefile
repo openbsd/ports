@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2008/06/15 00:08:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2009/06/28 21:46:38 sthen Exp $
 
 COMMENT=	game where you deal drugs on the streets of NY
 
 DISTNAME=	dopewars-1.5.12
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dopewars/}
 
@@ -18,7 +18,7 @@ WANTLIB=		c ncurses
 
 MODULES+=	devel/gettext
 
-LIB_DEPENDS+=   glib-2.0::devel/glib2
+LIB_DEPENDS+=   gio-2.0,glib-2.0::devel/glib2
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
