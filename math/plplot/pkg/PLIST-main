@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2009/04/05 16:21:55 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/06/28 16:17:27 sthen Exp $
 @pkgpath math/plplot
 bin/plm2gif
 bin/plpr
@@ -21,11 +21,8 @@ include/plplot/plstrm.h
 include/plplot/plxwd.h
 lib/libcsirocsa.so
 @lib lib/libcsirocsa.so.${LIBcsirocsa_VERSION}
-lib/libplplotcxxd.so
 lib/libplplotd.so
 @lib lib/libplplotd.so.${LIBplplotd_VERSION}
-lib/libplplotf77cd.so
-lib/libplplotf77d.so
 lib/pkgconfig/plplotd.pc
 @man man/man1/plm2gif.1
 @man man/man1/plpr.1

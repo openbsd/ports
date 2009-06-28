@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2009/06/22 17:00:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2009/06/28 16:17:27 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,9 +18,9 @@ SHARED_LIBS=	csirocsa	2.0	\
 		plplottcltkd	12.0	\
 		tclmatrixd	12.0
 
-PKGNAME-main=	${DISTNAME}
-PKGNAME-c++ =	plplot-c++-${VERSION}
-PKGNAME-f77=	plplot-f77-${VERSION}
+PKGNAME-main=	${DISTNAME}p0
+PKGNAME-c++ =	plplot-c++-${VERSION}p0
+PKGNAME-f77=	plplot-f77-${VERSION}p0
 PKGNAME-octave=	plplot-octave-${VERSION}p0
 PKGNAME-tcl=	plplot-tcl-${VERSION}
 
@@ -57,6 +57,7 @@ CONFIGURE_ARGS=	-D ENABLE_java=OFF \
 		-D ENABLE_itcl=OFF \
 		-D ENABLE_pdl=OFF \
 		-D ENABLE_python=OFF \
+		-D PLD_gcw=OFF \
 		-D ENABLE_tcl=OFF \
 		-D ENABLE_tk=OFF \
 		-D ENABLE_wxwidgets=OFF \
@@ -85,9 +86,9 @@ MULTI_PACKAGES=	-main -c++ -f77
 myWANTLIB=	m z freetype Xau Xdmcp Xrender X11 Xext SM ICE expat \
 		fontconfig pixman-1 png
 
-WANTLIB-main=		${myWANTLIB} c g2c
+WANTLIB-main=		${myWANTLIB} c
 WANTLIB-c++ =		${myWANTLIB}
-WANTLIB-f77+=		${myWANTLIB}
+WANTLIB-f77+=		${myWANTLIB} g2c
 #WANTLIB-octave+=	${myWANTLIB} g2c ncurses readline blas lapack fftw3
 #WANTLIB-tcl+=		${myWANTLIB} X11 Xau Xdmcp c
 
