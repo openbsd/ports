@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2009/06/21 14:41:21 kili Exp $
+# $OpenBSD: Makefile,v 1.82 2009/06/28 14:36:31 sthen Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -8,8 +8,8 @@ COMMENT-plugins=	additionnal plugins for evolution
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.24.5
 
-PKGNAME-main=		${DISTNAME}p15
-PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p9
+PKGNAME-main=		${DISTNAME}p16
+PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p10
 
 CATEGORIES=		mail
 
@@ -46,9 +46,10 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gpg-error gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		plc4 plds4 png popt sqlite3 ssl ssl3 stdc++ tasn1 \
-		util xml2 z avahi-client avahi-common avahi-glib
+		util xml2 z avahi-client avahi-common avahi-glib \
+		c pthread
 
-WANTLIB-main=	${WANTLIB} c pthread sasl2
+WANTLIB-main=	${WANTLIB} sasl2
 
 WANTLIB-plugins= ${WANTLIB} \
 		camel-1.2 camel-provider-1.2 ebackend-1.2 ebook-1.2 \
@@ -71,7 +72,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			::x11/hicolor-icon-theme \
 			::x11/gnome/icon-theme
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			camel-1.2,camel-provider-1.2,ebackend-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2,exchange-storage-1.2,gdata-1.2,gdata-google-1.2:evolution-data-server->=2.24.3:databases/evolution-data-server \
+			camel-1.2,camel-provider-1.2,ebackend-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2,egroupwise-1.2,exchange-storage-1.2,gdata-1.2,gdata-google-1.2:evolution-data-server->=2.24.3:databases/evolution-data-server \
 			lber.>=7,ldap.>=7::databases/openldap \
 			notify.>=2::devel/libnotify \
 			soup-2.4::devel/libsoup \
