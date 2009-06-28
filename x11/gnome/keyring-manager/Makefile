@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/06/11 18:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/06/28 10:54:04 sthen Exp $
 
 COMMENT=		keyring management program for the GNOME desktop
 
 GNOME_PROJECT=		gnome-keyring-manager
 GNOME_VERSION=		2.20.0
-PKGNAME=		${DISTNAME}p11
+PKGNAME=		${DISTNAME}p12
 
 CATEGORIES=		x11
 
@@ -22,7 +22,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png popt pthread ssl util xml2 z
+		png popt pthread ssl util xml2 z \
+		avahi-client avahi-common avahi-glib
 
 MODULES=		devel/gettext \
 			x11/gnome \

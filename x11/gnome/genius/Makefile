@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/04/06 10:05:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/28 10:54:04 sthen Exp $
 
 COMMENT=	advanced general purpose calculator
 
 GNOME_PROJECT=	genius
 GNOME_VERSION=	1.0.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 HOMEPAGE=	http://www.jirka.org/genius.html
 
@@ -16,14 +16,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xft Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
 WANTLIB += c cairo crypto dbus-1 dbus-glib-1 expat fontconfig
 WANTLIB += freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangox-1.0 pangoxft-1.0 pcre pixman-1 png pthread readline
-WANTLIB += ssl termcap util xml2 z
+WANTLIB += pcre pixman-1 png pthread readline
+WANTLIB += ssl termcap util xml2 z avahi-client avahi-common avahi-glib
 
 MODULES=	devel/gettext \
 		x11/gnome

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/02/11 15:47:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/06/28 10:54:04 sthen Exp $
 
 COMMENT=	GNOME Build Framework (GBF)
 
 GNOME_PROJECT=	gnome-build
 GNOME_VERSION=	2.24.1
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 SHARED_LIBS +=  gbf-1                1.0      # .2.0
 SHARED_LIBS +=  gbf-widgets-1        1.0      # .2.0
@@ -27,7 +27,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 		gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png popt ssl util xml2 z
+		pangoft2-1.0 pcre pixman-1 png popt ssl util xml2 z \
+		avahi-client avahi-common avahi-glib
 
 LIB_DEPENDS=	gdl-1::x11/gnome/gdl \
 		gnomeui-2::x11/gnome/libgnomeui

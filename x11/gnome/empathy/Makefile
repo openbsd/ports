@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/06/16 21:42:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2009/06/28 10:54:04 sthen Exp $
 
 # XXX
 # (empathy:10245): Gtk-WARNING **: could not load image: Icon 'im-xmpp' not present in theme
@@ -7,7 +7,7 @@ COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p14
+PKGNAME=		${DISTNAME}p15
 
 SHARED_LIBS +=	empathy              1.0      # .16.4
 SHARED_LIBS +=	empathy-gtk          1.0      # .15.6
@@ -32,7 +32,7 @@ WANTLIB=	ICE SM ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor \
 		krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 plc4 plds4 png popt pthread smime3 softokn3 \
 		soup-2.4 sqlite3 ssl ssl3 tasn1 telepathy telepathy-glib \
-		util xml2 z
+		util xml2 z avahi-client avahi-common avahi-glib
 
 MODULES=		devel/gettext \
 			lang/python \
