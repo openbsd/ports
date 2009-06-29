@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/03/18 08:31:21 pea Exp $
+# $OpenBSD: Makefile,v 1.26 2009/06/29 09:23:39 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,10 +10,10 @@ COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.7.1
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=			${DISTNAME}
+PKGNAME-main=			${DISTNAME}p0
 FULLPKGNAME-docs=		claws-mail-docs-${V}
-FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}
-FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}
+FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}p0
+FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}p0
 CATEGORIES=		mail news
 
 HOMEPAGE=		http://www.claws-mail.org/
@@ -59,6 +59,7 @@ WANTLIB-bogofilter=	${WANTLIB} gcrypt gnutls gpg-error
 WANTLIB-spamassassin=	${WANTLIB} gcrypt gnutls gpg-error
 
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+			execinfo::devel/libexecinfo \
 			etpan.>=13::mail/libetpan \
 			sasl2::security/cyrus-sasl2
 
