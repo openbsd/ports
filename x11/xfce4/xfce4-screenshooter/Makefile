@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/06/28 21:59:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/06/29 07:44:04 landry Exp $
 
 COMMENT=	Xfce4 desktop screenshot panel plugin
 
 XFCE_VERSION=	1.6.0
 XFCE_GOODIE=	xfce4-screenshooter
 EXTRACT_SUFX=	.tar.gz
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -15,7 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 
-LIB_DEPENDS=	xfce4panel::x11/xfce4/xfce4-panel
+LIB_DEPENDS=	xfce4panel::x11/xfce4/xfce4-panel \
+		xmlrpc,xmlrpc_client,xmlrpc_util,xmlrpc_xmlparse,xmlrpc_xmltok::net/xmlrpc-c
+
 DESKTOP_FILES=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
@@ -24,6 +26,6 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
 		gthread-2.0 pthread startup-notification-1 xfce4util \
-		xfcegui4 z crypto ssl
+		xfcegui4 z crypto ssl curl idn
 
 .include <bsd.port.mk>
