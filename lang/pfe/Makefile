@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/29 17:45:36 naddy Exp $
-
-.if ${MACHINE_ARCH} == "i386"
-BROKEN=		assembly optimizations confuse gcc
-.endif
+# $OpenBSD: Makefile,v 1.10 2009/06/29 20:21:53 sthen Exp $
 
 COMMENT=	Portable Forth Environment
 
@@ -27,6 +23,14 @@ WANTLIB=	c m ncurses
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man
+
+# i386 build fails due to a compiler bug with gcc 3.3
+MODULES+=       gcc4
+MODGCC4_ARCHES= i386
+MODGCC4_LANGS=	c
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS+=--with-regs
+.endif
 
 USE_LIBTOOL=	Yes
 
