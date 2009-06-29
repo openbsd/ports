@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2008/10/16 17:30:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2009/06/29 17:45:36 naddy Exp $
+
+.if ${MACHINE_ARCH} == "i386"
+BROKEN=		assembly optimizations confuse gcc
+.endif
 
 COMMENT=	Portable Forth Environment
 
