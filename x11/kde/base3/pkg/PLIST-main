@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2008/08/26 16:52:29 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2009/06/29 15:05:02 naddy Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
@@ -4783,5 +4783,17 @@ share/wallpapers/triplegears.jpg.desktop
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/genkdmconf --in %D/share/config/kdm || true
-@extra share/config/kdm/
+@extra share/apps/kdm/faces/.default.face.icon
+@extra share/apps/kdm/faces/root.face.icon
 @extra share/apps/kdm/faces/
+@extra share/config/kdm/Xaccess
+@extra share/config/kdm/Xwilling
+@extra share/config/kdm/Xresources
+@extra share/config/kdm/Xsetup
+@extra share/config/kdm/Xstartup
+@extra share/config/kdm/Xreset
+@extra share/config/kdm/Xsession
+@extra share/config/kdm/backgroundrc
+@extra share/config/kdm/kdmrc
+@extra share/config/kdm/README
+@extra share/config/kdm/
