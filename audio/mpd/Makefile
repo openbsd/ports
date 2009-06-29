@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2009/04/10 00:52:07 beck Exp $
+# $OpenBSD: Makefile,v 1.18 2009/06/29 15:34:37 beck Exp $
 
 COMMENT=		Music Player Daemon
 DISTNAME=		mpd-0.13.2
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		audio
 HOMEPAGE=		http://www.musicpd.org/
 MAINTAINER=		Tobias Ulmer <tobiasu@tmux.org>
