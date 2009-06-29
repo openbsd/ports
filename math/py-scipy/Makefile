@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/05 18:08:34 eric Exp $
+# $OpenBSD: Makefile,v 1.3 2009/06/29 10:10:03 sthen Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
 MODPY_EGG_VERSION=	0.7.0
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}p0
+PKGNAME=		py-${DISTNAME}p1
 CATEGORIES=		math devel
 
 MAINTAINER=		Eric Faurot <eric@openbsd.org>
@@ -26,7 +26,8 @@ MODPY_SETUP=            setupegg.py
 
 BUILD_DEPENDS=		::math/py-numpy \
 			::devel/swig
-LIB_DEPENDS=		umfpack::math/umfpack
+LIB_DEPENDS=		umfpack::math/umfpack \
+			arpack::math/arpack
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 REGRESS_DEPENDS=	::devel/py-nose
