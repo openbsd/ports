@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/06/25 15:25:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2009/06/29 13:42:54 sthen Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
@@ -11,6 +11,7 @@ CATEGORIES =	devel
 
 HOMEPAGE =	http://www.llvm.org/
 
+VMEM_WARNING =	Yes
 # has built ok on these, at least at one point
 ONLY_FOR_ARCHS =i386 amd64 powerpc hppa
 # didn't work when tested
