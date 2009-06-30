@@ -1,0 +1,15 @@
+$OpenBSD: patch-smbd_posix_acls_c,v 1.1 2009/06/30 21:38:38 naddy Exp $
+
+Resolve CVE-2009-1888
+
+--- smbd/posix_acls.c.orig	Tue Nov 18 10:37:41 2008
++++ smbd/posix_acls.c	Mon Jun 29 19:14:43 2009
+@@ -2296,6 +2296,8 @@ static BOOL acl_group_override(connection_struct *conn
+ {
+ 	SMB_STRUCT_STAT sbuf;
+ 
++	ZERO_STRUCT(sbuf);
++
+ 	if ((errno != EPERM) && (errno != EACCES)) {
+ 		return False;
+ 	}
