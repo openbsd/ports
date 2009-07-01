@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.4 2009/05/08 15:43:51 robert Exp $
+@comment $OpenBSD: PLIST-java,v 1.5 2009/07/01 13:05:54 naddy Exp $
 %%SHARED%%
 openoffice.org/basis3.1/share/Scripts/java/
 openoffice.org/basis3.1/share/Scripts/java/HelloWorld/
@@ -94,3 +94,4 @@ openoffice.org/basis3.1/share/registry/modules/org/openoffice/TypeDetection/Filt
 openoffice.org/basis3.1/share/registry/modules/org/openoffice/TypeDetection/Types/fcfg_palm_types.xcu
 openoffice.org/basis3.1/share/registry/modules/org/openoffice/TypeDetection/Types/fcfg_pocketexcel_types.xcu
 openoffice.org/basis3.1/share/registry/modules/org/openoffice/TypeDetection/Types/fcfg_pocketword_types.xcu
+openoffice.org/ure/lib/jvmfwk3rc

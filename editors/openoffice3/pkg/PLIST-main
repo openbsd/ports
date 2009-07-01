@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/05/08 15:43:51 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/07/01 13:05:54 naddy Exp $
 @pkgpath editors/openoffice
 %%SHARED%%
 bin/sbase
@@ -5805,7 +5805,6 @@ openoffice.org/ure/bin/uno
 @bin openoffice.org/ure/bin/uno.bin
 openoffice.org/ure/bin/versionrc
 openoffice.org/ure/lib/
-openoffice.org/ure/lib/jvmfwk3rc
 openoffice.org/ure/lib/unorc
 openoffice.org/ure/share/
 openoffice.org/ure/share/misc/
