@@ -1,5 +1,5 @@
---- gcc/config.gcc.orig	Thu Mar 13 20:11:43 2008
-+++ gcc/config.gcc	Sun Apr 12 11:29:43 2009
+--- gcc/config.gcc.orig	Thu Mar 13 19:11:43 2008
++++ gcc/config.gcc	Wed Jul  1 04:34:10 2009
 @@ -555,6 +555,11 @@ case ${target} in
      *-*-openbsd2.*|*-*-openbsd3.[012])
        tm_defines="${tm_defines} HAS_LIBC_R=1" ;;
@@ -12,15 +12,21 @@
    ;;
  *-*-rtems*)
    case ${enable_threads} in
-@@ -621,7 +626,7 @@ alpha*-*-netbsd*)
+@@ -620,11 +625,11 @@ alpha*-*-netbsd*)
+ 	tmake_file="${tmake_file} alpha/t-alpha alpha/t-ieee"
  	;;
  alpha*-*-openbsd*)
- 	tm_defines="${tm_defines} OBSD_NO_DYNAMIC_LIBRARIES OBSD_HAS_DECLARE_FUNCTION_NAME OBSD_HAS_DECLARE_FUNCTION_SIZE OBSD_HAS_DECLARE_OBJECT"
+-	tm_defines="${tm_defines} OBSD_NO_DYNAMIC_LIBRARIES OBSD_HAS_DECLARE_FUNCTION_NAME OBSD_HAS_DECLARE_FUNCTION_SIZE OBSD_HAS_DECLARE_OBJECT"
 -	tm_file="alpha/alpha.h openbsd.h alpha/openbsd.h"
-+	tm_file="alpha/alpha.h alpha/elf.h openbsd.h openbsd-libpthread.h alpha/openbsd.h"
++	tm_defines="${tm_defines} OBSD_HAS_DECLARE_FUNCTION_NAME OBSD_HAS_DECLARE_FUNCTION_SIZE OBSD_HAS_DECLARE_OBJECT"
++	tm_file="alpha/alpha.h alpha/elf.h alpha/openbsd.h openbsd.h openbsd-libpthread.h"
  	# default x-alpha is only appropriate for dec-osf.
  	target_cpu_default="MASK_GAS"
- 	tmake_file="alpha/t-alpha alpha/t-ieee"
+-	tmake_file="alpha/t-alpha alpha/t-ieee"
++	tmake_file="${tmake_file} alpha/t-alpha alpha/t-ieee"
+ 	;;
+ alpha*-dec-osf[45]*)
+ 	if test x$stabs = xyes
 @@ -1085,10 +1090,15 @@ i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
  	;;
  i[34567]86-*-openbsd*)
