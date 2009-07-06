@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.5 2009/07/01 13:05:54 naddy Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.6 2009/07/06 23:33:36 naddy Exp $
 openoffice.org/basis3.1/program/basprov.uno.so
 openoffice.org/basis3.1/program/behelper.uno.so
 openoffice.org/basis3.1/program/canvasfactory.uno.so
@@ -254,6 +254,8 @@ openoffice.org/ure/lib/invocadapt.uno.so
 openoffice.org/ure/lib/invocation.uno.so
 openoffice.org/ure/lib/libaffine_uno_uno.so
 openoffice.org/ure/lib/libgcc3_uno.so
+openoffice.org/ure/lib/libjvmaccessgcc3.so.3
+openoffice.org/ure/lib/libjvmfwk.so.3
 openoffice.org/ure/lib/libreg.so.3
 openoffice.org/ure/lib/librmcxt.so.3
 openoffice.org/ure/lib/libstore.so.3
