@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/06/22 11:56:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/07/12 19:40:11 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 DISTNAME =	fitz-0.4
-PKGNAME =	${DISTNAME:S/fitz/mupdf/}
+PKGNAME =	${DISTNAME:S/fitz/mupdf/}p0
 
 CATEGORIES =	textproc x11
 
@@ -43,6 +43,13 @@ JAMFLAGS = \
 	-sOS=LINUX \
 	-sTHIRDPARTYINC="`freetype-config --cflags` -I${LOCALBASE}/include" \
 	-sTHIRDPARTYLIB="`freetype-config --libs` -L${LOCALBASE}/lib"
+
+FLAVORS +=	no_cjk
+FLAVOR ?=
+
+.if ${FLAVOR:L:Mno_cjk}
+JAMFLAGS +=    -sDEFINES=NOCJK
+.endif
 
 SEPARATE_BUILD =	concurrent
 

@@ -21,3 +21,6 @@ merging and extracting pages, and examining the internal object
 structure of a PDF file.
 
 The mupdf binary (aka pdfview) is a bare bones PDF viewer. 
+
+The optional no_cjk flavor disables CJK font metrics, giving a
+smaller binary.
