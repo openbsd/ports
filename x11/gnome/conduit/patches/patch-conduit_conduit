@@ -1,20 +1,19 @@
-$OpenBSD: patch-conduit_conduit,v 1.2 2009/01/06 10:48:57 ajacoutot Exp $
---- conduit/conduit.orig	Tue Oct 21 09:49:00 2008
-+++ conduit/conduit	Tue Jan  6 11:41:20 2009
-@@ -8,14 +8,13 @@
- # Run mozilla takes care of settin up the appropriate environment variables
+$OpenBSD: patch-conduit_conduit,v 1.3 2009/07/12 19:56:38 ajacoutot Exp $
+--- conduit/conduit.orig	Sat Jun 27 10:15:09 2009
++++ conduit/conduit	Sat Jun 27 10:16:28 2009
+@@ -9,14 +9,12 @@
  # to run a program using mozilla libs
  
--for d in `ls -d /usr/lib*/firefox* /usr/lib*/mozilla-firefox* 2> /dev/null | sort -r`
--do
-+d="${LOCALBASE}/mozilla-firefox/"
-+
-     if [ -x $d/run-mozilla.sh ]; then
-         echo INFO: FOUND FIREFOX LIBS AT $d
-         $d/run-mozilla.sh `dirname $0`/conduit.real $*
-         exit
-     fi
--done
+ if [ x$CONDUIT_BROWSER_IMPL = x"gtkmozembed" ]; then
+-    for d in `ls -d /usr/lib*/firefox* /usr/lib*/mozilla-firefox* 2> /dev/null | sort -r`
+-    do
++    d="${LOCALBASE}/mozilla-firefox/"
+         if [ -x $d/run-mozilla.sh ]; then
+             echo INFO: FOUND FIREFOX LIBS AT $d
+             $d/run-mozilla.sh `dirname $0`/conduit.real $*
+             exit
+         fi
+-    done
  
- echo "WARNING: COULD NOT FIND FIREFOX LIBRARIES"
- echo "WARNING: CONDUIT MAY CRASH UNEXPECTEDLY"
+     echo "WARNING: COULD NOT FIND FIREFOX LIBRARIES"
+     echo "WARNING: CONDUIT MAY CRASH UNEXPECTEDLY"

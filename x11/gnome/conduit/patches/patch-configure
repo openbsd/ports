@@ -1,14 +1,14 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/12/11 23:03:11 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2009/07/12 19:56:38 ajacoutot Exp $
 
 Prevent errors like this during configure:
 GtkWarning: could not open display
 
---- configure.orig	Wed Dec  3 00:18:42 2008
-+++ configure	Wed Dec  3 00:19:26 2008
-@@ -6679,23 +6679,7 @@ fi
+--- configure.orig	Sat Jun 27 10:17:50 2009
++++ configure	Sat Jun 27 10:18:28 2009
+@@ -7007,23 +7007,7 @@ fi
  v=`echo 0.9.0 | sed -e "s/\./,/g"`
- { echo "$as_me:$LINENO: checking for 0.9.0 of goocanvas" >&5
- echo $ECHO_N "checking for 0.9.0 of goocanvas... $ECHO_C" >&6; }
+ { $as_echo "$as_me:$LINENO: checking for 0.9.0 of goocanvas" >&5
+ $as_echo_n "checking for 0.9.0 of goocanvas... " >&6; }
 -prog="
 -import goocanvas
 -ver = goocanvas.pygoocanvas_version
@@ -28,5 +28,5 @@ GtkWarning: could not open display
 -out=`$PYTHON -c "$prog"`
 +out="yes"
  if test "x$out" = xyes; then
-   { echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6; }
+   { $as_echo "$as_me:$LINENO: result: yes" >&5
+ $as_echo "yes" >&6; }
