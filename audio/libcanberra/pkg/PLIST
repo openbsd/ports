@@ -1,21 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/06/07 05:30:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/07/12 20:00:27 ajacoutot Exp $
 %%SHARED%%
 @bin bin/canberra-gtk-play
 include/canberra-gtk.h
 include/canberra.h
 lib/gtk-2.0/
 lib/gtk-2.0/modules/
-lib/gtk-2.0/modules/libcanberra-gtk-module.a
+@comment lib/gtk-2.0/modules/libcanberra-gtk-module.a
 @comment lib/gtk-2.0/modules/libcanberra-gtk-module.la
-lib/libcanberra-0.11/
-lib/libcanberra-0.11/libcanberra-gstreamer.a
-@comment lib/libcanberra-0.11/libcanberra-gstreamer.la
-lib/libcanberra-0.11/libcanberra-multi.a
-@comment lib/libcanberra-0.11/libcanberra-multi.la
-lib/libcanberra-0.11/libcanberra-null.a
-@comment lib/libcanberra-0.11/libcanberra-null.la
-lib/libcanberra-0.11/libcanberra-sndio.a
-@comment lib/libcanberra-0.11/libcanberra-sndio.la
+lib/libcanberra-${V}/
+@comment lib/libcanberra-${V}/libcanberra-gstreamer.a
+@comment lib/libcanberra-${V}/libcanberra-gstreamer.la
+@comment lib/libcanberra-${V}/libcanberra-multi.a
+@comment lib/libcanberra-${V}/libcanberra-multi.la
+@comment lib/libcanberra-${V}/libcanberra-null.a
+@comment lib/libcanberra-${V}/libcanberra-null.la
+@comment lib/libcanberra-${V}/libcanberra-sndio.a
+@comment lib/libcanberra-${V}/libcanberra-sndio.la
 lib/libcanberra-gtk.a
 lib/libcanberra-gtk.la
 lib/libcanberra.a

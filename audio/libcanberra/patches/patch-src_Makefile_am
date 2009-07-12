@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_am,v 1.1 2009/01/09 17:34:32 jakemsr Exp $
---- src/Makefile.am.orig	Fri Dec 26 14:40:20 2008
-+++ src/Makefile.am	Fri Dec 26 15:06:49 2008
-@@ -207,6 +207,36 @@ libcanberra_oss_la_LDFLAGS = \
+$OpenBSD: patch-src_Makefile_am,v 1.2 2009/07/12 20:00:27 ajacoutot Exp $
+--- src/Makefile.am.orig	Thu Jul  2 02:55:48 2009
++++ src/Makefile.am	Mon Jul  6 10:06:54 2009
+@@ -206,6 +206,36 @@ libcanberra_oss_la_LDFLAGS = \
  endif
  endif
  

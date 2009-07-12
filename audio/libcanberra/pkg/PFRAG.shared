@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2009/03/05 08:11:56 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2009/07/12 20:00:27 ajacoutot Exp $
 lib/gtk-2.0/modules/libcanberra-gtk-module.so
-lib/libcanberra-0.11/libcanberra-gstreamer.so
-lib/libcanberra-0.11/libcanberra-multi.so
-lib/libcanberra-0.11/libcanberra-null.so
-lib/libcanberra-0.11/libcanberra-sndio.so
+lib/libcanberra-${V}/libcanberra-gstreamer.so
+lib/libcanberra-${V}/libcanberra-multi.so
+lib/libcanberra-${V}/libcanberra-null.so
+lib/libcanberra-${V}/libcanberra-sndio.so
 @lib lib/libcanberra-gtk.so.${LIBcanberra-gtk_VERSION}
 @lib lib/libcanberra.so.${LIBcanberra_VERSION}
