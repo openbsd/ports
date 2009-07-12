@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/27 08:14:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/07/12 21:06:31 ajacoutot Exp $
 
 COMMENT=	text-based calendar and scheduling application
 
-DISTNAME=	calcurse-2.5
+DISTNAME=	calcurse-2.6
 CATEGORIES=	productivity
 
 MAINTAINER=	Frederic Culot <frederic@culot.org>
 
 HOMEPAGE=	http://culot.org/calcurse
 
-# GPLv2
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
