@@ -1,6 +1,6 @@
-$OpenBSD: patch-cgi-bin_admin_c,v 1.4 2009/04/27 08:25:39 bernd Exp $
---- cgi-bin/admin.c.orig	Fri Sep 26 17:30:29 2008
-+++ cgi-bin/admin.c	Tue Mar 17 16:21:50 2009
+$OpenBSD: patch-cgi-bin_admin_c,v 1.5 2009/07/12 19:58:19 ajacoutot Exp $
+--- cgi-bin/admin.c.orig	Thu Jun 18 23:42:45 2009
++++ cgi-bin/admin.c	Mon Jul  6 11:56:21 2009
 @@ -414,7 +414,7 @@ do_am_class(http_t *http,		/* I - HTTP connection */
  		*response;		/* IPP response */
    ipp_attribute_t *attr;		/* member-uris attribute */
@@ -10,7 +10,7 @@ $OpenBSD: patch-cgi-bin_admin_c,v 1.4 2009/04/27 08:25:39 bernd Exp $
  		*ptr;			/* Pointer to CGI variable */
    const char	*title;			/* Title of page */
    static const char * const pattrs[] =	/* Requested printer attributes */
-@@ -695,7 +695,7 @@ do_am_printer(http_t *http,		/* I - HTTP connection */
+@@ -701,7 +701,7 @@ do_am_printer(http_t *http,		/* I - HTTP connection */
  		*uriptr;		/* Pointer into URI */
    int		maxrate;		/* Maximum baud rate */
    char		baudrate[255];		/* Baud rate string */
