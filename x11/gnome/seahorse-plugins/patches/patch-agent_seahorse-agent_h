@@ -1,0 +1,12 @@
+$OpenBSD: patch-agent_seahorse-agent_h,v 1.1.1.1 2009/07/12 19:54:04 ajacoutot Exp $
+--- agent/seahorse-agent.h.orig	Sat Jun 27 18:00:28 2009
++++ agent/seahorse-agent.h	Sat Jun 27 18:00:43 2009
+@@ -22,6 +22,8 @@
+ #ifndef __SEAHORSE_AGENT_H__
+ #define __SEAHORSE_AGENT_H__
+ 
++#include <sys/types.h>
++
+ #include <glib.h>
+ #include <gconf/gconf-client.h>
+ #include <gconf/gconf.h>
