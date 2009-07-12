@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2009/06/11 18:27:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2009/07/12 20:05:23 ajacoutot Exp $
 
 COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		0.12.2
-PKGNAME=		${DISTNAME}p4
+GNOME_VERSION=		0.12.3
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 CATEGORIES=		audio
@@ -31,7 +30,7 @@ WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gnutls gobject-2.0
 WANTLIB += gpg-error gssapi gstbase-0.10 gstcontroller-0.10 gstinterfaces-0.10
 WANTLIB += gstpbutils-0.10 gstreamer-0.10 gthread-2.0 gtk-x11-2.0
 WANTLIB += krb5 m neon nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png popt pthread smime3 softokn3
+WANTLIB += pcre pixman-1 plc4 plds4 png popt pthread proxy smime3 softokn3
 WANTLIB += soup-2.4 sqlite3 ssl ssl3 tasn1 util xml2 z
 
 MODULES=		devel/gettext \
@@ -49,7 +48,8 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			totem-plparser::x11/gnome/totem-pl-parser \
 			sexy::x11/libsexy \
 			camel-1.2.>=10,edataserver-1.2::databases/evolution-data-server \
-			gstcdda-0.10,gsttag-0.10::multimedia/gstreamer-0.10/plugins-base,-cdda
+			gstcdda-0.10,gsttag-0.10::multimedia/gstreamer-0.10/plugins-base,-cdda \
+			soup-gnome-2.4.>=1::devel/libsoup,-gnome
 RUN_DEPENDS=		:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-gnome \
 			:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-ogg \
 			:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-vorbis \

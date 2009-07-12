@@ -1,10 +1,10 @@
-$OpenBSD: patch-plugins_audioscrobbler_rb-lastfm-source_c,v 1.1 2009/05/31 14:11:36 ajacoutot Exp $
+$OpenBSD: patch-plugins_audioscrobbler_rb-lastfm-source_c,v 1.2 2009/07/12 20:05:23 ajacoutot Exp $
 
 Cope with our out-dated totem-pl-parser version.
 
---- plugins/audioscrobbler/rb-lastfm-source.c.orig	Sun May 31 15:17:11 2009
-+++ plugins/audioscrobbler/rb-lastfm-source.c	Sun May 31 15:18:59 2009
-@@ -2089,7 +2089,7 @@ xspf_entry_parsed (TotemPlParser *parser, const char *
+--- plugins/audioscrobbler/rb-lastfm-source.c.orig	Tue Jun 30 01:38:57 2009
++++ plugins/audioscrobbler/rb-lastfm-source.c	Mon Jul  6 08:36:00 2009
+@@ -2043,7 +2043,7 @@ xspf_entry_parsed (TotemPlParser *parser, const char *
  	}
  
  	/* image URL and track auth ID are stored in entry type specific data */
@@ -13,7 +13,7 @@ Cope with our out-dated totem-pl-parser version.
  	if (value != NULL && (strcmp (value, LASTFM_NO_COVER_IMAGE) != 0)) {
  		track_data->image_url = g_strdup (value);
  	}
-@@ -2099,7 +2099,7 @@ xspf_entry_parsed (TotemPlParser *parser, const char *
+@@ -2053,7 +2053,7 @@ xspf_entry_parsed (TotemPlParser *parser, const char *
  		track_data->track_auth = g_strdup (value);
  	}
  

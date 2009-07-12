@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/06/07 05:30:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2009/07/12 20:05:23 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 lib/librhythmbox-core.la
@@ -30,6 +30,7 @@ lib/rhythmbox/plugins/artdisplay/__init__.pyo
 lib/rhythmbox/plugins/artdisplay/artdisplay.rb-plugin
 lib/rhythmbox/plugins/artdisplay/rhythmbox-missing-artwork.svg
 lib/rhythmbox/plugins/audiocd/
+lib/rhythmbox/plugins/audiocd/album-info.ui
 lib/rhythmbox/plugins/audiocd/audiocd-ui.xml
 lib/rhythmbox/plugins/audiocd/audiocd.rb-plugin
 lib/rhythmbox/plugins/audiocd/libaudiocd.la
@@ -153,6 +154,9 @@ lib/rhythmbox/plugins/rb/Loader.pyo
 lib/rhythmbox/plugins/rb/__init__.py
 lib/rhythmbox/plugins/rb/__init__.pyc
 lib/rhythmbox/plugins/rb/__init__.pyo
+lib/rhythmbox/plugins/rb/stringmatch.py
+lib/rhythmbox/plugins/rb/stringmatch.pyc
+lib/rhythmbox/plugins/rb/stringmatch.pyo
 lib/rhythmbox/plugins/status-icon/
 lib/rhythmbox/plugins/status-icon/libstatus-icon.la
 lib/rhythmbox/plugins/status-icon/libstatus-icon.so
@@ -400,7 +404,6 @@ share/gtk-doc/html/rhythmbox/RBPlayerGstTee.html
 share/gtk-doc/html/rhythmbox/RBPlaylistManager.html
 share/gtk-doc/html/rhythmbox/RBPlaylistSource.html
 share/gtk-doc/html/rhythmbox/RBPropertyView.html
-share/gtk-doc/html/rhythmbox/RBProxyConfig.html
 share/gtk-doc/html/rhythmbox/RBQueryCreator.html
 share/gtk-doc/html/rhythmbox/RBRandomPlayOrder.html
 share/gtk-doc/html/rhythmbox/RBRating.html
@@ -464,6 +467,7 @@ share/icons/hicolor/scalable/apps/rhythmbox.svg
 share/locale/af/LC_MESSAGES/rhythmbox.mo
 share/locale/am/LC_MESSAGES/rhythmbox.mo
 share/locale/ar/LC_MESSAGES/rhythmbox.mo
+share/locale/as/LC_MESSAGES/rhythmbox.mo
 share/locale/az/LC_MESSAGES/rhythmbox.mo
 share/locale/be/LC_MESSAGES/rhythmbox.mo
 share/locale/be@latin/LC_MESSAGES/rhythmbox.mo
@@ -506,6 +510,7 @@ share/locale/nb/LC_MESSAGES/rhythmbox.mo
 share/locale/ne/LC_MESSAGES/rhythmbox.mo
 share/locale/nl/LC_MESSAGES/rhythmbox.mo
 share/locale/oc/LC_MESSAGES/rhythmbox.mo
+share/locale/or/LC_MESSAGES/rhythmbox.mo
 share/locale/pa/LC_MESSAGES/rhythmbox.mo
 share/locale/pl/LC_MESSAGES/rhythmbox.mo
 share/locale/ps/LC_MESSAGES/rhythmbox.mo
@@ -518,6 +523,7 @@ share/locale/sk/LC_MESSAGES/rhythmbox.mo
 share/locale/sr/LC_MESSAGES/rhythmbox.mo
 share/locale/sr@latin/LC_MESSAGES/rhythmbox.mo
 share/locale/sv/LC_MESSAGES/rhythmbox.mo
+share/locale/ta/LC_MESSAGES/rhythmbox.mo
 share/locale/th/LC_MESSAGES/rhythmbox.mo
 share/locale/tr/LC_MESSAGES/rhythmbox.mo
 share/locale/uk/LC_MESSAGES/rhythmbox.mo
