@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/07/12 23:26:08 jolan Exp $
+--- configure.orig	Tue Apr 10 07:31:19 2007
++++ configure	Sun Jul 12 18:21:25 2009
+@@ -4242,9 +4242,9 @@ echo "${ECHO_T}$ac_cv_try_cflags_ok" >&6; }
+     fi
+ 
+ 
+-    TRY_CFLAGS=`echo "$OPT_CFLAGS $CFLAGS"|sed "s/-O[0-9]*//g"`
++    TRY_CFLAGS=`echo "$OPT_CFLAGS $CFLAGS"`
+ 
+-    TRY_CFLAGS="$TRY_CFLAGS -O3"
++    #TRY_CFLAGS="$TRY_CFLAGS -O3"
+     { echo "$as_me:$LINENO: checking if $CC supports $TRY_CFLAGS flags" >&5
+ echo $ECHO_N "checking if $CC supports $TRY_CFLAGS flags... $ECHO_C" >&6; }
+     SAVE_CFLAGS="$CFLAGS"

@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/12 23:26:08 jolan Exp $
+%%SHARED%%
+@bin bin/dcadec
+@comment bin/dtsdec
+@bin bin/extract_dca
+@comment bin/extract_dts
+include/dca.h
+include/dts.h
+lib/libdca.a
+lib/libdca.la
+lib/libdts.a
+lib/pkgconfig/
+lib/pkgconfig/libdca.pc
+lib/pkgconfig/libdts.pc
+@man man/man1/dcadec.1
+@man man/man1/dtsdec.1
+@man man/man1/extract_dca.1
+@man man/man1/extract_dts.1

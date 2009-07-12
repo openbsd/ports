@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/07/12 23:26:08 jolan Exp $
+@lib lib/libdca.so.${LIBdca_VERSION}
