@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/25 21:59:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/07/12 19:57:51 sthen Exp $
+
 COMMENT=	utilities for handling Byte Order Marks
 
 MODULES=	cpan
 DISTNAME=	File-BOM-0.14
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
-BUILD_DEPENDS=	::devel/p5-Readonly \
-		::devel/p5-Test-Exception
+RUN_DEPENDS=	::devel/p5-Readonly
+REGRESS_DEPENDS=::devel/p5-Test-Exception
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
