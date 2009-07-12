@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.227 2009/06/07 07:25:44 eric Exp $
+# $OpenBSD: Makefile,v 1.228 2009/07/12 20:43:55 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -132,6 +132,7 @@
      SUBDIR += p5-gnupod
      SUBDIR += p5-libvorbis
      SUBDIR += pacpl
+     SUBDIR += picard
      SUBDIR += pms
      SUBDIR += portaudio-svn
      SUBDIR += py-ao
