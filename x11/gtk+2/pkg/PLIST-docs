@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.24 2008/11/25 13:14:08 jasper Exp $
+@comment $OpenBSD: PLIST-docs,v 1.25 2009/07/12 20:39:33 ajacoutot Exp $
 @conflict gtk+2-<2.4.9
 share/gtk-doc/
 share/gtk-doc/html/
@@ -69,6 +69,7 @@ share/gtk-doc/html/gdk/X_cursor.png
 share/gtk-doc/html/gdk/api-index-2-10.html
 share/gtk-doc/html/gdk/api-index-2-12.html
 share/gtk-doc/html/gdk/api-index-2-14.html
+share/gtk-doc/html/gdk/api-index-2-16.html
 share/gtk-doc/html/gdk/api-index-2-2.html
 share/gtk-doc/html/gdk/api-index-2-4.html
 share/gtk-doc/html/gdk/api-index-2-6.html
@@ -202,6 +203,7 @@ share/gtk-doc/html/gtk/GtkAccelLabel.html
 share/gtk-doc/html/gtk/GtkAccessible.html
 share/gtk-doc/html/gtk/GtkAction.html
 share/gtk-doc/html/gtk/GtkActionGroup.html
+share/gtk-doc/html/gtk/GtkActivatable.html
 share/gtk-doc/html/gtk/GtkAdjustment.html
 share/gtk-doc/html/gtk/GtkAlignment.html
 share/gtk-doc/html/gtk/GtkArrow.html
@@ -258,6 +260,7 @@ share/gtk-doc/html/gtk/GtkHBox.html
 share/gtk-doc/html/gtk/GtkHButtonBox.html
 share/gtk-doc/html/gtk/GtkHPaned.html
 share/gtk-doc/html/gtk/GtkHRuler.html
+share/gtk-doc/html/gtk/GtkHSV.html
 share/gtk-doc/html/gtk/GtkHScale.html
 share/gtk-doc/html/gtk/GtkHScrollbar.html
 share/gtk-doc/html/gtk/GtkHSeparator.html
@@ -387,10 +390,12 @@ share/gtk-doc/html/gtk/TextWidgetObjects.html
 share/gtk-doc/html/gtk/TreeWidget.html
 share/gtk-doc/html/gtk/TreeWidgetObjects.html
 share/gtk-doc/html/gtk/WindowWidgets.html
+share/gtk-doc/html/gtk/aboutdialog.png
 share/gtk-doc/html/gtk/accel-label.png
 share/gtk-doc/html/gtk/api-index-2-10.html
 share/gtk-doc/html/gtk/api-index-2-12.html
 share/gtk-doc/html/gtk/api-index-2-14.html
+share/gtk-doc/html/gtk/api-index-2-16.html
 share/gtk-doc/html/gtk/api-index-2-2.html
 share/gtk-doc/html/gtk/api-index-2-4.html
 share/gtk-doc/html/gtk/api-index-2-6.html
@@ -401,6 +406,7 @@ share/gtk-doc/html/gtk/assistant.png
 share/gtk-doc/html/gtk/button.png
 share/gtk-doc/html/gtk/ch01.html
 share/gtk-doc/html/gtk/ch02.html
+share/gtk-doc/html/gtk/chap-drawing-model.html
 share/gtk-doc/html/gtk/check-button.png
 share/gtk-doc/html/gtk/checklist-gdkeventexpose-region.html
 share/gtk-doc/html/gtk/checklist-modifiers.html
@@ -411,6 +417,8 @@ share/gtk-doc/html/gtk/combo-box-entry.png
 share/gtk-doc/html/gtk/combo-box.png
 share/gtk-doc/html/gtk/decorating-the-assistant-pages.html
 share/gtk-doc/html/gtk/entry.png
+share/gtk-doc/html/gtk/figure-hierarchical-drawing.png
+share/gtk-doc/html/gtk/figure-windowed-label.png
 share/gtk-doc/html/gtk/file-button.png
 share/gtk-doc/html/gtk/filechooser.png
 share/gtk-doc/html/gtk/font-button.png
@@ -430,6 +438,7 @@ share/gtk-doc/html/gtk/gtk-GtkTextIter.html
 share/gtk-doc/html/gtk/gtk-GtkTreeView-drag-and-drop.html
 share/gtk-doc/html/gtk/gtk-High-level-Printing-API.html
 share/gtk-doc/html/gtk/gtk-Keyboard-Accelerators.html
+share/gtk-doc/html/gtk/gtk-Orientable.html
 share/gtk-doc/html/gtk/gtk-Resource-Files.html
 share/gtk-doc/html/gtk/gtk-Selections.html
 share/gtk-doc/html/gtk/gtk-Signals.html
@@ -445,6 +454,7 @@ share/gtk-doc/html/gtk/gtk-bold.png
 share/gtk-doc/html/gtk/gtk-builder-convert.html
 share/gtk-doc/html/gtk/gtk-building.html
 share/gtk-doc/html/gtk/gtk-cancel.png
+share/gtk-doc/html/gtk/gtk-caps-lock-warning.png
 share/gtk-doc/html/gtk/gtk-cdrom.png
 share/gtk-doc/html/gtk/gtk-changes-1-2.html
 share/gtk-doc/html/gtk/gtk-changes-2-0.html
@@ -528,6 +538,7 @@ share/gtk-doc/html/gtk/gtk-migrating-GtkIconView.html
 share/gtk-doc/html/gtk/gtk-migrating-GtkLinkButton.html
 share/gtk-doc/html/gtk/gtk-migrating-GtkRecentChooser.html
 share/gtk-doc/html/gtk/gtk-migrating-checklist.html
+share/gtk-doc/html/gtk/gtk-migrating-entry-icons.html
 share/gtk-doc/html/gtk/gtk-migrating-tooltips.html
 share/gtk-doc/html/gtk/gtk-missing-image.png
 share/gtk-doc/html/gtk/gtk-network.png
@@ -601,6 +612,14 @@ share/gtk-doc/html/gtk/image.png
 share/gtk-doc/html/gtk/index.html
 share/gtk-doc/html/gtk/index.sgml
 share/gtk-doc/html/gtk/label.png
+share/gtk-doc/html/gtk/layout-btlr.png
+share/gtk-doc/html/gtk/layout-btrl.png
+share/gtk-doc/html/gtk/layout-lrbt.png
+share/gtk-doc/html/gtk/layout-lrtb.png
+share/gtk-doc/html/gtk/layout-rlbt.png
+share/gtk-doc/html/gtk/layout-rltb.png
+share/gtk-doc/html/gtk/layout-tblr.png
+share/gtk-doc/html/gtk/layout-tbrl.png
 share/gtk-doc/html/gtk/left.png
 share/gtk-doc/html/gtk/link-button.png
 share/gtk-doc/html/gtk/list-and-tree.png

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2009/05/22 13:08:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2009/07/12 20:39:33 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -6,18 +6,18 @@ COMMENT-main=			multi-platform graphical toolkit
 COMMENT-docs=           	gtk+2 documentation
 COMMENT-cups=			gtk+2 CUPS print backend
 
-VERSION=			2.14.7
+VERSION=			2.16.4
 DISTNAME=			gtk+-${VERSION}
-PKGNAME-main=			gtk+2-${VERSION}p0
+PKGNAME-main=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
-PKGNAME-cups=			gtk+2-cups-${VERSION}p1
+PKGNAME-cups=			gtk+2-cups-${VERSION}
 CATEGORIES=			x11 devel
 
-SHARED_LIBS+=	gdk_pixbuf-2.0		1400.1 #.1400.5
-SHARED_LIBS+=	gdk-x11-2.0		1400.1 #.1400.5
-SHARED_LIBS+=	gtk-x11-2.0		1400.1 #.1400.5
-SHARED_LIBS+=	gdk_pixbuf_xlib-2.0	1400.1 #.1400.5
-SHARED_LIBS+=	gailutil		22.0   #.18.1
+SHARED_LIBS+=	gdk_pixbuf-2.0		1401.0 #.1600.2
+SHARED_LIBS+=	gdk-x11-2.0		1401.0 #.1600.2
+SHARED_LIBS+=	gtk-x11-2.0		1401.0 #.1600.2
+SHARED_LIBS+=	gdk_pixbuf_xlib-2.0	1401.0 #.1600.2
+SHARED_LIBS+=	gailutil		23.0   #.18.1
 
 HOMEPAGE=			http://www.gtk.org/
 
@@ -27,7 +27,7 @@ PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		Yes
 PERMIT_DISTFILES_FTP=		Yes
 
-MASTER_SITES=			${MASTER_SITE_GNOME:=sources/gtk+/2.14/}
+MASTER_SITES=			${MASTER_SITE_GNOME:=sources/gtk+/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=			.tar.bz2
 
 MULTI_PACKAGES=         	-main -docs -cups
@@ -67,8 +67,10 @@ USE_X11=			Yes
 USE_GMAKE=			Yes
 USE_LIBTOOL=			Yes
 CONFIGURE_STYLE=		gnu
-CONFIGURE_ARGS+=		--disable-gtk-doc \
-				--with-xinput=yes
+CONFIGURE_ARGS=			${CONFIGURE_SHARED} \
+				--disable-gtk-doc \
+				--with-xinput=yes \
+				--disable-papi
 CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 				LDFLAGS="-L${LOCALBASE}/lib"
 

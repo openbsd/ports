@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2009/01/11 17:04:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2009/07/12 20:39:33 ajacoutot Exp $
 @conflict gail-*
 @pkgpath x11/gtk+2
 @bin bin/gdk-pixbuf-csource
@@ -73,6 +73,7 @@ include/gtk-2.0/gtk/gtkaccelmap.h
 include/gtk-2.0/gtk/gtkaccessible.h
 include/gtk-2.0/gtk/gtkaction.h
 include/gtk-2.0/gtk/gtkactiongroup.h
+include/gtk-2.0/gtk/gtkactivatable.h
 include/gtk-2.0/gtk/gtkadjustment.h
 include/gtk-2.0/gtk/gtkalignment.h
 include/gtk-2.0/gtk/gtkarrow.h
@@ -175,6 +176,7 @@ include/gtk-2.0/gtk/gtknotebook.h
 include/gtk-2.0/gtk/gtkobject.h
 include/gtk-2.0/gtk/gtkoldeditable.h
 include/gtk-2.0/gtk/gtkoptionmenu.h
+include/gtk-2.0/gtk/gtkorientable.h
 include/gtk-2.0/gtk/gtkpagesetup.h
 include/gtk-2.0/gtk/gtkpaned.h
 include/gtk-2.0/gtk/gtkpapersize.h
@@ -405,11 +407,6 @@ lib/pkgconfig/gdk-x11-2.0.pc
 lib/pkgconfig/gtk+-2.0.pc
 lib/pkgconfig/gtk+-unix-print-2.0.pc
 lib/pkgconfig/gtk+-x11-2.0.pc
-@man man/man1/gdk-pixbuf-csource.1
-@man man/man1/gdk-pixbuf-query-loaders.1
-@man man/man1/gtk-builder-convert.1
-@man man/man1/gtk-query-immodules-2.0.1
-@man man/man1/gtk-update-icon-cache.1
 share/aclocal/gtk-2.0.m4
 share/examples/gtk+2/
 share/examples/gtk+2/gtk-2.0/
@@ -457,6 +454,7 @@ share/gtk-2.0/demo/pickers.c
 share/gtk-2.0/demo/pixbufs.c
 share/gtk-2.0/demo/printing.c
 share/gtk-2.0/demo/rotated_text.c
+share/gtk-2.0/demo/search_entry.c
 share/gtk-2.0/demo/sizegroup.c
 share/gtk-2.0/demo/stock_browser.c
 share/gtk-2.0/demo/textscroll.c
@@ -505,10 +503,12 @@ share/locale/bs/LC_MESSAGES/gtk20-properties.mo
 share/locale/bs/LC_MESSAGES/gtk20.mo
 share/locale/ca/LC_MESSAGES/gtk20-properties.mo
 share/locale/ca/LC_MESSAGES/gtk20.mo
-share/locale/ca@valencia/
-share/locale/ca@valencia/LC_MESSAGES/
 share/locale/ca@valencia/LC_MESSAGES/gtk20-properties.mo
 share/locale/ca@valencia/LC_MESSAGES/gtk20.mo
+share/locale/crh/
+share/locale/crh/LC_MESSAGES/
+share/locale/crh/LC_MESSAGES/gtk20-properties.mo
+share/locale/crh/LC_MESSAGES/gtk20.mo
 share/locale/cs/LC_MESSAGES/gtk20-properties.mo
 share/locale/cs/LC_MESSAGES/gtk20.mo
 share/locale/cy/LC_MESSAGES/gtk20-properties.mo

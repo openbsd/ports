@@ -1,7 +1,7 @@
-$OpenBSD: patch-demos_Makefile_in,v 1.18 2009/01/11 17:04:47 ajacoutot Exp $
---- demos/Makefile.in.orig	Wed Jan  7 22:52:01 2009
-+++ demos/Makefile.in	Fri Jan  9 13:28:02 2009
-@@ -964,6 +964,7 @@ test-report perf-report full-report:	${TEST_PROGS}
+$OpenBSD: patch-demos_Makefile_in,v 1.19 2009/07/12 20:39:33 ajacoutot Exp $
+--- demos/Makefile.in.orig	Sun May 31 06:11:02 2009
++++ demos/Makefile.in	Thu Jun 11 15:11:57 2009
+@@ -972,6 +972,7 @@ test-report perf-report full-report:	${TEST_PROGS}
  check-local: test
  
  test-inline-pixbufs.h: $(pixbuf_csource_deps) apple-red.png gnome-foot.png
